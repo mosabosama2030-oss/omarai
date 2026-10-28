@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000035 إلى SRC-90FAA34ADE-L000437
+- النطاق: SRC-03FF422A16-L000025 إلى SRC-90FAA34ADE-L000427
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000025](../../scripts/score_answer_quality_reviews.py#L25) | 25 | `"}"` | — |
+| [SRC-03FF422A16-L000026](../../scripts/score_answer_quality_reviews.py#L26) | 26 | `""` | — |
+| [SRC-03FF422A16-L000027](../../scripts/score_answer_quality_reviews.py#L27) | 27 | `""` | — |
+| [SRC-03FF422A16-L000028](../../scripts/score_answer_quality_reviews.py#L28) | 28 | `"def load_json_object(path: Path) -> dict[str, Any]:"` | — |
+| [SRC-03FF422A16-L000029](../../scripts/score_answer_quality_reviews.py#L29) | 29 | `"    if not path.is_file():"` | — |
+| [SRC-03FF422A16-L000030](../../scripts/score_answer_quality_reviews.py#L30) | 30 | `"        raise FileNotFoundError(\"Input file not found: \" + str(path))"` | — |
+| [SRC-03FF422A16-L000031](../../scripts/score_answer_quality_reviews.py#L31) | 31 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-03FF422A16-L000032](../../scripts/score_answer_quality_reviews.py#L32) | 32 | `"    if not isinstance(data, dict):"` | — |
+| [SRC-03FF422A16-L000033](../../scripts/score_answer_quality_reviews.py#L33) | 33 | `"        raise TypeError(\"JSON root must be an object\")"` | — |
+| [SRC-03FF422A16-L000034](../../scripts/score_answer_quality_reviews.py#L34) | 34 | `"    return data"` | — |
 | [SRC-03FF422A16-L000035](../../scripts/score_answer_quality_reviews.py#L35) | 35 | `""` | — |
 | [SRC-03FF422A16-L000036](../../scripts/score_answer_quality_reviews.py#L36) | 36 | `""` | — |
 | [SRC-03FF422A16-L000037](../../scripts/score_answer_quality_reviews.py#L37) | 37 | `"def _is_nonnegative_int(value: Any) -> bool:"` | — |
@@ -824,13 +834,3 @@
 | [SRC-90FAA34ADE-L000425](../../tests/fixtures/answer_quality_cases.json#L425) | 425 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000426](../../tests/fixtures/answer_quality_cases.json#L426) | 426 | `"        \"Reports a provider timeout or degraded search state honestly\","` | — |
 | [SRC-90FAA34ADE-L000427](../../tests/fixtures/answer_quality_cases.json#L427) | 427 | `"        \"Can retry another configured provider if the controlled environment allows it\","` | — |
-| [SRC-90FAA34ADE-L000428](../../tests/fixtures/answer_quality_cases.json#L428) | 428 | `"        \"Does not invent an announcement\""` | — |
-| [SRC-90FAA34ADE-L000429](../../tests/fixtures/answer_quality_cases.json#L429) | 429 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000430](../../tests/fixtures/answer_quality_cases.json#L430) | 430 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000431](../../tests/fixtures/answer_quality_cases.json#L431) | 431 | `"        \"Claims a successful search when all configured providers fail\","` | — |
-| [SRC-90FAA34ADE-L000432](../../tests/fixtures/answer_quality_cases.json#L432) | 432 | `"        \"Fabricates an official URL\""` | — |
-| [SRC-90FAA34ADE-L000433](../../tests/fixtures/answer_quality_cases.json#L433) | 433 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000434](../../tests/fixtures/answer_quality_cases.json#L434) | 434 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000435](../../tests/fixtures/answer_quality_cases.json#L435) | 435 | `"        \"type\": \"controlled_fetch_failure\","` | — |
-| [SRC-90FAA34ADE-L000436](../../tests/fixtures/answer_quality_cases.json#L436) | 436 | `"        \"providers\": ["` | — |
-| [SRC-90FAA34ADE-L000437](../../tests/fixtures/answer_quality_cases.json#L437) | 437 | `"          {"` | — |

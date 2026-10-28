@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000311 إلى SRC-F725E90B2A-L001110
+- النطاق: SRC-F725E90B2A-L000301 إلى SRC-F725E90B2A-L001100
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000301](../../tests/test_web_agent.py#L301) | 301 | `"    assert set(shared[\"providers\"]) == {\"ddg\", \"bing\"}"` | — |
+| [SRC-F725E90B2A-L000302](../../tests/test_web_agent.py#L302) | 302 | `"    assert {\"query one\", \"query two\"}.issubset(set(shared[\"queries\"]))"` | — |
+| [SRC-F725E90B2A-L000303](../../tests/test_web_agent.py#L303) | 303 | `"    assert len(shared[\"queries\"]) >= 2"` | — |
+| [SRC-F725E90B2A-L000304](../../tests/test_web_agent.py#L304) | 304 | `"    assert report[\"queries_planned\"] >= 2"` | — |
+| [SRC-F725E90B2A-L000305](../../tests/test_web_agent.py#L305) | 305 | `"    assert report[\"queries_attempted\"] >= 2"` | — |
+| [SRC-F725E90B2A-L000306](../../tests/test_web_agent.py#L306) | 306 | `"    assert report[\"expansion_queries\"]"` | — |
+| [SRC-F725E90B2A-L000307](../../tests/test_web_agent.py#L307) | 307 | `"    assert report[\"pages_fetched\"] == 3"` | — |
+| [SRC-F725E90B2A-L000308](../../tests/test_web_agent.py#L308) | 308 | `"    assert \"ddg\" in report[\"providers_used\"]"` | — |
+| [SRC-F725E90B2A-L000309](../../tests/test_web_agent.py#L309) | 309 | `"    assert \"bing\" in report[\"providers_used\"]"` | — |
+| [SRC-F725E90B2A-L000310](../../tests/test_web_agent.py#L310) | 310 | `""` | — |
 | [SRC-F725E90B2A-L000311](../../tests/test_web_agent.py#L311) | 311 | `""` | — |
 | [SRC-F725E90B2A-L000312](../../tests/test_web_agent.py#L312) | 312 | `"def test_research_collection_preserves_results_when_query_budget_is_exhausted(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000313](../../tests/test_web_agent.py#L313) | 313 | `"    \"\"\"A budget-limited query must not erase evidence returned by other queries.\"\"\""` | — |
@@ -806,13 +816,3 @@
 | [SRC-F725E90B2A-L001098](../../tests/test_web_agent.py#L1098) | 1098 | `"        for row in diagnostics"` | — |
 | [SRC-F725E90B2A-L001099](../../tests/test_web_agent.py#L1099) | 1099 | `"    )"` | — |
 | [SRC-F725E90B2A-L001100](../../tests/test_web_agent.py#L1100) | 1100 | `""` | — |
-| [SRC-F725E90B2A-L001101](../../tests/test_web_agent.py#L1101) | 1101 | `""` | — |
-| [SRC-F725E90B2A-L001102](../../tests/test_web_agent.py#L1102) | 1102 | `"def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001103](../../tests/test_web_agent.py#L1103) | 1103 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001104](../../tests/test_web_agent.py#L1104) | 1104 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001105](../../tests/test_web_agent.py#L1105) | 1105 | `"    source = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L001106](../../tests/test_web_agent.py#L1106) | 1106 | `"    source[\"providers\"] = [\"user_supplied_url\"]"` | — |
-| [SRC-F725E90B2A-L001107](../../tests/test_web_agent.py#L1107) | 1107 | `"    source[\"page_fetched\"] = True"` | — |
-| [SRC-F725E90B2A-L001108](../../tests/test_web_agent.py#L1108) | 1108 | `"    source[\"page_text\"] = \"النص الكامل المستخرج من الصفحة التي قدمها المستخدم.\""` | — |
-| [SRC-F725E90B2A-L001109](../../tests/test_web_agent.py#L1109) | 1109 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001110](../../tests/test_web_agent.py#L1110) | 1110 | `"        \"queries\": [\"لخص الصفحة\"],"` | — |

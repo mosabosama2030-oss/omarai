@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001176 إلى SRC-1AE03B9EC3-L001975
+- النطاق: SRC-1AE03B9EC3-L001166 إلى SRC-1AE03B9EC3-L001965
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001166](../../agents/web_agent.py#L1166) | 1166 | `"                \"ضبط إعداداتها، ولا أضمن الوصول إلى كل موقع أو إلى المجموعات والمنشورات \""` | — |
+| [SRC-1AE03B9EC3-L001167](../../agents/web_agent.py#L1167) | 1167 | `"                \"الخاصة. لم أجرِ اختبار اتصال حي في هذه الإجابة.\""` | — |
+| [SRC-1AE03B9EC3-L001168](../../agents/web_agent.py#L1168) | 1168 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001169](../../agents/web_agent.py#L1169) | 1169 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L001170](../../agents/web_agent.py#L1170) | 1170 | `"            status = self.status()"` | — |
+| [SRC-1AE03B9EC3-L001171](../../agents/web_agent.py#L1171) | 1171 | `"            providers = [\"DuckDuckGo HTML\", \"Bing RSS\"]"` | — |
+| [SRC-1AE03B9EC3-L001172](../../agents/web_agent.py#L1172) | 1172 | `"            providers.append(\"Google News RSS عند ملاءمة السؤال أو الحاجة إلى معلومات حديثة\")"` | — |
+| [SRC-1AE03B9EC3-L001173](../../agents/web_agent.py#L1173) | 1173 | `"            if status.get(\"deepseek_search_api_configured\"):"` | — |
+| [SRC-1AE03B9EC3-L001174](../../agents/web_agent.py#L1174) | 1174 | `"                providers.append("` | — |
+| [SRC-1AE03B9EC3-L001175](../../agents/web_agent.py#L1175) | 1175 | `"                    \"DeepSeek Search API (مفتاحه مضبوط، لكنه غير مختبر في هذه الإجابة \""` | — |
 | [SRC-1AE03B9EC3-L001176](../../agents/web_agent.py#L1176) | 1176 | `"                    \"وقد يستهلك استخدامًا مدفوعًا)\""` | — |
 | [SRC-1AE03B9EC3-L001177](../../agents/web_agent.py#L1177) | 1177 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L001178](../../agents/web_agent.py#L1178) | 1178 | `"            if status.get(\"brave_search_api_configured\"):"` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L001963](../../agents/web_agent.py#L1963) | 1963 | `"                            ]) + 1,"` | — |
 | [SRC-1AE03B9EC3-L001964](../../agents/web_agent.py#L1964) | 1964 | `"                            \"search_query\": query,"` | — |
 | [SRC-1AE03B9EC3-L001965](../../agents/web_agent.py#L1965) | 1965 | `"                            \"published_at\": _clean_text(post.get(\"indexedAt\") or \"\", 100),"` | — |
-| [SRC-1AE03B9EC3-L001966](../../agents/web_agent.py#L1966) | 1966 | `"                        })"` | — |
-| [SRC-1AE03B9EC3-L001967](../../agents/web_agent.py#L1967) | 1967 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L001968](../../agents/web_agent.py#L1968) | 1968 | `"                    warnings.append(f\"Bluesky public search unavailable (HTTP {response.status_code})\")"` | — |
-| [SRC-1AE03B9EC3-L001969](../../agents/web_agent.py#L1969) | 1969 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
-| [SRC-1AE03B9EC3-L001970](../../agents/web_agent.py#L1970) | 1970 | `"                warnings.append(\"Bluesky public search unavailable for this request\")"` | — |
-| [SRC-1AE03B9EC3-L001971](../../agents/web_agent.py#L1971) | 1971 | `""` | — |
-| [SRC-1AE03B9EC3-L001972](../../agents/web_agent.py#L1972) | 1972 | `"        if \"facebook\" in platforms:"` | — |
-| [SRC-1AE03B9EC3-L001973](../../agents/web_agent.py#L1973) | 1973 | `"            fb_token = os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001974](../../agents/web_agent.py#L1974) | 1974 | `"            page_ids = ["` | — |
-| [SRC-1AE03B9EC3-L001975](../../agents/web_agent.py#L1975) | 1975 | `"                value.strip()"` | — |

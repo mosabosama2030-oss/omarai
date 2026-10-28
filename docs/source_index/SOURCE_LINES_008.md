@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001976 إلى SRC-1AE03B9EC3-L002775
+- النطاق: SRC-1AE03B9EC3-L001966 إلى SRC-1AE03B9EC3-L002765
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001966](../../agents/web_agent.py#L1966) | 1966 | `"                        })"` | — |
+| [SRC-1AE03B9EC3-L001967](../../agents/web_agent.py#L1967) | 1967 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L001968](../../agents/web_agent.py#L1968) | 1968 | `"                    warnings.append(f\"Bluesky public search unavailable (HTTP {response.status_code})\")"` | — |
+| [SRC-1AE03B9EC3-L001969](../../agents/web_agent.py#L1969) | 1969 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L001970](../../agents/web_agent.py#L1970) | 1970 | `"                warnings.append(\"Bluesky public search unavailable for this request\")"` | — |
+| [SRC-1AE03B9EC3-L001971](../../agents/web_agent.py#L1971) | 1971 | `""` | — |
+| [SRC-1AE03B9EC3-L001972](../../agents/web_agent.py#L1972) | 1972 | `"        if \"facebook\" in platforms:"` | — |
+| [SRC-1AE03B9EC3-L001973](../../agents/web_agent.py#L1973) | 1973 | `"            fb_token = os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L001974](../../agents/web_agent.py#L1974) | 1974 | `"            page_ids = ["` | — |
+| [SRC-1AE03B9EC3-L001975](../../agents/web_agent.py#L1975) | 1975 | `"                value.strip()"` | — |
 | [SRC-1AE03B9EC3-L001976](../../agents/web_agent.py#L1976) | 1976 | `"                for value in os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").split(\",\")"` | — |
 | [SRC-1AE03B9EC3-L001977](../../agents/web_agent.py#L1977) | 1977 | `"                if value.strip()"` | — |
 | [SRC-1AE03B9EC3-L001978](../../agents/web_agent.py#L1978) | 1978 | `"            ][:5]"` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L002763](../../agents/web_agent.py#L2763) | 2763 | `"            \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-1AE03B9EC3-L002764](../../agents/web_agent.py#L2764) | 2764 | `"            \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
 | [SRC-1AE03B9EC3-L002765](../../agents/web_agent.py#L2765) | 2765 | `"            \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
-| [SRC-1AE03B9EC3-L002766](../../agents/web_agent.py#L2766) | 2766 | `"            \"provider_diagnostics\": provider_diagnostics,"` | — |
-| [SRC-1AE03B9EC3-L002767](../../agents/web_agent.py#L2767) | 2767 | `"            \"connector_summary\": self._connector_status_summary("` | — |
-| [SRC-1AE03B9EC3-L002768](../../agents/web_agent.py#L2768) | 2768 | `"                provider_diagnostics, sources"` | — |
-| [SRC-1AE03B9EC3-L002769](../../agents/web_agent.py#L2769) | 2769 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L002770](../../agents/web_agent.py#L2770) | 2770 | `"            \"pages_fetch_attempted\": len(fetch_targets),"` | — |
-| [SRC-1AE03B9EC3-L002771](../../agents/web_agent.py#L2771) | 2771 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002772](../../agents/web_agent.py#L2772) | 2772 | `"        coverage_targets = plan.get(\"coverage_targets\") or []"` | — |
-| [SRC-1AE03B9EC3-L002773](../../agents/web_agent.py#L2773) | 2773 | `"        if isinstance(coverage_targets, list) and coverage_targets:"` | — |
-| [SRC-1AE03B9EC3-L002774](../../agents/web_agent.py#L2774) | 2774 | `"            safe_targets = ["` | — |
-| [SRC-1AE03B9EC3-L002775](../../agents/web_agent.py#L2775) | 2775 | `"                target[:120]"` | — |

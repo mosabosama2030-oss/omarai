@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004376 إلى SRC-1AE03B9EC3-L005175
+- النطاق: SRC-1AE03B9EC3-L004366 إلى SRC-1AE03B9EC3-L005165
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004366](../../agents/web_agent.py#L4366) | 4366 | `"                    general_answer[\"dialogue_context\"] = context_override"` | — |
+| [SRC-1AE03B9EC3-L004367](../../agents/web_agent.py#L4367) | 4367 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
+| [SRC-1AE03B9EC3-L004368](../../agents/web_agent.py#L4368) | 4368 | `"                        general_answer[\"research_plan\"][\"dialogue_context\"] = context_override"` | — |
+| [SRC-1AE03B9EC3-L004369](../../agents/web_agent.py#L4369) | 4369 | `"                return self._annotate_intent_route("` | — |
+| [SRC-1AE03B9EC3-L004370](../../agents/web_agent.py#L4370) | 4370 | `"                    general_answer, intent_route, intent_reason, clean_mode"` | — |
+| [SRC-1AE03B9EC3-L004371](../../agents/web_agent.py#L4371) | 4371 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004372](../../agents/web_agent.py#L4372) | 4372 | `"            # Preserve the existing degraded-mode behavior when generation is unavailable:"` | — |
+| [SRC-1AE03B9EC3-L004373](../../agents/web_agent.py#L4373) | 4373 | `"            # run the current web pipeline rather than fabricate a model-only answer."` | — |
+| [SRC-1AE03B9EC3-L004374](../../agents/web_agent.py#L4374) | 4374 | `"            intent_route = \"WEB_SIMPLE\""` | — |
+| [SRC-1AE03B9EC3-L004375](../../agents/web_agent.py#L4375) | 4375 | `"            intent_reason = \"model_unavailable_fallback_to_existing_web_research\""` | — |
 | [SRC-1AE03B9EC3-L004376](../../agents/web_agent.py#L4376) | 4376 | `""` | — |
 | [SRC-1AE03B9EC3-L004377](../../agents/web_agent.py#L4377) | 4377 | `"        if context_override is None:"` | — |
 | [SRC-1AE03B9EC3-L004378](../../agents/web_agent.py#L4378) | 4378 | `"            # Preserve compatibility with existing integrations and test doubles."` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L005163](../../agents/web_agent.py#L5163) | 5163 | `"        report[\"queries_attempted_known\"] = queries_attempted is not None"` | — |
 | [SRC-1AE03B9EC3-L005164](../../agents/web_agent.py#L5164) | 5164 | `"        report[\"search_attempted\"] = search_attempted"` | — |
 | [SRC-1AE03B9EC3-L005165](../../agents/web_agent.py#L5165) | 5165 | `"        previous_search_outcome = report.get(\"search_outcome\")"` | — |
-| [SRC-1AE03B9EC3-L005166](../../agents/web_agent.py#L5166) | 5166 | `"        if previous_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:"` | — |
-| [SRC-1AE03B9EC3-L005167](../../agents/web_agent.py#L5167) | 5167 | `"            if provider_attempt_observed or search_attempted is True:"` | — |
-| [SRC-1AE03B9EC3-L005168](../../agents/web_agent.py#L5168) | 5168 | `"                search_outcome = \"attempted_research_error\""` | — |
-| [SRC-1AE03B9EC3-L005169](../../agents/web_agent.py#L5169) | 5169 | `"            elif search_attempted is False:"` | — |
-| [SRC-1AE03B9EC3-L005170](../../agents/web_agent.py#L5170) | 5170 | `"                search_outcome = \"not_attempted\""` | — |
-| [SRC-1AE03B9EC3-L005171](../../agents/web_agent.py#L5171) | 5171 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L005172](../../agents/web_agent.py#L5172) | 5172 | `"                search_outcome = \"unknown_after_research_error\""` | — |
-| [SRC-1AE03B9EC3-L005173](../../agents/web_agent.py#L5173) | 5173 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L005174](../../agents/web_agent.py#L5174) | 5174 | `"            search_outcome = ("` | — |
-| [SRC-1AE03B9EC3-L005175](../../agents/web_agent.py#L5175) | 5175 | `"                \"attempted_with_usable_sources\" if search_attempted is True and sources"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000376 إلى SRC-1AE03B9EC3-L001175
+- النطاق: SRC-1AE03B9EC3-L000366 إلى SRC-1AE03B9EC3-L001165
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000366](../../agents/web_agent.py#L366) | 366 | `""` | — |
+| [SRC-1AE03B9EC3-L000367](../../agents/web_agent.py#L367) | 367 | `""` | — |
+| [SRC-1AE03B9EC3-L000368](../../agents/web_agent.py#L368) | 368 | `"class PageFetchResult(tuple):"` | — |
+| [SRC-1AE03B9EC3-L000369](../../agents/web_agent.py#L369) | 369 | `"    \"\"\"Two-item tuple compatible with legacy callers, with structured extraction status.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000370](../../agents/web_agent.py#L370) | 370 | `""` | — |
+| [SRC-1AE03B9EC3-L000371](../../agents/web_agent.py#L371) | 371 | `"    def __new__("` | — |
+| [SRC-1AE03B9EC3-L000372](../../agents/web_agent.py#L372) | 372 | `"        cls,"` | — |
+| [SRC-1AE03B9EC3-L000373](../../agents/web_agent.py#L373) | 373 | `"        title: str = \"\","` | — |
+| [SRC-1AE03B9EC3-L000374](../../agents/web_agent.py#L374) | 374 | `"        page_text: str = \"\","` | — |
+| [SRC-1AE03B9EC3-L000375](../../agents/web_agent.py#L375) | 375 | `"        status: str = \"unknown\","` | — |
 | [SRC-1AE03B9EC3-L000376](../../agents/web_agent.py#L376) | 376 | `"        error_class: str \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000377](../../agents/web_agent.py#L377) | 377 | `"    ):"` | — |
 | [SRC-1AE03B9EC3-L000378](../../agents/web_agent.py#L378) | 378 | `"        value = super().__new__(cls, (title, page_text))"` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L001163](../../agents/web_agent.py#L1163) | 1163 | `"                \"للبحث في الويب عند الحاجة إلى معلومات حديثة أو روابط أو مقارنة خيارات. \""` | — |
 | [SRC-1AE03B9EC3-L001164](../../agents/web_agent.py#L1164) | 1164 | `"                \"سأوضح في كل مهمة ما إذا نُفذ البحث فعلًا وما المصادر التي أمكن جمعها، \""` | — |
 | [SRC-1AE03B9EC3-L001165](../../agents/web_agent.py#L1165) | 1165 | `"                \"وما الذي لم يمكن التحقق منه. قد تعمل بعض الموصلات الاختيارية فقط عند \""` | — |
-| [SRC-1AE03B9EC3-L001166](../../agents/web_agent.py#L1166) | 1166 | `"                \"ضبط إعداداتها، ولا أضمن الوصول إلى كل موقع أو إلى المجموعات والمنشورات \""` | — |
-| [SRC-1AE03B9EC3-L001167](../../agents/web_agent.py#L1167) | 1167 | `"                \"الخاصة. لم أجرِ اختبار اتصال حي في هذه الإجابة.\""` | — |
-| [SRC-1AE03B9EC3-L001168](../../agents/web_agent.py#L1168) | 1168 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001169](../../agents/web_agent.py#L1169) | 1169 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L001170](../../agents/web_agent.py#L1170) | 1170 | `"            status = self.status()"` | — |
-| [SRC-1AE03B9EC3-L001171](../../agents/web_agent.py#L1171) | 1171 | `"            providers = [\"DuckDuckGo HTML\", \"Bing RSS\"]"` | — |
-| [SRC-1AE03B9EC3-L001172](../../agents/web_agent.py#L1172) | 1172 | `"            providers.append(\"Google News RSS عند ملاءمة السؤال أو الحاجة إلى معلومات حديثة\")"` | — |
-| [SRC-1AE03B9EC3-L001173](../../agents/web_agent.py#L1173) | 1173 | `"            if status.get(\"deepseek_search_api_configured\"):"` | — |
-| [SRC-1AE03B9EC3-L001174](../../agents/web_agent.py#L1174) | 1174 | `"                providers.append("` | — |
-| [SRC-1AE03B9EC3-L001175](../../agents/web_agent.py#L1175) | 1175 | `"                    \"DeepSeek Search API (مفتاحه مضبوط، لكنه غير مختبر في هذه الإجابة \""` | — |

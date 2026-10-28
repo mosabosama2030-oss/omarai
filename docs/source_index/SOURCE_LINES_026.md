@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000438 إلى SRC-90FAA34ADE-L001237
+- النطاق: SRC-90FAA34ADE-L000428 إلى SRC-90FAA34ADE-L001227
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000428](../../tests/fixtures/answer_quality_cases.json#L428) | 428 | `"        \"Does not invent an announcement\""` | — |
+| [SRC-90FAA34ADE-L000429](../../tests/fixtures/answer_quality_cases.json#L429) | 429 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000430](../../tests/fixtures/answer_quality_cases.json#L430) | 430 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000431](../../tests/fixtures/answer_quality_cases.json#L431) | 431 | `"        \"Claims a successful search when all configured providers fail\","` | — |
+| [SRC-90FAA34ADE-L000432](../../tests/fixtures/answer_quality_cases.json#L432) | 432 | `"        \"Fabricates an official URL\""` | — |
+| [SRC-90FAA34ADE-L000433](../../tests/fixtures/answer_quality_cases.json#L433) | 433 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000434](../../tests/fixtures/answer_quality_cases.json#L434) | 434 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000435](../../tests/fixtures/answer_quality_cases.json#L435) | 435 | `"        \"type\": \"controlled_fetch_failure\","` | — |
+| [SRC-90FAA34ADE-L000436](../../tests/fixtures/answer_quality_cases.json#L436) | 436 | `"        \"providers\": ["` | — |
+| [SRC-90FAA34ADE-L000437](../../tests/fixtures/answer_quality_cases.json#L437) | 437 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000438](../../tests/fixtures/answer_quality_cases.json#L438) | 438 | `"            \"name\": \"fixture_search_a\","` | — |
 | [SRC-90FAA34ADE-L000439](../../tests/fixtures/answer_quality_cases.json#L439) | 439 | `"            \"error\": \"timeout\""` | — |
 | [SRC-90FAA34ADE-L000440](../../tests/fixtures/answer_quality_cases.json#L440) | 440 | `"          },"` | — |
@@ -806,13 +816,3 @@
 | [SRC-90FAA34ADE-L001225](../../tests/fixtures/answer_quality_cases.json#L1225) | 1225 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L001226](../../tests/fixtures/answer_quality_cases.json#L1226) | 1226 | `"          {"` | — |
 | [SRC-90FAA34ADE-L001227](../../tests/fixtures/answer_quality_cases.json#L1227) | 1227 | `"            \"title\": \"Cairo forecast fixture\","` | — |
-| [SRC-90FAA34ADE-L001228](../../tests/fixtures/answer_quality_cases.json#L1228) | 1228 | `"            \"url\": \"https://weather-cairo.example.test/forecast\","` | — |
-| [SRC-90FAA34ADE-L001229](../../tests/fixtures/answer_quality_cases.json#L1229) | 1229 | `"            \"snippet\": \"Forecast available only for Cairo on 2026-10-18.\","` | — |
-| [SRC-90FAA34ADE-L001230](../../tests/fixtures/answer_quality_cases.json#L1230) | 1230 | `"            \"domain\": \"weather-cairo.example.test\","` | — |
-| [SRC-90FAA34ADE-L001231](../../tests/fixtures/answer_quality_cases.json#L1231) | 1231 | `"            \"provider\": \"fixture_search\""` | — |
-| [SRC-90FAA34ADE-L001232](../../tests/fixtures/answer_quality_cases.json#L1232) | 1232 | `"          }"` | — |
-| [SRC-90FAA34ADE-L001233](../../tests/fixtures/answer_quality_cases.json#L1233) | 1233 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L001234](../../tests/fixtures/answer_quality_cases.json#L1234) | 1234 | `"        \"notes\": \"No Alexandria weather fixture; reviewer must check explicit missing-data handling\""` | — |
-| [SRC-90FAA34ADE-L001235](../../tests/fixtures/answer_quality_cases.json#L1235) | 1235 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001236](../../tests/fixtures/answer_quality_cases.json#L1236) | 1236 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001237](../../tests/fixtures/answer_quality_cases.json#L1237) | 1237 | `"        \"One city or one of the four dimensions is silently omitted\","` | — |

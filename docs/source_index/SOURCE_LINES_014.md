@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000037 إلى SRC-51D44BE378-L000044
+- النطاق: SRC-792A9A235D-L000027 إلى SRC-51D44BE378-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `"\| القيمة \| المعنى العملي \|"` | — |
+| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"\|--------\|----------------\|"` | — |
+| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
+| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
+| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
+| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
+| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | `""` | — |
+| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
+| [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | `""` | — |
+| [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `"\| الوضع \| متى يُستخدم \|"` | — |
 | [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | `"\|--------\|-------------\|"` | — |
 | [SRC-792A9A235D-L000038](../ANSWER_QUALITY_BENCHMARK_AR.md#L38) | 38 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
 | [SRC-792A9A235D-L000039](../ANSWER_QUALITY_BENCHMARK_AR.md#L39) | 39 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
@@ -869,13 +879,3 @@
 | [SRC-51D44BE378-L000032](../DEPLOY_SNAPDEPLOY_AR.md#L32) | 32 | ``"2. أضف أو حدّث متغير البيئة غير السري `PUBLIC_OMARAI_BUILD_SHA` على خدمة SnapDeploy واجعل قيمته هي SHA نفسه. هذا المتغير بيانات إصدار علنية وليست رمز وصول أو مفتاح API؛ لا تستخدم البادئة العامة مطلقًا لأي سر."`` | — |
 | [SRC-51D44BE378-L000033](../DEPLOY_SNAPDEPLOY_AR.md#L33) | 33 | ``"3. أعد بناء الخدمة/نشرها بعد تعيين القيمة. يقرأ Dockerfile `PUBLIC_OMARAI_BUILD_SHA` كبديل لوسيط `OMARAI_BUILD_SHA` التقليدي، ويتحقق من شكله قبل كتابة ملف هوية البناء."`` | — |
 | [SRC-51D44BE378-L000034](../DEPLOY_SNAPDEPLOY_AR.md#L34) | 34 | ``"4. افتح `/api/health` وتحقق من أن `build.sha` يطابق الالتزام الكامل الذي اخترته بالضبط، وأن `sha_status=available` و`sha_source=image_baked`."`` | — |
-| [SRC-51D44BE378-L000035](../DEPLOY_SNAPDEPLOY_AR.md#L35) | 35 | `""` | — |
-| [SRC-51D44BE378-L000036](../DEPLOY_SNAPDEPLOY_AR.md#L36) | 36 | `"في بيئات Docker التي تسمح بتمرير وسيطات البناء مباشرة، يظل هذا الأمر مدعومًا:"` | — |
-| [SRC-51D44BE378-L000037](../DEPLOY_SNAPDEPLOY_AR.md#L37) | 37 | `""` | — |
-| [SRC-51D44BE378-L000038](../DEPLOY_SNAPDEPLOY_AR.md#L38) | 38 | ````"```bash"```` | — |
-| [SRC-51D44BE378-L000039](../DEPLOY_SNAPDEPLOY_AR.md#L39) | 39 | `"docker build --build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\" ."` | — |
-| [SRC-51D44BE378-L000040](../DEPLOY_SNAPDEPLOY_AR.md#L40) | 40 | ````"```"```` | — |
-| [SRC-51D44BE378-L000041](../DEPLOY_SNAPDEPLOY_AR.md#L41) | 41 | `""` | — |
-| [SRC-51D44BE378-L000042](../DEPLOY_SNAPDEPLOY_AR.md#L42) | 42 | ``"لا تعلن قبول الإصدار إذا ظلت قيمة `build.sha` تساوي `unknown`. تغيير قيمة المتغير وحده أو نجاح صفحة الصحة لا يثبت أن مزودي البحث أو النموذج يعملون؛ أكمل اختبارات القبول الحية بشكل منفصل."`` | — |
-| [SRC-51D44BE378-L000043](../DEPLOY_SNAPDEPLOY_AR.md#L43) | 43 | `""` | — |
-| [SRC-51D44BE378-L000044](../DEPLOY_SNAPDEPLOY_AR.md#L44) | 44 | `"## 2. ضبط متغيرات البيئة والأسرار"` | — |

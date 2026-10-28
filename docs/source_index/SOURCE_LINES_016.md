@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000738 إلى SRC-E599346ABE-L001537
+- النطاق: SRC-E599346ABE-L000728 إلى SRC-E599346ABE-L001527
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000728](../generate_index.py#L728) | 728 | `"def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:"` | — |
+| [SRC-E599346ABE-L000729](../generate_index.py#L729) | 729 | `"    \"\"\"Parse every eligible Python file or fail without producing a partial index.\"\"\""` | — |
+| [SRC-E599346ABE-L000730](../generate_index.py#L730) | 730 | `"    python_files = discover_python_files(root)"` | — |
+| [SRC-E599346ABE-L000731](../generate_index.py#L731) | 731 | `"    all_symbols: list[IndexedSymbol] = []"` | — |
+| [SRC-E599346ABE-L000732](../generate_index.py#L732) | 732 | `"    failures: list[str] = []"` | — |
+| [SRC-E599346ABE-L000733](../generate_index.py#L733) | 733 | `""` | — |
+| [SRC-E599346ABE-L000734](../generate_index.py#L734) | 734 | `"    for source_path in python_files:"` | — |
+| [SRC-E599346ABE-L000735](../generate_index.py#L735) | 735 | `"        relative_file = source_path.relative_to(root).as_posix()"` | — |
+| [SRC-E599346ABE-L000736](../generate_index.py#L736) | 736 | `"        try:"` | — |
+| [SRC-E599346ABE-L000737](../generate_index.py#L737) | 737 | `"            with tokenize.open(str(source_path)) as source_stream:"` | — |
 | [SRC-E599346ABE-L000738](../generate_index.py#L738) | 738 | `"                source = source_stream.read()"` | — |
 | [SRC-E599346ABE-L000739](../generate_index.py#L739) | 739 | `"            syntax_tree = ast.parse(source, filename=relative_file)"` | — |
 | [SRC-E599346ABE-L000740](../generate_index.py#L740) | 740 | `"        except SyntaxError as exc:"` | — |
@@ -806,13 +816,3 @@
 | [SRC-E599346ABE-L001525](../generate_index.py#L1525) | 1525 | `""` | — |
 | [SRC-E599346ABE-L001526](../generate_index.py#L1526) | 1526 | `"    if metadata_only:"` | — |
 | [SRC-E599346ABE-L001527](../generate_index.py#L1527) | 1527 | `"        for item in metadata_only:"` | — |
-| [SRC-E599346ABE-L001528](../generate_index.py#L1528) | 1528 | `"            reason = _text_index_skip_reason(root / item.file)"` | — |
-| [SRC-E599346ABE-L001529](../generate_index.py#L1529) | 1529 | `"            lines.append("` | — |
-| [SRC-E599346ABE-L001530](../generate_index.py#L1530) | 1530 | `"                \"\| \""` | — |
-| [SRC-E599346ABE-L001531](../generate_index.py#L1531) | 1531 | `"                + \" \| \".join("` | — |
-| [SRC-E599346ABE-L001532](../generate_index.py#L1532) | 1532 | `"                    ("` | — |
-| [SRC-E599346ABE-L001533](../generate_index.py#L1533) | 1533 | `"                        item.file_id,"` | — |
-| [SRC-E599346ABE-L001534](../generate_index.py#L1534) | 1534 | `"                        _markdown_code_span(item.file),"` | — |
-| [SRC-E599346ABE-L001535](../generate_index.py#L1535) | 1535 | `"                        str(item.size_bytes),"` | — |
-| [SRC-E599346ABE-L001536](../generate_index.py#L1536) | 1536 | `"                        _markdown_cell(reason),"` | — |
-| [SRC-E599346ABE-L001537](../generate_index.py#L1537) | 1537 | `"                    )"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000045 إلى SRC-E599346ABE-L000737
+- النطاق: SRC-51D44BE378-L000035 إلى SRC-E599346ABE-L000727
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000035](../DEPLOY_SNAPDEPLOY_AR.md#L35) | 35 | `""` | — |
+| [SRC-51D44BE378-L000036](../DEPLOY_SNAPDEPLOY_AR.md#L36) | 36 | `"في بيئات Docker التي تسمح بتمرير وسيطات البناء مباشرة، يظل هذا الأمر مدعومًا:"` | — |
+| [SRC-51D44BE378-L000037](../DEPLOY_SNAPDEPLOY_AR.md#L37) | 37 | `""` | — |
+| [SRC-51D44BE378-L000038](../DEPLOY_SNAPDEPLOY_AR.md#L38) | 38 | ````"```bash"```` | — |
+| [SRC-51D44BE378-L000039](../DEPLOY_SNAPDEPLOY_AR.md#L39) | 39 | `"docker build --build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\" ."` | — |
+| [SRC-51D44BE378-L000040](../DEPLOY_SNAPDEPLOY_AR.md#L40) | 40 | ````"```"```` | — |
+| [SRC-51D44BE378-L000041](../DEPLOY_SNAPDEPLOY_AR.md#L41) | 41 | `""` | — |
+| [SRC-51D44BE378-L000042](../DEPLOY_SNAPDEPLOY_AR.md#L42) | 42 | ``"لا تعلن قبول الإصدار إذا ظلت قيمة `build.sha` تساوي `unknown`. تغيير قيمة المتغير وحده أو نجاح صفحة الصحة لا يثبت أن مزودي البحث أو النموذج يعملون؛ أكمل اختبارات القبول الحية بشكل منفصل."`` | — |
+| [SRC-51D44BE378-L000043](../DEPLOY_SNAPDEPLOY_AR.md#L43) | 43 | `""` | — |
+| [SRC-51D44BE378-L000044](../DEPLOY_SNAPDEPLOY_AR.md#L44) | 44 | `"## 2. ضبط متغيرات البيئة والأسرار"` | — |
 | [SRC-51D44BE378-L000045](../DEPLOY_SNAPDEPLOY_AR.md#L45) | 45 | `""` | — |
 | [SRC-51D44BE378-L000046](../DEPLOY_SNAPDEPLOY_AR.md#L46) | 46 | ``"قد تعرض المنصة متغيرات مكتشفة من `.env.example`. القيم المكتوبة على شكل أمثلة ليست أسرارًا صالحة؛ استبدلها بقيمك الحقيقية في لوحة SnapDeploy فقط."`` | — |
 | [SRC-51D44BE378-L000047](../DEPLOY_SNAPDEPLOY_AR.md#L47) | 47 | `""` | — |
@@ -815,13 +825,3 @@
 | [SRC-E599346ABE-L000725](../generate_index.py#L725) | 725 | `"    ]"` | — |
 | [SRC-E599346ABE-L000726](../generate_index.py#L726) | 726 | `""` | — |
 | [SRC-E599346ABE-L000727](../generate_index.py#L727) | 727 | `""` | — |
-| [SRC-E599346ABE-L000728](../generate_index.py#L728) | 728 | `"def scan_repository(root: Path) -> tuple[list[IndexedSymbol], int]:"` | — |
-| [SRC-E599346ABE-L000729](../generate_index.py#L729) | 729 | `"    \"\"\"Parse every eligible Python file or fail without producing a partial index.\"\"\""` | — |
-| [SRC-E599346ABE-L000730](../generate_index.py#L730) | 730 | `"    python_files = discover_python_files(root)"` | — |
-| [SRC-E599346ABE-L000731](../generate_index.py#L731) | 731 | `"    all_symbols: list[IndexedSymbol] = []"` | — |
-| [SRC-E599346ABE-L000732](../generate_index.py#L732) | 732 | `"    failures: list[str] = []"` | — |
-| [SRC-E599346ABE-L000733](../generate_index.py#L733) | 733 | `""` | — |
-| [SRC-E599346ABE-L000734](../generate_index.py#L734) | 734 | `"    for source_path in python_files:"` | — |
-| [SRC-E599346ABE-L000735](../generate_index.py#L735) | 735 | `"        relative_file = source_path.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000736](../generate_index.py#L736) | 736 | `"        try:"` | — |
-| [SRC-E599346ABE-L000737](../generate_index.py#L737) | 737 | `"            with tokenize.open(str(source_path)) as source_stream:"` | — |

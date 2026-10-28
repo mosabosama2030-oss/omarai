@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000157 إلى SRC-829A979985-L000117
+- النطاق: SRC-6BCB799CEC-L000147 إلى SRC-829A979985-L000107
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000147](../../tests/test_evidence_provenance.py#L147) | 147 | `""` | — |
+| [SRC-6BCB799CEC-L000148](../../tests/test_evidence_provenance.py#L148) | 148 | `"def test_private_resolution_blocks_page_fetch(monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000149](../../tests/test_evidence_provenance.py#L149) | 149 | `"    called = {\"stream\": 0}"` | — |
+| [SRC-6BCB799CEC-L000150](../../tests/test_evidence_provenance.py#L150) | 150 | `""` | — |
+| [SRC-6BCB799CEC-L000151](../../tests/test_evidence_provenance.py#L151) | 151 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000152](../../tests/test_evidence_provenance.py#L152) | 152 | `"        return _addrinfo(\"127.0.0.1\")"` | — |
+| [SRC-6BCB799CEC-L000153](../../tests/test_evidence_provenance.py#L153) | 153 | `""` | — |
+| [SRC-6BCB799CEC-L000154](../../tests/test_evidence_provenance.py#L154) | 154 | `"    class FakeClient:"` | — |
+| [SRC-6BCB799CEC-L000155](../../tests/test_evidence_provenance.py#L155) | 155 | `"        def __init__(self, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000156](../../tests/test_evidence_provenance.py#L156) | 156 | `"            pass"` | — |
 | [SRC-6BCB799CEC-L000157](../../tests/test_evidence_provenance.py#L157) | 157 | `""` | — |
 | [SRC-6BCB799CEC-L000158](../../tests/test_evidence_provenance.py#L158) | 158 | `"        def __enter__(self):"` | — |
 | [SRC-6BCB799CEC-L000159](../../tests/test_evidence_provenance.py#L159) | 159 | `"            return self"` | — |
@@ -833,13 +843,3 @@
 | [SRC-829A979985-L000105](../../tests/test_generation_acceptance_matrix.py#L105) | 105 | `"        return FakeCompletionResponse(f\"نص مبتور من {model}\", \"length\")"` | — |
 | [SRC-829A979985-L000106](../../tests/test_generation_acceptance_matrix.py#L106) | 106 | `""` | — |
 | [SRC-829A979985-L000107](../../tests/test_generation_acceptance_matrix.py#L107) | 107 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-829A979985-L000108](../../tests/test_generation_acceptance_matrix.py#L108) | 108 | `""` | — |
-| [SRC-829A979985-L000109](../../tests/test_generation_acceptance_matrix.py#L109) | 109 | `"    with pytest.raises(RuntimeError, match=\"مبتورة\"):"` | — |
-| [SRC-829A979985-L000110](../../tests/test_generation_acceptance_matrix.py#L110) | 110 | `"        agent._request_completion("` | — |
-| [SRC-829A979985-L000111](../../tests/test_generation_acceptance_matrix.py#L111) | 111 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-829A979985-L000112](../../tests/test_generation_acceptance_matrix.py#L112) | 112 | `"            model=\"primary/model\","` | — |
-| [SRC-829A979985-L000113](../../tests/test_generation_acceptance_matrix.py#L113) | 113 | `"        )"` | — |
-| [SRC-829A979985-L000114](../../tests/test_generation_acceptance_matrix.py#L114) | 114 | `""` | — |
-| [SRC-829A979985-L000115](../../tests/test_generation_acceptance_matrix.py#L115) | 115 | `"    assert calls == [\"primary/model\", \"fallback/model\"]"` | — |
-| [SRC-829A979985-L000116](../../tests/test_generation_acceptance_matrix.py#L116) | 116 | `"    assert agent.model_usage == []"` | — |
-| [SRC-829A979985-L000117](../../tests/test_generation_acceptance_matrix.py#L117) | 117 | `"    assert [item[\"status\"] for item in agent.generation_diagnostics] == ["` | — |

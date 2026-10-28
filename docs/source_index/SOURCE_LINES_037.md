@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001111 إلى SRC-F725E90B2A-L001910
+- النطاق: SRC-F725E90B2A-L001101 إلى SRC-F725E90B2A-L001900
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001101](../../tests/test_web_agent.py#L1101) | 1101 | `""` | — |
+| [SRC-F725E90B2A-L001102](../../tests/test_web_agent.py#L1102) | 1102 | `"def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001103](../../tests/test_web_agent.py#L1103) | 1103 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001104](../../tests/test_web_agent.py#L1104) | 1104 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001105](../../tests/test_web_agent.py#L1105) | 1105 | `"    source = sample_source(0)"` | — |
+| [SRC-F725E90B2A-L001106](../../tests/test_web_agent.py#L1106) | 1106 | `"    source[\"providers\"] = [\"user_supplied_url\"]"` | — |
+| [SRC-F725E90B2A-L001107](../../tests/test_web_agent.py#L1107) | 1107 | `"    source[\"page_fetched\"] = True"` | — |
+| [SRC-F725E90B2A-L001108](../../tests/test_web_agent.py#L1108) | 1108 | `"    source[\"page_text\"] = \"النص الكامل المستخرج من الصفحة التي قدمها المستخدم.\""` | — |
+| [SRC-F725E90B2A-L001109](../../tests/test_web_agent.py#L1109) | 1109 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L001110](../../tests/test_web_agent.py#L1110) | 1110 | `"        \"queries\": [\"لخص الصفحة\"],"` | — |
 | [SRC-F725E90B2A-L001111](../../tests/test_web_agent.py#L1111) | 1111 | `"        \"direct_urls\": [\"https://example.com/research\"],"` | — |
 | [SRC-F725E90B2A-L001112](../../tests/test_web_agent.py#L1112) | 1112 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001113](../../tests/test_web_agent.py#L1113) | 1113 | `"        \"freshness\": \"any\","` | — |
@@ -806,13 +816,3 @@
 | [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001899](../../tests/test_web_agent.py#L1899) | 1899 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001900](../../tests/test_web_agent.py#L1900) | 1900 | `"    }"` | — |
-| [SRC-F725E90B2A-L001901](../../tests/test_web_agent.py#L1901) | 1901 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L001902](../../tests/test_web_agent.py#L1902) | 1902 | `""` | — |
-| [SRC-F725E90B2A-L001903](../../tests/test_web_agent.py#L1903) | 1903 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L001904](../../tests/test_web_agent.py#L1904) | 1904 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001905](../../tests/test_web_agent.py#L1905) | 1905 | `"        return [], [], {"` | — |
-| [SRC-F725E90B2A-L001906](../../tests/test_web_agent.py#L1906) | 1906 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L001907](../../tests/test_web_agent.py#L1907) | 1907 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001908](../../tests/test_web_agent.py#L1908) | 1908 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 0}],"` | — |
-| [SRC-F725E90B2A-L001909](../../tests/test_web_agent.py#L1909) | 1909 | `"            \"unique_sources\": 0,"` | — |
-| [SRC-F725E90B2A-L001910](../../tests/test_web_agent.py#L1910) | 1910 | `"            \"pages_fetched\": 0,"` | — |

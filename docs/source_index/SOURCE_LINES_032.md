@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000118 إلى SRC-1A176AD4F0-L000012
+- النطاق: SRC-829A979985-L000108 إلى SRC-1A176AD4F0-L000002
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000108](../../tests/test_generation_acceptance_matrix.py#L108) | 108 | `""` | — |
+| [SRC-829A979985-L000109](../../tests/test_generation_acceptance_matrix.py#L109) | 109 | `"    with pytest.raises(RuntimeError, match=\"مبتورة\"):"` | — |
+| [SRC-829A979985-L000110](../../tests/test_generation_acceptance_matrix.py#L110) | 110 | `"        agent._request_completion("` | — |
+| [SRC-829A979985-L000111](../../tests/test_generation_acceptance_matrix.py#L111) | 111 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-829A979985-L000112](../../tests/test_generation_acceptance_matrix.py#L112) | 112 | `"            model=\"primary/model\","` | — |
+| [SRC-829A979985-L000113](../../tests/test_generation_acceptance_matrix.py#L113) | 113 | `"        )"` | — |
+| [SRC-829A979985-L000114](../../tests/test_generation_acceptance_matrix.py#L114) | 114 | `""` | — |
+| [SRC-829A979985-L000115](../../tests/test_generation_acceptance_matrix.py#L115) | 115 | `"    assert calls == [\"primary/model\", \"fallback/model\"]"` | — |
+| [SRC-829A979985-L000116](../../tests/test_generation_acceptance_matrix.py#L116) | 116 | `"    assert agent.model_usage == []"` | — |
+| [SRC-829A979985-L000117](../../tests/test_generation_acceptance_matrix.py#L117) | 117 | `"    assert [item[\"status\"] for item in agent.generation_diagnostics] == ["` | — |
 | [SRC-829A979985-L000118](../../tests/test_generation_acceptance_matrix.py#L118) | 118 | `"        \"truncated\","` | — |
 | [SRC-829A979985-L000119](../../tests/test_generation_acceptance_matrix.py#L119) | 119 | `"        \"truncated\","` | — |
 | [SRC-829A979985-L000120](../../tests/test_generation_acceptance_matrix.py#L120) | 120 | `"    ]"` | — |
@@ -824,13 +834,3 @@
 |---|---:|---|---|
 | [SRC-1A176AD4F0-L000001](../../tests/test_hosted_smoke.py#L1) | 1 | `"from __future__ import annotations"` | — |
 | [SRC-1A176AD4F0-L000002](../../tests/test_hosted_smoke.py#L2) | 2 | `""` | — |
-| [SRC-1A176AD4F0-L000003](../../tests/test_hosted_smoke.py#L3) | 3 | `"import json"` | — |
-| [SRC-1A176AD4F0-L000004](../../tests/test_hosted_smoke.py#L4) | 4 | `"import threading"` | — |
-| [SRC-1A176AD4F0-L000005](../../tests/test_hosted_smoke.py#L5) | 5 | `"from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer"` | — |
-| [SRC-1A176AD4F0-L000006](../../tests/test_hosted_smoke.py#L6) | 6 | `"from urllib.parse import urlsplit"` | — |
-| [SRC-1A176AD4F0-L000007](../../tests/test_hosted_smoke.py#L7) | 7 | `""` | — |
-| [SRC-1A176AD4F0-L000008](../../tests/test_hosted_smoke.py#L8) | 8 | `"import pytest"` | — |
-| [SRC-1A176AD4F0-L000009](../../tests/test_hosted_smoke.py#L9) | 9 | `""` | — |
-| [SRC-1A176AD4F0-L000010](../../tests/test_hosted_smoke.py#L10) | 10 | `"from scripts import hosted_smoke_test"` | — |
-| [SRC-1A176AD4F0-L000011](../../tests/test_hosted_smoke.py#L11) | 11 | `"from scripts.hosted_smoke_test import SmokeError, normalize_origin, run_smoke"` | — |
-| [SRC-1A176AD4F0-L000012](../../tests/test_hosted_smoke.py#L12) | 12 | `""` | — |

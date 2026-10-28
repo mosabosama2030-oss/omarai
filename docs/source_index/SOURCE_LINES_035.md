@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000159 إلى SRC-F725E90B2A-L000310
+- النطاق: SRC-01E35ABC46-L000149 إلى SRC-F725E90B2A-L000300
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000149](../../tests/test_research_guardrails.py#L149) | 149 | `"    assert any(d[\"reason\"] == \"duplicate_title_domain\" for d in diag)"` | — |
+| [SRC-01E35ABC46-L000150](../../tests/test_research_guardrails.py#L150) | 150 | `""` | — |
+| [SRC-01E35ABC46-L000151](../../tests/test_research_guardrails.py#L151) | 151 | `""` | — |
+| [SRC-01E35ABC46-L000152](../../tests/test_research_guardrails.py#L152) | 152 | `"def test_filter_empty_and_failed_extract():"` | — |
+| [SRC-01E35ABC46-L000153](../../tests/test_research_guardrails.py#L153) | 153 | `"    kept, diag = filter_relevant_sources([], \"anything\")"` | — |
+| [SRC-01E35ABC46-L000154](../../tests/test_research_guardrails.py#L154) | 154 | `"    assert kept == []"` | — |
+| [SRC-01E35ABC46-L000155](../../tests/test_research_guardrails.py#L155) | 155 | `"    assert diag == []"` | — |
+| [SRC-01E35ABC46-L000156](../../tests/test_research_guardrails.py#L156) | 156 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000157](../../tests/test_research_guardrails.py#L157) | 157 | `"        \"title\": \"\","` | — |
+| [SRC-01E35ABC46-L000158](../../tests/test_research_guardrails.py#L158) | 158 | `"        \"url\": \"https://example.com/x\","` | — |
 | [SRC-01E35ABC46-L000159](../../tests/test_research_guardrails.py#L159) | 159 | `"        \"snippet\": \"\","` | — |
 | [SRC-01E35ABC46-L000160](../../tests/test_research_guardrails.py#L160) | 160 | `"        \"page_text\": \"\","` | — |
 | [SRC-01E35ABC46-L000161](../../tests/test_research_guardrails.py#L161) | 161 | `"        \"domain\": \"example.com\","` | — |
@@ -833,13 +843,3 @@
 | [SRC-F725E90B2A-L000298](../../tests/test_web_agent.py#L298) | 298 | `"    shared = next(item for item in sources if \"shared\" in item[\"url\"])"` | — |
 | [SRC-F725E90B2A-L000299](../../tests/test_web_agent.py#L299) | 299 | `"    assert warnings == []"` | — |
 | [SRC-F725E90B2A-L000300](../../tests/test_web_agent.py#L300) | 300 | `"    assert len(sources) == 3"` | — |
-| [SRC-F725E90B2A-L000301](../../tests/test_web_agent.py#L301) | 301 | `"    assert set(shared[\"providers\"]) == {\"ddg\", \"bing\"}"` | — |
-| [SRC-F725E90B2A-L000302](../../tests/test_web_agent.py#L302) | 302 | `"    assert {\"query one\", \"query two\"}.issubset(set(shared[\"queries\"]))"` | — |
-| [SRC-F725E90B2A-L000303](../../tests/test_web_agent.py#L303) | 303 | `"    assert len(shared[\"queries\"]) >= 2"` | — |
-| [SRC-F725E90B2A-L000304](../../tests/test_web_agent.py#L304) | 304 | `"    assert report[\"queries_planned\"] >= 2"` | — |
-| [SRC-F725E90B2A-L000305](../../tests/test_web_agent.py#L305) | 305 | `"    assert report[\"queries_attempted\"] >= 2"` | — |
-| [SRC-F725E90B2A-L000306](../../tests/test_web_agent.py#L306) | 306 | `"    assert report[\"expansion_queries\"]"` | — |
-| [SRC-F725E90B2A-L000307](../../tests/test_web_agent.py#L307) | 307 | `"    assert report[\"pages_fetched\"] == 3"` | — |
-| [SRC-F725E90B2A-L000308](../../tests/test_web_agent.py#L308) | 308 | `"    assert \"ddg\" in report[\"providers_used\"]"` | — |
-| [SRC-F725E90B2A-L000309](../../tests/test_web_agent.py#L309) | 309 | `"    assert \"bing\" in report[\"providers_used\"]"` | — |
-| [SRC-F725E90B2A-L000310](../../tests/test_web_agent.py#L310) | 310 | `""` | — |
