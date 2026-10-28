@@ -2623,7 +2623,7 @@ class WebAgent:
             "evidence_signals": evidence_signal_report(sources, plan.get("freshness", "any")),
             "depth": plan.get("depth", "standard"),
             "planning_method": plan.get("planning_method", "deterministic_fallback"),
-"dialogue_context": plan.get("dialogue_context", {}),
+            "dialogue_context": plan.get("dialogue_context", {}),
             "provider_diagnostics": provider_diagnostics,
             "connector_summary": self._connector_status_summary(
                 provider_diagnostics, sources
@@ -4434,7 +4434,7 @@ class WebAgent:
                 "provider_diagnostics": failure_diagnostics,
                 "depth": plan.get("depth", "standard"),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
-"dialogue_context": plan.get("dialogue_context", {}),
+                "dialogue_context": plan.get("dialogue_context", {}),
                 "evidence_signals": evidence_signal_report([], plan.get("freshness", "any")),
             }
         if isinstance(report, dict):
@@ -4576,7 +4576,7 @@ class WebAgent:
                         "mode": clean_mode,
                         "direct_urls_provided": len(plan.get("direct_urls", [])),
                         "planning_method": plan.get("planning_method", "deterministic_fallback"),
-"dialogue_context": plan.get("dialogue_context", {}),
+                        "dialogue_context": plan.get("dialogue_context", {}),
                         "intent_route": intent_route,
                         "intent_route_reason": intent_reason,
                     },
@@ -5037,7 +5037,7 @@ class WebAgent:
                     "mode": clean_mode,
                     "direct_urls_provided": len(plan.get("direct_urls", [])),
                     "planning_method": plan.get("planning_method", "deterministic_fallback"),
-"dialogue_context": plan.get("dialogue_context", {}),
+                    "dialogue_context": plan.get("dialogue_context", {}),
                     "intent_route": intent_route,
                     "intent_route_reason": intent_reason,
                 },
@@ -5632,7 +5632,7 @@ class WebAgent:
                 "mode": clean_mode,
                 "direct_urls_provided": len(plan.get("direct_urls", [])),
                 "planning_method": plan.get("planning_method", "deterministic_fallback"),
-"dialogue_context": plan.get("dialogue_context", {}),
+                "dialogue_context": plan.get("dialogue_context", {}),
                 "intent_route": intent_route,
                 "intent_route_reason": intent_reason,
             },
