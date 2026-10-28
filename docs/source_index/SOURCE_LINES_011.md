@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003254 إلى SRC-1AE03B9EC3-L004053
+- النطاق: SRC-1AE03B9EC3-L003218 إلى SRC-1AE03B9EC3-L004017
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,42 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003218](../../agents/web_agent.py#L3218) | 3218 | `"                    '\"clarification_question\":\"\",\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",'"` | — |
+| [SRC-1AE03B9EC3-L003219](../../agents/web_agent.py#L3219) | 3219 | `"                    '\"confidence_band\":\"medium\"}. intent المسموح: answer_general, compare, '"` | — |
+| [SRC-1AE03B9EC3-L003220](../../agents/web_agent.py#L3220) | 3220 | `"                    \"current_information, explain, find_official_site, find_product, how_to, \""` | — |
+| [SRC-1AE03B9EC3-L003221](../../agents/web_agent.py#L3221) | 3221 | `"                    \"lead_generation, recommend, social_opinions, summarize, troubleshoot, unknown. \""` | — |
+| [SRC-1AE03B9EC3-L003222](../../agents/web_agent.py#L3222) | 3222 | `"                    \"research_depth إما standard أو deep.\""` | — |
+| [SRC-1AE03B9EC3-L003223](../../agents/web_agent.py#L3223) | 3223 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003224](../../agents/web_agent.py#L3224) | 3224 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L003225](../../agents/web_agent.py#L3225) | 3225 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003226](../../agents/web_agent.py#L3226) | 3226 | `"                \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L003227](../../agents/web_agent.py#L3227) | 3227 | `"                \"content\": json.dumps("` | — |
+| [SRC-1AE03B9EC3-L003228](../../agents/web_agent.py#L3228) | 3228 | `"                    {"` | — |
+| [SRC-1AE03B9EC3-L003229](../../agents/web_agent.py#L3229) | 3229 | `"                        \"current_question\": question[:MAX_QUESTION_CHARS],"` | — |
+| [SRC-1AE03B9EC3-L003230](../../agents/web_agent.py#L3230) | 3230 | `"                        \"recent_history\": history[-MAX_HISTORY_ITEMS:],"` | — |
+| [SRC-1AE03B9EC3-L003231](../../agents/web_agent.py#L3231) | 3231 | `"                        \"deterministic_hint\": fallback.get(\"resolved_question\", question),"` | — |
+| [SRC-1AE03B9EC3-L003232](../../agents/web_agent.py#L3232) | 3232 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L003233](../../agents/web_agent.py#L3233) | 3233 | `"                    ensure_ascii=False,"` | — |
+| [SRC-1AE03B9EC3-L003234](../../agents/web_agent.py#L3234) | 3234 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003235](../../agents/web_agent.py#L3235) | 3235 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L003236](../../agents/web_agent.py#L3236) | 3236 | `"        ]"` | — |
+| [SRC-1AE03B9EC3-L003237](../../agents/web_agent.py#L3237) | 3237 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L003238](../../agents/web_agent.py#L3238) | 3238 | `"            raw = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003239](../../agents/web_agent.py#L3239) | 3239 | `"                messages,"` | — |
+| [SRC-1AE03B9EC3-L003240](../../agents/web_agent.py#L3240) | 3240 | `"                max_tokens=500,"` | — |
+| [SRC-1AE03B9EC3-L003241](../../agents/web_agent.py#L3241) | 3241 | `"                temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003242](../../agents/web_agent.py#L3242) | 3242 | `"                timeout=self._effective_timeout(min(self.timeout, 10)),"` | — |
+| [SRC-1AE03B9EC3-L003243](../../agents/web_agent.py#L3243) | 3243 | `"                model=self.planner_model,"` | — |
+| [SRC-1AE03B9EC3-L003244](../../agents/web_agent.py#L3244) | 3244 | `"                enable_web_search=False,"` | — |
+| [SRC-1AE03B9EC3-L003245](../../agents/web_agent.py#L3245) | 3245 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003246](../../agents/web_agent.py#L3246) | 3246 | `"            start = raw.find(\"{\")"` | — |
+| [SRC-1AE03B9EC3-L003247](../../agents/web_agent.py#L3247) | 3247 | `"            end = raw.rfind(\"}\")"` | — |
+| [SRC-1AE03B9EC3-L003248](../../agents/web_agent.py#L3248) | 3248 | `"            candidate = json.loads(raw[start:end + 1]) if start >= 0 and end > start else None"` | — |
+| [SRC-1AE03B9EC3-L003249](../../agents/web_agent.py#L3249) | 3249 | `"            return validate_dialogue_context(candidate, question, history, fallback=fallback)"` | — |
+| [SRC-1AE03B9EC3-L003250](../../agents/web_agent.py#L3250) | 3250 | `"        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError, TypeError, json.JSONDecodeError):"` | — |
+| [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `""` | — |
+| [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"    def _plan_search("` | — |
 | [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"        self, question: str, history: list[dict[str, str]],"` | — |
 | [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        *, context_override: dict[str, Any] \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"    ) -> dict[str, Any]:"` | — |
@@ -780,39 +816,3 @@
 | [SRC-1AE03B9EC3-L004015](../../agents/web_agent.py#L4015) | 4015 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L004016](../../agents/web_agent.py#L4016) | 4016 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L004017](../../agents/web_agent.py#L4017) | 4017 | `"            configured_platforms = [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-1AE03B9EC3-L004018](../../agents/web_agent.py#L4018) | 4018 | `"            optional_connectors = {"` | — |
-| [SRC-1AE03B9EC3-L004019](../../agents/web_agent.py#L4019) | 4019 | `"                \"facebook\": bool("` | — |
-| [SRC-1AE03B9EC3-L004020](../../agents/web_agent.py#L4020) | 4020 | `"                    os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004021](../../agents/web_agent.py#L4021) | 4021 | `"                    and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004022](../../agents/web_agent.py#L4022) | 4022 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L004023](../../agents/web_agent.py#L4023) | 4023 | `"                \"instagram\": bool("` | — |
-| [SRC-1AE03B9EC3-L004024](../../agents/web_agent.py#L4024) | 4024 | `"                    os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004025](../../agents/web_agent.py#L4025) | 4025 | `"                    and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L004026](../../agents/web_agent.py#L4026) | 4026 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L004027](../../agents/web_agent.py#L4027) | 4027 | `"                \"x\": bool(os.getenv(\"X_BEARER_TOKEN\", \"\").strip()),"` | — |
-| [SRC-1AE03B9EC3-L004028](../../agents/web_agent.py#L4028) | 4028 | `"                \"youtube\": bool(os.getenv(\"YOUTUBE_API_KEY\", \"\").strip()),"` | — |
-| [SRC-1AE03B9EC3-L004029](../../agents/web_agent.py#L4029) | 4029 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004030](../../agents/web_agent.py#L4030) | 4030 | `"            configured_platforms.extend("` | — |
-| [SRC-1AE03B9EC3-L004031](../../agents/web_agent.py#L4031) | 4031 | `"                platform"` | — |
-| [SRC-1AE03B9EC3-L004032](../../agents/web_agent.py#L4032) | 4032 | `"                for platform, is_configured in optional_connectors.items()"` | — |
-| [SRC-1AE03B9EC3-L004033](../../agents/web_agent.py#L4033) | 4033 | `"                if is_configured"` | — |
-| [SRC-1AE03B9EC3-L004034](../../agents/web_agent.py#L4034) | 4034 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004035](../../agents/web_agent.py#L4035) | 4035 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L004036](../../agents/web_agent.py#L4036) | 4036 | `"                social_results, social_warnings = self._search_social("` | — |
-| [SRC-1AE03B9EC3-L004037](../../agents/web_agent.py#L4037) | 4037 | `"                    \"Omarai public connectivity test\", configured_platforms"` | — |
-| [SRC-1AE03B9EC3-L004038](../../agents/web_agent.py#L4038) | 4038 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004039](../../agents/web_agent.py#L4039) | 4039 | `"                providers: dict[str, int] = {}"` | — |
-| [SRC-1AE03B9EC3-L004040](../../agents/web_agent.py#L4040) | 4040 | `"                for source in social_results:"` | — |
-| [SRC-1AE03B9EC3-L004041](../../agents/web_agent.py#L4041) | 4041 | `"                    provider = str(source.get(\"provider\") or \"unknown\")"` | — |
-| [SRC-1AE03B9EC3-L004042](../../agents/web_agent.py#L4042) | 4042 | `"                    providers[provider] = providers.get(provider, 0) + 1"` | — |
-| [SRC-1AE03B9EC3-L004043](../../agents/web_agent.py#L4043) | 4043 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004044](../../agents/web_agent.py#L4044) | 4044 | `"                    \"status\": \"passed\" if social_results else \"degraded\","` | — |
-| [SRC-1AE03B9EC3-L004045](../../agents/web_agent.py#L4045) | 4045 | `"                    \"platforms_tested\": configured_platforms,"` | — |
-| [SRC-1AE03B9EC3-L004046](../../agents/web_agent.py#L4046) | 4046 | `"                    \"result_count\": len(social_results),"` | — |
-| [SRC-1AE03B9EC3-L004047](../../agents/web_agent.py#L4047) | 4047 | `"                    \"provider_counts\": providers,"` | — |
-| [SRC-1AE03B9EC3-L004048](../../agents/web_agent.py#L4048) | 4048 | `"                    \"warnings\": [_clean_text(item, 300) for item in social_warnings[:8]],"` | — |
-| [SRC-1AE03B9EC3-L004049](../../agents/web_agent.py#L4049) | 4049 | `"                    \"note\": ("` | — |
-| [SRC-1AE03B9EC3-L004050](../../agents/web_agent.py#L4050) | 4050 | `"                        \"Public-source request(s) returned results.\""` | — |
-| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"                        if social_results"` | — |
-| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"                        else \"No parseable public social results were returned. This does not establish that the platform is offline.\""` | — |
-| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"                    ),"` | — |
