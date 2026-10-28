@@ -715,7 +715,9 @@ def build_task_spec(
             + (["official_destination"] if official_destination else [])
             + (["current_read_page"] if current_required else [])
             + (["public_social_content"] if social_required else [])
-            + (["task_relevant_sources"] if not (government_official_site or official_destination or current_required or social_required) else [])
+            + (["authoritative_health_content"] if matches["medical_information"] else [])
+            + (["official_legal_text"] if matches["legal_information"] else [])
+            + (["task_relevant_sources"] if not (government_official_site or official_destination or current_required or social_required or matches["medical_information"] or matches["legal_information"]) else [])
         )),
     }
     spec = {
@@ -834,6 +836,34 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} شخص يبحث عن شراء تجربة سؤال", "buyer_intent_ar", "distinguish explicit buyer intent from product advertisements"),
             (f"{topic} looking to buy seeking recommendations", "buyer_intent_en", "search public discussions for intent signals"),
         ])
+    if family == "medical_information" and (
+        spec.get("mode") in {"deep", "latest"} or spec.get("intent_route") == "WEB_DEEP"
+    ):
+        candidates.extend([
+            (f"{topic} مصدر صحي رسمي إرشادات", "authoritative_health_source", "prefer current public health guidance, not a personal diagnosis"),
+            (f"{topic} clinical guidance evidence limitations", "clinical_evidence_context", "look for evidence quality and documented limitations"),
+        ])
+    if family == "legal_information" and (
+        spec.get("mode") in {"deep", "latest"} or spec.get("intent_route") == "WEB_DEEP"
+    ):
+        candidates.extend([
+            (f"{topic} نص قانوني رسمي التشريع", "official_legal_text", "seek primary law or regulator text and verify jurisdiction"),
+            (f"{topic} jurisdiction effective date legal interpretation", "jurisdiction_and_effective_date", "keep jurisdiction and effective date visible"),
+        ])
+    if family == "coding_or_technical_design" and (
+        spec.get("mode") in {"deep", "latest"} or spec.get("intent_route") == "WEB_DEEP"
+    ):
+        candidates.extend([
+            (f"{topic} official documentation", "official_technical_docs", "prefer the language/runtime's authoritative documentation"),
+            (f"{topic} exact error regression test", "error_and_regression_test", "look for a reproducible error and a testable fix"),
+        ])
+    if family == "planning" and (
+        spec.get("mode") in {"deep", "latest"} or spec.get("intent_route") == "WEB_DEEP"
+    ):
+        candidates.extend([
+            (f"{topic} risks dependencies feasibility", "feasibility_and_dependencies", "test assumptions, dependencies, and likely blockers"),
+            (f"{topic} alternative plan fallback", "alternatives_and_fallback", "seek alternatives and fallback approaches"),
+        ])
     normalized_topic = normalize_text(topic)
     property_topic = any(
         cue in normalized_topic
@@ -861,7 +891,13 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         ])
     if (
         not candidates
-        and family not in {"general_question", "ambiguous_or_incomplete"}
+        and family in {
+            "official_site_lookup", "current_information", "social_opinions",
+            "compare", "troubleshoot", "how_to", "recommendation",
+            "lead_generation", "general_research", "web_research", "find_or_discover",
+            "medical_information", "legal_information", "coding_or_technical_design",
+            "planning",
+        }
         and (
             spec.get("mode") in {"deep", "latest", "social"}
             or spec.get("intent_route") in {"WEB_DEEP", "LEAD_GENERATION"}
