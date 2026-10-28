@@ -268,7 +268,7 @@ def test_generation_budget_exhaustion_preserves_partial_sources(monkeypatch):
             "queries": [question],
             "direct_urls": [],
             "social_focus": False,
-            "freshness": "current",
+            "freshness": "any",
             "depth": "standard",
             "platforms": [],
             "planning_method": "test",
