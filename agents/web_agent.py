@@ -5949,7 +5949,15 @@ class WebAgent:
             if review_status == "model_claim_audit_completed"
             else "not_verified"
         )
-        report["insufficient_evidence"] = False
+        report["insufficient_evidence"] = bool(
+            report.get("search_outcome") in _RESEARCH_ERROR_OUTCOMES
+            or not sources
+            or answer_integrity["source_evidence_gap_count"] > 0
+            or (
+                bool(coverage_targets)
+                and answer_integrity["potentially_missing_target_count"] > 0
+            )
+        )
         report["valid_citation_range"] = [1, max_citable_sources] if max_citable_sources else []
         report["citation_count"] = citation_validation["valid_citation_count"]
         report["citation_check"] = citation_validation["status"]
