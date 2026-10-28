@@ -1120,35 +1120,140 @@ def build_query_strategy_matrix(
     return rows
 
 def validate_task_spec(value: Any) -> dict[str, Any]:
-    """Return a safe bounded public representation of TaskSpec-like input."""
+    """Return an allowlisted, bounded JSON representation of TaskSpec-like input."""
+    unavailable = {
+        "schema": "omarai.task_spec.v1",
+        "status": "not_available",
+        "claim": "no validated task specification supplied",
+    }
     if not isinstance(value, dict) or value.get("schema") != "omarai.task_spec.v1":
-        return {
-            "schema": "omarai.task_spec.v1",
-            "status": "not_available",
-            "claim": "no validated task specification supplied",
-        }
-    # Rebuild via the allowlisted JSON-friendly fields rather than passing arbitrary
-    # planner/model content through the diagnostics surface.
+        return unavailable
+
+    def clean_text(item: Any, limit: int = 160) -> str:
+        if not isinstance(item, str):
+            return ""
+        return _SPACE.sub(" ", unicodedata.normalize("NFKC", item).replace("\x00", " ")).strip()[:limit]
+
+    def clean_list(item: Any, *, items: int = 16, chars: int = 160) -> list[str]:
+        if not isinstance(item, list):
+            return []
+        result: list[str] = []
+        seen: set[str] = set()
+        for raw_item in item[:items * 2]:
+            cleaned = clean_text(raw_item, chars)
+            key = cleaned.casefold()
+            if cleaned and key not in seen:
+                result.append(cleaned)
+                seen.add(key)
+            if len(result) >= items:
+                break
+        return result
+
+    raw_constraints = value.get("constraints")
+    raw_constraints = raw_constraints if isinstance(raw_constraints, dict) else {}
+    list_constraint_keys = (
+        "explicit_locations", "explicit_years", "explicit_dates",
+        "explicit_budgets", "explicit_urls", "explicit_aspects", "source_policies",
+    )
+    constraints: dict[str, Any] = {
+        key: clean_list(raw_constraints.get(key), items=8 if key == "explicit_aspects" else 5, chars=300 if key == "explicit_urls" else 120)
+        for key in list_constraint_keys
+    }
+    for key in (
+        "inline_text_supplied_for_summary",
+        "time_sensitive_request",
+        "official_site_required",
+        "official_destination_required",
+        "social_evidence_requested",
+    ):
+        constraints[key] = raw_constraints.get(key) is True
+    language_profile = raw_constraints.get("language_profile")
+    constraints["language_profile"] = (
+        language_profile if language_profile in {"ar", "en", "mixed", "und"} else "und"
+    )
+    constraints["source_policy"] = clean_text(raw_constraints.get("source_policy"), 80) or "unassessed"
+
+    raw_preferences = value.get("output_preferences")
+    raw_preferences = raw_preferences if isinstance(raw_preferences, dict) else {}
+    preference_keys = (
+        "concise", "detailed", "examples_requested", "table_requested",
+        "bullets_or_checklist_requested", "beginner_friendly_requested",
+        "citations_requested", "links_requested", "json_requested",
+    )
+    output_preferences = {key: raw_preferences.get(key) is True for key in preference_keys}
+
+    raw_context = value.get("context_resolution")
+    raw_context = raw_context if isinstance(raw_context, dict) else {}
+    raw_slots = raw_context.get("slots")
+    slots: dict[str, str] = {}
+    if isinstance(raw_slots, dict):
+        for raw_key, raw_value in list(raw_slots.items())[:16]:
+            key = clean_text(raw_key, 40)
+            item = clean_text(raw_value, 180)
+            if key and item:
+                slots[key] = item
+    context_resolution = {
+        "method": clean_text(raw_context.get("method"), 80) or "not_provided",
+        "resolved_question": clean_text(raw_context.get("resolved_question"), MAX_TASK_CHARS),
+        "topic": clean_text(raw_context.get("topic"), 180),
+        "entities": clean_list(raw_context.get("entities"), items=8, chars=120),
+        "slots": slots,
+        "changed_slots": clean_list(raw_context.get("changed_slots"), items=8, chars=40),
+        "is_follow_up": raw_context.get("is_follow_up") is True,
+        "topic_shift": raw_context.get("topic_shift") is True,
+        "resolution_basis": clean_text(raw_context.get("resolution_basis"), 80) or "unassessed",
+        "confidence_band": (
+            raw_context.get("confidence_band")
+            if raw_context.get("confidence_band") in {"low", "medium", "high", "unassessed"}
+            else "unassessed"
+        ),
+        "needs_clarification": raw_context.get("needs_clarification") is True,
+        "unresolved_references": clean_list(raw_context.get("unresolved_references"), items=8, chars=100),
+    }
+
+    raw_hypotheses = value.get("hypothesis_interpretations")
+    hypotheses: list[dict[str, Any]] = []
+    if isinstance(raw_hypotheses, list):
+        for item in raw_hypotheses[:8]:
+            if not isinstance(item, dict):
+                continue
+            count = item.get("matched_signal_count")
+            hypotheses.append({
+                "family": clean_text(item.get("family"), 80),
+                "matched_signal_count": max(0, min(32, count)) if isinstance(count, int) else 0,
+                "signals": clean_list(item.get("signals"), items=4, chars=100),
+                "status": clean_text(item.get("status"), 60) or "unassessed",
+                "selected": item.get("selected") is True,
+            })
+
     spec = {
         "schema": "omarai.task_spec.v1",
-        "task_family": str(value.get("task_family") or "general_question")[:80],
-        "mode": str(value.get("mode") or "auto")[:20],
-        "intent_route": str(value.get("intent_route") or "unassessed")[:40],
-        "classification_method": str(value.get("classification_method") or "")[:100],
+        "task_family": clean_text(value.get("task_family"), 80) or "general_question",
+        "mode": clean_text(value.get("mode"), 20) or "auto",
+        "intent_route": clean_text(value.get("intent_route"), 40) or "unassessed",
+        "classification_method": clean_text(value.get("classification_method"), 100),
         "classification_is_probability": False,
-        "ambiguity_status": str(value.get("ambiguity_status") or "unassessed")[:80],
-        "missing_required_inputs": value.get("missing_required_inputs") if isinstance(value.get("missing_required_inputs"), list) else [],
+        "ambiguity_status": clean_text(value.get("ambiguity_status"), 80) or "unassessed",
+        "missing_required_inputs": clean_list(value.get("missing_required_inputs"), items=8, chars=100),
         "requires_clarification": value.get("requires_clarification") is True,
-        "context_resolution": value.get("context_resolution") if isinstance(value.get("context_resolution"), dict) else {},
-        "secondary_task_types": value.get("secondary_task_types") if isinstance(value.get("secondary_task_types"), list) else [],
-        "clarification_reason": str(value.get("clarification_reason") or "unassessed")[:80],
-        "constraints": value.get("constraints") if isinstance(value.get("constraints"), dict) else {},
-        "output_preferences": value.get("output_preferences") if isinstance(value.get("output_preferences"), dict) else {},
-        "evidence_requirements": value.get("evidence_requirements") if isinstance(value.get("evidence_requirements"), list) else [],
-        "query_strategies": value.get("query_strategies") if isinstance(value.get("query_strategies"), list) else [],
-        "tool_requirements": value.get("tool_requirements") if isinstance(value.get("tool_requirements"), list) else [],
-        "decision_checks": value.get("decision_checks") if isinstance(value.get("decision_checks"), list) else [],
-        "hypothesis_interpretations": value.get("hypothesis_interpretations") if isinstance(value.get("hypothesis_interpretations"), list) else [],
+        "clarification_reason": clean_text(value.get("clarification_reason"), 80) or "unassessed",
+        "context_resolution": context_resolution,
+        "secondary_task_types": clean_list(value.get("secondary_task_types"), items=16, chars=80),
+        "constraints": constraints,
+        "output_preferences": output_preferences,
+        "evidence_requirements": clean_list(value.get("evidence_requirements"), items=32, chars=180),
+        "query_strategies": clean_list(value.get("query_strategies"), items=32, chars=100),
+        "tool_requirements": clean_list(value.get("tool_requirements"), items=12, chars=100),
+        "decision_checks": clean_list(value.get("decision_checks"), items=24, chars=120),
+        "hypothesis_interpretations": hypotheses,
+        "limits": {
+            "max_question_chars": MAX_TASK_CHARS,
+            "max_aspects": MAX_TASK_ASPECTS,
+            "max_query_strategies": MAX_STRATEGY_QUERIES,
+        },
         "claim": "task planning metadata only; not semantic certainty or factual verification",
     }
+    for key in ("planner_freshness", "planner_depth"):
+        if key in value:
+            spec[key] = clean_text(value.get(key), 40) or "unknown"
     return spec
