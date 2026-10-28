@@ -810,6 +810,29 @@ def build_query_strategy_matrix(
         if isinstance(constraints.get("explicit_aspects"), list)
         else []
     )
+    # Use the dedicated aspect extractor as a second deterministic pass. This
+    # guards against a classifier losing the final criterion in a long list.
+    try:
+        from agents.aspect_planning import extract_aspects
+        independently_extracted = extract_aspects(question)
+    except (ImportError, TypeError, ValueError):
+        independently_extracted = []
+    merged_aspects: list[str] = []
+    aspect_keys: set[str] = set()
+    for aspect in [*explicit_aspects, *independently_extracted]:
+        if not isinstance(aspect, str) or not aspect.strip():
+            continue
+        key = _query_key(aspect)
+        if key and key not in aspect_keys:
+            aspect_keys.add(key)
+            merged_aspects.append(aspect.strip())
+        if len(merged_aspects) >= MAX_TASK_ASPECTS:
+            break
+    explicit_aspects = merged_aspects
+    spec_for_candidates = dict(spec)
+    candidate_constraints = dict(constraints)
+    candidate_constraints["explicit_aspects"] = explicit_aspects
+    spec_for_candidates["constraints"] = candidate_constraints
     # If every query slot is needed to represent explicit comparison criteria,
     # spend the budget on those criteria rather than a generic planner seed.
     reserve_all_slots_for_criteria = (
@@ -841,10 +864,9 @@ def build_query_strategy_matrix(
     if not base:
         return rows
 
-    candidates = _generated_strategy_candidates(base, spec)
+    candidates = _generated_strategy_candidates(base, spec_for_candidates)
     preserve_planner_alternatives_early = (
         spec.get("task_family") == "find_or_discover"
-        and bool(constraints.get("explicit_locations"))
         and bool(constraints.get("explicit_budgets"))
         and not constraints.get("social_evidence_requested")
         and not constraints.get("time_sensitive_request")
