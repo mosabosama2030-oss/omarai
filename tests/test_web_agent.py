@@ -81,6 +81,8 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     assert result["search_attempted"] is True
     assert result["search_report"]["search_attempted"] is True
     assert result["search_report"]["search_outcome"] == "attempted_with_usable_sources"
+    assert result["search_report"]["pipeline_completion_status"] == "completed"
+    assert result["search_report"]["completion_stages"]["semantic_fact_check"] == "not_performed"
     assert result["search_report"]["research_quality_semantics"] == (
         "process_coverage_not_factual_probability"
     )
@@ -129,6 +131,8 @@ def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):
 
     assert result["used_web_search"] is True
     assert result["used_language_model"] is False
+    assert result["search_report"]["pipeline_completion_status"] == "partial"
+    assert result["search_report"]["completion_stages"]["claim_review"] == "not_run"
     assert "OPENROUTER_API_KEY" in result["answer"]
     assert result["sources"][0]["page_fetched"] is True
 
