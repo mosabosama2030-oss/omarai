@@ -16,6 +16,111 @@ MAX_TASK_ASPECTS = 8
 MAX_STRATEGY_QUERIES = 8
 SUPPORTED_MODES = frozenset({"auto", "deep", "latest", "social"})
 
+# Closed, code-owned playbooks. The model receives concise task guidance derived
+# from these IDs; arbitrary planner/source text cannot add executable instructions.
+_REASONING_GUIDANCE = {
+    "preserve_goal_and_constraints": "حافظ على مقصد المستخدم والكيانات والبلد والسنة والميزانية والتواريخ والصيغة التي ذكرها صراحة؛ لا تخترع قيودًا مفقودة.",
+    "separate_facts_inferences_hypotheses": "افصل ما يقوله المصدر مباشرة عن الاستنتاج والفرضية والمعلومة المجهولة؛ لا ترفع الفرضية إلى حقيقة دون دليل.",
+    "ground_material_claims": "اربط كل ادعاء واقعي جوهري بدليل مناسب من المصدر؛ الاستشهاد أو تشابه الكلمات وحده لا يثبت صحة الادعاء.",
+    "bounded_stop_rule": "استخدم المحاولات والوقت المسموحين فقط؛ عند نقص الدليل، أجب جزئيًا أو امتنع بوضوح بدل التخمين.",
+    "clarify_required_input": "إذا غاب مدخل إلزامي يغيّر معنى المهمة، اطلبه قبل تشغيل أداة أو اختراع هدف.",
+    "resolve_followup_slots": "في المتابعة، احتفظ فقط بالسياق الذي له مرجع واضح، وطبّق التغييرات التي ذكرها المستخدم، ولا ترث موضوعًا قديمًا بعد تغيير الموضوع.",
+    "verify_official_destination": "طابق اسم الجهة والبلد أولًا؛ فضّل نطاق الجهة أو رابطًا صادرًا عن بوابة رسمية موثوقة، ولا تعتبر امتداد النطاق وحده إثباتًا للملكية.",
+    "separate_event_and_publication_dates": "ميّز تاريخ وقوع الحدث عن تاريخ النشر وآخر تحديث وتاريخ الوصول؛ لا تستخدم خبرًا قديمًا لإثبات حالة متغيرة الآن.",
+    "reject_stale_current_claims": "للمعلومة الحالية، افحص حداثة المصدر وقابلية قراءة الصفحة وارتباطها بالحالة الحالية؛ اعرض عدم التأكد إذا غاب دليل حديث مؤهل.",
+    "decompose_explicit_criteria": "قسّم المقارنة إلى كل معيار صريح، وابحث عن دليل لكل معيار، وسجّل المحاور التي لا تزال بلا دليل بدل إسقاطها.",
+    "normalize_comparison_conditions": "قبل المقارنة، وحّد العملة والوحدات والفترة وظروف الاستخدام؛ لا تقارن قيمًا غير قابلة للمقارنة دون شرح الفرق.",
+    "separate_specs_and_experiences": "افصل المواصفات الرسمية عن الاختبارات الصحفية وتجارب الأفراد والإعلانات؛ لكل نوع منها ما يستطيع إثباته وحدوده.",
+    "balance_social_evidence": "ميّز التجربة الشخصية المحتملة عن السؤال والترويج والمحتوى الصحفي؛ اعرض عينة المنشورات وتواريخها والاختلافات ولا تعمم على الجميع.",
+    "record_observed_symptoms": "احفظ رسالة الخطأ والبيئة والإصدار والخطوات التي يمكن تكرارها؛ ميّز الملاحظة المرصودة عن تفسير السبب.",
+    "rank_testable_hypotheses": "أنشئ عدة فرضيات للسبب، ورتّبها وفق الأدلة المتاحة وقابلية الاختبار، ولا تدّعِ إثبات السبب قبل تجربة تفصل بين الفرضيات.",
+    "verify_primary_technical_docs": "تحقق من دليل المنتج أو مرجع الواجهة أو سجل التغيير الأصلي، واستخدم اختبارًا يعيد إنتاج المشكلة للتحقق من الإصلاح.",
+    "prefer_low_risk_steps": "ابدأ بخطوات تشخيص قابلة للعكس ومنخفضة المخاطر، واذكر شروط التوقف؛ لا تقترح إجراءً خطيرًا لمجرد أنه احتمال.",
+    "ordered_safe_procedure": "اذكر المتطلبات المسبقة والتحذيرات ثم الخطوات بالترتيب، وأضف طريقة للتحقق من النتيجة ولا تساوِ بين إكمال الخطوات ونجاحها.",
+    "check_health_scope_and_urgency": "افصل التثقيف الصحي العام عن التشخيص الشخصي، وقدّم مصادر صحية موثوقة وحدود المعلومات، ووجّه الحالات الطارئة إلى الرعاية المناسبة.",
+    "check_legal_jurisdiction_and_effective_date": "حدّد الدولة أو الاختصاص القانوني وتاريخ النفاذ، وقدّم النص الأصلي الرسمي عند توفره، ولا تعرض المعلومات العامة بوصفها استشارة قانونية خاصة.",
+    "validate_data_before_interpreting": "تحقق من تعريف المقياس ووحدة التحليل والفترة والبيانات الناقصة والتكرارات والقيم الشاذة قبل تفسير النتائج؛ الارتباط لا يثبت السببية.",
+    "validate_units_and_arithmetic": "تحقق من الوحدات والمدخلات والافتراضات، واعرض المعادلة أو خطوات الحساب القابلة للفحص، وأجرِ تحققًا حسابيًا مستقلًا عندما يلزم.",
+    "preserve_translation_meaning": "حافظ على المعنى والنبرة والأسماء والمصطلحات وصيغة الهدف؛ أظهر الالتباس الحقيقي بدل اختراع معنى للنص.",
+    "preserve_user_facts_in_writing": "التزم بالجمهور والنبرة والشكل المطلوب، ولا تضف حقائق غير مقدمة أو موثقة، وافصل إعادة الصياغة عن التحقق الواقعي.",
+    "plan_dependencies_and_fallbacks": "رتّب العمل حسب التبعيات والموارد والموعد والمخاطر، وبيّن الافتراضات والبدائل، ولا تصف خطوة مقترحة بأنها نُفذت.",
+    "compare_recommendation_tradeoffs": "وازن البدائل وفق احتياج المستخدم وقيوده، وبيّن المفاضلات والمعلومات الناقصة، ولا تعلن فائزًا عامًا دون أساس مقارنة واضح.",
+    "summarize_only_available_content": "لخّص النص المقدم أو الصفحة التي قُرئت فعلًا فقط؛ لا تستنتج محتوى غير مقروء من عنوان أو رابط.",
+    "qualify_buyer_intent": "ميّز إشارة نية شراء صريحة عن إعلان بيع أو صفحة تجارية؛ لا تعتبر الإعلان عميلًا ولا تزعم التحقق من الهوية.",
+    "prefer_lowest_sufficient_tool": "اختر أقل مسار أدوات كافٍ للمهمة؛ لا تبحث في الويب عندما تكفي المادة المقدمة أو الحساب المحلي، ولا تشغّل أداة غير مهيأة أو غير مسموح بها.",
+}
+_REASONING_FAMILY_IDS = {
+    "official_site_lookup": ("verify_official_destination",),
+    "social_opinions": ("balance_social_evidence", "separate_specs_and_experiences"),
+    "summarize": ("summarize_only_available_content",),
+    "troubleshoot": ("record_observed_symptoms", "rank_testable_hypotheses", "verify_primary_technical_docs", "prefer_low_risk_steps"),
+    "compare": ("decompose_explicit_criteria", "normalize_comparison_conditions", "separate_specs_and_experiences"),
+    "how_to": ("ordered_safe_procedure",),
+    "lead_generation": ("qualify_buyer_intent",),
+    "recommendation": ("compare_recommendation_tradeoffs",),
+    "medical_information": ("check_health_scope_and_urgency",),
+    "legal_information": ("check_legal_jurisdiction_and_effective_date",),
+    "coding_or_technical_design": ("record_observed_symptoms", "rank_testable_hypotheses", "verify_primary_technical_docs"),
+    "data_analysis": ("validate_data_before_interpreting",),
+    "calculation": ("validate_units_and_arithmetic",),
+    "translation": ("preserve_translation_meaning",),
+    "writing_or_editing": ("preserve_user_facts_in_writing",),
+    "planning": ("plan_dependencies_and_fallbacks",),
+    "creative_generation": ("preserve_user_facts_in_writing",),
+}
+_DECISION_MATRIX = (
+    {"stage": "interpret", "check": "goal_context_required_inputs", "pass_action": "preserve_explicit_constraints", "fail_action": "clarify_missing_required_input"},
+    {"stage": "route", "check": "tool_permission_and_readiness", "pass_action": "use_only_allowed_configured_tools", "fail_action": "report_not_configured_or_blocked"},
+    {"stage": "plan", "check": "distinct_relevant_queries_and_budget", "pass_action": "execute_bounded_deduplicated_plan", "fail_action": "stop_and_report_limit"},
+    {"stage": "evidence", "check": "relevance_identity_freshness_readability", "pass_action": "retain_task_eligible_evidence", "fail_action": "exclude_and_record_reason"},
+    {"stage": "synthesize", "check": "claim_support_and_scope", "pass_action": "cite_supported_claims_and_qualify_inference", "fail_action": "answer_partially_or_abstain"},
+    {"stage": "terminate", "check": "actual_stage_outcomes", "pass_action": "report_observed_completion_state", "fail_action": "mark_partial_failed_or_not_run"},
+)
+_DECISION_STAGES = {row["stage"] for row in _DECISION_MATRIX}
+_DECISION_IDS = {
+    field: {row[field] for row in _DECISION_MATRIX}
+    for field in ("check", "pass_action", "fail_action")
+}
+
+
+def _reasoning_strategy_ids(
+    family: str,
+    constraints: dict[str, Any],
+    context_resolution: dict[str, Any],
+    missing_required_inputs: list[str],
+) -> list[str]:
+    selected = [
+        "preserve_goal_and_constraints",
+        "separate_facts_inferences_hypotheses",
+        "ground_material_claims",
+        "bounded_stop_rule",
+        "prefer_lowest_sufficient_tool",
+    ]
+    selected.extend(_REASONING_FAMILY_IDS.get(family, ()))
+    if missing_required_inputs or context_resolution.get("needs_clarification"):
+        selected.append("clarify_required_input")
+    if context_resolution.get("is_follow_up"):
+        selected.append("resolve_followup_slots")
+    if constraints.get("time_sensitive_request"):
+        selected.extend(("separate_event_and_publication_dates", "reject_stale_current_claims"))
+    if constraints.get("official_destination_required"):
+        selected.append("verify_official_destination")
+    if constraints.get("social_evidence_requested"):
+        selected.append("balance_social_evidence")
+    if len(constraints.get("explicit_aspects") or []) > 1:
+        selected.append("decompose_explicit_criteria")
+    if constraints.get("explicit_budgets"):
+        selected.append("preserve_goal_and_constraints")
+    return list(dict.fromkeys(item for item in selected if item in _REASONING_GUIDANCE))[:12]
+
+
+def reasoning_guidance_for_task_spec(task_spec: dict[str, Any]) -> list[str]:
+    """Expand allowlisted reasoning IDs into fixed, non-executable guidance text."""
+    ids = task_spec.get("reasoning_strategy_ids") if isinstance(task_spec, dict) else []
+    if not isinstance(ids, list):
+        return []
+    return [_REASONING_GUIDANCE[item] for item in ids if isinstance(item, str) and item in _REASONING_GUIDANCE][:12]
+
 _ARABIC_DIACRITICS = re.compile(r"[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED]")
 _PUNCTUATION = re.compile(r"[؟?!.،,؛;:(){}\[\]\"'«»]+")
 _SPACE = re.compile(r"\s+")
@@ -807,6 +912,10 @@ def build_task_spec(
             "report_each_failed_stage_without_claiming_unperformed_checks",
             "cite_claims_or_abstain_when_evidence_is_insufficient",
         ],
+        "reasoning_strategy_ids": _reasoning_strategy_ids(
+            family, constraints, context_resolution, missing_required_inputs
+        ),
+        "decision_matrix": [dict(row) for row in _DECISION_MATRIX],
         "limits": {
             "max_question_chars": MAX_TASK_CHARS,
             "max_aspects": MAX_TASK_ASPECTS,
@@ -1299,6 +1408,13 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
             if item in allowed_tools
         ],
         "decision_checks": clean_list(value.get("decision_checks"), items=24, chars=120),
+        "reasoning_strategy_ids": [
+            item for item in clean_list(value.get("reasoning_strategy_ids"), items=12, chars=80)
+            if item in _REASONING_GUIDANCE
+        ],
+        # The matrix is code-owned. Ignore arbitrary incoming rows and return the
+        # canonical allowlisted policy so untrusted task/planner data cannot rewrite it.
+        "decision_matrix": [dict(row) for row in _DECISION_MATRIX],
         "hypothesis_interpretations": hypotheses,
         "limits": {
             "max_question_chars": MAX_TASK_CHARS,
