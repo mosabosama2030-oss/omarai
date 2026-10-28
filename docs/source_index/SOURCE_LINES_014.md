@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005072 إلى SRC-1AE03B9EC3-L005871
+- النطاق: SRC-1AE03B9EC3-L005071 إلى SRC-1AE03B9EC3-L005870
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005071](../../agents/web_agent.py#L5071) | 5071 | `"                    None if lead_research_incomplete else len(lead_evidence_sources)"` | — |
 | [SRC-1AE03B9EC3-L005072](../../agents/web_agent.py#L5072) | 5072 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L005073](../../agents/web_agent.py#L5073) | 5073 | `"                \"related_results_reviewed\": ("` | — |
 | [SRC-1AE03B9EC3-L005074](../../agents/web_agent.py#L5074) | 5074 | `"                    None if lead_research_incomplete else related_lead_results_count"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005868](../../agents/web_agent.py#L5868) | 5868 | `"                            gap_sources, gap_warnings, gap_report = self._collect_research(gap_plan)"` | — |
 | [SRC-1AE03B9EC3-L005869](../../agents/web_agent.py#L5869) | 5869 | `"                        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError) as exc:"` | — |
 | [SRC-1AE03B9EC3-L005870](../../agents/web_agent.py#L5870) | 5870 | `"                            gap_sources, gap_warnings = [], []"` | — |
-| [SRC-1AE03B9EC3-L005871](../../agents/web_agent.py#L5871) | 5871 | `"                            gap_report = {"` | — |

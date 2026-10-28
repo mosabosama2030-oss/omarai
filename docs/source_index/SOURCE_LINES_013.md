@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004272 إلى SRC-1AE03B9EC3-L005071
+- النطاق: SRC-1AE03B9EC3-L004271 إلى SRC-1AE03B9EC3-L005070
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"            elif result.get(\"kind\") == \"clarification\":"` | — |
 | [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"                final_answer_status = \"clarification_required\""` | — |
 | [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"            else:"` | — |
 | [SRC-1AE03B9EC3-L004274](../../agents/web_agent.py#L4274) | 4274 | `"                final_answer_status = \"not_attempted\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005068](../../agents/web_agent.py#L5068) | 5068 | `"                    else \"no_qualified_candidates_found\""` | — |
 | [SRC-1AE03B9EC3-L005069](../../agents/web_agent.py#L5069) | 5069 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L005070](../../agents/web_agent.py#L5070) | 5070 | `"                \"candidate_signal_count\": ("` | — |
-| [SRC-1AE03B9EC3-L005071](../../agents/web_agent.py#L5071) | 5071 | `"                    None if lead_research_incomplete else len(lead_evidence_sources)"` | — |

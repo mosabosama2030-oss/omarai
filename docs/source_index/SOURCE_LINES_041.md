@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001483 إلى SRC-F725E90B2A-L002282
+- النطاق: SRC-F725E90B2A-L001482 إلى SRC-F725E90B2A-L002281
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001482](../../tests/test_web_agent.py#L1482) | 1482 | `"    result = agent.answer(\"كيف تبحث أنت في الإنترنت؟\")"` | — |
 | [SRC-F725E90B2A-L001483](../../tests/test_web_agent.py#L1483) | 1483 | `""` | — |
 | [SRC-F725E90B2A-L001484](../../tests/test_web_agent.py#L1484) | 1484 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
 | [SRC-F725E90B2A-L001485](../../tests/test_web_agent.py#L1485) | 1485 | `"    assert result[\"used_web_search\"] is False"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002279](../../tests/test_web_agent.py#L2279) | 2279 | `"    source_a = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L002280](../../tests/test_web_agent.py#L2280) | 2280 | `"    source_a.update({"` | — |
 | [SRC-F725E90B2A-L002281](../../tests/test_web_agent.py#L2281) | 2281 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
-| [SRC-F725E90B2A-L002282](../../tests/test_web_agent.py#L2282) | 2282 | `"        \"snippet\": \"قارن أسعار الشقق والمساحات وخطط السداد.\","` | — |

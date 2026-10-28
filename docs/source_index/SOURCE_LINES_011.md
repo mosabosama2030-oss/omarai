@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002672 إلى SRC-1AE03B9EC3-L003471
+- النطاق: SRC-1AE03B9EC3-L002671 إلى SRC-1AE03B9EC3-L003470
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002671](../../agents/web_agent.py#L2671) | 2671 | `"                        source[\"page_fetched\"] = False"` | — |
 | [SRC-1AE03B9EC3-L002672](../../agents/web_agent.py#L2672) | 2672 | `"                        if observed_status in {"` | — |
 | [SRC-1AE03B9EC3-L002673](../../agents/web_agent.py#L2673) | 2673 | `"                            \"rejected_url\", \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
 | [SRC-1AE03B9EC3-L002674](../../agents/web_agent.py#L2674) | 2674 | `"                            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\", \"http_error\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003468](../../agents/web_agent.py#L3468) | 3468 | `"                f\"(إشارة آلية أولية وليست إثباتًا لهوية الكاتب أو صحة التجربة)\\n\""` | — |
 | [SRC-1AE03B9EC3-L003469](../../agents/web_agent.py#L3469) | 3469 | `"                f\"نص متاح: {evidence}\""` | — |
 | [SRC-1AE03B9EC3-L003470](../../agents/web_agent.py#L3470) | 3470 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003471](../../agents/web_agent.py#L3471) | 3471 | `"        evidence_text = ("` | — |

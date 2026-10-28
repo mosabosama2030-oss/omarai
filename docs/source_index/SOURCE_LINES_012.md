@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003472 إلى SRC-1AE03B9EC3-L004271
+- النطاق: SRC-1AE03B9EC3-L003471 إلى SRC-1AE03B9EC3-L004270
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003471](../../agents/web_agent.py#L3471) | 3471 | `"        evidence_text = ("` | — |
 | [SRC-1AE03B9EC3-L003472](../../agents/web_agent.py#L3472) | 3472 | `"            \"\\n\\n\".join(source_blocks)"` | — |
 | [SRC-1AE03B9EC3-L003473](../../agents/web_agent.py#L3473) | 3473 | `"            or \"لم تتوفر نتائج ويب يمكن استخدامها في هذه الجولة.\""` | — |
 | [SRC-1AE03B9EC3-L003474](../../agents/web_agent.py#L3474) | 3474 | `"        )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004268](../../agents/web_agent.py#L4268) | 4268 | `"                    if result.get(\"sources\")"` | — |
 | [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"                    else \"generation_failed\""` | — |
 | [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"            elif result.get(\"kind\") == \"clarification\":"` | — |
