@@ -556,7 +556,6 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         ])
     if (
         not candidates
-        and not rows
         and family not in {"general_question", "ambiguous_or_incomplete"}
         and (
             spec.get("mode") in {"deep", "latest", "social"}
