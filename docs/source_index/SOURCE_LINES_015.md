@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005877 إلى SRC-EEF2E6447C-L000298
+- النطاق: SRC-1AE03B9EC3-L005872 إلى SRC-EEF2E6447C-L000293
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005872](../../agents/web_agent.py#L5872) | 5872 | `"                                \"queries_planned\": 1,"` | — |
+| [SRC-1AE03B9EC3-L005873](../../agents/web_agent.py#L5873) | 5873 | `"                                \"queries_attempted\": None,"` | — |
+| [SRC-1AE03B9EC3-L005874](../../agents/web_agent.py#L5874) | 5874 | `"                                \"queries_attempted_known\": False,"` | — |
+| [SRC-1AE03B9EC3-L005875](../../agents/web_agent.py#L5875) | 5875 | `"                                \"search_attempted\": None,"` | — |
+| [SRC-1AE03B9EC3-L005876](../../agents/web_agent.py#L5876) | 5876 | `"                                \"search_outcome\": \"unknown_after_research_error\","` | — |
 | [SRC-1AE03B9EC3-L005877](../../agents/web_agent.py#L5877) | 5877 | `"                                \"query_results\": [],"` | — |
 | [SRC-1AE03B9EC3-L005878](../../agents/web_agent.py#L5878) | 5878 | `"                            }"` | — |
 | [SRC-1AE03B9EC3-L005879](../../agents/web_agent.py#L5879) | 5879 | `"                            criterion_gap_research[\"status\"] = \"search_failed\""` | — |
@@ -829,8 +834,3 @@
 | [SRC-EEF2E6447C-L000291](../../api/omarai.py#L291) | 291 | `"        try:"` | — |
 | [SRC-EEF2E6447C-L000292](../../api/omarai.py#L292) | 292 | `"            return self.respond(200, operation())"` | — |
 | [SRC-EEF2E6447C-L000293](../../api/omarai.py#L293) | 293 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000294](../../api/omarai.py#L294) | 294 | `"            cls._agent_semaphore.release()"` | — |
-| [SRC-EEF2E6447C-L000295](../../api/omarai.py#L295) | 295 | `""` | — |
-| [SRC-EEF2E6447C-L000296](../../api/omarai.py#L296) | 296 | `"    def _authorized(self):"` | — |
-| [SRC-EEF2E6447C-L000297](../../api/omarai.py#L297) | 297 | `"        expected = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-EEF2E6447C-L000298](../../api/omarai.py#L298) | 298 | `"        if not expected:"` | — |

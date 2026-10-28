@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000180 إلى SRC-61B24BEFCC-L000127
+- النطاق: SRC-0F910493E8-L000158 إلى SRC-61B24BEFCC-L000105
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000158](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L158) | 158 | `"10. **التحقق:** افحص البنية والإسناد والتغطية والتعارض حسب نوع المهمة. لا تعتبر مراجعة النموذج لنفسه تحققًا مستقلًا."` | — |
+| [SRC-0F910493E8-L000159](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L159) | 159 | `"11. **صياغة النتيجة:** أجب بالعربية، وميّز ما تم تأكيده عما هو استنتاج أو غير معلوم، وأظهر القيود المؤثرة."` | — |
+| [SRC-0F910493E8-L000160](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L160) | 160 | `"12. **إغلاق المهمة وتسجيلها:** أخرج حالة نهائية صادقة، وسجلًا منقحًا، ونتائج قابلة للمراجعة. لا تحفظ بيانات دائمة إلا وفق سياسة واضحة."` | — |
+| [SRC-0F910493E8-L000161](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L161) | 161 | `""` | — |
+| [SRC-0F910493E8-L000162](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L162) | 162 | `"يمكن لمسار صغير أن يختصر هذه الخطوات إلى الحد الأدنى المفيد. لا يُجبر السؤال البسيط على المرور بخطة بحث أو سلسلة تحقق مكلفة إذا لم تكن ضرورية."` | — |
+| [SRC-0F910493E8-L000163](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L163) | 163 | `""` | — |
+| [SRC-0F910493E8-L000164](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L164) | 164 | `"## 3.1 حالات النهاية"` | — |
+| [SRC-0F910493E8-L000165](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L165) | 165 | `""` | — |
+| [SRC-0F910493E8-L000166](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L166) | 166 | `"على مستوى العقد المنطقي، يجب التمييز بين:"` | — |
+| [SRC-0F910493E8-L000167](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L167) | 167 | `"- **COMPLETED:** اكتملت المهمة وفق معاييرها المحددة."` | — |
+| [SRC-0F910493E8-L000168](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L168) | 168 | `"- **PARTIAL / DEGRADED:** أُنجز جزء مفيد مع قصور معلن."` | — |
+| [SRC-0F910493E8-L000169](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L169) | 169 | `"- **NEEDS_CLARIFICATION:** لا يمكن المتابعة الموثوقة قبل توضيح مؤثر."` | — |
+| [SRC-0F910493E8-L000170](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L170) | 170 | `"- **REJECTED / POLICY_BLOCKED:** رفضت السياسة العملية."` | — |
+| [SRC-0F910493E8-L000171](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L171) | 171 | `"- **FAILED:** لم يمكن إنجاز المهمة."` | — |
+| [SRC-0F910493E8-L000172](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L172) | 172 | `"- **UNKNOWN:** لم تتوفر أدلة كافية لإثبات الحالة."` | — |
+| [SRC-0F910493E8-L000173](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L173) | 173 | `""` | — |
+| [SRC-0F910493E8-L000174](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L174) | 174 | `"يمكن ترجمة هذه الحالات إلى أسماء مناسبة لعقد API الموجود بعد فحصه؛ لا تغيّر أسماء أو حقول واجهة قائمة بشكل يكسر التوافق من أجل مطابقة هذه التسميات حرفيًا."` | — |
+| [SRC-0F910493E8-L000175](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L175) | 175 | `""` | — |
+| [SRC-0F910493E8-L000176](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L176) | 176 | `"---"` | — |
+| [SRC-0F910493E8-L000177](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L177) | 177 | `""` | — |
+| [SRC-0F910493E8-L000178](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L178) | 178 | `"# 4. حدود الثقة وفصل إدارة التعريفات عن التشغيل"` | — |
+| [SRC-0F910493E8-L000179](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L179) | 179 | `""` | — |
 | [SRC-0F910493E8-L000180](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L180) | 180 | `"## 4.1 Runtime Plane — مسار التشغيل"` | — |
 | [SRC-0F910493E8-L000181](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L181) | 181 | `""` | — |
 | [SRC-0F910493E8-L000182](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L182) | 182 | `"مسؤول عن:"` | — |
@@ -803,25 +825,3 @@
 | [SRC-61B24BEFCC-L000103](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L103) | 103 | `"- SHA والفرع أو النسخة المنشورة."` | — |
 | [SRC-61B24BEFCC-L000104](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L104) | 104 | `"- الأمر أو workflow ورابط التشغيل."` | — |
 | [SRC-61B24BEFCC-L000105](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L105) | 105 | `"- إعدادات البيئة اللازمة دون الأسرار."` | — |
-| [SRC-61B24BEFCC-L000106](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L106) | 106 | `"- النتيجة الفعلية ووقت الاختبار."` | — |
-| [SRC-61B24BEFCC-L000107](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L107) | 107 | `"- ما يثبته الاختبار وما لا يثبته."` | — |
-| [SRC-61B24BEFCC-L000108](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L108) | 108 | `"- الحالات المستثناة أو التي لم تُنفّذ."` | — |
-| [SRC-61B24BEFCC-L000109](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L109) | 109 | `"- المسؤول عن مراجعة النتيجة ومعايير الإغلاق."` | — |
-| [SRC-61B24BEFCC-L000110](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L110) | 110 | `""` | — |
-| [SRC-61B24BEFCC-L000111](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L111) | 111 | ``"لا تُحوّل `NOT_RUN` إلى `PASS`، ولا تستخدم نجاح Mock دليلًا على توفر موفر حي."`` | — |
-| [SRC-61B24BEFCC-L000112](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L112) | 112 | `""` | — |
-| [SRC-61B24BEFCC-L000113](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L113) | 113 | `"## ملحق مصفوفة الدليل قبل الدمج — لقطة 21 أكتوبر 2026"` | — |
-| [SRC-61B24BEFCC-L000114](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L114) | 114 | `""` | — |
-| [SRC-61B24BEFCC-L000115](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L115) | 115 | `"\| الدليل \| SHA/التشغيل \| النتيجة \| ما لا يثبته \|"` | — |
-| [SRC-61B24BEFCC-L000116](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L116) | 116 | `"\|---\|---\|---\|---\|"` | — |
-| [SRC-61B24BEFCC-L000117](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L117) | 117 | `"\| اختبارات #76 / Ruff / حاوية / API محمي \| SHA 10d8a7d9f07ef3f91cbb90a5834ac6b71f963de1، تشغيل [#39650978817](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650978817) \| 380 passed على Python 3.11 و380 passed على Python 3.12؛ Ruff وبناء الحاوية واختبار API المحمي ناجحة \| لا يثبت اتصال مزودي البحث/النموذج من مضيف حقيقي أو صحة كل إجابة دلاليًا \|"` | — |
-| [SRC-61B24BEFCC-L000118](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L118) | 118 | `"\| إعادة توليد وفحص الفهرس \| [#39650974507](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650974507) \| ناجح \| لا يثبت خلو الفهرس من كل العيوب ولا صحة الإجابات \|"` | — |
-| [SRC-61B24BEFCC-L000119](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L119) | 119 | `"\| رأس الفهرس الحالي \| b6aadf7ea02627bbf523501bb879b0fd6705a5c8 \| ملفات فهرسة مولدة فقط بعد رأس 10d8a7d المختبر \| لا يُنسب إليه تشغيل pytest مباشر؛ تشغيل #39651004404 على الرأس نفسه كان action_required بلا jobs \|"` | — |
-| [SRC-61B24BEFCC-L000120](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L120) | 120 | `"\| Hosted smoke وSHA الخدمة \| لم يُشغّل \| NOT_RUN \| يتطلب خدمة فعلية وأسرار البيئة وموافقة على الاتصال الخارجي \|"` | — |
-| [SRC-61B24BEFCC-L000121](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L121) | 121 | `"\| اختبارات prompt injection \| اختبارات regression محلية موجودة \| دليل حتمي محدود \| ليست red-team حية شاملة \|"` | — |
-| [SRC-61B24BEFCC-L000122](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L122) | 122 | `"\| ثبات التخزين والنسخ الاحتياطي \| لم يُختبر على مضيف \| NOT_RUN \| يحتاج Volume دائمًا واختبار استعادة فعليًا \|"` | — |
-| [SRC-61B24BEFCC-L000123](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L123) | 123 | `"\| الحمل والعزل متعدد المستأجرين \| لم يُختبر \| UNKNOWN / NOT_RUN؛ تعدد المستأجرين خارج نطاق المشغّل الواحد \| لا تُستنتج السعة أو العزل من CI \|"` | — |
-| [SRC-61B24BEFCC-L000124](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L124) | 124 | `""` | — |
-| [SRC-61B24BEFCC-L000125](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L125) | 125 | ``"عند كتابة هذا المقطع كان مرشح الإغلاق [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76) مفتوحًا على أساس `main` عند `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. وقد دُمج لاحقًا عبر `528a255...` كما يوضح تحديث ما بعد الدمج أعلى الوثيقة. لا تُحوّل UNKNOWN أو NOT_RUN إلى PASS دون دليل من البيئة التي سيُستخدم فيها التطبيق."`` | — |
-| [SRC-61B24BEFCC-L000126](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L126) | 126 | `""` | — |
-| [SRC-61B24BEFCC-L000127](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L127) | 127 | `""` | — |

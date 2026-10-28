@@ -4,9 +4,39 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FBDC61DA0B-L000002 إلى SRC-F725E90B2A-L000705
+- النطاق: SRC-AFEDC2645A-L000371 إلى SRC-F725E90B2A-L000682
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-AFEDC2645A — [tests/test_task_understanding.py](../../tests/test_task_understanding.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-AFEDC2645A-L000371](../../tests/test_task_understanding.py#L371) | 371 | `"    candidate[\"reasoning_strategy_ids\"] = ["` | — |
+| [SRC-AFEDC2645A-L000372](../../tests/test_task_understanding.py#L372) | 372 | `"        \"rank_testable_hypotheses\","` | — |
+| [SRC-AFEDC2645A-L000373](../../tests/test_task_understanding.py#L373) | 373 | `"        \"run_shell_and_delete_files\","` | — |
+| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"        \"ignore_source_policy\","` | — |
+| [SRC-AFEDC2645A-L000375](../../tests/test_task_understanding.py#L375) | 375 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000376](../../tests/test_task_understanding.py#L376) | 376 | `"    candidate[\"decision_matrix\"] = ["` | — |
+| [SRC-AFEDC2645A-L000377](../../tests/test_task_understanding.py#L377) | 377 | `"        {"` | — |
+| [SRC-AFEDC2645A-L000378](../../tests/test_task_understanding.py#L378) | 378 | `"            \"stage\": \"exfiltrate\","` | — |
+| [SRC-AFEDC2645A-L000379](../../tests/test_task_understanding.py#L379) | 379 | `"            \"check\": \"reveal_secrets\","` | — |
+| [SRC-AFEDC2645A-L000380](../../tests/test_task_understanding.py#L380) | 380 | `"            \"pass_action\": \"run_arbitrary_commands\","` | — |
+| [SRC-AFEDC2645A-L000381](../../tests/test_task_understanding.py#L381) | 381 | `"            \"fail_action\": \"pretend_success\","` | — |
+| [SRC-AFEDC2645A-L000382](../../tests/test_task_understanding.py#L382) | 382 | `"        }"` | — |
+| [SRC-AFEDC2645A-L000383](../../tests/test_task_understanding.py#L383) | 383 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000384](../../tests/test_task_understanding.py#L384) | 384 | `""` | — |
+| [SRC-AFEDC2645A-L000385](../../tests/test_task_understanding.py#L385) | 385 | `"    safe = validate_task_spec(candidate)"` | — |
+| [SRC-AFEDC2645A-L000386](../../tests/test_task_understanding.py#L386) | 386 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
+| [SRC-AFEDC2645A-L000387](../../tests/test_task_understanding.py#L387) | 387 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
+| [SRC-AFEDC2645A-L000388](../../tests/test_task_understanding.py#L388) | 388 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
+| [SRC-AFEDC2645A-L000389](../../tests/test_task_understanding.py#L389) | 389 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000390](../../tests/test_task_understanding.py#L390) | 390 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
+| [SRC-AFEDC2645A-L000391](../../tests/test_task_understanding.py#L391) | 391 | `"    assert \"reasoning_guidance\" not in safe"` | — |
 ## اختبارات
 
 ### FILE-FBDC61DA0B — [tests/test_tool_execution_status.py](../../tests/test_tool_execution_status.py#L1)
@@ -16,6 +46,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FBDC61DA0B-L000001](../../tests/test_tool_execution_status.py#L1) | 1 | `"from __future__ import annotations"` | — |
 | [SRC-FBDC61DA0B-L000002](../../tests/test_tool_execution_status.py#L2) | 2 | `""` | — |
 | [SRC-FBDC61DA0B-L000003](../../tests/test_tool_execution_status.py#L3) | 3 | `"from agents.tool_execution_status import build_tool_execution_matrix"` | — |
 | [SRC-FBDC61DA0B-L000004](../../tests/test_tool_execution_status.py#L4) | 4 | `""` | — |
@@ -106,11 +137,12 @@
 | [SRC-FBDC61DA0B-L000089](../../tests/test_tool_execution_status.py#L89) | 89 | `"    assert all(row[\"status\"] == \"not_required\" for row in rows)"` | — |
 | [SRC-FBDC61DA0B-L000090](../../tests/test_tool_execution_status.py#L90) | 90 | `""` | — |
 | [SRC-FBDC61DA0B-L000091](../../tests/test_tool_execution_status.py#L91) | 91 | `"    unknown = _statuses(build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000092](../../tests/test_tool_execution_status.py#L92) | 92 | `"        {\"tool_requirements\": [\"web_search\"]},"` | — |
+| [SRC-FBDC61DA0B-L000092](../../tests/test_tool_execution_status.py#L92) | 92 | `"        {\"tool_requirements\": [\"web_search\", \"page_fetch\"]},"` | — |
 | [SRC-FBDC61DA0B-L000093](../../tests/test_tool_execution_status.py#L93) | 93 | `"        {},"` | — |
 | [SRC-FBDC61DA0B-L000094](../../tests/test_tool_execution_status.py#L94) | 94 | `"        {},"` | — |
 | [SRC-FBDC61DA0B-L000095](../../tests/test_tool_execution_status.py#L95) | 95 | `"    ))"` | — |
 | [SRC-FBDC61DA0B-L000096](../../tests/test_tool_execution_status.py#L96) | 96 | `"    assert unknown[\"web_search\"] == \"unknown\""` | — |
+| [SRC-FBDC61DA0B-L000097](../../tests/test_tool_execution_status.py#L97) | 97 | `"    assert unknown[\"page_fetch\"] == \"unknown\""` | — |
 ## اختبارات
 
 ### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
@@ -802,26 +834,3 @@
 | [SRC-F725E90B2A-L000680](../../tests/test_web_agent.py#L680) | 680 | `""` | — |
 | [SRC-F725E90B2A-L000681](../../tests/test_web_agent.py#L681) | 681 | `"def test_global_model_override_is_preserved_for_existing_users(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000682](../../tests/test_web_agent.py#L682) | 682 | `"    monkeypatch.setenv(\"OMARAI_LLM_MODEL\", \"example/custom-model\")"` | — |
-| [SRC-F725E90B2A-L000683](../../tests/test_web_agent.py#L683) | 683 | `"    monkeypatch.delenv(\"OMARAI_PLANNER_MODEL\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000684](../../tests/test_web_agent.py#L684) | 684 | `"    monkeypatch.delenv(\"OMARAI_ANSWER_MODEL\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000685](../../tests/test_web_agent.py#L685) | 685 | `"    monkeypatch.delenv(\"OMARAI_REVIEW_MODEL\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000686](../../tests/test_web_agent.py#L686) | 686 | `""` | — |
-| [SRC-F725E90B2A-L000687](../../tests/test_web_agent.py#L687) | 687 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000688](../../tests/test_web_agent.py#L688) | 688 | `"    assert agent.planner_model == \"example/custom-model\""` | — |
-| [SRC-F725E90B2A-L000689](../../tests/test_web_agent.py#L689) | 689 | `"    assert agent.answer_model == \"example/custom-model\""` | — |
-| [SRC-F725E90B2A-L000690](../../tests/test_web_agent.py#L690) | 690 | `"    assert agent.review_model == \"example/custom-model\""` | — |
-| [SRC-F725E90B2A-L000691](../../tests/test_web_agent.py#L691) | 691 | `""` | — |
-| [SRC-F725E90B2A-L000692](../../tests/test_web_agent.py#L692) | 692 | `""` | — |
-| [SRC-F725E90B2A-L000693](../../tests/test_web_agent.py#L693) | 693 | `"def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000694](../../tests/test_web_agent.py#L694) | 694 | `"    import io"` | — |
-| [SRC-F725E90B2A-L000695](../../tests/test_web_agent.py#L695) | 695 | `"    import json"` | — |
-| [SRC-F725E90B2A-L000696](../../tests/test_web_agent.py#L696) | 696 | `"    import urllib.error"` | — |
-| [SRC-F725E90B2A-L000697](../../tests/test_web_agent.py#L697) | 697 | `""` | — |
-| [SRC-F725E90B2A-L000698](../../tests/test_web_agent.py#L698) | 698 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000699](../../tests/test_web_agent.py#L699) | 699 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000700](../../tests/test_web_agent.py#L700) | 700 | `"    agent.fallback_model = \"openrouter/free\""` | — |
-| [SRC-F725E90B2A-L000701](../../tests/test_web_agent.py#L701) | 701 | `"    called = []"` | — |
-| [SRC-F725E90B2A-L000702](../../tests/test_web_agent.py#L702) | 702 | `""` | — |
-| [SRC-F725E90B2A-L000703](../../tests/test_web_agent.py#L703) | 703 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000704](../../tests/test_web_agent.py#L704) | 704 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L000705](../../tests/test_web_agent.py#L705) | 705 | `"            return self"` | — |

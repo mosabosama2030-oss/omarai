@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001877 إلى SRC-1AE03B9EC3-L002676
+- النطاق: SRC-1AE03B9EC3-L001872 إلى SRC-1AE03B9EC3-L002671
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001872](../../agents/web_agent.py#L1872) | 1872 | `"                                    \"provider\": \"reddit_oauth_api\","` | — |
+| [SRC-1AE03B9EC3-L001873](../../agents/web_agent.py#L1873) | 1873 | `"                                    \"provider_rank\": rank,"` | — |
+| [SRC-1AE03B9EC3-L001874](../../agents/web_agent.py#L1874) | 1874 | `"                                    \"search_query\": query,"` | — |
+| [SRC-1AE03B9EC3-L001875](../../agents/web_agent.py#L1875) | 1875 | `"                                    \"published_at\": _clean_text(str(post.get(\"created_utc\") or \"\"), 100),"` | — |
+| [SRC-1AE03B9EC3-L001876](../../agents/web_agent.py#L1876) | 1876 | `"                                })"` | — |
 | [SRC-1AE03B9EC3-L001877](../../agents/web_agent.py#L1877) | 1877 | `"                        else:"` | — |
 | [SRC-1AE03B9EC3-L001878](../../agents/web_agent.py#L1878) | 1878 | `"                            warnings.append("` | — |
 | [SRC-1AE03B9EC3-L001879](../../agents/web_agent.py#L1879) | 1879 | `"                                f\"Reddit OAuth search unavailable (HTTP {search_response.status_code}).\""` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L002669](../../agents/web_agent.py#L2669) | 2669 | `"                            )"` | — |
 | [SRC-1AE03B9EC3-L002670](../../agents/web_agent.py#L2670) | 2670 | `"                    else:"` | — |
 | [SRC-1AE03B9EC3-L002671](../../agents/web_agent.py#L2671) | 2671 | `"                        source[\"page_fetched\"] = False"` | — |
-| [SRC-1AE03B9EC3-L002672](../../agents/web_agent.py#L2672) | 2672 | `"                        if observed_status in {"` | — |
-| [SRC-1AE03B9EC3-L002673](../../agents/web_agent.py#L2673) | 2673 | `"                            \"rejected_url\", \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
-| [SRC-1AE03B9EC3-L002674](../../agents/web_agent.py#L2674) | 2674 | `"                            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\", \"http_error\","` | — |
-| [SRC-1AE03B9EC3-L002675](../../agents/web_agent.py#L2675) | 2675 | `"                            \"unsupported_content_type\", \"page_too_large\", \"network_error\","` | — |
-| [SRC-1AE03B9EC3-L002676](../../agents/web_agent.py#L2676) | 2676 | `"                            \"empty_content\", \"no_text_extracted\", \"budget_exhausted\","` | — |

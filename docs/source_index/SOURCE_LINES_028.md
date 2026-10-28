@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000149 إلى SRC-90FAA34ADE-L000551
+- النطاق: SRC-03FF422A16-L000127 إلى SRC-90FAA34ADE-L000529
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000127](../../scripts/score_answer_quality_reviews.py#L127) | 127 | `""` | — |
+| [SRC-03FF422A16-L000128](../../scripts/score_answer_quality_reviews.py#L128) | 128 | `"def _ratio(numerator: int, denominator: int, case_count: int) -> dict[str, Any]:"` | — |
+| [SRC-03FF422A16-L000129](../../scripts/score_answer_quality_reviews.py#L129) | 129 | `"    return {"` | — |
+| [SRC-03FF422A16-L000130](../../scripts/score_answer_quality_reviews.py#L130) | 130 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
+| [SRC-03FF422A16-L000131](../../scripts/score_answer_quality_reviews.py#L131) | 131 | `"        \"numerator\": numerator,"` | — |
+| [SRC-03FF422A16-L000132](../../scripts/score_answer_quality_reviews.py#L132) | 132 | `"        \"denominator\": denominator,"` | — |
+| [SRC-03FF422A16-L000133](../../scripts/score_answer_quality_reviews.py#L133) | 133 | `"        \"reviewed_case_count\": case_count,"` | — |
+| [SRC-03FF422A16-L000134](../../scripts/score_answer_quality_reviews.py#L134) | 134 | `"        \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if denominator else \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\","` | — |
+| [SRC-03FF422A16-L000135](../../scripts/score_answer_quality_reviews.py#L135) | 135 | `"    }"` | — |
+| [SRC-03FF422A16-L000136](../../scripts/score_answer_quality_reviews.py#L136) | 136 | `""` | — |
+| [SRC-03FF422A16-L000137](../../scripts/score_answer_quality_reviews.py#L137) | 137 | `""` | — |
+| [SRC-03FF422A16-L000138](../../scripts/score_answer_quality_reviews.py#L138) | 138 | `"def summarize_reviews("` | — |
+| [SRC-03FF422A16-L000139](../../scripts/score_answer_quality_reviews.py#L139) | 139 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
+| [SRC-03FF422A16-L000140](../../scripts/score_answer_quality_reviews.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
+| [SRC-03FF422A16-L000141](../../scripts/score_answer_quality_reviews.py#L141) | 141 | `"    problems = validate_reviews(review_data, corpus_data)"` | — |
+| [SRC-03FF422A16-L000142](../../scripts/score_answer_quality_reviews.py#L142) | 142 | `"    if problems:"` | — |
+| [SRC-03FF422A16-L000143](../../scripts/score_answer_quality_reviews.py#L143) | 143 | `"        raise ValueError(\"; \".join(problems))"` | — |
+| [SRC-03FF422A16-L000144](../../scripts/score_answer_quality_reviews.py#L144) | 144 | `"    reviews = review_data[\"reviews\"]"` | — |
+| [SRC-03FF422A16-L000145](../../scripts/score_answer_quality_reviews.py#L145) | 145 | `"    reviewed = [item for item in reviews if item[\"status\"] == \"REVIEWED\"]"` | — |
+| [SRC-03FF422A16-L000146](../../scripts/score_answer_quality_reviews.py#L146) | 146 | `"    status_counts = Counter(item[\"status\"] for item in reviews)"` | — |
+| [SRC-03FF422A16-L000147](../../scripts/score_answer_quality_reviews.py#L147) | 147 | `"    corpus_count = len(corpus_data[\"cases\"])"` | — |
+| [SRC-03FF422A16-L000148](../../scripts/score_answer_quality_reviews.py#L148) | 148 | `"    reviewed_ids = {item[\"case_id\"] for item in reviewed}"` | — |
 | [SRC-03FF422A16-L000149](../../scripts/score_answer_quality_reviews.py#L149) | 149 | `""` | — |
 | [SRC-03FF422A16-L000150](../../scripts/score_answer_quality_reviews.py#L150) | 150 | `"    retrieval_rel = retrieval_total = retrieval_available = 0"` | — |
 | [SRC-03FF422A16-L000151](../../scripts/score_answer_quality_reviews.py#L151) | 151 | `"    retrieval_cases = set()"` | — |
@@ -812,25 +834,3 @@
 | [SRC-90FAA34ADE-L000527](../../tests/fixtures/answer_quality_cases.json#L527) | 527 | `"            \"snippet\": \"Applications close on 5 November 2026.\","` | — |
 | [SRC-90FAA34ADE-L000528](../../tests/fixtures/answer_quality_cases.json#L528) | 528 | `"            \"published_at\": \"2026-10-02\","` | — |
 | [SRC-90FAA34ADE-L000529](../../tests/fixtures/answer_quality_cases.json#L529) | 529 | `"            \"domain\": \"region.example.test\","` | — |
-| [SRC-90FAA34ADE-L000530](../../tests/fixtures/answer_quality_cases.json#L530) | 530 | `"            \"provider\": \"fixture_b\""` | — |
-| [SRC-90FAA34ADE-L000531](../../tests/fixtures/answer_quality_cases.json#L531) | 531 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000532](../../tests/fixtures/answer_quality_cases.json#L532) | 532 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000533](../../tests/fixtures/answer_quality_cases.json#L533) | 533 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000534](../../tests/fixtures/answer_quality_cases.json#L534) | 534 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000535](../../tests/fixtures/answer_quality_cases.json#L535) | 535 | `"        \"Omits one deadline\","` | — |
-| [SRC-90FAA34ADE-L000536](../../tests/fixtures/answer_quality_cases.json#L536) | 536 | `"        \"Presents a definitive deadline without describing the unresolved discrepancy\""` | — |
-| [SRC-90FAA34ADE-L000537](../../tests/fixtures/answer_quality_cases.json#L537) | 537 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000538](../../tests/fixtures/answer_quality_cases.json#L538) | 538 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000539](../../tests/fixtures/answer_quality_cases.json#L539) | 539 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000540](../../tests/fixtures/answer_quality_cases.json#L540) | 540 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000541](../../tests/fixtures/answer_quality_cases.json#L541) | 541 | `"      \"case_id\": \"AQ-020\","` | — |
-| [SRC-90FAA34ADE-L000542](../../tests/fixtures/answer_quality_cases.json#L542) | 542 | `"      \"category\": \"stale_sources_for_current\","` | — |
-| [SRC-90FAA34ADE-L000543](../../tests/fixtures/answer_quality_cases.json#L543) | 543 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000544](../../tests/fixtures/answer_quality_cases.json#L544) | 544 | `"      \"question\": \"إيه شروط التقديم الحالية لمنحة 2026؟ عندك نتيجة من صفحة منشورة سنة 2022 بس.\","` | — |
-| [SRC-90FAA34ADE-L000545](../../tests/fixtures/answer_quality_cases.json#L545) | 545 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000546](../../tests/fixtures/answer_quality_cases.json#L546) | 546 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000547](../../tests/fixtures/answer_quality_cases.json#L547) | 547 | `"        \"ينبّه أن المصدر قديم ولا يكفي لإثبات شروط 2026\","` | — |
-| [SRC-90FAA34ADE-L000548](../../tests/fixtures/answer_quality_cases.json#L548) | 548 | `"        \"يبحث عن إعلان حديث أو يصرح بأن الشروط الحالية غير مؤكدة\","` | — |
-| [SRC-90FAA34ADE-L000549](../../tests/fixtures/answer_quality_cases.json#L549) | 549 | `"        \"يفصل بين معلومات المصدر القديم وأي استنتاج\""` | — |
-| [SRC-90FAA34ADE-L000550](../../tests/fixtures/answer_quality_cases.json#L550) | 550 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000551](../../tests/fixtures/answer_quality_cases.json#L551) | 551 | `"      \"forbidden_behaviors\": ["` | — |

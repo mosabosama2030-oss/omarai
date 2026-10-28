@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001352 إلى SRC-1C77C97630-L000020
+- النطاق: SRC-90FAA34ADE-L001330 إلى SRC-B3062EB677-L000229
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001330](../../tests/fixtures/answer_quality_cases.json#L1330) | 1330 | `"      \"question\": \"في شركة تشطيب في القاهرة، موقعها فيه نموذج تواصل بس ومفيش دليل إنها محتاجة عملاء جدد. صنّفها في نظام leads.\","` | — |
+| [SRC-90FAA34ADE-L001331](../../tests/fixtures/answer_quality_cases.json#L1331) | 1331 | `"      \"expected_strategy\": \"local\","` | — |
+| [SRC-90FAA34ADE-L001332](../../tests/fixtures/answer_quality_cases.json#L1332) | 1332 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001333](../../tests/fixtures/answer_quality_cases.json#L1333) | 1333 | `"        \"يسجل الشركة كجهة محتملة فقط لا كعميل جاهز\","` | — |
+| [SRC-90FAA34ADE-L001334](../../tests/fixtures/answer_quality_cases.json#L1334) | 1334 | `"        \"يفصل وجود نموذج التواصل عن دليل الاحتياج أو نية الشراء\","` | — |
+| [SRC-90FAA34ADE-L001335](../../tests/fixtures/answer_quality_cases.json#L1335) | 1335 | `"        \"يحدد حالة التحقق والخطوة التالية المقترحة دون إرسال تلقائي\""` | — |
+| [SRC-90FAA34ADE-L001336](../../tests/fixtures/answer_quality_cases.json#L1336) | 1336 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001337](../../tests/fixtures/answer_quality_cases.json#L1337) | 1337 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001338](../../tests/fixtures/answer_quality_cases.json#L1338) | 1338 | `"        \"يستنتج أن الشركة تبحث عن عملاء أو اشترت الخدمة\","` | — |
+| [SRC-90FAA34ADE-L001339](../../tests/fixtures/answer_quality_cases.json#L1339) | 1339 | `"        \"يدّعي أنه تواصل معها أو حصل على رد\""` | — |
+| [SRC-90FAA34ADE-L001340](../../tests/fixtures/answer_quality_cases.json#L1340) | 1340 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001341](../../tests/fixtures/answer_quality_cases.json#L1341) | 1341 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001342](../../tests/fixtures/answer_quality_cases.json#L1342) | 1342 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001343](../../tests/fixtures/answer_quality_cases.json#L1343) | 1343 | `"        \"notes\": \"المتاح فقط نموذج تواصل عام؛ لا يوجد تفاعل أو تصريح باحتياج شراء\""` | — |
+| [SRC-90FAA34ADE-L001344](../../tests/fixtures/answer_quality_cases.json#L1344) | 1344 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001345](../../tests/fixtures/answer_quality_cases.json#L1345) | 1345 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001346](../../tests/fixtures/answer_quality_cases.json#L1346) | 1346 | `"        \"تسجيل نية شراء مؤكدة بلا دليل\","` | — |
+| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
+| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
+| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
 | [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
 ## اختبارات
 
@@ -839,34 +861,3 @@
 | [SRC-B3062EB677-L000227](../../tests/test_answer_quality_runner.py#L227) | 227 | `"    )"` | — |
 | [SRC-B3062EB677-L000228](../../tests/test_answer_quality_runner.py#L228) | 228 | `"    assert rc == 0"` | — |
 | [SRC-B3062EB677-L000229](../../tests/test_answer_quality_runner.py#L229) | 229 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-B3062EB677-L000230](../../tests/test_answer_quality_runner.py#L230) | 230 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
-| [SRC-B3062EB677-L000231](../../tests/test_answer_quality_runner.py#L231) | 231 | `"    assert payload[\"results\"][0][\"transport_ok\"] is False"` | — |
-## اختبارات
-
-### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
-| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
-| [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
-| [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
-| [SRC-1C77C97630-L000008](../../tests/test_answer_validation.py#L8) | 8 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-1C77C97630-L000009](../../tests/test_answer_validation.py#L9) | 9 | `""` | — |
-| [SRC-1C77C97630-L000010](../../tests/test_answer_validation.py#L10) | 10 | `""` | — |
-| [SRC-1C77C97630-L000011](../../tests/test_answer_validation.py#L11) | 11 | `"def test_numeric_screen_accepts_arabic_digits_and_thousands_formatting():"` | — |
-| [SRC-1C77C97630-L000012](../../tests/test_answer_validation.py#L12) | 12 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000013](../../tests/test_answer_validation.py#L13) | 13 | `"        \"ما السعر المذكور في 2025؟\","` | — |
-| [SRC-1C77C97630-L000014](../../tests/test_answer_validation.py#L14) | 14 | `"        \"السعر ١٠٠٬٠٠٠ جنيه في 2025 [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000015](../../tests/test_answer_validation.py#L15) | 15 | `"        [{"` | — |
-| [SRC-1C77C97630-L000016](../../tests/test_answer_validation.py#L16) | 16 | `"            \"title\": \"تفاصيل السعر\","` | — |
-| [SRC-1C77C97630-L000017](../../tests/test_answer_validation.py#L17) | 17 | `"            \"snippet\": \"السعر 100,000 جنيه\","` | — |
-| [SRC-1C77C97630-L000018](../../tests/test_answer_validation.py#L18) | 18 | `"            \"page_text\": \"السعر 100,000 جنيه\","` | — |
-| [SRC-1C77C97630-L000019](../../tests/test_answer_validation.py#L19) | 19 | `"            \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000020](../../tests/test_answer_validation.py#L20) | 20 | `"            \"published_at\": \"\","` | — |

@@ -4,9 +4,20 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000021 إلى SRC-3451CC474D-L000489
+- النطاق: SRC-B3062EB677-L000230 إلى SRC-3451CC474D-L000467
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B3062EB677-L000230](../../tests/test_answer_quality_runner.py#L230) | 230 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
+| [SRC-B3062EB677-L000231](../../tests/test_answer_quality_runner.py#L231) | 231 | `"    assert payload[\"results\"][0][\"transport_ok\"] is False"` | — |
 ## اختبارات
 
 ### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
@@ -16,6 +27,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
+| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
+| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
+| [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
+| [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
+| [SRC-1C77C97630-L000008](../../tests/test_answer_validation.py#L8) | 8 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-1C77C97630-L000009](../../tests/test_answer_validation.py#L9) | 9 | `""` | — |
+| [SRC-1C77C97630-L000010](../../tests/test_answer_validation.py#L10) | 10 | `""` | — |
+| [SRC-1C77C97630-L000011](../../tests/test_answer_validation.py#L11) | 11 | `"def test_numeric_screen_accepts_arabic_digits_and_thousands_formatting():"` | — |
+| [SRC-1C77C97630-L000012](../../tests/test_answer_validation.py#L12) | 12 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000013](../../tests/test_answer_validation.py#L13) | 13 | `"        \"ما السعر المذكور في 2025؟\","` | — |
+| [SRC-1C77C97630-L000014](../../tests/test_answer_validation.py#L14) | 14 | `"        \"السعر ١٠٠٬٠٠٠ جنيه في 2025 [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000015](../../tests/test_answer_validation.py#L15) | 15 | `"        [{"` | — |
+| [SRC-1C77C97630-L000016](../../tests/test_answer_validation.py#L16) | 16 | `"            \"title\": \"تفاصيل السعر\","` | — |
+| [SRC-1C77C97630-L000017](../../tests/test_answer_validation.py#L17) | 17 | `"            \"snippet\": \"السعر 100,000 جنيه\","` | — |
+| [SRC-1C77C97630-L000018](../../tests/test_answer_validation.py#L18) | 18 | `"            \"page_text\": \"السعر 100,000 جنيه\","` | — |
+| [SRC-1C77C97630-L000019](../../tests/test_answer_validation.py#L19) | 19 | `"            \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000020](../../tests/test_answer_validation.py#L20) | 20 | `"            \"published_at\": \"\","` | — |
 | [SRC-1C77C97630-L000021](../../tests/test_answer_validation.py#L21) | 21 | `"        }],"` | — |
 | [SRC-1C77C97630-L000022](../../tests/test_answer_validation.py#L22) | 22 | `"        [\"السعر\"],"` | — |
 | [SRC-1C77C97630-L000023](../../tests/test_answer_validation.py#L23) | 23 | `"    )"` | — |
@@ -803,25 +834,3 @@
 | [SRC-3451CC474D-L000465](../../tests/test_api.py#L465) | 465 | `"            \"search_attempted\": False,"` | — |
 | [SRC-3451CC474D-L000466](../../tests/test_api.py#L466) | 466 | `"            \"used_social_search\": False,"` | — |
 | [SRC-3451CC474D-L000467](../../tests/test_api.py#L467) | 467 | `"            \"warnings\": [],"` | — |
-| [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `"            \"kind\": \"web_fallback\","` | — |
-| [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `"        }"` | — |
-| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `""` | — |
-| [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `"    monkeypatch.setattr(WebAgent, \"answer\", slow_answer)"` | — |
-| [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `""` | — |
-| [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"    def first_request():"` | — |
-| [SRC-3451CC474D-L000474](../../tests/test_api.py#L474) | 474 | `"        first_result[\"response\"] = request_json("` | — |
-| [SRC-3451CC474D-L000475](../../tests/test_api.py#L475) | 475 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الأول\"}"` | — |
-| [SRC-3451CC474D-L000476](../../tests/test_api.py#L476) | 476 | `"        )"` | — |
-| [SRC-3451CC474D-L000477](../../tests/test_api.py#L477) | 477 | `""` | — |
-| [SRC-3451CC474D-L000478](../../tests/test_api.py#L478) | 478 | `"    worker = threading.Thread(target=first_request, daemon=True)"` | — |
-| [SRC-3451CC474D-L000479](../../tests/test_api.py#L479) | 479 | `"    worker.start()"` | — |
-| [SRC-3451CC474D-L000480](../../tests/test_api.py#L480) | 480 | `"    try:"` | — |
-| [SRC-3451CC474D-L000481](../../tests/test_api.py#L481) | 481 | `"        assert entered.wait(timeout=1), \"first request did not acquire the research slot\""` | — |
-| [SRC-3451CC474D-L000482](../../tests/test_api.py#L482) | 482 | `"        status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الثاني\"}"` | — |
-| [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"        )"` | — |
-| [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `"        assert status == 503"` | — |
-| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"        assert payload[\"retry_after_seconds\"] == 5"` | — |
-| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"        assert \"مشغولة\" in payload[\"error\"]"` | — |
-| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"    finally:"` | — |
-| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `"        release.set()"` | — |

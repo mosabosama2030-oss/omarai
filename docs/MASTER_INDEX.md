@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **231**
 - تعريفات Python بلا Docstring: **815**
 - تعريفات لا ينطبق عليها Docstring: **275**
-- الرموز الساكنة الإضافية: **1711**
-- الأسطر النصية المفهرسة حرفيًا: **34927**
+- الرموز الساكنة الإضافية: **1712**
+- الأسطر النصية المفهرسة حرفيًا: **34950**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -48,7 +48,7 @@
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78832 | 1429 | جرد الملف + AST Python |
-| FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 8007 | 218 | جرد الملف + AST Python |
+| FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 8281 | 223 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 341875 | 6377 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
@@ -72,7 +72,7 @@
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
 | FILE-E1EAC11EFE | وثائق وفهرسة | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L1) | Markdown | 14423 | 74 | جرد الملف + عناوين Markdown |
-| FILE-9A0DFA994E | وثائق وفهرسة | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L1) | Markdown | 18951 | 129 | جرد الملف + عناوين Markdown |
+| FILE-9A0DFA994E | وثائق وفهرسة | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L1) | Markdown | 21086 | 146 | جرد الملف + عناوين Markdown |
 | FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 15555 | 118 | جرد الملف + عناوين Markdown |
 | FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 69081 | 320 | جرد الملف + عناوين Markdown |
 | FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 59153 | 184 | جرد الملف + عناوين Markdown |
@@ -124,7 +124,7 @@
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
-| FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 3310 | 96 | جرد الملف + AST Python |
+| FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 3370 | 97 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 149456 | 3826 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 59758 | 417 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -2207,6 +2207,7 @@
 | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L103) | عنوان Markdown (H2) | مصفوفة الاستدلال وقواعد القرار — التحديث الإضافي | 103 | [SRC-9A0DFA994E-L000103](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L103) |
 | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L108) | عنوان Markdown (H3) | ملفات قواعد الاستدلال | 108 | [SRC-9A0DFA994E-L000108](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L108) |
 | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L119) | عنوان Markdown (H3) | مصفوفة القرار الموحدة | 119 | [SRC-9A0DFA994E-L000119](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L119) |
+| [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L130) | عنوان Markdown (H2) | مصفوفة تنفيذ الأدوات والموصلات | 130 | [SRC-9A0DFA994E-L000130](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L130) |
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | عنوان Markdown (H1) | Omarai — تقرير التحقق الهندسي بعد دمج PR #81 | 1 | [SRC-B2C95EAEE1-L000001](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) |
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L2) | عنوان Markdown (H2) | جلسة 1 — تثبيت خط الأساس بعد الدمج (23 أكتوبر 2026) | 2 | [SRC-B2C95EAEE1-L000002](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L2) |
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L4) | عنوان Markdown (H3) | الحالة المرجعية | 4 | [SRC-B2C95EAEE1-L000004](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L4) |

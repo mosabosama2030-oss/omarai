@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-61B24BEFCC-L000128 إلى SRC-B335630551-L000181
+- النطاق: SRC-61B24BEFCC-L000106 إلى SRC-B335630551-L000159
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-61B24BEFCC-L000106](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L106) | 106 | `"- النتيجة الفعلية ووقت الاختبار."` | — |
+| [SRC-61B24BEFCC-L000107](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L107) | 107 | `"- ما يثبته الاختبار وما لا يثبته."` | — |
+| [SRC-61B24BEFCC-L000108](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L108) | 108 | `"- الحالات المستثناة أو التي لم تُنفّذ."` | — |
+| [SRC-61B24BEFCC-L000109](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L109) | 109 | `"- المسؤول عن مراجعة النتيجة ومعايير الإغلاق."` | — |
+| [SRC-61B24BEFCC-L000110](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L110) | 110 | `""` | — |
+| [SRC-61B24BEFCC-L000111](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L111) | 111 | ``"لا تُحوّل `NOT_RUN` إلى `PASS`، ولا تستخدم نجاح Mock دليلًا على توفر موفر حي."`` | — |
+| [SRC-61B24BEFCC-L000112](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L112) | 112 | `""` | — |
+| [SRC-61B24BEFCC-L000113](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L113) | 113 | `"## ملحق مصفوفة الدليل قبل الدمج — لقطة 21 أكتوبر 2026"` | — |
+| [SRC-61B24BEFCC-L000114](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L114) | 114 | `""` | — |
+| [SRC-61B24BEFCC-L000115](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L115) | 115 | `"\| الدليل \| SHA/التشغيل \| النتيجة \| ما لا يثبته \|"` | — |
+| [SRC-61B24BEFCC-L000116](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L116) | 116 | `"\|---\|---\|---\|---\|"` | — |
+| [SRC-61B24BEFCC-L000117](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L117) | 117 | `"\| اختبارات #76 / Ruff / حاوية / API محمي \| SHA 10d8a7d9f07ef3f91cbb90a5834ac6b71f963de1، تشغيل [#39650978817](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650978817) \| 380 passed على Python 3.11 و380 passed على Python 3.12؛ Ruff وبناء الحاوية واختبار API المحمي ناجحة \| لا يثبت اتصال مزودي البحث/النموذج من مضيف حقيقي أو صحة كل إجابة دلاليًا \|"` | — |
+| [SRC-61B24BEFCC-L000118](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L118) | 118 | `"\| إعادة توليد وفحص الفهرس \| [#39650974507](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650974507) \| ناجح \| لا يثبت خلو الفهرس من كل العيوب ولا صحة الإجابات \|"` | — |
+| [SRC-61B24BEFCC-L000119](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L119) | 119 | `"\| رأس الفهرس الحالي \| b6aadf7ea02627bbf523501bb879b0fd6705a5c8 \| ملفات فهرسة مولدة فقط بعد رأس 10d8a7d المختبر \| لا يُنسب إليه تشغيل pytest مباشر؛ تشغيل #39651004404 على الرأس نفسه كان action_required بلا jobs \|"` | — |
+| [SRC-61B24BEFCC-L000120](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L120) | 120 | `"\| Hosted smoke وSHA الخدمة \| لم يُشغّل \| NOT_RUN \| يتطلب خدمة فعلية وأسرار البيئة وموافقة على الاتصال الخارجي \|"` | — |
+| [SRC-61B24BEFCC-L000121](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L121) | 121 | `"\| اختبارات prompt injection \| اختبارات regression محلية موجودة \| دليل حتمي محدود \| ليست red-team حية شاملة \|"` | — |
+| [SRC-61B24BEFCC-L000122](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L122) | 122 | `"\| ثبات التخزين والنسخ الاحتياطي \| لم يُختبر على مضيف \| NOT_RUN \| يحتاج Volume دائمًا واختبار استعادة فعليًا \|"` | — |
+| [SRC-61B24BEFCC-L000123](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L123) | 123 | `"\| الحمل والعزل متعدد المستأجرين \| لم يُختبر \| UNKNOWN / NOT_RUN؛ تعدد المستأجرين خارج نطاق المشغّل الواحد \| لا تُستنتج السعة أو العزل من CI \|"` | — |
+| [SRC-61B24BEFCC-L000124](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L124) | 124 | `""` | — |
+| [SRC-61B24BEFCC-L000125](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L125) | 125 | ``"عند كتابة هذا المقطع كان مرشح الإغلاق [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76) مفتوحًا على أساس `main` عند `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. وقد دُمج لاحقًا عبر `528a255...` كما يوضح تحديث ما بعد الدمج أعلى الوثيقة. لا تُحوّل UNKNOWN أو NOT_RUN إلى PASS دون دليل من البيئة التي سيُستخدم فيها التطبيق."`` | — |
+| [SRC-61B24BEFCC-L000126](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L126) | 126 | `""` | — |
+| [SRC-61B24BEFCC-L000127](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L127) | 127 | `""` | — |
 | [SRC-61B24BEFCC-L000128](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L128) | 128 | `"## تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026"` | — |
 | [SRC-61B24BEFCC-L000129](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L129) | 129 | `""` | — |
 | [SRC-61B24BEFCC-L000130](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L130) | 130 | `"هذا التحديث أحدث من ملحقات CI السابقة في هذه الوثيقة، ويجب قراءته معها دون حذف سجل النتائج التاريخية:"` | — |
@@ -866,25 +888,3 @@
 | [SRC-B335630551-L000157](../../README.md#L157) | 157 | ``"The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose."`` | — |
 | [SRC-B335630551-L000158](../../README.md#L158) | 158 | `""` | — |
 | [SRC-B335630551-L000159](../../README.md#L159) | 159 | `"## Existing lead workspace"` | — |
-| [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
-| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
-| [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
-| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"Analyze text from the CLI:"` | — |
-| [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
-| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ````"```bash"```` | — |
-| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
-| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```"```` | — |
-| [SRC-B335630551-L000168](../../README.md#L168) | 168 | `""` | — |
-| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
-| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
-| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```bash"```` | — |
-| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
-| [SRC-B335630551-L000173](../../README.md#L173) | 173 | `"python -m cli.omarai list --limit 50"` | — |
-| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
-| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```"```` | — |
-| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `""` | — |
-| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"## Checks"` | — |
-| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `""` | — |
-| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```bash"```` | — |
-| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `"python -m pip install -e \".[dev]\""` | — |
-| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"ruff check agents api cli tests"` | — |

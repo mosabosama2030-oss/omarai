@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000490 إلى SRC-6BECF5AD00-L000013
+- النطاق: SRC-3451CC474D-L000468 إلى SRC-DA61479D59-L000295
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `"        }"` | — |
+| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `""` | — |
+| [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `"    monkeypatch.setattr(WebAgent, \"answer\", slow_answer)"` | — |
+| [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `""` | — |
+| [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"    def first_request():"` | — |
+| [SRC-3451CC474D-L000474](../../tests/test_api.py#L474) | 474 | `"        first_result[\"response\"] = request_json("` | — |
+| [SRC-3451CC474D-L000475](../../tests/test_api.py#L475) | 475 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الأول\"}"` | — |
+| [SRC-3451CC474D-L000476](../../tests/test_api.py#L476) | 476 | `"        )"` | — |
+| [SRC-3451CC474D-L000477](../../tests/test_api.py#L477) | 477 | `""` | — |
+| [SRC-3451CC474D-L000478](../../tests/test_api.py#L478) | 478 | `"    worker = threading.Thread(target=first_request, daemon=True)"` | — |
+| [SRC-3451CC474D-L000479](../../tests/test_api.py#L479) | 479 | `"    worker.start()"` | — |
+| [SRC-3451CC474D-L000480](../../tests/test_api.py#L480) | 480 | `"    try:"` | — |
+| [SRC-3451CC474D-L000481](../../tests/test_api.py#L481) | 481 | `"        assert entered.wait(timeout=1), \"first request did not acquire the research slot\""` | — |
+| [SRC-3451CC474D-L000482](../../tests/test_api.py#L482) | 482 | `"        status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الثاني\"}"` | — |
+| [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"        )"` | — |
+| [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `"        assert status == 503"` | — |
+| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"        assert payload[\"retry_after_seconds\"] == 5"` | — |
+| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"        assert \"مشغولة\" in payload[\"error\"]"` | — |
+| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"    finally:"` | — |
+| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `"        release.set()"` | — |
 | [SRC-3451CC474D-L000490](../../tests/test_api.py#L490) | 490 | `"        worker.join(timeout=3)"` | — |
 | [SRC-3451CC474D-L000491](../../tests/test_api.py#L491) | 491 | `""` | — |
 | [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `"    assert not worker.is_alive()"` | — |
@@ -812,34 +834,3 @@
 | [SRC-DA61479D59-L000293](../../tests/test_connector_summary_counters.py#L293) | 293 | `"                    \"invalid_url_or_unsafe_target\": 0,"` | — |
 | [SRC-DA61479D59-L000294](../../tests/test_connector_summary_counters.py#L294) | 294 | `"                    \"blocked_domain\": 0,"` | — |
 | [SRC-DA61479D59-L000295](../../tests/test_connector_summary_counters.py#L295) | 295 | `"                    \"relevance_below_threshold\": 2,"` | — |
-| [SRC-DA61479D59-L000296](../../tests/test_connector_summary_counters.py#L296) | 296 | `"                },"` | — |
-| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |
-| [SRC-DA61479D59-L000298](../../tests/test_connector_summary_counters.py#L298) | 298 | `"        ],"` | — |
-| [SRC-DA61479D59-L000299](../../tests/test_connector_summary_counters.py#L299) | 299 | `"        [],"` | — |
-| [SRC-DA61479D59-L000300](../../tests/test_connector_summary_counters.py#L300) | 300 | `"    )"` | — |
-| [SRC-DA61479D59-L000301](../../tests/test_connector_summary_counters.py#L301) | 301 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000302](../../tests/test_connector_summary_counters.py#L302) | 302 | `"    assert bing[\"rejected_count\"] == 5"` | — |
-| [SRC-DA61479D59-L000303](../../tests/test_connector_summary_counters.py#L303) | 303 | `"    assert bing[\"rejection_counts_observed\"] is False"` | — |
-| [SRC-DA61479D59-L000304](../../tests/test_connector_summary_counters.py#L304) | 304 | `"    assert bing[\"rejection_counts\"] is None"` | — |
-## اختبارات
-
-### FILE-6BECF5AD00 — [tests/test_connectors_mocked.py](../../tests/test_connectors_mocked.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BECF5AD00-L000001](../../tests/test_connectors_mocked.py#L1) | 1 | `"\"\"\"Connector unit tests with mocked HTTP (no live network required).\"\"\""` | — |
-| [SRC-6BECF5AD00-L000002](../../tests/test_connectors_mocked.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6BECF5AD00-L000003](../../tests/test_connectors_mocked.py#L3) | 3 | `""` | — |
-| [SRC-6BECF5AD00-L000004](../../tests/test_connectors_mocked.py#L4) | 4 | `""` | — |
-| [SRC-6BECF5AD00-L000005](../../tests/test_connectors_mocked.py#L5) | 5 | `"import agents.search_connectors as sc"` | — |
-| [SRC-6BECF5AD00-L000006](../../tests/test_connectors_mocked.py#L6) | 6 | `""` | — |
-| [SRC-6BECF5AD00-L000007](../../tests/test_connectors_mocked.py#L7) | 7 | `""` | — |
-| [SRC-6BECF5AD00-L000008](../../tests/test_connectors_mocked.py#L8) | 8 | `"def test_openalex_parses_mocked_payload(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000009](../../tests/test_connectors_mocked.py#L9) | 9 | `"    payload = {"` | — |
-| [SRC-6BECF5AD00-L000010](../../tests/test_connectors_mocked.py#L10) | 10 | `"        \"results\": ["` | — |
-| [SRC-6BECF5AD00-L000011](../../tests/test_connectors_mocked.py#L11) | 11 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000012](../../tests/test_connectors_mocked.py#L12) | 12 | `"                \"display_name\": \"Electric Vehicles in Egypt\","` | — |
-| [SRC-6BECF5AD00-L000013](../../tests/test_connectors_mocked.py#L13) | 13 | `"                \"id\": \"https://openalex.org/W123\","` | — |

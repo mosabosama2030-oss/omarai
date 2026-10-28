@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001077 إلى SRC-1AE03B9EC3-L001876
+- النطاق: SRC-1AE03B9EC3-L001072 إلى SRC-1AE03B9EC3-L001871
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001072](../../agents/web_agent.py#L1072) | 1072 | `"                \"name\": \"bing_rss\","` | — |
+| [SRC-1AE03B9EC3-L001073](../../agents/web_agent.py#L1073) | 1073 | `"                \"implemented\": True,"` | — |
+| [SRC-1AE03B9EC3-L001074](../../agents/web_agent.py#L1074) | 1074 | `"                \"configuration_status\": \"built_in_no_api_key\","` | — |
+| [SRC-1AE03B9EC3-L001075](../../agents/web_agent.py#L1075) | 1075 | `"                \"runtime_status\": not_tested,"` | — |
+| [SRC-1AE03B9EC3-L001076](../../agents/web_agent.py#L1076) | 1076 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001077](../../agents/web_agent.py#L1077) | 1077 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L001078](../../agents/web_agent.py#L1078) | 1078 | `"                \"name\": \"google_news_rss\","` | — |
 | [SRC-1AE03B9EC3-L001079](../../agents/web_agent.py#L1079) | 1079 | `"                \"implemented\": True,"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L001869](../../agents/web_agent.py#L1869) | 1869 | `"                                    \"snippet\": snippet,"` | — |
 | [SRC-1AE03B9EC3-L001870](../../agents/web_agent.py#L1870) | 1870 | `"                                    \"page_text\": \"\","` | — |
 | [SRC-1AE03B9EC3-L001871](../../agents/web_agent.py#L1871) | 1871 | `"                                    \"page_fetched\": False,"` | — |
-| [SRC-1AE03B9EC3-L001872](../../agents/web_agent.py#L1872) | 1872 | `"                                    \"provider\": \"reddit_oauth_api\","` | — |
-| [SRC-1AE03B9EC3-L001873](../../agents/web_agent.py#L1873) | 1873 | `"                                    \"provider_rank\": rank,"` | — |
-| [SRC-1AE03B9EC3-L001874](../../agents/web_agent.py#L1874) | 1874 | `"                                    \"search_query\": query,"` | — |
-| [SRC-1AE03B9EC3-L001875](../../agents/web_agent.py#L1875) | 1875 | `"                                    \"published_at\": _clean_text(str(post.get(\"created_utc\") or \"\"), 100),"` | — |
-| [SRC-1AE03B9EC3-L001876](../../agents/web_agent.py#L1876) | 1876 | `"                                })"` | — |

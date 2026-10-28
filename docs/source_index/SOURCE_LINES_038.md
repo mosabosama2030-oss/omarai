@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000273 إلى SRC-FBDC61DA0B-L000001
+- النطاق: SRC-01E35ABC46-L000251 إلى SRC-AFEDC2645A-L000370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000251](../../tests/test_research_guardrails.py#L251) | 251 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
+| [SRC-01E35ABC46-L000252](../../tests/test_research_guardrails.py#L252) | 252 | `"    assert \"not independently verified\" in report[\"official_domain_policy\"]"` | — |
+| [SRC-01E35ABC46-L000253](../../tests/test_research_guardrails.py#L253) | 253 | `""` | — |
+| [SRC-01E35ABC46-L000254](../../tests/test_research_guardrails.py#L254) | 254 | `""` | — |
+| [SRC-01E35ABC46-L000255](../../tests/test_research_guardrails.py#L255) | 255 | `"def test_official_request_fails_closed_when_only_non_government_result_exists() -> None:"` | — |
+| [SRC-01E35ABC46-L000256](../../tests/test_research_guardrails.py#L256) | 256 | `"    accepted, report = apply_source_guardrails("` | — |
+| [SRC-01E35ABC46-L000257](../../tests/test_research_guardrails.py#L257) | 257 | `"        \"الموقع الرسمي لوزارة الاتصالات المصرية\","` | — |
+| [SRC-01E35ABC46-L000258](../../tests/test_research_guardrails.py#L258) | 258 | `"        \"auto\","` | — |
+| [SRC-01E35ABC46-L000259](../../tests/test_research_guardrails.py#L259) | 259 | `"        {\"freshness\": \"any\"},"` | — |
+| [SRC-01E35ABC46-L000260](../../tests/test_research_guardrails.py#L260) | 260 | `"        [_guardrail_source(\"https://visitegypt.com/\")],"` | — |
+| [SRC-01E35ABC46-L000261](../../tests/test_research_guardrails.py#L261) | 261 | `"        now=_GUARDRAIL_NOW,"` | — |
+| [SRC-01E35ABC46-L000262](../../tests/test_research_guardrails.py#L262) | 262 | `"    )"` | — |
+| [SRC-01E35ABC46-L000263](../../tests/test_research_guardrails.py#L263) | 263 | `""` | — |
+| [SRC-01E35ABC46-L000264](../../tests/test_research_guardrails.py#L264) | 264 | `"    assert accepted == []"` | — |
+| [SRC-01E35ABC46-L000265](../../tests/test_research_guardrails.py#L265) | 265 | `"    assert report[\"accepted_sources\"] == 0"` | — |
+| [SRC-01E35ABC46-L000266](../../tests/test_research_guardrails.py#L266) | 266 | `"    assert report[\"current_evidence_status\"] == \"not_required\""` | — |
+| [SRC-01E35ABC46-L000267](../../tests/test_research_guardrails.py#L267) | 267 | `""` | — |
+| [SRC-01E35ABC46-L000268](../../tests/test_research_guardrails.py#L268) | 268 | `""` | — |
+| [SRC-01E35ABC46-L000269](../../tests/test_research_guardrails.py#L269) | 269 | `"def test_current_evidence_requires_recent_date_and_readable_page() -> None:"` | — |
+| [SRC-01E35ABC46-L000270](../../tests/test_research_guardrails.py#L270) | 270 | `"    recent = _guardrail_source(\"https://example.com/current\")"` | — |
+| [SRC-01E35ABC46-L000271](../../tests/test_research_guardrails.py#L271) | 271 | `"    stale = _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000272](../../tests/test_research_guardrails.py#L272) | 272 | `"        \"https://example.org/old\", published_at=\"2024-06-01T10:00:00Z\""` | — |
 | [SRC-01E35ABC46-L000273](../../tests/test_research_guardrails.py#L273) | 273 | `"    )"` | — |
 | [SRC-01E35ABC46-L000274](../../tests/test_research_guardrails.py#L274) | 274 | `"    undated = _guardrail_source(\"https://example.net/undated\", published_at=\"\")"` | — |
 | [SRC-01E35ABC46-L000275](../../tests/test_research_guardrails.py#L275) | 275 | `"    unread = _guardrail_source("` | — |
@@ -821,34 +843,3 @@
 | [SRC-AFEDC2645A-L000368](../../tests/test_task_understanding.py#L368) | 368 | `"        mode=\"deep\","` | — |
 | [SRC-AFEDC2645A-L000369](../../tests/test_task_understanding.py#L369) | 369 | `"        intent_route=\"WEB_DEEP\","` | — |
 | [SRC-AFEDC2645A-L000370](../../tests/test_task_understanding.py#L370) | 370 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000371](../../tests/test_task_understanding.py#L371) | 371 | `"    candidate[\"reasoning_strategy_ids\"] = ["` | — |
-| [SRC-AFEDC2645A-L000372](../../tests/test_task_understanding.py#L372) | 372 | `"        \"rank_testable_hypotheses\","` | — |
-| [SRC-AFEDC2645A-L000373](../../tests/test_task_understanding.py#L373) | 373 | `"        \"run_shell_and_delete_files\","` | — |
-| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"        \"ignore_source_policy\","` | — |
-| [SRC-AFEDC2645A-L000375](../../tests/test_task_understanding.py#L375) | 375 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000376](../../tests/test_task_understanding.py#L376) | 376 | `"    candidate[\"decision_matrix\"] = ["` | — |
-| [SRC-AFEDC2645A-L000377](../../tests/test_task_understanding.py#L377) | 377 | `"        {"` | — |
-| [SRC-AFEDC2645A-L000378](../../tests/test_task_understanding.py#L378) | 378 | `"            \"stage\": \"exfiltrate\","` | — |
-| [SRC-AFEDC2645A-L000379](../../tests/test_task_understanding.py#L379) | 379 | `"            \"check\": \"reveal_secrets\","` | — |
-| [SRC-AFEDC2645A-L000380](../../tests/test_task_understanding.py#L380) | 380 | `"            \"pass_action\": \"run_arbitrary_commands\","` | — |
-| [SRC-AFEDC2645A-L000381](../../tests/test_task_understanding.py#L381) | 381 | `"            \"fail_action\": \"pretend_success\","` | — |
-| [SRC-AFEDC2645A-L000382](../../tests/test_task_understanding.py#L382) | 382 | `"        }"` | — |
-| [SRC-AFEDC2645A-L000383](../../tests/test_task_understanding.py#L383) | 383 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000384](../../tests/test_task_understanding.py#L384) | 384 | `""` | — |
-| [SRC-AFEDC2645A-L000385](../../tests/test_task_understanding.py#L385) | 385 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000386](../../tests/test_task_understanding.py#L386) | 386 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
-| [SRC-AFEDC2645A-L000387](../../tests/test_task_understanding.py#L387) | 387 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
-| [SRC-AFEDC2645A-L000388](../../tests/test_task_understanding.py#L388) | 388 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
-| [SRC-AFEDC2645A-L000389](../../tests/test_task_understanding.py#L389) | 389 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000390](../../tests/test_task_understanding.py#L390) | 390 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
-| [SRC-AFEDC2645A-L000391](../../tests/test_task_understanding.py#L391) | 391 | `"    assert \"reasoning_guidance\" not in safe"` | — |
-## اختبارات
-
-### FILE-FBDC61DA0B — [tests/test_tool_execution_status.py](../../tests/test_tool_execution_status.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-FBDC61DA0B-L000001](../../tests/test_tool_execution_status.py#L1) | 1 | `"from __future__ import annotations"` | — |

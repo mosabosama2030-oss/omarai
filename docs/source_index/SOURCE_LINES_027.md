@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000182 إلى SRC-03FF422A16-L000148
+- النطاق: SRC-B335630551-L000160 إلى SRC-03FF422A16-L000126
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
+| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
+| [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
+| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"Analyze text from the CLI:"` | — |
+| [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
+| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ````"```bash"```` | — |
+| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
+| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```"```` | — |
+| [SRC-B335630551-L000168](../../README.md#L168) | 168 | `""` | — |
+| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
+| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
+| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```bash"```` | — |
+| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
+| [SRC-B335630551-L000173](../../README.md#L173) | 173 | `"python -m cli.omarai list --limit 50"` | — |
+| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
+| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```"```` | — |
+| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `""` | — |
+| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"## Checks"` | — |
+| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `""` | — |
+| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```bash"```` | — |
+| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `"python -m pip install -e \".[dev]\""` | — |
+| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"ruff check agents api cli tests"` | — |
 | [SRC-B335630551-L000182](../../README.md#L182) | 182 | `"python -m pytest -q"` | — |
 | [SRC-B335630551-L000183](../../README.md#L183) | 183 | ````"```"```` | — |
 ## إعدادات وتشغيل
@@ -839,25 +861,3 @@
 | [SRC-03FF422A16-L000124](../../scripts/score_answer_quality_reviews.py#L124) | 124 | `"            problems.append(case_id + \": REVIEWED case must include at least one scored dimension\")"` | — |
 | [SRC-03FF422A16-L000125](../../scripts/score_answer_quality_reviews.py#L125) | 125 | `"    return problems"` | — |
 | [SRC-03FF422A16-L000126](../../scripts/score_answer_quality_reviews.py#L126) | 126 | `""` | — |
-| [SRC-03FF422A16-L000127](../../scripts/score_answer_quality_reviews.py#L127) | 127 | `""` | — |
-| [SRC-03FF422A16-L000128](../../scripts/score_answer_quality_reviews.py#L128) | 128 | `"def _ratio(numerator: int, denominator: int, case_count: int) -> dict[str, Any]:"` | — |
-| [SRC-03FF422A16-L000129](../../scripts/score_answer_quality_reviews.py#L129) | 129 | `"    return {"` | — |
-| [SRC-03FF422A16-L000130](../../scripts/score_answer_quality_reviews.py#L130) | 130 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
-| [SRC-03FF422A16-L000131](../../scripts/score_answer_quality_reviews.py#L131) | 131 | `"        \"numerator\": numerator,"` | — |
-| [SRC-03FF422A16-L000132](../../scripts/score_answer_quality_reviews.py#L132) | 132 | `"        \"denominator\": denominator,"` | — |
-| [SRC-03FF422A16-L000133](../../scripts/score_answer_quality_reviews.py#L133) | 133 | `"        \"reviewed_case_count\": case_count,"` | — |
-| [SRC-03FF422A16-L000134](../../scripts/score_answer_quality_reviews.py#L134) | 134 | `"        \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if denominator else \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\","` | — |
-| [SRC-03FF422A16-L000135](../../scripts/score_answer_quality_reviews.py#L135) | 135 | `"    }"` | — |
-| [SRC-03FF422A16-L000136](../../scripts/score_answer_quality_reviews.py#L136) | 136 | `""` | — |
-| [SRC-03FF422A16-L000137](../../scripts/score_answer_quality_reviews.py#L137) | 137 | `""` | — |
-| [SRC-03FF422A16-L000138](../../scripts/score_answer_quality_reviews.py#L138) | 138 | `"def summarize_reviews("` | — |
-| [SRC-03FF422A16-L000139](../../scripts/score_answer_quality_reviews.py#L139) | 139 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
-| [SRC-03FF422A16-L000140](../../scripts/score_answer_quality_reviews.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
-| [SRC-03FF422A16-L000141](../../scripts/score_answer_quality_reviews.py#L141) | 141 | `"    problems = validate_reviews(review_data, corpus_data)"` | — |
-| [SRC-03FF422A16-L000142](../../scripts/score_answer_quality_reviews.py#L142) | 142 | `"    if problems:"` | — |
-| [SRC-03FF422A16-L000143](../../scripts/score_answer_quality_reviews.py#L143) | 143 | `"        raise ValueError(\"; \".join(problems))"` | — |
-| [SRC-03FF422A16-L000144](../../scripts/score_answer_quality_reviews.py#L144) | 144 | `"    reviews = review_data[\"reviews\"]"` | — |
-| [SRC-03FF422A16-L000145](../../scripts/score_answer_quality_reviews.py#L145) | 145 | `"    reviewed = [item for item in reviews if item[\"status\"] == \"REVIEWED\"]"` | — |
-| [SRC-03FF422A16-L000146](../../scripts/score_answer_quality_reviews.py#L146) | 146 | `"    status_counts = Counter(item[\"status\"] for item in reviews)"` | — |
-| [SRC-03FF422A16-L000147](../../scripts/score_answer_quality_reviews.py#L147) | 147 | `"    corpus_count = len(corpus_data[\"cases\"])"` | — |
-| [SRC-03FF422A16-L000148](../../scripts/score_answer_quality_reviews.py#L148) | 148 | `"    reviewed_ids = {item[\"case_id\"] for item in reviewed}"` | — |

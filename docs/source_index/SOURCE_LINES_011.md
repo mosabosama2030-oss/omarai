@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002677 إلى SRC-1AE03B9EC3-L003476
+- النطاق: SRC-1AE03B9EC3-L002672 إلى SRC-1AE03B9EC3-L003471
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002672](../../agents/web_agent.py#L2672) | 2672 | `"                        if observed_status in {"` | — |
+| [SRC-1AE03B9EC3-L002673](../../agents/web_agent.py#L2673) | 2673 | `"                            \"rejected_url\", \"blocked_or_unresolved_host\", \"blocked_connection_target\","` | — |
+| [SRC-1AE03B9EC3-L002674](../../agents/web_agent.py#L2674) | 2674 | `"                            \"redirect_failed\", \"redirect_rejected\", \"redirect_limit\", \"http_error\","` | — |
+| [SRC-1AE03B9EC3-L002675](../../agents/web_agent.py#L2675) | 2675 | `"                            \"unsupported_content_type\", \"page_too_large\", \"network_error\","` | — |
+| [SRC-1AE03B9EC3-L002676](../../agents/web_agent.py#L2676) | 2676 | `"                            \"empty_content\", \"no_text_extracted\", \"budget_exhausted\","` | — |
 | [SRC-1AE03B9EC3-L002677](../../agents/web_agent.py#L2677) | 2677 | `"                        }:"` | — |
 | [SRC-1AE03B9EC3-L002678](../../agents/web_agent.py#L2678) | 2678 | `"                            source[\"page_fetch_status\"] = observed_status"` | — |
 | [SRC-1AE03B9EC3-L002679](../../agents/web_agent.py#L2679) | 2679 | `"                        else:"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L003469](../../agents/web_agent.py#L3469) | 3469 | `"                f\"نص متاح: {evidence}\""` | — |
 | [SRC-1AE03B9EC3-L003470](../../agents/web_agent.py#L3470) | 3470 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003471](../../agents/web_agent.py#L3471) | 3471 | `"        evidence_text = ("` | — |
-| [SRC-1AE03B9EC3-L003472](../../agents/web_agent.py#L3472) | 3472 | `"            \"\\n\\n\".join(source_blocks)"` | — |
-| [SRC-1AE03B9EC3-L003473](../../agents/web_agent.py#L3473) | 3473 | `"            or \"لم تتوفر نتائج ويب يمكن استخدامها في هذه الجولة.\""` | — |
-| [SRC-1AE03B9EC3-L003474](../../agents/web_agent.py#L3474) | 3474 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003475](../../agents/web_agent.py#L3475) | 3475 | `"        # TaskSpec is used by synthesis, not merely displayed in diagnostics."` | — |
-| [SRC-1AE03B9EC3-L003476](../../agents/web_agent.py#L3476) | 3476 | `"        # Sanitize it again at the trust boundary and only keep strategy rows"` | — |

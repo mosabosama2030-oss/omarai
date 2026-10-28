@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B106ADC5EF-L000034 إلى SRC-01E35ABC46-L000272
+- النطاق: SRC-B106ADC5EF-L000012 إلى SRC-01E35ABC46-L000250
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B106ADC5EF-L000012](../../tests/test_proxy_origin.py#L12) | 12 | `""` | — |
+| [SRC-B106ADC5EF-L000013](../../tests/test_proxy_origin.py#L13) | 13 | `"@pytest.fixture"` | — |
+| [SRC-B106ADC5EF-L000014](../../tests/test_proxy_origin.py#L14) | 14 | `"def port(tmp_path, monkeypatch):"` | — |
+| [SRC-B106ADC5EF-L000015](../../tests/test_proxy_origin.py#L15) | 15 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-B106ADC5EF-L000016](../../tests/test_proxy_origin.py#L16) | 16 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", TOKEN)"` | — |
+| [SRC-B106ADC5EF-L000017](../../tests/test_proxy_origin.py#L17) | 17 | `"    # The public host is explicitly configured; do not infer it from a client header."` | — |
+| [SRC-B106ADC5EF-L000018](../../tests/test_proxy_origin.py#L18) | 18 | `"    monkeypatch.setenv(\"OMARAI_ALLOWED_ORIGINS\", \"https://\" + PUBLIC_NAME)"` | — |
+| [SRC-B106ADC5EF-L000019](../../tests/test_proxy_origin.py#L19) | 19 | `"    monkeypatch.setattr(Handler, \"store\", LeadStore(tmp_path / \"origin-test.sqlite3\"))"` | — |
+| [SRC-B106ADC5EF-L000020](../../tests/test_proxy_origin.py#L20) | 20 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 10_000)"` | — |
+| [SRC-B106ADC5EF-L000021](../../tests/test_proxy_origin.py#L21) | 21 | `"    server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)"` | — |
+| [SRC-B106ADC5EF-L000022](../../tests/test_proxy_origin.py#L22) | 22 | `"    thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
+| [SRC-B106ADC5EF-L000023](../../tests/test_proxy_origin.py#L23) | 23 | `"    thread.start()"` | — |
+| [SRC-B106ADC5EF-L000024](../../tests/test_proxy_origin.py#L24) | 24 | `"    try:"` | — |
+| [SRC-B106ADC5EF-L000025](../../tests/test_proxy_origin.py#L25) | 25 | `"        yield server.server_port"` | — |
+| [SRC-B106ADC5EF-L000026](../../tests/test_proxy_origin.py#L26) | 26 | `"    finally:"` | — |
+| [SRC-B106ADC5EF-L000027](../../tests/test_proxy_origin.py#L27) | 27 | `"        server.shutdown()"` | — |
+| [SRC-B106ADC5EF-L000028](../../tests/test_proxy_origin.py#L28) | 28 | `"        server.server_close()"` | — |
+| [SRC-B106ADC5EF-L000029](../../tests/test_proxy_origin.py#L29) | 29 | `"        thread.join(timeout=3)"` | — |
+| [SRC-B106ADC5EF-L000030](../../tests/test_proxy_origin.py#L30) | 30 | `""` | — |
+| [SRC-B106ADC5EF-L000031](../../tests/test_proxy_origin.py#L31) | 31 | `"def call(port, method, extra):"` | — |
+| [SRC-B106ADC5EF-L000032](../../tests/test_proxy_origin.py#L32) | 32 | `"    body = b'{\"question\": \"x\"}' if method == \"POST\" else b\"\""` | — |
+| [SRC-B106ADC5EF-L000033](../../tests/test_proxy_origin.py#L33) | 33 | `"    headers = {\"Content-Type\": \"application/json\", \"Authorization\": \"Bearer \" + TOKEN, **extra}"` | — |
 | [SRC-B106ADC5EF-L000034](../../tests/test_proxy_origin.py#L34) | 34 | `"    connection = http.client.HTTPConnection(\"127.0.0.1\", port, timeout=5)"` | — |
 | [SRC-B106ADC5EF-L000035](../../tests/test_proxy_origin.py#L35) | 35 | `"    connection.putrequest(method, \"/api/ask\", skip_host=True)"` | — |
 | [SRC-B106ADC5EF-L000036](../../tests/test_proxy_origin.py#L36) | 36 | `"    for name, value in headers.items():"` | — |
@@ -821,25 +843,3 @@
 | [SRC-01E35ABC46-L000248](../../tests/test_research_guardrails.py#L248) | 248 | `""` | — |
 | [SRC-01E35ABC46-L000249](../../tests/test_research_guardrails.py#L249) | 249 | `"    assert [item[\"url\"] for item in accepted] == [\"https://mcit.gov.eg/\"]"` | — |
 | [SRC-01E35ABC46-L000250](../../tests/test_research_guardrails.py#L250) | 250 | `"    assert report[\"official_government_domain_required\"] is True"` | — |
-| [SRC-01E35ABC46-L000251](../../tests/test_research_guardrails.py#L251) | 251 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
-| [SRC-01E35ABC46-L000252](../../tests/test_research_guardrails.py#L252) | 252 | `"    assert \"not independently verified\" in report[\"official_domain_policy\"]"` | — |
-| [SRC-01E35ABC46-L000253](../../tests/test_research_guardrails.py#L253) | 253 | `""` | — |
-| [SRC-01E35ABC46-L000254](../../tests/test_research_guardrails.py#L254) | 254 | `""` | — |
-| [SRC-01E35ABC46-L000255](../../tests/test_research_guardrails.py#L255) | 255 | `"def test_official_request_fails_closed_when_only_non_government_result_exists() -> None:"` | — |
-| [SRC-01E35ABC46-L000256](../../tests/test_research_guardrails.py#L256) | 256 | `"    accepted, report = apply_source_guardrails("` | — |
-| [SRC-01E35ABC46-L000257](../../tests/test_research_guardrails.py#L257) | 257 | `"        \"الموقع الرسمي لوزارة الاتصالات المصرية\","` | — |
-| [SRC-01E35ABC46-L000258](../../tests/test_research_guardrails.py#L258) | 258 | `"        \"auto\","` | — |
-| [SRC-01E35ABC46-L000259](../../tests/test_research_guardrails.py#L259) | 259 | `"        {\"freshness\": \"any\"},"` | — |
-| [SRC-01E35ABC46-L000260](../../tests/test_research_guardrails.py#L260) | 260 | `"        [_guardrail_source(\"https://visitegypt.com/\")],"` | — |
-| [SRC-01E35ABC46-L000261](../../tests/test_research_guardrails.py#L261) | 261 | `"        now=_GUARDRAIL_NOW,"` | — |
-| [SRC-01E35ABC46-L000262](../../tests/test_research_guardrails.py#L262) | 262 | `"    )"` | — |
-| [SRC-01E35ABC46-L000263](../../tests/test_research_guardrails.py#L263) | 263 | `""` | — |
-| [SRC-01E35ABC46-L000264](../../tests/test_research_guardrails.py#L264) | 264 | `"    assert accepted == []"` | — |
-| [SRC-01E35ABC46-L000265](../../tests/test_research_guardrails.py#L265) | 265 | `"    assert report[\"accepted_sources\"] == 0"` | — |
-| [SRC-01E35ABC46-L000266](../../tests/test_research_guardrails.py#L266) | 266 | `"    assert report[\"current_evidence_status\"] == \"not_required\""` | — |
-| [SRC-01E35ABC46-L000267](../../tests/test_research_guardrails.py#L267) | 267 | `""` | — |
-| [SRC-01E35ABC46-L000268](../../tests/test_research_guardrails.py#L268) | 268 | `""` | — |
-| [SRC-01E35ABC46-L000269](../../tests/test_research_guardrails.py#L269) | 269 | `"def test_current_evidence_requires_recent_date_and_readable_page() -> None:"` | — |
-| [SRC-01E35ABC46-L000270](../../tests/test_research_guardrails.py#L270) | 270 | `"    recent = _guardrail_source(\"https://example.com/current\")"` | — |
-| [SRC-01E35ABC46-L000271](../../tests/test_research_guardrails.py#L271) | 271 | `"    stale = _guardrail_source("` | — |
-| [SRC-01E35ABC46-L000272](../../tests/test_research_guardrails.py#L272) | 272 | `"        \"https://example.org/old\", published_at=\"2024-06-01T10:00:00Z\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003477 إلى SRC-1AE03B9EC3-L004276
+- النطاق: SRC-1AE03B9EC3-L003472 إلى SRC-1AE03B9EC3-L004271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003472](../../agents/web_agent.py#L3472) | 3472 | `"            \"\\n\\n\".join(source_blocks)"` | — |
+| [SRC-1AE03B9EC3-L003473](../../agents/web_agent.py#L3473) | 3473 | `"            or \"لم تتوفر نتائج ويب يمكن استخدامها في هذه الجولة.\""` | — |
+| [SRC-1AE03B9EC3-L003474](../../agents/web_agent.py#L3474) | 3474 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003475](../../agents/web_agent.py#L3475) | 3475 | `"        # TaskSpec is used by synthesis, not merely displayed in diagnostics."` | — |
+| [SRC-1AE03B9EC3-L003476](../../agents/web_agent.py#L3476) | 3476 | `"        # Sanitize it again at the trust boundary and only keep strategy rows"` | — |
 | [SRC-1AE03B9EC3-L003477](../../agents/web_agent.py#L3477) | 3477 | `"        # whose query was retained in the bounded executable plan."` | — |
 | [SRC-1AE03B9EC3-L003478](../../agents/web_agent.py#L3478) | 3478 | `"        raw_task_spec = plan.get(\"task_spec\")"` | — |
 | [SRC-1AE03B9EC3-L003479](../../agents/web_agent.py#L3479) | 3479 | `"        task_spec = validate_task_spec(raw_task_spec)"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"                    else \"generation_failed\""` | — |
 | [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"            elif result.get(\"kind\") == \"clarification\":"` | — |
-| [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"                final_answer_status = \"clarification_required\""` | — |
-| [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L004274](../../agents/web_agent.py#L4274) | 4274 | `"                final_answer_status = \"not_attempted\""` | — |
-| [SRC-1AE03B9EC3-L004275](../../agents/web_agent.py#L4275) | 4275 | `"            result[\"final_answer_status\"] = final_answer_status"` | — |
-| [SRC-1AE03B9EC3-L004276](../../agents/web_agent.py#L4276) | 4276 | `"        # Establish an honest terminal state even for early-return branches"` | — |

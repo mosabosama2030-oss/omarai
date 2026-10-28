@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001124 إلى SRC-1AE03B9EC3-L000276
+- النطاق: SRC-686F71AA50-L001124 إلى SRC-1AE03B9EC3-L000271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -431,124 +431,129 @@
 | [SRC-0799EEEB02-L000098](../../agents/tool_execution_status.py#L98) | 98 | `"    elif outcome == \"not_attempted\" or attempted is False:"` | — |
 | [SRC-0799EEEB02-L000099](../../agents/tool_execution_status.py#L99) | 99 | `"        status = \"not_attempted\""` | — |
 | [SRC-0799EEEB02-L000100](../../agents/tool_execution_status.py#L100) | 100 | `"    elif attempted is True:"` | — |
-| [SRC-0799EEEB02-L000101](../../agents/tool_execution_status.py#L101) | 101 | `"        status = ("` | — |
-| [SRC-0799EEEB02-L000102](../../agents/tool_execution_status.py#L102) | 102 | `"            \"completed_with_results\""` | — |
-| [SRC-0799EEEB02-L000103](../../agents/tool_execution_status.py#L103) | 103 | `"            if accepted_sources is not None and accepted_sources > 0"` | — |
-| [SRC-0799EEEB02-L000104](../../agents/tool_execution_status.py#L104) | 104 | `"            else \"completed_no_usable_results\""` | — |
-| [SRC-0799EEEB02-L000105](../../agents/tool_execution_status.py#L105) | 105 | `"        )"` | — |
-| [SRC-0799EEEB02-L000106](../../agents/tool_execution_status.py#L106) | 106 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000107](../../agents/tool_execution_status.py#L107) | 107 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000108](../../agents/tool_execution_status.py#L108) | 108 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000109](../../agents/tool_execution_status.py#L109) | 109 | `"        \"search_outcome\": outcome,"` | — |
-| [SRC-0799EEEB02-L000110](../../agents/tool_execution_status.py#L110) | 110 | `"        \"search_attempted\": attempted if isinstance(attempted, bool) else None,"` | — |
-| [SRC-0799EEEB02-L000111](../../agents/tool_execution_status.py#L111) | 111 | `"        \"accepted_source_count\": accepted_sources,"` | — |
-| [SRC-0799EEEB02-L000112](../../agents/tool_execution_status.py#L112) | 112 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000113](../../agents/tool_execution_status.py#L113) | 113 | `""` | — |
-| [SRC-0799EEEB02-L000114](../../agents/tool_execution_status.py#L114) | 114 | `"    tool = \"page_fetch\""` | — |
-| [SRC-0799EEEB02-L000115](../../agents/tool_execution_status.py#L115) | 115 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000116](../../agents/tool_execution_status.py#L116) | 116 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000117](../../agents/tool_execution_status.py#L117) | 117 | `"    elif pages_read > 0:"` | — |
-| [SRC-0799EEEB02-L000118](../../agents/tool_execution_status.py#L118) | 118 | `"        status = \"completed_with_read_pages\""` | — |
-| [SRC-0799EEEB02-L000119](../../agents/tool_execution_status.py#L119) | 119 | `"    elif pages_attempted is not None and pages_attempted > 0:"` | — |
-| [SRC-0799EEEB02-L000120](../../agents/tool_execution_status.py#L120) | 120 | `"        status = \"attempted_no_readable_pages\""` | — |
-| [SRC-0799EEEB02-L000121](../../agents/tool_execution_status.py#L121) | 121 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
-| [SRC-0799EEEB02-L000122](../../agents/tool_execution_status.py#L122) | 122 | `"        status = \"not_attempted_after_search_error\""` | — |
-| [SRC-0799EEEB02-L000123](../../agents/tool_execution_status.py#L123) | 123 | `"    elif attempted is True:"` | — |
-| [SRC-0799EEEB02-L000124](../../agents/tool_execution_status.py#L124) | 124 | `"        status = \"not_attempted_no_fetchable_candidates\""` | — |
-| [SRC-0799EEEB02-L000125](../../agents/tool_execution_status.py#L125) | 125 | `"    elif attempted is False:"` | — |
-| [SRC-0799EEEB02-L000126](../../agents/tool_execution_status.py#L126) | 126 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000127](../../agents/tool_execution_status.py#L127) | 127 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000128](../../agents/tool_execution_status.py#L128) | 128 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000129](../../agents/tool_execution_status.py#L129) | 129 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000130](../../agents/tool_execution_status.py#L130) | 130 | `"        \"pages_fetch_attempted\": pages_attempted,"` | — |
-| [SRC-0799EEEB02-L000131](../../agents/tool_execution_status.py#L131) | 131 | `"        \"pages_read\": pages_read,"` | — |
-| [SRC-0799EEEB02-L000132](../../agents/tool_execution_status.py#L132) | 132 | `"        \"pages_read_from_returned_sources\": readable_page_rows,"` | — |
-| [SRC-0799EEEB02-L000133](../../agents/tool_execution_status.py#L133) | 133 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000134](../../agents/tool_execution_status.py#L134) | 134 | `""` | — |
-| [SRC-0799EEEB02-L000135](../../agents/tool_execution_status.py#L135) | 135 | `"    tool = \"public_social_search_if_configured\""` | — |
-| [SRC-0799EEEB02-L000136](../../agents/tool_execution_status.py#L136) | 136 | `"    social_results = _nonnegative_int(search_report.get(\"social_direct_results\")) or 0"` | — |
-| [SRC-0799EEEB02-L000137](../../agents/tool_execution_status.py#L137) | 137 | `"    social_sources = sum("` | — |
-| [SRC-0799EEEB02-L000138](../../agents/tool_execution_status.py#L138) | 138 | `"        1 for source in source_rows"` | — |
-| [SRC-0799EEEB02-L000139](../../agents/tool_execution_status.py#L139) | 139 | `"        if isinstance(source, dict)"` | — |
-| [SRC-0799EEEB02-L000140](../../agents/tool_execution_status.py#L140) | 140 | `"        and ("` | — |
-| [SRC-0799EEEB02-L000141](../../agents/tool_execution_status.py#L141) | 141 | `"            str(source.get(\"platform\") or \"\").lower() in _SOCIAL_PLATFORMS"` | — |
-| [SRC-0799EEEB02-L000142](../../agents/tool_execution_status.py#L142) | 142 | `"            or str(source.get(\"source_class\") or \"\").lower() == \"social\""` | — |
-| [SRC-0799EEEB02-L000143](../../agents/tool_execution_status.py#L143) | 143 | `"        )"` | — |
-| [SRC-0799EEEB02-L000144](../../agents/tool_execution_status.py#L144) | 144 | `"    )"` | — |
-| [SRC-0799EEEB02-L000145](../../agents/tool_execution_status.py#L145) | 145 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000146](../../agents/tool_execution_status.py#L146) | 146 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000147](../../agents/tool_execution_status.py#L147) | 147 | `"    elif social_results > 0 or social_sources > 0:"` | — |
-| [SRC-0799EEEB02-L000148](../../agents/tool_execution_status.py#L148) | 148 | `"        status = \"completed_with_results\""` | — |
-| [SRC-0799EEEB02-L000149](../../agents/tool_execution_status.py#L149) | 149 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
-| [SRC-0799EEEB02-L000150](../../agents/tool_execution_status.py#L150) | 150 | `"        status = \"failed\" if outcome == \"attempted_research_error\" else \"unknown\""` | — |
-| [SRC-0799EEEB02-L000151](../../agents/tool_execution_status.py#L151) | 151 | `"    elif attempted is True:"` | — |
-| [SRC-0799EEEB02-L000152](../../agents/tool_execution_status.py#L152) | 152 | `"        status = \"completed_no_usable_results\""` | — |
-| [SRC-0799EEEB02-L000153](../../agents/tool_execution_status.py#L153) | 153 | `"    elif attempted is False:"` | — |
-| [SRC-0799EEEB02-L000154](../../agents/tool_execution_status.py#L154) | 154 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000155](../../agents/tool_execution_status.py#L155) | 155 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000156](../../agents/tool_execution_status.py#L156) | 156 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000157](../../agents/tool_execution_status.py#L157) | 157 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000158](../../agents/tool_execution_status.py#L158) | 158 | `"        \"social_direct_results\": social_results,"` | — |
-| [SRC-0799EEEB02-L000159](../../agents/tool_execution_status.py#L159) | 159 | `"        \"accepted_social_sources\": social_sources,"` | — |
-| [SRC-0799EEEB02-L000160](../../agents/tool_execution_status.py#L160) | 160 | `"        \"search_outcome\": outcome,"` | — |
-| [SRC-0799EEEB02-L000161](../../agents/tool_execution_status.py#L161) | 161 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000162](../../agents/tool_execution_status.py#L162) | 162 | `""` | — |
-| [SRC-0799EEEB02-L000163](../../agents/tool_execution_status.py#L163) | 163 | `"    tool = \"language_model_generation_if_configured\""` | — |
-| [SRC-0799EEEB02-L000164](../../agents/tool_execution_status.py#L164) | 164 | `"    final_status = str(output.get(\"final_answer_status\") or \"\")"` | — |
-| [SRC-0799EEEB02-L000165](../../agents/tool_execution_status.py#L165) | 165 | `"    used_model = output.get(\"used_language_model\") is True"` | — |
-| [SRC-0799EEEB02-L000166](../../agents/tool_execution_status.py#L166) | 166 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000167](../../agents/tool_execution_status.py#L167) | 167 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000168](../../agents/tool_execution_status.py#L168) | 168 | `"    elif used_model:"` | — |
-| [SRC-0799EEEB02-L000169](../../agents/tool_execution_status.py#L169) | 169 | `"        status = \"completed\""` | — |
-| [SRC-0799EEEB02-L000170](../../agents/tool_execution_status.py#L170) | 170 | `"    elif final_status in {"` | — |
-| [SRC-0799EEEB02-L000171](../../agents/tool_execution_status.py#L171) | 171 | `"        \"model_not_configured_fallback\", \"model_not_configured\","` | — |
-| [SRC-0799EEEB02-L000172](../../agents/tool_execution_status.py#L172) | 172 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000173](../../agents/tool_execution_status.py#L173) | 173 | `"        status = \"not_configured\""` | — |
-| [SRC-0799EEEB02-L000174](../../agents/tool_execution_status.py#L174) | 174 | `"    elif final_status in {"` | — |
-| [SRC-0799EEEB02-L000175](../../agents/tool_execution_status.py#L175) | 175 | `"        \"generation_failed\", \"generation_failed_with_source_fallback\","` | — |
-| [SRC-0799EEEB02-L000176](../../agents/tool_execution_status.py#L176) | 176 | `"        \"budget_exhausted\", \"budget_exhausted_with_source_fallback\","` | — |
+| [SRC-0799EEEB02-L000101](../../agents/tool_execution_status.py#L101) | 101 | `"        if accepted_sources is None and outcome != \"attempted_no_usable_sources\":"` | — |
+| [SRC-0799EEEB02-L000102](../../agents/tool_execution_status.py#L102) | 102 | `"            status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000103](../../agents/tool_execution_status.py#L103) | 103 | `"        elif accepted_sources is not None and accepted_sources > 0:"` | — |
+| [SRC-0799EEEB02-L000104](../../agents/tool_execution_status.py#L104) | 104 | `"            status = \"completed_with_results\""` | — |
+| [SRC-0799EEEB02-L000105](../../agents/tool_execution_status.py#L105) | 105 | `"        elif outcome == \"attempted_with_usable_sources\":"` | — |
+| [SRC-0799EEEB02-L000106](../../agents/tool_execution_status.py#L106) | 106 | `"            status = \"completed_with_results\""` | — |
+| [SRC-0799EEEB02-L000107](../../agents/tool_execution_status.py#L107) | 107 | `"        else:"` | — |
+| [SRC-0799EEEB02-L000108](../../agents/tool_execution_status.py#L108) | 108 | `"            status = \"completed_no_usable_results\""` | — |
+| [SRC-0799EEEB02-L000109](../../agents/tool_execution_status.py#L109) | 109 | `"    else:"` | — |
+| [SRC-0799EEEB02-L000110](../../agents/tool_execution_status.py#L110) | 110 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000111](../../agents/tool_execution_status.py#L111) | 111 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000112](../../agents/tool_execution_status.py#L112) | 112 | `"        \"search_outcome\": outcome,"` | — |
+| [SRC-0799EEEB02-L000113](../../agents/tool_execution_status.py#L113) | 113 | `"        \"search_attempted\": attempted if isinstance(attempted, bool) else None,"` | — |
+| [SRC-0799EEEB02-L000114](../../agents/tool_execution_status.py#L114) | 114 | `"        \"accepted_source_count\": accepted_sources,"` | — |
+| [SRC-0799EEEB02-L000115](../../agents/tool_execution_status.py#L115) | 115 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000116](../../agents/tool_execution_status.py#L116) | 116 | `""` | — |
+| [SRC-0799EEEB02-L000117](../../agents/tool_execution_status.py#L117) | 117 | `"    tool = \"page_fetch\""` | — |
+| [SRC-0799EEEB02-L000118](../../agents/tool_execution_status.py#L118) | 118 | `"    if tool not in required:"` | — |
+| [SRC-0799EEEB02-L000119](../../agents/tool_execution_status.py#L119) | 119 | `"        status = \"not_required\""` | — |
+| [SRC-0799EEEB02-L000120](../../agents/tool_execution_status.py#L120) | 120 | `"    elif pages_read > 0:"` | — |
+| [SRC-0799EEEB02-L000121](../../agents/tool_execution_status.py#L121) | 121 | `"        status = \"completed_with_read_pages\""` | — |
+| [SRC-0799EEEB02-L000122](../../agents/tool_execution_status.py#L122) | 122 | `"    elif pages_attempted is not None and pages_attempted > 0:"` | — |
+| [SRC-0799EEEB02-L000123](../../agents/tool_execution_status.py#L123) | 123 | `"        status = \"attempted_no_readable_pages\""` | — |
+| [SRC-0799EEEB02-L000124](../../agents/tool_execution_status.py#L124) | 124 | `"    elif pages_attempted is None:"` | — |
+| [SRC-0799EEEB02-L000125](../../agents/tool_execution_status.py#L125) | 125 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000126](../../agents/tool_execution_status.py#L126) | 126 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
+| [SRC-0799EEEB02-L000127](../../agents/tool_execution_status.py#L127) | 127 | `"        status = \"not_attempted_after_search_error\""` | — |
+| [SRC-0799EEEB02-L000128](../../agents/tool_execution_status.py#L128) | 128 | `"    elif attempted is True:"` | — |
+| [SRC-0799EEEB02-L000129](../../agents/tool_execution_status.py#L129) | 129 | `"        status = \"not_attempted_no_fetchable_candidates\""` | — |
+| [SRC-0799EEEB02-L000130](../../agents/tool_execution_status.py#L130) | 130 | `"    elif attempted is False:"` | — |
+| [SRC-0799EEEB02-L000131](../../agents/tool_execution_status.py#L131) | 131 | `"        status = \"not_attempted\""` | — |
+| [SRC-0799EEEB02-L000132](../../agents/tool_execution_status.py#L132) | 132 | `"    else:"` | — |
+| [SRC-0799EEEB02-L000133](../../agents/tool_execution_status.py#L133) | 133 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000134](../../agents/tool_execution_status.py#L134) | 134 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000135](../../agents/tool_execution_status.py#L135) | 135 | `"        \"pages_fetch_attempted\": pages_attempted,"` | — |
+| [SRC-0799EEEB02-L000136](../../agents/tool_execution_status.py#L136) | 136 | `"        \"pages_read\": pages_read,"` | — |
+| [SRC-0799EEEB02-L000137](../../agents/tool_execution_status.py#L137) | 137 | `"        \"pages_read_from_returned_sources\": readable_page_rows,"` | — |
+| [SRC-0799EEEB02-L000138](../../agents/tool_execution_status.py#L138) | 138 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000139](../../agents/tool_execution_status.py#L139) | 139 | `""` | — |
+| [SRC-0799EEEB02-L000140](../../agents/tool_execution_status.py#L140) | 140 | `"    tool = \"public_social_search_if_configured\""` | — |
+| [SRC-0799EEEB02-L000141](../../agents/tool_execution_status.py#L141) | 141 | `"    social_results = _nonnegative_int(search_report.get(\"social_direct_results\")) or 0"` | — |
+| [SRC-0799EEEB02-L000142](../../agents/tool_execution_status.py#L142) | 142 | `"    social_sources = sum("` | — |
+| [SRC-0799EEEB02-L000143](../../agents/tool_execution_status.py#L143) | 143 | `"        1 for source in source_rows"` | — |
+| [SRC-0799EEEB02-L000144](../../agents/tool_execution_status.py#L144) | 144 | `"        if isinstance(source, dict)"` | — |
+| [SRC-0799EEEB02-L000145](../../agents/tool_execution_status.py#L145) | 145 | `"        and ("` | — |
+| [SRC-0799EEEB02-L000146](../../agents/tool_execution_status.py#L146) | 146 | `"            str(source.get(\"platform\") or \"\").lower() in _SOCIAL_PLATFORMS"` | — |
+| [SRC-0799EEEB02-L000147](../../agents/tool_execution_status.py#L147) | 147 | `"            or str(source.get(\"source_class\") or \"\").lower() == \"social\""` | — |
+| [SRC-0799EEEB02-L000148](../../agents/tool_execution_status.py#L148) | 148 | `"        )"` | — |
+| [SRC-0799EEEB02-L000149](../../agents/tool_execution_status.py#L149) | 149 | `"    )"` | — |
+| [SRC-0799EEEB02-L000150](../../agents/tool_execution_status.py#L150) | 150 | `"    if tool not in required:"` | — |
+| [SRC-0799EEEB02-L000151](../../agents/tool_execution_status.py#L151) | 151 | `"        status = \"not_required\""` | — |
+| [SRC-0799EEEB02-L000152](../../agents/tool_execution_status.py#L152) | 152 | `"    elif social_results > 0 or social_sources > 0:"` | — |
+| [SRC-0799EEEB02-L000153](../../agents/tool_execution_status.py#L153) | 153 | `"        status = \"completed_with_results\""` | — |
+| [SRC-0799EEEB02-L000154](../../agents/tool_execution_status.py#L154) | 154 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
+| [SRC-0799EEEB02-L000155](../../agents/tool_execution_status.py#L155) | 155 | `"        status = \"failed\" if outcome == \"attempted_research_error\" else \"unknown\""` | — |
+| [SRC-0799EEEB02-L000156](../../agents/tool_execution_status.py#L156) | 156 | `"    elif attempted is True:"` | — |
+| [SRC-0799EEEB02-L000157](../../agents/tool_execution_status.py#L157) | 157 | `"        status = \"completed_no_usable_results\""` | — |
+| [SRC-0799EEEB02-L000158](../../agents/tool_execution_status.py#L158) | 158 | `"    elif attempted is False:"` | — |
+| [SRC-0799EEEB02-L000159](../../agents/tool_execution_status.py#L159) | 159 | `"        status = \"not_attempted\""` | — |
+| [SRC-0799EEEB02-L000160](../../agents/tool_execution_status.py#L160) | 160 | `"    else:"` | — |
+| [SRC-0799EEEB02-L000161](../../agents/tool_execution_status.py#L161) | 161 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000162](../../agents/tool_execution_status.py#L162) | 162 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000163](../../agents/tool_execution_status.py#L163) | 163 | `"        \"social_direct_results\": social_results,"` | — |
+| [SRC-0799EEEB02-L000164](../../agents/tool_execution_status.py#L164) | 164 | `"        \"accepted_social_sources\": social_sources,"` | — |
+| [SRC-0799EEEB02-L000165](../../agents/tool_execution_status.py#L165) | 165 | `"        \"search_outcome\": outcome,"` | — |
+| [SRC-0799EEEB02-L000166](../../agents/tool_execution_status.py#L166) | 166 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000167](../../agents/tool_execution_status.py#L167) | 167 | `""` | — |
+| [SRC-0799EEEB02-L000168](../../agents/tool_execution_status.py#L168) | 168 | `"    tool = \"language_model_generation_if_configured\""` | — |
+| [SRC-0799EEEB02-L000169](../../agents/tool_execution_status.py#L169) | 169 | `"    final_status = str(output.get(\"final_answer_status\") or \"\")"` | — |
+| [SRC-0799EEEB02-L000170](../../agents/tool_execution_status.py#L170) | 170 | `"    used_model = output.get(\"used_language_model\") is True"` | — |
+| [SRC-0799EEEB02-L000171](../../agents/tool_execution_status.py#L171) | 171 | `"    if tool not in required:"` | — |
+| [SRC-0799EEEB02-L000172](../../agents/tool_execution_status.py#L172) | 172 | `"        status = \"not_required\""` | — |
+| [SRC-0799EEEB02-L000173](../../agents/tool_execution_status.py#L173) | 173 | `"    elif used_model:"` | — |
+| [SRC-0799EEEB02-L000174](../../agents/tool_execution_status.py#L174) | 174 | `"        status = \"completed\""` | — |
+| [SRC-0799EEEB02-L000175](../../agents/tool_execution_status.py#L175) | 175 | `"    elif final_status in {"` | — |
+| [SRC-0799EEEB02-L000176](../../agents/tool_execution_status.py#L176) | 176 | `"        \"model_not_configured_fallback\", \"model_not_configured\","` | — |
 | [SRC-0799EEEB02-L000177](../../agents/tool_execution_status.py#L177) | 177 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000178](../../agents/tool_execution_status.py#L178) | 178 | `"        status = \"failed\""` | — |
+| [SRC-0799EEEB02-L000178](../../agents/tool_execution_status.py#L178) | 178 | `"        status = \"not_configured\""` | — |
 | [SRC-0799EEEB02-L000179](../../agents/tool_execution_status.py#L179) | 179 | `"    elif final_status in {"` | — |
-| [SRC-0799EEEB02-L000180](../../agents/tool_execution_status.py#L180) | 180 | `"        \"clarification_required\", \"insufficient_evidence_no_generation\","` | — |
-| [SRC-0799EEEB02-L000181](../../agents/tool_execution_status.py#L181) | 181 | `"        \"not_attempted\", \"local_response_no_generation\","` | — |
+| [SRC-0799EEEB02-L000180](../../agents/tool_execution_status.py#L180) | 180 | `"        \"generation_failed\", \"generation_failed_with_source_fallback\","` | — |
+| [SRC-0799EEEB02-L000181](../../agents/tool_execution_status.py#L181) | 181 | `"        \"budget_exhausted\", \"budget_exhausted_with_source_fallback\","` | — |
 | [SRC-0799EEEB02-L000182](../../agents/tool_execution_status.py#L182) | 182 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000183](../../agents/tool_execution_status.py#L183) | 183 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000184](../../agents/tool_execution_status.py#L184) | 184 | `"    elif output.get(\"kind\") == \"insufficient_evidence\":"` | — |
-| [SRC-0799EEEB02-L000185](../../agents/tool_execution_status.py#L185) | 185 | `"        status = \"not_attempted_no_evidence\""` | — |
-| [SRC-0799EEEB02-L000186](../../agents/tool_execution_status.py#L186) | 186 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000187](../../agents/tool_execution_status.py#L187) | 187 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000188](../../agents/tool_execution_status.py#L188) | 188 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000189](../../agents/tool_execution_status.py#L189) | 189 | `"        \"used_language_model\": used_model,"` | — |
-| [SRC-0799EEEB02-L000190](../../agents/tool_execution_status.py#L190) | 190 | `"        \"final_answer_status\": final_status or \"unknown\","` | — |
-| [SRC-0799EEEB02-L000191](../../agents/tool_execution_status.py#L191) | 191 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000192](../../agents/tool_execution_status.py#L192) | 192 | `""` | — |
-| [SRC-0799EEEB02-L000193](../../agents/tool_execution_status.py#L193) | 193 | `"    tool = \"claim_review_if_configured\""` | — |
-| [SRC-0799EEEB02-L000194](../../agents/tool_execution_status.py#L194) | 194 | `"    review_status = str("` | — |
-| [SRC-0799EEEB02-L000195](../../agents/tool_execution_status.py#L195) | 195 | `"        search_report.get(\"claim_audit\")"` | — |
-| [SRC-0799EEEB02-L000196](../../agents/tool_execution_status.py#L196) | 196 | `"        or search_report.get(\"second_pass_review\")"` | — |
-| [SRC-0799EEEB02-L000197](../../agents/tool_execution_status.py#L197) | 197 | `"        or \"unknown\""` | — |
-| [SRC-0799EEEB02-L000198](../../agents/tool_execution_status.py#L198) | 198 | `"    )"` | — |
-| [SRC-0799EEEB02-L000199](../../agents/tool_execution_status.py#L199) | 199 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000200](../../agents/tool_execution_status.py#L200) | 200 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000201](../../agents/tool_execution_status.py#L201) | 201 | `"    elif review_status == \"model_claim_audit_completed\":"` | — |
-| [SRC-0799EEEB02-L000202](../../agents/tool_execution_status.py#L202) | 202 | `"        status = \"completed_model_assisted_review\""` | — |
-| [SRC-0799EEEB02-L000203](../../agents/tool_execution_status.py#L203) | 203 | `"    elif review_status in {"` | — |
-| [SRC-0799EEEB02-L000204](../../agents/tool_execution_status.py#L204) | 204 | `"        \"model_claim_audit_unavailable\", \"review_failed_with_source_fallback\","` | — |
-| [SRC-0799EEEB02-L000205](../../agents/tool_execution_status.py#L205) | 205 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000206](../../agents/tool_execution_status.py#L206) | 206 | `"        status = \"failed\""` | — |
-| [SRC-0799EEEB02-L000207](../../agents/tool_execution_status.py#L207) | 207 | `"    elif review_status in {\"not_run\", \"not_assessed\", \"not_verified\"}:"` | — |
-| [SRC-0799EEEB02-L000208](../../agents/tool_execution_status.py#L208) | 208 | `"        status = ("` | — |
-| [SRC-0799EEEB02-L000209](../../agents/tool_execution_status.py#L209) | 209 | `"            \"not_attempted_no_evidence\""` | — |
-| [SRC-0799EEEB02-L000210](../../agents/tool_execution_status.py#L210) | 210 | `"            if not source_rows else \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000211](../../agents/tool_execution_status.py#L211) | 211 | `"        )"` | — |
-| [SRC-0799EEEB02-L000212](../../agents/tool_execution_status.py#L212) | 212 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000213](../../agents/tool_execution_status.py#L213) | 213 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000214](../../agents/tool_execution_status.py#L214) | 214 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000215](../../agents/tool_execution_status.py#L215) | 215 | `"        \"review_status\": review_status,"` | — |
-| [SRC-0799EEEB02-L000216](../../agents/tool_execution_status.py#L216) | 216 | `"        \"independent_fact_check\": False,"` | — |
-| [SRC-0799EEEB02-L000217](../../agents/tool_execution_status.py#L217) | 217 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000218](../../agents/tool_execution_status.py#L218) | 218 | `"    return rows"` | — |
+| [SRC-0799EEEB02-L000183](../../agents/tool_execution_status.py#L183) | 183 | `"        status = \"failed\""` | — |
+| [SRC-0799EEEB02-L000184](../../agents/tool_execution_status.py#L184) | 184 | `"    elif final_status in {"` | — |
+| [SRC-0799EEEB02-L000185](../../agents/tool_execution_status.py#L185) | 185 | `"        \"clarification_required\", \"insufficient_evidence_no_generation\","` | — |
+| [SRC-0799EEEB02-L000186](../../agents/tool_execution_status.py#L186) | 186 | `"        \"not_attempted\", \"local_response_no_generation\","` | — |
+| [SRC-0799EEEB02-L000187](../../agents/tool_execution_status.py#L187) | 187 | `"    }:"` | — |
+| [SRC-0799EEEB02-L000188](../../agents/tool_execution_status.py#L188) | 188 | `"        status = \"not_attempted\""` | — |
+| [SRC-0799EEEB02-L000189](../../agents/tool_execution_status.py#L189) | 189 | `"    elif output.get(\"kind\") == \"insufficient_evidence\":"` | — |
+| [SRC-0799EEEB02-L000190](../../agents/tool_execution_status.py#L190) | 190 | `"        status = \"not_attempted_no_evidence\""` | — |
+| [SRC-0799EEEB02-L000191](../../agents/tool_execution_status.py#L191) | 191 | `"    else:"` | — |
+| [SRC-0799EEEB02-L000192](../../agents/tool_execution_status.py#L192) | 192 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000193](../../agents/tool_execution_status.py#L193) | 193 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000194](../../agents/tool_execution_status.py#L194) | 194 | `"        \"used_language_model\": used_model,"` | — |
+| [SRC-0799EEEB02-L000195](../../agents/tool_execution_status.py#L195) | 195 | `"        \"final_answer_status\": final_status or \"unknown\","` | — |
+| [SRC-0799EEEB02-L000196](../../agents/tool_execution_status.py#L196) | 196 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000197](../../agents/tool_execution_status.py#L197) | 197 | `""` | — |
+| [SRC-0799EEEB02-L000198](../../agents/tool_execution_status.py#L198) | 198 | `"    tool = \"claim_review_if_configured\""` | — |
+| [SRC-0799EEEB02-L000199](../../agents/tool_execution_status.py#L199) | 199 | `"    review_status = str("` | — |
+| [SRC-0799EEEB02-L000200](../../agents/tool_execution_status.py#L200) | 200 | `"        search_report.get(\"claim_audit\")"` | — |
+| [SRC-0799EEEB02-L000201](../../agents/tool_execution_status.py#L201) | 201 | `"        or search_report.get(\"second_pass_review\")"` | — |
+| [SRC-0799EEEB02-L000202](../../agents/tool_execution_status.py#L202) | 202 | `"        or \"unknown\""` | — |
+| [SRC-0799EEEB02-L000203](../../agents/tool_execution_status.py#L203) | 203 | `"    )"` | — |
+| [SRC-0799EEEB02-L000204](../../agents/tool_execution_status.py#L204) | 204 | `"    if tool not in required:"` | — |
+| [SRC-0799EEEB02-L000205](../../agents/tool_execution_status.py#L205) | 205 | `"        status = \"not_required\""` | — |
+| [SRC-0799EEEB02-L000206](../../agents/tool_execution_status.py#L206) | 206 | `"    elif review_status == \"model_claim_audit_completed\":"` | — |
+| [SRC-0799EEEB02-L000207](../../agents/tool_execution_status.py#L207) | 207 | `"        status = \"completed_model_assisted_review\""` | — |
+| [SRC-0799EEEB02-L000208](../../agents/tool_execution_status.py#L208) | 208 | `"    elif review_status in {"` | — |
+| [SRC-0799EEEB02-L000209](../../agents/tool_execution_status.py#L209) | 209 | `"        \"model_claim_audit_unavailable\", \"review_failed_with_source_fallback\","` | — |
+| [SRC-0799EEEB02-L000210](../../agents/tool_execution_status.py#L210) | 210 | `"    }:"` | — |
+| [SRC-0799EEEB02-L000211](../../agents/tool_execution_status.py#L211) | 211 | `"        status = \"failed\""` | — |
+| [SRC-0799EEEB02-L000212](../../agents/tool_execution_status.py#L212) | 212 | `"    elif review_status in {\"not_run\", \"not_assessed\", \"not_verified\"}:"` | — |
+| [SRC-0799EEEB02-L000213](../../agents/tool_execution_status.py#L213) | 213 | `"        status = ("` | — |
+| [SRC-0799EEEB02-L000214](../../agents/tool_execution_status.py#L214) | 214 | `"            \"not_attempted_no_evidence\""` | — |
+| [SRC-0799EEEB02-L000215](../../agents/tool_execution_status.py#L215) | 215 | `"            if not source_rows else \"not_attempted\""` | — |
+| [SRC-0799EEEB02-L000216](../../agents/tool_execution_status.py#L216) | 216 | `"        )"` | — |
+| [SRC-0799EEEB02-L000217](../../agents/tool_execution_status.py#L217) | 217 | `"    else:"` | — |
+| [SRC-0799EEEB02-L000218](../../agents/tool_execution_status.py#L218) | 218 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000219](../../agents/tool_execution_status.py#L219) | 219 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000220](../../agents/tool_execution_status.py#L220) | 220 | `"        \"review_status\": review_status,"` | — |
+| [SRC-0799EEEB02-L000221](../../agents/tool_execution_status.py#L221) | 221 | `"        \"independent_fact_check\": False,"` | — |
+| [SRC-0799EEEB02-L000222](../../agents/tool_execution_status.py#L222) | 222 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000223](../../agents/tool_execution_status.py#L223) | 223 | `"    return rows"` | — |
 ## الوكيل والمنطق
 
 ### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
@@ -829,8 +834,3 @@
 | [SRC-1AE03B9EC3-L000269](../../agents/web_agent.py#L269) | 269 | `"        return 0.0"` | — |
 | [SRC-1AE03B9EC3-L000270](../../agents/web_agent.py#L270) | 270 | `"    return ratio"` | — |
 | [SRC-1AE03B9EC3-L000271](../../agents/web_agent.py#L271) | 271 | `""` | — |
-| [SRC-1AE03B9EC3-L000272](../../agents/web_agent.py#L272) | 272 | `"def _blocked_source_url(url: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L000273](../../agents/web_agent.py#L273) | 273 | `"    try:"` | — |
-| [SRC-1AE03B9EC3-L000274](../../agents/web_agent.py#L274) | 274 | `"        host = (urllib.parse.urlparse(url).hostname or \"\").lower().rstrip(\".\")"` | — |
-| [SRC-1AE03B9EC3-L000275](../../agents/web_agent.py#L275) | 275 | `"        return any(host == domain or host.endswith(\".\" + domain) for domain in _BLOCKED_SOURCE_DOMAINS)"` | — |
-| [SRC-1AE03B9EC3-L000276](../../agents/web_agent.py#L276) | 276 | `"    except (TypeError, ValueError):"` | — |

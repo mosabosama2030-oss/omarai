@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L001015 إلى SRC-B9C3015420-L000138
+- النطاق: SRC-D17CE3D12F-L001010 إلى SRC-B9C3015420-L000116
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L001010](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1010) | 1010 | `"- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — تحقق من الإصدار/المراجعة الرسمية الحالية قبل أي تقييم؛ تعرض الصفحة الرسمية حالة المراجعة والمستجدات."` | — |
+| [SRC-D17CE3D12F-L001011](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1011) | 1011 | `"- [NIST Generative AI Profile (NIST AI 600-1)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) — مخاطر الذكاء الاصطناعي التوليدي ودورة حياته."` | — |
+| [SRC-D17CE3D12F-L001012](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1012) | 1012 | `"- [NIST Zero Trust Architecture (SP 800-207)](https://www.nist.gov/publications/zero-trust-architecture) — هوية المورد/العملية والتفويض عند الوصول إلى الموارد."` | — |
+| [SRC-D17CE3D12F-L001013](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1013) | 1013 | `"- [CISA Secure by Design](https://www.cisa.gov/securebydesign) — جعل الحماية والخيارات الآمنة جزءًا من تصميم المنتج."` | — |
+| [SRC-D17CE3D12F-L001014](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1014) | 1014 | `"- [NIST SSDF Publications](https://csrc.nist.gov/Projects/ssdf/publications) — يجب مراجعة حالة النسخة المنشورة أو المسودة قبل استخدامها كمتطلب رسمي؛ صفحة NIST تعرض حالة تحديثات SSDF."` | — |
 | [SRC-D17CE3D12F-L001015](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1015) | 1015 | `"- [Omarai Requirements Traceability and Maturity Model](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md) — سجل المتطلبات، ومعايير الدليل، ومراجعات التخصصات، وبوابات القبول."` | — |
 | [SRC-D17CE3D12F-L001016](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1016) | 1016 | `"- [OWASP Top 10 for Large Language Model Applications](https://genai.owasp.org/llm-top-10/)."` | — |
 | [SRC-D17CE3D12F-L001017](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1017) | 1017 | `"- [OWASP AISVS](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` | — |
@@ -258,6 +263,23 @@
 | [SRC-9A0DFA994E-L000127](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L127) | 127 | `"6. **الحالة النهائية:** اعرض ما تم فعله فعلًا وما فشل وما لم يُختبر، ولا تخلط إكمال المسار بصحة كل حقيقة."` | — |
 | [SRC-9A0DFA994E-L000128](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L128) | 128 | `""` | — |
 | [SRC-9A0DFA994E-L000129](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L129) | 129 | `"المصفوفة معرّفة بقيم ثابتة في الشفرة؛ لا يقبل المدقق صفوفًا اعتباطية أو أسماء أدوات أضافها مخطط غير موثوق. يظل نجاح الاختبارات البرمجية دليلًا على سلوك المسارات المختبرة فقط، لا على جودة الفهم لكل لهجة أو نجاح كل موصل حي."` | — |
+| [SRC-9A0DFA994E-L000130](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L130) | 130 | `""` | — |
+| [SRC-9A0DFA994E-L000131](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L131) | 131 | `""` | — |
+| [SRC-9A0DFA994E-L000132](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L132) | 132 | `"## مصفوفة تنفيذ الأدوات والموصلات"` | — |
+| [SRC-9A0DFA994E-L000133](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L133) | 133 | `""` | — |
+| [SRC-9A0DFA994E-L000134](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L134) | 134 | `"أضيفت طبقة مستقلة في **agents/tool_execution_status.py** تبني مصفوفة حالة تنفيذ لكل أداة معروفة. تربط متطلبات TaskSpec بما يمكن إثباته من تقرير الطلب، وتظهر خمسة مسارات منفصلة:"` | — |
+| [SRC-9A0DFA994E-L000135](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L135) | 135 | `""` | — |
+| [SRC-9A0DFA994E-L000136](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L136) | 136 | `"- البحث على الويب."` | — |
+| [SRC-9A0DFA994E-L000137](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L137) | 137 | `"- فتح الصفحات وقراءة نصها."` | — |
+| [SRC-9A0DFA994E-L000138](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L138) | 138 | `"- البحث في المحتوى الاجتماعي العام."` | — |
+| [SRC-9A0DFA994E-L000139](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L139) | 139 | `"- توليد الإجابة بالنموذج."` | — |
+| [SRC-9A0DFA994E-L000140](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L140) | 140 | `"- مراجعة الإجابة بمساعدة النموذج."` | — |
+| [SRC-9A0DFA994E-L000141](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L141) | 141 | `""` | — |
+| [SRC-9A0DFA994E-L000142](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L142) | 142 | `"لكل مسار حقل يبيّن هل كان مطلوبًا أصلًا، وحالة التنفيذ، والأساس التشخيصي. تميّز الحالات بين **not_required** و**not_attempted** و**not_configured** و**failed** و**unknown**، وبين إتمام خطوة مع نتائج وإتمامها دون نتائج قابلة للاستخدام. وتظل تفاصيل كل موصل — مثل 403 أو 429 أو المهلة أو عدم الإعداد — داخل ملخص الموصلات؛ فلا تختزل مشكلة اتصال الموصل في حكم عن وجود المحتوى."` | — |
+| [SRC-9A0DFA994E-L000143](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L143) | 143 | `""` | — |
+| [SRC-9A0DFA994E-L000144](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L144) | 144 | `"إذا كان عدد محاولات فتح الصفحات أو عدد المصادر المقبولة غير مسجل، فلا تستنتج المصفوفة صفرًا؛ تستخدم **unknown**. وإذا انتهى البحث بلا مصدر مؤهل، فهذا يصف هذه المحاولة فقط، ولا يثبت غياب المعلومة من الإنترنت. وبالمثل، اكتمال مراجعة النموذج يصف مرحلة بمساعدة النموذج ولا يثبت تدقيقًا مستقلًا لصحة الحقائق."` | — |
+| [SRC-9A0DFA994E-L000145](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L145) | 145 | `""` | — |
+| [SRC-9A0DFA994E-L000146](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L146) | 146 | `"الاختبارات المستقلة في **tests/test_tool_execution_status.py** تتحقق من حالات النتائج الفارغة وفشل قراءة الصفحات وعدم الإعداد والنجاح المرصود، وتتحقق اختبارات الوكيل من ظهور المصفوفة في الاستجابة المحلية دون ادعاء تنفيذ بحث."` | — |
 ## وثائق وفهرسة
 
 ### FILE-B2C95EAEE1 — [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1)
@@ -839,25 +861,3 @@
 | [SRC-B9C3015420-L000114](../OMARAI_REQUIREMENTS_REGISTER.md#L114) | 114 | `"\| EXT-003 \| القابلية للنقل \| متطلبات البنية الموزعة تُفعّل عند trigger مثبت لا لمجرد التقليد. \| BASE \| P1 \| ADR وقياسات الحاجة \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
 | [SRC-B9C3015420-L000115](../OMARAI_REQUIREMENTS_REGISTER.md#L115) | 115 | `"\| LEG-001 \| التراخيص \| تُراجع تراخيص الاعتماديات وشروط الموفرين ذات الصلة قبل توزيع/تشغيل القدرة. \| TRIGGERED \| P1 \| inventory/license review \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
 | [SRC-B9C3015420-L000116](../OMARAI_REQUIREMENTS_REGISTER.md#L116) | 116 | `"\| LEG-002 \| الحوكمة القانونية \| لا تُدّعى شهادة/مطابقة معيار دون نطاق تقييم وأدلة مناسبة. \| BASE \| P0 للادعاءات العامة \| مراجعة claims والوثائق \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
-| [SRC-B9C3015420-L000117](../OMARAI_REQUIREMENTS_REGISTER.md#L117) | 117 | `""` | — |
-| [SRC-B9C3015420-L000118](../OMARAI_REQUIREMENTS_REGISTER.md#L118) | 118 | `"## متطلبات معمارية إضافية: القدرات والمهارات وسير العمل والوكلاء"` | — |
-| [SRC-B9C3015420-L000119](../OMARAI_REQUIREMENTS_REGISTER.md#L119) | 119 | `""` | — |
-| [SRC-B9C3015420-L000120](../OMARAI_REQUIREMENTS_REGISTER.md#L120) | 120 | `"تُضاف البنود التالية لاستكمال سجل التتبع وفق [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md). هذه البنود متطلبات تصميمية مقترحة وليست وصفًا للقدرات المنفذة. لا تغيّر حالة أي بند إلا بعد دليل مرتبط بإصدار وبيئة واختبار محدد."` | — |
-| [SRC-B9C3015420-L000121](../OMARAI_REQUIREMENTS_REGISTER.md#L121) | 121 | `""` | — |
-| [SRC-B9C3015420-L000122](../OMARAI_REQUIREMENTS_REGISTER.md#L122) | 122 | `"\| ID \| المجال \| المتطلب الأساسي القابل للتحقق \| التطبيق \| الأولوية \| الحد الأدنى من دليل القبول \| حالة التنفيذ الابتدائية \|"` | — |
-| [SRC-B9C3015420-L000123](../OMARAI_REQUIREMENTS_REGISTER.md#L123) | 123 | `"\|---\|---\|---\|---\|---\|---\|---\|"` | — |
-| [SRC-B9C3015420-L000124](../OMARAI_REQUIREMENTS_REGISTER.md#L124) | 124 | `"\| AGW-001 \| اتجاه المعمارية \| يكون توسيع القدرات عبر الأدوات والمهارات وسير العمل هو المسار الافتراضي قبل إنشاء وكلاء مستقلين. \| BASE \| P1 \| ADR يبرر الاستثناءات، وحالات اختبار تُظهر أن التوسع لا يضيف وكيلًا بلا حاجة موثقة \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000125](../OMARAI_REQUIREMENTS_REGISTER.md#L125) | 125 | `"\| AGW-002 \| صلاحيات الأدوات \| تُفرض القدرات المسموحة برمجيًا عند تنفيذ كل استدعاء؛ لا تمنحها مخرجات النموذج أو ملفات التعريف لنفسها. \| BASE، وP0 عند وجود أدوات حساسة \| P0/P1 بحسب الأثر \| اختبارات سلبية تثبت رفض الاستدعاءات غير المصرح بها عند التحميل والتنفيذ \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000126](../OMARAI_REQUIREMENTS_REGISTER.md#L126) | 126 | `"\| AGW-003 \| عقد المهارة \| لكل مهارة نطاق ومدخلات ومخرجات وقدرات تابعة ومعايير نجاح واختبارات وإصدار واضح. \| BASE عند اعتماد Skill \| P1 \| مخطط صالح/غير صالح واختبارات نجاح وفشل ومراجعة الصلاحيات \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000127](../OMARAI_REQUIREMENTS_REGISTER.md#L127) | 127 | `"\| AGW-004 \| عقد سير العمل \| خطوات سير العمل وانتقالاته وميزانيته وحدوده وشروط توقفه محددة وقابلة للاختبار. \| BASE للمهام متعددة الخطوات \| P1 \| اختبارات المسار الطبيعي والفشل والمهلة وتجاوز الميزانية \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000128](../OMARAI_REQUIREMENTS_REGISTER.md#L128) | 128 | `"\| AGW-005 \| مواصفة المهمة والخطة \| تخضع TaskSpec وخطة النموذج للتحقق من المخطط والقدرات والخطوات والميزانية قبل التنفيذ. \| TRIGGERED عندما تستخدم مهمة تخطيطًا منظمًا \| P1 \| رفض الحقول أو الخطوات غير المعروفة أو المتجاوزة، وعدم تنفيذها \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000129](../OMARAI_REQUIREMENTS_REGISTER.md#L129) | 129 | `"\| AGW-006 \| عزل سياق التنفيذ \| لكل مهمة سياق محدود ومحدد النطاق؛ ولا تختلط حالة أو ذاكرة أو صلاحيات المهام أو المستخدمين. \| BASE بحسب نموذج التشغيل \| P0/P1 بحسب التعرض \| اختبارات تزامن وعزل وإعادة استخدام بعد الفشل أو الإلغاء \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000130](../OMARAI_REQUIREMENTS_REGISTER.md#L130) | 130 | `"\| AGW-007 \| إدارة التعريفات \| التعريفات الجديدة تمر بالتحقق والاختبارات والاعتماد؛ لا يملك Meta-Agent صلاحية اعتماد نفسه أو تفعيل مسوداته. \| TRIGGERED عند إضافة مولد تعريفات \| P1 \| اختبارات رفض المسودات غير الصالحة ومحاولات الاعتماد/التفعيل غير المصرح بها \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000131](../OMARAI_REQUIREMENTS_REGISTER.md#L131) | 131 | `"\| AGW-008 \| توليد الكود التنفيذي \| لا يُفعل توليد الكود وتشغيله إلا بقرار معماري مستقل وحاجة مثبتة وعزل واختبارات أمنية ومراجعة وموافقة بشرية. \| TRIGGERED فقط إذا اقتُرح توليد الكود \| P0 عند تفعيل المسار \| ADR، ونموذج تهديد، واختبارات العزل والهروب والموارد، وخطة تعطيل وتراجع \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000132](../OMARAI_REQUIREMENTS_REGISTER.md#L132) | 132 | `"\| AGW-009 \| الحفاظ على السلوك \| استخراج قدرة موجودة إلى Skill أو Workflow لا يزيل أو يغيّر سلوكًا قائمًا بلا قصد موثق واختبارات تراجع. \| BASE عند إعادة التنظيم \| P1 \| مقارنة قبل/بعد على اختبارات مرجعية ونتائج فعلية \| PROPOSED \|"` | — |
-| [SRC-B9C3015420-L000133](../OMARAI_REQUIREMENTS_REGISTER.md#L133) | 133 | `""` | — |
-| [SRC-B9C3015420-L000134](../OMARAI_REQUIREMENTS_REGISTER.md#L134) | 134 | `"## متطلبات الأمن السيبراني الإضافية لمعمارية المهارات وسير العمل والوكلاء"` | — |
-| [SRC-B9C3015420-L000135](../OMARAI_REQUIREMENTS_REGISTER.md#L135) | 135 | `""` | — |
-| [SRC-B9C3015420-L000136](../OMARAI_REQUIREMENTS_REGISTER.md#L136) | 136 | `"المتطلبات التالية تكمل الضوابط العامة في الدستور؛ ليست شهادة بأن التنفيذ الحالي يحققها. تطبق حسب مسار الخطر، ويُحدّث حال كل متطلب بالأدلة لا بالنية."` | — |
-| [SRC-B9C3015420-L000137](../OMARAI_REQUIREMENTS_REGISTER.md#L137) | 137 | `""` | — |
-| [SRC-B9C3015420-L000138](../OMARAI_REQUIREMENTS_REGISTER.md#L138) | 138 | `"\| ID \| المجال \| المتطلب الأساسي القابل للتحقق \| التطبيق \| الأولوية \| الحد الأدنى من دليل القبول \| حالة التنفيذ الابتدائية \|"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005077 إلى SRC-1AE03B9EC3-L005876
+- النطاق: SRC-1AE03B9EC3-L005072 إلى SRC-1AE03B9EC3-L005871
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005072](../../agents/web_agent.py#L5072) | 5072 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L005073](../../agents/web_agent.py#L5073) | 5073 | `"                \"related_results_reviewed\": ("` | — |
+| [SRC-1AE03B9EC3-L005074](../../agents/web_agent.py#L5074) | 5074 | `"                    None if lead_research_incomplete else related_lead_results_count"` | — |
+| [SRC-1AE03B9EC3-L005075](../../agents/web_agent.py#L5075) | 5075 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L005076](../../agents/web_agent.py#L5076) | 5076 | `"                \"qualification_rule\": \"explicit_public_buyer_intent_phrase\","` | — |
 | [SRC-1AE03B9EC3-L005077](../../agents/web_agent.py#L5077) | 5077 | `"                \"identity_verified\": False,"` | — |
 | [SRC-1AE03B9EC3-L005078](../../agents/web_agent.py#L5078) | 5078 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L005079](../../agents/web_agent.py#L5079) | 5079 | `"            if not lead_evidence_sources:"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L005869](../../agents/web_agent.py#L5869) | 5869 | `"                        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError) as exc:"` | — |
 | [SRC-1AE03B9EC3-L005870](../../agents/web_agent.py#L5870) | 5870 | `"                            gap_sources, gap_warnings = [], []"` | — |
 | [SRC-1AE03B9EC3-L005871](../../agents/web_agent.py#L5871) | 5871 | `"                            gap_report = {"` | — |
-| [SRC-1AE03B9EC3-L005872](../../agents/web_agent.py#L5872) | 5872 | `"                                \"queries_planned\": 1,"` | — |
-| [SRC-1AE03B9EC3-L005873](../../agents/web_agent.py#L5873) | 5873 | `"                                \"queries_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L005874](../../agents/web_agent.py#L5874) | 5874 | `"                                \"queries_attempted_known\": False,"` | — |
-| [SRC-1AE03B9EC3-L005875](../../agents/web_agent.py#L5875) | 5875 | `"                                \"search_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L005876](../../agents/web_agent.py#L5876) | 5876 | `"                                \"search_outcome\": \"unknown_after_research_error\","` | — |

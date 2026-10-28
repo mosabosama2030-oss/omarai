@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000277 إلى SRC-1AE03B9EC3-L001076
+- النطاق: SRC-1AE03B9EC3-L000272 إلى SRC-1AE03B9EC3-L001071
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000272](../../agents/web_agent.py#L272) | 272 | `"def _blocked_source_url(url: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000273](../../agents/web_agent.py#L273) | 273 | `"    try:"` | — |
+| [SRC-1AE03B9EC3-L000274](../../agents/web_agent.py#L274) | 274 | `"        host = (urllib.parse.urlparse(url).hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-1AE03B9EC3-L000275](../../agents/web_agent.py#L275) | 275 | `"        return any(host == domain or host.endswith(\".\" + domain) for domain in _BLOCKED_SOURCE_DOMAINS)"` | — |
+| [SRC-1AE03B9EC3-L000276](../../agents/web_agent.py#L276) | 276 | `"    except (TypeError, ValueError):"` | — |
 | [SRC-1AE03B9EC3-L000277](../../agents/web_agent.py#L277) | 277 | `"        return True"` | — |
 | [SRC-1AE03B9EC3-L000278](../../agents/web_agent.py#L278) | 278 | `""` | — |
 | [SRC-1AE03B9EC3-L000279](../../agents/web_agent.py#L279) | 279 | `""` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L001069](../../agents/web_agent.py#L1069) | 1069 | `"                \"runtime_status\": not_tested,"` | — |
 | [SRC-1AE03B9EC3-L001070](../../agents/web_agent.py#L1070) | 1070 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001071](../../agents/web_agent.py#L1071) | 1071 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001072](../../agents/web_agent.py#L1072) | 1072 | `"                \"name\": \"bing_rss\","` | — |
-| [SRC-1AE03B9EC3-L001073](../../agents/web_agent.py#L1073) | 1073 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001074](../../agents/web_agent.py#L1074) | 1074 | `"                \"configuration_status\": \"built_in_no_api_key\","` | — |
-| [SRC-1AE03B9EC3-L001075](../../agents/web_agent.py#L1075) | 1075 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001076](../../agents/web_agent.py#L1076) | 1076 | `"            },"` | — |

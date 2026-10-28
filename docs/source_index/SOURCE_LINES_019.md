@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001017 إلى SRC-E599346ABE-L001816
+- النطاق: SRC-E599346ABE-L001012 إلى SRC-E599346ABE-L001811
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001012](../generate_index.py#L1012) | 1012 | `""` | — |
+| [SRC-E599346ABE-L001013](../generate_index.py#L1013) | 1013 | `"        if suffix in PYTHON_EXTENSIONS \| JAVASCRIPT_EXTENSIONS \| {\".html\", \".htm\"}:"` | — |
+| [SRC-E599346ABE-L001014](../generate_index.py#L1014) | 1014 | `"            for match in API_PATH_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L001015](../generate_index.py#L1015) | 1015 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L001016](../generate_index.py#L1016) | 1016 | `"                    markers,"` | — |
 | [SRC-E599346ABE-L001017](../generate_index.py#L1017) | 1017 | `"                    seen,"` | — |
 | [SRC-E599346ABE-L001018](../generate_index.py#L1018) | 1018 | `"                    indexed_file.file,"` | — |
 | [SRC-E599346ABE-L001019](../generate_index.py#L1019) | 1019 | `"                    match.group(1),"` | — |
@@ -811,8 +816,3 @@
 | [SRC-E599346ABE-L001809](../generate_index.py#L1809) | 1809 | `"    source_lines = scan_source_lines(root, inventory)"` | — |
 | [SRC-E599346ABE-L001810](../generate_index.py#L1810) | 1810 | `"    validate_source_line_coverage(root, inventory, source_lines)"` | — |
 | [SRC-E599346ABE-L001811](../generate_index.py#L1811) | 1811 | `"    findings = scan_finding_annotations(source_lines)"` | — |
-| [SRC-E599346ABE-L001812](../generate_index.py#L1812) | 1812 | `"    excluded_paths = discover_excluded_paths(root)"` | — |
-| [SRC-E599346ABE-L001813](../generate_index.py#L1813) | 1813 | `"    coverage_audit_markdown = render_coverage_audit_markdown("` | — |
-| [SRC-E599346ABE-L001814](../generate_index.py#L1814) | 1814 | `"        root, inventory, source_lines, excluded_paths"` | — |
-| [SRC-E599346ABE-L001815](../generate_index.py#L1815) | 1815 | `"    )"` | — |
-| [SRC-E599346ABE-L001816](../generate_index.py#L1816) | 1816 | `"    source_pages, pages_by_file = render_source_line_pages("` | — |

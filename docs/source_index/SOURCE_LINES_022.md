@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000215 إلى SRC-D17CE3D12F-L001014
+- النطاق: SRC-D17CE3D12F-L000210 إلى SRC-D17CE3D12F-L001009
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000210](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L210) | 210 | `"2. MUST بيان ما يرسل إلى موفري النماذج والبحث وأسباب الإرسال وفئات البيانات، بحسب سياق المنتج."` | — |
+| [SRC-D17CE3D12F-L000211](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L211) | 211 | `"3. MUST عدم إرسال بيانات شخصية أو أسرار إلى مزود خارجي إلا وفق إعداد/سياسة مصرح بها ومبرر واضح."` | — |
+| [SRC-D17CE3D12F-L000212](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L212) | 212 | `"4. SHOULD إتاحة أقل قدر مناسب من التحكم للمستخدم في سجل المحادثة والحذف والاحتفاظ عندما تكون هذه الميزات موجودة."` | — |
+| [SRC-D17CE3D12F-L000213](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L213) | 213 | `"5. MUST عدم استخدام المحادثات للتدريب أو التحليلات أو أي غرض ثانوي إلا وفق سياسة وإذن/أساس مناسبين."` | — |
+| [SRC-D17CE3D12F-L000214](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L214) | 214 | `"6. MUST مراعاة المتطلبات القانونية والتنظيمية والتعاقدية المنطبقة حسب الدول والأسواق والبيانات؛ لا تُفترض مطابقة GDPR أو غيره بمجرد إضافة رابط."` | — |
 | [SRC-D17CE3D12F-L000215](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L215) | 215 | `"7. SHOULD إجراء تقييم أثر خصوصية قبل إضافة ملفات أو بيانات حساسة أو ميزات ذاكرة دائمة واسعة."` | — |
 | [SRC-D17CE3D12F-L000216](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L216) | 216 | `"8. MUST مراجعة مخاطر إعادة التعرف من البيانات المجمّعة، والاحتفاظ في logs/traces، وإرسال telemetry إلى جهة ثالثة."` | — |
 | [SRC-D17CE3D12F-L000217](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L217) | 217 | `"9. MUST توثيق حدود الحذف من مزود خارجي والنسخ الاحتياطي؛ لا تُقدم وعودًا تتجاوز قدرة Omarai ومزودي الخدمة."` | — |
@@ -811,8 +816,3 @@
 | [SRC-D17CE3D12F-L001007](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1007) | 1007 | `"- [FinOps Framework](https://www.finops.org/framework/) — مسؤولية استخدام الموارد وشفافية التكلفة وتحسينها."` | — |
 | [SRC-D17CE3D12F-L001008](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1008) | 1008 | `""` | — |
 | [SRC-D17CE3D12F-L001009](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1009) | 1009 | `"## الذكاء الاصطناعي وتقييم المخاطر"` | — |
-| [SRC-D17CE3D12F-L001010](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1010) | 1010 | `"- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — تحقق من الإصدار/المراجعة الرسمية الحالية قبل أي تقييم؛ تعرض الصفحة الرسمية حالة المراجعة والمستجدات."` | — |
-| [SRC-D17CE3D12F-L001011](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1011) | 1011 | `"- [NIST Generative AI Profile (NIST AI 600-1)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) — مخاطر الذكاء الاصطناعي التوليدي ودورة حياته."` | — |
-| [SRC-D17CE3D12F-L001012](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1012) | 1012 | `"- [NIST Zero Trust Architecture (SP 800-207)](https://www.nist.gov/publications/zero-trust-architecture) — هوية المورد/العملية والتفويض عند الوصول إلى الموارد."` | — |
-| [SRC-D17CE3D12F-L001013](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1013) | 1013 | `"- [CISA Secure by Design](https://www.cisa.gov/securebydesign) — جعل الحماية والخيارات الآمنة جزءًا من تصميم المنتج."` | — |
-| [SRC-D17CE3D12F-L001014](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1014) | 1014 | `"- [NIST SSDF Publications](https://csrc.nist.gov/Projects/ssdf/publications) — يجب مراجعة حالة النسخة المنشورة أو المسودة قبل استخدامها كمتطلب رسمي؛ صفحة NIST تعرض حالة تحديثات SSDF."` | — |

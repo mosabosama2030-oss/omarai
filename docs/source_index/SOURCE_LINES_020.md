@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001817 إلى SRC-E73001D9AC-L000317
+- النطاق: SRC-E599346ABE-L001812 إلى SRC-E73001D9AC-L000312
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001812](../generate_index.py#L1812) | 1812 | `"    excluded_paths = discover_excluded_paths(root)"` | — |
+| [SRC-E599346ABE-L001813](../generate_index.py#L1813) | 1813 | `"    coverage_audit_markdown = render_coverage_audit_markdown("` | — |
+| [SRC-E599346ABE-L001814](../generate_index.py#L1814) | 1814 | `"        root, inventory, source_lines, excluded_paths"` | — |
+| [SRC-E599346ABE-L001815](../generate_index.py#L1815) | 1815 | `"    )"` | — |
+| [SRC-E599346ABE-L001816](../generate_index.py#L1816) | 1816 | `"    source_pages, pages_by_file = render_source_line_pages("` | — |
 | [SRC-E599346ABE-L001817](../generate_index.py#L1817) | 1817 | `"        source_lines, inventory, findings"` | — |
 | [SRC-E599346ABE-L001818](../generate_index.py#L1818) | 1818 | `"    )"` | — |
 | [SRC-E599346ABE-L001819](../generate_index.py#L1819) | 1819 | `"    markdown = render_markdown("` | — |
@@ -856,8 +861,3 @@
 | [SRC-E73001D9AC-L000310](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L310) | 310 | `"- لا يمتلك النموذج مباشرة مفاتيح أو صلاحيات؛ تمر طلباته عبر طبقة سياسة وتنفيذ حتمية."` | — |
 | [SRC-E73001D9AC-L000311](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L311) | 311 | `"- التحقق من arguments لكل tool call مقابل schema وallowlist وحدود الموارد."` | — |
 | [SRC-E73001D9AC-L000312](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L312) | 312 | `"- منع استدعاء أدوات غير مسجلة، أو تعديل الصلاحيات والميزانيات من مخرجات النموذج."` | — |
-| [SRC-E73001D9AC-L000313](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L313) | 313 | `"- استخدام اختبارات red-team لحالات prompt injection المباشرة وغير المباشرة، وتسريب الأسرار، ورفض السياسات، وتسميم السياق."` | — |
-| [SRC-E73001D9AC-L000314](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L314) | 314 | `"- عدم افتراض أن تعليمات النظام وحدها تمنع الهجمات؛ يجب فرض الضوابط عند حدود التنفيذ."` | — |
-| [SRC-E73001D9AC-L000315](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L315) | 315 | `""` | — |
-| [SRC-E73001D9AC-L000316](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L316) | 316 | `"### 6.4 حماية البيانات والخصوصية"` | — |
-| [SRC-E73001D9AC-L000317](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L317) | 317 | `"- تصنيف البيانات إلى عامة، تشغيلية، شخصية، سرية، وأسرار اعتماد."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004277 إلى SRC-1AE03B9EC3-L005076
+- النطاق: SRC-1AE03B9EC3-L004272 إلى SRC-1AE03B9EC3-L005071
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"                final_answer_status = \"clarification_required\""` | — |
+| [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L004274](../../agents/web_agent.py#L4274) | 4274 | `"                final_answer_status = \"not_attempted\""` | — |
+| [SRC-1AE03B9EC3-L004275](../../agents/web_agent.py#L4275) | 4275 | `"            result[\"final_answer_status\"] = final_answer_status"` | — |
+| [SRC-1AE03B9EC3-L004276](../../agents/web_agent.py#L4276) | 4276 | `"        # Establish an honest terminal state even for early-return branches"` | — |
 | [SRC-1AE03B9EC3-L004277](../../agents/web_agent.py#L4277) | 4277 | `"        # (clarification, budget exhaustion, or no-evidence abstention) that never"` | — |
 | [SRC-1AE03B9EC3-L004278](../../agents/web_agent.py#L4278) | 4278 | `"        # pass through the normal synthesis tail."` | — |
 | [SRC-1AE03B9EC3-L004279](../../agents/web_agent.py#L4279) | 4279 | `"        terminal_report = result.get(\"search_report\")"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L005069](../../agents/web_agent.py#L5069) | 5069 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L005070](../../agents/web_agent.py#L5070) | 5070 | `"                \"candidate_signal_count\": ("` | — |
 | [SRC-1AE03B9EC3-L005071](../../agents/web_agent.py#L5071) | 5071 | `"                    None if lead_research_incomplete else len(lead_evidence_sources)"` | — |
-| [SRC-1AE03B9EC3-L005072](../../agents/web_agent.py#L5072) | 5072 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L005073](../../agents/web_agent.py#L5073) | 5073 | `"                \"related_results_reviewed\": ("` | — |
-| [SRC-1AE03B9EC3-L005074](../../agents/web_agent.py#L5074) | 5074 | `"                    None if lead_research_incomplete else related_lead_results_count"` | — |
-| [SRC-1AE03B9EC3-L005075](../../agents/web_agent.py#L5075) | 5075 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L005076](../../agents/web_agent.py#L5076) | 5076 | `"                \"qualification_rule\": \"explicit_public_buyer_intent_phrase\","` | — |
