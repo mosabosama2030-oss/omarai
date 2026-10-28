@@ -69,6 +69,49 @@ _PATTERNS: dict[str, tuple[str, ...]] = {
         "فين الاقي", "اماكن بيع", "ابحث لي عن", "find", "search for", "look up",
         "where can i find", "list of",
     ),
+    "medical_information": (
+        "اعراض", "أعراض", "جرعة", "جرعات", "دواء", "ادوية", "علاج", "تشخيص",
+        "medical symptoms", "dosage", "medicine", "medication", "treatment", "diagnosis",
+    ),
+    "legal_information": (
+        "قانون", "قانوني", "نص قانوني", "عقد", "دعوى", "لائحة", "تشريع",
+        "legal advice", "law", "contract", "lawsuit", "regulation", "legislation",
+    ),
+    "coding_or_technical_design": (
+        "اكتب كود", "برمج", "كود بايثون", "اشرح الكود", "راجع الكود",
+        "الكود التالي", "تصميم api", "اكتب سكربت", "code", "programming",
+        "python code", "javascript", "api design", "stack trace", "unit test",
+        "refactor", "debug this code",
+    ),
+    "data_analysis": (
+        "حلل البيانات", "تحليل البيانات", "ملف csv", "تحليل جدول", "احسب المتوسط",
+        "data analysis", "analyze data", "analyse data", "dataset", "spreadsheet",
+        "csv file", "trend analysis", "calculate average", "pivot table",
+    ),
+    "calculation": (
+        "احسب", "كم يساوي", "ما ناتج", "حساب النسبة", "احسب الفرق",
+        "calculate", "compute", "what is the result", "percentage calculation",
+        "how many", "how much is",
+    ),
+    "translation": (
+        "ترجم", "ترجمة", "ترجم إلى", "ترجم للانجليزية", "ترجم للعربية",
+        "translate", "translation", "translate into", "localize this",
+    ),
+    "writing_or_editing": (
+        "اكتب", "اكتب رسالة", "اكتب بريد", "اعد صياغة", "أعد صياغة",
+        "صحح لغويا", "راجع النص", "حسن الصياغة", "draft", "write", "rewrite",
+        "proofread", "edit this", "polish this", "compose an email",
+    ),
+    "planning": (
+        "ضع خطة", "خطة عمل", "خطة زمنية", "جدول زمني", "خطوات تنفيذ",
+        "نظم لي", "رتب لي", "plan", "planning", "roadmap", "itinerary",
+        "project schedule", "timeline", "project plan",
+    ),
+    "creative_generation": (
+        "اكتب قصة", "قصة قصيرة", "قصيدة", "سيناريو", "اقترح افكار",
+        "اقترح أفكار", "عصف ذهني", "brainstorm", "creative writing",
+        "write a story", "poem", "generate ideas",
+    ),
     "explain_or_define": (
         "ما معنى", "يعني ايه", "ما هو", "ما هي", "اشرح", "وضح مفهوم",
         "what is", "what does", "explain", "define",
@@ -306,8 +349,11 @@ def _primary_family(matches: dict[str, list[str]], mode: str, route: str, normal
         return "official_site_lookup"
     for family in (
         "social_opinions", "summarize", "troubleshoot", "compare",
-        "lead_generation", "how_to", "recommendation", "current_information",
-        "find_or_discover", "explain_or_define", "general_research",
+        "medical_information", "legal_information", "coding_or_technical_design",
+        "data_analysis", "translation", "calculation", "planning",
+        "writing_or_editing", "creative_generation", "lead_generation",
+        "how_to", "recommendation", "current_information", "find_or_discover",
+        "explain_or_define", "general_research",
     ):
         if matches.get(family):
             return family
@@ -420,6 +466,70 @@ def build_task_spec(
             "make_tradeoffs_and_missing_information_visible",
         ]
         query_strategies = ["use_case", "budget_and_location", "pros_cons", "alternatives"]
+    elif family == "medical_information":
+        evidence_requirements = [
+            "distinguish_general_health_information_from_personal_diagnosis",
+            "prefer_current_authoritative_health_sources_when_research_is_requested",
+            "preserve_units_dosage_context_and_uncertainty",
+            "escalate_urgent_or_emergency_symptoms_to_appropriate_care",
+        ]
+        query_strategies = ["authoritative_health_source", "symptom_context", "limitations_and_urgency"]
+    elif family == "legal_information":
+        evidence_requirements = [
+            "identify_jurisdiction_and_effective_date_if_relevant",
+            "prefer_primary_law_or_official_regulatory_text",
+            "distinguish_general_information_from_legal_advice",
+        ]
+        query_strategies = ["official_law_text", "jurisdiction_and_date", "interpretive_context"]
+    elif family == "coding_or_technical_design":
+        evidence_requirements = [
+            "preserve_language_version_runtime_and_error_text_if_supplied",
+            "separate_observed_failure_from_cause_hypotheses",
+            "provide_testable_changes_and_regression_tests",
+        ]
+        query_strategies = ["minimal_reproducer", "documentation_or_api_reference", "test_and_verify"]
+    elif family == "data_analysis":
+        evidence_requirements = [
+            "preserve_dataset_grain_and_metric_definition",
+            "inspect_missingness_duplicates_outliers_and_time_coverage",
+            "separate_observed_association_from_causal_explanation",
+        ]
+        query_strategies = ["schema_and_grain", "data_quality", "metric_and_segment_checks"]
+    elif family == "calculation":
+        evidence_requirements = [
+            "show_formula_and_units_when_useful",
+            "validate_input_units_and_rounding",
+            "distinguish_exact_result_from_assumption_based_estimate",
+        ]
+        query_strategies = ["formula", "unit_validation", "independent_arithmetic_check"]
+    elif family == "translation":
+        evidence_requirements = [
+            "preserve_meaning_tone_and_named_entities",
+            "surface_ambiguous_source_phrasing_instead_of_silently_inventing_meaning",
+            "respect_explicit_target_language_and_script",
+        ]
+        query_strategies = ["source_text", "target_language", "terminology_and_tone"]
+    elif family == "writing_or_editing":
+        evidence_requirements = [
+            "follow_requested_audience_tone_and_format",
+            "preserve_user_provided_facts_without_adding_unverified_claims",
+            "distinguish_rewrite_from_fact_check",
+        ]
+        query_strategies = ["audience_and_purpose", "tone_and_format", "fact_preservation"]
+    elif family == "planning":
+        evidence_requirements = [
+            "preserve_goal_constraints_dependencies_and_deadline",
+            "make_assumptions_and_unavailable_resources_explicit",
+            "separate_proposed_steps_from_completed_actions",
+        ]
+        query_strategies = ["goal_and_constraints", "dependency_order", "risks_and_fallbacks"]
+    elif family == "creative_generation":
+        evidence_requirements = [
+            "follow_requested_genre_voice_and_constraints",
+            "do_not_present_invented_story_details_as_real_facts",
+            "preserve_explicit_content_boundaries",
+        ]
+        query_strategies = ["genre_and_voice", "creative_constraints", "revision_options"]
     else:
         evidence_requirements = [
             "match_sources_to_the_question",
