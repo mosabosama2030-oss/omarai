@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000337 إلى SRC-AAA21D04E8-L000045
+- النطاق: SRC-FA4E1423C3-L000240 إلى SRC-829A979985-L000564
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,103 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000240](../../tests/test_generate_index.py#L240) | 240 | `"    \"\"\"Check mode fails on a stale index and leaves the existing file untouched.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000241](../../tests/test_generate_index.py#L241) | 241 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000242](../../tests/test_generate_index.py#L242) | 242 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000243](../../tests/test_generate_index.py#L243) | 243 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000244](../../tests/test_generate_index.py#L244) | 244 | `"    index_path = docs_dir / \"MASTER_INDEX.md\""` | — |
+| [SRC-FA4E1423C3-L000245](../../tests/test_generate_index.py#L245) | 245 | `"    index_path.write_text(\"stale\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000246](../../tests/test_generate_index.py#L246) | 246 | `""` | — |
+| [SRC-FA4E1423C3-L000247](../../tests/test_generate_index.py#L247) | 247 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
+| [SRC-FA4E1423C3-L000248](../../tests/test_generate_index.py#L248) | 248 | `"    assert index_path.read_text(encoding=\"utf-8\") == \"stale\""` | — |
+| [SRC-FA4E1423C3-L000249](../../tests/test_generate_index.py#L249) | 249 | `"    assert \"الفهرس قديم\" in capsys.readouterr().err"` | — |
+| [SRC-FA4E1423C3-L000250](../../tests/test_generate_index.py#L250) | 250 | `""` | — |
+| [SRC-FA4E1423C3-L000251](../../tests/test_generate_index.py#L251) | 251 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
+| [SRC-FA4E1423C3-L000252](../../tests/test_generate_index.py#L252) | 252 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
+| [SRC-FA4E1423C3-L000253](../../tests/test_generate_index.py#L253) | 253 | `""` | — |
+| [SRC-FA4E1423C3-L000254](../../tests/test_generate_index.py#L254) | 254 | `""` | — |
+| [SRC-FA4E1423C3-L000255](../../tests/test_generate_index.py#L255) | 255 | `"def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path) -> None:"` | — |
+| [SRC-FA4E1423C3-L000256](../../tests/test_generate_index.py#L256) | 256 | `"    \"\"\"All readable text lines, including blank lines and unfamiliar extensions, are searchable.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000257](../../tests/test_generate_index.py#L257) | 257 | `"    (tmp_path / \"app.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000258](../../tests/test_generate_index.py#L258) | 258 | `"        'VALUE = 1\\n\\n'"` | — |
+| [SRC-FA4E1423C3-L000259](../../tests/test_generate_index.py#L259) | 259 | `"        'def greet():\\n'"` | — |
+| [SRC-FA4E1423C3-L000260](../../tests/test_generate_index.py#L260) | 260 | `"        '    return \"hello\"\\n',"` | — |
+| [SRC-FA4E1423C3-L000261](../../tests/test_generate_index.py#L261) | 261 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000262](../../tests/test_generate_index.py#L262) | 262 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000263](../../tests/test_generate_index.py#L263) | 263 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000264](../../tests/test_generate_index.py#L264) | 264 | `"    docs_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000265](../../tests/test_generate_index.py#L265) | 265 | `"    (docs_dir / \"guide.txt\").write_text("` | — |
+| [SRC-FA4E1423C3-L000266](../../tests/test_generate_index.py#L266) | 266 | `"        \"First documented step.\\nSecond documented step.\\n\","` | — |
+| [SRC-FA4E1423C3-L000267](../../tests/test_generate_index.py#L267) | 267 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000268](../../tests/test_generate_index.py#L268) | 268 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000269](../../tests/test_generate_index.py#L269) | 269 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_TOKEN=do-not-index\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000270](../../tests/test_generate_index.py#L270) | 270 | `"    (tmp_path / \"payload.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
+| [SRC-FA4E1423C3-L000271](../../tests/test_generate_index.py#L271) | 271 | `""` | — |
+| [SRC-FA4E1423C3-L000272](../../tests/test_generate_index.py#L272) | 272 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000273](../../tests/test_generate_index.py#L273) | 273 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
+| [SRC-FA4E1423C3-L000274](../../tests/test_generate_index.py#L274) | 274 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
+| [SRC-FA4E1423C3-L000275](../../tests/test_generate_index.py#L275) | 275 | `"    line_by_file_and_number = {(line.file, line.line): line for line in source_lines}"` | — |
+| [SRC-FA4E1423C3-L000276](../../tests/test_generate_index.py#L276) | 276 | `"    pages, pages_by_file = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
+| [SRC-FA4E1423C3-L000277](../../tests/test_generate_index.py#L277) | 277 | `"    lines_markdown = INDEXER.render_source_lines_markdown("` | — |
+| [SRC-FA4E1423C3-L000278](../../tests/test_generate_index.py#L278) | 278 | `"        source_lines, inventory, findings, pages_by_file, pages"` | — |
+| [SRC-FA4E1423C3-L000279](../../tests/test_generate_index.py#L279) | 279 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000280](../../tests/test_generate_index.py#L280) | 280 | `"    all_page_content = \"\\n\".join(pages.values())"` | — |
+| [SRC-FA4E1423C3-L000281](../../tests/test_generate_index.py#L281) | 281 | `""` | — |
+| [SRC-FA4E1423C3-L000282](../../tests/test_generate_index.py#L282) | 282 | `"    assert (\"app.py\", 1) in line_by_file_and_number"` | — |
+| [SRC-FA4E1423C3-L000283](../../tests/test_generate_index.py#L283) | 283 | `"    assert (\"app.py\", 2) in line_by_file_and_number"` | — |
+| [SRC-FA4E1423C3-L000284](../../tests/test_generate_index.py#L284) | 284 | `"    assert line_by_file_and_number[(\"app.py\", 2)].content == \"\""` | — |
+| [SRC-FA4E1423C3-L000285](../../tests/test_generate_index.py#L285) | 285 | `"    assert line_by_file_and_number[(\"app.py\", 4)].content == '    return \"hello\"'"` | — |
+| [SRC-FA4E1423C3-L000286](../../tests/test_generate_index.py#L286) | 286 | `"    assert line_by_file_and_number[(\"docs/guide.txt\", 2)].content == \"Second documented step.\""` | — |
+| [SRC-FA4E1423C3-L000287](../../tests/test_generate_index.py#L287) | 287 | `"    assert line_by_file_and_number[(\"app.py\", 1)].line_id.startswith(\"SRC-\")"` | — |
+| [SRC-FA4E1423C3-L000288](../../tests/test_generate_index.py#L288) | 288 | `"    assert line_by_file_and_number[(\"app.py\", 1)].file_id.startswith(\"FILE-\")"` | — |
+| [SRC-FA4E1423C3-L000289](../../tests/test_generate_index.py#L289) | 289 | `"    assert line_by_file_and_number[(\"app.py\", 1)].category == \"ملفات أخرى\""` | — |
+| [SRC-FA4E1423C3-L000290](../../tests/test_generate_index.py#L290) | 290 | `"    assert \"PRIVATE_TOKEN\" not in lines_markdown"` | — |
+| [SRC-FA4E1423C3-L000291](../../tests/test_generate_index.py#L291) | 291 | `"    assert \"payload.bin\" not in {line.file for line in source_lines}"` | — |
+| [SRC-FA4E1423C3-L000292](../../tests/test_generate_index.py#L292) | 292 | `"    assert \"Second documented step.\" in all_page_content"` | — |
+| [SRC-FA4E1423C3-L000293](../../tests/test_generate_index.py#L293) | 293 | `"    assert \"SRC-\" in all_page_content"` | — |
+| [SRC-FA4E1423C3-L000294](../../tests/test_generate_index.py#L294) | 294 | `"    assert \"SOURCE_LINES_001\" in lines_markdown"` | — |
+| [SRC-FA4E1423C3-L000295](../../tests/test_generate_index.py#L295) | 295 | `"    assert pages_by_file[\"app.py\"]"` | — |
+| [SRC-FA4E1423C3-L000296](../../tests/test_generate_index.py#L296) | 296 | `""` | — |
+| [SRC-FA4E1423C3-L000297](../../tests/test_generate_index.py#L297) | 297 | `""` | — |
+| [SRC-FA4E1423C3-L000298](../../tests/test_generate_index.py#L298) | 298 | `"def test_explicit_review_markers_have_unique_codes_and_source_line_links("` | — |
+| [SRC-FA4E1423C3-L000299](../../tests/test_generate_index.py#L299) | 299 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000300](../../tests/test_generate_index.py#L300) | 300 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000301](../../tests/test_generate_index.py#L301) | 301 | `"    \"\"\"TODO/FIXME/BUG-style annotations receive stable named IDs linked to their exact lines.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000302](../../tests/test_generate_index.py#L302) | 302 | `"    (tmp_path / \"module.py\").write_text("` | — |
+| [SRC-FA4E1423C3-L000303](../../tests/test_generate_index.py#L303) | 303 | `"        \"# TODO: verify fallback\\n\""` | — |
+| [SRC-FA4E1423C3-L000304](../../tests/test_generate_index.py#L304) | 304 | `"        \"value = 1  # FIXME: handle overflow\\n\""` | — |
+| [SRC-FA4E1423C3-L000305](../../tests/test_generate_index.py#L305) | 305 | `"        \"# SECURITY: check token handling\\n\""` | — |
+| [SRC-FA4E1423C3-L000306](../../tests/test_generate_index.py#L306) | 306 | `"        \"def ready():\\n\""` | — |
+| [SRC-FA4E1423C3-L000307](../../tests/test_generate_index.py#L307) | 307 | `"        \"    return True\\n\","` | — |
+| [SRC-FA4E1423C3-L000308](../../tests/test_generate_index.py#L308) | 308 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000309](../../tests/test_generate_index.py#L309) | 309 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000310](../../tests/test_generate_index.py#L310) | 310 | `""` | — |
+| [SRC-FA4E1423C3-L000311](../../tests/test_generate_index.py#L311) | 311 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000312](../../tests/test_generate_index.py#L312) | 312 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
+| [SRC-FA4E1423C3-L000313](../../tests/test_generate_index.py#L313) | 313 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
+| [SRC-FA4E1423C3-L000314](../../tests/test_generate_index.py#L314) | 314 | `""` | — |
+| [SRC-FA4E1423C3-L000315](../../tests/test_generate_index.py#L315) | 315 | `"    assert [item.marker for item in findings] == [\"FIXME\", \"SECURITY\", \"TODO\"]"` | — |
+| [SRC-FA4E1423C3-L000316](../../tests/test_generate_index.py#L316) | 316 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
+| [SRC-FA4E1423C3-L000317](../../tests/test_generate_index.py#L317) | 317 | `"    for finding in findings:"` | — |
+| [SRC-FA4E1423C3-L000318](../../tests/test_generate_index.py#L318) | 318 | `"        assert finding.finding_id.startswith(f\"FND-{finding.marker}-\")"` | — |
+| [SRC-FA4E1423C3-L000319](../../tests/test_generate_index.py#L319) | 319 | `"        assert finding.line_id.startswith(\"SRC-\")"` | — |
+| [SRC-FA4E1423C3-L000320](../../tests/test_generate_index.py#L320) | 320 | `"        assert finding.file == \"module.py\""` | — |
+| [SRC-FA4E1423C3-L000321](../../tests/test_generate_index.py#L321) | 321 | `""` | — |
+| [SRC-FA4E1423C3-L000322](../../tests/test_generate_index.py#L322) | 322 | `""` | — |
+| [SRC-FA4E1423C3-L000323](../../tests/test_generate_index.py#L323) | 323 | `"def test_check_mode_validates_all_generated_indexes(tmp_path: Path, capsys) -> None:"` | — |
+| [SRC-FA4E1423C3-L000324](../../tests/test_generate_index.py#L324) | 324 | `"    \"\"\"Check mode detects stale master, line, and coverage indexes.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000325](../../tests/test_generate_index.py#L325) | 325 | `""` | — |
+| [SRC-FA4E1423C3-L000326](../../tests/test_generate_index.py#L326) | 326 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-FA4E1423C3-L000327](../../tests/test_generate_index.py#L327) | 327 | `""` | — |
+| [SRC-FA4E1423C3-L000328](../../tests/test_generate_index.py#L328) | 328 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
+| [SRC-FA4E1423C3-L000329](../../tests/test_generate_index.py#L329) | 329 | `"    master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH"` | — |
+| [SRC-FA4E1423C3-L000330](../../tests/test_generate_index.py#L330) | 330 | `"    line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH"` | — |
+| [SRC-FA4E1423C3-L000331](../../tests/test_generate_index.py#L331) | 331 | `"    coverage_path = tmp_path / INDEXER.COVERAGE_AUDIT_RELATIVE_PATH"` | — |
+| [SRC-FA4E1423C3-L000332](../../tests/test_generate_index.py#L332) | 332 | `"    assert master_path.exists()"` | — |
+| [SRC-FA4E1423C3-L000333](../../tests/test_generate_index.py#L333) | 333 | `"    assert line_index_path.exists()"` | — |
+| [SRC-FA4E1423C3-L000334](../../tests/test_generate_index.py#L334) | 334 | `"    assert coverage_path.exists()"` | — |
+| [SRC-FA4E1423C3-L000335](../../tests/test_generate_index.py#L335) | 335 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
+| [SRC-FA4E1423C3-L000336](../../tests/test_generate_index.py#L336) | 336 | `""` | — |
 | [SRC-FA4E1423C3-L000337](../../tests/test_generate_index.py#L337) | 337 | `"    original_line_index = line_index_path.read_text(encoding=\"utf-8\")"` | — |
 | [SRC-FA4E1423C3-L000338](../../tests/test_generate_index.py#L338) | 338 | `"    line_index_path.write_text(\"stale line index\", encoding=\"utf-8\")"` | — |
 | [SRC-FA4E1423C3-L000339](../../tests/test_generate_index.py#L339) | 339 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
@@ -728,109 +825,3 @@
 | [SRC-829A979985-L000562](../../tests/test_generation_acceptance_matrix.py#L562) | 562 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
 | [SRC-829A979985-L000563](../../tests/test_generation_acceptance_matrix.py#L563) | 563 | `"    monkeypatch.setattr("` | — |
 | [SRC-829A979985-L000564](../../tests/test_generation_acceptance_matrix.py#L564) | 564 | `"        agent,"` | — |
-| [SRC-829A979985-L000565](../../tests/test_generation_acceptance_matrix.py#L565) | 565 | `"        \"_repair_answer_coverage\","` | — |
-| [SRC-829A979985-L000566](../../tests/test_generation_acceptance_matrix.py#L566) | 566 | `"        lambda question, answer, sources, missing_targets: repaired_answer,"` | — |
-| [SRC-829A979985-L000567](../../tests/test_generation_acceptance_matrix.py#L567) | 567 | `"    )"` | — |
-| [SRC-829A979985-L000568](../../tests/test_generation_acceptance_matrix.py#L568) | 568 | `""` | — |
-| [SRC-829A979985-L000569](../../tests/test_generation_acceptance_matrix.py#L569) | 569 | `"    result = agent.answer(question)"` | — |
-| [SRC-829A979985-L000570](../../tests/test_generation_acceptance_matrix.py#L570) | 570 | `""` | — |
-| [SRC-829A979985-L000571](../../tests/test_generation_acceptance_matrix.py#L571) | 571 | `"    assert result[\"search_attempted\"] is True"` | — |
-| [SRC-829A979985-L000572](../../tests/test_generation_acceptance_matrix.py#L572) | 572 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-829A979985-L000573](../../tests/test_generation_acceptance_matrix.py#L573) | 573 | `"    assert len(result[\"sources\"]) == 2"` | — |
-| [SRC-829A979985-L000574](../../tests/test_generation_acceptance_matrix.py#L574) | 574 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_with_usable_sources\""` | — |
-| [SRC-829A979985-L000575](../../tests/test_generation_acceptance_matrix.py#L575) | 575 | `"    assert result[\"search_report\"][\"pages_fetched\"] == 1"` | — |
-| [SRC-829A979985-L000576](../../tests/test_generation_acceptance_matrix.py#L576) | 576 | `"    assert result[\"final_answer_status\"] == \"model_answer_generated\""` | — |
-| [SRC-829A979985-L000577](../../tests/test_generation_acceptance_matrix.py#L577) | 577 | `"    assert result[\"coverage_repair_status\"] == \"revised_and_reaudited\""` | — |
-| [SRC-829A979985-L000578](../../tests/test_generation_acceptance_matrix.py#L578) | 578 | `"    assert result[\"search_report\"][\"second_pass_review\"] == \"model_claim_audit_completed\""` | — |
-| [SRC-829A979985-L000579](../../tests/test_generation_acceptance_matrix.py#L579) | 579 | `"    assert result[\"answer_coverage\"][\"automatically_graded\"] is False"` | — |
-| [SRC-829A979985-L000580](../../tests/test_generation_acceptance_matrix.py#L580) | 580 | `"    assert result[\"answer_coverage\"][\"status\"] == \"model_review_requested_not_machine_verified\""` | — |
-| [SRC-829A979985-L000581](../../tests/test_generation_acceptance_matrix.py#L581) | 581 | `"    assert \"السعر الإجمالي\" in result[\"answer\"]"` | — |
-| [SRC-829A979985-L000582](../../tests/test_generation_acceptance_matrix.py#L582) | 582 | `"    assert \"البيانات الناقصة\" in result[\"answer\"]"` | — |
-| [SRC-829A979985-L000583](../../tests/test_generation_acceptance_matrix.py#L583) | 583 | `"    assert result[\"citation_validation\"][\"method\"] == \"numeric_source_index_range_only\""` | — |
-| [SRC-829A979985-L000584](../../tests/test_generation_acceptance_matrix.py#L584) | 584 | `"    assert result[\"answer_integrity\"][\"method\"] == \"deterministic_lexical_screen_only\""` | — |
-| [SRC-829A979985-L000585](../../tests/test_generation_acceptance_matrix.py#L585) | 585 | `"    assert result[\"answer_integrity\"][\"semantic_verification\"] is False"` | — |
-| [SRC-829A979985-L000586](../../tests/test_generation_acceptance_matrix.py#L586) | 586 | `"    assert result[\"search_report\"][\"answer_integrity\"] == result[\"answer_integrity\"]"` | — |
-| [SRC-829A979985-L000587](../../tests/test_generation_acceptance_matrix.py#L587) | 587 | `"    assert result[\"answer_integrity\"][\"pages_with_extracted_text\"] == 1"` | — |
-| [SRC-829A979985-L000588](../../tests/test_generation_acceptance_matrix.py#L588) | 588 | `"    assert result[\"answer_integrity\"][\"potentially_missing_target_count\"] >= 0"` | — |
-| [SRC-829A979985-L000589](../../tests/test_generation_acceptance_matrix.py#L589) | 589 | `""` | — |
-| [SRC-829A979985-L000590](../../tests/test_generation_acceptance_matrix.py#L590) | 590 | `""` | — |
-| [SRC-829A979985-L000591](../../tests/test_generation_acceptance_matrix.py#L591) | 591 | `"@pytest.mark.parametrize("` | — |
-| [SRC-829A979985-L000592](../../tests/test_generation_acceptance_matrix.py#L592) | 592 | `"    \"malformed_review\","` | — |
-| [SRC-829A979985-L000593](../../tests/test_generation_acceptance_matrix.py#L593) | 593 | `"    ["` | — |
-| [SRC-829A979985-L000594](../../tests/test_generation_acceptance_matrix.py#L594) | 594 | `"        \"إجابة من دون أي علامات فصل\","` | — |
-| [SRC-829A979985-L000595](../../tests/test_generation_acceptance_matrix.py#L595) | 595 | `"        \"<<<OMARAI_FINAL_ANSWER>>>إجابة بلا علامة نهاية\","` | — |
-| [SRC-829A979985-L000596](../../tests/test_generation_acceptance_matrix.py#L596) | 596 | `"        \"<<<OMARAI_FINAL_ANSWER>>>إجابة<<<END_OMARAI_FINAL_ANSWER>>> نص زائد خارج الإجابة\","` | — |
-| [SRC-829A979985-L000597](../../tests/test_generation_acceptance_matrix.py#L597) | 597 | `"    ],"` | — |
-| [SRC-829A979985-L000598](../../tests/test_generation_acceptance_matrix.py#L598) | 598 | `")"` | — |
-| [SRC-829A979985-L000599](../../tests/test_generation_acceptance_matrix.py#L599) | 599 | `"def test_reviewer_rejects_missing_or_unbounded_final_answer_delimiters("` | — |
-| [SRC-829A979985-L000600](../../tests/test_generation_acceptance_matrix.py#L600) | 600 | `"    monkeypatch, malformed_review"` | — |
-| [SRC-829A979985-L000601](../../tests/test_generation_acceptance_matrix.py#L601) | 601 | `"):"` | — |
-| [SRC-829A979985-L000602](../../tests/test_generation_acceptance_matrix.py#L602) | 602 | `"    agent = WebAgent()"` | — |
-| [SRC-829A979985-L000603](../../tests/test_generation_acceptance_matrix.py#L603) | 603 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000604](../../tests/test_generation_acceptance_matrix.py#L604) | 604 | `"        agent,"` | — |
-| [SRC-829A979985-L000605](../../tests/test_generation_acceptance_matrix.py#L605) | 605 | `"        \"_request_completion\","` | — |
-| [SRC-829A979985-L000606](../../tests/test_generation_acceptance_matrix.py#L606) | 606 | `"        lambda *args, **kwargs: malformed_review,"` | — |
-| [SRC-829A979985-L000607](../../tests/test_generation_acceptance_matrix.py#L607) | 607 | `"    )"` | — |
-| [SRC-829A979985-L000608](../../tests/test_generation_acceptance_matrix.py#L608) | 608 | `"    test_source = source("` | — |
-| [SRC-829A979985-L000609](../../tests/test_generation_acceptance_matrix.py#L609) | 609 | `"        \"https://one.example/page\","` | — |
-| [SRC-829A979985-L000610](../../tests/test_generation_acceptance_matrix.py#L610) | 610 | `"        \"one.example\","` | — |
-| [SRC-829A979985-L000611](../../tests/test_generation_acceptance_matrix.py#L611) | 611 | `"        page_fetched=True,"` | — |
-| [SRC-829A979985-L000612](../../tests/test_generation_acceptance_matrix.py#L612) | 612 | `"        page_text=\"نص الصفحة\","` | — |
-| [SRC-829A979985-L000613](../../tests/test_generation_acceptance_matrix.py#L613) | 613 | `"    )"` | — |
-| [SRC-829A979985-L000614](../../tests/test_generation_acceptance_matrix.py#L614) | 614 | `""` | — |
-| [SRC-829A979985-L000615](../../tests/test_generation_acceptance_matrix.py#L615) | 615 | `"    with pytest.raises(RuntimeError, match=\"فصل الإجابة النهائية\"):"` | — |
-| [SRC-829A979985-L000616](../../tests/test_generation_acceptance_matrix.py#L616) | 616 | `"        agent._review_answer(\"ما مضمون الصفحة؟\", \"مسودة\", [test_source])"` | — |
-## اختبارات
-
-### FILE-AAA21D04E8 — [tests/test_generation_capabilities.py](../../tests/test_generation_capabilities.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-AAA21D04E8-L000001](../../tests/test_generation_capabilities.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-AAA21D04E8-L000002](../../tests/test_generation_capabilities.py#L2) | 2 | `""` | — |
-| [SRC-AAA21D04E8-L000003](../../tests/test_generation_capabilities.py#L3) | 3 | `"import json"` | — |
-| [SRC-AAA21D04E8-L000004](../../tests/test_generation_capabilities.py#L4) | 4 | `""` | — |
-| [SRC-AAA21D04E8-L000005](../../tests/test_generation_capabilities.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-AAA21D04E8-L000006](../../tests/test_generation_capabilities.py#L6) | 6 | `""` | — |
-| [SRC-AAA21D04E8-L000007](../../tests/test_generation_capabilities.py#L7) | 7 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-AAA21D04E8-L000008](../../tests/test_generation_capabilities.py#L8) | 8 | `""` | — |
-| [SRC-AAA21D04E8-L000009](../../tests/test_generation_capabilities.py#L9) | 9 | `""` | — |
-| [SRC-AAA21D04E8-L000010](../../tests/test_generation_capabilities.py#L10) | 10 | `"class FakeResponse:"` | — |
-| [SRC-AAA21D04E8-L000011](../../tests/test_generation_capabilities.py#L11) | 11 | `"    def __init__(self, content: str, finish_reason: str \| None = None, *, include_reason: bool = True):"` | — |
-| [SRC-AAA21D04E8-L000012](../../tests/test_generation_capabilities.py#L12) | 12 | `"        choice = {\"message\": {\"content\": content}}"` | — |
-| [SRC-AAA21D04E8-L000013](../../tests/test_generation_capabilities.py#L13) | 13 | `"        if include_reason:"` | — |
-| [SRC-AAA21D04E8-L000014](../../tests/test_generation_capabilities.py#L14) | 14 | `"            choice[\"finish_reason\"] = finish_reason"` | — |
-| [SRC-AAA21D04E8-L000015](../../tests/test_generation_capabilities.py#L15) | 15 | `"        self.body = json.dumps({\"choices\": [choice]}).encode(\"utf-8\")"` | — |
-| [SRC-AAA21D04E8-L000016](../../tests/test_generation_capabilities.py#L16) | 16 | `""` | — |
-| [SRC-AAA21D04E8-L000017](../../tests/test_generation_capabilities.py#L17) | 17 | `"    def __enter__(self):"` | — |
-| [SRC-AAA21D04E8-L000018](../../tests/test_generation_capabilities.py#L18) | 18 | `"        return self"` | — |
-| [SRC-AAA21D04E8-L000019](../../tests/test_generation_capabilities.py#L19) | 19 | `""` | — |
-| [SRC-AAA21D04E8-L000020](../../tests/test_generation_capabilities.py#L20) | 20 | `"    def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-AAA21D04E8-L000021](../../tests/test_generation_capabilities.py#L21) | 21 | `"        return False"` | — |
-| [SRC-AAA21D04E8-L000022](../../tests/test_generation_capabilities.py#L22) | 22 | `""` | — |
-| [SRC-AAA21D04E8-L000023](../../tests/test_generation_capabilities.py#L23) | 23 | `"    def read(self, limit: int) -> bytes:"` | — |
-| [SRC-AAA21D04E8-L000024](../../tests/test_generation_capabilities.py#L24) | 24 | `"        return self.body[:limit]"` | — |
-| [SRC-AAA21D04E8-L000025](../../tests/test_generation_capabilities.py#L25) | 25 | `""` | — |
-| [SRC-AAA21D04E8-L000026](../../tests/test_generation_capabilities.py#L26) | 26 | `""` | — |
-| [SRC-AAA21D04E8-L000027](../../tests/test_generation_capabilities.py#L27) | 27 | `"def test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used(monkeypatch):"` | — |
-| [SRC-AAA21D04E8-L000028](../../tests/test_generation_capabilities.py#L28) | 28 | `"    agent = WebAgent()"` | — |
-| [SRC-AAA21D04E8-L000029](../../tests/test_generation_capabilities.py#L29) | 29 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-AAA21D04E8-L000030](../../tests/test_generation_capabilities.py#L30) | 30 | `"    agent.fallback_model = \"backup/model\""` | — |
-| [SRC-AAA21D04E8-L000031](../../tests/test_generation_capabilities.py#L31) | 31 | `"    calls: list[str] = []"` | — |
-| [SRC-AAA21D04E8-L000032](../../tests/test_generation_capabilities.py#L32) | 32 | `""` | — |
-| [SRC-AAA21D04E8-L000033](../../tests/test_generation_capabilities.py#L33) | 33 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-AAA21D04E8-L000034](../../tests/test_generation_capabilities.py#L34) | 34 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
-| [SRC-AAA21D04E8-L000035](../../tests/test_generation_capabilities.py#L35) | 35 | `"        calls.append(model)"` | — |
-| [SRC-AAA21D04E8-L000036](../../tests/test_generation_capabilities.py#L36) | 36 | `"        if model == \"primary/model\":"` | — |
-| [SRC-AAA21D04E8-L000037](../../tests/test_generation_capabilities.py#L37) | 37 | `"            return FakeResponse(\"possibly incomplete response\", include_reason=False)"` | — |
-| [SRC-AAA21D04E8-L000038](../../tests/test_generation_capabilities.py#L38) | 38 | `"        return FakeResponse(\"إجابة مكتملة من النموذج الاحتياطي\", \"stop\")"` | — |
-| [SRC-AAA21D04E8-L000039](../../tests/test_generation_capabilities.py#L39) | 39 | `""` | — |
-| [SRC-AAA21D04E8-L000040](../../tests/test_generation_capabilities.py#L40) | 40 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-AAA21D04E8-L000041](../../tests/test_generation_capabilities.py#L41) | 41 | `""` | — |
-| [SRC-AAA21D04E8-L000042](../../tests/test_generation_capabilities.py#L42) | 42 | `"    answer = agent._request_completion("` | — |
-| [SRC-AAA21D04E8-L000043](../../tests/test_generation_capabilities.py#L43) | 43 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-AAA21D04E8-L000044](../../tests/test_generation_capabilities.py#L44) | 44 | `"        model=\"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000045](../../tests/test_generation_capabilities.py#L45) | 45 | `"    )"` | — |
