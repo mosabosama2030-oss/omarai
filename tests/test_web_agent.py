@@ -3609,6 +3609,7 @@ def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
             "provider_diagnostics": [],
         }
     ))
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "إجابة اختبارية [المصدر 1].")
 
