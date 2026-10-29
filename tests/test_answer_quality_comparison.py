@@ -166,3 +166,29 @@ def test_run_validation_rejects_duplicate_ids_and_invalid_latency():
     errors = mod.validate_run(run, "run")
     assert any("duplicate case_id" in error for error in errors)
     assert any("elapsed_ms must be finite and non-negative" in error for error in errors)
+
+
+def test_quality_comparison_rejects_incomplete_human_review_coverage():
+    mod = load_module()
+    corpus = mod.load_json_object(CORPUS_PATH)
+    partial = {
+        "schema_version": "1.0",
+        "reviews": [{
+            "case_id": "AQ-001",
+            "status": "REVIEWED",
+            "correctness": {"correct_facts": 1, "reviewed_facts": 1},
+        }],
+    }
+    full = _reviews(correct=1, supported_citations=1)
+    with pytest.raises(ValueError, match="incomplete human review coverage"):
+        mod.review_comparison(partial, full, corpus)
+
+
+def test_comparison_requires_nonempty_recorded_question_text():
+    mod = load_module()
+    baseline = _run(build_sha="a" * 40, results=[{"case_id": "AQ-001", "elapsed_ms": 20}])
+    candidate = _run(build_sha="b" * 40, results=[{"case_id": "AQ-001", "elapsed_ms": 10}])
+    errors = mod.validate_run(baseline, "baseline")
+    assert any("prompt must be a non-empty string" in error for error in errors)
+    with pytest.raises(ValueError, match="prompt must be a non-empty string"):
+        mod.compare_runs(baseline, candidate)
