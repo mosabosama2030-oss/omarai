@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001553 إلى SRC-E73001D9AC-L000053
+- النطاق: SRC-E599346ABE-L001553 إلى SRC-21D5D044E2-L000029
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -693,6 +693,138 @@
 | [SRC-53E640B937-L000136](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L136) | 136 | ``"يجب مراجعة النص الأصلي للمصدر لا عنوانه فقط. يفضل أن يراجع شخصان عينة مشتركة وأن تتم تسوية اختلافاتهما قبل المقارنة بين الإصدارات. حالة `NOT_TESTED` لا تدخل في أي بسط أو مقام ولا تتحول إلى PASS. هذه المقاييس مراجعات بشرية مجمعة وليست تطبيقًا لـRAGAS."`` | — |
 ## وثائق وفهرسة
 
+### FILE-086F5B0069 — [docs/OMARAI_EVALUATION_METRICS_AR.md](../OMARAI_EVALUATION_METRICS_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-086F5B0069-L000001](../OMARAI_EVALUATION_METRICS_AR.md#L1) | 1 | `"# مجموعة التقييم وقياس الأداء لعمرai"` | — |
+| [SRC-086F5B0069-L000002](../OMARAI_EVALUATION_METRICS_AR.md#L2) | 2 | `""` | — |
+| [SRC-086F5B0069-L000003](../OMARAI_EVALUATION_METRICS_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-EVAL-METRICS-001  "` | — |
+| [SRC-086F5B0069-L000004](../OMARAI_EVALUATION_METRICS_AR.md#L4) | 4 | `"**الإصدار:** 1.0  "` | — |
+| [SRC-086F5B0069-L000005](../OMARAI_EVALUATION_METRICS_AR.md#L5) | 5 | ``"**حالة خط الأساس التاريخي:** `NOT_MEASURED` — لا توجد في الأدلة المتاحة نتيجة تشغيل مُراجَعة على SHA المرجعي القديم.  "`` | — |
+| [SRC-086F5B0069-L000006](../OMARAI_EVALUATION_METRICS_AR.md#L6) | 6 | ``"**المرجع التاريخي المحدد في مجموعة الحالات:** `ac05f4777f140694b285c5364e6c3875fdecdae6`.  "`` | — |
+| [SRC-086F5B0069-L000007](../OMARAI_EVALUATION_METRICS_AR.md#L7) | 7 | `"**مبدأ القبول:** لا يُعلن التحسن قبل تشغيل النسختين على الحالات نفسها وتوثيق SHA والنتائج الفعلية. لا تُملأ أرقام الأساس بالتخمين."` | — |
+| [SRC-086F5B0069-L000008](../OMARAI_EVALUATION_METRICS_AR.md#L8) | 8 | `""` | — |
+| [SRC-086F5B0069-L000009](../OMARAI_EVALUATION_METRICS_AR.md#L9) | 9 | `"## ما الموجود بالفعل وما الذي أُضيف"` | — |
+| [SRC-086F5B0069-L000010](../OMARAI_EVALUATION_METRICS_AR.md#L10) | 10 | `""` | — |
+| [SRC-086F5B0069-L000011](../OMARAI_EVALUATION_METRICS_AR.md#L11) | 11 | ``"- مجموعة `OMARAI-REDTEAM-001` الحالية تضم 45 حالة: 14 `ar-EG`، و9 `ar-MSA`، و13 `en`، و9 `mixed`، عبر 20 فئة تقريبًا؛ راجع `tests/fixtures/answer_quality_cases.json`."`` | — |
+| [SRC-086F5B0069-L000012](../OMARAI_EVALUATION_METRICS_AR.md#L12) | 12 | ``"- `scripts/run_answer_quality_benchmark.py` يجمع إجابات API لكنه لا يحكم تلقائيًا على صحتها؛ تظل الإجابات `NOT_TESTED` حتى مراجعتها."`` | — |
+| [SRC-086F5B0069-L000013](../OMARAI_EVALUATION_METRICS_AR.md#L13) | 13 | ``"- `scripts/evaluate_benchmark_metrics.py` يحسب المقاييس من سجلات تشغيل تمت مراجعتها، ويقارن خط أساس ومرشحًا باستخدام **معرّفات الحالات المشتركة فقط**."`` | — |
+| [SRC-086F5B0069-L000014](../OMARAI_EVALUATION_METRICS_AR.md#L14) | 14 | ``"- `tests/test_evaluate_benchmark_metrics.py` يغطي الحسابات، القيم المجهولة، حالات عدم محاولة الأداة، المقارنة المقترنة، وصحة البيانات."`` | — |
+| [SRC-086F5B0069-L000015](../OMARAI_EVALUATION_METRICS_AR.md#L15) | 15 | `""` | — |
+| [SRC-086F5B0069-L000016](../OMARAI_EVALUATION_METRICS_AR.md#L16) | 16 | `"## تعريف المقاييس"` | — |
+| [SRC-086F5B0069-L000017](../OMARAI_EVALUATION_METRICS_AR.md#L17) | 17 | `""` | — |
+| [SRC-086F5B0069-L000018](../OMARAI_EVALUATION_METRICS_AR.md#L18) | 18 | `"\| المقياس \| التعريف \| قاعدة منع التضليل \|"` | — |
+| [SRC-086F5B0069-L000019](../OMARAI_EVALUATION_METRICS_AR.md#L19) | 19 | `"\|---\|---\|---\|"` | — |
+| [SRC-086F5B0069-L000020](../OMARAI_EVALUATION_METRICS_AR.md#L20) | 20 | ``"\| الدقة (Accuracy) \| الحالات الصحيحة ÷ الحالات التي راجعها مقيّم مستقل \| `correct` يجب أن يكون true/false بعد المراجعة؛ `null` غير محسوب \|"`` | — |
+| [SRC-086F5B0069-L000021](../OMARAI_EVALUATION_METRICS_AR.md#L21) | 21 | ``"\| استدعاء الادعاءات المرجعية (Claim recall) \| الادعاءات الذهبية المسترجعة ÷ إجمالي الادعاءات الذهبية المشروحة \| يتطلب ترميزًا مسبقًا لـ `gold_claims` و`retrieved_gold_claims` \|"`` | — |
+| [SRC-086F5B0069-L000022](../OMARAI_EVALUATION_METRICS_AR.md#L22) | 22 | `"\| جودة الاستشهادات (Citation precision) \| الاستشهادات المدعومة ÷ الاستشهادات الكلية التي جرى فحصها \| وجود رابط لا يعني دعم الادعاء؛ يجب على المراجع فحص كل استشهاد \|"` | — |
+| [SRC-086F5B0069-L000023](../OMARAI_EVALUATION_METRICS_AR.md#L23) | 23 | `"\| تغطية الاستشهادات \| الحالات التي تتطلب مصادر وبها استشهاد واحد على الأقل ÷ حالات طلب المصادر التي عُرفت بياناتها \| مقياس منفصل عن صحة الاستشهاد \|"` | — |
+| [SRC-086F5B0069-L000024](../OMARAI_EVALUATION_METRICS_AR.md#L24) | 24 | `"\| نجاح الأدوات \| استدعاءات الأدوات الناجحة ÷ محاولات الأدوات للحالات التي تتطلب أداة \| عدم المحاولة الصريح لأداة مطلوبة يُحسب فشلًا؛ المحاولة المجهولة تبقى خارج المقام \|"` | — |
+| [SRC-086F5B0069-L000025](../OMARAI_EVALUATION_METRICS_AR.md#L25) | 25 | `"\| زمن الاستجابة \| الوسيط وP95 للزمن المقاس حول طلب API \| لا تخلط زمن API بزمن البحث وحده؛ قارن بيئات متطابقة \|"` | — |
+| [SRC-086F5B0069-L000026](../OMARAI_EVALUATION_METRICS_AR.md#L26) | 26 | ``"\| التكلفة \| مجموع ومتوسط التكلفة المرصودة لكل طلب بالدولار \| المفقود يظل `null`، لا صفرًا؛ لا يُقدّر السعر دون سجل أسعار/استخدام موثق \|"`` | — |
+| [SRC-086F5B0069-L000027](../OMARAI_EVALUATION_METRICS_AR.md#L27) | 27 | `"\| التغطية \| عدد الحالات/الملاحظات المتاحة لكل مقياس \| تُعرض بجانب كل نتيجة؛ لا تعتبر نقص القياس نجاحًا \|"` | — |
+| [SRC-086F5B0069-L000028](../OMARAI_EVALUATION_METRICS_AR.md#L28) | 28 | `""` | — |
+| [SRC-086F5B0069-L000029](../OMARAI_EVALUATION_METRICS_AR.md#L29) | 29 | ``"P95 يستخدم استيفاءً خطيًا لموضع `(n-1) × 0.95`؛ وهذا تعريف حتمي مناسب للعينات الصغيرة. عند نشر مقارنة، أرفق كذلك أعداد الحالات المشمولة بكل مقياس، وليس النسب وحدها."`` | — |
+| [SRC-086F5B0069-L000030](../OMARAI_EVALUATION_METRICS_AR.md#L30) | 30 | `""` | — |
+| [SRC-086F5B0069-L000031](../OMARAI_EVALUATION_METRICS_AR.md#L31) | 31 | `"## صيغة سجل التشغيل المُراجع"` | — |
+| [SRC-086F5B0069-L000032](../OMARAI_EVALUATION_METRICS_AR.md#L32) | 32 | `""` | — |
+| [SRC-086F5B0069-L000033](../OMARAI_EVALUATION_METRICS_AR.md#L33) | 33 | `"أنشئ ملف JSON مستقل لكل تشغيل. لا تضع مفاتيح API أو رموز الوصول أو أجسام أخطاء مزودي الخدمة في الملف."` | — |
+| [SRC-086F5B0069-L000034](../OMARAI_EVALUATION_METRICS_AR.md#L34) | 34 | `""` | — |
+| [SRC-086F5B0069-L000035](../OMARAI_EVALUATION_METRICS_AR.md#L35) | 35 | ````"```json"```` | — |
+| [SRC-086F5B0069-L000036](../OMARAI_EVALUATION_METRICS_AR.md#L36) | 36 | `"{"` | — |
+| [SRC-086F5B0069-L000037](../OMARAI_EVALUATION_METRICS_AR.md#L37) | 37 | `"  \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
+| [SRC-086F5B0069-L000038](../OMARAI_EVALUATION_METRICS_AR.md#L38) | 38 | `"  \"benchmark_version\": \"1.0.0\","` | — |
+| [SRC-086F5B0069-L000039](../OMARAI_EVALUATION_METRICS_AR.md#L39) | 39 | `"  \"run_id\": \"main-<sha>-2026-10-29\","` | — |
+| [SRC-086F5B0069-L000040](../OMARAI_EVALUATION_METRICS_AR.md#L40) | 40 | `"  \"commit_sha\": \"<full tested commit SHA>\","` | — |
+| [SRC-086F5B0069-L000041](../OMARAI_EVALUATION_METRICS_AR.md#L41) | 41 | `"  \"environment\": \"local-or-hosted\","` | — |
+| [SRC-086F5B0069-L000042](../OMARAI_EVALUATION_METRICS_AR.md#L42) | 42 | `"  \"model\": \"provider/model-or-unknown\","` | — |
+| [SRC-086F5B0069-L000043](../OMARAI_EVALUATION_METRICS_AR.md#L43) | 43 | `"  \"cases\": ["` | — |
+| [SRC-086F5B0069-L000044](../OMARAI_EVALUATION_METRICS_AR.md#L44) | 44 | `"    {"` | — |
+| [SRC-086F5B0069-L000045](../OMARAI_EVALUATION_METRICS_AR.md#L45) | 45 | `"      \"case_id\": \"AQ-003\","` | — |
+| [SRC-086F5B0069-L000046](../OMARAI_EVALUATION_METRICS_AR.md#L46) | 46 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-086F5B0069-L000047](../OMARAI_EVALUATION_METRICS_AR.md#L47) | 47 | `"      \"correct\": true,"` | — |
+| [SRC-086F5B0069-L000048](../OMARAI_EVALUATION_METRICS_AR.md#L48) | 48 | `"      \"gold_claims\": 1,"` | — |
+| [SRC-086F5B0069-L000049](../OMARAI_EVALUATION_METRICS_AR.md#L49) | 49 | `"      \"retrieved_gold_claims\": 1,"` | — |
+| [SRC-086F5B0069-L000050](../OMARAI_EVALUATION_METRICS_AR.md#L50) | 50 | `"      \"citations_required\": false,"` | — |
+| [SRC-086F5B0069-L000051](../OMARAI_EVALUATION_METRICS_AR.md#L51) | 51 | `"      \"citations_total\": 0,"` | — |
+| [SRC-086F5B0069-L000052](../OMARAI_EVALUATION_METRICS_AR.md#L52) | 52 | `"      \"citations_supported\": 0,"` | — |
+| [SRC-086F5B0069-L000053](../OMARAI_EVALUATION_METRICS_AR.md#L53) | 53 | `"      \"tool_required\": false,"` | — |
+| [SRC-086F5B0069-L000054](../OMARAI_EVALUATION_METRICS_AR.md#L54) | 54 | `"      \"tool_attempted\": 0,"` | — |
+| [SRC-086F5B0069-L000055](../OMARAI_EVALUATION_METRICS_AR.md#L55) | 55 | `"      \"tool_succeeded\": 0,"` | — |
+| [SRC-086F5B0069-L000056](../OMARAI_EVALUATION_METRICS_AR.md#L56) | 56 | `"      \"latency_ms\": 420.5,"` | — |
+| [SRC-086F5B0069-L000057](../OMARAI_EVALUATION_METRICS_AR.md#L57) | 57 | `"      \"cost_usd\": null,"` | — |
+| [SRC-086F5B0069-L000058](../OMARAI_EVALUATION_METRICS_AR.md#L58) | 58 | `"      \"input_tokens\": null,"` | — |
+| [SRC-086F5B0069-L000059](../OMARAI_EVALUATION_METRICS_AR.md#L59) | 59 | `"      \"output_tokens\": null,"` | — |
+| [SRC-086F5B0069-L000060](../OMARAI_EVALUATION_METRICS_AR.md#L60) | 60 | `"      \"reviewer\": \"reviewer-id-or-internal-code\","` | — |
+| [SRC-086F5B0069-L000061](../OMARAI_EVALUATION_METRICS_AR.md#L61) | 61 | `"      \"review_notes\": \"سبب موجز قابل للتدقيق\""` | — |
+| [SRC-086F5B0069-L000062](../OMARAI_EVALUATION_METRICS_AR.md#L62) | 62 | `"    }"` | — |
+| [SRC-086F5B0069-L000063](../OMARAI_EVALUATION_METRICS_AR.md#L63) | 63 | `"  ]"` | — |
+| [SRC-086F5B0069-L000064](../OMARAI_EVALUATION_METRICS_AR.md#L64) | 64 | `"}"` | — |
+| [SRC-086F5B0069-L000065](../OMARAI_EVALUATION_METRICS_AR.md#L65) | 65 | ````"```"```` | — |
+| [SRC-086F5B0069-L000066](../OMARAI_EVALUATION_METRICS_AR.md#L66) | 66 | `""` | — |
+| [SRC-086F5B0069-L000067](../OMARAI_EVALUATION_METRICS_AR.md#L67) | 67 | ``"هذا المثال **شكل توضيحي وليس نتيجة تشغيل حقيقية**. استخدم `null` عندما تكون القيمة غير معروفة. لا تسجل أسماء مراجعين شخصية إذا كان معرّف داخلي كافيًا. حالات البحث يجب أن تحتوي على قائمة الادعاءات الذهبية المعتمدة في ملاحظات المراجعة/ورقة الترميز، ويجب على مراجع مستقل تحديد ما إذا كان كل ادعاء مسترجعًا ومدعومًا."`` | — |
+| [SRC-086F5B0069-L000068](../OMARAI_EVALUATION_METRICS_AR.md#L68) | 68 | `""` | — |
+| [SRC-086F5B0069-L000069](../OMARAI_EVALUATION_METRICS_AR.md#L69) | 69 | `"## التشغيل"` | — |
+| [SRC-086F5B0069-L000070](../OMARAI_EVALUATION_METRICS_AR.md#L70) | 70 | `""` | — |
+| [SRC-086F5B0069-L000071](../OMARAI_EVALUATION_METRICS_AR.md#L71) | 71 | `"### 1. تحقق من ذخيرة الحالات (دون شبكة)"` | — |
+| [SRC-086F5B0069-L000072](../OMARAI_EVALUATION_METRICS_AR.md#L72) | 72 | `""` | — |
+| [SRC-086F5B0069-L000073](../OMARAI_EVALUATION_METRICS_AR.md#L73) | 73 | ````"```bash"```` | — |
+| [SRC-086F5B0069-L000074](../OMARAI_EVALUATION_METRICS_AR.md#L74) | 74 | `"python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
+| [SRC-086F5B0069-L000075](../OMARAI_EVALUATION_METRICS_AR.md#L75) | 75 | `"python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py tests/test_evaluate_benchmark_metrics.py -q"` | — |
+| [SRC-086F5B0069-L000076](../OMARAI_EVALUATION_METRICS_AR.md#L76) | 76 | ````"```"```` | — |
+| [SRC-086F5B0069-L000077](../OMARAI_EVALUATION_METRICS_AR.md#L77) | 77 | `""` | — |
+| [SRC-086F5B0069-L000078](../OMARAI_EVALUATION_METRICS_AR.md#L78) | 78 | `"هذا يتحقق من البنية فقط، ولا ينتج درجة جودة."` | — |
+| [SRC-086F5B0069-L000079](../OMARAI_EVALUATION_METRICS_AR.md#L79) | 79 | `""` | — |
+| [SRC-086F5B0069-L000080](../OMARAI_EVALUATION_METRICS_AR.md#L80) | 80 | `"### 2. اجمع إجابات نسخة محددة"` | — |
+| [SRC-086F5B0069-L000081](../OMARAI_EVALUATION_METRICS_AR.md#L81) | 81 | `""` | — |
+| [SRC-086F5B0069-L000082](../OMARAI_EVALUATION_METRICS_AR.md#L82) | 82 | ````"```bash"```` | — |
+| [SRC-086F5B0069-L000083](../OMARAI_EVALUATION_METRICS_AR.md#L83) | 83 | `"python scripts/run_answer_quality_benchmark.py --mode live \\"` | — |
+| [SRC-086F5B0069-L000084](../OMARAI_EVALUATION_METRICS_AR.md#L84) | 84 | `"  --base-url http://127.0.0.1:8765 --limit 45 --delay 1 \\"` | — |
+| [SRC-086F5B0069-L000085](../OMARAI_EVALUATION_METRICS_AR.md#L85) | 85 | `"  --out artifacts/eval-candidate-<sha>.json"` | — |
+| [SRC-086F5B0069-L000086](../OMARAI_EVALUATION_METRICS_AR.md#L86) | 86 | ````"```"```` | — |
+| [SRC-086F5B0069-L000087](../OMARAI_EVALUATION_METRICS_AR.md#L87) | 87 | `""` | — |
+| [SRC-086F5B0069-L000088](../OMARAI_EVALUATION_METRICS_AR.md#L88) | 88 | ``"يجب أن تكون الخدمة المحلية تعمل بالفعل. للمضيف HTTPS، لا تستخدم رمز وصول إلا بعد تحديد `OMARAI_BENCHMARK_ALLOWED_ORIGIN` لمطابقة الأصل حرفيًا، مع `OMARAI_ACCESS_TOKEN` من بيئة آمنة. لا تضع الأسرار في سطر الأوامر أو ملفات النتائج. التشغيل الحي قد يستهلك ميزانية مزود النموذج/البحث؛ لا تشغله على الاستضافة دون موافقة مسؤول التشغيل."`` | — |
+| [SRC-086F5B0069-L000089](../OMARAI_EVALUATION_METRICS_AR.md#L89) | 89 | `""` | — |
+| [SRC-086F5B0069-L000090](../OMARAI_EVALUATION_METRICS_AR.md#L90) | 90 | ``"بعد الجمع، أضف مراجعات `correct`، وترميز الادعاءات الذهبية، وعدّ الاستشهادات المدعومة، وحالة الأدوات، وتكلفة موثقة. لا تسمح للأداة بوضع PASS تلقائيًا اعتمادًا على تشابه الكلمات."`` | — |
+| [SRC-086F5B0069-L000091](../OMARAI_EVALUATION_METRICS_AR.md#L91) | 91 | `""` | — |
+| [SRC-086F5B0069-L000092](../OMARAI_EVALUATION_METRICS_AR.md#L92) | 92 | `"### 3. قارن خط الأساس بالنسخة المرشحة"` | — |
+| [SRC-086F5B0069-L000093](../OMARAI_EVALUATION_METRICS_AR.md#L93) | 93 | `""` | — |
+| [SRC-086F5B0069-L000094](../OMARAI_EVALUATION_METRICS_AR.md#L94) | 94 | ````"```bash"```` | — |
+| [SRC-086F5B0069-L000095](../OMARAI_EVALUATION_METRICS_AR.md#L95) | 95 | `"python scripts/evaluate_benchmark_metrics.py \\"` | — |
+| [SRC-086F5B0069-L000096](../OMARAI_EVALUATION_METRICS_AR.md#L96) | 96 | `"  --baseline artifacts/eval-baseline-<sha>.json \\"` | — |
+| [SRC-086F5B0069-L000097](../OMARAI_EVALUATION_METRICS_AR.md#L97) | 97 | `"  --candidate artifacts/eval-candidate-<sha>.json \\"` | — |
+| [SRC-086F5B0069-L000098](../OMARAI_EVALUATION_METRICS_AR.md#L98) | 98 | `"  --out artifacts/eval-comparison.md \\"` | — |
+| [SRC-086F5B0069-L000099](../OMARAI_EVALUATION_METRICS_AR.md#L99) | 99 | `"  --json-out artifacts/eval-comparison.json"` | — |
+| [SRC-086F5B0069-L000100](../OMARAI_EVALUATION_METRICS_AR.md#L100) | 100 | ````"```"```` | — |
+| [SRC-086F5B0069-L000101](../OMARAI_EVALUATION_METRICS_AR.md#L101) | 101 | `""` | — |
+| [SRC-086F5B0069-L000102](../OMARAI_EVALUATION_METRICS_AR.md#L102) | 102 | ``"ترفض الأداة اختلاف معرف/إصدار مجموعة الاختبار، وتستخدم الحالات المشتركة فقط، وتصدر قيمًا `N/A` عند غياب البيانات. يجب تشغيل نفس الأسئلة وبنفس إعدادات البيئة والمراجعة؛ وعند مقارنة جودة البحث الحي، سجّل أن تغير الويب أو المزود قد يؤثر في النتيجة."`` | — |
+| [SRC-086F5B0069-L000103](../OMARAI_EVALUATION_METRICS_AR.md#L103) | 103 | `""` | — |
+| [SRC-086F5B0069-L000104](../OMARAI_EVALUATION_METRICS_AR.md#L104) | 104 | `"## بروتوكول خط الأساس"` | — |
+| [SRC-086F5B0069-L000105](../OMARAI_EVALUATION_METRICS_AR.md#L105) | 105 | `""` | — |
+| [SRC-086F5B0069-L000106](../OMARAI_EVALUATION_METRICS_AR.md#L106) | 106 | ``"1. خط الأساس المقترح تاريخيًا هو commit `ac05f4777f140694b285c5364e6c3875fdecdae6` المشار إليه في ملف الحالات؛ لا يُعد ذلك قياسًا بحد ذاته."`` | — |
+| [SRC-086F5B0069-L000107](../OMARAI_EVALUATION_METRICS_AR.md#L107) | 107 | `"2. شغّل الاختبارات الـ45 على نسخة الأساس وعلى المرشح، مع تسجيل SHA الفعلي لكل منهما."` | — |
+| [SRC-086F5B0069-L000108](../OMARAI_EVALUATION_METRICS_AR.md#L108) | 108 | `"3. طبّق معيار مراجعة واحدًا، ويفضل مقيّمين مستقلين للحالات الدلالية عالية المخاطر، وسجّل خلافاتهما."` | — |
+| [SRC-086F5B0069-L000109](../OMARAI_EVALUATION_METRICS_AR.md#L109) | 109 | ``"4. قارن النتائج المقترنة على `case_id` نفسها. اذكر حجم العينة والتغطية وأي حالات فاشلة/مفقودة."`` | — |
+| [SRC-086F5B0069-L000110](../OMARAI_EVALUATION_METRICS_AR.md#L110) | 110 | `"5. لا تدمج أو تنشر بناءً على متوسط أعلى وحده؛ راجع تراجع الأمان، الحالات الحرجة، الاستشهادات غير المدعومة، وفشل الأدوات."` | — |
+| [SRC-086F5B0069-L000111](../OMARAI_EVALUATION_METRICS_AR.md#L111) | 111 | ``"6. خزّن JSON الخام المنقح، ورقة الترميز، التقرير Markdown، SHA، وتاريخ التشغيل في `artifacts/` أو سجل معتمد دون أسرار."`` | — |
+| [SRC-086F5B0069-L000112](../OMARAI_EVALUATION_METRICS_AR.md#L112) | 112 | `""` | — |
+| [SRC-086F5B0069-L000113](../OMARAI_EVALUATION_METRICS_AR.md#L113) | 113 | `"## الحالة الفعلية عند إنشاء هذا الملف"` | — |
+| [SRC-086F5B0069-L000114](../OMARAI_EVALUATION_METRICS_AR.md#L114) | 114 | `""` | — |
+| [SRC-086F5B0069-L000115](../OMARAI_EVALUATION_METRICS_AR.md#L115) | 115 | `"- **VERIFIED:** الذخيرة الموجودة تحتوي 45 حالة متعددة اللغات؛ runner الحالي يجمع الردود الحية لكنه لا يصنّف الجودة آليًا."` | — |
+| [SRC-086F5B0069-L000116](../OMARAI_EVALUATION_METRICS_AR.md#L116) | 116 | `"- **IMPLEMENTED IN THIS CHANGE:** مجمّع مقاييس مستقل ومقارنة baseline/candidate مقترنة، مع اختبارات حسابية."` | — |
+| [SRC-086F5B0069-L000117](../OMARAI_EVALUATION_METRICS_AR.md#L117) | 117 | `"- **NOT_RUN:** لم تُنفذ الخدمة الحية أو مراجعة بشرية على أي من نسختي baseline/candidate في هذه المهمة."` | — |
+| [SRC-086F5B0069-L000118](../OMARAI_EVALUATION_METRICS_AR.md#L118) | 118 | `"- **NOT_MEASURED:** لا توجد أرقام فعلية موثقة للدقة/الاستدعاء/جودة الاستشهادات/نجاح الأدوات/الزمن/التكلفة على SHA التاريخي المرجعي؛ لذلك لا يمكن الادعاء بأن معيار المقارنة النهائي قد اجتاز."` | — |
+| [SRC-086F5B0069-L000119](../OMARAI_EVALUATION_METRICS_AR.md#L119) | 119 | ``"- **BLOCKER:** يلزم تشغيل نسخة `ac05f477...` ونسخة المرشح في بيئة يمكن تشغيلها، ثم إدخال نتائج فعلية ومراجعتها. لا يمكن استنتاج هذه الأرقام من نجاح CI أو من وجود الذخيرة وحده."`` | — |
+| [SRC-086F5B0069-L000120](../OMARAI_EVALUATION_METRICS_AR.md#L120) | 120 | `""` | — |
+| [SRC-086F5B0069-L000121](../OMARAI_EVALUATION_METRICS_AR.md#L121) | 121 | `"## بوابة القبول النهائية"` | — |
+| [SRC-086F5B0069-L000122](../OMARAI_EVALUATION_METRICS_AR.md#L122) | 122 | `""` | — |
+| [SRC-086F5B0069-L000123](../OMARAI_EVALUATION_METRICS_AR.md#L123) | 123 | ``"يُقبل الإصدار فقط عند توفر: (1) نتائج baseline وcandidate على الحالات نفسها، (2) SHA كامل لكل تشغيل، (3) مراجعة جودة موثقة، (4) قيم المقاييس وتغطيتها، (5) نتائج P50/P95 والتكلفة من بيانات حقيقية، (6) تقرير فروق قابل لإعادة الإنتاج، و(7) عدم وجود تراجع أمني حرج. قبل ذلك الحالة `PARTIAL` لا `VERIFIED`."`` | — |
+## وثائق وفهرسة
+
 ### FILE-21D5D044E2 — [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L1)
 
 - النوع: **Markdown**
@@ -729,135 +861,3 @@
 | [SRC-21D5D044E2-L000027](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L27) | 27 | `"\| — \| — \| لا يوجد استثناء معتمد مسجل في هذا الملف حتى تاريخ اللقطة. \| — \| لا توجد موافقات مسجلة هنا \| — \| لا يثبت ذلك غياب قرار أو موافقة خارج المستودع. \|"` | — |
 | [SRC-21D5D044E2-L000028](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L28) | 28 | `""` | — |
 | [SRC-21D5D044E2-L000029](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L29) | 29 | `"## 3. مقترحات للمراجعة — ليست استثناءات معتمدة"` | — |
-| [SRC-21D5D044E2-L000030](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L30) | 30 | `""` | — |
-| [SRC-21D5D044E2-L000031](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L31) | 31 | `"### EX-PROP-001 — حصر النسخة على مشغّل واحد"` | — |
-| [SRC-21D5D044E2-L000032](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L32) | 32 | `""` | — |
-| [SRC-21D5D044E2-L000033](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L33) | 33 | ``"- **المتطلبات:** `IDN-001` و`IDN-003` ومتطلبات تعدد المستأجرين المشروطة."`` | — |
-| [SRC-21D5D044E2-L000034](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L34) | 34 | `"- **المقترح:** تحديد نطاق النسخة التجريبية على أنها خدمة خاصة بمشغّل واحد بدل تقديمها كمنصة متعددة المستخدمين."` | — |
-| [SRC-21D5D044E2-L000035](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L35) | 35 | `"- **السبب:** التنفيذ الحالي يستخدم رمز Bearer مشتركًا ومخزن leads مشتركًا؛ لا تظهر هوية فردية أو عزل كامل لبيانات كل مستخدم."` | — |
-| [SRC-21D5D044E2-L000036](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L36) | 36 | `"- **المخاطر:** من يحصل على الرمز يحصل على الصلاحيات الممنوحة له؛ قد تختلط بيانات عدة مستخدمين إذا استُخدم النظام على نحو غير مقصود."` | — |
-| [SRC-21D5D044E2-L000037](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L37) | 37 | `"- **التعويضات المطلوبة إذا وافق المدير:** إبقاء الخدمة خاصة، استخدام رمز قوي وسري، عدم مشاركة الرمز كأنه حساب مستقل، وعدم إدخال بيانات عملاء مستقلين أو بيانات حساسة."` | — |
-| [SRC-21D5D044E2-L000038](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L38) | 38 | `"- **صاحب القرار:** مدير المشروع البشري."` | — |
-| [SRC-21D5D044E2-L000039](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L39) | 39 | `"- **الانتهاء/إعادة النظر:** قبل أي عرض عام لعدة مستخدمين، أو تخزين بيانات مستقلة لجهات مختلفة."` | — |
-| [SRC-21D5D044E2-L000040](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L40) | 40 | ``"- **الحالة:** `PROPOSED — تنتظر الموافقة`."`` | — |
-| [SRC-21D5D044E2-L000041](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L41) | 41 | `""` | — |
-| [SRC-21D5D044E2-L000042](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L42) | 42 | `"### EX-PROP-002 — استمرارية البيانات في بيئة تجريبية قابلة للفقد"` | — |
-| [SRC-21D5D044E2-L000043](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L43) | 43 | `""` | — |
-| [SRC-21D5D044E2-L000044](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L44) | 44 | ``"- **المتطلبات:** `REL-005` و`EXT-002` و`DAT-002` بحسب انطباقها على البيانات المخزنة."`` | — |
-| [SRC-21D5D044E2-L000045](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L45) | 45 | `"- **المقترح:** السماح بتجربة لا تعتمد على حفظ بيانات مهمة فقط إذا كانت كل بياناتها اصطناعية أو قابلة لإعادة الإنشاء، مع إبقاء النسخ والاستعادة الدائمة خارج نطاق هذه التجربة."` | — |
-| [SRC-21D5D044E2-L000046](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L46) | 46 | `"- **السبب:** النسخ الاحتياطي والاستعادة ودوام تخزين SQLite على مضيف محدد لم تثبت هنا."` | — |
-| [SRC-21D5D044E2-L000047](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L47) | 47 | `"- **المخاطر:** فقدان البيانات بعد إعادة إنشاء الحاوية أو تغيير المضيف أو تلف ملف قاعدة البيانات."` | — |
-| [SRC-21D5D044E2-L000048](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L48) | 48 | `"- **التعويضات المطلوبة إذا وافق المدير:** عدم إدخال بيانات لا يمكن تعويضها، والتصريح بأن الاستمرارية غير مثبتة."` | — |
-| [SRC-21D5D044E2-L000049](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L49) | 49 | `"- **صاحب القرار:** مدير المشروع البشري."` | — |
-| [SRC-21D5D044E2-L000050](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L50) | 50 | `"- **الانتهاء/إعادة النظر:** قبل تخزين أي بيانات عمل حقيقية يُعتمد عليها."` | — |
-| [SRC-21D5D044E2-L000051](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L51) | 51 | ``"- **الحالة:** `PROPOSED — تنتظر الموافقة`."`` | — |
-| [SRC-21D5D044E2-L000052](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L52) | 52 | `""` | — |
-| [SRC-21D5D044E2-L000053](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L53) | 53 | `"### EX-PROP-003 — عدم إعلان سعة/توافر غير مقاس"` | — |
-| [SRC-21D5D044E2-L000054](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L54) | 54 | `""` | — |
-| [SRC-21D5D044E2-L000055](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L55) | 55 | ``"- **المتطلبات:** `PER-004` و`REL-006`، وأي ادعاء أداء أو توافر في `PRD-001`."`` | — |
-| [SRC-21D5D044E2-L000056](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L56) | 56 | `"- **المقترح:** عدم نشر أرقام عن throughput أو عدد مستخدمين مدعوم أو نسبة توافر، إلى أن تتوفر قياسات ممثلة."` | — |
-| [SRC-21D5D044E2-L000057](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L57) | 57 | `"- **الطبيعة:** هذا في الأساس قيد على الادعاءات، وليس إذنًا بتجاهل ضوابط الأمان أو حدود الموارد."` | — |
-| [SRC-21D5D044E2-L000058](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L58) | 58 | `"- **المخاطر:** توقعات غير واقعية من المستخدمين أو توقف الخدمة تحت ضغط لم يُختبر."` | — |
-| [SRC-21D5D044E2-L000059](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L59) | 59 | `"- **التعويض:** الإفصاح أن السعة والتوافر غير معروفين، وعدم إعطاء وعود تشغيلية رقمية."` | — |
-| [SRC-21D5D044E2-L000060](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L60) | 60 | `"- **صاحب القرار:** مدير المشروع البشري."` | — |
-| [SRC-21D5D044E2-L000061](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L61) | 61 | `"- **الانتهاء/إعادة النظر:** عند إجراء اختبار حمل موثق أو تقديم التزام تشغيلي."` | — |
-| [SRC-21D5D044E2-L000062](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L62) | 62 | ``"- **الحالة:** `PROPOSED — تنتظر الموافقة`."`` | — |
-| [SRC-21D5D044E2-L000063](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L63) | 63 | `""` | — |
-| [SRC-21D5D044E2-L000064](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L64) | 64 | `"### EX-PROP-004 — الموصلات الاختيارية غير المتحققة"` | — |
-| [SRC-21D5D044E2-L000065](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L65) | 65 | `""` | — |
-| [SRC-21D5D044E2-L000066](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L66) | 66 | ``"- **المتطلبات:** `SRH-001` و`TST-005` و`PRD-001`."`` | — |
-| [SRC-21D5D044E2-L000067](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L67) | 67 | `"- **المقترح:** عدم إعلان موصل اختياري على أنه يعمل حيًا ما لم ينجح اختبار اتصال فعلي به في بيئة محددة. يكفي توثيقه كقدرة مشروطة بتهيئة صحيحة."` | — |
-| [SRC-21D5D044E2-L000068](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L68) | 68 | `"- **الطبيعة:** هذا ليس إعفاء من ضرورة الصدق؛ بل قاعدة لتحديد الادعاء المسموح."` | — |
-| [SRC-21D5D044E2-L000069](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L69) | 69 | ``"- **التعويض:** عرض الحالة `NOT_RUN` أو `UNKNOWN` إلى حين إجراء الاختبار."`` | — |
-| [SRC-21D5D044E2-L000070](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L70) | 70 | `"- **صاحب القرار:** مدير المشروع البشري عند اعتماد نطاق المنتج."` | — |
-| [SRC-21D5D044E2-L000071](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L71) | 71 | `"- **الانتهاء/إعادة النظر:** عند تفعيل الموصل أو الإعلان عنه كقدرة متحققة."` | — |
-| [SRC-21D5D044E2-L000072](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L72) | 72 | ``"- **الحالة:** `PROPOSED — تنتظر المراجعة`."`` | — |
-| [SRC-21D5D044E2-L000073](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L73) | 73 | `""` | — |
-| [SRC-21D5D044E2-L000074](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L74) | 74 | `"## 4. متطلبات لا يجوز اعتبارها مستثناة بهذا السجل"` | — |
-| [SRC-21D5D044E2-L000075](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L75) | 75 | `""` | — |
-| [SRC-21D5D044E2-L000076](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L76) | 76 | `"لا يمثل أي مقترح أعلاه موافقة على تجاوز:"` | — |
-| [SRC-21D5D044E2-L000077](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L77) | 77 | `"- حماية SSRF والحدود الشبكية."` | — |
-| [SRC-21D5D044E2-L000078](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L78) | 78 | `"- حماية الطلبات والمهلات الأساسية في API المعرض للإنترنت."` | — |
-| [SRC-21D5D044E2-L000079](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L79) | 79 | `"- منع حقن التعليمات من تجاوز سياسة التطبيق أو تسريب الأسرار."` | — |
-| [SRC-21D5D044E2-L000080](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L80) | 80 | `"- التحقق من المصادقة والتفويض الملائمين لنطاق الاستخدام."` | — |
-| [SRC-21D5D044E2-L000081](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L81) | 81 | `"- الصدق في الاستشهادات وبيان عدم اليقين."` | — |
-| [SRC-21D5D044E2-L000082](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L82) | 82 | `"- فحص الأسرار وحماية إعدادات CI/CD."` | — |
-| [SRC-21D5D044E2-L000083](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L83) | 83 | `"- اختبار النشر الفعلي قبل الإعلان عن تشغيله."` | — |
-| [SRC-21D5D044E2-L000084](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L84) | 84 | `"- اختبار النسخ والاستعادة قبل الاعتماد على بيانات لا يمكن تعويضها."` | — |
-| [SRC-21D5D044E2-L000085](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L85) | 85 | `""` | — |
-| [SRC-21D5D044E2-L000086](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L86) | 86 | ``"لا يستخدم `NOT APPLICABLE` بدل `UNKNOWN`، ولا يجوز ترقية `PROPOSED` إلى `WAIVED` دون موافقة صريحة قابلة للمراجعة."`` | — |
-| [SRC-21D5D044E2-L000087](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L87) | 87 | `""` | — |
-| [SRC-21D5D044E2-L000088](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L88) | 88 | `"## 5. سجل قرارات المدير"` | — |
-| [SRC-21D5D044E2-L000089](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L89) | 89 | `""` | — |
-| [SRC-21D5D044E2-L000090](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L90) | 90 | `"لم تُسجل موافقات في هذا الملف حتى تاريخ الإنشاء. تُضاف الموافقة فقط بعد صدورها صراحة، ويجب أن تتضمن معرف الاستثناء الذي وافق المدير عليه ونطاقه وشروطه. لن يُستنتج القبول من الصمت أو من اعتماد مهام التطوير."` | — |
-| [SRC-21D5D044E2-L000091](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L91) | 91 | `""` | — |
-| [SRC-21D5D044E2-L000092](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L92) | 92 | `"## 6. مراجعة دورية وإغلاق"` | — |
-| [SRC-21D5D044E2-L000093](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L93) | 93 | `""` | — |
-| [SRC-21D5D044E2-L000094](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L94) | 94 | `"عند انتهاء كل استثناء أو تغير النطاق:"` | — |
-| [SRC-21D5D044E2-L000095](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L95) | 95 | `"1. أعد تشغيل اختبار القبول المناسب."` | — |
-| [SRC-21D5D044E2-L000096](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L96) | 96 | `"2. سجل الدليل الجديد وربطه بالـSHA والبيئة."` | — |
-| [SRC-21D5D044E2-L000097](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L97) | 97 | `"3. حدّد هل أُغلق الاستثناء أم يحتاج تجديدًا بموافقة جديدة."` | — |
-| [SRC-21D5D044E2-L000098](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L98) | 98 | `"4. لا تمدد الاستثناء تلقائيًا."` | — |
-| [SRC-21D5D044E2-L000099](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L99) | 99 | `"5. احتفظ بسجل القرار السابق بدل محوه."` | — |
-## وثائق وفهرسة
-
-### FILE-E73001D9AC — [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-E73001D9AC-L000001](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | 1 | `"# Omarai — الدستور التأسيسي للهندسة والموثوقية والأمان والذكاء"` | — |
-| [SRC-E73001D9AC-L000002](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L2) | 2 | `""` | — |
-| [SRC-E73001D9AC-L000003](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L3) | 3 | `"**معرّف الوثيقة:** OMARAI-FOUNDATION-CHARTER-001  "` | — |
-| [SRC-E73001D9AC-L000004](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L4) | 4 | `"**الإصدار:** 1.2.0  "` | — |
-| [SRC-E73001D9AC-L000005](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L5) | 5 | `"**الحالة:** متطلب تأسيسي مقترح للإقرار والمراجعة؛ بعد اعتماد المالك يصبح مرجعًا حاكمًا للتطوير  "` | — |
-| [SRC-E73001D9AC-L000006](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L6) | 6 | `"**النطاق:** جميع مكونات Omarai البرمجية والتشغيلية، وواجهات API، والواجهة العربية، ومحركات البحث، والنماذج، والأدوات، والبيانات، والاستضافة، وسير التطوير والاختبار  "` | — |
-| [SRC-E73001D9AC-L000007](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L7) | 7 | `"**الأولوية:** مرجع تصميم وحوكمة؛ لا يثبت بمفرده أن أي قدرة نُفّذت أو اختُبرت  "` | — |
-| [SRC-E73001D9AC-L000008](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L8) | 8 | `"**اللغة:** العربية هي لغة الشرح الأساسية، مع استخدام أسماء المصطلحات التقنية الإنجليزية لتوحيد التنفيذ والمراجعة"` | — |
-| [SRC-E73001D9AC-L000009](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L9) | 9 | `""` | — |
-| [SRC-E73001D9AC-L000010](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L10) | 10 | `"> **القاعدة العليا:** Omarai لا يدّعي قدرة غير مثبتة. كل قدرة مهمة يجب أن تقابلها آلية تنفيذ محددة واختبار قابل لإعادة التشغيل ودليل ناتج عن بيئة معروفة. الاختبارات والقياسات الفعلية مقدّمة على الأوصاف والوعود."` | — |
-| [SRC-E73001D9AC-L000011](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L11) | 11 | `""` | — |
-| [SRC-E73001D9AC-L000012](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L12) | 12 | `"---"` | — |
-| [SRC-E73001D9AC-L000013](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L13) | 13 | `""` | — |
-| [SRC-E73001D9AC-L000014](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L14) | 14 | `"> **مراجع مكملة للمراجعات الواسعة:** تُقرأ هذه الوثيقة مع [خط الأساس الهندسي للمنصات العالمية واسعة النطاق](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md)، ومع [سجل المتطلبات والتتبع والنضج وبوابات الاعتماد](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md)، ومع [سجل المتطلبات الأساسية الأولي](OMARAI_REQUIREMENTS_REGISTER.md). وتُقرأ أيضًا مع [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md)، التي تفصل مسار التوسع من النواة إلى المهارات وسير العمل والوكلاء. هذه الوثائق مكملة بعضها لبعض وليست بدائل متنافسة؛ لا تثبت أي وثيقة وحدها أن الضوابط نُفذت."` | — |
-| [SRC-E73001D9AC-L000015](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L15) | 15 | `""` | — |
-| [SRC-E73001D9AC-L000016](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L16) | 16 | `"## 0. كيف تُقرأ هذه الوثيقة؟"` | — |
-| [SRC-E73001D9AC-L000017](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L17) | 17 | `""` | — |
-| [SRC-E73001D9AC-L000018](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L18) | 18 | `"تستخدم الوثيقة الكلمات التالية بدقة:"` | — |
-| [SRC-E73001D9AC-L000019](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L19) | 19 | `""` | — |
-| [SRC-E73001D9AC-L000020](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L20) | 20 | `"- **MUST / إلزامي:** شرط لا يجوز تجاوزه في التنفيذ المستهدف أو الإصدار الذي يدّعي استيفاءه."` | — |
-| [SRC-E73001D9AC-L000021](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L21) | 21 | `"- **SHOULD / مطلوب افتراضيًا:** يُطبّق ما لم يوجد سبب موثق ومراجع لاستثناء محدود."` | — |
-| [SRC-E73001D9AC-L000022](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L22) | 22 | `"- **MAY / اختياري:** يُطبّق عندما يحقق قيمة مثبتة ولا يضيف مخاطر غير مقبولة."` | — |
-| [SRC-E73001D9AC-L000023](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L23) | 23 | `"- **VERIFIED / متحقق:** تؤيده نتيجة فحص أو اختبار أو قياس محدد يمكن الرجوع إليه."` | — |
-| [SRC-E73001D9AC-L000024](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L24) | 24 | `"- **INFERRED / مستنتج:** تفسير مرجح مبني على الأدلة المتاحة، وليس حقيقة اختبارية."` | — |
-| [SRC-E73001D9AC-L000025](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L25) | 25 | `"- **PROPOSED / مقترح:** قرار تصميم أو هدف لم يُثبت تنفيذه بعد."` | — |
-| [SRC-E73001D9AC-L000026](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L26) | 26 | `"- **UNKNOWN / غير معلوم:** لا تتوفر أدلة كافية للحكم."` | — |
-| [SRC-E73001D9AC-L000027](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L27) | 27 | `""` | — |
-| [SRC-E73001D9AC-L000028](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L28) | 28 | `"هذه الوثيقة **متطلبات مستقبلية ومعيار مراجعة**، وليست إعلانًا بأن المستودع الحالي يحققها. يجب أن يُسجّل لكل بند مهم: حالته، والدليل، والمخاطر المفتوحة، وخطة المعالجة، والمسؤول عن التحقق. لا تُحوّل كلمة PROPOSED إلى VERIFIED إلا بدليل فعلي."` | — |
-| [SRC-E73001D9AC-L000029](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L29) | 29 | `""` | — |
-| [SRC-E73001D9AC-L000030](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L30) | 30 | `"---"` | — |
-| [SRC-E73001D9AC-L000031](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L31) | 31 | `""` | — |
-| [SRC-E73001D9AC-L000032](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L32) | 32 | `"# الجزء الأول — الرسالة العليا ومبادئ التصميم"` | — |
-| [SRC-E73001D9AC-L000033](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L33) | 33 | `""` | — |
-| [SRC-E73001D9AC-L000034](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L34) | 34 | `"## 1. الرؤية"` | — |
-| [SRC-E73001D9AC-L000035](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L35) | 35 | `""` | — |
-| [SRC-E73001D9AC-L000036](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L36) | 36 | `"بناء Omarai كنواة ذكاء اصطناعي عربية عملية تستطيع استقبال الأسئلة والمهام، وفهمها، والبحث عند الحاجة، واستخدام الأدوات التي ثبت عملها، وتوليد إجابات مستندة إلى الأدلة، وإظهار حدود المعرفة بوضوح؛ مع هندسة تتيح النمو من نموذج أولي محدود إلى خدمة إنتاجية موثوقة عندما تسمح الموارد والاستضافة بذلك."` | — |
-| [SRC-E73001D9AC-L000037](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L37) | 37 | `""` | — |
-| [SRC-E73001D9AC-L000038](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L38) | 38 | `"الطموح هو بلوغ مستوى احترافي في الاعتمادية والأمان والكفاءة، مع الاستفادة من الممارسات الصناعية المعروفة. لا يعني ذلك ادعاء التكافؤ مع المنصات العالمية قبل وجود بنية تشغيلية وميزانية واختبارات وتدقيق خارجي مناسب."` | — |
-| [SRC-E73001D9AC-L000039](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) | 39 | `""` | — |
-| [SRC-E73001D9AC-L000040](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L40) | 40 | `"## 2. المبادئ الحاكمة غير القابلة للتفاوض"` | — |
-| [SRC-E73001D9AC-L000041](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L41) | 41 | `""` | — |
-| [SRC-E73001D9AC-L000042](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L42) | 42 | `"1. **Evidence over assertion:** لا نعلن نجاحًا بلا دليل."` | — |
-| [SRC-E73001D9AC-L000043](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L43) | 43 | `"2. **Security by design:** الأمن جزء من التصميم ودورة التطوير، لا طبقة تجميلية لاحقة."` | — |
-| [SRC-E73001D9AC-L000044](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L44) | 44 | `"3. **Reliability before feature growth:** لا نضيف قدرات تُضعف الاستقرار أو تفتح صلاحيات غير مضبوطة."` | — |
-| [SRC-E73001D9AC-L000045](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L45) | 45 | `"4. **Least privilege:** أقل صلاحية لازمة لكل مستخدم ومكوّن وأداة."` | — |
-| [SRC-E73001D9AC-L000046](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L46) | 46 | `"5. **Fail safely, degrade gracefully:** تعطل مكوّن لا ينبغي أن يسقط النظام كله، والفشل يجب أن يكون محدود الأثر وواضحًا."` | — |
-| [SRC-E73001D9AC-L000047](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L47) | 47 | `"6. **Bound every expensive operation:** كل بحث أو استدعاء نموذج أو جلب صفحة أو حلقة تخطيط أو إعادة محاولة له حدود زمنية وكمية وتكلفة."` | — |
-| [SRC-E73001D9AC-L000048](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L48) | 48 | `"7. **Simple path first:** السؤال البسيط يسلك المسار الأقصر؛ لا نستدعي التخطيط العميق أو الإنترنت بلا حاجة."` | — |
-| [SRC-E73001D9AC-L000049](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L49) | 49 | `"8. **Independent verification:** لا نعتبر مراجعة النموذج لنفسه تحققًا مستقلًا، ولا نعتبر اتفاق محركات البحث إثباتًا للحقيقة."` | — |
-| [SRC-E73001D9AC-L000050](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L50) | 50 | `"9. **Privacy by default:** نجمع أقل بيانات لازمة، ونوضح ما يغادر النظام إلى مزودي الخدمة."` | — |
-| [SRC-E73001D9AC-L000051](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L51) | 51 | `"10. **Separation of concerns:** حدود واضحة بين الطلبات، والتخطيط، والبحث، وتنفيذ الأدوات، والتحقق، والبيانات، والمراقبة."` | — |
-| [SRC-E73001D9AC-L000052](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L52) | 52 | `"11. **Observable behavior:** يجب أن يمكن قياس النجاح والفشل والبطء والاستهلاك، مع حماية الخصوصية."` | — |
-| [SRC-E73001D9AC-L000053](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L53) | 53 | `"12. **Reversible decisions:** التغييرات الهندسية الكبيرة تمر عبر قرارات موثقة ويمكن التراجع عنها."` | — |

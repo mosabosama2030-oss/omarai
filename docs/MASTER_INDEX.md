@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **108**
+- ملفات المستودع في الجرد: **109**
 - ملفات Python المحللة: **65**
 - تعريفات Python المفهرسة: **1425**
 - تعريفات Python موثقة بوجود Docstring: **241**
 - تعريفات Python بلا Docstring: **890**
 - تعريفات لا ينطبق عليها Docstring: **294**
-- الرموز الساكنة الإضافية: **1741**
-- الأسطر النصية المفهرسة حرفيًا: **37332**
+- الرموز الساكنة الإضافية: **1757**
+- الأسطر النصية المفهرسة حرفيًا: **37455**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -69,6 +69,7 @@
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
 | FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 6869 | 43 | جرد الملف + عناوين Markdown |
 | FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 12943 | 136 | جرد الملف + عناوين Markdown |
+| FILE-086F5B0069 | وثائق وفهرسة | [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L1) | Markdown | 10689 | 123 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
 | FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
@@ -2090,6 +2091,22 @@
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L66) | عنوان Markdown (H2) | إضافة تالية لنظام التقييم — 28 أكتوبر 2026 | 66 | [SRC-53E640B937-L000066](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L66) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L78) | عنوان Markdown (H3) | قاعدة أمثلة أسلوبية موجهة | 78 | [SRC-53E640B937-L000078](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L78) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L82) | عنوان Markdown (H3) | تشغيل التقييم البشري القابل للتكرار | 82 | [SRC-53E640B937-L000082](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L82) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L1) | عنوان Markdown (H1) | مجموعة التقييم وقياس الأداء لعمرai | 1 | [SRC-086F5B0069-L000001](OMARAI_EVALUATION_METRICS_AR.md#L1) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 5 | [SRC-086F5B0069-L000005](OMARAI_EVALUATION_METRICS_AR.md#L5) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L8) | عنوان Markdown (H2) | ما الموجود بالفعل وما الذي أُضيف | 8 | [SRC-086F5B0069-L000008](OMARAI_EVALUATION_METRICS_AR.md#L8) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 12 | [SRC-086F5B0069-L000012](OMARAI_EVALUATION_METRICS_AR.md#L12) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L15) | عنوان Markdown (H2) | تعريف المقاييس | 15 | [SRC-086F5B0069-L000015](OMARAI_EVALUATION_METRICS_AR.md#L15) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L30) | عنوان Markdown (H2) | صيغة سجل التشغيل المُراجع | 30 | [SRC-086F5B0069-L000030](OMARAI_EVALUATION_METRICS_AR.md#L30) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L68) | عنوان Markdown (H2) | التشغيل | 68 | [SRC-086F5B0069-L000068](OMARAI_EVALUATION_METRICS_AR.md#L68) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L70) | عنوان Markdown (H3) | 1. تحقق من ذخيرة الحالات (دون شبكة) | 70 | [SRC-086F5B0069-L000070](OMARAI_EVALUATION_METRICS_AR.md#L70) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L79) | عنوان Markdown (H3) | 2. اجمع إجابات نسخة محددة | 79 | [SRC-086F5B0069-L000079](OMARAI_EVALUATION_METRICS_AR.md#L79) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 88 | [SRC-086F5B0069-L000088](OMARAI_EVALUATION_METRICS_AR.md#L88) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 88 | [SRC-086F5B0069-L000088](OMARAI_EVALUATION_METRICS_AR.md#L88) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L91) | عنوان Markdown (H3) | 3. قارن خط الأساس بالنسخة المرشحة | 91 | [SRC-086F5B0069-L000091](OMARAI_EVALUATION_METRICS_AR.md#L91) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L103) | عنوان Markdown (H2) | بروتوكول خط الأساس | 103 | [SRC-086F5B0069-L000103](OMARAI_EVALUATION_METRICS_AR.md#L103) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L112) | عنوان Markdown (H2) | الحالة الفعلية عند إنشاء هذا الملف | 112 | [SRC-086F5B0069-L000112](OMARAI_EVALUATION_METRICS_AR.md#L112) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 117 | [SRC-086F5B0069-L000117](OMARAI_EVALUATION_METRICS_AR.md#L117) |
+| [docs/OMARAI_EVALUATION_METRICS_AR.md](OMARAI_EVALUATION_METRICS_AR.md#L120) | عنوان Markdown (H2) | بوابة القبول النهائية | 120 | [SRC-086F5B0069-L000120](OMARAI_EVALUATION_METRICS_AR.md#L120) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل الاستثناءات والقرارات المؤجلة | 1 | [SRC-21D5D044E2-L000001](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) | عنوان Markdown (H2) | 1. الغرض وقواعد الاستخدام | 8 | [SRC-21D5D044E2-L000008](OMARAI_EXCEPTIONS_REGISTER_AR.md#L8) |
 | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) | عنوان Markdown (H2) | 2. سجل الاستثناءات المعتمدة | 22 | [SRC-21D5D044E2-L000022](OMARAI_EXCEPTIONS_REGISTER_AR.md#L22) |
