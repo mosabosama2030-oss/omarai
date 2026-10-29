@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **105**
 - ملفات Python المحللة: **62**
-- تعريفات Python المفهرسة: **1389**
-- تعريفات Python موثقة بوجود Docstring: **239**
-- تعريفات Python بلا Docstring: **864**
-- تعريفات لا ينطبق عليها Docstring: **286**
+- تعريفات Python المفهرسة: **1394**
+- تعريفات Python موثقة بوجود Docstring: **241**
+- تعريفات Python بلا Docstring: **865**
+- تعريفات لا ينطبق عليها Docstring: **288**
 - الرموز الساكنة الإضافية: **1736**
-- الأسطر النصية المفهرسة حرفيًا: **36707**
+- الأسطر النصية المفهرسة حرفيًا: **36816**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 33736 | 718 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
-| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 6104 | 143 | جرد الملف + AST Python |
+| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10550 | 252 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25333 | 559 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
@@ -179,10 +179,15 @@
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L192) | دالة | build_evidence_ledger | لا توجد Docstring. | ناقص | 192 | [SRC-01273BA196-L000192](../agents/aspect_planning.py#L192) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L228) | دالة | repair_queries_for_missing_aspects | لا توجد Docstring. | ناقص | 228 | [SRC-01273BA196-L000228](../agents/aspect_planning.py#L228) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L254) | دالة | arabic_aspect_diagnostics | لا توجد Docstring. | ناقص | 254 | [SRC-01273BA196-L000254](../agents/aspect_planning.py#L254) |
-| [agents/claim_evidence.py](../agents/claim_evidence.py#L11) | متغير/ثابت Python | _CITATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-7D6FC391EC-L000011](../agents/claim_evidence.py#L11) |
-| [agents/claim_evidence.py](../agents/claim_evidence.py#L12) | متغير/ثابت Python | _SENTENCE_SPLIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-7D6FC391EC-L000012](../agents/claim_evidence.py#L12) |
-| [agents/claim_evidence.py](../agents/claim_evidence.py#L15) | دالة | _evidence_basis | لا توجد Docstring. | ناقص | 15 | [SRC-7D6FC391EC-L000015](../agents/claim_evidence.py#L15) |
-| [agents/claim_evidence.py](../agents/claim_evidence.py#L25) | دالة | build_claim_evidence_ledger | Return bounded sentence candidates with validated source-index traceability. | موثق | 25 | [SRC-7D6FC391EC-L000025](../agents/claim_evidence.py#L25) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L13) | متغير/ثابت Python | _CITATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-7D6FC391EC-L000013](../agents/claim_evidence.py#L13) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L14) | متغير/ثابت Python | _SENTENCE_SPLIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-7D6FC391EC-L000014](../agents/claim_evidence.py#L14) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L17) | دالة | _evidence_basis | لا توجد Docstring. | ناقص | 17 | [SRC-7D6FC391EC-L000017](../agents/claim_evidence.py#L17) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L28) | متغير/ثابت Python | _POPULATION_CLAIM | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-7D6FC391EC-L000028](../agents/claim_evidence.py#L28) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L33) | متغير/ثابت Python | _ARABIC_CLAIM_TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 33 | [SRC-7D6FC391EC-L000033](../agents/claim_evidence.py#L33) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L38) | دالة | requires_population_scope | Detect population claims conservatively; this is a routing hint, not NLU verification. | موثق | 38 | [SRC-7D6FC391EC-L000038](../agents/claim_evidence.py#L38) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L45) | دالة | audit_source_metadata | Audit traceability metadata without fetching URLs or asserting claim truth. | موثق | 45 | [SRC-7D6FC391EC-L000045](../agents/claim_evidence.py#L45) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L70) | دالة | audit_source_metadata.first_value | لا توجد Docstring. | ناقص | 70 | [SRC-7D6FC391EC-L000070](../agents/claim_evidence.py#L70) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L133) | دالة | build_claim_evidence_ledger | Return bounded sentence candidates with validated source-index traceability. | موثق | 133 | [SRC-7D6FC391EC-L000133](../agents/claim_evidence.py#L133) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L15) | متغير/ثابت Python | MAX_RESOLVED_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-2D53795445-L000015](../agents/dialogue_state.py#L15) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L16) | متغير/ثابت Python | MAX_CONTEXT_TEXT_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-2D53795445-L000016](../agents/dialogue_state.py#L16) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L17) | متغير/ثابت Python | MAX_ENTITIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-2D53795445-L000017](../agents/dialogue_state.py#L17) |
