@@ -9,6 +9,8 @@ import re
 import unicodedata
 from typing import Any
 
+from agents.claim_evidence import audit_source_metadata, requires_population_scope
+
 _DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
 _ARABIC_NORMALIZATION = str.maketrans({
     "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي",
@@ -295,71 +297,33 @@ def build_requirement_evidence_ledger(
 def _audit_source_metadata(
     question: str, answer: str, sources: list[dict[str, Any]]
 ) -> dict[str, Any]:
-    """Audit source metadata presence; never treat presence as proof of truth or entailment."""
+    """Aggregate the shared source audit; never claim semantic verification."""
     context_text = f"{str(question or '')[:8000]} {str(answer or '')[:24000]}"
-    normalized_context = _normalize(context_text)
-    population_context = bool(re.search(
-        r"(?:عدد\s+(?:ال)?سكان|(?:ال)?سكان|الكثافه\s+السكانيه|population(?:\s+density|\s+estimate|\s+count)?|urban\s+agglomeration|metro\s+area|greater\s+cairo|القاهره\s+الكبرى|محافظه\s+القاهره)",
-        normalized_context,
-        re.IGNORECASE,
-    ))
+    population_context = requires_population_scope(context_text)
     rows: list[dict[str, Any]] = []
-    missing_url = missing_title = missing_publication_date = 0
-    missing_data_period = missing_scope = no_readable_text = 0
+    missing_title = missing_url = missing_publisher = 0
+    missing_publication_date = missing_data_period = missing_scope = no_readable_text = 0
 
-    def first_value(source: dict[str, Any], keys: tuple[str, ...]) -> str:
-        for key in keys:
-            value = source.get(key)
-            if value is not None and str(value).strip():
-                return str(value).strip()
-        return ""
-
-    publication_date_keys = (
-        "published_at", "published_date", "publication_date", "date_published",
-        "published", "date",
-    )
-    data_period_keys = (
-        "data_date", "data_reference_date", "reference_date", "data_as_of",
-        "data_period", "reference_period", "observation_date", "data_year",
-        "reference_year", "period", "year",
-    )
     for index, source in enumerate(sources[:40], 1):
-        url = str(source.get("url") or "").strip()
-        title = str(source.get("title") or "").strip()
-        published = first_value(source, publication_date_keys)
-        data_period = first_value(source, data_period_keys)
-        scope = first_value(source, ("geographic_scope", "geography", "scope"))
-        readable = bool(
-            (source.get("page_fetched") and str(source.get("page_text") or "").strip())
-            or str(source.get("snippet") or "").strip()
-        )
-        gaps: list[str] = []
-        if not title:
-            missing_title += 1
-            gaps.append("missing_title")
-        if not re.match(r"^https?://[^\s]+$", url, re.IGNORECASE):
-            missing_url += 1
-            gaps.append("missing_or_invalid_http_url")
-        if not published:
-            missing_publication_date += 1
-            gaps.append("missing_publication_date")
-        if population_context and not data_period:
-            missing_data_period += 1
-            gaps.append("missing_data_reference_period_for_population_claim")
-        if population_context and not scope:
-            missing_scope += 1
-            gaps.append("missing_explicit_geographic_scope_for_population_claim")
-        if not readable:
-            no_readable_text += 1
-            gaps.append("no_readable_snippet_or_fetched_page_text")
+        audit = audit_source_metadata(source, claim_text=context_text)
+        missing = list(audit.get("required_fields_missing") or [])
+        missing_title += "source_title" in missing
+        missing_url += "valid_http_source_url" in missing
+        missing_publisher += "publisher_identity_or_domain" in missing
+        missing_publication_date += "publication_date" in missing
+        missing_data_period += "data_reference_period_for_population_claim" in missing
+        missing_scope += "geographic_scope_for_population_claim" in missing
+        no_readable_text += "readable_source_evidence" in missing
         rows.append({
             "source_index": index,
-            "metadata_status": "metadata_gaps_found" if gaps else "minimum_metadata_present",
-            "missing_fields": gaps,
-            "publication_date_value_present": bool(published),
-            "data_reference_period_value_present": bool(data_period),
-            "geographic_scope_value_present": bool(scope),
-            "readable_evidence_present": readable,
+            "metadata_status": "metadata_gaps_found" if missing else "minimum_metadata_present",
+            "missing_fields": missing,
+            "publication_date_value_present": audit.get("has_publication_date") is True,
+            "data_reference_period_value_present": audit.get("has_data_reference_period") is True,
+            "geographic_scope_value_present": audit.get("has_geographic_scope") is True,
+            "publisher_identity_value_present": audit.get("has_publisher_identity") is True,
+            "readable_evidence_present": audit.get("has_readable_evidence") is True,
+            "valid_http_url_present": audit.get("valid_http_url") is True,
         })
 
     missing_combined_date = sum(
@@ -367,13 +331,9 @@ def _audit_source_metadata(
         or (population_context and not row["data_reference_period_value_present"])
         for row in rows
     )
-    gaps_found = bool(rows) and any(
-        (missing_url, missing_title, missing_publication_date, missing_data_period,
-         missing_scope, no_readable_text)
-    )
     if not rows:
         status = "no_sources_to_audit"
-    elif gaps_found:
+    elif any(row["metadata_status"] == "metadata_gaps_found" for row in rows):
         status = "metadata_gaps_found"
     else:
         status = "minimum_metadata_present"
@@ -387,6 +347,7 @@ def _audit_source_metadata(
         "source_count_checked": len(rows),
         "sources_missing_title_count": missing_title,
         "sources_missing_or_invalid_url_count": missing_url,
+        "sources_missing_publisher_identity_count": missing_publisher,
         "sources_missing_publication_date_count": missing_publication_date,
         "sources_missing_data_reference_period_count": missing_data_period,
         "sources_missing_publication_or_data_date_count": missing_combined_date,
@@ -394,10 +355,11 @@ def _audit_source_metadata(
         "sources_without_readable_evidence_count": no_readable_text,
         "sources": rows,
         "limitations": [
-            "This audit checks metadata field presence only; it does not validate date plausibility or source authenticity.",
-            "Publication date and data reference period are separate fields and must not be treated as interchangeable.",
-            "Metadata presence does not prove freshness, geographic-boundary interpretation, or that a source supports a claim.",
-            "Geographic scope must be explicitly supplied in source metadata; this check does not infer administrative boundaries.",
+            "Metadata checks validate presence and basic URL structure only, not source authenticity or date correctness.",
+            "Publication date and data reference period are separate fields.",
+            "Metadata presence does not prove freshness, geographic-boundary interpretation, or claim support.",
+            "Geographic scope must be explicit; this check does not infer administrative boundaries.",
+            "Citation entailment and factual correctness remain unverified.",
         ],
     }
 
