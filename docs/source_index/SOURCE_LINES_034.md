@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2477C41448-L000091 إلى SRC-1C77C97630-L000254
+- النطاق: SRC-2477C41448-L000090 إلى SRC-1C77C97630-L000253
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2477C41448-L000090](../../tests/test_answer_quality_provider_usage.py#L90) | 90 | `"    normalized = _normalized_provider_usage("` | — |
 | [SRC-2477C41448-L000091](../../tests/test_answer_quality_provider_usage.py#L91) | 91 | `"        {\"cost\": 0.05},"` | — |
 | [SRC-2477C41448-L000092](../../tests/test_answer_quality_provider_usage.py#L92) | 92 | `"        provider_base_url=\"https://openrouter.ai.attacker.example/api/v1\","` | — |
 | [SRC-2477C41448-L000093](../../tests/test_answer_quality_provider_usage.py#L93) | 93 | `"    )"` | — |
@@ -842,4 +843,3 @@
 | [SRC-1C77C97630-L000251](../../tests/test_answer_validation.py#L251) | 251 | `"    )"` | — |
 | [SRC-1C77C97630-L000252](../../tests/test_answer_validation.py#L252) | 252 | `""` | — |
 | [SRC-1C77C97630-L000253](../../tests/test_answer_validation.py#L253) | 253 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
-| [SRC-1C77C97630-L000254](../../tests/test_answer_validation.py#L254) | 254 | `"    assert result[\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000724 إلى SRC-29A9CD43D1-L000052
+- النطاق: SRC-3451CC474D-L000723 إلى SRC-29A9CD43D1-L000051
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000723](../../tests/test_api.py#L723) | 723 | `""` | — |
 | [SRC-3451CC474D-L000724](../../tests/test_api.py#L724) | 724 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
 | [SRC-3451CC474D-L000725](../../tests/test_api.py#L725) | 725 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
 | [SRC-3451CC474D-L000726](../../tests/test_api.py#L726) | 726 | `"    assert api_module._build_sha() == \"unknown\""` | — |
@@ -869,4 +870,3 @@
 | [SRC-29A9CD43D1-L000049](../../tests/test_dialogue_context_pipeline.py#L49) | 49 | `""` | — |
 | [SRC-29A9CD43D1-L000050](../../tests/test_dialogue_context_pipeline.py#L50) | 50 | `"def _semantic_context(*, needs_clarification: bool = False) -> dict[str, Any]:"` | — |
 | [SRC-29A9CD43D1-L000051](../../tests/test_dialogue_context_pipeline.py#L51) | 51 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000052](../../tests/test_dialogue_context_pipeline.py#L52) | 52 | `"        \"resolved_question\": ("` | — |

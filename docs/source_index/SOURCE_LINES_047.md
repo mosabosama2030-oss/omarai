@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002657 إلى SRC-F725E90B2A-L003456
+- النطاق: SRC-F725E90B2A-L002656 إلى SRC-F725E90B2A-L003455
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002656](../../tests/test_web_agent.py#L2656) | 2656 | `"    monkeypatch.setattr(web_agent, \"_public_ip_literals\", resolve_public_ip)"` | — |
 | [SRC-F725E90B2A-L002657](../../tests/test_web_agent.py#L2657) | 2657 | `""` | — |
 | [SRC-F725E90B2A-L002658](../../tests/test_web_agent.py#L2658) | 2658 | `"    class RedirectResponse:"` | — |
 | [SRC-F725E90B2A-L002659](../../tests/test_web_agent.py#L2659) | 2659 | `"        status_code = 302"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003453](../../tests/test_web_agent.py#L3453) | 3453 | `"            \"query_results\": [],"` | — |
 | [SRC-F725E90B2A-L003454](../../tests/test_web_agent.py#L3454) | 3454 | `"            \"unique_sources\": 0,"` | — |
 | [SRC-F725E90B2A-L003455](../../tests/test_web_agent.py#L3455) | 3455 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-F725E90B2A-L003456](../../tests/test_web_agent.py#L3456) | 3456 | `"            \"providers_used\": [],"` | — |

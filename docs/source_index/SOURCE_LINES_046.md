@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001857 إلى SRC-F725E90B2A-L002656
+- النطاق: SRC-F725E90B2A-L001856 إلى SRC-F725E90B2A-L002655
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"    )"` | — |
 | [SRC-F725E90B2A-L001857](../../tests/test_web_agent.py#L1857) | 1857 | `"    assert english_with_period == [\"price\", \"privacy\", \"reliability\"]"` | — |
 | [SRC-F725E90B2A-L001858](../../tests/test_web_agent.py#L1858) | 1858 | `""` | — |
 | [SRC-F725E90B2A-L001859](../../tests/test_web_agent.py#L1859) | 1859 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002653](../../tests/test_web_agent.py#L2653) | 2653 | `"        resolved_hosts.append(host)"` | — |
 | [SRC-F725E90B2A-L002654](../../tests/test_web_agent.py#L2654) | 2654 | `"        return [\"93.184.216.34\"] if host == \"first.example\" else None"` | — |
 | [SRC-F725E90B2A-L002655](../../tests/test_web_agent.py#L2655) | 2655 | `""` | — |
-| [SRC-F725E90B2A-L002656](../../tests/test_web_agent.py#L2656) | 2656 | `"    monkeypatch.setattr(web_agent, \"_public_ip_literals\", resolve_public_ip)"` | — |

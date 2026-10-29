@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003457 إلى SRC-DE7EABE998-L000229
+- النطاق: SRC-F725E90B2A-L003456 إلى SRC-DE7EABE998-L000228
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003456](../../tests/test_web_agent.py#L3456) | 3456 | `"            \"providers_used\": [],"` | — |
 | [SRC-F725E90B2A-L003457](../../tests/test_web_agent.py#L3457) | 3457 | `"            \"platform_counts\": {},"` | — |
 | [SRC-F725E90B2A-L003458](../../tests/test_web_agent.py#L3458) | 3458 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L003459](../../tests/test_web_agent.py#L3459) | 3459 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
@@ -833,4 +834,3 @@
 | [SRC-DE7EABE998-L000226](../../web/agent.html#L226) | 226 | `" const e=r.evidence_signals&&typeof r.evidence_signals===\"object\"?r.evidence_signals:{};"` | — |
 | [SRC-DE7EABE998-L000227](../../web/agent.html#L227) | 227 | `" const sources=Array.isArray(result.sources)?result.sources:[];"` | — |
 | [SRC-DE7EABE998-L000228](../../web/agent.html#L228) | 228 | `" const researchErrorOutcome=[\"attempted_research_error\",\"unknown_after_research_error\"].includes(r.search_outcome);"` | — |
-| [SRC-DE7EABE998-L000229](../../web/agent.html#L229) | 229 | `" const lead=r.lead_generation&&typeof r.lead_generation===\"object\"?r.lead_generation:null;"` | — |

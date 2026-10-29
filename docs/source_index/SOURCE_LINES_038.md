@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000044 إلى SRC-829A979985-L000368
+- النطاق: SRC-FA4E1423C3-L000043 إلى SRC-829A979985-L000367
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000043](../../tests/test_generate_index.py#L43) | 43 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000044](../../tests/test_generate_index.py#L44) | 44 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000045](../../tests/test_generate_index.py#L45) | 45 | `""` | — |
 | [SRC-FA4E1423C3-L000046](../../tests/test_generate_index.py#L46) | 46 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |
@@ -824,4 +825,3 @@
 | [SRC-829A979985-L000365](../../tests/test_generation_acceptance_matrix.py#L365) | 365 | `"                \"queries_attempted\": 1,"` | — |
 | [SRC-829A979985-L000366](../../tests/test_generation_acceptance_matrix.py#L366) | 366 | `"                \"search_attempted\": True,"` | — |
 | [SRC-829A979985-L000367](../../tests/test_generation_acceptance_matrix.py#L367) | 367 | `"                \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-829A979985-L000368](../../tests/test_generation_acceptance_matrix.py#L368) | 368 | `"                \"unique_sources\": 2,"` | — |

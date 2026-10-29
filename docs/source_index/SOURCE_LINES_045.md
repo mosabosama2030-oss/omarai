@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001057 إلى SRC-F725E90B2A-L001856
+- النطاق: SRC-F725E90B2A-L001056 إلى SRC-F725E90B2A-L001855
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001056](../../tests/test_web_agent.py#L1056) | 1056 | `""` | — |
 | [SRC-F725E90B2A-L001057](../../tests/test_web_agent.py#L1057) | 1057 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001058](../../tests/test_web_agent.py#L1058) | 1058 | `"    monkeypatch.delenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", raising=False)"` | — |
 | [SRC-F725E90B2A-L001059](../../tests/test_web_agent.py#L1059) | 1059 | `"    agent = WebAgent()"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001853](../../tests/test_web_agent.py#L1853) | 1853 | `""` | — |
 | [SRC-F725E90B2A-L001854](../../tests/test_web_agent.py#L1854) | 1854 | `"    english_with_period = WebAgent._question_coverage_targets("` | — |
 | [SRC-F725E90B2A-L001855](../../tests/test_web_agent.py#L1855) | 1855 | `"        \"Compare two services in terms of price, privacy and reliability.\""` | — |
-| [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"    )"` | — |

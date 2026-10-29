@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000255 إلى SRC-3451CC474D-L000723
+- النطاق: SRC-1C77C97630-L000254 إلى SRC-3451CC474D-L000722
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000254](../../tests/test_answer_validation.py#L254) | 254 | `"    assert result[\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
 | [SRC-1C77C97630-L000255](../../tests/test_answer_validation.py#L255) | 255 | `"    cited_check = result[\"citation_numeric_support\"][0]"` | — |
 | [SRC-1C77C97630-L000256](../../tests/test_answer_validation.py#L256) | 256 | `"    assert cited_check[\"cited_source_indexes\"] == [1]"` | — |
 | [SRC-1C77C97630-L000257](../../tests/test_answer_validation.py#L257) | 257 | `"    assert cited_check[\"potentially_unsupported_numeric_literals\"] == [\"500\"]"` | — |
@@ -824,4 +825,3 @@
 | [SRC-3451CC474D-L000720](../../tests/test_api.py#L720) | 720 | `""` | — |
 | [SRC-3451CC474D-L000721](../../tests/test_api.py#L721) | 721 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
 | [SRC-3451CC474D-L000722](../../tests/test_api.py#L722) | 722 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000723](../../tests/test_api.py#L723) | 723 | `""` | — |

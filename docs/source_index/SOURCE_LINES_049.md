@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **049**
-- سجلات الأسطر: **302**
-- النطاق: SRC-DE7EABE998-L000230 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **303**
+- النطاق: SRC-DE7EABE998-L000229 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000229](../../web/agent.html#L229) | 229 | `" const lead=r.lead_generation&&typeof r.lead_generation===\"object\"?r.lead_generation:null;"` | — |
 | [SRC-DE7EABE998-L000230](../../web/agent.html#L230) | 230 | `" const leadResearchIncomplete=!!lead&&lead.status===\"research_incomplete\";"` | — |
 | [SRC-DE7EABE998-L000231](../../web/agent.html#L231) | 231 | `" const leadSignalCount=lead&&lead.candidate_signal_count!==null&&lead.candidate_signal_count!==undefined&&Number.isFinite(Number(lead.candidate_signal_count))?Number(lead.candidate_signal_count):null;"` | — |
 | [SRC-DE7EABE998-L000232](../../web/agent.html#L232) | 232 | `" const noQualifiedLeads=!!lead&&!leadResearchIncomplete&&leadSignalCount===0;"` | — |

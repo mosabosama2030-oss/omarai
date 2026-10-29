@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000053 إلى SRC-FA4E1423C3-L000043
+- النطاق: SRC-29A9CD43D1-L000052 إلى SRC-FA4E1423C3-L000042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000052](../../tests/test_dialogue_context_pipeline.py#L52) | 52 | `"        \"resolved_question\": ("` | — |
 | [SRC-29A9CD43D1-L000053](../../tests/test_dialogue_context_pipeline.py#L53) | 53 | `"            \"هل الضمان الدولي لهاتف iPhone 17 سعة 256 جيجابايت الذي اشتريته \""` | — |
 | [SRC-29A9CD43D1-L000054](../../tests/test_dialogue_context_pipeline.py#L54) | 54 | `"            \"في مصر يغطي الصيانة داخل مصر؟\""` | — |
 | [SRC-29A9CD43D1-L000055](../../tests/test_dialogue_context_pipeline.py#L55) | 55 | `"        ),"` | — |
@@ -851,4 +852,3 @@
 | [SRC-FA4E1423C3-L000040](../../tests/test_generate_index.py#L40) | 40 | `"        'async def async_function():\\n'"` | — |
 | [SRC-FA4E1423C3-L000041](../../tests/test_generate_index.py#L41) | 41 | `"        '    \"\"\"An asynchronous function.\"\"\"\\n'"` | — |
 | [SRC-FA4E1423C3-L000042](../../tests/test_generate_index.py#L42) | 42 | `"        '    return None\\n',"` | — |
-| [SRC-FA4E1423C3-L000043](../../tests/test_generate_index.py#L43) | 43 | `"        encoding=\"utf-8\","` | — |

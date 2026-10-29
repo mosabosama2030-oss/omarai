@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000102 إلى SRC-F725E90B2A-L000256
+- النطاق: SRC-1C0D3D1206-L000101 إلى SRC-F725E90B2A-L000255
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000101](../../tests/test_sqlite_backup_restore.py#L101) | 101 | `"        backup_database(source_path, destination_link)"` | — |
 | [SRC-1C0D3D1206-L000102](../../tests/test_sqlite_backup_restore.py#L102) | 102 | `""` | — |
 | [SRC-1C0D3D1206-L000103](../../tests/test_sqlite_backup_restore.py#L103) | 103 | `"    assert destination_link.is_symlink()"` | — |
 | [SRC-1C0D3D1206-L000104](../../tests/test_sqlite_backup_restore.py#L104) | 104 | `"    assert not target_path.exists()"` | — |
@@ -842,4 +843,3 @@
 | [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `""` | — |
 | [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"        def __init__(self, text=\"\", data=None):"` | — |
 | [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"            self.text = text"` | — |
-| [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"            self.content = text.encode(\"utf-8\")"` | — |
