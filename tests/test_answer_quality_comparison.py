@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 from pathlib import Path
 
 import pytest
@@ -19,9 +20,10 @@ def load_module():
 
 
 def _run(*, build_sha: str, results: list[dict]) -> dict:
+    corpus = json.loads(CORPUS_PATH.read_text(encoding="utf-8"))
     return {
-        "benchmark_id": "OMARAI-REDTEAM-001",
-        "benchmark_version": "1.0.0",
+        "benchmark_id": corpus["benchmark_id"],
+        "benchmark_version": corpus["version"],
         "build_sha": build_sha,
         "executed_at_utc": "2026-10-29T12:00:00+00:00",
         "results": results,
@@ -48,16 +50,17 @@ def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None, 
 
 
 def _reviews(*, correct: int, supported_citations: int) -> dict:
+    corpus = json.loads(CORPUS_PATH.read_text(encoding="utf-8"))
     return {
         "schema_version": "1.0",
         "reviews": [
             {
-                "case_id": case_id,
+                "case_id": case["case_id"],
                 "status": "REVIEWED",
                 "retrieval": {
-                    "relevant_retrieved": 2 if case_id == "AQ-007" else 1,
+                    "relevant_retrieved": 2 if case["case_id"] == "AQ-007" else 1,
                     "retrieved_count": 3,
-                    "relevant_available": 3 if case_id == "AQ-007" else 2,
+                    "relevant_available": 3 if case["case_id"] == "AQ-007" else 2,
                 },
                 "faithfulness": {"supported_claims": correct, "reviewed_claims": 3},
                 "correctness": {"correct_facts": correct, "reviewed_facts": 3},
@@ -67,27 +70,39 @@ def _reviews(*, correct: int, supported_citations: int) -> dict:
                 },
                 "writing_quality": 4,
             }
-            for case_id in ("AQ-007", "AQ-008")
+            for case in corpus["cases"]
         ],
     }
 
 
+def _full_run(*, build_sha: str, candidate: bool) -> dict:
+    corpus = json.loads(CORPUS_PATH.read_text(encoding="utf-8"))
+    rows = []
+    for case in corpus["cases"]:
+        case_id = case["case_id"]
+        is_aq007 = case_id == "AQ-007"
+        is_aq008 = case_id == "AQ-008"
+        if candidate:
+            latency = 80 if is_aq007 else 120 if is_aq008 else 100
+            status = "SUCCESS_WITH_USABLE_RESULTS"
+            model_cost = 0.005 if is_aq007 else 0.002 if is_aq008 else None
+            request_cost = 0.007 if is_aq007 else 0.009 if is_aq008 else 0.001
+        else:
+            latency = 100 if is_aq007 else 200 if is_aq008 else 150
+            status = "SUCCESS_WITH_USABLE_RESULTS" if is_aq007 else "ATTEMPTED_NO_USABLE_RESULTS"
+            model_cost = 0.01 if is_aq007 else None
+            request_cost = 0.012 if is_aq007 else 0.015 if is_aq008 else 0.001
+        rows.append(_row(
+            case_id, latency=latency, tool_status=status,
+            cost=model_cost, request_cost=request_cost,
+        ))
+    return _run(build_sha=build_sha, results=rows)
+
+
 def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     mod = load_module()
-    baseline = _run(
-        build_sha="a" * 40,
-        results=[
-            _row("AQ-007", latency=100, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.01, request_cost=0.012),
-            _row("AQ-008", latency=200, tool_status="ATTEMPTED_NO_USABLE_RESULTS", cost=None, request_cost=0.015),
-        ],
-    )
-    candidate = _run(
-        build_sha="b" * 40,
-        results=[
-            _row("AQ-007", latency=80, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.005, request_cost=0.007),
-            _row("AQ-008", latency=120, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.002, request_cost=0.009),
-        ],
-    )
+    baseline = _full_run(build_sha="a" * 40, candidate=False)
+    candidate = _full_run(build_sha="b" * 40, candidate=True)
     corpus = mod.load_json_object(CORPUS_PATH)
     result = mod.compare_runs(
         baseline,
@@ -98,13 +113,13 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     )
     assert result["acceptance_status"] == "COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES"
     assert result["case_count"] == 2
-    assert result["baseline"]["metrics"]["latency_ms"]["p50"] == 100
+    assert result["baseline"]["metrics"]["latency_ms"]["p50"] == 150
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 120
-    assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == 0.5
+    assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(1 / 45)
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
     assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.003
-    assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] == 0.027
-    assert result["runtime_deltas"]["complete_request_cost_usd"]["delta"] == -0.011
+    assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] == pytest.approx(0.070)
+    assert result["runtime_deltas"]["complete_request_cost_usd"]["delta"] == pytest.approx(-0.011)
     assert result["runtime_deltas"]["complete_request_cost_usd"]["status"] == "COMPARED"
     assert result["quality_comparison"]["metrics"]["factual_accuracy"]["baseline"] == pytest.approx(2 / 3, abs=0.0001)
     assert result["quality_comparison"]["metrics"]["factual_accuracy"]["candidate"] == 1.0
@@ -113,8 +128,8 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
 
 def test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance():
     mod = load_module()
-    baseline = _run(build_sha="unknown", results=[_row("AQ-007", latency=100, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=None)])
-    candidate = _run(build_sha="", results=[_row("AQ-007", latency=90, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=None)])
+    baseline = _run(build_sha="unknown", results=[_row("AQ-001", latency=100, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=None)])
+    candidate = _run(build_sha="", results=[_row("AQ-001", latency=90, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=None)])
     result = mod.compare_runs(baseline, candidate)
     assert result["acceptance_status"] == "INCOMPLETE"
     assert "baseline_build_sha_missing_or_invalid" in result["acceptance_blockers"]
