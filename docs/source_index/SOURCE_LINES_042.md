@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000579 إلى SRC-F725E90B2A-L001378
+- النطاق: SRC-F725E90B2A-L000576 إلى SRC-F725E90B2A-L001375
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_IDS\", \"page-1,page-2\")"` | — |
+| [SRC-F725E90B2A-L000577](../../tests/test_web_agent.py#L577) | 577 | `""` | — |
+| [SRC-F725E90B2A-L000578](../../tests/test_web_agent.py#L578) | 578 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000579](../../tests/test_web_agent.py#L579) | 579 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000580](../../tests/test_web_agent.py#L580) | 580 | `""` | — |
 | [SRC-F725E90B2A-L000581](../../tests/test_web_agent.py#L581) | 581 | `"        def json(self):"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L001373](../../tests/test_web_agent.py#L1373) | 1373 | `"    assert repair[\"attempted\"] is True"` | — |
 | [SRC-F725E90B2A-L001374](../../tests/test_web_agent.py#L1374) | 1374 | `"    assert repair[\"new_sources_added\"] == 0"` | — |
 | [SRC-F725E90B2A-L001375](../../tests/test_web_agent.py#L1375) | 1375 | `"    assert repair[\"recovered\"] is False"` | — |
-| [SRC-F725E90B2A-L001376](../../tests/test_web_agent.py#L1376) | 1376 | `"    assert repair[\"reason\"] == \"single_bounded_retry_still_insufficient\""` | — |
-| [SRC-F725E90B2A-L001377](../../tests/test_web_agent.py#L1377) | 1377 | `""` | — |
-| [SRC-F725E90B2A-L001378](../../tests/test_web_agent.py#L1378) | 1378 | `""` | — |

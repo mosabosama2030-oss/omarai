@@ -744,7 +744,7 @@
 | [SRC-7D6FC391EC-L000080](../../agents/claim_evidence.py#L80) | 80 | `"    ))"` | — |
 | [SRC-7D6FC391EC-L000081](../../agents/claim_evidence.py#L81) | 81 | `"    data_period = first_value(("` | — |
 | [SRC-7D6FC391EC-L000082](../../agents/claim_evidence.py#L82) | 82 | `"        \"data_date\", \"data_reference_date\", \"reference_date\", \"data_as_of\","` | — |
-| [SRC-7D6FC391EC-L000083](../../agents/claim_evidence.py#L83) | 83 | `"        \"data_period\", \"reference_period\", \"observation_date\", \"data_year\","` | — |
+| [SRC-7D6FC391EC-L000083](../../agents/claim_evidence.py#L83) | 83 | `"        \"data_period\", \"data_reference_period\", \"reference_period\", \"observation_date\", \"data_year\","` | — |
 | [SRC-7D6FC391EC-L000084](../../agents/claim_evidence.py#L84) | 84 | `"        \"reference_year\", \"period\", \"year\","` | — |
 | [SRC-7D6FC391EC-L000085](../../agents/claim_evidence.py#L85) | 85 | `"    ))"` | — |
 | [SRC-7D6FC391EC-L000086](../../agents/claim_evidence.py#L86) | 86 | `"    geographic_scope = str("` | — |

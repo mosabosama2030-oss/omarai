@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **864**
 - تعريفات لا ينطبق عليها Docstring: **288**
 - الرموز الساكنة الإضافية: **1736**
-- الأسطر النصية المفهرسة حرفيًا: **36780**
+- الأسطر النصية المفهرسة حرفيًا: **36783**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 32380 | 680 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
-| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10637 | 253 | جرد الملف + AST Python |
+| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10662 | 253 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25333 | 559 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
@@ -125,7 +125,7 @@
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 6375 | 160 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
-| FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3530 | 86 | جرد الملف + AST Python |
+| FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3704 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
@@ -1230,8 +1230,8 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L121) | دالة | test_cli_uses_explicit_ref_for_source_links | لا توجد Docstring. | ناقص | 121 | [SRC-2614DCB6FB-L000121](../tests/test_search_code.py#L121) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L6) | دالة | test_population_question_reports_missing_url_publication_date_period_and_scope | لا توجد Docstring. | ناقص | 6 | [SRC-D033B34F41-L000006](../tests/test_source_metadata_audit.py#L6) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L29) | دالة | test_population_source_metadata_presence_does_not_claim_truth_verification | لا توجد Docstring. | ناقص | 29 | [SRC-D033B34F41-L000029](../tests/test_source_metadata_audit.py#L29) |
-| [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L55) | دالة | test_zero_sources_are_not_reported_as_metadata_complete | لا توجد Docstring. | ناقص | 55 | [SRC-D033B34F41-L000055](../tests/test_source_metadata_audit.py#L55) |
-| [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L69) | دالة | test_population_scope_is_required_even_when_answer_uses_only_a_number | لا توجد Docstring. | ناقص | 69 | [SRC-D033B34F41-L000069](../tests/test_source_metadata_audit.py#L69) |
+| [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L57) | دالة | test_zero_sources_are_not_reported_as_metadata_complete | لا توجد Docstring. | ناقص | 57 | [SRC-D033B34F41-L000057](../tests/test_source_metadata_audit.py#L57) |
+| [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L71) | دالة | test_population_scope_is_required_even_when_answer_uses_only_a_number | لا توجد Docstring. | ناقص | 71 | [SRC-D033B34F41-L000071](../tests/test_source_metadata_audit.py#L71) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L11) | دالة | test_backup_and_restore_preserve_omarai_leads | لا توجد Docstring. | ناقص | 11 | [SRC-1C0D3D1206-L000011](../tests/test_sqlite_backup_restore.py#L11) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L50) | دالة | test_backup_never_overwrites_an_existing_destination | لا توجد Docstring. | ناقص | 50 | [SRC-1C0D3D1206-L000050](../tests/test_sqlite_backup_restore.py#L50) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L62) | دالة | test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination | لا توجد Docstring. | ناقص | 62 | [SRC-1C0D3D1206-L000062](../tests/test_sqlite_backup_restore.py#L62) |
