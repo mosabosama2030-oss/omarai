@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000068 إلى SRC-65551FB29F-L000286
+- النطاق: SRC-62CE5126F9-L000068 إلى SRC-65551FB29F-L000282
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -329,6 +329,10 @@
 | [SRC-62CE5126F9-L000378](../OMARAI_REMEDIATION_REGISTER_AR.md#L378) | 378 | `"- **لا يوجد تصريح نشر أو اتصال حي ضمن هذا التغيير:** لم تتغير أسرار أو إعدادات استضافة، ولم تُجر استدعاءات نماذج/بحث حية لتفادي تكلفة غير معتمدة. الخطوة المطلوبة بعد نجاح CI هي تشغيل baseline على النسخة القديمة وتشغيل candidate على النسخة الجديدة بعد إثبات SHA وبموافقة صريحة على تكلفة الموفر، ثم إجراء مراجعة بشرية مزدوجة."` | — |
 | [SRC-62CE5126F9-L000379](../OMARAI_REMEDIATION_REGISTER_AR.md#L379) | 379 | `"- **قرار الدمج والنشر:** يبقى للمدير البشري؛ لا دمج تلقائي أو نشر."` | — |
 | [SRC-62CE5126F9-L000380](../OMARAI_REMEDIATION_REGISTER_AR.md#L380) | 380 | `""` | — |
+| [SRC-62CE5126F9-L000381](../OMARAI_REMEDIATION_REGISTER_AR.md#L381) | 381 | `"- **تشديد بوابة الجودة:** لا يكفي تطابق المراجعات فقط؛ يجب أن تُراجع الحالات الـ45 كلها بـREVIEWED في النسختين، وأن تكون جميع أبعاد الجودة المطلوبة قابلة للحساب، وإلا يظل القبول INCOMPLETE."` | — |
+| [SRC-62CE5126F9-L000382](../OMARAI_REMEDIATION_REGISTER_AR.md#L382) | 382 | `"- **تكلفة الطلب الكاملة:** يقبل المشغّل --request-costs من سجل مصالحة خارجي يعلن currency=USD وscope=complete_request ومصدرًا موثقًا، ويربط التكلفة بكل case_id. إن نقصت تكلفة حالة واحدة في خط الأساس أو المرشح، لا تُعامل كصفر ولا يكتمل القبول."` | — |
+| [SRC-62CE5126F9-L000383](../OMARAI_REMEDIATION_REGISTER_AR.md#L383) | 383 | `"- **بوابة CI:** أُعلن PR #124 جاهزًا لتشغيل CI، لكن أول تشغيل ظهر action_required وبلا jobs؛ وهذا ليس نجاحًا ولا فشلًا للاختبارات. حالة الرأس النهائي ستسجّل بعد حل موافقة GitHub المطلوبة أو تشغيل آلية CI مخوّلة."` | — |
+| [SRC-62CE5126F9-L000384](../OMARAI_REMEDIATION_REGISTER_AR.md#L384) | 384 | `""` | — |
 ## وثائق وفهرسة
 
 ### FILE-B9C3015420 — [docs/OMARAI_REQUIREMENTS_REGISTER.md](../OMARAI_REQUIREMENTS_REGISTER.md#L1)
@@ -830,7 +834,3 @@
 | [SRC-65551FB29F-L000280](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L280) | 280 | `"9. لا تدع فشل مزود خارجي يتحول إلى نجاح زائف."` | — |
 | [SRC-65551FB29F-L000281](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L281) | 281 | `"10. لا تدّع أن اختبارًا أو ميزة أو حد سعة تم التحقق منه ما لم توجد نتيجة."` | — |
 | [SRC-65551FB29F-L000282](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L282) | 282 | `"11. لا تدمج أو تنشر أو تقبل خطرًا حرجًا نيابة عن صاحب المشروع دون تفويض."` | — |
-| [SRC-65551FB29F-L000283](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L283) | 283 | `"12. يجب أن تكون نتيجة كل فشل مفهومة للمنظومة: خطأ متوقع مصنف أو حالة مجهولة موثقة، لا استثناء صامتًا."` | — |
-| [SRC-65551FB29F-L000284](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L284) | 284 | `""` | — |
-| [SRC-65551FB29F-L000285](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L285) | 285 | `"---"` | — |
-| [SRC-65551FB29F-L000286](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L286) | 286 | `""` | — |

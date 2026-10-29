@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000410 إلى SRC-DA61479D59-L000140
+- النطاق: SRC-3451CC474D-L000406 إلى SRC-DA61479D59-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000406](../../tests/test_api.py#L406) | 406 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000407](../../tests/test_api.py#L407) | 407 | `"    with pytest.raises(ValueError, match=\"Public binding requires\"):"` | — |
+| [SRC-3451CC474D-L000408](../../tests/test_api.py#L408) | 408 | `"        serve(\"0.0.0.0\", 0)"` | — |
+| [SRC-3451CC474D-L000409](../../tests/test_api.py#L409) | 409 | `""` | — |
 | [SRC-3451CC474D-L000410](../../tests/test_api.py#L410) | 410 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
 | [SRC-3451CC474D-L000411](../../tests/test_api.py#L411) | 411 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"short\")"` | — |
 | [SRC-3451CC474D-L000412](../../tests/test_api.py#L412) | 412 | `"    with pytest.raises(ValueError, match=\"at least 32 characters\"):"` | — |
@@ -839,7 +843,3 @@
 | [SRC-DA61479D59-L000134](../../tests/test_connector_summary_counters.py#L134) | 134 | `"        [],"` | — |
 | [SRC-DA61479D59-L000135](../../tests/test_connector_summary_counters.py#L135) | 135 | `"    )"` | — |
 | [SRC-DA61479D59-L000136](../../tests/test_connector_summary_counters.py#L136) | 136 | `"    exhausted = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000137](../../tests/test_connector_summary_counters.py#L137) | 137 | `"        [{\"provider\": \"deepseek_search_api\", \"query\": \"query\", \"status\": \"budget_exhausted\"}],"` | — |
-| [SRC-DA61479D59-L000138](../../tests/test_connector_summary_counters.py#L138) | 138 | `"        [],"` | — |
-| [SRC-DA61479D59-L000139](../../tests/test_connector_summary_counters.py#L139) | 139 | `"    )"` | — |
-| [SRC-DA61479D59-L000140](../../tests/test_connector_summary_counters.py#L140) | 140 | `"    tavily = next(item for item in timeout[\"connectors\"] if item[\"name\"] == \"tavily_search_api\")"` | — |

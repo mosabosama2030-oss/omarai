@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000287 إلى SRC-0F910493E8-L000511
+- النطاق: SRC-65551FB29F-L000283 إلى SRC-0F910493E8-L000507
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000283](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L283) | 283 | `"12. يجب أن تكون نتيجة كل فشل مفهومة للمنظومة: خطأ متوقع مصنف أو حالة مجهولة موثقة، لا استثناء صامتًا."` | — |
+| [SRC-65551FB29F-L000284](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L284) | 284 | `""` | — |
+| [SRC-65551FB29F-L000285](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L285) | 285 | `"---"` | — |
+| [SRC-65551FB29F-L000286](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L286) | 286 | `""` | — |
 | [SRC-65551FB29F-L000287](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L287) | 287 | `"# الجزء الخامس — مصفوفة ربط المجالات بالأدلة"` | — |
 | [SRC-65551FB29F-L000288](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L288) | 288 | `""` | — |
 | [SRC-65551FB29F-L000289](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L289) | 289 | `"## 13. مصفوفة الدليل المطلوبة"` | — |
@@ -821,7 +825,3 @@
 | [SRC-0F910493E8-L000505](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L505) | 505 | `""` | — |
 | [SRC-0F910493E8-L000506](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L506) | 506 | `"# 15. قرارات يجب أن تبقى واضحة في الوثائق والمراجعات"` | — |
 | [SRC-0F910493E8-L000507](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L507) | 507 | `""` | — |
-| [SRC-0F910493E8-L000508](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L508) | 508 | `"1. **[PROPOSED]** Skill/Workflow-First وCapability-Based Security هما اتجاه التوسع الافتراضي."` | — |
-| [SRC-0F910493E8-L000509](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L509) | 509 | `"2. **[PROPOSED]** لا يوجد وكيل مستقل لكل سؤال أو تخصص بالضرورة."` | — |
-| [SRC-0F910493E8-L000510](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L510) | 510 | `"3. **[PROPOSED]** سياق تنفيذ مؤقت هو الافتراضي؛ الذاكرة الدائمة مشروطة بحاجة وسياسة."` | — |
-| [SRC-0F910493E8-L000511](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L511) | 511 | `"4. **[PROPOSED]** النموذج يقترح الخطة، والكود يتحقق من الصلاحيات وينفذ الحدود."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001084 إلى SRC-6A7519AC10-L000097
+- النطاق: SRC-90FAA34ADE-L001080 إلى SRC-6A7519AC10-L000093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001080](../../tests/fixtures/answer_quality_cases.json#L1080) | 1080 | `"        \"url\": \"https://product.example.test/spec\","` | — |
+| [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
+| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L001084](../../tests/fixtures/answer_quality_cases.json#L1084) | 1084 | `"        \"States 18 hours as supported by this page\","` | — |
 | [SRC-90FAA34ADE-L001085](../../tests/fixtures/answer_quality_cases.json#L1085) | 1085 | `"        \"Attributes a nonexistent runtime specification to the source\""` | — |
 | [SRC-90FAA34ADE-L001086](../../tests/fixtures/answer_quality_cases.json#L1086) | 1086 | `"      ],"` | — |
@@ -848,7 +852,3 @@
 | [SRC-6A7519AC10-L000091](../../tests/test_answer_quality_comparison.py#L91) | 91 | `"            latency = 100 if is_aq007 else 200 if is_aq008 else 150"` | — |
 | [SRC-6A7519AC10-L000092](../../tests/test_answer_quality_comparison.py#L92) | 92 | `"            status = \"SUCCESS_WITH_USABLE_RESULTS\" if is_aq007 else \"ATTEMPTED_NO_USABLE_RESULTS\""` | — |
 | [SRC-6A7519AC10-L000093](../../tests/test_answer_quality_comparison.py#L93) | 93 | `"            model_cost = 0.01 if is_aq007 else None"` | — |
-| [SRC-6A7519AC10-L000094](../../tests/test_answer_quality_comparison.py#L94) | 94 | `"            request_cost = 0.012 if is_aq007 else 0.015 if is_aq008 else 0.001"` | — |
-| [SRC-6A7519AC10-L000095](../../tests/test_answer_quality_comparison.py#L95) | 95 | `"        rows.append(_row("` | — |
-| [SRC-6A7519AC10-L000096](../../tests/test_answer_quality_comparison.py#L96) | 96 | `"            case_id, latency=latency, tool_status=status,"` | — |
-| [SRC-6A7519AC10-L000097](../../tests/test_answer_quality_comparison.py#L97) | 97 | `"            cost=model_cost, request_cost=request_cost,"` | — |

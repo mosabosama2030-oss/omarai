@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000100 إلى SRC-70795F4B61-L000299
+- النطاق: SRC-69F3587825-L000096 إلى SRC-70795F4B61-L000295
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000096](../search_code.py#L96) | 96 | `"        return True"` | — |
+| [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
+| [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return False"` | — |
+| [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |
 | [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"        return True"` | — |
 | [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
 | [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
@@ -875,7 +879,3 @@
 | [SRC-70795F4B61-L000293](../../scripts/compare_answer_quality_runs.py#L293) | 293 | `"    for key in (\"mean\", \"p50\", \"p95\", \"max\"):"` | — |
 | [SRC-70795F4B61-L000294](../../scripts/compare_answer_quality_runs.py#L294) | 294 | `"        before = before_runtime[\"latency_ms\"][key]"` | — |
 | [SRC-70795F4B61-L000295](../../scripts/compare_answer_quality_runs.py#L295) | 295 | `"        after = after_runtime[\"latency_ms\"][key]"` | — |
-| [SRC-70795F4B61-L000296](../../scripts/compare_answer_quality_runs.py#L296) | 296 | `"        time_metrics[key] = {"` | — |
-| [SRC-70795F4B61-L000297](../../scripts/compare_answer_quality_runs.py#L297) | 297 | `"            \"baseline_ms\": before,"` | — |
-| [SRC-70795F4B61-L000298](../../scripts/compare_answer_quality_runs.py#L298) | 298 | `"            \"candidate_ms\": after,"` | — |
-| [SRC-70795F4B61-L000299](../../scripts/compare_answer_quality_runs.py#L299) | 299 | `"            \"delta_ms\": round(after - before, 2) if before is not None and after is not None else None,"` | — |

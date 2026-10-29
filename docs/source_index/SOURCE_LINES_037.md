@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000094 إلى SRC-829A979985-L000054
+- النطاق: SRC-6BCB799CEC-L000090 إلى SRC-829A979985-L000050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000090](../../tests/test_evidence_provenance.py#L90) | 90 | `"                \"published_at\": \"\","` | — |
+| [SRC-6BCB799CEC-L000091](../../tests/test_evidence_provenance.py#L91) | 91 | `"                \"rank_score\": 0.7,"` | — |
+| [SRC-6BCB799CEC-L000092](../../tests/test_evidence_provenance.py#L92) | 92 | `"            },"` | — |
+| [SRC-6BCB799CEC-L000093](../../tests/test_evidence_provenance.py#L93) | 93 | `"        ]"` | — |
 | [SRC-6BCB799CEC-L000094](../../tests/test_evidence_provenance.py#L94) | 94 | `"        return sources, [], {"` | — |
 | [SRC-6BCB799CEC-L000095](../../tests/test_evidence_provenance.py#L95) | 95 | `"            \"queries_planned\": 1,"` | — |
 | [SRC-6BCB799CEC-L000096](../../tests/test_evidence_provenance.py#L96) | 96 | `"            \"queries_attempted\": 1,"` | — |
@@ -839,7 +843,3 @@
 | [SRC-829A979985-L000048](../../tests/test_generation_acceptance_matrix.py#L48) | 48 | `"        \"page_fetched\": page_fetched,"` | — |
 | [SRC-829A979985-L000049](../../tests/test_generation_acceptance_matrix.py#L49) | 49 | `"        \"providers\": [provider],"` | — |
 | [SRC-829A979985-L000050](../../tests/test_generation_acceptance_matrix.py#L50) | 50 | `"        \"queries\": [\"قارن بين سعر المنتج ومساحته\"],"` | — |
-| [SRC-829A979985-L000051](../../tests/test_generation_acceptance_matrix.py#L51) | 51 | `"        \"domain\": domain,"` | — |
-| [SRC-829A979985-L000052](../../tests/test_generation_acceptance_matrix.py#L52) | 52 | `"        \"source_class\": \"general\","` | — |
-| [SRC-829A979985-L000053](../../tests/test_generation_acceptance_matrix.py#L53) | 53 | `"        \"platform\": \"web\","` | — |
-| [SRC-829A979985-L000054](../../tests/test_generation_acceptance_matrix.py#L54) | 54 | `"        \"published_at\": \"\","` | — |

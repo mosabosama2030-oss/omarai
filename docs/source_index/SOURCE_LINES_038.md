@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000055 إلى SRC-AAA21D04E8-L000238
+- النطاق: SRC-829A979985-L000051 إلى SRC-AAA21D04E8-L000234
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000051](../../tests/test_generation_acceptance_matrix.py#L51) | 51 | `"        \"domain\": domain,"` | — |
+| [SRC-829A979985-L000052](../../tests/test_generation_acceptance_matrix.py#L52) | 52 | `"        \"source_class\": \"general\","` | — |
+| [SRC-829A979985-L000053](../../tests/test_generation_acceptance_matrix.py#L53) | 53 | `"        \"platform\": \"web\","` | — |
+| [SRC-829A979985-L000054](../../tests/test_generation_acceptance_matrix.py#L54) | 54 | `"        \"published_at\": \"\","` | — |
 | [SRC-829A979985-L000055](../../tests/test_generation_acceptance_matrix.py#L55) | 55 | `"        \"rank_score\": 0.8,"` | — |
 | [SRC-829A979985-L000056](../../tests/test_generation_acceptance_matrix.py#L56) | 56 | `"    }"` | — |
 | [SRC-829A979985-L000057](../../tests/test_generation_acceptance_matrix.py#L57) | 57 | `""` | — |
@@ -821,7 +825,3 @@
 | [SRC-AAA21D04E8-L000232](../../tests/test_generation_capabilities.py#L232) | 232 | `"    )"` | — |
 | [SRC-AAA21D04E8-L000233](../../tests/test_generation_capabilities.py#L233) | 233 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
 | [SRC-AAA21D04E8-L000234](../../tests/test_generation_capabilities.py#L234) | 234 | `""` | — |
-| [SRC-AAA21D04E8-L000235](../../tests/test_generation_capabilities.py#L235) | 235 | `"    def failed_generate(*args, **kwargs):"` | — |
-| [SRC-AAA21D04E8-L000236](../../tests/test_generation_capabilities.py#L236) | 236 | `"        agent._record_generation_diagnostic("` | — |
-| [SRC-AAA21D04E8-L000237](../../tests/test_generation_capabilities.py#L237) | 237 | `"            requested_model=\"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000238](../../tests/test_generation_capabilities.py#L238) | 238 | `"            attempted_model=\"fallback/model\","` | — |

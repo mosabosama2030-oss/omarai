@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FBDC61DA0B-L000092 إلى SRC-F725E90B2A-L000742
+- النطاق: SRC-FBDC61DA0B-L000088 إلى SRC-F725E90B2A-L000738
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FBDC61DA0B-L000088](../../tests/test_tool_execution_status.py#L88) | 88 | `"    assert all(row[\"required_by_task_spec\"] is False for row in rows)"` | — |
+| [SRC-FBDC61DA0B-L000089](../../tests/test_tool_execution_status.py#L89) | 89 | `"    assert all(row[\"status\"] == \"not_required\" for row in rows)"` | — |
+| [SRC-FBDC61DA0B-L000090](../../tests/test_tool_execution_status.py#L90) | 90 | `""` | — |
+| [SRC-FBDC61DA0B-L000091](../../tests/test_tool_execution_status.py#L91) | 91 | `"    unknown = _statuses(build_tool_execution_matrix("` | — |
 | [SRC-FBDC61DA0B-L000092](../../tests/test_tool_execution_status.py#L92) | 92 | `"        {\"tool_requirements\": [\"web_search\", \"page_fetch\"]},"` | — |
 | [SRC-FBDC61DA0B-L000093](../../tests/test_tool_execution_status.py#L93) | 93 | `"        {},"` | — |
 | [SRC-FBDC61DA0B-L000094](../../tests/test_tool_execution_status.py#L94) | 94 | `"        {},"` | — |
@@ -821,7 +825,3 @@
 | [SRC-F725E90B2A-L000736](../../tests/test_web_agent.py#L736) | 736 | `"    )"` | — |
 | [SRC-F725E90B2A-L000737](../../tests/test_web_agent.py#L737) | 737 | `""` | — |
 | [SRC-F725E90B2A-L000738](../../tests/test_web_agent.py#L738) | 738 | `"    assert result == \"إجابة من النموذج الاحتياطي\""` | — |
-| [SRC-F725E90B2A-L000739](../../tests/test_web_agent.py#L739) | 739 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |
-| [SRC-F725E90B2A-L000740](../../tests/test_web_agent.py#L740) | 740 | `"    assert agent.model_usage == [{"` | — |
-| [SRC-F725E90B2A-L000741](../../tests/test_web_agent.py#L741) | 741 | `"        \"requested_model\": \"broken/primary\","` | — |
-| [SRC-F725E90B2A-L000742](../../tests/test_web_agent.py#L742) | 742 | `"        \"used_model\": \"openrouter/free\","` | — |

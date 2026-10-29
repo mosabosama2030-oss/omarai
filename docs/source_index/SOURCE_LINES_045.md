@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001543 إلى SRC-F725E90B2A-L002342
+- النطاق: SRC-F725E90B2A-L001539 إلى SRC-F725E90B2A-L002338
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001539](../../tests/test_web_agent.py#L1539) | 1539 | `""` | — |
+| [SRC-F725E90B2A-L001540](../../tests/test_web_agent.py#L1540) | 1540 | `"    rss = \"\"\"<rss><channel>"` | — |
+| [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"    <item>"` | — |
+| [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>"` | — |
 | [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"      <link>https://news.google.com/rss/articles/relevant</link>"` | — |
 | [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>"` | — |
 | [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"      <source url=\"https://www.ibm.com/\">IBM</source>"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002336](../../tests/test_web_agent.py#L2336) | 2336 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L002337](../../tests/test_web_agent.py#L2337) | 2337 | `"        \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L002338](../../tests/test_web_agent.py#L2338) | 2338 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002339](../../tests/test_web_agent.py#L2339) | 2339 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002340](../../tests/test_web_agent.py#L2340) | 2340 | `"    }"` | — |
-| [SRC-F725E90B2A-L002341](../../tests/test_web_agent.py#L2341) | 2341 | `""` | — |
-| [SRC-F725E90B2A-L002342](../../tests/test_web_agent.py#L2342) | 2342 | `"    def collect(research_plan):"` | — |

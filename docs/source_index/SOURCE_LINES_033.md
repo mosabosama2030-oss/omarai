@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000098 إلى SRC-B3062EB677-L000249
+- النطاق: SRC-6A7519AC10-L000094 إلى SRC-B3062EB677-L000245
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000094](../../tests/test_answer_quality_comparison.py#L94) | 94 | `"            request_cost = 0.012 if is_aq007 else 0.015 if is_aq008 else 0.001"` | — |
+| [SRC-6A7519AC10-L000095](../../tests/test_answer_quality_comparison.py#L95) | 95 | `"        rows.append(_row("` | — |
+| [SRC-6A7519AC10-L000096](../../tests/test_answer_quality_comparison.py#L96) | 96 | `"            case_id, latency=latency, tool_status=status,"` | — |
+| [SRC-6A7519AC10-L000097](../../tests/test_answer_quality_comparison.py#L97) | 97 | `"            cost=model_cost, request_cost=request_cost,"` | — |
 | [SRC-6A7519AC10-L000098](../../tests/test_answer_quality_comparison.py#L98) | 98 | `"        ))"` | — |
 | [SRC-6A7519AC10-L000099](../../tests/test_answer_quality_comparison.py#L99) | 99 | `"    return _run(build_sha=build_sha, results=rows)"` | — |
 | [SRC-6A7519AC10-L000100](../../tests/test_answer_quality_comparison.py#L100) | 100 | `""` | — |
@@ -848,7 +852,3 @@
 | [SRC-B3062EB677-L000243](../../tests/test_answer_quality_runner.py#L243) | 243 | `"        transport_ok=True,"` | — |
 | [SRC-B3062EB677-L000244](../../tests/test_answer_quality_runner.py#L244) | 244 | `"    )"` | — |
 | [SRC-B3062EB677-L000245](../../tests/test_answer_quality_runner.py#L245) | 245 | `"    assert failed_search[\"tool_status\"] == \"TOOL_FAILED\""` | — |
-| [SRC-B3062EB677-L000246](../../tests/test_answer_quality_runner.py#L246) | 246 | `"    assert failed_search[\"request_cost_usd\"] is None"` | — |
-| [SRC-B3062EB677-L000247](../../tests/test_answer_quality_runner.py#L247) | 247 | `"    assert failed_search[\"request_cost_status\"] == \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\""` | — |
-| [SRC-B3062EB677-L000248](../../tests/test_answer_quality_runner.py#L248) | 248 | `""` | — |
-| [SRC-B3062EB677-L000249](../../tests/test_answer_quality_runner.py#L249) | 249 | `"    successful_search = mod._response_metrics("` | — |

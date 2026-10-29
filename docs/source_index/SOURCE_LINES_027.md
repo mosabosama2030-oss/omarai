@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000512 إلى SRC-69F3587825-L000099
+- النطاق: SRC-0F910493E8-L000508 إلى SRC-69F3587825-L000095
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000508](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L508) | 508 | `"1. **[PROPOSED]** Skill/Workflow-First وCapability-Based Security هما اتجاه التوسع الافتراضي."` | — |
+| [SRC-0F910493E8-L000509](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L509) | 509 | `"2. **[PROPOSED]** لا يوجد وكيل مستقل لكل سؤال أو تخصص بالضرورة."` | — |
+| [SRC-0F910493E8-L000510](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L510) | 510 | `"3. **[PROPOSED]** سياق تنفيذ مؤقت هو الافتراضي؛ الذاكرة الدائمة مشروطة بحاجة وسياسة."` | — |
+| [SRC-0F910493E8-L000511](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L511) | 511 | `"4. **[PROPOSED]** النموذج يقترح الخطة، والكود يتحقق من الصلاحيات وينفذ الحدود."` | — |
 | [SRC-0F910493E8-L000512](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L512) | 512 | `"5. **[PROPOSED]** ملفات التعريف والمسودات لا تمنح الصلاحيات."` | — |
 | [SRC-0F910493E8-L000513](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L513) | 513 | `"6. **[PROPOSED]** فصل الإدارة عن التشغيل منطقي وإلزامي في التصميم، لكن لا يلزم أن يكون خدمة مستقلة."` | — |
 | [SRC-0F910493E8-L000514](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L514) | 514 | `"7. **[PROPOSED]** Meta-Agent مؤجل، ويبدأ بمسودات فقط إذا أثبتت الحاجة."` | — |
@@ -857,7 +861,3 @@
 | [SRC-69F3587825-L000093](../search_code.py#L93) | 93 | `"    if name in SECRET_BASENAMES or parent_names & EXCLUDED_DIRECTORIES:"` | — |
 | [SRC-69F3587825-L000094](../search_code.py#L94) | 94 | `"        return True"` | — |
 | [SRC-69F3587825-L000095](../search_code.py#L95) | 95 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
-| [SRC-69F3587825-L000096](../search_code.py#L96) | 96 | `"        return True"` | — |
-| [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
-| [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return False"` | — |
-| [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |

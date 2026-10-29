@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000250 إلى SRC-3451CC474D-L000409
+- النطاق: SRC-B3062EB677-L000246 إلى SRC-3451CC474D-L000405
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000246](../../tests/test_answer_quality_runner.py#L246) | 246 | `"    assert failed_search[\"request_cost_usd\"] is None"` | — |
+| [SRC-B3062EB677-L000247](../../tests/test_answer_quality_runner.py#L247) | 247 | `"    assert failed_search[\"request_cost_status\"] == \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\""` | — |
+| [SRC-B3062EB677-L000248](../../tests/test_answer_quality_runner.py#L248) | 248 | `""` | — |
+| [SRC-B3062EB677-L000249](../../tests/test_answer_quality_runner.py#L249) | 249 | `"    successful_search = mod._response_metrics("` | — |
 | [SRC-B3062EB677-L000250](../../tests/test_answer_quality_runner.py#L250) | 250 | `"        {"` | — |
 | [SRC-B3062EB677-L000251](../../tests/test_answer_quality_runner.py#L251) | 251 | `"            \"search_report\": {"` | — |
 | [SRC-B3062EB677-L000252](../../tests/test_answer_quality_runner.py#L252) | 252 | `"                \"search_outcome\": \"attempted_with_usable_sources\","` | — |
@@ -830,7 +834,3 @@
 | [SRC-3451CC474D-L000403](../../tests/test_api.py#L403) | 403 | `"    from api.omarai import serve"` | — |
 | [SRC-3451CC474D-L000404](../../tests/test_api.py#L404) | 404 | `""` | — |
 | [SRC-3451CC474D-L000405](../../tests/test_api.py#L405) | 405 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000406](../../tests/test_api.py#L406) | 406 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000407](../../tests/test_api.py#L407) | 407 | `"    with pytest.raises(ValueError, match=\"Public binding requires\"):"` | — |
-| [SRC-3451CC474D-L000408](../../tests/test_api.py#L408) | 408 | `"        serve(\"0.0.0.0\", 0)"` | — |
-| [SRC-3451CC474D-L000409](../../tests/test_api.py#L409) | 409 | `""` | — |

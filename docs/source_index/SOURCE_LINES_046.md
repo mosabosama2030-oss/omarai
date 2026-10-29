@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002343 إلى SRC-F725E90B2A-L003142
+- النطاق: SRC-F725E90B2A-L002339 إلى SRC-F725E90B2A-L003138
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002339](../../tests/test_web_agent.py#L2339) | 2339 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L002340](../../tests/test_web_agent.py#L2340) | 2340 | `"    }"` | — |
+| [SRC-F725E90B2A-L002341](../../tests/test_web_agent.py#L2341) | 2341 | `""` | — |
+| [SRC-F725E90B2A-L002342](../../tests/test_web_agent.py#L2342) | 2342 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L002343](../../tests/test_web_agent.py#L2343) | 2343 | `"        seen.update(research_plan)"` | — |
 | [SRC-F725E90B2A-L002344](../../tests/test_web_agent.py#L2344) | 2344 | `"        source = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L002345](../../tests/test_web_agent.py#L2345) | 2345 | `"        source.update({"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L003136](../../tests/test_web_agent.py#L3136) | 3136 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
 | [SRC-F725E90B2A-L003137](../../tests/test_web_agent.py#L3137) | 3137 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", capture)"` | — |
 | [SRC-F725E90B2A-L003138](../../tests/test_web_agent.py#L3138) | 3138 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", capture)"` | — |
-| [SRC-F725E90B2A-L003139](../../tests/test_web_agent.py#L3139) | 3139 | `""` | — |
-| [SRC-F725E90B2A-L003140](../../tests/test_web_agent.py#L3140) | 3140 | `"    raw_question = ("` | — |
-| [SRC-F725E90B2A-L003141](../../tests/test_web_agent.py#L3141) | 3141 | `"        \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\""` | — |
-| [SRC-F725E90B2A-L003142](../../tests/test_web_agent.py#L3142) | 3142 | `"    )"` | — |
