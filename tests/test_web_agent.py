@@ -2377,6 +2377,68 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
     assert result["sources"][0]["lead_qualification"] == "public_buyer_intent_signal"
 
 
+@pytest.mark.parametrize(
+    "question",
+    [
+        "ابحث عن عميل يريد شراء شقة في التجمع الخامس",
+        "ابحث عن عميل يطلب او يريد شقة في التجمع الخامس",
+        "ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس",
+    ],
+)
+def test_lead_generation_queries_strip_intent_words_and_common_typos(question):
+    queries = WebAgent._lead_generation_queries(question, [])
+    normalized = [_normalize_search_query(query).casefold() for query in queries]
+
+    assert any("شقه في التجمع الخامس" in query for query in normalized)
+    assert all("عملاش" not in query for query in normalized)
+    assert all("يريدون" not in query for query in normalized)
+    assert all("شرا شقه" not in query for query in normalized)
+
+
+def test_lead_generation_fallback_lists_qualified_signals_when_model_is_rate_limited(monkeypatch):
+    agent = WebAgent()
+    question = "ابحث عن عميل يريد شراء شقة في التجمع الخامس"
+    source = sample_source(0)
+    source.update({
+        "title": "مطلوب شقة تمليك في التجمع الخامس",
+        "snippet": "مطلوب شقة تمليك في التجمع الخامس، أريد الشراء.",
+        "page_text": "مطلوب شقة تمليك في التجمع الخامس، أريد الشراء.",
+        "queries": [question],
+    })
+    plan = {
+        "queries": [question],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda q, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", lambda p: (
+        [source], [], {
+            "queries_planned": len(p["queries"]), "queries_attempted": len(p["queries"]),
+            "query_results": [{"query": question, "results": 1}],
+            "unique_sources": 1, "pages_fetched": 1,
+            "providers_used": ["test_provider"], "provider_counts": {"test_provider": 1},
+            "platform_counts": {"web": 1}, "social_direct_results": 0,
+            "depth": "standard", "planning_method": "test",
+        }
+    ))
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError("HTTP 429 Too Many Requests")),
+    )
+
+    result = agent.answer(question)
+
+    assert result["search_report"]["lead_generation"]["candidate_signal_count"] == 1
+    assert "إشارة علنية مرشحة لنية شراء" in result["answer"]
+    assert "ليست تأكيدًا" in result["answer"]
+    assert source["url"] in result["answer"]
+    assert "HTTP 429" not in result["answer"]
+
+
 def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):
     import httpx
 
