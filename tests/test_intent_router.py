@@ -32,6 +32,18 @@ def test_deterministic_intent_routes(question: str, expected: str) -> None:
         ("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر", "LEAD_GENERATION"),
         ("ابحث عن شقق للبيع في العاصمة الإدارية", "WEB_SIMPLE"),
         ("Find buyers looking to buy apartments in New Capital", "LEAD_GENERATION"),
+        (
+            "ابحث عن ١٠ عملاش يريدون شراء شقة في التجمع الخامس",
+            "LEAD_GENERATION",
+        ),
+        (
+            "ابحث عن ٥ عملاء يطلبون شقة في التجمع الخامس",
+            "LEAD_GENERATION",
+        ),
+        (
+            "ابحث عن ١٠ عملاش يريدون شرا سيارة في القاهرة",
+            "LEAD_GENERATION",
+        ),
         ("لخص الصفحة https://example.com/article", "WEB_SIMPLE"),
         ("Summarize this page https://example.com/article", "WEB_SIMPLE"),
         ("لخص النص التالي: هذا نص تجريبي", "MODEL_ONLY"),

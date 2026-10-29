@@ -120,7 +120,7 @@ def _is_lead_generation_request(question: str) -> bool:
     """
     normalized = _normalize(question)
     arabic_actions = ("ابحث عن", "دور على", "دورلي على", "اعثر على", "هاتلي", "هات")
-    arabic_targets = ("عميل", "عملاء", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
+    arabic_targets = ("عميل", "عملاء", "عملاش", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
     english_patterns = (
         r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
     )
