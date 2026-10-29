@@ -867,33 +867,33 @@
 | [SRC-138992B1FC-L000292](../../agents/answer_validation.py#L292) | 292 | `"    return ledger"` | — |
 | [SRC-138992B1FC-L000293](../../agents/answer_validation.py#L293) | 293 | `""` | — |
 | [SRC-138992B1FC-L000294](../../agents/answer_validation.py#L294) | 294 | `""` | — |
-| [SRC-138992B1FC-L000295](../../agents/answer_validation.py#L295) | 295 | `"def _audit_source_metadata(answer: str, sources: list[dict[str, Any]]) -> dict[str, Any]:"` | — |
-| [SRC-138992B1FC-L000296](../../agents/answer_validation.py#L296) | 296 | `"    \"\"\"Audit source traceability metadata; this is a warning layer, not truth verification.\"\"\""` | — |
-| [SRC-138992B1FC-L000297](../../agents/answer_validation.py#L297) | 297 | `"    answer_text = str(answer or \"\")[:24000]"` | — |
-| [SRC-138992B1FC-L000298](../../agents/answer_validation.py#L298) | 298 | `"    population_context = bool(re.search("` | — |
-| [SRC-138992B1FC-L000299](../../agents/answer_validation.py#L299) | 299 | `"        r\"(?:عدد\\s+السكان\|سكان\|population\|urban\\s+agglomeration\|greater\\s+cairo\|القاهرة\\s+الكبرى\|محافظة\\s+القاهرة)\","` | — |
-| [SRC-138992B1FC-L000300](../../agents/answer_validation.py#L300) | 300 | `"        _normalize(answer_text), re.IGNORECASE,"` | — |
-| [SRC-138992B1FC-L000301](../../agents/answer_validation.py#L301) | 301 | `"    ))"` | — |
-| [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-138992B1FC-L000303](../../agents/answer_validation.py#L303) | 303 | `"    missing_url = missing_title = missing_date = missing_scope = no_readable_text = 0"` | — |
-| [SRC-138992B1FC-L000304](../../agents/answer_validation.py#L304) | 304 | `"    for index, source in enumerate(sources[:40], 1):"` | — |
-| [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"        url = str(source.get(\"url\") or \"\").strip()"` | — |
-| [SRC-138992B1FC-L000306](../../agents/answer_validation.py#L306) | 306 | `"        title = str(source.get(\"title\") or \"\").strip()"` | — |
-| [SRC-138992B1FC-L000307](../../agents/answer_validation.py#L307) | 307 | `"        published = str(source.get(\"published_at\") or source.get(\"published_date\") or source.get(\"publication_date\") or \"\").strip()"` | — |
-| [SRC-138992B1FC-L000308](../../agents/answer_validation.py#L308) | 308 | `"        scope = str(source.get(\"geographic_scope\") or source.get(\"geography\") or source.get(\"scope\") or \"\").strip()"` | — |
-| [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `"        readable = bool("` | — |
-| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"            (source.get(\"page_fetched\") and str(source.get(\"page_text\") or \"\").strip())"` | — |
-| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"            or str(source.get(\"snippet\") or \"\").strip()"` | — |
-| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"        )"` | — |
-| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"        gaps: list[str] = []"` | — |
-| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"        if not title:"` | — |
-| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"            missing_title += 1"` | — |
-| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `"            gaps.append(\"missing_title\")"` | — |
-| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `"        if not re.match(r\"^https?://[^\\s]+$\", url, re.IGNORECASE):"` | — |
-| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"            missing_url += 1"` | — |
-| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"            gaps.append(\"missing_or_invalid_http_url\")"` | — |
-| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"        if not published:"` | — |
-| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"            missing_date += 1"` | — |
-| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"            gaps.append(\"missing_publication_or_data_date\")"` | — |
-| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"        if population_context and not scope:"` | — |
-| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"            missing_scope += 1"` | — |
+| [SRC-138992B1FC-L000295](../../agents/answer_validation.py#L295) | 295 | `"def _audit_source_metadata("` | — |
+| [SRC-138992B1FC-L000296](../../agents/answer_validation.py#L296) | 296 | `"    question: str, answer: str, sources: list[dict[str, Any]]"` | — |
+| [SRC-138992B1FC-L000297](../../agents/answer_validation.py#L297) | 297 | `") -> dict[str, Any]:"` | — |
+| [SRC-138992B1FC-L000298](../../agents/answer_validation.py#L298) | 298 | `"    \"\"\"Audit source metadata presence; never treat presence as proof of truth or entailment.\"\"\""` | — |
+| [SRC-138992B1FC-L000299](../../agents/answer_validation.py#L299) | 299 | `"    context_text = f\"{str(question or '')[:8000]} {str(answer or '')[:24000]}\""` | — |
+| [SRC-138992B1FC-L000300](../../agents/answer_validation.py#L300) | 300 | `"    normalized_context = _normalize(context_text)"` | — |
+| [SRC-138992B1FC-L000301](../../agents/answer_validation.py#L301) | 301 | `"    population_context = bool(re.search("` | — |
+| [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"        r\"(?:عدد\\\\s+(?:ال)?سكان\|(?:ال)?سكان\|الكثافه\\\\s+السكانيه\|population(?:\\\\s+density\|\\\\s+estimate\|\\\\s+count)?\|urban\\\\s+agglomeration\|metro\\\\s+area\|greater\\\\s+cairo\|القاهره\\\\s+الكبرى\|محافظه\\\\s+القاهره)\","` | — |
+| [SRC-138992B1FC-L000303](../../agents/answer_validation.py#L303) | 303 | `"        normalized_context,"` | — |
+| [SRC-138992B1FC-L000304](../../agents/answer_validation.py#L304) | 304 | `"        re.IGNORECASE,"` | — |
+| [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"    ))"` | — |
+| [SRC-138992B1FC-L000306](../../agents/answer_validation.py#L306) | 306 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000307](../../agents/answer_validation.py#L307) | 307 | `"    missing_url = missing_title = missing_publication_date = 0"` | — |
+| [SRC-138992B1FC-L000308](../../agents/answer_validation.py#L308) | 308 | `"    missing_data_period = missing_scope = no_readable_text = 0"` | — |
+| [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `""` | — |
+| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"    def first_value(source: dict[str, Any], keys: tuple[str, ...]) -> str:"` | — |
+| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"        for key in keys:"` | — |
+| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"            value = source.get(key)"` | — |
+| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"            if value is not None and str(value).strip():"` | — |
+| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"                return str(value).strip()"` | — |
+| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"        return \"\""` | — |
+| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `""` | — |
+| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `"    publication_date_keys = ("` | — |
+| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"        \"published_at\", \"published_date\", \"publication_date\", \"date_published\","` | — |
+| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"        \"published\", \"date\","` | — |
+| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"    )"` | — |
+| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"    data_period_keys = ("` | — |
+| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"        \"data_date\", \"data_reference_date\", \"reference_date\", \"data_as_of\","` | — |
+| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"        \"data_period\", \"reference_period\", \"observation_date\", \"data_year\","` | — |
+| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"        \"reference_year\", \"period\", \"year\","` | — |
