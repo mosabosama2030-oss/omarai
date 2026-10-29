@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **105**
-- ملفات Python المحللة: **62**
-- تعريفات Python المفهرسة: **1393**
+- ملفات المستودع في الجرد: **106**
+- ملفات Python المحللة: **63**
+- تعريفات Python المفهرسة: **1397**
 - تعريفات Python موثقة بوجود Docstring: **241**
-- تعريفات Python بلا Docstring: **864**
+- تعريفات Python بلا Docstring: **868**
 - تعريفات لا ينطبق عليها Docstring: **288**
 - الرموز الساكنة الإضافية: **1736**
-- الأسطر النصية المفهرسة حرفيًا: **36783**
+- الأسطر النصية المفهرسة حرفيًا: **36863**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -103,6 +103,7 @@
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
+| FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
@@ -894,6 +895,10 @@
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L95) | دالة | test_extracts_joined_facets_without_formal_comparison_marker | لا توجد Docstring. | ناقص | 95 | [SRC-6CBA87B20C-L000095](../tests/test_aspect_planning.py#L95) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L103) | دالة | test_extracts_general_factual_aspects_from_compound_arabic_question | لا توجد Docstring. | ناقص | 103 | [SRC-6CBA87B20C-L000103](../tests/test_aspect_planning.py#L103) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L112) | دالة | test_builds_separate_queries_for_capital_and_population_aspects | لا توجد Docstring. | ناقص | 112 | [SRC-6CBA87B20C-L000112](../tests/test_aspect_planning.py#L112) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L6) | دالة | test_source_metadata_accepts_complete_population_metadata_without_asserting_truth | لا توجد Docstring. | ناقص | 6 | [SRC-6B37B7D6D3-L000006](../tests/test_claim_evidence_metadata.py#L6) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L27) | دالة | test_source_metadata_flags_missing_publication_date_period_and_population_scope | لا توجد Docstring. | ناقص | 27 | [SRC-6B37B7D6D3-L000027](../tests/test_claim_evidence_metadata.py#L27) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L44) | دالة | test_source_metadata_rejects_non_http_urls_and_urls_with_credentials | لا توجد Docstring. | ناقص | 44 | [SRC-6B37B7D6D3-L000044](../tests/test_claim_evidence_metadata.py#L44) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L61) | دالة | test_claim_evidence_ledger_uses_question_context_for_population_metadata | لا توجد Docstring. | ناقص | 61 | [SRC-6B37B7D6D3-L000061](../tests/test_claim_evidence_metadata.py#L61) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L8) | دالة | test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets | لا توجد Docstring. | ناقص | 8 | [SRC-DA61479D59-L000008](../tests/test_connector_summary_counters.py#L8) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L55) | دالة | test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction | لا توجد Docstring. | ناقص | 55 | [SRC-DA61479D59-L000055](../tests/test_connector_summary_counters.py#L55) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L95) | دالة | test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction.fetch | لا توجد Docstring. | ناقص | 95 | [SRC-DA61479D59-L000095](../tests/test_connector_summary_counters.py#L95) |
