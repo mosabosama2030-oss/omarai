@@ -10,6 +10,7 @@ import asyncio
 import datetime as dt
 import ipaddress
 import json
+import math
 import os
 import re
 import socket
@@ -547,7 +548,7 @@ class WebAgent:
             "OMARAI_LLM_FALLBACK_MODEL", "openrouter/free"
         ).strip()
         self.model = self.answer_model  # Backwards-compatible alias.
-        self.model_usage: list[dict[str, str]] = []
+        self.model_usage: list[dict[str, Any]] = []
         # Per-answer, bounded diagnostics contain only model identifiers and status metadata.
         # They intentionally exclude prompts, generated text, and provider response bodies.
         self.generation_diagnostics: list[dict[str, str]] = []
@@ -3256,11 +3257,11 @@ class WebAgent:
                     request_started=True,
                     remote_response_received=True,
                 )
-                self.model_usage.append({
-                    "requested_model": requested_model,
-                    "used_model": candidate_model,
-                    "fallback_used": "true" if candidate_model != requested_model else "false",
-                })
+                self.model_usage.append(_model_usage_record(
+                    requested_model, candidate_model,
+                    data, self.base_url,
+                    # Keep this to allowlisted usage counters, never raw provider data.
+                ))
                 return answer.strip()
             except urllib.error.HTTPError as exc:
                 # Never echo provider response bodies: they may contain private diagnostics.
@@ -6553,3 +6554,57 @@ class WebAgent:
             "intent_route": intent_route,
             "intent_route_reason": intent_reason,
         }
+
+
+def _normalized_provider_usage(
+    usage: Any, *, provider_base_url: str = ""
+) -> dict[str, int | float] | None:
+    """Allowlist safe counters; interpret generic 'cost' as USD only for OpenRouter."""
+    if not isinstance(usage, dict):
+        return None
+    normalized: dict[str, int | float] = {}
+    for source_key in ("prompt_tokens", "completion_tokens", "total_tokens"):
+        value = usage.get(source_key)
+        if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+            normalized[source_key] = value
+    cost_keys = ["cost_usd"]
+    provider_host = ""
+    if isinstance(provider_base_url, str):
+        try:
+            provider_host = (urllib.parse.urlsplit(provider_base_url.strip()).hostname or "").lower().rstrip(".")
+        except ValueError:
+            provider_host = ""
+    is_openrouter = (
+        provider_host == "openrouter.ai"
+        or provider_host.endswith(".openrouter.ai")
+    )
+    if is_openrouter:
+        cost_keys.extend(["cost", "total_cost"])
+    for source_key in cost_keys:
+        value = usage.get(source_key)
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            number = float(value)
+            if number >= 0 and math.isfinite(number):
+                normalized["cost_usd"] = number
+                break
+    return normalized or None
+
+
+def _model_usage_record(
+    requested_model: str,
+    candidate_model: str,
+    response_data: dict[str, Any],
+    provider_base_url: str,
+) -> dict[str, Any]:
+    """Return only allowlisted provider usage metadata, never raw prompts/responses."""
+    record: dict[str, Any] = {
+        "requested_model": requested_model,
+        "used_model": candidate_model,
+        "fallback_used": "true" if candidate_model != requested_model else "false",
+    }
+    provider_usage = _normalized_provider_usage(
+        response_data.get("usage"), provider_base_url=provider_base_url
+    )
+    if provider_usage is not None:
+        record["provider_usage"] = provider_usage
+    return record
