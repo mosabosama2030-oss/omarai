@@ -116,7 +116,8 @@ def _is_lead_generation_request(question: str) -> bool:
     """Recognize explicit requests to discover prospective buyers/customers."""
     normalized = _normalize(question)
     # Repair only frequent, task-specific Arabic typing variants before routing.
-    normalized = re.sub(r"(?<!\\w)عملاش(?!\\w)", "عملاء", normalized)\n    normalized = re.sub(r"(?<!\\w)شرا(?!\\w)", "شراء", normalized)
+    normalized = re.sub(r"(?<!\w)عملاش(?!\w)", "عملاء", normalized)
+    normalized = re.sub(r"(?<!\w)شرا(?!\w)", "شراء", normalized)
     arabic_actions = (
         "ابحث عن", "ابحث لي عن", "ابحثلي عن", "بحث عن",
         "دور على", "دورلي على", "دور لي على", "اعثر على", "هاتلي", "هات",
