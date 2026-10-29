@@ -6311,10 +6311,10 @@ class WebAgent:
                                 "وأعرض مقتطفات المصادر بدلًا منها."
                             )
                             answer = (
-                    _fallback_lead_answer(lead_evidence_sources)
-                    if lead_request and lead_evidence_sources
-                    else _fallback_answer(sources, review_warning)
-                )
+                                _fallback_lead_answer(lead_evidence_sources)
+                                if lead_request and lead_evidence_sources
+                                else _fallback_answer(sources, review_warning)
+                            )
                     else:
                         coverage_repair_status = "no_change_gap_unresolved"
                         coverage_repair_warning = (
