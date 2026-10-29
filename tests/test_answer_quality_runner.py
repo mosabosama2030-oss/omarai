@@ -229,3 +229,51 @@ def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):
     payload = json.loads(out.read_text(encoding="utf-8"))
     assert payload["results"][0]["status"] == "NOT_TESTED"
     assert payload["results"][0]["transport_ok"] is False
+
+
+def test_live_records_latency_and_observed_usage_without_inventing_cost(monkeypatch, tmp_path):
+    mod = _load_runner()
+    clock = iter([10.0, 10.125])
+    monkeypatch.setattr(mod.time, "perf_counter", lambda: next(clock))
+
+    def fake_post(base_url, question, timeout, token):
+        return 200, {
+            "answer": "A measured answer.",
+            "used_web_search": True,
+            "usage": {"cost_usd": 0.0012, "prompt_tokens": 21, "completion_tokens": 13},
+            "tool_execution_status": {"web_search": "succeeded"},
+            "diagnostics": {"completion": "complete"},
+        }
+
+    monkeypatch.setattr(mod, "post_agent", fake_post)
+    out = tmp_path / "observed.json"
+    rc = mod.main([
+        "--mode", "live", "--corpus", str(CORPUS),
+        "--case-id", "AQ-001", "--out", str(out),
+    ])
+    assert rc == 0
+    result = json.loads(out.read_text(encoding="utf-8"))["results"][0]
+    assert result["latency_ms"] == 125.0
+    assert result["cost_usd"] == pytest.approx(0.0012)
+    assert result["input_tokens"] == 21
+    assert result["output_tokens"] == 13
+    assert result["tool_execution_status"] == {"web_search": "succeeded"}
+
+
+def test_live_missing_usage_remains_unknown_not_zero(monkeypatch, tmp_path):
+    mod = _load_runner()
+
+    def fake_post(base_url, question, timeout, token):
+        return 200, {"answer": "No provider usage returned."}
+
+    monkeypatch.setattr(mod, "post_agent", fake_post)
+    out = tmp_path / "no-usage.json"
+    rc = mod.main([
+        "--mode", "live", "--corpus", str(CORPUS),
+        "--case-id", "AQ-001", "--out", str(out),
+    ])
+    assert rc == 0
+    result = json.loads(out.read_text(encoding="utf-8"))["results"][0]
+    assert result["cost_usd"] is None
+    assert result["input_tokens"] is None
+    assert result["output_tokens"] is None
