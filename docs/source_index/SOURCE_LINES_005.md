@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000400 إلى SRC-1E32639872-L000292
+- النطاق: SRC-59CF4B7DE8-L000399 إلى SRC-1E32639872-L000291
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000399](../../agents/research.py#L399) | 399 | `"    direct_urls = extract_urls(question)"` | — |
 | [SRC-59CF4B7DE8-L000400](../../agents/research.py#L400) | 400 | `"    base = compact_search_query(contextual_question)"` | — |
 | [SRC-59CF4B7DE8-L000401](../../agents/research.py#L401) | 401 | `"    coverage_targets = extract_question_coverage_targets(question)"` | — |
 | [SRC-59CF4B7DE8-L000402](../../agents/research.py#L402) | 402 | `"    requirement_queries = build_requirement_queries(base, coverage_targets)"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1E32639872-L000289](../../agents/research_completion.py#L289) | 289 | `"            \"issues\": counter_issues,"` | — |
 | [SRC-1E32639872-L000290](../../agents/research_completion.py#L290) | 290 | `"        },"` | — |
 | [SRC-1E32639872-L000291](../../agents/research_completion.py#L291) | 291 | `"        \"semantic_verification\": \"not_performed\","` | — |
-| [SRC-1E32639872-L000292](../../agents/research_completion.py#L292) | 292 | `"        \"warning\": ("` | — |
