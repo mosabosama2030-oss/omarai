@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **104**
-- ملفات Python المحللة: **61**
-- تعريفات Python المفهرسة: **1381**
-- تعريفات Python موثقة بوجود Docstring: **238**
-- تعريفات Python بلا Docstring: **857**
+- ملفات المستودع في الجرد: **105**
+- ملفات Python المحللة: **62**
+- تعريفات Python المفهرسة: **1386**
+- تعريفات Python موثقة بوجود Docstring: **239**
+- تعريفات Python بلا Docstring: **861**
 - تعريفات لا ينطبق عليها Docstring: **286**
 - الرموز الساكنة الإضافية: **1736**
-- الأسطر النصية المفهرسة حرفيًا: **36489**
+- الأسطر النصية المفهرسة حرفيًا: **36612**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 28392 | 607 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
-| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 6104 | 143 | جرد الملف + AST Python |
+| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 8436 | 199 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25333 | 559 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
@@ -103,6 +103,7 @@
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
+| FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 2429 | 67 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
@@ -180,6 +181,7 @@
 | [agents/claim_evidence.py](../agents/claim_evidence.py#L12) | متغير/ثابت Python | _SENTENCE_SPLIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-7D6FC391EC-L000012](../agents/claim_evidence.py#L12) |
 | [agents/claim_evidence.py](../agents/claim_evidence.py#L15) | دالة | _evidence_basis | لا توجد Docstring. | ناقص | 15 | [SRC-7D6FC391EC-L000015](../agents/claim_evidence.py#L15) |
 | [agents/claim_evidence.py](../agents/claim_evidence.py#L25) | دالة | build_claim_evidence_ledger | Return bounded sentence candidates with validated source-index traceability. | موثق | 25 | [SRC-7D6FC391EC-L000025](../agents/claim_evidence.py#L25) |
+| [agents/claim_evidence.py](../agents/claim_evidence.py#L147) | دالة | audit_source_metadata | Audit source metadata completeness; this is not a claim-entailment check. | موثق | 147 | [SRC-7D6FC391EC-L000147](../agents/claim_evidence.py#L147) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L15) | متغير/ثابت Python | MAX_RESOLVED_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-2D53795445-L000015](../agents/dialogue_state.py#L15) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L16) | متغير/ثابت Python | MAX_CONTEXT_TEXT_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-2D53795445-L000016](../agents/dialogue_state.py#L16) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L17) | متغير/ثابت Python | MAX_ENTITIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-2D53795445-L000017](../agents/dialogue_state.py#L17) |
@@ -887,6 +889,10 @@
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L95) | دالة | test_extracts_joined_facets_without_formal_comparison_marker | لا توجد Docstring. | ناقص | 95 | [SRC-6CBA87B20C-L000095](../tests/test_aspect_planning.py#L95) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L103) | دالة | test_extracts_general_factual_aspects_from_compound_arabic_question | لا توجد Docstring. | ناقص | 103 | [SRC-6CBA87B20C-L000103](../tests/test_aspect_planning.py#L103) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L112) | دالة | test_builds_separate_queries_for_capital_and_population_aspects | لا توجد Docstring. | ناقص | 112 | [SRC-6CBA87B20C-L000112](../tests/test_aspect_planning.py#L112) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L4) | دالة | test_source_metadata_audit_accepts_complete_population_source_metadata | لا توجد Docstring. | ناقص | 4 | [SRC-6B37B7D6D3-L000004](../tests/test_claim_evidence_metadata.py#L4) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L22) | دالة | test_source_metadata_audit_flags_missing_date_and_population_scope | لا توجد Docstring. | ناقص | 22 | [SRC-6B37B7D6D3-L000022](../tests/test_claim_evidence_metadata.py#L22) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L37) | دالة | test_source_metadata_audit_rejects_non_http_or_missing_url | لا توجد Docstring. | ناقص | 37 | [SRC-6B37B7D6D3-L000037](../tests/test_claim_evidence_metadata.py#L37) |
+| [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L51) | دالة | test_claim_evidence_ledger_exposes_metadata_audit_without_claiming_truth | لا توجد Docstring. | ناقص | 51 | [SRC-6B37B7D6D3-L000051](../tests/test_claim_evidence_metadata.py#L51) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L8) | دالة | test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets | لا توجد Docstring. | ناقص | 8 | [SRC-DA61479D59-L000008](../tests/test_connector_summary_counters.py#L8) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L55) | دالة | test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction | لا توجد Docstring. | ناقص | 55 | [SRC-DA61479D59-L000055](../tests/test_connector_summary_counters.py#L55) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L95) | دالة | test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction.fetch | لا توجد Docstring. | ناقص | 95 | [SRC-DA61479D59-L000095](../tests/test_connector_summary_counters.py#L95) |

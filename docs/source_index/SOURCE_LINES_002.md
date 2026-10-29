@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-2D53795445-L000102
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-2D53795445-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -673,65 +673,121 @@
 | [SRC-7D6FC391EC-L000082](../../agents/claim_evidence.py#L82) | 82 | `"                \"url\": str(source.get(\"url\") or \"\")[:2048],"` | — |
 | [SRC-7D6FC391EC-L000083](../../agents/claim_evidence.py#L83) | 83 | `"                \"provider\": str(source.get(\"provider\") or \"\")[:80],"` | — |
 | [SRC-7D6FC391EC-L000084](../../agents/claim_evidence.py#L84) | 84 | `"                \"evidence_basis\": basis,"` | — |
-| [SRC-7D6FC391EC-L000085](../../agents/claim_evidence.py#L85) | 85 | `"            })"` | — |
-| [SRC-7D6FC391EC-L000086](../../agents/claim_evidence.py#L86) | 86 | `""` | — |
-| [SRC-7D6FC391EC-L000087](../../agents/claim_evidence.py#L87) | 87 | `"        cited += bool(indexes)"` | — |
-| [SRC-7D6FC391EC-L000088](../../agents/claim_evidence.py#L88) | 88 | `"        uncited += not bool(indexes)"` | — |
-| [SRC-7D6FC391EC-L000089](../../agents/claim_evidence.py#L89) | 89 | `"        readable_cited += bool(indexes) and has_readable"` | — |
-| [SRC-7D6FC391EC-L000090](../../agents/claim_evidence.py#L90) | 90 | `"        alignment = alignment_by_sentence.get(number, {})"` | — |
-| [SRC-7D6FC391EC-L000091](../../agents/claim_evidence.py#L91) | 91 | `"        lexical_status = str(alignment.get(\"status\") or \"not_assessed_no_citation_alignment\")"` | — |
-| [SRC-7D6FC391EC-L000092](../../agents/claim_evidence.py#L92) | 92 | `"        lexical_signals += lexical_status == \"lexical_overlap_signal_found\""` | — |
-| [SRC-7D6FC391EC-L000093](../../agents/claim_evidence.py#L93) | 93 | `"        weak_signals += lexical_status == \"weak_lexical_overlap\""` | — |
-| [SRC-7D6FC391EC-L000094](../../agents/claim_evidence.py#L94) | 94 | `"        if any(ref[\"reference_status\"] == \"index_out_of_citable_range\" for ref in refs):"` | — |
-| [SRC-7D6FC391EC-L000095](../../agents/claim_evidence.py#L95) | 95 | `"            status = \"citation_index_out_of_range\""` | — |
-| [SRC-7D6FC391EC-L000096](../../agents/claim_evidence.py#L96) | 96 | `"        elif indexes and not has_readable:"` | — |
-| [SRC-7D6FC391EC-L000097](../../agents/claim_evidence.py#L97) | 97 | `"            status = \"valid_index_without_readable_evidence\""` | — |
-| [SRC-7D6FC391EC-L000098](../../agents/claim_evidence.py#L98) | 98 | `"        elif indexes:"` | — |
-| [SRC-7D6FC391EC-L000099](../../agents/claim_evidence.py#L99) | 99 | `"            status = \"cited_source_attached\""` | — |
-| [SRC-7D6FC391EC-L000100](../../agents/claim_evidence.py#L100) | 100 | `"        else:"` | — |
-| [SRC-7D6FC391EC-L000101](../../agents/claim_evidence.py#L101) | 101 | `"            status = \"no_citation_marker\""` | — |
-| [SRC-7D6FC391EC-L000102](../../agents/claim_evidence.py#L102) | 102 | `""` | — |
-| [SRC-7D6FC391EC-L000103](../../agents/claim_evidence.py#L103) | 103 | `"        rows.append({"` | — |
-| [SRC-7D6FC391EC-L000104](../../agents/claim_evidence.py#L104) | 104 | `"            \"segment_id\": f\"S{number:03d}\","` | — |
-| [SRC-7D6FC391EC-L000105](../../agents/claim_evidence.py#L105) | 105 | `"            \"segment_number\": number,"` | — |
-| [SRC-7D6FC391EC-L000106](../../agents/claim_evidence.py#L106) | 106 | `"            \"unit_kind\": \"sentence_candidate_not_semantically_classified\","` | — |
-| [SRC-7D6FC391EC-L000107](../../agents/claim_evidence.py#L107) | 107 | `"            \"text\": segment[:1200],"` | — |
-| [SRC-7D6FC391EC-L000108](../../agents/claim_evidence.py#L108) | 108 | `"            \"citation_indexes\": indexes,"` | — |
-| [SRC-7D6FC391EC-L000109](../../agents/claim_evidence.py#L109) | 109 | `"            \"citation_status\": status,"` | — |
-| [SRC-7D6FC391EC-L000110](../../agents/claim_evidence.py#L110) | 110 | `"            \"lexical_audit_status\": lexical_status,"` | — |
-| [SRC-7D6FC391EC-L000111](../../agents/claim_evidence.py#L111) | 111 | `"            \"sources\": refs,"` | — |
-| [SRC-7D6FC391EC-L000112](../../agents/claim_evidence.py#L112) | 112 | `"        })"` | — |
-| [SRC-7D6FC391EC-L000113](../../agents/claim_evidence.py#L113) | 113 | `""` | — |
-| [SRC-7D6FC391EC-L000114](../../agents/claim_evidence.py#L114) | 114 | `"    total = len(rows)"` | — |
-| [SRC-7D6FC391EC-L000115](../../agents/claim_evidence.py#L115) | 115 | `"    return {"` | — |
-| [SRC-7D6FC391EC-L000116](../../agents/claim_evidence.py#L116) | 116 | `"        \"schema_version\": \"1.0\","` | — |
-| [SRC-7D6FC391EC-L000117](../../agents/claim_evidence.py#L117) | 117 | `"        \"status\": \"built\","` | — |
-| [SRC-7D6FC391EC-L000118](../../agents/claim_evidence.py#L118) | 118 | `"        \"method\": \"bounded_sentence_level_citation_trace\","` | — |
-| [SRC-7D6FC391EC-L000119](../../agents/claim_evidence.py#L119) | 119 | `"        \"semantic_verification\": False,"` | — |
-| [SRC-7D6FC391EC-L000120](../../agents/claim_evidence.py#L120) | 120 | `"        \"claim_entailment\": \"not_checked\","` | — |
-| [SRC-7D6FC391EC-L000121](../../agents/claim_evidence.py#L121) | 121 | `"        \"fact_correctness\": \"not_checked\","` | — |
-| [SRC-7D6FC391EC-L000122](../../agents/claim_evidence.py#L122) | 122 | `"        \"max_segments\": max_segments,"` | — |
-| [SRC-7D6FC391EC-L000123](../../agents/claim_evidence.py#L123) | 123 | `"        \"max_citable_sources\": len(safe_sources),"` | — |
-| [SRC-7D6FC391EC-L000124](../../agents/claim_evidence.py#L124) | 124 | `"        \"truncated\": truncated,"` | — |
-| [SRC-7D6FC391EC-L000125](../../agents/claim_evidence.py#L125) | 125 | `"        \"summary\": {"` | — |
-| [SRC-7D6FC391EC-L000126](../../agents/claim_evidence.py#L126) | 126 | `"            \"segment_candidate_count\": total,"` | — |
-| [SRC-7D6FC391EC-L000127](../../agents/claim_evidence.py#L127) | 127 | `"            \"segments_with_citations\": cited,"` | — |
-| [SRC-7D6FC391EC-L000128](../../agents/claim_evidence.py#L128) | 128 | `"            \"segments_without_citation_markers\": uncited,"` | — |
-| [SRC-7D6FC391EC-L000129](../../agents/claim_evidence.py#L129) | 129 | `"            \"valid_source_reference_count\": valid_refs,"` | — |
-| [SRC-7D6FC391EC-L000130](../../agents/claim_evidence.py#L130) | 130 | `"            \"out_of_range_reference_count\": invalid_refs,"` | — |
-| [SRC-7D6FC391EC-L000131](../../agents/claim_evidence.py#L131) | 131 | `"            \"cited_segments_with_readable_source_evidence\": readable_cited,"` | — |
-| [SRC-7D6FC391EC-L000132](../../agents/claim_evidence.py#L132) | 132 | `"            \"citation_lexical_signal_count\": lexical_signals,"` | — |
-| [SRC-7D6FC391EC-L000133](../../agents/claim_evidence.py#L133) | 133 | `"            \"weak_citation_lexical_signal_count\": weak_signals,"` | — |
-| [SRC-7D6FC391EC-L000134](../../agents/claim_evidence.py#L134) | 134 | `"            \"citation_coverage_ratio\": round(cited / total, 3) if total else 0.0,"` | — |
-| [SRC-7D6FC391EC-L000135](../../agents/claim_evidence.py#L135) | 135 | `"        },"` | — |
-| [SRC-7D6FC391EC-L000136](../../agents/claim_evidence.py#L136) | 136 | `"        \"segments\": rows,"` | — |
-| [SRC-7D6FC391EC-L000137](../../agents/claim_evidence.py#L137) | 137 | `"        \"limitations\": ["` | — |
-| [SRC-7D6FC391EC-L000138](../../agents/claim_evidence.py#L138) | 138 | `"            \"Sentence candidates are not independently classified into semantic claims.\","` | — |
-| [SRC-7D6FC391EC-L000139](../../agents/claim_evidence.py#L139) | 139 | `"            \"An in-range index proves only that the source was in the bounded list.\","` | — |
-| [SRC-7D6FC391EC-L000140](../../agents/claim_evidence.py#L140) | 140 | `"            \"Readable text and lexical overlap do not prove that a source entails a claim.\","` | — |
-| [SRC-7D6FC391EC-L000141](../../agents/claim_evidence.py#L141) | 141 | `"            \"Correctness, source independence, contradiction resolution, and semantic faithfulness were not verified.\","` | — |
-| [SRC-7D6FC391EC-L000142](../../agents/claim_evidence.py#L142) | 142 | `"        ],"` | — |
-| [SRC-7D6FC391EC-L000143](../../agents/claim_evidence.py#L143) | 143 | `"    }"` | — |
+| [SRC-7D6FC391EC-L000085](../../agents/claim_evidence.py#L85) | 85 | `"                \"metadata_audit\": audit_source_metadata(source, claim_text=segment),"` | — |
+| [SRC-7D6FC391EC-L000086](../../agents/claim_evidence.py#L86) | 86 | `"            })"` | — |
+| [SRC-7D6FC391EC-L000087](../../agents/claim_evidence.py#L87) | 87 | `""` | — |
+| [SRC-7D6FC391EC-L000088](../../agents/claim_evidence.py#L88) | 88 | `"        cited += bool(indexes)"` | — |
+| [SRC-7D6FC391EC-L000089](../../agents/claim_evidence.py#L89) | 89 | `"        uncited += not bool(indexes)"` | — |
+| [SRC-7D6FC391EC-L000090](../../agents/claim_evidence.py#L90) | 90 | `"        readable_cited += bool(indexes) and has_readable"` | — |
+| [SRC-7D6FC391EC-L000091](../../agents/claim_evidence.py#L91) | 91 | `"        alignment = alignment_by_sentence.get(number, {})"` | — |
+| [SRC-7D6FC391EC-L000092](../../agents/claim_evidence.py#L92) | 92 | `"        lexical_status = str(alignment.get(\"status\") or \"not_assessed_no_citation_alignment\")"` | — |
+| [SRC-7D6FC391EC-L000093](../../agents/claim_evidence.py#L93) | 93 | `"        lexical_signals += lexical_status == \"lexical_overlap_signal_found\""` | — |
+| [SRC-7D6FC391EC-L000094](../../agents/claim_evidence.py#L94) | 94 | `"        weak_signals += lexical_status == \"weak_lexical_overlap\""` | — |
+| [SRC-7D6FC391EC-L000095](../../agents/claim_evidence.py#L95) | 95 | `"        if any(ref[\"reference_status\"] == \"index_out_of_citable_range\" for ref in refs):"` | — |
+| [SRC-7D6FC391EC-L000096](../../agents/claim_evidence.py#L96) | 96 | `"            status = \"citation_index_out_of_range\""` | — |
+| [SRC-7D6FC391EC-L000097](../../agents/claim_evidence.py#L97) | 97 | `"        elif indexes and not has_readable:"` | — |
+| [SRC-7D6FC391EC-L000098](../../agents/claim_evidence.py#L98) | 98 | `"            status = \"valid_index_without_readable_evidence\""` | — |
+| [SRC-7D6FC391EC-L000099](../../agents/claim_evidence.py#L99) | 99 | `"        elif indexes:"` | — |
+| [SRC-7D6FC391EC-L000100](../../agents/claim_evidence.py#L100) | 100 | `"            status = \"cited_source_attached\""` | — |
+| [SRC-7D6FC391EC-L000101](../../agents/claim_evidence.py#L101) | 101 | `"        else:"` | — |
+| [SRC-7D6FC391EC-L000102](../../agents/claim_evidence.py#L102) | 102 | `"            status = \"no_citation_marker\""` | — |
+| [SRC-7D6FC391EC-L000103](../../agents/claim_evidence.py#L103) | 103 | `""` | — |
+| [SRC-7D6FC391EC-L000104](../../agents/claim_evidence.py#L104) | 104 | `"        rows.append({"` | — |
+| [SRC-7D6FC391EC-L000105](../../agents/claim_evidence.py#L105) | 105 | `"            \"segment_id\": f\"S{number:03d}\","` | — |
+| [SRC-7D6FC391EC-L000106](../../agents/claim_evidence.py#L106) | 106 | `"            \"segment_number\": number,"` | — |
+| [SRC-7D6FC391EC-L000107](../../agents/claim_evidence.py#L107) | 107 | `"            \"unit_kind\": \"sentence_candidate_not_semantically_classified\","` | — |
+| [SRC-7D6FC391EC-L000108](../../agents/claim_evidence.py#L108) | 108 | `"            \"text\": segment[:1200],"` | — |
+| [SRC-7D6FC391EC-L000109](../../agents/claim_evidence.py#L109) | 109 | `"            \"citation_indexes\": indexes,"` | — |
+| [SRC-7D6FC391EC-L000110](../../agents/claim_evidence.py#L110) | 110 | `"            \"citation_status\": status,"` | — |
+| [SRC-7D6FC391EC-L000111](../../agents/claim_evidence.py#L111) | 111 | `"            \"lexical_audit_status\": lexical_status,"` | — |
+| [SRC-7D6FC391EC-L000112](../../agents/claim_evidence.py#L112) | 112 | `"            \"sources\": refs,"` | — |
+| [SRC-7D6FC391EC-L000113](../../agents/claim_evidence.py#L113) | 113 | `"        })"` | — |
+| [SRC-7D6FC391EC-L000114](../../agents/claim_evidence.py#L114) | 114 | `""` | — |
+| [SRC-7D6FC391EC-L000115](../../agents/claim_evidence.py#L115) | 115 | `"    total = len(rows)"` | — |
+| [SRC-7D6FC391EC-L000116](../../agents/claim_evidence.py#L116) | 116 | `"    return {"` | — |
+| [SRC-7D6FC391EC-L000117](../../agents/claim_evidence.py#L117) | 117 | `"        \"schema_version\": \"1.0\","` | — |
+| [SRC-7D6FC391EC-L000118](../../agents/claim_evidence.py#L118) | 118 | `"        \"status\": \"built\","` | — |
+| [SRC-7D6FC391EC-L000119](../../agents/claim_evidence.py#L119) | 119 | `"        \"method\": \"bounded_sentence_level_citation_trace\","` | — |
+| [SRC-7D6FC391EC-L000120](../../agents/claim_evidence.py#L120) | 120 | `"        \"semantic_verification\": False,"` | — |
+| [SRC-7D6FC391EC-L000121](../../agents/claim_evidence.py#L121) | 121 | `"        \"claim_entailment\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000122](../../agents/claim_evidence.py#L122) | 122 | `"        \"fact_correctness\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000123](../../agents/claim_evidence.py#L123) | 123 | `"        \"max_segments\": max_segments,"` | — |
+| [SRC-7D6FC391EC-L000124](../../agents/claim_evidence.py#L124) | 124 | `"        \"max_citable_sources\": len(safe_sources),"` | — |
+| [SRC-7D6FC391EC-L000125](../../agents/claim_evidence.py#L125) | 125 | `"        \"truncated\": truncated,"` | — |
+| [SRC-7D6FC391EC-L000126](../../agents/claim_evidence.py#L126) | 126 | `"        \"summary\": {"` | — |
+| [SRC-7D6FC391EC-L000127](../../agents/claim_evidence.py#L127) | 127 | `"            \"segment_candidate_count\": total,"` | — |
+| [SRC-7D6FC391EC-L000128](../../agents/claim_evidence.py#L128) | 128 | `"            \"segments_with_citations\": cited,"` | — |
+| [SRC-7D6FC391EC-L000129](../../agents/claim_evidence.py#L129) | 129 | `"            \"segments_without_citation_markers\": uncited,"` | — |
+| [SRC-7D6FC391EC-L000130](../../agents/claim_evidence.py#L130) | 130 | `"            \"valid_source_reference_count\": valid_refs,"` | — |
+| [SRC-7D6FC391EC-L000131](../../agents/claim_evidence.py#L131) | 131 | `"            \"out_of_range_reference_count\": invalid_refs,"` | — |
+| [SRC-7D6FC391EC-L000132](../../agents/claim_evidence.py#L132) | 132 | `"            \"cited_segments_with_readable_source_evidence\": readable_cited,"` | — |
+| [SRC-7D6FC391EC-L000133](../../agents/claim_evidence.py#L133) | 133 | `"            \"citation_lexical_signal_count\": lexical_signals,"` | — |
+| [SRC-7D6FC391EC-L000134](../../agents/claim_evidence.py#L134) | 134 | `"            \"weak_citation_lexical_signal_count\": weak_signals,"` | — |
+| [SRC-7D6FC391EC-L000135](../../agents/claim_evidence.py#L135) | 135 | `"            \"citation_coverage_ratio\": round(cited / total, 3) if total else 0.0,"` | — |
+| [SRC-7D6FC391EC-L000136](../../agents/claim_evidence.py#L136) | 136 | `"        },"` | — |
+| [SRC-7D6FC391EC-L000137](../../agents/claim_evidence.py#L137) | 137 | `"        \"segments\": rows,"` | — |
+| [SRC-7D6FC391EC-L000138](../../agents/claim_evidence.py#L138) | 138 | `"        \"limitations\": ["` | — |
+| [SRC-7D6FC391EC-L000139](../../agents/claim_evidence.py#L139) | 139 | `"            \"Sentence candidates are not independently classified into semantic claims.\","` | — |
+| [SRC-7D6FC391EC-L000140](../../agents/claim_evidence.py#L140) | 140 | `"            \"An in-range index proves only that the source was in the bounded list.\","` | — |
+| [SRC-7D6FC391EC-L000141](../../agents/claim_evidence.py#L141) | 141 | `"            \"Readable text and lexical overlap do not prove that a source entails a claim.\","` | — |
+| [SRC-7D6FC391EC-L000142](../../agents/claim_evidence.py#L142) | 142 | `"            \"Correctness, source independence, contradiction resolution, and semantic faithfulness were not verified.\","` | — |
+| [SRC-7D6FC391EC-L000143](../../agents/claim_evidence.py#L143) | 143 | `"        ],"` | — |
+| [SRC-7D6FC391EC-L000144](../../agents/claim_evidence.py#L144) | 144 | `"    }"` | — |
+| [SRC-7D6FC391EC-L000145](../../agents/claim_evidence.py#L145) | 145 | `""` | — |
+| [SRC-7D6FC391EC-L000146](../../agents/claim_evidence.py#L146) | 146 | `""` | — |
+| [SRC-7D6FC391EC-L000147](../../agents/claim_evidence.py#L147) | 147 | `"def audit_source_metadata(source: dict[str, Any], *, claim_text: str = \"\") -> dict[str, Any]:"` | — |
+| [SRC-7D6FC391EC-L000148](../../agents/claim_evidence.py#L148) | 148 | `"    \"\"\"Audit source metadata completeness; this is not a claim-entailment check."` | — |
+| [SRC-7D6FC391EC-L000149](../../agents/claim_evidence.py#L149) | 149 | `""` | — |
+| [SRC-7D6FC391EC-L000150](../../agents/claim_evidence.py#L150) | 150 | `"    URLs are parsed locally and never fetched here. Metadata is reported as"` | — |
+| [SRC-7D6FC391EC-L000151](../../agents/claim_evidence.py#L151) | 151 | `"    missing rather than inferred from a title or guessed from a publisher name."` | — |
+| [SRC-7D6FC391EC-L000152](../../agents/claim_evidence.py#L152) | 152 | `"    \"\"\""` | — |
+| [SRC-7D6FC391EC-L000153](../../agents/claim_evidence.py#L153) | 153 | `"    from urllib.parse import urlparse"` | — |
+| [SRC-7D6FC391EC-L000154](../../agents/claim_evidence.py#L154) | 154 | `""` | — |
+| [SRC-7D6FC391EC-L000155](../../agents/claim_evidence.py#L155) | 155 | `"    item = source if isinstance(source, dict) else {}"` | — |
+| [SRC-7D6FC391EC-L000156](../../agents/claim_evidence.py#L156) | 156 | `"    raw_url = str(item.get(\"url\") or \"\").strip()"` | — |
+| [SRC-7D6FC391EC-L000157](../../agents/claim_evidence.py#L157) | 157 | `"    parsed = urlparse(raw_url)"` | — |
+| [SRC-7D6FC391EC-L000158](../../agents/claim_evidence.py#L158) | 158 | `"    valid_url = parsed.scheme.lower() in {\"http\", \"https\"} and bool(parsed.hostname)"` | — |
+| [SRC-7D6FC391EC-L000159](../../agents/claim_evidence.py#L159) | 159 | `"    title = str(item.get(\"title\") or \"\").strip()"` | — |
+| [SRC-7D6FC391EC-L000160](../../agents/claim_evidence.py#L160) | 160 | `"    publisher = str("` | — |
+| [SRC-7D6FC391EC-L000161](../../agents/claim_evidence.py#L161) | 161 | `"        item.get(\"publisher\") or item.get(\"source_name\") or item.get(\"provider\") or \"\""` | — |
+| [SRC-7D6FC391EC-L000162](../../agents/claim_evidence.py#L162) | 162 | `"    ).strip()"` | — |
+| [SRC-7D6FC391EC-L000163](../../agents/claim_evidence.py#L163) | 163 | `"    published_at = str("` | — |
+| [SRC-7D6FC391EC-L000164](../../agents/claim_evidence.py#L164) | 164 | `"        item.get(\"published_at\") or item.get(\"publication_date\")"` | — |
+| [SRC-7D6FC391EC-L000165](../../agents/claim_evidence.py#L165) | 165 | `"        or item.get(\"date\") or item.get(\"published\") or \"\""` | — |
+| [SRC-7D6FC391EC-L000166](../../agents/claim_evidence.py#L166) | 166 | `"    ).strip()"` | — |
+| [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"    normalized_claim = str(claim_text or \"\").casefold()"` | — |
+| [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"    population_scope_required = any("` | — |
+| [SRC-7D6FC391EC-L000169](../../agents/claim_evidence.py#L169) | 169 | `"        term in normalized_claim"` | — |
+| [SRC-7D6FC391EC-L000170](../../agents/claim_evidence.py#L170) | 170 | `"        for term in (\"population\", \"inhabitants\", \"سكان\", \"نسمة\", \"القاهرة الكبرى\", \"محافظة القاهرة\")"` | — |
+| [SRC-7D6FC391EC-L000171](../../agents/claim_evidence.py#L171) | 171 | `"    )"` | — |
+| [SRC-7D6FC391EC-L000172](../../agents/claim_evidence.py#L172) | 172 | `"    geographic_scope = str("` | — |
+| [SRC-7D6FC391EC-L000173](../../agents/claim_evidence.py#L173) | 173 | `"        item.get(\"geographic_scope\") or item.get(\"geography\")"` | — |
+| [SRC-7D6FC391EC-L000174](../../agents/claim_evidence.py#L174) | 174 | `"        or item.get(\"population_definition\") or \"\""` | — |
+| [SRC-7D6FC391EC-L000175](../../agents/claim_evidence.py#L175) | 175 | `"    ).strip()"` | — |
+| [SRC-7D6FC391EC-L000176](../../agents/claim_evidence.py#L176) | 176 | `""` | — |
+| [SRC-7D6FC391EC-L000177](../../agents/claim_evidence.py#L177) | 177 | `"    missing: list[str] = []"` | — |
+| [SRC-7D6FC391EC-L000178](../../agents/claim_evidence.py#L178) | 178 | `"    if not valid_url:"` | — |
+| [SRC-7D6FC391EC-L000179](../../agents/claim_evidence.py#L179) | 179 | `"        missing.append(\"valid_http_source_url\")"` | — |
+| [SRC-7D6FC391EC-L000180](../../agents/claim_evidence.py#L180) | 180 | `"    if not title:"` | — |
+| [SRC-7D6FC391EC-L000181](../../agents/claim_evidence.py#L181) | 181 | `"        missing.append(\"source_title\")"` | — |
+| [SRC-7D6FC391EC-L000182](../../agents/claim_evidence.py#L182) | 182 | `"    if not publisher:"` | — |
+| [SRC-7D6FC391EC-L000183](../../agents/claim_evidence.py#L183) | 183 | `"        missing.append(\"publisher_identity\")"` | — |
+| [SRC-7D6FC391EC-L000184](../../agents/claim_evidence.py#L184) | 184 | `"    if not published_at:"` | — |
+| [SRC-7D6FC391EC-L000185](../../agents/claim_evidence.py#L185) | 185 | `"        missing.append(\"publication_or_data_date\")"` | — |
+| [SRC-7D6FC391EC-L000186](../../agents/claim_evidence.py#L186) | 186 | `"    if population_scope_required and not geographic_scope:"` | — |
+| [SRC-7D6FC391EC-L000187](../../agents/claim_evidence.py#L187) | 187 | `"        missing.append(\"geographic_scope_for_population_claim\")"` | — |
+| [SRC-7D6FC391EC-L000188](../../agents/claim_evidence.py#L188) | 188 | `""` | — |
+| [SRC-7D6FC391EC-L000189](../../agents/claim_evidence.py#L189) | 189 | `"    return {"` | — |
+| [SRC-7D6FC391EC-L000190](../../agents/claim_evidence.py#L190) | 190 | `"        \"status\": \"metadata_complete\" if not missing else \"metadata_incomplete\","` | — |
+| [SRC-7D6FC391EC-L000191](../../agents/claim_evidence.py#L191) | 191 | `"        \"valid_http_url\": valid_url,"` | — |
+| [SRC-7D6FC391EC-L000192](../../agents/claim_evidence.py#L192) | 192 | `"        \"has_title\": bool(title),"` | — |
+| [SRC-7D6FC391EC-L000193](../../agents/claim_evidence.py#L193) | 193 | `"        \"has_publisher_identity\": bool(publisher),"` | — |
+| [SRC-7D6FC391EC-L000194](../../agents/claim_evidence.py#L194) | 194 | `"        \"has_publication_or_data_date\": bool(published_at),"` | — |
+| [SRC-7D6FC391EC-L000195](../../agents/claim_evidence.py#L195) | 195 | `"        \"has_geographic_scope\": bool(geographic_scope),"` | — |
+| [SRC-7D6FC391EC-L000196](../../agents/claim_evidence.py#L196) | 196 | `"        \"required_fields_missing\": missing,"` | — |
+| [SRC-7D6FC391EC-L000197](../../agents/claim_evidence.py#L197) | 197 | `"        \"claim_entailment\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000198](../../agents/claim_evidence.py#L198) | 198 | `"        \"fact_correctness\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000199](../../agents/claim_evidence.py#L199) | 199 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-2D53795445 — [agents/dialogue_state.py](../../agents/dialogue_state.py#L1)
@@ -787,59 +843,3 @@
 | [SRC-2D53795445-L000044](../../agents/dialogue_state.py#L44) | 44 | `"})"` | — |
 | [SRC-2D53795445-L000045](../../agents/dialogue_state.py#L45) | 45 | `"_ALLOWED_CONFIDENCE_BANDS = frozenset({\"low\", \"medium\", \"high\", \"unassessed\"})"` | — |
 | [SRC-2D53795445-L000046](../../agents/dialogue_state.py#L46) | 46 | `"_WHITESPACE = re.compile(r\"\\s+\")"` | — |
-| [SRC-2D53795445-L000047](../../agents/dialogue_state.py#L47) | 47 | `""` | — |
-| [SRC-2D53795445-L000048](../../agents/dialogue_state.py#L48) | 48 | `""` | — |
-| [SRC-2D53795445-L000049](../../agents/dialogue_state.py#L49) | 49 | `"def _clean_text(value: Any, limit: int) -> str:"` | — |
-| [SRC-2D53795445-L000050](../../agents/dialogue_state.py#L50) | 50 | `"    if not isinstance(value, str):"` | — |
-| [SRC-2D53795445-L000051](../../agents/dialogue_state.py#L51) | 51 | `"        return \"\""` | — |
-| [SRC-2D53795445-L000052](../../agents/dialogue_state.py#L52) | 52 | `"    value = unicodedata.normalize(\"NFKC\", value)"` | — |
-| [SRC-2D53795445-L000053](../../agents/dialogue_state.py#L53) | 53 | `"    value = value.replace(\"\\x00\", \" \")"` | — |
-| [SRC-2D53795445-L000054](../../agents/dialogue_state.py#L54) | 54 | `"    value = _WHITESPACE.sub(\" \", value).strip()"` | — |
-| [SRC-2D53795445-L000055](../../agents/dialogue_state.py#L55) | 55 | `"    return value[:limit]"` | — |
-| [SRC-2D53795445-L000056](../../agents/dialogue_state.py#L56) | 56 | `""` | — |
-| [SRC-2D53795445-L000057](../../agents/dialogue_state.py#L57) | 57 | `""` | — |
-| [SRC-2D53795445-L000058](../../agents/dialogue_state.py#L58) | 58 | `"def _clean_string_list(value: Any, *, max_items: int, max_chars: int) -> list[str]:"` | — |
-| [SRC-2D53795445-L000059](../../agents/dialogue_state.py#L59) | 59 | `"    if not isinstance(value, list):"` | — |
-| [SRC-2D53795445-L000060](../../agents/dialogue_state.py#L60) | 60 | `"        return []"` | — |
-| [SRC-2D53795445-L000061](../../agents/dialogue_state.py#L61) | 61 | `"    result: list[str] = []"` | — |
-| [SRC-2D53795445-L000062](../../agents/dialogue_state.py#L62) | 62 | `"    seen: set[str] = set()"` | — |
-| [SRC-2D53795445-L000063](../../agents/dialogue_state.py#L63) | 63 | `"    for item in value[:max_items * 2]:"` | — |
-| [SRC-2D53795445-L000064](../../agents/dialogue_state.py#L64) | 64 | `"        clean = _clean_text(item, max_chars)"` | — |
-| [SRC-2D53795445-L000065](../../agents/dialogue_state.py#L65) | 65 | `"        key = clean.casefold()"` | — |
-| [SRC-2D53795445-L000066](../../agents/dialogue_state.py#L66) | 66 | `"        if clean and key not in seen:"` | — |
-| [SRC-2D53795445-L000067](../../agents/dialogue_state.py#L67) | 67 | `"            result.append(clean)"` | — |
-| [SRC-2D53795445-L000068](../../agents/dialogue_state.py#L68) | 68 | `"            seen.add(key)"` | — |
-| [SRC-2D53795445-L000069](../../agents/dialogue_state.py#L69) | 69 | `"        if len(result) >= max_items:"` | — |
-| [SRC-2D53795445-L000070](../../agents/dialogue_state.py#L70) | 70 | `"            break"` | — |
-| [SRC-2D53795445-L000071](../../agents/dialogue_state.py#L71) | 71 | `"    return result"` | — |
-| [SRC-2D53795445-L000072](../../agents/dialogue_state.py#L72) | 72 | `""` | — |
-| [SRC-2D53795445-L000073](../../agents/dialogue_state.py#L73) | 73 | `""` | — |
-| [SRC-2D53795445-L000074](../../agents/dialogue_state.py#L74) | 74 | `"def fallback_dialogue_context(question: str, history: Any = None) -> dict[str, Any]:"` | — |
-| [SRC-2D53795445-L000075](../../agents/dialogue_state.py#L75) | 75 | `"    \"\"\"Build a conservative context record from the deterministic follow-up resolver.\"\"\""` | — |
-| [SRC-2D53795445-L000076](../../agents/dialogue_state.py#L76) | 76 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS)"` | — |
-| [SRC-2D53795445-L000077](../../agents/dialogue_state.py#L77) | 77 | `"    resolved = _clean_text("` | — |
-| [SRC-2D53795445-L000078](../../agents/dialogue_state.py#L78) | 78 | `"        resolve_followup_query(current, history) or current,"` | — |
-| [SRC-2D53795445-L000079](../../agents/dialogue_state.py#L79) | 79 | `"        MAX_RESOLVED_QUESTION_CHARS,"` | — |
-| [SRC-2D53795445-L000080](../../agents/dialogue_state.py#L80) | 80 | `"    )"` | — |
-| [SRC-2D53795445-L000081](../../agents/dialogue_state.py#L81) | 81 | `"    is_follow_up = bool(resolved and current and resolved.casefold() != current.casefold())"` | — |
-| [SRC-2D53795445-L000082](../../agents/dialogue_state.py#L82) | 82 | `"    return {"` | — |
-| [SRC-2D53795445-L000083](../../agents/dialogue_state.py#L83) | 83 | `"        \"status\": \"fallback\","` | — |
-| [SRC-2D53795445-L000084](../../agents/dialogue_state.py#L84) | 84 | `"        \"method\": \"deterministic_followup_heuristic\","` | — |
-| [SRC-2D53795445-L000085](../../agents/dialogue_state.py#L85) | 85 | `"        \"resolved_question\": resolved or current,"` | — |
-| [SRC-2D53795445-L000086](../../agents/dialogue_state.py#L86) | 86 | `"        \"intent\": \"unknown\","` | — |
-| [SRC-2D53795445-L000087](../../agents/dialogue_state.py#L87) | 87 | `"        \"topic\": \"\","` | — |
-| [SRC-2D53795445-L000088](../../agents/dialogue_state.py#L88) | 88 | `"        \"entities\": [],"` | — |
-| [SRC-2D53795445-L000089](../../agents/dialogue_state.py#L89) | 89 | `"        \"slots\": {},"` | — |
-| [SRC-2D53795445-L000090](../../agents/dialogue_state.py#L90) | 90 | `"        \"changed_slots\": [],"` | — |
-| [SRC-2D53795445-L000091](../../agents/dialogue_state.py#L91) | 91 | `"        \"is_follow_up\": is_follow_up,"` | — |
-| [SRC-2D53795445-L000092](../../agents/dialogue_state.py#L92) | 92 | `"        \"topic_shift\": False,"` | — |
-| [SRC-2D53795445-L000093](../../agents/dialogue_state.py#L93) | 93 | `"        \"needs_web\": False,"` | — |
-| [SRC-2D53795445-L000094](../../agents/dialogue_state.py#L94) | 94 | `"        \"research_depth\": \"standard\","` | — |
-| [SRC-2D53795445-L000095](../../agents/dialogue_state.py#L95) | 95 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-2D53795445-L000096](../../agents/dialogue_state.py#L96) | 96 | `"        \"clarification_question\": \"\","` | — |
-| [SRC-2D53795445-L000097](../../agents/dialogue_state.py#L97) | 97 | `"        \"unresolved_references\": [],"` | — |
-| [SRC-2D53795445-L000098](../../agents/dialogue_state.py#L98) | 98 | `"        \"resolution_basis\": \"deterministic_fallback\","` | — |
-| [SRC-2D53795445-L000099](../../agents/dialogue_state.py#L99) | 99 | `"        \"confidence_band\": \"unassessed\","` | — |
-| [SRC-2D53795445-L000100](../../agents/dialogue_state.py#L100) | 100 | `"    }"` | — |
-| [SRC-2D53795445-L000101](../../agents/dialogue_state.py#L101) | 101 | `""` | — |
-| [SRC-2D53795445-L000102](../../agents/dialogue_state.py#L102) | 102 | `""` | — |
