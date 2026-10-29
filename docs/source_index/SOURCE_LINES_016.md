@@ -797,22 +797,22 @@
 | [SRC-1AE03B9EC3-L006569](../../agents/web_agent.py#L6569) | 6569 | `"        if isinstance(value, int) and not isinstance(value, bool) and value >= 0:"` | — |
 | [SRC-1AE03B9EC3-L006570](../../agents/web_agent.py#L6570) | 6570 | `"            normalized[source_key] = value"` | — |
 | [SRC-1AE03B9EC3-L006571](../../agents/web_agent.py#L6571) | 6571 | `"    cost_keys = [\"cost_usd\"]"` | — |
-| [SRC-1AE03B9EC3-L006572](../../agents/web_agent.py#L6572) | 6572 | `"    if \"openrouter.ai\" in provider_base_url.lower():"` | — |
-| [SRC-1AE03B9EC3-L006573](../../agents/web_agent.py#L6573) | 6573 | `"        cost_keys.extend([\"cost\", \"total_cost\"])"` | — |
-| [SRC-1AE03B9EC3-L006574](../../agents/web_agent.py#L6574) | 6574 | `"    for source_key in cost_keys:"` | — |
-| [SRC-1AE03B9EC3-L006575](../../agents/web_agent.py#L6575) | 6575 | `"        value = usage.get(source_key)"` | — |
-| [SRC-1AE03B9EC3-L006576](../../agents/web_agent.py#L6576) | 6576 | `"        if isinstance(value, (int, float)) and not isinstance(value, bool):"` | — |
-| [SRC-1AE03B9EC3-L006577](../../agents/web_agent.py#L6577) | 6577 | `"            number = float(value)"` | — |
-| [SRC-1AE03B9EC3-L006578](../../agents/web_agent.py#L6578) | 6578 | `"            if number >= 0 and math.isfinite(number):"` | — |
-| [SRC-1AE03B9EC3-L006579](../../agents/web_agent.py#L6579) | 6579 | `"                normalized[\"cost_usd\"] = number"` | — |
-| [SRC-1AE03B9EC3-L006580](../../agents/web_agent.py#L6580) | 6580 | `"                break"` | — |
-| [SRC-1AE03B9EC3-L006581](../../agents/web_agent.py#L6581) | 6581 | `"    return normalized or None"` | — |
-| [SRC-1AE03B9EC3-L006582](../../agents/web_agent.py#L6582) | 6582 | `""` | — |
-| [SRC-1AE03B9EC3-L006583](../../agents/web_agent.py#L6583) | 6583 | `""` | — |
-| [SRC-1AE03B9EC3-L006584](../../agents/web_agent.py#L6584) | 6584 | `"def _model_usage_record("` | — |
-| [SRC-1AE03B9EC3-L006585](../../agents/web_agent.py#L6585) | 6585 | `"    requested_model: str,"` | — |
-| [SRC-1AE03B9EC3-L006586](../../agents/web_agent.py#L6586) | 6586 | `"    candidate_model: str,"` | — |
-| [SRC-1AE03B9EC3-L006587](../../agents/web_agent.py#L6587) | 6587 | `"    response_data: dict[str, Any],"` | — |
-| [SRC-1AE03B9EC3-L006588](../../agents/web_agent.py#L6588) | 6588 | `"    provider_base_url: str,"` | — |
-| [SRC-1AE03B9EC3-L006589](../../agents/web_agent.py#L6589) | 6589 | `") -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L006590](../../agents/web_agent.py#L6590) | 6590 | `"    \"\"\"Return only allowlisted provider usage metadata, never raw prompts/responses.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L006572](../../agents/web_agent.py#L6572) | 6572 | `"    provider_host = \"\""` | — |
+| [SRC-1AE03B9EC3-L006573](../../agents/web_agent.py#L6573) | 6573 | `"    if isinstance(provider_base_url, str):"` | — |
+| [SRC-1AE03B9EC3-L006574](../../agents/web_agent.py#L6574) | 6574 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L006575](../../agents/web_agent.py#L6575) | 6575 | `"            provider_host = (urllib.parse.urlsplit(provider_base_url.strip()).hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-1AE03B9EC3-L006576](../../agents/web_agent.py#L6576) | 6576 | `"        except ValueError:"` | — |
+| [SRC-1AE03B9EC3-L006577](../../agents/web_agent.py#L6577) | 6577 | `"            provider_host = \"\""` | — |
+| [SRC-1AE03B9EC3-L006578](../../agents/web_agent.py#L6578) | 6578 | `"    is_openrouter = ("` | — |
+| [SRC-1AE03B9EC3-L006579](../../agents/web_agent.py#L6579) | 6579 | `"        provider_host == \"openrouter.ai\""` | — |
+| [SRC-1AE03B9EC3-L006580](../../agents/web_agent.py#L6580) | 6580 | `"        or provider_host.endswith(\".openrouter.ai\")"` | — |
+| [SRC-1AE03B9EC3-L006581](../../agents/web_agent.py#L6581) | 6581 | `"    )"` | — |
+| [SRC-1AE03B9EC3-L006582](../../agents/web_agent.py#L6582) | 6582 | `"    if is_openrouter:"` | — |
+| [SRC-1AE03B9EC3-L006583](../../agents/web_agent.py#L6583) | 6583 | `"        cost_keys.extend([\"cost\", \"total_cost\"])"` | — |
+| [SRC-1AE03B9EC3-L006584](../../agents/web_agent.py#L6584) | 6584 | `"    for source_key in cost_keys:"` | — |
+| [SRC-1AE03B9EC3-L006585](../../agents/web_agent.py#L6585) | 6585 | `"        value = usage.get(source_key)"` | — |
+| [SRC-1AE03B9EC3-L006586](../../agents/web_agent.py#L6586) | 6586 | `"        if isinstance(value, (int, float)) and not isinstance(value, bool):"` | — |
+| [SRC-1AE03B9EC3-L006587](../../agents/web_agent.py#L6587) | 6587 | `"            number = float(value)"` | — |
+| [SRC-1AE03B9EC3-L006588](../../agents/web_agent.py#L6588) | 6588 | `"            if number >= 0 and math.isfinite(number):"` | — |
+| [SRC-1AE03B9EC3-L006589](../../agents/web_agent.py#L6589) | 6589 | `"                normalized[\"cost_usd\"] = number"` | — |
+| [SRC-1AE03B9EC3-L006590](../../agents/web_agent.py#L6590) | 6590 | `"                break"` | — |
