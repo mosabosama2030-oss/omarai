@@ -28,7 +28,7 @@ def _run(*, build_sha: str, results: list[dict]) -> dict:
     }
 
 
-def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None) -> dict:
+def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None, request_cost: float | None = None) -> dict:
     row = {
         "case_id": case_id,
         "prompt": "Test question " + case_id,
@@ -38,9 +38,12 @@ def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None) 
         "tool_status": tool_status,
         "search_outcome": "attempted_with_usable_sources" if tool_status == "SUCCESS_WITH_USABLE_RESULTS" else "attempted_no_usable_sources",
         "provider_reported_model_cost_status": "COMPLETE_FOR_RETURNED_MODEL_CALLS" if cost is not None else "PROVIDER_COST_NOT_REPORTED",
+        "request_cost_status": "RECONCILED_COMPLETE_REQUEST_COST" if request_cost is not None else "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED",
     }
     if cost is not None:
         row["provider_reported_model_cost_usd"] = cost
+    if request_cost is not None:
+        row["request_cost_usd"] = request_cost
     return row
 
 
@@ -74,15 +77,15 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     baseline = _run(
         build_sha="a" * 40,
         results=[
-            _row("AQ-007", latency=100, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.01),
-            _row("AQ-008", latency=200, tool_status="ATTEMPTED_NO_USABLE_RESULTS", cost=None),
+            _row("AQ-007", latency=100, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.01, request_cost=0.012),
+            _row("AQ-008", latency=200, tool_status="ATTEMPTED_NO_USABLE_RESULTS", cost=None, request_cost=0.015),
         ],
     )
     candidate = _run(
         build_sha="b" * 40,
         results=[
-            _row("AQ-007", latency=80, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.005),
-            _row("AQ-008", latency=120, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.002),
+            _row("AQ-007", latency=80, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.005, request_cost=0.007),
+            _row("AQ-008", latency=120, tool_status="SUCCESS_WITH_USABLE_RESULTS", cost=0.002, request_cost=0.009),
         ],
     )
     corpus = mod.load_json_object(CORPUS_PATH)
@@ -100,7 +103,9 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == 0.5
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
     assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.003
-    assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] is None
+    assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] == 0.027
+    assert result["runtime_deltas"]["complete_request_cost_usd"]["delta"] == -0.011
+    assert result["runtime_deltas"]["complete_request_cost_usd"]["status"] == "COMPARED"
     assert result["quality_comparison"]["metrics"]["factual_accuracy"]["baseline"] == pytest.approx(2 / 3, abs=0.0001)
     assert result["quality_comparison"]["metrics"]["factual_accuracy"]["candidate"] == 1.0
     assert result["quality_comparison"]["metrics"]["citation_support"]["delta"] == 0.5
