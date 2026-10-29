@@ -112,7 +112,7 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
         candidate_reviews=_reviews(correct=3, supported_citations=2),
     )
     assert result["acceptance_status"] == "COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES"
-    assert result["case_count"] == 2
+    assert result["case_count"] == 45
     assert result["baseline"]["metrics"]["latency_ms"]["p50"] == 150
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 120
     assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(1 / 45)
