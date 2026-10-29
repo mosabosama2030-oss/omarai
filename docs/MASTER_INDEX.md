@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **109**
+- ملفات المستودع في الجرد: **110**
 - ملفات Python المحللة: **66**
 - تعريفات Python المفهرسة: **1435**
 - تعريفات Python موثقة بوجود Docstring: **244**
 - تعريفات Python بلا Docstring: **897**
 - تعريفات لا ينطبق عليها Docstring: **294**
-- الرموز الساكنة الإضافية: **1772**
-- الأسطر النصية المفهرسة حرفيًا: **37631**
+- الرموز الساكنة الإضافية: **1782**
+- الأسطر النصية المفهرسة حرفيًا: **37865**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -96,6 +96,7 @@
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-D4963BDA6A | اختبارات | [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L1) | JSON | 6454 | 234 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2635 | 70 | جرد الملف + AST Python |
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
 | FILE-6A7519AC10 | اختبارات | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L1) | Python | 6543 | 148 | جرد الملف + AST Python |
@@ -2853,6 +2854,16 @@
 | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1171) | مفتاح JSON | review_service | 1171 | [SRC-90FAA34ADE-L001171](../tests/fixtures/answer_quality_cases.json#L1171) |
 | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1172) | مفتاح JSON | answer_model | 1172 | [SRC-90FAA34ADE-L001172](../tests/fixtures/answer_quality_cases.json#L1172) |
 | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1198) | مفتاح JSON | provided_artifact | 1198 | [SRC-90FAA34ADE-L001198](../tests/fixtures/answer_quality_cases.json#L1198) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L2) | مفتاح JSON | schema_version | 2 | [SRC-D4963BDA6A-L000002](../tests/fixtures/answer_quality_reviews_template.json#L2) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L3) | مفتاح JSON | benchmark_id | 3 | [SRC-D4963BDA6A-L000003](../tests/fixtures/answer_quality_reviews_template.json#L3) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L4) | مفتاح JSON | benchmark_version | 4 | [SRC-D4963BDA6A-L000004](../tests/fixtures/answer_quality_reviews_template.json#L4) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L5) | مفتاح JSON | template_only | 5 | [SRC-D4963BDA6A-L000005](../tests/fixtures/answer_quality_reviews_template.json#L5) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 6 | [SRC-D4963BDA6A-L000006](../tests/fixtures/answer_quality_reviews_template.json#L6) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L6) | مفتاح JSON | warning | 6 | [SRC-D4963BDA6A-L000006](../tests/fixtures/answer_quality_reviews_template.json#L6) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L7) | مفتاح JSON | reviews | 7 | [SRC-D4963BDA6A-L000007](../tests/fixtures/answer_quality_reviews_template.json#L7) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L9) | مفتاح JSON | case_id | 9 | [SRC-D4963BDA6A-L000009](../tests/fixtures/answer_quality_reviews_template.json#L9) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L10) | مفتاح JSON | status | 10 | [SRC-D4963BDA6A-L000010](../tests/fixtures/answer_quality_reviews_template.json#L10) |
+| [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L11) | مفتاح JSON | notes | 11 | [SRC-D4963BDA6A-L000011](../tests/fixtures/answer_quality_reviews_template.json#L11) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 10 | [SRC-6A7519AC10-L000010](../tests/test_answer_quality_comparison.py#L10) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUCCESS_WITH_USABLE_RESULTS | 39 | [SRC-6A7519AC10-L000039](../tests/test_answer_quality_comparison.py#L39) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPLETE_FOR_RETURNED_MODEL_CALLS | 40 | [SRC-6A7519AC10-L000040](../tests/test_answer_quality_comparison.py#L40) |
