@@ -127,3 +127,49 @@ python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_r
 2. حدّث `case_count`.
 3. شغّل pytest للذخيرة والأداة.
 4. لا تُدرج نتائج PASS/FAIL داخل JSON.
+
+---
+
+## تحديث 29 أكتوبر 2026 — قياسات التشغيل ومقارنة خط الأساس
+
+**حالة الإثبات عند كتابة هذا التحديث:** أداة المقارنة والقياسات أضيفت على فرع عمل، لكن CI لم ينفذ بعد، ولم تُجمع استجابات تشغيل جديدة، ولم توجد في المستودع ملفات نتيجة حيّة سابقة يمكن اعتمادها كخط أساس تجريبي. مرجع المصدر قبل إضافة القياسات هو ef69ca5f8dbcdf01d798e254f737aa51776b4bb1؛ هذا **مرجع نسخة مصدر فقط وليس نتيجة أداء**. لذلك لا توجد نسبة تحسن فعلية مسجلة بعد.
+
+### المقاييس وتعريف المقامات
+
+- **Factual accuracy:** عدد الحقائق التي اعتمد المراجع صحتها / كل الحقائق التي راجعها. تحسب من correctness في ملف المراجعات.
+- **Retrieval precision:** النتائج ذات الصلة التي استُرجعت / كل النتائج المسترجعة في مجموعة مرشحين محددة.
+- **Retrieval recall:** النتائج ذات الصلة التي استُرجعت / إجمالي النتائج ذات الصلة المتاحة في مجموعة المقارنة نفسها. يجب أن يطبق المراجع مجموعة المرشحين وتعريف الصلة نفسه قبل/بعد.
+- **Citation support:** الاستشهادات التي تسند الادعاء المرتبط بها / كل الاستشهادات التي راجعها إنسان. وجود رابط صالح أو عنوان مصدر لا يعني أن المصدر يسند الادعاء.
+- **Faithfulness:** الادعاءات التي يسندها الدليل المراجع / كل الادعاءات التي جرى تدقيقها.
+- **Tool usable-result rate:** الحالات التي كانت استراتيجيتها المتوقعة web_search وانتهت بنتائج مقبولة / جميع حالات البحث المتوقعة. يسجل منفصلًا الفشل، والمحاولة بلا نتائج قابلة للاستخدام، والحالة المجهولة. HTTP 200 ليس نجاح أداة.
+- **Latency:** زمن طلب HTTP من أداة القياس، بالميلي ثانية، مع المتوسط وp50 وp95 والحد الأقصى. القياس تسلسلي، ولا يمثل اختبار حمل أو سعة متزامنة.
+- **Provider-reported model cost:** مجموع قيمة التكلفة التي يعيدها المزوّد صراحةً لكل استدعاء نموذج، عندما تكون العملة معروفة. لا يخترع سعرًا من عدد الرموز؛ لا تُفسر cost العامة كمبلغ USD إلا لمزوّد OpenRouter.
+- **Complete request cost:** تبقى null بحالة NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED إلى أن تتوفر تكاليف كل موصل مستخدم مع تعريف تعرفة موثق. مجموع تكلفة النموذج المبلّغ عنها ليس بالضرورة كامل تكلفة الطلب، ولا يعني غياب التكلفة المبلّغ عنها أن التكلفة صفر.
+
+المجموعة الحالية هي 45 حالة: 14 باللهجة المصرية ar-EG، و9 بالفصحى ar-MSA، و13 بالإنجليزية en، و9 مختلطة اللغة. تحتوي 20 فئة و30 حالة تتوقع البحث و6 محلية/نموذج دون بحث و5 استيضاح. هذا يثبت تغطية بنية المجموعة لا جودة أي إجابة.
+
+### توثيق تشغيل قبل/بعد
+
+1. اجمع تشغيل خط الأساس **من النسخة القديمة نفسها** قبل استبدالها، أو من بيئة يمكن إثبات أنها تشغل SHA القديم. لا تستخدم نتائج حديثة على أنها baseline قديم.
+2. اجمع تشغيل المرشح من النسخة الجديدة. مرّر SHA الكامل الذي أثبتته هوية البناء الفعلية؛ لا تستخدم SHA فرع Git الحالي إذا لم يكن هو ما يشغله المضيف.
+3. احتفظ بملفي JSON الخام. استخدم نفس benchmark_id وbenchmark_version ومعرفات الحالات والأسئلة، وقيّم الحالات نفسها قبل وبعد.
+4. أنشئ نسختين من tests/fixtures/answer_quality_reviews_template.json. ضع REVIEWED والدرجات فقط بعد مراجعة الإجابات المشاهدة فعلًا، باستخدام المقامات والتعريفات أعلاه. أبقِ غير المراجع NOT_TESTED بلا درجات.
+5. شغّل المقارنة. ترفض الأداة SHA مفقودًا أو مجموعة حالات/أسئلة مختلفة، وتمنع ادعاء اكتمال القبول عند فقد المراجعات البشرية.
+
+### أوامر إعادة التشغيل
+
+    # تحقق بنيوي دون شبكة أو تكلفة
+    python scripts/run_answer_quality_benchmark.py --mode validate --summary
+    python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py tests/test_answer_quality_comparison.py tests/test_answer_quality_provider_usage.py tests/test_answer_quality_review_scorecard.py -q
+
+    # على نسخة محلية تعمل فعلًا من checkout معلوم
+    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha "$(git rev-parse HEAD)" --out artifacts/answer-quality-candidate.json
+
+    # للنسخة المستضافة: مرّر SHA الذي تؤكده /api/health من البناء الجاري لا SHA المفترض
+    # لا تشغّل هذا الأمر قبل الموافقة على استخدام مزود البحث/النموذج واحتمال التكلفة.
+    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json
+
+    # قارِن ملفي تشغيل وملفي مراجعة بشرية بنفس الحالات
+    python scripts/compare_answer_quality_runs.py --baseline-run artifacts/answer-quality-baseline.json --candidate-run artifacts/answer-quality-candidate.json --baseline-reviews artifacts/reviews-baseline.json --candidate-reviews artifacts/reviews-candidate.json --out artifacts/answer-quality-comparison.json
+
+**حدود مهمة:** لا يحقن المشغّل fixtures في الخدمة الحية ولا يحوّل الإجابة إلى PASS آلي. المراجعة البشرية الحالية هي مصدر قياس صحة الحقائق ودعم الاستشهادات؛ أداة المقارنة لا تستنتج تحسن الجودة من لغة الإجابة أو طولها. ولأن ملفات التشغيل والمراجعة السابقة لم تكن متاحة عند بدء هذا العمل، يبقى **القبول التجريبي قبل/بعد NOT_RUN** حتى تُجمع هذه الملفات وتُراجع.
