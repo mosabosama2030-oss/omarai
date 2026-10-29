@@ -2426,6 +2426,24 @@ def test_lead_queries_strip_common_purchase_wording_and_misspelling():
     assert all("شرا شقه" not in query for query in queries)
 
 
+@pytest.mark.parametrize(
+    "question",
+    [
+        "ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس",
+        "ابحث عن ٥ عملاء يطلبون شقة في التجمع الخامس",
+        "ابحث عن 10 عميل يلب شقة في التجمع الخامس",
+    ],
+)
+def test_lead_queries_remove_requested_count_and_common_typos(question):
+    queries = WebAgent._lead_generation_queries(question)
+
+    assert any('"مطلوب شقه تمليك" في التجمع الخامس' == query for query in queries)
+    assert all("عملاش" not in query for query in queries)
+    assert all("عميل يريد" not in query for query in queries)
+    assert all("يلب شقه" not in query for query in queries)
+    assert all("شرا شقه" not in query for query in queries)
+
+
 def test_buyer_intent_signal_must_match_requested_entity_category():
     vehicle_question = "ابحث عن عميل يريد شراء سيارة"
     property_post = {
