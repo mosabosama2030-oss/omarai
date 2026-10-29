@@ -111,7 +111,6 @@ def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):
         }
 
     monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "a" * 40)
-    monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "a" * 40)
     monkeypatch.setattr(mod, "post_agent", fake_post)
     out = tmp_path / "results.json"
     rc = mod.main(
@@ -133,8 +132,6 @@ def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):
     assert payload["results"][0]["status"] == "NOT_TESTED"
     assert payload["results"][0]["evidence_fixture_injected"] is False
     assert payload["results"][0]["transport_ok"] is True
-    assert payload["build_sha"] == "a" * 40
-    assert payload["build_sha_verification"] == "confirmed_by_api_health"
     assert payload["build_sha"] == "a" * 40
     assert payload["build_sha_verification"] == "confirmed_by_api_health"
 
