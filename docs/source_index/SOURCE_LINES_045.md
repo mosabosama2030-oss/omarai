@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001109 إلى SRC-F725E90B2A-L001908
+- النطاق: SRC-F725E90B2A-L001057 إلى SRC-F725E90B2A-L001856
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001057](../../tests/test_web_agent.py#L1057) | 1057 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001058](../../tests/test_web_agent.py#L1058) | 1058 | `"    monkeypatch.delenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", raising=False)"` | — |
+| [SRC-F725E90B2A-L001059](../../tests/test_web_agent.py#L1059) | 1059 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001060](../../tests/test_web_agent.py#L1060) | 1060 | `"    assert agent.openrouter_web_search_enabled is False"` | — |
+| [SRC-F725E90B2A-L001061](../../tests/test_web_agent.py#L1061) | 1061 | `""` | — |
+| [SRC-F725E90B2A-L001062](../../tests/test_web_agent.py#L1062) | 1062 | `""` | — |
+| [SRC-F725E90B2A-L001063](../../tests/test_web_agent.py#L1063) | 1063 | `""` | — |
+| [SRC-F725E90B2A-L001064](../../tests/test_web_agent.py#L1064) | 1064 | `"def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():"` | — |
+| [SRC-F725E90B2A-L001065](../../tests/test_web_agent.py#L1065) | 1065 | `"    normalized = _normalize_search_query(\"إِنَّ أَسْعَارَ أُسْتُرَالِيَا\")"` | — |
+| [SRC-F725E90B2A-L001066](../../tests/test_web_agent.py#L1066) | 1066 | `"    assert \"إ\" not in normalized"` | — |
+| [SRC-F725E90B2A-L001067](../../tests/test_web_agent.py#L1067) | 1067 | `"    assert \"أ\" not in normalized"` | — |
+| [SRC-F725E90B2A-L001068](../../tests/test_web_agent.py#L1068) | 1068 | `"    assert \"ا\" in normalized"` | — |
+| [SRC-F725E90B2A-L001069](../../tests/test_web_agent.py#L1069) | 1069 | `"    assert normalized == \"ان اسعار استراليا\""` | — |
+| [SRC-F725E90B2A-L001070](../../tests/test_web_agent.py#L1070) | 1070 | `""` | — |
+| [SRC-F725E90B2A-L001071](../../tests/test_web_agent.py#L1071) | 1071 | `""` | — |
+| [SRC-F725E90B2A-L001072](../../tests/test_web_agent.py#L1072) | 1072 | `"def test_relevance_filter_rejects_translation_and_sports_noise():"` | — |
+| [SRC-F725E90B2A-L001073](../../tests/test_web_agent.py#L1073) | 1073 | `"    query = \"قارن Railway و Render لاستضافة Python\""` | — |
+| [SRC-F725E90B2A-L001074](../../tests/test_web_agent.py#L1074) | 1074 | `"    assert _relevance_ratio(query, \"Google Translate: error in translation\") < 0.20"` | — |
+| [SRC-F725E90B2A-L001075](../../tests/test_web_agent.py#L1075) | 1075 | `"    assert _relevance_ratio("` | — |
+| [SRC-F725E90B2A-L001076](../../tests/test_web_agent.py#L1076) | 1076 | `"        \"أول شركة ناشئة في صعيد مصر عام 2019\","` | — |
+| [SRC-F725E90B2A-L001077](../../tests/test_web_agent.py#L1077) | 1077 | `"        \"نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم\","` | — |
+| [SRC-F725E90B2A-L001078](../../tests/test_web_agent.py#L1078) | 1078 | `"    ) < 0.20"` | — |
+| [SRC-F725E90B2A-L001079](../../tests/test_web_agent.py#L1079) | 1079 | `"    assert _relevance_ratio("` | — |
+| [SRC-F725E90B2A-L001080](../../tests/test_web_agent.py#L1080) | 1080 | `"        query, \"Railway vs Render for Python app hosting comparison\""` | — |
+| [SRC-F725E90B2A-L001081](../../tests/test_web_agent.py#L1081) | 1081 | `"    ) >= 0.20"` | — |
+| [SRC-F725E90B2A-L001082](../../tests/test_web_agent.py#L1082) | 1082 | `""` | — |
+| [SRC-F725E90B2A-L001083](../../tests/test_web_agent.py#L1083) | 1083 | `""` | — |
+| [SRC-F725E90B2A-L001084](../../tests/test_web_agent.py#L1084) | 1084 | `"def test_search_provider_failure_isolated_and_logged(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001085](../../tests/test_web_agent.py#L1085) | 1085 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001086](../../tests/test_web_agent.py#L1086) | 1086 | `""` | — |
+| [SRC-F725E90B2A-L001087](../../tests/test_web_agent.py#L1087) | 1087 | `"    def broken(_query):"` | — |
+| [SRC-F725E90B2A-L001088](../../tests/test_web_agent.py#L1088) | 1088 | `"        raise RuntimeError(\"upstream HTTP 503\")"` | — |
+| [SRC-F725E90B2A-L001089](../../tests/test_web_agent.py#L1089) | 1089 | `""` | — |
+| [SRC-F725E90B2A-L001090](../../tests/test_web_agent.py#L1090) | 1090 | `"    def working(_query):"` | — |
+| [SRC-F725E90B2A-L001091](../../tests/test_web_agent.py#L1091) | 1091 | `"        return [{"` | — |
+| [SRC-F725E90B2A-L001092](../../tests/test_web_agent.py#L1092) | 1092 | `"            \"title\": \"Railway and Render Python hosting\","` | — |
+| [SRC-F725E90B2A-L001093](../../tests/test_web_agent.py#L1093) | 1093 | `"            \"url\": \"https://example.net/hosting\","` | — |
+| [SRC-F725E90B2A-L001094](../../tests/test_web_agent.py#L1094) | 1094 | `"            \"snippet\": \"Comparison of Railway and Render for Python hosting\","` | — |
+| [SRC-F725E90B2A-L001095](../../tests/test_web_agent.py#L1095) | 1095 | `"            \"provider\": \"bing_rss\","` | — |
+| [SRC-F725E90B2A-L001096](../../tests/test_web_agent.py#L1096) | 1096 | `"            \"provider_rank\": 1,"` | — |
+| [SRC-F725E90B2A-L001097](../../tests/test_web_agent.py#L1097) | 1097 | `"        }]"` | — |
+| [SRC-F725E90B2A-L001098](../../tests/test_web_agent.py#L1098) | 1098 | `""` | — |
+| [SRC-F725E90B2A-L001099](../../tests/test_web_agent.py#L1099) | 1099 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", broken)"` | — |
+| [SRC-F725E90B2A-L001100](../../tests/test_web_agent.py#L1100) | 1100 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", working)"` | — |
+| [SRC-F725E90B2A-L001101](../../tests/test_web_agent.py#L1101) | 1101 | `"    results = agent._search_web(\"قارن Railway و Render لاستضافة Python\")"` | — |
+| [SRC-F725E90B2A-L001102](../../tests/test_web_agent.py#L1102) | 1102 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L001103](../../tests/test_web_agent.py#L1103) | 1103 | `"    diagnostics = agent._provider_diagnostics"` | — |
+| [SRC-F725E90B2A-L001104](../../tests/test_web_agent.py#L1104) | 1104 | `"    assert any("` | — |
+| [SRC-F725E90B2A-L001105](../../tests/test_web_agent.py#L1105) | 1105 | `"        row[\"provider\"] == \"duckduckgo_html\""` | — |
+| [SRC-F725E90B2A-L001106](../../tests/test_web_agent.py#L1106) | 1106 | `"        and row[\"status\"] == \"http_error\""` | — |
+| [SRC-F725E90B2A-L001107](../../tests/test_web_agent.py#L1107) | 1107 | `"        and \"HTTP 503\" in row.get(\"error\", \"\")"` | — |
+| [SRC-F725E90B2A-L001108](../../tests/test_web_agent.py#L1108) | 1108 | `"        for row in diagnostics"` | — |
 | [SRC-F725E90B2A-L001109](../../tests/test_web_agent.py#L1109) | 1109 | `"    )"` | — |
 | [SRC-F725E90B2A-L001110](../../tests/test_web_agent.py#L1110) | 1110 | `"    assert any("` | — |
 | [SRC-F725E90B2A-L001111](../../tests/test_web_agent.py#L1111) | 1111 | `"        row[\"provider\"] == \"bing_rss\" and row[\"status\"] == \"ok\""` | — |
@@ -764,55 +816,3 @@
 | [SRC-F725E90B2A-L001854](../../tests/test_web_agent.py#L1854) | 1854 | `"    english_with_period = WebAgent._question_coverage_targets("` | — |
 | [SRC-F725E90B2A-L001855](../../tests/test_web_agent.py#L1855) | 1855 | `"        \"Compare two services in terms of price, privacy and reliability.\""` | — |
 | [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"    )"` | — |
-| [SRC-F725E90B2A-L001857](../../tests/test_web_agent.py#L1857) | 1857 | `"    assert english_with_period == [\"price\", \"privacy\", \"reliability\"]"` | — |
-| [SRC-F725E90B2A-L001858](../../tests/test_web_agent.py#L1858) | 1858 | `""` | — |
-| [SRC-F725E90B2A-L001859](../../tests/test_web_agent.py#L1859) | 1859 | `""` | — |
-| [SRC-F725E90B2A-L001860](../../tests/test_web_agent.py#L1860) | 1860 | `"def test_question_coverage_targets_do_not_invent_parts_for_simple_question():"` | — |
-| [SRC-F725E90B2A-L001861](../../tests/test_web_agent.py#L1861) | 1861 | `"    assert WebAgent._question_coverage_targets(\"ما الذي يقوله المصدر؟\") == []"` | — |
-| [SRC-F725E90B2A-L001862](../../tests/test_web_agent.py#L1862) | 1862 | `""` | — |
-| [SRC-F725E90B2A-L001863](../../tests/test_web_agent.py#L1863) | 1863 | `""` | — |
-| [SRC-F725E90B2A-L001864](../../tests/test_web_agent.py#L1864) | 1864 | `"def test_generator_includes_extracted_targets_as_a_non_authoritative_checklist(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001865](../../tests/test_web_agent.py#L1865) | 1865 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001866](../../tests/test_web_agent.py#L1866) | 1866 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001867](../../tests/test_web_agent.py#L1867) | 1867 | `""` | — |
-| [SRC-F725E90B2A-L001868](../../tests/test_web_agent.py#L1868) | 1868 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001869](../../tests/test_web_agent.py#L1869) | 1869 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001870](../../tests/test_web_agent.py#L1870) | 1870 | `"        return \"مقارنة مختصرة.\""` | — |
-| [SRC-F725E90B2A-L001871](../../tests/test_web_agent.py#L1871) | 1871 | `""` | — |
-| [SRC-F725E90B2A-L001872](../../tests/test_web_agent.py#L1872) | 1872 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001873](../../tests/test_web_agent.py#L1873) | 1873 | `"    result = agent._generate("` | — |
-| [SRC-F725E90B2A-L001874](../../tests/test_web_agent.py#L1874) | 1874 | `"        question=\"قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية\","` | — |
-| [SRC-F725E90B2A-L001875](../../tests/test_web_agent.py#L1875) | 1875 | `"        history=[],"` | — |
-| [SRC-F725E90B2A-L001876](../../tests/test_web_agent.py#L1876) | 1876 | `"        sources=[sample_source(0), sample_source(1)],"` | — |
-| [SRC-F725E90B2A-L001877](../../tests/test_web_agent.py#L1877) | 1877 | `"        search_warning=None,"` | — |
-| [SRC-F725E90B2A-L001878](../../tests/test_web_agent.py#L1878) | 1878 | `"        research_plan={\"depth\": \"deep\", \"queries\": [\"مقارنة الخدمتين\"]},"` | — |
-| [SRC-F725E90B2A-L001879](../../tests/test_web_agent.py#L1879) | 1879 | `"        search_report={},"` | — |
-| [SRC-F725E90B2A-L001880](../../tests/test_web_agent.py#L1880) | 1880 | `"    )"` | — |
-| [SRC-F725E90B2A-L001881](../../tests/test_web_agent.py#L1881) | 1881 | `""` | — |
-| [SRC-F725E90B2A-L001882](../../tests/test_web_agent.py#L1882) | 1882 | `"    user_content = \"\\n\".join(m[\"content\"] for m in captured[\"messages\"] if m[\"role\"] == \"user\")"` | — |
-| [SRC-F725E90B2A-L001883](../../tests/test_web_agent.py#L1883) | 1883 | `"    assert result == \"مقارنة مختصرة.\""` | — |
-| [SRC-F725E90B2A-L001884](../../tests/test_web_agent.py#L1884) | 1884 | `"    assert \"قائمة محاور مستخرجة آليًا\" in user_content"` | — |
-| [SRC-F725E90B2A-L001885](../../tests/test_web_agent.py#L1885) | 1885 | `"    for target in (\"السعر\", \"الخصوصية\", \"الاعتمادية\"):"` | — |
-| [SRC-F725E90B2A-L001886](../../tests/test_web_agent.py#L1886) | 1886 | `"        assert target in user_content"` | — |
-| [SRC-F725E90B2A-L001887](../../tests/test_web_agent.py#L1887) | 1887 | `""` | — |
-| [SRC-F725E90B2A-L001888](../../tests/test_web_agent.py#L1888) | 1888 | `""` | — |
-| [SRC-F725E90B2A-L001889](../../tests/test_web_agent.py#L1889) | 1889 | `"def test_reviewer_checks_coverage_targets_without_claiming_independent_verification(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001890](../../tests/test_web_agent.py#L1890) | 1890 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001891](../../tests/test_web_agent.py#L1891) | 1891 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001892](../../tests/test_web_agent.py#L1892) | 1892 | `""` | — |
-| [SRC-F725E90B2A-L001893](../../tests/test_web_agent.py#L1893) | 1893 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001894](../../tests/test_web_agent.py#L1894) | 1894 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001895](../../tests/test_web_agent.py#L1895) | 1895 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>تمت مراجعة المسودة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-F725E90B2A-L001896](../../tests/test_web_agent.py#L1896) | 1896 | `""` | — |
-| [SRC-F725E90B2A-L001897](../../tests/test_web_agent.py#L1897) | 1897 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `"    result = agent._review_answer("` | — |
-| [SRC-F725E90B2A-L001899](../../tests/test_web_agent.py#L1899) | 1899 | `"        question=\"قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية\","` | — |
-| [SRC-F725E90B2A-L001900](../../tests/test_web_agent.py#L1900) | 1900 | `"        answer=\"السعر مناسب [المصدر 1].\","` | — |
-| [SRC-F725E90B2A-L001901](../../tests/test_web_agent.py#L1901) | 1901 | `"        sources=[sample_source(0)],"` | — |
-| [SRC-F725E90B2A-L001902](../../tests/test_web_agent.py#L1902) | 1902 | `"    )"` | — |
-| [SRC-F725E90B2A-L001903](../../tests/test_web_agent.py#L1903) | 1903 | `"    system_content = \"\\n\".join(m[\"content\"] for m in captured[\"messages\"] if m[\"role\"] == \"system\")"` | — |
-| [SRC-F725E90B2A-L001904](../../tests/test_web_agent.py#L1904) | 1904 | `"    user_content = \"\\n\".join(m[\"content\"] for m in captured[\"messages\"] if m[\"role\"] == \"user\")"` | — |
-| [SRC-F725E90B2A-L001905](../../tests/test_web_agent.py#L1905) | 1905 | `"    assert result == \"تمت مراجعة المسودة.\""` | — |
-| [SRC-F725E90B2A-L001906](../../tests/test_web_agent.py#L1906) | 1906 | `"    assert \"اكتمال الإجابة مقابل\" in system_content"` | — |
-| [SRC-F725E90B2A-L001907](../../tests/test_web_agent.py#L1907) | 1907 | `"    assert \"الاعتمادية\" in user_content"` | — |
-| [SRC-F725E90B2A-L001908](../../tests/test_web_agent.py#L1908) | 1908 | `"    assert \"قائمة محاور مستخرجة آليًا\" in user_content"` | — |

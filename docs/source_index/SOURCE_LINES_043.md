@@ -4,9 +4,22 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000049 إلى SRC-F725E90B2A-L000308
+- النطاق: SRC-1C0D3D1206-L000102 إلى SRC-F725E90B2A-L000256
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1C0D3D1206-L000102](../../tests/test_sqlite_backup_restore.py#L102) | 102 | `""` | — |
+| [SRC-1C0D3D1206-L000103](../../tests/test_sqlite_backup_restore.py#L103) | 103 | `"    assert destination_link.is_symlink()"` | — |
+| [SRC-1C0D3D1206-L000104](../../tests/test_sqlite_backup_restore.py#L104) | 104 | `"    assert not target_path.exists()"` | — |
+| [SRC-1C0D3D1206-L000105](../../tests/test_sqlite_backup_restore.py#L105) | 105 | `""` | — |
 ## اختبارات
 
 ### FILE-AFEDC2645A — [tests/test_task_understanding.py](../../tests/test_task_understanding.py#L1)
@@ -16,6 +29,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000001](../../tests/test_task_understanding.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-AFEDC2645A-L000002](../../tests/test_task_understanding.py#L2) | 2 | `""` | — |
+| [SRC-AFEDC2645A-L000003](../../tests/test_task_understanding.py#L3) | 3 | `"import pytest"` | — |
+| [SRC-AFEDC2645A-L000004](../../tests/test_task_understanding.py#L4) | 4 | `""` | — |
+| [SRC-AFEDC2645A-L000005](../../tests/test_task_understanding.py#L5) | 5 | `"from agents.task_understanding import build_query_strategy_matrix, build_task_spec"` | — |
+| [SRC-AFEDC2645A-L000006](../../tests/test_task_understanding.py#L6) | 6 | `""` | — |
+| [SRC-AFEDC2645A-L000007](../../tests/test_task_understanding.py#L7) | 7 | `""` | — |
+| [SRC-AFEDC2645A-L000008](../../tests/test_task_understanding.py#L8) | 8 | `"@pytest.mark.parametrize("` | — |
+| [SRC-AFEDC2645A-L000009](../../tests/test_task_understanding.py#L9) | 9 | `"    (\"question\", \"family\"),"` | — |
+| [SRC-AFEDC2645A-L000010](../../tests/test_task_understanding.py#L10) | 10 | `"    ["` | — |
+| [SRC-AFEDC2645A-L000011](../../tests/test_task_understanding.py#L11) | 11 | `"        (\"ابحث عن الموقع الرسمي لوزارة الاتصالات في مصر\", \"official_site_lookup\"),"` | — |
+| [SRC-AFEDC2645A-L000012](../../tests/test_task_understanding.py#L12) | 12 | `"        (\"مواعيد عمل مكتب الجوازات اليوم في العباسية\", \"current_information\"),"` | — |
+| [SRC-AFEDC2645A-L000013](../../tests/test_task_understanding.py#L13) | 13 | `"        (\"قارن نيسان صني 2022 وهيونداي أكسنت من حيث السعر والصيانة\", \"compare\"),"` | — |
+| [SRC-AFEDC2645A-L000014](../../tests/test_task_understanding.py#L14) | 14 | `"        (\"عايز تجارب ملاك BYD Dolphin في مصر\", \"social_opinions\"),"` | — |
+| [SRC-AFEDC2645A-L000015](../../tests/test_task_understanding.py#L15) | 15 | `"        (\"ازاي أصلح خطأ الشبكة في لوحة إنذار الحريق؟\", \"troubleshoot\"),"` | — |
+| [SRC-AFEDC2645A-L000016](../../tests/test_task_understanding.py#L16) | 16 | `"        (\"اشرح خطوات صيانة حساس الدخان\", \"how_to\"),"` | — |
+| [SRC-AFEDC2645A-L000017](../../tests/test_task_understanding.py#L17) | 17 | `"        (\"لخص الصفحة https://example.com/article\", \"summarize\"),"` | — |
+| [SRC-AFEDC2645A-L000018](../../tests/test_task_understanding.py#L18) | 18 | `"        (\"ابحث عن مشترين يريدون شراء شقة في القاهرة\", \"lead_generation\"),"` | — |
+| [SRC-AFEDC2645A-L000019](../../tests/test_task_understanding.py#L19) | 19 | `"        (\"رشح لي أفضل سيارة بميزانية أقل من 500000 جنيه\", \"recommendation\"),"` | — |
+| [SRC-AFEDC2645A-L000020](../../tests/test_task_understanding.py#L20) | 20 | `"        (\"ما معنى نظام الإنذار المعنون؟\", \"explain_or_define\"),"` | — |
+| [SRC-AFEDC2645A-L000021](../../tests/test_task_understanding.py#L21) | 21 | `"    ],"` | — |
+| [SRC-AFEDC2645A-L000022](../../tests/test_task_understanding.py#L22) | 22 | `")"` | — |
+| [SRC-AFEDC2645A-L000023](../../tests/test_task_understanding.py#L23) | 23 | `"def test_task_family_covers_diverse_natural_language_patterns(question, family):"` | — |
+| [SRC-AFEDC2645A-L000024](../../tests/test_task_understanding.py#L24) | 24 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
+| [SRC-AFEDC2645A-L000025](../../tests/test_task_understanding.py#L25) | 25 | `"    assert spec[\"task_family\"] == family"` | — |
+| [SRC-AFEDC2645A-L000026](../../tests/test_task_understanding.py#L26) | 26 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
+| [SRC-AFEDC2645A-L000027](../../tests/test_task_understanding.py#L27) | 27 | `"    assert spec[\"decision_checks\"]"` | — |
+| [SRC-AFEDC2645A-L000028](../../tests/test_task_understanding.py#L28) | 28 | `""` | — |
+| [SRC-AFEDC2645A-L000029](../../tests/test_task_understanding.py#L29) | 29 | `""` | — |
+| [SRC-AFEDC2645A-L000030](../../tests/test_task_understanding.py#L30) | 30 | `"def test_task_spec_preserves_only_explicit_constraints():"` | — |
+| [SRC-AFEDC2645A-L000031](../../tests/test_task_understanding.py#L31) | 31 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000032](../../tests/test_task_understanding.py#L32) | 32 | `"        \"قارن نيسان صني 2022 مع BYD Dolphin في مصر، بميزانية أقل من 400 ألف جنيه\","` | — |
+| [SRC-AFEDC2645A-L000033](../../tests/test_task_understanding.py#L33) | 33 | `"        mode=\"deep\","` | — |
+| [SRC-AFEDC2645A-L000034](../../tests/test_task_understanding.py#L34) | 34 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000035](../../tests/test_task_understanding.py#L35) | 35 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000036](../../tests/test_task_understanding.py#L36) | 36 | `"    constraints = spec[\"constraints\"]"` | — |
+| [SRC-AFEDC2645A-L000037](../../tests/test_task_understanding.py#L37) | 37 | `"    assert \"2022\" in constraints[\"explicit_years\"]"` | — |
+| [SRC-AFEDC2645A-L000038](../../tests/test_task_understanding.py#L38) | 38 | `"    assert \"مصر\" in constraints[\"explicit_locations\"]"` | — |
+| [SRC-AFEDC2645A-L000039](../../tests/test_task_understanding.py#L39) | 39 | `"    assert constraints[\"explicit_budgets\"]"` | — |
+| [SRC-AFEDC2645A-L000040](../../tests/test_task_understanding.py#L40) | 40 | `"    assert constraints[\"language_profile\"] in {\"ar\", \"mixed\"}"` | — |
+| [SRC-AFEDC2645A-L000041](../../tests/test_task_understanding.py#L41) | 41 | `""` | — |
+| [SRC-AFEDC2645A-L000042](../../tests/test_task_understanding.py#L42) | 42 | `""` | — |
+| [SRC-AFEDC2645A-L000043](../../tests/test_task_understanding.py#L43) | 43 | `"def test_latest_mode_requires_current_evidence_for_stateful_facts():"` | — |
+| [SRC-AFEDC2645A-L000044](../../tests/test_task_understanding.py#L44) | 44 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000045](../../tests/test_task_understanding.py#L45) | 45 | `"        \"مواعيد عمل مكتب الجوازات اليوم\","` | — |
+| [SRC-AFEDC2645A-L000046](../../tests/test_task_understanding.py#L46) | 46 | `"        mode=\"latest\","` | — |
+| [SRC-AFEDC2645A-L000047](../../tests/test_task_understanding.py#L47) | 47 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000048](../../tests/test_task_understanding.py#L48) | 48 | `"    )"` | — |
 | [SRC-AFEDC2645A-L000049](../../tests/test_task_understanding.py#L49) | 49 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
 | [SRC-AFEDC2645A-L000050](../../tests/test_task_understanding.py#L50) | 50 | `"    assert \"page_text_successfully_read\" in spec[\"evidence_requirements\"]"` | — |
 | [SRC-AFEDC2645A-L000051](../../tests/test_task_understanding.py#L51) | 51 | `"    assert \"date_check\" in spec[\"query_strategies\"]"` | — |
@@ -782,55 +843,3 @@
 | [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"        def __init__(self, text=\"\", data=None):"` | — |
 | [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"            self.text = text"` | — |
 | [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"            self.content = text.encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"            self._data = data or {}"` | — |
-| [SRC-F725E90B2A-L000258](../../tests/test_web_agent.py#L258) | 258 | `""` | — |
-| [SRC-F725E90B2A-L000259](../../tests/test_web_agent.py#L259) | 259 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000260](../../tests/test_web_agent.py#L260) | 260 | `"            return self._data"` | — |
-| [SRC-F725E90B2A-L000261](../../tests/test_web_agent.py#L261) | 261 | `""` | — |
-| [SRC-F725E90B2A-L000262](../../tests/test_web_agent.py#L262) | 262 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000263](../../tests/test_web_agent.py#L263) | 263 | `"        if \"reddit.com\" in url:"` | — |
-| [SRC-F725E90B2A-L000264](../../tests/test_web_agent.py#L264) | 264 | `"            return FakeResponse(reddit_xml)"` | — |
-| [SRC-F725E90B2A-L000265](../../tests/test_web_agent.py#L265) | 265 | `"        if \"bsky.app\" in url or \"public.api.bsky.app\" in url:"` | — |
-| [SRC-F725E90B2A-L000266](../../tests/test_web_agent.py#L266) | 266 | `"            return FakeResponse(data={"` | — |
-| [SRC-F725E90B2A-L000267](../../tests/test_web_agent.py#L267) | 267 | `"                \"posts\": [{"` | — |
-| [SRC-F725E90B2A-L000268](../../tests/test_web_agent.py#L268) | 268 | `"                    \"post\": {"` | — |
-| [SRC-F725E90B2A-L000269](../../tests/test_web_agent.py#L269) | 269 | `"                        \"uri\": \"at://did:plc:example/app.bsky.feed.post/rkey123\","` | — |
-| [SRC-F725E90B2A-L000270](../../tests/test_web_agent.py#L270) | 270 | `"                        \"indexedAt\": \"2026-10-12T10:00:00Z\","` | — |
-| [SRC-F725E90B2A-L000271](../../tests/test_web_agent.py#L271) | 271 | `"                        \"record\": {\"text\": \"استخدمت السيارة شهرًا\"},"` | — |
-| [SRC-F725E90B2A-L000272](../../tests/test_web_agent.py#L272) | 272 | `"                        \"author\": {\"handle\": \"driver.bsky.social\", \"displayName\": \"Driver\"},"` | — |
-| [SRC-F725E90B2A-L000273](../../tests/test_web_agent.py#L273) | 273 | `"                    }"` | — |
-| [SRC-F725E90B2A-L000274](../../tests/test_web_agent.py#L274) | 274 | `"                }]"` | — |
-| [SRC-F725E90B2A-L000275](../../tests/test_web_agent.py#L275) | 275 | `"            })"` | — |
-| [SRC-F725E90B2A-L000276](../../tests/test_web_agent.py#L276) | 276 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
-| [SRC-F725E90B2A-L000277](../../tests/test_web_agent.py#L277) | 277 | `""` | — |
-| [SRC-F725E90B2A-L000278](../../tests/test_web_agent.py#L278) | 278 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000279](../../tests/test_web_agent.py#L279) | 279 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000280](../../tests/test_web_agent.py#L280) | 280 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-F725E90B2A-L000281](../../tests/test_web_agent.py#L281) | 281 | `"    )"` | — |
-| [SRC-F725E90B2A-L000282](../../tests/test_web_agent.py#L282) | 282 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000283](../../tests/test_web_agent.py#L283) | 283 | `"    assert any(item[\"provider\"] == \"reddit_public_rss\" for item in results)"` | — |
-| [SRC-F725E90B2A-L000284](../../tests/test_web_agent.py#L284) | 284 | `"    bsky = next(item for item in results if item[\"provider\"] == \"bluesky_public_search\")"` | — |
-| [SRC-F725E90B2A-L000285](../../tests/test_web_agent.py#L285) | 285 | `"    assert bsky[\"url\"] == \"https://bsky.app/profile/driver.bsky.social/post/rkey123\""` | — |
-| [SRC-F725E90B2A-L000286](../../tests/test_web_agent.py#L286) | 286 | `"    assert bsky[\"snippet\"] == \"استخدمت السيارة شهرًا\""` | — |
-| [SRC-F725E90B2A-L000287](../../tests/test_web_agent.py#L287) | 287 | `""` | — |
-| [SRC-F725E90B2A-L000288](../../tests/test_web_agent.py#L288) | 288 | `""` | — |
-| [SRC-F725E90B2A-L000289](../../tests/test_web_agent.py#L289) | 289 | `"def test_research_collection_fuses_multiple_queries_and_reports_provenance(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000290](../../tests/test_web_agent.py#L290) | 290 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000291](../../tests/test_web_agent.py#L291) | 291 | `""` | — |
-| [SRC-F725E90B2A-L000292](../../tests/test_web_agent.py#L292) | 292 | `"    def search(query):"` | — |
-| [SRC-F725E90B2A-L000293](../../tests/test_web_agent.py#L293) | 293 | `"        if query == \"query one\":"` | — |
-| [SRC-F725E90B2A-L000294](../../tests/test_web_agent.py#L294) | 294 | `"            return ["` | — |
-| [SRC-F725E90B2A-L000295](../../tests/test_web_agent.py#L295) | 295 | `"                {\"title\": \"Shared\", \"url\": \"https://example.com/shared\", \"snippet\": \"Some evidence\", \"provider\": \"ddg\", \"provider_rank\": 1},"` | — |
-| [SRC-F725E90B2A-L000296](../../tests/test_web_agent.py#L296) | 296 | `"                {\"title\": \"Unique A\", \"url\": \"https://example.com/a\", \"snippet\": \"Evidence A\", \"provider\": \"ddg\", \"provider_rank\": 2},"` | — |
-| [SRC-F725E90B2A-L000297](../../tests/test_web_agent.py#L297) | 297 | `"            ]"` | — |
-| [SRC-F725E90B2A-L000298](../../tests/test_web_agent.py#L298) | 298 | `"        return ["` | — |
-| [SRC-F725E90B2A-L000299](../../tests/test_web_agent.py#L299) | 299 | `"            {\"title\": \"Shared item\", \"url\": \"https://example.com/shared\", \"snippet\": \"More evidence about this result\", \"provider\": \"bing\", \"provider_rank\": 1},"` | — |
-| [SRC-F725E90B2A-L000300](../../tests/test_web_agent.py#L300) | 300 | `"            {\"title\": \"Unique B\", \"url\": \"https://example.com/b\", \"snippet\": \"Evidence B\", \"provider\": \"bing\", \"provider_rank\": 2},"` | — |
-| [SRC-F725E90B2A-L000301](../../tests/test_web_agent.py#L301) | 301 | `"        ]"` | — |
-| [SRC-F725E90B2A-L000302](../../tests/test_web_agent.py#L302) | 302 | `""` | — |
-| [SRC-F725E90B2A-L000303](../../tests/test_web_agent.py#L303) | 303 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
-| [SRC-F725E90B2A-L000304](../../tests/test_web_agent.py#L304) | 304 | `"    monkeypatch.setattr(agent, \"_fetch_page\", lambda url: (\"Read title\", \"Extracted public page text\"))"` | — |
-| [SRC-F725E90B2A-L000305](../../tests/test_web_agent.py#L305) | 305 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-F725E90B2A-L000306](../../tests/test_web_agent.py#L306) | 306 | `"        \"queries\": [\"query one\", \"query two\"],"` | — |
-| [SRC-F725E90B2A-L000307](../../tests/test_web_agent.py#L307) | 307 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L000308](../../tests/test_web_agent.py#L308) | 308 | `"        \"freshness\": \"any\","` | — |

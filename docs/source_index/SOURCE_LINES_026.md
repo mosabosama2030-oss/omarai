@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000267 إلى SRC-0F910493E8-L000491
+- النطاق: SRC-65551FB29F-L000231 إلى SRC-0F910493E8-L000455
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,42 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000231](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L231) | 231 | `"\| القيد \| ما لم يشمله التحقق \|"` | — |
+| [SRC-65551FB29F-L000232](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L232) | 232 | `"\| المالك \| مسؤول المعالجة أو القبول \|"` | — |
+| [SRC-65551FB29F-L000233](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L233) | 233 | `"\| الخطر المتبقي \| واضح ومحدد \|"` | — |
+| [SRC-65551FB29F-L000234](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L234) | 234 | `"\| الاستحقاق \| الإصدار أو المرحلة التي يلزم فيها \|"` | — |
+| [SRC-65551FB29F-L000235](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L235) | 235 | `"\| آخر مراجعة \| التاريخ والسبب \|"` | — |
+| [SRC-65551FB29F-L000236](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L236) | 236 | `""` | — |
+| [SRC-65551FB29F-L000237](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L237) | 237 | `"يُحظر ملء حقل الدليل بنص مثل «راجعنا الكود» أو «الموديل أكد» فقط. يجب أن يستطيع مراجع آخر إعادة التحقق من الادعاء."` | — |
+| [SRC-65551FB29F-L000238](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L238) | 238 | `""` | — |
+| [SRC-65551FB29F-L000239](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L239) | 239 | `"---"` | — |
+| [SRC-65551FB29F-L000240](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L240) | 240 | `""` | — |
+| [SRC-65551FB29F-L000241](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L241) | 241 | `"# الجزء الرابع — تصنيف المخاطر والأولويات"` | — |
+| [SRC-65551FB29F-L000242](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L242) | 242 | `""` | — |
+| [SRC-65551FB29F-L000243](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L243) | 243 | `"## 10. نموذج أولوية داخلي"` | — |
+| [SRC-65551FB29F-L000244](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L244) | 244 | `""` | — |
+| [SRC-65551FB29F-L000245](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L245) | 245 | `"هذا نموذج مساعدة لاتخاذ القرار، وليس معيارًا رسميًا أو قياسًا علميًا لاحتمال الخطر. تستخدم قيم من 1 إلى 5 لكل من:"` | — |
+| [SRC-65551FB29F-L000246](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L246) | 246 | `"- **S — الشدة:** ما حجم الأثر لو وقع الفشل؟"` | — |
+| [SRC-65551FB29F-L000247](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L247) | 247 | `"- **L — الاحتمال:** ما مدى معقولية وقوعه؟"` | — |
+| [SRC-65551FB29F-L000248](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L248) | 248 | `"- **X — التعرض:** كم المسار مكشوف للمستخدم/الشبكة/بيانات مهمة؟"` | — |
+| [SRC-65551FB29F-L000249](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L249) | 249 | `"- **U — عدم اليقين:** إلى أي حد نفتقر إلى أدلة عن وجود الضابط؟"` | — |
+| [SRC-65551FB29F-L000250](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L250) | 250 | `""` | — |
+| [SRC-65551FB29F-L000251](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L251) | 251 | ``"يمكن حساب ترتيب أولي: `Risk Index = S × L × X × U`، حيث يُختار X بين 1 و3 وU بين 1 و2 حسب مقياس المشروع المعتمد؛ لا يقارن هذا الرقم مباشرة بمعايير أمن رسمية أخرى."`` | — |
+| [SRC-65551FB29F-L000252](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L252) | 252 | `""` | — |
+| [SRC-65551FB29F-L000253](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L253) | 253 | `"### قواعد الأولوية"` | — |
+| [SRC-65551FB29F-L000254](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L254) | 254 | `""` | — |
+| [SRC-65551FB29F-L000255](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L255) | 255 | `"1. تسريب سر أو تجاوز صلاحية أو اختلاط بيانات مستخدمين أو تنفيذ غير مصرح: أولوية قصوى حتى لو كان الاحتمال غير معروف."` | — |
+| [SRC-65551FB29F-L000256](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L256) | 256 | `"2. خطر يمكن أن يسبب تكلفة غير محدودة أو حلقة أداة متكررة: أولوية مبكرة."` | — |
+| [SRC-65551FB29F-L000257](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L257) | 257 | `"3. خطر يمنع معرفة ما إذا كان النظام يعمل أصلًا (غياب اختبارات أو رصد): يُعالج مبكرًا لأنه يزيد عدم اليقين."` | — |
+| [SRC-65551FB29F-L000258](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L258) | 258 | `"4. تحسين معماري لا يحل خطرًا أو حاجة قياسها واضح: لا يتقدم على سلامة السلوك الأساسي."` | — |
+| [SRC-65551FB29F-L000259](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L259) | 259 | `"5. تقنية كبيرة تزيد عدد نقاط الفشل دون تحسن مثبت: تؤجل."` | — |
+| [SRC-65551FB29F-L000260](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L260) | 260 | `""` | — |
+| [SRC-65551FB29F-L000261](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L261) | 261 | `"## 11. درجات الاستعجال"` | — |
+| [SRC-65551FB29F-L000262](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L262) | 262 | `""` | — |
+| [SRC-65551FB29F-L000263](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L263) | 263 | `"- **P0 — حاجز سلامة:** يجب إغلاق الخطر قبل إتاحة الوظيفة أو مواصلة تنفيذها في مسار خطر."` | — |
+| [SRC-65551FB29F-L000264](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L264) | 264 | `"- **P1 — أساس موثوق:** مطلوب لإصلاح العيوب الأساسية والاختبارات وحدود الموارد والتشخيص."` | — |
+| [SRC-65551FB29F-L000265](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L265) | 265 | `"- **P2 — استعداد للنمو:** مطلوب عند وجود مستخدمين أو حمل أو بيانات مستمرة أو استضافة أكثر جدية."` | — |
+| [SRC-65551FB29F-L000266](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L266) | 266 | `"- **P3 — نضج مؤسسي/مشروط:** multi-region، وSSO، وسياسات امتثال مؤسسي أو ممارسات متقدمة لا تفرض قبل أن يصبح لها سبب."` | — |
 | [SRC-65551FB29F-L000267](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L267) | 267 | `""` | — |
 | [SRC-65551FB29F-L000268](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L268) | 268 | `"هذه الدرجات لا تحدد حالة Omarai الحالية. الحالة لا تتحدد إلا بعد فحص التنفيذ."` | — |
 | [SRC-65551FB29F-L000269](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L269) | 269 | `""` | — |
@@ -789,39 +825,3 @@
 | [SRC-0F910493E8-L000453](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L453) | 453 | `"- لا يوجد اعتماد أو تفعيل ذاتي."` | — |
 | [SRC-0F910493E8-L000454](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L454) | 454 | `""` | — |
 | [SRC-0F910493E8-L000455](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L455) | 455 | `"**بوابة القبول:** فائدة عملية مثبتة، دون تراجع غير مقبول في الجودة أو الأمان."` | — |
-| [SRC-0F910493E8-L000456](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L456) | 456 | `""` | — |
-| [SRC-0F910493E8-L000457](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L457) | 457 | `"## P5 — توليد الكود التنفيذي (اختياري)"` | — |
-| [SRC-0F910493E8-L000458](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L458) | 458 | `""` | — |
-| [SRC-0F910493E8-L000459](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L459) | 459 | `"يتطلب قرارًا جديدًا، وحاجة مثبتة، وعزلًا مختبرًا، واختبارات مستقلة، ومراجعة أمنية وموافقة بشرية."` | — |
-| [SRC-0F910493E8-L000460](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L460) | 460 | `""` | — |
-| [SRC-0F910493E8-L000461](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L461) | 461 | `"لا يُعد بلوغ P4 سببًا تلقائيًا للانتقال إلى P5."` | — |
-| [SRC-0F910493E8-L000462](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L462) | 462 | `""` | — |
-| [SRC-0F910493E8-L000463](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L463) | 463 | `"---"` | — |
-| [SRC-0F910493E8-L000464](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L464) | 464 | `""` | — |
-| [SRC-0F910493E8-L000465](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L465) | 465 | `"# 13. متطلبات القياس والتقييم"` | — |
-| [SRC-0F910493E8-L000466](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L466) | 466 | `""` | — |
-| [SRC-0F910493E8-L000467](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L467) | 467 | `"قبل اعتماد تحسين في المعمارية، يجب تحديد المقياس المناسب وتجميع خط أساس على قدرات ممثلة."` | — |
-| [SRC-0F910493E8-L000468](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L468) | 468 | `""` | — |
-| [SRC-0F910493E8-L000469](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L469) | 469 | `"المقاييس المحتملة:"` | — |
-| [SRC-0F910493E8-L000470](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L470) | 470 | `"- نجاح تنفيذ المهمة وفق معيار محدد."` | — |
-| [SRC-0F910493E8-L000471](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L471) | 471 | `"- دقة الإسناد للمصادر ودعم الادعاءات."` | — |
-| [SRC-0F910493E8-L000472](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L472) | 472 | `"- التعرف الصحيح على نقص الأدلة أو تعارضها."` | — |
-| [SRC-0F910493E8-L000473](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L473) | 473 | `"- نجاح الأدوات والتعامل مع الفشل."` | — |
-| [SRC-0F910493E8-L000474](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L474) | 474 | `"- رفض العمليات غير المصرح بها."` | — |
-| [SRC-0F910493E8-L000475](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L475) | 475 | `"- استقرار النواة وعدم انكسار الوظائف القائمة."` | — |
-| [SRC-0F910493E8-L000476](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L476) | 476 | `"- زمن التنفيذ والموارد والتكلفة."` | — |
-| [SRC-0F910493E8-L000477](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L477) | 477 | `"- زمن إعداد مهارة أو سير عمل وصيانته."` | — |
-| [SRC-0F910493E8-L000478](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L478) | 478 | `"- مقدار المراجعة البشرية المطلوبة."` | — |
-| [SRC-0F910493E8-L000479](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L479) | 479 | `"- معدل إنشاء تعريفات غير قابلة للتحقق أو غير مفيدة."` | — |
-| [SRC-0F910493E8-L000480](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L480) | 480 | `""` | — |
-| [SRC-0F910493E8-L000481](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L481) | 481 | `"لا توضع أهداف رقمية إلا بعد تحديد مجموعة الاختبارات وطريقة الحساب والبيئة. ولا تحول نتائج الم mocks إلى ادعاء نجاح تكامل حي."` | — |
-| [SRC-0F910493E8-L000482](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L482) | 482 | `""` | — |
-| [SRC-0F910493E8-L000483](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L483) | 483 | `"---"` | — |
-| [SRC-0F910493E8-L000484](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L484) | 484 | `""` | — |
-| [SRC-0F910493E8-L000485](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L485) | 485 | `"# 14. قائمة المراجعة الإلزامية قبل كل تغيير مؤثر"` | — |
-| [SRC-0F910493E8-L000486](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L486) | 486 | `""` | — |
-| [SRC-0F910493E8-L000487](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L487) | 487 | `"على المطور أو الوكيل الذي يعمل على Omarai اتباع الخطوات التالية:"` | — |
-| [SRC-0F910493E8-L000488](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L488) | 488 | `""` | — |
-| [SRC-0F910493E8-L000489](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L489) | 489 | `"1. اقرأ الدستور التأسيسي وهذه الوثيقة والأقسام المرتبطة بها قبل اقتراح تغيير معماري."` | — |
-| [SRC-0F910493E8-L000490](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L490) | 490 | `"2. فحص الفرع وSHA والملفات الفعلية قبل وصف الحالة الحالية."` | — |
-| [SRC-0F910493E8-L000491](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L491) | 491 | `"3. صنّف النتائج إلى VERIFIED / INFERRED / PROPOSED / UNKNOWN."` | — |

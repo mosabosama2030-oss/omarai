@@ -4,9 +4,28 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D186ED3822-L000043 إلى SRC-1C77C97630-L000306
+- النطاق: SRC-2477C41448-L000091 إلى SRC-1C77C97630-L000254
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-2477C41448 — [tests/test_answer_quality_provider_usage.py](../../tests/test_answer_quality_provider_usage.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-2477C41448-L000091](../../tests/test_answer_quality_provider_usage.py#L91) | 91 | `"        {\"cost\": 0.05},"` | — |
+| [SRC-2477C41448-L000092](../../tests/test_answer_quality_provider_usage.py#L92) | 92 | `"        provider_base_url=\"https://openrouter.ai.attacker.example/api/v1\","` | — |
+| [SRC-2477C41448-L000093](../../tests/test_answer_quality_provider_usage.py#L93) | 93 | `"    )"` | — |
+| [SRC-2477C41448-L000094](../../tests/test_answer_quality_provider_usage.py#L94) | 94 | `"    assert normalized is None"` | — |
+| [SRC-2477C41448-L000095](../../tests/test_answer_quality_provider_usage.py#L95) | 95 | `""` | — |
+| [SRC-2477C41448-L000096](../../tests/test_answer_quality_provider_usage.py#L96) | 96 | `"    normalized = _normalized_provider_usage("` | — |
+| [SRC-2477C41448-L000097](../../tests/test_answer_quality_provider_usage.py#L97) | 97 | `"        {\"cost\": 0.05},"` | — |
+| [SRC-2477C41448-L000098](../../tests/test_answer_quality_provider_usage.py#L98) | 98 | `"        provider_base_url=\"https://evilopenrouter.ai/api/v1\","` | — |
+| [SRC-2477C41448-L000099](../../tests/test_answer_quality_provider_usage.py#L99) | 99 | `"    )"` | — |
+| [SRC-2477C41448-L000100](../../tests/test_answer_quality_provider_usage.py#L100) | 100 | `"    assert normalized is None"` | — |
 ## اختبارات
 
 ### FILE-D186ED3822 — [tests/test_answer_quality_review_scorecard.py](../../tests/test_answer_quality_review_scorecard.py#L1)
@@ -16,6 +35,48 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D186ED3822-L000001](../../tests/test_answer_quality_review_scorecard.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-D186ED3822-L000002](../../tests/test_answer_quality_review_scorecard.py#L2) | 2 | `""` | — |
+| [SRC-D186ED3822-L000003](../../tests/test_answer_quality_review_scorecard.py#L3) | 3 | `"import importlib.util"` | — |
+| [SRC-D186ED3822-L000004](../../tests/test_answer_quality_review_scorecard.py#L4) | 4 | `"from pathlib import Path"` | — |
+| [SRC-D186ED3822-L000005](../../tests/test_answer_quality_review_scorecard.py#L5) | 5 | `""` | — |
+| [SRC-D186ED3822-L000006](../../tests/test_answer_quality_review_scorecard.py#L6) | 6 | `"import pytest"` | — |
+| [SRC-D186ED3822-L000007](../../tests/test_answer_quality_review_scorecard.py#L7) | 7 | `""` | — |
+| [SRC-D186ED3822-L000008](../../tests/test_answer_quality_review_scorecard.py#L8) | 8 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-D186ED3822-L000009](../../tests/test_answer_quality_review_scorecard.py#L9) | 9 | `"SCRIPT = ROOT / \"scripts\" / \"score_answer_quality_reviews.py\""` | — |
+| [SRC-D186ED3822-L000010](../../tests/test_answer_quality_review_scorecard.py#L10) | 10 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
+| [SRC-D186ED3822-L000011](../../tests/test_answer_quality_review_scorecard.py#L11) | 11 | `""` | — |
+| [SRC-D186ED3822-L000012](../../tests/test_answer_quality_review_scorecard.py#L12) | 12 | `""` | — |
+| [SRC-D186ED3822-L000013](../../tests/test_answer_quality_review_scorecard.py#L13) | 13 | `"def load_module():"` | — |
+| [SRC-D186ED3822-L000014](../../tests/test_answer_quality_review_scorecard.py#L14) | 14 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_review_scorecard\", SCRIPT)"` | — |
+| [SRC-D186ED3822-L000015](../../tests/test_answer_quality_review_scorecard.py#L15) | 15 | `"    assert spec and spec.loader"` | — |
+| [SRC-D186ED3822-L000016](../../tests/test_answer_quality_review_scorecard.py#L16) | 16 | `"    module = importlib.util.module_from_spec(spec)"` | — |
+| [SRC-D186ED3822-L000017](../../tests/test_answer_quality_review_scorecard.py#L17) | 17 | `"    spec.loader.exec_module(module)"` | — |
+| [SRC-D186ED3822-L000018](../../tests/test_answer_quality_review_scorecard.py#L18) | 18 | `"    return module"` | — |
+| [SRC-D186ED3822-L000019](../../tests/test_answer_quality_review_scorecard.py#L19) | 19 | `""` | — |
+| [SRC-D186ED3822-L000020](../../tests/test_answer_quality_review_scorecard.py#L20) | 20 | `""` | — |
+| [SRC-D186ED3822-L000021](../../tests/test_answer_quality_review_scorecard.py#L21) | 21 | `"def corpus():"` | — |
+| [SRC-D186ED3822-L000022](../../tests/test_answer_quality_review_scorecard.py#L22) | 22 | `"    return load_module().load_json_object(CORPUS_PATH)"` | — |
+| [SRC-D186ED3822-L000023](../../tests/test_answer_quality_review_scorecard.py#L23) | 23 | `""` | — |
+| [SRC-D186ED3822-L000024](../../tests/test_answer_quality_review_scorecard.py#L24) | 24 | `""` | — |
+| [SRC-D186ED3822-L000025](../../tests/test_answer_quality_review_scorecard.py#L25) | 25 | `"def test_manual_scorecard_aggregates_only_explicit_reviewed_metrics():"` | — |
+| [SRC-D186ED3822-L000026](../../tests/test_answer_quality_review_scorecard.py#L26) | 26 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000027](../../tests/test_answer_quality_review_scorecard.py#L27) | 27 | `"    data = {"` | — |
+| [SRC-D186ED3822-L000028](../../tests/test_answer_quality_review_scorecard.py#L28) | 28 | `"        \"schema_version\": \"1.0\","` | — |
+| [SRC-D186ED3822-L000029](../../tests/test_answer_quality_review_scorecard.py#L29) | 29 | `"        \"reviews\": ["` | — |
+| [SRC-D186ED3822-L000030](../../tests/test_answer_quality_review_scorecard.py#L30) | 30 | `"            {"` | — |
+| [SRC-D186ED3822-L000031](../../tests/test_answer_quality_review_scorecard.py#L31) | 31 | `"                \"case_id\": \"AQ-007\","` | — |
+| [SRC-D186ED3822-L000032](../../tests/test_answer_quality_review_scorecard.py#L32) | 32 | `"                \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000033](../../tests/test_answer_quality_review_scorecard.py#L33) | 33 | `"                \"retrieval\": {\"relevant_retrieved\": 3, \"retrieved_count\": 5, \"relevant_available\": 4},"` | — |
+| [SRC-D186ED3822-L000034](../../tests/test_answer_quality_review_scorecard.py#L34) | 34 | `"                \"faithfulness\": {\"supported_claims\": 4, \"reviewed_claims\": 5},"` | — |
+| [SRC-D186ED3822-L000035](../../tests/test_answer_quality_review_scorecard.py#L35) | 35 | `"                \"correctness\": {\"correct_facts\": 3, \"reviewed_facts\": 4},"` | — |
+| [SRC-D186ED3822-L000036](../../tests/test_answer_quality_review_scorecard.py#L36) | 36 | `"                \"citations\": {\"supported_citations\": 2, \"reviewed_citations\": 3},"` | — |
+| [SRC-D186ED3822-L000037](../../tests/test_answer_quality_review_scorecard.py#L37) | 37 | `"                \"writing_quality\": 4,"` | — |
+| [SRC-D186ED3822-L000038](../../tests/test_answer_quality_review_scorecard.py#L38) | 38 | `"            },"` | — |
+| [SRC-D186ED3822-L000039](../../tests/test_answer_quality_review_scorecard.py#L39) | 39 | `"            {"` | — |
+| [SRC-D186ED3822-L000040](../../tests/test_answer_quality_review_scorecard.py#L40) | 40 | `"                \"case_id\": \"AQ-008\","` | — |
+| [SRC-D186ED3822-L000041](../../tests/test_answer_quality_review_scorecard.py#L41) | 41 | `"                \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000042](../../tests/test_answer_quality_review_scorecard.py#L42) | 42 | `"                \"writing_quality\": 4,"` | — |
 | [SRC-D186ED3822-L000043](../../tests/test_answer_quality_review_scorecard.py#L43) | 43 | `"            },"` | — |
 | [SRC-D186ED3822-L000044](../../tests/test_answer_quality_review_scorecard.py#L44) | 44 | `"            {\"case_id\": \"AQ-009\", \"status\": \"NOT_TESTED\", \"notes\": \"No reviewer judgment yet.\"},"` | — |
 | [SRC-D186ED3822-L000045](../../tests/test_answer_quality_review_scorecard.py#L45) | 45 | `"        ],"` | — |
@@ -782,55 +843,3 @@
 | [SRC-1C77C97630-L000252](../../tests/test_answer_validation.py#L252) | 252 | `""` | — |
 | [SRC-1C77C97630-L000253](../../tests/test_answer_validation.py#L253) | 253 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
 | [SRC-1C77C97630-L000254](../../tests/test_answer_validation.py#L254) | 254 | `"    assert result[\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
-| [SRC-1C77C97630-L000255](../../tests/test_answer_validation.py#L255) | 255 | `"    cited_check = result[\"citation_numeric_support\"][0]"` | — |
-| [SRC-1C77C97630-L000256](../../tests/test_answer_validation.py#L256) | 256 | `"    assert cited_check[\"cited_source_indexes\"] == [1]"` | — |
-| [SRC-1C77C97630-L000257](../../tests/test_answer_validation.py#L257) | 257 | `"    assert cited_check[\"potentially_unsupported_numeric_literals\"] == [\"500\"]"` | — |
-| [SRC-1C77C97630-L000258](../../tests/test_answer_validation.py#L258) | 258 | `"    assert cited_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
-| [SRC-1C77C97630-L000259](../../tests/test_answer_validation.py#L259) | 259 | `""` | — |
-| [SRC-1C77C97630-L000260](../../tests/test_answer_validation.py#L260) | 260 | `""` | — |
-| [SRC-1C77C97630-L000261](../../tests/test_answer_validation.py#L261) | 261 | `"def test_different_price_values_are_flagged_for_review_not_called_contradictions():"` | — |
-| [SRC-1C77C97630-L000262](../../tests/test_answer_validation.py#L262) | 262 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000263](../../tests/test_answer_validation.py#L263) | 263 | `"        \"قارن العروض\","` | — |
-| [SRC-1C77C97630-L000264](../../tests/test_answer_validation.py#L264) | 264 | `"        \"العرض الأول أرخص من الثاني [المصدر 1] [المصدر 2].\","` | — |
-| [SRC-1C77C97630-L000265](../../tests/test_answer_validation.py#L265) | 265 | `"        ["` | — |
-| [SRC-1C77C97630-L000266](../../tests/test_answer_validation.py#L266) | 266 | `"            {"` | — |
-| [SRC-1C77C97630-L000267](../../tests/test_answer_validation.py#L267) | 267 | `"                \"title\": \"شقة القاهرة\","` | — |
-| [SRC-1C77C97630-L000268](../../tests/test_answer_validation.py#L268) | 268 | `"                \"snippet\": \"السعر 100000 جنيه\","` | — |
-| [SRC-1C77C97630-L000269](../../tests/test_answer_validation.py#L269) | 269 | `"                \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000270](../../tests/test_answer_validation.py#L270) | 270 | `"            },"` | — |
-| [SRC-1C77C97630-L000271](../../tests/test_answer_validation.py#L271) | 271 | `"            {"` | — |
-| [SRC-1C77C97630-L000272](../../tests/test_answer_validation.py#L272) | 272 | `"                \"title\": \"شقة القاهرة\","` | — |
-| [SRC-1C77C97630-L000273](../../tests/test_answer_validation.py#L273) | 273 | `"                \"snippet\": \"السعر 120000 جنيه\","` | — |
-| [SRC-1C77C97630-L000274](../../tests/test_answer_validation.py#L274) | 274 | `"                \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000275](../../tests/test_answer_validation.py#L275) | 275 | `"            },"` | — |
-| [SRC-1C77C97630-L000276](../../tests/test_answer_validation.py#L276) | 276 | `"        ],"` | — |
-| [SRC-1C77C97630-L000277](../../tests/test_answer_validation.py#L277) | 277 | `"    )"` | — |
-| [SRC-1C77C97630-L000278](../../tests/test_answer_validation.py#L278) | 278 | `""` | — |
-| [SRC-1C77C97630-L000279](../../tests/test_answer_validation.py#L279) | 279 | `"    price = next("` | — |
-| [SRC-1C77C97630-L000280](../../tests/test_answer_validation.py#L280) | 280 | `"        item for item in result[\"potential_value_discrepancies\"]"` | — |
-| [SRC-1C77C97630-L000281](../../tests/test_answer_validation.py#L281) | 281 | `"        if item[\"dimension\"] == \"price_or_cost\""` | — |
-| [SRC-1C77C97630-L000282](../../tests/test_answer_validation.py#L282) | 282 | `"    )"` | — |
-| [SRC-1C77C97630-L000283](../../tests/test_answer_validation.py#L283) | 283 | `"    assert {item[\"value\"] for item in price[\"values\"]} == {\"100000\", \"120000\"}"` | — |
-| [SRC-1C77C97630-L000284](../../tests/test_answer_validation.py#L284) | 284 | `"    assert price[\"status\"] == \"potential_variation_or_conflict_requires_entity_review\""` | — |
-| [SRC-1C77C97630-L000285](../../tests/test_answer_validation.py#L285) | 285 | `"    assert \"contradiction\" not in price[\"status\"]"` | — |
-| [SRC-1C77C97630-L000286](../../tests/test_answer_validation.py#L286) | 286 | `"    assert result[\"independent_fact_check\"] is False"` | — |
-| [SRC-1C77C97630-L000287](../../tests/test_answer_validation.py#L287) | 287 | `""` | — |
-| [SRC-1C77C97630-L000288](../../tests/test_answer_validation.py#L288) | 288 | `""` | — |
-| [SRC-1C77C97630-L000289](../../tests/test_answer_validation.py#L289) | 289 | `"def test_date_in_answer_missing_from_its_cited_source_is_flagged():"` | — |
-| [SRC-1C77C97630-L000290](../../tests/test_answer_validation.py#L290) | 290 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000291](../../tests/test_answer_validation.py#L291) | 291 | `"        \"ما تاريخ التقرير؟\","` | — |
-| [SRC-1C77C97630-L000292](../../tests/test_answer_validation.py#L292) | 292 | `"        \"صدر التقرير في 2026 [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000293](../../tests/test_answer_validation.py#L293) | 293 | `"        [{"` | — |
-| [SRC-1C77C97630-L000294](../../tests/test_answer_validation.py#L294) | 294 | `"            \"title\": \"تقرير سابق\","` | — |
-| [SRC-1C77C97630-L000295](../../tests/test_answer_validation.py#L295) | 295 | `"            \"snippet\": \"تقرير منشور في 2024.\","` | — |
-| [SRC-1C77C97630-L000296](../../tests/test_answer_validation.py#L296) | 296 | `"            \"published_at\": \"2024\","` | — |
-| [SRC-1C77C97630-L000297](../../tests/test_answer_validation.py#L297) | 297 | `"            \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000298](../../tests/test_answer_validation.py#L298) | 298 | `"        }],"` | — |
-| [SRC-1C77C97630-L000299](../../tests/test_answer_validation.py#L299) | 299 | `"    )"` | — |
-| [SRC-1C77C97630-L000300](../../tests/test_answer_validation.py#L300) | 300 | `""` | — |
-| [SRC-1C77C97630-L000301](../../tests/test_answer_validation.py#L301) | 301 | `"    numeric_check = result[\"citation_numeric_support\"][0]"` | — |
-| [SRC-1C77C97630-L000302](../../tests/test_answer_validation.py#L302) | 302 | `"    assert numeric_check[\"potentially_unsupported_numeric_literals\"] == [\"2026\"]"` | — |
-| [SRC-1C77C97630-L000303](../../tests/test_answer_validation.py#L303) | 303 | `"    assert numeric_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
-| [SRC-1C77C97630-L000304](../../tests/test_answer_validation.py#L304) | 304 | `""` | — |
-| [SRC-1C77C97630-L000305](../../tests/test_answer_validation.py#L305) | 305 | `""` | — |
-| [SRC-1C77C97630-L000306](../../tests/test_answer_validation.py#L306) | 306 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |

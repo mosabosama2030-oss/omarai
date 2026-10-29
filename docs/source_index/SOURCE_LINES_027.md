@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000492 إلى SRC-69F3587825-L000079
+- النطاق: SRC-0F910493E8-L000456 إلى SRC-69F3587825-L000027
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,42 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000456](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L456) | 456 | `""` | — |
+| [SRC-0F910493E8-L000457](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L457) | 457 | `"## P5 — توليد الكود التنفيذي (اختياري)"` | — |
+| [SRC-0F910493E8-L000458](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L458) | 458 | `""` | — |
+| [SRC-0F910493E8-L000459](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L459) | 459 | `"يتطلب قرارًا جديدًا، وحاجة مثبتة، وعزلًا مختبرًا، واختبارات مستقلة، ومراجعة أمنية وموافقة بشرية."` | — |
+| [SRC-0F910493E8-L000460](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L460) | 460 | `""` | — |
+| [SRC-0F910493E8-L000461](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L461) | 461 | `"لا يُعد بلوغ P4 سببًا تلقائيًا للانتقال إلى P5."` | — |
+| [SRC-0F910493E8-L000462](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L462) | 462 | `""` | — |
+| [SRC-0F910493E8-L000463](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L463) | 463 | `"---"` | — |
+| [SRC-0F910493E8-L000464](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L464) | 464 | `""` | — |
+| [SRC-0F910493E8-L000465](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L465) | 465 | `"# 13. متطلبات القياس والتقييم"` | — |
+| [SRC-0F910493E8-L000466](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L466) | 466 | `""` | — |
+| [SRC-0F910493E8-L000467](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L467) | 467 | `"قبل اعتماد تحسين في المعمارية، يجب تحديد المقياس المناسب وتجميع خط أساس على قدرات ممثلة."` | — |
+| [SRC-0F910493E8-L000468](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L468) | 468 | `""` | — |
+| [SRC-0F910493E8-L000469](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L469) | 469 | `"المقاييس المحتملة:"` | — |
+| [SRC-0F910493E8-L000470](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L470) | 470 | `"- نجاح تنفيذ المهمة وفق معيار محدد."` | — |
+| [SRC-0F910493E8-L000471](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L471) | 471 | `"- دقة الإسناد للمصادر ودعم الادعاءات."` | — |
+| [SRC-0F910493E8-L000472](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L472) | 472 | `"- التعرف الصحيح على نقص الأدلة أو تعارضها."` | — |
+| [SRC-0F910493E8-L000473](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L473) | 473 | `"- نجاح الأدوات والتعامل مع الفشل."` | — |
+| [SRC-0F910493E8-L000474](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L474) | 474 | `"- رفض العمليات غير المصرح بها."` | — |
+| [SRC-0F910493E8-L000475](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L475) | 475 | `"- استقرار النواة وعدم انكسار الوظائف القائمة."` | — |
+| [SRC-0F910493E8-L000476](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L476) | 476 | `"- زمن التنفيذ والموارد والتكلفة."` | — |
+| [SRC-0F910493E8-L000477](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L477) | 477 | `"- زمن إعداد مهارة أو سير عمل وصيانته."` | — |
+| [SRC-0F910493E8-L000478](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L478) | 478 | `"- مقدار المراجعة البشرية المطلوبة."` | — |
+| [SRC-0F910493E8-L000479](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L479) | 479 | `"- معدل إنشاء تعريفات غير قابلة للتحقق أو غير مفيدة."` | — |
+| [SRC-0F910493E8-L000480](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L480) | 480 | `""` | — |
+| [SRC-0F910493E8-L000481](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L481) | 481 | `"لا توضع أهداف رقمية إلا بعد تحديد مجموعة الاختبارات وطريقة الحساب والبيئة. ولا تحول نتائج الم mocks إلى ادعاء نجاح تكامل حي."` | — |
+| [SRC-0F910493E8-L000482](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L482) | 482 | `""` | — |
+| [SRC-0F910493E8-L000483](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L483) | 483 | `"---"` | — |
+| [SRC-0F910493E8-L000484](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L484) | 484 | `""` | — |
+| [SRC-0F910493E8-L000485](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L485) | 485 | `"# 14. قائمة المراجعة الإلزامية قبل كل تغيير مؤثر"` | — |
+| [SRC-0F910493E8-L000486](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L486) | 486 | `""` | — |
+| [SRC-0F910493E8-L000487](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L487) | 487 | `"على المطور أو الوكيل الذي يعمل على Omarai اتباع الخطوات التالية:"` | — |
+| [SRC-0F910493E8-L000488](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L488) | 488 | `""` | — |
+| [SRC-0F910493E8-L000489](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L489) | 489 | `"1. اقرأ الدستور التأسيسي وهذه الوثيقة والأقسام المرتبطة بها قبل اقتراح تغيير معماري."` | — |
+| [SRC-0F910493E8-L000490](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L490) | 490 | `"2. فحص الفرع وSHA والملفات الفعلية قبل وصف الحالة الحالية."` | — |
+| [SRC-0F910493E8-L000491](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L491) | 491 | `"3. صنّف النتائج إلى VERIFIED / INFERRED / PROPOSED / UNKNOWN."` | — |
 | [SRC-0F910493E8-L000492](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L492) | 492 | `"4. حدد المتطلب أو العيب أو الحاجة التي يبررها الدليل."` | — |
 | [SRC-0F910493E8-L000493](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L493) | 493 | `"5. افحص ما إذا كان السلوك المطلوب موجودًا بالفعل."` | — |
 | [SRC-0F910493E8-L000494](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L494) | 494 | `"6. قدم أصغر تغيير آمن يحافظ على القدرات القائمة."` | — |
@@ -542,6 +578,22 @@
 | [SRC-61B24BEFCC-L000154](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L154) | 154 | `"- **القبول الحي:** **NOT_RUN**. لا يستدعي فحص التحقق البنيوي مزودًا خارجيًا. مشغّل LIVE يقرأ /api/health أولًا ويرفض أي مضيف لا يقدم build.sha كاملًا أو يخالف SHA المتوقع، قبل استدعاء /api/agent. لم يجر تشغيل حي مدفوع أو تعديل استضافة ضمن هذا التغيير."` | — |
 | [SRC-61B24BEFCC-L000155](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L155) | 155 | `"- **ما يلزم قبل ادعاء التحسن:** تشغيل النسخة السابقة والمرشح على نفس الأسئلة من إصدارين معلومين SHA، حفظ ملفي JSON، وتطبيق rubric بشري متطابق على مخرجات كل نسخة. دون هذا لا تُنشر نسبة تحسن."` | — |
 | [SRC-61B24BEFCC-L000156](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L156) | 156 | `""` | — |
+| [SRC-61B24BEFCC-L000157](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L157) | 157 | `""` | — |
+| [SRC-61B24BEFCC-L000158](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L158) | 158 | `""` | — |
+| [SRC-61B24BEFCC-L000159](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L159) | 159 | `"---"` | — |
+| [SRC-61B24BEFCC-L000160](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L160) | 160 | `""` | — |
+| [SRC-61B24BEFCC-L000161](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L161) | 161 | `"## تحديث الأدلة — تقييم اللغة وجودة البحث — 29 أكتوبر 2026"` | — |
+| [SRC-61B24BEFCC-L000162](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L162) | 162 | `""` | — |
+| [SRC-61B24BEFCC-L000163](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L163) | 163 | ``"**حالة CI للكود والاختبارات:** FIXED_AND_TESTED على SHA `449912938fc0067301e0541552199a8e67ecc46b`: [#40901777951](https://github.com/mosabosama2030-oss/omarai/actions/runs/40901777951)، Python 3.11 **607 passed in 26.10s**، Python 3.12 **607 passed in 27.96s**، Ruff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة."`` | — |
+| [SRC-61B24BEFCC-L000164](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L164) | 164 | `""` | — |
+| [SRC-61B24BEFCC-L000165](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L165) | 165 | `"تغطي اختبارات الانحدار الآن:"` | — |
+| [SRC-61B24BEFCC-L000166](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L166) | 166 | ``"- رفض هوية بناء غير مثبتة أو مخالفة لـ `/api/health` قبل أي سؤال حي."`` | — |
+| [SRC-61B24BEFCC-L000167](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L167) | 167 | `"- رفض نسبة تكلفة USD عند تشابه اسم المضيف مع OpenRouter دون تطابق نطاق حقيقي."` | — |
+| [SRC-61B24BEFCC-L000168](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L168) | 168 | `"- رفض نجاح البحث عندما يكون عدد المصادر المعاد متناقضًا مع نتيجة البحث."` | — |
+| [SRC-61B24BEFCC-L000169](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L169) | 169 | `"- قياس كل أداة مطلوبة مع كشف الصفوف المفقودة/المكررة، ومنع القبول إذا لم تكن مصفوفة الأدوات كاملة."` | — |
+| [SRC-61B24BEFCC-L000170](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L170) | 170 | `"- رفض اكتمال المقارنة عند غياب تكلفة الطلب الكاملة أو نقص المراجعة البشرية."` | — |
+| [SRC-61B24BEFCC-L000171](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L171) | 171 | `""` | — |
+| [SRC-61B24BEFCC-L000172](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L172) | 172 | `"**بوابات لا تزال مفتوحة:** تشغيلات live قبل/بعد على 45 حالة بنفس الأسئلة من بنائين معلومين، مراجعات بشرية كاملة لصحة الحقائق والاسترجاع والإسناد والأمانة وجودة الكتابة، ومصالحة تكلفة كاملة لكل طلب. لم تُنفذ هذه الاختبارات الحية، لذا حالة التحسن التجريبي NOT_RUN، ولا توجد نتيجة رقمية للتحسن."` | — |
 ## وثائق وفهرسة
 
 ### FILE-B6BD2CE1A8 — [docs/OPERATIONS_AR.md](../OPERATIONS_AR.md#L1)
@@ -809,55 +861,3 @@
 | [SRC-69F3587825-L000025](../search_code.py#L25) | 25 | `"        \".git\","` | — |
 | [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".hg\","` | — |
 | [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \".svn\","` | — |
-| [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \".venv\","` | — |
-| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |
-| [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"env\","` | — |
-| [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \"virtualenv\","` | — |
-| [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \"__pycache__\","` | — |
-| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".pytest_cache\","` | — |
-| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".ruff_cache\","` | — |
-| [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".mypy_cache\","` | — |
-| [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \".tox\","` | — |
-| [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \".nox\","` | — |
-| [SRC-69F3587825-L000038](../search_code.py#L38) | 38 | `"        \"node_modules\","` | — |
-| [SRC-69F3587825-L000039](../search_code.py#L39) | 39 | `"        \"site-packages\","` | — |
-| [SRC-69F3587825-L000040](../search_code.py#L40) | 40 | `"        \"build\","` | — |
-| [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \"dist\","` | — |
-| [SRC-69F3587825-L000042](../search_code.py#L42) | 42 | `"        \".tmp\","` | — |
-| [SRC-69F3587825-L000043](../search_code.py#L43) | 43 | `"        \".idea\","` | — |
-| [SRC-69F3587825-L000044](../search_code.py#L44) | 44 | `"        \".vscode\","` | — |
-| [SRC-69F3587825-L000045](../search_code.py#L45) | 45 | `"        \".aws\","` | — |
-| [SRC-69F3587825-L000046](../search_code.py#L46) | 46 | `"        \".secrets\","` | — |
-| [SRC-69F3587825-L000047](../search_code.py#L47) | 47 | `"        \".ssh\","` | — |
-| [SRC-69F3587825-L000048](../search_code.py#L48) | 48 | `"        \"credentials\","` | — |
-| [SRC-69F3587825-L000049](../search_code.py#L49) | 49 | `"        \"secrets\","` | — |
-| [SRC-69F3587825-L000050](../search_code.py#L50) | 50 | `"    }"` | — |
-| [SRC-69F3587825-L000051](../search_code.py#L51) | 51 | `")"` | — |
-| [SRC-69F3587825-L000052](../search_code.py#L52) | 52 | `"SECRET_BASENAMES = frozenset("` | — |
-| [SRC-69F3587825-L000053](../search_code.py#L53) | 53 | `"    {"` | — |
-| [SRC-69F3587825-L000054](../search_code.py#L54) | 54 | `"        \".env\","` | — |
-| [SRC-69F3587825-L000055](../search_code.py#L55) | 55 | `"        \".env.local\","` | — |
-| [SRC-69F3587825-L000056](../search_code.py#L56) | 56 | `"        \".env.production\","` | — |
-| [SRC-69F3587825-L000057](../search_code.py#L57) | 57 | `"        \".env.staging\","` | — |
-| [SRC-69F3587825-L000058](../search_code.py#L58) | 58 | `"        \".netrc\","` | — |
-| [SRC-69F3587825-L000059](../search_code.py#L59) | 59 | `"        \".npmrc\","` | — |
-| [SRC-69F3587825-L000060](../search_code.py#L60) | 60 | `"        \".pypirc\","` | — |
-| [SRC-69F3587825-L000061](../search_code.py#L61) | 61 | `"        \"authorized_keys\","` | — |
-| [SRC-69F3587825-L000062](../search_code.py#L62) | 62 | `"        \"client_secret.json\","` | — |
-| [SRC-69F3587825-L000063](../search_code.py#L63) | 63 | `"        \"client_secrets.json\","` | — |
-| [SRC-69F3587825-L000064](../search_code.py#L64) | 64 | `"        \"credentials\","` | — |
-| [SRC-69F3587825-L000065](../search_code.py#L65) | 65 | `"        \"credentials.json\","` | — |
-| [SRC-69F3587825-L000066](../search_code.py#L66) | 66 | `"        \"credentials.yaml\","` | — |
-| [SRC-69F3587825-L000067](../search_code.py#L67) | 67 | `"        \"credentials.yml\","` | — |
-| [SRC-69F3587825-L000068](../search_code.py#L68) | 68 | `"        \"id_dsa\","` | — |
-| [SRC-69F3587825-L000069](../search_code.py#L69) | 69 | `"        \"id_ecdsa\","` | — |
-| [SRC-69F3587825-L000070](../search_code.py#L70) | 70 | `"        \"id_ed25519\","` | — |
-| [SRC-69F3587825-L000071](../search_code.py#L71) | 71 | `"        \"id_rsa\","` | — |
-| [SRC-69F3587825-L000072](../search_code.py#L72) | 72 | `"        \"secrets.json\","` | — |
-| [SRC-69F3587825-L000073](../search_code.py#L73) | 73 | `"        \"secrets.yaml\","` | — |
-| [SRC-69F3587825-L000074](../search_code.py#L74) | 74 | `"        \"secrets.yml\","` | — |
-| [SRC-69F3587825-L000075](../search_code.py#L75) | 75 | `"        \"service-account.json\","` | — |
-| [SRC-69F3587825-L000076](../search_code.py#L76) | 76 | `"        \"token.json\","` | — |
-| [SRC-69F3587825-L000077](../search_code.py#L77) | 77 | `"    }"` | — |
-| [SRC-69F3587825-L000078](../search_code.py#L78) | 78 | `")"` | — |
-| [SRC-69F3587825-L000079](../search_code.py#L79) | 79 | `"SENSITIVE_NAME_RE = re.compile("` | — |

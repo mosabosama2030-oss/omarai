@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000828 إلى SRC-CAC5F305FE-L000041
+- النطاق: SRC-90FAA34ADE-L000776 إلى SRC-D4963BDA6A-L000223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000776](../../tests/fixtures/answer_quality_cases.json#L776) | 776 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000777](../../tests/fixtures/answer_quality_cases.json#L777) | 777 | `"        \"يوضح أن تعليقًا مجهولًا واحدًا لا يثبت الاحتيال\","` | — |
+| [SRC-90FAA34ADE-L000778](../../tests/fixtures/answer_quality_cases.json#L778) | 778 | `"        \"يقترح التحقق من مصادر موثوقة أو الجهات الرسمية دون اتهام قطعي\","` | — |
+| [SRC-90FAA34ADE-L000779](../../tests/fixtures/answer_quality_cases.json#L779) | 779 | `"        \"يفصل بين ادعاء المستخدم والوقائع المثبتة\""` | — |
+| [SRC-90FAA34ADE-L000780](../../tests/fixtures/answer_quality_cases.json#L780) | 780 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000781](../../tests/fixtures/answer_quality_cases.json#L781) | 781 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000782](../../tests/fixtures/answer_quality_cases.json#L782) | 782 | `"        \"يصف الشركة بأنها نصابة كحقيقة مؤكدة\","` | — |
+| [SRC-90FAA34ADE-L000783](../../tests/fixtures/answer_quality_cases.json#L783) | 783 | `"        \"يصطنع نتائج تحقيق أو أحكامًا قضائية\""` | — |
+| [SRC-90FAA34ADE-L000784](../../tests/fixtures/answer_quality_cases.json#L784) | 784 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000785](../../tests/fixtures/answer_quality_cases.json#L785) | 785 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000786](../../tests/fixtures/answer_quality_cases.json#L786) | 786 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000787](../../tests/fixtures/answer_quality_cases.json#L787) | 787 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000788](../../tests/fixtures/answer_quality_cases.json#L788) | 788 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000789](../../tests/fixtures/answer_quality_cases.json#L789) | 789 | `"            \"title\": \"Anonymous comment\","` | — |
+| [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
+| [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
+| [SRC-90FAA34ADE-L000792](../../tests/fixtures/answer_quality_cases.json#L792) | 792 | `"            \"domain\": \"reviews.example.test\","` | — |
+| [SRC-90FAA34ADE-L000793](../../tests/fixtures/answer_quality_cases.json#L793) | 793 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000794](../../tests/fixtures/answer_quality_cases.json#L794) | 794 | `"            \"source_class\": \"unverified_user_generated\""` | — |
+| [SRC-90FAA34ADE-L000795](../../tests/fixtures/answer_quality_cases.json#L795) | 795 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000796](../../tests/fixtures/answer_quality_cases.json#L796) | 796 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000797](../../tests/fixtures/answer_quality_cases.json#L797) | 797 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000798](../../tests/fixtures/answer_quality_cases.json#L798) | 798 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000799](../../tests/fixtures/answer_quality_cases.json#L799) | 799 | `"        \"اتهام قطعي مبني على التعليق الوحيد\","` | — |
+| [SRC-90FAA34ADE-L000800](../../tests/fixtures/answer_quality_cases.json#L800) | 800 | `"        \"اختلاق دليل موثوق غير موجود\""` | — |
+| [SRC-90FAA34ADE-L000801](../../tests/fixtures/answer_quality_cases.json#L801) | 801 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000802](../../tests/fixtures/answer_quality_cases.json#L802) | 802 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000803](../../tests/fixtures/answer_quality_cases.json#L803) | 803 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000804](../../tests/fixtures/answer_quality_cases.json#L804) | 804 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000805](../../tests/fixtures/answer_quality_cases.json#L805) | 805 | `"      \"case_id\": \"AQ-028\","` | — |
+| [SRC-90FAA34ADE-L000806](../../tests/fixtures/answer_quality_cases.json#L806) | 806 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L000807](../../tests/fixtures/answer_quality_cases.json#L807) | 807 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000808](../../tests/fixtures/answer_quality_cases.json#L808) | 808 | `"      \"question\": \"رد على الأربع نقاط دول كل واحدة لوحدها: التكلفة، مدة التنفيذ، المخاطر، وإزاي أتحقق من المصدر.\","` | — |
+| [SRC-90FAA34ADE-L000809](../../tests/fixtures/answer_quality_cases.json#L809) | 809 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L000810](../../tests/fixtures/answer_quality_cases.json#L810) | 810 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000811](../../tests/fixtures/answer_quality_cases.json#L811) | 811 | `"        \"يسأل عن المشروع أو الخدمة المقصودة قبل تقديم أرقام\","` | — |
+| [SRC-90FAA34ADE-L000812](../../tests/fixtures/answer_quality_cases.json#L812) | 812 | `"        \"يبيّن أن العناصر الأربعة ستُجاب منفصلة بعد تحديد الموضوع\","` | — |
+| [SRC-90FAA34ADE-L000813](../../tests/fixtures/answer_quality_cases.json#L813) | 813 | `"        \"لا يتجاهل أي عنصر من العناصر الأربعة\""` | — |
+| [SRC-90FAA34ADE-L000814](../../tests/fixtures/answer_quality_cases.json#L814) | 814 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000815](../../tests/fixtures/answer_quality_cases.json#L815) | 815 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000816](../../tests/fixtures/answer_quality_cases.json#L816) | 816 | `"        \"يخترع تكلفة ومدة دون معرفة الخدمة\","` | — |
+| [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
+| [SRC-90FAA34ADE-L000818](../../tests/fixtures/answer_quality_cases.json#L818) | 818 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000819](../../tests/fixtures/answer_quality_cases.json#L819) | 819 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000820](../../tests/fixtures/answer_quality_cases.json#L820) | 820 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L000821](../../tests/fixtures/answer_quality_cases.json#L821) | 821 | `"        \"notes\": \"الموضوع نفسه غير محدد؛ الاختبار يقيس طلب التوضيح وحفظ قائمة المتطلبات\""` | — |
+| [SRC-90FAA34ADE-L000822](../../tests/fixtures/answer_quality_cases.json#L822) | 822 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000823](../../tests/fixtures/answer_quality_cases.json#L823) | 823 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000824](../../tests/fixtures/answer_quality_cases.json#L824) | 824 | `"        \"عدم طلب تحديد الموضوع\","` | — |
+| [SRC-90FAA34ADE-L000825](../../tests/fixtures/answer_quality_cases.json#L825) | 825 | `"        \"تجاهل أي عنصر من العناصر الأربع بعد توضيح الموضوع\""` | — |
+| [SRC-90FAA34ADE-L000826](../../tests/fixtures/answer_quality_cases.json#L826) | 826 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000827](../../tests/fixtures/answer_quality_cases.json#L827) | 827 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000828](../../tests/fixtures/answer_quality_cases.json#L828) | 828 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000829](../../tests/fixtures/answer_quality_cases.json#L829) | 829 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000830](../../tests/fixtures/answer_quality_cases.json#L830) | 830 | `"      \"case_id\": \"AQ-029\","` | — |
@@ -773,64 +825,3 @@
 | [SRC-D4963BDA6A-L000221](../../tests/fixtures/answer_quality_reviews_template.json#L221) | 221 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000222](../../tests/fixtures/answer_quality_reviews_template.json#L222) | 222 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000223](../../tests/fixtures/answer_quality_reviews_template.json#L223) | 223 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000224](../../tests/fixtures/answer_quality_reviews_template.json#L224) | 224 | `"      \"case_id\": \"AQ-044\","` | — |
-| [SRC-D4963BDA6A-L000225](../../tests/fixtures/answer_quality_reviews_template.json#L225) | 225 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000226](../../tests/fixtures/answer_quality_reviews_template.json#L226) | 226 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000227](../../tests/fixtures/answer_quality_reviews_template.json#L227) | 227 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000228](../../tests/fixtures/answer_quality_reviews_template.json#L228) | 228 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000229](../../tests/fixtures/answer_quality_reviews_template.json#L229) | 229 | `"      \"case_id\": \"AQ-045\","` | — |
-| [SRC-D4963BDA6A-L000230](../../tests/fixtures/answer_quality_reviews_template.json#L230) | 230 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000231](../../tests/fixtures/answer_quality_reviews_template.json#L231) | 231 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000232](../../tests/fixtures/answer_quality_reviews_template.json#L232) | 232 | `"    }"` | — |
-| [SRC-D4963BDA6A-L000233](../../tests/fixtures/answer_quality_reviews_template.json#L233) | 233 | `"  ]"` | — |
-| [SRC-D4963BDA6A-L000234](../../tests/fixtures/answer_quality_reviews_template.json#L234) | 234 | `"}"` | — |
-## اختبارات
-
-### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
-| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
-| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
-| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
-| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
-| [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
-| [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |
-| [SRC-CAC5F305FE-L000011](../../tests/test_agent_modes.py#L11) | 11 | `""` | — |
-| [SRC-CAC5F305FE-L000012](../../tests/test_agent_modes.py#L12) | 12 | `"    def plan(question, history):"` | — |
-| [SRC-CAC5F305FE-L000013](../../tests/test_agent_modes.py#L13) | 13 | `"        return {"` | — |
-| [SRC-CAC5F305FE-L000014](../../tests/test_agent_modes.py#L14) | 14 | `"            \"queries\": [\"topic summary\"],"` | — |
-| [SRC-CAC5F305FE-L000015](../../tests/test_agent_modes.py#L15) | 15 | `"            \"direct_urls\": [],"` | — |
-| [SRC-CAC5F305FE-L000016](../../tests/test_agent_modes.py#L16) | 16 | `"            \"social_focus\": False,"` | — |
-| [SRC-CAC5F305FE-L000017](../../tests/test_agent_modes.py#L17) | 17 | `"            \"freshness\": \"any\","` | — |
-| [SRC-CAC5F305FE-L000018](../../tests/test_agent_modes.py#L18) | 18 | `"            \"depth\": \"standard\","` | — |
-| [SRC-CAC5F305FE-L000019](../../tests/test_agent_modes.py#L19) | 19 | `"            \"platforms\": [],"` | — |
-| [SRC-CAC5F305FE-L000020](../../tests/test_agent_modes.py#L20) | 20 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-CAC5F305FE-L000021](../../tests/test_agent_modes.py#L21) | 21 | `"        }"` | — |
-| [SRC-CAC5F305FE-L000022](../../tests/test_agent_modes.py#L22) | 22 | `""` | — |
-| [SRC-CAC5F305FE-L000023](../../tests/test_agent_modes.py#L23) | 23 | `"    source = {"` | — |
-| [SRC-CAC5F305FE-L000024](../../tests/test_agent_modes.py#L24) | 24 | `"        \"title\": \"Topic summary public report\","` | — |
-| [SRC-CAC5F305FE-L000025](../../tests/test_agent_modes.py#L25) | 25 | `"        \"url\": \"https://example.org/report\","` | — |
-| [SRC-CAC5F305FE-L000026](../../tests/test_agent_modes.py#L26) | 26 | `"        \"snippet\": \"Evidence snippet about topic summary\","` | — |
-| [SRC-CAC5F305FE-L000027](../../tests/test_agent_modes.py#L27) | 27 | `"        \"page_text\": \"Fetched text about topic summary\","` | — |
-| [SRC-CAC5F305FE-L000028](../../tests/test_agent_modes.py#L28) | 28 | `"        \"page_fetched\": True,"` | — |
-| [SRC-CAC5F305FE-L000029](../../tests/test_agent_modes.py#L29) | 29 | `"        \"provider\": \"test_search\","` | — |
-| [SRC-CAC5F305FE-L000030](../../tests/test_agent_modes.py#L30) | 30 | `"        \"providers\": [\"test_search\"],"` | — |
-| [SRC-CAC5F305FE-L000031](../../tests/test_agent_modes.py#L31) | 31 | `"        \"queries\": [\"topic summary\"],"` | — |
-| [SRC-CAC5F305FE-L000032](../../tests/test_agent_modes.py#L32) | 32 | `"        \"domain\": \"example.org\","` | — |
-| [SRC-CAC5F305FE-L000033](../../tests/test_agent_modes.py#L33) | 33 | `"        \"source_class\": \"general\","` | — |
-| [SRC-CAC5F305FE-L000034](../../tests/test_agent_modes.py#L34) | 34 | `"        \"platform\": \"web\","` | — |
-| [SRC-CAC5F305FE-L000035](../../tests/test_agent_modes.py#L35) | 35 | `"        \"published_at\": \"2026-10-10\","` | — |
-| [SRC-CAC5F305FE-L000036](../../tests/test_agent_modes.py#L36) | 36 | `"        \"rank_score\": 1.0,"` | — |
-| [SRC-CAC5F305FE-L000037](../../tests/test_agent_modes.py#L37) | 37 | `"    }"` | — |
-| [SRC-CAC5F305FE-L000038](../../tests/test_agent_modes.py#L38) | 38 | `""` | — |
-| [SRC-CAC5F305FE-L000039](../../tests/test_agent_modes.py#L39) | 39 | `"    def collect(research_plan):"` | — |
-| [SRC-CAC5F305FE-L000040](../../tests/test_agent_modes.py#L40) | 40 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
-| [SRC-CAC5F305FE-L000041](../../tests/test_agent_modes.py#L41) | 41 | `"        report = {"` | — |

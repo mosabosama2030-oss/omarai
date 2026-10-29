@@ -4,9 +4,29 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-CAC5F305FE-L000042 إلى SRC-D186ED3822-L000042
+- النطاق: SRC-D4963BDA6A-L000224 إلى SRC-2477C41448-L000090
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-D4963BDA6A — [tests/fixtures/answer_quality_reviews_template.json](../../tests/fixtures/answer_quality_reviews_template.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D4963BDA6A-L000224](../../tests/fixtures/answer_quality_reviews_template.json#L224) | 224 | `"      \"case_id\": \"AQ-044\","` | — |
+| [SRC-D4963BDA6A-L000225](../../tests/fixtures/answer_quality_reviews_template.json#L225) | 225 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000226](../../tests/fixtures/answer_quality_reviews_template.json#L226) | 226 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000227](../../tests/fixtures/answer_quality_reviews_template.json#L227) | 227 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000228](../../tests/fixtures/answer_quality_reviews_template.json#L228) | 228 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000229](../../tests/fixtures/answer_quality_reviews_template.json#L229) | 229 | `"      \"case_id\": \"AQ-045\","` | — |
+| [SRC-D4963BDA6A-L000230](../../tests/fixtures/answer_quality_reviews_template.json#L230) | 230 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000231](../../tests/fixtures/answer_quality_reviews_template.json#L231) | 231 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000232](../../tests/fixtures/answer_quality_reviews_template.json#L232) | 232 | `"    }"` | — |
+| [SRC-D4963BDA6A-L000233](../../tests/fixtures/answer_quality_reviews_template.json#L233) | 233 | `"  ]"` | — |
+| [SRC-D4963BDA6A-L000234](../../tests/fixtures/answer_quality_reviews_template.json#L234) | 234 | `"}"` | — |
 ## اختبارات
 
 ### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
@@ -16,6 +36,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
+| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
+| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
+| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
+| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
+| [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
+| [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |
+| [SRC-CAC5F305FE-L000011](../../tests/test_agent_modes.py#L11) | 11 | `""` | — |
+| [SRC-CAC5F305FE-L000012](../../tests/test_agent_modes.py#L12) | 12 | `"    def plan(question, history):"` | — |
+| [SRC-CAC5F305FE-L000013](../../tests/test_agent_modes.py#L13) | 13 | `"        return {"` | — |
+| [SRC-CAC5F305FE-L000014](../../tests/test_agent_modes.py#L14) | 14 | `"            \"queries\": [\"topic summary\"],"` | — |
+| [SRC-CAC5F305FE-L000015](../../tests/test_agent_modes.py#L15) | 15 | `"            \"direct_urls\": [],"` | — |
+| [SRC-CAC5F305FE-L000016](../../tests/test_agent_modes.py#L16) | 16 | `"            \"social_focus\": False,"` | — |
+| [SRC-CAC5F305FE-L000017](../../tests/test_agent_modes.py#L17) | 17 | `"            \"freshness\": \"any\","` | — |
+| [SRC-CAC5F305FE-L000018](../../tests/test_agent_modes.py#L18) | 18 | `"            \"depth\": \"standard\","` | — |
+| [SRC-CAC5F305FE-L000019](../../tests/test_agent_modes.py#L19) | 19 | `"            \"platforms\": [],"` | — |
+| [SRC-CAC5F305FE-L000020](../../tests/test_agent_modes.py#L20) | 20 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-CAC5F305FE-L000021](../../tests/test_agent_modes.py#L21) | 21 | `"        }"` | — |
+| [SRC-CAC5F305FE-L000022](../../tests/test_agent_modes.py#L22) | 22 | `""` | — |
+| [SRC-CAC5F305FE-L000023](../../tests/test_agent_modes.py#L23) | 23 | `"    source = {"` | — |
+| [SRC-CAC5F305FE-L000024](../../tests/test_agent_modes.py#L24) | 24 | `"        \"title\": \"Topic summary public report\","` | — |
+| [SRC-CAC5F305FE-L000025](../../tests/test_agent_modes.py#L25) | 25 | `"        \"url\": \"https://example.org/report\","` | — |
+| [SRC-CAC5F305FE-L000026](../../tests/test_agent_modes.py#L26) | 26 | `"        \"snippet\": \"Evidence snippet about topic summary\","` | — |
+| [SRC-CAC5F305FE-L000027](../../tests/test_agent_modes.py#L27) | 27 | `"        \"page_text\": \"Fetched text about topic summary\","` | — |
+| [SRC-CAC5F305FE-L000028](../../tests/test_agent_modes.py#L28) | 28 | `"        \"page_fetched\": True,"` | — |
+| [SRC-CAC5F305FE-L000029](../../tests/test_agent_modes.py#L29) | 29 | `"        \"provider\": \"test_search\","` | — |
+| [SRC-CAC5F305FE-L000030](../../tests/test_agent_modes.py#L30) | 30 | `"        \"providers\": [\"test_search\"],"` | — |
+| [SRC-CAC5F305FE-L000031](../../tests/test_agent_modes.py#L31) | 31 | `"        \"queries\": [\"topic summary\"],"` | — |
+| [SRC-CAC5F305FE-L000032](../../tests/test_agent_modes.py#L32) | 32 | `"        \"domain\": \"example.org\","` | — |
+| [SRC-CAC5F305FE-L000033](../../tests/test_agent_modes.py#L33) | 33 | `"        \"source_class\": \"general\","` | — |
+| [SRC-CAC5F305FE-L000034](../../tests/test_agent_modes.py#L34) | 34 | `"        \"platform\": \"web\","` | — |
+| [SRC-CAC5F305FE-L000035](../../tests/test_agent_modes.py#L35) | 35 | `"        \"published_at\": \"2026-10-10\","` | — |
+| [SRC-CAC5F305FE-L000036](../../tests/test_agent_modes.py#L36) | 36 | `"        \"rank_score\": 1.0,"` | — |
+| [SRC-CAC5F305FE-L000037](../../tests/test_agent_modes.py#L37) | 37 | `"    }"` | — |
+| [SRC-CAC5F305FE-L000038](../../tests/test_agent_modes.py#L38) | 38 | `""` | — |
+| [SRC-CAC5F305FE-L000039](../../tests/test_agent_modes.py#L39) | 39 | `"    def collect(research_plan):"` | — |
+| [SRC-CAC5F305FE-L000040](../../tests/test_agent_modes.py#L40) | 40 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
+| [SRC-CAC5F305FE-L000041](../../tests/test_agent_modes.py#L41) | 41 | `"        report = {"` | — |
 | [SRC-CAC5F305FE-L000042](../../tests/test_agent_modes.py#L42) | 42 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
 | [SRC-CAC5F305FE-L000043](../../tests/test_agent_modes.py#L43) | 43 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
 | [SRC-CAC5F305FE-L000044](../../tests/test_agent_modes.py#L44) | 44 | `"            \"query_results\": [],"` | — |
@@ -800,64 +861,3 @@
 | [SRC-2477C41448-L000088](../../tests/test_answer_quality_provider_usage.py#L88) | 88 | `""` | — |
 | [SRC-2477C41448-L000089](../../tests/test_answer_quality_provider_usage.py#L89) | 89 | `"def test_openrouter_cost_requires_real_hostname_boundary():"` | — |
 | [SRC-2477C41448-L000090](../../tests/test_answer_quality_provider_usage.py#L90) | 90 | `"    normalized = _normalized_provider_usage("` | — |
-| [SRC-2477C41448-L000091](../../tests/test_answer_quality_provider_usage.py#L91) | 91 | `"        {\"cost\": 0.05},"` | — |
-| [SRC-2477C41448-L000092](../../tests/test_answer_quality_provider_usage.py#L92) | 92 | `"        provider_base_url=\"https://openrouter.ai.attacker.example/api/v1\","` | — |
-| [SRC-2477C41448-L000093](../../tests/test_answer_quality_provider_usage.py#L93) | 93 | `"    )"` | — |
-| [SRC-2477C41448-L000094](../../tests/test_answer_quality_provider_usage.py#L94) | 94 | `"    assert normalized is None"` | — |
-| [SRC-2477C41448-L000095](../../tests/test_answer_quality_provider_usage.py#L95) | 95 | `""` | — |
-| [SRC-2477C41448-L000096](../../tests/test_answer_quality_provider_usage.py#L96) | 96 | `"    normalized = _normalized_provider_usage("` | — |
-| [SRC-2477C41448-L000097](../../tests/test_answer_quality_provider_usage.py#L97) | 97 | `"        {\"cost\": 0.05},"` | — |
-| [SRC-2477C41448-L000098](../../tests/test_answer_quality_provider_usage.py#L98) | 98 | `"        provider_base_url=\"https://evilopenrouter.ai/api/v1\","` | — |
-| [SRC-2477C41448-L000099](../../tests/test_answer_quality_provider_usage.py#L99) | 99 | `"    )"` | — |
-| [SRC-2477C41448-L000100](../../tests/test_answer_quality_provider_usage.py#L100) | 100 | `"    assert normalized is None"` | — |
-## اختبارات
-
-### FILE-D186ED3822 — [tests/test_answer_quality_review_scorecard.py](../../tests/test_answer_quality_review_scorecard.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-D186ED3822-L000001](../../tests/test_answer_quality_review_scorecard.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-D186ED3822-L000002](../../tests/test_answer_quality_review_scorecard.py#L2) | 2 | `""` | — |
-| [SRC-D186ED3822-L000003](../../tests/test_answer_quality_review_scorecard.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-D186ED3822-L000004](../../tests/test_answer_quality_review_scorecard.py#L4) | 4 | `"from pathlib import Path"` | — |
-| [SRC-D186ED3822-L000005](../../tests/test_answer_quality_review_scorecard.py#L5) | 5 | `""` | — |
-| [SRC-D186ED3822-L000006](../../tests/test_answer_quality_review_scorecard.py#L6) | 6 | `"import pytest"` | — |
-| [SRC-D186ED3822-L000007](../../tests/test_answer_quality_review_scorecard.py#L7) | 7 | `""` | — |
-| [SRC-D186ED3822-L000008](../../tests/test_answer_quality_review_scorecard.py#L8) | 8 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-D186ED3822-L000009](../../tests/test_answer_quality_review_scorecard.py#L9) | 9 | `"SCRIPT = ROOT / \"scripts\" / \"score_answer_quality_reviews.py\""` | — |
-| [SRC-D186ED3822-L000010](../../tests/test_answer_quality_review_scorecard.py#L10) | 10 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-D186ED3822-L000011](../../tests/test_answer_quality_review_scorecard.py#L11) | 11 | `""` | — |
-| [SRC-D186ED3822-L000012](../../tests/test_answer_quality_review_scorecard.py#L12) | 12 | `""` | — |
-| [SRC-D186ED3822-L000013](../../tests/test_answer_quality_review_scorecard.py#L13) | 13 | `"def load_module():"` | — |
-| [SRC-D186ED3822-L000014](../../tests/test_answer_quality_review_scorecard.py#L14) | 14 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_review_scorecard\", SCRIPT)"` | — |
-| [SRC-D186ED3822-L000015](../../tests/test_answer_quality_review_scorecard.py#L15) | 15 | `"    assert spec and spec.loader"` | — |
-| [SRC-D186ED3822-L000016](../../tests/test_answer_quality_review_scorecard.py#L16) | 16 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-D186ED3822-L000017](../../tests/test_answer_quality_review_scorecard.py#L17) | 17 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-D186ED3822-L000018](../../tests/test_answer_quality_review_scorecard.py#L18) | 18 | `"    return module"` | — |
-| [SRC-D186ED3822-L000019](../../tests/test_answer_quality_review_scorecard.py#L19) | 19 | `""` | — |
-| [SRC-D186ED3822-L000020](../../tests/test_answer_quality_review_scorecard.py#L20) | 20 | `""` | — |
-| [SRC-D186ED3822-L000021](../../tests/test_answer_quality_review_scorecard.py#L21) | 21 | `"def corpus():"` | — |
-| [SRC-D186ED3822-L000022](../../tests/test_answer_quality_review_scorecard.py#L22) | 22 | `"    return load_module().load_json_object(CORPUS_PATH)"` | — |
-| [SRC-D186ED3822-L000023](../../tests/test_answer_quality_review_scorecard.py#L23) | 23 | `""` | — |
-| [SRC-D186ED3822-L000024](../../tests/test_answer_quality_review_scorecard.py#L24) | 24 | `""` | — |
-| [SRC-D186ED3822-L000025](../../tests/test_answer_quality_review_scorecard.py#L25) | 25 | `"def test_manual_scorecard_aggregates_only_explicit_reviewed_metrics():"` | — |
-| [SRC-D186ED3822-L000026](../../tests/test_answer_quality_review_scorecard.py#L26) | 26 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000027](../../tests/test_answer_quality_review_scorecard.py#L27) | 27 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000028](../../tests/test_answer_quality_review_scorecard.py#L28) | 28 | `"        \"schema_version\": \"1.0\","` | — |
-| [SRC-D186ED3822-L000029](../../tests/test_answer_quality_review_scorecard.py#L29) | 29 | `"        \"reviews\": ["` | — |
-| [SRC-D186ED3822-L000030](../../tests/test_answer_quality_review_scorecard.py#L30) | 30 | `"            {"` | — |
-| [SRC-D186ED3822-L000031](../../tests/test_answer_quality_review_scorecard.py#L31) | 31 | `"                \"case_id\": \"AQ-007\","` | — |
-| [SRC-D186ED3822-L000032](../../tests/test_answer_quality_review_scorecard.py#L32) | 32 | `"                \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000033](../../tests/test_answer_quality_review_scorecard.py#L33) | 33 | `"                \"retrieval\": {\"relevant_retrieved\": 3, \"retrieved_count\": 5, \"relevant_available\": 4},"` | — |
-| [SRC-D186ED3822-L000034](../../tests/test_answer_quality_review_scorecard.py#L34) | 34 | `"                \"faithfulness\": {\"supported_claims\": 4, \"reviewed_claims\": 5},"` | — |
-| [SRC-D186ED3822-L000035](../../tests/test_answer_quality_review_scorecard.py#L35) | 35 | `"                \"correctness\": {\"correct_facts\": 3, \"reviewed_facts\": 4},"` | — |
-| [SRC-D186ED3822-L000036](../../tests/test_answer_quality_review_scorecard.py#L36) | 36 | `"                \"citations\": {\"supported_citations\": 2, \"reviewed_citations\": 3},"` | — |
-| [SRC-D186ED3822-L000037](../../tests/test_answer_quality_review_scorecard.py#L37) | 37 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-D186ED3822-L000038](../../tests/test_answer_quality_review_scorecard.py#L38) | 38 | `"            },"` | — |
-| [SRC-D186ED3822-L000039](../../tests/test_answer_quality_review_scorecard.py#L39) | 39 | `"            {"` | — |
-| [SRC-D186ED3822-L000040](../../tests/test_answer_quality_review_scorecard.py#L40) | 40 | `"                \"case_id\": \"AQ-008\","` | — |
-| [SRC-D186ED3822-L000041](../../tests/test_answer_quality_review_scorecard.py#L41) | 41 | `"                \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000042](../../tests/test_answer_quality_review_scorecard.py#L42) | 42 | `"                \"writing_quality\": 4,"` | — |
