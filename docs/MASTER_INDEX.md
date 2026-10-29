@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **110**
 - ملفات Python المحللة: **66**
-- تعريفات Python المفهرسة: **1444**
+- تعريفات Python المفهرسة: **1454**
 - تعريفات Python موثقة بوجود Docstring: **247**
-- تعريفات Python بلا Docstring: **903**
+- تعريفات Python بلا Docstring: **913**
 - تعريفات لا ينطبق عليها Docstring: **294**
 - الرموز الساكنة الإضافية: **1804**
-- الأسطر النصية المفهرسة حرفيًا: **38270**
+- الأسطر النصية المفهرسة حرفيًا: **38334**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -103,7 +103,7 @@
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 9183 | 250 | جرد الملف + AST Python |
 | FILE-2477C41448 | اختبارات | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L1) | Python | 2720 | 86 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
-| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 10447 | 309 | جرد الملف + AST Python |
+| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 12748 | 373 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
@@ -864,17 +864,27 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L92) | دالة | test_redact_secrets_strips_token_value | لا توجد Docstring. | ناقص | 92 | [SRC-B3062EB677-L000092](../tests/test_answer_quality_runner.py#L92) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L101) | دالة | test_live_records_not_tested_not_pass | Even on HTTP 200, quality status stays NOT_TESTED (no keyword auto-PASS). | موثق | 101 | [SRC-B3062EB677-L000101](../tests/test_answer_quality_runner.py#L101) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L105) | دالة | test_live_records_not_tested_not_pass.fake_post | لا توجد Docstring. | ناقص | 105 | [SRC-B3062EB677-L000105](../tests/test_answer_quality_runner.py#L105) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L136) | دالة | test_validate_base_url_rejects_non_loopback_http | لا توجد Docstring. | ناقص | 136 | [SRC-B3062EB677-L000136](../tests/test_answer_quality_runner.py#L136) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L151) | دالة | test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls | لا توجد Docstring. | ناقص | 151 | [SRC-B3062EB677-L000151](../tests/test_answer_quality_runner.py#L151) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L157) | دالة | test_remote_bearer_token_requires_exact_allowlisted_https_origin | لا توجد Docstring. | ناقص | 157 | [SRC-B3062EB677-L000157](../tests/test_answer_quality_runner.py#L157) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L169) | دالة | test_remote_token_origin_comparison_normalizes_default_https_port | لا توجد Docstring. | ناقص | 169 | [SRC-B3062EB677-L000169](../tests/test_answer_quality_runner.py#L169) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L178) | دالة | test_redirect_handler_refuses_following_redirects | لا توجد Docstring. | ناقص | 178 | [SRC-B3062EB677-L000178](../tests/test_answer_quality_runner.py#L178) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L191) | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 191 | [SRC-B3062EB677-L000191](../tests/test_answer_quality_runner.py#L191) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L208) | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 208 | [SRC-B3062EB677-L000208](../tests/test_answer_quality_runner.py#L208) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L211) | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 211 | [SRC-B3062EB677-L000211](../tests/test_answer_quality_runner.py#L211) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L235) | دالة | test_response_metrics_separates_tool_status_from_http_success | لا توجد Docstring. | ناقص | 235 | [SRC-B3062EB677-L000235](../tests/test_answer_quality_runner.py#L235) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L276) | دالة | test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation | لا توجد Docstring. | ناقص | 276 | [SRC-B3062EB677-L000276](../tests/test_answer_quality_runner.py#L276) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L304) | دالة | test_request_cost_ledger_rejects_unverifiable_values | لا توجد Docstring. | ناقص | 304 | [SRC-B3062EB677-L000304](../tests/test_answer_quality_runner.py#L304) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L139) | دالة | test_validate_base_url_rejects_non_loopback_http | لا توجد Docstring. | ناقص | 139 | [SRC-B3062EB677-L000139](../tests/test_answer_quality_runner.py#L139) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L154) | دالة | test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls | لا توجد Docstring. | ناقص | 154 | [SRC-B3062EB677-L000154](../tests/test_answer_quality_runner.py#L154) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L160) | دالة | test_remote_bearer_token_requires_exact_allowlisted_https_origin | لا توجد Docstring. | ناقص | 160 | [SRC-B3062EB677-L000160](../tests/test_answer_quality_runner.py#L160) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L172) | دالة | test_remote_token_origin_comparison_normalizes_default_https_port | لا توجد Docstring. | ناقص | 172 | [SRC-B3062EB677-L000172](../tests/test_answer_quality_runner.py#L172) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L181) | دالة | test_redirect_handler_refuses_following_redirects | لا توجد Docstring. | ناقص | 181 | [SRC-B3062EB677-L000181](../tests/test_answer_quality_runner.py#L181) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L194) | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 194 | [SRC-B3062EB677-L000194](../tests/test_answer_quality_runner.py#L194) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L211) | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 211 | [SRC-B3062EB677-L000211](../tests/test_answer_quality_runner.py#L211) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L214) | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 214 | [SRC-B3062EB677-L000214](../tests/test_answer_quality_runner.py#L214) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L239) | دالة | test_response_metrics_separates_tool_status_from_http_success | لا توجد Docstring. | ناقص | 239 | [SRC-B3062EB677-L000239](../tests/test_answer_quality_runner.py#L239) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L280) | دالة | test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation | لا توجد Docstring. | ناقص | 280 | [SRC-B3062EB677-L000280](../tests/test_answer_quality_runner.py#L280) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L308) | دالة | test_request_cost_ledger_rejects_unverifiable_values | لا توجد Docstring. | ناقص | 308 | [SRC-B3062EB677-L000308](../tests/test_answer_quality_runner.py#L308) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L316) | دالة | test_live_refuses_build_sha_mismatch_before_posting | لا توجد Docstring. | ناقص | 316 | [SRC-B3062EB677-L000316](../tests/test_answer_quality_runner.py#L316) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L320) | دالة | test_live_refuses_build_sha_mismatch_before_posting.fake_post | لا توجد Docstring. | ناقص | 320 | [SRC-B3062EB677-L000320](../tests/test_answer_quality_runner.py#L320) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L335) | دالة | test_live_refuses_unknown_health_build_sha_before_posting | لا توجد Docstring. | ناقص | 335 | [SRC-B3062EB677-L000335](../tests/test_answer_quality_runner.py#L335) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L339) | دالة | test_live_refuses_unknown_health_build_sha_before_posting.fake_post | لا توجد Docstring. | ناقص | 339 | [SRC-B3062EB677-L000339](../tests/test_answer_quality_runner.py#L339) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L343) | دالة | test_live_refuses_unknown_health_build_sha_before_posting.unknown_sha | لا توجد Docstring. | ناقص | 343 | [SRC-B3062EB677-L000343](../tests/test_answer_quality_runner.py#L343) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L356) | دالة | test_get_verified_build_sha_requires_full_api_health_identity | لا توجد Docstring. | ناقص | 356 | [SRC-B3062EB677-L000356](../tests/test_answer_quality_runner.py#L356) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L360) | كلاس | test_get_verified_build_sha_requires_full_api_health_identity.FakeResponse | لا توجد Docstring. | ناقص | 360 | [SRC-B3062EB677-L000360](../tests/test_answer_quality_runner.py#L360) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L363) | دالة | test_get_verified_build_sha_requires_full_api_health_identity.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 363 | [SRC-B3062EB677-L000363](../tests/test_answer_quality_runner.py#L363) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L366) | دالة | test_get_verified_build_sha_requires_full_api_health_identity.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 366 | [SRC-B3062EB677-L000366](../tests/test_answer_quality_runner.py#L366) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L369) | دالة | test_get_verified_build_sha_requires_full_api_health_identity.FakeResponse.read | لا توجد Docstring. | ناقص | 369 | [SRC-B3062EB677-L000369](../tests/test_answer_quality_runner.py#L369) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L11) | دالة | test_numeric_screen_accepts_arabic_digits_and_thousands_formatting | لا توجد Docstring. | ناقص | 11 | [SRC-1C77C97630-L000011](../tests/test_answer_validation.py#L11) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L31) | دالة | test_numeric_screen_flags_number_absent_from_available_evidence | لا توجد Docstring. | ناقص | 31 | [SRC-1C77C97630-L000031](../tests/test_answer_validation.py#L31) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L47) | دالة | test_task_coverage_screen_flags_a_potentially_missing_target_without_claiming_failure | لا توجد Docstring. | ناقص | 47 | [SRC-1C77C97630-L000047](../tests/test_answer_validation.py#L47) |
@@ -2918,11 +2928,11 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 35 | [SRC-B3062EB677-L000035](../tests/test_answer_quality_runner.py#L35) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 94 | [SRC-B3062EB677-L000094](../tests/test_answer_quality_runner.py#L94) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 95 | [SRC-B3062EB677-L000095](../tests/test_answer_quality_runner.py#L95) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L159) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 159 | [SRC-B3062EB677-L000159](../tests/test_answer_quality_runner.py#L159) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L245) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOOL_FAILED | 245 | [SRC-B3062EB677-L000245](../tests/test_answer_quality_runner.py#L245) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L247) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 247 | [SRC-B3062EB677-L000247](../tests/test_answer_quality_runner.py#L247) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L270) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUCCESS_WITH_USABLE_RESULTS | 270 | [SRC-B3062EB677-L000270](../tests/test_answer_quality_runner.py#L270) |
-| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L273) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPLETE_FOR_RETURNED_MODEL_CALLS | 273 | [SRC-B3062EB677-L000273](../tests/test_answer_quality_runner.py#L273) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L162) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 162 | [SRC-B3062EB677-L000162](../tests/test_answer_quality_runner.py#L162) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L249) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOOL_FAILED | 249 | [SRC-B3062EB677-L000249](../tests/test_answer_quality_runner.py#L249) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L251) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 251 | [SRC-B3062EB677-L000251](../tests/test_answer_quality_runner.py#L251) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUCCESS_WITH_USABLE_RESULTS | 274 | [SRC-B3062EB677-L000274](../tests/test_answer_quality_runner.py#L274) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L277) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPLETE_FOR_RETURNED_MODEL_CALLS | 277 | [SRC-B3062EB677-L000277](../tests/test_answer_quality_runner.py#L277) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 128 | [SRC-1C77C97630-L000128](../tests/test_answer_validation.py#L128) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 128 | [SRC-1C77C97630-L000128](../tests/test_answer_validation.py#L128) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L196) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 196 | [SRC-1C77C97630-L000196](../tests/test_answer_validation.py#L196) |

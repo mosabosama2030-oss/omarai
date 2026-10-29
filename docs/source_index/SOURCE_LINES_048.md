@@ -3,10 +3,79 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **048**
-- سجلات الأسطر: **670**
-- النطاق: SRC-8C13B81AB4-L000005 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **734**
+- النطاق: SRC-F725E90B2A-L003825 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-F725E90B2A-L003825](../../tests/test_web_agent.py#L3825) | 3825 | `"    assert \"الاستعلامات المخططة فقط\" in prompt"` | — |
+| [SRC-F725E90B2A-L003826](../../tests/test_web_agent.py#L3826) | 3826 | `""` | — |
+| [SRC-F725E90B2A-L003827](../../tests/test_web_agent.py#L3827) | 3827 | `"def test_bilingual_relevance_handles_arabic_attached_clitics_without_lowering_floor():"` | — |
+| [SRC-F725E90B2A-L003828](../../tests/test_web_agent.py#L3828) | 3828 | `"    query = \"أهم استخدامات الذكاء الاصطناعي للشركات الصغيرة؟\""` | — |
+| [SRC-F725E90B2A-L003829](../../tests/test_web_agent.py#L3829) | 3829 | `"    evidence = \"AI use cases for small businesses\""` | — |
+| [SRC-F725E90B2A-L003830](../../tests/test_web_agent.py#L3830) | 3830 | `"    assert _minimum_relevance_ratio(query) == 0.20"` | — |
+| [SRC-F725E90B2A-L003831](../../tests/test_web_agent.py#L3831) | 3831 | `"    assert _relevance_ratio(query, evidence) >= 0.80"` | — |
+| [SRC-F725E90B2A-L003832](../../tests/test_web_agent.py#L3832) | 3832 | `""` | — |
+| [SRC-F725E90B2A-L003833](../../tests/test_web_agent.py#L3833) | 3833 | `"def test_search_evidence_matching_keeps_distinct_concepts_as_the_ratio_denominator():"` | — |
+| [SRC-F725E90B2A-L003834](../../tests/test_web_agent.py#L3834) | 3834 | `"    query = \"استخدامات الذكاء الاصطناعي للشركات الصغيرة\""` | — |
+| [SRC-F725E90B2A-L003835](../../tests/test_web_agent.py#L3835) | 3835 | `"    on_topic = \"AI use cases for small businesses\""` | — |
+| [SRC-F725E90B2A-L003836](../../tests/test_web_agent.py#L3836) | 3836 | `"    weak = \"AI tools for personal photo editing\""` | — |
+| [SRC-F725E90B2A-L003837](../../tests/test_web_agent.py#L3837) | 3837 | `"    assert _relevance_ratio(query, on_topic) > _relevance_ratio(query, weak)"` | — |
+| [SRC-F725E90B2A-L003838](../../tests/test_web_agent.py#L3838) | 3838 | `"    assert _relevance_ratio(query, weak) < _minimum_relevance_ratio(query)"` | — |
+| [SRC-F725E90B2A-L003839](../../tests/test_web_agent.py#L3839) | 3839 | `""` | — |
+| [SRC-F725E90B2A-L003840](../../tests/test_web_agent.py#L3840) | 3840 | `"def test_bilingual_relevance_matches_english_queries_to_arabic_source_text():"` | — |
+| [SRC-F725E90B2A-L003841](../../tests/test_web_agent.py#L3841) | 3841 | `"    query = \"AI use cases for small businesses in Egypt\""` | — |
+| [SRC-F725E90B2A-L003842](../../tests/test_web_agent.py#L3842) | 3842 | `"    evidence = \"استخدامات الذكاء الاصطناعي للشركات الصغيرة في مصر\""` | — |
+| [SRC-F725E90B2A-L003843](../../tests/test_web_agent.py#L3843) | 3843 | `"    assert _relevance_ratio(query, evidence) >= 0.80"` | — |
+| [SRC-F725E90B2A-L003844](../../tests/test_web_agent.py#L3844) | 3844 | `""` | — |
+| [SRC-F725E90B2A-L003845](../../tests/test_web_agent.py#L3845) | 3845 | `""` | — |
+| [SRC-F725E90B2A-L003846](../../tests/test_web_agent.py#L3846) | 3846 | `"def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003847](../../tests/test_web_agent.py#L3847) | 3847 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003848](../../tests/test_web_agent.py#L3848) | 3848 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L003849](../../tests/test_web_agent.py#L3849) | 3849 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003850](../../tests/test_web_agent.py#L3850) | 3850 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003851](../../tests/test_web_agent.py#L3851) | 3851 | `"        \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L003852](../../tests/test_web_agent.py#L3852) | 3852 | `"        lambda question, history: {"` | — |
+| [SRC-F725E90B2A-L003853](../../tests/test_web_agent.py#L3853) | 3853 | `"            \"queries\": [question],"` | — |
+| [SRC-F725E90B2A-L003854](../../tests/test_web_agent.py#L3854) | 3854 | `"            \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L003855](../../tests/test_web_agent.py#L3855) | 3855 | `"            \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L003856](../../tests/test_web_agent.py#L3856) | 3856 | `"            \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L003857](../../tests/test_web_agent.py#L3857) | 3857 | `"            \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L003858](../../tests/test_web_agent.py#L3858) | 3858 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L003859](../../tests/test_web_agent.py#L3859) | 3859 | `"            \"coverage_targets\": [],"` | — |
+| [SRC-F725E90B2A-L003860](../../tests/test_web_agent.py#L3860) | 3860 | `"        },"` | — |
+| [SRC-F725E90B2A-L003861](../../tests/test_web_agent.py#L3861) | 3861 | `"    )"` | — |
+| [SRC-F725E90B2A-L003862](../../tests/test_web_agent.py#L3862) | 3862 | `"    monkeypatch.setattr(agent, \"_collect_research\", lambda plan: ("` | — |
+| [SRC-F725E90B2A-L003863](../../tests/test_web_agent.py#L3863) | 3863 | `"        [sample_source(0), sample_source(1)], [], {"` | — |
+| [SRC-F725E90B2A-L003864](../../tests/test_web_agent.py#L3864) | 3864 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L003865](../../tests/test_web_agent.py#L3865) | 3865 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L003866](../../tests/test_web_agent.py#L3866) | 3866 | `"            \"query_results\": [{\"query\": plan[\"queries\"][0], \"results\": 2}],"` | — |
+| [SRC-F725E90B2A-L003867](../../tests/test_web_agent.py#L3867) | 3867 | `"            \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L003868](../../tests/test_web_agent.py#L3868) | 3868 | `"            \"pages_fetched\": 2,"` | — |
+| [SRC-F725E90B2A-L003869](../../tests/test_web_agent.py#L3869) | 3869 | `"            \"providers_used\": [\"test\"],"` | — |
+| [SRC-F725E90B2A-L003870](../../tests/test_web_agent.py#L3870) | 3870 | `"            \"provider_diagnostics\": [],"` | — |
+| [SRC-F725E90B2A-L003871](../../tests/test_web_agent.py#L3871) | 3871 | `"        }"` | — |
+| [SRC-F725E90B2A-L003872](../../tests/test_web_agent.py#L3872) | 3872 | `"    ))"` | — |
+| [SRC-F725E90B2A-L003873](../../tests/test_web_agent.py#L3873) | 3873 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-F725E90B2A-L003874](../../tests/test_web_agent.py#L3874) | 3874 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L003875](../../tests/test_web_agent.py#L3875) | 3875 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"إجابة اختبارية [المصدر 1].\")"` | — |
+| [SRC-F725E90B2A-L003876](../../tests/test_web_agent.py#L3876) | 3876 | `""` | — |
+| [SRC-F725E90B2A-L003877](../../tests/test_web_agent.py#L3877) | 3877 | `"    def fail_diagnostics(_result):"` | — |
+| [SRC-F725E90B2A-L003878](../../tests/test_web_agent.py#L3878) | 3878 | `"        raise RuntimeError(\"diagnostics are optional\")"` | — |
+| [SRC-F725E90B2A-L003879](../../tests/test_web_agent.py#L3879) | 3879 | `""` | — |
+| [SRC-F725E90B2A-L003880](../../tests/test_web_agent.py#L3880) | 3880 | `"    monkeypatch.setattr(\"agents.web_agent.build_research_completion\", fail_diagnostics)"` | — |
+| [SRC-F725E90B2A-L003881](../../tests/test_web_agent.py#L3881) | 3881 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
+| [SRC-F725E90B2A-L003882](../../tests/test_web_agent.py#L3882) | 3882 | `"    assert result[\"answer\"] == \"إجابة اختبارية [المصدر 1].\""` | — |
+| [SRC-F725E90B2A-L003883](../../tests/test_web_agent.py#L3883) | 3883 | `"    assert result[\"research_completion\"][\"status\"] == \"diagnostics_not_computed\""` | — |
+| [SRC-F725E90B2A-L003884](../../tests/test_web_agent.py#L3884) | 3884 | `"    assert any(\"لا يُعد ذلك دليلًا على اكتمال البحث\" in warning for warning in result[\"warnings\"])"` | — |
 ## اختبارات
 
 ### FILE-8C13B81AB4 — [tests/test_web_agent_nlu_integration.py](../../tests/test_web_agent_nlu_integration.py#L1)
@@ -16,6 +85,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8C13B81AB4-L000001](../../tests/test_web_agent_nlu_integration.py#L1) | 1 | `"\"\"\"Integration regressions for budgeted academic fallback and compound facets.\"\"\""` | — |
+| [SRC-8C13B81AB4-L000002](../../tests/test_web_agent_nlu_integration.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-8C13B81AB4-L000003](../../tests/test_web_agent_nlu_integration.py#L3) | 3 | `""` | — |
+| [SRC-8C13B81AB4-L000004](../../tests/test_web_agent_nlu_integration.py#L4) | 4 | `"import pytest"` | — |
 | [SRC-8C13B81AB4-L000005](../../tests/test_web_agent_nlu_integration.py#L5) | 5 | `""` | — |
 | [SRC-8C13B81AB4-L000006](../../tests/test_web_agent_nlu_integration.py#L6) | 6 | `"import agents.web_agent as web_module"` | — |
 | [SRC-8C13B81AB4-L000007](../../tests/test_web_agent_nlu_integration.py#L7) | 7 | `"from agents.web_agent import WebAgent"` | — |
