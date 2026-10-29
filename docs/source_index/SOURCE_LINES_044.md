@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000557 إلى SRC-F725E90B2A-L001356
+- النطاق: SRC-F725E90B2A-L000560 إلى SRC-F725E90B2A-L001359
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
-| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
-| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `"    assert \"test-ig-token\" not in str(results)"` | — |
 | [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `""` | — |
 | [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `""` | — |
 | [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):"` | — |
@@ -816,3 +813,6 @@
 | [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"            \"evidence_signals\": {},"` | — |
+| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"        }"` | — |
+| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `""` | — |

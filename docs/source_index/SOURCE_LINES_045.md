@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001357 إلى SRC-F725E90B2A-L002156
+- النطاق: SRC-F725E90B2A-L001360 إلى SRC-F725E90B2A-L002159
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,9 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"        }"` | — |
-| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `""` | — |
 | [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect_only_one_source)"` | — |
 | [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"        agent, \"_generate\","` | — |
@@ -816,3 +813,6 @@
 | [SRC-F725E90B2A-L002154](../../tests/test_web_agent.py#L2154) | 2154 | `"    assert report[\"search_attempted\"] is None"` | — |
 | [SRC-F725E90B2A-L002155](../../tests/test_web_agent.py#L2155) | 2155 | `"    assert report[\"search_outcome\"] == \"unknown_after_research_error\""` | — |
 | [SRC-F725E90B2A-L002156](../../tests/test_web_agent.py#L2156) | 2156 | `"    assert report[\"queries_attempted\"] is None"` | — |
+| [SRC-F725E90B2A-L002157](../../tests/test_web_agent.py#L2157) | 2157 | `"    assert report[\"queries_attempted_known\"] is False"` | — |
+| [SRC-F725E90B2A-L002158](../../tests/test_web_agent.py#L2158) | 2158 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
+| [SRC-F725E90B2A-L002159](../../tests/test_web_agent.py#L2159) | 2159 | `""` | — |
