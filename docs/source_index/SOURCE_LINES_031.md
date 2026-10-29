@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000225 إلى SRC-90FAA34ADE-L001024
+- النطاق: SRC-90FAA34ADE-L000224 إلى SRC-90FAA34ADE-L001023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000224](../../tests/fixtures/answer_quality_cases.json#L224) | 224 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000225](../../tests/fixtures/answer_quality_cases.json#L225) | 225 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000226](../../tests/fixtures/answer_quality_cases.json#L226) | 226 | `"        \"Addresses all three parts or explicitly marks which parts lack evidence\","` | — |
 | [SRC-90FAA34ADE-L000227](../../tests/fixtures/answer_quality_cases.json#L227) | 227 | `"        \"Does not drop part 3 silently\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-90FAA34ADE-L001021](../../tests/fixtures/answer_quality_cases.json#L1021) | 1021 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001022](../../tests/fixtures/answer_quality_cases.json#L1022) | 1022 | `"        \"يتتبع الإسناد للمصدر الأصلي إن أمكن\","` | — |
 | [SRC-90FAA34ADE-L001023](../../tests/fixtures/answer_quality_cases.json#L1023) | 1023 | `"        \"يوضح أن تكرار نقل بوست واحد لا يصنع ثلاث عمليات تحقق مستقلة\","` | — |
-| [SRC-90FAA34ADE-L001024](../../tests/fixtures/answer_quality_cases.json#L1024) | 1024 | `"        \"يطلب بيانًا رسميًا أو مصدرًا مستقلًا قبل تأكيد التوقف\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001025 إلى SRC-6A7519AC10-L000038
+- النطاق: SRC-90FAA34ADE-L001024 إلى SRC-6A7519AC10-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001024](../../tests/fixtures/answer_quality_cases.json#L1024) | 1024 | `"        \"يطلب بيانًا رسميًا أو مصدرًا مستقلًا قبل تأكيد التوقف\""` | — |
 | [SRC-90FAA34ADE-L001025](../../tests/fixtures/answer_quality_cases.json#L1025) | 1025 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001026](../../tests/fixtures/answer_quality_cases.json#L1026) | 1026 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001027](../../tests/fixtures/answer_quality_cases.json#L1027) | 1027 | `"        \"يعلن توقف الخدمة كحقيقة لمجرد تكرار الخبر\","` | — |
@@ -851,4 +852,3 @@
 | [SRC-6A7519AC10-L000035](../../tests/test_answer_quality_comparison.py#L35) | 35 | `"        \"case_id\": case_id,"` | — |
 | [SRC-6A7519AC10-L000036](../../tests/test_answer_quality_comparison.py#L36) | 36 | `"        \"prompt\": \"Test question \" + case_id,"` | — |
 | [SRC-6A7519AC10-L000037](../../tests/test_answer_quality_comparison.py#L37) | 37 | `"        \"expected_strategy\": \"web_search\","` | — |
-| [SRC-6A7519AC10-L000038](../../tests/test_answer_quality_comparison.py#L38) | 38 | `"        \"transport_ok\": True,"` | — |

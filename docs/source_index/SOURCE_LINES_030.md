@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000418 إلى SRC-90FAA34ADE-L000224
+- النطاق: SRC-4FFD5AFC54-L000418 إلى SRC-90FAA34ADE-L000223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,185 +16,186 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4FFD5AFC54-L000418](../../scripts/run_answer_quality_benchmark.py#L418) | 418 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000419](../../scripts/run_answer_quality_benchmark.py#L419) | 419 | `""` | — |
-| [SRC-4FFD5AFC54-L000420](../../scripts/run_answer_quality_benchmark.py#L420) | 420 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000421](../../scripts/run_answer_quality_benchmark.py#L421) | 421 | `"        full_case_ids = {case.get(\"case_id\") for case in data.get(\"cases\", []) if isinstance(case, dict)}"` | — |
-| [SRC-4FFD5AFC54-L000422](../../scripts/run_answer_quality_benchmark.py#L422) | 422 | `"        request_costs, request_cost_source = _load_request_cost_ledger(request_costs_path, full_case_ids)"` | — |
-| [SRC-4FFD5AFC54-L000423](../../scripts/run_answer_quality_benchmark.py#L423) | 423 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
-| [SRC-4FFD5AFC54-L000424](../../scripts/run_answer_quality_benchmark.py#L424) | 424 | `"        print(f\"Invalid request-cost ledger; refusing live run: {exc}\", file=sys.stderr)"` | — |
-| [SRC-4FFD5AFC54-L000425](../../scripts/run_answer_quality_benchmark.py#L425) | 425 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000426](../../scripts/run_answer_quality_benchmark.py#L426) | 426 | `""` | — |
-| [SRC-4FFD5AFC54-L000427](../../scripts/run_answer_quality_benchmark.py#L427) | 427 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip() or None"` | — |
-| [SRC-4FFD5AFC54-L000428](../../scripts/run_answer_quality_benchmark.py#L428) | 428 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000429](../../scripts/run_answer_quality_benchmark.py#L429) | 429 | `"        safe_base_url = validate_base_url(base_url, token_present=bool(token))"` | — |
-| [SRC-4FFD5AFC54-L000430](../../scripts/run_answer_quality_benchmark.py#L430) | 430 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000431](../../scripts/run_answer_quality_benchmark.py#L431) | 431 | `"        print(f\"Unsafe base URL; refusing live run: {exc}\", file=sys.stderr)"` | — |
-| [SRC-4FFD5AFC54-L000432](../../scripts/run_answer_quality_benchmark.py#L432) | 432 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000433](../../scripts/run_answer_quality_benchmark.py#L433) | 433 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000434](../../scripts/run_answer_quality_benchmark.py#L434) | 434 | `"        verified_build_sha = get_verified_build_sha(safe_base_url, timeout, token)"` | — |
-| [SRC-4FFD5AFC54-L000435](../../scripts/run_answer_quality_benchmark.py#L435) | 435 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000436](../../scripts/run_answer_quality_benchmark.py#L436) | 436 | `"        print(f\"Unverified deployed build; refusing live run: {exc}\", file=sys.stderr)"` | — |
-| [SRC-4FFD5AFC54-L000437](../../scripts/run_answer_quality_benchmark.py#L437) | 437 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000438](../../scripts/run_answer_quality_benchmark.py#L438) | 438 | `"    expected_build_sha = build_sha.strip().lower() if isinstance(build_sha, str) else \"\""` | — |
-| [SRC-4FFD5AFC54-L000439](../../scripts/run_answer_quality_benchmark.py#L439) | 439 | `"    if expected_build_sha and expected_build_sha != verified_build_sha:"` | — |
-| [SRC-4FFD5AFC54-L000440](../../scripts/run_answer_quality_benchmark.py#L440) | 440 | `"        print("` | — |
-| [SRC-4FFD5AFC54-L000441](../../scripts/run_answer_quality_benchmark.py#L441) | 441 | `"            \"Build SHA mismatch: --build-sha does not match /api/health build.sha; \""` | — |
-| [SRC-4FFD5AFC54-L000442](../../scripts/run_answer_quality_benchmark.py#L442) | 442 | `"            \"refusing live requests.\","` | — |
-| [SRC-4FFD5AFC54-L000443](../../scripts/run_answer_quality_benchmark.py#L443) | 443 | `"            file=sys.stderr,"` | — |
-| [SRC-4FFD5AFC54-L000444](../../scripts/run_answer_quality_benchmark.py#L444) | 444 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000445](../../scripts/run_answer_quality_benchmark.py#L445) | 445 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000446](../../scripts/run_answer_quality_benchmark.py#L446) | 446 | `"    cases = data[\"cases\"]"` | — |
-| [SRC-4FFD5AFC54-L000447](../../scripts/run_answer_quality_benchmark.py#L447) | 447 | `"    if case_id:"` | — |
-| [SRC-4FFD5AFC54-L000448](../../scripts/run_answer_quality_benchmark.py#L448) | 448 | `"        cases = [c for c in cases if c[\"case_id\"] == case_id]"` | — |
-| [SRC-4FFD5AFC54-L000449](../../scripts/run_answer_quality_benchmark.py#L449) | 449 | `"        if not cases:"` | — |
-| [SRC-4FFD5AFC54-L000450](../../scripts/run_answer_quality_benchmark.py#L450) | 450 | `"            print(f\"Unknown case_id: {case_id}\", file=sys.stderr)"` | — |
-| [SRC-4FFD5AFC54-L000451](../../scripts/run_answer_quality_benchmark.py#L451) | 451 | `"            return 2"` | — |
-| [SRC-4FFD5AFC54-L000452](../../scripts/run_answer_quality_benchmark.py#L452) | 452 | `"    if limit > 0:"` | — |
-| [SRC-4FFD5AFC54-L000453](../../scripts/run_answer_quality_benchmark.py#L453) | 453 | `"        cases = cases[:limit]"` | — |
-| [SRC-4FFD5AFC54-L000454](../../scripts/run_answer_quality_benchmark.py#L454) | 454 | `""` | — |
-| [SRC-4FFD5AFC54-L000455](../../scripts/run_answer_quality_benchmark.py#L455) | 455 | `"    results = []"` | — |
-| [SRC-4FFD5AFC54-L000456](../../scripts/run_answer_quality_benchmark.py#L456) | 456 | `"    print("` | — |
-| [SRC-4FFD5AFC54-L000457](../../scripts/run_answer_quality_benchmark.py#L457) | 457 | `"        \"LIVE mode: fixtures are NOT injected into the server. \""` | — |
-| [SRC-4FFD5AFC54-L000458](../../scripts/run_answer_quality_benchmark.py#L458) | 458 | `"        \"Answers are recorded as NOT_TESTED (quality) unless transport fails.\""` | — |
-| [SRC-4FFD5AFC54-L000459](../../scripts/run_answer_quality_benchmark.py#L459) | 459 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000460](../../scripts/run_answer_quality_benchmark.py#L460) | 460 | `"    for case in cases:"` | — |
-| [SRC-4FFD5AFC54-L000461](../../scripts/run_answer_quality_benchmark.py#L461) | 461 | `"        cid = case[\"case_id\"]"` | — |
-| [SRC-4FFD5AFC54-L000462](../../scripts/run_answer_quality_benchmark.py#L462) | 462 | `"        prompt = case[\"question\"]"` | — |
-| [SRC-4FFD5AFC54-L000463](../../scripts/run_answer_quality_benchmark.py#L463) | 463 | `"        request_started = time.perf_counter()"` | — |
-| [SRC-4FFD5AFC54-L000464](../../scripts/run_answer_quality_benchmark.py#L464) | 464 | `"        status_code, payload = post_agent(safe_base_url, prompt, timeout, token)"` | — |
-| [SRC-4FFD5AFC54-L000465](../../scripts/run_answer_quality_benchmark.py#L465) | 465 | `"        elapsed_ms = round((time.perf_counter() - request_started) * 1000, 2)"` | — |
-| [SRC-4FFD5AFC54-L000466](../../scripts/run_answer_quality_benchmark.py#L466) | 466 | `"        if isinstance(payload, dict):"` | — |
-| [SRC-4FFD5AFC54-L000467](../../scripts/run_answer_quality_benchmark.py#L467) | 467 | `"            safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))"` | — |
-| [SRC-4FFD5AFC54-L000468](../../scripts/run_answer_quality_benchmark.py#L468) | 468 | `"        else:"` | — |
-| [SRC-4FFD5AFC54-L000469](../../scripts/run_answer_quality_benchmark.py#L469) | 469 | `"            safe_payload = redact_secrets(str(payload))"` | — |
-| [SRC-4FFD5AFC54-L000470](../../scripts/run_answer_quality_benchmark.py#L470) | 470 | `""` | — |
-| [SRC-4FFD5AFC54-L000471](../../scripts/run_answer_quality_benchmark.py#L471) | 471 | `"        transport_ok = 200 <= status_code < 300"` | — |
-| [SRC-4FFD5AFC54-L000472](../../scripts/run_answer_quality_benchmark.py#L472) | 472 | `"        response_metrics = _response_metrics(safe_payload, case[\"expected_strategy\"], transport_ok)"` | — |
-| [SRC-4FFD5AFC54-L000473](../../scripts/run_answer_quality_benchmark.py#L473) | 473 | `"        if request_cost_source is not None:"` | — |
-| [SRC-4FFD5AFC54-L000474](../../scripts/run_answer_quality_benchmark.py#L474) | 474 | `"            if cid in request_costs:"` | — |
-| [SRC-4FFD5AFC54-L000475](../../scripts/run_answer_quality_benchmark.py#L475) | 475 | `"                response_metrics[\"request_cost_usd\"] = request_costs[cid]"` | — |
-| [SRC-4FFD5AFC54-L000476](../../scripts/run_answer_quality_benchmark.py#L476) | 476 | `"                response_metrics[\"request_cost_status\"] = \"RECONCILED_COMPLETE_REQUEST_COST\""` | — |
-| [SRC-4FFD5AFC54-L000477](../../scripts/run_answer_quality_benchmark.py#L477) | 477 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
-| [SRC-4FFD5AFC54-L000478](../../scripts/run_answer_quality_benchmark.py#L478) | 478 | `"            else:"` | — |
-| [SRC-4FFD5AFC54-L000479](../../scripts/run_answer_quality_benchmark.py#L479) | 479 | `"                response_metrics[\"request_cost_status\"] = \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
-| [SRC-4FFD5AFC54-L000480](../../scripts/run_answer_quality_benchmark.py#L480) | 480 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
-| [SRC-4FFD5AFC54-L000481](../../scripts/run_answer_quality_benchmark.py#L481) | 481 | `"        record = {"` | — |
-| [SRC-4FFD5AFC54-L000482](../../scripts/run_answer_quality_benchmark.py#L482) | 482 | `"            \"case_id\": cid,"` | — |
-| [SRC-4FFD5AFC54-L000483](../../scripts/run_answer_quality_benchmark.py#L483) | 483 | `"            \"benchmark_version\": data.get(\"version\"),"` | — |
-| [SRC-4FFD5AFC54-L000484](../../scripts/run_answer_quality_benchmark.py#L484) | 484 | `"            \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000485](../../scripts/run_answer_quality_benchmark.py#L485) | 485 | `"            \"executed_at_utc\": _utc_now(),"` | — |
-| [SRC-4FFD5AFC54-L000486](../../scripts/run_answer_quality_benchmark.py#L486) | 486 | `"            \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000487](../../scripts/run_answer_quality_benchmark.py#L487) | 487 | `"            \"base_url\": safe_base_url,"` | — |
-| [SRC-4FFD5AFC54-L000488](../../scripts/run_answer_quality_benchmark.py#L488) | 488 | `"            \"http_status\": status_code,"` | — |
-| [SRC-4FFD5AFC54-L000489](../../scripts/run_answer_quality_benchmark.py#L489) | 489 | `"            \"elapsed_ms\": elapsed_ms,"` | — |
-| [SRC-4FFD5AFC54-L000490](../../scripts/run_answer_quality_benchmark.py#L490) | 490 | `"            \"build_sha\": verified_build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000491](../../scripts/run_answer_quality_benchmark.py#L491) | 491 | `"            \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
-| [SRC-4FFD5AFC54-L000492](../../scripts/run_answer_quality_benchmark.py#L492) | 492 | `"            **response_metrics,"` | — |
-| [SRC-4FFD5AFC54-L000493](../../scripts/run_answer_quality_benchmark.py#L493) | 493 | `"            \"prompt\": prompt,"` | — |
-| [SRC-4FFD5AFC54-L000494](../../scripts/run_answer_quality_benchmark.py#L494) | 494 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
-| [SRC-4FFD5AFC54-L000495](../../scripts/run_answer_quality_benchmark.py#L495) | 495 | `"            \"category\": case[\"category\"],"` | — |
-| [SRC-4FFD5AFC54-L000496](../../scripts/run_answer_quality_benchmark.py#L496) | 496 | `"            \"response\": safe_payload,"` | — |
-| [SRC-4FFD5AFC54-L000497](../../scripts/run_answer_quality_benchmark.py#L497) | 497 | `"            \"used_web_search\": ("` | — |
-| [SRC-4FFD5AFC54-L000498](../../scripts/run_answer_quality_benchmark.py#L498) | 498 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000499](../../scripts/run_answer_quality_benchmark.py#L499) | 499 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000500](../../scripts/run_answer_quality_benchmark.py#L500) | 500 | `"            \"used_language_model\": ("` | — |
-| [SRC-4FFD5AFC54-L000501](../../scripts/run_answer_quality_benchmark.py#L501) | 501 | `"                safe_payload.get(\"used_language_model\")"` | — |
-| [SRC-4FFD5AFC54-L000502](../../scripts/run_answer_quality_benchmark.py#L502) | 502 | `"                if isinstance(safe_payload, dict)"` | — |
-| [SRC-4FFD5AFC54-L000503](../../scripts/run_answer_quality_benchmark.py#L503) | 503 | `"                else None"` | — |
-| [SRC-4FFD5AFC54-L000504](../../scripts/run_answer_quality_benchmark.py#L504) | 504 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000505](../../scripts/run_answer_quality_benchmark.py#L505) | 505 | `"            \"sources\": ("` | — |
-| [SRC-4FFD5AFC54-L000506](../../scripts/run_answer_quality_benchmark.py#L506) | 506 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000507](../../scripts/run_answer_quality_benchmark.py#L507) | 507 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000508](../../scripts/run_answer_quality_benchmark.py#L508) | 508 | `"            \"status\": \"NOT_TESTED\","` | — |
-| [SRC-4FFD5AFC54-L000509](../../scripts/run_answer_quality_benchmark.py#L509) | 509 | `"            \"transport_ok\": transport_ok,"` | — |
-| [SRC-4FFD5AFC54-L000510](../../scripts/run_answer_quality_benchmark.py#L510) | 510 | `"            \"reviewer_notes\": ("` | — |
-| [SRC-4FFD5AFC54-L000511](../../scripts/run_answer_quality_benchmark.py#L511) | 511 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
-| [SRC-4FFD5AFC54-L000512](../../scripts/run_answer_quality_benchmark.py#L512) | 512 | `"                if transport_ok"` | — |
-| [SRC-4FFD5AFC54-L000513](../../scripts/run_answer_quality_benchmark.py#L513) | 513 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
-| [SRC-4FFD5AFC54-L000514](../../scripts/run_answer_quality_benchmark.py#L514) | 514 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000515](../../scripts/run_answer_quality_benchmark.py#L515) | 515 | `"            \"evidence_fixture_injected\": False,"` | — |
-| [SRC-4FFD5AFC54-L000516](../../scripts/run_answer_quality_benchmark.py#L516) | 516 | `"        }"` | — |
-| [SRC-4FFD5AFC54-L000517](../../scripts/run_answer_quality_benchmark.py#L517) | 517 | `"        results.append(record)"` | — |
-| [SRC-4FFD5AFC54-L000518](../../scripts/run_answer_quality_benchmark.py#L518) | 518 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
-| [SRC-4FFD5AFC54-L000519](../../scripts/run_answer_quality_benchmark.py#L519) | 519 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
-| [SRC-4FFD5AFC54-L000520](../../scripts/run_answer_quality_benchmark.py#L520) | 520 | `"        if delay > 0:"` | — |
-| [SRC-4FFD5AFC54-L000521](../../scripts/run_answer_quality_benchmark.py#L521) | 521 | `"            time.sleep(delay)"` | — |
-| [SRC-4FFD5AFC54-L000522](../../scripts/run_answer_quality_benchmark.py#L522) | 522 | `""` | — |
-| [SRC-4FFD5AFC54-L000523](../../scripts/run_answer_quality_benchmark.py#L523) | 523 | `"    envelope = {"` | — |
-| [SRC-4FFD5AFC54-L000524](../../scripts/run_answer_quality_benchmark.py#L524) | 524 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000525](../../scripts/run_answer_quality_benchmark.py#L525) | 525 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
-| [SRC-4FFD5AFC54-L000526](../../scripts/run_answer_quality_benchmark.py#L526) | 526 | `"        \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000527](../../scripts/run_answer_quality_benchmark.py#L527) | 527 | `"        \"build_sha\": verified_build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000528](../../scripts/run_answer_quality_benchmark.py#L528) | 528 | `"        \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
-| [SRC-4FFD5AFC54-L000529](../../scripts/run_answer_quality_benchmark.py#L529) | 529 | `"        \"expected_build_sha\": expected_build_sha or None,"` | — |
-| [SRC-4FFD5AFC54-L000530](../../scripts/run_answer_quality_benchmark.py#L530) | 530 | `"        \"executed_at_utc\": _utc_now(),"` | — |
-| [SRC-4FFD5AFC54-L000531](../../scripts/run_answer_quality_benchmark.py#L531) | 531 | `"        \"case_count\": len(results),"` | — |
-| [SRC-4FFD5AFC54-L000532](../../scripts/run_answer_quality_benchmark.py#L532) | 532 | `"        \"results\": results,"` | — |
-| [SRC-4FFD5AFC54-L000533](../../scripts/run_answer_quality_benchmark.py#L533) | 533 | `"        \"disclaimer\": ("` | — |
-| [SRC-4FFD5AFC54-L000534](../../scripts/run_answer_quality_benchmark.py#L534) | 534 | `"            \"status=NOT_TESTED means answer quality was not auto-graded. \""` | — |
-| [SRC-4FFD5AFC54-L000535](../../scripts/run_answer_quality_benchmark.py#L535) | 535 | `"            \"Fixtures in JSON were not applied to the live server.\""` | — |
-| [SRC-4FFD5AFC54-L000536](../../scripts/run_answer_quality_benchmark.py#L536) | 536 | `"        ),"` | — |
-| [SRC-4FFD5AFC54-L000537](../../scripts/run_answer_quality_benchmark.py#L537) | 537 | `"    }"` | — |
-| [SRC-4FFD5AFC54-L000538](../../scripts/run_answer_quality_benchmark.py#L538) | 538 | `"    text = json.dumps(envelope, ensure_ascii=False, indent=2)"` | — |
-| [SRC-4FFD5AFC54-L000539](../../scripts/run_answer_quality_benchmark.py#L539) | 539 | `"    if out_path:"` | — |
-| [SRC-4FFD5AFC54-L000540](../../scripts/run_answer_quality_benchmark.py#L540) | 540 | `"        out_path.write_text(text + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-4FFD5AFC54-L000541](../../scripts/run_answer_quality_benchmark.py#L541) | 541 | `"        print(f\"Wrote {out_path}\")"` | — |
-| [SRC-4FFD5AFC54-L000542](../../scripts/run_answer_quality_benchmark.py#L542) | 542 | `"    else:"` | — |
-| [SRC-4FFD5AFC54-L000543](../../scripts/run_answer_quality_benchmark.py#L543) | 543 | `"        print(text)"` | — |
-| [SRC-4FFD5AFC54-L000544](../../scripts/run_answer_quality_benchmark.py#L544) | 544 | `"    return 0"` | — |
-| [SRC-4FFD5AFC54-L000545](../../scripts/run_answer_quality_benchmark.py#L545) | 545 | `""` | — |
+| [SRC-4FFD5AFC54-L000418](../../scripts/run_answer_quality_benchmark.py#L418) | 418 | `"            print(\" -\", p)"` | — |
+| [SRC-4FFD5AFC54-L000419](../../scripts/run_answer_quality_benchmark.py#L419) | 419 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000420](../../scripts/run_answer_quality_benchmark.py#L420) | 420 | `""` | — |
+| [SRC-4FFD5AFC54-L000421](../../scripts/run_answer_quality_benchmark.py#L421) | 421 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000422](../../scripts/run_answer_quality_benchmark.py#L422) | 422 | `"        full_case_ids = {case.get(\"case_id\") for case in data.get(\"cases\", []) if isinstance(case, dict)}"` | — |
+| [SRC-4FFD5AFC54-L000423](../../scripts/run_answer_quality_benchmark.py#L423) | 423 | `"        request_costs, request_cost_source = _load_request_cost_ledger(request_costs_path, full_case_ids)"` | — |
+| [SRC-4FFD5AFC54-L000424](../../scripts/run_answer_quality_benchmark.py#L424) | 424 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-4FFD5AFC54-L000425](../../scripts/run_answer_quality_benchmark.py#L425) | 425 | `"        print(f\"Invalid request-cost ledger; refusing live run: {exc}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000426](../../scripts/run_answer_quality_benchmark.py#L426) | 426 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000427](../../scripts/run_answer_quality_benchmark.py#L427) | 427 | `""` | — |
+| [SRC-4FFD5AFC54-L000428](../../scripts/run_answer_quality_benchmark.py#L428) | 428 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip() or None"` | — |
+| [SRC-4FFD5AFC54-L000429](../../scripts/run_answer_quality_benchmark.py#L429) | 429 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000430](../../scripts/run_answer_quality_benchmark.py#L430) | 430 | `"        safe_base_url = validate_base_url(base_url, token_present=bool(token))"` | — |
+| [SRC-4FFD5AFC54-L000431](../../scripts/run_answer_quality_benchmark.py#L431) | 431 | `"    except ValueError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000432](../../scripts/run_answer_quality_benchmark.py#L432) | 432 | `"        print(f\"Unsafe base URL; refusing live run: {exc}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000433](../../scripts/run_answer_quality_benchmark.py#L433) | 433 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000434](../../scripts/run_answer_quality_benchmark.py#L434) | 434 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000435](../../scripts/run_answer_quality_benchmark.py#L435) | 435 | `"        verified_build_sha = get_verified_build_sha(safe_base_url, timeout, token)"` | — |
+| [SRC-4FFD5AFC54-L000436](../../scripts/run_answer_quality_benchmark.py#L436) | 436 | `"    except ValueError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000437](../../scripts/run_answer_quality_benchmark.py#L437) | 437 | `"        print(f\"Unverified deployed build; refusing live run: {exc}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000438](../../scripts/run_answer_quality_benchmark.py#L438) | 438 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000439](../../scripts/run_answer_quality_benchmark.py#L439) | 439 | `"    expected_build_sha = build_sha.strip().lower() if isinstance(build_sha, str) else \"\""` | — |
+| [SRC-4FFD5AFC54-L000440](../../scripts/run_answer_quality_benchmark.py#L440) | 440 | `"    if expected_build_sha and expected_build_sha != verified_build_sha:"` | — |
+| [SRC-4FFD5AFC54-L000441](../../scripts/run_answer_quality_benchmark.py#L441) | 441 | `"        print("` | — |
+| [SRC-4FFD5AFC54-L000442](../../scripts/run_answer_quality_benchmark.py#L442) | 442 | `"            \"Build SHA mismatch: --build-sha does not match /api/health build.sha; \""` | — |
+| [SRC-4FFD5AFC54-L000443](../../scripts/run_answer_quality_benchmark.py#L443) | 443 | `"            \"refusing live requests.\","` | — |
+| [SRC-4FFD5AFC54-L000444](../../scripts/run_answer_quality_benchmark.py#L444) | 444 | `"            file=sys.stderr,"` | — |
+| [SRC-4FFD5AFC54-L000445](../../scripts/run_answer_quality_benchmark.py#L445) | 445 | `"        )"` | — |
+| [SRC-4FFD5AFC54-L000446](../../scripts/run_answer_quality_benchmark.py#L446) | 446 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000447](../../scripts/run_answer_quality_benchmark.py#L447) | 447 | `"    cases = data[\"cases\"]"` | — |
+| [SRC-4FFD5AFC54-L000448](../../scripts/run_answer_quality_benchmark.py#L448) | 448 | `"    if case_id:"` | — |
+| [SRC-4FFD5AFC54-L000449](../../scripts/run_answer_quality_benchmark.py#L449) | 449 | `"        cases = [c for c in cases if c[\"case_id\"] == case_id]"` | — |
+| [SRC-4FFD5AFC54-L000450](../../scripts/run_answer_quality_benchmark.py#L450) | 450 | `"        if not cases:"` | — |
+| [SRC-4FFD5AFC54-L000451](../../scripts/run_answer_quality_benchmark.py#L451) | 451 | `"            print(f\"Unknown case_id: {case_id}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000452](../../scripts/run_answer_quality_benchmark.py#L452) | 452 | `"            return 2"` | — |
+| [SRC-4FFD5AFC54-L000453](../../scripts/run_answer_quality_benchmark.py#L453) | 453 | `"    if limit > 0:"` | — |
+| [SRC-4FFD5AFC54-L000454](../../scripts/run_answer_quality_benchmark.py#L454) | 454 | `"        cases = cases[:limit]"` | — |
+| [SRC-4FFD5AFC54-L000455](../../scripts/run_answer_quality_benchmark.py#L455) | 455 | `""` | — |
+| [SRC-4FFD5AFC54-L000456](../../scripts/run_answer_quality_benchmark.py#L456) | 456 | `"    results = []"` | — |
+| [SRC-4FFD5AFC54-L000457](../../scripts/run_answer_quality_benchmark.py#L457) | 457 | `"    print("` | — |
+| [SRC-4FFD5AFC54-L000458](../../scripts/run_answer_quality_benchmark.py#L458) | 458 | `"        \"LIVE mode: fixtures are NOT injected into the server. \""` | — |
+| [SRC-4FFD5AFC54-L000459](../../scripts/run_answer_quality_benchmark.py#L459) | 459 | `"        \"Answers are recorded as NOT_TESTED (quality) unless transport fails.\""` | — |
+| [SRC-4FFD5AFC54-L000460](../../scripts/run_answer_quality_benchmark.py#L460) | 460 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000461](../../scripts/run_answer_quality_benchmark.py#L461) | 461 | `"    for case in cases:"` | — |
+| [SRC-4FFD5AFC54-L000462](../../scripts/run_answer_quality_benchmark.py#L462) | 462 | `"        cid = case[\"case_id\"]"` | — |
+| [SRC-4FFD5AFC54-L000463](../../scripts/run_answer_quality_benchmark.py#L463) | 463 | `"        prompt = case[\"question\"]"` | — |
+| [SRC-4FFD5AFC54-L000464](../../scripts/run_answer_quality_benchmark.py#L464) | 464 | `"        request_started = time.perf_counter()"` | — |
+| [SRC-4FFD5AFC54-L000465](../../scripts/run_answer_quality_benchmark.py#L465) | 465 | `"        status_code, payload = post_agent(safe_base_url, prompt, timeout, token)"` | — |
+| [SRC-4FFD5AFC54-L000466](../../scripts/run_answer_quality_benchmark.py#L466) | 466 | `"        elapsed_ms = round((time.perf_counter() - request_started) * 1000, 2)"` | — |
+| [SRC-4FFD5AFC54-L000467](../../scripts/run_answer_quality_benchmark.py#L467) | 467 | `"        if isinstance(payload, dict):"` | — |
+| [SRC-4FFD5AFC54-L000468](../../scripts/run_answer_quality_benchmark.py#L468) | 468 | `"            safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))"` | — |
+| [SRC-4FFD5AFC54-L000469](../../scripts/run_answer_quality_benchmark.py#L469) | 469 | `"        else:"` | — |
+| [SRC-4FFD5AFC54-L000470](../../scripts/run_answer_quality_benchmark.py#L470) | 470 | `"            safe_payload = redact_secrets(str(payload))"` | — |
+| [SRC-4FFD5AFC54-L000471](../../scripts/run_answer_quality_benchmark.py#L471) | 471 | `""` | — |
+| [SRC-4FFD5AFC54-L000472](../../scripts/run_answer_quality_benchmark.py#L472) | 472 | `"        transport_ok = 200 <= status_code < 300"` | — |
+| [SRC-4FFD5AFC54-L000473](../../scripts/run_answer_quality_benchmark.py#L473) | 473 | `"        response_metrics = _response_metrics(safe_payload, case[\"expected_strategy\"], transport_ok)"` | — |
+| [SRC-4FFD5AFC54-L000474](../../scripts/run_answer_quality_benchmark.py#L474) | 474 | `"        if request_cost_source is not None:"` | — |
+| [SRC-4FFD5AFC54-L000475](../../scripts/run_answer_quality_benchmark.py#L475) | 475 | `"            if cid in request_costs:"` | — |
+| [SRC-4FFD5AFC54-L000476](../../scripts/run_answer_quality_benchmark.py#L476) | 476 | `"                response_metrics[\"request_cost_usd\"] = request_costs[cid]"` | — |
+| [SRC-4FFD5AFC54-L000477](../../scripts/run_answer_quality_benchmark.py#L477) | 477 | `"                response_metrics[\"request_cost_status\"] = \"RECONCILED_COMPLETE_REQUEST_COST\""` | — |
+| [SRC-4FFD5AFC54-L000478](../../scripts/run_answer_quality_benchmark.py#L478) | 478 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
+| [SRC-4FFD5AFC54-L000479](../../scripts/run_answer_quality_benchmark.py#L479) | 479 | `"            else:"` | — |
+| [SRC-4FFD5AFC54-L000480](../../scripts/run_answer_quality_benchmark.py#L480) | 480 | `"                response_metrics[\"request_cost_status\"] = \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
+| [SRC-4FFD5AFC54-L000481](../../scripts/run_answer_quality_benchmark.py#L481) | 481 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
+| [SRC-4FFD5AFC54-L000482](../../scripts/run_answer_quality_benchmark.py#L482) | 482 | `"        record = {"` | — |
+| [SRC-4FFD5AFC54-L000483](../../scripts/run_answer_quality_benchmark.py#L483) | 483 | `"            \"case_id\": cid,"` | — |
+| [SRC-4FFD5AFC54-L000484](../../scripts/run_answer_quality_benchmark.py#L484) | 484 | `"            \"benchmark_version\": data.get(\"version\"),"` | — |
+| [SRC-4FFD5AFC54-L000485](../../scripts/run_answer_quality_benchmark.py#L485) | 485 | `"            \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
+| [SRC-4FFD5AFC54-L000486](../../scripts/run_answer_quality_benchmark.py#L486) | 486 | `"            \"executed_at_utc\": _utc_now(),"` | — |
+| [SRC-4FFD5AFC54-L000487](../../scripts/run_answer_quality_benchmark.py#L487) | 487 | `"            \"mode\": \"live_api\","` | — |
+| [SRC-4FFD5AFC54-L000488](../../scripts/run_answer_quality_benchmark.py#L488) | 488 | `"            \"base_url\": safe_base_url,"` | — |
+| [SRC-4FFD5AFC54-L000489](../../scripts/run_answer_quality_benchmark.py#L489) | 489 | `"            \"http_status\": status_code,"` | — |
+| [SRC-4FFD5AFC54-L000490](../../scripts/run_answer_quality_benchmark.py#L490) | 490 | `"            \"elapsed_ms\": elapsed_ms,"` | — |
+| [SRC-4FFD5AFC54-L000491](../../scripts/run_answer_quality_benchmark.py#L491) | 491 | `"            \"build_sha\": verified_build_sha,"` | — |
+| [SRC-4FFD5AFC54-L000492](../../scripts/run_answer_quality_benchmark.py#L492) | 492 | `"            \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
+| [SRC-4FFD5AFC54-L000493](../../scripts/run_answer_quality_benchmark.py#L493) | 493 | `"            **response_metrics,"` | — |
+| [SRC-4FFD5AFC54-L000494](../../scripts/run_answer_quality_benchmark.py#L494) | 494 | `"            \"prompt\": prompt,"` | — |
+| [SRC-4FFD5AFC54-L000495](../../scripts/run_answer_quality_benchmark.py#L495) | 495 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
+| [SRC-4FFD5AFC54-L000496](../../scripts/run_answer_quality_benchmark.py#L496) | 496 | `"            \"category\": case[\"category\"],"` | — |
+| [SRC-4FFD5AFC54-L000497](../../scripts/run_answer_quality_benchmark.py#L497) | 497 | `"            \"response\": safe_payload,"` | — |
+| [SRC-4FFD5AFC54-L000498](../../scripts/run_answer_quality_benchmark.py#L498) | 498 | `"            \"used_web_search\": ("` | — |
+| [SRC-4FFD5AFC54-L000499](../../scripts/run_answer_quality_benchmark.py#L499) | 499 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
+| [SRC-4FFD5AFC54-L000500](../../scripts/run_answer_quality_benchmark.py#L500) | 500 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000501](../../scripts/run_answer_quality_benchmark.py#L501) | 501 | `"            \"used_language_model\": ("` | — |
+| [SRC-4FFD5AFC54-L000502](../../scripts/run_answer_quality_benchmark.py#L502) | 502 | `"                safe_payload.get(\"used_language_model\")"` | — |
+| [SRC-4FFD5AFC54-L000503](../../scripts/run_answer_quality_benchmark.py#L503) | 503 | `"                if isinstance(safe_payload, dict)"` | — |
+| [SRC-4FFD5AFC54-L000504](../../scripts/run_answer_quality_benchmark.py#L504) | 504 | `"                else None"` | — |
+| [SRC-4FFD5AFC54-L000505](../../scripts/run_answer_quality_benchmark.py#L505) | 505 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000506](../../scripts/run_answer_quality_benchmark.py#L506) | 506 | `"            \"sources\": ("` | — |
+| [SRC-4FFD5AFC54-L000507](../../scripts/run_answer_quality_benchmark.py#L507) | 507 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
+| [SRC-4FFD5AFC54-L000508](../../scripts/run_answer_quality_benchmark.py#L508) | 508 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000509](../../scripts/run_answer_quality_benchmark.py#L509) | 509 | `"            \"status\": \"NOT_TESTED\","` | — |
+| [SRC-4FFD5AFC54-L000510](../../scripts/run_answer_quality_benchmark.py#L510) | 510 | `"            \"transport_ok\": transport_ok,"` | — |
+| [SRC-4FFD5AFC54-L000511](../../scripts/run_answer_quality_benchmark.py#L511) | 511 | `"            \"reviewer_notes\": ("` | — |
+| [SRC-4FFD5AFC54-L000512](../../scripts/run_answer_quality_benchmark.py#L512) | 512 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
+| [SRC-4FFD5AFC54-L000513](../../scripts/run_answer_quality_benchmark.py#L513) | 513 | `"                if transport_ok"` | — |
+| [SRC-4FFD5AFC54-L000514](../../scripts/run_answer_quality_benchmark.py#L514) | 514 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
+| [SRC-4FFD5AFC54-L000515](../../scripts/run_answer_quality_benchmark.py#L515) | 515 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000516](../../scripts/run_answer_quality_benchmark.py#L516) | 516 | `"            \"evidence_fixture_injected\": False,"` | — |
+| [SRC-4FFD5AFC54-L000517](../../scripts/run_answer_quality_benchmark.py#L517) | 517 | `"        }"` | — |
+| [SRC-4FFD5AFC54-L000518](../../scripts/run_answer_quality_benchmark.py#L518) | 518 | `"        results.append(record)"` | — |
+| [SRC-4FFD5AFC54-L000519](../../scripts/run_answer_quality_benchmark.py#L519) | 519 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
+| [SRC-4FFD5AFC54-L000520](../../scripts/run_answer_quality_benchmark.py#L520) | 520 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
+| [SRC-4FFD5AFC54-L000521](../../scripts/run_answer_quality_benchmark.py#L521) | 521 | `"        if delay > 0:"` | — |
+| [SRC-4FFD5AFC54-L000522](../../scripts/run_answer_quality_benchmark.py#L522) | 522 | `"            time.sleep(delay)"` | — |
+| [SRC-4FFD5AFC54-L000523](../../scripts/run_answer_quality_benchmark.py#L523) | 523 | `""` | — |
+| [SRC-4FFD5AFC54-L000524](../../scripts/run_answer_quality_benchmark.py#L524) | 524 | `"    envelope = {"` | — |
+| [SRC-4FFD5AFC54-L000525](../../scripts/run_answer_quality_benchmark.py#L525) | 525 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
+| [SRC-4FFD5AFC54-L000526](../../scripts/run_answer_quality_benchmark.py#L526) | 526 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
+| [SRC-4FFD5AFC54-L000527](../../scripts/run_answer_quality_benchmark.py#L527) | 527 | `"        \"mode\": \"live_api\","` | — |
+| [SRC-4FFD5AFC54-L000528](../../scripts/run_answer_quality_benchmark.py#L528) | 528 | `"        \"build_sha\": verified_build_sha,"` | — |
+| [SRC-4FFD5AFC54-L000529](../../scripts/run_answer_quality_benchmark.py#L529) | 529 | `"        \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
+| [SRC-4FFD5AFC54-L000530](../../scripts/run_answer_quality_benchmark.py#L530) | 530 | `"        \"expected_build_sha\": expected_build_sha or None,"` | — |
+| [SRC-4FFD5AFC54-L000531](../../scripts/run_answer_quality_benchmark.py#L531) | 531 | `"        \"executed_at_utc\": _utc_now(),"` | — |
+| [SRC-4FFD5AFC54-L000532](../../scripts/run_answer_quality_benchmark.py#L532) | 532 | `"        \"case_count\": len(results),"` | — |
+| [SRC-4FFD5AFC54-L000533](../../scripts/run_answer_quality_benchmark.py#L533) | 533 | `"        \"results\": results,"` | — |
+| [SRC-4FFD5AFC54-L000534](../../scripts/run_answer_quality_benchmark.py#L534) | 534 | `"        \"disclaimer\": ("` | — |
+| [SRC-4FFD5AFC54-L000535](../../scripts/run_answer_quality_benchmark.py#L535) | 535 | `"            \"status=NOT_TESTED means answer quality was not auto-graded. \""` | — |
+| [SRC-4FFD5AFC54-L000536](../../scripts/run_answer_quality_benchmark.py#L536) | 536 | `"            \"Fixtures in JSON were not applied to the live server.\""` | — |
+| [SRC-4FFD5AFC54-L000537](../../scripts/run_answer_quality_benchmark.py#L537) | 537 | `"        ),"` | — |
+| [SRC-4FFD5AFC54-L000538](../../scripts/run_answer_quality_benchmark.py#L538) | 538 | `"    }"` | — |
+| [SRC-4FFD5AFC54-L000539](../../scripts/run_answer_quality_benchmark.py#L539) | 539 | `"    text = json.dumps(envelope, ensure_ascii=False, indent=2)"` | — |
+| [SRC-4FFD5AFC54-L000540](../../scripts/run_answer_quality_benchmark.py#L540) | 540 | `"    if out_path:"` | — |
+| [SRC-4FFD5AFC54-L000541](../../scripts/run_answer_quality_benchmark.py#L541) | 541 | `"        out_path.write_text(text + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-4FFD5AFC54-L000542](../../scripts/run_answer_quality_benchmark.py#L542) | 542 | `"        print(f\"Wrote {out_path}\")"` | — |
+| [SRC-4FFD5AFC54-L000543](../../scripts/run_answer_quality_benchmark.py#L543) | 543 | `"    else:"` | — |
+| [SRC-4FFD5AFC54-L000544](../../scripts/run_answer_quality_benchmark.py#L544) | 544 | `"        print(text)"` | — |
+| [SRC-4FFD5AFC54-L000545](../../scripts/run_answer_quality_benchmark.py#L545) | 545 | `"    return 0"` | — |
 | [SRC-4FFD5AFC54-L000546](../../scripts/run_answer_quality_benchmark.py#L546) | 546 | `""` | — |
-| [SRC-4FFD5AFC54-L000547](../../scripts/run_answer_quality_benchmark.py#L547) | 547 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
-| [SRC-4FFD5AFC54-L000548](../../scripts/run_answer_quality_benchmark.py#L548) | 548 | `"    parser = argparse.ArgumentParser(description=\"Omarai answer-quality benchmark runner\")"` | — |
-| [SRC-4FFD5AFC54-L000549](../../scripts/run_answer_quality_benchmark.py#L549) | 549 | `"    parser.add_argument("` | — |
-| [SRC-4FFD5AFC54-L000550](../../scripts/run_answer_quality_benchmark.py#L550) | 550 | `"        \"--mode\","` | — |
-| [SRC-4FFD5AFC54-L000551](../../scripts/run_answer_quality_benchmark.py#L551) | 551 | `"        choices=(\"validate\", \"live\"),"` | — |
-| [SRC-4FFD5AFC54-L000552](../../scripts/run_answer_quality_benchmark.py#L552) | 552 | `"        default=\"validate\","` | — |
-| [SRC-4FFD5AFC54-L000553](../../scripts/run_answer_quality_benchmark.py#L553) | 553 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
-| [SRC-4FFD5AFC54-L000554](../../scripts/run_answer_quality_benchmark.py#L554) | 554 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000555](../../scripts/run_answer_quality_benchmark.py#L555) | 555 | `"    parser.add_argument("` | — |
-| [SRC-4FFD5AFC54-L000556](../../scripts/run_answer_quality_benchmark.py#L556) | 556 | `"        \"--corpus\","` | — |
-| [SRC-4FFD5AFC54-L000557](../../scripts/run_answer_quality_benchmark.py#L557) | 557 | `"        type=Path,"` | — |
-| [SRC-4FFD5AFC54-L000558](../../scripts/run_answer_quality_benchmark.py#L558) | 558 | `"        default=DEFAULT_CORPUS,"` | — |
-| [SRC-4FFD5AFC54-L000559](../../scripts/run_answer_quality_benchmark.py#L559) | 559 | `"        help=\"Path to answer_quality_cases.json\","` | — |
-| [SRC-4FFD5AFC54-L000560](../../scripts/run_answer_quality_benchmark.py#L560) | 560 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000561](../../scripts/run_answer_quality_benchmark.py#L561) | 561 | `"    parser.add_argument(\"--summary\", action=\"store_true\", help=\"Extra validate summary\")"` | — |
-| [SRC-4FFD5AFC54-L000562](../../scripts/run_answer_quality_benchmark.py#L562) | 562 | `"    parser.add_argument(\"--base-url\", default=\"http://127.0.0.1:8765\")"` | — |
-| [SRC-4FFD5AFC54-L000563](../../scripts/run_answer_quality_benchmark.py#L563) | 563 | `"    parser.add_argument(\"--case-id\", default=None, help=\"Run a single case (live)\")"` | — |
-| [SRC-4FFD5AFC54-L000564](../../scripts/run_answer_quality_benchmark.py#L564) | 564 | `"    parser.add_argument(\"--limit\", type=int, default=0, help=\"Max cases in live mode (0=all selected)\")"` | — |
-| [SRC-4FFD5AFC54-L000565](../../scripts/run_answer_quality_benchmark.py#L565) | 565 | `"    parser.add_argument(\"--timeout\", type=float, default=60.0)"` | — |
-| [SRC-4FFD5AFC54-L000566](../../scripts/run_answer_quality_benchmark.py#L566) | 566 | `"    parser.add_argument(\"--build-sha\", default=None, help=\"Optional expected deployed SHA; checked against /api/health before any benchmark request\")"` | — |
-| [SRC-4FFD5AFC54-L000567](../../scripts/run_answer_quality_benchmark.py#L567) | 567 | `"    parser.add_argument(\"--request-costs\", type=Path, default=None, help=\"Optional externally reconciled per-case full-request costs in USD\")"` | — |
-| [SRC-4FFD5AFC54-L000568](../../scripts/run_answer_quality_benchmark.py#L568) | 568 | `"    parser.add_argument(\"--delay\", type=float, default=0.0, help=\"Seconds between live requests\")"` | — |
-| [SRC-4FFD5AFC54-L000569](../../scripts/run_answer_quality_benchmark.py#L569) | 569 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
-| [SRC-4FFD5AFC54-L000570](../../scripts/run_answer_quality_benchmark.py#L570) | 570 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-4FFD5AFC54-L000571](../../scripts/run_answer_quality_benchmark.py#L571) | 571 | `""` | — |
-| [SRC-4FFD5AFC54-L000572](../../scripts/run_answer_quality_benchmark.py#L572) | 572 | `"    if args.mode == \"validate\":"` | — |
-| [SRC-4FFD5AFC54-L000573](../../scripts/run_answer_quality_benchmark.py#L573) | 573 | `"        return run_validate(args.corpus, args.summary)"` | — |
-| [SRC-4FFD5AFC54-L000574](../../scripts/run_answer_quality_benchmark.py#L574) | 574 | `"    if args.mode == \"live\":"` | — |
-| [SRC-4FFD5AFC54-L000575](../../scripts/run_answer_quality_benchmark.py#L575) | 575 | `"        if not args.case_id and args.limit <= 0:"` | — |
-| [SRC-4FFD5AFC54-L000576](../../scripts/run_answer_quality_benchmark.py#L576) | 576 | `"            print("` | — |
-| [SRC-4FFD5AFC54-L000577](../../scripts/run_answer_quality_benchmark.py#L577) | 577 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
-| [SRC-4FFD5AFC54-L000578](../../scripts/run_answer_quality_benchmark.py#L578) | 578 | `"                file=sys.stderr,"` | — |
-| [SRC-4FFD5AFC54-L000579](../../scripts/run_answer_quality_benchmark.py#L579) | 579 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000580](../../scripts/run_answer_quality_benchmark.py#L580) | 580 | `"            return 2"` | — |
-| [SRC-4FFD5AFC54-L000581](../../scripts/run_answer_quality_benchmark.py#L581) | 581 | `"        return run_live("` | — |
-| [SRC-4FFD5AFC54-L000582](../../scripts/run_answer_quality_benchmark.py#L582) | 582 | `"            args.corpus,"` | — |
-| [SRC-4FFD5AFC54-L000583](../../scripts/run_answer_quality_benchmark.py#L583) | 583 | `"            args.base_url,"` | — |
-| [SRC-4FFD5AFC54-L000584](../../scripts/run_answer_quality_benchmark.py#L584) | 584 | `"            args.case_id,"` | — |
-| [SRC-4FFD5AFC54-L000585](../../scripts/run_answer_quality_benchmark.py#L585) | 585 | `"            args.limit,"` | — |
-| [SRC-4FFD5AFC54-L000586](../../scripts/run_answer_quality_benchmark.py#L586) | 586 | `"            args.timeout,"` | — |
-| [SRC-4FFD5AFC54-L000587](../../scripts/run_answer_quality_benchmark.py#L587) | 587 | `"            args.delay,"` | — |
-| [SRC-4FFD5AFC54-L000588](../../scripts/run_answer_quality_benchmark.py#L588) | 588 | `"            args.out,"` | — |
-| [SRC-4FFD5AFC54-L000589](../../scripts/run_answer_quality_benchmark.py#L589) | 589 | `"            args.build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000590](../../scripts/run_answer_quality_benchmark.py#L590) | 590 | `"            args.request_costs,"` | — |
-| [SRC-4FFD5AFC54-L000591](../../scripts/run_answer_quality_benchmark.py#L591) | 591 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000592](../../scripts/run_answer_quality_benchmark.py#L592) | 592 | `"    return 2"` | — |
-| [SRC-4FFD5AFC54-L000593](../../scripts/run_answer_quality_benchmark.py#L593) | 593 | `""` | — |
+| [SRC-4FFD5AFC54-L000547](../../scripts/run_answer_quality_benchmark.py#L547) | 547 | `""` | — |
+| [SRC-4FFD5AFC54-L000548](../../scripts/run_answer_quality_benchmark.py#L548) | 548 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
+| [SRC-4FFD5AFC54-L000549](../../scripts/run_answer_quality_benchmark.py#L549) | 549 | `"    parser = argparse.ArgumentParser(description=\"Omarai answer-quality benchmark runner\")"` | — |
+| [SRC-4FFD5AFC54-L000550](../../scripts/run_answer_quality_benchmark.py#L550) | 550 | `"    parser.add_argument("` | — |
+| [SRC-4FFD5AFC54-L000551](../../scripts/run_answer_quality_benchmark.py#L551) | 551 | `"        \"--mode\","` | — |
+| [SRC-4FFD5AFC54-L000552](../../scripts/run_answer_quality_benchmark.py#L552) | 552 | `"        choices=(\"validate\", \"live\"),"` | — |
+| [SRC-4FFD5AFC54-L000553](../../scripts/run_answer_quality_benchmark.py#L553) | 553 | `"        default=\"validate\","` | — |
+| [SRC-4FFD5AFC54-L000554](../../scripts/run_answer_quality_benchmark.py#L554) | 554 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
+| [SRC-4FFD5AFC54-L000555](../../scripts/run_answer_quality_benchmark.py#L555) | 555 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000556](../../scripts/run_answer_quality_benchmark.py#L556) | 556 | `"    parser.add_argument("` | — |
+| [SRC-4FFD5AFC54-L000557](../../scripts/run_answer_quality_benchmark.py#L557) | 557 | `"        \"--corpus\","` | — |
+| [SRC-4FFD5AFC54-L000558](../../scripts/run_answer_quality_benchmark.py#L558) | 558 | `"        type=Path,"` | — |
+| [SRC-4FFD5AFC54-L000559](../../scripts/run_answer_quality_benchmark.py#L559) | 559 | `"        default=DEFAULT_CORPUS,"` | — |
+| [SRC-4FFD5AFC54-L000560](../../scripts/run_answer_quality_benchmark.py#L560) | 560 | `"        help=\"Path to answer_quality_cases.json\","` | — |
+| [SRC-4FFD5AFC54-L000561](../../scripts/run_answer_quality_benchmark.py#L561) | 561 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000562](../../scripts/run_answer_quality_benchmark.py#L562) | 562 | `"    parser.add_argument(\"--summary\", action=\"store_true\", help=\"Extra validate summary\")"` | — |
+| [SRC-4FFD5AFC54-L000563](../../scripts/run_answer_quality_benchmark.py#L563) | 563 | `"    parser.add_argument(\"--base-url\", default=\"http://127.0.0.1:8765\")"` | — |
+| [SRC-4FFD5AFC54-L000564](../../scripts/run_answer_quality_benchmark.py#L564) | 564 | `"    parser.add_argument(\"--case-id\", default=None, help=\"Run a single case (live)\")"` | — |
+| [SRC-4FFD5AFC54-L000565](../../scripts/run_answer_quality_benchmark.py#L565) | 565 | `"    parser.add_argument(\"--limit\", type=int, default=0, help=\"Max cases in live mode (0=all selected)\")"` | — |
+| [SRC-4FFD5AFC54-L000566](../../scripts/run_answer_quality_benchmark.py#L566) | 566 | `"    parser.add_argument(\"--timeout\", type=float, default=60.0)"` | — |
+| [SRC-4FFD5AFC54-L000567](../../scripts/run_answer_quality_benchmark.py#L567) | 567 | `"    parser.add_argument(\"--build-sha\", default=None, help=\"Optional expected deployed SHA; checked against /api/health before any benchmark request\")"` | — |
+| [SRC-4FFD5AFC54-L000568](../../scripts/run_answer_quality_benchmark.py#L568) | 568 | `"    parser.add_argument(\"--request-costs\", type=Path, default=None, help=\"Optional externally reconciled per-case full-request costs in USD\")"` | — |
+| [SRC-4FFD5AFC54-L000569](../../scripts/run_answer_quality_benchmark.py#L569) | 569 | `"    parser.add_argument(\"--delay\", type=float, default=0.0, help=\"Seconds between live requests\")"` | — |
+| [SRC-4FFD5AFC54-L000570](../../scripts/run_answer_quality_benchmark.py#L570) | 570 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
+| [SRC-4FFD5AFC54-L000571](../../scripts/run_answer_quality_benchmark.py#L571) | 571 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-4FFD5AFC54-L000572](../../scripts/run_answer_quality_benchmark.py#L572) | 572 | `""` | — |
+| [SRC-4FFD5AFC54-L000573](../../scripts/run_answer_quality_benchmark.py#L573) | 573 | `"    if args.mode == \"validate\":"` | — |
+| [SRC-4FFD5AFC54-L000574](../../scripts/run_answer_quality_benchmark.py#L574) | 574 | `"        return run_validate(args.corpus, args.summary)"` | — |
+| [SRC-4FFD5AFC54-L000575](../../scripts/run_answer_quality_benchmark.py#L575) | 575 | `"    if args.mode == \"live\":"` | — |
+| [SRC-4FFD5AFC54-L000576](../../scripts/run_answer_quality_benchmark.py#L576) | 576 | `"        if not args.case_id and args.limit <= 0:"` | — |
+| [SRC-4FFD5AFC54-L000577](../../scripts/run_answer_quality_benchmark.py#L577) | 577 | `"            print("` | — |
+| [SRC-4FFD5AFC54-L000578](../../scripts/run_answer_quality_benchmark.py#L578) | 578 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
+| [SRC-4FFD5AFC54-L000579](../../scripts/run_answer_quality_benchmark.py#L579) | 579 | `"                file=sys.stderr,"` | — |
+| [SRC-4FFD5AFC54-L000580](../../scripts/run_answer_quality_benchmark.py#L580) | 580 | `"            )"` | — |
+| [SRC-4FFD5AFC54-L000581](../../scripts/run_answer_quality_benchmark.py#L581) | 581 | `"            return 2"` | — |
+| [SRC-4FFD5AFC54-L000582](../../scripts/run_answer_quality_benchmark.py#L582) | 582 | `"        return run_live("` | — |
+| [SRC-4FFD5AFC54-L000583](../../scripts/run_answer_quality_benchmark.py#L583) | 583 | `"            args.corpus,"` | — |
+| [SRC-4FFD5AFC54-L000584](../../scripts/run_answer_quality_benchmark.py#L584) | 584 | `"            args.base_url,"` | — |
+| [SRC-4FFD5AFC54-L000585](../../scripts/run_answer_quality_benchmark.py#L585) | 585 | `"            args.case_id,"` | — |
+| [SRC-4FFD5AFC54-L000586](../../scripts/run_answer_quality_benchmark.py#L586) | 586 | `"            args.limit,"` | — |
+| [SRC-4FFD5AFC54-L000587](../../scripts/run_answer_quality_benchmark.py#L587) | 587 | `"            args.timeout,"` | — |
+| [SRC-4FFD5AFC54-L000588](../../scripts/run_answer_quality_benchmark.py#L588) | 588 | `"            args.delay,"` | — |
+| [SRC-4FFD5AFC54-L000589](../../scripts/run_answer_quality_benchmark.py#L589) | 589 | `"            args.out,"` | — |
+| [SRC-4FFD5AFC54-L000590](../../scripts/run_answer_quality_benchmark.py#L590) | 590 | `"            args.build_sha,"` | — |
+| [SRC-4FFD5AFC54-L000591](../../scripts/run_answer_quality_benchmark.py#L591) | 591 | `"            args.request_costs,"` | — |
+| [SRC-4FFD5AFC54-L000592](../../scripts/run_answer_quality_benchmark.py#L592) | 592 | `"        )"` | — |
+| [SRC-4FFD5AFC54-L000593](../../scripts/run_answer_quality_benchmark.py#L593) | 593 | `"    return 2"` | — |
 | [SRC-4FFD5AFC54-L000594](../../scripts/run_answer_quality_benchmark.py#L594) | 594 | `""` | — |
-| [SRC-4FFD5AFC54-L000595](../../scripts/run_answer_quality_benchmark.py#L595) | 595 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-4FFD5AFC54-L000596](../../scripts/run_answer_quality_benchmark.py#L596) | 596 | `"    raise SystemExit(main())"` | — |
+| [SRC-4FFD5AFC54-L000595](../../scripts/run_answer_quality_benchmark.py#L595) | 595 | `""` | — |
+| [SRC-4FFD5AFC54-L000596](../../scripts/run_answer_quality_benchmark.py#L596) | 596 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-4FFD5AFC54-L000597](../../scripts/run_answer_quality_benchmark.py#L597) | 597 | `"    raise SystemExit(main())"` | — |
 ## ملفات أخرى
 
 ### FILE-03FF422A16 — [scripts/score_answer_quality_reviews.py](../../scripts/score_answer_quality_reviews.py#L1)
@@ -842,4 +843,3 @@
 | [SRC-90FAA34ADE-L000221](../../tests/fixtures/answer_quality_cases.json#L221) | 221 | `"      \"category\": \"multi_subquestions\","` | — |
 | [SRC-90FAA34ADE-L000222](../../tests/fixtures/answer_quality_cases.json#L222) | 222 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000223](../../tests/fixtures/answer_quality_cases.json#L223) | 223 | `"      \"question\": \"قولي ثلاث حاجات: ١) ايه الفرق بين الإيجار والتمليك في مصر باختصار ٢) ايه المخاطر القانونية الشائعة ٣) ازاي اتأكد من عقد الإيجار\","` | — |
-| [SRC-90FAA34ADE-L000224](../../tests/fixtures/answer_quality_cases.json#L224) | 224 | `"      \"expected_strategy\": \"web_search\","` | — |

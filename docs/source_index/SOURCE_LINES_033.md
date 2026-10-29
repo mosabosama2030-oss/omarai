@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000039 إلى SRC-B3062EB677-L000190
+- النطاق: SRC-6A7519AC10-L000038 إلى SRC-B3062EB677-L000189
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000038](../../tests/test_answer_quality_comparison.py#L38) | 38 | `"        \"transport_ok\": True,"` | — |
 | [SRC-6A7519AC10-L000039](../../tests/test_answer_quality_comparison.py#L39) | 39 | `"        \"elapsed_ms\": latency,"` | — |
 | [SRC-6A7519AC10-L000040](../../tests/test_answer_quality_comparison.py#L40) | 40 | `"        \"tool_status\": tool_status,"` | — |
 | [SRC-6A7519AC10-L000041](../../tests/test_answer_quality_comparison.py#L41) | 41 | `"        \"search_outcome\": \"attempted_with_usable_sources\" if tool_status == \"SUCCESS_WITH_USABLE_RESULTS\" else \"attempted_no_usable_sources\","` | — |
@@ -851,4 +852,3 @@
 | [SRC-B3062EB677-L000187](../../tests/test_answer_quality_runner.py#L187) | 187 | `"        code=302,"` | — |
 | [SRC-B3062EB677-L000188](../../tests/test_answer_quality_runner.py#L188) | 188 | `"        msg=\"Found\","` | — |
 | [SRC-B3062EB677-L000189](../../tests/test_answer_quality_runner.py#L189) | 189 | `"        headers={},"` | — |
-| [SRC-B3062EB677-L000190](../../tests/test_answer_quality_runner.py#L190) | 190 | `"        newurl=\"https://attacker.example/collect\","` | — |
