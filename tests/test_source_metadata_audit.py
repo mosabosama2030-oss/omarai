@@ -32,6 +32,7 @@ def test_population_source_metadata_presence_does_not_claim_truth_verification()
         "العدد وفق المصدر [المصدر 1].",
         [{
             "title": "Population report",
+            "publisher": "Example Statistics Office",
             "url": "https://example.org/population",
             "published_at": "2025-06-01",
             "data_reference_period": "2025 estimate",
@@ -44,6 +45,7 @@ def test_population_source_metadata_presence_does_not_claim_truth_verification()
     audit = result["source_metadata_audit"]
     assert audit["status"] == "minimum_metadata_present"
     assert audit["sources_missing_or_invalid_url_count"] == 0
+    assert audit["sources_missing_publisher_identity_count"] == 0
     assert audit["sources_missing_publication_date_count"] == 0
     assert audit["sources_missing_data_reference_period_count"] == 0
     assert audit["sources_missing_publication_or_data_date_count"] == 0
@@ -72,6 +74,7 @@ def test_population_scope_is_required_even_when_answer_uses_only_a_number():
         "The estimate is 9.7 million.",
         [{
             "title": "Population estimate",
+            "publisher": "Example Statistics Office",
             "url": "https://example.org/cairo",
             "published_at": "2025-06-01",
             "data_year": 2025,
