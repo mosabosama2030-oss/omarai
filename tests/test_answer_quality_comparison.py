@@ -41,6 +41,15 @@ def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None, 
         "search_outcome": "attempted_with_usable_sources" if tool_status == "SUCCESS_WITH_USABLE_RESULTS" else "attempted_no_usable_sources",
         "provider_reported_model_cost_status": "COMPLETE_FOR_RETURNED_MODEL_CALLS" if cost is not None else "PROVIDER_COST_NOT_REPORTED",
         "request_cost_status": "RECONCILED_COMPLETE_REQUEST_COST" if request_cost is not None else "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED",
+        "required_tool_statuses": (
+            [{
+                "tool": "web_search",
+                "status": "completed_with_results" if tool_status == "SUCCESS_WITH_USABLE_RESULTS" else "completed_no_usable_results",
+                "successful_completion": tool_status == "SUCCESS_WITH_USABLE_RESULTS",
+            }]
+            if expected_strategy == "web_search"
+            else []
+        ),
     }
     if cost is not None:
         row["provider_reported_model_cost_usd"] = cost
@@ -121,6 +130,9 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 120
     assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(1 / 30)
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
+    assert result["runtime_deltas"]["required_tool_success_rate"]["baseline"] == pytest.approx(1 / 30)
+    assert result["runtime_deltas"]["required_tool_success_rate"]["candidate"] == 1.0
+    assert result["runtime_deltas"]["required_tool_success_rate"]["delta"] == pytest.approx(29 / 30)
     assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.003
     assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] == pytest.approx(0.070)
     assert result["runtime_deltas"]["complete_request_cost_usd"]["delta"] == pytest.approx(-0.011)
