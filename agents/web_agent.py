@@ -2497,11 +2497,17 @@ class WebAgent:
         preliminary_ledger = build_evidence_ledger(target_aspects, preliminary)
         missing_aspects = list(preliminary_ledger.get("missing") or [])
         expansion_queries: list[str] = []
+        # Do not issue generic repairs when a standard task already has per-requirement queries.
+        # Legacy plans without those query records still need the bounded missing-aspect fallback;
+        # deep research may expand further even after targeted queries.
         if (
-            plan.get("depth") == "deep"
-            and (missing_aspects or needs_expansion)
+            (missing_aspects or needs_expansion)
             and len(queries) < query_limit
             and queries
+            and (
+                not plan.get("requirement_queries")
+                or plan.get("depth") == "deep"
+            )
         ):
             base_query = (queries[0] if queries else "")
             remaining_slots = max(0, query_limit - len(queries))
