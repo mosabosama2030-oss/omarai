@@ -2766,6 +2766,10 @@ def test_frontend_exposes_structured_page_fetch_statuses():
     assert "partial_extraction" in html
     assert "لم يُستخرج نص؛ قد تكون الصفحة ديناميكية أو محجوبة" in html
     assert "تشخيص الموصلات في هذا الطلب" in html
+    assert "حالة إكمال البحث" in html
+    assert "تفاصيل مراحل إكمال البحث والعدادات" in html
+    assert "pages_read_with_text_count" in html
+    assert "التحقق الدلالي من أن كل ادعاء مسنود فعلًا بالمصدر" in html
 
 
 @pytest.mark.parametrize(
@@ -3486,6 +3490,8 @@ def test_latest_mode_does_not_generate_answer_from_stale_pages(monkeypatch):
         collection_calls.append(dict(research_plan))
         old_page = sample_source(0)
         old_page.update({
+            "url": "https://moi.gov.eg/passports",
+            "domain": "moi.gov.eg",
             "published_at": "2024-01-01T10:00:00Z",
             "page_fetched": True,
             "page_text": "محتوى قديم عن مواعيد العمل",
@@ -3836,3 +3842,43 @@ def test_bilingual_relevance_matches_english_queries_to_arabic_source_text():
     evidence = "استخدامات الذكاء الاصطناعي للشركات الصغيرة في مصر"
     assert _relevance_ratio(query, evidence) >= 0.80
 
+
+def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda question, history: {
+            "queries": [question],
+            "social_focus": False,
+            "freshness": "any",
+            "depth": "standard",
+            "platforms": [],
+            "planning_method": "test",
+            "coverage_targets": [],
+        },
+    )
+    monkeypatch.setattr(agent, "_collect_research", lambda plan: (
+        [sample_source(0), sample_source(1)], [], {
+            "queries_planned": 1,
+            "queries_attempted": 1,
+            "query_results": [{"query": plan["queries"][0], "results": 2}],
+            "unique_sources": 2,
+            "pages_fetched": 2,
+            "providers_used": ["test"],
+            "provider_diagnostics": [],
+        }
+    ))
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "إجابة اختبارية [المصدر 1].")
+
+    def fail_diagnostics(_result):
+        raise RuntimeError("diagnostics are optional")
+
+    monkeypatch.setattr("agents.web_agent.build_research_completion", fail_diagnostics)
+    result = agent.answer("قارن هذه التقنية")
+    assert result["answer"] == "إجابة اختبارية [المصدر 1]."
+    assert result["research_completion"]["status"] == "diagnostics_not_computed"
+    assert any("لا يُعد ذلك دليلًا على اكتمال البحث" in warning for warning in result["warnings"])

@@ -49,6 +49,7 @@ from agents.research import (
     validate_plan,
 )
 from agents.research_guardrails import apply_source_guardrails
+from agents.research_completion import build_research_completion
 from agents.tool_execution_status import build_tool_execution_matrix
 from agents.task_understanding import (
     build_query_strategy_matrix,
@@ -4604,6 +4605,21 @@ class WebAgent:
                 "error_class": type(exc).__name__,
                 "claim": "task interpretation diagnostics unavailable; answer was not independently verified",
             }
+        try:
+            completion = build_research_completion(result)
+            result["research_completion"] = completion
+            if isinstance(result.get("search_report"), dict):
+                result["search_report"]["research_completion"] = completion
+        except Exception:
+            # Diagnostics must never replace a valid answer with an internal error.
+            result["research_completion"] = {
+                "status": "diagnostics_not_computed",
+                "semantic_verification": "not_performed",
+                "error_class": "research_completion_diagnostics_error",
+            }
+            result.setdefault("warnings", []).append(
+                "تعذر حساب حالة إكمال البحث وعداداته؛ لا يُعد ذلك دليلًا على اكتمال البحث."
+            )
         return result
 
     def _answer_with_budget(
@@ -5248,6 +5264,8 @@ class WebAgent:
                     "url": source["url"],
                     "snippet": source.get("snippet", ""),
                     "page_fetched": bool(source.get("page_fetched")),
+                "readable_page_text_available": bool(source.get("page_fetched")) and bool(str(source.get("page_text") or "").strip()),
+                "page_text_present_without_fetch_flag": bool(str(source.get("page_text") or "").strip()) and not bool(source.get("page_fetched")),
                     "providers": source.get("providers", []),
                     "queries": source.get("queries", []),
                     "platform": source.get("platform", "web"),
@@ -5735,6 +5753,8 @@ class WebAgent:
                 "url": source["url"],
                 "snippet": source.get("snippet", ""),
                 "page_fetched": bool(source.get("page_fetched")),
+                "readable_page_text_available": bool(source.get("page_fetched")) and bool(str(source.get("page_text") or "").strip()),
+                "page_text_present_without_fetch_flag": bool(str(source.get("page_text") or "").strip()) and not bool(source.get("page_fetched")),
                 "page_fetch_status": source.get("page_fetch_status", "unknown"),
                 "page_fetch_error_class": source.get("page_fetch_error_class"),
                 "providers": source.get("providers", []),
@@ -6482,6 +6502,8 @@ class WebAgent:
                 "url": source["url"],
                 "snippet": source.get("snippet", ""),
                 "page_fetched": bool(source.get("page_fetched")),
+                "readable_page_text_available": bool(source.get("page_fetched")) and bool(str(source.get("page_text") or "").strip()),
+                "page_text_present_without_fetch_flag": bool(str(source.get("page_text") or "").strip()) and not bool(source.get("page_fetched")),
                 "providers": source.get("providers", []),
                 "queries": source.get("queries", []),
                 "platform": source.get("platform", "web"),
