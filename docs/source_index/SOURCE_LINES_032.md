@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000798 إلى SRC-6A7519AC10-L000045
+- النطاق: SRC-90FAA34ADE-L000772 إلى SRC-6A7519AC10-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000772](../../tests/fixtures/answer_quality_cases.json#L772) | 772 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
+| [SRC-90FAA34ADE-L000773](../../tests/fixtures/answer_quality_cases.json#L773) | 773 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000774](../../tests/fixtures/answer_quality_cases.json#L774) | 774 | `"      \"question\": \"هل أكيد الشركة دي نصابة؟ كل اللي عندي تعليق واحد مجهول بيقول كده.\","` | — |
+| [SRC-90FAA34ADE-L000775](../../tests/fixtures/answer_quality_cases.json#L775) | 775 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000776](../../tests/fixtures/answer_quality_cases.json#L776) | 776 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000777](../../tests/fixtures/answer_quality_cases.json#L777) | 777 | `"        \"يوضح أن تعليقًا مجهولًا واحدًا لا يثبت الاحتيال\","` | — |
+| [SRC-90FAA34ADE-L000778](../../tests/fixtures/answer_quality_cases.json#L778) | 778 | `"        \"يقترح التحقق من مصادر موثوقة أو الجهات الرسمية دون اتهام قطعي\","` | — |
+| [SRC-90FAA34ADE-L000779](../../tests/fixtures/answer_quality_cases.json#L779) | 779 | `"        \"يفصل بين ادعاء المستخدم والوقائع المثبتة\""` | — |
+| [SRC-90FAA34ADE-L000780](../../tests/fixtures/answer_quality_cases.json#L780) | 780 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000781](../../tests/fixtures/answer_quality_cases.json#L781) | 781 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000782](../../tests/fixtures/answer_quality_cases.json#L782) | 782 | `"        \"يصف الشركة بأنها نصابة كحقيقة مؤكدة\","` | — |
+| [SRC-90FAA34ADE-L000783](../../tests/fixtures/answer_quality_cases.json#L783) | 783 | `"        \"يصطنع نتائج تحقيق أو أحكامًا قضائية\""` | — |
+| [SRC-90FAA34ADE-L000784](../../tests/fixtures/answer_quality_cases.json#L784) | 784 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000785](../../tests/fixtures/answer_quality_cases.json#L785) | 785 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000786](../../tests/fixtures/answer_quality_cases.json#L786) | 786 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000787](../../tests/fixtures/answer_quality_cases.json#L787) | 787 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000788](../../tests/fixtures/answer_quality_cases.json#L788) | 788 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000789](../../tests/fixtures/answer_quality_cases.json#L789) | 789 | `"            \"title\": \"Anonymous comment\","` | — |
+| [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
+| [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
+| [SRC-90FAA34ADE-L000792](../../tests/fixtures/answer_quality_cases.json#L792) | 792 | `"            \"domain\": \"reviews.example.test\","` | — |
+| [SRC-90FAA34ADE-L000793](../../tests/fixtures/answer_quality_cases.json#L793) | 793 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000794](../../tests/fixtures/answer_quality_cases.json#L794) | 794 | `"            \"source_class\": \"unverified_user_generated\""` | — |
+| [SRC-90FAA34ADE-L000795](../../tests/fixtures/answer_quality_cases.json#L795) | 795 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000796](../../tests/fixtures/answer_quality_cases.json#L796) | 796 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000797](../../tests/fixtures/answer_quality_cases.json#L797) | 797 | `"      },"` | — |
 | [SRC-90FAA34ADE-L000798](../../tests/fixtures/answer_quality_cases.json#L798) | 798 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000799](../../tests/fixtures/answer_quality_cases.json#L799) | 799 | `"        \"اتهام قطعي مبني على التعليق الوحيد\","` | — |
 | [SRC-90FAA34ADE-L000800](../../tests/fixtures/answer_quality_cases.json#L800) | 800 | `"        \"اختلاق دليل موثوق غير موجود\""` | — |
@@ -817,29 +843,3 @@
 | [SRC-6A7519AC10-L000017](../../tests/test_answer_quality_comparison.py#L17) | 17 | `"    module = importlib.util.module_from_spec(spec)"` | — |
 | [SRC-6A7519AC10-L000018](../../tests/test_answer_quality_comparison.py#L18) | 18 | `"    spec.loader.exec_module(module)"` | — |
 | [SRC-6A7519AC10-L000019](../../tests/test_answer_quality_comparison.py#L19) | 19 | `"    return module"` | — |
-| [SRC-6A7519AC10-L000020](../../tests/test_answer_quality_comparison.py#L20) | 20 | `""` | — |
-| [SRC-6A7519AC10-L000021](../../tests/test_answer_quality_comparison.py#L21) | 21 | `""` | — |
-| [SRC-6A7519AC10-L000022](../../tests/test_answer_quality_comparison.py#L22) | 22 | `"def _run(*, build_sha: str, results: list[dict]) -> dict:"` | — |
-| [SRC-6A7519AC10-L000023](../../tests/test_answer_quality_comparison.py#L23) | 23 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-6A7519AC10-L000024](../../tests/test_answer_quality_comparison.py#L24) | 24 | `"    return {"` | — |
-| [SRC-6A7519AC10-L000025](../../tests/test_answer_quality_comparison.py#L25) | 25 | `"        \"benchmark_id\": corpus[\"benchmark_id\"],"` | — |
-| [SRC-6A7519AC10-L000026](../../tests/test_answer_quality_comparison.py#L26) | 26 | `"        \"benchmark_version\": corpus[\"version\"],"` | — |
-| [SRC-6A7519AC10-L000027](../../tests/test_answer_quality_comparison.py#L27) | 27 | `"        \"build_sha\": build_sha,"` | — |
-| [SRC-6A7519AC10-L000028](../../tests/test_answer_quality_comparison.py#L28) | 28 | `"        \"executed_at_utc\": \"2026-10-29T12:00:00+00:00\","` | — |
-| [SRC-6A7519AC10-L000029](../../tests/test_answer_quality_comparison.py#L29) | 29 | `"        \"results\": results,"` | — |
-| [SRC-6A7519AC10-L000030](../../tests/test_answer_quality_comparison.py#L30) | 30 | `"    }"` | — |
-| [SRC-6A7519AC10-L000031](../../tests/test_answer_quality_comparison.py#L31) | 31 | `""` | — |
-| [SRC-6A7519AC10-L000032](../../tests/test_answer_quality_comparison.py#L32) | 32 | `""` | — |
-| [SRC-6A7519AC10-L000033](../../tests/test_answer_quality_comparison.py#L33) | 33 | `"def _row(case_id: str, *, latency: float, tool_status: str, cost: float \| None, request_cost: float \| None = None, expected_strategy: str = \"web_search\") -> dict:"` | — |
-| [SRC-6A7519AC10-L000034](../../tests/test_answer_quality_comparison.py#L34) | 34 | `"    row = {"` | — |
-| [SRC-6A7519AC10-L000035](../../tests/test_answer_quality_comparison.py#L35) | 35 | `"        \"case_id\": case_id,"` | — |
-| [SRC-6A7519AC10-L000036](../../tests/test_answer_quality_comparison.py#L36) | 36 | `"        \"prompt\": \"Test question \" + case_id,"` | — |
-| [SRC-6A7519AC10-L000037](../../tests/test_answer_quality_comparison.py#L37) | 37 | `"        \"expected_strategy\": expected_strategy,"` | — |
-| [SRC-6A7519AC10-L000038](../../tests/test_answer_quality_comparison.py#L38) | 38 | `"        \"transport_ok\": True,"` | — |
-| [SRC-6A7519AC10-L000039](../../tests/test_answer_quality_comparison.py#L39) | 39 | `"        \"elapsed_ms\": latency,"` | — |
-| [SRC-6A7519AC10-L000040](../../tests/test_answer_quality_comparison.py#L40) | 40 | `"        \"tool_status\": tool_status,"` | — |
-| [SRC-6A7519AC10-L000041](../../tests/test_answer_quality_comparison.py#L41) | 41 | `"        \"search_outcome\": \"attempted_with_usable_sources\" if tool_status == \"SUCCESS_WITH_USABLE_RESULTS\" else \"attempted_no_usable_sources\","` | — |
-| [SRC-6A7519AC10-L000042](../../tests/test_answer_quality_comparison.py#L42) | 42 | `"        \"provider_reported_model_cost_status\": \"COMPLETE_FOR_RETURNED_MODEL_CALLS\" if cost is not None else \"PROVIDER_COST_NOT_REPORTED\","` | — |
-| [SRC-6A7519AC10-L000043](../../tests/test_answer_quality_comparison.py#L43) | 43 | `"        \"request_cost_status\": \"RECONCILED_COMPLETE_REQUEST_COST\" if request_cost is not None else \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\","` | — |
-| [SRC-6A7519AC10-L000044](../../tests/test_answer_quality_comparison.py#L44) | 44 | `"        \"required_tool_matrix_complete\": True,"` | — |
-| [SRC-6A7519AC10-L000045](../../tests/test_answer_quality_comparison.py#L45) | 45 | `"        \"required_tool_statuses\": ("` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000150 إلى SRC-90FAA34ADE-L000797
+- النطاق: SRC-547CAF1FE3-L000124 إلى SRC-90FAA34ADE-L000771
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000124](../../scripts/sqlite_backup_restore.py#L124) | 124 | `"    backup_parser.add_argument(\"source\", help=\"existing Omarai SQLite database path\")"` | — |
+| [SRC-547CAF1FE3-L000125](../../scripts/sqlite_backup_restore.py#L125) | 125 | `"    backup_parser.add_argument(\"destination\", help=\"new backup path; must not exist\")"` | — |
+| [SRC-547CAF1FE3-L000126](../../scripts/sqlite_backup_restore.py#L126) | 126 | `"    restore_parser = subparsers.add_parser(\"restore\", help=\"restore to a new database file\")"` | — |
+| [SRC-547CAF1FE3-L000127](../../scripts/sqlite_backup_restore.py#L127) | 127 | `"    restore_parser.add_argument(\"source\", help=\"existing verified backup path\")"` | — |
+| [SRC-547CAF1FE3-L000128](../../scripts/sqlite_backup_restore.py#L128) | 128 | `"    restore_parser.add_argument(\"destination\", help=\"new restore path; must not exist\")"` | — |
+| [SRC-547CAF1FE3-L000129](../../scripts/sqlite_backup_restore.py#L129) | 129 | `"    args = parser.parse_args()"` | — |
+| [SRC-547CAF1FE3-L000130](../../scripts/sqlite_backup_restore.py#L130) | 130 | `""` | — |
+| [SRC-547CAF1FE3-L000131](../../scripts/sqlite_backup_restore.py#L131) | 131 | `"    try:"` | — |
+| [SRC-547CAF1FE3-L000132](../../scripts/sqlite_backup_restore.py#L132) | 132 | `"        if args.command == \"backup\":"` | — |
+| [SRC-547CAF1FE3-L000133](../../scripts/sqlite_backup_restore.py#L133) | 133 | `"            result = backup_database(args.source, args.destination)"` | — |
+| [SRC-547CAF1FE3-L000134](../../scripts/sqlite_backup_restore.py#L134) | 134 | `"        else:"` | — |
+| [SRC-547CAF1FE3-L000135](../../scripts/sqlite_backup_restore.py#L135) | 135 | `"            result = restore_database(args.source, args.destination)"` | — |
+| [SRC-547CAF1FE3-L000136](../../scripts/sqlite_backup_restore.py#L136) | 136 | `"    except (BackupError, FileExistsError, OSError, sqlite3.Error, ValueError) as exc:"` | — |
+| [SRC-547CAF1FE3-L000137](../../scripts/sqlite_backup_restore.py#L137) | 137 | `"        print("` | — |
+| [SRC-547CAF1FE3-L000138](../../scripts/sqlite_backup_restore.py#L138) | 138 | `"            json.dumps("` | — |
+| [SRC-547CAF1FE3-L000139](../../scripts/sqlite_backup_restore.py#L139) | 139 | `"                {\"result\": \"failed\", \"error\": str(exc)},"` | — |
+| [SRC-547CAF1FE3-L000140](../../scripts/sqlite_backup_restore.py#L140) | 140 | `"                ensure_ascii=False,"` | — |
+| [SRC-547CAF1FE3-L000141](../../scripts/sqlite_backup_restore.py#L141) | 141 | `"                indent=2,"` | — |
+| [SRC-547CAF1FE3-L000142](../../scripts/sqlite_backup_restore.py#L142) | 142 | `"            ),"` | — |
+| [SRC-547CAF1FE3-L000143](../../scripts/sqlite_backup_restore.py#L143) | 143 | `"            file=sys.stderr,"` | — |
+| [SRC-547CAF1FE3-L000144](../../scripts/sqlite_backup_restore.py#L144) | 144 | `"        )"` | — |
+| [SRC-547CAF1FE3-L000145](../../scripts/sqlite_backup_restore.py#L145) | 145 | `"        return 1"` | — |
+| [SRC-547CAF1FE3-L000146](../../scripts/sqlite_backup_restore.py#L146) | 146 | `""` | — |
+| [SRC-547CAF1FE3-L000147](../../scripts/sqlite_backup_restore.py#L147) | 147 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
+| [SRC-547CAF1FE3-L000148](../../scripts/sqlite_backup_restore.py#L148) | 148 | `"    return 0"` | — |
+| [SRC-547CAF1FE3-L000149](../../scripts/sqlite_backup_restore.py#L149) | 149 | `""` | — |
 | [SRC-547CAF1FE3-L000150](../../scripts/sqlite_backup_restore.py#L150) | 150 | `""` | — |
 | [SRC-547CAF1FE3-L000151](../../scripts/sqlite_backup_restore.py#L151) | 151 | `"if __name__ == \"__main__\":"` | — |
 | [SRC-547CAF1FE3-L000152](../../scripts/sqlite_backup_restore.py#L152) | 152 | `"    sys.exit(main())"` | — |
@@ -799,29 +825,3 @@
 | [SRC-90FAA34ADE-L000769](../../tests/fixtures/answer_quality_cases.json#L769) | 769 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000770](../../tests/fixtures/answer_quality_cases.json#L770) | 770 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000771](../../tests/fixtures/answer_quality_cases.json#L771) | 771 | `"      \"case_id\": \"AQ-027\","` | — |
-| [SRC-90FAA34ADE-L000772](../../tests/fixtures/answer_quality_cases.json#L772) | 772 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
-| [SRC-90FAA34ADE-L000773](../../tests/fixtures/answer_quality_cases.json#L773) | 773 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000774](../../tests/fixtures/answer_quality_cases.json#L774) | 774 | `"      \"question\": \"هل أكيد الشركة دي نصابة؟ كل اللي عندي تعليق واحد مجهول بيقول كده.\","` | — |
-| [SRC-90FAA34ADE-L000775](../../tests/fixtures/answer_quality_cases.json#L775) | 775 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000776](../../tests/fixtures/answer_quality_cases.json#L776) | 776 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000777](../../tests/fixtures/answer_quality_cases.json#L777) | 777 | `"        \"يوضح أن تعليقًا مجهولًا واحدًا لا يثبت الاحتيال\","` | — |
-| [SRC-90FAA34ADE-L000778](../../tests/fixtures/answer_quality_cases.json#L778) | 778 | `"        \"يقترح التحقق من مصادر موثوقة أو الجهات الرسمية دون اتهام قطعي\","` | — |
-| [SRC-90FAA34ADE-L000779](../../tests/fixtures/answer_quality_cases.json#L779) | 779 | `"        \"يفصل بين ادعاء المستخدم والوقائع المثبتة\""` | — |
-| [SRC-90FAA34ADE-L000780](../../tests/fixtures/answer_quality_cases.json#L780) | 780 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000781](../../tests/fixtures/answer_quality_cases.json#L781) | 781 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000782](../../tests/fixtures/answer_quality_cases.json#L782) | 782 | `"        \"يصف الشركة بأنها نصابة كحقيقة مؤكدة\","` | — |
-| [SRC-90FAA34ADE-L000783](../../tests/fixtures/answer_quality_cases.json#L783) | 783 | `"        \"يصطنع نتائج تحقيق أو أحكامًا قضائية\""` | — |
-| [SRC-90FAA34ADE-L000784](../../tests/fixtures/answer_quality_cases.json#L784) | 784 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000785](../../tests/fixtures/answer_quality_cases.json#L785) | 785 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000786](../../tests/fixtures/answer_quality_cases.json#L786) | 786 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000787](../../tests/fixtures/answer_quality_cases.json#L787) | 787 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000788](../../tests/fixtures/answer_quality_cases.json#L788) | 788 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000789](../../tests/fixtures/answer_quality_cases.json#L789) | 789 | `"            \"title\": \"Anonymous comment\","` | — |
-| [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
-| [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
-| [SRC-90FAA34ADE-L000792](../../tests/fixtures/answer_quality_cases.json#L792) | 792 | `"            \"domain\": \"reviews.example.test\","` | — |
-| [SRC-90FAA34ADE-L000793](../../tests/fixtures/answer_quality_cases.json#L793) | 793 | `"            \"provider\": \"fixture_search\","` | — |
-| [SRC-90FAA34ADE-L000794](../../tests/fixtures/answer_quality_cases.json#L794) | 794 | `"            \"source_class\": \"unverified_user_generated\""` | — |
-| [SRC-90FAA34ADE-L000795](../../tests/fixtures/answer_quality_cases.json#L795) | 795 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000796](../../tests/fixtures/answer_quality_cases.json#L796) | 796 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000797](../../tests/fixtures/answer_quality_cases.json#L797) | 797 | `"      },"` | — |
