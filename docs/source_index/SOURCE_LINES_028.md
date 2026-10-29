@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000116 إلى SRC-70795F4B61-L000315
+- النطاق: SRC-69F3587825-L000100 إلى SRC-70795F4B61-L000299
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"        return True"` | — |
+| [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
+| [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
+| [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"    {"` | — |
+| [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".py\","` | — |
+| [SRC-69F3587825-L000105](../search_code.py#L105) | 105 | `"        \".md\","` | — |
+| [SRC-69F3587825-L000106](../search_code.py#L106) | 106 | `"        \".html\","` | — |
+| [SRC-69F3587825-L000107](../search_code.py#L107) | 107 | `"        \".htm\","` | — |
+| [SRC-69F3587825-L000108](../search_code.py#L108) | 108 | `"        \".js\","` | — |
+| [SRC-69F3587825-L000109](../search_code.py#L109) | 109 | `"        \".css\","` | — |
+| [SRC-69F3587825-L000110](../search_code.py#L110) | 110 | `"        \".json\","` | — |
+| [SRC-69F3587825-L000111](../search_code.py#L111) | 111 | `"        \".yml\","` | — |
+| [SRC-69F3587825-L000112](../search_code.py#L112) | 112 | `"        \".yaml\","` | — |
+| [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".toml\","` | — |
+| [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".txt\","` | — |
+| [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"        \".sh\","` | — |
 | [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `"        \".example\","` | — |
 | [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"    }"` | — |
 | [SRC-69F3587825-L000118](../search_code.py#L118) | 118 | `")"` | — |
@@ -863,19 +879,3 @@
 | [SRC-70795F4B61-L000297](../../scripts/compare_answer_quality_runs.py#L297) | 297 | `"                \"COMPARED\""` | — |
 | [SRC-70795F4B61-L000298](../../scripts/compare_answer_quality_runs.py#L298) | 298 | `"                if request_cost_before is not None and request_cost_after is not None"` | — |
 | [SRC-70795F4B61-L000299](../../scripts/compare_answer_quality_runs.py#L299) | 299 | `"                else \"NOT_MEASURED_OR_INCOMPLETE_RECONCILIATION\""` | — |
-| [SRC-70795F4B61-L000300](../../scripts/compare_answer_quality_runs.py#L300) | 300 | `"            ),"` | — |
-| [SRC-70795F4B61-L000301](../../scripts/compare_answer_quality_runs.py#L301) | 301 | `"        },"` | — |
-| [SRC-70795F4B61-L000302](../../scripts/compare_answer_quality_runs.py#L302) | 302 | `"        \"transport_success_rate\": {"` | — |
-| [SRC-70795F4B61-L000303](../../scripts/compare_answer_quality_runs.py#L303) | 303 | `"            \"baseline\": before_runtime[\"transport_success_rate\"][\"score\"],"` | — |
-| [SRC-70795F4B61-L000304](../../scripts/compare_answer_quality_runs.py#L304) | 304 | `"            \"candidate\": after_runtime[\"transport_success_rate\"][\"score\"],"` | — |
-| [SRC-70795F4B61-L000305](../../scripts/compare_answer_quality_runs.py#L305) | 305 | `"        },"` | — |
-| [SRC-70795F4B61-L000306](../../scripts/compare_answer_quality_runs.py#L306) | 306 | `"        \"usable_result_rate\": {"` | — |
-| [SRC-70795F4B61-L000307](../../scripts/compare_answer_quality_runs.py#L307) | 307 | `"            \"baseline\": before_runtime[\"tool_usage\"][\"usable_result_rate\"][\"score\"],"` | — |
-| [SRC-70795F4B61-L000308](../../scripts/compare_answer_quality_runs.py#L308) | 308 | `"            \"candidate\": after_runtime[\"tool_usage\"][\"usable_result_rate\"][\"score\"],"` | — |
-| [SRC-70795F4B61-L000309](../../scripts/compare_answer_quality_runs.py#L309) | 309 | `"        },"` | — |
-| [SRC-70795F4B61-L000310](../../scripts/compare_answer_quality_runs.py#L310) | 310 | `"        \"provider_reported_model_cost_usd\": {"` | — |
-| [SRC-70795F4B61-L000311](../../scripts/compare_answer_quality_runs.py#L311) | 311 | `"            \"baseline\": cost_before,"` | — |
-| [SRC-70795F4B61-L000312](../../scripts/compare_answer_quality_runs.py#L312) | 312 | `"            \"candidate\": cost_after,"` | — |
-| [SRC-70795F4B61-L000313](../../scripts/compare_answer_quality_runs.py#L313) | 313 | `"            \"delta\": cost_delta,"` | — |
-| [SRC-70795F4B61-L000314](../../scripts/compare_answer_quality_runs.py#L314) | 314 | `"            \"status\": ("` | — |
-| [SRC-70795F4B61-L000315](../../scripts/compare_answer_quality_runs.py#L315) | 315 | `"                \"PARTIAL_OR_PROVIDER_REPORTED_ONLY\""` | — |

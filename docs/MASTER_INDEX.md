@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **246**
 - تعريفات Python بلا Docstring: **900**
 - تعريفات لا ينطبق عليها Docstring: **294**
-- الرموز الساكنة الإضافية: **1802**
-- الأسطر النصية المفهرسة حرفيًا: **38128**
+- الرموز الساكنة الإضافية: **1803**
+- الأسطر النصية المفهرسة حرفيًا: **38144**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -57,7 +57,7 @@
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
 | FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 889 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
-| FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 15016 | 178 | جرد الملف + عناوين Markdown |
+| FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 16748 | 194 | جرد الملف + عناوين Markdown |
 | FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
 | FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |
 | FILE-160DC0B3E4 | وثائق وفهرسة | [docs/archive/README.md](archive/README.md#L1) | Markdown | 1021 | 8 | جرد الملف + عناوين Markdown |
@@ -1875,9 +1875,10 @@
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L139) | عنوان Markdown (H3) | المقاييس وتعريف المقامات | 139 | [SRC-792A9A235D-L000139](ANSWER_QUALITY_BENCHMARK_AR.md#L139) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L150) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 150 | [SRC-792A9A235D-L000150](ANSWER_QUALITY_BENCHMARK_AR.md#L150) |
 | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L153) | عنوان Markdown (H3) | توثيق تشغيل قبل/بعد | 153 | [SRC-792A9A235D-L000153](ANSWER_QUALITY_BENCHMARK_AR.md#L153) |
-| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L161) | عنوان Markdown (H3) | أوامر إعادة التشغيل | 161 | [SRC-792A9A235D-L000161](ANSWER_QUALITY_BENCHMARK_AR.md#L161) |
-| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L173) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FULL_40_CHAR_DEPLOYED_SHA | 173 | [SRC-792A9A235D-L000173](ANSWER_QUALITY_BENCHMARK_AR.md#L173) |
-| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L178) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 178 | [SRC-792A9A235D-L000178](ANSWER_QUALITY_BENCHMARK_AR.md#L178) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L162) | عنوان Markdown (H3) | أوامر إعادة التشغيل | 162 | [SRC-792A9A235D-L000162](ANSWER_QUALITY_BENCHMARK_AR.md#L162) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L174) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FULL_40_CHAR_DEPLOYED_SHA | 174 | [SRC-792A9A235D-L000174](ANSWER_QUALITY_BENCHMARK_AR.md#L174) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L179) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 179 | [SRC-792A9A235D-L000179](ANSWER_QUALITY_BENCHMARK_AR.md#L179) |
+| [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L180) | عنوان Markdown (H3) | مخطط ملف مصالحة تكلفة الطلب الكاملة | 180 | [SRC-792A9A235D-L000180](ANSWER_QUALITY_BENCHMARK_AR.md#L180) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |
 | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 1 | [SRC-C4C6C55E1A-L000001](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) |

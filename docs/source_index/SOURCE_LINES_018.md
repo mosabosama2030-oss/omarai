@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000007 إلى SRC-D57B0BB030-L000031
+- النطاق: SRC-792A9A235D-L000007 إلى SRC-D57B0BB030-L000015
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -159,7 +159,7 @@
 | [SRC-792A9A235D-L000147](../ANSWER_QUALITY_BENCHMARK_AR.md#L147) | 147 | `"- **Tool usable-result rate:** الحالات التي كانت استراتيجيتها المتوقعة web_search وانتهت بنتائج مقبولة / جميع حالات البحث المتوقعة. يسجل منفصلًا الفشل، والمحاولة بلا نتائج قابلة للاستخدام، والحالة المجهولة. HTTP 200 ليس نجاح أداة."` | — |
 | [SRC-792A9A235D-L000148](../ANSWER_QUALITY_BENCHMARK_AR.md#L148) | 148 | `"- **Latency:** زمن طلب HTTP من أداة القياس، بالميلي ثانية، مع المتوسط وp50 وp95 والحد الأقصى. القياس تسلسلي، ولا يمثل اختبار حمل أو سعة متزامنة."` | — |
 | [SRC-792A9A235D-L000149](../ANSWER_QUALITY_BENCHMARK_AR.md#L149) | 149 | `"- **Provider-reported model cost:** مجموع قيمة التكلفة التي يعيدها المزوّد صراحةً لكل استدعاء نموذج، عندما تكون العملة معروفة. لا يخترع سعرًا من عدد الرموز؛ لا تُفسر cost العامة كمبلغ USD إلا لمزوّد OpenRouter."` | — |
-| [SRC-792A9A235D-L000150](../ANSWER_QUALITY_BENCHMARK_AR.md#L150) | 150 | `"- **Complete request cost:** تبقى null بحالة NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED إلى أن تتوفر تكاليف كل موصل مستخدم مع تعريف تعرفة موثق. مجموع تكلفة النموذج المبلّغ عنها ليس بالضرورة كامل تكلفة الطلب، ولا يعني غياب التكلفة المبلّغ عنها أن التكلفة صفر."` | — |
+| [SRC-792A9A235D-L000150](../ANSWER_QUALITY_BENCHMARK_AR.md#L150) | 150 | `"- **Complete request cost:** تبقى null بحالة NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED ما لم تمرر --request-costs ملف مصالحة خارجيًا يثبت التكلفة الكاملة لكل حالة. يجب أن يعلن الملف currency=USD وscope=complete_request ومصدرًا غير فارغ، وأن يحتوي تكلفة غير سالبة لكل case_id قيد المقارنة. مجموع تكلفة النموذج المبلّغ عنها ليس بالضرورة كامل تكلفة الطلب، ولا يعني غياب التكلفة المبلّغ عنها أن التكلفة صفر. المقارنة الكاملة تظل INCOMPLETE إذا نقصت تكلفة أي حالة في أحد التشغيلين."` | — |
 | [SRC-792A9A235D-L000151](../ANSWER_QUALITY_BENCHMARK_AR.md#L151) | 151 | `""` | — |
 | [SRC-792A9A235D-L000152](../ANSWER_QUALITY_BENCHMARK_AR.md#L152) | 152 | `"المجموعة الحالية هي 45 حالة: 14 باللهجة المصرية ar-EG، و9 بالفصحى ar-MSA، و13 بالإنجليزية en، و9 مختلطة اللغة. تحتوي 20 فئة و30 حالة تتوقع البحث و6 محلية/نموذج دون بحث و5 استيضاح. هذا يثبت تغطية بنية المجموعة لا جودة أي إجابة."` | — |
 | [SRC-792A9A235D-L000153](../ANSWER_QUALITY_BENCHMARK_AR.md#L153) | 153 | `""` | — |
@@ -167,27 +167,43 @@
 | [SRC-792A9A235D-L000155](../ANSWER_QUALITY_BENCHMARK_AR.md#L155) | 155 | `""` | — |
 | [SRC-792A9A235D-L000156](../ANSWER_QUALITY_BENCHMARK_AR.md#L156) | 156 | `"1. اجمع تشغيل خط الأساس **من النسخة القديمة نفسها** قبل استبدالها، أو من بيئة يمكن إثبات أنها تشغل SHA القديم. لا تستخدم نتائج حديثة على أنها baseline قديم."` | — |
 | [SRC-792A9A235D-L000157](../ANSWER_QUALITY_BENCHMARK_AR.md#L157) | 157 | `"2. اجمع تشغيل المرشح من النسخة الجديدة. مرّر SHA الكامل الذي أثبتته هوية البناء الفعلية؛ لا تستخدم SHA فرع Git الحالي إذا لم يكن هو ما يشغله المضيف."` | — |
-| [SRC-792A9A235D-L000158](../ANSWER_QUALITY_BENCHMARK_AR.md#L158) | 158 | `"3. احتفظ بملفي JSON الخام. استخدم نفس benchmark_id وbenchmark_version ومعرفات الحالات والأسئلة، وقيّم الحالات نفسها قبل وبعد."` | — |
-| [SRC-792A9A235D-L000159](../ANSWER_QUALITY_BENCHMARK_AR.md#L159) | 159 | `"4. أنشئ نسختين من tests/fixtures/answer_quality_reviews_template.json. ضع REVIEWED والدرجات فقط بعد مراجعة الإجابات المشاهدة فعلًا، باستخدام المقامات والتعريفات أعلاه. أبقِ غير المراجع NOT_TESTED بلا درجات."` | — |
-| [SRC-792A9A235D-L000160](../ANSWER_QUALITY_BENCHMARK_AR.md#L160) | 160 | `"5. شغّل المقارنة. ترفض الأداة SHA مفقودًا أو مجموعة حالات/أسئلة مختلفة، وتمنع ادعاء اكتمال القبول عند فقد المراجعات البشرية."` | — |
-| [SRC-792A9A235D-L000161](../ANSWER_QUALITY_BENCHMARK_AR.md#L161) | 161 | `""` | — |
-| [SRC-792A9A235D-L000162](../ANSWER_QUALITY_BENCHMARK_AR.md#L162) | 162 | `"### أوامر إعادة التشغيل"` | — |
-| [SRC-792A9A235D-L000163](../ANSWER_QUALITY_BENCHMARK_AR.md#L163) | 163 | `""` | — |
-| [SRC-792A9A235D-L000164](../ANSWER_QUALITY_BENCHMARK_AR.md#L164) | 164 | `"    # تحقق بنيوي دون شبكة أو تكلفة"` | — |
-| [SRC-792A9A235D-L000165](../ANSWER_QUALITY_BENCHMARK_AR.md#L165) | 165 | `"    python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
-| [SRC-792A9A235D-L000166](../ANSWER_QUALITY_BENCHMARK_AR.md#L166) | 166 | `"    python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py tests/test_answer_quality_comparison.py tests/test_answer_quality_provider_usage.py tests/test_answer_quality_review_scorecard.py -q"` | — |
-| [SRC-792A9A235D-L000167](../ANSWER_QUALITY_BENCHMARK_AR.md#L167) | 167 | `""` | — |
-| [SRC-792A9A235D-L000168](../ANSWER_QUALITY_BENCHMARK_AR.md#L168) | 168 | `"    # على نسخة محلية تعمل فعلًا من checkout معلوم"` | — |
-| [SRC-792A9A235D-L000169](../ANSWER_QUALITY_BENCHMARK_AR.md#L169) | 169 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha \"$(git rev-parse HEAD)\" --out artifacts/answer-quality-candidate.json"` | — |
-| [SRC-792A9A235D-L000170](../ANSWER_QUALITY_BENCHMARK_AR.md#L170) | 170 | `""` | — |
-| [SRC-792A9A235D-L000171](../ANSWER_QUALITY_BENCHMARK_AR.md#L171) | 171 | `"    # للنسخة المستضافة: مرّر SHA الذي تؤكده /api/health من البناء الجاري لا SHA المفترض"` | — |
-| [SRC-792A9A235D-L000172](../ANSWER_QUALITY_BENCHMARK_AR.md#L172) | 172 | `"    # لا تشغّل هذا الأمر قبل الموافقة على استخدام مزود البحث/النموذج واحتمال التكلفة."` | — |
-| [SRC-792A9A235D-L000173](../ANSWER_QUALITY_BENCHMARK_AR.md#L173) | 173 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json"` | — |
-| [SRC-792A9A235D-L000174](../ANSWER_QUALITY_BENCHMARK_AR.md#L174) | 174 | `""` | — |
-| [SRC-792A9A235D-L000175](../ANSWER_QUALITY_BENCHMARK_AR.md#L175) | 175 | `"    # قارِن ملفي تشغيل وملفي مراجعة بشرية بنفس الحالات"` | — |
-| [SRC-792A9A235D-L000176](../ANSWER_QUALITY_BENCHMARK_AR.md#L176) | 176 | `"    python scripts/compare_answer_quality_runs.py --baseline-run artifacts/answer-quality-baseline.json --candidate-run artifacts/answer-quality-candidate.json --baseline-reviews artifacts/reviews-baseline.json --candidate-reviews artifacts/reviews-candidate.json --out artifacts/answer-quality-comparison.json"` | — |
-| [SRC-792A9A235D-L000177](../ANSWER_QUALITY_BENCHMARK_AR.md#L177) | 177 | `""` | — |
-| [SRC-792A9A235D-L000178](../ANSWER_QUALITY_BENCHMARK_AR.md#L178) | 178 | `"**حدود مهمة:** لا يحقن المشغّل fixtures في الخدمة الحية ولا يحوّل الإجابة إلى PASS آلي. المراجعة البشرية الحالية هي مصدر قياس صحة الحقائق ودعم الاستشهادات؛ أداة المقارنة لا تستنتج تحسن الجودة من لغة الإجابة أو طولها. ولأن ملفات التشغيل والمراجعة السابقة لم تكن متاحة عند بدء هذا العمل، يبقى **القبول التجريبي قبل/بعد NOT_RUN** حتى تُجمع هذه الملفات وتُراجع."` | — |
+| [SRC-792A9A235D-L000158](../ANSWER_QUALITY_BENCHMARK_AR.md#L158) | 158 | `"3. عند حساب تكلفة الطلب كاملة، وفّر لكل تشغيل ملف --request-costs مأخوذًا من سجل فوترة/usage موثوق ومصالَح على مستوى كل case_id؛ لا تملأ تكلفة مفقودة بصفر. يجب أن يغطي الملف كل الحالات التي ستقارنها."` | — |
+| [SRC-792A9A235D-L000159](../ANSWER_QUALITY_BENCHMARK_AR.md#L159) | 159 | `"4. احتفظ بملفي JSON الخام. استخدم نفس benchmark_id وbenchmark_version ومعرفات الحالات والأسئلة، وقيّم الحالات نفسها قبل وبعد."` | — |
+| [SRC-792A9A235D-L000160](../ANSWER_QUALITY_BENCHMARK_AR.md#L160) | 160 | `"5. أنشئ نسختين من tests/fixtures/answer_quality_reviews_template.json. ضع REVIEWED والدرجات فقط بعد مراجعة الإجابات المشاهدة فعلًا، باستخدام المقامات والتعريفات أعلاه. أبقِ غير المراجع NOT_TESTED بلا درجات."` | — |
+| [SRC-792A9A235D-L000161](../ANSWER_QUALITY_BENCHMARK_AR.md#L161) | 161 | `"6. شغّل المقارنة. ترفض الأداة SHA مفقودًا أو مجموعة حالات/أسئلة مختلفة، وتمنع ادعاء اكتمال القبول عند فقد المراجعات البشرية."` | — |
+| [SRC-792A9A235D-L000162](../ANSWER_QUALITY_BENCHMARK_AR.md#L162) | 162 | `""` | — |
+| [SRC-792A9A235D-L000163](../ANSWER_QUALITY_BENCHMARK_AR.md#L163) | 163 | `"### أوامر إعادة التشغيل"` | — |
+| [SRC-792A9A235D-L000164](../ANSWER_QUALITY_BENCHMARK_AR.md#L164) | 164 | `""` | — |
+| [SRC-792A9A235D-L000165](../ANSWER_QUALITY_BENCHMARK_AR.md#L165) | 165 | `"    # تحقق بنيوي دون شبكة أو تكلفة"` | — |
+| [SRC-792A9A235D-L000166](../ANSWER_QUALITY_BENCHMARK_AR.md#L166) | 166 | `"    python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
+| [SRC-792A9A235D-L000167](../ANSWER_QUALITY_BENCHMARK_AR.md#L167) | 167 | `"    python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py tests/test_answer_quality_comparison.py tests/test_answer_quality_provider_usage.py tests/test_answer_quality_review_scorecard.py -q"` | — |
+| [SRC-792A9A235D-L000168](../ANSWER_QUALITY_BENCHMARK_AR.md#L168) | 168 | `""` | — |
+| [SRC-792A9A235D-L000169](../ANSWER_QUALITY_BENCHMARK_AR.md#L169) | 169 | `"    # على نسخة محلية تعمل فعلًا من checkout معلوم"` | — |
+| [SRC-792A9A235D-L000170](../ANSWER_QUALITY_BENCHMARK_AR.md#L170) | 170 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha \"$(git rev-parse HEAD)\" --out artifacts/answer-quality-candidate.json --request-costs artifacts/request-costs-candidate.json"` | — |
+| [SRC-792A9A235D-L000171](../ANSWER_QUALITY_BENCHMARK_AR.md#L171) | 171 | `""` | — |
+| [SRC-792A9A235D-L000172](../ANSWER_QUALITY_BENCHMARK_AR.md#L172) | 172 | `"    # للنسخة المستضافة: مرّر SHA الذي تؤكده /api/health من البناء الجاري لا SHA المفترض"` | — |
+| [SRC-792A9A235D-L000173](../ANSWER_QUALITY_BENCHMARK_AR.md#L173) | 173 | `"    # لا تشغّل هذا الأمر قبل الموافقة على استخدام مزود البحث/النموذج واحتمال التكلفة."` | — |
+| [SRC-792A9A235D-L000174](../ANSWER_QUALITY_BENCHMARK_AR.md#L174) | 174 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json --request-costs artifacts/request-costs-candidate.json"` | — |
+| [SRC-792A9A235D-L000175](../ANSWER_QUALITY_BENCHMARK_AR.md#L175) | 175 | `""` | — |
+| [SRC-792A9A235D-L000176](../ANSWER_QUALITY_BENCHMARK_AR.md#L176) | 176 | `"    # قارِن ملفي تشغيل وملفي مراجعة بشرية بنفس الحالات"` | — |
+| [SRC-792A9A235D-L000177](../ANSWER_QUALITY_BENCHMARK_AR.md#L177) | 177 | `"    python scripts/compare_answer_quality_runs.py --baseline-run artifacts/answer-quality-baseline.json --candidate-run artifacts/answer-quality-candidate.json --baseline-reviews artifacts/reviews-baseline.json --candidate-reviews artifacts/reviews-candidate.json --out artifacts/answer-quality-comparison.json"` | — |
+| [SRC-792A9A235D-L000178](../ANSWER_QUALITY_BENCHMARK_AR.md#L178) | 178 | `""` | — |
+| [SRC-792A9A235D-L000179](../ANSWER_QUALITY_BENCHMARK_AR.md#L179) | 179 | `"**حدود مهمة:** لا يحقن المشغّل fixtures في الخدمة الحية ولا يحوّل الإجابة إلى PASS آلي. المراجعة البشرية الحالية هي مصدر قياس صحة الحقائق ودعم الاستشهادات؛ أداة المقارنة لا تستنتج تحسن الجودة من لغة الإجابة أو طولها. ولأن ملفات التشغيل والمراجعة السابقة لم تكن متاحة عند بدء هذا العمل، يبقى **القبول التجريبي قبل/بعد NOT_RUN** حتى تُجمع هذه الملفات وتُراجع."` | — |
+| [SRC-792A9A235D-L000180](../ANSWER_QUALITY_BENCHMARK_AR.md#L180) | 180 | `""` | — |
+| [SRC-792A9A235D-L000181](../ANSWER_QUALITY_BENCHMARK_AR.md#L181) | 181 | `""` | — |
+| [SRC-792A9A235D-L000182](../ANSWER_QUALITY_BENCHMARK_AR.md#L182) | 182 | `"### مخطط ملف مصالحة تكلفة الطلب الكاملة"` | — |
+| [SRC-792A9A235D-L000183](../ANSWER_QUALITY_BENCHMARK_AR.md#L183) | 183 | `""` | — |
+| [SRC-792A9A235D-L000184](../ANSWER_QUALITY_BENCHMARK_AR.md#L184) | 184 | `"ملف request-costs لا يُنشأ من توقعات الأداة. املأه من بيانات تكلفة/usage موثوقة تتبع كل طلب كاملًا (بما فيها الموصلات المدفوعة عند استخدامها):"` | — |
+| [SRC-792A9A235D-L000185](../ANSWER_QUALITY_BENCHMARK_AR.md#L185) | 185 | `""` | — |
+| [SRC-792A9A235D-L000186](../ANSWER_QUALITY_BENCHMARK_AR.md#L186) | 186 | `"    schema_version: \"1.0\""` | — |
+| [SRC-792A9A235D-L000187](../ANSWER_QUALITY_BENCHMARK_AR.md#L187) | 187 | `"    currency: \"USD\""` | — |
+| [SRC-792A9A235D-L000188](../ANSWER_QUALITY_BENCHMARK_AR.md#L188) | 188 | `"    scope: \"complete_request\""` | — |
+| [SRC-792A9A235D-L000189](../ANSWER_QUALITY_BENCHMARK_AR.md#L189) | 189 | `"    source: \"مرجع تقرير فوترة/usage موثوق ومراجع\""` | — |
+| [SRC-792A9A235D-L000190](../ANSWER_QUALITY_BENCHMARK_AR.md#L190) | 190 | `"    costs:"` | — |
+| [SRC-792A9A235D-L000191](../ANSWER_QUALITY_BENCHMARK_AR.md#L191) | 191 | `"      - case_id: \"AQ-001\""` | — |
+| [SRC-792A9A235D-L000192](../ANSWER_QUALITY_BENCHMARK_AR.md#L192) | 192 | `"        cost_usd: <رقم حقيقي غير سالب من المصدر>"` | — |
+| [SRC-792A9A235D-L000193](../ANSWER_QUALITY_BENCHMARK_AR.md#L193) | 193 | `""` | — |
+| [SRC-792A9A235D-L000194](../ANSWER_QUALITY_BENCHMARK_AR.md#L194) | 194 | `"المثال أعلاه مخطط وصفي لا يصلح كملف إدخال حرفيًا حتى تستبدل عنصر التكلفة بالقيمة الموثقة وتضيف كل الحالات المطلوب مقارنتها. عند غياب هذه البيانات تبقى تكلفة الطلب مجهولة، ويمنع comparator إظهار القبول الكامل."` | — |
 ## وثائق وفهرسة
 
 ### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
@@ -854,19 +870,3 @@
 | [SRC-D57B0BB030-L000013](../DEPLOY_RENDER_AR.md#L13) | 13 | `""` | — |
 | [SRC-D57B0BB030-L000014](../DEPLOY_RENDER_AR.md#L14) | 14 | `"## خطوات النشر"` | — |
 | [SRC-D57B0BB030-L000015](../DEPLOY_RENDER_AR.md#L15) | 15 | `""` | — |
-| [SRC-D57B0BB030-L000016](../DEPLOY_RENDER_AR.md#L16) | 16 | `"1. سجّل الدخول إلى Render وافتح Dashboard."` | — |
-| [SRC-D57B0BB030-L000017](../DEPLOY_RENDER_AR.md#L17) | 17 | ``"2. اختر إنشاء **Blueprint** جديد واربط حساب GitHub بالمستودع `mosabosama2030-oss/omarai`."`` | — |
-| [SRC-D57B0BB030-L000018](../DEPLOY_RENDER_AR.md#L18) | 18 | ``"3. اختر الفرع `main`، ودع Render يقرأ ملف `render.yaml` الموجود في جذر المستودع."`` | — |
-| [SRC-D57B0BB030-L000019](../DEPLOY_RENDER_AR.md#L19) | 19 | `"4. راجع إعداد الخدمة وتأكد أن الخطة هي **Free**. سيطلب منك Render قيم المتغيرات السرية؛ أدخل رمز الوصول ومفتاح النموذج في النموذج الآمن فقط."` | — |
-| [SRC-D57B0BB030-L000020](../DEPLOY_RENDER_AR.md#L20) | 20 | `"5. أنشئ الخدمة وانتظر انتهاء بناء Docker والنشر. إذا طلب Render التأكيد على خطة مدفوعة، لا تتابع؛ ارجع وتحقق من اختيار Free."` | — |
-| [SRC-D57B0BB030-L000021](../DEPLOY_RENDER_AR.md#L21) | 21 | ``"6. افتح عنوان `onrender.com` الذي يقدمه Render، ثم جرّب `/api/health`."`` | — |
-| [SRC-D57B0BB030-L000022](../DEPLOY_RENDER_AR.md#L22) | 22 | ``"7. افتح الواجهة، وأدخل `OMARAI_ACCESS_TOKEN` في خانة رمز الوصول. اضغط «اختبار حي للإنترنت والنموذج» وتحقق من كل حالة."`` | — |
-| [SRC-D57B0BB030-L000023](../DEPLOY_RENDER_AR.md#L23) | 23 | `"8. لا تعتبر النشر مقبولًا حتى ينجح سؤال عربي فعلي من الواجهة وتظهر مصادر قابلة للفتح."` | — |
-| [SRC-D57B0BB030-L000024](../DEPLOY_RENDER_AR.md#L24) | 24 | `""` | — |
-| [SRC-D57B0BB030-L000025](../DEPLOY_RENDER_AR.md#L25) | 25 | `"## ربط النسخة المنشورة بالمصدر"` | — |
-| [SRC-D57B0BB030-L000026](../DEPLOY_RENDER_AR.md#L26) | 26 | `""` | — |
-| [SRC-D57B0BB030-L000027](../DEPLOY_RENDER_AR.md#L27) | 27 | ``"يعرض Omarai في `/api/health` `build.sha` و`build.sha_source`. يفضّل التطبيق SHA المخبوز داخل الصورة؛ وإذا لم يوجد، يتحقق من متغير Render الرسمي `RENDER_GIT_COMMIT`. بعد النشر يجب أن يطابق SHA الالتزام المقصود. شغّل hosted smoke بعد ضبط أسراره؛ سيقارن الخدمة بالـSHA الموجود في الفرع الذي شُغّل منه الاختبار، ولذلك يفشل بأمان إذا كانت الخدمة لم تتحدث بعد."`` | — |
-| [SRC-D57B0BB030-L000028](../DEPLOY_RENDER_AR.md#L28) | 28 | `""` | — |
-| [SRC-D57B0BB030-L000029](../DEPLOY_RENDER_AR.md#L29) | 29 | `"## توليد رمز الوصول"` | — |
-| [SRC-D57B0BB030-L000030](../DEPLOY_RENDER_AR.md#L30) | 30 | `""` | — |
-| [SRC-D57B0BB030-L000031](../DEPLOY_RENDER_AR.md#L31) | 31 | `"ولّد رمزًا مستقلًا قويًا على جهازك، باستخدام Python:"` | — |

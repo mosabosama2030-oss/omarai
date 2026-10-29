@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001631 إلى SRC-F725E90B2A-L002430
+- النطاق: SRC-F725E90B2A-L001615 إلى SRC-F725E90B2A-L002414
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001615](../../tests/test_web_agent.py#L1615) | 1615 | `"        \"AI use cases for small businesses\","` | — |
+| [SRC-F725E90B2A-L001616](../../tests/test_web_agent.py#L1616) | 1616 | `"        \"أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال\","` | — |
+| [SRC-F725E90B2A-L001617](../../tests/test_web_agent.py#L1617) | 1617 | `"    ) >= 0.20"` | — |
+| [SRC-F725E90B2A-L001618](../../tests/test_web_agent.py#L1618) | 1618 | `"    assert _relevance_ratio("` | — |
+| [SRC-F725E90B2A-L001619](../../tests/test_web_agent.py#L1619) | 1619 | `"        \"استخدامات الذكاء الاصطناعي في الشركات الصغيرة\","` | — |
+| [SRC-F725E90B2A-L001620](../../tests/test_web_agent.py#L1620) | 1620 | `"        \"AI use cases for small businesses\","` | — |
+| [SRC-F725E90B2A-L001621](../../tests/test_web_agent.py#L1621) | 1621 | `"    ) >= 0.20"` | — |
+| [SRC-F725E90B2A-L001622](../../tests/test_web_agent.py#L1622) | 1622 | `""` | — |
+| [SRC-F725E90B2A-L001623](../../tests/test_web_agent.py#L1623) | 1623 | `""` | — |
+| [SRC-F725E90B2A-L001624](../../tests/test_web_agent.py#L1624) | 1624 | `"def test_routine_lookup_ignores_planner_overclassification(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001625](../../tests/test_web_agent.py#L1625) | 1625 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001626](../../tests/test_web_agent.py#L1626) | 1626 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001627](../../tests/test_web_agent.py#L1627) | 1627 | `"    observed = {}"` | — |
+| [SRC-F725E90B2A-L001628](../../tests/test_web_agent.py#L1628) | 1628 | `"    sources = []"` | — |
+| [SRC-F725E90B2A-L001629](../../tests/test_web_agent.py#L1629) | 1629 | `"    for domain in (\"example.com\", \"example.net\"):"` | — |
+| [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        sources.append({"` | — |
 | [SRC-F725E90B2A-L001631](../../tests/test_web_agent.py#L1631) | 1631 | `"            \"title\": \"موقع مصر الرقمية الرسمي والخدمات الحكومية\","` | — |
 | [SRC-F725E90B2A-L001632](../../tests/test_web_agent.py#L1632) | 1632 | `"            \"url\": f\"https://{domain}/digital-egypt\","` | — |
 | [SRC-F725E90B2A-L001633](../../tests/test_web_agent.py#L1633) | 1633 | `"            \"snippet\": \"معلومات عن موقع مصر الرقمية والخدمات الحكومية.\","` | — |
@@ -800,19 +816,3 @@
 | [SRC-F725E90B2A-L002412](../../tests/test_web_agent.py#L2412) | 2412 | `""` | — |
 | [SRC-F725E90B2A-L002413](../../tests/test_web_agent.py#L2413) | 2413 | `"    assert seen[\"url\"] == \"https://api.deepseek.com/v1/tools/search\""` | — |
 | [SRC-F725E90B2A-L002414](../../tests/test_web_agent.py#L2414) | 2414 | `"    assert seen[\"headers\"][\"Authorization\"] == \"Bearer test-secret-key-that-must-not-appear\""` | — |
-| [SRC-F725E90B2A-L002415](../../tests/test_web_agent.py#L2415) | 2415 | `"    assert seen[\"json\"][\"count\"] == 6"` | — |
-| [SRC-F725E90B2A-L002416](../../tests/test_web_agent.py#L2416) | 2416 | `"    assert rows[0][\"provider\"] == \"deepseek_search_api\""` | — |
-| [SRC-F725E90B2A-L002417](../../tests/test_web_agent.py#L2417) | 2417 | `"    assert rows[0][\"snippet\"] == \"Looking to buy a flat in the requested area.\""` | — |
-| [SRC-F725E90B2A-L002418](../../tests/test_web_agent.py#L2418) | 2418 | `"    assert rows[0][\"provider_rerank_score\"] == 2.2"` | — |
-| [SRC-F725E90B2A-L002419](../../tests/test_web_agent.py#L2419) | 2419 | `"    assert \"test-secret-key-that-must-not-appear\" not in str(rows)"` | — |
-| [SRC-F725E90B2A-L002420](../../tests/test_web_agent.py#L2420) | 2420 | `""` | — |
-| [SRC-F725E90B2A-L002421](../../tests/test_web_agent.py#L2421) | 2421 | `""` | — |
-| [SRC-F725E90B2A-L002422](../../tests/test_web_agent.py#L2422) | 2422 | `""` | — |
-| [SRC-F725E90B2A-L002423](../../tests/test_web_agent.py#L2423) | 2423 | `"def test_diagnostics_distinguishes_connector_response_without_matches_from_offline(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002424](../../tests/test_web_agent.py#L2424) | 2424 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002425](../../tests/test_web_agent.py#L2425) | 2425 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"OK\")"` | — |
-| [SRC-F725E90B2A-L002426](../../tests/test_web_agent.py#L2426) | 2426 | `""` | — |
-| [SRC-F725E90B2A-L002427](../../tests/test_web_agent.py#L2427) | 2427 | `"    def completed_empty_search(query):"` | — |
-| [SRC-F725E90B2A-L002428](../../tests/test_web_agent.py#L2428) | 2428 | `"        agent._record_provider_diagnostic("` | — |
-| [SRC-F725E90B2A-L002429](../../tests/test_web_agent.py#L2429) | 2429 | `"            \"bing_rss\", query, \"no_results\", result_count=0,"` | — |
-| [SRC-F725E90B2A-L002430](../../tests/test_web_agent.py#L2430) | 2430 | `"            error=\"connector completed but returned no parseable results\","` | — |

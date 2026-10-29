@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000831 إلى SRC-F725E90B2A-L001630
+- النطاق: SRC-F725E90B2A-L000815 إلى SRC-F725E90B2A-L001614
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000815](../../tests/test_web_agent.py#L815) | 815 | `""` | — |
+| [SRC-F725E90B2A-L000816](../../tests/test_web_agent.py#L816) | 816 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000817](../../tests/test_web_agent.py#L817) | 817 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L000818](../../tests/test_web_agent.py#L818) | 818 | `"    agent.fallback_model = \"fallback/model\""` | — |
+| [SRC-F725E90B2A-L000819](../../tests/test_web_agent.py#L819) | 819 | `"    called = []"` | — |
+| [SRC-F725E90B2A-L000820](../../tests/test_web_agent.py#L820) | 820 | `""` | — |
+| [SRC-F725E90B2A-L000821](../../tests/test_web_agent.py#L821) | 821 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000822](../../tests/test_web_agent.py#L822) | 822 | `"        def __enter__(self):"` | — |
+| [SRC-F725E90B2A-L000823](../../tests/test_web_agent.py#L823) | 823 | `"            return self"` | — |
+| [SRC-F725E90B2A-L000824](../../tests/test_web_agent.py#L824) | 824 | `""` | — |
+| [SRC-F725E90B2A-L000825](../../tests/test_web_agent.py#L825) | 825 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
+| [SRC-F725E90B2A-L000826](../../tests/test_web_agent.py#L826) | 826 | `"            return False"` | — |
+| [SRC-F725E90B2A-L000827](../../tests/test_web_agent.py#L827) | 827 | `""` | — |
+| [SRC-F725E90B2A-L000828](../../tests/test_web_agent.py#L828) | 828 | `"        def read(self, limit):"` | — |
+| [SRC-F725E90B2A-L000829](../../tests/test_web_agent.py#L829) | 829 | `"            return json.dumps({"` | — |
+| [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"                \"choices\": [{"` | — |
 | [SRC-F725E90B2A-L000831](../../tests/test_web_agent.py#L831) | 831 | `"                    \"message\": {\"content\": \"نص مبتور\"},"` | — |
 | [SRC-F725E90B2A-L000832](../../tests/test_web_agent.py#L832) | 832 | `"                    \"finish_reason\": \"length\","` | — |
 | [SRC-F725E90B2A-L000833](../../tests/test_web_agent.py#L833) | 833 | `"                }]"` | — |
@@ -800,19 +816,3 @@
 | [SRC-F725E90B2A-L001612](../../tests/test_web_agent.py#L1612) | 1612 | `""` | — |
 | [SRC-F725E90B2A-L001613](../../tests/test_web_agent.py#L1613) | 1613 | `"def test_relevance_matching_handles_english_ai_use_cases_with_arabic_results():"` | — |
 | [SRC-F725E90B2A-L001614](../../tests/test_web_agent.py#L1614) | 1614 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L001615](../../tests/test_web_agent.py#L1615) | 1615 | `"        \"AI use cases for small businesses\","` | — |
-| [SRC-F725E90B2A-L001616](../../tests/test_web_agent.py#L1616) | 1616 | `"        \"أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال\","` | — |
-| [SRC-F725E90B2A-L001617](../../tests/test_web_agent.py#L1617) | 1617 | `"    ) >= 0.20"` | — |
-| [SRC-F725E90B2A-L001618](../../tests/test_web_agent.py#L1618) | 1618 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L001619](../../tests/test_web_agent.py#L1619) | 1619 | `"        \"استخدامات الذكاء الاصطناعي في الشركات الصغيرة\","` | — |
-| [SRC-F725E90B2A-L001620](../../tests/test_web_agent.py#L1620) | 1620 | `"        \"AI use cases for small businesses\","` | — |
-| [SRC-F725E90B2A-L001621](../../tests/test_web_agent.py#L1621) | 1621 | `"    ) >= 0.20"` | — |
-| [SRC-F725E90B2A-L001622](../../tests/test_web_agent.py#L1622) | 1622 | `""` | — |
-| [SRC-F725E90B2A-L001623](../../tests/test_web_agent.py#L1623) | 1623 | `""` | — |
-| [SRC-F725E90B2A-L001624](../../tests/test_web_agent.py#L1624) | 1624 | `"def test_routine_lookup_ignores_planner_overclassification(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001625](../../tests/test_web_agent.py#L1625) | 1625 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001626](../../tests/test_web_agent.py#L1626) | 1626 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001627](../../tests/test_web_agent.py#L1627) | 1627 | `"    observed = {}"` | — |
-| [SRC-F725E90B2A-L001628](../../tests/test_web_agent.py#L1628) | 1628 | `"    sources = []"` | — |
-| [SRC-F725E90B2A-L001629](../../tests/test_web_agent.py#L1629) | 1629 | `"    for domain in (\"example.com\", \"example.net\"):"` | — |
-| [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        sources.append({"` | — |

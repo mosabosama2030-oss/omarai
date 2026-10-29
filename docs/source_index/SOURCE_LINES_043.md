@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000031 إلى SRC-F725E90B2A-L000830
+- النطاق: SRC-F725E90B2A-L000015 إلى SRC-F725E90B2A-L000814
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000015](../../tests/test_web_agent.py#L15) | 15 | `"    _relevance_ratio,"` | — |
+| [SRC-F725E90B2A-L000016](../../tests/test_web_agent.py#L16) | 16 | `")"` | — |
+| [SRC-F725E90B2A-L000017](../../tests/test_web_agent.py#L17) | 17 | `""` | — |
+| [SRC-F725E90B2A-L000018](../../tests/test_web_agent.py#L18) | 18 | `""` | — |
+| [SRC-F725E90B2A-L000019](../../tests/test_web_agent.py#L19) | 19 | `"def sample_source(index=0):"` | — |
+| [SRC-F725E90B2A-L000020](../../tests/test_web_agent.py#L20) | 20 | `"    domain = \"example.com\" if index == 0 else \"example.net\""` | — |
+| [SRC-F725E90B2A-L000021](../../tests/test_web_agent.py#L21) | 21 | `"    return {"` | — |
+| [SRC-F725E90B2A-L000022](../../tests/test_web_agent.py#L22) | 22 | `"        \"title\": \"مقالة عن التقنية\","` | — |
+| [SRC-F725E90B2A-L000023](../../tests/test_web_agent.py#L23) | 23 | `"        \"url\": f\"https://{domain}/research\","` | — |
+| [SRC-F725E90B2A-L000024](../../tests/test_web_agent.py#L24) | 24 | `"        \"snippet\": \"يشرح هذا المصدر التقنية وسبب المقارنة.\","` | — |
+| [SRC-F725E90B2A-L000025](../../tests/test_web_agent.py#L25) | 25 | `"        \"page_text\": \"نص مستخرج من الصفحة يشرح التقنية وأسباب المقارنة.\","` | — |
+| [SRC-F725E90B2A-L000026](../../tests/test_web_agent.py#L26) | 26 | `"        \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L000027](../../tests/test_web_agent.py#L27) | 27 | `"        \"providers\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L000028](../../tests/test_web_agent.py#L28) | 28 | `"        \"queries\": [\"قارن هذه التقنية\"],"` | — |
+| [SRC-F725E90B2A-L000029](../../tests/test_web_agent.py#L29) | 29 | `"        \"domain\": domain,"` | — |
+| [SRC-F725E90B2A-L000030](../../tests/test_web_agent.py#L30) | 30 | `"        \"source_class\": \"general\","` | — |
 | [SRC-F725E90B2A-L000031](../../tests/test_web_agent.py#L31) | 31 | `"        \"platform\": \"web\","` | — |
 | [SRC-F725E90B2A-L000032](../../tests/test_web_agent.py#L32) | 32 | `"    }"` | — |
 | [SRC-F725E90B2A-L000033](../../tests/test_web_agent.py#L33) | 33 | `""` | — |
@@ -800,19 +816,3 @@
 | [SRC-F725E90B2A-L000812](../../tests/test_web_agent.py#L812) | 812 | `""` | — |
 | [SRC-F725E90B2A-L000813](../../tests/test_web_agent.py#L813) | 813 | `"def test_completion_rejects_response_when_all_models_are_truncated(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000814](../../tests/test_web_agent.py#L814) | 814 | `"    import json"` | — |
-| [SRC-F725E90B2A-L000815](../../tests/test_web_agent.py#L815) | 815 | `""` | — |
-| [SRC-F725E90B2A-L000816](../../tests/test_web_agent.py#L816) | 816 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000817](../../tests/test_web_agent.py#L817) | 817 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L000818](../../tests/test_web_agent.py#L818) | 818 | `"    agent.fallback_model = \"fallback/model\""` | — |
-| [SRC-F725E90B2A-L000819](../../tests/test_web_agent.py#L819) | 819 | `"    called = []"` | — |
-| [SRC-F725E90B2A-L000820](../../tests/test_web_agent.py#L820) | 820 | `""` | — |
-| [SRC-F725E90B2A-L000821](../../tests/test_web_agent.py#L821) | 821 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000822](../../tests/test_web_agent.py#L822) | 822 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L000823](../../tests/test_web_agent.py#L823) | 823 | `"            return self"` | — |
-| [SRC-F725E90B2A-L000824](../../tests/test_web_agent.py#L824) | 824 | `""` | — |
-| [SRC-F725E90B2A-L000825](../../tests/test_web_agent.py#L825) | 825 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L000826](../../tests/test_web_agent.py#L826) | 826 | `"            return False"` | — |
-| [SRC-F725E90B2A-L000827](../../tests/test_web_agent.py#L827) | 827 | `""` | — |
-| [SRC-F725E90B2A-L000828](../../tests/test_web_agent.py#L828) | 828 | `"        def read(self, limit):"` | — |
-| [SRC-F725E90B2A-L000829](../../tests/test_web_agent.py#L829) | 829 | `"            return json.dumps({"` | — |
-| [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"                \"choices\": [{"` | — |

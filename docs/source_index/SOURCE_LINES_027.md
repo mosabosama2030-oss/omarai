@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000528 إلى SRC-69F3587825-L000115
+- النطاق: SRC-0F910493E8-L000512 إلى SRC-69F3587825-L000099
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000512](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L512) | 512 | `"5. **[PROPOSED]** ملفات التعريف والمسودات لا تمنح الصلاحيات."` | — |
+| [SRC-0F910493E8-L000513](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L513) | 513 | `"6. **[PROPOSED]** فصل الإدارة عن التشغيل منطقي وإلزامي في التصميم، لكن لا يلزم أن يكون خدمة مستقلة."` | — |
+| [SRC-0F910493E8-L000514](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L514) | 514 | `"7. **[PROPOSED]** Meta-Agent مؤجل، ويبدأ بمسودات فقط إذا أثبتت الحاجة."` | — |
+| [SRC-0F910493E8-L000515](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L515) | 515 | `"8. **[PROPOSED]** توليد الكود التنفيذي ليس هدفًا تلقائيًا، وقد لا يكون مطلوبًا أصلًا."` | — |
+| [SRC-0F910493E8-L000516](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L516) | 516 | `"9. **[VERIFIED]** وجود هذه الوثيقة أو أي متطلب مكتوب لا يثبت التنفيذ."` | — |
+| [SRC-0F910493E8-L000517](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L517) | 517 | `"10. **[UNKNOWN]** لا تُحسم حالة أي قدرة أو اختبار إلا بالدليل المرتبط بنسخة وبيئة محددتين."` | — |
+| [SRC-0F910493E8-L000518](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L518) | 518 | `""` | — |
+| [SRC-0F910493E8-L000519](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L519) | 519 | `"---"` | — |
+| [SRC-0F910493E8-L000520](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L520) | 520 | `""` | — |
+| [SRC-0F910493E8-L000521](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L521) | 521 | `"# 16. شروط تحديث هذه المعمارية"` | — |
+| [SRC-0F910493E8-L000522](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L522) | 522 | `""` | — |
+| [SRC-0F910493E8-L000523](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L523) | 523 | `"تُراجع هذه الوثيقة عند حدوث واحد من الأمور التالية:"` | — |
+| [SRC-0F910493E8-L000524](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L524) | 524 | `"- ظهور دليل أن المهارات وسير العمل لا يلبّيان حاجة متكررة."` | — |
+| [SRC-0F910493E8-L000525](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L525) | 525 | `"- تغيّر واضح في نموذج المنتج أو المستخدمين."` | — |
+| [SRC-0F910493E8-L000526](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L526) | 526 | `"- إضافة صلاحيات أو بيانات أو آثار خارجية أعلى خطورة."` | — |
+| [SRC-0F910493E8-L000527](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L527) | 527 | `"- اكتشاف تناقض مع الدستور التأسيسي أو مع متطلب أمني."` | — |
 | [SRC-0F910493E8-L000528](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L528) | 528 | `"- نتائج تقييم تثبت أن القرار الحالي يسبب تكلفة أو فشلًا أعلى من البدائل."` | — |
 | [SRC-0F910493E8-L000529](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L529) | 529 | `"- تغير جوهري في بيئة التشغيل أو موارد الاستضافة."` | — |
 | [SRC-0F910493E8-L000530](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L530) | 530 | `""` | — |
@@ -845,19 +861,3 @@
 | [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
 | [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return False"` | — |
 | [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |
-| [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"        return True"` | — |
-| [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
-| [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
-| [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"    {"` | — |
-| [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".py\","` | — |
-| [SRC-69F3587825-L000105](../search_code.py#L105) | 105 | `"        \".md\","` | — |
-| [SRC-69F3587825-L000106](../search_code.py#L106) | 106 | `"        \".html\","` | — |
-| [SRC-69F3587825-L000107](../search_code.py#L107) | 107 | `"        \".htm\","` | — |
-| [SRC-69F3587825-L000108](../search_code.py#L108) | 108 | `"        \".js\","` | — |
-| [SRC-69F3587825-L000109](../search_code.py#L109) | 109 | `"        \".css\","` | — |
-| [SRC-69F3587825-L000110](../search_code.py#L110) | 110 | `"        \".json\","` | — |
-| [SRC-69F3587825-L000111](../search_code.py#L111) | 111 | `"        \".yml\","` | — |
-| [SRC-69F3587825-L000112](../search_code.py#L112) | 112 | `"        \".yaml\","` | — |
-| [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".toml\","` | — |
-| [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".txt\","` | — |
-| [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"        \".sh\","` | — |
