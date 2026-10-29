@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000324 إلى SRC-686F71AA50-L001123
+- النطاق: SRC-686F71AA50-L000300 إلى SRC-686F71AA50-L001099
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,30 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"    text = unicodedata.normalize(\"NFKC\", value).casefold()"` | — |
+| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"    text = _ARABIC_DIACRITICS.sub(\"\", text)"` | — |
+| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"    text = text.replace(\"ـ\", \"\").translate(str.maketrans({"` | — |
+| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"        \"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ٱ\": \"ا\", \"ى\": \"ي\", \"ة\": \"ه\","` | — |
+| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"    }))"` | — |
+| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"    return _SPACE.sub(\" \", _PUNCTUATION.sub(\" \", text)).strip()"` | — |
+| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `""` | — |
+| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `""` | — |
+| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:"` | — |
+| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"    \"\"\"Match phrases on token boundaries with conservative Arabic clitic handling."` | — |
+| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `""` | — |
+| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    The matcher never accepts arbitrary substrings: variants are formed only by"` | — |
+| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    removing a short, explicit list of common prefixes/suffixes. This avoids"` | — |
+| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"    collisions such as treating \"الإنذار\" as \"الآن\"."` | — |
+| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    \"\"\""` | — |
+| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
+| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    matched: list[str] = []"` | — |
+| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
+| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\", \"ين\", \"ات\", \"ون\")"` | — |
+| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    english_suffixes = (\"ing\", \"ed\", \"es\", \"s\")"` | — |
+| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    cache: dict[str, set[str]] = {}"` | — |
+| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `""` | — |
+| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    def token_forms(raw_token: str) -> set[str]:"` | — |
+| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"        original = normalize_text(raw_token)"` | — |
 | [SRC-686F71AA50-L000324](../../agents/task_understanding.py#L324) | 324 | `"        if original in cache:"` | — |
 | [SRC-686F71AA50-L000325](../../agents/task_understanding.py#L325) | 325 | `"            return cache[original]"` | — |
 | [SRC-686F71AA50-L000326](../../agents/task_understanding.py#L326) | 326 | `"        forms = {original} if original else set()"` | — |
@@ -792,27 +816,3 @@
 | [SRC-686F71AA50-L001097](../../agents/task_understanding.py#L1097) | 1097 | `"    existing_queries: Any,"` | — |
 | [SRC-686F71AA50-L001098](../../agents/task_understanding.py#L1098) | 1098 | `"    *,"` | — |
 | [SRC-686F71AA50-L001099](../../agents/task_understanding.py#L1099) | 1099 | `"    limit: int = MAX_STRATEGY_QUERIES,"` | — |
-| [SRC-686F71AA50-L001100](../../agents/task_understanding.py#L1100) | 1100 | `"    compact_fn: Any = None,"` | — |
-| [SRC-686F71AA50-L001101](../../agents/task_understanding.py#L1101) | 1101 | `") -> list[dict[str, str]]:"` | — |
-| [SRC-686F71AA50-L001102](../../agents/task_understanding.py#L1102) | 1102 | `"    \"\"\"Return bounded query candidates, prioritizing task-specific evidence strategies."` | — |
-| [SRC-686F71AA50-L001103](../../agents/task_understanding.py#L1103) | 1103 | `""` | — |
-| [SRC-686F71AA50-L001104](../../agents/task_understanding.py#L1104) | 1104 | `"    The first existing planner query anchors the topic. Task-aware queries are then"` | — |
-| [SRC-686F71AA50-L001105](../../agents/task_understanding.py#L1105) | 1105 | `"    considered before secondary planner queries, so generic alternatives cannot consume"` | — |
-| [SRC-686F71AA50-L001106](../../agents/task_understanding.py#L1106) | 1106 | `"    the whole budget and crowd out explicit user criteria."` | — |
-| [SRC-686F71AA50-L001107](../../agents/task_understanding.py#L1107) | 1107 | `"    \"\"\""` | — |
-| [SRC-686F71AA50-L001108](../../agents/task_understanding.py#L1108) | 1108 | `"    maximum = max(1, min(int(limit), MAX_STRATEGY_QUERIES))"` | — |
-| [SRC-686F71AA50-L001109](../../agents/task_understanding.py#L1109) | 1109 | `"    spec = task_spec if isinstance(task_spec, dict) else {}"` | — |
-| [SRC-686F71AA50-L001110](../../agents/task_understanding.py#L1110) | 1110 | `"    queries = existing_queries if isinstance(existing_queries, list) else []"` | — |
-| [SRC-686F71AA50-L001111](../../agents/task_understanding.py#L1111) | 1111 | `"    rows: list[dict[str, str]] = []"` | — |
-| [SRC-686F71AA50-L001112](../../agents/task_understanding.py#L1112) | 1112 | `"    seen: set[str] = set()"` | — |
-| [SRC-686F71AA50-L001113](../../agents/task_understanding.py#L1113) | 1113 | `""` | — |
-| [SRC-686F71AA50-L001114](../../agents/task_understanding.py#L1114) | 1114 | `"    def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:"` | — |
-| [SRC-686F71AA50-L001115](../../agents/task_understanding.py#L1115) | 1115 | `"        if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:"` | — |
-| [SRC-686F71AA50-L001116](../../agents/task_understanding.py#L1116) | 1116 | `"            return"` | — |
-| [SRC-686F71AA50-L001117](../../agents/task_understanding.py#L1117) | 1117 | `"        candidate = query.strip()"` | — |
-| [SRC-686F71AA50-L001118](../../agents/task_understanding.py#L1118) | 1118 | `"        if compact_fn is not None:"` | — |
-| [SRC-686F71AA50-L001119](../../agents/task_understanding.py#L1119) | 1119 | `"            try:"` | — |
-| [SRC-686F71AA50-L001120](../../agents/task_understanding.py#L1120) | 1120 | `"                candidate = compact_fn(candidate) or \"\""` | — |
-| [SRC-686F71AA50-L001121](../../agents/task_understanding.py#L1121) | 1121 | `"            except (TypeError, ValueError):"` | — |
-| [SRC-686F71AA50-L001122](../../agents/task_understanding.py#L1122) | 1122 | `"                candidate = \"\""` | — |
-| [SRC-686F71AA50-L001123](../../agents/task_understanding.py#L1123) | 1123 | `"        candidate = _SPACE.sub(\" \", candidate).strip()[:240]"` | — |
