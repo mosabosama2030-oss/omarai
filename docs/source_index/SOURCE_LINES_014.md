@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004984 إلى SRC-1AE03B9EC3-L005783
+- النطاق: SRC-1AE03B9EC3-L004996 إلى SRC-1AE03B9EC3-L005795
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L004984](../../agents/web_agent.py#L4984) | 4984 | `"                \"status\": \"deterministic_interpretation_attached\","` | — |
-| [SRC-1AE03B9EC3-L004985](../../agents/web_agent.py#L4985) | 4985 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004986](../../agents/web_agent.py#L4986) | 4986 | `"        # Final relevance check is intentionally repeated after fusion, before any answer LLM call."` | — |
-| [SRC-1AE03B9EC3-L004987](../../agents/web_agent.py#L4987) | 4987 | `"        filtered_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L004988](../../agents/web_agent.py#L4988) | 4988 | `"        for source in sources:"` | — |
-| [SRC-1AE03B9EC3-L004989](../../agents/web_agent.py#L4989) | 4989 | `"            if \"user_supplied_url\" in source.get(\"providers\", []):"` | — |
-| [SRC-1AE03B9EC3-L004990](../../agents/web_agent.py#L4990) | 4990 | `"                filtered_sources.append(source)"` | — |
-| [SRC-1AE03B9EC3-L004991](../../agents/web_agent.py#L4991) | 4991 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L004992](../../agents/web_agent.py#L4992) | 4992 | `"            candidate_queries = ("` | — |
-| [SRC-1AE03B9EC3-L004993](../../agents/web_agent.py#L4993) | 4993 | `"                source.get(\"queries\")"` | — |
-| [SRC-1AE03B9EC3-L004994](../../agents/web_agent.py#L4994) | 4994 | `"                or plan.get(\"queries\")"` | — |
-| [SRC-1AE03B9EC3-L004995](../../agents/web_agent.py#L4995) | 4995 | `"                or [compact_search_query(working_question)]"` | — |
 | [SRC-1AE03B9EC3-L004996](../../agents/web_agent.py#L4996) | 4996 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004997](../../agents/web_agent.py#L4997) | 4997 | `"            if any(self._source_matches_query(str(q), source) for q in candidate_queries):"` | — |
 | [SRC-1AE03B9EC3-L004998](../../agents/web_agent.py#L4998) | 4998 | `"                filtered_sources.append(source)"` | — |
@@ -816,3 +804,15 @@
 | [SRC-1AE03B9EC3-L005781](../../agents/web_agent.py#L5781) | 5781 | `"                review_status = \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L005782](../../agents/web_agent.py#L5782) | 5782 | `"            except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:"` | — |
 | [SRC-1AE03B9EC3-L005783](../../agents/web_agent.py#L5783) | 5783 | `"                review_status = \"model_claim_audit_unavailable\""` | — |
+| [SRC-1AE03B9EC3-L005784](../../agents/web_agent.py#L5784) | 5784 | `"                review_budget_exhausted = isinstance(exc, RequestBudgetExceeded)"` | — |
+| [SRC-1AE03B9EC3-L005785](../../agents/web_agent.py#L5785) | 5785 | `"                review_warning = ("` | — |
+| [SRC-1AE03B9EC3-L005786](../../agents/web_agent.py#L5786) | 5786 | `"                    \"استُنفدت ميزانية النماذج قبل اكتمال تدقيق الإجابة؛ لذلك لن أعرض المسودة \""` | — |
+| [SRC-1AE03B9EC3-L005787](../../agents/web_agent.py#L5787) | 5787 | `"                    \"بوصفها إجابة مكتملة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد عليها.\""` | — |
+| [SRC-1AE03B9EC3-L005788](../../agents/web_agent.py#L5788) | 5788 | `"                    if review_budget_exhausted"` | — |
+| [SRC-1AE03B9EC3-L005789](../../agents/web_agent.py#L5789) | 5789 | `"                    else"` | — |
+| [SRC-1AE03B9EC3-L005790](../../agents/web_agent.py#L5790) | 5790 | `"                    \"تعذر تدقيق الادعاءات مقابل نصوص المصادر؛ لذلك لن أتعامل مع المسودة \""` | — |
+| [SRC-1AE03B9EC3-L005791](../../agents/web_agent.py#L5791) | 5791 | `"                    \"كإجابة مؤكدة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد على المسودة.\""` | — |
+| [SRC-1AE03B9EC3-L005792](../../agents/web_agent.py#L5792) | 5792 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L005793](../../agents/web_agent.py#L5793) | 5793 | `"                answer = _fallback_answer(sources, review_warning)"` | — |
+| [SRC-1AE03B9EC3-L005794](../../agents/web_agent.py#L5794) | 5794 | `"        criterion_gap_research: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L005795](../../agents/web_agent.py#L5795) | 5795 | `"            \"attempted\": False,"` | — |

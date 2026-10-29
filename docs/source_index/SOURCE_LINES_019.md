@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000924 إلى SRC-E599346ABE-L001723
+- النطاق: SRC-E599346ABE-L000936 إلى SRC-E599346ABE-L001735
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000924](../generate_index.py#L924) | 924 | `"            (TOML_SECTION_RE, \"قسم TOML\"),"` | — |
-| [SRC-E599346ABE-L000925](../generate_index.py#L925) | 925 | `"            (TOML_KEY_RE, \"مفتاح إعداد TOML\"),"` | — |
-| [SRC-E599346ABE-L000926](../generate_index.py#L926) | 926 | `"        )"` | — |
-| [SRC-E599346ABE-L000927](../generate_index.py#L927) | 927 | `"    elif suffix == \".json\":"` | — |
-| [SRC-E599346ABE-L000928](../generate_index.py#L928) | 928 | `"        patterns = ((JSON_KEY_RE, \"مفتاح JSON\"),)"` | — |
-| [SRC-E599346ABE-L000929](../generate_index.py#L929) | 929 | `"    elif suffix in {\".ini\", \".cfg\"}:"` | — |
-| [SRC-E599346ABE-L000930](../generate_index.py#L930) | 930 | `"        patterns = ("` | — |
-| [SRC-E599346ABE-L000931](../generate_index.py#L931) | 931 | `"            (INI_SECTION_RE, \"قسم إعداد\"),"` | — |
-| [SRC-E599346ABE-L000932](../generate_index.py#L932) | 932 | `"            (INI_KEY_RE, \"مفتاح إعداد\"),"` | — |
-| [SRC-E599346ABE-L000933](../generate_index.py#L933) | 933 | `"        )"` | — |
-| [SRC-E599346ABE-L000934](../generate_index.py#L934) | 934 | `"    else:"` | — |
-| [SRC-E599346ABE-L000935](../generate_index.py#L935) | 935 | `"        patterns = ()"` | — |
 | [SRC-E599346ABE-L000936](../generate_index.py#L936) | 936 | `"    for pattern, kind in patterns:"` | — |
 | [SRC-E599346ABE-L000937](../generate_index.py#L937) | 937 | `"        for match in pattern.finditer(source):"` | — |
 | [SRC-E599346ABE-L000938](../generate_index.py#L938) | 938 | `"            _add_marker("` | — |
@@ -816,3 +804,15 @@
 | [SRC-E599346ABE-L001721](../generate_index.py#L1721) | 1721 | `"        ["` | — |
 | [SRC-E599346ABE-L001722](../generate_index.py#L1722) | 1722 | `"            \"\","` | — |
 | [SRC-E599346ABE-L001723](../generate_index.py#L1723) | 1723 | `"            \"## سجل وسوم المراجعة والإصلاح\","` | — |
+| [SRC-E599346ABE-L001724](../generate_index.py#L1724) | 1724 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001725](../generate_index.py#L1725) | 1725 | `"            \"هذه قائمة بالوسوم الصريحة التي تستدعي المتابعة. وجود الوسم ليس إثباتًا آليًا أن السطر معيب؛ افتح الملف عند رقم السطر وراجع السياق.\","` | — |
+| [SRC-E599346ABE-L001726](../generate_index.py#L1726) | 1726 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001727](../generate_index.py#L1727) | 1727 | `"            \"\| كود الهفوة/الوسم \| النوع \| الملف \| السطر \| وصف الوسم \| كود السطر \| نص السطر \|\","` | — |
+| [SRC-E599346ABE-L001728](../generate_index.py#L1728) | 1728 | `"            \"\|---\|---\|---\|---:\|---\|---\|---\|\","` | — |
+| [SRC-E599346ABE-L001729](../generate_index.py#L1729) | 1729 | `"        ]"` | — |
+| [SRC-E599346ABE-L001730](../generate_index.py#L1730) | 1730 | `"    )"` | — |
+| [SRC-E599346ABE-L001731](../generate_index.py#L1731) | 1731 | `"    if finding_inventory:"` | — |
+| [SRC-E599346ABE-L001732](../generate_index.py#L1732) | 1732 | `"        line_map = {source_line.line_id: source_line for source_line in line_inventory}"` | — |
+| [SRC-E599346ABE-L001733](../generate_index.py#L1733) | 1733 | `"        for finding in finding_inventory:"` | — |
+| [SRC-E599346ABE-L001734](../generate_index.py#L1734) | 1734 | `"            source_line = line_map.get(finding.line_id)"` | — |
+| [SRC-E599346ABE-L001735](../generate_index.py#L1735) | 1735 | `"            lines.append("` | — |

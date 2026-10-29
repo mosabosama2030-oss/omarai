@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003384 إلى SRC-1AE03B9EC3-L004183
+- النطاق: SRC-1AE03B9EC3-L003396 إلى SRC-1AE03B9EC3-L004195
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003384](../../agents/web_agent.py#L3384) | 3384 | `"                compact_search_query(item)"` | — |
-| [SRC-1AE03B9EC3-L003385](../../agents/web_agent.py#L3385) | 3385 | `"                for item in cleaned_queries"` | — |
-| [SRC-1AE03B9EC3-L003386](../../agents/web_agent.py#L3386) | 3386 | `"                if compact_search_query(item) and _relevance_query_tokens(compact_search_query(item))"` | — |
-| [SRC-1AE03B9EC3-L003387](../../agents/web_agent.py#L3387) | 3387 | `"            ]"` | — |
-| [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"        plan[\"queries\"] = list(dict.fromkeys(cleaned_queries))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"        if plan.get(\"freshness\") == \"current\" and not any("` | — |
-| [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"            detect_word in _normalize_search_query(item).casefold()"` | — |
-| [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"            for item in plan[\"queries\"]"` | — |
-| [SRC-1AE03B9EC3-L003392](../../agents/web_agent.py#L3392) | 3392 | `"            for detect_word in (\"latest\", \"recent\", \"news\", \"احدث\", \"أحدث\", \"مستجدات\", \"اخبار\", \"الأخبار\")"` | — |
-| [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"        ) and plan[\"queries\"]:"` | — |
-| [SRC-1AE03B9EC3-L003394](../../agents/web_agent.py#L3394) | 3394 | `"            fresh_query = next("` | — |
-| [SRC-1AE03B9EC3-L003395](../../agents/web_agent.py#L3395) | 3395 | `"                (item for item in fallback_queries if item not in plan[\"queries\"]),"` | — |
 | [SRC-1AE03B9EC3-L003396](../../agents/web_agent.py#L3396) | 3396 | `"                compact_search_query(plan[\"queries\"][0] + \" أحدث الأخبار والمستجدات\"),"` | — |
 | [SRC-1AE03B9EC3-L003397](../../agents/web_agent.py#L3397) | 3397 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003398](../../agents/web_agent.py#L3398) | 3398 | `"            if fresh_query and _relevance_query_tokens(fresh_query):"` | — |
@@ -816,3 +804,15 @@
 | [SRC-1AE03B9EC3-L004181](../../agents/web_agent.py#L4181) | 4181 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L004182](../../agents/web_agent.py#L4182) | 4182 | `"        finally:"` | — |
 | [SRC-1AE03B9EC3-L004183](../../agents/web_agent.py#L4183) | 4183 | `"            budget_summary = budget.snapshot()"` | — |
+| [SRC-1AE03B9EC3-L004184](../../agents/web_agent.py#L4184) | 4184 | `"            self._request_budget = previous_budget"` | — |
+| [SRC-1AE03B9EC3-L004185](../../agents/web_agent.py#L4185) | 4185 | `""` | — |
+| [SRC-1AE03B9EC3-L004186](../../agents/web_agent.py#L4186) | 4186 | `"        result[\"request_budget\"] = budget_summary"` | — |
+| [SRC-1AE03B9EC3-L004187](../../agents/web_agent.py#L4187) | 4187 | `"        result[\"generation_diagnostics\"] = list(self.generation_diagnostics[-12:])"` | — |
+| [SRC-1AE03B9EC3-L004188](../../agents/web_agent.py#L4188) | 4188 | `""` | — |
+| [SRC-1AE03B9EC3-L004189](../../agents/web_agent.py#L4189) | 4189 | `"        # Keep the public result contract resilient if a fallback/alternate result"` | — |
+| [SRC-1AE03B9EC3-L004190](../../agents/web_agent.py#L4190) | 4190 | `"        # builder omitted the lexical integrity fields. Normal research results are"` | — |
+| [SRC-1AE03B9EC3-L004191](../../agents/web_agent.py#L4191) | 4191 | `"        # already audited inside _answer_with_budget, so do not duplicate that work."` | — |
+| [SRC-1AE03B9EC3-L004192](../../agents/web_agent.py#L4192) | 4192 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L004193](../../agents/web_agent.py#L4193) | 4193 | `"            result.get(\"kind\") in {\"web_research\", \"web_fallback\", \"insufficient_evidence\"}"` | — |
+| [SRC-1AE03B9EC3-L004194](../../agents/web_agent.py#L4194) | 4194 | `"            and \"answer_integrity\" not in result"` | — |
+| [SRC-1AE03B9EC3-L004195](../../agents/web_agent.py#L4195) | 4195 | `"        ):"` | — |

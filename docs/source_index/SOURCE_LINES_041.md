@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001323 إلى SRC-F725E90B2A-L002122
+- النطاق: SRC-F725E90B2A-L001335 إلى SRC-F725E90B2A-L002134
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001323](../../tests/test_web_agent.py#L1323) | 1323 | `"    assert repair[\"reason\"] == \"evidence_gate_recovered\""` | — |
-| [SRC-F725E90B2A-L001324](../../tests/test_web_agent.py#L1324) | 1324 | `"    assert repair[\"query\"] in result[\"search_queries\"]"` | — |
-| [SRC-F725E90B2A-L001325](../../tests/test_web_agent.py#L1325) | 1325 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
-| [SRC-F725E90B2A-L001326](../../tests/test_web_agent.py#L1326) | 1326 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
-| [SRC-F725E90B2A-L001327](../../tests/test_web_agent.py#L1327) | 1327 | `""` | — |
-| [SRC-F725E90B2A-L001328](../../tests/test_web_agent.py#L1328) | 1328 | `""` | — |
-| [SRC-F725E90B2A-L001329](../../tests/test_web_agent.py#L1329) | 1329 | `"def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001330](../../tests/test_web_agent.py#L1330) | 1330 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001331](../../tests/test_web_agent.py#L1331) | 1331 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001332](../../tests/test_web_agent.py#L1332) | 1332 | `"        \"queries\": [\"معلومات عن هذه التقنية\"],"` | — |
-| [SRC-F725E90B2A-L001333](../../tests/test_web_agent.py#L1333) | 1333 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L001334](../../tests/test_web_agent.py#L1334) | 1334 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"        \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"        \"platforms\": [],"` | — |
@@ -816,3 +804,15 @@
 | [SRC-F725E90B2A-L002120](../../tests/test_web_agent.py#L2120) | 2120 | `"    report = result[\"search_report\"]"` | — |
 | [SRC-F725E90B2A-L002121](../../tests/test_web_agent.py#L2121) | 2121 | `"    assert result[\"search_attempted\"] is True"` | — |
 | [SRC-F725E90B2A-L002122](../../tests/test_web_agent.py#L2122) | 2122 | `"    assert report[\"search_attempted\"] is True"` | — |
+| [SRC-F725E90B2A-L002123](../../tests/test_web_agent.py#L2123) | 2123 | `"    assert report[\"search_outcome\"] == \"attempted_research_error\""` | — |
+| [SRC-F725E90B2A-L002124](../../tests/test_web_agent.py#L2124) | 2124 | `"    assert report[\"queries_attempted\"] is None"` | — |
+| [SRC-F725E90B2A-L002125](../../tests/test_web_agent.py#L2125) | 2125 | `"    assert report[\"queries_attempted_known\"] is False"` | — |
+| [SRC-F725E90B2A-L002126](../../tests/test_web_agent.py#L2126) | 2126 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
+| [SRC-F725E90B2A-L002127](../../tests/test_web_agent.py#L2127) | 2127 | `"    assert report[\"unique_sources\"] is None"` | — |
+| [SRC-F725E90B2A-L002128](../../tests/test_web_agent.py#L2128) | 2128 | `"    assert report[\"pages_fetched\"] is None"` | — |
+| [SRC-F725E90B2A-L002129](../../tests/test_web_agent.py#L2129) | 2129 | `""` | — |
+| [SRC-F725E90B2A-L002130](../../tests/test_web_agent.py#L2130) | 2130 | `""` | — |
+| [SRC-F725E90B2A-L002131](../../tests/test_web_agent.py#L2131) | 2131 | `"def test_research_error_without_provider_diagnostics_is_reported_as_unknown(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002132](../../tests/test_web_agent.py#L2132) | 2132 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002133](../../tests/test_web_agent.py#L2133) | 2133 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L002134](../../tests/test_web_agent.py#L2134) | 2134 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |

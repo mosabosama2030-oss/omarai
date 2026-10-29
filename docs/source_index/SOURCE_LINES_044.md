@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **044**
-- سجلات الأسطر: **710**
-- النطاق: SRC-F725E90B2A-L003723 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **698**
+- النطاق: SRC-F725E90B2A-L003735 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L003723](../../tests/test_web_agent.py#L3723) | 3723 | `"    )"` | — |
-| [SRC-F725E90B2A-L003724](../../tests/test_web_agent.py#L3724) | 3724 | `""` | — |
-| [SRC-F725E90B2A-L003725](../../tests/test_web_agent.py#L3725) | 3725 | `"    result = agent.answer(\"هات الموقع الرسمي\")"` | — |
-| [SRC-F725E90B2A-L003726](../../tests/test_web_agent.py#L3726) | 3726 | `""` | — |
-| [SRC-F725E90B2A-L003727](../../tests/test_web_agent.py#L3727) | 3727 | `"    assert result[\"intent_route\"] == \"CLARIFY\""` | — |
-| [SRC-F725E90B2A-L003728](../../tests/test_web_agent.py#L3728) | 3728 | `"    assert result[\"kind\"] == \"clarification_needed\""` | — |
-| [SRC-F725E90B2A-L003729](../../tests/test_web_agent.py#L3729) | 3729 | `"    assert \"اسم الجهة أو الشركة\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L003730](../../tests/test_web_agent.py#L3730) | 3730 | `"    assert result[\"search_attempted\"] is False"` | — |
-| [SRC-F725E90B2A-L003731](../../tests/test_web_agent.py#L3731) | 3731 | `"    assert \"official_destination_target_entity\" in result[\"task_understanding\"][\"task_spec\"][\"missing_required_inputs\"]"` | — |
-| [SRC-F725E90B2A-L003732](../../tests/test_web_agent.py#L3732) | 3732 | `""` | — |
-| [SRC-F725E90B2A-L003733](../../tests/test_web_agent.py#L3733) | 3733 | `""` | — |
-| [SRC-F725E90B2A-L003734](../../tests/test_web_agent.py#L3734) | 3734 | `"def test_summary_without_source_clarifies_before_search(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L003735](../../tests/test_web_agent.py#L3735) | 3735 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L003736](../../tests/test_web_agent.py#L3736) | 3736 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003737](../../tests/test_web_agent.py#L3737) | 3737 | `"        agent,"` | — |

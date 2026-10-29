@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001784 إلى SRC-1AE03B9EC3-L002583
+- النطاق: SRC-1AE03B9EC3-L001796 إلى SRC-1AE03B9EC3-L002595
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001784](../../agents/web_agent.py#L1784) | 1784 | `"        self, query: str, platforms: list[str]"` | — |
-| [SRC-1AE03B9EC3-L001785](../../agents/web_agent.py#L1785) | 1785 | `"    ) -> tuple[list[dict[str, Any]], list[str]]:"` | — |
-| [SRC-1AE03B9EC3-L001786](../../agents/web_agent.py#L1786) | 1786 | `"        \"\"\"Search public social content through exposed public endpoints only.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001787](../../agents/web_agent.py#L1787) | 1787 | `"        query = compact_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L001788](../../agents/web_agent.py#L1788) | 1788 | `"        if not query:"` | — |
-| [SRC-1AE03B9EC3-L001789](../../agents/web_agent.py#L1789) | 1789 | `"            return [], [\"لم يبدأ البحث الاجتماعي لعدم وجود كلمات موضوعية قابلة للبحث.\"]"` | — |
-| [SRC-1AE03B9EC3-L001790](../../agents/web_agent.py#L1790) | 1790 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L001791](../../agents/web_agent.py#L1791) | 1791 | `"            import xml.etree.ElementTree as ET"` | — |
-| [SRC-1AE03B9EC3-L001792](../../agents/web_agent.py#L1792) | 1792 | `""` | — |
-| [SRC-1AE03B9EC3-L001793](../../agents/web_agent.py#L1793) | 1793 | `"            import httpx"` | — |
-| [SRC-1AE03B9EC3-L001794](../../agents/web_agent.py#L1794) | 1794 | `"            from bs4 import BeautifulSoup"` | — |
-| [SRC-1AE03B9EC3-L001795](../../agents/web_agent.py#L1795) | 1795 | `"        except ImportError as exc:"` | — |
 | [SRC-1AE03B9EC3-L001796](../../agents/web_agent.py#L1796) | 1796 | `"            raise AgentDependencyError("` | — |
 | [SRC-1AE03B9EC3-L001797](../../agents/web_agent.py#L1797) | 1797 | `"                \"حزم البحث الاجتماعي غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
 | [SRC-1AE03B9EC3-L001798](../../agents/web_agent.py#L1798) | 1798 | `"            ) from exc"` | — |
@@ -816,3 +804,15 @@
 | [SRC-1AE03B9EC3-L002581](../../agents/web_agent.py#L2581) | 2581 | `"                    name for name, ready in optional_connectors.items()"` | — |
 | [SRC-1AE03B9EC3-L002582](../../agents/web_agent.py#L2582) | 2582 | `"                    if ready and name not in platforms"` | — |
 | [SRC-1AE03B9EC3-L002583](../../agents/web_agent.py#L2583) | 2583 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002584](../../agents/web_agent.py#L2584) | 2584 | `"            social_results, social_warnings = self._search_social((queries[0] if queries else \"\"), platforms)"` | — |
+| [SRC-1AE03B9EC3-L002585](../../agents/web_agent.py#L2585) | 2585 | `"            warnings.extend(social_warnings)"` | — |
+| [SRC-1AE03B9EC3-L002586](../../agents/web_agent.py#L2586) | 2586 | `"            social_groups: dict[str, list[dict[str, Any]]] = {}"` | — |
+| [SRC-1AE03B9EC3-L002587](../../agents/web_agent.py#L2587) | 2587 | `"            for source in social_results:"` | — |
+| [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"                social_groups.setdefault(str(source.get(\"provider\") or \"social\"), []).append(source)"` | — |
+| [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"            for provider, items in social_groups.items():"` | — |
+| [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"                items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
+| [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"                batches.append({\"query\": (queries[0] if queries else \"\"), \"provider\": provider, \"results\": items})"` | — |
+| [SRC-1AE03B9EC3-L002592](../../agents/web_agent.py#L2592) | 2592 | `""` | — |
+| [SRC-1AE03B9EC3-L002593](../../agents/web_agent.py#L2593) | 2593 | `"        # Explicit URLs are first-class inputs: fetch the page the user actually asked about"` | — |
+| [SRC-1AE03B9EC3-L002594](../../agents/web_agent.py#L2594) | 2594 | `"        # instead of relying on a search engine to rediscover it. URL and DNS checks still apply."` | — |
+| [SRC-1AE03B9EC3-L002595](../../agents/web_agent.py#L2595) | 2595 | `"        direct_urls: list[str] = []"` | — |

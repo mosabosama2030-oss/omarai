@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000094 إلى SRC-E599346ABE-L000123
+- النطاق: SRC-C4C6C55E1A-L000106 إلى SRC-E599346ABE-L000135
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-C4C6C55E1A-L000094](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L94) | 94 | `""` | — |
-| [SRC-C4C6C55E1A-L000095](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L95) | 95 | `"### M-02 — الميزانية والتزامن"` | — |
-| [SRC-C4C6C55E1A-L000096](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L96) | 96 | `""` | — |
-| [SRC-C4C6C55E1A-L000097](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L97) | 97 | ``"أُغلق PR #49 لأنه مكرر، وأُغلق PR #52 لأن فرعه انجرف عن `main`. PR #56 هو سطح المراجعة الحالي المبني مباشرة على `main` عند SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`. أضاف/يجمع: 100 محاولة حجز مقابل سقف 5، وحدود/تجاوز وموارد معطلة لكل من الموارد الخمسة، واختبار تحرير semaphore بعد استثناء غير متوقع."`` | — |
-| [SRC-C4C6C55E1A-L000098](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L98) | 98 | `""` | — |
-| [SRC-C4C6C55E1A-L000099](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L99) | 99 | ``"**الحالة:** CI run [39223310566](https://github.com/mosabosama2030-oss/omarai/actions/runs/39223310566) نجح على الرأس `0ca1b14aa1dd63bdc48a8ca73f698f7f6bc83416`: Ruff و249 اختبارًا على Python 3.11 و249 على Python 3.12 وبناء الحاوية وفحص API المحمية. لا يزال الدليل وحدات/تكامل محليًا، وليس اختبار حمل أو ضمانًا موزعًا أو hard cancellation."`` | — |
-| [SRC-C4C6C55E1A-L000100](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L100) | 100 | `""` | — |
-| [SRC-C4C6C55E1A-L000101](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L101) | 101 | `"### M-03/M-04 — سجل الأدلة والاستثناءات"` | — |
-| [SRC-C4C6C55E1A-L000102](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L102) | 102 | `""` | — |
-| [SRC-C4C6C55E1A-L000103](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L103) | 103 | `"تحديث سجل المتطلبات وقائمة الاستثناءات مخصصان لهذا التغيير التوثيقي. ستظل الاستثناءات المقترحة غير معتمدة حتى يوافق مدير المشروع صراحة على كل قرار مطلوب. لا يعد وجود سجل دليلًا على قبول أي خطر."` | — |
-| [SRC-C4C6C55E1A-L000104](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L104) | 104 | `""` | — |
-| [SRC-C4C6C55E1A-L000105](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L105) | 105 | `"### M-05 — النسخ والاستعادة"` | — |
 | [SRC-C4C6C55E1A-L000106](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L106) | 106 | `""` | — |
 | [SRC-C4C6C55E1A-L000107](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L107) | 107 | ``"دُمج PR #58 لاحقًا في `main` عند `58dec8f7f1ef4166ce1c02d56ad2a1f861ae3aa5`، وأصبحت أداة النسخ/الاستعادة المحلية جزءًا من المستودع. تشغيل CI [39224536955](https://github.com/mosabosama2030-oss/omarai/actions/runs/39224536955) على HEAD `59027f44388730d34c7bd7164450abdba2f9fd0a` دليل تاريخي لاختبارات round-trip والرفض الآمن؛ دوام التخزين والاستعادة على مضيف فعلي أو نسخة خارج المضيف يبقى UNKNOWN/NOT_RUN."`` | — |
 | [SRC-C4C6C55E1A-L000108](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) | 108 | `""` | — |
@@ -879,3 +867,15 @@
 | [SRC-E599346ABE-L000121](../generate_index.py#L121) | 121 | `"JSON_KEY_RE = re.compile(r'\"([^\"]+)\"\\s*:')"` | — |
 | [SRC-E599346ABE-L000122](../generate_index.py#L122) | 122 | `"INI_SECTION_RE = re.compile(r\"^\\s*\\[([^\\]]+)\\]\\s*$\", re.MULTILINE)"` | — |
 | [SRC-E599346ABE-L000123](../generate_index.py#L123) | 123 | `"INI_KEY_RE = re.compile(r\"^\\s*([A-Za-z0-9_.-]+)\\s*=\", re.MULTILINE)"` | — |
+| [SRC-E599346ABE-L000124](../generate_index.py#L124) | 124 | `"UPPER_SNAKE_RE = re.compile(r\"\\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\\b\")"` | — |
+| [SRC-E599346ABE-L000125](../generate_index.py#L125) | 125 | `"API_PATH_RE = re.compile(r\"\"\"[\"'](/(?:api\|leads)(?:/[A-Za-z0-9_{}./-]+)*)[\"']\"\"\")"` | — |
+| [SRC-E599346ABE-L000126](../generate_index.py#L126) | 126 | `"FINDING_MARKER_NAMES = ("` | — |
+| [SRC-E599346ABE-L000127](../generate_index.py#L127) | 127 | `"    \"TODO\","` | — |
+| [SRC-E599346ABE-L000128](../generate_index.py#L128) | 128 | `"    \"FIXME\","` | — |
+| [SRC-E599346ABE-L000129](../generate_index.py#L129) | 129 | `"    \"BUG\","` | — |
+| [SRC-E599346ABE-L000130](../generate_index.py#L130) | 130 | `"    \"HACK\","` | — |
+| [SRC-E599346ABE-L000131](../generate_index.py#L131) | 131 | `"    \"XXX\","` | — |
+| [SRC-E599346ABE-L000132](../generate_index.py#L132) | 132 | `"    \"REVIEW\","` | — |
+| [SRC-E599346ABE-L000133](../generate_index.py#L133) | 133 | `"    \"SECURITY\","` | — |
+| [SRC-E599346ABE-L000134](../generate_index.py#L134) | 134 | `"    \"DEPRECATED\","` | — |
+| [SRC-E599346ABE-L000135](../generate_index.py#L135) | 135 | `"    \"ISSUE\","` | — |

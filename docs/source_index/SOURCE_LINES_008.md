@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000184 إلى SRC-1AE03B9EC3-L000983
+- النطاق: SRC-1AE03B9EC3-L000196 إلى SRC-1AE03B9EC3-L000995
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"    \"\"\"Normalize Arabic letters/diacritics while preserving search operators and dates.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"    value = unicodedata.normalize(\"NFKC\", value or \"\")"` | — |
-| [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    value = _ARABIC_DIACRITICS_RE.sub(\"\", value).translate(_ARABIC_SEARCH_TRANSLATION)"` | — |
-| [SRC-1AE03B9EC3-L000187](../../agents/web_agent.py#L187) | 187 | `"    return re.sub(r\"\\s+\", \" \", value).strip()"` | — |
-| [SRC-1AE03B9EC3-L000188](../../agents/web_agent.py#L188) | 188 | `""` | — |
-| [SRC-1AE03B9EC3-L000189](../../agents/web_agent.py#L189) | 189 | `""` | — |
-| [SRC-1AE03B9EC3-L000190](../../agents/web_agent.py#L190) | 190 | `"# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)"` | — |
-| [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `"# can leave request-format wording in the token set and distort relevance scores."` | — |
-| [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"_NORMALIZED_SEARCH_STOPWORDS = frozenset("` | — |
-| [SRC-1AE03B9EC3-L000193](../../agents/web_agent.py#L193) | 193 | `"    _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS"` | — |
-| [SRC-1AE03B9EC3-L000194](../../agents/web_agent.py#L194) | 194 | `")"` | — |
-| [SRC-1AE03B9EC3-L000195](../../agents/web_agent.py#L195) | 195 | `""` | — |
 | [SRC-1AE03B9EC3-L000196](../../agents/web_agent.py#L196) | 196 | `""` | — |
 | [SRC-1AE03B9EC3-L000197](../../agents/web_agent.py#L197) | 197 | `"# Normalize synonym keys and values by the same rules as search text. This avoids"` | — |
 | [SRC-1AE03B9EC3-L000198](../../agents/web_agent.py#L198) | 198 | `"# Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching."` | — |
@@ -816,3 +804,15 @@
 | [SRC-1AE03B9EC3-L000981](../../agents/web_agent.py#L981) | 981 | `"            \"used_social_search\": False,"` | — |
 | [SRC-1AE03B9EC3-L000982](../../agents/web_agent.py#L982) | 982 | `"            \"warnings\": [],"` | — |
 | [SRC-1AE03B9EC3-L000983](../../agents/web_agent.py#L983) | 983 | `"            \"kind\": kind,"` | — |
+| [SRC-1AE03B9EC3-L000984](../../agents/web_agent.py#L984) | 984 | `"            \"research_quality\": \"not_applicable\","` | — |
+| [SRC-1AE03B9EC3-L000985](../../agents/web_agent.py#L985) | 985 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L000986](../../agents/web_agent.py#L986) | 986 | `""` | — |
+| [SRC-1AE03B9EC3-L000987](../../agents/web_agent.py#L987) | 987 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000988](../../agents/web_agent.py#L988) | 988 | `"    def _local_conversation_reply(question: str) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000989](../../agents/web_agent.py#L989) | 989 | `"        \"\"\"Return a short greeting/acknowledgment without a model or web request.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000990](../../agents/web_agent.py#L990) | 990 | `"        value = _normalize_search_query(question).casefold().strip(\" \\t\\r\\n؟?!.,،؛;\")"` | — |
+| [SRC-1AE03B9EC3-L000991](../../agents/web_agent.py#L991) | 991 | `"        if \"السلام عليكم\" in value:"` | — |
+| [SRC-1AE03B9EC3-L000992](../../agents/web_agent.py#L992) | 992 | `"            return \"وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟\""` | — |
+| [SRC-1AE03B9EC3-L000993](../../agents/web_agent.py#L993) | 993 | `"        if any(term in value for term in (\"شكرا\", \"متشكر\", \"متشكره\", \"العفو\")):"` | — |
+| [SRC-1AE03B9EC3-L000994](../../agents/web_agent.py#L994) | 994 | `"            return \"العفو، تحت أمرك.\""` | — |
+| [SRC-1AE03B9EC3-L000995](../../agents/web_agent.py#L995) | 995 | `"        if re.search(r\"[a-z]\", value):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004184 إلى SRC-1AE03B9EC3-L004983
+- النطاق: SRC-1AE03B9EC3-L004196 إلى SRC-1AE03B9EC3-L004995
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L004184](../../agents/web_agent.py#L4184) | 4184 | `"            self._request_budget = previous_budget"` | — |
-| [SRC-1AE03B9EC3-L004185](../../agents/web_agent.py#L4185) | 4185 | `""` | — |
-| [SRC-1AE03B9EC3-L004186](../../agents/web_agent.py#L4186) | 4186 | `"        result[\"request_budget\"] = budget_summary"` | — |
-| [SRC-1AE03B9EC3-L004187](../../agents/web_agent.py#L4187) | 4187 | `"        result[\"generation_diagnostics\"] = list(self.generation_diagnostics[-12:])"` | — |
-| [SRC-1AE03B9EC3-L004188](../../agents/web_agent.py#L4188) | 4188 | `""` | — |
-| [SRC-1AE03B9EC3-L004189](../../agents/web_agent.py#L4189) | 4189 | `"        # Keep the public result contract resilient if a fallback/alternate result"` | — |
-| [SRC-1AE03B9EC3-L004190](../../agents/web_agent.py#L4190) | 4190 | `"        # builder omitted the lexical integrity fields. Normal research results are"` | — |
-| [SRC-1AE03B9EC3-L004191](../../agents/web_agent.py#L4191) | 4191 | `"        # already audited inside _answer_with_budget, so do not duplicate that work."` | — |
-| [SRC-1AE03B9EC3-L004192](../../agents/web_agent.py#L4192) | 4192 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L004193](../../agents/web_agent.py#L4193) | 4193 | `"            result.get(\"kind\") in {\"web_research\", \"web_fallback\", \"insufficient_evidence\"}"` | — |
-| [SRC-1AE03B9EC3-L004194](../../agents/web_agent.py#L4194) | 4194 | `"            and \"answer_integrity\" not in result"` | — |
-| [SRC-1AE03B9EC3-L004195](../../agents/web_agent.py#L4195) | 4195 | `"        ):"` | — |
 | [SRC-1AE03B9EC3-L004196](../../agents/web_agent.py#L4196) | 4196 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L004197](../../agents/web_agent.py#L4197) | 4197 | `"                coverage_targets = self._question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L004198](../../agents/web_agent.py#L4198) | 4198 | `"                source_rows = result.get(\"sources\")"` | — |
@@ -816,3 +804,15 @@
 | [SRC-1AE03B9EC3-L004981](../../agents/web_agent.py#L4981) | 4981 | `"                \"actual_queries\": list(plan.get(\"queries\") or []),"` | — |
 | [SRC-1AE03B9EC3-L004982](../../agents/web_agent.py#L4982) | 4982 | `"                \"actual_query_count\": len(plan.get(\"queries\") or []),"` | — |
 | [SRC-1AE03B9EC3-L004983](../../agents/web_agent.py#L4983) | 4983 | `"                \"max_query_count\": MAX_PLAN_QUERIES,"` | — |
+| [SRC-1AE03B9EC3-L004984](../../agents/web_agent.py#L4984) | 4984 | `"                \"status\": \"deterministic_interpretation_attached\","` | — |
+| [SRC-1AE03B9EC3-L004985](../../agents/web_agent.py#L4985) | 4985 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004986](../../agents/web_agent.py#L4986) | 4986 | `"        # Final relevance check is intentionally repeated after fusion, before any answer LLM call."` | — |
+| [SRC-1AE03B9EC3-L004987](../../agents/web_agent.py#L4987) | 4987 | `"        filtered_sources: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L004988](../../agents/web_agent.py#L4988) | 4988 | `"        for source in sources:"` | — |
+| [SRC-1AE03B9EC3-L004989](../../agents/web_agent.py#L4989) | 4989 | `"            if \"user_supplied_url\" in source.get(\"providers\", []):"` | — |
+| [SRC-1AE03B9EC3-L004990](../../agents/web_agent.py#L4990) | 4990 | `"                filtered_sources.append(source)"` | — |
+| [SRC-1AE03B9EC3-L004991](../../agents/web_agent.py#L4991) | 4991 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L004992](../../agents/web_agent.py#L4992) | 4992 | `"            candidate_queries = ("` | — |
+| [SRC-1AE03B9EC3-L004993](../../agents/web_agent.py#L4993) | 4993 | `"                source.get(\"queries\")"` | — |
+| [SRC-1AE03B9EC3-L004994](../../agents/web_agent.py#L4994) | 4994 | `"                or plan.get(\"queries\")"` | — |
+| [SRC-1AE03B9EC3-L004995](../../agents/web_agent.py#L4995) | 4995 | `"                or [compact_search_query(working_question)]"` | — |

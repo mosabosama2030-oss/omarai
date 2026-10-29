@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **817**
 - تعريفات لا ينطبق عليها Docstring: **275**
 - الرموز الساكنة الإضافية: **1715**
-- الأسطر النصية المفهرسة حرفيًا: **35110**
+- الأسطر النصية المفهرسة حرفيًا: **35098**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 33498 | 791 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 10562 | 263 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
-| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78832 | 1429 | جرد الملف + AST Python |
+| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 341875 | 6377 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
@@ -366,9 +366,9 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L1067) | دالة | _label_existing_query | Classify query wording for diagnostics; this is not a retrieval-success claim. | موثق | 1067 | [SRC-686F71AA50-L001067](../agents/task_understanding.py#L1067) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L1094) | دالة | build_query_strategy_matrix | Return bounded query candidates, prioritizing task-specific evidence strategies. | موثق | 1094 | [SRC-686F71AA50-L001094](../agents/task_understanding.py#L1094) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L1114) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 1114 | [SRC-686F71AA50-L001114](../agents/task_understanding.py#L1114) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1231) | دالة | validate_task_spec | Return an allowlisted, bounded JSON representation of TaskSpec-like input. | موثق | 1231 | [SRC-686F71AA50-L001231](../agents/task_understanding.py#L1231) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1241) | دالة | validate_task_spec.clean_text | لا توجد Docstring. | ناقص | 1241 | [SRC-686F71AA50-L001241](../agents/task_understanding.py#L1241) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1246) | دالة | validate_task_spec.clean_list | لا توجد Docstring. | ناقص | 1246 | [SRC-686F71AA50-L001246](../agents/task_understanding.py#L1246) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1219) | دالة | validate_task_spec | Return an allowlisted, bounded JSON representation of TaskSpec-like input. | موثق | 1219 | [SRC-686F71AA50-L001219](../agents/task_understanding.py#L1219) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1229) | دالة | validate_task_spec.clean_text | لا توجد Docstring. | ناقص | 1229 | [SRC-686F71AA50-L001229](../agents/task_understanding.py#L1229) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1234) | دالة | validate_task_spec.clean_list | لا توجد Docstring. | ناقص | 1234 | [SRC-686F71AA50-L001234](../agents/task_understanding.py#L1234) |
 | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L6) | متغير/ثابت Python | _TOOL_LABELS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 6 | [SRC-0799EEEB02-L000006](../agents/tool_execution_status.py#L6) |
 | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L13) | متغير/ثابت Python | _ERROR_OUTCOMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-0799EEEB02-L000013](../agents/tool_execution_status.py#L13) |
 | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L18) | متغير/ثابت Python | _SOCIAL_PLATFORMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-0799EEEB02-L000018](../agents/tool_execution_status.py#L18) |

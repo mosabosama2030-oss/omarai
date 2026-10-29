@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000984 إلى SRC-1AE03B9EC3-L001783
+- النطاق: SRC-1AE03B9EC3-L000996 إلى SRC-1AE03B9EC3-L001795
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,18 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000984](../../agents/web_agent.py#L984) | 984 | `"            \"research_quality\": \"not_applicable\","` | — |
-| [SRC-1AE03B9EC3-L000985](../../agents/web_agent.py#L985) | 985 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L000986](../../agents/web_agent.py#L986) | 986 | `""` | — |
-| [SRC-1AE03B9EC3-L000987](../../agents/web_agent.py#L987) | 987 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L000988](../../agents/web_agent.py#L988) | 988 | `"    def _local_conversation_reply(question: str) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000989](../../agents/web_agent.py#L989) | 989 | `"        \"\"\"Return a short greeting/acknowledgment without a model or web request.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000990](../../agents/web_agent.py#L990) | 990 | `"        value = _normalize_search_query(question).casefold().strip(\" \\t\\r\\n؟?!.,،؛;\")"` | — |
-| [SRC-1AE03B9EC3-L000991](../../agents/web_agent.py#L991) | 991 | `"        if \"السلام عليكم\" in value:"` | — |
-| [SRC-1AE03B9EC3-L000992](../../agents/web_agent.py#L992) | 992 | `"            return \"وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟\""` | — |
-| [SRC-1AE03B9EC3-L000993](../../agents/web_agent.py#L993) | 993 | `"        if any(term in value for term in (\"شكرا\", \"متشكر\", \"متشكره\", \"العفو\")):"` | — |
-| [SRC-1AE03B9EC3-L000994](../../agents/web_agent.py#L994) | 994 | `"            return \"العفو، تحت أمرك.\""` | — |
-| [SRC-1AE03B9EC3-L000995](../../agents/web_agent.py#L995) | 995 | `"        if re.search(r\"[a-z]\", value):"` | — |
 | [SRC-1AE03B9EC3-L000996](../../agents/web_agent.py#L996) | 996 | `"            if any(term in value for term in (\"thanks\", \"thank you\", \"got it\")):"` | — |
 | [SRC-1AE03B9EC3-L000997](../../agents/web_agent.py#L997) | 997 | `"                return \"You're welcome—glad it helped.\""` | — |
 | [SRC-1AE03B9EC3-L000998](../../agents/web_agent.py#L998) | 998 | `"            return \"Hi! I'm here and ready to help. What would you like to work on?\""` | — |
@@ -816,3 +804,15 @@
 | [SRC-1AE03B9EC3-L001781](../../agents/web_agent.py#L1781) | 1781 | `"        return results"` | — |
 | [SRC-1AE03B9EC3-L001782](../../agents/web_agent.py#L1782) | 1782 | `""` | — |
 | [SRC-1AE03B9EC3-L001783](../../agents/web_agent.py#L1783) | 1783 | `"    def _search_social("` | — |
+| [SRC-1AE03B9EC3-L001784](../../agents/web_agent.py#L1784) | 1784 | `"        self, query: str, platforms: list[str]"` | — |
+| [SRC-1AE03B9EC3-L001785](../../agents/web_agent.py#L1785) | 1785 | `"    ) -> tuple[list[dict[str, Any]], list[str]]:"` | — |
+| [SRC-1AE03B9EC3-L001786](../../agents/web_agent.py#L1786) | 1786 | `"        \"\"\"Search public social content through exposed public endpoints only.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001787](../../agents/web_agent.py#L1787) | 1787 | `"        query = compact_search_query(query)"` | — |
+| [SRC-1AE03B9EC3-L001788](../../agents/web_agent.py#L1788) | 1788 | `"        if not query:"` | — |
+| [SRC-1AE03B9EC3-L001789](../../agents/web_agent.py#L1789) | 1789 | `"            return [], [\"لم يبدأ البحث الاجتماعي لعدم وجود كلمات موضوعية قابلة للبحث.\"]"` | — |
+| [SRC-1AE03B9EC3-L001790](../../agents/web_agent.py#L1790) | 1790 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L001791](../../agents/web_agent.py#L1791) | 1791 | `"            import xml.etree.ElementTree as ET"` | — |
+| [SRC-1AE03B9EC3-L001792](../../agents/web_agent.py#L1792) | 1792 | `""` | — |
+| [SRC-1AE03B9EC3-L001793](../../agents/web_agent.py#L1793) | 1793 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L001794](../../agents/web_agent.py#L1794) | 1794 | `"            from bs4 import BeautifulSoup"` | — |
+| [SRC-1AE03B9EC3-L001795](../../agents/web_agent.py#L1795) | 1795 | `"        except ImportError as exc:"` | — |
