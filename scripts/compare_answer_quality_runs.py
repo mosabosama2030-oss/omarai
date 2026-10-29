@@ -283,9 +283,24 @@ def compare_runs(
             f"incomparable case sets; missing in candidate={missing_candidate}; "
             f"missing in baseline={missing_baseline}"
         )
+    corpus_by_id = {
+        case["case_id"]: case
+        for case in (corpus.get("cases", []) if corpus is not None else [])
+        if isinstance(case, dict) and isinstance(case.get("case_id"), str)
+    }
     for case_id in baseline_by_id:
-        if baseline_by_id[case_id].get("prompt") != candidate_by_id[case_id].get("prompt"):
+        before_row = baseline_by_id[case_id]
+        after_row = candidate_by_id[case_id]
+        if before_row.get("prompt") != after_row.get("prompt"):
             raise ValueError(f"incomparable question text for {case_id}")
+        if corpus is not None:
+            corpus_case = corpus_by_id.get(case_id)
+            if not isinstance(corpus_case, dict):
+                raise ValueError(f"{case_id}: case_id is not present in the supplied corpus")
+            if before_row.get("prompt") != corpus_case.get("question"):
+                raise ValueError(f"{case_id}: recorded prompt differs from the canonical corpus question")
+            if before_row.get("expected_strategy") != corpus_case.get("expected_strategy"):
+                raise ValueError(f"{case_id}: expected_strategy differs from the canonical corpus")
 
     before_runtime = run_metrics(baseline)
     after_runtime = run_metrics(candidate)
