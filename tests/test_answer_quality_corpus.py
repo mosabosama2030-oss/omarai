@@ -228,3 +228,23 @@ def test_no_placeholder_corpus_content():
     assert "SEE_LOCAL_FILE" not in raw
     data = _load_corpus()
     assert len(data["cases"]) == data["case_count"] == 45
+
+
+def test_human_review_template_matches_corpus_and_contains_no_scores():
+    template_path = CORPUS_PATH.parent / "answer_quality_reviews_template.json"
+    assert template_path.is_file(), f"Missing review template: {template_path}"
+    template = json.loads(template_path.read_text(encoding="utf-8"))
+    corpus = _load_corpus()
+    assert template.get("template_only") is True
+    assert template.get("benchmark_id") == corpus["benchmark_id"]
+    assert template.get("benchmark_version") == corpus["version"]
+    case_ids = {case["case_id"] for case in corpus["cases"]}
+    reviews = template.get("reviews")
+    assert isinstance(reviews, list)
+    assert {item.get("case_id") for item in reviews} == case_ids
+    for item in reviews:
+        assert item["status"] == "NOT_TESTED"
+        assert "correctness" not in item
+        assert "citations" not in item
+        assert "retrieval" not in item
+        assert "writing_quality" not in item
