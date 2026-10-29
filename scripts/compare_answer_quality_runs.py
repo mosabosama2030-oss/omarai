@@ -224,10 +224,6 @@ def review_comparison(
     candidate_ids = _reviewed_case_ids(candidate_reviews)
     if not baseline_ids or not candidate_ids:
         raise ValueError("both review files need explicitly REVIEWED cases")
-    if baseline_ids != candidate_ids:
-        raise ValueError(
-            "incomparable review coverage: REVIEWED case IDs differ between baseline and candidate"
-        )
     corpus_cases = corpus.get("cases")
     if not isinstance(corpus_cases, list) or not corpus_cases:
         raise ValueError("corpus must contain a non-empty cases array for full-coverage acceptance")
@@ -236,11 +232,20 @@ def review_comparison(
         for item in corpus_cases
         if isinstance(item, dict) and isinstance(item.get("case_id"), str)
     }
-    if baseline_ids != corpus_ids:
-        missing = sorted(corpus_ids - baseline_ids)
-        extra = sorted(baseline_ids - corpus_ids)
+    for label, reviewed_ids in (
+        ("baseline", baseline_ids),
+        ("candidate", candidate_ids),
+    ):
+        if reviewed_ids != corpus_ids:
+            missing = sorted(corpus_ids - reviewed_ids)
+            extra = sorted(reviewed_ids - corpus_ids)
+            raise ValueError(
+                f"incomplete human review coverage for {label}: "
+                f"missing={missing}; unknown={extra}"
+            )
+    if baseline_ids != candidate_ids:
         raise ValueError(
-            f"incomplete human review coverage: missing={missing}; unknown={extra}"
+            "incomparable review coverage: REVIEWED case IDs differ between baseline and candidate"
         )
     scorer = _load_review_scorer()
     baseline = scorer.summarize_reviews(baseline_reviews, corpus)
