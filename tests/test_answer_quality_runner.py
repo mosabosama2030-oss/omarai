@@ -229,3 +229,43 @@ def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):
     payload = json.loads(out.read_text(encoding="utf-8"))
     assert payload["results"][0]["status"] == "NOT_TESTED"
     assert payload["results"][0]["transport_ok"] is False
+
+
+
+def test_response_metrics_separates_tool_status_from_http_success():
+    mod = _load_runner()
+    failed_search = mod._response_metrics(
+        {
+            "search_report": {"search_outcome": "attempted_research_error"},
+            "sources": [],
+        },
+        expected_strategy="web_search",
+        transport_ok=True,
+    )
+    assert failed_search["tool_status"] == "TOOL_FAILED"
+    assert failed_search["request_cost_usd"] is None
+    assert failed_search["request_cost_status"] == "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED"
+
+    successful_search = mod._response_metrics(
+        {
+            "search_report": {
+                "search_outcome": "attempted_with_usable_sources",
+                "pipeline_completion_status": "completed",
+            },
+            "sources": [{"url": "https://example.org"}],
+            "model_calls": [{
+                "provider_usage": {
+                    "prompt_tokens": 10,
+                    "completion_tokens": 20,
+                    "total_tokens": 30,
+                    "cost_usd": 0.0008,
+                }
+            }],
+        },
+        expected_strategy="web_search",
+        transport_ok=True,
+    )
+    assert successful_search["tool_status"] == "SUCCESS_WITH_USABLE_RESULTS"
+    assert successful_search["source_count"] == 1
+    assert successful_search["provider_reported_model_cost_usd"] == 0.0008
+    assert successful_search["provider_reported_model_cost_status"] == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
