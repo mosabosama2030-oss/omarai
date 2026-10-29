@@ -266,6 +266,27 @@ def test_response_metrics_separates_tool_status_from_http_success():
                 }],
             },
             "model_calls": [],
+            "task_understanding": {
+                "tool_execution": {
+                    "tool_status_matrix": [
+                        {
+                            "tool": "web_search",
+                            "required_by_task_spec": True,
+                            "status": "completed_with_results",
+                        },
+                        {
+                            "tool": "page_fetch",
+                            "required_by_task_spec": True,
+                            "status": "attempted_no_readable_pages",
+                        },
+                        {
+                            "tool": "claim_review_if_configured",
+                            "required_by_task_spec": False,
+                            "status": "not_required",
+                        },
+                    ],
+                },
+            },
             "sources": [{"url": "https://example.org"}],
         },
         expected_strategy="web_search",
@@ -275,6 +296,12 @@ def test_response_metrics_separates_tool_status_from_http_success():
     assert successful_search["source_count"] == 1
     assert successful_search["provider_reported_model_cost_usd"] == 0.0008
     assert successful_search["provider_reported_model_cost_status"] == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
+    assert successful_search["required_tool_count"] == 2
+    assert successful_search["required_tool_success_count"] == 1
+    assert successful_search["required_tool_success_rate"] == 0.5
+    assert [item["tool"] for item in successful_search["required_tool_statuses"]] == [
+        "web_search", "page_fetch"
+    ]
 
 
 def test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation(tmp_path):
