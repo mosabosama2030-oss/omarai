@@ -2497,7 +2497,12 @@ class WebAgent:
         preliminary_ledger = build_evidence_ledger(target_aspects, preliminary)
         missing_aspects = list(preliminary_ledger.get("missing") or [])
         expansion_queries: list[str] = []
-        if (missing_aspects or needs_expansion) and len(queries) < query_limit and queries:
+        if (
+            plan.get("depth") == "deep"
+            and (missing_aspects or needs_expansion)
+            and len(queries) < query_limit
+            and queries
+        ):
             base_query = (queries[0] if queries else "")
             remaining_slots = max(0, query_limit - len(queries))
             aspect_queries = repair_queries_for_missing_aspects(
@@ -6289,7 +6294,6 @@ class WebAgent:
             )
             else "candidate_evidence_gaps_or_linkage_unknown"
             if coverage_targets and requirements_without_candidates > 0
-            else "candidate_evidence_gaps_or_linkage_unknown" if coverage_targets and requirements_without_candidates > 0
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
