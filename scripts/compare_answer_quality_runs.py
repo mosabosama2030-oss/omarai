@@ -106,6 +106,14 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
         1 for r in results
         if r.get("provider_reported_model_cost_status") == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
     )
+    reconciled_request_costs = [
+        float(value)
+        for record in results
+        if record.get("request_cost_status") == "RECONCILED_COMPLETE_REQUEST_COST"
+        and (value := _finite_nonnegative(record.get("request_cost_usd"))) is not None
+    ]
+    complete_request_cost_count = len(reconciled_request_costs)
+    request_cost_complete = complete_request_cost_count == len(results)
     return {
         "case_count": len(results),
         "transport_success_rate": _rate(len(transport_ok), len(results)),
@@ -138,10 +146,19 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
                 if costs
                 else "NOT_MEASURED_NO_PROVIDER_COST_REPORTED"
             ),
-            "complete_request_cost_usd": None,
-            "complete_request_cost_status": (
-                "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED"
+            "complete_request_cost_usd": (
+                round(sum(reconciled_request_costs), 10) if request_cost_complete else None
             ),
+            "complete_request_cost_status": (
+                "RECONCILED_COMPLETE_REQUEST_COST"
+                if request_cost_complete
+                else (
+                    "PARTIAL_EXTERNAL_COST_RECONCILIATION"
+                    if complete_request_cost_count
+                    else "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED"
+                )
+            ),
+            "complete_request_cost_case_count": complete_request_cost_count,
         },
     }
 
@@ -264,7 +281,24 @@ def compare_runs(
     cost_before = before_runtime["provider_reported_model_cost"]["reported_sum_usd"]
     cost_after = after_runtime["provider_reported_model_cost"]["reported_sum_usd"]
     cost_delta = round(cost_after - cost_before, 10) if cost_before is not None and cost_after is not None else None
+    request_cost_before = before_runtime["provider_reported_model_cost"]["complete_request_cost_usd"]
+    request_cost_after = after_runtime["provider_reported_model_cost"]["complete_request_cost_usd"]
+    request_cost_delta = (
+        round(request_cost_after - request_cost_before, 10)
+        if request_cost_before is not None and request_cost_after is not None
+        else None
+    )
     runtime_deltas = {
+        "complete_request_cost_usd": {
+            "baseline": request_cost_before,
+            "candidate": request_cost_after,
+            "delta": request_cost_delta,
+            "status": (
+                "COMPARED"
+                if request_cost_before is not None and request_cost_after is not None
+                else "NOT_MEASURED_OR_INCOMPLETE_RECONCILIATION"
+            ),
+        },
         "transport_success_rate": {
             "baseline": before_runtime["transport_success_rate"]["score"],
             "candidate": after_runtime["transport_success_rate"]["score"],
@@ -318,6 +352,9 @@ def compare_runs(
     for label, run in (("baseline", baseline), ("candidate", candidate)):
         if not isinstance(run.get("build_sha"), str) or not sha_re.fullmatch(run["build_sha"]):
             comparison["acceptance_blockers"].append(f"{label}_build_sha_missing_or_invalid")
+    for label, metrics in (("baseline", before_runtime), ("candidate", after_runtime)):
+        if metrics["provider_reported_model_cost"]["complete_request_cost_status"] != "RECONCILED_COMPLETE_REQUEST_COST":
+            comparison["acceptance_blockers"].append(f"{label}_complete_request_cost_missing_or_partial")
     if baseline_reviews is None and candidate_reviews is None:
         comparison["acceptance_blockers"].append("human_review_files_missing")
     elif baseline_reviews is None or candidate_reviews is None or corpus is None:
@@ -326,6 +363,14 @@ def compare_runs(
         comparison["quality_comparison"] = review_comparison(
             baseline_reviews, candidate_reviews, corpus
         )
+        unscored_quality = [
+            name for name, metric in comparison["quality_comparison"]["metrics"].items()
+            if metric["status"] != "COMPARED"
+        ]
+        if unscored_quality:
+            comparison["acceptance_blockers"].append(
+                "required_quality_metrics_unscored:" + ",".join(unscored_quality)
+            )
     if not comparison["acceptance_blockers"]:
         comparison["acceptance_status"] = "COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES"
     else:
