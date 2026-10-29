@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001286 إلى SRC-F725E90B2A-L002085
+- النطاق: SRC-F725E90B2A-L001285 إلى SRC-F725E90B2A-L002084
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001285](../../tests/test_web_agent.py#L1285) | 1285 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": len(sources)}],"` | — |
 | [SRC-F725E90B2A-L001286](../../tests/test_web_agent.py#L1286) | 1286 | `"            \"unique_sources\": len(sources),"` | — |
 | [SRC-F725E90B2A-L001287](../../tests/test_web_agent.py#L1287) | 1287 | `"            \"pages_fetched\": len(sources),"` | — |
 | [SRC-F725E90B2A-L001288](../../tests/test_web_agent.py#L1288) | 1288 | `"            \"providers_used\": [\"test_provider\"],"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002082](../../tests/test_web_agent.py#L2082) | 2082 | `""` | — |
 | [SRC-F725E90B2A-L002083](../../tests/test_web_agent.py#L2083) | 2083 | `""` | — |
 | [SRC-F725E90B2A-L002084](../../tests/test_web_agent.py#L2084) | 2084 | `"def test_frontend_review_status_matches_api_contract():"` | — |
-| [SRC-F725E90B2A-L002085](../../tests/test_web_agent.py#L2085) | 2085 | `"    html = (Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |

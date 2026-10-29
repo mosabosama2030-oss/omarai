@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000935 إلى SRC-63610B9E85-L000078
+- النطاق: SRC-90FAA34ADE-L000934 إلى SRC-63610B9E85-L000077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000934](../../tests/fixtures/answer_quality_cases.json#L934) | 934 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000935](../../tests/fixtures/answer_quality_cases.json#L935) | 935 | `"        \"Marks the prospect fully verified from one directory entry\","` | — |
 | [SRC-90FAA34ADE-L000936](../../tests/fixtures/answer_quality_cases.json#L936) | 936 | `"        \"Infers purchase intent solely from business category\""` | — |
 | [SRC-90FAA34ADE-L000937](../../tests/fixtures/answer_quality_cases.json#L937) | 937 | `"      ],"` | — |
@@ -842,4 +843,3 @@
 | [SRC-63610B9E85-L000075](../../tests/test_agentic_retrieval.py#L75) | 75 | `"            \"url\": \"https://example.com/price\","` | — |
 | [SRC-63610B9E85-L000076](../../tests/test_agentic_retrieval.py#L76) | 76 | `"            \"snippet\": \"Solar battery price: 100 EGP.\","` | — |
 | [SRC-63610B9E85-L000077](../../tests/test_agentic_retrieval.py#L77) | 77 | `"            \"provider\": \"fixture_search\","` | — |
-| [SRC-63610B9E85-L000078](../../tests/test_agentic_retrieval.py#L78) | 78 | `"            \"provider_rank\": 1,"` | — |

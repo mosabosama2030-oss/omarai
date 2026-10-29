@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003686 إلى SRC-DE7EABE998-L000458
+- النطاق: SRC-F725E90B2A-L003685 إلى SRC-DE7EABE998-L000457
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003685](../../tests/test_web_agent.py#L3685) | 3685 | `"    report = result[\"search_report\"]"` | — |
 | [SRC-F725E90B2A-L003686](../../tests/test_web_agent.py#L3686) | 3686 | `"    repair_guardrails = report[\"source_guardrails\"][\"criterion_gap_repair\"]"` | — |
 | [SRC-F725E90B2A-L003687](../../tests/test_web_agent.py#L3687) | 3687 | `""` | — |
 | [SRC-F725E90B2A-L003688](../../tests/test_web_agent.py#L3688) | 3688 | `"    assert len(collect_calls) >= 2"` | — |
@@ -833,4 +834,3 @@
 | [SRC-DE7EABE998-L000455](../../web/agent.html#L455) | 455 | `"async function checkHealth(){"` | — |
 | [SRC-DE7EABE998-L000456](../../web/agent.html#L456) | 456 | `" try{"` | — |
 | [SRC-DE7EABE998-L000457](../../web/agent.html#L457) | 457 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
-| [SRC-DE7EABE998-L000458](../../web/agent.html#L458) | 458 | `"  const configured=[];"` | — |

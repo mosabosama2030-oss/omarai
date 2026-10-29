@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000638 إلى SRC-E599346ABE-L001437
+- النطاق: SRC-E599346ABE-L000637 إلى SRC-E599346ABE-L001436
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000637](../generate_index.py#L637) | 637 | `"    failures: list[str] = []"` | — |
 | [SRC-E599346ABE-L000638](../generate_index.py#L638) | 638 | `"    seen_ids: set[str] = set()"` | — |
 | [SRC-E599346ABE-L000639](../generate_index.py#L639) | 639 | `"    actual_lines: dict[str, list[int]] = {file: [] for file in eligible_files}"` | — |
 | [SRC-E599346ABE-L000640](../generate_index.py#L640) | 640 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001434](../generate_index.py#L1434) | 1434 | `"        )"` | — |
 | [SRC-E599346ABE-L001435](../generate_index.py#L1435) | 1435 | `"    lines.extend("` | — |
 | [SRC-E599346ABE-L001436](../generate_index.py#L1436) | 1436 | `"        ["` | — |
-| [SRC-E599346ABE-L001437](../generate_index.py#L1437) | 1437 | `"            \"\","` | — |
