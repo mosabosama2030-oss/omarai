@@ -251,16 +251,18 @@ def test_response_metrics_separates_tool_status_from_http_success():
             "search_report": {
                 "search_outcome": "attempted_with_usable_sources",
                 "pipeline_completion_status": "completed",
+                "model_calls": [{
+                    "requested_model": "test/model",
+                    "provider_usage": {
+                        "prompt_tokens": 10,
+                        "completion_tokens": 20,
+                        "total_tokens": 30,
+                        "cost_usd": 0.0008,
+                    },
+                }],
             },
+            "model_calls": [],
             "sources": [{"url": "https://example.org"}],
-            "model_calls": [{
-                "provider_usage": {
-                    "prompt_tokens": 10,
-                    "completion_tokens": 20,
-                    "total_tokens": 30,
-                    "cost_usd": 0.0008,
-                }
-            }],
         },
         expected_strategy="web_search",
         transport_ok=True,
