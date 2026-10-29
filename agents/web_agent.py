@@ -4477,6 +4477,7 @@ class WebAgent:
                     str(result.get("answer") or ""),
                     safe_sources,
                     integrity if isinstance(integrity, dict) else {},
+                    question_context=question,
                 )
                 result["claim_evidence_status"] = "sentence_level_trace_only"
                 if isinstance(result.get("search_report"), dict):
