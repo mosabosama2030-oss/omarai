@@ -198,3 +198,18 @@ def test_answer_integrity_exposes_requirement_evidence_separately_from_word_over
     assert result["semantic_verification"] is False
     assert result["requirements_without_candidate_evidence_count"] == 2
     assert result["target_coverage"][0]["evidence"]["status"] == "candidate_evidence_found_not_verified"
+
+
+def test_general_compound_factual_question_creates_one_requirement_per_aspect() -> None:
+    question = "اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة"
+    targets = extract_question_coverage_targets(question)
+    assert targets == ["العاصمة", "عدد السكان"]
+
+
+def test_general_compound_factual_fallback_plan_keeps_separate_requirement_queries() -> None:
+    question = "اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة"
+    plan = fallback_plan(question)
+    targets = [item["target"] for item in plan["requirement_queries"]]
+    assert targets == ["العاصمة", "عدد السكان"]
+    assert all(item["query"] in plan["queries"] for item in plan["requirement_queries"])
+    assert len(plan["queries"]) <= MAX_PLAN_QUERIES
