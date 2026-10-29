@@ -110,6 +110,7 @@ def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):
             "sources": [],
         }
 
+    monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "a" * 40)
     monkeypatch.setattr(mod, "post_agent", fake_post)
     out = tmp_path / "results.json"
     rc = mod.main(
@@ -131,6 +132,8 @@ def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):
     assert payload["results"][0]["status"] == "NOT_TESTED"
     assert payload["results"][0]["evidence_fixture_injected"] is False
     assert payload["results"][0]["transport_ok"] is True
+    assert payload["build_sha"] == "a" * 40
+    assert payload["build_sha_verification"] == "confirmed_by_api_health"
 
 
 def test_validate_base_url_rejects_non_loopback_http():
@@ -211,6 +214,7 @@ def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):
     def fake_post(base_url, question, timeout, token):
         return 0, {"error": "URLError", "detail": "connection refused"}
 
+    monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "b" * 40)
     monkeypatch.setattr(mod, "post_agent", fake_post)
     out = tmp_path / "results.json"
     rc = mod.main(
@@ -307,3 +311,63 @@ def test_request_cost_ledger_rejects_unverifiable_values(tmp_path, ledger, allow
     path.write_text(json.dumps(ledger), encoding="utf-8")
     with pytest.raises(ValueError, match=message):
         mod._load_request_cost_ledger(path, allowed_ids)
+
+
+def test_live_refuses_build_sha_mismatch_before_posting(monkeypatch, capsys):
+    mod = _load_runner()
+    calls = []
+
+    def fake_post(base_url, question, timeout, token):
+        calls.append(question)
+        return 200, {"answer": "must not run"}
+
+    monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "a" * 40)
+    monkeypatch.setattr(mod, "post_agent", fake_post)
+    rc = mod.run_live(
+        CORPUS, "http://127.0.0.1:8765", "AQ-001", 1, 1.0, 0.0, None,
+        build_sha="b" * 40,
+    )
+    assert rc == 2
+    assert calls == []
+    assert "Build SHA mismatch" in capsys.readouterr().err
+
+
+def test_live_refuses_unknown_health_build_sha_before_posting(monkeypatch, capsys):
+    mod = _load_runner()
+    calls = []
+
+    def fake_post(base_url, question, timeout, token):
+        calls.append(question)
+        return 200, {"answer": "must not run"}
+
+    def unknown_sha(base_url, timeout, token=None):
+        raise ValueError("/api/health build.sha is missing or not a full 40-character SHA")
+
+    monkeypatch.setattr(mod, "get_verified_build_sha", unknown_sha)
+    monkeypatch.setattr(mod, "post_agent", fake_post)
+    rc = mod.run_live(
+        CORPUS, "http://127.0.0.1:8765", "AQ-001", 1, 1.0, 0.0, None,
+    )
+    assert rc == 2
+    assert calls == []
+    assert "Unverified deployed build" in capsys.readouterr().err
+
+
+def test_get_verified_build_sha_requires_full_api_health_identity(monkeypatch):
+    mod = _load_runner()
+    import json
+
+    class FakeResponse:
+        status = 200
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, traceback):
+            return False
+
+        def read(self, limit):
+            return json.dumps({"ok": True, "build": {"sha": "C" * 40}}).encode("utf-8")
+
+    monkeypatch.setattr(mod._NO_REDIRECT_OPENER, "open", lambda request, timeout: FakeResponse())
+    assert mod.get_verified_build_sha("http://127.0.0.1:8765", 1.0) == "c" * 40
