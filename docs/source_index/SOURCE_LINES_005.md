@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000585 إلى SRC-3AA6165B18-L000187
+- النطاق: SRC-59CF4B7DE8-L000583 إلى SRC-3AA6165B18-L000185
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000583](../../agents/research.py#L583) | 583 | `"            if not isinstance(source, dict) or not source.get(\"url\"):"` | — |
+| [SRC-59CF4B7DE8-L000584](../../agents/research.py#L584) | 584 | `"                continue"` | — |
 | [SRC-59CF4B7DE8-L000585](../../agents/research.py#L585) | 585 | `"            url = _canonical_result_url(str(source[\"url\"]))"` | — |
 | [SRC-59CF4B7DE8-L000586](../../agents/research.py#L586) | 586 | `"            if not url.startswith((\"https://\", \"http://\")):"` | — |
 | [SRC-59CF4B7DE8-L000587](../../agents/research.py#L587) | 587 | `"                continue"` | — |
@@ -832,5 +834,3 @@
 | [SRC-3AA6165B18-L000183](../../agents/research_guardrails.py#L183) | 183 | `"        return any(_normalized(term) in text for term in terms)"` | — |
 | [SRC-3AA6165B18-L000184](../../agents/research_guardrails.py#L184) | 184 | `"    if has_term(_PROMOTION_TERMS):"` | — |
 | [SRC-3AA6165B18-L000185](../../agents/research_guardrails.py#L185) | 185 | `"        label = \"promotional_or_commercial\""` | — |
-| [SRC-3AA6165B18-L000186](../../agents/research_guardrails.py#L186) | 186 | `"        basis = \"commercial language detected\""` | — |
-| [SRC-3AA6165B18-L000187](../../agents/research_guardrails.py#L187) | 187 | `"    elif has_term(_PERSONAL_EXPERIENCE_TERMS):"` | — |

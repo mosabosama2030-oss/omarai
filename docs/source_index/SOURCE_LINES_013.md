@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003582 إلى SRC-1AE03B9EC3-L004381
+- النطاق: SRC-1AE03B9EC3-L003580 إلى SRC-1AE03B9EC3-L004379
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003580](../../agents/web_agent.py#L3580) | 3580 | `"            evidence = _clean_text(evidence, 2400)"` | — |
+| [SRC-1AE03B9EC3-L003581](../../agents/web_agent.py#L3581) | 3581 | `"            providers = \", \".join(source.get(\"providers\", [])) or \"غير محدد\""` | — |
 | [SRC-1AE03B9EC3-L003582](../../agents/web_agent.py#L3582) | 3582 | `"            queries = \" \| \".join(source.get(\"queries\", [])[:3]) or \"غير محدد\""` | — |
 | [SRC-1AE03B9EC3-L003583](../../agents/web_agent.py#L3583) | 3583 | `"            source_blocks.append("` | — |
 | [SRC-1AE03B9EC3-L003584](../../agents/web_agent.py#L3584) | 3584 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L004377](../../agents/web_agent.py#L4377) | 4377 | `"                    fulfillment_status = \"lexical_signals_found_not_semantically_verified\""` | — |
 | [SRC-1AE03B9EC3-L004378](../../agents/web_agent.py#L4378) | 4378 | `"                else:"` | — |
 | [SRC-1AE03B9EC3-L004379](../../agents/web_agent.py#L4379) | 4379 | `"                    fulfillment_status = \"not_machine_assessed_no_explicit_targets_detected\""` | — |
-| [SRC-1AE03B9EC3-L004380](../../agents/web_agent.py#L4380) | 4380 | `"                coverage[\"task_fulfillment_status\"] = fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L004381](../../agents/web_agent.py#L4381) | 4381 | `"                result[\"answer_coverage\"] = coverage"` | — |

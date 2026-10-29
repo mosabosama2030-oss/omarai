@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001982 إلى SRC-1AE03B9EC3-L002781
+- النطاق: SRC-1AE03B9EC3-L001980 إلى SRC-1AE03B9EC3-L002779
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001980](../../agents/web_agent.py#L1980) | 1980 | `"                        })"` | — |
+| [SRC-1AE03B9EC3-L001981](../../agents/web_agent.py#L1981) | 1981 | `"                else:"` | — |
 | [SRC-1AE03B9EC3-L001982](../../agents/web_agent.py#L1982) | 1982 | `"                    warnings.append(f\"Bluesky public search unavailable (HTTP {response.status_code})\")"` | — |
 | [SRC-1AE03B9EC3-L001983](../../agents/web_agent.py#L1983) | 1983 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
 | [SRC-1AE03B9EC3-L001984](../../agents/web_agent.py#L1984) | 1984 | `"                warnings.append(\"Bluesky public search unavailable for this request\")"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L002777](../../agents/web_agent.py#L2777) | 2777 | `"                            source[\"page_fetch_status\"] = \"no_text_extracted\""` | — |
 | [SRC-1AE03B9EC3-L002778](../../agents/web_agent.py#L2778) | 2778 | `"                        if error_class:"` | — |
 | [SRC-1AE03B9EC3-L002779](../../agents/web_agent.py#L2779) | 2779 | `"                            source[\"page_fetch_error_class\"] = str(error_class)[:80]"` | — |
-| [SRC-1AE03B9EC3-L002780](../../agents/web_agent.py#L2780) | 2780 | `"                        host = urllib.parse.urlparse(source.get(\"url\", \"\")).hostname or \"المصدر\""` | — |
-| [SRC-1AE03B9EC3-L002781](../../agents/web_agent.py#L2781) | 2781 | `"                        if source[\"page_fetch_status\"] in {\"no_text_extracted\", \"empty_content\"}:"` | — |

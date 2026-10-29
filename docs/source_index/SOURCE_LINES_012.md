@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002782 إلى SRC-1AE03B9EC3-L003581
+- النطاق: SRC-1AE03B9EC3-L002780 إلى SRC-1AE03B9EC3-L003579
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002780](../../agents/web_agent.py#L2780) | 2780 | `"                        host = urllib.parse.urlparse(source.get(\"url\", \"\")).hostname or \"المصدر\""` | — |
+| [SRC-1AE03B9EC3-L002781](../../agents/web_agent.py#L2781) | 2781 | `"                        if source[\"page_fetch_status\"] in {\"no_text_extracted\", \"empty_content\"}:"` | — |
 | [SRC-1AE03B9EC3-L002782](../../agents/web_agent.py#L2782) | 2782 | `"                            warnings.append("` | — |
 | [SRC-1AE03B9EC3-L002783](../../agents/web_agent.py#L2783) | 2783 | `"                                f\"لم يمكن استخراج نص من {host}؛ جُلبت الصفحة أو جرت محاولة قراءتها لكن قد تكون ديناميكية أو محجوبة.\""` | — |
 | [SRC-1AE03B9EC3-L002784](../../agents/web_agent.py#L2784) | 2784 | `"                            )"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L003577](../../agents/web_agent.py#L3577) | 3577 | `"                or source.get(\"snippet\")"` | — |
 | [SRC-1AE03B9EC3-L003578](../../agents/web_agent.py#L3578) | 3578 | `"                or \"لا يتوفر مقتطف نصي.\""` | — |
 | [SRC-1AE03B9EC3-L003579](../../agents/web_agent.py#L3579) | 3579 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003580](../../agents/web_agent.py#L3580) | 3580 | `"            evidence = _clean_text(evidence, 2400)"` | — |
-| [SRC-1AE03B9EC3-L003581](../../agents/web_agent.py#L3581) | 3581 | `"            providers = \", \".join(source.get(\"providers\", [])) or \"غير محدد\""` | — |

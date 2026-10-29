@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-2D53795445-L000104
+- النطاق: SRC-138992B1FC-L000325 إلى SRC-2D53795445-L000102
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -329,255 +329,257 @@
 | [SRC-01273BA196-L000019](../../agents/aspect_planning.py#L19) | 19 | `"    flags=re.IGNORECASE,"` | — |
 | [SRC-01273BA196-L000020](../../agents/aspect_planning.py#L20) | 20 | `")"` | — |
 | [SRC-01273BA196-L000021](../../agents/aspect_planning.py#L21) | 21 | `"_DIMENSION_GROUPS = ("` | — |
-| [SRC-01273BA196-L000022](../../agents/aspect_planning.py#L22) | 22 | `"    (\"السعر\", (\"السعر\", \"سعر\", \"الأسعار\", \"الاسعار\", \"التكلفة\", \"التكلفه\", \"price\", \"cost\", \"pricing\")),"` | — |
-| [SRC-01273BA196-L000023](../../agents/aspect_planning.py#L23) | 23 | `"    (\"البطارية\", (\"البطارية\", \"البطاريه\", \"البطاريات\", \"battery\", \"batteries\")),"` | — |
-| [SRC-01273BA196-L000024](../../agents/aspect_planning.py#L24) | 24 | `"    (\"الشحن\", (\"الشحن\", \"charging\", \"charge time\")),"` | — |
-| [SRC-01273BA196-L000025](../../agents/aspect_planning.py#L25) | 25 | `"    (\"الضمان\", (\"الضمان\", \"ضمان\", \"warranty\")),"` | — |
-| [SRC-01273BA196-L000026](../../agents/aspect_planning.py#L26) | 26 | `"    (\"الصيانة\", (\"الصيانة\", \"الصيانه\", \"الإصلاح\", \"الاصلاح\", \"maintenance\", \"repair\")),"` | — |
-| [SRC-01273BA196-L000027](../../agents/aspect_planning.py#L27) | 27 | `"    (\"الأمان\", (\"الأمان\", \"الامان\", \"safety\", \"security\")),"` | — |
-| [SRC-01273BA196-L000028](../../agents/aspect_planning.py#L28) | 28 | `"    (\"الكاميرا\", (\"الكاميرا\", \"كاميرا\", \"camera\")),"` | — |
-| [SRC-01273BA196-L000029](../../agents/aspect_planning.py#L29) | 29 | `"    (\"الأداء\", (\"الأداء\", \"الاداء\", \"performance\")),"` | — |
-| [SRC-01273BA196-L000030](../../agents/aspect_planning.py#L30) | 30 | `"    (\"المميزات\", (\"المميزات\", \"المزايا\", \"features\", \"pros\")),"` | — |
-| [SRC-01273BA196-L000031](../../agents/aspect_planning.py#L31) | 31 | `"    (\"العيوب\", (\"العيوب\", \"drawbacks\", \"cons\")),"` | — |
-| [SRC-01273BA196-L000032](../../agents/aspect_planning.py#L32) | 32 | `"    (\"المراجعات\", (\"المراجعات\", \"الآراء\", \"الاراء\", \"reviews\", \"opinions\")),"` | — |
-| [SRC-01273BA196-L000033](../../agents/aspect_planning.py#L33) | 33 | `"    (\"الخصوصية\", (\"الخصوصية\", \"privacy\")),"` | — |
-| [SRC-01273BA196-L000034](../../agents/aspect_planning.py#L34) | 34 | `"    (\"الاعتمادية\", (\"الاعتمادية\", \"الموثوقية\", \"reliability\")),"` | — |
-| [SRC-01273BA196-L000035](../../agents/aspect_planning.py#L35) | 35 | `"    (\"الدعم\", (\"الدعم\", \"support\")),"` | — |
-| [SRC-01273BA196-L000036](../../agents/aspect_planning.py#L36) | 36 | `"    (\"السرعة\", (\"السرعة\", \"speed\")),"` | — |
-| [SRC-01273BA196-L000037](../../agents/aspect_planning.py#L37) | 37 | `"    (\"الجودة\", (\"الجودة\", \"الجوده\", \"quality\")),"` | — |
-| [SRC-01273BA196-L000038](../../agents/aspect_planning.py#L38) | 38 | `"    (\"التوفر\", (\"التوفر\", \"التوافر\", \"availability\")),"` | — |
-| [SRC-01273BA196-L000039](../../agents/aspect_planning.py#L39) | 39 | `"    (\"المدى\", (\"المدى\", \"range\")),"` | — |
-| [SRC-01273BA196-L000040](../../agents/aspect_planning.py#L40) | 40 | `")"` | — |
-| [SRC-01273BA196-L000041](../../agents/aspect_planning.py#L41) | 41 | `"_COMPOUND_CONNECTOR_RE = re.compile("` | — |
-| [SRC-01273BA196-L000042](../../agents/aspect_planning.py#L42) | 42 | `"    r\"(?:بالإضافة\\s+إلى\|بالاضافة\\s+الى\|إلى\\s+جانب\|الى\\s+جانب\|\""` | — |
-| [SRC-01273BA196-L000043](../../agents/aspect_planning.py#L43) | 43 | `"    r\"فضلًا\\s+عن\|فضلا\\s+عن\|بجانب\|as\\s+well\\s+as\|in\\s+addition\\s+to\|\""` | — |
-| [SRC-01273BA196-L000044](../../agents/aspect_planning.py#L44) | 44 | `"    r\"along\\s+with\|however\|whereas)\","` | — |
-| [SRC-01273BA196-L000045](../../agents/aspect_planning.py#L45) | 45 | `"    flags=re.IGNORECASE,"` | — |
-| [SRC-01273BA196-L000046](../../agents/aspect_planning.py#L46) | 46 | `")"` | — |
-| [SRC-01273BA196-L000047](../../agents/aspect_planning.py#L47) | 47 | `""` | — |
-| [SRC-01273BA196-L000048](../../agents/aspect_planning.py#L48) | 48 | `""` | — |
-| [SRC-01273BA196-L000049](../../agents/aspect_planning.py#L49) | 49 | `"def _normalize_space(value: str) -> str:"` | — |
-| [SRC-01273BA196-L000050](../../agents/aspect_planning.py#L50) | 50 | `"    return re.sub(r\"\\s+\", \" \", (value or \"\")).strip()"` | — |
-| [SRC-01273BA196-L000051](../../agents/aspect_planning.py#L51) | 51 | `""` | — |
-| [SRC-01273BA196-L000052](../../agents/aspect_planning.py#L52) | 52 | `""` | — |
-| [SRC-01273BA196-L000053](../../agents/aspect_planning.py#L53) | 53 | `"def _normalize_key(value: str) -> str:"` | — |
-| [SRC-01273BA196-L000054](../../agents/aspect_planning.py#L54) | 54 | `"    text = _normalize_space(value).casefold()"` | — |
-| [SRC-01273BA196-L000055](../../agents/aspect_planning.py#L55) | 55 | `"    text = text.translate(str.maketrans({\"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ة\": \"ه\", \"ى\": \"ي\"}))"` | — |
-| [SRC-01273BA196-L000056](../../agents/aspect_planning.py#L56) | 56 | `"    return text"` | — |
-| [SRC-01273BA196-L000057](../../agents/aspect_planning.py#L57) | 57 | `""` | — |
-| [SRC-01273BA196-L000058](../../agents/aspect_planning.py#L58) | 58 | `""` | — |
-| [SRC-01273BA196-L000059](../../agents/aspect_planning.py#L59) | 59 | `"def extract_aspects(question: str) -> list[str]:"` | — |
-| [SRC-01273BA196-L000060](../../agents/aspect_planning.py#L60) | 60 | `"    if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-01273BA196-L000061](../../agents/aspect_planning.py#L61) | 61 | `"        return []"` | — |
-| [SRC-01273BA196-L000062](../../agents/aspect_planning.py#L62) | 62 | `"    text = question.strip()[:4000]"` | — |
-| [SRC-01273BA196-L000063](../../agents/aspect_planning.py#L63) | 63 | `"    match = _ASPECT_MARKER_RE.search(text)"` | — |
-| [SRC-01273BA196-L000064](../../agents/aspect_planning.py#L64) | 64 | `"    pieces: list[str] = []"` | — |
-| [SRC-01273BA196-L000065](../../agents/aspect_planning.py#L65) | 65 | `"    if match:"` | — |
-| [SRC-01273BA196-L000066](../../agents/aspect_planning.py#L66) | 66 | `"        raw = match.group(1)"` | — |
-| [SRC-01273BA196-L000067](../../agents/aspect_planning.py#L67) | 67 | `"        raw = re.split("` | — |
-| [SRC-01273BA196-L000068](../../agents/aspect_planning.py#L68) | 68 | `"            r\"(?:،\|,\|؛\|;)\\s*(?:و?اذكر\|و?وضح\|بيّن\|اشرح\|and\\s+(?:explain\|note\|discuss))\\b\","` | — |
-| [SRC-01273BA196-L000069](../../agents/aspect_planning.py#L69) | 69 | `"            raw, maxsplit=1, flags=re.IGNORECASE,"` | — |
-| [SRC-01273BA196-L000070](../../agents/aspect_planning.py#L70) | 70 | `"        )[0]"` | — |
-| [SRC-01273BA196-L000071](../../agents/aspect_planning.py#L71) | 71 | `"        pieces = re.split("` | — |
-| [SRC-01273BA196-L000072](../../agents/aspect_planning.py#L72) | 72 | `"            r\"\\s*(?:،\|,\|؛\|;\|/)\\s*\|\\s+\\band\\b\\s+\|\\s+\\bas well as\\b\\s+\|\""` | — |
-| [SRC-01273BA196-L000073](../../agents/aspect_planning.py#L73) | 73 | `"            r\"\\s+و(?=ال\|[ء-ي])\|\\s+(?:بالإضافة\\s+إلى\|بالاضافة\\s+الى\|\""` | — |
-| [SRC-01273BA196-L000074](../../agents/aspect_planning.py#L74) | 74 | `"            r\"إلى\\s+جانب\|الى\\s+جانب\|فضلًا\\s+عن\|فضلا\\s+عن\|بجانب\|\""` | — |
-| [SRC-01273BA196-L000075](../../agents/aspect_planning.py#L75) | 75 | `"            r\"in\\s+addition\\s+to\|along\\s+with)\\s+\","` | — |
-| [SRC-01273BA196-L000076](../../agents/aspect_planning.py#L76) | 76 | `"            raw, flags=re.IGNORECASE,"` | — |
-| [SRC-01273BA196-L000077](../../agents/aspect_planning.py#L77) | 77 | `"        )"` | — |
-| [SRC-01273BA196-L000078](../../agents/aspect_planning.py#L78) | 78 | `"    else:"` | — |
-| [SRC-01273BA196-L000079](../../agents/aspect_planning.py#L79) | 79 | `"        question_parts = ["` | — |
-| [SRC-01273BA196-L000080](../../agents/aspect_planning.py#L80) | 80 | `"            part.strip(\" \\t\\r\\n-•\")"` | — |
-| [SRC-01273BA196-L000081](../../agents/aspect_planning.py#L81) | 81 | `"            for part in re.split(r\"[؟?]+\", text)"` | — |
-| [SRC-01273BA196-L000082](../../agents/aspect_planning.py#L82) | 82 | `"            if len(part.strip(\" \\t\\r\\n-•\")) >= 4"` | — |
-| [SRC-01273BA196-L000083](../../agents/aspect_planning.py#L83) | 83 | `"        ]"` | — |
-| [SRC-01273BA196-L000084](../../agents/aspect_planning.py#L84) | 84 | `"        if len(question_parts) > 1:"` | — |
-| [SRC-01273BA196-L000085](../../agents/aspect_planning.py#L85) | 85 | `"            pieces = question_parts"` | — |
-| [SRC-01273BA196-L000086](../../agents/aspect_planning.py#L86) | 86 | `"        else:"` | — |
-| [SRC-01273BA196-L000087](../../agents/aspect_planning.py#L87) | 87 | `"            normalized_text = _normalize_key(text)"` | — |
-| [SRC-01273BA196-L000088](../../agents/aspect_planning.py#L88) | 88 | `"            found_facets = ["` | — |
-| [SRC-01273BA196-L000089](../../agents/aspect_planning.py#L89) | 89 | `"                canonical"` | — |
-| [SRC-01273BA196-L000090](../../agents/aspect_planning.py#L90) | 90 | `"                for canonical, aliases in _DIMENSION_GROUPS"` | — |
-| [SRC-01273BA196-L000091](../../agents/aspect_planning.py#L91) | 91 | `"                if any(_normalize_key(alias) in normalized_text for alias in aliases)"` | — |
-| [SRC-01273BA196-L000092](../../agents/aspect_planning.py#L92) | 92 | `"            ]"` | — |
-| [SRC-01273BA196-L000093](../../agents/aspect_planning.py#L93) | 93 | `"            # Joined facet nouns (e.g. \"price and warranty\") are compound"` | — |
-| [SRC-01273BA196-L000094](../../agents/aspect_planning.py#L94) | 94 | `"            # requirements even when the user omits a formal comparison phrase."` | — |
-| [SRC-01273BA196-L000095](../../agents/aspect_planning.py#L95) | 95 | `"            if ("` | — |
-| [SRC-01273BA196-L000096](../../agents/aspect_planning.py#L96) | 96 | `"                len(found_facets) >= 2"` | — |
-| [SRC-01273BA196-L000097](../../agents/aspect_planning.py#L97) | 97 | `"                or _COMPARE_RE.search(text)"` | — |
-| [SRC-01273BA196-L000098](../../agents/aspect_planning.py#L98) | 98 | `"                or _COMPOUND_CONNECTOR_RE.search(text)"` | — |
-| [SRC-01273BA196-L000099](../../agents/aspect_planning.py#L99) | 99 | `"            ):"` | — |
-| [SRC-01273BA196-L000100](../../agents/aspect_planning.py#L100) | 100 | `"                pieces = found_facets[:MAX_ASPECTS]"` | — |
-| [SRC-01273BA196-L000101](../../agents/aspect_planning.py#L101) | 101 | `"    targets: list[str] = []"` | — |
-| [SRC-01273BA196-L000102](../../agents/aspect_planning.py#L102) | 102 | `"    seen: set[str] = set()"` | — |
-| [SRC-01273BA196-L000103](../../agents/aspect_planning.py#L103) | 103 | `"    for piece in pieces:"` | — |
-| [SRC-01273BA196-L000104](../../agents/aspect_planning.py#L104) | 104 | `"        target = re.sub(r\"^[\\s:،,؛;/.!?\\-–—]+\|[\\s:،,؛;/.!?\\-–—]+$\", \"\", piece).strip()"` | — |
-| [SRC-01273BA196-L000105](../../agents/aspect_planning.py#L105) | 105 | `"        target = re.sub(r\"^(?:و\\s*)\", \"\", target).strip()"` | — |
-| [SRC-01273BA196-L000106](../../agents/aspect_planning.py#L106) | 106 | `"        if len(target) < 2:"` | — |
-| [SRC-01273BA196-L000107](../../agents/aspect_planning.py#L107) | 107 | `"            continue"` | — |
-| [SRC-01273BA196-L000108](../../agents/aspect_planning.py#L108) | 108 | `"        if len(target) > 120:"` | — |
-| [SRC-01273BA196-L000109](../../agents/aspect_planning.py#L109) | 109 | `"            target = target[:120].rsplit(\" \", 1)[0].strip()"` | — |
-| [SRC-01273BA196-L000110](../../agents/aspect_planning.py#L110) | 110 | `"        key = _normalize_key(target)"` | — |
-| [SRC-01273BA196-L000111](../../agents/aspect_planning.py#L111) | 111 | `"        if key and key not in seen:"` | — |
-| [SRC-01273BA196-L000112](../../agents/aspect_planning.py#L112) | 112 | `"            seen.add(key)"` | — |
-| [SRC-01273BA196-L000113](../../agents/aspect_planning.py#L113) | 113 | `"            targets.append(target)"` | — |
-| [SRC-01273BA196-L000114](../../agents/aspect_planning.py#L114) | 114 | `"        if len(targets) >= MAX_ASPECTS:"` | — |
-| [SRC-01273BA196-L000115](../../agents/aspect_planning.py#L115) | 115 | `"            break"` | — |
-| [SRC-01273BA196-L000116](../../agents/aspect_planning.py#L116) | 116 | `"    return targets"` | — |
-| [SRC-01273BA196-L000117](../../agents/aspect_planning.py#L117) | 117 | `""` | — |
-| [SRC-01273BA196-L000118](../../agents/aspect_planning.py#L118) | 118 | `""` | — |
-| [SRC-01273BA196-L000119](../../agents/aspect_planning.py#L119) | 119 | `"def build_aspect_queries(topic_query: str, aspects: list[str], *, limit: int = MAX_PLAN_QUERIES) -> list[str]:"` | — |
-| [SRC-01273BA196-L000120](../../agents/aspect_planning.py#L120) | 120 | `"    queries: list[str] = []"` | — |
-| [SRC-01273BA196-L000121](../../agents/aspect_planning.py#L121) | 121 | `"    seen: set[str] = set()"` | — |
-| [SRC-01273BA196-L000122](../../agents/aspect_planning.py#L122) | 122 | `"    topic = _normalize_space(topic_query)"` | — |
-| [SRC-01273BA196-L000123](../../agents/aspect_planning.py#L123) | 123 | `"    if topic:"` | — |
-| [SRC-01273BA196-L000124](../../agents/aspect_planning.py#L124) | 124 | `"        queries.append(topic)"` | — |
-| [SRC-01273BA196-L000125](../../agents/aspect_planning.py#L125) | 125 | `"        seen.add(_normalize_key(topic))"` | — |
-| [SRC-01273BA196-L000126](../../agents/aspect_planning.py#L126) | 126 | `"    for aspect in aspects:"` | — |
-| [SRC-01273BA196-L000127](../../agents/aspect_planning.py#L127) | 127 | `"        aspect_clean = _normalize_space(str(aspect))"` | — |
-| [SRC-01273BA196-L000128](../../agents/aspect_planning.py#L128) | 128 | `"        if not aspect_clean:"` | — |
-| [SRC-01273BA196-L000129](../../agents/aspect_planning.py#L129) | 129 | `"            continue"` | — |
-| [SRC-01273BA196-L000130](../../agents/aspect_planning.py#L130) | 130 | `"        candidate = _normalize_space(f\"{topic} {aspect_clean}\" if topic else aspect_clean)[:240]"` | — |
-| [SRC-01273BA196-L000131](../../agents/aspect_planning.py#L131) | 131 | `"        key = _normalize_key(candidate)"` | — |
-| [SRC-01273BA196-L000132](../../agents/aspect_planning.py#L132) | 132 | `"        if key and key not in seen:"` | — |
-| [SRC-01273BA196-L000133](../../agents/aspect_planning.py#L133) | 133 | `"            seen.add(key)"` | — |
-| [SRC-01273BA196-L000134](../../agents/aspect_planning.py#L134) | 134 | `"            queries.append(candidate)"` | — |
-| [SRC-01273BA196-L000135](../../agents/aspect_planning.py#L135) | 135 | `"        if len(queries) >= max(1, min(int(limit), MAX_PLAN_QUERIES)):"` | — |
-| [SRC-01273BA196-L000136](../../agents/aspect_planning.py#L136) | 136 | `"            break"` | — |
-| [SRC-01273BA196-L000137](../../agents/aspect_planning.py#L137) | 137 | `"    return queries"` | — |
-| [SRC-01273BA196-L000138](../../agents/aspect_planning.py#L138) | 138 | `""` | — |
-| [SRC-01273BA196-L000139](../../agents/aspect_planning.py#L139) | 139 | `""` | — |
-| [SRC-01273BA196-L000140](../../agents/aspect_planning.py#L140) | 140 | `"def augment_plan_with_aspects("` | — |
-| [SRC-01273BA196-L000141](../../agents/aspect_planning.py#L141) | 141 | `"    plan: dict[str, Any], question: str, topic_query: str, *, compact_fn: Any = None,"` | — |
-| [SRC-01273BA196-L000142](../../agents/aspect_planning.py#L142) | 142 | `") -> dict[str, Any]:"` | — |
-| [SRC-01273BA196-L000143](../../agents/aspect_planning.py#L143) | 143 | `"    out = dict(plan or {})"` | — |
-| [SRC-01273BA196-L000144](../../agents/aspect_planning.py#L144) | 144 | `"    aspects = extract_aspects(question)"` | — |
-| [SRC-01273BA196-L000145](../../agents/aspect_planning.py#L145) | 145 | `"    out[\"aspects\"] = aspects"` | — |
-| [SRC-01273BA196-L000146](../../agents/aspect_planning.py#L146) | 146 | `"    base_queries = [str(q).strip() for q in (out.get(\"queries\") or []) if isinstance(q, str) and q.strip()]"` | — |
-| [SRC-01273BA196-L000147](../../agents/aspect_planning.py#L147) | 147 | `"    topic = topic_query or (base_queries[0] if base_queries else \"\")"` | — |
-| [SRC-01273BA196-L000148](../../agents/aspect_planning.py#L148) | 148 | `"    if compact_fn is not None:"` | — |
-| [SRC-01273BA196-L000149](../../agents/aspect_planning.py#L149) | 149 | `"        try:"` | — |
-| [SRC-01273BA196-L000150](../../agents/aspect_planning.py#L150) | 150 | `"            topic = compact_fn(topic) or topic"` | — |
-| [SRC-01273BA196-L000151](../../agents/aspect_planning.py#L151) | 151 | `"        except (TypeError, ValueError):"` | — |
-| [SRC-01273BA196-L000152](../../agents/aspect_planning.py#L152) | 152 | `"            pass"` | — |
-| [SRC-01273BA196-L000153](../../agents/aspect_planning.py#L153) | 153 | `"    aspect_queries = build_aspect_queries(topic, aspects)"` | — |
-| [SRC-01273BA196-L000154](../../agents/aspect_planning.py#L154) | 154 | `"    if compact_fn is not None:"` | — |
-| [SRC-01273BA196-L000155](../../agents/aspect_planning.py#L155) | 155 | `"        compacted: list[str] = []"` | — |
-| [SRC-01273BA196-L000156](../../agents/aspect_planning.py#L156) | 156 | `"        seen: set[str] = set()"` | — |
-| [SRC-01273BA196-L000157](../../agents/aspect_planning.py#L157) | 157 | `"        for q in aspect_queries + base_queries:"` | — |
-| [SRC-01273BA196-L000158](../../agents/aspect_planning.py#L158) | 158 | `"            try:"` | — |
-| [SRC-01273BA196-L000159](../../agents/aspect_planning.py#L159) | 159 | `"                cq = compact_fn(q)"` | — |
-| [SRC-01273BA196-L000160](../../agents/aspect_planning.py#L160) | 160 | `"            except (TypeError, ValueError):"` | — |
-| [SRC-01273BA196-L000161](../../agents/aspect_planning.py#L161) | 161 | `"                cq = q"` | — |
-| [SRC-01273BA196-L000162](../../agents/aspect_planning.py#L162) | 162 | `"            if not cq:"` | — |
-| [SRC-01273BA196-L000163](../../agents/aspect_planning.py#L163) | 163 | `"                continue"` | — |
-| [SRC-01273BA196-L000164](../../agents/aspect_planning.py#L164) | 164 | `"            key = _normalize_key(cq)"` | — |
-| [SRC-01273BA196-L000165](../../agents/aspect_planning.py#L165) | 165 | `"            if key not in seen:"` | — |
-| [SRC-01273BA196-L000166](../../agents/aspect_planning.py#L166) | 166 | `"                seen.add(key)"` | — |
-| [SRC-01273BA196-L000167](../../agents/aspect_planning.py#L167) | 167 | `"                compacted.append(cq)"` | — |
-| [SRC-01273BA196-L000168](../../agents/aspect_planning.py#L168) | 168 | `"            if len(compacted) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-01273BA196-L000169](../../agents/aspect_planning.py#L169) | 169 | `"                break"` | — |
-| [SRC-01273BA196-L000170](../../agents/aspect_planning.py#L170) | 170 | `"        out[\"queries\"] = compacted"` | — |
-| [SRC-01273BA196-L000171](../../agents/aspect_planning.py#L171) | 171 | `"    else:"` | — |
-| [SRC-01273BA196-L000172](../../agents/aspect_planning.py#L172) | 172 | `"        merged: list[str] = []"` | — |
-| [SRC-01273BA196-L000173](../../agents/aspect_planning.py#L173) | 173 | `"        seen_m: set[str] = set()"` | — |
-| [SRC-01273BA196-L000174](../../agents/aspect_planning.py#L174) | 174 | `"        for q in aspect_queries + base_queries:"` | — |
-| [SRC-01273BA196-L000175](../../agents/aspect_planning.py#L175) | 175 | `"            key = _normalize_key(q)"` | — |
-| [SRC-01273BA196-L000176](../../agents/aspect_planning.py#L176) | 176 | `"            if key and key not in seen_m:"` | — |
-| [SRC-01273BA196-L000177](../../agents/aspect_planning.py#L177) | 177 | `"                seen_m.add(key)"` | — |
-| [SRC-01273BA196-L000178](../../agents/aspect_planning.py#L178) | 178 | `"                merged.append(q)"` | — |
-| [SRC-01273BA196-L000179](../../agents/aspect_planning.py#L179) | 179 | `"            if len(merged) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-01273BA196-L000180](../../agents/aspect_planning.py#L180) | 180 | `"                break"` | — |
-| [SRC-01273BA196-L000181](../../agents/aspect_planning.py#L181) | 181 | `"        out[\"queries\"] = merged"` | — |
-| [SRC-01273BA196-L000182](../../agents/aspect_planning.py#L182) | 182 | `"    out[\"aspect_queries\"] = list(out.get(\"queries\") or [])"` | — |
-| [SRC-01273BA196-L000183](../../agents/aspect_planning.py#L183) | 183 | `"    return out"` | — |
-| [SRC-01273BA196-L000184](../../agents/aspect_planning.py#L184) | 184 | `""` | — |
-| [SRC-01273BA196-L000185](../../agents/aspect_planning.py#L185) | 185 | `""` | — |
-| [SRC-01273BA196-L000186](../../agents/aspect_planning.py#L186) | 186 | `"def _source_text(source: dict[str, Any]) -> str:"` | — |
-| [SRC-01273BA196-L000187](../../agents/aspect_planning.py#L187) | 187 | `"    return \" \".join(str(source.get(key) or \"\") for key in (\"title\", \"snippet\", \"page_text\"))"` | — |
-| [SRC-01273BA196-L000188](../../agents/aspect_planning.py#L188) | 188 | `""` | — |
-| [SRC-01273BA196-L000189](../../agents/aspect_planning.py#L189) | 189 | `""` | — |
-| [SRC-01273BA196-L000190](../../agents/aspect_planning.py#L190) | 190 | `"def build_evidence_ledger(aspects: list[str], sources: list[dict[str, Any]], *, min_term_len: int = 2) -> dict[str, Any]:"` | — |
-| [SRC-01273BA196-L000191](../../agents/aspect_planning.py#L191) | 191 | `"    ledger: dict[str, Any] = {\"aspects\": [], \"covered\": [], \"missing\": [], \"by_aspect\": {}}"` | — |
-| [SRC-01273BA196-L000192](../../agents/aspect_planning.py#L192) | 192 | `"    if not aspects:"` | — |
-| [SRC-01273BA196-L000193](../../agents/aspect_planning.py#L193) | 193 | `"        ledger[\"note\"] = \"no_explicit_aspects\""` | — |
-| [SRC-01273BA196-L000194](../../agents/aspect_planning.py#L194) | 194 | `"        return ledger"` | — |
-| [SRC-01273BA196-L000195](../../agents/aspect_planning.py#L195) | 195 | `"    for aspect in aspects:"` | — |
-| [SRC-01273BA196-L000196](../../agents/aspect_planning.py#L196) | 196 | `"        tokens = [t for t in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", _normalize_key(aspect)) if len(t) >= min_term_len]"` | — |
-| [SRC-01273BA196-L000197](../../agents/aspect_planning.py#L197) | 197 | `"        matches: list[dict[str, Any]] = []"` | — |
-| [SRC-01273BA196-L000198](../../agents/aspect_planning.py#L198) | 198 | `"        for source in sources or []:"` | — |
-| [SRC-01273BA196-L000199](../../agents/aspect_planning.py#L199) | 199 | `"            if not isinstance(source, dict):"` | — |
-| [SRC-01273BA196-L000200](../../agents/aspect_planning.py#L200) | 200 | `"                continue"` | — |
-| [SRC-01273BA196-L000201](../../agents/aspect_planning.py#L201) | 201 | `"            hay = _normalize_key(_source_text(source))"` | — |
-| [SRC-01273BA196-L000202](../../agents/aspect_planning.py#L202) | 202 | `"            if not hay:"` | — |
-| [SRC-01273BA196-L000203](../../agents/aspect_planning.py#L203) | 203 | `"                continue"` | — |
-| [SRC-01273BA196-L000204](../../agents/aspect_planning.py#L204) | 204 | `"            hit = sum(1 for t in tokens if t in hay)"` | — |
-| [SRC-01273BA196-L000205](../../agents/aspect_planning.py#L205) | 205 | `"            if tokens and hit >= max(1, (len(tokens) + 1) // 2):"` | — |
-| [SRC-01273BA196-L000206](../../agents/aspect_planning.py#L206) | 206 | `"                evidence_type = \"page_text\" if source.get(\"page_text\") else \"snippet\" if source.get(\"snippet\") else \"title\""` | — |
-| [SRC-01273BA196-L000207](../../agents/aspect_planning.py#L207) | 207 | `"                matches.append({"` | — |
-| [SRC-01273BA196-L000208](../../agents/aspect_planning.py#L208) | 208 | `"                    \"url\": source.get(\"url\", \"\"),"` | — |
-| [SRC-01273BA196-L000209](../../agents/aspect_planning.py#L209) | 209 | `"                    \"title\": source.get(\"title\", \"\"),"` | — |
-| [SRC-01273BA196-L000210](../../agents/aspect_planning.py#L210) | 210 | `"                    \"provider\": source.get(\"provider\") or (source.get(\"providers\") or [\"unknown\"])[0],"` | — |
-| [SRC-01273BA196-L000211](../../agents/aspect_planning.py#L211) | 211 | `"                    \"evidence_type\": evidence_type,"` | — |
-| [SRC-01273BA196-L000212](../../agents/aspect_planning.py#L212) | 212 | `"                    \"lexical_hits\": hit,"` | — |
-| [SRC-01273BA196-L000213](../../agents/aspect_planning.py#L213) | 213 | `"                    \"search_query\": source.get(\"search_query\") or ((source.get(\"queries\") or [\"\"])[0] if source.get(\"queries\") else \"\"),"` | — |
-| [SRC-01273BA196-L000214](../../agents/aspect_planning.py#L214) | 214 | `"                })"` | — |
-| [SRC-01273BA196-L000215](../../agents/aspect_planning.py#L215) | 215 | `"        entry = {\"aspect\": aspect, \"candidate_count\": len(matches), \"candidates\": matches[:5], \"has_lexical_candidate\": bool(matches)}"` | — |
-| [SRC-01273BA196-L000216](../../agents/aspect_planning.py#L216) | 216 | `"        ledger[\"by_aspect\"][aspect] = entry"` | — |
-| [SRC-01273BA196-L000217](../../agents/aspect_planning.py#L217) | 217 | `"        ledger[\"aspects\"].append(aspect)"` | — |
-| [SRC-01273BA196-L000218](../../agents/aspect_planning.py#L218) | 218 | `"        if matches:"` | — |
-| [SRC-01273BA196-L000219](../../agents/aspect_planning.py#L219) | 219 | `"            ledger[\"covered\"].append(aspect)"` | — |
-| [SRC-01273BA196-L000220](../../agents/aspect_planning.py#L220) | 220 | `"        else:"` | — |
-| [SRC-01273BA196-L000221](../../agents/aspect_planning.py#L221) | 221 | `"            ledger[\"missing\"].append(aspect)"` | — |
-| [SRC-01273BA196-L000222](../../agents/aspect_planning.py#L222) | 222 | `"    ledger[\"coverage_ratio\"] = round(len(ledger[\"covered\"]) / max(1, len(aspects)), 3)"` | — |
-| [SRC-01273BA196-L000223](../../agents/aspect_planning.py#L223) | 223 | `"    return ledger"` | — |
-| [SRC-01273BA196-L000224](../../agents/aspect_planning.py#L224) | 224 | `""` | — |
-| [SRC-01273BA196-L000225](../../agents/aspect_planning.py#L225) | 225 | `""` | — |
-| [SRC-01273BA196-L000226](../../agents/aspect_planning.py#L226) | 226 | `"def repair_queries_for_missing_aspects("` | — |
-| [SRC-01273BA196-L000227](../../agents/aspect_planning.py#L227) | 227 | `"    topic_query: str, missing_aspects: list[str], *, limit: int = 3, compact_fn: Any = None,"` | — |
-| [SRC-01273BA196-L000228](../../agents/aspect_planning.py#L228) | 228 | `") -> list[str]:"` | — |
-| [SRC-01273BA196-L000229](../../agents/aspect_planning.py#L229) | 229 | `"    topic = _normalize_space(topic_query)"` | — |
-| [SRC-01273BA196-L000230](../../agents/aspect_planning.py#L230) | 230 | `"    out: list[str] = []"` | — |
-| [SRC-01273BA196-L000231](../../agents/aspect_planning.py#L231) | 231 | `"    seen: set[str] = set()"` | — |
-| [SRC-01273BA196-L000232](../../agents/aspect_planning.py#L232) | 232 | `"    for aspect in missing_aspects:"` | — |
-| [SRC-01273BA196-L000233](../../agents/aspect_planning.py#L233) | 233 | `"        aspect_clean = _normalize_space(str(aspect))"` | — |
-| [SRC-01273BA196-L000234](../../agents/aspect_planning.py#L234) | 234 | `"        if not aspect_clean:"` | — |
-| [SRC-01273BA196-L000235](../../agents/aspect_planning.py#L235) | 235 | `"            continue"` | — |
-| [SRC-01273BA196-L000236](../../agents/aspect_planning.py#L236) | 236 | `"        raw = f\"{topic} {aspect_clean}\".strip() if topic else aspect_clean"` | — |
-| [SRC-01273BA196-L000237](../../agents/aspect_planning.py#L237) | 237 | `"        if compact_fn is not None:"` | — |
-| [SRC-01273BA196-L000238](../../agents/aspect_planning.py#L238) | 238 | `"            try:"` | — |
-| [SRC-01273BA196-L000239](../../agents/aspect_planning.py#L239) | 239 | `"                raw = compact_fn(raw) or raw"` | — |
-| [SRC-01273BA196-L000240](../../agents/aspect_planning.py#L240) | 240 | `"            except (TypeError, ValueError):"` | — |
-| [SRC-01273BA196-L000241](../../agents/aspect_planning.py#L241) | 241 | `"                pass"` | — |
-| [SRC-01273BA196-L000242](../../agents/aspect_planning.py#L242) | 242 | `"        raw = _normalize_space(raw)[:240]"` | — |
-| [SRC-01273BA196-L000243](../../agents/aspect_planning.py#L243) | 243 | `"        key = _normalize_key(raw)"` | — |
-| [SRC-01273BA196-L000244](../../agents/aspect_planning.py#L244) | 244 | `"        if raw and key not in seen:"` | — |
-| [SRC-01273BA196-L000245](../../agents/aspect_planning.py#L245) | 245 | `"            seen.add(key)"` | — |
-| [SRC-01273BA196-L000246](../../agents/aspect_planning.py#L246) | 246 | `"            out.append(raw)"` | — |
-| [SRC-01273BA196-L000247](../../agents/aspect_planning.py#L247) | 247 | `"        if len(out) >= max(1, min(int(limit), 3)):"` | — |
-| [SRC-01273BA196-L000248](../../agents/aspect_planning.py#L248) | 248 | `"            break"` | — |
-| [SRC-01273BA196-L000249](../../agents/aspect_planning.py#L249) | 249 | `"    return out"` | — |
-| [SRC-01273BA196-L000250](../../agents/aspect_planning.py#L250) | 250 | `""` | — |
-| [SRC-01273BA196-L000251](../../agents/aspect_planning.py#L251) | 251 | `""` | — |
-| [SRC-01273BA196-L000252](../../agents/aspect_planning.py#L252) | 252 | `"def arabic_aspect_diagnostics(ledger: dict[str, Any]) -> list[str]:"` | — |
-| [SRC-01273BA196-L000253](../../agents/aspect_planning.py#L253) | 253 | `"    lines: list[str] = []"` | — |
-| [SRC-01273BA196-L000254](../../agents/aspect_planning.py#L254) | 254 | `"    if not ledger or ledger.get(\"note\") == \"no_explicit_aspects\":"` | — |
-| [SRC-01273BA196-L000255](../../agents/aspect_planning.py#L255) | 255 | `"        return lines"` | — |
-| [SRC-01273BA196-L000256](../../agents/aspect_planning.py#L256) | 256 | `"    covered = ledger.get(\"covered\") or []"` | — |
-| [SRC-01273BA196-L000257](../../agents/aspect_planning.py#L257) | 257 | `"    missing = ledger.get(\"missing\") or []"` | — |
-| [SRC-01273BA196-L000258](../../agents/aspect_planning.py#L258) | 258 | `"    if covered:"` | — |
-| [SRC-01273BA196-L000259](../../agents/aspect_planning.py#L259) | 259 | `"        lines.append(\"محاور وُجد لها مرشح نصي واحد على الأقل: \" + \"، \".join(str(x) for x in covered))"` | — |
-| [SRC-01273BA196-L000260](../../agents/aspect_planning.py#L260) | 260 | `"    if missing:"` | — |
-| [SRC-01273BA196-L000261](../../agents/aspect_planning.py#L261) | 261 | `"        lines.append("` | — |
-| [SRC-01273BA196-L000262](../../agents/aspect_planning.py#L262) | 262 | `"            \"محاور بلا مرشح نصي كافٍ في النتائج الحالية: \""` | — |
-| [SRC-01273BA196-L000263](../../agents/aspect_planning.py#L263) | 263 | `"            + \"، \".join(str(x) for x in missing)"` | — |
-| [SRC-01273BA196-L000264](../../agents/aspect_planning.py#L264) | 264 | `"            + \". هذا لا ينفي وجود معلومات خارج النتائج المجلوبة.\""` | — |
-| [SRC-01273BA196-L000265](../../agents/aspect_planning.py#L265) | 265 | `"        )"` | — |
-| [SRC-01273BA196-L000266](../../agents/aspect_planning.py#L266) | 266 | `"    ratio = ledger.get(\"coverage_ratio\")"` | — |
-| [SRC-01273BA196-L000267](../../agents/aspect_planning.py#L267) | 267 | `"    if isinstance(ratio, (int, float)):"` | — |
-| [SRC-01273BA196-L000268](../../agents/aspect_planning.py#L268) | 268 | `"        lines.append(f\"نسبة تغطية المحاور لفظيًا (تقريبية): {int(ratio * 100)}٪.\")"` | — |
-| [SRC-01273BA196-L000269](../../agents/aspect_planning.py#L269) | 269 | `"    lines.append(\"تنبيه: وجود مقتطف يطابق كلمات المحور لا يثبت صحة الادعاء.\")"` | — |
-| [SRC-01273BA196-L000270](../../agents/aspect_planning.py#L270) | 270 | `"    return lines"` | — |
+| [SRC-01273BA196-L000022](../../agents/aspect_planning.py#L22) | 22 | `"    (\"العاصمة\", (\"العاصمة\", \"عاصمة\", \"العاصمه\", \"capital city\", \"capital of\", \"capital\")),"` | — |
+| [SRC-01273BA196-L000023](../../agents/aspect_planning.py#L23) | 23 | `"    (\"عدد السكان\", (\"عدد السكان\", \"عدد سكان\", \"السكان\", \"تعداد السكان\", \"التعداد السكاني\", \"population\", \"population count\", \"population size\")),"` | — |
+| [SRC-01273BA196-L000024](../../agents/aspect_planning.py#L24) | 24 | `"    (\"السعر\", (\"السعر\", \"سعر\", \"الأسعار\", \"الاسعار\", \"التكلفة\", \"التكلفه\", \"price\", \"cost\", \"pricing\")),"` | — |
+| [SRC-01273BA196-L000025](../../agents/aspect_planning.py#L25) | 25 | `"    (\"البطارية\", (\"البطارية\", \"البطاريه\", \"البطاريات\", \"battery\", \"batteries\")),"` | — |
+| [SRC-01273BA196-L000026](../../agents/aspect_planning.py#L26) | 26 | `"    (\"الشحن\", (\"الشحن\", \"charging\", \"charge time\")),"` | — |
+| [SRC-01273BA196-L000027](../../agents/aspect_planning.py#L27) | 27 | `"    (\"الضمان\", (\"الضمان\", \"ضمان\", \"warranty\")),"` | — |
+| [SRC-01273BA196-L000028](../../agents/aspect_planning.py#L28) | 28 | `"    (\"الصيانة\", (\"الصيانة\", \"الصيانه\", \"الإصلاح\", \"الاصلاح\", \"maintenance\", \"repair\")),"` | — |
+| [SRC-01273BA196-L000029](../../agents/aspect_planning.py#L29) | 29 | `"    (\"الأمان\", (\"الأمان\", \"الامان\", \"safety\", \"security\")),"` | — |
+| [SRC-01273BA196-L000030](../../agents/aspect_planning.py#L30) | 30 | `"    (\"الكاميرا\", (\"الكاميرا\", \"كاميرا\", \"camera\")),"` | — |
+| [SRC-01273BA196-L000031](../../agents/aspect_planning.py#L31) | 31 | `"    (\"الأداء\", (\"الأداء\", \"الاداء\", \"performance\")),"` | — |
+| [SRC-01273BA196-L000032](../../agents/aspect_planning.py#L32) | 32 | `"    (\"المميزات\", (\"المميزات\", \"المزايا\", \"features\", \"pros\")),"` | — |
+| [SRC-01273BA196-L000033](../../agents/aspect_planning.py#L33) | 33 | `"    (\"العيوب\", (\"العيوب\", \"drawbacks\", \"cons\")),"` | — |
+| [SRC-01273BA196-L000034](../../agents/aspect_planning.py#L34) | 34 | `"    (\"المراجعات\", (\"المراجعات\", \"الآراء\", \"الاراء\", \"reviews\", \"opinions\")),"` | — |
+| [SRC-01273BA196-L000035](../../agents/aspect_planning.py#L35) | 35 | `"    (\"الخصوصية\", (\"الخصوصية\", \"privacy\")),"` | — |
+| [SRC-01273BA196-L000036](../../agents/aspect_planning.py#L36) | 36 | `"    (\"الاعتمادية\", (\"الاعتمادية\", \"الموثوقية\", \"reliability\")),"` | — |
+| [SRC-01273BA196-L000037](../../agents/aspect_planning.py#L37) | 37 | `"    (\"الدعم\", (\"الدعم\", \"support\")),"` | — |
+| [SRC-01273BA196-L000038](../../agents/aspect_planning.py#L38) | 38 | `"    (\"السرعة\", (\"السرعة\", \"speed\")),"` | — |
+| [SRC-01273BA196-L000039](../../agents/aspect_planning.py#L39) | 39 | `"    (\"الجودة\", (\"الجودة\", \"الجوده\", \"quality\")),"` | — |
+| [SRC-01273BA196-L000040](../../agents/aspect_planning.py#L40) | 40 | `"    (\"التوفر\", (\"التوفر\", \"التوافر\", \"availability\")),"` | — |
+| [SRC-01273BA196-L000041](../../agents/aspect_planning.py#L41) | 41 | `"    (\"المدى\", (\"المدى\", \"range\")),"` | — |
+| [SRC-01273BA196-L000042](../../agents/aspect_planning.py#L42) | 42 | `")"` | — |
+| [SRC-01273BA196-L000043](../../agents/aspect_planning.py#L43) | 43 | `"_COMPOUND_CONNECTOR_RE = re.compile("` | — |
+| [SRC-01273BA196-L000044](../../agents/aspect_planning.py#L44) | 44 | `"    r\"(?:بالإضافة\\s+إلى\|بالاضافة\\s+الى\|إلى\\s+جانب\|الى\\s+جانب\|\""` | — |
+| [SRC-01273BA196-L000045](../../agents/aspect_planning.py#L45) | 45 | `"    r\"فضلًا\\s+عن\|فضلا\\s+عن\|بجانب\|as\\s+well\\s+as\|in\\s+addition\\s+to\|\""` | — |
+| [SRC-01273BA196-L000046](../../agents/aspect_planning.py#L46) | 46 | `"    r\"along\\s+with\|however\|whereas)\","` | — |
+| [SRC-01273BA196-L000047](../../agents/aspect_planning.py#L47) | 47 | `"    flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000048](../../agents/aspect_planning.py#L48) | 48 | `")"` | — |
+| [SRC-01273BA196-L000049](../../agents/aspect_planning.py#L49) | 49 | `""` | — |
+| [SRC-01273BA196-L000050](../../agents/aspect_planning.py#L50) | 50 | `""` | — |
+| [SRC-01273BA196-L000051](../../agents/aspect_planning.py#L51) | 51 | `"def _normalize_space(value: str) -> str:"` | — |
+| [SRC-01273BA196-L000052](../../agents/aspect_planning.py#L52) | 52 | `"    return re.sub(r\"\\s+\", \" \", (value or \"\")).strip()"` | — |
+| [SRC-01273BA196-L000053](../../agents/aspect_planning.py#L53) | 53 | `""` | — |
+| [SRC-01273BA196-L000054](../../agents/aspect_planning.py#L54) | 54 | `""` | — |
+| [SRC-01273BA196-L000055](../../agents/aspect_planning.py#L55) | 55 | `"def _normalize_key(value: str) -> str:"` | — |
+| [SRC-01273BA196-L000056](../../agents/aspect_planning.py#L56) | 56 | `"    text = _normalize_space(value).casefold()"` | — |
+| [SRC-01273BA196-L000057](../../agents/aspect_planning.py#L57) | 57 | `"    text = text.translate(str.maketrans({\"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ة\": \"ه\", \"ى\": \"ي\"}))"` | — |
+| [SRC-01273BA196-L000058](../../agents/aspect_planning.py#L58) | 58 | `"    return text"` | — |
+| [SRC-01273BA196-L000059](../../agents/aspect_planning.py#L59) | 59 | `""` | — |
+| [SRC-01273BA196-L000060](../../agents/aspect_planning.py#L60) | 60 | `""` | — |
+| [SRC-01273BA196-L000061](../../agents/aspect_planning.py#L61) | 61 | `"def extract_aspects(question: str) -> list[str]:"` | — |
+| [SRC-01273BA196-L000062](../../agents/aspect_planning.py#L62) | 62 | `"    if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-01273BA196-L000063](../../agents/aspect_planning.py#L63) | 63 | `"        return []"` | — |
+| [SRC-01273BA196-L000064](../../agents/aspect_planning.py#L64) | 64 | `"    text = question.strip()[:4000]"` | — |
+| [SRC-01273BA196-L000065](../../agents/aspect_planning.py#L65) | 65 | `"    match = _ASPECT_MARKER_RE.search(text)"` | — |
+| [SRC-01273BA196-L000066](../../agents/aspect_planning.py#L66) | 66 | `"    pieces: list[str] = []"` | — |
+| [SRC-01273BA196-L000067](../../agents/aspect_planning.py#L67) | 67 | `"    if match:"` | — |
+| [SRC-01273BA196-L000068](../../agents/aspect_planning.py#L68) | 68 | `"        raw = match.group(1)"` | — |
+| [SRC-01273BA196-L000069](../../agents/aspect_planning.py#L69) | 69 | `"        raw = re.split("` | — |
+| [SRC-01273BA196-L000070](../../agents/aspect_planning.py#L70) | 70 | `"            r\"(?:،\|,\|؛\|;)\\s*(?:و?اذكر\|و?وضح\|بيّن\|اشرح\|and\\s+(?:explain\|note\|discuss))\\b\","` | — |
+| [SRC-01273BA196-L000071](../../agents/aspect_planning.py#L71) | 71 | `"            raw, maxsplit=1, flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000072](../../agents/aspect_planning.py#L72) | 72 | `"        )[0]"` | — |
+| [SRC-01273BA196-L000073](../../agents/aspect_planning.py#L73) | 73 | `"        pieces = re.split("` | — |
+| [SRC-01273BA196-L000074](../../agents/aspect_planning.py#L74) | 74 | `"            r\"\\s*(?:،\|,\|؛\|;\|/)\\s*\|\\s+\\band\\b\\s+\|\\s+\\bas well as\\b\\s+\|\""` | — |
+| [SRC-01273BA196-L000075](../../agents/aspect_planning.py#L75) | 75 | `"            r\"\\s+و(?=ال\|[ء-ي])\|\\s+(?:بالإضافة\\s+إلى\|بالاضافة\\s+الى\|\""` | — |
+| [SRC-01273BA196-L000076](../../agents/aspect_planning.py#L76) | 76 | `"            r\"إلى\\s+جانب\|الى\\s+جانب\|فضلًا\\s+عن\|فضلا\\s+عن\|بجانب\|\""` | — |
+| [SRC-01273BA196-L000077](../../agents/aspect_planning.py#L77) | 77 | `"            r\"in\\s+addition\\s+to\|along\\s+with)\\s+\","` | — |
+| [SRC-01273BA196-L000078](../../agents/aspect_planning.py#L78) | 78 | `"            raw, flags=re.IGNORECASE,"` | — |
+| [SRC-01273BA196-L000079](../../agents/aspect_planning.py#L79) | 79 | `"        )"` | — |
+| [SRC-01273BA196-L000080](../../agents/aspect_planning.py#L80) | 80 | `"    else:"` | — |
+| [SRC-01273BA196-L000081](../../agents/aspect_planning.py#L81) | 81 | `"        question_parts = ["` | — |
+| [SRC-01273BA196-L000082](../../agents/aspect_planning.py#L82) | 82 | `"            part.strip(\" \\t\\r\\n-•\")"` | — |
+| [SRC-01273BA196-L000083](../../agents/aspect_planning.py#L83) | 83 | `"            for part in re.split(r\"[؟?]+\", text)"` | — |
+| [SRC-01273BA196-L000084](../../agents/aspect_planning.py#L84) | 84 | `"            if len(part.strip(\" \\t\\r\\n-•\")) >= 4"` | — |
+| [SRC-01273BA196-L000085](../../agents/aspect_planning.py#L85) | 85 | `"        ]"` | — |
+| [SRC-01273BA196-L000086](../../agents/aspect_planning.py#L86) | 86 | `"        if len(question_parts) > 1:"` | — |
+| [SRC-01273BA196-L000087](../../agents/aspect_planning.py#L87) | 87 | `"            pieces = question_parts"` | — |
+| [SRC-01273BA196-L000088](../../agents/aspect_planning.py#L88) | 88 | `"        else:"` | — |
+| [SRC-01273BA196-L000089](../../agents/aspect_planning.py#L89) | 89 | `"            normalized_text = _normalize_key(text)"` | — |
+| [SRC-01273BA196-L000090](../../agents/aspect_planning.py#L90) | 90 | `"            found_facets = ["` | — |
+| [SRC-01273BA196-L000091](../../agents/aspect_planning.py#L91) | 91 | `"                canonical"` | — |
+| [SRC-01273BA196-L000092](../../agents/aspect_planning.py#L92) | 92 | `"                for canonical, aliases in _DIMENSION_GROUPS"` | — |
+| [SRC-01273BA196-L000093](../../agents/aspect_planning.py#L93) | 93 | `"                if any(_normalize_key(alias) in normalized_text for alias in aliases)"` | — |
+| [SRC-01273BA196-L000094](../../agents/aspect_planning.py#L94) | 94 | `"            ]"` | — |
+| [SRC-01273BA196-L000095](../../agents/aspect_planning.py#L95) | 95 | `"            # Joined facet nouns (e.g. \"price and warranty\") are compound"` | — |
+| [SRC-01273BA196-L000096](../../agents/aspect_planning.py#L96) | 96 | `"            # requirements even when the user omits a formal comparison phrase."` | — |
+| [SRC-01273BA196-L000097](../../agents/aspect_planning.py#L97) | 97 | `"            if ("` | — |
+| [SRC-01273BA196-L000098](../../agents/aspect_planning.py#L98) | 98 | `"                len(found_facets) >= 2"` | — |
+| [SRC-01273BA196-L000099](../../agents/aspect_planning.py#L99) | 99 | `"                or _COMPARE_RE.search(text)"` | — |
+| [SRC-01273BA196-L000100](../../agents/aspect_planning.py#L100) | 100 | `"                or _COMPOUND_CONNECTOR_RE.search(text)"` | — |
+| [SRC-01273BA196-L000101](../../agents/aspect_planning.py#L101) | 101 | `"            ):"` | — |
+| [SRC-01273BA196-L000102](../../agents/aspect_planning.py#L102) | 102 | `"                pieces = found_facets[:MAX_ASPECTS]"` | — |
+| [SRC-01273BA196-L000103](../../agents/aspect_planning.py#L103) | 103 | `"    targets: list[str] = []"` | — |
+| [SRC-01273BA196-L000104](../../agents/aspect_planning.py#L104) | 104 | `"    seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000105](../../agents/aspect_planning.py#L105) | 105 | `"    for piece in pieces:"` | — |
+| [SRC-01273BA196-L000106](../../agents/aspect_planning.py#L106) | 106 | `"        target = re.sub(r\"^[\\s:،,؛;/.!?\\-–—]+\|[\\s:،,؛;/.!?\\-–—]+$\", \"\", piece).strip()"` | — |
+| [SRC-01273BA196-L000107](../../agents/aspect_planning.py#L107) | 107 | `"        target = re.sub(r\"^(?:و\\s*)\", \"\", target).strip()"` | — |
+| [SRC-01273BA196-L000108](../../agents/aspect_planning.py#L108) | 108 | `"        if len(target) < 2:"` | — |
+| [SRC-01273BA196-L000109](../../agents/aspect_planning.py#L109) | 109 | `"            continue"` | — |
+| [SRC-01273BA196-L000110](../../agents/aspect_planning.py#L110) | 110 | `"        if len(target) > 120:"` | — |
+| [SRC-01273BA196-L000111](../../agents/aspect_planning.py#L111) | 111 | `"            target = target[:120].rsplit(\" \", 1)[0].strip()"` | — |
+| [SRC-01273BA196-L000112](../../agents/aspect_planning.py#L112) | 112 | `"        key = _normalize_key(target)"` | — |
+| [SRC-01273BA196-L000113](../../agents/aspect_planning.py#L113) | 113 | `"        if key and key not in seen:"` | — |
+| [SRC-01273BA196-L000114](../../agents/aspect_planning.py#L114) | 114 | `"            seen.add(key)"` | — |
+| [SRC-01273BA196-L000115](../../agents/aspect_planning.py#L115) | 115 | `"            targets.append(target)"` | — |
+| [SRC-01273BA196-L000116](../../agents/aspect_planning.py#L116) | 116 | `"        if len(targets) >= MAX_ASPECTS:"` | — |
+| [SRC-01273BA196-L000117](../../agents/aspect_planning.py#L117) | 117 | `"            break"` | — |
+| [SRC-01273BA196-L000118](../../agents/aspect_planning.py#L118) | 118 | `"    return targets"` | — |
+| [SRC-01273BA196-L000119](../../agents/aspect_planning.py#L119) | 119 | `""` | — |
+| [SRC-01273BA196-L000120](../../agents/aspect_planning.py#L120) | 120 | `""` | — |
+| [SRC-01273BA196-L000121](../../agents/aspect_planning.py#L121) | 121 | `"def build_aspect_queries(topic_query: str, aspects: list[str], *, limit: int = MAX_PLAN_QUERIES) -> list[str]:"` | — |
+| [SRC-01273BA196-L000122](../../agents/aspect_planning.py#L122) | 122 | `"    queries: list[str] = []"` | — |
+| [SRC-01273BA196-L000123](../../agents/aspect_planning.py#L123) | 123 | `"    seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000124](../../agents/aspect_planning.py#L124) | 124 | `"    topic = _normalize_space(topic_query)"` | — |
+| [SRC-01273BA196-L000125](../../agents/aspect_planning.py#L125) | 125 | `"    if topic:"` | — |
+| [SRC-01273BA196-L000126](../../agents/aspect_planning.py#L126) | 126 | `"        queries.append(topic)"` | — |
+| [SRC-01273BA196-L000127](../../agents/aspect_planning.py#L127) | 127 | `"        seen.add(_normalize_key(topic))"` | — |
+| [SRC-01273BA196-L000128](../../agents/aspect_planning.py#L128) | 128 | `"    for aspect in aspects:"` | — |
+| [SRC-01273BA196-L000129](../../agents/aspect_planning.py#L129) | 129 | `"        aspect_clean = _normalize_space(str(aspect))"` | — |
+| [SRC-01273BA196-L000130](../../agents/aspect_planning.py#L130) | 130 | `"        if not aspect_clean:"` | — |
+| [SRC-01273BA196-L000131](../../agents/aspect_planning.py#L131) | 131 | `"            continue"` | — |
+| [SRC-01273BA196-L000132](../../agents/aspect_planning.py#L132) | 132 | `"        candidate = _normalize_space(f\"{topic} {aspect_clean}\" if topic else aspect_clean)[:240]"` | — |
+| [SRC-01273BA196-L000133](../../agents/aspect_planning.py#L133) | 133 | `"        key = _normalize_key(candidate)"` | — |
+| [SRC-01273BA196-L000134](../../agents/aspect_planning.py#L134) | 134 | `"        if key and key not in seen:"` | — |
+| [SRC-01273BA196-L000135](../../agents/aspect_planning.py#L135) | 135 | `"            seen.add(key)"` | — |
+| [SRC-01273BA196-L000136](../../agents/aspect_planning.py#L136) | 136 | `"            queries.append(candidate)"` | — |
+| [SRC-01273BA196-L000137](../../agents/aspect_planning.py#L137) | 137 | `"        if len(queries) >= max(1, min(int(limit), MAX_PLAN_QUERIES)):"` | — |
+| [SRC-01273BA196-L000138](../../agents/aspect_planning.py#L138) | 138 | `"            break"` | — |
+| [SRC-01273BA196-L000139](../../agents/aspect_planning.py#L139) | 139 | `"    return queries"` | — |
+| [SRC-01273BA196-L000140](../../agents/aspect_planning.py#L140) | 140 | `""` | — |
+| [SRC-01273BA196-L000141](../../agents/aspect_planning.py#L141) | 141 | `""` | — |
+| [SRC-01273BA196-L000142](../../agents/aspect_planning.py#L142) | 142 | `"def augment_plan_with_aspects("` | — |
+| [SRC-01273BA196-L000143](../../agents/aspect_planning.py#L143) | 143 | `"    plan: dict[str, Any], question: str, topic_query: str, *, compact_fn: Any = None,"` | — |
+| [SRC-01273BA196-L000144](../../agents/aspect_planning.py#L144) | 144 | `") -> dict[str, Any]:"` | — |
+| [SRC-01273BA196-L000145](../../agents/aspect_planning.py#L145) | 145 | `"    out = dict(plan or {})"` | — |
+| [SRC-01273BA196-L000146](../../agents/aspect_planning.py#L146) | 146 | `"    aspects = extract_aspects(question)"` | — |
+| [SRC-01273BA196-L000147](../../agents/aspect_planning.py#L147) | 147 | `"    out[\"aspects\"] = aspects"` | — |
+| [SRC-01273BA196-L000148](../../agents/aspect_planning.py#L148) | 148 | `"    base_queries = [str(q).strip() for q in (out.get(\"queries\") or []) if isinstance(q, str) and q.strip()]"` | — |
+| [SRC-01273BA196-L000149](../../agents/aspect_planning.py#L149) | 149 | `"    topic = topic_query or (base_queries[0] if base_queries else \"\")"` | — |
+| [SRC-01273BA196-L000150](../../agents/aspect_planning.py#L150) | 150 | `"    if compact_fn is not None:"` | — |
+| [SRC-01273BA196-L000151](../../agents/aspect_planning.py#L151) | 151 | `"        try:"` | — |
+| [SRC-01273BA196-L000152](../../agents/aspect_planning.py#L152) | 152 | `"            topic = compact_fn(topic) or topic"` | — |
+| [SRC-01273BA196-L000153](../../agents/aspect_planning.py#L153) | 153 | `"        except (TypeError, ValueError):"` | — |
+| [SRC-01273BA196-L000154](../../agents/aspect_planning.py#L154) | 154 | `"            pass"` | — |
+| [SRC-01273BA196-L000155](../../agents/aspect_planning.py#L155) | 155 | `"    aspect_queries = build_aspect_queries(topic, aspects)"` | — |
+| [SRC-01273BA196-L000156](../../agents/aspect_planning.py#L156) | 156 | `"    if compact_fn is not None:"` | — |
+| [SRC-01273BA196-L000157](../../agents/aspect_planning.py#L157) | 157 | `"        compacted: list[str] = []"` | — |
+| [SRC-01273BA196-L000158](../../agents/aspect_planning.py#L158) | 158 | `"        seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000159](../../agents/aspect_planning.py#L159) | 159 | `"        for q in aspect_queries + base_queries:"` | — |
+| [SRC-01273BA196-L000160](../../agents/aspect_planning.py#L160) | 160 | `"            try:"` | — |
+| [SRC-01273BA196-L000161](../../agents/aspect_planning.py#L161) | 161 | `"                cq = compact_fn(q)"` | — |
+| [SRC-01273BA196-L000162](../../agents/aspect_planning.py#L162) | 162 | `"            except (TypeError, ValueError):"` | — |
+| [SRC-01273BA196-L000163](../../agents/aspect_planning.py#L163) | 163 | `"                cq = q"` | — |
+| [SRC-01273BA196-L000164](../../agents/aspect_planning.py#L164) | 164 | `"            if not cq:"` | — |
+| [SRC-01273BA196-L000165](../../agents/aspect_planning.py#L165) | 165 | `"                continue"` | — |
+| [SRC-01273BA196-L000166](../../agents/aspect_planning.py#L166) | 166 | `"            key = _normalize_key(cq)"` | — |
+| [SRC-01273BA196-L000167](../../agents/aspect_planning.py#L167) | 167 | `"            if key not in seen:"` | — |
+| [SRC-01273BA196-L000168](../../agents/aspect_planning.py#L168) | 168 | `"                seen.add(key)"` | — |
+| [SRC-01273BA196-L000169](../../agents/aspect_planning.py#L169) | 169 | `"                compacted.append(cq)"` | — |
+| [SRC-01273BA196-L000170](../../agents/aspect_planning.py#L170) | 170 | `"            if len(compacted) >= MAX_PLAN_QUERIES:"` | — |
+| [SRC-01273BA196-L000171](../../agents/aspect_planning.py#L171) | 171 | `"                break"` | — |
+| [SRC-01273BA196-L000172](../../agents/aspect_planning.py#L172) | 172 | `"        out[\"queries\"] = compacted"` | — |
+| [SRC-01273BA196-L000173](../../agents/aspect_planning.py#L173) | 173 | `"    else:"` | — |
+| [SRC-01273BA196-L000174](../../agents/aspect_planning.py#L174) | 174 | `"        merged: list[str] = []"` | — |
+| [SRC-01273BA196-L000175](../../agents/aspect_planning.py#L175) | 175 | `"        seen_m: set[str] = set()"` | — |
+| [SRC-01273BA196-L000176](../../agents/aspect_planning.py#L176) | 176 | `"        for q in aspect_queries + base_queries:"` | — |
+| [SRC-01273BA196-L000177](../../agents/aspect_planning.py#L177) | 177 | `"            key = _normalize_key(q)"` | — |
+| [SRC-01273BA196-L000178](../../agents/aspect_planning.py#L178) | 178 | `"            if key and key not in seen_m:"` | — |
+| [SRC-01273BA196-L000179](../../agents/aspect_planning.py#L179) | 179 | `"                seen_m.add(key)"` | — |
+| [SRC-01273BA196-L000180](../../agents/aspect_planning.py#L180) | 180 | `"                merged.append(q)"` | — |
+| [SRC-01273BA196-L000181](../../agents/aspect_planning.py#L181) | 181 | `"            if len(merged) >= MAX_PLAN_QUERIES:"` | — |
+| [SRC-01273BA196-L000182](../../agents/aspect_planning.py#L182) | 182 | `"                break"` | — |
+| [SRC-01273BA196-L000183](../../agents/aspect_planning.py#L183) | 183 | `"        out[\"queries\"] = merged"` | — |
+| [SRC-01273BA196-L000184](../../agents/aspect_planning.py#L184) | 184 | `"    out[\"aspect_queries\"] = list(out.get(\"queries\") or [])"` | — |
+| [SRC-01273BA196-L000185](../../agents/aspect_planning.py#L185) | 185 | `"    return out"` | — |
+| [SRC-01273BA196-L000186](../../agents/aspect_planning.py#L186) | 186 | `""` | — |
+| [SRC-01273BA196-L000187](../../agents/aspect_planning.py#L187) | 187 | `""` | — |
+| [SRC-01273BA196-L000188](../../agents/aspect_planning.py#L188) | 188 | `"def _source_text(source: dict[str, Any]) -> str:"` | — |
+| [SRC-01273BA196-L000189](../../agents/aspect_planning.py#L189) | 189 | `"    return \" \".join(str(source.get(key) or \"\") for key in (\"title\", \"snippet\", \"page_text\"))"` | — |
+| [SRC-01273BA196-L000190](../../agents/aspect_planning.py#L190) | 190 | `""` | — |
+| [SRC-01273BA196-L000191](../../agents/aspect_planning.py#L191) | 191 | `""` | — |
+| [SRC-01273BA196-L000192](../../agents/aspect_planning.py#L192) | 192 | `"def build_evidence_ledger(aspects: list[str], sources: list[dict[str, Any]], *, min_term_len: int = 2) -> dict[str, Any]:"` | — |
+| [SRC-01273BA196-L000193](../../agents/aspect_planning.py#L193) | 193 | `"    ledger: dict[str, Any] = {\"aspects\": [], \"covered\": [], \"missing\": [], \"by_aspect\": {}}"` | — |
+| [SRC-01273BA196-L000194](../../agents/aspect_planning.py#L194) | 194 | `"    if not aspects:"` | — |
+| [SRC-01273BA196-L000195](../../agents/aspect_planning.py#L195) | 195 | `"        ledger[\"note\"] = \"no_explicit_aspects\""` | — |
+| [SRC-01273BA196-L000196](../../agents/aspect_planning.py#L196) | 196 | `"        return ledger"` | — |
+| [SRC-01273BA196-L000197](../../agents/aspect_planning.py#L197) | 197 | `"    for aspect in aspects:"` | — |
+| [SRC-01273BA196-L000198](../../agents/aspect_planning.py#L198) | 198 | `"        tokens = [t for t in re.findall(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", _normalize_key(aspect)) if len(t) >= min_term_len]"` | — |
+| [SRC-01273BA196-L000199](../../agents/aspect_planning.py#L199) | 199 | `"        matches: list[dict[str, Any]] = []"` | — |
+| [SRC-01273BA196-L000200](../../agents/aspect_planning.py#L200) | 200 | `"        for source in sources or []:"` | — |
+| [SRC-01273BA196-L000201](../../agents/aspect_planning.py#L201) | 201 | `"            if not isinstance(source, dict):"` | — |
+| [SRC-01273BA196-L000202](../../agents/aspect_planning.py#L202) | 202 | `"                continue"` | — |
+| [SRC-01273BA196-L000203](../../agents/aspect_planning.py#L203) | 203 | `"            hay = _normalize_key(_source_text(source))"` | — |
+| [SRC-01273BA196-L000204](../../agents/aspect_planning.py#L204) | 204 | `"            if not hay:"` | — |
+| [SRC-01273BA196-L000205](../../agents/aspect_planning.py#L205) | 205 | `"                continue"` | — |
+| [SRC-01273BA196-L000206](../../agents/aspect_planning.py#L206) | 206 | `"            hit = sum(1 for t in tokens if t in hay)"` | — |
+| [SRC-01273BA196-L000207](../../agents/aspect_planning.py#L207) | 207 | `"            if tokens and hit >= max(1, (len(tokens) + 1) // 2):"` | — |
+| [SRC-01273BA196-L000208](../../agents/aspect_planning.py#L208) | 208 | `"                evidence_type = \"page_text\" if source.get(\"page_text\") else \"snippet\" if source.get(\"snippet\") else \"title\""` | — |
+| [SRC-01273BA196-L000209](../../agents/aspect_planning.py#L209) | 209 | `"                matches.append({"` | — |
+| [SRC-01273BA196-L000210](../../agents/aspect_planning.py#L210) | 210 | `"                    \"url\": source.get(\"url\", \"\"),"` | — |
+| [SRC-01273BA196-L000211](../../agents/aspect_planning.py#L211) | 211 | `"                    \"title\": source.get(\"title\", \"\"),"` | — |
+| [SRC-01273BA196-L000212](../../agents/aspect_planning.py#L212) | 212 | `"                    \"provider\": source.get(\"provider\") or (source.get(\"providers\") or [\"unknown\"])[0],"` | — |
+| [SRC-01273BA196-L000213](../../agents/aspect_planning.py#L213) | 213 | `"                    \"evidence_type\": evidence_type,"` | — |
+| [SRC-01273BA196-L000214](../../agents/aspect_planning.py#L214) | 214 | `"                    \"lexical_hits\": hit,"` | — |
+| [SRC-01273BA196-L000215](../../agents/aspect_planning.py#L215) | 215 | `"                    \"search_query\": source.get(\"search_query\") or ((source.get(\"queries\") or [\"\"])[0] if source.get(\"queries\") else \"\"),"` | — |
+| [SRC-01273BA196-L000216](../../agents/aspect_planning.py#L216) | 216 | `"                })"` | — |
+| [SRC-01273BA196-L000217](../../agents/aspect_planning.py#L217) | 217 | `"        entry = {\"aspect\": aspect, \"candidate_count\": len(matches), \"candidates\": matches[:5], \"has_lexical_candidate\": bool(matches)}"` | — |
+| [SRC-01273BA196-L000218](../../agents/aspect_planning.py#L218) | 218 | `"        ledger[\"by_aspect\"][aspect] = entry"` | — |
+| [SRC-01273BA196-L000219](../../agents/aspect_planning.py#L219) | 219 | `"        ledger[\"aspects\"].append(aspect)"` | — |
+| [SRC-01273BA196-L000220](../../agents/aspect_planning.py#L220) | 220 | `"        if matches:"` | — |
+| [SRC-01273BA196-L000221](../../agents/aspect_planning.py#L221) | 221 | `"            ledger[\"covered\"].append(aspect)"` | — |
+| [SRC-01273BA196-L000222](../../agents/aspect_planning.py#L222) | 222 | `"        else:"` | — |
+| [SRC-01273BA196-L000223](../../agents/aspect_planning.py#L223) | 223 | `"            ledger[\"missing\"].append(aspect)"` | — |
+| [SRC-01273BA196-L000224](../../agents/aspect_planning.py#L224) | 224 | `"    ledger[\"coverage_ratio\"] = round(len(ledger[\"covered\"]) / max(1, len(aspects)), 3)"` | — |
+| [SRC-01273BA196-L000225](../../agents/aspect_planning.py#L225) | 225 | `"    return ledger"` | — |
+| [SRC-01273BA196-L000226](../../agents/aspect_planning.py#L226) | 226 | `""` | — |
+| [SRC-01273BA196-L000227](../../agents/aspect_planning.py#L227) | 227 | `""` | — |
+| [SRC-01273BA196-L000228](../../agents/aspect_planning.py#L228) | 228 | `"def repair_queries_for_missing_aspects("` | — |
+| [SRC-01273BA196-L000229](../../agents/aspect_planning.py#L229) | 229 | `"    topic_query: str, missing_aspects: list[str], *, limit: int = 3, compact_fn: Any = None,"` | — |
+| [SRC-01273BA196-L000230](../../agents/aspect_planning.py#L230) | 230 | `") -> list[str]:"` | — |
+| [SRC-01273BA196-L000231](../../agents/aspect_planning.py#L231) | 231 | `"    topic = _normalize_space(topic_query)"` | — |
+| [SRC-01273BA196-L000232](../../agents/aspect_planning.py#L232) | 232 | `"    out: list[str] = []"` | — |
+| [SRC-01273BA196-L000233](../../agents/aspect_planning.py#L233) | 233 | `"    seen: set[str] = set()"` | — |
+| [SRC-01273BA196-L000234](../../agents/aspect_planning.py#L234) | 234 | `"    for aspect in missing_aspects:"` | — |
+| [SRC-01273BA196-L000235](../../agents/aspect_planning.py#L235) | 235 | `"        aspect_clean = _normalize_space(str(aspect))"` | — |
+| [SRC-01273BA196-L000236](../../agents/aspect_planning.py#L236) | 236 | `"        if not aspect_clean:"` | — |
+| [SRC-01273BA196-L000237](../../agents/aspect_planning.py#L237) | 237 | `"            continue"` | — |
+| [SRC-01273BA196-L000238](../../agents/aspect_planning.py#L238) | 238 | `"        raw = f\"{topic} {aspect_clean}\".strip() if topic else aspect_clean"` | — |
+| [SRC-01273BA196-L000239](../../agents/aspect_planning.py#L239) | 239 | `"        if compact_fn is not None:"` | — |
+| [SRC-01273BA196-L000240](../../agents/aspect_planning.py#L240) | 240 | `"            try:"` | — |
+| [SRC-01273BA196-L000241](../../agents/aspect_planning.py#L241) | 241 | `"                raw = compact_fn(raw) or raw"` | — |
+| [SRC-01273BA196-L000242](../../agents/aspect_planning.py#L242) | 242 | `"            except (TypeError, ValueError):"` | — |
+| [SRC-01273BA196-L000243](../../agents/aspect_planning.py#L243) | 243 | `"                pass"` | — |
+| [SRC-01273BA196-L000244](../../agents/aspect_planning.py#L244) | 244 | `"        raw = _normalize_space(raw)[:240]"` | — |
+| [SRC-01273BA196-L000245](../../agents/aspect_planning.py#L245) | 245 | `"        key = _normalize_key(raw)"` | — |
+| [SRC-01273BA196-L000246](../../agents/aspect_planning.py#L246) | 246 | `"        if raw and key not in seen:"` | — |
+| [SRC-01273BA196-L000247](../../agents/aspect_planning.py#L247) | 247 | `"            seen.add(key)"` | — |
+| [SRC-01273BA196-L000248](../../agents/aspect_planning.py#L248) | 248 | `"            out.append(raw)"` | — |
+| [SRC-01273BA196-L000249](../../agents/aspect_planning.py#L249) | 249 | `"        if len(out) >= max(1, min(int(limit), 3)):"` | — |
+| [SRC-01273BA196-L000250](../../agents/aspect_planning.py#L250) | 250 | `"            break"` | — |
+| [SRC-01273BA196-L000251](../../agents/aspect_planning.py#L251) | 251 | `"    return out"` | — |
+| [SRC-01273BA196-L000252](../../agents/aspect_planning.py#L252) | 252 | `""` | — |
+| [SRC-01273BA196-L000253](../../agents/aspect_planning.py#L253) | 253 | `""` | — |
+| [SRC-01273BA196-L000254](../../agents/aspect_planning.py#L254) | 254 | `"def arabic_aspect_diagnostics(ledger: dict[str, Any]) -> list[str]:"` | — |
+| [SRC-01273BA196-L000255](../../agents/aspect_planning.py#L255) | 255 | `"    lines: list[str] = []"` | — |
+| [SRC-01273BA196-L000256](../../agents/aspect_planning.py#L256) | 256 | `"    if not ledger or ledger.get(\"note\") == \"no_explicit_aspects\":"` | — |
+| [SRC-01273BA196-L000257](../../agents/aspect_planning.py#L257) | 257 | `"        return lines"` | — |
+| [SRC-01273BA196-L000258](../../agents/aspect_planning.py#L258) | 258 | `"    covered = ledger.get(\"covered\") or []"` | — |
+| [SRC-01273BA196-L000259](../../agents/aspect_planning.py#L259) | 259 | `"    missing = ledger.get(\"missing\") or []"` | — |
+| [SRC-01273BA196-L000260](../../agents/aspect_planning.py#L260) | 260 | `"    if covered:"` | — |
+| [SRC-01273BA196-L000261](../../agents/aspect_planning.py#L261) | 261 | `"        lines.append(\"محاور وُجد لها مرشح نصي واحد على الأقل: \" + \"، \".join(str(x) for x in covered))"` | — |
+| [SRC-01273BA196-L000262](../../agents/aspect_planning.py#L262) | 262 | `"    if missing:"` | — |
+| [SRC-01273BA196-L000263](../../agents/aspect_planning.py#L263) | 263 | `"        lines.append("` | — |
+| [SRC-01273BA196-L000264](../../agents/aspect_planning.py#L264) | 264 | `"            \"محاور بلا مرشح نصي كافٍ في النتائج الحالية: \""` | — |
+| [SRC-01273BA196-L000265](../../agents/aspect_planning.py#L265) | 265 | `"            + \"، \".join(str(x) for x in missing)"` | — |
+| [SRC-01273BA196-L000266](../../agents/aspect_planning.py#L266) | 266 | `"            + \". هذا لا ينفي وجود معلومات خارج النتائج المجلوبة.\""` | — |
+| [SRC-01273BA196-L000267](../../agents/aspect_planning.py#L267) | 267 | `"        )"` | — |
+| [SRC-01273BA196-L000268](../../agents/aspect_planning.py#L268) | 268 | `"    ratio = ledger.get(\"coverage_ratio\")"` | — |
+| [SRC-01273BA196-L000269](../../agents/aspect_planning.py#L269) | 269 | `"    if isinstance(ratio, (int, float)):"` | — |
+| [SRC-01273BA196-L000270](../../agents/aspect_planning.py#L270) | 270 | `"        lines.append(f\"نسبة تغطية المحاور لفظيًا (تقريبية): {int(ratio * 100)}٪.\")"` | — |
+| [SRC-01273BA196-L000271](../../agents/aspect_planning.py#L271) | 271 | `"    lines.append(\"تنبيه: وجود مقتطف يطابق كلمات المحور لا يثبت صحة الادعاء.\")"` | — |
+| [SRC-01273BA196-L000272](../../agents/aspect_planning.py#L272) | 272 | `"    return lines"` | — |
 ## الوكيل والمنطق
 
 ### FILE-7D6FC391EC — [agents/claim_evidence.py](../../agents/claim_evidence.py#L1)
@@ -841,5 +843,3 @@
 | [SRC-2D53795445-L000100](../../agents/dialogue_state.py#L100) | 100 | `"    }"` | — |
 | [SRC-2D53795445-L000101](../../agents/dialogue_state.py#L101) | 101 | `""` | — |
 | [SRC-2D53795445-L000102](../../agents/dialogue_state.py#L102) | 102 | `""` | — |
-| [SRC-2D53795445-L000103](../../agents/dialogue_state.py#L103) | 103 | `"def validate_dialogue_context("` | — |
-| [SRC-2D53795445-L000104](../../agents/dialogue_state.py#L104) | 104 | `"    candidate: Any,"` | — |

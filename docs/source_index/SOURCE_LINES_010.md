@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001182 إلى SRC-1AE03B9EC3-L001981
+- النطاق: SRC-1AE03B9EC3-L001180 إلى SRC-1AE03B9EC3-L001979
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001180](../../agents/web_agent.py#L1180) | 1180 | `"                \"ضبط إعداداتها، ولا أضمن الوصول إلى كل موقع أو إلى المجموعات والمنشورات \""` | — |
+| [SRC-1AE03B9EC3-L001181](../../agents/web_agent.py#L1181) | 1181 | `"                \"الخاصة. لم أجرِ اختبار اتصال حي في هذه الإجابة.\""` | — |
 | [SRC-1AE03B9EC3-L001182](../../agents/web_agent.py#L1182) | 1182 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001183](../../agents/web_agent.py#L1183) | 1183 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L001184](../../agents/web_agent.py#L1184) | 1184 | `"            status = self.status()"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L001977](../../agents/web_agent.py#L1977) | 1977 | `"                            ]) + 1,"` | — |
 | [SRC-1AE03B9EC3-L001978](../../agents/web_agent.py#L1978) | 1978 | `"                            \"search_query\": query,"` | — |
 | [SRC-1AE03B9EC3-L001979](../../agents/web_agent.py#L1979) | 1979 | `"                            \"published_at\": _clean_text(post.get(\"indexedAt\") or \"\", 100),"` | — |
-| [SRC-1AE03B9EC3-L001980](../../agents/web_agent.py#L1980) | 1980 | `"                        })"` | — |
-| [SRC-1AE03B9EC3-L001981](../../agents/web_agent.py#L1981) | 1981 | `"                else:"` | — |
