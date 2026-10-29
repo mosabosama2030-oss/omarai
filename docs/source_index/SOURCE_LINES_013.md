@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003580 إلى SRC-1AE03B9EC3-L004379
+- النطاق: SRC-1AE03B9EC3-L003574 إلى SRC-1AE03B9EC3-L004373
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003574](../../agents/web_agent.py#L3574) | 3574 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L003575](../../agents/web_agent.py#L3575) | 3575 | `"            evidence = ("` | — |
+| [SRC-1AE03B9EC3-L003576](../../agents/web_agent.py#L3576) | 3576 | `"                source.get(\"page_text\")"` | — |
+| [SRC-1AE03B9EC3-L003577](../../agents/web_agent.py#L3577) | 3577 | `"                or source.get(\"snippet\")"` | — |
+| [SRC-1AE03B9EC3-L003578](../../agents/web_agent.py#L3578) | 3578 | `"                or \"لا يتوفر مقتطف نصي.\""` | — |
+| [SRC-1AE03B9EC3-L003579](../../agents/web_agent.py#L3579) | 3579 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003580](../../agents/web_agent.py#L3580) | 3580 | `"            evidence = _clean_text(evidence, 2400)"` | — |
 | [SRC-1AE03B9EC3-L003581](../../agents/web_agent.py#L3581) | 3581 | `"            providers = \", \".join(source.get(\"providers\", [])) or \"غير محدد\""` | — |
 | [SRC-1AE03B9EC3-L003582](../../agents/web_agent.py#L3582) | 3582 | `"            queries = \" \| \".join(source.get(\"queries\", [])[:3]) or \"غير محدد\""` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004371](../../agents/web_agent.py#L4371) | 4371 | `"                    or bool("` | — |
 | [SRC-1AE03B9EC3-L004372](../../agents/web_agent.py#L4372) | 4372 | `"                        ((result.get(\"search_report\") or {}).get(\"evidence_ledger\") or {}).get(\"missing\")"` | — |
 | [SRC-1AE03B9EC3-L004373](../../agents/web_agent.py#L4373) | 4373 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004374](../../agents/web_agent.py#L4374) | 4374 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L004375](../../agents/web_agent.py#L4375) | 4375 | `"                    fulfillment_status = \"possible_gap_detected\""` | — |
-| [SRC-1AE03B9EC3-L004376](../../agents/web_agent.py#L4376) | 4376 | `"                elif coverage_targets:"` | — |
-| [SRC-1AE03B9EC3-L004377](../../agents/web_agent.py#L4377) | 4377 | `"                    fulfillment_status = \"lexical_signals_found_not_semantically_verified\""` | — |
-| [SRC-1AE03B9EC3-L004378](../../agents/web_agent.py#L4378) | 4378 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L004379](../../agents/web_agent.py#L4379) | 4379 | `"                    fulfillment_status = \"not_machine_assessed_no_explicit_targets_detected\""` | — |

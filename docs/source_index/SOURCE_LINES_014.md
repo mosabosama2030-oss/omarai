@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004380 إلى SRC-1AE03B9EC3-L005179
+- النطاق: SRC-1AE03B9EC3-L004374 إلى SRC-1AE03B9EC3-L005173
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004374](../../agents/web_agent.py#L4374) | 4374 | `"                ):"` | — |
+| [SRC-1AE03B9EC3-L004375](../../agents/web_agent.py#L4375) | 4375 | `"                    fulfillment_status = \"possible_gap_detected\""` | — |
+| [SRC-1AE03B9EC3-L004376](../../agents/web_agent.py#L4376) | 4376 | `"                elif coverage_targets:"` | — |
+| [SRC-1AE03B9EC3-L004377](../../agents/web_agent.py#L4377) | 4377 | `"                    fulfillment_status = \"lexical_signals_found_not_semantically_verified\""` | — |
+| [SRC-1AE03B9EC3-L004378](../../agents/web_agent.py#L4378) | 4378 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L004379](../../agents/web_agent.py#L4379) | 4379 | `"                    fulfillment_status = \"not_machine_assessed_no_explicit_targets_detected\""` | — |
 | [SRC-1AE03B9EC3-L004380](../../agents/web_agent.py#L4380) | 4380 | `"                coverage[\"task_fulfillment_status\"] = fulfillment_status"` | — |
 | [SRC-1AE03B9EC3-L004381](../../agents/web_agent.py#L4381) | 4381 | `"                result[\"answer_coverage\"] = coverage"` | — |
 | [SRC-1AE03B9EC3-L004382](../../agents/web_agent.py#L4382) | 4382 | `"                result[\"task_fulfillment_status\"] = fulfillment_status"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L005171](../../agents/web_agent.py#L5171) | 5171 | `"                source.get(\"domain\")"` | — |
 | [SRC-1AE03B9EC3-L005172](../../agents/web_agent.py#L5172) | 5172 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
 | [SRC-1AE03B9EC3-L005173](../../agents/web_agent.py#L5173) | 5173 | `"                or \"\""` | — |
-| [SRC-1AE03B9EC3-L005174](../../agents/web_agent.py#L5174) | 5174 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005175](../../agents/web_agent.py#L5175) | 5175 | `"            for source in sources"` | — |
-| [SRC-1AE03B9EC3-L005176](../../agents/web_agent.py#L5176) | 5176 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L005177](../../agents/web_agent.py#L5177) | 5177 | `"        independent_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L005178](../../agents/web_agent.py#L5178) | 5178 | `"        # A user-requested page summary is a different task from open-ended research:"` | — |
-| [SRC-1AE03B9EC3-L005179](../../agents/web_agent.py#L5179) | 5179 | `"        # one successfully extracted, explicitly supplied page can support a summary,"` | — |
