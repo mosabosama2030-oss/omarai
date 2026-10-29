@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000133 إلى SRC-1C77C97630-L000227
+- النطاق: SRC-4CCB1F172B-L000102 إلى SRC-1C77C97630-L000196
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,37 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000102](../../tests/test_answer_quality_corpus.py#L102) | 102 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000103](../../tests/test_answer_quality_corpus.py#L103) | 103 | `"    ids = [c[\"case_id\"] for c in data[\"cases\"]]"` | — |
+| [SRC-4CCB1F172B-L000104](../../tests/test_answer_quality_corpus.py#L104) | 104 | `"    assert len(ids) == len(set(ids)), \"Duplicate case_id values found\""` | — |
+| [SRC-4CCB1F172B-L000105](../../tests/test_answer_quality_corpus.py#L105) | 105 | `"    for case_id in ids:"` | — |
+| [SRC-4CCB1F172B-L000106](../../tests/test_answer_quality_corpus.py#L106) | 106 | `"        assert CASE_ID_RE.match(case_id), f\"Bad case_id shape: {case_id}\""` | — |
+| [SRC-4CCB1F172B-L000107](../../tests/test_answer_quality_corpus.py#L107) | 107 | `"    assert set(ids) == {f\"AQ-{i:03d}\" for i in range(1, 46)}"` | — |
+| [SRC-4CCB1F172B-L000108](../../tests/test_answer_quality_corpus.py#L108) | 108 | `""` | — |
+| [SRC-4CCB1F172B-L000109](../../tests/test_answer_quality_corpus.py#L109) | 109 | `""` | — |
+| [SRC-4CCB1F172B-L000110](../../tests/test_answer_quality_corpus.py#L110) | 110 | `"def test_required_fields_and_types():"` | — |
+| [SRC-4CCB1F172B-L000111](../../tests/test_answer_quality_corpus.py#L111) | 111 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000112](../../tests/test_answer_quality_corpus.py#L112) | 112 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000113](../../tests/test_answer_quality_corpus.py#L113) | 113 | `"        missing = REQUIRED_CASE_FIELDS - set(case)"` | — |
+| [SRC-4CCB1F172B-L000114](../../tests/test_answer_quality_corpus.py#L114) | 114 | `"        assert not missing, f\"{case.get('case_id')}: missing {missing}\""` | — |
+| [SRC-4CCB1F172B-L000115](../../tests/test_answer_quality_corpus.py#L115) | 115 | `"        assert isinstance(case[\"case_id\"], str) and case[\"case_id\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000116](../../tests/test_answer_quality_corpus.py#L116) | 116 | `"        assert isinstance(case[\"category\"], str) and case[\"category\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000117](../../tests/test_answer_quality_corpus.py#L117) | 117 | `"        assert isinstance(case[\"language\"], str) and case[\"language\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000118](../../tests/test_answer_quality_corpus.py#L118) | 118 | `"        assert isinstance(case[\"question\"], str) and len(case[\"question\"].strip()) >= 2"` | — |
+| [SRC-4CCB1F172B-L000119](../../tests/test_answer_quality_corpus.py#L119) | 119 | `"        assert case[\"expected_strategy\"] in ALLOWED_STRATEGIES"` | — |
+| [SRC-4CCB1F172B-L000120](../../tests/test_answer_quality_corpus.py#L120) | 120 | `"        assert case[\"evaluation_mode\"] in ALLOWED_EVAL_MODES"` | — |
+| [SRC-4CCB1F172B-L000121](../../tests/test_answer_quality_corpus.py#L121) | 121 | `"        assert isinstance(case[\"required_behaviors\"], list) and case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000122](../../tests/test_answer_quality_corpus.py#L122) | 122 | `"        assert isinstance(case[\"forbidden_behaviors\"], list) and case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000123](../../tests/test_answer_quality_corpus.py#L123) | 123 | `"        assert isinstance(case[\"failure_conditions\"], list) and case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000124](../../tests/test_answer_quality_corpus.py#L124) | 124 | `"        assert isinstance(case[\"evidence_fixture\"], dict)"` | — |
+| [SRC-4CCB1F172B-L000125](../../tests/test_answer_quality_corpus.py#L125) | 125 | `"        for item in ("` | — |
+| [SRC-4CCB1F172B-L000126](../../tests/test_answer_quality_corpus.py#L126) | 126 | `"            case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000127](../../tests/test_answer_quality_corpus.py#L127) | 127 | `"            + case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000128](../../tests/test_answer_quality_corpus.py#L128) | 128 | `"            + case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000129](../../tests/test_answer_quality_corpus.py#L129) | 129 | `"        ):"` | — |
+| [SRC-4CCB1F172B-L000130](../../tests/test_answer_quality_corpus.py#L130) | 130 | `"            assert isinstance(item, str) and item.strip(), ("` | — |
+| [SRC-4CCB1F172B-L000131](../../tests/test_answer_quality_corpus.py#L131) | 131 | `"                f\"{case['case_id']}: empty behavior/condition\""` | — |
+| [SRC-4CCB1F172B-L000132](../../tests/test_answer_quality_corpus.py#L132) | 132 | `"            )"` | — |
 | [SRC-4CCB1F172B-L000133](../../tests/test_answer_quality_corpus.py#L133) | 133 | `""` | — |
 | [SRC-4CCB1F172B-L000134](../../tests/test_answer_quality_corpus.py#L134) | 134 | `""` | — |
 | [SRC-4CCB1F172B-L000135](../../tests/test_answer_quality_corpus.py#L135) | 135 | `"def test_required_theme_categories_represented():"` | — |
@@ -821,34 +852,3 @@
 | [SRC-1C77C97630-L000194](../../tests/test_answer_validation.py#L194) | 194 | `"    def fake_completion(messages, **kwargs):"` | — |
 | [SRC-1C77C97630-L000195](../../tests/test_answer_validation.py#L195) | 195 | `"        captured[\"messages\"] = messages"` | — |
 | [SRC-1C77C97630-L000196](../../tests/test_answer_validation.py#L196) | 196 | `"        return \"<<<OMARAI_COVERAGE_REPAIR>>>تم توضيح السعر والمساحة [المصدر 1].<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000197](../../tests/test_answer_validation.py#L197) | 197 | `""` | — |
-| [SRC-1C77C97630-L000198](../../tests/test_answer_validation.py#L198) | 198 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-1C77C97630-L000199](../../tests/test_answer_validation.py#L199) | 199 | `"    repaired = agent._repair_answer_coverage("` | — |
-| [SRC-1C77C97630-L000200](../../tests/test_answer_validation.py#L200) | 200 | `"        \"قارن السعر والمساحة\","` | — |
-| [SRC-1C77C97630-L000201](../../tests/test_answer_validation.py#L201) | 201 | `"        \"الإجابة الأولية.\","` | — |
-| [SRC-1C77C97630-L000202](../../tests/test_answer_validation.py#L202) | 202 | `"        [{"` | — |
-| [SRC-1C77C97630-L000203](../../tests/test_answer_validation.py#L203) | 203 | `"            \"title\": \"إعلان\","` | — |
-| [SRC-1C77C97630-L000204](../../tests/test_answer_validation.py#L204) | 204 | `"            \"url\": \"https://example.com/listing\","` | — |
-| [SRC-1C77C97630-L000205](../../tests/test_answer_validation.py#L205) | 205 | `"            \"page_fetched\": False,"` | — |
-| [SRC-1C77C97630-L000206](../../tests/test_answer_validation.py#L206) | 206 | `"            \"snippet\": \"السعر مذكور والمساحة غير مذكورة\","` | — |
-| [SRC-1C77C97630-L000207](../../tests/test_answer_validation.py#L207) | 207 | `"        }],"` | — |
-| [SRC-1C77C97630-L000208](../../tests/test_answer_validation.py#L208) | 208 | `"        [\"المساحة\"],"` | — |
-| [SRC-1C77C97630-L000209](../../tests/test_answer_validation.py#L209) | 209 | `"    )"` | — |
-| [SRC-1C77C97630-L000210](../../tests/test_answer_validation.py#L210) | 210 | `"    assert repaired == \"تم توضيح السعر والمساحة [المصدر 1].\""` | — |
-| [SRC-1C77C97630-L000211](../../tests/test_answer_validation.py#L211) | 211 | `"    assert \"المساحة\" in captured[\"messages\"][2][\"content\"]"` | — |
-| [SRC-1C77C97630-L000212](../../tests/test_answer_validation.py#L212) | 212 | `"    assert \"السعر مذكور والمساحة غير مذكورة\" in captured[\"messages\"][4][\"content\"]"` | — |
-| [SRC-1C77C97630-L000213](../../tests/test_answer_validation.py#L213) | 213 | `"    assert \"مقتطف بحث\" in captured[\"messages\"][4][\"content\"]"` | — |
-| [SRC-1C77C97630-L000214](../../tests/test_answer_validation.py#L214) | 214 | `""` | — |
-| [SRC-1C77C97630-L000215](../../tests/test_answer_validation.py#L215) | 215 | `""` | — |
-| [SRC-1C77C97630-L000216](../../tests/test_answer_validation.py#L216) | 216 | `"def test_bounded_coverage_repair_rejects_missing_or_duplicate_markers(monkeypatch):"` | — |
-| [SRC-1C77C97630-L000217](../../tests/test_answer_validation.py#L217) | 217 | `"    agent = WebAgent()"` | — |
-| [SRC-1C77C97630-L000218](../../tests/test_answer_validation.py#L218) | 218 | `"    monkeypatch.setattr("` | — |
-| [SRC-1C77C97630-L000219](../../tests/test_answer_validation.py#L219) | 219 | `"        agent,"` | — |
-| [SRC-1C77C97630-L000220](../../tests/test_answer_validation.py#L220) | 220 | `"        \"_request_completion\","` | — |
-| [SRC-1C77C97630-L000221](../../tests/test_answer_validation.py#L221) | 221 | `"        lambda *args, **kwargs: ("` | — |
-| [SRC-1C77C97630-L000222](../../tests/test_answer_validation.py#L222) | 222 | `"            \"<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000223](../../tests/test_answer_validation.py#L223) | 223 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1C77C97630-L000224](../../tests/test_answer_validation.py#L224) | 224 | `"        ),"` | — |
-| [SRC-1C77C97630-L000225](../../tests/test_answer_validation.py#L225) | 225 | `"    )"` | — |
-| [SRC-1C77C97630-L000226](../../tests/test_answer_validation.py#L226) | 226 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
-| [SRC-1C77C97630-L000227](../../tests/test_answer_validation.py#L227) | 227 | `"        agent._repair_answer_coverage("` | — |

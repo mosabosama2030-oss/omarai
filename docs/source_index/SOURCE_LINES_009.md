@@ -403,7 +403,7 @@
 | [SRC-1AE03B9EC3-L000575](../../agents/web_agent.py#L575) | 575 | `"            \"OMARAI_LLM_FALLBACK_MODEL\", \"openrouter/free\""` | — |
 | [SRC-1AE03B9EC3-L000576](../../agents/web_agent.py#L576) | 576 | `"        ).strip()"` | — |
 | [SRC-1AE03B9EC3-L000577](../../agents/web_agent.py#L577) | 577 | `"        self.model = self.answer_model  # Backwards-compatible alias."` | — |
-| [SRC-1AE03B9EC3-L000578](../../agents/web_agent.py#L578) | 578 | `"        self.model_usage: list[dict[str, str]] = []"` | — |
+| [SRC-1AE03B9EC3-L000578](../../agents/web_agent.py#L578) | 578 | `"        self.model_usage: list[dict[str, Any]] = []"` | — |
 | [SRC-1AE03B9EC3-L000579](../../agents/web_agent.py#L579) | 579 | `"        # Per-answer, bounded diagnostics contain only model identifiers and status metadata."` | — |
 | [SRC-1AE03B9EC3-L000580](../../agents/web_agent.py#L580) | 580 | `"        # They intentionally exclude prompts, generated text, and provider response bodies."` | — |
 | [SRC-1AE03B9EC3-L000581](../../agents/web_agent.py#L581) | 581 | `"        self.generation_diagnostics: list[dict[str, str]] = []"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000558 إلى SRC-69F3587825-L000159
+- النطاق: SRC-0F910493E8-L000541 إلى SRC-69F3587825-L000128
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,23 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000541](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L541) | 541 | `"هذه المواصفات تُكيَّف مع حجم Omarai وواقع الاستضافة، لكنها لا تسمح بتجاوز ضوابط الأساس التي تحمي الأسرار والصلاحيات والبيانات والاتصال بالشبكة. إذا كانت بيئة التشغيل لا تستطيع توفير عزل أو مصادقة أو حد شبكة مطلوبًا، فالحل هو تقليل القدرة أو تعطيلها أو عدم نشرها، لا اعتبار القيد غير موجود."` | — |
+| [SRC-0F910493E8-L000542](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L542) | 542 | `""` | — |
+| [SRC-0F910493E8-L000543](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L543) | 543 | `"## 17.2 أطر مرجعية ومبدأ عدم الادعاء بالامتثال"` | — |
+| [SRC-0F910493E8-L000544](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L544) | 544 | `""` | — |
+| [SRC-0F910493E8-L000545](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L545) | 545 | `"تُستخدم الأطر التالية كمراجع تصميم وتقييم بحسب الصلة:"` | — |
+| [SRC-0F910493E8-L000546](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L546) | 546 | `"- NIST Cybersecurity Framework (CSF) 2.0: الحوكمة، والتعرّف، والحماية، والكشف، والاستجابة، والتعافي."` | — |
+| [SRC-0F910493E8-L000547](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L547) | 547 | `"- NIST SP 800-207: مبادئ Zero Trust؛ لا تُمنح الثقة لمجرد موقع المكوّن داخل شبكة أو ملكيته."` | — |
+| [SRC-0F910493E8-L000548](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L548) | 548 | `"- NIST AI RMF وNIST AI 600-1: تحديد مخاطر الذكاء الاصطناعي التوليدي ومتابعتها عبر دورة الحياة."` | — |
+| [SRC-0F910493E8-L000549](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L549) | 549 | `"- NIST SP 800-218 SSDF: ممارسات تطوير البرمجيات الآمن. نسخة SP 800-218 Rev. 1 المنشورة كمسودة لا تُعامل كإصدار نهائي."` | — |
+| [SRC-0F910493E8-L000550](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L550) | 550 | `"- OWASP Top 10 for Agentic Applications 2026، وOWASP API Security، ومراجع OWASP الخاصة بأمن تطبيقات الويب والذكاء الاصطناعي حيث تنطبق."` | — |
+| [SRC-0F910493E8-L000551](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L551) | 551 | `"  "` | — |
+| [SRC-0F910493E8-L000552](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L552) | 552 | `"هذه المراجع نقاط انطلاق للمراجعة، وليست شهادة بأن Omarai متوافق معها. يجب تدوين المرجع والإصدار وتاريخ المراجعة عند تحويل أي منه إلى اختبار أو مطلب محدد، وعدم نقل ضوابط لا تلائم النطاق بلا مبرر."` | — |
+| [SRC-0F910493E8-L000553](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L553) | 553 | `""` | — |
+| [SRC-0F910493E8-L000554](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L554) | 554 | `"روابط المراجع:"` | — |
+| [SRC-0F910493E8-L000555](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L555) | 555 | `"- NIST CSF 2.0: https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"` | — |
+| [SRC-0F910493E8-L000556](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L556) | 556 | `"- NIST Zero Trust / SP 800-207: https://www.nist.gov/publications/zero-trust-architecture"` | — |
+| [SRC-0F910493E8-L000557](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L557) | 557 | `"- NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework"` | — |
 | [SRC-0F910493E8-L000558](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L558) | 558 | `"- NIST Generative AI Profile: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"` | — |
 | [SRC-0F910493E8-L000559](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L559) | 559 | `"- NIST SSDF: https://csrc.nist.gov/pubs/sp/800/218/final"` | — |
 | [SRC-0F910493E8-L000560](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L560) | 560 | `"- NIST SSDF publications, including status of revisions: https://csrc.nist.gov/projects/ssdf/publications"` | — |
@@ -462,6 +479,20 @@
 | [SRC-61B24BEFCC-L000140](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L140) | 140 | `"## تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026"` | — |
 | [SRC-61B24BEFCC-L000141](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L141) | 141 | `""` | — |
 | [SRC-61B24BEFCC-L000142](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L142) | 142 | ``"تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
+| [SRC-61B24BEFCC-L000143](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L143) | 143 | `""` | — |
+| [SRC-61B24BEFCC-L000144](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L144) | 144 | `""` | — |
+| [SRC-61B24BEFCC-L000145](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L145) | 145 | `"---"` | — |
+| [SRC-61B24BEFCC-L000146](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L146) | 146 | `""` | — |
+| [SRC-61B24BEFCC-L000147](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L147) | 147 | `"## ملحق أدلة القياس — 29 أكتوبر 2026"` | — |
+| [SRC-61B24BEFCC-L000148](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L148) | 148 | `""` | — |
+| [SRC-61B24BEFCC-L000149](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L149) | 149 | `"- **فرع التغيير:** feat/evaluation-baseline-metrics-2026-10-29؛ مرجع المصدر السابق ef69ca5f8dbcdf01d798e254f737aa51776b4bb1."` | — |
+| [SRC-61B24BEFCC-L000150](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L150) | 150 | `"- **الموجود في التغيير:** وقت HTTP لكل حالة، SHA صريح للبناء عند تمريره، حالة البحث المستنتجة من سجل التنفيذ لا من HTTP 200، وبيانات usage التي يصرّح بها مزوّد النموذج فقط. أضيفت أداة مقارنة تقبل ملفي تشغيل ومعرفات build والملفات البشرية للمراجعة."` | — |
+| [SRC-61B24BEFCC-L000151](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L151) | 151 | `"- **الاختبارات الجديدة:** tests/test_answer_quality_comparison.py وtests/test_answer_quality_provider_usage.py، مع إضافات إلى tests/test_answer_quality_runner.py. حالة CI لهذه الإضافات عند إنشاء هذا الملحق: **NOT_RUN**؛ لا يصح وصفها بأنها اجتازت الاختبارات حتى يرتبط تشغيل GitHub Actions برأس الفرع النهائي."` | — |
+| [SRC-61B24BEFCC-L000152](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L152) | 152 | `"- **المقاييس التي تحتاج annotations:** factual accuracy، retrieval precision/recall، faithfulness، citation support وwriting quality. قالب المراجعة المرفق يبدأ بكل الحالات NOT_TESTED. لا توجد نتائج بشرية فعلية قبل/بعد."` | — |
+| [SRC-61B24BEFCC-L000153](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L153) | 153 | `"- **التكلفة:** provider-reported model usage فقط عندما يرد من المزود. التكلفة الإجمالية الكاملة للطلب **UNKNOWN / NOT_MEASURED** لأن بيانات تكلفة موصلات البحث غير متاحة بصورة موحدة."` | — |
+| [SRC-61B24BEFCC-L000154](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L154) | 154 | `"- **القبول الحي:** **NOT_RUN**. لا يستدعي فحص التحقق البنيوي مزودًا خارجيًا. لم يجر تشغيل حي مدفوع أو تعديل استضافة ضمن هذا التغيير."` | — |
+| [SRC-61B24BEFCC-L000155](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L155) | 155 | `"- **ما يلزم قبل ادعاء التحسن:** تشغيل النسخة السابقة والمرشح على نفس الأسئلة من إصدارين معلومين SHA، حفظ ملفي JSON، وتطبيق rubric بشري متطابق على مخرجات كل نسخة. دون هذا لا تُنشر نسبة تحسن."` | — |
+| [SRC-61B24BEFCC-L000156](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L156) | 156 | `""` | — |
 ## وثائق وفهرسة
 
 ### FILE-B6BD2CE1A8 — [docs/OPERATIONS_AR.md](../OPERATIONS_AR.md#L1)
@@ -830,34 +861,3 @@
 | [SRC-69F3587825-L000126](../search_code.py#L126) | 126 | `"        return configured"` | — |
 | [SRC-69F3587825-L000127](../search_code.py#L127) | 127 | `"    action_sha = os.getenv(\"GITHUB_SHA\", \"\").strip()"` | — |
 | [SRC-69F3587825-L000128](../search_code.py#L128) | 128 | `"    if re.fullmatch(r\"[0-9a-fA-F]{40}\", action_sha):"` | — |
-| [SRC-69F3587825-L000129](../search_code.py#L129) | 129 | `"        return action_sha.lower()"` | — |
-| [SRC-69F3587825-L000130](../search_code.py#L130) | 130 | `"    try:"` | — |
-| [SRC-69F3587825-L000131](../search_code.py#L131) | 131 | `"        result = subprocess.run("` | — |
-| [SRC-69F3587825-L000132](../search_code.py#L132) | 132 | `"            [\"git\", \"rev-parse\", \"HEAD\"],"` | — |
-| [SRC-69F3587825-L000133](../search_code.py#L133) | 133 | `"            cwd=root,"` | — |
-| [SRC-69F3587825-L000134](../search_code.py#L134) | 134 | `"            check=True,"` | — |
-| [SRC-69F3587825-L000135](../search_code.py#L135) | 135 | `"            capture_output=True,"` | — |
-| [SRC-69F3587825-L000136](../search_code.py#L136) | 136 | `"            text=True,"` | — |
-| [SRC-69F3587825-L000137](../search_code.py#L137) | 137 | `"            timeout=2,"` | — |
-| [SRC-69F3587825-L000138](../search_code.py#L138) | 138 | `"        )"` | — |
-| [SRC-69F3587825-L000139](../search_code.py#L139) | 139 | `"    except (OSError, subprocess.SubprocessError):"` | — |
-| [SRC-69F3587825-L000140](../search_code.py#L140) | 140 | `"        return \"main\""` | — |
-| [SRC-69F3587825-L000141](../search_code.py#L141) | 141 | `"    revision = result.stdout.strip()"` | — |
-| [SRC-69F3587825-L000142](../search_code.py#L142) | 142 | `"    return revision.lower() if re.fullmatch(r\"[0-9a-fA-F]{40}\", revision) else \"main\""` | — |
-| [SRC-69F3587825-L000143](../search_code.py#L143) | 143 | `""` | — |
-| [SRC-69F3587825-L000144](../search_code.py#L144) | 144 | `""` | — |
-| [SRC-69F3587825-L000145](../search_code.py#L145) | 145 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-69F3587825-L000146](../search_code.py#L146) | 146 | `"class SearchHit:"` | — |
-| [SRC-69F3587825-L000147](../search_code.py#L147) | 147 | `"    file: str"` | — |
-| [SRC-69F3587825-L000148](../search_code.py#L148) | 148 | `"    line: int"` | — |
-| [SRC-69F3587825-L000149](../search_code.py#L149) | 149 | `"    text: str"` | — |
-| [SRC-69F3587825-L000150](../search_code.py#L150) | 150 | `"    context_before: str"` | — |
-| [SRC-69F3587825-L000151](../search_code.py#L151) | 151 | `"    context_after: str"` | — |
-| [SRC-69F3587825-L000152](../search_code.py#L152) | 152 | `"    repository_ref: str = \"main\""` | — |
-| [SRC-69F3587825-L000153](../search_code.py#L153) | 153 | `""` | — |
-| [SRC-69F3587825-L000154](../search_code.py#L154) | 154 | `"    @property"` | — |
-| [SRC-69F3587825-L000155](../search_code.py#L155) | 155 | `"    def link(self) -> str:"` | — |
-| [SRC-69F3587825-L000156](../search_code.py#L156) | 156 | `"        revision = quote(self.repository_ref, safe=\"/-._~\")"` | — |
-| [SRC-69F3587825-L000157](../search_code.py#L157) | 157 | `"        path = quote(self.file, safe=\"/-._~\")"` | — |
-| [SRC-69F3587825-L000158](../search_code.py#L158) | 158 | `"        return f\"{GITHUB_BLOB_BASE}/{revision}/{path}#L{self.line}\""` | — |
-| [SRC-69F3587825-L000159](../search_code.py#L159) | 159 | `""` | — |
