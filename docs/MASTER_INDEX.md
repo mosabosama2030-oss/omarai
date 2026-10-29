@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **109**
 - ملفات Python المحللة: **65**
-- تعريفات Python المفهرسة: **1425**
+- تعريفات Python المفهرسة: **1429**
 - تعريفات Python موثقة بوجود Docstring: **241**
-- تعريفات Python بلا Docstring: **890**
+- تعريفات Python بلا Docstring: **894**
 - تعريفات لا ينطبق عليها Docstring: **294**
 - الرموز الساكنة الإضافية: **1757**
-- الأسطر النصية المفهرسة حرفيًا: **37455**
+- الأسطر النصية المفهرسة حرفيًا: **37525**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -93,7 +93,7 @@
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-88B503CEB0 | ملفات أخرى | [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L1) | Python | 15351 | 327 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
-| FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 15025 | 404 | جرد الملف + AST Python |
+| FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 16407 | 426 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -101,7 +101,7 @@
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
-| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
+| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 8857 | 279 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
@@ -757,7 +757,7 @@
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L187) | دالة | post_agent | لا توجد Docstring. | ناقص | 187 | [SRC-4FFD5AFC54-L000187](../scripts/run_answer_quality_benchmark.py#L187) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L226) | دالة | run_validate | لا توجد Docstring. | ناقص | 226 | [SRC-4FFD5AFC54-L000226](../scripts/run_answer_quality_benchmark.py#L226) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L253) | دالة | run_live | لا توجد Docstring. | ناقص | 253 | [SRC-4FFD5AFC54-L000253](../scripts/run_answer_quality_benchmark.py#L253) |
-| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L359) | دالة | main | لا توجد Docstring. | ناقص | 359 | [SRC-4FFD5AFC54-L000359](../scripts/run_answer_quality_benchmark.py#L359) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L381) | دالة | main | لا توجد Docstring. | ناقص | 381 | [SRC-4FFD5AFC54-L000381](../scripts/run_answer_quality_benchmark.py#L381) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L17) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-03FF422A16-L000017](../scripts/score_answer_quality_reviews.py#L17) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L18) | متغير/ثابت Python | DEFAULT_CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-03FF422A16-L000018](../scripts/score_answer_quality_reviews.py#L18) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L19) | متغير/ثابت Python | ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-03FF422A16-L000019](../scripts/score_answer_quality_reviews.py#L19) |
@@ -841,6 +841,10 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L191) | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 191 | [SRC-B3062EB677-L000191](../tests/test_answer_quality_runner.py#L191) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L208) | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 208 | [SRC-B3062EB677-L000208](../tests/test_answer_quality_runner.py#L208) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L211) | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 211 | [SRC-B3062EB677-L000211](../tests/test_answer_quality_runner.py#L211) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L234) | دالة | test_live_records_latency_and_observed_usage_without_inventing_cost | لا توجد Docstring. | ناقص | 234 | [SRC-B3062EB677-L000234](../tests/test_answer_quality_runner.py#L234) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L239) | دالة | test_live_records_latency_and_observed_usage_without_inventing_cost.fake_post | لا توجد Docstring. | ناقص | 239 | [SRC-B3062EB677-L000239](../tests/test_answer_quality_runner.py#L239) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L263) | دالة | test_live_missing_usage_remains_unknown_not_zero | لا توجد Docstring. | ناقص | 263 | [SRC-B3062EB677-L000263](../tests/test_answer_quality_runner.py#L263) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L266) | دالة | test_live_missing_usage_remains_unknown_not_zero.fake_post | لا توجد Docstring. | ناقص | 266 | [SRC-B3062EB677-L000266](../tests/test_answer_quality_runner.py#L266) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L11) | دالة | test_numeric_screen_accepts_arabic_digits_and_thousands_formatting | لا توجد Docstring. | ناقص | 11 | [SRC-1C77C97630-L000011](../tests/test_answer_validation.py#L11) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L31) | دالة | test_numeric_screen_flags_number_absent_from_available_evidence | لا توجد Docstring. | ناقص | 31 | [SRC-1C77C97630-L000031](../tests/test_answer_validation.py#L31) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L47) | دالة | test_task_coverage_screen_flags_a_potentially_missing_target_without_claiming_failure | لا توجد Docstring. | ناقص | 47 | [SRC-1C77C97630-L000047](../tests/test_answer_validation.py#L47) |
