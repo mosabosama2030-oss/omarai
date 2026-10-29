@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000221 إلى SRC-1C77C97630-L000100
+- النطاق: SRC-4CCB1F172B-L000220 إلى SRC-1C77C97630-L000099
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000220](../../tests/test_answer_quality_corpus.py#L220) | 220 | `"    text = DOCS_PATH.read_text(encoding=\"utf-8\")"` | — |
 | [SRC-4CCB1F172B-L000221](../../tests/test_answer_quality_corpus.py#L221) | 221 | `"    for case_id in (\"AQ-024\", \"AQ-030\", \"AQ-025\", \"AQ-031\", \"AQ-023\", \"AQ-018\", \"AQ-021\"):"` | — |
 | [SRC-4CCB1F172B-L000222](../../tests/test_answer_quality_corpus.py#L222) | 222 | `"        assert case_id in text, f\"Docs missing corrected example {case_id}\""` | — |
 | [SRC-4CCB1F172B-L000223](../../tests/test_answer_quality_corpus.py#L223) | 223 | `""` | — |
@@ -860,4 +861,3 @@
 | [SRC-1C77C97630-L000097](../../tests/test_answer_validation.py#L97) | 97 | `"            \"snippet\": \"Price: 100 EGP. Size: 80 sqm.\","` | — |
 | [SRC-1C77C97630-L000098](../../tests/test_answer_validation.py#L98) | 98 | `"            \"page_fetched\": False,"` | — |
 | [SRC-1C77C97630-L000099](../../tests/test_answer_validation.py#L99) | 99 | `"        }],"` | — |
-| [SRC-1C77C97630-L000100](../../tests/test_answer_validation.py#L100) | 100 | `"        [\"السعر\", \"المساحة\"],"` | — |

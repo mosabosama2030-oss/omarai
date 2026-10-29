@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000648 إلى SRC-D17CE3D12F-L000544
+- النطاق: SRC-E73001D9AC-L000647 إلى SRC-D17CE3D12F-L000543
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000647](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) | 647 | `""` | — |
 | [SRC-E73001D9AC-L000648](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L648) | 648 | `"# الجزء العاشر — معمارية التوسع والتطوير المستمر"` | — |
 | [SRC-E73001D9AC-L000649](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L649) | 649 | `""` | — |
 | [SRC-E73001D9AC-L000650](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L650) | 650 | `"هذا الجزء متطلب تأسيسي مستقل. الغرض ليس توقع كل ميزة مستقبلية، بل بناء نظام يمكنه استيعاب التغيير بأقل كلفة ومخاطر ممكنة، مع الحفاظ على التوافق والأمان والموثوقية."` | — |
@@ -824,4 +825,3 @@
 | [SRC-D17CE3D12F-L000541](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L541) | 541 | `"3. MUST تحديد ما الذي يستمر في العمل عند فقد كل موفر: الواجهة، والأسئلة غير المعتمدة على البحث، ونتائج cache المناسبة، ورسالة الفشل."` | — |
 | [SRC-D17CE3D12F-L000542](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L542) | 542 | `"4. SHOULD الاحتفاظ بخطة تصدير للبيانات الأساسية ونقلها من الاستضافة/المخزن، وفق الإمكانات الفعلية."` | — |
 | [SRC-D17CE3D12F-L000543](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L543) | 543 | `"5. MUST عدم الاعتماد على ميزة مجانية حساسة دون خطة بديلة أو التصريح بأن الخدمة قد تتوقف عند انتهاء الحصة."` | — |
-| [SRC-D17CE3D12F-L000544](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L544) | 544 | `"6. MUST عدم نقل أسرار أو بيانات خاصة إلى موفر احتياطي دون السماح بذلك بنفس سياسة الخصوصية والأمن."` | — |

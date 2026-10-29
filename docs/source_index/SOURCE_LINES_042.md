@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000017 إلى SRC-D033B34F41-L000034
+- النطاق: SRC-AFFCF23BD4-L000016 إلى SRC-D033B34F41-L000033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000016](../../tests/test_research_completion.py#L16) | 16 | `"        \"search_attempted\": True,"` | — |
 | [SRC-AFFCF23BD4-L000017](../../tests/test_research_completion.py#L17) | 17 | `"        \"sources\": [],"` | — |
 | [SRC-AFFCF23BD4-L000018](../../tests/test_research_completion.py#L18) | 18 | `"        \"search_report\": {"` | — |
 | [SRC-AFFCF23BD4-L000019](../../tests/test_research_completion.py#L19) | 19 | `"            \"search_attempted\": True,"` | — |
@@ -842,4 +843,3 @@
 | [SRC-D033B34F41-L000031](../../tests/test_source_metadata_audit.py#L31) | 31 | `"        \"ما عدد سكان القاهرة؟\","` | — |
 | [SRC-D033B34F41-L000032](../../tests/test_source_metadata_audit.py#L32) | 32 | `"        \"العدد وفق المصدر [المصدر 1].\","` | — |
 | [SRC-D033B34F41-L000033](../../tests/test_source_metadata_audit.py#L33) | 33 | `"        [{"` | — |
-| [SRC-D033B34F41-L000034](../../tests/test_source_metadata_audit.py#L34) | 34 | `"            \"title\": \"Population report\","` | — |

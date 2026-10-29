@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D033B34F41-L000035 إلى SRC-F725E90B2A-L000100
+- النطاق: SRC-D033B34F41-L000034 إلى SRC-F725E90B2A-L000099
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D033B34F41-L000034](../../tests/test_source_metadata_audit.py#L34) | 34 | `"            \"title\": \"Population report\","` | — |
 | [SRC-D033B34F41-L000035](../../tests/test_source_metadata_audit.py#L35) | 35 | `"            \"publisher\": \"Example Statistics Office\","` | — |
 | [SRC-D033B34F41-L000036](../../tests/test_source_metadata_audit.py#L36) | 36 | `"            \"url\": \"https://example.org/population\","` | — |
 | [SRC-D033B34F41-L000037](../../tests/test_source_metadata_audit.py#L37) | 37 | `"            \"published_at\": \"2025-06-01\","` | — |
@@ -851,4 +852,3 @@
 | [SRC-F725E90B2A-L000097](../../tests/test_web_agent.py#L97) | 97 | `"    )"` | — |
 | [SRC-F725E90B2A-L000098](../../tests/test_web_agent.py#L98) | 98 | `"    assert any(\"تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري\" in warning"` | — |
 | [SRC-F725E90B2A-L000099](../../tests/test_web_agent.py#L99) | 99 | `"               for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L000100](../../tests/test_web_agent.py#L100) | 100 | `"    assert result[\"used_language_model\"] is True"` | — |

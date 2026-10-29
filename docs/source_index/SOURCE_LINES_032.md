@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000657 إلى SRC-D4963BDA6A-L000104
+- النطاق: SRC-90FAA34ADE-L000656 إلى SRC-D4963BDA6A-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000656](../../tests/fixtures/answer_quality_cases.json#L656) | 656 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L000657](../../tests/fixtures/answer_quality_cases.json#L657) | 657 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000658](../../tests/fixtures/answer_quality_cases.json#L658) | 658 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000659](../../tests/fixtures/answer_quality_cases.json#L659) | 659 | `"      \"case_id\": \"AQ-023\","` | — |
@@ -824,4 +825,3 @@
 | [SRC-D4963BDA6A-L000101](../../tests/fixtures/answer_quality_reviews_template.json#L101) | 101 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000102](../../tests/fixtures/answer_quality_reviews_template.json#L102) | 102 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000103](../../tests/fixtures/answer_quality_reviews_template.json#L103) | 103 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000104](../../tests/fixtures/answer_quality_reviews_template.json#L104) | 104 | `"      \"case_id\": \"AQ-020\","` | — |

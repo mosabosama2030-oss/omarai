@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000174 إلى SRC-547CAF1FE3-L000008
+- النطاق: SRC-4FFD5AFC54-L000173 إلى SRC-547CAF1FE3-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000173](../../scripts/run_answer_quality_benchmark.py#L173) | 173 | `"    }"` | — |
 | [SRC-4FFD5AFC54-L000174](../../scripts/run_answer_quality_benchmark.py#L174) | 174 | `"    successful_statuses = {"` | — |
 | [SRC-4FFD5AFC54-L000175](../../scripts/run_answer_quality_benchmark.py#L175) | 175 | `"        \"web_search\": {\"completed_with_results\"},"` | — |
 | [SRC-4FFD5AFC54-L000176](../../scripts/run_answer_quality_benchmark.py#L176) | 176 | `"        \"page_fetch\": {\"completed_with_read_pages\"},"` | — |
@@ -833,4 +834,3 @@
 | [SRC-547CAF1FE3-L000005](../../scripts/sqlite_backup_restore.py#L5) | 5 | `"import argparse"` | — |
 | [SRC-547CAF1FE3-L000006](../../scripts/sqlite_backup_restore.py#L6) | 6 | `"from contextlib import closing"` | — |
 | [SRC-547CAF1FE3-L000007](../../scripts/sqlite_backup_restore.py#L7) | 7 | `"import json"` | — |
-| [SRC-547CAF1FE3-L000008](../../scripts/sqlite_backup_restore.py#L8) | 8 | `"import os"` | — |

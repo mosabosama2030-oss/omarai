@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000009 إلى SRC-90FAA34ADE-L000656
+- النطاق: SRC-547CAF1FE3-L000008 إلى SRC-90FAA34ADE-L000655
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000008](../../scripts/sqlite_backup_restore.py#L8) | 8 | `"import os"` | — |
 | [SRC-547CAF1FE3-L000009](../../scripts/sqlite_backup_restore.py#L9) | 9 | `"import sqlite3"` | — |
 | [SRC-547CAF1FE3-L000010](../../scripts/sqlite_backup_restore.py#L10) | 10 | `"import sys"` | — |
 | [SRC-547CAF1FE3-L000011](../../scripts/sqlite_backup_restore.py#L11) | 11 | `"from pathlib import Path"` | — |
@@ -824,4 +825,3 @@
 | [SRC-90FAA34ADE-L000653](../../tests/fixtures/answer_quality_cases.json#L653) | 653 | `"        \"ادعاء أن المتجر يعمل طوال اليوم\","` | — |
 | [SRC-90FAA34ADE-L000654](../../tests/fixtures/answer_quality_cases.json#L654) | 654 | `"        \"نسبة معلومة غير موجودة في المقتطف إلى المصدر\""` | — |
 | [SRC-90FAA34ADE-L000655](../../tests/fixtures/answer_quality_cases.json#L655) | 655 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000656](../../tests/fixtures/answer_quality_cases.json#L656) | 656 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |

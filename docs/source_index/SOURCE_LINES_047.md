@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002501 إلى SRC-F725E90B2A-L003300
+- النطاق: SRC-F725E90B2A-L002500 إلى SRC-F725E90B2A-L003299
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002500](../../tests/test_web_agent.py#L2500) | 2500 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 0"` | — |
 | [SRC-F725E90B2A-L002501](../../tests/test_web_agent.py#L2501) | 2501 | `"    assert report[\"checks\"][\"web_search\"][\"completed_connector_responses\"] >= 1"` | — |
 | [SRC-F725E90B2A-L002502](../../tests/test_web_agent.py#L2502) | 2502 | `"    assert \"completed a request\" in report[\"checks\"][\"web_search\"][\"note\"]"` | — |
 | [SRC-F725E90B2A-L002503](../../tests/test_web_agent.py#L2503) | 2503 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003297](../../tests/test_web_agent.py#L3297) | 3297 | `"        lambda *args, **kwargs: {\"queries\": fallback_queries},"` | — |
 | [SRC-F725E90B2A-L003298](../../tests/test_web_agent.py#L3298) | 3298 | `"    )"` | — |
 | [SRC-F725E90B2A-L003299](../../tests/test_web_agent.py#L3299) | 3299 | `""` | — |
-| [SRC-F725E90B2A-L003300](../../tests/test_web_agent.py#L3300) | 3300 | `"    def collect(research_plan):"` | — |

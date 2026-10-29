@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000332 إلى SRC-D911B73392-L000064
+- النطاق: SRC-0F910493E8-L000331 إلى SRC-D911B73392-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000331](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L331) | 331 | `"عند نقص الأدلة أو فشل المصدر، يقدم Omarai إجابة جزئية صادقة أو يوضح تعذر التحقق. لا يحول الفشل إلى نجاح، ولا يصنع مصدرًا أو نتيجة أو حالة أداة غير موجودة."` | — |
 | [SRC-0F910493E8-L000332](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L332) | 332 | `""` | — |
 | [SRC-0F910493E8-L000333](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L333) | 333 | `"---"` | — |
 | [SRC-0F910493E8-L000334](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L334) | 334 | `""` | — |
@@ -851,4 +852,3 @@
 | [SRC-D911B73392-L000061](../RESEARCH_CONNECTORS_AR.md#L61) | 61 | `""` | — |
 | [SRC-D911B73392-L000062](../RESEARCH_CONNECTORS_AR.md#L62) | 62 | ````"```bash"```` | — |
 | [SRC-D911B73392-L000063](../RESEARCH_CONNECTORS_AR.md#L63) | 63 | `"read -r -s -p \"Reddit client ID: \" REDDIT_CLIENT_ID; printf '\\n'; export REDDIT_CLIENT_ID"` | — |
-| [SRC-D911B73392-L000064](../RESEARCH_CONNECTORS_AR.md#L64) | 64 | `"read -r -s -p \"Reddit client secret: \" REDDIT_CLIENT_SECRET; printf '\\n'; export REDDIT_CLIENT_SECRET"` | — |

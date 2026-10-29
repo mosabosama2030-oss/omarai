@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B106ADC5EF-L000026 إلى SRC-AFFCF23BD4-L000016
+- النطاق: SRC-B106ADC5EF-L000025 إلى SRC-AFFCF23BD4-L000015
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B106ADC5EF-L000025](../../tests/test_proxy_origin.py#L25) | 25 | `"        yield server.server_port"` | — |
 | [SRC-B106ADC5EF-L000026](../../tests/test_proxy_origin.py#L26) | 26 | `"    finally:"` | — |
 | [SRC-B106ADC5EF-L000027](../../tests/test_proxy_origin.py#L27) | 27 | `"        server.shutdown()"` | — |
 | [SRC-B106ADC5EF-L000028](../../tests/test_proxy_origin.py#L28) | 28 | `"        server.server_close()"` | — |
@@ -851,4 +852,3 @@
 | [SRC-AFFCF23BD4-L000013](../../tests/test_research_completion.py#L13) | 13 | `"def test_empty_results_distinguish_zero_results_from_tool_failure() -> None:"` | — |
 | [SRC-AFFCF23BD4-L000014](../../tests/test_research_completion.py#L14) | 14 | `"    no_results = build_research_completion({"` | — |
 | [SRC-AFFCF23BD4-L000015](../../tests/test_research_completion.py#L15) | 15 | `"        \"kind\": \"insufficient_evidence\","` | — |
-| [SRC-AFFCF23BD4-L000016](../../tests/test_research_completion.py#L16) | 16 | `"        \"search_attempted\": True,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000254 إلى SRC-829A979985-L000214
+- النطاق: SRC-6BCB799CEC-L000253 إلى SRC-829A979985-L000213
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000253](../../tests/test_evidence_provenance.py#L253) | 253 | `"            return self"` | — |
 | [SRC-6BCB799CEC-L000254](../../tests/test_evidence_provenance.py#L254) | 254 | `""` | — |
 | [SRC-6BCB799CEC-L000255](../../tests/test_evidence_provenance.py#L255) | 255 | `"        def __exit__(self, *args):"` | — |
 | [SRC-6BCB799CEC-L000256](../../tests/test_evidence_provenance.py#L256) | 256 | `"            return False"` | — |
@@ -842,4 +843,3 @@
 | [SRC-829A979985-L000211](../../tests/test_generation_acceptance_matrix.py#L211) | 211 | `"        item for item in result[\"capability_status\"][\"web_search\"][\"providers\"]"` | — |
 | [SRC-829A979985-L000212](../../tests/test_generation_acceptance_matrix.py#L212) | 212 | `"        if item[\"name\"] == \"deepseek_search_api\""` | — |
 | [SRC-829A979985-L000213](../../tests/test_generation_acceptance_matrix.py#L213) | 213 | `"    )"` | — |
-| [SRC-829A979985-L000214](../../tests/test_generation_acceptance_matrix.py#L214) | 214 | `"    assert provider[\"configuration_status\"] == \"configured\""` | — |

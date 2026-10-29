@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000107 إلى SRC-0F910493E8-L000331
+- النطاق: SRC-65551FB29F-L000106 إلى SRC-0F910493E8-L000330
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000106](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L106) | 106 | `"\| L06 — الهوية والجلسة \| تحديد المستخدم/السياق \| مصادقة وتفويض عند الحاجة \|"` | — |
 | [SRC-65551FB29F-L000107](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L107) | 107 | `"\| L07 — سياق المستخدم/المستأجر \| عزل الحالة والبيانات \| اختبارات عدم الاختلاط \|"` | — |
 | [SRC-65551FB29F-L000108](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L108) | 108 | `"\| L08 — التحقق من المدخلات \| schemas والأنواع والأحجام \| رفض المدخلات غير الصالحة \|"` | — |
 | [SRC-65551FB29F-L000109](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L109) | 109 | `"\| L09 — سياق الطلب والموازنة \| correlation ID والمهلة والميزانية \| deadline وresource budget \|"` | — |
@@ -824,4 +825,3 @@
 | [SRC-0F910493E8-L000328](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L328) | 328 | `""` | — |
 | [SRC-0F910493E8-L000329](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L329) | 329 | `"وجود رابط لا يثبت دعم الادعاء. ووجود مقتطف مطابق يثبت أن النص ظهر في المصدر المسترجع، لا صحة مضمون النص بالضرورة. ومراجعة LLM لنص LLM آخر لا تُسمى تحققًا مستقلًا إلا إذا حُدد أساس استقلالها وأُثبتت حدودها."` | — |
 | [SRC-0F910493E8-L000330](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L330) | 330 | `""` | — |
-| [SRC-0F910493E8-L000331](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L331) | 331 | `"عند نقص الأدلة أو فشل المصدر، يقدم Omarai إجابة جزئية صادقة أو يوضح تعذر التحقق. لا يحول الفشل إلى نجاح، ولا يصنع مصدرًا أو نتيجة أو حالة أداة غير موجودة."` | — |

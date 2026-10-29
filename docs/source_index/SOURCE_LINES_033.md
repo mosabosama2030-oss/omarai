@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000105 إلى SRC-4CCB1F172B-L000220
+- النطاق: SRC-D4963BDA6A-L000104 إلى SRC-4CCB1F172B-L000219
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000104](../../tests/fixtures/answer_quality_reviews_template.json#L104) | 104 | `"      \"case_id\": \"AQ-020\","` | — |
 | [SRC-D4963BDA6A-L000105](../../tests/fixtures/answer_quality_reviews_template.json#L105) | 105 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000106](../../tests/fixtures/answer_quality_reviews_template.json#L106) | 106 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000107](../../tests/fixtures/answer_quality_reviews_template.json#L107) | 107 | `"    },"` | — |
@@ -851,4 +852,3 @@
 | [SRC-4CCB1F172B-L000217](../../tests/test_answer_quality_corpus.py#L217) | 217 | `""` | — |
 | [SRC-4CCB1F172B-L000218](../../tests/test_answer_quality_corpus.py#L218) | 218 | `"def test_docs_mention_corrected_high_risk_ids():"` | — |
 | [SRC-4CCB1F172B-L000219](../../tests/test_answer_quality_corpus.py#L219) | 219 | `"    assert DOCS_PATH.is_file()"` | — |
-| [SRC-4CCB1F172B-L000220](../../tests/test_answer_quality_corpus.py#L220) | 220 | `"    text = DOCS_PATH.read_text(encoding=\"utf-8\")"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000101 إلى SRC-F725E90B2A-L000900
+- النطاق: SRC-F725E90B2A-L000100 إلى SRC-F725E90B2A-L000899
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000100](../../tests/test_web_agent.py#L100) | 100 | `"    assert result[\"used_language_model\"] is True"` | — |
 | [SRC-F725E90B2A-L000101](../../tests/test_web_agent.py#L101) | 101 | `"    task_understanding = result[\"task_understanding\"]"` | — |
 | [SRC-F725E90B2A-L000102](../../tests/test_web_agent.py#L102) | 102 | `"    assert task_understanding[\"task_spec\"][\"schema\"] == \"omarai.task_spec.v1\""` | — |
 | [SRC-F725E90B2A-L000103](../../tests/test_web_agent.py#L103) | 103 | `"    assert task_understanding[\"task_spec\"][\"task_family\"] == \"compare\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L000897](../../tests/test_web_agent.py#L897) | 897 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |
 | [SRC-F725E90B2A-L000898](../../tests/test_web_agent.py#L898) | 898 | `"    assert status[\"fallback_model\"] == \"openrouter/free\""` | — |
 | [SRC-F725E90B2A-L000899](../../tests/test_web_agent.py#L899) | 899 | `"    assert status[\"language_model_configured\"] is False"` | — |
-| [SRC-F725E90B2A-L000900](../../tests/test_web_agent.py#L900) | 900 | `"    assert status[\"verification_scope\"][\"kind\"] == \"configuration_snapshot\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000101 إلى SRC-3451CC474D-L000569
+- النطاق: SRC-1C77C97630-L000100 إلى SRC-3451CC474D-L000568
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000100](../../tests/test_answer_validation.py#L100) | 100 | `"        [\"السعر\", \"المساحة\"],"` | — |
 | [SRC-1C77C97630-L000101](../../tests/test_answer_validation.py#L101) | 101 | `"    )"` | — |
 | [SRC-1C77C97630-L000102](../../tests/test_answer_validation.py#L102) | 102 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
 | [SRC-1C77C97630-L000103](../../tests/test_answer_validation.py#L103) | 103 | `"    assert checks[\"السعر\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
@@ -824,4 +825,3 @@
 | [SRC-3451CC474D-L000566](../../tests/test_api.py#L566) | 566 | `"def test_api_absolute_body_deadline_stops_slow_trickle(local_api, monkeypatch):"` | — |
 | [SRC-3451CC474D-L000567](../../tests/test_api.py#L567) | 567 | `"    \"\"\"A client must not evade the total deadline by sending before each idle timeout.\"\"\""` | — |
 | [SRC-3451CC474D-L000568](../../tests/test_api.py#L568) | 568 | `"    import time"` | — |
-| [SRC-3451CC474D-L000569](../../tests/test_api.py#L569) | 569 | `""` | — |

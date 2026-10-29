@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-53E640B937-L000083 إلى SRC-E73001D9AC-L000647
+- النطاق: SRC-53E640B937-L000082 إلى SRC-E73001D9AC-L000646
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-53E640B937-L000082](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L82) | 82 | `""` | — |
 | [SRC-53E640B937-L000083](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L83) | 83 | `""` | — |
 | [SRC-53E640B937-L000084](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L84) | 84 | `"### تشغيل التقييم البشري القابل للتكرار"` | — |
 | [SRC-53E640B937-L000085](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L85) | 85 | `""` | — |
@@ -833,4 +834,3 @@
 | [SRC-E73001D9AC-L000644](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L644) | 644 | `"التفصيل المرجعي وبوابات قبول كل مرحلة وارد في [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md)."` | — |
 | [SRC-E73001D9AC-L000645](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L645) | 645 | `""` | — |
 | [SRC-E73001D9AC-L000646](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L646) | 646 | `"---"` | — |
-| [SRC-E73001D9AC-L000647](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) | 647 | `""` | — |

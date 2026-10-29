@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000901 إلى SRC-F725E90B2A-L001700
+- النطاق: SRC-F725E90B2A-L000900 إلى SRC-F725E90B2A-L001699
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000900](../../tests/test_web_agent.py#L900) | 900 | `"    assert status[\"verification_scope\"][\"kind\"] == \"configuration_snapshot\""` | — |
 | [SRC-F725E90B2A-L000901](../../tests/test_web_agent.py#L901) | 901 | `"    assert status[\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
 | [SRC-F725E90B2A-L000902](../../tests/test_web_agent.py#L902) | 902 | `"    assert status[\"verification_scope\"][\"language_model_configured_means\"] == ("` | — |
 | [SRC-F725E90B2A-L000903](../../tests/test_web_agent.py#L903) | 903 | `"        \"credential_present_not_successful_completion\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001697](../../tests/test_web_agent.py#L1697) | 1697 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001698](../../tests/test_web_agent.py#L1698) | 1698 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001699](../../tests/test_web_agent.py#L1699) | 1699 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001700](../../tests/test_web_agent.py#L1700) | 1700 | `"        },"` | — |
