@@ -430,6 +430,7 @@ def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:
         lines.append("لم أتمكن من استخراج مقتطفات كافية من نتائج الويب.")
     return "\n\n".join(lines)
 
+
 def _fallback_lead_answer(sources: list[dict[str, Any]]) -> str:
     """Present only already-qualified public buyer-intent signals if the LLM is unavailable."""
     eligible = [
