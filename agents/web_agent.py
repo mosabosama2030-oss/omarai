@@ -27,7 +27,7 @@ from agents.dialogue_state import (
     might_be_context_dependent,
     validate_dialogue_context,
 )
-from agents.answer_validation import audit_answer_integrity
+from agents.answer_validation import audit_answer_integrity, build_requirement_evidence_ledger
 from agents.claim_evidence import build_claim_evidence_ledger
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.aspect_planning import (
@@ -45,6 +45,7 @@ from agents.research import (
     fallback_plan,
     fuse_ranked_results,
     registrable_domain,
+    extract_question_coverage_targets,
     validate_plan,
 )
 from agents.research_guardrails import apply_source_guardrails
@@ -771,63 +772,12 @@ class WebAgent:
 
     @staticmethod
     def _question_coverage_targets(question: str) -> list[str]:
-        """Extract explicit multi-part answer requirements conservatively; this is not semantic grading."""
-        if not isinstance(question, str) or not question.strip():
-            return []
-        text = question.strip()[:MAX_QUESTION_CHARS]
-        enhanced_targets = extract_aspects(text)
+        """Use the richer aspect parser, then the shared deterministic fallback."""
+        enhanced_targets = extract_aspects(question)
         if enhanced_targets:
             return enhanced_targets[:8]
-        marker = re.compile(
-            r"(?:من\s+حيث|من\s+ناحية|من\s+الناحية|فيما\s+يتعلق\s+ب|فيما\s+يخص|"
-            r"من\s+منظور|in\s+terms\s+of|with\s+respect\s+to|"
-            r"from\s+the\s+perspective\s+of|based\s+on\s+the\s+following\s+criteria)"
-            r"\s*(.+?)(?=[؟?!.؛;\n]|$)",
-            flags=re.IGNORECASE,
-        )
-        match = marker.search(text)
-        if match:
-            raw = match.group(1)
-            # Keep explicit criteria separate from trailing meta-requests such as
-            # "explain what cannot be verified" rather than turning them into a criterion.
-            raw = re.split(
-                r"(?:،|,|؛|;)\s*(?:و?اذكر|و?وضح|بيّن|اشرح|and\s+(?:explain|note|discuss))\b",
-                raw,
-                maxsplit=1,
-                flags=re.IGNORECASE,
-            )[0]
-            pieces = re.split(
-                r"\s*(?:،|,|؛|;|/)\s*|"
-                r"\s+\band\b\s+|\s+\bas well as\b\s+|"
-                r"\s+و(?=ال|[ء-ي])",
-                raw,
-                flags=re.IGNORECASE,
-            )
-        else:
-            # If the user explicitly asks separate questions, preserve each clause.
-            question_parts = [
-                part.strip(" \t\r\n-•")
-                for part in re.split(r"[؟?]+", text)
-                if len(part.strip(" \t\r\n-•")) >= 4
-            ]
-            pieces = question_parts if len(question_parts) > 1 else []
+        return extract_question_coverage_targets(question)
 
-        targets: list[str] = []
-        seen: set[str] = set()
-        for piece in pieces:
-            target = re.sub(r"^[\s:،,؛;/.!?\-–—]+|[\s:،,؛;/.!?\-–—]+$", "", piece).strip()
-            target = re.sub(r"^(?:و\s*)", "", target).strip()
-            if len(target) < 2:
-                continue
-            if len(target) > 120:
-                target = target[:120].rsplit(" ", 1)[0].strip()
-            key = _normalize_search_query(target).casefold()
-            if key and key not in seen:
-                seen.add(key)
-                targets.append(target)
-            if len(targets) >= 8:
-                break
-        return targets
 
     @staticmethod
     def _is_current_search_status_question(question: str) -> bool:
@@ -2547,7 +2497,18 @@ class WebAgent:
         preliminary_ledger = build_evidence_ledger(target_aspects, preliminary)
         missing_aspects = list(preliminary_ledger.get("missing") or [])
         expansion_queries: list[str] = []
-        if (missing_aspects or needs_expansion) and len(queries) < query_limit and queries:
+        # Do not issue generic repairs when a standard task already has per-requirement queries.
+        # Legacy plans without those query records still need the bounded missing-aspect fallback;
+        # deep research may expand further even after targeted queries.
+        if (
+            (missing_aspects or needs_expansion)
+            and len(queries) < query_limit
+            and queries
+            and (
+                not plan.get("requirement_queries")
+                or plan.get("depth") == "deep"
+            )
+        ):
             base_query = (queries[0] if queries else "")
             remaining_slots = max(0, query_limit - len(queries))
             aspect_queries = repair_queries_for_missing_aspects(
@@ -2672,6 +2633,85 @@ class WebAgent:
 
         raw_results_count = sum(len(batch.get("results", [])) for batch in batches if isinstance(batch, dict) and isinstance(batch.get("results", []), list))
         sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)
+
+        # Keep at least one returned source per explicit criterion query in the
+        # bounded source set sent to synthesis. Global fusion can otherwise crowd
+        # lower-ranked criterion results out before the model can inspect them.
+        requirement_queries = plan.get("requirement_queries", [])
+        if isinstance(requirement_queries, list) and requirement_queries:
+            globally_fused = sources
+            globally_fused_by_url = {
+                self._normalized_source_url_key(item.get("url", "")): item
+                for item in globally_fused
+                if self._normalized_source_url_key(item.get("url", ""))
+            }
+            pinned_by_url: dict[str, dict[str, Any]] = {}
+            pinned_sources: list[dict[str, Any]] = []
+            for requirement in requirement_queries[:MAX_PLAN_QUERIES]:
+                if not isinstance(requirement, dict):
+                    continue
+                target_query = compact_search_query(str(requirement.get("query") or ""))
+                if not target_query:
+                    continue
+                query_key = re.sub(r"\s+", " ", target_query).strip().casefold()
+                criterion_batches = [
+                    batch for batch in batches
+                    if re.sub(
+                        r"\s+", " ", str(batch.get("query") or "")
+                    ).strip().casefold() == query_key
+                ]
+                criterion_candidates = fuse_ranked_results(
+                    criterion_batches, limit=MAX_SEARCH_RESULTS
+                )
+                candidate = None
+                if criterion_candidates:
+                    criterion_ledger = build_requirement_evidence_ledger(
+                        [str(requirement.get("target") or "")],
+                        criterion_candidates,
+                        [requirement],
+                    )
+                    candidate_indexes = (
+                        criterion_ledger[0].get("candidate_source_indexes", [])
+                        if criterion_ledger else []
+                    )
+                    if candidate_indexes:
+                        candidate = criterion_candidates[int(candidate_indexes[0]) - 1]
+                if candidate is None:
+                    candidate = next(
+                        (
+                            item for item in globally_fused
+                            if query_key in {
+                                re.sub(r"\s+", " ", str(value)).strip().casefold()
+                                for value in item.get("queries", [])
+                            }
+                        ),
+                        criterion_candidates[0] if criterion_candidates else None,
+                    )
+                if not candidate:
+                    continue
+                source_key = self._normalized_source_url_key(candidate.get("url", ""))
+                if not source_key:
+                    continue
+                selected = (
+                    pinned_by_url.get(source_key)
+                    or globally_fused_by_url.get(source_key)
+                    or candidate
+                )
+                if source_key not in pinned_by_url:
+                    pinned_by_url[source_key] = selected
+                    pinned_sources.append(selected)
+                selected_queries = selected.setdefault("queries", [])
+                if target_query not in selected_queries:
+                    selected_queries.append(target_query)
+            pinned_keys = set(pinned_by_url)
+            sources = (
+                pinned_sources
+                + [
+                    item for item in globally_fused
+                    if self._normalized_source_url_key(item.get("url", "")) not in pinned_keys
+                ]
+            )[:MAX_SEARCH_RESULTS]
+
         for source in sources:
             source.setdefault("page_fetch_status", "not_attempted")
         # Fetch page text only for the best few public URLs; do it concurrently with strict bounds.
@@ -3371,6 +3411,8 @@ class WebAgent:
                         "deterministic_resolved_question": search_question[:MAX_QUESTION_CHARS],
                         "context_override": context_override,
                         "recent_history": history[-MAX_HISTORY_ITEMS:],
+                        "required_criteria": fallback.get("coverage_targets", []),
+                        "required_requirement_queries": fallback.get("requirement_queries", []),
                     },
                     ensure_ascii=False,
                 ),
@@ -3488,6 +3530,20 @@ class WebAgent:
                     query_list[-1] = targeted
             plan["queries"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]
         plan["dialogue_context"] = dialogue_context
+        plan["coverage_targets"] = list(fallback.get("coverage_targets") or [])
+        plan["requirement_queries"] = list(fallback.get("requirement_queries") or [])
+        if plan["requirement_queries"]:
+            required_prefix: list[str] = []
+            if len(plan["requirement_queries"]) < MAX_PLAN_QUERIES:
+                fallback_queries = fallback.get("queries", [])
+                if fallback_queries:
+                    required_prefix.append(fallback_queries[0])
+            required_prefix.extend(
+                item["query"] for item in plan["requirement_queries"] if item.get("query")
+            )
+            plan["queries"] = list(dict.fromkeys(
+                required_prefix + list(plan.get("queries") or [])
+            ))[:MAX_PLAN_QUERIES]
         return plan
 
     def _generate(
@@ -3500,7 +3556,19 @@ class WebAgent:
         search_report: dict[str, Any] | None = None,
     ) -> str:
         plan = research_plan or {}
-        report = search_report or {}
+        report = search_report if isinstance(search_report, dict) else {}
+        coverage_targets = plan.get("coverage_targets")
+        if not isinstance(coverage_targets, list):
+            coverage_targets = self._question_coverage_targets(question)
+        requirement_queries = plan.get("requirement_queries")
+        if not isinstance(requirement_queries, list):
+            requirement_queries = []
+        requirement_evidence = build_requirement_evidence_ledger(
+            coverage_targets, sources, requirement_queries
+        )
+        report["coverage_targets"] = coverage_targets
+        report["requirement_queries"] = requirement_queries
+        report["requirement_evidence"] = requirement_evidence
         source_blocks: list[str] = []
         for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):
             evidence = (
@@ -3613,6 +3681,9 @@ class WebAgent:
                         "lexical_coverage_ratio": report.get("aspect_coverage_lexical_ratio"),
                         "interpretation": "وجود مرشح نصي لا يثبت صحة الادعاء، ونسبة التغطية ليست درجة ثقة.",
                     },
+                    "coverage_targets": coverage_targets,
+                    "requirement_queries": requirement_queries,
+                    "requirement_evidence": requirement_evidence,
                 },
                 "warnings": search_warning or "",
             },
@@ -3639,7 +3710,10 @@ class WebAgent:
                     "الإخراج: ابدأ بإجابة واضحة ومباشرة بلغة المستخدم. عند البحث العميق، نظّم "
                     "النتيجة في: الخلاصة، النتائج والأدلة، اختلافات/فجوات، درجة الثقة وأسبابها، "
                     "وما يستحق التحقق التالي. لا تطل إذا كان السؤال بسيطًا. لا تكشف سلسلة التفكير "
-                    "الداخلية؛ قدم خلاصة أسباب وأدلة يمكن مراجعتها."
+                    "الداخلية؛ قدم خلاصة أسباب وأدلة يمكن مراجعتها. في السؤال المركب، " 
+                    "تعامل مع كل محور كشرط مستقل: استخدم الاستعلام المخصص وسجل الأدلة المرفق، وأجب عن كل " 
+                    "محور بدليل ملائم أو اذكر صراحة أن الأدلة غير كافية له. لا تعتبر ورود كلمة المحور في الإجابة " 
+                    "أو الاستعلام دليلًا على صحة المعلومة. لا تملأ فجوات الأدلة بمعلومات عامة أو تخمينات."
                 ),
             }
         ]
@@ -3887,6 +3961,15 @@ class WebAgent:
                     "قائمة محاور مستخرجة آليًا من السؤال للمراجعة النهائية، وقد لا تلتقط المعنى كله:\n"
                     + "\n".join(f"- {target}" for target in coverage_targets)
                     + "\nتأكد أن المسودة تجيب عن كل محور أو تصرّح بنقص الأدلة له."
+                ),
+            })
+            requirement_evidence = build_requirement_evidence_ledger(coverage_targets, sources)
+            messages.insert(3, {
+                "role": "user",
+                "content": (
+                    "سجل فرز الأدلة التالي إشارة لفظية فقط وليس تحققًا من المعنى أو الحقيقة. "
+                    "استخدمه لتحديد المحاور التي يجب إعلان نقص أدلتها؛ لا تعتبر أي تطابق إثباتًا.\n"
+                    + json.dumps(requirement_evidence, ensure_ascii=False)
                 ),
             })
         raw_review = self._request_completion(
@@ -5684,7 +5767,7 @@ class WebAgent:
                 ),
                 "automatically_graded": False,
             }
-            answer_integrity = audit_answer_integrity(working_question, reason, sources, coverage_targets)
+            answer_integrity = audit_answer_integrity(working_question, reason, sources, coverage_targets, plan.get("requirement_queries"))
             answer_coverage["target_checks"] = answer_integrity["target_coverage"]
             answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
             answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
@@ -5863,9 +5946,7 @@ class WebAgent:
             and sources
             and self.api_key
         ):
-            presearch_integrity = audit_answer_integrity(
-                working_question, answer, sources, coverage_targets
-            )
+            presearch_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get("requirement_queries"))
             source_gap_targets = [
                 item["target"]
                 for item in presearch_integrity["target_coverage"]
@@ -6086,7 +6167,7 @@ class WebAgent:
             and sources
             and self.api_key
         ):
-            initial_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets)
+            initial_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get("requirement_queries"))
             missing_targets = [
                 item["target"] for item in initial_integrity["target_coverage"]
                 if item["status"] == "possibly_missing"
@@ -6118,7 +6199,18 @@ class WebAgent:
                                 sources[:MAX_LLM_CITED_SOURCES],
                             )
                             answer = reaudit_answer
-                            coverage_repair_status = "revised_and_reaudited"
+                            reaudit_integrity = audit_answer_integrity(
+                                question, answer, sources, coverage_targets,
+                                plan.get("requirement_queries"),
+                            )
+                            if reaudit_integrity["potentially_missing_target_count"] > 0:
+                                coverage_repair_status = "revised_and_reaudited_remaining_gaps"
+                                coverage_repair_warning = (
+                                    "خضعت الإجابة المعدلة لمراجعة ثانية، لكن الفحص اللفظي ما زال يرصد محورًا محتمل النقص؛ "
+                                    "لا تعتبر المهمة مكتملة دون مراجعة هذا المحور والأدلة الأصلية."
+                                )
+                            else:
+                                coverage_repair_status = "revised_and_reaudited"
                             review_status = "model_claim_audit_completed"
                         except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:
                             review_status = "model_claim_audit_unavailable"
@@ -6191,23 +6283,30 @@ class WebAgent:
         }
         report["answer_coverage"] = answer_coverage
         report["coverage_repair_status"] = coverage_repair_status
-        answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets)
+        report["coverage_repair_warning"] = coverage_repair_warning
+        answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get("requirement_queries"))
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
         answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
         answer_coverage["lexical_screen_method"] = "deterministic_lexical_screen_only_not_semantic_grading"
+        requirements_without_candidates = int(
+            answer_integrity.get("requirements_without_candidate_evidence_count", 0) or 0
+        )
         task_fulfillment_status = (
             "possible_gap_detected"
             if (
                 answer_integrity["potentially_missing_target_count"] > 0
                 or answer_integrity["source_evidence_gap_count"] > 0
             )
+            else "candidate_evidence_gaps_or_linkage_unknown"
+            if coverage_targets and requirements_without_candidates > 0
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
         answer_coverage["task_fulfillment_status"] = task_fulfillment_status
         report["task_fulfillment_status"] = task_fulfillment_status
         report["answer_integrity"] = answer_integrity
+        report["requirement_evidence"] = answer_integrity.get("requirement_evidence", [])
         report["connector_summary"] = self._connector_status_summary(
             list(self._provider_diagnostics), sources
         )
