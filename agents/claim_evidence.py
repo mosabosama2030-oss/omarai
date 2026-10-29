@@ -137,6 +137,7 @@ def build_claim_evidence_ledger(
     *,
     max_segments: int = 40,
     max_citable_sources: int = 12,
+    question_context: str = "",
 ) -> dict[str, Any]:
     """Return bounded sentence candidates with validated source-index traceability."""
     safe_answer = str(answer or "")[:24000]
@@ -190,7 +191,7 @@ def build_claim_evidence_ledger(
                 "url": str(source.get("url") or "")[:2048],
                 "provider": str(source.get("provider") or "")[:80],
                 "evidence_basis": basis,
-                "metadata_audit": audit_source_metadata(source, claim_text=segment),
+                "metadata_audit": audit_source_metadata(source, claim_text=f"{question_context} {segment}"),
             })
 
         cited += bool(indexes)
