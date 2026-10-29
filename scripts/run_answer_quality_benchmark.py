@@ -40,6 +40,37 @@ DEFAULT_CORPUS = ROOT / "tests" / "fixtures" / "answer_quality_cases.json"
 MAX_RESPONSE_BYTES = 2_000_000
 
 
+def _load_request_cost_ledger(path: Path | None, valid_case_ids: set[str]) -> tuple[dict[str, float], str | None]:
+    """Load reconciled, externally sourced whole-request USD costs; never estimate them."""
+    if path is None:
+        return {}, None
+    ledger = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(ledger, dict):
+        raise ValueError("request-cost ledger root must be an object")
+    if ledger.get("currency") != "USD" or ledger.get("scope") != "complete_request":
+        raise ValueError("request-cost ledger must declare currency=USD and scope=complete_request")
+    source = ledger.get("source")
+    if not isinstance(source, str) or not source.strip():
+        raise ValueError("request-cost ledger needs a non-empty source describing the reconciliation")
+    entries = ledger.get("costs")
+    if not isinstance(entries, list):
+        raise ValueError("request-cost ledger must contain a costs array")
+    costs: dict[str, float] = {}
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            raise ValueError(f"request-cost ledger costs[{index}] must be an object")
+        case_id = entry.get("case_id")
+        if not isinstance(case_id, str) or case_id not in valid_case_ids:
+            raise ValueError(f"request-cost ledger costs[{index}] has an unknown case_id")
+        if case_id in costs:
+            raise ValueError(f"request-cost ledger has duplicate case_id {case_id}")
+        value = _finite_nonnegative_number(entry.get("cost_usd"))
+        if value is None:
+            raise ValueError(f"request-cost ledger {case_id} cost_usd must be finite and non-negative")
+        costs[case_id] = value
+    return costs, source.strip()
+
+
 def _model_calls_from_payload(payload: dict) -> list[dict]:
     """Read only structured per-request model-call metadata from an API response."""
     report = payload.get("search_report")
@@ -342,6 +373,7 @@ def run_live(
     delay: float,
     out_path: Path | None,
     build_sha: str | None = None,
+    request_costs_path: Path | None = None,
 ) -> int:
     data = load_corpus(corpus_path)
     problems = validate_corpus(data)
@@ -349,6 +381,13 @@ def run_live(
         print("Corpus invalid; refusing live run:")
         for p in problems:
             print(" -", p)
+        return 2
+
+    try:
+        full_case_ids = {case.get("case_id") for case in data.get("cases", []) if isinstance(case, dict)}
+        request_costs, request_cost_source = _load_request_cost_ledger(request_costs_path, full_case_ids)
+    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
+        print(f"Invalid request-cost ledger; refusing live run: {exc}", file=sys.stderr)
         return 2
 
     token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip() or None
@@ -384,6 +423,14 @@ def run_live(
 
         transport_ok = 200 <= status_code < 300
         response_metrics = _response_metrics(safe_payload, case["expected_strategy"], transport_ok)
+        if request_cost_source is not None:
+            if cid in request_costs:
+                response_metrics["request_cost_usd"] = request_costs[cid]
+                response_metrics["request_cost_status"] = "RECONCILED_COMPLETE_REQUEST_COST"
+                response_metrics["request_cost_source"] = request_cost_source
+            else:
+                response_metrics["request_cost_status"] = "PARTIAL_EXTERNAL_COST_RECONCILIATION"
+                response_metrics["request_cost_source"] = request_cost_source
         record = {
             "case_id": cid,
             "benchmark_version": data.get("version"),
@@ -467,6 +514,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int, default=0, help="Max cases in live mode (0=all selected)")
     parser.add_argument("--timeout", type=float, default=60.0)
     parser.add_argument("--build-sha", default=None, help="Exact deployed source SHA (required for a defensible baseline comparison)")
+    parser.add_argument("--request-costs", type=Path, default=None, help="Optional externally reconciled per-case full-request costs in USD")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between live requests")
     parser.add_argument("--out", type=Path, default=None, help="Write live results JSON")
     args = parser.parse_args(argv)
@@ -489,6 +537,7 @@ def main(argv: list[str] | None = None) -> int:
             args.delay,
             args.out,
             args.build_sha,
+            args.request_costs,
         )
     return 2
 
