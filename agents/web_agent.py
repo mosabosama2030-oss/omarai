@@ -10,6 +10,7 @@ import asyncio
 import datetime as dt
 import ipaddress
 import json
+import math
 import os
 import re
 import socket
@@ -517,6 +518,28 @@ def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]
             "no_lexical_gaps_detected_semantic_completeness_not_proven"
         )
     return result
+
+
+def _normalized_provider_usage(usage: Any) -> dict[str, int | float] | None:
+    """Allowlist safe billing counters from a provider response; never infer prices."""
+    if not isinstance(usage, dict):
+        return None
+    normalized: dict[str, int | float] = {}
+    for source_key in ("prompt_tokens", "completion_tokens", "total_tokens"):
+        value = usage.get(source_key)
+        if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+            normalized[source_key] = value
+    for source_key in ("cost", "total_cost"):
+        value = usage.get(source_key)
+        if (
+            isinstance(value, (int, float))
+            and not isinstance(value, bool)
+            and math.isfinite(float(value))
+            and value >= 0
+        ):
+            normalized["cost_usd"] = float(value)
+            break
+    return normalized or None
 
 
 class WebAgent:
@@ -3256,11 +3279,15 @@ class WebAgent:
                     request_started=True,
                     remote_response_received=True,
                 )
-                self.model_usage.append({
+                model_call_record: dict[str, Any] = {
                     "requested_model": requested_model,
                     "used_model": candidate_model,
                     "fallback_used": "true" if candidate_model != requested_model else "false",
-                })
+                }
+                provider_usage = _normalized_provider_usage(data.get("usage"))
+                if provider_usage is not None:
+                    model_call_record["provider_usage"] = provider_usage
+                self.model_usage.append(model_call_record)
                 return answer.strip()
             except urllib.error.HTTPError as exc:
                 # Never echo provider response bodies: they may contain private diagnostics.
