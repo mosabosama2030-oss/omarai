@@ -105,6 +105,20 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
         for record in results
         if (value := _finite_nonnegative(record.get("provider_reported_model_cost_usd"))) is not None
     ]
+    required_tool_rows = [
+        row
+        for record in results
+        for row in record.get("required_tool_statuses", [])
+        if isinstance(row, dict) and isinstance(row.get("successful_completion"), bool)
+    ]
+    required_tool_successes = sum(
+        1 for row in required_tool_rows if row["successful_completion"] is True
+    )
+    tool_status_counts: dict[str, int] = {}
+    for row in required_tool_rows:
+        status = row.get("status")
+        if isinstance(status, str):
+            tool_status_counts[status] = tool_status_counts.get(status, 0) + 1
     complete_cost_cases = sum(
         1 for r in results
         if r.get("provider_reported_model_cost_status") == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
@@ -138,6 +152,19 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
             "unknown_tool_outcome_count": sum(
                 1 for r in search_cases
                 if r.get("tool_status") in (None, "", "UNKNOWN")
+            ),
+            "required_tool_attempt_count": len(required_tool_rows),
+            "required_tool_success_count": required_tool_successes,
+            "required_tool_success_rate": _rate(required_tool_successes, len(required_tool_rows)),
+            "required_tool_status_counts": tool_status_counts,
+            "required_tool_status_case_count": sum(
+                1 for r in results
+                if isinstance(r.get("required_tool_statuses"), list)
+                and r.get("required_tool_statuses")
+            ),
+            "required_tool_success_semantics": (
+                "Only tool-specific completed-with-usable-output states count as success; "
+                "HTTP success and no-result attempts do not."
             ),
         },
         "provider_reported_model_cost": {
@@ -344,6 +371,10 @@ def compare_runs(
             "baseline": before_runtime["tool_usage"]["usable_result_rate"]["score"],
             "candidate": after_runtime["tool_usage"]["usable_result_rate"]["score"],
         },
+        "required_tool_success_rate": {
+            "baseline": before_runtime["tool_usage"]["required_tool_success_rate"]["score"],
+            "candidate": after_runtime["tool_usage"]["required_tool_success_rate"]["score"],
+        },
         "provider_reported_model_cost_usd": {
             "baseline": cost_before,
             "candidate": cost_after,
@@ -355,7 +386,7 @@ def compare_runs(
             ),
         },
     }
-    for key in ("transport_success_rate", "usable_result_rate"):
+    for key in ("transport_success_rate", "usable_result_rate", "required_tool_success_rate"):
         before = runtime_deltas[key]["baseline"]
         after = runtime_deltas[key]["candidate"]
         runtime_deltas[key]["delta"] = round(after - before, 4) if before is not None and after is not None else None
