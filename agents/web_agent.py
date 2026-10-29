@@ -575,7 +575,7 @@ class WebAgent:
             "OMARAI_LLM_FALLBACK_MODEL", "openrouter/free"
         ).strip()
         self.model = self.answer_model  # Backwards-compatible alias.
-        self.model_usage: list[dict[str, str]] = []
+        self.model_usage: list[dict[str, Any]] = []
         # Per-answer, bounded diagnostics contain only model identifiers and status metadata.
         # They intentionally exclude prompts, generated text, and provider response bodies.
         self.generation_diagnostics: list[dict[str, str]] = []
