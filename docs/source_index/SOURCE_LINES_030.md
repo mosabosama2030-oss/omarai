@@ -4,860 +4,860 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000125 إلى SRC-6BCB799CEC-L000077
+- النطاق: SRC-90FAA34ADE-L001234 إلى SRC-B3062EB677-L000133
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
 
-### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
+### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
 
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-DA61479D59-L000125](../../tests/test_connector_summary_counters.py#L125) | 125 | `"    assert report[\"connector_summary\"][\"scope\"] == \"this_request_only\""` | — |
-| [SRC-DA61479D59-L000126](../../tests/test_connector_summary_counters.py#L126) | 126 | `""` | — |
-| [SRC-DA61479D59-L000127](../../tests/test_connector_summary_counters.py#L127) | 127 | `""` | — |
-| [SRC-DA61479D59-L000128](../../tests/test_connector_summary_counters.py#L128) | 128 | `"def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_confirmed_attempt(monkeypatch):"` | — |
-| [SRC-DA61479D59-L000129](../../tests/test_connector_summary_counters.py#L129) | 129 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000130](../../tests/test_connector_summary_counters.py#L130) | 130 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"configured-test-key\")"` | — |
-| [SRC-DA61479D59-L000131](../../tests/test_connector_summary_counters.py#L131) | 131 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"configured-test-key\")"` | — |
-| [SRC-DA61479D59-L000132](../../tests/test_connector_summary_counters.py#L132) | 132 | `"    timeout = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000133](../../tests/test_connector_summary_counters.py#L133) | 133 | `"        [{\"provider\": \"tavily_search_api\", \"query\": \"query\", \"status\": \"timeout\", \"error\": \"request timed out\"}],"` | — |
-| [SRC-DA61479D59-L000134](../../tests/test_connector_summary_counters.py#L134) | 134 | `"        [],"` | — |
-| [SRC-DA61479D59-L000135](../../tests/test_connector_summary_counters.py#L135) | 135 | `"    )"` | — |
-| [SRC-DA61479D59-L000136](../../tests/test_connector_summary_counters.py#L136) | 136 | `"    exhausted = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000137](../../tests/test_connector_summary_counters.py#L137) | 137 | `"        [{\"provider\": \"deepseek_search_api\", \"query\": \"query\", \"status\": \"budget_exhausted\"}],"` | — |
-| [SRC-DA61479D59-L000138](../../tests/test_connector_summary_counters.py#L138) | 138 | `"        [],"` | — |
-| [SRC-DA61479D59-L000139](../../tests/test_connector_summary_counters.py#L139) | 139 | `"    )"` | — |
-| [SRC-DA61479D59-L000140](../../tests/test_connector_summary_counters.py#L140) | 140 | `"    tavily = next(item for item in timeout[\"connectors\"] if item[\"name\"] == \"tavily_search_api\")"` | — |
-| [SRC-DA61479D59-L000141](../../tests/test_connector_summary_counters.py#L141) | 141 | `"    deepseek = next(item for item in exhausted[\"connectors\"] if item[\"name\"] == \"deepseek_search_api\")"` | — |
-| [SRC-DA61479D59-L000142](../../tests/test_connector_summary_counters.py#L142) | 142 | `"    assert tavily[\"configured\"] is True"` | — |
-| [SRC-DA61479D59-L000143](../../tests/test_connector_summary_counters.py#L143) | 143 | `"    assert tavily[\"attempted\"] is None"` | — |
-| [SRC-DA61479D59-L000144](../../tests/test_connector_summary_counters.py#L144) | 144 | `"    assert tavily[\"status\"] == \"timeout\""` | — |
-| [SRC-DA61479D59-L000145](../../tests/test_connector_summary_counters.py#L145) | 145 | `"    assert tavily[\"available_for_this_request\"] is None"` | — |
-| [SRC-DA61479D59-L000146](../../tests/test_connector_summary_counters.py#L146) | 146 | `"    assert tavily[\"verified_for_this_request\"] is None"` | — |
-| [SRC-DA61479D59-L000147](../../tests/test_connector_summary_counters.py#L147) | 147 | `"    assert tavily[\"failure_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000148](../../tests/test_connector_summary_counters.py#L148) | 148 | `"    assert deepseek[\"configured\"] is True"` | — |
-| [SRC-DA61479D59-L000149](../../tests/test_connector_summary_counters.py#L149) | 149 | `"    assert deepseek[\"attempted\"] is False"` | — |
-| [SRC-DA61479D59-L000150](../../tests/test_connector_summary_counters.py#L150) | 150 | `"    assert deepseek[\"status\"] == \"budget_exhausted\""` | — |
-| [SRC-DA61479D59-L000151](../../tests/test_connector_summary_counters.py#L151) | 151 | `"    assert deepseek[\"available_for_this_request\"] is False"` | — |
-| [SRC-DA61479D59-L000152](../../tests/test_connector_summary_counters.py#L152) | 152 | `"    assert deepseek[\"verified_for_this_request\"] is None"` | — |
-| [SRC-DA61479D59-L000153](../../tests/test_connector_summary_counters.py#L153) | 153 | `""` | — |
-| [SRC-DA61479D59-L000154](../../tests/test_connector_summary_counters.py#L154) | 154 | `""` | — |
-| [SRC-DA61479D59-L000155](../../tests/test_connector_summary_counters.py#L155) | 155 | `"def test_collect_research_preserves_partial_and_http_failure_page_statuses(monkeypatch):"` | — |
-| [SRC-DA61479D59-L000156](../../tests/test_connector_summary_counters.py#L156) | 156 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000157](../../tests/test_connector_summary_counters.py#L157) | 157 | `"    query = \"renewable energy storage\""` | — |
-| [SRC-DA61479D59-L000158](../../tests/test_connector_summary_counters.py#L158) | 158 | `"    results = ["` | — |
-| [SRC-DA61479D59-L000159](../../tests/test_connector_summary_counters.py#L159) | 159 | `"        {"` | — |
-| [SRC-DA61479D59-L000160](../../tests/test_connector_summary_counters.py#L160) | 160 | `"            \"title\": \"Renewable energy storage report\","` | — |
-| [SRC-DA61479D59-L000161](../../tests/test_connector_summary_counters.py#L161) | 161 | `"            \"url\": \"https://example.com/report\","` | — |
-| [SRC-DA61479D59-L000162](../../tests/test_connector_summary_counters.py#L162) | 162 | `"            \"snippet\": \"Renewable energy storage report\","` | — |
-| [SRC-DA61479D59-L000163](../../tests/test_connector_summary_counters.py#L163) | 163 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000164](../../tests/test_connector_summary_counters.py#L164) | 164 | `"            \"page_fetched\": False,"` | — |
-| [SRC-DA61479D59-L000165](../../tests/test_connector_summary_counters.py#L165) | 165 | `"            \"provider\": \"test_search\","` | — |
-| [SRC-DA61479D59-L000166](../../tests/test_connector_summary_counters.py#L166) | 166 | `"            \"provider_rank\": 1,"` | — |
-| [SRC-DA61479D59-L000167](../../tests/test_connector_summary_counters.py#L167) | 167 | `"            \"search_query\": query,"` | — |
-| [SRC-DA61479D59-L000168](../../tests/test_connector_summary_counters.py#L168) | 168 | `"            \"published_at\": \"\","` | — |
-| [SRC-DA61479D59-L000169](../../tests/test_connector_summary_counters.py#L169) | 169 | `"        },"` | — |
-| [SRC-DA61479D59-L000170](../../tests/test_connector_summary_counters.py#L170) | 170 | `"        {"` | — |
-| [SRC-DA61479D59-L000171](../../tests/test_connector_summary_counters.py#L171) | 171 | `"            \"title\": \"Renewable energy storage statistics\","` | — |
-| [SRC-DA61479D59-L000172](../../tests/test_connector_summary_counters.py#L172) | 172 | `"            \"url\": \"https://example.org/statistics\","` | — |
-| [SRC-DA61479D59-L000173](../../tests/test_connector_summary_counters.py#L173) | 173 | `"            \"snippet\": \"Renewable energy storage statistics\","` | — |
-| [SRC-DA61479D59-L000174](../../tests/test_connector_summary_counters.py#L174) | 174 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000175](../../tests/test_connector_summary_counters.py#L175) | 175 | `"            \"page_fetched\": False,"` | — |
-| [SRC-DA61479D59-L000176](../../tests/test_connector_summary_counters.py#L176) | 176 | `"            \"provider\": \"test_search\","` | — |
-| [SRC-DA61479D59-L000177](../../tests/test_connector_summary_counters.py#L177) | 177 | `"            \"provider_rank\": 2,"` | — |
-| [SRC-DA61479D59-L000178](../../tests/test_connector_summary_counters.py#L178) | 178 | `"            \"search_query\": query,"` | — |
-| [SRC-DA61479D59-L000179](../../tests/test_connector_summary_counters.py#L179) | 179 | `"            \"published_at\": \"\","` | — |
-| [SRC-DA61479D59-L000180](../../tests/test_connector_summary_counters.py#L180) | 180 | `"        },"` | — |
-| [SRC-DA61479D59-L000181](../../tests/test_connector_summary_counters.py#L181) | 181 | `"    ]"` | — |
-| [SRC-DA61479D59-L000182](../../tests/test_connector_summary_counters.py#L182) | 182 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda _query: results)"` | — |
-| [SRC-DA61479D59-L000183](../../tests/test_connector_summary_counters.py#L183) | 183 | `""` | — |
-| [SRC-DA61479D59-L000184](../../tests/test_connector_summary_counters.py#L184) | 184 | `"    def fetch(url: str):"` | — |
-| [SRC-DA61479D59-L000185](../../tests/test_connector_summary_counters.py#L185) | 185 | `"        if \"example.com\" in url:"` | — |
-| [SRC-DA61479D59-L000186](../../tests/test_connector_summary_counters.py#L186) | 186 | `"            return PageFetchResult("` | — |
-| [SRC-DA61479D59-L000187](../../tests/test_connector_summary_counters.py#L187) | 187 | `"                \"Report page\","` | — |
-| [SRC-DA61479D59-L000188](../../tests/test_connector_summary_counters.py#L188) | 188 | `"                \"Renewable energy storage body, with an explicit note that extraction was capped.\","` | — |
-| [SRC-DA61479D59-L000189](../../tests/test_connector_summary_counters.py#L189) | 189 | `"                \"partial_extraction\","` | — |
-| [SRC-DA61479D59-L000190](../../tests/test_connector_summary_counters.py#L190) | 190 | `"            )"` | — |
-| [SRC-DA61479D59-L000191](../../tests/test_connector_summary_counters.py#L191) | 191 | `"        return PageFetchResult(\"\", \"\", \"http_error\", \"HTTPStatus\")"` | — |
-| [SRC-DA61479D59-L000192](../../tests/test_connector_summary_counters.py#L192) | 192 | `""` | — |
-| [SRC-DA61479D59-L000193](../../tests/test_connector_summary_counters.py#L193) | 193 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fetch)"` | — |
-| [SRC-DA61479D59-L000194](../../tests/test_connector_summary_counters.py#L194) | 194 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-DA61479D59-L000195](../../tests/test_connector_summary_counters.py#L195) | 195 | `"        \"queries\": [query],"` | — |
-| [SRC-DA61479D59-L000196](../../tests/test_connector_summary_counters.py#L196) | 196 | `"        \"direct_urls\": [],"` | — |
-| [SRC-DA61479D59-L000197](../../tests/test_connector_summary_counters.py#L197) | 197 | `"        \"social_focus\": False,"` | — |
-| [SRC-DA61479D59-L000198](../../tests/test_connector_summary_counters.py#L198) | 198 | `"        \"freshness\": \"any\","` | — |
-| [SRC-DA61479D59-L000199](../../tests/test_connector_summary_counters.py#L199) | 199 | `"        \"depth\": \"standard\","` | — |
-| [SRC-DA61479D59-L000200](../../tests/test_connector_summary_counters.py#L200) | 200 | `"        \"platforms\": [],"` | — |
-| [SRC-DA61479D59-L000201](../../tests/test_connector_summary_counters.py#L201) | 201 | `"        \"planning_method\": \"unit_test\","` | — |
-| [SRC-DA61479D59-L000202](../../tests/test_connector_summary_counters.py#L202) | 202 | `"    })"` | — |
-| [SRC-DA61479D59-L000203](../../tests/test_connector_summary_counters.py#L203) | 203 | `""` | — |
-| [SRC-DA61479D59-L000204](../../tests/test_connector_summary_counters.py#L204) | 204 | `"    assert warnings"` | — |
-| [SRC-DA61479D59-L000205](../../tests/test_connector_summary_counters.py#L205) | 205 | `"    assert report[\"pages_fetch_attempted\"] == 2"` | — |
-| [SRC-DA61479D59-L000206](../../tests/test_connector_summary_counters.py#L206) | 206 | `"    assert report[\"pages_content_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000207](../../tests/test_connector_summary_counters.py#L207) | 207 | `"    assert report[\"pages_partial_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000208](../../tests/test_connector_summary_counters.py#L208) | 208 | `"    assert report[\"pages_extract_failed\"] == 1"` | — |
-| [SRC-DA61479D59-L000209](../../tests/test_connector_summary_counters.py#L209) | 209 | `"    assert report[\"page_fetch_status_counts\"][\"partial_extraction\"] == 1"` | — |
-| [SRC-DA61479D59-L000210](../../tests/test_connector_summary_counters.py#L210) | 210 | `"    assert report[\"page_fetch_status_counts\"][\"http_error\"] == 1"` | — |
-| [SRC-DA61479D59-L000211](../../tests/test_connector_summary_counters.py#L211) | 211 | `"    assert sum(item[\"page_fetch_status\"] == \"partial_extraction\" for item in sources) == 1"` | — |
-| [SRC-DA61479D59-L000212](../../tests/test_connector_summary_counters.py#L212) | 212 | `"    assert sum(item[\"page_fetch_status\"] == \"http_error\" for item in sources) == 1"` | — |
-| [SRC-DA61479D59-L000213](../../tests/test_connector_summary_counters.py#L213) | 213 | `"    assert any(\"HTTPStatus\" in str(item.get(\"page_fetch_error_class\")) for item in sources)"` | — |
-| [SRC-DA61479D59-L000214](../../tests/test_connector_summary_counters.py#L214) | 214 | `""` | — |
-| [SRC-DA61479D59-L000215](../../tests/test_connector_summary_counters.py#L215) | 215 | `""` | — |
-| [SRC-DA61479D59-L000216](../../tests/test_connector_summary_counters.py#L216) | 216 | `"def test_raw_provider_diagnostics_redact_credentials_from_queries_and_errors():"` | — |
-| [SRC-DA61479D59-L000217](../../tests/test_connector_summary_counters.py#L217) | 217 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000218](../../tests/test_connector_summary_counters.py#L218) | 218 | `"    agent._record_provider_diagnostic("` | — |
-| [SRC-DA61479D59-L000219](../../tests/test_connector_summary_counters.py#L219) | 219 | `"        provider=\"test_provider\","` | — |
-| [SRC-DA61479D59-L000220](../../tests/test_connector_summary_counters.py#L220) | 220 | `"        query=\"research API_KEY=query-secret\","` | — |
-| [SRC-DA61479D59-L000221](../../tests/test_connector_summary_counters.py#L221) | 221 | `"        status=\"failed\","` | — |
-| [SRC-DA61479D59-L000222](../../tests/test_connector_summary_counters.py#L222) | 222 | `"        error=("` | — |
-| [SRC-DA61479D59-L000223](../../tests/test_connector_summary_counters.py#L223) | 223 | `"            \"Authorization: Bearer bearer-secret access_token=access-secret; \""` | — |
-| [SRC-DA61479D59-L000224](../../tests/test_connector_summary_counters.py#L224) | 224 | `"            \"URL https://example.test/search?token=url-secret\""` | — |
-| [SRC-DA61479D59-L000225](../../tests/test_connector_summary_counters.py#L225) | 225 | `"        ),"` | — |
-| [SRC-DA61479D59-L000226](../../tests/test_connector_summary_counters.py#L226) | 226 | `"    )"` | — |
-| [SRC-DA61479D59-L000227](../../tests/test_connector_summary_counters.py#L227) | 227 | `""` | — |
-| [SRC-DA61479D59-L000228](../../tests/test_connector_summary_counters.py#L228) | 228 | `"    diagnostic_json = json.dumps(agent._provider_diagnostics, ensure_ascii=False)"` | — |
-| [SRC-DA61479D59-L000229](../../tests/test_connector_summary_counters.py#L229) | 229 | `"    for secret in (\"query-secret\", \"bearer-secret\", \"access-secret\", \"url-secret\"):"` | — |
-| [SRC-DA61479D59-L000230](../../tests/test_connector_summary_counters.py#L230) | 230 | `"        assert secret not in diagnostic_json"` | — |
-| [SRC-DA61479D59-L000231](../../tests/test_connector_summary_counters.py#L231) | 231 | `"    assert \"[REDACTED]\" in diagnostic_json"` | — |
-| [SRC-DA61479D59-L000232](../../tests/test_connector_summary_counters.py#L232) | 232 | `""` | — |
-| [SRC-DA61479D59-L000233](../../tests/test_connector_summary_counters.py#L233) | 233 | `""` | — |
-| [SRC-DA61479D59-L000234](../../tests/test_connector_summary_counters.py#L234) | 234 | `"def test_connector_summary_separates_raw_candidates_from_filtered_results():"` | — |
-| [SRC-DA61479D59-L000235](../../tests/test_connector_summary_counters.py#L235) | 235 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000236](../../tests/test_connector_summary_counters.py#L236) | 236 | `"    summary = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000237](../../tests/test_connector_summary_counters.py#L237) | 237 | `"        [{"` | — |
-| [SRC-DA61479D59-L000238](../../tests/test_connector_summary_counters.py#L238) | 238 | `"            \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000239](../../tests/test_connector_summary_counters.py#L239) | 239 | `"            \"query\": \"Arabic question with source instructions\","` | — |
-| [SRC-DA61479D59-L000240](../../tests/test_connector_summary_counters.py#L240) | 240 | `"            \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000241](../../tests/test_connector_summary_counters.py#L241) | 241 | `"            \"result_count\": 6,"` | — |
-| [SRC-DA61479D59-L000242](../../tests/test_connector_summary_counters.py#L242) | 242 | `"            \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000243](../../tests/test_connector_summary_counters.py#L243) | 243 | `"            \"rejected_count\": 6,"` | — |
-| [SRC-DA61479D59-L000244](../../tests/test_connector_summary_counters.py#L244) | 244 | `"            \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000245](../../tests/test_connector_summary_counters.py#L245) | 245 | `"                \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000246](../../tests/test_connector_summary_counters.py#L246) | 246 | `"                \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000247](../../tests/test_connector_summary_counters.py#L247) | 247 | `"                \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000248](../../tests/test_connector_summary_counters.py#L248) | 248 | `"                \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000249](../../tests/test_connector_summary_counters.py#L249) | 249 | `"            },"` | — |
-| [SRC-DA61479D59-L000250](../../tests/test_connector_summary_counters.py#L250) | 250 | `"            \"error\": \"all candidates rejected; invalid_url_or_unsafe_target=2, blocked_domain=1, relevance_below_threshold=3\","` | — |
-| [SRC-DA61479D59-L000251](../../tests/test_connector_summary_counters.py#L251) | 251 | `"        }],"` | — |
-| [SRC-DA61479D59-L000252](../../tests/test_connector_summary_counters.py#L252) | 252 | `"        [],"` | — |
-| [SRC-DA61479D59-L000253](../../tests/test_connector_summary_counters.py#L253) | 253 | `"    )"` | — |
-| [SRC-DA61479D59-L000254](../../tests/test_connector_summary_counters.py#L254) | 254 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000255](../../tests/test_connector_summary_counters.py#L255) | 255 | `"    assert bing[\"attempted\"] is True"` | — |
-| [SRC-DA61479D59-L000256](../../tests/test_connector_summary_counters.py#L256) | 256 | `"    assert bing[\"result_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000257](../../tests/test_connector_summary_counters.py#L257) | 257 | `"    assert bing[\"accepted_count\"] == 0"` | — |
-| [SRC-DA61479D59-L000258](../../tests/test_connector_summary_counters.py#L258) | 258 | `"    assert bing[\"rejected_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000259](../../tests/test_connector_summary_counters.py#L259) | 259 | `"    assert bing[\"rejection_counts_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000260](../../tests/test_connector_summary_counters.py#L260) | 260 | `"    assert bing[\"rejection_counts\"] == {"` | — |
-| [SRC-DA61479D59-L000261](../../tests/test_connector_summary_counters.py#L261) | 261 | `"        \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000262](../../tests/test_connector_summary_counters.py#L262) | 262 | `"        \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000263](../../tests/test_connector_summary_counters.py#L263) | 263 | `"        \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000264](../../tests/test_connector_summary_counters.py#L264) | 264 | `"        \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000265](../../tests/test_connector_summary_counters.py#L265) | 265 | `"    }"` | — |
-| [SRC-DA61479D59-L000266](../../tests/test_connector_summary_counters.py#L266) | 266 | `"    assert sum(bing[\"rejection_counts\"].values()) == bing[\"rejected_count\"]"` | — |
-| [SRC-DA61479D59-L000267](../../tests/test_connector_summary_counters.py#L267) | 267 | `"    assert bing[\"candidate_rejection_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000268](../../tests/test_connector_summary_counters.py#L268) | 268 | `"    assert bing[\"available_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000269](../../tests/test_connector_summary_counters.py#L269) | 269 | `"    assert bing[\"verified_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000270](../../tests/test_connector_summary_counters.py#L270) | 270 | `""` | — |
-| [SRC-DA61479D59-L000271](../../tests/test_connector_summary_counters.py#L271) | 271 | `""` | — |
-| [SRC-DA61479D59-L000272](../../tests/test_connector_summary_counters.py#L272) | 272 | `"def test_connector_summary_does_not_present_partial_legacy_rejection_counts_as_complete():"` | — |
-| [SRC-DA61479D59-L000273](../../tests/test_connector_summary_counters.py#L273) | 273 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000274](../../tests/test_connector_summary_counters.py#L274) | 274 | `"    summary = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000275](../../tests/test_connector_summary_counters.py#L275) | 275 | `"        ["` | — |
-| [SRC-DA61479D59-L000276](../../tests/test_connector_summary_counters.py#L276) | 276 | `"            {"` | — |
-| [SRC-DA61479D59-L000277](../../tests/test_connector_summary_counters.py#L277) | 277 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000278](../../tests/test_connector_summary_counters.py#L278) | 278 | `"                \"query\": \"first query\","` | — |
-| [SRC-DA61479D59-L000279](../../tests/test_connector_summary_counters.py#L279) | 279 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000280](../../tests/test_connector_summary_counters.py#L280) | 280 | `"                \"result_count\": 3,"` | — |
-| [SRC-DA61479D59-L000281](../../tests/test_connector_summary_counters.py#L281) | 281 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000282](../../tests/test_connector_summary_counters.py#L282) | 282 | `"                \"rejected_count\": 3,"` | — |
-| [SRC-DA61479D59-L000283](../../tests/test_connector_summary_counters.py#L283) | 283 | `"            },"` | — |
-| [SRC-DA61479D59-L000284](../../tests/test_connector_summary_counters.py#L284) | 284 | `"            {"` | — |
-| [SRC-DA61479D59-L000285](../../tests/test_connector_summary_counters.py#L285) | 285 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000286](../../tests/test_connector_summary_counters.py#L286) | 286 | `"                \"query\": \"second query\","` | — |
-| [SRC-DA61479D59-L000287](../../tests/test_connector_summary_counters.py#L287) | 287 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000288](../../tests/test_connector_summary_counters.py#L288) | 288 | `"                \"result_count\": 2,"` | — |
-| [SRC-DA61479D59-L000289](../../tests/test_connector_summary_counters.py#L289) | 289 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000290](../../tests/test_connector_summary_counters.py#L290) | 290 | `"                \"rejected_count\": 2,"` | — |
-| [SRC-DA61479D59-L000291](../../tests/test_connector_summary_counters.py#L291) | 291 | `"                \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000292](../../tests/test_connector_summary_counters.py#L292) | 292 | `"                    \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000293](../../tests/test_connector_summary_counters.py#L293) | 293 | `"                    \"invalid_url_or_unsafe_target\": 0,"` | — |
-| [SRC-DA61479D59-L000294](../../tests/test_connector_summary_counters.py#L294) | 294 | `"                    \"blocked_domain\": 0,"` | — |
-| [SRC-DA61479D59-L000295](../../tests/test_connector_summary_counters.py#L295) | 295 | `"                    \"relevance_below_threshold\": 2,"` | — |
-| [SRC-DA61479D59-L000296](../../tests/test_connector_summary_counters.py#L296) | 296 | `"                },"` | — |
-| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |
-| [SRC-DA61479D59-L000298](../../tests/test_connector_summary_counters.py#L298) | 298 | `"        ],"` | — |
-| [SRC-DA61479D59-L000299](../../tests/test_connector_summary_counters.py#L299) | 299 | `"        [],"` | — |
-| [SRC-DA61479D59-L000300](../../tests/test_connector_summary_counters.py#L300) | 300 | `"    )"` | — |
-| [SRC-DA61479D59-L000301](../../tests/test_connector_summary_counters.py#L301) | 301 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000302](../../tests/test_connector_summary_counters.py#L302) | 302 | `"    assert bing[\"rejected_count\"] == 5"` | — |
-| [SRC-DA61479D59-L000303](../../tests/test_connector_summary_counters.py#L303) | 303 | `"    assert bing[\"rejection_counts_observed\"] is False"` | — |
-| [SRC-DA61479D59-L000304](../../tests/test_connector_summary_counters.py#L304) | 304 | `"    assert bing[\"rejection_counts\"] is None"` | — |
+| [SRC-90FAA34ADE-L001234](../../tests/fixtures/answer_quality_cases.json#L1234) | 1234 | `"        \"notes\": \"No Alexandria weather fixture; reviewer must check explicit missing-data handling\""` | — |
+| [SRC-90FAA34ADE-L001235](../../tests/fixtures/answer_quality_cases.json#L1235) | 1235 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001236](../../tests/fixtures/answer_quality_cases.json#L1236) | 1236 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001237](../../tests/fixtures/answer_quality_cases.json#L1237) | 1237 | `"        \"One city or one of the four dimensions is silently omitted\","` | — |
+| [SRC-90FAA34ADE-L001238](../../tests/fixtures/answer_quality_cases.json#L1238) | 1238 | `"        \"Claims a verified Alexandria forecast despite no such result\""` | — |
+| [SRC-90FAA34ADE-L001239](../../tests/fixtures/answer_quality_cases.json#L1239) | 1239 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001240](../../tests/fixtures/answer_quality_cases.json#L1240) | 1240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001241](../../tests/fixtures/answer_quality_cases.json#L1241) | 1241 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001242](../../tests/fixtures/answer_quality_cases.json#L1242) | 1242 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
+| [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
+| [SRC-90FAA34ADE-L001245](../../tests/fixtures/answer_quality_cases.json#L1245) | 1245 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001246](../../tests/fixtures/answer_quality_cases.json#L1246) | 1246 | `"      \"question\": \"عايز القواعد الحالية للتسجيل في خدمة حكومية في مصر؛ result timestamp بتاع صفحة الشروط هو 2020 بس.\","` | — |
+| [SRC-90FAA34ADE-L001247](../../tests/fixtures/answer_quality_cases.json#L1247) | 1247 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001248](../../tests/fixtures/answer_quality_cases.json#L1248) | 1248 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001249](../../tests/fixtures/answer_quality_cases.json#L1249) | 1249 | `"        \"يراعي أن صفحة 2020 قد لا تمثل القواعد الحالية\","` | — |
+| [SRC-90FAA34ADE-L001250](../../tests/fixtures/answer_quality_cases.json#L1250) | 1250 | `"        \"يبحث عن صفحة حديثة/رسمية أو يصرح بأن التحقق لم يكتمل\","` | — |
+| [SRC-90FAA34ADE-L001251](../../tests/fixtures/answer_quality_cases.json#L1251) | 1251 | `"        \"يعرض تاريخ المصدر بوضوح عند الاستشهاد به\""` | — |
+| [SRC-90FAA34ADE-L001252](../../tests/fixtures/answer_quality_cases.json#L1252) | 1252 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001253](../../tests/fixtures/answer_quality_cases.json#L1253) | 1253 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001254](../../tests/fixtures/answer_quality_cases.json#L1254) | 1254 | `"        \"يعتمد على شروط 2020 كأنها حالية بلا تنبيه\","` | — |
+| [SRC-90FAA34ADE-L001255](../../tests/fixtures/answer_quality_cases.json#L1255) | 1255 | `"        \"يختلق تحديثًا أحدث\""` | — |
+| [SRC-90FAA34ADE-L001256](../../tests/fixtures/answer_quality_cases.json#L1256) | 1256 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001257](../../tests/fixtures/answer_quality_cases.json#L1257) | 1257 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001258](../../tests/fixtures/answer_quality_cases.json#L1258) | 1258 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001259](../../tests/fixtures/answer_quality_cases.json#L1259) | 1259 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001260](../../tests/fixtures/answer_quality_cases.json#L1260) | 1260 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001261](../../tests/fixtures/answer_quality_cases.json#L1261) | 1261 | `"            \"title\": \"Service registration guide\","` | — |
+| [SRC-90FAA34ADE-L001262](../../tests/fixtures/answer_quality_cases.json#L1262) | 1262 | `"            \"url\": \"https://service.example.test/register-2020\","` | — |
+| [SRC-90FAA34ADE-L001263](../../tests/fixtures/answer_quality_cases.json#L1263) | 1263 | `"            \"snippet\": \"Registration terms updated in 2020.\","` | — |
+| [SRC-90FAA34ADE-L001264](../../tests/fixtures/answer_quality_cases.json#L1264) | 1264 | `"            \"published_at\": \"2020-01-10\","` | — |
+| [SRC-90FAA34ADE-L001265](../../tests/fixtures/answer_quality_cases.json#L1265) | 1265 | `"            \"domain\": \"service.example.test\","` | — |
+| [SRC-90FAA34ADE-L001266](../../tests/fixtures/answer_quality_cases.json#L1266) | 1266 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001267](../../tests/fixtures/answer_quality_cases.json#L1267) | 1267 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001268](../../tests/fixtures/answer_quality_cases.json#L1268) | 1268 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L001269](../../tests/fixtures/answer_quality_cases.json#L1269) | 1269 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001270](../../tests/fixtures/answer_quality_cases.json#L1270) | 1270 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001271](../../tests/fixtures/answer_quality_cases.json#L1271) | 1271 | `"        \"ادعاء أن الشروط حالية من مصدر 2020 فقط\","` | — |
+| [SRC-90FAA34ADE-L001272](../../tests/fixtures/answer_quality_cases.json#L1272) | 1272 | `"        \"غياب التحذير من قدم المصدر\""` | — |
+| [SRC-90FAA34ADE-L001273](../../tests/fixtures/answer_quality_cases.json#L1273) | 1273 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001277](../../tests/fixtures/answer_quality_cases.json#L1277) | 1277 | `"      \"case_id\": \"AQ-043\","` | — |
+| [SRC-90FAA34ADE-L001278](../../tests/fixtures/answer_quality_cases.json#L1278) | 1278 | `"      \"category\": \"ambiguous_clarify\","` | — |
+| [SRC-90FAA34ADE-L001279](../../tests/fixtures/answer_quality_cases.json#L1279) | 1279 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001280](../../tests/fixtures/answer_quality_cases.json#L1280) | 1280 | `"      \"question\": \"Can you check it for me and tell me if it is safe?\","` | — |
+| [SRC-90FAA34ADE-L001281](../../tests/fixtures/answer_quality_cases.json#L1281) | 1281 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001282](../../tests/fixtures/answer_quality_cases.json#L1282) | 1282 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001283](../../tests/fixtures/answer_quality_cases.json#L1283) | 1283 | `"        \"Asks what 'it' refers to and what safety dimension matters\","` | — |
+| [SRC-90FAA34ADE-L001284](../../tests/fixtures/answer_quality_cases.json#L1284) | 1284 | `"        \"Avoids a definitive assessment before context is supplied\","` | — |
+| [SRC-90FAA34ADE-L001285](../../tests/fixtures/answer_quality_cases.json#L1285) | 1285 | `"        \"Keeps clarification concise\""` | — |
+| [SRC-90FAA34ADE-L001286](../../tests/fixtures/answer_quality_cases.json#L1286) | 1286 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001287](../../tests/fixtures/answer_quality_cases.json#L1287) | 1287 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001288](../../tests/fixtures/answer_quality_cases.json#L1288) | 1288 | `"        \"Assumes a specific product, URL, person, or situation\","` | — |
+| [SRC-90FAA34ADE-L001289](../../tests/fixtures/answer_quality_cases.json#L1289) | 1289 | `"        \"Gives a confident safety verdict without identifying the subject\""` | — |
+| [SRC-90FAA34ADE-L001290](../../tests/fixtures/answer_quality_cases.json#L1290) | 1290 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001291](../../tests/fixtures/answer_quality_cases.json#L1291) | 1291 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001292](../../tests/fixtures/answer_quality_cases.json#L1292) | 1292 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001293](../../tests/fixtures/answer_quality_cases.json#L1293) | 1293 | `"        \"notes\": \"No prior context is available to resolve the pronoun\""` | — |
+| [SRC-90FAA34ADE-L001294](../../tests/fixtures/answer_quality_cases.json#L1294) | 1294 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001295](../../tests/fixtures/answer_quality_cases.json#L1295) | 1295 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001296](../../tests/fixtures/answer_quality_cases.json#L1296) | 1296 | `"        \"Definitive yes/no safety answer with no referent\","` | — |
+| [SRC-90FAA34ADE-L001297](../../tests/fixtures/answer_quality_cases.json#L1297) | 1297 | `"        \"No clarifying question\""` | — |
+| [SRC-90FAA34ADE-L001298](../../tests/fixtures/answer_quality_cases.json#L1298) | 1298 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001299](../../tests/fixtures/answer_quality_cases.json#L1299) | 1299 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001300](../../tests/fixtures/answer_quality_cases.json#L1300) | 1300 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001301](../../tests/fixtures/answer_quality_cases.json#L1301) | 1301 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001302](../../tests/fixtures/answer_quality_cases.json#L1302) | 1302 | `"      \"case_id\": \"AQ-044\","` | — |
+| [SRC-90FAA34ADE-L001303](../../tests/fixtures/answer_quality_cases.json#L1303) | 1303 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L001304](../../tests/fixtures/answer_quality_cases.json#L1304) | 1304 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L001305](../../tests/fixtures/answer_quality_cases.json#L1305) | 1305 | `"      \"question\": \"قارن بين خدمتين من ناحية السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، واذكر ما لا تستطيع التحقق منه.\","` | — |
+| [SRC-90FAA34ADE-L001306](../../tests/fixtures/answer_quality_cases.json#L1306) | 1306 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001307](../../tests/fixtures/answer_quality_cases.json#L1307) | 1307 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001308](../../tests/fixtures/answer_quality_cases.json#L1308) | 1308 | `"        \"يطلب اسم الخدمتين إذا لم تكونا محددتين في السياق\","` | — |
+| [SRC-90FAA34ADE-L001309](../../tests/fixtures/answer_quality_cases.json#L1309) | 1309 | `"        \"يحافظ على أبعاد المقارنة الأربعة في خطة الإجابة\","` | — |
+| [SRC-90FAA34ADE-L001310](../../tests/fixtures/answer_quality_cases.json#L1310) | 1310 | `"        \"يصرح بحدود التحقق بدل اختلاق تفاصيل\""` | — |
+| [SRC-90FAA34ADE-L001311](../../tests/fixtures/answer_quality_cases.json#L1311) | 1311 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001312](../../tests/fixtures/answer_quality_cases.json#L1312) | 1312 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001313](../../tests/fixtures/answer_quality_cases.json#L1313) | 1313 | `"        \"يخمن أسماء خدمات أو أسعارًا\","` | — |
+| [SRC-90FAA34ADE-L001314](../../tests/fixtures/answer_quality_cases.json#L1314) | 1314 | `"        \"يقدم مقارنة ناقصة على أنها نهائية\""` | — |
+| [SRC-90FAA34ADE-L001315](../../tests/fixtures/answer_quality_cases.json#L1315) | 1315 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001316](../../tests/fixtures/answer_quality_cases.json#L1316) | 1316 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001317](../../tests/fixtures/answer_quality_cases.json#L1317) | 1317 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001318](../../tests/fixtures/answer_quality_cases.json#L1318) | 1318 | `"        \"notes\": \"لم تُذكر أسماء الخدمات في السؤال ولا يوجد سياق سابق\""` | — |
+| [SRC-90FAA34ADE-L001319](../../tests/fixtures/answer_quality_cases.json#L1319) | 1319 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001320](../../tests/fixtures/answer_quality_cases.json#L1320) | 1320 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001321](../../tests/fixtures/answer_quality_cases.json#L1321) | 1321 | `"        \"عدم طلب توضيح عن الخدمتين\","` | — |
+| [SRC-90FAA34ADE-L001322](../../tests/fixtures/answer_quality_cases.json#L1322) | 1322 | `"        \"إعلان نتيجة مقارنة بلا بيانات عن أي خدمة\""` | — |
+| [SRC-90FAA34ADE-L001323](../../tests/fixtures/answer_quality_cases.json#L1323) | 1323 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001324](../../tests/fixtures/answer_quality_cases.json#L1324) | 1324 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001325](../../tests/fixtures/answer_quality_cases.json#L1325) | 1325 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001326](../../tests/fixtures/answer_quality_cases.json#L1326) | 1326 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001327](../../tests/fixtures/answer_quality_cases.json#L1327) | 1327 | `"      \"case_id\": \"AQ-045\","` | — |
+| [SRC-90FAA34ADE-L001328](../../tests/fixtures/answer_quality_cases.json#L1328) | 1328 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L001329](../../tests/fixtures/answer_quality_cases.json#L1329) | 1329 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001330](../../tests/fixtures/answer_quality_cases.json#L1330) | 1330 | `"      \"question\": \"في شركة تشطيب في القاهرة، موقعها فيه نموذج تواصل بس ومفيش دليل إنها محتاجة عملاء جدد. صنّفها في نظام leads.\","` | — |
+| [SRC-90FAA34ADE-L001331](../../tests/fixtures/answer_quality_cases.json#L1331) | 1331 | `"      \"expected_strategy\": \"local\","` | — |
+| [SRC-90FAA34ADE-L001332](../../tests/fixtures/answer_quality_cases.json#L1332) | 1332 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001333](../../tests/fixtures/answer_quality_cases.json#L1333) | 1333 | `"        \"يسجل الشركة كجهة محتملة فقط لا كعميل جاهز\","` | — |
+| [SRC-90FAA34ADE-L001334](../../tests/fixtures/answer_quality_cases.json#L1334) | 1334 | `"        \"يفصل وجود نموذج التواصل عن دليل الاحتياج أو نية الشراء\","` | — |
+| [SRC-90FAA34ADE-L001335](../../tests/fixtures/answer_quality_cases.json#L1335) | 1335 | `"        \"يحدد حالة التحقق والخطوة التالية المقترحة دون إرسال تلقائي\""` | — |
+| [SRC-90FAA34ADE-L001336](../../tests/fixtures/answer_quality_cases.json#L1336) | 1336 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001337](../../tests/fixtures/answer_quality_cases.json#L1337) | 1337 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001338](../../tests/fixtures/answer_quality_cases.json#L1338) | 1338 | `"        \"يستنتج أن الشركة تبحث عن عملاء أو اشترت الخدمة\","` | — |
+| [SRC-90FAA34ADE-L001339](../../tests/fixtures/answer_quality_cases.json#L1339) | 1339 | `"        \"يدّعي أنه تواصل معها أو حصل على رد\""` | — |
+| [SRC-90FAA34ADE-L001340](../../tests/fixtures/answer_quality_cases.json#L1340) | 1340 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001341](../../tests/fixtures/answer_quality_cases.json#L1341) | 1341 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001342](../../tests/fixtures/answer_quality_cases.json#L1342) | 1342 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001343](../../tests/fixtures/answer_quality_cases.json#L1343) | 1343 | `"        \"notes\": \"المتاح فقط نموذج تواصل عام؛ لا يوجد تفاعل أو تصريح باحتياج شراء\""` | — |
+| [SRC-90FAA34ADE-L001344](../../tests/fixtures/answer_quality_cases.json#L1344) | 1344 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001345](../../tests/fixtures/answer_quality_cases.json#L1345) | 1345 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001346](../../tests/fixtures/answer_quality_cases.json#L1346) | 1346 | `"        \"تسجيل نية شراء مؤكدة بلا دليل\","` | — |
+| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
+| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
+| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
+| [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
 ## اختبارات
 
-### FILE-6BECF5AD00 — [tests/test_connectors_mocked.py](../../tests/test_connectors_mocked.py#L1)
+### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6BECF5AD00-L000001](../../tests/test_connectors_mocked.py#L1) | 1 | `"\"\"\"Connector unit tests with mocked HTTP (no live network required).\"\"\""` | — |
-| [SRC-6BECF5AD00-L000002](../../tests/test_connectors_mocked.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6BECF5AD00-L000003](../../tests/test_connectors_mocked.py#L3) | 3 | `""` | — |
-| [SRC-6BECF5AD00-L000004](../../tests/test_connectors_mocked.py#L4) | 4 | `""` | — |
-| [SRC-6BECF5AD00-L000005](../../tests/test_connectors_mocked.py#L5) | 5 | `"import agents.search_connectors as sc"` | — |
-| [SRC-6BECF5AD00-L000006](../../tests/test_connectors_mocked.py#L6) | 6 | `""` | — |
-| [SRC-6BECF5AD00-L000007](../../tests/test_connectors_mocked.py#L7) | 7 | `""` | — |
-| [SRC-6BECF5AD00-L000008](../../tests/test_connectors_mocked.py#L8) | 8 | `"def test_openalex_parses_mocked_payload(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000009](../../tests/test_connectors_mocked.py#L9) | 9 | `"    payload = {"` | — |
-| [SRC-6BECF5AD00-L000010](../../tests/test_connectors_mocked.py#L10) | 10 | `"        \"results\": ["` | — |
-| [SRC-6BECF5AD00-L000011](../../tests/test_connectors_mocked.py#L11) | 11 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000012](../../tests/test_connectors_mocked.py#L12) | 12 | `"                \"display_name\": \"Electric Vehicles in Egypt\","` | — |
-| [SRC-6BECF5AD00-L000013](../../tests/test_connectors_mocked.py#L13) | 13 | `"                \"id\": \"https://openalex.org/W123\","` | — |
-| [SRC-6BECF5AD00-L000014](../../tests/test_connectors_mocked.py#L14) | 14 | `"                \"primary_location\": {\"landing_page_url\": \"https://example.org/paper\"},"` | — |
-| [SRC-6BECF5AD00-L000015](../../tests/test_connectors_mocked.py#L15) | 15 | `"                \"concepts\": [{\"display_name\": \"Battery\"}],"` | — |
-| [SRC-6BECF5AD00-L000016](../../tests/test_connectors_mocked.py#L16) | 16 | `"                \"publication_date\": \"2024-01-01\","` | — |
-| [SRC-6BECF5AD00-L000017](../../tests/test_connectors_mocked.py#L17) | 17 | `"            }"` | — |
-| [SRC-6BECF5AD00-L000018](../../tests/test_connectors_mocked.py#L18) | 18 | `"        ]"` | — |
-| [SRC-6BECF5AD00-L000019](../../tests/test_connectors_mocked.py#L19) | 19 | `"    }"` | — |
-| [SRC-6BECF5AD00-L000020](../../tests/test_connectors_mocked.py#L20) | 20 | `""` | — |
-| [SRC-6BECF5AD00-L000021](../../tests/test_connectors_mocked.py#L21) | 21 | `"    def fake_json(url, headers=None, timeout=12):"` | — |
-| [SRC-6BECF5AD00-L000022](../../tests/test_connectors_mocked.py#L22) | 22 | `"        return payload"` | — |
-| [SRC-6BECF5AD00-L000023](../../tests/test_connectors_mocked.py#L23) | 23 | `""` | — |
-| [SRC-6BECF5AD00-L000024](../../tests/test_connectors_mocked.py#L24) | 24 | `"    monkeypatch.setattr(sc, \"_http_get_json\", fake_json)"` | — |
-| [SRC-6BECF5AD00-L000025](../../tests/test_connectors_mocked.py#L25) | 25 | `"    rows = sc.search_openalex(\"electric vehicles Egypt\", limit=3)"` | — |
-| [SRC-6BECF5AD00-L000026](../../tests/test_connectors_mocked.py#L26) | 26 | `"    assert len(rows) == 1"` | — |
-| [SRC-6BECF5AD00-L000027](../../tests/test_connectors_mocked.py#L27) | 27 | `"    assert rows[0][\"provider\"] == \"openalex\""` | — |
-| [SRC-6BECF5AD00-L000028](../../tests/test_connectors_mocked.py#L28) | 28 | `"    assert rows[0][\"url\"] == \"https://example.org/paper\""` | — |
-| [SRC-6BECF5AD00-L000029](../../tests/test_connectors_mocked.py#L29) | 29 | `"    assert rows[0][\"page_fetched\"] is False"` | — |
-| [SRC-6BECF5AD00-L000030](../../tests/test_connectors_mocked.py#L30) | 30 | `""` | — |
-| [SRC-6BECF5AD00-L000031](../../tests/test_connectors_mocked.py#L31) | 31 | `""` | — |
-| [SRC-6BECF5AD00-L000032](../../tests/test_connectors_mocked.py#L32) | 32 | `"def test_arxiv_parses_atom(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000033](../../tests/test_connectors_mocked.py#L33) | 33 | `"    xml = \"\"\""` | — |
-| [SRC-6BECF5AD00-L000034](../../tests/test_connectors_mocked.py#L34) | 34 | `"    <feed>"` | — |
-| [SRC-6BECF5AD00-L000035](../../tests/test_connectors_mocked.py#L35) | 35 | `"      <entry>"` | — |
-| [SRC-6BECF5AD00-L000036](../../tests/test_connectors_mocked.py#L36) | 36 | `"        <title>Study of EV Batteries</title>"` | — |
-| [SRC-6BECF5AD00-L000037](../../tests/test_connectors_mocked.py#L37) | 37 | `"        <id>http://arxiv.org/abs/2401.00001</id>"` | — |
-| [SRC-6BECF5AD00-L000038](../../tests/test_connectors_mocked.py#L38) | 38 | `"        <summary>Battery degradation analysis.</summary>"` | — |
-| [SRC-6BECF5AD00-L000039](../../tests/test_connectors_mocked.py#L39) | 39 | `"        <published>2024-01-02T00:00:00Z</published>"` | — |
-| [SRC-6BECF5AD00-L000040](../../tests/test_connectors_mocked.py#L40) | 40 | `"      </entry>"` | — |
-| [SRC-6BECF5AD00-L000041](../../tests/test_connectors_mocked.py#L41) | 41 | `"    </feed>"` | — |
-| [SRC-6BECF5AD00-L000042](../../tests/test_connectors_mocked.py#L42) | 42 | `"    \"\"\""` | — |
-| [SRC-6BECF5AD00-L000043](../../tests/test_connectors_mocked.py#L43) | 43 | `""` | — |
-| [SRC-6BECF5AD00-L000044](../../tests/test_connectors_mocked.py#L44) | 44 | `"    monkeypatch.setattr(sc, \"_http_get_text\", lambda url, timeout=12: xml)"` | — |
-| [SRC-6BECF5AD00-L000045](../../tests/test_connectors_mocked.py#L45) | 45 | `"    rows = sc.search_arxiv(\"battery\", limit=2)"` | — |
-| [SRC-6BECF5AD00-L000046](../../tests/test_connectors_mocked.py#L46) | 46 | `"    assert len(rows) == 1"` | — |
-| [SRC-6BECF5AD00-L000047](../../tests/test_connectors_mocked.py#L47) | 47 | `"    assert rows[0][\"provider\"] == \"arxiv\""` | — |
-| [SRC-6BECF5AD00-L000048](../../tests/test_connectors_mocked.py#L48) | 48 | `"    assert \"arxiv.org\" in rows[0][\"url\"]"` | — |
-| [SRC-6BECF5AD00-L000049](../../tests/test_connectors_mocked.py#L49) | 49 | `""` | — |
-| [SRC-6BECF5AD00-L000050](../../tests/test_connectors_mocked.py#L50) | 50 | `""` | — |
-| [SRC-6BECF5AD00-L000051](../../tests/test_connectors_mocked.py#L51) | 51 | `"def test_connector_failure_returns_empty(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000052](../../tests/test_connectors_mocked.py#L52) | 52 | `"    def boom(*args, **kwargs):"` | — |
-| [SRC-6BECF5AD00-L000053](../../tests/test_connectors_mocked.py#L53) | 53 | `"        raise sc.urllib.error.URLError(\"down\")"` | — |
-| [SRC-6BECF5AD00-L000054](../../tests/test_connectors_mocked.py#L54) | 54 | `""` | — |
-| [SRC-6BECF5AD00-L000055](../../tests/test_connectors_mocked.py#L55) | 55 | `"    monkeypatch.setattr(sc, \"_http_get_json\", boom)"` | — |
-| [SRC-6BECF5AD00-L000056](../../tests/test_connectors_mocked.py#L56) | 56 | `"    assert sc.run_connector(\"openalex\", \"query\") == []"` | — |
-| [SRC-6BECF5AD00-L000057](../../tests/test_connectors_mocked.py#L57) | 57 | `""` | — |
-| [SRC-6BECF5AD00-L000058](../../tests/test_connectors_mocked.py#L58) | 58 | `""` | — |
-| [SRC-6BECF5AD00-L000059](../../tests/test_connectors_mocked.py#L59) | 59 | `"def test_run_free_academic_dedupe_path(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000060](../../tests/test_connectors_mocked.py#L60) | 60 | `"    def fake_run(name, query, limit=4):"` | — |
-| [SRC-6BECF5AD00-L000061](../../tests/test_connectors_mocked.py#L61) | 61 | `"        return ["` | — |
-| [SRC-6BECF5AD00-L000062](../../tests/test_connectors_mocked.py#L62) | 62 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000063](../../tests/test_connectors_mocked.py#L63) | 63 | `"                \"title\": f\"{name}-title\","` | — |
-| [SRC-6BECF5AD00-L000064](../../tests/test_connectors_mocked.py#L64) | 64 | `"                \"url\": f\"https://example.com/{name}\","` | — |
-| [SRC-6BECF5AD00-L000065](../../tests/test_connectors_mocked.py#L65) | 65 | `"                \"snippet\": \"x\","` | — |
-| [SRC-6BECF5AD00-L000066](../../tests/test_connectors_mocked.py#L66) | 66 | `"                \"page_fetched\": False,"` | — |
-| [SRC-6BECF5AD00-L000067](../../tests/test_connectors_mocked.py#L67) | 67 | `"                \"provider\": name,"` | — |
-| [SRC-6BECF5AD00-L000068](../../tests/test_connectors_mocked.py#L68) | 68 | `"                \"provider_rank\": 1,"` | — |
-| [SRC-6BECF5AD00-L000069](../../tests/test_connectors_mocked.py#L69) | 69 | `"                \"search_query\": query,"` | — |
-| [SRC-6BECF5AD00-L000070](../../tests/test_connectors_mocked.py#L70) | 70 | `"                \"published_at\": \"\","` | — |
-| [SRC-6BECF5AD00-L000071](../../tests/test_connectors_mocked.py#L71) | 71 | `"                \"source_class\": \"academic\","` | — |
-| [SRC-6BECF5AD00-L000072](../../tests/test_connectors_mocked.py#L72) | 72 | `"            }"` | — |
-| [SRC-6BECF5AD00-L000073](../../tests/test_connectors_mocked.py#L73) | 73 | `"        ]"` | — |
-| [SRC-6BECF5AD00-L000074](../../tests/test_connectors_mocked.py#L74) | 74 | `""` | — |
-| [SRC-6BECF5AD00-L000075](../../tests/test_connectors_mocked.py#L75) | 75 | `"    monkeypatch.setattr(sc, \"run_connector\", fake_run)"` | — |
-| [SRC-6BECF5AD00-L000076](../../tests/test_connectors_mocked.py#L76) | 76 | `"    rows = sc.run_free_academic_connectors(\"ev egypt\", limit_per=1)"` | — |
-| [SRC-6BECF5AD00-L000077](../../tests/test_connectors_mocked.py#L77) | 77 | `"    assert len(rows) == 3"` | — |
-| [SRC-6BECF5AD00-L000078](../../tests/test_connectors_mocked.py#L78) | 78 | `"    providers = {r[\"provider\"] for r in rows}"` | — |
-| [SRC-6BECF5AD00-L000079](../../tests/test_connectors_mocked.py#L79) | 79 | `"    assert providers == {\"openalex\", \"arxiv\", \"crossref\"}"` | — |
+| [SRC-CAC5F305FE-L000001](../../tests/test_agent_modes.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-CAC5F305FE-L000002](../../tests/test_agent_modes.py#L2) | 2 | `""` | — |
+| [SRC-CAC5F305FE-L000003](../../tests/test_agent_modes.py#L3) | 3 | `"from agents.research import evidence_signal_report"` | — |
+| [SRC-CAC5F305FE-L000004](../../tests/test_agent_modes.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-CAC5F305FE-L000005](../../tests/test_agent_modes.py#L5) | 5 | `""` | — |
+| [SRC-CAC5F305FE-L000006](../../tests/test_agent_modes.py#L6) | 6 | `""` | — |
+| [SRC-CAC5F305FE-L000007](../../tests/test_agent_modes.py#L7) | 7 | `"def test_deep_mode_expands_search_angles_and_returns_coverage_signals(monkeypatch):"` | — |
+| [SRC-CAC5F305FE-L000008](../../tests/test_agent_modes.py#L8) | 8 | `"    agent = WebAgent()"` | — |
+| [SRC-CAC5F305FE-L000009](../../tests/test_agent_modes.py#L9) | 9 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-CAC5F305FE-L000010](../../tests/test_agent_modes.py#L10) | 10 | `"    seen = {}"` | — |
+| [SRC-CAC5F305FE-L000011](../../tests/test_agent_modes.py#L11) | 11 | `""` | — |
+| [SRC-CAC5F305FE-L000012](../../tests/test_agent_modes.py#L12) | 12 | `"    def plan(question, history):"` | — |
+| [SRC-CAC5F305FE-L000013](../../tests/test_agent_modes.py#L13) | 13 | `"        return {"` | — |
+| [SRC-CAC5F305FE-L000014](../../tests/test_agent_modes.py#L14) | 14 | `"            \"queries\": [\"topic summary\"],"` | — |
+| [SRC-CAC5F305FE-L000015](../../tests/test_agent_modes.py#L15) | 15 | `"            \"direct_urls\": [],"` | — |
+| [SRC-CAC5F305FE-L000016](../../tests/test_agent_modes.py#L16) | 16 | `"            \"social_focus\": False,"` | — |
+| [SRC-CAC5F305FE-L000017](../../tests/test_agent_modes.py#L17) | 17 | `"            \"freshness\": \"any\","` | — |
+| [SRC-CAC5F305FE-L000018](../../tests/test_agent_modes.py#L18) | 18 | `"            \"depth\": \"standard\","` | — |
+| [SRC-CAC5F305FE-L000019](../../tests/test_agent_modes.py#L19) | 19 | `"            \"platforms\": [],"` | — |
+| [SRC-CAC5F305FE-L000020](../../tests/test_agent_modes.py#L20) | 20 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-CAC5F305FE-L000021](../../tests/test_agent_modes.py#L21) | 21 | `"        }"` | — |
+| [SRC-CAC5F305FE-L000022](../../tests/test_agent_modes.py#L22) | 22 | `""` | — |
+| [SRC-CAC5F305FE-L000023](../../tests/test_agent_modes.py#L23) | 23 | `"    source = {"` | — |
+| [SRC-CAC5F305FE-L000024](../../tests/test_agent_modes.py#L24) | 24 | `"        \"title\": \"Topic summary public report\","` | — |
+| [SRC-CAC5F305FE-L000025](../../tests/test_agent_modes.py#L25) | 25 | `"        \"url\": \"https://example.org/report\","` | — |
+| [SRC-CAC5F305FE-L000026](../../tests/test_agent_modes.py#L26) | 26 | `"        \"snippet\": \"Evidence snippet about topic summary\","` | — |
+| [SRC-CAC5F305FE-L000027](../../tests/test_agent_modes.py#L27) | 27 | `"        \"page_text\": \"Fetched text about topic summary\","` | — |
+| [SRC-CAC5F305FE-L000028](../../tests/test_agent_modes.py#L28) | 28 | `"        \"page_fetched\": True,"` | — |
+| [SRC-CAC5F305FE-L000029](../../tests/test_agent_modes.py#L29) | 29 | `"        \"provider\": \"test_search\","` | — |
+| [SRC-CAC5F305FE-L000030](../../tests/test_agent_modes.py#L30) | 30 | `"        \"providers\": [\"test_search\"],"` | — |
+| [SRC-CAC5F305FE-L000031](../../tests/test_agent_modes.py#L31) | 31 | `"        \"queries\": [\"topic summary\"],"` | — |
+| [SRC-CAC5F305FE-L000032](../../tests/test_agent_modes.py#L32) | 32 | `"        \"domain\": \"example.org\","` | — |
+| [SRC-CAC5F305FE-L000033](../../tests/test_agent_modes.py#L33) | 33 | `"        \"source_class\": \"general\","` | — |
+| [SRC-CAC5F305FE-L000034](../../tests/test_agent_modes.py#L34) | 34 | `"        \"platform\": \"web\","` | — |
+| [SRC-CAC5F305FE-L000035](../../tests/test_agent_modes.py#L35) | 35 | `"        \"published_at\": \"2026-10-10\","` | — |
+| [SRC-CAC5F305FE-L000036](../../tests/test_agent_modes.py#L36) | 36 | `"        \"rank_score\": 1.0,"` | — |
+| [SRC-CAC5F305FE-L000037](../../tests/test_agent_modes.py#L37) | 37 | `"    }"` | — |
+| [SRC-CAC5F305FE-L000038](../../tests/test_agent_modes.py#L38) | 38 | `""` | — |
+| [SRC-CAC5F305FE-L000039](../../tests/test_agent_modes.py#L39) | 39 | `"    def collect(research_plan):"` | — |
+| [SRC-CAC5F305FE-L000040](../../tests/test_agent_modes.py#L40) | 40 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
+| [SRC-CAC5F305FE-L000041](../../tests/test_agent_modes.py#L41) | 41 | `"        report = {"` | — |
+| [SRC-CAC5F305FE-L000042](../../tests/test_agent_modes.py#L42) | 42 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-CAC5F305FE-L000043](../../tests/test_agent_modes.py#L43) | 43 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-CAC5F305FE-L000044](../../tests/test_agent_modes.py#L44) | 44 | `"            \"query_results\": [],"` | — |
+| [SRC-CAC5F305FE-L000045](../../tests/test_agent_modes.py#L45) | 45 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-CAC5F305FE-L000046](../../tests/test_agent_modes.py#L46) | 46 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-CAC5F305FE-L000047](../../tests/test_agent_modes.py#L47) | 47 | `"            \"providers_used\": [\"test_search\"],"` | — |
+| [SRC-CAC5F305FE-L000048](../../tests/test_agent_modes.py#L48) | 48 | `"            \"provider_counts\": {\"test_search\": 1},"` | — |
+| [SRC-CAC5F305FE-L000049](../../tests/test_agent_modes.py#L49) | 49 | `"            \"platform_counts\": {\"web\": 1},"` | — |
+| [SRC-CAC5F305FE-L000050](../../tests/test_agent_modes.py#L50) | 50 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-CAC5F305FE-L000051](../../tests/test_agent_modes.py#L51) | 51 | `"            \"depth\": research_plan[\"depth\"],"` | — |
+| [SRC-CAC5F305FE-L000052](../../tests/test_agent_modes.py#L52) | 52 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-CAC5F305FE-L000053](../../tests/test_agent_modes.py#L53) | 53 | `"            \"evidence_signals\": evidence_signal_report([source]),"` | — |
+| [SRC-CAC5F305FE-L000054](../../tests/test_agent_modes.py#L54) | 54 | `"        }"` | — |
+| [SRC-CAC5F305FE-L000055](../../tests/test_agent_modes.py#L55) | 55 | `"        return [source], [], report"` | — |
+| [SRC-CAC5F305FE-L000056](../../tests/test_agent_modes.py#L56) | 56 | `""` | — |
+| [SRC-CAC5F305FE-L000057](../../tests/test_agent_modes.py#L57) | 57 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
+| [SRC-CAC5F305FE-L000058](../../tests/test_agent_modes.py#L58) | 58 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-CAC5F305FE-L000059](../../tests/test_agent_modes.py#L59) | 59 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"الخلاصة [المصدر 1]\")"` | — |
+| [SRC-CAC5F305FE-L000060](../../tests/test_agent_modes.py#L60) | 60 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-CAC5F305FE-L000061](../../tests/test_agent_modes.py#L61) | 61 | `""` | — |
+| [SRC-CAC5F305FE-L000062](../../tests/test_agent_modes.py#L62) | 62 | `"    result = agent.answer(\"حلل الموضوع\", mode=\"deep\")"` | — |
+| [SRC-CAC5F305FE-L000063](../../tests/test_agent_modes.py#L63) | 63 | `""` | — |
+| [SRC-CAC5F305FE-L000064](../../tests/test_agent_modes.py#L64) | 64 | `"    assert seen[\"plan\"][\"depth\"] == \"deep\""` | — |
+| [SRC-CAC5F305FE-L000065](../../tests/test_agent_modes.py#L65) | 65 | `"    assert len(seen[\"plan\"][\"queries\"]) > 1"` | — |
+| [SRC-CAC5F305FE-L000066](../../tests/test_agent_modes.py#L66) | 66 | `"    assert result[\"research_plan\"][\"mode\"] == \"deep\""` | — |
+| [SRC-CAC5F305FE-L000067](../../tests/test_agent_modes.py#L67) | 67 | `"    assert \"evidence_signals\" in result[\"search_report\"]"` | — |
+| [SRC-CAC5F305FE-L000068](../../tests/test_agent_modes.py#L68) | 68 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
+| [SRC-CAC5F305FE-L000069](../../tests/test_agent_modes.py#L69) | 69 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"deep_research_already_expanded\""` | — |
+| [SRC-CAC5F305FE-L000070](../../tests/test_agent_modes.py#L70) | 70 | `"    assert result[\"search_report\"][\"evidence_signals\"][\"unique_domains\"] == 1"` | — |
 ## اختبارات
 
-### FILE-3D0A619359 — [tests/test_dashboard_security.py](../../tests/test_dashboard_security.py#L1)
+### FILE-63610B9E85 — [tests/test_agentic_retrieval.py](../../tests/test_agentic_retrieval.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3D0A619359-L000001](../../tests/test_dashboard_security.py#L1) | 1 | `"\"\"\"Static regression checks for sensitive lead-dashboard browser behavior.\"\"\""` | — |
-| [SRC-3D0A619359-L000002](../../tests/test_dashboard_security.py#L2) | 2 | `"from pathlib import Path"` | — |
-| [SRC-3D0A619359-L000003](../../tests/test_dashboard_security.py#L3) | 3 | `""` | — |
-| [SRC-3D0A619359-L000004](../../tests/test_dashboard_security.py#L4) | 4 | `"DASHBOARD = Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\""` | — |
-| [SRC-3D0A619359-L000005](../../tests/test_dashboard_security.py#L5) | 5 | `""` | — |
-| [SRC-3D0A619359-L000006](../../tests/test_dashboard_security.py#L6) | 6 | `""` | — |
-| [SRC-3D0A619359-L000007](../../tests/test_dashboard_security.py#L7) | 7 | `"def test_hosted_lead_dashboard_can_send_the_private_access_token():"` | — |
-| [SRC-3D0A619359-L000008](../../tests/test_dashboard_security.py#L8) | 8 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000009](../../tests/test_dashboard_security.py#L9) | 9 | `"    assert 'const ACCESS_TOKEN_STORAGE_KEY=\"omarai_access_token\"' in html"` | — |
-| [SRC-3D0A619359-L000010](../../tests/test_dashboard_security.py#L10) | 10 | `"    assert 'headers.Authorization=\"Bearer \"+token' in html"` | — |
-| [SRC-3D0A619359-L000011](../../tests/test_dashboard_security.py#L11) | 11 | `"    assert '$(\"saveAccessToken\").onclick' in html"` | — |
-| [SRC-3D0A619359-L000012](../../tests/test_dashboard_security.py#L12) | 12 | `""` | — |
-| [SRC-3D0A619359-L000013](../../tests/test_dashboard_security.py#L13) | 13 | `""` | — |
-| [SRC-3D0A619359-L000014](../../tests/test_dashboard_security.py#L14) | 14 | `"def test_saved_lead_source_links_reject_non_http_schemes():"` | — |
-| [SRC-3D0A619359-L000015](../../tests/test_dashboard_security.py#L15) | 15 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000016](../../tests/test_dashboard_security.py#L16) | 16 | `"    assert \"function safeSourceUrl(value)\" in html"` | — |
-| [SRC-3D0A619359-L000017](../../tests/test_dashboard_security.py#L17) | 17 | `"    assert '[\"http:\",\"https:\"]' in html"` | — |
-| [SRC-3D0A619359-L000018](../../tests/test_dashboard_security.py#L18) | 18 | `"    assert \"const sourceUrl=safeSourceUrl(l.source_url)\" in html"` | — |
-| [SRC-3D0A619359-L000019](../../tests/test_dashboard_security.py#L19) | 19 | `"    assert \"const sourceLink=sourceUrl?\" in html"` | — |
+| [SRC-63610B9E85-L000001](../../tests/test_agentic_retrieval.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-63610B9E85-L000002](../../tests/test_agentic_retrieval.py#L2) | 2 | `""` | — |
+| [SRC-63610B9E85-L000003](../../tests/test_agentic_retrieval.py#L3) | 3 | `"from agents.claim_evidence import build_claim_evidence_ledger"` | — |
+| [SRC-63610B9E85-L000004](../../tests/test_agentic_retrieval.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-63610B9E85-L000005](../../tests/test_agentic_retrieval.py#L5) | 5 | `""` | — |
+| [SRC-63610B9E85-L000006](../../tests/test_agentic_retrieval.py#L6) | 6 | `""` | — |
+| [SRC-63610B9E85-L000007](../../tests/test_agentic_retrieval.py#L7) | 7 | `"def test_claim_ledger_maps_citations_to_exact_sources() -> None:"` | — |
+| [SRC-63610B9E85-L000008](../../tests/test_agentic_retrieval.py#L8) | 8 | `"    sources = ["` | — |
+| [SRC-63610B9E85-L000009](../../tests/test_agentic_retrieval.py#L9) | 9 | `"        {\"title\": \"Price source\", \"url\": \"https://example.com/price\","` | — |
+| [SRC-63610B9E85-L000010](../../tests/test_agentic_retrieval.py#L10) | 10 | `"         \"snippet\": \"Solar battery price is 100 EGP.\", \"provider\": \"fixture\"},"` | — |
+| [SRC-63610B9E85-L000011](../../tests/test_agentic_retrieval.py#L11) | 11 | `"        {\"title\": \"Warranty source\", \"url\": \"https://example.org/warranty\","` | — |
+| [SRC-63610B9E85-L000012](../../tests/test_agentic_retrieval.py#L12) | 12 | `"         \"page_text\": \"Warranty terms are listed here.\", \"page_fetched\": True,"` | — |
+| [SRC-63610B9E85-L000013](../../tests/test_agentic_retrieval.py#L13) | 13 | `"         \"provider\": \"fixture\"},"` | — |
+| [SRC-63610B9E85-L000014](../../tests/test_agentic_retrieval.py#L14) | 14 | `"    ]"` | — |
+| [SRC-63610B9E85-L000015](../../tests/test_agentic_retrieval.py#L15) | 15 | `"    result = build_claim_evidence_ledger("` | — |
+| [SRC-63610B9E85-L000016](../../tests/test_agentic_retrieval.py#L16) | 16 | `"        \"The price is 100 EGP [source 1]. Warranty terms are shown [المصدر 2].\","` | — |
+| [SRC-63610B9E85-L000017](../../tests/test_agentic_retrieval.py#L17) | 17 | `"        sources,"` | — |
+| [SRC-63610B9E85-L000018](../../tests/test_agentic_retrieval.py#L18) | 18 | `"        {\"citation_lexical_alignment\": ["` | — |
+| [SRC-63610B9E85-L000019](../../tests/test_agentic_retrieval.py#L19) | 19 | `"            {\"sentence_number\": 1, \"status\": \"lexical_overlap_signal_found\"},"` | — |
+| [SRC-63610B9E85-L000020](../../tests/test_agentic_retrieval.py#L20) | 20 | `"            {\"sentence_number\": 2, \"status\": \"weak_lexical_overlap\"},"` | — |
+| [SRC-63610B9E85-L000021](../../tests/test_agentic_retrieval.py#L21) | 21 | `"        ]},"` | — |
+| [SRC-63610B9E85-L000022](../../tests/test_agentic_retrieval.py#L22) | 22 | `"    )"` | — |
+| [SRC-63610B9E85-L000023](../../tests/test_agentic_retrieval.py#L23) | 23 | `"    assert result[\"semantic_verification\"] is False"` | — |
+| [SRC-63610B9E85-L000024](../../tests/test_agentic_retrieval.py#L24) | 24 | `"    assert result[\"claim_entailment\"] == \"not_checked\""` | — |
+| [SRC-63610B9E85-L000025](../../tests/test_agentic_retrieval.py#L25) | 25 | `"    assert result[\"summary\"][\"segment_candidate_count\"] == 2"` | — |
+| [SRC-63610B9E85-L000026](../../tests/test_agentic_retrieval.py#L26) | 26 | `"    assert result[\"summary\"][\"valid_source_reference_count\"] == 2"` | — |
+| [SRC-63610B9E85-L000027](../../tests/test_agentic_retrieval.py#L27) | 27 | `"    assert result[\"segments\"][0][\"sources\"][0][\"url\"] == \"https://example.com/price\""` | — |
+| [SRC-63610B9E85-L000028](../../tests/test_agentic_retrieval.py#L28) | 28 | `"    assert result[\"segments\"][1][\"sources\"][0][\"evidence_basis\"] == \"extracted_page_text\""` | — |
+| [SRC-63610B9E85-L000029](../../tests/test_agentic_retrieval.py#L29) | 29 | `"    assert result[\"segments\"][0][\"lexical_audit_status\"] == \"lexical_overlap_signal_found\""` | — |
+| [SRC-63610B9E85-L000030](../../tests/test_agentic_retrieval.py#L30) | 30 | `""` | — |
+| [SRC-63610B9E85-L000031](../../tests/test_agentic_retrieval.py#L31) | 31 | `""` | — |
+| [SRC-63610B9E85-L000032](../../tests/test_agentic_retrieval.py#L32) | 32 | `"def test_claim_ledger_marks_uncited_and_out_of_range_references() -> None:"` | — |
+| [SRC-63610B9E85-L000033](../../tests/test_agentic_retrieval.py#L33) | 33 | `"    result = build_claim_evidence_ledger("` | — |
+| [SRC-63610B9E85-L000034](../../tests/test_agentic_retrieval.py#L34) | 34 | `"        \"Uncited sentence. Bad reference [المصدر 2]. Valid [source 1].\","` | — |
+| [SRC-63610B9E85-L000035](../../tests/test_agentic_retrieval.py#L35) | 35 | `"        [{\"title\": \"Source\", \"url\": \"https://example.com\", \"snippet\": \"text\"}],"` | — |
+| [SRC-63610B9E85-L000036](../../tests/test_agentic_retrieval.py#L36) | 36 | `"    )"` | — |
+| [SRC-63610B9E85-L000037](../../tests/test_agentic_retrieval.py#L37) | 37 | `"    assert result[\"summary\"][\"segments_without_citation_markers\"] == 1"` | — |
+| [SRC-63610B9E85-L000038](../../tests/test_agentic_retrieval.py#L38) | 38 | `"    assert result[\"summary\"][\"out_of_range_reference_count\"] == 1"` | — |
+| [SRC-63610B9E85-L000039](../../tests/test_agentic_retrieval.py#L39) | 39 | `"    assert result[\"segments\"][0][\"citation_status\"] == \"no_citation_marker\""` | — |
+| [SRC-63610B9E85-L000040](../../tests/test_agentic_retrieval.py#L40) | 40 | `"    assert result[\"segments\"][1][\"citation_status\"] == \"citation_index_out_of_range\""` | — |
+| [SRC-63610B9E85-L000041](../../tests/test_agentic_retrieval.py#L41) | 41 | `"    assert result[\"segments\"][2][\"citation_status\"] == \"cited_source_attached\""` | — |
+| [SRC-63610B9E85-L000042](../../tests/test_agentic_retrieval.py#L42) | 42 | `""` | — |
+| [SRC-63610B9E85-L000043](../../tests/test_agentic_retrieval.py#L43) | 43 | `""` | — |
+| [SRC-63610B9E85-L000044](../../tests/test_agentic_retrieval.py#L44) | 44 | `"def test_claim_ledger_does_not_equate_valid_index_with_verification() -> None:"` | — |
+| [SRC-63610B9E85-L000045](../../tests/test_agentic_retrieval.py#L45) | 45 | `"    result = build_claim_evidence_ledger("` | — |
+| [SRC-63610B9E85-L000046](../../tests/test_agentic_retrieval.py#L46) | 46 | `"        \"Claim with a marker [المصدر 1].\","` | — |
+| [SRC-63610B9E85-L000047](../../tests/test_agentic_retrieval.py#L47) | 47 | `"        [{\"title\": \"Only a title\", \"url\": \"https://example.com\"}],"` | — |
+| [SRC-63610B9E85-L000048](../../tests/test_agentic_retrieval.py#L48) | 48 | `"    )"` | — |
+| [SRC-63610B9E85-L000049](../../tests/test_agentic_retrieval.py#L49) | 49 | `"    assert result[\"segments\"][0][\"citation_status\"] == \"valid_index_without_readable_evidence\""` | — |
+| [SRC-63610B9E85-L000050](../../tests/test_agentic_retrieval.py#L50) | 50 | `"    assert result[\"segments\"][0][\"sources\"][0][\"evidence_basis\"] == \"title_only\""` | — |
+| [SRC-63610B9E85-L000051](../../tests/test_agentic_retrieval.py#L51) | 51 | `"    # A title is metadata, not a source passage available for evidence review."` | — |
+| [SRC-63610B9E85-L000052](../../tests/test_agentic_retrieval.py#L52) | 52 | `"    assert result[\"segments\"][0][\"sources\"][0][\"reference_status\"] == \"valid_index_without_readable_evidence\""` | — |
+| [SRC-63610B9E85-L000053](../../tests/test_agentic_retrieval.py#L53) | 53 | `"    assert result[\"summary\"][\"cited_segments_with_readable_source_evidence\"] == 0"` | — |
+| [SRC-63610B9E85-L000054](../../tests/test_agentic_retrieval.py#L54) | 54 | `"    assert result[\"fact_correctness\"] == \"not_checked\""` | — |
+| [SRC-63610B9E85-L000055](../../tests/test_agentic_retrieval.py#L55) | 55 | `"    assert any(\"do not prove\" in item for item in result[\"limitations\"])"` | — |
+| [SRC-63610B9E85-L000056](../../tests/test_agentic_retrieval.py#L56) | 56 | `""` | — |
+| [SRC-63610B9E85-L000057](../../tests/test_agentic_retrieval.py#L57) | 57 | `""` | — |
+| [SRC-63610B9E85-L000058](../../tests/test_agentic_retrieval.py#L58) | 58 | `"def test_collect_research_retries_missing_aspect_within_query_limit(monkeypatch) -> None:"` | — |
+| [SRC-63610B9E85-L000059](../../tests/test_agentic_retrieval.py#L59) | 59 | `"    agent = WebAgent()"` | — |
+| [SRC-63610B9E85-L000060](../../tests/test_agentic_retrieval.py#L60) | 60 | `"    agent._request_budget = None"` | — |
+| [SRC-63610B9E85-L000061](../../tests/test_agentic_retrieval.py#L61) | 61 | `"    queries: list[str] = []"` | — |
+| [SRC-63610B9E85-L000062](../../tests/test_agentic_retrieval.py#L62) | 62 | `""` | — |
+| [SRC-63610B9E85-L000063](../../tests/test_agentic_retrieval.py#L63) | 63 | `"    def fake_search(query: str):"` | — |
+| [SRC-63610B9E85-L000064](../../tests/test_agentic_retrieval.py#L64) | 64 | `"        queries.append(query)"` | — |
+| [SRC-63610B9E85-L000065](../../tests/test_agentic_retrieval.py#L65) | 65 | `"        if \"warranty\" in query.casefold():"` | — |
+| [SRC-63610B9E85-L000066](../../tests/test_agentic_retrieval.py#L66) | 66 | `"            return [{"` | — |
+| [SRC-63610B9E85-L000067](../../tests/test_agentic_retrieval.py#L67) | 67 | `"                \"title\": \"Solar battery warranty terms\","` | — |
+| [SRC-63610B9E85-L000068](../../tests/test_agentic_retrieval.py#L68) | 68 | `"                \"url\": \"https://example.org/warranty\","` | — |
+| [SRC-63610B9E85-L000069](../../tests/test_agentic_retrieval.py#L69) | 69 | `"                \"snippet\": \"Solar battery warranty terms and coverage.\","` | — |
+| [SRC-63610B9E85-L000070](../../tests/test_agentic_retrieval.py#L70) | 70 | `"                \"provider\": \"fixture_search\","` | — |
+| [SRC-63610B9E85-L000071](../../tests/test_agentic_retrieval.py#L71) | 71 | `"                \"provider_rank\": 1,"` | — |
+| [SRC-63610B9E85-L000072](../../tests/test_agentic_retrieval.py#L72) | 72 | `"            }]"` | — |
+| [SRC-63610B9E85-L000073](../../tests/test_agentic_retrieval.py#L73) | 73 | `"        return [{"` | — |
+| [SRC-63610B9E85-L000074](../../tests/test_agentic_retrieval.py#L74) | 74 | `"            \"title\": \"Solar battery price details\","` | — |
+| [SRC-63610B9E85-L000075](../../tests/test_agentic_retrieval.py#L75) | 75 | `"            \"url\": \"https://example.com/price\","` | — |
+| [SRC-63610B9E85-L000076](../../tests/test_agentic_retrieval.py#L76) | 76 | `"            \"snippet\": \"Solar battery price: 100 EGP.\","` | — |
+| [SRC-63610B9E85-L000077](../../tests/test_agentic_retrieval.py#L77) | 77 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-63610B9E85-L000078](../../tests/test_agentic_retrieval.py#L78) | 78 | `"            \"provider_rank\": 1,"` | — |
+| [SRC-63610B9E85-L000079](../../tests/test_agentic_retrieval.py#L79) | 79 | `"        }]"` | — |
+| [SRC-63610B9E85-L000080](../../tests/test_agentic_retrieval.py#L80) | 80 | `""` | — |
+| [SRC-63610B9E85-L000081](../../tests/test_agentic_retrieval.py#L81) | 81 | `"    monkeypatch.setattr(agent, \"_search_web\", fake_search)"` | — |
+| [SRC-63610B9E85-L000082](../../tests/test_agentic_retrieval.py#L82) | 82 | `"    monkeypatch.setattr("` | — |
+| [SRC-63610B9E85-L000083](../../tests/test_agentic_retrieval.py#L83) | 83 | `"        agent, \"_fetch_page\","` | — |
+| [SRC-63610B9E85-L000084](../../tests/test_agentic_retrieval.py#L84) | 84 | `"        lambda _url: (\"Fixture page\", \"Solar battery price and warranty evidence text.\"),"` | — |
+| [SRC-63610B9E85-L000085](../../tests/test_agentic_retrieval.py#L85) | 85 | `"    )"` | — |
+| [SRC-63610B9E85-L000086](../../tests/test_agentic_retrieval.py#L86) | 86 | `"    sources, _warnings, report = agent._collect_research({"` | — |
+| [SRC-63610B9E85-L000087](../../tests/test_agentic_retrieval.py#L87) | 87 | `"        \"query_limit\": 3,"` | — |
+| [SRC-63610B9E85-L000088](../../tests/test_agentic_retrieval.py#L88) | 88 | `"        \"queries\": [\"solar battery\", \"solar battery price\", \"solar battery warranty\"],"` | — |
+| [SRC-63610B9E85-L000089](../../tests/test_agentic_retrieval.py#L89) | 89 | `"        \"coverage_targets\": [\"price\", \"warranty\"],"` | — |
+| [SRC-63610B9E85-L000090](../../tests/test_agentic_retrieval.py#L90) | 90 | `"        \"depth\": \"standard\","` | — |
+| [SRC-63610B9E85-L000091](../../tests/test_agentic_retrieval.py#L91) | 91 | `"        \"social_focus\": False,"` | — |
+| [SRC-63610B9E85-L000092](../../tests/test_agentic_retrieval.py#L92) | 92 | `"        \"platforms\": [],"` | — |
+| [SRC-63610B9E85-L000093](../../tests/test_agentic_retrieval.py#L93) | 93 | `"        \"direct_urls\": [],"` | — |
+| [SRC-63610B9E85-L000094](../../tests/test_agentic_retrieval.py#L94) | 94 | `"    })"` | — |
+| [SRC-63610B9E85-L000095](../../tests/test_agentic_retrieval.py#L95) | 95 | `"    assert len(queries) <= 3"` | — |
+| [SRC-63610B9E85-L000096](../../tests/test_agentic_retrieval.py#L96) | 96 | `"    assert any(\"warranty\" in query.casefold() for query in queries)"` | — |
+| [SRC-63610B9E85-L000097](../../tests/test_agentic_retrieval.py#L97) | 97 | `"    assert report[\"queries_attempted\"] == len(queries)"` | — |
+| [SRC-63610B9E85-L000098](../../tests/test_agentic_retrieval.py#L98) | 98 | `"    assert any(\"warranty\" in str(source.get(\"url\", \"\")).casefold() for source in sources)"` | — |
+| [SRC-63610B9E85-L000099](../../tests/test_agentic_retrieval.py#L99) | 99 | `""` | — |
+| [SRC-63610B9E85-L000100](../../tests/test_agentic_retrieval.py#L100) | 100 | `""` | — |
+| [SRC-63610B9E85-L000101](../../tests/test_agentic_retrieval.py#L101) | 101 | `""` | — |
+| [SRC-63610B9E85-L000102](../../tests/test_agentic_retrieval.py#L102) | 102 | `"def test_generation_prompt_includes_grounded_writing_examples(monkeypatch) -> None:"` | — |
+| [SRC-63610B9E85-L000103](../../tests/test_agentic_retrieval.py#L103) | 103 | `"    agent = WebAgent()"` | — |
+| [SRC-63610B9E85-L000104](../../tests/test_agentic_retrieval.py#L104) | 104 | `"    captured: dict[str, object] = {}"` | — |
+| [SRC-63610B9E85-L000105](../../tests/test_agentic_retrieval.py#L105) | 105 | `""` | — |
+| [SRC-63610B9E85-L000106](../../tests/test_agentic_retrieval.py#L106) | 106 | `"    def fake_completion(messages, **_kwargs):"` | — |
+| [SRC-63610B9E85-L000107](../../tests/test_agentic_retrieval.py#L107) | 107 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-63610B9E85-L000108](../../tests/test_agentic_retrieval.py#L108) | 108 | `"        return \"إجابة تجريبية.\""` | — |
+| [SRC-63610B9E85-L000109](../../tests/test_agentic_retrieval.py#L109) | 109 | `""` | — |
+| [SRC-63610B9E85-L000110](../../tests/test_agentic_retrieval.py#L110) | 110 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-63610B9E85-L000111](../../tests/test_agentic_retrieval.py#L111) | 111 | `"    answer = agent._generate("` | — |
+| [SRC-63610B9E85-L000112](../../tests/test_agentic_retrieval.py#L112) | 112 | `"        question=\"اشرح لي معنى مفهوم بسيط.\","` | — |
+| [SRC-63610B9E85-L000113](../../tests/test_agentic_retrieval.py#L113) | 113 | `"        history=[],"` | — |
+| [SRC-63610B9E85-L000114](../../tests/test_agentic_retrieval.py#L114) | 114 | `"        sources=[],"` | — |
+| [SRC-63610B9E85-L000115](../../tests/test_agentic_retrieval.py#L115) | 115 | `"        search_warning=None,"` | — |
+| [SRC-63610B9E85-L000116](../../tests/test_agentic_retrieval.py#L116) | 116 | `"        research_plan={\"depth\": \"standard\"},"` | — |
+| [SRC-63610B9E85-L000117](../../tests/test_agentic_retrieval.py#L117) | 117 | `"        search_report={},"` | — |
+| [SRC-63610B9E85-L000118](../../tests/test_agentic_retrieval.py#L118) | 118 | `"    )"` | — |
+| [SRC-63610B9E85-L000119](../../tests/test_agentic_retrieval.py#L119) | 119 | `""` | — |
+| [SRC-63610B9E85-L000120](../../tests/test_agentic_retrieval.py#L120) | 120 | `"    assert answer == \"إجابة تجريبية.\""` | — |
+| [SRC-63610B9E85-L000121](../../tests/test_agentic_retrieval.py#L121) | 121 | `"    messages = captured[\"messages\"]"` | — |
+| [SRC-63610B9E85-L000122](../../tests/test_agentic_retrieval.py#L122) | 122 | `"    assert isinstance(messages, list)"` | — |
+| [SRC-63610B9E85-L000123](../../tests/test_agentic_retrieval.py#L123) | 123 | `"    combined = \"\\n\".join("` | — |
+| [SRC-63610B9E85-L000124](../../tests/test_agentic_retrieval.py#L124) | 124 | `"        str(message.get(\"content\") or \"\")"` | — |
+| [SRC-63610B9E85-L000125](../../tests/test_agentic_retrieval.py#L125) | 125 | `"        for message in messages"` | — |
+| [SRC-63610B9E85-L000126](../../tests/test_agentic_retrieval.py#L126) | 126 | `"        if isinstance(message, dict)"` | — |
+| [SRC-63610B9E85-L000127](../../tests/test_agentic_retrieval.py#L127) | 127 | `"    )"` | — |
+| [SRC-63610B9E85-L000128](../../tests/test_agentic_retrieval.py#L128) | 128 | `"    assert \"مثال أسلوبي توضيحي فقط\" in combined"` | — |
+| [SRC-63610B9E85-L000129](../../tests/test_agentic_retrieval.py#L129) | 129 | `"    assert \"لا تعمم هذا على منتجات أخرى\" in combined"` | — |
+| [SRC-63610B9E85-L000130](../../tests/test_agentic_retrieval.py#L130) | 130 | `"    assert \"لا أستطيع تأكيده من هذه النتائج\" in combined"` | — |
 ## اختبارات
 
-### FILE-29A9CD43D1 — [tests/test_dialogue_context_pipeline.py](../../tests/test_dialogue_context_pipeline.py#L1)
+### FILE-4CCB1F172B — [tests/test_answer_quality_corpus.py](../../tests/test_answer_quality_corpus.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-29A9CD43D1-L000001](../../tests/test_dialogue_context_pipeline.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-29A9CD43D1-L000002](../../tests/test_dialogue_context_pipeline.py#L2) | 2 | `""` | — |
-| [SRC-29A9CD43D1-L000003](../../tests/test_dialogue_context_pipeline.py#L3) | 3 | `"import json"` | — |
-| [SRC-29A9CD43D1-L000004](../../tests/test_dialogue_context_pipeline.py#L4) | 4 | `"from typing import Any"` | — |
-| [SRC-29A9CD43D1-L000005](../../tests/test_dialogue_context_pipeline.py#L5) | 5 | `""` | — |
-| [SRC-29A9CD43D1-L000006](../../tests/test_dialogue_context_pipeline.py#L6) | 6 | `"import pytest"` | — |
-| [SRC-29A9CD43D1-L000007](../../tests/test_dialogue_context_pipeline.py#L7) | 7 | `""` | — |
-| [SRC-29A9CD43D1-L000008](../../tests/test_dialogue_context_pipeline.py#L8) | 8 | `"from agents.research import evidence_signal_report"` | — |
-| [SRC-29A9CD43D1-L000009](../../tests/test_dialogue_context_pipeline.py#L9) | 9 | `"from agents.dialogue_state import might_be_context_dependent"` | — |
-| [SRC-29A9CD43D1-L000010](../../tests/test_dialogue_context_pipeline.py#L10) | 10 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-29A9CD43D1-L000011](../../tests/test_dialogue_context_pipeline.py#L11) | 11 | `""` | — |
-| [SRC-29A9CD43D1-L000012](../../tests/test_dialogue_context_pipeline.py#L12) | 12 | `""` | — |
-| [SRC-29A9CD43D1-L000013](../../tests/test_dialogue_context_pipeline.py#L13) | 13 | `"def _source(domain: str, queries: list[str]) -> dict[str, Any]:"` | — |
-| [SRC-29A9CD43D1-L000014](../../tests/test_dialogue_context_pipeline.py#L14) | 14 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000015](../../tests/test_dialogue_context_pipeline.py#L15) | 15 | `"        \"title\": \"iPhone 17 256GB international warranty coverage in Egypt\","` | — |
-| [SRC-29A9CD43D1-L000016](../../tests/test_dialogue_context_pipeline.py#L16) | 16 | `"        \"url\": f\"https://{domain}/iphone-warranty\","` | — |
-| [SRC-29A9CD43D1-L000017](../../tests/test_dialogue_context_pipeline.py#L17) | 17 | `"        \"snippet\": \"Warranty coverage and service policy for iPhone 17 in Egypt.\","` | — |
-| [SRC-29A9CD43D1-L000018](../../tests/test_dialogue_context_pipeline.py#L18) | 18 | `"        \"page_text\": \"Warranty coverage and service policy for iPhone 17 in Egypt.\","` | — |
-| [SRC-29A9CD43D1-L000019](../../tests/test_dialogue_context_pipeline.py#L19) | 19 | `"        \"page_fetched\": True,"` | — |
-| [SRC-29A9CD43D1-L000020](../../tests/test_dialogue_context_pipeline.py#L20) | 20 | `"        \"providers\": [\"test_search\"],"` | — |
-| [SRC-29A9CD43D1-L000021](../../tests/test_dialogue_context_pipeline.py#L21) | 21 | `"        \"queries\": list(queries),"` | — |
-| [SRC-29A9CD43D1-L000022](../../tests/test_dialogue_context_pipeline.py#L22) | 22 | `"        \"domain\": domain,"` | — |
-| [SRC-29A9CD43D1-L000023](../../tests/test_dialogue_context_pipeline.py#L23) | 23 | `"        \"source_class\": \"general\","` | — |
-| [SRC-29A9CD43D1-L000024](../../tests/test_dialogue_context_pipeline.py#L24) | 24 | `"        \"platform\": \"web\","` | — |
-| [SRC-29A9CD43D1-L000025](../../tests/test_dialogue_context_pipeline.py#L25) | 25 | `"        \"published_at\": \"\","` | — |
-| [SRC-29A9CD43D1-L000026](../../tests/test_dialogue_context_pipeline.py#L26) | 26 | `"        \"rank_score\": 1.0,"` | — |
-| [SRC-29A9CD43D1-L000027](../../tests/test_dialogue_context_pipeline.py#L27) | 27 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000028](../../tests/test_dialogue_context_pipeline.py#L28) | 28 | `""` | — |
-| [SRC-29A9CD43D1-L000029](../../tests/test_dialogue_context_pipeline.py#L29) | 29 | `""` | — |
-| [SRC-29A9CD43D1-L000030](../../tests/test_dialogue_context_pipeline.py#L30) | 30 | `"def _report(plan: dict[str, Any], sources: list[dict[str, Any]]) -> dict[str, Any]:"` | — |
-| [SRC-29A9CD43D1-L000031](../../tests/test_dialogue_context_pipeline.py#L31) | 31 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000032](../../tests/test_dialogue_context_pipeline.py#L32) | 32 | `"        \"queries_planned\": len(plan.get(\"queries\", [])),"` | — |
-| [SRC-29A9CD43D1-L000033](../../tests/test_dialogue_context_pipeline.py#L33) | 33 | `"        \"queries_attempted\": len(plan.get(\"queries\", [])),"` | — |
-| [SRC-29A9CD43D1-L000034](../../tests/test_dialogue_context_pipeline.py#L34) | 34 | `"        \"queries_attempted_known\": True,"` | — |
-| [SRC-29A9CD43D1-L000035](../../tests/test_dialogue_context_pipeline.py#L35) | 35 | `"        \"search_attempted\": True,"` | — |
-| [SRC-29A9CD43D1-L000036](../../tests/test_dialogue_context_pipeline.py#L36) | 36 | `"        \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-29A9CD43D1-L000037](../../tests/test_dialogue_context_pipeline.py#L37) | 37 | `"        \"query_results\": [],"` | — |
-| [SRC-29A9CD43D1-L000038](../../tests/test_dialogue_context_pipeline.py#L38) | 38 | `"        \"unique_sources\": len(sources),"` | — |
-| [SRC-29A9CD43D1-L000039](../../tests/test_dialogue_context_pipeline.py#L39) | 39 | `"        \"pages_fetched\": len(sources),"` | — |
-| [SRC-29A9CD43D1-L000040](../../tests/test_dialogue_context_pipeline.py#L40) | 40 | `"        \"providers_used\": [\"test_search\"],"` | — |
-| [SRC-29A9CD43D1-L000041](../../tests/test_dialogue_context_pipeline.py#L41) | 41 | `"        \"provider_counts\": {\"test_search\": len(sources)},"` | — |
-| [SRC-29A9CD43D1-L000042](../../tests/test_dialogue_context_pipeline.py#L42) | 42 | `"        \"platform_counts\": {\"web\": len(sources)},"` | — |
-| [SRC-29A9CD43D1-L000043](../../tests/test_dialogue_context_pipeline.py#L43) | 43 | `"        \"social_direct_results\": 0,"` | — |
-| [SRC-29A9CD43D1-L000044](../../tests/test_dialogue_context_pipeline.py#L44) | 44 | `"        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-29A9CD43D1-L000045](../../tests/test_dialogue_context_pipeline.py#L45) | 45 | `"        \"planning_method\": plan.get(\"planning_method\", \"test\"),"` | — |
-| [SRC-29A9CD43D1-L000046](../../tests/test_dialogue_context_pipeline.py#L46) | 46 | `"        \"evidence_signals\": evidence_signal_report(sources),"` | — |
-| [SRC-29A9CD43D1-L000047](../../tests/test_dialogue_context_pipeline.py#L47) | 47 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000048](../../tests/test_dialogue_context_pipeline.py#L48) | 48 | `""` | — |
-| [SRC-29A9CD43D1-L000049](../../tests/test_dialogue_context_pipeline.py#L49) | 49 | `""` | — |
-| [SRC-29A9CD43D1-L000050](../../tests/test_dialogue_context_pipeline.py#L50) | 50 | `"def _semantic_context(*, needs_clarification: bool = False) -> dict[str, Any]:"` | — |
-| [SRC-29A9CD43D1-L000051](../../tests/test_dialogue_context_pipeline.py#L51) | 51 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000052](../../tests/test_dialogue_context_pipeline.py#L52) | 52 | `"        \"resolved_question\": ("` | — |
-| [SRC-29A9CD43D1-L000053](../../tests/test_dialogue_context_pipeline.py#L53) | 53 | `"            \"هل الضمان الدولي لهاتف iPhone 17 سعة 256 جيجابايت الذي اشتريته \""` | — |
-| [SRC-29A9CD43D1-L000054](../../tests/test_dialogue_context_pipeline.py#L54) | 54 | `"            \"في مصر يغطي الصيانة داخل مصر؟\""` | — |
-| [SRC-29A9CD43D1-L000055](../../tests/test_dialogue_context_pipeline.py#L55) | 55 | `"        ),"` | — |
-| [SRC-29A9CD43D1-L000056](../../tests/test_dialogue_context_pipeline.py#L56) | 56 | `"        \"intent\": \"current_information\","` | — |
-| [SRC-29A9CD43D1-L000057](../../tests/test_dialogue_context_pipeline.py#L57) | 57 | `"        \"topic\": \"تغطية الضمان\","` | — |
-| [SRC-29A9CD43D1-L000058](../../tests/test_dialogue_context_pipeline.py#L58) | 58 | `"        \"entities\": [\"iPhone 17\"],"` | — |
-| [SRC-29A9CD43D1-L000059](../../tests/test_dialogue_context_pipeline.py#L59) | 59 | `"        \"slots\": {"` | — |
-| [SRC-29A9CD43D1-L000060](../../tests/test_dialogue_context_pipeline.py#L60) | 60 | `"            \"product\": \"iPhone 17\","` | — |
-| [SRC-29A9CD43D1-L000061](../../tests/test_dialogue_context_pipeline.py#L61) | 61 | `"            \"capacity\": \"256 جيجابايت\","` | — |
-| [SRC-29A9CD43D1-L000062](../../tests/test_dialogue_context_pipeline.py#L62) | 62 | `"            \"country\": \"مصر\","` | — |
-| [SRC-29A9CD43D1-L000063](../../tests/test_dialogue_context_pipeline.py#L63) | 63 | `"            \"aspect\": \"الضمان الدولي والصيانة داخل مصر\","` | — |
-| [SRC-29A9CD43D1-L000064](../../tests/test_dialogue_context_pipeline.py#L64) | 64 | `"        },"` | — |
-| [SRC-29A9CD43D1-L000065](../../tests/test_dialogue_context_pipeline.py#L65) | 65 | `"        \"changed_slots\": [\"aspect\"],"` | — |
-| [SRC-29A9CD43D1-L000066](../../tests/test_dialogue_context_pipeline.py#L66) | 66 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-29A9CD43D1-L000067](../../tests/test_dialogue_context_pipeline.py#L67) | 67 | `"        \"topic_shift\": False,"` | — |
-| [SRC-29A9CD43D1-L000068](../../tests/test_dialogue_context_pipeline.py#L68) | 68 | `"        \"needs_web\": True,"` | — |
-| [SRC-29A9CD43D1-L000069](../../tests/test_dialogue_context_pipeline.py#L69) | 69 | `"        \"research_depth\": \"standard\","` | — |
-| [SRC-29A9CD43D1-L000070](../../tests/test_dialogue_context_pipeline.py#L70) | 70 | `"        \"needs_clarification\": needs_clarification,"` | — |
-| [SRC-29A9CD43D1-L000071](../../tests/test_dialogue_context_pipeline.py#L71) | 71 | `"        \"clarification_question\": ("` | — |
-| [SRC-29A9CD43D1-L000072](../../tests/test_dialogue_context_pipeline.py#L72) | 72 | `"            \"تقصد ضمان أي هاتف تحديدًا، أم تريد مقارنة ضمان الهاتفين؟\""` | — |
-| [SRC-29A9CD43D1-L000073](../../tests/test_dialogue_context_pipeline.py#L73) | 73 | `"            if needs_clarification else \"\""` | — |
-| [SRC-29A9CD43D1-L000074](../../tests/test_dialogue_context_pipeline.py#L74) | 74 | `"        ),"` | — |
-| [SRC-29A9CD43D1-L000075](../../tests/test_dialogue_context_pipeline.py#L75) | 75 | `"        \"unresolved_references\": [\"الضمان\"] if needs_clarification else [],"` | — |
-| [SRC-29A9CD43D1-L000076](../../tests/test_dialogue_context_pipeline.py#L76) | 76 | `"        \"resolution_basis\": \"history_inferred\","` | — |
-| [SRC-29A9CD43D1-L000077](../../tests/test_dialogue_context_pipeline.py#L77) | 77 | `"        \"confidence_band\": \"medium\","` | — |
-| [SRC-29A9CD43D1-L000078](../../tests/test_dialogue_context_pipeline.py#L78) | 78 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000079](../../tests/test_dialogue_context_pipeline.py#L79) | 79 | `""` | — |
-| [SRC-29A9CD43D1-L000080](../../tests/test_dialogue_context_pipeline.py#L80) | 80 | `""` | — |
-| [SRC-29A9CD43D1-L000081](../../tests/test_dialogue_context_pipeline.py#L81) | 81 | `"def test_semantic_context_probe_routes_natural_followup_to_search_and_answer("` | — |
-| [SRC-29A9CD43D1-L000082](../../tests/test_dialogue_context_pipeline.py#L82) | 82 | `"    monkeypatch: pytest.MonkeyPatch,"` | — |
-| [SRC-29A9CD43D1-L000083](../../tests/test_dialogue_context_pipeline.py#L83) | 83 | `") -> None:"` | — |
-| [SRC-29A9CD43D1-L000084](../../tests/test_dialogue_context_pipeline.py#L84) | 84 | `"    agent = WebAgent()"` | — |
-| [SRC-29A9CD43D1-L000085](../../tests/test_dialogue_context_pipeline.py#L85) | 85 | `"    agent.api_key = \"test-key\"  # All model responses are mocked; no provider call is made."` | — |
-| [SRC-29A9CD43D1-L000086](../../tests/test_dialogue_context_pipeline.py#L86) | 86 | `"    history = ["` | — |
-| [SRC-29A9CD43D1-L000087](../../tests/test_dialogue_context_pipeline.py#L87) | 87 | `"        {\"role\": \"user\", \"content\": \"اشتريت iPhone 17 النسخة الأساسية سعة 256 جيجابايت من مصر.\"},"` | — |
-| [SRC-29A9CD43D1-L000088](../../tests/test_dialogue_context_pipeline.py#L88) | 88 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن نسخة iPhone 17 سعة 256 جيجابايت في مصر.\"},"` | — |
-| [SRC-29A9CD43D1-L000089](../../tests/test_dialogue_context_pipeline.py#L89) | 89 | `"    ]"` | — |
-| [SRC-29A9CD43D1-L000090](../../tests/test_dialogue_context_pipeline.py#L90) | 90 | `"    context = _semantic_context()"` | — |
-| [SRC-29A9CD43D1-L000091](../../tests/test_dialogue_context_pipeline.py#L91) | 91 | `"    seen: dict[str, Any] = {\"model_prompts\": []}"` | — |
-| [SRC-29A9CD43D1-L000092](../../tests/test_dialogue_context_pipeline.py#L92) | 92 | `""` | — |
-| [SRC-29A9CD43D1-L000093](../../tests/test_dialogue_context_pipeline.py#L93) | 93 | `"    def mocked_completion(messages, **kwargs):"` | — |
-| [SRC-29A9CD43D1-L000094](../../tests/test_dialogue_context_pipeline.py#L94) | 94 | `"        system_prompt = messages[0][\"content\"]"` | — |
-| [SRC-29A9CD43D1-L000095](../../tests/test_dialogue_context_pipeline.py#L95) | 95 | `"        seen[\"model_prompts\"].append(system_prompt)"` | — |
-| [SRC-29A9CD43D1-L000096](../../tests/test_dialogue_context_pipeline.py#L96) | 96 | `"        if \"أنت محلل سياق حواري\" in system_prompt:"` | — |
-| [SRC-29A9CD43D1-L000097](../../tests/test_dialogue_context_pipeline.py#L97) | 97 | `"            return json.dumps(context, ensure_ascii=False)"` | — |
-| [SRC-29A9CD43D1-L000098](../../tests/test_dialogue_context_pipeline.py#L98) | 98 | `"        if \"أنت مخطط بحث ومحلل دلالي حواري\" in system_prompt:"` | — |
-| [SRC-29A9CD43D1-L000099](../../tests/test_dialogue_context_pipeline.py#L99) | 99 | `"            return json.dumps("` | — |
-| [SRC-29A9CD43D1-L000100](../../tests/test_dialogue_context_pipeline.py#L100) | 100 | `"                {"` | — |
-| [SRC-29A9CD43D1-L000101](../../tests/test_dialogue_context_pipeline.py#L101) | 101 | `"                    \"queries\": ["` | — |
-| [SRC-29A9CD43D1-L000102](../../tests/test_dialogue_context_pipeline.py#L102) | 102 | `"                        \"iPhone 17 256GB الضمان الدولي في مصر تغطية الصيانة warranty Egypt\""` | — |
-| [SRC-29A9CD43D1-L000103](../../tests/test_dialogue_context_pipeline.py#L103) | 103 | `"                    ],"` | — |
-| [SRC-29A9CD43D1-L000104](../../tests/test_dialogue_context_pipeline.py#L104) | 104 | `"                    \"direct_urls\": [],"` | — |
-| [SRC-29A9CD43D1-L000105](../../tests/test_dialogue_context_pipeline.py#L105) | 105 | `"                    \"social_focus\": False,"` | — |
-| [SRC-29A9CD43D1-L000106](../../tests/test_dialogue_context_pipeline.py#L106) | 106 | `"                    \"freshness\": \"current\","` | — |
-| [SRC-29A9CD43D1-L000107](../../tests/test_dialogue_context_pipeline.py#L107) | 107 | `"                    \"depth\": \"standard\","` | — |
-| [SRC-29A9CD43D1-L000108](../../tests/test_dialogue_context_pipeline.py#L108) | 108 | `"                    \"platforms\": [],"` | — |
-| [SRC-29A9CD43D1-L000109](../../tests/test_dialogue_context_pipeline.py#L109) | 109 | `"                    \"dialogue_context\": context,"` | — |
-| [SRC-29A9CD43D1-L000110](../../tests/test_dialogue_context_pipeline.py#L110) | 110 | `"                },"` | — |
-| [SRC-29A9CD43D1-L000111](../../tests/test_dialogue_context_pipeline.py#L111) | 111 | `"                ensure_ascii=False,"` | — |
-| [SRC-29A9CD43D1-L000112](../../tests/test_dialogue_context_pipeline.py#L112) | 112 | `"            )"` | — |
-| [SRC-29A9CD43D1-L000113](../../tests/test_dialogue_context_pipeline.py#L113) | 113 | `"        pytest.fail(\"Unexpected model prompt in mocked offline test\")"` | — |
-| [SRC-29A9CD43D1-L000114](../../tests/test_dialogue_context_pipeline.py#L114) | 114 | `""` | — |
-| [SRC-29A9CD43D1-L000115](../../tests/test_dialogue_context_pipeline.py#L115) | 115 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
-| [SRC-29A9CD43D1-L000116](../../tests/test_dialogue_context_pipeline.py#L116) | 116 | `"    seen[\"generated_question\"] = None"` | — |
-| [SRC-29A9CD43D1-L000117](../../tests/test_dialogue_context_pipeline.py#L117) | 117 | `"    seen[\"reviewed_question\"] = None"` | — |
-| [SRC-29A9CD43D1-L000118](../../tests/test_dialogue_context_pipeline.py#L118) | 118 | `""` | — |
-| [SRC-29A9CD43D1-L000119](../../tests/test_dialogue_context_pipeline.py#L119) | 119 | `"    def collect(plan):"` | — |
-| [SRC-29A9CD43D1-L000120](../../tests/test_dialogue_context_pipeline.py#L120) | 120 | `"        seen[\"plan\"] = dict(plan)"` | — |
-| [SRC-29A9CD43D1-L000121](../../tests/test_dialogue_context_pipeline.py#L121) | 121 | `"        sources = [_source(\"example.com\", plan[\"queries\"]), _source(\"example.net\", plan[\"queries\"])]"` | — |
-| [SRC-29A9CD43D1-L000122](../../tests/test_dialogue_context_pipeline.py#L122) | 122 | `"        return sources, [], _report(plan, sources)"` | — |
-| [SRC-29A9CD43D1-L000123](../../tests/test_dialogue_context_pipeline.py#L123) | 123 | `""` | — |
-| [SRC-29A9CD43D1-L000124](../../tests/test_dialogue_context_pipeline.py#L124) | 124 | `"    def generate(resolved_question, *args, **kwargs):"` | — |
-| [SRC-29A9CD43D1-L000125](../../tests/test_dialogue_context_pipeline.py#L125) | 125 | `"        seen[\"generated_question\"] = resolved_question"` | — |
-| [SRC-29A9CD43D1-L000126](../../tests/test_dialogue_context_pipeline.py#L126) | 126 | `"        return \"لم أؤكد شروط الضمان من النصوص المتاحة؛ راجع الشروط الرسمية [المصدر 1].\""` | — |
-| [SRC-29A9CD43D1-L000127](../../tests/test_dialogue_context_pipeline.py#L127) | 127 | `""` | — |
-| [SRC-29A9CD43D1-L000128](../../tests/test_dialogue_context_pipeline.py#L128) | 128 | `"    def review(resolved_question, answer, sources):"` | — |
-| [SRC-29A9CD43D1-L000129](../../tests/test_dialogue_context_pipeline.py#L129) | 129 | `"        seen[\"reviewed_question\"] = resolved_question"` | — |
-| [SRC-29A9CD43D1-L000130](../../tests/test_dialogue_context_pipeline.py#L130) | 130 | `"        return answer"` | — |
-| [SRC-29A9CD43D1-L000131](../../tests/test_dialogue_context_pipeline.py#L131) | 131 | `""` | — |
-| [SRC-29A9CD43D1-L000132](../../tests/test_dialogue_context_pipeline.py#L132) | 132 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-29A9CD43D1-L000133](../../tests/test_dialogue_context_pipeline.py#L133) | 133 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
-| [SRC-29A9CD43D1-L000134](../../tests/test_dialogue_context_pipeline.py#L134) | 134 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
-| [SRC-29A9CD43D1-L000135](../../tests/test_dialogue_context_pipeline.py#L135) | 135 | `"    monkeypatch.setattr(agent, \"_review_answer\", review)"` | — |
-| [SRC-29A9CD43D1-L000136](../../tests/test_dialogue_context_pipeline.py#L136) | 136 | `""` | — |
-| [SRC-29A9CD43D1-L000137](../../tests/test_dialogue_context_pipeline.py#L137) | 137 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
-| [SRC-29A9CD43D1-L000138](../../tests/test_dialogue_context_pipeline.py#L138) | 138 | `"    result = agent.answer(question, history=history)"` | — |
-| [SRC-29A9CD43D1-L000139](../../tests/test_dialogue_context_pipeline.py#L139) | 139 | `""` | — |
-| [SRC-29A9CD43D1-L000140](../../tests/test_dialogue_context_pipeline.py#L140) | 140 | `"    assert result[\"intent_route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    assert result[\"question\"] == question  # Preserve the visible user utterance."` | — |
-| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    assert len(seen[\"model_prompts\"]) == 2  # one context pass + one search-plan pass"` | — |
-| [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    assert \"iPhone 17\" in seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000145](../../tests/test_dialogue_context_pipeline.py#L145) | 145 | `"    assert \"256 جيجابايت\" in seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert \"الضمان الدولي\" in seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000147](../../tests/test_dialogue_context_pipeline.py#L147) | 147 | `"    assert seen[\"reviewed_question\"] == seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000148](../../tests/test_dialogue_context_pipeline.py#L148) | 148 | `"    context_result = result[\"research_plan\"][\"dialogue_context\"]"` | — |
-| [SRC-29A9CD43D1-L000149](../../tests/test_dialogue_context_pipeline.py#L149) | 149 | `"    assert context_result[\"method\"] == \"llm_semantic_context\""` | — |
-| [SRC-29A9CD43D1-L000150](../../tests/test_dialogue_context_pipeline.py#L150) | 150 | `"    assert context_result[\"slots\"][\"country\"] == \"مصر\""` | — |
-| [SRC-29A9CD43D1-L000151](../../tests/test_dialogue_context_pipeline.py#L151) | 151 | `"    assert context_result[\"changed_slots\"] == [\"aspect\"]"` | — |
-| [SRC-29A9CD43D1-L000152](../../tests/test_dialogue_context_pipeline.py#L152) | 152 | `"    assert context_result[\"needs_web\"] is True"` | — |
-| [SRC-29A9CD43D1-L000153](../../tests/test_dialogue_context_pipeline.py#L153) | 153 | `""` | — |
-| [SRC-29A9CD43D1-L000154](../../tests/test_dialogue_context_pipeline.py#L154) | 154 | `""` | — |
-| [SRC-29A9CD43D1-L000155](../../tests/test_dialogue_context_pipeline.py#L155) | 155 | `"def test_semantic_context_asks_before_search_when_two_referents_are_plausible("` | — |
-| [SRC-29A9CD43D1-L000156](../../tests/test_dialogue_context_pipeline.py#L156) | 156 | `"    monkeypatch: pytest.MonkeyPatch,"` | — |
-| [SRC-29A9CD43D1-L000157](../../tests/test_dialogue_context_pipeline.py#L157) | 157 | `") -> None:"` | — |
-| [SRC-29A9CD43D1-L000158](../../tests/test_dialogue_context_pipeline.py#L158) | 158 | `"    agent = WebAgent()"` | — |
-| [SRC-29A9CD43D1-L000159](../../tests/test_dialogue_context_pipeline.py#L159) | 159 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-29A9CD43D1-L000160](../../tests/test_dialogue_context_pipeline.py#L160) | 160 | `"    history = ["` | — |
-| [SRC-29A9CD43D1-L000161](../../tests/test_dialogue_context_pipeline.py#L161) | 161 | `"        {\"role\": \"user\", \"content\": \"قارن بين iPhone 17 وSamsung S26\"},"` | — |
-| [SRC-29A9CD43D1-L000162](../../tests/test_dialogue_context_pipeline.py#L162) | 162 | `"        {\"role\": \"assistant\", \"content\": \"ذكرت الهاتفين في المقارنة.\"},"` | — |
-| [SRC-29A9CD43D1-L000163](../../tests/test_dialogue_context_pipeline.py#L163) | 163 | `"    ]"` | — |
-| [SRC-29A9CD43D1-L000164](../../tests/test_dialogue_context_pipeline.py#L164) | 164 | `"    ambiguous = {"` | — |
-| [SRC-29A9CD43D1-L000165](../../tests/test_dialogue_context_pipeline.py#L165) | 165 | `"        \"resolved_question\": \"What about the second one?\","` | — |
-| [SRC-29A9CD43D1-L000166](../../tests/test_dialogue_context_pipeline.py#L166) | 166 | `"        \"intent\": \"compare\","` | — |
-| [SRC-29A9CD43D1-L000167](../../tests/test_dialogue_context_pipeline.py#L167) | 167 | `"        \"topic\": \"اختيار الهاتف\","` | — |
-| [SRC-29A9CD43D1-L000168](../../tests/test_dialogue_context_pipeline.py#L168) | 168 | `"        \"entities\": [\"iPhone 17\", \"Samsung S26\"],"` | — |
-| [SRC-29A9CD43D1-L000169](../../tests/test_dialogue_context_pipeline.py#L169) | 169 | `"        \"slots\": {\"aspect\": \"الاختيار\"},"` | — |
-| [SRC-29A9CD43D1-L000170](../../tests/test_dialogue_context_pipeline.py#L170) | 170 | `"        \"changed_slots\": [],"` | — |
-| [SRC-29A9CD43D1-L000171](../../tests/test_dialogue_context_pipeline.py#L171) | 171 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-29A9CD43D1-L000172](../../tests/test_dialogue_context_pipeline.py#L172) | 172 | `"        \"topic_shift\": False,"` | — |
-| [SRC-29A9CD43D1-L000173](../../tests/test_dialogue_context_pipeline.py#L173) | 173 | `"        \"needs_web\": False,"` | — |
-| [SRC-29A9CD43D1-L000174](../../tests/test_dialogue_context_pipeline.py#L174) | 174 | `"        \"research_depth\": \"standard\","` | — |
-| [SRC-29A9CD43D1-L000175](../../tests/test_dialogue_context_pipeline.py#L175) | 175 | `"        \"needs_clarification\": True,"` | — |
-| [SRC-29A9CD43D1-L000176](../../tests/test_dialogue_context_pipeline.py#L176) | 176 | `"        \"clarification_question\": \"تقصد أي هاتف تحديدًا: iPhone 17 أم Samsung S26؟\","` | — |
-| [SRC-29A9CD43D1-L000177](../../tests/test_dialogue_context_pipeline.py#L177) | 177 | `"        \"unresolved_references\": [\"the second one\"],"` | — |
-| [SRC-29A9CD43D1-L000178](../../tests/test_dialogue_context_pipeline.py#L178) | 178 | `"        \"resolution_basis\": \"insufficient_evidence\","` | — |
-| [SRC-29A9CD43D1-L000179](../../tests/test_dialogue_context_pipeline.py#L179) | 179 | `"        \"confidence_band\": \"low\","` | — |
-| [SRC-29A9CD43D1-L000180](../../tests/test_dialogue_context_pipeline.py#L180) | 180 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000181](../../tests/test_dialogue_context_pipeline.py#L181) | 181 | `""` | — |
-| [SRC-29A9CD43D1-L000182](../../tests/test_dialogue_context_pipeline.py#L182) | 182 | `"    def mocked_completion(messages, **kwargs):"` | — |
-| [SRC-29A9CD43D1-L000183](../../tests/test_dialogue_context_pipeline.py#L183) | 183 | `"        assert \"أنت محلل سياق حواري\" in messages[0][\"content\"]"` | — |
-| [SRC-29A9CD43D1-L000184](../../tests/test_dialogue_context_pipeline.py#L184) | 184 | `"        return json.dumps(ambiguous, ensure_ascii=False)"` | — |
-| [SRC-29A9CD43D1-L000185](../../tests/test_dialogue_context_pipeline.py#L185) | 185 | `""` | — |
-| [SRC-29A9CD43D1-L000186](../../tests/test_dialogue_context_pipeline.py#L186) | 186 | `"    def forbidden_search(*args, **kwargs):"` | — |
-| [SRC-29A9CD43D1-L000187](../../tests/test_dialogue_context_pipeline.py#L187) | 187 | `"        pytest.fail(\"An unresolved referent must not start web research.\")"` | — |
-| [SRC-29A9CD43D1-L000188](../../tests/test_dialogue_context_pipeline.py#L188) | 188 | `""` | — |
-| [SRC-29A9CD43D1-L000189](../../tests/test_dialogue_context_pipeline.py#L189) | 189 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
-| [SRC-29A9CD43D1-L000190](../../tests/test_dialogue_context_pipeline.py#L190) | 190 | `"    monkeypatch.setattr(agent, \"_collect_research\", forbidden_search)"` | — |
-| [SRC-29A9CD43D1-L000191](../../tests/test_dialogue_context_pipeline.py#L191) | 191 | `""` | — |
-| [SRC-29A9CD43D1-L000192](../../tests/test_dialogue_context_pipeline.py#L192) | 192 | `"    result = agent.answer(\"What about the second one?\", history=history)"` | — |
-| [SRC-29A9CD43D1-L000193](../../tests/test_dialogue_context_pipeline.py#L193) | 193 | `""` | — |
-| [SRC-29A9CD43D1-L000194](../../tests/test_dialogue_context_pipeline.py#L194) | 194 | `"    assert result[\"kind\"] == \"clarification_needed\""` | — |
-| [SRC-29A9CD43D1-L000195](../../tests/test_dialogue_context_pipeline.py#L195) | 195 | `"    assert result[\"intent_route\"] == \"CLARIFY\""` | — |
-| [SRC-29A9CD43D1-L000196](../../tests/test_dialogue_context_pipeline.py#L196) | 196 | `"    assert \"iPhone 17\" in result[\"answer\"]"` | — |
-| [SRC-29A9CD43D1-L000197](../../tests/test_dialogue_context_pipeline.py#L197) | 197 | `"    assert \"Samsung S26\" in result[\"answer\"]"` | — |
-| [SRC-29A9CD43D1-L000198](../../tests/test_dialogue_context_pipeline.py#L198) | 198 | `"    assert result[\"dialogue_context\"][\"needs_clarification\"] is True"` | — |
-| [SRC-29A9CD43D1-L000199](../../tests/test_dialogue_context_pipeline.py#L199) | 199 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-29A9CD43D1-L000200](../../tests/test_dialogue_context_pipeline.py#L200) | 200 | `""` | — |
-| [SRC-29A9CD43D1-L000201](../../tests/test_dialogue_context_pipeline.py#L201) | 201 | `"def test_semantic_probe_catches_implicit_context_without_keyword_trigger("` | — |
-| [SRC-29A9CD43D1-L000202](../../tests/test_dialogue_context_pipeline.py#L202) | 202 | `"    monkeypatch: pytest.MonkeyPatch,"` | — |
-| [SRC-29A9CD43D1-L000203](../../tests/test_dialogue_context_pipeline.py#L203) | 203 | `") -> None:"` | — |
-| [SRC-29A9CD43D1-L000204](../../tests/test_dialogue_context_pipeline.py#L204) | 204 | `"    agent = WebAgent()"` | — |
-| [SRC-29A9CD43D1-L000205](../../tests/test_dialogue_context_pipeline.py#L205) | 205 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-29A9CD43D1-L000206](../../tests/test_dialogue_context_pipeline.py#L206) | 206 | `"    question = \"في وضعي، أبدأ بإيه؟\""` | — |
-| [SRC-29A9CD43D1-L000207](../../tests/test_dialogue_context_pipeline.py#L207) | 207 | `"    history = ["` | — |
-| [SRC-29A9CD43D1-L000208](../../tests/test_dialogue_context_pipeline.py#L208) | 208 | `"        {"` | — |
-| [SRC-29A9CD43D1-L000209](../../tests/test_dialogue_context_pipeline.py#L209) | 209 | `"            \"role\": \"user\","` | — |
-| [SRC-29A9CD43D1-L000210](../../tests/test_dialogue_context_pipeline.py#L210) | 210 | `"            \"content\": ("` | — |
-| [SRC-29A9CD43D1-L000211](../../tests/test_dialogue_context_pipeline.py#L211) | 211 | `"                \"عندي امتحان كيمياء بكرة، وفاضلي ساعتين أراجع الاتزان الكيميائي \""` | — |
-| [SRC-29A9CD43D1-L000212](../../tests/test_dialogue_context_pipeline.py#L212) | 212 | `"                \"ومش فاهمه كويس.\""` | — |
-| [SRC-29A9CD43D1-L000213](../../tests/test_dialogue_context_pipeline.py#L213) | 213 | `"            ),"` | — |
-| [SRC-29A9CD43D1-L000214](../../tests/test_dialogue_context_pipeline.py#L214) | 214 | `"        },"` | — |
-| [SRC-29A9CD43D1-L000215](../../tests/test_dialogue_context_pipeline.py#L215) | 215 | `"        {"` | — |
-| [SRC-29A9CD43D1-L000216](../../tests/test_dialogue_context_pipeline.py#L216) | 216 | `"            \"role\": \"assistant\","` | — |
-| [SRC-29A9CD43D1-L000217](../../tests/test_dialogue_context_pipeline.py#L217) | 217 | `"            \"content\": \"نقدر نرتب الساعتين لمراجعة المفاهيم والتدريب على المسائل.\","` | — |
-| [SRC-29A9CD43D1-L000218](../../tests/test_dialogue_context_pipeline.py#L218) | 218 | `"        },"` | — |
-| [SRC-29A9CD43D1-L000219](../../tests/test_dialogue_context_pipeline.py#L219) | 219 | `"    ]"` | — |
-| [SRC-29A9CD43D1-L000220](../../tests/test_dialogue_context_pipeline.py#L220) | 220 | `"    assert not might_be_context_dependent(question)"` | — |
-| [SRC-29A9CD43D1-L000221](../../tests/test_dialogue_context_pipeline.py#L221) | 221 | `""` | — |
-| [SRC-29A9CD43D1-L000222](../../tests/test_dialogue_context_pipeline.py#L222) | 222 | `"    semantic_context = {"` | — |
-| [SRC-29A9CD43D1-L000223](../../tests/test_dialogue_context_pipeline.py#L223) | 223 | `"        \"resolved_question\": ("` | — |
-| [SRC-29A9CD43D1-L000224](../../tests/test_dialogue_context_pipeline.py#L224) | 224 | `"            \"في ظل امتحان الكيمياء غدًا ووجود ساعتين لمراجعة الاتزان الكيميائي، \""` | — |
-| [SRC-29A9CD43D1-L000225](../../tests/test_dialogue_context_pipeline.py#L225) | 225 | `"            \"بماذا أبدأ؟\""` | — |
-| [SRC-29A9CD43D1-L000226](../../tests/test_dialogue_context_pipeline.py#L226) | 226 | `"        ),"` | — |
-| [SRC-29A9CD43D1-L000227](../../tests/test_dialogue_context_pipeline.py#L227) | 227 | `"        \"intent\": \"how_to\","` | — |
-| [SRC-29A9CD43D1-L000228](../../tests/test_dialogue_context_pipeline.py#L228) | 228 | `"        \"topic\": \"خطة مراجعة الاتزان الكيميائي\","` | — |
-| [SRC-29A9CD43D1-L000229](../../tests/test_dialogue_context_pipeline.py#L229) | 229 | `"        \"entities\": [\"امتحان الكيمياء\", \"الاتزان الكيميائي\"],"` | — |
-| [SRC-29A9CD43D1-L000230](../../tests/test_dialogue_context_pipeline.py#L230) | 230 | `"        \"slots\": {"` | — |
-| [SRC-29A9CD43D1-L000231](../../tests/test_dialogue_context_pipeline.py#L231) | 231 | `"            \"goal\": \"مراجعة امتحان الكيمياء\","` | — |
-| [SRC-29A9CD43D1-L000232](../../tests/test_dialogue_context_pipeline.py#L232) | 232 | `"            \"time_range\": \"ساعتان\","` | — |
-| [SRC-29A9CD43D1-L000233](../../tests/test_dialogue_context_pipeline.py#L233) | 233 | `"            \"topic\": \"الاتزان الكيميائي\","` | — |
-| [SRC-29A9CD43D1-L000234](../../tests/test_dialogue_context_pipeline.py#L234) | 234 | `"        },"` | — |
-| [SRC-29A9CD43D1-L000235](../../tests/test_dialogue_context_pipeline.py#L235) | 235 | `"        \"changed_slots\": [\"goal\"],"` | — |
-| [SRC-29A9CD43D1-L000236](../../tests/test_dialogue_context_pipeline.py#L236) | 236 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-29A9CD43D1-L000237](../../tests/test_dialogue_context_pipeline.py#L237) | 237 | `"        \"topic_shift\": False,"` | — |
-| [SRC-29A9CD43D1-L000238](../../tests/test_dialogue_context_pipeline.py#L238) | 238 | `"        \"needs_web\": False,"` | — |
-| [SRC-29A9CD43D1-L000239](../../tests/test_dialogue_context_pipeline.py#L239) | 239 | `"        \"research_depth\": \"standard\","` | — |
-| [SRC-29A9CD43D1-L000240](../../tests/test_dialogue_context_pipeline.py#L240) | 240 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-29A9CD43D1-L000241](../../tests/test_dialogue_context_pipeline.py#L241) | 241 | `"        \"clarification_question\": \"\","` | — |
-| [SRC-29A9CD43D1-L000242](../../tests/test_dialogue_context_pipeline.py#L242) | 242 | `"        \"unresolved_references\": [],"` | — |
-| [SRC-29A9CD43D1-L000243](../../tests/test_dialogue_context_pipeline.py#L243) | 243 | `"        \"resolution_basis\": \"history_inferred\","` | — |
-| [SRC-29A9CD43D1-L000244](../../tests/test_dialogue_context_pipeline.py#L244) | 244 | `"        \"confidence_band\": \"medium\","` | — |
-| [SRC-29A9CD43D1-L000245](../../tests/test_dialogue_context_pipeline.py#L245) | 245 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000246](../../tests/test_dialogue_context_pipeline.py#L246) | 246 | `"    seen: dict[str, Any] = {\"context_calls\": 0}"` | — |
-| [SRC-29A9CD43D1-L000247](../../tests/test_dialogue_context_pipeline.py#L247) | 247 | `""` | — |
-| [SRC-29A9CD43D1-L000248](../../tests/test_dialogue_context_pipeline.py#L248) | 248 | `"    def mocked_completion(messages, **kwargs):"` | — |
-| [SRC-29A9CD43D1-L000249](../../tests/test_dialogue_context_pipeline.py#L249) | 249 | `"        assert \"أنت محلل سياق حواري\" in messages[0][\"content\"]"` | — |
-| [SRC-29A9CD43D1-L000250](../../tests/test_dialogue_context_pipeline.py#L250) | 250 | `"        seen[\"context_calls\"] += 1"` | — |
-| [SRC-29A9CD43D1-L000251](../../tests/test_dialogue_context_pipeline.py#L251) | 251 | `"        return json.dumps(semantic_context, ensure_ascii=False)"` | — |
-| [SRC-29A9CD43D1-L000252](../../tests/test_dialogue_context_pipeline.py#L252) | 252 | `""` | — |
-| [SRC-29A9CD43D1-L000253](../../tests/test_dialogue_context_pipeline.py#L253) | 253 | `"    def answer_without_search(resolved_question, prior_history):"` | — |
-| [SRC-29A9CD43D1-L000254](../../tests/test_dialogue_context_pipeline.py#L254) | 254 | `"        seen[\"resolved_question\"] = resolved_question"` | — |
-| [SRC-29A9CD43D1-L000255](../../tests/test_dialogue_context_pipeline.py#L255) | 255 | `"        return {"` | — |
-| [SRC-29A9CD43D1-L000256](../../tests/test_dialogue_context_pipeline.py#L256) | 256 | `"            \"answer\": \"ابدأ بمراجعة أساسيات الاتزان ثم حل أمثلة قصيرة.\","` | — |
-| [SRC-29A9CD43D1-L000257](../../tests/test_dialogue_context_pipeline.py#L257) | 257 | `"            \"question\": resolved_question,"` | — |
-| [SRC-29A9CD43D1-L000258](../../tests/test_dialogue_context_pipeline.py#L258) | 258 | `"            \"search_query\": resolved_question,"` | — |
-| [SRC-29A9CD43D1-L000259](../../tests/test_dialogue_context_pipeline.py#L259) | 259 | `"            \"search_queries\": [],"` | — |
-| [SRC-29A9CD43D1-L000260](../../tests/test_dialogue_context_pipeline.py#L260) | 260 | `"            \"research_plan\": {"` | — |
-| [SRC-29A9CD43D1-L000261](../../tests/test_dialogue_context_pipeline.py#L261) | 261 | `"                \"mode\": \"auto\","` | — |
-| [SRC-29A9CD43D1-L000262](../../tests/test_dialogue_context_pipeline.py#L262) | 262 | `"                \"planning_method\": \"general_qa_without_web\","` | — |
-| [SRC-29A9CD43D1-L000263](../../tests/test_dialogue_context_pipeline.py#L263) | 263 | `"                \"web_search_skipped\": True,"` | — |
-| [SRC-29A9CD43D1-L000264](../../tests/test_dialogue_context_pipeline.py#L264) | 264 | `"            },"` | — |
-| [SRC-29A9CD43D1-L000265](../../tests/test_dialogue_context_pipeline.py#L265) | 265 | `"            \"sources\": [],"` | — |
-| [SRC-29A9CD43D1-L000266](../../tests/test_dialogue_context_pipeline.py#L266) | 266 | `"            \"used_language_model\": True,"` | — |
-| [SRC-29A9CD43D1-L000267](../../tests/test_dialogue_context_pipeline.py#L267) | 267 | `"            \"used_web_search\": False,"` | — |
-| [SRC-29A9CD43D1-L000268](../../tests/test_dialogue_context_pipeline.py#L268) | 268 | `"            \"search_attempted\": False,"` | — |
-| [SRC-29A9CD43D1-L000269](../../tests/test_dialogue_context_pipeline.py#L269) | 269 | `"            \"used_social_search\": False,"` | — |
-| [SRC-29A9CD43D1-L000270](../../tests/test_dialogue_context_pipeline.py#L270) | 270 | `"            \"warnings\": [],"` | — |
-| [SRC-29A9CD43D1-L000271](../../tests/test_dialogue_context_pipeline.py#L271) | 271 | `"            \"kind\": \"general_answer\","` | — |
-| [SRC-29A9CD43D1-L000272](../../tests/test_dialogue_context_pipeline.py#L272) | 272 | `"            \"research_quality\": \"not_applicable\","` | — |
-| [SRC-29A9CD43D1-L000273](../../tests/test_dialogue_context_pipeline.py#L273) | 273 | `"            \"model_calls\": [],"` | — |
-| [SRC-29A9CD43D1-L000274](../../tests/test_dialogue_context_pipeline.py#L274) | 274 | `"        }"` | — |
-| [SRC-29A9CD43D1-L000275](../../tests/test_dialogue_context_pipeline.py#L275) | 275 | `""` | — |
-| [SRC-29A9CD43D1-L000276](../../tests/test_dialogue_context_pipeline.py#L276) | 276 | `"    def forbidden_search(*args, **kwargs):"` | — |
-| [SRC-29A9CD43D1-L000277](../../tests/test_dialogue_context_pipeline.py#L277) | 277 | `"        pytest.fail(\"This contextual study-plan question must not start web search.\")"` | — |
-| [SRC-29A9CD43D1-L000278](../../tests/test_dialogue_context_pipeline.py#L278) | 278 | `""` | — |
-| [SRC-29A9CD43D1-L000279](../../tests/test_dialogue_context_pipeline.py#L279) | 279 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
-| [SRC-29A9CD43D1-L000280](../../tests/test_dialogue_context_pipeline.py#L280) | 280 | `"    monkeypatch.setattr(agent, \"_answer_without_search\", answer_without_search)"` | — |
-| [SRC-29A9CD43D1-L000281](../../tests/test_dialogue_context_pipeline.py#L281) | 281 | `"    monkeypatch.setattr(agent, \"_collect_research\", forbidden_search)"` | — |
-| [SRC-29A9CD43D1-L000282](../../tests/test_dialogue_context_pipeline.py#L282) | 282 | `""` | — |
-| [SRC-29A9CD43D1-L000283](../../tests/test_dialogue_context_pipeline.py#L283) | 283 | `"    result = agent.answer(question, history=history)"` | — |
-| [SRC-29A9CD43D1-L000284](../../tests/test_dialogue_context_pipeline.py#L284) | 284 | `""` | — |
-| [SRC-29A9CD43D1-L000285](../../tests/test_dialogue_context_pipeline.py#L285) | 285 | `"    assert seen[\"context_calls\"] == 1"` | — |
-| [SRC-29A9CD43D1-L000286](../../tests/test_dialogue_context_pipeline.py#L286) | 286 | `"    assert \"الكيمياء\" in seen[\"resolved_question\"]"` | — |
-| [SRC-29A9CD43D1-L000287](../../tests/test_dialogue_context_pipeline.py#L287) | 287 | `"    assert \"ساعتين\" in seen[\"resolved_question\"]"` | — |
-| [SRC-29A9CD43D1-L000288](../../tests/test_dialogue_context_pipeline.py#L288) | 288 | `"    assert \"الاتزان الكيميائي\" in seen[\"resolved_question\"]"` | — |
-| [SRC-29A9CD43D1-L000289](../../tests/test_dialogue_context_pipeline.py#L289) | 289 | `"    assert result[\"question\"] == question"` | — |
-| [SRC-29A9CD43D1-L000290](../../tests/test_dialogue_context_pipeline.py#L290) | 290 | `"    assert result[\"dialogue_context\"][\"is_follow_up\"] is True"` | — |
-| [SRC-29A9CD43D1-L000291](../../tests/test_dialogue_context_pipeline.py#L291) | 291 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-29A9CD43D1-L000292](../../tests/test_dialogue_context_pipeline.py#L292) | 292 | `"    assert result[\"search_attempted\"] is False"` | — |
-| [SRC-29A9CD43D1-L000293](../../tests/test_dialogue_context_pipeline.py#L293) | 293 | `""` | — |
+| [SRC-4CCB1F172B-L000001](../../tests/test_answer_quality_corpus.py#L1) | 1 | `"\"\"\"Structural validation for the offline answer-quality adversarial corpus."` | — |
+| [SRC-4CCB1F172B-L000002](../../tests/test_answer_quality_corpus.py#L2) | 2 | `""` | — |
+| [SRC-4CCB1F172B-L000003](../../tests/test_answer_quality_corpus.py#L3) | 3 | `"This module does NOT execute Omarai against the cases and does NOT claim that"` | — |
+| [SRC-4CCB1F172B-L000004](../../tests/test_answer_quality_corpus.py#L4) | 4 | `"any reasoning case passed. It only verifies that the benchmark file is complete,"` | — |
+| [SRC-4CCB1F172B-L000005](../../tests/test_answer_quality_corpus.py#L5) | 5 | `"internally consistent, and ready for human or fixture-assisted review."` | — |
+| [SRC-4CCB1F172B-L000006](../../tests/test_answer_quality_corpus.py#L6) | 6 | `"\"\"\""` | — |
+| [SRC-4CCB1F172B-L000007](../../tests/test_answer_quality_corpus.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-4CCB1F172B-L000008](../../tests/test_answer_quality_corpus.py#L8) | 8 | `""` | — |
+| [SRC-4CCB1F172B-L000009](../../tests/test_answer_quality_corpus.py#L9) | 9 | `"import json"` | — |
+| [SRC-4CCB1F172B-L000010](../../tests/test_answer_quality_corpus.py#L10) | 10 | `"import re"` | — |
+| [SRC-4CCB1F172B-L000011](../../tests/test_answer_quality_corpus.py#L11) | 11 | `"from collections import Counter"` | — |
+| [SRC-4CCB1F172B-L000012](../../tests/test_answer_quality_corpus.py#L12) | 12 | `"from pathlib import Path"` | — |
+| [SRC-4CCB1F172B-L000013](../../tests/test_answer_quality_corpus.py#L13) | 13 | `""` | — |
+| [SRC-4CCB1F172B-L000014](../../tests/test_answer_quality_corpus.py#L14) | 14 | `"CORPUS_PATH = Path(__file__).resolve().parent / \"fixtures\" / \"answer_quality_cases.json\""` | — |
+| [SRC-4CCB1F172B-L000015](../../tests/test_answer_quality_corpus.py#L15) | 15 | `"DOCS_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"ANSWER_QUALITY_BENCHMARK_AR.md\""` | — |
+| [SRC-4CCB1F172B-L000016](../../tests/test_answer_quality_corpus.py#L16) | 16 | `""` | — |
+| [SRC-4CCB1F172B-L000017](../../tests/test_answer_quality_corpus.py#L17) | 17 | `"REQUIRED_CASE_FIELDS = {"` | — |
+| [SRC-4CCB1F172B-L000018](../../tests/test_answer_quality_corpus.py#L18) | 18 | `"    \"case_id\","` | — |
+| [SRC-4CCB1F172B-L000019](../../tests/test_answer_quality_corpus.py#L19) | 19 | `"    \"category\","` | — |
+| [SRC-4CCB1F172B-L000020](../../tests/test_answer_quality_corpus.py#L20) | 20 | `"    \"language\","` | — |
+| [SRC-4CCB1F172B-L000021](../../tests/test_answer_quality_corpus.py#L21) | 21 | `"    \"question\","` | — |
+| [SRC-4CCB1F172B-L000022](../../tests/test_answer_quality_corpus.py#L22) | 22 | `"    \"expected_strategy\","` | — |
+| [SRC-4CCB1F172B-L000023](../../tests/test_answer_quality_corpus.py#L23) | 23 | `"    \"required_behaviors\","` | — |
+| [SRC-4CCB1F172B-L000024](../../tests/test_answer_quality_corpus.py#L24) | 24 | `"    \"forbidden_behaviors\","` | — |
+| [SRC-4CCB1F172B-L000025](../../tests/test_answer_quality_corpus.py#L25) | 25 | `"    \"evidence_fixture\","` | — |
+| [SRC-4CCB1F172B-L000026](../../tests/test_answer_quality_corpus.py#L26) | 26 | `"    \"failure_conditions\","` | — |
+| [SRC-4CCB1F172B-L000027](../../tests/test_answer_quality_corpus.py#L27) | 27 | `"    \"evaluation_mode\","` | — |
+| [SRC-4CCB1F172B-L000028](../../tests/test_answer_quality_corpus.py#L28) | 28 | `"}"` | — |
+| [SRC-4CCB1F172B-L000029](../../tests/test_answer_quality_corpus.py#L29) | 29 | `""` | — |
+| [SRC-4CCB1F172B-L000030](../../tests/test_answer_quality_corpus.py#L30) | 30 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
+| [SRC-4CCB1F172B-L000031](../../tests/test_answer_quality_corpus.py#L31) | 31 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
+| [SRC-4CCB1F172B-L000032](../../tests/test_answer_quality_corpus.py#L32) | 32 | `""` | — |
+| [SRC-4CCB1F172B-L000033](../../tests/test_answer_quality_corpus.py#L33) | 33 | `"REQUIRED_THEME_CATEGORIES = {"` | — |
+| [SRC-4CCB1F172B-L000034](../../tests/test_answer_quality_corpus.py#L34) | 34 | `"    \"simple_conversational\","` | — |
+| [SRC-4CCB1F172B-L000035](../../tests/test_answer_quality_corpus.py#L35) | 35 | `"    \"general_knowledge\","` | — |
+| [SRC-4CCB1F172B-L000036](../../tests/test_answer_quality_corpus.py#L36) | 36 | `"    \"omarai_capabilities\","` | — |
+| [SRC-4CCB1F172B-L000037](../../tests/test_answer_quality_corpus.py#L37) | 37 | `"    \"current_information\","` | — |
+| [SRC-4CCB1F172B-L000038](../../tests/test_answer_quality_corpus.py#L38) | 38 | `"    \"multi_subquestions\","` | — |
+| [SRC-4CCB1F172B-L000039](../../tests/test_answer_quality_corpus.py#L39) | 39 | `"    \"ambiguous_clarify\","` | — |
+| [SRC-4CCB1F172B-L000040](../../tests/test_answer_quality_corpus.py#L40) | 40 | `"    \"spelling_variation\","` | — |
+| [SRC-4CCB1F172B-L000041](../../tests/test_answer_quality_corpus.py#L41) | 41 | `"    \"irrelevant_results\","` | — |
+| [SRC-4CCB1F172B-L000042](../../tests/test_answer_quality_corpus.py#L42) | 42 | `"    \"empty_or_failed_search\","` | — |
+| [SRC-4CCB1F172B-L000043](../../tests/test_answer_quality_corpus.py#L43) | 43 | `"    \"conflicting_sources\","` | — |
+| [SRC-4CCB1F172B-L000044](../../tests/test_answer_quality_corpus.py#L44) | 44 | `"    \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000045](../../tests/test_answer_quality_corpus.py#L45) | 45 | `"    \"false_corroboration\","` | — |
+| [SRC-4CCB1F172B-L000046](../../tests/test_answer_quality_corpus.py#L46) | 46 | `"    \"unsupported_claim\","` | — |
+| [SRC-4CCB1F172B-L000047](../../tests/test_answer_quality_corpus.py#L47) | 47 | `"    \"invalid_links\","` | — |
+| [SRC-4CCB1F172B-L000048](../../tests/test_answer_quality_corpus.py#L48) | 48 | `"    \"prompt_injection_in_content\","` | — |
+| [SRC-4CCB1F172B-L000049](../../tests/test_answer_quality_corpus.py#L49) | 49 | `"    \"secret_exfiltration_attempt\","` | — |
+| [SRC-4CCB1F172B-L000050](../../tests/test_answer_quality_corpus.py#L50) | 50 | `"    \"missing_model_credentials\","` | — |
+| [SRC-4CCB1F172B-L000051](../../tests/test_answer_quality_corpus.py#L51) | 51 | `"    \"overconfidence_insufficient_evidence\","` | — |
+| [SRC-4CCB1F172B-L000052](../../tests/test_answer_quality_corpus.py#L52) | 52 | `"    \"incomplete_answer\","` | — |
+| [SRC-4CCB1F172B-L000053](../../tests/test_answer_quality_corpus.py#L53) | 53 | `"    \"lead_not_verified\","` | — |
+| [SRC-4CCB1F172B-L000054](../../tests/test_answer_quality_corpus.py#L54) | 54 | `"}"` | — |
+| [SRC-4CCB1F172B-L000055](../../tests/test_answer_quality_corpus.py#L55) | 55 | `""` | — |
+| [SRC-4CCB1F172B-L000056](../../tests/test_answer_quality_corpus.py#L56) | 56 | `"DOC_EXAMPLE_CATEGORY_EXPECTATIONS = {"` | — |
+| [SRC-4CCB1F172B-L000057](../../tests/test_answer_quality_corpus.py#L57) | 57 | `"    \"AQ-024\": \"prompt_injection_in_content\","` | — |
+| [SRC-4CCB1F172B-L000058](../../tests/test_answer_quality_corpus.py#L58) | 58 | `"    \"AQ-030\": \"prompt_injection_in_content\","` | — |
+| [SRC-4CCB1F172B-L000059](../../tests/test_answer_quality_corpus.py#L59) | 59 | `"    \"AQ-025\": \"secret_exfiltration_attempt\","` | — |
+| [SRC-4CCB1F172B-L000060](../../tests/test_answer_quality_corpus.py#L60) | 60 | `"    \"AQ-031\": \"secret_exfiltration_attempt\","` | — |
+| [SRC-4CCB1F172B-L000061](../../tests/test_answer_quality_corpus.py#L61) | 61 | `"    \"AQ-023\": \"invalid_links\","` | — |
+| [SRC-4CCB1F172B-L000062](../../tests/test_answer_quality_corpus.py#L62) | 62 | `"    \"AQ-029\": \"lead_not_verified\","` | — |
+| [SRC-4CCB1F172B-L000063](../../tests/test_answer_quality_corpus.py#L63) | 63 | `"    \"AQ-032\": \"lead_not_verified\","` | — |
+| [SRC-4CCB1F172B-L000064](../../tests/test_answer_quality_corpus.py#L64) | 64 | `"    \"AQ-033\": \"lead_not_verified\","` | — |
+| [SRC-4CCB1F172B-L000065](../../tests/test_answer_quality_corpus.py#L65) | 65 | `"    \"AQ-045\": \"lead_not_verified\","` | — |
+| [SRC-4CCB1F172B-L000066](../../tests/test_answer_quality_corpus.py#L66) | 66 | `"    \"AQ-018\": \"conflicting_sources\","` | — |
+| [SRC-4CCB1F172B-L000067](../../tests/test_answer_quality_corpus.py#L67) | 67 | `"    \"AQ-019\": \"conflicting_sources\","` | — |
+| [SRC-4CCB1F172B-L000068](../../tests/test_answer_quality_corpus.py#L68) | 68 | `"    \"AQ-020\": \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000069](../../tests/test_answer_quality_corpus.py#L69) | 69 | `"    \"AQ-034\": \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000070](../../tests/test_answer_quality_corpus.py#L70) | 70 | `"    \"AQ-042\": \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000071](../../tests/test_answer_quality_corpus.py#L71) | 71 | `"    \"AQ-021\": \"false_corroboration\","` | — |
+| [SRC-4CCB1F172B-L000072](../../tests/test_answer_quality_corpus.py#L72) | 72 | `"    \"AQ-035\": \"false_corroboration\","` | — |
+| [SRC-4CCB1F172B-L000073](../../tests/test_answer_quality_corpus.py#L73) | 73 | `"}"` | — |
+| [SRC-4CCB1F172B-L000074](../../tests/test_answer_quality_corpus.py#L74) | 74 | `""` | — |
+| [SRC-4CCB1F172B-L000075](../../tests/test_answer_quality_corpus.py#L75) | 75 | `"CASE_ID_RE = re.compile(r\"^AQ-\\d{3}$\")"` | — |
+| [SRC-4CCB1F172B-L000076](../../tests/test_answer_quality_corpus.py#L76) | 76 | `""` | — |
+| [SRC-4CCB1F172B-L000077](../../tests/test_answer_quality_corpus.py#L77) | 77 | `""` | — |
+| [SRC-4CCB1F172B-L000078](../../tests/test_answer_quality_corpus.py#L78) | 78 | `"def _load_corpus() -> dict:"` | — |
+| [SRC-4CCB1F172B-L000079](../../tests/test_answer_quality_corpus.py#L79) | 79 | `"    assert CORPUS_PATH.is_file(), f\"Missing corpus file: {CORPUS_PATH}\""` | — |
+| [SRC-4CCB1F172B-L000080](../../tests/test_answer_quality_corpus.py#L80) | 80 | `"    data = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-4CCB1F172B-L000081](../../tests/test_answer_quality_corpus.py#L81) | 81 | `"    assert isinstance(data, dict), \"Corpus root must be an object\""` | — |
+| [SRC-4CCB1F172B-L000082](../../tests/test_answer_quality_corpus.py#L82) | 82 | `"    assert \"parts\" not in data or not data.get(\"parts\"), ("` | — |
+| [SRC-4CCB1F172B-L000083](../../tests/test_answer_quality_corpus.py#L83) | 83 | `"        \"Authoritative corpus must be a single merged cases[] file, not incomplete shards\""` | — |
+| [SRC-4CCB1F172B-L000084](../../tests/test_answer_quality_corpus.py#L84) | 84 | `"    )"` | — |
+| [SRC-4CCB1F172B-L000085](../../tests/test_answer_quality_corpus.py#L85) | 85 | `"    return data"` | — |
+| [SRC-4CCB1F172B-L000086](../../tests/test_answer_quality_corpus.py#L86) | 86 | `""` | — |
+| [SRC-4CCB1F172B-L000087](../../tests/test_answer_quality_corpus.py#L87) | 87 | `""` | — |
+| [SRC-4CCB1F172B-L000088](../../tests/test_answer_quality_corpus.py#L88) | 88 | `"def test_corpus_file_loads_as_utf8_json():"` | — |
+| [SRC-4CCB1F172B-L000089](../../tests/test_answer_quality_corpus.py#L89) | 89 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000090](../../tests/test_answer_quality_corpus.py#L90) | 90 | `"    assert data.get(\"benchmark_id\") == \"OMARAI-REDTEAM-001\""` | — |
+| [SRC-4CCB1F172B-L000091](../../tests/test_answer_quality_corpus.py#L91) | 91 | `"    assert isinstance(data.get(\"cases\"), list)"` | — |
+| [SRC-4CCB1F172B-L000092](../../tests/test_answer_quality_corpus.py#L92) | 92 | `"    assert data[\"case_count\"] == len(data[\"cases\"])"` | — |
+| [SRC-4CCB1F172B-L000093](../../tests/test_answer_quality_corpus.py#L93) | 93 | `""` | — |
+| [SRC-4CCB1F172B-L000094](../../tests/test_answer_quality_corpus.py#L94) | 94 | `""` | — |
+| [SRC-4CCB1F172B-L000095](../../tests/test_answer_quality_corpus.py#L95) | 95 | `"def test_minimum_case_count():"` | — |
+| [SRC-4CCB1F172B-L000096](../../tests/test_answer_quality_corpus.py#L96) | 96 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000097](../../tests/test_answer_quality_corpus.py#L97) | 97 | `"    assert len(data[\"cases\"]) >= 40, f\"Need at least 40 cases, found {len(data['cases'])}\""` | — |
+| [SRC-4CCB1F172B-L000098](../../tests/test_answer_quality_corpus.py#L98) | 98 | `"    assert data[\"case_count\"] == 45"` | — |
+| [SRC-4CCB1F172B-L000099](../../tests/test_answer_quality_corpus.py#L99) | 99 | `""` | — |
+| [SRC-4CCB1F172B-L000100](../../tests/test_answer_quality_corpus.py#L100) | 100 | `""` | — |
+| [SRC-4CCB1F172B-L000101](../../tests/test_answer_quality_corpus.py#L101) | 101 | `"def test_case_ids_unique_and_shaped():"` | — |
+| [SRC-4CCB1F172B-L000102](../../tests/test_answer_quality_corpus.py#L102) | 102 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000103](../../tests/test_answer_quality_corpus.py#L103) | 103 | `"    ids = [c[\"case_id\"] for c in data[\"cases\"]]"` | — |
+| [SRC-4CCB1F172B-L000104](../../tests/test_answer_quality_corpus.py#L104) | 104 | `"    assert len(ids) == len(set(ids)), \"Duplicate case_id values found\""` | — |
+| [SRC-4CCB1F172B-L000105](../../tests/test_answer_quality_corpus.py#L105) | 105 | `"    for case_id in ids:"` | — |
+| [SRC-4CCB1F172B-L000106](../../tests/test_answer_quality_corpus.py#L106) | 106 | `"        assert CASE_ID_RE.match(case_id), f\"Bad case_id shape: {case_id}\""` | — |
+| [SRC-4CCB1F172B-L000107](../../tests/test_answer_quality_corpus.py#L107) | 107 | `"    assert set(ids) == {f\"AQ-{i:03d}\" for i in range(1, 46)}"` | — |
+| [SRC-4CCB1F172B-L000108](../../tests/test_answer_quality_corpus.py#L108) | 108 | `""` | — |
+| [SRC-4CCB1F172B-L000109](../../tests/test_answer_quality_corpus.py#L109) | 109 | `""` | — |
+| [SRC-4CCB1F172B-L000110](../../tests/test_answer_quality_corpus.py#L110) | 110 | `"def test_required_fields_and_types():"` | — |
+| [SRC-4CCB1F172B-L000111](../../tests/test_answer_quality_corpus.py#L111) | 111 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000112](../../tests/test_answer_quality_corpus.py#L112) | 112 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000113](../../tests/test_answer_quality_corpus.py#L113) | 113 | `"        missing = REQUIRED_CASE_FIELDS - set(case)"` | — |
+| [SRC-4CCB1F172B-L000114](../../tests/test_answer_quality_corpus.py#L114) | 114 | `"        assert not missing, f\"{case.get('case_id')}: missing {missing}\""` | — |
+| [SRC-4CCB1F172B-L000115](../../tests/test_answer_quality_corpus.py#L115) | 115 | `"        assert isinstance(case[\"case_id\"], str) and case[\"case_id\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000116](../../tests/test_answer_quality_corpus.py#L116) | 116 | `"        assert isinstance(case[\"category\"], str) and case[\"category\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000117](../../tests/test_answer_quality_corpus.py#L117) | 117 | `"        assert isinstance(case[\"language\"], str) and case[\"language\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000118](../../tests/test_answer_quality_corpus.py#L118) | 118 | `"        assert isinstance(case[\"question\"], str) and len(case[\"question\"].strip()) >= 2"` | — |
+| [SRC-4CCB1F172B-L000119](../../tests/test_answer_quality_corpus.py#L119) | 119 | `"        assert case[\"expected_strategy\"] in ALLOWED_STRATEGIES"` | — |
+| [SRC-4CCB1F172B-L000120](../../tests/test_answer_quality_corpus.py#L120) | 120 | `"        assert case[\"evaluation_mode\"] in ALLOWED_EVAL_MODES"` | — |
+| [SRC-4CCB1F172B-L000121](../../tests/test_answer_quality_corpus.py#L121) | 121 | `"        assert isinstance(case[\"required_behaviors\"], list) and case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000122](../../tests/test_answer_quality_corpus.py#L122) | 122 | `"        assert isinstance(case[\"forbidden_behaviors\"], list) and case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000123](../../tests/test_answer_quality_corpus.py#L123) | 123 | `"        assert isinstance(case[\"failure_conditions\"], list) and case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000124](../../tests/test_answer_quality_corpus.py#L124) | 124 | `"        assert isinstance(case[\"evidence_fixture\"], dict)"` | — |
+| [SRC-4CCB1F172B-L000125](../../tests/test_answer_quality_corpus.py#L125) | 125 | `"        for item in ("` | — |
+| [SRC-4CCB1F172B-L000126](../../tests/test_answer_quality_corpus.py#L126) | 126 | `"            case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000127](../../tests/test_answer_quality_corpus.py#L127) | 127 | `"            + case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000128](../../tests/test_answer_quality_corpus.py#L128) | 128 | `"            + case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000129](../../tests/test_answer_quality_corpus.py#L129) | 129 | `"        ):"` | — |
+| [SRC-4CCB1F172B-L000130](../../tests/test_answer_quality_corpus.py#L130) | 130 | `"            assert isinstance(item, str) and item.strip(), ("` | — |
+| [SRC-4CCB1F172B-L000131](../../tests/test_answer_quality_corpus.py#L131) | 131 | `"                f\"{case['case_id']}: empty behavior/condition\""` | — |
+| [SRC-4CCB1F172B-L000132](../../tests/test_answer_quality_corpus.py#L132) | 132 | `"            )"` | — |
+| [SRC-4CCB1F172B-L000133](../../tests/test_answer_quality_corpus.py#L133) | 133 | `""` | — |
+| [SRC-4CCB1F172B-L000134](../../tests/test_answer_quality_corpus.py#L134) | 134 | `""` | — |
+| [SRC-4CCB1F172B-L000135](../../tests/test_answer_quality_corpus.py#L135) | 135 | `"def test_required_theme_categories_represented():"` | — |
+| [SRC-4CCB1F172B-L000136](../../tests/test_answer_quality_corpus.py#L136) | 136 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000137](../../tests/test_answer_quality_corpus.py#L137) | 137 | `"    present = {c[\"category\"] for c in data[\"cases\"]}"` | — |
+| [SRC-4CCB1F172B-L000138](../../tests/test_answer_quality_corpus.py#L138) | 138 | `"    missing = REQUIRED_THEME_CATEGORIES - present"` | — |
+| [SRC-4CCB1F172B-L000139](../../tests/test_answer_quality_corpus.py#L139) | 139 | `"    assert not missing, f\"Missing required categories: {sorted(missing)}\""` | — |
+| [SRC-4CCB1F172B-L000140](../../tests/test_answer_quality_corpus.py#L140) | 140 | `""` | — |
+| [SRC-4CCB1F172B-L000141](../../tests/test_answer_quality_corpus.py#L141) | 141 | `""` | — |
+| [SRC-4CCB1F172B-L000142](../../tests/test_answer_quality_corpus.py#L142) | 142 | `"def test_no_empty_or_exact_duplicate_questions():"` | — |
+| [SRC-4CCB1F172B-L000143](../../tests/test_answer_quality_corpus.py#L143) | 143 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000144](../../tests/test_answer_quality_corpus.py#L144) | 144 | `"    normalized = []"` | — |
+| [SRC-4CCB1F172B-L000145](../../tests/test_answer_quality_corpus.py#L145) | 145 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000146](../../tests/test_answer_quality_corpus.py#L146) | 146 | `"        q = \" \".join(case[\"question\"].casefold().split())"` | — |
+| [SRC-4CCB1F172B-L000147](../../tests/test_answer_quality_corpus.py#L147) | 147 | `"        assert len(q) >= 3, f\"{case['case_id']}: question too short\""` | — |
+| [SRC-4CCB1F172B-L000148](../../tests/test_answer_quality_corpus.py#L148) | 148 | `"        normalized.append((case[\"case_id\"], q))"` | — |
+| [SRC-4CCB1F172B-L000149](../../tests/test_answer_quality_corpus.py#L149) | 149 | `"    counts = Counter(q for _, q in normalized)"` | — |
+| [SRC-4CCB1F172B-L000150](../../tests/test_answer_quality_corpus.py#L150) | 150 | `"    dupes = [q for q, n in counts.items() if n > 1]"` | — |
+| [SRC-4CCB1F172B-L000151](../../tests/test_answer_quality_corpus.py#L151) | 151 | `"    assert not dupes, f\"Duplicate questions: {dupes}\""` | — |
+| [SRC-4CCB1F172B-L000152](../../tests/test_answer_quality_corpus.py#L152) | 152 | `""` | — |
+| [SRC-4CCB1F172B-L000153](../../tests/test_answer_quality_corpus.py#L153) | 153 | `""` | — |
+| [SRC-4CCB1F172B-L000154](../../tests/test_answer_quality_corpus.py#L154) | 154 | `"def test_research_cases_declare_fixture_or_controlled_env():"` | — |
+| [SRC-4CCB1F172B-L000155](../../tests/test_answer_quality_corpus.py#L155) | 155 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000156](../../tests/test_answer_quality_corpus.py#L156) | 156 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000157](../../tests/test_answer_quality_corpus.py#L157) | 157 | `"        if case[\"expected_strategy\"] != \"web_search\":"` | — |
+| [SRC-4CCB1F172B-L000158](../../tests/test_answer_quality_corpus.py#L158) | 158 | `"            continue"` | — |
+| [SRC-4CCB1F172B-L000159](../../tests/test_answer_quality_corpus.py#L159) | 159 | `"        fixture = case[\"evidence_fixture\"]"` | — |
+| [SRC-4CCB1F172B-L000160](../../tests/test_answer_quality_corpus.py#L160) | 160 | `"        assert fixture.get(\"type\") in {"` | — |
+| [SRC-4CCB1F172B-L000161](../../tests/test_answer_quality_corpus.py#L161) | 161 | `"            \"controlled_search\","` | — |
+| [SRC-4CCB1F172B-L000162](../../tests/test_answer_quality_corpus.py#L162) | 162 | `"            \"controlled_page\","` | — |
+| [SRC-4CCB1F172B-L000163](../../tests/test_answer_quality_corpus.py#L163) | 163 | `"            \"controlled_fetch_failure\","` | — |
+| [SRC-4CCB1F172B-L000164](../../tests/test_answer_quality_corpus.py#L164) | 164 | `"            \"ssrf_blocked\","` | — |
+| [SRC-4CCB1F172B-L000165](../../tests/test_answer_quality_corpus.py#L165) | 165 | `"            \"env\","` | — |
+| [SRC-4CCB1F172B-L000166](../../tests/test_answer_quality_corpus.py#L166) | 166 | `"            \"none\","` | — |
+| [SRC-4CCB1F172B-L000167](../../tests/test_answer_quality_corpus.py#L167) | 167 | `"        } or \"notes\" in fixture, ("` | — |
+| [SRC-4CCB1F172B-L000168](../../tests/test_answer_quality_corpus.py#L168) | 168 | `"            f\"{case['case_id']}: research case needs a clear evidence fixture\""` | — |
+| [SRC-4CCB1F172B-L000169](../../tests/test_answer_quality_corpus.py#L169) | 169 | `"        )"` | — |
+| [SRC-4CCB1F172B-L000170](../../tests/test_answer_quality_corpus.py#L170) | 170 | `""` | — |
+| [SRC-4CCB1F172B-L000171](../../tests/test_answer_quality_corpus.py#L171) | 171 | `""` | — |
+| [SRC-4CCB1F172B-L000172](../../tests/test_answer_quality_corpus.py#L172) | 172 | `"def test_safety_categories_include_injection_and_secrets():"` | — |
+| [SRC-4CCB1F172B-L000173](../../tests/test_answer_quality_corpus.py#L173) | 173 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000174](../../tests/test_answer_quality_corpus.py#L174) | 174 | `"    cats = {c[\"category\"] for c in data[\"cases\"]}"` | — |
+| [SRC-4CCB1F172B-L000175](../../tests/test_answer_quality_corpus.py#L175) | 175 | `"    assert \"prompt_injection_in_content\" in cats"` | — |
+| [SRC-4CCB1F172B-L000176](../../tests/test_answer_quality_corpus.py#L176) | 176 | `"    assert \"secret_exfiltration_attempt\" in cats"` | — |
+| [SRC-4CCB1F172B-L000177](../../tests/test_answer_quality_corpus.py#L177) | 177 | `"    secret_failures = ["` | — |
+| [SRC-4CCB1F172B-L000178](../../tests/test_answer_quality_corpus.py#L178) | 178 | `"        c"` | — |
+| [SRC-4CCB1F172B-L000179](../../tests/test_answer_quality_corpus.py#L179) | 179 | `"        for c in data[\"cases\"]"` | — |
+| [SRC-4CCB1F172B-L000180](../../tests/test_answer_quality_corpus.py#L180) | 180 | `"        if any("` | — |
+| [SRC-4CCB1F172B-L000181](../../tests/test_answer_quality_corpus.py#L181) | 181 | `"            \"token\" in f.casefold() or \"secret\" in f.casefold() or \"key\" in f.casefold()"` | — |
+| [SRC-4CCB1F172B-L000182](../../tests/test_answer_quality_corpus.py#L182) | 182 | `"            for f in c[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000183](../../tests/test_answer_quality_corpus.py#L183) | 183 | `"        )"` | — |
+| [SRC-4CCB1F172B-L000184](../../tests/test_answer_quality_corpus.py#L184) | 184 | `"    ]"` | — |
+| [SRC-4CCB1F172B-L000185](../../tests/test_answer_quality_corpus.py#L185) | 185 | `"    assert secret_failures, \"Expected at least one case with secret-related failure conditions\""` | — |
+| [SRC-4CCB1F172B-L000186](../../tests/test_answer_quality_corpus.py#L186) | 186 | `""` | — |
+| [SRC-4CCB1F172B-L000187](../../tests/test_answer_quality_corpus.py#L187) | 187 | `""` | — |
+| [SRC-4CCB1F172B-L000188](../../tests/test_answer_quality_corpus.py#L188) | 188 | `"def test_corpus_does_not_claim_live_execution_results():"` | — |
+| [SRC-4CCB1F172B-L000189](../../tests/test_answer_quality_corpus.py#L189) | 189 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000190](../../tests/test_answer_quality_corpus.py#L190) | 190 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000191](../../tests/test_answer_quality_corpus.py#L191) | 191 | `"        assert \"observed_result\" not in case"` | — |
+| [SRC-4CCB1F172B-L000192](../../tests/test_answer_quality_corpus.py#L192) | 192 | `"        assert \"score\" not in case"` | — |
+| [SRC-4CCB1F172B-L000193](../../tests/test_answer_quality_corpus.py#L193) | 193 | `"        assert case.get(\"status\") not in {\"PASS\", \"FAIL\"}"` | — |
+| [SRC-4CCB1F172B-L000194](../../tests/test_answer_quality_corpus.py#L194) | 194 | `""` | — |
+| [SRC-4CCB1F172B-L000195](../../tests/test_answer_quality_corpus.py#L195) | 195 | `""` | — |
+| [SRC-4CCB1F172B-L000196](../../tests/test_answer_quality_corpus.py#L196) | 196 | `"def test_languages_include_arabic_english_and_mixed():"` | — |
+| [SRC-4CCB1F172B-L000197](../../tests/test_answer_quality_corpus.py#L197) | 197 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000198](../../tests/test_answer_quality_corpus.py#L198) | 198 | `"    langs = {c[\"language\"] for c in data[\"cases\"]}"` | — |
+| [SRC-4CCB1F172B-L000199](../../tests/test_answer_quality_corpus.py#L199) | 199 | `"    assert any(x.startswith(\"ar\") for x in langs)"` | — |
+| [SRC-4CCB1F172B-L000200](../../tests/test_answer_quality_corpus.py#L200) | 200 | `"    assert \"en\" in langs"` | — |
+| [SRC-4CCB1F172B-L000201](../../tests/test_answer_quality_corpus.py#L201) | 201 | `"    assert \"mixed\" in langs"` | — |
+| [SRC-4CCB1F172B-L000202](../../tests/test_answer_quality_corpus.py#L202) | 202 | `"    assert \"ar-EG\" in langs"` | — |
+| [SRC-4CCB1F172B-L000203](../../tests/test_answer_quality_corpus.py#L203) | 203 | `"    assert \"ar-MSA\" in langs"` | — |
+| [SRC-4CCB1F172B-L000204](../../tests/test_answer_quality_corpus.py#L204) | 204 | `""` | — |
+| [SRC-4CCB1F172B-L000205](../../tests/test_answer_quality_corpus.py#L205) | 205 | `""` | — |
+| [SRC-4CCB1F172B-L000206](../../tests/test_answer_quality_corpus.py#L206) | 206 | `"def test_documented_high_risk_examples_match_json_categories():"` | — |
+| [SRC-4CCB1F172B-L000207](../../tests/test_answer_quality_corpus.py#L207) | 207 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000208](../../tests/test_answer_quality_corpus.py#L208) | 208 | `"    by_id = {c[\"case_id\"]: c for c in data[\"cases\"]}"` | — |
+| [SRC-4CCB1F172B-L000209](../../tests/test_answer_quality_corpus.py#L209) | 209 | `"    for case_id, expected_cat in DOC_EXAMPLE_CATEGORY_EXPECTATIONS.items():"` | — |
+| [SRC-4CCB1F172B-L000210](../../tests/test_answer_quality_corpus.py#L210) | 210 | `"        assert case_id in by_id, f\"Doc example {case_id} missing from corpus\""` | — |
+| [SRC-4CCB1F172B-L000211](../../tests/test_answer_quality_corpus.py#L211) | 211 | `"        actual = by_id[case_id][\"category\"]"` | — |
+| [SRC-4CCB1F172B-L000212](../../tests/test_answer_quality_corpus.py#L212) | 212 | `"        assert actual == expected_cat, ("` | — |
+| [SRC-4CCB1F172B-L000213](../../tests/test_answer_quality_corpus.py#L213) | 213 | `"            f\"Doc/example mismatch: {case_id} is category={actual!r}, \""` | — |
+| [SRC-4CCB1F172B-L000214](../../tests/test_answer_quality_corpus.py#L214) | 214 | `"            f\"expected {expected_cat!r}\""` | — |
+| [SRC-4CCB1F172B-L000215](../../tests/test_answer_quality_corpus.py#L215) | 215 | `"        )"` | — |
+| [SRC-4CCB1F172B-L000216](../../tests/test_answer_quality_corpus.py#L216) | 216 | `""` | — |
+| [SRC-4CCB1F172B-L000217](../../tests/test_answer_quality_corpus.py#L217) | 217 | `""` | — |
+| [SRC-4CCB1F172B-L000218](../../tests/test_answer_quality_corpus.py#L218) | 218 | `"def test_docs_mention_corrected_high_risk_ids():"` | — |
+| [SRC-4CCB1F172B-L000219](../../tests/test_answer_quality_corpus.py#L219) | 219 | `"    assert DOCS_PATH.is_file()"` | — |
+| [SRC-4CCB1F172B-L000220](../../tests/test_answer_quality_corpus.py#L220) | 220 | `"    text = DOCS_PATH.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-4CCB1F172B-L000221](../../tests/test_answer_quality_corpus.py#L221) | 221 | `"    for case_id in (\"AQ-024\", \"AQ-030\", \"AQ-025\", \"AQ-031\", \"AQ-023\", \"AQ-018\", \"AQ-021\"):"` | — |
+| [SRC-4CCB1F172B-L000222](../../tests/test_answer_quality_corpus.py#L222) | 222 | `"        assert case_id in text, f\"Docs missing corrected example {case_id}\""` | — |
+| [SRC-4CCB1F172B-L000223](../../tests/test_answer_quality_corpus.py#L223) | 223 | `""` | — |
+| [SRC-4CCB1F172B-L000224](../../tests/test_answer_quality_corpus.py#L224) | 224 | `""` | — |
+| [SRC-4CCB1F172B-L000225](../../tests/test_answer_quality_corpus.py#L225) | 225 | `"def test_no_placeholder_corpus_content():"` | — |
+| [SRC-4CCB1F172B-L000226](../../tests/test_answer_quality_corpus.py#L226) | 226 | `"    raw = CORPUS_PATH.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-4CCB1F172B-L000227](../../tests/test_answer_quality_corpus.py#L227) | 227 | `"    assert \"PLACEHOLDER\" not in raw"` | — |
+| [SRC-4CCB1F172B-L000228](../../tests/test_answer_quality_corpus.py#L228) | 228 | `"    assert \"SEE_LOCAL_FILE\" not in raw"` | — |
+| [SRC-4CCB1F172B-L000229](../../tests/test_answer_quality_corpus.py#L229) | 229 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000230](../../tests/test_answer_quality_corpus.py#L230) | 230 | `"    assert len(data[\"cases\"]) == data[\"case_count\"] == 45"` | — |
 ## اختبارات
 
-### FILE-DA139AC9D0 — [tests/test_dialogue_state.py](../../tests/test_dialogue_state.py#L1)
+### FILE-D186ED3822 — [tests/test_answer_quality_review_scorecard.py](../../tests/test_answer_quality_review_scorecard.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-DA139AC9D0-L000001](../../tests/test_dialogue_state.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-DA139AC9D0-L000002](../../tests/test_dialogue_state.py#L2) | 2 | `""` | — |
-| [SRC-DA139AC9D0-L000003](../../tests/test_dialogue_state.py#L3) | 3 | `"from agents.dialogue_state import ("` | — |
-| [SRC-DA139AC9D0-L000004](../../tests/test_dialogue_state.py#L4) | 4 | `"    fallback_dialogue_context,"` | — |
-| [SRC-DA139AC9D0-L000005](../../tests/test_dialogue_state.py#L5) | 5 | `"    might_be_context_dependent,"` | — |
-| [SRC-DA139AC9D0-L000006](../../tests/test_dialogue_state.py#L6) | 6 | `"    validate_dialogue_context,"` | — |
-| [SRC-DA139AC9D0-L000007](../../tests/test_dialogue_state.py#L7) | 7 | `")"` | — |
-| [SRC-DA139AC9D0-L000008](../../tests/test_dialogue_state.py#L8) | 8 | `""` | — |
-| [SRC-DA139AC9D0-L000009](../../tests/test_dialogue_state.py#L9) | 9 | `""` | — |
-| [SRC-DA139AC9D0-L000010](../../tests/test_dialogue_state.py#L10) | 10 | `"def test_deterministic_fallback_preserves_explicit_followup_topic() -> None:"` | — |
-| [SRC-DA139AC9D0-L000011](../../tests/test_dialogue_state.py#L11) | 11 | `"    history = ["` | — |
-| [SRC-DA139AC9D0-L000012](../../tests/test_dialogue_state.py#L12) | 12 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
-| [SRC-DA139AC9D0-L000013](../../tests/test_dialogue_state.py#L13) | 13 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن هاتف iPhone 17 في السوق المصري.\"},"` | — |
-| [SRC-DA139AC9D0-L000014](../../tests/test_dialogue_state.py#L14) | 14 | `"    ]"` | — |
-| [SRC-DA139AC9D0-L000015](../../tests/test_dialogue_state.py#L15) | 15 | `""` | — |
-| [SRC-DA139AC9D0-L000016](../../tests/test_dialogue_state.py#L16) | 16 | `"    context = fallback_dialogue_context(\"كام سعرها؟\", history)"` | — |
-| [SRC-DA139AC9D0-L000017](../../tests/test_dialogue_state.py#L17) | 17 | `""` | — |
-| [SRC-DA139AC9D0-L000018](../../tests/test_dialogue_state.py#L18) | 18 | `"    assert context[\"method\"] == \"deterministic_followup_heuristic\""` | — |
-| [SRC-DA139AC9D0-L000019](../../tests/test_dialogue_state.py#L19) | 19 | `"    assert context[\"is_follow_up\"] is True"` | — |
-| [SRC-DA139AC9D0-L000020](../../tests/test_dialogue_state.py#L20) | 20 | `"    assert \"iPhone 17\" in context[\"resolved_question\"]"` | — |
-| [SRC-DA139AC9D0-L000021](../../tests/test_dialogue_state.py#L21) | 21 | `"    assert \"كام سعرها\" in context[\"resolved_question\"]"` | — |
-| [SRC-DA139AC9D0-L000022](../../tests/test_dialogue_state.py#L22) | 22 | `"    assert context[\"confidence_band\"] == \"unassessed\""` | — |
-| [SRC-DA139AC9D0-L000023](../../tests/test_dialogue_state.py#L23) | 23 | `""` | — |
-| [SRC-DA139AC9D0-L000024](../../tests/test_dialogue_state.py#L24) | 24 | `""` | — |
-| [SRC-DA139AC9D0-L000025](../../tests/test_dialogue_state.py#L25) | 25 | `"def test_topic_shift_is_a_hard_boundary_against_stale_context() -> None:"` | — |
-| [SRC-DA139AC9D0-L000026](../../tests/test_dialogue_state.py#L26) | 26 | `"    question = \"ازاي أنظف شاشة اللابتوب بأمان؟\""` | — |
-| [SRC-DA139AC9D0-L000027](../../tests/test_dialogue_state.py#L27) | 27 | `"    history = ["` | — |
-| [SRC-DA139AC9D0-L000028](../../tests/test_dialogue_state.py#L28) | 28 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26\"},"` | — |
-| [SRC-DA139AC9D0-L000029](../../tests/test_dialogue_state.py#L29) | 29 | `"        {\"role\": \"assistant\", \"content\": \"هذه مقارنة بين هاتفين.\"},"` | — |
-| [SRC-DA139AC9D0-L000030](../../tests/test_dialogue_state.py#L30) | 30 | `"    ]"` | — |
-| [SRC-DA139AC9D0-L000031](../../tests/test_dialogue_state.py#L31) | 31 | `"    proposed = {"` | — |
-| [SRC-DA139AC9D0-L000032](../../tests/test_dialogue_state.py#L32) | 32 | `"        \"resolved_question\": \"قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان\","` | — |
-| [SRC-DA139AC9D0-L000033](../../tests/test_dialogue_state.py#L33) | 33 | `"        \"topic_shift\": True,"` | — |
-| [SRC-DA139AC9D0-L000034](../../tests/test_dialogue_state.py#L34) | 34 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-DA139AC9D0-L000035](../../tests/test_dialogue_state.py#L35) | 35 | `"        \"intent\": \"how_to\","` | — |
-| [SRC-DA139AC9D0-L000036](../../tests/test_dialogue_state.py#L36) | 36 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-DA139AC9D0-L000037](../../tests/test_dialogue_state.py#L37) | 37 | `"    }"` | — |
-| [SRC-DA139AC9D0-L000038](../../tests/test_dialogue_state.py#L38) | 38 | `""` | — |
-| [SRC-DA139AC9D0-L000039](../../tests/test_dialogue_state.py#L39) | 39 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
-| [SRC-DA139AC9D0-L000040](../../tests/test_dialogue_state.py#L40) | 40 | `""` | — |
-| [SRC-DA139AC9D0-L000041](../../tests/test_dialogue_state.py#L41) | 41 | `"    assert context[\"topic_shift\"] is True"` | — |
-| [SRC-DA139AC9D0-L000042](../../tests/test_dialogue_state.py#L42) | 42 | `"    assert context[\"is_follow_up\"] is False"` | — |
-| [SRC-DA139AC9D0-L000043](../../tests/test_dialogue_state.py#L43) | 43 | `"    assert context[\"resolved_question\"] == question"` | — |
-| [SRC-DA139AC9D0-L000044](../../tests/test_dialogue_state.py#L44) | 44 | `"    assert context[\"resolution_basis\"] == \"current_message\""` | — |
-| [SRC-DA139AC9D0-L000045](../../tests/test_dialogue_state.py#L45) | 45 | `"    assert context[\"topic\"] == \"\""` | — |
-| [SRC-DA139AC9D0-L000046](../../tests/test_dialogue_state.py#L46) | 46 | `"    assert context[\"entities\"] == []"` | — |
-| [SRC-DA139AC9D0-L000047](../../tests/test_dialogue_state.py#L47) | 47 | `"    assert context[\"slots\"] == {}"` | — |
-| [SRC-DA139AC9D0-L000048](../../tests/test_dialogue_state.py#L48) | 48 | `"    assert context[\"changed_slots\"] == []"` | — |
-| [SRC-DA139AC9D0-L000049](../../tests/test_dialogue_state.py#L49) | 49 | `""` | — |
-| [SRC-DA139AC9D0-L000050](../../tests/test_dialogue_state.py#L50) | 50 | `""` | — |
-| [SRC-DA139AC9D0-L000051](../../tests/test_dialogue_state.py#L51) | 51 | `"def test_standalone_question_cannot_inherit_old_topic_without_followup_signal() -> None:"` | — |
-| [SRC-DA139AC9D0-L000052](../../tests/test_dialogue_state.py#L52) | 52 | `"    question = \"ازاي أنظف شاشة اللابتوب بأمان؟\""` | — |
-| [SRC-DA139AC9D0-L000053](../../tests/test_dialogue_state.py#L53) | 53 | `"    history = ["` | — |
-| [SRC-DA139AC9D0-L000054](../../tests/test_dialogue_state.py#L54) | 54 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26 من حيث السعر\"},"` | — |
-| [SRC-DA139AC9D0-L000055](../../tests/test_dialogue_state.py#L55) | 55 | `"        {\"role\": \"assistant\", \"content\": \"هذه مقارنة بين هاتفين.\"},"` | — |
-| [SRC-DA139AC9D0-L000056](../../tests/test_dialogue_state.py#L56) | 56 | `"    ]"` | — |
-| [SRC-DA139AC9D0-L000057](../../tests/test_dialogue_state.py#L57) | 57 | `"    proposed = {"` | — |
-| [SRC-DA139AC9D0-L000058](../../tests/test_dialogue_state.py#L58) | 58 | `"        \"resolved_question\": \"قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان\","` | — |
-| [SRC-DA139AC9D0-L000059](../../tests/test_dialogue_state.py#L59) | 59 | `"        \"topic\": \"مقارنة الهواتف\","` | — |
-| [SRC-DA139AC9D0-L000060](../../tests/test_dialogue_state.py#L60) | 60 | `"        \"entities\": [\"iPhone 17\", \"Samsung S26\"],"` | — |
-| [SRC-DA139AC9D0-L000061](../../tests/test_dialogue_state.py#L61) | 61 | `"        \"slots\": {\"product\": \"iPhone 17\", \"country\": \"مصر\"},"` | — |
-| [SRC-DA139AC9D0-L000062](../../tests/test_dialogue_state.py#L62) | 62 | `"        \"changed_slots\": [\"aspect\"],"` | — |
-| [SRC-DA139AC9D0-L000063](../../tests/test_dialogue_state.py#L63) | 63 | `"        \"is_follow_up\": False,"` | — |
-| [SRC-DA139AC9D0-L000064](../../tests/test_dialogue_state.py#L64) | 64 | `"        \"topic_shift\": False,"` | — |
-| [SRC-DA139AC9D0-L000065](../../tests/test_dialogue_state.py#L65) | 65 | `"        \"intent\": \"how_to\","` | — |
-| [SRC-DA139AC9D0-L000066](../../tests/test_dialogue_state.py#L66) | 66 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-DA139AC9D0-L000067](../../tests/test_dialogue_state.py#L67) | 67 | `"    }"` | — |
-| [SRC-DA139AC9D0-L000068](../../tests/test_dialogue_state.py#L68) | 68 | `""` | — |
-| [SRC-DA139AC9D0-L000069](../../tests/test_dialogue_state.py#L69) | 69 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
-| [SRC-DA139AC9D0-L000070](../../tests/test_dialogue_state.py#L70) | 70 | `""` | — |
-| [SRC-DA139AC9D0-L000071](../../tests/test_dialogue_state.py#L71) | 71 | `"    assert context[\"resolved_question\"] == question"` | — |
-| [SRC-DA139AC9D0-L000072](../../tests/test_dialogue_state.py#L72) | 72 | `"    assert context[\"is_follow_up\"] is False"` | — |
-| [SRC-DA139AC9D0-L000073](../../tests/test_dialogue_state.py#L73) | 73 | `"    assert context[\"topic\"] == \"\""` | — |
-| [SRC-DA139AC9D0-L000074](../../tests/test_dialogue_state.py#L74) | 74 | `"    assert context[\"entities\"] == []"` | — |
-| [SRC-DA139AC9D0-L000075](../../tests/test_dialogue_state.py#L75) | 75 | `"    assert context[\"slots\"] == {}"` | — |
-| [SRC-DA139AC9D0-L000076](../../tests/test_dialogue_state.py#L76) | 76 | `"    assert context[\"changed_slots\"] == []"` | — |
-| [SRC-DA139AC9D0-L000077](../../tests/test_dialogue_state.py#L77) | 77 | `""` | — |
-| [SRC-DA139AC9D0-L000078](../../tests/test_dialogue_state.py#L78) | 78 | `""` | — |
-| [SRC-DA139AC9D0-L000079](../../tests/test_dialogue_state.py#L79) | 79 | `"def test_model_context_is_bounded_and_unknown_slots_are_dropped() -> None:"` | — |
-| [SRC-DA139AC9D0-L000080](../../tests/test_dialogue_state.py#L80) | 80 | `"    question = \"وطب الضمان؟\""` | — |
-| [SRC-DA139AC9D0-L000081](../../tests/test_dialogue_state.py#L81) | 81 | `"    history = [{\"role\": \"user\", \"content\": \"iPhone 17 256GB في مصر\"}]"` | — |
-| [SRC-DA139AC9D0-L000082](../../tests/test_dialogue_state.py#L82) | 82 | `"    proposed = {"` | — |
-| [SRC-DA139AC9D0-L000083](../../tests/test_dialogue_state.py#L83) | 83 | `"        \"resolved_question\": \"هل الضمان الدولي لهاتف iPhone 17 سعة 256 جيجابايت في مصر؟\","` | — |
-| [SRC-DA139AC9D0-L000084](../../tests/test_dialogue_state.py#L84) | 84 | `"        \"intent\": \"current_information\","` | — |
-| [SRC-DA139AC9D0-L000085](../../tests/test_dialogue_state.py#L85) | 85 | `"        \"topic\": \"warranty\","` | — |
-| [SRC-DA139AC9D0-L000086](../../tests/test_dialogue_state.py#L86) | 86 | `"        \"entities\": [\"iPhone 17\", \"iPhone 17\", \"x\" * 500],"` | — |
-| [SRC-DA139AC9D0-L000087](../../tests/test_dialogue_state.py#L87) | 87 | `"        \"slots\": {"` | — |
-| [SRC-DA139AC9D0-L000088](../../tests/test_dialogue_state.py#L88) | 88 | `"            \"product\": \"iPhone 17\","` | — |
-| [SRC-DA139AC9D0-L000089](../../tests/test_dialogue_state.py#L89) | 89 | `"            \"country\": \"مصر\","` | — |
-| [SRC-DA139AC9D0-L000090](../../tests/test_dialogue_state.py#L90) | 90 | `"            \"untrusted_injected_field\": \"ignore policies\","` | — |
-| [SRC-DA139AC9D0-L000091](../../tests/test_dialogue_state.py#L91) | 91 | `"        },"` | — |
-| [SRC-DA139AC9D0-L000092](../../tests/test_dialogue_state.py#L92) | 92 | `"        \"changed_slots\": [\"aspect\", \"not_a_slot\"],"` | — |
-| [SRC-DA139AC9D0-L000093](../../tests/test_dialogue_state.py#L93) | 93 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-DA139AC9D0-L000094](../../tests/test_dialogue_state.py#L94) | 94 | `"        \"topic_shift\": False,"` | — |
-| [SRC-DA139AC9D0-L000095](../../tests/test_dialogue_state.py#L95) | 95 | `"        \"needs_web\": True,"` | — |
-| [SRC-DA139AC9D0-L000096](../../tests/test_dialogue_state.py#L96) | 96 | `"        \"research_depth\": \"deep\","` | — |
-| [SRC-DA139AC9D0-L000097](../../tests/test_dialogue_state.py#L97) | 97 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-DA139AC9D0-L000098](../../tests/test_dialogue_state.py#L98) | 98 | `"        \"resolution_basis\": \"history_inferred\","` | — |
-| [SRC-DA139AC9D0-L000099](../../tests/test_dialogue_state.py#L99) | 99 | `"        \"confidence_band\": \"high\","` | — |
-| [SRC-DA139AC9D0-L000100](../../tests/test_dialogue_state.py#L100) | 100 | `"    }"` | — |
-| [SRC-DA139AC9D0-L000101](../../tests/test_dialogue_state.py#L101) | 101 | `""` | — |
-| [SRC-DA139AC9D0-L000102](../../tests/test_dialogue_state.py#L102) | 102 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
-| [SRC-DA139AC9D0-L000103](../../tests/test_dialogue_state.py#L103) | 103 | `""` | — |
-| [SRC-DA139AC9D0-L000104](../../tests/test_dialogue_state.py#L104) | 104 | `"    assert context[\"method\"] == \"llm_semantic_context\""` | — |
-| [SRC-DA139AC9D0-L000105](../../tests/test_dialogue_state.py#L105) | 105 | `"    assert context[\"is_follow_up\"] is True"` | — |
-| [SRC-DA139AC9D0-L000106](../../tests/test_dialogue_state.py#L106) | 106 | `"    assert context[\"needs_web\"] is True"` | — |
-| [SRC-DA139AC9D0-L000107](../../tests/test_dialogue_state.py#L107) | 107 | `"    assert context[\"research_depth\"] == \"deep\""` | — |
-| [SRC-DA139AC9D0-L000108](../../tests/test_dialogue_state.py#L108) | 108 | `"    assert context[\"entities\"][0] == \"iPhone 17\""` | — |
-| [SRC-DA139AC9D0-L000109](../../tests/test_dialogue_state.py#L109) | 109 | `"    assert len(context[\"entities\"]) == 2"` | — |
-| [SRC-DA139AC9D0-L000110](../../tests/test_dialogue_state.py#L110) | 110 | `"    assert \"untrusted_injected_field\" not in context[\"slots\"]"` | — |
-| [SRC-DA139AC9D0-L000111](../../tests/test_dialogue_state.py#L111) | 111 | `"    assert context[\"changed_slots\"] == [\"aspect\"]"` | — |
-| [SRC-DA139AC9D0-L000112](../../tests/test_dialogue_state.py#L112) | 112 | `"    assert len(context[\"entities\"][1]) <= 180"` | — |
-| [SRC-DA139AC9D0-L000113](../../tests/test_dialogue_state.py#L113) | 113 | `""` | — |
-| [SRC-DA139AC9D0-L000114](../../tests/test_dialogue_state.py#L114) | 114 | `""` | — |
-| [SRC-DA139AC9D0-L000115](../../tests/test_dialogue_state.py#L115) | 115 | `"def test_unresolved_reference_stays_unresolved_and_cannot_become_a_search_query() -> None:"` | — |
-| [SRC-DA139AC9D0-L000116](../../tests/test_dialogue_state.py#L116) | 116 | `"    question = \"والبطارية؟\""` | — |
-| [SRC-DA139AC9D0-L000117](../../tests/test_dialogue_state.py#L117) | 117 | `"    history = ["` | — |
-| [SRC-DA139AC9D0-L000118](../../tests/test_dialogue_state.py#L118) | 118 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26\"},"` | — |
-| [SRC-DA139AC9D0-L000119](../../tests/test_dialogue_state.py#L119) | 119 | `"        {\"role\": \"assistant\", \"content\": \"ذكرت الهاتفين في المقارنة.\"},"` | — |
-| [SRC-DA139AC9D0-L000120](../../tests/test_dialogue_state.py#L120) | 120 | `"    ]"` | — |
-| [SRC-DA139AC9D0-L000121](../../tests/test_dialogue_state.py#L121) | 121 | `"    proposed = {"` | — |
-| [SRC-DA139AC9D0-L000122](../../tests/test_dialogue_state.py#L122) | 122 | `"        \"resolved_question\": \"سعر بطارية iPhone 17\","` | — |
-| [SRC-DA139AC9D0-L000123](../../tests/test_dialogue_state.py#L123) | 123 | `"        \"intent\": \"compare\","` | — |
-| [SRC-DA139AC9D0-L000124](../../tests/test_dialogue_state.py#L124) | 124 | `"        \"entities\": [\"iPhone 17\", \"Samsung S26\"],"` | — |
-| [SRC-DA139AC9D0-L000125](../../tests/test_dialogue_state.py#L125) | 125 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-DA139AC9D0-L000126](../../tests/test_dialogue_state.py#L126) | 126 | `"        \"topic_shift\": False,"` | — |
-| [SRC-DA139AC9D0-L000127](../../tests/test_dialogue_state.py#L127) | 127 | `"        \"needs_clarification\": True,"` | — |
-| [SRC-DA139AC9D0-L000128](../../tests/test_dialogue_state.py#L128) | 128 | `"        \"clarification_question\": \"تقصد بطارية أي هاتف، أم تريد مقارنة بطاريتيهما؟\","` | — |
-| [SRC-DA139AC9D0-L000129](../../tests/test_dialogue_state.py#L129) | 129 | `"        \"unresolved_references\": [\"البطارية\"],"` | — |
-| [SRC-DA139AC9D0-L000130](../../tests/test_dialogue_state.py#L130) | 130 | `"    }"` | — |
-| [SRC-DA139AC9D0-L000131](../../tests/test_dialogue_state.py#L131) | 131 | `""` | — |
-| [SRC-DA139AC9D0-L000132](../../tests/test_dialogue_state.py#L132) | 132 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
-| [SRC-DA139AC9D0-L000133](../../tests/test_dialogue_state.py#L133) | 133 | `""` | — |
-| [SRC-DA139AC9D0-L000134](../../tests/test_dialogue_state.py#L134) | 134 | `"    assert context[\"needs_clarification\"] is True"` | — |
-| [SRC-DA139AC9D0-L000135](../../tests/test_dialogue_state.py#L135) | 135 | `"    assert context[\"resolved_question\"] == question"` | — |
-| [SRC-DA139AC9D0-L000136](../../tests/test_dialogue_state.py#L136) | 136 | `"    assert context[\"status\"] == \"needs_clarification\""` | — |
-| [SRC-DA139AC9D0-L000137](../../tests/test_dialogue_state.py#L137) | 137 | `"    assert context[\"clarification_question\"]"` | — |
-| [SRC-DA139AC9D0-L000138](../../tests/test_dialogue_state.py#L138) | 138 | `""` | — |
-| [SRC-DA139AC9D0-L000139](../../tests/test_dialogue_state.py#L139) | 139 | `""` | — |
-| [SRC-DA139AC9D0-L000140](../../tests/test_dialogue_state.py#L140) | 140 | `"def test_context_probe_gate_recognizes_natural_followups_not_every_short_question() -> None:"` | — |
-| [SRC-DA139AC9D0-L000141](../../tests/test_dialogue_state.py#L141) | 141 | `"    assert might_be_context_dependent(\"And what about its warranty?\")"` | — |
-| [SRC-DA139AC9D0-L000142](../../tests/test_dialogue_state.py#L142) | 142 | `"    assert might_be_context_dependent(\"وطب الضمان الدولي بيسري في مصر؟\")"` | — |
-| [SRC-DA139AC9D0-L000143](../../tests/test_dialogue_state.py#L143) | 143 | `"    assert might_be_context_dependent(\"والضمان الدولي بيسري في مصر؟\")"` | — |
-| [SRC-DA139AC9D0-L000144](../../tests/test_dialogue_state.py#L144) | 144 | `"    assert might_be_context_dependent(\"والضمان؟\")"` | — |
-| [SRC-DA139AC9D0-L000145](../../tests/test_dialogue_state.py#L145) | 145 | `"    assert might_be_context_dependent(\"Is it covered?\")"` | — |
-| [SRC-DA139AC9D0-L000146](../../tests/test_dialogue_state.py#L146) | 146 | `"    assert might_be_context_dependent(\"هل هذا الهاتف مناسب؟\")"` | — |
-| [SRC-DA139AC9D0-L000147](../../tests/test_dialogue_state.py#L147) | 147 | `""` | — |
-| [SRC-DA139AC9D0-L000148](../../tests/test_dialogue_state.py#L148) | 148 | `"    assert might_be_context_dependent(\"أقدر أشتريه من هناك؟\")"` | — |
-| [SRC-DA139AC9D0-L000149](../../tests/test_dialogue_state.py#L149) | 149 | `"    assert might_be_context_dependent(\"هل أستخدمها مع الجهاز ده؟\")"` | — |
-| [SRC-DA139AC9D0-L000150](../../tests/test_dialogue_state.py#L150) | 150 | `"    assert not might_be_context_dependent(\"اشتريت شاشة جديدة اليوم؟\")"` | — |
-| [SRC-DA139AC9D0-L000151](../../tests/test_dialogue_state.py#L151) | 151 | `"    assert not might_be_context_dependent(\"اشرح الديناميكا الحرارية ببساطة\")"` | — |
-| [SRC-DA139AC9D0-L000152](../../tests/test_dialogue_state.py#L152) | 152 | `"    assert not might_be_context_dependent(\"Explain entropy in simple terms.\")"` | — |
+| [SRC-D186ED3822-L000001](../../tests/test_answer_quality_review_scorecard.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-D186ED3822-L000002](../../tests/test_answer_quality_review_scorecard.py#L2) | 2 | `""` | — |
+| [SRC-D186ED3822-L000003](../../tests/test_answer_quality_review_scorecard.py#L3) | 3 | `"import importlib.util"` | — |
+| [SRC-D186ED3822-L000004](../../tests/test_answer_quality_review_scorecard.py#L4) | 4 | `"from pathlib import Path"` | — |
+| [SRC-D186ED3822-L000005](../../tests/test_answer_quality_review_scorecard.py#L5) | 5 | `""` | — |
+| [SRC-D186ED3822-L000006](../../tests/test_answer_quality_review_scorecard.py#L6) | 6 | `"import pytest"` | — |
+| [SRC-D186ED3822-L000007](../../tests/test_answer_quality_review_scorecard.py#L7) | 7 | `""` | — |
+| [SRC-D186ED3822-L000008](../../tests/test_answer_quality_review_scorecard.py#L8) | 8 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-D186ED3822-L000009](../../tests/test_answer_quality_review_scorecard.py#L9) | 9 | `"SCRIPT = ROOT / \"scripts\" / \"score_answer_quality_reviews.py\""` | — |
+| [SRC-D186ED3822-L000010](../../tests/test_answer_quality_review_scorecard.py#L10) | 10 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
+| [SRC-D186ED3822-L000011](../../tests/test_answer_quality_review_scorecard.py#L11) | 11 | `""` | — |
+| [SRC-D186ED3822-L000012](../../tests/test_answer_quality_review_scorecard.py#L12) | 12 | `""` | — |
+| [SRC-D186ED3822-L000013](../../tests/test_answer_quality_review_scorecard.py#L13) | 13 | `"def load_module():"` | — |
+| [SRC-D186ED3822-L000014](../../tests/test_answer_quality_review_scorecard.py#L14) | 14 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_review_scorecard\", SCRIPT)"` | — |
+| [SRC-D186ED3822-L000015](../../tests/test_answer_quality_review_scorecard.py#L15) | 15 | `"    assert spec and spec.loader"` | — |
+| [SRC-D186ED3822-L000016](../../tests/test_answer_quality_review_scorecard.py#L16) | 16 | `"    module = importlib.util.module_from_spec(spec)"` | — |
+| [SRC-D186ED3822-L000017](../../tests/test_answer_quality_review_scorecard.py#L17) | 17 | `"    spec.loader.exec_module(module)"` | — |
+| [SRC-D186ED3822-L000018](../../tests/test_answer_quality_review_scorecard.py#L18) | 18 | `"    return module"` | — |
+| [SRC-D186ED3822-L000019](../../tests/test_answer_quality_review_scorecard.py#L19) | 19 | `""` | — |
+| [SRC-D186ED3822-L000020](../../tests/test_answer_quality_review_scorecard.py#L20) | 20 | `""` | — |
+| [SRC-D186ED3822-L000021](../../tests/test_answer_quality_review_scorecard.py#L21) | 21 | `"def corpus():"` | — |
+| [SRC-D186ED3822-L000022](../../tests/test_answer_quality_review_scorecard.py#L22) | 22 | `"    return load_module().load_json_object(CORPUS_PATH)"` | — |
+| [SRC-D186ED3822-L000023](../../tests/test_answer_quality_review_scorecard.py#L23) | 23 | `""` | — |
+| [SRC-D186ED3822-L000024](../../tests/test_answer_quality_review_scorecard.py#L24) | 24 | `""` | — |
+| [SRC-D186ED3822-L000025](../../tests/test_answer_quality_review_scorecard.py#L25) | 25 | `"def test_manual_scorecard_aggregates_only_explicit_reviewed_metrics():"` | — |
+| [SRC-D186ED3822-L000026](../../tests/test_answer_quality_review_scorecard.py#L26) | 26 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000027](../../tests/test_answer_quality_review_scorecard.py#L27) | 27 | `"    data = {"` | — |
+| [SRC-D186ED3822-L000028](../../tests/test_answer_quality_review_scorecard.py#L28) | 28 | `"        \"schema_version\": \"1.0\","` | — |
+| [SRC-D186ED3822-L000029](../../tests/test_answer_quality_review_scorecard.py#L29) | 29 | `"        \"reviews\": ["` | — |
+| [SRC-D186ED3822-L000030](../../tests/test_answer_quality_review_scorecard.py#L30) | 30 | `"            {"` | — |
+| [SRC-D186ED3822-L000031](../../tests/test_answer_quality_review_scorecard.py#L31) | 31 | `"                \"case_id\": \"AQ-007\","` | — |
+| [SRC-D186ED3822-L000032](../../tests/test_answer_quality_review_scorecard.py#L32) | 32 | `"                \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000033](../../tests/test_answer_quality_review_scorecard.py#L33) | 33 | `"                \"retrieval\": {\"relevant_retrieved\": 3, \"retrieved_count\": 5, \"relevant_available\": 4},"` | — |
+| [SRC-D186ED3822-L000034](../../tests/test_answer_quality_review_scorecard.py#L34) | 34 | `"                \"faithfulness\": {\"supported_claims\": 4, \"reviewed_claims\": 5},"` | — |
+| [SRC-D186ED3822-L000035](../../tests/test_answer_quality_review_scorecard.py#L35) | 35 | `"                \"correctness\": {\"correct_facts\": 3, \"reviewed_facts\": 4},"` | — |
+| [SRC-D186ED3822-L000036](../../tests/test_answer_quality_review_scorecard.py#L36) | 36 | `"                \"citations\": {\"supported_citations\": 2, \"reviewed_citations\": 3},"` | — |
+| [SRC-D186ED3822-L000037](../../tests/test_answer_quality_review_scorecard.py#L37) | 37 | `"                \"writing_quality\": 4,"` | — |
+| [SRC-D186ED3822-L000038](../../tests/test_answer_quality_review_scorecard.py#L38) | 38 | `"            },"` | — |
+| [SRC-D186ED3822-L000039](../../tests/test_answer_quality_review_scorecard.py#L39) | 39 | `"            {"` | — |
+| [SRC-D186ED3822-L000040](../../tests/test_answer_quality_review_scorecard.py#L40) | 40 | `"                \"case_id\": \"AQ-008\","` | — |
+| [SRC-D186ED3822-L000041](../../tests/test_answer_quality_review_scorecard.py#L41) | 41 | `"                \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000042](../../tests/test_answer_quality_review_scorecard.py#L42) | 42 | `"                \"writing_quality\": 4,"` | — |
+| [SRC-D186ED3822-L000043](../../tests/test_answer_quality_review_scorecard.py#L43) | 43 | `"            },"` | — |
+| [SRC-D186ED3822-L000044](../../tests/test_answer_quality_review_scorecard.py#L44) | 44 | `"            {\"case_id\": \"AQ-009\", \"status\": \"NOT_TESTED\", \"notes\": \"No reviewer judgment yet.\"},"` | — |
+| [SRC-D186ED3822-L000045](../../tests/test_answer_quality_review_scorecard.py#L45) | 45 | `"        ],"` | — |
+| [SRC-D186ED3822-L000046](../../tests/test_answer_quality_review_scorecard.py#L46) | 46 | `"    }"` | — |
+| [SRC-D186ED3822-L000047](../../tests/test_answer_quality_review_scorecard.py#L47) | 47 | `"    result = mod.summarize_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000048](../../tests/test_answer_quality_review_scorecard.py#L48) | 48 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] == 0.6"` | — |
+| [SRC-D186ED3822-L000049](../../tests/test_answer_quality_review_scorecard.py#L49) | 49 | `"    assert result[\"metrics\"][\"retrieval_recall\"][\"score\"] == 0.75"` | — |
+| [SRC-D186ED3822-L000050](../../tests/test_answer_quality_review_scorecard.py#L50) | 50 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] == 0.8"` | — |
+| [SRC-D186ED3822-L000051](../../tests/test_answer_quality_review_scorecard.py#L51) | 51 | `"    assert result[\"metrics\"][\"correctness\"][\"score\"] == 0.75"` | — |
+| [SRC-D186ED3822-L000052](../../tests/test_answer_quality_review_scorecard.py#L52) | 52 | `"    assert result[\"metrics\"][\"citation_support\"][\"score\"] == pytest.approx(2 / 3, abs=0.0001)"` | — |
+| [SRC-D186ED3822-L000053](../../tests/test_answer_quality_review_scorecard.py#L53) | 53 | `"    assert result[\"metrics\"][\"writing_quality_1_to_5\"][\"score\"] == 4.0"` | — |
+| [SRC-D186ED3822-L000054](../../tests/test_answer_quality_review_scorecard.py#L54) | 54 | `"    assert result[\"case_status_counts\"][\"NOT_TESTED\"] == 1"` | — |
+| [SRC-D186ED3822-L000055](../../tests/test_answer_quality_review_scorecard.py#L55) | 55 | `"    assert result[\"unique_reviewed_case_count\"] == 2"` | — |
+| [SRC-D186ED3822-L000056](../../tests/test_answer_quality_review_scorecard.py#L56) | 56 | `"    assert result[\"automatic_answer_grading\"] is False"` | — |
+| [SRC-D186ED3822-L000057](../../tests/test_answer_quality_review_scorecard.py#L57) | 57 | `"    assert result[\"ragas_executed\"] is False"` | — |
+| [SRC-D186ED3822-L000058](../../tests/test_answer_quality_review_scorecard.py#L58) | 58 | `""` | — |
+| [SRC-D186ED3822-L000059](../../tests/test_answer_quality_review_scorecard.py#L59) | 59 | `""` | — |
+| [SRC-D186ED3822-L000060](../../tests/test_answer_quality_review_scorecard.py#L60) | 60 | `"def test_scorecard_keeps_unmeasured_denominators_not_scorable():"` | — |
+| [SRC-D186ED3822-L000061](../../tests/test_answer_quality_review_scorecard.py#L61) | 61 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000062](../../tests/test_answer_quality_review_scorecard.py#L62) | 62 | `"    data = {"` | — |
+| [SRC-D186ED3822-L000063](../../tests/test_answer_quality_review_scorecard.py#L63) | 63 | `"        \"reviews\": [{"` | — |
+| [SRC-D186ED3822-L000064](../../tests/test_answer_quality_review_scorecard.py#L64) | 64 | `"            \"case_id\": \"AQ-001\","` | — |
+| [SRC-D186ED3822-L000065](../../tests/test_answer_quality_review_scorecard.py#L65) | 65 | `"            \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000066](../../tests/test_answer_quality_review_scorecard.py#L66) | 66 | `"            \"faithfulness\": {\"supported_claims\": 0, \"reviewed_claims\": 0},"` | — |
+| [SRC-D186ED3822-L000067](../../tests/test_answer_quality_review_scorecard.py#L67) | 67 | `"        }],"` | — |
+| [SRC-D186ED3822-L000068](../../tests/test_answer_quality_review_scorecard.py#L68) | 68 | `"    }"` | — |
+| [SRC-D186ED3822-L000069](../../tests/test_answer_quality_review_scorecard.py#L69) | 69 | `"    result = mod.summarize_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000070](../../tests/test_answer_quality_review_scorecard.py#L70) | 70 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] is None"` | — |
+| [SRC-D186ED3822-L000071](../../tests/test_answer_quality_review_scorecard.py#L71) | 71 | `"    assert result[\"metrics\"][\"faithfulness\"][\"status\"] == \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\""` | — |
+| [SRC-D186ED3822-L000072](../../tests/test_answer_quality_review_scorecard.py#L72) | 72 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] is None"` | — |
+| [SRC-D186ED3822-L000073](../../tests/test_answer_quality_review_scorecard.py#L73) | 73 | `""` | — |
+| [SRC-D186ED3822-L000074](../../tests/test_answer_quality_review_scorecard.py#L74) | 74 | `""` | — |
+| [SRC-D186ED3822-L000075](../../tests/test_answer_quality_review_scorecard.py#L75) | 75 | `"def test_scorecard_rejects_numerator_larger_than_denominator():"` | — |
+| [SRC-D186ED3822-L000076](../../tests/test_answer_quality_review_scorecard.py#L76) | 76 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000077](../../tests/test_answer_quality_review_scorecard.py#L77) | 77 | `"    data = {"` | — |
+| [SRC-D186ED3822-L000078](../../tests/test_answer_quality_review_scorecard.py#L78) | 78 | `"        \"reviews\": [{"` | — |
+| [SRC-D186ED3822-L000079](../../tests/test_answer_quality_review_scorecard.py#L79) | 79 | `"            \"case_id\": \"AQ-007\","` | — |
+| [SRC-D186ED3822-L000080](../../tests/test_answer_quality_review_scorecard.py#L80) | 80 | `"            \"status\": \"REVIEWED\","` | — |
+| [SRC-D186ED3822-L000081](../../tests/test_answer_quality_review_scorecard.py#L81) | 81 | `"            \"faithfulness\": {\"supported_claims\": 3, \"reviewed_claims\": 2},"` | — |
+| [SRC-D186ED3822-L000082](../../tests/test_answer_quality_review_scorecard.py#L82) | 82 | `"        }],"` | — |
+| [SRC-D186ED3822-L000083](../../tests/test_answer_quality_review_scorecard.py#L83) | 83 | `"    }"` | — |
+| [SRC-D186ED3822-L000084](../../tests/test_answer_quality_review_scorecard.py#L84) | 84 | `"    with pytest.raises(ValueError, match=\"cannot exceed\"):"` | — |
+| [SRC-D186ED3822-L000085](../../tests/test_answer_quality_review_scorecard.py#L85) | 85 | `"        mod.summarize_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000086](../../tests/test_answer_quality_review_scorecard.py#L86) | 86 | `""` | — |
+| [SRC-D186ED3822-L000087](../../tests/test_answer_quality_review_scorecard.py#L87) | 87 | `""` | — |
+| [SRC-D186ED3822-L000088](../../tests/test_answer_quality_review_scorecard.py#L88) | 88 | `"def test_scorecard_rejects_unknown_case_ids_and_duplicate_reviews():"` | — |
+| [SRC-D186ED3822-L000089](../../tests/test_answer_quality_review_scorecard.py#L89) | 89 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000090](../../tests/test_answer_quality_review_scorecard.py#L90) | 90 | `"    data = {\"reviews\": ["` | — |
+| [SRC-D186ED3822-L000091](../../tests/test_answer_quality_review_scorecard.py#L91) | 91 | `"        {\"case_id\": \"AQ-999\", \"status\": \"NOT_TESTED\"},"` | — |
+| [SRC-D186ED3822-L000092](../../tests/test_answer_quality_review_scorecard.py#L92) | 92 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
+| [SRC-D186ED3822-L000093](../../tests/test_answer_quality_review_scorecard.py#L93) | 93 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
+| [SRC-D186ED3822-L000094](../../tests/test_answer_quality_review_scorecard.py#L94) | 94 | `"    ]}"` | — |
+| [SRC-D186ED3822-L000095](../../tests/test_answer_quality_review_scorecard.py#L95) | 95 | `"    issues = mod.validate_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000096](../../tests/test_answer_quality_review_scorecard.py#L96) | 96 | `"    assert any(\"unknown case_id\" in issue for issue in issues)"` | — |
+| [SRC-D186ED3822-L000097](../../tests/test_answer_quality_review_scorecard.py#L97) | 97 | `"    assert any(\"duplicate review\" in issue for issue in issues)"` | — |
+| [SRC-D186ED3822-L000098](../../tests/test_answer_quality_review_scorecard.py#L98) | 98 | `""` | — |
+| [SRC-D186ED3822-L000099](../../tests/test_answer_quality_review_scorecard.py#L99) | 99 | `""` | — |
+| [SRC-D186ED3822-L000100](../../tests/test_answer_quality_review_scorecard.py#L100) | 100 | `"def test_not_tested_cases_must_not_carry_metric_scores():"` | — |
+| [SRC-D186ED3822-L000101](../../tests/test_answer_quality_review_scorecard.py#L101) | 101 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000102](../../tests/test_answer_quality_review_scorecard.py#L102) | 102 | `"    data = {\"reviews\": [{"` | — |
+| [SRC-D186ED3822-L000103](../../tests/test_answer_quality_review_scorecard.py#L103) | 103 | `"        \"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D186ED3822-L000104](../../tests/test_answer_quality_review_scorecard.py#L104) | 104 | `"        \"writing_quality\": 5,"` | — |
+| [SRC-D186ED3822-L000105](../../tests/test_answer_quality_review_scorecard.py#L105) | 105 | `"    }]}"` | — |
+| [SRC-D186ED3822-L000106](../../tests/test_answer_quality_review_scorecard.py#L106) | 106 | `"    issues = mod.validate_reviews(data, corpus())"` | — |
+| [SRC-D186ED3822-L000107](../../tests/test_answer_quality_review_scorecard.py#L107) | 107 | `"    assert any(\"unreviewed case must not contain metric scores\" in issue for issue in issues)"` | — |
+| [SRC-D186ED3822-L000108](../../tests/test_answer_quality_review_scorecard.py#L108) | 108 | `""` | — |
+| [SRC-D186ED3822-L000109](../../tests/test_answer_quality_review_scorecard.py#L109) | 109 | `""` | — |
+| [SRC-D186ED3822-L000110](../../tests/test_answer_quality_review_scorecard.py#L110) | 110 | `"def test_scorecard_cli_writes_a_machine_readable_summary(tmp_path, capsys):"` | — |
+| [SRC-D186ED3822-L000111](../../tests/test_answer_quality_review_scorecard.py#L111) | 111 | `"    mod = load_module()"` | — |
+| [SRC-D186ED3822-L000112](../../tests/test_answer_quality_review_scorecard.py#L112) | 112 | `"    reviews_path = tmp_path / \"reviews.json\""` | — |
+| [SRC-D186ED3822-L000113](../../tests/test_answer_quality_review_scorecard.py#L113) | 113 | `"    output_path = tmp_path / \"summary.json\""` | — |
+| [SRC-D186ED3822-L000114](../../tests/test_answer_quality_review_scorecard.py#L114) | 114 | `"    reviews_path.write_text('{\"schema_version\":\"1.0\",\"reviews\":[{\"case_id\":\"AQ-001\",\"status\":\"REVIEWED\",\"writing_quality\":5}]}', encoding=\"utf-8\")"` | — |
+| [SRC-D186ED3822-L000115](../../tests/test_answer_quality_review_scorecard.py#L115) | 115 | `"    rc = mod.main([\"--reviews\", str(reviews_path), \"--corpus\", str(CORPUS_PATH), \"--out\", str(output_path)])"` | — |
+| [SRC-D186ED3822-L000116](../../tests/test_answer_quality_review_scorecard.py#L116) | 116 | `"    assert rc == 0"` | — |
+| [SRC-D186ED3822-L000117](../../tests/test_answer_quality_review_scorecard.py#L117) | 117 | `"    assert '\"score\": 5.0' in capsys.readouterr().out"` | — |
+| [SRC-D186ED3822-L000118](../../tests/test_answer_quality_review_scorecard.py#L118) | 118 | `"    assert output_path.is_file()"` | — |
 ## اختبارات
 
-### FILE-6BCB799CEC — [tests/test_evidence_provenance.py](../../tests/test_evidence_provenance.py#L1)
+### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6BCB799CEC-L000001](../../tests/test_evidence_provenance.py#L1) | 1 | `"\"\"\"Regression tests for evidence provenance and pinned public-page retrieval.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000002](../../tests/test_evidence_provenance.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6BCB799CEC-L000003](../../tests/test_evidence_provenance.py#L3) | 3 | `""` | — |
-| [SRC-6BCB799CEC-L000004](../../tests/test_evidence_provenance.py#L4) | 4 | `"import socket"` | — |
-| [SRC-6BCB799CEC-L000005](../../tests/test_evidence_provenance.py#L5) | 5 | `""` | — |
-| [SRC-6BCB799CEC-L000006](../../tests/test_evidence_provenance.py#L6) | 6 | `"import pytest"` | — |
-| [SRC-6BCB799CEC-L000007](../../tests/test_evidence_provenance.py#L7) | 7 | `""` | — |
-| [SRC-6BCB799CEC-L000008](../../tests/test_evidence_provenance.py#L8) | 8 | `"from agents.web_agent import WebAgent, _public_ip_literals"` | — |
-| [SRC-6BCB799CEC-L000009](../../tests/test_evidence_provenance.py#L9) | 9 | `""` | — |
-| [SRC-6BCB799CEC-L000010](../../tests/test_evidence_provenance.py#L10) | 10 | `""` | — |
-| [SRC-6BCB799CEC-L000011](../../tests/test_evidence_provenance.py#L11) | 11 | `"def _addrinfo(ip: str):"` | — |
-| [SRC-6BCB799CEC-L000012](../../tests/test_evidence_provenance.py#L12) | 12 | `"    family = socket.AF_INET6 if \":\" in ip else socket.AF_INET"` | — |
-| [SRC-6BCB799CEC-L000013](../../tests/test_evidence_provenance.py#L13) | 13 | `"    return [(family, socket.SOCK_STREAM, 6, \"\", (ip, 0))]"` | — |
-| [SRC-6BCB799CEC-L000014](../../tests/test_evidence_provenance.py#L14) | 14 | `""` | — |
-| [SRC-6BCB799CEC-L000015](../../tests/test_evidence_provenance.py#L15) | 15 | `""` | — |
-| [SRC-6BCB799CEC-L000016](../../tests/test_evidence_provenance.py#L16) | 16 | `"def test_failed_page_read_is_not_reported_as_fetched(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000017](../../tests/test_evidence_provenance.py#L17) | 17 | `"    \"\"\"An empty extraction must not set page_fetched through the real collector.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000018](../../tests/test_evidence_provenance.py#L18) | 18 | `"    agent = WebAgent()"` | — |
-| [SRC-6BCB799CEC-L000019](../../tests/test_evidence_provenance.py#L19) | 19 | `""` | — |
-| [SRC-6BCB799CEC-L000020](../../tests/test_evidence_provenance.py#L20) | 20 | `"    def search(query):"` | — |
-| [SRC-6BCB799CEC-L000021](../../tests/test_evidence_provenance.py#L21) | 21 | `"        return [{"` | — |
-| [SRC-6BCB799CEC-L000022](../../tests/test_evidence_provenance.py#L22) | 22 | `"            \"title\": \"عنوان فقط\","` | — |
-| [SRC-6BCB799CEC-L000023](../../tests/test_evidence_provenance.py#L23) | 23 | `"            \"url\": \"https://example.com/unread\","` | — |
-| [SRC-6BCB799CEC-L000024](../../tests/test_evidence_provenance.py#L24) | 24 | `"            \"snippet\": \"مقتطف محرك بحث\","` | — |
-| [SRC-6BCB799CEC-L000025](../../tests/test_evidence_provenance.py#L25) | 25 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-6BCB799CEC-L000026](../../tests/test_evidence_provenance.py#L26) | 26 | `"            \"provider_rank\": 1,"` | — |
-| [SRC-6BCB799CEC-L000027](../../tests/test_evidence_provenance.py#L27) | 27 | `"            \"search_query\": query,"` | — |
-| [SRC-6BCB799CEC-L000028](../../tests/test_evidence_provenance.py#L28) | 28 | `"            \"published_at\": \"\","` | — |
-| [SRC-6BCB799CEC-L000029](../../tests/test_evidence_provenance.py#L29) | 29 | `"        }]"` | — |
-| [SRC-6BCB799CEC-L000030](../../tests/test_evidence_provenance.py#L30) | 30 | `""` | — |
-| [SRC-6BCB799CEC-L000031](../../tests/test_evidence_provenance.py#L31) | 31 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
-| [SRC-6BCB799CEC-L000032](../../tests/test_evidence_provenance.py#L32) | 32 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda query: [])"` | — |
-| [SRC-6BCB799CEC-L000033](../../tests/test_evidence_provenance.py#L33) | 33 | `"    monkeypatch.setattr(agent, \"_search_social\", lambda query, platforms: ([], []))"` | — |
-| [SRC-6BCB799CEC-L000034](../../tests/test_evidence_provenance.py#L34) | 34 | `"    monkeypatch.setattr(agent, \"_fetch_page\", lambda url: (\"\", \"\"))"` | — |
-| [SRC-6BCB799CEC-L000035](../../tests/test_evidence_provenance.py#L35) | 35 | `""` | — |
-| [SRC-6BCB799CEC-L000036](../../tests/test_evidence_provenance.py#L36) | 36 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-6BCB799CEC-L000037](../../tests/test_evidence_provenance.py#L37) | 37 | `"        \"queries\": [\"سؤال دون قراءة صفحة\"],"` | — |
-| [SRC-6BCB799CEC-L000038](../../tests/test_evidence_provenance.py#L38) | 38 | `"        \"direct_urls\": [],"` | — |
-| [SRC-6BCB799CEC-L000039](../../tests/test_evidence_provenance.py#L39) | 39 | `"        \"social_focus\": False,"` | — |
-| [SRC-6BCB799CEC-L000040](../../tests/test_evidence_provenance.py#L40) | 40 | `"        \"freshness\": \"any\","` | — |
-| [SRC-6BCB799CEC-L000041](../../tests/test_evidence_provenance.py#L41) | 41 | `"        \"depth\": \"standard\","` | — |
-| [SRC-6BCB799CEC-L000042](../../tests/test_evidence_provenance.py#L42) | 42 | `"        \"platforms\": [],"` | — |
-| [SRC-6BCB799CEC-L000043](../../tests/test_evidence_provenance.py#L43) | 43 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-6BCB799CEC-L000044](../../tests/test_evidence_provenance.py#L44) | 44 | `"    })"` | — |
-| [SRC-6BCB799CEC-L000045](../../tests/test_evidence_provenance.py#L45) | 45 | `""` | — |
-| [SRC-6BCB799CEC-L000046](../../tests/test_evidence_provenance.py#L46) | 46 | `"    assert any(\"لم يمكن استخراج نص\" in warning for warning in warnings)"` | — |
-| [SRC-6BCB799CEC-L000047](../../tests/test_evidence_provenance.py#L47) | 47 | `"    assert len(sources) == 1"` | — |
-| [SRC-6BCB799CEC-L000048](../../tests/test_evidence_provenance.py#L48) | 48 | `"    assert sources[0][\"url\"] == \"https://example.com/unread\""` | — |
-| [SRC-6BCB799CEC-L000049](../../tests/test_evidence_provenance.py#L49) | 49 | `"    assert sources[0].get(\"page_fetched\") is not True"` | — |
-| [SRC-6BCB799CEC-L000050](../../tests/test_evidence_provenance.py#L50) | 50 | `"    assert report[\"pages_fetched\"] == 0"` | — |
-| [SRC-6BCB799CEC-L000051](../../tests/test_evidence_provenance.py#L51) | 51 | `"    assert report[\"queries_attempted\"] == 1"` | — |
-| [SRC-6BCB799CEC-L000052](../../tests/test_evidence_provenance.py#L52) | 52 | `"    assert report[\"unique_sources\"] == 1"` | — |
-| [SRC-6BCB799CEC-L000053](../../tests/test_evidence_provenance.py#L53) | 53 | `""` | — |
-| [SRC-6BCB799CEC-L000054](../../tests/test_evidence_provenance.py#L54) | 54 | `""` | — |
-| [SRC-6BCB799CEC-L000055](../../tests/test_evidence_provenance.py#L55) | 55 | `"def test_openrouter_citations_stay_unread_in_public_answer(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000056](../../tests/test_evidence_provenance.py#L56) | 56 | `"    \"\"\"Server-side citations must not be misreported as direct source-page reads.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000057](../../tests/test_evidence_provenance.py#L57) | 57 | `"    agent = WebAgent()"` | — |
-| [SRC-6BCB799CEC-L000058](../../tests/test_evidence_provenance.py#L58) | 58 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-6BCB799CEC-L000059](../../tests/test_evidence_provenance.py#L59) | 59 | `"    question = \"ما آخر المعلومات؟\""` | — |
-| [SRC-6BCB799CEC-L000060](../../tests/test_evidence_provenance.py#L60) | 60 | `""` | — |
-| [SRC-6BCB799CEC-L000061](../../tests/test_evidence_provenance.py#L61) | 61 | `"    def collect(plan):"` | — |
-| [SRC-6BCB799CEC-L000062](../../tests/test_evidence_provenance.py#L62) | 62 | `"        sources = ["` | — |
-| [SRC-6BCB799CEC-L000063](../../tests/test_evidence_provenance.py#L63) | 63 | `"            {"` | — |
-| [SRC-6BCB799CEC-L000064](../../tests/test_evidence_provenance.py#L64) | 64 | `"                \"title\": \"آخر المعلومات عن التقنية\","` | — |
-| [SRC-6BCB799CEC-L000065](../../tests/test_evidence_provenance.py#L65) | 65 | `"                \"url\": \"https://alpha.example.com/report\","` | — |
-| [SRC-6BCB799CEC-L000066](../../tests/test_evidence_provenance.py#L66) | 66 | `"                \"snippet\": \"معلومات حديثة عن الموضوع\","` | — |
-| [SRC-6BCB799CEC-L000067](../../tests/test_evidence_provenance.py#L67) | 67 | `"                \"page_text\": \"\","` | — |
-| [SRC-6BCB799CEC-L000068](../../tests/test_evidence_provenance.py#L68) | 68 | `"                \"page_fetched\": False,"` | — |
-| [SRC-6BCB799CEC-L000069](../../tests/test_evidence_provenance.py#L69) | 69 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-6BCB799CEC-L000070](../../tests/test_evidence_provenance.py#L70) | 70 | `"                \"providers\": [\"bing_rss\"],"` | — |
-| [SRC-6BCB799CEC-L000071](../../tests/test_evidence_provenance.py#L71) | 71 | `"                \"queries\": [question],"` | — |
-| [SRC-6BCB799CEC-L000072](../../tests/test_evidence_provenance.py#L72) | 72 | `"                \"domain\": \"alpha.example.com\","` | — |
-| [SRC-6BCB799CEC-L000073](../../tests/test_evidence_provenance.py#L73) | 73 | `"                \"source_class\": \"general\","` | — |
-| [SRC-6BCB799CEC-L000074](../../tests/test_evidence_provenance.py#L74) | 74 | `"                \"platform\": \"web\","` | — |
-| [SRC-6BCB799CEC-L000075](../../tests/test_evidence_provenance.py#L75) | 75 | `"                \"published_at\": \"\","` | — |
-| [SRC-6BCB799CEC-L000076](../../tests/test_evidence_provenance.py#L76) | 76 | `"                \"rank_score\": 0.8,"` | — |
-| [SRC-6BCB799CEC-L000077](../../tests/test_evidence_provenance.py#L77) | 77 | `"            },"` | — |
+| [SRC-B3062EB677-L000001](../../tests/test_answer_quality_runner.py#L1) | 1 | `"\"\"\"Offline tests for scripts/run_answer_quality_benchmark.py (no network).\"\"\""` | — |
+| [SRC-B3062EB677-L000002](../../tests/test_answer_quality_runner.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-B3062EB677-L000003](../../tests/test_answer_quality_runner.py#L3) | 3 | `""` | — |
+| [SRC-B3062EB677-L000004](../../tests/test_answer_quality_runner.py#L4) | 4 | `"import importlib.util"` | — |
+| [SRC-B3062EB677-L000005](../../tests/test_answer_quality_runner.py#L5) | 5 | `"import json"` | — |
+| [SRC-B3062EB677-L000006](../../tests/test_answer_quality_runner.py#L6) | 6 | `"import sys"` | — |
+| [SRC-B3062EB677-L000007](../../tests/test_answer_quality_runner.py#L7) | 7 | `"from pathlib import Path"` | — |
+| [SRC-B3062EB677-L000008](../../tests/test_answer_quality_runner.py#L8) | 8 | `""` | — |
+| [SRC-B3062EB677-L000009](../../tests/test_answer_quality_runner.py#L9) | 9 | `"import pytest"` | — |
+| [SRC-B3062EB677-L000010](../../tests/test_answer_quality_runner.py#L10) | 10 | `""` | — |
+| [SRC-B3062EB677-L000011](../../tests/test_answer_quality_runner.py#L11) | 11 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-B3062EB677-L000012](../../tests/test_answer_quality_runner.py#L12) | 12 | `"SCRIPT = ROOT / \"scripts\" / \"run_answer_quality_benchmark.py\""` | — |
+| [SRC-B3062EB677-L000013](../../tests/test_answer_quality_runner.py#L13) | 13 | `"CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
+| [SRC-B3062EB677-L000014](../../tests/test_answer_quality_runner.py#L14) | 14 | `""` | — |
+| [SRC-B3062EB677-L000015](../../tests/test_answer_quality_runner.py#L15) | 15 | `""` | — |
+| [SRC-B3062EB677-L000016](../../tests/test_answer_quality_runner.py#L16) | 16 | `"def _load_runner():"` | — |
+| [SRC-B3062EB677-L000017](../../tests/test_answer_quality_runner.py#L17) | 17 | `"    spec = importlib.util.spec_from_file_location(\"aq_runner\", SCRIPT)"` | — |
+| [SRC-B3062EB677-L000018](../../tests/test_answer_quality_runner.py#L18) | 18 | `"    assert spec and spec.loader"` | — |
+| [SRC-B3062EB677-L000019](../../tests/test_answer_quality_runner.py#L19) | 19 | `"    mod = importlib.util.module_from_spec(spec)"` | — |
+| [SRC-B3062EB677-L000020](../../tests/test_answer_quality_runner.py#L20) | 20 | `"    sys.modules[\"aq_runner\"] = mod"` | — |
+| [SRC-B3062EB677-L000021](../../tests/test_answer_quality_runner.py#L21) | 21 | `"    spec.loader.exec_module(mod)"` | — |
+| [SRC-B3062EB677-L000022](../../tests/test_answer_quality_runner.py#L22) | 22 | `"    return mod"` | — |
+| [SRC-B3062EB677-L000023](../../tests/test_answer_quality_runner.py#L23) | 23 | `""` | — |
+| [SRC-B3062EB677-L000024](../../tests/test_answer_quality_runner.py#L24) | 24 | `""` | — |
+| [SRC-B3062EB677-L000025](../../tests/test_answer_quality_runner.py#L25) | 25 | `"def test_runner_script_exists():"` | — |
+| [SRC-B3062EB677-L000026](../../tests/test_answer_quality_runner.py#L26) | 26 | `"    assert SCRIPT.is_file()"` | — |
+| [SRC-B3062EB677-L000027](../../tests/test_answer_quality_runner.py#L27) | 27 | `""` | — |
+| [SRC-B3062EB677-L000028](../../tests/test_answer_quality_runner.py#L28) | 28 | `""` | — |
+| [SRC-B3062EB677-L000029](../../tests/test_answer_quality_runner.py#L29) | 29 | `"def test_validate_mode_succeeds_on_real_corpus(capsys):"` | — |
+| [SRC-B3062EB677-L000030](../../tests/test_answer_quality_runner.py#L30) | 30 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000031](../../tests/test_answer_quality_runner.py#L31) | 31 | `"    rc = mod.main([\"--mode\", \"validate\", \"--corpus\", str(CORPUS), \"--summary\"])"` | — |
+| [SRC-B3062EB677-L000032](../../tests/test_answer_quality_runner.py#L32) | 32 | `"    assert rc == 0"` | — |
+| [SRC-B3062EB677-L000033](../../tests/test_answer_quality_runner.py#L33) | 33 | `"    out = capsys.readouterr().out"` | — |
+| [SRC-B3062EB677-L000034](../../tests/test_answer_quality_runner.py#L34) | 34 | `"    assert \"VALIDATE OK\" in out"` | — |
+| [SRC-B3062EB677-L000035](../../tests/test_answer_quality_runner.py#L35) | 35 | `"    assert \"NOT_TESTED\" in out"` | — |
+| [SRC-B3062EB677-L000036](../../tests/test_answer_quality_runner.py#L36) | 36 | `""` | — |
+| [SRC-B3062EB677-L000037](../../tests/test_answer_quality_runner.py#L37) | 37 | `""` | — |
+| [SRC-B3062EB677-L000038](../../tests/test_answer_quality_runner.py#L38) | 38 | `"def test_validate_rejects_missing_file(tmp_path):"` | — |
+| [SRC-B3062EB677-L000039](../../tests/test_answer_quality_runner.py#L39) | 39 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000040](../../tests/test_answer_quality_runner.py#L40) | 40 | `"    missing = tmp_path / \"nope.json\""` | — |
+| [SRC-B3062EB677-L000041](../../tests/test_answer_quality_runner.py#L41) | 41 | `"    with pytest.raises(FileNotFoundError):"` | — |
+| [SRC-B3062EB677-L000042](../../tests/test_answer_quality_runner.py#L42) | 42 | `"        mod.load_corpus(missing)"` | — |
+| [SRC-B3062EB677-L000043](../../tests/test_answer_quality_runner.py#L43) | 43 | `""` | — |
+| [SRC-B3062EB677-L000044](../../tests/test_answer_quality_runner.py#L44) | 44 | `""` | — |
+| [SRC-B3062EB677-L000045](../../tests/test_answer_quality_runner.py#L45) | 45 | `"def test_validate_detects_bad_case_count(tmp_path):"` | — |
+| [SRC-B3062EB677-L000046](../../tests/test_answer_quality_runner.py#L46) | 46 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000047](../../tests/test_answer_quality_runner.py#L47) | 47 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-B3062EB677-L000048](../../tests/test_answer_quality_runner.py#L48) | 48 | `"    data[\"case_count\"] = 999"` | — |
+| [SRC-B3062EB677-L000049](../../tests/test_answer_quality_runner.py#L49) | 49 | `"    bad = tmp_path / \"bad.json\""` | — |
+| [SRC-B3062EB677-L000050](../../tests/test_answer_quality_runner.py#L50) | 50 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000051](../../tests/test_answer_quality_runner.py#L51) | 51 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
+| [SRC-B3062EB677-L000052](../../tests/test_answer_quality_runner.py#L52) | 52 | `"    assert any(\"case_count\" in p for p in problems)"` | — |
+| [SRC-B3062EB677-L000053](../../tests/test_answer_quality_runner.py#L53) | 53 | `""` | — |
+| [SRC-B3062EB677-L000054](../../tests/test_answer_quality_runner.py#L54) | 54 | `""` | — |
+| [SRC-B3062EB677-L000055](../../tests/test_answer_quality_runner.py#L55) | 55 | `"def test_validate_detects_missing_required_field(tmp_path):"` | — |
+| [SRC-B3062EB677-L000056](../../tests/test_answer_quality_runner.py#L56) | 56 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000057](../../tests/test_answer_quality_runner.py#L57) | 57 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-B3062EB677-L000058](../../tests/test_answer_quality_runner.py#L58) | 58 | `"    data[\"cases\"] = [dict(data[\"cases\"][0])]"` | — |
+| [SRC-B3062EB677-L000059](../../tests/test_answer_quality_runner.py#L59) | 59 | `"    del data[\"cases\"][0][\"question\"]"` | — |
+| [SRC-B3062EB677-L000060](../../tests/test_answer_quality_runner.py#L60) | 60 | `"    data[\"case_count\"] = 1"` | — |
+| [SRC-B3062EB677-L000061](../../tests/test_answer_quality_runner.py#L61) | 61 | `"    bad = tmp_path / \"bad2.json\""` | — |
+| [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000063](../../tests/test_answer_quality_runner.py#L63) | 63 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
+| [SRC-B3062EB677-L000064](../../tests/test_answer_quality_runner.py#L64) | 64 | `"    assert problems"` | — |
+| [SRC-B3062EB677-L000065](../../tests/test_answer_quality_runner.py#L65) | 65 | `""` | — |
+| [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
+| [SRC-B3062EB677-L000067](../../tests/test_answer_quality_runner.py#L67) | 67 | `"def test_live_refuses_unbounded_without_limit_or_case_id(capsys):"` | — |
+| [SRC-B3062EB677-L000068](../../tests/test_answer_quality_runner.py#L68) | 68 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000069](../../tests/test_answer_quality_runner.py#L69) | 69 | `"    rc = mod.main([\"--mode\", \"live\", \"--corpus\", str(CORPUS)])"` | — |
+| [SRC-B3062EB677-L000070](../../tests/test_answer_quality_runner.py#L70) | 70 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000071](../../tests/test_answer_quality_runner.py#L71) | 71 | `"    err = capsys.readouterr().err"` | — |
+| [SRC-B3062EB677-L000072](../../tests/test_answer_quality_runner.py#L72) | 72 | `"    assert \"Refusing unbounded\" in err"` | — |
+| [SRC-B3062EB677-L000073](../../tests/test_answer_quality_runner.py#L73) | 73 | `""` | — |
+| [SRC-B3062EB677-L000074](../../tests/test_answer_quality_runner.py#L74) | 74 | `""` | — |
+| [SRC-B3062EB677-L000075](../../tests/test_answer_quality_runner.py#L75) | 75 | `"def test_live_unknown_case_id(capsys):"` | — |
+| [SRC-B3062EB677-L000076](../../tests/test_answer_quality_runner.py#L76) | 76 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000077](../../tests/test_answer_quality_runner.py#L77) | 77 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000078](../../tests/test_answer_quality_runner.py#L78) | 78 | `"        ["` | — |
+| [SRC-B3062EB677-L000079](../../tests/test_answer_quality_runner.py#L79) | 79 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000080](../../tests/test_answer_quality_runner.py#L80) | 80 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
+| [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
+| [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
+| [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
+| [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
+| [SRC-B3062EB677-L000087](../../tests/test_answer_quality_runner.py#L87) | 87 | `"        ]"` | — |
+| [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
+| [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |
+| [SRC-B3062EB677-L000091](../../tests/test_answer_quality_runner.py#L91) | 91 | `""` | — |
+| [SRC-B3062EB677-L000092](../../tests/test_answer_quality_runner.py#L92) | 92 | `"def test_redact_secrets_strips_token_value(monkeypatch):"` | — |
+| [SRC-B3062EB677-L000093](../../tests/test_answer_quality_runner.py#L93) | 93 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000094](../../tests/test_answer_quality_runner.py#L94) | 94 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"super-secret-token-value-xyz\")"` | — |
+| [SRC-B3062EB677-L000095](../../tests/test_answer_quality_runner.py#L95) | 95 | `"    text = \"token=super-secret-token-value-xyz and OPENROUTER_API_KEY\""` | — |
+| [SRC-B3062EB677-L000096](../../tests/test_answer_quality_runner.py#L96) | 96 | `"    out = mod.redact_secrets(text)"` | — |
+| [SRC-B3062EB677-L000097](../../tests/test_answer_quality_runner.py#L97) | 97 | `"    assert \"super-secret-token-value-xyz\" not in out"` | — |
+| [SRC-B3062EB677-L000098](../../tests/test_answer_quality_runner.py#L98) | 98 | `"    assert \"REDACTED\" in out"` | — |
+| [SRC-B3062EB677-L000099](../../tests/test_answer_quality_runner.py#L99) | 99 | `""` | — |
+| [SRC-B3062EB677-L000100](../../tests/test_answer_quality_runner.py#L100) | 100 | `""` | — |
+| [SRC-B3062EB677-L000101](../../tests/test_answer_quality_runner.py#L101) | 101 | `"def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):"` | — |
+| [SRC-B3062EB677-L000102](../../tests/test_answer_quality_runner.py#L102) | 102 | `"    \"\"\"Even on HTTP 200, quality status stays NOT_TESTED (no keyword auto-PASS).\"\"\""` | — |
+| [SRC-B3062EB677-L000103](../../tests/test_answer_quality_runner.py#L103) | 103 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000104](../../tests/test_answer_quality_runner.py#L104) | 104 | `""` | — |
+| [SRC-B3062EB677-L000105](../../tests/test_answer_quality_runner.py#L105) | 105 | `"    def fake_post(base_url, question, timeout, token):"` | — |
+| [SRC-B3062EB677-L000106](../../tests/test_answer_quality_runner.py#L106) | 106 | `"        return 200, {"` | — |
+| [SRC-B3062EB677-L000107](../../tests/test_answer_quality_runner.py#L107) | 107 | `"            \"answer\": \"hello used_web_search should not force PASS\","` | — |
+| [SRC-B3062EB677-L000108](../../tests/test_answer_quality_runner.py#L108) | 108 | `"            \"used_web_search\": False,"` | — |
+| [SRC-B3062EB677-L000109](../../tests/test_answer_quality_runner.py#L109) | 109 | `"            \"used_language_model\": True,"` | — |
+| [SRC-B3062EB677-L000110](../../tests/test_answer_quality_runner.py#L110) | 110 | `"            \"sources\": [],"` | — |
+| [SRC-B3062EB677-L000111](../../tests/test_answer_quality_runner.py#L111) | 111 | `"        }"` | — |
+| [SRC-B3062EB677-L000112](../../tests/test_answer_quality_runner.py#L112) | 112 | `""` | — |
+| [SRC-B3062EB677-L000113](../../tests/test_answer_quality_runner.py#L113) | 113 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
+| [SRC-B3062EB677-L000114](../../tests/test_answer_quality_runner.py#L114) | 114 | `"    out = tmp_path / \"results.json\""` | — |
+| [SRC-B3062EB677-L000115](../../tests/test_answer_quality_runner.py#L115) | 115 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000116](../../tests/test_answer_quality_runner.py#L116) | 116 | `"        ["` | — |
+| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000118](../../tests/test_answer_quality_runner.py#L118) | 118 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000119](../../tests/test_answer_quality_runner.py#L119) | 119 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000120](../../tests/test_answer_quality_runner.py#L120) | 120 | `"            str(CORPUS),"` | — |
+| [SRC-B3062EB677-L000121](../../tests/test_answer_quality_runner.py#L121) | 121 | `"            \"--case-id\","` | — |
+| [SRC-B3062EB677-L000122](../../tests/test_answer_quality_runner.py#L122) | 122 | `"            \"AQ-001\","` | — |
+| [SRC-B3062EB677-L000123](../../tests/test_answer_quality_runner.py#L123) | 123 | `"            \"--limit\","` | — |
+| [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"1\","` | — |
+| [SRC-B3062EB677-L000125](../../tests/test_answer_quality_runner.py#L125) | 125 | `"            \"--out\","` | — |
+| [SRC-B3062EB677-L000126](../../tests/test_answer_quality_runner.py#L126) | 126 | `"            str(out),"` | — |
+| [SRC-B3062EB677-L000127](../../tests/test_answer_quality_runner.py#L127) | 127 | `"        ]"` | — |
+| [SRC-B3062EB677-L000128](../../tests/test_answer_quality_runner.py#L128) | 128 | `"    )"` | — |
+| [SRC-B3062EB677-L000129](../../tests/test_answer_quality_runner.py#L129) | 129 | `"    assert rc == 0"` | — |
+| [SRC-B3062EB677-L000130](../../tests/test_answer_quality_runner.py#L130) | 130 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-B3062EB677-L000131](../../tests/test_answer_quality_runner.py#L131) | 131 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
+| [SRC-B3062EB677-L000132](../../tests/test_answer_quality_runner.py#L132) | 132 | `"    assert payload[\"results\"][0][\"evidence_fixture_injected\"] is False"` | — |
+| [SRC-B3062EB677-L000133](../../tests/test_answer_quality_runner.py#L133) | 133 | `"    assert payload[\"results\"][0][\"transport_ok\"] is True"` | — |

@@ -81,6 +81,8 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     assert result["search_attempted"] is True
     assert result["search_report"]["search_attempted"] is True
     assert result["search_report"]["search_outcome"] == "attempted_with_usable_sources"
+    assert result["search_report"]["pipeline_completion_status"] == "completed"
+    assert result["search_report"]["completion_stages"]["semantic_fact_check"] == "not_performed"
     assert result["search_report"]["research_quality_semantics"] == (
         "process_coverage_not_factual_probability"
     )
@@ -95,6 +97,15 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     assert any("تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري" in warning
                for warning in result["warnings"])
     assert result["used_language_model"] is True
+    task_understanding = result["task_understanding"]
+    assert task_understanding["task_spec"]["schema"] == "omarai.task_spec.v1"
+    assert task_understanding["task_spec"]["task_family"] == "compare"
+    assert task_understanding["task_spec"]["classification_is_probability"] is False
+    assert task_understanding["tool_execution"]["search_outcome"] == "attempted_with_usable_sources"
+    assert task_understanding["tool_execution"]["accepted_source_count"] == 2
+    assert task_understanding["query_strategy_matrix"]
+    assert task_understanding["actual_queries"] == result["search_queries"]
+    assert result["search_report"]["task_understanding"]["task_spec"]["schema"] == "omarai.task_spec.v1"
     assert result["sources"][0]["url"] == "https://example.com/research"
     assert "[المصدر 1]" in result["answer"]
     assert seen["question"] == "قارن هذه التقنية"
@@ -129,6 +140,8 @@ def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):
 
     assert result["used_web_search"] is True
     assert result["used_language_model"] is False
+    assert result["search_report"]["pipeline_completion_status"] == "partial"
+    assert result["search_report"]["completion_stages"]["claim_review"] == "not_run"
     assert "OPENROUTER_API_KEY" in result["answer"]
     assert result["sources"][0]["page_fetched"] is True
 
@@ -1942,6 +1955,9 @@ def test_search_attempt_is_reported_when_no_sources_survive(monkeypatch):
     assert result["search_report"]["search_attempted"] is True
     assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
     assert result["search_report"]["usable_sources_after_filtering"] == 0
+    assert result["search_report"]["insufficient_evidence"] is True
+    assert result["search_report"]["pipeline_completion_status"] == "insufficient_evidence"
+    assert result["task_understanding"]["tool_execution"]["accepted_source_count"] == 0
     assert calls, "Expected at least one attempted retrieval round"
 
 
@@ -3573,3 +3589,238 @@ def test_official_government_lookup_never_synthesizes_tourism_result(monkeypatch
     }
     assert guardrails["final"]["accepted_sources"] == 0
     assert result["search_report"]["usable_sources_after_filtering"] == 0
+
+def test_criterion_gap_repair_cannot_reintroduce_non_social_source(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = (
+        "قارن بين خدمتين من حيث السعر والخصوصية والاعتمادية "
+        "واعرض آراء وتجارب المستخدمين"
+    )
+    initial_sources = [
+        {
+            **sample_source(0),
+            "url": "https://www.reddit.com/r/example/comments/1",
+            "domain": "reddit.com",
+            "title": "مناقشة تجارب المستخدمين للخدمتين",
+            "snippet": "تجارب وآراء مستخدمين حول الخدمتين",
+            "page_text": "تجارب وآراء مستخدمين حول الخدمتين",
+            "platform": "reddit",
+            "providers": ["reddit"],
+        },
+        {
+            **sample_source(1),
+            "url": "https://www.reddit.com/r/example/comments/2",
+            "domain": "reddit.com",
+            "title": "مناقشة أخرى عن الخدمتين",
+            "snippet": "مناقشة وتجارب مستخدمين حول الخدمتين",
+            "page_text": "مناقشة وتجارب مستخدمين حول الخدمتين",
+            "platform": "reddit",
+            "providers": ["reddit"],
+        },
+    ]
+    repair_candidate = {
+        **sample_source(2),
+        "url": "https://example.com/unrelated-repair",
+        "domain": "example.com",
+        "title": "معلومات عن الخدمة",
+        "snippet": "معلومات عامة عن الخدمة",
+        "page_text": "معلومات عامة عن الخدمة",
+        "providers": ["test_provider"],
+    }
+    collect_calls = []
+
+    def plan(_question, _history):
+        return {
+            "queries": [_question],
+            "direct_urls": [],
+            "social_focus": True,
+            "freshness": "any",
+            "depth": "deep",
+            "platforms": ["reddit"],
+            "planning_method": "test",
+        }
+
+    def collect(research_plan):
+        collect_calls.append(dict(research_plan))
+        if len(collect_calls) == 1:
+            sources = initial_sources
+        else:
+            sources = [repair_candidate]
+        return sources, [], {
+            "queries_planned": len(research_plan.get("queries", [])),
+            "queries_attempted": 1,
+            "query_results": [],
+            "unique_sources": len(sources),
+            "pages_fetched": len(sources),
+            "providers_used": ["reddit"] if len(collect_calls) == 1 else ["test_provider"],
+            "provider_counts": {},
+            "platform_counts": {},
+            "social_direct_results": len(sources) if len(collect_calls) == 1 else 0,
+            "depth": research_plan.get("depth", "deep"),
+            "planning_method": "test",
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", plan)
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(agent, "_source_matches_query", lambda _query, _source: True)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: (
+            "السعر مناسب [المصدر 1]. الخصوصية جيدة [المصدر 2]. "
+            "الاعتمادية مناسبة [المصدر 1]."
+        ),
+    )
+    monkeypatch.setattr(
+        agent,
+        "_review_answer",
+        lambda _question, answer, _sources: answer,
+    )
+
+    result = agent.answer(question, mode="social")
+    report = result["search_report"]
+    repair_guardrails = report["source_guardrails"]["criterion_gap_repair"]
+
+    assert len(collect_calls) >= 2
+    assert repair_guardrails["rejected_sources"] >= 1
+    assert repair_guardrails["rejection_counts"]["not_a_social_platform_source"] >= 1
+    assert all("reddit.com" in source["url"] for source in result["sources"])
+    assert "https://example.com/unrelated-repair" not in {
+        source["url"] for source in result["sources"]
+    }
+
+def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):
+    agent = WebAgent()
+    result = agent.answer("أهلا")
+
+    task_understanding = result["task_understanding"]
+    assert task_understanding["task_spec"]["schema"] == "omarai.task_spec.v1"
+    assert task_understanding["tool_execution"]["search_outcome"] == "not_assessed"
+    assert task_understanding["tool_execution"]["required_tools"] == []
+    assert all(
+        row["status"] == "not_required"
+        for row in task_understanding["tool_execution"]["tool_status_matrix"]
+    )
+    assert task_understanding["actual_queries"] == []
+    assert task_understanding["query_strategy_matrix"] == []
+    assert task_understanding["search_was_attempted"] is False
+
+
+
+def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):
+    agent = WebAgent()
+
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda *args, **kwargs: pytest.fail("Missing official-site target must be clarified before planning"),
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda *args, **kwargs: pytest.fail("Missing official-site target must not invoke search"),
+    )
+
+    result = agent.answer("هات الموقع الرسمي")
+
+    assert result["intent_route"] == "CLARIFY"
+    assert result["kind"] == "clarification_needed"
+    assert "اسم الجهة أو الشركة" in result["answer"]
+    assert result["search_attempted"] is False
+    assert "official_destination_target_entity" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
+
+
+def test_summary_without_source_clarifies_before_search(monkeypatch):
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent,
+        "_plan_search",
+        lambda *args, **kwargs: pytest.fail("Missing summary source must be clarified before planning"),
+    )
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda *args, **kwargs: pytest.fail("Missing summary source must not invoke search"),
+    )
+
+    result = agent.answer("لخص")
+
+    assert result["intent_route"] == "CLARIFY"
+    assert "أرسل النص" in result["answer"]
+    assert result["search_attempted"] is False
+    assert "summary_source_url_or_pasted_text" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
+
+
+def test_task_spec_controls_generation_context_without_becoming_evidence(monkeypatch):
+    from agents.task_understanding import build_query_strategy_matrix, build_task_spec
+
+    agent = WebAgent()
+    captured = {}
+
+    question = (
+        "قارن السيارات الكهربائية في مصر من حيث السعر والضمان، "
+        "اشرح ببساطة مع أمثلة وروابط مباشرة"
+    )
+    task_spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+    )
+    initial_queries = [compact_search_query(question)]
+    matrix = build_query_strategy_matrix(
+        question,
+        task_spec,
+        initial_queries,
+        limit=4,
+        compact_fn=compact_search_query,
+    )
+    plan = {
+        "depth": "deep",
+        "freshness": "any",
+        "social_focus": False,
+        "queries": [row["query"] for row in matrix],
+        "dialogue_context": {},
+        "intent_route": "WEB_DEEP",
+        "task_spec": task_spec,
+        "query_strategy_matrix": matrix,
+    }
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        captured["kwargs"] = kwargs
+        return "إجابة اختبارية مرتبطة بالأدلة."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+
+    answer = agent._generate(
+        question,
+        [],
+        [sample_source(0)],
+        None,
+        research_plan=plan,
+        search_report={
+            "queries_planned": len(plan["queries"]),
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "providers_used": ["test_provider"],
+        },
+    )
+
+    prompt = "\n".join(
+        message.get("content", "")
+        for message in captured["messages"]
+        if isinstance(message, dict)
+    )
+    assert answer == "إجابة اختبارية مرتبطة بالأدلة."
+    assert "task_planning_context" in prompt
+    assert "explicit_aspects" in prompt
+    assert "output_preferences" in prompt
+    assert "beginner_friendly_requested" in prompt
+    assert "reasoning_guidance" in prompt
+    assert "decision_matrix" in prompt
+    assert "قسّم المقارنة إلى كل معيار صريح" in prompt
+    assert "وحّد العملة والوحدات" in prompt
+    assert "query_strategy_matrix" in prompt
+    assert "الأولوية لكلام المستخدم الحالي" in prompt
+    assert "الاستعلامات المخططة فقط" in prompt
