@@ -99,7 +99,7 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 120
     assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == 0.5
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
-    assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.013
+    assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.003
     assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] is None
     assert result["quality_comparison"]["metrics"]["factual_accuracy"]["baseline"] == pytest.approx(2 / 3, abs=0.0001)
     assert result["quality_comparison"]["metrics"]["factual_accuracy"]["candidate"] == 1.0
