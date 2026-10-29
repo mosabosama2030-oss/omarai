@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000772 إلى SRC-D4963BDA6A-L000219
+- النطاق: SRC-90FAA34ADE-L000753 إلى SRC-D4963BDA6A-L000200
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000753](../../tests/fixtures/answer_quality_cases.json#L753) | 753 | `"        \"Pretends a review model ran successfully\","` | — |
+| [SRC-90FAA34ADE-L000754](../../tests/fixtures/answer_quality_cases.json#L754) | 754 | `"        \"Displays fabricated review scores\""` | — |
+| [SRC-90FAA34ADE-L000755](../../tests/fixtures/answer_quality_cases.json#L755) | 755 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000756](../../tests/fixtures/answer_quality_cases.json#L756) | 756 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000757](../../tests/fixtures/answer_quality_cases.json#L757) | 757 | `"        \"type\": \"env\","` | — |
+| [SRC-90FAA34ADE-L000758](../../tests/fixtures/answer_quality_cases.json#L758) | 758 | `"        \"missing\": ["` | — |
+| [SRC-90FAA34ADE-L000759](../../tests/fixtures/answer_quality_cases.json#L759) | 759 | `"          \"OPENROUTER_API_KEY\""` | — |
+| [SRC-90FAA34ADE-L000760](../../tests/fixtures/answer_quality_cases.json#L760) | 760 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L000761](../../tests/fixtures/answer_quality_cases.json#L761) | 761 | `"        \"provider_state\": \"unavailable\","` | — |
+| [SRC-90FAA34ADE-L000762](../../tests/fixtures/answer_quality_cases.json#L762) | 762 | `"        \"notes\": \"Controlled environment omits the model credential\""` | — |
+| [SRC-90FAA34ADE-L000763](../../tests/fixtures/answer_quality_cases.json#L763) | 763 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000764](../../tests/fixtures/answer_quality_cases.json#L764) | 764 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000765](../../tests/fixtures/answer_quality_cases.json#L765) | 765 | `"        \"Claims successful review with provider unavailable\","` | — |
+| [SRC-90FAA34ADE-L000766](../../tests/fixtures/answer_quality_cases.json#L766) | 766 | `"        \"Invents a model score or review transcript\""` | — |
+| [SRC-90FAA34ADE-L000767](../../tests/fixtures/answer_quality_cases.json#L767) | 767 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000768](../../tests/fixtures/answer_quality_cases.json#L768) | 768 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000769](../../tests/fixtures/answer_quality_cases.json#L769) | 769 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000770](../../tests/fixtures/answer_quality_cases.json#L770) | 770 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000771](../../tests/fixtures/answer_quality_cases.json#L771) | 771 | `"      \"case_id\": \"AQ-027\","` | — |
 | [SRC-90FAA34ADE-L000772](../../tests/fixtures/answer_quality_cases.json#L772) | 772 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
 | [SRC-90FAA34ADE-L000773](../../tests/fixtures/answer_quality_cases.json#L773) | 773 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000774](../../tests/fixtures/answer_quality_cases.json#L774) | 774 | `"      \"question\": \"هل أكيد الشركة دي نصابة؟ كل اللي عندي تعليق واحد مجهول بيقول كده.\","` | — |
@@ -806,22 +825,3 @@
 | [SRC-D4963BDA6A-L000198](../../tests/fixtures/answer_quality_reviews_template.json#L198) | 198 | `"    {"` | — |
 | [SRC-D4963BDA6A-L000199](../../tests/fixtures/answer_quality_reviews_template.json#L199) | 199 | `"      \"case_id\": \"AQ-039\","` | — |
 | [SRC-D4963BDA6A-L000200](../../tests/fixtures/answer_quality_reviews_template.json#L200) | 200 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000201](../../tests/fixtures/answer_quality_reviews_template.json#L201) | 201 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000202](../../tests/fixtures/answer_quality_reviews_template.json#L202) | 202 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000203](../../tests/fixtures/answer_quality_reviews_template.json#L203) | 203 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000204](../../tests/fixtures/answer_quality_reviews_template.json#L204) | 204 | `"      \"case_id\": \"AQ-040\","` | — |
-| [SRC-D4963BDA6A-L000205](../../tests/fixtures/answer_quality_reviews_template.json#L205) | 205 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000206](../../tests/fixtures/answer_quality_reviews_template.json#L206) | 206 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000207](../../tests/fixtures/answer_quality_reviews_template.json#L207) | 207 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000208](../../tests/fixtures/answer_quality_reviews_template.json#L208) | 208 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000209](../../tests/fixtures/answer_quality_reviews_template.json#L209) | 209 | `"      \"case_id\": \"AQ-041\","` | — |
-| [SRC-D4963BDA6A-L000210](../../tests/fixtures/answer_quality_reviews_template.json#L210) | 210 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000211](../../tests/fixtures/answer_quality_reviews_template.json#L211) | 211 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000212](../../tests/fixtures/answer_quality_reviews_template.json#L212) | 212 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000213](../../tests/fixtures/answer_quality_reviews_template.json#L213) | 213 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000214](../../tests/fixtures/answer_quality_reviews_template.json#L214) | 214 | `"      \"case_id\": \"AQ-042\","` | — |
-| [SRC-D4963BDA6A-L000215](../../tests/fixtures/answer_quality_reviews_template.json#L215) | 215 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000216](../../tests/fixtures/answer_quality_reviews_template.json#L216) | 216 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000217](../../tests/fixtures/answer_quality_reviews_template.json#L217) | 217 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000218](../../tests/fixtures/answer_quality_reviews_template.json#L218) | 218 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000219](../../tests/fixtures/answer_quality_reviews_template.json#L219) | 219 | `"      \"case_id\": \"AQ-043\","` | — |

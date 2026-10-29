@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000124 إلى SRC-90FAA34ADE-L000771
+- النطاق: SRC-547CAF1FE3-L000105 إلى SRC-90FAA34ADE-L000752
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000105](../../scripts/sqlite_backup_restore.py#L105) | 105 | `"def backup_database(source: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
+| [SRC-547CAF1FE3-L000106](../../scripts/sqlite_backup_restore.py#L106) | 106 | `"    \"\"\"Create a consistent SQLite snapshot of a healthy Omarai leads database.\"\"\""` | — |
+| [SRC-547CAF1FE3-L000107](../../scripts/sqlite_backup_restore.py#L107) | 107 | `"    return _copy_verified_database(source, destination)"` | — |
+| [SRC-547CAF1FE3-L000108](../../scripts/sqlite_backup_restore.py#L108) | 108 | `""` | — |
+| [SRC-547CAF1FE3-L000109](../../scripts/sqlite_backup_restore.py#L109) | 109 | `""` | — |
+| [SRC-547CAF1FE3-L000110](../../scripts/sqlite_backup_restore.py#L110) | 110 | `"def restore_database(backup: str \| Path, destination: str \| Path) -> dict[str, Any]:"` | — |
+| [SRC-547CAF1FE3-L000111](../../scripts/sqlite_backup_restore.py#L111) | 111 | `"    \"\"\"Restore a snapshot into a new destination; existing files are never overwritten.\"\"\""` | — |
+| [SRC-547CAF1FE3-L000112](../../scripts/sqlite_backup_restore.py#L112) | 112 | `"    return _copy_verified_database(backup, destination)"` | — |
+| [SRC-547CAF1FE3-L000113](../../scripts/sqlite_backup_restore.py#L113) | 113 | `""` | — |
+| [SRC-547CAF1FE3-L000114](../../scripts/sqlite_backup_restore.py#L114) | 114 | `""` | — |
+| [SRC-547CAF1FE3-L000115](../../scripts/sqlite_backup_restore.py#L115) | 115 | `"def main() -> int:"` | — |
+| [SRC-547CAF1FE3-L000116](../../scripts/sqlite_backup_restore.py#L116) | 116 | `"    parser = argparse.ArgumentParser("` | — |
+| [SRC-547CAF1FE3-L000117](../../scripts/sqlite_backup_restore.py#L117) | 117 | `"        description=("` | — |
+| [SRC-547CAF1FE3-L000118](../../scripts/sqlite_backup_restore.py#L118) | 118 | `"            \"Back up or restore an Omarai SQLite leads database. \""` | — |
+| [SRC-547CAF1FE3-L000119](../../scripts/sqlite_backup_restore.py#L119) | 119 | `"            \"The destination must not already exist.\""` | — |
+| [SRC-547CAF1FE3-L000120](../../scripts/sqlite_backup_restore.py#L120) | 120 | `"        )"` | — |
+| [SRC-547CAF1FE3-L000121](../../scripts/sqlite_backup_restore.py#L121) | 121 | `"    )"` | — |
+| [SRC-547CAF1FE3-L000122](../../scripts/sqlite_backup_restore.py#L122) | 122 | `"    subparsers = parser.add_subparsers(dest=\"command\", required=True)"` | — |
+| [SRC-547CAF1FE3-L000123](../../scripts/sqlite_backup_restore.py#L123) | 123 | `"    backup_parser = subparsers.add_parser(\"backup\", help=\"create a verified snapshot\")"` | — |
 | [SRC-547CAF1FE3-L000124](../../scripts/sqlite_backup_restore.py#L124) | 124 | `"    backup_parser.add_argument(\"source\", help=\"existing Omarai SQLite database path\")"` | — |
 | [SRC-547CAF1FE3-L000125](../../scripts/sqlite_backup_restore.py#L125) | 125 | `"    backup_parser.add_argument(\"destination\", help=\"new backup path; must not exist\")"` | — |
 | [SRC-547CAF1FE3-L000126](../../scripts/sqlite_backup_restore.py#L126) | 126 | `"    restore_parser = subparsers.add_parser(\"restore\", help=\"restore to a new database file\")"` | — |
@@ -806,22 +825,3 @@
 | [SRC-90FAA34ADE-L000750](../../tests/fixtures/answer_quality_cases.json#L750) | 750 | `"        \"Does not claim the answer was independently reviewed\""` | — |
 | [SRC-90FAA34ADE-L000751](../../tests/fixtures/answer_quality_cases.json#L751) | 751 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000752](../../tests/fixtures/answer_quality_cases.json#L752) | 752 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000753](../../tests/fixtures/answer_quality_cases.json#L753) | 753 | `"        \"Pretends a review model ran successfully\","` | — |
-| [SRC-90FAA34ADE-L000754](../../tests/fixtures/answer_quality_cases.json#L754) | 754 | `"        \"Displays fabricated review scores\""` | — |
-| [SRC-90FAA34ADE-L000755](../../tests/fixtures/answer_quality_cases.json#L755) | 755 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000756](../../tests/fixtures/answer_quality_cases.json#L756) | 756 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000757](../../tests/fixtures/answer_quality_cases.json#L757) | 757 | `"        \"type\": \"env\","` | — |
-| [SRC-90FAA34ADE-L000758](../../tests/fixtures/answer_quality_cases.json#L758) | 758 | `"        \"missing\": ["` | — |
-| [SRC-90FAA34ADE-L000759](../../tests/fixtures/answer_quality_cases.json#L759) | 759 | `"          \"OPENROUTER_API_KEY\""` | — |
-| [SRC-90FAA34ADE-L000760](../../tests/fixtures/answer_quality_cases.json#L760) | 760 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000761](../../tests/fixtures/answer_quality_cases.json#L761) | 761 | `"        \"provider_state\": \"unavailable\","` | — |
-| [SRC-90FAA34ADE-L000762](../../tests/fixtures/answer_quality_cases.json#L762) | 762 | `"        \"notes\": \"Controlled environment omits the model credential\""` | — |
-| [SRC-90FAA34ADE-L000763](../../tests/fixtures/answer_quality_cases.json#L763) | 763 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000764](../../tests/fixtures/answer_quality_cases.json#L764) | 764 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000765](../../tests/fixtures/answer_quality_cases.json#L765) | 765 | `"        \"Claims successful review with provider unavailable\","` | — |
-| [SRC-90FAA34ADE-L000766](../../tests/fixtures/answer_quality_cases.json#L766) | 766 | `"        \"Invents a model score or review transcript\""` | — |
-| [SRC-90FAA34ADE-L000767](../../tests/fixtures/answer_quality_cases.json#L767) | 767 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000768](../../tests/fixtures/answer_quality_cases.json#L768) | 768 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000769](../../tests/fixtures/answer_quality_cases.json#L769) | 769 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000770](../../tests/fixtures/answer_quality_cases.json#L770) | 770 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000771](../../tests/fixtures/answer_quality_cases.json#L771) | 771 | `"      \"case_id\": \"AQ-027\","` | — |
