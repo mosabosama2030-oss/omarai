@@ -290,13 +290,26 @@ def run_live(
     for case in cases:
         cid = case["case_id"]
         prompt = case["question"]
+        request_started = time.perf_counter()
         status_code, payload = post_agent(safe_base_url, prompt, timeout, token)
+        latency_ms = round((time.perf_counter() - request_started) * 1000, 3)
         if isinstance(payload, dict):
             safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))
         else:
             safe_payload = redact_secrets(str(payload))
 
         transport_ok = 200 <= status_code < 300
+        usage = safe_payload.get("usage") if isinstance(safe_payload, dict) else None
+        usage = usage if isinstance(usage, dict) else {}
+        observed_cost = usage.get("cost_usd", usage.get("cost"))
+        if isinstance(observed_cost, bool) or not isinstance(observed_cost, (int, float)) or observed_cost < 0:
+            observed_cost = None
+        input_tokens = usage.get("prompt_tokens", usage.get("input_tokens"))
+        output_tokens = usage.get("completion_tokens", usage.get("output_tokens"))
+        if isinstance(input_tokens, bool) or not isinstance(input_tokens, (int, float)) or input_tokens < 0:
+            input_tokens = None
+        if isinstance(output_tokens, bool) or not isinstance(output_tokens, (int, float)) or output_tokens < 0:
+            output_tokens = None
         record = {
             "case_id": cid,
             "benchmark_version": data.get("version"),
@@ -305,6 +318,15 @@ def run_live(
             "mode": "live_api",
             "base_url": safe_base_url,
             "http_status": status_code,
+            "latency_ms": latency_ms,
+            "cost_usd": observed_cost,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "usage": usage or None,
+            "tool_execution_status": (
+                safe_payload.get("tool_execution_status") if isinstance(safe_payload, dict) else None
+            ),
+            "diagnostics": safe_payload.get("diagnostics") if isinstance(safe_payload, dict) else None,
             "prompt": prompt,
             "expected_strategy": case["expected_strategy"],
             "category": case["category"],
