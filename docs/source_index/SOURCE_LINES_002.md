@@ -31,7 +31,7 @@
 | [SRC-138992B1FC-L000337](../../agents/answer_validation.py#L337) | 337 | `"        if not title:"` | — |
 | [SRC-138992B1FC-L000338](../../agents/answer_validation.py#L338) | 338 | `"            missing_title += 1"` | — |
 | [SRC-138992B1FC-L000339](../../agents/answer_validation.py#L339) | 339 | `"            gaps.append(\"missing_title\")"` | — |
-| [SRC-138992B1FC-L000340](../../agents/answer_validation.py#L340) | 340 | `"        if not re.match(r\"^https?://[^\\\\s]+$\", url, re.IGNORECASE):"` | — |
+| [SRC-138992B1FC-L000340](../../agents/answer_validation.py#L340) | 340 | `"        if not re.match(r\"^https?://[^\\s]+$\", url, re.IGNORECASE):"` | — |
 | [SRC-138992B1FC-L000341](../../agents/answer_validation.py#L341) | 341 | `"            missing_url += 1"` | — |
 | [SRC-138992B1FC-L000342](../../agents/answer_validation.py#L342) | 342 | `"            gaps.append(\"missing_or_invalid_http_url\")"` | — |
 | [SRC-138992B1FC-L000343](../../agents/answer_validation.py#L343) | 343 | `"        if not published:"` | — |

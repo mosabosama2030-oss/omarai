@@ -874,7 +874,7 @@
 | [SRC-138992B1FC-L000299](../../agents/answer_validation.py#L299) | 299 | `"    context_text = f\"{str(question or '')[:8000]} {str(answer or '')[:24000]}\""` | — |
 | [SRC-138992B1FC-L000300](../../agents/answer_validation.py#L300) | 300 | `"    normalized_context = _normalize(context_text)"` | — |
 | [SRC-138992B1FC-L000301](../../agents/answer_validation.py#L301) | 301 | `"    population_context = bool(re.search("` | — |
-| [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"        r\"(?:عدد\\\\s+(?:ال)?سكان\|(?:ال)?سكان\|الكثافه\\\\s+السكانيه\|population(?:\\\\s+density\|\\\\s+estimate\|\\\\s+count)?\|urban\\\\s+agglomeration\|metro\\\\s+area\|greater\\\\s+cairo\|القاهره\\\\s+الكبرى\|محافظه\\\\s+القاهره)\","` | — |
+| [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"        r\"(?:عدد\\s+(?:ال)?سكان\|(?:ال)?سكان\|الكثافه\\s+السكانيه\|population(?:\\s+density\|\\s+estimate\|\\s+count)?\|urban\\s+agglomeration\|metro\\s+area\|greater\\s+cairo\|القاهره\\s+الكبرى\|محافظه\\s+القاهره)\","` | — |
 | [SRC-138992B1FC-L000303](../../agents/answer_validation.py#L303) | 303 | `"        normalized_context,"` | — |
 | [SRC-138992B1FC-L000304](../../agents/answer_validation.py#L304) | 304 | `"        re.IGNORECASE,"` | — |
 | [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"    ))"` | — |
