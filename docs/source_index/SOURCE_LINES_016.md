@@ -540,10 +540,10 @@
 | [SRC-1AE03B9EC3-L006311](../../agents/web_agent.py#L6311) | 6311 | `"                                \"وأعرض مقتطفات المصادر بدلًا منها.\""` | — |
 | [SRC-1AE03B9EC3-L006312](../../agents/web_agent.py#L6312) | 6312 | `"                            )"` | — |
 | [SRC-1AE03B9EC3-L006313](../../agents/web_agent.py#L6313) | 6313 | `"                            answer = ("` | — |
-| [SRC-1AE03B9EC3-L006314](../../agents/web_agent.py#L6314) | 6314 | `"                    _fallback_lead_answer(lead_evidence_sources)"` | — |
-| [SRC-1AE03B9EC3-L006315](../../agents/web_agent.py#L6315) | 6315 | `"                    if lead_request and lead_evidence_sources"` | — |
-| [SRC-1AE03B9EC3-L006316](../../agents/web_agent.py#L6316) | 6316 | `"                    else _fallback_answer(sources, review_warning)"` | — |
-| [SRC-1AE03B9EC3-L006317](../../agents/web_agent.py#L6317) | 6317 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L006314](../../agents/web_agent.py#L6314) | 6314 | `"                                _fallback_lead_answer(lead_evidence_sources)"` | — |
+| [SRC-1AE03B9EC3-L006315](../../agents/web_agent.py#L6315) | 6315 | `"                                if lead_request and lead_evidence_sources"` | — |
+| [SRC-1AE03B9EC3-L006316](../../agents/web_agent.py#L6316) | 6316 | `"                                else _fallback_answer(sources, review_warning)"` | — |
+| [SRC-1AE03B9EC3-L006317](../../agents/web_agent.py#L6317) | 6317 | `"                            )"` | — |
 | [SRC-1AE03B9EC3-L006318](../../agents/web_agent.py#L6318) | 6318 | `"                    else:"` | — |
 | [SRC-1AE03B9EC3-L006319](../../agents/web_agent.py#L6319) | 6319 | `"                        coverage_repair_status = \"no_change_gap_unresolved\""` | — |
 | [SRC-1AE03B9EC3-L006320](../../agents/web_agent.py#L6320) | 6320 | `"                        coverage_repair_warning = ("` | — |
