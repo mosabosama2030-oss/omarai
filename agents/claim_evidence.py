@@ -6,7 +6,9 @@ It does not prove truth, citation entailment, or semantic completeness.
 from __future__ import annotations
 
 import re
+import unicodedata
 from typing import Any
+from urllib.parse import urlsplit
 
 _CITATION = re.compile(r"\[(?:المصدر|source)\s+(\d+)\]", re.IGNORECASE)
 _SENTENCE_SPLIT = re.compile(r"(?<=[.!?؟])\s+|\n+")
@@ -21,6 +23,112 @@ def _evidence_basis(source: dict[str, Any]) -> str:
         return "title_only"
     return "no_readable_evidence"
 
+
+
+_POPULATION_CLAIM = re.compile(
+    r"(?:population|inhabitants|number of people|عدد\s+(?:ال)?سكان|(?:ال)?سكان|"
+    r"نسمة|القاهره\s+الكبرى|محافظه\s+القاهره|الكثافه\s+السكانيه)",
+    re.IGNORECASE,
+)
+_ARABIC_CLAIM_TRANSLATION = str.maketrans({
+    "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي", "ة": "ه",
+})
+
+
+def requires_population_scope(claim_text: str) -> bool:
+    """Detect population claims conservatively; this is a routing hint, not NLU verification."""
+    normalized = unicodedata.normalize("NFKC", str(claim_text or "")).casefold()
+    normalized = normalized.translate(_ARABIC_CLAIM_TRANSLATION)
+    return bool(_POPULATION_CLAIM.search(normalized))
+
+
+def audit_source_metadata(
+    source: dict[str, Any], *, claim_text: str = ""
+) -> dict[str, Any]:
+    """Audit traceability metadata without fetching URLs or asserting claim truth."""
+    item = source if isinstance(source, dict) else {}
+    raw_url = str(item.get("url") or "").strip()
+    try:
+        parsed = urlsplit(raw_url)
+        # Accessing .port validates malformed ports; URLs are never fetched here.
+        _ = parsed.port
+        valid_url = (
+            parsed.scheme.lower() in {"http", "https"}
+            and bool(parsed.hostname)
+            and parsed.username is None
+            and parsed.password is None
+            and not any(char.isspace() for char in raw_url)
+        )
+    except (TypeError, ValueError):
+        valid_url = False
+
+    title = str(item.get("title") or "").strip()
+    publisher = str(
+        item.get("publisher") or item.get("source_name") or item.get("domain") or ""
+    ).strip()
+
+    def first_value(keys: tuple[str, ...]) -> str:
+        for key in keys:
+            value = item.get(key)
+            if value is not None and str(value).strip():
+                return str(value).strip()
+        return ""
+
+    publication_date = first_value((
+        "published_at", "published_date", "publication_date", "date_published",
+        "published", "date",
+    ))
+    data_period = first_value((
+        "data_date", "data_reference_date", "reference_date", "data_as_of",
+        "data_period", "reference_period", "observation_date", "data_year",
+        "reference_year", "period", "year",
+    ))
+    geographic_scope = str(
+        item.get("geographic_scope") or item.get("geography")
+        or item.get("scope") or item.get("population_definition") or ""
+    ).strip()
+    readable = (
+        (bool(item.get("page_fetched")) and bool(str(item.get("page_text") or "").strip()))
+        or bool(str(item.get("snippet") or "").strip())
+    )
+    population_required = requires_population_scope(claim_text)
+
+    missing: list[str] = []
+    if not valid_url:
+        missing.append("valid_http_source_url")
+    if not title:
+        missing.append("source_title")
+    if not publisher:
+        missing.append("publisher_identity_or_domain")
+    if not publication_date:
+        missing.append("publication_date")
+    if population_required and not data_period:
+        missing.append("data_reference_period_for_population_claim")
+    if population_required and not geographic_scope:
+        missing.append("geographic_scope_for_population_claim")
+    if not readable:
+        missing.append("readable_source_evidence")
+
+    return {
+        "status": "metadata_complete" if not missing else "metadata_incomplete",
+        "valid_http_url": valid_url,
+        "has_title": bool(title),
+        "has_publisher_identity": bool(publisher),
+        "has_publication_date": bool(publication_date),
+        "has_data_reference_period": bool(data_period),
+        "population_scope_required": population_required,
+        "has_geographic_scope": bool(geographic_scope),
+        "has_readable_evidence": readable,
+        "required_fields_missing": missing,
+        "claim_entailment": "not_checked",
+        "fact_correctness": "not_checked",
+        "semantic_verification": False,
+        "limitations": [
+            "Metadata presence does not validate source authenticity, date correctness, or claim support.",
+            "Publication date and data reference period are separate fields.",
+            "Population scope must be explicitly supplied; administrative boundaries are not inferred.",
+        ],
+    }
 
 def build_claim_evidence_ledger(
     answer: str,
@@ -82,6 +190,7 @@ def build_claim_evidence_ledger(
                 "url": str(source.get("url") or "")[:2048],
                 "provider": str(source.get("provider") or "")[:80],
                 "evidence_basis": basis,
+                "metadata_audit": audit_source_metadata(source, claim_text=segment),
             })
 
         cited += bool(indexes)
