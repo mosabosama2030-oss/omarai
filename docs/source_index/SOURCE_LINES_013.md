@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003354 إلى SRC-1AE03B9EC3-L004153
+- النطاق: SRC-1AE03B9EC3-L003392 إلى SRC-1AE03B9EC3-L004191
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,44 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003354](../../agents/web_agent.py#L3354) | 3354 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003355](../../agents/web_agent.py#L3355) | 3355 | `""` | — |
-| [SRC-1AE03B9EC3-L003356](../../agents/web_agent.py#L3356) | 3356 | `"    def _plan_search("` | — |
-| [SRC-1AE03B9EC3-L003357](../../agents/web_agent.py#L3357) | 3357 | `"        self, question: str, history: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003358](../../agents/web_agent.py#L3358) | 3358 | `"        *, context_override: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003359](../../agents/web_agent.py#L3359) | 3359 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003360](../../agents/web_agent.py#L3360) | 3360 | `"        \"\"\"Resolve dialogue semantics and plan searches, with deterministic fallbacks.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003361](../../agents/web_agent.py#L3361) | 3361 | `"        context_fallback = fallback_dialogue_context(question, history)"` | — |
-| [SRC-1AE03B9EC3-L003362](../../agents/web_agent.py#L3362) | 3362 | `"        dialogue_context = validate_dialogue_context("` | — |
-| [SRC-1AE03B9EC3-L003363](../../agents/web_agent.py#L3363) | 3363 | `"            context_override, question, history, fallback=context_fallback"` | — |
-| [SRC-1AE03B9EC3-L003364](../../agents/web_agent.py#L3364) | 3364 | `"        ) if context_override is not None else context_fallback"` | — |
-| [SRC-1AE03B9EC3-L003365](../../agents/web_agent.py#L3365) | 3365 | `"        search_question = ("` | — |
-| [SRC-1AE03B9EC3-L003366](../../agents/web_agent.py#L3366) | 3366 | `"            question if dialogue_context.get(\"topic_shift\")"` | — |
-| [SRC-1AE03B9EC3-L003367](../../agents/web_agent.py#L3367) | 3367 | `"            else dialogue_context.get(\"resolved_question\") or question"` | — |
-| [SRC-1AE03B9EC3-L003368](../../agents/web_agent.py#L3368) | 3368 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003369](../../agents/web_agent.py#L3369) | 3369 | `"        fallback = fallback_plan(search_question, history)"` | — |
-| [SRC-1AE03B9EC3-L003370](../../agents/web_agent.py#L3370) | 3370 | `"        fallback[\"dialogue_context\"] = dialogue_context"` | — |
-| [SRC-1AE03B9EC3-L003371](../../agents/web_agent.py#L3371) | 3371 | `"        # Do not invent generic searches when no usable topic exists."` | — |
-| [SRC-1AE03B9EC3-L003372](../../agents/web_agent.py#L3372) | 3372 | `"        if not fallback.get(\"queries\"):"` | — |
-| [SRC-1AE03B9EC3-L003373](../../agents/web_agent.py#L3373) | 3373 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003374](../../agents/web_agent.py#L3374) | 3374 | `"        if not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L003375](../../agents/web_agent.py#L3375) | 3375 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003376](../../agents/web_agent.py#L3376) | 3376 | `"        platform_names = \", \".join(SOCIAL_DOMAINS)"` | — |
-| [SRC-1AE03B9EC3-L003377](../../agents/web_agent.py#L3377) | 3377 | `"        messages = ["` | — |
-| [SRC-1AE03B9EC3-L003378](../../agents/web_agent.py#L3378) | 3378 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003379](../../agents/web_agent.py#L3379) | 3379 | `"                \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003380](../../agents/web_agent.py#L3380) | 3380 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003381](../../agents/web_agent.py#L3381) | 3381 | `"                    \"أنت مخطط بحث ومحلل دلالي حواري لـ Omarai، ولست مجيبًا عن السؤال. \""` | — |
-| [SRC-1AE03B9EC3-L003382](../../agents/web_agent.py#L3382) | 3382 | `"                    \"حلّل أولًا قصد الرسالة الحالية في ضوء سجل الحوار، ثم أخرج JSON صحيحًا فقط \""` | — |
-| [SRC-1AE03B9EC3-L003383](../../agents/web_agent.py#L3383) | 3383 | `"                    \"دون Markdown. الشكل المطلوب: \""` | — |
-| [SRC-1AE03B9EC3-L003384](../../agents/web_agent.py#L3384) | 3384 | `"                    '{\"queries\":[\"...\"],\"social_focus\":false,\"freshness\":\"any\",\"depth\":\"standard\",'"` | — |
-| [SRC-1AE03B9EC3-L003385](../../agents/web_agent.py#L3385) | 3385 | `"                    '\"platforms\":[],\"dialogue_context\":{\"resolved_question\":\"السؤال المكتمل المقصود\",'"` | — |
-| [SRC-1AE03B9EC3-L003386](../../agents/web_agent.py#L3386) | 3386 | `"                    '\"intent\":\"current_information\",\"topic\":\"...\",\"entities\":[\"...\"],\"slots\":{\"entity\":\"...\",\"aspect\":\"...\"},'"` | — |
-| [SRC-1AE03B9EC3-L003387](../../agents/web_agent.py#L3387) | 3387 | `"                    '\"changed_slots\":[\"aspect\"],\"is_follow_up\":true,\"topic_shift\":false,\"needs_web\":true,'"` | — |
-| [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"                    '\"research_depth\":\"standard\",\"needs_clarification\":false,\"clarification_question\":\"\",'"` | — |
-| [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"                    '\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",\"confidence_band\":\"medium\"}}. '"` | — |
-| [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"                    \"اكتب resolved_question بلغة رسالة المستخدم، ويمكن صياغة queries بلغة تناسب البحث. \""` | — |
-| [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"                    \"ضع 2 إلى 5 استعلامات مختلفة ومفيدة عندما يكون السؤال واضحًا. حافظ على أسماء \""` | — |
 | [SRC-1AE03B9EC3-L003392](../../agents/web_agent.py#L3392) | 3392 | `"                    \"الأشخاص والمنتجات والأماكن والأرقام والقيود. إذا تغير الموضوع، لا تدمج الموضوع \""` | — |
 | [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"                    \"السابق في resolved_question أو الاستعلام. إذا كان المرجع ملتبسًا بشكل مؤثر، \""` | — |
 | [SRC-1AE03B9EC3-L003394](../../agents/web_agent.py#L3394) | 3394 | `"                    \"اجعل needs_clarification=true ولا تخمّن. needs_web=true للبيانات الحالية والأسعار \""` | — |
@@ -816,3 +778,41 @@
 | [SRC-1AE03B9EC3-L004151](../../agents/web_agent.py#L4151) | 4151 | `"            web_note = ("` | — |
 | [SRC-1AE03B9EC3-L004152](../../agents/web_agent.py#L4152) | 4152 | `"                \"No usable matches were returned and connector completion could not be confirmed; \""` | — |
 | [SRC-1AE03B9EC3-L004153](../../agents/web_agent.py#L4153) | 4153 | `"                \"this is inconclusive, not proof that all search services are offline.\""` | — |
+| [SRC-1AE03B9EC3-L004154](../../agents/web_agent.py#L4154) | 4154 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004155](../../agents/web_agent.py#L4155) | 4155 | `"        report[\"checks\"][\"web_search\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004156](../../agents/web_agent.py#L4156) | 4156 | `"            \"status\": web_status,"` | — |
+| [SRC-1AE03B9EC3-L004157](../../agents/web_agent.py#L4157) | 4157 | `"            \"result_count\": len(probe_result_list),"` | — |
+| [SRC-1AE03B9EC3-L004158](../../agents/web_agent.py#L4158) | 4158 | `"            \"provider_counts\": providers,"` | — |
+| [SRC-1AE03B9EC3-L004159](../../agents/web_agent.py#L4159) | 4159 | `"            \"probe_count\": probes_attempted,"` | — |
+| [SRC-1AE03B9EC3-L004160](../../agents/web_agent.py#L4160) | 4160 | `"            \"completed_connector_responses\": completed_connector_responses,"` | — |
+| [SRC-1AE03B9EC3-L004161](../../agents/web_agent.py#L4161) | 4161 | `"            \"confirmed_connector_attempts\": confirmed_connector_attempts,"` | — |
+| [SRC-1AE03B9EC3-L004162](../../agents/web_agent.py#L4162) | 4162 | `"            \"note\": _clean_text(web_note, 400),"` | — |
+| [SRC-1AE03B9EC3-L004163](../../agents/web_agent.py#L4163) | 4163 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L004164](../../agents/web_agent.py#L4164) | 4164 | `""` | — |
+| [SRC-1AE03B9EC3-L004165](../../agents/web_agent.py#L4165) | 4165 | `"        # Do not send a provider request unless a model check was explicitly requested."` | — |
+| [SRC-1AE03B9EC3-L004166](../../agents/web_agent.py#L4166) | 4166 | `"        if not test_model:"` | — |
+| [SRC-1AE03B9EC3-L004167](../../agents/web_agent.py#L4167) | 4167 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004168](../../agents/web_agent.py#L4168) | 4168 | `"                \"status\": \"skipped\","` | — |
+| [SRC-1AE03B9EC3-L004169](../../agents/web_agent.py#L4169) | 4169 | `"                \"note\": \"Model request was not requested.\","` | — |
+| [SRC-1AE03B9EC3-L004170](../../agents/web_agent.py#L4170) | 4170 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004171](../../agents/web_agent.py#L4171) | 4171 | `"        elif not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L004172](../../agents/web_agent.py#L4172) | 4172 | `"            report[\"checks\"][\"language_model\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004173](../../agents/web_agent.py#L4173) | 4173 | `"                \"status\": \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L004174](../../agents/web_agent.py#L4174) | 4174 | `"                \"note\": \"No language-model key is configured in this server session.\","` | — |
+| [SRC-1AE03B9EC3-L004175](../../agents/web_agent.py#L4175) | 4175 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004176](../../agents/web_agent.py#L4176) | 4176 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L004177](../../agents/web_agent.py#L4177) | 4177 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L004178](../../agents/web_agent.py#L4178) | 4178 | `"                probe = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L004179](../../agents/web_agent.py#L4179) | 4179 | `"                    ["` | — |
+| [SRC-1AE03B9EC3-L004180](../../agents/web_agent.py#L4180) | 4180 | `"                        {"` | — |
+| [SRC-1AE03B9EC3-L004181](../../agents/web_agent.py#L4181) | 4181 | `"                            \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L004182](../../agents/web_agent.py#L4182) | 4182 | `"                            \"content\": \"Reply with the exact text OK and nothing else.\","` | — |
+| [SRC-1AE03B9EC3-L004183](../../agents/web_agent.py#L4183) | 4183 | `"                        },"` | — |
+| [SRC-1AE03B9EC3-L004184](../../agents/web_agent.py#L4184) | 4184 | `"                        {"` | — |
+| [SRC-1AE03B9EC3-L004185](../../agents/web_agent.py#L4185) | 4185 | `"                            \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L004186](../../agents/web_agent.py#L4186) | 4186 | `"                            \"content\": \"Omarai connectivity self-test.\","` | — |
+| [SRC-1AE03B9EC3-L004187](../../agents/web_agent.py#L4187) | 4187 | `"                        },"` | — |
+| [SRC-1AE03B9EC3-L004188](../../agents/web_agent.py#L4188) | 4188 | `"                    ],"` | — |
+| [SRC-1AE03B9EC3-L004189](../../agents/web_agent.py#L4189) | 4189 | `"                    max_tokens=12,"` | — |
+| [SRC-1AE03B9EC3-L004190](../../agents/web_agent.py#L4190) | 4190 | `"                    temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L004191](../../agents/web_agent.py#L4191) | 4191 | `"                    timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |

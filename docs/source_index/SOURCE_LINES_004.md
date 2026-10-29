@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000424 إلى SRC-59CF4B7DE8-L000362
+- النطاق: SRC-5587371288-L000462 إلى SRC-59CF4B7DE8-L000400
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,44 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-5587371288-L000424](../../agents/intent_router.py#L424) | 424 | `"    return bool("` | — |
-| [SRC-5587371288-L000425](../../agents/intent_router.py#L425) | 425 | `"        re.search("` | — |
-| [SRC-5587371288-L000426](../../agents/intent_router.py#L426) | 426 | `"            r\"^\\s*(?:لخص(?:\\s+لي)?\|تلخيص\|summari[sz]e\|summary)\\s*[:：]\\s*\\S.{12,}$\","` | — |
-| [SRC-5587371288-L000427](../../agents/intent_router.py#L427) | 427 | `"            question,"` | — |
-| [SRC-5587371288-L000428](../../agents/intent_router.py#L428) | 428 | `"            flags=re.IGNORECASE,"` | — |
-| [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `"        )"` | — |
-| [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"    )"` | — |
-| [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `""` | — |
-| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `""` | — |
-| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"def route_intent("` | — |
-| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"    question: str,"` | — |
-| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"    history: Any = None,"` | — |
-| [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"    mode: str = \"auto\","` | — |
-| [SRC-5587371288-L000437](../../agents/intent_router.py#L437) | 437 | `"    *,"` | — |
-| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"    capability_question: bool = False,"` | — |
-| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"    requires_web: bool = False,"` | — |
-| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `") -> dict[str, Any]:"` | — |
-| [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"    \"\"\"Return a deterministic route and auditable reason for a user question.\"\"\""` | — |
-| [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
-| [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `""` | — |
-| [SRC-5587371288-L000444](../../agents/intent_router.py#L444) | 444 | `"    # If the assistant just asked for a missing referent, bind the user's concise"` | — |
-| [SRC-5587371288-L000445](../../agents/intent_router.py#L445) | 445 | `"    # reply to that pending question instead of answering the entity name in isolation."` | — |
-| [SRC-5587371288-L000446](../../agents/intent_router.py#L446) | 446 | `"    if _is_clarification_answer(question, history):"` | — |
-| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"        return {"` | — |
-| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `"            \"route\": \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"            \"reason\": \"answer_to_pending_clarification\","` | — |
-| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"            \"context_available\": True,"` | — |
-| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"        }"` | — |
-| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `""` | — |
-| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"    context_available = _has_context(history)"` | — |
-| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `""` | — |
-| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
-| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"    # questions before honoring the UI's explicit research mode."` | — |
-| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"    if _needs_clarification(question) and not context_available:"` | — |
-| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"        return {"` | — |
-| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"            \"route\": \"CLARIFY\","` | — |
-| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
 | [SRC-5587371288-L000462](../../agents/intent_router.py#L462) | 462 | `"            \"context_available\": False,"` | — |
 | [SRC-5587371288-L000463](../../agents/intent_router.py#L463) | 463 | `"            \"needs_clarification\": True,"` | — |
 | [SRC-5587371288-L000464](../../agents/intent_router.py#L464) | 464 | `"        }"` | — |
@@ -843,3 +805,41 @@
 | [SRC-59CF4B7DE8-L000360](../../agents/research.py#L360) | 360 | `"    )"` | — |
 | [SRC-59CF4B7DE8-L000361](../../agents/research.py#L361) | 361 | `"    low = text.casefold()"` | — |
 | [SRC-59CF4B7DE8-L000362](../../agents/research.py#L362) | 362 | `"    return [name for name, aliases in rules if any(alias.casefold() in low for alias in aliases)]"` | — |
+| [SRC-59CF4B7DE8-L000363](../../agents/research.py#L363) | 363 | `""` | — |
+| [SRC-59CF4B7DE8-L000364](../../agents/research.py#L364) | 364 | `""` | — |
+| [SRC-59CF4B7DE8-L000365](../../agents/research.py#L365) | 365 | `"def _attach_task_understanding("` | — |
+| [SRC-59CF4B7DE8-L000366](../../agents/research.py#L366) | 366 | `"    plan: dict[str, Any],"` | — |
+| [SRC-59CF4B7DE8-L000367](../../agents/research.py#L367) | 367 | `"    question: str,"` | — |
+| [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    *,"` | — |
+| [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `"    intent_route: str = \"deterministic_fallback\","` | — |
+| [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `"    mode: str = \"auto\","` | — |
+| [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `") -> dict[str, Any]:"` | — |
+| [SRC-59CF4B7DE8-L000372](../../agents/research.py#L372) | 372 | `"    \"\"\"Attach deterministic task interpretation and a bounded strategy matrix.\"\"\""` | — |
+| [SRC-59CF4B7DE8-L000373](../../agents/research.py#L373) | 373 | `"    result = dict(plan)"` | — |
+| [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `"    spec = build_task_spec("` | — |
+| [SRC-59CF4B7DE8-L000375](../../agents/research.py#L375) | 375 | `"        question,"` | — |
+| [SRC-59CF4B7DE8-L000376](../../agents/research.py#L376) | 376 | `"        mode=mode,"` | — |
+| [SRC-59CF4B7DE8-L000377](../../agents/research.py#L377) | 377 | `"        intent_route=intent_route,"` | — |
+| [SRC-59CF4B7DE8-L000378](../../agents/research.py#L378) | 378 | `"        plan=result,"` | — |
+| [SRC-59CF4B7DE8-L000379](../../agents/research.py#L379) | 379 | `"    )"` | — |
+| [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"    matrix = build_query_strategy_matrix("` | — |
+| [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"        question,"` | — |
+| [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"        spec,"` | — |
+| [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"        result.get(\"queries\", []),"` | — |
+| [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"        limit=MAX_PLAN_QUERIES,"` | — |
+| [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"        compact_fn=compact_search_query,"` | — |
+| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    )"` | — |
+| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"    # This layer records strategies but does not mutate executable queries."` | — |
+| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"    # The request runner applies them only after it knows the selected mode and budget."` | — |
+| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"    result[\"task_spec\"] = spec"` | — |
+| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    result[\"query_strategy_matrix\"] = matrix"` | — |
+| [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `"    return result"` | — |
+| [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `""` | — |
+| [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `""` | — |
+| [SRC-59CF4B7DE8-L000394](../../agents/research.py#L394) | 394 | `"def fallback_plan("` | — |
+| [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `"    question: str, history: list[dict[str, str]] \| None = None"` | — |
+| [SRC-59CF4B7DE8-L000396](../../agents/research.py#L396) | 396 | `") -> dict[str, Any]:"` | — |
+| [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"    \"\"\"Build a small but varied plan when no model planner is configured or parsing fails.\"\"\""` | — |
+| [SRC-59CF4B7DE8-L000398](../../agents/research.py#L398) | 398 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
+| [SRC-59CF4B7DE8-L000399](../../agents/research.py#L399) | 399 | `"    direct_urls = extract_urls(question)"` | — |
+| [SRC-59CF4B7DE8-L000400](../../agents/research.py#L400) | 400 | `"    base = compact_search_query(contextual_question)"` | — |

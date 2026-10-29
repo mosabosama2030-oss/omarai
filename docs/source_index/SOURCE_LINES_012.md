@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002554 إلى SRC-1AE03B9EC3-L003353
+- النطاق: SRC-1AE03B9EC3-L002592 إلى SRC-1AE03B9EC3-L003391
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,44 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L002554](../../agents/web_agent.py#L2554) | 2554 | `"                                f\"تعذر بحث زاوية إضافية «{query[:70]}»: {exc}\""` | — |
-| [SRC-1AE03B9EC3-L002555](../../agents/web_agent.py#L2555) | 2555 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L002556](../../agents/web_agent.py#L2556) | 2556 | `"                            query_counts.append({\"query\": query, \"results\": 0})"` | — |
-| [SRC-1AE03B9EC3-L002557](../../agents/web_agent.py#L2557) | 2557 | `"                            continue"` | — |
-| [SRC-1AE03B9EC3-L002558](../../agents/web_agent.py#L2558) | 2558 | `"                        query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
-| [SRC-1AE03B9EC3-L002559](../../agents/web_agent.py#L2559) | 2559 | `"                        grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002560](../../agents/web_agent.py#L2560) | 2560 | `"                        for source in results:"` | — |
-| [SRC-1AE03B9EC3-L002561](../../agents/web_agent.py#L2561) | 2561 | `"                            grouped.setdefault("` | — |
-| [SRC-1AE03B9EC3-L002562](../../agents/web_agent.py#L2562) | 2562 | `"                                str(source.get(\"provider\") or \"web_search\"), []"` | — |
-| [SRC-1AE03B9EC3-L002563](../../agents/web_agent.py#L2563) | 2563 | `"                            ).append(source)"` | — |
-| [SRC-1AE03B9EC3-L002564](../../agents/web_agent.py#L2564) | 2564 | `"                        for provider, items in grouped.items():"` | — |
-| [SRC-1AE03B9EC3-L002565](../../agents/web_agent.py#L2565) | 2565 | `"                            items.sort(key=lambda item: int(item.get(\"provider_rank\", 999)))"` | — |
-| [SRC-1AE03B9EC3-L002566](../../agents/web_agent.py#L2566) | 2566 | `"                            batches.append({"` | — |
-| [SRC-1AE03B9EC3-L002567](../../agents/web_agent.py#L2567) | 2567 | `"                                \"query\": query, \"provider\": provider, \"results\": items"` | — |
-| [SRC-1AE03B9EC3-L002568](../../agents/web_agent.py#L2568) | 2568 | `"                            })"` | — |
-| [SRC-1AE03B9EC3-L002569](../../agents/web_agent.py#L2569) | 2569 | `"                queries.extend(expansion_queries)"` | — |
-| [SRC-1AE03B9EC3-L002570](../../agents/web_agent.py#L2570) | 2570 | `"        # Report queries actually selected, not planned queries skipped to reserve repair capacity."` | — |
-| [SRC-1AE03B9EC3-L002571](../../agents/web_agent.py#L2571) | 2571 | `"        plan[\"queries\"] = list(dict.fromkeys(queries))"` | — |
-| [SRC-1AE03B9EC3-L002572](../../agents/web_agent.py#L2572) | 2572 | `""` | — |
-| [SRC-1AE03B9EC3-L002573](../../agents/web_agent.py#L2573) | 2573 | `"        # Google News RSS is included concurrently by _search_web for freshness-bearing queries."` | — |
-| [SRC-1AE03B9EC3-L002574](../../agents/web_agent.py#L2574) | 2574 | `""` | — |
-| [SRC-1AE03B9EC3-L002575](../../agents/web_agent.py#L2575) | 2575 | `"        # A social-focused task uses public social endpoints in parallel with indexed"` | — |
-| [SRC-1AE03B9EC3-L002576](../../agents/web_agent.py#L2576) | 2576 | `"        # public pages. No login, private profile, session cookie or anti-bot bypass."` | — |
-| [SRC-1AE03B9EC3-L002577](../../agents/web_agent.py#L2577) | 2577 | `"        social_results: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L002578](../../agents/web_agent.py#L2578) | 2578 | `"        if plan.get(\"social_focus\") and queries:"` | — |
-| [SRC-1AE03B9EC3-L002579](../../agents/web_agent.py#L2579) | 2579 | `"            requested_platforms = plan.get(\"platforms\") or []"` | — |
-| [SRC-1AE03B9EC3-L002580](../../agents/web_agent.py#L2580) | 2580 | `"            if requested_platforms:"` | — |
-| [SRC-1AE03B9EC3-L002581](../../agents/web_agent.py#L2581) | 2581 | `"                platforms = list(dict.fromkeys(requested_platforms))"` | — |
-| [SRC-1AE03B9EC3-L002582](../../agents/web_agent.py#L2582) | 2582 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002583](../../agents/web_agent.py#L2583) | 2583 | `"                # Broad social research: always try no-key public sources, and add"` | — |
-| [SRC-1AE03B9EC3-L002584](../../agents/web_agent.py#L2584) | 2584 | `"                # official platform connectors only when they are configured."` | — |
-| [SRC-1AE03B9EC3-L002585](../../agents/web_agent.py#L2585) | 2585 | `"                platforms = [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-1AE03B9EC3-L002586](../../agents/web_agent.py#L2586) | 2586 | `"                optional_connectors = {"` | — |
-| [SRC-1AE03B9EC3-L002587](../../agents/web_agent.py#L2587) | 2587 | `"                    \"facebook\": bool("` | — |
-| [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"                        os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"                        and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"                    ),"` | — |
-| [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"                    \"instagram\": bool("` | — |
 | [SRC-1AE03B9EC3-L002592](../../agents/web_agent.py#L2592) | 2592 | `"                        os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002593](../../agents/web_agent.py#L2593) | 2593 | `"                        and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002594](../../agents/web_agent.py#L2594) | 2594 | `"                    ),"` | — |
@@ -816,3 +778,41 @@
 | [SRC-1AE03B9EC3-L003351](../../agents/web_agent.py#L3351) | 3351 | `"            candidate = json.loads(raw[start:end + 1]) if start >= 0 and end > start else None"` | — |
 | [SRC-1AE03B9EC3-L003352](../../agents/web_agent.py#L3352) | 3352 | `"            return validate_dialogue_context(candidate, question, history, fallback=fallback)"` | — |
 | [SRC-1AE03B9EC3-L003353](../../agents/web_agent.py#L3353) | 3353 | `"        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError, TypeError, json.JSONDecodeError):"` | — |
+| [SRC-1AE03B9EC3-L003354](../../agents/web_agent.py#L3354) | 3354 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003355](../../agents/web_agent.py#L3355) | 3355 | `""` | — |
+| [SRC-1AE03B9EC3-L003356](../../agents/web_agent.py#L3356) | 3356 | `"    def _plan_search("` | — |
+| [SRC-1AE03B9EC3-L003357](../../agents/web_agent.py#L3357) | 3357 | `"        self, question: str, history: list[dict[str, str]],"` | — |
+| [SRC-1AE03B9EC3-L003358](../../agents/web_agent.py#L3358) | 3358 | `"        *, context_override: dict[str, Any] \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003359](../../agents/web_agent.py#L3359) | 3359 | `"    ) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L003360](../../agents/web_agent.py#L3360) | 3360 | `"        \"\"\"Resolve dialogue semantics and plan searches, with deterministic fallbacks.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003361](../../agents/web_agent.py#L3361) | 3361 | `"        context_fallback = fallback_dialogue_context(question, history)"` | — |
+| [SRC-1AE03B9EC3-L003362](../../agents/web_agent.py#L3362) | 3362 | `"        dialogue_context = validate_dialogue_context("` | — |
+| [SRC-1AE03B9EC3-L003363](../../agents/web_agent.py#L3363) | 3363 | `"            context_override, question, history, fallback=context_fallback"` | — |
+| [SRC-1AE03B9EC3-L003364](../../agents/web_agent.py#L3364) | 3364 | `"        ) if context_override is not None else context_fallback"` | — |
+| [SRC-1AE03B9EC3-L003365](../../agents/web_agent.py#L3365) | 3365 | `"        search_question = ("` | — |
+| [SRC-1AE03B9EC3-L003366](../../agents/web_agent.py#L3366) | 3366 | `"            question if dialogue_context.get(\"topic_shift\")"` | — |
+| [SRC-1AE03B9EC3-L003367](../../agents/web_agent.py#L3367) | 3367 | `"            else dialogue_context.get(\"resolved_question\") or question"` | — |
+| [SRC-1AE03B9EC3-L003368](../../agents/web_agent.py#L3368) | 3368 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003369](../../agents/web_agent.py#L3369) | 3369 | `"        fallback = fallback_plan(search_question, history)"` | — |
+| [SRC-1AE03B9EC3-L003370](../../agents/web_agent.py#L3370) | 3370 | `"        fallback[\"dialogue_context\"] = dialogue_context"` | — |
+| [SRC-1AE03B9EC3-L003371](../../agents/web_agent.py#L3371) | 3371 | `"        # Do not invent generic searches when no usable topic exists."` | — |
+| [SRC-1AE03B9EC3-L003372](../../agents/web_agent.py#L3372) | 3372 | `"        if not fallback.get(\"queries\"):"` | — |
+| [SRC-1AE03B9EC3-L003373](../../agents/web_agent.py#L3373) | 3373 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003374](../../agents/web_agent.py#L3374) | 3374 | `"        if not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L003375](../../agents/web_agent.py#L3375) | 3375 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003376](../../agents/web_agent.py#L3376) | 3376 | `"        platform_names = \", \".join(SOCIAL_DOMAINS)"` | — |
+| [SRC-1AE03B9EC3-L003377](../../agents/web_agent.py#L3377) | 3377 | `"        messages = ["` | — |
+| [SRC-1AE03B9EC3-L003378](../../agents/web_agent.py#L3378) | 3378 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003379](../../agents/web_agent.py#L3379) | 3379 | `"                \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003380](../../agents/web_agent.py#L3380) | 3380 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003381](../../agents/web_agent.py#L3381) | 3381 | `"                    \"أنت مخطط بحث ومحلل دلالي حواري لـ Omarai، ولست مجيبًا عن السؤال. \""` | — |
+| [SRC-1AE03B9EC3-L003382](../../agents/web_agent.py#L3382) | 3382 | `"                    \"حلّل أولًا قصد الرسالة الحالية في ضوء سجل الحوار، ثم أخرج JSON صحيحًا فقط \""` | — |
+| [SRC-1AE03B9EC3-L003383](../../agents/web_agent.py#L3383) | 3383 | `"                    \"دون Markdown. الشكل المطلوب: \""` | — |
+| [SRC-1AE03B9EC3-L003384](../../agents/web_agent.py#L3384) | 3384 | `"                    '{\"queries\":[\"...\"],\"social_focus\":false,\"freshness\":\"any\",\"depth\":\"standard\",'"` | — |
+| [SRC-1AE03B9EC3-L003385](../../agents/web_agent.py#L3385) | 3385 | `"                    '\"platforms\":[],\"dialogue_context\":{\"resolved_question\":\"السؤال المكتمل المقصود\",'"` | — |
+| [SRC-1AE03B9EC3-L003386](../../agents/web_agent.py#L3386) | 3386 | `"                    '\"intent\":\"current_information\",\"topic\":\"...\",\"entities\":[\"...\"],\"slots\":{\"entity\":\"...\",\"aspect\":\"...\"},'"` | — |
+| [SRC-1AE03B9EC3-L003387](../../agents/web_agent.py#L3387) | 3387 | `"                    '\"changed_slots\":[\"aspect\"],\"is_follow_up\":true,\"topic_shift\":false,\"needs_web\":true,'"` | — |
+| [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"                    '\"research_depth\":\"standard\",\"needs_clarification\":false,\"clarification_question\":\"\",'"` | — |
+| [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"                    '\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",\"confidence_band\":\"medium\"}}. '"` | — |
+| [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"                    \"اكتب resolved_question بلغة رسالة المستخدم، ويمكن صياغة queries بلغة تناسب البحث. \""` | — |
+| [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"                    \"ضع 2 إلى 5 استعلامات مختلفة ومفيدة عندما يكون السؤال واضحًا. حافظ على أسماء \""` | — |

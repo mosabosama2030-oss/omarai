@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **105**
 - ملفات Python المحللة: **62**
-- تعريفات Python المفهرسة: **1394**
+- تعريفات Python المفهرسة: **1393**
 - تعريفات Python موثقة بوجود Docstring: **241**
-- تعريفات Python بلا Docstring: **865**
+- تعريفات Python بلا Docstring: **864**
 - تعريفات لا ينطبق عليها Docstring: **288**
 - الرموز الساكنة الإضافية: **1736**
-- الأسطر النصية المفهرسة حرفيًا: **36816**
+- الأسطر النصية المفهرسة حرفيًا: **36778**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -37,9 +37,9 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
-| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 33736 | 718 | جرد الملف + AST Python |
+| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 32380 | 680 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
-| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10550 | 252 | جرد الملف + AST Python |
+| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10581 | 252 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25333 | 559 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
@@ -140,30 +140,29 @@
 
 | الملف | النوع | الاسم المؤهل | الوصف | حالة Docstring | السطر | كود السطر للوصول المباشر |
 |---|---|---|---|---|---:|---|
-| [agents/answer_validation.py](../agents/answer_validation.py#L12) | متغير/ثابت Python | _DIGITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-138992B1FC-L000012](../agents/answer_validation.py#L12) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L13) | متغير/ثابت Python | _ARABIC_NORMALIZATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-138992B1FC-L000013](../agents/answer_validation.py#L13) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L17) | متغير/ثابت Python | _DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-138992B1FC-L000017](../agents/answer_validation.py#L17) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L18) | متغير/ثابت Python | _TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-138992B1FC-L000018](../agents/answer_validation.py#L18) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L19) | متغير/ثابت Python | _NUMBER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-138992B1FC-L000019](../agents/answer_validation.py#L19) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L20) | متغير/ثابت Python | _CITATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-138992B1FC-L000020](../agents/answer_validation.py#L20) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L21) | متغير/ثابت Python | _STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-138992B1FC-L000021](../agents/answer_validation.py#L21) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L28) | متغير/ثابت Python | _UNIT_OR_VALUE_CONTEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-138992B1FC-L000028](../agents/answer_validation.py#L28) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L37) | دالة | _normalize | لا توجد Docstring. | ناقص | 37 | [SRC-138992B1FC-L000037](../agents/answer_validation.py#L37) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L43) | دالة | _tokens | لا توجد Docstring. | ناقص | 43 | [SRC-138992B1FC-L000043](../agents/answer_validation.py#L43) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L50) | دالة | _criterion_tokens | Return criterion terms without discarding their original surface forms. | موثق | 50 | [SRC-138992B1FC-L000050](../agents/answer_validation.py#L50) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L56) | متغير/ثابت Python | _CRITERION_ALIASES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 56 | [SRC-138992B1FC-L000056](../agents/answer_validation.py#L56) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L78) | دالة | _criterion_token_variants | Return conservative Arabic article and common cross-language criterion variants. | موثق | 78 | [SRC-138992B1FC-L000078](../agents/answer_validation.py#L78) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L92) | دالة | _numeric_literals | Extract explicit numeric literals, ignoring citation indices and unqualified single digits. | موثق | 92 | [SRC-138992B1FC-L000092](../agents/answer_validation.py#L92) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L113) | دالة | _canonical_number | لا توجد Docstring. | ناقص | 113 | [SRC-138992B1FC-L000113](../agents/answer_validation.py#L113) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L121) | متغير/ثابت Python | _VALUE_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 121 | [SRC-138992B1FC-L000121](../agents/answer_validation.py#L121) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L148) | دالة | _numeric_values_with_cues | Extract number/dimension pairs as review signals, not as semantic claims. | موثق | 148 | [SRC-138992B1FC-L000148](../agents/answer_validation.py#L148) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L162) | متغير/ثابت Python | _REQUIREMENT_ALIAS_GROUPS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 162 | [SRC-138992B1FC-L000162](../agents/answer_validation.py#L162) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L173) | دالة | _alias_token_groups | لا توجد Docstring. | ناقص | 173 | [SRC-138992B1FC-L000173](../agents/answer_validation.py#L173) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L183) | دالة | _matched_target_terms | Match target terms conservatively, with a small explicit Arabic/English alias list. | موثق | 183 | [SRC-138992B1FC-L000183](../agents/answer_validation.py#L183) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L194) | دالة | build_requirement_evidence_ledger | Link requirements to query provenance and lexical source candidates, never to truth. | موثق | 194 | [SRC-138992B1FC-L000194](../agents/answer_validation.py#L194) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L295) | دالة | _audit_source_metadata | Audit source metadata presence; never treat presence as proof of truth or entailment. | موثق | 295 | [SRC-138992B1FC-L000295](../agents/answer_validation.py#L295) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L310) | دالة | _audit_source_metadata.first_value | لا توجد Docstring. | ناقص | 310 | [SRC-138992B1FC-L000310](../agents/answer_validation.py#L310) |
-| [agents/answer_validation.py](../agents/answer_validation.py#L404) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 404 | [SRC-138992B1FC-L000404](../agents/answer_validation.py#L404) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L14) | متغير/ثابت Python | _DIGITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-138992B1FC-L000014](../agents/answer_validation.py#L14) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L15) | متغير/ثابت Python | _ARABIC_NORMALIZATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-138992B1FC-L000015](../agents/answer_validation.py#L15) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L19) | متغير/ثابت Python | _DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-138992B1FC-L000019](../agents/answer_validation.py#L19) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L20) | متغير/ثابت Python | _TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-138992B1FC-L000020](../agents/answer_validation.py#L20) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L21) | متغير/ثابت Python | _NUMBER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-138992B1FC-L000021](../agents/answer_validation.py#L21) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L22) | متغير/ثابت Python | _CITATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-138992B1FC-L000022](../agents/answer_validation.py#L22) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L23) | متغير/ثابت Python | _STOPWORDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-138992B1FC-L000023](../agents/answer_validation.py#L23) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L30) | متغير/ثابت Python | _UNIT_OR_VALUE_CONTEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-138992B1FC-L000030](../agents/answer_validation.py#L30) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L39) | دالة | _normalize | لا توجد Docstring. | ناقص | 39 | [SRC-138992B1FC-L000039](../agents/answer_validation.py#L39) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L45) | دالة | _tokens | لا توجد Docstring. | ناقص | 45 | [SRC-138992B1FC-L000045](../agents/answer_validation.py#L45) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L52) | دالة | _criterion_tokens | Return criterion terms without discarding their original surface forms. | موثق | 52 | [SRC-138992B1FC-L000052](../agents/answer_validation.py#L52) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L58) | متغير/ثابت Python | _CRITERION_ALIASES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 58 | [SRC-138992B1FC-L000058](../agents/answer_validation.py#L58) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L80) | دالة | _criterion_token_variants | Return conservative Arabic article and common cross-language criterion variants. | موثق | 80 | [SRC-138992B1FC-L000080](../agents/answer_validation.py#L80) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L94) | دالة | _numeric_literals | Extract explicit numeric literals, ignoring citation indices and unqualified single digits. | موثق | 94 | [SRC-138992B1FC-L000094](../agents/answer_validation.py#L94) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L115) | دالة | _canonical_number | لا توجد Docstring. | ناقص | 115 | [SRC-138992B1FC-L000115](../agents/answer_validation.py#L115) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L123) | متغير/ثابت Python | _VALUE_CUES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 123 | [SRC-138992B1FC-L000123](../agents/answer_validation.py#L123) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L150) | دالة | _numeric_values_with_cues | Extract number/dimension pairs as review signals, not as semantic claims. | موثق | 150 | [SRC-138992B1FC-L000150](../agents/answer_validation.py#L150) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L164) | متغير/ثابت Python | _REQUIREMENT_ALIAS_GROUPS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 164 | [SRC-138992B1FC-L000164](../agents/answer_validation.py#L164) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L175) | دالة | _alias_token_groups | لا توجد Docstring. | ناقص | 175 | [SRC-138992B1FC-L000175](../agents/answer_validation.py#L175) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L185) | دالة | _matched_target_terms | Match target terms conservatively, with a small explicit Arabic/English alias list. | موثق | 185 | [SRC-138992B1FC-L000185](../agents/answer_validation.py#L185) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L196) | دالة | build_requirement_evidence_ledger | Link requirements to query provenance and lexical source candidates, never to truth. | موثق | 196 | [SRC-138992B1FC-L000196](../agents/answer_validation.py#L196) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L297) | دالة | _audit_source_metadata | Aggregate the shared source audit; never claim semantic verification. | موثق | 297 | [SRC-138992B1FC-L000297](../agents/answer_validation.py#L297) |
+| [agents/answer_validation.py](../agents/answer_validation.py#L366) | دالة | audit_answer_integrity | Return bounded lexical checks; never label them as semantic fact verification. | موثق | 366 | [SRC-138992B1FC-L000366](../agents/answer_validation.py#L366) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L7) | متغير/ثابت Python | MAX_PLAN_QUERIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 7 | [SRC-01273BA196-L000007](../agents/aspect_planning.py#L7) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L8) | متغير/ثابت Python | MAX_ASPECTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-01273BA196-L000008](../agents/aspect_planning.py#L8) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L10) | متغير/ثابت Python | _ASPECT_MARKER_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-01273BA196-L000010](../agents/aspect_planning.py#L10) |

@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000135 إلى SRC-5587371288-L000423
+- النطاق: SRC-7D6FC391EC-L000173 إلى SRC-5587371288-L000461
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,44 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-7D6FC391EC-L000135](../../agents/claim_evidence.py#L135) | 135 | `"    sources: list[dict[str, Any]] \| None,"` | — |
-| [SRC-7D6FC391EC-L000136](../../agents/claim_evidence.py#L136) | 136 | `"    answer_integrity: dict[str, Any] \| None = None,"` | — |
-| [SRC-7D6FC391EC-L000137](../../agents/claim_evidence.py#L137) | 137 | `"    *,"` | — |
-| [SRC-7D6FC391EC-L000138](../../agents/claim_evidence.py#L138) | 138 | `"    max_segments: int = 40,"` | — |
-| [SRC-7D6FC391EC-L000139](../../agents/claim_evidence.py#L139) | 139 | `"    max_citable_sources: int = 12,"` | — |
-| [SRC-7D6FC391EC-L000140](../../agents/claim_evidence.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
-| [SRC-7D6FC391EC-L000141](../../agents/claim_evidence.py#L141) | 141 | `"    \"\"\"Return bounded sentence candidates with validated source-index traceability.\"\"\""` | — |
-| [SRC-7D6FC391EC-L000142](../../agents/claim_evidence.py#L142) | 142 | `"    safe_answer = str(answer or \"\")[:24000]"` | — |
-| [SRC-7D6FC391EC-L000143](../../agents/claim_evidence.py#L143) | 143 | `"    safe_sources = ["` | — |
-| [SRC-7D6FC391EC-L000144](../../agents/claim_evidence.py#L144) | 144 | `"        source for source in (sources or []) if isinstance(source, dict)"` | — |
-| [SRC-7D6FC391EC-L000145](../../agents/claim_evidence.py#L145) | 145 | `"    ][:max(0, min(int(max_citable_sources), 40))]"` | — |
-| [SRC-7D6FC391EC-L000146](../../agents/claim_evidence.py#L146) | 146 | `"    segments = ["` | — |
-| [SRC-7D6FC391EC-L000147](../../agents/claim_evidence.py#L147) | 147 | `"        part.strip()"` | — |
-| [SRC-7D6FC391EC-L000148](../../agents/claim_evidence.py#L148) | 148 | `"        for part in _SENTENCE_SPLIT.split(safe_answer)"` | — |
-| [SRC-7D6FC391EC-L000149](../../agents/claim_evidence.py#L149) | 149 | `"        if part and part.strip()"` | — |
-| [SRC-7D6FC391EC-L000150](../../agents/claim_evidence.py#L150) | 150 | `"    ]"` | — |
-| [SRC-7D6FC391EC-L000151](../../agents/claim_evidence.py#L151) | 151 | `"    truncated = len(segments) > max_segments"` | — |
-| [SRC-7D6FC391EC-L000152](../../agents/claim_evidence.py#L152) | 152 | `"    segments = segments[:max(0, min(int(max_segments), 100))]"` | — |
-| [SRC-7D6FC391EC-L000153](../../agents/claim_evidence.py#L153) | 153 | `"    integrity = answer_integrity if isinstance(answer_integrity, dict) else {}"` | — |
-| [SRC-7D6FC391EC-L000154](../../agents/claim_evidence.py#L154) | 154 | `"    alignments = integrity.get(\"citation_lexical_alignment\")"` | — |
-| [SRC-7D6FC391EC-L000155](../../agents/claim_evidence.py#L155) | 155 | `"    alignment_by_sentence = {"` | — |
-| [SRC-7D6FC391EC-L000156](../../agents/claim_evidence.py#L156) | 156 | `"        int(item[\"sentence_number\"]): item"` | — |
-| [SRC-7D6FC391EC-L000157](../../agents/claim_evidence.py#L157) | 157 | `"        for item in alignments"` | — |
-| [SRC-7D6FC391EC-L000158](../../agents/claim_evidence.py#L158) | 158 | `"        if isinstance(item, dict) and isinstance(item.get(\"sentence_number\"), int)"` | — |
-| [SRC-7D6FC391EC-L000159](../../agents/claim_evidence.py#L159) | 159 | `"    } if isinstance(alignments, list) else {}"` | — |
-| [SRC-7D6FC391EC-L000160](../../agents/claim_evidence.py#L160) | 160 | `""` | — |
-| [SRC-7D6FC391EC-L000161](../../agents/claim_evidence.py#L161) | 161 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-7D6FC391EC-L000162](../../agents/claim_evidence.py#L162) | 162 | `"    valid_refs = invalid_refs = cited = uncited = readable_cited = 0"` | — |
-| [SRC-7D6FC391EC-L000163](../../agents/claim_evidence.py#L163) | 163 | `"    lexical_signals = weak_signals = 0"` | — |
-| [SRC-7D6FC391EC-L000164](../../agents/claim_evidence.py#L164) | 164 | `""` | — |
-| [SRC-7D6FC391EC-L000165](../../agents/claim_evidence.py#L165) | 165 | `"    for number, segment in enumerate(segments, 1):"` | — |
-| [SRC-7D6FC391EC-L000166](../../agents/claim_evidence.py#L166) | 166 | `"        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]"` | — |
-| [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"        refs: list[dict[str, Any]] = []"` | — |
-| [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"        has_readable = False"` | — |
-| [SRC-7D6FC391EC-L000169](../../agents/claim_evidence.py#L169) | 169 | `"        for index in indexes:"` | — |
-| [SRC-7D6FC391EC-L000170](../../agents/claim_evidence.py#L170) | 170 | `"            if index < 1 or index > len(safe_sources):"` | — |
-| [SRC-7D6FC391EC-L000171](../../agents/claim_evidence.py#L171) | 171 | `"                invalid_refs += 1"` | — |
-| [SRC-7D6FC391EC-L000172](../../agents/claim_evidence.py#L172) | 172 | `"                refs.append({"` | — |
 | [SRC-7D6FC391EC-L000173](../../agents/claim_evidence.py#L173) | 173 | `"                    \"source_index\": index, \"reference_status\": \"index_out_of_citable_range\","` | — |
 | [SRC-7D6FC391EC-L000174](../../agents/claim_evidence.py#L174) | 174 | `"                    \"title\": \"\", \"url\": \"\", \"evidence_basis\": \"unavailable\","` | — |
 | [SRC-7D6FC391EC-L000175](../../agents/claim_evidence.py#L175) | 175 | `"                })"` | — |
@@ -834,3 +796,41 @@
 | [SRC-5587371288-L000421](../../agents/intent_router.py#L421) | 421 | `"            if len(remainder) >= 8:"` | — |
 | [SRC-5587371288-L000422](../../agents/intent_router.py#L422) | 422 | `"                return True"` | — |
 | [SRC-5587371288-L000423](../../agents/intent_router.py#L423) | 423 | `"    # Also allow a concise direct form such as \"لخص: [pasted paragraph]\"."` | — |
+| [SRC-5587371288-L000424](../../agents/intent_router.py#L424) | 424 | `"    return bool("` | — |
+| [SRC-5587371288-L000425](../../agents/intent_router.py#L425) | 425 | `"        re.search("` | — |
+| [SRC-5587371288-L000426](../../agents/intent_router.py#L426) | 426 | `"            r\"^\\s*(?:لخص(?:\\s+لي)?\|تلخيص\|summari[sz]e\|summary)\\s*[:：]\\s*\\S.{12,}$\","` | — |
+| [SRC-5587371288-L000427](../../agents/intent_router.py#L427) | 427 | `"            question,"` | — |
+| [SRC-5587371288-L000428](../../agents/intent_router.py#L428) | 428 | `"            flags=re.IGNORECASE,"` | — |
+| [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `"        )"` | — |
+| [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"    )"` | — |
+| [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `""` | — |
+| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `""` | — |
+| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"def route_intent("` | — |
+| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"    question: str,"` | — |
+| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"    history: Any = None,"` | — |
+| [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"    mode: str = \"auto\","` | — |
+| [SRC-5587371288-L000437](../../agents/intent_router.py#L437) | 437 | `"    *,"` | — |
+| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"    capability_question: bool = False,"` | — |
+| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"    requires_web: bool = False,"` | — |
+| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `") -> dict[str, Any]:"` | — |
+| [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"    \"\"\"Return a deterministic route and auditable reason for a user question.\"\"\""` | — |
+| [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
+| [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `""` | — |
+| [SRC-5587371288-L000444](../../agents/intent_router.py#L444) | 444 | `"    # If the assistant just asked for a missing referent, bind the user's concise"` | — |
+| [SRC-5587371288-L000445](../../agents/intent_router.py#L445) | 445 | `"    # reply to that pending question instead of answering the entity name in isolation."` | — |
+| [SRC-5587371288-L000446](../../agents/intent_router.py#L446) | 446 | `"    if _is_clarification_answer(question, history):"` | — |
+| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"        return {"` | — |
+| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `"            \"route\": \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"            \"reason\": \"answer_to_pending_clarification\","` | — |
+| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"            \"context_available\": True,"` | — |
+| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"        }"` | — |
+| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `""` | — |
+| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"    context_available = _has_context(history)"` | — |
+| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `""` | — |
+| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
+| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"    # questions before honoring the UI's explicit research mode."` | — |
+| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"    if _needs_clarification(question) and not context_available:"` | — |
+| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"        return {"` | — |
+| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"            \"route\": \"CLARIFY\","` | — |
+| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
