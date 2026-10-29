@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000776 إلى SRC-D4963BDA6A-L000223
+- النطاق: SRC-90FAA34ADE-L000766 إلى SRC-D4963BDA6A-L000213
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000766](../../tests/fixtures/answer_quality_cases.json#L766) | 766 | `"        \"Invents a model score or review transcript\""` | — |
+| [SRC-90FAA34ADE-L000767](../../tests/fixtures/answer_quality_cases.json#L767) | 767 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000768](../../tests/fixtures/answer_quality_cases.json#L768) | 768 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000769](../../tests/fixtures/answer_quality_cases.json#L769) | 769 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000770](../../tests/fixtures/answer_quality_cases.json#L770) | 770 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000771](../../tests/fixtures/answer_quality_cases.json#L771) | 771 | `"      \"case_id\": \"AQ-027\","` | — |
+| [SRC-90FAA34ADE-L000772](../../tests/fixtures/answer_quality_cases.json#L772) | 772 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
+| [SRC-90FAA34ADE-L000773](../../tests/fixtures/answer_quality_cases.json#L773) | 773 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000774](../../tests/fixtures/answer_quality_cases.json#L774) | 774 | `"      \"question\": \"هل أكيد الشركة دي نصابة؟ كل اللي عندي تعليق واحد مجهول بيقول كده.\","` | — |
+| [SRC-90FAA34ADE-L000775](../../tests/fixtures/answer_quality_cases.json#L775) | 775 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000776](../../tests/fixtures/answer_quality_cases.json#L776) | 776 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000777](../../tests/fixtures/answer_quality_cases.json#L777) | 777 | `"        \"يوضح أن تعليقًا مجهولًا واحدًا لا يثبت الاحتيال\","` | — |
 | [SRC-90FAA34ADE-L000778](../../tests/fixtures/answer_quality_cases.json#L778) | 778 | `"        \"يقترح التحقق من مصادر موثوقة أو الجهات الرسمية دون اتهام قطعي\","` | — |
@@ -815,13 +825,3 @@
 | [SRC-D4963BDA6A-L000211](../../tests/fixtures/answer_quality_reviews_template.json#L211) | 211 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000212](../../tests/fixtures/answer_quality_reviews_template.json#L212) | 212 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000213](../../tests/fixtures/answer_quality_reviews_template.json#L213) | 213 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000214](../../tests/fixtures/answer_quality_reviews_template.json#L214) | 214 | `"      \"case_id\": \"AQ-042\","` | — |
-| [SRC-D4963BDA6A-L000215](../../tests/fixtures/answer_quality_reviews_template.json#L215) | 215 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000216](../../tests/fixtures/answer_quality_reviews_template.json#L216) | 216 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000217](../../tests/fixtures/answer_quality_reviews_template.json#L217) | 217 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000218](../../tests/fixtures/answer_quality_reviews_template.json#L218) | 218 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000219](../../tests/fixtures/answer_quality_reviews_template.json#L219) | 219 | `"      \"case_id\": \"AQ-043\","` | — |
-| [SRC-D4963BDA6A-L000220](../../tests/fixtures/answer_quality_reviews_template.json#L220) | 220 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000221](../../tests/fixtures/answer_quality_reviews_template.json#L221) | 221 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000222](../../tests/fixtures/answer_quality_reviews_template.json#L222) | 222 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000223](../../tests/fixtures/answer_quality_reviews_template.json#L223) | 223 | `"    {"` | — |

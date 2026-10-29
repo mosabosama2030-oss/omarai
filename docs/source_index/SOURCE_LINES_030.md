@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000267 إلى SRC-547CAF1FE3-L000127
+- النطاق: SRC-4FFD5AFC54-L000257 إلى SRC-547CAF1FE3-L000117
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000257](../../scripts/run_answer_quality_benchmark.py#L257) | 257 | `"        raise ValueError(\"Base URL must be a non-empty HTTP(S) origin.\")"` | — |
+| [SRC-4FFD5AFC54-L000258](../../scripts/run_answer_quality_benchmark.py#L258) | 258 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000259](../../scripts/run_answer_quality_benchmark.py#L259) | 259 | `"        parsed = urllib.parse.urlsplit(base_url.strip())"` | — |
+| [SRC-4FFD5AFC54-L000260](../../scripts/run_answer_quality_benchmark.py#L260) | 260 | `"        scheme = parsed.scheme.lower()"` | — |
+| [SRC-4FFD5AFC54-L000261](../../scripts/run_answer_quality_benchmark.py#L261) | 261 | `"        host = (parsed.hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-4FFD5AFC54-L000262](../../scripts/run_answer_quality_benchmark.py#L262) | 262 | `"        port = parsed.port"` | — |
+| [SRC-4FFD5AFC54-L000263](../../scripts/run_answer_quality_benchmark.py#L263) | 263 | `"    except ValueError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000264](../../scripts/run_answer_quality_benchmark.py#L264) | 264 | `"        raise ValueError(\"Base URL is malformed.\") from exc"` | — |
+| [SRC-4FFD5AFC54-L000265](../../scripts/run_answer_quality_benchmark.py#L265) | 265 | `""` | — |
+| [SRC-4FFD5AFC54-L000266](../../scripts/run_answer_quality_benchmark.py#L266) | 266 | `"    if scheme not in {\"http\", \"https\"} or not host:"` | — |
 | [SRC-4FFD5AFC54-L000267](../../scripts/run_answer_quality_benchmark.py#L267) | 267 | `"        raise ValueError(\"Base URL must use HTTP or HTTPS and include a hostname.\")"` | — |
 | [SRC-4FFD5AFC54-L000268](../../scripts/run_answer_quality_benchmark.py#L268) | 268 | `"    if parsed.username is not None or parsed.password is not None:"` | — |
 | [SRC-4FFD5AFC54-L000269](../../scripts/run_answer_quality_benchmark.py#L269) | 269 | `"        raise ValueError(\"Base URL must not include a username or password.\")"` | — |
@@ -824,13 +834,3 @@
 | [SRC-547CAF1FE3-L000115](../../scripts/sqlite_backup_restore.py#L115) | 115 | `"def main() -> int:"` | — |
 | [SRC-547CAF1FE3-L000116](../../scripts/sqlite_backup_restore.py#L116) | 116 | `"    parser = argparse.ArgumentParser("` | — |
 | [SRC-547CAF1FE3-L000117](../../scripts/sqlite_backup_restore.py#L117) | 117 | `"        description=("` | — |
-| [SRC-547CAF1FE3-L000118](../../scripts/sqlite_backup_restore.py#L118) | 118 | `"            \"Back up or restore an Omarai SQLite leads database. \""` | — |
-| [SRC-547CAF1FE3-L000119](../../scripts/sqlite_backup_restore.py#L119) | 119 | `"            \"The destination must not already exist.\""` | — |
-| [SRC-547CAF1FE3-L000120](../../scripts/sqlite_backup_restore.py#L120) | 120 | `"        )"` | — |
-| [SRC-547CAF1FE3-L000121](../../scripts/sqlite_backup_restore.py#L121) | 121 | `"    )"` | — |
-| [SRC-547CAF1FE3-L000122](../../scripts/sqlite_backup_restore.py#L122) | 122 | `"    subparsers = parser.add_subparsers(dest=\"command\", required=True)"` | — |
-| [SRC-547CAF1FE3-L000123](../../scripts/sqlite_backup_restore.py#L123) | 123 | `"    backup_parser = subparsers.add_parser(\"backup\", help=\"create a verified snapshot\")"` | — |
-| [SRC-547CAF1FE3-L000124](../../scripts/sqlite_backup_restore.py#L124) | 124 | `"    backup_parser.add_argument(\"source\", help=\"existing Omarai SQLite database path\")"` | — |
-| [SRC-547CAF1FE3-L000125](../../scripts/sqlite_backup_restore.py#L125) | 125 | `"    backup_parser.add_argument(\"destination\", help=\"new backup path; must not exist\")"` | — |
-| [SRC-547CAF1FE3-L000126](../../scripts/sqlite_backup_restore.py#L126) | 126 | `"    restore_parser = subparsers.add_parser(\"restore\", help=\"restore to a new database file\")"` | — |
-| [SRC-547CAF1FE3-L000127](../../scripts/sqlite_backup_restore.py#L127) | 127 | `"    restore_parser.add_argument(\"source\", help=\"existing verified backup path\")"` | — |

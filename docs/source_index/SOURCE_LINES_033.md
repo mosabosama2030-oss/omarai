@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000224 إلى SRC-2477C41448-L000089
+- النطاق: SRC-D4963BDA6A-L000214 إلى SRC-2477C41448-L000079
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000214](../../tests/fixtures/answer_quality_reviews_template.json#L214) | 214 | `"      \"case_id\": \"AQ-042\","` | — |
+| [SRC-D4963BDA6A-L000215](../../tests/fixtures/answer_quality_reviews_template.json#L215) | 215 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000216](../../tests/fixtures/answer_quality_reviews_template.json#L216) | 216 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000217](../../tests/fixtures/answer_quality_reviews_template.json#L217) | 217 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000218](../../tests/fixtures/answer_quality_reviews_template.json#L218) | 218 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000219](../../tests/fixtures/answer_quality_reviews_template.json#L219) | 219 | `"      \"case_id\": \"AQ-043\","` | — |
+| [SRC-D4963BDA6A-L000220](../../tests/fixtures/answer_quality_reviews_template.json#L220) | 220 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000221](../../tests/fixtures/answer_quality_reviews_template.json#L221) | 221 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000222](../../tests/fixtures/answer_quality_reviews_template.json#L222) | 222 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000223](../../tests/fixtures/answer_quality_reviews_template.json#L223) | 223 | `"    {"` | — |
 | [SRC-D4963BDA6A-L000224](../../tests/fixtures/answer_quality_reviews_template.json#L224) | 224 | `"      \"case_id\": \"AQ-044\","` | — |
 | [SRC-D4963BDA6A-L000225](../../tests/fixtures/answer_quality_reviews_template.json#L225) | 225 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000226](../../tests/fixtures/answer_quality_reviews_template.json#L226) | 226 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
@@ -851,13 +861,3 @@
 | [SRC-2477C41448-L000077](../../tests/test_answer_quality_provider_usage.py#L77) | 77 | `"        model=\"test/model\","` | — |
 | [SRC-2477C41448-L000078](../../tests/test_answer_quality_provider_usage.py#L78) | 78 | `"    )"` | — |
 | [SRC-2477C41448-L000079](../../tests/test_answer_quality_provider_usage.py#L79) | 79 | `"    assert answer == \"إجابة اختبارية\""` | — |
-| [SRC-2477C41448-L000080](../../tests/test_answer_quality_provider_usage.py#L80) | 80 | `"    assert agent.model_usage[0][\"provider_usage\"] == {"` | — |
-| [SRC-2477C41448-L000081](../../tests/test_answer_quality_provider_usage.py#L81) | 81 | `"        \"prompt_tokens\": 10,"` | — |
-| [SRC-2477C41448-L000082](../../tests/test_answer_quality_provider_usage.py#L82) | 82 | `"        \"completion_tokens\": 7,"` | — |
-| [SRC-2477C41448-L000083](../../tests/test_answer_quality_provider_usage.py#L83) | 83 | `"        \"total_tokens\": 17,"` | — |
-| [SRC-2477C41448-L000084](../../tests/test_answer_quality_provider_usage.py#L84) | 84 | `"        \"cost_usd\": 0.0004,"` | — |
-| [SRC-2477C41448-L000085](../../tests/test_answer_quality_provider_usage.py#L85) | 85 | `"    }"` | — |
-| [SRC-2477C41448-L000086](../../tests/test_answer_quality_provider_usage.py#L86) | 86 | `"    assert \"debug_blob\" not in str(agent.model_usage)"` | — |
-| [SRC-2477C41448-L000087](../../tests/test_answer_quality_provider_usage.py#L87) | 87 | `""` | — |
-| [SRC-2477C41448-L000088](../../tests/test_answer_quality_provider_usage.py#L88) | 88 | `""` | — |
-| [SRC-2477C41448-L000089](../../tests/test_answer_quality_provider_usage.py#L89) | 89 | `"def test_openrouter_cost_requires_real_hostname_boundary():"` | — |
