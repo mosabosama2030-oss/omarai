@@ -129,11 +129,11 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["baseline"]["metrics"]["latency_ms"]["p50"] == 150
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 100
     assert result["candidate"]["metrics"]["latency_ms"]["max"] == 120
-    assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(1 / 30)
+    assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(0.0333)
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
-    assert result["runtime_deltas"]["required_tool_success_rate"]["baseline"] == pytest.approx(1 / 30)
+    assert result["runtime_deltas"]["required_tool_success_rate"]["baseline"] == pytest.approx(0.0333)
     assert result["runtime_deltas"]["required_tool_success_rate"]["candidate"] == 1.0
-    assert result["runtime_deltas"]["required_tool_success_rate"]["delta"] == pytest.approx(29 / 30)
+    assert result["runtime_deltas"]["required_tool_success_rate"]["delta"] == pytest.approx(0.9667)
     assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.003
     assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] == pytest.approx(0.070)
     assert result["runtime_deltas"]["complete_request_cost_usd"]["delta"] == pytest.approx(-0.011)
