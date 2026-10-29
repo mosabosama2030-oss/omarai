@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **244**
 - تعريفات Python بلا Docstring: **897**
 - تعريفات لا ينطبق عليها Docstring: **294**
-- الرموز الساكنة الإضافية: **1789**
-- الأسطر النصية المفهرسة حرفيًا: **37911**
+- الرموز الساكنة الإضافية: **1790**
+- الأسطر النصية المفهرسة حرفيًا: **37912**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -81,7 +81,7 @@
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 76904 | 852 | جرد الملف + عناوين Markdown |
 | FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 22759 | 142 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
-| FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 4756 | 48 | جرد الملف + عناوين Markdown |
+| FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 5046 | 49 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
@@ -2599,23 +2599,24 @@
 | [docs/README.md](README.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 11 | [SRC-0B5CA119D2-L000011](README.md#L11) |
 | [docs/README.md](README.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 12 | [SRC-0B5CA119D2-L000012](README.md#L12) |
 | [docs/README.md](README.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 13 | [SRC-0B5CA119D2-L000013](README.md#L13) |
-| [docs/README.md](README.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 14 | [SRC-0B5CA119D2-L000014](README.md#L14) |
-| [docs/README.md](README.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 15 | [SRC-0B5CA119D2-L000015](README.md#L15) |
-| [docs/README.md](README.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPERATIONS_AR | 16 | [SRC-0B5CA119D2-L000016](README.md#L16) |
-| [docs/README.md](README.md#L17) | عنوان Markdown (H2) | معمارية ومتطلبات التأسيس | 17 | [SRC-0B5CA119D2-L000017](README.md#L17) |
-| [docs/README.md](README.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 20 | [SRC-0B5CA119D2-L000020](README.md#L20) |
-| [docs/README.md](README.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 21 | [SRC-0B5CA119D2-L000021](README.md#L21) |
-| [docs/README.md](README.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 22 | [SRC-0B5CA119D2-L000022](README.md#L22) |
-| [docs/README.md](README.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 23 | [SRC-0B5CA119D2-L000023](README.md#L23) |
-| [docs/README.md](README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 24 | [SRC-0B5CA119D2-L000024](README.md#L24) |
-| [docs/README.md](README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 25 | [SRC-0B5CA119D2-L000025](README.md#L25) |
-| [docs/README.md](README.md#L26) | عنوان Markdown (H2) | أدوات وفهرسة المستودع | 26 | [SRC-0B5CA119D2-L000026](README.md#L26) |
-| [docs/README.md](README.md#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 29 | [SRC-0B5CA119D2-L000029](README.md#L29) |
-| [docs/README.md](README.md#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 30 | [SRC-0B5CA119D2-L000030](README.md#L30) |
-| [docs/README.md](README.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 31 | [SRC-0B5CA119D2-L000031](README.md#L31) |
-| [docs/README.md](README.md#L41) | عنوان Markdown (H2) | سياسة تنظيم الوثائق | 41 | [SRC-0B5CA119D2-L000041](README.md#L41) |
-| [docs/README.md](README.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 47 | [SRC-0B5CA119D2-L000047](README.md#L47) |
-| [docs/README.md](README.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 47 | [SRC-0B5CA119D2-L000047](README.md#L47) |
+| [docs/README.md](README.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 14 | [SRC-0B5CA119D2-L000014](README.md#L14) |
+| [docs/README.md](README.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 15 | [SRC-0B5CA119D2-L000015](README.md#L15) |
+| [docs/README.md](README.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 16 | [SRC-0B5CA119D2-L000016](README.md#L16) |
+| [docs/README.md](README.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPERATIONS_AR | 17 | [SRC-0B5CA119D2-L000017](README.md#L17) |
+| [docs/README.md](README.md#L18) | عنوان Markdown (H2) | معمارية ومتطلبات التأسيس | 18 | [SRC-0B5CA119D2-L000018](README.md#L18) |
+| [docs/README.md](README.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 21 | [SRC-0B5CA119D2-L000021](README.md#L21) |
+| [docs/README.md](README.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 22 | [SRC-0B5CA119D2-L000022](README.md#L22) |
+| [docs/README.md](README.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 23 | [SRC-0B5CA119D2-L000023](README.md#L23) |
+| [docs/README.md](README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 24 | [SRC-0B5CA119D2-L000024](README.md#L24) |
+| [docs/README.md](README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 25 | [SRC-0B5CA119D2-L000025](README.md#L25) |
+| [docs/README.md](README.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 26 | [SRC-0B5CA119D2-L000026](README.md#L26) |
+| [docs/README.md](README.md#L27) | عنوان Markdown (H2) | أدوات وفهرسة المستودع | 27 | [SRC-0B5CA119D2-L000027](README.md#L27) |
+| [docs/README.md](README.md#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 30 | [SRC-0B5CA119D2-L000030](README.md#L30) |
+| [docs/README.md](README.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 31 | [SRC-0B5CA119D2-L000031](README.md#L31) |
+| [docs/README.md](README.md#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 32 | [SRC-0B5CA119D2-L000032](README.md#L32) |
+| [docs/README.md](README.md#L42) | عنوان Markdown (H2) | سياسة تنظيم الوثائق | 42 | [SRC-0B5CA119D2-L000042](README.md#L42) |
+| [docs/README.md](README.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 48 | [SRC-0B5CA119D2-L000048](README.md#L48) |
+| [docs/README.md](README.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 48 | [SRC-0B5CA119D2-L000048](README.md#L48) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | عنوان Markdown (H1) | دليل البحث المتقدم والموصلات الاجتماعية — Omarai | 1 | [SRC-D911B73392-L000001](RESEARCH_CONNECTORS_AR.md#L1) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L4) | عنوان Markdown (H2) | 1. كيف يجري Omarai البحث؟ | 4 | [SRC-D911B73392-L000004](RESEARCH_CONNECTORS_AR.md#L4) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L16) | عنوان Markdown (H2) | 2.1 واجهات بحث ويب اختيارية | 16 | [SRC-D911B73392-L000016](RESEARCH_CONNECTORS_AR.md#L16) |
