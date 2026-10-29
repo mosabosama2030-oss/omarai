@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "OMARAI-REDTEAM-001",
+  "benchmark_version": "1.0.0",
+  "template_only": true,
+  "warning": "Template only. No case has been run or reviewed; replace NOT_TESTED with REVIEWED only after applying the same explicit rubric to observed answers from the named build. Do not add metric scores to unreviewed entries.",
+  "reviews": [
+    {
+      "case_id": "AQ-001",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-002",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-003",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-004",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-005",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-006",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-007",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-008",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-009",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-010",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-011",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-012",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-013",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-014",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-015",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-016",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-017",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-018",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-019",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-020",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-021",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-022",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-023",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-024",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-025",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-026",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-027",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-028",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-029",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-030",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-031",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-032",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-033",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-034",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-035",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-036",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-037",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-038",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-039",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-040",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-041",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-042",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-043",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-044",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    },
+    {
+      "case_id": "AQ-045",
+      "status": "NOT_TESTED",
+      "notes": "Not reviewed yet. Do not treat this as a score."
+    }
+  ]
+}
