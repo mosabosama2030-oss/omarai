@@ -307,6 +307,33 @@ def test_response_metrics_separates_tool_status_from_http_success():
     assert successful_search["required_tool_statuses"][2]["status"] == "missing_matrix_row"
 
 
+def test_unknown_required_tool_status_blocks_complete_matrix():
+    mod = _load_runner()
+    metrics = mod._response_metrics(
+        {
+            "task_understanding": {
+                "tool_execution": {
+                    "required_tools": ["web_search"],
+                    "tool_status_matrix": [{
+                        "tool": "web_search",
+                        "required_by_task_spec": True,
+                        "status": "completed_maybe",
+                    }],
+                },
+            },
+            "search_report": {"search_outcome": "attempted_with_usable_sources"},
+            "sources": [{"url": "https://example.org"}],
+        },
+        expected_strategy="web_search",
+        transport_ok=True,
+    )
+    assert metrics["required_tool_statuses"][0]["status_observed"] is True
+    assert metrics["required_tool_statuses"][0]["status_valid"] is False
+    assert metrics["required_tool_statuses"][0]["successful_completion"] is False
+    assert metrics["required_tool_matrix_complete"] is False
+    assert metrics["required_tool_status_metrics_status"] == "INCOMPLETE_TOOL_STATUS_MATRIX"
+
+
 def test_search_success_label_requires_returned_source_rows():
     mod = _load_runner()
     metrics = mod._response_metrics(
