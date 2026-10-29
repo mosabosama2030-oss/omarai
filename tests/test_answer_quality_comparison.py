@@ -41,6 +41,7 @@ def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None, 
         "search_outcome": "attempted_with_usable_sources" if tool_status == "SUCCESS_WITH_USABLE_RESULTS" else "attempted_no_usable_sources",
         "provider_reported_model_cost_status": "COMPLETE_FOR_RETURNED_MODEL_CALLS" if cost is not None else "PROVIDER_COST_NOT_REPORTED",
         "request_cost_status": "RECONCILED_COMPLETE_REQUEST_COST" if request_cost is not None else "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED",
+        "required_tool_matrix_complete": True,
         "required_tool_statuses": (
             [{
                 "tool": "web_search",
@@ -129,6 +130,8 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["baseline"]["metrics"]["latency_ms"]["p50"] == 150
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 100
     assert result["candidate"]["metrics"]["latency_ms"]["max"] == 120
+    assert result["baseline"]["metrics"]["tool_usage"]["required_tool_matrix_coverage"]["score"] == 1.0
+    assert result["candidate"]["metrics"]["tool_usage"]["required_tool_matrix_coverage"]["score"] == 1.0
     assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(0.0333)
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
     assert result["runtime_deltas"]["required_tool_success_rate"]["baseline"] == pytest.approx(0.0333)
@@ -183,6 +186,41 @@ def test_run_validation_rejects_duplicate_ids_and_invalid_latency():
     errors = mod.validate_run(run, "run")
     assert any("duplicate case_id" in error for error in errors)
     assert any("elapsed_ms must be finite and non-negative" in error for error in errors)
+
+
+def test_comparison_blocks_incomplete_required_tool_matrix_coverage():
+    mod = load_module()
+    baseline = _full_run(build_sha="a" * 40, candidate=False)
+    candidate = _full_run(build_sha="b" * 40, candidate=True)
+    baseline["results"][0]["required_tool_matrix_complete"] = False
+    result = mod.compare_runs(
+        baseline,
+        candidate,
+        corpus=mod.load_json_object(CORPUS_PATH),
+        baseline_reviews=_reviews(correct=2, supported_citations=1),
+        candidate_reviews=_reviews(correct=3, supported_citations=2),
+    )
+    assert result["acceptance_status"] == "INCOMPLETE"
+    assert "baseline_required_tool_matrix_incomplete" in result["acceptance_blockers"]
+    assert result["baseline"]["metrics"]["tool_usage"]["required_tool_matrix_coverage"]["score"] < 1.0
+
+
+def test_comparison_blocks_partially_reconciled_request_costs():
+    mod = load_module()
+    baseline = _full_run(build_sha="a" * 40, candidate=False)
+    candidate = _full_run(build_sha="b" * 40, candidate=True)
+    baseline["results"][0]["request_cost_usd"] = None
+    baseline["results"][0]["request_cost_status"] = "PARTIAL_EXTERNAL_COST_RECONCILIATION"
+    result = mod.compare_runs(
+        baseline,
+        candidate,
+        corpus=mod.load_json_object(CORPUS_PATH),
+        baseline_reviews=_reviews(correct=2, supported_citations=1),
+        candidate_reviews=_reviews(correct=3, supported_citations=2),
+    )
+    assert result["acceptance_status"] == "INCOMPLETE"
+    assert "baseline_complete_request_cost_missing_or_partial" in result["acceptance_blockers"]
+    assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] is None
 
 
 def test_quality_comparison_rejects_incomplete_human_review_coverage():

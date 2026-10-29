@@ -268,6 +268,11 @@ def test_response_metrics_separates_tool_status_from_http_success():
             "model_calls": [],
             "task_understanding": {
                 "tool_execution": {
+                    "required_tools": [
+                        "web_search",
+                        "page_fetch",
+                        "public_social_search_if_configured",
+                    ],
                     "tool_status_matrix": [
                         {
                             "tool": "web_search",
@@ -278,11 +283,6 @@ def test_response_metrics_separates_tool_status_from_http_success():
                             "tool": "page_fetch",
                             "required_by_task_spec": True,
                             "status": "attempted_no_readable_pages",
-                        },
-                        {
-                            "tool": "claim_review_if_configured",
-                            "required_by_task_spec": False,
-                            "status": "not_required",
                         },
                     ],
                 },
@@ -296,12 +296,30 @@ def test_response_metrics_separates_tool_status_from_http_success():
     assert successful_search["source_count"] == 1
     assert successful_search["provider_reported_model_cost_usd"] == 0.0008
     assert successful_search["provider_reported_model_cost_status"] == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
-    assert successful_search["required_tool_count"] == 2
+    assert successful_search["required_tool_count"] == 3
     assert successful_search["required_tool_success_count"] == 1
-    assert successful_search["required_tool_success_rate"] == 0.5
+    assert successful_search["required_tool_success_rate"] == pytest.approx(0.3333)
+    assert successful_search["required_tool_matrix_complete"] is False
+    assert successful_search["required_tool_status_metrics_status"] == "INCOMPLETE_TOOL_STATUS_MATRIX"
     assert [item["tool"] for item in successful_search["required_tool_statuses"]] == [
-        "web_search", "page_fetch"
+        "web_search", "page_fetch", "public_social_search_if_configured"
     ]
+    assert successful_search["required_tool_statuses"][2]["status"] == "missing_matrix_row"
+
+
+def test_search_success_label_requires_returned_source_rows():
+    mod = _load_runner()
+    metrics = mod._response_metrics(
+        {
+            "search_report": {"search_outcome": "attempted_with_usable_sources"},
+            "sources": [],
+        },
+        expected_strategy="web_search",
+        transport_ok=True,
+    )
+    assert metrics["tool_status"] == "INCONSISTENT_SEARCH_OUTCOME_NO_RETURNED_SOURCES"
+    assert metrics["source_count"] == 0
+    assert metrics["required_tool_success_rate"] is None
 
 
 def test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation(tmp_path):

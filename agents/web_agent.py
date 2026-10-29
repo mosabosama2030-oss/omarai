@@ -6569,7 +6569,17 @@ def _normalized_provider_usage(
         if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
             normalized[source_key] = value
     cost_keys = ["cost_usd"]
-    if "openrouter.ai" in provider_base_url.lower():
+    provider_host = ""
+    if isinstance(provider_base_url, str):
+        try:
+            provider_host = (urllib.parse.urlsplit(provider_base_url.strip()).hostname or "").lower().rstrip(".")
+        except ValueError:
+            provider_host = ""
+    is_openrouter = (
+        provider_host == "openrouter.ai"
+        or provider_host.endswith(".openrouter.ai")
+    )
+    if is_openrouter:
         cost_keys.extend(["cost", "total_cost"])
     for source_key in cost_keys:
         value = usage.get(source_key)

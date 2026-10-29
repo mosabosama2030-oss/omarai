@@ -119,6 +119,18 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
         status = row.get("status")
         if isinstance(status, str):
             tool_status_counts[status] = tool_status_counts.get(status, 0) + 1
+    required_tool_matrix_telemetry_known = all(
+        isinstance(record.get("required_tool_matrix_complete"), bool)
+        for record in results
+    )
+    required_tool_matrix_complete_count = sum(
+        1 for record in results if record.get("required_tool_matrix_complete") is True
+    )
+    required_tool_matrix_incomplete_case_ids = [
+        record.get("case_id", "unknown")
+        for record in results
+        if record.get("required_tool_matrix_complete") is not True
+    ]
     complete_cost_cases = sum(
         1 for r in results
         if r.get("provider_reported_model_cost_status") == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
@@ -162,6 +174,21 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
                 if isinstance(r.get("required_tool_statuses"), list)
                 and r.get("required_tool_statuses")
             ),
+            "required_tool_matrix_coverage": {
+                "score": (
+                    round(required_tool_matrix_complete_count / len(results), 4)
+                    if results and required_tool_matrix_telemetry_known
+                    else None
+                ),
+                "complete_case_count": required_tool_matrix_complete_count,
+                "case_count": len(results),
+                "incomplete_case_ids": required_tool_matrix_incomplete_case_ids,
+                "status": (
+                    "SCORED_FROM_EXPLICIT_TOOL_MATRIX"
+                    if required_tool_matrix_telemetry_known
+                    else "NOT_MEASURED_REQUIRED_TOOL_MATRIX_TELEMETRY_MISSING"
+                ),
+            },
             "required_tool_success_semantics": (
                 "Only tool-specific completed-with-usable-output states count as success; "
                 "HTTP success and no-result attempts do not."
@@ -418,9 +445,19 @@ def compare_runs(
         "interpretation": [
             "The same benchmark version, case IDs, and exact question text were compared.",
             "HTTP transport success is not semantic correctness, and a successful search request is not proof that the answer is correct.",
+            "Required-tool success is scored only from complete tool-status matrices; missing required rows count as failures and block complete acceptance.",
             "Complete request cost is intentionally null because search connector costs are not consistently exposed; only explicit provider-reported model cost is summarized.",
         ],
     }
+    for label, metrics in (("baseline", before_runtime), ("candidate", after_runtime)):
+        matrix_coverage = metrics["tool_usage"]["required_tool_matrix_coverage"]
+        if (
+            matrix_coverage["status"] != "SCORED_FROM_EXPLICIT_TOOL_MATRIX"
+            or matrix_coverage["score"] != 1.0
+        ):
+            comparison["acceptance_blockers"].append(
+                f"{label}_required_tool_matrix_incomplete"
+            )
     sha_re = re.compile(r"^[0-9a-fA-F]{40}$")
     for label, run in (("baseline", baseline), ("candidate", candidate)):
         if not isinstance(run.get("build_sha"), str) or not sha_re.fullmatch(run["build_sha"]):

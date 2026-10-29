@@ -104,14 +104,25 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
     report = report if isinstance(report, dict) else {}
     outcome = report.get("search_outcome")
     pipeline = report.get("pipeline_completion_status")
+    source_rows = payload.get("sources")
+    source_rows_known = isinstance(source_rows, list)
+    source_count = len(source_rows) if source_rows_known else None
     if expected_strategy != "web_search":
         tool_status = "NOT_APPLICABLE"
     elif not transport_ok:
         tool_status = "TRANSPORT_FAILED"
     elif outcome == "attempted_with_usable_sources":
-        tool_status = "SUCCESS_WITH_USABLE_RESULTS"
+        if source_count is None:
+            tool_status = "UNKNOWN_SOURCE_COUNT"
+        elif source_count == 0:
+            tool_status = "INCONSISTENT_SEARCH_OUTCOME_NO_RETURNED_SOURCES"
+        else:
+            tool_status = "SUCCESS_WITH_USABLE_RESULTS"
     elif outcome == "attempted_no_usable_sources":
-        tool_status = "ATTEMPTED_NO_USABLE_RESULTS"
+        if source_count is not None and source_count > 0:
+            tool_status = "INCONSISTENT_SEARCH_OUTCOME_WITH_RETURNED_SOURCES"
+        else:
+            tool_status = "ATTEMPTED_NO_USABLE_RESULTS"
     elif outcome == "attempted_research_error":
         tool_status = "TOOL_FAILED"
     elif outcome == "unknown_after_budget_exhaustion":
@@ -126,7 +137,16 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
     tool_execution = task_understanding.get("tool_execution")
     tool_execution = tool_execution if isinstance(tool_execution, dict) else {}
     raw_tool_rows = tool_execution.get("tool_status_matrix")
-    raw_tool_rows = raw_tool_rows if isinstance(raw_tool_rows, list) else []
+    requirements_raw = tool_execution.get("required_tools")
+    required_tool_matrix_present = (
+        isinstance(raw_tool_rows, list) and isinstance(requirements_raw, list)
+    )
+    matrix_rows = [row for row in raw_tool_rows if isinstance(row, dict)] if isinstance(raw_tool_rows, list) else []
+    required_tool_names = [
+        name.strip()
+        for name in requirements_raw
+        if isinstance(name, str) and name.strip()
+    ] if isinstance(requirements_raw, list) else []
     successful_statuses = {
         "web_search": {"completed_with_results"},
         "page_fetch": {"completed_with_read_pages"},
@@ -135,17 +155,47 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
         "claim_review_if_configured": {"completed_model_assisted_review"},
     }
     required_tool_statuses = []
-    for row in raw_tool_rows:
-        if not isinstance(row, dict) or row.get("required_by_task_spec") is not True:
-            continue
-        tool = row.get("tool")
-        status = row.get("status")
-        if isinstance(tool, str) and isinstance(status, str):
-            required_tool_statuses.append({
-                "tool": tool,
-                "status": status,
-                "successful_completion": status in successful_statuses.get(tool, set()),
-            })
+    required_name_set = set(required_tool_names)
+    reported_required_names = {
+        row.get("tool")
+        for row in matrix_rows
+        if row.get("required_by_task_spec") is True and isinstance(row.get("tool"), str)
+    }
+    required_tool_matrix_complete = (
+        required_tool_matrix_present
+        and len(required_tool_names) == len(required_name_set)
+        and reported_required_names == required_name_set
+    )
+    for tool in dict.fromkeys(required_tool_names):
+        matches = [
+            row for row in matrix_rows
+            if row.get("tool") == tool and row.get("required_by_task_spec") is True
+        ]
+        if len(matches) == 0:
+            status = "missing_matrix_row"
+            status_observed = False
+            successful = False
+            required_tool_matrix_complete = False
+        elif len(matches) > 1:
+            status = "duplicate_matrix_rows"
+            status_observed = False
+            successful = False
+            required_tool_matrix_complete = False
+        else:
+            raw_status = matches[0].get("status")
+            status_observed = isinstance(raw_status, str) and bool(raw_status.strip())
+            status = raw_status if status_observed else "missing_status"
+            successful = status_observed and status in successful_statuses.get(tool, set())
+            if not status_observed:
+                required_tool_matrix_complete = False
+        required_tool_statuses.append({
+            "tool": tool,
+            "status": status,
+            "status_observed": status_observed,
+            "successful_completion": successful,
+        })
+    if expected_strategy == "web_search" and "web_search" not in required_name_set:
+        required_tool_matrix_complete = False
 
     calls = _model_calls_from_payload(payload)
     reported_costs = []
@@ -183,11 +233,15 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
             else None
         ),
         "required_tool_status_metrics_status": (
-            "SCORED_FROM_TOOL_EXECUTION_MATRIX"
-            if required_tool_statuses
-            else "NOT_MEASURED_NO_REQUIRED_TOOL_MATRIX"
+            "NOT_MEASURED_TOOL_REQUIREMENTS_OR_MATRIX_UNKNOWN"
+            if not required_tool_matrix_present
+            else "SCORED_FROM_TOOL_EXECUTION_MATRIX"
+            if required_tool_matrix_complete
+            else "INCOMPLETE_TOOL_STATUS_MATRIX"
         ),
-        "source_count": len(payload.get("sources", [])) if isinstance(payload.get("sources"), list) else None,
+        "required_tool_matrix_present": required_tool_matrix_present,
+        "required_tool_matrix_complete": required_tool_matrix_complete,
+        "source_count": source_count,
         "model_call_count": len(calls),
         "provider_reported_model_cost_usd": round(sum(reported_costs), 10) if reported_costs else None,
         "provider_reported_model_cost_call_count": len(reported_costs),

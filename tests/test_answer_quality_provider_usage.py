@@ -84,3 +84,17 @@ def test_completion_records_provider_usage_without_retaining_provider_body(monke
         "cost_usd": 0.0004,
     }
     assert "debug_blob" not in str(agent.model_usage)
+
+
+def test_openrouter_cost_requires_real_hostname_boundary():
+    normalized = _normalized_provider_usage(
+        {"cost": 0.05},
+        provider_base_url="https://openrouter.ai.attacker.example/api/v1",
+    )
+    assert normalized is None
+
+    normalized = _normalized_provider_usage(
+        {"cost": 0.05},
+        provider_base_url="https://evilopenrouter.ai/api/v1",
+    )
+    assert normalized is None
