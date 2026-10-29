@@ -3257,10 +3257,9 @@ class WebAgent:
                     remote_response_received=True,
                 )
                 self.model_usage.append(_model_usage_record(
-                    requested_model,
-                    candidate_model,
-                    data,
-                    self.base_url,
+                    requested_model, candidate_model,
+                    data, self.base_url,
+                    # Keep this to allowlisted usage counters, never raw provider data.
                 ))
                 return answer.strip()
             except urllib.error.HTTPError as exc:
