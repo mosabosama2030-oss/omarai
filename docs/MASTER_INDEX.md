@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **110**
 - ملفات Python المحللة: **66**
-- تعريفات Python المفهرسة: **1435**
+- تعريفات Python المفهرسة: **1436**
 - تعريفات Python موثقة بوجود Docstring: **244**
-- تعريفات Python بلا Docstring: **897**
+- تعريفات Python بلا Docstring: **898**
 - تعريفات لا ينطبق عليها Docstring: **294**
-- الرموز الساكنة الإضافية: **1794**
-- الأسطر النصية المفهرسة حرفيًا: **37960**
+- الرموز الساكنة الإضافية: **1795**
+- الأسطر النصية المفهرسة حرفيًا: **37980**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -100,7 +100,7 @@
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2635 | 70 | جرد الملف + AST Python |
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
 | FILE-6A7519AC10 | اختبارات | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L1) | Python | 6543 | 148 | جرد الملف + AST Python |
-| FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
+| FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 9183 | 250 | جرد الملف + AST Python |
 | FILE-2477C41448 | اختبارات | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L1) | Python | 2720 | 86 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 8529 | 271 | جرد الملف + AST Python |
@@ -824,6 +824,7 @@
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L206) | دالة | test_documented_high_risk_examples_match_json_categories | لا توجد Docstring. | ناقص | 206 | [SRC-4CCB1F172B-L000206](../tests/test_answer_quality_corpus.py#L206) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L218) | دالة | test_docs_mention_corrected_high_risk_ids | لا توجد Docstring. | ناقص | 218 | [SRC-4CCB1F172B-L000218](../tests/test_answer_quality_corpus.py#L218) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L225) | دالة | test_no_placeholder_corpus_content | لا توجد Docstring. | ناقص | 225 | [SRC-4CCB1F172B-L000225](../tests/test_answer_quality_corpus.py#L225) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L233) | دالة | test_human_review_template_matches_corpus_and_contains_no_scores | لا توجد Docstring. | ناقص | 233 | [SRC-4CCB1F172B-L000233](../tests/test_answer_quality_corpus.py#L233) |
 | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L8) | دالة | test_provider_usage_keeps_only_valid_numeric_fields_and_openrouter_usd_cost | لا توجد Docstring. | ناقص | 8 | [SRC-2477C41448-L000008](../tests/test_answer_quality_provider_usage.py#L8) |
 | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L28) | دالة | test_generic_provider_cost_is_not_assumed_to_be_usd | لا توجد Docstring. | ناقص | 28 | [SRC-2477C41448-L000028](../tests/test_answer_quality_provider_usage.py#L28) |
 | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L36) | دالة | test_nonfinite_or_negative_provider_cost_is_not_recorded | لا توجد Docstring. | ناقص | 36 | [SRC-2477C41448-L000036](../tests/test_answer_quality_provider_usage.py#L36) |
@@ -2893,6 +2894,7 @@
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOC_EXAMPLE_CATEGORY_EXPECTATIONS | 56 | [SRC-4CCB1F172B-L000056](../tests/test_answer_quality_corpus.py#L56) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CASE_ID_RE | 75 | [SRC-4CCB1F172B-L000075](../tests/test_answer_quality_corpus.py#L75) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L228) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEE_LOCAL_FILE | 228 | [SRC-4CCB1F172B-L000228](../tests/test_answer_quality_corpus.py#L228) |
+| [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L246) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 246 | [SRC-4CCB1F172B-L000246](../tests/test_answer_quality_corpus.py#L246) |
 | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 10 | [SRC-D186ED3822-L000010](../tests/test_answer_quality_review_scorecard.py#L10) |
 | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 44 | [SRC-D186ED3822-L000044](../tests/test_answer_quality_review_scorecard.py#L44) |
 | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR | 71 | [SRC-D186ED3822-L000071](../tests/test_answer_quality_review_scorecard.py#L71) |
