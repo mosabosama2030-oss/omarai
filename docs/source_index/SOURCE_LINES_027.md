@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000508 إلى SRC-69F3587825-L000095
+- النطاق: SRC-0F910493E8-L000503 إلى SRC-69F3587825-L000090
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000503](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L503) | 503 | `""` | — |
+| [SRC-0F910493E8-L000504](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L504) | 504 | `"---"` | — |
+| [SRC-0F910493E8-L000505](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L505) | 505 | `""` | — |
+| [SRC-0F910493E8-L000506](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L506) | 506 | `"# 15. قرارات يجب أن تبقى واضحة في الوثائق والمراجعات"` | — |
+| [SRC-0F910493E8-L000507](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L507) | 507 | `""` | — |
 | [SRC-0F910493E8-L000508](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L508) | 508 | `"1. **[PROPOSED]** Skill/Workflow-First وCapability-Based Security هما اتجاه التوسع الافتراضي."` | — |
 | [SRC-0F910493E8-L000509](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L509) | 509 | `"2. **[PROPOSED]** لا يوجد وكيل مستقل لكل سؤال أو تخصص بالضرورة."` | — |
 | [SRC-0F910493E8-L000510](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L510) | 510 | `"3. **[PROPOSED]** سياق تنفيذ مؤقت هو الافتراضي؛ الذاكرة الدائمة مشروطة بحاجة وسياسة."` | — |
@@ -523,7 +528,7 @@
 | [SRC-61B24BEFCC-L000151](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L151) | 151 | `"- **الاختبارات الجديدة:** tests/test_answer_quality_comparison.py وtests/test_answer_quality_provider_usage.py، مع إضافات إلى tests/test_answer_quality_runner.py. حالة CI لهذه الإضافات عند إنشاء هذا الملحق: **NOT_RUN**؛ لا يصح وصفها بأنها اجتازت الاختبارات حتى يرتبط تشغيل GitHub Actions برأس الفرع النهائي."` | — |
 | [SRC-61B24BEFCC-L000152](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L152) | 152 | `"- **المقاييس التي تحتاج annotations:** factual accuracy، retrieval precision/recall، faithfulness، citation support وwriting quality. قالب المراجعة المرفق يبدأ بكل الحالات NOT_TESTED. لا توجد نتائج بشرية فعلية قبل/بعد."` | — |
 | [SRC-61B24BEFCC-L000153](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L153) | 153 | `"- **التكلفة:** provider-reported model usage فقط عندما يرد من المزود. التكلفة الكاملة لا تحتسب إلا من --request-costs مع مصدر مصالحة خارجي يثبت USD والتكلفة الكاملة لكل حالة؛ مع غياب ذلك تظل UNKNOWN / NOT_MEASURED. المقارنة الكاملة تشترط تغطية جميع الحالات الـ45 ومراجعتها بشريًا في النسختين."` | — |
-| [SRC-61B24BEFCC-L000154](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L154) | 154 | `"- **القبول الحي:** **NOT_RUN**. لا يستدعي فحص التحقق البنيوي مزودًا خارجيًا. لم يجر تشغيل حي مدفوع أو تعديل استضافة ضمن هذا التغيير."` | — |
+| [SRC-61B24BEFCC-L000154](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L154) | 154 | `"- **القبول الحي:** **NOT_RUN**. لا يستدعي فحص التحقق البنيوي مزودًا خارجيًا. مشغّل LIVE يقرأ /api/health أولًا ويرفض أي مضيف لا يقدم build.sha كاملًا أو يخالف SHA المتوقع، قبل استدعاء /api/agent. لم يجر تشغيل حي مدفوع أو تعديل استضافة ضمن هذا التغيير."` | — |
 | [SRC-61B24BEFCC-L000155](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L155) | 155 | `"- **ما يلزم قبل ادعاء التحسن:** تشغيل النسخة السابقة والمرشح على نفس الأسئلة من إصدارين معلومين SHA، حفظ ملفي JSON، وتطبيق rubric بشري متطابق على مخرجات كل نسخة. دون هذا لا تُنشر نسبة تحسن."` | — |
 | [SRC-61B24BEFCC-L000156](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L156) | 156 | `""` | — |
 ## وثائق وفهرسة
@@ -856,8 +861,3 @@
 | [SRC-69F3587825-L000088](../search_code.py#L88) | 88 | `""` | — |
 | [SRC-69F3587825-L000089](../search_code.py#L89) | 89 | `"def _is_sensitive_path(path: Path) -> bool:"` | — |
 | [SRC-69F3587825-L000090](../search_code.py#L90) | 90 | `"    \"\"\"Return whether a local path appears to contain credentials or private runtime data.\"\"\""` | — |
-| [SRC-69F3587825-L000091](../search_code.py#L91) | 91 | `"    name = path.name.lower()"` | — |
-| [SRC-69F3587825-L000092](../search_code.py#L92) | 92 | `"    parent_names = {part.lower() for part in path.parts[:-1]}"` | — |
-| [SRC-69F3587825-L000093](../search_code.py#L93) | 93 | `"    if name in SECRET_BASENAMES or parent_names & EXCLUDED_DIRECTORIES:"` | — |
-| [SRC-69F3587825-L000094](../search_code.py#L94) | 94 | `"        return True"` | — |
-| [SRC-69F3587825-L000095](../search_code.py#L95) | 95 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |

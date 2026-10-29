@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001425 إلى SRC-F725E90B2A-L002224
+- النطاق: SRC-F725E90B2A-L001420 إلى SRC-F725E90B2A-L002219
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001420](../../tests/test_web_agent.py#L1420) | 1420 | `"    captured = {}"` | — |
+| [SRC-F725E90B2A-L001421](../../tests/test_web_agent.py#L1421) | 1421 | `""` | — |
+| [SRC-F725E90B2A-L001422](../../tests/test_web_agent.py#L1422) | 1422 | `"    def fake_completion(messages, **kwargs):"` | — |
+| [SRC-F725E90B2A-L001423](../../tests/test_web_agent.py#L1423) | 1423 | `"        captured[\"messages\"] = messages"` | — |
+| [SRC-F725E90B2A-L001424](../../tests/test_web_agent.py#L1424) | 1424 | `"        return \"<<<OMARAI_FINAL_ANSWER>>>تم تدقيق الإجابة.<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
 | [SRC-F725E90B2A-L001425](../../tests/test_web_agent.py#L1425) | 1425 | `""` | — |
 | [SRC-F725E90B2A-L001426](../../tests/test_web_agent.py#L1426) | 1426 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
 | [SRC-F725E90B2A-L001427](../../tests/test_web_agent.py#L1427) | 1427 | `"    result = agent._review_answer("` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L002217](../../tests/test_web_agent.py#L2217) | 2217 | `"    assert report[\"search_attempted\"] is None"` | — |
 | [SRC-F725E90B2A-L002218](../../tests/test_web_agent.py#L2218) | 2218 | `"    assert report[\"search_outcome\"] == \"unknown_after_research_error\""` | — |
 | [SRC-F725E90B2A-L002219](../../tests/test_web_agent.py#L2219) | 2219 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
-| [SRC-F725E90B2A-L002220](../../tests/test_web_agent.py#L2220) | 2220 | `"    assert report[\"unique_sources\"] is None"` | — |
-| [SRC-F725E90B2A-L002221](../../tests/test_web_agent.py#L2221) | 2221 | `""` | — |
-| [SRC-F725E90B2A-L002222](../../tests/test_web_agent.py#L2222) | 2222 | `""` | — |
-| [SRC-F725E90B2A-L002223](../../tests/test_web_agent.py#L2223) | 2223 | `""` | — |
-| [SRC-F725E90B2A-L002224](../../tests/test_web_agent.py#L2224) | 2224 | `"def test_diagnostics_tries_fallback_probe_when_first_probe_has_no_results(monkeypatch):"` | — |
