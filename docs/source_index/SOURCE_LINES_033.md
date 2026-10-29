@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000214 إلى SRC-2477C41448-L000079
+- النطاق: SRC-D4963BDA6A-L000188 إلى SRC-2477C41448-L000053
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000188](../../tests/fixtures/answer_quality_reviews_template.json#L188) | 188 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000189](../../tests/fixtures/answer_quality_reviews_template.json#L189) | 189 | `"      \"case_id\": \"AQ-037\","` | — |
+| [SRC-D4963BDA6A-L000190](../../tests/fixtures/answer_quality_reviews_template.json#L190) | 190 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000191](../../tests/fixtures/answer_quality_reviews_template.json#L191) | 191 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000192](../../tests/fixtures/answer_quality_reviews_template.json#L192) | 192 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000193](../../tests/fixtures/answer_quality_reviews_template.json#L193) | 193 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000194](../../tests/fixtures/answer_quality_reviews_template.json#L194) | 194 | `"      \"case_id\": \"AQ-038\","` | — |
+| [SRC-D4963BDA6A-L000195](../../tests/fixtures/answer_quality_reviews_template.json#L195) | 195 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000196](../../tests/fixtures/answer_quality_reviews_template.json#L196) | 196 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000197](../../tests/fixtures/answer_quality_reviews_template.json#L197) | 197 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000198](../../tests/fixtures/answer_quality_reviews_template.json#L198) | 198 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000199](../../tests/fixtures/answer_quality_reviews_template.json#L199) | 199 | `"      \"case_id\": \"AQ-039\","` | — |
+| [SRC-D4963BDA6A-L000200](../../tests/fixtures/answer_quality_reviews_template.json#L200) | 200 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000201](../../tests/fixtures/answer_quality_reviews_template.json#L201) | 201 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000202](../../tests/fixtures/answer_quality_reviews_template.json#L202) | 202 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000203](../../tests/fixtures/answer_quality_reviews_template.json#L203) | 203 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000204](../../tests/fixtures/answer_quality_reviews_template.json#L204) | 204 | `"      \"case_id\": \"AQ-040\","` | — |
+| [SRC-D4963BDA6A-L000205](../../tests/fixtures/answer_quality_reviews_template.json#L205) | 205 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000206](../../tests/fixtures/answer_quality_reviews_template.json#L206) | 206 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000207](../../tests/fixtures/answer_quality_reviews_template.json#L207) | 207 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000208](../../tests/fixtures/answer_quality_reviews_template.json#L208) | 208 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000209](../../tests/fixtures/answer_quality_reviews_template.json#L209) | 209 | `"      \"case_id\": \"AQ-041\","` | — |
+| [SRC-D4963BDA6A-L000210](../../tests/fixtures/answer_quality_reviews_template.json#L210) | 210 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000211](../../tests/fixtures/answer_quality_reviews_template.json#L211) | 211 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000212](../../tests/fixtures/answer_quality_reviews_template.json#L212) | 212 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000213](../../tests/fixtures/answer_quality_reviews_template.json#L213) | 213 | `"    {"` | — |
 | [SRC-D4963BDA6A-L000214](../../tests/fixtures/answer_quality_reviews_template.json#L214) | 214 | `"      \"case_id\": \"AQ-042\","` | — |
 | [SRC-D4963BDA6A-L000215](../../tests/fixtures/answer_quality_reviews_template.json#L215) | 215 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000216](../../tests/fixtures/answer_quality_reviews_template.json#L216) | 216 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
@@ -835,29 +861,3 @@
 | [SRC-2477C41448-L000051](../../tests/test_answer_quality_provider_usage.py#L51) | 51 | `"        status = 200"` | — |
 | [SRC-2477C41448-L000052](../../tests/test_answer_quality_provider_usage.py#L52) | 52 | `""` | — |
 | [SRC-2477C41448-L000053](../../tests/test_answer_quality_provider_usage.py#L53) | 53 | `"        def __enter__(self):"` | — |
-| [SRC-2477C41448-L000054](../../tests/test_answer_quality_provider_usage.py#L54) | 54 | `"            return self"` | — |
-| [SRC-2477C41448-L000055](../../tests/test_answer_quality_provider_usage.py#L55) | 55 | `""` | — |
-| [SRC-2477C41448-L000056](../../tests/test_answer_quality_provider_usage.py#L56) | 56 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-2477C41448-L000057](../../tests/test_answer_quality_provider_usage.py#L57) | 57 | `"            return False"` | — |
-| [SRC-2477C41448-L000058](../../tests/test_answer_quality_provider_usage.py#L58) | 58 | `""` | — |
-| [SRC-2477C41448-L000059](../../tests/test_answer_quality_provider_usage.py#L59) | 59 | `"        def read(self, limit):"` | — |
-| [SRC-2477C41448-L000060](../../tests/test_answer_quality_provider_usage.py#L60) | 60 | `"            return json.dumps({"` | — |
-| [SRC-2477C41448-L000061](../../tests/test_answer_quality_provider_usage.py#L61) | 61 | `"                \"choices\": [{"` | — |
-| [SRC-2477C41448-L000062](../../tests/test_answer_quality_provider_usage.py#L62) | 62 | `"                    \"message\": {\"content\": \"إجابة اختبارية\"},"` | — |
-| [SRC-2477C41448-L000063](../../tests/test_answer_quality_provider_usage.py#L63) | 63 | `"                    \"finish_reason\": \"stop\","` | — |
-| [SRC-2477C41448-L000064](../../tests/test_answer_quality_provider_usage.py#L64) | 64 | `"                }],"` | — |
-| [SRC-2477C41448-L000065](../../tests/test_answer_quality_provider_usage.py#L65) | 65 | `"                \"usage\": {"` | — |
-| [SRC-2477C41448-L000066](../../tests/test_answer_quality_provider_usage.py#L66) | 66 | `"                    \"prompt_tokens\": 10,"` | — |
-| [SRC-2477C41448-L000067](../../tests/test_answer_quality_provider_usage.py#L67) | 67 | `"                    \"completion_tokens\": 7,"` | — |
-| [SRC-2477C41448-L000068](../../tests/test_answer_quality_provider_usage.py#L68) | 68 | `"                    \"total_tokens\": 17,"` | — |
-| [SRC-2477C41448-L000069](../../tests/test_answer_quality_provider_usage.py#L69) | 69 | `"                    \"cost\": 0.0004,"` | — |
-| [SRC-2477C41448-L000070](../../tests/test_answer_quality_provider_usage.py#L70) | 70 | `"                    \"debug_blob\": \"private-provider-details\","` | — |
-| [SRC-2477C41448-L000071](../../tests/test_answer_quality_provider_usage.py#L71) | 71 | `"                },"` | — |
-| [SRC-2477C41448-L000072](../../tests/test_answer_quality_provider_usage.py#L72) | 72 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-2477C41448-L000073](../../tests/test_answer_quality_provider_usage.py#L73) | 73 | `""` | — |
-| [SRC-2477C41448-L000074](../../tests/test_answer_quality_provider_usage.py#L74) | 74 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", lambda request, timeout: FakeResponse())"` | — |
-| [SRC-2477C41448-L000075](../../tests/test_answer_quality_provider_usage.py#L75) | 75 | `"    answer = agent._request_completion("` | — |
-| [SRC-2477C41448-L000076](../../tests/test_answer_quality_provider_usage.py#L76) | 76 | `"        [{\"role\": \"user\", \"content\": \"اختبر\"}],"` | — |
-| [SRC-2477C41448-L000077](../../tests/test_answer_quality_provider_usage.py#L77) | 77 | `"        model=\"test/model\","` | — |
-| [SRC-2477C41448-L000078](../../tests/test_answer_quality_provider_usage.py#L78) | 78 | `"    )"` | — |
-| [SRC-2477C41448-L000079](../../tests/test_answer_quality_provider_usage.py#L79) | 79 | `"    assert answer == \"إجابة اختبارية\""` | — |
