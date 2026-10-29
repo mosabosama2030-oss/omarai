@@ -82,6 +82,7 @@ def build_claim_evidence_ledger(
                 "url": str(source.get("url") or "")[:2048],
                 "provider": str(source.get("provider") or "")[:80],
                 "evidence_basis": basis,
+                "metadata_audit": audit_source_metadata(source, claim_text=segment),
             })
 
         cited += bool(indexes)
@@ -140,4 +141,59 @@ def build_claim_evidence_ledger(
             "Readable text and lexical overlap do not prove that a source entails a claim.",
             "Correctness, source independence, contradiction resolution, and semantic faithfulness were not verified.",
         ],
+    }
+
+
+def audit_source_metadata(source: dict[str, Any], *, claim_text: str = "") -> dict[str, Any]:
+    """Audit source metadata completeness; this is not a claim-entailment check.
+
+    URLs are parsed locally and never fetched here. Metadata is reported as
+    missing rather than inferred from a title or guessed from a publisher name.
+    """
+    from urllib.parse import urlparse
+
+    item = source if isinstance(source, dict) else {}
+    raw_url = str(item.get("url") or "").strip()
+    parsed = urlparse(raw_url)
+    valid_url = parsed.scheme.lower() in {"http", "https"} and bool(parsed.hostname)
+    title = str(item.get("title") or "").strip()
+    publisher = str(
+        item.get("publisher") or item.get("source_name") or item.get("provider") or ""
+    ).strip()
+    published_at = str(
+        item.get("published_at") or item.get("publication_date")
+        or item.get("date") or item.get("published") or ""
+    ).strip()
+    normalized_claim = str(claim_text or "").casefold()
+    population_scope_required = any(
+        term in normalized_claim
+        for term in ("population", "inhabitants", "سكان", "نسمة", "القاهرة الكبرى", "محافظة القاهرة")
+    )
+    geographic_scope = str(
+        item.get("geographic_scope") or item.get("geography")
+        or item.get("population_definition") or ""
+    ).strip()
+
+    missing: list[str] = []
+    if not valid_url:
+        missing.append("valid_http_source_url")
+    if not title:
+        missing.append("source_title")
+    if not publisher:
+        missing.append("publisher_identity")
+    if not published_at:
+        missing.append("publication_or_data_date")
+    if population_scope_required and not geographic_scope:
+        missing.append("geographic_scope_for_population_claim")
+
+    return {
+        "status": "metadata_complete" if not missing else "metadata_incomplete",
+        "valid_http_url": valid_url,
+        "has_title": bool(title),
+        "has_publisher_identity": bool(publisher),
+        "has_publication_or_data_date": bool(published_at),
+        "has_geographic_scope": bool(geographic_scope),
+        "required_fields_missing": missing,
+        "claim_entailment": "not_checked",
+        "fact_correctness": "not_checked",
     }
