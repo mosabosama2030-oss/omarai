@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002592 إلى SRC-1AE03B9EC3-L003391
+- النطاق: SRC-1AE03B9EC3-L002591 إلى SRC-1AE03B9EC3-L003390
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"                    \"instagram\": bool("` | — |
 | [SRC-1AE03B9EC3-L002592](../../agents/web_agent.py#L2592) | 2592 | `"                        os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002593](../../agents/web_agent.py#L2593) | 2593 | `"                        and os.getenv(\"INSTAGRAM_ACCESS_TOKEN\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002594](../../agents/web_agent.py#L2594) | 2594 | `"                    ),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"                    '\"research_depth\":\"standard\",\"needs_clarification\":false,\"clarification_question\":\"\",'"` | — |
 | [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"                    '\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",\"confidence_band\":\"medium\"}}. '"` | — |
 | [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"                    \"اكتب resolved_question بلغة رسالة المستخدم، ويمكن صياغة queries بلغة تناسب البحث. \""` | — |
-| [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"                    \"ضع 2 إلى 5 استعلامات مختلفة ومفيدة عندما يكون السؤال واضحًا. حافظ على أسماء \""` | — |

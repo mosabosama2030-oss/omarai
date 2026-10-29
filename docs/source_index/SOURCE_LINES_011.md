@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001792 إلى SRC-1AE03B9EC3-L002591
+- النطاق: SRC-1AE03B9EC3-L001791 إلى SRC-1AE03B9EC3-L002590
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001791](../../agents/web_agent.py#L1791) | 1791 | `"        self, query: str, platforms: list[str]"` | — |
 | [SRC-1AE03B9EC3-L001792](../../agents/web_agent.py#L1792) | 1792 | `"    ) -> tuple[list[dict[str, Any]], list[str]]:"` | — |
 | [SRC-1AE03B9EC3-L001793](../../agents/web_agent.py#L1793) | 1793 | `"        \"\"\"Search public social content through exposed public endpoints only.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001794](../../agents/web_agent.py#L1794) | 1794 | `"        query = compact_search_query(query)"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"                        os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"                        and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"                    ),"` | — |
-| [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"                    \"instagram\": bool("` | — |

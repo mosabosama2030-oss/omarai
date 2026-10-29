@@ -801,36 +801,36 @@
 | [SRC-7D6FC391EC-L000137](../../agents/claim_evidence.py#L137) | 137 | `"    *,"` | — |
 | [SRC-7D6FC391EC-L000138](../../agents/claim_evidence.py#L138) | 138 | `"    max_segments: int = 40,"` | — |
 | [SRC-7D6FC391EC-L000139](../../agents/claim_evidence.py#L139) | 139 | `"    max_citable_sources: int = 12,"` | — |
-| [SRC-7D6FC391EC-L000140](../../agents/claim_evidence.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
-| [SRC-7D6FC391EC-L000141](../../agents/claim_evidence.py#L141) | 141 | `"    \"\"\"Return bounded sentence candidates with validated source-index traceability.\"\"\""` | — |
-| [SRC-7D6FC391EC-L000142](../../agents/claim_evidence.py#L142) | 142 | `"    safe_answer = str(answer or \"\")[:24000]"` | — |
-| [SRC-7D6FC391EC-L000143](../../agents/claim_evidence.py#L143) | 143 | `"    safe_sources = ["` | — |
-| [SRC-7D6FC391EC-L000144](../../agents/claim_evidence.py#L144) | 144 | `"        source for source in (sources or []) if isinstance(source, dict)"` | — |
-| [SRC-7D6FC391EC-L000145](../../agents/claim_evidence.py#L145) | 145 | `"    ][:max(0, min(int(max_citable_sources), 40))]"` | — |
-| [SRC-7D6FC391EC-L000146](../../agents/claim_evidence.py#L146) | 146 | `"    segments = ["` | — |
-| [SRC-7D6FC391EC-L000147](../../agents/claim_evidence.py#L147) | 147 | `"        part.strip()"` | — |
-| [SRC-7D6FC391EC-L000148](../../agents/claim_evidence.py#L148) | 148 | `"        for part in _SENTENCE_SPLIT.split(safe_answer)"` | — |
-| [SRC-7D6FC391EC-L000149](../../agents/claim_evidence.py#L149) | 149 | `"        if part and part.strip()"` | — |
-| [SRC-7D6FC391EC-L000150](../../agents/claim_evidence.py#L150) | 150 | `"    ]"` | — |
-| [SRC-7D6FC391EC-L000151](../../agents/claim_evidence.py#L151) | 151 | `"    truncated = len(segments) > max_segments"` | — |
-| [SRC-7D6FC391EC-L000152](../../agents/claim_evidence.py#L152) | 152 | `"    segments = segments[:max(0, min(int(max_segments), 100))]"` | — |
-| [SRC-7D6FC391EC-L000153](../../agents/claim_evidence.py#L153) | 153 | `"    integrity = answer_integrity if isinstance(answer_integrity, dict) else {}"` | — |
-| [SRC-7D6FC391EC-L000154](../../agents/claim_evidence.py#L154) | 154 | `"    alignments = integrity.get(\"citation_lexical_alignment\")"` | — |
-| [SRC-7D6FC391EC-L000155](../../agents/claim_evidence.py#L155) | 155 | `"    alignment_by_sentence = {"` | — |
-| [SRC-7D6FC391EC-L000156](../../agents/claim_evidence.py#L156) | 156 | `"        int(item[\"sentence_number\"]): item"` | — |
-| [SRC-7D6FC391EC-L000157](../../agents/claim_evidence.py#L157) | 157 | `"        for item in alignments"` | — |
-| [SRC-7D6FC391EC-L000158](../../agents/claim_evidence.py#L158) | 158 | `"        if isinstance(item, dict) and isinstance(item.get(\"sentence_number\"), int)"` | — |
-| [SRC-7D6FC391EC-L000159](../../agents/claim_evidence.py#L159) | 159 | `"    } if isinstance(alignments, list) else {}"` | — |
-| [SRC-7D6FC391EC-L000160](../../agents/claim_evidence.py#L160) | 160 | `""` | — |
-| [SRC-7D6FC391EC-L000161](../../agents/claim_evidence.py#L161) | 161 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-7D6FC391EC-L000162](../../agents/claim_evidence.py#L162) | 162 | `"    valid_refs = invalid_refs = cited = uncited = readable_cited = 0"` | — |
-| [SRC-7D6FC391EC-L000163](../../agents/claim_evidence.py#L163) | 163 | `"    lexical_signals = weak_signals = 0"` | — |
-| [SRC-7D6FC391EC-L000164](../../agents/claim_evidence.py#L164) | 164 | `""` | — |
-| [SRC-7D6FC391EC-L000165](../../agents/claim_evidence.py#L165) | 165 | `"    for number, segment in enumerate(segments, 1):"` | — |
-| [SRC-7D6FC391EC-L000166](../../agents/claim_evidence.py#L166) | 166 | `"        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]"` | — |
-| [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"        refs: list[dict[str, Any]] = []"` | — |
-| [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"        has_readable = False"` | — |
-| [SRC-7D6FC391EC-L000169](../../agents/claim_evidence.py#L169) | 169 | `"        for index in indexes:"` | — |
-| [SRC-7D6FC391EC-L000170](../../agents/claim_evidence.py#L170) | 170 | `"            if index < 1 or index > len(safe_sources):"` | — |
-| [SRC-7D6FC391EC-L000171](../../agents/claim_evidence.py#L171) | 171 | `"                invalid_refs += 1"` | — |
-| [SRC-7D6FC391EC-L000172](../../agents/claim_evidence.py#L172) | 172 | `"                refs.append({"` | — |
+| [SRC-7D6FC391EC-L000140](../../agents/claim_evidence.py#L140) | 140 | `"    question_context: str = \"\","` | — |
+| [SRC-7D6FC391EC-L000141](../../agents/claim_evidence.py#L141) | 141 | `") -> dict[str, Any]:"` | — |
+| [SRC-7D6FC391EC-L000142](../../agents/claim_evidence.py#L142) | 142 | `"    \"\"\"Return bounded sentence candidates with validated source-index traceability.\"\"\""` | — |
+| [SRC-7D6FC391EC-L000143](../../agents/claim_evidence.py#L143) | 143 | `"    safe_answer = str(answer or \"\")[:24000]"` | — |
+| [SRC-7D6FC391EC-L000144](../../agents/claim_evidence.py#L144) | 144 | `"    safe_sources = ["` | — |
+| [SRC-7D6FC391EC-L000145](../../agents/claim_evidence.py#L145) | 145 | `"        source for source in (sources or []) if isinstance(source, dict)"` | — |
+| [SRC-7D6FC391EC-L000146](../../agents/claim_evidence.py#L146) | 146 | `"    ][:max(0, min(int(max_citable_sources), 40))]"` | — |
+| [SRC-7D6FC391EC-L000147](../../agents/claim_evidence.py#L147) | 147 | `"    segments = ["` | — |
+| [SRC-7D6FC391EC-L000148](../../agents/claim_evidence.py#L148) | 148 | `"        part.strip()"` | — |
+| [SRC-7D6FC391EC-L000149](../../agents/claim_evidence.py#L149) | 149 | `"        for part in _SENTENCE_SPLIT.split(safe_answer)"` | — |
+| [SRC-7D6FC391EC-L000150](../../agents/claim_evidence.py#L150) | 150 | `"        if part and part.strip()"` | — |
+| [SRC-7D6FC391EC-L000151](../../agents/claim_evidence.py#L151) | 151 | `"    ]"` | — |
+| [SRC-7D6FC391EC-L000152](../../agents/claim_evidence.py#L152) | 152 | `"    truncated = len(segments) > max_segments"` | — |
+| [SRC-7D6FC391EC-L000153](../../agents/claim_evidence.py#L153) | 153 | `"    segments = segments[:max(0, min(int(max_segments), 100))]"` | — |
+| [SRC-7D6FC391EC-L000154](../../agents/claim_evidence.py#L154) | 154 | `"    integrity = answer_integrity if isinstance(answer_integrity, dict) else {}"` | — |
+| [SRC-7D6FC391EC-L000155](../../agents/claim_evidence.py#L155) | 155 | `"    alignments = integrity.get(\"citation_lexical_alignment\")"` | — |
+| [SRC-7D6FC391EC-L000156](../../agents/claim_evidence.py#L156) | 156 | `"    alignment_by_sentence = {"` | — |
+| [SRC-7D6FC391EC-L000157](../../agents/claim_evidence.py#L157) | 157 | `"        int(item[\"sentence_number\"]): item"` | — |
+| [SRC-7D6FC391EC-L000158](../../agents/claim_evidence.py#L158) | 158 | `"        for item in alignments"` | — |
+| [SRC-7D6FC391EC-L000159](../../agents/claim_evidence.py#L159) | 159 | `"        if isinstance(item, dict) and isinstance(item.get(\"sentence_number\"), int)"` | — |
+| [SRC-7D6FC391EC-L000160](../../agents/claim_evidence.py#L160) | 160 | `"    } if isinstance(alignments, list) else {}"` | — |
+| [SRC-7D6FC391EC-L000161](../../agents/claim_evidence.py#L161) | 161 | `""` | — |
+| [SRC-7D6FC391EC-L000162](../../agents/claim_evidence.py#L162) | 162 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-7D6FC391EC-L000163](../../agents/claim_evidence.py#L163) | 163 | `"    valid_refs = invalid_refs = cited = uncited = readable_cited = 0"` | — |
+| [SRC-7D6FC391EC-L000164](../../agents/claim_evidence.py#L164) | 164 | `"    lexical_signals = weak_signals = 0"` | — |
+| [SRC-7D6FC391EC-L000165](../../agents/claim_evidence.py#L165) | 165 | `""` | — |
+| [SRC-7D6FC391EC-L000166](../../agents/claim_evidence.py#L166) | 166 | `"    for number, segment in enumerate(segments, 1):"` | — |
+| [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]"` | — |
+| [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"        refs: list[dict[str, Any]] = []"` | — |
+| [SRC-7D6FC391EC-L000169](../../agents/claim_evidence.py#L169) | 169 | `"        has_readable = False"` | — |
+| [SRC-7D6FC391EC-L000170](../../agents/claim_evidence.py#L170) | 170 | `"        for index in indexes:"` | — |
+| [SRC-7D6FC391EC-L000171](../../agents/claim_evidence.py#L171) | 171 | `"            if index < 1 or index > len(safe_sources):"` | — |
+| [SRC-7D6FC391EC-L000172](../../agents/claim_evidence.py#L172) | 172 | `"                invalid_refs += 1"` | — |

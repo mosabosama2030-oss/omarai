@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004192 إلى SRC-1AE03B9EC3-L004991
+- النطاق: SRC-1AE03B9EC3-L004191 إلى SRC-1AE03B9EC3-L004990
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004191](../../agents/web_agent.py#L4191) | 4191 | `"                    timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
 | [SRC-1AE03B9EC3-L004192](../../agents/web_agent.py#L4192) | 4192 | `"                    model=self.answer_model,"` | — |
 | [SRC-1AE03B9EC3-L004193](../../agents/web_agent.py#L4193) | 4193 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004194](../../agents/web_agent.py#L4194) | 4194 | `"                report[\"checks\"][\"language_model\"] = {"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004988](../../agents/web_agent.py#L4988) | 4988 | `"                    ))[:MAX_PLAN_QUERIES]"` | — |
 | [SRC-1AE03B9EC3-L004989](../../agents/web_agent.py#L4989) | 4989 | `"                else:"` | — |
 | [SRC-1AE03B9EC3-L004990](../../agents/web_agent.py#L4990) | 4990 | `"                    candidates = ["` | — |
-| [SRC-1AE03B9EC3-L004991](../../agents/web_agent.py#L4991) | 4991 | `"                        f\"{base_query} latest news updates {dt.datetime.now().year}\","` | — |

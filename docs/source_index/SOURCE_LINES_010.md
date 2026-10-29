@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000992 إلى SRC-1AE03B9EC3-L001791
+- النطاق: SRC-1AE03B9EC3-L000991 إلى SRC-1AE03B9EC3-L001790
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000991](../../agents/web_agent.py#L991) | 991 | `"            \"research_quality\": \"not_applicable\","` | — |
 | [SRC-1AE03B9EC3-L000992](../../agents/web_agent.py#L992) | 992 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L000993](../../agents/web_agent.py#L993) | 993 | `""` | — |
 | [SRC-1AE03B9EC3-L000994](../../agents/web_agent.py#L994) | 994 | `"    @staticmethod"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001788](../../agents/web_agent.py#L1788) | 1788 | `"        return results"` | — |
 | [SRC-1AE03B9EC3-L001789](../../agents/web_agent.py#L1789) | 1789 | `""` | — |
 | [SRC-1AE03B9EC3-L001790](../../agents/web_agent.py#L1790) | 1790 | `"    def _search_social("` | — |
-| [SRC-1AE03B9EC3-L001791](../../agents/web_agent.py#L1791) | 1791 | `"        self, query: str, platforms: list[str]"` | — |

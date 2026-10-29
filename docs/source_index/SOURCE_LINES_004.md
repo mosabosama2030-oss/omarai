@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000462 إلى SRC-59CF4B7DE8-L000400
+- النطاق: SRC-5587371288-L000461 إلى SRC-59CF4B7DE8-L000399
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
 | [SRC-5587371288-L000462](../../agents/intent_router.py#L462) | 462 | `"            \"context_available\": False,"` | — |
 | [SRC-5587371288-L000463](../../agents/intent_router.py#L463) | 463 | `"            \"needs_clarification\": True,"` | — |
 | [SRC-5587371288-L000464](../../agents/intent_router.py#L464) | 464 | `"        }"` | — |
@@ -842,4 +843,3 @@
 | [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"    \"\"\"Build a small but varied plan when no model planner is configured or parsing fails.\"\"\""` | — |
 | [SRC-59CF4B7DE8-L000398](../../agents/research.py#L398) | 398 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
 | [SRC-59CF4B7DE8-L000399](../../agents/research.py#L399) | 399 | `"    direct_urls = extract_urls(question)"` | — |
-| [SRC-59CF4B7DE8-L000400](../../agents/research.py#L400) | 400 | `"    base = compact_search_query(contextual_question)"` | — |

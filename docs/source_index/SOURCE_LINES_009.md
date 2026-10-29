@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000192 إلى SRC-1AE03B9EC3-L000991
+- النطاق: SRC-1AE03B9EC3-L000191 إلى SRC-1AE03B9EC3-L000990
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000191](../../agents/web_agent.py#L191) | 191 | `""` | — |
 | [SRC-1AE03B9EC3-L000192](../../agents/web_agent.py#L192) | 192 | `"# Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)"` | — |
 | [SRC-1AE03B9EC3-L000193](../../agents/web_agent.py#L193) | 193 | `"# can leave request-format wording in the token set and distort relevance scores."` | — |
 | [SRC-1AE03B9EC3-L000194](../../agents/web_agent.py#L194) | 194 | `"_NORMALIZED_SEARCH_STOPWORDS = frozenset("` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L000988](../../agents/web_agent.py#L988) | 988 | `"            \"used_social_search\": False,"` | — |
 | [SRC-1AE03B9EC3-L000989](../../agents/web_agent.py#L989) | 989 | `"            \"warnings\": [],"` | — |
 | [SRC-1AE03B9EC3-L000990](../../agents/web_agent.py#L990) | 990 | `"            \"kind\": kind,"` | — |
-| [SRC-1AE03B9EC3-L000991](../../agents/web_agent.py#L991) | 991 | `"            \"research_quality\": \"not_applicable\","` | — |

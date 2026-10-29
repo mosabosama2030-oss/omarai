@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000054 إلى SRC-51D44BE378-L000061
+- النطاق: SRC-792A9A235D-L000053 إلى SRC-51D44BE378-L000060
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000053](../ANSWER_QUALITY_BENCHMARK_AR.md#L53) | 53 | `"2. صدق الأدلة وملاءمة المصادر"` | — |
 | [SRC-792A9A235D-L000054](../ANSWER_QUALITY_BENCHMARK_AR.md#L54) | 54 | `"3. اكتمال الإجابة"` | — |
 | [SRC-792A9A235D-L000055](../ANSWER_QUALITY_BENCHMARK_AR.md#L55) | 55 | `"4. معايرة عدم اليقين"` | — |
 | [SRC-792A9A235D-L000056](../ANSWER_QUALITY_BENCHMARK_AR.md#L56) | 56 | `"5. جودة العربية/الإنجليزية/المختلط"` | — |
@@ -878,4 +879,3 @@
 | [SRC-51D44BE378-L000058](../DEPLOY_SNAPDEPLOY_AR.md#L58) | 58 | ````"```bash"```` | — |
 | [SRC-51D44BE378-L000059](../DEPLOY_SNAPDEPLOY_AR.md#L59) | 59 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
 | [SRC-51D44BE378-L000060](../DEPLOY_SNAPDEPLOY_AR.md#L60) | 60 | ````"```"```` | — |
-| [SRC-51D44BE378-L000061](../DEPLOY_SNAPDEPLOY_AR.md#L61) | 61 | `""` | — |

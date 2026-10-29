@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004992 إلى SRC-1AE03B9EC3-L005791
+- النطاق: SRC-1AE03B9EC3-L004991 إلى SRC-1AE03B9EC3-L005790
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004991](../../agents/web_agent.py#L4991) | 4991 | `"                        f\"{base_query} latest news updates {dt.datetime.now().year}\","` | — |
 | [SRC-1AE03B9EC3-L004992](../../agents/web_agent.py#L4992) | 4992 | `"                        f\"{base_query} recent official announcement\","` | — |
 | [SRC-1AE03B9EC3-L004993](../../agents/web_agent.py#L4993) | 4993 | `"                    ]"` | — |
 | [SRC-1AE03B9EC3-L004994](../../agents/web_agent.py#L4994) | 4994 | `"                    plan[\"queries\"] = list(dict.fromkeys("` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005788](../../agents/web_agent.py#L5788) | 5788 | `"                \"automatically_graded\": False,"` | — |
 | [SRC-1AE03B9EC3-L005789](../../agents/web_agent.py#L5789) | 5789 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L005790](../../agents/web_agent.py#L5790) | 5790 | `"            answer_integrity = audit_answer_integrity(working_question, reason, sources, coverage_targets, plan.get(\"requirement_queries\"))"` | — |
-| [SRC-1AE03B9EC3-L005791](../../agents/web_agent.py#L5791) | 5791 | `"            answer_coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |

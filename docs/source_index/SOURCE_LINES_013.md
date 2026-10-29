@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003392 إلى SRC-1AE03B9EC3-L004191
+- النطاق: SRC-1AE03B9EC3-L003391 إلى SRC-1AE03B9EC3-L004190
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"                    \"ضع 2 إلى 5 استعلامات مختلفة ومفيدة عندما يكون السؤال واضحًا. حافظ على أسماء \""` | — |
 | [SRC-1AE03B9EC3-L003392](../../agents/web_agent.py#L3392) | 3392 | `"                    \"الأشخاص والمنتجات والأماكن والأرقام والقيود. إذا تغير الموضوع، لا تدمج الموضوع \""` | — |
 | [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"                    \"السابق في resolved_question أو الاستعلام. إذا كان المرجع ملتبسًا بشكل مؤثر، \""` | — |
 | [SRC-1AE03B9EC3-L003394](../../agents/web_agent.py#L3394) | 3394 | `"                    \"اجعل needs_clarification=true ولا تخمّن. needs_web=true للبيانات الحالية والأسعار \""` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004188](../../agents/web_agent.py#L4188) | 4188 | `"                    ],"` | — |
 | [SRC-1AE03B9EC3-L004189](../../agents/web_agent.py#L4189) | 4189 | `"                    max_tokens=12,"` | — |
 | [SRC-1AE03B9EC3-L004190](../../agents/web_agent.py#L4190) | 4190 | `"                    temperature=0.0,"` | — |
-| [SRC-1AE03B9EC3-L004191](../../agents/web_agent.py#L4191) | 4191 | `"                    timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
