@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000745 إلى SRC-F725E90B2A-L001544
+- النطاق: SRC-F725E90B2A-L000743 إلى SRC-F725E90B2A-L001542
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000743](../../tests/test_web_agent.py#L743) | 743 | `"        \"fallback_used\": \"true\","` | — |
+| [SRC-F725E90B2A-L000744](../../tests/test_web_agent.py#L744) | 744 | `"    }]"` | — |
 | [SRC-F725E90B2A-L000745](../../tests/test_web_agent.py#L745) | 745 | `""` | — |
 | [SRC-F725E90B2A-L000746](../../tests/test_web_agent.py#L746) | 746 | `""` | — |
 | [SRC-F725E90B2A-L000747](../../tests/test_web_agent.py#L747) | 747 | `""` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001540](../../tests/test_web_agent.py#L1540) | 1540 | `"    rss = \"\"\"<rss><channel>"` | — |
 | [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"    <item>"` | — |
 | [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>"` | — |
-| [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"      <link>https://news.google.com/rss/articles/relevant</link>"` | — |
-| [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>"` | — |
