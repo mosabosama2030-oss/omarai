@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import ipaddress
 import json
+import math
 import os
 import sys
 import time
@@ -37,6 +38,88 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CORPUS = ROOT / "tests" / "fixtures" / "answer_quality_cases.json"
 MAX_RESPONSE_BYTES = 2_000_000
+
+
+def _model_calls_from_payload(payload: dict) -> list[dict]:
+    """Read only structured per-request model-call metadata from an API response."""
+    report = payload.get("search_report")
+    understanding = payload.get("task_understanding")
+    candidates = [
+        payload.get("model_calls"),
+        report.get("model_calls") if isinstance(report, dict) else None,
+        understanding.get("model_calls") if isinstance(understanding, dict) else None,
+    ]
+    for candidate in candidates:
+        if isinstance(candidate, list):
+            return [item for item in candidate if isinstance(item, dict)]
+    return []
+
+
+def _finite_nonnegative_number(value) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    number = float(value)
+    if not math.isfinite(number) or number < 0:
+        return None
+    return number
+
+
+def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok: bool) -> dict:
+    """Derive conservative telemetry; never infer semantic correctness from HTTP 200."""
+    if not isinstance(payload, dict):
+        payload = {}
+    report = payload.get("search_report")
+    report = report if isinstance(report, dict) else {}
+    outcome = report.get("search_outcome")
+    pipeline = report.get("pipeline_completion_status")
+    if expected_strategy != "web_search":
+        tool_status = "NOT_APPLICABLE"
+    elif not transport_ok:
+        tool_status = "TRANSPORT_FAILED"
+    elif outcome == "attempted_with_usable_sources":
+        tool_status = "SUCCESS_WITH_USABLE_RESULTS"
+    elif outcome == "attempted_no_usable_sources":
+        tool_status = "ATTEMPTED_NO_USABLE_RESULTS"
+    elif outcome == "attempted_research_error":
+        tool_status = "TOOL_FAILED"
+    elif outcome == "unknown_after_budget_exhaustion":
+        tool_status = "BUDGET_EXHAUSTED"
+    elif outcome == "not_attempted":
+        tool_status = "NOT_ATTEMPTED"
+    else:
+        tool_status = "UNKNOWN"
+
+    calls = _model_calls_from_payload(payload)
+    reported_costs = []
+    for call in calls:
+        usage = call.get("provider_usage")
+        if not isinstance(usage, dict):
+            continue
+        cost = _finite_nonnegative_number(usage.get("cost_usd"))
+        if cost is not None:
+            reported_costs.append(cost)
+
+    if not calls:
+        cost_status = "NO_MODEL_CALL_METADATA"
+    elif len(reported_costs) == len(calls):
+        cost_status = "COMPLETE_FOR_RETURNED_MODEL_CALLS"
+    elif reported_costs:
+        cost_status = "PARTIAL_PROVIDER_REPORTED_MODEL_COST"
+    else:
+        cost_status = "PROVIDER_COST_NOT_REPORTED"
+
+    return {
+        "search_outcome": outcome if isinstance(outcome, str) else "unknown",
+        "pipeline_completion_status": pipeline if isinstance(pipeline, str) else "unknown",
+        "tool_status": tool_status,
+        "source_count": len(payload.get("sources", [])) if isinstance(payload.get("sources"), list) else None,
+        "model_call_count": len(calls),
+        "provider_reported_model_cost_usd": round(sum(reported_costs), 10) if reported_costs else None,
+        "provider_reported_model_cost_call_count": len(reported_costs),
+        "provider_reported_model_cost_status": cost_status,
+        "request_cost_usd": None,
+        "request_cost_status": "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED",
+    }
 
 
 def validate_base_url(base_url: str, *, token_present: bool = False) -> str:
@@ -258,6 +341,7 @@ def run_live(
     timeout: float,
     delay: float,
     out_path: Path | None,
+    build_sha: str | None = None,
 ) -> int:
     data = load_corpus(corpus_path)
     problems = validate_corpus(data)
@@ -290,13 +374,16 @@ def run_live(
     for case in cases:
         cid = case["case_id"]
         prompt = case["question"]
+        request_started = time.perf_counter()
         status_code, payload = post_agent(safe_base_url, prompt, timeout, token)
+        elapsed_ms = round((time.perf_counter() - request_started) * 1000, 2)
         if isinstance(payload, dict):
             safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))
         else:
             safe_payload = redact_secrets(str(payload))
 
         transport_ok = 200 <= status_code < 300
+        response_metrics = _response_metrics(safe_payload, case["expected_strategy"], transport_ok)
         record = {
             "case_id": cid,
             "benchmark_version": data.get("version"),
@@ -305,6 +392,9 @@ def run_live(
             "mode": "live_api",
             "base_url": safe_base_url,
             "http_status": status_code,
+            "elapsed_ms": elapsed_ms,
+            "build_sha": build_sha or "unknown",
+            **response_metrics,
             "prompt": prompt,
             "expected_strategy": case["expected_strategy"],
             "category": case["category"],
@@ -339,6 +429,7 @@ def run_live(
         "benchmark_id": data.get("benchmark_id"),
         "benchmark_version": data.get("version"),
         "mode": "live_api",
+        "build_sha": build_sha or "unknown",
         "executed_at_utc": _utc_now(),
         "case_count": len(results),
         "results": results,
@@ -375,6 +466,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--case-id", default=None, help="Run a single case (live)")
     parser.add_argument("--limit", type=int, default=0, help="Max cases in live mode (0=all selected)")
     parser.add_argument("--timeout", type=float, default=60.0)
+    parser.add_argument("--build-sha", default=None, help="Exact deployed source SHA (required for a defensible baseline comparison)")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between live requests")
     parser.add_argument("--out", type=Path, default=None, help="Write live results JSON")
     args = parser.parse_args(argv)
@@ -396,6 +488,7 @@ def main(argv: list[str] | None = None) -> int:
             args.timeout,
             args.delay,
             args.out,
+            args.build_sha,
         )
     return 2
 
