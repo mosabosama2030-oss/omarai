@@ -193,10 +193,24 @@ def review_comparison(
     baseline_ids = _reviewed_case_ids(baseline_reviews)
     candidate_ids = _reviewed_case_ids(candidate_reviews)
     if not baseline_ids or not candidate_ids:
-        raise ValueError("both review files need at least one explicitly REVIEWED case")
+        raise ValueError("both review files need explicitly REVIEWED cases")
     if baseline_ids != candidate_ids:
         raise ValueError(
             "incomparable review coverage: REVIEWED case IDs differ between baseline and candidate"
+        )
+    corpus_cases = corpus.get("cases")
+    if not isinstance(corpus_cases, list) or not corpus_cases:
+        raise ValueError("corpus must contain a non-empty cases array for full-coverage acceptance")
+    corpus_ids = {
+        item.get("case_id")
+        for item in corpus_cases
+        if isinstance(item, dict) and isinstance(item.get("case_id"), str)
+    }
+    if baseline_ids != corpus_ids:
+        missing = sorted(corpus_ids - baseline_ids)
+        extra = sorted(baseline_ids - corpus_ids)
+        raise ValueError(
+            f"incomplete human review coverage: missing={missing}; unknown={extra}"
         )
     scorer = _load_review_scorer()
     baseline = scorer.summarize_reviews(baseline_reviews, corpus)
@@ -252,6 +266,11 @@ def compare_runs(
         raise ValueError("baseline/candidate benchmark_id differs")
     if baseline.get("benchmark_version") != candidate.get("benchmark_version"):
         raise ValueError("baseline/candidate benchmark_version differs")
+    if corpus is not None:
+        if corpus.get("benchmark_id") != baseline.get("benchmark_id"):
+            raise ValueError("runs do not match the supplied corpus benchmark_id")
+        if corpus.get("version") != baseline.get("benchmark_version"):
+            raise ValueError("runs do not match the supplied corpus benchmark_version")
     baseline_by_id = {row["case_id"]: row for row in baseline["results"]}
     candidate_by_id = {row["case_id"]: row for row in candidate["results"]}
     if set(baseline_by_id) != set(candidate_by_id):
@@ -360,6 +379,13 @@ def compare_runs(
     elif baseline_reviews is None or candidate_reviews is None or corpus is None:
         comparison["acceptance_blockers"].append("both_review_files_and_corpus_are_required")
     else:
+        corpus_ids = {
+            case.get("case_id")
+            for case in corpus.get("cases", [])
+            if isinstance(case, dict) and isinstance(case.get("case_id"), str)
+        }
+        if set(baseline_by_id) != corpus_ids:
+            comparison["acceptance_blockers"].append("benchmark_run_does_not_cover_entire_corpus")
         comparison["quality_comparison"] = review_comparison(
             baseline_reviews, candidate_reviews, corpus
         )
