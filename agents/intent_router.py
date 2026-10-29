@@ -113,21 +113,23 @@ def _has_live_signal(question: str) -> bool:
 
 
 def _is_lead_generation_request(question: str) -> bool:
-    """Recognize an explicit request to discover prospective buyers/customers.
-
-    A product or property listing request alone is not lead generation. This
-    route requires a prospect/customer target plus an action to find one.
-    """
+    """Recognize explicit requests to discover prospective buyers/customers."""
     normalized = _normalize(question)
-    arabic_actions = ("ابحث عن", "دور على", "دورلي على", "اعثر على", "هاتلي", "هات")
-    arabic_targets = ("عميل", "عملاء", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
-    english_patterns = (
-        r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
+    # Repair only frequent, task-specific Arabic typing variants before routing.
+    normalized = re.sub(r"(?<!\w)عملاش(?!\w)", "عملاء", normalized)
+    normalized = re.sub(r"(?<!\w)شرا(?!\w)", "شراء", normalized)
+    arabic_actions = (
+        "ابحث عن", "ابحث لي عن", "ابحثلي عن", "بحث عن",
+        "دور على", "دورلي على", "دور لي على", "اعثر على", "هاتلي", "هات",
     )
+    arabic_targets = ("عميل", "عملاء", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
     if any(action in normalized for action in arabic_actions) and any(
         target in normalized for target in arabic_targets
     ):
         return True
+    english_patterns = (
+        r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
+    )
     if any(re.search(pattern, normalized) for pattern in english_patterns):
         return True
     return bool(
@@ -137,7 +139,6 @@ def _is_lead_generation_request(question: str) -> bool:
             normalized,
         )
     )
-
 
 _FOLLOWUP_LEAD_IN_RE = re.compile(
     r"^(?:(?:و?طيب|و?طب|و?تمام|well|okay|ok|so)\s+)+",
