@@ -86,4 +86,4 @@ def test_population_scope_is_required_even_when_answer_uses_only_a_number():
     audit = result["source_metadata_audit"]
     assert audit["population_claim_context_detected"] is True
     assert audit["sources_missing_geographic_scope_count"] == 1
-    assert "missing_explicit_geographic_scope_for_population_claim" in audit["sources"][0]["missing_fields"]
+    assert "geographic_scope_for_population_claim" in audit["sources"][0]["missing_fields"]
