@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000224 إلى SRC-547CAF1FE3-L000144
+- النطاق: SRC-A8360B1B03-L000220 إلى SRC-547CAF1FE3-L000140
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"            expected_sha=args.expected_sha or None,"` | — |
+| [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"        )"` | — |
+| [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"    except SmokeError as exc:"` | — |
+| [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"        print(json.dumps({\"result\": \"failed\", \"error\": str(exc)}, ensure_ascii=False, indent=2))"` | — |
 | [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        return 1"` | — |
 | [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
 | [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"    return 0"` | — |
@@ -839,7 +843,3 @@
 | [SRC-547CAF1FE3-L000138](../../scripts/sqlite_backup_restore.py#L138) | 138 | `"            json.dumps("` | — |
 | [SRC-547CAF1FE3-L000139](../../scripts/sqlite_backup_restore.py#L139) | 139 | `"                {\"result\": \"failed\", \"error\": str(exc)},"` | — |
 | [SRC-547CAF1FE3-L000140](../../scripts/sqlite_backup_restore.py#L140) | 140 | `"                ensure_ascii=False,"` | — |
-| [SRC-547CAF1FE3-L000141](../../scripts/sqlite_backup_restore.py#L141) | 141 | `"                indent=2,"` | — |
-| [SRC-547CAF1FE3-L000142](../../scripts/sqlite_backup_restore.py#L142) | 142 | `"            ),"` | — |
-| [SRC-547CAF1FE3-L000143](../../scripts/sqlite_backup_restore.py#L143) | 143 | `"            file=sys.stderr,"` | — |
-| [SRC-547CAF1FE3-L000144](../../scripts/sqlite_backup_restore.py#L144) | 144 | `"        )"` | — |

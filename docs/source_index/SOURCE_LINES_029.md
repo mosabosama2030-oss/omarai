@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-547CAF1FE3-L000145 إلى SRC-90FAA34ADE-L000792
+- النطاق: SRC-547CAF1FE3-L000141 إلى SRC-90FAA34ADE-L000788
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-547CAF1FE3-L000141](../../scripts/sqlite_backup_restore.py#L141) | 141 | `"                indent=2,"` | — |
+| [SRC-547CAF1FE3-L000142](../../scripts/sqlite_backup_restore.py#L142) | 142 | `"            ),"` | — |
+| [SRC-547CAF1FE3-L000143](../../scripts/sqlite_backup_restore.py#L143) | 143 | `"            file=sys.stderr,"` | — |
+| [SRC-547CAF1FE3-L000144](../../scripts/sqlite_backup_restore.py#L144) | 144 | `"        )"` | — |
 | [SRC-547CAF1FE3-L000145](../../scripts/sqlite_backup_restore.py#L145) | 145 | `"        return 1"` | — |
 | [SRC-547CAF1FE3-L000146](../../scripts/sqlite_backup_restore.py#L146) | 146 | `""` | — |
 | [SRC-547CAF1FE3-L000147](../../scripts/sqlite_backup_restore.py#L147) | 147 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
@@ -821,7 +825,3 @@
 | [SRC-90FAA34ADE-L000786](../../tests/fixtures/answer_quality_cases.json#L786) | 786 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000787](../../tests/fixtures/answer_quality_cases.json#L787) | 787 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000788](../../tests/fixtures/answer_quality_cases.json#L788) | 788 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000789](../../tests/fixtures/answer_quality_cases.json#L789) | 789 | `"            \"title\": \"Anonymous comment\","` | — |
-| [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
-| [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
-| [SRC-90FAA34ADE-L000792](../../tests/fixtures/answer_quality_cases.json#L792) | 792 | `"            \"domain\": \"reviews.example.test\","` | — |

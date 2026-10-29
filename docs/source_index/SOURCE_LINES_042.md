@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001472 إلى SRC-F725E90B2A-L002271
+- النطاق: SRC-F725E90B2A-L001468 إلى SRC-F725E90B2A-L002267
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
 | [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `""` | — |
 | [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `""` | — |
 | [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002265](../../tests/test_web_agent.py#L2265) | 2265 | `"    }"` | — |
 | [SRC-F725E90B2A-L002266](../../tests/test_web_agent.py#L2266) | 2266 | `"    buyer_post = {"` | — |
 | [SRC-F725E90B2A-L002267](../../tests/test_web_agent.py#L2267) | 2267 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002268](../../tests/test_web_agent.py#L2268) | 2268 | `"        \"snippet\": \"مطلوب شقة تمليك في العاصمة الإدارية.\","` | — |
-| [SRC-F725E90B2A-L002269](../../tests/test_web_agent.py#L2269) | 2269 | `"        \"page_text\": \"أنا بدور على شقة تمليك في العاصمة الإدارية وعايز أشتري خلال شهر.\","` | — |
-| [SRC-F725E90B2A-L002270](../../tests/test_web_agent.py#L2270) | 2270 | `"    }"` | — |
-| [SRC-F725E90B2A-L002271](../../tests/test_web_agent.py#L2271) | 2271 | `"    assert WebAgent._lead_intent_evidence(listing) is None"` | — |

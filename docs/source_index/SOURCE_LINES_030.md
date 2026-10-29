@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000793 إلى SRC-4CCB1F172B-L000040
+- النطاق: SRC-90FAA34ADE-L000789 إلى SRC-4CCB1F172B-L000036
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000789](../../tests/fixtures/answer_quality_cases.json#L789) | 789 | `"            \"title\": \"Anonymous comment\","` | — |
+| [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
+| [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
+| [SRC-90FAA34ADE-L000792](../../tests/fixtures/answer_quality_cases.json#L792) | 792 | `"            \"domain\": \"reviews.example.test\","` | — |
 | [SRC-90FAA34ADE-L000793](../../tests/fixtures/answer_quality_cases.json#L793) | 793 | `"            \"provider\": \"fixture_search\","` | — |
 | [SRC-90FAA34ADE-L000794](../../tests/fixtures/answer_quality_cases.json#L794) | 794 | `"            \"source_class\": \"unverified_user_generated\""` | — |
 | [SRC-90FAA34ADE-L000795](../../tests/fixtures/answer_quality_cases.json#L795) | 795 | `"          }"` | — |
@@ -839,7 +843,3 @@
 | [SRC-4CCB1F172B-L000034](../../tests/test_answer_quality_corpus.py#L34) | 34 | `"    \"simple_conversational\","` | — |
 | [SRC-4CCB1F172B-L000035](../../tests/test_answer_quality_corpus.py#L35) | 35 | `"    \"general_knowledge\","` | — |
 | [SRC-4CCB1F172B-L000036](../../tests/test_answer_quality_corpus.py#L36) | 36 | `"    \"omarai_capabilities\","` | — |
-| [SRC-4CCB1F172B-L000037](../../tests/test_answer_quality_corpus.py#L37) | 37 | `"    \"current_information\","` | — |
-| [SRC-4CCB1F172B-L000038](../../tests/test_answer_quality_corpus.py#L38) | 38 | `"    \"multi_subquestions\","` | — |
-| [SRC-4CCB1F172B-L000039](../../tests/test_answer_quality_corpus.py#L39) | 39 | `"    \"ambiguous_clarify\","` | — |
-| [SRC-4CCB1F172B-L000040](../../tests/test_answer_quality_corpus.py#L40) | 40 | `"    \"spelling_variation\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000672 إلى SRC-F725E90B2A-L001471
+- النطاق: SRC-F725E90B2A-L000668 إلى SRC-F725E90B2A-L001467
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000668](../../tests/test_web_agent.py#L668) | 668 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000669](../../tests/test_web_agent.py#L669) | 669 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
+| [SRC-F725E90B2A-L000671](../../tests/test_web_agent.py#L671) | 671 | `"        \"OMARAI_LLM_FALLBACK_MODEL\","` | — |
 | [SRC-F725E90B2A-L000672](../../tests/test_web_agent.py#L672) | 672 | `"    ):"` | — |
 | [SRC-F725E90B2A-L000673](../../tests/test_web_agent.py#L673) | 673 | `"        monkeypatch.delenv(name, raising=False)"` | — |
 | [SRC-F725E90B2A-L000674](../../tests/test_web_agent.py#L674) | 674 | `""` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `""` | — |
 | [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
 | [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
