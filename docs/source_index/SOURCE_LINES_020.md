@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001301 إلى SRC-53E640B937-L000036
+- النطاق: SRC-E599346ABE-L000945 إلى SRC-E599346ABE-L001744
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,362 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000945](../generate_index.py#L945) | 945 | `"            )"` | — |
+| [SRC-E599346ABE-L000946](../generate_index.py#L946) | 946 | `""` | — |
+| [SRC-E599346ABE-L000947](../generate_index.py#L947) | 947 | `""` | — |
+| [SRC-E599346ABE-L000948](../generate_index.py#L948) | 948 | `"def scan_static_symbols(root: Path, inventory: list[IndexedFile]) -> list[IndexedMarker]:"` | — |
+| [SRC-E599346ABE-L000949](../generate_index.py#L949) | 949 | `"    \"\"\"Extract supplementary navigational symbols from frontend, docs, config and scripts.\"\"\""` | — |
+| [SRC-E599346ABE-L000950](../generate_index.py#L950) | 950 | `"    markers: list[IndexedMarker] = []"` | — |
+| [SRC-E599346ABE-L000951](../generate_index.py#L951) | 951 | `"    seen: set[tuple[str, str, str]] = set()"` | — |
+| [SRC-E599346ABE-L000952](../generate_index.py#L952) | 952 | `"    for indexed_file in inventory:"` | — |
+| [SRC-E599346ABE-L000953](../generate_index.py#L953) | 953 | `"        path = root / indexed_file.file"` | — |
+| [SRC-E599346ABE-L000954](../generate_index.py#L954) | 954 | `"        suffix = path.suffix.lower()"` | — |
+| [SRC-E599346ABE-L000955](../generate_index.py#L955) | 955 | `"        file_name = path.name.lower()"` | — |
+| [SRC-E599346ABE-L000956](../generate_index.py#L956) | 956 | `"        is_example_env = file_name == \".env.example\""` | — |
+| [SRC-E599346ABE-L000957](../generate_index.py#L957) | 957 | `"        if suffix not in TEXT_SCAN_EXTENSIONS and not is_example_env and file_name not in {"` | — |
+| [SRC-E599346ABE-L000958](../generate_index.py#L958) | 958 | `"            \"dockerfile\","` | — |
+| [SRC-E599346ABE-L000959](../generate_index.py#L959) | 959 | `"            \"makefile\","` | — |
+| [SRC-E599346ABE-L000960](../generate_index.py#L960) | 960 | `"            \"procfile\","` | — |
+| [SRC-E599346ABE-L000961](../generate_index.py#L961) | 961 | `"        }:"` | — |
+| [SRC-E599346ABE-L000962](../generate_index.py#L962) | 962 | `"            continue"` | — |
+| [SRC-E599346ABE-L000963](../generate_index.py#L963) | 963 | `""` | — |
+| [SRC-E599346ABE-L000964](../generate_index.py#L964) | 964 | `"        source = _read_text_bounded(path)"` | — |
+| [SRC-E599346ABE-L000965](../generate_index.py#L965) | 965 | `"        if source is None:"` | — |
+| [SRC-E599346ABE-L000966](../generate_index.py#L966) | 966 | `"            continue"` | — |
+| [SRC-E599346ABE-L000967](../generate_index.py#L967) | 967 | `""` | — |
+| [SRC-E599346ABE-L000968](../generate_index.py#L968) | 968 | `"        if suffix in JAVASCRIPT_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000969](../generate_index.py#L969) | 969 | `"            _scan_javascript(source, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000970](../generate_index.py#L970) | 970 | `"        elif suffix in CSS_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000971](../generate_index.py#L971) | 971 | `"            _scan_css(source, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000972](../generate_index.py#L972) | 972 | `"        elif suffix in {\".html\", \".htm\"}:"` | — |
+| [SRC-E599346ABE-L000973](../generate_index.py#L973) | 973 | `"            _scan_html(source, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000974](../generate_index.py#L974) | 974 | `"        elif suffix == \".md\":"` | — |
+| [SRC-E599346ABE-L000975](../generate_index.py#L975) | 975 | `"            for match in MARKDOWN_HEADING_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000976](../generate_index.py#L976) | 976 | `"                heading = match.group(2).strip()"` | — |
+| [SRC-E599346ABE-L000977](../generate_index.py#L977) | 977 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000978](../generate_index.py#L978) | 978 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000979](../generate_index.py#L979) | 979 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000980](../generate_index.py#L980) | 980 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000981](../generate_index.py#L981) | 981 | `"                    heading,"` | — |
+| [SRC-E599346ABE-L000982](../generate_index.py#L982) | 982 | `"                    f\"عنوان Markdown (H{len(match.group(1))})\","` | — |
+| [SRC-E599346ABE-L000983](../generate_index.py#L983) | 983 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000984](../generate_index.py#L984) | 984 | `"                )"` | — |
+| [SRC-E599346ABE-L000985](../generate_index.py#L985) | 985 | `"        elif suffix == \".sh\":"` | — |
+| [SRC-E599346ABE-L000986](../generate_index.py#L986) | 986 | `"            for match in SHELL_FUNCTION_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L000987](../generate_index.py#L987) | 987 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L000988](../generate_index.py#L988) | 988 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000989](../generate_index.py#L989) | 989 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L000990](../generate_index.py#L990) | 990 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L000991](../generate_index.py#L991) | 991 | `"                    match.group(1),"` | — |
+| [SRC-E599346ABE-L000992](../generate_index.py#L992) | 992 | `"                    \"دالة Shell\","` | — |
+| [SRC-E599346ABE-L000993](../generate_index.py#L993) | 993 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L000994](../generate_index.py#L994) | 994 | `"                )"` | — |
+| [SRC-E599346ABE-L000995](../generate_index.py#L995) | 995 | `"        elif suffix in CONFIG_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L000996](../generate_index.py#L996) | 996 | `"            _scan_config_keys(source, suffix, indexed_file.file, markers, seen)"` | — |
+| [SRC-E599346ABE-L000997](../generate_index.py#L997) | 997 | `""` | — |
+| [SRC-E599346ABE-L000998](../generate_index.py#L998) | 998 | `"        if suffix in TEXT_SCAN_EXTENSIONS or is_example_env or file_name in {"` | — |
+| [SRC-E599346ABE-L000999](../generate_index.py#L999) | 999 | `"            \"dockerfile\","` | — |
+| [SRC-E599346ABE-L001000](../generate_index.py#L1000) | 1000 | `"            \"makefile\","` | — |
+| [SRC-E599346ABE-L001001](../generate_index.py#L1001) | 1001 | `"            \"procfile\","` | — |
+| [SRC-E599346ABE-L001002](../generate_index.py#L1002) | 1002 | `"        }:"` | — |
+| [SRC-E599346ABE-L001003](../generate_index.py#L1003) | 1003 | `"            for match in UPPER_SNAKE_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L001004](../generate_index.py#L1004) | 1004 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L001005](../generate_index.py#L1005) | 1005 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L001006](../generate_index.py#L1006) | 1006 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L001007](../generate_index.py#L1007) | 1007 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L001008](../generate_index.py#L1008) | 1008 | `"                    match.group(0),"` | — |
+| [SRC-E599346ABE-L001009](../generate_index.py#L1009) | 1009 | `"                    \"اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE\","` | — |
+| [SRC-E599346ABE-L001010](../generate_index.py#L1010) | 1010 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L001011](../generate_index.py#L1011) | 1011 | `"                )"` | — |
+| [SRC-E599346ABE-L001012](../generate_index.py#L1012) | 1012 | `""` | — |
+| [SRC-E599346ABE-L001013](../generate_index.py#L1013) | 1013 | `"        if suffix in PYTHON_EXTENSIONS \| JAVASCRIPT_EXTENSIONS \| {\".html\", \".htm\"}:"` | — |
+| [SRC-E599346ABE-L001014](../generate_index.py#L1014) | 1014 | `"            for match in API_PATH_RE.finditer(source):"` | — |
+| [SRC-E599346ABE-L001015](../generate_index.py#L1015) | 1015 | `"                _add_marker("` | — |
+| [SRC-E599346ABE-L001016](../generate_index.py#L1016) | 1016 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L001017](../generate_index.py#L1017) | 1017 | `"                    seen,"` | — |
+| [SRC-E599346ABE-L001018](../generate_index.py#L1018) | 1018 | `"                    indexed_file.file,"` | — |
+| [SRC-E599346ABE-L001019](../generate_index.py#L1019) | 1019 | `"                    match.group(1),"` | — |
+| [SRC-E599346ABE-L001020](../generate_index.py#L1020) | 1020 | `"                    \"مسار API/واجهة محتمل\","` | — |
+| [SRC-E599346ABE-L001021](../generate_index.py#L1021) | 1021 | `"                    _line_at(source, match.start()),"` | — |
+| [SRC-E599346ABE-L001022](../generate_index.py#L1022) | 1022 | `"                )"` | — |
+| [SRC-E599346ABE-L001023](../generate_index.py#L1023) | 1023 | `""` | — |
+| [SRC-E599346ABE-L001024](../generate_index.py#L1024) | 1024 | `"    markers.sort("` | — |
+| [SRC-E599346ABE-L001025](../generate_index.py#L1025) | 1025 | `"        key=lambda marker: ("` | — |
+| [SRC-E599346ABE-L001026](../generate_index.py#L1026) | 1026 | `"            marker.file.casefold(),"` | — |
+| [SRC-E599346ABE-L001027](../generate_index.py#L1027) | 1027 | `"            marker.line,"` | — |
+| [SRC-E599346ABE-L001028](../generate_index.py#L1028) | 1028 | `"            marker.kind.casefold(),"` | — |
+| [SRC-E599346ABE-L001029](../generate_index.py#L1029) | 1029 | `"            marker.name.casefold(),"` | — |
+| [SRC-E599346ABE-L001030](../generate_index.py#L1030) | 1030 | `"        )"` | — |
+| [SRC-E599346ABE-L001031](../generate_index.py#L1031) | 1031 | `"    )"` | — |
+| [SRC-E599346ABE-L001032](../generate_index.py#L1032) | 1032 | `"    return markers"` | — |
+| [SRC-E599346ABE-L001033](../generate_index.py#L1033) | 1033 | `""` | — |
+| [SRC-E599346ABE-L001034](../generate_index.py#L1034) | 1034 | `""` | — |
+| [SRC-E599346ABE-L001035](../generate_index.py#L1035) | 1035 | `"def _source_file_href("` | — |
+| [SRC-E599346ABE-L001036](../generate_index.py#L1036) | 1036 | `"    relative_file: str,"` | — |
+| [SRC-E599346ABE-L001037](../generate_index.py#L1037) | 1037 | `"    line: int = 1,"` | — |
+| [SRC-E599346ABE-L001038](../generate_index.py#L1038) | 1038 | `"    index_directory: str = \"docs\","` | — |
+| [SRC-E599346ABE-L001039](../generate_index.py#L1039) | 1039 | `") -> str:"` | — |
+| [SRC-E599346ABE-L001040](../generate_index.py#L1040) | 1040 | `"    \"\"\"Return a relative source link from a generated index page to the original file.\"\"\""` | — |
+| [SRC-E599346ABE-L001041](../generate_index.py#L1041) | 1041 | `"    normalized = relative_file.replace(\"\\\\\", \"/\")"` | — |
+| [SRC-E599346ABE-L001042](../generate_index.py#L1042) | 1042 | `"    target = posixpath.relpath(normalized, index_directory)"` | — |
+| [SRC-E599346ABE-L001043](../generate_index.py#L1043) | 1043 | `"    return f\"{quote(target, safe='/._-')}#L{max(line, 1)}\""` | — |
+| [SRC-E599346ABE-L001044](../generate_index.py#L1044) | 1044 | `""` | — |
+| [SRC-E599346ABE-L001045](../generate_index.py#L1045) | 1045 | `""` | — |
+| [SRC-E599346ABE-L001046](../generate_index.py#L1046) | 1046 | `"def _source_line_id(relative_file: str, line: int) -> str:"` | — |
+| [SRC-E599346ABE-L001047](../generate_index.py#L1047) | 1047 | `"    \"\"\"Return a consistent line code wherever a symbol, finding, or source line is shown.\"\"\""` | — |
+| [SRC-E599346ABE-L001048](../generate_index.py#L1048) | 1048 | `"    file_hash = _stable_file_id(relative_file).removeprefix(\"FILE-\")"` | — |
+| [SRC-E599346ABE-L001049](../generate_index.py#L1049) | 1049 | `"    return f\"SRC-{file_hash}-L{line:06d}\""` | — |
+| [SRC-E599346ABE-L001050](../generate_index.py#L1050) | 1050 | `""` | — |
+| [SRC-E599346ABE-L001051](../generate_index.py#L1051) | 1051 | `""` | — |
+| [SRC-E599346ABE-L001052](../generate_index.py#L1052) | 1052 | `"def _markdown_cell(value: str) -> str:"` | — |
+| [SRC-E599346ABE-L001053](../generate_index.py#L1053) | 1053 | `"    \"\"\"Normalize text and escape Markdown table delimiters.\"\"\""` | — |
+| [SRC-E599346ABE-L001054](../generate_index.py#L1054) | 1054 | `"    return \" \".join(value.replace(\"\\r\", \" \").replace(\"\\n\", \" \").split()).replace("` | — |
+| [SRC-E599346ABE-L001055](../generate_index.py#L1055) | 1055 | `"        \"\|\", r\"\\\|\""` | — |
+| [SRC-E599346ABE-L001056](../generate_index.py#L1056) | 1056 | `"    )"` | — |
+| [SRC-E599346ABE-L001057](../generate_index.py#L1057) | 1057 | `""` | — |
+| [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `""` | — |
+| [SRC-E599346ABE-L001059](../generate_index.py#L1059) | 1059 | `"def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:"` | — |
+| [SRC-E599346ABE-L001060](../generate_index.py#L1060) | 1060 | `"    \"\"\"Index every logical line of each eligible text file readable within the size bound.\"\"\""` | — |
+| [SRC-E599346ABE-L001061](../generate_index.py#L1061) | 1061 | `"    indexed_lines: list[IndexedLine] = []"` | — |
+| [SRC-E599346ABE-L001062](../generate_index.py#L1062) | 1062 | `"    for item in inventory:"` | — |
+| [SRC-E599346ABE-L001063](../generate_index.py#L1063) | 1063 | `"        source = _read_text_bounded(root / item.file)"` | — |
+| [SRC-E599346ABE-L001064](../generate_index.py#L1064) | 1064 | `"        if source is None:"` | — |
+| [SRC-E599346ABE-L001065](../generate_index.py#L1065) | 1065 | `"            continue"` | — |
+| [SRC-E599346ABE-L001066](../generate_index.py#L1066) | 1066 | `"        for line_number, content in enumerate(source.splitlines(), start=1):"` | — |
+| [SRC-E599346ABE-L001067](../generate_index.py#L1067) | 1067 | `"            indexed_lines.append("` | — |
+| [SRC-E599346ABE-L001068](../generate_index.py#L1068) | 1068 | `"                IndexedLine("` | — |
+| [SRC-E599346ABE-L001069](../generate_index.py#L1069) | 1069 | `"                    file=item.file,"` | — |
+| [SRC-E599346ABE-L001070](../generate_index.py#L1070) | 1070 | `"                    file_id=item.file_id,"` | — |
+| [SRC-E599346ABE-L001071](../generate_index.py#L1071) | 1071 | `"                    line_id=_source_line_id(item.file, line_number),"` | — |
+| [SRC-E599346ABE-L001072](../generate_index.py#L1072) | 1072 | `"                    category=item.category,"` | — |
+| [SRC-E599346ABE-L001073](../generate_index.py#L1073) | 1073 | `"                    line=line_number,"` | — |
+| [SRC-E599346ABE-L001074](../generate_index.py#L1074) | 1074 | `"                    content=content,"` | — |
+| [SRC-E599346ABE-L001075](../generate_index.py#L1075) | 1075 | `"                )"` | — |
+| [SRC-E599346ABE-L001076](../generate_index.py#L1076) | 1076 | `"            )"` | — |
+| [SRC-E599346ABE-L001077](../generate_index.py#L1077) | 1077 | `"    indexed_lines.sort(key=lambda item: (item.file.casefold(), item.line))"` | — |
+| [SRC-E599346ABE-L001078](../generate_index.py#L1078) | 1078 | `"    return indexed_lines"` | — |
+| [SRC-E599346ABE-L001079](../generate_index.py#L1079) | 1079 | `""` | — |
+| [SRC-E599346ABE-L001080](../generate_index.py#L1080) | 1080 | `""` | — |
+| [SRC-E599346ABE-L001081](../generate_index.py#L1081) | 1081 | `"def _append_comment_text("` | — |
+| [SRC-E599346ABE-L001082](../generate_index.py#L1082) | 1082 | `"    comments: dict[int, list[str]],"` | — |
+| [SRC-E599346ABE-L001083](../generate_index.py#L1083) | 1083 | `"    starting_line: int,"` | — |
+| [SRC-E599346ABE-L001084](../generate_index.py#L1084) | 1084 | `"    text: str,"` | — |
+| [SRC-E599346ABE-L001085](../generate_index.py#L1085) | 1085 | `") -> None:"` | — |
+| [SRC-E599346ABE-L001086](../generate_index.py#L1086) | 1086 | `"    \"\"\"Map comment text fragments onto original 1-based source lines.\"\"\""` | — |
+| [SRC-E599346ABE-L001087](../generate_index.py#L1087) | 1087 | `"    for offset, line_text in enumerate(text.splitlines() or [text]):"` | — |
+| [SRC-E599346ABE-L001088](../generate_index.py#L1088) | 1088 | `"        comments.setdefault(starting_line + offset, []).append(line_text)"` | — |
+| [SRC-E599346ABE-L001089](../generate_index.py#L1089) | 1089 | `""` | — |
+| [SRC-E599346ABE-L001090](../generate_index.py#L1090) | 1090 | `""` | — |
+| [SRC-E599346ABE-L001091](../generate_index.py#L1091) | 1091 | `"def _python_comment_map(source: str) -> dict[int, list[str]]:"` | — |
+| [SRC-E599346ABE-L001092](../generate_index.py#L1092) | 1092 | `"    \"\"\"Return real Python comment tokens, excluding strings and docstrings.\"\"\""` | — |
+| [SRC-E599346ABE-L001093](../generate_index.py#L1093) | 1093 | `"    comments: dict[int, list[str]] = {}"` | — |
+| [SRC-E599346ABE-L001094](../generate_index.py#L1094) | 1094 | `"    try:"` | — |
+| [SRC-E599346ABE-L001095](../generate_index.py#L1095) | 1095 | `"        for token in tokenize.generate_tokens(StringIO(source).readline):"` | — |
+| [SRC-E599346ABE-L001096](../generate_index.py#L1096) | 1096 | `"            if token.type == tokenize.COMMENT:"` | — |
+| [SRC-E599346ABE-L001097](../generate_index.py#L1097) | 1097 | `"                _append_comment_text(comments, token.start[0], token.string[1:])"` | — |
+| [SRC-E599346ABE-L001098](../generate_index.py#L1098) | 1098 | `"    except (tokenize.TokenError, IndentationError, SyntaxError, StopIteration):"` | — |
+| [SRC-E599346ABE-L001099](../generate_index.py#L1099) | 1099 | `"        return comments"` | — |
+| [SRC-E599346ABE-L001100](../generate_index.py#L1100) | 1100 | `"    return comments"` | — |
+| [SRC-E599346ABE-L001101](../generate_index.py#L1101) | 1101 | `""` | — |
+| [SRC-E599346ABE-L001102](../generate_index.py#L1102) | 1102 | `""` | — |
+| [SRC-E599346ABE-L001103](../generate_index.py#L1103) | 1103 | `"def _c_style_comment_map(source: str, *, hash_comments: bool = False) -> dict[int, list[str]]:"` | — |
+| [SRC-E599346ABE-L001104](../generate_index.py#L1104) | 1104 | `"    \"\"\"Extract C-style or hash comments while skipping quoted strings.\"\"\""` | — |
+| [SRC-E599346ABE-L001105](../generate_index.py#L1105) | 1105 | `"    comments: dict[int, list[str]] = {}"` | — |
+| [SRC-E599346ABE-L001106](../generate_index.py#L1106) | 1106 | `"    lines = source.splitlines(keepends=True)"` | — |
+| [SRC-E599346ABE-L001107](../generate_index.py#L1107) | 1107 | `"    if not lines and source:"` | — |
+| [SRC-E599346ABE-L001108](../generate_index.py#L1108) | 1108 | `"        lines = [source]"` | — |
+| [SRC-E599346ABE-L001109](../generate_index.py#L1109) | 1109 | `"    quote: str \| None = None"` | — |
+| [SRC-E599346ABE-L001110](../generate_index.py#L1110) | 1110 | `"    in_block = False"` | — |
+| [SRC-E599346ABE-L001111](../generate_index.py#L1111) | 1111 | `""` | — |
+| [SRC-E599346ABE-L001112](../generate_index.py#L1112) | 1112 | `"    for line_number, line in enumerate(lines, start=1):"` | — |
+| [SRC-E599346ABE-L001113](../generate_index.py#L1113) | 1113 | `"        i = 0"` | — |
+| [SRC-E599346ABE-L001114](../generate_index.py#L1114) | 1114 | `"        while i < len(line):"` | — |
+| [SRC-E599346ABE-L001115](../generate_index.py#L1115) | 1115 | `"            if in_block:"` | — |
+| [SRC-E599346ABE-L001116](../generate_index.py#L1116) | 1116 | `"                end = line.find(\"*/\", i)"` | — |
+| [SRC-E599346ABE-L001117](../generate_index.py#L1117) | 1117 | `"                if end < 0:"` | — |
+| [SRC-E599346ABE-L001118](../generate_index.py#L1118) | 1118 | `"                    _append_comment_text(comments, line_number, line[i:])"` | — |
+| [SRC-E599346ABE-L001119](../generate_index.py#L1119) | 1119 | `"                    i = len(line)"` | — |
+| [SRC-E599346ABE-L001120](../generate_index.py#L1120) | 1120 | `"                else:"` | — |
+| [SRC-E599346ABE-L001121](../generate_index.py#L1121) | 1121 | `"                    _append_comment_text(comments, line_number, line[i:end])"` | — |
+| [SRC-E599346ABE-L001122](../generate_index.py#L1122) | 1122 | `"                    i = end + 2"` | — |
+| [SRC-E599346ABE-L001123](../generate_index.py#L1123) | 1123 | `"                    in_block = False"` | — |
+| [SRC-E599346ABE-L001124](../generate_index.py#L1124) | 1124 | `"                continue"` | — |
+| [SRC-E599346ABE-L001125](../generate_index.py#L1125) | 1125 | `""` | — |
+| [SRC-E599346ABE-L001126](../generate_index.py#L1126) | 1126 | `"            ch = line[i]"` | — |
+| [SRC-E599346ABE-L001127](../generate_index.py#L1127) | 1127 | `"            if quote is not None:"` | — |
+| [SRC-E599346ABE-L001128](../generate_index.py#L1128) | 1128 | `"                if ch == \"\\\\\":"` | — |
+| [SRC-E599346ABE-L001129](../generate_index.py#L1129) | 1129 | `"                    i += 2"` | — |
+| [SRC-E599346ABE-L001130](../generate_index.py#L1130) | 1130 | `"                    continue"` | — |
+| [SRC-E599346ABE-L001131](../generate_index.py#L1131) | 1131 | `"                if ch == quote:"` | — |
+| [SRC-E599346ABE-L001132](../generate_index.py#L1132) | 1132 | `"                    quote = None"` | — |
+| [SRC-E599346ABE-L001133](../generate_index.py#L1133) | 1133 | `"                i += 1"` | — |
+| [SRC-E599346ABE-L001134](../generate_index.py#L1134) | 1134 | `"                continue"` | — |
+| [SRC-E599346ABE-L001135](../generate_index.py#L1135) | 1135 | `""` | — |
+| [SRC-E599346ABE-L001136](../generate_index.py#L1136) | 1136 | `"            if ch in (\"'\", '\"', chr(96)):"` | — |
+| [SRC-E599346ABE-L001137](../generate_index.py#L1137) | 1137 | `"                quote = ch"` | — |
+| [SRC-E599346ABE-L001138](../generate_index.py#L1138) | 1138 | `"                i += 1"` | — |
+| [SRC-E599346ABE-L001139](../generate_index.py#L1139) | 1139 | `"                continue"` | — |
+| [SRC-E599346ABE-L001140](../generate_index.py#L1140) | 1140 | `""` | — |
+| [SRC-E599346ABE-L001141](../generate_index.py#L1141) | 1141 | `"            if line.startswith(\"//\", i):"` | — |
+| [SRC-E599346ABE-L001142](../generate_index.py#L1142) | 1142 | `"                _append_comment_text(comments, line_number, line[i + 2:].rstrip(\"\\r\\n\"))"` | — |
+| [SRC-E599346ABE-L001143](../generate_index.py#L1143) | 1143 | `"                break"` | — |
+| [SRC-E599346ABE-L001144](../generate_index.py#L1144) | 1144 | `"            if line.startswith(\"/*\", i):"` | — |
+| [SRC-E599346ABE-L001145](../generate_index.py#L1145) | 1145 | `"                in_block = True"` | — |
+| [SRC-E599346ABE-L001146](../generate_index.py#L1146) | 1146 | `"                i += 2"` | — |
+| [SRC-E599346ABE-L001147](../generate_index.py#L1147) | 1147 | `"                continue"` | — |
+| [SRC-E599346ABE-L001148](../generate_index.py#L1148) | 1148 | `""` | — |
+| [SRC-E599346ABE-L001149](../generate_index.py#L1149) | 1149 | `"            if hash_comments and ch == \"#\" and (i == 0 or line[i - 1].isspace()):"` | — |
+| [SRC-E599346ABE-L001150](../generate_index.py#L1150) | 1150 | `"                _append_comment_text(comments, line_number, line[i + 1:].rstrip(\"\\r\\n\"))"` | — |
+| [SRC-E599346ABE-L001151](../generate_index.py#L1151) | 1151 | `"                break"` | — |
+| [SRC-E599346ABE-L001152](../generate_index.py#L1152) | 1152 | `"            i += 1"` | — |
+| [SRC-E599346ABE-L001153](../generate_index.py#L1153) | 1153 | `""` | — |
+| [SRC-E599346ABE-L001154](../generate_index.py#L1154) | 1154 | `"        if quote in (\"'\", '\"') and not line.rstrip(\"\\r\\n\").endswith(\"\\\\\"):"` | — |
+| [SRC-E599346ABE-L001155](../generate_index.py#L1155) | 1155 | `"            quote = None"` | — |
+| [SRC-E599346ABE-L001156](../generate_index.py#L1156) | 1156 | `""` | — |
+| [SRC-E599346ABE-L001157](../generate_index.py#L1157) | 1157 | `"    return comments"` | — |
+| [SRC-E599346ABE-L001158](../generate_index.py#L1158) | 1158 | `""` | — |
+| [SRC-E599346ABE-L001159](../generate_index.py#L1159) | 1159 | `""` | — |
+| [SRC-E599346ABE-L001160](../generate_index.py#L1160) | 1160 | `"def _html_comment_map(source: str) -> dict[int, list[str]]:"` | — |
+| [SRC-E599346ABE-L001161](../generate_index.py#L1161) | 1161 | `"    \"\"\"Return HTML comments while ignoring HTML-looking text inside script/style blocks.\"\"\""` | — |
+| [SRC-E599346ABE-L001162](../generate_index.py#L1162) | 1162 | `"    comments: dict[int, list[str]] = {}"` | — |
+| [SRC-E599346ABE-L001163](../generate_index.py#L1163) | 1163 | `"    masked_chars = list(source)"` | — |
+| [SRC-E599346ABE-L001164](../generate_index.py#L1164) | 1164 | `"    for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):"` | — |
+| [SRC-E599346ABE-L001165](../generate_index.py#L1165) | 1165 | `"        for match in pattern.finditer(source):"` | — |
+| [SRC-E599346ABE-L001166](../generate_index.py#L1166) | 1166 | `"            for position in range(match.start(), match.end()):"` | — |
+| [SRC-E599346ABE-L001167](../generate_index.py#L1167) | 1167 | `"                if masked_chars[position] != \"\\\\n\":"` | — |
+| [SRC-E599346ABE-L001168](../generate_index.py#L1168) | 1168 | `"                    masked_chars[position] = \" \""` | — |
+| [SRC-E599346ABE-L001169](../generate_index.py#L1169) | 1169 | `"    masked_source = \"\".join(masked_chars)"` | — |
+| [SRC-E599346ABE-L001170](../generate_index.py#L1170) | 1170 | `"    comment_re = re.compile(r\"<!--(.*?)-->\", re.DOTALL)"` | — |
+| [SRC-E599346ABE-L001171](../generate_index.py#L1171) | 1171 | `"    for match in comment_re.finditer(masked_source):"` | — |
+| [SRC-E599346ABE-L001172](../generate_index.py#L1172) | 1172 | `"        starting_line = _line_at(source, match.start(1))"` | — |
+| [SRC-E599346ABE-L001173](../generate_index.py#L1173) | 1173 | `"        _append_comment_text("` | — |
+| [SRC-E599346ABE-L001174](../generate_index.py#L1174) | 1174 | `"            comments,"` | — |
+| [SRC-E599346ABE-L001175](../generate_index.py#L1175) | 1175 | `"            starting_line,"` | — |
+| [SRC-E599346ABE-L001176](../generate_index.py#L1176) | 1176 | `"            source[match.start(1):match.end(1)],"` | — |
+| [SRC-E599346ABE-L001177](../generate_index.py#L1177) | 1177 | `"        )"` | — |
+| [SRC-E599346ABE-L001178](../generate_index.py#L1178) | 1178 | `"    return comments"` | — |
+| [SRC-E599346ABE-L001179](../generate_index.py#L1179) | 1179 | `""` | — |
+| [SRC-E599346ABE-L001180](../generate_index.py#L1180) | 1180 | `""` | — |
+| [SRC-E599346ABE-L001181](../generate_index.py#L1181) | 1181 | `"def _markdown_annotation_map(source: str) -> dict[int, list[str]]:"` | — |
+| [SRC-E599346ABE-L001182](../generate_index.py#L1182) | 1182 | `"    \"\"\"Accept explicit annotations at the start of Markdown prose, skipping fenced code.\"\"\""` | — |
+| [SRC-E599346ABE-L001183](../generate_index.py#L1183) | 1183 | `"    comments: dict[int, list[str]] = {}"` | — |
+| [SRC-E599346ABE-L001184](../generate_index.py#L1184) | 1184 | `"    in_fence = False"` | — |
+| [SRC-E599346ABE-L001185](../generate_index.py#L1185) | 1185 | `"    fence_character = \"\""` | — |
+| [SRC-E599346ABE-L001186](../generate_index.py#L1186) | 1186 | `"    fence_width = 0"` | — |
+| [SRC-E599346ABE-L001187](../generate_index.py#L1187) | 1187 | `"    marker_start_re = re.compile("` | — |
+| [SRC-E599346ABE-L001188](../generate_index.py#L1188) | 1188 | `"        rf\"^\\s*(?:(?:[-*+]\|>)\\s*)?({_FINDING_MARKER_ALTERNATION})\\s*:\\s*(.*)$\""` | — |
+| [SRC-E599346ABE-L001189](../generate_index.py#L1189) | 1189 | `"    )"` | — |
+| [SRC-E599346ABE-L001190](../generate_index.py#L1190) | 1190 | `"    for line_number, line in enumerate(source.splitlines(), start=1):"` | — |
+| [SRC-E599346ABE-L001191](../generate_index.py#L1191) | 1191 | `"        fence_match = re.match(r\"^\\s*(~{3,})\", line) or re.match("` | — |
+| [SRC-E599346ABE-L001192](../generate_index.py#L1192) | 1192 | `"            r\"^\\s*(\" + re.escape(chr(96)) + \"{3,})\", line"` | — |
+| [SRC-E599346ABE-L001193](../generate_index.py#L1193) | 1193 | `"        )"` | — |
+| [SRC-E599346ABE-L001194](../generate_index.py#L1194) | 1194 | `"        if fence_match:"` | — |
+| [SRC-E599346ABE-L001195](../generate_index.py#L1195) | 1195 | `"            fence = fence_match.group(1)"` | — |
+| [SRC-E599346ABE-L001196](../generate_index.py#L1196) | 1196 | `"            if not in_fence:"` | — |
+| [SRC-E599346ABE-L001197](../generate_index.py#L1197) | 1197 | `"                in_fence = True"` | — |
+| [SRC-E599346ABE-L001198](../generate_index.py#L1198) | 1198 | `"                fence_character = fence[0]"` | — |
+| [SRC-E599346ABE-L001199](../generate_index.py#L1199) | 1199 | `"                fence_width = len(fence)"` | — |
+| [SRC-E599346ABE-L001200](../generate_index.py#L1200) | 1200 | `"            elif fence[0] == fence_character and len(fence) >= fence_width:"` | — |
+| [SRC-E599346ABE-L001201](../generate_index.py#L1201) | 1201 | `"                in_fence = False"` | — |
+| [SRC-E599346ABE-L001202](../generate_index.py#L1202) | 1202 | `"            continue"` | — |
+| [SRC-E599346ABE-L001203](../generate_index.py#L1203) | 1203 | `"        if in_fence:"` | — |
+| [SRC-E599346ABE-L001204](../generate_index.py#L1204) | 1204 | `"            continue"` | — |
+| [SRC-E599346ABE-L001205](../generate_index.py#L1205) | 1205 | `"        match = marker_start_re.match(line)"` | — |
+| [SRC-E599346ABE-L001206](../generate_index.py#L1206) | 1206 | `"        if match:"` | — |
+| [SRC-E599346ABE-L001207](../generate_index.py#L1207) | 1207 | `"            comments.setdefault(line_number, []).append("` | — |
+| [SRC-E599346ABE-L001208](../generate_index.py#L1208) | 1208 | `"                f\"{match.group(1)}: {match.group(2)}\""` | — |
+| [SRC-E599346ABE-L001209](../generate_index.py#L1209) | 1209 | `"            )"` | — |
+| [SRC-E599346ABE-L001210](../generate_index.py#L1210) | 1210 | `"    return comments"` | — |
+| [SRC-E599346ABE-L001211](../generate_index.py#L1211) | 1211 | `""` | — |
+| [SRC-E599346ABE-L001212](../generate_index.py#L1212) | 1212 | `""` | — |
+| [SRC-E599346ABE-L001213](../generate_index.py#L1213) | 1213 | `"def _finding_comments_by_file(relative_file: str, source: str) -> dict[int, list[str]]:"` | — |
+| [SRC-E599346ABE-L001214](../generate_index.py#L1214) | 1214 | `"    \"\"\"Extract intended comment/prose annotations by file type, not arbitrary tokens.\"\"\""` | — |
+| [SRC-E599346ABE-L001215](../generate_index.py#L1215) | 1215 | `"    path = Path(relative_file)"` | — |
+| [SRC-E599346ABE-L001216](../generate_index.py#L1216) | 1216 | `"    suffix = path.suffix.lower()"` | — |
+| [SRC-E599346ABE-L001217](../generate_index.py#L1217) | 1217 | `"    name = path.name.lower()"` | — |
+| [SRC-E599346ABE-L001218](../generate_index.py#L1218) | 1218 | `"    if suffix == \".py\":"` | — |
+| [SRC-E599346ABE-L001219](../generate_index.py#L1219) | 1219 | `"        return _python_comment_map(source)"` | — |
+| [SRC-E599346ABE-L001220](../generate_index.py#L1220) | 1220 | `"    if suffix in JAVASCRIPT_EXTENSIONS \| CSS_EXTENSIONS:"` | — |
+| [SRC-E599346ABE-L001221](../generate_index.py#L1221) | 1221 | `"        return _c_style_comment_map(source, hash_comments=suffix == \".scss\")"` | — |
+| [SRC-E599346ABE-L001222](../generate_index.py#L1222) | 1222 | `"    if suffix in {\".html\", \".htm\"}:"` | — |
+| [SRC-E599346ABE-L001223](../generate_index.py#L1223) | 1223 | `"        comments = _html_comment_map(source)"` | — |
+| [SRC-E599346ABE-L001224](../generate_index.py#L1224) | 1224 | `"        for pattern in (HTML_SCRIPT_RE, HTML_STYLE_RE):"` | — |
+| [SRC-E599346ABE-L001225](../generate_index.py#L1225) | 1225 | `"            for match in pattern.finditer(source):"` | — |
+| [SRC-E599346ABE-L001226](../generate_index.py#L1226) | 1226 | `"                embedded = match.group(1)"` | — |
+| [SRC-E599346ABE-L001227](../generate_index.py#L1227) | 1227 | `"                local_comments = _c_style_comment_map(embedded)"` | — |
+| [SRC-E599346ABE-L001228](../generate_index.py#L1228) | 1228 | `"                base_line = _line_at(source, match.start(1))"` | — |
+| [SRC-E599346ABE-L001229](../generate_index.py#L1229) | 1229 | `"                for local_line, fragments in local_comments.items():"` | — |
+| [SRC-E599346ABE-L001230](../generate_index.py#L1230) | 1230 | `"                    for fragment in fragments:"` | — |
+| [SRC-E599346ABE-L001231](../generate_index.py#L1231) | 1231 | `"                        comments.setdefault(base_line + local_line - 1, []).append(fragment)"` | — |
+| [SRC-E599346ABE-L001232](../generate_index.py#L1232) | 1232 | `"        return comments"` | — |
+| [SRC-E599346ABE-L001233](../generate_index.py#L1233) | 1233 | `"    if suffix in {\".md\", \".rst\"}:"` | — |
+| [SRC-E599346ABE-L001234](../generate_index.py#L1234) | 1234 | `"        return _markdown_annotation_map(source)"` | — |
+| [SRC-E599346ABE-L001235](../generate_index.py#L1235) | 1235 | `"    if suffix in {\".yml\", \".yaml\", \".toml\", \".ini\", \".cfg\", \".sh\"} or name in {"` | — |
+| [SRC-E599346ABE-L001236](../generate_index.py#L1236) | 1236 | `"        \"dockerfile\","` | — |
+| [SRC-E599346ABE-L001237](../generate_index.py#L1237) | 1237 | `"        \"makefile\","` | — |
+| [SRC-E599346ABE-L001238](../generate_index.py#L1238) | 1238 | `"        \"procfile\","` | — |
+| [SRC-E599346ABE-L001239](../generate_index.py#L1239) | 1239 | `"    }:"` | — |
+| [SRC-E599346ABE-L001240](../generate_index.py#L1240) | 1240 | `"        return _c_style_comment_map(source, hash_comments=True)"` | — |
+| [SRC-E599346ABE-L001241](../generate_index.py#L1241) | 1241 | `"    if suffix == \".txt\":"` | — |
+| [SRC-E599346ABE-L001242](../generate_index.py#L1242) | 1242 | `"        return _markdown_annotation_map(source)"` | — |
+| [SRC-E599346ABE-L001243](../generate_index.py#L1243) | 1243 | `"    return {}"` | — |
+| [SRC-E599346ABE-L001244](../generate_index.py#L1244) | 1244 | `""` | — |
+| [SRC-E599346ABE-L001245](../generate_index.py#L1245) | 1245 | `""` | — |
+| [SRC-E599346ABE-L001246](../generate_index.py#L1246) | 1246 | `"def scan_finding_annotations(source_lines: list[IndexedLine]) -> list[IndexedFinding]:"` | — |
+| [SRC-E599346ABE-L001247](../generate_index.py#L1247) | 1247 | `"    \"\"\"Index explicit comments/prose annotations, not incidental words in source code.\"\"\""` | — |
+| [SRC-E599346ABE-L001248](../generate_index.py#L1248) | 1248 | `"    findings: list[IndexedFinding] = []"` | — |
+| [SRC-E599346ABE-L001249](../generate_index.py#L1249) | 1249 | `"    by_file: dict[str, list[IndexedLine]] = {}"` | — |
+| [SRC-E599346ABE-L001250](../generate_index.py#L1250) | 1250 | `"    for source_line in source_lines:"` | — |
+| [SRC-E599346ABE-L001251](../generate_index.py#L1251) | 1251 | `"        by_file.setdefault(source_line.file, []).append(source_line)"` | — |
+| [SRC-E599346ABE-L001252](../generate_index.py#L1252) | 1252 | `""` | — |
+| [SRC-E599346ABE-L001253](../generate_index.py#L1253) | 1253 | `"    for relative_file, records in by_file.items():"` | — |
+| [SRC-E599346ABE-L001254](../generate_index.py#L1254) | 1254 | `"        records.sort(key=lambda item: item.line)"` | — |
+| [SRC-E599346ABE-L001255](../generate_index.py#L1255) | 1255 | `"        source = \"\\n\".join(item.content for item in records)"` | — |
+| [SRC-E599346ABE-L001256](../generate_index.py#L1256) | 1256 | `"        comments = _finding_comments_by_file(relative_file, source)"` | — |
+| [SRC-E599346ABE-L001257](../generate_index.py#L1257) | 1257 | `"        record_by_line = {item.line: item for item in records}"` | — |
+| [SRC-E599346ABE-L001258](../generate_index.py#L1258) | 1258 | `""` | — |
+| [SRC-E599346ABE-L001259](../generate_index.py#L1259) | 1259 | `"        for line_number, fragments in comments.items():"` | — |
+| [SRC-E599346ABE-L001260](../generate_index.py#L1260) | 1260 | `"            source_line = record_by_line.get(line_number)"` | — |
+| [SRC-E599346ABE-L001261](../generate_index.py#L1261) | 1261 | `"            if source_line is None:"` | — |
+| [SRC-E599346ABE-L001262](../generate_index.py#L1262) | 1262 | `"                continue"` | — |
+| [SRC-E599346ABE-L001263](../generate_index.py#L1263) | 1263 | `"            matches = ["` | — |
+| [SRC-E599346ABE-L001264](../generate_index.py#L1264) | 1264 | `"                match"` | — |
+| [SRC-E599346ABE-L001265](../generate_index.py#L1265) | 1265 | `"                for fragment in fragments"` | — |
+| [SRC-E599346ABE-L001266](../generate_index.py#L1266) | 1266 | `"                for match in FINDING_MARKER_RE.finditer("` | — |
+| [SRC-E599346ABE-L001267](../generate_index.py#L1267) | 1267 | `"                    fragment.lstrip().lstrip(\"*\").strip()"` | — |
+| [SRC-E599346ABE-L001268](../generate_index.py#L1268) | 1268 | `"                )"` | — |
+| [SRC-E599346ABE-L001269](../generate_index.py#L1269) | 1269 | `"            ]"` | — |
+| [SRC-E599346ABE-L001270](../generate_index.py#L1270) | 1270 | `"            if not matches:"` | — |
+| [SRC-E599346ABE-L001271](../generate_index.py#L1271) | 1271 | `"                continue"` | — |
+| [SRC-E599346ABE-L001272](../generate_index.py#L1272) | 1272 | `"            totals: dict[str, int] = {}"` | — |
+| [SRC-E599346ABE-L001273](../generate_index.py#L1273) | 1273 | `"            for match in matches:"` | — |
+| [SRC-E599346ABE-L001274](../generate_index.py#L1274) | 1274 | `"                marker = match.group(1)"` | — |
+| [SRC-E599346ABE-L001275](../generate_index.py#L1275) | 1275 | `"                totals[marker] = totals.get(marker, 0) + 1"` | — |
+| [SRC-E599346ABE-L001276](../generate_index.py#L1276) | 1276 | `"            occurrences: dict[str, int] = {}"` | — |
+| [SRC-E599346ABE-L001277](../generate_index.py#L1277) | 1277 | `"            for match in matches:"` | — |
+| [SRC-E599346ABE-L001278](../generate_index.py#L1278) | 1278 | `"                marker = match.group(1)"` | — |
+| [SRC-E599346ABE-L001279](../generate_index.py#L1279) | 1279 | `"                occurrences[marker] = occurrences.get(marker, 0) + 1"` | — |
+| [SRC-E599346ABE-L001280](../generate_index.py#L1280) | 1280 | `"                detail = (match.group(2) or \"\").strip()"` | — |
+| [SRC-E599346ABE-L001281](../generate_index.py#L1281) | 1281 | `"                description = marker if not detail else f\"{marker}: {detail}\""` | — |
+| [SRC-E599346ABE-L001282](../generate_index.py#L1282) | 1282 | `"                finding_id = ("` | — |
+| [SRC-E599346ABE-L001283](../generate_index.py#L1283) | 1283 | `"                    f\"FND-{marker}-{source_line.file_id.removeprefix('FILE-')}\""` | — |
+| [SRC-E599346ABE-L001284](../generate_index.py#L1284) | 1284 | `"                    f\"-L{source_line.line:06d}\""` | — |
+| [SRC-E599346ABE-L001285](../generate_index.py#L1285) | 1285 | `"                )"` | — |
+| [SRC-E599346ABE-L001286](../generate_index.py#L1286) | 1286 | `"                if totals[marker] > 1:"` | — |
+| [SRC-E599346ABE-L001287](../generate_index.py#L1287) | 1287 | `"                    finding_id += f\"-M{occurrences[marker]:02d}\""` | — |
+| [SRC-E599346ABE-L001288](../generate_index.py#L1288) | 1288 | `"                findings.append("` | — |
+| [SRC-E599346ABE-L001289](../generate_index.py#L1289) | 1289 | `"                    IndexedFinding("` | — |
+| [SRC-E599346ABE-L001290](../generate_index.py#L1290) | 1290 | `"                        finding_id=finding_id,"` | — |
+| [SRC-E599346ABE-L001291](../generate_index.py#L1291) | 1291 | `"                        file=source_line.file,"` | — |
+| [SRC-E599346ABE-L001292](../generate_index.py#L1292) | 1292 | `"                        line_id=source_line.line_id,"` | — |
+| [SRC-E599346ABE-L001293](../generate_index.py#L1293) | 1293 | `"                        marker=marker,"` | — |
+| [SRC-E599346ABE-L001294](../generate_index.py#L1294) | 1294 | `"                        description=description,"` | — |
+| [SRC-E599346ABE-L001295](../generate_index.py#L1295) | 1295 | `"                    )"` | — |
+| [SRC-E599346ABE-L001296](../generate_index.py#L1296) | 1296 | `"                )"` | — |
+| [SRC-E599346ABE-L001297](../generate_index.py#L1297) | 1297 | `"    findings.sort("` | — |
+| [SRC-E599346ABE-L001298](../generate_index.py#L1298) | 1298 | `"        key=lambda item: (item.marker, item.file.casefold(), item.line_id, item.finding_id)"` | — |
+| [SRC-E599346ABE-L001299](../generate_index.py#L1299) | 1299 | `"    )"` | — |
+| [SRC-E599346ABE-L001300](../generate_index.py#L1300) | 1300 | `"    return findings"` | — |
 | [SRC-E599346ABE-L001301](../generate_index.py#L1301) | 1301 | `""` | — |
 | [SRC-E599346ABE-L001302](../generate_index.py#L1302) | 1302 | `""` | — |
 | [SRC-E599346ABE-L001303](../generate_index.py#L1303) | 1303 | `"def _markdown_code_span(value: str) -> str:"` | — |
@@ -460,386 +816,3 @@
 | [SRC-E599346ABE-L001742](../generate_index.py#L1742) | 1742 | `"                        str(source_line.line if source_line else \"غير متاح\"),"` | — |
 | [SRC-E599346ABE-L001743](../generate_index.py#L1743) | 1743 | `"                        _markdown_cell(finding.description),"` | — |
 | [SRC-E599346ABE-L001744](../generate_index.py#L1744) | 1744 | `"                        f\"[{finding.line_id}]({_source_file_href(finding.file, source_line.line if source_line else 1)})\","` | — |
-| [SRC-E599346ABE-L001745](../generate_index.py#L1745) | 1745 | `"                        _markdown_code_span(json.dumps(source_line.content, ensure_ascii=False).replace(\"\|\", r\"\\\|\")) if source_line else \"غير متاح\","` | — |
-| [SRC-E599346ABE-L001746](../generate_index.py#L1746) | 1746 | `"                    )"` | — |
-| [SRC-E599346ABE-L001747](../generate_index.py#L1747) | 1747 | `"                )"` | — |
-| [SRC-E599346ABE-L001748](../generate_index.py#L1748) | 1748 | `"                + \" \|\""` | — |
-| [SRC-E599346ABE-L001749](../generate_index.py#L1749) | 1749 | `"            )"` | — |
-| [SRC-E599346ABE-L001750](../generate_index.py#L1750) | 1750 | `"    else:"` | — |
-| [SRC-E599346ABE-L001751](../generate_index.py#L1751) | 1751 | `"        lines.append(\"\| — \| — \| — \| — \| لم تُكتشف وسوم صريحة من الأنواع المعروفة. \| — \| — \|\")"` | — |
-| [SRC-E599346ABE-L001752](../generate_index.py#L1752) | 1752 | `""` | — |
-| [SRC-E599346ABE-L001753](../generate_index.py#L1753) | 1753 | `"    lines.extend("` | — |
-| [SRC-E599346ABE-L001754](../generate_index.py#L1754) | 1754 | `"        ["` | — |
-| [SRC-E599346ABE-L001755](../generate_index.py#L1755) | 1755 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001756](../generate_index.py#L1756) | 1756 | `"            \"---\","` | — |
-| [SRC-E599346ABE-L001757](../generate_index.py#L1757) | 1757 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001758](../generate_index.py#L1758) | 1758 | `"            \"## حدود الفهرسة\","` | — |
-| [SRC-E599346ABE-L001759](../generate_index.py#L1759) | 1759 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001760](../generate_index.py#L1760) | 1760 | `"            \"- كل الأسطر المنطقية للملفات النصية المؤهلة القابلة للقراءة مفهرسة في SOURCE LINES INDEX، لا في هذا الجدول المختصر.\","` | — |
-| [SRC-E599346ABE-L001761](../generate_index.py#L1761) | 1761 | `"            \"- الملفات الأكبر من 2 MiB أو غير القابلة للقراءة أو الثنائية تبقى ضمن الجرد الوصفي، دون فهرسة سطورها.\","` | — |
-| [SRC-E599346ABE-L001762](../generate_index.py#L1762) | 1762 | `"            \"- لا تُفحص محتويات البيئة الافتراضية والاعتماديات والمجلدات المولدة.\","` | — |
-| [SRC-E599346ABE-L001763](../generate_index.py#L1763) | 1763 | `"            \"- لا تُقرأ ملفات البيئة المحلية وقواعد البيانات والمفاتيح المعروفة.\","` | — |
-| [SRC-E599346ABE-L001764](../generate_index.py#L1764) | 1764 | `"            \"- تحليل Python يرفض إنشاء فهرس جزئي عند وجود خطأ نحوي في أي ملف Python مؤهل.\","` | — |
-| [SRC-E599346ABE-L001765](../generate_index.py#L1765) | 1765 | `"            (\"- يُحدّث هذا الفهرس آليًا عبر GitHub Actions عند دفع تغيير إلى main؛ \""` | — |
-| [SRC-E599346ABE-L001766](../generate_index.py#L1766) | 1766 | `"            \"وتظل تغييرات المصدر قيد المراجعة حتى تُدمج وفق سياسة المستودع.\"),"` | — |
-| [SRC-E599346ABE-L001767](../generate_index.py#L1767) | 1767 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001768](../generate_index.py#L1768) | 1768 | `"        ]"` | — |
-| [SRC-E599346ABE-L001769](../generate_index.py#L1769) | 1769 | `"    )"` | — |
-| [SRC-E599346ABE-L001770](../generate_index.py#L1770) | 1770 | `"    return \"\\n\".join(lines)"` | — |
-| [SRC-E599346ABE-L001771](../generate_index.py#L1771) | 1771 | `""` | — |
-| [SRC-E599346ABE-L001772](../generate_index.py#L1772) | 1772 | `""` | — |
-| [SRC-E599346ABE-L001773](../generate_index.py#L1773) | 1773 | `"def write_if_changed(output_path: Path, content: str) -> bool:"` | — |
-| [SRC-E599346ABE-L001774](../generate_index.py#L1774) | 1774 | `"    \"\"\"Write atomically only when the generated index differs from the existing file.\"\"\""` | — |
-| [SRC-E599346ABE-L001775](../generate_index.py#L1775) | 1775 | `"    output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-E599346ABE-L001776](../generate_index.py#L1776) | 1776 | `"    try:"` | — |
-| [SRC-E599346ABE-L001777](../generate_index.py#L1777) | 1777 | `"        if output_path.read_text(encoding=\"utf-8\") == content:"` | — |
-| [SRC-E599346ABE-L001778](../generate_index.py#L1778) | 1778 | `"            return False"` | — |
-| [SRC-E599346ABE-L001779](../generate_index.py#L1779) | 1779 | `"    except FileNotFoundError:"` | — |
-| [SRC-E599346ABE-L001780](../generate_index.py#L1780) | 1780 | `"        pass"` | — |
-| [SRC-E599346ABE-L001781](../generate_index.py#L1781) | 1781 | `""` | — |
-| [SRC-E599346ABE-L001782](../generate_index.py#L1782) | 1782 | `"    temporary_path: Path \| None = None"` | — |
-| [SRC-E599346ABE-L001783](../generate_index.py#L1783) | 1783 | `"    try:"` | — |
-| [SRC-E599346ABE-L001784](../generate_index.py#L1784) | 1784 | `"        with tempfile.NamedTemporaryFile("` | — |
-| [SRC-E599346ABE-L001785](../generate_index.py#L1785) | 1785 | `"            mode=\"w\","` | — |
-| [SRC-E599346ABE-L001786](../generate_index.py#L1786) | 1786 | `"            encoding=\"utf-8\","` | — |
-| [SRC-E599346ABE-L001787](../generate_index.py#L1787) | 1787 | `"            newline=\"\\n\","` | — |
-| [SRC-E599346ABE-L001788](../generate_index.py#L1788) | 1788 | `"            dir=output_path.parent,"` | — |
-| [SRC-E599346ABE-L001789](../generate_index.py#L1789) | 1789 | `"            prefix=f\".{output_path.name}.\","` | — |
-| [SRC-E599346ABE-L001790](../generate_index.py#L1790) | 1790 | `"            suffix=\".tmp\","` | — |
-| [SRC-E599346ABE-L001791](../generate_index.py#L1791) | 1791 | `"            delete=False,"` | — |
-| [SRC-E599346ABE-L001792](../generate_index.py#L1792) | 1792 | `"        ) as temporary_file:"` | — |
-| [SRC-E599346ABE-L001793](../generate_index.py#L1793) | 1793 | `"            temporary_file.write(content)"` | — |
-| [SRC-E599346ABE-L001794](../generate_index.py#L1794) | 1794 | `"            temporary_path = Path(temporary_file.name)"` | — |
-| [SRC-E599346ABE-L001795](../generate_index.py#L1795) | 1795 | `"        temporary_path.replace(output_path)"` | — |
-| [SRC-E599346ABE-L001796](../generate_index.py#L1796) | 1796 | `"    finally:"` | — |
-| [SRC-E599346ABE-L001797](../generate_index.py#L1797) | 1797 | `"        if temporary_path is not None and temporary_path.exists():"` | — |
-| [SRC-E599346ABE-L001798](../generate_index.py#L1798) | 1798 | `"            temporary_path.unlink()"` | — |
-| [SRC-E599346ABE-L001799](../generate_index.py#L1799) | 1799 | `"    return True"` | — |
-| [SRC-E599346ABE-L001800](../generate_index.py#L1800) | 1800 | `""` | — |
-| [SRC-E599346ABE-L001801](../generate_index.py#L1801) | 1801 | `""` | — |
-| [SRC-E599346ABE-L001802](../generate_index.py#L1802) | 1802 | `"def _generate("` | — |
-| [SRC-E599346ABE-L001803](../generate_index.py#L1803) | 1803 | `"    root: Path,"` | — |
-| [SRC-E599346ABE-L001804](../generate_index.py#L1804) | 1804 | `") -> tuple[str, str, str, dict[str, str], int, int, int, int, int, int, int]:"` | — |
-| [SRC-E599346ABE-L001805](../generate_index.py#L1805) | 1805 | `"    \"\"\"Create deterministic overview, source-line pages, and all counts without writing.\"\"\""` | — |
-| [SRC-E599346ABE-L001806](../generate_index.py#L1806) | 1806 | `"    inventory = build_file_inventory(root)"` | — |
-| [SRC-E599346ABE-L001807](../generate_index.py#L1807) | 1807 | `"    symbols, python_file_count = scan_repository(root)"` | — |
-| [SRC-E599346ABE-L001808](../generate_index.py#L1808) | 1808 | `"    static_symbols = scan_static_symbols(root, inventory)"` | — |
-| [SRC-E599346ABE-L001809](../generate_index.py#L1809) | 1809 | `"    source_lines = scan_source_lines(root, inventory)"` | — |
-| [SRC-E599346ABE-L001810](../generate_index.py#L1810) | 1810 | `"    validate_source_line_coverage(root, inventory, source_lines)"` | — |
-| [SRC-E599346ABE-L001811](../generate_index.py#L1811) | 1811 | `"    findings = scan_finding_annotations(source_lines)"` | — |
-| [SRC-E599346ABE-L001812](../generate_index.py#L1812) | 1812 | `"    excluded_paths = discover_excluded_paths(root)"` | — |
-| [SRC-E599346ABE-L001813](../generate_index.py#L1813) | 1813 | `"    coverage_audit_markdown = render_coverage_audit_markdown("` | — |
-| [SRC-E599346ABE-L001814](../generate_index.py#L1814) | 1814 | `"        root, inventory, source_lines, excluded_paths"` | — |
-| [SRC-E599346ABE-L001815](../generate_index.py#L1815) | 1815 | `"    )"` | — |
-| [SRC-E599346ABE-L001816](../generate_index.py#L1816) | 1816 | `"    source_pages, pages_by_file = render_source_line_pages("` | — |
-| [SRC-E599346ABE-L001817](../generate_index.py#L1817) | 1817 | `"        source_lines, inventory, findings"` | — |
-| [SRC-E599346ABE-L001818](../generate_index.py#L1818) | 1818 | `"    )"` | — |
-| [SRC-E599346ABE-L001819](../generate_index.py#L1819) | 1819 | `"    markdown = render_markdown("` | — |
-| [SRC-E599346ABE-L001820](../generate_index.py#L1820) | 1820 | `"        symbols, python_file_count, inventory, static_symbols, source_lines, findings"` | — |
-| [SRC-E599346ABE-L001821](../generate_index.py#L1821) | 1821 | `"    )"` | — |
-| [SRC-E599346ABE-L001822](../generate_index.py#L1822) | 1822 | `"    source_lines_markdown = render_source_lines_markdown("` | — |
-| [SRC-E599346ABE-L001823](../generate_index.py#L1823) | 1823 | `"        source_lines, inventory, findings, pages_by_file, source_pages"` | — |
-| [SRC-E599346ABE-L001824](../generate_index.py#L1824) | 1824 | `"    )"` | — |
-| [SRC-E599346ABE-L001825](../generate_index.py#L1825) | 1825 | `"    return ("` | — |
-| [SRC-E599346ABE-L001826](../generate_index.py#L1826) | 1826 | `"        markdown,"` | — |
-| [SRC-E599346ABE-L001827](../generate_index.py#L1827) | 1827 | `"        source_lines_markdown,"` | — |
-| [SRC-E599346ABE-L001828](../generate_index.py#L1828) | 1828 | `"        coverage_audit_markdown,"` | — |
-| [SRC-E599346ABE-L001829](../generate_index.py#L1829) | 1829 | `"        source_pages,"` | — |
-| [SRC-E599346ABE-L001830](../generate_index.py#L1830) | 1830 | `"        python_file_count,"` | — |
-| [SRC-E599346ABE-L001831](../generate_index.py#L1831) | 1831 | `"        len(inventory),"` | — |
-| [SRC-E599346ABE-L001832](../generate_index.py#L1832) | 1832 | `"        len(symbols),"` | — |
-| [SRC-E599346ABE-L001833](../generate_index.py#L1833) | 1833 | `"        len(source_lines),"` | — |
-| [SRC-E599346ABE-L001834](../generate_index.py#L1834) | 1834 | `"        len(findings),"` | — |
-| [SRC-E599346ABE-L001835](../generate_index.py#L1835) | 1835 | `"        sum(symbol.documented is True for symbol in symbols),"` | — |
-| [SRC-E599346ABE-L001836](../generate_index.py#L1836) | 1836 | `"        sum(symbol.documented is False for symbol in symbols),"` | — |
-| [SRC-E599346ABE-L001837](../generate_index.py#L1837) | 1837 | `"    )"` | — |
-| [SRC-E599346ABE-L001838](../generate_index.py#L1838) | 1838 | `""` | — |
-| [SRC-E599346ABE-L001839](../generate_index.py#L1839) | 1839 | `""` | — |
-| [SRC-E599346ABE-L001840](../generate_index.py#L1840) | 1840 | `"def main(argv: Sequence[str] \| None = None) -> int:"` | — |
-| [SRC-E599346ABE-L001841](../generate_index.py#L1841) | 1841 | `"    \"\"\"Generate the living repository index or check that the committed copy is current.\"\"\""` | — |
-| [SRC-E599346ABE-L001842](../generate_index.py#L1842) | 1842 | `"    parser = argparse.ArgumentParser("` | — |
-| [SRC-E599346ABE-L001843](../generate_index.py#L1843) | 1843 | `"        description=\"إنشاء/فحص فهرس مستودع Omarai وملفات الشفرة والرموز الساكنة.\""` | — |
-| [SRC-E599346ABE-L001844](../generate_index.py#L1844) | 1844 | `"    )"` | — |
-| [SRC-E599346ABE-L001845](../generate_index.py#L1845) | 1845 | `"    parser.add_argument("` | — |
-| [SRC-E599346ABE-L001846](../generate_index.py#L1846) | 1846 | `"        \"--root\","` | — |
-| [SRC-E599346ABE-L001847](../generate_index.py#L1847) | 1847 | `"        type=Path,"` | — |
-| [SRC-E599346ABE-L001848](../generate_index.py#L1848) | 1848 | `"        default=Path(__file__).resolve().parents[1],"` | — |
-| [SRC-E599346ABE-L001849](../generate_index.py#L1849) | 1849 | `"        help=\"مسار جذر المستودع (الافتراضي: جذر مشروع Omarai).\","` | — |
-| [SRC-E599346ABE-L001850](../generate_index.py#L1850) | 1850 | `"    )"` | — |
-| [SRC-E599346ABE-L001851](../generate_index.py#L1851) | 1851 | `"    parser.add_argument("` | — |
-| [SRC-E599346ABE-L001852](../generate_index.py#L1852) | 1852 | `"        \"--check\","` | — |
-| [SRC-E599346ABE-L001853](../generate_index.py#L1853) | 1853 | `"        action=\"store_true\","` | — |
-| [SRC-E599346ABE-L001854](../generate_index.py#L1854) | 1854 | `"        help=\"لا تكتب ملفات؛ أعد حالة فشل إذا كان أي فهرس مولّد قديمًا أو مفقودًا.\","` | — |
-| [SRC-E599346ABE-L001855](../generate_index.py#L1855) | 1855 | `"    )"` | — |
-| [SRC-E599346ABE-L001856](../generate_index.py#L1856) | 1856 | `"    arguments = parser.parse_args(argv)"` | — |
-| [SRC-E599346ABE-L001857](../generate_index.py#L1857) | 1857 | `""` | — |
-| [SRC-E599346ABE-L001858](../generate_index.py#L1858) | 1858 | `"    try:"` | — |
-| [SRC-E599346ABE-L001859](../generate_index.py#L1859) | 1859 | `"        root = arguments.root.resolve(strict=True)"` | — |
-| [SRC-E599346ABE-L001860](../generate_index.py#L1860) | 1860 | `"        if not root.is_dir():"` | — |
-| [SRC-E599346ABE-L001861](../generate_index.py#L1861) | 1861 | `"            raise ValueError(f\"المسار المحدد ليس مجلدًا: {root}\")"` | — |
-| [SRC-E599346ABE-L001862](../generate_index.py#L1862) | 1862 | `"        ("` | — |
-| [SRC-E599346ABE-L001863](../generate_index.py#L1863) | 1863 | `"            markdown,"` | — |
-| [SRC-E599346ABE-L001864](../generate_index.py#L1864) | 1864 | `"            source_lines_markdown,"` | — |
-| [SRC-E599346ABE-L001865](../generate_index.py#L1865) | 1865 | `"            coverage_audit_markdown,"` | — |
-| [SRC-E599346ABE-L001866](../generate_index.py#L1866) | 1866 | `"            source_pages,"` | — |
-| [SRC-E599346ABE-L001867](../generate_index.py#L1867) | 1867 | `"            python_file_count,"` | — |
-| [SRC-E599346ABE-L001868](../generate_index.py#L1868) | 1868 | `"            repository_file_count,"` | — |
-| [SRC-E599346ABE-L001869](../generate_index.py#L1869) | 1869 | `"            symbol_count,"` | — |
-| [SRC-E599346ABE-L001870](../generate_index.py#L1870) | 1870 | `"            source_line_count,"` | — |
-| [SRC-E599346ABE-L001871](../generate_index.py#L1871) | 1871 | `"            finding_count,"` | — |
-| [SRC-E599346ABE-L001872](../generate_index.py#L1872) | 1872 | `"            documented_count,"` | — |
-| [SRC-E599346ABE-L001873](../generate_index.py#L1873) | 1873 | `"            missing_count,"` | — |
-| [SRC-E599346ABE-L001874](../generate_index.py#L1874) | 1874 | `"        ) = _generate(root)"` | — |
-| [SRC-E599346ABE-L001875](../generate_index.py#L1875) | 1875 | `"        output_path = root / INDEX_RELATIVE_PATH"` | — |
-| [SRC-E599346ABE-L001876](../generate_index.py#L1876) | 1876 | `"        source_lines_output_path = root / SOURCE_LINES_INDEX_RELATIVE_PATH"` | — |
-| [SRC-E599346ABE-L001877](../generate_index.py#L1877) | 1877 | `"        generated_outputs = {"` | — |
-| [SRC-E599346ABE-L001878](../generate_index.py#L1878) | 1878 | `"            INDEX_RELATIVE_PATH: markdown,"` | — |
-| [SRC-E599346ABE-L001879](../generate_index.py#L1879) | 1879 | `"            SOURCE_LINES_INDEX_RELATIVE_PATH: source_lines_markdown,"` | — |
-| [SRC-E599346ABE-L001880](../generate_index.py#L1880) | 1880 | `"            COVERAGE_AUDIT_RELATIVE_PATH: coverage_audit_markdown,"` | — |
-| [SRC-E599346ABE-L001881](../generate_index.py#L1881) | 1881 | `"            **source_pages,"` | — |
-| [SRC-E599346ABE-L001882](../generate_index.py#L1882) | 1882 | `"        }"` | — |
-| [SRC-E599346ABE-L001883](../generate_index.py#L1883) | 1883 | `""` | — |
-| [SRC-E599346ABE-L001884](../generate_index.py#L1884) | 1884 | `"        if arguments.check:"` | — |
-| [SRC-E599346ABE-L001885](../generate_index.py#L1885) | 1885 | `"            for relative_path, expected_content in generated_outputs.items():"` | — |
-| [SRC-E599346ABE-L001886](../generate_index.py#L1886) | 1886 | `"                generated_path = root / relative_path"` | — |
-| [SRC-E599346ABE-L001887](../generate_index.py#L1887) | 1887 | `"                try:"` | — |
-| [SRC-E599346ABE-L001888](../generate_index.py#L1888) | 1888 | `"                    current_content = generated_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-E599346ABE-L001889](../generate_index.py#L1889) | 1889 | `"                except FileNotFoundError:"` | — |
-| [SRC-E599346ABE-L001890](../generate_index.py#L1890) | 1890 | `"                    print("` | — |
-| [SRC-E599346ABE-L001891](../generate_index.py#L1891) | 1891 | `"                        f\"فهرس مولّد مفقود: {generated_path}. \""` | — |
-| [SRC-E599346ABE-L001892](../generate_index.py#L1892) | 1892 | `"                        \"شغّل python docs/generate_index.py.\","` | — |
-| [SRC-E599346ABE-L001893](../generate_index.py#L1893) | 1893 | `"                        file=sys.stderr,"` | — |
-| [SRC-E599346ABE-L001894](../generate_index.py#L1894) | 1894 | `"                    )"` | — |
-| [SRC-E599346ABE-L001895](../generate_index.py#L1895) | 1895 | `"                    return 1"` | — |
-| [SRC-E599346ABE-L001896](../generate_index.py#L1896) | 1896 | `"                if current_content != expected_content:"` | — |
-| [SRC-E599346ABE-L001897](../generate_index.py#L1897) | 1897 | `"                    if relative_path == INDEX_RELATIVE_PATH:"` | — |
-| [SRC-E599346ABE-L001898](../generate_index.py#L1898) | 1898 | `"                        message = \"الفهرس قديم (الرئيسي)\""` | — |
-| [SRC-E599346ABE-L001899](../generate_index.py#L1899) | 1899 | `"                    elif relative_path == SOURCE_LINES_INDEX_RELATIVE_PATH:"` | — |
-| [SRC-E599346ABE-L001900](../generate_index.py#L1900) | 1900 | `"                        message = \"فهرس الأسطر قديم\""` | — |
-| [SRC-E599346ABE-L001901](../generate_index.py#L1901) | 1901 | `"                    else:"` | — |
-| [SRC-E599346ABE-L001902](../generate_index.py#L1902) | 1902 | `"                        message = \"فهرس تغطية الفهرسة قديم\""` | — |
-| [SRC-E599346ABE-L001903](../generate_index.py#L1903) | 1903 | `"                    print("` | — |
-| [SRC-E599346ABE-L001904](../generate_index.py#L1904) | 1904 | `"                        f\"{message}: {generated_path}. \""` | — |
-| [SRC-E599346ABE-L001905](../generate_index.py#L1905) | 1905 | `"                        \"شغّل python docs/generate_index.py.\","` | — |
-| [SRC-E599346ABE-L001906](../generate_index.py#L1906) | 1906 | `"                        file=sys.stderr,"` | — |
-| [SRC-E599346ABE-L001907](../generate_index.py#L1907) | 1907 | `"                    )"` | — |
-| [SRC-E599346ABE-L001908](../generate_index.py#L1908) | 1908 | `"                    return 1"` | — |
-| [SRC-E599346ABE-L001909](../generate_index.py#L1909) | 1909 | `""` | — |
-| [SRC-E599346ABE-L001910](../generate_index.py#L1910) | 1910 | `"            pages_directory = root / SOURCE_LINES_PAGES_DIR"` | — |
-| [SRC-E599346ABE-L001911](../generate_index.py#L1911) | 1911 | `"            expected_page_names = {"` | — |
-| [SRC-E599346ABE-L001912](../generate_index.py#L1912) | 1912 | `"                Path(relative_path).name"` | — |
-| [SRC-E599346ABE-L001913](../generate_index.py#L1913) | 1913 | `"                for relative_path in source_pages"` | — |
-| [SRC-E599346ABE-L001914](../generate_index.py#L1914) | 1914 | `"            }"` | — |
-| [SRC-E599346ABE-L001915](../generate_index.py#L1915) | 1915 | `"            if pages_directory.exists():"` | — |
-| [SRC-E599346ABE-L001916](../generate_index.py#L1916) | 1916 | `"                actual_page_names = {"` | — |
-| [SRC-E599346ABE-L001917](../generate_index.py#L1917) | 1917 | `"                    path.name"` | — |
-| [SRC-E599346ABE-L001918](../generate_index.py#L1918) | 1918 | `"                    for path in pages_directory.iterdir()"` | — |
-| [SRC-E599346ABE-L001919](../generate_index.py#L1919) | 1919 | `"                    if path.is_file() and SOURCE_LINES_PAGE_RE.fullmatch(path.name)"` | — |
-| [SRC-E599346ABE-L001920](../generate_index.py#L1920) | 1920 | `"                }"` | — |
-| [SRC-E599346ABE-L001921](../generate_index.py#L1921) | 1921 | `"                stale_pages = actual_page_names - expected_page_names"` | — |
-| [SRC-E599346ABE-L001922](../generate_index.py#L1922) | 1922 | `"                if stale_pages:"` | — |
-| [SRC-E599346ABE-L001923](../generate_index.py#L1923) | 1923 | `"                    print("` | — |
-| [SRC-E599346ABE-L001924](../generate_index.py#L1924) | 1924 | `"                        \"صفحات فهرس قديمة يجب حذفها بإعادة التوليد: \""` | — |
-| [SRC-E599346ABE-L001925](../generate_index.py#L1925) | 1925 | `"                        + \", \".join(sorted(stale_pages)),"` | — |
-| [SRC-E599346ABE-L001926](../generate_index.py#L1926) | 1926 | `"                        file=sys.stderr,"` | — |
-| [SRC-E599346ABE-L001927](../generate_index.py#L1927) | 1927 | `"                    )"` | — |
-| [SRC-E599346ABE-L001928](../generate_index.py#L1928) | 1928 | `"                    return 1"` | — |
-| [SRC-E599346ABE-L001929](../generate_index.py#L1929) | 1929 | `"            changed = False"` | — |
-| [SRC-E599346ABE-L001930](../generate_index.py#L1930) | 1930 | `"        else:"` | — |
-| [SRC-E599346ABE-L001931](../generate_index.py#L1931) | 1931 | `"            changed = False"` | — |
-| [SRC-E599346ABE-L001932](../generate_index.py#L1932) | 1932 | `"            for relative_path, generated_content in generated_outputs.items():"` | — |
-| [SRC-E599346ABE-L001933](../generate_index.py#L1933) | 1933 | `"                if write_if_changed(root / relative_path, generated_content):"` | — |
-| [SRC-E599346ABE-L001934](../generate_index.py#L1934) | 1934 | `"                    changed = True"` | — |
-| [SRC-E599346ABE-L001935](../generate_index.py#L1935) | 1935 | `""` | — |
-| [SRC-E599346ABE-L001936](../generate_index.py#L1936) | 1936 | `"            pages_directory = root / SOURCE_LINES_PAGES_DIR"` | — |
-| [SRC-E599346ABE-L001937](../generate_index.py#L1937) | 1937 | `"            if pages_directory.exists():"` | — |
-| [SRC-E599346ABE-L001938](../generate_index.py#L1938) | 1938 | `"                expected_page_names = {"` | — |
-| [SRC-E599346ABE-L001939](../generate_index.py#L1939) | 1939 | `"                    Path(relative_path).name"` | — |
-| [SRC-E599346ABE-L001940](../generate_index.py#L1940) | 1940 | `"                    for relative_path in source_pages"` | — |
-| [SRC-E599346ABE-L001941](../generate_index.py#L1941) | 1941 | `"                }"` | — |
-| [SRC-E599346ABE-L001942](../generate_index.py#L1942) | 1942 | `"                for path in pages_directory.iterdir():"` | — |
-| [SRC-E599346ABE-L001943](../generate_index.py#L1943) | 1943 | `"                    if ("` | — |
-| [SRC-E599346ABE-L001944](../generate_index.py#L1944) | 1944 | `"                        path.is_file()"` | — |
-| [SRC-E599346ABE-L001945](../generate_index.py#L1945) | 1945 | `"                        and SOURCE_LINES_PAGE_RE.fullmatch(path.name)"` | — |
-| [SRC-E599346ABE-L001946](../generate_index.py#L1946) | 1946 | `"                        and path.name not in expected_page_names"` | — |
-| [SRC-E599346ABE-L001947](../generate_index.py#L1947) | 1947 | `"                    ):"` | — |
-| [SRC-E599346ABE-L001948](../generate_index.py#L1948) | 1948 | `"                        path.unlink()"` | — |
-| [SRC-E599346ABE-L001949](../generate_index.py#L1949) | 1949 | `"                        changed = True"` | — |
-| [SRC-E599346ABE-L001950](../generate_index.py#L1950) | 1950 | `"    except (IndexGenerationError, OSError, ValueError) as exc:"` | — |
-| [SRC-E599346ABE-L001951](../generate_index.py#L1951) | 1951 | `"        print(f\"خطأ في إنشاء فهرس Omarai: {exc}\", file=sys.stderr)"` | — |
-| [SRC-E599346ABE-L001952](../generate_index.py#L1952) | 1952 | `"        return 1"` | — |
-| [SRC-E599346ABE-L001953](../generate_index.py#L1953) | 1953 | `""` | — |
-| [SRC-E599346ABE-L001954](../generate_index.py#L1954) | 1954 | `"    if arguments.check:"` | — |
-| [SRC-E599346ABE-L001955](../generate_index.py#L1955) | 1955 | `"        action = \"الفهرس محدث والتحقق ناجح\""` | — |
-| [SRC-E599346ABE-L001956](../generate_index.py#L1956) | 1956 | `"    else:"` | — |
-| [SRC-E599346ABE-L001957](../generate_index.py#L1957) | 1957 | `"        action = \"تم تحديث\" if changed else \"الفهرس محدث بالفعل\""` | — |
-| [SRC-E599346ABE-L001958](../generate_index.py#L1958) | 1958 | `"    print("` | — |
-| [SRC-E599346ABE-L001959](../generate_index.py#L1959) | 1959 | `"        f\"{action}: {output_path} \| \""` | — |
-| [SRC-E599346ABE-L001960](../generate_index.py#L1960) | 1960 | `"        f\"ملفات المستودع: {repository_file_count} \| \""` | — |
-| [SRC-E599346ABE-L001961](../generate_index.py#L1961) | 1961 | `"        f\"ملفات Python: {python_file_count} \| \""` | — |
-| [SRC-E599346ABE-L001962](../generate_index.py#L1962) | 1962 | `"        f\"تعريفات Python: {symbol_count} \| \""` | — |
-| [SRC-E599346ABE-L001963](../generate_index.py#L1963) | 1963 | `"        f\"أسطر مفهرسة: {source_line_count} \| \""` | — |
-| [SRC-E599346ABE-L001964](../generate_index.py#L1964) | 1964 | `"        f\"صفحات أسطر: {len(source_pages)} \| \""` | — |
-| [SRC-E599346ABE-L001965](../generate_index.py#L1965) | 1965 | `"        f\"وسوم مراجعة: {finding_count} \| \""` | — |
-| [SRC-E599346ABE-L001966](../generate_index.py#L1966) | 1966 | `"        f\"موثق: {documented_count} \| \""` | — |
-| [SRC-E599346ABE-L001967](../generate_index.py#L1967) | 1967 | `"        f\"ناقص Docstring: {missing_count}\""` | — |
-| [SRC-E599346ABE-L001968](../generate_index.py#L1968) | 1968 | `"    )"` | — |
-| [SRC-E599346ABE-L001969](../generate_index.py#L1969) | 1969 | `"    return 0"` | — |
-| [SRC-E599346ABE-L001970](../generate_index.py#L1970) | 1970 | `""` | — |
-| [SRC-E599346ABE-L001971](../generate_index.py#L1971) | 1971 | `""` | — |
-| [SRC-E599346ABE-L001972](../generate_index.py#L1972) | 1972 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-E599346ABE-L001973](../generate_index.py#L1973) | 1973 | `"    raise SystemExit(main())"` | — |
-## وثائق وفهرسة
-
-### FILE-6E35221BFA — [docs/GO_LIVE_CHECKLIST_AR.md](../GO_LIVE_CHECKLIST_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6E35221BFA-L000001](../GO_LIVE_CHECKLIST_AR.md#L1) | 1 | `"# قائمة قبول Omarai قبل التشغيل العام"` | — |
-| [SRC-6E35221BFA-L000002](../GO_LIVE_CHECKLIST_AR.md#L2) | 2 | `""` | — |
-| [SRC-6E35221BFA-L000003](../GO_LIVE_CHECKLIST_AR.md#L3) | 3 | `"تفصل هذه القائمة بين نجاح البناء وبين إثبات أن الوكيل يعمل على عنوان استضافة فعلي. استخدام الملف لا يعني وجود خدمة منشورة."` | — |
-| [SRC-6E35221BFA-L000004](../GO_LIVE_CHECKLIST_AR.md#L4) | 4 | `""` | — |
-| [SRC-6E35221BFA-L000005](../GO_LIVE_CHECKLIST_AR.md#L5) | 5 | `"مصادر الحالة الحالية: [نطاق التنفيذ](IMPLEMENTATION_SCOPE.md)، [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)، و[مصفوفة أدلة الاختبار](OMARAI_TEST_EVIDENCE_MATRIX_AR.md)."` | — |
-| [SRC-6E35221BFA-L000006](../GO_LIVE_CHECKLIST_AR.md#L6) | 6 | `""` | — |
-| [SRC-6E35221BFA-L000007](../GO_LIVE_CHECKLIST_AR.md#L7) | 7 | `"## 1. اختر مسار استضافة واحدًا"` | — |
-| [SRC-6E35221BFA-L000008](../GO_LIVE_CHECKLIST_AR.md#L8) | 8 | `""` | — |
-| [SRC-6E35221BFA-L000009](../GO_LIVE_CHECKLIST_AR.md#L9) | 9 | ``"- [Railway](DEPLOY_RAILWAY_AR.md) — دليل إعداد `railway.json`."`` | — |
-| [SRC-6E35221BFA-L000010](../GO_LIVE_CHECKLIST_AR.md#L10) | 10 | `"- [SnapDeploy](DEPLOY_SNAPDEPLOY_AR.md) — مسار عرض/اختبار مجاني؛ تحقق من الحدود الحالية ولا تعتمد على التخزين لبيانات دائمة."` | — |
-| [SRC-6E35221BFA-L000011](../GO_LIVE_CHECKLIST_AR.md#L11) | 11 | `"- [Render](DEPLOY_RENDER_AR.md) — بديل اختياري عند توافر الحساب والخدمة."` | — |
-| [SRC-6E35221BFA-L000012](../GO_LIVE_CHECKLIST_AR.md#L12) | 12 | `""` | — |
-| [SRC-6E35221BFA-L000013](../GO_LIVE_CHECKLIST_AR.md#L13) | 13 | ``"لا تخلط إعدادات مزودين مختلفين. وجود `Dockerfile` أو ملف Blueprint لا يثبت أن الخدمة أُنشئت أو تعمل."`` | — |
-| [SRC-6E35221BFA-L000014](../GO_LIVE_CHECKLIST_AR.md#L14) | 14 | `""` | — |
-| [SRC-6E35221BFA-L000015](../GO_LIVE_CHECKLIST_AR.md#L15) | 15 | `"## 2. إعداد آمن"` | — |
-| [SRC-6E35221BFA-L000016](../GO_LIVE_CHECKLIST_AR.md#L16) | 16 | `""` | — |
-| [SRC-6E35221BFA-L000017](../GO_LIVE_CHECKLIST_AR.md#L17) | 17 | ``"1. اربط المستودع `mosabosama2030-oss/omarai` والفرع `main` بمزود الاستضافة المختار وفق دليله."`` | — |
-| [SRC-6E35221BFA-L000018](../GO_LIVE_CHECKLIST_AR.md#L18) | 18 | ``"2. اضبط الأسرار في لوحة المزود فقط: `OMARAI_PUBLIC_DEPLOYMENT=1`، ورمز عشوائي `OMARAI_ACCESS_TOKEN` بطول 32 حرفًا على الأقل، ومفتاح النموذج `OPENROUTER_API_KEY` أو `OMARAI_LLM_API_KEY`."`` | — |
-| [SRC-6E35221BFA-L000019](../GO_LIVE_CHECKLIST_AR.md#L19) | 19 | ``"3. لا تفعّل `OMARAI_OPENROUTER_WEB_SEARCH` قبل مراجعة تكلفته والموافقة عليه."`` | — |
-| [SRC-6E35221BFA-L000020](../GO_LIVE_CHECKLIST_AR.md#L20) | 20 | ``"4. استخدم نطاق HTTPS تملكه أو تتحكم فيه. لا تضف نطاقًا إلى `OMARAI_ALLOWED_ORIGINS` إلا إذا كان موثوقًا وتحتاجه فعلًا."`` | — |
-| [SRC-6E35221BFA-L000021](../GO_LIVE_CHECKLIST_AR.md#L21) | 21 | ``"5. في مضيف Docker يسمح بوسيط بناء مباشر، مرّر `--build-arg OMARAI_BUILD_SHA=\"$(git rev-parse HEAD)\"`. على SnapDeploy، اضبط متغير البيئة غير السري `PUBLIC_OMARAI_BUILD_SHA` على SHA الكامل لالتزام الإصدار قبل إعادة البناء؛ المنصة تمرر متغيرات `PUBLIC_*` إلى بناء Docker. لا تستخدمه لأي سر، ولا تعتبر هوية البناء مثبتة إذا كانت `build.sha` تساوي `unknown`."`` | — |
-| [SRC-6E35221BFA-L000022](../GO_LIVE_CHECKLIST_AR.md#L22) | 22 | `""` | — |
-| [SRC-6E35221BFA-L000023](../GO_LIVE_CHECKLIST_AR.md#L23) | 23 | `"## 3. قبول النسخة المنشورة"` | — |
-| [SRC-6E35221BFA-L000024](../GO_LIVE_CHECKLIST_AR.md#L24) | 24 | `""` | — |
-| [SRC-6E35221BFA-L000025](../GO_LIVE_CHECKLIST_AR.md#L25) | 25 | ``"شغّل [Hosted acceptance smoke workflow](../.github/workflows/hosted-smoke.yml) يدويًا بعد ضبط أسرار GitHub Actions `OMARAI_ACCESS_TOKEN` و`OMARAI_BASE_URL` بقيم معتمدة. يجب أن يكون `OMARAI_BASE_URL` أصل HTTPS للخدمة دون مسار. يرسل الاختبار طلبات فعلية إلى البحث والنموذج وقد يستهلك حصة أو تكلفة؛ **لا تشغله قبل الموافقة البشرية على المضيف والتكلفة**."`` | — |
-| [SRC-6E35221BFA-L000026](../GO_LIVE_CHECKLIST_AR.md#L26) | 26 | `""` | — |
-| [SRC-6E35221BFA-L000027](../GO_LIVE_CHECKLIST_AR.md#L27) | 27 | `"معايير القبول:"` | — |
-| [SRC-6E35221BFA-L000028](../GO_LIVE_CHECKLIST_AR.md#L28) | 28 | ``"- `/api/health` يعيد HTTP 200؛ و`build.sha` يطابق SHA الكامل المستهدف."`` | — |
-| [SRC-6E35221BFA-L000029](../GO_LIVE_CHECKLIST_AR.md#L29) | 29 | ``"- طلب `POST /api/agent` دون رمز يرجع HTTP 401."`` | — |
-| [SRC-6E35221BFA-L000030](../GO_LIVE_CHECKLIST_AR.md#L30) | 30 | `"- التشخيص الحي يثبت اتصال البحث واستجابة النموذج للموفرين المطلوب اختبارهم."` | — |
-| [SRC-6E35221BFA-L000031](../GO_LIVE_CHECKLIST_AR.md#L31) | 31 | `"- السؤال التجريبي يعيد إجابة ومصادر، وتُراجع الإجابة مقابل مصادرها يدويًا."` | — |
-| [SRC-6E35221BFA-L000032](../GO_LIVE_CHECKLIST_AR.md#L32) | 32 | `"- لا يظهر رمز وصول أو مفتاح API في التقرير أو السجلات."` | — |
-| [SRC-6E35221BFA-L000033](../GO_LIVE_CHECKLIST_AR.md#L33) | 33 | `""` | — |
-| [SRC-6E35221BFA-L000034](../GO_LIVE_CHECKLIST_AR.md#L34) | 34 | `"## 4. تخزين البيانات وحدود الاستخدام"` | — |
-| [SRC-6E35221BFA-L000035](../GO_LIVE_CHECKLIST_AR.md#L35) | 35 | `""` | — |
-| [SRC-6E35221BFA-L000036](../GO_LIVE_CHECKLIST_AR.md#L36) | 36 | `"- الرمز الحالي مشترك للتطبيق كله، وليس هوية لكل عميل. لا تعرض النسخة كخدمة متعددة المستأجرين ولا تخزن بيانات سرية لعملاء مختلفين."` | — |
-| [SRC-6E35221BFA-L000037](../GO_LIVE_CHECKLIST_AR.md#L37) | 37 | `"- حدود التزامن ومعدل الطلبات محلية داخل العملية؛ لم تثبت سعة إنتاجية أو حدود موزعة."` | — |
-| [SRC-6E35221BFA-L000038](../GO_LIVE_CHECKLIST_AR.md#L38) | 38 | ``"- إذا كان المضيف يوفر Volume دائمًا، اربطه فعليًا واضبط `OMARAI_DB_PATH` لمسار داخل Volume مثل `/data/omarai.sqlite3`."`` | — |
-| [SRC-6E35221BFA-L000039](../GO_LIVE_CHECKLIST_AR.md#L39) | 39 | `"- أنشئ نسخة احتياطية خارج قرص الخدمة واستعدها إلى قاعدة اختبار منفصلة. أعد تشغيل/نشر الخدمة وأثبت بقاء سجل تجريبي قبل الاعتماد على التخزين."` | — |
-| [SRC-6E35221BFA-L000040](../GO_LIVE_CHECKLIST_AR.md#L40) | 40 | `"- إذا لم ينجح اختبار الديمومة والاستعادة، استخدم بيانات اصطناعية قابلة للفقد فقط."` | — |
-| [SRC-6E35221BFA-L000041](../GO_LIVE_CHECKLIST_AR.md#L41) | 41 | `""` | — |
-| [SRC-6E35221BFA-L000042](../GO_LIVE_CHECKLIST_AR.md#L42) | 42 | `"## 5. قبول واجهة الهاتف"` | — |
-| [SRC-6E35221BFA-L000043](../GO_LIVE_CHECKLIST_AR.md#L43) | 43 | `""` | — |
-| [SRC-6E35221BFA-L000044](../GO_LIVE_CHECKLIST_AR.md#L44) | 44 | `"بعد نجاح الفحص الآلي، اختبر يدويًا على Android ومتصفح ضيق العرض: RTL، والتحميل، والنجاح، والفشل، وإعادة المحاولة، وفتح المصادر، والرفض برمز خاطئ، وعدم بقاء إجابة قديمة بعد خطأ. لا تستخدم بيانات عملاء حقيقية في الاختبار."` | — |
-| [SRC-6E35221BFA-L000045](../GO_LIVE_CHECKLIST_AR.md#L45) | 45 | `""` | — |
-| [SRC-6E35221BFA-L000046](../GO_LIVE_CHECKLIST_AR.md#L46) | 46 | `"## حدود الإثبات"` | — |
-| [SRC-6E35221BFA-L000047](../GO_LIVE_CHECKLIST_AR.md#L47) | 47 | `""` | — |
-| [SRC-6E35221BFA-L000048](../GO_LIVE_CHECKLIST_AR.md#L48) | 48 | ``"نجاح Pytest أو Ruff أو بناء Docker لا يثبت عمل المضيف، أو توافر كل موفر خارجي، أو صحة كل إجابة، أو استمرار SQLite، أو سعة التحمل. سجّل كل فحص غير منفذ بوصفه `NOT_RUN` أو `UNKNOWN` ولا تعلن قبول النشر قبل توفر دليله المباشر."`` | — |
-## وثائق وفهرسة
-
-### FILE-C8EA754D73 — [docs/IMPLEMENTATION_SCOPE.md](../IMPLEMENTATION_SCOPE.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C8EA754D73-L000001](../IMPLEMENTATION_SCOPE.md#L1) | 1 | `"# Omarai — نطاق التنفيذ الفعلي وحدود الإثبات"` | — |
-| [SRC-C8EA754D73-L000002](../IMPLEMENTATION_SCOPE.md#L2) | 2 | `""` | — |
-| [SRC-C8EA754D73-L000003](../IMPLEMENTATION_SCOPE.md#L3) | 3 | ``"**الرأس المرجعي لـ `main` الذي تحققنا منه:** `00a3ede039922c0c24097e89f653e6d3c984435d`؛ commit فهرسة مولد بعد دمج PR #81 في `9f6674abf8679a0630d95b269b54a7ef8629c3bf`.  "`` | — |
-| [SRC-C8EA754D73-L000004](../IMPLEMENTATION_SCOPE.md#L4) | 4 | `"**حالة PR #81:** مدمج. غيّر إعدادات اختبارات CI وثلاث وثائق؛ لم يغيّر منطق البحث أو موصلاته.  "` | — |
-| [SRC-C8EA754D73-L000005](../IMPLEMENTATION_SCOPE.md#L5) | 5 | ``"**حدّ التحقق:** تشغيل CI على رأس PR قبل الدمج [#39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) نجح؛ لم أتمكن من إثبات تشغيل push مستقل على رأس `main` الحالي من بيانات التشغيل التي يعيدها موصل GitHub المتاح. هذا `NOT_CONFIRMED` وليس دليل فشل.  "`` | — |
-| [SRC-C8EA754D73-L000006](../IMPLEMENTATION_SCOPE.md#L6) | 6 | `"**حدود الوثيقة:** تصف الشفرة الحالية وما تثبته الأدلة؛ ليست شهادة امتثال أو تأكيدًا على وجود خدمة مستضافة."` | — |
-| [SRC-C8EA754D73-L000007](../IMPLEMENTATION_SCOPE.md#L7) | 7 | `""` | — |
-| [SRC-C8EA754D73-L000008](../IMPLEMENTATION_SCOPE.md#L8) | 8 | `"## الحالة التنفيذية الحالية"` | — |
-| [SRC-C8EA754D73-L000009](../IMPLEMENTATION_SCOPE.md#L9) | 9 | `""` | — |
-| [SRC-C8EA754D73-L000010](../IMPLEMENTATION_SCOPE.md#L10) | 10 | `"- **التوجيه والمتابعة — VERIFIED ضمن الاختبارات الآلية:** كشف الأسئلة المرجعية الغامضة وتوحيد حل المتابعة وحدود السياق."` | — |
-| [SRC-C8EA754D73-L000011](../IMPLEMENTATION_SCOPE.md#L11) | 11 | ``"- **عرض الأدلة وعمق البحث — VERIFIED ضمن الاختبارات الآلية:** لا تُعرض تغطية الأدلة على أنها احتمال صحة؛ واختيار العمق يقارن قيمة `deep` صراحةً."`` | — |
-| [SRC-C8EA754D73-L000012](../IMPLEMENTATION_SCOPE.md#L12) | 12 | `"- **سلامة البحث وجلب الصفحات — VERIFIED ضمن الاختبارات المحددة:** حالات جلب مهيكلة، وتشخيصات موصلات، وحدود واضحة لفشل الجلب، ومنع التحويل التلقائي في الموصلات المغطاة بالاختبارات."` | — |
-| [SRC-C8EA754D73-L000013](../IMPLEMENTATION_SCOPE.md#L13) | 13 | `"- **حماية API والمتصفح — VERIFIED ضمن الاختبارات المحددة:** رؤوس حماية وسياسة CSP واختبارات انحدار؛ هذا لا يغني عن تدقيق أمني شامل أو red-team مستقل."` | — |
-| [SRC-C8EA754D73-L000014](../IMPLEMENTATION_SCOPE.md#L14) | 14 | ``"- **هوية البناء — CODE PATH TESTED:** صورة Docker تتيح SHA للبناء ويعرضه `/api/health`، ويقارن Hosted smoke SHA المتوقع بالمعلن. الاختبار الحي ضد خدمة مستضافة **NOT_RUN**."`` | — |
-| [SRC-C8EA754D73-L000015](../IMPLEMENTATION_SCOPE.md#L15) | 15 | ``"- **الفهرسة والبحث المحلي — VERIFIED ضمن اختبارات المولد والبحث:** `docs/generate_index.py` يبني جرد الملفات والرموز وصفحات الأسطر؛ `docs/search_code.py` يتيح البحث محليًا دون API."`` | — |
-| [SRC-C8EA754D73-L000016](../IMPLEMENTATION_SCOPE.md#L16) | 16 | ``"- **مسار SQLite — VERIFIED في الكود والاختبارات المحلية:** `OMARAI_DB_PATH` يحدد المسار؛ لا ينشئ Volume ولا يثبت استمرار البيانات لدى مزود استضافة."`` | — |
-| [SRC-C8EA754D73-L000017](../IMPLEMENTATION_SCOPE.md#L17) | 17 | `""` | — |
-| [SRC-C8EA754D73-L000018](../IMPLEMENTATION_SCOPE.md#L18) | 18 | `"## أدلة الاختبار وحدودها"` | — |
-| [SRC-C8EA754D73-L000019](../IMPLEMENTATION_SCOPE.md#L19) | 19 | `""` | — |
-| [SRC-C8EA754D73-L000020](../IMPLEMENTATION_SCOPE.md#L20) | 20 | `"- **CI على رأس PR #81 قبل الدمج:** [run #39955767221](https://github.com/mosabosama2030-oss/omarai/actions/runs/39955767221) نجح بالكامل: 384 اختبارًا على Python 3.11 و384 على Python 3.12، وRuff، وتصنيف مسارات الفهرسة، وتوليد الفهرس والتحقق منه، وبناء الحاوية واختبار API المحمي."` | — |
-| [SRC-C8EA754D73-L000021](../IMPLEMENTATION_SCOPE.md#L21) | 21 | ``"- **دمج PR #81:** الالتزام `9f6674abf8679a0630d95b269b54a7ef8629c3bf`. رأس `main` الذي تحققنا من مطابقته هو `00a3ede039922c0c24097e89f653e6d3c984435d`؛ المقارنة بين `main` وهذا الالتزام أعادت `identical`."`` | — |
-| [SRC-C8EA754D73-L000022](../IMPLEMENTATION_SCOPE.md#L22) | 22 | `"- **الإصلاح:** سباق الفهرس عولج في [PR #81](https://github.com/mosabosama2030-oss/omarai/pull/81): يختبر CI تصنيف المسارات، ويعيد توليد الفهرس في مساحة اختبار معزولة للتغييرات المختلطة، مع الإبقاء على الفحص الصارم عند تغييرات الفهرسة وحدها."` | — |
-| [SRC-C8EA754D73-L000023](../IMPLEMENTATION_SCOPE.md#L23) | 23 | ``"- **CI على رأس main النهائي:** `NOT_CONFIRMED` في هذه المراجعة؛ نتيجة #39955767221 تخص رأس PR قبل الدمج، وواجهة التشغيل المتاحة هنا لا تكشف تشغيلات push على نحو يسمح بتأكيد تشغيل مستقل على `00a3ede...`. هذا ليس دليل فشل؛ يلزم فحص GitHub Actions مباشرة."`` | — |
-| [SRC-C8EA754D73-L000024](../IMPLEMENTATION_SCOPE.md#L24) | 24 | ``"- اختبارات الاستضافة والموصلات الحية وجودة الإجابات الدلالية والنسخ/الاستعادة والحمل تبقى `NOT_RUN/UNKNOWN` حتى وجود أدلة مباشرة."`` | — |
-| [SRC-C8EA754D73-L000025](../IMPLEMENTATION_SCOPE.md#L25) | 25 | `""` | — |
-| [SRC-C8EA754D73-L000026](../IMPLEMENTATION_SCOPE.md#L26) | 26 | `"## غير مثبت أو خارج النطاق الحالي"` | — |
-| [SRC-C8EA754D73-L000027](../IMPLEMENTATION_SCOPE.md#L27) | 27 | `""` | — |
-| [SRC-C8EA754D73-L000028](../IMPLEMENTATION_SCOPE.md#L28) | 28 | ``"- **المزودون الأحياء والاستضافة:** `UNKNOWN / NOT_RUN` حتى اختبار كل موفر وخدمة مستهدفة فعليًا."`` | — |
-| [SRC-C8EA754D73-L000029](../IMPLEMENTATION_SCOPE.md#L29) | 29 | `"- **جودة الإجابات الدلالية:** لا يثبت وجود استشهاد أو تشابه ألفاظ أن المصدر يستلزم الادعاء؛ التحقق الدلالي المستقل الشامل غير مثبت."` | — |
-| [SRC-C8EA754D73-L000030](../IMPLEMENTATION_SCOPE.md#L30) | 30 | ``"- **SQLite والنسخ والاستعادة على المضيف:** `NOT_RUN` حتى يثبت بقاء البيانات بعد إعادة التشغيل/النشر ثم نجاح استعادة نسخة احتياطية."`` | — |
-| [SRC-C8EA754D73-L000031](../IMPLEMENTATION_SCOPE.md#L31) | 31 | ``"- **الحمل والسعة:** `NOT_RUN`; semaphore ومحدد معدل العملية لا يثبتان throughput إنتاجيًا ولا تنسيقًا موزعًا."`` | — |
-| [SRC-C8EA754D73-L000032](../IMPLEMENTATION_SCOPE.md#L32) | 32 | `"- **تعدد المستأجرين:** غير مدعوم بالنطاق الحالي؛ الرمز مشترك ومساحة البيانات لا تثبت عزلًا لكل عميل. لا يُستخدم كخدمة متعددة العملاء قبل الهوية والتفويض والعزل واختباراتها."` | — |
-| [SRC-C8EA754D73-L000033](../IMPLEMENTATION_SCOPE.md#L33) | 33 | `"- **Android/RTL:** القبول اليدوي لا يُغلق بنتائج Pytest فقط."` | — |
-| [SRC-C8EA754D73-L000034](../IMPLEMENTATION_SCOPE.md#L34) | 34 | `"- **المراجعة الأمنية المستقلة:** لا تعتبر مكتملة دون تقرير فعلي مرتبط بـSHA وأدلة قابلة للمراجعة."` | — |
-| [SRC-C8EA754D73-L000035](../IMPLEMENTATION_SCOPE.md#L35) | 35 | `""` | — |
-| [SRC-C8EA754D73-L000036](../IMPLEMENTATION_SCOPE.md#L36) | 36 | `"## مصادر الحقيقة حسب الغرض"` | — |
-| [SRC-C8EA754D73-L000037](../IMPLEMENTATION_SCOPE.md#L37) | 37 | `""` | — |
-| [SRC-C8EA754D73-L000038](../IMPLEMENTATION_SCOPE.md#L38) | 38 | `"- تفاصيل العيوب والمعرّفات ومعايير الإغلاق: [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)."` | — |
-| [SRC-C8EA754D73-L000039](../IMPLEMENTATION_SCOPE.md#L39) | 39 | `"- نتيجة ما بعد الدمج وحدود الأدلة: [تقرير التحقق بعد الدمج](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md)."` | — |
-| [SRC-C8EA754D73-L000040](../IMPLEMENTATION_SCOPE.md#L40) | 40 | `"- أنواع الاختبار والنتائج التاريخية وحدودها: [مصفوفة أدلة الاختبار](OMARAI_TEST_EVIDENCE_MATRIX_AR.md)."` | — |
-| [SRC-C8EA754D73-L000041](../IMPLEMENTATION_SCOPE.md#L41) | 41 | `"- قواعد المساهمة وتنظيم المستودع: [AGENTS.md](../AGENTS.md) و[دليل الوثائق](README.md)."` | — |
-| [SRC-C8EA754D73-L000042](../IMPLEMENTATION_SCOPE.md#L42) | 42 | `""` | — |
-| [SRC-C8EA754D73-L000043](../IMPLEMENTATION_SCOPE.md#L43) | 43 | ``"لا تُرقَّ حالة إلى `VERIFIED` دون اختبار محدد على SHA/بيئة واضحة. لا تُحوَّل `NOT_RUN` أو `UNKNOWN` إلى نجاح لمجرد وجود كود أو إعداد أو ملف توثيق."`` | — |
-## وثائق وفهرسة
-
-### FILE-53E640B937 — [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-53E640B937-L000001](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | 1 | `"# خطة تنفيذ RAG الوكيلي وسلامة الأدلة في Omarai"` | — |
-| [SRC-53E640B937-L000002](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L2) | 2 | `""` | — |
-| [SRC-53E640B937-L000003](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L3) | 3 | ``"**تاريخ الحالة:** 28 أكتوبر 2026. يبدأ هذا العمل من رأس `main` بعد دمج PR #113. نجاح الاختبارات الآلية لا يُعد قبولًا حيًا ولا إثباتًا لصحة الإجابات."`` | — |
-| [SRC-53E640B937-L000004](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) | 4 | `""` | — |
-| [SRC-53E640B937-L000005](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L5) | 5 | `"## تعريف النظام المستهدف"` | — |
-| [SRC-53E640B937-L000006](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L6) | 6 | `""` | — |
-| [SRC-53E640B937-L000007](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L7) | 7 | `"يستقبل Omarai سؤالًا، يحدد المقصد والسياق، يقرر الحاجة إلى الاسترجاع، يفكك الطلب المركب إلى محاور، يخطط لاستعلامات محدودة، يسترجع مصادر عامة آمنة أو معرفة محلية متاحة، يقرأ الصفحات، يربط المقاطع المرشحة بالاستشهادات، يصوغ الإجابة ويراجعها، ثم يكشف النقص أو يمتنع عنه. يجب أن تبقى هذه المراحل قابلة للفحص ومحدودة الزمن والموارد."` | — |
-| [SRC-53E640B937-L000008](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) | 8 | `""` | — |
-| [SRC-53E640B937-L000009](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L9) | 9 | `"## سجل البنود وحالتها"` | — |
-| [SRC-53E640B937-L000010](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L10) | 10 | `""` | — |
-| [SRC-53E640B937-L000011](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L11) | 11 | `"\| البند \| الحالة \| الدليل والحد المتبقي \|"` | — |
-| [SRC-53E640B937-L000012](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L12) | 12 | `"\|---\|---\|---\|"` | — |
-| [SRC-53E640B937-L000013](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L13) | 13 | ``"\| نموذج لغوي داخل غلاف تنفيذي \| **PARTIAL** \| `WebAgent` يضبط المهلة والميزانية والتشخيصات. وجود الاعتماديات لا يثبت أن مزود النموذج حي. \|"`` | — |
-| [SRC-53E640B937-L000014](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L14) | 14 | ``"\| فهم المقصد والمتابعة والسياق \| **FIXED_AND_TESTED ضمن نطاق CI** \| `intent_router.py` و`dialogue_state.py` وحل المتابعة؛ لا توجد ذاكرة دلالية دائمة عابرة للجلسات مثبتة. \|"`` | — |
-| [SRC-53E640B937-L000015](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L15) | 15 | `"\| تفكيك الأسئلة المركبة \| **FIXED_AND_TESTED على PR #113 المدمج** \| محاور المقارنة والطلبات المركبة وتخطيط استعلامات؛ المطابقة اللفظية ليست فهمًا دلاليًا كاملًا. \|"` | — |
-| [SRC-53E640B937-L000016](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L16) | 16 | ``"\| RAG كأداة داخل حلقة قرار \| **PARTIAL** \| `_search_web` و`_collect_research`؛ الاسترجاع الحالي بحث ويب عام، لا قاعدة معرفة خاصة مفهرسة. \|"`` | — |
-| [SRC-53E640B937-L000017](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L17) | 17 | `"\| الاسترجاع التكراري الموجه \| **ADDED IN THIS PR; CI PENDING** \| حجز عدد صغير من الاستعلامات لمحاور بلا مرشحات نصية أولية، وإعادة البحث ضمن سقف الاستعلامات والميزانية الحاليين. \|"` | — |
-| [SRC-53E640B937-L000018](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L18) | 18 | `"\| سلامة الموصلات والروابط \| **EXISTING / TESTED IN CI SCOPE** \| فحوص URL العام وSSRF وقائمة الحظر والمهل والميزانية. لا يثبت CI توافر كل مزود حيًا. \|"` | — |
-| [SRC-53E640B937-L000019](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L19) | 19 | ``"\| سجل مقطع ← استشهاد ← مصدر \| **ADDED IN THIS PR; CI PENDING** \| `agents/claim_evidence.py` يربط كل مقطع مرشح بالاستشهادات وعناوين المصادر وروابطها ونوع النص، ويكشف الاستشهاد الغائب أو خارج النطاق. \|"`` | — |
-| [SRC-53E640B937-L000020](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L20) | 20 | `"\| الاستشهادات الإلزامية والتوليد المقيد \| **PARTIAL** \| إزالة المؤشرات خارج نطاق المصدر ومراجعة النموذج والفحص اللفظي؛ لا يثبت أي منها الاستلزام الدلالي. \|"` | — |
-| [SRC-53E640B937-L000021](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L21) | 21 | `"\| كشف الهلوسة والتحقق الدلالي \| **PARTIAL / NOT INDEPENDENTLY VERIFIED** \| مراجعة بمساعدة نموذج وفحوص حتمية. لا توجد هنا مراجعة مستقلة لكل ادعاء ببيانات مرجعية. \|"` | — |
-| [SRC-53E640B937-L000022](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L22) | 22 | `"\| قواعد الكتابة والطلاقة \| **IMPROVED IN THIS PR; CI PENDING** \| إضافة قواعد للإجابة المباشرة، والجمل القصيرة، وتغطية الأجزاء، والاستشهاد من المصادر المتاحة، وإظهار المجهول. أمثلة few-shot معتمدة لم تُضف بعد. \|"` | — |
-| [SRC-53E640B937-L000023](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L23) | 23 | `"\| الذاكرة \| **PARTIAL** \| تاريخ محادثة محدود ومنقّى داخل الطلب؛ مخزن دائم بصلاحيات ومدة احتفاظ غير مثبت. \|"` | — |
-| [SRC-53E640B937-L000024](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L24) | 24 | `"\| الوكلاء المتخصصون \| **PIPELINE STAGES EXIST** \| التوجيه والتخطيط والاسترجاع والتوليد والمراجعة مراحل/وظائف قابلة للاختبار، لا وكلاء دائمون أو Meta-Agent. \|"` | — |
-| [SRC-53E640B937-L000025](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L25) | 25 | `"\| تقييم مستمر \| **PARTIAL** \| corpus من 45 حالة ومدقق بنية ومشغّل حي لا يمنح PASS تلقائيًا. الصحة الدلالية تحتاج مرجعًا ذهبيًا/تحكيمًا بشريًا. \|"` | — |
-| [SRC-53E640B937-L000026](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L26) | 26 | `"\| الاسترجاع/الأمانة/الصحة/الطلاقة \| **NOT FULLY MEASURED** \| المؤشرات الحالية تقنية/لفظية. لا تُسمى دقة أو Faithfulness دلالية ولا أرقام RAGAS دون بيانات تسميات. \|"` | — |
-| [SRC-53E640B937-L000027](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L27) | 27 | `"\| الضبط الدقيق SFT/RL \| **NOT RUN / DEFERRED** \| لا توجد مجموعة تدريب بشرية منقحة وتجربة مقارنة وميزانية تدريب مثبتة. \|"` | — |
-| [SRC-53E640B937-L000028](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L28) | 28 | `"\| قاعدة معرفة داخلية \| **NOT IMPLEMENTED BY THIS PR** \| يلزم تحديد الوثائق المسموح بها وحدودها وتقسيمها وفهرستها وتحديثها وصلاحياتها. \|"` | — |
-| [SRC-53E640B937-L000029](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L29) | 29 | `"\| اختبار الاستضافة الحي \| **NOT RUN** \| يتطلب مصادقة في البيئة، وتطابق SHA المنشور، وموافقة مستقلة؛ لم نغيّر إعداد الاستضافة. \|"` | — |
-| [SRC-53E640B937-L000030](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L30) | 30 | `""` | — |
-| [SRC-53E640B937-L000031](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L31) | 31 | `"## السلوك المضاف"` | — |
-| [SRC-53E640B937-L000032](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L32) | 32 | `""` | — |
-| [SRC-53E640B937-L000033](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L33) | 33 | `"### حلقة استرجاع محكومة"` | — |
-| [SRC-53E640B937-L000034](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L34) | 34 | `""` | — |
-| [SRC-53E640B937-L000035](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L35) | 35 | `"1. يقرأ المسار سقف الاستعلامات المحدد."` | — |
-| [SRC-53E640B937-L000036](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L36) | 36 | `"2. يحجز حتى ثلاثة استعلامات بحسب عدد المحاور والسقف لإعادة البحث."` | — |
