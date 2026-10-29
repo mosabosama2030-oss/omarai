@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **106**
-- ملفات Python المحللة: **63**
-- تعريفات Python المفهرسة: **1401**
+- ملفات المستودع في الجرد: **109**
+- ملفات Python المحللة: **66**
+- تعريفات Python المفهرسة: **1435**
 - تعريفات Python موثقة بوجود Docstring: **244**
-- تعريفات Python بلا Docstring: **869**
-- تعريفات لا ينطبق عليها Docstring: **288**
-- الرموز الساكنة الإضافية: **1748**
-- الأسطر النصية المفهرسة حرفيًا: **36983**
+- تعريفات Python بلا Docstring: **897**
+- تعريفات لا ينطبق عليها Docstring: **294**
+- الرموز الساكنة الإضافية: **1772**
+- الأسطر النصية المفهرسة حرفيًا: **37631**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -50,7 +50,7 @@
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 353893 | 6582 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 354082 | 6587 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 31824 | 680 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
@@ -90,6 +90,7 @@
 | FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22391 | 183 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
+| FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 16554 | 369 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 18980 | 497 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
@@ -97,9 +98,11 @@
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2635 | 70 | جرد الملف + AST Python |
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
+| FILE-6A7519AC10 | اختبارات | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L1) | Python | 6543 | 148 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 8235 | 230 | جرد الملف + AST Python |
+| FILE-2477C41448 | اختبارات | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L1) | Python | 2720 | 86 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
-| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 7035 | 231 | جرد الملف + AST Python |
+| FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 8529 | 271 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 32150 | 872 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
@@ -451,68 +454,68 @@
 | [agents/web_agent.py](../agents/web_agent.py#L434) | كلاس | PageFetchResult | Two-item tuple compatible with legacy callers, with structured extraction status. | موثق | 434 | [SRC-1AE03B9EC3-L000434](../agents/web_agent.py#L434) |
 | [agents/web_agent.py](../agents/web_agent.py#L437) | دالة | PageFetchResult.__new__ | لا توجد Docstring. | ناقص | 437 | [SRC-1AE03B9EC3-L000437](../agents/web_agent.py#L437) |
 | [agents/web_agent.py](../agents/web_agent.py#L450) | دالة | enforce_aspect_answer_completeness | Withhold a final answer if any explicit axis lacks a text candidate. | موثق | 450 | [SRC-1AE03B9EC3-L000450](../agents/web_agent.py#L450) |
-| [agents/web_agent.py](../agents/web_agent.py#L523) | دالة | _normalized_provider_usage | Allowlist safe billing counters from a provider response; never infer prices. | موثق | 523 | [SRC-1AE03B9EC3-L000523](../agents/web_agent.py#L523) |
-| [agents/web_agent.py](../agents/web_agent.py#L545) | كلاس | WebAgent | Search, inspect, and synthesize web evidence for open-ended questions. | موثق | 545 | [SRC-1AE03B9EC3-L000545](../agents/web_agent.py#L545) |
-| [agents/web_agent.py](../agents/web_agent.py#L548) | دالة | WebAgent.__init__ | لا توجد Docstring. | ناقص | 548 | [SRC-1AE03B9EC3-L000548](../agents/web_agent.py#L548) |
-| [agents/web_agent.py](../agents/web_agent.py#L591) | دالة | WebAgent._effective_timeout | Limit one outbound operation to the remaining per-answer time budget. | موثق | 591 | [SRC-1AE03B9EC3-L000591](../agents/web_agent.py#L591) |
-| [agents/web_agent.py](../agents/web_agent.py#L599) | دالة | WebAgent.status | لا توجد Docstring. | ناقص | 599 | [SRC-1AE03B9EC3-L000599](../agents/web_agent.py#L599) |
-| [agents/web_agent.py](../agents/web_agent.py#L698) | دالة | WebAgent._unwrap_search_url | لا توجد Docstring. | ناقص | 698 | [SRC-1AE03B9EC3-L000698](../agents/web_agent.py#L698) |
-| [agents/web_agent.py](../agents/web_agent.py#L711) | دالة | WebAgent._record_provider_diagnostic | لا توجد Docstring. | ناقص | 711 | [SRC-1AE03B9EC3-L000711](../agents/web_agent.py#L711) |
-| [agents/web_agent.py](../agents/web_agent.py#L717) | دالة | WebAgent._record_provider_diagnostic.redact | لا توجد Docstring. | ناقص | 717 | [SRC-1AE03B9EC3-L000717](../agents/web_agent.py#L717) |
-| [agents/web_agent.py](../agents/web_agent.py#L760) | دالة | WebAgent._source_matches_query | لا توجد Docstring. | ناقص | 760 | [SRC-1AE03B9EC3-L000760](../agents/web_agent.py#L760) |
-| [agents/web_agent.py](../agents/web_agent.py#L770) | دالة | WebAgent._normalized_source_url_key | Normalize a public HTTP(S) URL for duplicate detection across search rounds. | موثق | 770 | [SRC-1AE03B9EC3-L000770](../agents/web_agent.py#L770) |
-| [agents/web_agent.py](../agents/web_agent.py#L798) | دالة | WebAgent._question_coverage_targets | Use the richer aspect parser, then the shared deterministic fallback. | موثق | 798 | [SRC-1AE03B9EC3-L000798](../agents/web_agent.py#L798) |
-| [agents/web_agent.py](../agents/web_agent.py#L807) | دالة | WebAgent._is_current_search_status_question | Recognize a question about whether this answer already used web search. | موثق | 807 | [SRC-1AE03B9EC3-L000807](../agents/web_agent.py#L807) |
-| [agents/web_agent.py](../agents/web_agent.py#L827) | دالة | WebAgent._is_self_question | Recognize questions about Omarai itself so they do not need web search. | موثق | 827 | [SRC-1AE03B9EC3-L000827](../agents/web_agent.py#L827) |
-| [agents/web_agent.py](../agents/web_agent.py#L861) | دالة | WebAgent._is_navigation_request | A link-finding task can be useful with one clearly labelled candidate result. | موثق | 861 | [SRC-1AE03B9EC3-L000861](../agents/web_agent.py#L861) |
-| [agents/web_agent.py](../agents/web_agent.py#L871) | دالة | WebAgent._is_lead_search | Keep lead discovery distinct from listing searches and generic explanations. | موثق | 871 | [SRC-1AE03B9EC3-L000871](../agents/web_agent.py#L871) |
-| [agents/web_agent.py](../agents/web_agent.py#L876) | دالة | WebAgent._lead_intent_evidence | Return a narrow, inspectable public buyer-intent phrase signal, if present. | موثق | 876 | [SRC-1AE03B9EC3-L000876](../agents/web_agent.py#L876) |
-| [agents/web_agent.py](../agents/web_agent.py#L910) | دالة | WebAgent._lead_generation_queries | Create high-intent buyer-search variants without changing the product/location. | موثق | 910 | [SRC-1AE03B9EC3-L000910](../agents/web_agent.py#L910) |
-| [agents/web_agent.py](../agents/web_agent.py#L952) | دالة | WebAgent._is_listing_discovery | Recognize property/job/product discovery where candidates are useful with caveats. | موثق | 952 | [SRC-1AE03B9EC3-L000952](../agents/web_agent.py#L952) |
-| [agents/web_agent.py](../agents/web_agent.py#L972) | دالة | WebAgent._requires_web_research | Use the web only when the user requests it or the answer depends on live data. | موثق | 972 | [SRC-1AE03B9EC3-L000972](../agents/web_agent.py#L972) |
-| [agents/web_agent.py](../agents/web_agent.py#L995) | دالة | WebAgent._local_answer_result | Build a consistently shaped answer for non-research conversational requests. | موثق | 995 | [SRC-1AE03B9EC3-L000995](../agents/web_agent.py#L995) |
-| [agents/web_agent.py](../agents/web_agent.py#L1018) | دالة | WebAgent._local_conversation_reply | Return a short greeting/acknowledgment without a model or web request. | موثق | 1018 | [SRC-1AE03B9EC3-L001018](../agents/web_agent.py#L1018) |
-| [agents/web_agent.py](../agents/web_agent.py#L1032) | دالة | WebAgent._annotate_intent_route | Attach route diagnostics to both response and research-plan metadata. | موثق | 1032 | [SRC-1AE03B9EC3-L001032](../agents/web_agent.py#L1032) |
-| [agents/web_agent.py](../agents/web_agent.py#L1047) | دالة | WebAgent._clarification_result | Return a bounded clarification result without starting web search. | موثق | 1047 | [SRC-1AE03B9EC3-L001047](../agents/web_agent.py#L1047) |
-| [agents/web_agent.py](../agents/web_agent.py#L1066) | دالة | WebAgent._dialogue_clarification_result | Expose why context resolution stopped and ask instead of guessing. | موثق | 1066 | [SRC-1AE03B9EC3-L001066](../agents/web_agent.py#L1066) |
-| [agents/web_agent.py](../agents/web_agent.py#L1090) | دالة | WebAgent._capability_status_snapshot | Describe configured capabilities without claiming a live health check. | موثق | 1090 | [SRC-1AE03B9EC3-L001090](../agents/web_agent.py#L1090) |
-| [agents/web_agent.py](../agents/web_agent.py#L1171) | دالة | WebAgent._self_description_answer | Answer self/capability questions without inventing a live health result. | موثق | 1171 | [SRC-1AE03B9EC3-L001171](../agents/web_agent.py#L1171) |
-| [agents/web_agent.py](../agents/web_agent.py#L1234) | دالة | WebAgent._answer_without_search | Answer stable informational questions with the configured LLM, without fake citations. | موثق | 1234 | [SRC-1AE03B9EC3-L001234](../agents/web_agent.py#L1234) |
-| [agents/web_agent.py](../agents/web_agent.py#L1291) | دالة | WebAgent._search_duckduckgo_html | لا توجد Docstring. | ناقص | 1291 | [SRC-1AE03B9EC3-L001291](../agents/web_agent.py#L1291) |
-| [agents/web_agent.py](../agents/web_agent.py#L1341) | دالة | WebAgent._search_bing_rss | لا توجد Docstring. | ناقص | 1341 | [SRC-1AE03B9EC3-L001341](../agents/web_agent.py#L1341) |
-| [agents/web_agent.py](../agents/web_agent.py#L1388) | دالة | WebAgent._search_deepseek_api | Use DeepSeek's optional Search API as a comparison provider, never by default. | موثق | 1388 | [SRC-1AE03B9EC3-L001388](../agents/web_agent.py#L1388) |
-| [agents/web_agent.py](../agents/web_agent.py#L1444) | دالة | WebAgent._reset_deepseek_search_budget | Reset the bounded optional Search API request budget for one operation. | موثق | 1444 | [SRC-1AE03B9EC3-L001444](../agents/web_agent.py#L1444) |
-| [agents/web_agent.py](../agents/web_agent.py#L1449) | دالة | WebAgent._reserve_deepseek_search_request | Reserve one paid search request before concurrent queries invoke the provider. | موثق | 1449 | [SRC-1AE03B9EC3-L001449](../agents/web_agent.py#L1449) |
-| [agents/web_agent.py](../agents/web_agent.py#L1466) | دالة | WebAgent._search_web | Run configured search connectors concurrently with isolated failures and relevance checks. | موثق | 1466 | [SRC-1AE03B9EC3-L001466](../agents/web_agent.py#L1466) |
-| [agents/web_agent.py](../agents/web_agent.py#L1512) | دالة غير متزامنة | WebAgent._search_web.run_one | لا توجد Docstring. | ناقص | 1512 | [SRC-1AE03B9EC3-L001512](../agents/web_agent.py#L1512) |
-| [agents/web_agent.py](../agents/web_agent.py#L1590) | دالة غير متزامنة | WebAgent._search_web.run_all | لا توجد Docstring. | ناقص | 1590 | [SRC-1AE03B9EC3-L001590](../agents/web_agent.py#L1590) |
-| [agents/web_agent.py](../agents/web_agent.py#L1612) | دالة غير متزامنة | WebAgent._search_web.run_academic_all | لا توجد Docstring. | ناقص | 1612 | [SRC-1AE03B9EC3-L001612](../agents/web_agent.py#L1612) |
-| [agents/web_agent.py](../agents/web_agent.py#L1632) | دالة | WebAgent._reserve_search_call | Reserve one outbound search/social-provider request before network I/O. | موثق | 1632 | [SRC-1AE03B9EC3-L001632](../agents/web_agent.py#L1632) |
-| [agents/web_agent.py](../agents/web_agent.py#L1638) | دالة | WebAgent._search_brave | Use Brave's official web-search API when the operator provides an API key. | موثق | 1638 | [SRC-1AE03B9EC3-L001638](../agents/web_agent.py#L1638) |
-| [agents/web_agent.py](../agents/web_agent.py#L1690) | دالة | WebAgent._search_tavily | Use Tavily's official search API for structured, extractable live web results. | موثق | 1690 | [SRC-1AE03B9EC3-L001690](../agents/web_agent.py#L1690) |
-| [agents/web_agent.py](../agents/web_agent.py#L1743) | دالة | WebAgent._search_news | Read the public Google News RSS search feed for freshness-sensitive queries. | موثق | 1743 | [SRC-1AE03B9EC3-L001743](../agents/web_agent.py#L1743) |
-| [agents/web_agent.py](../agents/web_agent.py#L1813) | دالة | WebAgent._search_social | Search public social content through exposed public endpoints only. | موثق | 1813 | [SRC-1AE03B9EC3-L001813](../agents/web_agent.py#L1813) |
-| [agents/web_agent.py](../agents/web_agent.py#L2296) | دالة | WebAgent._fetch_page | Fetch a public page with bounded redirects and an inspectable extraction outcome. | موثق | 2296 | [SRC-1AE03B9EC3-L002296](../agents/web_agent.py#L2296) |
-| [agents/web_agent.py](../agents/web_agent.py#L2298) | دالة | WebAgent._fetch_page.result | لا توجد Docstring. | ناقص | 2298 | [SRC-1AE03B9EC3-L002298](../agents/web_agent.py#L2298) |
-| [agents/web_agent.py](../agents/web_agent.py#L2430) | دالة | WebAgent._collect_sources | لا توجد Docstring. | ناقص | 2430 | [SRC-1AE03B9EC3-L002430](../agents/web_agent.py#L2430) |
-| [agents/web_agent.py](../agents/web_agent.py#L2449) | دالة | WebAgent._collect_research | Run independent query searches concurrently, fuse evidence, then fetch top pages. | موثق | 2449 | [SRC-1AE03B9EC3-L002449](../agents/web_agent.py#L2449) |
-| [agents/web_agent.py](../agents/web_agent.py#L2917) | دالة | WebAgent._history_search_query | Backward-compatible wrapper for the shared follow-up resolver. | موثق | 2917 | [SRC-1AE03B9EC3-L002917](../agents/web_agent.py#L2917) |
-| [agents/web_agent.py](../agents/web_agent.py#L2921) | دالة | WebAgent._connector_status_summary | Summarize this request's connector states without exposing credentials. | موثق | 2921 | [SRC-1AE03B9EC3-L002921](../agents/web_agent.py#L2921) |
-| [agents/web_agent.py](../agents/web_agent.py#L2972) | دالة | WebAgent._connector_status_summary.redact | لا توجد Docstring. | ناقص | 2972 | [SRC-1AE03B9EC3-L002972](../agents/web_agent.py#L2972) |
-| [agents/web_agent.py](../agents/web_agent.py#L3067) | دالة | WebAgent._sanitize_history | لا توجد Docstring. | ناقص | 3067 | [SRC-1AE03B9EC3-L003067](../agents/web_agent.py#L3067) |
-| [agents/web_agent.py](../agents/web_agent.py#L3079) | دالة | WebAgent._record_generation_diagnostic | Store bounded metadata for each model attempt; never retain prompts or output. | موثق | 3079 | [SRC-1AE03B9EC3-L003079](../agents/web_agent.py#L3079) |
-| [agents/web_agent.py](../agents/web_agent.py#L3111) | دالة | WebAgent._request_completion | Call an OpenAI-compatible API with bounded fallback and optional live server search. | موثق | 3111 | [SRC-1AE03B9EC3-L003111](../agents/web_agent.py#L3111) |
-| [agents/web_agent.py](../agents/web_agent.py#L3323) | دالة | WebAgent._resolve_dialogue_context | Use the configured language model to resolve dialogue meaning, never to search. | موثق | 3323 | [SRC-1AE03B9EC3-L003323](../agents/web_agent.py#L3323) |
-| [agents/web_agent.py](../agents/web_agent.py#L3383) | دالة | WebAgent._plan_search | Resolve dialogue semantics and plan searches, with deterministic fallbacks. | موثق | 3383 | [SRC-1AE03B9EC3-L003383](../agents/web_agent.py#L3383) |
-| [agents/web_agent.py](../agents/web_agent.py#L3577) | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 3577 | [SRC-1AE03B9EC3-L003577](../agents/web_agent.py#L3577) |
-| [agents/web_agent.py](../agents/web_agent.py#L3835) | دالة | WebAgent._repair_answer_coverage | Make one bounded, evidence-constrained pass at addressing possibly missing targets. | موثق | 3835 | [SRC-1AE03B9EC3-L003835](../agents/web_agent.py#L3835) |
-| [agents/web_agent.py](../agents/web_agent.py#L3919) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 3919 | [SRC-1AE03B9EC3-L003919](../agents/web_agent.py#L3919) |
-| [agents/web_agent.py](../agents/web_agent.py#L4030) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 4030 | [SRC-1AE03B9EC3-L004030](../agents/web_agent.py#L4030) |
-| [agents/web_agent.py](../agents/web_agent.py#L4034) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 4034 | [SRC-1AE03B9EC3-L004034](../agents/web_agent.py#L4034) |
-| [agents/web_agent.py](../agents/web_agent.py#L4045) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 4045 | [SRC-1AE03B9EC3-L004045](../agents/web_agent.py#L4045) |
-| [agents/web_agent.py](../agents/web_agent.py#L4075) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 4075 | [SRC-1AE03B9EC3-L004075](../agents/web_agent.py#L4075) |
-| [agents/web_agent.py](../agents/web_agent.py#L4296) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 4296 | [SRC-1AE03B9EC3-L004296](../agents/web_agent.py#L4296) |
-| [agents/web_agent.py](../agents/web_agent.py#L4653) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 4653 | [SRC-1AE03B9EC3-L004653](../agents/web_agent.py#L4653) |
+| [agents/web_agent.py](../agents/web_agent.py#L523) | دالة | _normalized_provider_usage | Allowlist safe counters; interpret generic 'cost' as USD only for OpenRouter. | موثق | 523 | [SRC-1AE03B9EC3-L000523](../agents/web_agent.py#L523) |
+| [agents/web_agent.py](../agents/web_agent.py#L550) | كلاس | WebAgent | Search, inspect, and synthesize web evidence for open-ended questions. | موثق | 550 | [SRC-1AE03B9EC3-L000550](../agents/web_agent.py#L550) |
+| [agents/web_agent.py](../agents/web_agent.py#L553) | دالة | WebAgent.__init__ | لا توجد Docstring. | ناقص | 553 | [SRC-1AE03B9EC3-L000553](../agents/web_agent.py#L553) |
+| [agents/web_agent.py](../agents/web_agent.py#L596) | دالة | WebAgent._effective_timeout | Limit one outbound operation to the remaining per-answer time budget. | موثق | 596 | [SRC-1AE03B9EC3-L000596](../agents/web_agent.py#L596) |
+| [agents/web_agent.py](../agents/web_agent.py#L604) | دالة | WebAgent.status | لا توجد Docstring. | ناقص | 604 | [SRC-1AE03B9EC3-L000604](../agents/web_agent.py#L604) |
+| [agents/web_agent.py](../agents/web_agent.py#L703) | دالة | WebAgent._unwrap_search_url | لا توجد Docstring. | ناقص | 703 | [SRC-1AE03B9EC3-L000703](../agents/web_agent.py#L703) |
+| [agents/web_agent.py](../agents/web_agent.py#L716) | دالة | WebAgent._record_provider_diagnostic | لا توجد Docstring. | ناقص | 716 | [SRC-1AE03B9EC3-L000716](../agents/web_agent.py#L716) |
+| [agents/web_agent.py](../agents/web_agent.py#L722) | دالة | WebAgent._record_provider_diagnostic.redact | لا توجد Docstring. | ناقص | 722 | [SRC-1AE03B9EC3-L000722](../agents/web_agent.py#L722) |
+| [agents/web_agent.py](../agents/web_agent.py#L765) | دالة | WebAgent._source_matches_query | لا توجد Docstring. | ناقص | 765 | [SRC-1AE03B9EC3-L000765](../agents/web_agent.py#L765) |
+| [agents/web_agent.py](../agents/web_agent.py#L775) | دالة | WebAgent._normalized_source_url_key | Normalize a public HTTP(S) URL for duplicate detection across search rounds. | موثق | 775 | [SRC-1AE03B9EC3-L000775](../agents/web_agent.py#L775) |
+| [agents/web_agent.py](../agents/web_agent.py#L803) | دالة | WebAgent._question_coverage_targets | Use the richer aspect parser, then the shared deterministic fallback. | موثق | 803 | [SRC-1AE03B9EC3-L000803](../agents/web_agent.py#L803) |
+| [agents/web_agent.py](../agents/web_agent.py#L812) | دالة | WebAgent._is_current_search_status_question | Recognize a question about whether this answer already used web search. | موثق | 812 | [SRC-1AE03B9EC3-L000812](../agents/web_agent.py#L812) |
+| [agents/web_agent.py](../agents/web_agent.py#L832) | دالة | WebAgent._is_self_question | Recognize questions about Omarai itself so they do not need web search. | موثق | 832 | [SRC-1AE03B9EC3-L000832](../agents/web_agent.py#L832) |
+| [agents/web_agent.py](../agents/web_agent.py#L866) | دالة | WebAgent._is_navigation_request | A link-finding task can be useful with one clearly labelled candidate result. | موثق | 866 | [SRC-1AE03B9EC3-L000866](../agents/web_agent.py#L866) |
+| [agents/web_agent.py](../agents/web_agent.py#L876) | دالة | WebAgent._is_lead_search | Keep lead discovery distinct from listing searches and generic explanations. | موثق | 876 | [SRC-1AE03B9EC3-L000876](../agents/web_agent.py#L876) |
+| [agents/web_agent.py](../agents/web_agent.py#L881) | دالة | WebAgent._lead_intent_evidence | Return a narrow, inspectable public buyer-intent phrase signal, if present. | موثق | 881 | [SRC-1AE03B9EC3-L000881](../agents/web_agent.py#L881) |
+| [agents/web_agent.py](../agents/web_agent.py#L915) | دالة | WebAgent._lead_generation_queries | Create high-intent buyer-search variants without changing the product/location. | موثق | 915 | [SRC-1AE03B9EC3-L000915](../agents/web_agent.py#L915) |
+| [agents/web_agent.py](../agents/web_agent.py#L957) | دالة | WebAgent._is_listing_discovery | Recognize property/job/product discovery where candidates are useful with caveats. | موثق | 957 | [SRC-1AE03B9EC3-L000957](../agents/web_agent.py#L957) |
+| [agents/web_agent.py](../agents/web_agent.py#L977) | دالة | WebAgent._requires_web_research | Use the web only when the user requests it or the answer depends on live data. | موثق | 977 | [SRC-1AE03B9EC3-L000977](../agents/web_agent.py#L977) |
+| [agents/web_agent.py](../agents/web_agent.py#L1000) | دالة | WebAgent._local_answer_result | Build a consistently shaped answer for non-research conversational requests. | موثق | 1000 | [SRC-1AE03B9EC3-L001000](../agents/web_agent.py#L1000) |
+| [agents/web_agent.py](../agents/web_agent.py#L1023) | دالة | WebAgent._local_conversation_reply | Return a short greeting/acknowledgment without a model or web request. | موثق | 1023 | [SRC-1AE03B9EC3-L001023](../agents/web_agent.py#L1023) |
+| [agents/web_agent.py](../agents/web_agent.py#L1037) | دالة | WebAgent._annotate_intent_route | Attach route diagnostics to both response and research-plan metadata. | موثق | 1037 | [SRC-1AE03B9EC3-L001037](../agents/web_agent.py#L1037) |
+| [agents/web_agent.py](../agents/web_agent.py#L1052) | دالة | WebAgent._clarification_result | Return a bounded clarification result without starting web search. | موثق | 1052 | [SRC-1AE03B9EC3-L001052](../agents/web_agent.py#L1052) |
+| [agents/web_agent.py](../agents/web_agent.py#L1071) | دالة | WebAgent._dialogue_clarification_result | Expose why context resolution stopped and ask instead of guessing. | موثق | 1071 | [SRC-1AE03B9EC3-L001071](../agents/web_agent.py#L1071) |
+| [agents/web_agent.py](../agents/web_agent.py#L1095) | دالة | WebAgent._capability_status_snapshot | Describe configured capabilities without claiming a live health check. | موثق | 1095 | [SRC-1AE03B9EC3-L001095](../agents/web_agent.py#L1095) |
+| [agents/web_agent.py](../agents/web_agent.py#L1176) | دالة | WebAgent._self_description_answer | Answer self/capability questions without inventing a live health result. | موثق | 1176 | [SRC-1AE03B9EC3-L001176](../agents/web_agent.py#L1176) |
+| [agents/web_agent.py](../agents/web_agent.py#L1239) | دالة | WebAgent._answer_without_search | Answer stable informational questions with the configured LLM, without fake citations. | موثق | 1239 | [SRC-1AE03B9EC3-L001239](../agents/web_agent.py#L1239) |
+| [agents/web_agent.py](../agents/web_agent.py#L1296) | دالة | WebAgent._search_duckduckgo_html | لا توجد Docstring. | ناقص | 1296 | [SRC-1AE03B9EC3-L001296](../agents/web_agent.py#L1296) |
+| [agents/web_agent.py](../agents/web_agent.py#L1346) | دالة | WebAgent._search_bing_rss | لا توجد Docstring. | ناقص | 1346 | [SRC-1AE03B9EC3-L001346](../agents/web_agent.py#L1346) |
+| [agents/web_agent.py](../agents/web_agent.py#L1393) | دالة | WebAgent._search_deepseek_api | Use DeepSeek's optional Search API as a comparison provider, never by default. | موثق | 1393 | [SRC-1AE03B9EC3-L001393](../agents/web_agent.py#L1393) |
+| [agents/web_agent.py](../agents/web_agent.py#L1449) | دالة | WebAgent._reset_deepseek_search_budget | Reset the bounded optional Search API request budget for one operation. | موثق | 1449 | [SRC-1AE03B9EC3-L001449](../agents/web_agent.py#L1449) |
+| [agents/web_agent.py](../agents/web_agent.py#L1454) | دالة | WebAgent._reserve_deepseek_search_request | Reserve one paid search request before concurrent queries invoke the provider. | موثق | 1454 | [SRC-1AE03B9EC3-L001454](../agents/web_agent.py#L1454) |
+| [agents/web_agent.py](../agents/web_agent.py#L1471) | دالة | WebAgent._search_web | Run configured search connectors concurrently with isolated failures and relevance checks. | موثق | 1471 | [SRC-1AE03B9EC3-L001471](../agents/web_agent.py#L1471) |
+| [agents/web_agent.py](../agents/web_agent.py#L1517) | دالة غير متزامنة | WebAgent._search_web.run_one | لا توجد Docstring. | ناقص | 1517 | [SRC-1AE03B9EC3-L001517](../agents/web_agent.py#L1517) |
+| [agents/web_agent.py](../agents/web_agent.py#L1595) | دالة غير متزامنة | WebAgent._search_web.run_all | لا توجد Docstring. | ناقص | 1595 | [SRC-1AE03B9EC3-L001595](../agents/web_agent.py#L1595) |
+| [agents/web_agent.py](../agents/web_agent.py#L1617) | دالة غير متزامنة | WebAgent._search_web.run_academic_all | لا توجد Docstring. | ناقص | 1617 | [SRC-1AE03B9EC3-L001617](../agents/web_agent.py#L1617) |
+| [agents/web_agent.py](../agents/web_agent.py#L1637) | دالة | WebAgent._reserve_search_call | Reserve one outbound search/social-provider request before network I/O. | موثق | 1637 | [SRC-1AE03B9EC3-L001637](../agents/web_agent.py#L1637) |
+| [agents/web_agent.py](../agents/web_agent.py#L1643) | دالة | WebAgent._search_brave | Use Brave's official web-search API when the operator provides an API key. | موثق | 1643 | [SRC-1AE03B9EC3-L001643](../agents/web_agent.py#L1643) |
+| [agents/web_agent.py](../agents/web_agent.py#L1695) | دالة | WebAgent._search_tavily | Use Tavily's official search API for structured, extractable live web results. | موثق | 1695 | [SRC-1AE03B9EC3-L001695](../agents/web_agent.py#L1695) |
+| [agents/web_agent.py](../agents/web_agent.py#L1748) | دالة | WebAgent._search_news | Read the public Google News RSS search feed for freshness-sensitive queries. | موثق | 1748 | [SRC-1AE03B9EC3-L001748](../agents/web_agent.py#L1748) |
+| [agents/web_agent.py](../agents/web_agent.py#L1818) | دالة | WebAgent._search_social | Search public social content through exposed public endpoints only. | موثق | 1818 | [SRC-1AE03B9EC3-L001818](../agents/web_agent.py#L1818) |
+| [agents/web_agent.py](../agents/web_agent.py#L2301) | دالة | WebAgent._fetch_page | Fetch a public page with bounded redirects and an inspectable extraction outcome. | موثق | 2301 | [SRC-1AE03B9EC3-L002301](../agents/web_agent.py#L2301) |
+| [agents/web_agent.py](../agents/web_agent.py#L2303) | دالة | WebAgent._fetch_page.result | لا توجد Docstring. | ناقص | 2303 | [SRC-1AE03B9EC3-L002303](../agents/web_agent.py#L2303) |
+| [agents/web_agent.py](../agents/web_agent.py#L2435) | دالة | WebAgent._collect_sources | لا توجد Docstring. | ناقص | 2435 | [SRC-1AE03B9EC3-L002435](../agents/web_agent.py#L2435) |
+| [agents/web_agent.py](../agents/web_agent.py#L2454) | دالة | WebAgent._collect_research | Run independent query searches concurrently, fuse evidence, then fetch top pages. | موثق | 2454 | [SRC-1AE03B9EC3-L002454](../agents/web_agent.py#L2454) |
+| [agents/web_agent.py](../agents/web_agent.py#L2922) | دالة | WebAgent._history_search_query | Backward-compatible wrapper for the shared follow-up resolver. | موثق | 2922 | [SRC-1AE03B9EC3-L002922](../agents/web_agent.py#L2922) |
+| [agents/web_agent.py](../agents/web_agent.py#L2926) | دالة | WebAgent._connector_status_summary | Summarize this request's connector states without exposing credentials. | موثق | 2926 | [SRC-1AE03B9EC3-L002926](../agents/web_agent.py#L2926) |
+| [agents/web_agent.py](../agents/web_agent.py#L2977) | دالة | WebAgent._connector_status_summary.redact | لا توجد Docstring. | ناقص | 2977 | [SRC-1AE03B9EC3-L002977](../agents/web_agent.py#L2977) |
+| [agents/web_agent.py](../agents/web_agent.py#L3072) | دالة | WebAgent._sanitize_history | لا توجد Docstring. | ناقص | 3072 | [SRC-1AE03B9EC3-L003072](../agents/web_agent.py#L3072) |
+| [agents/web_agent.py](../agents/web_agent.py#L3084) | دالة | WebAgent._record_generation_diagnostic | Store bounded metadata for each model attempt; never retain prompts or output. | موثق | 3084 | [SRC-1AE03B9EC3-L003084](../agents/web_agent.py#L3084) |
+| [agents/web_agent.py](../agents/web_agent.py#L3116) | دالة | WebAgent._request_completion | Call an OpenAI-compatible API with bounded fallback and optional live server search. | موثق | 3116 | [SRC-1AE03B9EC3-L003116](../agents/web_agent.py#L3116) |
+| [agents/web_agent.py](../agents/web_agent.py#L3328) | دالة | WebAgent._resolve_dialogue_context | Use the configured language model to resolve dialogue meaning, never to search. | موثق | 3328 | [SRC-1AE03B9EC3-L003328](../agents/web_agent.py#L3328) |
+| [agents/web_agent.py](../agents/web_agent.py#L3388) | دالة | WebAgent._plan_search | Resolve dialogue semantics and plan searches, with deterministic fallbacks. | موثق | 3388 | [SRC-1AE03B9EC3-L003388](../agents/web_agent.py#L3388) |
+| [agents/web_agent.py](../agents/web_agent.py#L3582) | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 3582 | [SRC-1AE03B9EC3-L003582](../agents/web_agent.py#L3582) |
+| [agents/web_agent.py](../agents/web_agent.py#L3840) | دالة | WebAgent._repair_answer_coverage | Make one bounded, evidence-constrained pass at addressing possibly missing targets. | موثق | 3840 | [SRC-1AE03B9EC3-L003840](../agents/web_agent.py#L3840) |
+| [agents/web_agent.py](../agents/web_agent.py#L3924) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 3924 | [SRC-1AE03B9EC3-L003924](../agents/web_agent.py#L3924) |
+| [agents/web_agent.py](../agents/web_agent.py#L4035) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 4035 | [SRC-1AE03B9EC3-L004035](../agents/web_agent.py#L4035) |
+| [agents/web_agent.py](../agents/web_agent.py#L4039) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 4039 | [SRC-1AE03B9EC3-L004039](../agents/web_agent.py#L4039) |
+| [agents/web_agent.py](../agents/web_agent.py#L4050) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 4050 | [SRC-1AE03B9EC3-L004050](../agents/web_agent.py#L4050) |
+| [agents/web_agent.py](../agents/web_agent.py#L4080) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 4080 | [SRC-1AE03B9EC3-L004080](../agents/web_agent.py#L4080) |
+| [agents/web_agent.py](../agents/web_agent.py#L4301) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 4301 | [SRC-1AE03B9EC3-L004301](../agents/web_agent.py#L4301) |
+| [agents/web_agent.py](../agents/web_agent.py#L4658) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 4658 | [SRC-1AE03B9EC3-L004658](../agents/web_agent.py#L4658) |
 | [api/omarai.py](../api/omarai.py#L23) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-EEF2E6447C-L000023](../api/omarai.py#L23) |
 | [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
 | [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
@@ -716,6 +719,20 @@
 | [docs/search_code.py](search_code.py#L187) | دالة | search_repository | Return ordered text matches with short context. | موثق | 187 | [SRC-69F3587825-L000187](search_code.py#L187) |
 | [docs/search_code.py](search_code.py#L245) | دالة | format_hits | لا توجد Docstring. | ناقص | 245 | [SRC-69F3587825-L000245](search_code.py#L245) |
 | [docs/search_code.py](search_code.py#L266) | دالة | main | لا توجد Docstring. | ناقص | 266 | [SRC-69F3587825-L000266](search_code.py#L266) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L18) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-70795F4B61-L000018](../scripts/compare_answer_quality_runs.py#L18) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L19) | متغير/ثابت Python | DEFAULT_CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-70795F4B61-L000019](../scripts/compare_answer_quality_runs.py#L19) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L20) | متغير/ثابت Python | REQUIRED_RUN_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-70795F4B61-L000020](../scripts/compare_answer_quality_runs.py#L20) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L23) | دالة | load_json_object | لا توجد Docstring. | ناقص | 23 | [SRC-70795F4B61-L000023](../scripts/compare_answer_quality_runs.py#L23) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L32) | دالة | _finite_nonnegative | لا توجد Docstring. | ناقص | 32 | [SRC-70795F4B61-L000032](../scripts/compare_answer_quality_runs.py#L32) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L41) | دالة | validate_run | لا توجد Docstring. | ناقص | 41 | [SRC-70795F4B61-L000041](../scripts/compare_answer_quality_runs.py#L41) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L67) | دالة | _percentile_nearest_rank | لا توجد Docstring. | ناقص | 67 | [SRC-70795F4B61-L000067](../scripts/compare_answer_quality_runs.py#L67) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L75) | دالة | _rate | لا توجد Docstring. | ناقص | 75 | [SRC-70795F4B61-L000075](../scripts/compare_answer_quality_runs.py#L75) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L84) | دالة | run_metrics | لا توجد Docstring. | ناقص | 84 | [SRC-70795F4B61-L000084](../scripts/compare_answer_quality_runs.py#L84) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L149) | دالة | _load_review_scorer | لا توجد Docstring. | ناقص | 149 | [SRC-70795F4B61-L000149](../scripts/compare_answer_quality_runs.py#L149) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L159) | دالة | _reviewed_case_ids | لا توجد Docstring. | ناقص | 159 | [SRC-70795F4B61-L000159](../scripts/compare_answer_quality_runs.py#L159) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L171) | دالة | review_comparison | لا توجد Docstring. | ناقص | 171 | [SRC-70795F4B61-L000171](../scripts/compare_answer_quality_runs.py#L171) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L223) | دالة | compare_runs | لا توجد Docstring. | ناقص | 223 | [SRC-70795F4B61-L000223](../scripts/compare_answer_quality_runs.py#L223) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L336) | دالة | main | لا توجد Docstring. | ناقص | 336 | [SRC-70795F4B61-L000336](../scripts/compare_answer_quality_runs.py#L336) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L16) | كلاس | SmokeError | A live acceptance check failed. | موثق | 16 | [SRC-A8360B1B03-L000016](../scripts/hosted_smoke_test.py#L16) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
@@ -773,6 +790,17 @@
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L63) | دالة | test_collect_research_retries_missing_aspect_within_query_limit.fake_search | لا توجد Docstring. | ناقص | 63 | [SRC-63610B9E85-L000063](../tests/test_agentic_retrieval.py#L63) |
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L102) | دالة | test_generation_prompt_includes_grounded_writing_examples | لا توجد Docstring. | ناقص | 102 | [SRC-63610B9E85-L000102](../tests/test_agentic_retrieval.py#L102) |
 | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L106) | دالة | test_generation_prompt_includes_grounded_writing_examples.fake_completion | لا توجد Docstring. | ناقص | 106 | [SRC-63610B9E85-L000106](../tests/test_agentic_retrieval.py#L106) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L8) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-6A7519AC10-L000008](../tests/test_answer_quality_comparison.py#L8) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L9) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-6A7519AC10-L000009](../tests/test_answer_quality_comparison.py#L9) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L10) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-6A7519AC10-L000010](../tests/test_answer_quality_comparison.py#L10) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L13) | دالة | load_module | لا توجد Docstring. | ناقص | 13 | [SRC-6A7519AC10-L000013](../tests/test_answer_quality_comparison.py#L13) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L21) | دالة | _run | لا توجد Docstring. | ناقص | 21 | [SRC-6A7519AC10-L000021](../tests/test_answer_quality_comparison.py#L21) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L31) | دالة | _row | لا توجد Docstring. | ناقص | 31 | [SRC-6A7519AC10-L000031](../tests/test_answer_quality_comparison.py#L31) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L47) | دالة | _reviews | لا توجد Docstring. | ناقص | 47 | [SRC-6A7519AC10-L000047](../tests/test_answer_quality_comparison.py#L47) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L72) | دالة | test_comparison_measures_latency_tools_cost_and_human_reviewed_quality | لا توجد Docstring. | ناقص | 72 | [SRC-6A7519AC10-L000072](../tests/test_answer_quality_comparison.py#L72) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L109) | دالة | test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance | لا توجد Docstring. | ناقص | 109 | [SRC-6A7519AC10-L000109](../tests/test_answer_quality_comparison.py#L109) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L123) | دالة | test_comparison_rejects_different_case_sets_and_questions | لا توجد Docstring. | ناقص | 123 | [SRC-6A7519AC10-L000123](../tests/test_answer_quality_comparison.py#L123) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L137) | دالة | test_run_validation_rejects_duplicate_ids_and_invalid_latency | لا توجد Docstring. | ناقص | 137 | [SRC-6A7519AC10-L000137](../tests/test_answer_quality_comparison.py#L137) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | متغير/ثابت Python | DOCS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L17) | متغير/ثابت Python | REQUIRED_CASE_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-4CCB1F172B-L000017](../tests/test_answer_quality_corpus.py#L17) |
@@ -795,6 +823,14 @@
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L206) | دالة | test_documented_high_risk_examples_match_json_categories | لا توجد Docstring. | ناقص | 206 | [SRC-4CCB1F172B-L000206](../tests/test_answer_quality_corpus.py#L206) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L218) | دالة | test_docs_mention_corrected_high_risk_ids | لا توجد Docstring. | ناقص | 218 | [SRC-4CCB1F172B-L000218](../tests/test_answer_quality_corpus.py#L218) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L225) | دالة | test_no_placeholder_corpus_content | لا توجد Docstring. | ناقص | 225 | [SRC-4CCB1F172B-L000225](../tests/test_answer_quality_corpus.py#L225) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L8) | دالة | test_provider_usage_keeps_only_valid_numeric_fields_and_openrouter_usd_cost | لا توجد Docstring. | ناقص | 8 | [SRC-2477C41448-L000008](../tests/test_answer_quality_provider_usage.py#L8) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L28) | دالة | test_generic_provider_cost_is_not_assumed_to_be_usd | لا توجد Docstring. | ناقص | 28 | [SRC-2477C41448-L000028](../tests/test_answer_quality_provider_usage.py#L28) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L36) | دالة | test_nonfinite_or_negative_provider_cost_is_not_recorded | لا توجد Docstring. | ناقص | 36 | [SRC-2477C41448-L000036](../tests/test_answer_quality_provider_usage.py#L36) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L44) | دالة | test_completion_records_provider_usage_without_retaining_provider_body | لا توجد Docstring. | ناقص | 44 | [SRC-2477C41448-L000044](../tests/test_answer_quality_provider_usage.py#L44) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L50) | كلاس | test_completion_records_provider_usage_without_retaining_provider_body.FakeResponse | لا توجد Docstring. | ناقص | 50 | [SRC-2477C41448-L000050](../tests/test_answer_quality_provider_usage.py#L50) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L53) | دالة | test_completion_records_provider_usage_without_retaining_provider_body.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 53 | [SRC-2477C41448-L000053](../tests/test_answer_quality_provider_usage.py#L53) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L56) | دالة | test_completion_records_provider_usage_without_retaining_provider_body.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 56 | [SRC-2477C41448-L000056](../tests/test_answer_quality_provider_usage.py#L56) |
+| [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L59) | دالة | test_completion_records_provider_usage_without_retaining_provider_body.FakeResponse.read | لا توجد Docstring. | ناقص | 59 | [SRC-2477C41448-L000059](../tests/test_answer_quality_provider_usage.py#L59) |
 | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L8) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-D186ED3822-L000008](../tests/test_answer_quality_review_scorecard.py#L8) |
 | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L9) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-D186ED3822-L000009](../tests/test_answer_quality_review_scorecard.py#L9) |
 | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L10) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-D186ED3822-L000010](../tests/test_answer_quality_review_scorecard.py#L10) |
@@ -828,6 +864,7 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L191) | دالة | test_live_rejects_unapproved_remote_url_before_network | لا توجد Docstring. | ناقص | 191 | [SRC-B3062EB677-L000191](../tests/test_answer_quality_runner.py#L191) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L208) | دالة | test_live_transport_error_still_not_pass | لا توجد Docstring. | ناقص | 208 | [SRC-B3062EB677-L000208](../tests/test_answer_quality_runner.py#L208) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L211) | دالة | test_live_transport_error_still_not_pass.fake_post | لا توجد Docstring. | ناقص | 211 | [SRC-B3062EB677-L000211](../tests/test_answer_quality_runner.py#L211) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L235) | دالة | test_response_metrics_separates_tool_status_from_http_success | لا توجد Docstring. | ناقص | 235 | [SRC-B3062EB677-L000235](../tests/test_answer_quality_runner.py#L235) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L11) | دالة | test_numeric_screen_accepts_arabic_digits_and_thousands_formatting | لا توجد Docstring. | ناقص | 11 | [SRC-1C77C97630-L000011](../tests/test_answer_validation.py#L11) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L31) | دالة | test_numeric_screen_flags_number_absent_from_available_evidence | لا توجد Docstring. | ناقص | 31 | [SRC-1C77C97630-L000031](../tests/test_answer_validation.py#L31) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L47) | دالة | test_task_coverage_screen_flags_a_potentially_missing_target_without_claiming_failure | لا توجد Docstring. | ناقص | 47 | [SRC-1C77C97630-L000047](../tests/test_answer_validation.py#L47) |
@@ -1730,39 +1767,39 @@
 | [agents/web_agent.py](../agents/web_agent.py#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PAGE_TEXT_CHARS | 71 | [SRC-1AE03B9EC3-L000071](../agents/web_agent.py#L71) |
 | [agents/web_agent.py](../agents/web_agent.py#L72) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LLM_TIMEOUT_SECONDS | 72 | [SRC-1AE03B9EC3-L000072](../agents/web_agent.py#L72) |
 | [agents/web_agent.py](../agents/web_agent.py#L387) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 387 | [SRC-1AE03B9EC3-L000387](../agents/web_agent.py#L387) |
-| [agents/web_agent.py](../agents/web_agent.py#L550) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 550 | [SRC-1AE03B9EC3-L000550](../agents/web_agent.py#L550) |
-| [agents/web_agent.py](../agents/web_agent.py#L551) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 551 | [SRC-1AE03B9EC3-L000551](../agents/web_agent.py#L551) |
-| [agents/web_agent.py](../agents/web_agent.py#L554) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 554 | [SRC-1AE03B9EC3-L000554](../agents/web_agent.py#L554) |
-| [agents/web_agent.py](../agents/web_agent.py#L557) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 557 | [SRC-1AE03B9EC3-L000557](../agents/web_agent.py#L557) |
-| [agents/web_agent.py](../agents/web_agent.py#L560) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 560 | [SRC-1AE03B9EC3-L000560](../agents/web_agent.py#L560) |
-| [agents/web_agent.py](../agents/web_agent.py#L563) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 563 | [SRC-1AE03B9EC3-L000563](../agents/web_agent.py#L563) |
-| [agents/web_agent.py](../agents/web_agent.py#L567) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 567 | [SRC-1AE03B9EC3-L000567](../agents/web_agent.py#L567) |
-| [agents/web_agent.py](../agents/web_agent.py#L570) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 570 | [SRC-1AE03B9EC3-L000570](../agents/web_agent.py#L570) |
-| [agents/web_agent.py](../agents/web_agent.py#L583) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 583 | [SRC-1AE03B9EC3-L000583](../agents/web_agent.py#L583) |
-| [agents/web_agent.py](../agents/web_agent.py#L587) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 587 | [SRC-1AE03B9EC3-L000587](../agents/web_agent.py#L587) |
-| [agents/web_agent.py](../agents/web_agent.py#L646) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 646 | [SRC-1AE03B9EC3-L000646](../agents/web_agent.py#L646) |
-| [agents/web_agent.py](../agents/web_agent.py#L648) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 648 | [SRC-1AE03B9EC3-L000648](../agents/web_agent.py#L648) |
-| [agents/web_agent.py](../agents/web_agent.py#L649) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 649 | [SRC-1AE03B9EC3-L000649](../agents/web_agent.py#L649) |
-| [agents/web_agent.py](../agents/web_agent.py#L668) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 668 | [SRC-1AE03B9EC3-L000668](../agents/web_agent.py#L668) |
-| [agents/web_agent.py](../agents/web_agent.py#L671) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 671 | [SRC-1AE03B9EC3-L000671](../agents/web_agent.py#L671) |
-| [agents/web_agent.py](../agents/web_agent.py#L672) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 672 | [SRC-1AE03B9EC3-L000672](../agents/web_agent.py#L672) |
-| [agents/web_agent.py](../agents/web_agent.py#L675) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 675 | [SRC-1AE03B9EC3-L000675](../agents/web_agent.py#L675) |
-| [agents/web_agent.py](../agents/web_agent.py#L676) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 676 | [SRC-1AE03B9EC3-L000676](../agents/web_agent.py#L676) |
-| [agents/web_agent.py](../agents/web_agent.py#L680) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 680 | [SRC-1AE03B9EC3-L000680](../agents/web_agent.py#L680) |
-| [agents/web_agent.py](../agents/web_agent.py#L681) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 681 | [SRC-1AE03B9EC3-L000681](../agents/web_agent.py#L681) |
-| [agents/web_agent.py](../agents/web_agent.py#L683) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 683 | [SRC-1AE03B9EC3-L000683](../agents/web_agent.py#L683) |
-| [agents/web_agent.py](../agents/web_agent.py#L684) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 684 | [SRC-1AE03B9EC3-L000684](../agents/web_agent.py#L684) |
-| [agents/web_agent.py](../agents/web_agent.py#L873) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 873 | [SRC-1AE03B9EC3-L000873](../agents/web_agent.py#L873) |
-| [agents/web_agent.py](../agents/web_agent.py#L1455) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 1455 | [SRC-1AE03B9EC3-L001455](../agents/web_agent.py#L1455) |
-| [agents/web_agent.py](../agents/web_agent.py#L1840) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 1840 | [SRC-1AE03B9EC3-L001840](../agents/web_agent.py#L1840) |
-| [agents/web_agent.py](../agents/web_agent.py#L3868) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 3868 | [SRC-1AE03B9EC3-L003868](../agents/web_agent.py#L3868) |
-| [agents/web_agent.py](../agents/web_agent.py#L3868) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 3868 | [SRC-1AE03B9EC3-L003868](../agents/web_agent.py#L3868) |
-| [agents/web_agent.py](../agents/web_agent.py#L3959) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 3959 | [SRC-1AE03B9EC3-L003959](../agents/web_agent.py#L3959) |
-| [agents/web_agent.py](../agents/web_agent.py#L3959) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 3959 | [SRC-1AE03B9EC3-L003959](../agents/web_agent.py#L3959) |
-| [agents/web_agent.py](../agents/web_agent.py#L4346) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 4346 | [SRC-1AE03B9EC3-L004346](../agents/web_agent.py#L4346) |
-| [agents/web_agent.py](../agents/web_agent.py#L4729) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 4729 | [SRC-1AE03B9EC3-L004729](../agents/web_agent.py#L4729) |
-| [agents/web_agent.py](../agents/web_agent.py#L4732) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 4732 | [SRC-1AE03B9EC3-L004732](../agents/web_agent.py#L4732) |
-| [agents/web_agent.py](../agents/web_agent.py#L4796) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 4796 | [SRC-1AE03B9EC3-L004796](../agents/web_agent.py#L4796) |
+| [agents/web_agent.py](../agents/web_agent.py#L555) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 555 | [SRC-1AE03B9EC3-L000555](../agents/web_agent.py#L555) |
+| [agents/web_agent.py](../agents/web_agent.py#L556) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 556 | [SRC-1AE03B9EC3-L000556](../agents/web_agent.py#L556) |
+| [agents/web_agent.py](../agents/web_agent.py#L559) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 559 | [SRC-1AE03B9EC3-L000559](../agents/web_agent.py#L559) |
+| [agents/web_agent.py](../agents/web_agent.py#L562) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 562 | [SRC-1AE03B9EC3-L000562](../agents/web_agent.py#L562) |
+| [agents/web_agent.py](../agents/web_agent.py#L565) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 565 | [SRC-1AE03B9EC3-L000565](../agents/web_agent.py#L565) |
+| [agents/web_agent.py](../agents/web_agent.py#L568) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 568 | [SRC-1AE03B9EC3-L000568](../agents/web_agent.py#L568) |
+| [agents/web_agent.py](../agents/web_agent.py#L572) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 572 | [SRC-1AE03B9EC3-L000572](../agents/web_agent.py#L572) |
+| [agents/web_agent.py](../agents/web_agent.py#L575) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 575 | [SRC-1AE03B9EC3-L000575](../agents/web_agent.py#L575) |
+| [agents/web_agent.py](../agents/web_agent.py#L588) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 588 | [SRC-1AE03B9EC3-L000588](../agents/web_agent.py#L588) |
+| [agents/web_agent.py](../agents/web_agent.py#L592) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 592 | [SRC-1AE03B9EC3-L000592](../agents/web_agent.py#L592) |
+| [agents/web_agent.py](../agents/web_agent.py#L651) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 651 | [SRC-1AE03B9EC3-L000651](../agents/web_agent.py#L651) |
+| [agents/web_agent.py](../agents/web_agent.py#L653) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 653 | [SRC-1AE03B9EC3-L000653](../agents/web_agent.py#L653) |
+| [agents/web_agent.py](../agents/web_agent.py#L654) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 654 | [SRC-1AE03B9EC3-L000654](../agents/web_agent.py#L654) |
+| [agents/web_agent.py](../agents/web_agent.py#L673) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 673 | [SRC-1AE03B9EC3-L000673](../agents/web_agent.py#L673) |
+| [agents/web_agent.py](../agents/web_agent.py#L676) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 676 | [SRC-1AE03B9EC3-L000676](../agents/web_agent.py#L676) |
+| [agents/web_agent.py](../agents/web_agent.py#L677) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 677 | [SRC-1AE03B9EC3-L000677](../agents/web_agent.py#L677) |
+| [agents/web_agent.py](../agents/web_agent.py#L680) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 680 | [SRC-1AE03B9EC3-L000680](../agents/web_agent.py#L680) |
+| [agents/web_agent.py](../agents/web_agent.py#L681) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 681 | [SRC-1AE03B9EC3-L000681](../agents/web_agent.py#L681) |
+| [agents/web_agent.py](../agents/web_agent.py#L685) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 685 | [SRC-1AE03B9EC3-L000685](../agents/web_agent.py#L685) |
+| [agents/web_agent.py](../agents/web_agent.py#L686) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 686 | [SRC-1AE03B9EC3-L000686](../agents/web_agent.py#L686) |
+| [agents/web_agent.py](../agents/web_agent.py#L688) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 688 | [SRC-1AE03B9EC3-L000688](../agents/web_agent.py#L688) |
+| [agents/web_agent.py](../agents/web_agent.py#L689) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 689 | [SRC-1AE03B9EC3-L000689](../agents/web_agent.py#L689) |
+| [agents/web_agent.py](../agents/web_agent.py#L878) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 878 | [SRC-1AE03B9EC3-L000878](../agents/web_agent.py#L878) |
+| [agents/web_agent.py](../agents/web_agent.py#L1460) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 1460 | [SRC-1AE03B9EC3-L001460](../agents/web_agent.py#L1460) |
+| [agents/web_agent.py](../agents/web_agent.py#L1845) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 1845 | [SRC-1AE03B9EC3-L001845](../agents/web_agent.py#L1845) |
+| [agents/web_agent.py](../agents/web_agent.py#L3873) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 3873 | [SRC-1AE03B9EC3-L003873](../agents/web_agent.py#L3873) |
+| [agents/web_agent.py](../agents/web_agent.py#L3873) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 3873 | [SRC-1AE03B9EC3-L003873](../agents/web_agent.py#L3873) |
+| [agents/web_agent.py](../agents/web_agent.py#L3964) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 3964 | [SRC-1AE03B9EC3-L003964](../agents/web_agent.py#L3964) |
+| [agents/web_agent.py](../agents/web_agent.py#L3964) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 3964 | [SRC-1AE03B9EC3-L003964](../agents/web_agent.py#L3964) |
+| [agents/web_agent.py](../agents/web_agent.py#L4351) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 4351 | [SRC-1AE03B9EC3-L004351](../agents/web_agent.py#L4351) |
+| [agents/web_agent.py](../agents/web_agent.py#L4734) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 4734 | [SRC-1AE03B9EC3-L004734](../agents/web_agent.py#L4734) |
+| [agents/web_agent.py](../agents/web_agent.py#L4737) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 4737 | [SRC-1AE03B9EC3-L004737](../agents/web_agent.py#L4737) |
+| [agents/web_agent.py](../agents/web_agent.py#L4801) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 4801 | [SRC-1AE03B9EC3-L004801](../agents/web_agent.py#L4801) |
 | [api/omarai.py](../api/omarai.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
 | [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
 | [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
@@ -2721,6 +2758,19 @@
 | [render.yaml](../render.yaml#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 12 | [SRC-A64CF250B4-L000012](../render.yaml#L12) |
 | [render.yaml](../render.yaml#L13) | مفتاح إعداد YAML | sync | 13 | [SRC-A64CF250B4-L000013](../render.yaml#L13) |
 | [render.yaml](../render.yaml#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 14 | [SRC-A64CF250B4-L000014](../render.yaml#L14) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_CORPUS | 19 | [SRC-70795F4B61-L000019](../scripts/compare_answer_quality_runs.py#L19) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUIRED_RUN_FIELDS | 20 | [SRC-70795F4B61-L000020](../scripts/compare_answer_quality_runs.py#L20) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_DENOMINATOR | 80 | [SRC-70795F4B61-L000080](../scripts/compare_answer_quality_runs.py#L80) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUCCESS_WITH_USABLE_RESULTS | 97 | [SRC-70795F4B61-L000097](../scripts/compare_answer_quality_runs.py#L97) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L98) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOOL_FAILED | 98 | [SRC-70795F4B61-L000098](../scripts/compare_answer_quality_runs.py#L98) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ATTEMPTED_NO_USABLE_RESULTS | 99 | [SRC-70795F4B61-L000099](../scripts/compare_answer_quality_runs.py#L99) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPLETE_FOR_RETURNED_MODEL_CALLS | 107 | [SRC-70795F4B61-L000107](../scripts/compare_answer_quality_runs.py#L107) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L118) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 118 | [SRC-70795F4B61-L000118](../scripts/compare_answer_quality_runs.py#L118) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L137) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PARTIAL_OR_PROVIDER_REPORTED_ONLY | 137 | [SRC-70795F4B61-L000137](../scripts/compare_answer_quality_runs.py#L137) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_NO_PROVIDER_COST_REPORTED | 139 | [SRC-70795F4B61-L000139](../scripts/compare_answer_quality_runs.py#L139) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 143 | [SRC-70795F4B61-L000143](../scripts/compare_answer_quality_runs.py#L143) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L205) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_MISSING_ANNOTATED_DENOMINATOR | 205 | [SRC-70795F4B61-L000205](../scripts/compare_answer_quality_runs.py#L205) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L330) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 330 | [SRC-70795F4B61-L000330](../scripts/compare_answer_quality_runs.py#L330) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 112 | [SRC-A8360B1B03-L000112](../scripts/hosted_smoke_test.py#L112) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L126) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 126 | [SRC-A8360B1B03-L000126](../scripts/hosted_smoke_test.py#L126) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L204) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 204 | [SRC-A8360B1B03-L000204](../scripts/hosted_smoke_test.py#L204) |
@@ -2803,6 +2853,13 @@
 | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1171) | مفتاح JSON | review_service | 1171 | [SRC-90FAA34ADE-L001171](../tests/fixtures/answer_quality_cases.json#L1171) |
 | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1172) | مفتاح JSON | answer_model | 1172 | [SRC-90FAA34ADE-L001172](../tests/fixtures/answer_quality_cases.json#L1172) |
 | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1198) | مفتاح JSON | provided_artifact | 1198 | [SRC-90FAA34ADE-L001198](../tests/fixtures/answer_quality_cases.json#L1198) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 10 | [SRC-6A7519AC10-L000010](../tests/test_answer_quality_comparison.py#L10) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUCCESS_WITH_USABLE_RESULTS | 39 | [SRC-6A7519AC10-L000039](../tests/test_answer_quality_comparison.py#L39) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPLETE_FOR_RETURNED_MODEL_CALLS | 40 | [SRC-6A7519AC10-L000040](../tests/test_answer_quality_comparison.py#L40) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PROVIDER_COST_NOT_REPORTED | 40 | [SRC-6A7519AC10-L000040](../tests/test_answer_quality_comparison.py#L40) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ATTEMPTED_NO_USABLE_RESULTS | 78 | [SRC-6A7519AC10-L000078](../tests/test_answer_quality_comparison.py#L78) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L96) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 96 | [SRC-6A7519AC10-L000096](../tests/test_answer_quality_comparison.py#L96) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 120 | [SRC-6A7519AC10-L000120](../tests/test_answer_quality_comparison.py#L120) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCS_PATH | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
@@ -2820,6 +2877,10 @@
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 94 | [SRC-B3062EB677-L000094](../tests/test_answer_quality_runner.py#L94) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 95 | [SRC-B3062EB677-L000095](../tests/test_answer_quality_runner.py#L95) |
 | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L159) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BENCHMARK_ALLOWED_ORIGIN | 159 | [SRC-B3062EB677-L000159](../tests/test_answer_quality_runner.py#L159) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L245) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TOOL_FAILED | 245 | [SRC-B3062EB677-L000245](../tests/test_answer_quality_runner.py#L245) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L247) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 247 | [SRC-B3062EB677-L000247](../tests/test_answer_quality_runner.py#L247) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L268) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SUCCESS_WITH_USABLE_RESULTS | 268 | [SRC-B3062EB677-L000268](../tests/test_answer_quality_runner.py#L268) |
+| [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L271) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPLETE_FOR_RETURNED_MODEL_CALLS | 271 | [SRC-B3062EB677-L000271](../tests/test_answer_quality_runner.py#L271) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 128 | [SRC-1C77C97630-L000128](../tests/test_answer_validation.py#L128) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 128 | [SRC-1C77C97630-L000128](../tests/test_answer_validation.py#L128) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L196) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 196 | [SRC-1C77C97630-L000196](../tests/test_answer_validation.py#L196) |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-51D44BE378-L000033 إلى SRC-E599346ABE-L000725
+- النطاق: SRC-51D44BE378-L000028 إلى SRC-E599346ABE-L000720
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-51D44BE378-L000028](../DEPLOY_SNAPDEPLOY_AR.md#L28) | 28 | `""` | — |
+| [SRC-51D44BE378-L000029](../DEPLOY_SNAPDEPLOY_AR.md#L29) | 29 | `"### إعداد هوية البناء على SnapDeploy"` | — |
+| [SRC-51D44BE378-L000030](../DEPLOY_SNAPDEPLOY_AR.md#L30) | 30 | `""` | — |
+| [SRC-51D44BE378-L000031](../DEPLOY_SNAPDEPLOY_AR.md#L31) | 31 | ``"1. بعد تحديد التزام `main` الذي تريد تشغيله، انسخ SHA الكامل المكوّن من 40 حرفًا."`` | — |
+| [SRC-51D44BE378-L000032](../DEPLOY_SNAPDEPLOY_AR.md#L32) | 32 | ``"2. أضف أو حدّث متغير البيئة غير السري `PUBLIC_OMARAI_BUILD_SHA` على خدمة SnapDeploy واجعل قيمته هي SHA نفسه. هذا المتغير بيانات إصدار علنية وليست رمز وصول أو مفتاح API؛ لا تستخدم البادئة العامة مطلقًا لأي سر."`` | — |
 | [SRC-51D44BE378-L000033](../DEPLOY_SNAPDEPLOY_AR.md#L33) | 33 | ``"3. أعد بناء الخدمة/نشرها بعد تعيين القيمة. يقرأ Dockerfile `PUBLIC_OMARAI_BUILD_SHA` كبديل لوسيط `OMARAI_BUILD_SHA` التقليدي، ويتحقق من شكله قبل كتابة ملف هوية البناء."`` | — |
 | [SRC-51D44BE378-L000034](../DEPLOY_SNAPDEPLOY_AR.md#L34) | 34 | ``"4. افتح `/api/health` وتحقق من أن `build.sha` يطابق الالتزام الكامل الذي اخترته بالضبط، وأن `sha_status=available` و`sha_source=image_baked`."`` | — |
 | [SRC-51D44BE378-L000035](../DEPLOY_SNAPDEPLOY_AR.md#L35) | 35 | `""` | — |
@@ -820,8 +825,3 @@
 | [SRC-E599346ABE-L000718](../generate_index.py#L718) | 718 | `"def discover_python_files(root: Path) -> list[Path]:"` | — |
 | [SRC-E599346ABE-L000719](../generate_index.py#L719) | 719 | `"    \"\"\"Return sorted Python files from the eligible repository inventory.\"\"\""` | — |
 | [SRC-E599346ABE-L000720](../generate_index.py#L720) | 720 | `""` | — |
-| [SRC-E599346ABE-L000721](../generate_index.py#L721) | 721 | `"    return ["` | — |
-| [SRC-E599346ABE-L000722](../generate_index.py#L722) | 722 | `"        path"` | — |
-| [SRC-E599346ABE-L000723](../generate_index.py#L723) | 723 | `"        for path in discover_repository_files(root)"` | — |
-| [SRC-E599346ABE-L000724](../generate_index.py#L724) | 724 | `"        if path.suffix.lower() == \".py\""` | — |
-| [SRC-E599346ABE-L000725](../generate_index.py#L725) | 725 | `"    ]"` | — |

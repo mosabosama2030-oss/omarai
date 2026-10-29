@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000827 إلى SRC-D17CE3D12F-L000723
+- النطاق: SRC-E73001D9AC-L000822 إلى SRC-D17CE3D12F-L000718
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000822](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L822) | 822 | `"- عدم السماح بأن يصبح عدد التجريدات أو الخدمات أكبر من قدرة المشروع على اختبارها ومراقبتها وصيانتها."` | — |
+| [SRC-E73001D9AC-L000823](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L823) | 823 | `""` | — |
+| [SRC-E73001D9AC-L000824](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L824) | 824 | `"## 28. بوابة قبول التوسع والتطوير"` | — |
+| [SRC-E73001D9AC-L000825](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L825) | 825 | `""` | — |
+| [SRC-E73001D9AC-L000826](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L826) | 826 | `"قبل اعتماد تغيير يضيف مجالًا أو أداة أو وكيلًا أو مخزنًا أو خدمة، يجب الإجابة وتوثيق ما ينطبق:"` | — |
 | [SRC-E73001D9AC-L000827](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L827) | 827 | `"1. ما المشكلة الفعلية أو الحاجة المتوقعة التي يعالجها التغيير؟"` | — |
 | [SRC-E73001D9AC-L000828](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L828) | 828 | `"2. هل يوجد حل أبسط داخل البنية الحالية؟"` | — |
 | [SRC-E73001D9AC-L000829](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L829) | 829 | `"3. ما الواجهة أو العقد الذي يفصل المكون عن بقية النظام؟"` | — |
@@ -820,8 +825,3 @@
 | [SRC-D17CE3D12F-L000716](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L716) | 716 | `""` | — |
 | [SRC-D17CE3D12F-L000717](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L717) | 717 | `"المنصة الناضجة تجعل المسار الصحيح أسهل من المسار الخاطئ، دون إجبار المشروع الصغير على بناء منصة داخلية مستقلة."` | — |
 | [SRC-D17CE3D12F-L000718](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L718) | 718 | `""` | — |
-| [SRC-D17CE3D12F-L000719](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L719) | 719 | `"1. SHOULD توفير مسار موثق من تعديل الكود إلى الاختبار إلى المراجعة إلى النشر، بأوامر ثابتة قدر الإمكان."` | — |
-| [SRC-D17CE3D12F-L000720](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L720) | 720 | `"2. SHOULD وجود ملفات إعداد نموذجية خالية من الأسرار، ورسائل خطأ واضحة عند غياب المتطلبات."` | — |
-| [SRC-D17CE3D12F-L000721](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L721) | 721 | `"3. MUST أن تكون تعليمات إنشاء بيئة التطوير والاختبار قابلة للتكرار، مع تثبيت إصدارات أو حدود متوافقة للاعتماديات الأساسية."` | — |
-| [SRC-D17CE3D12F-L000722](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L722) | 722 | `"4. SHOULD تقديم قوالب للمكونات الجديدة تتضمن الحد الأدنى من العقود والاختبارات والسجلات والصلاحيات."` | — |
-| [SRC-D17CE3D12F-L000723](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L723) | 723 | `"5. MUST أن يكون قالب الأداة/الموصل آمنًا افتراضيًا، ولا يمنح صلاحيات واسعة أو يرسل بيانات خاصة تلقائيًا."` | — |

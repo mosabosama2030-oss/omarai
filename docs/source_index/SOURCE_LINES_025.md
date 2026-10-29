@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000151 إلى SRC-65551FB29F-L000400
+- النطاق: SRC-62CE5126F9-L000146 إلى SRC-65551FB29F-L000395
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000146](../OMARAI_REMEDIATION_REGISTER_AR.md#L146) | 146 | ``"- **إصلاح سباق الفهرسة:** `tests.yml` يعيد توليد مخرجات الفهرس داخل مساحة الاختبار المؤقتة للمراجع غير `main` ثم يتحقق من الاتساق؛ يبقى تحقق `main` صارمًا على الملفات الملتزمة. CI اختبر ذلك بنجاح."`` | — |
+| [SRC-62CE5126F9-L000147](../OMARAI_REMEDIATION_REGISTER_AR.md#L147) | 147 | ``"- **حدّ الدليل التاريخي:** رأس PR عند كتابة اللقطة الأصلية كان `faba1502d08da6cb6c64ba6ef05e9cb29e20ab1c`؛ ثم وصل الرأس إلى `3fb02880aec9ec231d973e0b3668308d1379ee89` واجتاز run #39654908040، وبعدها دُمج عبر `528a255...`. لا تُعمّم نتيجة CI على الاستضافة الحية أو على كل إجابة معرفية؛ وضع CI بعد الدمج موضح في الملحق أعلاه."`` | — |
+| [SRC-62CE5126F9-L000148](../OMARAI_REMEDIATION_REGISTER_AR.md#L148) | 148 | `"- التشغيل المستضاف الحقيقي، وعمل الموصلات الحية، والدوام/النسخ الاحتياطي والاستعادة، والحمل، والاختبار الأحمر المستقل تبقى خارج نطاق دليل CI."` | — |
+| [SRC-62CE5126F9-L000149](../OMARAI_REMEDIATION_REGISTER_AR.md#L149) | 149 | `""` | — |
+| [SRC-62CE5126F9-L000150](../OMARAI_REMEDIATION_REGISTER_AR.md#L150) | 150 | `"## معاني الحالات"` | — |
 | [SRC-62CE5126F9-L000151](../OMARAI_REMEDIATION_REGISTER_AR.md#L151) | 151 | `""` | — |
 | [SRC-62CE5126F9-L000152](../OMARAI_REMEDIATION_REGISTER_AR.md#L152) | 152 | `"- **FIXED_AND_TESTED:** الإصلاح موجود في الالتزام المذكور ونجحت اختبارات مرتبطة به على الالتزام نفسه."` | — |
 | [SRC-62CE5126F9-L000153](../OMARAI_REMEDIATION_REGISTER_AR.md#L153) | 153 | `"- **PARTIAL:** يوجد تنفيذ أو اختبار أو تحديث جزئي، لكن شرط الإغلاق لم يكتمل."` | — |
@@ -829,8 +834,3 @@
 | [SRC-65551FB29F-L000393](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L393) | 393 | `"- فحص أوامر الاختبار الموجودة وتشغيل ما يمكن تشغيله."` | — |
 | [SRC-65551FB29F-L000394](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L394) | 394 | `"- توثيق البيئة والقيود والاعتماديات الخارجية."` | — |
 | [SRC-65551FB29F-L000395](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L395) | 395 | `"- سجل أولي للمتطلبات: VERIFIED/INFERRED/PROPOSED/UNKNOWN."` | — |
-| [SRC-65551FB29F-L000396](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L396) | 396 | `"- قائمة عيوب مع أدلة وملفات ودرجة خطورة."` | — |
-| [SRC-65551FB29F-L000397](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L397) | 397 | `""` | — |
-| [SRC-65551FB29F-L000398](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L398) | 398 | `"لا يجوز في هذه المرحلة الادعاء أن Omarai يحقق المصفوفة كاملة."` | — |
-| [SRC-65551FB29F-L000399](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L399) | 399 | `""` | — |
-| [SRC-65551FB29F-L000400](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L400) | 400 | `"## 21. المرحلة 1: السلامة والحقيقة والحدود"` | — |
