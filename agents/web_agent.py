@@ -851,8 +851,58 @@ class WebAgent:
         return route_intent(question).get("route") == "LEAD_GENERATION"
 
     @staticmethod
-    def _lead_intent_evidence(source: dict[str, Any]) -> dict[str, str] | None:
-        """Return a narrow, inspectable public buyer-intent phrase signal, if present."""
+    def _lead_entity_categories(value: str) -> set[str]:
+        """Classify explicit product/property categories for lead-query isolation."""
+        normalized = _normalize_search_query(value).casefold()
+        property_terms = (
+            "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
+            "وحده سكنيه", "وحدات سكنيه", "apartment", "apartments",
+            "flat", "flats", "property", "properties", "house", "houses",
+            "villa", "villas", "real estate",
+        )
+        vehicle_terms = (
+            "سياره", "سيارات", "عربيه", "عربيات", "مركبه", "مركبات",
+            "car", "cars", "vehicle", "vehicles", "automobile", "automobiles",
+        )
+
+        def contains(term: str) -> bool:
+            normalized_term = _normalize_search_query(term).casefold()
+            if re.search(r"[a-z]", normalized_term):
+                return bool(re.search(
+                    r"(?<![a-z0-9])" + re.escape(normalized_term) + r"(?![a-z0-9])",
+                    normalized,
+                ))
+            return normalized_term in normalized
+
+        categories: set[str] = set()
+        if any(contains(term) for term in property_terms):
+            categories.add("property")
+        if any(contains(term) for term in vehicle_terms):
+            categories.add("vehicle")
+        return categories
+
+    @staticmethod
+    def _lead_intent_evidence(
+        source: dict[str, Any], question: str | None = None
+    ) -> dict[str, str] | None:
+        """Return a public buyer-intent signal matching the requested product class."""
+        evidence_fields = (
+            ("page_text", "page_text"),
+            ("title", "title"),
+            ("snippet", "search_snippet"),
+        )
+        combined_text = " ".join(
+            str(source.get(field) or "") for field, _basis in evidence_fields
+        )
+        requested_categories = WebAgent._lead_entity_categories(question or "")
+        observed_categories = WebAgent._lead_entity_categories(combined_text)
+        # A property-buying post must never become a car lead, or vice versa.
+        if (
+            len(requested_categories) == 1
+            and requested_categories.isdisjoint(observed_categories)
+        ):
+            return None
+
         phrases = (
             "مطلوب شقه تمليك", "مطلوب شقه للشراء", "مطلوب شراء شقه",
             "مطلوب عقار للشراء", "مطلوب فيلا للشراء",
@@ -860,22 +910,25 @@ class WebAgent:
             "ابحث عن شقه للشراء", "عايز اشتري شقه", "عاوز اشتري شقه",
             "عايز اشتري عقار", "عاوز اشتري عقار", "اريد شراء شقه",
             "ارغب في شراء شقه", "اريد شراء عقار", "ارغب في شراء عقار",
+            "مطلوب شراء", "مطلوب سياره", "مطلوب عربيه",
+            "عايز اشتري", "عاوز اشتري", "اريد شراء", "ارغب في شراء",
             "looking to buy", "looking to purchase", "want to buy",
             "wants to buy", "want to purchase", "wants to purchase",
             "seeking to buy", "seeking to purchase", "interested in buying",
             "interested in purchasing", "buyer looking to buy",
         )
-        for field, basis in (("page_text", "page_text"), ("title", "title"), ("snippet", "search_snippet")):
+        negations = (
+            "not looking to buy", "not interested in buying",
+            "not interested in purchasing", "no longer looking to buy",
+            "do not want to buy", "don't want to buy",
+            "مش بدور على", "مش عايز اشتري", "مش عاوز اشتري",
+            "لا اريد شراء", "لا ارغب في شراء", "مش محتاج اشتري",
+        )
+        for field, basis in evidence_fields:
             raw = source.get(field)
             if not isinstance(raw, str) or not raw.strip():
                 continue
             normalized = _normalize_search_query(raw).casefold()
-            negations = (
-                "not looking to buy", "not interested in buying",
-                "not interested in purchasing", "no longer looking to buy",
-                "مش بدور على", "مش عايز اشتري", "مش عاوز اشتري",
-                "لا اريد شراء", "لا ارغب في شراء", "مش محتاج اشتري",
-            )
             if any(_normalize_search_query(term).casefold() in normalized for term in negations):
                 continue
             for phrase in phrases:
@@ -888,43 +941,188 @@ class WebAgent:
     def _lead_generation_queries(
         question: str, existing_queries: list[str] | None = None
     ) -> list[str]:
-        """Create high-intent buyer-search variants without changing the product/location."""
+        """Build buyer-intent queries from the requested entity, not canned product terms."""
         subject = _normalize_search_query(question).strip()
         subject = re.sub(
-            r"^(?:(?:من فضلك|لو سمحت)\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)\s+"
-            r"(?:عن|على)\s+(?:عميل(?:\s+محتمل)?|عملاء(?:\s+محتملين)?|"
-            r"مشتري(?:ن)?|مشترين)\s*(?:(?:الذي|اللي|الذين)\s*)?"
-            r"(?:(?:يريد|عايز|عاوز)\s*(?:ان\s*)?(?:يشتري|شراء))?\s*",
+            r"^(?:(?:من فضلك|لو سمحت)\s*)?"
+            r"(?:ابحث|بحث|دور|دورلي|اعثر)\s+(?:عن|على)\s+",
             "", subject, flags=re.IGNORECASE,
         )
         subject = re.sub(
-            r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?"
-            r"(?:(?:potential\s+)?(?:customer|buyer|prospect|lead)s?)\s*"
-            r"(?:(?:who|that)\s*)?(?:(?:wants?|looking to|seeking to)\s+"
-            r"(?:buy|purchase)\s*)?",
+            r"^(?:عميل(?:\s+محتمل)?|عملاء(?:\s+محتملين)?|عملاش|"
+            r"مشتري(?:ن)?|مشترين)\s*",
+            "", subject, flags=re.IGNORECASE,
+        )
+        subject = re.sub(
+            r"^(?:(?:الذي|اللي|الذين)\s*)?"
+            r"(?:(?:يطلب(?:ون)?|يبحث\s+عن|يريد(?:ون)?|عايز(?:ين)?|"
+            r"عاوز(?:ين)?|محتاج(?:ين)?|يرغب(?:ون)?\s+في)"
+            r"(?:\s*(?:او|or)\s*(?:يطلب(?:ون)?|يريد(?:ون)?|عايز(?:ين)?|"
+            r"عاوز(?:ين)?))?"
+            r"(?:\s*(?:(?:ان)\s*)?(?:يشتري|شراء|شرا|يطلب))?\s*)",
+            "", subject, flags=re.IGNORECASE,
+        )
+        subject = re.sub(
+            r"^(?:please\s+)?(?:find|search for|look for)\s+",
+            "", subject, flags=re.IGNORECASE,
+        )
+        subject = re.sub(
+            r"^(?:(?:a|an|the)\s+)?(?:potential\s+)?"
+            r"(?:customers?|buyers?|prospects?|leads?)\s*"
+            r"(?:(?:who|that)\s*)?"
+            r"(?:(?:want|wants|looking to|seeking to)\s+(?:buy|purchase)\s*)?",
             "", subject, flags=re.IGNORECASE,
         ).strip(" \t:;,.-")
-        if len(_search_tokens(subject)) < 2:
+        if not subject:
             subject = _normalize_search_query(question).strip()
+
+        categories = WebAgent._lead_entity_categories(subject)
         arabic = bool(re.search(r"[\u0600-\u06FF]", question))
-        if arabic:
-            targeted = [
-                f'"مطلوب شراء" {subject}',
-                f'"مطلوب شقه تمليك" {subject}',
-                f'"بدور على" {subject} تمليك',
-                f'"عايز اشتري" {subject}',
-                f'site:facebook.com/groups "{subject}" ("مطلوب" OR "تمليك")',
-                f'site:linkedin.com/posts "{subject}" ("looking to buy" OR "purchase")',
-            ]
+
+        def remove_entity(pattern: str) -> str:
+            return re.sub(
+                r"^(?:" + pattern + r")\s*",
+                "", subject, count=1, flags=re.IGNORECASE,
+            ).strip(" \t,،")
+
+        if "vehicle" in categories and "property" not in categories:
+            context = remove_entity(
+                r"(?:ال)?(?:سياره|سيارات|عربيه|عربيات|مركبه|مركبات|"
+                r"car|cars|vehicle|vehicles|automobile|automobiles)"
+            )
+            if arabic:
+                targeted = [
+                    f'"مطلوب شراء" {subject}',
+                    f'"مطلوب سياره" {context}'.strip(),
+                    f'"مطلوب عربيه" {context}'.strip(),
+                    f'"عايز اشتري عربيه" {context}'.strip(),
+                    (
+                        'site:facebook.com/groups ("مطلوب سياره" OR '
+                        '"مطلوب عربيه" OR "عايز اشتري") ' + (context or subject)
+                    ),
+                    'site:linkedin.com/posts "looking to buy" car ' + (context or ""),
+                ]
+            else:
+                targeted = [
+                    f'"looking to buy" car {context}'.strip(),
+                    f'"want to purchase" car {context}'.strip(),
+                    f'"looking for a car to buy" {context}'.strip(),
+                    'site:linkedin.com/posts "looking to buy" car ' + (context or ""),
+                    'site:facebook.com/groups ("looking to buy" OR "want to buy") car '
+                    + (context or ""),
+                ]
+        elif "property" in categories and "vehicle" not in categories:
+            is_apartment = any(
+                term in _normalize_search_query(subject).casefold()
+                for term in ("شقه", "شقق", "apartment", "apartments", "flat", "flats")
+            )
+            is_villa = any(
+                term in _normalize_search_query(subject).casefold()
+                for term in ("فيلا", "فلل", "villa", "villas")
+            )
+            if is_apartment:
+                entity_pattern = r"(?:ال)?(?:شقه|شقق|apartment|apartments|flat|flats)"
+                noun = "شقه" if arabic else "apartment"
+                arabic_phrases = (
+                    '"مطلوب شقه تمليك"',
+                    '"بدور على شقه تمليك"',
+                    '"عايز اشتري شقه"',
+                )
+            elif is_villa:
+                entity_pattern = r"(?:ال)?(?:فيلا|فلل|villa|villas)"
+                noun = "فيلا" if arabic else "villa"
+                arabic_phrases = (
+                    '"مطلوب فيلا للشراء"',
+                    '"بدور على فيلا"',
+                    '"عايز اشتري فيلا"',
+                )
+            else:
+                entity_pattern = r"(?:ال)?(?:عقار|عقارات|property|properties|real estate)"
+                noun = "عقار" if arabic else "property"
+                arabic_phrases = (
+                    '"مطلوب عقار للشراء"',
+                    '"بدور على عقار"',
+                    '"عايز اشتري عقار"',
+                )
+            context = remove_entity(entity_pattern)
+            if arabic:
+                targeted = [
+                    f'"مطلوب شراء" {subject}',
+                    *(f"{phrase} {context}".strip() for phrase in arabic_phrases),
+                    (
+                        f'site:facebook.com/groups ("مطلوب {noun}" OR '
+                        f'"بدور على {noun}" OR "عايز اشتري {noun}") '
+                        + (context or subject)
+                    ),
+                    (
+                        'site:linkedin.com/posts "looking to buy" '
+                        + ("apartment" if is_apartment else "villa" if is_villa else "property")
+                        + " " + (context or "")
+                    ).strip(),
+                ]
+            else:
+                english_noun = "apartment" if is_apartment else "villa" if is_villa else "property"
+                targeted = [
+                    f'"looking to buy" {english_noun} {context}'.strip(),
+                    f'"want to purchase" {english_noun} {context}'.strip(),
+                    f'"looking for a {english_noun} to buy" {context}'.strip(),
+                    f'site:linkedin.com/posts "looking to buy" {english_noun} {context}'.strip(),
+                    (
+                        'site:facebook.com/groups ("looking to buy" OR "want to buy") '
+                        + english_noun + " " + (context or "")
+                    ).strip(),
+                ]
         else:
-            targeted = [
-                f'"looking to buy" {subject}',
-                f'"want to purchase" {subject}',
-                f'site:linkedin.com/posts "{subject}" ("looking to buy" OR "purchase")',
-                f'site:facebook.com/groups "{subject}" ("looking for" OR "want to buy")',
-            ]
-        candidates = targeted + [_normalize_search_query(q) for q in (existing_queries or [])]
-        return list(dict.fromkeys(q[:500] for q in candidates if q and q.strip()))[:MAX_PLAN_QUERIES]
+            if arabic:
+                targeted = [
+                    f'"مطلوب شراء" {subject}',
+                    f'"عايز اشتري" {subject}',
+                    f'"بدور على" {subject}',
+                    (
+                        f'site:facebook.com/groups "{subject}" '
+                        '("مطلوب" OR "عايز اشتري" OR "بدور على")'
+                    ),
+                    f'site:linkedin.com/posts "looking to buy" "{subject}"',
+                ]
+            else:
+                targeted = [
+                    f'"looking to buy" {subject}',
+                    f'"want to purchase" {subject}',
+                    f'"seeking to buy" {subject}',
+                    f'site:linkedin.com/posts "looking to buy" "{subject}"',
+                    f'site:facebook.com/groups "{subject}" ("looking for" OR "want to buy")',
+                ]
+
+        # Planner output is only supplementary: never re-add a query that mixes
+        # incompatible entity classes or repeats the original instruction as topic text.
+        request_noise = (
+            "يطلب او يريد", "ابحث عن عميل", "ابحث عن عملاء", "عميل يريد",
+            "عميل يطلب", "عملاء يريدون", "عملاش",
+        )
+        for query in existing_queries or []:
+            if not isinstance(query, str) or not query.strip():
+                continue
+            normalized_query = _normalize_search_query(query).casefold()
+            if any(marker in normalized_query for marker in request_noise):
+                continue
+            query_categories = WebAgent._lead_entity_categories(query)
+            if "vehicle" in categories and "property" in query_categories:
+                continue
+            if "property" in categories and "vehicle" in query_categories:
+                continue
+            targeted.append(_normalize_search_query(query))
+
+        result: list[str] = []
+        seen: set[str] = set()
+        for query in targeted:
+            candidate = re.sub(r"\s+", " ", str(query or "")).strip()[:500]
+            key = candidate.casefold()
+            if candidate and key not in seen:
+                result.append(candidate)
+                seen.add(key)
+            if len(result) >= MAX_PLAN_QUERIES:
+                break
+        return result
 
     @staticmethod
     def _is_listing_discovery(question: str) -> bool:
@@ -5207,7 +5405,7 @@ class WebAgent:
         if lead_request:
             related_lead_results_count = len(sources)
             for source in sources:
-                signal = self._lead_intent_evidence(source)
+                signal = self._lead_intent_evidence(source, working_question)
                 if signal:
                     source["lead_qualification"] = "public_buyer_intent_signal"
                     source["lead_intent_evidence"] = signal
