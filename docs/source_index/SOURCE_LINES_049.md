@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **049**
-- سجلات الأسطر: **74**
-- النطاق: SRC-DE7EABE998-L000458 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **79**
+- النطاق: SRC-DE7EABE998-L000453 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000453](../../web/agent.html#L453) | 453 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
+| [SRC-DE7EABE998-L000454](../../web/agent.html#L454) | 454 | `"}"` | — |
+| [SRC-DE7EABE998-L000455](../../web/agent.html#L455) | 455 | `"async function checkHealth(){"` | — |
+| [SRC-DE7EABE998-L000456](../../web/agent.html#L456) | 456 | `" try{"` | — |
+| [SRC-DE7EABE998-L000457](../../web/agent.html#L457) | 457 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
 | [SRC-DE7EABE998-L000458](../../web/agent.html#L458) | 458 | `"  const configured=[];"` | — |
 | [SRC-DE7EABE998-L000459](../../web/agent.html#L459) | 459 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
 | [SRC-DE7EABE998-L000460](../../web/agent.html#L460) | 460 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |

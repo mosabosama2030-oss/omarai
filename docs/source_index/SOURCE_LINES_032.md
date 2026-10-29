@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000934 إلى SRC-63610B9E85-L000077
+- النطاق: SRC-90FAA34ADE-L000929 إلى SRC-63610B9E85-L000072
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000929](../../tests/fixtures/answer_quality_cases.json#L929) | 929 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000930](../../tests/fixtures/answer_quality_cases.json#L930) | 930 | `"        \"Distinguishes public listing data from verified current contact and buying intent\","` | — |
+| [SRC-90FAA34ADE-L000931](../../tests/fixtures/answer_quality_cases.json#L931) | 931 | `"        \"Recommends validating contact details and fit before qualification\","` | — |
+| [SRC-90FAA34ADE-L000932](../../tests/fixtures/answer_quality_cases.json#L932) | 932 | `"        \"Marks purchase intent as unknown unless direct evidence exists\""` | — |
+| [SRC-90FAA34ADE-L000933](../../tests/fixtures/answer_quality_cases.json#L933) | 933 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000934](../../tests/fixtures/answer_quality_cases.json#L934) | 934 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000935](../../tests/fixtures/answer_quality_cases.json#L935) | 935 | `"        \"Marks the prospect fully verified from one directory entry\","` | — |
 | [SRC-90FAA34ADE-L000936](../../tests/fixtures/answer_quality_cases.json#L936) | 936 | `"        \"Infers purchase intent solely from business category\""` | — |
@@ -838,8 +843,3 @@
 | [SRC-63610B9E85-L000070](../../tests/test_agentic_retrieval.py#L70) | 70 | `"                \"provider\": \"fixture_search\","` | — |
 | [SRC-63610B9E85-L000071](../../tests/test_agentic_retrieval.py#L71) | 71 | `"                \"provider_rank\": 1,"` | — |
 | [SRC-63610B9E85-L000072](../../tests/test_agentic_retrieval.py#L72) | 72 | `"            }]"` | — |
-| [SRC-63610B9E85-L000073](../../tests/test_agentic_retrieval.py#L73) | 73 | `"        return [{"` | — |
-| [SRC-63610B9E85-L000074](../../tests/test_agentic_retrieval.py#L74) | 74 | `"            \"title\": \"Solar battery price details\","` | — |
-| [SRC-63610B9E85-L000075](../../tests/test_agentic_retrieval.py#L75) | 75 | `"            \"url\": \"https://example.com/price\","` | — |
-| [SRC-63610B9E85-L000076](../../tests/test_agentic_retrieval.py#L76) | 76 | `"            \"snippet\": \"Solar battery price: 100 EGP.\","` | — |
-| [SRC-63610B9E85-L000077](../../tests/test_agentic_retrieval.py#L77) | 77 | `"            \"provider\": \"fixture_search\","` | — |

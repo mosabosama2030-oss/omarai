@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000134 إلى SRC-90FAA34ADE-L000933
+- النطاق: SRC-90FAA34ADE-L000129 إلى SRC-90FAA34ADE-L000928
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000129](../../tests/fixtures/answer_quality_cases.json#L129) | 129 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L000130](../../tests/fixtures/answer_quality_cases.json#L130) | 130 | `"        \"notes\": \"Local capability router in WebAgent._is_self_question\""` | — |
+| [SRC-90FAA34ADE-L000131](../../tests/fixtures/answer_quality_cases.json#L131) | 131 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000132](../../tests/fixtures/answer_quality_cases.json#L132) | 132 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000133](../../tests/fixtures/answer_quality_cases.json#L133) | 133 | `"        \"used_web_search is true for pure capability question\""` | — |
 | [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000135](../../tests/fixtures/answer_quality_cases.json#L135) | 135 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
 | [SRC-90FAA34ADE-L000136](../../tests/fixtures/answer_quality_cases.json#L136) | 136 | `"    },"` | — |
@@ -811,8 +816,3 @@
 | [SRC-90FAA34ADE-L000926](../../tests/fixtures/answer_quality_cases.json#L926) | 926 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000927](../../tests/fixtures/answer_quality_cases.json#L927) | 927 | `"      \"question\": \"A public company directory lists a Cairo bakery with a phone number. Can we mark it as a verified sales prospect?\","` | — |
 | [SRC-90FAA34ADE-L000928](../../tests/fixtures/answer_quality_cases.json#L928) | 928 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000929](../../tests/fixtures/answer_quality_cases.json#L929) | 929 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000930](../../tests/fixtures/answer_quality_cases.json#L930) | 930 | `"        \"Distinguishes public listing data from verified current contact and buying intent\","` | — |
-| [SRC-90FAA34ADE-L000931](../../tests/fixtures/answer_quality_cases.json#L931) | 931 | `"        \"Recommends validating contact details and fit before qualification\","` | — |
-| [SRC-90FAA34ADE-L000932](../../tests/fixtures/answer_quality_cases.json#L932) | 932 | `"        \"Marks purchase intent as unknown unless direct evidence exists\""` | — |
-| [SRC-90FAA34ADE-L000933](../../tests/fixtures/answer_quality_cases.json#L933) | 933 | `"      ],"` | — |
