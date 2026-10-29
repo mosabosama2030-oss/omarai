@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 
 import tldextract
 
+from agents.aspect_planning import extract_aspects
 from agents.intent_router import resolve_followup_query
 from agents.task_understanding import build_query_strategy_matrix, build_task_spec
 
@@ -296,6 +297,11 @@ def extract_question_coverage_targets(question: str) -> list[str]:
             if len(part.strip(" \t\r\n-•")) >= 4
         ]
         pieces = question_parts if len(question_parts) > 1 else []
+        # Reuse the shared aspect vocabulary for compound factual questions that do
+        # not use a formal comparison marker (e.g. capital + population). This is
+        # deterministic decomposition only; it does not claim semantic verification.
+        if not pieces:
+            pieces = extract_aspects(text)
 
     targets: list[str] = []
     seen: set[str] = set()
