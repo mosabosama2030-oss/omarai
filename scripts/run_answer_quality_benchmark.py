@@ -337,6 +337,40 @@ def post_agent(
         return 0, {"error": type(exc).__name__, "detail": str(exc)}
 
 
+def get_verified_build_sha(base_url: str, timeout: float, token: str | None = None) -> str:
+    """Read the deployed build identity from /api/health; never trust a caller-only SHA."""
+    origin = validate_base_url(base_url, token_present=bool(token))
+    request = urllib.request.Request(
+        origin + "/api/health",
+        headers={"Accept": "application/json"},
+        method="GET",
+    )
+    try:
+        with _NO_REDIRECT_OPENER.open(request, timeout=timeout) as response:
+            raw = response.read(64_001)
+            if len(raw) > 64_000:
+                raise ValueError("/api/health response exceeded the 64 KB limit")
+            status = getattr(response, "status", 200)
+            if not 200 <= status < 300:
+                raise ValueError(f"/api/health returned HTTP {status}")
+    except urllib.error.HTTPError as exc:
+        raise ValueError(f"/api/health returned HTTP {exc.code}") from exc
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        raise ValueError(f"/api/health request failed: {type(exc).__name__}") from exc
+
+    try:
+        payload = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("/api/health did not return valid JSON") from exc
+    if not isinstance(payload, dict) or payload.get("ok") is not True:
+        raise ValueError("/api/health did not report ok=true")
+    build = payload.get("build")
+    sha = build.get("sha") if isinstance(build, dict) else None
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-fA-F]{40}", sha):
+        raise ValueError("/api/health build.sha is missing or not a full 40-character SHA")
+    return sha.lower()
+
+
 def run_validate(corpus_path: Path, summary: bool) -> int:
     data = load_corpus(corpus_path)
     problems = validate_corpus(data)
@@ -396,6 +430,19 @@ def run_live(
     except ValueError as exc:
         print(f"Unsafe base URL; refusing live run: {exc}", file=sys.stderr)
         return 2
+    try:
+        verified_build_sha = get_verified_build_sha(safe_base_url, timeout, token)
+    except ValueError as exc:
+        print(f"Unverified deployed build; refusing live run: {exc}", file=sys.stderr)
+        return 2
+    expected_build_sha = build_sha.strip().lower() if isinstance(build_sha, str) else ""
+    if expected_build_sha and expected_build_sha != verified_build_sha:
+        print(
+            "Build SHA mismatch: --build-sha does not match /api/health build.sha; "
+            "refusing live requests.",
+            file=sys.stderr,
+        )
+        return 2
     cases = data["cases"]
     if case_id:
         cases = [c for c in cases if c["case_id"] == case_id]
@@ -440,7 +487,8 @@ def run_live(
             "base_url": safe_base_url,
             "http_status": status_code,
             "elapsed_ms": elapsed_ms,
-            "build_sha": build_sha or "unknown",
+            "build_sha": verified_build_sha,
+            "build_sha_verification": "confirmed_by_api_health",
             **response_metrics,
             "prompt": prompt,
             "expected_strategy": case["expected_strategy"],
@@ -476,7 +524,9 @@ def run_live(
         "benchmark_id": data.get("benchmark_id"),
         "benchmark_version": data.get("version"),
         "mode": "live_api",
-        "build_sha": build_sha or "unknown",
+        "build_sha": verified_build_sha,
+        "build_sha_verification": "confirmed_by_api_health",
+        "expected_build_sha": expected_build_sha or None,
         "executed_at_utc": _utc_now(),
         "case_count": len(results),
         "results": results,
@@ -513,7 +563,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--case-id", default=None, help="Run a single case (live)")
     parser.add_argument("--limit", type=int, default=0, help="Max cases in live mode (0=all selected)")
     parser.add_argument("--timeout", type=float, default=60.0)
-    parser.add_argument("--build-sha", default=None, help="Exact deployed source SHA (required for a defensible baseline comparison)")
+    parser.add_argument("--build-sha", default=None, help="Optional expected deployed SHA; checked against /api/health before any benchmark request")
     parser.add_argument("--request-costs", type=Path, default=None, help="Optional externally reconciled per-case full-request costs in USD")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between live requests")
     parser.add_argument("--out", type=Path, default=None, help="Write live results JSON")
