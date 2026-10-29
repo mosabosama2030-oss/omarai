@@ -520,8 +520,10 @@ def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]
     return result
 
 
-def _normalized_provider_usage(usage: Any) -> dict[str, int | float] | None:
-    """Allowlist safe billing counters from a provider response; never infer prices."""
+def _normalized_provider_usage(
+    usage: Any, *, provider_base_url: str = ""
+) -> dict[str, int | float] | None:
+    """Allowlist safe counters; interpret generic 'cost' as USD only for OpenRouter."""
     if not isinstance(usage, dict):
         return None
     normalized: dict[str, int | float] = {}
@@ -529,7 +531,10 @@ def _normalized_provider_usage(usage: Any) -> dict[str, int | float] | None:
         value = usage.get(source_key)
         if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
             normalized[source_key] = value
-    for source_key in ("cost", "total_cost"):
+    cost_keys = ["cost_usd"]
+    if "openrouter.ai" in provider_base_url.lower():
+        cost_keys.extend(["cost", "total_cost"])
+    for source_key in cost_keys:
         value = usage.get(source_key)
         if (
             isinstance(value, (int, float))
@@ -3284,7 +3289,7 @@ class WebAgent:
                     "used_model": candidate_model,
                     "fallback_used": "true" if candidate_model != requested_model else "false",
                 }
-                provider_usage = _normalized_provider_usage(data.get("usage"))
+                provider_usage = _normalized_provider_usage(data.get("usage"), provider_base_url=self.base_url)
                 if provider_usage is not None:
                     model_call_record["provider_usage"] = provider_usage
                 self.model_usage.append(model_call_record)
