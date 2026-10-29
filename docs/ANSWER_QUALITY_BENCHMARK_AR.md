@@ -9,7 +9,7 @@
 > **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  
 > نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال.
 
-لا يعدّل هذا المعيار ملفات الإنتاج (`agents/`، `api/`، `web/`).
+لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر.
 
 ## الملفات
 
@@ -17,7 +17,10 @@
 |--------|---------|
 | `tests/fixtures/answer_quality_cases.json` | ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة |
 | `tests/test_answer_quality_corpus.py` | تحقق آلي حتمي من البنية (بدون شبكة) |
-| `scripts/run_answer_quality_benchmark.py` | تشغيل validate / live اختياري (stdlib) |
+| `scripts/run_answer_quality_benchmark.py` | تحقق corpus أو جمع تشغيل حي اختياري؛ يضيف الزمن والنتائج المعلنة فقط |
+| `scripts/compare_answer_quality_runs.py` | مقارنة تشغيلين متطابقين ومراجعات بشرية قبل/بعد |
+| `scripts/score_answer_quality_reviews.py` | حساب مقاييس صريحة من المراجعات البشرية |
+| `tests/fixtures/answer_quality_reviews_template.json` | قالب مراجعة غير مسجل، وكل حالة فيه NOT_TESTED |
 | `docs/ANSWER_QUALITY_BENCHMARK_AR.md` | بروتوكول التقييم والتسجيل (هذا الملف) |
 
 ## الاستراتيجيات المسموحة في الحقل `expected_strategy`
