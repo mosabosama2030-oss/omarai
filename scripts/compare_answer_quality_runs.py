@@ -56,6 +56,9 @@ def validate_run(run: dict[str, Any], label: str) -> list[str]:
         if not isinstance(case_id, str) or not case_id.strip():
             problems.append(f"{label}: results[{index}] has no case_id")
             continue
+        prompt = record.get("prompt")
+        if not isinstance(prompt, str) or not prompt.strip():
+            problems.append(f"{label}/{case_id}: prompt must be a non-empty string")
         if case_id in seen:
             problems.append(f"{label}: duplicate case_id {case_id}")
         seen.add(case_id)
