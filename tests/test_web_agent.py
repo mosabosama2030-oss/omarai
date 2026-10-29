@@ -2377,6 +2377,74 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
     assert result["sources"][0]["lead_qualification"] == "public_buyer_intent_signal"
 
 
+@pytest.mark.parametrize(
+    ("question", "wrong_terms", "expected_marker"),
+    [
+        (
+            "ابحث عن عميل يطلب او يريد شراء شقة في التجمع الخامس",
+            ("سياره", "عربيه", "مركبه", "vehicle", "car"),
+            '"مطلوب شقه تمليك"',
+        ),
+        (
+            "ابحث عن عميل يطلب او يريد شراء سيارة في القاهرة",
+            ("شقه", "شقق", "تمليك", "عقار", "فيلا", "apartment", "flat"),
+            '"مطلوب سياره"',
+        ),
+    ],
+)
+def test_lead_queries_preserve_requested_category_and_location(
+    question, wrong_terms, expected_marker
+):
+    contaminated_planner_queries = [
+        '"مطلوب شقه تمليك" يطلب او يريد شراء سيارة',
+        '"عايز اشتري سيارة" يبحث عن العميل الذي يطلب شقة',
+        'site:facebook.com/groups "عميل يريد شراء شقة"',
+    ]
+
+    queries = WebAgent._lead_generation_queries(
+        question, contaminated_planner_queries
+    )
+
+    assert any(expected_marker in query for query in queries)
+    assert all("يطلب او يريد" not in query for query in queries)
+    assert all("عميل يريد" not in query for query in queries)
+    for term in wrong_terms:
+        assert all(term not in query.casefold() for query in queries)
+    if "التجمع الخامس" in question:
+        assert any("التجمع الخامس" in query for query in queries)
+    if "القاهرة" in question:
+        assert any("القاهره" in query for query in queries)
+
+
+def test_lead_queries_strip_common_purchase_wording_and_misspelling():
+    queries = WebAgent._lead_generation_queries(
+        "ابحث عن عميل يطلب او يريد شرا شقة في التجمع الخامس"
+    )
+
+    assert any('"مطلوب شقه تمليك" في التجمع الخامس' == query for query in queries)
+    assert all("يطلب او يريد" not in query for query in queries)
+    assert all("شرا شقه" not in query for query in queries)
+
+
+def test_buyer_intent_signal_must_match_requested_entity_category():
+    vehicle_question = "ابحث عن عميل يريد شراء سيارة"
+    property_post = {
+        "title": "مطلوب شقة تمليك في التجمع الخامس",
+        "snippet": "أريد شراء شقة للسكن",
+        "page_text": "مطلوب شقة تمليك، أريد شراء وحدة سكنية.",
+    }
+    vehicle_post = {
+        "title": "عايز اشتري عربية مستعملة في القاهرة",
+        "snippet": "بدور على سيارة مناسبة",
+        "page_text": "عايز اشتري عربية مستعملة في القاهرة.",
+    }
+
+    assert WebAgent._lead_intent_evidence(property_post, vehicle_question) is None
+    signal = WebAgent._lead_intent_evidence(vehicle_post, vehicle_question)
+    assert signal is not None
+    assert signal["basis"] == "page_text"
+
+
 def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):
     import httpx
 
