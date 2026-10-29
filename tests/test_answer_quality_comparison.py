@@ -30,11 +30,11 @@ def _run(*, build_sha: str, results: list[dict]) -> dict:
     }
 
 
-def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None, request_cost: float | None = None) -> dict:
+def _row(case_id: str, *, latency: float, tool_status: str, cost: float | None, request_cost: float | None = None, expected_strategy: str = "web_search") -> dict:
     row = {
         "case_id": case_id,
         "prompt": "Test question " + case_id,
-        "expected_strategy": "web_search",
+        "expected_strategy": expected_strategy,
         "transport_ok": True,
         "elapsed_ms": latency,
         "tool_status": tool_status,
@@ -95,6 +95,7 @@ def _full_run(*, build_sha: str, candidate: bool) -> dict:
         rows.append(_row(
             case_id, latency=latency, tool_status=status,
             cost=model_cost, request_cost=request_cost,
+            expected_strategy=case["expected_strategy"],
         ))
     return _run(build_sha=build_sha, results=rows)
 
@@ -115,7 +116,7 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["case_count"] == 45
     assert result["baseline"]["metrics"]["latency_ms"]["p50"] == 150
     assert result["candidate"]["metrics"]["latency_ms"]["p95"] == 120
-    assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(1 / 45)
+    assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(1 / 30)
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
     assert result["runtime_deltas"]["provider_reported_model_cost_usd"]["delta"] == -0.003
     assert result["baseline"]["metrics"]["provider_reported_model_cost"]["complete_request_cost_usd"] == pytest.approx(0.070)
