@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001589 إلى SRC-F725E90B2A-L002388
+- النطاق: SRC-F725E90B2A-L001574 إلى SRC-F725E90B2A-L002373
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001574](../../tests/test_web_agent.py#L1574) | 1574 | `"    assert diagnostic[\"status\"] == \"ok\""` | — |
+| [SRC-F725E90B2A-L001575](../../tests/test_web_agent.py#L1575) | 1575 | `"    assert diagnostic[\"result_count\"] == 2"` | — |
+| [SRC-F725E90B2A-L001576](../../tests/test_web_agent.py#L1576) | 1576 | `"    assert diagnostic[\"accepted_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L001577](../../tests/test_web_agent.py#L1577) | 1577 | `"    assert diagnostic[\"rejected_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L001578](../../tests/test_web_agent.py#L1578) | 1578 | `"    assert diagnostic[\"rejection_counts\"][\"relevance_below_threshold\"] == 1"` | — |
+| [SRC-F725E90B2A-L001579](../../tests/test_web_agent.py#L1579) | 1579 | `""` | — |
+| [SRC-F725E90B2A-L001580](../../tests/test_web_agent.py#L1580) | 1580 | `""` | — |
+| [SRC-F725E90B2A-L001581](../../tests/test_web_agent.py#L1581) | 1581 | `"def test_google_news_preserves_publisher_identity(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001582](../../tests/test_web_agent.py#L1582) | 1582 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L001583](../../tests/test_web_agent.py#L1583) | 1583 | `""` | — |
+| [SRC-F725E90B2A-L001584](../../tests/test_web_agent.py#L1584) | 1584 | `"    rss = \"\"\"<rss><channel><item>"` | — |
+| [SRC-F725E90B2A-L001585](../../tests/test_web_agent.py#L1585) | 1585 | `"      <title>مصر الرقمية: تحديث جديد للخدمات</title>"` | — |
+| [SRC-F725E90B2A-L001586](../../tests/test_web_agent.py#L1586) | 1586 | `"      <link>https://news.google.com/rss/articles/EXAMPLE123</link>"` | — |
+| [SRC-F725E90B2A-L001587](../../tests/test_web_agent.py#L1587) | 1587 | `"      <description>معلومات عن بوابة مصر الرقمية والخدمات الإلكترونية.</description>"` | — |
+| [SRC-F725E90B2A-L001588](../../tests/test_web_agent.py#L1588) | 1588 | `"      <source url=\"https://digital.gov.eg/\">بوابة مصر الرقمية</source>"` | — |
 | [SRC-F725E90B2A-L001589](../../tests/test_web_agent.py#L1589) | 1589 | `"      <pubDate>Sat, 17 Oct 2026 10:00:00 GMT</pubDate>"` | — |
 | [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `"    </item></channel></rss>\"\"\""` | — |
 | [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `""` | — |
@@ -801,18 +816,3 @@
 | [SRC-F725E90B2A-L002371](../../tests/test_web_agent.py#L2371) | 2371 | `""` | — |
 | [SRC-F725E90B2A-L002372](../../tests/test_web_agent.py#L2372) | 2372 | `"    assert result[\"intent_route\"] == \"LEAD_GENERATION\""` | — |
 | [SRC-F725E90B2A-L002373](../../tests/test_web_agent.py#L2373) | 2373 | `"    assert seen[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L002374](../../tests/test_web_agent.py#L2374) | 2374 | `"    assert len(seen[\"queries\"]) >= 4"` | — |
-| [SRC-F725E90B2A-L002375](../../tests/test_web_agent.py#L2375) | 2375 | `"    assert any('\"مطلوب شراء\"' in q or '\"مطلوب شقه تمليك\"' in q for q in seen[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L002376](../../tests/test_web_agent.py#L2376) | 2376 | `"    assert result[\"search_report\"][\"lead_generation\"][\"candidate_signal_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L002377](../../tests/test_web_agent.py#L2377) | 2377 | `"    assert result[\"sources\"][0][\"lead_qualification\"] == \"public_buyer_intent_signal\""` | — |
-| [SRC-F725E90B2A-L002378](../../tests/test_web_agent.py#L2378) | 2378 | `""` | — |
-| [SRC-F725E90B2A-L002379](../../tests/test_web_agent.py#L2379) | 2379 | `""` | — |
-| [SRC-F725E90B2A-L002380](../../tests/test_web_agent.py#L2380) | 2380 | `"def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002381](../../tests/test_web_agent.py#L2381) | 2381 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L002382](../../tests/test_web_agent.py#L2382) | 2382 | `""` | — |
-| [SRC-F725E90B2A-L002383](../../tests/test_web_agent.py#L2383) | 2383 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"test-secret-key-that-must-not-appear\")"` | — |
-| [SRC-F725E90B2A-L002384](../../tests/test_web_agent.py#L2384) | 2384 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002385](../../tests/test_web_agent.py#L2385) | 2385 | `"    seen = {}"` | — |
-| [SRC-F725E90B2A-L002386](../../tests/test_web_agent.py#L2386) | 2386 | `""` | — |
-| [SRC-F725E90B2A-L002387](../../tests/test_web_agent.py#L2387) | 2387 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L002388](../../tests/test_web_agent.py#L2388) | 2388 | `"        def raise_for_status(self):"` | — |

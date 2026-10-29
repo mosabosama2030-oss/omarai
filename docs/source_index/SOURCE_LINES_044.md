@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000789 إلى SRC-F725E90B2A-L001588
+- النطاق: SRC-F725E90B2A-L000774 إلى SRC-F725E90B2A-L001573
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000774](../../tests/test_web_agent.py#L774) | 774 | `"            self.body = json.dumps({"` | — |
+| [SRC-F725E90B2A-L000775](../../tests/test_web_agent.py#L775) | 775 | `"                \"choices\": [{"` | — |
+| [SRC-F725E90B2A-L000776](../../tests/test_web_agent.py#L776) | 776 | `"                    \"message\": {\"content\": content},"` | — |
+| [SRC-F725E90B2A-L000777](../../tests/test_web_agent.py#L777) | 777 | `"                    \"finish_reason\": finish_reason,"` | — |
+| [SRC-F725E90B2A-L000778](../../tests/test_web_agent.py#L778) | 778 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000779](../../tests/test_web_agent.py#L779) | 779 | `"            }).encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000780](../../tests/test_web_agent.py#L780) | 780 | `""` | — |
+| [SRC-F725E90B2A-L000781](../../tests/test_web_agent.py#L781) | 781 | `"        def __enter__(self):"` | — |
+| [SRC-F725E90B2A-L000782](../../tests/test_web_agent.py#L782) | 782 | `"            return self"` | — |
+| [SRC-F725E90B2A-L000783](../../tests/test_web_agent.py#L783) | 783 | `""` | — |
+| [SRC-F725E90B2A-L000784](../../tests/test_web_agent.py#L784) | 784 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
+| [SRC-F725E90B2A-L000785](../../tests/test_web_agent.py#L785) | 785 | `"            return False"` | — |
+| [SRC-F725E90B2A-L000786](../../tests/test_web_agent.py#L786) | 786 | `""` | — |
+| [SRC-F725E90B2A-L000787](../../tests/test_web_agent.py#L787) | 787 | `"        def read(self, limit):"` | — |
+| [SRC-F725E90B2A-L000788](../../tests/test_web_agent.py#L788) | 788 | `"            return self.body"` | — |
 | [SRC-F725E90B2A-L000789](../../tests/test_web_agent.py#L789) | 789 | `""` | — |
 | [SRC-F725E90B2A-L000790](../../tests/test_web_agent.py#L790) | 790 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-F725E90B2A-L000791](../../tests/test_web_agent.py#L791) | 791 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
@@ -801,18 +816,3 @@
 | [SRC-F725E90B2A-L001571](../../tests/test_web_agent.py#L1571) | 1571 | `"        row for row in agent._provider_diagnostics"` | — |
 | [SRC-F725E90B2A-L001572](../../tests/test_web_agent.py#L1572) | 1572 | `"        if row[\"provider\"] == \"google_news_rss\""` | — |
 | [SRC-F725E90B2A-L001573](../../tests/test_web_agent.py#L1573) | 1573 | `"    )"` | — |
-| [SRC-F725E90B2A-L001574](../../tests/test_web_agent.py#L1574) | 1574 | `"    assert diagnostic[\"status\"] == \"ok\""` | — |
-| [SRC-F725E90B2A-L001575](../../tests/test_web_agent.py#L1575) | 1575 | `"    assert diagnostic[\"result_count\"] == 2"` | — |
-| [SRC-F725E90B2A-L001576](../../tests/test_web_agent.py#L1576) | 1576 | `"    assert diagnostic[\"accepted_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L001577](../../tests/test_web_agent.py#L1577) | 1577 | `"    assert diagnostic[\"rejected_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L001578](../../tests/test_web_agent.py#L1578) | 1578 | `"    assert diagnostic[\"rejection_counts\"][\"relevance_below_threshold\"] == 1"` | — |
-| [SRC-F725E90B2A-L001579](../../tests/test_web_agent.py#L1579) | 1579 | `""` | — |
-| [SRC-F725E90B2A-L001580](../../tests/test_web_agent.py#L1580) | 1580 | `""` | — |
-| [SRC-F725E90B2A-L001581](../../tests/test_web_agent.py#L1581) | 1581 | `"def test_google_news_preserves_publisher_identity(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001582](../../tests/test_web_agent.py#L1582) | 1582 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L001583](../../tests/test_web_agent.py#L1583) | 1583 | `""` | — |
-| [SRC-F725E90B2A-L001584](../../tests/test_web_agent.py#L1584) | 1584 | `"    rss = \"\"\"<rss><channel><item>"` | — |
-| [SRC-F725E90B2A-L001585](../../tests/test_web_agent.py#L1585) | 1585 | `"      <title>مصر الرقمية: تحديث جديد للخدمات</title>"` | — |
-| [SRC-F725E90B2A-L001586](../../tests/test_web_agent.py#L1586) | 1586 | `"      <link>https://news.google.com/rss/articles/EXAMPLE123</link>"` | — |
-| [SRC-F725E90B2A-L001587](../../tests/test_web_agent.py#L1587) | 1587 | `"      <description>معلومات عن بوابة مصر الرقمية والخدمات الإلكترونية.</description>"` | — |
-| [SRC-F725E90B2A-L001588](../../tests/test_web_agent.py#L1588) | 1588 | `"      <source url=\"https://digital.gov.eg/\">بوابة مصر الرقمية</source>"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000101 إلى SRC-AAA21D04E8-L000284
+- النطاق: SRC-829A979985-L000086 إلى SRC-AAA21D04E8-L000269
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000086](../../tests/test_generation_acceptance_matrix.py#L86) | 86 | `"            \"attempted_model\": \"primary/model\","` | — |
+| [SRC-829A979985-L000087](../../tests/test_generation_acceptance_matrix.py#L87) | 87 | `"            \"fallback_used\": False,"` | — |
+| [SRC-829A979985-L000088](../../tests/test_generation_acceptance_matrix.py#L88) | 88 | `"            \"request_started\": True,"` | — |
+| [SRC-829A979985-L000089](../../tests/test_generation_acceptance_matrix.py#L89) | 89 | `"            \"remote_response_received\": True,"` | — |
+| [SRC-829A979985-L000090](../../tests/test_generation_acceptance_matrix.py#L90) | 90 | `"            \"status\": \"finish_reason_not_accepted\","` | — |
+| [SRC-829A979985-L000091](../../tests/test_generation_acceptance_matrix.py#L91) | 91 | `"            \"finish_reason\": finish_reason,"` | — |
+| [SRC-829A979985-L000092](../../tests/test_generation_acceptance_matrix.py#L92) | 92 | `"        }"` | — |
+| [SRC-829A979985-L000093](../../tests/test_generation_acceptance_matrix.py#L93) | 93 | `"    ]"` | — |
+| [SRC-829A979985-L000094](../../tests/test_generation_acceptance_matrix.py#L94) | 94 | `""` | — |
+| [SRC-829A979985-L000095](../../tests/test_generation_acceptance_matrix.py#L95) | 95 | `""` | — |
+| [SRC-829A979985-L000096](../../tests/test_generation_acceptance_matrix.py#L96) | 96 | `"def test_both_models_truncated_fail_without_returning_either_partial_answer(monkeypatch):"` | — |
+| [SRC-829A979985-L000097](../../tests/test_generation_acceptance_matrix.py#L97) | 97 | `"    agent = WebAgent()"` | — |
+| [SRC-829A979985-L000098](../../tests/test_generation_acceptance_matrix.py#L98) | 98 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-829A979985-L000099](../../tests/test_generation_acceptance_matrix.py#L99) | 99 | `"    agent.fallback_model = \"fallback/model\""` | — |
+| [SRC-829A979985-L000100](../../tests/test_generation_acceptance_matrix.py#L100) | 100 | `"    calls: list[str] = []"` | — |
 | [SRC-829A979985-L000101](../../tests/test_generation_acceptance_matrix.py#L101) | 101 | `""` | — |
 | [SRC-829A979985-L000102](../../tests/test_generation_acceptance_matrix.py#L102) | 102 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-829A979985-L000103](../../tests/test_generation_acceptance_matrix.py#L103) | 103 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
@@ -810,18 +825,3 @@
 | [SRC-AAA21D04E8-L000267](../../tests/test_generation_capabilities.py#L267) | 267 | `"    assert result[\"citation_validation\"][\"status\"] != \"validated_as_fact\""` | — |
 | [SRC-AAA21D04E8-L000268](../../tests/test_generation_capabilities.py#L268) | 268 | `""` | — |
 | [SRC-AAA21D04E8-L000269](../../tests/test_generation_capabilities.py#L269) | 269 | `""` | — |
-| [SRC-AAA21D04E8-L000270](../../tests/test_generation_capabilities.py#L270) | 270 | `"def test_missing_api_key_is_reported_as_not_configured_not_attempted(monkeypatch):"` | — |
-| [SRC-AAA21D04E8-L000271](../../tests/test_generation_capabilities.py#L271) | 271 | `"    agent = WebAgent()"` | — |
-| [SRC-AAA21D04E8-L000272](../../tests/test_generation_capabilities.py#L272) | 272 | `"    agent.api_key = \"\""` | — |
-| [SRC-AAA21D04E8-L000273](../../tests/test_generation_capabilities.py#L273) | 273 | `"    agent.generation_diagnostics = []"` | — |
-| [SRC-AAA21D04E8-L000274](../../tests/test_generation_capabilities.py#L274) | 274 | `"    agent._generation_attempt_sequence = 0"` | — |
-| [SRC-AAA21D04E8-L000275](../../tests/test_generation_capabilities.py#L275) | 275 | `"    with pytest.raises(RuntimeError, match=\"لم يتم ضبط مفتاح\"):"` | — |
-| [SRC-AAA21D04E8-L000276](../../tests/test_generation_capabilities.py#L276) | 276 | `"        agent._request_completion("` | — |
-| [SRC-AAA21D04E8-L000277](../../tests/test_generation_capabilities.py#L277) | 277 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-AAA21D04E8-L000278](../../tests/test_generation_capabilities.py#L278) | 278 | `"            model=\"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000279](../../tests/test_generation_capabilities.py#L279) | 279 | `"        )"` | — |
-| [SRC-AAA21D04E8-L000280](../../tests/test_generation_capabilities.py#L280) | 280 | `"    assert agent.generation_diagnostics == [{"` | — |
-| [SRC-AAA21D04E8-L000281](../../tests/test_generation_capabilities.py#L281) | 281 | `"        \"attempt_number\": 1,"` | — |
-| [SRC-AAA21D04E8-L000282](../../tests/test_generation_capabilities.py#L282) | 282 | `"        \"requested_model\": \"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000283](../../tests/test_generation_capabilities.py#L283) | 283 | `"        \"attempted_model\": \"primary/model\","` | — |
-| [SRC-AAA21D04E8-L000284](../../tests/test_generation_capabilities.py#L284) | 284 | `"        \"fallback_used\": False,"` | — |
