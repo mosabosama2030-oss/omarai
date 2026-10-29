@@ -92,11 +92,14 @@ def _full_run(*, build_sha: str, candidate: bool) -> dict:
             status = "SUCCESS_WITH_USABLE_RESULTS" if is_aq007 else "ATTEMPTED_NO_USABLE_RESULTS"
             model_cost = 0.01 if is_aq007 else None
             request_cost = 0.012 if is_aq007 else 0.015 if is_aq008 else 0.001
-        rows.append(_row(
-            case_id, latency=latency, tool_status=status,
-            cost=model_cost, request_cost=request_cost,
-            expected_strategy=case["expected_strategy"],
-        ))
+        rows.append({
+            **_row(
+                case_id, latency=latency, tool_status=status,
+                cost=model_cost, request_cost=request_cost,
+                expected_strategy=case["expected_strategy"],
+            ),
+            "prompt": case["question"],
+        })
     return _run(build_sha=build_sha, results=rows)
 
 
