@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **913**
 - تعريفات لا ينطبق عليها Docstring: **294**
 - الرموز الساكنة الإضافية: **1805**
-- الأسطر النصية المفهرسة حرفيًا: **38340**
+- الأسطر النصية المفهرسة حرفيًا: **38341**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -99,7 +99,7 @@
 | FILE-D4963BDA6A | اختبارات | [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L1) | JSON | 6454 | 234 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-CAC5F305FE | اختبارات | [tests/test_agent_modes.py](../tests/test_agent_modes.py#L1) | Python | 2635 | 70 | جرد الملف + AST Python |
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
-| FILE-6A7519AC10 | اختبارات | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L1) | Python | 8954 | 194 | جرد الملف + AST Python |
+| FILE-6A7519AC10 | اختبارات | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L1) | Python | 9055 | 195 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 9183 | 250 | جرد الملف + AST Python |
 | FILE-2477C41448 | اختبارات | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L1) | Python | 2720 | 86 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
@@ -802,12 +802,12 @@
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L33) | دالة | _row | لا توجد Docstring. | ناقص | 33 | [SRC-6A7519AC10-L000033](../tests/test_answer_quality_comparison.py#L33) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L52) | دالة | _reviews | لا توجد Docstring. | ناقص | 52 | [SRC-6A7519AC10-L000052](../tests/test_answer_quality_comparison.py#L52) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L78) | دالة | _full_run | لا توجد Docstring. | ناقص | 78 | [SRC-6A7519AC10-L000078](../tests/test_answer_quality_comparison.py#L78) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L102) | دالة | test_comparison_measures_latency_tools_cost_and_human_reviewed_quality | لا توجد Docstring. | ناقص | 102 | [SRC-6A7519AC10-L000102](../tests/test_answer_quality_comparison.py#L102) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L129) | دالة | test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance | لا توجد Docstring. | ناقص | 129 | [SRC-6A7519AC10-L000129](../tests/test_answer_quality_comparison.py#L129) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L143) | دالة | test_comparison_rejects_different_case_sets_and_questions | لا توجد Docstring. | ناقص | 143 | [SRC-6A7519AC10-L000143](../tests/test_answer_quality_comparison.py#L143) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L157) | دالة | test_run_validation_rejects_duplicate_ids_and_invalid_latency | لا توجد Docstring. | ناقص | 157 | [SRC-6A7519AC10-L000157](../tests/test_answer_quality_comparison.py#L157) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L171) | دالة | test_quality_comparison_rejects_incomplete_human_review_coverage | لا توجد Docstring. | ناقص | 171 | [SRC-6A7519AC10-L000171](../tests/test_answer_quality_comparison.py#L171) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L187) | دالة | test_comparison_requires_nonempty_recorded_question_text | لا توجد Docstring. | ناقص | 187 | [SRC-6A7519AC10-L000187](../tests/test_answer_quality_comparison.py#L187) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L103) | دالة | test_comparison_measures_latency_tools_cost_and_human_reviewed_quality | لا توجد Docstring. | ناقص | 103 | [SRC-6A7519AC10-L000103](../tests/test_answer_quality_comparison.py#L103) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L130) | دالة | test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance | لا توجد Docstring. | ناقص | 130 | [SRC-6A7519AC10-L000130](../tests/test_answer_quality_comparison.py#L130) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L144) | دالة | test_comparison_rejects_different_case_sets_and_questions | لا توجد Docstring. | ناقص | 144 | [SRC-6A7519AC10-L000144](../tests/test_answer_quality_comparison.py#L144) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L158) | دالة | test_run_validation_rejects_duplicate_ids_and_invalid_latency | لا توجد Docstring. | ناقص | 158 | [SRC-6A7519AC10-L000158](../tests/test_answer_quality_comparison.py#L158) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L172) | دالة | test_quality_comparison_rejects_incomplete_human_review_coverage | لا توجد Docstring. | ناقص | 172 | [SRC-6A7519AC10-L000172](../tests/test_answer_quality_comparison.py#L172) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L188) | دالة | test_comparison_requires_nonempty_recorded_question_text | لا توجد Docstring. | ناقص | 188 | [SRC-6A7519AC10-L000188](../tests/test_answer_quality_comparison.py#L188) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | متغير/ثابت Python | CORPUS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | متغير/ثابت Python | DOCS_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L17) | متغير/ثابت Python | REQUIRED_CASE_FIELDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-4CCB1F172B-L000017](../tests/test_answer_quality_corpus.py#L17) |
@@ -2910,8 +2910,8 @@
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 43 | [SRC-6A7519AC10-L000043](../tests/test_answer_quality_comparison.py#L43) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RECONCILED_COMPLETE_REQUEST_COST | 43 | [SRC-6A7519AC10-L000043](../tests/test_answer_quality_comparison.py#L43) |
 | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ATTEMPTED_NO_USABLE_RESULTS | 92 | [SRC-6A7519AC10-L000092](../tests/test_answer_quality_comparison.py#L92) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L114) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 114 | [SRC-6A7519AC10-L000114](../tests/test_answer_quality_comparison.py#L114) |
-| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L140) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 140 | [SRC-6A7519AC10-L000140](../tests/test_answer_quality_comparison.py#L140) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 115 | [SRC-6A7519AC10-L000115](../tests/test_answer_quality_comparison.py#L115) |
+| [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L141) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 141 | [SRC-6A7519AC10-L000141](../tests/test_answer_quality_comparison.py#L141) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CORPUS_PATH | 14 | [SRC-4CCB1F172B-L000014](../tests/test_answer_quality_corpus.py#L14) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ANSWER_QUALITY_BENCHMARK_AR | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
 | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DOCS_PATH | 15 | [SRC-4CCB1F172B-L000015](../tests/test_answer_quality_corpus.py#L15) |
