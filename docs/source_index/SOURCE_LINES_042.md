@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001468 إلى SRC-F725E90B2A-L002267
+- النطاق: SRC-F725E90B2A-L001462 إلى SRC-F725E90B2A-L002261
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001462](../../tests/test_web_agent.py#L1462) | 1462 | `"    )"` | — |
+| [SRC-F725E90B2A-L001463](../../tests/test_web_agent.py#L1463) | 1463 | `""` | — |
+| [SRC-F725E90B2A-L001464](../../tests/test_web_agent.py#L1464) | 1464 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
+| [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `""` | — |
+| [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
+| [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"    assert result[\"used_language_model\"] is True"` | — |
 | [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    assert result[\"used_web_search\"] is False"` | — |
 | [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `"    assert result[\"sources\"] == []"` | — |
 | [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L002259](../../tests/test_web_agent.py#L2259) | 2259 | `""` | — |
 | [SRC-F725E90B2A-L002260](../../tests/test_web_agent.py#L2260) | 2260 | `"def test_buyer_intent_evidence_requires_explicit_purchase_signal():"` | — |
 | [SRC-F725E90B2A-L002261](../../tests/test_web_agent.py#L2261) | 2261 | `"    listing = {"` | — |
-| [SRC-F725E90B2A-L002262](../../tests/test_web_agent.py#L2262) | 2262 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
-| [SRC-F725E90B2A-L002263](../../tests/test_web_agent.py#L2263) | 2263 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |
-| [SRC-F725E90B2A-L002264](../../tests/test_web_agent.py#L2264) | 2264 | `"        \"page_text\": \"إعلانات وحدات سكنية للبيع بمساحات مختلفة.\","` | — |
-| [SRC-F725E90B2A-L002265](../../tests/test_web_agent.py#L2265) | 2265 | `"    }"` | — |
-| [SRC-F725E90B2A-L002266](../../tests/test_web_agent.py#L2266) | 2266 | `"    buyer_post = {"` | — |
-| [SRC-F725E90B2A-L002267](../../tests/test_web_agent.py#L2267) | 2267 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |

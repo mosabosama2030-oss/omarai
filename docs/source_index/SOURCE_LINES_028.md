@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000220 إلى SRC-547CAF1FE3-L000140
+- النطاق: SRC-A8360B1B03-L000214 إلى SRC-547CAF1FE3-L000134
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000214](../../scripts/hosted_smoke_test.py#L214) | 214 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000215](../../scripts/hosted_smoke_test.py#L215) | 215 | `"        result = run_smoke("` | — |
+| [SRC-A8360B1B03-L000216](../../scripts/hosted_smoke_test.py#L216) | 216 | `"            args.base_url,"` | — |
+| [SRC-A8360B1B03-L000217](../../scripts/hosted_smoke_test.py#L217) | 217 | `"            os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip(),"` | — |
+| [SRC-A8360B1B03-L000218](../../scripts/hosted_smoke_test.py#L218) | 218 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
+| [SRC-A8360B1B03-L000219](../../scripts/hosted_smoke_test.py#L219) | 219 | `"            allow_http=args.allow_http,"` | — |
 | [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"            expected_sha=args.expected_sha or None,"` | — |
 | [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"        )"` | — |
 | [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"    except SmokeError as exc:"` | — |
@@ -837,9 +843,3 @@
 | [SRC-547CAF1FE3-L000132](../../scripts/sqlite_backup_restore.py#L132) | 132 | `"        if args.command == \"backup\":"` | — |
 | [SRC-547CAF1FE3-L000133](../../scripts/sqlite_backup_restore.py#L133) | 133 | `"            result = backup_database(args.source, args.destination)"` | — |
 | [SRC-547CAF1FE3-L000134](../../scripts/sqlite_backup_restore.py#L134) | 134 | `"        else:"` | — |
-| [SRC-547CAF1FE3-L000135](../../scripts/sqlite_backup_restore.py#L135) | 135 | `"            result = restore_database(args.source, args.destination)"` | — |
-| [SRC-547CAF1FE3-L000136](../../scripts/sqlite_backup_restore.py#L136) | 136 | `"    except (BackupError, FileExistsError, OSError, sqlite3.Error, ValueError) as exc:"` | — |
-| [SRC-547CAF1FE3-L000137](../../scripts/sqlite_backup_restore.py#L137) | 137 | `"        print("` | — |
-| [SRC-547CAF1FE3-L000138](../../scripts/sqlite_backup_restore.py#L138) | 138 | `"            json.dumps("` | — |
-| [SRC-547CAF1FE3-L000139](../../scripts/sqlite_backup_restore.py#L139) | 139 | `"                {\"result\": \"failed\", \"error\": str(exc)},"` | — |
-| [SRC-547CAF1FE3-L000140](../../scripts/sqlite_backup_restore.py#L140) | 140 | `"                ensure_ascii=False,"` | — |

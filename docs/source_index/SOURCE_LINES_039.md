@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000288 إلى SRC-FBDC61DA0B-L000016
+- النطاق: SRC-01E35ABC46-L000282 إلى SRC-FBDC61DA0B-L000010
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000282](../../tests/test_research_guardrails.py#L282) | 282 | `"    assert assess_current_source(unread, now=_GUARDRAIL_NOW)[\"status\"] == \"page_not_read\""` | — |
+| [SRC-01E35ABC46-L000283](../../tests/test_research_guardrails.py#L283) | 283 | `""` | — |
+| [SRC-01E35ABC46-L000284](../../tests/test_research_guardrails.py#L284) | 284 | `""` | — |
+| [SRC-01E35ABC46-L000285](../../tests/test_research_guardrails.py#L285) | 285 | `"def test_latest_mode_excludes_old_undated_and_unread_pages() -> None:"` | — |
+| [SRC-01E35ABC46-L000286](../../tests/test_research_guardrails.py#L286) | 286 | `"    candidates = ["` | — |
+| [SRC-01E35ABC46-L000287](../../tests/test_research_guardrails.py#L287) | 287 | `"        _guardrail_source(\"https://example.com/recent\"),"` | — |
 | [SRC-01E35ABC46-L000288](../../tests/test_research_guardrails.py#L288) | 288 | `"        _guardrail_source("` | — |
 | [SRC-01E35ABC46-L000289](../../tests/test_research_guardrails.py#L289) | 289 | `"            \"https://example.org/old\", published_at=\"2023-11-15T10:00:00Z\""` | — |
 | [SRC-01E35ABC46-L000290](../../tests/test_research_guardrails.py#L290) | 290 | `"        ),"` | — |
@@ -846,9 +852,3 @@
 | [SRC-FBDC61DA0B-L000008](../../tests/test_tool_execution_status.py#L8) | 8 | `"    \"page_fetch\","` | — |
 | [SRC-FBDC61DA0B-L000009](../../tests/test_tool_execution_status.py#L9) | 9 | `"    \"public_social_search_if_configured\","` | — |
 | [SRC-FBDC61DA0B-L000010](../../tests/test_tool_execution_status.py#L10) | 10 | `"    \"language_model_generation_if_configured\","` | — |
-| [SRC-FBDC61DA0B-L000011](../../tests/test_tool_execution_status.py#L11) | 11 | `"    \"claim_review_if_configured\","` | — |
-| [SRC-FBDC61DA0B-L000012](../../tests/test_tool_execution_status.py#L12) | 12 | `"}"` | — |
-| [SRC-FBDC61DA0B-L000013](../../tests/test_tool_execution_status.py#L13) | 13 | `""` | — |
-| [SRC-FBDC61DA0B-L000014](../../tests/test_tool_execution_status.py#L14) | 14 | `""` | — |
-| [SRC-FBDC61DA0B-L000015](../../tests/test_tool_execution_status.py#L15) | 15 | `"def _statuses(rows):"` | — |
-| [SRC-FBDC61DA0B-L000016](../../tests/test_tool_execution_status.py#L16) | 16 | `"    return {row[\"tool\"]: row[\"status\"] for row in rows}"` | — |

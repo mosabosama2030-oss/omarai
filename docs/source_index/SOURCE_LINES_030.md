@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000789 إلى SRC-4CCB1F172B-L000036
+- النطاق: SRC-90FAA34ADE-L000783 إلى SRC-4CCB1F172B-L000030
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000783](../../tests/fixtures/answer_quality_cases.json#L783) | 783 | `"        \"يصطنع نتائج تحقيق أو أحكامًا قضائية\""` | — |
+| [SRC-90FAA34ADE-L000784](../../tests/fixtures/answer_quality_cases.json#L784) | 784 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000785](../../tests/fixtures/answer_quality_cases.json#L785) | 785 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000786](../../tests/fixtures/answer_quality_cases.json#L786) | 786 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000787](../../tests/fixtures/answer_quality_cases.json#L787) | 787 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000788](../../tests/fixtures/answer_quality_cases.json#L788) | 788 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000789](../../tests/fixtures/answer_quality_cases.json#L789) | 789 | `"            \"title\": \"Anonymous comment\","` | — |
 | [SRC-90FAA34ADE-L000790](../../tests/fixtures/answer_quality_cases.json#L790) | 790 | `"            \"url\": \"https://reviews.example.test/post/1\","` | — |
 | [SRC-90FAA34ADE-L000791](../../tests/fixtures/answer_quality_cases.json#L791) | 791 | `"            \"snippet\": \"I think this company is a scam.\","` | — |
@@ -837,9 +843,3 @@
 | [SRC-4CCB1F172B-L000028](../../tests/test_answer_quality_corpus.py#L28) | 28 | `"}"` | — |
 | [SRC-4CCB1F172B-L000029](../../tests/test_answer_quality_corpus.py#L29) | 29 | `""` | — |
 | [SRC-4CCB1F172B-L000030](../../tests/test_answer_quality_corpus.py#L30) | 30 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
-| [SRC-4CCB1F172B-L000031](../../tests/test_answer_quality_corpus.py#L31) | 31 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
-| [SRC-4CCB1F172B-L000032](../../tests/test_answer_quality_corpus.py#L32) | 32 | `""` | — |
-| [SRC-4CCB1F172B-L000033](../../tests/test_answer_quality_corpus.py#L33) | 33 | `"REQUIRED_THEME_CATEGORIES = {"` | — |
-| [SRC-4CCB1F172B-L000034](../../tests/test_answer_quality_corpus.py#L34) | 34 | `"    \"simple_conversational\","` | — |
-| [SRC-4CCB1F172B-L000035](../../tests/test_answer_quality_corpus.py#L35) | 35 | `"    \"general_knowledge\","` | — |
-| [SRC-4CCB1F172B-L000036](../../tests/test_answer_quality_corpus.py#L36) | 36 | `"    \"omarai_capabilities\","` | — |

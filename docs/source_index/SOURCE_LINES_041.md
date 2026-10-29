@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000668 إلى SRC-F725E90B2A-L001467
+- النطاق: SRC-F725E90B2A-L000662 إلى SRC-F725E90B2A-L001461
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000662](../../tests/test_web_agent.py#L662) | 662 | `""` | — |
+| [SRC-F725E90B2A-L000663](../../tests/test_web_agent.py#L663) | 663 | `""` | — |
+| [SRC-F725E90B2A-L000664](../../tests/test_web_agent.py#L664) | 664 | `""` | — |
+| [SRC-F725E90B2A-L000665](../../tests/test_web_agent.py#L665) | 665 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000666](../../tests/test_web_agent.py#L666) | 666 | `"    for name in ("` | — |
+| [SRC-F725E90B2A-L000667](../../tests/test_web_agent.py#L667) | 667 | `"        \"OMARAI_LLM_MODEL\","` | — |
 | [SRC-F725E90B2A-L000668](../../tests/test_web_agent.py#L668) | 668 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
 | [SRC-F725E90B2A-L000669](../../tests/test_web_agent.py#L669) | 669 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
 | [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001459](../../tests/test_web_agent.py#L1459) | 1459 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001460](../../tests/test_web_agent.py#L1460) | 1460 | `"        agent, \"_collect_research\","` | — |
 | [SRC-F725E90B2A-L001461](../../tests/test_web_agent.py#L1461) | 1461 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
-| [SRC-F725E90B2A-L001462](../../tests/test_web_agent.py#L1462) | 1462 | `"    )"` | — |
-| [SRC-F725E90B2A-L001463](../../tests/test_web_agent.py#L1463) | 1463 | `""` | — |
-| [SRC-F725E90B2A-L001464](../../tests/test_web_agent.py#L1464) | 1464 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
-| [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `""` | — |
-| [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
-| [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"    assert result[\"used_language_model\"] is True"` | — |
