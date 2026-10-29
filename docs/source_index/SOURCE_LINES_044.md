@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001434 إلى SRC-F725E90B2A-L002233
+- النطاق: SRC-F725E90B2A-L001435 إلى SRC-F725E90B2A-L002234
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001434](../../tests/test_web_agent.py#L1434) | 1434 | `"    system_content = \"\\n\".join("` | — |
 | [SRC-F725E90B2A-L001435](../../tests/test_web_agent.py#L1435) | 1435 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
 | [SRC-F725E90B2A-L001436](../../tests/test_web_agent.py#L1436) | 1436 | `"    )"` | — |
 | [SRC-F725E90B2A-L001437](../../tests/test_web_agent.py#L1437) | 1437 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002231](../../tests/test_web_agent.py#L2231) | 2231 | `"            return []"` | — |
 | [SRC-F725E90B2A-L002232](../../tests/test_web_agent.py#L2232) | 2232 | `"        return ["` | — |
 | [SRC-F725E90B2A-L002233](../../tests/test_web_agent.py#L2233) | 2233 | `"            {"` | — |
+| [SRC-F725E90B2A-L002234](../../tests/test_web_agent.py#L2234) | 2234 | `"                \"provider\": \"bing_rss\","` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **047**
-- سجلات الأسطر: **725**
-- النطاق: SRC-F725E90B2A-L003834 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **724**
+- النطاق: SRC-F725E90B2A-L003835 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L003834](../../tests/test_web_agent.py#L3834) | 3834 | `"    query = \"استخدامات الذكاء الاصطناعي للشركات الصغيرة\""` | — |
 | [SRC-F725E90B2A-L003835](../../tests/test_web_agent.py#L3835) | 3835 | `"    on_topic = \"AI use cases for small businesses\""` | — |
 | [SRC-F725E90B2A-L003836](../../tests/test_web_agent.py#L3836) | 3836 | `"    weak = \"AI tools for personal photo editing\""` | — |
 | [SRC-F725E90B2A-L003837](../../tests/test_web_agent.py#L3837) | 3837 | `"    assert _relevance_ratio(query, on_topic) > _relevance_ratio(query, weak)"` | — |

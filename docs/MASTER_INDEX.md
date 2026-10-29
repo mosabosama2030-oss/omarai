@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **894**
 - تعريفات لا ينطبق عليها Docstring: **294**
 - الرموز الساكنة الإضافية: **1757**
-- الأسطر النصية المفهرسة حرفيًا: **37525**
+- الأسطر النصية المفهرسة حرفيًا: **37524**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -111,7 +111,7 @@
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 797 | 19 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12137 | 293 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
-| FILE-104831BF35 | اختبارات | [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L1) | Python | 5020 | 142 | جرد الملف + AST Python |
+| FILE-104831BF35 | اختبارات | [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L1) | Python | 5008 | 141 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
@@ -960,20 +960,20 @@
 | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L79) | دالة | test_model_context_is_bounded_and_unknown_slots_are_dropped | لا توجد Docstring. | ناقص | 79 | [SRC-DA139AC9D0-L000079](../tests/test_dialogue_state.py#L79) |
 | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L115) | دالة | test_unresolved_reference_stays_unresolved_and_cannot_become_a_search_query | لا توجد Docstring. | ناقص | 115 | [SRC-DA139AC9D0-L000115](../tests/test_dialogue_state.py#L115) |
 | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L140) | دالة | test_context_probe_gate_recognizes_natural_followups_not_every_short_question | لا توجد Docstring. | ناقص | 140 | [SRC-DA139AC9D0-L000140](../tests/test_dialogue_state.py#L140) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L11) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-104831BF35-L000011](../tests/test_evaluate_benchmark_metrics.py#L11) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L12) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-104831BF35-L000012](../tests/test_evaluate_benchmark_metrics.py#L12) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L15) | دالة | _load_module | لا توجد Docstring. | ناقص | 15 | [SRC-104831BF35-L000015](../tests/test_evaluate_benchmark_metrics.py#L15) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L24) | دالة | _run | لا توجد Docstring. | ناقص | 24 | [SRC-104831BF35-L000024](../tests/test_evaluate_benchmark_metrics.py#L24) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L34) | دالة | _row | لا توجد Docstring. | ناقص | 34 | [SRC-104831BF35-L000034](../tests/test_evaluate_benchmark_metrics.py#L34) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L56) | دالة | test_summary_computes_all_requested_metrics | لا توجد Docstring. | ناقص | 56 | [SRC-104831BF35-L000056](../tests/test_evaluate_benchmark_metrics.py#L56) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L71) | دالة | test_unknown_metrics_are_not_silently_counted_as_zero | لا توجد Docstring. | ناقص | 71 | [SRC-104831BF35-L000071](../tests/test_evaluate_benchmark_metrics.py#L71) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L87) | دالة | test_required_tool_explicitly_not_attempted_counts_as_failure | لا توجد Docstring. | ناقص | 87 | [SRC-104831BF35-L000087](../tests/test_evaluate_benchmark_metrics.py#L87) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L95) | دالة | test_comparison_uses_only_paired_case_ids_and_reports_deltas | لا توجد Docstring. | ناقص | 95 | [SRC-104831BF35-L000095](../tests/test_evaluate_benchmark_metrics.py#L95) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L111) | دالة | test_comparison_rejects_different_benchmark_versions | لا توجد Docstring. | ناقص | 111 | [SRC-104831BF35-L000111](../tests/test_evaluate_benchmark_metrics.py#L111) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L120) | دالة | test_validation_rejects_invalid_metric_counts | لا توجد Docstring. | ناقص | 120 | [SRC-104831BF35-L000120](../tests/test_evaluate_benchmark_metrics.py#L120) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L126) | دالة | test_validation_rejects_duplicate_case_ids | لا توجد Docstring. | ناقص | 126 | [SRC-104831BF35-L000126](../tests/test_evaluate_benchmark_metrics.py#L126) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L132) | دالة | test_not_measured_baseline_cannot_contain_fabricated_results | لا توجد Docstring. | ناقص | 132 | [SRC-104831BF35-L000132](../tests/test_evaluate_benchmark_metrics.py#L132) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L139) | دالة | test_percentile_interpolates_deterministically | لا توجد Docstring. | ناقص | 139 | [SRC-104831BF35-L000139](../tests/test_evaluate_benchmark_metrics.py#L139) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L10) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-104831BF35-L000010](../tests/test_evaluate_benchmark_metrics.py#L10) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L11) | متغير/ثابت Python | SCRIPT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-104831BF35-L000011](../tests/test_evaluate_benchmark_metrics.py#L11) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L14) | دالة | _load_module | لا توجد Docstring. | ناقص | 14 | [SRC-104831BF35-L000014](../tests/test_evaluate_benchmark_metrics.py#L14) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L23) | دالة | _run | لا توجد Docstring. | ناقص | 23 | [SRC-104831BF35-L000023](../tests/test_evaluate_benchmark_metrics.py#L23) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L33) | دالة | _row | لا توجد Docstring. | ناقص | 33 | [SRC-104831BF35-L000033](../tests/test_evaluate_benchmark_metrics.py#L33) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L55) | دالة | test_summary_computes_all_requested_metrics | لا توجد Docstring. | ناقص | 55 | [SRC-104831BF35-L000055](../tests/test_evaluate_benchmark_metrics.py#L55) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L70) | دالة | test_unknown_metrics_are_not_silently_counted_as_zero | لا توجد Docstring. | ناقص | 70 | [SRC-104831BF35-L000070](../tests/test_evaluate_benchmark_metrics.py#L70) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L86) | دالة | test_required_tool_explicitly_not_attempted_counts_as_failure | لا توجد Docstring. | ناقص | 86 | [SRC-104831BF35-L000086](../tests/test_evaluate_benchmark_metrics.py#L86) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L94) | دالة | test_comparison_uses_only_paired_case_ids_and_reports_deltas | لا توجد Docstring. | ناقص | 94 | [SRC-104831BF35-L000094](../tests/test_evaluate_benchmark_metrics.py#L94) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L110) | دالة | test_comparison_rejects_different_benchmark_versions | لا توجد Docstring. | ناقص | 110 | [SRC-104831BF35-L000110](../tests/test_evaluate_benchmark_metrics.py#L110) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L119) | دالة | test_validation_rejects_invalid_metric_counts | لا توجد Docstring. | ناقص | 119 | [SRC-104831BF35-L000119](../tests/test_evaluate_benchmark_metrics.py#L119) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L125) | دالة | test_validation_rejects_duplicate_case_ids | لا توجد Docstring. | ناقص | 125 | [SRC-104831BF35-L000125](../tests/test_evaluate_benchmark_metrics.py#L125) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L131) | دالة | test_not_measured_baseline_cannot_contain_fabricated_results | لا توجد Docstring. | ناقص | 131 | [SRC-104831BF35-L000131](../tests/test_evaluate_benchmark_metrics.py#L131) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L138) | دالة | test_percentile_interpolates_deterministically | لا توجد Docstring. | ناقص | 138 | [SRC-104831BF35-L000138](../tests/test_evaluate_benchmark_metrics.py#L138) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L11) | دالة | _addrinfo | لا توجد Docstring. | ناقص | 11 | [SRC-6BCB799CEC-L000011](../tests/test_evidence_provenance.py#L11) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L16) | دالة | test_failed_page_read_is_not_reported_as_fetched | An empty extraction must not set page_fetched through the real collector. | موثق | 16 | [SRC-6BCB799CEC-L000016](../tests/test_evidence_provenance.py#L16) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L20) | دالة | test_failed_page_read_is_not_reported_as_fetched.search | لا توجد Docstring. | ناقص | 20 | [SRC-6BCB799CEC-L000020](../tests/test_evidence_provenance.py#L20) |
@@ -2891,7 +2891,7 @@
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L220) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_KEY | 220 | [SRC-DA61479D59-L000220](../tests/test_connector_summary_counters.py#L220) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ACCESS_TOKEN_STORAGE_KEY | 9 | [SRC-3D0A619359-L000009](../tests/test_dashboard_security.py#L9) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L140) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 140 | [SRC-29A9CD43D1-L000140](../tests/test_dialogue_context_pipeline.py#L140) |
-| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 135 | [SRC-104831BF35-L000135](../tests/test_evaluate_benchmark_metrics.py#L135) |
+| [tests/test_evaluate_benchmark_metrics.py](../tests/test_evaluate_benchmark_metrics.py#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 134 | [SRC-104831BF35-L000134](../tests/test_evaluate_benchmark_metrics.py#L134) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 13 | [SRC-6BCB799CEC-L000013](../tests/test_evidence_provenance.py#L13) |

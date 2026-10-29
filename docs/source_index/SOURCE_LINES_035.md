@@ -739,125 +739,125 @@
 | [SRC-104831BF35-L000002](../../tests/test_evaluate_benchmark_metrics.py#L2) | 2 | `"from __future__ import annotations"` | — |
 | [SRC-104831BF35-L000003](../../tests/test_evaluate_benchmark_metrics.py#L3) | 3 | `""` | — |
 | [SRC-104831BF35-L000004](../../tests/test_evaluate_benchmark_metrics.py#L4) | 4 | `"import importlib.util"` | — |
-| [SRC-104831BF35-L000005](../../tests/test_evaluate_benchmark_metrics.py#L5) | 5 | `"import json"` | — |
-| [SRC-104831BF35-L000006](../../tests/test_evaluate_benchmark_metrics.py#L6) | 6 | `"import sys"` | — |
-| [SRC-104831BF35-L000007](../../tests/test_evaluate_benchmark_metrics.py#L7) | 7 | `"from pathlib import Path"` | — |
-| [SRC-104831BF35-L000008](../../tests/test_evaluate_benchmark_metrics.py#L8) | 8 | `""` | — |
-| [SRC-104831BF35-L000009](../../tests/test_evaluate_benchmark_metrics.py#L9) | 9 | `"import pytest"` | — |
-| [SRC-104831BF35-L000010](../../tests/test_evaluate_benchmark_metrics.py#L10) | 10 | `""` | — |
-| [SRC-104831BF35-L000011](../../tests/test_evaluate_benchmark_metrics.py#L11) | 11 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-104831BF35-L000012](../../tests/test_evaluate_benchmark_metrics.py#L12) | 12 | `"SCRIPT = ROOT / \"scripts\" / \"evaluate_benchmark_metrics.py\""` | — |
+| [SRC-104831BF35-L000005](../../tests/test_evaluate_benchmark_metrics.py#L5) | 5 | `"import sys"` | — |
+| [SRC-104831BF35-L000006](../../tests/test_evaluate_benchmark_metrics.py#L6) | 6 | `"from pathlib import Path"` | — |
+| [SRC-104831BF35-L000007](../../tests/test_evaluate_benchmark_metrics.py#L7) | 7 | `""` | — |
+| [SRC-104831BF35-L000008](../../tests/test_evaluate_benchmark_metrics.py#L8) | 8 | `"import pytest"` | — |
+| [SRC-104831BF35-L000009](../../tests/test_evaluate_benchmark_metrics.py#L9) | 9 | `""` | — |
+| [SRC-104831BF35-L000010](../../tests/test_evaluate_benchmark_metrics.py#L10) | 10 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-104831BF35-L000011](../../tests/test_evaluate_benchmark_metrics.py#L11) | 11 | `"SCRIPT = ROOT / \"scripts\" / \"evaluate_benchmark_metrics.py\""` | — |
+| [SRC-104831BF35-L000012](../../tests/test_evaluate_benchmark_metrics.py#L12) | 12 | `""` | — |
 | [SRC-104831BF35-L000013](../../tests/test_evaluate_benchmark_metrics.py#L13) | 13 | `""` | — |
-| [SRC-104831BF35-L000014](../../tests/test_evaluate_benchmark_metrics.py#L14) | 14 | `""` | — |
-| [SRC-104831BF35-L000015](../../tests/test_evaluate_benchmark_metrics.py#L15) | 15 | `"def _load_module():"` | — |
-| [SRC-104831BF35-L000016](../../tests/test_evaluate_benchmark_metrics.py#L16) | 16 | `"    spec = importlib.util.spec_from_file_location(\"benchmark_metrics\", SCRIPT)"` | — |
-| [SRC-104831BF35-L000017](../../tests/test_evaluate_benchmark_metrics.py#L17) | 17 | `"    assert spec and spec.loader"` | — |
-| [SRC-104831BF35-L000018](../../tests/test_evaluate_benchmark_metrics.py#L18) | 18 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-104831BF35-L000019](../../tests/test_evaluate_benchmark_metrics.py#L19) | 19 | `"    sys.modules[spec.name] = module"` | — |
-| [SRC-104831BF35-L000020](../../tests/test_evaluate_benchmark_metrics.py#L20) | 20 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-104831BF35-L000021](../../tests/test_evaluate_benchmark_metrics.py#L21) | 21 | `"    return module"` | — |
+| [SRC-104831BF35-L000014](../../tests/test_evaluate_benchmark_metrics.py#L14) | 14 | `"def _load_module():"` | — |
+| [SRC-104831BF35-L000015](../../tests/test_evaluate_benchmark_metrics.py#L15) | 15 | `"    spec = importlib.util.spec_from_file_location(\"benchmark_metrics\", SCRIPT)"` | — |
+| [SRC-104831BF35-L000016](../../tests/test_evaluate_benchmark_metrics.py#L16) | 16 | `"    assert spec and spec.loader"` | — |
+| [SRC-104831BF35-L000017](../../tests/test_evaluate_benchmark_metrics.py#L17) | 17 | `"    module = importlib.util.module_from_spec(spec)"` | — |
+| [SRC-104831BF35-L000018](../../tests/test_evaluate_benchmark_metrics.py#L18) | 18 | `"    sys.modules[spec.name] = module"` | — |
+| [SRC-104831BF35-L000019](../../tests/test_evaluate_benchmark_metrics.py#L19) | 19 | `"    spec.loader.exec_module(module)"` | — |
+| [SRC-104831BF35-L000020](../../tests/test_evaluate_benchmark_metrics.py#L20) | 20 | `"    return module"` | — |
+| [SRC-104831BF35-L000021](../../tests/test_evaluate_benchmark_metrics.py#L21) | 21 | `""` | — |
 | [SRC-104831BF35-L000022](../../tests/test_evaluate_benchmark_metrics.py#L22) | 22 | `""` | — |
-| [SRC-104831BF35-L000023](../../tests/test_evaluate_benchmark_metrics.py#L23) | 23 | `""` | — |
-| [SRC-104831BF35-L000024](../../tests/test_evaluate_benchmark_metrics.py#L24) | 24 | `"def _run(run_id: str, sha: str, rows: list[dict]) -> dict:"` | — |
-| [SRC-104831BF35-L000025](../../tests/test_evaluate_benchmark_metrics.py#L25) | 25 | `"    return {"` | — |
-| [SRC-104831BF35-L000026](../../tests/test_evaluate_benchmark_metrics.py#L26) | 26 | `"        \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
-| [SRC-104831BF35-L000027](../../tests/test_evaluate_benchmark_metrics.py#L27) | 27 | `"        \"benchmark_version\": \"1.0.0\","` | — |
-| [SRC-104831BF35-L000028](../../tests/test_evaluate_benchmark_metrics.py#L28) | 28 | `"        \"run_id\": run_id,"` | — |
-| [SRC-104831BF35-L000029](../../tests/test_evaluate_benchmark_metrics.py#L29) | 29 | `"        \"commit_sha\": sha,"` | — |
-| [SRC-104831BF35-L000030](../../tests/test_evaluate_benchmark_metrics.py#L30) | 30 | `"        \"cases\": rows,"` | — |
-| [SRC-104831BF35-L000031](../../tests/test_evaluate_benchmark_metrics.py#L31) | 31 | `"    }"` | — |
+| [SRC-104831BF35-L000023](../../tests/test_evaluate_benchmark_metrics.py#L23) | 23 | `"def _run(run_id: str, sha: str, rows: list[dict]) -> dict:"` | — |
+| [SRC-104831BF35-L000024](../../tests/test_evaluate_benchmark_metrics.py#L24) | 24 | `"    return {"` | — |
+| [SRC-104831BF35-L000025](../../tests/test_evaluate_benchmark_metrics.py#L25) | 25 | `"        \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
+| [SRC-104831BF35-L000026](../../tests/test_evaluate_benchmark_metrics.py#L26) | 26 | `"        \"benchmark_version\": \"1.0.0\","` | — |
+| [SRC-104831BF35-L000027](../../tests/test_evaluate_benchmark_metrics.py#L27) | 27 | `"        \"run_id\": run_id,"` | — |
+| [SRC-104831BF35-L000028](../../tests/test_evaluate_benchmark_metrics.py#L28) | 28 | `"        \"commit_sha\": sha,"` | — |
+| [SRC-104831BF35-L000029](../../tests/test_evaluate_benchmark_metrics.py#L29) | 29 | `"        \"cases\": rows,"` | — |
+| [SRC-104831BF35-L000030](../../tests/test_evaluate_benchmark_metrics.py#L30) | 30 | `"    }"` | — |
+| [SRC-104831BF35-L000031](../../tests/test_evaluate_benchmark_metrics.py#L31) | 31 | `""` | — |
 | [SRC-104831BF35-L000032](../../tests/test_evaluate_benchmark_metrics.py#L32) | 32 | `""` | — |
-| [SRC-104831BF35-L000033](../../tests/test_evaluate_benchmark_metrics.py#L33) | 33 | `""` | — |
-| [SRC-104831BF35-L000034](../../tests/test_evaluate_benchmark_metrics.py#L34) | 34 | `"def _row(case_id: str, **overrides) -> dict:"` | — |
-| [SRC-104831BF35-L000035](../../tests/test_evaluate_benchmark_metrics.py#L35) | 35 | `"    row = {"` | — |
-| [SRC-104831BF35-L000036](../../tests/test_evaluate_benchmark_metrics.py#L36) | 36 | `"        \"case_id\": case_id,"` | — |
-| [SRC-104831BF35-L000037](../../tests/test_evaluate_benchmark_metrics.py#L37) | 37 | `"        \"language\": \"ar-EG\","` | — |
-| [SRC-104831BF35-L000038](../../tests/test_evaluate_benchmark_metrics.py#L38) | 38 | `"        \"correct\": True,"` | — |
-| [SRC-104831BF35-L000039](../../tests/test_evaluate_benchmark_metrics.py#L39) | 39 | `"        \"gold_claims\": 4,"` | — |
-| [SRC-104831BF35-L000040](../../tests/test_evaluate_benchmark_metrics.py#L40) | 40 | `"        \"retrieved_gold_claims\": 3,"` | — |
-| [SRC-104831BF35-L000041](../../tests/test_evaluate_benchmark_metrics.py#L41) | 41 | `"        \"citations_required\": True,"` | — |
-| [SRC-104831BF35-L000042](../../tests/test_evaluate_benchmark_metrics.py#L42) | 42 | `"        \"citations_total\": 2,"` | — |
-| [SRC-104831BF35-L000043](../../tests/test_evaluate_benchmark_metrics.py#L43) | 43 | `"        \"citations_supported\": 1,"` | — |
-| [SRC-104831BF35-L000044](../../tests/test_evaluate_benchmark_metrics.py#L44) | 44 | `"        \"tool_required\": True,"` | — |
-| [SRC-104831BF35-L000045](../../tests/test_evaluate_benchmark_metrics.py#L45) | 45 | `"        \"tool_attempted\": 2,"` | — |
-| [SRC-104831BF35-L000046](../../tests/test_evaluate_benchmark_metrics.py#L46) | 46 | `"        \"tool_succeeded\": 1,"` | — |
-| [SRC-104831BF35-L000047](../../tests/test_evaluate_benchmark_metrics.py#L47) | 47 | `"        \"latency_ms\": 1000,"` | — |
-| [SRC-104831BF35-L000048](../../tests/test_evaluate_benchmark_metrics.py#L48) | 48 | `"        \"cost_usd\": 0.002,"` | — |
-| [SRC-104831BF35-L000049](../../tests/test_evaluate_benchmark_metrics.py#L49) | 49 | `"        \"input_tokens\": 100,"` | — |
-| [SRC-104831BF35-L000050](../../tests/test_evaluate_benchmark_metrics.py#L50) | 50 | `"        \"output_tokens\": 50,"` | — |
-| [SRC-104831BF35-L000051](../../tests/test_evaluate_benchmark_metrics.py#L51) | 51 | `"    }"` | — |
-| [SRC-104831BF35-L000052](../../tests/test_evaluate_benchmark_metrics.py#L52) | 52 | `"    row.update(overrides)"` | — |
-| [SRC-104831BF35-L000053](../../tests/test_evaluate_benchmark_metrics.py#L53) | 53 | `"    return row"` | — |
+| [SRC-104831BF35-L000033](../../tests/test_evaluate_benchmark_metrics.py#L33) | 33 | `"def _row(case_id: str, **overrides) -> dict:"` | — |
+| [SRC-104831BF35-L000034](../../tests/test_evaluate_benchmark_metrics.py#L34) | 34 | `"    row = {"` | — |
+| [SRC-104831BF35-L000035](../../tests/test_evaluate_benchmark_metrics.py#L35) | 35 | `"        \"case_id\": case_id,"` | — |
+| [SRC-104831BF35-L000036](../../tests/test_evaluate_benchmark_metrics.py#L36) | 36 | `"        \"language\": \"ar-EG\","` | — |
+| [SRC-104831BF35-L000037](../../tests/test_evaluate_benchmark_metrics.py#L37) | 37 | `"        \"correct\": True,"` | — |
+| [SRC-104831BF35-L000038](../../tests/test_evaluate_benchmark_metrics.py#L38) | 38 | `"        \"gold_claims\": 4,"` | — |
+| [SRC-104831BF35-L000039](../../tests/test_evaluate_benchmark_metrics.py#L39) | 39 | `"        \"retrieved_gold_claims\": 3,"` | — |
+| [SRC-104831BF35-L000040](../../tests/test_evaluate_benchmark_metrics.py#L40) | 40 | `"        \"citations_required\": True,"` | — |
+| [SRC-104831BF35-L000041](../../tests/test_evaluate_benchmark_metrics.py#L41) | 41 | `"        \"citations_total\": 2,"` | — |
+| [SRC-104831BF35-L000042](../../tests/test_evaluate_benchmark_metrics.py#L42) | 42 | `"        \"citations_supported\": 1,"` | — |
+| [SRC-104831BF35-L000043](../../tests/test_evaluate_benchmark_metrics.py#L43) | 43 | `"        \"tool_required\": True,"` | — |
+| [SRC-104831BF35-L000044](../../tests/test_evaluate_benchmark_metrics.py#L44) | 44 | `"        \"tool_attempted\": 2,"` | — |
+| [SRC-104831BF35-L000045](../../tests/test_evaluate_benchmark_metrics.py#L45) | 45 | `"        \"tool_succeeded\": 1,"` | — |
+| [SRC-104831BF35-L000046](../../tests/test_evaluate_benchmark_metrics.py#L46) | 46 | `"        \"latency_ms\": 1000,"` | — |
+| [SRC-104831BF35-L000047](../../tests/test_evaluate_benchmark_metrics.py#L47) | 47 | `"        \"cost_usd\": 0.002,"` | — |
+| [SRC-104831BF35-L000048](../../tests/test_evaluate_benchmark_metrics.py#L48) | 48 | `"        \"input_tokens\": 100,"` | — |
+| [SRC-104831BF35-L000049](../../tests/test_evaluate_benchmark_metrics.py#L49) | 49 | `"        \"output_tokens\": 50,"` | — |
+| [SRC-104831BF35-L000050](../../tests/test_evaluate_benchmark_metrics.py#L50) | 50 | `"    }"` | — |
+| [SRC-104831BF35-L000051](../../tests/test_evaluate_benchmark_metrics.py#L51) | 51 | `"    row.update(overrides)"` | — |
+| [SRC-104831BF35-L000052](../../tests/test_evaluate_benchmark_metrics.py#L52) | 52 | `"    return row"` | — |
+| [SRC-104831BF35-L000053](../../tests/test_evaluate_benchmark_metrics.py#L53) | 53 | `""` | — |
 | [SRC-104831BF35-L000054](../../tests/test_evaluate_benchmark_metrics.py#L54) | 54 | `""` | — |
-| [SRC-104831BF35-L000055](../../tests/test_evaluate_benchmark_metrics.py#L55) | 55 | `""` | — |
-| [SRC-104831BF35-L000056](../../tests/test_evaluate_benchmark_metrics.py#L56) | 56 | `"def test_summary_computes_all_requested_metrics():"` | — |
-| [SRC-104831BF35-L000057](../../tests/test_evaluate_benchmark_metrics.py#L57) | 57 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000058](../../tests/test_evaluate_benchmark_metrics.py#L58) | 58 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\"), _row(\"AQ-002\", correct=False)])"` | — |
-| [SRC-104831BF35-L000059](../../tests/test_evaluate_benchmark_metrics.py#L59) | 59 | `"    summary = mod.summarize(data)"` | — |
-| [SRC-104831BF35-L000060](../../tests/test_evaluate_benchmark_metrics.py#L60) | 60 | `"    assert summary[\"accuracy\"] == 0.5"` | — |
-| [SRC-104831BF35-L000061](../../tests/test_evaluate_benchmark_metrics.py#L61) | 61 | `"    assert summary[\"claim_recall\"] == 0.75"` | — |
-| [SRC-104831BF35-L000062](../../tests/test_evaluate_benchmark_metrics.py#L62) | 62 | `"    assert summary[\"citation_precision\"] == 0.5"` | — |
-| [SRC-104831BF35-L000063](../../tests/test_evaluate_benchmark_metrics.py#L63) | 63 | `"    assert summary[\"citation_coverage\"] == 1.0"` | — |
-| [SRC-104831BF35-L000064](../../tests/test_evaluate_benchmark_metrics.py#L64) | 64 | `"    assert summary[\"tool_success_rate\"] == 0.5"` | — |
-| [SRC-104831BF35-L000065](../../tests/test_evaluate_benchmark_metrics.py#L65) | 65 | `"    assert summary[\"latency_ms_median\"] == 1000"` | — |
-| [SRC-104831BF35-L000066](../../tests/test_evaluate_benchmark_metrics.py#L66) | 66 | `"    assert summary[\"latency_ms_p95\"] == 1000"` | — |
-| [SRC-104831BF35-L000067](../../tests/test_evaluate_benchmark_metrics.py#L67) | 67 | `"    assert summary[\"cost_usd_mean\"] == pytest.approx(0.002)"` | — |
-| [SRC-104831BF35-L000068](../../tests/test_evaluate_benchmark_metrics.py#L68) | 68 | `"    assert summary[\"cost_usd_total\"] == pytest.approx(0.004)"` | — |
+| [SRC-104831BF35-L000055](../../tests/test_evaluate_benchmark_metrics.py#L55) | 55 | `"def test_summary_computes_all_requested_metrics():"` | — |
+| [SRC-104831BF35-L000056](../../tests/test_evaluate_benchmark_metrics.py#L56) | 56 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000057](../../tests/test_evaluate_benchmark_metrics.py#L57) | 57 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\"), _row(\"AQ-002\", correct=False)])"` | — |
+| [SRC-104831BF35-L000058](../../tests/test_evaluate_benchmark_metrics.py#L58) | 58 | `"    summary = mod.summarize(data)"` | — |
+| [SRC-104831BF35-L000059](../../tests/test_evaluate_benchmark_metrics.py#L59) | 59 | `"    assert summary[\"accuracy\"] == 0.5"` | — |
+| [SRC-104831BF35-L000060](../../tests/test_evaluate_benchmark_metrics.py#L60) | 60 | `"    assert summary[\"claim_recall\"] == 0.75"` | — |
+| [SRC-104831BF35-L000061](../../tests/test_evaluate_benchmark_metrics.py#L61) | 61 | `"    assert summary[\"citation_precision\"] == 0.5"` | — |
+| [SRC-104831BF35-L000062](../../tests/test_evaluate_benchmark_metrics.py#L62) | 62 | `"    assert summary[\"citation_coverage\"] == 1.0"` | — |
+| [SRC-104831BF35-L000063](../../tests/test_evaluate_benchmark_metrics.py#L63) | 63 | `"    assert summary[\"tool_success_rate\"] == 0.5"` | — |
+| [SRC-104831BF35-L000064](../../tests/test_evaluate_benchmark_metrics.py#L64) | 64 | `"    assert summary[\"latency_ms_median\"] == 1000"` | — |
+| [SRC-104831BF35-L000065](../../tests/test_evaluate_benchmark_metrics.py#L65) | 65 | `"    assert summary[\"latency_ms_p95\"] == 1000"` | — |
+| [SRC-104831BF35-L000066](../../tests/test_evaluate_benchmark_metrics.py#L66) | 66 | `"    assert summary[\"cost_usd_mean\"] == pytest.approx(0.002)"` | — |
+| [SRC-104831BF35-L000067](../../tests/test_evaluate_benchmark_metrics.py#L67) | 67 | `"    assert summary[\"cost_usd_total\"] == pytest.approx(0.004)"` | — |
+| [SRC-104831BF35-L000068](../../tests/test_evaluate_benchmark_metrics.py#L68) | 68 | `""` | — |
 | [SRC-104831BF35-L000069](../../tests/test_evaluate_benchmark_metrics.py#L69) | 69 | `""` | — |
-| [SRC-104831BF35-L000070](../../tests/test_evaluate_benchmark_metrics.py#L70) | 70 | `""` | — |
-| [SRC-104831BF35-L000071](../../tests/test_evaluate_benchmark_metrics.py#L71) | 71 | `"def test_unknown_metrics_are_not_silently_counted_as_zero():"` | — |
-| [SRC-104831BF35-L000072](../../tests/test_evaluate_benchmark_metrics.py#L72) | 72 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000073](../../tests/test_evaluate_benchmark_metrics.py#L73) | 73 | `"    data = _run(\"run-a\", \"a\" * 40, [_row("` | — |
-| [SRC-104831BF35-L000074](../../tests/test_evaluate_benchmark_metrics.py#L74) | 74 | `"        \"AQ-001\", correct=None, gold_claims=None, retrieved_gold_claims=None,"` | — |
-| [SRC-104831BF35-L000075](../../tests/test_evaluate_benchmark_metrics.py#L75) | 75 | `"        citations_total=None, citations_supported=None, tool_attempted=None,"` | — |
-| [SRC-104831BF35-L000076](../../tests/test_evaluate_benchmark_metrics.py#L76) | 76 | `"        tool_succeeded=None, latency_ms=None, cost_usd=None,"` | — |
-| [SRC-104831BF35-L000077](../../tests/test_evaluate_benchmark_metrics.py#L77) | 77 | `"    )])"` | — |
-| [SRC-104831BF35-L000078](../../tests/test_evaluate_benchmark_metrics.py#L78) | 78 | `"    summary = mod.summarize(data)"` | — |
-| [SRC-104831BF35-L000079](../../tests/test_evaluate_benchmark_metrics.py#L79) | 79 | `"    assert summary[\"accuracy\"] is None"` | — |
-| [SRC-104831BF35-L000080](../../tests/test_evaluate_benchmark_metrics.py#L80) | 80 | `"    assert summary[\"claim_recall\"] is None"` | — |
-| [SRC-104831BF35-L000081](../../tests/test_evaluate_benchmark_metrics.py#L81) | 81 | `"    assert summary[\"citation_precision\"] is None"` | — |
-| [SRC-104831BF35-L000082](../../tests/test_evaluate_benchmark_metrics.py#L82) | 82 | `"    assert summary[\"tool_success_rate\"] is None"` | — |
-| [SRC-104831BF35-L000083](../../tests/test_evaluate_benchmark_metrics.py#L83) | 83 | `"    assert summary[\"latency_ms_median\"] is None"` | — |
-| [SRC-104831BF35-L000084](../../tests/test_evaluate_benchmark_metrics.py#L84) | 84 | `"    assert summary[\"cost_usd_mean\"] is None"` | — |
+| [SRC-104831BF35-L000070](../../tests/test_evaluate_benchmark_metrics.py#L70) | 70 | `"def test_unknown_metrics_are_not_silently_counted_as_zero():"` | — |
+| [SRC-104831BF35-L000071](../../tests/test_evaluate_benchmark_metrics.py#L71) | 71 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000072](../../tests/test_evaluate_benchmark_metrics.py#L72) | 72 | `"    data = _run(\"run-a\", \"a\" * 40, [_row("` | — |
+| [SRC-104831BF35-L000073](../../tests/test_evaluate_benchmark_metrics.py#L73) | 73 | `"        \"AQ-001\", correct=None, gold_claims=None, retrieved_gold_claims=None,"` | — |
+| [SRC-104831BF35-L000074](../../tests/test_evaluate_benchmark_metrics.py#L74) | 74 | `"        citations_total=None, citations_supported=None, tool_attempted=None,"` | — |
+| [SRC-104831BF35-L000075](../../tests/test_evaluate_benchmark_metrics.py#L75) | 75 | `"        tool_succeeded=None, latency_ms=None, cost_usd=None,"` | — |
+| [SRC-104831BF35-L000076](../../tests/test_evaluate_benchmark_metrics.py#L76) | 76 | `"    )])"` | — |
+| [SRC-104831BF35-L000077](../../tests/test_evaluate_benchmark_metrics.py#L77) | 77 | `"    summary = mod.summarize(data)"` | — |
+| [SRC-104831BF35-L000078](../../tests/test_evaluate_benchmark_metrics.py#L78) | 78 | `"    assert summary[\"accuracy\"] is None"` | — |
+| [SRC-104831BF35-L000079](../../tests/test_evaluate_benchmark_metrics.py#L79) | 79 | `"    assert summary[\"claim_recall\"] is None"` | — |
+| [SRC-104831BF35-L000080](../../tests/test_evaluate_benchmark_metrics.py#L80) | 80 | `"    assert summary[\"citation_precision\"] is None"` | — |
+| [SRC-104831BF35-L000081](../../tests/test_evaluate_benchmark_metrics.py#L81) | 81 | `"    assert summary[\"tool_success_rate\"] is None"` | — |
+| [SRC-104831BF35-L000082](../../tests/test_evaluate_benchmark_metrics.py#L82) | 82 | `"    assert summary[\"latency_ms_median\"] is None"` | — |
+| [SRC-104831BF35-L000083](../../tests/test_evaluate_benchmark_metrics.py#L83) | 83 | `"    assert summary[\"cost_usd_mean\"] is None"` | — |
+| [SRC-104831BF35-L000084](../../tests/test_evaluate_benchmark_metrics.py#L84) | 84 | `""` | — |
 | [SRC-104831BF35-L000085](../../tests/test_evaluate_benchmark_metrics.py#L85) | 85 | `""` | — |
-| [SRC-104831BF35-L000086](../../tests/test_evaluate_benchmark_metrics.py#L86) | 86 | `""` | — |
-| [SRC-104831BF35-L000087](../../tests/test_evaluate_benchmark_metrics.py#L87) | 87 | `"def test_required_tool_explicitly_not_attempted_counts_as_failure():"` | — |
-| [SRC-104831BF35-L000088](../../tests/test_evaluate_benchmark_metrics.py#L88) | 88 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000089](../../tests/test_evaluate_benchmark_metrics.py#L89) | 89 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\", tool_attempted=0, tool_succeeded=0)])"` | — |
-| [SRC-104831BF35-L000090](../../tests/test_evaluate_benchmark_metrics.py#L90) | 90 | `"    summary = mod.summarize(data)"` | — |
-| [SRC-104831BF35-L000091](../../tests/test_evaluate_benchmark_metrics.py#L91) | 91 | `"    assert summary[\"tool_success_rate\"] == 0.0"` | — |
-| [SRC-104831BF35-L000092](../../tests/test_evaluate_benchmark_metrics.py#L92) | 92 | `"    assert summary[\"tool_attempt_denominator\"] == 1"` | — |
+| [SRC-104831BF35-L000086](../../tests/test_evaluate_benchmark_metrics.py#L86) | 86 | `"def test_required_tool_explicitly_not_attempted_counts_as_failure():"` | — |
+| [SRC-104831BF35-L000087](../../tests/test_evaluate_benchmark_metrics.py#L87) | 87 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000088](../../tests/test_evaluate_benchmark_metrics.py#L88) | 88 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\", tool_attempted=0, tool_succeeded=0)])"` | — |
+| [SRC-104831BF35-L000089](../../tests/test_evaluate_benchmark_metrics.py#L89) | 89 | `"    summary = mod.summarize(data)"` | — |
+| [SRC-104831BF35-L000090](../../tests/test_evaluate_benchmark_metrics.py#L90) | 90 | `"    assert summary[\"tool_success_rate\"] == 0.0"` | — |
+| [SRC-104831BF35-L000091](../../tests/test_evaluate_benchmark_metrics.py#L91) | 91 | `"    assert summary[\"tool_attempt_denominator\"] == 1"` | — |
+| [SRC-104831BF35-L000092](../../tests/test_evaluate_benchmark_metrics.py#L92) | 92 | `""` | — |
 | [SRC-104831BF35-L000093](../../tests/test_evaluate_benchmark_metrics.py#L93) | 93 | `""` | — |
-| [SRC-104831BF35-L000094](../../tests/test_evaluate_benchmark_metrics.py#L94) | 94 | `""` | — |
-| [SRC-104831BF35-L000095](../../tests/test_evaluate_benchmark_metrics.py#L95) | 95 | `"def test_comparison_uses_only_paired_case_ids_and_reports_deltas():"` | — |
-| [SRC-104831BF35-L000096](../../tests/test_evaluate_benchmark_metrics.py#L96) | 96 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000097](../../tests/test_evaluate_benchmark_metrics.py#L97) | 97 | `"    baseline = _run(\"baseline\", \"a\" * 40, [_row(\"AQ-001\"), _row(\"AQ-002\")])"` | — |
-| [SRC-104831BF35-L000098](../../tests/test_evaluate_benchmark_metrics.py#L98) | 98 | `"    candidate = _run("` | — |
-| [SRC-104831BF35-L000099](../../tests/test_evaluate_benchmark_metrics.py#L99) | 99 | `"        \"candidate\", \"b\" * 40,"` | — |
-| [SRC-104831BF35-L000100](../../tests/test_evaluate_benchmark_metrics.py#L100) | 100 | `"        [_row(\"AQ-001\", correct=False, latency_ms=2000, cost_usd=0.004), _row(\"AQ-003\")],"` | — |
-| [SRC-104831BF35-L000101](../../tests/test_evaluate_benchmark_metrics.py#L101) | 101 | `"    )"` | — |
-| [SRC-104831BF35-L000102](../../tests/test_evaluate_benchmark_metrics.py#L102) | 102 | `"    report = mod.compare_runs(baseline, candidate)"` | — |
-| [SRC-104831BF35-L000103](../../tests/test_evaluate_benchmark_metrics.py#L103) | 103 | `"    assert report[\"paired_case_ids\"] == [\"AQ-001\"]"` | — |
-| [SRC-104831BF35-L000104](../../tests/test_evaluate_benchmark_metrics.py#L104) | 104 | `"    assert report[\"paired_case_count\"] == 1"` | — |
-| [SRC-104831BF35-L000105](../../tests/test_evaluate_benchmark_metrics.py#L105) | 105 | `"    assert report[\"baseline_summary\"][\"accuracy\"] == 1.0"` | — |
-| [SRC-104831BF35-L000106](../../tests/test_evaluate_benchmark_metrics.py#L106) | 106 | `"    assert report[\"candidate_summary\"][\"accuracy\"] == 0.0"` | — |
-| [SRC-104831BF35-L000107](../../tests/test_evaluate_benchmark_metrics.py#L107) | 107 | `"    assert report[\"candidate_summary\"][\"latency_ms_median\"] == 2000"` | — |
-| [SRC-104831BF35-L000108](../../tests/test_evaluate_benchmark_metrics.py#L108) | 108 | `"    assert \"Gold-claim recall\" in mod.render_markdown(report)"` | — |
+| [SRC-104831BF35-L000094](../../tests/test_evaluate_benchmark_metrics.py#L94) | 94 | `"def test_comparison_uses_only_paired_case_ids_and_reports_deltas():"` | — |
+| [SRC-104831BF35-L000095](../../tests/test_evaluate_benchmark_metrics.py#L95) | 95 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000096](../../tests/test_evaluate_benchmark_metrics.py#L96) | 96 | `"    baseline = _run(\"baseline\", \"a\" * 40, [_row(\"AQ-001\"), _row(\"AQ-002\")])"` | — |
+| [SRC-104831BF35-L000097](../../tests/test_evaluate_benchmark_metrics.py#L97) | 97 | `"    candidate = _run("` | — |
+| [SRC-104831BF35-L000098](../../tests/test_evaluate_benchmark_metrics.py#L98) | 98 | `"        \"candidate\", \"b\" * 40,"` | — |
+| [SRC-104831BF35-L000099](../../tests/test_evaluate_benchmark_metrics.py#L99) | 99 | `"        [_row(\"AQ-001\", correct=False, latency_ms=2000, cost_usd=0.004), _row(\"AQ-003\")],"` | — |
+| [SRC-104831BF35-L000100](../../tests/test_evaluate_benchmark_metrics.py#L100) | 100 | `"    )"` | — |
+| [SRC-104831BF35-L000101](../../tests/test_evaluate_benchmark_metrics.py#L101) | 101 | `"    report = mod.compare_runs(baseline, candidate)"` | — |
+| [SRC-104831BF35-L000102](../../tests/test_evaluate_benchmark_metrics.py#L102) | 102 | `"    assert report[\"paired_case_ids\"] == [\"AQ-001\"]"` | — |
+| [SRC-104831BF35-L000103](../../tests/test_evaluate_benchmark_metrics.py#L103) | 103 | `"    assert report[\"paired_case_count\"] == 1"` | — |
+| [SRC-104831BF35-L000104](../../tests/test_evaluate_benchmark_metrics.py#L104) | 104 | `"    assert report[\"baseline_summary\"][\"accuracy\"] == 1.0"` | — |
+| [SRC-104831BF35-L000105](../../tests/test_evaluate_benchmark_metrics.py#L105) | 105 | `"    assert report[\"candidate_summary\"][\"accuracy\"] == 0.0"` | — |
+| [SRC-104831BF35-L000106](../../tests/test_evaluate_benchmark_metrics.py#L106) | 106 | `"    assert report[\"candidate_summary\"][\"latency_ms_median\"] == 2000"` | — |
+| [SRC-104831BF35-L000107](../../tests/test_evaluate_benchmark_metrics.py#L107) | 107 | `"    assert \"Gold-claim recall\" in mod.render_markdown(report)"` | — |
+| [SRC-104831BF35-L000108](../../tests/test_evaluate_benchmark_metrics.py#L108) | 108 | `""` | — |
 | [SRC-104831BF35-L000109](../../tests/test_evaluate_benchmark_metrics.py#L109) | 109 | `""` | — |
-| [SRC-104831BF35-L000110](../../tests/test_evaluate_benchmark_metrics.py#L110) | 110 | `""` | — |
-| [SRC-104831BF35-L000111](../../tests/test_evaluate_benchmark_metrics.py#L111) | 111 | `"def test_comparison_rejects_different_benchmark_versions():"` | — |
-| [SRC-104831BF35-L000112](../../tests/test_evaluate_benchmark_metrics.py#L112) | 112 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000113](../../tests/test_evaluate_benchmark_metrics.py#L113) | 113 | `"    baseline = _run(\"baseline\", \"a\" * 40, [_row(\"AQ-001\")])"` | — |
-| [SRC-104831BF35-L000114](../../tests/test_evaluate_benchmark_metrics.py#L114) | 114 | `"    candidate = _run(\"candidate\", \"b\" * 40, [_row(\"AQ-001\")])"` | — |
-| [SRC-104831BF35-L000115](../../tests/test_evaluate_benchmark_metrics.py#L115) | 115 | `"    candidate[\"benchmark_version\"] = \"2.0\""` | — |
-| [SRC-104831BF35-L000116](../../tests/test_evaluate_benchmark_metrics.py#L116) | 116 | `"    with pytest.raises(ValueError, match=\"benchmark_version\"):"` | — |
-| [SRC-104831BF35-L000117](../../tests/test_evaluate_benchmark_metrics.py#L117) | 117 | `"        mod.compare_runs(baseline, candidate)"` | — |
+| [SRC-104831BF35-L000110](../../tests/test_evaluate_benchmark_metrics.py#L110) | 110 | `"def test_comparison_rejects_different_benchmark_versions():"` | — |
+| [SRC-104831BF35-L000111](../../tests/test_evaluate_benchmark_metrics.py#L111) | 111 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000112](../../tests/test_evaluate_benchmark_metrics.py#L112) | 112 | `"    baseline = _run(\"baseline\", \"a\" * 40, [_row(\"AQ-001\")])"` | — |
+| [SRC-104831BF35-L000113](../../tests/test_evaluate_benchmark_metrics.py#L113) | 113 | `"    candidate = _run(\"candidate\", \"b\" * 40, [_row(\"AQ-001\")])"` | — |
+| [SRC-104831BF35-L000114](../../tests/test_evaluate_benchmark_metrics.py#L114) | 114 | `"    candidate[\"benchmark_version\"] = \"2.0\""` | — |
+| [SRC-104831BF35-L000115](../../tests/test_evaluate_benchmark_metrics.py#L115) | 115 | `"    with pytest.raises(ValueError, match=\"benchmark_version\"):"` | — |
+| [SRC-104831BF35-L000116](../../tests/test_evaluate_benchmark_metrics.py#L116) | 116 | `"        mod.compare_runs(baseline, candidate)"` | — |
+| [SRC-104831BF35-L000117](../../tests/test_evaluate_benchmark_metrics.py#L117) | 117 | `""` | — |
 | [SRC-104831BF35-L000118](../../tests/test_evaluate_benchmark_metrics.py#L118) | 118 | `""` | — |
-| [SRC-104831BF35-L000119](../../tests/test_evaluate_benchmark_metrics.py#L119) | 119 | `""` | — |
-| [SRC-104831BF35-L000120](../../tests/test_evaluate_benchmark_metrics.py#L120) | 120 | `"def test_validation_rejects_invalid_metric_counts():"` | — |
-| [SRC-104831BF35-L000121](../../tests/test_evaluate_benchmark_metrics.py#L121) | 121 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000122](../../tests/test_evaluate_benchmark_metrics.py#L122) | 122 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\", citations_supported=3, citations_total=2)])"` | — |
-| [SRC-104831BF35-L000123](../../tests/test_evaluate_benchmark_metrics.py#L123) | 123 | `"    assert any(\"cannot exceed citations_total\" in issue for issue in mod.validate_run(data))"` | — |
+| [SRC-104831BF35-L000119](../../tests/test_evaluate_benchmark_metrics.py#L119) | 119 | `"def test_validation_rejects_invalid_metric_counts():"` | — |
+| [SRC-104831BF35-L000120](../../tests/test_evaluate_benchmark_metrics.py#L120) | 120 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000121](../../tests/test_evaluate_benchmark_metrics.py#L121) | 121 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\", citations_supported=3, citations_total=2)])"` | — |
+| [SRC-104831BF35-L000122](../../tests/test_evaluate_benchmark_metrics.py#L122) | 122 | `"    assert any(\"cannot exceed citations_total\" in issue for issue in mod.validate_run(data))"` | — |
+| [SRC-104831BF35-L000123](../../tests/test_evaluate_benchmark_metrics.py#L123) | 123 | `""` | — |
 | [SRC-104831BF35-L000124](../../tests/test_evaluate_benchmark_metrics.py#L124) | 124 | `""` | — |
-| [SRC-104831BF35-L000125](../../tests/test_evaluate_benchmark_metrics.py#L125) | 125 | `""` | — |
-| [SRC-104831BF35-L000126](../../tests/test_evaluate_benchmark_metrics.py#L126) | 126 | `"def test_validation_rejects_duplicate_case_ids():"` | — |
+| [SRC-104831BF35-L000125](../../tests/test_evaluate_benchmark_metrics.py#L125) | 125 | `"def test_validation_rejects_duplicate_case_ids():"` | — |
+| [SRC-104831BF35-L000126](../../tests/test_evaluate_benchmark_metrics.py#L126) | 126 | `"    mod = _load_module()"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000421 إلى SRC-AAA21D04E8-L000129
+- النطاق: SRC-FA4E1423C3-L000422 إلى SRC-AAA21D04E8-L000130
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-FA4E1423C3-L000421](../../tests/test_generate_index.py#L421) | 421 | `"    tmp_path: Path,"` | — |
 | [SRC-FA4E1423C3-L000422](../../tests/test_generate_index.py#L422) | 422 | `") -> None:"` | — |
 | [SRC-FA4E1423C3-L000423](../../tests/test_generate_index.py#L423) | 423 | `"    \"\"\"Only explicit comment or prose markers become findings, never syntax/URLs/strings.\"\"\""` | — |
 | [SRC-FA4E1423C3-L000424](../../tests/test_generate_index.py#L424) | 424 | `"    (tmp_path / \"sample.py\").write_text("` | — |
@@ -834,3 +833,4 @@
 | [SRC-AAA21D04E8-L000127](../../tests/test_generation_capabilities.py#L127) | 127 | `"    result = agent.answer(\"هل تستطيع البحث على الانترنت؟\")"` | — |
 | [SRC-AAA21D04E8-L000128](../../tests/test_generation_capabilities.py#L128) | 128 | `""` | — |
 | [SRC-AAA21D04E8-L000129](../../tests/test_generation_capabilities.py#L129) | 129 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
+| [SRC-AAA21D04E8-L000130](../../tests/test_generation_capabilities.py#L130) | 130 | `"    assert result[\"final_answer_status\"] == \"local_response_no_generation\""` | — |

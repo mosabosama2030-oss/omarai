@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002234 إلى SRC-F725E90B2A-L003033
+- النطاق: SRC-F725E90B2A-L002235 إلى SRC-F725E90B2A-L003034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002234](../../tests/test_web_agent.py#L2234) | 2234 | `"                \"provider\": \"bing_rss\","` | — |
 | [SRC-F725E90B2A-L002235](../../tests/test_web_agent.py#L2235) | 2235 | `"                \"title\": \"OpenAI official website\","` | — |
 | [SRC-F725E90B2A-L002236](../../tests/test_web_agent.py#L2236) | 2236 | `"                \"url\": \"https://openai.com/\","` | — |
 | [SRC-F725E90B2A-L002237](../../tests/test_web_agent.py#L2237) | 2237 | `"                \"snippet\": \"Official website and products\","` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L003031](../../tests/test_web_agent.py#L3031) | 3031 | `"    assert statuses[\"duckduckgo_html\"] == \"http_error\""` | — |
 | [SRC-F725E90B2A-L003032](../../tests/test_web_agent.py#L3032) | 3032 | `"    assert statuses[\"bing_rss\"] == \"rate_limited\""` | — |
 | [SRC-F725E90B2A-L003033](../../tests/test_web_agent.py#L3033) | 3033 | `""` | — |
+| [SRC-F725E90B2A-L003034](../../tests/test_web_agent.py#L3034) | 3034 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000112 إلى SRC-01E35ABC46-L000389
+- النطاق: SRC-6BF96689A8-L000113 إلى SRC-01E35ABC46-L000390
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `"    assert report[\"unique_domains\"] == 1"` | — |
 | [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
 | [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
 | [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `""` | — |
@@ -834,3 +833,4 @@
 | [SRC-01E35ABC46-L000387](../../tests/test_research_guardrails.py#L387) | 387 | `"    accepted, report = apply_source_guardrails("` | — |
 | [SRC-01E35ABC46-L000388](../../tests/test_research_guardrails.py#L388) | 388 | `"        \"ما مواعيد العمل اليوم؟\","` | — |
 | [SRC-01E35ABC46-L000389](../../tests/test_research_guardrails.py#L389) | 389 | `"        \"auto\","` | — |
+| [SRC-01E35ABC46-L000390](../../tests/test_research_guardrails.py#L390) | 390 | `"        {\"freshness\": \"current\"},"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000374 إلى SRC-F725E90B2A-L000633
+- النطاق: SRC-AFEDC2645A-L000375 إلى SRC-F725E90B2A-L000634
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"        \"ignore_source_policy\","` | — |
 | [SRC-AFEDC2645A-L000375](../../tests/test_task_understanding.py#L375) | 375 | `"    ]"` | — |
 | [SRC-AFEDC2645A-L000376](../../tests/test_task_understanding.py#L376) | 376 | `"    candidate[\"decision_matrix\"] = ["` | — |
 | [SRC-AFEDC2645A-L000377](../../tests/test_task_understanding.py#L377) | 377 | `"        {"` | — |
@@ -834,3 +833,4 @@
 | [SRC-F725E90B2A-L000631](../../tests/test_web_agent.py#L631) | 631 | `""` | — |
 | [SRC-F725E90B2A-L000632](../../tests/test_web_agent.py#L632) | 632 | `"    def fake_post(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000633](../../tests/test_web_agent.py#L633) | 633 | `"        calls.append((\"POST\", url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000634](../../tests/test_web_agent.py#L634) | 634 | `"        return FakeResponse({\"access_token\": \"test-reddit-access-token\"})"` | — |

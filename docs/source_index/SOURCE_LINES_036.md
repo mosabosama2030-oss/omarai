@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-104831BF35-L000127 إلى SRC-FA4E1423C3-L000420
+- النطاق: SRC-104831BF35-L000127 إلى SRC-FA4E1423C3-L000421
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,22 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-104831BF35-L000127](../../tests/test_evaluate_benchmark_metrics.py#L127) | 127 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000128](../../tests/test_evaluate_benchmark_metrics.py#L128) | 128 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\"), _row(\"AQ-001\")])"` | — |
-| [SRC-104831BF35-L000129](../../tests/test_evaluate_benchmark_metrics.py#L129) | 129 | `"    assert any(\"unique\" in issue for issue in mod.validate_run(data))"` | — |
+| [SRC-104831BF35-L000127](../../tests/test_evaluate_benchmark_metrics.py#L127) | 127 | `"    data = _run(\"run-a\", \"a\" * 40, [_row(\"AQ-001\"), _row(\"AQ-001\")])"` | — |
+| [SRC-104831BF35-L000128](../../tests/test_evaluate_benchmark_metrics.py#L128) | 128 | `"    assert any(\"unique\" in issue for issue in mod.validate_run(data))"` | — |
+| [SRC-104831BF35-L000129](../../tests/test_evaluate_benchmark_metrics.py#L129) | 129 | `""` | — |
 | [SRC-104831BF35-L000130](../../tests/test_evaluate_benchmark_metrics.py#L130) | 130 | `""` | — |
-| [SRC-104831BF35-L000131](../../tests/test_evaluate_benchmark_metrics.py#L131) | 131 | `""` | — |
-| [SRC-104831BF35-L000132](../../tests/test_evaluate_benchmark_metrics.py#L132) | 132 | `"def test_not_measured_baseline_cannot_contain_fabricated_results():"` | — |
-| [SRC-104831BF35-L000133](../../tests/test_evaluate_benchmark_metrics.py#L133) | 133 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000134](../../tests/test_evaluate_benchmark_metrics.py#L134) | 134 | `"    data = _run(\"baseline\", \"a\" * 40, [_row(\"AQ-001\")])"` | — |
-| [SRC-104831BF35-L000135](../../tests/test_evaluate_benchmark_metrics.py#L135) | 135 | `"    data[\"baseline_status\"] = \"NOT_MEASURED\""` | — |
-| [SRC-104831BF35-L000136](../../tests/test_evaluate_benchmark_metrics.py#L136) | 136 | `"    assert any(\"must not contain fabricated\" in issue for issue in mod.validate_run(data))"` | — |
+| [SRC-104831BF35-L000131](../../tests/test_evaluate_benchmark_metrics.py#L131) | 131 | `"def test_not_measured_baseline_cannot_contain_fabricated_results():"` | — |
+| [SRC-104831BF35-L000132](../../tests/test_evaluate_benchmark_metrics.py#L132) | 132 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000133](../../tests/test_evaluate_benchmark_metrics.py#L133) | 133 | `"    data = _run(\"baseline\", \"a\" * 40, [_row(\"AQ-001\")])"` | — |
+| [SRC-104831BF35-L000134](../../tests/test_evaluate_benchmark_metrics.py#L134) | 134 | `"    data[\"baseline_status\"] = \"NOT_MEASURED\""` | — |
+| [SRC-104831BF35-L000135](../../tests/test_evaluate_benchmark_metrics.py#L135) | 135 | `"    assert any(\"must not contain fabricated\" in issue for issue in mod.validate_run(data))"` | — |
+| [SRC-104831BF35-L000136](../../tests/test_evaluate_benchmark_metrics.py#L136) | 136 | `""` | — |
 | [SRC-104831BF35-L000137](../../tests/test_evaluate_benchmark_metrics.py#L137) | 137 | `""` | — |
-| [SRC-104831BF35-L000138](../../tests/test_evaluate_benchmark_metrics.py#L138) | 138 | `""` | — |
-| [SRC-104831BF35-L000139](../../tests/test_evaluate_benchmark_metrics.py#L139) | 139 | `"def test_percentile_interpolates_deterministically():"` | — |
-| [SRC-104831BF35-L000140](../../tests/test_evaluate_benchmark_metrics.py#L140) | 140 | `"    mod = _load_module()"` | — |
-| [SRC-104831BF35-L000141](../../tests/test_evaluate_benchmark_metrics.py#L141) | 141 | `"    assert mod.percentile([10, 20, 30, 40], 0.95) == pytest.approx(38.5)"` | — |
-| [SRC-104831BF35-L000142](../../tests/test_evaluate_benchmark_metrics.py#L142) | 142 | `"    assert mod.percentile([], 0.95) is None"` | — |
+| [SRC-104831BF35-L000138](../../tests/test_evaluate_benchmark_metrics.py#L138) | 138 | `"def test_percentile_interpolates_deterministically():"` | — |
+| [SRC-104831BF35-L000139](../../tests/test_evaluate_benchmark_metrics.py#L139) | 139 | `"    mod = _load_module()"` | — |
+| [SRC-104831BF35-L000140](../../tests/test_evaluate_benchmark_metrics.py#L140) | 140 | `"    assert mod.percentile([10, 20, 30, 40], 0.95) == pytest.approx(38.5)"` | — |
+| [SRC-104831BF35-L000141](../../tests/test_evaluate_benchmark_metrics.py#L141) | 141 | `"    assert mod.percentile([], 0.95) is None"` | — |
 ## اختبارات
 
 ### FILE-6BCB799CEC — [tests/test_evidence_provenance.py](../../tests/test_evidence_provenance.py#L1)
@@ -843,3 +842,4 @@
 | [SRC-FA4E1423C3-L000418](../../tests/test_generate_index.py#L418) | 418 | `""` | — |
 | [SRC-FA4E1423C3-L000419](../../tests/test_generate_index.py#L419) | 419 | `""` | — |
 | [SRC-FA4E1423C3-L000420](../../tests/test_generate_index.py#L420) | 420 | `"def test_finding_scan_ignores_incidental_words_but_finds_real_annotations("` | — |
+| [SRC-FA4E1423C3-L000421](../../tests/test_generate_index.py#L421) | 421 | `"    tmp_path: Path,"` | — |

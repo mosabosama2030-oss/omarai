@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000390 إلى SRC-AFEDC2645A-L000373
+- النطاق: SRC-01E35ABC46-L000391 إلى SRC-AFEDC2645A-L000374
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-01E35ABC46-L000390](../../tests/test_research_guardrails.py#L390) | 390 | `"        {\"freshness\": \"current\"},"` | — |
 | [SRC-01E35ABC46-L000391](../../tests/test_research_guardrails.py#L391) | 391 | `"        ["` | — |
 | [SRC-01E35ABC46-L000392](../../tests/test_research_guardrails.py#L392) | 392 | `"            _guardrail_source("` | — |
 | [SRC-01E35ABC46-L000393](../../tests/test_research_guardrails.py#L393) | 393 | `"                \"https://example.com/old\", published_at=\"2024-01-01T10:00:00Z\""` | — |
@@ -852,3 +851,4 @@
 | [SRC-AFEDC2645A-L000371](../../tests/test_task_understanding.py#L371) | 371 | `"    candidate[\"reasoning_strategy_ids\"] = ["` | — |
 | [SRC-AFEDC2645A-L000372](../../tests/test_task_understanding.py#L372) | 372 | `"        \"rank_testable_hypotheses\","` | — |
 | [SRC-AFEDC2645A-L000373](../../tests/test_task_understanding.py#L373) | 373 | `"        \"run_shell_and_delete_files\","` | — |
+| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"        \"ignore_source_policy\","` | — |
