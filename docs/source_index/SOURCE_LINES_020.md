@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000721 إلى SRC-E599346ABE-L001520
+- النطاق: SRC-E599346ABE-L000675 إلى SRC-E599346ABE-L001474
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,52 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000675](../generate_index.py#L675) | 675 | `"            and source_line.content != expected_contents[source_line.line - 1]"` | — |
+| [SRC-E599346ABE-L000676](../generate_index.py#L676) | 676 | `"        ):"` | — |
+| [SRC-E599346ABE-L000677](../generate_index.py#L677) | 677 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000678](../generate_index.py#L678) | 678 | `"                f\"{source_line.file}:{source_line.line}: نص السطر لا يطابق المصدر\""` | — |
+| [SRC-E599346ABE-L000679](../generate_index.py#L679) | 679 | `"            )"` | — |
+| [SRC-E599346ABE-L000680](../generate_index.py#L680) | 680 | `""` | — |
+| [SRC-E599346ABE-L000681](../generate_index.py#L681) | 681 | `"        expected_line_id = _source_line_id(source_line.file, source_line.line)"` | — |
+| [SRC-E599346ABE-L000682](../generate_index.py#L682) | 682 | `"        if source_line.line_id != expected_line_id:"` | — |
+| [SRC-E599346ABE-L000683](../generate_index.py#L683) | 683 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000684](../generate_index.py#L684) | 684 | `"                f\"{source_line.file}:{source_line.line}: كود SRC لا يطابق المسار ورقم السطر\""` | — |
+| [SRC-E599346ABE-L000685](../generate_index.py#L685) | 685 | `"            )"` | — |
+| [SRC-E599346ABE-L000686](../generate_index.py#L686) | 686 | `"        if source_line.file_id != _stable_file_id(source_line.file):"` | — |
+| [SRC-E599346ABE-L000687](../generate_index.py#L687) | 687 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000688](../generate_index.py#L688) | 688 | `"                f\"{source_line.file}:{source_line.line}: كود FILE لا يطابق مسار الملف\""` | — |
+| [SRC-E599346ABE-L000689](../generate_index.py#L689) | 689 | `"            )"` | — |
+| [SRC-E599346ABE-L000690](../generate_index.py#L690) | 690 | `"        if source_line.file_id != expected_item.file_id:"` | — |
+| [SRC-E599346ABE-L000691](../generate_index.py#L691) | 691 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000692](../generate_index.py#L692) | 692 | `"                f\"{source_line.file}:{source_line.line}: معرّف الملف لا يطابق الجرد\""` | — |
+| [SRC-E599346ABE-L000693](../generate_index.py#L693) | 693 | `"            )"` | — |
+| [SRC-E599346ABE-L000694](../generate_index.py#L694) | 694 | `"        if source_line.category != expected_item.category:"` | — |
+| [SRC-E599346ABE-L000695](../generate_index.py#L695) | 695 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000696](../generate_index.py#L696) | 696 | `"                f\"{source_line.file}:{source_line.line}: تصنيف السطر لا يطابق الجرد\""` | — |
+| [SRC-E599346ABE-L000697](../generate_index.py#L697) | 697 | `"            )"` | — |
+| [SRC-E599346ABE-L000698](../generate_index.py#L698) | 698 | `"        if source_line.line_id in seen_ids:"` | — |
+| [SRC-E599346ABE-L000699](../generate_index.py#L699) | 699 | `"            failures.append(f\"{source_line.file}:{source_line.line}: معرّف SRC مكرر\")"` | — |
+| [SRC-E599346ABE-L000700](../generate_index.py#L700) | 700 | `"        seen_ids.add(source_line.line_id)"` | — |
+| [SRC-E599346ABE-L000701](../generate_index.py#L701) | 701 | `""` | — |
+| [SRC-E599346ABE-L000702](../generate_index.py#L702) | 702 | `"    for file, item in eligible_files.items():"` | — |
+| [SRC-E599346ABE-L000703](../generate_index.py#L703) | 703 | `"        actual = sorted(actual_lines[file])"` | — |
+| [SRC-E599346ABE-L000704](../generate_index.py#L704) | 704 | `"        expected = list(range(1, (item.line_count or 0) + 1))"` | — |
+| [SRC-E599346ABE-L000705](../generate_index.py#L705) | 705 | `"        if actual != expected:"` | — |
+| [SRC-E599346ABE-L000706](../generate_index.py#L706) | 706 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000707](../generate_index.py#L707) | 707 | `"                f\"{file}: المتوقع {len(expected)} سجل سطر مرقم بالتتابع، \""` | — |
+| [SRC-E599346ABE-L000708](../generate_index.py#L708) | 708 | `"                f\"الموجود {len(actual)}\""` | — |
+| [SRC-E599346ABE-L000709](../generate_index.py#L709) | 709 | `"            )"` | — |
+| [SRC-E599346ABE-L000710](../generate_index.py#L710) | 710 | `""` | — |
+| [SRC-E599346ABE-L000711](../generate_index.py#L711) | 711 | `"    if failures:"` | — |
+| [SRC-E599346ABE-L000712](../generate_index.py#L712) | 712 | `"        raise IndexGenerationError("` | — |
+| [SRC-E599346ABE-L000713](../generate_index.py#L713) | 713 | `"            \"فشل تحقق اكتمال فهرسة السطور؛ لن يُنشر فهرس جزئي:\\n- \""` | — |
+| [SRC-E599346ABE-L000714](../generate_index.py#L714) | 714 | `"            + \"\\n- \".join(sorted(set(failures)))"` | — |
+| [SRC-E599346ABE-L000715](../generate_index.py#L715) | 715 | `"        )"` | — |
+| [SRC-E599346ABE-L000716](../generate_index.py#L716) | 716 | `""` | — |
+| [SRC-E599346ABE-L000717](../generate_index.py#L717) | 717 | `""` | — |
+| [SRC-E599346ABE-L000718](../generate_index.py#L718) | 718 | `"def discover_python_files(root: Path) -> list[Path]:"` | — |
+| [SRC-E599346ABE-L000719](../generate_index.py#L719) | 719 | `"    \"\"\"Return sorted Python files from the eligible repository inventory.\"\"\""` | — |
+| [SRC-E599346ABE-L000720](../generate_index.py#L720) | 720 | `""` | — |
 | [SRC-E599346ABE-L000721](../generate_index.py#L721) | 721 | `"    return ["` | — |
 | [SRC-E599346ABE-L000722](../generate_index.py#L722) | 722 | `"        path"` | — |
 | [SRC-E599346ABE-L000723](../generate_index.py#L723) | 723 | `"        for path in discover_repository_files(root)"` | — |
@@ -770,49 +816,3 @@
 | [SRC-E599346ABE-L001472](../generate_index.py#L1472) | 1472 | `"            \"الوسوم المعروفة: TODO وFIXME وBUG وHACK وXXX وREVIEW وSECURITY وDEPRECATED وISSUE وDEFECT وREGRESSION وRISK وGAP وERROR وWARNING وPERF وPRIVACY وDATA_LOSS وACCESSIBILITY.\","` | — |
 | [SRC-E599346ABE-L001473](../generate_index.py#L1473) | 1473 | `"            \"\","` | — |
 | [SRC-E599346ABE-L001474](../generate_index.py#L1474) | 1474 | `"            \"## الاستثناءات وحدود التغطية\","` | — |
-| [SRC-E599346ABE-L001475](../generate_index.py#L1475) | 1475 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001476](../generate_index.py#L1476) | 1476 | `"            \"- ملفات الفهرسة المولّدة نفسها مستثناة لمنع الحلقة الذاتية.\","` | — |
-| [SRC-E599346ABE-L001477](../generate_index.py#L1477) | 1477 | `"            \"- تُفهرس سطور كل ملف نصي قابل للقراءة وحجمه حتى 2 MiB؛ الملفات الثنائية أو الأكبر أو غير القابلة للقراءة تظهر في جرد الملفات فقط.\","` | — |
-| [SRC-E599346ABE-L001478](../generate_index.py#L1478) | 1478 | `"            \"- الملفات الحساسة المعروفة وقواعد البيانات والبيئات المحلية ومجلدات البناء والاعتماديات مستثناة عمدًا.\","` | — |
-| [SRC-E599346ABE-L001479](../generate_index.py#L1479) | 1479 | `"            \"- أكواد الأسطر مشتقة من مسار الملف ورقم السطر؛ يتغير رقم الكود عند تحرك السطر بسبب تغييرات سابقة في الملف.\","` | — |
-| [SRC-E599346ABE-L001480](../generate_index.py#L1480) | 1480 | `"            \"- وسوم المراجعة ليست تشخيصًا آليًا لكل عيب منطقي؛ الفهرس يسهل العثور على الكود لكنه لا يستطيع إثبات خلوه من الأخطاء.\","` | — |
-| [SRC-E599346ABE-L001481](../generate_index.py#L1481) | 1481 | `"            \"\","` | — |
-| [SRC-E599346ABE-L001482](../generate_index.py#L1482) | 1482 | `"        ]"` | — |
-| [SRC-E599346ABE-L001483](../generate_index.py#L1483) | 1483 | `"    )"` | — |
-| [SRC-E599346ABE-L001484](../generate_index.py#L1484) | 1484 | `"    return \"\\n\".join(lines) + \"\\n\""` | — |
-| [SRC-E599346ABE-L001485](../generate_index.py#L1485) | 1485 | `""` | — |
-| [SRC-E599346ABE-L001486](../generate_index.py#L1486) | 1486 | `""` | — |
-| [SRC-E599346ABE-L001487](../generate_index.py#L1487) | 1487 | `"def render_coverage_audit_markdown("` | — |
-| [SRC-E599346ABE-L001488](../generate_index.py#L1488) | 1488 | `"    root: Path,"` | — |
-| [SRC-E599346ABE-L001489](../generate_index.py#L1489) | 1489 | `"    inventory: list[IndexedFile],"` | — |
-| [SRC-E599346ABE-L001490](../generate_index.py#L1490) | 1490 | `"    source_lines: list[IndexedLine],"` | — |
-| [SRC-E599346ABE-L001491](../generate_index.py#L1491) | 1491 | `"    excluded_paths: list[tuple[str, str]],"` | — |
-| [SRC-E599346ABE-L001492](../generate_index.py#L1492) | 1492 | `") -> str:"` | — |
-| [SRC-E599346ABE-L001493](../generate_index.py#L1493) | 1493 | `"    \"\"\"Render a generated coverage ledger with exact line-index coverage and exclusions.\"\"\""` | — |
-| [SRC-E599346ABE-L001494](../generate_index.py#L1494) | 1494 | `"    indexed_files = [item for item in inventory if item.line_count is not None]"` | — |
-| [SRC-E599346ABE-L001495](../generate_index.py#L1495) | 1495 | `"    metadata_only = [item for item in inventory if item.line_count is None]"` | — |
-| [SRC-E599346ABE-L001496](../generate_index.py#L1496) | 1496 | `"    expected_line_count = sum(item.line_count or 0 for item in indexed_files)"` | — |
-| [SRC-E599346ABE-L001497](../generate_index.py#L1497) | 1497 | `"    actual_line_count = len(source_lines)"` | — |
-| [SRC-E599346ABE-L001498](../generate_index.py#L1498) | 1498 | `"    coverage_ok = expected_line_count == actual_line_count"` | — |
-| [SRC-E599346ABE-L001499](../generate_index.py#L1499) | 1499 | `"    lines = ["` | — |
-| [SRC-E599346ABE-L001500](../generate_index.py#L1500) | 1500 | `"        \"# OMARAI INDEX COVERAGE AUDIT\","` | — |
-| [SRC-E599346ABE-L001501](../generate_index.py#L1501) | 1501 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001502](../generate_index.py#L1502) | 1502 | `"        \"<!-- هذا الملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
-| [SRC-E599346ABE-L001503](../generate_index.py#L1503) | 1503 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001504](../generate_index.py#L1504) | 1504 | `"        \"> سجل أدلة تغطية الفهرس وحدوده، وليس ادعاءً باكتشاف كل عيب منطقي في البرنامج.\","` | — |
-| [SRC-E599346ABE-L001505](../generate_index.py#L1505) | 1505 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001506](../generate_index.py#L1506) | 1506 | `"        \"## نتيجة تغطية السطور\","` | — |
-| [SRC-E599346ABE-L001507](../generate_index.py#L1507) | 1507 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001508](../generate_index.py#L1508) | 1508 | `"        f\"- ملفات المستودع المؤهلة في الجرد: **{len(inventory)}**\","` | — |
-| [SRC-E599346ABE-L001509](../generate_index.py#L1509) | 1509 | `"        f\"- الملفات المفهرسة سطرًا بسطر: **{len(indexed_files)}**\","` | — |
-| [SRC-E599346ABE-L001510](../generate_index.py#L1510) | 1510 | `"        f\"- الملفات الوصفية فقط التي لا تتوفر سطورها: **{len(metadata_only)}**\","` | — |
-| [SRC-E599346ABE-L001511](../generate_index.py#L1511) | 1511 | `"        f\"- السطور المتوقع فهرستها من عدادات الملفات: **{expected_line_count}**\","` | — |
-| [SRC-E599346ABE-L001512](../generate_index.py#L1512) | 1512 | `"        f\"- سجلات السطور الفعلية: **{actual_line_count}**\","` | — |
-| [SRC-E599346ABE-L001513](../generate_index.py#L1513) | 1513 | `"        f\"- تحقق العدد الإجمالي: **{'PASS' if coverage_ok else 'FAIL'}**\","` | — |
-| [SRC-E599346ABE-L001514](../generate_index.py#L1514) | 1514 | `"        f\"- نسبة التغطية الحسابية ضمن الملفات المؤهلة القابلة للقراءة: **{(100.0 if coverage_ok and expected_line_count == actual_line_count else (actual_line_count / expected_line_count * 100 if expected_line_count else 100.0)):.2f}%**\","` | — |
-| [SRC-E599346ABE-L001515](../generate_index.py#L1515) | 1515 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001516](../generate_index.py#L1516) | 1516 | `"        \"يتحقق المولد كذلك من أن أرقام السطور متتابعة لكل ملف ومن عدم تكرار معرّفات SRC؛ أي فشل يمنع نشر الفهرس.\","` | — |
-| [SRC-E599346ABE-L001517](../generate_index.py#L1517) | 1517 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001518](../generate_index.py#L1518) | 1518 | `"        \"## الملفات التي لا تُفهرس سطورها\","` | — |
-| [SRC-E599346ABE-L001519](../generate_index.py#L1519) | 1519 | `"        \"\","` | — |
-| [SRC-E599346ABE-L001520](../generate_index.py#L1520) | 1520 | `"        \"هذه الملفات تظل ظاهرة في جرد MASTER INDEX مع سبب الاستثناء. لا يُدرج التقرير محتوياتها.\","` | — |

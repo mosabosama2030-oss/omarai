@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000020 إلى SRC-51D44BE378-L000027
+- النطاق: SRC-792A9A235D-L000020 إلى SRC-D57B0BB030-L000047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -126,6 +126,52 @@
 | [SRC-792A9A235D-L000127](../ANSWER_QUALITY_BENCHMARK_AR.md#L127) | 127 | ``"2. حدّث `case_count`."`` | — |
 | [SRC-792A9A235D-L000128](../ANSWER_QUALITY_BENCHMARK_AR.md#L128) | 128 | `"3. شغّل pytest للذخيرة والأداة."` | — |
 | [SRC-792A9A235D-L000129](../ANSWER_QUALITY_BENCHMARK_AR.md#L129) | 129 | `"4. لا تُدرج نتائج PASS/FAIL داخل JSON."` | — |
+| [SRC-792A9A235D-L000130](../ANSWER_QUALITY_BENCHMARK_AR.md#L130) | 130 | `""` | — |
+| [SRC-792A9A235D-L000131](../ANSWER_QUALITY_BENCHMARK_AR.md#L131) | 131 | `"---"` | — |
+| [SRC-792A9A235D-L000132](../ANSWER_QUALITY_BENCHMARK_AR.md#L132) | 132 | `""` | — |
+| [SRC-792A9A235D-L000133](../ANSWER_QUALITY_BENCHMARK_AR.md#L133) | 133 | `"## تحديث 29 أكتوبر 2026 — قياسات التشغيل ومقارنة خط الأساس"` | — |
+| [SRC-792A9A235D-L000134](../ANSWER_QUALITY_BENCHMARK_AR.md#L134) | 134 | `""` | — |
+| [SRC-792A9A235D-L000135](../ANSWER_QUALITY_BENCHMARK_AR.md#L135) | 135 | `"**حالة الإثبات عند كتابة هذا التحديث:** أداة المقارنة والقياسات أضيفت على فرع عمل، لكن CI لم ينفذ بعد، ولم تُجمع استجابات تشغيل جديدة، ولم توجد في المستودع ملفات نتيجة حيّة سابقة يمكن اعتمادها كخط أساس تجريبي. مرجع المصدر قبل إضافة القياسات هو ef69ca5f8dbcdf01d798e254f737aa51776b4bb1؛ هذا **مرجع نسخة مصدر فقط وليس نتيجة أداء**. لذلك لا توجد نسبة تحسن فعلية مسجلة بعد."` | — |
+| [SRC-792A9A235D-L000136](../ANSWER_QUALITY_BENCHMARK_AR.md#L136) | 136 | `""` | — |
+| [SRC-792A9A235D-L000137](../ANSWER_QUALITY_BENCHMARK_AR.md#L137) | 137 | `"### المقاييس وتعريف المقامات"` | — |
+| [SRC-792A9A235D-L000138](../ANSWER_QUALITY_BENCHMARK_AR.md#L138) | 138 | `""` | — |
+| [SRC-792A9A235D-L000139](../ANSWER_QUALITY_BENCHMARK_AR.md#L139) | 139 | `"- **Factual accuracy:** عدد الحقائق التي اعتمد المراجع صحتها / كل الحقائق التي راجعها. تحسب من correctness في ملف المراجعات."` | — |
+| [SRC-792A9A235D-L000140](../ANSWER_QUALITY_BENCHMARK_AR.md#L140) | 140 | `"- **Retrieval precision:** النتائج ذات الصلة التي استُرجعت / كل النتائج المسترجعة في مجموعة مرشحين محددة."` | — |
+| [SRC-792A9A235D-L000141](../ANSWER_QUALITY_BENCHMARK_AR.md#L141) | 141 | `"- **Retrieval recall:** النتائج ذات الصلة التي استُرجعت / إجمالي النتائج ذات الصلة المتاحة في مجموعة المقارنة نفسها. يجب أن يطبق المراجع مجموعة المرشحين وتعريف الصلة نفسه قبل/بعد."` | — |
+| [SRC-792A9A235D-L000142](../ANSWER_QUALITY_BENCHMARK_AR.md#L142) | 142 | `"- **Citation support:** الاستشهادات التي تسند الادعاء المرتبط بها / كل الاستشهادات التي راجعها إنسان. وجود رابط صالح أو عنوان مصدر لا يعني أن المصدر يسند الادعاء."` | — |
+| [SRC-792A9A235D-L000143](../ANSWER_QUALITY_BENCHMARK_AR.md#L143) | 143 | `"- **Faithfulness:** الادعاءات التي يسندها الدليل المراجع / كل الادعاءات التي جرى تدقيقها."` | — |
+| [SRC-792A9A235D-L000144](../ANSWER_QUALITY_BENCHMARK_AR.md#L144) | 144 | `"- **Tool usable-result rate:** الحالات التي كانت استراتيجيتها المتوقعة web_search وانتهت بنتائج مقبولة / جميع حالات البحث المتوقعة. يسجل منفصلًا الفشل، والمحاولة بلا نتائج قابلة للاستخدام، والحالة المجهولة. HTTP 200 ليس نجاح أداة."` | — |
+| [SRC-792A9A235D-L000145](../ANSWER_QUALITY_BENCHMARK_AR.md#L145) | 145 | `"- **Latency:** زمن طلب HTTP من أداة القياس، بالميلي ثانية، مع المتوسط وp50 وp95 والحد الأقصى. القياس تسلسلي، ولا يمثل اختبار حمل أو سعة متزامنة."` | — |
+| [SRC-792A9A235D-L000146](../ANSWER_QUALITY_BENCHMARK_AR.md#L146) | 146 | `"- **Provider-reported model cost:** مجموع قيمة التكلفة التي يعيدها المزوّد صراحةً لكل استدعاء نموذج، عندما تكون العملة معروفة. لا يخترع سعرًا من عدد الرموز؛ لا تُفسر cost العامة كمبلغ USD إلا لمزوّد OpenRouter."` | — |
+| [SRC-792A9A235D-L000147](../ANSWER_QUALITY_BENCHMARK_AR.md#L147) | 147 | `"- **Complete request cost:** تبقى null بحالة NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED إلى أن تتوفر تكاليف كل موصل مستخدم مع تعريف تعرفة موثق. مجموع تكلفة النموذج المبلّغ عنها ليس بالضرورة كامل تكلفة الطلب، ولا يعني غياب التكلفة المبلّغ عنها أن التكلفة صفر."` | — |
+| [SRC-792A9A235D-L000148](../ANSWER_QUALITY_BENCHMARK_AR.md#L148) | 148 | `""` | — |
+| [SRC-792A9A235D-L000149](../ANSWER_QUALITY_BENCHMARK_AR.md#L149) | 149 | `"المجموعة الحالية هي 45 حالة: 14 باللهجة المصرية ar-EG، و9 بالفصحى ar-MSA، و13 بالإنجليزية en، و9 مختلطة اللغة. تحتوي 20 فئة و30 حالة تتوقع البحث و6 محلية/نموذج دون بحث و5 استيضاح. هذا يثبت تغطية بنية المجموعة لا جودة أي إجابة."` | — |
+| [SRC-792A9A235D-L000150](../ANSWER_QUALITY_BENCHMARK_AR.md#L150) | 150 | `""` | — |
+| [SRC-792A9A235D-L000151](../ANSWER_QUALITY_BENCHMARK_AR.md#L151) | 151 | `"### توثيق تشغيل قبل/بعد"` | — |
+| [SRC-792A9A235D-L000152](../ANSWER_QUALITY_BENCHMARK_AR.md#L152) | 152 | `""` | — |
+| [SRC-792A9A235D-L000153](../ANSWER_QUALITY_BENCHMARK_AR.md#L153) | 153 | `"1. اجمع تشغيل خط الأساس **من النسخة القديمة نفسها** قبل استبدالها، أو من بيئة يمكن إثبات أنها تشغل SHA القديم. لا تستخدم نتائج حديثة على أنها baseline قديم."` | — |
+| [SRC-792A9A235D-L000154](../ANSWER_QUALITY_BENCHMARK_AR.md#L154) | 154 | `"2. اجمع تشغيل المرشح من النسخة الجديدة. مرّر SHA الكامل الذي أثبتته هوية البناء الفعلية؛ لا تستخدم SHA فرع Git الحالي إذا لم يكن هو ما يشغله المضيف."` | — |
+| [SRC-792A9A235D-L000155](../ANSWER_QUALITY_BENCHMARK_AR.md#L155) | 155 | `"3. احتفظ بملفي JSON الخام. استخدم نفس benchmark_id وbenchmark_version ومعرفات الحالات والأسئلة، وقيّم الحالات نفسها قبل وبعد."` | — |
+| [SRC-792A9A235D-L000156](../ANSWER_QUALITY_BENCHMARK_AR.md#L156) | 156 | `"4. أنشئ نسختين من tests/fixtures/answer_quality_reviews_template.json. ضع REVIEWED والدرجات فقط بعد مراجعة الإجابات المشاهدة فعلًا، باستخدام المقامات والتعريفات أعلاه. أبقِ غير المراجع NOT_TESTED بلا درجات."` | — |
+| [SRC-792A9A235D-L000157](../ANSWER_QUALITY_BENCHMARK_AR.md#L157) | 157 | `"5. شغّل المقارنة. ترفض الأداة SHA مفقودًا أو مجموعة حالات/أسئلة مختلفة، وتمنع ادعاء اكتمال القبول عند فقد المراجعات البشرية."` | — |
+| [SRC-792A9A235D-L000158](../ANSWER_QUALITY_BENCHMARK_AR.md#L158) | 158 | `""` | — |
+| [SRC-792A9A235D-L000159](../ANSWER_QUALITY_BENCHMARK_AR.md#L159) | 159 | `"### أوامر إعادة التشغيل"` | — |
+| [SRC-792A9A235D-L000160](../ANSWER_QUALITY_BENCHMARK_AR.md#L160) | 160 | `""` | — |
+| [SRC-792A9A235D-L000161](../ANSWER_QUALITY_BENCHMARK_AR.md#L161) | 161 | `"    # تحقق بنيوي دون شبكة أو تكلفة"` | — |
+| [SRC-792A9A235D-L000162](../ANSWER_QUALITY_BENCHMARK_AR.md#L162) | 162 | `"    python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
+| [SRC-792A9A235D-L000163](../ANSWER_QUALITY_BENCHMARK_AR.md#L163) | 163 | `"    python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py tests/test_answer_quality_comparison.py tests/test_answer_quality_provider_usage.py tests/test_answer_quality_review_scorecard.py -q"` | — |
+| [SRC-792A9A235D-L000164](../ANSWER_QUALITY_BENCHMARK_AR.md#L164) | 164 | `""` | — |
+| [SRC-792A9A235D-L000165](../ANSWER_QUALITY_BENCHMARK_AR.md#L165) | 165 | `"    # على نسخة محلية تعمل فعلًا من checkout معلوم"` | — |
+| [SRC-792A9A235D-L000166](../ANSWER_QUALITY_BENCHMARK_AR.md#L166) | 166 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha \"$(git rev-parse HEAD)\" --out artifacts/answer-quality-candidate.json"` | — |
+| [SRC-792A9A235D-L000167](../ANSWER_QUALITY_BENCHMARK_AR.md#L167) | 167 | `""` | — |
+| [SRC-792A9A235D-L000168](../ANSWER_QUALITY_BENCHMARK_AR.md#L168) | 168 | `"    # للنسخة المستضافة: مرّر SHA الذي تؤكده /api/health من البناء الجاري لا SHA المفترض"` | — |
+| [SRC-792A9A235D-L000169](../ANSWER_QUALITY_BENCHMARK_AR.md#L169) | 169 | `"    # لا تشغّل هذا الأمر قبل الموافقة على استخدام مزود البحث/النموذج واحتمال التكلفة."` | — |
+| [SRC-792A9A235D-L000170](../ANSWER_QUALITY_BENCHMARK_AR.md#L170) | 170 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json"` | — |
+| [SRC-792A9A235D-L000171](../ANSWER_QUALITY_BENCHMARK_AR.md#L171) | 171 | `""` | — |
+| [SRC-792A9A235D-L000172](../ANSWER_QUALITY_BENCHMARK_AR.md#L172) | 172 | `"    # قارِن ملفي تشغيل وملفي مراجعة بشرية بنفس الحالات"` | — |
+| [SRC-792A9A235D-L000173](../ANSWER_QUALITY_BENCHMARK_AR.md#L173) | 173 | `"    python scripts/compare_answer_quality_runs.py --baseline-run artifacts/answer-quality-baseline.json --candidate-run artifacts/answer-quality-candidate.json --baseline-reviews artifacts/reviews-baseline.json --candidate-reviews artifacts/reviews-candidate.json --out artifacts/answer-quality-comparison.json"` | — |
+| [SRC-792A9A235D-L000174](../ANSWER_QUALITY_BENCHMARK_AR.md#L174) | 174 | `""` | — |
+| [SRC-792A9A235D-L000175](../ANSWER_QUALITY_BENCHMARK_AR.md#L175) | 175 | `"**حدود مهمة:** لا يحقن المشغّل fixtures في الخدمة الحية ولا يحوّل الإجابة إلى PASS آلي. المراجعة البشرية الحالية هي مصدر قياس صحة الحقائق ودعم الاستشهادات؛ أداة المقارنة لا تستنتج تحسن الجودة من لغة الإجابة أو طولها. ولأن ملفات التشغيل والمراجعة السابقة لم تكن متاحة عند بدء هذا العمل، يبقى **القبول التجريبي قبل/بعد NOT_RUN** حتى تُجمع هذه الملفات وتُراجع."` | — |
 ## وثائق وفهرسة
 
 ### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
@@ -824,58 +870,3 @@
 | [SRC-D57B0BB030-L000045](../DEPLOY_RENDER_AR.md#L45) | 45 | `"- الملفات المحلية مؤقتة. SQLite وسجل العملاء قد تضيع بياناتهما عند إعادة التشغيل أو إعادة النشر أو إيقاف الخدمة مؤقتًا. لا تحفظ بيانات مهمة أو شخصية في لوحة العملاء المستضافة."` | — |
 | [SRC-D57B0BB030-L000046](../DEPLOY_RENDER_AR.md#L46) | 46 | `"- تمنح الخطة 750 ساعة تشغيل مجانية شهريًا لكل مساحة عمل، وتُوقف الخدمات المجانية إذا نفدت الساعات."` | — |
 | [SRC-D57B0BB030-L000047](../DEPLOY_RENDER_AR.md#L47) | 47 | `"- توجد حدود شهرية لحركة البيانات الخارجة ودقائق بناء النشر. إذا لم تُضف وسيلة دفع، قد تُعلَّق الخدمات عند تجاوز حدود الاستخدام المجاني؛ وإذا أضفت وسيلة دفع فقد تنطبق رسوم على الاستهلاك الزائد، لذا راقب Usage/Billing."` | — |
-| [SRC-D57B0BB030-L000048](../DEPLOY_RENDER_AR.md#L48) | 48 | `"- الخدمة المجانية مناسبة للتجربة والاختبار الشخصي، وليست استضافة إنتاج مضمونة. لا يوجد ضمان توافر دائم."` | — |
-| [SRC-D57B0BB030-L000049](../DEPLOY_RENDER_AR.md#L49) | 49 | ``"- تكاليف مزود النموذج وأدوات البحث منفصلة عن خطة الاستضافة. قد تكون بعض النماذج المجانية محدودة أو غير متاحة في وقت معين. لا تفعّل `OMARAI_OPENROUTER_WEB_SEARCH=1` قبل مراجعة التكلفة والموافقة عليها."`` | — |
-| [SRC-D57B0BB030-L000050](../DEPLOY_RENDER_AR.md#L50) | 50 | `"- الأسئلة ومقتطفات صفحات الويب قد تُرسل إلى مزود النموذج الخارجي. لا ترسل أسرارًا أو بيانات عملاء سرية."` | — |
-| [SRC-D57B0BB030-L000051](../DEPLOY_RENDER_AR.md#L51) | 51 | `""` | — |
-| [SRC-D57B0BB030-L000052](../DEPLOY_RENDER_AR.md#L52) | 52 | `"## اختبار التشغيل الحي"` | — |
-| [SRC-D57B0BB030-L000053](../DEPLOY_RENDER_AR.md#L53) | 53 | `""` | — |
-| [SRC-D57B0BB030-L000054](../DEPLOY_RENDER_AR.md#L54) | 54 | ``"ملف قبول التشغيل `scripts/hosted_smoke_test.py` متاح على الفرع الذي أُعدّت فيه هذه الحزمة. بعد دمجه في `main`، أضف GitHub Actions secrets باسم `OMARAI_ACCESS_TOKEN` (نفس رمز الخدمة) و`OMARAI_BASE_URL` (أصل HTTPS للخدمة فقط)، ثم شغّل workflow اليدوي `Omarai hosted acceptance smoke`. يستخدم الاختبار العنوان المحفوظ في إعدادات المستودع لتجنب إرسال رمز الوصول إلى عنوان حرّ. الاختبار ينفذ اتصالات بحث ونموذج فعلية وقد يستهلك استخدامًا من حساب المزود."`` | — |
-| [SRC-D57B0BB030-L000055](../DEPLOY_RENDER_AR.md#L55) | 55 | `""` | — |
-| [SRC-D57B0BB030-L000056](../DEPLOY_RENDER_AR.md#L56) | 56 | `"إذا لم تدمج حزمة الاختبار بعد، استخدم زر الاختبار الحي المدمج في واجهة Omarai، ثم أجرِ فحص HTTP 401 دون رمز وصول، وتجربة سؤال عربي ومراجعة المصادر."` | — |
-| [SRC-D57B0BB030-L000057](../DEPLOY_RENDER_AR.md#L57) | 57 | `""` | — |
-| [SRC-D57B0BB030-L000058](../DEPLOY_RENDER_AR.md#L58) | 58 | `"## إذا فشل النشر"` | — |
-| [SRC-D57B0BB030-L000059](../DEPLOY_RENDER_AR.md#L59) | 59 | `""` | — |
-| [SRC-D57B0BB030-L000060](../DEPLOY_RENDER_AR.md#L60) | 60 | `"- افتح Logs على Render، ولا تنشر أي قيمة سرية في Issue عام."` | — |
-| [SRC-D57B0BB030-L000061](../DEPLOY_RENDER_AR.md#L61) | 61 | ``"- تحقق أن الخادم يستمع على الواجهة العامة والمنفذ الذي توفره بيئة الاستضافة؛ يستخدم Dockerfile الحالي متغير `PORT`."`` | — |
-| [SRC-D57B0BB030-L000062](../DEPLOY_RENDER_AR.md#L62) | 62 | ``"- إذا كانت الخدمة تبدأ ثم تفشل فحص الصحة، راجع أن `/api/health` يعيد HTTP 200."`` | — |
-| [SRC-D57B0BB030-L000063](../DEPLOY_RENDER_AR.md#L63) | 63 | ``"- تحقق أن `OMARAI_PUBLIC_DEPLOYMENT=1` ورمز الوصول مضبوطين، وأن الرمز 32 حرفًا على الأقل."`` | — |
-| [SRC-D57B0BB030-L000064](../DEPLOY_RENDER_AR.md#L64) | 64 | `"- إذا فشل النموذج، تحقق من صحة مفتاح المزود وحدوده. وإذا فشل البحث فقط، قد تكون محركات البحث العامة حظرت الطلب أو لم ترجع نتائج قابلة للتحليل."` | — |
-| [SRC-D57B0BB030-L000065](../DEPLOY_RENDER_AR.md#L65) | 65 | `""` | — |
-| [SRC-D57B0BB030-L000066](../DEPLOY_RENDER_AR.md#L66) | 66 | `"راجع كذلك [دليل القبول العام](GO_LIVE_CHECKLIST_AR.md) قبل اعتماد النسخة."` | — |
-## وثائق وفهرسة
-
-### FILE-51D44BE378 — [docs/DEPLOY_SNAPDEPLOY_AR.md](../DEPLOY_SNAPDEPLOY_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-51D44BE378-L000001](../DEPLOY_SNAPDEPLOY_AR.md#L1) | 1 | `"# نشر Omarai على SnapDeploy Free — دليل عربي"` | — |
-| [SRC-51D44BE378-L000002](../DEPLOY_SNAPDEPLOY_AR.md#L2) | 2 | `""` | — |
-| [SRC-51D44BE378-L000003](../DEPLOY_SNAPDEPLOY_AR.md#L3) | 3 | ``"هذا دليل بديل للنشر بعد تعذّر Render. الإعداد الموجود في المستودع متوافق مبدئيًا مع تشغيل Docker على SnapDeploy: `Dockerfile` في جذر المشروع، وخادم يستمع على `0.0.0.0` والمنفذ الذي توفره البيئة، وفحص صحة عبر `/api/health`. **هذا الدليل لا يعني أن حسابًا أو خدمة قد أُنشئت بالفعل.**"`` | — |
-| [SRC-51D44BE378-L000004](../DEPLOY_SNAPDEPLOY_AR.md#L4) | 4 | `""` | — |
-| [SRC-51D44BE378-L000005](../DEPLOY_SNAPDEPLOY_AR.md#L5) | 5 | `"## حدود الخطة المجانية — راجعها قبل النشر"` | — |
-| [SRC-51D44BE378-L000006](../DEPLOY_SNAPDEPLOY_AR.md#L6) | 6 | `""` | — |
-| [SRC-51D44BE378-L000007](../DEPLOY_SNAPDEPLOY_AR.md#L7) | 7 | `"بحسب وثائق SnapDeploy الحالية وقت كتابة الدليل:"` | — |
-| [SRC-51D44BE378-L000008](../DEPLOY_SNAPDEPLOY_AR.md#L8) | 8 | `"- لا يلزم إدخال بطاقة دفع للبدء في الخطة المجانية."` | — |
-| [SRC-51D44BE378-L000009](../DEPLOY_SNAPDEPLOY_AR.md#L9) | 9 | `"- الحد المشترك هو 100 ساعة تشغيل للحاويات شهريًا، وحتى 4 حاويات بالحجم الصغير."` | — |
-| [SRC-51D44BE378-L000010](../DEPLOY_SNAPDEPLOY_AR.md#L10) | 10 | `"- الحاوية الصغيرة لها 512 MB RAM و0.25 vCPU، وتدخل في السكون بعد نحو 15 دقيقة بلا زيارات؛ قد يستغرق الاستيقاظ قرابة 60 ثانية."` | — |
-| [SRC-51D44BE378-L000011](../DEPLOY_SNAPDEPLOY_AR.md#L11) | 11 | `"- لا يوجد قرص دائم في الخطة المجانية؛ يُعاد ضبط نظام الملفات عند الاستيقاظ أو إعادة التشغيل أو النشر."` | — |
-| [SRC-51D44BE378-L000012](../DEPLOY_SNAPDEPLOY_AR.md#L12) | 12 | `"- يحصل التطبيق على عنوان HTTPS فرعي وشهادة TLS."` | — |
-| [SRC-51D44BE378-L000013](../DEPLOY_SNAPDEPLOY_AR.md#L13) | 13 | `""` | — |
-| [SRC-51D44BE378-L000014](../DEPLOY_SNAPDEPLOY_AR.md#L14) | 14 | `"قد تتغير الحدود والشروط؛ راجع [وثائق الخطة المجانية](https://snapdeploy.dev/docs/free-tier) قبل المتابعة. الخطة مناسبة لتجربة شخصية واختبار قبول، وليست تشغيلًا دائمًا أو مكانًا لحفظ بيانات عملاء."` | — |
-| [SRC-51D44BE378-L000015](../DEPLOY_SNAPDEPLOY_AR.md#L15) | 15 | `""` | — |
-| [SRC-51D44BE378-L000016](../DEPLOY_SNAPDEPLOY_AR.md#L16) | 16 | `"## 1. إنشاء الحساب وربط GitHub"` | — |
-| [SRC-51D44BE378-L000017](../DEPLOY_SNAPDEPLOY_AR.md#L17) | 17 | `""` | — |
-| [SRC-51D44BE378-L000018](../DEPLOY_SNAPDEPLOY_AR.md#L18) | 18 | `"1. افتح [SnapDeploy](https://snapdeploy.dev/) من متصفح الهاتف وأنشئ حسابًا بالبريد أو عبر GitHub."` | — |
-| [SRC-51D44BE378-L000019](../DEPLOY_SNAPDEPLOY_AR.md#L19) | 19 | `"2. أكّد البريد إذا طُلب ذلك، ثم افتح لوحة التحكم."` | — |
-| [SRC-51D44BE378-L000020](../DEPLOY_SNAPDEPLOY_AR.md#L20) | 20 | `"3. اختر **Deploy** ثم طريقة النشر من **GitHub repository**."` | — |
-| [SRC-51D44BE378-L000021](../DEPLOY_SNAPDEPLOY_AR.md#L21) | 21 | `"4. اربط حساب GitHub. إذا ظهرت إعدادات اختيار المستودعات، امنح الحد الأدنى من الوصول المطلوب بدل توسيع الصلاحيات بلا حاجة."` | — |
-| [SRC-51D44BE378-L000022](../DEPLOY_SNAPDEPLOY_AR.md#L22) | 22 | ``"5. اختر المستودع `mosabosama2030-oss/omarai)، والفرع `main)، ومجلد الجذر الذي يحتوي على `Dockerfile`."`` | — |
-| [SRC-51D44BE378-L000023](../DEPLOY_SNAPDEPLOY_AR.md#L23) | 23 | ``"6. تأكد أن المنصة اكتشفت `Dockerfile` الموجود في جذر المستودع. لا تحتاج إلى إنشاء ملف إعدادات خاص بالمنصة لهذه النسخة."`` | — |
-| [SRC-51D44BE378-L000024](../DEPLOY_SNAPDEPLOY_AR.md#L24) | 24 | `""` | — |
-| [SRC-51D44BE378-L000025](../DEPLOY_SNAPDEPLOY_AR.md#L25) | 25 | `"## ربط نسخة النشر بالمصدر"` | — |
-| [SRC-51D44BE378-L000026](../DEPLOY_SNAPDEPLOY_AR.md#L26) | 26 | `""` | — |
-| [SRC-51D44BE378-L000027](../DEPLOY_SNAPDEPLOY_AR.md#L27) | 27 | ``"لا يكفي أن يعمل `/api/health`؛ يجب أن يمكن ربط الخدمة بالالتزام الذي بُنيت منه الصورة. يمرر SnapDeploy متغيرات البناء ذات البادئات العامة مثل `PUBLIC_*` إلى وسيطات بناء Docker، بينما تكون المتغيرات الأخرى متاحة وقت التشغيل فقط، وفق [توثيقه الرسمي](https://snapdeploy.dev/docs/deployment) و[دليل متغيرات البيئة](https://snapdeploy.dev/docs/environment-variables)."`` | — |

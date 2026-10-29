@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000294 إلى SRC-F725E90B2A-L001093
+- النطاق: SRC-F725E90B2A-L000248 إلى SRC-F725E90B2A-L001047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,52 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000248](../../tests/test_web_agent.py#L248) | 248 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `"    </item></channel></rss>\"\"\""` | — |
+| [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `""` | — |
+| [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `""` | — |
+| [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"        def __init__(self, text=\"\", data=None):"` | — |
+| [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"            self.text = text"` | — |
+| [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `"            self.content = text.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"            self._data = data or {}"` | — |
+| [SRC-F725E90B2A-L000258](../../tests/test_web_agent.py#L258) | 258 | `""` | — |
+| [SRC-F725E90B2A-L000259](../../tests/test_web_agent.py#L259) | 259 | `"        def json(self):"` | — |
+| [SRC-F725E90B2A-L000260](../../tests/test_web_agent.py#L260) | 260 | `"            return self._data"` | — |
+| [SRC-F725E90B2A-L000261](../../tests/test_web_agent.py#L261) | 261 | `""` | — |
+| [SRC-F725E90B2A-L000262](../../tests/test_web_agent.py#L262) | 262 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000263](../../tests/test_web_agent.py#L263) | 263 | `"        if \"reddit.com\" in url:"` | — |
+| [SRC-F725E90B2A-L000264](../../tests/test_web_agent.py#L264) | 264 | `"            return FakeResponse(reddit_xml)"` | — |
+| [SRC-F725E90B2A-L000265](../../tests/test_web_agent.py#L265) | 265 | `"        if \"bsky.app\" in url or \"public.api.bsky.app\" in url:"` | — |
+| [SRC-F725E90B2A-L000266](../../tests/test_web_agent.py#L266) | 266 | `"            return FakeResponse(data={"` | — |
+| [SRC-F725E90B2A-L000267](../../tests/test_web_agent.py#L267) | 267 | `"                \"posts\": [{"` | — |
+| [SRC-F725E90B2A-L000268](../../tests/test_web_agent.py#L268) | 268 | `"                    \"post\": {"` | — |
+| [SRC-F725E90B2A-L000269](../../tests/test_web_agent.py#L269) | 269 | `"                        \"uri\": \"at://did:plc:example/app.bsky.feed.post/rkey123\","` | — |
+| [SRC-F725E90B2A-L000270](../../tests/test_web_agent.py#L270) | 270 | `"                        \"indexedAt\": \"2026-10-12T10:00:00Z\","` | — |
+| [SRC-F725E90B2A-L000271](../../tests/test_web_agent.py#L271) | 271 | `"                        \"record\": {\"text\": \"استخدمت السيارة شهرًا\"},"` | — |
+| [SRC-F725E90B2A-L000272](../../tests/test_web_agent.py#L272) | 272 | `"                        \"author\": {\"handle\": \"driver.bsky.social\", \"displayName\": \"Driver\"},"` | — |
+| [SRC-F725E90B2A-L000273](../../tests/test_web_agent.py#L273) | 273 | `"                    }"` | — |
+| [SRC-F725E90B2A-L000274](../../tests/test_web_agent.py#L274) | 274 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000275](../../tests/test_web_agent.py#L275) | 275 | `"            })"` | — |
+| [SRC-F725E90B2A-L000276](../../tests/test_web_agent.py#L276) | 276 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
+| [SRC-F725E90B2A-L000277](../../tests/test_web_agent.py#L277) | 277 | `""` | — |
+| [SRC-F725E90B2A-L000278](../../tests/test_web_agent.py#L278) | 278 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000279](../../tests/test_web_agent.py#L279) | 279 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000280](../../tests/test_web_agent.py#L280) | 280 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
+| [SRC-F725E90B2A-L000281](../../tests/test_web_agent.py#L281) | 281 | `"    )"` | — |
+| [SRC-F725E90B2A-L000282](../../tests/test_web_agent.py#L282) | 282 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000283](../../tests/test_web_agent.py#L283) | 283 | `"    assert any(item[\"provider\"] == \"reddit_public_rss\" for item in results)"` | — |
+| [SRC-F725E90B2A-L000284](../../tests/test_web_agent.py#L284) | 284 | `"    bsky = next(item for item in results if item[\"provider\"] == \"bluesky_public_search\")"` | — |
+| [SRC-F725E90B2A-L000285](../../tests/test_web_agent.py#L285) | 285 | `"    assert bsky[\"url\"] == \"https://bsky.app/profile/driver.bsky.social/post/rkey123\""` | — |
+| [SRC-F725E90B2A-L000286](../../tests/test_web_agent.py#L286) | 286 | `"    assert bsky[\"snippet\"] == \"استخدمت السيارة شهرًا\""` | — |
+| [SRC-F725E90B2A-L000287](../../tests/test_web_agent.py#L287) | 287 | `""` | — |
+| [SRC-F725E90B2A-L000288](../../tests/test_web_agent.py#L288) | 288 | `""` | — |
+| [SRC-F725E90B2A-L000289](../../tests/test_web_agent.py#L289) | 289 | `"def test_research_collection_fuses_multiple_queries_and_reports_provenance(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000290](../../tests/test_web_agent.py#L290) | 290 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000291](../../tests/test_web_agent.py#L291) | 291 | `""` | — |
+| [SRC-F725E90B2A-L000292](../../tests/test_web_agent.py#L292) | 292 | `"    def search(query):"` | — |
+| [SRC-F725E90B2A-L000293](../../tests/test_web_agent.py#L293) | 293 | `"        if query == \"query one\":"` | — |
 | [SRC-F725E90B2A-L000294](../../tests/test_web_agent.py#L294) | 294 | `"            return ["` | — |
 | [SRC-F725E90B2A-L000295](../../tests/test_web_agent.py#L295) | 295 | `"                {\"title\": \"Shared\", \"url\": \"https://example.com/shared\", \"snippet\": \"Some evidence\", \"provider\": \"ddg\", \"provider_rank\": 1},"` | — |
 | [SRC-F725E90B2A-L000296](../../tests/test_web_agent.py#L296) | 296 | `"                {\"title\": \"Unique A\", \"url\": \"https://example.com/a\", \"snippet\": \"Evidence A\", \"provider\": \"ddg\", \"provider_rank\": 2},"` | — |
@@ -770,49 +816,3 @@
 | [SRC-F725E90B2A-L001045](../../tests/test_web_agent.py#L1045) | 1045 | `"        enable_web_search=True,"` | — |
 | [SRC-F725E90B2A-L001046](../../tests/test_web_agent.py#L1046) | 1046 | `"    )"` | — |
 | [SRC-F725E90B2A-L001047](../../tests/test_web_agent.py#L1047) | 1047 | `""` | — |
-| [SRC-F725E90B2A-L001048](../../tests/test_web_agent.py#L1048) | 1048 | `"    assert result == \"تحليل مستند إلى بحث حي.\""` | — |
-| [SRC-F725E90B2A-L001049](../../tests/test_web_agent.py#L1049) | 1049 | `"    assert seen[\"payload\"][\"tools\"][0][\"type\"] == \"openrouter:web_search\""` | — |
-| [SRC-F725E90B2A-L001050](../../tests/test_web_agent.py#L1050) | 1050 | `"    assert seen[\"payload\"][\"tools\"][0][\"parameters\"][\"max_uses\"] == 3"` | — |
-| [SRC-F725E90B2A-L001051](../../tests/test_web_agent.py#L1051) | 1051 | `"    assert seen[\"payload\"][\"max_tool_calls\"] == 5"` | — |
-| [SRC-F725E90B2A-L001052](../../tests/test_web_agent.py#L1052) | 1052 | `"    assert agent.server_search_sources[0][\"url\"] == \"https://example.org/current-report\""` | — |
-| [SRC-F725E90B2A-L001053](../../tests/test_web_agent.py#L1053) | 1053 | `"    assert agent.server_search_sources[0][\"provider\"] == \"openrouter_web_search\""` | — |
-| [SRC-F725E90B2A-L001054](../../tests/test_web_agent.py#L1054) | 1054 | `"    assert \"test-key\" not in str(agent.server_search_sources)"` | — |
-| [SRC-F725E90B2A-L001055](../../tests/test_web_agent.py#L1055) | 1055 | `""` | — |
-| [SRC-F725E90B2A-L001056](../../tests/test_web_agent.py#L1056) | 1056 | `""` | — |
-| [SRC-F725E90B2A-L001057](../../tests/test_web_agent.py#L1057) | 1057 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001058](../../tests/test_web_agent.py#L1058) | 1058 | `"    monkeypatch.delenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", raising=False)"` | — |
-| [SRC-F725E90B2A-L001059](../../tests/test_web_agent.py#L1059) | 1059 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001060](../../tests/test_web_agent.py#L1060) | 1060 | `"    assert agent.openrouter_web_search_enabled is False"` | — |
-| [SRC-F725E90B2A-L001061](../../tests/test_web_agent.py#L1061) | 1061 | `""` | — |
-| [SRC-F725E90B2A-L001062](../../tests/test_web_agent.py#L1062) | 1062 | `""` | — |
-| [SRC-F725E90B2A-L001063](../../tests/test_web_agent.py#L1063) | 1063 | `""` | — |
-| [SRC-F725E90B2A-L001064](../../tests/test_web_agent.py#L1064) | 1064 | `"def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():"` | — |
-| [SRC-F725E90B2A-L001065](../../tests/test_web_agent.py#L1065) | 1065 | `"    normalized = _normalize_search_query(\"إِنَّ أَسْعَارَ أُسْتُرَالِيَا\")"` | — |
-| [SRC-F725E90B2A-L001066](../../tests/test_web_agent.py#L1066) | 1066 | `"    assert \"إ\" not in normalized"` | — |
-| [SRC-F725E90B2A-L001067](../../tests/test_web_agent.py#L1067) | 1067 | `"    assert \"أ\" not in normalized"` | — |
-| [SRC-F725E90B2A-L001068](../../tests/test_web_agent.py#L1068) | 1068 | `"    assert \"ا\" in normalized"` | — |
-| [SRC-F725E90B2A-L001069](../../tests/test_web_agent.py#L1069) | 1069 | `"    assert normalized == \"ان اسعار استراليا\""` | — |
-| [SRC-F725E90B2A-L001070](../../tests/test_web_agent.py#L1070) | 1070 | `""` | — |
-| [SRC-F725E90B2A-L001071](../../tests/test_web_agent.py#L1071) | 1071 | `""` | — |
-| [SRC-F725E90B2A-L001072](../../tests/test_web_agent.py#L1072) | 1072 | `"def test_relevance_filter_rejects_translation_and_sports_noise():"` | — |
-| [SRC-F725E90B2A-L001073](../../tests/test_web_agent.py#L1073) | 1073 | `"    query = \"قارن Railway و Render لاستضافة Python\""` | — |
-| [SRC-F725E90B2A-L001074](../../tests/test_web_agent.py#L1074) | 1074 | `"    assert _relevance_ratio(query, \"Google Translate: error in translation\") < 0.20"` | — |
-| [SRC-F725E90B2A-L001075](../../tests/test_web_agent.py#L1075) | 1075 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L001076](../../tests/test_web_agent.py#L1076) | 1076 | `"        \"أول شركة ناشئة في صعيد مصر عام 2019\","` | — |
-| [SRC-F725E90B2A-L001077](../../tests/test_web_agent.py#L1077) | 1077 | `"        \"نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم\","` | — |
-| [SRC-F725E90B2A-L001078](../../tests/test_web_agent.py#L1078) | 1078 | `"    ) < 0.20"` | — |
-| [SRC-F725E90B2A-L001079](../../tests/test_web_agent.py#L1079) | 1079 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L001080](../../tests/test_web_agent.py#L1080) | 1080 | `"        query, \"Railway vs Render for Python app hosting comparison\""` | — |
-| [SRC-F725E90B2A-L001081](../../tests/test_web_agent.py#L1081) | 1081 | `"    ) >= 0.20"` | — |
-| [SRC-F725E90B2A-L001082](../../tests/test_web_agent.py#L1082) | 1082 | `""` | — |
-| [SRC-F725E90B2A-L001083](../../tests/test_web_agent.py#L1083) | 1083 | `""` | — |
-| [SRC-F725E90B2A-L001084](../../tests/test_web_agent.py#L1084) | 1084 | `"def test_search_provider_failure_isolated_and_logged(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001085](../../tests/test_web_agent.py#L1085) | 1085 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001086](../../tests/test_web_agent.py#L1086) | 1086 | `""` | — |
-| [SRC-F725E90B2A-L001087](../../tests/test_web_agent.py#L1087) | 1087 | `"    def broken(_query):"` | — |
-| [SRC-F725E90B2A-L001088](../../tests/test_web_agent.py#L1088) | 1088 | `"        raise RuntimeError(\"upstream HTTP 503\")"` | — |
-| [SRC-F725E90B2A-L001089](../../tests/test_web_agent.py#L1089) | 1089 | `""` | — |
-| [SRC-F725E90B2A-L001090](../../tests/test_web_agent.py#L1090) | 1090 | `"    def working(_query):"` | — |
-| [SRC-F725E90B2A-L001091](../../tests/test_web_agent.py#L1091) | 1091 | `"        return [{"` | — |
-| [SRC-F725E90B2A-L001092](../../tests/test_web_agent.py#L1092) | 1092 | `"            \"title\": \"Railway and Render Python hosting\","` | — |
-| [SRC-F725E90B2A-L001093](../../tests/test_web_agent.py#L1093) | 1093 | `"            \"url\": \"https://example.net/hosting\","` | — |
