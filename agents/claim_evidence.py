@@ -80,7 +80,7 @@ def audit_source_metadata(
     ))
     data_period = first_value((
         "data_date", "data_reference_date", "reference_date", "data_as_of",
-        "data_period", "reference_period", "observation_date", "data_year",
+        "data_period", "data_reference_period", "reference_period", "observation_date", "data_year",
         "reference_year", "period", "year",
     ))
     geographic_scope = str(
