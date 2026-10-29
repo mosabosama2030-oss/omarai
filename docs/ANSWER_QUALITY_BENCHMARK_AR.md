@@ -147,7 +147,7 @@ python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_r
 - **Tool usable-result rate:** الحالات التي كانت استراتيجيتها المتوقعة web_search وانتهت بنتائج مقبولة / جميع حالات البحث المتوقعة. يسجل منفصلًا الفشل، والمحاولة بلا نتائج قابلة للاستخدام، والحالة المجهولة. HTTP 200 ليس نجاح أداة.
 - **Latency:** زمن طلب HTTP من أداة القياس، بالميلي ثانية، مع المتوسط وp50 وp95 والحد الأقصى. القياس تسلسلي، ولا يمثل اختبار حمل أو سعة متزامنة.
 - **Provider-reported model cost:** مجموع قيمة التكلفة التي يعيدها المزوّد صراحةً لكل استدعاء نموذج، عندما تكون العملة معروفة. لا يخترع سعرًا من عدد الرموز؛ لا تُفسر cost العامة كمبلغ USD إلا لمزوّد OpenRouter.
-- **Complete request cost:** تبقى null بحالة NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED إلى أن تتوفر تكاليف كل موصل مستخدم مع تعريف تعرفة موثق. مجموع تكلفة النموذج المبلّغ عنها ليس بالضرورة كامل تكلفة الطلب، ولا يعني غياب التكلفة المبلّغ عنها أن التكلفة صفر.
+- **Complete request cost:** تبقى null بحالة NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED ما لم تمرر --request-costs ملف مصالحة خارجيًا يثبت التكلفة الكاملة لكل حالة. يجب أن يعلن الملف currency=USD وscope=complete_request ومصدرًا غير فارغ، وأن يحتوي تكلفة غير سالبة لكل case_id قيد المقارنة. مجموع تكلفة النموذج المبلّغ عنها ليس بالضرورة كامل تكلفة الطلب، ولا يعني غياب التكلفة المبلّغ عنها أن التكلفة صفر. المقارنة الكاملة تظل INCOMPLETE إذا نقصت تكلفة أي حالة في أحد التشغيلين.
 
 المجموعة الحالية هي 45 حالة: 14 باللهجة المصرية ar-EG، و9 بالفصحى ar-MSA، و13 بالإنجليزية en، و9 مختلطة اللغة. تحتوي 20 فئة و30 حالة تتوقع البحث و6 محلية/نموذج دون بحث و5 استيضاح. هذا يثبت تغطية بنية المجموعة لا جودة أي إجابة.
 
@@ -155,9 +155,10 @@ python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_r
 
 1. اجمع تشغيل خط الأساس **من النسخة القديمة نفسها** قبل استبدالها، أو من بيئة يمكن إثبات أنها تشغل SHA القديم. لا تستخدم نتائج حديثة على أنها baseline قديم.
 2. اجمع تشغيل المرشح من النسخة الجديدة. مرّر SHA الكامل الذي أثبتته هوية البناء الفعلية؛ لا تستخدم SHA فرع Git الحالي إذا لم يكن هو ما يشغله المضيف.
-3. احتفظ بملفي JSON الخام. استخدم نفس benchmark_id وbenchmark_version ومعرفات الحالات والأسئلة، وقيّم الحالات نفسها قبل وبعد.
-4. أنشئ نسختين من tests/fixtures/answer_quality_reviews_template.json. ضع REVIEWED والدرجات فقط بعد مراجعة الإجابات المشاهدة فعلًا، باستخدام المقامات والتعريفات أعلاه. أبقِ غير المراجع NOT_TESTED بلا درجات.
-5. شغّل المقارنة. ترفض الأداة SHA مفقودًا أو مجموعة حالات/أسئلة مختلفة، وتمنع ادعاء اكتمال القبول عند فقد المراجعات البشرية.
+3. عند حساب تكلفة الطلب كاملة، وفّر لكل تشغيل ملف --request-costs مأخوذًا من سجل فوترة/usage موثوق ومصالَح على مستوى كل case_id؛ لا تملأ تكلفة مفقودة بصفر. يجب أن يغطي الملف كل الحالات التي ستقارنها.
+4. احتفظ بملفي JSON الخام. استخدم نفس benchmark_id وbenchmark_version ومعرفات الحالات والأسئلة، وقيّم الحالات نفسها قبل وبعد.
+5. أنشئ نسختين من tests/fixtures/answer_quality_reviews_template.json. ضع REVIEWED والدرجات فقط بعد مراجعة الإجابات المشاهدة فعلًا، باستخدام المقامات والتعريفات أعلاه. أبقِ غير المراجع NOT_TESTED بلا درجات.
+6. شغّل المقارنة. ترفض الأداة SHA مفقودًا أو مجموعة حالات/أسئلة مختلفة، وتمنع ادعاء اكتمال القبول عند فقد المراجعات البشرية.
 
 ### أوامر إعادة التشغيل
 
@@ -166,13 +167,28 @@ python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_r
     python -m pytest tests/test_answer_quality_corpus.py tests/test_answer_quality_runner.py tests/test_answer_quality_comparison.py tests/test_answer_quality_provider_usage.py tests/test_answer_quality_review_scorecard.py -q
 
     # على نسخة محلية تعمل فعلًا من checkout معلوم
-    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha "$(git rev-parse HEAD)" --out artifacts/answer-quality-candidate.json
+    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha "$(git rev-parse HEAD)" --out artifacts/answer-quality-candidate.json --request-costs artifacts/request-costs-candidate.json
 
     # للنسخة المستضافة: مرّر SHA الذي تؤكده /api/health من البناء الجاري لا SHA المفترض
     # لا تشغّل هذا الأمر قبل الموافقة على استخدام مزود البحث/النموذج واحتمال التكلفة.
-    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json
+    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json --request-costs artifacts/request-costs-candidate.json
 
     # قارِن ملفي تشغيل وملفي مراجعة بشرية بنفس الحالات
     python scripts/compare_answer_quality_runs.py --baseline-run artifacts/answer-quality-baseline.json --candidate-run artifacts/answer-quality-candidate.json --baseline-reviews artifacts/reviews-baseline.json --candidate-reviews artifacts/reviews-candidate.json --out artifacts/answer-quality-comparison.json
 
 **حدود مهمة:** لا يحقن المشغّل fixtures في الخدمة الحية ولا يحوّل الإجابة إلى PASS آلي. المراجعة البشرية الحالية هي مصدر قياس صحة الحقائق ودعم الاستشهادات؛ أداة المقارنة لا تستنتج تحسن الجودة من لغة الإجابة أو طولها. ولأن ملفات التشغيل والمراجعة السابقة لم تكن متاحة عند بدء هذا العمل، يبقى **القبول التجريبي قبل/بعد NOT_RUN** حتى تُجمع هذه الملفات وتُراجع.
+
+
+### مخطط ملف مصالحة تكلفة الطلب الكاملة
+
+ملف request-costs لا يُنشأ من توقعات الأداة. املأه من بيانات تكلفة/usage موثوقة تتبع كل طلب كاملًا (بما فيها الموصلات المدفوعة عند استخدامها):
+
+    schema_version: "1.0"
+    currency: "USD"
+    scope: "complete_request"
+    source: "مرجع تقرير فوترة/usage موثوق ومراجع"
+    costs:
+      - case_id: "AQ-001"
+        cost_usd: <رقم حقيقي غير سالب من المصدر>
+
+المثال أعلاه مخطط وصفي لا يصلح كملف إدخال حرفيًا حتى تستبدل عنصر التكلفة بالقيمة الموثقة وتضيف كل الحالات المطلوب مقارنتها. عند غياب هذه البيانات تبقى تكلفة الطلب مجهولة، ويمنع comparator إظهار القبول الكامل.
