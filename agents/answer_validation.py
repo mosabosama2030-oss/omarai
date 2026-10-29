@@ -299,7 +299,7 @@ def _audit_source_metadata(
     context_text = f"{str(question or '')[:8000]} {str(answer or '')[:24000]}"
     normalized_context = _normalize(context_text)
     population_context = bool(re.search(
-        r"(?:عدد\\s+(?:ال)?سكان|(?:ال)?سكان|الكثافه\\s+السكانيه|population(?:\\s+density|\\s+estimate|\\s+count)?|urban\\s+agglomeration|metro\\s+area|greater\\s+cairo|القاهره\\s+الكبرى|محافظه\\s+القاهره)",
+        r"(?:عدد\s+(?:ال)?سكان|(?:ال)?سكان|الكثافه\s+السكانيه|population(?:\s+density|\s+estimate|\s+count)?|urban\s+agglomeration|metro\s+area|greater\s+cairo|القاهره\s+الكبرى|محافظه\s+القاهره)",
         normalized_context,
         re.IGNORECASE,
     ))
@@ -337,7 +337,7 @@ def _audit_source_metadata(
         if not title:
             missing_title += 1
             gaps.append("missing_title")
-        if not re.match(r"^https?://[^\\s]+$", url, re.IGNORECASE):
+        if not re.match(r"^https?://[^\s]+$", url, re.IGNORECASE):
             missing_url += 1
             gaps.append("missing_or_invalid_http_url")
         if not published:
