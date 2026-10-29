@@ -159,6 +159,70 @@ function renderSource(s,index){
 }
 function renderReport(result){
  const r=result&&result.search_report&&typeof result.search_report==="object"?result.search_report:{};
+ const completion=r.research_completion&&typeof r.research_completion==="object"?r.research_completion:
+  (result&&result.research_completion&&typeof result.research_completion==="object"?result.research_completion:null);
+ const completionStatusLabels={
+  execution_stopped_budget:"توقفت العملية عند حد الميزانية",
+  no_eligible_sources_after_filtering:"لم يبقَ مصدر مقبول بعد التصفية",
+  search_failed_or_incomplete:"البحث فشل أو لم يكتمل",
+  no_results_returned:"اكتمل البحث دون نتائج",
+  search_not_attempted:"لم تُنفذ محاولة البحث",
+  insufficient_evidence:"الأدلة غير كافية",
+  source_snippets_only_generation_not_completed:"مقتطفات فقط؛ لم تكتمل صياغة الإجابة",
+  evidence_collected_generation_not_completed:"جُمعت أدلة؛ لم تكتمل صياغة الإجابة",
+  answer_generation_or_review_failed:"تعذر توليد الإجابة أو مراجعتها",
+  partial_answer_evidence_gaps_detected:"إجابة جزئية مع فجوات أدلة محتملة",
+  answer_generated_citations_range_checked_semantic_support_unverified:"وُلّدت الإجابة وفُحصت أرقام الإحالات فقط؛ دعم الادعاءات دلاليًا غير متحقق",
+  answer_generated_without_valid_citation_markers:"وُلّدت الإجابة دون علامات إحالة صالحة"
+ };
+ const completionPhaseLabels={
+  planning:"التخطيط",search:"البحث",source_filtering:"تصفية المصادر",
+  page_reading:"قراءة الصفحات",answer_generation:"توليد الإجابة",
+  citation_validation:"فحص الإحالات",semantic_verification:"التحقق الدلالي"
+ };
+ const completionStateLabels={
+  completed:"مكتمل",unknown:"غير معلوم",not_attempted:"لم يبدأ",
+  failed_or_incomplete:"فشل أو لم يكتمل",results_received:"استُلمت نتائج",
+  completed_no_results:"اكتمل دون نتائج",attempted_no_usable_sources:"محاولة دون مصادر صالحة",
+  not_applicable_no_eligible_sources:"لا توجد مصادر نهائية",all_final_sources_read:"قُرئت كل الصفحات النهائية",
+  some_final_sources_read:"قُرئ بعض الصفحات",no_final_source_page_read:"لم تُقرأ صفحات نهائية",
+  not_attempted_or_withheld:"لم تُولد الإجابة أو حُجبت",answer_generated:"وُلّدت الإجابة",
+  not_completed:"لم يكتمل",failed_or_unavailable:"فشل أو غير متاح",
+  not_run:"لم يُنفذ",not_performed:"لم يُنفذ",sources_retained:"احتُفظ بمصادر",
+  rejected_all_candidates:"رُفضت كل المرشحات",no_eligible_sources:"لا توجد مصادر مقبولة",
+  index_range_check_passed:"فُحص نطاق أرقام الإحالات فقط",
+  invalid_index_references_removed:"حُذفت إحالات خارج النطاق",
+  no_citation_markers_present:"لا توجد علامات إحالة",diagnostics_not_computed:"تعذر احتساب التشخيص"
+ };
+ const completionSummary=completion&&completion.status
+  ?'<p class="'+(["search_failed_or_incomplete","execution_stopped_budget","answer_generation_or_review_failed","no_eligible_sources_after_filtering","partial_answer_evidence_gaps_detected"].includes(completion.status)?"warning":"report-note")+'"><b>حالة إكمال البحث:</b> '+escapeHtml(completionStatusLabels[completion.status]||completion.status)+'. هذه حالة تشغيلية وليست احتمالًا لصحة الإجابة.</p>'
+  :"";
+ const completionPhaseRows=completion&&completion.phases&&typeof completion.phases==="object"
+  ?Object.entries(completion.phases).map(([phase,state])=>'<li>'+escapeHtml(completionPhaseLabels[phase]||phase)+': '+escapeHtml(completionStateLabels[state]||state||"غير محدد")+'</li>').join("")
+  :"";
+ const completionCounters=completion&&completion.counters&&typeof completion.counters==="object"?completion.counters:{};
+ const completionCounterRows=[
+  [completionCounters.queries_planned,"استعلامًا مخططًا"],
+  [completionCounters.queries_attempted,"استعلامًا تمت محاولته"],
+  [completionCounters.per_query_result_count_sum,"مجموع أعداد النتائج المسجلة لكل استعلام، قبل إزالة التكرار"],
+  [completionCounters.final_source_list_count,"مصدرًا في القائمة النهائية"],
+  [completionCounters.unique_normalized_url_count,"رابطًا فريدًا بعد التطبيع"],
+  [completionCounters.duplicate_normalized_url_count,"رابطًا مكررًا وفق التطبيع"],
+  [completionCounters.distinct_registrable_domain_count,"نطاقًا مسجلًا مختلفًا"],
+  [completionCounters.pages_fetched_flag_count,"صفحة تحمل علامة جلب"],
+  [completionCounters.pages_read_with_text_count,"صفحة توفر نصها المقروء"],
+  [completionCounters.snippet_only_source_count,"مصدرًا بمقتطف دون صفحة مقروءة"],
+  [completionCounters.connector_success_count,"استجابة موصل ناجحة/مكتملة"],
+  [completionCounters.connector_failure_count,"حالة إخفاق موصل مسجلة"],
+  [completionCounters.guardrail_rejected_candidate_count,"مرشحًا مرفوضًا بحواجز الأدلة"]
+ ];
+ const completionCounterHtml=completionCounterRows.map(([value,label])=>'<div class="metric"><strong>'+escapeHtml(value===null||value===undefined?"غير محدد":value)+'</strong><span>'+escapeHtml(label)+'</span></div>').join("");
+ const consistency=completion&&completion.counter_consistency&&typeof completion.counter_consistency==="object"?completion.counter_consistency:null;
+ const consistencyLabels={matched:"العدادات المتاحة متطابقة",mismatch_detected:"اختلاف بين بعض العدادات والقائمة النهائية",not_computable:"لا توجد عدادات كافية للمقارنة"};
+ const consistencyHtml=consistency?'<p class="'+(consistency.status==="mismatch_detected"?"warning":"report-note")+'">اتساق العدادات: '+escapeHtml(consistencyLabels[consistency.status]||consistency.status||"غير محدد")+(Array.isArray(consistency.issues)&&consistency.issues.length?' — '+consistency.issues.map(escapeHtml).join("، "):"")+'</p>':"";
+ const completionDetailsHtml=completion&&completion.status
+  ?'<details class="details"><summary>تفاصيل مراحل إكمال البحث والعدادات</summary>'+(completionPhaseRows?'<p class="report-note">مراحل التنفيذ:</p><ul>'+completionPhaseRows+'</ul>':"")+'<div class="metrics">'+completionCounterHtml+'</div>'+consistencyHtml+'<p class="warning">التحقق الدلالي من أن كل ادعاء مسنود فعلًا بالمصدر لم يُنفذ في هذا التشخيص. صلاحية رقم الإحالة أو قراءة الصفحة لا تثبت صحة الادعاء.</p></details>'
+  :"";
  const e=r.evidence_signals&&typeof r.evidence_signals==="object"?r.evidence_signals:{};
  const sources=Array.isArray(result.sources)?result.sources:[];
  const researchErrorOutcome=["attempted_research_error","unknown_after_research_error"].includes(r.search_outcome);
@@ -279,7 +343,7 @@ function renderReport(result){
  const diversityText='اختلاف النطاقات المسجلة لا يثبت الاستقلال التحريري؛ فقد تنقل المواقع عن مصدر أصلي واحد.';
  const reportNotes=[coverageText,attemptText,qualityText,reviewText,diversityText,...notes].map(n=>'<p class="report-note">'+escapeHtml(n)+'</p>').join("");
  const review=r.second_pass_review==="model_claim_audit_completed"?"مراجعة الادعاءات بمساعدة النموذج تمت (ليست تحققًا مستقلًا)":r.second_pass_review==="model_claim_audit_completed_before_coverage_repair"?"تمت مراجعة المسودة قبل تعديل التغطية؛ النسخة المعدلة لم تخضع لمراجعة ثانية":r.second_pass_review==="model_claim_audit_unavailable"?"تعذرت مراجعة الادعاءات بمساعدة النموذج":"";
- return '<div class="report-head"><b>ملخص الأدلة وتغطية البحث</b><span class="coverage">'+escapeHtml(scoreLabel)+'</span></div><div class="metrics">'+metricHtml+'</div>'+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class="providers">'+providerHtml+'</div>':"")+(review?'<p class="report-note">'+escapeHtml(review)+'</p>':"")+details;
+ return '<div class="report-head"><b>ملخص الأدلة وتغطية البحث</b><span class="coverage">'+escapeHtml(scoreLabel)+'</span></div><div class="metrics">'+metricHtml+'</div>'+completionSummary+completionDetailsHtml+operationalHtml+connectorDetails+integrityHtml+reportNotes+(providerHtml?'<div class="providers">'+providerHtml+'</div>':"")+(review?'<p class="report-note">'+escapeHtml(review)+'</p>':"")+details;
 }
 function addMessage(role,text,result,options={}){
  const welcome=$("welcome");if(welcome)welcome.remove();
