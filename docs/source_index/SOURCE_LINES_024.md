@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000752 إلى SRC-62CE5126F9-L000178
+- النطاق: SRC-D17CE3D12F-L000751 إلى SRC-62CE5126F9-L000177
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000751](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L751) | 751 | `"3. MUST أن تخبر رسائل الفشل المستخدم بما يمكنه فعله لاحقًا دون كشف التفاصيل الداخلية أو الأسرار."` | — |
 | [SRC-D17CE3D12F-L000752](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L752) | 752 | `"4. MUST إظهار الفشل الجزئي عندما يؤثر على موثوقية الإجابة؛ لا تعرض إجابة ناقصة وكأن البحث اكتمل."` | — |
 | [SRC-D17CE3D12F-L000753](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L753) | 753 | `"5. SHOULD وجود قناة ملاحظات أو إبلاغ عن الخطأ مع معلومات كافية لتشخيصه، وبأقل قدر من البيانات الخاصة."` | — |
 | [SRC-D17CE3D12F-L000754](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L754) | 754 | `"6. MUST بيان ما إذا كانت المعلومة آنية أم مبنية على مصادر جرى جلبها، متى كان الفرق مهمًا للقرار."` | — |
@@ -851,4 +852,3 @@
 | [SRC-62CE5126F9-L000175](../OMARAI_REMEDIATION_REGISTER_AR.md#L175) | 175 | `"\|---\|---\|---:\|---\|---\|---\|"` | — |
 | [SRC-62CE5126F9-L000176](../OMARAI_REMEDIATION_REGISTER_AR.md#L176) | 176 | ``"\| OMR-D-001 \| Grok D1 \| P1 \| رؤوس الحماية للمتصفح لم تكن موحدة على الاستجابات \| `api/omarai.py`, `tests/test_api.py` \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — CSP وX-Frame-Options وReferrer-Policy وPermissions-Policy وnosniff واختبارات على HTML/JSON \| استمرار الاختبارات وعدم تراجع أي رأس \|"`` | — |
 | [SRC-62CE5126F9-L000177](../OMARAI_REMEDIATION_REGISTER_AR.md#L177) | 177 | ``"\| OMR-D-002 \| مراجعة CSP \| P1 \| `unsafe-inline` يضعف سياسة CSP \| `api/omarai.py`, `tests/test_api.py`, `web/*.html` \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — hashes لمحتوى inline موثوق، مع `unsafe-hashes` لما يلزم، واختبار يرفض `unsafe-inline` \| لا تسمح السياسة بـunsafe-inline؛ كل تغيير HTML/JS/CSS يمر باختبار CSP \|"`` | — |
-| [SRC-62CE5126F9-L000178](../OMARAI_REMEDIATION_REGISTER_AR.md#L178) | 178 | ``"\| OMR-D-003 \| Grok D2 \| P1 \| كشف الأسئلة الناقصة لم يكن موحدًا \| `agents/intent_router.py`, `tests/test_intent_router.py` \| **FIXED_AND_TESTED على رأس #76 `f2f1bb3...`** — مربوط بـE1 \| مصدر واحد لقواعد الغموض واختبارات regression \|"`` | — |

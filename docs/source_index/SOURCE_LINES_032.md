@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D186ED3822-L000044 إلى SRC-3451CC474D-L000163
+- النطاق: SRC-D186ED3822-L000043 إلى SRC-3451CC474D-L000162
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D186ED3822-L000043](../../tests/test_answer_quality_review_scorecard.py#L43) | 43 | `"            },"` | — |
 | [SRC-D186ED3822-L000044](../../tests/test_answer_quality_review_scorecard.py#L44) | 44 | `"            {\"case_id\": \"AQ-009\", \"status\": \"NOT_TESTED\", \"notes\": \"No reviewer judgment yet.\"},"` | — |
 | [SRC-D186ED3822-L000045](../../tests/test_answer_quality_review_scorecard.py#L45) | 45 | `"        ],"` | — |
 | [SRC-D186ED3822-L000046](../../tests/test_answer_quality_review_scorecard.py#L46) | 46 | `"    }"` | — |
@@ -842,4 +843,3 @@
 | [SRC-3451CC474D-L000160](../../tests/test_api.py#L160) | 160 | `"    status, error = request_json("` | — |
 | [SRC-3451CC474D-L000161](../../tests/test_api.py#L161) | 161 | `"        local_api,"` | — |
 | [SRC-3451CC474D-L000162](../../tests/test_api.py#L162) | 162 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000163](../../tests/test_api.py#L163) | 163 | `"        method=\"POST\","` | — |

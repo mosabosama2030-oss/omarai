@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000164 إلى SRC-6CBA87B20C-L000091
+- النطاق: SRC-3451CC474D-L000163 إلى SRC-6CBA87B20C-L000090
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000163](../../tests/test_api.py#L163) | 163 | `"        method=\"POST\","` | — |
 | [SRC-3451CC474D-L000164](../../tests/test_api.py#L164) | 164 | `"        payload={\"question\": \"كام عميل؟\"},"` | — |
 | [SRC-3451CC474D-L000165](../../tests/test_api.py#L165) | 165 | `"        headers={\"Origin\": \"https://attacker.example\"},"` | — |
 | [SRC-3451CC474D-L000166](../../tests/test_api.py#L166) | 166 | `"    )"` | — |
@@ -824,4 +825,3 @@
 | [SRC-6CBA87B20C-L000088](../../tests/test_aspect_planning.py#L88) | 88 | `"    aspects = extract_aspects(question)"` | — |
 | [SRC-6CBA87B20C-L000089](../../tests/test_aspect_planning.py#L89) | 89 | `"    normalized = \" \".join(aspects)"` | — |
 | [SRC-6CBA87B20C-L000090](../../tests/test_aspect_planning.py#L90) | 90 | `"    for expected in (\"السعر\", \"البطارية\", \"الضمان\", \"الصيانة\", \"الخصوصية\", \"الاعتمادية\", \"الدعم\", \"الجودة\"):"` | — |
-| [SRC-6CBA87B20C-L000091](../../tests/test_aspect_planning.py#L91) | 91 | `"        assert expected in normalized"` | — |

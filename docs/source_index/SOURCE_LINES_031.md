@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001026 إلى SRC-D186ED3822-L000043
+- النطاق: SRC-90FAA34ADE-L001025 إلى SRC-D186ED3822-L000042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001025](../../tests/fixtures/answer_quality_cases.json#L1025) | 1025 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001026](../../tests/fixtures/answer_quality_cases.json#L1026) | 1026 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001027](../../tests/fixtures/answer_quality_cases.json#L1027) | 1027 | `"        \"يعلن توقف الخدمة كحقيقة لمجرد تكرار الخبر\","` | — |
 | [SRC-90FAA34ADE-L001028](../../tests/fixtures/answer_quality_cases.json#L1028) | 1028 | `"        \"يعدّ الناقلين الثلاثة أدلة مستقلة بلا فحص\""` | — |
@@ -851,4 +852,3 @@
 | [SRC-D186ED3822-L000040](../../tests/test_answer_quality_review_scorecard.py#L40) | 40 | `"                \"case_id\": \"AQ-008\","` | — |
 | [SRC-D186ED3822-L000041](../../tests/test_answer_quality_review_scorecard.py#L41) | 41 | `"                \"status\": \"REVIEWED\","` | — |
 | [SRC-D186ED3822-L000042](../../tests/test_answer_quality_review_scorecard.py#L42) | 42 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-D186ED3822-L000043](../../tests/test_answer_quality_review_scorecard.py#L43) | 43 | `"            },"` | — |

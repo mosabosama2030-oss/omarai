@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002980 إلى SRC-F725E90B2A-L003779
+- النطاق: SRC-F725E90B2A-L002979 إلى SRC-F725E90B2A-L003778
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002979](../../tests/test_web_agent.py#L2979) | 2979 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
 | [SRC-F725E90B2A-L002980](../../tests/test_web_agent.py#L2980) | 2980 | `"            \"Recent developments in AI agents\","` | — |
 | [SRC-F725E90B2A-L002981](../../tests/test_web_agent.py#L2981) | 2981 | `"            \"New AI agent tools and launches this week.\","` | — |
 | [SRC-F725E90B2A-L002982](../../tests/test_web_agent.py#L2982) | 2982 | `"        ),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003776](../../tests/test_web_agent.py#L3776) | 3776 | `"    )"` | — |
 | [SRC-F725E90B2A-L003777](../../tests/test_web_agent.py#L3777) | 3777 | `"    plan = {"` | — |
 | [SRC-F725E90B2A-L003778](../../tests/test_web_agent.py#L3778) | 3778 | `"        \"depth\": \"deep\","` | — |
-| [SRC-F725E90B2A-L003779](../../tests/test_web_agent.py#L3779) | 3779 | `"        \"freshness\": \"any\","` | — |

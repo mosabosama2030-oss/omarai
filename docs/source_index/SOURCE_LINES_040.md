@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000333 إلى SRC-AFEDC2645A-L000319
+- النطاق: SRC-01E35ABC46-L000332 إلى SRC-AFEDC2645A-L000318
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000332](../../tests/test_research_guardrails.py#L332) | 332 | `"    assert report[\"current_evidence_required\"] is False"` | — |
 | [SRC-01E35ABC46-L000333](../../tests/test_research_guardrails.py#L333) | 333 | `""` | — |
 | [SRC-01E35ABC46-L000334](../../tests/test_research_guardrails.py#L334) | 334 | `""` | — |
 | [SRC-01E35ABC46-L000335](../../tests/test_research_guardrails.py#L335) | 335 | `"def test_social_mode_rejects_non_social_sources_and_classifies_public_posts() -> None:"` | — |
@@ -851,4 +852,3 @@
 | [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
 | [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
 | [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |

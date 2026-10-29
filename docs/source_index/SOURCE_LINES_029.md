@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000227 إلى SRC-90FAA34ADE-L000225
+- النطاق: SRC-4FFD5AFC54-L000226 إلى SRC-90FAA34ADE-L000224
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000226](../../scripts/run_answer_quality_benchmark.py#L226) | 226 | `"def run_validate(corpus_path: Path, summary: bool) -> int:"` | — |
 | [SRC-4FFD5AFC54-L000227](../../scripts/run_answer_quality_benchmark.py#L227) | 227 | `"    data = load_corpus(corpus_path)"` | — |
 | [SRC-4FFD5AFC54-L000228](../../scripts/run_answer_quality_benchmark.py#L228) | 228 | `"    problems = validate_corpus(data)"` | — |
 | [SRC-4FFD5AFC54-L000229](../../scripts/run_answer_quality_benchmark.py#L229) | 229 | `"    if problems:"` | — |
@@ -842,4 +843,3 @@
 | [SRC-90FAA34ADE-L000222](../../tests/fixtures/answer_quality_cases.json#L222) | 222 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000223](../../tests/fixtures/answer_quality_cases.json#L223) | 223 | `"      \"question\": \"قولي ثلاث حاجات: ١) ايه الفرق بين الإيجار والتمليك في مصر باختصار ٢) ايه المخاطر القانونية الشائعة ٣) ازاي اتأكد من عقد الإيجار\","` | — |
 | [SRC-90FAA34ADE-L000224](../../tests/fixtures/answer_quality_cases.json#L224) | 224 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000225](../../tests/fixtures/answer_quality_cases.json#L225) | 225 | `"      \"required_behaviors\": ["` | — |

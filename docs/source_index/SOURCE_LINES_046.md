@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **046**
-- سجلات الأسطر: **779**
-- النطاق: SRC-F725E90B2A-L003780 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **780**
+- النطاق: SRC-F725E90B2A-L003779 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003779](../../tests/test_web_agent.py#L3779) | 3779 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L003780](../../tests/test_web_agent.py#L3780) | 3780 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L003781](../../tests/test_web_agent.py#L3781) | 3781 | `"        \"queries\": [row[\"query\"] for row in matrix],"` | — |
 | [SRC-F725E90B2A-L003782](../../tests/test_web_agent.py#L3782) | 3782 | `"        \"dialogue_context\": {},"` | — |

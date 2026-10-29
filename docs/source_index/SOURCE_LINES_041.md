@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000320 إلى SRC-F725E90B2A-L000579
+- النطاق: SRC-AFEDC2645A-L000319 إلى SRC-F725E90B2A-L000578
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |
 | [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"    candidate[\"extra_unexpected_key\"] = \"must not survive\""` | — |
 | [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"    safe = validate_task_spec(candidate)"` | — |
 | [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `""` | — |
@@ -833,4 +834,3 @@
 | [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_IDS\", \"page-1,page-2\")"` | — |
 | [SRC-F725E90B2A-L000577](../../tests/test_web_agent.py#L577) | 577 | `""` | — |
 | [SRC-F725E90B2A-L000578](../../tests/test_web_agent.py#L578) | 578 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000579](../../tests/test_web_agent.py#L579) | 579 | `"        status_code = 200"` | — |
