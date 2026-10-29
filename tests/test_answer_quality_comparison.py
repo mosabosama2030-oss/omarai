@@ -132,6 +132,7 @@ def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():
     assert result["candidate"]["metrics"]["latency_ms"]["max"] == 120
     assert result["baseline"]["metrics"]["tool_usage"]["required_tool_matrix_coverage"]["score"] == 1.0
     assert result["candidate"]["metrics"]["tool_usage"]["required_tool_matrix_coverage"]["score"] == 1.0
+    assert result["baseline"]["metrics"]["tool_usage"]["required_tool_observation_count"] == 30
     assert result["runtime_deltas"]["usable_result_rate"]["baseline"] == pytest.approx(0.0333)
     assert result["runtime_deltas"]["usable_result_rate"]["candidate"] == 1.0
     assert result["runtime_deltas"]["required_tool_success_rate"]["baseline"] == pytest.approx(0.0333)

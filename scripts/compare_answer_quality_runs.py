@@ -165,7 +165,7 @@ def run_metrics(run: dict[str, Any]) -> dict[str, Any]:
                 1 for r in search_cases
                 if r.get("tool_status") in (None, "", "UNKNOWN")
             ),
-            "required_tool_attempt_count": len(required_tool_rows),
+            "required_tool_observation_count": len(required_tool_rows),
             "required_tool_success_count": required_tool_successes,
             "required_tool_success_rate": _rate(required_tool_successes, len(required_tool_rows)),
             "required_tool_status_counts": tool_status_counts,
