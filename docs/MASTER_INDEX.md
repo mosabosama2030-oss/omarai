@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **106**
-- ملفات Python المحللة: **63**
-- تعريفات Python المفهرسة: **1397**
+- ملفات المستودع في الجرد: **107**
+- ملفات Python المحللة: **64**
+- تعريفات Python المفهرسة: **1411**
 - تعريفات Python موثقة بوجود Docstring: **241**
-- تعريفات Python بلا Docstring: **868**
-- تعريفات لا ينطبق عليها Docstring: **288**
-- الرموز الساكنة الإضافية: **1736**
-- الأسطر النصية المفهرسة حرفيًا: **36863**
+- تعريفات Python بلا Docstring: **878**
+- تعريفات لا ينطبق عليها Docstring: **292**
+- الرموز الساكنة الإضافية: **1740**
+- الأسطر النصية المفهرسة حرفيًا: **37190**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -90,6 +90,7 @@
 | FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22391 | 183 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
+| FILE-88B503CEB0 | ملفات أخرى | [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L1) | Python | 15351 | 327 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 15025 | 404 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
@@ -715,6 +716,20 @@
 | [docs/search_code.py](search_code.py#L187) | دالة | search_repository | Return ordered text matches with short context. | موثق | 187 | [SRC-69F3587825-L000187](search_code.py#L187) |
 | [docs/search_code.py](search_code.py#L245) | دالة | format_hits | لا توجد Docstring. | ناقص | 245 | [SRC-69F3587825-L000245](search_code.py#L245) |
 | [docs/search_code.py](search_code.py#L266) | دالة | main | لا توجد Docstring. | ناقص | 266 | [SRC-69F3587825-L000266](search_code.py#L266) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L17) | متغير/ثابت Python | REQUIRED_ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-88B503CEB0-L000017](../scripts/evaluate_benchmark_metrics.py#L17) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L18) | متغير/ثابت Python | REQUIRED_CASE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-88B503CEB0-L000018](../scripts/evaluate_benchmark_metrics.py#L18) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L19) | متغير/ثابت Python | NUMERIC_NONNEGATIVE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-88B503CEB0-L000019](../scripts/evaluate_benchmark_metrics.py#L19) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L26) | دالة | load_run | لا توجد Docstring. | ناقص | 26 | [SRC-88B503CEB0-L000026](../scripts/evaluate_benchmark_metrics.py#L26) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L34) | دالة | validate_run | لا توجد Docstring. | ناقص | 34 | [SRC-88B503CEB0-L000034](../scripts/evaluate_benchmark_metrics.py#L34) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L86) | دالة | _ratio | لا توجد Docstring. | ناقص | 86 | [SRC-88B503CEB0-L000086](../scripts/evaluate_benchmark_metrics.py#L86) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L90) | دالة | _percent | لا توجد Docstring. | ناقص | 90 | [SRC-88B503CEB0-L000090](../scripts/evaluate_benchmark_metrics.py#L90) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L94) | دالة | _number | لا توجد Docstring. | ناقص | 94 | [SRC-88B503CEB0-L000094](../scripts/evaluate_benchmark_metrics.py#L94) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L98) | دالة | percentile | لا توجد Docstring. | ناقص | 98 | [SRC-88B503CEB0-L000098](../scripts/evaluate_benchmark_metrics.py#L98) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L113) | دالة | summarize | لا توجد Docstring. | ناقص | 113 | [SRC-88B503CEB0-L000113](../scripts/evaluate_benchmark_metrics.py#L113) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L196) | متغير/ثابت Python | METRICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 196 | [SRC-88B503CEB0-L000196](../scripts/evaluate_benchmark_metrics.py#L196) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L209) | دالة | compare_runs | لا توجد Docstring. | ناقص | 209 | [SRC-88B503CEB0-L000209](../scripts/evaluate_benchmark_metrics.py#L209) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L257) | دالة | render_markdown | لا توجد Docstring. | ناقص | 257 | [SRC-88B503CEB0-L000257](../scripts/evaluate_benchmark_metrics.py#L257) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L300) | دالة | main | لا توجد Docstring. | ناقص | 300 | [SRC-88B503CEB0-L000300](../scripts/evaluate_benchmark_metrics.py#L300) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L16) | كلاس | SmokeError | A live acceptance check failed. | موثق | 16 | [SRC-A8360B1B03-L000016](../scripts/hosted_smoke_test.py#L16) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
@@ -2717,6 +2732,10 @@
 | [render.yaml](../render.yaml#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 12 | [SRC-A64CF250B4-L000012](../render.yaml#L12) |
 | [render.yaml](../render.yaml#L13) | مفتاح إعداد YAML | sync | 13 | [SRC-A64CF250B4-L000013](../render.yaml#L13) |
 | [render.yaml](../render.yaml#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 14 | [SRC-A64CF250B4-L000014](../render.yaml#L14) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUIRED_ROOT | 17 | [SRC-88B503CEB0-L000017](../scripts/evaluate_benchmark_metrics.py#L17) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUIRED_CASE | 18 | [SRC-88B503CEB0-L000018](../scripts/evaluate_benchmark_metrics.py#L18) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NUMERIC_NONNEGATIVE | 19 | [SRC-88B503CEB0-L000019](../scripts/evaluate_benchmark_metrics.py#L19) |
+| [scripts/evaluate_benchmark_metrics.py](../scripts/evaluate_benchmark_metrics.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 81 | [SRC-88B503CEB0-L000081](../scripts/evaluate_benchmark_metrics.py#L81) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 112 | [SRC-A8360B1B03-L000112](../scripts/hosted_smoke_test.py#L112) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L126) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 126 | [SRC-A8360B1B03-L000126](../scripts/hosted_smoke_test.py#L126) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L204) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 204 | [SRC-A8360B1B03-L000204](../scripts/hosted_smoke_test.py#L204) |

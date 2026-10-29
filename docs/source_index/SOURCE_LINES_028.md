@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000256 إلى SRC-4FFD5AFC54-L000225
+- النطاق: SRC-69F3587825-L000256 إلى SRC-A8360B1B03-L000128
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -417,6 +417,342 @@
 | [SRC-64EDD7FC2B-L000001](../../scripts/__init__.py#L1) | 1 | `"\"\"\"Operational helper scripts for Omarai.\"\"\""` | — |
 ## ملفات أخرى
 
+### FILE-88B503CEB0 — [scripts/evaluate_benchmark_metrics.py](../../scripts/evaluate_benchmark_metrics.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-88B503CEB0-L000001](../../scripts/evaluate_benchmark_metrics.py#L1) | 1 | `"\"\"\"Aggregate reviewed Omarai benchmark runs and compare paired baseline/candidate metrics."` | — |
+| [SRC-88B503CEB0-L000002](../../scripts/evaluate_benchmark_metrics.py#L2) | 2 | `""` | — |
+| [SRC-88B503CEB0-L000003](../../scripts/evaluate_benchmark_metrics.py#L3) | 3 | `"This tool never grades natural-language answers automatically. Human/reviewer annotations"` | — |
+| [SRC-88B503CEB0-L000004](../../scripts/evaluate_benchmark_metrics.py#L4) | 4 | `"are explicit inputs; unknown values remain unknown rather than being treated as zero."` | — |
+| [SRC-88B503CEB0-L000005](../../scripts/evaluate_benchmark_metrics.py#L5) | 5 | `"Standard library only."` | — |
+| [SRC-88B503CEB0-L000006](../../scripts/evaluate_benchmark_metrics.py#L6) | 6 | `"\"\"\""` | — |
+| [SRC-88B503CEB0-L000007](../../scripts/evaluate_benchmark_metrics.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-88B503CEB0-L000008](../../scripts/evaluate_benchmark_metrics.py#L8) | 8 | `""` | — |
+| [SRC-88B503CEB0-L000009](../../scripts/evaluate_benchmark_metrics.py#L9) | 9 | `"import argparse"` | — |
+| [SRC-88B503CEB0-L000010](../../scripts/evaluate_benchmark_metrics.py#L10) | 10 | `"import json"` | — |
+| [SRC-88B503CEB0-L000011](../../scripts/evaluate_benchmark_metrics.py#L11) | 11 | `"import math"` | — |
+| [SRC-88B503CEB0-L000012](../../scripts/evaluate_benchmark_metrics.py#L12) | 12 | `"import statistics"` | — |
+| [SRC-88B503CEB0-L000013](../../scripts/evaluate_benchmark_metrics.py#L13) | 13 | `"import sys"` | — |
+| [SRC-88B503CEB0-L000014](../../scripts/evaluate_benchmark_metrics.py#L14) | 14 | `"from pathlib import Path"` | — |
+| [SRC-88B503CEB0-L000015](../../scripts/evaluate_benchmark_metrics.py#L15) | 15 | `"from typing import Any"` | — |
+| [SRC-88B503CEB0-L000016](../../scripts/evaluate_benchmark_metrics.py#L16) | 16 | `""` | — |
+| [SRC-88B503CEB0-L000017](../../scripts/evaluate_benchmark_metrics.py#L17) | 17 | `"REQUIRED_ROOT = {\"benchmark_id\", \"benchmark_version\", \"run_id\", \"commit_sha\", \"cases\"}"` | — |
+| [SRC-88B503CEB0-L000018](../../scripts/evaluate_benchmark_metrics.py#L18) | 18 | `"REQUIRED_CASE = {\"case_id\", \"language\"}"` | — |
+| [SRC-88B503CEB0-L000019](../../scripts/evaluate_benchmark_metrics.py#L19) | 19 | `"NUMERIC_NONNEGATIVE = {"` | — |
+| [SRC-88B503CEB0-L000020](../../scripts/evaluate_benchmark_metrics.py#L20) | 20 | `"    \"gold_claims\", \"retrieved_gold_claims\", \"citations_total\", \"citations_supported\","` | — |
+| [SRC-88B503CEB0-L000021](../../scripts/evaluate_benchmark_metrics.py#L21) | 21 | `"    \"tool_attempted\", \"tool_succeeded\", \"latency_ms\", \"cost_usd\","` | — |
+| [SRC-88B503CEB0-L000022](../../scripts/evaluate_benchmark_metrics.py#L22) | 22 | `"    \"input_tokens\", \"output_tokens\","` | — |
+| [SRC-88B503CEB0-L000023](../../scripts/evaluate_benchmark_metrics.py#L23) | 23 | `"}"` | — |
+| [SRC-88B503CEB0-L000024](../../scripts/evaluate_benchmark_metrics.py#L24) | 24 | `""` | — |
+| [SRC-88B503CEB0-L000025](../../scripts/evaluate_benchmark_metrics.py#L25) | 25 | `""` | — |
+| [SRC-88B503CEB0-L000026](../../scripts/evaluate_benchmark_metrics.py#L26) | 26 | `"def load_run(path: Path) -> dict[str, Any]:"` | — |
+| [SRC-88B503CEB0-L000027](../../scripts/evaluate_benchmark_metrics.py#L27) | 27 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-88B503CEB0-L000028](../../scripts/evaluate_benchmark_metrics.py#L28) | 28 | `"    problems = validate_run(data)"` | — |
+| [SRC-88B503CEB0-L000029](../../scripts/evaluate_benchmark_metrics.py#L29) | 29 | `"    if problems:"` | — |
+| [SRC-88B503CEB0-L000030](../../scripts/evaluate_benchmark_metrics.py#L30) | 30 | `"        raise ValueError(\"Invalid evaluation run:\\n- \" + \"\\n- \".join(problems))"` | — |
+| [SRC-88B503CEB0-L000031](../../scripts/evaluate_benchmark_metrics.py#L31) | 31 | `"    return data"` | — |
+| [SRC-88B503CEB0-L000032](../../scripts/evaluate_benchmark_metrics.py#L32) | 32 | `""` | — |
+| [SRC-88B503CEB0-L000033](../../scripts/evaluate_benchmark_metrics.py#L33) | 33 | `""` | — |
+| [SRC-88B503CEB0-L000034](../../scripts/evaluate_benchmark_metrics.py#L34) | 34 | `"def validate_run(data: Any) -> list[str]:"` | — |
+| [SRC-88B503CEB0-L000035](../../scripts/evaluate_benchmark_metrics.py#L35) | 35 | `"    problems: list[str] = []"` | — |
+| [SRC-88B503CEB0-L000036](../../scripts/evaluate_benchmark_metrics.py#L36) | 36 | `"    if not isinstance(data, dict):"` | — |
+| [SRC-88B503CEB0-L000037](../../scripts/evaluate_benchmark_metrics.py#L37) | 37 | `"        return [\"root must be a JSON object\"]"` | — |
+| [SRC-88B503CEB0-L000038](../../scripts/evaluate_benchmark_metrics.py#L38) | 38 | `"    missing = REQUIRED_ROOT - set(data)"` | — |
+| [SRC-88B503CEB0-L000039](../../scripts/evaluate_benchmark_metrics.py#L39) | 39 | `"    if missing:"` | — |
+| [SRC-88B503CEB0-L000040](../../scripts/evaluate_benchmark_metrics.py#L40) | 40 | `"        problems.append(f\"missing root fields: {sorted(missing)}\")"` | — |
+| [SRC-88B503CEB0-L000041](../../scripts/evaluate_benchmark_metrics.py#L41) | 41 | `"    if not isinstance(data.get(\"cases\"), list):"` | — |
+| [SRC-88B503CEB0-L000042](../../scripts/evaluate_benchmark_metrics.py#L42) | 42 | `"        return problems + [\"cases must be an array\"]"` | — |
+| [SRC-88B503CEB0-L000043](../../scripts/evaluate_benchmark_metrics.py#L43) | 43 | `"    if not isinstance(data.get(\"commit_sha\"), str) or not data.get(\"commit_sha\", \"\").strip():"` | — |
+| [SRC-88B503CEB0-L000044](../../scripts/evaluate_benchmark_metrics.py#L44) | 44 | `"        problems.append(\"commit_sha must identify the exact tested version\")"` | — |
+| [SRC-88B503CEB0-L000045](../../scripts/evaluate_benchmark_metrics.py#L45) | 45 | `"    ids: list[str] = []"` | — |
+| [SRC-88B503CEB0-L000046](../../scripts/evaluate_benchmark_metrics.py#L46) | 46 | `"    for index, row in enumerate(data[\"cases\"]):"` | — |
+| [SRC-88B503CEB0-L000047](../../scripts/evaluate_benchmark_metrics.py#L47) | 47 | `"        where = f\"cases[{index}]\""` | — |
+| [SRC-88B503CEB0-L000048](../../scripts/evaluate_benchmark_metrics.py#L48) | 48 | `"        if not isinstance(row, dict):"` | — |
+| [SRC-88B503CEB0-L000049](../../scripts/evaluate_benchmark_metrics.py#L49) | 49 | `"            problems.append(f\"{where} must be an object\")"` | — |
+| [SRC-88B503CEB0-L000050](../../scripts/evaluate_benchmark_metrics.py#L50) | 50 | `"            continue"` | — |
+| [SRC-88B503CEB0-L000051](../../scripts/evaluate_benchmark_metrics.py#L51) | 51 | `"        missing_case = REQUIRED_CASE - set(row)"` | — |
+| [SRC-88B503CEB0-L000052](../../scripts/evaluate_benchmark_metrics.py#L52) | 52 | `"        if missing_case:"` | — |
+| [SRC-88B503CEB0-L000053](../../scripts/evaluate_benchmark_metrics.py#L53) | 53 | `"            problems.append(f\"{where} missing fields: {sorted(missing_case)}\")"` | — |
+| [SRC-88B503CEB0-L000054](../../scripts/evaluate_benchmark_metrics.py#L54) | 54 | `"        case_id = row.get(\"case_id\")"` | — |
+| [SRC-88B503CEB0-L000055](../../scripts/evaluate_benchmark_metrics.py#L55) | 55 | `"        if isinstance(case_id, str):"` | — |
+| [SRC-88B503CEB0-L000056](../../scripts/evaluate_benchmark_metrics.py#L56) | 56 | `"            ids.append(case_id)"` | — |
+| [SRC-88B503CEB0-L000057](../../scripts/evaluate_benchmark_metrics.py#L57) | 57 | `"        else:"` | — |
+| [SRC-88B503CEB0-L000058](../../scripts/evaluate_benchmark_metrics.py#L58) | 58 | `"            problems.append(f\"{where}.case_id must be a string\")"` | — |
+| [SRC-88B503CEB0-L000059](../../scripts/evaluate_benchmark_metrics.py#L59) | 59 | `"        if not isinstance(row.get(\"language\"), str) or not row.get(\"language\", \"\").strip():"` | — |
+| [SRC-88B503CEB0-L000060](../../scripts/evaluate_benchmark_metrics.py#L60) | 60 | `"            problems.append(f\"{where}.language must be a non-empty string\")"` | — |
+| [SRC-88B503CEB0-L000061](../../scripts/evaluate_benchmark_metrics.py#L61) | 61 | `"        if \"correct\" in row and row[\"correct\"] is not None and not isinstance(row[\"correct\"], bool):"` | — |
+| [SRC-88B503CEB0-L000062](../../scripts/evaluate_benchmark_metrics.py#L62) | 62 | `"            problems.append(f\"{where}.correct must be true, false, or null\")"` | — |
+| [SRC-88B503CEB0-L000063](../../scripts/evaluate_benchmark_metrics.py#L63) | 63 | `"        for field in NUMERIC_NONNEGATIVE:"` | — |
+| [SRC-88B503CEB0-L000064](../../scripts/evaluate_benchmark_metrics.py#L64) | 64 | `"            value = row.get(field)"` | — |
+| [SRC-88B503CEB0-L000065](../../scripts/evaluate_benchmark_metrics.py#L65) | 65 | `"            if value is not None and ("` | — |
+| [SRC-88B503CEB0-L000066](../../scripts/evaluate_benchmark_metrics.py#L66) | 66 | `"                isinstance(value, bool) or not isinstance(value, (int, float))"` | — |
+| [SRC-88B503CEB0-L000067](../../scripts/evaluate_benchmark_metrics.py#L67) | 67 | `"                or not math.isfinite(value) or value < 0"` | — |
+| [SRC-88B503CEB0-L000068](../../scripts/evaluate_benchmark_metrics.py#L68) | 68 | `"            ):"` | — |
+| [SRC-88B503CEB0-L000069](../../scripts/evaluate_benchmark_metrics.py#L69) | 69 | `"                problems.append(f\"{where}.{field} must be a non-negative number or null\")"` | — |
+| [SRC-88B503CEB0-L000070](../../scripts/evaluate_benchmark_metrics.py#L70) | 70 | `"        if row.get(\"retrieved_gold_claims\") is not None and row.get(\"gold_claims\") is not None:"` | — |
+| [SRC-88B503CEB0-L000071](../../scripts/evaluate_benchmark_metrics.py#L71) | 71 | `"            if row[\"retrieved_gold_claims\"] > row[\"gold_claims\"]:"` | — |
+| [SRC-88B503CEB0-L000072](../../scripts/evaluate_benchmark_metrics.py#L72) | 72 | `"                problems.append(f\"{where}.retrieved_gold_claims cannot exceed gold_claims\")"` | — |
+| [SRC-88B503CEB0-L000073](../../scripts/evaluate_benchmark_metrics.py#L73) | 73 | `"        if row.get(\"citations_supported\") is not None and row.get(\"citations_total\") is not None:"` | — |
+| [SRC-88B503CEB0-L000074](../../scripts/evaluate_benchmark_metrics.py#L74) | 74 | `"            if row[\"citations_supported\"] > row[\"citations_total\"]:"` | — |
+| [SRC-88B503CEB0-L000075](../../scripts/evaluate_benchmark_metrics.py#L75) | 75 | `"                problems.append(f\"{where}.citations_supported cannot exceed citations_total\")"` | — |
+| [SRC-88B503CEB0-L000076](../../scripts/evaluate_benchmark_metrics.py#L76) | 76 | `"        if row.get(\"tool_succeeded\") is not None and row.get(\"tool_attempted\") is not None:"` | — |
+| [SRC-88B503CEB0-L000077](../../scripts/evaluate_benchmark_metrics.py#L77) | 77 | `"            if row[\"tool_succeeded\"] > row[\"tool_attempted\"]:"` | — |
+| [SRC-88B503CEB0-L000078](../../scripts/evaluate_benchmark_metrics.py#L78) | 78 | `"                problems.append(f\"{where}.tool_succeeded cannot exceed tool_attempted\")"` | — |
+| [SRC-88B503CEB0-L000079](../../scripts/evaluate_benchmark_metrics.py#L79) | 79 | `"    if len(ids) != len(set(ids)):"` | — |
+| [SRC-88B503CEB0-L000080](../../scripts/evaluate_benchmark_metrics.py#L80) | 80 | `"        problems.append(\"case_id values must be unique within a run\")"` | — |
+| [SRC-88B503CEB0-L000081](../../scripts/evaluate_benchmark_metrics.py#L81) | 81 | `"    if data.get(\"baseline_status\") == \"NOT_MEASURED\" and data[\"cases\"]:"` | — |
+| [SRC-88B503CEB0-L000082](../../scripts/evaluate_benchmark_metrics.py#L82) | 82 | `"        problems.append(\"NOT_MEASURED baseline must not contain fabricated case results\")"` | — |
+| [SRC-88B503CEB0-L000083](../../scripts/evaluate_benchmark_metrics.py#L83) | 83 | `"    return problems"` | — |
+| [SRC-88B503CEB0-L000084](../../scripts/evaluate_benchmark_metrics.py#L84) | 84 | `""` | — |
+| [SRC-88B503CEB0-L000085](../../scripts/evaluate_benchmark_metrics.py#L85) | 85 | `""` | — |
+| [SRC-88B503CEB0-L000086](../../scripts/evaluate_benchmark_metrics.py#L86) | 86 | `"def _ratio(numerator: float, denominator: float) -> float \| None:"` | — |
+| [SRC-88B503CEB0-L000087](../../scripts/evaluate_benchmark_metrics.py#L87) | 87 | `"    return numerator / denominator if denominator else None"` | — |
+| [SRC-88B503CEB0-L000088](../../scripts/evaluate_benchmark_metrics.py#L88) | 88 | `""` | — |
+| [SRC-88B503CEB0-L000089](../../scripts/evaluate_benchmark_metrics.py#L89) | 89 | `""` | — |
+| [SRC-88B503CEB0-L000090](../../scripts/evaluate_benchmark_metrics.py#L90) | 90 | `"def _percent(value: float \| None) -> str:"` | — |
+| [SRC-88B503CEB0-L000091](../../scripts/evaluate_benchmark_metrics.py#L91) | 91 | `"    return \"N/A\" if value is None else f\"{value * 100:.2f}%\""` | — |
+| [SRC-88B503CEB0-L000092](../../scripts/evaluate_benchmark_metrics.py#L92) | 92 | `""` | — |
+| [SRC-88B503CEB0-L000093](../../scripts/evaluate_benchmark_metrics.py#L93) | 93 | `""` | — |
+| [SRC-88B503CEB0-L000094](../../scripts/evaluate_benchmark_metrics.py#L94) | 94 | `"def _number(value: float \| None, suffix: str = \"\") -> str:"` | — |
+| [SRC-88B503CEB0-L000095](../../scripts/evaluate_benchmark_metrics.py#L95) | 95 | `"    return \"N/A\" if value is None else f\"{value:.2f}{suffix}\""` | — |
+| [SRC-88B503CEB0-L000096](../../scripts/evaluate_benchmark_metrics.py#L96) | 96 | `""` | — |
+| [SRC-88B503CEB0-L000097](../../scripts/evaluate_benchmark_metrics.py#L97) | 97 | `""` | — |
+| [SRC-88B503CEB0-L000098](../../scripts/evaluate_benchmark_metrics.py#L98) | 98 | `"def percentile(values: list[float], p: float) -> float \| None:"` | — |
+| [SRC-88B503CEB0-L000099](../../scripts/evaluate_benchmark_metrics.py#L99) | 99 | `"    if not values:"` | — |
+| [SRC-88B503CEB0-L000100](../../scripts/evaluate_benchmark_metrics.py#L100) | 100 | `"        return None"` | — |
+| [SRC-88B503CEB0-L000101](../../scripts/evaluate_benchmark_metrics.py#L101) | 101 | `"    ordered = sorted(values)"` | — |
+| [SRC-88B503CEB0-L000102](../../scripts/evaluate_benchmark_metrics.py#L102) | 102 | `"    if len(ordered) == 1:"` | — |
+| [SRC-88B503CEB0-L000103](../../scripts/evaluate_benchmark_metrics.py#L103) | 103 | `"        return ordered[0]"` | — |
+| [SRC-88B503CEB0-L000104](../../scripts/evaluate_benchmark_metrics.py#L104) | 104 | `"    # Linear interpolation; deterministic and documented for small benchmark samples."` | — |
+| [SRC-88B503CEB0-L000105](../../scripts/evaluate_benchmark_metrics.py#L105) | 105 | `"    position = (len(ordered) - 1) * p"` | — |
+| [SRC-88B503CEB0-L000106](../../scripts/evaluate_benchmark_metrics.py#L106) | 106 | `"    lower = math.floor(position)"` | — |
+| [SRC-88B503CEB0-L000107](../../scripts/evaluate_benchmark_metrics.py#L107) | 107 | `"    upper = math.ceil(position)"` | — |
+| [SRC-88B503CEB0-L000108](../../scripts/evaluate_benchmark_metrics.py#L108) | 108 | `"    if lower == upper:"` | — |
+| [SRC-88B503CEB0-L000109](../../scripts/evaluate_benchmark_metrics.py#L109) | 109 | `"        return ordered[lower]"` | — |
+| [SRC-88B503CEB0-L000110](../../scripts/evaluate_benchmark_metrics.py#L110) | 110 | `"    return ordered[lower] + (ordered[upper] - ordered[lower]) * (position - lower)"` | — |
+| [SRC-88B503CEB0-L000111](../../scripts/evaluate_benchmark_metrics.py#L111) | 111 | `""` | — |
+| [SRC-88B503CEB0-L000112](../../scripts/evaluate_benchmark_metrics.py#L112) | 112 | `""` | — |
+| [SRC-88B503CEB0-L000113](../../scripts/evaluate_benchmark_metrics.py#L113) | 113 | `"def summarize(data: dict[str, Any], selected_ids: set[str] \| None = None) -> dict[str, Any]:"` | — |
+| [SRC-88B503CEB0-L000114](../../scripts/evaluate_benchmark_metrics.py#L114) | 114 | `"    rows = ["` | — |
+| [SRC-88B503CEB0-L000115](../../scripts/evaluate_benchmark_metrics.py#L115) | 115 | `"        row for row in data[\"cases\"]"` | — |
+| [SRC-88B503CEB0-L000116](../../scripts/evaluate_benchmark_metrics.py#L116) | 116 | `"        if selected_ids is None or row[\"case_id\"] in selected_ids"` | — |
+| [SRC-88B503CEB0-L000117](../../scripts/evaluate_benchmark_metrics.py#L117) | 117 | `"    ]"` | — |
+| [SRC-88B503CEB0-L000118](../../scripts/evaluate_benchmark_metrics.py#L118) | 118 | `"    reviewed = [r for r in rows if isinstance(r.get(\"correct\"), bool)]"` | — |
+| [SRC-88B503CEB0-L000119](../../scripts/evaluate_benchmark_metrics.py#L119) | 119 | `"    gold = ["` | — |
+| [SRC-88B503CEB0-L000120](../../scripts/evaluate_benchmark_metrics.py#L120) | 120 | `"        r for r in rows"` | — |
+| [SRC-88B503CEB0-L000121](../../scripts/evaluate_benchmark_metrics.py#L121) | 121 | `"        if isinstance(r.get(\"gold_claims\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000122](../../scripts/evaluate_benchmark_metrics.py#L122) | 122 | `"        and isinstance(r.get(\"retrieved_gold_claims\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000123](../../scripts/evaluate_benchmark_metrics.py#L123) | 123 | `"    ]"` | — |
+| [SRC-88B503CEB0-L000124](../../scripts/evaluate_benchmark_metrics.py#L124) | 124 | `"    citation_rows = ["` | — |
+| [SRC-88B503CEB0-L000125](../../scripts/evaluate_benchmark_metrics.py#L125) | 125 | `"        r for r in rows"` | — |
+| [SRC-88B503CEB0-L000126](../../scripts/evaluate_benchmark_metrics.py#L126) | 126 | `"        if isinstance(r.get(\"citations_total\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000127](../../scripts/evaluate_benchmark_metrics.py#L127) | 127 | `"        and isinstance(r.get(\"citations_supported\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000128](../../scripts/evaluate_benchmark_metrics.py#L128) | 128 | `"    ]"` | — |
+| [SRC-88B503CEB0-L000129](../../scripts/evaluate_benchmark_metrics.py#L129) | 129 | `"    citation_required = [r for r in rows if r.get(\"citations_required\") is True]"` | — |
+| [SRC-88B503CEB0-L000130](../../scripts/evaluate_benchmark_metrics.py#L130) | 130 | `"    citation_coverage_known = ["` | — |
+| [SRC-88B503CEB0-L000131](../../scripts/evaluate_benchmark_metrics.py#L131) | 131 | `"        r for r in citation_required if isinstance(r.get(\"citations_total\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000132](../../scripts/evaluate_benchmark_metrics.py#L132) | 132 | `"    ]"` | — |
+| [SRC-88B503CEB0-L000133](../../scripts/evaluate_benchmark_metrics.py#L133) | 133 | `"    tool_rows = ["` | — |
+| [SRC-88B503CEB0-L000134](../../scripts/evaluate_benchmark_metrics.py#L134) | 134 | `"        r for r in rows"` | — |
+| [SRC-88B503CEB0-L000135](../../scripts/evaluate_benchmark_metrics.py#L135) | 135 | `"        if r.get(\"tool_required\") is True"` | — |
+| [SRC-88B503CEB0-L000136](../../scripts/evaluate_benchmark_metrics.py#L136) | 136 | `"        and isinstance(r.get(\"tool_attempted\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000137](../../scripts/evaluate_benchmark_metrics.py#L137) | 137 | `"        and isinstance(r.get(\"tool_succeeded\"), (int, float))"` | — |
+| [SRC-88B503CEB0-L000138](../../scripts/evaluate_benchmark_metrics.py#L138) | 138 | `"    ]"` | — |
+| [SRC-88B503CEB0-L000139](../../scripts/evaluate_benchmark_metrics.py#L139) | 139 | `"    latencies = [float(r[\"latency_ms\"]) for r in rows if isinstance(r.get(\"latency_ms\"), (int, float))]"` | — |
+| [SRC-88B503CEB0-L000140](../../scripts/evaluate_benchmark_metrics.py#L140) | 140 | `"    costs = [float(r[\"cost_usd\"]) for r in rows if isinstance(r.get(\"cost_usd\"), (int, float))]"` | — |
+| [SRC-88B503CEB0-L000141](../../scripts/evaluate_benchmark_metrics.py#L141) | 141 | `"    input_tokens = [r[\"input_tokens\"] for r in rows if isinstance(r.get(\"input_tokens\"), (int, float))]"` | — |
+| [SRC-88B503CEB0-L000142](../../scripts/evaluate_benchmark_metrics.py#L142) | 142 | `"    output_tokens = [r[\"output_tokens\"] for r in rows if isinstance(r.get(\"output_tokens\"), (int, float))]"` | — |
+| [SRC-88B503CEB0-L000143](../../scripts/evaluate_benchmark_metrics.py#L143) | 143 | `""` | — |
+| [SRC-88B503CEB0-L000144](../../scripts/evaluate_benchmark_metrics.py#L144) | 144 | `"    correct_count = sum(r[\"correct\"] is True for r in reviewed)"` | — |
+| [SRC-88B503CEB0-L000145](../../scripts/evaluate_benchmark_metrics.py#L145) | 145 | `"    gold_total = sum(r[\"gold_claims\"] for r in gold)"` | — |
+| [SRC-88B503CEB0-L000146](../../scripts/evaluate_benchmark_metrics.py#L146) | 146 | `"    retrieved_total = sum(r[\"retrieved_gold_claims\"] for r in gold)"` | — |
+| [SRC-88B503CEB0-L000147](../../scripts/evaluate_benchmark_metrics.py#L147) | 147 | `"    citation_total = sum(r[\"citations_total\"] for r in citation_rows)"` | — |
+| [SRC-88B503CEB0-L000148](../../scripts/evaluate_benchmark_metrics.py#L148) | 148 | `"    citation_supported = sum(r[\"citations_supported\"] for r in citation_rows)"` | — |
+| [SRC-88B503CEB0-L000149](../../scripts/evaluate_benchmark_metrics.py#L149) | 149 | `"    # Missing tool calls for a known required-tool case count as a failure only when"` | — |
+| [SRC-88B503CEB0-L000150](../../scripts/evaluate_benchmark_metrics.py#L150) | 150 | `"    # tool_attempted is explicitly 0; unknown attempts remain excluded."` | — |
+| [SRC-88B503CEB0-L000151](../../scripts/evaluate_benchmark_metrics.py#L151) | 151 | `"    tool_denominator = sum((r[\"tool_attempted\"] if r[\"tool_attempted\"] > 0 else 1) for r in tool_rows)"` | — |
+| [SRC-88B503CEB0-L000152](../../scripts/evaluate_benchmark_metrics.py#L152) | 152 | `"    tool_numerator = sum(r[\"tool_succeeded\"] for r in tool_rows)"` | — |
+| [SRC-88B503CEB0-L000153](../../scripts/evaluate_benchmark_metrics.py#L153) | 153 | `"    citation_coverage = ("` | — |
+| [SRC-88B503CEB0-L000154](../../scripts/evaluate_benchmark_metrics.py#L154) | 154 | `"        sum(r[\"citations_total\"] > 0 for r in citation_coverage_known) / len(citation_coverage_known)"` | — |
+| [SRC-88B503CEB0-L000155](../../scripts/evaluate_benchmark_metrics.py#L155) | 155 | `"        if citation_coverage_known else None"` | — |
+| [SRC-88B503CEB0-L000156](../../scripts/evaluate_benchmark_metrics.py#L156) | 156 | `"    )"` | — |
+| [SRC-88B503CEB0-L000157](../../scripts/evaluate_benchmark_metrics.py#L157) | 157 | `"    languages: dict[str, int] = {}"` | — |
+| [SRC-88B503CEB0-L000158](../../scripts/evaluate_benchmark_metrics.py#L158) | 158 | `"    for row in rows:"` | — |
+| [SRC-88B503CEB0-L000159](../../scripts/evaluate_benchmark_metrics.py#L159) | 159 | `"        languages[row[\"language\"]] = languages.get(row[\"language\"], 0) + 1"` | — |
+| [SRC-88B503CEB0-L000160](../../scripts/evaluate_benchmark_metrics.py#L160) | 160 | `""` | — |
+| [SRC-88B503CEB0-L000161](../../scripts/evaluate_benchmark_metrics.py#L161) | 161 | `"    return {"` | — |
+| [SRC-88B503CEB0-L000162](../../scripts/evaluate_benchmark_metrics.py#L162) | 162 | `"        \"run_id\": data[\"run_id\"],"` | — |
+| [SRC-88B503CEB0-L000163](../../scripts/evaluate_benchmark_metrics.py#L163) | 163 | `"        \"commit_sha\": data[\"commit_sha\"],"` | — |
+| [SRC-88B503CEB0-L000164](../../scripts/evaluate_benchmark_metrics.py#L164) | 164 | `"        \"benchmark_id\": data[\"benchmark_id\"],"` | — |
+| [SRC-88B503CEB0-L000165](../../scripts/evaluate_benchmark_metrics.py#L165) | 165 | `"        \"benchmark_version\": data[\"benchmark_version\"],"` | — |
+| [SRC-88B503CEB0-L000166](../../scripts/evaluate_benchmark_metrics.py#L166) | 166 | `"        \"case_count\": len(rows),"` | — |
+| [SRC-88B503CEB0-L000167](../../scripts/evaluate_benchmark_metrics.py#L167) | 167 | `"        \"language_counts\": languages,"` | — |
+| [SRC-88B503CEB0-L000168](../../scripts/evaluate_benchmark_metrics.py#L168) | 168 | `"        \"accuracy\": _ratio(correct_count, len(reviewed)),"` | — |
+| [SRC-88B503CEB0-L000169](../../scripts/evaluate_benchmark_metrics.py#L169) | 169 | `"        \"accuracy_reviewed\": len(reviewed),"` | — |
+| [SRC-88B503CEB0-L000170](../../scripts/evaluate_benchmark_metrics.py#L170) | 170 | `"        \"accuracy_correct\": correct_count,"` | — |
+| [SRC-88B503CEB0-L000171](../../scripts/evaluate_benchmark_metrics.py#L171) | 171 | `"        \"claim_recall\": _ratio(retrieved_total, gold_total),"` | — |
+| [SRC-88B503CEB0-L000172](../../scripts/evaluate_benchmark_metrics.py#L172) | 172 | `"        \"gold_claim_count\": gold_total,"` | — |
+| [SRC-88B503CEB0-L000173](../../scripts/evaluate_benchmark_metrics.py#L173) | 173 | `"        \"retrieved_gold_claim_count\": retrieved_total,"` | — |
+| [SRC-88B503CEB0-L000174](../../scripts/evaluate_benchmark_metrics.py#L174) | 174 | `"        \"citation_precision\": _ratio(citation_supported, citation_total),"` | — |
+| [SRC-88B503CEB0-L000175](../../scripts/evaluate_benchmark_metrics.py#L175) | 175 | `"        \"citations_supported\": citation_supported,"` | — |
+| [SRC-88B503CEB0-L000176](../../scripts/evaluate_benchmark_metrics.py#L176) | 176 | `"        \"citations_total\": citation_total,"` | — |
+| [SRC-88B503CEB0-L000177](../../scripts/evaluate_benchmark_metrics.py#L177) | 177 | `"        \"citation_coverage\": citation_coverage,"` | — |
+| [SRC-88B503CEB0-L000178](../../scripts/evaluate_benchmark_metrics.py#L178) | 178 | `"        \"citation_coverage_cases\": len(citation_coverage_known),"` | — |
+| [SRC-88B503CEB0-L000179](../../scripts/evaluate_benchmark_metrics.py#L179) | 179 | `"        \"tool_success_rate\": _ratio(tool_numerator, tool_denominator),"` | — |
+| [SRC-88B503CEB0-L000180](../../scripts/evaluate_benchmark_metrics.py#L180) | 180 | `"        \"tool_success_count\": tool_numerator,"` | — |
+| [SRC-88B503CEB0-L000181](../../scripts/evaluate_benchmark_metrics.py#L181) | 181 | `"        \"tool_attempt_denominator\": tool_denominator,"` | — |
+| [SRC-88B503CEB0-L000182](../../scripts/evaluate_benchmark_metrics.py#L182) | 182 | `"        \"tool_required_cases_scored\": len(tool_rows),"` | — |
+| [SRC-88B503CEB0-L000183](../../scripts/evaluate_benchmark_metrics.py#L183) | 183 | `"        \"latency_ms_median\": statistics.median(latencies) if latencies else None,"` | — |
+| [SRC-88B503CEB0-L000184](../../scripts/evaluate_benchmark_metrics.py#L184) | 184 | `"        \"latency_ms_p95\": percentile(latencies, 0.95),"` | — |
+| [SRC-88B503CEB0-L000185](../../scripts/evaluate_benchmark_metrics.py#L185) | 185 | `"        \"latency_observations\": len(latencies),"` | — |
+| [SRC-88B503CEB0-L000186](../../scripts/evaluate_benchmark_metrics.py#L186) | 186 | `"        \"cost_usd_total\": sum(costs) if costs else None,"` | — |
+| [SRC-88B503CEB0-L000187](../../scripts/evaluate_benchmark_metrics.py#L187) | 187 | `"        \"cost_usd_mean\": statistics.mean(costs) if costs else None,"` | — |
+| [SRC-88B503CEB0-L000188](../../scripts/evaluate_benchmark_metrics.py#L188) | 188 | `"        \"cost_observations\": len(costs),"` | — |
+| [SRC-88B503CEB0-L000189](../../scripts/evaluate_benchmark_metrics.py#L189) | 189 | `"        \"input_tokens_total\": sum(input_tokens) if input_tokens else None,"` | — |
+| [SRC-88B503CEB0-L000190](../../scripts/evaluate_benchmark_metrics.py#L190) | 190 | `"        \"output_tokens_total\": sum(output_tokens) if output_tokens else None,"` | — |
+| [SRC-88B503CEB0-L000191](../../scripts/evaluate_benchmark_metrics.py#L191) | 191 | `"        \"input_token_observations\": len(input_tokens),"` | — |
+| [SRC-88B503CEB0-L000192](../../scripts/evaluate_benchmark_metrics.py#L192) | 192 | `"        \"output_token_observations\": len(output_tokens),"` | — |
+| [SRC-88B503CEB0-L000193](../../scripts/evaluate_benchmark_metrics.py#L193) | 193 | `"    }"` | — |
+| [SRC-88B503CEB0-L000194](../../scripts/evaluate_benchmark_metrics.py#L194) | 194 | `""` | — |
+| [SRC-88B503CEB0-L000195](../../scripts/evaluate_benchmark_metrics.py#L195) | 195 | `""` | — |
+| [SRC-88B503CEB0-L000196](../../scripts/evaluate_benchmark_metrics.py#L196) | 196 | `"METRICS = ["` | — |
+| [SRC-88B503CEB0-L000197](../../scripts/evaluate_benchmark_metrics.py#L197) | 197 | `"    (\"accuracy\", \"Accuracy\", \"percentage\"),"` | — |
+| [SRC-88B503CEB0-L000198](../../scripts/evaluate_benchmark_metrics.py#L198) | 198 | `"    (\"claim_recall\", \"Gold-claim recall\", \"percentage\"),"` | — |
+| [SRC-88B503CEB0-L000199](../../scripts/evaluate_benchmark_metrics.py#L199) | 199 | `"    (\"citation_precision\", \"Citation support precision\", \"percentage\"),"` | — |
+| [SRC-88B503CEB0-L000200](../../scripts/evaluate_benchmark_metrics.py#L200) | 200 | `"    (\"citation_coverage\", \"Citation coverage on citation-required cases\", \"percentage\"),"` | — |
+| [SRC-88B503CEB0-L000201](../../scripts/evaluate_benchmark_metrics.py#L201) | 201 | `"    (\"tool_success_rate\", \"Required-tool success rate\", \"percentage\"),"` | — |
+| [SRC-88B503CEB0-L000202](../../scripts/evaluate_benchmark_metrics.py#L202) | 202 | `"    (\"latency_ms_median\", \"Median latency (ms)\", \"lower\"),"` | — |
+| [SRC-88B503CEB0-L000203](../../scripts/evaluate_benchmark_metrics.py#L203) | 203 | `"    (\"latency_ms_p95\", \"P95 latency (ms)\", \"lower\"),"` | — |
+| [SRC-88B503CEB0-L000204](../../scripts/evaluate_benchmark_metrics.py#L204) | 204 | `"    (\"cost_usd_mean\", \"Mean observed cost/request (USD)\", \"lower\"),"` | — |
+| [SRC-88B503CEB0-L000205](../../scripts/evaluate_benchmark_metrics.py#L205) | 205 | `"    (\"cost_usd_total\", \"Total observed cost (USD)\", \"lower\"),"` | — |
+| [SRC-88B503CEB0-L000206](../../scripts/evaluate_benchmark_metrics.py#L206) | 206 | `"]"` | — |
+| [SRC-88B503CEB0-L000207](../../scripts/evaluate_benchmark_metrics.py#L207) | 207 | `""` | — |
+| [SRC-88B503CEB0-L000208](../../scripts/evaluate_benchmark_metrics.py#L208) | 208 | `""` | — |
+| [SRC-88B503CEB0-L000209](../../scripts/evaluate_benchmark_metrics.py#L209) | 209 | `"def compare_runs(baseline: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:"` | — |
+| [SRC-88B503CEB0-L000210](../../scripts/evaluate_benchmark_metrics.py#L210) | 210 | `"    if baseline[\"benchmark_id\"] != candidate[\"benchmark_id\"]:"` | — |
+| [SRC-88B503CEB0-L000211](../../scripts/evaluate_benchmark_metrics.py#L211) | 211 | `"        raise ValueError(\"baseline and candidate benchmark_id must match\")"` | — |
+| [SRC-88B503CEB0-L000212](../../scripts/evaluate_benchmark_metrics.py#L212) | 212 | `"    if baseline[\"benchmark_version\"] != candidate[\"benchmark_version\"]:"` | — |
+| [SRC-88B503CEB0-L000213](../../scripts/evaluate_benchmark_metrics.py#L213) | 213 | `"        raise ValueError(\"baseline and candidate benchmark_version must match\")"` | — |
+| [SRC-88B503CEB0-L000214](../../scripts/evaluate_benchmark_metrics.py#L214) | 214 | `"    base_rows = {r[\"case_id\"]: r for r in baseline[\"cases\"]}"` | — |
+| [SRC-88B503CEB0-L000215](../../scripts/evaluate_benchmark_metrics.py#L215) | 215 | `"    cand_rows = {r[\"case_id\"]: r for r in candidate[\"cases\"]}"` | — |
+| [SRC-88B503CEB0-L000216](../../scripts/evaluate_benchmark_metrics.py#L216) | 216 | `"    paired = sorted(set(base_rows) & set(cand_rows))"` | — |
+| [SRC-88B503CEB0-L000217](../../scripts/evaluate_benchmark_metrics.py#L217) | 217 | `"    if not paired:"` | — |
+| [SRC-88B503CEB0-L000218](../../scripts/evaluate_benchmark_metrics.py#L218) | 218 | `"        raise ValueError(\"baseline and candidate have no paired case_id values\")"` | — |
+| [SRC-88B503CEB0-L000219](../../scripts/evaluate_benchmark_metrics.py#L219) | 219 | `"    base_summary = summarize(baseline, set(paired))"` | — |
+| [SRC-88B503CEB0-L000220](../../scripts/evaluate_benchmark_metrics.py#L220) | 220 | `"    cand_summary = summarize(candidate, set(paired))"` | — |
+| [SRC-88B503CEB0-L000221](../../scripts/evaluate_benchmark_metrics.py#L221) | 221 | `"    deltas = []"` | — |
+| [SRC-88B503CEB0-L000222](../../scripts/evaluate_benchmark_metrics.py#L222) | 222 | `"    for key, label, kind in METRICS:"` | — |
+| [SRC-88B503CEB0-L000223](../../scripts/evaluate_benchmark_metrics.py#L223) | 223 | `"        before = base_summary[key]"` | — |
+| [SRC-88B503CEB0-L000224](../../scripts/evaluate_benchmark_metrics.py#L224) | 224 | `"        after = cand_summary[key]"` | — |
+| [SRC-88B503CEB0-L000225](../../scripts/evaluate_benchmark_metrics.py#L225) | 225 | `"        delta = None if before is None or after is None else after - before"` | — |
+| [SRC-88B503CEB0-L000226](../../scripts/evaluate_benchmark_metrics.py#L226) | 226 | `"        if kind == \"lower\" and before not in (None, 0) and after is not None:"` | — |
+| [SRC-88B503CEB0-L000227](../../scripts/evaluate_benchmark_metrics.py#L227) | 227 | `"            change_pct = (after - before) / before"` | — |
+| [SRC-88B503CEB0-L000228](../../scripts/evaluate_benchmark_metrics.py#L228) | 228 | `"        else:"` | — |
+| [SRC-88B503CEB0-L000229](../../scripts/evaluate_benchmark_metrics.py#L229) | 229 | `"            change_pct = None"` | — |
+| [SRC-88B503CEB0-L000230](../../scripts/evaluate_benchmark_metrics.py#L230) | 230 | `"        deltas.append({"` | — |
+| [SRC-88B503CEB0-L000231](../../scripts/evaluate_benchmark_metrics.py#L231) | 231 | `"            \"metric\": key, \"label\": label, \"kind\": kind,"` | — |
+| [SRC-88B503CEB0-L000232](../../scripts/evaluate_benchmark_metrics.py#L232) | 232 | `"            \"baseline\": before, \"candidate\": after, \"delta\": delta,"` | — |
+| [SRC-88B503CEB0-L000233](../../scripts/evaluate_benchmark_metrics.py#L233) | 233 | `"            \"relative_change\": change_pct,"` | — |
+| [SRC-88B503CEB0-L000234](../../scripts/evaluate_benchmark_metrics.py#L234) | 234 | `"        })"` | — |
+| [SRC-88B503CEB0-L000235](../../scripts/evaluate_benchmark_metrics.py#L235) | 235 | `"    return {"` | — |
+| [SRC-88B503CEB0-L000236](../../scripts/evaluate_benchmark_metrics.py#L236) | 236 | `"        \"comparison_status\": \"COMPARABLE\","` | — |
+| [SRC-88B503CEB0-L000237](../../scripts/evaluate_benchmark_metrics.py#L237) | 237 | `"        \"benchmark_id\": baseline[\"benchmark_id\"],"` | — |
+| [SRC-88B503CEB0-L000238](../../scripts/evaluate_benchmark_metrics.py#L238) | 238 | `"        \"benchmark_version\": baseline[\"benchmark_version\"],"` | — |
+| [SRC-88B503CEB0-L000239](../../scripts/evaluate_benchmark_metrics.py#L239) | 239 | `"        \"baseline_run_id\": baseline[\"run_id\"],"` | — |
+| [SRC-88B503CEB0-L000240](../../scripts/evaluate_benchmark_metrics.py#L240) | 240 | `"        \"baseline_commit_sha\": baseline[\"commit_sha\"],"` | — |
+| [SRC-88B503CEB0-L000241](../../scripts/evaluate_benchmark_metrics.py#L241) | 241 | `"        \"candidate_run_id\": candidate[\"run_id\"],"` | — |
+| [SRC-88B503CEB0-L000242](../../scripts/evaluate_benchmark_metrics.py#L242) | 242 | `"        \"candidate_commit_sha\": candidate[\"commit_sha\"],"` | — |
+| [SRC-88B503CEB0-L000243](../../scripts/evaluate_benchmark_metrics.py#L243) | 243 | `"        \"paired_case_count\": len(paired),"` | — |
+| [SRC-88B503CEB0-L000244](../../scripts/evaluate_benchmark_metrics.py#L244) | 244 | `"        \"paired_case_ids\": paired,"` | — |
+| [SRC-88B503CEB0-L000245](../../scripts/evaluate_benchmark_metrics.py#L245) | 245 | `"        \"baseline_summary\": base_summary,"` | — |
+| [SRC-88B503CEB0-L000246](../../scripts/evaluate_benchmark_metrics.py#L246) | 246 | `"        \"candidate_summary\": cand_summary,"` | — |
+| [SRC-88B503CEB0-L000247](../../scripts/evaluate_benchmark_metrics.py#L247) | 247 | `"        \"deltas\": deltas,"` | — |
+| [SRC-88B503CEB0-L000248](../../scripts/evaluate_benchmark_metrics.py#L248) | 248 | `"        \"limitations\": ["` | — |
+| [SRC-88B503CEB0-L000249](../../scripts/evaluate_benchmark_metrics.py#L249) | 249 | `"            \"Answer correctness and citation support require independent reviewer annotations.\","` | — |
+| [SRC-88B503CEB0-L000250](../../scripts/evaluate_benchmark_metrics.py#L250) | 250 | `"            \"Claim recall is valid only when gold_claims and retrieved_gold_claims were annotated consistently.\","` | — |
+| [SRC-88B503CEB0-L000251](../../scripts/evaluate_benchmark_metrics.py#L251) | 251 | `"            \"Costs are observed only when provider/API usage exposes cost or a reviewed estimate is supplied.\","` | — |
+| [SRC-88B503CEB0-L000252](../../scripts/evaluate_benchmark_metrics.py#L252) | 252 | `"            \"A paired comparison is meaningful only when case prompts, grading rubric, and run conditions match.\","` | — |
+| [SRC-88B503CEB0-L000253](../../scripts/evaluate_benchmark_metrics.py#L253) | 253 | `"        ],"` | — |
+| [SRC-88B503CEB0-L000254](../../scripts/evaluate_benchmark_metrics.py#L254) | 254 | `"    }"` | — |
+| [SRC-88B503CEB0-L000255](../../scripts/evaluate_benchmark_metrics.py#L255) | 255 | `""` | — |
+| [SRC-88B503CEB0-L000256](../../scripts/evaluate_benchmark_metrics.py#L256) | 256 | `""` | — |
+| [SRC-88B503CEB0-L000257](../../scripts/evaluate_benchmark_metrics.py#L257) | 257 | `"def render_markdown(report: dict[str, Any]) -> str:"` | — |
+| [SRC-88B503CEB0-L000258](../../scripts/evaluate_benchmark_metrics.py#L258) | 258 | `"    lines = ["` | — |
+| [SRC-88B503CEB0-L000259](../../scripts/evaluate_benchmark_metrics.py#L259) | 259 | `"        \"# Omarai benchmark comparison\","` | — |
+| [SRC-88B503CEB0-L000260](../../scripts/evaluate_benchmark_metrics.py#L260) | 260 | `"        \"\","` | — |
+| [SRC-88B503CEB0-L000261](../../scripts/evaluate_benchmark_metrics.py#L261) | 261 | `"        f\"- Status: **{report['comparison_status']}**\","` | — |
+| [SRC-88B503CEB0-L000262](../../scripts/evaluate_benchmark_metrics.py#L262) | 262 | ``"        f\"- Benchmark: `{report['benchmark_id']}` version `{report['benchmark_version']}`\","`` | — |
+| [SRC-88B503CEB0-L000263](../../scripts/evaluate_benchmark_metrics.py#L263) | 263 | ``"        f\"- Baseline: `{report['baseline_run_id']}` @ `{report['baseline_commit_sha']}`\","`` | — |
+| [SRC-88B503CEB0-L000264](../../scripts/evaluate_benchmark_metrics.py#L264) | 264 | ``"        f\"- Candidate: `{report['candidate_run_id']}` @ `{report['candidate_commit_sha']}`\","`` | — |
+| [SRC-88B503CEB0-L000265](../../scripts/evaluate_benchmark_metrics.py#L265) | 265 | `"        f\"- Paired cases: **{report['paired_case_count']}**\","` | — |
+| [SRC-88B503CEB0-L000266](../../scripts/evaluate_benchmark_metrics.py#L266) | 266 | `"        \"\","` | — |
+| [SRC-88B503CEB0-L000267](../../scripts/evaluate_benchmark_metrics.py#L267) | 267 | `"        \"\| Metric \| Baseline \| Candidate \| Delta \|\","` | — |
+| [SRC-88B503CEB0-L000268](../../scripts/evaluate_benchmark_metrics.py#L268) | 268 | `"        \"\|---\|---:\|---:\|---:\|\","` | — |
+| [SRC-88B503CEB0-L000269](../../scripts/evaluate_benchmark_metrics.py#L269) | 269 | `"    ]"` | — |
+| [SRC-88B503CEB0-L000270](../../scripts/evaluate_benchmark_metrics.py#L270) | 270 | `"    for row in report[\"deltas\"]:"` | — |
+| [SRC-88B503CEB0-L000271](../../scripts/evaluate_benchmark_metrics.py#L271) | 271 | `"        key = row[\"metric\"]"` | — |
+| [SRC-88B503CEB0-L000272](../../scripts/evaluate_benchmark_metrics.py#L272) | 272 | `"        before = row[\"baseline\"]"` | — |
+| [SRC-88B503CEB0-L000273](../../scripts/evaluate_benchmark_metrics.py#L273) | 273 | `"        after = row[\"candidate\"]"` | — |
+| [SRC-88B503CEB0-L000274](../../scripts/evaluate_benchmark_metrics.py#L274) | 274 | `"        delta = row[\"delta\"]"` | — |
+| [SRC-88B503CEB0-L000275](../../scripts/evaluate_benchmark_metrics.py#L275) | 275 | `"        if row[\"kind\"] == \"percentage\":"` | — |
+| [SRC-88B503CEB0-L000276](../../scripts/evaluate_benchmark_metrics.py#L276) | 276 | `"            b, a, d = _percent(before), _percent(after), _number(None if delta is None else delta * 100, \" pp\")"` | — |
+| [SRC-88B503CEB0-L000277](../../scripts/evaluate_benchmark_metrics.py#L277) | 277 | `"        elif key.startswith(\"cost_\"):"` | — |
+| [SRC-88B503CEB0-L000278](../../scripts/evaluate_benchmark_metrics.py#L278) | 278 | `"            b, a, d = _number(before, \" USD\"), _number(after, \" USD\"), _number(delta, \" USD\")"` | — |
+| [SRC-88B503CEB0-L000279](../../scripts/evaluate_benchmark_metrics.py#L279) | 279 | `"        else:"` | — |
+| [SRC-88B503CEB0-L000280](../../scripts/evaluate_benchmark_metrics.py#L280) | 280 | `"            b, a, d = _number(before), _number(after), _number(delta)"` | — |
+| [SRC-88B503CEB0-L000281](../../scripts/evaluate_benchmark_metrics.py#L281) | 281 | `"        lines.append(f\"\| {row['label']} \| {b} \| {a} \| {d} \|\")"` | — |
+| [SRC-88B503CEB0-L000282](../../scripts/evaluate_benchmark_metrics.py#L282) | 282 | `"    lines.extend(["` | — |
+| [SRC-88B503CEB0-L000283](../../scripts/evaluate_benchmark_metrics.py#L283) | 283 | `"        \"\","` | — |
+| [SRC-88B503CEB0-L000284](../../scripts/evaluate_benchmark_metrics.py#L284) | 284 | `"        \"## Measurement coverage\","` | — |
+| [SRC-88B503CEB0-L000285](../../scripts/evaluate_benchmark_metrics.py#L285) | 285 | `"        \"\","` | — |
+| [SRC-88B503CEB0-L000286](../../scripts/evaluate_benchmark_metrics.py#L286) | 286 | `"        f\"- Correctness annotations: baseline {report['baseline_summary']['accuracy_reviewed']}; candidate {report['candidate_summary']['accuracy_reviewed']} (paired subset).\","` | — |
+| [SRC-88B503CEB0-L000287](../../scripts/evaluate_benchmark_metrics.py#L287) | 287 | `"        f\"- Gold claims: baseline {report['baseline_summary']['gold_claim_count']}; candidate {report['candidate_summary']['gold_claim_count']}.\","` | — |
+| [SRC-88B503CEB0-L000288](../../scripts/evaluate_benchmark_metrics.py#L288) | 288 | `"        f\"- Citation observations: baseline {report['baseline_summary']['citations_total']}; candidate {report['candidate_summary']['citations_total']}.\","` | — |
+| [SRC-88B503CEB0-L000289](../../scripts/evaluate_benchmark_metrics.py#L289) | 289 | `"        f\"- Latency observations: baseline {report['baseline_summary']['latency_observations']}; candidate {report['candidate_summary']['latency_observations']}.\","` | — |
+| [SRC-88B503CEB0-L000290](../../scripts/evaluate_benchmark_metrics.py#L290) | 290 | `"        f\"- Cost observations: baseline {report['baseline_summary']['cost_observations']}; candidate {report['candidate_summary']['cost_observations']}.\","` | — |
+| [SRC-88B503CEB0-L000291](../../scripts/evaluate_benchmark_metrics.py#L291) | 291 | `"        \"\","` | — |
+| [SRC-88B503CEB0-L000292](../../scripts/evaluate_benchmark_metrics.py#L292) | 292 | `"        \"## Limitations\","` | — |
+| [SRC-88B503CEB0-L000293](../../scripts/evaluate_benchmark_metrics.py#L293) | 293 | `"        \"\","` | — |
+| [SRC-88B503CEB0-L000294](../../scripts/evaluate_benchmark_metrics.py#L294) | 294 | `"    ])"` | — |
+| [SRC-88B503CEB0-L000295](../../scripts/evaluate_benchmark_metrics.py#L295) | 295 | `"    lines.extend(f\"- {item}\" for item in report[\"limitations\"])"` | — |
+| [SRC-88B503CEB0-L000296](../../scripts/evaluate_benchmark_metrics.py#L296) | 296 | `"    lines.append(\"\")"` | — |
+| [SRC-88B503CEB0-L000297](../../scripts/evaluate_benchmark_metrics.py#L297) | 297 | `"    return \"\\n\".join(lines)"` | — |
+| [SRC-88B503CEB0-L000298](../../scripts/evaluate_benchmark_metrics.py#L298) | 298 | `""` | — |
+| [SRC-88B503CEB0-L000299](../../scripts/evaluate_benchmark_metrics.py#L299) | 299 | `""` | — |
+| [SRC-88B503CEB0-L000300](../../scripts/evaluate_benchmark_metrics.py#L300) | 300 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
+| [SRC-88B503CEB0-L000301](../../scripts/evaluate_benchmark_metrics.py#L301) | 301 | `"    parser = argparse.ArgumentParser(description=__doc__)"` | — |
+| [SRC-88B503CEB0-L000302](../../scripts/evaluate_benchmark_metrics.py#L302) | 302 | `"    parser.add_argument(\"--baseline\", type=Path, required=True, help=\"Reviewed baseline run JSON\")"` | — |
+| [SRC-88B503CEB0-L000303](../../scripts/evaluate_benchmark_metrics.py#L303) | 303 | `"    parser.add_argument(\"--candidate\", type=Path, required=True, help=\"Reviewed candidate run JSON\")"` | — |
+| [SRC-88B503CEB0-L000304](../../scripts/evaluate_benchmark_metrics.py#L304) | 304 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Markdown report path\")"` | — |
+| [SRC-88B503CEB0-L000305](../../scripts/evaluate_benchmark_metrics.py#L305) | 305 | `"    parser.add_argument(\"--json-out\", type=Path, default=None, help=\"Machine-readable report path\")"` | — |
+| [SRC-88B503CEB0-L000306](../../scripts/evaluate_benchmark_metrics.py#L306) | 306 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-88B503CEB0-L000307](../../scripts/evaluate_benchmark_metrics.py#L307) | 307 | `"    try:"` | — |
+| [SRC-88B503CEB0-L000308](../../scripts/evaluate_benchmark_metrics.py#L308) | 308 | `"        baseline = load_run(args.baseline)"` | — |
+| [SRC-88B503CEB0-L000309](../../scripts/evaluate_benchmark_metrics.py#L309) | 309 | `"        candidate = load_run(args.candidate)"` | — |
+| [SRC-88B503CEB0-L000310](../../scripts/evaluate_benchmark_metrics.py#L310) | 310 | `"        report = compare_runs(baseline, candidate)"` | — |
+| [SRC-88B503CEB0-L000311](../../scripts/evaluate_benchmark_metrics.py#L311) | 311 | `"    except (OSError, json.JSONDecodeError, ValueError) as exc:"` | — |
+| [SRC-88B503CEB0-L000312](../../scripts/evaluate_benchmark_metrics.py#L312) | 312 | `"        print(f\"EVALUATION ERROR: {exc}\", file=sys.stderr)"` | — |
+| [SRC-88B503CEB0-L000313](../../scripts/evaluate_benchmark_metrics.py#L313) | 313 | `"        return 2"` | — |
+| [SRC-88B503CEB0-L000314](../../scripts/evaluate_benchmark_metrics.py#L314) | 314 | `"    markdown = render_markdown(report)"` | — |
+| [SRC-88B503CEB0-L000315](../../scripts/evaluate_benchmark_metrics.py#L315) | 315 | `"    if args.out:"` | — |
+| [SRC-88B503CEB0-L000316](../../scripts/evaluate_benchmark_metrics.py#L316) | 316 | `"        args.out.write_text(markdown, encoding=\"utf-8\")"` | — |
+| [SRC-88B503CEB0-L000317](../../scripts/evaluate_benchmark_metrics.py#L317) | 317 | `"        print(f\"Wrote {args.out}\")"` | — |
+| [SRC-88B503CEB0-L000318](../../scripts/evaluate_benchmark_metrics.py#L318) | 318 | `"    else:"` | — |
+| [SRC-88B503CEB0-L000319](../../scripts/evaluate_benchmark_metrics.py#L319) | 319 | `"        print(markdown)"` | — |
+| [SRC-88B503CEB0-L000320](../../scripts/evaluate_benchmark_metrics.py#L320) | 320 | `"    if args.json_out:"` | — |
+| [SRC-88B503CEB0-L000321](../../scripts/evaluate_benchmark_metrics.py#L321) | 321 | `"        args.json_out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-88B503CEB0-L000322](../../scripts/evaluate_benchmark_metrics.py#L322) | 322 | `"        print(f\"Wrote {args.json_out}\")"` | — |
+| [SRC-88B503CEB0-L000323](../../scripts/evaluate_benchmark_metrics.py#L323) | 323 | `"    return 0"` | — |
+| [SRC-88B503CEB0-L000324](../../scripts/evaluate_benchmark_metrics.py#L324) | 324 | `""` | — |
+| [SRC-88B503CEB0-L000325](../../scripts/evaluate_benchmark_metrics.py#L325) | 325 | `""` | — |
+| [SRC-88B503CEB0-L000326](../../scripts/evaluate_benchmark_metrics.py#L326) | 326 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-88B503CEB0-L000327](../../scripts/evaluate_benchmark_metrics.py#L327) | 327 | `"    raise SystemExit(main())"` | — |
+## ملفات أخرى
+
 ### FILE-A8360B1B03 — [scripts/hosted_smoke_test.py](../../scripts/hosted_smoke_test.py#L1)
 
 - النوع: **Python**
@@ -552,339 +888,3 @@
 | [SRC-A8360B1B03-L000126](../../scripts/hosted_smoke_test.py#L126) | 126 | `"                \"Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, \""` | — |
 | [SRC-A8360B1B03-L000127](../../scripts/hosted_smoke_test.py#L127) | 127 | `"                \"then rebuild and redeploy.\""` | — |
 | [SRC-A8360B1B03-L000128](../../scripts/hosted_smoke_test.py#L128) | 128 | `"            )"` | — |
-| [SRC-A8360B1B03-L000129](../../scripts/hosted_smoke_test.py#L129) | 129 | `"        checks[\"build_identity\"] = {"` | — |
-| [SRC-A8360B1B03-L000130](../../scripts/hosted_smoke_test.py#L130) | 130 | `"            \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000131](../../scripts/hosted_smoke_test.py#L131) | 131 | `"            \"expected_sha\": expected,"` | — |
-| [SRC-A8360B1B03-L000132](../../scripts/hosted_smoke_test.py#L132) | 132 | `"            \"reported_sha\": reported_sha.lower(),"` | — |
-| [SRC-A8360B1B03-L000133](../../scripts/hosted_smoke_test.py#L133) | 133 | `"        }"` | — |
-| [SRC-A8360B1B03-L000134](../../scripts/hosted_smoke_test.py#L134) | 134 | `"    else:"` | — |
-| [SRC-A8360B1B03-L000135](../../scripts/hosted_smoke_test.py#L135) | 135 | `"        checks[\"build_identity\"] = {"` | — |
-| [SRC-A8360B1B03-L000136](../../scripts/hosted_smoke_test.py#L136) | 136 | `"            \"status\": \"not_checked\","` | — |
-| [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
-| [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"        }"` | — |
-| [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `""` | — |
-| [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    status, _ = request_json("` | — |
-| [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"        f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
-| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"        timeout=min(timeout, 20),"` | — |
-| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    )"` | — |
-| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    if status != 401:"` | — |
-| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"        raise SmokeError(f\"Unauthenticated POST /api/agent should return 401, received {status}.\")"` | — |
-| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    checks[\"authentication\"] = \"passed\""` | — |
-| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `""` | — |
-| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
-| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    status, diagnostics = request_json("` | — |
-| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
-| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"        payload={\"test_model\": True, \"test_social\": False}, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    )"` | — |
-| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if status != 200 or not diagnostics:"` | — |
-| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
-| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
-| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    model = parts.get(\"language_model\", {}) if isinstance(parts, dict) else {}"` | — |
-| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    if not isinstance(web, dict) or web.get(\"status\") != \"passed\":"` | — |
-| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError(\"The real web-search connectivity test did not pass.\")"` | — |
-| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"    if not isinstance(model, dict) or model.get(\"status\") != \"passed\":"` | — |
-| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        raise SmokeError(\"The configured language model did not pass a real completion test.\")"` | — |
-| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"    checks[\"live_search\"] = {"` | — |
-| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        \"status\": \"passed\", \"result_count\": web.get(\"result_count\", 0),"` | — |
-| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        \"provider_counts\": web.get(\"provider_counts\", {}),"` | — |
-| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"    }"` | — |
-| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    checks[\"language_model\"] = {\"status\": \"passed\", \"response_received\": True}"` | — |
-| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `""` | — |
-| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"    status, answer = request_json("` | — |
-| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"        payload={"` | — |
-| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"            \"question\": \"اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.\","` | — |
-| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            \"history\": [], \"mode\": \"auto\","` | — |
-| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        },"` | — |
-| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"    )"` | — |
-| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
-| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
-| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
-| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
-| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
-| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
-| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
-| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
-| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
-| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
-| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
-| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
-| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    report = answer.get(\"search_report\")"` | — |
-| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    checks[\"agent_request\"] = {"` | — |
-| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
-| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `"        \"direct_pages_read\": report.get(\"pages_fetched\") if isinstance(report, dict) else None,"` | — |
-| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"        \"providers_reported\": report.get(\"providers_used\", []) if isinstance(report, dict) else [],"` | — |
-| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"        \"answer_received\": bool(str(answer.get(\"answer\", \"\")).strip()),"` | — |
-| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"    }"` | — |
-| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"    return {"` | — |
-| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"        \"result\": \"passed\", \"target_host\": urllib.parse.urlsplit(origin).hostname,"` | — |
-| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"        \"checks\": checks,"` | — |
-| [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"        \"note\": \"This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.\","` | — |
-| [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"    }"` | — |
-| [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `""` | — |
-| [SRC-A8360B1B03-L000201](../../scripts/hosted_smoke_test.py#L201) | 201 | `""` | — |
-| [SRC-A8360B1B03-L000202](../../scripts/hosted_smoke_test.py#L202) | 202 | `"def main() -> int:"` | — |
-| [SRC-A8360B1B03-L000203](../../scripts/hosted_smoke_test.py#L203) | 203 | `"    parser = argparse.ArgumentParser(description=\"Run live acceptance checks against hosted Omarai.\")"` | — |
-| [SRC-A8360B1B03-L000204](../../scripts/hosted_smoke_test.py#L204) | 204 | `"    parser.add_argument(\"--base-url\", default=os.getenv(\"OMARAI_BASE_URL\", \"\"))"` | — |
-| [SRC-A8360B1B03-L000205](../../scripts/hosted_smoke_test.py#L205) | 205 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
-| [SRC-A8360B1B03-L000206](../../scripts/hosted_smoke_test.py#L206) | 206 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000207](../../scripts/hosted_smoke_test.py#L207) | 207 | `"        \"--expected-sha\","` | — |
-| [SRC-A8360B1B03-L000208](../../scripts/hosted_smoke_test.py#L208) | 208 | `"        default=os.getenv(\"OMARAI_EXPECTED_BUILD_SHA\", \"\"),"` | — |
-| [SRC-A8360B1B03-L000209](../../scripts/hosted_smoke_test.py#L209) | 209 | `"        help=\"Require the deployed image to report this full 40-character source Git SHA.\","` | — |
-| [SRC-A8360B1B03-L000210](../../scripts/hosted_smoke_test.py#L210) | 210 | `"    )"` | — |
-| [SRC-A8360B1B03-L000211](../../scripts/hosted_smoke_test.py#L211) | 211 | `"    parser.add_argument(\"--allow-http\", action=\"store_true\","` | — |
-| [SRC-A8360B1B03-L000212](../../scripts/hosted_smoke_test.py#L212) | 212 | `"                        help=\"Allow HTTP only for localhost/127.0.0.1/::1 testing.\")"` | — |
-| [SRC-A8360B1B03-L000213](../../scripts/hosted_smoke_test.py#L213) | 213 | `"    args = parser.parse_args()"` | — |
-| [SRC-A8360B1B03-L000214](../../scripts/hosted_smoke_test.py#L214) | 214 | `"    try:"` | — |
-| [SRC-A8360B1B03-L000215](../../scripts/hosted_smoke_test.py#L215) | 215 | `"        result = run_smoke("` | — |
-| [SRC-A8360B1B03-L000216](../../scripts/hosted_smoke_test.py#L216) | 216 | `"            args.base_url,"` | — |
-| [SRC-A8360B1B03-L000217](../../scripts/hosted_smoke_test.py#L217) | 217 | `"            os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip(),"` | — |
-| [SRC-A8360B1B03-L000218](../../scripts/hosted_smoke_test.py#L218) | 218 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
-| [SRC-A8360B1B03-L000219](../../scripts/hosted_smoke_test.py#L219) | 219 | `"            allow_http=args.allow_http,"` | — |
-| [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"            expected_sha=args.expected_sha or None,"` | — |
-| [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"        )"` | — |
-| [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"    except SmokeError as exc:"` | — |
-| [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"        print(json.dumps({\"result\": \"failed\", \"error\": str(exc)}, ensure_ascii=False, indent=2))"` | — |
-| [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        return 1"` | — |
-| [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
-| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"    return 0"` | — |
-| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `""` | — |
-| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `""` | — |
-| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"    sys.exit(main())"` | — |
-## ملفات أخرى
-
-### FILE-4FFD5AFC54 — [scripts/run_answer_quality_benchmark.py](../../scripts/run_answer_quality_benchmark.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-4FFD5AFC54-L000001](../../scripts/run_answer_quality_benchmark.py#L1) | 1 | `"\"\"\"Offline / optional live runner for OMARAI-REDTEAM-001 answer-quality cases."` | — |
-| [SRC-4FFD5AFC54-L000002](../../scripts/run_answer_quality_benchmark.py#L2) | 2 | `""` | — |
-| [SRC-4FFD5AFC54-L000003](../../scripts/run_answer_quality_benchmark.py#L3) | 3 | `"Modes"` | — |
-| [SRC-4FFD5AFC54-L000004](../../scripts/run_answer_quality_benchmark.py#L4) | 4 | `"-----"` | — |
-| [SRC-4FFD5AFC54-L000005](../../scripts/run_answer_quality_benchmark.py#L5) | 5 | `"validate (default)"` | — |
-| [SRC-4FFD5AFC54-L000006](../../scripts/run_answer_quality_benchmark.py#L6) | 6 | `"    Load and structurally validate the corpus. No network."` | — |
-| [SRC-4FFD5AFC54-L000007](../../scripts/run_answer_quality_benchmark.py#L7) | 7 | `""` | — |
-| [SRC-4FFD5AFC54-L000008](../../scripts/run_answer_quality_benchmark.py#L8) | 8 | `"live (explicit opt-in)"` | — |
-| [SRC-4FFD5AFC54-L000009](../../scripts/run_answer_quality_benchmark.py#L9) | 9 | `"    POST selected cases to an existing Omarai HTTP API (/api/agent)."` | — |
-| [SRC-4FFD5AFC54-L000010](../../scripts/run_answer_quality_benchmark.py#L10) | 10 | `"    Does NOT inject JSON evidence fixtures into the server."` | — |
-| [SRC-4FFD5AFC54-L000011](../../scripts/run_answer_quality_benchmark.py#L11) | 11 | `"    Does NOT auto-grade PASS/FAIL for answer quality; records NOT_TESTED"` | — |
-| [SRC-4FFD5AFC54-L000012](../../scripts/run_answer_quality_benchmark.py#L12) | 12 | `"    unless a transport/auth error makes the run unusable."` | — |
-| [SRC-4FFD5AFC54-L000013](../../scripts/run_answer_quality_benchmark.py#L13) | 13 | `""` | — |
-| [SRC-4FFD5AFC54-L000014](../../scripts/run_answer_quality_benchmark.py#L14) | 14 | `"Standard library only. Secrets only via environment (never CLI flags for tokens)."` | — |
-| [SRC-4FFD5AFC54-L000015](../../scripts/run_answer_quality_benchmark.py#L15) | 15 | `""` | — |
-| [SRC-4FFD5AFC54-L000016](../../scripts/run_answer_quality_benchmark.py#L16) | 16 | `"Examples"` | — |
-| [SRC-4FFD5AFC54-L000017](../../scripts/run_answer_quality_benchmark.py#L17) | 17 | `"--------"` | — |
-| [SRC-4FFD5AFC54-L000018](../../scripts/run_answer_quality_benchmark.py#L18) | 18 | `"  python scripts/run_answer_quality_benchmark.py"` | — |
-| [SRC-4FFD5AFC54-L000019](../../scripts/run_answer_quality_benchmark.py#L19) | 19 | `"  python scripts/run_answer_quality_benchmark.py --mode validate --summary"` | — |
-| [SRC-4FFD5AFC54-L000020](../../scripts/run_answer_quality_benchmark.py#L20) | 20 | `"  python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 \\\\"` | — |
-| [SRC-4FFD5AFC54-L000021](../../scripts/run_answer_quality_benchmark.py#L21) | 21 | `"      --case-id AQ-001 --limit 1 --out /tmp/aq_results.json"` | — |
-| [SRC-4FFD5AFC54-L000022](../../scripts/run_answer_quality_benchmark.py#L22) | 22 | `"\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000023](../../scripts/run_answer_quality_benchmark.py#L23) | 23 | `"from __future__ import annotations"` | — |
-| [SRC-4FFD5AFC54-L000024](../../scripts/run_answer_quality_benchmark.py#L24) | 24 | `""` | — |
-| [SRC-4FFD5AFC54-L000025](../../scripts/run_answer_quality_benchmark.py#L25) | 25 | `"import argparse"` | — |
-| [SRC-4FFD5AFC54-L000026](../../scripts/run_answer_quality_benchmark.py#L26) | 26 | `"import ipaddress"` | — |
-| [SRC-4FFD5AFC54-L000027](../../scripts/run_answer_quality_benchmark.py#L27) | 27 | `"import json"` | — |
-| [SRC-4FFD5AFC54-L000028](../../scripts/run_answer_quality_benchmark.py#L28) | 28 | `"import os"` | — |
-| [SRC-4FFD5AFC54-L000029](../../scripts/run_answer_quality_benchmark.py#L29) | 29 | `"import sys"` | — |
-| [SRC-4FFD5AFC54-L000030](../../scripts/run_answer_quality_benchmark.py#L30) | 30 | `"import time"` | — |
-| [SRC-4FFD5AFC54-L000031](../../scripts/run_answer_quality_benchmark.py#L31) | 31 | `"import urllib.error"` | — |
-| [SRC-4FFD5AFC54-L000032](../../scripts/run_answer_quality_benchmark.py#L32) | 32 | `"import urllib.parse"` | — |
-| [SRC-4FFD5AFC54-L000033](../../scripts/run_answer_quality_benchmark.py#L33) | 33 | `"import urllib.request"` | — |
-| [SRC-4FFD5AFC54-L000034](../../scripts/run_answer_quality_benchmark.py#L34) | 34 | `"from datetime import UTC, datetime"` | — |
-| [SRC-4FFD5AFC54-L000035](../../scripts/run_answer_quality_benchmark.py#L35) | 35 | `"from pathlib import Path"` | — |
-| [SRC-4FFD5AFC54-L000036](../../scripts/run_answer_quality_benchmark.py#L36) | 36 | `""` | — |
-| [SRC-4FFD5AFC54-L000037](../../scripts/run_answer_quality_benchmark.py#L37) | 37 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-4FFD5AFC54-L000038](../../scripts/run_answer_quality_benchmark.py#L38) | 38 | `"DEFAULT_CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-4FFD5AFC54-L000039](../../scripts/run_answer_quality_benchmark.py#L39) | 39 | `"MAX_RESPONSE_BYTES = 2_000_000"` | — |
-| [SRC-4FFD5AFC54-L000040](../../scripts/run_answer_quality_benchmark.py#L40) | 40 | `""` | — |
-| [SRC-4FFD5AFC54-L000041](../../scripts/run_answer_quality_benchmark.py#L41) | 41 | `""` | — |
-| [SRC-4FFD5AFC54-L000042](../../scripts/run_answer_quality_benchmark.py#L42) | 42 | `"def validate_base_url(base_url: str, *, token_present: bool = False) -> str:"` | — |
-| [SRC-4FFD5AFC54-L000043](../../scripts/run_answer_quality_benchmark.py#L43) | 43 | `"    \"\"\"Validate and normalize an API origin before any request can carry a token.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000044](../../scripts/run_answer_quality_benchmark.py#L44) | 44 | `"    if not isinstance(base_url, str) or not base_url.strip():"` | — |
-| [SRC-4FFD5AFC54-L000045](../../scripts/run_answer_quality_benchmark.py#L45) | 45 | `"        raise ValueError(\"Base URL must be a non-empty HTTP(S) origin.\")"` | — |
-| [SRC-4FFD5AFC54-L000046](../../scripts/run_answer_quality_benchmark.py#L46) | 46 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000047](../../scripts/run_answer_quality_benchmark.py#L47) | 47 | `"        parsed = urllib.parse.urlsplit(base_url.strip())"` | — |
-| [SRC-4FFD5AFC54-L000048](../../scripts/run_answer_quality_benchmark.py#L48) | 48 | `"        scheme = parsed.scheme.lower()"` | — |
-| [SRC-4FFD5AFC54-L000049](../../scripts/run_answer_quality_benchmark.py#L49) | 49 | `"        host = (parsed.hostname or \"\").lower().rstrip(\".\")"` | — |
-| [SRC-4FFD5AFC54-L000050](../../scripts/run_answer_quality_benchmark.py#L50) | 50 | `"        port = parsed.port"` | — |
-| [SRC-4FFD5AFC54-L000051](../../scripts/run_answer_quality_benchmark.py#L51) | 51 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000052](../../scripts/run_answer_quality_benchmark.py#L52) | 52 | `"        raise ValueError(\"Base URL is malformed.\") from exc"` | — |
-| [SRC-4FFD5AFC54-L000053](../../scripts/run_answer_quality_benchmark.py#L53) | 53 | `""` | — |
-| [SRC-4FFD5AFC54-L000054](../../scripts/run_answer_quality_benchmark.py#L54) | 54 | `"    if scheme not in {\"http\", \"https\"} or not host:"` | — |
-| [SRC-4FFD5AFC54-L000055](../../scripts/run_answer_quality_benchmark.py#L55) | 55 | `"        raise ValueError(\"Base URL must use HTTP or HTTPS and include a hostname.\")"` | — |
-| [SRC-4FFD5AFC54-L000056](../../scripts/run_answer_quality_benchmark.py#L56) | 56 | `"    if parsed.username is not None or parsed.password is not None:"` | — |
-| [SRC-4FFD5AFC54-L000057](../../scripts/run_answer_quality_benchmark.py#L57) | 57 | `"        raise ValueError(\"Base URL must not include a username or password.\")"` | — |
-| [SRC-4FFD5AFC54-L000058](../../scripts/run_answer_quality_benchmark.py#L58) | 58 | `"    if parsed.path not in {\"\", \"/\"} or parsed.query or parsed.fragment:"` | — |
-| [SRC-4FFD5AFC54-L000059](../../scripts/run_answer_quality_benchmark.py#L59) | 59 | `"        raise ValueError(\"Base URL must contain only the origin, without path, query, or fragment.\")"` | — |
-| [SRC-4FFD5AFC54-L000060](../../scripts/run_answer_quality_benchmark.py#L60) | 60 | `""` | — |
-| [SRC-4FFD5AFC54-L000061](../../scripts/run_answer_quality_benchmark.py#L61) | 61 | `"    loopback = host == \"localhost\""` | — |
-| [SRC-4FFD5AFC54-L000062](../../scripts/run_answer_quality_benchmark.py#L62) | 62 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000063](../../scripts/run_answer_quality_benchmark.py#L63) | 63 | `"        loopback = ipaddress.ip_address(host).is_loopback"` | — |
-| [SRC-4FFD5AFC54-L000064](../../scripts/run_answer_quality_benchmark.py#L64) | 64 | `"    except ValueError:"` | — |
-| [SRC-4FFD5AFC54-L000065](../../scripts/run_answer_quality_benchmark.py#L65) | 65 | `"        pass"` | — |
-| [SRC-4FFD5AFC54-L000066](../../scripts/run_answer_quality_benchmark.py#L66) | 66 | `""` | — |
-| [SRC-4FFD5AFC54-L000067](../../scripts/run_answer_quality_benchmark.py#L67) | 67 | `"    if scheme == \"http\" and not loopback:"` | — |
-| [SRC-4FFD5AFC54-L000068](../../scripts/run_answer_quality_benchmark.py#L68) | 68 | `"        raise ValueError(\"Plain HTTP is allowed only for localhost or a loopback IP.\")"` | — |
-| [SRC-4FFD5AFC54-L000069](../../scripts/run_answer_quality_benchmark.py#L69) | 69 | `""` | — |
-| [SRC-4FFD5AFC54-L000070](../../scripts/run_answer_quality_benchmark.py#L70) | 70 | `"    if (scheme == \"https\" and port == 443) or (scheme == \"http\" and port == 80):"` | — |
-| [SRC-4FFD5AFC54-L000071](../../scripts/run_answer_quality_benchmark.py#L71) | 71 | `"        port = None"` | — |
-| [SRC-4FFD5AFC54-L000072](../../scripts/run_answer_quality_benchmark.py#L72) | 72 | `"    host_for_origin = f\"[{host}]\" if \":\" in host else host"` | — |
-| [SRC-4FFD5AFC54-L000073](../../scripts/run_answer_quality_benchmark.py#L73) | 73 | `"    origin = f\"{scheme}://{host_for_origin}\" + (f\":{port}\" if port is not None else \"\")"` | — |
-| [SRC-4FFD5AFC54-L000074](../../scripts/run_answer_quality_benchmark.py#L74) | 74 | `""` | — |
-| [SRC-4FFD5AFC54-L000075](../../scripts/run_answer_quality_benchmark.py#L75) | 75 | `"    if token_present and not loopback:"` | — |
-| [SRC-4FFD5AFC54-L000076](../../scripts/run_answer_quality_benchmark.py#L76) | 76 | `"        allowed = os.getenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000077](../../scripts/run_answer_quality_benchmark.py#L77) | 77 | `"        if not allowed:"` | — |
-| [SRC-4FFD5AFC54-L000078](../../scripts/run_answer_quality_benchmark.py#L78) | 78 | `"            raise ValueError("` | — |
-| [SRC-4FFD5AFC54-L000079](../../scripts/run_answer_quality_benchmark.py#L79) | 79 | `"                \"A bearer token requires OMARAI_BENCHMARK_ALLOWED_ORIGIN to match \""` | — |
-| [SRC-4FFD5AFC54-L000080](../../scripts/run_answer_quality_benchmark.py#L80) | 80 | `"                \"the exact HTTPS deployment origin.\""` | — |
-| [SRC-4FFD5AFC54-L000081](../../scripts/run_answer_quality_benchmark.py#L81) | 81 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000082](../../scripts/run_answer_quality_benchmark.py#L82) | 82 | `"        allowed_origin = validate_base_url(allowed, token_present=False)"` | — |
-| [SRC-4FFD5AFC54-L000083](../../scripts/run_answer_quality_benchmark.py#L83) | 83 | `"        if allowed_origin != origin:"` | — |
-| [SRC-4FFD5AFC54-L000084](../../scripts/run_answer_quality_benchmark.py#L84) | 84 | `"            raise ValueError("` | — |
-| [SRC-4FFD5AFC54-L000085](../../scripts/run_answer_quality_benchmark.py#L85) | 85 | `"                \"Refusing to send the bearer token: base URL does not match \""` | — |
-| [SRC-4FFD5AFC54-L000086](../../scripts/run_answer_quality_benchmark.py#L86) | 86 | `"                \"OMARAI_BENCHMARK_ALLOWED_ORIGIN.\""` | — |
-| [SRC-4FFD5AFC54-L000087](../../scripts/run_answer_quality_benchmark.py#L87) | 87 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000088](../../scripts/run_answer_quality_benchmark.py#L88) | 88 | `"    return origin"` | — |
-| [SRC-4FFD5AFC54-L000089](../../scripts/run_answer_quality_benchmark.py#L89) | 89 | `""` | — |
-| [SRC-4FFD5AFC54-L000090](../../scripts/run_answer_quality_benchmark.py#L90) | 90 | `""` | — |
-| [SRC-4FFD5AFC54-L000091](../../scripts/run_answer_quality_benchmark.py#L91) | 91 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
-| [SRC-4FFD5AFC54-L000092](../../scripts/run_answer_quality_benchmark.py#L92) | 92 | `"    \"\"\"Do not follow redirects; the bearer token must never move to another origin.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000093](../../scripts/run_answer_quality_benchmark.py#L93) | 93 | `""` | — |
-| [SRC-4FFD5AFC54-L000094](../../scripts/run_answer_quality_benchmark.py#L94) | 94 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
-| [SRC-4FFD5AFC54-L000095](../../scripts/run_answer_quality_benchmark.py#L95) | 95 | `"        return None"` | — |
-| [SRC-4FFD5AFC54-L000096](../../scripts/run_answer_quality_benchmark.py#L96) | 96 | `""` | — |
-| [SRC-4FFD5AFC54-L000097](../../scripts/run_answer_quality_benchmark.py#L97) | 97 | `""` | — |
-| [SRC-4FFD5AFC54-L000098](../../scripts/run_answer_quality_benchmark.py#L98) | 98 | `"_NO_REDIRECT_OPENER = urllib.request.build_opener(_NoRedirectHandler())"` | — |
-| [SRC-4FFD5AFC54-L000099](../../scripts/run_answer_quality_benchmark.py#L99) | 99 | `""` | — |
-| [SRC-4FFD5AFC54-L000100](../../scripts/run_answer_quality_benchmark.py#L100) | 100 | `"REQUIRED_FIELDS = {"` | — |
-| [SRC-4FFD5AFC54-L000101](../../scripts/run_answer_quality_benchmark.py#L101) | 101 | `"    \"case_id\","` | — |
-| [SRC-4FFD5AFC54-L000102](../../scripts/run_answer_quality_benchmark.py#L102) | 102 | `"    \"category\","` | — |
-| [SRC-4FFD5AFC54-L000103](../../scripts/run_answer_quality_benchmark.py#L103) | 103 | `"    \"language\","` | — |
-| [SRC-4FFD5AFC54-L000104](../../scripts/run_answer_quality_benchmark.py#L104) | 104 | `"    \"question\","` | — |
-| [SRC-4FFD5AFC54-L000105](../../scripts/run_answer_quality_benchmark.py#L105) | 105 | `"    \"expected_strategy\","` | — |
-| [SRC-4FFD5AFC54-L000106](../../scripts/run_answer_quality_benchmark.py#L106) | 106 | `"    \"required_behaviors\","` | — |
-| [SRC-4FFD5AFC54-L000107](../../scripts/run_answer_quality_benchmark.py#L107) | 107 | `"    \"forbidden_behaviors\","` | — |
-| [SRC-4FFD5AFC54-L000108](../../scripts/run_answer_quality_benchmark.py#L108) | 108 | `"    \"evidence_fixture\","` | — |
-| [SRC-4FFD5AFC54-L000109](../../scripts/run_answer_quality_benchmark.py#L109) | 109 | `"    \"failure_conditions\","` | — |
-| [SRC-4FFD5AFC54-L000110](../../scripts/run_answer_quality_benchmark.py#L110) | 110 | `"    \"evaluation_mode\","` | — |
-| [SRC-4FFD5AFC54-L000111](../../scripts/run_answer_quality_benchmark.py#L111) | 111 | `"}"` | — |
-| [SRC-4FFD5AFC54-L000112](../../scripts/run_answer_quality_benchmark.py#L112) | 112 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
-| [SRC-4FFD5AFC54-L000113](../../scripts/run_answer_quality_benchmark.py#L113) | 113 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
-| [SRC-4FFD5AFC54-L000114](../../scripts/run_answer_quality_benchmark.py#L114) | 114 | `""` | — |
-| [SRC-4FFD5AFC54-L000115](../../scripts/run_answer_quality_benchmark.py#L115) | 115 | `""` | — |
-| [SRC-4FFD5AFC54-L000116](../../scripts/run_answer_quality_benchmark.py#L116) | 116 | `"def _utc_now() -> str:"` | — |
-| [SRC-4FFD5AFC54-L000117](../../scripts/run_answer_quality_benchmark.py#L117) | 117 | `"    return datetime.now(UTC).isoformat(timespec=\"seconds\")"` | — |
-| [SRC-4FFD5AFC54-L000118](../../scripts/run_answer_quality_benchmark.py#L118) | 118 | `""` | — |
-| [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `""` | — |
-| [SRC-4FFD5AFC54-L000120](../../scripts/run_answer_quality_benchmark.py#L120) | 120 | `"def load_corpus(path: Path) -> dict:"` | — |
-| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    if not path.is_file():"` | — |
-| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
-| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
-| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
-| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    if data.get(\"parts\"):"` | — |
-| [SRC-4FFD5AFC54-L000127](../../scripts/run_answer_quality_benchmark.py#L127) | 127 | `"        raise ValueError(\"Incomplete shard index is not accepted; use merged cases[] corpus\")"` | — |
-| [SRC-4FFD5AFC54-L000128](../../scripts/run_answer_quality_benchmark.py#L128) | 128 | `"    return data"` | — |
-| [SRC-4FFD5AFC54-L000129](../../scripts/run_answer_quality_benchmark.py#L129) | 129 | `""` | — |
-| [SRC-4FFD5AFC54-L000130](../../scripts/run_answer_quality_benchmark.py#L130) | 130 | `""` | — |
-| [SRC-4FFD5AFC54-L000131](../../scripts/run_answer_quality_benchmark.py#L131) | 131 | `"def validate_corpus(data: dict) -> list[str]:"` | — |
-| [SRC-4FFD5AFC54-L000132](../../scripts/run_answer_quality_benchmark.py#L132) | 132 | `"    \"\"\"Return a list of human-readable problems (empty => OK).\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000133](../../scripts/run_answer_quality_benchmark.py#L133) | 133 | `"    problems: list[str] = []"` | — |
-| [SRC-4FFD5AFC54-L000134](../../scripts/run_answer_quality_benchmark.py#L134) | 134 | `"    cases = data.get(\"cases\") or []"` | — |
-| [SRC-4FFD5AFC54-L000135](../../scripts/run_answer_quality_benchmark.py#L135) | 135 | `"    if data.get(\"case_count\") != len(cases):"` | — |
-| [SRC-4FFD5AFC54-L000136](../../scripts/run_answer_quality_benchmark.py#L136) | 136 | `"        problems.append("` | — |
-| [SRC-4FFD5AFC54-L000137](../../scripts/run_answer_quality_benchmark.py#L137) | 137 | `"            f\"case_count metadata {data.get('case_count')!r} != len(cases) {len(cases)}\""` | — |
-| [SRC-4FFD5AFC54-L000138](../../scripts/run_answer_quality_benchmark.py#L138) | 138 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000139](../../scripts/run_answer_quality_benchmark.py#L139) | 139 | `"    if len(cases) < 40:"` | — |
-| [SRC-4FFD5AFC54-L000140](../../scripts/run_answer_quality_benchmark.py#L140) | 140 | `"        problems.append(f\"expected at least 40 cases, found {len(cases)}\")"` | — |
-| [SRC-4FFD5AFC54-L000141](../../scripts/run_answer_quality_benchmark.py#L141) | 141 | `"    ids: list[str] = []"` | — |
-| [SRC-4FFD5AFC54-L000142](../../scripts/run_answer_quality_benchmark.py#L142) | 142 | `"    for i, case in enumerate(cases):"` | — |
-| [SRC-4FFD5AFC54-L000143](../../scripts/run_answer_quality_benchmark.py#L143) | 143 | `"        if not isinstance(case, dict):"` | — |
-| [SRC-4FFD5AFC54-L000144](../../scripts/run_answer_quality_benchmark.py#L144) | 144 | `"            problems.append(f\"cases[{i}] is not an object\")"` | — |
-| [SRC-4FFD5AFC54-L000145](../../scripts/run_answer_quality_benchmark.py#L145) | 145 | `"            continue"` | — |
-| [SRC-4FFD5AFC54-L000146](../../scripts/run_answer_quality_benchmark.py#L146) | 146 | `"        missing = REQUIRED_FIELDS - set(case)"` | — |
-| [SRC-4FFD5AFC54-L000147](../../scripts/run_answer_quality_benchmark.py#L147) | 147 | `"        if missing:"` | — |
-| [SRC-4FFD5AFC54-L000148](../../scripts/run_answer_quality_benchmark.py#L148) | 148 | `"            problems.append(f\"{case.get('case_id', i)}: missing {sorted(missing)}\")"` | — |
-| [SRC-4FFD5AFC54-L000149](../../scripts/run_answer_quality_benchmark.py#L149) | 149 | `"        cid = case.get(\"case_id\")"` | — |
-| [SRC-4FFD5AFC54-L000150](../../scripts/run_answer_quality_benchmark.py#L150) | 150 | `"        if isinstance(cid, str):"` | — |
-| [SRC-4FFD5AFC54-L000151](../../scripts/run_answer_quality_benchmark.py#L151) | 151 | `"            ids.append(cid)"` | — |
-| [SRC-4FFD5AFC54-L000152](../../scripts/run_answer_quality_benchmark.py#L152) | 152 | `"        if case.get(\"expected_strategy\") not in ALLOWED_STRATEGIES:"` | — |
-| [SRC-4FFD5AFC54-L000153](../../scripts/run_answer_quality_benchmark.py#L153) | 153 | `"            problems.append(f\"{cid}: bad strategy {case.get('expected_strategy')!r}\")"` | — |
-| [SRC-4FFD5AFC54-L000154](../../scripts/run_answer_quality_benchmark.py#L154) | 154 | `"        if case.get(\"evaluation_mode\") not in ALLOWED_EVAL_MODES:"` | — |
-| [SRC-4FFD5AFC54-L000155](../../scripts/run_answer_quality_benchmark.py#L155) | 155 | `"            problems.append(f\"{cid}: bad evaluation_mode {case.get('evaluation_mode')!r}\")"` | — |
-| [SRC-4FFD5AFC54-L000156](../../scripts/run_answer_quality_benchmark.py#L156) | 156 | `"        q = case.get(\"question\")"` | — |
-| [SRC-4FFD5AFC54-L000157](../../scripts/run_answer_quality_benchmark.py#L157) | 157 | `"        if not isinstance(q, str) or len(q.strip()) < 2:"` | — |
-| [SRC-4FFD5AFC54-L000158](../../scripts/run_answer_quality_benchmark.py#L158) | 158 | `"            problems.append(f\"{cid}: empty question\")"` | — |
-| [SRC-4FFD5AFC54-L000159](../../scripts/run_answer_quality_benchmark.py#L159) | 159 | `"    if len(ids) != len(set(ids)):"` | — |
-| [SRC-4FFD5AFC54-L000160](../../scripts/run_answer_quality_benchmark.py#L160) | 160 | `"        problems.append(\"duplicate case_id values\")"` | — |
-| [SRC-4FFD5AFC54-L000161](../../scripts/run_answer_quality_benchmark.py#L161) | 161 | `"    return problems"` | — |
-| [SRC-4FFD5AFC54-L000162](../../scripts/run_answer_quality_benchmark.py#L162) | 162 | `""` | — |
-| [SRC-4FFD5AFC54-L000163](../../scripts/run_answer_quality_benchmark.py#L163) | 163 | `""` | — |
-| [SRC-4FFD5AFC54-L000164](../../scripts/run_answer_quality_benchmark.py#L164) | 164 | `"def redact_secrets(text: str) -> str:"` | — |
-| [SRC-4FFD5AFC54-L000165](../../scripts/run_answer_quality_benchmark.py#L165) | 165 | `"    \"\"\"Best-effort redaction of common secret patterns from stored outputs.\"\"\""` | — |
-| [SRC-4FFD5AFC54-L000166](../../scripts/run_answer_quality_benchmark.py#L166) | 166 | `"    if not text:"` | — |
-| [SRC-4FFD5AFC54-L000167](../../scripts/run_answer_quality_benchmark.py#L167) | 167 | `"        return text"` | — |
-| [SRC-4FFD5AFC54-L000168](../../scripts/run_answer_quality_benchmark.py#L168) | 168 | `"    out = text"` | — |
-| [SRC-4FFD5AFC54-L000169](../../scripts/run_answer_quality_benchmark.py#L169) | 169 | `"    for key in ("` | — |
-| [SRC-4FFD5AFC54-L000170](../../scripts/run_answer_quality_benchmark.py#L170) | 170 | `"        \"OPENROUTER_API_KEY\","` | — |
-| [SRC-4FFD5AFC54-L000171](../../scripts/run_answer_quality_benchmark.py#L171) | 171 | `"        \"OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-4FFD5AFC54-L000172](../../scripts/run_answer_quality_benchmark.py#L172) | 172 | `"        \"OMARAI_LLM_API_KEY\","` | — |
-| [SRC-4FFD5AFC54-L000173](../../scripts/run_answer_quality_benchmark.py#L173) | 173 | `"        \"Authorization\","` | — |
-| [SRC-4FFD5AFC54-L000174](../../scripts/run_answer_quality_benchmark.py#L174) | 174 | `"        \"Bearer \","` | — |
-| [SRC-4FFD5AFC54-L000175](../../scripts/run_answer_quality_benchmark.py#L175) | 175 | `"    ):"` | — |
-| [SRC-4FFD5AFC54-L000176](../../scripts/run_answer_quality_benchmark.py#L176) | 176 | `"        out = out.replace(key, f\"[REDACTED:{key.strip()}]\")"` | — |
-| [SRC-4FFD5AFC54-L000177](../../scripts/run_answer_quality_benchmark.py#L177) | 177 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000178](../../scripts/run_answer_quality_benchmark.py#L178) | 178 | `"    if token and token in out:"` | — |
-| [SRC-4FFD5AFC54-L000179](../../scripts/run_answer_quality_benchmark.py#L179) | 179 | `"        out = out.replace(token, \"[REDACTED:OMARAI_ACCESS_TOKEN]\")"` | — |
-| [SRC-4FFD5AFC54-L000180](../../scripts/run_answer_quality_benchmark.py#L180) | 180 | `"    for env_name in (\"OPENROUTER_API_KEY\", \"OMARAI_LLM_API_KEY\"):"` | — |
-| [SRC-4FFD5AFC54-L000181](../../scripts/run_answer_quality_benchmark.py#L181) | 181 | `"        val = os.getenv(env_name, \"\").strip()"` | — |
-| [SRC-4FFD5AFC54-L000182](../../scripts/run_answer_quality_benchmark.py#L182) | 182 | `"        if val and val in out:"` | — |
-| [SRC-4FFD5AFC54-L000183](../../scripts/run_answer_quality_benchmark.py#L183) | 183 | `"            out = out.replace(val, f\"[REDACTED:{env_name}]\")"` | — |
-| [SRC-4FFD5AFC54-L000184](../../scripts/run_answer_quality_benchmark.py#L184) | 184 | `"    return out"` | — |
-| [SRC-4FFD5AFC54-L000185](../../scripts/run_answer_quality_benchmark.py#L185) | 185 | `""` | — |
-| [SRC-4FFD5AFC54-L000186](../../scripts/run_answer_quality_benchmark.py#L186) | 186 | `""` | — |
-| [SRC-4FFD5AFC54-L000187](../../scripts/run_answer_quality_benchmark.py#L187) | 187 | `"def post_agent("` | — |
-| [SRC-4FFD5AFC54-L000188](../../scripts/run_answer_quality_benchmark.py#L188) | 188 | `"    base_url: str,"` | — |
-| [SRC-4FFD5AFC54-L000189](../../scripts/run_answer_quality_benchmark.py#L189) | 189 | `"    question: str,"` | — |
-| [SRC-4FFD5AFC54-L000190](../../scripts/run_answer_quality_benchmark.py#L190) | 190 | `"    timeout: float,"` | — |
-| [SRC-4FFD5AFC54-L000191](../../scripts/run_answer_quality_benchmark.py#L191) | 191 | `"    token: str \| None,"` | — |
-| [SRC-4FFD5AFC54-L000192](../../scripts/run_answer_quality_benchmark.py#L192) | 192 | `") -> tuple[int, dict \| str]:"` | — |
-| [SRC-4FFD5AFC54-L000193](../../scripts/run_answer_quality_benchmark.py#L193) | 193 | `"    origin = validate_base_url(base_url, token_present=bool(token))"` | — |
-| [SRC-4FFD5AFC54-L000194](../../scripts/run_answer_quality_benchmark.py#L194) | 194 | `"    url = origin + \"/api/agent\""` | — |
-| [SRC-4FFD5AFC54-L000195](../../scripts/run_answer_quality_benchmark.py#L195) | 195 | `"    body = json.dumps({\"question\": question, \"history\": []}, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"    headers = {\"Content-Type\": \"application/json\", \"Content-Length\": str(len(body))}"` | — |
-| [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"    if token:"` | — |
-| [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
-| [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"    req = urllib.request.Request(url, data=body, headers=headers, method=\"POST\")"` | — |
-| [SRC-4FFD5AFC54-L000200](../../scripts/run_answer_quality_benchmark.py#L200) | 200 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000201](../../scripts/run_answer_quality_benchmark.py#L201) | 201 | `"        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:"` | — |
-| [SRC-4FFD5AFC54-L000202](../../scripts/run_answer_quality_benchmark.py#L202) | 202 | `"            raw_bytes = resp.read(MAX_RESPONSE_BYTES + 1)"` | — |
-| [SRC-4FFD5AFC54-L000203](../../scripts/run_answer_quality_benchmark.py#L203) | 203 | `"            if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
-| [SRC-4FFD5AFC54-L000204](../../scripts/run_answer_quality_benchmark.py#L204) | 204 | `"                return 0, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
-| [SRC-4FFD5AFC54-L000205](../../scripts/run_answer_quality_benchmark.py#L205) | 205 | `"            raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-4FFD5AFC54-L000206](../../scripts/run_answer_quality_benchmark.py#L206) | 206 | `"            status = getattr(resp, \"status\", 200)"` | — |
-| [SRC-4FFD5AFC54-L000207](../../scripts/run_answer_quality_benchmark.py#L207) | 207 | `"            try:"` | — |
-| [SRC-4FFD5AFC54-L000208](../../scripts/run_answer_quality_benchmark.py#L208) | 208 | `"                return status, json.loads(raw)"` | — |
-| [SRC-4FFD5AFC54-L000209](../../scripts/run_answer_quality_benchmark.py#L209) | 209 | `"            except json.JSONDecodeError:"` | — |
-| [SRC-4FFD5AFC54-L000210](../../scripts/run_answer_quality_benchmark.py#L210) | 210 | `"                return status, raw"` | — |
-| [SRC-4FFD5AFC54-L000211](../../scripts/run_answer_quality_benchmark.py#L211) | 211 | `"    except urllib.error.HTTPError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000212](../../scripts/run_answer_quality_benchmark.py#L212) | 212 | `"        raw_bytes = exc.read(MAX_RESPONSE_BYTES + 1)"` | — |
-| [SRC-4FFD5AFC54-L000213](../../scripts/run_answer_quality_benchmark.py#L213) | 213 | `"        if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
-| [SRC-4FFD5AFC54-L000214](../../scripts/run_answer_quality_benchmark.py#L214) | 214 | `"            return exc.code, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
-| [SRC-4FFD5AFC54-L000215](../../scripts/run_answer_quality_benchmark.py#L215) | 215 | `"        raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-4FFD5AFC54-L000216](../../scripts/run_answer_quality_benchmark.py#L216) | 216 | `"        try:"` | — |
-| [SRC-4FFD5AFC54-L000217](../../scripts/run_answer_quality_benchmark.py#L217) | 217 | `"            return exc.code, json.loads(raw)"` | — |
-| [SRC-4FFD5AFC54-L000218](../../scripts/run_answer_quality_benchmark.py#L218) | 218 | `"        except json.JSONDecodeError:"` | — |
-| [SRC-4FFD5AFC54-L000219](../../scripts/run_answer_quality_benchmark.py#L219) | 219 | `"            return exc.code, raw"` | — |
-| [SRC-4FFD5AFC54-L000220](../../scripts/run_answer_quality_benchmark.py#L220) | 220 | `"    except ValueError as exc:"` | — |
-| [SRC-4FFD5AFC54-L000221](../../scripts/run_answer_quality_benchmark.py#L221) | 221 | `"        return 0, {\"error\": \"UnsafeBaseURL\", \"detail\": str(exc)}"` | — |
-| [SRC-4FFD5AFC54-L000222](../../scripts/run_answer_quality_benchmark.py#L222) | 222 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
-| [SRC-4FFD5AFC54-L000223](../../scripts/run_answer_quality_benchmark.py#L223) | 223 | `"        return 0, {\"error\": type(exc).__name__, \"detail\": str(exc)}"` | — |
-| [SRC-4FFD5AFC54-L000224](../../scripts/run_answer_quality_benchmark.py#L224) | 224 | `""` | — |
-| [SRC-4FFD5AFC54-L000225](../../scripts/run_answer_quality_benchmark.py#L225) | 225 | `""` | — |
