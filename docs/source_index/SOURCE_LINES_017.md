@@ -821,7 +821,7 @@
 | [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
 | [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
 | [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
-| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | ``"لا يعدّل هذا المعيار ملفات الإنتاج (`agents/`، `api/`، `web/`)."`` | — |
+| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | `"لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر."` | — |
 | [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
 | [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
 | [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
@@ -829,35 +829,35 @@
 | [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
 | [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
 | [SRC-792A9A235D-L000019](../ANSWER_QUALITY_BENCHMARK_AR.md#L19) | 19 | ``"\| `tests/test_answer_quality_corpus.py` \| تحقق آلي حتمي من البنية (بدون شبكة) \|"`` | — |
-| [SRC-792A9A235D-L000020](../ANSWER_QUALITY_BENCHMARK_AR.md#L20) | 20 | ``"\| `scripts/run_answer_quality_benchmark.py` \| تشغيل validate / live اختياري (stdlib) \|"`` | — |
-| [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
-| [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | `""` | — |
-| [SRC-792A9A235D-L000023](../ANSWER_QUALITY_BENCHMARK_AR.md#L23) | 23 | ``"## الاستراتيجيات المسموحة في الحقل `expected_strategy`"`` | — |
-| [SRC-792A9A235D-L000024](../ANSWER_QUALITY_BENCHMARK_AR.md#L24) | 24 | `""` | — |
-| [SRC-792A9A235D-L000025](../ANSWER_QUALITY_BENCHMARK_AR.md#L25) | 25 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
-| [SRC-792A9A235D-L000026](../ANSWER_QUALITY_BENCHMARK_AR.md#L26) | 26 | `""` | — |
-| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `"\| القيمة \| المعنى العملي \|"` | — |
-| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"\|--------\|----------------\|"` | — |
-| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
-| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
-| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
-| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
-| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | `""` | — |
-| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
-| [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | `""` | — |
-| [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `"\| الوضع \| متى يُستخدم \|"` | — |
-| [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | `"\|--------\|-------------\|"` | — |
-| [SRC-792A9A235D-L000038](../ANSWER_QUALITY_BENCHMARK_AR.md#L38) | 38 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
-| [SRC-792A9A235D-L000039](../ANSWER_QUALITY_BENCHMARK_AR.md#L39) | 39 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
-| [SRC-792A9A235D-L000040](../ANSWER_QUALITY_BENCHMARK_AR.md#L40) | 40 | ``"\| `human_judgment` \| حكم بشري على الاكتمال/اللغة/جودة عدم اليقين \|"`` | — |
-| [SRC-792A9A235D-L000041](../ANSWER_QUALITY_BENCHMARK_AR.md#L41) | 41 | `""` | — |
-| [SRC-792A9A235D-L000042](../ANSWER_QUALITY_BENCHMARK_AR.md#L42) | 42 | `"## بروتوكول تسجيل النتيجة"` | — |
-| [SRC-792A9A235D-L000043](../ANSWER_QUALITY_BENCHMARK_AR.md#L43) | 43 | `""` | — |
-| [SRC-792A9A235D-L000044](../ANSWER_QUALITY_BENCHMARK_AR.md#L44) | 44 | ``"لكل `case_id` سجّل واحدًا فقط:"`` | — |
-| [SRC-792A9A235D-L000045](../ANSWER_QUALITY_BENCHMARK_AR.md#L45) | 45 | `""` | — |
-| [SRC-792A9A235D-L000046](../ANSWER_QUALITY_BENCHMARK_AR.md#L46) | 46 | `"- **PASS** — تحققت السلوكيات المطلوبة ولم يظهر أي شرط فشل"` | — |
-| [SRC-792A9A235D-L000047](../ANSWER_QUALITY_BENCHMARK_AR.md#L47) | 47 | `"- **FAIL** — ظهر شرط فشل واحد على الأقل، أو غاب سلوك مطلوب جوهري"` | — |
-| [SRC-792A9A235D-L000048](../ANSWER_QUALITY_BENCHMARK_AR.md#L48) | 48 | `"- **NOT_TESTED** — لم يُشغَّل / لم يُراجع / بيئة غير كافية"` | — |
-| [SRC-792A9A235D-L000049](../ANSWER_QUALITY_BENCHMARK_AR.md#L49) | 49 | `""` | — |
-| [SRC-792A9A235D-L000050](../ANSWER_QUALITY_BENCHMARK_AR.md#L50) | 50 | `"### أبعاد المراجعة"` | — |
-| [SRC-792A9A235D-L000051](../ANSWER_QUALITY_BENCHMARK_AR.md#L51) | 51 | `""` | — |
+| [SRC-792A9A235D-L000020](../ANSWER_QUALITY_BENCHMARK_AR.md#L20) | 20 | ``"\| `scripts/run_answer_quality_benchmark.py` \| تحقق corpus أو جمع تشغيل حي اختياري؛ يضيف الزمن والنتائج المعلنة فقط \|"`` | — |
+| [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `scripts/compare_answer_quality_runs.py` \| مقارنة تشغيلين متطابقين ومراجعات بشرية قبل/بعد \|"`` | — |
+| [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | ``"\| `scripts/score_answer_quality_reviews.py` \| حساب مقاييس صريحة من المراجعات البشرية \|"`` | — |
+| [SRC-792A9A235D-L000023](../ANSWER_QUALITY_BENCHMARK_AR.md#L23) | 23 | ``"\| `tests/fixtures/answer_quality_reviews_template.json` \| قالب مراجعة غير مسجل، وكل حالة فيه NOT_TESTED \|"`` | — |
+| [SRC-792A9A235D-L000024](../ANSWER_QUALITY_BENCHMARK_AR.md#L24) | 24 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
+| [SRC-792A9A235D-L000025](../ANSWER_QUALITY_BENCHMARK_AR.md#L25) | 25 | `""` | — |
+| [SRC-792A9A235D-L000026](../ANSWER_QUALITY_BENCHMARK_AR.md#L26) | 26 | ``"## الاستراتيجيات المسموحة في الحقل `expected_strategy`"`` | — |
+| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `""` | — |
+| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
+| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | `""` | — |
+| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | `"\| القيمة \| المعنى العملي \|"` | — |
+| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | `"\|--------\|----------------\|"` | — |
+| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
+| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
+| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
+| [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
+| [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `""` | — |
+| [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
+| [SRC-792A9A235D-L000038](../ANSWER_QUALITY_BENCHMARK_AR.md#L38) | 38 | `""` | — |
+| [SRC-792A9A235D-L000039](../ANSWER_QUALITY_BENCHMARK_AR.md#L39) | 39 | `"\| الوضع \| متى يُستخدم \|"` | — |
+| [SRC-792A9A235D-L000040](../ANSWER_QUALITY_BENCHMARK_AR.md#L40) | 40 | `"\|--------\|-------------\|"` | — |
+| [SRC-792A9A235D-L000041](../ANSWER_QUALITY_BENCHMARK_AR.md#L41) | 41 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
+| [SRC-792A9A235D-L000042](../ANSWER_QUALITY_BENCHMARK_AR.md#L42) | 42 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
+| [SRC-792A9A235D-L000043](../ANSWER_QUALITY_BENCHMARK_AR.md#L43) | 43 | ``"\| `human_judgment` \| حكم بشري على الاكتمال/اللغة/جودة عدم اليقين \|"`` | — |
+| [SRC-792A9A235D-L000044](../ANSWER_QUALITY_BENCHMARK_AR.md#L44) | 44 | `""` | — |
+| [SRC-792A9A235D-L000045](../ANSWER_QUALITY_BENCHMARK_AR.md#L45) | 45 | `"## بروتوكول تسجيل النتيجة"` | — |
+| [SRC-792A9A235D-L000046](../ANSWER_QUALITY_BENCHMARK_AR.md#L46) | 46 | `""` | — |
+| [SRC-792A9A235D-L000047](../ANSWER_QUALITY_BENCHMARK_AR.md#L47) | 47 | ``"لكل `case_id` سجّل واحدًا فقط:"`` | — |
+| [SRC-792A9A235D-L000048](../ANSWER_QUALITY_BENCHMARK_AR.md#L48) | 48 | `""` | — |
+| [SRC-792A9A235D-L000049](../ANSWER_QUALITY_BENCHMARK_AR.md#L49) | 49 | `"- **PASS** — تحققت السلوكيات المطلوبة ولم يظهر أي شرط فشل"` | — |
+| [SRC-792A9A235D-L000050](../ANSWER_QUALITY_BENCHMARK_AR.md#L50) | 50 | `"- **FAIL** — ظهر شرط فشل واحد على الأقل، أو غاب سلوك مطلوب جوهري"` | — |
+| [SRC-792A9A235D-L000051](../ANSWER_QUALITY_BENCHMARK_AR.md#L51) | 51 | `"- **NOT_TESTED** — لم يُشغَّل / لم يُراجع / بيئة غير كافية"` | — |
