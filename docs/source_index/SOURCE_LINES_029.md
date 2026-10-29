@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000315 إلى SRC-4FFD5AFC54-L000470
+- النطاق: SRC-70795F4B61-L000316 إلى SRC-4FFD5AFC54-L000471
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-70795F4B61-L000315](../../scripts/compare_answer_quality_runs.py#L315) | 315 | `"                \"PARTIAL_OR_PROVIDER_REPORTED_ONLY\""` | — |
 | [SRC-70795F4B61-L000316](../../scripts/compare_answer_quality_runs.py#L316) | 316 | `"                if cost_before is not None and cost_after is not None"` | — |
 | [SRC-70795F4B61-L000317](../../scripts/compare_answer_quality_runs.py#L317) | 317 | `"                else \"NOT_MEASURED\""` | — |
 | [SRC-70795F4B61-L000318](../../scripts/compare_answer_quality_runs.py#L318) | 318 | `"            ),"` | — |
@@ -834,3 +833,4 @@
 | [SRC-4FFD5AFC54-L000468](../../scripts/run_answer_quality_benchmark.py#L468) | 468 | `"        }"` | — |
 | [SRC-4FFD5AFC54-L000469](../../scripts/run_answer_quality_benchmark.py#L469) | 469 | `"        results.append(record)"` | — |
 | [SRC-4FFD5AFC54-L000470](../../scripts/run_answer_quality_benchmark.py#L470) | 470 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
+| [SRC-4FFD5AFC54-L000471](../../scripts/run_answer_quality_benchmark.py#L471) | 471 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |

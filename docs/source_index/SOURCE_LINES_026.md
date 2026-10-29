@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000302 إلى SRC-0F910493E8-L000526
+- النطاق: SRC-65551FB29F-L000303 إلى SRC-0F910493E8-L000527
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-65551FB29F-L000302](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L302) | 302 | `"\| تكلفة المهمة \| قياس/تقدير موثق وحدود استدعاءات \| القول إن الخدمة مجانية \|"` | — |
 | [SRC-65551FB29F-L000303](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L303) | 303 | `"\| تغير النموذج \| مقارنة على eval set بنفس شروط القياس \| رد واحد يبدو أفضل \|"` | — |
 | [SRC-65551FB29F-L000304](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L304) | 304 | `"\| توافق API \| contract tests وإصدارات معروفة \| مثال JSON واحد \|"` | — |
 | [SRC-65551FB29F-L000305](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L305) | 305 | `"\| ترحيل البيانات \| ترحيل اختباري من إصدار سابق والتحقق من سلامة البيانات \| بدء التشغيل بنجاح على مخزن فارغ \|"` | — |
@@ -825,3 +824,4 @@
 | [SRC-0F910493E8-L000524](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L524) | 524 | `"- ظهور دليل أن المهارات وسير العمل لا يلبّيان حاجة متكررة."` | — |
 | [SRC-0F910493E8-L000525](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L525) | 525 | `"- تغيّر واضح في نموذج المنتج أو المستخدمين."` | — |
 | [SRC-0F910493E8-L000526](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L526) | 526 | `"- إضافة صلاحيات أو بيانات أو آثار خارجية أعلى خطورة."` | — |
+| [SRC-0F910493E8-L000527](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L527) | 527 | `"- اكتشاف تناقض مع الدستور التأسيسي أو مع متطلب أمني."` | — |

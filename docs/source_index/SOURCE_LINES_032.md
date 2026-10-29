@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001128 إلى SRC-6A7519AC10-L000141
+- النطاق: SRC-90FAA34ADE-L001129 إلى SRC-6A7519AC10-L000142
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L001128](../../tests/fixtures/answer_quality_cases.json#L1128) | 1128 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001129](../../tests/fixtures/answer_quality_cases.json#L1129) | 1129 | `"        \"يعلن أن البحث لم ينتج أدلة قابلة للاستخدام\","` | — |
 | [SRC-90FAA34ADE-L001130](../../tests/fixtures/answer_quality_cases.json#L1130) | 1130 | `"        \"لا يخترع وجود البرنامج أو إعلانًا باسمه\","` | — |
 | [SRC-90FAA34ADE-L001131](../../tests/fixtures/answer_quality_cases.json#L1131) | 1131 | `"        \"يعرض سؤالًا لتحديد الجهة أو وسيلة متابعة إذا كان ذلك مفيدًا\""` | — |
@@ -852,3 +851,4 @@
 | [SRC-6A7519AC10-L000139](../../tests/test_answer_quality_comparison.py#L139) | 139 | `"        mod.compare_runs(baseline, changed_question)"` | — |
 | [SRC-6A7519AC10-L000140](../../tests/test_answer_quality_comparison.py#L140) | 140 | `""` | — |
 | [SRC-6A7519AC10-L000141](../../tests/test_answer_quality_comparison.py#L141) | 141 | `""` | — |
+| [SRC-6A7519AC10-L000142](../../tests/test_answer_quality_comparison.py#L142) | 142 | `"def test_run_validation_rejects_duplicate_ids_and_invalid_latency():"` | — |

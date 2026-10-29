@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000830 إلى SRC-F725E90B2A-L001629
+- النطاق: SRC-F725E90B2A-L000831 إلى SRC-F725E90B2A-L001630
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"                \"choices\": [{"` | — |
 | [SRC-F725E90B2A-L000831](../../tests/test_web_agent.py#L831) | 831 | `"                    \"message\": {\"content\": \"نص مبتور\"},"` | — |
 | [SRC-F725E90B2A-L000832](../../tests/test_web_agent.py#L832) | 832 | `"                    \"finish_reason\": \"length\","` | — |
 | [SRC-F725E90B2A-L000833](../../tests/test_web_agent.py#L833) | 833 | `"                }]"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L001627](../../tests/test_web_agent.py#L1627) | 1627 | `"    observed = {}"` | — |
 | [SRC-F725E90B2A-L001628](../../tests/test_web_agent.py#L1628) | 1628 | `"    sources = []"` | — |
 | [SRC-F725E90B2A-L001629](../../tests/test_web_agent.py#L1629) | 1629 | `"    for domain in (\"example.com\", \"example.net\"):"` | — |
+| [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        sources.append({"` | — |

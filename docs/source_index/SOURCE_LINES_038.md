@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000142 إلى SRC-1A176AD4F0-L000036
+- النطاق: SRC-829A979985-L000143 إلى SRC-1A176AD4F0-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-829A979985-L000142](../../tests/test_generation_acceptance_matrix.py#L142) | 142 | `"            model=\"primary/model\","` | — |
 | [SRC-829A979985-L000143](../../tests/test_generation_acceptance_matrix.py#L143) | 143 | `"        )"` | — |
 | [SRC-829A979985-L000144](../../tests/test_generation_acceptance_matrix.py#L144) | 144 | `""` | — |
 | [SRC-829A979985-L000145](../../tests/test_generation_acceptance_matrix.py#L145) | 145 | `"    assert calls == [\"primary/model\"]"` | — |
@@ -834,3 +833,4 @@
 | [SRC-1A176AD4F0-L000034](../../tests/test_hosted_smoke.py#L34) | 34 | `"    def do_POST(self) -> None:"` | — |
 | [SRC-1A176AD4F0-L000035](../../tests/test_hosted_smoke.py#L35) | 35 | `"        if self.headers.get(\"Authorization\") != f\"Bearer {TOKEN}\":"` | — |
 | [SRC-1A176AD4F0-L000036](../../tests/test_hosted_smoke.py#L36) | 36 | `"            self.respond(401, {\"error\": \"unauthorized\"})"` | — |
+| [SRC-1A176AD4F0-L000037](../../tests/test_hosted_smoke.py#L37) | 37 | `"            return"` | — |

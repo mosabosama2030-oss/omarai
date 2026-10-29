@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000115 إلى SRC-70795F4B61-L000314
+- النطاق: SRC-69F3587825-L000116 إلى SRC-70795F4B61-L000315
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"        \".sh\","` | — |
 | [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `"        \".example\","` | — |
 | [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"    }"` | — |
 | [SRC-69F3587825-L000118](../search_code.py#L118) | 118 | `")"` | — |
@@ -879,3 +878,4 @@
 | [SRC-70795F4B61-L000312](../../scripts/compare_answer_quality_runs.py#L312) | 312 | `"            \"candidate\": cost_after,"` | — |
 | [SRC-70795F4B61-L000313](../../scripts/compare_answer_quality_runs.py#L313) | 313 | `"            \"delta\": cost_delta,"` | — |
 | [SRC-70795F4B61-L000314](../../scripts/compare_answer_quality_runs.py#L314) | 314 | `"            \"status\": ("` | — |
+| [SRC-70795F4B61-L000315](../../scripts/compare_answer_quality_runs.py#L315) | 315 | `"                \"PARTIAL_OR_PROVIDER_REPORTED_ONLY\""` | — |

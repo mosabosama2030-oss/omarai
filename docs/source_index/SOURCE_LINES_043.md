@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000030 إلى SRC-F725E90B2A-L000829
+- النطاق: SRC-F725E90B2A-L000031 إلى SRC-F725E90B2A-L000830
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000030](../../tests/test_web_agent.py#L30) | 30 | `"        \"source_class\": \"general\","` | — |
 | [SRC-F725E90B2A-L000031](../../tests/test_web_agent.py#L31) | 31 | `"        \"platform\": \"web\","` | — |
 | [SRC-F725E90B2A-L000032](../../tests/test_web_agent.py#L32) | 32 | `"    }"` | — |
 | [SRC-F725E90B2A-L000033](../../tests/test_web_agent.py#L33) | 33 | `""` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L000827](../../tests/test_web_agent.py#L827) | 827 | `""` | — |
 | [SRC-F725E90B2A-L000828](../../tests/test_web_agent.py#L828) | 828 | `"        def read(self, limit):"` | — |
 | [SRC-F725E90B2A-L000829](../../tests/test_web_agent.py#L829) | 829 | `"            return json.dumps({"` | — |
+| [SRC-F725E90B2A-L000830](../../tests/test_web_agent.py#L830) | 830 | `"                \"choices\": [{"` | — |

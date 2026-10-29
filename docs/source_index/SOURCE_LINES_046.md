@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002430 إلى SRC-F725E90B2A-L003229
+- النطاق: SRC-F725E90B2A-L002431 إلى SRC-F725E90B2A-L003230
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002430](../../tests/test_web_agent.py#L2430) | 2430 | `"            error=\"connector completed but returned no parseable results\","` | — |
 | [SRC-F725E90B2A-L002431](../../tests/test_web_agent.py#L2431) | 2431 | `"        )"` | — |
 | [SRC-F725E90B2A-L002432](../../tests/test_web_agent.py#L2432) | 2432 | `"        raise RuntimeError(\"no usable search matches\")"` | — |
 | [SRC-F725E90B2A-L002433](../../tests/test_web_agent.py#L2433) | 2433 | `""` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L003227](../../tests/test_web_agent.py#L3227) | 3227 | `"            \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L003228](../../tests/test_web_agent.py#L3228) | 3228 | `"            \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L003229](../../tests/test_web_agent.py#L3229) | 3229 | `"            \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L003230](../../tests/test_web_agent.py#L3230) | 3230 | `"            \"planning_method\": \"test\","` | — |

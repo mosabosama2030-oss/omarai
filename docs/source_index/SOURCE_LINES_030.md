@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000471 إلى SRC-90FAA34ADE-L000327
+- النطاق: SRC-4FFD5AFC54-L000472 إلى SRC-90FAA34ADE-L000328
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4FFD5AFC54-L000471](../../scripts/run_answer_quality_benchmark.py#L471) | 471 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
 | [SRC-4FFD5AFC54-L000472](../../scripts/run_answer_quality_benchmark.py#L472) | 472 | `"        if delay > 0:"` | — |
 | [SRC-4FFD5AFC54-L000473](../../scripts/run_answer_quality_benchmark.py#L473) | 473 | `"            time.sleep(delay)"` | — |
 | [SRC-4FFD5AFC54-L000474](../../scripts/run_answer_quality_benchmark.py#L474) | 474 | `""` | — |
@@ -843,3 +842,4 @@
 | [SRC-90FAA34ADE-L000325](../../tests/fixtures/answer_quality_cases.json#L325) | 325 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000326](../../tests/fixtures/answer_quality_cases.json#L326) | 326 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000327](../../tests/fixtures/answer_quality_cases.json#L327) | 327 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000328](../../tests/fixtures/answer_quality_cases.json#L328) | 328 | `"    {"` | — |

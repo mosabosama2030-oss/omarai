@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001630 إلى SRC-F725E90B2A-L002429
+- النطاق: SRC-F725E90B2A-L001631 إلى SRC-F725E90B2A-L002430
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001630](../../tests/test_web_agent.py#L1630) | 1630 | `"        sources.append({"` | — |
 | [SRC-F725E90B2A-L001631](../../tests/test_web_agent.py#L1631) | 1631 | `"            \"title\": \"موقع مصر الرقمية الرسمي والخدمات الحكومية\","` | — |
 | [SRC-F725E90B2A-L001632](../../tests/test_web_agent.py#L1632) | 1632 | `"            \"url\": f\"https://{domain}/digital-egypt\","` | — |
 | [SRC-F725E90B2A-L001633](../../tests/test_web_agent.py#L1633) | 1633 | `"            \"snippet\": \"معلومات عن موقع مصر الرقمية والخدمات الحكومية.\","` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002427](../../tests/test_web_agent.py#L2427) | 2427 | `"    def completed_empty_search(query):"` | — |
 | [SRC-F725E90B2A-L002428](../../tests/test_web_agent.py#L2428) | 2428 | `"        agent._record_provider_diagnostic("` | — |
 | [SRC-F725E90B2A-L002429](../../tests/test_web_agent.py#L2429) | 2429 | `"            \"bing_rss\", query, \"no_results\", result_count=0,"` | — |
+| [SRC-F725E90B2A-L002430](../../tests/test_web_agent.py#L2430) | 2430 | `"            error=\"connector completed but returned no parseable results\","` | — |

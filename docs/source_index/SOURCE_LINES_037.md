@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000181 إلى SRC-829A979985-L000141
+- النطاق: SRC-6BCB799CEC-L000182 إلى SRC-829A979985-L000142
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6BCB799CEC-L000181](../../tests/test_evidence_provenance.py#L181) | 181 | `""` | — |
 | [SRC-6BCB799CEC-L000182](../../tests/test_evidence_provenance.py#L182) | 182 | `"    class FakeResponse:"` | — |
 | [SRC-6BCB799CEC-L000183](../../tests/test_evidence_provenance.py#L183) | 183 | `"        status_code = 200"` | — |
 | [SRC-6BCB799CEC-L000184](../../tests/test_evidence_provenance.py#L184) | 184 | `"        encoding = \"utf-8\""` | — |
@@ -843,3 +842,4 @@
 | [SRC-829A979985-L000139](../../tests/test_generation_acceptance_matrix.py#L139) | 139 | `"    with pytest.raises(RequestBudgetExceeded):"` | — |
 | [SRC-829A979985-L000140](../../tests/test_generation_acceptance_matrix.py#L140) | 140 | `"        agent._request_completion("` | — |
 | [SRC-829A979985-L000141](../../tests/test_generation_acceptance_matrix.py#L141) | 141 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-829A979985-L000142](../../tests/test_generation_acceptance_matrix.py#L142) | 142 | `"            model=\"primary/model\","` | — |
