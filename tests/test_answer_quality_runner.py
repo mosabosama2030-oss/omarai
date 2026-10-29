@@ -215,7 +215,6 @@ def test_live_transport_error_still_not_pass(monkeypatch, tmp_path):
         return 0, {"error": "URLError", "detail": "connection refused"}
 
     monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "b" * 40)
-    monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "b" * 40)
     monkeypatch.setattr(mod, "post_agent", fake_post)
     out = tmp_path / "results.json"
     rc = mod.main(
@@ -357,65 +356,6 @@ def test_live_refuses_unknown_health_build_sha_before_posting(monkeypatch, capsy
 def test_get_verified_build_sha_requires_full_api_health_identity(monkeypatch):
     mod = _load_runner()
     import json
-
-    class FakeResponse:
-        status = 200
-
-        def __enter__(self):
-            return self
-
-        def __exit__(self, exc_type, exc, traceback):
-            return False
-
-        def read(self, limit):
-            return json.dumps({"ok": True, "build": {"sha": "C" * 40}}).encode("utf-8")
-
-    monkeypatch.setattr(mod._NO_REDIRECT_OPENER, "open", lambda request, timeout: FakeResponse())
-    assert mod.get_verified_build_sha("http://127.0.0.1:8765", 1.0) == "c" * 40
-
-
-def test_live_refuses_build_sha_mismatch_before_posting(monkeypatch, capsys):
-    mod = _load_runner()
-    calls = []
-
-    def fake_post(base_url, question, timeout, token):
-        calls.append(question)
-        return 200, {"answer": "must not run"}
-
-    monkeypatch.setattr(mod, "get_verified_build_sha", lambda base_url, timeout, token=None: "a" * 40)
-    monkeypatch.setattr(mod, "post_agent", fake_post)
-    rc = mod.run_live(
-        CORPUS, "http://127.0.0.1:8765", "AQ-001", 1, 1.0, 0.0, None,
-        build_sha="b" * 40,
-    )
-    assert rc == 2
-    assert calls == []
-    assert "Build SHA mismatch" in capsys.readouterr().err
-
-
-def test_live_refuses_unknown_health_build_sha_before_posting(monkeypatch, capsys):
-    mod = _load_runner()
-    calls = []
-
-    def fake_post(base_url, question, timeout, token):
-        calls.append(question)
-        return 200, {"answer": "must not run"}
-
-    def unknown_sha(base_url, timeout, token=None):
-        raise ValueError("/api/health build.sha is missing or not a full 40-character SHA")
-
-    monkeypatch.setattr(mod, "get_verified_build_sha", unknown_sha)
-    monkeypatch.setattr(mod, "post_agent", fake_post)
-    rc = mod.run_live(
-        CORPUS, "http://127.0.0.1:8765", "AQ-001", 1, 1.0, 0.0, None,
-    )
-    assert rc == 2
-    assert calls == []
-    assert "Unverified deployed build" in capsys.readouterr().err
-
-
-def test_get_verified_build_sha_requires_full_api_health_identity(monkeypatch):
-    mod = _load_runner()
 
     class FakeResponse:
         status = 200
