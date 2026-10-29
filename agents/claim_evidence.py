@@ -26,7 +26,7 @@ def _evidence_basis(source: dict[str, Any]) -> str:
 
 
 _POPULATION_CLAIM = re.compile(
-    r"(?:population|inhabitants|number of people|عدد\s+(?:ال)?سكان|(?:ال)?سكان|"
+    r"(?:population|inhabitants|number of people|how many people|people live in|عدد\s+(?:ال)?سكان|(?:ال)?سكان|"
     r"نسمة|القاهره\s+الكبرى|محافظه\s+القاهره|الكثافه\s+السكانيه)",
     re.IGNORECASE,
 )
