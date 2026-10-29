@@ -269,3 +269,39 @@ def test_response_metrics_separates_tool_status_from_http_success():
     assert successful_search["source_count"] == 1
     assert successful_search["provider_reported_model_cost_usd"] == 0.0008
     assert successful_search["provider_reported_model_cost_status"] == "COMPLETE_FOR_RETURNED_MODEL_CALLS"
+
+
+def test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation(tmp_path):
+    mod = _load_runner()
+    ledger_path = tmp_path / "cost-ledger.json"
+    ledger_path.write_text(
+        json.dumps({
+            "schema_version": "1.0",
+            "currency": "USD",
+            "scope": "complete_request",
+            "source": "provider usage export reviewed by operator",
+            "costs": [{"case_id": "AQ-001", "cost_usd": 0.0042}],
+        }),
+        encoding="utf-8",
+    )
+    costs, source = mod._load_request_cost_ledger(ledger_path, {"AQ-001", "AQ-002"})
+    assert costs == {"AQ-001": 0.0042}
+    assert source == "provider usage export reviewed by operator"
+
+
+@pytest.mark.parametrize(
+    "ledger, allowed_ids, message",
+    [
+        ({"currency": "EUR", "scope": "complete_request", "source": "invoice", "costs": []}, {"AQ-001"}, "currency=USD"),
+        ({"currency": "USD", "scope": "model_only", "source": "invoice", "costs": []}, {"AQ-001"}, "scope=complete_request"),
+        ({"currency": "USD", "scope": "complete_request", "source": "", "costs": []}, {"AQ-001"}, "non-empty source"),
+        ({"currency": "USD", "scope": "complete_request", "source": "invoice", "costs": [{"case_id": "AQ-404", "cost_usd": 0.0}]}, {"AQ-001"}, "unknown case_id"),
+        ({"currency": "USD", "scope": "complete_request", "source": "invoice", "costs": [{"case_id": "AQ-001", "cost_usd": -0.1}]}, {"AQ-001"}, "finite and non-negative"),
+    ],
+)
+def test_request_cost_ledger_rejects_unverifiable_values(tmp_path, ledger, allowed_ids, message):
+    mod = _load_runner()
+    path = tmp_path / "cost-ledger.json"
+    path.write_text(json.dumps(ledger), encoding="utf-8")
+    with pytest.raises(ValueError, match=message):
+        mod._load_request_cost_ledger(path, allowed_ids)
