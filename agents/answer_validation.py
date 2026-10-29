@@ -292,6 +292,70 @@ def build_requirement_evidence_ledger(
     return ledger
 
 
+def _audit_source_metadata(answer: str, sources: list[dict[str, Any]]) -> dict[str, Any]:
+    """Audit source traceability metadata; this is a warning layer, not truth verification."""
+    answer_text = str(answer or "")[:24000]
+    population_context = bool(re.search(
+        r"(?:عدد\s+السكان|سكان|population|urban\s+agglomeration|greater\s+cairo|القاهرة\s+الكبرى|محافظة\s+القاهرة)",
+        _normalize(answer_text), re.IGNORECASE,
+    ))
+    rows: list[dict[str, Any]] = []
+    missing_url = missing_title = missing_date = missing_scope = no_readable_text = 0
+    for index, source in enumerate(sources[:40], 1):
+        url = str(source.get("url") or "").strip()
+        title = str(source.get("title") or "").strip()
+        published = str(source.get("published_at") or source.get("published_date") or source.get("publication_date") or "").strip()
+        scope = str(source.get("geographic_scope") or source.get("geography") or source.get("scope") or "").strip()
+        readable = bool(
+            (source.get("page_fetched") and str(source.get("page_text") or "").strip())
+            or str(source.get("snippet") or "").strip()
+        )
+        gaps: list[str] = []
+        if not title:
+            missing_title += 1
+            gaps.append("missing_title")
+        if not re.match(r"^https?://[^\s]+$", url, re.IGNORECASE):
+            missing_url += 1
+            gaps.append("missing_or_invalid_http_url")
+        if not published:
+            missing_date += 1
+            gaps.append("missing_publication_or_data_date")
+        if population_context and not scope:
+            missing_scope += 1
+            gaps.append("missing_explicit_geographic_scope_for_population_claim")
+        if not readable:
+            no_readable_text += 1
+            gaps.append("no_readable_snippet_or_fetched_page_text")
+        rows.append({
+            "source_index": index,
+            "metadata_status": "metadata_gaps_found" if gaps else "minimum_metadata_present",
+            "missing_fields": gaps,
+            "publication_date_value_present": bool(published),
+            "geographic_scope_value_present": bool(scope),
+            "readable_evidence_present": readable,
+        })
+    gaps_found = any((missing_url, missing_title, missing_date, missing_scope, no_readable_text))
+    return {
+        "method": "deterministic_source_metadata_presence_audit",
+        "status": "metadata_gaps_found" if gaps_found else "minimum_metadata_present",
+        "semantic_verification": False,
+        "source_entailment_verified": False,
+        "population_claim_context_detected": population_context,
+        "source_count_checked": len(rows),
+        "sources_missing_title_count": missing_title,
+        "sources_missing_or_invalid_url_count": missing_url,
+        "sources_missing_publication_or_data_date_count": missing_date,
+        "sources_missing_geographic_scope_count": missing_scope,
+        "sources_without_readable_evidence_count": no_readable_text,
+        "sources": rows,
+        "limitations": [
+            "Metadata presence does not prove source authenticity, freshness, or claim support.",
+            "Publication date and data reference period are different; this check does not establish either one.",
+            "Geographic scope must be explicitly supplied in source metadata; this check does not infer administrative boundaries.",
+        ],
+    }
+
+
 def audit_answer_integrity(
     question: str,
     answer: str,
@@ -544,6 +608,7 @@ def audit_answer_integrity(
         })
 
     citation_count = len(re.findall(r"\[(?:المصدر|source)\s+\d+\]", answer_text, re.IGNORECASE))
+    source_metadata_audit = _audit_source_metadata(answer_text, safe_sources)
     if extracted_page_count:
         source_scope = "contains_extracted_page_text_and_or_snippets"
     elif snippet_count:
