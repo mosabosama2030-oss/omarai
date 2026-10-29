@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000224 إلى SRC-90FAA34ADE-L001023
+- النطاق: SRC-90FAA34ADE-L000209 إلى SRC-90FAA34ADE-L001008
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000209](../../tests/fixtures/answer_quality_cases.json#L209) | 209 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000210](../../tests/fixtures/answer_quality_cases.json#L210) | 210 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000211](../../tests/fixtures/answer_quality_cases.json#L211) | 211 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L000212](../../tests/fixtures/answer_quality_cases.json#L212) | 212 | `"        \"notes\": \"Empty results path also valid if agent abstains\""` | — |
+| [SRC-90FAA34ADE-L000213](../../tests/fixtures/answer_quality_cases.json#L213) | 213 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000214](../../tests/fixtures/answer_quality_cases.json#L214) | 214 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000215](../../tests/fixtures/answer_quality_cases.json#L215) | 215 | `"        \"Invented news items without URLs\""` | — |
+| [SRC-90FAA34ADE-L000216](../../tests/fixtures/answer_quality_cases.json#L216) | 216 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000217](../../tests/fixtures/answer_quality_cases.json#L217) | 217 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000218](../../tests/fixtures/answer_quality_cases.json#L218) | 218 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000219](../../tests/fixtures/answer_quality_cases.json#L219) | 219 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000220](../../tests/fixtures/answer_quality_cases.json#L220) | 220 | `"      \"case_id\": \"AQ-009\","` | — |
+| [SRC-90FAA34ADE-L000221](../../tests/fixtures/answer_quality_cases.json#L221) | 221 | `"      \"category\": \"multi_subquestions\","` | — |
+| [SRC-90FAA34ADE-L000222](../../tests/fixtures/answer_quality_cases.json#L222) | 222 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000223](../../tests/fixtures/answer_quality_cases.json#L223) | 223 | `"      \"question\": \"قولي ثلاث حاجات: ١) ايه الفرق بين الإيجار والتمليك في مصر باختصار ٢) ايه المخاطر القانونية الشائعة ٣) ازاي اتأكد من عقد الإيجار\","` | — |
 | [SRC-90FAA34ADE-L000224](../../tests/fixtures/answer_quality_cases.json#L224) | 224 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000225](../../tests/fixtures/answer_quality_cases.json#L225) | 225 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000226](../../tests/fixtures/answer_quality_cases.json#L226) | 226 | `"        \"Addresses all three parts or explicitly marks which parts lack evidence\","` | — |
@@ -801,18 +816,3 @@
 | [SRC-90FAA34ADE-L001006](../../tests/fixtures/answer_quality_cases.json#L1006) | 1006 | `"          }"` | — |
 | [SRC-90FAA34ADE-L001007](../../tests/fixtures/answer_quality_cases.json#L1007) | 1007 | `"        ]"` | — |
 | [SRC-90FAA34ADE-L001008](../../tests/fixtures/answer_quality_cases.json#L1008) | 1008 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001009](../../tests/fixtures/answer_quality_cases.json#L1009) | 1009 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001010](../../tests/fixtures/answer_quality_cases.json#L1010) | 1010 | `"        \"Current 2026 requirements asserted from 2021-only evidence\","` | — |
-| [SRC-90FAA34ADE-L001011](../../tests/fixtures/answer_quality_cases.json#L1011) | 1011 | `"        \"No caveat about source date\""` | — |
-| [SRC-90FAA34ADE-L001012](../../tests/fixtures/answer_quality_cases.json#L1012) | 1012 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001013](../../tests/fixtures/answer_quality_cases.json#L1013) | 1013 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001014](../../tests/fixtures/answer_quality_cases.json#L1014) | 1014 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001015](../../tests/fixtures/answer_quality_cases.json#L1015) | 1015 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001016](../../tests/fixtures/answer_quality_cases.json#L1016) | 1016 | `"      \"case_id\": \"AQ-035\","` | — |
-| [SRC-90FAA34ADE-L001017](../../tests/fixtures/answer_quality_cases.json#L1017) | 1017 | `"      \"category\": \"false_corroboration\","` | — |
-| [SRC-90FAA34ADE-L001018](../../tests/fixtures/answer_quality_cases.json#L1018) | 1018 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L001019](../../tests/fixtures/answer_quality_cases.json#L1019) | 1019 | `"      \"question\": \"ثلاث صفحات ناقلة عن بوست فيسبوك واحد قالت إن الخدمة اتوقفت. هل ده تحقق مستقل؟\","` | — |
-| [SRC-90FAA34ADE-L001020](../../tests/fixtures/answer_quality_cases.json#L1020) | 1020 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001021](../../tests/fixtures/answer_quality_cases.json#L1021) | 1021 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001022](../../tests/fixtures/answer_quality_cases.json#L1022) | 1022 | `"        \"يتتبع الإسناد للمصدر الأصلي إن أمكن\","` | — |
-| [SRC-90FAA34ADE-L001023](../../tests/fixtures/answer_quality_cases.json#L1023) | 1023 | `"        \"يوضح أن تكرار نقل بوست واحد لا يصنع ثلاث عمليات تحقق مستقلة\","` | — |

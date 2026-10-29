@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000189 إلى SRC-3451CC474D-L000284
+- النطاق: SRC-B3062EB677-L000171 إلى SRC-3451CC474D-L000266
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000171](../../tests/test_answer_quality_runner.py#L171) | 171 | `""` | — |
+| [SRC-B3062EB677-L000172](../../tests/test_answer_quality_runner.py#L172) | 172 | `"def test_remote_token_origin_comparison_normalizes_default_https_port(monkeypatch):"` | — |
+| [SRC-B3062EB677-L000173](../../tests/test_answer_quality_runner.py#L173) | 173 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000174](../../tests/test_answer_quality_runner.py#L174) | 174 | `"    monkeypatch.setenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"https://app.example\")"` | — |
+| [SRC-B3062EB677-L000175](../../tests/test_answer_quality_runner.py#L175) | 175 | `"    assert ("` | — |
+| [SRC-B3062EB677-L000176](../../tests/test_answer_quality_runner.py#L176) | 176 | `"        mod.validate_base_url(\"https://app.example:443\", token_present=True)"` | — |
+| [SRC-B3062EB677-L000177](../../tests/test_answer_quality_runner.py#L177) | 177 | `"        == \"https://app.example\""` | — |
+| [SRC-B3062EB677-L000178](../../tests/test_answer_quality_runner.py#L178) | 178 | `"    )"` | — |
+| [SRC-B3062EB677-L000179](../../tests/test_answer_quality_runner.py#L179) | 179 | `""` | — |
+| [SRC-B3062EB677-L000180](../../tests/test_answer_quality_runner.py#L180) | 180 | `""` | — |
+| [SRC-B3062EB677-L000181](../../tests/test_answer_quality_runner.py#L181) | 181 | `"def test_redirect_handler_refuses_following_redirects():"` | — |
+| [SRC-B3062EB677-L000182](../../tests/test_answer_quality_runner.py#L182) | 182 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000183](../../tests/test_answer_quality_runner.py#L183) | 183 | `"    handler = mod._NoRedirectHandler()"` | — |
+| [SRC-B3062EB677-L000184](../../tests/test_answer_quality_runner.py#L184) | 184 | `"    assert handler.redirect_request("` | — |
+| [SRC-B3062EB677-L000185](../../tests/test_answer_quality_runner.py#L185) | 185 | `"        req=None,"` | — |
+| [SRC-B3062EB677-L000186](../../tests/test_answer_quality_runner.py#L186) | 186 | `"        fp=None,"` | — |
+| [SRC-B3062EB677-L000187](../../tests/test_answer_quality_runner.py#L187) | 187 | `"        code=302,"` | — |
+| [SRC-B3062EB677-L000188](../../tests/test_answer_quality_runner.py#L188) | 188 | `"        msg=\"Found\","` | — |
 | [SRC-B3062EB677-L000189](../../tests/test_answer_quality_runner.py#L189) | 189 | `"        headers={},"` | — |
 | [SRC-B3062EB677-L000190](../../tests/test_answer_quality_runner.py#L190) | 190 | `"        newurl=\"https://attacker.example/collect\","` | — |
 | [SRC-B3062EB677-L000191](../../tests/test_answer_quality_runner.py#L191) | 191 | `"    ) is None"` | — |
@@ -816,21 +834,3 @@
 | [SRC-3451CC474D-L000264](../../tests/test_api.py#L264) | 264 | `"                \"web_search\": {\"status\": \"passed\", \"result_count\": 4},"` | — |
 | [SRC-3451CC474D-L000265](../../tests/test_api.py#L265) | 265 | `"                \"language_model\": {\"status\": \"passed\", \"response_received\": True},"` | — |
 | [SRC-3451CC474D-L000266](../../tests/test_api.py#L266) | 266 | `"                \"social_search\": {\"status\": \"skipped\"},"` | — |
-| [SRC-3451CC474D-L000267](../../tests/test_api.py#L267) | 267 | `"            },"` | — |
-| [SRC-3451CC474D-L000268](../../tests/test_api.py#L268) | 268 | `"            \"model_usage\": [{"` | — |
-| [SRC-3451CC474D-L000269](../../tests/test_api.py#L269) | 269 | `"                \"requested_model\": \"google/gemma-4-31b-it:free\","` | — |
-| [SRC-3451CC474D-L000270](../../tests/test_api.py#L270) | 270 | `"                \"used_model\": \"google/gemma-4-31b-it:free\","` | — |
-| [SRC-3451CC474D-L000271](../../tests/test_api.py#L271) | 271 | `"                \"fallback_used\": \"false\","` | — |
-| [SRC-3451CC474D-L000272](../../tests/test_api.py#L272) | 272 | `"            }],"` | — |
-| [SRC-3451CC474D-L000273](../../tests/test_api.py#L273) | 273 | `"        }"` | — |
-| [SRC-3451CC474D-L000274](../../tests/test_api.py#L274) | 274 | `""` | — |
-| [SRC-3451CC474D-L000275](../../tests/test_api.py#L275) | 275 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", fake_diagnostics)"` | — |
-| [SRC-3451CC474D-L000276](../../tests/test_api.py#L276) | 276 | `"    status, report = request_json("` | — |
-| [SRC-3451CC474D-L000277](../../tests/test_api.py#L277) | 277 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000278](../../tests/test_api.py#L278) | 278 | `"        \"/api/diagnostics\","` | — |
-| [SRC-3451CC474D-L000279](../../tests/test_api.py#L279) | 279 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000280](../../tests/test_api.py#L280) | 280 | `"        payload={\"test_model\": True, \"test_social\": False},"` | — |
-| [SRC-3451CC474D-L000281](../../tests/test_api.py#L281) | 281 | `"    )"` | — |
-| [SRC-3451CC474D-L000282](../../tests/test_api.py#L282) | 282 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000283](../../tests/test_api.py#L283) | 283 | `"    assert report[\"overall_status\"] == \"passed\""` | — |
-| [SRC-3451CC474D-L000284](../../tests/test_api.py#L284) | 284 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 4"` | — |

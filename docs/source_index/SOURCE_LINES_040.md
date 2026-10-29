@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000151 إلى SRC-6BF96689A8-L000095
+- النطاق: SRC-4397BC2CD2-L000133 إلى SRC-6BF96689A8-L000077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000133](../../tests/test_intent_router_integration.py#L133) | 133 | `""` | — |
+| [SRC-4397BC2CD2-L000134](../../tests/test_intent_router_integration.py#L134) | 134 | `"    def plan(question, prior_history):"` | — |
+| [SRC-4397BC2CD2-L000135](../../tests/test_intent_router_integration.py#L135) | 135 | `"        return {"` | — |
+| [SRC-4397BC2CD2-L000136](../../tests/test_intent_router_integration.py#L136) | 136 | `"            \"queries\": [\"iPhone 17 versus Samsung S26\"],"` | — |
+| [SRC-4397BC2CD2-L000137](../../tests/test_intent_router_integration.py#L137) | 137 | `"            \"direct_urls\": [],"` | — |
+| [SRC-4397BC2CD2-L000138](../../tests/test_intent_router_integration.py#L138) | 138 | `"            \"social_focus\": False,"` | — |
+| [SRC-4397BC2CD2-L000139](../../tests/test_intent_router_integration.py#L139) | 139 | `"            \"freshness\": \"any\","` | — |
+| [SRC-4397BC2CD2-L000140](../../tests/test_intent_router_integration.py#L140) | 140 | `"            \"depth\": \"standard\","` | — |
+| [SRC-4397BC2CD2-L000141](../../tests/test_intent_router_integration.py#L141) | 141 | `"            \"platforms\": [],"` | — |
+| [SRC-4397BC2CD2-L000142](../../tests/test_intent_router_integration.py#L142) | 142 | `"            \"planning_method\": \"test_single_query\","` | — |
+| [SRC-4397BC2CD2-L000143](../../tests/test_intent_router_integration.py#L143) | 143 | `"        }"` | — |
+| [SRC-4397BC2CD2-L000144](../../tests/test_intent_router_integration.py#L144) | 144 | `""` | — |
+| [SRC-4397BC2CD2-L000145](../../tests/test_intent_router_integration.py#L145) | 145 | `"    def collect(research_plan):"` | — |
+| [SRC-4397BC2CD2-L000146](../../tests/test_intent_router_integration.py#L146) | 146 | `"        seen[\"plans\"].append(dict(research_plan))"` | — |
+| [SRC-4397BC2CD2-L000147](../../tests/test_intent_router_integration.py#L147) | 147 | `"        sources = ["` | — |
+| [SRC-4397BC2CD2-L000148](../../tests/test_intent_router_integration.py#L148) | 148 | `"            _evidence(\"example.com\", research_plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000149](../../tests/test_intent_router_integration.py#L149) | 149 | `"            _evidence(\"example.net\", research_plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000150](../../tests/test_intent_router_integration.py#L150) | 150 | `"        ]"` | — |
 | [SRC-4397BC2CD2-L000151](../../tests/test_intent_router_integration.py#L151) | 151 | `"        return sources, [], _report(research_plan, sources)"` | — |
 | [SRC-4397BC2CD2-L000152](../../tests/test_intent_router_integration.py#L152) | 152 | `""` | — |
 | [SRC-4397BC2CD2-L000153](../../tests/test_intent_router_integration.py#L153) | 153 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
@@ -852,21 +870,3 @@
 | [SRC-6BF96689A8-L000075](../../tests/test_research.py#L75) | 75 | `"    from agents.research import classify_source"` | — |
 | [SRC-6BF96689A8-L000076](../../tests/test_research.py#L76) | 76 | `""` | — |
 | [SRC-6BF96689A8-L000077](../../tests/test_research.py#L77) | 77 | `"    assert classify_source(\"https://www.reddit.com/r/example/comments/1\")[\"platform\"] == \"reddit\""` | — |
-| [SRC-6BF96689A8-L000078](../../tests/test_research.py#L78) | 78 | `"    assert classify_source(\"https://example.gov.eg/page\")[\"source_class\"] == \"government\""` | — |
-| [SRC-6BF96689A8-L000079](../../tests/test_research.py#L79) | 79 | `""` | — |
-| [SRC-6BF96689A8-L000080](../../tests/test_research.py#L80) | 80 | `""` | — |
-| [SRC-6BF96689A8-L000081](../../tests/test_research.py#L81) | 81 | `"def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():"` | — |
-| [SRC-6BF96689A8-L000082](../../tests/test_research.py#L82) | 82 | `"    from agents.research import extract_urls"` | — |
-| [SRC-6BF96689A8-L000083](../../tests/test_research.py#L83) | 83 | `""` | — |
-| [SRC-6BF96689A8-L000084](../../tests/test_research.py#L84) | 84 | `"    question = \"حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section.\""` | — |
-| [SRC-6BF96689A8-L000085](../../tests/test_research.py#L85) | 85 | `"    plan = fallback_plan(question)"` | — |
-| [SRC-6BF96689A8-L000086](../../tests/test_research.py#L86) | 86 | `"    assert extract_urls(question) == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
-| [SRC-6BF96689A8-L000087](../../tests/test_research.py#L87) | 87 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
-| [SRC-6BF96689A8-L000088](../../tests/test_research.py#L88) | 88 | `"    assert \"https://\" not in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000089](../../tests/test_research.py#L89) | 89 | `""` | — |
-| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
-| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
-| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
-| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |

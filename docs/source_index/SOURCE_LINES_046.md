@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002218 إلى SRC-F725E90B2A-L003017
+- النطاق: SRC-F725E90B2A-L002200 إلى SRC-F725E90B2A-L002999
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002200](../../tests/test_web_agent.py#L2200) | 2200 | `"        # A generic failed diagnostic does not prove whether the network request"` | — |
+| [SRC-F725E90B2A-L002201](../../tests/test_web_agent.py#L2201) | 2201 | `"        # was actually sent; it must not be upgraded to a confirmed attempt."` | — |
+| [SRC-F725E90B2A-L002202](../../tests/test_web_agent.py#L2202) | 2202 | `"        agent._record_provider_diagnostic("` | — |
+| [SRC-F725E90B2A-L002203](../../tests/test_web_agent.py#L2203) | 2203 | `"            \"duckduckgo_html\","` | — |
+| [SRC-F725E90B2A-L002204](../../tests/test_web_agent.py#L2204) | 2204 | `"            research_plan[\"queries\"][0],"` | — |
+| [SRC-F725E90B2A-L002205](../../tests/test_web_agent.py#L2205) | 2205 | `"            \"failed\","` | — |
+| [SRC-F725E90B2A-L002206](../../tests/test_web_agent.py#L2206) | 2206 | `"            error=\"simulated failure before request send\","` | — |
+| [SRC-F725E90B2A-L002207](../../tests/test_web_agent.py#L2207) | 2207 | `"        )"` | — |
+| [SRC-F725E90B2A-L002208](../../tests/test_web_agent.py#L2208) | 2208 | `"        raise RuntimeError(\"simulated research pipeline failure\")"` | — |
+| [SRC-F725E90B2A-L002209](../../tests/test_web_agent.py#L2209) | 2209 | `""` | — |
+| [SRC-F725E90B2A-L002210](../../tests/test_web_agent.py#L2210) | 2210 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L002211](../../tests/test_web_agent.py#L2211) | 2211 | `"    monkeypatch.setattr(agent, \"_collect_research\", fail_after_generic_provider_error)"` | — |
+| [SRC-F725E90B2A-L002212](../../tests/test_web_agent.py#L2212) | 2212 | `""` | — |
+| [SRC-F725E90B2A-L002213](../../tests/test_web_agent.py#L2213) | 2213 | `"    result = agent.answer(\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\")"` | — |
+| [SRC-F725E90B2A-L002214](../../tests/test_web_agent.py#L2214) | 2214 | `""` | — |
+| [SRC-F725E90B2A-L002215](../../tests/test_web_agent.py#L2215) | 2215 | `"    report = result[\"search_report\"]"` | — |
+| [SRC-F725E90B2A-L002216](../../tests/test_web_agent.py#L2216) | 2216 | `"    assert result[\"search_attempted\"] is None"` | — |
+| [SRC-F725E90B2A-L002217](../../tests/test_web_agent.py#L2217) | 2217 | `"    assert report[\"search_attempted\"] is None"` | — |
 | [SRC-F725E90B2A-L002218](../../tests/test_web_agent.py#L2218) | 2218 | `"    assert report[\"search_outcome\"] == \"unknown_after_research_error\""` | — |
 | [SRC-F725E90B2A-L002219](../../tests/test_web_agent.py#L2219) | 2219 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
 | [SRC-F725E90B2A-L002220](../../tests/test_web_agent.py#L2220) | 2220 | `"    assert report[\"unique_sources\"] is None"` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L002997](../../tests/test_web_agent.py#L2997) | 2997 | `"            \"search_query\": query,"` | — |
 | [SRC-F725E90B2A-L002998](../../tests/test_web_agent.py#L2998) | 2998 | `"        }"` | — |
 | [SRC-F725E90B2A-L002999](../../tests/test_web_agent.py#L2999) | 2999 | `"        monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _q, row=row: [dict(row)])"` | — |
-| [SRC-F725E90B2A-L003000](../../tests/test_web_agent.py#L3000) | 3000 | `"        monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _q, row=row: [dict(row)])"` | — |
-| [SRC-F725E90B2A-L003001](../../tests/test_web_agent.py#L3001) | 3001 | `"        # Current-news questions normally add Google News RSS; keep this unit test deterministic."` | — |
-| [SRC-F725E90B2A-L003002](../../tests/test_web_agent.py#L3002) | 3002 | `"        monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
-| [SRC-F725E90B2A-L003003](../../tests/test_web_agent.py#L3003) | 3003 | `"        results = agent._search_web(query)"` | — |
-| [SRC-F725E90B2A-L003004](../../tests/test_web_agent.py#L3004) | 3004 | `"        assert results, f\"Search candidates were all filtered for case {index}\""` | — |
-| [SRC-F725E90B2A-L003005](../../tests/test_web_agent.py#L3005) | 3005 | `"        diagnostic = next("` | — |
-| [SRC-F725E90B2A-L003006](../../tests/test_web_agent.py#L3006) | 3006 | `"            item for item in agent._provider_diagnostics if item.get(\"provider\") == \"duckduckgo_html\""` | — |
-| [SRC-F725E90B2A-L003007](../../tests/test_web_agent.py#L3007) | 3007 | `"        )"` | — |
-| [SRC-F725E90B2A-L003008](../../tests/test_web_agent.py#L3008) | 3008 | `"        assert diagnostic[\"accepted_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L003009](../../tests/test_web_agent.py#L3009) | 3009 | `"        assert diagnostic[\"result_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L003010](../../tests/test_web_agent.py#L3010) | 3010 | `""` | — |
-| [SRC-F725E90B2A-L003011](../../tests/test_web_agent.py#L3011) | 3011 | `""` | — |
-| [SRC-F725E90B2A-L003012](../../tests/test_web_agent.py#L3012) | 3012 | `"def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003013](../../tests/test_web_agent.py#L3013) | 3013 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L003014](../../tests/test_web_agent.py#L3014) | 3014 | `""` | — |
-| [SRC-F725E90B2A-L003015](../../tests/test_web_agent.py#L3015) | 3015 | `"    def http_202(_query):"` | — |
-| [SRC-F725E90B2A-L003016](../../tests/test_web_agent.py#L3016) | 3016 | `"        raise RuntimeError(\"HTTP 202\")"` | — |
-| [SRC-F725E90B2A-L003017](../../tests/test_web_agent.py#L3017) | 3017 | `""` | — |

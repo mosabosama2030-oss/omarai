@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000096 إلى SRC-01E35ABC46-L000373
+- النطاق: SRC-6BF96689A8-L000078 إلى SRC-01E35ABC46-L000355
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000078](../../tests/test_research.py#L78) | 78 | `"    assert classify_source(\"https://example.gov.eg/page\")[\"source_class\"] == \"government\""` | — |
+| [SRC-6BF96689A8-L000079](../../tests/test_research.py#L79) | 79 | `""` | — |
+| [SRC-6BF96689A8-L000080](../../tests/test_research.py#L80) | 80 | `""` | — |
+| [SRC-6BF96689A8-L000081](../../tests/test_research.py#L81) | 81 | `"def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():"` | — |
+| [SRC-6BF96689A8-L000082](../../tests/test_research.py#L82) | 82 | `"    from agents.research import extract_urls"` | — |
+| [SRC-6BF96689A8-L000083](../../tests/test_research.py#L83) | 83 | `""` | — |
+| [SRC-6BF96689A8-L000084](../../tests/test_research.py#L84) | 84 | `"    question = \"حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section.\""` | — |
+| [SRC-6BF96689A8-L000085](../../tests/test_research.py#L85) | 85 | `"    plan = fallback_plan(question)"` | — |
+| [SRC-6BF96689A8-L000086](../../tests/test_research.py#L86) | 86 | `"    assert extract_urls(question) == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
+| [SRC-6BF96689A8-L000087](../../tests/test_research.py#L87) | 87 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
+| [SRC-6BF96689A8-L000088](../../tests/test_research.py#L88) | 88 | `"    assert \"https://\" not in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000089](../../tests/test_research.py#L89) | 89 | `""` | — |
+| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
+| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
+| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
+| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
 | [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
 | [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `""` | — |
 | [SRC-6BF96689A8-L000098](../../tests/test_research.py#L98) | 98 | `""` | — |
@@ -816,21 +834,3 @@
 | [SRC-01E35ABC46-L000353](../../tests/test_research_guardrails.py#L353) | 353 | `"        question,"` | — |
 | [SRC-01E35ABC46-L000354](../../tests/test_research_guardrails.py#L354) | 354 | `"        \"social\","` | — |
 | [SRC-01E35ABC46-L000355](../../tests/test_research_guardrails.py#L355) | 355 | `"        {\"social_focus\": True, \"freshness\": \"any\"},"` | — |
-| [SRC-01E35ABC46-L000356](../../tests/test_research_guardrails.py#L356) | 356 | `"        [personal_post, promotional_post, editorial_review],"` | — |
-| [SRC-01E35ABC46-L000357](../../tests/test_research_guardrails.py#L357) | 357 | `"        now=_GUARDRAIL_NOW,"` | — |
-| [SRC-01E35ABC46-L000358](../../tests/test_research_guardrails.py#L358) | 358 | `"    )"` | — |
-| [SRC-01E35ABC46-L000359](../../tests/test_research_guardrails.py#L359) | 359 | `""` | — |
-| [SRC-01E35ABC46-L000360](../../tests/test_research_guardrails.py#L360) | 360 | `"    labels = {item[\"url\"]: item[\"opinion_source_classification\"] for item in accepted}"` | — |
-| [SRC-01E35ABC46-L000361](../../tests/test_research_guardrails.py#L361) | 361 | `"    assert labels[personal_post[\"url\"]] == \"personal_experience_candidate\""` | — |
-| [SRC-01E35ABC46-L000362](../../tests/test_research_guardrails.py#L362) | 362 | `"    assert labels[promotional_post[\"url\"]] == \"promotional_or_commercial\""` | — |
-| [SRC-01E35ABC46-L000363](../../tests/test_research_guardrails.py#L363) | 363 | `"    assert editorial_review[\"url\"] not in labels"` | — |
-| [SRC-01E35ABC46-L000364](../../tests/test_research_guardrails.py#L364) | 364 | `"    assert report[\"social_platform_only\"] is True"` | — |
-| [SRC-01E35ABC46-L000365](../../tests/test_research_guardrails.py#L365) | 365 | `"    assert report[\"rejection_counts\"] == {\"not_a_social_platform_source\": 1}"` | — |
-| [SRC-01E35ABC46-L000366](../../tests/test_research_guardrails.py#L366) | 366 | `"    assert all("` | — |
-| [SRC-01E35ABC46-L000367](../../tests/test_research_guardrails.py#L367) | 367 | `"        item[\"opinion_classification_method\"] == \"heuristic_only\""` | — |
-| [SRC-01E35ABC46-L000368](../../tests/test_research_guardrails.py#L368) | 368 | `"        for item in accepted"` | — |
-| [SRC-01E35ABC46-L000369](../../tests/test_research_guardrails.py#L369) | 369 | `"    )"` | — |
-| [SRC-01E35ABC46-L000370](../../tests/test_research_guardrails.py#L370) | 370 | `""` | — |
-| [SRC-01E35ABC46-L000371](../../tests/test_research_guardrails.py#L371) | 371 | `""` | — |
-| [SRC-01E35ABC46-L000372](../../tests/test_research_guardrails.py#L372) | 372 | `"def test_social_classification_does_not_claim_unknown_post_is_verified_experience() -> None:"` | — |
-| [SRC-01E35ABC46-L000373](../../tests/test_research_guardrails.py#L373) | 373 | `"    result = classify_social_source("` | — |

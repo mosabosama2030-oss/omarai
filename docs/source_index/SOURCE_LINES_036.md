@@ -4,9 +4,21 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA61479D59-L000016 إلى SRC-DA139AC9D0-L000120
+- النطاق: SRC-6B37B7D6D3-L000078 إلى SRC-DA139AC9D0-L000102
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-6B37B7D6D3 — [tests/test_claim_evidence_metadata.py](../../tests/test_claim_evidence_metadata.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-6B37B7D6D3-L000078](../../tests/test_claim_evidence_metadata.py#L78) | 78 | `"    assert \"data_reference_period_for_population_claim\" in audit[\"required_fields_missing\"]"` | — |
+| [SRC-6B37B7D6D3-L000079](../../tests/test_claim_evidence_metadata.py#L79) | 79 | `"    assert \"geographic_scope_for_population_claim\" in audit[\"required_fields_missing\"]"` | — |
+| [SRC-6B37B7D6D3-L000080](../../tests/test_claim_evidence_metadata.py#L80) | 80 | `"    assert ledger[\"fact_correctness\"] == \"not_checked\""` | — |
 ## اختبارات
 
 ### FILE-DA61479D59 — [tests/test_connector_summary_counters.py](../../tests/test_connector_summary_counters.py#L1)
@@ -16,6 +28,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA61479D59-L000001](../../tests/test_connector_summary_counters.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-DA61479D59-L000002](../../tests/test_connector_summary_counters.py#L2) | 2 | `""` | — |
+| [SRC-DA61479D59-L000003](../../tests/test_connector_summary_counters.py#L3) | 3 | `"import json"` | — |
+| [SRC-DA61479D59-L000004](../../tests/test_connector_summary_counters.py#L4) | 4 | `""` | — |
+| [SRC-DA61479D59-L000005](../../tests/test_connector_summary_counters.py#L5) | 5 | `"from agents.web_agent import PageFetchResult, WebAgent"` | — |
+| [SRC-DA61479D59-L000006](../../tests/test_connector_summary_counters.py#L6) | 6 | `""` | — |
+| [SRC-DA61479D59-L000007](../../tests/test_connector_summary_counters.py#L7) | 7 | `""` | — |
+| [SRC-DA61479D59-L000008](../../tests/test_connector_summary_counters.py#L8) | 8 | `"def test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets(monkeypatch):"` | — |
+| [SRC-DA61479D59-L000009](../../tests/test_connector_summary_counters.py#L9) | 9 | `"    agent = WebAgent()"` | — |
+| [SRC-DA61479D59-L000010](../../tests/test_connector_summary_counters.py#L10) | 10 | `"    monkeypatch.delenv(\"BRAVE_SEARCH_API_KEY\", raising=False)"` | — |
+| [SRC-DA61479D59-L000011](../../tests/test_connector_summary_counters.py#L11) | 11 | `"    diagnostics = ["` | — |
+| [SRC-DA61479D59-L000012](../../tests/test_connector_summary_counters.py#L12) | 12 | `"        {"` | — |
+| [SRC-DA61479D59-L000013](../../tests/test_connector_summary_counters.py#L13) | 13 | `"            \"provider\": \"duckduckgo_html\","` | — |
+| [SRC-DA61479D59-L000014](../../tests/test_connector_summary_counters.py#L14) | 14 | `"            \"query\": \"renewable energy\","` | — |
+| [SRC-DA61479D59-L000015](../../tests/test_connector_summary_counters.py#L15) | 15 | `"            \"status\": \"ok\","` | — |
 | [SRC-DA61479D59-L000016](../../tests/test_connector_summary_counters.py#L16) | 16 | `"            \"result_count\": 3,"` | — |
 | [SRC-DA61479D59-L000017](../../tests/test_connector_summary_counters.py#L17) | 17 | `"            \"rejected_count\": 1,"` | — |
 | [SRC-DA61479D59-L000018](../../tests/test_connector_summary_counters.py#L18) | 18 | `"        },"` | — |
@@ -834,21 +861,3 @@
 | [SRC-DA139AC9D0-L000100](../../tests/test_dialogue_state.py#L100) | 100 | `"    }"` | — |
 | [SRC-DA139AC9D0-L000101](../../tests/test_dialogue_state.py#L101) | 101 | `""` | — |
 | [SRC-DA139AC9D0-L000102](../../tests/test_dialogue_state.py#L102) | 102 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
-| [SRC-DA139AC9D0-L000103](../../tests/test_dialogue_state.py#L103) | 103 | `""` | — |
-| [SRC-DA139AC9D0-L000104](../../tests/test_dialogue_state.py#L104) | 104 | `"    assert context[\"method\"] == \"llm_semantic_context\""` | — |
-| [SRC-DA139AC9D0-L000105](../../tests/test_dialogue_state.py#L105) | 105 | `"    assert context[\"is_follow_up\"] is True"` | — |
-| [SRC-DA139AC9D0-L000106](../../tests/test_dialogue_state.py#L106) | 106 | `"    assert context[\"needs_web\"] is True"` | — |
-| [SRC-DA139AC9D0-L000107](../../tests/test_dialogue_state.py#L107) | 107 | `"    assert context[\"research_depth\"] == \"deep\""` | — |
-| [SRC-DA139AC9D0-L000108](../../tests/test_dialogue_state.py#L108) | 108 | `"    assert context[\"entities\"][0] == \"iPhone 17\""` | — |
-| [SRC-DA139AC9D0-L000109](../../tests/test_dialogue_state.py#L109) | 109 | `"    assert len(context[\"entities\"]) == 2"` | — |
-| [SRC-DA139AC9D0-L000110](../../tests/test_dialogue_state.py#L110) | 110 | `"    assert \"untrusted_injected_field\" not in context[\"slots\"]"` | — |
-| [SRC-DA139AC9D0-L000111](../../tests/test_dialogue_state.py#L111) | 111 | `"    assert context[\"changed_slots\"] == [\"aspect\"]"` | — |
-| [SRC-DA139AC9D0-L000112](../../tests/test_dialogue_state.py#L112) | 112 | `"    assert len(context[\"entities\"][1]) <= 180"` | — |
-| [SRC-DA139AC9D0-L000113](../../tests/test_dialogue_state.py#L113) | 113 | `""` | — |
-| [SRC-DA139AC9D0-L000114](../../tests/test_dialogue_state.py#L114) | 114 | `""` | — |
-| [SRC-DA139AC9D0-L000115](../../tests/test_dialogue_state.py#L115) | 115 | `"def test_unresolved_reference_stays_unresolved_and_cannot_become_a_search_query() -> None:"` | — |
-| [SRC-DA139AC9D0-L000116](../../tests/test_dialogue_state.py#L116) | 116 | `"    question = \"والبطارية؟\""` | — |
-| [SRC-DA139AC9D0-L000117](../../tests/test_dialogue_state.py#L117) | 117 | `"    history = ["` | — |
-| [SRC-DA139AC9D0-L000118](../../tests/test_dialogue_state.py#L118) | 118 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26\"},"` | — |
-| [SRC-DA139AC9D0-L000119](../../tests/test_dialogue_state.py#L119) | 119 | `"        {\"role\": \"assistant\", \"content\": \"ذكرت الهاتفين في المقارنة.\"},"` | — |
-| [SRC-DA139AC9D0-L000120](../../tests/test_dialogue_state.py#L120) | 120 | `"    ]"` | — |

@@ -874,8 +874,8 @@
 | [SRC-70795F4B61-L000283](../../scripts/compare_answer_quality_runs.py#L283) | 283 | `"            f\"incomparable case sets; missing in candidate={missing_candidate}; \""` | — |
 | [SRC-70795F4B61-L000284](../../scripts/compare_answer_quality_runs.py#L284) | 284 | `"            f\"missing in baseline={missing_baseline}\""` | — |
 | [SRC-70795F4B61-L000285](../../scripts/compare_answer_quality_runs.py#L285) | 285 | `"        )"` | — |
-| [SRC-70795F4B61-L000286](../../scripts/compare_answer_quality_runs.py#L286) | 286 | `"    for case_id in baseline_by_id:"` | — |
-| [SRC-70795F4B61-L000287](../../scripts/compare_answer_quality_runs.py#L287) | 287 | `"        if baseline_by_id[case_id].get(\"prompt\") != candidate_by_id[case_id].get(\"prompt\"):"` | — |
-| [SRC-70795F4B61-L000288](../../scripts/compare_answer_quality_runs.py#L288) | 288 | `"            raise ValueError(f\"incomparable question text for {case_id}\")"` | — |
-| [SRC-70795F4B61-L000289](../../scripts/compare_answer_quality_runs.py#L289) | 289 | `""` | — |
-| [SRC-70795F4B61-L000290](../../scripts/compare_answer_quality_runs.py#L290) | 290 | `"    before_runtime = run_metrics(baseline)"` | — |
+| [SRC-70795F4B61-L000286](../../scripts/compare_answer_quality_runs.py#L286) | 286 | `"    corpus_by_id = {"` | — |
+| [SRC-70795F4B61-L000287](../../scripts/compare_answer_quality_runs.py#L287) | 287 | `"        case[\"case_id\"]: case"` | — |
+| [SRC-70795F4B61-L000288](../../scripts/compare_answer_quality_runs.py#L288) | 288 | `"        for case in (corpus.get(\"cases\", []) if corpus is not None else [])"` | — |
+| [SRC-70795F4B61-L000289](../../scripts/compare_answer_quality_runs.py#L289) | 289 | `"        if isinstance(case, dict) and isinstance(case.get(\"case_id\"), str)"` | — |
+| [SRC-70795F4B61-L000290](../../scripts/compare_answer_quality_runs.py#L290) | 290 | `"    }"` | — |

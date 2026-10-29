@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000618 إلى SRC-F725E90B2A-L001417
+- النطاق: SRC-F725E90B2A-L000600 إلى SRC-F725E90B2A-L001399
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000600](../../tests/test_web_agent.py#L600) | 600 | `"    )"` | — |
+| [SRC-F725E90B2A-L000601](../../tests/test_web_agent.py#L601) | 601 | `"    assert len(results) == 2  # one matching post for each explicitly configured page"` | — |
+| [SRC-F725E90B2A-L000602](../../tests/test_web_agent.py#L602) | 602 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000603](../../tests/test_web_agent.py#L603) | 603 | `"    assert all(item[\"provider\"] == \"facebook_pages_api\" for item in results)"` | — |
+| [SRC-F725E90B2A-L000604](../../tests/test_web_agent.py#L604) | 604 | `"    assert all(\"Electric car owners\" in item[\"snippet\"] for item in results)"` | — |
+| [SRC-F725E90B2A-L000605](../../tests/test_web_agent.py#L605) | 605 | `"    assert len(calls) == 2"` | — |
+| [SRC-F725E90B2A-L000606](../../tests/test_web_agent.py#L606) | 606 | `"    assert all(\"Bearer test-page-token\" == call[1][\"headers\"][\"Authorization\"] for call in calls)"` | — |
+| [SRC-F725E90B2A-L000607](../../tests/test_web_agent.py#L607) | 607 | `""` | — |
+| [SRC-F725E90B2A-L000608](../../tests/test_web_agent.py#L608) | 608 | `""` | — |
+| [SRC-F725E90B2A-L000609](../../tests/test_web_agent.py#L609) | 609 | `"def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000610](../../tests/test_web_agent.py#L610) | 610 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L000611](../../tests/test_web_agent.py#L611) | 611 | `""` | — |
+| [SRC-F725E90B2A-L000612](../../tests/test_web_agent.py#L612) | 612 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"client-test\")"` | — |
+| [SRC-F725E90B2A-L000613](../../tests/test_web_agent.py#L613) | 613 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"secret-test\")"` | — |
+| [SRC-F725E90B2A-L000614](../../tests/test_web_agent.py#L614) | 614 | `"    monkeypatch.setenv(\"REDDIT_USER_AGENT\", \"test:omarai:0.1\")"` | — |
+| [SRC-F725E90B2A-L000615](../../tests/test_web_agent.py#L615) | 615 | `""` | — |
+| [SRC-F725E90B2A-L000616](../../tests/test_web_agent.py#L616) | 616 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000617](../../tests/test_web_agent.py#L617) | 617 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000618](../../tests/test_web_agent.py#L618) | 618 | `""` | — |
 | [SRC-F725E90B2A-L000619](../../tests/test_web_agent.py#L619) | 619 | `"        def __init__(self, payload):"` | — |
 | [SRC-F725E90B2A-L000620](../../tests/test_web_agent.py#L620) | 620 | `"            self.payload = payload"` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L001397](../../tests/test_web_agent.py#L1397) | 1397 | `"        search_report={},"` | — |
 | [SRC-F725E90B2A-L001398](../../tests/test_web_agent.py#L1398) | 1398 | `"    )"` | — |
 | [SRC-F725E90B2A-L001399](../../tests/test_web_agent.py#L1399) | 1399 | `""` | — |
-| [SRC-F725E90B2A-L001400](../../tests/test_web_agent.py#L1400) | 1400 | `"    messages = captured[\"messages\"]"` | — |
-| [SRC-F725E90B2A-L001401](../../tests/test_web_agent.py#L1401) | 1401 | `"    system_content = \"\\n\".join("` | — |
-| [SRC-F725E90B2A-L001402](../../tests/test_web_agent.py#L1402) | 1402 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
-| [SRC-F725E90B2A-L001403](../../tests/test_web_agent.py#L1403) | 1403 | `"    )"` | — |
-| [SRC-F725E90B2A-L001404](../../tests/test_web_agent.py#L1404) | 1404 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
-| [SRC-F725E90B2A-L001405](../../tests/test_web_agent.py#L1405) | 1405 | `""` | — |
-| [SRC-F725E90B2A-L001406](../../tests/test_web_agent.py#L1406) | 1406 | `"    assert answer == \"إجابة اختبارية.\""` | — |
-| [SRC-F725E90B2A-L001407](../../tests/test_web_agent.py#L1407) | 1407 | `"    assert len(user_messages) == 2"` | — |
-| [SRC-F725E90B2A-L001408](../../tests/test_web_agent.py#L1408) | 1408 | `"    assert \"سؤال المستخدم الأصلي\" in user_messages[0][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001409](../../tests/test_web_agent.py#L1409) | 1409 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001410](../../tests/test_web_agent.py#L1410) | 1410 | `"    assert \"بيانات خارجية غير موثوقة\" in user_messages[1][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001411](../../tests/test_web_agent.py#L1411) | 1411 | `"    assert injected_text in user_messages[1][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001412](../../tests/test_web_agent.py#L1412) | 1412 | `"    assert injected_text not in system_content"` | — |
-| [SRC-F725E90B2A-L001413](../../tests/test_web_agent.py#L1413) | 1413 | `""` | — |
-| [SRC-F725E90B2A-L001414](../../tests/test_web_agent.py#L1414) | 1414 | `""` | — |
-| [SRC-F725E90B2A-L001415](../../tests/test_web_agent.py#L1415) | 1415 | `"def test_review_keeps_untrusted_evidence_out_of_system_message(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001416](../../tests/test_web_agent.py#L1416) | 1416 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001417](../../tests/test_web_agent.py#L1417) | 1417 | `"    source = sample_source(0)"` | — |

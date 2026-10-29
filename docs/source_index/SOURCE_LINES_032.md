@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001024 إلى SRC-6A7519AC10-L000037
+- النطاق: SRC-90FAA34ADE-L001009 إلى SRC-6A7519AC10-L000022
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001009](../../tests/fixtures/answer_quality_cases.json#L1009) | 1009 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001010](../../tests/fixtures/answer_quality_cases.json#L1010) | 1010 | `"        \"Current 2026 requirements asserted from 2021-only evidence\","` | — |
+| [SRC-90FAA34ADE-L001011](../../tests/fixtures/answer_quality_cases.json#L1011) | 1011 | `"        \"No caveat about source date\""` | — |
+| [SRC-90FAA34ADE-L001012](../../tests/fixtures/answer_quality_cases.json#L1012) | 1012 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001013](../../tests/fixtures/answer_quality_cases.json#L1013) | 1013 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001014](../../tests/fixtures/answer_quality_cases.json#L1014) | 1014 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001015](../../tests/fixtures/answer_quality_cases.json#L1015) | 1015 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001016](../../tests/fixtures/answer_quality_cases.json#L1016) | 1016 | `"      \"case_id\": \"AQ-035\","` | — |
+| [SRC-90FAA34ADE-L001017](../../tests/fixtures/answer_quality_cases.json#L1017) | 1017 | `"      \"category\": \"false_corroboration\","` | — |
+| [SRC-90FAA34ADE-L001018](../../tests/fixtures/answer_quality_cases.json#L1018) | 1018 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001019](../../tests/fixtures/answer_quality_cases.json#L1019) | 1019 | `"      \"question\": \"ثلاث صفحات ناقلة عن بوست فيسبوك واحد قالت إن الخدمة اتوقفت. هل ده تحقق مستقل؟\","` | — |
+| [SRC-90FAA34ADE-L001020](../../tests/fixtures/answer_quality_cases.json#L1020) | 1020 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001021](../../tests/fixtures/answer_quality_cases.json#L1021) | 1021 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001022](../../tests/fixtures/answer_quality_cases.json#L1022) | 1022 | `"        \"يتتبع الإسناد للمصدر الأصلي إن أمكن\","` | — |
+| [SRC-90FAA34ADE-L001023](../../tests/fixtures/answer_quality_cases.json#L1023) | 1023 | `"        \"يوضح أن تكرار نقل بوست واحد لا يصنع ثلاث عمليات تحقق مستقلة\","` | — |
 | [SRC-90FAA34ADE-L001024](../../tests/fixtures/answer_quality_cases.json#L1024) | 1024 | `"        \"يطلب بيانًا رسميًا أو مصدرًا مستقلًا قبل تأكيد التوقف\""` | — |
 | [SRC-90FAA34ADE-L001025](../../tests/fixtures/answer_quality_cases.json#L1025) | 1025 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001026](../../tests/fixtures/answer_quality_cases.json#L1026) | 1026 | `"      \"forbidden_behaviors\": ["` | — |
@@ -837,18 +852,3 @@
 | [SRC-6A7519AC10-L000020](../../tests/test_answer_quality_comparison.py#L20) | 20 | `""` | — |
 | [SRC-6A7519AC10-L000021](../../tests/test_answer_quality_comparison.py#L21) | 21 | `""` | — |
 | [SRC-6A7519AC10-L000022](../../tests/test_answer_quality_comparison.py#L22) | 22 | `"def _run(*, build_sha: str, results: list[dict]) -> dict:"` | — |
-| [SRC-6A7519AC10-L000023](../../tests/test_answer_quality_comparison.py#L23) | 23 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-6A7519AC10-L000024](../../tests/test_answer_quality_comparison.py#L24) | 24 | `"    return {"` | — |
-| [SRC-6A7519AC10-L000025](../../tests/test_answer_quality_comparison.py#L25) | 25 | `"        \"benchmark_id\": corpus[\"benchmark_id\"],"` | — |
-| [SRC-6A7519AC10-L000026](../../tests/test_answer_quality_comparison.py#L26) | 26 | `"        \"benchmark_version\": corpus[\"version\"],"` | — |
-| [SRC-6A7519AC10-L000027](../../tests/test_answer_quality_comparison.py#L27) | 27 | `"        \"build_sha\": build_sha,"` | — |
-| [SRC-6A7519AC10-L000028](../../tests/test_answer_quality_comparison.py#L28) | 28 | `"        \"executed_at_utc\": \"2026-10-29T12:00:00+00:00\","` | — |
-| [SRC-6A7519AC10-L000029](../../tests/test_answer_quality_comparison.py#L29) | 29 | `"        \"results\": results,"` | — |
-| [SRC-6A7519AC10-L000030](../../tests/test_answer_quality_comparison.py#L30) | 30 | `"    }"` | — |
-| [SRC-6A7519AC10-L000031](../../tests/test_answer_quality_comparison.py#L31) | 31 | `""` | — |
-| [SRC-6A7519AC10-L000032](../../tests/test_answer_quality_comparison.py#L32) | 32 | `""` | — |
-| [SRC-6A7519AC10-L000033](../../tests/test_answer_quality_comparison.py#L33) | 33 | `"def _row(case_id: str, *, latency: float, tool_status: str, cost: float \| None, request_cost: float \| None = None, expected_strategy: str = \"web_search\") -> dict:"` | — |
-| [SRC-6A7519AC10-L000034](../../tests/test_answer_quality_comparison.py#L34) | 34 | `"    row = {"` | — |
-| [SRC-6A7519AC10-L000035](../../tests/test_answer_quality_comparison.py#L35) | 35 | `"        \"case_id\": case_id,"` | — |
-| [SRC-6A7519AC10-L000036](../../tests/test_answer_quality_comparison.py#L36) | 36 | `"        \"prompt\": \"Test question \" + case_id,"` | — |
-| [SRC-6A7519AC10-L000037](../../tests/test_answer_quality_comparison.py#L37) | 37 | `"        \"expected_strategy\": expected_strategy,"` | — |

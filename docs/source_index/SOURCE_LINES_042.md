@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000374 إلى SRC-AFEDC2645A-L000357
+- النطاق: SRC-01E35ABC46-L000356 إلى SRC-AFEDC2645A-L000339
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000356](../../tests/test_research_guardrails.py#L356) | 356 | `"        [personal_post, promotional_post, editorial_review],"` | — |
+| [SRC-01E35ABC46-L000357](../../tests/test_research_guardrails.py#L357) | 357 | `"        now=_GUARDRAIL_NOW,"` | — |
+| [SRC-01E35ABC46-L000358](../../tests/test_research_guardrails.py#L358) | 358 | `"    )"` | — |
+| [SRC-01E35ABC46-L000359](../../tests/test_research_guardrails.py#L359) | 359 | `""` | — |
+| [SRC-01E35ABC46-L000360](../../tests/test_research_guardrails.py#L360) | 360 | `"    labels = {item[\"url\"]: item[\"opinion_source_classification\"] for item in accepted}"` | — |
+| [SRC-01E35ABC46-L000361](../../tests/test_research_guardrails.py#L361) | 361 | `"    assert labels[personal_post[\"url\"]] == \"personal_experience_candidate\""` | — |
+| [SRC-01E35ABC46-L000362](../../tests/test_research_guardrails.py#L362) | 362 | `"    assert labels[promotional_post[\"url\"]] == \"promotional_or_commercial\""` | — |
+| [SRC-01E35ABC46-L000363](../../tests/test_research_guardrails.py#L363) | 363 | `"    assert editorial_review[\"url\"] not in labels"` | — |
+| [SRC-01E35ABC46-L000364](../../tests/test_research_guardrails.py#L364) | 364 | `"    assert report[\"social_platform_only\"] is True"` | — |
+| [SRC-01E35ABC46-L000365](../../tests/test_research_guardrails.py#L365) | 365 | `"    assert report[\"rejection_counts\"] == {\"not_a_social_platform_source\": 1}"` | — |
+| [SRC-01E35ABC46-L000366](../../tests/test_research_guardrails.py#L366) | 366 | `"    assert all("` | — |
+| [SRC-01E35ABC46-L000367](../../tests/test_research_guardrails.py#L367) | 367 | `"        item[\"opinion_classification_method\"] == \"heuristic_only\""` | — |
+| [SRC-01E35ABC46-L000368](../../tests/test_research_guardrails.py#L368) | 368 | `"        for item in accepted"` | — |
+| [SRC-01E35ABC46-L000369](../../tests/test_research_guardrails.py#L369) | 369 | `"    )"` | — |
+| [SRC-01E35ABC46-L000370](../../tests/test_research_guardrails.py#L370) | 370 | `""` | — |
+| [SRC-01E35ABC46-L000371](../../tests/test_research_guardrails.py#L371) | 371 | `""` | — |
+| [SRC-01E35ABC46-L000372](../../tests/test_research_guardrails.py#L372) | 372 | `"def test_social_classification_does_not_claim_unknown_post_is_verified_experience() -> None:"` | — |
+| [SRC-01E35ABC46-L000373](../../tests/test_research_guardrails.py#L373) | 373 | `"    result = classify_social_source("` | — |
 | [SRC-01E35ABC46-L000374](../../tests/test_research_guardrails.py#L374) | 374 | `"        _guardrail_source("` | — |
 | [SRC-01E35ABC46-L000375](../../tests/test_research_guardrails.py#L375) | 375 | `"            \"https://www.youtube.com/watch?v=example\","` | — |
 | [SRC-01E35ABC46-L000376](../../tests/test_research_guardrails.py#L376) | 376 | `"            title=\"Nissan Sunny 2022\","` | — |
@@ -834,21 +852,3 @@
 | [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"        intent_route=\"WEB_DEEP\","` | — |
 | [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"        dialogue_context={"` | — |
 | [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"            \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"            \"method\": \"test_context\","` | — |
-| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
-| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
-| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
-| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
-| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `"    assert \"bounded_stop_rule\" in ids"` | — |
-| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
-| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
-| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"    assert \"balance_social_evidence\" in ids"` | — |
-| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"    assert \"resolve_followup_slots\" in ids"` | — |
-| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
-| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
-| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `""` | — |
-| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |

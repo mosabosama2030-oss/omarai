@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **048**
-- سجلات الأسطر: **741**
-- النطاق: SRC-F725E90B2A-L003818 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **759**
+- النطاق: SRC-F725E90B2A-L003800 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003800](../../tests/test_web_agent.py#L3800) | 3800 | `"        research_plan=plan,"` | — |
+| [SRC-F725E90B2A-L003801](../../tests/test_web_agent.py#L3801) | 3801 | `"        search_report={"` | — |
+| [SRC-F725E90B2A-L003802](../../tests/test_web_agent.py#L3802) | 3802 | `"            \"queries_planned\": len(plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L003803](../../tests/test_web_agent.py#L3803) | 3803 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-F725E90B2A-L003804](../../tests/test_web_agent.py#L3804) | 3804 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-F725E90B2A-L003805](../../tests/test_web_agent.py#L3805) | 3805 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L003806](../../tests/test_web_agent.py#L3806) | 3806 | `"        },"` | — |
+| [SRC-F725E90B2A-L003807](../../tests/test_web_agent.py#L3807) | 3807 | `"    )"` | — |
+| [SRC-F725E90B2A-L003808](../../tests/test_web_agent.py#L3808) | 3808 | `""` | — |
+| [SRC-F725E90B2A-L003809](../../tests/test_web_agent.py#L3809) | 3809 | `"    prompt = \"\\n\".join("` | — |
+| [SRC-F725E90B2A-L003810](../../tests/test_web_agent.py#L3810) | 3810 | `"        message.get(\"content\", \"\")"` | — |
+| [SRC-F725E90B2A-L003811](../../tests/test_web_agent.py#L3811) | 3811 | `"        for message in captured[\"messages\"]"` | — |
+| [SRC-F725E90B2A-L003812](../../tests/test_web_agent.py#L3812) | 3812 | `"        if isinstance(message, dict)"` | — |
+| [SRC-F725E90B2A-L003813](../../tests/test_web_agent.py#L3813) | 3813 | `"    )"` | — |
+| [SRC-F725E90B2A-L003814](../../tests/test_web_agent.py#L3814) | 3814 | `"    assert answer == \"إجابة اختبارية مرتبطة بالأدلة.\""` | — |
+| [SRC-F725E90B2A-L003815](../../tests/test_web_agent.py#L3815) | 3815 | `"    assert \"task_planning_context\" in prompt"` | — |
+| [SRC-F725E90B2A-L003816](../../tests/test_web_agent.py#L3816) | 3816 | `"    assert \"explicit_aspects\" in prompt"` | — |
+| [SRC-F725E90B2A-L003817](../../tests/test_web_agent.py#L3817) | 3817 | `"    assert \"output_preferences\" in prompt"` | — |
 | [SRC-F725E90B2A-L003818](../../tests/test_web_agent.py#L3818) | 3818 | `"    assert \"beginner_friendly_requested\" in prompt"` | — |
 | [SRC-F725E90B2A-L003819](../../tests/test_web_agent.py#L3819) | 3819 | `"    assert \"reasoning_guidance\" in prompt"` | — |
 | [SRC-F725E90B2A-L003820](../../tests/test_web_agent.py#L3820) | 3820 | `"    assert \"decision_matrix\" in prompt"` | — |

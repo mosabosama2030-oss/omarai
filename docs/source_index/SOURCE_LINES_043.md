@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000358 إلى SRC-F725E90B2A-L000617
+- النطاق: SRC-AFEDC2645A-L000340 إلى SRC-F725E90B2A-L000599
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"            \"topic_shift\": False,"` | — |
+| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
+| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"            \"method\": \"test_context\","` | — |
+| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"        },"` | — |
+| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
+| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
+| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
+| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
+| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `"    assert \"bounded_stop_rule\" in ids"` | — |
+| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
+| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
+| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"    assert \"balance_social_evidence\" in ids"` | — |
+| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"    assert \"resolve_followup_slots\" in ids"` | — |
+| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
+| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
+| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `""` | — |
+| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |
 | [SRC-AFEDC2645A-L000358](../../tests/test_task_understanding.py#L358) | 358 | `"    assert any(\"لا تعمم على الجميع\" in item for item in guidance)"` | — |
 | [SRC-AFEDC2645A-L000359](../../tests/test_task_understanding.py#L359) | 359 | `"    assert any(\"تاريخ النشر\" in item for item in guidance)"` | — |
 | [SRC-AFEDC2645A-L000360](../../tests/test_task_understanding.py#L360) | 360 | `"    assert all(isinstance(item, str) and item for item in guidance)"` | — |
@@ -816,21 +834,3 @@
 | [SRC-F725E90B2A-L000597](../../tests/test_web_agent.py#L597) | 597 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
 | [SRC-F725E90B2A-L000598](../../tests/test_web_agent.py#L598) | 598 | `"    results, warnings = WebAgent()._search_social("` | — |
 | [SRC-F725E90B2A-L000599](../../tests/test_web_agent.py#L599) | 599 | `"        \"electric car\", [\"facebook\"]"` | — |
-| [SRC-F725E90B2A-L000600](../../tests/test_web_agent.py#L600) | 600 | `"    )"` | — |
-| [SRC-F725E90B2A-L000601](../../tests/test_web_agent.py#L601) | 601 | `"    assert len(results) == 2  # one matching post for each explicitly configured page"` | — |
-| [SRC-F725E90B2A-L000602](../../tests/test_web_agent.py#L602) | 602 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000603](../../tests/test_web_agent.py#L603) | 603 | `"    assert all(item[\"provider\"] == \"facebook_pages_api\" for item in results)"` | — |
-| [SRC-F725E90B2A-L000604](../../tests/test_web_agent.py#L604) | 604 | `"    assert all(\"Electric car owners\" in item[\"snippet\"] for item in results)"` | — |
-| [SRC-F725E90B2A-L000605](../../tests/test_web_agent.py#L605) | 605 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L000606](../../tests/test_web_agent.py#L606) | 606 | `"    assert all(\"Bearer test-page-token\" == call[1][\"headers\"][\"Authorization\"] for call in calls)"` | — |
-| [SRC-F725E90B2A-L000607](../../tests/test_web_agent.py#L607) | 607 | `""` | — |
-| [SRC-F725E90B2A-L000608](../../tests/test_web_agent.py#L608) | 608 | `""` | — |
-| [SRC-F725E90B2A-L000609](../../tests/test_web_agent.py#L609) | 609 | `"def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000610](../../tests/test_web_agent.py#L610) | 610 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000611](../../tests/test_web_agent.py#L611) | 611 | `""` | — |
-| [SRC-F725E90B2A-L000612](../../tests/test_web_agent.py#L612) | 612 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"client-test\")"` | — |
-| [SRC-F725E90B2A-L000613](../../tests/test_web_agent.py#L613) | 613 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"secret-test\")"` | — |
-| [SRC-F725E90B2A-L000614](../../tests/test_web_agent.py#L614) | 614 | `"    monkeypatch.setenv(\"REDDIT_USER_AGENT\", \"test:omarai:0.1\")"` | — |
-| [SRC-F725E90B2A-L000615](../../tests/test_web_agent.py#L615) | 615 | `""` | — |
-| [SRC-F725E90B2A-L000616](../../tests/test_web_agent.py#L616) | 616 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000617](../../tests/test_web_agent.py#L617) | 617 | `"        status_code = 200"` | — |
