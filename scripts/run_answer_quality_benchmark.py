@@ -147,6 +147,30 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
         for name in requirements_raw
         if isinstance(name, str) and name.strip()
     ] if isinstance(requirements_raw, list) else []
+    allowed_statuses = {
+        "web_search": {
+            "failed", "unknown", "not_attempted", "counter_mismatch",
+            "completed_with_results", "completed_no_usable_results",
+        },
+        "page_fetch": {
+            "counter_mismatch", "completed_with_read_pages",
+            "attempted_no_readable_pages", "unknown",
+            "not_attempted_after_search_error", "not_attempted_no_fetchable_candidates",
+            "not_attempted",
+        },
+        "public_social_search_if_configured": {
+            "completed_with_results", "failed", "unknown",
+            "completed_no_usable_results", "not_attempted", "not_configured",
+        },
+        "language_model_generation_if_configured": {
+            "completed", "not_configured", "failed", "not_attempted",
+            "not_attempted_no_evidence", "unknown",
+        },
+        "claim_review_if_configured": {
+            "completed_model_assisted_review", "failed",
+            "not_attempted_no_evidence", "not_attempted", "unknown",
+        },
+    }
     successful_statuses = {
         "web_search": {"completed_with_results"},
         "page_fetch": {"completed_with_read_pages"},
@@ -185,13 +209,15 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
             raw_status = matches[0].get("status")
             status_observed = isinstance(raw_status, str) and bool(raw_status.strip())
             status = raw_status if status_observed else "missing_status"
-            successful = status_observed and status in successful_statuses.get(tool, set())
-            if not status_observed:
+            status_valid = status_observed and status in allowed_statuses.get(tool, set())
+            successful = status_valid and status in successful_statuses.get(tool, set())
+            if not status_valid:
                 required_tool_matrix_complete = False
         required_tool_statuses.append({
             "tool": tool,
             "status": status,
             "status_observed": status_observed,
+            "status_valid": status_valid if len(matches) == 1 else False,
             "successful_completion": successful,
         })
     if expected_strategy == "web_search" and "web_search" not in required_name_set:
