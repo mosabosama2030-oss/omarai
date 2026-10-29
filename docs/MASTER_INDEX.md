@@ -41,7 +41,7 @@
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10662 | 253 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
-| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25333 | 559 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25451 | 559 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38402 | 907 | جرد الملف + AST Python |
@@ -222,7 +222,7 @@
 | [agents/intent_router.py](../agents/intent_router.py#L80) | دالة | _is_smalltalk | لا توجد Docstring. | ناقص | 80 | [SRC-5587371288-L000080](../agents/intent_router.py#L80) |
 | [agents/intent_router.py](../agents/intent_router.py#L92) | دالة | _has_context | Return true only when history has a usable topic anchor, not a bare follow-up. | موثق | 92 | [SRC-5587371288-L000092](../agents/intent_router.py#L92) |
 | [agents/intent_router.py](../agents/intent_router.py#L97) | دالة | _has_live_signal | Recognize common time-sensitive or explicit-search requests without a model. | موثق | 97 | [SRC-5587371288-L000097](../agents/intent_router.py#L97) |
-| [agents/intent_router.py](../agents/intent_router.py#L115) | دالة | _is_lead_generation_request | Recognize an explicit request to discover prospective buyers/customers. | موثق | 115 | [SRC-5587371288-L000115](../agents/intent_router.py#L115) |
+| [agents/intent_router.py](../agents/intent_router.py#L115) | دالة | _is_lead_generation_request | Recognize explicit requests to discover prospective buyers/customers. | موثق | 115 | [SRC-5587371288-L000115](../agents/intent_router.py#L115) |
 | [agents/intent_router.py](../agents/intent_router.py#L142) | متغير/ثابت Python | _FOLLOWUP_LEAD_IN_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 142 | [SRC-5587371288-L000142](../agents/intent_router.py#L142) |
 | [agents/intent_router.py](../agents/intent_router.py#L147) | متغير/ثابت Python | _FOLLOWUP_ASPECT_FRAGMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 147 | [SRC-5587371288-L000147](../agents/intent_router.py#L147) |
 | [agents/intent_router.py](../agents/intent_router.py#L160) | دالة | _strip_followup_leadin | لا توجد Docstring. | ناقص | 160 | [SRC-5587371288-L000160](../agents/intent_router.py#L160) |

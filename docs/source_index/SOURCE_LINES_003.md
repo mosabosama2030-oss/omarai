@@ -489,31 +489,31 @@
 | [SRC-5587371288-L000113](../../agents/intent_router.py#L113) | 113 | `""` | — |
 | [SRC-5587371288-L000114](../../agents/intent_router.py#L114) | 114 | `""` | — |
 | [SRC-5587371288-L000115](../../agents/intent_router.py#L115) | 115 | `"def _is_lead_generation_request(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000116](../../agents/intent_router.py#L116) | 116 | `"    \"\"\"Recognize an explicit request to discover prospective buyers/customers."` | — |
-| [SRC-5587371288-L000117](../../agents/intent_router.py#L117) | 117 | `""` | — |
-| [SRC-5587371288-L000118](../../agents/intent_router.py#L118) | 118 | `"    A product or property listing request alone is not lead generation. This"` | — |
-| [SRC-5587371288-L000119](../../agents/intent_router.py#L119) | 119 | `"    route requires a prospect/customer target plus an action to find one."` | — |
-| [SRC-5587371288-L000120](../../agents/intent_router.py#L120) | 120 | `"    \"\"\""` | — |
-| [SRC-5587371288-L000121](../../agents/intent_router.py#L121) | 121 | `"    normalized = _normalize(question)"` | — |
-| [SRC-5587371288-L000122](../../agents/intent_router.py#L122) | 122 | `"    arabic_actions = (\"ابحث عن\", \"دور على\", \"دورلي على\", \"اعثر على\", \"هاتلي\", \"هات\")"` | — |
-| [SRC-5587371288-L000123](../../agents/intent_router.py#L123) | 123 | `"    arabic_targets = (\"عميل\", \"عملاء\", \"مشتري\", \"مشتر\", \"مشترين\", \"عملاء محتملين\")"` | — |
-| [SRC-5587371288-L000124](../../agents/intent_router.py#L124) | 124 | `"    english_patterns = ("` | — |
-| [SRC-5587371288-L000125](../../agents/intent_router.py#L125) | 125 | `"        r\"\\b(?:find\|search for\|look for\|identify\|generate\|build\|create)\\b.{0,45}\\b(?:buyers?\|customers?\|prospects?\|leads?)\\b\|\\b(?:find\|build\|create\|generate)\\s+(?:a\\s+)?(?:lead generation\|prospect list)\\b\","` | — |
-| [SRC-5587371288-L000126](../../agents/intent_router.py#L126) | 126 | `"    )"` | — |
-| [SRC-5587371288-L000127](../../agents/intent_router.py#L127) | 127 | `"    if any(action in normalized for action in arabic_actions) and any("` | — |
-| [SRC-5587371288-L000128](../../agents/intent_router.py#L128) | 128 | `"        target in normalized for target in arabic_targets"` | — |
-| [SRC-5587371288-L000129](../../agents/intent_router.py#L129) | 129 | `"    ):"` | — |
-| [SRC-5587371288-L000130](../../agents/intent_router.py#L130) | 130 | `"        return True"` | — |
-| [SRC-5587371288-L000131](../../agents/intent_router.py#L131) | 131 | `"    if any(re.search(pattern, normalized) for pattern in english_patterns):"` | — |
-| [SRC-5587371288-L000132](../../agents/intent_router.py#L132) | 132 | `"        return True"` | — |
-| [SRC-5587371288-L000133](../../agents/intent_router.py#L133) | 133 | `"    return bool("` | — |
-| [SRC-5587371288-L000134](../../agents/intent_router.py#L134) | 134 | `"        re.search("` | — |
-| [SRC-5587371288-L000135](../../agents/intent_router.py#L135) | 135 | `"            r\"\\b(?:buyers?\|customers?\|prospects?\|leads?)\\b.{0,45}\\b\""` | — |
-| [SRC-5587371288-L000136](../../agents/intent_router.py#L136) | 136 | `"            r\"(?:looking to buy\|want to buy\|wants to buy\|seeking to purchase)\\b\","` | — |
-| [SRC-5587371288-L000137](../../agents/intent_router.py#L137) | 137 | `"            normalized,"` | — |
-| [SRC-5587371288-L000138](../../agents/intent_router.py#L138) | 138 | `"        )"` | — |
-| [SRC-5587371288-L000139](../../agents/intent_router.py#L139) | 139 | `"    )"` | — |
-| [SRC-5587371288-L000140](../../agents/intent_router.py#L140) | 140 | `""` | — |
+| [SRC-5587371288-L000116](../../agents/intent_router.py#L116) | 116 | `"    \"\"\"Recognize explicit requests to discover prospective buyers/customers.\"\"\""` | — |
+| [SRC-5587371288-L000117](../../agents/intent_router.py#L117) | 117 | `"    normalized = _normalize(question)"` | — |
+| [SRC-5587371288-L000118](../../agents/intent_router.py#L118) | 118 | `"    # Repair only frequent, task-specific Arabic typing variants before routing."` | — |
+| [SRC-5587371288-L000119](../../agents/intent_router.py#L119) | 119 | `"    normalized = normalized.replace(\"عملاش\", \"عملاء\").replace(\"شرا\", \"شراء\")"` | — |
+| [SRC-5587371288-L000120](../../agents/intent_router.py#L120) | 120 | `"    arabic_actions = ("` | — |
+| [SRC-5587371288-L000121](../../agents/intent_router.py#L121) | 121 | `"        \"ابحث عن\", \"ابحث لي عن\", \"ابحثلي عن\", \"بحث عن\","` | — |
+| [SRC-5587371288-L000122](../../agents/intent_router.py#L122) | 122 | `"        \"دور على\", \"دورلي على\", \"دور لي على\", \"اعثر على\", \"هاتلي\", \"هات\","` | — |
+| [SRC-5587371288-L000123](../../agents/intent_router.py#L123) | 123 | `"    )"` | — |
+| [SRC-5587371288-L000124](../../agents/intent_router.py#L124) | 124 | `"    arabic_targets = (\"عميل\", \"عملاء\", \"مشتري\", \"مشتر\", \"مشترين\", \"عملاء محتملين\")"` | — |
+| [SRC-5587371288-L000125](../../agents/intent_router.py#L125) | 125 | `"    if any(action in normalized for action in arabic_actions) and any("` | — |
+| [SRC-5587371288-L000126](../../agents/intent_router.py#L126) | 126 | `"        target in normalized for target in arabic_targets"` | — |
+| [SRC-5587371288-L000127](../../agents/intent_router.py#L127) | 127 | `"    ):"` | — |
+| [SRC-5587371288-L000128](../../agents/intent_router.py#L128) | 128 | `"        return True"` | — |
+| [SRC-5587371288-L000129](../../agents/intent_router.py#L129) | 129 | `"    english_patterns = ("` | — |
+| [SRC-5587371288-L000130](../../agents/intent_router.py#L130) | 130 | `"        r\"\\b(?:find\|search for\|look for\|identify\|generate\|build\|create)\\b.{0,45}\\b(?:buyers?\|customers?\|prospects?\|leads?)\\b\|\\b(?:find\|build\|create\|generate)\\s+(?:a\\s+)?(?:lead generation\|prospect list)\\b\","` | — |
+| [SRC-5587371288-L000131](../../agents/intent_router.py#L131) | 131 | `"    )"` | — |
+| [SRC-5587371288-L000132](../../agents/intent_router.py#L132) | 132 | `"    if any(re.search(pattern, normalized) for pattern in english_patterns):"` | — |
+| [SRC-5587371288-L000133](../../agents/intent_router.py#L133) | 133 | `"        return True"` | — |
+| [SRC-5587371288-L000134](../../agents/intent_router.py#L134) | 134 | `"    return bool("` | — |
+| [SRC-5587371288-L000135](../../agents/intent_router.py#L135) | 135 | `"        re.search("` | — |
+| [SRC-5587371288-L000136](../../agents/intent_router.py#L136) | 136 | `"            r\"\\b(?:buyers?\|customers?\|prospects?\|leads?)\\b.{0,45}\\b\""` | — |
+| [SRC-5587371288-L000137](../../agents/intent_router.py#L137) | 137 | `"            r\"(?:looking to buy\|want to buy\|wants to buy\|seeking to purchase)\\b\","` | — |
+| [SRC-5587371288-L000138](../../agents/intent_router.py#L138) | 138 | `"            normalized,"` | — |
+| [SRC-5587371288-L000139](../../agents/intent_router.py#L139) | 139 | `"        )"` | — |
+| [SRC-5587371288-L000140](../../agents/intent_router.py#L140) | 140 | `"    )"` | — |
 | [SRC-5587371288-L000141](../../agents/intent_router.py#L141) | 141 | `""` | — |
 | [SRC-5587371288-L000142](../../agents/intent_router.py#L142) | 142 | `"_FOLLOWUP_LEAD_IN_RE = re.compile("` | — |
 | [SRC-5587371288-L000143](../../agents/intent_router.py#L143) | 143 | `"    r\"^(?:(?:و?طيب\|و?طب\|و?تمام\|well\|okay\|ok\|so)\\s+)+\","` | — |
