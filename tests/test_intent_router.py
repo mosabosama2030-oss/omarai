@@ -181,7 +181,6 @@ def test_prefixed_elliptical_followup_is_clarified_without_topic():
         decision = route_intent(question)
         assert decision["route"] == "CLARIFY", question
 
-
 def test_prefixed_elliptical_followup_uses_topic_when_available():
     history = [
         {"role": "user", "content": "عايز أعرف سعر iPhone 16 في مصر"},
@@ -194,7 +193,6 @@ def test_prefixed_elliptical_followup_uses_topic_when_available():
         assert "iPhone 16" in resolved
         assert "مصر" in resolved
 
-
 def test_long_arabic_warranty_followup_resolves_with_context():
     history = [
         {"role": "user", "content": "عايز أعرف سعر iPhone 17 نسخة 256 جيجابايت في مصر"},
@@ -205,13 +203,11 @@ def test_long_arabic_warranty_followup_resolves_with_context():
     assert "iPhone 17" in resolved
     assert question in resolved
 
-
 def test_long_arabic_warranty_followup_without_context_clarifies():
     question = "وطب الضمان الدولي بيسري في مصر؟"
     decision = route_intent(question)
     assert decision["route"] == "CLARIFY"
     assert decision["needs_clarification"] is True
-
 
 def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():
     history = [
@@ -223,7 +219,6 @@ def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():
     decision = route_intent(question, history)
     assert decision["route"] == "MODEL_ONLY"
 
-
 def test_chained_followups_keep_the_last_substantive_topic():
     history = [
         {"role": "user", "content": "ما سعر iPhone 16 في مصر؟"},
@@ -234,7 +229,6 @@ def test_chained_followups_keep_the_last_substantive_topic():
     resolved = resolve_followup_query("والبطارية؟", history)
     assert "iPhone 16" in resolved
     assert "البطارية" in resolved
-
 
 def test_answer_to_clarification_restores_original_intent():
     history = [
@@ -251,7 +245,6 @@ def test_answer_to_clarification_restores_original_intent():
     assert "سعرها" in resolved
     assert "iPhone 16" in resolved
 
-
 def test_topic_detection_does_not_inherit_old_social_or_depth_intent():
     from agents.research import fallback_plan
 
@@ -264,8 +257,6 @@ def test_topic_detection_does_not_inherit_old_social_or_depth_intent():
     assert plan["platforms"] == []
     assert plan["depth"] == "standard"
 
-
-
 def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():
     question = (
         "ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ "
@@ -275,11 +266,9 @@ def test_explicit_request_for_reliable_sources_uses_web_search_in_auto_mode():
     assert decision["route"] == "WEB_SIMPLE"
     assert decision["reason"] == "explicit_evidence_request"
 
-
 def test_stable_question_without_source_request_remains_model_only():
     decision = route_intent("اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف")
     assert decision["route"] == "MODEL_ONLY"
-
 
 def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> None:
     history = [

@@ -8,6 +8,7 @@ from agents.research import compact_search_query
 from agents.request_budget import RequestBudgetExceeded
 from agents.web_agent import (
     WebAgent,
+    _minimum_relevance_ratio,
     _normalize_search_query,
     _public_http_url,
     _relevance_query_tokens,
@@ -3466,9 +3467,6 @@ def test_auto_navigation_strips_arabic_search_verb_without_regex_regression(monk
     assert observed_plans[0]["queries"]
     assert all(not query.startswith("ابحث عن") for query in observed_plans[0]["queries"])
     assert "الموقع الرسمي لشركة النور" in observed_plans[0]["queries"][0]
-
-
-
 def test_latest_mode_does_not_generate_answer_from_stale_pages(monkeypatch):
     """Current-mode answers must abstain if only old pages survive retrieval."""
     agent = WebAgent()
@@ -3523,7 +3521,6 @@ def test_latest_mode_does_not_generate_answer_from_stale_pages(monkeypatch):
     assert guardrails["initial"]["rejection_counts"]["stale"] == 1
     assert guardrails["final"]["current_evidence_status"] == "no_current_eligible_evidence"
     assert result["search_report"]["search_outcome"] == "attempted_no_usable_sources"
-
 
 def test_official_government_lookup_never_synthesizes_tourism_result(monkeypatch):
     agent = WebAgent()
@@ -3706,8 +3703,6 @@ def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):
     assert task_understanding["query_strategy_matrix"] == []
     assert task_understanding["search_was_attempted"] is False
 
-
-
 def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):
     agent = WebAgent()
 
@@ -3730,7 +3725,6 @@ def test_official_site_without_target_clarifies_before_planning_or_search(monkey
     assert result["search_attempted"] is False
     assert "official_destination_target_entity" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
 
-
 def test_summary_without_source_clarifies_before_search(monkeypatch):
     agent = WebAgent()
     monkeypatch.setattr(
@@ -3750,7 +3744,6 @@ def test_summary_without_source_clarifies_before_search(monkeypatch):
     assert "أرسل النص" in result["answer"]
     assert result["search_attempted"] is False
     assert "summary_source_url_or_pasted_text" in result["task_understanding"]["task_spec"]["missing_required_inputs"]
-
 
 def test_task_spec_controls_generation_context_without_becoming_evidence(monkeypatch):
     from agents.task_understanding import build_query_strategy_matrix, build_task_spec
@@ -3824,3 +3817,22 @@ def test_task_spec_controls_generation_context_without_becoming_evidence(monkeyp
     assert "query_strategy_matrix" in prompt
     assert "الأولوية لكلام المستخدم الحالي" in prompt
     assert "الاستعلامات المخططة فقط" in prompt
+
+def test_bilingual_relevance_handles_arabic_attached_clitics_without_lowering_floor():
+    query = "أهم استخدامات الذكاء الاصطناعي للشركات الصغيرة؟"
+    evidence = "AI use cases for small businesses"
+    assert _minimum_relevance_ratio(query) == 0.20
+    assert _relevance_ratio(query, evidence) >= 0.80
+
+def test_search_evidence_matching_keeps_distinct_concepts_as_the_ratio_denominator():
+    query = "استخدامات الذكاء الاصطناعي للشركات الصغيرة"
+    on_topic = "AI use cases for small businesses"
+    weak = "AI tools for personal photo editing"
+    assert _relevance_ratio(query, on_topic) > _relevance_ratio(query, weak)
+    assert _relevance_ratio(query, weak) < _minimum_relevance_ratio(query)
+
+def test_bilingual_relevance_matches_english_queries_to_arabic_source_text():
+    query = "AI use cases for small businesses in Egypt"
+    evidence = "استخدامات الذكاء الاصطناعي للشركات الصغيرة في مصر"
+    assert _relevance_ratio(query, evidence) >= 0.80
+
