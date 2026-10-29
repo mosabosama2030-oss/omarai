@@ -1197,23 +1197,11 @@ def build_query_strategy_matrix(
         return rows
 
     candidates = _generated_strategy_candidates(base, spec_for_candidates)
-    preserve_planner_alternatives_early = (
-        spec.get("task_family") == "find_or_discover"
-        and bool(constraints.get("explicit_budgets"))
-        and not constraints.get("social_evidence_requested")
-        and not constraints.get("time_sensitive_request")
-        and not constraints.get("official_destination_required")
-    )
-    if preserve_planner_alternatives_early:
-        for index, query in enumerate(queries[1:], start=1):
-            if len(rows) >= maximum:
-                break
-            if isinstance(query, str):
-                strategy, rationale = _label_existing_query(query, index, spec)
-                add(query, strategy, rationale, enforce_topic=False)
-
     for query, strategy, rationale in candidates:
-        add(query, strategy, rationale)
+        add(
+            query, strategy, rationale,
+            enforce_topic=(strategy != "explicit_criterion"),
+        )
         if len(rows) >= maximum:
             break
 
