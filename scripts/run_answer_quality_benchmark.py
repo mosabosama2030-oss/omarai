@@ -25,7 +25,9 @@ from __future__ import annotations
 import argparse
 import ipaddress
 import json
+import math
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -37,6 +39,216 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CORPUS = ROOT / "tests" / "fixtures" / "answer_quality_cases.json"
 MAX_RESPONSE_BYTES = 2_000_000
+
+
+def _load_request_cost_ledger(path: Path | None, valid_case_ids: set[str]) -> tuple[dict[str, float], str | None]:
+    """Load reconciled, externally sourced whole-request USD costs; never estimate them."""
+    if path is None:
+        return {}, None
+    ledger = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(ledger, dict):
+        raise ValueError("request-cost ledger root must be an object")
+    if ledger.get("currency") != "USD" or ledger.get("scope") != "complete_request":
+        raise ValueError("request-cost ledger must declare currency=USD and scope=complete_request")
+    source = ledger.get("source")
+    if not isinstance(source, str) or not source.strip():
+        raise ValueError("request-cost ledger needs a non-empty source describing the reconciliation")
+    entries = ledger.get("costs")
+    if not isinstance(entries, list):
+        raise ValueError("request-cost ledger must contain a costs array")
+    costs: dict[str, float] = {}
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            raise ValueError(f"request-cost ledger costs[{index}] must be an object")
+        case_id = entry.get("case_id")
+        if not isinstance(case_id, str) or case_id not in valid_case_ids:
+            raise ValueError(f"request-cost ledger costs[{index}] has an unknown case_id")
+        if case_id in costs:
+            raise ValueError(f"request-cost ledger has duplicate case_id {case_id}")
+        value = _finite_nonnegative_number(entry.get("cost_usd"))
+        if value is None:
+            raise ValueError(f"request-cost ledger {case_id} cost_usd must be finite and non-negative")
+        costs[case_id] = value
+    return costs, source.strip()
+
+
+def _model_calls_from_payload(payload: dict) -> list[dict]:
+    """Read only structured per-request model-call metadata from an API response."""
+    report = payload.get("search_report")
+    understanding = payload.get("task_understanding")
+    candidates = [
+        payload.get("model_calls"),
+        report.get("model_calls") if isinstance(report, dict) else None,
+        understanding.get("model_calls") if isinstance(understanding, dict) else None,
+    ]
+    for candidate in candidates:
+        if isinstance(candidate, list) and candidate:
+            return [item for item in candidate if isinstance(item, dict)]
+    return []
+
+
+def _finite_nonnegative_number(value) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    number = float(value)
+    if not math.isfinite(number) or number < 0:
+        return None
+    return number
+
+
+def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok: bool) -> dict:
+    """Derive conservative telemetry; never infer semantic correctness from HTTP 200."""
+    if not isinstance(payload, dict):
+        payload = {}
+    report = payload.get("search_report")
+    report = report if isinstance(report, dict) else {}
+    outcome = report.get("search_outcome")
+    pipeline = report.get("pipeline_completion_status")
+    source_rows = payload.get("sources")
+    source_rows_known = isinstance(source_rows, list)
+    source_count = len(source_rows) if source_rows_known else None
+    if expected_strategy != "web_search":
+        tool_status = "NOT_APPLICABLE"
+    elif not transport_ok:
+        tool_status = "TRANSPORT_FAILED"
+    elif outcome == "attempted_with_usable_sources":
+        if source_count is None:
+            tool_status = "UNKNOWN_SOURCE_COUNT"
+        elif source_count == 0:
+            tool_status = "INCONSISTENT_SEARCH_OUTCOME_NO_RETURNED_SOURCES"
+        else:
+            tool_status = "SUCCESS_WITH_USABLE_RESULTS"
+    elif outcome == "attempted_no_usable_sources":
+        if source_count is not None and source_count > 0:
+            tool_status = "INCONSISTENT_SEARCH_OUTCOME_WITH_RETURNED_SOURCES"
+        else:
+            tool_status = "ATTEMPTED_NO_USABLE_RESULTS"
+    elif outcome == "attempted_research_error":
+        tool_status = "TOOL_FAILED"
+    elif outcome == "unknown_after_budget_exhaustion":
+        tool_status = "BUDGET_EXHAUSTED"
+    elif outcome == "not_attempted":
+        tool_status = "NOT_ATTEMPTED"
+    else:
+        tool_status = "UNKNOWN"
+
+    task_understanding = payload.get("task_understanding")
+    task_understanding = task_understanding if isinstance(task_understanding, dict) else {}
+    tool_execution = task_understanding.get("tool_execution")
+    tool_execution = tool_execution if isinstance(tool_execution, dict) else {}
+    raw_tool_rows = tool_execution.get("tool_status_matrix")
+    requirements_raw = tool_execution.get("required_tools")
+    required_tool_matrix_present = (
+        isinstance(raw_tool_rows, list) and isinstance(requirements_raw, list)
+    )
+    matrix_rows = [row for row in raw_tool_rows if isinstance(row, dict)] if isinstance(raw_tool_rows, list) else []
+    required_tool_names = [
+        name.strip()
+        for name in requirements_raw
+        if isinstance(name, str) and name.strip()
+    ] if isinstance(requirements_raw, list) else []
+    successful_statuses = {
+        "web_search": {"completed_with_results"},
+        "page_fetch": {"completed_with_read_pages"},
+        "public_social_search_if_configured": {"completed_with_results"},
+        "language_model_generation_if_configured": {"completed"},
+        "claim_review_if_configured": {"completed_model_assisted_review"},
+    }
+    required_tool_statuses = []
+    required_name_set = set(required_tool_names)
+    reported_required_names = {
+        row.get("tool")
+        for row in matrix_rows
+        if row.get("required_by_task_spec") is True and isinstance(row.get("tool"), str)
+    }
+    required_tool_matrix_complete = (
+        required_tool_matrix_present
+        and len(required_tool_names) == len(required_name_set)
+        and reported_required_names == required_name_set
+    )
+    for tool in dict.fromkeys(required_tool_names):
+        matches = [
+            row for row in matrix_rows
+            if row.get("tool") == tool and row.get("required_by_task_spec") is True
+        ]
+        if len(matches) == 0:
+            status = "missing_matrix_row"
+            status_observed = False
+            successful = False
+            required_tool_matrix_complete = False
+        elif len(matches) > 1:
+            status = "duplicate_matrix_rows"
+            status_observed = False
+            successful = False
+            required_tool_matrix_complete = False
+        else:
+            raw_status = matches[0].get("status")
+            status_observed = isinstance(raw_status, str) and bool(raw_status.strip())
+            status = raw_status if status_observed else "missing_status"
+            successful = status_observed and status in successful_statuses.get(tool, set())
+            if not status_observed:
+                required_tool_matrix_complete = False
+        required_tool_statuses.append({
+            "tool": tool,
+            "status": status,
+            "status_observed": status_observed,
+            "successful_completion": successful,
+        })
+    if expected_strategy == "web_search" and "web_search" not in required_name_set:
+        required_tool_matrix_complete = False
+
+    calls = _model_calls_from_payload(payload)
+    reported_costs = []
+    for call in calls:
+        usage = call.get("provider_usage")
+        if not isinstance(usage, dict):
+            continue
+        cost = _finite_nonnegative_number(usage.get("cost_usd"))
+        if cost is not None:
+            reported_costs.append(cost)
+
+    if not calls:
+        cost_status = "NO_MODEL_CALL_METADATA"
+    elif len(reported_costs) == len(calls):
+        cost_status = "COMPLETE_FOR_RETURNED_MODEL_CALLS"
+    elif reported_costs:
+        cost_status = "PARTIAL_PROVIDER_REPORTED_MODEL_COST"
+    else:
+        cost_status = "PROVIDER_COST_NOT_REPORTED"
+
+    return {
+        "search_outcome": outcome if isinstance(outcome, str) else "unknown",
+        "pipeline_completion_status": pipeline if isinstance(pipeline, str) else "unknown",
+        "tool_status": tool_status,
+        "required_tool_statuses": required_tool_statuses,
+        "required_tool_success_count": sum(1 for row in required_tool_statuses if row["successful_completion"]),
+        "required_tool_count": len(required_tool_statuses),
+        "required_tool_success_rate": (
+            round(
+                sum(1 for row in required_tool_statuses if row["successful_completion"])
+                / len(required_tool_statuses),
+                4,
+            )
+            if required_tool_statuses
+            else None
+        ),
+        "required_tool_status_metrics_status": (
+            "NOT_MEASURED_TOOL_REQUIREMENTS_OR_MATRIX_UNKNOWN"
+            if not required_tool_matrix_present
+            else "SCORED_FROM_TOOL_EXECUTION_MATRIX"
+            if required_tool_matrix_complete
+            else "INCOMPLETE_TOOL_STATUS_MATRIX"
+        ),
+        "required_tool_matrix_present": required_tool_matrix_present,
+        "required_tool_matrix_complete": required_tool_matrix_complete,
+        "source_count": source_count,
+        "model_call_count": len(calls),
+        "provider_reported_model_cost_usd": round(sum(reported_costs), 10) if reported_costs else None,
+        "provider_reported_model_cost_call_count": len(reported_costs),
+        "provider_reported_model_cost_status": cost_status,
+        "request_cost_usd": None,
+        "request_cost_status": "NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED",
+    }
 
 
 def validate_base_url(base_url: str, *, token_present: bool = False) -> str:
@@ -223,6 +435,40 @@ def post_agent(
         return 0, {"error": type(exc).__name__, "detail": str(exc)}
 
 
+def get_verified_build_sha(base_url: str, timeout: float, token: str | None = None) -> str:
+    """Read the deployed build identity from /api/health; never trust a caller-only SHA."""
+    origin = validate_base_url(base_url, token_present=bool(token))
+    request = urllib.request.Request(
+        origin + "/api/health",
+        headers={"Accept": "application/json"},
+        method="GET",
+    )
+    try:
+        with _NO_REDIRECT_OPENER.open(request, timeout=timeout) as response:
+            raw = response.read(64_001)
+            if len(raw) > 64_000:
+                raise ValueError("/api/health response exceeded the 64 KB limit")
+            status = getattr(response, "status", 200)
+            if not 200 <= status < 300:
+                raise ValueError(f"/api/health returned HTTP {status}")
+    except urllib.error.HTTPError as exc:
+        raise ValueError(f"/api/health returned HTTP {exc.code}") from exc
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        raise ValueError(f"/api/health request failed: {type(exc).__name__}") from exc
+
+    try:
+        payload = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("/api/health did not return valid JSON") from exc
+    if not isinstance(payload, dict) or payload.get("ok") is not True:
+        raise ValueError("/api/health did not report ok=true")
+    build = payload.get("build")
+    sha = build.get("sha") if isinstance(build, dict) else None
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-fA-F]{40}", sha):
+        raise ValueError("/api/health build.sha is missing or not a full 40-character SHA")
+    return sha.lower()
+
+
 def run_validate(corpus_path: Path, summary: bool) -> int:
     data = load_corpus(corpus_path)
     problems = validate_corpus(data)
@@ -258,6 +504,8 @@ def run_live(
     timeout: float,
     delay: float,
     out_path: Path | None,
+    build_sha: str | None = None,
+    request_costs_path: Path | None = None,
 ) -> int:
     data = load_corpus(corpus_path)
     problems = validate_corpus(data)
@@ -267,11 +515,31 @@ def run_live(
             print(" -", p)
         return 2
 
+    try:
+        full_case_ids = {case.get("case_id") for case in data.get("cases", []) if isinstance(case, dict)}
+        request_costs, request_cost_source = _load_request_cost_ledger(request_costs_path, full_case_ids)
+    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
+        print(f"Invalid request-cost ledger; refusing live run: {exc}", file=sys.stderr)
+        return 2
+
     token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip() or None
     try:
         safe_base_url = validate_base_url(base_url, token_present=bool(token))
     except ValueError as exc:
         print(f"Unsafe base URL; refusing live run: {exc}", file=sys.stderr)
+        return 2
+    try:
+        verified_build_sha = get_verified_build_sha(safe_base_url, timeout, token)
+    except ValueError as exc:
+        print(f"Unverified deployed build; refusing live run: {exc}", file=sys.stderr)
+        return 2
+    expected_build_sha = build_sha.strip().lower() if isinstance(build_sha, str) else ""
+    if expected_build_sha and expected_build_sha != verified_build_sha:
+        print(
+            "Build SHA mismatch: --build-sha does not match /api/health build.sha; "
+            "refusing live requests.",
+            file=sys.stderr,
+        )
         return 2
     cases = data["cases"]
     if case_id:
@@ -290,13 +558,24 @@ def run_live(
     for case in cases:
         cid = case["case_id"]
         prompt = case["question"]
+        request_started = time.perf_counter()
         status_code, payload = post_agent(safe_base_url, prompt, timeout, token)
+        elapsed_ms = round((time.perf_counter() - request_started) * 1000, 2)
         if isinstance(payload, dict):
             safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))
         else:
             safe_payload = redact_secrets(str(payload))
 
         transport_ok = 200 <= status_code < 300
+        response_metrics = _response_metrics(safe_payload, case["expected_strategy"], transport_ok)
+        if request_cost_source is not None:
+            if cid in request_costs:
+                response_metrics["request_cost_usd"] = request_costs[cid]
+                response_metrics["request_cost_status"] = "RECONCILED_COMPLETE_REQUEST_COST"
+                response_metrics["request_cost_source"] = request_cost_source
+            else:
+                response_metrics["request_cost_status"] = "PARTIAL_EXTERNAL_COST_RECONCILIATION"
+                response_metrics["request_cost_source"] = request_cost_source
         record = {
             "case_id": cid,
             "benchmark_version": data.get("version"),
@@ -305,6 +584,10 @@ def run_live(
             "mode": "live_api",
             "base_url": safe_base_url,
             "http_status": status_code,
+            "elapsed_ms": elapsed_ms,
+            "build_sha": verified_build_sha,
+            "build_sha_verification": "confirmed_by_api_health",
+            **response_metrics,
             "prompt": prompt,
             "expected_strategy": case["expected_strategy"],
             "category": case["category"],
@@ -339,6 +622,9 @@ def run_live(
         "benchmark_id": data.get("benchmark_id"),
         "benchmark_version": data.get("version"),
         "mode": "live_api",
+        "build_sha": verified_build_sha,
+        "build_sha_verification": "confirmed_by_api_health",
+        "expected_build_sha": expected_build_sha or None,
         "executed_at_utc": _utc_now(),
         "case_count": len(results),
         "results": results,
@@ -375,6 +661,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--case-id", default=None, help="Run a single case (live)")
     parser.add_argument("--limit", type=int, default=0, help="Max cases in live mode (0=all selected)")
     parser.add_argument("--timeout", type=float, default=60.0)
+    parser.add_argument("--build-sha", default=None, help="Optional expected deployed SHA; checked against /api/health before any benchmark request")
+    parser.add_argument("--request-costs", type=Path, default=None, help="Optional externally reconciled per-case full-request costs in USD")
     parser.add_argument("--delay", type=float, default=0.0, help="Seconds between live requests")
     parser.add_argument("--out", type=Path, default=None, help="Write live results JSON")
     args = parser.parse_args(argv)
@@ -396,6 +684,8 @@ def main(argv: list[str] | None = None) -> int:
             args.timeout,
             args.delay,
             args.out,
+            args.build_sha,
+            args.request_costs,
         )
     return 2
 
