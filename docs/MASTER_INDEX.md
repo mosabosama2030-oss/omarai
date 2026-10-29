@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **110**
 - ملفات Python المحللة: **66**
-- تعريفات Python المفهرسة: **1443**
-- تعريفات Python موثقة بوجود Docstring: **246**
+- تعريفات Python المفهرسة: **1444**
+- تعريفات Python موثقة بوجود Docstring: **247**
 - تعريفات Python بلا Docstring: **903**
 - تعريفات لا ينطبق عليها Docstring: **294**
-- الرموز الساكنة الإضافية: **1803**
-- الأسطر النصية المفهرسة حرفيًا: **38220**
+- الرموز الساكنة الإضافية: **1804**
+- الأسطر النصية المفهرسة حرفيًا: **38270**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -92,7 +92,7 @@
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 20311 | 443 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
-| FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 21862 | 546 | جرد الملف + AST Python |
+| FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 24334 | 596 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -762,9 +762,10 @@
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L245) | دالة | validate_corpus | Return a list of human-readable problems (empty => OK). | موثق | 245 | [SRC-4FFD5AFC54-L000245](../scripts/run_answer_quality_benchmark.py#L245) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L278) | دالة | redact_secrets | Best-effort redaction of common secret patterns from stored outputs. | موثق | 278 | [SRC-4FFD5AFC54-L000278](../scripts/run_answer_quality_benchmark.py#L278) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L301) | دالة | post_agent | لا توجد Docstring. | ناقص | 301 | [SRC-4FFD5AFC54-L000301](../scripts/run_answer_quality_benchmark.py#L301) |
-| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L340) | دالة | run_validate | لا توجد Docstring. | ناقص | 340 | [SRC-4FFD5AFC54-L000340](../scripts/run_answer_quality_benchmark.py#L340) |
-| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L367) | دالة | run_live | لا توجد Docstring. | ناقص | 367 | [SRC-4FFD5AFC54-L000367](../scripts/run_answer_quality_benchmark.py#L367) |
-| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L497) | دالة | main | لا توجد Docstring. | ناقص | 497 | [SRC-4FFD5AFC54-L000497](../scripts/run_answer_quality_benchmark.py#L497) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L340) | دالة | get_verified_build_sha | Read the deployed build identity from /api/health; never trust a caller-only SHA. | موثق | 340 | [SRC-4FFD5AFC54-L000340](../scripts/run_answer_quality_benchmark.py#L340) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L374) | دالة | run_validate | لا توجد Docstring. | ناقص | 374 | [SRC-4FFD5AFC54-L000374](../scripts/run_answer_quality_benchmark.py#L374) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L401) | دالة | run_live | لا توجد Docstring. | ناقص | 401 | [SRC-4FFD5AFC54-L000401](../scripts/run_answer_quality_benchmark.py#L401) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L547) | دالة | main | لا توجد Docstring. | ناقص | 547 | [SRC-4FFD5AFC54-L000547](../scripts/run_answer_quality_benchmark.py#L547) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L17) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-03FF422A16-L000017](../scripts/score_answer_quality_reviews.py#L17) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L18) | متغير/ثابت Python | DEFAULT_CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-03FF422A16-L000018](../scripts/score_answer_quality_reviews.py#L18) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L19) | متغير/ثابت Python | ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-03FF422A16-L000019](../scripts/score_answer_quality_reviews.py#L19) |
@@ -2823,8 +2824,9 @@
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L285) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 285 | [SRC-4FFD5AFC54-L000285](../scripts/run_answer_quality_benchmark.py#L285) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L286) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 286 | [SRC-4FFD5AFC54-L000286](../scripts/run_answer_quality_benchmark.py#L286) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L308) | مسار API/واجهة محتمل | /api/agent | 308 | [SRC-4FFD5AFC54-L000308](../scripts/run_answer_quality_benchmark.py#L308) |
-| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L429) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RECONCILED_COMPLETE_REQUEST_COST | 429 | [SRC-4FFD5AFC54-L000429](../scripts/run_answer_quality_benchmark.py#L429) |
-| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L432) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PARTIAL_EXTERNAL_COST_RECONCILIATION | 432 | [SRC-4FFD5AFC54-L000432](../scripts/run_answer_quality_benchmark.py#L432) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L344) | مسار API/واجهة محتمل | /api/health | 344 | [SRC-4FFD5AFC54-L000344](../scripts/run_answer_quality_benchmark.py#L344) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L476) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RECONCILED_COMPLETE_REQUEST_COST | 476 | [SRC-4FFD5AFC54-L000476](../scripts/run_answer_quality_benchmark.py#L476) |
+| [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L479) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PARTIAL_EXTERNAL_COST_RECONCILIATION | 479 | [SRC-4FFD5AFC54-L000479](../scripts/run_answer_quality_benchmark.py#L479) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 5 | [SRC-03FF422A16-L000005](../scripts/score_answer_quality_reviews.py#L5) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_CORPUS | 18 | [SRC-03FF422A16-L000018](../scripts/score_answer_quality_reviews.py#L18) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 19 | [SRC-03FF422A16-L000019](../scripts/score_answer_quality_reviews.py#L19) |
