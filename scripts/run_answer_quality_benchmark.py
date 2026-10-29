@@ -81,7 +81,7 @@ def _model_calls_from_payload(payload: dict) -> list[dict]:
         understanding.get("model_calls") if isinstance(understanding, dict) else None,
     ]
     for candidate in candidates:
-        if isinstance(candidate, list):
+        if isinstance(candidate, list) and candidate:
             return [item for item in candidate if isinstance(item, dict)]
     return []
 
