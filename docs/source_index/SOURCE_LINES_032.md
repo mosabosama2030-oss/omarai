@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000853 إلى SRC-6A7519AC10-L000100
+- النطاق: SRC-90FAA34ADE-L000798 إلى SRC-6A7519AC10-L000045
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,61 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000798](../../tests/fixtures/answer_quality_cases.json#L798) | 798 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000799](../../tests/fixtures/answer_quality_cases.json#L799) | 799 | `"        \"اتهام قطعي مبني على التعليق الوحيد\","` | — |
+| [SRC-90FAA34ADE-L000800](../../tests/fixtures/answer_quality_cases.json#L800) | 800 | `"        \"اختلاق دليل موثوق غير موجود\""` | — |
+| [SRC-90FAA34ADE-L000801](../../tests/fixtures/answer_quality_cases.json#L801) | 801 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000802](../../tests/fixtures/answer_quality_cases.json#L802) | 802 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000803](../../tests/fixtures/answer_quality_cases.json#L803) | 803 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000804](../../tests/fixtures/answer_quality_cases.json#L804) | 804 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000805](../../tests/fixtures/answer_quality_cases.json#L805) | 805 | `"      \"case_id\": \"AQ-028\","` | — |
+| [SRC-90FAA34ADE-L000806](../../tests/fixtures/answer_quality_cases.json#L806) | 806 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L000807](../../tests/fixtures/answer_quality_cases.json#L807) | 807 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000808](../../tests/fixtures/answer_quality_cases.json#L808) | 808 | `"      \"question\": \"رد على الأربع نقاط دول كل واحدة لوحدها: التكلفة، مدة التنفيذ، المخاطر، وإزاي أتحقق من المصدر.\","` | — |
+| [SRC-90FAA34ADE-L000809](../../tests/fixtures/answer_quality_cases.json#L809) | 809 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L000810](../../tests/fixtures/answer_quality_cases.json#L810) | 810 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000811](../../tests/fixtures/answer_quality_cases.json#L811) | 811 | `"        \"يسأل عن المشروع أو الخدمة المقصودة قبل تقديم أرقام\","` | — |
+| [SRC-90FAA34ADE-L000812](../../tests/fixtures/answer_quality_cases.json#L812) | 812 | `"        \"يبيّن أن العناصر الأربعة ستُجاب منفصلة بعد تحديد الموضوع\","` | — |
+| [SRC-90FAA34ADE-L000813](../../tests/fixtures/answer_quality_cases.json#L813) | 813 | `"        \"لا يتجاهل أي عنصر من العناصر الأربعة\""` | — |
+| [SRC-90FAA34ADE-L000814](../../tests/fixtures/answer_quality_cases.json#L814) | 814 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000815](../../tests/fixtures/answer_quality_cases.json#L815) | 815 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000816](../../tests/fixtures/answer_quality_cases.json#L816) | 816 | `"        \"يخترع تكلفة ومدة دون معرفة الخدمة\","` | — |
+| [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
+| [SRC-90FAA34ADE-L000818](../../tests/fixtures/answer_quality_cases.json#L818) | 818 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000819](../../tests/fixtures/answer_quality_cases.json#L819) | 819 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000820](../../tests/fixtures/answer_quality_cases.json#L820) | 820 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L000821](../../tests/fixtures/answer_quality_cases.json#L821) | 821 | `"        \"notes\": \"الموضوع نفسه غير محدد؛ الاختبار يقيس طلب التوضيح وحفظ قائمة المتطلبات\""` | — |
+| [SRC-90FAA34ADE-L000822](../../tests/fixtures/answer_quality_cases.json#L822) | 822 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000823](../../tests/fixtures/answer_quality_cases.json#L823) | 823 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000824](../../tests/fixtures/answer_quality_cases.json#L824) | 824 | `"        \"عدم طلب تحديد الموضوع\","` | — |
+| [SRC-90FAA34ADE-L000825](../../tests/fixtures/answer_quality_cases.json#L825) | 825 | `"        \"تجاهل أي عنصر من العناصر الأربع بعد توضيح الموضوع\""` | — |
+| [SRC-90FAA34ADE-L000826](../../tests/fixtures/answer_quality_cases.json#L826) | 826 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000827](../../tests/fixtures/answer_quality_cases.json#L827) | 827 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000828](../../tests/fixtures/answer_quality_cases.json#L828) | 828 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000829](../../tests/fixtures/answer_quality_cases.json#L829) | 829 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000830](../../tests/fixtures/answer_quality_cases.json#L830) | 830 | `"      \"case_id\": \"AQ-029\","` | — |
+| [SRC-90FAA34ADE-L000831](../../tests/fixtures/answer_quality_cases.json#L831) | 831 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000832](../../tests/fixtures/answer_quality_cases.json#L832) | 832 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000833](../../tests/fixtures/answer_quality_cases.json#L833) | 833 | `"      \"question\": \"لقيت إعلان شقة في التجمع على صفحة عامة. اكتب لي ملخص lead أولي، من غير ما تعتبر الإعلان متحقق أو المعلن عميل جاهز.\","` | — |
+| [SRC-90FAA34ADE-L000834](../../tests/fixtures/answer_quality_cases.json#L834) | 834 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000835](../../tests/fixtures/answer_quality_cases.json#L835) | 835 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000836](../../tests/fixtures/answer_quality_cases.json#L836) | 836 | `"        \"يسميها فرصة أولية أو lead غير متحقق\","` | — |
+| [SRC-90FAA34ADE-L000837](../../tests/fixtures/answer_quality_cases.json#L837) | 837 | `"        \"يفصل البيانات المنقولة من الإعلان عن البيانات التي تم التحقق منها\","` | — |
+| [SRC-90FAA34ADE-L000838](../../tests/fixtures/answer_quality_cases.json#L838) | 838 | `"        \"يقترح خطوات تحقق عملية مثل تأكيد الملكية والتواصل المصرح به\""` | — |
+| [SRC-90FAA34ADE-L000839](../../tests/fixtures/answer_quality_cases.json#L839) | 839 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000840](../../tests/fixtures/answer_quality_cases.json#L840) | 840 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000841](../../tests/fixtures/answer_quality_cases.json#L841) | 841 | `"        \"يؤكد الملكية أو توافر الشقة من الإعلان وحده\","` | — |
+| [SRC-90FAA34ADE-L000842](../../tests/fixtures/answer_quality_cases.json#L842) | 842 | `"        \"يصف المعلن بأنه مشتري أو عميل مؤهل دون دليل\""` | — |
+| [SRC-90FAA34ADE-L000843](../../tests/fixtures/answer_quality_cases.json#L843) | 843 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000844](../../tests/fixtures/answer_quality_cases.json#L844) | 844 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000845](../../tests/fixtures/answer_quality_cases.json#L845) | 845 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000846](../../tests/fixtures/answer_quality_cases.json#L846) | 846 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000847](../../tests/fixtures/answer_quality_cases.json#L847) | 847 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000848](../../tests/fixtures/answer_quality_cases.json#L848) | 848 | `"            \"title\": \"Apartment listing\","` | — |
+| [SRC-90FAA34ADE-L000849](../../tests/fixtures/answer_quality_cases.json#L849) | 849 | `"            \"url\": \"https://listings.example.test/unit-55\","` | — |
+| [SRC-90FAA34ADE-L000850](../../tests/fixtures/answer_quality_cases.json#L850) | 850 | `"            \"snippet\": \"Apartment for sale in New Cairo. Contact through the listing platform.\","` | — |
+| [SRC-90FAA34ADE-L000851](../../tests/fixtures/answer_quality_cases.json#L851) | 851 | `"            \"domain\": \"listings.example.test\","` | — |
+| [SRC-90FAA34ADE-L000852](../../tests/fixtures/answer_quality_cases.json#L852) | 852 | `"            \"provider\": \"fixture_search\","` | — |
 | [SRC-90FAA34ADE-L000853](../../tests/fixtures/answer_quality_cases.json#L853) | 853 | `"            \"verification_status\": \"unverified\""` | — |
 | [SRC-90FAA34ADE-L000854](../../tests/fixtures/answer_quality_cases.json#L854) | 854 | `"          }"` | — |
 | [SRC-90FAA34ADE-L000855](../../tests/fixtures/answer_quality_cases.json#L855) | 855 | `"        ]"` | — |
@@ -788,58 +843,3 @@
 | [SRC-6A7519AC10-L000043](../../tests/test_answer_quality_comparison.py#L43) | 43 | `"        \"request_cost_status\": \"RECONCILED_COMPLETE_REQUEST_COST\" if request_cost is not None else \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\","` | — |
 | [SRC-6A7519AC10-L000044](../../tests/test_answer_quality_comparison.py#L44) | 44 | `"        \"required_tool_matrix_complete\": True,"` | — |
 | [SRC-6A7519AC10-L000045](../../tests/test_answer_quality_comparison.py#L45) | 45 | `"        \"required_tool_statuses\": ("` | — |
-| [SRC-6A7519AC10-L000046](../../tests/test_answer_quality_comparison.py#L46) | 46 | `"            [{"` | — |
-| [SRC-6A7519AC10-L000047](../../tests/test_answer_quality_comparison.py#L47) | 47 | `"                \"tool\": \"web_search\","` | — |
-| [SRC-6A7519AC10-L000048](../../tests/test_answer_quality_comparison.py#L48) | 48 | `"                \"status\": \"completed_with_results\" if tool_status == \"SUCCESS_WITH_USABLE_RESULTS\" else \"completed_no_usable_results\","` | — |
-| [SRC-6A7519AC10-L000049](../../tests/test_answer_quality_comparison.py#L49) | 49 | `"                \"successful_completion\": tool_status == \"SUCCESS_WITH_USABLE_RESULTS\","` | — |
-| [SRC-6A7519AC10-L000050](../../tests/test_answer_quality_comparison.py#L50) | 50 | `"            }]"` | — |
-| [SRC-6A7519AC10-L000051](../../tests/test_answer_quality_comparison.py#L51) | 51 | `"            if expected_strategy == \"web_search\""` | — |
-| [SRC-6A7519AC10-L000052](../../tests/test_answer_quality_comparison.py#L52) | 52 | `"            else []"` | — |
-| [SRC-6A7519AC10-L000053](../../tests/test_answer_quality_comparison.py#L53) | 53 | `"        ),"` | — |
-| [SRC-6A7519AC10-L000054](../../tests/test_answer_quality_comparison.py#L54) | 54 | `"    }"` | — |
-| [SRC-6A7519AC10-L000055](../../tests/test_answer_quality_comparison.py#L55) | 55 | `"    if cost is not None:"` | — |
-| [SRC-6A7519AC10-L000056](../../tests/test_answer_quality_comparison.py#L56) | 56 | `"        row[\"provider_reported_model_cost_usd\"] = cost"` | — |
-| [SRC-6A7519AC10-L000057](../../tests/test_answer_quality_comparison.py#L57) | 57 | `"    if request_cost is not None:"` | — |
-| [SRC-6A7519AC10-L000058](../../tests/test_answer_quality_comparison.py#L58) | 58 | `"        row[\"request_cost_usd\"] = request_cost"` | — |
-| [SRC-6A7519AC10-L000059](../../tests/test_answer_quality_comparison.py#L59) | 59 | `"    return row"` | — |
-| [SRC-6A7519AC10-L000060](../../tests/test_answer_quality_comparison.py#L60) | 60 | `""` | — |
-| [SRC-6A7519AC10-L000061](../../tests/test_answer_quality_comparison.py#L61) | 61 | `""` | — |
-| [SRC-6A7519AC10-L000062](../../tests/test_answer_quality_comparison.py#L62) | 62 | `"def _reviews(*, correct: int, supported_citations: int) -> dict:"` | — |
-| [SRC-6A7519AC10-L000063](../../tests/test_answer_quality_comparison.py#L63) | 63 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-6A7519AC10-L000064](../../tests/test_answer_quality_comparison.py#L64) | 64 | `"    return {"` | — |
-| [SRC-6A7519AC10-L000065](../../tests/test_answer_quality_comparison.py#L65) | 65 | `"        \"schema_version\": \"1.0\","` | — |
-| [SRC-6A7519AC10-L000066](../../tests/test_answer_quality_comparison.py#L66) | 66 | `"        \"reviews\": ["` | — |
-| [SRC-6A7519AC10-L000067](../../tests/test_answer_quality_comparison.py#L67) | 67 | `"            {"` | — |
-| [SRC-6A7519AC10-L000068](../../tests/test_answer_quality_comparison.py#L68) | 68 | `"                \"case_id\": case[\"case_id\"],"` | — |
-| [SRC-6A7519AC10-L000069](../../tests/test_answer_quality_comparison.py#L69) | 69 | `"                \"status\": \"REVIEWED\","` | — |
-| [SRC-6A7519AC10-L000070](../../tests/test_answer_quality_comparison.py#L70) | 70 | `"                \"retrieval\": {"` | — |
-| [SRC-6A7519AC10-L000071](../../tests/test_answer_quality_comparison.py#L71) | 71 | `"                    \"relevant_retrieved\": 2 if case[\"case_id\"] == \"AQ-007\" else 1,"` | — |
-| [SRC-6A7519AC10-L000072](../../tests/test_answer_quality_comparison.py#L72) | 72 | `"                    \"retrieved_count\": 3,"` | — |
-| [SRC-6A7519AC10-L000073](../../tests/test_answer_quality_comparison.py#L73) | 73 | `"                    \"relevant_available\": 3 if case[\"case_id\"] == \"AQ-007\" else 2,"` | — |
-| [SRC-6A7519AC10-L000074](../../tests/test_answer_quality_comparison.py#L74) | 74 | `"                },"` | — |
-| [SRC-6A7519AC10-L000075](../../tests/test_answer_quality_comparison.py#L75) | 75 | `"                \"faithfulness\": {\"supported_claims\": correct, \"reviewed_claims\": 3},"` | — |
-| [SRC-6A7519AC10-L000076](../../tests/test_answer_quality_comparison.py#L76) | 76 | `"                \"correctness\": {\"correct_facts\": correct, \"reviewed_facts\": 3},"` | — |
-| [SRC-6A7519AC10-L000077](../../tests/test_answer_quality_comparison.py#L77) | 77 | `"                \"citations\": {"` | — |
-| [SRC-6A7519AC10-L000078](../../tests/test_answer_quality_comparison.py#L78) | 78 | `"                    \"supported_citations\": supported_citations,"` | — |
-| [SRC-6A7519AC10-L000079](../../tests/test_answer_quality_comparison.py#L79) | 79 | `"                    \"reviewed_citations\": 2,"` | — |
-| [SRC-6A7519AC10-L000080](../../tests/test_answer_quality_comparison.py#L80) | 80 | `"                },"` | — |
-| [SRC-6A7519AC10-L000081](../../tests/test_answer_quality_comparison.py#L81) | 81 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-6A7519AC10-L000082](../../tests/test_answer_quality_comparison.py#L82) | 82 | `"            }"` | — |
-| [SRC-6A7519AC10-L000083](../../tests/test_answer_quality_comparison.py#L83) | 83 | `"            for case in corpus[\"cases\"]"` | — |
-| [SRC-6A7519AC10-L000084](../../tests/test_answer_quality_comparison.py#L84) | 84 | `"        ],"` | — |
-| [SRC-6A7519AC10-L000085](../../tests/test_answer_quality_comparison.py#L85) | 85 | `"    }"` | — |
-| [SRC-6A7519AC10-L000086](../../tests/test_answer_quality_comparison.py#L86) | 86 | `""` | — |
-| [SRC-6A7519AC10-L000087](../../tests/test_answer_quality_comparison.py#L87) | 87 | `""` | — |
-| [SRC-6A7519AC10-L000088](../../tests/test_answer_quality_comparison.py#L88) | 88 | `"def _full_run(*, build_sha: str, candidate: bool) -> dict:"` | — |
-| [SRC-6A7519AC10-L000089](../../tests/test_answer_quality_comparison.py#L89) | 89 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-6A7519AC10-L000090](../../tests/test_answer_quality_comparison.py#L90) | 90 | `"    rows = []"` | — |
-| [SRC-6A7519AC10-L000091](../../tests/test_answer_quality_comparison.py#L91) | 91 | `"    for case in corpus[\"cases\"]:"` | — |
-| [SRC-6A7519AC10-L000092](../../tests/test_answer_quality_comparison.py#L92) | 92 | `"        case_id = case[\"case_id\"]"` | — |
-| [SRC-6A7519AC10-L000093](../../tests/test_answer_quality_comparison.py#L93) | 93 | `"        is_aq007 = case_id == \"AQ-007\""` | — |
-| [SRC-6A7519AC10-L000094](../../tests/test_answer_quality_comparison.py#L94) | 94 | `"        is_aq008 = case_id == \"AQ-008\""` | — |
-| [SRC-6A7519AC10-L000095](../../tests/test_answer_quality_comparison.py#L95) | 95 | `"        if candidate:"` | — |
-| [SRC-6A7519AC10-L000096](../../tests/test_answer_quality_comparison.py#L96) | 96 | `"            latency = 80 if is_aq007 else 120 if is_aq008 else 100"` | — |
-| [SRC-6A7519AC10-L000097](../../tests/test_answer_quality_comparison.py#L97) | 97 | `"            status = \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
-| [SRC-6A7519AC10-L000098](../../tests/test_answer_quality_comparison.py#L98) | 98 | `"            model_cost = 0.005 if is_aq007 else 0.002 if is_aq008 else None"` | — |
-| [SRC-6A7519AC10-L000099](../../tests/test_answer_quality_comparison.py#L99) | 99 | `"            request_cost = 0.007 if is_aq007 else 0.009 if is_aq008 else 0.001"` | — |
-| [SRC-6A7519AC10-L000100](../../tests/test_answer_quality_comparison.py#L100) | 100 | `"        else:"` | — |
