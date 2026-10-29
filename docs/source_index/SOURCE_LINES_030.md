@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000456 إلى SRC-90FAA34ADE-L000312
+- النطاق: SRC-4FFD5AFC54-L000430 إلى SRC-90FAA34ADE-L000286
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000430](../../scripts/run_answer_quality_benchmark.py#L430) | 430 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
+| [SRC-4FFD5AFC54-L000431](../../scripts/run_answer_quality_benchmark.py#L431) | 431 | `"            else:"` | — |
+| [SRC-4FFD5AFC54-L000432](../../scripts/run_answer_quality_benchmark.py#L432) | 432 | `"                response_metrics[\"request_cost_status\"] = \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
+| [SRC-4FFD5AFC54-L000433](../../scripts/run_answer_quality_benchmark.py#L433) | 433 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
+| [SRC-4FFD5AFC54-L000434](../../scripts/run_answer_quality_benchmark.py#L434) | 434 | `"        record = {"` | — |
+| [SRC-4FFD5AFC54-L000435](../../scripts/run_answer_quality_benchmark.py#L435) | 435 | `"            \"case_id\": cid,"` | — |
+| [SRC-4FFD5AFC54-L000436](../../scripts/run_answer_quality_benchmark.py#L436) | 436 | `"            \"benchmark_version\": data.get(\"version\"),"` | — |
+| [SRC-4FFD5AFC54-L000437](../../scripts/run_answer_quality_benchmark.py#L437) | 437 | `"            \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
+| [SRC-4FFD5AFC54-L000438](../../scripts/run_answer_quality_benchmark.py#L438) | 438 | `"            \"executed_at_utc\": _utc_now(),"` | — |
+| [SRC-4FFD5AFC54-L000439](../../scripts/run_answer_quality_benchmark.py#L439) | 439 | `"            \"mode\": \"live_api\","` | — |
+| [SRC-4FFD5AFC54-L000440](../../scripts/run_answer_quality_benchmark.py#L440) | 440 | `"            \"base_url\": safe_base_url,"` | — |
+| [SRC-4FFD5AFC54-L000441](../../scripts/run_answer_quality_benchmark.py#L441) | 441 | `"            \"http_status\": status_code,"` | — |
+| [SRC-4FFD5AFC54-L000442](../../scripts/run_answer_quality_benchmark.py#L442) | 442 | `"            \"elapsed_ms\": elapsed_ms,"` | — |
+| [SRC-4FFD5AFC54-L000443](../../scripts/run_answer_quality_benchmark.py#L443) | 443 | `"            \"build_sha\": build_sha or \"unknown\","` | — |
+| [SRC-4FFD5AFC54-L000444](../../scripts/run_answer_quality_benchmark.py#L444) | 444 | `"            **response_metrics,"` | — |
+| [SRC-4FFD5AFC54-L000445](../../scripts/run_answer_quality_benchmark.py#L445) | 445 | `"            \"prompt\": prompt,"` | — |
+| [SRC-4FFD5AFC54-L000446](../../scripts/run_answer_quality_benchmark.py#L446) | 446 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
+| [SRC-4FFD5AFC54-L000447](../../scripts/run_answer_quality_benchmark.py#L447) | 447 | `"            \"category\": case[\"category\"],"` | — |
+| [SRC-4FFD5AFC54-L000448](../../scripts/run_answer_quality_benchmark.py#L448) | 448 | `"            \"response\": safe_payload,"` | — |
+| [SRC-4FFD5AFC54-L000449](../../scripts/run_answer_quality_benchmark.py#L449) | 449 | `"            \"used_web_search\": ("` | — |
+| [SRC-4FFD5AFC54-L000450](../../scripts/run_answer_quality_benchmark.py#L450) | 450 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
+| [SRC-4FFD5AFC54-L000451](../../scripts/run_answer_quality_benchmark.py#L451) | 451 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000452](../../scripts/run_answer_quality_benchmark.py#L452) | 452 | `"            \"used_language_model\": ("` | — |
+| [SRC-4FFD5AFC54-L000453](../../scripts/run_answer_quality_benchmark.py#L453) | 453 | `"                safe_payload.get(\"used_language_model\")"` | — |
+| [SRC-4FFD5AFC54-L000454](../../scripts/run_answer_quality_benchmark.py#L454) | 454 | `"                if isinstance(safe_payload, dict)"` | — |
+| [SRC-4FFD5AFC54-L000455](../../scripts/run_answer_quality_benchmark.py#L455) | 455 | `"                else None"` | — |
 | [SRC-4FFD5AFC54-L000456](../../scripts/run_answer_quality_benchmark.py#L456) | 456 | `"            ),"` | — |
 | [SRC-4FFD5AFC54-L000457](../../scripts/run_answer_quality_benchmark.py#L457) | 457 | `"            \"sources\": ("` | — |
 | [SRC-4FFD5AFC54-L000458](../../scripts/run_answer_quality_benchmark.py#L458) | 458 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
@@ -817,29 +843,3 @@
 | [SRC-90FAA34ADE-L000284](../../tests/fixtures/answer_quality_cases.json#L284) | 284 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000285](../../tests/fixtures/answer_quality_cases.json#L285) | 285 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000286](../../tests/fixtures/answer_quality_cases.json#L286) | 286 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000287](../../tests/fixtures/answer_quality_cases.json#L287) | 287 | `"      \"case_id\": \"AQ-012\","` | — |
-| [SRC-90FAA34ADE-L000288](../../tests/fixtures/answer_quality_cases.json#L288) | 288 | `"      \"category\": \"ambiguous_clarify\","` | — |
-| [SRC-90FAA34ADE-L000289](../../tests/fixtures/answer_quality_cases.json#L289) | 289 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000290](../../tests/fixtures/answer_quality_cases.json#L290) | 290 | `"      \"question\": \"Is it good?\","` | — |
-| [SRC-90FAA34ADE-L000291](../../tests/fixtures/answer_quality_cases.json#L291) | 291 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L000292](../../tests/fixtures/answer_quality_cases.json#L292) | 292 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000293](../../tests/fixtures/answer_quality_cases.json#L293) | 293 | `"        \"Requests the subject being evaluated\","` | — |
-| [SRC-90FAA34ADE-L000294](../../tests/fixtures/answer_quality_cases.json#L294) | 294 | `"        \"Avoids a binary verdict without context\""` | — |
-| [SRC-90FAA34ADE-L000295](../../tests/fixtures/answer_quality_cases.json#L295) | 295 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000296](../../tests/fixtures/answer_quality_cases.json#L296) | 296 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000297](../../tests/fixtures/answer_quality_cases.json#L297) | 297 | `"        \"Invented product review\""` | — |
-| [SRC-90FAA34ADE-L000298](../../tests/fixtures/answer_quality_cases.json#L298) | 298 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000299](../../tests/fixtures/answer_quality_cases.json#L299) | 299 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000300](../../tests/fixtures/answer_quality_cases.json#L300) | 300 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000301](../../tests/fixtures/answer_quality_cases.json#L301) | 301 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000302](../../tests/fixtures/answer_quality_cases.json#L302) | 302 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000303](../../tests/fixtures/answer_quality_cases.json#L303) | 303 | `"        \"Confident yes/no without identified subject\""` | — |
-| [SRC-90FAA34ADE-L000304](../../tests/fixtures/answer_quality_cases.json#L304) | 304 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000305](../../tests/fixtures/answer_quality_cases.json#L305) | 305 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000306](../../tests/fixtures/answer_quality_cases.json#L306) | 306 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000307](../../tests/fixtures/answer_quality_cases.json#L307) | 307 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000308](../../tests/fixtures/answer_quality_cases.json#L308) | 308 | `"      \"case_id\": \"AQ-013\","` | — |
-| [SRC-90FAA34ADE-L000309](../../tests/fixtures/answer_quality_cases.json#L309) | 309 | `"      \"category\": \"spelling_variation\","` | — |
-| [SRC-90FAA34ADE-L000310](../../tests/fixtures/answer_quality_cases.json#L310) | 310 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000311](../../tests/fixtures/answer_quality_cases.json#L311) | 311 | `"      \"question\": \"فين المطار في القاهره الجديده تقريبا؟\","` | — |
-| [SRC-90FAA34ADE-L000312](../../tests/fixtures/answer_quality_cases.json#L312) | 312 | `"      \"expected_strategy\": \"web_search\","` | — |

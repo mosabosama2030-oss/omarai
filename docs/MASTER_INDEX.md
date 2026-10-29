@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **900**
 - تعريفات لا ينطبق عليها Docstring: **294**
 - الرموز الساكنة الإضافية: **1803**
-- الأسطر النصية المفهرسة حرفيًا: **38144**
+- الأسطر النصية المفهرسة حرفيًا: **38170**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -90,7 +90,7 @@
 | FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22391 | 183 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
-| FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 18840 | 414 | جرد الملف + AST Python |
+| FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 20126 | 440 | جرد الملف + AST Python |
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 21848 | 546 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
@@ -733,8 +733,8 @@
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L166) | دالة | _load_review_scorer | لا توجد Docstring. | ناقص | 166 | [SRC-70795F4B61-L000166](../scripts/compare_answer_quality_runs.py#L166) |
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L176) | دالة | _reviewed_case_ids | لا توجد Docstring. | ناقص | 176 | [SRC-70795F4B61-L000176](../scripts/compare_answer_quality_runs.py#L176) |
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L188) | دالة | review_comparison | لا توجد Docstring. | ناقص | 188 | [SRC-70795F4B61-L000188](../scripts/compare_answer_quality_runs.py#L188) |
-| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L240) | دالة | compare_runs | لا توجد Docstring. | ناقص | 240 | [SRC-70795F4B61-L000240](../scripts/compare_answer_quality_runs.py#L240) |
-| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L381) | دالة | main | لا توجد Docstring. | ناقص | 381 | [SRC-70795F4B61-L000381](../scripts/compare_answer_quality_runs.py#L381) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L254) | دالة | compare_runs | لا توجد Docstring. | ناقص | 254 | [SRC-70795F4B61-L000254](../scripts/compare_answer_quality_runs.py#L254) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L407) | دالة | main | لا توجد Docstring. | ناقص | 407 | [SRC-70795F4B61-L000407](../scripts/compare_answer_quality_runs.py#L407) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L16) | كلاس | SmokeError | A live acceptance check failed. | موثق | 16 | [SRC-A8360B1B03-L000016](../scripts/hosted_smoke_test.py#L16) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
@@ -2790,9 +2790,9 @@
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L147) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_NO_PROVIDER_COST_REPORTED | 147 | [SRC-70795F4B61-L000147](../scripts/compare_answer_quality_runs.py#L147) |
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L156) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PARTIAL_EXTERNAL_COST_RECONCILIATION | 156 | [SRC-70795F4B61-L000156](../scripts/compare_answer_quality_runs.py#L156) |
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L158) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED | 158 | [SRC-70795F4B61-L000158](../scripts/compare_answer_quality_runs.py#L158) |
-| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L222) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_MISSING_ANNOTATED_DENOMINATOR | 222 | [SRC-70795F4B61-L000222](../scripts/compare_answer_quality_runs.py#L222) |
-| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L299) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_OR_INCOMPLETE_RECONCILIATION | 299 | [SRC-70795F4B61-L000299](../scripts/compare_answer_quality_runs.py#L299) |
-| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L375) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 375 | [SRC-70795F4B61-L000375](../scripts/compare_answer_quality_runs.py#L375) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L236) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_MISSING_ANNOTATED_DENOMINATOR | 236 | [SRC-70795F4B61-L000236](../scripts/compare_answer_quality_runs.py#L236) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L318) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_OR_INCOMPLETE_RECONCILIATION | 318 | [SRC-70795F4B61-L000318](../scripts/compare_answer_quality_runs.py#L318) |
+| [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L401) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 401 | [SRC-70795F4B61-L000401](../scripts/compare_answer_quality_runs.py#L401) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 112 | [SRC-A8360B1B03-L000112](../scripts/hosted_smoke_test.py#L112) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L126) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 126 | [SRC-A8360B1B03-L000126](../scripts/hosted_smoke_test.py#L126) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L204) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 204 | [SRC-A8360B1B03-L000204](../scripts/hosted_smoke_test.py#L204) |

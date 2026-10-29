@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001615 إلى SRC-F725E90B2A-L002414
+- النطاق: SRC-F725E90B2A-L001589 إلى SRC-F725E90B2A-L002388
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001589](../../tests/test_web_agent.py#L1589) | 1589 | `"      <pubDate>Sat, 17 Oct 2026 10:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `"    </item></channel></rss>\"\"\""` | — |
+| [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `""` | — |
+| [SRC-F725E90B2A-L001592](../../tests/test_web_agent.py#L1592) | 1592 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L001593](../../tests/test_web_agent.py#L1593) | 1593 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L001594](../../tests/test_web_agent.py#L1594) | 1594 | `"        content = rss.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L001595](../../tests/test_web_agent.py#L1595) | 1595 | `""` | — |
+| [SRC-F725E90B2A-L001596](../../tests/test_web_agent.py#L1596) | 1596 | `"    monkeypatch.setattr(httpx, \"get\", lambda *args, **kwargs: FakeResponse())"` | — |
+| [SRC-F725E90B2A-L001597](../../tests/test_web_agent.py#L1597) | 1597 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001598](../../tests/test_web_agent.py#L1598) | 1598 | `"    results = agent._search_news(\"مصر الرقمية أحدث الأخبار\")"` | — |
+| [SRC-F725E90B2A-L001599](../../tests/test_web_agent.py#L1599) | 1599 | `""` | — |
+| [SRC-F725E90B2A-L001600](../../tests/test_web_agent.py#L1600) | 1600 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L001601](../../tests/test_web_agent.py#L1601) | 1601 | `"    assert results[0][\"url\"].startswith(\"https://news.google.com/\")"` | — |
+| [SRC-F725E90B2A-L001602](../../tests/test_web_agent.py#L1602) | 1602 | `"    assert results[0][\"publisher_name\"] == \"بوابة مصر الرقمية\""` | — |
+| [SRC-F725E90B2A-L001603](../../tests/test_web_agent.py#L1603) | 1603 | `"    assert results[0][\"publisher_url\"] == \"https://digital.gov.eg/\""` | — |
+| [SRC-F725E90B2A-L001604](../../tests/test_web_agent.py#L1604) | 1604 | `"    assert results[0][\"publisher_domain\"] == \"digital.gov.eg\""` | — |
+| [SRC-F725E90B2A-L001605](../../tests/test_web_agent.py#L1605) | 1605 | `""` | — |
+| [SRC-F725E90B2A-L001606](../../tests/test_web_agent.py#L1606) | 1606 | `""` | — |
+| [SRC-F725E90B2A-L001607](../../tests/test_web_agent.py#L1607) | 1607 | `"def test_relevance_matching_handles_arabic_names_with_english_results():"` | — |
+| [SRC-F725E90B2A-L001608](../../tests/test_web_agent.py#L1608) | 1608 | `"    assert _relevance_ratio(\"ابحث عن ميكروسوفت\", \"Microsoft official company website\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001609](../../tests/test_web_agent.py#L1609) | 1609 | `"    assert _relevance_ratio(\"موقع مصر الرقمية\", \"Egypt Digital portal for government services\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001610](../../tests/test_web_agent.py#L1610) | 1610 | `"    assert _relevance_ratio(\"ابحث عن شقة للايجار\", \"Apartment listing available for rent\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001611](../../tests/test_web_agent.py#L1611) | 1611 | `"    assert _relevance_ratio(\"مقارنة بين الشركات الناشئة\", \"Comparison of startup companies\") >= 0.20"` | — |
+| [SRC-F725E90B2A-L001612](../../tests/test_web_agent.py#L1612) | 1612 | `""` | — |
+| [SRC-F725E90B2A-L001613](../../tests/test_web_agent.py#L1613) | 1613 | `"def test_relevance_matching_handles_english_ai_use_cases_with_arabic_results():"` | — |
+| [SRC-F725E90B2A-L001614](../../tests/test_web_agent.py#L1614) | 1614 | `"    assert _relevance_ratio("` | — |
 | [SRC-F725E90B2A-L001615](../../tests/test_web_agent.py#L1615) | 1615 | `"        \"AI use cases for small businesses\","` | — |
 | [SRC-F725E90B2A-L001616](../../tests/test_web_agent.py#L1616) | 1616 | `"        \"أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال\","` | — |
 | [SRC-F725E90B2A-L001617](../../tests/test_web_agent.py#L1617) | 1617 | `"    ) >= 0.20"` | — |
@@ -790,29 +816,3 @@
 | [SRC-F725E90B2A-L002386](../../tests/test_web_agent.py#L2386) | 2386 | `""` | — |
 | [SRC-F725E90B2A-L002387](../../tests/test_web_agent.py#L2387) | 2387 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L002388](../../tests/test_web_agent.py#L2388) | 2388 | `"        def raise_for_status(self):"` | — |
-| [SRC-F725E90B2A-L002389](../../tests/test_web_agent.py#L2389) | 2389 | `"            return None"` | — |
-| [SRC-F725E90B2A-L002390](../../tests/test_web_agent.py#L2390) | 2390 | `""` | — |
-| [SRC-F725E90B2A-L002391](../../tests/test_web_agent.py#L2391) | 2391 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L002392](../../tests/test_web_agent.py#L2392) | 2392 | `"            return {"` | — |
-| [SRC-F725E90B2A-L002393](../../tests/test_web_agent.py#L2393) | 2393 | `"                \"results\": [{"` | — |
-| [SRC-F725E90B2A-L002394](../../tests/test_web_agent.py#L2394) | 2394 | `"                    \"title\": \"Buyer wanted\","` | — |
-| [SRC-F725E90B2A-L002395](../../tests/test_web_agent.py#L2395) | 2395 | `"                    \"url\": \"https://example.com/buyer\","` | — |
-| [SRC-F725E90B2A-L002396](../../tests/test_web_agent.py#L2396) | 2396 | `"                    \"snippet\": \"Looking to buy a flat.\","` | — |
-| [SRC-F725E90B2A-L002397](../../tests/test_web_agent.py#L2397) | 2397 | `"                    \"summary\": \"Looking to buy a flat in the requested area.\","` | — |
-| [SRC-F725E90B2A-L002398](../../tests/test_web_agent.py#L2398) | 2398 | `"                    \"date\": \"2026-10-16T12:00:00Z\","` | — |
-| [SRC-F725E90B2A-L002399](../../tests/test_web_agent.py#L2399) | 2399 | `"                    \"site_name\": \"Example\","` | — |
-| [SRC-F725E90B2A-L002400](../../tests/test_web_agent.py#L2400) | 2400 | `"                    \"rerank_score\": 2.2,"` | — |
-| [SRC-F725E90B2A-L002401](../../tests/test_web_agent.py#L2401) | 2401 | `"                    \"authority\": 2,"` | — |
-| [SRC-F725E90B2A-L002402](../../tests/test_web_agent.py#L2402) | 2402 | `"                }]"` | — |
-| [SRC-F725E90B2A-L002403](../../tests/test_web_agent.py#L2403) | 2403 | `"            }"` | — |
-| [SRC-F725E90B2A-L002404](../../tests/test_web_agent.py#L2404) | 2404 | `""` | — |
-| [SRC-F725E90B2A-L002405](../../tests/test_web_agent.py#L2405) | 2405 | `"    def fake_post(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L002406](../../tests/test_web_agent.py#L2406) | 2406 | `"        seen[\"url\"] = url"` | — |
-| [SRC-F725E90B2A-L002407](../../tests/test_web_agent.py#L2407) | 2407 | `"        seen.update(kwargs)"` | — |
-| [SRC-F725E90B2A-L002408](../../tests/test_web_agent.py#L2408) | 2408 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L002409](../../tests/test_web_agent.py#L2409) | 2409 | `""` | — |
-| [SRC-F725E90B2A-L002410](../../tests/test_web_agent.py#L2410) | 2410 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
-| [SRC-F725E90B2A-L002411](../../tests/test_web_agent.py#L2411) | 2411 | `"    rows = agent._search_deepseek_api(\"buyers looking to buy a flat\")"` | — |
-| [SRC-F725E90B2A-L002412](../../tests/test_web_agent.py#L2412) | 2412 | `""` | — |
-| [SRC-F725E90B2A-L002413](../../tests/test_web_agent.py#L2413) | 2413 | `"    assert seen[\"url\"] == \"https://api.deepseek.com/v1/tools/search\""` | — |
-| [SRC-F725E90B2A-L002414](../../tests/test_web_agent.py#L2414) | 2414 | `"    assert seen[\"headers\"][\"Authorization\"] == \"Bearer test-secret-key-that-must-not-appear\""` | — |

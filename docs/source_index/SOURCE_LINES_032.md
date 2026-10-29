@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001113 إلى SRC-6A7519AC10-L000126
+- النطاق: SRC-90FAA34ADE-L001087 إلى SRC-6A7519AC10-L000100
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001087](../../tests/fixtures/answer_quality_cases.json#L1087) | 1087 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001088](../../tests/fixtures/answer_quality_cases.json#L1088) | 1088 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001089](../../tests/fixtures/answer_quality_cases.json#L1089) | 1089 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001090](../../tests/fixtures/answer_quality_cases.json#L1090) | 1090 | `"      \"case_id\": \"AQ-037\","` | — |
+| [SRC-90FAA34ADE-L001091](../../tests/fixtures/answer_quality_cases.json#L1091) | 1091 | `"      \"category\": \"invalid_links\","` | — |
+| [SRC-90FAA34ADE-L001092](../../tests/fixtures/answer_quality_cases.json#L1092) | 1092 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L001093](../../tests/fixtures/answer_quality_cases.json#L1093) | 1093 | `"      \"question\": \"The result gives this link: javascript:alert(1). Check whether it can be used as a trustworthy source.\","` | — |
+| [SRC-90FAA34ADE-L001094](../../tests/fixtures/answer_quality_cases.json#L1094) | 1094 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001095](../../tests/fixtures/answer_quality_cases.json#L1095) | 1095 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001096](../../tests/fixtures/answer_quality_cases.json#L1096) | 1096 | `"        \"Rejects non-HTTP(S) script URLs as evidence links\","` | — |
+| [SRC-90FAA34ADE-L001097](../../tests/fixtures/answer_quality_cases.json#L1097) | 1097 | `"        \"Does not execute or open JavaScript URLs\","` | — |
+| [SRC-90FAA34ADE-L001098](../../tests/fixtures/answer_quality_cases.json#L1098) | 1098 | `"        \"Explains that the link is invalid for a public source citation\""` | — |
+| [SRC-90FAA34ADE-L001099](../../tests/fixtures/answer_quality_cases.json#L1099) | 1099 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001100](../../tests/fixtures/answer_quality_cases.json#L1100) | 1100 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001101](../../tests/fixtures/answer_quality_cases.json#L1101) | 1101 | `"        \"Executes the URL\","` | — |
+| [SRC-90FAA34ADE-L001102](../../tests/fixtures/answer_quality_cases.json#L1102) | 1102 | `"        \"Renders or endorses it as a safe source\""` | — |
+| [SRC-90FAA34ADE-L001103](../../tests/fixtures/answer_quality_cases.json#L1103) | 1103 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001104](../../tests/fixtures/answer_quality_cases.json#L1104) | 1104 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001105](../../tests/fixtures/answer_quality_cases.json#L1105) | 1105 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001106](../../tests/fixtures/answer_quality_cases.json#L1106) | 1106 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001107](../../tests/fixtures/answer_quality_cases.json#L1107) | 1107 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001108](../../tests/fixtures/answer_quality_cases.json#L1108) | 1108 | `"            \"title\": \"Questionable result\","` | — |
+| [SRC-90FAA34ADE-L001109](../../tests/fixtures/answer_quality_cases.json#L1109) | 1109 | `"            \"url\": \"javascript:alert(1)\","` | — |
+| [SRC-90FAA34ADE-L001110](../../tests/fixtures/answer_quality_cases.json#L1110) | 1110 | `"            \"snippet\": \"Trust me, this is official.\","` | — |
+| [SRC-90FAA34ADE-L001111](../../tests/fixtures/answer_quality_cases.json#L1111) | 1111 | `"            \"domain\": \"unknown\","` | — |
+| [SRC-90FAA34ADE-L001112](../../tests/fixtures/answer_quality_cases.json#L1112) | 1112 | `"            \"provider\": \"fixture_search\""` | — |
 | [SRC-90FAA34ADE-L001113](../../tests/fixtures/answer_quality_cases.json#L1113) | 1113 | `"          }"` | — |
 | [SRC-90FAA34ADE-L001114](../../tests/fixtures/answer_quality_cases.json#L1114) | 1114 | `"        ]"` | — |
 | [SRC-90FAA34ADE-L001115](../../tests/fixtures/answer_quality_cases.json#L1115) | 1115 | `"      },"` | — |
@@ -826,29 +852,3 @@
 | [SRC-6A7519AC10-L000098](../../tests/test_answer_quality_comparison.py#L98) | 98 | `"    )"` | — |
 | [SRC-6A7519AC10-L000099](../../tests/test_answer_quality_comparison.py#L99) | 99 | `"    assert result[\"acceptance_status\"] == \"COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES\""` | — |
 | [SRC-6A7519AC10-L000100](../../tests/test_answer_quality_comparison.py#L100) | 100 | `"    assert result[\"case_count\"] == 2"` | — |
-| [SRC-6A7519AC10-L000101](../../tests/test_answer_quality_comparison.py#L101) | 101 | `"    assert result[\"baseline\"][\"metrics\"][\"latency_ms\"][\"p50\"] == 100"` | — |
-| [SRC-6A7519AC10-L000102](../../tests/test_answer_quality_comparison.py#L102) | 102 | `"    assert result[\"candidate\"][\"metrics\"][\"latency_ms\"][\"p95\"] == 120"` | — |
-| [SRC-6A7519AC10-L000103](../../tests/test_answer_quality_comparison.py#L103) | 103 | `"    assert result[\"runtime_deltas\"][\"usable_result_rate\"][\"baseline\"] == 0.5"` | — |
-| [SRC-6A7519AC10-L000104](../../tests/test_answer_quality_comparison.py#L104) | 104 | `"    assert result[\"runtime_deltas\"][\"usable_result_rate\"][\"candidate\"] == 1.0"` | — |
-| [SRC-6A7519AC10-L000105](../../tests/test_answer_quality_comparison.py#L105) | 105 | `"    assert result[\"runtime_deltas\"][\"provider_reported_model_cost_usd\"][\"delta\"] == -0.003"` | — |
-| [SRC-6A7519AC10-L000106](../../tests/test_answer_quality_comparison.py#L106) | 106 | `"    assert result[\"baseline\"][\"metrics\"][\"provider_reported_model_cost\"][\"complete_request_cost_usd\"] == 0.027"` | — |
-| [SRC-6A7519AC10-L000107](../../tests/test_answer_quality_comparison.py#L107) | 107 | `"    assert result[\"runtime_deltas\"][\"complete_request_cost_usd\"][\"delta\"] == -0.011"` | — |
-| [SRC-6A7519AC10-L000108](../../tests/test_answer_quality_comparison.py#L108) | 108 | `"    assert result[\"runtime_deltas\"][\"complete_request_cost_usd\"][\"status\"] == \"COMPARED\""` | — |
-| [SRC-6A7519AC10-L000109](../../tests/test_answer_quality_comparison.py#L109) | 109 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"factual_accuracy\"][\"baseline\"] == pytest.approx(2 / 3, abs=0.0001)"` | — |
-| [SRC-6A7519AC10-L000110](../../tests/test_answer_quality_comparison.py#L110) | 110 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"factual_accuracy\"][\"candidate\"] == 1.0"` | — |
-| [SRC-6A7519AC10-L000111](../../tests/test_answer_quality_comparison.py#L111) | 111 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"citation_support\"][\"delta\"] == 0.5"` | — |
-| [SRC-6A7519AC10-L000112](../../tests/test_answer_quality_comparison.py#L112) | 112 | `""` | — |
-| [SRC-6A7519AC10-L000113](../../tests/test_answer_quality_comparison.py#L113) | 113 | `""` | — |
-| [SRC-6A7519AC10-L000114](../../tests/test_answer_quality_comparison.py#L114) | 114 | `"def test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance():"` | — |
-| [SRC-6A7519AC10-L000115](../../tests/test_answer_quality_comparison.py#L115) | 115 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000116](../../tests/test_answer_quality_comparison.py#L116) | 116 | `"    baseline = _run(build_sha=\"unknown\", results=[_row(\"AQ-007\", latency=100, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000117](../../tests/test_answer_quality_comparison.py#L117) | 117 | `"    candidate = _run(build_sha=\"\", results=[_row(\"AQ-007\", latency=90, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000118](../../tests/test_answer_quality_comparison.py#L118) | 118 | `"    result = mod.compare_runs(baseline, candidate)"` | — |
-| [SRC-6A7519AC10-L000119](../../tests/test_answer_quality_comparison.py#L119) | 119 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
-| [SRC-6A7519AC10-L000120](../../tests/test_answer_quality_comparison.py#L120) | 120 | `"    assert \"baseline_build_sha_missing_or_invalid\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000121](../../tests/test_answer_quality_comparison.py#L121) | 121 | `"    assert \"candidate_build_sha_missing_or_invalid\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000122](../../tests/test_answer_quality_comparison.py#L122) | 122 | `"    assert \"human_review_files_missing\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000123](../../tests/test_answer_quality_comparison.py#L123) | 123 | `"    assert result[\"quality_comparison\"] is None"` | — |
-| [SRC-6A7519AC10-L000124](../../tests/test_answer_quality_comparison.py#L124) | 124 | `"    assert result[\"baseline\"][\"metrics\"][\"provider_reported_model_cost\"][\"reported_sum_usd\"] is None"` | — |
-| [SRC-6A7519AC10-L000125](../../tests/test_answer_quality_comparison.py#L125) | 125 | `"    assert result[\"runtime_deltas\"][\"provider_reported_model_cost_usd\"][\"status\"] == \"NOT_MEASURED\""` | — |
-| [SRC-6A7519AC10-L000126](../../tests/test_answer_quality_comparison.py#L126) | 126 | `""` | — |
