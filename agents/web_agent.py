@@ -430,6 +430,33 @@ def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:
         lines.append("لم أتمكن من استخراج مقتطفات كافية من نتائج الويب.")
     return "\n\n".join(lines)
 
+def _fallback_lead_answer(sources: list[dict[str, Any]]) -> str:
+    """Present only already-qualified public buyer-intent signals if the LLM is unavailable."""
+    eligible = [
+        source for source in sources
+        if isinstance(source, dict)
+        and source.get("lead_qualification") == "public_buyer_intent_signal"
+        and isinstance(source.get("url"), str)
+        and source.get("url")
+    ]
+    lines = [
+        f"تعذر توليد التحليل اللغوي في هذه المحاولة، لكن عُثر على {len(eligible)} إشارة علنية مرشحة لنية شراء.",
+        "هذه إشارات أولية وليست تأكيدًا لهوية صاحب المنشور أو استمرار رغبته أو حداثة الإعلان. راجع المنشور الأصلي وتاريخه قبل التواصل.",
+    ]
+    for index, source in enumerate(eligible[:10], 1):
+        signal = source.get("lead_intent_evidence")
+        phrase = signal.get("phrase") if isinstance(signal, dict) else ""
+        snippet = _clean_text(source.get("snippet") or source.get("page_text") or "", 700)
+        title = _clean_text(source.get("title") or "منشور عام محتمل", 300)
+        lines.append(
+            f"{index}. {title}\n"
+            f"   عبارة المطابقة بعد التطبيع: {phrase or 'إشارة نية شراء صريحة'}\n"
+            f"   المقتطف: {snippet or 'لا يتوفر مقتطف مقروء؛ راجع الصفحة الأصلية.'}\n"
+            f"   المصدر: {source['url']}\n"
+            "   الحالة: مرشح يحتاج إلى تحقق يدوي من السياق والحداثة."
+        )
+    return "\n\n".join(lines)
+
 
 class PageFetchResult(tuple):
     """Two-item tuple compatible with legacy callers, with structured extraction status."""
@@ -854,10 +881,13 @@ class WebAgent:
     def _lead_intent_evidence(source: dict[str, Any]) -> dict[str, str] | None:
         """Return a narrow, inspectable public buyer-intent phrase signal, if present."""
         phrases = (
-            "مطلوب شقه تمليك", "مطلوب شقه للشراء", "مطلوب شراء شقه",
-            "مطلوب عقار للشراء", "مطلوب فيلا للشراء",
-            "بدور على شقه تمليك", "بدور على شقه للشراء",
-            "ابحث عن شقه للشراء", "عايز اشتري شقه", "عاوز اشتري شقه",
+            "مطلوب شقه تمليك", "مطلوب شقه للتمليك", "مطلوب شقه للشراء",
+            "مطلوب شراء شقه", "مطلوب شقه شراء", "مطلوب عقار للشراء",
+            "مطلوب فيلا للشراء", "بدور على شقه تمليك", "بدور على شقه للشراء",
+            "ببحث عن شقه تمليك", "ابحث عن شقه للشراء", "ابحث عن شقه تمليك",
+            "عايز اشتري شقه", "عاوز اشتري شقه", "عايز يشتري شقه", "عاوز يشتري شقه",
+            "عايز شقه تمليك", "عاوز شقه تمليك", "محتاج شقه تمليك",
+            "يريد شراء شقه", "يريدون شراء شقه", "يبحث عن شقه للشراء",
             "عايز اشتري عقار", "عاوز اشتري عقار", "اريد شراء شقه",
             "ارغب في شراء شقه", "اريد شراء عقار", "ارغب في شراء عقار",
             "looking to buy", "looking to purchase", "want to buy",
@@ -890,23 +920,44 @@ class WebAgent:
     ) -> list[str]:
         """Create high-intent buyer-search variants without changing the product/location."""
         subject = _normalize_search_query(question).strip()
-        subject = re.sub(
-            r"^(?:(?:من فضلك|لو سمحت)\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)\s+"
-            r"(?:عن|على)\s+(?:عميل(?:\s+محتمل)?|عملاء(?:\s+محتملين)?|"
-            r"مشتري(?:ن)?|مشترين)\s*(?:(?:الذي|اللي|الذين)\s*)?"
-            r"(?:(?:يريد|عايز|عاوز)\s*(?:ان\s*)?(?:يشتري|شراء))?\s*",
-            "", subject, flags=re.IGNORECASE,
-        )
-        subject = re.sub(
-            r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?"
-            r"(?:(?:potential\s+)?(?:customer|buyer|prospect|lead)s?)\s*"
-            r"(?:(?:who|that)\s*)?(?:(?:wants?|looking to|seeking to)\s+"
-            r"(?:buy|purchase)\s*)?",
-            "", subject, flags=re.IGNORECASE,
-        ).strip(" \t:;,.-")
+        arabic = bool(re.search(r"[\u0600-\u06FF]", question))
+        # Repair only two frequent task-specific typos; do not apply broad spell correction.
+        subject = re.sub(r"(?<!\w)عملاش(?!\w)", "عملاء", subject, flags=re.IGNORECASE)
+        subject = re.sub(r"(?<!\w)شرا(?!\w)", "شراء", subject, flags=re.IGNORECASE)
+        if arabic:
+            subject = re.sub(
+                r"^(?:(?:من فضلك|لو سمحت)\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)(?:لي)?\s+"
+                r"(?:لي\s+)?(?:عن|على)\s*",
+                "", subject, flags=re.IGNORECASE,
+            )
+            subject = re.sub(
+                r"^(?:\d+\s*)?(?:عميل(?:\s+محتمل)?|عملاء(?:\s+محتملين)?|"
+                r"مشتري(?:ن)?|مشترين)\s*",
+                "", subject, flags=re.IGNORECASE,
+            )
+            intent_word = (
+                r"(?:يطلب(?:ون)?|يريد(?:ون)?|عايز(?:ين)?|عاوز(?:ين)?|محتاج(?:ين)?|"
+                r"مهتم(?:ين)?|بيطلب(?:وا)?|يبحث(?:ون)?|بيبحث(?:وا)?|يدور(?:وا)?)"
+            )
+            subject = re.sub(
+                rf"^(?:(?:الذي|اللي|الذين)\s*)?{intent_word}"
+                rf"(?:\s+(?:او|أو)\s+{intent_word})*\s*",
+                "", subject, flags=re.IGNORECASE,
+            )
+            subject = re.sub(
+                r"^(?:(?:ان|أن)\s*)?(?:يشتري|يشترو|يشترون|اشتري|شراء|شرا|لشراء)\s*",
+                "", subject, flags=re.IGNORECASE,
+            )
+        else:
+            subject = re.sub(
+                r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?
+                r"(?:(?:potential\s+)?(?:customer|buyer|prospect|lead)s?)\s*"
+                r"(?:(?:who|that)\s*)?(?:(?:wants?|looking to|seeking to)\s+"
+                r"(?:buy|purchase)\s*)?",
+                "", subject, flags=re.IGNORECASE,
+            ).strip(" \t:;,.-")
         if len(_search_tokens(subject)) < 2:
             subject = _normalize_search_query(question).strip()
-        arabic = bool(re.search(r"[\u0600-\u06FF]", question))
         if arabic:
             targeted = [
                 f'"مطلوب شراء" {subject}',
@@ -925,7 +976,6 @@ class WebAgent:
             ]
         candidates = targeted + [_normalize_search_query(q) for q in (existing_queries or [])]
         return list(dict.fromkeys(q[:500] for q in candidates if q and q.strip()))[:MAX_PLAN_QUERIES]
-
     @staticmethod
     def _is_listing_discovery(question: str) -> bool:
         """Recognize property/job/product discovery where candidates are useful with caveats."""
@@ -5928,7 +5978,11 @@ class WebAgent:
                     "اكتمل البحث، لكن تعذر توليد إجابة تحليلية. أعرض لك مقتطفات المصادر "
                     "المتاحة بدلًا من اختلاق إجابة."
                 )
-            answer = _fallback_answer(sources, reason)
+            answer = (
+                _fallback_lead_answer(lead_evidence_sources)
+                if lead_request and lead_evidence_sources
+                else _fallback_answer(sources, reason)
+            )
 
         coverage_targets = self._question_coverage_targets(question)
         coverage_repair_status = "not_attempted"
@@ -5951,7 +6005,11 @@ class WebAgent:
                     "تعذر تدقيق الادعاءات مقابل نصوص المصادر؛ لذلك لن أتعامل مع المسودة "
                     "كإجابة مؤكدة. أرفقت مقتطفات المصادر المتاحة بدل الاعتماد على المسودة."
                 )
-                answer = _fallback_answer(sources, review_warning)
+                answer = (
+                    _fallback_lead_answer(lead_evidence_sources)
+                    if lead_request and lead_evidence_sources
+                    else _fallback_answer(sources, review_warning)
+                )
         criterion_gap_research: dict[str, Any] = {
             "attempted": False,
             "status": "not_needed",
@@ -6250,7 +6308,11 @@ class WebAgent:
                                 "تعذرت إعادة تدقيق الإجابة المعدلة مقابل الأدلة؛ لذلك لن أعرضها بوصفها إجابة مكتملة، "
                                 "وأعرض مقتطفات المصادر بدلًا منها."
                             )
-                            answer = _fallback_answer(sources, review_warning)
+                            answer = (
+                    _fallback_lead_answer(lead_evidence_sources)
+                    if lead_request and lead_evidence_sources
+                    else _fallback_answer(sources, review_warning)
+                )
                     else:
                         coverage_repair_status = "no_change_gap_unresolved"
                         coverage_repair_warning = (
