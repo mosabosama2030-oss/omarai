@@ -121,6 +121,32 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
     else:
         tool_status = "UNKNOWN"
 
+    task_understanding = payload.get("task_understanding")
+    task_understanding = task_understanding if isinstance(task_understanding, dict) else {}
+    tool_execution = task_understanding.get("tool_execution")
+    tool_execution = tool_execution if isinstance(tool_execution, dict) else {}
+    raw_tool_rows = tool_execution.get("tool_status_matrix")
+    raw_tool_rows = raw_tool_rows if isinstance(raw_tool_rows, list) else []
+    successful_statuses = {
+        "web_search": {"completed_with_results"},
+        "page_fetch": {"completed_with_read_pages"},
+        "public_social_search_if_configured": {"completed_with_results"},
+        "language_model_generation_if_configured": {"completed"},
+        "claim_review_if_configured": {"completed_model_assisted_review"},
+    }
+    required_tool_statuses = []
+    for row in raw_tool_rows:
+        if not isinstance(row, dict) or row.get("required_by_task_spec") is not True:
+            continue
+        tool = row.get("tool")
+        status = row.get("status")
+        if isinstance(tool, str) and isinstance(status, str):
+            required_tool_statuses.append({
+                "tool": tool,
+                "status": status,
+                "successful_completion": status in successful_statuses.get(tool, set()),
+            })
+
     calls = _model_calls_from_payload(payload)
     reported_costs = []
     for call in calls:
@@ -144,6 +170,23 @@ def _response_metrics(payload: dict | str, expected_strategy: str, transport_ok:
         "search_outcome": outcome if isinstance(outcome, str) else "unknown",
         "pipeline_completion_status": pipeline if isinstance(pipeline, str) else "unknown",
         "tool_status": tool_status,
+        "required_tool_statuses": required_tool_statuses,
+        "required_tool_success_count": sum(1 for row in required_tool_statuses if row["successful_completion"]),
+        "required_tool_count": len(required_tool_statuses),
+        "required_tool_success_rate": (
+            round(
+                sum(1 for row in required_tool_statuses if row["successful_completion"])
+                / len(required_tool_statuses),
+                4,
+            )
+            if required_tool_statuses
+            else None
+        ),
+        "required_tool_status_metrics_status": (
+            "SCORED_FROM_TOOL_EXECUTION_MATRIX"
+            if required_tool_statuses
+            else "NOT_MEASURED_NO_REQUIRED_TOOL_MATRIX"
+        ),
         "source_count": len(payload.get("sources", [])) if isinstance(payload.get("sources"), list) else None,
         "model_call_count": len(calls),
         "provider_reported_model_cost_usd": round(sum(reported_costs), 10) if reported_costs else None,
