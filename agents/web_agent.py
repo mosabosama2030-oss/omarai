@@ -11,6 +11,7 @@ import datetime as dt
 import ipaddress
 import json
 import os
+import math
 import re
 import socket
 import threading
@@ -6574,7 +6575,7 @@ def _normalized_provider_usage(
         value = usage.get(source_key)
         if isinstance(value, (int, float)) and not isinstance(value, bool):
             number = float(value)
-            if number >= 0 and number == number and number != float("inf"):
+            if number >= 0 and math.isfinite(number):
                 normalized["cost_usd"] = number
                 break
     return normalized or None
