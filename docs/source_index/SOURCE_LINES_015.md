@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005182 إلى SRC-1AE03B9EC3-L005981
+- النطاق: SRC-1AE03B9EC3-L005180 إلى SRC-1AE03B9EC3-L005979
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005180](../../agents/web_agent.py#L5180) | 5180 | `"        # but must never be presented as independently corroborated research."` | — |
+| [SRC-1AE03B9EC3-L005181](../../agents/web_agent.py#L5181) | 5181 | `"        has_read_user_supplied_page = any("` | — |
 | [SRC-1AE03B9EC3-L005182](../../agents/web_agent.py#L5182) | 5182 | `"            \"user_supplied_url\" in source.get(\"providers\", [])"` | — |
 | [SRC-1AE03B9EC3-L005183](../../agents/web_agent.py#L5183) | 5183 | `"            and bool(source.get(\"page_fetched\"))"` | — |
 | [SRC-1AE03B9EC3-L005184](../../agents/web_agent.py#L5184) | 5184 | `"            and bool(str(source.get(\"page_text\") or \"\").strip())"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L005977](../../agents/web_agent.py#L5977) | 5977 | `"                budget = getattr(self, \"_request_budget\", None)"` | — |
 | [SRC-1AE03B9EC3-L005978](../../agents/web_agent.py#L5978) | 5978 | `"                if not plan.get(\"coverage_gap_repair_slot_reserved\"):"` | — |
 | [SRC-1AE03B9EC3-L005979](../../agents/web_agent.py#L5979) | 5979 | `"                    criterion_gap_research[\"status\"] = \"skipped_no_reserved_search_slot\""` | — |
-| [SRC-1AE03B9EC3-L005980](../../agents/web_agent.py#L5980) | 5980 | `"                    coverage_repair_warning = ("` | — |
-| [SRC-1AE03B9EC3-L005981](../../agents/web_agent.py#L5981) | 5981 | `"                        \"رُصدت محاور بلا إشارة لفظية في المصادر، لكن لم تُحجز ميزانية \""` | — |

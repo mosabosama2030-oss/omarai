@@ -98,3 +98,20 @@ def test_extracts_joined_facets_without_formal_comparison_marker():
     assert "السعر" in joined
     assert "الضمان" in joined
     assert "الصيانة" in joined
+
+
+def test_extracts_general_factual_aspects_from_compound_arabic_question():
+    question = "اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة"
+    aspects = extract_aspects(question)
+    joined = " ".join(aspects)
+    assert "العاصمة" in joined
+    assert "عدد السكان" in joined
+    assert len(aspects) <= 8
+
+
+def test_builds_separate_queries_for_capital_and_population_aspects():
+    question = "اذكر عاصمة مصر وعدد سكان القاهرة"
+    aspects = extract_aspects(question)
+    queries = build_aspect_queries("مصر القاهرة", aspects)
+    assert any("العاصمة" in query for query in queries)
+    assert any("عدد السكان" in query for query in queries)

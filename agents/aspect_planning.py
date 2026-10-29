@@ -19,6 +19,8 @@ _COMPARE_RE = re.compile(
     flags=re.IGNORECASE,
 )
 _DIMENSION_GROUPS = (
+    ("العاصمة", ("العاصمة", "عاصمة", "العاصمه", "capital city", "capital of", "capital")),
+    ("عدد السكان", ("عدد السكان", "عدد سكان", "السكان", "تعداد السكان", "التعداد السكاني", "population", "population count", "population size")),
     ("السعر", ("السعر", "سعر", "الأسعار", "الاسعار", "التكلفة", "التكلفه", "price", "cost", "pricing")),
     ("البطارية", ("البطارية", "البطاريه", "البطاريات", "battery", "batteries")),
     ("الشحن", ("الشحن", "charging", "charge time")),
