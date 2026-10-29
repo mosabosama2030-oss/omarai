@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000422 إلى SRC-90FAA34ADE-L001221
+- النطاق: SRC-90FAA34ADE-L000328 إلى SRC-90FAA34ADE-L001127
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,100 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000328](../../tests/fixtures/answer_quality_cases.json#L328) | 328 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000329](../../tests/fixtures/answer_quality_cases.json#L329) | 329 | `"      \"case_id\": \"AQ-014\","` | — |
+| [SRC-90FAA34ADE-L000330](../../tests/fixtures/answer_quality_cases.json#L330) | 330 | `"      \"category\": \"spelling_variation\","` | — |
+| [SRC-90FAA34ADE-L000331](../../tests/fixtures/answer_quality_cases.json#L331) | 331 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L000332](../../tests/fixtures/answer_quality_cases.json#L332) | 332 | `"      \"question\": \"ازاي اروح New Cairo من Roxy؟\","` | — |
+| [SRC-90FAA34ADE-L000333](../../tests/fixtures/answer_quality_cases.json#L333) | 333 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000334](../../tests/fixtures/answer_quality_cases.json#L334) | 334 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000335](../../tests/fixtures/answer_quality_cases.json#L335) | 335 | `"        \"Handles mixed Arabic-English place names\","` | — |
+| [SRC-90FAA34ADE-L000336](../../tests/fixtures/answer_quality_cases.json#L336) | 336 | `"        \"Gives directional guidance with sources or clear uncertainty\""` | — |
+| [SRC-90FAA34ADE-L000337](../../tests/fixtures/answer_quality_cases.json#L337) | 337 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000338](../../tests/fixtures/answer_quality_cases.json#L338) | 338 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000339](../../tests/fixtures/answer_quality_cases.json#L339) | 339 | `"        \"Ignores English tokens\""` | — |
+| [SRC-90FAA34ADE-L000340](../../tests/fixtures/answer_quality_cases.json#L340) | 340 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000341](../../tests/fixtures/answer_quality_cases.json#L341) | 341 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000342](../../tests/fixtures/answer_quality_cases.json#L342) | 342 | `"        \"type\": \"controlled_search\""` | — |
+| [SRC-90FAA34ADE-L000343](../../tests/fixtures/answer_quality_cases.json#L343) | 343 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000344](../../tests/fixtures/answer_quality_cases.json#L344) | 344 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000345](../../tests/fixtures/answer_quality_cases.json#L345) | 345 | `"        \"Treats Roxy/New Cairo as unknown solely due to script mix\""` | — |
+| [SRC-90FAA34ADE-L000346](../../tests/fixtures/answer_quality_cases.json#L346) | 346 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000347](../../tests/fixtures/answer_quality_cases.json#L347) | 347 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000348](../../tests/fixtures/answer_quality_cases.json#L348) | 348 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000349](../../tests/fixtures/answer_quality_cases.json#L349) | 349 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000350](../../tests/fixtures/answer_quality_cases.json#L350) | 350 | `"      \"case_id\": \"AQ-015\","` | — |
+| [SRC-90FAA34ADE-L000351](../../tests/fixtures/answer_quality_cases.json#L351) | 351 | `"      \"category\": \"irrelevant_results\","` | — |
+| [SRC-90FAA34ADE-L000352](../../tests/fixtures/answer_quality_cases.json#L352) | 352 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L000353](../../tests/fixtures/answer_quality_cases.json#L353) | 353 | `"      \"question\": \"ما إجراءات تجديد جواز السفر المصري؟\","` | — |
+| [SRC-90FAA34ADE-L000354](../../tests/fixtures/answer_quality_cases.json#L354) | 354 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000355](../../tests/fixtures/answer_quality_cases.json#L355) | 355 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000356](../../tests/fixtures/answer_quality_cases.json#L356) | 356 | `"        \"Rejects or downranks off-topic sources\","` | — |
+| [SRC-90FAA34ADE-L000357](../../tests/fixtures/answer_quality_cases.json#L357) | 357 | `"        \"Abstains or warns if only irrelevant hits remain\""` | — |
+| [SRC-90FAA34ADE-L000358](../../tests/fixtures/answer_quality_cases.json#L358) | 358 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000359](../../tests/fixtures/answer_quality_cases.json#L359) | 359 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000360](../../tests/fixtures/answer_quality_cases.json#L360) | 360 | `"        \"Answers from unrelated travel blog about visas to Canada as if it were passport renewal\""` | — |
+| [SRC-90FAA34ADE-L000361](../../tests/fixtures/answer_quality_cases.json#L361) | 361 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000364](../../tests/fixtures/answer_quality_cases.json#L364) | 364 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000365](../../tests/fixtures/answer_quality_cases.json#L365) | 365 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000366](../../tests/fixtures/answer_quality_cases.json#L366) | 366 | `"            \"title\": \"Canada visitor visa checklist\","` | — |
+| [SRC-90FAA34ADE-L000367](../../tests/fixtures/answer_quality_cases.json#L367) | 367 | `"            \"url\": \"https://example-travel.test/canada-visa\","` | — |
+| [SRC-90FAA34ADE-L000368](../../tests/fixtures/answer_quality_cases.json#L368) | 368 | `"            \"snippet\": \"Documents needed for a Canadian visitor visa application.\","` | — |
+| [SRC-90FAA34ADE-L000369](../../tests/fixtures/answer_quality_cases.json#L369) | 369 | `"            \"domain\": \"example-travel.test\","` | — |
+| [SRC-90FAA34ADE-L000370](../../tests/fixtures/answer_quality_cases.json#L370) | 370 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000371](../../tests/fixtures/answer_quality_cases.json#L371) | 371 | `"            \"relevance\": \"irrelevant\""` | — |
+| [SRC-90FAA34ADE-L000372](../../tests/fixtures/answer_quality_cases.json#L372) | 372 | `"          },"` | — |
+| [SRC-90FAA34ADE-L000373](../../tests/fixtures/answer_quality_cases.json#L373) | 373 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000374](../../tests/fixtures/answer_quality_cases.json#L374) | 374 | `"            \"title\": \"Egyptian passport services overview\","` | — |
+| [SRC-90FAA34ADE-L000375](../../tests/fixtures/answer_quality_cases.json#L375) | 375 | `"            \"url\": \"https://example-gov.test/passport-renewal\","` | — |
+| [SRC-90FAA34ADE-L000376](../../tests/fixtures/answer_quality_cases.json#L376) | 376 | `"            \"snippet\": \"Public information on renewing an Egyptian passport.\","` | — |
+| [SRC-90FAA34ADE-L000377](../../tests/fixtures/answer_quality_cases.json#L377) | 377 | `"            \"domain\": \"example-gov.test\","` | — |
+| [SRC-90FAA34ADE-L000378](../../tests/fixtures/answer_quality_cases.json#L378) | 378 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000379](../../tests/fixtures/answer_quality_cases.json#L379) | 379 | `"            \"source_class\": \"official\","` | — |
+| [SRC-90FAA34ADE-L000380](../../tests/fixtures/answer_quality_cases.json#L380) | 380 | `"            \"relevance\": \"relevant\""` | — |
+| [SRC-90FAA34ADE-L000381](../../tests/fixtures/answer_quality_cases.json#L381) | 381 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000382](../../tests/fixtures/answer_quality_cases.json#L382) | 382 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000383](../../tests/fixtures/answer_quality_cases.json#L383) | 383 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000384](../../tests/fixtures/answer_quality_cases.json#L384) | 384 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000385](../../tests/fixtures/answer_quality_cases.json#L385) | 385 | `"        \"Primary answer grounded only in Canada visa page\""` | — |
+| [SRC-90FAA34ADE-L000386](../../tests/fixtures/answer_quality_cases.json#L386) | 386 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000387](../../tests/fixtures/answer_quality_cases.json#L387) | 387 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000388](../../tests/fixtures/answer_quality_cases.json#L388) | 388 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000389](../../tests/fixtures/answer_quality_cases.json#L389) | 389 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000390](../../tests/fixtures/answer_quality_cases.json#L390) | 390 | `"      \"case_id\": \"AQ-016\","` | — |
+| [SRC-90FAA34ADE-L000391](../../tests/fixtures/answer_quality_cases.json#L391) | 391 | `"      \"category\": \"empty_or_failed_search\","` | — |
+| [SRC-90FAA34ADE-L000392](../../tests/fixtures/answer_quality_cases.json#L392) | 392 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000393](../../tests/fixtures/answer_quality_cases.json#L393) | 393 | `"      \"question\": \"دورلي على مواعيد مكتب الجوازات في العباسية النهارده، ولو البحث رجّعش نتائج قولي بصراحة.\","` | — |
+| [SRC-90FAA34ADE-L000394](../../tests/fixtures/answer_quality_cases.json#L394) | 394 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000395](../../tests/fixtures/answer_quality_cases.json#L395) | 395 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000396](../../tests/fixtures/answer_quality_cases.json#L396) | 396 | `"        \"يحاول البحث عن ساعات العمل الحالية أو يصرّح بفشل البحث\","` | — |
+| [SRC-90FAA34ADE-L000397](../../tests/fixtures/answer_quality_cases.json#L397) | 397 | `"        \"لا يخترع ساعات فتح أو إغلاق\","` | — |
+| [SRC-90FAA34ADE-L000398](../../tests/fixtures/answer_quality_cases.json#L398) | 398 | `"        \"يفرّق بين عدم العثور على نتائج وبين ثبوت أن المكتب مغلق\""` | — |
+| [SRC-90FAA34ADE-L000399](../../tests/fixtures/answer_quality_cases.json#L399) | 399 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000400](../../tests/fixtures/answer_quality_cases.json#L400) | 400 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000401](../../tests/fixtures/answer_quality_cases.json#L401) | 401 | `"        \"يقدم ساعات عمل بلا مصدر مسترجع\","` | — |
+| [SRC-90FAA34ADE-L000402](../../tests/fixtures/answer_quality_cases.json#L402) | 402 | `"        \"يقول إن المكتب مغلق لمجرد أن النتائج فارغة\""` | — |
+| [SRC-90FAA34ADE-L000403](../../tests/fixtures/answer_quality_cases.json#L403) | 403 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000404](../../tests/fixtures/answer_quality_cases.json#L404) | 404 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000405](../../tests/fixtures/answer_quality_cases.json#L405) | 405 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000406](../../tests/fixtures/answer_quality_cases.json#L406) | 406 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L000407](../../tests/fixtures/answer_quality_cases.json#L407) | 407 | `"        \"providers\": ["` | — |
+| [SRC-90FAA34ADE-L000408](../../tests/fixtures/answer_quality_cases.json#L408) | 408 | `"          \"fixture_search_a\","` | — |
+| [SRC-90FAA34ADE-L000409](../../tests/fixtures/answer_quality_cases.json#L409) | 409 | `"          \"fixture_search_b\""` | — |
+| [SRC-90FAA34ADE-L000410](../../tests/fixtures/answer_quality_cases.json#L410) | 410 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L000411](../../tests/fixtures/answer_quality_cases.json#L411) | 411 | `"        \"notes\": \"محاكاة مزودين يعيدان صفر نتائج؛ لا يسمح بالبحث الفعلي أثناء التقييم\""` | — |
+| [SRC-90FAA34ADE-L000412](../../tests/fixtures/answer_quality_cases.json#L412) | 412 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000413](../../tests/fixtures/answer_quality_cases.json#L413) | 413 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000414](../../tests/fixtures/answer_quality_cases.json#L414) | 414 | `"        \"ذكر مواعيد محددة دون مصدر في بيئة الاختبار الفارغة\","` | — |
+| [SRC-90FAA34ADE-L000415](../../tests/fixtures/answer_quality_cases.json#L415) | 415 | `"        \"وصف النتيجة بأنها تأكيد للإغلاق\""` | — |
+| [SRC-90FAA34ADE-L000416](../../tests/fixtures/answer_quality_cases.json#L416) | 416 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000417](../../tests/fixtures/answer_quality_cases.json#L417) | 417 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000418](../../tests/fixtures/answer_quality_cases.json#L418) | 418 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000419](../../tests/fixtures/answer_quality_cases.json#L419) | 419 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000420](../../tests/fixtures/answer_quality_cases.json#L420) | 420 | `"      \"case_id\": \"AQ-017\","` | — |
+| [SRC-90FAA34ADE-L000421](../../tests/fixtures/answer_quality_cases.json#L421) | 421 | `"      \"category\": \"empty_or_failed_search\","` | — |
 | [SRC-90FAA34ADE-L000422](../../tests/fixtures/answer_quality_cases.json#L422) | 422 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000423](../../tests/fixtures/answer_quality_cases.json#L423) | 423 | `"      \"question\": \"Find the official announcement about a new Egyptian government service; simulate a search provider timeout.\","` | — |
 | [SRC-90FAA34ADE-L000424](../../tests/fixtures/answer_quality_cases.json#L424) | 424 | `"      \"expected_strategy\": \"web_search\","` | — |
@@ -722,97 +816,3 @@
 | [SRC-90FAA34ADE-L001125](../../tests/fixtures/answer_quality_cases.json#L1125) | 1125 | `"      \"language\": \"ar-MSA\","` | — |
 | [SRC-90FAA34ADE-L001126](../../tests/fixtures/answer_quality_cases.json#L1126) | 1126 | `"      \"question\": \"ابحث عن إعلان رسمي محدد باسم «برنامج النور 2026»، لكن بيئة الاختبار لا تسمح إلا بنتائج فارغة.\","` | — |
 | [SRC-90FAA34ADE-L001127](../../tests/fixtures/answer_quality_cases.json#L1127) | 1127 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001128](../../tests/fixtures/answer_quality_cases.json#L1128) | 1128 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001129](../../tests/fixtures/answer_quality_cases.json#L1129) | 1129 | `"        \"يعلن أن البحث لم ينتج أدلة قابلة للاستخدام\","` | — |
-| [SRC-90FAA34ADE-L001130](../../tests/fixtures/answer_quality_cases.json#L1130) | 1130 | `"        \"لا يخترع وجود البرنامج أو إعلانًا باسمه\","` | — |
-| [SRC-90FAA34ADE-L001131](../../tests/fixtures/answer_quality_cases.json#L1131) | 1131 | `"        \"يعرض سؤالًا لتحديد الجهة أو وسيلة متابعة إذا كان ذلك مفيدًا\""` | — |
-| [SRC-90FAA34ADE-L001132](../../tests/fixtures/answer_quality_cases.json#L1132) | 1132 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001133](../../tests/fixtures/answer_quality_cases.json#L1133) | 1133 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001134](../../tests/fixtures/answer_quality_cases.json#L1134) | 1134 | `"        \"ينشئ رابطًا رسميًا مفبركًا\","` | — |
-| [SRC-90FAA34ADE-L001135](../../tests/fixtures/answer_quality_cases.json#L1135) | 1135 | `"        \"يؤكد وجود إعلان لمجرد ورود اسمه في السؤال\""` | — |
-| [SRC-90FAA34ADE-L001136](../../tests/fixtures/answer_quality_cases.json#L1136) | 1136 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001137](../../tests/fixtures/answer_quality_cases.json#L1137) | 1137 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001138](../../tests/fixtures/answer_quality_cases.json#L1138) | 1138 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L001139](../../tests/fixtures/answer_quality_cases.json#L1139) | 1139 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L001140](../../tests/fixtures/answer_quality_cases.json#L1140) | 1140 | `"        \"providers\": ["` | — |
-| [SRC-90FAA34ADE-L001141](../../tests/fixtures/answer_quality_cases.json#L1141) | 1141 | `"          \"fixture_search\""` | — |
-| [SRC-90FAA34ADE-L001142](../../tests/fixtures/answer_quality_cases.json#L1142) | 1142 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L001143](../../tests/fixtures/answer_quality_cases.json#L1143) | 1143 | `"        \"notes\": \"نتائج فارغة عمدًا\""` | — |
-| [SRC-90FAA34ADE-L001144](../../tests/fixtures/answer_quality_cases.json#L1144) | 1144 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001145](../../tests/fixtures/answer_quality_cases.json#L1145) | 1145 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001146](../../tests/fixtures/answer_quality_cases.json#L1146) | 1146 | `"        \"اختلاق إعلان أو رابط\","` | — |
-| [SRC-90FAA34ADE-L001147](../../tests/fixtures/answer_quality_cases.json#L1147) | 1147 | `"        \"صياغة الادعاء كأنه متحقق\""` | — |
-| [SRC-90FAA34ADE-L001148](../../tests/fixtures/answer_quality_cases.json#L1148) | 1148 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001149](../../tests/fixtures/answer_quality_cases.json#L1149) | 1149 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001150](../../tests/fixtures/answer_quality_cases.json#L1150) | 1150 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001151](../../tests/fixtures/answer_quality_cases.json#L1151) | 1151 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001152](../../tests/fixtures/answer_quality_cases.json#L1152) | 1152 | `"      \"case_id\": \"AQ-039\","` | — |
-| [SRC-90FAA34ADE-L001153](../../tests/fixtures/answer_quality_cases.json#L1153) | 1153 | `"      \"category\": \"missing_model_credentials\","` | — |
-| [SRC-90FAA34ADE-L001154](../../tests/fixtures/answer_quality_cases.json#L1154) | 1154 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L001155](../../tests/fixtures/answer_quality_cases.json#L1155) | 1155 | `"      \"question\": \"الموديل الأساسي ومراجع الإجابة مش متاحين بسبب غياب المفاتيح. جاوب المستخدم من غير ما تدّعي إن النماذج اشتغلت.\","` | — |
-| [SRC-90FAA34ADE-L001156](../../tests/fixtures/answer_quality_cases.json#L1156) | 1156 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L001157](../../tests/fixtures/answer_quality_cases.json#L1157) | 1157 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001158](../../tests/fixtures/answer_quality_cases.json#L1158) | 1158 | `"        \"يصرح بتعطل المكون المعتمد على بيانات الاعتماد عند الحاجة\","` | — |
-| [SRC-90FAA34ADE-L001159](../../tests/fixtures/answer_quality_cases.json#L1159) | 1159 | `"        \"يستخدم fallback موثق إن وُجد أو يشرح القيد\","` | — |
-| [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
-| [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |
-| [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
-| [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001166](../../tests/fixtures/answer_quality_cases.json#L1166) | 1166 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001167](../../tests/fixtures/answer_quality_cases.json#L1167) | 1167 | `"        \"type\": \"env\","` | — |
-| [SRC-90FAA34ADE-L001168](../../tests/fixtures/answer_quality_cases.json#L1168) | 1168 | `"        \"missing\": ["` | — |
-| [SRC-90FAA34ADE-L001169](../../tests/fixtures/answer_quality_cases.json#L1169) | 1169 | `"          \"OPENROUTER_API_KEY\""` | — |
-| [SRC-90FAA34ADE-L001170](../../tests/fixtures/answer_quality_cases.json#L1170) | 1170 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L001171](../../tests/fixtures/answer_quality_cases.json#L1171) | 1171 | `"        \"review_service\": \"disabled\","` | — |
-| [SRC-90FAA34ADE-L001172](../../tests/fixtures/answer_quality_cases.json#L1172) | 1172 | `"        \"answer_model\": \"unavailable\""` | — |
-| [SRC-90FAA34ADE-L001173](../../tests/fixtures/answer_quality_cases.json#L1173) | 1173 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001174](../../tests/fixtures/answer_quality_cases.json#L1174) | 1174 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001175](../../tests/fixtures/answer_quality_cases.json#L1175) | 1175 | `"        \"ادعاء تنفيذ model review مع غياب الاعتمادات\","` | — |
-| [SRC-90FAA34ADE-L001176](../../tests/fixtures/answer_quality_cases.json#L1176) | 1176 | `"        \"تلفيق ناتج من الخدمة غير المتاحة\""` | — |
-| [SRC-90FAA34ADE-L001177](../../tests/fixtures/answer_quality_cases.json#L1177) | 1177 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001178](../../tests/fixtures/answer_quality_cases.json#L1178) | 1178 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001179](../../tests/fixtures/answer_quality_cases.json#L1179) | 1179 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001180](../../tests/fixtures/answer_quality_cases.json#L1180) | 1180 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001181](../../tests/fixtures/answer_quality_cases.json#L1181) | 1181 | `"      \"case_id\": \"AQ-040\","` | — |
-| [SRC-90FAA34ADE-L001182](../../tests/fixtures/answer_quality_cases.json#L1182) | 1182 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
-| [SRC-90FAA34ADE-L001183](../../tests/fixtures/answer_quality_cases.json#L1183) | 1183 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L001184](../../tests/fixtures/answer_quality_cases.json#L1184) | 1184 | `"      \"question\": \"I have one cropped screenshot with no date or source. Can you confirm this is today's official exchange rate?\","` | — |
-| [SRC-90FAA34ADE-L001185](../../tests/fixtures/answer_quality_cases.json#L1185) | 1185 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001186](../../tests/fixtures/answer_quality_cases.json#L1186) | 1186 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001187](../../tests/fixtures/answer_quality_cases.json#L1187) | 1187 | `"        \"Says the screenshot alone cannot authenticate current rate or date\","` | — |
-| [SRC-90FAA34ADE-L001188](../../tests/fixtures/answer_quality_cases.json#L1188) | 1188 | `"        \"Seeks a timestamped reliable source or explicitly abstains\","` | — |
-| [SRC-90FAA34ADE-L001189](../../tests/fixtures/answer_quality_cases.json#L1189) | 1189 | `"        \"Separates what is visible in the image from external verification\""` | — |
-| [SRC-90FAA34ADE-L001190](../../tests/fixtures/answer_quality_cases.json#L1190) | 1190 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001191](../../tests/fixtures/answer_quality_cases.json#L1191) | 1191 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
-| [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
-| [SRC-90FAA34ADE-L001194](../../tests/fixtures/answer_quality_cases.json#L1194) | 1194 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001195](../../tests/fixtures/answer_quality_cases.json#L1195) | 1195 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001196](../../tests/fixtures/answer_quality_cases.json#L1196) | 1196 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L001197](../../tests/fixtures/answer_quality_cases.json#L1197) | 1197 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L001198](../../tests/fixtures/answer_quality_cases.json#L1198) | 1198 | `"        \"provided_artifact\": {"` | — |
-| [SRC-90FAA34ADE-L001199](../../tests/fixtures/answer_quality_cases.json#L1199) | 1199 | `"          \"description\": \"cropped screenshot with a number but no timestamp or source\""` | — |
-| [SRC-90FAA34ADE-L001200](../../tests/fixtures/answer_quality_cases.json#L1200) | 1200 | `"        }"` | — |
-| [SRC-90FAA34ADE-L001201](../../tests/fixtures/answer_quality_cases.json#L1201) | 1201 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001202](../../tests/fixtures/answer_quality_cases.json#L1202) | 1202 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001203](../../tests/fixtures/answer_quality_cases.json#L1203) | 1203 | `"        \"Claims screenshot proves a current official rate\","` | — |
-| [SRC-90FAA34ADE-L001204](../../tests/fixtures/answer_quality_cases.json#L1204) | 1204 | `"        \"Provides unverified rate as confirmed\""` | — |
-| [SRC-90FAA34ADE-L001205](../../tests/fixtures/answer_quality_cases.json#L1205) | 1205 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001206](../../tests/fixtures/answer_quality_cases.json#L1206) | 1206 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L001207](../../tests/fixtures/answer_quality_cases.json#L1207) | 1207 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001208](../../tests/fixtures/answer_quality_cases.json#L1208) | 1208 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001209](../../tests/fixtures/answer_quality_cases.json#L1209) | 1209 | `"      \"case_id\": \"AQ-041\","` | — |
-| [SRC-90FAA34ADE-L001210](../../tests/fixtures/answer_quality_cases.json#L1210) | 1210 | `"      \"category\": \"incomplete_answer\","` | — |
-| [SRC-90FAA34ADE-L001211](../../tests/fixtures/answer_quality_cases.json#L1211) | 1211 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L001212](../../tests/fixtures/answer_quality_cases.json#L1212) | 1212 | `"      \"question\": \"Compare Cairo and Alexandria for a two-day family trip: transport, likely weather, kid-friendly activities, and one caveat for each city.\","` | — |
-| [SRC-90FAA34ADE-L001213](../../tests/fixtures/answer_quality_cases.json#L1213) | 1213 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001214](../../tests/fixtures/answer_quality_cases.json#L1214) | 1214 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001215](../../tests/fixtures/answer_quality_cases.json#L1215) | 1215 | `"        \"Addresses all four requested dimensions for both cities or states which could not be verified\","` | — |
-| [SRC-90FAA34ADE-L001216](../../tests/fixtures/answer_quality_cases.json#L1216) | 1216 | `"        \"Uses current sources for likely weather and labels forecasts by date\","` | — |
-| [SRC-90FAA34ADE-L001217](../../tests/fixtures/answer_quality_cases.json#L1217) | 1217 | `"        \"Keeps city-specific details distinct\""` | — |
-| [SRC-90FAA34ADE-L001218](../../tests/fixtures/answer_quality_cases.json#L1218) | 1218 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001219](../../tests/fixtures/answer_quality_cases.json#L1219) | 1219 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001220](../../tests/fixtures/answer_quality_cases.json#L1220) | 1220 | `"        \"Only describes Cairo and ignores Alexandria\","` | — |
-| [SRC-90FAA34ADE-L001221](../../tests/fixtures/answer_quality_cases.json#L1221) | 1221 | `"        \"Invents live weather without a retrieval source\""` | — |
