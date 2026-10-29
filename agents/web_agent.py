@@ -950,7 +950,7 @@ class WebAgent:
             )
         else:
             subject = re.sub(
-                r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?
+                r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?"
                 r"(?:(?:potential\s+)?(?:customer|buyer|prospect|lead)s?)\s*"
                 r"(?:(?:who|that)\s*)?(?:(?:wants?|looking to|seeking to)\s+"
                 r"(?:buy|purchase)\s*)?",
@@ -976,6 +976,7 @@ class WebAgent:
             ]
         candidates = targeted + [_normalize_search_query(q) for q in (existing_queries or [])]
         return list(dict.fromkeys(q[:500] for q in candidates if q and q.strip()))[:MAX_PLAN_QUERIES]
+
     @staticmethod
     def _is_listing_discovery(question: str) -> bool:
         """Recognize property/job/product discovery where candidates are useful with caveats."""
