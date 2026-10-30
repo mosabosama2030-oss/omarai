@@ -145,3 +145,23 @@ def test_pipeline_blocks_official_site_search_when_target_entity_is_missing():
     assert result["intent"]["needs_clarification"] is True
     assert result["queries"] == []
     assert result["stages"]["query_planning"] == "blocked_pending_clarification"
+
+def test_pipeline_marks_upstream_dialogue_context_resolution_as_completed():
+    result = build_research_pipeline(
+        "والضمان؟",
+        {"queries": ["iPhone 17 warranty Egypt"]},
+        intent_route="WEB_SIMPLE",
+        dialogue_context={
+            "method": "llm_semantic_context",
+            "resolved_question": "ما ضمان iPhone 17 في مصر؟",
+            "topic": "iPhone 17",
+            "is_follow_up": True,
+            "topic_shift": False,
+        },
+    )
+
+    assert result["contextual_question"] == "والضمان؟"
+    assert result["task_spec"]["context_resolution"]["resolved_question"] == (
+        "ما ضمان iPhone 17 في مصر؟"
+    )
+    assert result["stages"]["context_resolution"] == "completed"
