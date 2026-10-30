@@ -164,7 +164,11 @@ def build_claim_evidence_ledger(
     lexical_signals = weak_signals = 0
 
     for number, segment in enumerate(segments, 1):
-        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]
+        all_indexes = list(dict.fromkeys(
+            int(match.group(1)) for match in _CITATION.finditer(segment)
+        ))
+        citation_references_truncated = len(all_indexes) > 8
+        indexes = all_indexes[:8]
         refs: list[dict[str, Any]] = []
         has_readable = False
         for index in indexes:
@@ -203,6 +207,8 @@ def build_claim_evidence_ledger(
         weak_signals += lexical_status == "weak_lexical_overlap"
         if any(ref["reference_status"] == "index_out_of_citable_range" for ref in refs):
             status = "citation_index_out_of_range"
+        elif citation_references_truncated:
+            status = "citation_reference_list_truncated"
         elif indexes and not has_readable:
             status = "valid_index_without_readable_evidence"
         elif indexes:
@@ -217,6 +223,7 @@ def build_claim_evidence_ledger(
             "text": segment[:1200],
             "citation_indexes": indexes,
             "citation_status": status,
+            "citation_references_truncated": citation_references_truncated,
             "lexical_audit_status": lexical_status,
             "sources": refs,
         })
@@ -238,6 +245,9 @@ def build_claim_evidence_ledger(
             "segments_without_citation_markers": uncited,
             "valid_source_reference_count": valid_refs,
             "out_of_range_reference_count": invalid_refs,
+            "truncated_citation_reference_list_count": sum(
+                row["citation_references_truncated"] for row in rows
+            ),
             "cited_segments_with_readable_source_evidence": readable_cited,
             "citation_lexical_signal_count": lexical_signals,
             "weak_citation_lexical_signal_count": weak_signals,
