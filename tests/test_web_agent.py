@@ -2939,7 +2939,13 @@ def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
             "page_fetched": False,
         }],
         "research_quality": "partial",
-        "search_report": {},
+        "search_report": {"pipeline_completion_status": "completed"},
+        "pipeline_completion_status": "completed",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "final_answer_status": "model_answer_generated",
         "answer_coverage": {},
         "used_language_model": True,
         "used_web_search": True,
@@ -2954,6 +2960,9 @@ def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
     assert result["answer_integrity"]["potentially_unsupported_numeric_by_citation_count"] == 1
     assert result["answer_integrity"]["potentially_missing_target_count"] == 1
     assert result["task_fulfillment_status"] == "possible_gap_detected"
+    assert result["research_completion"]["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["pipeline_completion_status"] == "partial"
+    assert result["search_report"]["pipeline_completion_status"] == "partial"
     assert result["answer_coverage"]["lexical_screen_method"] == (
         "deterministic_lexical_screen_only_not_semantic_grading"
     )
