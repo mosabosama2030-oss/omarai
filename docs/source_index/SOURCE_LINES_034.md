@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000092 إلى SRC-B3062EB677-L000173
+- النطاق: SRC-6A7519AC10-L000077 إلى SRC-B3062EB677-L000158
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000077](../../tests/test_answer_quality_comparison.py#L77) | 77 | `"                \"citations\": {"` | — |
+| [SRC-6A7519AC10-L000078](../../tests/test_answer_quality_comparison.py#L78) | 78 | `"                    \"supported_citations\": supported_citations,"` | — |
+| [SRC-6A7519AC10-L000079](../../tests/test_answer_quality_comparison.py#L79) | 79 | `"                    \"reviewed_citations\": 2,"` | — |
+| [SRC-6A7519AC10-L000080](../../tests/test_answer_quality_comparison.py#L80) | 80 | `"                },"` | — |
+| [SRC-6A7519AC10-L000081](../../tests/test_answer_quality_comparison.py#L81) | 81 | `"                \"writing_quality\": 4,"` | — |
+| [SRC-6A7519AC10-L000082](../../tests/test_answer_quality_comparison.py#L82) | 82 | `"            }"` | — |
+| [SRC-6A7519AC10-L000083](../../tests/test_answer_quality_comparison.py#L83) | 83 | `"            for case in corpus[\"cases\"]"` | — |
+| [SRC-6A7519AC10-L000084](../../tests/test_answer_quality_comparison.py#L84) | 84 | `"        ],"` | — |
+| [SRC-6A7519AC10-L000085](../../tests/test_answer_quality_comparison.py#L85) | 85 | `"    }"` | — |
+| [SRC-6A7519AC10-L000086](../../tests/test_answer_quality_comparison.py#L86) | 86 | `""` | — |
+| [SRC-6A7519AC10-L000087](../../tests/test_answer_quality_comparison.py#L87) | 87 | `""` | — |
+| [SRC-6A7519AC10-L000088](../../tests/test_answer_quality_comparison.py#L88) | 88 | `"def _full_run(*, build_sha: str, candidate: bool) -> dict:"` | — |
+| [SRC-6A7519AC10-L000089](../../tests/test_answer_quality_comparison.py#L89) | 89 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-6A7519AC10-L000090](../../tests/test_answer_quality_comparison.py#L90) | 90 | `"    rows = []"` | — |
+| [SRC-6A7519AC10-L000091](../../tests/test_answer_quality_comparison.py#L91) | 91 | `"    for case in corpus[\"cases\"]:"` | — |
 | [SRC-6A7519AC10-L000092](../../tests/test_answer_quality_comparison.py#L92) | 92 | `"        case_id = case[\"case_id\"]"` | — |
 | [SRC-6A7519AC10-L000093](../../tests/test_answer_quality_comparison.py#L93) | 93 | `"        is_aq007 = case_id == \"AQ-007\""` | — |
 | [SRC-6A7519AC10-L000094](../../tests/test_answer_quality_comparison.py#L94) | 94 | `"        is_aq008 = case_id == \"AQ-008\""` | — |
@@ -837,18 +852,3 @@
 | [SRC-B3062EB677-L000156](../../tests/test_answer_quality_runner.py#L156) | 156 | `"    with pytest.raises(ValueError):"` | — |
 | [SRC-B3062EB677-L000157](../../tests/test_answer_quality_runner.py#L157) | 157 | `"        mod.validate_base_url(url)"` | — |
 | [SRC-B3062EB677-L000158](../../tests/test_answer_quality_runner.py#L158) | 158 | `""` | — |
-| [SRC-B3062EB677-L000159](../../tests/test_answer_quality_runner.py#L159) | 159 | `""` | — |
-| [SRC-B3062EB677-L000160](../../tests/test_answer_quality_runner.py#L160) | 160 | `"def test_remote_bearer_token_requires_exact_allowlisted_https_origin(monkeypatch):"` | — |
-| [SRC-B3062EB677-L000161](../../tests/test_answer_quality_runner.py#L161) | 161 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000162](../../tests/test_answer_quality_runner.py#L162) | 162 | `"    monkeypatch.delenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", raising=False)"` | — |
-| [SRC-B3062EB677-L000163](../../tests/test_answer_quality_runner.py#L163) | 163 | `"    with pytest.raises(ValueError, match=\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\"):"` | — |
-| [SRC-B3062EB677-L000164](../../tests/test_answer_quality_runner.py#L164) | 164 | `"        mod.validate_base_url(\"https://app.example\", token_present=True)"` | — |
-| [SRC-B3062EB677-L000165](../../tests/test_answer_quality_runner.py#L165) | 165 | `""` | — |
-| [SRC-B3062EB677-L000166](../../tests/test_answer_quality_runner.py#L166) | 166 | `"    monkeypatch.setenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"https://app.example\")"` | — |
-| [SRC-B3062EB677-L000167](../../tests/test_answer_quality_runner.py#L167) | 167 | `"    assert mod.validate_base_url(\"https://app.example/\", token_present=True) == \"https://app.example\""` | — |
-| [SRC-B3062EB677-L000168](../../tests/test_answer_quality_runner.py#L168) | 168 | `"    with pytest.raises(ValueError, match=\"does not match\"):"` | — |
-| [SRC-B3062EB677-L000169](../../tests/test_answer_quality_runner.py#L169) | 169 | `"        mod.validate_base_url(\"https://other.example\", token_present=True)"` | — |
-| [SRC-B3062EB677-L000170](../../tests/test_answer_quality_runner.py#L170) | 170 | `""` | — |
-| [SRC-B3062EB677-L000171](../../tests/test_answer_quality_runner.py#L171) | 171 | `""` | — |
-| [SRC-B3062EB677-L000172](../../tests/test_answer_quality_runner.py#L172) | 172 | `"def test_remote_token_origin_comparison_normalizes_default_https_port(monkeypatch):"` | — |
-| [SRC-B3062EB677-L000173](../../tests/test_answer_quality_runner.py#L173) | 173 | `"    mod = _load_runner()"` | — |

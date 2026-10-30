@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000585 إلى SRC-26428BDA96-L000118
+- النطاق: SRC-EEF2E6447C-L000570 إلى SRC-26428BDA96-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000570](../../api/omarai.py#L570) | 570 | `"                    lambda: WebAgent().diagnostics("` | — |
+| [SRC-EEF2E6447C-L000571](../../api/omarai.py#L571) | 571 | `"                        test_model=test_model,"` | — |
+| [SRC-EEF2E6447C-L000572](../../api/omarai.py#L572) | 572 | `"                        test_social=test_social,"` | — |
+| [SRC-EEF2E6447C-L000573](../../api/omarai.py#L573) | 573 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000574](../../api/omarai.py#L574) | 574 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000575](../../api/omarai.py#L575) | 575 | `""` | — |
+| [SRC-EEF2E6447C-L000576](../../api/omarai.py#L576) | 576 | `"            if path == \"/api/agent\":"` | — |
+| [SRC-EEF2E6447C-L000577](../../api/omarai.py#L577) | 577 | `"                question = data.get(\"question\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000578](../../api/omarai.py#L578) | 578 | `"                if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-EEF2E6447C-L000579](../../api/omarai.py#L579) | 579 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
+| [SRC-EEF2E6447C-L000580](../../api/omarai.py#L580) | 580 | `"                agent = WebAgent()"` | — |
+| [SRC-EEF2E6447C-L000581](../../api/omarai.py#L581) | 581 | `"                history = data.get(\"history\", [])"` | — |
+| [SRC-EEF2E6447C-L000582](../../api/omarai.py#L582) | 582 | `"                if \"mode\" not in data:"` | — |
+| [SRC-EEF2E6447C-L000583](../../api/omarai.py#L583) | 583 | `"                    return self._run_bounded_agent_operation("` | — |
+| [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"                        lambda: agent.answer(question, history)"` | — |
 | [SRC-EEF2E6447C-L000585](../../api/omarai.py#L585) | 585 | `"                    )"` | — |
 | [SRC-EEF2E6447C-L000586](../../api/omarai.py#L586) | 586 | `"                return self._run_bounded_agent_operation("` | — |
 | [SRC-EEF2E6447C-L000587](../../api/omarai.py#L587) | 587 | `"                    lambda: agent.answer(question, history, data.get(\"mode\"))"` | — |
@@ -864,18 +879,3 @@
 | [SRC-26428BDA96-L000101](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L101) | 101 | `"**المطلوب:** الإبقاء على الوصف الصادق الحالي، ثم بناء مجموعة تقييم claim-to-source على عينات عربية/إنجليزية؛ والتحقق من الرابط والمقتطف الذي يدعم الادعاء المحدد؛ وقياس الادعاءات غير المسندة والاستشهادات الصحيحة شكليًا والخاطئة دلاليًا. لا تسمَّ الإجابة VERIFIED FACTUALITY قبل تحقق مناسب مستقل أو مرجعي."` | — |
 | [SRC-26428BDA96-L000102](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L102) | 102 | `""` | — |
 | [SRC-26428BDA96-L000103](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L103) | 103 | `"### A-04 — تغطية اختبار SSRF أقل من قوة التصميم"` | — |
-| [SRC-26428BDA96-L000104](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L104) | 104 | `"**النتيجة:** التصميم يستحق التقدير؛ إثباته الاختباري غير مكتمل."` | — |
-| [SRC-26428BDA96-L000105](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L105) | 105 | `""` | — |
-| [SRC-26428BDA96-L000106](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L106) | 106 | `"يحتوي _public_http_url على رفض للمخططات غير HTTP(S)، والبيانات المضمنة للمصادقة، والمنافذ غير المعتمدة، وبعض المضيفين المحليين، وعناوين IP غير العامة. وتحل _public_ip_literals كل عنوان DNS وتطلب أن تكون جميع الإجابات عامة. ويثبت _fetch_page عنوان اتصال عامًّا بدل إجراء اتصال جديد باسم المضيف، ويوقف التحويلات التلقائية، ويعيد التحقق من كل وجهة redirect، ويقيد أنواع المحتوى وحجم الصفحة وعدد التحويلات."` | — |
-| [SRC-26428BDA96-L000107](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L107) | 107 | `""` | — |
-| [SRC-26428BDA96-L000108](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L108) | 108 | `"لكن الاختبارات الموجودة التي أمكن تحديدها في test_web_agent.py تغطي بشكل مباشر حالات URL النصية مثل 127.0.0.1 وlocalhost وبيانات المصادقة وfile://، ولا يظهر ضمن أسماء الاختبارات الحالية اختبار مباشر يثبت رفض redirect من نطاق عام إلى عنوان داخلي، أو DNS بإجابات مختلطة عامة/خاصة، أو DNS rebinding، أو IPv6 link-local/metadata، أو تجاوز حجم الصفحة مع Content-Length كاذب. عدم وجود اختبار بهذا الاسم ليس برهانًا رياضيًا على غياب أي تغطية أخرى، لكنه فجوة دليل واضحة تستحق الإغلاق."` | — |
-| [SRC-26428BDA96-L000109](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L109) | 109 | `""` | — |
-| [SRC-26428BDA96-L000110](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L110) | 110 | `"**المطلوب:** إضافة اختبارات حتمية بمزود DNS وHTTP وهمي (mock) تختبر كل هذه الحالات، مع اختبار أن الاتصال الفعلي لا يعيد تحليل الاسم بعد التحقق."` | — |
-| [SRC-26428BDA96-L000111](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L111) | 111 | `""` | — |
-| [SRC-26428BDA96-L000112](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L112) | 112 | `"### A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا"` | — |
-| [SRC-26428BDA96-L000113](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) | 113 | `"**النتيجة:** مشروطة بإعداد الاستضافة الفعلي."` | — |
-| [SRC-26428BDA96-L000114](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L114) | 114 | `""` | — |
-| [SRC-26428BDA96-L000115](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | 115 | `"في وضع النشر العام، يضيف _allowed_origins أصولًا مشتقة من Host وX-Forwarded-Host وX-Forwarded-Proto في الطلب الوارد. ويمكن أن يكون هذا مقبولًا إذا كان الوكيل العكسي الموثوق يحذف رؤوس العميل ويعيد كتابتها بشكل صحيح؛ أما الاعتماد على رؤوس قابلة للتلاعب مباشرة دون إثبات هذا الشرط في بيئة النشر فلا يكفي. كما يعتمد rate limiting على عنوان اتصال الخادم افتراضيًا، ولا يقرأ X-Forwarded-For إلا عند تفعيل OMARAI_TRUST_PROXY_HEADERS=1؛ يجب التأكد أن الإعداد في البيئة الحقيقية لا يجعل كل العملاء خلف الوكيل يشاركون bucket واحدًا أو يجعل الترويسات القابلة للانتحال أساسًا للحدود."` | — |
-| [SRC-26428BDA96-L000116](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) | 116 | `""` | — |
-| [SRC-26428BDA96-L000117](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L117) | 117 | `"**المطلوب:** ضبط OMARAI_ALLOWED_ORIGINS صراحةً للنطاق الموثوق، والتحقق من سلوك proxy headers في الاستضافة الفعلية، واختبار الطلبات من أصول غير مسموحة ومن ترويسات مزورة."` | — |
-| [SRC-26428BDA96-L000118](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L118) | 118 | `""` | — |

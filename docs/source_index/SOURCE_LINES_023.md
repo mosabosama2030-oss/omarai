@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000441 إلى SRC-D17CE3D12F-L000337
+- النطاق: SRC-E73001D9AC-L000426 إلى SRC-D17CE3D12F-L000322
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000426](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L426) | 426 | `"7. اختبارات مناطق فشل ونسخ احتياطي وتعافٍ عندما تصبح متطلبات الخدمة تبررها."` | — |
+| [SRC-E73001D9AC-L000427](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L427) | 427 | `""` | — |
+| [SRC-E73001D9AC-L000428](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L428) | 428 | `"لا يُفترض أن الاستضافة المجانية تضمن توافرًا عاليًا أو موارد مضمونة أو توسعًا أفقيًا. يجب توثيق حدود الخطة الفعلية والقياسات بدل ادعاء مستوى مؤسسي لا تدعمه الاستضافة."` | — |
+| [SRC-E73001D9AC-L000429](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L429) | 429 | `""` | — |
+| [SRC-E73001D9AC-L000430](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L430) | 430 | `"## 8. مؤشرات الأداء والاعتمادية"` | — |
+| [SRC-E73001D9AC-L000431](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L431) | 431 | `""` | — |
+| [SRC-E73001D9AC-L000432](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L432) | 432 | `"يجب جمع هذه المقاييس بحسب المسار والموفر والإصدار، مع تجنب البيانات الحساسة:"` | — |
+| [SRC-E73001D9AC-L000433](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L433) | 433 | `""` | — |
+| [SRC-E73001D9AC-L000434](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L434) | 434 | `"- زمن الاستجابة p50 وp95 وp99."` | — |
+| [SRC-E73001D9AC-L000435](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L435) | 435 | `"- معدل الطلبات الناجحة ومعدل 4xx و5xx والمهلات."` | — |
+| [SRC-E73001D9AC-L000436](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L436) | 436 | `"- throughput بوحدة requests/second."` | — |
+| [SRC-E73001D9AC-L000437](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L437) | 437 | `"- الطلبات النشطة، والانتظار، وعمق الطابور."` | — |
+| [SRC-E73001D9AC-L000438](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L438) | 438 | `"- زمن البحث، وزمن جلب الصفحات، وزمن النموذج، وزمن التحقق."` | — |
+| [SRC-E73001D9AC-L000439](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L439) | 439 | `"- عدد استدعاءات المزودات والصفحات والرموز عند إتاحتها."` | — |
+| [SRC-E73001D9AC-L000440](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L440) | 440 | `"- معدل استخدام cache ومعدل النتائج المكررة."` | — |
 | [SRC-E73001D9AC-L000441](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L441) | 441 | `"- الذاكرة والمعالج وعدد الاتصالات المفتوحة."` | — |
 | [SRC-E73001D9AC-L000442](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L442) | 442 | `"- نسبة الطلبات المنفذة ضمن الميزانية."` | — |
 | [SRC-E73001D9AC-L000443](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L443) | 443 | `"- نسبة نجاح الأدوات لكل موصل وتوزيع أسباب الفشل."` | — |
@@ -810,18 +825,3 @@
 | [SRC-D17CE3D12F-L000320](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L320) | 320 | `""` | — |
 | [SRC-D17CE3D12F-L000321](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L321) | 321 | `"---"` | — |
 | [SRC-D17CE3D12F-L000322](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L322) | 322 | `""` | — |
-| [SRC-D17CE3D12F-L000323](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L323) | 323 | `"# القسم السابع — الواجهة وتجربة المستخدم وإمكانية الوصول"` | — |
-| [SRC-D17CE3D12F-L000324](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L324) | 324 | `""` | — |
-| [SRC-D17CE3D12F-L000325](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L325) | 325 | `"## 22. الوصولية Accessibility والتوافق مع المتصفحات"` | — |
-| [SRC-D17CE3D12F-L000326](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L326) | 326 | `""` | — |
-| [SRC-D17CE3D12F-L000327](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L327) | 327 | `"1. SHOULD استهداف WCAG 2.2 مستوى AA للواجهة العامة بدرجة تتناسب مع طبيعتها، مع تقييم عملي لا إعلان امتثال تلقائي."` | — |
-| [SRC-D17CE3D12F-L000328](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L328) | 328 | `"2. MUST أن تكون الوظائف الأساسية قابلة للاستخدام بلوحة المفاتيح، مع حالات تركيز واضحة وتسلسل منطقي."` | — |
-| [SRC-D17CE3D12F-L000329](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L329) | 329 | `"3. SHOULD استخدام دلالات HTML صحيحة، وتسميات واضحة لحقول الإدخال والأزرار ورسائل الأخطاء."` | — |
-| [SRC-D17CE3D12F-L000330](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L330) | 330 | `"4. MUST عدم الاعتماد على اللون وحده لإظهار الحالة أو الخطأ."` | — |
-| [SRC-D17CE3D12F-L000331](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L331) | 331 | `"5. SHOULD احترام تفضيل تقليل الحركة، والتباين، والتكبير، وحجم النص المناسب."` | — |
-| [SRC-D17CE3D12F-L000332](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L332) | 332 | `"6. MUST اختبار التفاعل مع قارئ شاشة بصورة دورية إذا كان المنتج عامًا أو يعتمد على تفاعل معقد."` | — |
-| [SRC-D17CE3D12F-L000333](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L333) | 333 | `"7. MUST ألا تخفي طبقات التحميل أو الأخطاء طريقة متابعة الاستخدام أو إعادة المحاولة."` | — |
-| [SRC-D17CE3D12F-L000334](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L334) | 334 | `"8. SHOULD اختبار المتصفحات والأجهزة الواقعية التي يستهدفها المنتج، خصوصًا Android إذا كان استخدامه أساسيًا."` | — |
-| [SRC-D17CE3D12F-L000335](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L335) | 335 | `"9. MUST حماية الواجهة من XSS باستخدام ترميز/تعقيم مناسب عند عرض HTML أو Markdown أو نصوص مستخرجة من صفحات خارجية."` | — |
-| [SRC-D17CE3D12F-L000336](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L336) | 336 | `"10. MUST اختبار حدود الواجهة بين المحتوى الموثوق وغير الموثوق؛ النص المستخرج لا يُعرض كـ HTML موثوق تلقائيًا."` | — |
-| [SRC-D17CE3D12F-L000337](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L337) | 337 | `""` | — |

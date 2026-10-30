@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000135 إلى SRC-686F71AA50-L000934
+- النطاق: SRC-686F71AA50-L000120 إلى SRC-686F71AA50-L000919
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000120](../../agents/task_understanding.py#L120) | 120 | `"    if not isinstance(ids, list):"` | — |
+| [SRC-686F71AA50-L000121](../../agents/task_understanding.py#L121) | 121 | `"        return []"` | — |
+| [SRC-686F71AA50-L000122](../../agents/task_understanding.py#L122) | 122 | `"    return [_REASONING_GUIDANCE[item] for item in ids if isinstance(item, str) and item in _REASONING_GUIDANCE][:12]"` | — |
+| [SRC-686F71AA50-L000123](../../agents/task_understanding.py#L123) | 123 | `""` | — |
+| [SRC-686F71AA50-L000124](../../agents/task_understanding.py#L124) | 124 | `"_ARABIC_DIACRITICS = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
+| [SRC-686F71AA50-L000125](../../agents/task_understanding.py#L125) | 125 | `"_PUNCTUATION = re.compile(r\"[؟?!.،,؛;:(){}\\[\\]\\\"'«»]+\")"` | — |
+| [SRC-686F71AA50-L000126](../../agents/task_understanding.py#L126) | 126 | `"_SPACE = re.compile(r\"\\s+\")"` | — |
+| [SRC-686F71AA50-L000127](../../agents/task_understanding.py#L127) | 127 | `"_TOKEN_RE = re.compile(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", re.IGNORECASE)"` | — |
+| [SRC-686F71AA50-L000128](../../agents/task_understanding.py#L128) | 128 | `""` | — |
+| [SRC-686F71AA50-L000129](../../agents/task_understanding.py#L129) | 129 | `"_PATTERNS: dict[str, tuple[str, ...]] = {"` | — |
+| [SRC-686F71AA50-L000130](../../agents/task_understanding.py#L130) | 130 | `"    \"official_site_lookup\": ("` | — |
+| [SRC-686F71AA50-L000131](../../agents/task_understanding.py#L131) | 131 | `"        \"الموقع الرسمي\", \"موقع رسمي\", \"رابط الموقع الرسمي\", \"الصفحه الرسميه\","` | — |
+| [SRC-686F71AA50-L000132](../../agents/task_understanding.py#L132) | 132 | `"        \"الموقع الحكومي\", \"official website\", \"official site\", \"official homepage\","` | — |
+| [SRC-686F71AA50-L000133](../../agents/task_understanding.py#L133) | 133 | `"    ),"` | — |
+| [SRC-686F71AA50-L000134](../../agents/task_understanding.py#L134) | 134 | `"    \"social_opinions\": ("` | — |
 | [SRC-686F71AA50-L000135](../../agents/task_understanding.py#L135) | 135 | `"        \"اراء الناس\", \"اراء المستخدمين\", \"تجارب الناس\", \"تجارب المستخدمين\","` | — |
 | [SRC-686F71AA50-L000136](../../agents/task_understanding.py#L136) | 136 | `"        \"تجارب الملاك\", \"تجارب ملاك\", \"تجربة مالك\", \"مراجعات المستخدمين\", \"الناس بتقول ايه\","` | — |
 | [SRC-686F71AA50-L000137](../../agents/task_understanding.py#L137) | 137 | `"        \"real user reviews\", \"owner experience\", \"customer opinions\", \"people's opinions\","` | — |
@@ -801,18 +816,3 @@
 | [SRC-686F71AA50-L000917](../../agents/task_understanding.py#L917) | 917 | `"        ),"` | — |
 | [SRC-686F71AA50-L000918](../../agents/task_understanding.py#L918) | 918 | `"        \"decision_matrix\": [dict(row) for row in _DECISION_MATRIX],"` | — |
 | [SRC-686F71AA50-L000919](../../agents/task_understanding.py#L919) | 919 | `"        \"limits\": {"` | — |
-| [SRC-686F71AA50-L000920](../../agents/task_understanding.py#L920) | 920 | `"            \"max_question_chars\": MAX_TASK_CHARS,"` | — |
-| [SRC-686F71AA50-L000921](../../agents/task_understanding.py#L921) | 921 | `"            \"max_aspects\": MAX_TASK_ASPECTS,"` | — |
-| [SRC-686F71AA50-L000922](../../agents/task_understanding.py#L922) | 922 | `"            \"max_query_strategies\": MAX_STRATEGY_QUERIES,"` | — |
-| [SRC-686F71AA50-L000923](../../agents/task_understanding.py#L923) | 923 | `"        },"` | — |
-| [SRC-686F71AA50-L000924](../../agents/task_understanding.py#L924) | 924 | `"        \"claim\": \"task planning metadata only; not semantic certainty or factual verification\","` | — |
-| [SRC-686F71AA50-L000925](../../agents/task_understanding.py#L925) | 925 | `"    }"` | — |
-| [SRC-686F71AA50-L000926](../../agents/task_understanding.py#L926) | 926 | `"    if plan and isinstance(plan, dict):"` | — |
-| [SRC-686F71AA50-L000927](../../agents/task_understanding.py#L927) | 927 | `"        spec[\"planner_freshness\"] = str(plan.get(\"freshness\") or \"unknown\")"` | — |
-| [SRC-686F71AA50-L000928](../../agents/task_understanding.py#L928) | 928 | `"        spec[\"planner_depth\"] = str(plan.get(\"depth\") or \"unknown\")"` | — |
-| [SRC-686F71AA50-L000929](../../agents/task_understanding.py#L929) | 929 | `"    return spec"` | — |
-| [SRC-686F71AA50-L000930](../../agents/task_understanding.py#L930) | 930 | `""` | — |
-| [SRC-686F71AA50-L000931](../../agents/task_understanding.py#L931) | 931 | `""` | — |
-| [SRC-686F71AA50-L000932](../../agents/task_understanding.py#L932) | 932 | `"def _query_key(value: str) -> str:"` | — |
-| [SRC-686F71AA50-L000933](../../agents/task_understanding.py#L933) | 933 | `"    return normalize_text(value)"` | — |
-| [SRC-686F71AA50-L000934](../../agents/task_understanding.py#L934) | 934 | `""` | — |

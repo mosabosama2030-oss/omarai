@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001607 إلى SRC-1AE03B9EC3-L002406
+- النطاق: SRC-1AE03B9EC3-L001592 إلى SRC-1AE03B9EC3-L002391
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001592](../../agents/web_agent.py#L1592) | 1592 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
+| [SRC-1AE03B9EC3-L001593](../../agents/web_agent.py#L1593) | 1593 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L001594](../../agents/web_agent.py#L1594) | 1594 | `""` | — |
+| [SRC-1AE03B9EC3-L001595](../../agents/web_agent.py#L1595) | 1595 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
+| [SRC-1AE03B9EC3-L001596](../../agents/web_agent.py#L1596) | 1596 | `"        except RuntimeError as exc:"` | — |
+| [SRC-1AE03B9EC3-L001597](../../agents/web_agent.py#L1597) | 1597 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
+| [SRC-1AE03B9EC3-L001598](../../agents/web_agent.py#L1598) | 1598 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
+| [SRC-1AE03B9EC3-L001599](../../agents/web_agent.py#L1599) | 1599 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
+| [SRC-1AE03B9EC3-L001600](../../agents/web_agent.py#L1600) | 1600 | `"        # De-duplicate repeated URLs before ranking/fusion."` | — |
+| [SRC-1AE03B9EC3-L001601](../../agents/web_agent.py#L1601) | 1601 | `"        unique: dict[str, dict[str, Any]] = {}"` | — |
+| [SRC-1AE03B9EC3-L001602](../../agents/web_agent.py#L1602) | 1602 | `"        for item in combined:"` | — |
+| [SRC-1AE03B9EC3-L001603](../../agents/web_agent.py#L1603) | 1603 | `"            key = item[\"url\"].split(\"#\", 1)[0].rstrip(\"/\")"` | — |
+| [SRC-1AE03B9EC3-L001604](../../agents/web_agent.py#L1604) | 1604 | `"            if key not in unique or len(str(item.get(\"snippet\") or \"\")) > len(str(unique[key].get(\"snippet\") or \"\")):"` | — |
+| [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"                unique[key] = item"` | — |
+| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"        if not unique:"` | — |
 | [SRC-1AE03B9EC3-L001607](../../agents/web_agent.py#L1607) | 1607 | `"            raise RuntimeError(\"لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.\")"` | — |
 | [SRC-1AE03B9EC3-L001608](../../agents/web_agent.py#L1608) | 1608 | `"        return list(unique.values())"` | — |
 | [SRC-1AE03B9EC3-L001609](../../agents/web_agent.py#L1609) | 1609 | `""` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L002389](../../agents/web_agent.py#L2389) | 2389 | `""` | — |
 | [SRC-1AE03B9EC3-L002390](../../agents/web_agent.py#L2390) | 2390 | `"        soup = BeautifulSoup(html, \"html.parser\")"` | — |
 | [SRC-1AE03B9EC3-L002391](../../agents/web_agent.py#L2391) | 2391 | `"        title = _clean_text(soup.title.get_text(\" \", strip=True), 300) if soup.title else \"\""` | — |
-| [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"        for element in soup(["` | — |
-| [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `"            \"script\", \"style\", \"nav\", \"footer\", \"header\", \"noscript\","` | — |
-| [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"            \"svg\", \"form\", \"iframe\", \"template\""` | — |
-| [SRC-1AE03B9EC3-L002395](../../agents/web_agent.py#L2395) | 2395 | `"        ]):"` | — |
-| [SRC-1AE03B9EC3-L002396](../../agents/web_agent.py#L2396) | 2396 | `"            element.decompose()"` | — |
-| [SRC-1AE03B9EC3-L002397](../../agents/web_agent.py#L2397) | 2397 | `"        main = soup.find(\"main\") or soup.find(\"article\") or soup.body or soup"` | — |
-| [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"        bounded_text = _clean_text(main.get_text(\" \", strip=True), MAX_PAGE_TEXT_CHARS + 1)"` | — |
-| [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"        text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |
-| [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"        page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
-| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"        status = ("` | — |
-| [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"            \"no_text_extracted\" if not page_text"` | — |
-| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"            else \"partial_extraction\" if bytes_truncated or text_truncated"` | — |
-| [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"            else \"content_extracted\""` | — |
-| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"        return result(title, page_text, status)"` | — |

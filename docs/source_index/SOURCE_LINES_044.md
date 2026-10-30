@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000100 إلى SRC-F725E90B2A-L000254
+- النطاق: SRC-1C0D3D1206-L000085 إلى SRC-F725E90B2A-L000239
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000085](../../tests/test_sqlite_backup_restore.py#L85) | 85 | `"    destination = tmp_path / \"restore.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000086](../../tests/test_sqlite_backup_restore.py#L86) | 86 | `""` | — |
+| [SRC-1C0D3D1206-L000087](../../tests/test_sqlite_backup_restore.py#L87) | 87 | `"    with pytest.raises(BackupError):"` | — |
+| [SRC-1C0D3D1206-L000088](../../tests/test_sqlite_backup_restore.py#L88) | 88 | `"        restore_database(backup_path, destination)"` | — |
+| [SRC-1C0D3D1206-L000089](../../tests/test_sqlite_backup_restore.py#L89) | 89 | `""` | — |
+| [SRC-1C0D3D1206-L000090](../../tests/test_sqlite_backup_restore.py#L90) | 90 | `"    assert backup_path.read_bytes() == b\"not a sqlite database\""` | — |
+| [SRC-1C0D3D1206-L000091](../../tests/test_sqlite_backup_restore.py#L91) | 91 | `"    assert not destination.exists()"` | — |
+| [SRC-1C0D3D1206-L000092](../../tests/test_sqlite_backup_restore.py#L92) | 92 | `""` | — |
+| [SRC-1C0D3D1206-L000093](../../tests/test_sqlite_backup_restore.py#L93) | 93 | `"def test_backup_rejects_dangling_symlink_destination(tmp_path):"` | — |
+| [SRC-1C0D3D1206-L000094](../../tests/test_sqlite_backup_restore.py#L94) | 94 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000095](../../tests/test_sqlite_backup_restore.py#L95) | 95 | `"    LeadStore(source_path)"` | — |
+| [SRC-1C0D3D1206-L000096](../../tests/test_sqlite_backup_restore.py#L96) | 96 | `"    target_path = tmp_path / \"target.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000097](../../tests/test_sqlite_backup_restore.py#L97) | 97 | `"    destination_link = tmp_path / \"backup-link.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000098](../../tests/test_sqlite_backup_restore.py#L98) | 98 | `"    destination_link.symlink_to(target_path)"` | — |
+| [SRC-1C0D3D1206-L000099](../../tests/test_sqlite_backup_restore.py#L99) | 99 | `""` | — |
 | [SRC-1C0D3D1206-L000100](../../tests/test_sqlite_backup_restore.py#L100) | 100 | `"    with pytest.raises(FileExistsError):"` | — |
 | [SRC-1C0D3D1206-L000101](../../tests/test_sqlite_backup_restore.py#L101) | 101 | `"        backup_database(source_path, destination_link)"` | — |
 | [SRC-1C0D3D1206-L000102](../../tests/test_sqlite_backup_restore.py#L102) | 102 | `""` | — |
@@ -828,18 +843,3 @@
 | [SRC-F725E90B2A-L000237](../../tests/test_web_agent.py#L237) | 237 | `"    plan = agent._plan_search("` | — |
 | [SRC-F725E90B2A-L000238](../../tests/test_web_agent.py#L238) | 238 | `"        \"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\","` | — |
 | [SRC-F725E90B2A-L000239](../../tests/test_web_agent.py#L239) | 239 | `"        [],"` | — |
-| [SRC-F725E90B2A-L000240](../../tests/test_web_agent.py#L240) | 240 | `"    )"` | — |
-| [SRC-F725E90B2A-L000241](../../tests/test_web_agent.py#L241) | 241 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
-| [SRC-F725E90B2A-L000242](../../tests/test_web_agent.py#L242) | 242 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-F725E90B2A-L000243](../../tests/test_web_agent.py#L243) | 243 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-F725E90B2A-L000244](../../tests/test_web_agent.py#L244) | 244 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-F725E90B2A-L000245](../../tests/test_web_agent.py#L245) | 245 | `""` | — |
-| [SRC-F725E90B2A-L000246](../../tests/test_web_agent.py#L246) | 246 | `""` | — |
-| [SRC-F725E90B2A-L000247](../../tests/test_web_agent.py#L247) | 247 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000248](../../tests/test_web_agent.py#L248) | 248 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `""` | — |
-| [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
-| [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `"      <title>تجربة سيارة كهربائية</title>"` | — |
-| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `"      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>"` | — |
-| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `"      <description>استهلاك البطارية في الحر</description>"` | — |
-| [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |

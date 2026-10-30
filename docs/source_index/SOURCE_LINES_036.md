@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000191 إلى SRC-6CBA87B20C-L000026
+- النطاق: SRC-3451CC474D-L000176 إلى SRC-6CBA87B20C-L000011
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000176](../../tests/test_api.py#L176) | 176 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000177](../../tests/test_api.py#L177) | 177 | `"        method=\"OPTIONS\","` | — |
+| [SRC-3451CC474D-L000178](../../tests/test_api.py#L178) | 178 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000179](../../tests/test_api.py#L179) | 179 | `"            \"Origin\": origin,"` | — |
+| [SRC-3451CC474D-L000180](../../tests/test_api.py#L180) | 180 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
+| [SRC-3451CC474D-L000181](../../tests/test_api.py#L181) | 181 | `"            \"Access-Control-Request-Headers\": \"authorization,content-type\","` | — |
+| [SRC-3451CC474D-L000182](../../tests/test_api.py#L182) | 182 | `"        },"` | — |
+| [SRC-3451CC474D-L000183](../../tests/test_api.py#L183) | 183 | `"    )"` | — |
+| [SRC-3451CC474D-L000184](../../tests/test_api.py#L184) | 184 | `"    with urlopen(preflight, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000185](../../tests/test_api.py#L185) | 185 | `"        assert response.status == 204"` | — |
+| [SRC-3451CC474D-L000186](../../tests/test_api.py#L186) | 186 | `"        assert response.headers.get(\"Access-Control-Allow-Origin\") == origin"` | — |
+| [SRC-3451CC474D-L000187](../../tests/test_api.py#L187) | 187 | `"        assert response.headers.get(\"Access-Control-Allow-Methods\") == \"GET, POST, OPTIONS\""` | — |
+| [SRC-3451CC474D-L000188](../../tests/test_api.py#L188) | 188 | `"        assert response.headers.get(\"Access-Control-Allow-Headers\") == \"Authorization, Content-Type\""` | — |
+| [SRC-3451CC474D-L000189](../../tests/test_api.py#L189) | 189 | `""` | — |
+| [SRC-3451CC474D-L000190](../../tests/test_api.py#L190) | 190 | `"    body = json.dumps({\"question\": \"مين أفضل إشارة أراجعها؟\"}, ensure_ascii=False).encode(\"utf-8\")"` | — |
 | [SRC-3451CC474D-L000191](../../tests/test_api.py#L191) | 191 | `"    post = Request("` | — |
 | [SRC-3451CC474D-L000192](../../tests/test_api.py#L192) | 192 | `"        local_api + \"/api/ask\","` | — |
 | [SRC-3451CC474D-L000193](../../tests/test_api.py#L193) | 193 | `"        data=body,"` | — |
@@ -810,18 +825,3 @@
 | [SRC-6CBA87B20C-L000009](../../tests/test_aspect_planning.py#L9) | 9 | `"    repair_queries_for_missing_aspects,"` | — |
 | [SRC-6CBA87B20C-L000010](../../tests/test_aspect_planning.py#L10) | 10 | `")"` | — |
 | [SRC-6CBA87B20C-L000011](../../tests/test_aspect_planning.py#L11) | 11 | `""` | — |
-| [SRC-6CBA87B20C-L000012](../../tests/test_aspect_planning.py#L12) | 12 | `""` | — |
-| [SRC-6CBA87B20C-L000013](../../tests/test_aspect_planning.py#L13) | 13 | `"def test_extract_aspects_from_min_hayth():"` | — |
-| [SRC-6CBA87B20C-L000014](../../tests/test_aspect_planning.py#L14) | 14 | `"    q = ("` | — |
-| [SRC-6CBA87B20C-L000015](../../tests/test_aspect_planning.py#L15) | 15 | `"        \"حلل السيارات الكهربائية في مصر من حيث السعر، البطارية، والضمان. \""` | — |
-| [SRC-6CBA87B20C-L000016](../../tests/test_aspect_planning.py#L16) | 16 | `"        \"اذكر مصادر موثوقة.\""` | — |
-| [SRC-6CBA87B20C-L000017](../../tests/test_aspect_planning.py#L17) | 17 | `"    )"` | — |
-| [SRC-6CBA87B20C-L000018](../../tests/test_aspect_planning.py#L18) | 18 | `"    aspects = extract_aspects(q)"` | — |
-| [SRC-6CBA87B20C-L000019](../../tests/test_aspect_planning.py#L19) | 19 | `"    assert \"السعر\" in aspects or any(\"سعر\" in a for a in aspects)"` | — |
-| [SRC-6CBA87B20C-L000020](../../tests/test_aspect_planning.py#L20) | 20 | `"    assert any(\"بطار\" in a for a in aspects)"` | — |
-| [SRC-6CBA87B20C-L000021](../../tests/test_aspect_planning.py#L21) | 21 | `"    assert any(\"ضمان\" in a for a in aspects)"` | — |
-| [SRC-6CBA87B20C-L000022](../../tests/test_aspect_planning.py#L22) | 22 | `"    assert len(aspects) >= 3"` | — |
-| [SRC-6CBA87B20C-L000023](../../tests/test_aspect_planning.py#L23) | 23 | `""` | — |
-| [SRC-6CBA87B20C-L000024](../../tests/test_aspect_planning.py#L24) | 24 | `""` | — |
-| [SRC-6CBA87B20C-L000025](../../tests/test_aspect_planning.py#L25) | 25 | `"def test_extract_aspects_from_multi_question_marks():"` | — |
-| [SRC-6CBA87B20C-L000026](../../tests/test_aspect_planning.py#L26) | 26 | `"    q = \"ما سعر الآيفون في مصر؟ وما مدة الضمان؟ وهل تتوفر صيانة محلية؟\""` | — |

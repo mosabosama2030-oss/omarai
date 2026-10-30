@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000338 إلى SRC-9A0DFA994E-L000028
+- النطاق: SRC-D17CE3D12F-L000323 إلى SRC-9A0DFA994E-L000013
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000323](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L323) | 323 | `"# القسم السابع — الواجهة وتجربة المستخدم وإمكانية الوصول"` | — |
+| [SRC-D17CE3D12F-L000324](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L324) | 324 | `""` | — |
+| [SRC-D17CE3D12F-L000325](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L325) | 325 | `"## 22. الوصولية Accessibility والتوافق مع المتصفحات"` | — |
+| [SRC-D17CE3D12F-L000326](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L326) | 326 | `""` | — |
+| [SRC-D17CE3D12F-L000327](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L327) | 327 | `"1. SHOULD استهداف WCAG 2.2 مستوى AA للواجهة العامة بدرجة تتناسب مع طبيعتها، مع تقييم عملي لا إعلان امتثال تلقائي."` | — |
+| [SRC-D17CE3D12F-L000328](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L328) | 328 | `"2. MUST أن تكون الوظائف الأساسية قابلة للاستخدام بلوحة المفاتيح، مع حالات تركيز واضحة وتسلسل منطقي."` | — |
+| [SRC-D17CE3D12F-L000329](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L329) | 329 | `"3. SHOULD استخدام دلالات HTML صحيحة، وتسميات واضحة لحقول الإدخال والأزرار ورسائل الأخطاء."` | — |
+| [SRC-D17CE3D12F-L000330](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L330) | 330 | `"4. MUST عدم الاعتماد على اللون وحده لإظهار الحالة أو الخطأ."` | — |
+| [SRC-D17CE3D12F-L000331](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L331) | 331 | `"5. SHOULD احترام تفضيل تقليل الحركة، والتباين، والتكبير، وحجم النص المناسب."` | — |
+| [SRC-D17CE3D12F-L000332](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L332) | 332 | `"6. MUST اختبار التفاعل مع قارئ شاشة بصورة دورية إذا كان المنتج عامًا أو يعتمد على تفاعل معقد."` | — |
+| [SRC-D17CE3D12F-L000333](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L333) | 333 | `"7. MUST ألا تخفي طبقات التحميل أو الأخطاء طريقة متابعة الاستخدام أو إعادة المحاولة."` | — |
+| [SRC-D17CE3D12F-L000334](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L334) | 334 | `"8. SHOULD اختبار المتصفحات والأجهزة الواقعية التي يستهدفها المنتج، خصوصًا Android إذا كان استخدامه أساسيًا."` | — |
+| [SRC-D17CE3D12F-L000335](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L335) | 335 | `"9. MUST حماية الواجهة من XSS باستخدام ترميز/تعقيم مناسب عند عرض HTML أو Markdown أو نصوص مستخرجة من صفحات خارجية."` | — |
+| [SRC-D17CE3D12F-L000336](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L336) | 336 | `"10. MUST اختبار حدود الواجهة بين المحتوى الموثوق وغير الموثوق؛ النص المستخرج لا يُعرض كـ HTML موثوق تلقائيًا."` | — |
+| [SRC-D17CE3D12F-L000337](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L337) | 337 | `""` | — |
 | [SRC-D17CE3D12F-L000338](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L338) | 338 | `"## 23. العربية والتدويل والاتجاه من اليمين إلى اليسار"` | — |
 | [SRC-D17CE3D12F-L000339](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L339) | 339 | `""` | — |
 | [SRC-D17CE3D12F-L000340](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L340) | 340 | `"1. MUST الحفاظ على Unicode وإجراء normalization مناسب للبحث والمقارنة دون تغيير معنى النص الأصلي المعروض."` | — |
@@ -819,18 +834,3 @@
 | [SRC-9A0DFA994E-L000011](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L11) | 11 | ``"- `agents/dialogue_state.py`: يحد من توريث سياق الرسائل السابقة ويتحقق من تفسير المتابعة."`` | — |
 | [SRC-9A0DFA994E-L000012](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L12) | 12 | ``"- `agents/aspect_planning.py`: يستخرج محاور الأسئلة المركبة وينشئ سجلًا لفظيًا لمحاور الأدلة."`` | — |
 | [SRC-9A0DFA994E-L000013](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L13) | 13 | ``"- `agents/research.py`: ينشئ الخطة الاحتياطية ويتحقق من خطة النموذج ويربطها بمواصفة المهمة."`` | — |
-| [SRC-9A0DFA994E-L000014](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L14) | 14 | ``"- `agents/web_agent.py`: يطبق سقف الاستعلامات النهائي، وينفذ البحث، ويعيد حواجز قبول المصدر بعد إصلاح الأدلة، ويصدر تشخيصات مراحل التنفيذ."`` | — |
-| [SRC-9A0DFA994E-L000015](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L15) | 15 | `""` | — |
-| [SRC-9A0DFA994E-L000016](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L16) | 16 | `"## مواصفة المهمة TaskSpec"` | — |
-| [SRC-9A0DFA994E-L000017](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L17) | 17 | `""` | — |
-| [SRC-9A0DFA994E-L000018](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L18) | 18 | ``"تنتج `build_task_spec` سجلًا محدودًا تحت المخطط `omarai.task_spec.v1`. يشمل:"`` | — |
-| [SRC-9A0DFA994E-L000019](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L19) | 19 | `""` | — |
-| [SRC-9A0DFA994E-L000020](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L20) | 20 | `"1. **عائلة المهمة الرئيسية** مثل المقارنة، والمعلومات الحالية، والموقع الرسمي، وآراء الناس، والشرح، وحل المشكلات، والتوصية، والتلخيص، والعملاء المحتملين، والصحة والقانون، والبرمجة، وتحليل البيانات، والحساب، والترجمة، والكتابة والتحرير، والتخطيط، والإبداع."` | — |
-| [SRC-9A0DFA994E-L000021](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L21) | 21 | `"2. **القيود الصريحة** مثل البلد والسنة والتاريخ والميزانية والروابط ومحاور المقارنة واللغة الظاهرة في النص."` | — |
-| [SRC-9A0DFA994E-L000022](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L22) | 22 | `"3. **متطلبات الدليل** مثل قراءة الصفحة فعلًا، والحصول على تاريخ حديث، وتفضيل المصدر الأولي، وفصل تجربة المستخدم عن الإعلان، ومراعاة الاختصاص القانوني أو المرجع الصحي عند انطباقهما."` | — |
-| [SRC-9A0DFA994E-L000023](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L23) | 23 | `"4. **متطلبات الأدوات** بوصفها احتياجات تخطيطية محدودة؛ لا تمنح تصريحًا لتشغيل أداة غير مُعدة أو غير مسموح بها."` | — |
-| [SRC-9A0DFA994E-L000024](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L24) | 24 | `"5. **فرضيات التفسير الثانوية** والإشارات النصية التي تدعمها. أعداد الإشارات تشخيصية، وليست احتمالات معايرة أو درجات صحة."` | — |
-| [SRC-9A0DFA994E-L000025](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L25) | 25 | `"6. **سياق الحوار المطبّع**: هل الرسالة متابعة؟ ما الموضوع والكيانات والخانات التي جرى توريثها؟ هل حدث تغيير موضوع؟ وما أساس الحل؟ تحفظ الحقول بحجم محدود."` | — |
-| [SRC-9A0DFA994E-L000026](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L26) | 26 | `"7. **تفضيلات شكل الإجابة** مثل الإيجاز أو التفصيل أو الأمثلة أو الجدول أو النقاط أو الصيغة JSON أو طلب المصادر والروابط أو الشرح المبسط للمبتدئ."` | — |
-| [SRC-9A0DFA994E-L000027](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L27) | 27 | `"8. **مدخلات إلزامية ناقصة** مثل اسم الجهة لطلب موقع رسمي، أو النص/الرابط المطلوب تلخيصه. يمكن لمسار التشغيل أن يطلب توضيحًا قبل استدعاء الموصلات بدل البحث عن موضوع مخمّن."` | — |
-| [SRC-9A0DFA994E-L000028](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L28) | 28 | `"9. **فحوص القرار** التي تفرض التحقق من صلاحية الأداة، وحدود الاستعلامات والوقت، وصلتها بالموضوع، وسياسة المصدر، والتفريق بين الاستعلام المخطط والمنفذ، وبين نجاح الموصل وصلاحية الدليل، وعدم اتباع تعليمات مزروعة في صفحات مسترجعة."` | — |

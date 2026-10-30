@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004807 إلى SRC-1AE03B9EC3-L005606
+- النطاق: SRC-1AE03B9EC3-L004792 إلى SRC-1AE03B9EC3-L005591
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004792](../../agents/web_agent.py#L4792) | 4792 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L004793](../../agents/web_agent.py#L4793) | 4793 | `"            plan = self._plan_search("` | — |
+| [SRC-1AE03B9EC3-L004794](../../agents/web_agent.py#L4794) | 4794 | `"                question, clean_history, context_override=context_override"` | — |
+| [SRC-1AE03B9EC3-L004795](../../agents/web_agent.py#L4795) | 4795 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004796](../../agents/web_agent.py#L4796) | 4796 | `"        dialogue_context = plan.get(\"dialogue_context\")"` | — |
+| [SRC-1AE03B9EC3-L004797](../../agents/web_agent.py#L4797) | 4797 | `"        if isinstance(dialogue_context, dict):"` | — |
+| [SRC-1AE03B9EC3-L004798](../../agents/web_agent.py#L4798) | 4798 | `"            if dialogue_context.get(\"needs_clarification\"):"` | — |
+| [SRC-1AE03B9EC3-L004799](../../agents/web_agent.py#L4799) | 4799 | `"                return self._dialogue_clarification_result("` | — |
+| [SRC-1AE03B9EC3-L004800](../../agents/web_agent.py#L4800) | 4800 | `"                    question, clean_mode, dialogue_context,"` | — |
+| [SRC-1AE03B9EC3-L004801](../../agents/web_agent.py#L4801) | 4801 | `"                    \"planner_detected_unresolved_referent\","` | — |
+| [SRC-1AE03B9EC3-L004802](../../agents/web_agent.py#L4802) | 4802 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004803](../../agents/web_agent.py#L4803) | 4803 | `"            working_question = ("` | — |
+| [SRC-1AE03B9EC3-L004804](../../agents/web_agent.py#L4804) | 4804 | `"                question if dialogue_context.get(\"topic_shift\")"` | — |
+| [SRC-1AE03B9EC3-L004805](../../agents/web_agent.py#L4805) | 4805 | `"                else dialogue_context.get(\"resolved_question\") or working_question"` | — |
+| [SRC-1AE03B9EC3-L004806](../../agents/web_agent.py#L4806) | 4806 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004807](../../agents/web_agent.py#L4807) | 4807 | `"        plan[\"mode\"] = clean_mode"` | — |
 | [SRC-1AE03B9EC3-L004808](../../agents/web_agent.py#L4808) | 4808 | `"        plan[\"intent_route\"] = intent_route"` | — |
 | [SRC-1AE03B9EC3-L004809](../../agents/web_agent.py#L4809) | 4809 | `"        plan[\"intent_route_reason\"] = intent_reason"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L005589](../../agents/web_agent.py#L5589) | 5589 | `"            evidence_repair[\"final_independent_domain_count\"] = len(final_domains)"` | — |
 | [SRC-1AE03B9EC3-L005590](../../agents/web_agent.py#L5590) | 5590 | `"            evidence_repair[\"recovered\"] = ("` | — |
 | [SRC-1AE03B9EC3-L005591](../../agents/web_agent.py#L5591) | 5591 | `"                len(sources) >= 2 and len(final_domains) >= 2"` | — |
-| [SRC-1AE03B9EC3-L005592](../../agents/web_agent.py#L5592) | 5592 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005593](../../agents/web_agent.py#L5593) | 5593 | `"            evidence_repair[\"new_sources_added\"] = max("` | — |
-| [SRC-1AE03B9EC3-L005594](../../agents/web_agent.py#L5594) | 5594 | `"                0,"` | — |
-| [SRC-1AE03B9EC3-L005595](../../agents/web_agent.py#L5595) | 5595 | `"                len(sources) - int("` | — |
-| [SRC-1AE03B9EC3-L005596](../../agents/web_agent.py#L5596) | 5596 | `"                    report[\"source_guardrails\"].get(\"initial_eligible_source_count\", 0)"` | — |
-| [SRC-1AE03B9EC3-L005597](../../agents/web_agent.py#L5597) | 5597 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L005598](../../agents/web_agent.py#L5598) | 5598 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005599](../../agents/web_agent.py#L5599) | 5599 | `"        final_independent_domains = {"` | — |
-| [SRC-1AE03B9EC3-L005600](../../agents/web_agent.py#L5600) | 5600 | `"            registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L005601](../../agents/web_agent.py#L5601) | 5601 | `"                source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L005602](../../agents/web_agent.py#L5602) | 5602 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L005603](../../agents/web_agent.py#L5603) | 5603 | `"                or \"\""` | — |
-| [SRC-1AE03B9EC3-L005604](../../agents/web_agent.py#L5604) | 5604 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005605](../../agents/web_agent.py#L5605) | 5605 | `"            for source in sources"` | — |
-| [SRC-1AE03B9EC3-L005606](../../agents/web_agent.py#L5606) | 5606 | `"        }"` | — |

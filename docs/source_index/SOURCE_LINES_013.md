@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003207 إلى SRC-1AE03B9EC3-L004006
+- النطاق: SRC-1AE03B9EC3-L003192 إلى SRC-1AE03B9EC3-L003991
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003192](../../agents/web_agent.py#L3192) | 3192 | `"                        last_error = RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L003193](../../agents/web_agent.py#L3193) | 3193 | `"                            \"أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ \""` | — |
+| [SRC-1AE03B9EC3-L003194](../../agents/web_agent.py#L3194) | 3194 | `"                            \"لم تُقبل كإجابة مكتملة.\""` | — |
+| [SRC-1AE03B9EC3-L003195](../../agents/web_agent.py#L3195) | 3195 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L003196](../../agents/web_agent.py#L3196) | 3196 | `"                    elif not normalized_finish_reason:"` | — |
+| [SRC-1AE03B9EC3-L003197](../../agents/web_agent.py#L3197) | 3197 | `"                        diagnostic_status = \"finish_reason_missing\""` | — |
+| [SRC-1AE03B9EC3-L003198](../../agents/web_agent.py#L3198) | 3198 | `"                        last_error = RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L003199](../../agents/web_agent.py#L3199) | 3199 | `"                            \"لم تقدم خدمة النموذج سبب انتهاء واضحًا؛ لم تُقبل الإجابة \""` | — |
+| [SRC-1AE03B9EC3-L003200](../../agents/web_agent.py#L3200) | 3200 | `"                            \"كإجابة مكتملة.\""` | — |
+| [SRC-1AE03B9EC3-L003201](../../agents/web_agent.py#L3201) | 3201 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L003202](../../agents/web_agent.py#L3202) | 3202 | `"                    else:"` | — |
+| [SRC-1AE03B9EC3-L003203](../../agents/web_agent.py#L3203) | 3203 | `"                        diagnostic_status = \"finish_reason_not_accepted\""` | — |
+| [SRC-1AE03B9EC3-L003204](../../agents/web_agent.py#L3204) | 3204 | `"                        last_error = RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `"                            \"لم تُكمل خدمة النموذج إجابة نصية نهائية مقبولة \""` | — |
+| [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"                            \"(حالة الإنهاء: \" + normalized_finish_reason[:40] + \").\""` | — |
 | [SRC-1AE03B9EC3-L003207](../../agents/web_agent.py#L3207) | 3207 | `"                        )"` | — |
 | [SRC-1AE03B9EC3-L003208](../../agents/web_agent.py#L3208) | 3208 | `"                    self._record_generation_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L003209](../../agents/web_agent.py#L3209) | 3209 | `"                        requested_model=requested_model,"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L003989](../../agents/web_agent.py#L3989) | 3989 | `"            flags=re.DOTALL,"` | — |
 | [SRC-1AE03B9EC3-L003990](../../agents/web_agent.py#L3990) | 3990 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003991](../../agents/web_agent.py#L3991) | 3991 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L003992](../../agents/web_agent.py#L3992) | 3992 | `"            raw_review.count(start_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003993](../../agents/web_agent.py#L3993) | 3993 | `"            or raw_review.count(end_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003994](../../agents/web_agent.py#L3994) | 3994 | `"            or final_answer is None"` | — |
-| [SRC-1AE03B9EC3-L003995](../../agents/web_agent.py#L3995) | 3995 | `"            or not final_answer.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003996](../../agents/web_agent.py#L3996) | 3996 | `"            or len(final_answer.group(1)) > 24_000"` | — |
-| [SRC-1AE03B9EC3-L003997](../../agents/web_agent.py#L3997) | 3997 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003998](../../agents/web_agent.py#L3998) | 3998 | `"            raise RuntimeError("` | — |
-| [SRC-1AE03B9EC3-L003999](../../agents/web_agent.py#L3999) | 3999 | `"                \"تعذر فصل الإجابة النهائية عن مخرجات التدقيق؛ تم حجب المخرجات غير المنضبطة.\""` | — |
-| [SRC-1AE03B9EC3-L004000](../../agents/web_agent.py#L4000) | 4000 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004001](../../agents/web_agent.py#L4001) | 4001 | `"        return final_answer.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L004002](../../agents/web_agent.py#L4002) | 4002 | `""` | — |
-| [SRC-1AE03B9EC3-L004003](../../agents/web_agent.py#L4003) | 4003 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L004004](../../agents/web_agent.py#L4004) | 4004 | `"    def _remove_invalid_citations(answer: str, source_count: int) -> tuple[str, list[str]]:"` | — |
-| [SRC-1AE03B9EC3-L004005](../../agents/web_agent.py#L4005) | 4005 | `"        \"\"\"Remove citation labels that point outside the exact source list sent to the model.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L004006](../../agents/web_agent.py#L4006) | 4006 | `"        warnings: list[str] = []"` | — |

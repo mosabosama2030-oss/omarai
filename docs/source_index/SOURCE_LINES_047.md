@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001855 إلى SRC-F725E90B2A-L002654
+- النطاق: SRC-F725E90B2A-L001840 إلى SRC-F725E90B2A-L002639
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001840](../../tests/test_web_agent.py#L1840) | 1840 | `"    assert len(calls) == 1"` | — |
+| [SRC-F725E90B2A-L001841](../../tests/test_web_agent.py#L1841) | 1841 | `"    assert calls[0][\"social_focus\"] is True"` | — |
+| [SRC-F725E90B2A-L001842](../../tests/test_web_agent.py#L1842) | 1842 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
+| [SRC-F725E90B2A-L001843](../../tests/test_web_agent.py#L1843) | 1843 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"task_specific_partial_evidence\""` | — |
+| [SRC-F725E90B2A-L001844](../../tests/test_web_agent.py#L1844) | 1844 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
+| [SRC-F725E90B2A-L001845](../../tests/test_web_agent.py#L1845) | 1845 | `""` | — |
+| [SRC-F725E90B2A-L001846](../../tests/test_web_agent.py#L1846) | 1846 | `""` | — |
+| [SRC-F725E90B2A-L001847](../../tests/test_web_agent.py#L1847) | 1847 | `""` | — |
+| [SRC-F725E90B2A-L001848](../../tests/test_web_agent.py#L1848) | 1848 | `"def test_question_coverage_targets_extract_arabic_and_english_explicit_criteria():"` | — |
+| [SRC-F725E90B2A-L001849](../../tests/test_web_agent.py#L1849) | 1849 | `"    arabic = WebAgent._question_coverage_targets("` | — |
+| [SRC-F725E90B2A-L001850](../../tests/test_web_agent.py#L1850) | 1850 | `"        \"قارن بين خدمتين من حيث السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، \""` | — |
+| [SRC-F725E90B2A-L001851](../../tests/test_web_agent.py#L1851) | 1851 | `"        \"واذكر ما لا تستطيع التحقق منه.\""` | — |
+| [SRC-F725E90B2A-L001852](../../tests/test_web_agent.py#L1852) | 1852 | `"    )"` | — |
+| [SRC-F725E90B2A-L001853](../../tests/test_web_agent.py#L1853) | 1853 | `"    assert arabic == [\"السعر\", \"الخصوصية\", \"الاعتمادية\", \"خيار التواصل مع الدعم\"]"` | — |
+| [SRC-F725E90B2A-L001854](../../tests/test_web_agent.py#L1854) | 1854 | `""` | — |
 | [SRC-F725E90B2A-L001855](../../tests/test_web_agent.py#L1855) | 1855 | `"    english = WebAgent._question_coverage_targets("` | — |
 | [SRC-F725E90B2A-L001856](../../tests/test_web_agent.py#L1856) | 1856 | `"        \"Compare two services in terms of price, privacy, reliability and customer support?\""` | — |
 | [SRC-F725E90B2A-L001857](../../tests/test_web_agent.py#L1857) | 1857 | `"    )"` | — |
@@ -801,18 +816,3 @@
 | [SRC-F725E90B2A-L002637](../../tests/test_web_agent.py#L2637) | 2637 | `""` | — |
 | [SRC-F725E90B2A-L002638](../../tests/test_web_agent.py#L2638) | 2638 | `""` | — |
 | [SRC-F725E90B2A-L002639](../../tests/test_web_agent.py#L2639) | 2639 | `"def test_pinned_connect_url_uses_checked_ip_without_losing_logical_path():"` | — |
-| [SRC-F725E90B2A-L002640](../../tests/test_web_agent.py#L2640) | 2640 | `"    from agents.web_agent import _pinned_connect_url"` | — |
-| [SRC-F725E90B2A-L002641](../../tests/test_web_agent.py#L2641) | 2641 | `""` | — |
-| [SRC-F725E90B2A-L002642](../../tests/test_web_agent.py#L2642) | 2642 | `"    assert _pinned_connect_url("` | — |
-| [SRC-F725E90B2A-L002643](../../tests/test_web_agent.py#L2643) | 2643 | `"        \"https://example.test:443/path?q=1\","` | — |
-| [SRC-F725E90B2A-L002644](../../tests/test_web_agent.py#L2644) | 2644 | `"        \"93.184.216.34\","` | — |
-| [SRC-F725E90B2A-L002645](../../tests/test_web_agent.py#L2645) | 2645 | `"    ) == \"https://93.184.216.34:443/path?q=1\""` | — |
-| [SRC-F725E90B2A-L002646](../../tests/test_web_agent.py#L2646) | 2646 | `""` | — |
-| [SRC-F725E90B2A-L002647](../../tests/test_web_agent.py#L2647) | 2647 | `""` | — |
-| [SRC-F725E90B2A-L002648](../../tests/test_web_agent.py#L2648) | 2648 | `"def test_fetch_page_rejects_private_redirect_before_connecting(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002649](../../tests/test_web_agent.py#L2649) | 2649 | `"    from contextlib import contextmanager"` | — |
-| [SRC-F725E90B2A-L002650](../../tests/test_web_agent.py#L2650) | 2650 | `""` | — |
-| [SRC-F725E90B2A-L002651](../../tests/test_web_agent.py#L2651) | 2651 | `"    import httpx"` | — |
-| [SRC-F725E90B2A-L002652](../../tests/test_web_agent.py#L2652) | 2652 | `""` | — |
-| [SRC-F725E90B2A-L002653](../../tests/test_web_agent.py#L2653) | 2653 | `"    from agents import web_agent"` | — |
-| [SRC-F725E90B2A-L002654](../../tests/test_web_agent.py#L2654) | 2654 | `""` | — |

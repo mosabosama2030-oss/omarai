@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002407 إلى SRC-1AE03B9EC3-L003206
+- النطاق: SRC-1AE03B9EC3-L002392 إلى SRC-1AE03B9EC3-L003191
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"        for element in soup(["` | — |
+| [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `"            \"script\", \"style\", \"nav\", \"footer\", \"header\", \"noscript\","` | — |
+| [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"            \"svg\", \"form\", \"iframe\", \"template\""` | — |
+| [SRC-1AE03B9EC3-L002395](../../agents/web_agent.py#L2395) | 2395 | `"        ]):"` | — |
+| [SRC-1AE03B9EC3-L002396](../../agents/web_agent.py#L2396) | 2396 | `"            element.decompose()"` | — |
+| [SRC-1AE03B9EC3-L002397](../../agents/web_agent.py#L2397) | 2397 | `"        main = soup.find(\"main\") or soup.find(\"article\") or soup.body or soup"` | — |
+| [SRC-1AE03B9EC3-L002398](../../agents/web_agent.py#L2398) | 2398 | `"        bounded_text = _clean_text(main.get_text(\" \", strip=True), MAX_PAGE_TEXT_CHARS + 1)"` | — |
+| [SRC-1AE03B9EC3-L002399](../../agents/web_agent.py#L2399) | 2399 | `"        text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |
+| [SRC-1AE03B9EC3-L002400](../../agents/web_agent.py#L2400) | 2400 | `"        page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
+| [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"        status = ("` | — |
+| [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"            \"no_text_extracted\" if not page_text"` | — |
+| [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"            else \"partial_extraction\" if bytes_truncated or text_truncated"` | — |
+| [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"            else \"content_extracted\""` | — |
+| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"        return result(title, page_text, status)"` | — |
 | [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `""` | — |
 | [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"    def _collect_sources(self, query: str) -> tuple[list[dict[str, Any]], str \| None]:"` | — |
 | [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"        try:"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L003189](../../agents/web_agent.py#L3189) | 3189 | `"                if normalized_finish_reason != \"stop\":"` | — |
 | [SRC-1AE03B9EC3-L003190](../../agents/web_agent.py#L3190) | 3190 | `"                    if normalized_finish_reason in {\"length\", \"max_tokens\"}:"` | — |
 | [SRC-1AE03B9EC3-L003191](../../agents/web_agent.py#L3191) | 3191 | `"                        diagnostic_status = \"truncated\""` | — |
-| [SRC-1AE03B9EC3-L003192](../../agents/web_agent.py#L3192) | 3192 | `"                        last_error = RuntimeError("` | — |
-| [SRC-1AE03B9EC3-L003193](../../agents/web_agent.py#L3193) | 3193 | `"                            \"أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ \""` | — |
-| [SRC-1AE03B9EC3-L003194](../../agents/web_agent.py#L3194) | 3194 | `"                            \"لم تُقبل كإجابة مكتملة.\""` | — |
-| [SRC-1AE03B9EC3-L003195](../../agents/web_agent.py#L3195) | 3195 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L003196](../../agents/web_agent.py#L3196) | 3196 | `"                    elif not normalized_finish_reason:"` | — |
-| [SRC-1AE03B9EC3-L003197](../../agents/web_agent.py#L3197) | 3197 | `"                        diagnostic_status = \"finish_reason_missing\""` | — |
-| [SRC-1AE03B9EC3-L003198](../../agents/web_agent.py#L3198) | 3198 | `"                        last_error = RuntimeError("` | — |
-| [SRC-1AE03B9EC3-L003199](../../agents/web_agent.py#L3199) | 3199 | `"                            \"لم تقدم خدمة النموذج سبب انتهاء واضحًا؛ لم تُقبل الإجابة \""` | — |
-| [SRC-1AE03B9EC3-L003200](../../agents/web_agent.py#L3200) | 3200 | `"                            \"كإجابة مكتملة.\""` | — |
-| [SRC-1AE03B9EC3-L003201](../../agents/web_agent.py#L3201) | 3201 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L003202](../../agents/web_agent.py#L3202) | 3202 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L003203](../../agents/web_agent.py#L3203) | 3203 | `"                        diagnostic_status = \"finish_reason_not_accepted\""` | — |
-| [SRC-1AE03B9EC3-L003204](../../agents/web_agent.py#L3204) | 3204 | `"                        last_error = RuntimeError("` | — |
-| [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `"                            \"لم تُكمل خدمة النموذج إجابة نصية نهائية مقبولة \""` | — |
-| [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"                            \"(حالة الإنهاء: \" + normalized_finish_reason[:40] + \").\""` | — |

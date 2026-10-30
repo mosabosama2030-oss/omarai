@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006407 إلى SRC-EEF2E6447C-L000584
+- النطاق: SRC-1AE03B9EC3-L006392 إلى SRC-EEF2E6447C-L000569
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006392](../../agents/web_agent.py#L6392) | 6392 | `"                \"اكتمال مراجعة النموذج لا يثبت دعم كل ادعاء.\""` | — |
+| [SRC-1AE03B9EC3-L006393](../../agents/web_agent.py#L6393) | 6393 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006394](../../agents/web_agent.py#L6394) | 6394 | `"        elif citation_validation[\"valid_citation_count\"] > 0:"` | — |
+| [SRC-1AE03B9EC3-L006395](../../agents/web_agent.py#L6395) | 6395 | `"            answer_evidence_status = \"citation_indices_validated_only\""` | — |
+| [SRC-1AE03B9EC3-L006396](../../agents/web_agent.py#L6396) | 6396 | `"            uncited_answer_warning = None"` | — |
+| [SRC-1AE03B9EC3-L006397](../../agents/web_agent.py#L6397) | 6397 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006398](../../agents/web_agent.py#L6398) | 6398 | `"            answer_evidence_status = \"not_assessed\""` | — |
+| [SRC-1AE03B9EC3-L006399](../../agents/web_agent.py#L6399) | 6399 | `"            uncited_answer_warning = None"` | — |
+| [SRC-1AE03B9EC3-L006400](../../agents/web_agent.py#L6400) | 6400 | `""` | — |
+| [SRC-1AE03B9EC3-L006401](../../agents/web_agent.py#L6401) | 6401 | `"        search_attempted = search_attempted or bool(self.server_search_sources)"` | — |
+| [SRC-1AE03B9EC3-L006402](../../agents/web_agent.py#L6402) | 6402 | `"        report[\"search_attempted\"] = search_attempted"` | — |
+| [SRC-1AE03B9EC3-L006403](../../agents/web_agent.py#L6403) | 6403 | `"        prior_search_outcome = report.get(\"search_outcome\")"` | — |
+| [SRC-1AE03B9EC3-L006404](../../agents/web_agent.py#L6404) | 6404 | `"        if prior_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:"` | — |
+| [SRC-1AE03B9EC3-L006405](../../agents/web_agent.py#L6405) | 6405 | `"            # Preserve a known pipeline failure instead of relabeling it as an ordinary"` | — |
+| [SRC-1AE03B9EC3-L006406](../../agents/web_agent.py#L6406) | 6406 | `"            # zero-result search merely because the outer request reached its return path."` | — |
 | [SRC-1AE03B9EC3-L006407](../../agents/web_agent.py#L6407) | 6407 | `"            report[\"search_outcome\"] = prior_search_outcome"` | — |
 | [SRC-1AE03B9EC3-L006408](../../agents/web_agent.py#L6408) | 6408 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L006409](../../agents/web_agent.py#L6409) | 6409 | `"            report[\"search_outcome\"] = ("` | — |
@@ -819,18 +834,3 @@
 | [SRC-EEF2E6447C-L000567](../../api/omarai.py#L567) | 567 | `"                        {\"error\": \"test_model and test_social must be booleans\"},"` | — |
 | [SRC-EEF2E6447C-L000568](../../api/omarai.py#L568) | 568 | `"                    )"` | — |
 | [SRC-EEF2E6447C-L000569](../../api/omarai.py#L569) | 569 | `"                return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000570](../../api/omarai.py#L570) | 570 | `"                    lambda: WebAgent().diagnostics("` | — |
-| [SRC-EEF2E6447C-L000571](../../api/omarai.py#L571) | 571 | `"                        test_model=test_model,"` | — |
-| [SRC-EEF2E6447C-L000572](../../api/omarai.py#L572) | 572 | `"                        test_social=test_social,"` | — |
-| [SRC-EEF2E6447C-L000573](../../api/omarai.py#L573) | 573 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000574](../../api/omarai.py#L574) | 574 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000575](../../api/omarai.py#L575) | 575 | `""` | — |
-| [SRC-EEF2E6447C-L000576](../../api/omarai.py#L576) | 576 | `"            if path == \"/api/agent\":"` | — |
-| [SRC-EEF2E6447C-L000577](../../api/omarai.py#L577) | 577 | `"                question = data.get(\"question\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000578](../../api/omarai.py#L578) | 578 | `"                if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-EEF2E6447C-L000579](../../api/omarai.py#L579) | 579 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
-| [SRC-EEF2E6447C-L000580](../../api/omarai.py#L580) | 580 | `"                agent = WebAgent()"` | — |
-| [SRC-EEF2E6447C-L000581](../../api/omarai.py#L581) | 581 | `"                history = data.get(\"history\", [])"` | — |
-| [SRC-EEF2E6447C-L000582](../../api/omarai.py#L582) | 582 | `"                if \"mode\" not in data:"` | — |
-| [SRC-EEF2E6447C-L000583](../../api/omarai.py#L583) | 583 | `"                    return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"                        lambda: agent.answer(question, history)"` | — |

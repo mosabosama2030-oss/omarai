@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000807 إلى SRC-1AE03B9EC3-L001606
+- النطاق: SRC-1AE03B9EC3-L000792 إلى SRC-1AE03B9EC3-L001591
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000792](../../agents/web_agent.py#L792) | 792 | `"        references_web = any("` | — |
+| [SRC-1AE03B9EC3-L000793](../../agents/web_agent.py#L793) | 793 | `"            term in value for term in (\"انترنت\", \"النت\", \"الويب\", \"ويب\", \"the web\", \"online\")"` | — |
+| [SRC-1AE03B9EC3-L000794](../../agents/web_agent.py#L794) | 794 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000795](../../agents/web_agent.py#L795) | 795 | `"        references_current_answer = any("` | — |
+| [SRC-1AE03B9EC3-L000796](../../agents/web_agent.py#L796) | 796 | `"            term in value"` | — |
+| [SRC-1AE03B9EC3-L000797](../../agents/web_agent.py#L797) | 797 | `"            for term in ("` | — |
+| [SRC-1AE03B9EC3-L000798](../../agents/web_agent.py#L798) | 798 | `"                \"اجاب\", \"الرد الحالي\", \"هذا السؤال\", \"هذه الاجابه\","` | — |
+| [SRC-1AE03B9EC3-L000799](../../agents/web_agent.py#L799) | 799 | `"                \"this answer\", \"this response\","` | — |
+| [SRC-1AE03B9EC3-L000800](../../agents/web_agent.py#L800) | 800 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000801](../../agents/web_agent.py#L801) | 801 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000802](../../agents/web_agent.py#L802) | 802 | `"        return asks_if_searched and references_web and references_current_answer"` | — |
+| [SRC-1AE03B9EC3-L000803](../../agents/web_agent.py#L803) | 803 | `""` | — |
+| [SRC-1AE03B9EC3-L000804](../../agents/web_agent.py#L804) | 804 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000805](../../agents/web_agent.py#L805) | 805 | `"    def _is_self_question(question: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000806](../../agents/web_agent.py#L806) | 806 | `"        \"\"\"Recognize questions about Omarai itself so they do not need web search.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000807](../../agents/web_agent.py#L807) | 807 | `"        value = _normalize_search_query(question).casefold()"` | — |
 | [SRC-1AE03B9EC3-L000808](../../agents/web_agent.py#L808) | 808 | `"        capability_phrases = ("` | — |
 | [SRC-1AE03B9EC3-L000809](../../agents/web_agent.py#L809) | 809 | `"            \"كيف تستطيع مساعدتي\", \"ازاي تقدر تساعدني\", \"ازاي ممكن تساعدني\","` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L001589](../../agents/web_agent.py#L1589) | 1589 | `""` | — |
 | [SRC-1AE03B9EC3-L001590](../../agents/web_agent.py#L1590) | 1590 | `"                async def run_academic_all() -> list[list[dict[str, Any]]]:"` | — |
 | [SRC-1AE03B9EC3-L001591](../../agents/web_agent.py#L1591) | 1591 | `"                    return await asyncio.gather("` | — |
-| [SRC-1AE03B9EC3-L001592](../../agents/web_agent.py#L1592) | 1592 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
-| [SRC-1AE03B9EC3-L001593](../../agents/web_agent.py#L1593) | 1593 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L001594](../../agents/web_agent.py#L1594) | 1594 | `""` | — |
-| [SRC-1AE03B9EC3-L001595](../../agents/web_agent.py#L1595) | 1595 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
-| [SRC-1AE03B9EC3-L001596](../../agents/web_agent.py#L1596) | 1596 | `"        except RuntimeError as exc:"` | — |
-| [SRC-1AE03B9EC3-L001597](../../agents/web_agent.py#L1597) | 1597 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
-| [SRC-1AE03B9EC3-L001598](../../agents/web_agent.py#L1598) | 1598 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
-| [SRC-1AE03B9EC3-L001599](../../agents/web_agent.py#L1599) | 1599 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
-| [SRC-1AE03B9EC3-L001600](../../agents/web_agent.py#L1600) | 1600 | `"        # De-duplicate repeated URLs before ranking/fusion."` | — |
-| [SRC-1AE03B9EC3-L001601](../../agents/web_agent.py#L1601) | 1601 | `"        unique: dict[str, dict[str, Any]] = {}"` | — |
-| [SRC-1AE03B9EC3-L001602](../../agents/web_agent.py#L1602) | 1602 | `"        for item in combined:"` | — |
-| [SRC-1AE03B9EC3-L001603](../../agents/web_agent.py#L1603) | 1603 | `"            key = item[\"url\"].split(\"#\", 1)[0].rstrip(\"/\")"` | — |
-| [SRC-1AE03B9EC3-L001604](../../agents/web_agent.py#L1604) | 1604 | `"            if key not in unique or len(str(item.get(\"snippet\") or \"\")) > len(str(unique[key].get(\"snippet\") or \"\")):"` | — |
-| [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"                unique[key] = item"` | — |
-| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"        if not unique:"` | — |

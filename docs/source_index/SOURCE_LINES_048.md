@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002655 إلى SRC-F725E90B2A-L003454
+- النطاق: SRC-F725E90B2A-L002640 إلى SRC-F725E90B2A-L003439
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002640](../../tests/test_web_agent.py#L2640) | 2640 | `"    from agents.web_agent import _pinned_connect_url"` | — |
+| [SRC-F725E90B2A-L002641](../../tests/test_web_agent.py#L2641) | 2641 | `""` | — |
+| [SRC-F725E90B2A-L002642](../../tests/test_web_agent.py#L2642) | 2642 | `"    assert _pinned_connect_url("` | — |
+| [SRC-F725E90B2A-L002643](../../tests/test_web_agent.py#L2643) | 2643 | `"        \"https://example.test:443/path?q=1\","` | — |
+| [SRC-F725E90B2A-L002644](../../tests/test_web_agent.py#L2644) | 2644 | `"        \"93.184.216.34\","` | — |
+| [SRC-F725E90B2A-L002645](../../tests/test_web_agent.py#L2645) | 2645 | `"    ) == \"https://93.184.216.34:443/path?q=1\""` | — |
+| [SRC-F725E90B2A-L002646](../../tests/test_web_agent.py#L2646) | 2646 | `""` | — |
+| [SRC-F725E90B2A-L002647](../../tests/test_web_agent.py#L2647) | 2647 | `""` | — |
+| [SRC-F725E90B2A-L002648](../../tests/test_web_agent.py#L2648) | 2648 | `"def test_fetch_page_rejects_private_redirect_before_connecting(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002649](../../tests/test_web_agent.py#L2649) | 2649 | `"    from contextlib import contextmanager"` | — |
+| [SRC-F725E90B2A-L002650](../../tests/test_web_agent.py#L2650) | 2650 | `""` | — |
+| [SRC-F725E90B2A-L002651](../../tests/test_web_agent.py#L2651) | 2651 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L002652](../../tests/test_web_agent.py#L2652) | 2652 | `""` | — |
+| [SRC-F725E90B2A-L002653](../../tests/test_web_agent.py#L2653) | 2653 | `"    from agents import web_agent"` | — |
+| [SRC-F725E90B2A-L002654](../../tests/test_web_agent.py#L2654) | 2654 | `""` | — |
 | [SRC-F725E90B2A-L002655](../../tests/test_web_agent.py#L2655) | 2655 | `"    resolved_hosts = []"` | — |
 | [SRC-F725E90B2A-L002656](../../tests/test_web_agent.py#L2656) | 2656 | `"    requests = []"` | — |
 | [SRC-F725E90B2A-L002657](../../tests/test_web_agent.py#L2657) | 2657 | `""` | — |
@@ -801,18 +816,3 @@
 | [SRC-F725E90B2A-L003437](../../tests/test_web_agent.py#L3437) | 3437 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003438](../../tests/test_web_agent.py#L3438) | 3438 | `"        agent, \"_plan_search\","` | — |
 | [SRC-F725E90B2A-L003439](../../tests/test_web_agent.py#L3439) | 3439 | `"        lambda _question, _history: {"` | — |
-| [SRC-F725E90B2A-L003440](../../tests/test_web_agent.py#L3440) | 3440 | `"            \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L003441](../../tests/test_web_agent.py#L3441) | 3441 | `"            \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L003442](../../tests/test_web_agent.py#L3442) | 3442 | `"            \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L003443](../../tests/test_web_agent.py#L3443) | 3443 | `"            \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L003444](../../tests/test_web_agent.py#L3444) | 3444 | `"            \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L003445](../../tests/test_web_agent.py#L3445) | 3445 | `"            \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L003446](../../tests/test_web_agent.py#L3446) | 3446 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L003447](../../tests/test_web_agent.py#L3447) | 3447 | `"        },"` | — |
-| [SRC-F725E90B2A-L003448](../../tests/test_web_agent.py#L3448) | 3448 | `"    )"` | — |
-| [SRC-F725E90B2A-L003449](../../tests/test_web_agent.py#L3449) | 3449 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L003450](../../tests/test_web_agent.py#L3450) | 3450 | `"        \"agents.web_agent.fallback_plan\","` | — |
-| [SRC-F725E90B2A-L003451](../../tests/test_web_agent.py#L3451) | 3451 | `"        lambda *args, **kwargs: {\"queries\": [question]},"` | — |
-| [SRC-F725E90B2A-L003452](../../tests/test_web_agent.py#L3452) | 3452 | `"    )"` | — |
-| [SRC-F725E90B2A-L003453](../../tests/test_web_agent.py#L3453) | 3453 | `""` | — |
-| [SRC-F725E90B2A-L003454](../../tests/test_web_agent.py#L3454) | 3454 | `"    def collect(research_plan):"` | — |

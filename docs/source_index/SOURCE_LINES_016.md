@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005607 إلى SRC-1AE03B9EC3-L006406
+- النطاق: SRC-1AE03B9EC3-L005592 إلى SRC-1AE03B9EC3-L006391
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005592](../../agents/web_agent.py#L5592) | 5592 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L005593](../../agents/web_agent.py#L5593) | 5593 | `"            evidence_repair[\"new_sources_added\"] = max("` | — |
+| [SRC-1AE03B9EC3-L005594](../../agents/web_agent.py#L5594) | 5594 | `"                0,"` | — |
+| [SRC-1AE03B9EC3-L005595](../../agents/web_agent.py#L5595) | 5595 | `"                len(sources) - int("` | — |
+| [SRC-1AE03B9EC3-L005596](../../agents/web_agent.py#L5596) | 5596 | `"                    report[\"source_guardrails\"].get(\"initial_eligible_source_count\", 0)"` | — |
+| [SRC-1AE03B9EC3-L005597](../../agents/web_agent.py#L5597) | 5597 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L005598](../../agents/web_agent.py#L5598) | 5598 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L005599](../../agents/web_agent.py#L5599) | 5599 | `"        final_independent_domains = {"` | — |
+| [SRC-1AE03B9EC3-L005600](../../agents/web_agent.py#L5600) | 5600 | `"            registrable_domain("` | — |
+| [SRC-1AE03B9EC3-L005601](../../agents/web_agent.py#L5601) | 5601 | `"                source.get(\"domain\")"` | — |
+| [SRC-1AE03B9EC3-L005602](../../agents/web_agent.py#L5602) | 5602 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
+| [SRC-1AE03B9EC3-L005603](../../agents/web_agent.py#L5603) | 5603 | `"                or \"\""` | — |
+| [SRC-1AE03B9EC3-L005604](../../agents/web_agent.py#L5604) | 5604 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L005605](../../agents/web_agent.py#L5605) | 5605 | `"            for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005606](../../agents/web_agent.py#L5606) | 5606 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L005607](../../agents/web_agent.py#L5607) | 5607 | `"        final_independent_domains.discard(\"\")"` | — |
 | [SRC-1AE03B9EC3-L005608](../../agents/web_agent.py#L5608) | 5608 | `"        # All post-filter source metrics describe the sources that remain eligible"` | — |
 | [SRC-1AE03B9EC3-L005609](../../agents/web_agent.py#L5609) | 5609 | `"        # for the answer. Connector-level received/accepted/rejected totals remain"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L006389](../../agents/web_agent.py#L6389) | 6389 | `"            uncited_answer_warning = ("` | — |
 | [SRC-1AE03B9EC3-L006390](../../agents/web_agent.py#L6390) | 6390 | `"                \"اكتملت مراجعة النموذج، لكن الإجابة النهائية لا تحتوي على إحالات صالحة \""` | — |
 | [SRC-1AE03B9EC3-L006391](../../agents/web_agent.py#L6391) | 6391 | `"                \"إلى قائمة المصادر؛ لذلك صُنّفت جودة البحث «جزئية». وجود المصادر أو \""` | — |
-| [SRC-1AE03B9EC3-L006392](../../agents/web_agent.py#L6392) | 6392 | `"                \"اكتمال مراجعة النموذج لا يثبت دعم كل ادعاء.\""` | — |
-| [SRC-1AE03B9EC3-L006393](../../agents/web_agent.py#L6393) | 6393 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L006394](../../agents/web_agent.py#L6394) | 6394 | `"        elif citation_validation[\"valid_citation_count\"] > 0:"` | — |
-| [SRC-1AE03B9EC3-L006395](../../agents/web_agent.py#L6395) | 6395 | `"            answer_evidence_status = \"citation_indices_validated_only\""` | — |
-| [SRC-1AE03B9EC3-L006396](../../agents/web_agent.py#L6396) | 6396 | `"            uncited_answer_warning = None"` | — |
-| [SRC-1AE03B9EC3-L006397](../../agents/web_agent.py#L6397) | 6397 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L006398](../../agents/web_agent.py#L6398) | 6398 | `"            answer_evidence_status = \"not_assessed\""` | — |
-| [SRC-1AE03B9EC3-L006399](../../agents/web_agent.py#L6399) | 6399 | `"            uncited_answer_warning = None"` | — |
-| [SRC-1AE03B9EC3-L006400](../../agents/web_agent.py#L6400) | 6400 | `""` | — |
-| [SRC-1AE03B9EC3-L006401](../../agents/web_agent.py#L6401) | 6401 | `"        search_attempted = search_attempted or bool(self.server_search_sources)"` | — |
-| [SRC-1AE03B9EC3-L006402](../../agents/web_agent.py#L6402) | 6402 | `"        report[\"search_attempted\"] = search_attempted"` | — |
-| [SRC-1AE03B9EC3-L006403](../../agents/web_agent.py#L6403) | 6403 | `"        prior_search_outcome = report.get(\"search_outcome\")"` | — |
-| [SRC-1AE03B9EC3-L006404](../../agents/web_agent.py#L6404) | 6404 | `"        if prior_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:"` | — |
-| [SRC-1AE03B9EC3-L006405](../../agents/web_agent.py#L6405) | 6405 | `"            # Preserve a known pipeline failure instead of relabeling it as an ordinary"` | — |
-| [SRC-1AE03B9EC3-L006406](../../agents/web_agent.py#L6406) | 6406 | `"            # zero-result search merely because the outer request reached its return path."` | — |

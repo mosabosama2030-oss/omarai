@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004007 إلى SRC-1AE03B9EC3-L004806
+- النطاق: SRC-1AE03B9EC3-L003992 إلى SRC-1AE03B9EC3-L004791
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003992](../../agents/web_agent.py#L3992) | 3992 | `"            raw_review.count(start_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003993](../../agents/web_agent.py#L3993) | 3993 | `"            or raw_review.count(end_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003994](../../agents/web_agent.py#L3994) | 3994 | `"            or final_answer is None"` | — |
+| [SRC-1AE03B9EC3-L003995](../../agents/web_agent.py#L3995) | 3995 | `"            or not final_answer.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003996](../../agents/web_agent.py#L3996) | 3996 | `"            or len(final_answer.group(1)) > 24_000"` | — |
+| [SRC-1AE03B9EC3-L003997](../../agents/web_agent.py#L3997) | 3997 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003998](../../agents/web_agent.py#L3998) | 3998 | `"            raise RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L003999](../../agents/web_agent.py#L3999) | 3999 | `"                \"تعذر فصل الإجابة النهائية عن مخرجات التدقيق؛ تم حجب المخرجات غير المنضبطة.\""` | — |
+| [SRC-1AE03B9EC3-L004000](../../agents/web_agent.py#L4000) | 4000 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004001](../../agents/web_agent.py#L4001) | 4001 | `"        return final_answer.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L004002](../../agents/web_agent.py#L4002) | 4002 | `""` | — |
+| [SRC-1AE03B9EC3-L004003](../../agents/web_agent.py#L4003) | 4003 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L004004](../../agents/web_agent.py#L4004) | 4004 | `"    def _remove_invalid_citations(answer: str, source_count: int) -> tuple[str, list[str]]:"` | — |
+| [SRC-1AE03B9EC3-L004005](../../agents/web_agent.py#L4005) | 4005 | `"        \"\"\"Remove citation labels that point outside the exact source list sent to the model.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L004006](../../agents/web_agent.py#L4006) | 4006 | `"        warnings: list[str] = []"` | — |
 | [SRC-1AE03B9EC3-L004007](../../agents/web_agent.py#L4007) | 4007 | `""` | — |
 | [SRC-1AE03B9EC3-L004008](../../agents/web_agent.py#L4008) | 4008 | `"        def replace(match: re.Match[str]) -> str:"` | — |
 | [SRC-1AE03B9EC3-L004009](../../agents/web_agent.py#L4009) | 4009 | `"            number = int(match.group(1))"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L004789](../../agents/web_agent.py#L4789) | 4789 | `"        if context_override is None:"` | — |
 | [SRC-1AE03B9EC3-L004790](../../agents/web_agent.py#L4790) | 4790 | `"            # Preserve compatibility with existing integrations and test doubles."` | — |
 | [SRC-1AE03B9EC3-L004791](../../agents/web_agent.py#L4791) | 4791 | `"            plan = self._plan_search(question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004792](../../agents/web_agent.py#L4792) | 4792 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L004793](../../agents/web_agent.py#L4793) | 4793 | `"            plan = self._plan_search("` | — |
-| [SRC-1AE03B9EC3-L004794](../../agents/web_agent.py#L4794) | 4794 | `"                question, clean_history, context_override=context_override"` | — |
-| [SRC-1AE03B9EC3-L004795](../../agents/web_agent.py#L4795) | 4795 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004796](../../agents/web_agent.py#L4796) | 4796 | `"        dialogue_context = plan.get(\"dialogue_context\")"` | — |
-| [SRC-1AE03B9EC3-L004797](../../agents/web_agent.py#L4797) | 4797 | `"        if isinstance(dialogue_context, dict):"` | — |
-| [SRC-1AE03B9EC3-L004798](../../agents/web_agent.py#L4798) | 4798 | `"            if dialogue_context.get(\"needs_clarification\"):"` | — |
-| [SRC-1AE03B9EC3-L004799](../../agents/web_agent.py#L4799) | 4799 | `"                return self._dialogue_clarification_result("` | — |
-| [SRC-1AE03B9EC3-L004800](../../agents/web_agent.py#L4800) | 4800 | `"                    question, clean_mode, dialogue_context,"` | — |
-| [SRC-1AE03B9EC3-L004801](../../agents/web_agent.py#L4801) | 4801 | `"                    \"planner_detected_unresolved_referent\","` | — |
-| [SRC-1AE03B9EC3-L004802](../../agents/web_agent.py#L4802) | 4802 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004803](../../agents/web_agent.py#L4803) | 4803 | `"            working_question = ("` | — |
-| [SRC-1AE03B9EC3-L004804](../../agents/web_agent.py#L4804) | 4804 | `"                question if dialogue_context.get(\"topic_shift\")"` | — |
-| [SRC-1AE03B9EC3-L004805](../../agents/web_agent.py#L4805) | 4805 | `"                else dialogue_context.get(\"resolved_question\") or working_question"` | — |
-| [SRC-1AE03B9EC3-L004806](../../agents/web_agent.py#L4806) | 4806 | `"            )"` | — |

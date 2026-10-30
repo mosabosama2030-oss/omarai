@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000255 إلى SRC-F725E90B2A-L001054
+- النطاق: SRC-F725E90B2A-L000240 إلى SRC-F725E90B2A-L001039
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000240](../../tests/test_web_agent.py#L240) | 240 | `"    )"` | — |
+| [SRC-F725E90B2A-L000241](../../tests/test_web_agent.py#L241) | 241 | `"    assert plan[\"planning_method\"] == \"language_model\""` | — |
+| [SRC-F725E90B2A-L000242](../../tests/test_web_agent.py#L242) | 242 | `"    assert plan[\"social_focus\"] is True"` | — |
+| [SRC-F725E90B2A-L000243](../../tests/test_web_agent.py#L243) | 243 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
+| [SRC-F725E90B2A-L000244](../../tests/test_web_agent.py#L244) | 244 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-F725E90B2A-L000245](../../tests/test_web_agent.py#L245) | 245 | `""` | — |
+| [SRC-F725E90B2A-L000246](../../tests/test_web_agent.py#L246) | 246 | `""` | — |
+| [SRC-F725E90B2A-L000247](../../tests/test_web_agent.py#L247) | 247 | `"def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000248](../../tests/test_web_agent.py#L248) | 248 | `"    import httpx"` | — |
+| [SRC-F725E90B2A-L000249](../../tests/test_web_agent.py#L249) | 249 | `""` | — |
+| [SRC-F725E90B2A-L000250](../../tests/test_web_agent.py#L250) | 250 | `"    reddit_xml = \"\"\"<rss><channel><item>"` | — |
+| [SRC-F725E90B2A-L000251](../../tests/test_web_agent.py#L251) | 251 | `"      <title>تجربة سيارة كهربائية</title>"` | — |
+| [SRC-F725E90B2A-L000252](../../tests/test_web_agent.py#L252) | 252 | `"      <link>https://www.reddit.com/r/cars/comments/abc123/test/</link>"` | — |
+| [SRC-F725E90B2A-L000253](../../tests/test_web_agent.py#L253) | 253 | `"      <description>استهلاك البطارية في الحر</description>"` | — |
+| [SRC-F725E90B2A-L000254](../../tests/test_web_agent.py#L254) | 254 | `"      <pubDate>Mon, 12 Oct 2026 10:00:00 GMT</pubDate>"` | — |
 | [SRC-F725E90B2A-L000255](../../tests/test_web_agent.py#L255) | 255 | `"    </item></channel></rss>\"\"\""` | — |
 | [SRC-F725E90B2A-L000256](../../tests/test_web_agent.py#L256) | 256 | `""` | — |
 | [SRC-F725E90B2A-L000257](../../tests/test_web_agent.py#L257) | 257 | `"    class FakeResponse:"` | — |
@@ -801,18 +816,3 @@
 | [SRC-F725E90B2A-L001037](../../tests/test_web_agent.py#L1037) | 1037 | `"                        }],"` | — |
 | [SRC-F725E90B2A-L001038](../../tests/test_web_agent.py#L1038) | 1038 | `"                    },"` | — |
 | [SRC-F725E90B2A-L001039](../../tests/test_web_agent.py#L1039) | 1039 | `"                    \"finish_reason\": \"stop\","` | — |
-| [SRC-F725E90B2A-L001040](../../tests/test_web_agent.py#L1040) | 1040 | `"                }]"` | — |
-| [SRC-F725E90B2A-L001041](../../tests/test_web_agent.py#L1041) | 1041 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L001042](../../tests/test_web_agent.py#L1042) | 1042 | `""` | — |
-| [SRC-F725E90B2A-L001043](../../tests/test_web_agent.py#L1043) | 1043 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-F725E90B2A-L001044](../../tests/test_web_agent.py#L1044) | 1044 | `"        seen[\"payload\"] = json.loads(request.data.decode(\"utf-8\"))"` | — |
-| [SRC-F725E90B2A-L001045](../../tests/test_web_agent.py#L1045) | 1045 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L001046](../../tests/test_web_agent.py#L1046) | 1046 | `""` | — |
-| [SRC-F725E90B2A-L001047](../../tests/test_web_agent.py#L1047) | 1047 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L001048](../../tests/test_web_agent.py#L1048) | 1048 | `"    result = agent._request_completion("` | — |
-| [SRC-F725E90B2A-L001049](../../tests/test_web_agent.py#L1049) | 1049 | `"        [{\"role\": \"user\", \"content\": \"ابحث عن أحدث تقرير\"}],"` | — |
-| [SRC-F725E90B2A-L001050](../../tests/test_web_agent.py#L1050) | 1050 | `"        model=\"example/model\","` | — |
-| [SRC-F725E90B2A-L001051](../../tests/test_web_agent.py#L1051) | 1051 | `"        enable_web_search=True,"` | — |
-| [SRC-F725E90B2A-L001052](../../tests/test_web_agent.py#L1052) | 1052 | `"    )"` | — |
-| [SRC-F725E90B2A-L001053](../../tests/test_web_agent.py#L1053) | 1053 | `""` | — |
-| [SRC-F725E90B2A-L001054](../../tests/test_web_agent.py#L1054) | 1054 | `"    assert result == \"تحليل مستند إلى بحث حي.\""` | — |

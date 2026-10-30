@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000595 إلى SRC-90FAA34ADE-L000277
+- النطاق: SRC-4FFD5AFC54-L000580 إلى SRC-90FAA34ADE-L000262
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000580](../../scripts/run_answer_quality_benchmark.py#L580) | 580 | `"    print("` | — |
+| [SRC-4FFD5AFC54-L000581](../../scripts/run_answer_quality_benchmark.py#L581) | 581 | `"        \"LIVE mode: fixtures are NOT injected into the server. \""` | — |
+| [SRC-4FFD5AFC54-L000582](../../scripts/run_answer_quality_benchmark.py#L582) | 582 | `"        \"Answers are recorded as NOT_TESTED (quality) unless transport fails.\""` | — |
+| [SRC-4FFD5AFC54-L000583](../../scripts/run_answer_quality_benchmark.py#L583) | 583 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000584](../../scripts/run_answer_quality_benchmark.py#L584) | 584 | `"    for case in cases:"` | — |
+| [SRC-4FFD5AFC54-L000585](../../scripts/run_answer_quality_benchmark.py#L585) | 585 | `"        cid = case[\"case_id\"]"` | — |
+| [SRC-4FFD5AFC54-L000586](../../scripts/run_answer_quality_benchmark.py#L586) | 586 | `"        prompt = case[\"question\"]"` | — |
+| [SRC-4FFD5AFC54-L000587](../../scripts/run_answer_quality_benchmark.py#L587) | 587 | `"        request_started = time.perf_counter()"` | — |
+| [SRC-4FFD5AFC54-L000588](../../scripts/run_answer_quality_benchmark.py#L588) | 588 | `"        status_code, payload = post_agent(safe_base_url, prompt, timeout, token)"` | — |
+| [SRC-4FFD5AFC54-L000589](../../scripts/run_answer_quality_benchmark.py#L589) | 589 | `"        elapsed_ms = round((time.perf_counter() - request_started) * 1000, 2)"` | — |
+| [SRC-4FFD5AFC54-L000590](../../scripts/run_answer_quality_benchmark.py#L590) | 590 | `"        if isinstance(payload, dict):"` | — |
+| [SRC-4FFD5AFC54-L000591](../../scripts/run_answer_quality_benchmark.py#L591) | 591 | `"            safe_payload = json.loads(redact_secrets(json.dumps(payload, ensure_ascii=False)))"` | — |
+| [SRC-4FFD5AFC54-L000592](../../scripts/run_answer_quality_benchmark.py#L592) | 592 | `"        else:"` | — |
+| [SRC-4FFD5AFC54-L000593](../../scripts/run_answer_quality_benchmark.py#L593) | 593 | `"            safe_payload = redact_secrets(str(payload))"` | — |
+| [SRC-4FFD5AFC54-L000594](../../scripts/run_answer_quality_benchmark.py#L594) | 594 | `""` | — |
 | [SRC-4FFD5AFC54-L000595](../../scripts/run_answer_quality_benchmark.py#L595) | 595 | `"        transport_ok = 200 <= status_code < 300"` | — |
 | [SRC-4FFD5AFC54-L000596](../../scripts/run_answer_quality_benchmark.py#L596) | 596 | `"        response_metrics = _response_metrics(safe_payload, case[\"expected_strategy\"], transport_ok)"` | — |
 | [SRC-4FFD5AFC54-L000597](../../scripts/run_answer_quality_benchmark.py#L597) | 597 | `"        if request_cost_source is not None:"` | — |
@@ -828,18 +843,3 @@
 | [SRC-90FAA34ADE-L000260](../../tests/fixtures/answer_quality_cases.json#L260) | 260 | `"        \"Claims official sources that were not retrieved\""` | — |
 | [SRC-90FAA34ADE-L000261](../../tests/fixtures/answer_quality_cases.json#L261) | 261 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000262](../../tests/fixtures/answer_quality_cases.json#L262) | 262 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000263](../../tests/fixtures/answer_quality_cases.json#L263) | 263 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000264](../../tests/fixtures/answer_quality_cases.json#L264) | 264 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000265](../../tests/fixtures/answer_quality_cases.json#L265) | 265 | `"      \"case_id\": \"AQ-011\","` | — |
-| [SRC-90FAA34ADE-L000266](../../tests/fixtures/answer_quality_cases.json#L266) | 266 | `"      \"category\": \"ambiguous_clarify\","` | — |
-| [SRC-90FAA34ADE-L000267](../../tests/fixtures/answer_quality_cases.json#L267) | 267 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000268](../../tests/fixtures/answer_quality_cases.json#L268) | 268 | `"      \"question\": \"كام سعرها؟\","` | — |
-| [SRC-90FAA34ADE-L000269](../../tests/fixtures/answer_quality_cases.json#L269) | 269 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L000270](../../tests/fixtures/answer_quality_cases.json#L270) | 270 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000271](../../tests/fixtures/answer_quality_cases.json#L271) | 271 | `"        \"Asks what product/service/location is meant\","` | — |
-| [SRC-90FAA34ADE-L000272](../../tests/fixtures/answer_quality_cases.json#L272) | 272 | `"        \"Does not invent a price\""` | — |
-| [SRC-90FAA34ADE-L000273](../../tests/fixtures/answer_quality_cases.json#L273) | 273 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000274](../../tests/fixtures/answer_quality_cases.json#L274) | 274 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000275](../../tests/fixtures/answer_quality_cases.json#L275) | 275 | `"        \"Gives a random market price\","` | — |
-| [SRC-90FAA34ADE-L000276](../../tests/fixtures/answer_quality_cases.json#L276) | 276 | `"        \"Assumes a previous product without history\""` | — |
-| [SRC-90FAA34ADE-L000277](../../tests/fixtures/answer_quality_cases.json#L277) | 277 | `"      ],"` | — |

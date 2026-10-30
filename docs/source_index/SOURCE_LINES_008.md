@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000935 إلى SRC-1AE03B9EC3-L000006
+- النطاق: SRC-686F71AA50-L000920 إلى SRC-0799EEEB02-L000302
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000920](../../agents/task_understanding.py#L920) | 920 | `"            \"max_question_chars\": MAX_TASK_CHARS,"` | — |
+| [SRC-686F71AA50-L000921](../../agents/task_understanding.py#L921) | 921 | `"            \"max_aspects\": MAX_TASK_ASPECTS,"` | — |
+| [SRC-686F71AA50-L000922](../../agents/task_understanding.py#L922) | 922 | `"            \"max_query_strategies\": MAX_STRATEGY_QUERIES,"` | — |
+| [SRC-686F71AA50-L000923](../../agents/task_understanding.py#L923) | 923 | `"        },"` | — |
+| [SRC-686F71AA50-L000924](../../agents/task_understanding.py#L924) | 924 | `"        \"claim\": \"task planning metadata only; not semantic certainty or factual verification\","` | — |
+| [SRC-686F71AA50-L000925](../../agents/task_understanding.py#L925) | 925 | `"    }"` | — |
+| [SRC-686F71AA50-L000926](../../agents/task_understanding.py#L926) | 926 | `"    if plan and isinstance(plan, dict):"` | — |
+| [SRC-686F71AA50-L000927](../../agents/task_understanding.py#L927) | 927 | `"        spec[\"planner_freshness\"] = str(plan.get(\"freshness\") or \"unknown\")"` | — |
+| [SRC-686F71AA50-L000928](../../agents/task_understanding.py#L928) | 928 | `"        spec[\"planner_depth\"] = str(plan.get(\"depth\") or \"unknown\")"` | — |
+| [SRC-686F71AA50-L000929](../../agents/task_understanding.py#L929) | 929 | `"    return spec"` | — |
+| [SRC-686F71AA50-L000930](../../agents/task_understanding.py#L930) | 930 | `""` | — |
+| [SRC-686F71AA50-L000931](../../agents/task_understanding.py#L931) | 931 | `""` | — |
+| [SRC-686F71AA50-L000932](../../agents/task_understanding.py#L932) | 932 | `"def _query_key(value: str) -> str:"` | — |
+| [SRC-686F71AA50-L000933](../../agents/task_understanding.py#L933) | 933 | `"    return normalize_text(value)"` | — |
+| [SRC-686F71AA50-L000934](../../agents/task_understanding.py#L934) | 934 | `""` | — |
 | [SRC-686F71AA50-L000935](../../agents/task_understanding.py#L935) | 935 | `""` | — |
 | [SRC-686F71AA50-L000936](../../agents/task_understanding.py#L936) | 936 | `"def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tuple[str, str, str]]:"` | — |
 | [SRC-686F71AA50-L000937](../../agents/task_understanding.py#L937) | 937 | `"    family = str(spec.get(\"task_family\") or \"\")"` | — |
@@ -810,27 +825,3 @@
 | [SRC-0799EEEB02-L000300](../../agents/tool_execution_status.py#L300) | 300 | `"    elif review_status in {\"not_run\", \"not_assessed\", \"not_verified\"}:"` | — |
 | [SRC-0799EEEB02-L000301](../../agents/tool_execution_status.py#L301) | 301 | `"        status = ("` | — |
 | [SRC-0799EEEB02-L000302](../../agents/tool_execution_status.py#L302) | 302 | `"            \"not_attempted_no_evidence\""` | — |
-| [SRC-0799EEEB02-L000303](../../agents/tool_execution_status.py#L303) | 303 | `"            if not source_rows else \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000304](../../agents/tool_execution_status.py#L304) | 304 | `"        )"` | — |
-| [SRC-0799EEEB02-L000305](../../agents/tool_execution_status.py#L305) | 305 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000306](../../agents/tool_execution_status.py#L306) | 306 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000307](../../agents/tool_execution_status.py#L307) | 307 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000308](../../agents/tool_execution_status.py#L308) | 308 | `"        \"review_status\": review_status,"` | — |
-| [SRC-0799EEEB02-L000309](../../agents/tool_execution_status.py#L309) | 309 | `"        \"independent_fact_check\": False,"` | — |
-| [SRC-0799EEEB02-L000310](../../agents/tool_execution_status.py#L310) | 310 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000311](../../agents/tool_execution_status.py#L311) | 311 | `"    return rows"` | — |
-## الوكيل والمنطق
-
-### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-1AE03B9EC3-L000001](../../agents/web_agent.py#L1) | 1 | `"\"\"\"Grounded natural-language web research for Omarai."` | — |
-| [SRC-1AE03B9EC3-L000002](../../agents/web_agent.py#L2) | 2 | `""` | — |
-| [SRC-1AE03B9EC3-L000003](../../agents/web_agent.py#L3) | 3 | `"Searches public web results, extracts a small amount of page text, then asks an"` | — |
-| [SRC-1AE03B9EC3-L000004](../../agents/web_agent.py#L4) | 4 | `"OpenAI-compatible language model to answer in the user's language with sources."` | — |
-| [SRC-1AE03B9EC3-L000005](../../agents/web_agent.py#L5) | 5 | `"API credentials are read only from environment variables and are never returned."` | — |
-| [SRC-1AE03B9EC3-L000006](../../agents/web_agent.py#L6) | 6 | `"\"\"\""` | — |

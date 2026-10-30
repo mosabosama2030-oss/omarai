@@ -4,9 +4,27 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000007 إلى SRC-1AE03B9EC3-L000806
+- النطاق: SRC-0799EEEB02-L000303 إلى SRC-1AE03B9EC3-L000791
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-0799EEEB02 — [agents/tool_execution_status.py](../../agents/tool_execution_status.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-0799EEEB02-L000303](../../agents/tool_execution_status.py#L303) | 303 | `"            if not source_rows else \"not_attempted\""` | — |
+| [SRC-0799EEEB02-L000304](../../agents/tool_execution_status.py#L304) | 304 | `"        )"` | — |
+| [SRC-0799EEEB02-L000305](../../agents/tool_execution_status.py#L305) | 305 | `"    else:"` | — |
+| [SRC-0799EEEB02-L000306](../../agents/tool_execution_status.py#L306) | 306 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000307](../../agents/tool_execution_status.py#L307) | 307 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000308](../../agents/tool_execution_status.py#L308) | 308 | `"        \"review_status\": review_status,"` | — |
+| [SRC-0799EEEB02-L000309](../../agents/tool_execution_status.py#L309) | 309 | `"        \"independent_fact_check\": False,"` | — |
+| [SRC-0799EEEB02-L000310](../../agents/tool_execution_status.py#L310) | 310 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000311](../../agents/tool_execution_status.py#L311) | 311 | `"    return rows"` | — |
 ## الوكيل والمنطق
 
 ### FILE-1AE03B9EC3 — [agents/web_agent.py](../../agents/web_agent.py#L1)
@@ -16,6 +34,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000001](../../agents/web_agent.py#L1) | 1 | `"\"\"\"Grounded natural-language web research for Omarai."` | — |
+| [SRC-1AE03B9EC3-L000002](../../agents/web_agent.py#L2) | 2 | `""` | — |
+| [SRC-1AE03B9EC3-L000003](../../agents/web_agent.py#L3) | 3 | `"Searches public web results, extracts a small amount of page text, then asks an"` | — |
+| [SRC-1AE03B9EC3-L000004](../../agents/web_agent.py#L4) | 4 | `"OpenAI-compatible language model to answer in the user's language with sources."` | — |
+| [SRC-1AE03B9EC3-L000005](../../agents/web_agent.py#L5) | 5 | `"API credentials are read only from environment variables and are never returned."` | — |
+| [SRC-1AE03B9EC3-L000006](../../agents/web_agent.py#L6) | 6 | `"\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000007](../../agents/web_agent.py#L7) | 7 | `"from __future__ import annotations"` | — |
 | [SRC-1AE03B9EC3-L000008](../../agents/web_agent.py#L8) | 8 | `""` | — |
 | [SRC-1AE03B9EC3-L000009](../../agents/web_agent.py#L9) | 9 | `"import asyncio"` | — |
@@ -801,18 +825,3 @@
 | [SRC-1AE03B9EC3-L000789](../../agents/web_agent.py#L789) | 789 | `"            term in value"` | — |
 | [SRC-1AE03B9EC3-L000790](../../agents/web_agent.py#L790) | 790 | `"            for term in (\"بحثت\", \"اجريت بحث\", \"قمت بالبحث\", \"عملت بحث\", \"did you search\", \"did you browse\")"` | — |
 | [SRC-1AE03B9EC3-L000791](../../agents/web_agent.py#L791) | 791 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000792](../../agents/web_agent.py#L792) | 792 | `"        references_web = any("` | — |
-| [SRC-1AE03B9EC3-L000793](../../agents/web_agent.py#L793) | 793 | `"            term in value for term in (\"انترنت\", \"النت\", \"الويب\", \"ويب\", \"the web\", \"online\")"` | — |
-| [SRC-1AE03B9EC3-L000794](../../agents/web_agent.py#L794) | 794 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000795](../../agents/web_agent.py#L795) | 795 | `"        references_current_answer = any("` | — |
-| [SRC-1AE03B9EC3-L000796](../../agents/web_agent.py#L796) | 796 | `"            term in value"` | — |
-| [SRC-1AE03B9EC3-L000797](../../agents/web_agent.py#L797) | 797 | `"            for term in ("` | — |
-| [SRC-1AE03B9EC3-L000798](../../agents/web_agent.py#L798) | 798 | `"                \"اجاب\", \"الرد الحالي\", \"هذا السؤال\", \"هذه الاجابه\","` | — |
-| [SRC-1AE03B9EC3-L000799](../../agents/web_agent.py#L799) | 799 | `"                \"this answer\", \"this response\","` | — |
-| [SRC-1AE03B9EC3-L000800](../../agents/web_agent.py#L800) | 800 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L000801](../../agents/web_agent.py#L801) | 801 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000802](../../agents/web_agent.py#L802) | 802 | `"        return asks_if_searched and references_web and references_current_answer"` | — |
-| [SRC-1AE03B9EC3-L000803](../../agents/web_agent.py#L803) | 803 | `""` | — |
-| [SRC-1AE03B9EC3-L000804](../../agents/web_agent.py#L804) | 804 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L000805](../../agents/web_agent.py#L805) | 805 | `"    def _is_self_question(question: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L000806](../../agents/web_agent.py#L806) | 806 | `"        \"\"\"Recognize questions about Omarai itself so they do not need web search.\"\"\""` | — |
