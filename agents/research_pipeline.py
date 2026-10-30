@@ -107,6 +107,7 @@ def build_research_pipeline(
     mode: str = "auto",
     intent_route: str = "",
     dialogue_context: dict[str, Any] | None = None,
+    task_spec: dict[str, Any] | None = None,
     sources: list[dict[str, Any]] | None = None,
     compact_fn: Callable[[str], str] | None = None,
     semantic_matcher: Callable[[str, dict[str, Any]], Any] | None = None,
@@ -127,13 +128,20 @@ def build_research_pipeline(
     )
     route = intent.get("route", "CLARIFY")
     safe_plan = dict(plan) if isinstance(plan, dict) else {}
-    task_spec = build_task_spec(
+    reusable_task_spec = (
+        task_spec
+        if isinstance(task_spec, dict)
+        and task_spec.get("schema") == "omarai.task_spec.v1"
+        else None
+    )
+    resolved_task_spec = reusable_task_spec or build_task_spec(
         contextual_question,
         mode=mode,
         intent_route=route,
         plan=safe_plan,
         dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
     )
+    task_spec = resolved_task_spec
     aspects = _clean_aspects(task_spec, contextual_question)
 
     if route == "CLARIFY" or intent.get("needs_clarification"):
