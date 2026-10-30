@@ -178,6 +178,12 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     out_of_range_citation_reference_count = _int(
         claim_ledger_summary.get("out_of_range_reference_count")
     ) or 0
+    truncated_citation_reference_list_count = _int(
+        claim_ledger_summary.get("truncated_citation_reference_list_count")
+    ) or 0
+    claim_ledger_truncated_count = int(
+        claim_ledger_status == "built" and claim_ledger.get("truncated") is True
+    )
     gap_count = sum(
         _int(integrity.get(key)) or 0
         for key in ("potentially_missing_target_count", "source_evidence_gap_count")
@@ -197,6 +203,8 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
         max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
         + weak_citation_alignment_count
         + out_of_range_citation_reference_count
+        + truncated_citation_reference_list_count
+        + claim_ledger_truncated_count
         + claim_ledger_build_failure_count
     )
     fulfillment = str(
@@ -324,6 +332,8 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "weak_citation_alignment_count": weak_citation_alignment_count,
             "citation_support_warning_count": citation_support_warning_count,
             "out_of_range_citation_reference_count": out_of_range_citation_reference_count,
+            "truncated_citation_reference_list_count": truncated_citation_reference_list_count,
+            "claim_ledger_truncated_count": claim_ledger_truncated_count,
             "claim_ledger_status": claim_ledger_status or "missing",
             "claim_ledger_build_failure_count": claim_ledger_build_failure_count,
         },
