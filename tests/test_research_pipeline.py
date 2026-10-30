@@ -105,7 +105,7 @@ def test_fallback_plan_exposes_same_unified_pipeline_contract():
 
 def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():
     result = build_research_pipeline(
-        "ما سعر الهاتف؟",
+        "ما سعر الهاتف ومدة الضمان؟",
         {"queries": ["الهاتف"]},
         intent_route="WEB_DEEP",
         sources=[{"title": "سعر الهاتف", "url": "https://example.com"}],
