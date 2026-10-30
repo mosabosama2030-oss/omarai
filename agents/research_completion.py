@@ -10,6 +10,9 @@ _RESEARCH_KINDS = frozenset({
     "web_research", "web_fallback", "insufficient_evidence",
     "lead_discovery_no_qualified_candidates",
 })
+_CLAIM_LEDGER_KINDS = frozenset({
+    "web_research", "web_fallback", "insufficient_evidence",
+})
 _RESEARCH_ERRORS = frozenset({
     "attempted_research_error", "unknown_after_research_error",
     "unknown_after_budget_exhaustion",
@@ -170,7 +173,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     # Missing, failed, or unknown ledger states must therefore remain visible as a
     # completion warning instead of silently looking like a clean citation screen.
     claim_ledger_build_failure_count = int(
-        kind in _RESEARCH_KINDS and claim_ledger_status != "built"
+        kind in _CLAIM_LEDGER_KINDS and claim_ledger_status != "built"
     )
     out_of_range_citation_reference_count = _int(
         claim_ledger_summary.get("out_of_range_reference_count")
