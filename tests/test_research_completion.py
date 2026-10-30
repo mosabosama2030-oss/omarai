@@ -296,3 +296,34 @@ def test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate() -
     assert completion["counters"]["citation_support_warning_count"] == 1
     assert completion["phases"]["citation_support_screen"] == "warning_signals_detected"
     assert completion["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_explicit_claim_ledger_build_failure_prevents_completed_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": {
+            "status": "not_run",
+            "semantic_verification": False,
+            "error_class": "claim_evidence_trace_error",
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert result["phases"]["semantic_verification"] == "not_performed"
