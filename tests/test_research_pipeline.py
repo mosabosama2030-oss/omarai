@@ -175,3 +175,22 @@ def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():
     )
 
     assert result["stages"]["context_resolution"] == "not_needed"
+
+@pytest.mark.parametrize(
+    "sources",
+    [
+        [None, "not-a-source", {}],
+        [{"url": "https://example.com/no-text"}],
+        [],
+    ],
+)
+def test_pipeline_does_not_claim_lexical_matching_without_readable_source_text(sources):
+    result = build_research_pipeline(
+        "ما سعر الهاتف والضمان؟",
+        {"queries": ["سعر الهاتف والضمان"]},
+        intent_route="WEB_SIMPLE",
+        sources=sources,
+    )
+
+    assert result["stages"]["lexical_matching"] == "not_assessed"
+    assert result["evidence_ledger"]["covered"] == []
