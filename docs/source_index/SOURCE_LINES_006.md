@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000290 إلى SRC-686F71AA50-L000048
+- النطاق: SRC-1E32639872-L000280 إلى SRC-686F71AA50-L000028
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,63 +16,83 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1E32639872-L000290](../../agents/research_completion.py#L290) | 290 | `"                else \"no_lexical_warning_signals_detected_not_verified\""` | — |
-| [SRC-1E32639872-L000291](../../agents/research_completion.py#L291) | 291 | `"                if any(key in integrity for key in ("` | — |
-| [SRC-1E32639872-L000292](../../agents/research_completion.py#L292) | 292 | `"                    \"potentially_unsupported_numeric_count\","` | — |
-| [SRC-1E32639872-L000293](../../agents/research_completion.py#L293) | 293 | `"                    \"potentially_unsupported_numeric_by_citation_count\","` | — |
-| [SRC-1E32639872-L000294](../../agents/research_completion.py#L294) | 294 | `"                    \"weak_citation_alignment_count\","` | — |
-| [SRC-1E32639872-L000295](../../agents/research_completion.py#L295) | 295 | `"                ))"` | — |
-| [SRC-1E32639872-L000296](../../agents/research_completion.py#L296) | 296 | `"                else \"not_assessed\""` | — |
-| [SRC-1E32639872-L000297](../../agents/research_completion.py#L297) | 297 | `"            ),"` | — |
-| [SRC-1E32639872-L000298](../../agents/research_completion.py#L298) | 298 | `"            \"semantic_verification\": \"not_performed\","` | — |
-| [SRC-1E32639872-L000299](../../agents/research_completion.py#L299) | 299 | `"        },"` | — |
-| [SRC-1E32639872-L000300](../../agents/research_completion.py#L300) | 300 | `"        \"counters\": {"` | — |
-| [SRC-1E32639872-L000301](../../agents/research_completion.py#L301) | 301 | `"            \"queries_planned\": _int(report.get(\"queries_planned\")),"` | — |
-| [SRC-1E32639872-L000302](../../agents/research_completion.py#L302) | 302 | `"            \"queries_attempted\": _int(report.get(\"queries_attempted\")),"` | — |
-| [SRC-1E32639872-L000303](../../agents/research_completion.py#L303) | 303 | `"            \"per_query_result_count_sum\": query_total,"` | — |
-| [SRC-1E32639872-L000304](../../agents/research_completion.py#L304) | 304 | `"            \"per_query_result_count_sum_semantics\": \"sum_of_reported_per_query_counts_not_deduplicated_sources\","` | — |
-| [SRC-1E32639872-L000305](../../agents/research_completion.py#L305) | 305 | `"            \"query_result_row_count\": len(query_rows),"` | — |
-| [SRC-1E32639872-L000306](../../agents/research_completion.py#L306) | 306 | `"            \"query_result_rows_with_counts\": sum("` | — |
-| [SRC-1E32639872-L000307](../../agents/research_completion.py#L307) | 307 | `"                isinstance(row, dict) and _int(row.get(\"results\")) is not None"` | — |
-| [SRC-1E32639872-L000308](../../agents/research_completion.py#L308) | 308 | `"                for row in query_rows"` | — |
-| [SRC-1E32639872-L000309](../../agents/research_completion.py#L309) | 309 | `"            ),"` | — |
-| [SRC-1E32639872-L000310](../../agents/research_completion.py#L310) | 310 | `"            \"final_source_list_count\": len(sources),"` | — |
-| [SRC-1E32639872-L000311](../../agents/research_completion.py#L311) | 311 | `"            \"unique_normalized_url_count\": len(unique_urls),"` | — |
-| [SRC-1E32639872-L000312](../../agents/research_completion.py#L312) | 312 | `"            \"duplicate_normalized_url_count\": max(0, len(url_keys) - len(unique_urls)),"` | — |
-| [SRC-1E32639872-L000313](../../agents/research_completion.py#L313) | 313 | `"            \"distinct_registrable_domain_count\": len(domains),"` | — |
-| [SRC-1E32639872-L000314](../../agents/research_completion.py#L314) | 314 | `"            \"pages_fetched_flag_count\": fetched,"` | — |
-| [SRC-1E32639872-L000315](../../agents/research_completion.py#L315) | 315 | `"            \"pages_read_with_text_count\": read,"` | — |
-| [SRC-1E32639872-L000316](../../agents/research_completion.py#L316) | 316 | `"            \"snippet_only_source_count\": snippet_only,"` | — |
-| [SRC-1E32639872-L000317](../../agents/research_completion.py#L317) | 317 | `"            \"page_text_without_fetched_flag_count\": unflagged_text,"` | — |
-| [SRC-1E32639872-L000318](../../agents/research_completion.py#L318) | 318 | `"            \"connector_status_counts\": connector_counts,"` | — |
-| [SRC-1E32639872-L000319](../../agents/research_completion.py#L319) | 319 | `"            \"connector_failure_count\": connector_errors,"` | — |
-| [SRC-1E32639872-L000320](../../agents/research_completion.py#L320) | 320 | `"            \"connector_success_count\": connector_ok,"` | — |
-| [SRC-1E32639872-L000321](../../agents/research_completion.py#L321) | 321 | `"            \"guardrail_rejected_candidate_count\": rejected,"` | — |
-| [SRC-1E32639872-L000322](../../agents/research_completion.py#L322) | 322 | `"            \"potentially_unsupported_numeric_count\": unsupported_numeric_count,"` | — |
-| [SRC-1E32639872-L000323](../../agents/research_completion.py#L323) | 323 | `"            \"potentially_unsupported_numeric_by_citation_count\": unsupported_numeric_by_citation_count,"` | — |
-| [SRC-1E32639872-L000324](../../agents/research_completion.py#L324) | 324 | `"            \"weak_citation_alignment_count\": weak_citation_alignment_count,"` | — |
-| [SRC-1E32639872-L000325](../../agents/research_completion.py#L325) | 325 | `"            \"citation_support_warning_count\": citation_support_warning_count,"` | — |
-| [SRC-1E32639872-L000326](../../agents/research_completion.py#L326) | 326 | `"            \"out_of_range_citation_reference_count\": out_of_range_citation_reference_count,"` | — |
-| [SRC-1E32639872-L000327](../../agents/research_completion.py#L327) | 327 | `"            \"claim_ledger_status\": claim_ledger_status or \"missing\","` | — |
-| [SRC-1E32639872-L000328](../../agents/research_completion.py#L328) | 328 | `"            \"claim_ledger_build_failure_count\": claim_ledger_build_failure_count,"` | — |
-| [SRC-1E32639872-L000329](../../agents/research_completion.py#L329) | 329 | `"        },"` | — |
-| [SRC-1E32639872-L000330](../../agents/research_completion.py#L330) | 330 | `"        \"counter_consistency\": {"` | — |
-| [SRC-1E32639872-L000331](../../agents/research_completion.py#L331) | 331 | `"            \"status\": \"mismatch_detected\" if counter_issues else ("` | — |
-| [SRC-1E32639872-L000332](../../agents/research_completion.py#L332) | 332 | `"                \"matched\" if reported_sources is not None or reported_fetched is not None"` | — |
-| [SRC-1E32639872-L000333](../../agents/research_completion.py#L333) | 333 | `"                else \"not_computable\""` | — |
-| [SRC-1E32639872-L000334](../../agents/research_completion.py#L334) | 334 | `"            ),"` | — |
-| [SRC-1E32639872-L000335](../../agents/research_completion.py#L335) | 335 | `"            \"reported_unique_sources\": reported_sources,"` | — |
-| [SRC-1E32639872-L000336](../../agents/research_completion.py#L336) | 336 | `"            \"recomputed_final_source_count\": len(sources),"` | — |
-| [SRC-1E32639872-L000337](../../agents/research_completion.py#L337) | 337 | `"            \"reported_pages_fetched\": reported_fetched,"` | — |
-| [SRC-1E32639872-L000338](../../agents/research_completion.py#L338) | 338 | `"            \"recomputed_pages_fetched_flag_count\": fetched,"` | — |
-| [SRC-1E32639872-L000339](../../agents/research_completion.py#L339) | 339 | `"            \"issues\": counter_issues,"` | — |
-| [SRC-1E32639872-L000340](../../agents/research_completion.py#L340) | 340 | `"        },"` | — |
-| [SRC-1E32639872-L000341](../../agents/research_completion.py#L341) | 341 | `"        \"semantic_verification\": \"not_performed\","` | — |
-| [SRC-1E32639872-L000342](../../agents/research_completion.py#L342) | 342 | `"        \"warning\": ("` | — |
-| [SRC-1E32639872-L000343](../../agents/research_completion.py#L343) | 343 | `"            \"Readable pages and valid citation indexes do not prove semantic support \""` | — |
-| [SRC-1E32639872-L000344](../../agents/research_completion.py#L344) | 344 | `"            \"for each claim in the answer.\""` | — |
-| [SRC-1E32639872-L000345](../../agents/research_completion.py#L345) | 345 | `"        ),"` | — |
-| [SRC-1E32639872-L000346](../../agents/research_completion.py#L346) | 346 | `"    }"` | — |
+| [SRC-1E32639872-L000280](../../agents/research_completion.py#L280) | 280 | `"        generation_phase = \"not_completed\""` | — |
+| [SRC-1E32639872-L000281](../../agents/research_completion.py#L281) | 281 | `""` | — |
+| [SRC-1E32639872-L000282](../../agents/research_completion.py#L282) | 282 | `"    return {"` | — |
+| [SRC-1E32639872-L000283](../../agents/research_completion.py#L283) | 283 | `"        \"status\": status,"` | — |
+| [SRC-1E32639872-L000284](../../agents/research_completion.py#L284) | 284 | `"        \"status_semantics\": \"pipeline_state_not_probability_of_factual_correctness\","` | — |
+| [SRC-1E32639872-L000285](../../agents/research_completion.py#L285) | 285 | `"        \"phases\": {"` | — |
+| [SRC-1E32639872-L000286](../../agents/research_completion.py#L286) | 286 | `"            \"planning\": \"completed\" if isinstance(result.get(\"research_plan\"), dict) else \"unknown\","` | — |
+| [SRC-1E32639872-L000287](../../agents/research_completion.py#L287) | 287 | `"            \"search\": search_phase,"` | — |
+| [SRC-1E32639872-L000288](../../agents/research_completion.py#L288) | 288 | `"            \"source_filtering\": ("` | — |
+| [SRC-1E32639872-L000289](../../agents/research_completion.py#L289) | 289 | `"                \"sources_retained\" if sources else"` | — |
+| [SRC-1E32639872-L000290](../../agents/research_completion.py#L290) | 290 | `"                \"rejected_all_candidates\" if rejected else \"no_eligible_sources\""` | — |
+| [SRC-1E32639872-L000291](../../agents/research_completion.py#L291) | 291 | `"            ),"` | — |
+| [SRC-1E32639872-L000292](../../agents/research_completion.py#L292) | 292 | `"            \"page_reading\": read_phase,"` | — |
+| [SRC-1E32639872-L000293](../../agents/research_completion.py#L293) | 293 | `"            \"answer_generation\": generation_phase,"` | — |
+| [SRC-1E32639872-L000294](../../agents/research_completion.py#L294) | 294 | `"            \"citation_validation\": str(citations.get(\"status\") or \"not_run\"),"` | — |
+| [SRC-1E32639872-L000295](../../agents/research_completion.py#L295) | 295 | `"            \"citation_support_screen\": ("` | — |
+| [SRC-1E32639872-L000296](../../agents/research_completion.py#L296) | 296 | `"                \"warning_signals_detected\""` | — |
+| [SRC-1E32639872-L000297](../../agents/research_completion.py#L297) | 297 | `"                if citation_support_warning_count"` | — |
+| [SRC-1E32639872-L000298](../../agents/research_completion.py#L298) | 298 | `"                else \"no_lexical_warning_signals_detected_not_verified\""` | — |
+| [SRC-1E32639872-L000299](../../agents/research_completion.py#L299) | 299 | `"                if any(key in integrity for key in ("` | — |
+| [SRC-1E32639872-L000300](../../agents/research_completion.py#L300) | 300 | `"                    \"potentially_unsupported_numeric_count\","` | — |
+| [SRC-1E32639872-L000301](../../agents/research_completion.py#L301) | 301 | `"                    \"potentially_unsupported_numeric_by_citation_count\","` | — |
+| [SRC-1E32639872-L000302](../../agents/research_completion.py#L302) | 302 | `"                    \"weak_citation_alignment_count\","` | — |
+| [SRC-1E32639872-L000303](../../agents/research_completion.py#L303) | 303 | `"                ))"` | — |
+| [SRC-1E32639872-L000304](../../agents/research_completion.py#L304) | 304 | `"                else \"not_assessed\""` | — |
+| [SRC-1E32639872-L000305](../../agents/research_completion.py#L305) | 305 | `"            ),"` | — |
+| [SRC-1E32639872-L000306](../../agents/research_completion.py#L306) | 306 | `"            \"semantic_verification\": \"not_performed\","` | — |
+| [SRC-1E32639872-L000307](../../agents/research_completion.py#L307) | 307 | `"        },"` | — |
+| [SRC-1E32639872-L000308](../../agents/research_completion.py#L308) | 308 | `"        \"counters\": {"` | — |
+| [SRC-1E32639872-L000309](../../agents/research_completion.py#L309) | 309 | `"            \"queries_planned\": _int(report.get(\"queries_planned\")),"` | — |
+| [SRC-1E32639872-L000310](../../agents/research_completion.py#L310) | 310 | `"            \"queries_attempted\": _int(report.get(\"queries_attempted\")),"` | — |
+| [SRC-1E32639872-L000311](../../agents/research_completion.py#L311) | 311 | `"            \"per_query_result_count_sum\": query_total,"` | — |
+| [SRC-1E32639872-L000312](../../agents/research_completion.py#L312) | 312 | `"            \"per_query_result_count_sum_semantics\": \"sum_of_reported_per_query_counts_not_deduplicated_sources\","` | — |
+| [SRC-1E32639872-L000313](../../agents/research_completion.py#L313) | 313 | `"            \"query_result_row_count\": len(query_rows),"` | — |
+| [SRC-1E32639872-L000314](../../agents/research_completion.py#L314) | 314 | `"            \"query_result_rows_with_counts\": sum("` | — |
+| [SRC-1E32639872-L000315](../../agents/research_completion.py#L315) | 315 | `"                isinstance(row, dict) and _int(row.get(\"results\")) is not None"` | — |
+| [SRC-1E32639872-L000316](../../agents/research_completion.py#L316) | 316 | `"                for row in query_rows"` | — |
+| [SRC-1E32639872-L000317](../../agents/research_completion.py#L317) | 317 | `"            ),"` | — |
+| [SRC-1E32639872-L000318](../../agents/research_completion.py#L318) | 318 | `"            \"final_source_list_count\": len(sources),"` | — |
+| [SRC-1E32639872-L000319](../../agents/research_completion.py#L319) | 319 | `"            \"unique_normalized_url_count\": len(unique_urls),"` | — |
+| [SRC-1E32639872-L000320](../../agents/research_completion.py#L320) | 320 | `"            \"duplicate_normalized_url_count\": max(0, len(url_keys) - len(unique_urls)),"` | — |
+| [SRC-1E32639872-L000321](../../agents/research_completion.py#L321) | 321 | `"            \"distinct_registrable_domain_count\": len(domains),"` | — |
+| [SRC-1E32639872-L000322](../../agents/research_completion.py#L322) | 322 | `"            \"pages_fetched_flag_count\": fetched,"` | — |
+| [SRC-1E32639872-L000323](../../agents/research_completion.py#L323) | 323 | `"            \"pages_read_with_text_count\": read,"` | — |
+| [SRC-1E32639872-L000324](../../agents/research_completion.py#L324) | 324 | `"            \"snippet_only_source_count\": snippet_only,"` | — |
+| [SRC-1E32639872-L000325](../../agents/research_completion.py#L325) | 325 | `"            \"page_text_without_fetched_flag_count\": unflagged_text,"` | — |
+| [SRC-1E32639872-L000326](../../agents/research_completion.py#L326) | 326 | `"            \"connector_status_counts\": connector_counts,"` | — |
+| [SRC-1E32639872-L000327](../../agents/research_completion.py#L327) | 327 | `"            \"connector_failure_count\": connector_errors,"` | — |
+| [SRC-1E32639872-L000328](../../agents/research_completion.py#L328) | 328 | `"            \"connector_success_count\": connector_ok,"` | — |
+| [SRC-1E32639872-L000329](../../agents/research_completion.py#L329) | 329 | `"            \"guardrail_rejected_candidate_count\": rejected,"` | — |
+| [SRC-1E32639872-L000330](../../agents/research_completion.py#L330) | 330 | `"            \"potentially_unsupported_numeric_count\": unsupported_numeric_count,"` | — |
+| [SRC-1E32639872-L000331](../../agents/research_completion.py#L331) | 331 | `"            \"potentially_unsupported_numeric_by_citation_count\": unsupported_numeric_by_citation_count,"` | — |
+| [SRC-1E32639872-L000332](../../agents/research_completion.py#L332) | 332 | `"            \"weak_citation_alignment_count\": weak_citation_alignment_count,"` | — |
+| [SRC-1E32639872-L000333](../../agents/research_completion.py#L333) | 333 | `"            \"citation_support_warning_count\": citation_support_warning_count,"` | — |
+| [SRC-1E32639872-L000334](../../agents/research_completion.py#L334) | 334 | `"            \"out_of_range_citation_reference_count\": out_of_range_citation_reference_count,"` | — |
+| [SRC-1E32639872-L000335](../../agents/research_completion.py#L335) | 335 | `"            \"truncated_citation_reference_list_count\": truncated_citation_reference_list_count,"` | — |
+| [SRC-1E32639872-L000336](../../agents/research_completion.py#L336) | 336 | `"            \"claim_ledger_truncated_count\": claim_ledger_truncated_count,"` | — |
+| [SRC-1E32639872-L000337](../../agents/research_completion.py#L337) | 337 | `"            \"claim_ledger_status\": claim_ledger_status or \"missing\","` | — |
+| [SRC-1E32639872-L000338](../../agents/research_completion.py#L338) | 338 | `"            \"claim_ledger_build_failure_count\": claim_ledger_build_failure_count,"` | — |
+| [SRC-1E32639872-L000339](../../agents/research_completion.py#L339) | 339 | `"        },"` | — |
+| [SRC-1E32639872-L000340](../../agents/research_completion.py#L340) | 340 | `"        \"counter_consistency\": {"` | — |
+| [SRC-1E32639872-L000341](../../agents/research_completion.py#L341) | 341 | `"            \"status\": \"mismatch_detected\" if counter_issues else ("` | — |
+| [SRC-1E32639872-L000342](../../agents/research_completion.py#L342) | 342 | `"                \"matched\" if reported_sources is not None or reported_fetched is not None"` | — |
+| [SRC-1E32639872-L000343](../../agents/research_completion.py#L343) | 343 | `"                else \"not_computable\""` | — |
+| [SRC-1E32639872-L000344](../../agents/research_completion.py#L344) | 344 | `"            ),"` | — |
+| [SRC-1E32639872-L000345](../../agents/research_completion.py#L345) | 345 | `"            \"reported_unique_sources\": reported_sources,"` | — |
+| [SRC-1E32639872-L000346](../../agents/research_completion.py#L346) | 346 | `"            \"recomputed_final_source_count\": len(sources),"` | — |
+| [SRC-1E32639872-L000347](../../agents/research_completion.py#L347) | 347 | `"            \"reported_pages_fetched\": reported_fetched,"` | — |
+| [SRC-1E32639872-L000348](../../agents/research_completion.py#L348) | 348 | `"            \"recomputed_pages_fetched_flag_count\": fetched,"` | — |
+| [SRC-1E32639872-L000349](../../agents/research_completion.py#L349) | 349 | `"            \"issues\": counter_issues,"` | — |
+| [SRC-1E32639872-L000350](../../agents/research_completion.py#L350) | 350 | `"        },"` | — |
+| [SRC-1E32639872-L000351](../../agents/research_completion.py#L351) | 351 | `"        \"semantic_verification\": \"not_performed\","` | — |
+| [SRC-1E32639872-L000352](../../agents/research_completion.py#L352) | 352 | `"        \"warning\": ("` | — |
+| [SRC-1E32639872-L000353](../../agents/research_completion.py#L353) | 353 | `"            \"Readable pages and valid citation indexes do not prove semantic support \""` | — |
+| [SRC-1E32639872-L000354](../../agents/research_completion.py#L354) | 354 | `"            \"for each claim in the answer.\""` | — |
+| [SRC-1E32639872-L000355](../../agents/research_completion.py#L355) | 355 | `"        ),"` | — |
+| [SRC-1E32639872-L000356](../../agents/research_completion.py#L356) | 356 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-3AA6165B18 — [agents/research_guardrails.py](../../agents/research_guardrails.py#L1)
@@ -832,23 +852,3 @@
 | [SRC-686F71AA50-L000026](../../agents/task_understanding.py#L26) | 26 | `"    \"clarify_required_input\": \"إذا غاب مدخل إلزامي يغيّر معنى المهمة، اطلبه قبل تشغيل أداة أو اختراع هدف.\","` | — |
 | [SRC-686F71AA50-L000027](../../agents/task_understanding.py#L27) | 27 | `"    \"resolve_followup_slots\": \"في المتابعة، احتفظ فقط بالسياق الذي له مرجع واضح، وطبّق التغييرات التي ذكرها المستخدم، ولا ترث موضوعًا قديمًا بعد تغيير الموضوع.\","` | — |
 | [SRC-686F71AA50-L000028](../../agents/task_understanding.py#L28) | 28 | `"    \"verify_official_destination\": \"طابق اسم الجهة والبلد أولًا؛ فضّل نطاق الجهة أو رابطًا صادرًا عن بوابة رسمية موثوقة، ولا تعتبر امتداد النطاق وحده إثباتًا للملكية.\","` | — |
-| [SRC-686F71AA50-L000029](../../agents/task_understanding.py#L29) | 29 | `"    \"separate_event_and_publication_dates\": \"ميّز تاريخ وقوع الحدث عن تاريخ النشر وآخر تحديث وتاريخ الوصول؛ لا تستخدم خبرًا قديمًا لإثبات حالة متغيرة الآن.\","` | — |
-| [SRC-686F71AA50-L000030](../../agents/task_understanding.py#L30) | 30 | `"    \"reject_stale_current_claims\": \"للمعلومة الحالية، افحص حداثة المصدر وقابلية قراءة الصفحة وارتباطها بالحالة الحالية؛ اعرض عدم التأكد إذا غاب دليل حديث مؤهل.\","` | — |
-| [SRC-686F71AA50-L000031](../../agents/task_understanding.py#L31) | 31 | `"    \"decompose_explicit_criteria\": \"قسّم المقارنة إلى كل معيار صريح، وابحث عن دليل لكل معيار، وسجّل المحاور التي لا تزال بلا دليل بدل إسقاطها.\","` | — |
-| [SRC-686F71AA50-L000032](../../agents/task_understanding.py#L32) | 32 | `"    \"normalize_comparison_conditions\": \"قبل المقارنة، وحّد العملة والوحدات والفترة وظروف الاستخدام؛ لا تقارن قيمًا غير قابلة للمقارنة دون شرح الفرق.\","` | — |
-| [SRC-686F71AA50-L000033](../../agents/task_understanding.py#L33) | 33 | `"    \"separate_specs_and_experiences\": \"افصل المواصفات الرسمية عن الاختبارات الصحفية وتجارب الأفراد والإعلانات؛ لكل نوع منها ما يستطيع إثباته وحدوده.\","` | — |
-| [SRC-686F71AA50-L000034](../../agents/task_understanding.py#L34) | 34 | `"    \"balance_social_evidence\": \"ميّز التجربة الشخصية المحتملة عن السؤال والترويج والمحتوى الصحفي؛ اعرض عينة المنشورات وتواريخها والاختلافات ولا تعمم على الجميع.\","` | — |
-| [SRC-686F71AA50-L000035](../../agents/task_understanding.py#L35) | 35 | `"    \"record_observed_symptoms\": \"احفظ رسالة الخطأ والبيئة والإصدار والخطوات التي يمكن تكرارها؛ ميّز الملاحظة المرصودة عن تفسير السبب.\","` | — |
-| [SRC-686F71AA50-L000036](../../agents/task_understanding.py#L36) | 36 | `"    \"rank_testable_hypotheses\": \"أنشئ عدة فرضيات للسبب، ورتّبها وفق الأدلة المتاحة وقابلية الاختبار، ولا تدّعِ إثبات السبب قبل تجربة تفصل بين الفرضيات.\","` | — |
-| [SRC-686F71AA50-L000037](../../agents/task_understanding.py#L37) | 37 | `"    \"verify_primary_technical_docs\": \"تحقق من دليل المنتج أو مرجع الواجهة أو سجل التغيير الأصلي، واستخدم اختبارًا يعيد إنتاج المشكلة للتحقق من الإصلاح.\","` | — |
-| [SRC-686F71AA50-L000038](../../agents/task_understanding.py#L38) | 38 | `"    \"prefer_low_risk_steps\": \"ابدأ بخطوات تشخيص قابلة للعكس ومنخفضة المخاطر، واذكر شروط التوقف؛ لا تقترح إجراءً خطيرًا لمجرد أنه احتمال.\","` | — |
-| [SRC-686F71AA50-L000039](../../agents/task_understanding.py#L39) | 39 | `"    \"ordered_safe_procedure\": \"اذكر المتطلبات المسبقة والتحذيرات ثم الخطوات بالترتيب، وأضف طريقة للتحقق من النتيجة ولا تساوِ بين إكمال الخطوات ونجاحها.\","` | — |
-| [SRC-686F71AA50-L000040](../../agents/task_understanding.py#L40) | 40 | `"    \"check_health_scope_and_urgency\": \"افصل التثقيف الصحي العام عن التشخيص الشخصي، وقدّم مصادر صحية موثوقة وحدود المعلومات، ووجّه الحالات الطارئة إلى الرعاية المناسبة.\","` | — |
-| [SRC-686F71AA50-L000041](../../agents/task_understanding.py#L41) | 41 | `"    \"check_legal_jurisdiction_and_effective_date\": \"حدّد الدولة أو الاختصاص القانوني وتاريخ النفاذ، وقدّم النص الأصلي الرسمي عند توفره، ولا تعرض المعلومات العامة بوصفها استشارة قانونية خاصة.\","` | — |
-| [SRC-686F71AA50-L000042](../../agents/task_understanding.py#L42) | 42 | `"    \"validate_data_before_interpreting\": \"تحقق من تعريف المقياس ووحدة التحليل والفترة والبيانات الناقصة والتكرارات والقيم الشاذة قبل تفسير النتائج؛ الارتباط لا يثبت السببية.\","` | — |
-| [SRC-686F71AA50-L000043](../../agents/task_understanding.py#L43) | 43 | `"    \"validate_units_and_arithmetic\": \"تحقق من الوحدات والمدخلات والافتراضات، واعرض المعادلة أو خطوات الحساب القابلة للفحص، وأجرِ تحققًا حسابيًا مستقلًا عندما يلزم.\","` | — |
-| [SRC-686F71AA50-L000044](../../agents/task_understanding.py#L44) | 44 | `"    \"preserve_translation_meaning\": \"حافظ على المعنى والنبرة والأسماء والمصطلحات وصيغة الهدف؛ أظهر الالتباس الحقيقي بدل اختراع معنى للنص.\","` | — |
-| [SRC-686F71AA50-L000045](../../agents/task_understanding.py#L45) | 45 | `"    \"preserve_user_facts_in_writing\": \"التزم بالجمهور والنبرة والشكل المطلوب، ولا تضف حقائق غير مقدمة أو موثقة، وافصل إعادة الصياغة عن التحقق الواقعي.\","` | — |
-| [SRC-686F71AA50-L000046](../../agents/task_understanding.py#L46) | 46 | `"    \"plan_dependencies_and_fallbacks\": \"رتّب العمل حسب التبعيات والموارد والموعد والمخاطر، وبيّن الافتراضات والبدائل، ولا تصف خطوة مقترحة بأنها نُفذت.\","` | — |
-| [SRC-686F71AA50-L000047](../../agents/task_understanding.py#L47) | 47 | `"    \"compare_recommendation_tradeoffs\": \"وازن البدائل وفق احتياج المستخدم وقيوده، وبيّن المفاضلات والمعلومات الناقصة، ولا تعلن فائزًا عامًا دون أساس مقارنة واضح.\","` | — |
-| [SRC-686F71AA50-L000048](../../agents/task_understanding.py#L48) | 48 | `"    \"summarize_only_available_content\": \"لخّص النص المقدم أو الصفحة التي قُرئت فعلًا فقط؛ لا تستنتج محتوى غير مقروء من عنوان أو رابط.\","` | — |

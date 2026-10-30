@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000963 إلى SRC-63610B9E85-L000106
+- النطاق: SRC-90FAA34ADE-L000943 إلى SRC-63610B9E85-L000086
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000943](../../tests/fixtures/answer_quality_cases.json#L943) | 943 | `"            \"url\": \"https://directory.example.test/bakery\","` | — |
+| [SRC-90FAA34ADE-L000944](../../tests/fixtures/answer_quality_cases.json#L944) | 944 | `"            \"snippet\": \"Bakery in Cairo; phone number shown; last updated not stated.\","` | — |
+| [SRC-90FAA34ADE-L000945](../../tests/fixtures/answer_quality_cases.json#L945) | 945 | `"            \"domain\": \"directory.example.test\","` | — |
+| [SRC-90FAA34ADE-L000946](../../tests/fixtures/answer_quality_cases.json#L946) | 946 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L000947](../../tests/fixtures/answer_quality_cases.json#L947) | 947 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000948](../../tests/fixtures/answer_quality_cases.json#L948) | 948 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000949](../../tests/fixtures/answer_quality_cases.json#L949) | 949 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000950](../../tests/fixtures/answer_quality_cases.json#L950) | 950 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000951](../../tests/fixtures/answer_quality_cases.json#L951) | 951 | `"        \"Verified status granted without independent verification\","` | — |
+| [SRC-90FAA34ADE-L000952](../../tests/fixtures/answer_quality_cases.json#L952) | 952 | `"        \"Buying intent recorded as confirmed with no evidence\""` | — |
+| [SRC-90FAA34ADE-L000953](../../tests/fixtures/answer_quality_cases.json#L953) | 953 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000954](../../tests/fixtures/answer_quality_cases.json#L954) | 954 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000955](../../tests/fixtures/answer_quality_cases.json#L955) | 955 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000956](../../tests/fixtures/answer_quality_cases.json#L956) | 956 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000957](../../tests/fixtures/answer_quality_cases.json#L957) | 957 | `"      \"case_id\": \"AQ-033\","` | — |
+| [SRC-90FAA34ADE-L000958](../../tests/fixtures/answer_quality_cases.json#L958) | 958 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000959](../../tests/fixtures/answer_quality_cases.json#L959) | 959 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L000960](../../tests/fixtures/answer_quality_cases.json#L960) | 960 | `"      \"question\": \"وجدت موقع شركة خدمات، لكن صفحة التواصل فيها بريد عام فقط. هل أكتب أن مدير المشتريات وافق على العرض؟\","` | — |
+| [SRC-90FAA34ADE-L000961](../../tests/fixtures/answer_quality_cases.json#L961) | 961 | `"      \"expected_strategy\": \"local\","` | — |
+| [SRC-90FAA34ADE-L000962](../../tests/fixtures/answer_quality_cases.json#L962) | 962 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000963](../../tests/fixtures/answer_quality_cases.json#L963) | 963 | `"        \"يرفض استنتاج موافقة أو منصب شخص من مجرد صفحة التواصل\","` | — |
 | [SRC-90FAA34ADE-L000964](../../tests/fixtures/answer_quality_cases.json#L964) | 964 | `"        \"يسجل البريد العام كمعلومة منشورة غير مؤكدة عند الاقتضاء\","` | — |
 | [SRC-90FAA34ADE-L000965](../../tests/fixtures/answer_quality_cases.json#L965) | 965 | `"        \"يقترح التواصل المهني الشفاف دون انتحال أو ادعاء موافقة\""` | — |
@@ -823,23 +843,3 @@
 | [SRC-63610B9E85-L000084](../../tests/test_agentic_retrieval.py#L84) | 84 | `"        lambda _url: (\"Fixture page\", \"Solar battery price and warranty evidence text.\"),"` | — |
 | [SRC-63610B9E85-L000085](../../tests/test_agentic_retrieval.py#L85) | 85 | `"    )"` | — |
 | [SRC-63610B9E85-L000086](../../tests/test_agentic_retrieval.py#L86) | 86 | `"    sources, _warnings, report = agent._collect_research({"` | — |
-| [SRC-63610B9E85-L000087](../../tests/test_agentic_retrieval.py#L87) | 87 | `"        \"query_limit\": 3,"` | — |
-| [SRC-63610B9E85-L000088](../../tests/test_agentic_retrieval.py#L88) | 88 | `"        \"queries\": [\"solar battery\", \"solar battery price\", \"solar battery warranty\"],"` | — |
-| [SRC-63610B9E85-L000089](../../tests/test_agentic_retrieval.py#L89) | 89 | `"        \"coverage_targets\": [\"price\", \"warranty\"],"` | — |
-| [SRC-63610B9E85-L000090](../../tests/test_agentic_retrieval.py#L90) | 90 | `"        \"depth\": \"standard\","` | — |
-| [SRC-63610B9E85-L000091](../../tests/test_agentic_retrieval.py#L91) | 91 | `"        \"social_focus\": False,"` | — |
-| [SRC-63610B9E85-L000092](../../tests/test_agentic_retrieval.py#L92) | 92 | `"        \"platforms\": [],"` | — |
-| [SRC-63610B9E85-L000093](../../tests/test_agentic_retrieval.py#L93) | 93 | `"        \"direct_urls\": [],"` | — |
-| [SRC-63610B9E85-L000094](../../tests/test_agentic_retrieval.py#L94) | 94 | `"    })"` | — |
-| [SRC-63610B9E85-L000095](../../tests/test_agentic_retrieval.py#L95) | 95 | `"    assert len(queries) <= 3"` | — |
-| [SRC-63610B9E85-L000096](../../tests/test_agentic_retrieval.py#L96) | 96 | `"    assert any(\"warranty\" in query.casefold() for query in queries)"` | — |
-| [SRC-63610B9E85-L000097](../../tests/test_agentic_retrieval.py#L97) | 97 | `"    assert report[\"queries_attempted\"] == len(queries)"` | — |
-| [SRC-63610B9E85-L000098](../../tests/test_agentic_retrieval.py#L98) | 98 | `"    assert any(\"warranty\" in str(source.get(\"url\", \"\")).casefold() for source in sources)"` | — |
-| [SRC-63610B9E85-L000099](../../tests/test_agentic_retrieval.py#L99) | 99 | `""` | — |
-| [SRC-63610B9E85-L000100](../../tests/test_agentic_retrieval.py#L100) | 100 | `""` | — |
-| [SRC-63610B9E85-L000101](../../tests/test_agentic_retrieval.py#L101) | 101 | `""` | — |
-| [SRC-63610B9E85-L000102](../../tests/test_agentic_retrieval.py#L102) | 102 | `"def test_generation_prompt_includes_grounded_writing_examples(monkeypatch) -> None:"` | — |
-| [SRC-63610B9E85-L000103](../../tests/test_agentic_retrieval.py#L103) | 103 | `"    agent = WebAgent()"` | — |
-| [SRC-63610B9E85-L000104](../../tests/test_agentic_retrieval.py#L104) | 104 | `"    captured: dict[str, object] = {}"` | — |
-| [SRC-63610B9E85-L000105](../../tests/test_agentic_retrieval.py#L105) | 105 | `""` | — |
-| [SRC-63610B9E85-L000106](../../tests/test_agentic_retrieval.py#L106) | 106 | `"    def fake_completion(messages, **_kwargs):"` | — |

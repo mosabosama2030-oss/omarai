@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000396 إلى SRC-1E32639872-L000289
+- النطاق: SRC-59CF4B7DE8-L000386 إلى SRC-1E32639872-L000279
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    result[\"research_pipeline\"] = {"` | — |
+| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"        \"aspects\": pipeline[\"aspects\"],"` | — |
+| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"        \"stages\": pipeline[\"stages\"],"` | — |
+| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"    }"` | — |
+| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    return result"` | — |
+| [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `""` | — |
+| [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `""` | — |
+| [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `"def fallback_plan("` | — |
+| [SRC-59CF4B7DE8-L000394](../../agents/research.py#L394) | 394 | `"    question: str, history: list[dict[str, str]] \| None = None"` | — |
+| [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `") -> dict[str, Any]:"` | — |
 | [SRC-59CF4B7DE8-L000396](../../agents/research.py#L396) | 396 | `"    \"\"\"Build a small but varied plan when no model planner is configured or parsing fails.\"\"\""` | — |
 | [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
 | [SRC-59CF4B7DE8-L000398](../../agents/research.py#L398) | 398 | `"    direct_urls = extract_urls(question)"` | — |
@@ -716,112 +726,102 @@
 | [SRC-1E32639872-L000178](../../agents/research_completion.py#L178) | 178 | `"    out_of_range_citation_reference_count = _int("` | — |
 | [SRC-1E32639872-L000179](../../agents/research_completion.py#L179) | 179 | `"        claim_ledger_summary.get(\"out_of_range_reference_count\")"` | — |
 | [SRC-1E32639872-L000180](../../agents/research_completion.py#L180) | 180 | `"    ) or 0"` | — |
-| [SRC-1E32639872-L000181](../../agents/research_completion.py#L181) | 181 | `"    gap_count = sum("` | — |
-| [SRC-1E32639872-L000182](../../agents/research_completion.py#L182) | 182 | `"        _int(integrity.get(key)) or 0"` | — |
-| [SRC-1E32639872-L000183](../../agents/research_completion.py#L183) | 183 | `"        for key in (\"potentially_missing_target_count\", \"source_evidence_gap_count\")"` | — |
-| [SRC-1E32639872-L000184](../../agents/research_completion.py#L184) | 184 | `"    )"` | — |
-| [SRC-1E32639872-L000185](../../agents/research_completion.py#L185) | 185 | `"    unsupported_numeric_count = _int("` | — |
-| [SRC-1E32639872-L000186](../../agents/research_completion.py#L186) | 186 | `"        integrity.get(\"potentially_unsupported_numeric_count\")"` | — |
-| [SRC-1E32639872-L000187](../../agents/research_completion.py#L187) | 187 | `"    ) or 0"` | — |
-| [SRC-1E32639872-L000188](../../agents/research_completion.py#L188) | 188 | `"    unsupported_numeric_by_citation_count = _int("` | — |
-| [SRC-1E32639872-L000189](../../agents/research_completion.py#L189) | 189 | `"        integrity.get(\"potentially_unsupported_numeric_by_citation_count\")"` | — |
-| [SRC-1E32639872-L000190](../../agents/research_completion.py#L190) | 190 | `"    ) or 0"` | — |
-| [SRC-1E32639872-L000191](../../agents/research_completion.py#L191) | 191 | `"    weak_citation_alignment_count = _int("` | — |
-| [SRC-1E32639872-L000192](../../agents/research_completion.py#L192) | 192 | `"        integrity.get(\"weak_citation_alignment_count\")"` | — |
+| [SRC-1E32639872-L000181](../../agents/research_completion.py#L181) | 181 | `"    truncated_citation_reference_list_count = _int("` | — |
+| [SRC-1E32639872-L000182](../../agents/research_completion.py#L182) | 182 | `"        claim_ledger_summary.get(\"truncated_citation_reference_list_count\")"` | — |
+| [SRC-1E32639872-L000183](../../agents/research_completion.py#L183) | 183 | `"    ) or 0"` | — |
+| [SRC-1E32639872-L000184](../../agents/research_completion.py#L184) | 184 | `"    claim_ledger_truncated_count = int("` | — |
+| [SRC-1E32639872-L000185](../../agents/research_completion.py#L185) | 185 | `"        claim_ledger_status == \"built\" and claim_ledger.get(\"truncated\") is True"` | — |
+| [SRC-1E32639872-L000186](../../agents/research_completion.py#L186) | 186 | `"    )"` | — |
+| [SRC-1E32639872-L000187](../../agents/research_completion.py#L187) | 187 | `"    gap_count = sum("` | — |
+| [SRC-1E32639872-L000188](../../agents/research_completion.py#L188) | 188 | `"        _int(integrity.get(key)) or 0"` | — |
+| [SRC-1E32639872-L000189](../../agents/research_completion.py#L189) | 189 | `"        for key in (\"potentially_missing_target_count\", \"source_evidence_gap_count\")"` | — |
+| [SRC-1E32639872-L000190](../../agents/research_completion.py#L190) | 190 | `"    )"` | — |
+| [SRC-1E32639872-L000191](../../agents/research_completion.py#L191) | 191 | `"    unsupported_numeric_count = _int("` | — |
+| [SRC-1E32639872-L000192](../../agents/research_completion.py#L192) | 192 | `"        integrity.get(\"potentially_unsupported_numeric_count\")"` | — |
 | [SRC-1E32639872-L000193](../../agents/research_completion.py#L193) | 193 | `"    ) or 0"` | — |
-| [SRC-1E32639872-L000194](../../agents/research_completion.py#L194) | 194 | `"    # The cited-source numeric count can overlap with the general unsupported-number"` | — |
-| [SRC-1E32639872-L000195](../../agents/research_completion.py#L195) | 195 | `"    # count. Use the larger count, then add weakly aligned cited segments."` | — |
-| [SRC-1E32639872-L000196](../../agents/research_completion.py#L196) | 196 | `"    citation_support_warning_count = ("` | — |
-| [SRC-1E32639872-L000197](../../agents/research_completion.py#L197) | 197 | `"        max(unsupported_numeric_count, unsupported_numeric_by_citation_count)"` | — |
-| [SRC-1E32639872-L000198](../../agents/research_completion.py#L198) | 198 | `"        + weak_citation_alignment_count"` | — |
-| [SRC-1E32639872-L000199](../../agents/research_completion.py#L199) | 199 | `"        + out_of_range_citation_reference_count"` | — |
-| [SRC-1E32639872-L000200](../../agents/research_completion.py#L200) | 200 | `"        + claim_ledger_build_failure_count"` | — |
-| [SRC-1E32639872-L000201](../../agents/research_completion.py#L201) | 201 | `"    )"` | — |
-| [SRC-1E32639872-L000202](../../agents/research_completion.py#L202) | 202 | `"    fulfillment = str("` | — |
-| [SRC-1E32639872-L000203](../../agents/research_completion.py#L203) | 203 | `"        result.get(\"task_fulfillment_status\") or report.get(\"task_fulfillment_status\") or \"\""` | — |
-| [SRC-1E32639872-L000204](../../agents/research_completion.py#L204) | 204 | `"    )"` | — |
-| [SRC-1E32639872-L000205](../../agents/research_completion.py#L205) | 205 | `"    citations = _dict(result.get(\"citation_validation\") or result.get(\"citation_check\"))"` | — |
-| [SRC-1E32639872-L000206](../../agents/research_completion.py#L206) | 206 | `"    citation_count = _int(citations.get(\"valid_citation_count\")) or 0"` | — |
-| [SRC-1E32639872-L000207](../../agents/research_completion.py#L207) | 207 | `"    generation_failed = any("` | — |
-| [SRC-1E32639872-L000208](../../agents/research_completion.py#L208) | 208 | `"        token in final_status for token in (\"failed\", \"unavailable\", \"budget_exhausted\")"` | — |
+| [SRC-1E32639872-L000194](../../agents/research_completion.py#L194) | 194 | `"    unsupported_numeric_by_citation_count = _int("` | — |
+| [SRC-1E32639872-L000195](../../agents/research_completion.py#L195) | 195 | `"        integrity.get(\"potentially_unsupported_numeric_by_citation_count\")"` | — |
+| [SRC-1E32639872-L000196](../../agents/research_completion.py#L196) | 196 | `"    ) or 0"` | — |
+| [SRC-1E32639872-L000197](../../agents/research_completion.py#L197) | 197 | `"    weak_citation_alignment_count = _int("` | — |
+| [SRC-1E32639872-L000198](../../agents/research_completion.py#L198) | 198 | `"        integrity.get(\"weak_citation_alignment_count\")"` | — |
+| [SRC-1E32639872-L000199](../../agents/research_completion.py#L199) | 199 | `"    ) or 0"` | — |
+| [SRC-1E32639872-L000200](../../agents/research_completion.py#L200) | 200 | `"    # The cited-source numeric count can overlap with the general unsupported-number"` | — |
+| [SRC-1E32639872-L000201](../../agents/research_completion.py#L201) | 201 | `"    # count. Use the larger count, then add weakly aligned cited segments."` | — |
+| [SRC-1E32639872-L000202](../../agents/research_completion.py#L202) | 202 | `"    citation_support_warning_count = ("` | — |
+| [SRC-1E32639872-L000203](../../agents/research_completion.py#L203) | 203 | `"        max(unsupported_numeric_count, unsupported_numeric_by_citation_count)"` | — |
+| [SRC-1E32639872-L000204](../../agents/research_completion.py#L204) | 204 | `"        + weak_citation_alignment_count"` | — |
+| [SRC-1E32639872-L000205](../../agents/research_completion.py#L205) | 205 | `"        + out_of_range_citation_reference_count"` | — |
+| [SRC-1E32639872-L000206](../../agents/research_completion.py#L206) | 206 | `"        + truncated_citation_reference_list_count"` | — |
+| [SRC-1E32639872-L000207](../../agents/research_completion.py#L207) | 207 | `"        + claim_ledger_truncated_count"` | — |
+| [SRC-1E32639872-L000208](../../agents/research_completion.py#L208) | 208 | `"        + claim_ledger_build_failure_count"` | — |
 | [SRC-1E32639872-L000209](../../agents/research_completion.py#L209) | 209 | `"    )"` | — |
-| [SRC-1E32639872-L000210](../../agents/research_completion.py#L210) | 210 | `""` | — |
-| [SRC-1E32639872-L000211](../../agents/research_completion.py#L211) | 211 | `"    if exhausted:"` | — |
-| [SRC-1E32639872-L000212](../../agents/research_completion.py#L212) | 212 | `"        status = \"execution_stopped_budget\""` | — |
-| [SRC-1E32639872-L000213](../../agents/research_completion.py#L213) | 213 | `"    elif not sources:"` | — |
-| [SRC-1E32639872-L000214](../../agents/research_completion.py#L214) | 214 | `"        if rejected:"` | — |
-| [SRC-1E32639872-L000215](../../agents/research_completion.py#L215) | 215 | `"            status = \"no_eligible_sources_after_filtering\""` | — |
-| [SRC-1E32639872-L000216](../../agents/research_completion.py#L216) | 216 | `"        elif str(report.get(\"search_outcome\") or \"\") in _RESEARCH_ERRORS or ("` | — |
-| [SRC-1E32639872-L000217](../../agents/research_completion.py#L217) | 217 | `"            connector_errors and not connector_ok"` | — |
-| [SRC-1E32639872-L000218](../../agents/research_completion.py#L218) | 218 | `"        ):"` | — |
-| [SRC-1E32639872-L000219](../../agents/research_completion.py#L219) | 219 | `"            status = \"search_failed_or_incomplete\""` | — |
-| [SRC-1E32639872-L000220](../../agents/research_completion.py#L220) | 220 | `"        elif zero_results:"` | — |
-| [SRC-1E32639872-L000221](../../agents/research_completion.py#L221) | 221 | `"            status = \"no_results_returned\""` | — |
-| [SRC-1E32639872-L000222](../../agents/research_completion.py#L222) | 222 | `"        elif attempted is False:"` | — |
-| [SRC-1E32639872-L000223](../../agents/research_completion.py#L223) | 223 | `"            status = \"search_not_attempted\""` | — |
-| [SRC-1E32639872-L000224](../../agents/research_completion.py#L224) | 224 | `"        else:"` | — |
-| [SRC-1E32639872-L000225](../../agents/research_completion.py#L225) | 225 | `"            status = \"insufficient_evidence\""` | — |
-| [SRC-1E32639872-L000226](../../agents/research_completion.py#L226) | 226 | `"    elif not model_used:"` | — |
-| [SRC-1E32639872-L000227](../../agents/research_completion.py#L227) | 227 | `"        status = ("` | — |
-| [SRC-1E32639872-L000228](../../agents/research_completion.py#L228) | 228 | `"            \"source_snippets_only_generation_not_completed\""` | — |
-| [SRC-1E32639872-L000229](../../agents/research_completion.py#L229) | 229 | `"            if read == 0 else \"evidence_collected_generation_not_completed\""` | — |
-| [SRC-1E32639872-L000230](../../agents/research_completion.py#L230) | 230 | `"        )"` | — |
-| [SRC-1E32639872-L000231](../../agents/research_completion.py#L231) | 231 | `"    elif generation_failed:"` | — |
-| [SRC-1E32639872-L000232](../../agents/research_completion.py#L232) | 232 | `"        status = \"answer_generation_or_review_failed\""` | — |
-| [SRC-1E32639872-L000233](../../agents/research_completion.py#L233) | 233 | `"    elif gap_count or citation_support_warning_count or fulfillment in {"` | — |
-| [SRC-1E32639872-L000234](../../agents/research_completion.py#L234) | 234 | `"        \"possible_gap_detected\", \"source_evidence_gap_unresolved\","` | — |
-| [SRC-1E32639872-L000235](../../agents/research_completion.py#L235) | 235 | `"        \"not_assessed_insufficient_evidence\","` | — |
-| [SRC-1E32639872-L000236](../../agents/research_completion.py#L236) | 236 | `"    }:"` | — |
-| [SRC-1E32639872-L000237](../../agents/research_completion.py#L237) | 237 | `"        status = \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-1E32639872-L000238](../../agents/research_completion.py#L238) | 238 | `"    elif citation_count:"` | — |
-| [SRC-1E32639872-L000239](../../agents/research_completion.py#L239) | 239 | `"        status = \"answer_generated_citations_range_checked_semantic_support_unverified\""` | — |
-| [SRC-1E32639872-L000240](../../agents/research_completion.py#L240) | 240 | `"    else:"` | — |
-| [SRC-1E32639872-L000241](../../agents/research_completion.py#L241) | 241 | `"        status = \"answer_generated_without_valid_citation_markers\""` | — |
-| [SRC-1E32639872-L000242](../../agents/research_completion.py#L242) | 242 | `""` | — |
-| [SRC-1E32639872-L000243](../../agents/research_completion.py#L243) | 243 | `"    if attempted is False:"` | — |
-| [SRC-1E32639872-L000244](../../agents/research_completion.py#L244) | 244 | `"        search_phase = \"not_attempted\""` | — |
-| [SRC-1E32639872-L000245](../../agents/research_completion.py#L245) | 245 | `"    elif attempted is None:"` | — |
-| [SRC-1E32639872-L000246](../../agents/research_completion.py#L246) | 246 | `"        search_phase = \"unknown\""` | — |
-| [SRC-1E32639872-L000247](../../agents/research_completion.py#L247) | 247 | `"    elif connector_errors and not connector_ok and not sources:"` | — |
-| [SRC-1E32639872-L000248](../../agents/research_completion.py#L248) | 248 | `"        search_phase = \"failed_or_incomplete\""` | — |
-| [SRC-1E32639872-L000249](../../agents/research_completion.py#L249) | 249 | `"    elif sources:"` | — |
-| [SRC-1E32639872-L000250](../../agents/research_completion.py#L250) | 250 | `"        search_phase = \"results_received\""` | — |
-| [SRC-1E32639872-L000251](../../agents/research_completion.py#L251) | 251 | `"    elif zero_results:"` | — |
-| [SRC-1E32639872-L000252](../../agents/research_completion.py#L252) | 252 | `"        search_phase = \"completed_no_results\""` | — |
-| [SRC-1E32639872-L000253](../../agents/research_completion.py#L253) | 253 | `"    else:"` | — |
-| [SRC-1E32639872-L000254](../../agents/research_completion.py#L254) | 254 | `"        search_phase = \"attempted_no_usable_sources\""` | — |
-| [SRC-1E32639872-L000255](../../agents/research_completion.py#L255) | 255 | `""` | — |
-| [SRC-1E32639872-L000256](../../agents/research_completion.py#L256) | 256 | `"    if not sources:"` | — |
-| [SRC-1E32639872-L000257](../../agents/research_completion.py#L257) | 257 | `"        read_phase = \"not_applicable_no_eligible_sources\""` | — |
-| [SRC-1E32639872-L000258](../../agents/research_completion.py#L258) | 258 | `"    elif read == len(sources):"` | — |
-| [SRC-1E32639872-L000259](../../agents/research_completion.py#L259) | 259 | `"        read_phase = \"all_final_sources_read\""` | — |
-| [SRC-1E32639872-L000260](../../agents/research_completion.py#L260) | 260 | `"    elif read:"` | — |
-| [SRC-1E32639872-L000261](../../agents/research_completion.py#L261) | 261 | `"        read_phase = \"some_final_sources_read\""` | — |
-| [SRC-1E32639872-L000262](../../agents/research_completion.py#L262) | 262 | `"    else:"` | — |
-| [SRC-1E32639872-L000263](../../agents/research_completion.py#L263) | 263 | `"        read_phase = \"no_final_source_page_read\""` | — |
-| [SRC-1E32639872-L000264](../../agents/research_completion.py#L264) | 264 | `""` | — |
-| [SRC-1E32639872-L000265](../../agents/research_completion.py#L265) | 265 | `"    if kind == \"insufficient_evidence\" or not sources:"` | — |
-| [SRC-1E32639872-L000266](../../agents/research_completion.py#L266) | 266 | `"        generation_phase = \"not_attempted_or_withheld\""` | — |
-| [SRC-1E32639872-L000267](../../agents/research_completion.py#L267) | 267 | `"    elif model_used and not generation_failed:"` | — |
-| [SRC-1E32639872-L000268](../../agents/research_completion.py#L268) | 268 | `"        generation_phase = \"answer_generated\""` | — |
-| [SRC-1E32639872-L000269](../../agents/research_completion.py#L269) | 269 | `"    elif model_used:"` | — |
-| [SRC-1E32639872-L000270](../../agents/research_completion.py#L270) | 270 | `"        generation_phase = \"failed_or_unavailable\""` | — |
-| [SRC-1E32639872-L000271](../../agents/research_completion.py#L271) | 271 | `"    else:"` | — |
-| [SRC-1E32639872-L000272](../../agents/research_completion.py#L272) | 272 | `"        generation_phase = \"not_completed\""` | — |
-| [SRC-1E32639872-L000273](../../agents/research_completion.py#L273) | 273 | `""` | — |
-| [SRC-1E32639872-L000274](../../agents/research_completion.py#L274) | 274 | `"    return {"` | — |
-| [SRC-1E32639872-L000275](../../agents/research_completion.py#L275) | 275 | `"        \"status\": status,"` | — |
-| [SRC-1E32639872-L000276](../../agents/research_completion.py#L276) | 276 | `"        \"status_semantics\": \"pipeline_state_not_probability_of_factual_correctness\","` | — |
-| [SRC-1E32639872-L000277](../../agents/research_completion.py#L277) | 277 | `"        \"phases\": {"` | — |
-| [SRC-1E32639872-L000278](../../agents/research_completion.py#L278) | 278 | `"            \"planning\": \"completed\" if isinstance(result.get(\"research_plan\"), dict) else \"unknown\","` | — |
-| [SRC-1E32639872-L000279](../../agents/research_completion.py#L279) | 279 | `"            \"search\": search_phase,"` | — |
-| [SRC-1E32639872-L000280](../../agents/research_completion.py#L280) | 280 | `"            \"source_filtering\": ("` | — |
-| [SRC-1E32639872-L000281](../../agents/research_completion.py#L281) | 281 | `"                \"sources_retained\" if sources else"` | — |
-| [SRC-1E32639872-L000282](../../agents/research_completion.py#L282) | 282 | `"                \"rejected_all_candidates\" if rejected else \"no_eligible_sources\""` | — |
-| [SRC-1E32639872-L000283](../../agents/research_completion.py#L283) | 283 | `"            ),"` | — |
-| [SRC-1E32639872-L000284](../../agents/research_completion.py#L284) | 284 | `"            \"page_reading\": read_phase,"` | — |
-| [SRC-1E32639872-L000285](../../agents/research_completion.py#L285) | 285 | `"            \"answer_generation\": generation_phase,"` | — |
-| [SRC-1E32639872-L000286](../../agents/research_completion.py#L286) | 286 | `"            \"citation_validation\": str(citations.get(\"status\") or \"not_run\"),"` | — |
-| [SRC-1E32639872-L000287](../../agents/research_completion.py#L287) | 287 | `"            \"citation_support_screen\": ("` | — |
-| [SRC-1E32639872-L000288](../../agents/research_completion.py#L288) | 288 | `"                \"warning_signals_detected\""` | — |
-| [SRC-1E32639872-L000289](../../agents/research_completion.py#L289) | 289 | `"                if citation_support_warning_count"` | — |
+| [SRC-1E32639872-L000210](../../agents/research_completion.py#L210) | 210 | `"    fulfillment = str("` | — |
+| [SRC-1E32639872-L000211](../../agents/research_completion.py#L211) | 211 | `"        result.get(\"task_fulfillment_status\") or report.get(\"task_fulfillment_status\") or \"\""` | — |
+| [SRC-1E32639872-L000212](../../agents/research_completion.py#L212) | 212 | `"    )"` | — |
+| [SRC-1E32639872-L000213](../../agents/research_completion.py#L213) | 213 | `"    citations = _dict(result.get(\"citation_validation\") or result.get(\"citation_check\"))"` | — |
+| [SRC-1E32639872-L000214](../../agents/research_completion.py#L214) | 214 | `"    citation_count = _int(citations.get(\"valid_citation_count\")) or 0"` | — |
+| [SRC-1E32639872-L000215](../../agents/research_completion.py#L215) | 215 | `"    generation_failed = any("` | — |
+| [SRC-1E32639872-L000216](../../agents/research_completion.py#L216) | 216 | `"        token in final_status for token in (\"failed\", \"unavailable\", \"budget_exhausted\")"` | — |
+| [SRC-1E32639872-L000217](../../agents/research_completion.py#L217) | 217 | `"    )"` | — |
+| [SRC-1E32639872-L000218](../../agents/research_completion.py#L218) | 218 | `""` | — |
+| [SRC-1E32639872-L000219](../../agents/research_completion.py#L219) | 219 | `"    if exhausted:"` | — |
+| [SRC-1E32639872-L000220](../../agents/research_completion.py#L220) | 220 | `"        status = \"execution_stopped_budget\""` | — |
+| [SRC-1E32639872-L000221](../../agents/research_completion.py#L221) | 221 | `"    elif not sources:"` | — |
+| [SRC-1E32639872-L000222](../../agents/research_completion.py#L222) | 222 | `"        if rejected:"` | — |
+| [SRC-1E32639872-L000223](../../agents/research_completion.py#L223) | 223 | `"            status = \"no_eligible_sources_after_filtering\""` | — |
+| [SRC-1E32639872-L000224](../../agents/research_completion.py#L224) | 224 | `"        elif str(report.get(\"search_outcome\") or \"\") in _RESEARCH_ERRORS or ("` | — |
+| [SRC-1E32639872-L000225](../../agents/research_completion.py#L225) | 225 | `"            connector_errors and not connector_ok"` | — |
+| [SRC-1E32639872-L000226](../../agents/research_completion.py#L226) | 226 | `"        ):"` | — |
+| [SRC-1E32639872-L000227](../../agents/research_completion.py#L227) | 227 | `"            status = \"search_failed_or_incomplete\""` | — |
+| [SRC-1E32639872-L000228](../../agents/research_completion.py#L228) | 228 | `"        elif zero_results:"` | — |
+| [SRC-1E32639872-L000229](../../agents/research_completion.py#L229) | 229 | `"            status = \"no_results_returned\""` | — |
+| [SRC-1E32639872-L000230](../../agents/research_completion.py#L230) | 230 | `"        elif attempted is False:"` | — |
+| [SRC-1E32639872-L000231](../../agents/research_completion.py#L231) | 231 | `"            status = \"search_not_attempted\""` | — |
+| [SRC-1E32639872-L000232](../../agents/research_completion.py#L232) | 232 | `"        else:"` | — |
+| [SRC-1E32639872-L000233](../../agents/research_completion.py#L233) | 233 | `"            status = \"insufficient_evidence\""` | — |
+| [SRC-1E32639872-L000234](../../agents/research_completion.py#L234) | 234 | `"    elif not model_used:"` | — |
+| [SRC-1E32639872-L000235](../../agents/research_completion.py#L235) | 235 | `"        status = ("` | — |
+| [SRC-1E32639872-L000236](../../agents/research_completion.py#L236) | 236 | `"            \"source_snippets_only_generation_not_completed\""` | — |
+| [SRC-1E32639872-L000237](../../agents/research_completion.py#L237) | 237 | `"            if read == 0 else \"evidence_collected_generation_not_completed\""` | — |
+| [SRC-1E32639872-L000238](../../agents/research_completion.py#L238) | 238 | `"        )"` | — |
+| [SRC-1E32639872-L000239](../../agents/research_completion.py#L239) | 239 | `"    elif generation_failed:"` | — |
+| [SRC-1E32639872-L000240](../../agents/research_completion.py#L240) | 240 | `"        status = \"answer_generation_or_review_failed\""` | — |
+| [SRC-1E32639872-L000241](../../agents/research_completion.py#L241) | 241 | `"    elif gap_count or citation_support_warning_count or fulfillment in {"` | — |
+| [SRC-1E32639872-L000242](../../agents/research_completion.py#L242) | 242 | `"        \"possible_gap_detected\", \"source_evidence_gap_unresolved\","` | — |
+| [SRC-1E32639872-L000243](../../agents/research_completion.py#L243) | 243 | `"        \"not_assessed_insufficient_evidence\","` | — |
+| [SRC-1E32639872-L000244](../../agents/research_completion.py#L244) | 244 | `"    }:"` | — |
+| [SRC-1E32639872-L000245](../../agents/research_completion.py#L245) | 245 | `"        status = \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-1E32639872-L000246](../../agents/research_completion.py#L246) | 246 | `"    elif citation_count:"` | — |
+| [SRC-1E32639872-L000247](../../agents/research_completion.py#L247) | 247 | `"        status = \"answer_generated_citations_range_checked_semantic_support_unverified\""` | — |
+| [SRC-1E32639872-L000248](../../agents/research_completion.py#L248) | 248 | `"    else:"` | — |
+| [SRC-1E32639872-L000249](../../agents/research_completion.py#L249) | 249 | `"        status = \"answer_generated_without_valid_citation_markers\""` | — |
+| [SRC-1E32639872-L000250](../../agents/research_completion.py#L250) | 250 | `""` | — |
+| [SRC-1E32639872-L000251](../../agents/research_completion.py#L251) | 251 | `"    if attempted is False:"` | — |
+| [SRC-1E32639872-L000252](../../agents/research_completion.py#L252) | 252 | `"        search_phase = \"not_attempted\""` | — |
+| [SRC-1E32639872-L000253](../../agents/research_completion.py#L253) | 253 | `"    elif attempted is None:"` | — |
+| [SRC-1E32639872-L000254](../../agents/research_completion.py#L254) | 254 | `"        search_phase = \"unknown\""` | — |
+| [SRC-1E32639872-L000255](../../agents/research_completion.py#L255) | 255 | `"    elif connector_errors and not connector_ok and not sources:"` | — |
+| [SRC-1E32639872-L000256](../../agents/research_completion.py#L256) | 256 | `"        search_phase = \"failed_or_incomplete\""` | — |
+| [SRC-1E32639872-L000257](../../agents/research_completion.py#L257) | 257 | `"    elif sources:"` | — |
+| [SRC-1E32639872-L000258](../../agents/research_completion.py#L258) | 258 | `"        search_phase = \"results_received\""` | — |
+| [SRC-1E32639872-L000259](../../agents/research_completion.py#L259) | 259 | `"    elif zero_results:"` | — |
+| [SRC-1E32639872-L000260](../../agents/research_completion.py#L260) | 260 | `"        search_phase = \"completed_no_results\""` | — |
+| [SRC-1E32639872-L000261](../../agents/research_completion.py#L261) | 261 | `"    else:"` | — |
+| [SRC-1E32639872-L000262](../../agents/research_completion.py#L262) | 262 | `"        search_phase = \"attempted_no_usable_sources\""` | — |
+| [SRC-1E32639872-L000263](../../agents/research_completion.py#L263) | 263 | `""` | — |
+| [SRC-1E32639872-L000264](../../agents/research_completion.py#L264) | 264 | `"    if not sources:"` | — |
+| [SRC-1E32639872-L000265](../../agents/research_completion.py#L265) | 265 | `"        read_phase = \"not_applicable_no_eligible_sources\""` | — |
+| [SRC-1E32639872-L000266](../../agents/research_completion.py#L266) | 266 | `"    elif read == len(sources):"` | — |
+| [SRC-1E32639872-L000267](../../agents/research_completion.py#L267) | 267 | `"        read_phase = \"all_final_sources_read\""` | — |
+| [SRC-1E32639872-L000268](../../agents/research_completion.py#L268) | 268 | `"    elif read:"` | — |
+| [SRC-1E32639872-L000269](../../agents/research_completion.py#L269) | 269 | `"        read_phase = \"some_final_sources_read\""` | — |
+| [SRC-1E32639872-L000270](../../agents/research_completion.py#L270) | 270 | `"    else:"` | — |
+| [SRC-1E32639872-L000271](../../agents/research_completion.py#L271) | 271 | `"        read_phase = \"no_final_source_page_read\""` | — |
+| [SRC-1E32639872-L000272](../../agents/research_completion.py#L272) | 272 | `""` | — |
+| [SRC-1E32639872-L000273](../../agents/research_completion.py#L273) | 273 | `"    if kind == \"insufficient_evidence\" or not sources:"` | — |
+| [SRC-1E32639872-L000274](../../agents/research_completion.py#L274) | 274 | `"        generation_phase = \"not_attempted_or_withheld\""` | — |
+| [SRC-1E32639872-L000275](../../agents/research_completion.py#L275) | 275 | `"    elif model_used and not generation_failed:"` | — |
+| [SRC-1E32639872-L000276](../../agents/research_completion.py#L276) | 276 | `"        generation_phase = \"answer_generated\""` | — |
+| [SRC-1E32639872-L000277](../../agents/research_completion.py#L277) | 277 | `"    elif model_used:"` | — |
+| [SRC-1E32639872-L000278](../../agents/research_completion.py#L278) | 278 | `"        generation_phase = \"failed_or_unavailable\""` | — |
+| [SRC-1E32639872-L000279](../../agents/research_completion.py#L279) | 279 | `"    else:"` | — |

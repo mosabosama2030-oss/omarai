@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000457 إلى SRC-59CF4B7DE8-L000395
+- النطاق: SRC-5587371288-L000447 إلى SRC-59CF4B7DE8-L000385
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"        return {"` | — |
+| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `"            \"route\": \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"            \"reason\": \"answer_to_pending_clarification\","` | — |
+| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"            \"context_available\": True,"` | — |
+| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"        }"` | — |
+| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `""` | — |
+| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"    context_available = _has_context(history)"` | — |
+| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `""` | — |
+| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
 | [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"    # questions before honoring the UI's explicit research mode."` | — |
 | [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"    if _needs_clarification(question) and not context_available:"` | — |
 | [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"        return {"` | — |
@@ -833,13 +843,3 @@
 | [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"    # selected-mode and budget limits before executing the bounded query matrix."` | — |
 | [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"    result[\"task_spec\"] = pipeline[\"task_spec\"]"` | — |
 | [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"    result[\"query_strategy_matrix\"] = pipeline[\"query_strategy_matrix\"]"` | — |
-| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    result[\"research_pipeline\"] = {"` | — |
-| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"        \"aspects\": pipeline[\"aspects\"],"` | — |
-| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"        \"stages\": pipeline[\"stages\"],"` | — |
-| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    return result"` | — |
-| [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `""` | — |
-| [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `""` | — |
-| [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `"def fallback_plan("` | — |
-| [SRC-59CF4B7DE8-L000394](../../agents/research.py#L394) | 394 | `"    question: str, history: list[dict[str, str]] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `") -> dict[str, Any]:"` | — |

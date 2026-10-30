@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003921 إلى SRC-1AE03B9EC3-L004720
+- النطاق: SRC-1AE03B9EC3-L003901 إلى SRC-1AE03B9EC3-L004700
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003901](../../agents/web_agent.py#L3901) | 3901 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L003902](../../agents/web_agent.py#L3902) | 3902 | `"            evidence = _clean_text("` | — |
+| [SRC-1AE03B9EC3-L003903](../../agents/web_agent.py#L3903) | 3903 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
+| [SRC-1AE03B9EC3-L003904](../../agents/web_agent.py#L3904) | 3904 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003905](../../agents/web_agent.py#L3905) | 3905 | `"            source_blocks.append("` | — |
+| [SRC-1AE03B9EC3-L003906](../../agents/web_agent.py#L3906) | 3906 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003907](../../agents/web_agent.py#L3907) | 3907 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003908](../../agents/web_agent.py#L3908) | 3908 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
+| [SRC-1AE03B9EC3-L003909](../../agents/web_agent.py#L3909) | 3909 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003910](../../agents/web_agent.py#L3910) | 3910 | `"                f\"نص المصدر: {evidence}\""` | — |
+| [SRC-1AE03B9EC3-L003911](../../agents/web_agent.py#L3911) | 3911 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003912](../../agents/web_agent.py#L3912) | 3912 | `"        evidence_text = \"\\n\\n\".join(source_blocks) or \"لا توجد أدلة ويب متاحة.\""` | — |
+| [SRC-1AE03B9EC3-L003913](../../agents/web_agent.py#L3913) | 3913 | `"        messages = ["` | — |
+| [SRC-1AE03B9EC3-L003914](../../agents/web_agent.py#L3914) | 3914 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003915](../../agents/web_agent.py#L3915) | 3915 | `"                \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003916](../../agents/web_agent.py#L3916) | 3916 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003917](../../agents/web_agent.py#L3917) | 3917 | `"                    \"أنت مدقق ادعاءات بحثية؛ مهمتك فحص الاتساق مع الأدلة وتغطية محاور السؤال، \""` | — |
+| [SRC-1AE03B9EC3-L003918](../../agents/web_agent.py#L3918) | 3918 | `"                    \"وليست إصدار شهادة مستقلة بصحة الحقيقة. افحص كل ادعاء واقعي في المسودة على حدة \""` | — |
+| [SRC-1AE03B9EC3-L003919](../../agents/web_agent.py#L3919) | 3919 | `"                    \"مقابل النصوص المرفقة: هل تدعمه بوضوح، أم تدعمه جزئيًا، أم لا تدعمه؟ احتفظ فقط \""` | — |
+| [SRC-1AE03B9EC3-L003920](../../agents/web_agent.py#L3920) | 3920 | `"                    \"بالادعاءات المدعومة، وقيّد الادعاءات الجزئية، واحذف غير المدعوم، وصحح كل \""` | — |
 | [SRC-1AE03B9EC3-L003921](../../agents/web_agent.py#L3921) | 3921 | `"                    \"استشهاد ليرتبط بمصدر يدعم الادعاء تحديدًا. افحص كذلك اكتمال الإجابة مقابل \""` | — |
 | [SRC-1AE03B9EC3-L003922](../../agents/web_agent.py#L3922) | 3922 | `"                    \"جميع المحاور الصريحة في سؤال المستخدم؛ لا تسقط محورًا مطلوبًا بلا توضيح. \""` | — |
 | [SRC-1AE03B9EC3-L003923](../../agents/web_agent.py#L3923) | 3923 | `"                    \"إذا لم يكف الدليل لمحور، فاذكر عدم كفاية الأدلة لذلك المحور تحديدًا. \""` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L004698](../../agents/web_agent.py#L4698) | 4698 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L004699](../../agents/web_agent.py#L4699) | 4699 | `"                working_question = ("` | — |
 | [SRC-1AE03B9EC3-L004700](../../agents/web_agent.py#L4700) | 4700 | `"                    question if semantic_context.get(\"topic_shift\")"` | — |
-| [SRC-1AE03B9EC3-L004701](../../agents/web_agent.py#L4701) | 4701 | `"                    else semantic_context.get(\"resolved_question\") or question"` | — |
-| [SRC-1AE03B9EC3-L004702](../../agents/web_agent.py#L4702) | 4702 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004703](../../agents/web_agent.py#L4703) | 4703 | `"                semantic_decision = route_intent("` | — |
-| [SRC-1AE03B9EC3-L004704](../../agents/web_agent.py#L4704) | 4704 | `"                    working_question,"` | — |
-| [SRC-1AE03B9EC3-L004705](../../agents/web_agent.py#L4705) | 4705 | `"                    clean_history,"` | — |
-| [SRC-1AE03B9EC3-L004706](../../agents/web_agent.py#L4706) | 4706 | `"                    routing_mode,"` | — |
-| [SRC-1AE03B9EC3-L004707](../../agents/web_agent.py#L4707) | 4707 | `"                    capability_question=self._is_self_question(working_question),"` | — |
-| [SRC-1AE03B9EC3-L004708](../../agents/web_agent.py#L4708) | 4708 | `"                    requires_web=("` | — |
-| [SRC-1AE03B9EC3-L004709](../../agents/web_agent.py#L4709) | 4709 | `"                        bool(semantic_context.get(\"needs_web\"))"` | — |
-| [SRC-1AE03B9EC3-L004710](../../agents/web_agent.py#L4710) | 4710 | `"                        or self._requires_web_research(working_question, routing_mode)"` | — |
-| [SRC-1AE03B9EC3-L004711](../../agents/web_agent.py#L4711) | 4711 | `"                    ),"` | — |
-| [SRC-1AE03B9EC3-L004712](../../agents/web_agent.py#L4712) | 4712 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004713](../../agents/web_agent.py#L4713) | 4713 | `"                if semantic_context.get(\"needs_web\") and routing_mode == \"auto\":"` | — |
-| [SRC-1AE03B9EC3-L004714](../../agents/web_agent.py#L4714) | 4714 | `"                    deep_intents = {\"compare\", \"social_opinions\", \"lead_generation\"}"` | — |
-| [SRC-1AE03B9EC3-L004715](../../agents/web_agent.py#L4715) | 4715 | `"                    intent_route = ("` | — |
-| [SRC-1AE03B9EC3-L004716](../../agents/web_agent.py#L4716) | 4716 | `"                        \"WEB_DEEP\""` | — |
-| [SRC-1AE03B9EC3-L004717](../../agents/web_agent.py#L4717) | 4717 | `"                        if semantic_context.get(\"research_depth\") == \"deep\""` | — |
-| [SRC-1AE03B9EC3-L004718](../../agents/web_agent.py#L4718) | 4718 | `"                        or semantic_context.get(\"intent\") in deep_intents"` | — |
-| [SRC-1AE03B9EC3-L004719](../../agents/web_agent.py#L4719) | 4719 | `"                        else \"WEB_SIMPLE\""` | — |
-| [SRC-1AE03B9EC3-L004720](../../agents/web_agent.py#L4720) | 4720 | `"                    )"` | — |

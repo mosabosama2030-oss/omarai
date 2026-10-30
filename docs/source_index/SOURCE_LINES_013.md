@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003121 إلى SRC-1AE03B9EC3-L003920
+- النطاق: SRC-1AE03B9EC3-L003101 إلى SRC-1AE03B9EC3-L003900
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003101](../../agents/web_agent.py#L3101) | 3101 | `"            self._record_generation_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L003102](../../agents/web_agent.py#L3102) | 3102 | `"                requested_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L003103](../../agents/web_agent.py#L3103) | 3103 | `"                attempted_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L003104](../../agents/web_agent.py#L3104) | 3104 | `"                status=\"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L003105](../../agents/web_agent.py#L3105) | 3105 | `"                error_class=\"MissingAPIKey\","` | — |
+| [SRC-1AE03B9EC3-L003106](../../agents/web_agent.py#L3106) | 3106 | `"                request_started=False,"` | — |
+| [SRC-1AE03B9EC3-L003107](../../agents/web_agent.py#L3107) | 3107 | `"                remote_response_received=False,"` | — |
+| [SRC-1AE03B9EC3-L003108](../../agents/web_agent.py#L3108) | 3108 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003109](../../agents/web_agent.py#L3109) | 3109 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
+| [SRC-1AE03B9EC3-L003110](../../agents/web_agent.py#L3110) | 3110 | `""` | — |
+| [SRC-1AE03B9EC3-L003111](../../agents/web_agent.py#L3111) | 3111 | `"        model_candidates = [requested_model]"` | — |
+| [SRC-1AE03B9EC3-L003112](../../agents/web_agent.py#L3112) | 3112 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L003113](../../agents/web_agent.py#L3113) | 3113 | `"            model_candidates.append(self.fallback_model)"` | — |
+| [SRC-1AE03B9EC3-L003114](../../agents/web_agent.py#L3114) | 3114 | `""` | — |
+| [SRC-1AE03B9EC3-L003115](../../agents/web_agent.py#L3115) | 3115 | `"        last_error: RuntimeError \| None = None"` | — |
+| [SRC-1AE03B9EC3-L003116](../../agents/web_agent.py#L3116) | 3116 | `"        for candidate_model in model_candidates:"` | — |
+| [SRC-1AE03B9EC3-L003117](../../agents/web_agent.py#L3117) | 3117 | `"            budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L003118](../../agents/web_agent.py#L3118) | 3118 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
+| [SRC-1AE03B9EC3-L003119](../../agents/web_agent.py#L3119) | 3119 | `"            if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L003120](../../agents/web_agent.py#L3120) | 3120 | `"                try:"` | — |
 | [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"                    budget.reserve(\"model_calls\")"` | — |
 | [SRC-1AE03B9EC3-L003122](../../agents/web_agent.py#L3122) | 3122 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
 | [SRC-1AE03B9EC3-L003123](../../agents/web_agent.py#L3123) | 3123 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
@@ -796,23 +816,3 @@
 | [SRC-1AE03B9EC3-L003898](../../agents/web_agent.py#L3898) | 3898 | `"    ) -> str:"` | — |
 | [SRC-1AE03B9EC3-L003899](../../agents/web_agent.py#L3899) | 3899 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L003900](../../agents/web_agent.py#L3900) | 3900 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003901](../../agents/web_agent.py#L3901) | 3901 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L003902](../../agents/web_agent.py#L3902) | 3902 | `"            evidence = _clean_text("` | — |
-| [SRC-1AE03B9EC3-L003903](../../agents/web_agent.py#L3903) | 3903 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
-| [SRC-1AE03B9EC3-L003904](../../agents/web_agent.py#L3904) | 3904 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003905](../../agents/web_agent.py#L3905) | 3905 | `"            source_blocks.append("` | — |
-| [SRC-1AE03B9EC3-L003906](../../agents/web_agent.py#L3906) | 3906 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003907](../../agents/web_agent.py#L3907) | 3907 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003908](../../agents/web_agent.py#L3908) | 3908 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
-| [SRC-1AE03B9EC3-L003909](../../agents/web_agent.py#L3909) | 3909 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003910](../../agents/web_agent.py#L3910) | 3910 | `"                f\"نص المصدر: {evidence}\""` | — |
-| [SRC-1AE03B9EC3-L003911](../../agents/web_agent.py#L3911) | 3911 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003912](../../agents/web_agent.py#L3912) | 3912 | `"        evidence_text = \"\\n\\n\".join(source_blocks) or \"لا توجد أدلة ويب متاحة.\""` | — |
-| [SRC-1AE03B9EC3-L003913](../../agents/web_agent.py#L3913) | 3913 | `"        messages = ["` | — |
-| [SRC-1AE03B9EC3-L003914](../../agents/web_agent.py#L3914) | 3914 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003915](../../agents/web_agent.py#L3915) | 3915 | `"                \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003916](../../agents/web_agent.py#L3916) | 3916 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003917](../../agents/web_agent.py#L3917) | 3917 | `"                    \"أنت مدقق ادعاءات بحثية؛ مهمتك فحص الاتساق مع الأدلة وتغطية محاور السؤال، \""` | — |
-| [SRC-1AE03B9EC3-L003918](../../agents/web_agent.py#L3918) | 3918 | `"                    \"وليست إصدار شهادة مستقلة بصحة الحقيقة. افحص كل ادعاء واقعي في المسودة على حدة \""` | — |
-| [SRC-1AE03B9EC3-L003919](../../agents/web_agent.py#L3919) | 3919 | `"                    \"مقابل النصوص المرفقة: هل تدعمه بوضوح، أم تدعمه جزئيًا، أم لا تدعمه؟ احتفظ فقط \""` | — |
-| [SRC-1AE03B9EC3-L003920](../../agents/web_agent.py#L3920) | 3920 | `"                    \"بالادعاءات المدعومة، وقيّد الادعاءات الجزئية، واحذف غير المدعوم، وصحح كل \""` | — |

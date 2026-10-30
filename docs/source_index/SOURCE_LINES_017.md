@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006321 إلى SRC-EEF2E6447C-L000485
+- النطاق: SRC-1AE03B9EC3-L006301 إلى SRC-EEF2E6447C-L000465
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006301](../../agents/web_agent.py#L6301) | 6301 | `""` | — |
+| [SRC-1AE03B9EC3-L006302](../../agents/web_agent.py#L6302) | 6302 | `"        if self.server_search_sources:"` | — |
+| [SRC-1AE03B9EC3-L006303](../../agents/web_agent.py#L6303) | 6303 | `"            answer += \"\\n\\nروابط إضافية من البحث المباشر عبر الويب:\""` | — |
+| [SRC-1AE03B9EC3-L006304](../../agents/web_agent.py#L6304) | 6304 | `"            for source in self.server_search_sources[:8]:"` | — |
+| [SRC-1AE03B9EC3-L006305](../../agents/web_agent.py#L6305) | 6305 | `"                answer += \"\\n- \" + source[\"title\"] + \" — \" + source[\"url\"]"` | — |
+| [SRC-1AE03B9EC3-L006306](../../agents/web_agent.py#L6306) | 6306 | `"        max_citable_sources = min(MAX_LLM_CITED_SOURCES, len(sources))"` | — |
+| [SRC-1AE03B9EC3-L006307](../../agents/web_agent.py#L6307) | 6307 | `"        answer, citation_warnings = self._remove_invalid_citations("` | — |
+| [SRC-1AE03B9EC3-L006308](../../agents/web_agent.py#L6308) | 6308 | `"            answer, max_citable_sources"` | — |
+| [SRC-1AE03B9EC3-L006309](../../agents/web_agent.py#L6309) | 6309 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006310](../../agents/web_agent.py#L6310) | 6310 | `"        citation_validation = self._citation_validation_metadata("` | — |
+| [SRC-1AE03B9EC3-L006311](../../agents/web_agent.py#L6311) | 6311 | `"            answer, max_citable_sources, citation_warnings, review_status"` | — |
+| [SRC-1AE03B9EC3-L006312](../../agents/web_agent.py#L6312) | 6312 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006313](../../agents/web_agent.py#L6313) | 6313 | `"        report[\"unique_sources\"] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L006314](../../agents/web_agent.py#L6314) | 6314 | `"        report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
+| [SRC-1AE03B9EC3-L006315](../../agents/web_agent.py#L6315) | 6315 | `"        report[\"second_pass_review\"] = review_status"` | — |
+| [SRC-1AE03B9EC3-L006316](../../agents/web_agent.py#L6316) | 6316 | `"        report[\"claim_audit\"] = review_status"` | — |
+| [SRC-1AE03B9EC3-L006317](../../agents/web_agent.py#L6317) | 6317 | `"        answer_coverage = {"` | — |
+| [SRC-1AE03B9EC3-L006318](../../agents/web_agent.py#L6318) | 6318 | `"            \"method\": \"explicit_criteria_heuristic\","` | — |
+| [SRC-1AE03B9EC3-L006319](../../agents/web_agent.py#L6319) | 6319 | `"            \"targets\": coverage_targets,"` | — |
+| [SRC-1AE03B9EC3-L006320](../../agents/web_agent.py#L6320) | 6320 | `"            \"review_prompted\": review_status == \"model_claim_audit_completed\","` | — |
 | [SRC-1AE03B9EC3-L006321](../../agents/web_agent.py#L6321) | 6321 | `"            \"status\": ("` | — |
 | [SRC-1AE03B9EC3-L006322](../../agents/web_agent.py#L6322) | 6322 | `"                \"model_review_requested_not_machine_verified\""` | — |
 | [SRC-1AE03B9EC3-L006323](../../agents/web_agent.py#L6323) | 6323 | `"                if coverage_targets and review_status == \"model_claim_audit_completed\""` | — |
@@ -814,23 +834,3 @@
 | [SRC-EEF2E6447C-L000463](../../api/omarai.py#L463) | 463 | `"                pass"` | — |
 | [SRC-EEF2E6447C-L000464](../../api/omarai.py#L464) | 464 | `""` | — |
 | [SRC-EEF2E6447C-L000465](../../api/omarai.py#L465) | 465 | `"        if timed_out:"` | — |
-| [SRC-EEF2E6447C-L000466](../../api/omarai.py#L466) | 466 | `"            self.close_connection = True"` | — |
-| [SRC-EEF2E6447C-L000467](../../api/omarai.py#L467) | 467 | `"            self.respond(408, {\"error\": \"request body read timed out\"})"` | — |
-| [SRC-EEF2E6447C-L000468](../../api/omarai.py#L468) | 468 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000469](../../api/omarai.py#L469) | 469 | `"        if len(body) != size:"` | — |
-| [SRC-EEF2E6447C-L000470](../../api/omarai.py#L470) | 470 | `"            self.close_connection = True"` | — |
-| [SRC-EEF2E6447C-L000471](../../api/omarai.py#L471) | 471 | `"            self.respond(400, {\"error\": \"incomplete request body\"})"` | — |
-| [SRC-EEF2E6447C-L000472](../../api/omarai.py#L472) | 472 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000473](../../api/omarai.py#L473) | 473 | `"        return bytes(body)"` | — |
-| [SRC-EEF2E6447C-L000474](../../api/omarai.py#L474) | 474 | `""` | — |
-| [SRC-EEF2E6447C-L000475](../../api/omarai.py#L475) | 475 | `"    def end_headers(self):"` | — |
-| [SRC-EEF2E6447C-L000476](../../api/omarai.py#L476) | 476 | `"        \"\"\"Apply defensive browser headers to successful and error responses alike.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000477](../../api/omarai.py#L477) | 477 | `"        self.send_header(\"X-Content-Type-Options\", \"nosniff\")"` | — |
-| [SRC-EEF2E6447C-L000478](../../api/omarai.py#L478) | 478 | `"        self.send_header(\"X-Frame-Options\", \"DENY\")"` | — |
-| [SRC-EEF2E6447C-L000479](../../api/omarai.py#L479) | 479 | `"        self.send_header(\"Referrer-Policy\", \"strict-origin-when-cross-origin\")"` | — |
-| [SRC-EEF2E6447C-L000480](../../api/omarai.py#L480) | 480 | `"        self.send_header(\"Permissions-Policy\", \"camera=(), microphone=(), geolocation=()\")"` | — |
-| [SRC-EEF2E6447C-L000481](../../api/omarai.py#L481) | 481 | `"        self.send_header(\"Content-Security-Policy\", _content_security_policy())"` | — |
-| [SRC-EEF2E6447C-L000482](../../api/omarai.py#L482) | 482 | `"        super().end_headers()"` | — |
-| [SRC-EEF2E6447C-L000483](../../api/omarai.py#L483) | 483 | `""` | — |
-| [SRC-EEF2E6447C-L000484](../../api/omarai.py#L484) | 484 | `"    def respond(self, status, payload, content_type=\"application/json; charset=utf-8\"):"` | — |
-| [SRC-EEF2E6447C-L000485](../../api/omarai.py#L485) | 485 | `"        body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()"` | — |

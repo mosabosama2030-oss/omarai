@@ -832,5 +832,5 @@
 | [SRC-7D6FC391EC-L000164](../../agents/claim_evidence.py#L164) | 164 | `"    lexical_signals = weak_signals = 0"` | — |
 | [SRC-7D6FC391EC-L000165](../../agents/claim_evidence.py#L165) | 165 | `""` | — |
 | [SRC-7D6FC391EC-L000166](../../agents/claim_evidence.py#L166) | 166 | `"    for number, segment in enumerate(segments, 1):"` | — |
-| [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]"` | — |
-| [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"        refs: list[dict[str, Any]] = []"` | — |
+| [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"        all_indexes = list(dict.fromkeys("` | — |
+| [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"            int(match.group(1)) for match in _CITATION.finditer(segment)"` | — |
