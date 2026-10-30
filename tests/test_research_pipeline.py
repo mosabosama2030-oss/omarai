@@ -117,18 +117,18 @@ def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():
     assert result["evidence"]["lexical_ledger"]["aspects"] == result["aspects"]
 
 
-def test_pipeline_reuses_preflight_task_spec_without_rebuilding_it():
-    from agents.task_understanding import build_task_spec
 
-    question = "ما سعر الهاتف ومدة الضمان؟"
-    task_spec = build_task_spec(question, intent_route="WEB_DEEP")
-
+def test_pipeline_preserves_planner_depth_and_freshness_metadata():
     result = build_research_pipeline(
-        question,
-        {"queries": ["الهاتف"]},
+        "قارن السيارات الكهربائية في مصر من حيث السعر والبطارية",
+        {
+            "queries": ["السيارات الكهربائية في مصر"],
+            "depth": "deep",
+            "freshness": "current",
+        },
+        mode="deep",
         intent_route="WEB_DEEP",
-        task_spec=task_spec,
     )
 
-    assert result["task_spec"] is task_spec
-    assert result["query_strategy_matrix"]
+    assert result["task_spec"]["planner_depth"] == "deep"
+    assert result["task_spec"]["planner_freshness"] == "current"
