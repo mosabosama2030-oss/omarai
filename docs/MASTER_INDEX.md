@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **115**
 - ملفات Python المحللة: **69**
-- تعريفات Python المفهرسة: **1488**
+- تعريفات Python المفهرسة: **1491**
 - تعريفات Python موثقة بوجود Docstring: **253**
-- تعريفات Python بلا Docstring: **931**
+- تعريفات Python بلا Docstring: **934**
 - تعريفات لا ينطبق عليها Docstring: **304**
 - الرموز الساكنة الإضافية: **1860**
-- الأسطر النصية المفهرسة حرفيًا: **39335**
+- الأسطر النصية المفهرسة حرفيًا: **39372**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -133,7 +133,7 @@
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 6375 | 160 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
-| FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 2673 | 66 | جرد الملف + AST Python |
+| FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 4258 | 103 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -1322,6 +1322,9 @@
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L34) | دالة | test_pipeline_clarifies_elliptical_question_without_search_plan | لا توجد Docstring. | ناقص | 34 | [SRC-96F6863E3C-L000034](../tests/test_research_pipeline.py#L34) |
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L43) | دالة | test_pipeline_resolves_followup_using_latest_context_anchor | لا توجد Docstring. | ناقص | 43 | [SRC-96F6863E3C-L000043](../tests/test_research_pipeline.py#L43) |
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L56) | دالة | test_pipeline_bounds_malformed_inputs_and_keeps_semantic_stage_unassessed | لا توجد Docstring. | ناقص | 56 | [SRC-96F6863E3C-L000056](../tests/test_research_pipeline.py#L56) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L70) | دالة | test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores | لا توجد Docstring. | ناقص | 70 | [SRC-96F6863E3C-L000070](../tests/test_research_pipeline.py#L70) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L73) | دالة | test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores.matcher | لا توجد Docstring. | ناقص | 73 | [SRC-96F6863E3C-L000073](../tests/test_research_pipeline.py#L73) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L96) | دالة | test_fallback_plan_exposes_same_unified_pipeline_contract | لا توجد Docstring. | ناقص | 96 | [SRC-96F6863E3C-L000096](../tests/test_research_pipeline.py#L96) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
