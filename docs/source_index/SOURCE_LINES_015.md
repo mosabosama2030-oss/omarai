@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004782 إلى SRC-1AE03B9EC3-L005581
+- النطاق: SRC-1AE03B9EC3-L004777 إلى SRC-1AE03B9EC3-L005576
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004777](../../agents/web_agent.py#L4777) | 4777 | `"                if context_override is not None:"` | — |
+| [SRC-1AE03B9EC3-L004778](../../agents/web_agent.py#L4778) | 4778 | `"                    general_answer[\"dialogue_context\"] = context_override"` | — |
+| [SRC-1AE03B9EC3-L004779](../../agents/web_agent.py#L4779) | 4779 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
+| [SRC-1AE03B9EC3-L004780](../../agents/web_agent.py#L4780) | 4780 | `"                        general_answer[\"research_plan\"][\"dialogue_context\"] = context_override"` | — |
+| [SRC-1AE03B9EC3-L004781](../../agents/web_agent.py#L4781) | 4781 | `"                return self._annotate_intent_route("` | — |
 | [SRC-1AE03B9EC3-L004782](../../agents/web_agent.py#L4782) | 4782 | `"                    general_answer, intent_route, intent_reason, clean_mode"` | — |
 | [SRC-1AE03B9EC3-L004783](../../agents/web_agent.py#L4783) | 4783 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004784](../../agents/web_agent.py#L4784) | 4784 | `"            # Preserve the existing degraded-mode behavior when generation is unavailable:"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L005574](../../agents/web_agent.py#L5574) | 5574 | `"            search_warnings.append("` | — |
 | [SRC-1AE03B9EC3-L005575](../../agents/web_agent.py#L5575) | 5575 | `"                \"أُعيد تطبيق شروط قبول الأدلة بعد محاولة الإصلاح؛ لم تُستخدم النتائج \""` | — |
 | [SRC-1AE03B9EC3-L005576](../../agents/web_agent.py#L5576) | 5576 | `"                \"التي أخفقت في شروط الرسمية أو الحداثة أو كونها منشورات اجتماعية.\""` | — |
-| [SRC-1AE03B9EC3-L005577](../../agents/web_agent.py#L5577) | 5577 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005578](../../agents/web_agent.py#L5578) | 5578 | `"        if evidence_repair.get(\"attempted\") and \"final_source_count\" in evidence_repair:"` | — |
-| [SRC-1AE03B9EC3-L005579](../../agents/web_agent.py#L5579) | 5579 | `"            final_domains = {"` | — |
-| [SRC-1AE03B9EC3-L005580](../../agents/web_agent.py#L5580) | 5580 | `"                registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L005581](../../agents/web_agent.py#L5581) | 5581 | `"                    source.get(\"domain\")"` | — |

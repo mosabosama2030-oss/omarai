@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001582 إلى SRC-1AE03B9EC3-L002381
+- النطاق: SRC-1AE03B9EC3-L001577 إلى SRC-1AE03B9EC3-L002376
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"                \"دراسة علمية\", \"دراسات\", \"ابحاث\", \"أبحاث\", \"بحث علمي\","` | — |
+| [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"                \"ورقة علمية\", \"أوراق علمية\", \"academic\", \"research\","` | — |
+| [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"                \"scientific study\", \"research paper\", \"peer reviewed\","` | — |
+| [SRC-1AE03B9EC3-L001580](../../agents/web_agent.py#L1580) | 1580 | `"                \"peer-reviewed\", \"scholarly\", \"literature review\","` | — |
+| [SRC-1AE03B9EC3-L001581](../../agents/web_agent.py#L1581) | 1581 | `"                \"systematic review\", \"arxiv\", \"openalex\", \"crossref\","` | — |
 | [SRC-1AE03B9EC3-L001582](../../agents/web_agent.py#L1582) | 1582 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001583](../../agents/web_agent.py#L1583) | 1583 | `"            if len(combined) < 3 and any(marker in search_query.casefold() for marker in academic_markers):"` | — |
 | [SRC-1AE03B9EC3-L001584](../../agents/web_agent.py#L1584) | 1584 | `"                academic_adapters: list[tuple[str, Any]] = ["` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"                else:"` | — |
 | [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"                    return result(status=\"redirect_limit\", error_class=\"RedirectLimit\")"` | — |
 | [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"        except (OSError, ValueError, httpx.HTTPError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"            return result(status=\"network_error\", error_class=type(exc).__name__)"` | — |
-| [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `""` | — |
-| [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `"        if media_type == \"text/plain\":"` | — |
-| [SRC-1AE03B9EC3-L002380](../../agents/web_agent.py#L2380) | 2380 | `"            bounded_text = _clean_text(html, MAX_PAGE_TEXT_CHARS + 1)"` | — |
-| [SRC-1AE03B9EC3-L002381](../../agents/web_agent.py#L2381) | 2381 | `"            text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |

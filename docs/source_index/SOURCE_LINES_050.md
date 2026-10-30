@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **050**
-- سجلات الأسطر: **352**
-- النطاق: SRC-DE7EABE998-L000180 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **357**
+- النطاق: SRC-DE7EABE998-L000175 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000175](../../web/agent.html#L175) | 175 | `"  answer_generated_citations_range_checked_semantic_support_unverified:\"وُلّدت الإجابة وفُحصت أرقام الإحالات فقط؛ دعم الادعاءات دلاليًا غير متحقق\","` | — |
+| [SRC-DE7EABE998-L000176](../../web/agent.html#L176) | 176 | `"  answer_generated_without_valid_citation_markers:\"وُلّدت الإجابة دون علامات إحالة صالحة\""` | — |
+| [SRC-DE7EABE998-L000177](../../web/agent.html#L177) | 177 | `" };"` | — |
+| [SRC-DE7EABE998-L000178](../../web/agent.html#L178) | 178 | `" const completionPhaseLabels={"` | — |
+| [SRC-DE7EABE998-L000179](../../web/agent.html#L179) | 179 | `"  planning:\"التخطيط\",search:\"البحث\",source_filtering:\"تصفية المصادر\","` | — |
 | [SRC-DE7EABE998-L000180](../../web/agent.html#L180) | 180 | `"  page_reading:\"قراءة الصفحات\",answer_generation:\"توليد الإجابة\","` | — |
 | [SRC-DE7EABE998-L000181](../../web/agent.html#L181) | 181 | `"  citation_validation:\"فحص الإحالات\",semantic_verification:\"التحقق الدلالي\""` | — |
 | [SRC-DE7EABE998-L000182](../../web/agent.html#L182) | 182 | `" };"` | — |

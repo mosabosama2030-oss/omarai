@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006382 إلى SRC-EEF2E6447C-L000559
+- النطاق: SRC-1AE03B9EC3-L006377 إلى SRC-EEF2E6447C-L000554
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006377](../../agents/web_agent.py#L6377) | 6377 | `"        # citation markers. This is a deterministic presentation guard, not a"` | — |
+| [SRC-1AE03B9EC3-L006378](../../agents/web_agent.py#L6378) | 6378 | `"        # semantic entailment check."` | — |
+| [SRC-1AE03B9EC3-L006379](../../agents/web_agent.py#L6379) | 6379 | `"        uncited_reviewed_answer = ("` | — |
+| [SRC-1AE03B9EC3-L006380](../../agents/web_agent.py#L6380) | 6380 | `"            used_llm"` | — |
+| [SRC-1AE03B9EC3-L006381](../../agents/web_agent.py#L6381) | 6381 | `"            and bool(sources)"` | — |
 | [SRC-1AE03B9EC3-L006382](../../agents/web_agent.py#L6382) | 6382 | `"            and review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L006383](../../agents/web_agent.py#L6383) | 6383 | `"            and citation_validation[\"valid_citation_count\"] == 0"` | — |
 | [SRC-1AE03B9EC3-L006384](../../agents/web_agent.py#L6384) | 6384 | `"        )"` | — |
@@ -829,8 +834,3 @@
 | [SRC-EEF2E6447C-L000552](../../api/omarai.py#L552) | 552 | `"            if origin and not self._origin_allowed(origin):"` | — |
 | [SRC-EEF2E6447C-L000553](../../api/omarai.py#L553) | 553 | `"                return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
 | [SRC-EEF2E6447C-L000554](../../api/omarai.py#L554) | 554 | `""` | — |
-| [SRC-EEF2E6447C-L000555](../../api/omarai.py#L555) | 555 | `"            raw_body = self._read_request_body()"` | — |
-| [SRC-EEF2E6447C-L000556](../../api/omarai.py#L556) | 556 | `"            if raw_body is None:"` | — |
-| [SRC-EEF2E6447C-L000557](../../api/omarai.py#L557) | 557 | `"                return"` | — |
-| [SRC-EEF2E6447C-L000558](../../api/omarai.py#L558) | 558 | `"            data = json.loads(raw_body)"` | — |
-| [SRC-EEF2E6447C-L000559](../../api/omarai.py#L559) | 559 | `"            if not isinstance(data, dict):"` | — |

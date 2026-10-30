@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001013 إلى SRC-F725E90B2A-L001812
+- النطاق: SRC-F725E90B2A-L001008 إلى SRC-F725E90B2A-L001807
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001008](../../tests/test_web_agent.py#L1008) | 1008 | `""` | — |
+| [SRC-F725E90B2A-L001009](../../tests/test_web_agent.py#L1009) | 1009 | `"def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001010](../../tests/test_web_agent.py#L1010) | 1010 | `"    import json"` | — |
+| [SRC-F725E90B2A-L001011](../../tests/test_web_agent.py#L1011) | 1011 | `""` | — |
+| [SRC-F725E90B2A-L001012](../../tests/test_web_agent.py#L1012) | 1012 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
 | [SRC-F725E90B2A-L001013](../../tests/test_web_agent.py#L1013) | 1013 | `"    monkeypatch.setenv(\"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\")"` | — |
 | [SRC-F725E90B2A-L001014](../../tests/test_web_agent.py#L1014) | 1014 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001015](../../tests/test_web_agent.py#L1015) | 1015 | `"    agent.api_key = \"test-key\""` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L001805](../../tests/test_web_agent.py#L1805) | 1805 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001806](../../tests/test_web_agent.py#L1806) | 1806 | `"    }"` | — |
 | [SRC-F725E90B2A-L001807](../../tests/test_web_agent.py#L1807) | 1807 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L001808](../../tests/test_web_agent.py#L1808) | 1808 | `""` | — |
-| [SRC-F725E90B2A-L001809](../../tests/test_web_agent.py#L1809) | 1809 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L001810](../../tests/test_web_agent.py#L1810) | 1810 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001811](../../tests/test_web_agent.py#L1811) | 1811 | `"        social_source = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L001812](../../tests/test_web_agent.py#L1812) | 1812 | `"        social_source.update({"` | — |

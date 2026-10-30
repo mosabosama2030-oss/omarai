@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002382 إلى SRC-1AE03B9EC3-L003181
+- النطاق: SRC-1AE03B9EC3-L002377 إلى SRC-1AE03B9EC3-L003176
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"            return result(status=\"network_error\", error_class=type(exc).__name__)"` | — |
+| [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `""` | — |
+| [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `"        if media_type == \"text/plain\":"` | — |
+| [SRC-1AE03B9EC3-L002380](../../agents/web_agent.py#L2380) | 2380 | `"            bounded_text = _clean_text(html, MAX_PAGE_TEXT_CHARS + 1)"` | — |
+| [SRC-1AE03B9EC3-L002381](../../agents/web_agent.py#L2381) | 2381 | `"            text_truncated = len(bounded_text) > MAX_PAGE_TEXT_CHARS"` | — |
 | [SRC-1AE03B9EC3-L002382](../../agents/web_agent.py#L2382) | 2382 | `"            page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
 | [SRC-1AE03B9EC3-L002383](../../agents/web_agent.py#L2383) | 2383 | `"            status = ("` | — |
 | [SRC-1AE03B9EC3-L002384](../../agents/web_agent.py#L2384) | 2384 | `"                \"empty_content\" if not page_text"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L003174](../../agents/web_agent.py#L3174) | 3174 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L003175](../../agents/web_agent.py#L3175) | 3175 | `"                with urllib.request.urlopen(request, timeout=request_timeout) as response:"` | — |
 | [SRC-1AE03B9EC3-L003176](../../agents/web_agent.py#L3176) | 3176 | `"                    data = json.loads(response.read(2_000_000).decode(\"utf-8\"))"` | — |
-| [SRC-1AE03B9EC3-L003177](../../agents/web_agent.py#L3177) | 3177 | `"                choice = data[\"choices\"][0]"` | — |
-| [SRC-1AE03B9EC3-L003178](../../agents/web_agent.py#L3178) | 3178 | `"                if not isinstance(choice, dict):"` | — |
-| [SRC-1AE03B9EC3-L003179](../../agents/web_agent.py#L3179) | 3179 | `"                    raise TypeError(\"invalid completion choice\")"` | — |
-| [SRC-1AE03B9EC3-L003180](../../agents/web_agent.py#L3180) | 3180 | `"                finish_reason = choice.get(\"finish_reason\")"` | — |
-| [SRC-1AE03B9EC3-L003181](../../agents/web_agent.py#L3181) | 3181 | `"                normalized_finish_reason = ("` | — |

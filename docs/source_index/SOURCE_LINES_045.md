@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000213 إلى SRC-F725E90B2A-L001012
+- النطاق: SRC-F725E90B2A-L000208 إلى SRC-F725E90B2A-L001007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000208](../../tests/test_web_agent.py#L208) | 208 | `"    calls = []"` | — |
+| [SRC-F725E90B2A-L000209](../../tests/test_web_agent.py#L209) | 209 | `""` | — |
+| [SRC-F725E90B2A-L000210](../../tests/test_web_agent.py#L210) | 210 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000211](../../tests/test_web_agent.py#L211) | 211 | `"        calls.append(url)"` | — |
+| [SRC-F725E90B2A-L000212](../../tests/test_web_agent.py#L212) | 212 | `"        return FakeResponse(html if \"duckduckgo.com\" in url else rss)"` | — |
 | [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `""` | — |
 | [SRC-F725E90B2A-L000214](../../tests/test_web_agent.py#L214) | 214 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
 | [SRC-F725E90B2A-L000215](../../tests/test_web_agent.py#L215) | 215 | `"    results = WebAgent()._search_web(\"سؤال بحث تجريبي\")"` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L001005](../../tests/test_web_agent.py#L1005) | 1005 | `"    assert report[\"overall_status\"] == \"degraded\""` | — |
 | [SRC-F725E90B2A-L001006](../../tests/test_web_agent.py#L1006) | 1006 | `"    assert \"test-key\" not in str(report)"` | — |
 | [SRC-F725E90B2A-L001007](../../tests/test_web_agent.py#L1007) | 1007 | `""` | — |
-| [SRC-F725E90B2A-L001008](../../tests/test_web_agent.py#L1008) | 1008 | `""` | — |
-| [SRC-F725E90B2A-L001009](../../tests/test_web_agent.py#L1009) | 1009 | `"def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001010](../../tests/test_web_agent.py#L1010) | 1010 | `"    import json"` | — |
-| [SRC-F725E90B2A-L001011](../../tests/test_web_agent.py#L1011) | 1011 | `""` | — |
-| [SRC-F725E90B2A-L001012](../../tests/test_web_agent.py#L1012) | 1012 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |

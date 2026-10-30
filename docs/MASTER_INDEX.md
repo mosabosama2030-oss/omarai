@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **115**
 - ملفات Python المحللة: **69**
-- تعريفات Python المفهرسة: **1497**
+- تعريفات Python المفهرسة: **1498**
 - تعريفات Python موثقة بوجود Docstring: **253**
-- تعريفات Python بلا Docstring: **940**
+- تعريفات Python بلا Docstring: **941**
 - تعريفات لا ينطبق عليها Docstring: **304**
 - الرموز الساكنة الإضافية: **1866**
-- الأسطر النصية المفهرسة حرفيًا: **39552**
+- الأسطر النصية المفهرسة حرفيًا: **39557**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 11879 | 296 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
-| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 7987 | 206 | جرد الملف + AST Python |
+| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8062 | 211 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
@@ -357,8 +357,9 @@
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | متغير/ثابت Python | MAX_PIPELINE_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L22) | متغير/ثابت Python | MAX_PIPELINE_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-60066C6786-L000022](../agents/research_pipeline.py#L22) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L25) | دالة | _clean_aspects | لا توجد Docstring. | ناقص | 25 | [SRC-60066C6786-L000025](../agents/research_pipeline.py#L25) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L44) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 44 | [SRC-60066C6786-L000044](../agents/research_pipeline.py#L44) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L112) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 112 | [SRC-60066C6786-L000112](../agents/research_pipeline.py#L112) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L45) | دالة | _has_resolved_dialogue_context | لا توجد Docstring. | ناقص | 45 | [SRC-60066C6786-L000045](../agents/research_pipeline.py#L45) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L56) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 56 | [SRC-60066C6786-L000056](../agents/research_pipeline.py#L56) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L124) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 124 | [SRC-60066C6786-L000124](../agents/research_pipeline.py#L124) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |

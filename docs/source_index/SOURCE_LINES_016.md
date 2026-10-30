@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005582 إلى SRC-1AE03B9EC3-L006381
+- النطاق: SRC-1AE03B9EC3-L005577 إلى SRC-1AE03B9EC3-L006376
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005577](../../agents/web_agent.py#L5577) | 5577 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L005578](../../agents/web_agent.py#L5578) | 5578 | `"        if evidence_repair.get(\"attempted\") and \"final_source_count\" in evidence_repair:"` | — |
+| [SRC-1AE03B9EC3-L005579](../../agents/web_agent.py#L5579) | 5579 | `"            final_domains = {"` | — |
+| [SRC-1AE03B9EC3-L005580](../../agents/web_agent.py#L5580) | 5580 | `"                registrable_domain("` | — |
+| [SRC-1AE03B9EC3-L005581](../../agents/web_agent.py#L5581) | 5581 | `"                    source.get(\"domain\")"` | — |
 | [SRC-1AE03B9EC3-L005582](../../agents/web_agent.py#L5582) | 5582 | `"                    or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
 | [SRC-1AE03B9EC3-L005583](../../agents/web_agent.py#L5583) | 5583 | `"                    or \"\""` | — |
 | [SRC-1AE03B9EC3-L005584](../../agents/web_agent.py#L5584) | 5584 | `"                )"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L006374](../../agents/web_agent.py#L6374) | 6374 | `""` | — |
 | [SRC-1AE03B9EC3-L006375](../../agents/web_agent.py#L6375) | 6375 | `"        # Source breadth and a completed model-assisted review do not justify a"` | — |
 | [SRC-1AE03B9EC3-L006376](../../agents/web_agent.py#L6376) | 6376 | `"        # positive research-quality label if the final answer has no valid source"` | — |
-| [SRC-1AE03B9EC3-L006377](../../agents/web_agent.py#L6377) | 6377 | `"        # citation markers. This is a deterministic presentation guard, not a"` | — |
-| [SRC-1AE03B9EC3-L006378](../../agents/web_agent.py#L6378) | 6378 | `"        # semantic entailment check."` | — |
-| [SRC-1AE03B9EC3-L006379](../../agents/web_agent.py#L6379) | 6379 | `"        uncited_reviewed_answer = ("` | — |
-| [SRC-1AE03B9EC3-L006380](../../agents/web_agent.py#L6380) | 6380 | `"            used_llm"` | — |
-| [SRC-1AE03B9EC3-L006381](../../agents/web_agent.py#L6381) | 6381 | `"            and bool(sources)"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0799EEEB02-L000293 إلى SRC-1AE03B9EC3-L000781
+- النطاق: SRC-0799EEEB02-L000288 إلى SRC-1AE03B9EC3-L000776
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0799EEEB02-L000288](../../agents/tool_execution_status.py#L288) | 288 | `"        search_report.get(\"claim_audit\")"` | — |
+| [SRC-0799EEEB02-L000289](../../agents/tool_execution_status.py#L289) | 289 | `"        or search_report.get(\"second_pass_review\")"` | — |
+| [SRC-0799EEEB02-L000290](../../agents/tool_execution_status.py#L290) | 290 | `"        or \"unknown\""` | — |
+| [SRC-0799EEEB02-L000291](../../agents/tool_execution_status.py#L291) | 291 | `"    )"` | — |
+| [SRC-0799EEEB02-L000292](../../agents/tool_execution_status.py#L292) | 292 | `"    if tool not in required:"` | — |
 | [SRC-0799EEEB02-L000293](../../agents/tool_execution_status.py#L293) | 293 | `"        status = \"not_required\""` | — |
 | [SRC-0799EEEB02-L000294](../../agents/tool_execution_status.py#L294) | 294 | `"    elif review_status == \"model_claim_audit_completed\":"` | — |
 | [SRC-0799EEEB02-L000295](../../agents/tool_execution_status.py#L295) | 295 | `"        status = \"completed_model_assisted_review\""` | — |
@@ -820,8 +825,3 @@
 | [SRC-1AE03B9EC3-L000774](../../agents/web_agent.py#L774) | 774 | `""` | — |
 | [SRC-1AE03B9EC3-L000775](../../agents/web_agent.py#L775) | 775 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `"    def _question_coverage_targets(question: str) -> list[str]:"` | — |
-| [SRC-1AE03B9EC3-L000777](../../agents/web_agent.py#L777) | 777 | `"        \"\"\"Use the richer aspect parser, then the shared deterministic fallback.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000778](../../agents/web_agent.py#L778) | 778 | `"        enhanced_targets = extract_aspects(question)"` | — |
-| [SRC-1AE03B9EC3-L000779](../../agents/web_agent.py#L779) | 779 | `"        if enhanced_targets:"` | — |
-| [SRC-1AE03B9EC3-L000780](../../agents/web_agent.py#L780) | 780 | `"            return enhanced_targets[:8]"` | — |
-| [SRC-1AE03B9EC3-L000781](../../agents/web_agent.py#L781) | 781 | `"        return extract_question_coverage_targets(question)"` | — |

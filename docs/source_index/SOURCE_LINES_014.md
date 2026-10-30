@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003982 إلى SRC-1AE03B9EC3-L004781
+- النطاق: SRC-1AE03B9EC3-L003977 إلى SRC-1AE03B9EC3-L004776
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003977](../../agents/web_agent.py#L3977) | 3977 | `"        raw_review = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003978](../../agents/web_agent.py#L3978) | 3978 | `"            messages,"` | — |
+| [SRC-1AE03B9EC3-L003979](../../agents/web_agent.py#L3979) | 3979 | `"            max_tokens=1700,"` | — |
+| [SRC-1AE03B9EC3-L003980](../../agents/web_agent.py#L3980) | 3980 | `"            temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003981](../../agents/web_agent.py#L3981) | 3981 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
 | [SRC-1AE03B9EC3-L003982](../../agents/web_agent.py#L3982) | 3982 | `"            model=self.review_model,"` | — |
 | [SRC-1AE03B9EC3-L003983](../../agents/web_agent.py#L3983) | 3983 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003984](../../agents/web_agent.py#L3984) | 3984 | `"        start_marker = \"<<<OMARAI_FINAL_ANSWER>>>\""` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L004774](../../agents/web_agent.py#L4774) | 4774 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
 | [SRC-1AE03B9EC3-L004775](../../agents/web_agent.py#L4775) | 4775 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
 | [SRC-1AE03B9EC3-L004776](../../agents/web_agent.py#L4776) | 4776 | `"                general_answer[\"question\"] = question"` | — |
-| [SRC-1AE03B9EC3-L004777](../../agents/web_agent.py#L4777) | 4777 | `"                if context_override is not None:"` | — |
-| [SRC-1AE03B9EC3-L004778](../../agents/web_agent.py#L4778) | 4778 | `"                    general_answer[\"dialogue_context\"] = context_override"` | — |
-| [SRC-1AE03B9EC3-L004779](../../agents/web_agent.py#L4779) | 4779 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004780](../../agents/web_agent.py#L4780) | 4780 | `"                        general_answer[\"research_plan\"][\"dialogue_context\"] = context_override"` | — |
-| [SRC-1AE03B9EC3-L004781](../../agents/web_agent.py#L4781) | 4781 | `"                return self._annotate_intent_route("` | — |

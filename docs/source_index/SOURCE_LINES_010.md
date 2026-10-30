@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000782 إلى SRC-1AE03B9EC3-L001581
+- النطاق: SRC-1AE03B9EC3-L000777 إلى SRC-1AE03B9EC3-L001576
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000777](../../agents/web_agent.py#L777) | 777 | `"        \"\"\"Use the richer aspect parser, then the shared deterministic fallback.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000778](../../agents/web_agent.py#L778) | 778 | `"        enhanced_targets = extract_aspects(question)"` | — |
+| [SRC-1AE03B9EC3-L000779](../../agents/web_agent.py#L779) | 779 | `"        if enhanced_targets:"` | — |
+| [SRC-1AE03B9EC3-L000780](../../agents/web_agent.py#L780) | 780 | `"            return enhanced_targets[:8]"` | — |
+| [SRC-1AE03B9EC3-L000781](../../agents/web_agent.py#L781) | 781 | `"        return extract_question_coverage_targets(question)"` | — |
 | [SRC-1AE03B9EC3-L000782](../../agents/web_agent.py#L782) | 782 | `""` | — |
 | [SRC-1AE03B9EC3-L000783](../../agents/web_agent.py#L783) | 783 | `""` | — |
 | [SRC-1AE03B9EC3-L000784](../../agents/web_agent.py#L784) | 784 | `"    @staticmethod"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"            # run_one so budget, timeouts, public-URL/SSRF, blocklist and relevance"` | — |
 | [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `"            # validation are identical to ordinary search connectors."` | — |
 | [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"            academic_markers = ("` | — |
-| [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"                \"دراسة علمية\", \"دراسات\", \"ابحاث\", \"أبحاث\", \"بحث علمي\","` | — |
-| [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"                \"ورقة علمية\", \"أوراق علمية\", \"academic\", \"research\","` | — |
-| [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"                \"scientific study\", \"research paper\", \"peer reviewed\","` | — |
-| [SRC-1AE03B9EC3-L001580](../../agents/web_agent.py#L1580) | 1580 | `"                \"peer-reviewed\", \"scholarly\", \"literature review\","` | — |
-| [SRC-1AE03B9EC3-L001581](../../agents/web_agent.py#L1581) | 1581 | `"                \"systematic review\", \"arxiv\", \"openalex\", \"crossref\","` | — |

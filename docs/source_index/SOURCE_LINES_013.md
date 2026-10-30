@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003182 إلى SRC-1AE03B9EC3-L003981
+- النطاق: SRC-1AE03B9EC3-L003177 إلى SRC-1AE03B9EC3-L003976
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003177](../../agents/web_agent.py#L3177) | 3177 | `"                choice = data[\"choices\"][0]"` | — |
+| [SRC-1AE03B9EC3-L003178](../../agents/web_agent.py#L3178) | 3178 | `"                if not isinstance(choice, dict):"` | — |
+| [SRC-1AE03B9EC3-L003179](../../agents/web_agent.py#L3179) | 3179 | `"                    raise TypeError(\"invalid completion choice\")"` | — |
+| [SRC-1AE03B9EC3-L003180](../../agents/web_agent.py#L3180) | 3180 | `"                finish_reason = choice.get(\"finish_reason\")"` | — |
+| [SRC-1AE03B9EC3-L003181](../../agents/web_agent.py#L3181) | 3181 | `"                normalized_finish_reason = ("` | — |
 | [SRC-1AE03B9EC3-L003182](../../agents/web_agent.py#L3182) | 3182 | `"                    finish_reason.strip().lower()"` | — |
 | [SRC-1AE03B9EC3-L003183](../../agents/web_agent.py#L3183) | 3183 | `"                    if isinstance(finish_reason, str)"` | — |
 | [SRC-1AE03B9EC3-L003184](../../agents/web_agent.py#L3184) | 3184 | `"                    else \"\""` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                    + json.dumps(requirement_evidence, ensure_ascii=False)"` | — |
 | [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"            })"` | — |
-| [SRC-1AE03B9EC3-L003977](../../agents/web_agent.py#L3977) | 3977 | `"        raw_review = self._request_completion("` | — |
-| [SRC-1AE03B9EC3-L003978](../../agents/web_agent.py#L3978) | 3978 | `"            messages,"` | — |
-| [SRC-1AE03B9EC3-L003979](../../agents/web_agent.py#L3979) | 3979 | `"            max_tokens=1700,"` | — |
-| [SRC-1AE03B9EC3-L003980](../../agents/web_agent.py#L3980) | 3980 | `"            temperature=0.0,"` | — |
-| [SRC-1AE03B9EC3-L003981](../../agents/web_agent.py#L3981) | 3981 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
