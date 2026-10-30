@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **926**
 - تعريفات لا ينطبق عليها Docstring: **302**
 - الرموز الساكنة الإضافية: **1835**
-- الأسطر النصية المفهرسة حرفيًا: **38958**
+- الأسطر النصية المفهرسة حرفيًا: **38960**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -106,7 +106,7 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 35570 | 962 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 35614 | 964 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
@@ -945,33 +945,33 @@
 | [tests/test_api.py](../tests/test_api.py#L390) | دالة | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota | لا توجد Docstring. | ناقص | 390 | [SRC-3451CC474D-L000390](../tests/test_api.py#L390) |
 | [tests/test_api.py](../tests/test_api.py#L393) | كلاس | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota.RateLimitHarness | لا توجد Docstring. | ناقص | 393 | [SRC-3451CC474D-L000393](../tests/test_api.py#L393) |
 | [tests/test_api.py](../tests/test_api.py#L405) | دالة | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota.RateLimitHarness.__init__ | لا توجد Docstring. | ناقص | 405 | [SRC-3451CC474D-L000405](../tests/test_api.py#L405) |
-| [tests/test_api.py](../tests/test_api.py#L418) | دالة | test_public_api_authentication_and_rate_limit_precede_json_parsing | Reject untrusted API calls before parsing bodies and throttle repeated failures. | موثق | 418 | [SRC-3451CC474D-L000418](../tests/test_api.py#L418) |
-| [tests/test_api.py](../tests/test_api.py#L446) | دالة | test_hosted_api_requires_private_token_for_search_and_lead_data | لا توجد Docstring. | ناقص | 446 | [SRC-3451CC474D-L000446](../tests/test_api.py#L446) |
-| [tests/test_api.py](../tests/test_api.py#L471) | دالة | test_hosted_api_rate_limits_authenticated_requests | لا توجد Docstring. | ناقص | 471 | [SRC-3451CC474D-L000471](../tests/test_api.py#L471) |
-| [tests/test_api.py](../tests/test_api.py#L492) | دالة | test_public_binding_requires_explicit_deployment_flag_and_strong_token | لا توجد Docstring. | ناقص | 492 | [SRC-3451CC474D-L000492](../tests/test_api.py#L492) |
-| [tests/test_api.py](../tests/test_api.py#L505) | دالة | test_rate_limiter_prunes_expired_client_buckets | Client IPs do not accumulate forever after their 60-second window expires. | موثق | 505 | [SRC-3451CC474D-L000505](../tests/test_api.py#L505) |
-| [tests/test_api.py](../tests/test_api.py#L513) | كلاس | test_rate_limiter_prunes_expired_client_buckets.FakeHandler | لا توجد Docstring. | ناقص | 513 | [SRC-3451CC474D-L000513](../tests/test_api.py#L513) |
-| [tests/test_api.py](../tests/test_api.py#L514) | دالة | test_rate_limiter_prunes_expired_client_buckets.FakeHandler.__init__ | لا توجد Docstring. | ناقص | 514 | [SRC-3451CC474D-L000514](../tests/test_api.py#L514) |
-| [tests/test_api.py](../tests/test_api.py#L530) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy | لا توجد Docstring. | ناقص | 530 | [SRC-3451CC474D-L000530](../tests/test_api.py#L530) |
-| [tests/test_api.py](../tests/test_api.py#L543) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.slow_answer | لا توجد Docstring. | ناقص | 543 | [SRC-3451CC474D-L000543](../tests/test_api.py#L543) |
-| [tests/test_api.py](../tests/test_api.py#L563) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.first_request | لا توجد Docstring. | ناقص | 563 | [SRC-3451CC474D-L000563](../tests/test_api.py#L563) |
-| [tests/test_api.py](../tests/test_api.py#L586) | دالة | test_agent_concurrency_limit_has_hard_bounds | لا توجد Docstring. | ناقص | 586 | [SRC-3451CC474D-L000586](../tests/test_api.py#L586) |
-| [tests/test_api.py](../tests/test_api.py#L595) | دالة | test_api_rejects_oversized_request_body | لا توجد Docstring. | ناقص | 595 | [SRC-3451CC474D-L000595](../tests/test_api.py#L595) |
-| [tests/test_api.py](../tests/test_api.py#L607) | دالة | test_api_rejects_malformed_content_length | لا توجد Docstring. | ناقص | 607 | [SRC-3451CC474D-L000607](../tests/test_api.py#L607) |
-| [tests/test_api.py](../tests/test_api.py#L630) | دالة | test_api_returns_408_when_request_body_read_times_out | لا توجد Docstring. | ناقص | 630 | [SRC-3451CC474D-L000630](../tests/test_api.py#L630) |
-| [tests/test_api.py](../tests/test_api.py#L656) | دالة | test_api_absolute_body_deadline_stops_slow_trickle | A client must not evade the total deadline by sending before each idle timeout. | موثق | 656 | [SRC-3451CC474D-L000656](../tests/test_api.py#L656) |
-| [tests/test_api.py](../tests/test_api.py#L703) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 703 | [SRC-3451CC474D-L000703](../tests/test_api.py#L703) |
-| [tests/test_api.py](../tests/test_api.py#L749) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 749 | [SRC-3451CC474D-L000749](../tests/test_api.py#L749) |
-| [tests/test_api.py](../tests/test_api.py#L770) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 770 | [SRC-3451CC474D-L000770](../tests/test_api.py#L770) |
-| [tests/test_api.py](../tests/test_api.py#L791) | دالة | test_security_headers_apply_to_json_and_html_responses | لا توجد Docstring. | ناقص | 791 | [SRC-3451CC474D-L000791](../tests/test_api.py#L791) |
-| [tests/test_api.py](../tests/test_api.py#L811) | دالة | test_health_exposes_only_validated_image_baked_sha | لا توجد Docstring. | ناقص | 811 | [SRC-3451CC474D-L000811](../tests/test_api.py#L811) |
-| [tests/test_api.py](../tests/test_api.py#L831) | دالة | test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable | لا توجد Docstring. | ناقص | 831 | [SRC-3451CC474D-L000831](../tests/test_api.py#L831) |
-| [tests/test_api.py](../tests/test_api.py#L846) | دالة | test_invalid_platform_commit_does_not_create_build_identity | لا توجد Docstring. | ناقص | 846 | [SRC-3451CC474D-L000846](../tests/test_api.py#L846) |
-| [tests/test_api.py](../tests/test_api.py#L858) | دالة | test_lead_store_uses_configured_database_path | لا توجد Docstring. | ناقص | 858 | [SRC-3451CC474D-L000858](../tests/test_api.py#L858) |
-| [tests/test_api.py](../tests/test_api.py#L871) | دالة | test_agent_concurrency_slot_released_after_operation_error | لا توجد Docstring. | ناقص | 871 | [SRC-3451CC474D-L000871](../tests/test_api.py#L871) |
-| [tests/test_api.py](../tests/test_api.py#L881) | دالة | test_agent_concurrency_slot_released_after_operation_error.answer_with_one_transient_failure | لا توجد Docstring. | ناقص | 881 | [SRC-3451CC474D-L000881](../tests/test_api.py#L881) |
-| [tests/test_api.py](../tests/test_api.py#L918) | دالة | test_csp_hashes_match_all_first_party_inline_content_and_attributes | لا توجد Docstring. | ناقص | 918 | [SRC-3451CC474D-L000918](../tests/test_api.py#L918) |
-| [tests/test_api.py](../tests/test_api.py#L956) | دالة | test_dashboard_uses_delegated_status_action_not_inline_onclick | لا توجد Docstring. | ناقص | 956 | [SRC-3451CC474D-L000956](../tests/test_api.py#L956) |
+| [tests/test_api.py](../tests/test_api.py#L420) | دالة | test_public_api_authentication_and_rate_limit_precede_json_parsing | Reject untrusted API calls before parsing bodies and throttle repeated failures. | موثق | 420 | [SRC-3451CC474D-L000420](../tests/test_api.py#L420) |
+| [tests/test_api.py](../tests/test_api.py#L448) | دالة | test_hosted_api_requires_private_token_for_search_and_lead_data | لا توجد Docstring. | ناقص | 448 | [SRC-3451CC474D-L000448](../tests/test_api.py#L448) |
+| [tests/test_api.py](../tests/test_api.py#L473) | دالة | test_hosted_api_rate_limits_authenticated_requests | لا توجد Docstring. | ناقص | 473 | [SRC-3451CC474D-L000473](../tests/test_api.py#L473) |
+| [tests/test_api.py](../tests/test_api.py#L494) | دالة | test_public_binding_requires_explicit_deployment_flag_and_strong_token | لا توجد Docstring. | ناقص | 494 | [SRC-3451CC474D-L000494](../tests/test_api.py#L494) |
+| [tests/test_api.py](../tests/test_api.py#L507) | دالة | test_rate_limiter_prunes_expired_client_buckets | Client IPs do not accumulate forever after their 60-second window expires. | موثق | 507 | [SRC-3451CC474D-L000507](../tests/test_api.py#L507) |
+| [tests/test_api.py](../tests/test_api.py#L515) | كلاس | test_rate_limiter_prunes_expired_client_buckets.FakeHandler | لا توجد Docstring. | ناقص | 515 | [SRC-3451CC474D-L000515](../tests/test_api.py#L515) |
+| [tests/test_api.py](../tests/test_api.py#L516) | دالة | test_rate_limiter_prunes_expired_client_buckets.FakeHandler.__init__ | لا توجد Docstring. | ناقص | 516 | [SRC-3451CC474D-L000516](../tests/test_api.py#L516) |
+| [tests/test_api.py](../tests/test_api.py#L532) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy | لا توجد Docstring. | ناقص | 532 | [SRC-3451CC474D-L000532](../tests/test_api.py#L532) |
+| [tests/test_api.py](../tests/test_api.py#L545) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.slow_answer | لا توجد Docstring. | ناقص | 545 | [SRC-3451CC474D-L000545](../tests/test_api.py#L545) |
+| [tests/test_api.py](../tests/test_api.py#L565) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.first_request | لا توجد Docstring. | ناقص | 565 | [SRC-3451CC474D-L000565](../tests/test_api.py#L565) |
+| [tests/test_api.py](../tests/test_api.py#L588) | دالة | test_agent_concurrency_limit_has_hard_bounds | لا توجد Docstring. | ناقص | 588 | [SRC-3451CC474D-L000588](../tests/test_api.py#L588) |
+| [tests/test_api.py](../tests/test_api.py#L597) | دالة | test_api_rejects_oversized_request_body | لا توجد Docstring. | ناقص | 597 | [SRC-3451CC474D-L000597](../tests/test_api.py#L597) |
+| [tests/test_api.py](../tests/test_api.py#L609) | دالة | test_api_rejects_malformed_content_length | لا توجد Docstring. | ناقص | 609 | [SRC-3451CC474D-L000609](../tests/test_api.py#L609) |
+| [tests/test_api.py](../tests/test_api.py#L632) | دالة | test_api_returns_408_when_request_body_read_times_out | لا توجد Docstring. | ناقص | 632 | [SRC-3451CC474D-L000632](../tests/test_api.py#L632) |
+| [tests/test_api.py](../tests/test_api.py#L658) | دالة | test_api_absolute_body_deadline_stops_slow_trickle | A client must not evade the total deadline by sending before each idle timeout. | موثق | 658 | [SRC-3451CC474D-L000658](../tests/test_api.py#L658) |
+| [tests/test_api.py](../tests/test_api.py#L705) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 705 | [SRC-3451CC474D-L000705](../tests/test_api.py#L705) |
+| [tests/test_api.py](../tests/test_api.py#L751) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 751 | [SRC-3451CC474D-L000751](../tests/test_api.py#L751) |
+| [tests/test_api.py](../tests/test_api.py#L772) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 772 | [SRC-3451CC474D-L000772](../tests/test_api.py#L772) |
+| [tests/test_api.py](../tests/test_api.py#L793) | دالة | test_security_headers_apply_to_json_and_html_responses | لا توجد Docstring. | ناقص | 793 | [SRC-3451CC474D-L000793](../tests/test_api.py#L793) |
+| [tests/test_api.py](../tests/test_api.py#L813) | دالة | test_health_exposes_only_validated_image_baked_sha | لا توجد Docstring. | ناقص | 813 | [SRC-3451CC474D-L000813](../tests/test_api.py#L813) |
+| [tests/test_api.py](../tests/test_api.py#L833) | دالة | test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable | لا توجد Docstring. | ناقص | 833 | [SRC-3451CC474D-L000833](../tests/test_api.py#L833) |
+| [tests/test_api.py](../tests/test_api.py#L848) | دالة | test_invalid_platform_commit_does_not_create_build_identity | لا توجد Docstring. | ناقص | 848 | [SRC-3451CC474D-L000848](../tests/test_api.py#L848) |
+| [tests/test_api.py](../tests/test_api.py#L860) | دالة | test_lead_store_uses_configured_database_path | لا توجد Docstring. | ناقص | 860 | [SRC-3451CC474D-L000860](../tests/test_api.py#L860) |
+| [tests/test_api.py](../tests/test_api.py#L873) | دالة | test_agent_concurrency_slot_released_after_operation_error | لا توجد Docstring. | ناقص | 873 | [SRC-3451CC474D-L000873](../tests/test_api.py#L873) |
+| [tests/test_api.py](../tests/test_api.py#L883) | دالة | test_agent_concurrency_slot_released_after_operation_error.answer_with_one_transient_failure | لا توجد Docstring. | ناقص | 883 | [SRC-3451CC474D-L000883](../tests/test_api.py#L883) |
+| [tests/test_api.py](../tests/test_api.py#L920) | دالة | test_csp_hashes_match_all_first_party_inline_content_and_attributes | لا توجد Docstring. | ناقص | 920 | [SRC-3451CC474D-L000920](../tests/test_api.py#L920) |
+| [tests/test_api.py](../tests/test_api.py#L958) | دالة | test_dashboard_uses_delegated_status_action_not_inline_onclick | لا توجد Docstring. | ناقص | 958 | [SRC-3451CC474D-L000958](../tests/test_api.py#L958) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L13) | دالة | test_extract_aspects_from_min_hayth | لا توجد Docstring. | ناقص | 13 | [SRC-6CBA87B20C-L000013](../tests/test_aspect_planning.py#L13) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L25) | دالة | test_extract_aspects_from_multi_question_marks | لا توجد Docstring. | ناقص | 25 | [SRC-6CBA87B20C-L000025](../tests/test_aspect_planning.py#L25) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L31) | دالة | test_build_aspect_queries_prioritizes_topic | لا توجد Docstring. | ناقص | 31 | [SRC-6CBA87B20C-L000031](../tests/test_aspect_planning.py#L31) |
@@ -3004,18 +3004,18 @@
 | [tests/test_api.py](../tests/test_api.py#L399) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 399 | [SRC-3451CC474D-L000399](../tests/test_api.py#L399) |
 | [tests/test_api.py](../tests/test_api.py#L400) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 400 | [SRC-3451CC474D-L000400](../tests/test_api.py#L400) |
 | [tests/test_api.py](../tests/test_api.py#L401) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 401 | [SRC-3451CC474D-L000401](../tests/test_api.py#L401) |
-| [tests/test_api.py](../tests/test_api.py#L420) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 420 | [SRC-3451CC474D-L000420](../tests/test_api.py#L420) |
-| [tests/test_api.py](../tests/test_api.py#L421) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 421 | [SRC-3451CC474D-L000421](../tests/test_api.py#L421) |
-| [tests/test_api.py](../tests/test_api.py#L589) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 589 | [SRC-3451CC474D-L000589](../tests/test_api.py#L589) |
-| [tests/test_api.py](../tests/test_api.py#L633) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 633 | [SRC-3451CC474D-L000633](../tests/test_api.py#L633) |
-| [tests/test_api.py](../tests/test_api.py#L663) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 663 | [SRC-3451CC474D-L000663](../tests/test_api.py#L663) |
-| [tests/test_api.py](../tests/test_api.py#L709) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 709 | [SRC-3451CC474D-L000709](../tests/test_api.py#L709) |
-| [tests/test_api.py](../tests/test_api.py#L710) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 710 | [SRC-3451CC474D-L000710](../tests/test_api.py#L710) |
-| [tests/test_api.py](../tests/test_api.py#L814) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 814 | [SRC-3451CC474D-L000814](../tests/test_api.py#L814) |
-| [tests/test_api.py](../tests/test_api.py#L815) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 815 | [SRC-3451CC474D-L000815](../tests/test_api.py#L815) |
-| [tests/test_api.py](../tests/test_api.py#L827) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 827 | [SRC-3451CC474D-L000827](../tests/test_api.py#L827) |
-| [tests/test_api.py](../tests/test_api.py#L828) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 828 | [SRC-3451CC474D-L000828](../tests/test_api.py#L828) |
-| [tests/test_api.py](../tests/test_api.py#L862) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 862 | [SRC-3451CC474D-L000862](../tests/test_api.py#L862) |
+| [tests/test_api.py](../tests/test_api.py#L422) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 422 | [SRC-3451CC474D-L000422](../tests/test_api.py#L422) |
+| [tests/test_api.py](../tests/test_api.py#L423) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 423 | [SRC-3451CC474D-L000423](../tests/test_api.py#L423) |
+| [tests/test_api.py](../tests/test_api.py#L591) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 591 | [SRC-3451CC474D-L000591](../tests/test_api.py#L591) |
+| [tests/test_api.py](../tests/test_api.py#L635) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 635 | [SRC-3451CC474D-L000635](../tests/test_api.py#L635) |
+| [tests/test_api.py](../tests/test_api.py#L665) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 665 | [SRC-3451CC474D-L000665](../tests/test_api.py#L665) |
+| [tests/test_api.py](../tests/test_api.py#L711) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 711 | [SRC-3451CC474D-L000711](../tests/test_api.py#L711) |
+| [tests/test_api.py](../tests/test_api.py#L712) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 712 | [SRC-3451CC474D-L000712](../tests/test_api.py#L712) |
+| [tests/test_api.py](../tests/test_api.py#L816) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 816 | [SRC-3451CC474D-L000816](../tests/test_api.py#L816) |
+| [tests/test_api.py](../tests/test_api.py#L817) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 817 | [SRC-3451CC474D-L000817](../tests/test_api.py#L817) |
+| [tests/test_api.py](../tests/test_api.py#L829) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 829 | [SRC-3451CC474D-L000829](../tests/test_api.py#L829) |
+| [tests/test_api.py](../tests/test_api.py#L830) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 830 | [SRC-3451CC474D-L000830](../tests/test_api.py#L830) |
+| [tests/test_api.py](../tests/test_api.py#L864) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 864 | [SRC-3451CC474D-L000864](../tests/test_api.py#L864) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 10 | [SRC-DA61479D59-L000010](../tests/test_connector_summary_counters.py#L10) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 130 | [SRC-DA61479D59-L000130](../tests/test_connector_summary_counters.py#L130) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 131 | [SRC-DA61479D59-L000131](../tests/test_connector_summary_counters.py#L131) |

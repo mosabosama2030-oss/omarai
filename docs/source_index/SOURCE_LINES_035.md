@@ -662,7 +662,7 @@
 | [SRC-3451CC474D-L000392](../../tests/test_api.py#L392) | 392 | `""` | — |
 | [SRC-3451CC474D-L000393](../../tests/test_api.py#L393) | 393 | `"    class RateLimitHarness:"` | — |
 | [SRC-3451CC474D-L000394](../../tests/test_api.py#L394) | 394 | `"        _rate_lock = threading.Lock()"` | — |
-| [SRC-3451CC474D-L000395](../../tests/test_api.py#L395) | 395 | `"        _request_times = defaultdict(deque)"` | — |
+| [SRC-3451CC474D-L000395](../../tests/test_api.py#L395) | 395 | `"        _request_times = None"` | — |
 | [SRC-3451CC474D-L000396](../../tests/test_api.py#L396) | 396 | `"        _rate_last_cleanup = 0.0"` | — |
 | [SRC-3451CC474D-L000397](../../tests/test_api.py#L397) | 397 | `"        RATE_LIMIT_REQUESTS = 1"` | — |
 | [SRC-3451CC474D-L000398](../../tests/test_api.py#L398) | 398 | `"        RATE_LIMIT_WINDOW_SECONDS = 60"` | — |
@@ -676,152 +676,152 @@
 | [SRC-3451CC474D-L000406](../../tests/test_api.py#L406) | 406 | `"            self.client_address = (address, 12345)"` | — |
 | [SRC-3451CC474D-L000407](../../tests/test_api.py#L407) | 407 | `"            self.headers = {}"` | — |
 | [SRC-3451CC474D-L000408](../../tests/test_api.py#L408) | 408 | `""` | — |
-| [SRC-3451CC474D-L000409](../../tests/test_api.py#L409) | 409 | `"    assert RateLimitHarness(\"198.51.100.1\")._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000410](../../tests/test_api.py#L410) | 410 | `"    assert RateLimitHarness(\"198.51.100.2\")._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000411](../../tests/test_api.py#L411) | 411 | `"    assert RateLimitHarness(\"198.51.100.3\")._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000412](../../tests/test_api.py#L412) | 412 | `"    # New identities share the reserved overflow bucket and its rate ceiling."` | — |
-| [SRC-3451CC474D-L000413](../../tests/test_api.py#L413) | 413 | `"    assert RateLimitHarness(\"198.51.100.4\")._rate_limit_ok() is False"` | — |
-| [SRC-3451CC474D-L000414](../../tests/test_api.py#L414) | 414 | `"    assert len(RateLimitHarness._request_times) == 3"` | — |
-| [SRC-3451CC474D-L000415](../../tests/test_api.py#L415) | 415 | `"    assert RateLimitHarness.RATE_LIMIT_OVERFLOW_KEY in RateLimitHarness._request_times"` | — |
-| [SRC-3451CC474D-L000416](../../tests/test_api.py#L416) | 416 | `""` | — |
-| [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `""` | — |
-| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `"def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `"    \"\"\"Reject untrusted API calls before parsing bodies and throttle repeated failures.\"\"\""` | — |
-| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"z\" * 48)"` | — |
-| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
-| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"    with Handler._rate_lock:"` | — |
-| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"        Handler._request_times.clear()"` | — |
-| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"    request = Request("` | — |
-| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `"        data=b\"invalid-json-body\","` | — |
-| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"        headers={\"Content-Type\": \"application/json\"},"` | — |
-| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"    )"` | — |
-| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `"    try:"` | — |
-| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"            first_status = response.status"` | — |
-| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"    except HTTPError as error:"` | — |
-| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"        first_status = error.code"` | — |
-| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    assert first_status == 401"` | — |
-| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `""` | — |
-| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `"    try:"` | — |
-| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"            second_status = response.status"` | — |
-| [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"    except HTTPError as error:"` | — |
-| [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `"        second_status = error.code"` | — |
-| [SRC-3451CC474D-L000443](../../tests/test_api.py#L443) | 443 | `"    assert second_status == 429"` | — |
-| [SRC-3451CC474D-L000444](../../tests/test_api.py#L444) | 444 | `""` | — |
-| [SRC-3451CC474D-L000445](../../tests/test_api.py#L445) | 445 | `""` | — |
-| [SRC-3451CC474D-L000446](../../tests/test_api.py#L446) | 446 | `"def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000447](../../tests/test_api.py#L447) | 447 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000448](../../tests/test_api.py#L448) | 448 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"x\" * 48)"` | — |
-| [SRC-3451CC474D-L000449](../../tests/test_api.py#L449) | 449 | `""` | — |
-| [SRC-3451CC474D-L000450](../../tests/test_api.py#L450) | 450 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000451](../../tests/test_api.py#L451) | 451 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"test\"}"` | — |
-| [SRC-3451CC474D-L000452](../../tests/test_api.py#L452) | 452 | `"    )"` | — |
-| [SRC-3451CC474D-L000453](../../tests/test_api.py#L453) | 453 | `"    assert status == 401"` | — |
-| [SRC-3451CC474D-L000454](../../tests/test_api.py#L454) | 454 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000455](../../tests/test_api.py#L455) | 455 | `""` | — |
-| [SRC-3451CC474D-L000456](../../tests/test_api.py#L456) | 456 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
-| [SRC-3451CC474D-L000457](../../tests/test_api.py#L457) | 457 | `"    assert status == 401"` | — |
-| [SRC-3451CC474D-L000458](../../tests/test_api.py#L458) | 458 | `""` | — |
-| [SRC-3451CC474D-L000459](../../tests/test_api.py#L459) | 459 | `"    headers = {\"Authorization\": \"Bearer \" + \"x\" * 48}"` | — |
-| [SRC-3451CC474D-L000460](../../tests/test_api.py#L460) | 460 | `"    status, result = request_json("` | — |
-| [SRC-3451CC474D-L000461](../../tests/test_api.py#L461) | 461 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"بدور على شقة\"}, headers=headers"` | — |
-| [SRC-3451CC474D-L000462](../../tests/test_api.py#L462) | 462 | `"    )"` | — |
-| [SRC-3451CC474D-L000463](../../tests/test_api.py#L463) | 463 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000464](../../tests/test_api.py#L464) | 464 | `"    assert \"score\" in result"` | — |
-| [SRC-3451CC474D-L000465](../../tests/test_api.py#L465) | 465 | `""` | — |
-| [SRC-3451CC474D-L000466](../../tests/test_api.py#L466) | 466 | `"    status, result = request_json(local_api, \"/api/leads\", headers=headers)"` | — |
-| [SRC-3451CC474D-L000467](../../tests/test_api.py#L467) | 467 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `"    assert result[\"count\"] == 0"` | — |
-| [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `""` | — |
-| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `""` | — |
-| [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `"def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"y\" * 48)"` | — |
-| [SRC-3451CC474D-L000474](../../tests/test_api.py#L474) | 474 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
-| [SRC-3451CC474D-L000475](../../tests/test_api.py#L475) | 475 | `"    with Handler._rate_lock:"` | — |
-| [SRC-3451CC474D-L000476](../../tests/test_api.py#L476) | 476 | `"        Handler._request_times.clear()"` | — |
-| [SRC-3451CC474D-L000477](../../tests/test_api.py#L477) | 477 | `"    headers = {\"Authorization\": \"Bearer \" + \"y\" * 48}"` | — |
-| [SRC-3451CC474D-L000478](../../tests/test_api.py#L478) | 478 | `""` | — |
-| [SRC-3451CC474D-L000479](../../tests/test_api.py#L479) | 479 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L000480](../../tests/test_api.py#L480) | 480 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"first\"}, headers=headers"` | — |
-| [SRC-3451CC474D-L000481](../../tests/test_api.py#L481) | 481 | `"    )"` | — |
-| [SRC-3451CC474D-L000482](../../tests/test_api.py#L482) | 482 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `""` | — |
-| [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"second\"}, headers=headers"` | — |
-| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"    )"` | — |
-| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"    assert status == 429"` | — |
-| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"    assert \"حد الطلبات\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `""` | — |
-| [SRC-3451CC474D-L000490](../../tests/test_api.py#L490) | 490 | `""` | — |
+| [SRC-3451CC474D-L000409](../../tests/test_api.py#L409) | 409 | `"    RateLimitHarness._request_times = defaultdict(deque)"` | — |
+| [SRC-3451CC474D-L000410](../../tests/test_api.py#L410) | 410 | `""` | — |
+| [SRC-3451CC474D-L000411](../../tests/test_api.py#L411) | 411 | `"    assert RateLimitHarness(\"198.51.100.1\")._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000412](../../tests/test_api.py#L412) | 412 | `"    assert RateLimitHarness(\"198.51.100.2\")._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000413](../../tests/test_api.py#L413) | 413 | `"    assert RateLimitHarness(\"198.51.100.3\")._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000414](../../tests/test_api.py#L414) | 414 | `"    # New identities share the reserved overflow bucket and its rate ceiling."` | — |
+| [SRC-3451CC474D-L000415](../../tests/test_api.py#L415) | 415 | `"    assert RateLimitHarness(\"198.51.100.4\")._rate_limit_ok() is False"` | — |
+| [SRC-3451CC474D-L000416](../../tests/test_api.py#L416) | 416 | `"    assert len(RateLimitHarness._request_times) == 3"` | — |
+| [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `"    assert RateLimitHarness.RATE_LIMIT_OVERFLOW_KEY in RateLimitHarness._request_times"` | — |
+| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `""` | — |
+| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `""` | — |
+| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `"def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    \"\"\"Reject untrusted API calls before parsing bodies and throttle repeated failures.\"\"\""` | — |
+| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"z\" * 48)"` | — |
+| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
+| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"    with Handler._rate_lock:"` | — |
+| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"        Handler._request_times.clear()"` | — |
+| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `"    request = Request("` | — |
+| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"        data=b\"invalid-json-body\","` | — |
+| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `"        headers={\"Content-Type\": \"application/json\"},"` | — |
+| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `"    )"` | — |
+| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"    try:"` | — |
+| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"            first_status = response.status"` | — |
+| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    except HTTPError as error:"` | — |
+| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `"        first_status = error.code"` | — |
+| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `"    assert first_status == 401"` | — |
+| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `""` | — |
+| [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"    try:"` | — |
+| [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `"            second_status = response.status"` | — |
+| [SRC-3451CC474D-L000443](../../tests/test_api.py#L443) | 443 | `"    except HTTPError as error:"` | — |
+| [SRC-3451CC474D-L000444](../../tests/test_api.py#L444) | 444 | `"        second_status = error.code"` | — |
+| [SRC-3451CC474D-L000445](../../tests/test_api.py#L445) | 445 | `"    assert second_status == 429"` | — |
+| [SRC-3451CC474D-L000446](../../tests/test_api.py#L446) | 446 | `""` | — |
+| [SRC-3451CC474D-L000447](../../tests/test_api.py#L447) | 447 | `""` | — |
+| [SRC-3451CC474D-L000448](../../tests/test_api.py#L448) | 448 | `"def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000449](../../tests/test_api.py#L449) | 449 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000450](../../tests/test_api.py#L450) | 450 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"x\" * 48)"` | — |
+| [SRC-3451CC474D-L000451](../../tests/test_api.py#L451) | 451 | `""` | — |
+| [SRC-3451CC474D-L000452](../../tests/test_api.py#L452) | 452 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L000453](../../tests/test_api.py#L453) | 453 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"test\"}"` | — |
+| [SRC-3451CC474D-L000454](../../tests/test_api.py#L454) | 454 | `"    )"` | — |
+| [SRC-3451CC474D-L000455](../../tests/test_api.py#L455) | 455 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L000456](../../tests/test_api.py#L456) | 456 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L000457](../../tests/test_api.py#L457) | 457 | `""` | — |
+| [SRC-3451CC474D-L000458](../../tests/test_api.py#L458) | 458 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L000459](../../tests/test_api.py#L459) | 459 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L000460](../../tests/test_api.py#L460) | 460 | `""` | — |
+| [SRC-3451CC474D-L000461](../../tests/test_api.py#L461) | 461 | `"    headers = {\"Authorization\": \"Bearer \" + \"x\" * 48}"` | — |
+| [SRC-3451CC474D-L000462](../../tests/test_api.py#L462) | 462 | `"    status, result = request_json("` | — |
+| [SRC-3451CC474D-L000463](../../tests/test_api.py#L463) | 463 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"بدور على شقة\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000464](../../tests/test_api.py#L464) | 464 | `"    )"` | — |
+| [SRC-3451CC474D-L000465](../../tests/test_api.py#L465) | 465 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000466](../../tests/test_api.py#L466) | 466 | `"    assert \"score\" in result"` | — |
+| [SRC-3451CC474D-L000467](../../tests/test_api.py#L467) | 467 | `""` | — |
+| [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `"    status, result = request_json(local_api, \"/api/leads\", headers=headers)"` | — |
+| [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `"    assert result[\"count\"] == 0"` | — |
+| [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `""` | — |
+| [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `""` | — |
+| [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000474](../../tests/test_api.py#L474) | 474 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000475](../../tests/test_api.py#L475) | 475 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"y\" * 48)"` | — |
+| [SRC-3451CC474D-L000476](../../tests/test_api.py#L476) | 476 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
+| [SRC-3451CC474D-L000477](../../tests/test_api.py#L477) | 477 | `"    with Handler._rate_lock:"` | — |
+| [SRC-3451CC474D-L000478](../../tests/test_api.py#L478) | 478 | `"        Handler._request_times.clear()"` | — |
+| [SRC-3451CC474D-L000479](../../tests/test_api.py#L479) | 479 | `"    headers = {\"Authorization\": \"Bearer \" + \"y\" * 48}"` | — |
+| [SRC-3451CC474D-L000480](../../tests/test_api.py#L480) | 480 | `""` | — |
+| [SRC-3451CC474D-L000481](../../tests/test_api.py#L481) | 481 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L000482](../../tests/test_api.py#L482) | 482 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"first\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `"    )"` | — |
+| [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `""` | — |
+| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"second\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"    )"` | — |
+| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `"    assert status == 429"` | — |
+| [SRC-3451CC474D-L000490](../../tests/test_api.py#L490) | 490 | `"    assert \"حد الطلبات\" in error[\"error\"]"` | — |
 | [SRC-3451CC474D-L000491](../../tests/test_api.py#L491) | 491 | `""` | — |
-| [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `"def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000493](../../tests/test_api.py#L493) | 493 | `"    from api.omarai import serve"` | — |
-| [SRC-3451CC474D-L000494](../../tests/test_api.py#L494) | 494 | `""` | — |
-| [SRC-3451CC474D-L000495](../../tests/test_api.py#L495) | 495 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000496](../../tests/test_api.py#L496) | 496 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000497](../../tests/test_api.py#L497) | 497 | `"    with pytest.raises(ValueError, match=\"Public binding requires\"):"` | — |
-| [SRC-3451CC474D-L000498](../../tests/test_api.py#L498) | 498 | `"        serve(\"0.0.0.0\", 0)"` | — |
-| [SRC-3451CC474D-L000499](../../tests/test_api.py#L499) | 499 | `""` | — |
-| [SRC-3451CC474D-L000500](../../tests/test_api.py#L500) | 500 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000501](../../tests/test_api.py#L501) | 501 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"short\")"` | — |
-| [SRC-3451CC474D-L000502](../../tests/test_api.py#L502) | 502 | `"    with pytest.raises(ValueError, match=\"at least 32 characters\"):"` | — |
-| [SRC-3451CC474D-L000503](../../tests/test_api.py#L503) | 503 | `"        serve(\"0.0.0.0\", 0)"` | — |
-| [SRC-3451CC474D-L000504](../../tests/test_api.py#L504) | 504 | `""` | — |
-| [SRC-3451CC474D-L000505](../../tests/test_api.py#L505) | 505 | `"def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000506](../../tests/test_api.py#L506) | 506 | `"    \"\"\"Client IPs do not accumulate forever after their 60-second window expires.\"\"\""` | — |
-| [SRC-3451CC474D-L000507](../../tests/test_api.py#L507) | 507 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000508](../../tests/test_api.py#L508) | 508 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000509](../../tests/test_api.py#L509) | 509 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000510](../../tests/test_api.py#L510) | 510 | `"    clock = {\"now\": 100.0}"` | — |
-| [SRC-3451CC474D-L000511](../../tests/test_api.py#L511) | 511 | `"    monkeypatch.setattr(\"api.omarai.time.monotonic\", lambda: clock[\"now\"])"` | — |
-| [SRC-3451CC474D-L000512](../../tests/test_api.py#L512) | 512 | `""` | — |
-| [SRC-3451CC474D-L000513](../../tests/test_api.py#L513) | 513 | `"    class FakeHandler(Handler):"` | — |
-| [SRC-3451CC474D-L000514](../../tests/test_api.py#L514) | 514 | `"        def __init__(self, ip):"` | — |
-| [SRC-3451CC474D-L000515](../../tests/test_api.py#L515) | 515 | `"            self.headers = {}"` | — |
-| [SRC-3451CC474D-L000516](../../tests/test_api.py#L516) | 516 | `"            self.client_address = (ip, 1234)"` | — |
-| [SRC-3451CC474D-L000517](../../tests/test_api.py#L517) | 517 | `""` | — |
-| [SRC-3451CC474D-L000518](../../tests/test_api.py#L518) | 518 | `"    first = FakeHandler(\"192.0.2.1\")"` | — |
-| [SRC-3451CC474D-L000519](../../tests/test_api.py#L519) | 519 | `"    second = FakeHandler(\"192.0.2.2\")"` | — |
-| [SRC-3451CC474D-L000520](../../tests/test_api.py#L520) | 520 | `"    assert first._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000521](../../tests/test_api.py#L521) | 521 | `"    assert \"192.0.2.1\" in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000522](../../tests/test_api.py#L522) | 522 | `""` | — |
-| [SRC-3451CC474D-L000523](../../tests/test_api.py#L523) | 523 | `"    clock[\"now\"] = 161.0"` | — |
-| [SRC-3451CC474D-L000524](../../tests/test_api.py#L524) | 524 | `"    assert second._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000525](../../tests/test_api.py#L525) | 525 | `"    assert \"192.0.2.1\" not in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000526](../../tests/test_api.py#L526) | 526 | `"    assert \"192.0.2.2\" in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000527](../../tests/test_api.py#L527) | 527 | `""` | — |
-| [SRC-3451CC474D-L000528](../../tests/test_api.py#L528) | 528 | `""` | — |
+| [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `""` | — |
+| [SRC-3451CC474D-L000493](../../tests/test_api.py#L493) | 493 | `""` | — |
+| [SRC-3451CC474D-L000494](../../tests/test_api.py#L494) | 494 | `"def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monkeypatch):"` | — |
+| [SRC-3451CC474D-L000495](../../tests/test_api.py#L495) | 495 | `"    from api.omarai import serve"` | — |
+| [SRC-3451CC474D-L000496](../../tests/test_api.py#L496) | 496 | `""` | — |
+| [SRC-3451CC474D-L000497](../../tests/test_api.py#L497) | 497 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000498](../../tests/test_api.py#L498) | 498 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000499](../../tests/test_api.py#L499) | 499 | `"    with pytest.raises(ValueError, match=\"Public binding requires\"):"` | — |
+| [SRC-3451CC474D-L000500](../../tests/test_api.py#L500) | 500 | `"        serve(\"0.0.0.0\", 0)"` | — |
+| [SRC-3451CC474D-L000501](../../tests/test_api.py#L501) | 501 | `""` | — |
+| [SRC-3451CC474D-L000502](../../tests/test_api.py#L502) | 502 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000503](../../tests/test_api.py#L503) | 503 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"short\")"` | — |
+| [SRC-3451CC474D-L000504](../../tests/test_api.py#L504) | 504 | `"    with pytest.raises(ValueError, match=\"at least 32 characters\"):"` | — |
+| [SRC-3451CC474D-L000505](../../tests/test_api.py#L505) | 505 | `"        serve(\"0.0.0.0\", 0)"` | — |
+| [SRC-3451CC474D-L000506](../../tests/test_api.py#L506) | 506 | `""` | — |
+| [SRC-3451CC474D-L000507](../../tests/test_api.py#L507) | 507 | `"def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):"` | — |
+| [SRC-3451CC474D-L000508](../../tests/test_api.py#L508) | 508 | `"    \"\"\"Client IPs do not accumulate forever after their 60-second window expires.\"\"\""` | — |
+| [SRC-3451CC474D-L000509](../../tests/test_api.py#L509) | 509 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000510](../../tests/test_api.py#L510) | 510 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
+| [SRC-3451CC474D-L000511](../../tests/test_api.py#L511) | 511 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000512](../../tests/test_api.py#L512) | 512 | `"    clock = {\"now\": 100.0}"` | — |
+| [SRC-3451CC474D-L000513](../../tests/test_api.py#L513) | 513 | `"    monkeypatch.setattr(\"api.omarai.time.monotonic\", lambda: clock[\"now\"])"` | — |
+| [SRC-3451CC474D-L000514](../../tests/test_api.py#L514) | 514 | `""` | — |
+| [SRC-3451CC474D-L000515](../../tests/test_api.py#L515) | 515 | `"    class FakeHandler(Handler):"` | — |
+| [SRC-3451CC474D-L000516](../../tests/test_api.py#L516) | 516 | `"        def __init__(self, ip):"` | — |
+| [SRC-3451CC474D-L000517](../../tests/test_api.py#L517) | 517 | `"            self.headers = {}"` | — |
+| [SRC-3451CC474D-L000518](../../tests/test_api.py#L518) | 518 | `"            self.client_address = (ip, 1234)"` | — |
+| [SRC-3451CC474D-L000519](../../tests/test_api.py#L519) | 519 | `""` | — |
+| [SRC-3451CC474D-L000520](../../tests/test_api.py#L520) | 520 | `"    first = FakeHandler(\"192.0.2.1\")"` | — |
+| [SRC-3451CC474D-L000521](../../tests/test_api.py#L521) | 521 | `"    second = FakeHandler(\"192.0.2.2\")"` | — |
+| [SRC-3451CC474D-L000522](../../tests/test_api.py#L522) | 522 | `"    assert first._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000523](../../tests/test_api.py#L523) | 523 | `"    assert \"192.0.2.1\" in Handler._request_times"` | — |
+| [SRC-3451CC474D-L000524](../../tests/test_api.py#L524) | 524 | `""` | — |
+| [SRC-3451CC474D-L000525](../../tests/test_api.py#L525) | 525 | `"    clock[\"now\"] = 161.0"` | — |
+| [SRC-3451CC474D-L000526](../../tests/test_api.py#L526) | 526 | `"    assert second._rate_limit_ok() is True"` | — |
+| [SRC-3451CC474D-L000527](../../tests/test_api.py#L527) | 527 | `"    assert \"192.0.2.1\" not in Handler._request_times"` | — |
+| [SRC-3451CC474D-L000528](../../tests/test_api.py#L528) | 528 | `"    assert \"192.0.2.2\" in Handler._request_times"` | — |
 | [SRC-3451CC474D-L000529](../../tests/test_api.py#L529) | 529 | `""` | — |
-| [SRC-3451CC474D-L000530](../../tests/test_api.py#L530) | 530 | `"def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000531](../../tests/test_api.py#L531) | 531 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-3451CC474D-L000532](../../tests/test_api.py#L532) | 532 | `""` | — |
-| [SRC-3451CC474D-L000533](../../tests/test_api.py#L533) | 533 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000534](../../tests/test_api.py#L534) | 534 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000535](../../tests/test_api.py#L535) | 535 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000536](../../tests/test_api.py#L536) | 536 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000537](../../tests/test_api.py#L537) | 537 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
-| [SRC-3451CC474D-L000538](../../tests/test_api.py#L538) | 538 | `""` | — |
-| [SRC-3451CC474D-L000539](../../tests/test_api.py#L539) | 539 | `"    entered = threading.Event()"` | — |
-| [SRC-3451CC474D-L000540](../../tests/test_api.py#L540) | 540 | `"    release = threading.Event()"` | — |
-| [SRC-3451CC474D-L000541](../../tests/test_api.py#L541) | 541 | `"    first_result = {}"` | — |
-| [SRC-3451CC474D-L000542](../../tests/test_api.py#L542) | 542 | `""` | — |
-| [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    def slow_answer(self, question, history=None, mode=\"auto\"):"` | — |
-| [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `"        entered.set()"` | — |
-| [SRC-3451CC474D-L000545](../../tests/test_api.py#L545) | 545 | `"        assert release.wait(timeout=2), \"test did not release the held research slot\""` | — |
-| [SRC-3451CC474D-L000546](../../tests/test_api.py#L546) | 546 | `"        return {"` | — |
-| [SRC-3451CC474D-L000547](../../tests/test_api.py#L547) | 547 | `"            \"answer\": \"نتيجة اختبار محدودة\","` | — |
-| [SRC-3451CC474D-L000548](../../tests/test_api.py#L548) | 548 | `"            \"question\": question,"` | — |
-| [SRC-3451CC474D-L000549](../../tests/test_api.py#L549) | 549 | `"            \"search_query\": question,"` | — |
-| [SRC-3451CC474D-L000550](../../tests/test_api.py#L550) | 550 | `"            \"search_queries\": [],"` | — |
-| [SRC-3451CC474D-L000551](../../tests/test_api.py#L551) | 551 | `"            \"search_report\": {\"search_attempted\": False, \"search_outcome\": \"not_attempted\"},"` | — |
-| [SRC-3451CC474D-L000552](../../tests/test_api.py#L552) | 552 | `"            \"sources\": [],"` | — |
-| [SRC-3451CC474D-L000553](../../tests/test_api.py#L553) | 553 | `"            \"used_language_model\": False,"` | — |
-| [SRC-3451CC474D-L000554](../../tests/test_api.py#L554) | 554 | `"            \"used_web_search\": False,"` | — |
-| [SRC-3451CC474D-L000555](../../tests/test_api.py#L555) | 555 | `"            \"search_attempted\": False,"` | — |
-| [SRC-3451CC474D-L000556](../../tests/test_api.py#L556) | 556 | `"            \"used_social_search\": False,"` | — |
-| [SRC-3451CC474D-L000557](../../tests/test_api.py#L557) | 557 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000530](../../tests/test_api.py#L530) | 530 | `""` | — |
+| [SRC-3451CC474D-L000531](../../tests/test_api.py#L531) | 531 | `""` | — |
+| [SRC-3451CC474D-L000532](../../tests/test_api.py#L532) | 532 | `"def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000533](../../tests/test_api.py#L533) | 533 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-3451CC474D-L000534](../../tests/test_api.py#L534) | 534 | `""` | — |
+| [SRC-3451CC474D-L000535](../../tests/test_api.py#L535) | 535 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000536](../../tests/test_api.py#L536) | 536 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000537](../../tests/test_api.py#L537) | 537 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
+| [SRC-3451CC474D-L000538](../../tests/test_api.py#L538) | 538 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000539](../../tests/test_api.py#L539) | 539 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
+| [SRC-3451CC474D-L000540](../../tests/test_api.py#L540) | 540 | `""` | — |
+| [SRC-3451CC474D-L000541](../../tests/test_api.py#L541) | 541 | `"    entered = threading.Event()"` | — |
+| [SRC-3451CC474D-L000542](../../tests/test_api.py#L542) | 542 | `"    release = threading.Event()"` | — |
+| [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    first_result = {}"` | — |
+| [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `""` | — |
+| [SRC-3451CC474D-L000545](../../tests/test_api.py#L545) | 545 | `"    def slow_answer(self, question, history=None, mode=\"auto\"):"` | — |
+| [SRC-3451CC474D-L000546](../../tests/test_api.py#L546) | 546 | `"        entered.set()"` | — |
+| [SRC-3451CC474D-L000547](../../tests/test_api.py#L547) | 547 | `"        assert release.wait(timeout=2), \"test did not release the held research slot\""` | — |
+| [SRC-3451CC474D-L000548](../../tests/test_api.py#L548) | 548 | `"        return {"` | — |
+| [SRC-3451CC474D-L000549](../../tests/test_api.py#L549) | 549 | `"            \"answer\": \"نتيجة اختبار محدودة\","` | — |
+| [SRC-3451CC474D-L000550](../../tests/test_api.py#L550) | 550 | `"            \"question\": question,"` | — |
+| [SRC-3451CC474D-L000551](../../tests/test_api.py#L551) | 551 | `"            \"search_query\": question,"` | — |
+| [SRC-3451CC474D-L000552](../../tests/test_api.py#L552) | 552 | `"            \"search_queries\": [],"` | — |
+| [SRC-3451CC474D-L000553](../../tests/test_api.py#L553) | 553 | `"            \"search_report\": {\"search_attempted\": False, \"search_outcome\": \"not_attempted\"},"` | — |
+| [SRC-3451CC474D-L000554](../../tests/test_api.py#L554) | 554 | `"            \"sources\": [],"` | — |
+| [SRC-3451CC474D-L000555](../../tests/test_api.py#L555) | 555 | `"            \"used_language_model\": False,"` | — |
+| [SRC-3451CC474D-L000556](../../tests/test_api.py#L556) | 556 | `"            \"used_web_search\": False,"` | — |
+| [SRC-3451CC474D-L000557](../../tests/test_api.py#L557) | 557 | `"            \"search_attempted\": False,"` | — |
