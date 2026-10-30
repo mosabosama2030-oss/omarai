@@ -67,7 +67,7 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
         seen["history"] = history
         seen["sources"] = sources
         seen["report"] = search_report
-        return "الإجابة: التقنية مناسبة للأسباب التالية [المصدر 1]."
+        return "الإجابة: يشرح هذا المصدر التقنية وسبب المقارنة [المصدر 1]."
 
     monkeypatch.setattr(agent, "_plan_search", plan)
     monkeypatch.setattr(agent, "_collect_research", collect)
