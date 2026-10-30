@@ -16,7 +16,6 @@ import tldextract
 
 from agents.aspect_planning import extract_aspects
 from agents.intent_router import resolve_followup_query
-from agents.task_understanding import build_query_strategy_matrix, build_task_spec
 
 MAX_PLAN_QUERIES = 8
 MAX_QUERY_CHARS = 240
