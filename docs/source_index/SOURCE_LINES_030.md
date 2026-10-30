@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000147 إلى SRC-03FF422A16-L000226
+- النطاق: SRC-4FFD5AFC54-L000118 إلى SRC-03FF422A16-L000197
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000118](../../scripts/run_answer_quality_benchmark.py#L118) | 118 | `"            tool_status = \"INCONSISTENT_SEARCH_OUTCOME_NO_RETURNED_SOURCES\""` | — |
+| [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `"        else:"` | — |
+| [SRC-4FFD5AFC54-L000120](../../scripts/run_answer_quality_benchmark.py#L120) | 120 | `"            tool_status = \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
+| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    elif outcome == \"attempted_no_usable_sources\":"` | — |
+| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        if source_count is not None and source_count > 0:"` | — |
+| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"            tool_status = \"INCONSISTENT_SEARCH_OUTCOME_WITH_RETURNED_SOURCES\""` | — |
+| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"        else:"` | — |
+| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"            tool_status = \"ATTEMPTED_NO_USABLE_RESULTS\""` | — |
+| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    elif outcome == \"attempted_research_error\":"` | — |
+| [SRC-4FFD5AFC54-L000127](../../scripts/run_answer_quality_benchmark.py#L127) | 127 | `"        tool_status = \"TOOL_FAILED\""` | — |
+| [SRC-4FFD5AFC54-L000128](../../scripts/run_answer_quality_benchmark.py#L128) | 128 | `"    elif outcome == \"unknown_after_budget_exhaustion\":"` | — |
+| [SRC-4FFD5AFC54-L000129](../../scripts/run_answer_quality_benchmark.py#L129) | 129 | `"        tool_status = \"BUDGET_EXHAUSTED\""` | — |
+| [SRC-4FFD5AFC54-L000130](../../scripts/run_answer_quality_benchmark.py#L130) | 130 | `"    elif outcome == \"not_attempted\":"` | — |
+| [SRC-4FFD5AFC54-L000131](../../scripts/run_answer_quality_benchmark.py#L131) | 131 | `"        tool_status = \"NOT_ATTEMPTED\""` | — |
+| [SRC-4FFD5AFC54-L000132](../../scripts/run_answer_quality_benchmark.py#L132) | 132 | `"    else:"` | — |
+| [SRC-4FFD5AFC54-L000133](../../scripts/run_answer_quality_benchmark.py#L133) | 133 | `"        tool_status = \"UNKNOWN\""` | — |
+| [SRC-4FFD5AFC54-L000134](../../scripts/run_answer_quality_benchmark.py#L134) | 134 | `""` | — |
+| [SRC-4FFD5AFC54-L000135](../../scripts/run_answer_quality_benchmark.py#L135) | 135 | `"    task_understanding = payload.get(\"task_understanding\")"` | — |
+| [SRC-4FFD5AFC54-L000136](../../scripts/run_answer_quality_benchmark.py#L136) | 136 | `"    task_understanding = task_understanding if isinstance(task_understanding, dict) else {}"` | — |
+| [SRC-4FFD5AFC54-L000137](../../scripts/run_answer_quality_benchmark.py#L137) | 137 | `"    tool_execution = task_understanding.get(\"tool_execution\")"` | — |
+| [SRC-4FFD5AFC54-L000138](../../scripts/run_answer_quality_benchmark.py#L138) | 138 | `"    tool_execution = tool_execution if isinstance(tool_execution, dict) else {}"` | — |
+| [SRC-4FFD5AFC54-L000139](../../scripts/run_answer_quality_benchmark.py#L139) | 139 | `"    raw_tool_rows = tool_execution.get(\"tool_status_matrix\")"` | — |
+| [SRC-4FFD5AFC54-L000140](../../scripts/run_answer_quality_benchmark.py#L140) | 140 | `"    requirements_raw = tool_execution.get(\"required_tools\")"` | — |
+| [SRC-4FFD5AFC54-L000141](../../scripts/run_answer_quality_benchmark.py#L141) | 141 | `"    required_tool_matrix_present = ("` | — |
+| [SRC-4FFD5AFC54-L000142](../../scripts/run_answer_quality_benchmark.py#L142) | 142 | `"        isinstance(raw_tool_rows, list) and isinstance(requirements_raw, list)"` | — |
+| [SRC-4FFD5AFC54-L000143](../../scripts/run_answer_quality_benchmark.py#L143) | 143 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000144](../../scripts/run_answer_quality_benchmark.py#L144) | 144 | `"    matrix_rows = [row for row in raw_tool_rows if isinstance(row, dict)] if isinstance(raw_tool_rows, list) else []"` | — |
+| [SRC-4FFD5AFC54-L000145](../../scripts/run_answer_quality_benchmark.py#L145) | 145 | `"    required_tool_names = ["` | — |
+| [SRC-4FFD5AFC54-L000146](../../scripts/run_answer_quality_benchmark.py#L146) | 146 | `"        name.strip()"` | — |
 | [SRC-4FFD5AFC54-L000147](../../scripts/run_answer_quality_benchmark.py#L147) | 147 | `"        for name in requirements_raw"` | — |
 | [SRC-4FFD5AFC54-L000148](../../scripts/run_answer_quality_benchmark.py#L148) | 148 | `"        if isinstance(name, str) and name.strip()"` | — |
 | [SRC-4FFD5AFC54-L000149](../../scripts/run_answer_quality_benchmark.py#L149) | 149 | `"    ] if isinstance(requirements_raw, list) else []"` | — |
@@ -796,32 +825,3 @@
 | [SRC-03FF422A16-L000195](../../scripts/score_answer_quality_reviews.py#L195) | 195 | `"        \"unique_reviewed_case_count\": len(reviewed_ids),"` | — |
 | [SRC-03FF422A16-L000196](../../scripts/score_answer_quality_reviews.py#L196) | 196 | `"        \"case_status_counts\": {status: status_counts.get(status, 0) for status in sorted(ALLOWED_STATUSES)},"` | — |
 | [SRC-03FF422A16-L000197](../../scripts/score_answer_quality_reviews.py#L197) | 197 | `"        \"reviewed_case_coverage\": round(len(reviewed_ids) / corpus_count, 4) if corpus_count else 0.0,"` | — |
-| [SRC-03FF422A16-L000198](../../scripts/score_answer_quality_reviews.py#L198) | 198 | `"        \"metrics\": {"` | — |
-| [SRC-03FF422A16-L000199](../../scripts/score_answer_quality_reviews.py#L199) | 199 | `"            \"retrieval_precision\": _ratio(retrieval_rel, retrieval_total, len(retrieval_cases)),"` | — |
-| [SRC-03FF422A16-L000200](../../scripts/score_answer_quality_reviews.py#L200) | 200 | `"            \"retrieval_recall\": _ratio(retrieval_rel, retrieval_available, len(retrieval_cases)),"` | — |
-| [SRC-03FF422A16-L000201](../../scripts/score_answer_quality_reviews.py#L201) | 201 | `"            \"faithfulness\": _ratio(faithfulness_supported, faithfulness_total, len(faithfulness_cases)),"` | — |
-| [SRC-03FF422A16-L000202](../../scripts/score_answer_quality_reviews.py#L202) | 202 | `"            \"correctness\": _ratio(correctness_correct, correctness_total, len(correctness_cases)),"` | — |
-| [SRC-03FF422A16-L000203](../../scripts/score_answer_quality_reviews.py#L203) | 203 | `"            \"citation_support\": _ratio(citation_supported, citation_total, len(citation_cases)),"` | — |
-| [SRC-03FF422A16-L000204](../../scripts/score_answer_quality_reviews.py#L204) | 204 | `"            \"writing_quality_1_to_5\": {"` | — |
-| [SRC-03FF422A16-L000205](../../scripts/score_answer_quality_reviews.py#L205) | 205 | `"                \"score\": round(sum(writing_scores) / len(writing_scores), 3) if writing_scores else None,"` | — |
-| [SRC-03FF422A16-L000206](../../scripts/score_answer_quality_reviews.py#L206) | 206 | `"                \"scale_min\": 1,"` | — |
-| [SRC-03FF422A16-L000207](../../scripts/score_answer_quality_reviews.py#L207) | 207 | `"                \"scale_max\": 5,"` | — |
-| [SRC-03FF422A16-L000208](../../scripts/score_answer_quality_reviews.py#L208) | 208 | `"                \"reviewed_case_count\": len(writing_scores),"` | — |
-| [SRC-03FF422A16-L000209](../../scripts/score_answer_quality_reviews.py#L209) | 209 | `"                \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if writing_scores else \"NOT_SCORABLE_NO_HUMAN_SCORES\","` | — |
-| [SRC-03FF422A16-L000210](../../scripts/score_answer_quality_reviews.py#L210) | 210 | `"            },"` | — |
-| [SRC-03FF422A16-L000211](../../scripts/score_answer_quality_reviews.py#L211) | 211 | `"        },"` | — |
-| [SRC-03FF422A16-L000212](../../scripts/score_answer_quality_reviews.py#L212) | 212 | `"        \"limitations\": ["` | — |
-| [SRC-03FF422A16-L000213](../../scripts/score_answer_quality_reviews.py#L213) | 213 | `"            \"Metrics include only explicitly reviewed cases and human-entered labels.\","` | — |
-| [SRC-03FF422A16-L000214](../../scripts/score_answer_quality_reviews.py#L214) | 214 | `"            \"Retrieval scores depend on consistent, deduplicated relevance counts and a defined candidate pool.\","` | — |
-| [SRC-03FF422A16-L000215](../../scripts/score_answer_quality_reviews.py#L215) | 215 | `"            \"Faithfulness and correctness reflect reviewer judgments, not automatic proof of truth.\","` | — |
-| [SRC-03FF422A16-L000216](../../scripts/score_answer_quality_reviews.py#L216) | 216 | `"            \"Writing quality is a 1-to-5 human rating; it is not a fluency model score.\","` | — |
-| [SRC-03FF422A16-L000217](../../scripts/score_answer_quality_reviews.py#L217) | 217 | `"            \"RAGAS was not executed and no unobserved case is assigned a PASS.\","` | — |
-| [SRC-03FF422A16-L000218](../../scripts/score_answer_quality_reviews.py#L218) | 218 | `"        ],"` | — |
-| [SRC-03FF422A16-L000219](../../scripts/score_answer_quality_reviews.py#L219) | 219 | `"    }"` | — |
-| [SRC-03FF422A16-L000220](../../scripts/score_answer_quality_reviews.py#L220) | 220 | `""` | — |
-| [SRC-03FF422A16-L000221](../../scripts/score_answer_quality_reviews.py#L221) | 221 | `""` | — |
-| [SRC-03FF422A16-L000222](../../scripts/score_answer_quality_reviews.py#L222) | 222 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
-| [SRC-03FF422A16-L000223](../../scripts/score_answer_quality_reviews.py#L223) | 223 | `"    parser = argparse.ArgumentParser(description=__doc__)"` | — |
-| [SRC-03FF422A16-L000224](../../scripts/score_answer_quality_reviews.py#L224) | 224 | `"    parser.add_argument(\"--reviews\", required=True, type=Path, help=\"JSON file containing explicit human review annotations\")"` | — |
-| [SRC-03FF422A16-L000225](../../scripts/score_answer_quality_reviews.py#L225) | 225 | `"    parser.add_argument(\"--corpus\", default=DEFAULT_CORPUS, type=Path, help=\"Answer-quality corpus used to validate case IDs\")"` | — |
-| [SRC-03FF422A16-L000226](../../scripts/score_answer_quality_reviews.py#L226) | 226 | `"    parser.add_argument(\"--out\", type=Path, help=\"Optional path to write the summary JSON\")"` | — |

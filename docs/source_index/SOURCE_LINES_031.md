@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000227 إلى SRC-90FAA34ADE-L000629
+- النطاق: SRC-03FF422A16-L000198 إلى SRC-90FAA34ADE-L000600
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000198](../../scripts/score_answer_quality_reviews.py#L198) | 198 | `"        \"metrics\": {"` | — |
+| [SRC-03FF422A16-L000199](../../scripts/score_answer_quality_reviews.py#L199) | 199 | `"            \"retrieval_precision\": _ratio(retrieval_rel, retrieval_total, len(retrieval_cases)),"` | — |
+| [SRC-03FF422A16-L000200](../../scripts/score_answer_quality_reviews.py#L200) | 200 | `"            \"retrieval_recall\": _ratio(retrieval_rel, retrieval_available, len(retrieval_cases)),"` | — |
+| [SRC-03FF422A16-L000201](../../scripts/score_answer_quality_reviews.py#L201) | 201 | `"            \"faithfulness\": _ratio(faithfulness_supported, faithfulness_total, len(faithfulness_cases)),"` | — |
+| [SRC-03FF422A16-L000202](../../scripts/score_answer_quality_reviews.py#L202) | 202 | `"            \"correctness\": _ratio(correctness_correct, correctness_total, len(correctness_cases)),"` | — |
+| [SRC-03FF422A16-L000203](../../scripts/score_answer_quality_reviews.py#L203) | 203 | `"            \"citation_support\": _ratio(citation_supported, citation_total, len(citation_cases)),"` | — |
+| [SRC-03FF422A16-L000204](../../scripts/score_answer_quality_reviews.py#L204) | 204 | `"            \"writing_quality_1_to_5\": {"` | — |
+| [SRC-03FF422A16-L000205](../../scripts/score_answer_quality_reviews.py#L205) | 205 | `"                \"score\": round(sum(writing_scores) / len(writing_scores), 3) if writing_scores else None,"` | — |
+| [SRC-03FF422A16-L000206](../../scripts/score_answer_quality_reviews.py#L206) | 206 | `"                \"scale_min\": 1,"` | — |
+| [SRC-03FF422A16-L000207](../../scripts/score_answer_quality_reviews.py#L207) | 207 | `"                \"scale_max\": 5,"` | — |
+| [SRC-03FF422A16-L000208](../../scripts/score_answer_quality_reviews.py#L208) | 208 | `"                \"reviewed_case_count\": len(writing_scores),"` | — |
+| [SRC-03FF422A16-L000209](../../scripts/score_answer_quality_reviews.py#L209) | 209 | `"                \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if writing_scores else \"NOT_SCORABLE_NO_HUMAN_SCORES\","` | — |
+| [SRC-03FF422A16-L000210](../../scripts/score_answer_quality_reviews.py#L210) | 210 | `"            },"` | — |
+| [SRC-03FF422A16-L000211](../../scripts/score_answer_quality_reviews.py#L211) | 211 | `"        },"` | — |
+| [SRC-03FF422A16-L000212](../../scripts/score_answer_quality_reviews.py#L212) | 212 | `"        \"limitations\": ["` | — |
+| [SRC-03FF422A16-L000213](../../scripts/score_answer_quality_reviews.py#L213) | 213 | `"            \"Metrics include only explicitly reviewed cases and human-entered labels.\","` | — |
+| [SRC-03FF422A16-L000214](../../scripts/score_answer_quality_reviews.py#L214) | 214 | `"            \"Retrieval scores depend on consistent, deduplicated relevance counts and a defined candidate pool.\","` | — |
+| [SRC-03FF422A16-L000215](../../scripts/score_answer_quality_reviews.py#L215) | 215 | `"            \"Faithfulness and correctness reflect reviewer judgments, not automatic proof of truth.\","` | — |
+| [SRC-03FF422A16-L000216](../../scripts/score_answer_quality_reviews.py#L216) | 216 | `"            \"Writing quality is a 1-to-5 human rating; it is not a fluency model score.\","` | — |
+| [SRC-03FF422A16-L000217](../../scripts/score_answer_quality_reviews.py#L217) | 217 | `"            \"RAGAS was not executed and no unobserved case is assigned a PASS.\","` | — |
+| [SRC-03FF422A16-L000218](../../scripts/score_answer_quality_reviews.py#L218) | 218 | `"        ],"` | — |
+| [SRC-03FF422A16-L000219](../../scripts/score_answer_quality_reviews.py#L219) | 219 | `"    }"` | — |
+| [SRC-03FF422A16-L000220](../../scripts/score_answer_quality_reviews.py#L220) | 220 | `""` | — |
+| [SRC-03FF422A16-L000221](../../scripts/score_answer_quality_reviews.py#L221) | 221 | `""` | — |
+| [SRC-03FF422A16-L000222](../../scripts/score_answer_quality_reviews.py#L222) | 222 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
+| [SRC-03FF422A16-L000223](../../scripts/score_answer_quality_reviews.py#L223) | 223 | `"    parser = argparse.ArgumentParser(description=__doc__)"` | — |
+| [SRC-03FF422A16-L000224](../../scripts/score_answer_quality_reviews.py#L224) | 224 | `"    parser.add_argument(\"--reviews\", required=True, type=Path, help=\"JSON file containing explicit human review annotations\")"` | — |
+| [SRC-03FF422A16-L000225](../../scripts/score_answer_quality_reviews.py#L225) | 225 | `"    parser.add_argument(\"--corpus\", default=DEFAULT_CORPUS, type=Path, help=\"Answer-quality corpus used to validate case IDs\")"` | — |
+| [SRC-03FF422A16-L000226](../../scripts/score_answer_quality_reviews.py#L226) | 226 | `"    parser.add_argument(\"--out\", type=Path, help=\"Optional path to write the summary JSON\")"` | — |
 | [SRC-03FF422A16-L000227](../../scripts/score_answer_quality_reviews.py#L227) | 227 | `"    args = parser.parse_args(argv)"` | — |
 | [SRC-03FF422A16-L000228](../../scripts/score_answer_quality_reviews.py#L228) | 228 | `""` | — |
 | [SRC-03FF422A16-L000229](../../scripts/score_answer_quality_reviews.py#L229) | 229 | `"    try:"` | — |
@@ -805,32 +834,3 @@
 | [SRC-90FAA34ADE-L000598](../../tests/fixtures/answer_quality_cases.json#L598) | 598 | `"            \"publisher\": \"WireDesk\""` | — |
 | [SRC-90FAA34ADE-L000599](../../tests/fixtures/answer_quality_cases.json#L599) | 599 | `"          },"` | — |
 | [SRC-90FAA34ADE-L000600](../../tests/fixtures/answer_quality_cases.json#L600) | 600 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000601](../../tests/fixtures/answer_quality_cases.json#L601) | 601 | `"            \"title\": \"Release copy B\","` | — |
-| [SRC-90FAA34ADE-L000602](../../tests/fixtures/answer_quality_cases.json#L602) | 602 | `"            \"url\": \"https://news-b.example.test/story\","` | — |
-| [SRC-90FAA34ADE-L000603](../../tests/fixtures/answer_quality_cases.json#L603) | 603 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
-| [SRC-90FAA34ADE-L000604](../../tests/fixtures/answer_quality_cases.json#L604) | 604 | `"            \"domain\": \"news-b.example.test\","` | — |
-| [SRC-90FAA34ADE-L000605](../../tests/fixtures/answer_quality_cases.json#L605) | 605 | `"            \"provider\": \"fixture_b\","` | — |
-| [SRC-90FAA34ADE-L000606](../../tests/fixtures/answer_quality_cases.json#L606) | 606 | `"            \"publisher\": \"WireDesk\""` | — |
-| [SRC-90FAA34ADE-L000607](../../tests/fixtures/answer_quality_cases.json#L607) | 607 | `"          },"` | — |
-| [SRC-90FAA34ADE-L000608](../../tests/fixtures/answer_quality_cases.json#L608) | 608 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000609](../../tests/fixtures/answer_quality_cases.json#L609) | 609 | `"            \"title\": \"Release copy C\","` | — |
-| [SRC-90FAA34ADE-L000610](../../tests/fixtures/answer_quality_cases.json#L610) | 610 | `"            \"url\": \"https://news-c.example.test/story\","` | — |
-| [SRC-90FAA34ADE-L000611](../../tests/fixtures/answer_quality_cases.json#L611) | 611 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
-| [SRC-90FAA34ADE-L000612](../../tests/fixtures/answer_quality_cases.json#L612) | 612 | `"            \"domain\": \"news-c.example.test\","` | — |
-| [SRC-90FAA34ADE-L000613](../../tests/fixtures/answer_quality_cases.json#L613) | 613 | `"            \"provider\": \"fixture_c\","` | — |
-| [SRC-90FAA34ADE-L000614](../../tests/fixtures/answer_quality_cases.json#L614) | 614 | `"            \"publisher\": \"WireDesk\""` | — |
-| [SRC-90FAA34ADE-L000615](../../tests/fixtures/answer_quality_cases.json#L615) | 615 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000616](../../tests/fixtures/answer_quality_cases.json#L616) | 616 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000617](../../tests/fixtures/answer_quality_cases.json#L617) | 617 | `"        \"notes\": \"النتائج الثلاثة من نفس الناشر الأصلي ونصها متطابق\""` | — |
-| [SRC-90FAA34ADE-L000618](../../tests/fixtures/answer_quality_cases.json#L618) | 618 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000619](../../tests/fixtures/answer_quality_cases.json#L619) | 619 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000620](../../tests/fixtures/answer_quality_cases.json#L620) | 620 | `"        \"يحسب المواقع الثلاثة تأكيدًا مستقلًا بلا تحفظ\","` | — |
-| [SRC-90FAA34ADE-L000621](../../tests/fixtures/answer_quality_cases.json#L621) | 621 | `"        \"يقول إن الخبر تحقق بثلاثة مصادر مستقلة\""` | — |
-| [SRC-90FAA34ADE-L000622](../../tests/fixtures/answer_quality_cases.json#L622) | 622 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000623](../../tests/fixtures/answer_quality_cases.json#L623) | 623 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000624](../../tests/fixtures/answer_quality_cases.json#L624) | 624 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000625](../../tests/fixtures/answer_quality_cases.json#L625) | 625 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000626](../../tests/fixtures/answer_quality_cases.json#L626) | 626 | `"      \"case_id\": \"AQ-022\","` | — |
-| [SRC-90FAA34ADE-L000627](../../tests/fixtures/answer_quality_cases.json#L627) | 627 | `"      \"category\": \"unsupported_claim\","` | — |
-| [SRC-90FAA34ADE-L000628](../../tests/fixtures/answer_quality_cases.json#L628) | 628 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000629](../../tests/fixtures/answer_quality_cases.json#L629) | 629 | `"      \"question\": \"المصدر المرفق يذكر أن المتجر يفتح الساعة التاسعة فقط. هل هذا يثبت أنه يعمل طوال اليوم؟\","` | — |
