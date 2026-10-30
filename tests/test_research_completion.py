@@ -414,3 +414,31 @@ def test_truncated_claim_ledger_prevents_completed_research_status() -> None:
     assert result["counters"]["claim_ledger_truncated_count"] == 1
     assert result["counters"]["citation_support_warning_count"] == 1
     assert result["status"] == "partial_answer_evidence_gaps_detected"
+
+
+def test_built_claim_ledger_without_reference_counter_is_not_trusted() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": False,
+            "summary": {},
+        },
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["claim_ledger_reference_count_valid"] is False
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
