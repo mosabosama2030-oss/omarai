@@ -3882,3 +3882,45 @@ def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
     assert result["answer"] == "إجابة اختبارية [المصدر 1]."
     assert result["research_completion"]["status"] == "diagnostics_not_computed"
     assert any("لا يُعد ذلك دليلًا على اكتمال البحث" in warning for warning in result["warnings"])
+
+
+def test_search_web_rejects_maps_location_page_for_official_bank_website_query(monkeypatch):
+    import pytest
+    from agents.web_agent import _minimum_relevance_ratio, _relevance_ratio
+
+    agent = WebAgent()
+    query = "الموقع الرسمي للبنك المركزي المصري"
+    unrelated = {
+        "title": "خرائط Google",
+        "url": "https://support.google.com/maps/answer/2839911?hl=ar-sa",
+        "snippet": "البحث عن موقعك الجغرافي وتحسين دقته في خرائط Google. افتح خرائط Google.",
+        "provider": "test_provider",
+        "provider_rank": 1,
+    }
+    relevant = (
+        "Central Bank of Egypt - Official Website",
+        "Official website of the Central Bank of Egypt and its monetary policy decisions.",
+    )
+
+    assert _relevance_ratio(query, unrelated["title"] + " " + unrelated["snippet"]) == 0.0
+    assert _relevance_ratio(query, " ".join(relevant)) >= _minimum_relevance_ratio(query)
+
+    for env_name in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(env_name, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _q: [dict(unrelated)])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _q: [dict(unrelated)])
+    monkeypatch.setattr(agent, "_search_news", lambda _q: [])
+
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web(query)
+
+    diagnostics = {
+        row["provider"]: row
+        for row in agent._provider_diagnostics
+        if row.get("provider") in {"duckduckgo_html", "bing_rss"}
+    }
+    assert diagnostics["duckduckgo_html"]["status"] == "filtered_all"
+    assert diagnostics["duckduckgo_html"]["accepted_count"] == 0
+    assert diagnostics["duckduckgo_html"]["rejection_counts"]["relevance_below_threshold"] == 1
+    assert diagnostics["bing_rss"]["accepted_count"] == 0
+    assert diagnostics["bing_rss"]["rejection_counts"]["relevance_below_threshold"] == 1
