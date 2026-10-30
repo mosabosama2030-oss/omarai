@@ -56,6 +56,7 @@ from agents.task_understanding import (
     reasoning_guidance_for_task_spec,
     validate_task_spec,
 )
+from agents.task_understanding import build_query_strategy_matrix, build_task_spec
 from agents.research_pipeline import build_research_pipeline, evaluate_research_evidence
 
 MAX_QUESTION_CHARS = 4000
