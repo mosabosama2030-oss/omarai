@@ -7,6 +7,7 @@ signal; semantic matching is explicitly unassessed unless a scorer is injected.
 from __future__ import annotations
 
 from collections.abc import Callable
+import math
 from typing import Any
 
 from agents.aspect_planning import build_evidence_ledger, extract_aspects
@@ -47,8 +48,9 @@ def evaluate_research_evidence(
     semantic_matcher: Callable[[str, dict[str, Any]], Any] | None = None,
 ) -> dict[str, Any]:
     """Evaluate per-aspect candidates without equating relevance with claim truth."""
+    raw_aspects = aspects if isinstance(aspects, list) else []
     safe_aspects = [
-        item[:120] for item in aspects[:MAX_TASK_ASPECTS]
+        item[:120] for item in raw_aspects[:MAX_TASK_ASPECTS]
         if isinstance(item, str) and item.strip()
     ]
     safe_sources = [
@@ -58,6 +60,7 @@ def evaluate_research_evidence(
     lexical_ledger = build_evidence_ledger(safe_aspects, safe_sources)
     semantic_status = "not_configured"
     semantic_candidates: dict[str, list[dict[str, Any]]] = {}
+    semantic_errors = 0
 
     if callable(semantic_matcher) and safe_aspects and safe_sources:
         semantic_status = "evaluated"
@@ -66,10 +69,13 @@ def evaluate_research_evidence(
             for source_index, source in enumerate(safe_sources):
                 try:
                     raw_score = semantic_matcher(aspect, source)
+                    if isinstance(raw_score, bool):
+                        continue
                     score = float(raw_score)
-                except (ArithmeticError, TypeError, ValueError):
+                except Exception:
+                    semantic_errors += 1
                     continue
-                if not 0.0 <= score <= 1.0:
+                if not math.isfinite(score) or not 0.0 <= score <= 1.0:
                     continue
                 ranked.append({
                     "source_index": source_index,
@@ -82,7 +88,8 @@ def evaluate_research_evidence(
     return {
         "lexical_ledger": lexical_ledger,
         "semantic_matching": {
-            "status": semantic_status,
+            "status": "degraded" if semantic_errors else semantic_status,
+            "errors": semantic_errors,
             "candidates": semantic_candidates,
             "meaning": (
                 "ترتيب مرشحات الصلة فقط؛ لا يثبت صحة الادعاءات أو كفاية الاستشهاد."
@@ -162,7 +169,7 @@ def build_research_pipeline(
             "task_understanding": "completed",
             "aspect_extraction": "completed",
             "query_planning": query_status,
-            "lexical_matching": "completed" if aspects and sources else "not_assessed",
+            "lexical_matching": "evaluated" if aspects and sources else "not_assessed",
             "semantic_matching": evidence["semantic_matching"]["status"],
             "claim_verification": evidence["claim_verification"],
         },
