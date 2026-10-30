@@ -58,6 +58,15 @@ def evaluate_research_evidence(
         if isinstance(item, dict)
     ]
     lexical_ledger = build_evidence_ledger(safe_aspects, safe_sources)
+    lexical_matching_status = (
+        "evaluated"
+        if safe_aspects
+        and any(
+            any(str(source.get(field) or "").strip() for field in ("title", "snippet", "page_text"))
+            for source in safe_sources
+        )
+        else "not_assessed"
+    )
     semantic_status = "not_configured"
     semantic_candidates: dict[str, list[dict[str, Any]]] = {}
     semantic_errors = 0
@@ -87,6 +96,7 @@ def evaluate_research_evidence(
 
     return {
         "lexical_ledger": lexical_ledger,
+        "lexical_matching_status": lexical_matching_status,
         "semantic_matching": {
             "status": "degraded" if semantic_errors else semantic_status,
             "errors": semantic_errors,
@@ -189,7 +199,7 @@ def build_research_pipeline(
             "task_understanding": "completed",
             "aspect_extraction": "completed",
             "query_planning": query_status,
-            "lexical_matching": "evaluated" if aspects and sources else "not_assessed",
+            "lexical_matching": evidence["lexical_matching_status"],
             "semantic_matching": evidence["semantic_matching"]["status"],
             "claim_verification": evidence["claim_verification"],
         },
