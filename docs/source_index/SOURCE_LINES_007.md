@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000069 إلى SRC-686F71AA50-L000868
+- النطاق: SRC-686F71AA50-L000099 إلى SRC-686F71AA50-L000898
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,36 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-686F71AA50-L000069](../../agents/task_understanding.py#L69) | 69 | `"    \"creative_generation\": (\"preserve_user_facts_in_writing\",),"` | — |
-| [SRC-686F71AA50-L000070](../../agents/task_understanding.py#L70) | 70 | `"}"` | — |
-| [SRC-686F71AA50-L000071](../../agents/task_understanding.py#L71) | 71 | `"_DECISION_MATRIX = ("` | — |
-| [SRC-686F71AA50-L000072](../../agents/task_understanding.py#L72) | 72 | `"    {\"stage\": \"interpret\", \"check\": \"goal_context_required_inputs\", \"pass_action\": \"preserve_explicit_constraints\", \"fail_action\": \"clarify_missing_required_input\"},"` | — |
-| [SRC-686F71AA50-L000073](../../agents/task_understanding.py#L73) | 73 | `"    {\"stage\": \"route\", \"check\": \"tool_permission_and_readiness\", \"pass_action\": \"use_only_allowed_configured_tools\", \"fail_action\": \"report_not_configured_or_blocked\"},"` | — |
-| [SRC-686F71AA50-L000074](../../agents/task_understanding.py#L74) | 74 | `"    {\"stage\": \"plan\", \"check\": \"distinct_relevant_queries_and_budget\", \"pass_action\": \"execute_bounded_deduplicated_plan\", \"fail_action\": \"stop_and_report_limit\"},"` | — |
-| [SRC-686F71AA50-L000075](../../agents/task_understanding.py#L75) | 75 | `"    {\"stage\": \"evidence\", \"check\": \"relevance_identity_freshness_readability\", \"pass_action\": \"retain_task_eligible_evidence\", \"fail_action\": \"exclude_and_record_reason\"},"` | — |
-| [SRC-686F71AA50-L000076](../../agents/task_understanding.py#L76) | 76 | `"    {\"stage\": \"synthesize\", \"check\": \"claim_support_and_scope\", \"pass_action\": \"cite_supported_claims_and_qualify_inference\", \"fail_action\": \"answer_partially_or_abstain\"},"` | — |
-| [SRC-686F71AA50-L000077](../../agents/task_understanding.py#L77) | 77 | `"    {\"stage\": \"terminate\", \"check\": \"actual_stage_outcomes\", \"pass_action\": \"report_observed_completion_state\", \"fail_action\": \"mark_partial_failed_or_not_run\"},"` | — |
-| [SRC-686F71AA50-L000078](../../agents/task_understanding.py#L78) | 78 | `")"` | — |
-| [SRC-686F71AA50-L000079](../../agents/task_understanding.py#L79) | 79 | `"_DECISION_STAGES = {row[\"stage\"] for row in _DECISION_MATRIX}"` | — |
-| [SRC-686F71AA50-L000080](../../agents/task_understanding.py#L80) | 80 | `"_DECISION_IDS = {"` | — |
-| [SRC-686F71AA50-L000081](../../agents/task_understanding.py#L81) | 81 | `"    field: {row[field] for row in _DECISION_MATRIX}"` | — |
-| [SRC-686F71AA50-L000082](../../agents/task_understanding.py#L82) | 82 | `"    for field in (\"check\", \"pass_action\", \"fail_action\")"` | — |
-| [SRC-686F71AA50-L000083](../../agents/task_understanding.py#L83) | 83 | `"}"` | — |
-| [SRC-686F71AA50-L000084](../../agents/task_understanding.py#L84) | 84 | `""` | — |
-| [SRC-686F71AA50-L000085](../../agents/task_understanding.py#L85) | 85 | `""` | — |
-| [SRC-686F71AA50-L000086](../../agents/task_understanding.py#L86) | 86 | `"def _reasoning_strategy_ids("` | — |
-| [SRC-686F71AA50-L000087](../../agents/task_understanding.py#L87) | 87 | `"    family: str,"` | — |
-| [SRC-686F71AA50-L000088](../../agents/task_understanding.py#L88) | 88 | `"    constraints: dict[str, Any],"` | — |
-| [SRC-686F71AA50-L000089](../../agents/task_understanding.py#L89) | 89 | `"    context_resolution: dict[str, Any],"` | — |
-| [SRC-686F71AA50-L000090](../../agents/task_understanding.py#L90) | 90 | `"    missing_required_inputs: list[str],"` | — |
-| [SRC-686F71AA50-L000091](../../agents/task_understanding.py#L91) | 91 | `") -> list[str]:"` | — |
-| [SRC-686F71AA50-L000092](../../agents/task_understanding.py#L92) | 92 | `"    selected = ["` | — |
-| [SRC-686F71AA50-L000093](../../agents/task_understanding.py#L93) | 93 | `"        \"preserve_goal_and_constraints\","` | — |
-| [SRC-686F71AA50-L000094](../../agents/task_understanding.py#L94) | 94 | `"        \"separate_facts_inferences_hypotheses\","` | — |
-| [SRC-686F71AA50-L000095](../../agents/task_understanding.py#L95) | 95 | `"        \"ground_material_claims\","` | — |
-| [SRC-686F71AA50-L000096](../../agents/task_understanding.py#L96) | 96 | `"        \"bounded_stop_rule\","` | — |
-| [SRC-686F71AA50-L000097](../../agents/task_understanding.py#L97) | 97 | `"        \"prefer_lowest_sufficient_tool\","` | — |
-| [SRC-686F71AA50-L000098](../../agents/task_understanding.py#L98) | 98 | `"    ]"` | — |
 | [SRC-686F71AA50-L000099](../../agents/task_understanding.py#L99) | 99 | `"    selected.extend(_REASONING_FAMILY_IDS.get(family, ()))"` | — |
 | [SRC-686F71AA50-L000100](../../agents/task_understanding.py#L100) | 100 | `"    if missing_required_inputs or context_resolution.get(\"needs_clarification\"):"` | — |
 | [SRC-686F71AA50-L000101](../../agents/task_understanding.py#L101) | 101 | `"        selected.append(\"clarify_required_input\")"` | — |
@@ -816,3 +786,33 @@
 | [SRC-686F71AA50-L000866](../../agents/task_understanding.py#L866) | 866 | `"        \"task_family\": family,"` | — |
 | [SRC-686F71AA50-L000867](../../agents/task_understanding.py#L867) | 867 | `"        \"mode\": clean_mode,"` | — |
 | [SRC-686F71AA50-L000868](../../agents/task_understanding.py#L868) | 868 | `"        \"intent_route\": intent_route or \"unassessed\","` | — |
+| [SRC-686F71AA50-L000869](../../agents/task_understanding.py#L869) | 869 | `"        \"normalization\": \"unicode_nfkc_arabic_diacritic_and_letter_normalization\","` | — |
+| [SRC-686F71AA50-L000870](../../agents/task_understanding.py#L870) | 870 | `"        \"classification_method\": \"deterministic_multi_pattern_hypotheses\","` | — |
+| [SRC-686F71AA50-L000871](../../agents/task_understanding.py#L871) | 871 | `"        \"classification_is_probability\": False,"` | — |
+| [SRC-686F71AA50-L000872](../../agents/task_understanding.py#L872) | 872 | `"        \"ambiguity_status\": ambiguity_status,"` | — |
+| [SRC-686F71AA50-L000873](../../agents/task_understanding.py#L873) | 873 | `"        \"missing_required_inputs\": list(dict.fromkeys(missing_required_inputs)),"` | — |
+| [SRC-686F71AA50-L000874](../../agents/task_understanding.py#L874) | 874 | `"        \"requires_clarification\": ambiguity_status == \"needs_clarification\","` | — |
+| [SRC-686F71AA50-L000875](../../agents/task_understanding.py#L875) | 875 | `"        \"context_resolution\": context_resolution,"` | — |
+| [SRC-686F71AA50-L000876](../../agents/task_understanding.py#L876) | 876 | `"        \"secondary_task_types\": ["` | — |
+| [SRC-686F71AA50-L000877](../../agents/task_understanding.py#L877) | 877 | `"            name for name, signals in matches.items()"` | — |
+| [SRC-686F71AA50-L000878](../../agents/task_understanding.py#L878) | 878 | `"            if signals and name != family"` | — |
+| [SRC-686F71AA50-L000879](../../agents/task_understanding.py#L879) | 879 | `"        ],"` | — |
+| [SRC-686F71AA50-L000880](../../agents/task_understanding.py#L880) | 880 | `"        \"clarification_reason\": ("` | — |
+| [SRC-686F71AA50-L000881](../../agents/task_understanding.py#L881) | 881 | `"            \"missing_required_input\""` | — |
+| [SRC-686F71AA50-L000882](../../agents/task_understanding.py#L882) | 882 | `"            if missing_required_inputs"` | — |
+| [SRC-686F71AA50-L000883](../../agents/task_understanding.py#L883) | 883 | `"            else \"no_strong_lexical_conflict_detected\""` | — |
+| [SRC-686F71AA50-L000884](../../agents/task_understanding.py#L884) | 884 | `"        ),"` | — |
+| [SRC-686F71AA50-L000885](../../agents/task_understanding.py#L885) | 885 | `"        \"hypothesis_interpretations\": hypothesis_rows,"` | — |
+| [SRC-686F71AA50-L000886](../../agents/task_understanding.py#L886) | 886 | `"        \"constraints\": constraints,"` | — |
+| [SRC-686F71AA50-L000887](../../agents/task_understanding.py#L887) | 887 | `"        \"output_preferences\": {"` | — |
+| [SRC-686F71AA50-L000888](../../agents/task_understanding.py#L888) | 888 | `"            \"concise\": bool(output_matches[\"output_concise\"]),"` | — |
+| [SRC-686F71AA50-L000889](../../agents/task_understanding.py#L889) | 889 | `"            \"detailed\": bool(output_matches[\"output_detailed\"]),"` | — |
+| [SRC-686F71AA50-L000890](../../agents/task_understanding.py#L890) | 890 | `"            \"examples_requested\": bool(output_matches[\"output_examples\"]),"` | — |
+| [SRC-686F71AA50-L000891](../../agents/task_understanding.py#L891) | 891 | `"            \"table_requested\": bool(output_matches[\"output_table\"]),"` | — |
+| [SRC-686F71AA50-L000892](../../agents/task_understanding.py#L892) | 892 | `"            \"bullets_or_checklist_requested\": bool(output_matches[\"output_bullets\"]),"` | — |
+| [SRC-686F71AA50-L000893](../../agents/task_understanding.py#L893) | 893 | `"            \"beginner_friendly_requested\": bool(output_matches[\"output_beginner_friendly\"]),"` | — |
+| [SRC-686F71AA50-L000894](../../agents/task_understanding.py#L894) | 894 | `"            \"citations_requested\": bool(output_matches[\"output_citations\"]),"` | — |
+| [SRC-686F71AA50-L000895](../../agents/task_understanding.py#L895) | 895 | `"            \"links_requested\": bool(output_matches[\"output_links\"]),"` | — |
+| [SRC-686F71AA50-L000896](../../agents/task_understanding.py#L896) | 896 | `"            \"json_requested\": bool(output_matches[\"output_json\"]),"` | — |
+| [SRC-686F71AA50-L000897](../../agents/task_understanding.py#L897) | 897 | `"        },"` | — |
+| [SRC-686F71AA50-L000898](../../agents/task_understanding.py#L898) | 898 | `"        \"evidence_requirements\": evidence_requirements,"` | — |

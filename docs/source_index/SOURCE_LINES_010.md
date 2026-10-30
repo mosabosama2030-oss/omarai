@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000741 إلى SRC-1AE03B9EC3-L001540
+- النطاق: SRC-1AE03B9EC3-L000771 إلى SRC-1AE03B9EC3-L001570
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,36 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000741](../../agents/web_agent.py#L741) | 741 | `"        evidence = \" \".join("` | — |
-| [SRC-1AE03B9EC3-L000742](../../agents/web_agent.py#L742) | 742 | `"            str(source.get(key) or \"\")"` | — |
-| [SRC-1AE03B9EC3-L000743](../../agents/web_agent.py#L743) | 743 | `"            for key in (\"title\", \"snippet\", \"page_text\")"` | — |
-| [SRC-1AE03B9EC3-L000744](../../agents/web_agent.py#L744) | 744 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000745](../../agents/web_agent.py#L745) | 745 | `"        return _relevance_ratio(query, evidence) >= 0.20"` | — |
-| [SRC-1AE03B9EC3-L000746](../../agents/web_agent.py#L746) | 746 | `""` | — |
-| [SRC-1AE03B9EC3-L000747](../../agents/web_agent.py#L747) | 747 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L000748](../../agents/web_agent.py#L748) | 748 | `"    def _normalized_source_url_key(value: Any) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000749](../../agents/web_agent.py#L749) | 749 | `"        \"\"\"Normalize a public HTTP(S) URL for duplicate detection across search rounds.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000750](../../agents/web_agent.py#L750) | 750 | `"        if not isinstance(value, str) or not value.strip():"` | — |
-| [SRC-1AE03B9EC3-L000751](../../agents/web_agent.py#L751) | 751 | `"            return \"\""` | — |
-| [SRC-1AE03B9EC3-L000752](../../agents/web_agent.py#L752) | 752 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L000753](../../agents/web_agent.py#L753) | 753 | `"            parsed = urllib.parse.urlsplit(value.strip())"` | — |
-| [SRC-1AE03B9EC3-L000754](../../agents/web_agent.py#L754) | 754 | `"            scheme = parsed.scheme.lower()"` | — |
-| [SRC-1AE03B9EC3-L000755](../../agents/web_agent.py#L755) | 755 | `"            if scheme not in {\"http\", \"https\"} or not parsed.hostname:"` | — |
-| [SRC-1AE03B9EC3-L000756](../../agents/web_agent.py#L756) | 756 | `"                return \"\""` | — |
-| [SRC-1AE03B9EC3-L000757](../../agents/web_agent.py#L757) | 757 | `"            host = parsed.hostname.lower().rstrip(\".\")"` | — |
-| [SRC-1AE03B9EC3-L000758](../../agents/web_agent.py#L758) | 758 | `"            port = parsed.port"` | — |
-| [SRC-1AE03B9EC3-L000759](../../agents/web_agent.py#L759) | 759 | `"            if (scheme == \"https\" and port == 443) or (scheme == \"http\" and port == 80):"` | — |
-| [SRC-1AE03B9EC3-L000760](../../agents/web_agent.py#L760) | 760 | `"                port = None"` | — |
-| [SRC-1AE03B9EC3-L000761](../../agents/web_agent.py#L761) | 761 | `"            host_for_url = f\"[{host}]\" if \":\" in host else host"` | — |
-| [SRC-1AE03B9EC3-L000762](../../agents/web_agent.py#L762) | 762 | `"            netloc = host_for_url + (f\":{port}\" if port is not None else \"\")"` | — |
-| [SRC-1AE03B9EC3-L000763](../../agents/web_agent.py#L763) | 763 | `"            path = parsed.path.rstrip(\"/\") or \"/\""` | — |
-| [SRC-1AE03B9EC3-L000764](../../agents/web_agent.py#L764) | 764 | `"            tracking_keys = {\"fbclid\", \"gclid\", \"ref\", \"source\"}"` | — |
-| [SRC-1AE03B9EC3-L000765](../../agents/web_agent.py#L765) | 765 | `"            query_items = ["` | — |
-| [SRC-1AE03B9EC3-L000766](../../agents/web_agent.py#L766) | 766 | `"                (key, item)"` | — |
-| [SRC-1AE03B9EC3-L000767](../../agents/web_agent.py#L767) | 767 | `"                for key, item in urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)"` | — |
-| [SRC-1AE03B9EC3-L000768](../../agents/web_agent.py#L768) | 768 | `"                if not key.lower().startswith(\"utm_\") and key.lower() not in tracking_keys"` | — |
-| [SRC-1AE03B9EC3-L000769](../../agents/web_agent.py#L769) | 769 | `"            ]"` | — |
-| [SRC-1AE03B9EC3-L000770](../../agents/web_agent.py#L770) | 770 | `"            query = urllib.parse.urlencode(query_items, doseq=True)"` | — |
 | [SRC-1AE03B9EC3-L000771](../../agents/web_agent.py#L771) | 771 | `"            return urllib.parse.urlunsplit((scheme, netloc, path, query, \"\"))"` | — |
 | [SRC-1AE03B9EC3-L000772](../../agents/web_agent.py#L772) | 772 | `"        except (TypeError, ValueError):"` | — |
 | [SRC-1AE03B9EC3-L000773](../../agents/web_agent.py#L773) | 773 | `"            return \"\""` | — |
@@ -816,3 +786,33 @@
 | [SRC-1AE03B9EC3-L001538](../../agents/web_agent.py#L1538) | 1538 | `"                    error = \"connector returned no parseable results\""` | — |
 | [SRC-1AE03B9EC3-L001539](../../agents/web_agent.py#L1539) | 1539 | `"                self._record_provider_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L001540](../../agents/web_agent.py#L1540) | 1540 | `"                    name, search_query, status, len(raw), rejected, error,"` | — |
+| [SRC-1AE03B9EC3-L001541](../../agents/web_agent.py#L1541) | 1541 | `"                    accepted_count=len(accepted), rejection_counts=rejection_counts if raw else None,"` | — |
+| [SRC-1AE03B9EC3-L001542](../../agents/web_agent.py#L1542) | 1542 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001543](../../agents/web_agent.py#L1543) | 1543 | `"                return accepted"` | — |
+| [SRC-1AE03B9EC3-L001544](../../agents/web_agent.py#L1544) | 1544 | `"            except RequestBudgetExceeded as exc:"` | — |
+| [SRC-1AE03B9EC3-L001545](../../agents/web_agent.py#L1545) | 1545 | `"                self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L001546](../../agents/web_agent.py#L1546) | 1546 | `"                    name, search_query, \"budget_exhausted\", error=str(exc)"` | — |
+| [SRC-1AE03B9EC3-L001547](../../agents/web_agent.py#L1547) | 1547 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001548](../../agents/web_agent.py#L1548) | 1548 | `"            except TimeoutError:"` | — |
+| [SRC-1AE03B9EC3-L001549](../../agents/web_agent.py#L1549) | 1549 | `"                self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L001550](../../agents/web_agent.py#L1550) | 1550 | `"                    name, search_query, \"timeout\", error=\"provider exceeded its bounded request timeout\""` | — |
+| [SRC-1AE03B9EC3-L001551](../../agents/web_agent.py#L1551) | 1551 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001552](../../agents/web_agent.py#L1552) | 1552 | `"            except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets"` | — |
+| [SRC-1AE03B9EC3-L001553](../../agents/web_agent.py#L1553) | 1553 | `"                detail = f\"{type(exc).__name__}: {exc}\" if isinstance(exc, RuntimeError) else type(exc).__name__"` | — |
+| [SRC-1AE03B9EC3-L001554](../../agents/web_agent.py#L1554) | 1554 | `"                status = \"failed\""` | — |
+| [SRC-1AE03B9EC3-L001555](../../agents/web_agent.py#L1555) | 1555 | `"                status_match = re.search(r\"(?i)\\bHTTP\\s+(\\d{3})\\b\", str(exc))"` | — |
+| [SRC-1AE03B9EC3-L001556](../../agents/web_agent.py#L1556) | 1556 | `"                if status_match:"` | — |
+| [SRC-1AE03B9EC3-L001557](../../agents/web_agent.py#L1557) | 1557 | `"                    status_code = int(status_match.group(1))"` | — |
+| [SRC-1AE03B9EC3-L001558](../../agents/web_agent.py#L1558) | 1558 | `"                    if status_code == 429:"` | — |
+| [SRC-1AE03B9EC3-L001559](../../agents/web_agent.py#L1559) | 1559 | `"                        status = \"rate_limited\""` | — |
+| [SRC-1AE03B9EC3-L001560](../../agents/web_agent.py#L1560) | 1560 | `"                    elif status_code in {401, 403}:"` | — |
+| [SRC-1AE03B9EC3-L001561](../../agents/web_agent.py#L1561) | 1561 | `"                        status = \"unauthorized\""` | — |
+| [SRC-1AE03B9EC3-L001562](../../agents/web_agent.py#L1562) | 1562 | `"                    elif status_code == 202 or 300 <= status_code < 600:"` | — |
+| [SRC-1AE03B9EC3-L001563](../../agents/web_agent.py#L1563) | 1563 | `"                        # Do not bypass anti-bot/challenge responses; mark the provider degraded."` | — |
+| [SRC-1AE03B9EC3-L001564](../../agents/web_agent.py#L1564) | 1564 | `"                        status = \"http_error\""` | — |
+| [SRC-1AE03B9EC3-L001565](../../agents/web_agent.py#L1565) | 1565 | `"                self._record_provider_diagnostic(name, search_query, status, error=detail)"` | — |
+| [SRC-1AE03B9EC3-L001566](../../agents/web_agent.py#L1566) | 1566 | `"            return []"` | — |
+| [SRC-1AE03B9EC3-L001567](../../agents/web_agent.py#L1567) | 1567 | `""` | — |
+| [SRC-1AE03B9EC3-L001568](../../agents/web_agent.py#L1568) | 1568 | `"        async def run_all() -> list[list[dict[str, Any]]]:"` | — |
+| [SRC-1AE03B9EC3-L001569](../../agents/web_agent.py#L1569) | 1569 | `"            return await asyncio.gather(*(run_one(name, method) for name, method in adapters))"` | — |
+| [SRC-1AE03B9EC3-L001570](../../agents/web_agent.py#L1570) | 1570 | `"        try:"` | — |

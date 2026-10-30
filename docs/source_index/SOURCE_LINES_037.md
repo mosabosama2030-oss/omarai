@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000896 إلى SRC-29A9CD43D1-L000132
+- النطاق: SRC-3451CC474D-L000926 إلى SRC-29A9CD43D1-L000162
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,36 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000896](../../tests/test_api.py#L896) | 896 | `"            \"used_language_model\": False,"` | — |
-| [SRC-3451CC474D-L000897](../../tests/test_api.py#L897) | 897 | `"            \"used_web_search\": False,"` | — |
-| [SRC-3451CC474D-L000898](../../tests/test_api.py#L898) | 898 | `"            \"search_attempted\": False,"` | — |
-| [SRC-3451CC474D-L000899](../../tests/test_api.py#L899) | 899 | `"            \"used_social_search\": False,"` | — |
-| [SRC-3451CC474D-L000900](../../tests/test_api.py#L900) | 900 | `"            \"warnings\": [],"` | — |
-| [SRC-3451CC474D-L000901](../../tests/test_api.py#L901) | 901 | `"            \"kind\": \"web_fallback\","` | — |
-| [SRC-3451CC474D-L000902](../../tests/test_api.py#L902) | 902 | `"        }"` | — |
-| [SRC-3451CC474D-L000903](../../tests/test_api.py#L903) | 903 | `""` | — |
-| [SRC-3451CC474D-L000904](../../tests/test_api.py#L904) | 904 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
-| [SRC-3451CC474D-L000905](../../tests/test_api.py#L905) | 905 | `""` | — |
-| [SRC-3451CC474D-L000906](../../tests/test_api.py#L906) | 906 | `"    status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000907](../../tests/test_api.py#L907) | 907 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
-| [SRC-3451CC474D-L000908](../../tests/test_api.py#L908) | 908 | `"    )"` | — |
-| [SRC-3451CC474D-L000909](../../tests/test_api.py#L909) | 909 | `"    assert status == 500"` | — |
-| [SRC-3451CC474D-L000910](../../tests/test_api.py#L910) | 910 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
-| [SRC-3451CC474D-L000911](../../tests/test_api.py#L911) | 911 | `""` | — |
-| [SRC-3451CC474D-L000912](../../tests/test_api.py#L912) | 912 | `"    state[\"fail\"] = False"` | — |
-| [SRC-3451CC474D-L000913](../../tests/test_api.py#L913) | 913 | `"    status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000914](../../tests/test_api.py#L914) | 914 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الثاني\"}"` | — |
-| [SRC-3451CC474D-L000915](../../tests/test_api.py#L915) | 915 | `"    )"` | — |
-| [SRC-3451CC474D-L000916](../../tests/test_api.py#L916) | 916 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000917](../../tests/test_api.py#L917) | 917 | `"    assert payload[\"answer\"] == \"اختبار ناجح\""` | — |
-| [SRC-3451CC474D-L000918](../../tests/test_api.py#L918) | 918 | `""` | — |
-| [SRC-3451CC474D-L000919](../../tests/test_api.py#L919) | 919 | `""` | — |
-| [SRC-3451CC474D-L000920](../../tests/test_api.py#L920) | 920 | `"def test_csp_hashes_match_all_first_party_inline_content_and_attributes():"` | — |
-| [SRC-3451CC474D-L000921](../../tests/test_api.py#L921) | 921 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000922](../../tests/test_api.py#L922) | 922 | `""` | — |
-| [SRC-3451CC474D-L000923](../../tests/test_api.py#L923) | 923 | `"    policy = api_module._content_security_policy()"` | — |
-| [SRC-3451CC474D-L000924](../../tests/test_api.py#L924) | 924 | `"    assert \"'unsafe-inline'\" not in policy"` | — |
-| [SRC-3451CC474D-L000925](../../tests/test_api.py#L925) | 925 | `"    script_blocks = 0"` | — |
 | [SRC-3451CC474D-L000926](../../tests/test_api.py#L926) | 926 | `"    style_blocks = 0"` | — |
 | [SRC-3451CC474D-L000927](../../tests/test_api.py#L927) | 927 | `"    style_attributes = 0"` | — |
 | [SRC-3451CC474D-L000928](../../tests/test_api.py#L928) | 928 | `"    for html_path in api_module.ROOT.glob(\"*.html\"):"` | — |
@@ -870,3 +840,33 @@
 | [SRC-29A9CD43D1-L000130](../../tests/test_dialogue_context_pipeline.py#L130) | 130 | `"        return answer"` | — |
 | [SRC-29A9CD43D1-L000131](../../tests/test_dialogue_context_pipeline.py#L131) | 131 | `""` | — |
 | [SRC-29A9CD43D1-L000132](../../tests/test_dialogue_context_pipeline.py#L132) | 132 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-29A9CD43D1-L000133](../../tests/test_dialogue_context_pipeline.py#L133) | 133 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
+| [SRC-29A9CD43D1-L000134](../../tests/test_dialogue_context_pipeline.py#L134) | 134 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
+| [SRC-29A9CD43D1-L000135](../../tests/test_dialogue_context_pipeline.py#L135) | 135 | `"    monkeypatch.setattr(agent, \"_review_answer\", review)"` | — |
+| [SRC-29A9CD43D1-L000136](../../tests/test_dialogue_context_pipeline.py#L136) | 136 | `""` | — |
+| [SRC-29A9CD43D1-L000137](../../tests/test_dialogue_context_pipeline.py#L137) | 137 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-29A9CD43D1-L000138](../../tests/test_dialogue_context_pipeline.py#L138) | 138 | `"    result = agent.answer(question, history=history)"` | — |
+| [SRC-29A9CD43D1-L000139](../../tests/test_dialogue_context_pipeline.py#L139) | 139 | `""` | — |
+| [SRC-29A9CD43D1-L000140](../../tests/test_dialogue_context_pipeline.py#L140) | 140 | `"    assert result[\"intent_route\"] == \"WEB_SIMPLE\""` | — |
+| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    assert result[\"question\"] == question  # Preserve the visible user utterance."` | — |
+| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `"    assert result[\"used_web_search\"] is True"` | — |
+| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    assert len(seen[\"model_prompts\"]) == 2  # one context pass + one search-plan pass"` | — |
+| [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    assert \"iPhone 17\" in seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000145](../../tests/test_dialogue_context_pipeline.py#L145) | 145 | `"    assert \"256 جيجابايت\" in seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert \"الضمان الدولي\" in seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000147](../../tests/test_dialogue_context_pipeline.py#L147) | 147 | `"    assert seen[\"reviewed_question\"] == seen[\"generated_question\"]"` | — |
+| [SRC-29A9CD43D1-L000148](../../tests/test_dialogue_context_pipeline.py#L148) | 148 | `"    context_result = result[\"research_plan\"][\"dialogue_context\"]"` | — |
+| [SRC-29A9CD43D1-L000149](../../tests/test_dialogue_context_pipeline.py#L149) | 149 | `"    assert context_result[\"method\"] == \"llm_semantic_context\""` | — |
+| [SRC-29A9CD43D1-L000150](../../tests/test_dialogue_context_pipeline.py#L150) | 150 | `"    assert context_result[\"slots\"][\"country\"] == \"مصر\""` | — |
+| [SRC-29A9CD43D1-L000151](../../tests/test_dialogue_context_pipeline.py#L151) | 151 | `"    assert context_result[\"changed_slots\"] == [\"aspect\"]"` | — |
+| [SRC-29A9CD43D1-L000152](../../tests/test_dialogue_context_pipeline.py#L152) | 152 | `"    assert context_result[\"needs_web\"] is True"` | — |
+| [SRC-29A9CD43D1-L000153](../../tests/test_dialogue_context_pipeline.py#L153) | 153 | `""` | — |
+| [SRC-29A9CD43D1-L000154](../../tests/test_dialogue_context_pipeline.py#L154) | 154 | `""` | — |
+| [SRC-29A9CD43D1-L000155](../../tests/test_dialogue_context_pipeline.py#L155) | 155 | `"def test_semantic_context_asks_before_search_when_two_referents_are_plausible("` | — |
+| [SRC-29A9CD43D1-L000156](../../tests/test_dialogue_context_pipeline.py#L156) | 156 | `"    monkeypatch: pytest.MonkeyPatch,"` | — |
+| [SRC-29A9CD43D1-L000157](../../tests/test_dialogue_context_pipeline.py#L157) | 157 | `") -> None:"` | — |
+| [SRC-29A9CD43D1-L000158](../../tests/test_dialogue_context_pipeline.py#L158) | 158 | `"    agent = WebAgent()"` | — |
+| [SRC-29A9CD43D1-L000159](../../tests/test_dialogue_context_pipeline.py#L159) | 159 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-29A9CD43D1-L000160](../../tests/test_dialogue_context_pipeline.py#L160) | 160 | `"    history = ["` | — |
+| [SRC-29A9CD43D1-L000161](../../tests/test_dialogue_context_pipeline.py#L161) | 161 | `"        {\"role\": \"user\", \"content\": \"قارن بين iPhone 17 وSamsung S26\"},"` | — |
+| [SRC-29A9CD43D1-L000162](../../tests/test_dialogue_context_pipeline.py#L162) | 162 | `"        {\"role\": \"assistant\", \"content\": \"ذكرت الهاتفين في المقارنة.\"},"` | — |

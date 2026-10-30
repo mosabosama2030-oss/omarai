@@ -4,22 +4,9 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-63610B9E85-L000127 إلى SRC-B3062EB677-L000078
+- النطاق: SRC-6A7519AC10-L000027 إلى SRC-B3062EB677-L000108
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
-## اختبارات
-
-### FILE-63610B9E85 — [tests/test_agentic_retrieval.py](../../tests/test_agentic_retrieval.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-63610B9E85-L000127](../../tests/test_agentic_retrieval.py#L127) | 127 | `"    )"` | — |
-| [SRC-63610B9E85-L000128](../../tests/test_agentic_retrieval.py#L128) | 128 | `"    assert \"مثال أسلوبي توضيحي فقط\" in combined"` | — |
-| [SRC-63610B9E85-L000129](../../tests/test_agentic_retrieval.py#L129) | 129 | `"    assert \"لا تعمم هذا على منتجات أخرى\" in combined"` | — |
-| [SRC-63610B9E85-L000130](../../tests/test_agentic_retrieval.py#L130) | 130 | `"    assert \"لا أستطيع تأكيده من هذه النتائج\" in combined"` | — |
 ## اختبارات
 
 ### FILE-6A7519AC10 — [tests/test_answer_quality_comparison.py](../../tests/test_answer_quality_comparison.py#L1)
@@ -29,32 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6A7519AC10-L000001](../../tests/test_answer_quality_comparison.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-6A7519AC10-L000002](../../tests/test_answer_quality_comparison.py#L2) | 2 | `""` | — |
-| [SRC-6A7519AC10-L000003](../../tests/test_answer_quality_comparison.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-6A7519AC10-L000004](../../tests/test_answer_quality_comparison.py#L4) | 4 | `"import json"` | — |
-| [SRC-6A7519AC10-L000005](../../tests/test_answer_quality_comparison.py#L5) | 5 | `"from pathlib import Path"` | — |
-| [SRC-6A7519AC10-L000006](../../tests/test_answer_quality_comparison.py#L6) | 6 | `""` | — |
-| [SRC-6A7519AC10-L000007](../../tests/test_answer_quality_comparison.py#L7) | 7 | `"import pytest"` | — |
-| [SRC-6A7519AC10-L000008](../../tests/test_answer_quality_comparison.py#L8) | 8 | `""` | — |
-| [SRC-6A7519AC10-L000009](../../tests/test_answer_quality_comparison.py#L9) | 9 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-6A7519AC10-L000010](../../tests/test_answer_quality_comparison.py#L10) | 10 | `"SCRIPT = ROOT / \"scripts\" / \"compare_answer_quality_runs.py\""` | — |
-| [SRC-6A7519AC10-L000011](../../tests/test_answer_quality_comparison.py#L11) | 11 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-6A7519AC10-L000012](../../tests/test_answer_quality_comparison.py#L12) | 12 | `""` | — |
-| [SRC-6A7519AC10-L000013](../../tests/test_answer_quality_comparison.py#L13) | 13 | `""` | — |
-| [SRC-6A7519AC10-L000014](../../tests/test_answer_quality_comparison.py#L14) | 14 | `"def load_module():"` | — |
-| [SRC-6A7519AC10-L000015](../../tests/test_answer_quality_comparison.py#L15) | 15 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_run_comparison\", SCRIPT)"` | — |
-| [SRC-6A7519AC10-L000016](../../tests/test_answer_quality_comparison.py#L16) | 16 | `"    assert spec and spec.loader"` | — |
-| [SRC-6A7519AC10-L000017](../../tests/test_answer_quality_comparison.py#L17) | 17 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-6A7519AC10-L000018](../../tests/test_answer_quality_comparison.py#L18) | 18 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-6A7519AC10-L000019](../../tests/test_answer_quality_comparison.py#L19) | 19 | `"    return module"` | — |
-| [SRC-6A7519AC10-L000020](../../tests/test_answer_quality_comparison.py#L20) | 20 | `""` | — |
-| [SRC-6A7519AC10-L000021](../../tests/test_answer_quality_comparison.py#L21) | 21 | `""` | — |
-| [SRC-6A7519AC10-L000022](../../tests/test_answer_quality_comparison.py#L22) | 22 | `"def _run(*, build_sha: str, results: list[dict]) -> dict:"` | — |
-| [SRC-6A7519AC10-L000023](../../tests/test_answer_quality_comparison.py#L23) | 23 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-6A7519AC10-L000024](../../tests/test_answer_quality_comparison.py#L24) | 24 | `"    return {"` | — |
-| [SRC-6A7519AC10-L000025](../../tests/test_answer_quality_comparison.py#L25) | 25 | `"        \"benchmark_id\": corpus[\"benchmark_id\"],"` | — |
-| [SRC-6A7519AC10-L000026](../../tests/test_answer_quality_comparison.py#L26) | 26 | `"        \"benchmark_version\": corpus[\"version\"],"` | — |
 | [SRC-6A7519AC10-L000027](../../tests/test_answer_quality_comparison.py#L27) | 27 | `"        \"build_sha\": build_sha,"` | — |
 | [SRC-6A7519AC10-L000028](../../tests/test_answer_quality_comparison.py#L28) | 28 | `"        \"executed_at_utc\": \"2026-10-29T12:00:00+00:00\","` | — |
 | [SRC-6A7519AC10-L000029](../../tests/test_answer_quality_comparison.py#L29) | 29 | `"        \"results\": results,"` | — |
@@ -861,3 +822,33 @@
 | [SRC-B3062EB677-L000076](../../tests/test_answer_quality_runner.py#L76) | 76 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000077](../../tests/test_answer_quality_runner.py#L77) | 77 | `"    rc = mod.main("` | — |
 | [SRC-B3062EB677-L000078](../../tests/test_answer_quality_runner.py#L78) | 78 | `"        ["` | — |
+| [SRC-B3062EB677-L000079](../../tests/test_answer_quality_runner.py#L79) | 79 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000080](../../tests/test_answer_quality_runner.py#L80) | 80 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000081](../../tests/test_answer_quality_runner.py#L81) | 81 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000082](../../tests/test_answer_quality_runner.py#L82) | 82 | `"            str(CORPUS),"` | — |
+| [SRC-B3062EB677-L000083](../../tests/test_answer_quality_runner.py#L83) | 83 | `"            \"--case-id\","` | — |
+| [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
+| [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
+| [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
+| [SRC-B3062EB677-L000087](../../tests/test_answer_quality_runner.py#L87) | 87 | `"        ]"` | — |
+| [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
+| [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |
+| [SRC-B3062EB677-L000091](../../tests/test_answer_quality_runner.py#L91) | 91 | `""` | — |
+| [SRC-B3062EB677-L000092](../../tests/test_answer_quality_runner.py#L92) | 92 | `"def test_redact_secrets_strips_token_value(monkeypatch):"` | — |
+| [SRC-B3062EB677-L000093](../../tests/test_answer_quality_runner.py#L93) | 93 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000094](../../tests/test_answer_quality_runner.py#L94) | 94 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"super-secret-token-value-xyz\")"` | — |
+| [SRC-B3062EB677-L000095](../../tests/test_answer_quality_runner.py#L95) | 95 | `"    text = \"token=super-secret-token-value-xyz and OPENROUTER_API_KEY\""` | — |
+| [SRC-B3062EB677-L000096](../../tests/test_answer_quality_runner.py#L96) | 96 | `"    out = mod.redact_secrets(text)"` | — |
+| [SRC-B3062EB677-L000097](../../tests/test_answer_quality_runner.py#L97) | 97 | `"    assert \"super-secret-token-value-xyz\" not in out"` | — |
+| [SRC-B3062EB677-L000098](../../tests/test_answer_quality_runner.py#L98) | 98 | `"    assert \"REDACTED\" in out"` | — |
+| [SRC-B3062EB677-L000099](../../tests/test_answer_quality_runner.py#L99) | 99 | `""` | — |
+| [SRC-B3062EB677-L000100](../../tests/test_answer_quality_runner.py#L100) | 100 | `""` | — |
+| [SRC-B3062EB677-L000101](../../tests/test_answer_quality_runner.py#L101) | 101 | `"def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):"` | — |
+| [SRC-B3062EB677-L000102](../../tests/test_answer_quality_runner.py#L102) | 102 | `"    \"\"\"Even on HTTP 200, quality status stays NOT_TESTED (no keyword auto-PASS).\"\"\""` | — |
+| [SRC-B3062EB677-L000103](../../tests/test_answer_quality_runner.py#L103) | 103 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000104](../../tests/test_answer_quality_runner.py#L104) | 104 | `""` | — |
+| [SRC-B3062EB677-L000105](../../tests/test_answer_quality_runner.py#L105) | 105 | `"    def fake_post(base_url, question, timeout, token):"` | — |
+| [SRC-B3062EB677-L000106](../../tests/test_answer_quality_runner.py#L106) | 106 | `"        return 200, {"` | — |
+| [SRC-B3062EB677-L000107](../../tests/test_answer_quality_runner.py#L107) | 107 | `"            \"answer\": \"hello used_web_search should not force PASS\","` | — |
+| [SRC-B3062EB677-L000108](../../tests/test_answer_quality_runner.py#L108) | 108 | `"            \"used_web_search\": False,"` | — |

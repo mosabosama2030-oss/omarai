@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006341 إلى SRC-EEF2E6447C-L000505
+- النطاق: SRC-1AE03B9EC3-L006371 إلى SRC-EEF2E6447C-L000535
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,36 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L006341](../../agents/web_agent.py#L6341) | 6341 | `"        task_fulfillment_status = ("` | — |
-| [SRC-1AE03B9EC3-L006342](../../agents/web_agent.py#L6342) | 6342 | `"            \"possible_gap_detected\""` | — |
-| [SRC-1AE03B9EC3-L006343](../../agents/web_agent.py#L6343) | 6343 | `"            if ("` | — |
-| [SRC-1AE03B9EC3-L006344](../../agents/web_agent.py#L6344) | 6344 | `"                answer_integrity[\"potentially_missing_target_count\"] > 0"` | — |
-| [SRC-1AE03B9EC3-L006345](../../agents/web_agent.py#L6345) | 6345 | `"                or answer_integrity[\"source_evidence_gap_count\"] > 0"` | — |
-| [SRC-1AE03B9EC3-L006346](../../agents/web_agent.py#L6346) | 6346 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L006347](../../agents/web_agent.py#L6347) | 6347 | `"            else \"candidate_evidence_gaps_or_linkage_unknown\""` | — |
-| [SRC-1AE03B9EC3-L006348](../../agents/web_agent.py#L6348) | 6348 | `"            if coverage_targets and requirements_without_candidates > 0"` | — |
-| [SRC-1AE03B9EC3-L006349](../../agents/web_agent.py#L6349) | 6349 | `"            else \"lexical_signals_found_not_semantically_verified\" if coverage_targets"` | — |
-| [SRC-1AE03B9EC3-L006350](../../agents/web_agent.py#L6350) | 6350 | `"            else \"not_machine_assessed_no_explicit_targets_detected\""` | — |
-| [SRC-1AE03B9EC3-L006351](../../agents/web_agent.py#L6351) | 6351 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L006352](../../agents/web_agent.py#L6352) | 6352 | `"        answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L006353](../../agents/web_agent.py#L6353) | 6353 | `"        report[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L006354](../../agents/web_agent.py#L6354) | 6354 | `"        report[\"answer_integrity\"] = answer_integrity"` | — |
-| [SRC-1AE03B9EC3-L006355](../../agents/web_agent.py#L6355) | 6355 | `"        report[\"requirement_evidence\"] = answer_integrity.get(\"requirement_evidence\", [])"` | — |
-| [SRC-1AE03B9EC3-L006356](../../agents/web_agent.py#L6356) | 6356 | `"        report[\"connector_summary\"] = self._connector_status_summary("` | — |
-| [SRC-1AE03B9EC3-L006357](../../agents/web_agent.py#L6357) | 6357 | `"            list(self._provider_diagnostics), sources"` | — |
-| [SRC-1AE03B9EC3-L006358](../../agents/web_agent.py#L6358) | 6358 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L006359](../../agents/web_agent.py#L6359) | 6359 | `"        report[\"provider_diagnostics\"] = list(self._provider_diagnostics)"` | — |
-| [SRC-1AE03B9EC3-L006360](../../agents/web_agent.py#L6360) | 6360 | `"        distinct_providers = {"` | — |
-| [SRC-1AE03B9EC3-L006361](../../agents/web_agent.py#L6361) | 6361 | `"            provider for source in sources for provider in source.get(\"providers\", [])"` | — |
-| [SRC-1AE03B9EC3-L006362](../../agents/web_agent.py#L6362) | 6362 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L006363](../../agents/web_agent.py#L6363) | 6363 | `"        distinct_domains = {"` | — |
-| [SRC-1AE03B9EC3-L006364](../../agents/web_agent.py#L6364) | 6364 | `"            registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L006365](../../agents/web_agent.py#L6365) | 6365 | `"                source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L006366](../../agents/web_agent.py#L6366) | 6366 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L006367](../../agents/web_agent.py#L6367) | 6367 | `"                or \"\""` | — |
-| [SRC-1AE03B9EC3-L006368](../../agents/web_agent.py#L6368) | 6368 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L006369](../../agents/web_agent.py#L6369) | 6369 | `"            for source in sources"` | — |
-| [SRC-1AE03B9EC3-L006370](../../agents/web_agent.py#L6370) | 6370 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L006371](../../agents/web_agent.py#L6371) | 6371 | `"        distinct_domains.discard(\"\")"` | — |
 | [SRC-1AE03B9EC3-L006372](../../agents/web_agent.py#L6372) | 6372 | `"        fetched_pages = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
 | [SRC-1AE03B9EC3-L006373](../../agents/web_agent.py#L6373) | 6373 | `"        if ("` | — |
@@ -834,3 +804,33 @@
 | [SRC-EEF2E6447C-L000503](../../api/omarai.py#L503) | 503 | `"        if parsed.path == \"/leads\":"` | — |
 | [SRC-EEF2E6447C-L000504](../../api/omarai.py#L504) | 504 | `"            if not LEADS_DASHBOARD.exists():"` | — |
 | [SRC-EEF2E6447C-L000505](../../api/omarai.py#L505) | 505 | `"                return self.respond(404, {\"error\": \"leads dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000506](../../api/omarai.py#L506) | 506 | `"            return self.respond(200, LEADS_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000507](../../api/omarai.py#L507) | 507 | `"        if parsed.path == \"/api/health\":"` | — |
+| [SRC-EEF2E6447C-L000508](../../api/omarai.py#L508) | 508 | `"            return self.respond("` | — |
+| [SRC-EEF2E6447C-L000509](../../api/omarai.py#L509) | 509 | `"                200,"` | — |
+| [SRC-EEF2E6447C-L000510](../../api/omarai.py#L510) | 510 | `"                {"` | — |
+| [SRC-EEF2E6447C-L000511](../../api/omarai.py#L511) | 511 | `"                    \"ok\": True,"` | — |
+| [SRC-EEF2E6447C-L000512](../../api/omarai.py#L512) | 512 | `"                    \"app\": \"Omarai\","` | — |
+| [SRC-EEF2E6447C-L000513](../../api/omarai.py#L513) | 513 | `"                    \"mode\": \"web-research\","` | — |
+| [SRC-EEF2E6447C-L000514](../../api/omarai.py#L514) | 514 | `"                    \"agent\": WebAgent.status(),"` | — |
+| [SRC-EEF2E6447C-L000515](../../api/omarai.py#L515) | 515 | `"                    \"build\": {"` | — |
+| [SRC-EEF2E6447C-L000516](../../api/omarai.py#L516) | 516 | `"                        \"sha\": _build_identity()[0],"` | — |
+| [SRC-EEF2E6447C-L000517](../../api/omarai.py#L517) | 517 | `"                        \"sha_status\": ("` | — |
+| [SRC-EEF2E6447C-L000518](../../api/omarai.py#L518) | 518 | `"                            \"available\" if _build_identity()[0] != \"unknown\" else \"unknown\""` | — |
+| [SRC-EEF2E6447C-L000519](../../api/omarai.py#L519) | 519 | `"                        ),"` | — |
+| [SRC-EEF2E6447C-L000520](../../api/omarai.py#L520) | 520 | `"                        \"sha_source\": _build_identity()[1],"` | — |
+| [SRC-EEF2E6447C-L000521](../../api/omarai.py#L521) | 521 | `"                    },"` | — |
+| [SRC-EEF2E6447C-L000522](../../api/omarai.py#L522) | 522 | `"                },"` | — |
+| [SRC-EEF2E6447C-L000523](../../api/omarai.py#L523) | 523 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000524](../../api/omarai.py#L524) | 524 | `"        if parsed.path == \"/api/leads\":"` | — |
+| [SRC-EEF2E6447C-L000525](../../api/omarai.py#L525) | 525 | `"            if not self._rate_limit_ok():"` | — |
+| [SRC-EEF2E6447C-L000526](../../api/omarai.py#L526) | 526 | `"                return self.respond(429, {\"error\": \"تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة.\"})"` | — |
+| [SRC-EEF2E6447C-L000527](../../api/omarai.py#L527) | 527 | `"            if not self._authorized():"` | — |
+| [SRC-EEF2E6447C-L000528](../../api/omarai.py#L528) | 528 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
+| [SRC-EEF2E6447C-L000529](../../api/omarai.py#L529) | 529 | `"            q = parse_qs(parsed.query)"` | — |
+| [SRC-EEF2E6447C-L000530](../../api/omarai.py#L530) | 530 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000531](../../api/omarai.py#L531) | 531 | `"                limit = max(1, min(int(q.get(\"limit\", [\"100\"])[0]), 500))"` | — |
+| [SRC-EEF2E6447C-L000532](../../api/omarai.py#L532) | 532 | `"                leads = self.store.list(q.get(\"status\", [None])[0], limit)"` | — |
+| [SRC-EEF2E6447C-L000533](../../api/omarai.py#L533) | 533 | `"            except (ValueError, TypeError):"` | — |
+| [SRC-EEF2E6447C-L000534](../../api/omarai.py#L534) | 534 | `"                return self.respond(400, {\"error\": \"invalid status or limit\"})"` | — |
+| [SRC-EEF2E6447C-L000535](../../api/omarai.py#L535) | 535 | `"            return self.respond(200, {\"leads\": leads, \"count\": len(leads)})"` | — |
