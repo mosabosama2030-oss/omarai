@@ -172,8 +172,15 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     # Every web-research result passes through the finalizer that builds this ledger.
     # Missing, failed, or unknown ledger states must therefore remain visible as a
     # completion warning instead of silently looking like a clean citation screen.
+    claim_ledger_reference_count_valid = (
+        _int(claim_ledger_summary.get("out_of_range_reference_count")) is not None
+    )
     claim_ledger_build_failure_count = int(
-        kind in _CLAIM_LEDGER_KINDS and claim_ledger_status != "built"
+        kind in _CLAIM_LEDGER_KINDS
+        and (
+            claim_ledger_status != "built"
+            or not claim_ledger_reference_count_valid
+        )
     )
     out_of_range_citation_reference_count = _int(
         claim_ledger_summary.get("out_of_range_reference_count")
@@ -335,6 +342,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "truncated_citation_reference_list_count": truncated_citation_reference_list_count,
             "claim_ledger_truncated_count": claim_ledger_truncated_count,
             "claim_ledger_status": claim_ledger_status or "missing",
+            "claim_ledger_reference_count_valid": claim_ledger_reference_count_valid,
             "claim_ledger_build_failure_count": claim_ledger_build_failure_count,
         },
         "counter_consistency": {
