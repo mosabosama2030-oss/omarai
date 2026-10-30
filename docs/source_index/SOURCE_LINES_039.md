@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000112 إلى SRC-829A979985-L000436
+- النطاق: SRC-FA4E1423C3-L000107 إلى SRC-829A979985-L000431
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000107](../../tests/test_generate_index.py#L107) | 107 | `"    (docs_dir / \"guide.md\").write_text("` | — |
+| [SRC-FA4E1423C3-L000108](../../tests/test_generate_index.py#L108) | 108 | `"        \"# User Guide\\n## Troubleshooting\\n\","` | — |
+| [SRC-FA4E1423C3-L000109](../../tests/test_generate_index.py#L109) | 109 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000110](../../tests/test_generate_index.py#L110) | 110 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000111](../../tests/test_generate_index.py#L111) | 111 | `"    (tmp_path / \"settings.yml\").write_text("` | — |
 | [SRC-FA4E1423C3-L000112](../../tests/test_generate_index.py#L112) | 112 | `"        \"OMARAI_ENABLED: true\\nrequest-budget:\\n  max-calls: 3\\n\","` | — |
 | [SRC-FA4E1423C3-L000113](../../tests/test_generate_index.py#L113) | 113 | `"        encoding=\"utf-8\","` | — |
 | [SRC-FA4E1423C3-L000114](../../tests/test_generate_index.py#L114) | 114 | `"    )"` | — |
@@ -820,8 +825,3 @@
 | [SRC-829A979985-L000429](../../tests/test_generation_acceptance_matrix.py#L429) | 429 | `"                \"search_attempted\": True,"` | — |
 | [SRC-829A979985-L000430](../../tests/test_generation_acceptance_matrix.py#L430) | 430 | `"                \"search_outcome\": \"attempted_no_usable_sources\","` | — |
 | [SRC-829A979985-L000431](../../tests/test_generation_acceptance_matrix.py#L431) | 431 | `"                \"unique_sources\": 0,"` | — |
-| [SRC-829A979985-L000432](../../tests/test_generation_acceptance_matrix.py#L432) | 432 | `"                \"pages_fetched\": 0,"` | — |
-| [SRC-829A979985-L000433](../../tests/test_generation_acceptance_matrix.py#L433) | 433 | `"                \"providers_used\": [],"` | — |
-| [SRC-829A979985-L000434](../../tests/test_generation_acceptance_matrix.py#L434) | 434 | `"                \"provider_diagnostics\": ["` | — |
-| [SRC-829A979985-L000435](../../tests/test_generation_acceptance_matrix.py#L435) | 435 | `"                    {\"provider\": \"duckduckgo_html\", \"status\": \"failed\"},"` | — |
-| [SRC-829A979985-L000436](../../tests/test_generation_acceptance_matrix.py#L436) | 436 | `"                    {\"provider\": \"bing_rss\", \"status\": \"timeout\"},"` | — |

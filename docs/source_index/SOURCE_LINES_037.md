@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000884 إلى SRC-29A9CD43D1-L000120
+- النطاق: SRC-3451CC474D-L000879 إلى SRC-29A9CD43D1-L000115
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000879](../../tests/test_api.py#L879) | 879 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000880](../../tests/test_api.py#L880) | 880 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
+| [SRC-3451CC474D-L000881](../../tests/test_api.py#L881) | 881 | `"    state = {\"fail\": True}"` | — |
+| [SRC-3451CC474D-L000882](../../tests/test_api.py#L882) | 882 | `""` | — |
+| [SRC-3451CC474D-L000883](../../tests/test_api.py#L883) | 883 | `"    def answer_with_one_transient_failure(self, question, history=None, mode=\"auto\"):"` | — |
 | [SRC-3451CC474D-L000884](../../tests/test_api.py#L884) | 884 | `"        if state[\"fail\"]:"` | — |
 | [SRC-3451CC474D-L000885](../../tests/test_api.py#L885) | 885 | `"            raise RuntimeError(\"synthetic operation failure\")"` | — |
 | [SRC-3451CC474D-L000886](../../tests/test_api.py#L886) | 886 | `"        return {"` | — |
@@ -865,8 +870,3 @@
 | [SRC-29A9CD43D1-L000113](../../tests/test_dialogue_context_pipeline.py#L113) | 113 | `"        pytest.fail(\"Unexpected model prompt in mocked offline test\")"` | — |
 | [SRC-29A9CD43D1-L000114](../../tests/test_dialogue_context_pipeline.py#L114) | 114 | `""` | — |
 | [SRC-29A9CD43D1-L000115](../../tests/test_dialogue_context_pipeline.py#L115) | 115 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
-| [SRC-29A9CD43D1-L000116](../../tests/test_dialogue_context_pipeline.py#L116) | 116 | `"    seen[\"generated_question\"] = None"` | — |
-| [SRC-29A9CD43D1-L000117](../../tests/test_dialogue_context_pipeline.py#L117) | 117 | `"    seen[\"reviewed_question\"] = None"` | — |
-| [SRC-29A9CD43D1-L000118](../../tests/test_dialogue_context_pipeline.py#L118) | 118 | `""` | — |
-| [SRC-29A9CD43D1-L000119](../../tests/test_dialogue_context_pipeline.py#L119) | 119 | `"    def collect(plan):"` | — |
-| [SRC-29A9CD43D1-L000120](../../tests/test_dialogue_context_pipeline.py#L120) | 120 | `"        seen[\"plan\"] = dict(plan)"` | — |

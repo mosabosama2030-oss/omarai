@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000488 إلى SRC-90FAA34ADE-L000170
+- النطاق: SRC-4FFD5AFC54-L000483 إلى SRC-90FAA34ADE-L000165
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000483](../../scripts/run_answer_quality_benchmark.py#L483) | 483 | `"        raise ValueError(f\"/api/health request failed: {type(exc).__name__}\") from exc"` | — |
+| [SRC-4FFD5AFC54-L000484](../../scripts/run_answer_quality_benchmark.py#L484) | 484 | `""` | — |
+| [SRC-4FFD5AFC54-L000485](../../scripts/run_answer_quality_benchmark.py#L485) | 485 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000486](../../scripts/run_answer_quality_benchmark.py#L486) | 486 | `"        payload = json.loads(raw.decode(\"utf-8\"))"` | — |
+| [SRC-4FFD5AFC54-L000487](../../scripts/run_answer_quality_benchmark.py#L487) | 487 | `"    except (UnicodeDecodeError, json.JSONDecodeError) as exc:"` | — |
 | [SRC-4FFD5AFC54-L000488](../../scripts/run_answer_quality_benchmark.py#L488) | 488 | `"        raise ValueError(\"/api/health did not return valid JSON\") from exc"` | — |
 | [SRC-4FFD5AFC54-L000489](../../scripts/run_answer_quality_benchmark.py#L489) | 489 | `"    if not isinstance(payload, dict) or payload.get(\"ok\") is not True:"` | — |
 | [SRC-4FFD5AFC54-L000490](../../scripts/run_answer_quality_benchmark.py#L490) | 490 | `"        raise ValueError(\"/api/health did not report ok=true\")"` | — |
@@ -838,8 +843,3 @@
 | [SRC-90FAA34ADE-L000163](../../tests/fixtures/answer_quality_cases.json#L163) | 163 | `"      \"question\": \"ما آخر سعر تقريبي للذهب اليوم في السوق العالمية؟\","` | — |
 | [SRC-90FAA34ADE-L000164](../../tests/fixtures/answer_quality_cases.json#L164) | 164 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000165](../../tests/fixtures/answer_quality_cases.json#L165) | 165 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000166](../../tests/fixtures/answer_quality_cases.json#L166) | 166 | `"        \"Attempts web research or clearly states inability\","` | — |
-| [SRC-90FAA34ADE-L000167](../../tests/fixtures/answer_quality_cases.json#L167) | 167 | `"        \"Attaches sources if a price is stated\","` | — |
-| [SRC-90FAA34ADE-L000168](../../tests/fixtures/answer_quality_cases.json#L168) | 168 | `"        \"Treats price as time-sensitive\""` | — |
-| [SRC-90FAA34ADE-L000169](../../tests/fixtures/answer_quality_cases.json#L169) | 169 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000170](../../tests/fixtures/answer_quality_cases.json#L170) | 170 | `"      \"forbidden_behaviors\": ["` | — |

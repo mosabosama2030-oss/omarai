@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003129 إلى SRC-1AE03B9EC3-L003928
+- النطاق: SRC-1AE03B9EC3-L003124 إلى SRC-1AE03B9EC3-L003923
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003124](../../agents/web_agent.py#L3124) | 3124 | `"                        # The model may still answer, but the optional server-side search"` | — |
+| [SRC-1AE03B9EC3-L003125](../../agents/web_agent.py#L3125) | 3125 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
+| [SRC-1AE03B9EC3-L003126](../../agents/web_agent.py#L3126) | 3126 | `"                        use_web_search = False"` | — |
+| [SRC-1AE03B9EC3-L003127](../../agents/web_agent.py#L3127) | 3127 | `"                    elif use_web_search:"` | — |
+| [SRC-1AE03B9EC3-L003128](../../agents/web_agent.py#L3128) | 3128 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |
 | [SRC-1AE03B9EC3-L003129](../../agents/web_agent.py#L3129) | 3129 | `"                        budget.reserve(\"tool_calls\", amount=3)"` | — |
 | [SRC-1AE03B9EC3-L003130](../../agents/web_agent.py#L3130) | 3130 | `"                except RequestBudgetExceeded as exc:"` | — |
 | [SRC-1AE03B9EC3-L003131](../../agents/web_agent.py#L3131) | 3131 | `"                    self._record_generation_diagnostic("` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L003921](../../agents/web_agent.py#L3921) | 3921 | `"                    \"استشهاد ليرتبط بمصدر يدعم الادعاء تحديدًا. افحص كذلك اكتمال الإجابة مقابل \""` | — |
 | [SRC-1AE03B9EC3-L003922](../../agents/web_agent.py#L3922) | 3922 | `"                    \"جميع المحاور الصريحة في سؤال المستخدم؛ لا تسقط محورًا مطلوبًا بلا توضيح. \""` | — |
 | [SRC-1AE03B9EC3-L003923](../../agents/web_agent.py#L3923) | 3923 | `"                    \"إذا لم يكف الدليل لمحور، فاذكر عدم كفاية الأدلة لذلك المحور تحديدًا. \""` | — |
-| [SRC-1AE03B9EC3-L003924](../../agents/web_agent.py#L3924) | 3924 | `"                    \"راجع المبالغ والأسعار والنسب والتواريخ والمدد والقياسات والأرقام الواردة في المسودة \""` | — |
-| [SRC-1AE03B9EC3-L003925](../../agents/web_agent.py#L3925) | 3925 | `"                    \"مقابل المصدر المحدد في كل استشهاد؛ الرقم الموجود في مصدر آخر لا يكفي لتسويغ هذا الاستشهاد. \""` | — |
-| [SRC-1AE03B9EC3-L003926](../../agents/web_agent.py#L3926) | 3926 | `"                    \"راجع قيمًا متعارضة محتملة، واذكرها كاختلاف يحتاج مطابقة الكيان والفترة والوحدة؛ \""` | — |
-| [SRC-1AE03B9EC3-L003927](../../agents/web_agent.py#L3927) | 3927 | `"                    \"ولا تفترض أن اختلاف القيم تناقض حقيقي قبل هذه المراجعة. \""` | — |
-| [SRC-1AE03B9EC3-L003928](../../agents/web_agent.py#L3928) | 3928 | `"                    \"لا تضف حقائق أو روابط أو تواريخ أو أرقام جديدة. إذا لم تكف الأدلة، فقل صراحة \""` | — |

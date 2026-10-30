@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000067 إلى SRC-3451CC474D-L000083
+- النطاق: SRC-B3062EB677-L000062 إلى SRC-3451CC474D-L000078
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000063](../../tests/test_answer_quality_runner.py#L63) | 63 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
+| [SRC-B3062EB677-L000064](../../tests/test_answer_quality_runner.py#L64) | 64 | `"    assert problems"` | — |
+| [SRC-B3062EB677-L000065](../../tests/test_answer_quality_runner.py#L65) | 65 | `""` | — |
+| [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
 | [SRC-B3062EB677-L000067](../../tests/test_answer_quality_runner.py#L67) | 67 | `"def test_live_refuses_unbounded_without_limit_or_case_id(capsys):"` | — |
 | [SRC-B3062EB677-L000068](../../tests/test_answer_quality_runner.py#L68) | 68 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000069](../../tests/test_answer_quality_runner.py#L69) | 69 | `"    rc = mod.main([\"--mode\", \"live\", \"--corpus\", str(CORPUS)])"` | — |
@@ -838,8 +843,3 @@
 | [SRC-3451CC474D-L000076](../../tests/test_api.py#L76) | 76 | `"        \"product_terms\": [\"شقة\"],"` | — |
 | [SRC-3451CC474D-L000077](../../tests/test_api.py#L77) | 77 | `"        \"location_terms\": [\"التجمع الخامس\"],"` | — |
 | [SRC-3451CC474D-L000078](../../tests/test_api.py#L78) | 78 | `"    }"` | — |
-| [SRC-3451CC474D-L000079](../../tests/test_api.py#L79) | 79 | `"    status, saved = request_json(local_api, \"/api/leads\", method=\"POST\", payload=payload)"` | — |
-| [SRC-3451CC474D-L000080](../../tests/test_api.py#L80) | 80 | `"    assert status == 201"` | — |
-| [SRC-3451CC474D-L000081](../../tests/test_api.py#L81) | 81 | `"    assert saved[\"created\"] is True"` | — |
-| [SRC-3451CC474D-L000082](../../tests/test_api.py#L82) | 82 | `"    assert saved[\"lead\"][\"assessment\"][\"label\"] == \"high_intent\""` | — |
-| [SRC-3451CC474D-L000083](../../tests/test_api.py#L83) | 83 | `"    assert \"product_context\" in {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001529 إلى SRC-1AE03B9EC3-L002328
+- النطاق: SRC-1AE03B9EC3-L001524 إلى SRC-1AE03B9EC3-L002323
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001524](../../agents/web_agent.py#L1524) | 1524 | `"                        rejection_counts[\"relevance_below_threshold\"] += 1"` | — |
+| [SRC-1AE03B9EC3-L001525](../../agents/web_agent.py#L1525) | 1525 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L001526](../../agents/web_agent.py#L1526) | 1526 | `"                    accepted.append(normalized_item)"` | — |
+| [SRC-1AE03B9EC3-L001527](../../agents/web_agent.py#L1527) | 1527 | `"                if accepted:"` | — |
+| [SRC-1AE03B9EC3-L001528](../../agents/web_agent.py#L1528) | 1528 | `"                    status = \"ok\""` | — |
 | [SRC-1AE03B9EC3-L001529](../../agents/web_agent.py#L1529) | 1529 | `"                    error = None"` | — |
 | [SRC-1AE03B9EC3-L001530](../../agents/web_agent.py#L1530) | 1530 | `"                elif raw:"` | — |
 | [SRC-1AE03B9EC3-L001531](../../agents/web_agent.py#L1531) | 1531 | `"                    status = \"filtered_all\""` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L002321](../../agents/web_agent.py#L2321) | 2321 | `"                    connect_url = _pinned_connect_url(current_url, public_ips[0])"` | — |
 | [SRC-1AE03B9EC3-L002322](../../agents/web_agent.py#L2322) | 2322 | `"                    if not connect_url:"` | — |
 | [SRC-1AE03B9EC3-L002323](../../agents/web_agent.py#L2323) | 2323 | `"                        return result(status=\"blocked_connection_target\", error_class=\"PinnedTargetRejected\")"` | — |
-| [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"                    request_headers = {\"Host\": host}"` | — |
-| [SRC-1AE03B9EC3-L002325](../../agents/web_agent.py#L2325) | 2325 | `"                    extensions = {\"sni_hostname\": host} if parsed.scheme == \"https\" else {}"` | — |
-| [SRC-1AE03B9EC3-L002326](../../agents/web_agent.py#L2326) | 2326 | `"                    with client.stream("` | — |
-| [SRC-1AE03B9EC3-L002327](../../agents/web_agent.py#L2327) | 2327 | `"                        \"GET\","` | — |
-| [SRC-1AE03B9EC3-L002328](../../agents/web_agent.py#L2328) | 2328 | `"                        connect_url,"` | — |

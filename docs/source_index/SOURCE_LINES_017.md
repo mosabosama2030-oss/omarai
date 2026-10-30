@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006329 إلى SRC-EEF2E6447C-L000493
+- النطاق: SRC-1AE03B9EC3-L006324 إلى SRC-EEF2E6447C-L000488
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006324](../../agents/web_agent.py#L6324) | 6324 | `"                else \"review_unavailable\""` | — |
+| [SRC-1AE03B9EC3-L006325](../../agents/web_agent.py#L6325) | 6325 | `"                if coverage_targets"` | — |
+| [SRC-1AE03B9EC3-L006326](../../agents/web_agent.py#L6326) | 6326 | `"                else \"no_explicit_targets_detected\""` | — |
+| [SRC-1AE03B9EC3-L006327](../../agents/web_agent.py#L6327) | 6327 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L006328](../../agents/web_agent.py#L6328) | 6328 | `"            \"automatically_graded\": False,"` | — |
 | [SRC-1AE03B9EC3-L006329](../../agents/web_agent.py#L6329) | 6329 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L006330](../../agents/web_agent.py#L6330) | 6330 | `"        report[\"answer_coverage\"] = answer_coverage"` | — |
 | [SRC-1AE03B9EC3-L006331](../../agents/web_agent.py#L6331) | 6331 | `"        report[\"coverage_repair_status\"] = coverage_repair_status"` | — |
@@ -829,8 +834,3 @@
 | [SRC-EEF2E6447C-L000486](../../api/omarai.py#L486) | 486 | `"        self.send_response(status)"` | — |
 | [SRC-EEF2E6447C-L000487](../../api/omarai.py#L487) | 487 | `"        self.send_header(\"Content-Type\", content_type)"` | — |
 | [SRC-EEF2E6447C-L000488](../../api/omarai.py#L488) | 488 | `"        self.send_header(\"Content-Length\", str(len(body)))"` | — |
-| [SRC-EEF2E6447C-L000489](../../api/omarai.py#L489) | 489 | `"        self.send_header(\"Cache-Control\", \"no-store\")"` | — |
-| [SRC-EEF2E6447C-L000490](../../api/omarai.py#L490) | 490 | `"        origin = self.headers.get(\"Origin\")"` | — |
-| [SRC-EEF2E6447C-L000491](../../api/omarai.py#L491) | 491 | `"        if origin and self._origin_allowed(origin):"` | — |
-| [SRC-EEF2E6447C-L000492](../../api/omarai.py#L492) | 492 | `"            self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
-| [SRC-EEF2E6447C-L000493](../../api/omarai.py#L493) | 493 | `"            self.send_header(\"Vary\", \"Origin\")"` | — |

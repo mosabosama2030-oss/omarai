@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **115**
 - ملفات Python المحللة: **69**
-- تعريفات Python المفهرسة: **1504**
+- تعريفات Python المفهرسة: **1505**
 - تعريفات Python موثقة بوجود Docstring: **253**
-- تعريفات Python بلا Docstring: **947**
+- تعريفات Python بلا Docstring: **948**
 - تعريفات لا ينطبق عليها Docstring: **304**
 - الرموز الساكنة الإضافية: **1867**
-- الأسطر النصية المفهرسة حرفيًا: **39830**
+- الأسطر النصية المفهرسة حرفيًا: **39863**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -45,7 +45,7 @@
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
-| FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 14059 | 338 | جرد الملف + AST Python |
+| FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 14479 | 343 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
@@ -131,7 +131,7 @@
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
-| FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 13155 | 329 | جرد الملف + AST Python |
+| FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 14494 | 357 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
@@ -1289,9 +1289,10 @@
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L150) | دالة | test_unflagged_page_text_marker_is_counted_without_exposing_page_text | لا توجد Docstring. | ناقص | 150 | [SRC-AFFCF23BD4-L000150](../tests/test_research_completion.py#L150) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L165) | دالة | test_unresolved_citation_support_flags_prevent_completed_research_status | لا توجد Docstring. | ناقص | 165 | [SRC-AFFCF23BD4-L000165](../tests/test_research_completion.py#L165) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L205) | دالة | test_out_of_range_citation_reference_prevents_completed_research_status | لا توجد Docstring. | ناقص | 205 | [SRC-AFFCF23BD4-L000205](../tests/test_research_completion.py#L205) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L241) | دالة | test_missing_claim_ledger_does_not_create_citation_reference_warning | لا توجد Docstring. | ناقص | 241 | [SRC-AFFCF23BD4-L000241](../tests/test_research_completion.py#L241) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L265) | دالة | test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate | لا توجد Docstring. | ناقص | 265 | [SRC-AFFCF23BD4-L000265](../tests/test_research_completion.py#L265) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L301) | دالة | test_explicit_claim_ledger_build_failure_prevents_completed_status | لا توجد Docstring. | ناقص | 301 | [SRC-AFFCF23BD4-L000301](../tests/test_research_completion.py#L301) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L241) | دالة | test_missing_claim_ledger_prevents_completed_research_status | لا توجد Docstring. | ناقص | 241 | [SRC-AFFCF23BD4-L000241](../tests/test_research_completion.py#L241) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L268) | دالة | test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate | لا توجد Docstring. | ناقص | 268 | [SRC-AFFCF23BD4-L000268](../tests/test_research_completion.py#L268) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L304) | دالة | test_explicit_claim_ledger_build_failure_prevents_completed_status | لا توجد Docstring. | ناقص | 304 | [SRC-AFFCF23BD4-L000304](../tests/test_research_completion.py#L304) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L335) | دالة | test_unrecognized_claim_ledger_status_prevents_completed_status | لا توجد Docstring. | ناقص | 335 | [SRC-AFFCF23BD4-L000335](../tests/test_research_completion.py#L335) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L24) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 24 | [SRC-01E35ABC46-L000024](../tests/test_research_guardrails.py#L24) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L30) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 30 | [SRC-01E35ABC46-L000030](../tests/test_research_guardrails.py#L30) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L36) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 36 | [SRC-01E35ABC46-L000036](../tests/test_research_guardrails.py#L36) |

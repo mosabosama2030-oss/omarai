@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002329 إلى SRC-1AE03B9EC3-L003128
+- النطاق: SRC-1AE03B9EC3-L002324 إلى SRC-1AE03B9EC3-L003123
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"                    request_headers = {\"Host\": host}"` | — |
+| [SRC-1AE03B9EC3-L002325](../../agents/web_agent.py#L2325) | 2325 | `"                    extensions = {\"sni_hostname\": host} if parsed.scheme == \"https\" else {}"` | — |
+| [SRC-1AE03B9EC3-L002326](../../agents/web_agent.py#L2326) | 2326 | `"                    with client.stream("` | — |
+| [SRC-1AE03B9EC3-L002327](../../agents/web_agent.py#L2327) | 2327 | `"                        \"GET\","` | — |
+| [SRC-1AE03B9EC3-L002328](../../agents/web_agent.py#L2328) | 2328 | `"                        connect_url,"` | — |
 | [SRC-1AE03B9EC3-L002329](../../agents/web_agent.py#L2329) | 2329 | `"                        headers=request_headers,"` | — |
 | [SRC-1AE03B9EC3-L002330](../../agents/web_agent.py#L2330) | 2330 | `"                        extensions=extensions,"` | — |
 | [SRC-1AE03B9EC3-L002331](../../agents/web_agent.py#L2331) | 2331 | `"                    ) as response:"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"                    budget.reserve(\"model_calls\")"` | — |
 | [SRC-1AE03B9EC3-L003122](../../agents/web_agent.py#L3122) | 3122 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
 | [SRC-1AE03B9EC3-L003123](../../agents/web_agent.py#L3123) | 3123 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
-| [SRC-1AE03B9EC3-L003124](../../agents/web_agent.py#L3124) | 3124 | `"                        # The model may still answer, but the optional server-side search"` | — |
-| [SRC-1AE03B9EC3-L003125](../../agents/web_agent.py#L3125) | 3125 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
-| [SRC-1AE03B9EC3-L003126](../../agents/web_agent.py#L3126) | 3126 | `"                        use_web_search = False"` | — |
-| [SRC-1AE03B9EC3-L003127](../../agents/web_agent.py#L3127) | 3127 | `"                    elif use_web_search:"` | — |
-| [SRC-1AE03B9EC3-L003128](../../agents/web_agent.py#L3128) | 3128 | `"                        # Reserve the maximum server-side tool calls offered by this request."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000028 إلى SRC-E599346ABE-L000248
+- النطاق: SRC-26428BDA96-L000023 إلى SRC-E599346ABE-L000243
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000023](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L23) | 23 | `"- نجح بناء حاوية Docker، ونجح smoke test يفحص الصحة، ويرفض الطلبات غير المصادق عليها إلى واجهتي الوكيل والعملاء، ويقبل بعض الطلبات المصادق عليها."` | — |
+| [SRC-26428BDA96-L000024](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L24) | 24 | `"- توجد حدود فعلية لأحجام الأسئلة والصفحات والنتائج وعدد الاستعلامات وبعض استدعاءات الموفرين، وتوجد مهلات على كثير من الاتصالات الخارجية."` | — |
+| [SRC-26428BDA96-L000025](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L25) | 25 | `"- جلب الصفحات يتضمن دفاعات SSRF جدية: فحص HTTP/HTTPS، ورفض عناوين محلية، وحل DNS، وتثبيت عنوان الاتصال، والتحقق من كل تحويل، والتحقق من نوع المحتوى والحجم."` | — |
+| [SRC-26428BDA96-L000026](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L26) | 26 | `"- يوجد فصل مقصود بين تعليمات النظام ومحتوى الويب غير الموثوق، وتوجد مراجعة بمساعدة نموذج ثانٍ للادعاءات، مع إفصاح صريح بأنها ليست تحققًا مستقلًا من الحقيقة."` | — |
+| [SRC-26428BDA96-L000027](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L27) | 27 | `"- API يتطلب Bearer token في وضع النشر العام، ويقارن الرمز بطريقة ثابتة الزمن، ويطبق تحديد معدل على مستوى عنوان العميل، ويحظر طلبات غير مصادق عليها قبل تحليل جسم الطلب."` | — |
 | [SRC-26428BDA96-L000028](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L28) | 28 | `"- نتائج الفشل والبحث غير المكتمل ليست دائمًا مغطاة بصياغة نجاح؛ توجد اختبارات تؤكد إبقاء بعض حالات الفشل والحالة المجهولة صريحة."` | — |
 | [SRC-26428BDA96-L000029](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L29) | 29 | `""` | — |
 | [SRC-26428BDA96-L000030](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L30) | 30 | `"لكن توجد أربع فجوات رئيسية يجب ألا نحجبها:"` | — |
@@ -865,8 +870,3 @@
 | [SRC-E599346ABE-L000241](../generate_index.py#L241) | 241 | `"    def _record_definition("` | — |
 | [SRC-E599346ABE-L000242](../generate_index.py#L242) | 242 | `"        self,"` | — |
 | [SRC-E599346ABE-L000243](../generate_index.py#L243) | 243 | `"        node: ast.ClassDef \| ast.FunctionDef \| ast.AsyncFunctionDef,"` | — |
-| [SRC-E599346ABE-L000244](../generate_index.py#L244) | 244 | `"        kind: str,"` | — |
-| [SRC-E599346ABE-L000245](../generate_index.py#L245) | 245 | `"    ) -> None:"` | — |
-| [SRC-E599346ABE-L000246](../generate_index.py#L246) | 246 | `"        \"\"\"Record one class/function definition while preserving its qualified scope.\"\"\""` | — |
-| [SRC-E599346ABE-L000247](../generate_index.py#L247) | 247 | `"        description, documented = self._description(node)"` | — |
-| [SRC-E599346ABE-L000248](../generate_index.py#L248) | 248 | `"        qualified_name = \".\".join((*self.scope, node.name))"` | — |

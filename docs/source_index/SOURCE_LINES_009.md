@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0799EEEB02-L000240 إلى SRC-1AE03B9EC3-L000728
+- النطاق: SRC-0799EEEB02-L000235 إلى SRC-1AE03B9EC3-L000723
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0799EEEB02-L000235](../../agents/tool_execution_status.py#L235) | 235 | `"        # A general web search attempt is not proof that social connectors ran."` | — |
+| [SRC-0799EEEB02-L000236](../../agents/tool_execution_status.py#L236) | 236 | `"        status = \"unknown\""` | — |
+| [SRC-0799EEEB02-L000237](../../agents/tool_execution_status.py#L237) | 237 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
+| [SRC-0799EEEB02-L000238](../../agents/tool_execution_status.py#L238) | 238 | `"        \"social_direct_results\": social_results,"` | — |
+| [SRC-0799EEEB02-L000239](../../agents/tool_execution_status.py#L239) | 239 | `"        \"social_result_count_known\": raw_social_results is not None,"` | — |
 | [SRC-0799EEEB02-L000240](../../agents/tool_execution_status.py#L240) | 240 | `"        \"accepted_social_sources\": social_sources,"` | — |
 | [SRC-0799EEEB02-L000241](../../agents/tool_execution_status.py#L241) | 241 | `"        \"social_connectors_observed\": ["` | — |
 | [SRC-0799EEEB02-L000242](../../agents/tool_execution_status.py#L242) | 242 | `"            {"` | — |
@@ -820,8 +825,3 @@
 | [SRC-1AE03B9EC3-L000721](../../agents/web_agent.py#L721) | 721 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L000722](../../agents/web_agent.py#L722) | 722 | `"        if isinstance(rejection_counts, dict):"` | — |
 | [SRC-1AE03B9EC3-L000723](../../agents/web_agent.py#L723) | 723 | `"            safe_counts: dict[str, int] = {}"` | — |
-| [SRC-1AE03B9EC3-L000724](../../agents/web_agent.py#L724) | 724 | `"            for reason in _PROVIDER_REJECTION_REASONS:"` | — |
-| [SRC-1AE03B9EC3-L000725](../../agents/web_agent.py#L725) | 725 | `"                try:"` | — |
-| [SRC-1AE03B9EC3-L000726](../../agents/web_agent.py#L726) | 726 | `"                    safe_counts[reason] = max(0, int(rejection_counts.get(reason, 0) or 0))"` | — |
-| [SRC-1AE03B9EC3-L000727](../../agents/web_agent.py#L727) | 727 | `"                except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-1AE03B9EC3-L000728](../../agents/web_agent.py#L728) | 728 | `"                    safe_counts[reason] = 0"` | — |

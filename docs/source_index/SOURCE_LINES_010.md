@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000729 إلى SRC-1AE03B9EC3-L001528
+- النطاق: SRC-1AE03B9EC3-L000724 إلى SRC-1AE03B9EC3-L001523
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000724](../../agents/web_agent.py#L724) | 724 | `"            for reason in _PROVIDER_REJECTION_REASONS:"` | — |
+| [SRC-1AE03B9EC3-L000725](../../agents/web_agent.py#L725) | 725 | `"                try:"` | — |
+| [SRC-1AE03B9EC3-L000726](../../agents/web_agent.py#L726) | 726 | `"                    safe_counts[reason] = max(0, int(rejection_counts.get(reason, 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L000727](../../agents/web_agent.py#L727) | 727 | `"                except (TypeError, ValueError, OverflowError):"` | — |
+| [SRC-1AE03B9EC3-L000728](../../agents/web_agent.py#L728) | 728 | `"                    safe_counts[reason] = 0"` | — |
 | [SRC-1AE03B9EC3-L000729](../../agents/web_agent.py#L729) | 729 | `"            record[\"rejection_counts\"] = safe_counts"` | — |
 | [SRC-1AE03B9EC3-L000730](../../agents/web_agent.py#L730) | 730 | `"        if error:"` | — |
 | [SRC-1AE03B9EC3-L000731](../../agents/web_agent.py#L731) | 731 | `"            record[\"error\"] = redact(error, 180)"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L001521](../../agents/web_agent.py#L1521) | 1521 | `"                    evidence = \" \".join(str(normalized_item.get(k) or \"\") for k in (\"title\", \"snippet\"))"` | — |
 | [SRC-1AE03B9EC3-L001522](../../agents/web_agent.py#L1522) | 1522 | `"                    if _relevance_ratio(search_query, evidence) < _minimum_relevance_ratio(search_query):"` | — |
 | [SRC-1AE03B9EC3-L001523](../../agents/web_agent.py#L1523) | 1523 | `"                        rejected += 1"` | — |
-| [SRC-1AE03B9EC3-L001524](../../agents/web_agent.py#L1524) | 1524 | `"                        rejection_counts[\"relevance_below_threshold\"] += 1"` | — |
-| [SRC-1AE03B9EC3-L001525](../../agents/web_agent.py#L1525) | 1525 | `"                        continue"` | — |
-| [SRC-1AE03B9EC3-L001526](../../agents/web_agent.py#L1526) | 1526 | `"                    accepted.append(normalized_item)"` | — |
-| [SRC-1AE03B9EC3-L001527](../../agents/web_agent.py#L1527) | 1527 | `"                if accepted:"` | — |
-| [SRC-1AE03B9EC3-L001528](../../agents/web_agent.py#L1528) | 1528 | `"                    status = \"ok\""` | — |

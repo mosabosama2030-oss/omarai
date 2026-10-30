@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000857 إلى SRC-0799EEEB02-L000239
+- النطاق: SRC-686F71AA50-L000852 إلى SRC-0799EEEB02-L000234
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000852](../../agents/task_understanding.py#L852) | 852 | `"            else \"task_relevant_sources\""` | — |
+| [SRC-686F71AA50-L000853](../../agents/task_understanding.py#L853) | 853 | `"        ),"` | — |
+| [SRC-686F71AA50-L000854](../../agents/task_understanding.py#L854) | 854 | `"        \"source_policies\": list(dict.fromkeys("` | — |
+| [SRC-686F71AA50-L000855](../../agents/task_understanding.py#L855) | 855 | `"            ([\"government_official_destination\"] if government_official_site else [])"` | — |
+| [SRC-686F71AA50-L000856](../../agents/task_understanding.py#L856) | 856 | `"            + ([\"official_destination\"] if official_destination else [])"` | — |
 | [SRC-686F71AA50-L000857](../../agents/task_understanding.py#L857) | 857 | `"            + ([\"current_read_page\"] if current_required else [])"` | — |
 | [SRC-686F71AA50-L000858](../../agents/task_understanding.py#L858) | 858 | `"            + ([\"public_social_content\"] if social_required else [])"` | — |
 | [SRC-686F71AA50-L000859](../../agents/task_understanding.py#L859) | 859 | `"            + ([\"authoritative_health_content\"] if matches[\"medical_information\"] else [])"` | — |
@@ -820,8 +825,3 @@
 | [SRC-0799EEEB02-L000232](../../agents/tool_execution_status.py#L232) | 232 | `"    elif attempted is False:"` | — |
 | [SRC-0799EEEB02-L000233](../../agents/tool_execution_status.py#L233) | 233 | `"        status = \"not_attempted\""` | — |
 | [SRC-0799EEEB02-L000234](../../agents/tool_execution_status.py#L234) | 234 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000235](../../agents/tool_execution_status.py#L235) | 235 | `"        # A general web search attempt is not proof that social connectors ran."` | — |
-| [SRC-0799EEEB02-L000236](../../agents/tool_execution_status.py#L236) | 236 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000237](../../agents/tool_execution_status.py#L237) | 237 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000238](../../agents/tool_execution_status.py#L238) | 238 | `"        \"social_direct_results\": social_results,"` | — |
-| [SRC-0799EEEB02-L000239](../../agents/tool_execution_status.py#L239) | 239 | `"        \"social_result_count_known\": raw_social_results is not None,"` | — |

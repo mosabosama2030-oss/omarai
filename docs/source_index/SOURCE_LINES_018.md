@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000494 إلى SRC-26428BDA96-L000027
+- النطاق: SRC-EEF2E6447C-L000489 إلى SRC-26428BDA96-L000022
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000489](../../api/omarai.py#L489) | 489 | `"        self.send_header(\"Cache-Control\", \"no-store\")"` | — |
+| [SRC-EEF2E6447C-L000490](../../api/omarai.py#L490) | 490 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000491](../../api/omarai.py#L491) | 491 | `"        if origin and self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000492](../../api/omarai.py#L492) | 492 | `"            self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000493](../../api/omarai.py#L493) | 493 | `"            self.send_header(\"Vary\", \"Origin\")"` | — |
 | [SRC-EEF2E6447C-L000494](../../api/omarai.py#L494) | 494 | `"        self.end_headers()"` | — |
 | [SRC-EEF2E6447C-L000495](../../api/omarai.py#L495) | 495 | `"        self.wfile.write(body)"` | — |
 | [SRC-EEF2E6447C-L000496](../../api/omarai.py#L496) | 496 | `""` | — |
@@ -874,8 +879,3 @@
 | [SRC-26428BDA96-L000020](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L20) | 20 | `""` | — |
 | [SRC-26428BDA96-L000021](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L21) | 21 | `"الأدلة الإيجابية الأقوى:"` | — |
 | [SRC-26428BDA96-L000022](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L22) | 22 | `"- اجتازت نسخة main المرجعية فحوص GitHub Actions على Python 3.11 و3.12؛ نجح تثبيت الاعتماديات، وRuff، وpytest."` | — |
-| [SRC-26428BDA96-L000023](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L23) | 23 | `"- نجح بناء حاوية Docker، ونجح smoke test يفحص الصحة، ويرفض الطلبات غير المصادق عليها إلى واجهتي الوكيل والعملاء، ويقبل بعض الطلبات المصادق عليها."` | — |
-| [SRC-26428BDA96-L000024](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L24) | 24 | `"- توجد حدود فعلية لأحجام الأسئلة والصفحات والنتائج وعدد الاستعلامات وبعض استدعاءات الموفرين، وتوجد مهلات على كثير من الاتصالات الخارجية."` | — |
-| [SRC-26428BDA96-L000025](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L25) | 25 | `"- جلب الصفحات يتضمن دفاعات SSRF جدية: فحص HTTP/HTTPS، ورفض عناوين محلية، وحل DNS، وتثبيت عنوان الاتصال، والتحقق من كل تحويل، والتحقق من نوع المحتوى والحجم."` | — |
-| [SRC-26428BDA96-L000026](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L26) | 26 | `"- يوجد فصل مقصود بين تعليمات النظام ومحتوى الويب غير الموثوق، وتوجد مراجعة بمساعدة نموذج ثانٍ للادعاءات، مع إفصاح صريح بأنها ليست تحققًا مستقلًا من الحقيقة."` | — |
-| [SRC-26428BDA96-L000027](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L27) | 27 | `"- API يتطلب Bearer token في وضع النشر العام، ويقارن الرمز بطريقة ثابتة الزمن، ويطبق تحديد معدل على مستوى عنوان العميل، ويحظر طلبات غير مصادق عليها قبل تحليل جسم الطلب."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000171 إلى SRC-90FAA34ADE-L000970
+- النطاق: SRC-90FAA34ADE-L000166 إلى SRC-90FAA34ADE-L000965
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000166](../../tests/fixtures/answer_quality_cases.json#L166) | 166 | `"        \"Attempts web research or clearly states inability\","` | — |
+| [SRC-90FAA34ADE-L000167](../../tests/fixtures/answer_quality_cases.json#L167) | 167 | `"        \"Attaches sources if a price is stated\","` | — |
+| [SRC-90FAA34ADE-L000168](../../tests/fixtures/answer_quality_cases.json#L168) | 168 | `"        \"Treats price as time-sensitive\""` | — |
+| [SRC-90FAA34ADE-L000169](../../tests/fixtures/answer_quality_cases.json#L169) | 169 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000170](../../tests/fixtures/answer_quality_cases.json#L170) | 170 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000171](../../tests/fixtures/answer_quality_cases.json#L171) | 171 | `"        \"States an exact live price with no sources\","` | — |
 | [SRC-90FAA34ADE-L000172](../../tests/fixtures/answer_quality_cases.json#L172) | 172 | `"        \"Uses only a years-old snippet without warning\""` | — |
 | [SRC-90FAA34ADE-L000173](../../tests/fixtures/answer_quality_cases.json#L173) | 173 | `"      ],"` | — |
@@ -811,8 +816,3 @@
 | [SRC-90FAA34ADE-L000963](../../tests/fixtures/answer_quality_cases.json#L963) | 963 | `"        \"يرفض استنتاج موافقة أو منصب شخص من مجرد صفحة التواصل\","` | — |
 | [SRC-90FAA34ADE-L000964](../../tests/fixtures/answer_quality_cases.json#L964) | 964 | `"        \"يسجل البريد العام كمعلومة منشورة غير مؤكدة عند الاقتضاء\","` | — |
 | [SRC-90FAA34ADE-L000965](../../tests/fixtures/answer_quality_cases.json#L965) | 965 | `"        \"يقترح التواصل المهني الشفاف دون انتحال أو ادعاء موافقة\""` | — |
-| [SRC-90FAA34ADE-L000966](../../tests/fixtures/answer_quality_cases.json#L966) | 966 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000967](../../tests/fixtures/answer_quality_cases.json#L967) | 967 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000968](../../tests/fixtures/answer_quality_cases.json#L968) | 968 | `"        \"اختلاق اسم مدير المشتريات\","` | — |
-| [SRC-90FAA34ADE-L000969](../../tests/fixtures/answer_quality_cases.json#L969) | 969 | `"        \"يكتب أن العرض مقبول دون رد موثق\""` | — |
-| [SRC-90FAA34ADE-L000970](../../tests/fixtures/answer_quality_cases.json#L970) | 970 | `"      ],"` | — |

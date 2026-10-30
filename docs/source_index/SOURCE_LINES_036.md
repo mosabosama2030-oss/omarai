@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000084 إلى SRC-3451CC474D-L000883
+- النطاق: SRC-3451CC474D-L000079 إلى SRC-3451CC474D-L000878
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000079](../../tests/test_api.py#L79) | 79 | `"    status, saved = request_json(local_api, \"/api/leads\", method=\"POST\", payload=payload)"` | — |
+| [SRC-3451CC474D-L000080](../../tests/test_api.py#L80) | 80 | `"    assert status == 201"` | — |
+| [SRC-3451CC474D-L000081](../../tests/test_api.py#L81) | 81 | `"    assert saved[\"created\"] is True"` | — |
+| [SRC-3451CC474D-L000082](../../tests/test_api.py#L82) | 82 | `"    assert saved[\"lead\"][\"assessment\"][\"label\"] == \"high_intent\""` | — |
+| [SRC-3451CC474D-L000083](../../tests/test_api.py#L83) | 83 | `"    assert \"product_context\" in {"` | — |
 | [SRC-3451CC474D-L000084](../../tests/test_api.py#L84) | 84 | `"        item[\"category\"] for item in saved[\"lead\"][\"assessment\"][\"matched_signals\"]"` | — |
 | [SRC-3451CC474D-L000085](../../tests/test_api.py#L85) | 85 | `"    }"` | — |
 | [SRC-3451CC474D-L000086](../../tests/test_api.py#L86) | 86 | `"    status, duplicate = request_json(local_api, \"/api/leads\", method=\"POST\", payload=payload)"` | — |
@@ -811,8 +816,3 @@
 | [SRC-3451CC474D-L000876](../../tests/test_api.py#L876) | 876 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
 | [SRC-3451CC474D-L000877](../../tests/test_api.py#L877) | 877 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
 | [SRC-3451CC474D-L000878](../../tests/test_api.py#L878) | 878 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000879](../../tests/test_api.py#L879) | 879 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000880](../../tests/test_api.py#L880) | 880 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
-| [SRC-3451CC474D-L000881](../../tests/test_api.py#L881) | 881 | `"    state = {\"fail\": True}"` | — |
-| [SRC-3451CC474D-L000882](../../tests/test_api.py#L882) | 882 | `""` | — |
-| [SRC-3451CC474D-L000883](../../tests/test_api.py#L883) | 883 | `"    def answer_with_one_transient_failure(self, question, history=None, mode=\"auto\"):"` | — |

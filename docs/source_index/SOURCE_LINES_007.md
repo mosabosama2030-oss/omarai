@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000057 إلى SRC-686F71AA50-L000856
+- النطاق: SRC-686F71AA50-L000052 إلى SRC-686F71AA50-L000851
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000052](../../agents/task_understanding.py#L52) | 52 | `"_REASONING_FAMILY_IDS = {"` | — |
+| [SRC-686F71AA50-L000053](../../agents/task_understanding.py#L53) | 53 | `"    \"official_site_lookup\": (\"verify_official_destination\",),"` | — |
+| [SRC-686F71AA50-L000054](../../agents/task_understanding.py#L54) | 54 | `"    \"social_opinions\": (\"balance_social_evidence\", \"separate_specs_and_experiences\"),"` | — |
+| [SRC-686F71AA50-L000055](../../agents/task_understanding.py#L55) | 55 | `"    \"summarize\": (\"summarize_only_available_content\",),"` | — |
+| [SRC-686F71AA50-L000056](../../agents/task_understanding.py#L56) | 56 | `"    \"troubleshoot\": (\"record_observed_symptoms\", \"rank_testable_hypotheses\", \"verify_primary_technical_docs\", \"prefer_low_risk_steps\"),"` | — |
 | [SRC-686F71AA50-L000057](../../agents/task_understanding.py#L57) | 57 | `"    \"compare\": (\"decompose_explicit_criteria\", \"normalize_comparison_conditions\", \"separate_specs_and_experiences\"),"` | — |
 | [SRC-686F71AA50-L000058](../../agents/task_understanding.py#L58) | 58 | `"    \"how_to\": (\"ordered_safe_procedure\",),"` | — |
 | [SRC-686F71AA50-L000059](../../agents/task_understanding.py#L59) | 59 | `"    \"lead_generation\": (\"qualify_buyer_intent\",),"` | — |
@@ -811,8 +816,3 @@
 | [SRC-686F71AA50-L000849](../../agents/task_understanding.py#L849) | 849 | `"            else \"official_destination\" if official_destination"` | — |
 | [SRC-686F71AA50-L000850](../../agents/task_understanding.py#L850) | 850 | `"            else \"current_read_page\" if current_required"` | — |
 | [SRC-686F71AA50-L000851](../../agents/task_understanding.py#L851) | 851 | `"            else \"public_social_content\" if social_required"` | — |
-| [SRC-686F71AA50-L000852](../../agents/task_understanding.py#L852) | 852 | `"            else \"task_relevant_sources\""` | — |
-| [SRC-686F71AA50-L000853](../../agents/task_understanding.py#L853) | 853 | `"        ),"` | — |
-| [SRC-686F71AA50-L000854](../../agents/task_understanding.py#L854) | 854 | `"        \"source_policies\": list(dict.fromkeys("` | — |
-| [SRC-686F71AA50-L000855](../../agents/task_understanding.py#L855) | 855 | `"            ([\"government_official_destination\"] if government_official_site else [])"` | — |
-| [SRC-686F71AA50-L000856](../../agents/task_understanding.py#L856) | 856 | `"            + ([\"official_destination\"] if official_destination else [])"` | — |

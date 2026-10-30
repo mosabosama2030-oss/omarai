@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000241 إلى SRC-2614DCB6FB-L000010
+- النطاق: SRC-AFFCF23BD4-L000236 إلى SRC-96F6863E3C-L000189
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-AFFCF23BD4-L000241](../../tests/test_research_completion.py#L241) | 241 | `"def test_missing_claim_ledger_does_not_create_citation_reference_warning() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000236](../../tests/test_research_completion.py#L236) | 236 | `"    assert result[\"counters\"][\"out_of_range_citation_reference_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000237](../../tests/test_research_completion.py#L237) | 237 | `"    assert result[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000238](../../tests/test_research_completion.py#L238) | 238 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000239](../../tests/test_research_completion.py#L239) | 239 | `""` | — |
+| [SRC-AFFCF23BD4-L000240](../../tests/test_research_completion.py#L240) | 240 | `""` | — |
+| [SRC-AFFCF23BD4-L000241](../../tests/test_research_completion.py#L241) | 241 | `"def test_missing_claim_ledger_prevents_completed_research_status() -> None:"` | — |
 | [SRC-AFFCF23BD4-L000242](../../tests/test_research_completion.py#L242) | 242 | `"    result = build_research_completion({"` | — |
 | [SRC-AFFCF23BD4-L000243](../../tests/test_research_completion.py#L243) | 243 | `"        \"kind\": \"web_research\","` | — |
 | [SRC-AFFCF23BD4-L000244](../../tests/test_research_completion.py#L244) | 244 | `"        \"used_language_model\": True,"` | — |
@@ -35,76 +40,104 @@
 | [SRC-AFFCF23BD4-L000257](../../tests/test_research_completion.py#L257) | 257 | `"    })"` | — |
 | [SRC-AFFCF23BD4-L000258](../../tests/test_research_completion.py#L258) | 258 | `""` | — |
 | [SRC-AFFCF23BD4-L000259](../../tests/test_research_completion.py#L259) | 259 | `"    assert result[\"counters\"][\"out_of_range_citation_reference_count\"] == 0"` | — |
-| [SRC-AFFCF23BD4-L000260](../../tests/test_research_completion.py#L260) | 260 | `"    assert result[\"status\"] == ("` | — |
-| [SRC-AFFCF23BD4-L000261](../../tests/test_research_completion.py#L261) | 261 | `"        \"answer_generated_citations_range_checked_semantic_support_unverified\""` | — |
-| [SRC-AFFCF23BD4-L000262](../../tests/test_research_completion.py#L262) | 262 | `"    )"` | — |
-| [SRC-AFFCF23BD4-L000263](../../tests/test_research_completion.py#L263) | 263 | `""` | — |
-| [SRC-AFFCF23BD4-L000264](../../tests/test_research_completion.py#L264) | 264 | `""` | — |
-| [SRC-AFFCF23BD4-L000265](../../tests/test_research_completion.py#L265) | 265 | `"def test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000266](../../tests/test_research_completion.py#L266) | 266 | `"    answer = \"The verified report says 100 EGP [source 1], and the unsupported claim is also cited [source 2].\""` | — |
-| [SRC-AFFCF23BD4-L000267](../../tests/test_research_completion.py#L267) | 267 | `"    sources = [{"` | — |
-| [SRC-AFFCF23BD4-L000268](../../tests/test_research_completion.py#L268) | 268 | `"        \"url\": \"https://example.com/report\","` | — |
-| [SRC-AFFCF23BD4-L000269](../../tests/test_research_completion.py#L269) | 269 | `"        \"title\": \"Report\","` | — |
-| [SRC-AFFCF23BD4-L000270](../../tests/test_research_completion.py#L270) | 270 | `"        \"snippet\": \"The verified report says 100 EGP.\","` | — |
-| [SRC-AFFCF23BD4-L000271](../../tests/test_research_completion.py#L271) | 271 | `"        \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000272](../../tests/test_research_completion.py#L272) | 272 | `"        \"page_text\": \"The verified report says 100 EGP.\","` | — |
-| [SRC-AFFCF23BD4-L000273](../../tests/test_research_completion.py#L273) | 273 | `"    }]"` | — |
-| [SRC-AFFCF23BD4-L000274](../../tests/test_research_completion.py#L274) | 274 | `"    ledger = build_claim_evidence_ledger(answer, sources)"` | — |
-| [SRC-AFFCF23BD4-L000275](../../tests/test_research_completion.py#L275) | 275 | `""` | — |
-| [SRC-AFFCF23BD4-L000276](../../tests/test_research_completion.py#L276) | 276 | `"    assert ledger[\"summary\"][\"out_of_range_reference_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000277](../../tests/test_research_completion.py#L277) | 277 | `"    assert ledger[\"segments\"][0][\"citation_status\"] == \"citation_index_out_of_range\""` | — |
+| [SRC-AFFCF23BD4-L000260](../../tests/test_research_completion.py#L260) | 260 | `"    assert result[\"counters\"][\"claim_ledger_status\"] == \"missing\""` | — |
+| [SRC-AFFCF23BD4-L000261](../../tests/test_research_completion.py#L261) | 261 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000262](../../tests/test_research_completion.py#L262) | 262 | `"    assert result[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000263](../../tests/test_research_completion.py#L263) | 263 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-AFFCF23BD4-L000264](../../tests/test_research_completion.py#L264) | 264 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000265](../../tests/test_research_completion.py#L265) | 265 | `"    assert result[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
+| [SRC-AFFCF23BD4-L000266](../../tests/test_research_completion.py#L266) | 266 | `""` | — |
+| [SRC-AFFCF23BD4-L000267](../../tests/test_research_completion.py#L267) | 267 | `""` | — |
+| [SRC-AFFCF23BD4-L000268](../../tests/test_research_completion.py#L268) | 268 | `"def test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000269](../../tests/test_research_completion.py#L269) | 269 | `"    answer = \"The verified report says 100 EGP [source 1], and the unsupported claim is also cited [source 2].\""` | — |
+| [SRC-AFFCF23BD4-L000270](../../tests/test_research_completion.py#L270) | 270 | `"    sources = [{"` | — |
+| [SRC-AFFCF23BD4-L000271](../../tests/test_research_completion.py#L271) | 271 | `"        \"url\": \"https://example.com/report\","` | — |
+| [SRC-AFFCF23BD4-L000272](../../tests/test_research_completion.py#L272) | 272 | `"        \"title\": \"Report\","` | — |
+| [SRC-AFFCF23BD4-L000273](../../tests/test_research_completion.py#L273) | 273 | `"        \"snippet\": \"The verified report says 100 EGP.\","` | — |
+| [SRC-AFFCF23BD4-L000274](../../tests/test_research_completion.py#L274) | 274 | `"        \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000275](../../tests/test_research_completion.py#L275) | 275 | `"        \"page_text\": \"The verified report says 100 EGP.\","` | — |
+| [SRC-AFFCF23BD4-L000276](../../tests/test_research_completion.py#L276) | 276 | `"    }]"` | — |
+| [SRC-AFFCF23BD4-L000277](../../tests/test_research_completion.py#L277) | 277 | `"    ledger = build_claim_evidence_ledger(answer, sources)"` | — |
 | [SRC-AFFCF23BD4-L000278](../../tests/test_research_completion.py#L278) | 278 | `""` | — |
-| [SRC-AFFCF23BD4-L000279](../../tests/test_research_completion.py#L279) | 279 | `"    completion = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000280](../../tests/test_research_completion.py#L280) | 280 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000281](../../tests/test_research_completion.py#L281) | 281 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000282](../../tests/test_research_completion.py#L282) | 282 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000283](../../tests/test_research_completion.py#L283) | 283 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000284](../../tests/test_research_completion.py#L284) | 284 | `"        \"citation_validation\": {"` | — |
-| [SRC-AFFCF23BD4-L000285](../../tests/test_research_completion.py#L285) | 285 | `"            \"status\": \"index_range_check_passed\","` | — |
-| [SRC-AFFCF23BD4-L000286](../../tests/test_research_completion.py#L286) | 286 | `"            \"valid_citation_count\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000287](../../tests/test_research_completion.py#L287) | 287 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000288](../../tests/test_research_completion.py#L288) | 288 | `"        \"claim_evidence_ledger\": ledger,"` | — |
-| [SRC-AFFCF23BD4-L000289](../../tests/test_research_completion.py#L289) | 289 | `"        \"answer_integrity\": {\"weak_citation_alignment_count\": 0},"` | — |
-| [SRC-AFFCF23BD4-L000290](../../tests/test_research_completion.py#L290) | 290 | `"        \"sources\": sources,"` | — |
-| [SRC-AFFCF23BD4-L000291](../../tests/test_research_completion.py#L291) | 291 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000292](../../tests/test_research_completion.py#L292) | 292 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000293](../../tests/test_research_completion.py#L293) | 293 | `""` | — |
-| [SRC-AFFCF23BD4-L000294](../../tests/test_research_completion.py#L294) | 294 | `"    assert completion[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-AFFCF23BD4-L000295](../../tests/test_research_completion.py#L295) | 295 | `"    assert completion[\"counters\"][\"out_of_range_citation_reference_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000296](../../tests/test_research_completion.py#L296) | 296 | `"    assert completion[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000297](../../tests/test_research_completion.py#L297) | 297 | `"    assert completion[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
-| [SRC-AFFCF23BD4-L000298](../../tests/test_research_completion.py#L298) | 298 | `"    assert completion[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
-| [SRC-AFFCF23BD4-L000299](../../tests/test_research_completion.py#L299) | 299 | `""` | — |
-| [SRC-AFFCF23BD4-L000300](../../tests/test_research_completion.py#L300) | 300 | `""` | — |
-| [SRC-AFFCF23BD4-L000301](../../tests/test_research_completion.py#L301) | 301 | `"def test_explicit_claim_ledger_build_failure_prevents_completed_status() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000302](../../tests/test_research_completion.py#L302) | 302 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000303](../../tests/test_research_completion.py#L303) | 303 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000304](../../tests/test_research_completion.py#L304) | 304 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000305](../../tests/test_research_completion.py#L305) | 305 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000306](../../tests/test_research_completion.py#L306) | 306 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000307](../../tests/test_research_completion.py#L307) | 307 | `"        \"citation_validation\": {"` | — |
-| [SRC-AFFCF23BD4-L000308](../../tests/test_research_completion.py#L308) | 308 | `"            \"status\": \"index_range_check_passed\","` | — |
-| [SRC-AFFCF23BD4-L000309](../../tests/test_research_completion.py#L309) | 309 | `"            \"valid_citation_count\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000310](../../tests/test_research_completion.py#L310) | 310 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000311](../../tests/test_research_completion.py#L311) | 311 | `"        \"claim_evidence_ledger\": {"` | — |
-| [SRC-AFFCF23BD4-L000312](../../tests/test_research_completion.py#L312) | 312 | `"            \"status\": \"not_run\","` | — |
-| [SRC-AFFCF23BD4-L000313](../../tests/test_research_completion.py#L313) | 313 | `"            \"semantic_verification\": False,"` | — |
-| [SRC-AFFCF23BD4-L000314](../../tests/test_research_completion.py#L314) | 314 | `"            \"error_class\": \"claim_evidence_trace_error\","` | — |
-| [SRC-AFFCF23BD4-L000315](../../tests/test_research_completion.py#L315) | 315 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000316](../../tests/test_research_completion.py#L316) | 316 | `"        \"sources\": [{"` | — |
-| [SRC-AFFCF23BD4-L000317](../../tests/test_research_completion.py#L317) | 317 | `"            \"url\": \"https://example.com/report\","` | — |
-| [SRC-AFFCF23BD4-L000318](../../tests/test_research_completion.py#L318) | 318 | `"            \"snippet\": \"A readable report excerpt.\","` | — |
-| [SRC-AFFCF23BD4-L000319](../../tests/test_research_completion.py#L319) | 319 | `"            \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000320](../../tests/test_research_completion.py#L320) | 320 | `"            \"page_text\": \"A readable report excerpt.\","` | — |
-| [SRC-AFFCF23BD4-L000321](../../tests/test_research_completion.py#L321) | 321 | `"        }],"` | — |
-| [SRC-AFFCF23BD4-L000322](../../tests/test_research_completion.py#L322) | 322 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000323](../../tests/test_research_completion.py#L323) | 323 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000324](../../tests/test_research_completion.py#L324) | 324 | `""` | — |
-| [SRC-AFFCF23BD4-L000325](../../tests/test_research_completion.py#L325) | 325 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-AFFCF23BD4-L000326](../../tests/test_research_completion.py#L326) | 326 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000327](../../tests/test_research_completion.py#L327) | 327 | `"    assert result[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000328](../../tests/test_research_completion.py#L328) | 328 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
-| [SRC-AFFCF23BD4-L000329](../../tests/test_research_completion.py#L329) | 329 | `"    assert result[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
+| [SRC-AFFCF23BD4-L000279](../../tests/test_research_completion.py#L279) | 279 | `"    assert ledger[\"summary\"][\"out_of_range_reference_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000280](../../tests/test_research_completion.py#L280) | 280 | `"    assert ledger[\"segments\"][0][\"citation_status\"] == \"citation_index_out_of_range\""` | — |
+| [SRC-AFFCF23BD4-L000281](../../tests/test_research_completion.py#L281) | 281 | `""` | — |
+| [SRC-AFFCF23BD4-L000282](../../tests/test_research_completion.py#L282) | 282 | `"    completion = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000283](../../tests/test_research_completion.py#L283) | 283 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000284](../../tests/test_research_completion.py#L284) | 284 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000285](../../tests/test_research_completion.py#L285) | 285 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000286](../../tests/test_research_completion.py#L286) | 286 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000287](../../tests/test_research_completion.py#L287) | 287 | `"        \"citation_validation\": {"` | — |
+| [SRC-AFFCF23BD4-L000288](../../tests/test_research_completion.py#L288) | 288 | `"            \"status\": \"index_range_check_passed\","` | — |
+| [SRC-AFFCF23BD4-L000289](../../tests/test_research_completion.py#L289) | 289 | `"            \"valid_citation_count\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000290](../../tests/test_research_completion.py#L290) | 290 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000291](../../tests/test_research_completion.py#L291) | 291 | `"        \"claim_evidence_ledger\": ledger,"` | — |
+| [SRC-AFFCF23BD4-L000292](../../tests/test_research_completion.py#L292) | 292 | `"        \"answer_integrity\": {\"weak_citation_alignment_count\": 0},"` | — |
+| [SRC-AFFCF23BD4-L000293](../../tests/test_research_completion.py#L293) | 293 | `"        \"sources\": sources,"` | — |
+| [SRC-AFFCF23BD4-L000294](../../tests/test_research_completion.py#L294) | 294 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
+| [SRC-AFFCF23BD4-L000295](../../tests/test_research_completion.py#L295) | 295 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000296](../../tests/test_research_completion.py#L296) | 296 | `""` | — |
+| [SRC-AFFCF23BD4-L000297](../../tests/test_research_completion.py#L297) | 297 | `"    assert completion[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-AFFCF23BD4-L000298](../../tests/test_research_completion.py#L298) | 298 | `"    assert completion[\"counters\"][\"out_of_range_citation_reference_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000299](../../tests/test_research_completion.py#L299) | 299 | `"    assert completion[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000300](../../tests/test_research_completion.py#L300) | 300 | `"    assert completion[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000301](../../tests/test_research_completion.py#L301) | 301 | `"    assert completion[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
+| [SRC-AFFCF23BD4-L000302](../../tests/test_research_completion.py#L302) | 302 | `""` | — |
+| [SRC-AFFCF23BD4-L000303](../../tests/test_research_completion.py#L303) | 303 | `""` | — |
+| [SRC-AFFCF23BD4-L000304](../../tests/test_research_completion.py#L304) | 304 | `"def test_explicit_claim_ledger_build_failure_prevents_completed_status() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000305](../../tests/test_research_completion.py#L305) | 305 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000306](../../tests/test_research_completion.py#L306) | 306 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000307](../../tests/test_research_completion.py#L307) | 307 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000308](../../tests/test_research_completion.py#L308) | 308 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000309](../../tests/test_research_completion.py#L309) | 309 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000310](../../tests/test_research_completion.py#L310) | 310 | `"        \"citation_validation\": {"` | — |
+| [SRC-AFFCF23BD4-L000311](../../tests/test_research_completion.py#L311) | 311 | `"            \"status\": \"index_range_check_passed\","` | — |
+| [SRC-AFFCF23BD4-L000312](../../tests/test_research_completion.py#L312) | 312 | `"            \"valid_citation_count\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000313](../../tests/test_research_completion.py#L313) | 313 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000314](../../tests/test_research_completion.py#L314) | 314 | `"        \"claim_evidence_ledger\": {"` | — |
+| [SRC-AFFCF23BD4-L000315](../../tests/test_research_completion.py#L315) | 315 | `"            \"status\": \"not_run\","` | — |
+| [SRC-AFFCF23BD4-L000316](../../tests/test_research_completion.py#L316) | 316 | `"            \"semantic_verification\": False,"` | — |
+| [SRC-AFFCF23BD4-L000317](../../tests/test_research_completion.py#L317) | 317 | `"            \"error_class\": \"claim_evidence_trace_error\","` | — |
+| [SRC-AFFCF23BD4-L000318](../../tests/test_research_completion.py#L318) | 318 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000319](../../tests/test_research_completion.py#L319) | 319 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000320](../../tests/test_research_completion.py#L320) | 320 | `"            \"url\": \"https://example.com/report\","` | — |
+| [SRC-AFFCF23BD4-L000321](../../tests/test_research_completion.py#L321) | 321 | `"            \"snippet\": \"A readable report excerpt.\","` | — |
+| [SRC-AFFCF23BD4-L000322](../../tests/test_research_completion.py#L322) | 322 | `"            \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000323](../../tests/test_research_completion.py#L323) | 323 | `"            \"page_text\": \"A readable report excerpt.\","` | — |
+| [SRC-AFFCF23BD4-L000324](../../tests/test_research_completion.py#L324) | 324 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000325](../../tests/test_research_completion.py#L325) | 325 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
+| [SRC-AFFCF23BD4-L000326](../../tests/test_research_completion.py#L326) | 326 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000327](../../tests/test_research_completion.py#L327) | 327 | `""` | — |
+| [SRC-AFFCF23BD4-L000328](../../tests/test_research_completion.py#L328) | 328 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-AFFCF23BD4-L000329](../../tests/test_research_completion.py#L329) | 329 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000330](../../tests/test_research_completion.py#L330) | 330 | `"    assert result[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000331](../../tests/test_research_completion.py#L331) | 331 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000332](../../tests/test_research_completion.py#L332) | 332 | `"    assert result[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
+| [SRC-AFFCF23BD4-L000333](../../tests/test_research_completion.py#L333) | 333 | `""` | — |
+| [SRC-AFFCF23BD4-L000334](../../tests/test_research_completion.py#L334) | 334 | `""` | — |
+| [SRC-AFFCF23BD4-L000335](../../tests/test_research_completion.py#L335) | 335 | `"def test_unrecognized_claim_ledger_status_prevents_completed_status() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000336](../../tests/test_research_completion.py#L336) | 336 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000337](../../tests/test_research_completion.py#L337) | 337 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000338](../../tests/test_research_completion.py#L338) | 338 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000339](../../tests/test_research_completion.py#L339) | 339 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000340](../../tests/test_research_completion.py#L340) | 340 | `"        \"claim_evidence_ledger\": {\"status\": \"partial\"},"` | — |
+| [SRC-AFFCF23BD4-L000341](../../tests/test_research_completion.py#L341) | 341 | `"        \"citation_validation\": {"` | — |
+| [SRC-AFFCF23BD4-L000342](../../tests/test_research_completion.py#L342) | 342 | `"            \"status\": \"index_range_check_passed\","` | — |
+| [SRC-AFFCF23BD4-L000343](../../tests/test_research_completion.py#L343) | 343 | `"            \"valid_citation_count\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000344](../../tests/test_research_completion.py#L344) | 344 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000345](../../tests/test_research_completion.py#L345) | 345 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000346](../../tests/test_research_completion.py#L346) | 346 | `"            \"url\": \"https://example.com/report\","` | — |
+| [SRC-AFFCF23BD4-L000347](../../tests/test_research_completion.py#L347) | 347 | `"            \"snippet\": \"A readable report excerpt.\","` | — |
+| [SRC-AFFCF23BD4-L000348](../../tests/test_research_completion.py#L348) | 348 | `"            \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000349](../../tests/test_research_completion.py#L349) | 349 | `"            \"page_text\": \"A readable report excerpt.\","` | — |
+| [SRC-AFFCF23BD4-L000350](../../tests/test_research_completion.py#L350) | 350 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000351](../../tests/test_research_completion.py#L351) | 351 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
+| [SRC-AFFCF23BD4-L000352](../../tests/test_research_completion.py#L352) | 352 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000353](../../tests/test_research_completion.py#L353) | 353 | `""` | — |
+| [SRC-AFFCF23BD4-L000354](../../tests/test_research_completion.py#L354) | 354 | `"    assert result[\"counters\"][\"claim_ledger_status\"] == \"partial\""` | — |
+| [SRC-AFFCF23BD4-L000355](../../tests/test_research_completion.py#L355) | 355 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000356](../../tests/test_research_completion.py#L356) | 356 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-AFFCF23BD4-L000357](../../tests/test_research_completion.py#L357) | 357 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
 ## اختبارات
 
 ### FILE-01E35ABC46 — [tests/test_research_guardrails.py](../../tests/test_research_guardrails.py#L1)
@@ -801,45 +834,3 @@
 | [SRC-96F6863E3C-L000187](../../tests/test_research_pipeline.py#L187) | 187 | `""` | — |
 | [SRC-96F6863E3C-L000188](../../tests/test_research_pipeline.py#L188) | 188 | `"def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():"` | — |
 | [SRC-96F6863E3C-L000189](../../tests/test_research_pipeline.py#L189) | 189 | `"    result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000190](../../tests/test_research_pipeline.py#L190) | 190 | `"        \"ما سعر الهاتف؟\","` | — |
-| [SRC-96F6863E3C-L000191](../../tests/test_research_pipeline.py#L191) | 191 | `"        {\"queries\": [\"سعر الهاتف\"]},"` | — |
-| [SRC-96F6863E3C-L000192](../../tests/test_research_pipeline.py#L192) | 192 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000193](../../tests/test_research_pipeline.py#L193) | 193 | `"        dialogue_context={\"trace_label\": \"upstream_metadata_only\"},"` | — |
-| [SRC-96F6863E3C-L000194](../../tests/test_research_pipeline.py#L194) | 194 | `"    )"` | — |
-| [SRC-96F6863E3C-L000195](../../tests/test_research_pipeline.py#L195) | 195 | `""` | — |
-| [SRC-96F6863E3C-L000196](../../tests/test_research_pipeline.py#L196) | 196 | `"    assert result[\"stages\"][\"context_resolution\"] == \"not_needed\""` | — |
-| [SRC-96F6863E3C-L000197](../../tests/test_research_pipeline.py#L197) | 197 | `""` | — |
-| [SRC-96F6863E3C-L000198](../../tests/test_research_pipeline.py#L198) | 198 | `"def test_pipeline_does_not_claim_lexical_matching_without_readable_source_text():"` | — |
-| [SRC-96F6863E3C-L000199](../../tests/test_research_pipeline.py#L199) | 199 | `"    for sources in ("` | — |
-| [SRC-96F6863E3C-L000200](../../tests/test_research_pipeline.py#L200) | 200 | `"        [None, \"not-a-source\", {}],"` | — |
-| [SRC-96F6863E3C-L000201](../../tests/test_research_pipeline.py#L201) | 201 | `"        [{\"url\": \"https://example.com/no-text\"}],"` | — |
-| [SRC-96F6863E3C-L000202](../../tests/test_research_pipeline.py#L202) | 202 | `"        [],"` | — |
-| [SRC-96F6863E3C-L000203](../../tests/test_research_pipeline.py#L203) | 203 | `"    ):"` | — |
-| [SRC-96F6863E3C-L000204](../../tests/test_research_pipeline.py#L204) | 204 | `"        result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000205](../../tests/test_research_pipeline.py#L205) | 205 | `"            \"ما سعر الهاتف والضمان؟\","` | — |
-| [SRC-96F6863E3C-L000206](../../tests/test_research_pipeline.py#L206) | 206 | `"            {\"queries\": [\"سعر الهاتف والضمان\"]},"` | — |
-| [SRC-96F6863E3C-L000207](../../tests/test_research_pipeline.py#L207) | 207 | `"            intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000208](../../tests/test_research_pipeline.py#L208) | 208 | `"            sources=sources,"` | — |
-| [SRC-96F6863E3C-L000209](../../tests/test_research_pipeline.py#L209) | 209 | `"        )"` | — |
-| [SRC-96F6863E3C-L000210](../../tests/test_research_pipeline.py#L210) | 210 | `""` | — |
-| [SRC-96F6863E3C-L000211](../../tests/test_research_pipeline.py#L211) | 211 | `"        assert result[\"stages\"][\"lexical_matching\"] == \"not_assessed\""` | — |
-| [SRC-96F6863E3C-L000212](../../tests/test_research_pipeline.py#L212) | 212 | `"        assert result[\"evidence_ledger\"][\"covered\"] == []"` | — |
-## اختبارات
-
-### FILE-2614DCB6FB — [tests/test_search_code.py](../../tests/test_search_code.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-2614DCB6FB-L000001](../../tests/test_search_code.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-2614DCB6FB-L000002](../../tests/test_search_code.py#L2) | 2 | `""` | — |
-| [SRC-2614DCB6FB-L000003](../../tests/test_search_code.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-2614DCB6FB-L000004](../../tests/test_search_code.py#L4) | 4 | `"import re"` | — |
-| [SRC-2614DCB6FB-L000005](../../tests/test_search_code.py#L5) | 5 | `"import sys"` | — |
-| [SRC-2614DCB6FB-L000006](../../tests/test_search_code.py#L6) | 6 | `"from pathlib import Path"` | — |
-| [SRC-2614DCB6FB-L000007](../../tests/test_search_code.py#L7) | 7 | `""` | — |
-| [SRC-2614DCB6FB-L000008](../../tests/test_search_code.py#L8) | 8 | `"SEARCH_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"search_code.py\""` | — |
-| [SRC-2614DCB6FB-L000009](../../tests/test_search_code.py#L9) | 9 | `"SEARCH_SPEC = importlib.util.spec_from_file_location(\"omarai_search_code_for_tests\", SEARCH_PATH)"` | — |
-| [SRC-2614DCB6FB-L000010](../../tests/test_search_code.py#L10) | 10 | `"assert SEARCH_SPEC is not None"` | — |

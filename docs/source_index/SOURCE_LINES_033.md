@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000971 إلى SRC-63610B9E85-L000114
+- النطاق: SRC-90FAA34ADE-L000966 إلى SRC-63610B9E85-L000109
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000966](../../tests/fixtures/answer_quality_cases.json#L966) | 966 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000967](../../tests/fixtures/answer_quality_cases.json#L967) | 967 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000968](../../tests/fixtures/answer_quality_cases.json#L968) | 968 | `"        \"اختلاق اسم مدير المشتريات\","` | — |
+| [SRC-90FAA34ADE-L000969](../../tests/fixtures/answer_quality_cases.json#L969) | 969 | `"        \"يكتب أن العرض مقبول دون رد موثق\""` | — |
+| [SRC-90FAA34ADE-L000970](../../tests/fixtures/answer_quality_cases.json#L970) | 970 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000971](../../tests/fixtures/answer_quality_cases.json#L971) | 971 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000972](../../tests/fixtures/answer_quality_cases.json#L972) | 972 | `"        \"type\": \"none\","` | — |
 | [SRC-90FAA34ADE-L000973](../../tests/fixtures/answer_quality_cases.json#L973) | 973 | `"        \"notes\": \"السياق يقدّم بريدًا عامًا فقط ولا يحتوي على رد من ممثل الشركة\""` | — |
@@ -838,8 +843,3 @@
 | [SRC-63610B9E85-L000107](../../tests/test_agentic_retrieval.py#L107) | 107 | `"        captured[\"messages\"] = messages"` | — |
 | [SRC-63610B9E85-L000108](../../tests/test_agentic_retrieval.py#L108) | 108 | `"        return \"إجابة تجريبية.\""` | — |
 | [SRC-63610B9E85-L000109](../../tests/test_agentic_retrieval.py#L109) | 109 | `""` | — |
-| [SRC-63610B9E85-L000110](../../tests/test_agentic_retrieval.py#L110) | 110 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-63610B9E85-L000111](../../tests/test_agentic_retrieval.py#L111) | 111 | `"    answer = agent._generate("` | — |
-| [SRC-63610B9E85-L000112](../../tests/test_agentic_retrieval.py#L112) | 112 | `"        question=\"اشرح لي معنى مفهوم بسيط.\","` | — |
-| [SRC-63610B9E85-L000113](../../tests/test_agentic_retrieval.py#L113) | 113 | `"        history=[],"` | — |
-| [SRC-63610B9E85-L000114](../../tests/test_agentic_retrieval.py#L114) | 114 | `"        sources=[],"` | — |

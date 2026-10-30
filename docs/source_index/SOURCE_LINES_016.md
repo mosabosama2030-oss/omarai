@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005529 إلى SRC-1AE03B9EC3-L006328
+- النطاق: SRC-1AE03B9EC3-L005524 إلى SRC-1AE03B9EC3-L006323
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005524](../../agents/web_agent.py#L5524) | 5524 | `"                    repair_attempt_count = repair_report.get(\"queries_attempted\", 0)"` | — |
+| [SRC-1AE03B9EC3-L005525](../../agents/web_agent.py#L5525) | 5525 | `"                    if initial_attempt_count is None or repair_attempt_count is None:"` | — |
+| [SRC-1AE03B9EC3-L005526](../../agents/web_agent.py#L5526) | 5526 | `"                        report[\"queries_attempted\"] = None"` | — |
+| [SRC-1AE03B9EC3-L005527](../../agents/web_agent.py#L5527) | 5527 | `"                        report[\"queries_attempted_known\"] = False"` | — |
+| [SRC-1AE03B9EC3-L005528](../../agents/web_agent.py#L5528) | 5528 | `"                    else:"` | — |
 | [SRC-1AE03B9EC3-L005529](../../agents/web_agent.py#L5529) | 5529 | `"                        try:"` | — |
 | [SRC-1AE03B9EC3-L005530](../../agents/web_agent.py#L5530) | 5530 | `"                            report[\"queries_attempted\"] = max(0, int(initial_attempt_count or 0)) + max("` | — |
 | [SRC-1AE03B9EC3-L005531](../../agents/web_agent.py#L5531) | 5531 | `"                                0, int(repair_attempt_count or 0)"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L006321](../../agents/web_agent.py#L6321) | 6321 | `"            \"status\": ("` | — |
 | [SRC-1AE03B9EC3-L006322](../../agents/web_agent.py#L6322) | 6322 | `"                \"model_review_requested_not_machine_verified\""` | — |
 | [SRC-1AE03B9EC3-L006323](../../agents/web_agent.py#L6323) | 6323 | `"                if coverage_targets and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006324](../../agents/web_agent.py#L6324) | 6324 | `"                else \"review_unavailable\""` | — |
-| [SRC-1AE03B9EC3-L006325](../../agents/web_agent.py#L6325) | 6325 | `"                if coverage_targets"` | — |
-| [SRC-1AE03B9EC3-L006326](../../agents/web_agent.py#L6326) | 6326 | `"                else \"no_explicit_targets_detected\""` | — |
-| [SRC-1AE03B9EC3-L006327](../../agents/web_agent.py#L6327) | 6327 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L006328](../../agents/web_agent.py#L6328) | 6328 | `"            \"automatically_graded\": False,"` | — |

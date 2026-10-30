@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004729 إلى SRC-1AE03B9EC3-L005528
+- النطاق: SRC-1AE03B9EC3-L004724 إلى SRC-1AE03B9EC3-L005523
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004724](../../agents/web_agent.py#L4724) | 4724 | `"                    intent_reason = \"semantic_dialogue_context_\" + str(semantic_decision[\"reason\"])"` | — |
+| [SRC-1AE03B9EC3-L004725](../../agents/web_agent.py#L4725) | 4725 | `"                decision = semantic_decision"` | — |
+| [SRC-1AE03B9EC3-L004726](../../agents/web_agent.py#L4726) | 4726 | `""` | — |
+| [SRC-1AE03B9EC3-L004727](../../agents/web_agent.py#L4727) | 4727 | `"        # A small deterministic preflight catches requests whose required subject"` | — |
+| [SRC-1AE03B9EC3-L004728](../../agents/web_agent.py#L4728) | 4728 | `"        # or source is absent before the planner or search connectors are invoked."` | — |
 | [SRC-1AE03B9EC3-L004729](../../agents/web_agent.py#L4729) | 4729 | `"        # This is intentionally limited to hard missing inputs, not optional details."` | — |
 | [SRC-1AE03B9EC3-L004730](../../agents/web_agent.py#L4730) | 4730 | `"        preflight_pipeline = build_research_pipeline("` | — |
 | [SRC-1AE03B9EC3-L004731](../../agents/web_agent.py#L4731) | 4731 | `"            working_question,"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L005521](../../agents/web_agent.py#L5521) | 5521 | `"                        repair_report.get(\"queries_planned\", 1) or 0"` | — |
 | [SRC-1AE03B9EC3-L005522](../../agents/web_agent.py#L5522) | 5522 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L005523](../../agents/web_agent.py#L5523) | 5523 | `"                    initial_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L005524](../../agents/web_agent.py#L5524) | 5524 | `"                    repair_attempt_count = repair_report.get(\"queries_attempted\", 0)"` | — |
-| [SRC-1AE03B9EC3-L005525](../../agents/web_agent.py#L5525) | 5525 | `"                    if initial_attempt_count is None or repair_attempt_count is None:"` | — |
-| [SRC-1AE03B9EC3-L005526](../../agents/web_agent.py#L5526) | 5526 | `"                        report[\"queries_attempted\"] = None"` | — |
-| [SRC-1AE03B9EC3-L005527](../../agents/web_agent.py#L5527) | 5527 | `"                        report[\"queries_attempted_known\"] = False"` | — |
-| [SRC-1AE03B9EC3-L005528](../../agents/web_agent.py#L5528) | 5528 | `"                    else:"` | — |

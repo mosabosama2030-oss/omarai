@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-63610B9E85-L000115 إلى SRC-B3062EB677-L000066
+- النطاق: SRC-63610B9E85-L000110 إلى SRC-B3062EB677-L000061
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-63610B9E85-L000110](../../tests/test_agentic_retrieval.py#L110) | 110 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-63610B9E85-L000111](../../tests/test_agentic_retrieval.py#L111) | 111 | `"    answer = agent._generate("` | — |
+| [SRC-63610B9E85-L000112](../../tests/test_agentic_retrieval.py#L112) | 112 | `"        question=\"اشرح لي معنى مفهوم بسيط.\","` | — |
+| [SRC-63610B9E85-L000113](../../tests/test_agentic_retrieval.py#L113) | 113 | `"        history=[],"` | — |
+| [SRC-63610B9E85-L000114](../../tests/test_agentic_retrieval.py#L114) | 114 | `"        sources=[],"` | — |
 | [SRC-63610B9E85-L000115](../../tests/test_agentic_retrieval.py#L115) | 115 | `"        search_warning=None,"` | — |
 | [SRC-63610B9E85-L000116](../../tests/test_agentic_retrieval.py#L116) | 116 | `"        research_plan={\"depth\": \"standard\"},"` | — |
 | [SRC-63610B9E85-L000117](../../tests/test_agentic_retrieval.py#L117) | 117 | `"        search_report={},"` | — |
@@ -856,8 +861,3 @@
 | [SRC-B3062EB677-L000059](../../tests/test_answer_quality_runner.py#L59) | 59 | `"    del data[\"cases\"][0][\"question\"]"` | — |
 | [SRC-B3062EB677-L000060](../../tests/test_answer_quality_runner.py#L60) | 60 | `"    data[\"case_count\"] = 1"` | — |
 | [SRC-B3062EB677-L000061](../../tests/test_answer_quality_runner.py#L61) | 61 | `"    bad = tmp_path / \"bad2.json\""` | — |
-| [SRC-B3062EB677-L000062](../../tests/test_answer_quality_runner.py#L62) | 62 | `"    bad.write_text(json.dumps(data), encoding=\"utf-8\")"` | — |
-| [SRC-B3062EB677-L000063](../../tests/test_answer_quality_runner.py#L63) | 63 | `"    problems = mod.validate_corpus(mod.load_corpus(bad))"` | — |
-| [SRC-B3062EB677-L000064](../../tests/test_answer_quality_runner.py#L64) | 64 | `"    assert problems"` | — |
-| [SRC-B3062EB677-L000065](../../tests/test_answer_quality_runner.py#L65) | 65 | `""` | — |
-| [SRC-B3062EB677-L000066](../../tests/test_answer_quality_runner.py#L66) | 66 | `""` | — |
