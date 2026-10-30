@@ -77,6 +77,11 @@ def test_answer_with_valid_citation_indices_still_discloses_semantic_gap() -> No
         "used_language_model": True,
         "final_answer_status": "model_answer_generated",
         "citation_validation": {"status": "index_range_check_passed", "valid_citation_count": 2},
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": False,
+            "summary": {"out_of_range_reference_count": 0},
+        },
         "sources": [
             {"url": "https://example.com/a", "snippet": "text", "page_fetched": True, "page_text": "read"}
         ],
@@ -171,6 +176,11 @@ def test_unresolved_citation_support_flags_prevent_completed_research_status() -
         "citation_validation": {
             "status": "index_range_check_passed",
             "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": False,
+            "summary": {"out_of_range_reference_count": 0},
         },
         "sources": [
             {
