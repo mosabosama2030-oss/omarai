@@ -280,3 +280,15 @@ def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> N
 
     assert "Lenovo ThinkPad E14" in resolved
     assert "أقدر أشتريه منين" in resolved
+
+
+def test_followup_leadin_symbols_defined_once():
+    """Regression: follow-up lead-in symbols must not be re-defined in the module."""
+    import inspect
+    import agents.intent_router as m
+    src = inspect.getsource(m)
+    assert src.count("_FOLLOWUP_LEAD_IN_RE = re.compile") == 1
+    assert src.count("_FOLLOWUP_ASPECT_FRAGMENTS = frozenset") == 1
+    assert src.count("def _strip_followup_leadin") == 1
+    # Functional smoke: strip works on common Arabic lead-in
+    assert m._strip_followup_leadin("طيب السعر كام") == "السعر كام"
