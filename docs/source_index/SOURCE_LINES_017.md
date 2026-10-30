@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006419 إلى SRC-EEF2E6447C-L000597
+- النطاق: SRC-1AE03B9EC3-L006412 إلى SRC-EEF2E6447C-L000590
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006412](../../agents/web_agent.py#L6412) | 6412 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006413](../../agents/web_agent.py#L6413) | 6413 | `"        report[\"usable_sources_after_filtering\"] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L006414](../../agents/web_agent.py#L6414) | 6414 | `"        report[\"research_quality\"] = research_quality"` | — |
+| [SRC-1AE03B9EC3-L006415](../../agents/web_agent.py#L6415) | 6415 | `"        report[\"research_quality_semantics\"] = \"process_coverage_not_factual_probability\""` | — |
+| [SRC-1AE03B9EC3-L006416](../../agents/web_agent.py#L6416) | 6416 | `"        report[\"answer_evidence_status\"] = answer_evidence_status"` | — |
+| [SRC-1AE03B9EC3-L006417](../../agents/web_agent.py#L6417) | 6417 | `"        report[\"distinct_registrable_domains\"] = len(distinct_domains)"` | — |
+| [SRC-1AE03B9EC3-L006418](../../agents/web_agent.py#L6418) | 6418 | `"        report[\"independent_sources\"] = len(distinct_domains)  # Legacy alias; not editorial independence."` | — |
 | [SRC-1AE03B9EC3-L006419](../../agents/web_agent.py#L6419) | 6419 | `"        report[\"independent_sources_field_semantics\"] = ("` | — |
 | [SRC-1AE03B9EC3-L006420](../../agents/web_agent.py#L6420) | 6420 | `"            \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
 | [SRC-1AE03B9EC3-L006421](../../agents/web_agent.py#L6421) | 6421 | `"        )"` | — |
@@ -827,10 +834,3 @@
 | [SRC-EEF2E6447C-L000588](../../api/omarai.py#L588) | 588 | `"                )"` | — |
 | [SRC-EEF2E6447C-L000589](../../api/omarai.py#L589) | 589 | `""` | — |
 | [SRC-EEF2E6447C-L000590](../../api/omarai.py#L590) | 590 | `"            if path == \"/api/ask\":"` | — |
-| [SRC-EEF2E6447C-L000591](../../api/omarai.py#L591) | 591 | `"                question = data.get(\"question\", \"\")"` | — |
-| [SRC-EEF2E6447C-L000592](../../api/omarai.py#L592) | 592 | `"                if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-EEF2E6447C-L000593](../../api/omarai.py#L593) | 593 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
-| [SRC-EEF2E6447C-L000594](../../api/omarai.py#L594) | 594 | `"                if len(question) > 1000:"` | — |
-| [SRC-EEF2E6447C-L000595](../../api/omarai.py#L595) | 595 | `"                    return self.respond(400, {\"error\": \"question must be at most 1000 characters\"})"` | — |
-| [SRC-EEF2E6447C-L000596](../../api/omarai.py#L596) | 596 | `"                return self.respond(200, answer_question(question, self.store))"` | — |
-| [SRC-EEF2E6447C-L000597](../../api/omarai.py#L597) | 597 | `"            if path == \"/api/analyze\":"` | — |

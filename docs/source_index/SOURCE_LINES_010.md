@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000819 إلى SRC-1AE03B9EC3-L001618
+- النطاق: SRC-1AE03B9EC3-L000812 إلى SRC-1AE03B9EC3-L001611
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000812](../../agents/web_agent.py#L812) | 812 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000813](../../agents/web_agent.py#L813) | 813 | `"        search_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L000814](../../agents/web_agent.py#L814) | 814 | `"            \"كيف تبحث انت\", \"ازاي بتبحث\", \"كيف يعمل البحث عندك\","` | — |
+| [SRC-1AE03B9EC3-L000815](../../agents/web_agent.py#L815) | 815 | `"            \"ما المواقع التي تستخدمها\", \"ما محركات البحث التي تستخدمها\","` | — |
+| [SRC-1AE03B9EC3-L000816](../../agents/web_agent.py#L816) | 816 | `"            \"ما المواقع التي قدرت\", \"كيف تبحث على الانترنت\","` | — |
+| [SRC-1AE03B9EC3-L000817](../../agents/web_agent.py#L817) | 817 | `"            \"هل تستطيع البحث\", \"هل يمكنك البحث\", \"هل تقدر تبحث\","` | — |
+| [SRC-1AE03B9EC3-L000818](../../agents/web_agent.py#L818) | 818 | `"            \"هل تستطيع الوصول\", \"هل يمكنك الوصول\","` | — |
 | [SRC-1AE03B9EC3-L000819](../../agents/web_agent.py#L819) | 819 | `"            \"هل عندك اتصال بالانترنت\", \"هل عندك اتصال بالانترنيت\","` | — |
 | [SRC-1AE03B9EC3-L000820](../../agents/web_agent.py#L820) | 820 | `"            \"هل عندك انترنت\","` | — |
 | [SRC-1AE03B9EC3-L000821](../../agents/web_agent.py#L821) | 821 | `"            \"هل بحثت في الانترنت للاجابه الحاليه\","` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L001609](../../agents/web_agent.py#L1609) | 1609 | `""` | — |
 | [SRC-1AE03B9EC3-L001610](../../agents/web_agent.py#L1610) | 1610 | `"    def _reserve_search_call(self) -> None:"` | — |
 | [SRC-1AE03B9EC3-L001611](../../agents/web_agent.py#L1611) | 1611 | `"        \"\"\"Reserve one outbound search/social-provider request before network I/O.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001612](../../agents/web_agent.py#L1612) | 1612 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L001613](../../agents/web_agent.py#L1613) | 1613 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L001614](../../agents/web_agent.py#L1614) | 1614 | `"            budget.reserve(\"search_calls\")"` | — |
-| [SRC-1AE03B9EC3-L001615](../../agents/web_agent.py#L1615) | 1615 | `""` | — |
-| [SRC-1AE03B9EC3-L001616](../../agents/web_agent.py#L1616) | 1616 | `"    def _search_brave(self, query: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001617](../../agents/web_agent.py#L1617) | 1617 | `"        \"\"\"Use Brave's official web-search API when the operator provides an API key.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001618](../../agents/web_agent.py#L1618) | 1618 | `"        api_key = os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001619 إلى SRC-1AE03B9EC3-L002418
+- النطاق: SRC-1AE03B9EC3-L001612 إلى SRC-1AE03B9EC3-L002411
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001612](../../agents/web_agent.py#L1612) | 1612 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L001613](../../agents/web_agent.py#L1613) | 1613 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L001614](../../agents/web_agent.py#L1614) | 1614 | `"            budget.reserve(\"search_calls\")"` | — |
+| [SRC-1AE03B9EC3-L001615](../../agents/web_agent.py#L1615) | 1615 | `""` | — |
+| [SRC-1AE03B9EC3-L001616](../../agents/web_agent.py#L1616) | 1616 | `"    def _search_brave(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001617](../../agents/web_agent.py#L1617) | 1617 | `"        \"\"\"Use Brave's official web-search API when the operator provides an API key.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001618](../../agents/web_agent.py#L1618) | 1618 | `"        api_key = os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L001619](../../agents/web_agent.py#L1619) | 1619 | `"        if not api_key:"` | — |
 | [SRC-1AE03B9EC3-L001620](../../agents/web_agent.py#L1620) | 1620 | `"            return []"` | — |
 | [SRC-1AE03B9EC3-L001621](../../agents/web_agent.py#L1621) | 1621 | `"        try:"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"        try:"` | — |
 | [SRC-1AE03B9EC3-L002410](../../agents/web_agent.py#L2410) | 2410 | `"            sources = self._search_web(query)"` | — |
 | [SRC-1AE03B9EC3-L002411](../../agents/web_agent.py#L2411) | 2411 | `"        except (RuntimeError, AgentDependencyError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `"            return [], str(exc)"` | — |
-| [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"        for source in sources[:MAX_FETCHED_PAGES]:"` | — |
-| [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L002415](../../agents/web_agent.py#L2415) | 2415 | `"                title, page_text = self._fetch_page(source[\"url\"])"` | — |
-| [SRC-1AE03B9EC3-L002416](../../agents/web_agent.py#L2416) | 2416 | `"            except (AgentDependencyError, RuntimeError):"` | — |
-| [SRC-1AE03B9EC3-L002417](../../agents/web_agent.py#L2417) | 2417 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L002418](../../agents/web_agent.py#L2418) | 2418 | `"            if title:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000147 إلى SRC-686F71AA50-L000946
+- النطاق: SRC-686F71AA50-L000140 إلى SRC-686F71AA50-L000939
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000140](../../agents/task_understanding.py#L140) | 140 | `"    \"summarize\": ("` | — |
+| [SRC-686F71AA50-L000141](../../agents/task_understanding.py#L141) | 141 | `"        \"لخص\", \"تلخيص\", \"ملخص\", \"summarize\", \"summarise\", \"summary of\","` | — |
+| [SRC-686F71AA50-L000142](../../agents/task_understanding.py#L142) | 142 | `"    ),"` | — |
+| [SRC-686F71AA50-L000143](../../agents/task_understanding.py#L143) | 143 | `"    \"troubleshoot\": ("` | — |
+| [SRC-686F71AA50-L000144](../../agents/task_understanding.py#L144) | 144 | `"        \"حل مشكلة\", \"عطل\", \"اعطال\", \"مش بيشتغل\", \"لا يعمل\", \"خطأ\", \"رساله خطأ\","` | — |
+| [SRC-686F71AA50-L000145](../../agents/task_understanding.py#L145) | 145 | `"        \"اصلح\", \"استكشاف الاعطال\", \"troubleshoot\", \"debug\", \"does not work\","` | — |
+| [SRC-686F71AA50-L000146](../../agents/task_understanding.py#L146) | 146 | `"        \"not working\", \"error message\", \"fix the problem\", \"common failures\","` | — |
 | [SRC-686F71AA50-L000147](../../agents/task_understanding.py#L147) | 147 | `"    ),"` | — |
 | [SRC-686F71AA50-L000148](../../agents/task_understanding.py#L148) | 148 | `"    \"how_to\": ("` | — |
 | [SRC-686F71AA50-L000149](../../agents/task_understanding.py#L149) | 149 | `"        \"ازاي\", \"كيف\", \"طريقة\", \"خطوات\", \"اشرح لي كيف\", \"علمني\", \"كيفية\","` | — |
@@ -809,10 +816,3 @@
 | [SRC-686F71AA50-L000937](../../agents/task_understanding.py#L937) | 937 | `"    family = str(spec.get(\"task_family\") or \"\")"` | — |
 | [SRC-686F71AA50-L000938](../../agents/task_understanding.py#L938) | 938 | `"    constraints = spec.get(\"constraints\") if isinstance(spec.get(\"constraints\"), dict) else {}"` | — |
 | [SRC-686F71AA50-L000939](../../agents/task_understanding.py#L939) | 939 | `"    aspects = constraints.get(\"explicit_aspects\") if isinstance(constraints.get(\"explicit_aspects\"), list) else []"` | — |
-| [SRC-686F71AA50-L000940](../../agents/task_understanding.py#L940) | 940 | `"    candidates: list[tuple[str, str, str]] = []"` | — |
-| [SRC-686F71AA50-L000941](../../agents/task_understanding.py#L941) | 941 | `"    if not topic.strip():"` | — |
-| [SRC-686F71AA50-L000942](../../agents/task_understanding.py#L942) | 942 | `"        return candidates"` | — |
-| [SRC-686F71AA50-L000943](../../agents/task_understanding.py#L943) | 943 | `"    locations = constraints.get(\"explicit_locations\") or []"` | — |
-| [SRC-686F71AA50-L000944](../../agents/task_understanding.py#L944) | 944 | `"    location_suffix = \" \".join(str(item) for item in locations[:2])"` | — |
-| [SRC-686F71AA50-L000945](../../agents/task_understanding.py#L945) | 945 | `"    hypotheses = spec.get(\"hypothesis_interpretations\")"` | — |
-| [SRC-686F71AA50-L000946](../../agents/task_understanding.py#L946) | 946 | `"    hypothesis_families = {"` | — |

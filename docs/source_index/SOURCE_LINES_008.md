@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000947 إلى SRC-1AE03B9EC3-L000018
+- النطاق: SRC-686F71AA50-L000940 إلى SRC-1AE03B9EC3-L000011
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000940](../../agents/task_understanding.py#L940) | 940 | `"    candidates: list[tuple[str, str, str]] = []"` | — |
+| [SRC-686F71AA50-L000941](../../agents/task_understanding.py#L941) | 941 | `"    if not topic.strip():"` | — |
+| [SRC-686F71AA50-L000942](../../agents/task_understanding.py#L942) | 942 | `"        return candidates"` | — |
+| [SRC-686F71AA50-L000943](../../agents/task_understanding.py#L943) | 943 | `"    locations = constraints.get(\"explicit_locations\") or []"` | — |
+| [SRC-686F71AA50-L000944](../../agents/task_understanding.py#L944) | 944 | `"    location_suffix = \" \".join(str(item) for item in locations[:2])"` | — |
+| [SRC-686F71AA50-L000945](../../agents/task_understanding.py#L945) | 945 | `"    hypotheses = spec.get(\"hypothesis_interpretations\")"` | — |
+| [SRC-686F71AA50-L000946](../../agents/task_understanding.py#L946) | 946 | `"    hypothesis_families = {"` | — |
 | [SRC-686F71AA50-L000947](../../agents/task_understanding.py#L947) | 947 | `"        str(item.get(\"family\"))"` | — |
 | [SRC-686F71AA50-L000948](../../agents/task_understanding.py#L948) | 948 | `"        for item in hypotheses"` | — |
 | [SRC-686F71AA50-L000949](../../agents/task_understanding.py#L949) | 949 | `"        if isinstance(item, dict) and item.get(\"family\")"` | — |
@@ -827,10 +834,3 @@
 | [SRC-1AE03B9EC3-L000009](../../agents/web_agent.py#L9) | 9 | `"import asyncio"` | — |
 | [SRC-1AE03B9EC3-L000010](../../agents/web_agent.py#L10) | 10 | `"import datetime as dt"` | — |
 | [SRC-1AE03B9EC3-L000011](../../agents/web_agent.py#L11) | 11 | `"import ipaddress"` | — |
-| [SRC-1AE03B9EC3-L000012](../../agents/web_agent.py#L12) | 12 | `"import json"` | — |
-| [SRC-1AE03B9EC3-L000013](../../agents/web_agent.py#L13) | 13 | `"import math"` | — |
-| [SRC-1AE03B9EC3-L000014](../../agents/web_agent.py#L14) | 14 | `"import os"` | — |
-| [SRC-1AE03B9EC3-L000015](../../agents/web_agent.py#L15) | 15 | `"import re"` | — |
-| [SRC-1AE03B9EC3-L000016](../../agents/web_agent.py#L16) | 16 | `"import socket"` | — |
-| [SRC-1AE03B9EC3-L000017](../../agents/web_agent.py#L17) | 17 | `"import threading"` | — |
-| [SRC-1AE03B9EC3-L000018](../../agents/web_agent.py#L18) | 18 | `"import unicodedata"` | — |

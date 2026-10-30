@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000598 إلى SRC-26428BDA96-L000131
+- النطاق: SRC-EEF2E6447C-L000591 إلى SRC-26428BDA96-L000124
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000591](../../api/omarai.py#L591) | 591 | `"                question = data.get(\"question\", \"\")"` | — |
+| [SRC-EEF2E6447C-L000592](../../api/omarai.py#L592) | 592 | `"                if not isinstance(question, str) or not question.strip():"` | — |
+| [SRC-EEF2E6447C-L000593](../../api/omarai.py#L593) | 593 | `"                    return self.respond(400, {\"error\": \"question must be a non-empty string\"})"` | — |
+| [SRC-EEF2E6447C-L000594](../../api/omarai.py#L594) | 594 | `"                if len(question) > 1000:"` | — |
+| [SRC-EEF2E6447C-L000595](../../api/omarai.py#L595) | 595 | `"                    return self.respond(400, {\"error\": \"question must be at most 1000 characters\"})"` | — |
+| [SRC-EEF2E6447C-L000596](../../api/omarai.py#L596) | 596 | `"                return self.respond(200, answer_question(question, self.store))"` | — |
+| [SRC-EEF2E6447C-L000597](../../api/omarai.py#L597) | 597 | `"            if path == \"/api/analyze\":"` | — |
 | [SRC-EEF2E6447C-L000598](../../api/omarai.py#L598) | 598 | `"                return self.respond("` | — |
 | [SRC-EEF2E6447C-L000599](../../api/omarai.py#L599) | 599 | `"                    200,"` | — |
 | [SRC-EEF2E6447C-L000600](../../api/omarai.py#L600) | 600 | `"                    analyze("` | — |
@@ -872,10 +879,3 @@
 | [SRC-26428BDA96-L000122](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L122) | 122 | `"تعالج الواجهات قدرًا كبيرًا من نصوص المستخدم والمصادر عبر escaping، وتتحقق من أن رابط المصدر HTTP(S) ولا يحتوي بيانات مصادقة. لكن صفحة الوكيل وصفحة العملاء تحفظان رمز التطبيق في localStorage؛ الرمز المشترك يعني أن أي سكربت خبيث ينجح في سياق الصفحة يمكنه نظريًا قراءته واستخدام الصلاحيات نفسها. لا توجد جلسات لكل مستخدم أو صلاحيات سجل أو انتهاء صلاحية مدمجة في الرمز."` | — |
 | [SRC-26428BDA96-L000123](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) | 123 | `""` | — |
 | [SRC-26428BDA96-L000124](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L124) | 124 | `"**المطلوب:** إبقاء الوصول خاصًا ومحدودًا حاليًا، وعدم مشاركة الرمز. إذا تحولت الخدمة إلى عدة مستخدمين، فاستبدال الرمز المشترك بهوية وجلسات أو رموز قصيرة العمر وصلاحيات مناسبة، مع مراجعة CSP واختبارات XSS. لا تُعدّ معالجة escaping وحدها شهادة أمن واجهة."` | — |
-| [SRC-26428BDA96-L000125](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L125) | 125 | `""` | — |
-| [SRC-26428BDA96-L000126](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L126) | 126 | `"### A-07 — استمرارية قاعدة SQLite في بيئة النشر غير مثبتة"` | — |
-| [SRC-26428BDA96-L000127](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L127) | 127 | `"**النتيجة:** UNKNOWN تشغيليًا، وليست عيبًا مؤكدًا في الكود."` | — |
-| [SRC-26428BDA96-L000128](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L128) | 128 | `""` | — |
-| [SRC-26428BDA96-L000129](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L129) | 129 | `"يحدد LeadStore المسار الافتراضي تحت مجلد المنزل وينشئ الملف إن لم يوجد. يحتوي render.yaml على خدمة Docker مجانية ومفاتيح بيئة، ولا يوضح ملف الإعداد نفسه قرصًا دائمًا أو استراتيجية نسخ احتياطي واستعادة. لم يُفحص حساب الاستضافة المباشر، ولا توجد في هذه الجولة تجربة restart/redeploy تؤكد بقاء السجلات."` | — |
-| [SRC-26428BDA96-L000130](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) | 130 | `""` | — |
-| [SRC-26428BDA96-L000131](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L131) | 131 | `"**المطلوب:** تأكيد نظام ملفات الاستضافة وسياسة بقائه رسميًا، وتجربة حفظ سجل ثم إعادة تشغيل/نشر ثم التحقق من بقائه. قبل حفظ بيانات تشغيلية مهمة، إعداد قرص دائم إن كان متاحًا ضمن البيئة أو تخزين دائم بديل ونسخ احتياطي واستعادة مختبرة."` | — |

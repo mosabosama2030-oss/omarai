@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000132 إلى SRC-E599346ABE-L000352
+- النطاق: SRC-26428BDA96-L000125 إلى SRC-E599346ABE-L000345
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000125](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L125) | 125 | `""` | — |
+| [SRC-26428BDA96-L000126](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L126) | 126 | `"### A-07 — استمرارية قاعدة SQLite في بيئة النشر غير مثبتة"` | — |
+| [SRC-26428BDA96-L000127](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L127) | 127 | `"**النتيجة:** UNKNOWN تشغيليًا، وليست عيبًا مؤكدًا في الكود."` | — |
+| [SRC-26428BDA96-L000128](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L128) | 128 | `""` | — |
+| [SRC-26428BDA96-L000129](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L129) | 129 | `"يحدد LeadStore المسار الافتراضي تحت مجلد المنزل وينشئ الملف إن لم يوجد. يحتوي render.yaml على خدمة Docker مجانية ومفاتيح بيئة، ولا يوضح ملف الإعداد نفسه قرصًا دائمًا أو استراتيجية نسخ احتياطي واستعادة. لم يُفحص حساب الاستضافة المباشر، ولا توجد في هذه الجولة تجربة restart/redeploy تؤكد بقاء السجلات."` | — |
+| [SRC-26428BDA96-L000130](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L130) | 130 | `""` | — |
+| [SRC-26428BDA96-L000131](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L131) | 131 | `"**المطلوب:** تأكيد نظام ملفات الاستضافة وسياسة بقائه رسميًا، وتجربة حفظ سجل ثم إعادة تشغيل/نشر ثم التحقق من بقائه. قبل حفظ بيانات تشغيلية مهمة، إعداد قرص دائم إن كان متاحًا ضمن البيئة أو تخزين دائم بديل ونسخ احتياطي واستعادة مختبرة."` | — |
 | [SRC-26428BDA96-L000132](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L132) | 132 | `""` | — |
 | [SRC-26428BDA96-L000133](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L133) | 133 | `"## 5. سجل نتائج جميع متطلبات P0 (42 متطلبًا)"` | — |
 | [SRC-26428BDA96-L000134](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L134) | 134 | `""` | — |
@@ -863,10 +870,3 @@
 | [SRC-E599346ABE-L000343](../generate_index.py#L343) | 343 | `"    suffix = Path(normalized).suffix.lower()"` | — |
 | [SRC-E599346ABE-L000344](../generate_index.py#L344) | 344 | `"    if normalized.startswith(\"tests/\") or \"/tests/\" in normalized:"` | — |
 | [SRC-E599346ABE-L000345](../generate_index.py#L345) | 345 | `"        return \"اختبارات\""` | — |
-| [SRC-E599346ABE-L000346](../generate_index.py#L346) | 346 | `"    if normalized.startswith(\".github/workflows/\"):"` | — |
-| [SRC-E599346ABE-L000347](../generate_index.py#L347) | 347 | `"        return \"CI وأتمتة\""` | — |
-| [SRC-E599346ABE-L000348](../generate_index.py#L348) | 348 | `"    if normalized.startswith(\"agents/\"):"` | — |
-| [SRC-E599346ABE-L000349](../generate_index.py#L349) | 349 | `"        return \"الوكيل والمنطق\""` | — |
-| [SRC-E599346ABE-L000350](../generate_index.py#L350) | 350 | `"    if normalized.startswith(\"api/\"):"` | — |
-| [SRC-E599346ABE-L000351](../generate_index.py#L351) | 351 | `"        return \"واجهات API\""` | — |
-| [SRC-E599346ABE-L000352](../generate_index.py#L352) | 352 | `"    if normalized.startswith(\"cli/\"):"` | — |

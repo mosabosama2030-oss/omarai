@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004019 إلى SRC-1AE03B9EC3-L004818
+- النطاق: SRC-1AE03B9EC3-L004012 إلى SRC-1AE03B9EC3-L004811
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004012](../../agents/web_agent.py#L4012) | 4012 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
+| [SRC-1AE03B9EC3-L004013](../../agents/web_agent.py#L4013) | 4013 | `"            return \"\""` | — |
+| [SRC-1AE03B9EC3-L004014](../../agents/web_agent.py#L4014) | 4014 | `""` | — |
+| [SRC-1AE03B9EC3-L004015](../../agents/web_agent.py#L4015) | 4015 | `"        clean_answer = re.sub(r\"\\[المصدر\\s+(\\d+)\\]\", replace, answer)"` | — |
+| [SRC-1AE03B9EC3-L004016](../../agents/web_agent.py#L4016) | 4016 | `"        return clean_answer, warnings"` | — |
+| [SRC-1AE03B9EC3-L004017](../../agents/web_agent.py#L4017) | 4017 | `""` | — |
+| [SRC-1AE03B9EC3-L004018](../../agents/web_agent.py#L4018) | 4018 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L004019](../../agents/web_agent.py#L4019) | 4019 | `"    def _citation_validation_metadata("` | — |
 | [SRC-1AE03B9EC3-L004020](../../agents/web_agent.py#L4020) | 4020 | `"        answer: str,"` | — |
 | [SRC-1AE03B9EC3-L004021](../../agents/web_agent.py#L4021) | 4021 | `"        source_count: int,"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L004809](../../agents/web_agent.py#L4809) | 4809 | `"        # Normalize planner output before depth/mode expansion so a raw instruction-only"` | — |
 | [SRC-1AE03B9EC3-L004810](../../agents/web_agent.py#L4810) | 4810 | `"        # prompt cannot seed synthetic generic queries when the topic is empty."` | — |
 | [SRC-1AE03B9EC3-L004811](../../agents/web_agent.py#L4811) | 4811 | `"        raw_plan_queries = plan.get(\"queries\") or []"` | — |
-| [SRC-1AE03B9EC3-L004812](../../agents/web_agent.py#L4812) | 4812 | `"        if not isinstance(raw_plan_queries, list):"` | — |
-| [SRC-1AE03B9EC3-L004813](../../agents/web_agent.py#L4813) | 4813 | `"            raw_plan_queries = []"` | — |
-| [SRC-1AE03B9EC3-L004814](../../agents/web_agent.py#L4814) | 4814 | `"        normalized_plan_queries = []"` | — |
-| [SRC-1AE03B9EC3-L004815](../../agents/web_agent.py#L4815) | 4815 | `"        for raw_query in raw_plan_queries:"` | — |
-| [SRC-1AE03B9EC3-L004816](../../agents/web_agent.py#L4816) | 4816 | `"            if not isinstance(raw_query, str) or not raw_query.strip():"` | — |
-| [SRC-1AE03B9EC3-L004817](../../agents/web_agent.py#L4817) | 4817 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L004818](../../agents/web_agent.py#L4818) | 4818 | `"            compacted_query = compact_search_query(raw_query)"` | — |

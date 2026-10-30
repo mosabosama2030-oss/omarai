@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003219 إلى SRC-1AE03B9EC3-L004018
+- النطاق: SRC-1AE03B9EC3-L003212 إلى SRC-1AE03B9EC3-L004011
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003212](../../agents/web_agent.py#L3212) | 3212 | `"                        finish_reason=normalized_finish_reason or None,"` | — |
+| [SRC-1AE03B9EC3-L003213](../../agents/web_agent.py#L3213) | 3213 | `"                        request_started=True,"` | — |
+| [SRC-1AE03B9EC3-L003214](../../agents/web_agent.py#L3214) | 3214 | `"                        remote_response_received=True,"` | — |
+| [SRC-1AE03B9EC3-L003215](../../agents/web_agent.py#L3215) | 3215 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L003216](../../agents/web_agent.py#L3216) | 3216 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L003217](../../agents/web_agent.py#L3217) | 3217 | `"                message = choice[\"message\"]"` | — |
+| [SRC-1AE03B9EC3-L003218](../../agents/web_agent.py#L3218) | 3218 | `"                answer = message[\"content\"]"` | — |
 | [SRC-1AE03B9EC3-L003219](../../agents/web_agent.py#L3219) | 3219 | `"                if use_web_search:"` | — |
 | [SRC-1AE03B9EC3-L003220](../../agents/web_agent.py#L3220) | 3220 | `"                    for annotation in message.get(\"annotations\", []):"` | — |
 | [SRC-1AE03B9EC3-L003221](../../agents/web_agent.py#L3221) | 3221 | `"                        if not isinstance(annotation, dict) or annotation.get(\"type\") != \"url_citation\":"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L004009](../../agents/web_agent.py#L4009) | 4009 | `"            number = int(match.group(1))"` | — |
 | [SRC-1AE03B9EC3-L004010](../../agents/web_agent.py#L4010) | 4010 | `"            if 1 <= number <= source_count:"` | — |
 | [SRC-1AE03B9EC3-L004011](../../agents/web_agent.py#L4011) | 4011 | `"                return match.group(0)"` | — |
-| [SRC-1AE03B9EC3-L004012](../../agents/web_agent.py#L4012) | 4012 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
-| [SRC-1AE03B9EC3-L004013](../../agents/web_agent.py#L4013) | 4013 | `"            return \"\""` | — |
-| [SRC-1AE03B9EC3-L004014](../../agents/web_agent.py#L4014) | 4014 | `""` | — |
-| [SRC-1AE03B9EC3-L004015](../../agents/web_agent.py#L4015) | 4015 | `"        clean_answer = re.sub(r\"\\[المصدر\\s+(\\d+)\\]\", replace, answer)"` | — |
-| [SRC-1AE03B9EC3-L004016](../../agents/web_agent.py#L4016) | 4016 | `"        return clean_answer, warnings"` | — |
-| [SRC-1AE03B9EC3-L004017](../../agents/web_agent.py#L4017) | 4017 | `""` | — |
-| [SRC-1AE03B9EC3-L004018](../../agents/web_agent.py#L4018) | 4018 | `"    @staticmethod"` | — |

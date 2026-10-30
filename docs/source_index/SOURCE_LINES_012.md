@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002419 إلى SRC-1AE03B9EC3-L003218
+- النطاق: SRC-1AE03B9EC3-L002412 إلى SRC-1AE03B9EC3-L003211
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `"            return [], str(exc)"` | — |
+| [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"        for source in sources[:MAX_FETCHED_PAGES]:"` | — |
+| [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L002415](../../agents/web_agent.py#L2415) | 2415 | `"                title, page_text = self._fetch_page(source[\"url\"])"` | — |
+| [SRC-1AE03B9EC3-L002416](../../agents/web_agent.py#L2416) | 2416 | `"            except (AgentDependencyError, RuntimeError):"` | — |
+| [SRC-1AE03B9EC3-L002417](../../agents/web_agent.py#L2417) | 2417 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L002418](../../agents/web_agent.py#L2418) | 2418 | `"            if title:"` | — |
 | [SRC-1AE03B9EC3-L002419](../../agents/web_agent.py#L2419) | 2419 | `"                source[\"title\"] = title"` | — |
 | [SRC-1AE03B9EC3-L002420](../../agents/web_agent.py#L2420) | 2420 | `"            if page_text:"` | — |
 | [SRC-1AE03B9EC3-L002421](../../agents/web_agent.py#L2421) | 2421 | `"                source[\"page_text\"] = page_text"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L003209](../../agents/web_agent.py#L3209) | 3209 | `"                        requested_model=requested_model,"` | — |
 | [SRC-1AE03B9EC3-L003210](../../agents/web_agent.py#L3210) | 3210 | `"                        attempted_model=candidate_model,"` | — |
 | [SRC-1AE03B9EC3-L003211](../../agents/web_agent.py#L3211) | 3211 | `"                        status=diagnostic_status,"` | — |
-| [SRC-1AE03B9EC3-L003212](../../agents/web_agent.py#L3212) | 3212 | `"                        finish_reason=normalized_finish_reason or None,"` | — |
-| [SRC-1AE03B9EC3-L003213](../../agents/web_agent.py#L3213) | 3213 | `"                        request_started=True,"` | — |
-| [SRC-1AE03B9EC3-L003214](../../agents/web_agent.py#L3214) | 3214 | `"                        remote_response_received=True,"` | — |
-| [SRC-1AE03B9EC3-L003215](../../agents/web_agent.py#L3215) | 3215 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L003216](../../agents/web_agent.py#L3216) | 3216 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L003217](../../agents/web_agent.py#L3217) | 3217 | `"                message = choice[\"message\"]"` | — |
-| [SRC-1AE03B9EC3-L003218](../../agents/web_agent.py#L3218) | 3218 | `"                answer = message[\"content\"]"` | — |

@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **115**
 - ملفات Python المحللة: **69**
-- تعريفات Python المفهرسة: **1491**
+- تعريفات Python المفهرسة: **1492**
 - تعريفات Python موثقة بوجود Docstring: **253**
-- تعريفات Python بلا Docstring: **934**
+- تعريفات Python بلا Docstring: **935**
 - تعريفات لا ينطبق عليها Docstring: **304**
 - الرموز الساكنة الإضافية: **1860**
-- الأسطر النصية المفهرسة حرفيًا: **39379**
+- الأسطر النصية المفهرسة حرفيًا: **39400**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 11879 | 296 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
-| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 6466 | 169 | جرد الملف + AST Python |
+| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 6766 | 176 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
@@ -133,7 +133,7 @@
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 6375 | 160 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
-| FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 4258 | 103 | جرد الملف + AST Python |
+| FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 4885 | 117 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -354,11 +354,11 @@
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L182) | دالة | classify_social_source.has_term | لا توجد Docstring. | ناقص | 182 | [SRC-3AA6165B18-L000182](../agents/research_guardrails.py#L182) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L203) | دالة | apply_source_guardrails | Apply official-domain, current-evidence, and explicit social-mode guards. | موثق | 203 | [SRC-3AA6165B18-L000203](../agents/research_guardrails.py#L203) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L240) | دالة | apply_source_guardrails.reject | لا توجد Docstring. | ناقص | 240 | [SRC-3AA6165B18-L000240](../agents/research_guardrails.py#L240) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L20) | متغير/ثابت Python | MAX_PIPELINE_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-60066C6786-L000020](../agents/research_pipeline.py#L20) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | متغير/ثابت Python | MAX_PIPELINE_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L24) | دالة | _clean_aspects | لا توجد Docstring. | ناقص | 24 | [SRC-60066C6786-L000024](../agents/research_pipeline.py#L24) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L43) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 43 | [SRC-60066C6786-L000043](../agents/research_pipeline.py#L43) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L95) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 95 | [SRC-60066C6786-L000095](../agents/research_pipeline.py#L95) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | متغير/ثابت Python | MAX_PIPELINE_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L22) | متغير/ثابت Python | MAX_PIPELINE_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-60066C6786-L000022](../agents/research_pipeline.py#L22) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L25) | دالة | _clean_aspects | لا توجد Docstring. | ناقص | 25 | [SRC-60066C6786-L000025](../agents/research_pipeline.py#L25) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L44) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 44 | [SRC-60066C6786-L000044](../agents/research_pipeline.py#L44) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L102) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 102 | [SRC-60066C6786-L000102](../agents/research_pipeline.py#L102) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1325,6 +1325,7 @@
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L70) | دالة | test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores | لا توجد Docstring. | ناقص | 70 | [SRC-96F6863E3C-L000070](../tests/test_research_pipeline.py#L70) |
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L73) | دالة | test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores.matcher | لا توجد Docstring. | ناقص | 73 | [SRC-96F6863E3C-L000073](../tests/test_research_pipeline.py#L73) |
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L96) | دالة | test_fallback_plan_exposes_same_unified_pipeline_contract | لا توجد Docstring. | ناقص | 96 | [SRC-96F6863E3C-L000096](../tests/test_research_pipeline.py#L96) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L106) | دالة | test_semantic_matcher_failure_is_degraded_without_aborting_pipeline | لا توجد Docstring. | ناقص | 106 | [SRC-96F6863E3C-L000106](../tests/test_research_pipeline.py#L106) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
@@ -1800,9 +1801,9 @@
 | [agents/research.py](../agents/research.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_FUSED_RESULTS | 22 | [SRC-59CF4B7DE8-L000022](../agents/research.py#L22) |
 | [agents/research.py](../agents/research.py#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 59 | [SRC-59CF4B7DE8-L000059](../agents/research.py#L59) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 13 | [SRC-3AA6165B18-L000013](../agents/research_guardrails.py#L13) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_ASPECTS | 15 | [SRC-60066C6786-L000015](../agents/research_pipeline.py#L15) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_QUESTION_CHARS | 20 | [SRC-60066C6786-L000020](../agents/research_pipeline.py#L20) |
-| [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_SOURCES | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_ASPECTS | 16 | [SRC-60066C6786-L000016](../agents/research_pipeline.py#L16) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_QUESTION_CHARS | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_SOURCES | 22 | [SRC-60066C6786-L000022](../agents/research_pipeline.py#L22) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |

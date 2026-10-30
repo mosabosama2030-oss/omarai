@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005619 إلى SRC-1AE03B9EC3-L006418
+- النطاق: SRC-1AE03B9EC3-L005612 إلى SRC-1AE03B9EC3-L006411
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005612](../../agents/web_agent.py#L5612) | 5612 | `"        report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
+| [SRC-1AE03B9EC3-L005613](../../agents/web_agent.py#L5613) | 5613 | `"        report[\"distinct_registrable_domains\"] = len(independent_domains)"` | — |
+| [SRC-1AE03B9EC3-L005614](../../agents/web_agent.py#L5614) | 5614 | `"        report[\"independent_sources\"] = len(independent_domains)"` | — |
+| [SRC-1AE03B9EC3-L005615](../../agents/web_agent.py#L5615) | 5615 | `"        report[\"providers_used\"] = sorted({"` | — |
+| [SRC-1AE03B9EC3-L005616](../../agents/web_agent.py#L5616) | 5616 | `"            str(provider)"` | — |
+| [SRC-1AE03B9EC3-L005617](../../agents/web_agent.py#L5617) | 5617 | `"            for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005618](../../agents/web_agent.py#L5618) | 5618 | `"            for provider in source.get(\"providers\", [])"` | — |
 | [SRC-1AE03B9EC3-L005619](../../agents/web_agent.py#L5619) | 5619 | `"            if provider"` | — |
 | [SRC-1AE03B9EC3-L005620](../../agents/web_agent.py#L5620) | 5620 | `"        })"` | — |
 | [SRC-1AE03B9EC3-L005621](../../agents/web_agent.py#L5621) | 5621 | `"        report[\"provider_counts\"] = {"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L006409](../../agents/web_agent.py#L6409) | 6409 | `"                \"attempted_with_usable_sources\" if search_attempted and sources"` | — |
 | [SRC-1AE03B9EC3-L006410](../../agents/web_agent.py#L6410) | 6410 | `"                else \"attempted_no_usable_sources\" if search_attempted"` | — |
 | [SRC-1AE03B9EC3-L006411](../../agents/web_agent.py#L6411) | 6411 | `"                else \"not_attempted\""` | — |
-| [SRC-1AE03B9EC3-L006412](../../agents/web_agent.py#L6412) | 6412 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L006413](../../agents/web_agent.py#L6413) | 6413 | `"        report[\"usable_sources_after_filtering\"] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L006414](../../agents/web_agent.py#L6414) | 6414 | `"        report[\"research_quality\"] = research_quality"` | — |
-| [SRC-1AE03B9EC3-L006415](../../agents/web_agent.py#L6415) | 6415 | `"        report[\"research_quality_semantics\"] = \"process_coverage_not_factual_probability\""` | — |
-| [SRC-1AE03B9EC3-L006416](../../agents/web_agent.py#L6416) | 6416 | `"        report[\"answer_evidence_status\"] = answer_evidence_status"` | — |
-| [SRC-1AE03B9EC3-L006417](../../agents/web_agent.py#L6417) | 6417 | `"        report[\"distinct_registrable_domains\"] = len(distinct_domains)"` | — |
-| [SRC-1AE03B9EC3-L006418](../../agents/web_agent.py#L6418) | 6418 | `"        report[\"independent_sources\"] = len(distinct_domains)  # Legacy alias; not editorial independence."` | — |

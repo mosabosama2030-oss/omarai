@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004819 إلى SRC-1AE03B9EC3-L005618
+- النطاق: SRC-1AE03B9EC3-L004812 إلى SRC-1AE03B9EC3-L005611
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004812](../../agents/web_agent.py#L4812) | 4812 | `"        if not isinstance(raw_plan_queries, list):"` | — |
+| [SRC-1AE03B9EC3-L004813](../../agents/web_agent.py#L4813) | 4813 | `"            raw_plan_queries = []"` | — |
+| [SRC-1AE03B9EC3-L004814](../../agents/web_agent.py#L4814) | 4814 | `"        normalized_plan_queries = []"` | — |
+| [SRC-1AE03B9EC3-L004815](../../agents/web_agent.py#L4815) | 4815 | `"        for raw_query in raw_plan_queries:"` | — |
+| [SRC-1AE03B9EC3-L004816](../../agents/web_agent.py#L4816) | 4816 | `"            if not isinstance(raw_query, str) or not raw_query.strip():"` | — |
+| [SRC-1AE03B9EC3-L004817](../../agents/web_agent.py#L4817) | 4817 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L004818](../../agents/web_agent.py#L4818) | 4818 | `"            compacted_query = compact_search_query(raw_query)"` | — |
 | [SRC-1AE03B9EC3-L004819](../../agents/web_agent.py#L4819) | 4819 | `"            if ("` | — |
 | [SRC-1AE03B9EC3-L004820](../../agents/web_agent.py#L4820) | 4820 | `"                compacted_query"` | — |
 | [SRC-1AE03B9EC3-L004821](../../agents/web_agent.py#L4821) | 4821 | `"                and _relevance_query_tokens(compacted_query)"` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L005609](../../agents/web_agent.py#L5609) | 5609 | `"        # available in provider diagnostics and are intentionally separate."` | — |
 | [SRC-1AE03B9EC3-L005610](../../agents/web_agent.py#L5610) | 5610 | `"        independent_domains = final_independent_domains"` | — |
 | [SRC-1AE03B9EC3-L005611](../../agents/web_agent.py#L5611) | 5611 | `"        report[\"unique_sources\"] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L005612](../../agents/web_agent.py#L5612) | 5612 | `"        report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
-| [SRC-1AE03B9EC3-L005613](../../agents/web_agent.py#L5613) | 5613 | `"        report[\"distinct_registrable_domains\"] = len(independent_domains)"` | — |
-| [SRC-1AE03B9EC3-L005614](../../agents/web_agent.py#L5614) | 5614 | `"        report[\"independent_sources\"] = len(independent_domains)"` | — |
-| [SRC-1AE03B9EC3-L005615](../../agents/web_agent.py#L5615) | 5615 | `"        report[\"providers_used\"] = sorted({"` | — |
-| [SRC-1AE03B9EC3-L005616](../../agents/web_agent.py#L5616) | 5616 | `"            str(provider)"` | — |
-| [SRC-1AE03B9EC3-L005617](../../agents/web_agent.py#L5617) | 5617 | `"            for source in sources"` | — |
-| [SRC-1AE03B9EC3-L005618](../../agents/web_agent.py#L5618) | 5618 | `"            for provider in source.get(\"providers\", [])"` | — |
