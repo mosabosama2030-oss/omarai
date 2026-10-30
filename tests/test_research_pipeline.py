@@ -160,12 +160,30 @@ def test_pipeline_marks_upstream_dialogue_context_resolution_as_completed():
         },
     )
 
-    assert result["contextual_question"] == "والضمان؟"
+    assert result["contextual_question"] == "ما ضمان iPhone 17 في مصر؟"
     assert result["task_spec"]["context_resolution"]["resolved_question"] == (
         "ما ضمان iPhone 17 في مصر؟"
     )
     assert result["stages"]["context_resolution"] == "completed"
     assert result["intent"]["context_available"] is True
+    assert result["query_strategy_matrix"]
+    assert all("iPhone 17" in item["query"] for item in result["query_strategy_matrix"])
+
+def test_pipeline_does_not_reuse_resolved_question_after_explicit_topic_shift():
+    result = build_research_pipeline(
+        "ما سعر سامسونج S26؟",
+        {"queries": ["سعر سامسونج S26"]},
+        intent_route="WEB_SIMPLE",
+        dialogue_context={
+            "resolved_question": "ما ضمان iPhone 17 في مصر؟",
+            "topic_shift": True,
+        },
+    )
+
+    assert result["contextual_question"] == "ما سعر سامسونج S26؟"
+    assert result["task_spec"]["context_resolution"]["resolved_question"] == (
+        "ما سعر سامسونج S26؟"
+    )
 
 def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():
     result = build_research_pipeline(
