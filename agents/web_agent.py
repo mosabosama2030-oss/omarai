@@ -53,11 +53,11 @@ from agents.research_guardrails import apply_source_guardrails
 from agents.research_completion import build_research_completion
 from agents.tool_execution_status import build_tool_execution_matrix
 from agents.task_understanding import (
-    build_query_strategy_matrix,
-    build_task_spec,
     reasoning_guidance_for_task_spec,
     validate_task_spec,
 )
+from agents.task_understanding import build_query_strategy_matrix, build_task_spec
+from agents.research_pipeline import build_research_pipeline, evaluate_research_evidence
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
@@ -4610,8 +4610,21 @@ class WebAgent:
         try:
             completion = build_research_completion(result)
             result["research_completion"] = completion
+            # Keep the public terminal state aligned with evidence warnings discovered
+            # by the final completion audit, including early/fallback result builders.
+            completion_phases = completion.get("phases")
+            completion_phases = (
+                completion_phases if isinstance(completion_phases, dict) else {}
+            )
+            if (
+                completion_phases.get("citation_support_screen") == "warning_signals_detected"
+                or completion.get("status") == "answer_generated_without_valid_citation_markers"
+            ):
+                result["pipeline_completion_status"] = "partial"
             if isinstance(result.get("search_report"), dict):
                 result["search_report"]["research_completion"] = completion
+                if result.get("pipeline_completion_status") == "partial":
+                    result["search_report"]["pipeline_completion_status"] = "partial"
         except Exception:
             # Diagnostics must never replace a valid answer with an internal error.
             result["research_completion"] = {
@@ -4714,12 +4727,13 @@ class WebAgent:
         # A small deterministic preflight catches requests whose required subject
         # or source is absent before the planner or search connectors are invoked.
         # This is intentionally limited to hard missing inputs, not optional details.
-        preflight_task_spec = build_task_spec(
+        preflight_pipeline = build_research_pipeline(
             working_question,
             mode=clean_mode,
             intent_route=intent_route,
             dialogue_context=context_override,
         )
+        preflight_task_spec = preflight_pipeline["task_spec"]
         missing_inputs = set(preflight_task_spec.get("missing_required_inputs") or [])
         actionable_missing_inputs = missing_inputs & {
             "official_destination_target_entity",
@@ -5033,30 +5047,30 @@ class WebAgent:
                     allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
-        task_spec = build_task_spec(
+        pipeline = build_research_pipeline(
             working_question,
+            plan,
             mode=clean_mode,
             intent_route=intent_route,
-            plan=plan,
             dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
+            compact_fn=compact_search_query,
         )
+        task_spec = pipeline["task_spec"]
         query_strategy_limit = (
             MAX_PLAN_QUERIES
             if clean_mode in {"deep", "latest", "social"}
             or intent_route in {"WEB_DEEP", "LEAD_GENERATION"}
             else 3
         )
-        query_strategy_matrix = build_query_strategy_matrix(
-            working_question,
-            task_spec,
-            plan.get("queries", []),
-            limit=query_strategy_limit,
-            compact_fn=compact_search_query,
-        )
+        query_strategy_matrix = pipeline["query_strategy_matrix"][:query_strategy_limit]
         if query_strategy_matrix:
             plan["queries"] = [item["query"] for item in query_strategy_matrix]
         plan["task_spec"] = task_spec
         plan["query_strategy_matrix"] = query_strategy_matrix
+        plan["research_pipeline"] = {
+            "aspects": pipeline["aspects"],
+            "stages": pipeline["stages"],
+        }
 
         final_topic_queries = []
         for raw_query in plan.get("queries", []):
@@ -5157,6 +5171,11 @@ class WebAgent:
         sources, initial_source_guardrails = apply_source_guardrails(
             working_question, clean_mode, plan, sources
         )
+        report["research_pipeline"] = {
+            "aspects": pipeline["aspects"],
+            "evidence": evaluate_research_evidence(pipeline["aspects"], sources),
+            "stages": pipeline["stages"],
+        }
         report["source_guardrails"] = {
             "initial": initial_source_guardrails,
             "initial_eligible_source_count": len(sources),
@@ -5555,6 +5574,11 @@ class WebAgent:
         sources, final_source_guardrails = apply_source_guardrails(
             working_question, clean_mode, plan, sources
         )
+        report["research_pipeline"] = {
+            "aspects": pipeline["aspects"],
+            "evidence": evaluate_research_evidence(pipeline["aspects"], sources),
+            "stages": pipeline["stages"],
+        }
         report["source_guardrails"]["final"] = final_source_guardrails
         report["source_guardrails"]["repair_candidates_before_final_filter"] = (
             pre_final_guardrail_count

@@ -67,7 +67,7 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
         seen["history"] = history
         seen["sources"] = sources
         seen["report"] = search_report
-        return "الإجابة: التقنية مناسبة للأسباب التالية [المصدر 1]."
+        return "الإجابة: يشرح هذا المصدر التقنية وسبب المقارنة [المصدر 1]."
 
     monkeypatch.setattr(agent, "_plan_search", plan)
     monkeypatch.setattr(agent, "_collect_research", collect)
@@ -89,6 +89,12 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     )
     assert result["search_report"]["claim_audit_semantics"] == (
         "model_assisted_not_independent_fact_check"
+    )
+    assert result["search_report"]["research_pipeline"]["stages"]["semantic_matching"] == (
+        "not_configured"
+    )
+    assert result["search_report"]["research_pipeline"]["evidence"]["claim_verification"] == (
+        "delegated_to_existing_validator"
     )
     assert result["search_report"]["distinct_registrable_domains"] == 2
     assert result["search_report"]["editorial_independence_status"] == "not_assessed"
@@ -2933,7 +2939,13 @@ def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
             "page_fetched": False,
         }],
         "research_quality": "partial",
-        "search_report": {},
+        "search_report": {"pipeline_completion_status": "completed"},
+        "pipeline_completion_status": "completed",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "final_answer_status": "model_answer_generated",
         "answer_coverage": {},
         "used_language_model": True,
         "used_web_search": True,
@@ -2948,6 +2960,9 @@ def test_web_answer_integrity_is_attached_without_live_network(monkeypatch):
     assert result["answer_integrity"]["potentially_unsupported_numeric_by_citation_count"] == 1
     assert result["answer_integrity"]["potentially_missing_target_count"] == 1
     assert result["task_fulfillment_status"] == "possible_gap_detected"
+    assert result["research_completion"]["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["pipeline_completion_status"] == "partial"
+    assert result["search_report"]["pipeline_completion_status"] == "partial"
     assert result["answer_coverage"]["lexical_screen_method"] == (
         "deterministic_lexical_screen_only_not_semantic_grading"
     )
