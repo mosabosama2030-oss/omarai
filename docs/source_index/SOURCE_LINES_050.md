@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **050**
-- سجلات الأسطر: **173**
-- النطاق: SRC-DE7EABE998-L000359 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **179**
+- النطاق: SRC-DE7EABE998-L000353 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000353](../../web/agent.html#L353) | 353 | `" box.appendChild(who);"` | — |
+| [SRC-DE7EABE998-L000354](../../web/agent.html#L354) | 354 | `" const linkedQuestion=(options&&options.question)\|\|(result&&result.question);"` | — |
+| [SRC-DE7EABE998-L000355](../../web/agent.html#L355) | 355 | `" if(role===\"assistant\"&&linkedQuestion){"` | — |
+| [SRC-DE7EABE998-L000356](../../web/agent.html#L356) | 356 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |
+| [SRC-DE7EABE998-L000357](../../web/agent.html#L357) | 357 | `"  context.textContent=\"ردًا على السؤال: \"+linkedQuestion;box.appendChild(context);"` | — |
+| [SRC-DE7EABE998-L000358](../../web/agent.html#L358) | 358 | `" }"` | — |
 | [SRC-DE7EABE998-L000359](../../web/agent.html#L359) | 359 | `" const bubble=document.createElement(\"div\");bubble.className=\"bubble\";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);"` | — |
 | [SRC-DE7EABE998-L000360](../../web/agent.html#L360) | 360 | `" if(result&&result.used_web_search!==true&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
 | [SRC-DE7EABE998-L000361](../../web/agent.html#L361) | 361 | `"  const notice=document.createElement(\"div\");notice.className=\"warning\";"` | — |
