@@ -205,6 +205,19 @@ def _configured_agent_concurrency_limit() -> int:
     return max(1, min(configured, 8))
 
 
+DEFAULT_HTTP_CONNECTION_LIMIT = 32
+MAX_HTTP_CONNECTION_LIMIT = 128
+
+
+def _configured_http_connection_limit() -> int:
+    """Return the bounded number of live HTTP handler threads for this process."""
+    try:
+        configured = int(os.getenv("OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS", "32").strip())
+    except ValueError:
+        configured = DEFAULT_HTTP_CONNECTION_LIMIT
+    return max(1, min(configured, MAX_HTTP_CONNECTION_LIMIT))
+
+
 BUILD_SHA_FILE = Path(__file__).resolve().parents[1] / "BUILD_SHA"
 _PLATFORM_BUILD_SHA_ENVIRONMENTS = (
     ("RAILWAY_GIT_COMMIT_SHA", "platform:railway"),
@@ -273,6 +286,9 @@ class Handler(BaseHTTPRequestHandler):
     RATE_LIMIT_REQUESTS = 20
     RATE_LIMIT_WINDOW_SECONDS = 60
     RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60
+    # Reserve the final bucket for clients beyond the per-process tracking ceiling.
+    MAX_RATE_LIMIT_CLIENT_BUCKETS = 4096
+    RATE_LIMIT_OVERFLOW_KEY = "__omarai_overflow__"
     AGENT_CONCURRENCY_LIMIT = _configured_agent_concurrency_limit()
     _agent_semaphore = threading.BoundedSemaphore(AGENT_CONCURRENCY_LIMIT)
 
@@ -370,6 +386,13 @@ class Handler(BaseHTTPRequestHandler):
                         cls._request_times.pop(key, None)
                 cls._rate_last_cleanup = now
 
+            if (
+                client_ip not in cls._request_times
+                and len(cls._request_times) >= max(1, cls.MAX_RATE_LIMIT_CLIENT_BUCKETS) - 1
+            ):
+                # Bound attacker-controlled cardinality. Excess identities share a
+                # conservative overflow bucket instead of allocating one deque per IP.
+                client_ip = cls.RATE_LIMIT_OVERFLOW_KEY
             events = cls._request_times[client_ip]
             while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:
                 events.popleft()
@@ -654,6 +677,60 @@ def answer_question(question, store):
     return {"answer": "أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.", "kind": "help", "lead_id": None}
 
 
+class BoundedThreadingHTTPServer(ThreadingHTTPServer):
+    """Threaded HTTP server with a hard process-local ceiling on handler threads."""
+
+    daemon_threads = True
+    overload_response = (
+        b"HTTP/1.1 503 Service Unavailable\\r\\n"
+        b"Connection: close\\r\\n"
+        b"Retry-After: 5\\r\\n"
+        b"Content-Length: 0\\r\\n\\r\\n"
+    )
+
+    def __init__(
+        self,
+        server_address,
+        request_handler_class,
+        bind_and_activate: bool = True,
+        *,
+        max_concurrent_connections: int | None = None,
+    ):
+        super().__init__(server_address, request_handler_class, bind_and_activate)
+        configured = (
+            _configured_http_connection_limit()
+            if max_concurrent_connections is None
+            else int(max_concurrent_connections)
+        )
+        limit = max(1, min(configured, MAX_HTTP_CONNECTION_LIMIT))
+        self.max_concurrent_connections = limit
+        self._connection_slots = threading.BoundedSemaphore(limit)
+
+    def process_request(self, request, client_address):
+        """Reject excess accepted sockets before creating another handler thread."""
+        if not self._connection_slots.acquire(blocking=False):
+            try:
+                request.sendall(self.overload_response)
+            except OSError:
+                pass
+            finally:
+                self.shutdown_request(request)
+            return
+        try:
+            super().process_request(request, client_address)
+        except BaseException:
+            # Thread creation can fail before a worker owns the reserved slot.
+            self._connection_slots.release()
+            raise
+
+    def process_request_thread(self, request, client_address):
+        """Return a slot after the handler has shut down the accepted socket."""
+        try:
+            super().process_request_thread(request, client_address)
+        finally:
+            self._connection_slots.release()
+
+
 def serve(host="127.0.0.1", port=8765):
     public_deployment = os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1"
     access_token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
@@ -664,8 +741,7 @@ def serve(host="127.0.0.1", port=8765):
                 "Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and "
                 "a private OMARAI_ACCESS_TOKEN of at least 32 characters."
             )
-    server = ThreadingHTTPServer((host, port), Handler)
-    server.daemon_threads = True
+    server = BoundedThreadingHTTPServer((host, port), Handler)
     print(f"Omarai running at http://{host}:{port} — Ctrl+C to stop")
     print("Web research agent: /   |   Lead workspace: /leads")
     try:
