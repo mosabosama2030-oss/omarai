@@ -165,6 +165,9 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     integrity = _dict(result.get("answer_integrity"))
     claim_ledger = _dict(result.get("claim_evidence_ledger"))
     claim_ledger_summary = _dict(claim_ledger.get("summary"))
+    claim_ledger_build_failure_count = int(
+        claim_ledger.get("status") == "not_run"
+    )
     out_of_range_citation_reference_count = _int(
         claim_ledger_summary.get("out_of_range_reference_count")
     ) or 0
@@ -187,6 +190,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
         max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
         + weak_citation_alignment_count
         + out_of_range_citation_reference_count
+        + claim_ledger_build_failure_count
     )
     fulfillment = str(
         result.get("task_fulfillment_status") or report.get("task_fulfillment_status") or ""
@@ -313,6 +317,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "weak_citation_alignment_count": weak_citation_alignment_count,
             "citation_support_warning_count": citation_support_warning_count,
             "out_of_range_citation_reference_count": out_of_range_citation_reference_count,
+            "claim_ledger_build_failure_count": claim_ledger_build_failure_count,
         },
         "counter_consistency": {
             "status": "mismatch_detected" if counter_issues else (
