@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **050**
-- سجلات الأسطر: **325**
-- النطاق: SRC-DE7EABE998-L000207 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **344**
+- النطاق: SRC-DE7EABE998-L000188 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000188](../../web/agent.html#L188) | 188 | `"  some_final_sources_read:\"قُرئ بعض الصفحات\",no_final_source_page_read:\"لم تُقرأ صفحات نهائية\","` | — |
+| [SRC-DE7EABE998-L000189](../../web/agent.html#L189) | 189 | `"  not_attempted_or_withheld:\"لم تُولد الإجابة أو حُجبت\",answer_generated:\"وُلّدت الإجابة\","` | — |
+| [SRC-DE7EABE998-L000190](../../web/agent.html#L190) | 190 | `"  not_completed:\"لم يكتمل\",failed_or_unavailable:\"فشل أو غير متاح\","` | — |
+| [SRC-DE7EABE998-L000191](../../web/agent.html#L191) | 191 | `"  not_run:\"لم يُنفذ\",not_performed:\"لم يُنفذ\",sources_retained:\"احتُفظ بمصادر\","` | — |
+| [SRC-DE7EABE998-L000192](../../web/agent.html#L192) | 192 | `"  rejected_all_candidates:\"رُفضت كل المرشحات\",no_eligible_sources:\"لا توجد مصادر مقبولة\","` | — |
+| [SRC-DE7EABE998-L000193](../../web/agent.html#L193) | 193 | `"  index_range_check_passed:\"فُحص نطاق أرقام الإحالات فقط\","` | — |
+| [SRC-DE7EABE998-L000194](../../web/agent.html#L194) | 194 | `"  invalid_index_references_removed:\"حُذفت إحالات خارج النطاق\","` | — |
+| [SRC-DE7EABE998-L000195](../../web/agent.html#L195) | 195 | `"  no_citation_markers_present:\"لا توجد علامات إحالة\",diagnostics_not_computed:\"تعذر احتساب التشخيص\""` | — |
+| [SRC-DE7EABE998-L000196](../../web/agent.html#L196) | 196 | `" };"` | — |
+| [SRC-DE7EABE998-L000197](../../web/agent.html#L197) | 197 | `" const completionSummary=completion&&completion.status"` | — |
+| [SRC-DE7EABE998-L000198](../../web/agent.html#L198) | 198 | `"  ?'<p class=\"'+([\"search_failed_or_incomplete\",\"execution_stopped_budget\",\"answer_generation_or_review_failed\",\"no_eligible_sources_after_filtering\",\"partial_answer_evidence_gaps_detected\"].includes(completion.status)?\"warning\":\"report-note\")+'\"><b>حالة إكمال البحث:</b> '+escapeHtml(completionStatusLabels[completion.status]\|\|completion.status)+'. هذه حالة تشغيلية وليست احتمالًا لصحة الإجابة.</p>'"` | — |
+| [SRC-DE7EABE998-L000199](../../web/agent.html#L199) | 199 | `"  :\"\";"` | — |
+| [SRC-DE7EABE998-L000200](../../web/agent.html#L200) | 200 | `" const completionPhaseRows=completion&&completion.phases&&typeof completion.phases===\"object\""` | — |
+| [SRC-DE7EABE998-L000201](../../web/agent.html#L201) | 201 | `"  ?Object.entries(completion.phases).map(([phase,state])=>'<li>'+escapeHtml(completionPhaseLabels[phase]\|\|phase)+': '+escapeHtml(completionStateLabels[state]\|\|state\|\|\"غير محدد\")+'</li>').join(\"\")"` | — |
+| [SRC-DE7EABE998-L000202](../../web/agent.html#L202) | 202 | `"  :\"\";"` | — |
+| [SRC-DE7EABE998-L000203](../../web/agent.html#L203) | 203 | `" const completionCounters=completion&&completion.counters&&typeof completion.counters===\"object\"?completion.counters:{};"` | — |
+| [SRC-DE7EABE998-L000204](../../web/agent.html#L204) | 204 | `" const completionCounterRows=["` | — |
+| [SRC-DE7EABE998-L000205](../../web/agent.html#L205) | 205 | `"  [completionCounters.queries_planned,\"استعلامًا مخططًا\"],"` | — |
+| [SRC-DE7EABE998-L000206](../../web/agent.html#L206) | 206 | `"  [completionCounters.queries_attempted,\"استعلامًا تمت محاولته\"],"` | — |
 | [SRC-DE7EABE998-L000207](../../web/agent.html#L207) | 207 | `"  [completionCounters.per_query_result_count_sum,\"مجموع أعداد النتائج المسجلة لكل استعلام، قبل إزالة التكرار\"],"` | — |
 | [SRC-DE7EABE998-L000208](../../web/agent.html#L208) | 208 | `"  [completionCounters.final_source_list_count,\"مصدرًا في القائمة النهائية\"],"` | — |
 | [SRC-DE7EABE998-L000209](../../web/agent.html#L209) | 209 | `"  [completionCounters.unique_normalized_url_count,\"رابطًا فريدًا بعد التطبيع\"],"` | — |
