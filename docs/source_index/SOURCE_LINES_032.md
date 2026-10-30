@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000645 إلى SRC-D4963BDA6A-L000092
+- النطاق: SRC-90FAA34ADE-L000634 إلى SRC-D4963BDA6A-L000081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000634](../../tests/fixtures/answer_quality_cases.json#L634) | 634 | `"        \"يطلب مصدر ساعات عمل كامل أو يذكر أن المعلومة غير كافية\""` | — |
+| [SRC-90FAA34ADE-L000635](../../tests/fixtures/answer_quality_cases.json#L635) | 635 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000636](../../tests/fixtures/answer_quality_cases.json#L636) | 636 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000637](../../tests/fixtures/answer_quality_cases.json#L637) | 637 | `"        \"يستنتج أن المتجر مفتوح طوال اليوم من وقت فتح واحد\","` | — |
+| [SRC-90FAA34ADE-L000638](../../tests/fixtures/answer_quality_cases.json#L638) | 638 | `"        \"ينسب ادعاء غير موجود إلى المصدر\""` | — |
+| [SRC-90FAA34ADE-L000639](../../tests/fixtures/answer_quality_cases.json#L639) | 639 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000640](../../tests/fixtures/answer_quality_cases.json#L640) | 640 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000641](../../tests/fixtures/answer_quality_cases.json#L641) | 641 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000642](../../tests/fixtures/answer_quality_cases.json#L642) | 642 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000643](../../tests/fixtures/answer_quality_cases.json#L643) | 643 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000644](../../tests/fixtures/answer_quality_cases.json#L644) | 644 | `"            \"title\": \"Store opening note\","` | — |
 | [SRC-90FAA34ADE-L000645](../../tests/fixtures/answer_quality_cases.json#L645) | 645 | `"            \"url\": \"https://shop.example.test/opening\","` | — |
 | [SRC-90FAA34ADE-L000646](../../tests/fixtures/answer_quality_cases.json#L646) | 646 | `"            \"snippet\": \"Doors open at 9:00 AM.\","` | — |
 | [SRC-90FAA34ADE-L000647](../../tests/fixtures/answer_quality_cases.json#L647) | 647 | `"            \"domain\": \"shop.example.test\","` | — |
@@ -814,14 +825,3 @@
 | [SRC-D4963BDA6A-L000079](../../tests/fixtures/answer_quality_reviews_template.json#L79) | 79 | `"      \"case_id\": \"AQ-015\","` | — |
 | [SRC-D4963BDA6A-L000080](../../tests/fixtures/answer_quality_reviews_template.json#L80) | 80 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000081](../../tests/fixtures/answer_quality_reviews_template.json#L81) | 81 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000082](../../tests/fixtures/answer_quality_reviews_template.json#L82) | 82 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000083](../../tests/fixtures/answer_quality_reviews_template.json#L83) | 83 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000084](../../tests/fixtures/answer_quality_reviews_template.json#L84) | 84 | `"      \"case_id\": \"AQ-016\","` | — |
-| [SRC-D4963BDA6A-L000085](../../tests/fixtures/answer_quality_reviews_template.json#L85) | 85 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000086](../../tests/fixtures/answer_quality_reviews_template.json#L86) | 86 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000087](../../tests/fixtures/answer_quality_reviews_template.json#L87) | 87 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000088](../../tests/fixtures/answer_quality_reviews_template.json#L88) | 88 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000089](../../tests/fixtures/answer_quality_reviews_template.json#L89) | 89 | `"      \"case_id\": \"AQ-017\","` | — |
-| [SRC-D4963BDA6A-L000090](../../tests/fixtures/answer_quality_reviews_template.json#L90) | 90 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000091](../../tests/fixtures/answer_quality_reviews_template.json#L91) | 91 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000092](../../tests/fixtures/answer_quality_reviews_template.json#L92) | 92 | `"    },"` | — |

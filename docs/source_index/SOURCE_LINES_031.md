@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000242 إلى SRC-90FAA34ADE-L000644
+- النطاق: SRC-03FF422A16-L000231 إلى SRC-90FAA34ADE-L000633
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000231](../../scripts/score_answer_quality_reviews.py#L231) | 231 | `"        corpus = load_json_object(args.corpus)"` | — |
+| [SRC-03FF422A16-L000232](../../scripts/score_answer_quality_reviews.py#L232) | 232 | `"        summary = summarize_reviews(reviews, corpus)"` | — |
+| [SRC-03FF422A16-L000233](../../scripts/score_answer_quality_reviews.py#L233) | 233 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-03FF422A16-L000234](../../scripts/score_answer_quality_reviews.py#L234) | 234 | `"        print(\"REVIEW SCORECARD INVALID: \" + str(exc), file=sys.stderr)"` | — |
+| [SRC-03FF422A16-L000235](../../scripts/score_answer_quality_reviews.py#L235) | 235 | `"        return 2"` | — |
+| [SRC-03FF422A16-L000236](../../scripts/score_answer_quality_reviews.py#L236) | 236 | `""` | — |
+| [SRC-03FF422A16-L000237](../../scripts/score_answer_quality_reviews.py#L237) | 237 | `"    output = json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True)"` | — |
+| [SRC-03FF422A16-L000238](../../scripts/score_answer_quality_reviews.py#L238) | 238 | `"    if args.out:"` | — |
+| [SRC-03FF422A16-L000239](../../scripts/score_answer_quality_reviews.py#L239) | 239 | `"        args.out.write_text(output + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-03FF422A16-L000240](../../scripts/score_answer_quality_reviews.py#L240) | 240 | `"    print(output)"` | — |
+| [SRC-03FF422A16-L000241](../../scripts/score_answer_quality_reviews.py#L241) | 241 | `"    return 0"` | — |
 | [SRC-03FF422A16-L000242](../../scripts/score_answer_quality_reviews.py#L242) | 242 | `""` | — |
 | [SRC-03FF422A16-L000243](../../scripts/score_answer_quality_reviews.py#L243) | 243 | `""` | — |
 | [SRC-03FF422A16-L000244](../../scripts/score_answer_quality_reviews.py#L244) | 244 | `"if __name__ == \"__main__\":"` | — |
@@ -823,14 +834,3 @@
 | [SRC-90FAA34ADE-L000631](../../tests/fixtures/answer_quality_cases.json#L631) | 631 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000632](../../tests/fixtures/answer_quality_cases.json#L632) | 632 | `"        \"يقول إن المقتطف لا يثبت استمرار العمل طوال اليوم\","` | — |
 | [SRC-90FAA34ADE-L000633](../../tests/fixtures/answer_quality_cases.json#L633) | 633 | `"        \"يميّز بوضوح بين المعلومة المذكورة والاستنتاج غير المدعوم\","` | — |
-| [SRC-90FAA34ADE-L000634](../../tests/fixtures/answer_quality_cases.json#L634) | 634 | `"        \"يطلب مصدر ساعات عمل كامل أو يذكر أن المعلومة غير كافية\""` | — |
-| [SRC-90FAA34ADE-L000635](../../tests/fixtures/answer_quality_cases.json#L635) | 635 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000636](../../tests/fixtures/answer_quality_cases.json#L636) | 636 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000637](../../tests/fixtures/answer_quality_cases.json#L637) | 637 | `"        \"يستنتج أن المتجر مفتوح طوال اليوم من وقت فتح واحد\","` | — |
-| [SRC-90FAA34ADE-L000638](../../tests/fixtures/answer_quality_cases.json#L638) | 638 | `"        \"ينسب ادعاء غير موجود إلى المصدر\""` | — |
-| [SRC-90FAA34ADE-L000639](../../tests/fixtures/answer_quality_cases.json#L639) | 639 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000640](../../tests/fixtures/answer_quality_cases.json#L640) | 640 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000641](../../tests/fixtures/answer_quality_cases.json#L641) | 641 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000642](../../tests/fixtures/answer_quality_cases.json#L642) | 642 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000643](../../tests/fixtures/answer_quality_cases.json#L643) | 643 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000644](../../tests/fixtures/answer_quality_cases.json#L644) | 644 | `"            \"title\": \"Store opening note\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000093 إلى SRC-4CCB1F172B-L000208
+- النطاق: SRC-D4963BDA6A-L000082 إلى SRC-4CCB1F172B-L000197
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000082](../../tests/fixtures/answer_quality_reviews_template.json#L82) | 82 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000083](../../tests/fixtures/answer_quality_reviews_template.json#L83) | 83 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000084](../../tests/fixtures/answer_quality_reviews_template.json#L84) | 84 | `"      \"case_id\": \"AQ-016\","` | — |
+| [SRC-D4963BDA6A-L000085](../../tests/fixtures/answer_quality_reviews_template.json#L85) | 85 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000086](../../tests/fixtures/answer_quality_reviews_template.json#L86) | 86 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000087](../../tests/fixtures/answer_quality_reviews_template.json#L87) | 87 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000088](../../tests/fixtures/answer_quality_reviews_template.json#L88) | 88 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000089](../../tests/fixtures/answer_quality_reviews_template.json#L89) | 89 | `"      \"case_id\": \"AQ-017\","` | — |
+| [SRC-D4963BDA6A-L000090](../../tests/fixtures/answer_quality_reviews_template.json#L90) | 90 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000091](../../tests/fixtures/answer_quality_reviews_template.json#L91) | 91 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000092](../../tests/fixtures/answer_quality_reviews_template.json#L92) | 92 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000093](../../tests/fixtures/answer_quality_reviews_template.json#L93) | 93 | `"    {"` | — |
 | [SRC-D4963BDA6A-L000094](../../tests/fixtures/answer_quality_reviews_template.json#L94) | 94 | `"      \"case_id\": \"AQ-018\","` | — |
 | [SRC-D4963BDA6A-L000095](../../tests/fixtures/answer_quality_reviews_template.json#L95) | 95 | `"      \"status\": \"NOT_TESTED\","` | — |
@@ -841,14 +852,3 @@
 | [SRC-4CCB1F172B-L000195](../../tests/test_answer_quality_corpus.py#L195) | 195 | `""` | — |
 | [SRC-4CCB1F172B-L000196](../../tests/test_answer_quality_corpus.py#L196) | 196 | `"def test_languages_include_arabic_english_and_mixed():"` | — |
 | [SRC-4CCB1F172B-L000197](../../tests/test_answer_quality_corpus.py#L197) | 197 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000198](../../tests/test_answer_quality_corpus.py#L198) | 198 | `"    langs = {c[\"language\"] for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000199](../../tests/test_answer_quality_corpus.py#L199) | 199 | `"    assert any(x.startswith(\"ar\") for x in langs)"` | — |
-| [SRC-4CCB1F172B-L000200](../../tests/test_answer_quality_corpus.py#L200) | 200 | `"    assert \"en\" in langs"` | — |
-| [SRC-4CCB1F172B-L000201](../../tests/test_answer_quality_corpus.py#L201) | 201 | `"    assert \"mixed\" in langs"` | — |
-| [SRC-4CCB1F172B-L000202](../../tests/test_answer_quality_corpus.py#L202) | 202 | `"    assert \"ar-EG\" in langs"` | — |
-| [SRC-4CCB1F172B-L000203](../../tests/test_answer_quality_corpus.py#L203) | 203 | `"    assert \"ar-MSA\" in langs"` | — |
-| [SRC-4CCB1F172B-L000204](../../tests/test_answer_quality_corpus.py#L204) | 204 | `""` | — |
-| [SRC-4CCB1F172B-L000205](../../tests/test_answer_quality_corpus.py#L205) | 205 | `""` | — |
-| [SRC-4CCB1F172B-L000206](../../tests/test_answer_quality_corpus.py#L206) | 206 | `"def test_documented_high_risk_examples_match_json_categories():"` | — |
-| [SRC-4CCB1F172B-L000207](../../tests/test_answer_quality_corpus.py#L207) | 207 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000208](../../tests/test_answer_quality_corpus.py#L208) | 208 | `"    by_id = {c[\"case_id\"]: c for c in data[\"cases\"]}"` | — |
