@@ -346,3 +346,38 @@ def test_model_http_429_from_all_models_is_bounded_and_does_not_leak_provider_bo
     ]
     assert [row["http_status_code"] for row in agent.generation_diagnostics] == [429, 429]
     assert "private provider detail" not in repr(agent.generation_diagnostics)
+
+
+@pytest.mark.parametrize("status_code", [401, 403])
+def test_model_auth_http_errors_are_classified_and_fallback_is_bounded(
+    monkeypatch, status_code
+):
+    from urllib.error import HTTPError
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "backup/model"
+    calls: list[str] = []
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        calls.append(model)
+        raise HTTPError(request.full_url, status_code, "private auth detail", None, None)
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    with pytest.raises(RuntimeError, match=f"HTTP {status_code}"):
+        agent._request_completion(
+            [{"role": "user", "content": "اختبار"}],
+            model="primary/model",
+        )
+
+    assert calls == ["primary/model", "backup/model"]
+    assert [row["status"] for row in agent.generation_diagnostics] == [
+        "unauthorized",
+        "unauthorized",
+    ]
+    assert [row["http_status_code"] for row in agent.generation_diagnostics] == [
+        status_code,
+        status_code,
+    ]
+    assert "private auth detail" not in repr(agent.generation_diagnostics)
