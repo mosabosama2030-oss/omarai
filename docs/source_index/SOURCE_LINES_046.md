@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000613 إلى SRC-F725E90B2A-L001412
+- النطاق: SRC-F725E90B2A-L000603 إلى SRC-F725E90B2A-L001402
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000603](../../tests/test_web_agent.py#L603) | 603 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
+| [SRC-F725E90B2A-L000604](../../tests/test_web_agent.py#L604) | 604 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000605](../../tests/test_web_agent.py#L605) | 605 | `"        \"electric car\", [\"facebook\"]"` | — |
+| [SRC-F725E90B2A-L000606](../../tests/test_web_agent.py#L606) | 606 | `"    )"` | — |
+| [SRC-F725E90B2A-L000607](../../tests/test_web_agent.py#L607) | 607 | `"    assert len(results) == 2  # one matching post for each explicitly configured page"` | — |
+| [SRC-F725E90B2A-L000608](../../tests/test_web_agent.py#L608) | 608 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000609](../../tests/test_web_agent.py#L609) | 609 | `"    assert all(item[\"provider\"] == \"facebook_pages_api\" for item in results)"` | — |
+| [SRC-F725E90B2A-L000610](../../tests/test_web_agent.py#L610) | 610 | `"    assert all(\"Electric car owners\" in item[\"snippet\"] for item in results)"` | — |
+| [SRC-F725E90B2A-L000611](../../tests/test_web_agent.py#L611) | 611 | `"    assert len(calls) == 2"` | — |
+| [SRC-F725E90B2A-L000612](../../tests/test_web_agent.py#L612) | 612 | `"    assert all(\"Bearer test-page-token\" == call[1][\"headers\"][\"Authorization\"] for call in calls)"` | — |
 | [SRC-F725E90B2A-L000613](../../tests/test_web_agent.py#L613) | 613 | `""` | — |
 | [SRC-F725E90B2A-L000614](../../tests/test_web_agent.py#L614) | 614 | `""` | — |
 | [SRC-F725E90B2A-L000615](../../tests/test_web_agent.py#L615) | 615 | `"def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypatch):"` | — |
@@ -806,13 +816,3 @@
 | [SRC-F725E90B2A-L001400](../../tests/test_web_agent.py#L1400) | 1400 | `"        sources=[source],"` | — |
 | [SRC-F725E90B2A-L001401](../../tests/test_web_agent.py#L1401) | 1401 | `"        search_warning=None,"` | — |
 | [SRC-F725E90B2A-L001402](../../tests/test_web_agent.py#L1402) | 1402 | `"        research_plan={\"depth\": \"standard\", \"queries\": [\"ما الذي يقوله المصدر؟\"]},"` | — |
-| [SRC-F725E90B2A-L001403](../../tests/test_web_agent.py#L1403) | 1403 | `"        search_report={},"` | — |
-| [SRC-F725E90B2A-L001404](../../tests/test_web_agent.py#L1404) | 1404 | `"    )"` | — |
-| [SRC-F725E90B2A-L001405](../../tests/test_web_agent.py#L1405) | 1405 | `""` | — |
-| [SRC-F725E90B2A-L001406](../../tests/test_web_agent.py#L1406) | 1406 | `"    messages = captured[\"messages\"]"` | — |
-| [SRC-F725E90B2A-L001407](../../tests/test_web_agent.py#L1407) | 1407 | `"    system_content = \"\\n\".join("` | — |
-| [SRC-F725E90B2A-L001408](../../tests/test_web_agent.py#L1408) | 1408 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
-| [SRC-F725E90B2A-L001409](../../tests/test_web_agent.py#L1409) | 1409 | `"    )"` | — |
-| [SRC-F725E90B2A-L001410](../../tests/test_web_agent.py#L1410) | 1410 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
-| [SRC-F725E90B2A-L001411](../../tests/test_web_agent.py#L1411) | 1411 | `""` | — |
-| [SRC-F725E90B2A-L001412](../../tests/test_web_agent.py#L1412) | 1412 | `"    assert answer == \"إجابة اختبارية.\""` | — |

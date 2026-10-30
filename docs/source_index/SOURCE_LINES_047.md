@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001413 إلى SRC-F725E90B2A-L002212
+- النطاق: SRC-F725E90B2A-L001403 إلى SRC-F725E90B2A-L002202
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001403](../../tests/test_web_agent.py#L1403) | 1403 | `"        search_report={},"` | — |
+| [SRC-F725E90B2A-L001404](../../tests/test_web_agent.py#L1404) | 1404 | `"    )"` | — |
+| [SRC-F725E90B2A-L001405](../../tests/test_web_agent.py#L1405) | 1405 | `""` | — |
+| [SRC-F725E90B2A-L001406](../../tests/test_web_agent.py#L1406) | 1406 | `"    messages = captured[\"messages\"]"` | — |
+| [SRC-F725E90B2A-L001407](../../tests/test_web_agent.py#L1407) | 1407 | `"    system_content = \"\\n\".join("` | — |
+| [SRC-F725E90B2A-L001408](../../tests/test_web_agent.py#L1408) | 1408 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
+| [SRC-F725E90B2A-L001409](../../tests/test_web_agent.py#L1409) | 1409 | `"    )"` | — |
+| [SRC-F725E90B2A-L001410](../../tests/test_web_agent.py#L1410) | 1410 | `"    user_messages = [message for message in messages if message[\"role\"] == \"user\"]"` | — |
+| [SRC-F725E90B2A-L001411](../../tests/test_web_agent.py#L1411) | 1411 | `""` | — |
+| [SRC-F725E90B2A-L001412](../../tests/test_web_agent.py#L1412) | 1412 | `"    assert answer == \"إجابة اختبارية.\""` | — |
 | [SRC-F725E90B2A-L001413](../../tests/test_web_agent.py#L1413) | 1413 | `"    assert len(user_messages) == 2"` | — |
 | [SRC-F725E90B2A-L001414](../../tests/test_web_agent.py#L1414) | 1414 | `"    assert \"سؤال المستخدم الأصلي\" in user_messages[0][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001415](../../tests/test_web_agent.py#L1415) | 1415 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
@@ -806,13 +816,3 @@
 | [SRC-F725E90B2A-L002200](../../tests/test_web_agent.py#L2200) | 2200 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L002201](../../tests/test_web_agent.py#L2201) | 2201 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L002202](../../tests/test_web_agent.py#L2202) | 2202 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002203](../../tests/test_web_agent.py#L2203) | 2203 | `"    }"` | — |
-| [SRC-F725E90B2A-L002204](../../tests/test_web_agent.py#L2204) | 2204 | `""` | — |
-| [SRC-F725E90B2A-L002205](../../tests/test_web_agent.py#L2205) | 2205 | `"    def fail_after_generic_provider_error(research_plan):"` | — |
-| [SRC-F725E90B2A-L002206](../../tests/test_web_agent.py#L2206) | 2206 | `"        # A generic failed diagnostic does not prove whether the network request"` | — |
-| [SRC-F725E90B2A-L002207](../../tests/test_web_agent.py#L2207) | 2207 | `"        # was actually sent; it must not be upgraded to a confirmed attempt."` | — |
-| [SRC-F725E90B2A-L002208](../../tests/test_web_agent.py#L2208) | 2208 | `"        agent._record_provider_diagnostic("` | — |
-| [SRC-F725E90B2A-L002209](../../tests/test_web_agent.py#L2209) | 2209 | `"            \"duckduckgo_html\","` | — |
-| [SRC-F725E90B2A-L002210](../../tests/test_web_agent.py#L2210) | 2210 | `"            research_plan[\"queries\"][0],"` | — |
-| [SRC-F725E90B2A-L002211](../../tests/test_web_agent.py#L2211) | 2211 | `"            \"failed\","` | — |
-| [SRC-F725E90B2A-L002212](../../tests/test_web_agent.py#L2212) | 2212 | `"            error=\"simulated failure before request send\","` | — |

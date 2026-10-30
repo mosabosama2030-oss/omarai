@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **952**
 - تعريفات لا ينطبق عليها Docstring: **305**
 - الرموز الساكنة الإضافية: **1867**
-- الأسطر النصية المفهرسة حرفيًا: **39961**
+- الأسطر النصية المفهرسة حرفيًا: **39971**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -131,7 +131,7 @@
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
-| FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 16373 | 406 | جرد الملف + AST Python |
+| FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 16711 | 416 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
@@ -1285,19 +1285,19 @@
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L42) | دالة | test_all_rejected_sources_are_not_mislabeled_as_no_results | لا توجد Docstring. | ناقص | 42 | [SRC-AFFCF23BD4-L000042](../tests/test_research_completion.py#L42) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L58) | دالة | test_snippet_only_results_do_not_claim_pages_were_read | لا توجد Docstring. | ناقص | 58 | [SRC-AFFCF23BD4-L000058](../tests/test_research_completion.py#L58) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L73) | دالة | test_answer_with_valid_citation_indices_still_discloses_semantic_gap | لا توجد Docstring. | ناقص | 73 | [SRC-AFFCF23BD4-L000073](../tests/test_research_completion.py#L73) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L93) | دالة | test_normalized_url_counters_and_mismatched_legacy_counters_are_exposed | لا توجد Docstring. | ناقص | 93 | [SRC-AFFCF23BD4-L000093](../tests/test_research_completion.py#L93) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L110) | دالة | test_counter_consistency_is_not_claimed_when_legacy_counters_are_missing | لا توجد Docstring. | ناقص | 110 | [SRC-AFFCF23BD4-L000110](../tests/test_research_completion.py#L110) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L119) | دالة | test_public_readability_marker_counts_read_page_without_exposing_text | لا توجد Docstring. | ناقص | 119 | [SRC-AFFCF23BD4-L000119](../tests/test_research_completion.py#L119) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L136) | دالة | test_ref_query_parameters_are_not_assumed_to_be_tracking_ids | لا توجد Docstring. | ناقص | 136 | [SRC-AFFCF23BD4-L000136](../tests/test_research_completion.py#L136) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L150) | دالة | test_unflagged_page_text_marker_is_counted_without_exposing_page_text | لا توجد Docstring. | ناقص | 150 | [SRC-AFFCF23BD4-L000150](../tests/test_research_completion.py#L150) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L165) | دالة | test_unresolved_citation_support_flags_prevent_completed_research_status | لا توجد Docstring. | ناقص | 165 | [SRC-AFFCF23BD4-L000165](../tests/test_research_completion.py#L165) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L205) | دالة | test_out_of_range_citation_reference_prevents_completed_research_status | لا توجد Docstring. | ناقص | 205 | [SRC-AFFCF23BD4-L000205](../tests/test_research_completion.py#L205) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L241) | دالة | test_missing_claim_ledger_prevents_completed_research_status | لا توجد Docstring. | ناقص | 241 | [SRC-AFFCF23BD4-L000241](../tests/test_research_completion.py#L241) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L268) | دالة | test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate | لا توجد Docstring. | ناقص | 268 | [SRC-AFFCF23BD4-L000268](../tests/test_research_completion.py#L268) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L304) | دالة | test_explicit_claim_ledger_build_failure_prevents_completed_status | لا توجد Docstring. | ناقص | 304 | [SRC-AFFCF23BD4-L000304](../tests/test_research_completion.py#L304) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L335) | دالة | test_unrecognized_claim_ledger_status_prevents_completed_status | لا توجد Docstring. | ناقص | 335 | [SRC-AFFCF23BD4-L000335](../tests/test_research_completion.py#L335) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L360) | دالة | test_lead_discovery_without_claim_ledger_is_not_a_ledger_build_failure | لا توجد Docstring. | ناقص | 360 | [SRC-AFFCF23BD4-L000360](../tests/test_research_completion.py#L360) |
-| [tests/test_research_completion.py](../tests/test_research_completion.py#L378) | دالة | test_truncated_claim_ledger_prevents_completed_research_status | لا توجد Docstring. | ناقص | 378 | [SRC-AFFCF23BD4-L000378](../tests/test_research_completion.py#L378) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L98) | دالة | test_normalized_url_counters_and_mismatched_legacy_counters_are_exposed | لا توجد Docstring. | ناقص | 98 | [SRC-AFFCF23BD4-L000098](../tests/test_research_completion.py#L98) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L115) | دالة | test_counter_consistency_is_not_claimed_when_legacy_counters_are_missing | لا توجد Docstring. | ناقص | 115 | [SRC-AFFCF23BD4-L000115](../tests/test_research_completion.py#L115) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L124) | دالة | test_public_readability_marker_counts_read_page_without_exposing_text | لا توجد Docstring. | ناقص | 124 | [SRC-AFFCF23BD4-L000124](../tests/test_research_completion.py#L124) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L141) | دالة | test_ref_query_parameters_are_not_assumed_to_be_tracking_ids | لا توجد Docstring. | ناقص | 141 | [SRC-AFFCF23BD4-L000141](../tests/test_research_completion.py#L141) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L155) | دالة | test_unflagged_page_text_marker_is_counted_without_exposing_page_text | لا توجد Docstring. | ناقص | 155 | [SRC-AFFCF23BD4-L000155](../tests/test_research_completion.py#L155) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L170) | دالة | test_unresolved_citation_support_flags_prevent_completed_research_status | لا توجد Docstring. | ناقص | 170 | [SRC-AFFCF23BD4-L000170](../tests/test_research_completion.py#L170) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L215) | دالة | test_out_of_range_citation_reference_prevents_completed_research_status | لا توجد Docstring. | ناقص | 215 | [SRC-AFFCF23BD4-L000215](../tests/test_research_completion.py#L215) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L251) | دالة | test_missing_claim_ledger_prevents_completed_research_status | لا توجد Docstring. | ناقص | 251 | [SRC-AFFCF23BD4-L000251](../tests/test_research_completion.py#L251) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L278) | دالة | test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate | لا توجد Docstring. | ناقص | 278 | [SRC-AFFCF23BD4-L000278](../tests/test_research_completion.py#L278) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L314) | دالة | test_explicit_claim_ledger_build_failure_prevents_completed_status | لا توجد Docstring. | ناقص | 314 | [SRC-AFFCF23BD4-L000314](../tests/test_research_completion.py#L314) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L345) | دالة | test_unrecognized_claim_ledger_status_prevents_completed_status | لا توجد Docstring. | ناقص | 345 | [SRC-AFFCF23BD4-L000345](../tests/test_research_completion.py#L345) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L370) | دالة | test_lead_discovery_without_claim_ledger_is_not_a_ledger_build_failure | لا توجد Docstring. | ناقص | 370 | [SRC-AFFCF23BD4-L000370](../tests/test_research_completion.py#L370) |
+| [tests/test_research_completion.py](../tests/test_research_completion.py#L388) | دالة | test_truncated_claim_ledger_prevents_completed_research_status | لا توجد Docstring. | ناقص | 388 | [SRC-AFFCF23BD4-L000388](../tests/test_research_completion.py#L388) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L24) | دالة | test_depth_deep_english_phrases | لا توجد Docstring. | ناقص | 24 | [SRC-01E35ABC46-L000024](../tests/test_research_guardrails.py#L24) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L30) | دالة | test_depth_deep_arabic_phrases | لا توجد Docstring. | ناقص | 30 | [SRC-01E35ABC46-L000030](../tests/test_research_guardrails.py#L30) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L36) | دالة | test_depth_standard_ordinary_questions | لا توجد Docstring. | ناقص | 36 | [SRC-01E35ABC46-L000036](../tests/test_research_guardrails.py#L36) |
