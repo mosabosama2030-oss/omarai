@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004734 إلى SRC-1AE03B9EC3-L005533
+- النطاق: SRC-1AE03B9EC3-L004729 إلى SRC-1AE03B9EC3-L005528
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004729](../../agents/web_agent.py#L4729) | 4729 | `"        # This is intentionally limited to hard missing inputs, not optional details."` | — |
+| [SRC-1AE03B9EC3-L004730](../../agents/web_agent.py#L4730) | 4730 | `"        preflight_pipeline = build_research_pipeline("` | — |
+| [SRC-1AE03B9EC3-L004731](../../agents/web_agent.py#L4731) | 4731 | `"            working_question,"` | — |
+| [SRC-1AE03B9EC3-L004732](../../agents/web_agent.py#L4732) | 4732 | `"            mode=clean_mode,"` | — |
+| [SRC-1AE03B9EC3-L004733](../../agents/web_agent.py#L4733) | 4733 | `"            intent_route=intent_route,"` | — |
 | [SRC-1AE03B9EC3-L004734](../../agents/web_agent.py#L4734) | 4734 | `"            dialogue_context=context_override,"` | — |
 | [SRC-1AE03B9EC3-L004735](../../agents/web_agent.py#L4735) | 4735 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L004736](../../agents/web_agent.py#L4736) | 4736 | `"        preflight_task_spec = preflight_pipeline[\"task_spec\"]"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L005526](../../agents/web_agent.py#L5526) | 5526 | `"                        report[\"queries_attempted\"] = None"` | — |
 | [SRC-1AE03B9EC3-L005527](../../agents/web_agent.py#L5527) | 5527 | `"                        report[\"queries_attempted_known\"] = False"` | — |
 | [SRC-1AE03B9EC3-L005528](../../agents/web_agent.py#L5528) | 5528 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L005529](../../agents/web_agent.py#L5529) | 5529 | `"                        try:"` | — |
-| [SRC-1AE03B9EC3-L005530](../../agents/web_agent.py#L5530) | 5530 | `"                            report[\"queries_attempted\"] = max(0, int(initial_attempt_count or 0)) + max("` | — |
-| [SRC-1AE03B9EC3-L005531](../../agents/web_agent.py#L5531) | 5531 | `"                                0, int(repair_attempt_count or 0)"` | — |
-| [SRC-1AE03B9EC3-L005532](../../agents/web_agent.py#L5532) | 5532 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L005533](../../agents/web_agent.py#L5533) | 5533 | `"                            report[\"queries_attempted_known\"] = True"` | — |

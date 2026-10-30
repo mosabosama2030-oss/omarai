@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006334 إلى SRC-EEF2E6447C-L000498
+- النطاق: SRC-1AE03B9EC3-L006329 إلى SRC-EEF2E6447C-L000493
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006329](../../agents/web_agent.py#L6329) | 6329 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006330](../../agents/web_agent.py#L6330) | 6330 | `"        report[\"answer_coverage\"] = answer_coverage"` | — |
+| [SRC-1AE03B9EC3-L006331](../../agents/web_agent.py#L6331) | 6331 | `"        report[\"coverage_repair_status\"] = coverage_repair_status"` | — |
+| [SRC-1AE03B9EC3-L006332](../../agents/web_agent.py#L6332) | 6332 | `"        report[\"coverage_repair_warning\"] = coverage_repair_warning"` | — |
+| [SRC-1AE03B9EC3-L006333](../../agents/web_agent.py#L6333) | 6333 | `"        answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get(\"requirement_queries\"))"` | — |
 | [SRC-1AE03B9EC3-L006334](../../agents/web_agent.py#L6334) | 6334 | `"        answer_coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
 | [SRC-1AE03B9EC3-L006335](../../agents/web_agent.py#L6335) | 6335 | `"        answer_coverage[\"potentially_missing_target_count\"] = answer_integrity[\"potentially_missing_target_count\"]"` | — |
 | [SRC-1AE03B9EC3-L006336](../../agents/web_agent.py#L6336) | 6336 | `"        answer_coverage[\"source_evidence_gap_count\"] = answer_integrity[\"source_evidence_gap_count\"]"` | — |
@@ -829,8 +834,3 @@
 | [SRC-EEF2E6447C-L000491](../../api/omarai.py#L491) | 491 | `"        if origin and self._origin_allowed(origin):"` | — |
 | [SRC-EEF2E6447C-L000492](../../api/omarai.py#L492) | 492 | `"            self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
 | [SRC-EEF2E6447C-L000493](../../api/omarai.py#L493) | 493 | `"            self.send_header(\"Vary\", \"Origin\")"` | — |
-| [SRC-EEF2E6447C-L000494](../../api/omarai.py#L494) | 494 | `"        self.end_headers()"` | — |
-| [SRC-EEF2E6447C-L000495](../../api/omarai.py#L495) | 495 | `"        self.wfile.write(body)"` | — |
-| [SRC-EEF2E6447C-L000496](../../api/omarai.py#L496) | 496 | `""` | — |
-| [SRC-EEF2E6447C-L000497](../../api/omarai.py#L497) | 497 | `"    def do_GET(self):"` | — |
-| [SRC-EEF2E6447C-L000498](../../api/omarai.py#L498) | 498 | `"        parsed = urlparse(self.path)"` | — |
