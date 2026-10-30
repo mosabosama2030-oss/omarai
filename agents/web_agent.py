@@ -4610,8 +4610,17 @@ class WebAgent:
         try:
             completion = build_research_completion(result)
             result["research_completion"] = completion
+            # Keep the public terminal state aligned with evidence warnings discovered
+            # by the final completion audit, including early/fallback result builders.
+            if completion.get("status") in {
+                "partial_answer_evidence_gaps_detected",
+                "answer_generated_without_valid_citation_markers",
+            }:
+                result["pipeline_completion_status"] = "partial"
             if isinstance(result.get("search_report"), dict):
                 result["search_report"]["research_completion"] = completion
+                if result.get("pipeline_completion_status") == "partial":
+                    result["search_report"]["pipeline_completion_status"] = "partial"
         except Exception:
             # Diagnostics must never replace a valid answer with an internal error.
             result["research_completion"] = {
