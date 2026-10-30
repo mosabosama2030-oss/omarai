@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005592 إلى SRC-1AE03B9EC3-L006391
+- النطاق: SRC-1AE03B9EC3-L005582 إلى SRC-1AE03B9EC3-L006381
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005582](../../agents/web_agent.py#L5582) | 5582 | `"                    or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
+| [SRC-1AE03B9EC3-L005583](../../agents/web_agent.py#L5583) | 5583 | `"                    or \"\""` | — |
+| [SRC-1AE03B9EC3-L005584](../../agents/web_agent.py#L5584) | 5584 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L005585](../../agents/web_agent.py#L5585) | 5585 | `"                for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005586](../../agents/web_agent.py#L5586) | 5586 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L005587](../../agents/web_agent.py#L5587) | 5587 | `"            final_domains.discard(\"\")"` | — |
+| [SRC-1AE03B9EC3-L005588](../../agents/web_agent.py#L5588) | 5588 | `"            evidence_repair[\"final_source_count\"] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L005589](../../agents/web_agent.py#L5589) | 5589 | `"            evidence_repair[\"final_independent_domain_count\"] = len(final_domains)"` | — |
+| [SRC-1AE03B9EC3-L005590](../../agents/web_agent.py#L5590) | 5590 | `"            evidence_repair[\"recovered\"] = ("` | — |
+| [SRC-1AE03B9EC3-L005591](../../agents/web_agent.py#L5591) | 5591 | `"                len(sources) >= 2 and len(final_domains) >= 2"` | — |
 | [SRC-1AE03B9EC3-L005592](../../agents/web_agent.py#L5592) | 5592 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005593](../../agents/web_agent.py#L5593) | 5593 | `"            evidence_repair[\"new_sources_added\"] = max("` | — |
 | [SRC-1AE03B9EC3-L005594](../../agents/web_agent.py#L5594) | 5594 | `"                0,"` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L006379](../../agents/web_agent.py#L6379) | 6379 | `"        uncited_reviewed_answer = ("` | — |
 | [SRC-1AE03B9EC3-L006380](../../agents/web_agent.py#L6380) | 6380 | `"            used_llm"` | — |
 | [SRC-1AE03B9EC3-L006381](../../agents/web_agent.py#L6381) | 6381 | `"            and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L006382](../../agents/web_agent.py#L6382) | 6382 | `"            and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006383](../../agents/web_agent.py#L6383) | 6383 | `"            and citation_validation[\"valid_citation_count\"] == 0"` | — |
-| [SRC-1AE03B9EC3-L006384](../../agents/web_agent.py#L6384) | 6384 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L006385](../../agents/web_agent.py#L6385) | 6385 | `"        if uncited_reviewed_answer:"` | — |
-| [SRC-1AE03B9EC3-L006386](../../agents/web_agent.py#L6386) | 6386 | `"            research_quality = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L006387](../../agents/web_agent.py#L6387) | 6387 | `"            citation_validation[\"claim_support\"] = \"not_established_no_valid_source_citations\""` | — |
-| [SRC-1AE03B9EC3-L006388](../../agents/web_agent.py#L6388) | 6388 | `"            answer_evidence_status = \"reviewed_answer_has_no_valid_citations\""` | — |
-| [SRC-1AE03B9EC3-L006389](../../agents/web_agent.py#L6389) | 6389 | `"            uncited_answer_warning = ("` | — |
-| [SRC-1AE03B9EC3-L006390](../../agents/web_agent.py#L6390) | 6390 | `"                \"اكتملت مراجعة النموذج، لكن الإجابة النهائية لا تحتوي على إحالات صالحة \""` | — |
-| [SRC-1AE03B9EC3-L006391](../../agents/web_agent.py#L6391) | 6391 | `"                \"إلى قائمة المصادر؛ لذلك صُنّفت جودة البحث «جزئية». وجود المصادر أو \""` | — |

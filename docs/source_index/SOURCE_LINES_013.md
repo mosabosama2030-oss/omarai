@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003192 إلى SRC-1AE03B9EC3-L003991
+- النطاق: SRC-1AE03B9EC3-L003182 إلى SRC-1AE03B9EC3-L003981
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003182](../../agents/web_agent.py#L3182) | 3182 | `"                    finish_reason.strip().lower()"` | — |
+| [SRC-1AE03B9EC3-L003183](../../agents/web_agent.py#L3183) | 3183 | `"                    if isinstance(finish_reason, str)"` | — |
+| [SRC-1AE03B9EC3-L003184](../../agents/web_agent.py#L3184) | 3184 | `"                    else \"\""` | — |
+| [SRC-1AE03B9EC3-L003185](../../agents/web_agent.py#L3185) | 3185 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L003186](../../agents/web_agent.py#L3186) | 3186 | `"                # This application consumes a final text completion from an"` | — |
+| [SRC-1AE03B9EC3-L003187](../../agents/web_agent.py#L3187) | 3187 | `"                # OpenAI-compatible /chat/completions endpoint. Fail closed when the"` | — |
+| [SRC-1AE03B9EC3-L003188](../../agents/web_agent.py#L3188) | 3188 | `"                # provider does not explicitly report the standardized \"stop\" reason."` | — |
+| [SRC-1AE03B9EC3-L003189](../../agents/web_agent.py#L3189) | 3189 | `"                if normalized_finish_reason != \"stop\":"` | — |
+| [SRC-1AE03B9EC3-L003190](../../agents/web_agent.py#L3190) | 3190 | `"                    if normalized_finish_reason in {\"length\", \"max_tokens\"}:"` | — |
+| [SRC-1AE03B9EC3-L003191](../../agents/web_agent.py#L3191) | 3191 | `"                        diagnostic_status = \"truncated\""` | — |
 | [SRC-1AE03B9EC3-L003192](../../agents/web_agent.py#L3192) | 3192 | `"                        last_error = RuntimeError("` | — |
 | [SRC-1AE03B9EC3-L003193](../../agents/web_agent.py#L3193) | 3193 | `"                            \"أعاد نموذج اللغة إجابة مبتورة بسبب الوصول إلى حد الرموز؛ \""` | — |
 | [SRC-1AE03B9EC3-L003194](../../agents/web_agent.py#L3194) | 3194 | `"                            \"لم تُقبل كإجابة مكتملة.\""` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L003979](../../agents/web_agent.py#L3979) | 3979 | `"            max_tokens=1700,"` | — |
 | [SRC-1AE03B9EC3-L003980](../../agents/web_agent.py#L3980) | 3980 | `"            temperature=0.0,"` | — |
 | [SRC-1AE03B9EC3-L003981](../../agents/web_agent.py#L3981) | 3981 | `"            timeout=self._effective_timeout(min(self.timeout, 12)),"` | — |
-| [SRC-1AE03B9EC3-L003982](../../agents/web_agent.py#L3982) | 3982 | `"            model=self.review_model,"` | — |
-| [SRC-1AE03B9EC3-L003983](../../agents/web_agent.py#L3983) | 3983 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003984](../../agents/web_agent.py#L3984) | 3984 | `"        start_marker = \"<<<OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-1AE03B9EC3-L003985](../../agents/web_agent.py#L3985) | 3985 | `"        end_marker = \"<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
-| [SRC-1AE03B9EC3-L003986](../../agents/web_agent.py#L3986) | 3986 | `"        final_answer = re.fullmatch("` | — |
-| [SRC-1AE03B9EC3-L003987](../../agents/web_agent.py#L3987) | 3987 | `"            r\"\\s*<<<OMARAI_FINAL_ANSWER>>>\\s*(.*?)\\s*<<<END_OMARAI_FINAL_ANSWER>>>\\s*\","` | — |
-| [SRC-1AE03B9EC3-L003988](../../agents/web_agent.py#L3988) | 3988 | `"            raw_review,"` | — |
-| [SRC-1AE03B9EC3-L003989](../../agents/web_agent.py#L3989) | 3989 | `"            flags=re.DOTALL,"` | — |
-| [SRC-1AE03B9EC3-L003990](../../agents/web_agent.py#L3990) | 3990 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003991](../../agents/web_agent.py#L3991) | 3991 | `"        if ("` | — |

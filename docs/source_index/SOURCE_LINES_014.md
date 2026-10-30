@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003992 إلى SRC-1AE03B9EC3-L004791
+- النطاق: SRC-1AE03B9EC3-L003982 إلى SRC-1AE03B9EC3-L004781
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003982](../../agents/web_agent.py#L3982) | 3982 | `"            model=self.review_model,"` | — |
+| [SRC-1AE03B9EC3-L003983](../../agents/web_agent.py#L3983) | 3983 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003984](../../agents/web_agent.py#L3984) | 3984 | `"        start_marker = \"<<<OMARAI_FINAL_ANSWER>>>\""` | — |
+| [SRC-1AE03B9EC3-L003985](../../agents/web_agent.py#L3985) | 3985 | `"        end_marker = \"<<<END_OMARAI_FINAL_ANSWER>>>\""` | — |
+| [SRC-1AE03B9EC3-L003986](../../agents/web_agent.py#L3986) | 3986 | `"        final_answer = re.fullmatch("` | — |
+| [SRC-1AE03B9EC3-L003987](../../agents/web_agent.py#L3987) | 3987 | `"            r\"\\s*<<<OMARAI_FINAL_ANSWER>>>\\s*(.*?)\\s*<<<END_OMARAI_FINAL_ANSWER>>>\\s*\","` | — |
+| [SRC-1AE03B9EC3-L003988](../../agents/web_agent.py#L3988) | 3988 | `"            raw_review,"` | — |
+| [SRC-1AE03B9EC3-L003989](../../agents/web_agent.py#L3989) | 3989 | `"            flags=re.DOTALL,"` | — |
+| [SRC-1AE03B9EC3-L003990](../../agents/web_agent.py#L3990) | 3990 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003991](../../agents/web_agent.py#L3991) | 3991 | `"        if ("` | — |
 | [SRC-1AE03B9EC3-L003992](../../agents/web_agent.py#L3992) | 3992 | `"            raw_review.count(start_marker) != 1"` | — |
 | [SRC-1AE03B9EC3-L003993](../../agents/web_agent.py#L3993) | 3993 | `"            or raw_review.count(end_marker) != 1"` | — |
 | [SRC-1AE03B9EC3-L003994](../../agents/web_agent.py#L3994) | 3994 | `"            or final_answer is None"` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L004779](../../agents/web_agent.py#L4779) | 4779 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
 | [SRC-1AE03B9EC3-L004780](../../agents/web_agent.py#L4780) | 4780 | `"                        general_answer[\"research_plan\"][\"dialogue_context\"] = context_override"` | — |
 | [SRC-1AE03B9EC3-L004781](../../agents/web_agent.py#L4781) | 4781 | `"                return self._annotate_intent_route("` | — |
-| [SRC-1AE03B9EC3-L004782](../../agents/web_agent.py#L4782) | 4782 | `"                    general_answer, intent_route, intent_reason, clean_mode"` | — |
-| [SRC-1AE03B9EC3-L004783](../../agents/web_agent.py#L4783) | 4783 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004784](../../agents/web_agent.py#L4784) | 4784 | `"            # Preserve the existing degraded-mode behavior when generation is unavailable:"` | — |
-| [SRC-1AE03B9EC3-L004785](../../agents/web_agent.py#L4785) | 4785 | `"            # run the current web pipeline rather than fabricate a model-only answer."` | — |
-| [SRC-1AE03B9EC3-L004786](../../agents/web_agent.py#L4786) | 4786 | `"            intent_route = \"WEB_SIMPLE\""` | — |
-| [SRC-1AE03B9EC3-L004787](../../agents/web_agent.py#L4787) | 4787 | `"            intent_reason = \"model_unavailable_fallback_to_existing_web_research\""` | — |
-| [SRC-1AE03B9EC3-L004788](../../agents/web_agent.py#L4788) | 4788 | `""` | — |
-| [SRC-1AE03B9EC3-L004789](../../agents/web_agent.py#L4789) | 4789 | `"        if context_override is None:"` | — |
-| [SRC-1AE03B9EC3-L004790](../../agents/web_agent.py#L4790) | 4790 | `"            # Preserve compatibility with existing integrations and test doubles."` | — |
-| [SRC-1AE03B9EC3-L004791](../../agents/web_agent.py#L4791) | 4791 | `"            plan = self._plan_search(question, clean_history)"` | — |

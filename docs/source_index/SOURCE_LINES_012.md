@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002392 إلى SRC-1AE03B9EC3-L003191
+- النطاق: SRC-1AE03B9EC3-L002382 إلى SRC-1AE03B9EC3-L003181
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002382](../../agents/web_agent.py#L2382) | 2382 | `"            page_text = _clean_text(bounded_text, MAX_PAGE_TEXT_CHARS)"` | — |
+| [SRC-1AE03B9EC3-L002383](../../agents/web_agent.py#L2383) | 2383 | `"            status = ("` | — |
+| [SRC-1AE03B9EC3-L002384](../../agents/web_agent.py#L2384) | 2384 | `"                \"empty_content\" if not page_text"` | — |
+| [SRC-1AE03B9EC3-L002385](../../agents/web_agent.py#L2385) | 2385 | `"                else \"partial_extraction\" if bytes_truncated or text_truncated"` | — |
+| [SRC-1AE03B9EC3-L002386](../../agents/web_agent.py#L2386) | 2386 | `"                else \"content_extracted\""` | — |
+| [SRC-1AE03B9EC3-L002387](../../agents/web_agent.py#L2387) | 2387 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002388](../../agents/web_agent.py#L2388) | 2388 | `"            return result(\"\", page_text, status)"` | — |
+| [SRC-1AE03B9EC3-L002389](../../agents/web_agent.py#L2389) | 2389 | `""` | — |
+| [SRC-1AE03B9EC3-L002390](../../agents/web_agent.py#L2390) | 2390 | `"        soup = BeautifulSoup(html, \"html.parser\")"` | — |
+| [SRC-1AE03B9EC3-L002391](../../agents/web_agent.py#L2391) | 2391 | `"        title = _clean_text(soup.title.get_text(\" \", strip=True), 300) if soup.title else \"\""` | — |
 | [SRC-1AE03B9EC3-L002392](../../agents/web_agent.py#L2392) | 2392 | `"        for element in soup(["` | — |
 | [SRC-1AE03B9EC3-L002393](../../agents/web_agent.py#L2393) | 2393 | `"            \"script\", \"style\", \"nav\", \"footer\", \"header\", \"noscript\","` | — |
 | [SRC-1AE03B9EC3-L002394](../../agents/web_agent.py#L2394) | 2394 | `"            \"svg\", \"form\", \"iframe\", \"template\""` | — |
@@ -806,13 +816,3 @@
 | [SRC-1AE03B9EC3-L003179](../../agents/web_agent.py#L3179) | 3179 | `"                    raise TypeError(\"invalid completion choice\")"` | — |
 | [SRC-1AE03B9EC3-L003180](../../agents/web_agent.py#L3180) | 3180 | `"                finish_reason = choice.get(\"finish_reason\")"` | — |
 | [SRC-1AE03B9EC3-L003181](../../agents/web_agent.py#L3181) | 3181 | `"                normalized_finish_reason = ("` | — |
-| [SRC-1AE03B9EC3-L003182](../../agents/web_agent.py#L3182) | 3182 | `"                    finish_reason.strip().lower()"` | — |
-| [SRC-1AE03B9EC3-L003183](../../agents/web_agent.py#L3183) | 3183 | `"                    if isinstance(finish_reason, str)"` | — |
-| [SRC-1AE03B9EC3-L003184](../../agents/web_agent.py#L3184) | 3184 | `"                    else \"\""` | — |
-| [SRC-1AE03B9EC3-L003185](../../agents/web_agent.py#L3185) | 3185 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L003186](../../agents/web_agent.py#L3186) | 3186 | `"                # This application consumes a final text completion from an"` | — |
-| [SRC-1AE03B9EC3-L003187](../../agents/web_agent.py#L3187) | 3187 | `"                # OpenAI-compatible /chat/completions endpoint. Fail closed when the"` | — |
-| [SRC-1AE03B9EC3-L003188](../../agents/web_agent.py#L3188) | 3188 | `"                # provider does not explicitly report the standardized \"stop\" reason."` | — |
-| [SRC-1AE03B9EC3-L003189](../../agents/web_agent.py#L3189) | 3189 | `"                if normalized_finish_reason != \"stop\":"` | — |
-| [SRC-1AE03B9EC3-L003190](../../agents/web_agent.py#L3190) | 3190 | `"                    if normalized_finish_reason in {\"length\", \"max_tokens\"}:"` | — |
-| [SRC-1AE03B9EC3-L003191](../../agents/web_agent.py#L3191) | 3191 | `"                        diagnostic_status = \"truncated\""` | — |
