@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000290 إلى SRC-686F71AA50-L000139
+- النطاق: SRC-1E32639872-L000290 إلى SRC-686F71AA50-L000131
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -451,73 +451,81 @@
 | [SRC-60066C6786-L000107](../../agents/research_pipeline.py#L107) | 107 | `"    mode: str = \"auto\","` | — |
 | [SRC-60066C6786-L000108](../../agents/research_pipeline.py#L108) | 108 | `"    intent_route: str = \"\","` | — |
 | [SRC-60066C6786-L000109](../../agents/research_pipeline.py#L109) | 109 | `"    dialogue_context: dict[str, Any] \| None = None,"` | — |
-| [SRC-60066C6786-L000110](../../agents/research_pipeline.py#L110) | 110 | `"    sources: list[dict[str, Any]] \| None = None,"` | — |
-| [SRC-60066C6786-L000111](../../agents/research_pipeline.py#L111) | 111 | `"    compact_fn: Callable[[str], str] \| None = None,"` | — |
-| [SRC-60066C6786-L000112](../../agents/research_pipeline.py#L112) | 112 | `"    semantic_matcher: Callable[[str, dict[str, Any]], Any] \| None = None,"` | — |
-| [SRC-60066C6786-L000113](../../agents/research_pipeline.py#L113) | 113 | `") -> dict[str, Any]:"` | — |
-| [SRC-60066C6786-L000114](../../agents/research_pipeline.py#L114) | 114 | `"    \"\"\"Run context→intent→task→aspects→queries→evidence as one auditable pipeline.\"\"\""` | — |
-| [SRC-60066C6786-L000115](../../agents/research_pipeline.py#L115) | 115 | `"    raw_question = question[:MAX_PIPELINE_QUESTION_CHARS] if isinstance(question, str) else \"\""` | — |
-| [SRC-60066C6786-L000116](../../agents/research_pipeline.py#L116) | 116 | `"    contextual_question = ("` | — |
-| [SRC-60066C6786-L000117](../../agents/research_pipeline.py#L117) | 117 | `"        resolve_followup_query(raw_question, history)"` | — |
-| [SRC-60066C6786-L000118](../../agents/research_pipeline.py#L118) | 118 | `"        if history and raw_question.strip()"` | — |
-| [SRC-60066C6786-L000119](../../agents/research_pipeline.py#L119) | 119 | `"        else raw_question"` | — |
-| [SRC-60066C6786-L000120](../../agents/research_pipeline.py#L120) | 120 | `"    )"` | — |
-| [SRC-60066C6786-L000121](../../agents/research_pipeline.py#L121) | 121 | `"    supplied_route = intent_route if isinstance(intent_route, str) else \"\""` | — |
-| [SRC-60066C6786-L000122](../../agents/research_pipeline.py#L122) | 122 | `"    intent = ("` | — |
-| [SRC-60066C6786-L000123](../../agents/research_pipeline.py#L123) | 123 | `"        {\"route\": supplied_route, \"reason\": \"upstream_route\", \"context_available\": bool(history),"` | — |
-| [SRC-60066C6786-L000124](../../agents/research_pipeline.py#L124) | 124 | `"         \"needs_clarification\": supplied_route == \"CLARIFY\"}"` | — |
-| [SRC-60066C6786-L000125](../../agents/research_pipeline.py#L125) | 125 | `"        if supplied_route in ROUTES"` | — |
-| [SRC-60066C6786-L000126](../../agents/research_pipeline.py#L126) | 126 | `"        else route_intent(contextual_question, history, mode=mode)"` | — |
-| [SRC-60066C6786-L000127](../../agents/research_pipeline.py#L127) | 127 | `"    )"` | — |
-| [SRC-60066C6786-L000128](../../agents/research_pipeline.py#L128) | 128 | `"    route = intent.get(\"route\", \"CLARIFY\")"` | — |
-| [SRC-60066C6786-L000129](../../agents/research_pipeline.py#L129) | 129 | `"    safe_plan = dict(plan) if isinstance(plan, dict) else {}"` | — |
-| [SRC-60066C6786-L000130](../../agents/research_pipeline.py#L130) | 130 | `"    task_spec = build_task_spec("` | — |
-| [SRC-60066C6786-L000131](../../agents/research_pipeline.py#L131) | 131 | `"        contextual_question,"` | — |
-| [SRC-60066C6786-L000132](../../agents/research_pipeline.py#L132) | 132 | `"        mode=mode,"` | — |
-| [SRC-60066C6786-L000133](../../agents/research_pipeline.py#L133) | 133 | `"        intent_route=route,"` | — |
-| [SRC-60066C6786-L000134](../../agents/research_pipeline.py#L134) | 134 | `"        plan=safe_plan,"` | — |
-| [SRC-60066C6786-L000135](../../agents/research_pipeline.py#L135) | 135 | `"        dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,"` | — |
+| [SRC-60066C6786-L000110](../../agents/research_pipeline.py#L110) | 110 | `"    task_spec: dict[str, Any] \| None = None,"` | — |
+| [SRC-60066C6786-L000111](../../agents/research_pipeline.py#L111) | 111 | `"    sources: list[dict[str, Any]] \| None = None,"` | — |
+| [SRC-60066C6786-L000112](../../agents/research_pipeline.py#L112) | 112 | `"    compact_fn: Callable[[str], str] \| None = None,"` | — |
+| [SRC-60066C6786-L000113](../../agents/research_pipeline.py#L113) | 113 | `"    semantic_matcher: Callable[[str, dict[str, Any]], Any] \| None = None,"` | — |
+| [SRC-60066C6786-L000114](../../agents/research_pipeline.py#L114) | 114 | `") -> dict[str, Any]:"` | — |
+| [SRC-60066C6786-L000115](../../agents/research_pipeline.py#L115) | 115 | `"    \"\"\"Run context→intent→task→aspects→queries→evidence as one auditable pipeline.\"\"\""` | — |
+| [SRC-60066C6786-L000116](../../agents/research_pipeline.py#L116) | 116 | `"    raw_question = question[:MAX_PIPELINE_QUESTION_CHARS] if isinstance(question, str) else \"\""` | — |
+| [SRC-60066C6786-L000117](../../agents/research_pipeline.py#L117) | 117 | `"    contextual_question = ("` | — |
+| [SRC-60066C6786-L000118](../../agents/research_pipeline.py#L118) | 118 | `"        resolve_followup_query(raw_question, history)"` | — |
+| [SRC-60066C6786-L000119](../../agents/research_pipeline.py#L119) | 119 | `"        if history and raw_question.strip()"` | — |
+| [SRC-60066C6786-L000120](../../agents/research_pipeline.py#L120) | 120 | `"        else raw_question"` | — |
+| [SRC-60066C6786-L000121](../../agents/research_pipeline.py#L121) | 121 | `"    )"` | — |
+| [SRC-60066C6786-L000122](../../agents/research_pipeline.py#L122) | 122 | `"    supplied_route = intent_route if isinstance(intent_route, str) else \"\""` | — |
+| [SRC-60066C6786-L000123](../../agents/research_pipeline.py#L123) | 123 | `"    intent = ("` | — |
+| [SRC-60066C6786-L000124](../../agents/research_pipeline.py#L124) | 124 | `"        {\"route\": supplied_route, \"reason\": \"upstream_route\", \"context_available\": bool(history),"` | — |
+| [SRC-60066C6786-L000125](../../agents/research_pipeline.py#L125) | 125 | `"         \"needs_clarification\": supplied_route == \"CLARIFY\"}"` | — |
+| [SRC-60066C6786-L000126](../../agents/research_pipeline.py#L126) | 126 | `"        if supplied_route in ROUTES"` | — |
+| [SRC-60066C6786-L000127](../../agents/research_pipeline.py#L127) | 127 | `"        else route_intent(contextual_question, history, mode=mode)"` | — |
+| [SRC-60066C6786-L000128](../../agents/research_pipeline.py#L128) | 128 | `"    )"` | — |
+| [SRC-60066C6786-L000129](../../agents/research_pipeline.py#L129) | 129 | `"    route = intent.get(\"route\", \"CLARIFY\")"` | — |
+| [SRC-60066C6786-L000130](../../agents/research_pipeline.py#L130) | 130 | `"    safe_plan = dict(plan) if isinstance(plan, dict) else {}"` | — |
+| [SRC-60066C6786-L000131](../../agents/research_pipeline.py#L131) | 131 | `"    reusable_task_spec = ("` | — |
+| [SRC-60066C6786-L000132](../../agents/research_pipeline.py#L132) | 132 | `"        task_spec"` | — |
+| [SRC-60066C6786-L000133](../../agents/research_pipeline.py#L133) | 133 | `"        if isinstance(task_spec, dict)"` | — |
+| [SRC-60066C6786-L000134](../../agents/research_pipeline.py#L134) | 134 | `"        and task_spec.get(\"schema\") == \"omarai.task_spec.v1\""` | — |
+| [SRC-60066C6786-L000135](../../agents/research_pipeline.py#L135) | 135 | `"        else None"` | — |
 | [SRC-60066C6786-L000136](../../agents/research_pipeline.py#L136) | 136 | `"    )"` | — |
-| [SRC-60066C6786-L000137](../../agents/research_pipeline.py#L137) | 137 | `"    aspects = _clean_aspects(task_spec, contextual_question)"` | — |
-| [SRC-60066C6786-L000138](../../agents/research_pipeline.py#L138) | 138 | `""` | — |
-| [SRC-60066C6786-L000139](../../agents/research_pipeline.py#L139) | 139 | `"    if route == \"CLARIFY\" or intent.get(\"needs_clarification\"):"` | — |
-| [SRC-60066C6786-L000140](../../agents/research_pipeline.py#L140) | 140 | `"        strategy_matrix: list[dict[str, str]] = []"` | — |
-| [SRC-60066C6786-L000141](../../agents/research_pipeline.py#L141) | 141 | `"        queries: list[str] = []"` | — |
-| [SRC-60066C6786-L000142](../../agents/research_pipeline.py#L142) | 142 | `"        query_status = \"blocked_pending_clarification\""` | — |
-| [SRC-60066C6786-L000143](../../agents/research_pipeline.py#L143) | 143 | `"    else:"` | — |
-| [SRC-60066C6786-L000144](../../agents/research_pipeline.py#L144) | 144 | `"        strategy_matrix = build_query_strategy_matrix("` | — |
-| [SRC-60066C6786-L000145](../../agents/research_pipeline.py#L145) | 145 | `"            contextual_question,"` | — |
-| [SRC-60066C6786-L000146](../../agents/research_pipeline.py#L146) | 146 | `"            task_spec,"` | — |
-| [SRC-60066C6786-L000147](../../agents/research_pipeline.py#L147) | 147 | `"            safe_plan.get(\"queries\", []),"` | — |
-| [SRC-60066C6786-L000148](../../agents/research_pipeline.py#L148) | 148 | `"            limit=8,"` | — |
-| [SRC-60066C6786-L000149](../../agents/research_pipeline.py#L149) | 149 | `"            compact_fn=compact_fn,"` | — |
-| [SRC-60066C6786-L000150](../../agents/research_pipeline.py#L150) | 150 | `"        )"` | — |
-| [SRC-60066C6786-L000151](../../agents/research_pipeline.py#L151) | 151 | `"        queries = [item[\"query\"] for item in strategy_matrix]"` | — |
-| [SRC-60066C6786-L000152](../../agents/research_pipeline.py#L152) | 152 | `"        query_status = \"completed\""` | — |
-| [SRC-60066C6786-L000153](../../agents/research_pipeline.py#L153) | 153 | `""` | — |
-| [SRC-60066C6786-L000154](../../agents/research_pipeline.py#L154) | 154 | `"    evidence = evaluate_research_evidence("` | — |
-| [SRC-60066C6786-L000155](../../agents/research_pipeline.py#L155) | 155 | `"        aspects, sources, semantic_matcher=semantic_matcher"` | — |
-| [SRC-60066C6786-L000156](../../agents/research_pipeline.py#L156) | 156 | `"    )"` | — |
-| [SRC-60066C6786-L000157](../../agents/research_pipeline.py#L157) | 157 | `"    return {"` | — |
-| [SRC-60066C6786-L000158](../../agents/research_pipeline.py#L158) | 158 | `"        \"contextual_question\": contextual_question,"` | — |
-| [SRC-60066C6786-L000159](../../agents/research_pipeline.py#L159) | 159 | `"        \"intent\": intent,"` | — |
-| [SRC-60066C6786-L000160](../../agents/research_pipeline.py#L160) | 160 | `"        \"task_spec\": task_spec,"` | — |
-| [SRC-60066C6786-L000161](../../agents/research_pipeline.py#L161) | 161 | `"        \"aspects\": aspects,"` | — |
-| [SRC-60066C6786-L000162](../../agents/research_pipeline.py#L162) | 162 | `"        \"query_strategy_matrix\": strategy_matrix,"` | — |
-| [SRC-60066C6786-L000163](../../agents/research_pipeline.py#L163) | 163 | `"        \"queries\": queries,"` | — |
-| [SRC-60066C6786-L000164](../../agents/research_pipeline.py#L164) | 164 | `"        \"evidence\": evidence,"` | — |
-| [SRC-60066C6786-L000165](../../agents/research_pipeline.py#L165) | 165 | `"        \"evidence_ledger\": evidence[\"lexical_ledger\"],"` | — |
-| [SRC-60066C6786-L000166](../../agents/research_pipeline.py#L166) | 166 | `"        \"stages\": {"` | — |
-| [SRC-60066C6786-L000167](../../agents/research_pipeline.py#L167) | 167 | `"            \"context_resolution\": \"completed\" if history else \"not_needed\","` | — |
-| [SRC-60066C6786-L000168](../../agents/research_pipeline.py#L168) | 168 | `"            \"intent_routing\": \"completed\","` | — |
-| [SRC-60066C6786-L000169](../../agents/research_pipeline.py#L169) | 169 | `"            \"task_understanding\": \"completed\","` | — |
-| [SRC-60066C6786-L000170](../../agents/research_pipeline.py#L170) | 170 | `"            \"aspect_extraction\": \"completed\","` | — |
-| [SRC-60066C6786-L000171](../../agents/research_pipeline.py#L171) | 171 | `"            \"query_planning\": query_status,"` | — |
-| [SRC-60066C6786-L000172](../../agents/research_pipeline.py#L172) | 172 | `"            \"lexical_matching\": \"evaluated\" if aspects and sources else \"not_assessed\","` | — |
-| [SRC-60066C6786-L000173](../../agents/research_pipeline.py#L173) | 173 | `"            \"semantic_matching\": evidence[\"semantic_matching\"][\"status\"],"` | — |
-| [SRC-60066C6786-L000174](../../agents/research_pipeline.py#L174) | 174 | `"            \"claim_verification\": evidence[\"claim_verification\"],"` | — |
-| [SRC-60066C6786-L000175](../../agents/research_pipeline.py#L175) | 175 | `"        },"` | — |
-| [SRC-60066C6786-L000176](../../agents/research_pipeline.py#L176) | 176 | `"    }"` | — |
+| [SRC-60066C6786-L000137](../../agents/research_pipeline.py#L137) | 137 | `"    resolved_task_spec = reusable_task_spec or build_task_spec("` | — |
+| [SRC-60066C6786-L000138](../../agents/research_pipeline.py#L138) | 138 | `"        contextual_question,"` | — |
+| [SRC-60066C6786-L000139](../../agents/research_pipeline.py#L139) | 139 | `"        mode=mode,"` | — |
+| [SRC-60066C6786-L000140](../../agents/research_pipeline.py#L140) | 140 | `"        intent_route=route,"` | — |
+| [SRC-60066C6786-L000141](../../agents/research_pipeline.py#L141) | 141 | `"        plan=safe_plan,"` | — |
+| [SRC-60066C6786-L000142](../../agents/research_pipeline.py#L142) | 142 | `"        dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,"` | — |
+| [SRC-60066C6786-L000143](../../agents/research_pipeline.py#L143) | 143 | `"    )"` | — |
+| [SRC-60066C6786-L000144](../../agents/research_pipeline.py#L144) | 144 | `"    task_spec = resolved_task_spec"` | — |
+| [SRC-60066C6786-L000145](../../agents/research_pipeline.py#L145) | 145 | `"    aspects = _clean_aspects(task_spec, contextual_question)"` | — |
+| [SRC-60066C6786-L000146](../../agents/research_pipeline.py#L146) | 146 | `""` | — |
+| [SRC-60066C6786-L000147](../../agents/research_pipeline.py#L147) | 147 | `"    if route == \"CLARIFY\" or intent.get(\"needs_clarification\"):"` | — |
+| [SRC-60066C6786-L000148](../../agents/research_pipeline.py#L148) | 148 | `"        strategy_matrix: list[dict[str, str]] = []"` | — |
+| [SRC-60066C6786-L000149](../../agents/research_pipeline.py#L149) | 149 | `"        queries: list[str] = []"` | — |
+| [SRC-60066C6786-L000150](../../agents/research_pipeline.py#L150) | 150 | `"        query_status = \"blocked_pending_clarification\""` | — |
+| [SRC-60066C6786-L000151](../../agents/research_pipeline.py#L151) | 151 | `"    else:"` | — |
+| [SRC-60066C6786-L000152](../../agents/research_pipeline.py#L152) | 152 | `"        strategy_matrix = build_query_strategy_matrix("` | — |
+| [SRC-60066C6786-L000153](../../agents/research_pipeline.py#L153) | 153 | `"            contextual_question,"` | — |
+| [SRC-60066C6786-L000154](../../agents/research_pipeline.py#L154) | 154 | `"            task_spec,"` | — |
+| [SRC-60066C6786-L000155](../../agents/research_pipeline.py#L155) | 155 | `"            safe_plan.get(\"queries\", []),"` | — |
+| [SRC-60066C6786-L000156](../../agents/research_pipeline.py#L156) | 156 | `"            limit=8,"` | — |
+| [SRC-60066C6786-L000157](../../agents/research_pipeline.py#L157) | 157 | `"            compact_fn=compact_fn,"` | — |
+| [SRC-60066C6786-L000158](../../agents/research_pipeline.py#L158) | 158 | `"        )"` | — |
+| [SRC-60066C6786-L000159](../../agents/research_pipeline.py#L159) | 159 | `"        queries = [item[\"query\"] for item in strategy_matrix]"` | — |
+| [SRC-60066C6786-L000160](../../agents/research_pipeline.py#L160) | 160 | `"        query_status = \"completed\""` | — |
+| [SRC-60066C6786-L000161](../../agents/research_pipeline.py#L161) | 161 | `""` | — |
+| [SRC-60066C6786-L000162](../../agents/research_pipeline.py#L162) | 162 | `"    evidence = evaluate_research_evidence("` | — |
+| [SRC-60066C6786-L000163](../../agents/research_pipeline.py#L163) | 163 | `"        aspects, sources, semantic_matcher=semantic_matcher"` | — |
+| [SRC-60066C6786-L000164](../../agents/research_pipeline.py#L164) | 164 | `"    )"` | — |
+| [SRC-60066C6786-L000165](../../agents/research_pipeline.py#L165) | 165 | `"    return {"` | — |
+| [SRC-60066C6786-L000166](../../agents/research_pipeline.py#L166) | 166 | `"        \"contextual_question\": contextual_question,"` | — |
+| [SRC-60066C6786-L000167](../../agents/research_pipeline.py#L167) | 167 | `"        \"intent\": intent,"` | — |
+| [SRC-60066C6786-L000168](../../agents/research_pipeline.py#L168) | 168 | `"        \"task_spec\": task_spec,"` | — |
+| [SRC-60066C6786-L000169](../../agents/research_pipeline.py#L169) | 169 | `"        \"aspects\": aspects,"` | — |
+| [SRC-60066C6786-L000170](../../agents/research_pipeline.py#L170) | 170 | `"        \"query_strategy_matrix\": strategy_matrix,"` | — |
+| [SRC-60066C6786-L000171](../../agents/research_pipeline.py#L171) | 171 | `"        \"queries\": queries,"` | — |
+| [SRC-60066C6786-L000172](../../agents/research_pipeline.py#L172) | 172 | `"        \"evidence\": evidence,"` | — |
+| [SRC-60066C6786-L000173](../../agents/research_pipeline.py#L173) | 173 | `"        \"evidence_ledger\": evidence[\"lexical_ledger\"],"` | — |
+| [SRC-60066C6786-L000174](../../agents/research_pipeline.py#L174) | 174 | `"        \"stages\": {"` | — |
+| [SRC-60066C6786-L000175](../../agents/research_pipeline.py#L175) | 175 | `"            \"context_resolution\": \"completed\" if history else \"not_needed\","` | — |
+| [SRC-60066C6786-L000176](../../agents/research_pipeline.py#L176) | 176 | `"            \"intent_routing\": \"completed\","` | — |
+| [SRC-60066C6786-L000177](../../agents/research_pipeline.py#L177) | 177 | `"            \"task_understanding\": \"completed\","` | — |
+| [SRC-60066C6786-L000178](../../agents/research_pipeline.py#L178) | 178 | `"            \"aspect_extraction\": \"completed\","` | — |
+| [SRC-60066C6786-L000179](../../agents/research_pipeline.py#L179) | 179 | `"            \"query_planning\": query_status,"` | — |
+| [SRC-60066C6786-L000180](../../agents/research_pipeline.py#L180) | 180 | `"            \"lexical_matching\": \"evaluated\" if aspects and sources else \"not_assessed\","` | — |
+| [SRC-60066C6786-L000181](../../agents/research_pipeline.py#L181) | 181 | `"            \"semantic_matching\": evidence[\"semantic_matching\"][\"status\"],"` | — |
+| [SRC-60066C6786-L000182](../../agents/research_pipeline.py#L182) | 182 | `"            \"claim_verification\": evidence[\"claim_verification\"],"` | — |
+| [SRC-60066C6786-L000183](../../agents/research_pipeline.py#L183) | 183 | `"        },"` | — |
+| [SRC-60066C6786-L000184](../../agents/research_pipeline.py#L184) | 184 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-6E58A660BC — [agents/search_connectors.py](../../agents/search_connectors.py#L1)
@@ -844,11 +852,3 @@
 | [SRC-686F71AA50-L000129](../../agents/task_understanding.py#L129) | 129 | `"_PATTERNS: dict[str, tuple[str, ...]] = {"` | — |
 | [SRC-686F71AA50-L000130](../../agents/task_understanding.py#L130) | 130 | `"    \"official_site_lookup\": ("` | — |
 | [SRC-686F71AA50-L000131](../../agents/task_understanding.py#L131) | 131 | `"        \"الموقع الرسمي\", \"موقع رسمي\", \"رابط الموقع الرسمي\", \"الصفحه الرسميه\","` | — |
-| [SRC-686F71AA50-L000132](../../agents/task_understanding.py#L132) | 132 | `"        \"الموقع الحكومي\", \"official website\", \"official site\", \"official homepage\","` | — |
-| [SRC-686F71AA50-L000133](../../agents/task_understanding.py#L133) | 133 | `"    ),"` | — |
-| [SRC-686F71AA50-L000134](../../agents/task_understanding.py#L134) | 134 | `"    \"social_opinions\": ("` | — |
-| [SRC-686F71AA50-L000135](../../agents/task_understanding.py#L135) | 135 | `"        \"اراء الناس\", \"اراء المستخدمين\", \"تجارب الناس\", \"تجارب المستخدمين\","` | — |
-| [SRC-686F71AA50-L000136](../../agents/task_understanding.py#L136) | 136 | `"        \"تجارب الملاك\", \"تجارب ملاك\", \"تجربة مالك\", \"مراجعات المستخدمين\", \"الناس بتقول ايه\","` | — |
-| [SRC-686F71AA50-L000137](../../agents/task_understanding.py#L137) | 137 | `"        \"real user reviews\", \"owner experience\", \"customer opinions\", \"people's opinions\","` | — |
-| [SRC-686F71AA50-L000138](../../agents/task_understanding.py#L138) | 138 | `"        \"user experiences\", \"what do owners say\","` | — |
-| [SRC-686F71AA50-L000139](../../agents/task_understanding.py#L139) | 139 | `"    ),"` | — |

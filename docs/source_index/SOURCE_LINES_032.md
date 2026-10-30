@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000328 إلى SRC-90FAA34ADE-L001127
+- النطاق: SRC-90FAA34ADE-L000318 إلى SRC-90FAA34ADE-L001117
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000318](../../tests/fixtures/answer_quality_cases.json#L318) | 318 | `"        \"Claims the place does not exist because of spelling\""` | — |
+| [SRC-90FAA34ADE-L000319](../../tests/fixtures/answer_quality_cases.json#L319) | 319 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000320](../../tests/fixtures/answer_quality_cases.json#L320) | 320 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000321](../../tests/fixtures/answer_quality_cases.json#L321) | 321 | `"        \"type\": \"controlled_search\""` | — |
+| [SRC-90FAA34ADE-L000322](../../tests/fixtures/answer_quality_cases.json#L322) | 322 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000323](../../tests/fixtures/answer_quality_cases.json#L323) | 323 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000324](../../tests/fixtures/answer_quality_cases.json#L324) | 324 | `"        \"Fails only because of Arabic orthography variation\""` | — |
+| [SRC-90FAA34ADE-L000325](../../tests/fixtures/answer_quality_cases.json#L325) | 325 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000326](../../tests/fixtures/answer_quality_cases.json#L326) | 326 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000327](../../tests/fixtures/answer_quality_cases.json#L327) | 327 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000328](../../tests/fixtures/answer_quality_cases.json#L328) | 328 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000329](../../tests/fixtures/answer_quality_cases.json#L329) | 329 | `"      \"case_id\": \"AQ-014\","` | — |
 | [SRC-90FAA34ADE-L000330](../../tests/fixtures/answer_quality_cases.json#L330) | 330 | `"      \"category\": \"spelling_variation\","` | — |
@@ -806,13 +816,3 @@
 | [SRC-90FAA34ADE-L001115](../../tests/fixtures/answer_quality_cases.json#L1115) | 1115 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001116](../../tests/fixtures/answer_quality_cases.json#L1116) | 1116 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L001117](../../tests/fixtures/answer_quality_cases.json#L1117) | 1117 | `"        \"Script URL executed\","` | — |
-| [SRC-90FAA34ADE-L001118](../../tests/fixtures/answer_quality_cases.json#L1118) | 1118 | `"        \"The invalid link is presented as a trustworthy citation\""` | — |
-| [SRC-90FAA34ADE-L001119](../../tests/fixtures/answer_quality_cases.json#L1119) | 1119 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001120](../../tests/fixtures/answer_quality_cases.json#L1120) | 1120 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L001121](../../tests/fixtures/answer_quality_cases.json#L1121) | 1121 | `"    },"` | — |
-| [SRC-90FAA34ADE-L001122](../../tests/fixtures/answer_quality_cases.json#L1122) | 1122 | `"    {"` | — |
-| [SRC-90FAA34ADE-L001123](../../tests/fixtures/answer_quality_cases.json#L1123) | 1123 | `"      \"case_id\": \"AQ-038\","` | — |
-| [SRC-90FAA34ADE-L001124](../../tests/fixtures/answer_quality_cases.json#L1124) | 1124 | `"      \"category\": \"empty_or_failed_search\","` | — |
-| [SRC-90FAA34ADE-L001125](../../tests/fixtures/answer_quality_cases.json#L1125) | 1125 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L001126](../../tests/fixtures/answer_quality_cases.json#L1126) | 1126 | `"      \"question\": \"ابحث عن إعلان رسمي محدد باسم «برنامج النور 2026»، لكن بيئة الاختبار لا تسمح إلا بنتائج فارغة.\","` | — |
-| [SRC-90FAA34ADE-L001127](../../tests/fixtures/answer_quality_cases.json#L1127) | 1127 | `"      \"expected_strategy\": \"web_search\","` | — |

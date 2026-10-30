@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003212 إلى SRC-1AE03B9EC3-L004011
+- النطاق: SRC-1AE03B9EC3-L003204 إلى SRC-1AE03B9EC3-L004003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003204](../../agents/web_agent.py#L3204) | 3204 | `"                        last_error = RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `"                            \"لم تُكمل خدمة النموذج إجابة نصية نهائية مقبولة \""` | — |
+| [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"                            \"(حالة الإنهاء: \" + normalized_finish_reason[:40] + \").\""` | — |
+| [SRC-1AE03B9EC3-L003207](../../agents/web_agent.py#L3207) | 3207 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L003208](../../agents/web_agent.py#L3208) | 3208 | `"                    self._record_generation_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L003209](../../agents/web_agent.py#L3209) | 3209 | `"                        requested_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L003210](../../agents/web_agent.py#L3210) | 3210 | `"                        attempted_model=candidate_model,"` | — |
+| [SRC-1AE03B9EC3-L003211](../../agents/web_agent.py#L3211) | 3211 | `"                        status=diagnostic_status,"` | — |
 | [SRC-1AE03B9EC3-L003212](../../agents/web_agent.py#L3212) | 3212 | `"                        finish_reason=normalized_finish_reason or None,"` | — |
 | [SRC-1AE03B9EC3-L003213](../../agents/web_agent.py#L3213) | 3213 | `"                        request_started=True,"` | — |
 | [SRC-1AE03B9EC3-L003214](../../agents/web_agent.py#L3214) | 3214 | `"                        remote_response_received=True,"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L004001](../../agents/web_agent.py#L4001) | 4001 | `"        return final_answer.group(1).strip()"` | — |
 | [SRC-1AE03B9EC3-L004002](../../agents/web_agent.py#L4002) | 4002 | `""` | — |
 | [SRC-1AE03B9EC3-L004003](../../agents/web_agent.py#L4003) | 4003 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L004004](../../agents/web_agent.py#L4004) | 4004 | `"    def _remove_invalid_citations(answer: str, source_count: int) -> tuple[str, list[str]]:"` | — |
-| [SRC-1AE03B9EC3-L004005](../../agents/web_agent.py#L4005) | 4005 | `"        \"\"\"Remove citation labels that point outside the exact source list sent to the model.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L004006](../../agents/web_agent.py#L4006) | 4006 | `"        warnings: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L004007](../../agents/web_agent.py#L4007) | 4007 | `""` | — |
-| [SRC-1AE03B9EC3-L004008](../../agents/web_agent.py#L4008) | 4008 | `"        def replace(match: re.Match[str]) -> str:"` | — |
-| [SRC-1AE03B9EC3-L004009](../../agents/web_agent.py#L4009) | 4009 | `"            number = int(match.group(1))"` | — |
-| [SRC-1AE03B9EC3-L004010](../../agents/web_agent.py#L4010) | 4010 | `"            if 1 <= number <= source_count:"` | — |
-| [SRC-1AE03B9EC3-L004011](../../agents/web_agent.py#L4011) | 4011 | `"                return match.group(0)"` | — |
