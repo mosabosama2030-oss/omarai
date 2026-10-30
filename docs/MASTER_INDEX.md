@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **111**
-- ملفات Python المحللة: **67**
-- تعريفات Python المفهرسة: **1479**
+- ملفات المستودع في الجرد: **114**
+- ملفات Python المحللة: **68**
+- تعريفات Python المفهرسة: **1483**
 - تعريفات Python موثقة بوجود Docstring: **251**
-- تعريفات Python بلا Docstring: **926**
+- تعريفات Python بلا Docstring: **930**
 - تعريفات لا ينطبق عليها Docstring: **302**
-- الرموز الساكنة الإضافية: **1840**
-- الأسطر النصية المفهرسة حرفيًا: **38975**
+- الرموز الساكنة الإضافية: **1857**
+- الأسطر النصية المفهرسة حرفيًا: **39158**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -84,6 +84,8 @@
 | FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 4756 | 48 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
+| FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 4247 | 77 | جرد الملف + عناوين Markdown |
+| FILE-8524B08F5D | وثائق وفهرسة | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | Markdown | 4437 | 40 | جرد الملف + عناوين Markdown |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -130,6 +132,7 @@
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 6375 | 160 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
+| FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 2673 | 66 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -1309,6 +1312,10 @@
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L447) | دالة | test_current_government_office_hours_require_official_fresh_page_in_auto_mode | لا توجد Docstring. | ناقص | 447 | [SRC-01E35ABC46-L000447](../tests/test_research_guardrails.py#L447) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L472) | دالة | test_government_service_hour_request_rejects_undated_official_page | لا توجد Docstring. | ناقص | 472 | [SRC-01E35ABC46-L000472](../tests/test_research_guardrails.py#L472) |
 | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L482) | دالة | test_general_current_commercial_question_does_not_require_government_domain | لا توجد Docstring. | ناقص | 482 | [SRC-01E35ABC46-L000482](../tests/test_research_guardrails.py#L482) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L6) | دالة | test_pipeline_unifies_intent_aspects_queries_and_evidence | لا توجد Docstring. | ناقص | 6 | [SRC-96F6863E3C-L000006](../tests/test_research_pipeline.py#L6) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L34) | دالة | test_pipeline_clarifies_elliptical_question_without_search_plan | لا توجد Docstring. | ناقص | 34 | [SRC-96F6863E3C-L000034](../tests/test_research_pipeline.py#L34) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L43) | دالة | test_pipeline_resolves_followup_using_latest_context_anchor | لا توجد Docstring. | ناقص | 43 | [SRC-96F6863E3C-L000043](../tests/test_research_pipeline.py#L43) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L56) | دالة | test_pipeline_bounds_malformed_inputs_and_keeps_semantic_stage_unassessed | لا توجد Docstring. | ناقص | 56 | [SRC-96F6863E3C-L000056](../tests/test_research_pipeline.py#L56) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
@@ -2727,6 +2734,22 @@
 | [docs/search_code.py](search_code.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_BLOB_BASE | 119 | [SRC-69F3587825-L000119](search_code.py#L119) |
 | [docs/search_code.py](search_code.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 124 | [SRC-69F3587825-L000124](search_code.py#L124) |
 | [docs/search_code.py](search_code.py#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 127 | [SRC-69F3587825-L000127](search_code.py#L127) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | عنوان Markdown (H1) | Unified Hybrid Research Pipeline Implementation Plan | 1 | [SRC-BBB7222984-L000001](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L12) | عنوان Markdown (H2) | Global Constraints | 12 | [SRC-BBB7222984-L000012](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L12) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L20) | عنوان Markdown (H2) | Review Focus | 20 | [SRC-BBB7222984-L000020](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L20) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L29) | عنوان Markdown (H3) | Task 1: Add the unified orchestration contract | 29 | [SRC-BBB7222984-L000029](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L29) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L44) | عنوان Markdown (H3) | Task 2: Integrate plan construction | 44 | [SRC-BBB7222984-L000044](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L44) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L56) | عنوان Markdown (H3) | Task 3: Integrate post-retrieval matching diagnostics | 56 | [SRC-BBB7222984-L000056](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L56) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L67) | عنوان Markdown (H3) | Task 4: Verify and document | 67 | [SRC-BBB7222984-L000067](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L67) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 71 | [SRC-BBB7222984-L000071](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L71) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 76 | [SRC-BBB7222984-L000076](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L76) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | عنوان Markdown (H1) | تصميم خط المعالجة الهجين الموحد للبحث والفهم | 1 | [SRC-8524B08F5D-L000001](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) | عنوان Markdown (H2) | الهدف | 5 | [SRC-8524B08F5D-L000005](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) | عنوان Markdown (H2) | الحالة الحالية المثبتة | 8 | [SRC-8524B08F5D-L000008](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L15) | عنوان Markdown (H2) | القرار المعماري | 15 | [SRC-8524B08F5D-L000015](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L15) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L26) | عنوان Markdown (H2) | التكامل | 26 | [SRC-8524B08F5D-L000026](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L26) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L31) | عنوان Markdown (H2) | الحدود | 31 | [SRC-8524B08F5D-L000031](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L31) |
+| [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L38) | عنوان Markdown (H2) | النجاح | 38 | [SRC-8524B08F5D-L000038](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L38) |
 | [pyproject.toml](../pyproject.toml#L1) | قسم TOML | build-system | 1 | [SRC-50C86B7ED8-L000001](../pyproject.toml#L1) |
 | [pyproject.toml](../pyproject.toml#L2) | مفتاح إعداد TOML | requires | 2 | [SRC-50C86B7ED8-L000002](../pyproject.toml#L2) |
 | [pyproject.toml](../pyproject.toml#L3) | مفتاح إعداد TOML | build-backend | 3 | [SRC-50C86B7ED8-L000003](../pyproject.toml#L3) |
@@ -3077,6 +3100,7 @@
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 55 | [SRC-C353AAAC10-L000055](../tests/test_request_budget.py#L55) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L91) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 91 | [SRC-C353AAAC10-L000091](../tests/test_request_budget.py#L91) |
 | [tests/test_request_budget.py](../tests/test_request_budget.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 92 | [SRC-C353AAAC10-L000092](../tests/test_request_budget.py#L92) |
+| [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 20 | [SRC-96F6863E3C-L000020](../tests/test_research_pipeline.py#L20) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_PATH | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |
