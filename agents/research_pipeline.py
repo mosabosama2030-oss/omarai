@@ -135,8 +135,14 @@ def build_research_pipeline(
 ) -> dict[str, Any]:
     """Run context→intent→task→aspects→queries→evidence as one auditable pipeline."""
     raw_question = question[:MAX_PIPELINE_QUESTION_CHARS] if isinstance(question, str) else ""
+    supplied_context = dialogue_context if isinstance(dialogue_context, dict) else {}
+    resolved_question = supplied_context.get("resolved_question")
     contextual_question = (
-        resolve_followup_query(raw_question, history)
+        raw_question
+        if supplied_context.get("topic_shift") is True
+        else str(resolved_question)[:MAX_PIPELINE_QUESTION_CHARS].strip()
+        if isinstance(resolved_question, str) and resolved_question.strip()
+        else resolve_followup_query(raw_question, history)
         if history and raw_question.strip()
         else raw_question
     )
