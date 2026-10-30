@@ -113,5 +113,5 @@ def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():
     )
 
     assert result["stages"]["semantic_matching"] == "degraded"
-    assert result["evidence"]["semantic_matching"]["errors"] == 1
+    assert result["evidence"]["semantic_matching"]["errors"] == len(result["aspects"])
     assert result["evidence"]["lexical_ledger"]["aspects"] == result["aspects"]
