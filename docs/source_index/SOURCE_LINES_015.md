@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004812 إلى SRC-1AE03B9EC3-L005611
+- النطاق: SRC-1AE03B9EC3-L004807 إلى SRC-1AE03B9EC3-L005606
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004807](../../agents/web_agent.py#L4807) | 4807 | `"        plan[\"mode\"] = clean_mode"` | — |
+| [SRC-1AE03B9EC3-L004808](../../agents/web_agent.py#L4808) | 4808 | `"        plan[\"intent_route\"] = intent_route"` | — |
+| [SRC-1AE03B9EC3-L004809](../../agents/web_agent.py#L4809) | 4809 | `"        plan[\"intent_route_reason\"] = intent_reason"` | — |
+| [SRC-1AE03B9EC3-L004810](../../agents/web_agent.py#L4810) | 4810 | `"        # Normalize planner output before depth/mode expansion so a raw instruction-only"` | — |
+| [SRC-1AE03B9EC3-L004811](../../agents/web_agent.py#L4811) | 4811 | `"        # prompt cannot seed synthetic generic queries when the topic is empty."` | — |
 | [SRC-1AE03B9EC3-L004812](../../agents/web_agent.py#L4812) | 4812 | `"        raw_plan_queries = plan.get(\"queries\") or []"` | — |
 | [SRC-1AE03B9EC3-L004813](../../agents/web_agent.py#L4813) | 4813 | `"        if not isinstance(raw_plan_queries, list):"` | — |
 | [SRC-1AE03B9EC3-L004814](../../agents/web_agent.py#L4814) | 4814 | `"            raw_plan_queries = []"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L005604](../../agents/web_agent.py#L5604) | 5604 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005605](../../agents/web_agent.py#L5605) | 5605 | `"            for source in sources"` | — |
 | [SRC-1AE03B9EC3-L005606](../../agents/web_agent.py#L5606) | 5606 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L005607](../../agents/web_agent.py#L5607) | 5607 | `"        final_independent_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L005608](../../agents/web_agent.py#L5608) | 5608 | `"        # All post-filter source metrics describe the sources that remain eligible"` | — |
-| [SRC-1AE03B9EC3-L005609](../../agents/web_agent.py#L5609) | 5609 | `"        # for the answer. Connector-level received/accepted/rejected totals remain"` | — |
-| [SRC-1AE03B9EC3-L005610](../../agents/web_agent.py#L5610) | 5610 | `"        # available in provider diagnostics and are intentionally separate."` | — |
-| [SRC-1AE03B9EC3-L005611](../../agents/web_agent.py#L5611) | 5611 | `"        independent_domains = final_independent_domains"` | — |

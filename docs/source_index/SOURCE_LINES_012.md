@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002412 إلى SRC-1AE03B9EC3-L003211
+- النطاق: SRC-1AE03B9EC3-L002407 إلى SRC-1AE03B9EC3-L003206
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `""` | — |
+| [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"    def _collect_sources(self, query: str) -> tuple[list[dict[str, Any]], str \| None]:"` | — |
+| [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002410](../../agents/web_agent.py#L2410) | 2410 | `"            sources = self._search_web(query)"` | — |
+| [SRC-1AE03B9EC3-L002411](../../agents/web_agent.py#L2411) | 2411 | `"        except (RuntimeError, AgentDependencyError) as exc:"` | — |
 | [SRC-1AE03B9EC3-L002412](../../agents/web_agent.py#L2412) | 2412 | `"            return [], str(exc)"` | — |
 | [SRC-1AE03B9EC3-L002413](../../agents/web_agent.py#L2413) | 2413 | `"        for source in sources[:MAX_FETCHED_PAGES]:"` | — |
 | [SRC-1AE03B9EC3-L002414](../../agents/web_agent.py#L2414) | 2414 | `"            try:"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L003204](../../agents/web_agent.py#L3204) | 3204 | `"                        last_error = RuntimeError("` | — |
 | [SRC-1AE03B9EC3-L003205](../../agents/web_agent.py#L3205) | 3205 | `"                            \"لم تُكمل خدمة النموذج إجابة نصية نهائية مقبولة \""` | — |
 | [SRC-1AE03B9EC3-L003206](../../agents/web_agent.py#L3206) | 3206 | `"                            \"(حالة الإنهاء: \" + normalized_finish_reason[:40] + \").\""` | — |
-| [SRC-1AE03B9EC3-L003207](../../agents/web_agent.py#L3207) | 3207 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L003208](../../agents/web_agent.py#L3208) | 3208 | `"                    self._record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L003209](../../agents/web_agent.py#L3209) | 3209 | `"                        requested_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L003210](../../agents/web_agent.py#L3210) | 3210 | `"                        attempted_model=candidate_model,"` | — |
-| [SRC-1AE03B9EC3-L003211](../../agents/web_agent.py#L3211) | 3211 | `"                        status=diagnostic_status,"` | — |

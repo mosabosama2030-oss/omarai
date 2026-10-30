@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005612 إلى SRC-1AE03B9EC3-L006411
+- النطاق: SRC-1AE03B9EC3-L005607 إلى SRC-1AE03B9EC3-L006406
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005607](../../agents/web_agent.py#L5607) | 5607 | `"        final_independent_domains.discard(\"\")"` | — |
+| [SRC-1AE03B9EC3-L005608](../../agents/web_agent.py#L5608) | 5608 | `"        # All post-filter source metrics describe the sources that remain eligible"` | — |
+| [SRC-1AE03B9EC3-L005609](../../agents/web_agent.py#L5609) | 5609 | `"        # for the answer. Connector-level received/accepted/rejected totals remain"` | — |
+| [SRC-1AE03B9EC3-L005610](../../agents/web_agent.py#L5610) | 5610 | `"        # available in provider diagnostics and are intentionally separate."` | — |
+| [SRC-1AE03B9EC3-L005611](../../agents/web_agent.py#L5611) | 5611 | `"        independent_domains = final_independent_domains"` | — |
 | [SRC-1AE03B9EC3-L005612](../../agents/web_agent.py#L5612) | 5612 | `"        report[\"unique_sources\"] = len(sources)"` | — |
 | [SRC-1AE03B9EC3-L005613](../../agents/web_agent.py#L5613) | 5613 | `"        report[\"pages_fetched\"] = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
 | [SRC-1AE03B9EC3-L005614](../../agents/web_agent.py#L5614) | 5614 | `"        report[\"distinct_registrable_domains\"] = len(independent_domains)"` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L006404](../../agents/web_agent.py#L6404) | 6404 | `"        if prior_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:"` | — |
 | [SRC-1AE03B9EC3-L006405](../../agents/web_agent.py#L6405) | 6405 | `"            # Preserve a known pipeline failure instead of relabeling it as an ordinary"` | — |
 | [SRC-1AE03B9EC3-L006406](../../agents/web_agent.py#L6406) | 6406 | `"            # zero-result search merely because the outer request reached its return path."` | — |
-| [SRC-1AE03B9EC3-L006407](../../agents/web_agent.py#L6407) | 6407 | `"            report[\"search_outcome\"] = prior_search_outcome"` | — |
-| [SRC-1AE03B9EC3-L006408](../../agents/web_agent.py#L6408) | 6408 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L006409](../../agents/web_agent.py#L6409) | 6409 | `"            report[\"search_outcome\"] = ("` | — |
-| [SRC-1AE03B9EC3-L006410](../../agents/web_agent.py#L6410) | 6410 | `"                \"attempted_with_usable_sources\" if search_attempted and sources"` | — |
-| [SRC-1AE03B9EC3-L006411](../../agents/web_agent.py#L6411) | 6411 | `"                else \"attempted_no_usable_sources\" if search_attempted"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006412 إلى SRC-EEF2E6447C-L000589
+- النطاق: SRC-1AE03B9EC3-L006407 إلى SRC-EEF2E6447C-L000584
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006407](../../agents/web_agent.py#L6407) | 6407 | `"            report[\"search_outcome\"] = prior_search_outcome"` | — |
+| [SRC-1AE03B9EC3-L006408](../../agents/web_agent.py#L6408) | 6408 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006409](../../agents/web_agent.py#L6409) | 6409 | `"            report[\"search_outcome\"] = ("` | — |
+| [SRC-1AE03B9EC3-L006410](../../agents/web_agent.py#L6410) | 6410 | `"                \"attempted_with_usable_sources\" if search_attempted and sources"` | — |
+| [SRC-1AE03B9EC3-L006411](../../agents/web_agent.py#L6411) | 6411 | `"                else \"attempted_no_usable_sources\" if search_attempted"` | — |
 | [SRC-1AE03B9EC3-L006412](../../agents/web_agent.py#L6412) | 6412 | `"                else \"not_attempted\""` | — |
 | [SRC-1AE03B9EC3-L006413](../../agents/web_agent.py#L6413) | 6413 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L006414](../../agents/web_agent.py#L6414) | 6414 | `"        report[\"usable_sources_after_filtering\"] = len(sources)"` | — |
@@ -829,8 +834,3 @@
 | [SRC-EEF2E6447C-L000582](../../api/omarai.py#L582) | 582 | `"                if \"mode\" not in data:"` | — |
 | [SRC-EEF2E6447C-L000583](../../api/omarai.py#L583) | 583 | `"                    return self._run_bounded_agent_operation("` | — |
 | [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"                        lambda: agent.answer(question, history)"` | — |
-| [SRC-EEF2E6447C-L000585](../../api/omarai.py#L585) | 585 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000586](../../api/omarai.py#L586) | 586 | `"                return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000587](../../api/omarai.py#L587) | 587 | `"                    lambda: agent.answer(question, history, data.get(\"mode\"))"` | — |
-| [SRC-EEF2E6447C-L000588](../../api/omarai.py#L588) | 588 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000589](../../api/omarai.py#L589) | 589 | `""` | — |

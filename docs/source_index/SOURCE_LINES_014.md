@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004012 إلى SRC-1AE03B9EC3-L004811
+- النطاق: SRC-1AE03B9EC3-L004007 إلى SRC-1AE03B9EC3-L004806
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004007](../../agents/web_agent.py#L4007) | 4007 | `""` | — |
+| [SRC-1AE03B9EC3-L004008](../../agents/web_agent.py#L4008) | 4008 | `"        def replace(match: re.Match[str]) -> str:"` | — |
+| [SRC-1AE03B9EC3-L004009](../../agents/web_agent.py#L4009) | 4009 | `"            number = int(match.group(1))"` | — |
+| [SRC-1AE03B9EC3-L004010](../../agents/web_agent.py#L4010) | 4010 | `"            if 1 <= number <= source_count:"` | — |
+| [SRC-1AE03B9EC3-L004011](../../agents/web_agent.py#L4011) | 4011 | `"                return match.group(0)"` | — |
 | [SRC-1AE03B9EC3-L004012](../../agents/web_agent.py#L4012) | 4012 | `"            warnings.append(f\"حُذف استشهاد غير صالح إلى المصدر {number}.\")"` | — |
 | [SRC-1AE03B9EC3-L004013](../../agents/web_agent.py#L4013) | 4013 | `"            return \"\""` | — |
 | [SRC-1AE03B9EC3-L004014](../../agents/web_agent.py#L4014) | 4014 | `""` | — |
@@ -811,8 +816,3 @@
 | [SRC-1AE03B9EC3-L004804](../../agents/web_agent.py#L4804) | 4804 | `"                question if dialogue_context.get(\"topic_shift\")"` | — |
 | [SRC-1AE03B9EC3-L004805](../../agents/web_agent.py#L4805) | 4805 | `"                else dialogue_context.get(\"resolved_question\") or working_question"` | — |
 | [SRC-1AE03B9EC3-L004806](../../agents/web_agent.py#L4806) | 4806 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004807](../../agents/web_agent.py#L4807) | 4807 | `"        plan[\"mode\"] = clean_mode"` | — |
-| [SRC-1AE03B9EC3-L004808](../../agents/web_agent.py#L4808) | 4808 | `"        plan[\"intent_route\"] = intent_route"` | — |
-| [SRC-1AE03B9EC3-L004809](../../agents/web_agent.py#L4809) | 4809 | `"        plan[\"intent_route_reason\"] = intent_reason"` | — |
-| [SRC-1AE03B9EC3-L004810](../../agents/web_agent.py#L4810) | 4810 | `"        # Normalize planner output before depth/mode expansion so a raw instruction-only"` | — |
-| [SRC-1AE03B9EC3-L004811](../../agents/web_agent.py#L4811) | 4811 | `"        # prompt cannot seed synthetic generic queries when the topic is empty."` | — |
