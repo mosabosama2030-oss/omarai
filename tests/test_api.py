@@ -372,8 +372,8 @@ def test_http_ingress_rejects_excess_connections_and_releases_capacity():
         # The saturated listener rejects before creating a second handler thread.
         server.process_request(second_request, ("127.0.0.1", 10002))
         response = second_client.recv(512)
-        assert response.startswith(b"HTTP/1.1 503 Service Unavailable\\r\\n")
-        assert b"Retry-After: 5\\r\\n" in response
+        assert response.startswith(b"HTTP/1.1 503 Service Unavailable\r\n")
+        assert b"Retry-After: 5\r\n" in response
         assert not server._connection_slots.acquire(blocking=False)
 
         release_worker.set()
