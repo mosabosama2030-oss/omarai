@@ -199,3 +199,63 @@ def test_unresolved_citation_support_flags_prevent_completed_research_status() -
     assert weak_alignment["counters"]["citation_support_warning_count"] == 1
     assert unsupported_number["phases"]["semantic_verification"] == "not_performed"
     assert weak_alignment["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_out_of_range_citation_reference_prevents_completed_research_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": {
+            "status": "built",
+            "summary": {
+                "out_of_range_reference_count": 1,
+            },
+        },
+        "answer_integrity": {
+            # One of multiple citations aligned lexically; this must not hide
+            # a separate out-of-range reference in the same answer.
+            "weak_citation_alignment_count": 0,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["counters"]["out_of_range_citation_reference_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+
+
+def test_missing_claim_ledger_does_not_create_citation_reference_warning() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["out_of_range_citation_reference_count"] == 0
+    assert result["status"] == (
+        "answer_generated_citations_range_checked_semantic_support_unverified"
+    )
