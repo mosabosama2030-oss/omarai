@@ -287,3 +287,97 @@ def test_missing_api_key_is_reported_as_not_configured_not_attempted(monkeypatch
         "status": "not_configured",
         "error_class": "MissingAPIKey",
     }]
+
+
+def test_model_http_429_is_classified_and_bounded_fallback_can_recover(monkeypatch):
+    from urllib.error import HTTPError
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "backup/model"
+    calls: list[str] = []
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        calls.append(model)
+        if model == "primary/model":
+            raise HTTPError(request.full_url, 429, "Too Many Requests", None, None)
+        return FakeResponse("إجابة مكتملة من النموذج الاحتياطي", "stop")
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    answer = agent._request_completion(
+        [{"role": "user", "content": "اختبار"}],
+        model="primary/model",
+    )
+
+    assert answer == "إجابة مكتملة من النموذج الاحتياطي"
+    assert calls == ["primary/model", "backup/model"]
+    assert agent.generation_diagnostics[0]["status"] == "rate_limited"
+    assert agent.generation_diagnostics[0]["http_status_code"] == 429
+    assert agent.generation_diagnostics[0]["fallback_used"] is False
+    assert agent.generation_diagnostics[1]["status"] == "accepted"
+    assert agent.generation_diagnostics[1]["fallback_used"] is True
+
+
+def test_model_http_429_from_all_models_is_bounded_and_does_not_leak_provider_body(monkeypatch):
+    from urllib.error import HTTPError
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "backup/model"
+    calls: list[str] = []
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        calls.append(model)
+        raise HTTPError(request.full_url, 429, "private provider detail", None, None)
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    with pytest.raises(RuntimeError, match="HTTP 429"):
+        agent._request_completion(
+            [{"role": "user", "content": "اختبار"}],
+            model="primary/model",
+        )
+
+    assert calls == ["primary/model", "backup/model"]
+    assert [row["status"] for row in agent.generation_diagnostics] == [
+        "rate_limited",
+        "rate_limited",
+    ]
+    assert [row["http_status_code"] for row in agent.generation_diagnostics] == [429, 429]
+    assert "private provider detail" not in repr(agent.generation_diagnostics)
+
+
+@pytest.mark.parametrize("status_code", [401, 403])
+def test_model_auth_http_errors_are_classified_and_fallback_is_bounded(
+    monkeypatch, status_code
+):
+    from urllib.error import HTTPError
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "backup/model"
+    calls: list[str] = []
+
+    def fake_urlopen(request, timeout):
+        model = json.loads(request.data.decode("utf-8"))["model"]
+        calls.append(model)
+        raise HTTPError(request.full_url, status_code, "private auth detail", None, None)
+
+    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    with pytest.raises(RuntimeError, match=f"HTTP {status_code}"):
+        agent._request_completion(
+            [{"role": "user", "content": "اختبار"}],
+            model="primary/model",
+        )
+
+    assert calls == ["primary/model", "backup/model"]
+    assert [row["status"] for row in agent.generation_diagnostics] == [
+        "unauthorized",
+        "unauthorized",
+    ]
+    assert [row["http_status_code"] for row in agent.generation_diagnostics] == [
+        status_code,
+        status_code,
+    ]
+    assert "private auth detail" not in repr(agent.generation_diagnostics)

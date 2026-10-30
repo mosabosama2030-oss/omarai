@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000630 إلى SRC-D4963BDA6A-L000077
+- النطاق: SRC-90FAA34ADE-L000601 إلى SRC-D4963BDA6A-L000048
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000601](../../tests/fixtures/answer_quality_cases.json#L601) | 601 | `"            \"title\": \"Release copy B\","` | — |
+| [SRC-90FAA34ADE-L000602](../../tests/fixtures/answer_quality_cases.json#L602) | 602 | `"            \"url\": \"https://news-b.example.test/story\","` | — |
+| [SRC-90FAA34ADE-L000603](../../tests/fixtures/answer_quality_cases.json#L603) | 603 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
+| [SRC-90FAA34ADE-L000604](../../tests/fixtures/answer_quality_cases.json#L604) | 604 | `"            \"domain\": \"news-b.example.test\","` | — |
+| [SRC-90FAA34ADE-L000605](../../tests/fixtures/answer_quality_cases.json#L605) | 605 | `"            \"provider\": \"fixture_b\","` | — |
+| [SRC-90FAA34ADE-L000606](../../tests/fixtures/answer_quality_cases.json#L606) | 606 | `"            \"publisher\": \"WireDesk\""` | — |
+| [SRC-90FAA34ADE-L000607](../../tests/fixtures/answer_quality_cases.json#L607) | 607 | `"          },"` | — |
+| [SRC-90FAA34ADE-L000608](../../tests/fixtures/answer_quality_cases.json#L608) | 608 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000609](../../tests/fixtures/answer_quality_cases.json#L609) | 609 | `"            \"title\": \"Release copy C\","` | — |
+| [SRC-90FAA34ADE-L000610](../../tests/fixtures/answer_quality_cases.json#L610) | 610 | `"            \"url\": \"https://news-c.example.test/story\","` | — |
+| [SRC-90FAA34ADE-L000611](../../tests/fixtures/answer_quality_cases.json#L611) | 611 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
+| [SRC-90FAA34ADE-L000612](../../tests/fixtures/answer_quality_cases.json#L612) | 612 | `"            \"domain\": \"news-c.example.test\","` | — |
+| [SRC-90FAA34ADE-L000613](../../tests/fixtures/answer_quality_cases.json#L613) | 613 | `"            \"provider\": \"fixture_c\","` | — |
+| [SRC-90FAA34ADE-L000614](../../tests/fixtures/answer_quality_cases.json#L614) | 614 | `"            \"publisher\": \"WireDesk\""` | — |
+| [SRC-90FAA34ADE-L000615](../../tests/fixtures/answer_quality_cases.json#L615) | 615 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000616](../../tests/fixtures/answer_quality_cases.json#L616) | 616 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L000617](../../tests/fixtures/answer_quality_cases.json#L617) | 617 | `"        \"notes\": \"النتائج الثلاثة من نفس الناشر الأصلي ونصها متطابق\""` | — |
+| [SRC-90FAA34ADE-L000618](../../tests/fixtures/answer_quality_cases.json#L618) | 618 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000619](../../tests/fixtures/answer_quality_cases.json#L619) | 619 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000620](../../tests/fixtures/answer_quality_cases.json#L620) | 620 | `"        \"يحسب المواقع الثلاثة تأكيدًا مستقلًا بلا تحفظ\","` | — |
+| [SRC-90FAA34ADE-L000621](../../tests/fixtures/answer_quality_cases.json#L621) | 621 | `"        \"يقول إن الخبر تحقق بثلاثة مصادر مستقلة\""` | — |
+| [SRC-90FAA34ADE-L000622](../../tests/fixtures/answer_quality_cases.json#L622) | 622 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000623](../../tests/fixtures/answer_quality_cases.json#L623) | 623 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L000624](../../tests/fixtures/answer_quality_cases.json#L624) | 624 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000625](../../tests/fixtures/answer_quality_cases.json#L625) | 625 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000626](../../tests/fixtures/answer_quality_cases.json#L626) | 626 | `"      \"case_id\": \"AQ-022\","` | — |
+| [SRC-90FAA34ADE-L000627](../../tests/fixtures/answer_quality_cases.json#L627) | 627 | `"      \"category\": \"unsupported_claim\","` | — |
+| [SRC-90FAA34ADE-L000628](../../tests/fixtures/answer_quality_cases.json#L628) | 628 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L000629](../../tests/fixtures/answer_quality_cases.json#L629) | 629 | `"      \"question\": \"المصدر المرفق يذكر أن المتجر يفتح الساعة التاسعة فقط. هل هذا يثبت أنه يعمل طوال اليوم؟\","` | — |
 | [SRC-90FAA34ADE-L000630](../../tests/fixtures/answer_quality_cases.json#L630) | 630 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000631](../../tests/fixtures/answer_quality_cases.json#L631) | 631 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000632](../../tests/fixtures/answer_quality_cases.json#L632) | 632 | `"        \"يقول إن المقتطف لا يثبت استمرار العمل طوال اليوم\","` | — |
@@ -796,32 +825,3 @@
 | [SRC-D4963BDA6A-L000046](../../tests/fixtures/answer_quality_reviews_template.json#L46) | 46 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000047](../../tests/fixtures/answer_quality_reviews_template.json#L47) | 47 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000048](../../tests/fixtures/answer_quality_reviews_template.json#L48) | 48 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000049](../../tests/fixtures/answer_quality_reviews_template.json#L49) | 49 | `"      \"case_id\": \"AQ-009\","` | — |
-| [SRC-D4963BDA6A-L000050](../../tests/fixtures/answer_quality_reviews_template.json#L50) | 50 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000051](../../tests/fixtures/answer_quality_reviews_template.json#L51) | 51 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000052](../../tests/fixtures/answer_quality_reviews_template.json#L52) | 52 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000053](../../tests/fixtures/answer_quality_reviews_template.json#L53) | 53 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000054](../../tests/fixtures/answer_quality_reviews_template.json#L54) | 54 | `"      \"case_id\": \"AQ-010\","` | — |
-| [SRC-D4963BDA6A-L000055](../../tests/fixtures/answer_quality_reviews_template.json#L55) | 55 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000056](../../tests/fixtures/answer_quality_reviews_template.json#L56) | 56 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000057](../../tests/fixtures/answer_quality_reviews_template.json#L57) | 57 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000058](../../tests/fixtures/answer_quality_reviews_template.json#L58) | 58 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000059](../../tests/fixtures/answer_quality_reviews_template.json#L59) | 59 | `"      \"case_id\": \"AQ-011\","` | — |
-| [SRC-D4963BDA6A-L000060](../../tests/fixtures/answer_quality_reviews_template.json#L60) | 60 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000061](../../tests/fixtures/answer_quality_reviews_template.json#L61) | 61 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000062](../../tests/fixtures/answer_quality_reviews_template.json#L62) | 62 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000063](../../tests/fixtures/answer_quality_reviews_template.json#L63) | 63 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000064](../../tests/fixtures/answer_quality_reviews_template.json#L64) | 64 | `"      \"case_id\": \"AQ-012\","` | — |
-| [SRC-D4963BDA6A-L000065](../../tests/fixtures/answer_quality_reviews_template.json#L65) | 65 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000066](../../tests/fixtures/answer_quality_reviews_template.json#L66) | 66 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000067](../../tests/fixtures/answer_quality_reviews_template.json#L67) | 67 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000068](../../tests/fixtures/answer_quality_reviews_template.json#L68) | 68 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000069](../../tests/fixtures/answer_quality_reviews_template.json#L69) | 69 | `"      \"case_id\": \"AQ-013\","` | — |
-| [SRC-D4963BDA6A-L000070](../../tests/fixtures/answer_quality_reviews_template.json#L70) | 70 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000071](../../tests/fixtures/answer_quality_reviews_template.json#L71) | 71 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000072](../../tests/fixtures/answer_quality_reviews_template.json#L72) | 72 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000073](../../tests/fixtures/answer_quality_reviews_template.json#L73) | 73 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000074](../../tests/fixtures/answer_quality_reviews_template.json#L74) | 74 | `"      \"case_id\": \"AQ-014\","` | — |
-| [SRC-D4963BDA6A-L000075](../../tests/fixtures/answer_quality_reviews_template.json#L75) | 75 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000076](../../tests/fixtures/answer_quality_reviews_template.json#L76) | 76 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000077](../../tests/fixtures/answer_quality_reviews_template.json#L77) | 77 | `"    },"` | — |
