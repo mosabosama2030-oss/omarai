@@ -4,9 +4,167 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65AAF94960-L000020 إلى SRC-914817100D-L000039
+- النطاق: SRC-EEF2E6447C-L000608 إلى SRC-26428BDA96-L000141
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## واجهات API
+
+### FILE-EEF2E6447C — [api/omarai.py](../../api/omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-EEF2E6447C-L000608](../../api/omarai.py#L608) | 608 | `"                    data.get(\"text\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000609](../../api/omarai.py#L609) | 609 | `"                    data.get(\"source_url\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000610](../../api/omarai.py#L610) | 610 | `"                    data.get(\"platform\", \"manual\"),"` | — |
+| [SRC-EEF2E6447C-L000611](../../api/omarai.py#L611) | 611 | `"                    data.get(\"observed_at\"),"` | — |
+| [SRC-EEF2E6447C-L000612](../../api/omarai.py#L612) | 612 | `"                    data.get(\"note\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000613](../../api/omarai.py#L613) | 613 | `"                    data.get(\"product_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000614](../../api/omarai.py#L614) | 614 | `"                    data.get(\"location_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000615](../../api/omarai.py#L615) | 615 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000616](../../api/omarai.py#L616) | 616 | `"                return self.respond(201 if created else 200, {\"lead\": lead, \"created\": created})"` | — |
+| [SRC-EEF2E6447C-L000617](../../api/omarai.py#L617) | 617 | `"            route = path.split(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000618](../../api/omarai.py#L618) | 618 | `"            if len(route) == 5 and route[1:3] == [\"api\", \"leads\"] and route[4] == \"status\":"` | — |
+| [SRC-EEF2E6447C-L000619](../../api/omarai.py#L619) | 619 | `"                lead = self.store.update_status(route[3], data.get(\"status\", \"new\"))"` | — |
+| [SRC-EEF2E6447C-L000620](../../api/omarai.py#L620) | 620 | `"                return self.respond(200, {\"lead\": lead}) if lead else self.respond(404, {\"error\": \"lead not found\"})"` | — |
+| [SRC-EEF2E6447C-L000621](../../api/omarai.py#L621) | 621 | `"            return self.respond(404, {\"error\": \"not found\"})"` | — |
+| [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"        except (ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-EEF2E6447C-L000623](../../api/omarai.py#L623) | 623 | `"            return self.respond(400, {\"error\": str(exc)})"` | — |
+| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"        except Exception:  # noqa: BLE001 — keep unexpected details out of API responses"` | — |
+| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"            return self.respond(500, {\"error\": \"internal server error\"})"` | — |
+| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `""` | — |
+| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"    def do_OPTIONS(self):"` | — |
+| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"        if not origin or not self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000630](../../api/omarai.py#L630) | 630 | `"            return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
+| [SRC-EEF2E6447C-L000631](../../api/omarai.py#L631) | 631 | `"        self.send_response(204)"` | — |
+| [SRC-EEF2E6447C-L000632](../../api/omarai.py#L632) | 632 | `"        self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000633](../../api/omarai.py#L633) | 633 | `"        self.send_header(\"Vary\", \"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000634](../../api/omarai.py#L634) | 634 | `"        self.send_header(\"Access-Control-Allow-Methods\", \"GET, POST, OPTIONS\")"` | — |
+| [SRC-EEF2E6447C-L000635](../../api/omarai.py#L635) | 635 | `"        self.send_header(\"Access-Control-Allow-Headers\", \"Authorization, Content-Type\")"` | — |
+| [SRC-EEF2E6447C-L000636](../../api/omarai.py#L636) | 636 | `"        self.send_header(\"Access-Control-Max-Age\", \"600\")"` | — |
+| [SRC-EEF2E6447C-L000637](../../api/omarai.py#L637) | 637 | `"        self.send_header(\"Content-Length\", \"0\")"` | — |
+| [SRC-EEF2E6447C-L000638](../../api/omarai.py#L638) | 638 | `"        self.end_headers()"` | — |
+| [SRC-EEF2E6447C-L000639](../../api/omarai.py#L639) | 639 | `""` | — |
+| [SRC-EEF2E6447C-L000640](../../api/omarai.py#L640) | 640 | `"    def log_message(self, *args):"` | — |
+| [SRC-EEF2E6447C-L000641](../../api/omarai.py#L641) | 641 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000642](../../api/omarai.py#L642) | 642 | `""` | — |
+| [SRC-EEF2E6447C-L000643](../../api/omarai.py#L643) | 643 | `""` | — |
+| [SRC-EEF2E6447C-L000644](../../api/omarai.py#L644) | 644 | `"def answer_question(question, store):"` | — |
+| [SRC-EEF2E6447C-L000645](../../api/omarai.py#L645) | 645 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000646](../../api/omarai.py#L646) | 646 | `"    normalized = normalize(question)"` | — |
+| [SRC-EEF2E6447C-L000647](../../api/omarai.py#L647) | 647 | `"    leads = store.list(limit=500)"` | — |
+| [SRC-EEF2E6447C-L000648](../../api/omarai.py#L648) | 648 | `"    active = [lead for lead in leads if lead[\"status\"] not in {\"rejected\", \"converted\"}]"` | — |
+| [SRC-EEF2E6447C-L000649](../../api/omarai.py#L649) | 649 | `"    if any(term in normalized for term in (\"افضل عميل\", \"احسن عميل\", \"افضل اشارة\", \"احسن اشارة\", \"اشارة اراجعها\", \"مين افضل\", \"مين اتابع\", \"اتابع مين\", \"اهم عميل\")):"` | — |
+| [SRC-EEF2E6447C-L000650](../../api/omarai.py#L650) | 650 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000651](../../api/omarai.py#L651) | 651 | `"            return {\"answer\": \"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.\", \"kind\": \"no_data\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000652](../../api/omarai.py#L652) | 652 | `"        lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000653](../../api/omarai.py#L653) | 653 | `"        assessment = lead[\"assessment\"]"` | — |
+| [SRC-EEF2E6447C-L000654](../../api/omarai.py#L654) | 654 | `"        answer = \"الأولوية المقترحة للمراجعة هي الإشارة \" + lead[\"id\"][:8] + \" بدرجة قواعد \" + str(assessment[\"score\"]) + \"/100. السبب: \" + assessment[\"summary\"] + \" المصدر: \" + lead[\"source_url\"] + \". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري.\""` | — |
+| [SRC-EEF2E6447C-L000655](../../api/omarai.py#L655) | 655 | `"        return {\"answer\": answer, \"kind\": \"lead_recommendation\", \"lead_id\": lead[\"id\"]}"` | — |
+| [SRC-EEF2E6447C-L000656](../../api/omarai.py#L656) | 656 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
+| [SRC-EEF2E6447C-L000657](../../api/omarai.py#L657) | 657 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
+| [SRC-EEF2E6447C-L000658](../../api/omarai.py#L658) | 658 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
+| [SRC-EEF2E6447C-L000659](../../api/omarai.py#L659) | 659 | `"        high = sum(lead[\"assessment\"][\"label\"] == \"high_intent\" for lead in leads)"` | — |
+| [SRC-EEF2E6447C-L000660](../../api/omarai.py#L660) | 660 | `"        answer = \"في السجل المحلي \" + str(len(leads)) + \" إشارة، منها \" + str(high) + \" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد \" + str(by_status[\"new\"]) + \"، مؤهل \" + str(by_status[\"qualified\"]) + \"، تم التواصل \" + str(by_status[\"contacted\"]) + \"، تم البيع \" + str(by_status[\"converted\"]) + \"، تحتاج مراجعة \" + str(by_status[\"needs_review\"]) + \"، مرفوض \" + str(by_status[\"rejected\"]) + \".\""` | — |
+| [SRC-EEF2E6447C-L000661](../../api/omarai.py#L661) | 661 | `"        return {\"answer\": answer, \"kind\": \"local_statistics\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000662](../../api/omarai.py#L662) | 662 | `"    if any(term in normalized for term in (\"ليه الدرجه\", \"سبب الدرجه\", \"طريقة التقييم\", \"بتقيم ازاي\", \"معيار التقييم\")):"` | — |
+| [SRC-EEF2E6447C-L000663](../../api/omarai.py#L663) | 663 | `"        latest = max(leads, key=lambda item: item[\"updated_at\"], default=None)"` | — |
+| [SRC-EEF2E6447C-L000664](../../api/omarai.py#L664) | 664 | `"        if latest:"` | — |
+| [SRC-EEF2E6447C-L000665](../../api/omarai.py#L665) | 665 | `"            signals = \"، \".join(signal[\"phrase\"] for signal in latest[\"assessment\"][\"matched_signals\"]) or \"لم تُطابق عبارات معروفة\""` | — |
+| [SRC-EEF2E6447C-L000666](../../api/omarai.py#L666) | 666 | `"            answer = \"الإشارة الأحدث درجتها \" + str(latest[\"assessment\"][\"score\"]) + \"/100 لأن القواعد طابقت: \" + signals + \". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب.\""` | — |
+| [SRC-EEF2E6447C-L000667](../../api/omarai.py#L667) | 667 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000668](../../api/omarai.py#L668) | 668 | `"            answer = \"أحسب الدرجة بقواعد واضحة: تعبير الشراء، خطوة تجارية تالية، السعر أو الميزانية، وسياق المنتج والمكان. كل فئة تحتسب مرة واحدة فقط.\""` | — |
+| [SRC-EEF2E6447C-L000669](../../api/omarai.py#L669) | 669 | `"        return {\"answer\": answer, \"kind\": \"scoring_explanation\", \"lead_id\": latest[\"id\"] if latest else None}"` | — |
+| [SRC-EEF2E6447C-L000670](../../api/omarai.py#L670) | 670 | `"    if any(term in normalized for term in (\"اكتب رساله\", \"اكتب رسالة\", \"رساله تواصل\", \"رسالة تواصل\", \"ابعتله\", \"اتواصل ازاي\")):"` | — |
+| [SRC-EEF2E6447C-L000671](../../api/omarai.py#L671) | 671 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000672](../../api/omarai.py#L672) | 672 | `"            answer = \"لا توجد إشارة محفوظة أخصص مسودة لها بعد. أدخل نصًا ومصدرًا أولًا.\""` | — |
+| [SRC-EEF2E6447C-L000673](../../api/omarai.py#L673) | 673 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000674](../../api/omarai.py#L674) | 674 | `"            lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000675](../../api/omarai.py#L675) | 675 | `"            answer = \"مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة \" + lead[\"id\"][:8] + \". لم يتم إرسال أي رسالة.\""` | — |
+| [SRC-EEF2E6447C-L000676](../../api/omarai.py#L676) | 676 | `"        return {\"answer\": answer, \"kind\": \"message_draft\", \"lead_id\": active[0][\"id\"] if active else None}"` | — |
+| [SRC-EEF2E6447C-L000677](../../api/omarai.py#L677) | 677 | `"    return {\"answer\": \"أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.\", \"kind\": \"help\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000678](../../api/omarai.py#L678) | 678 | `""` | — |
+| [SRC-EEF2E6447C-L000679](../../api/omarai.py#L679) | 679 | `""` | — |
+| [SRC-EEF2E6447C-L000680](../../api/omarai.py#L680) | 680 | `"class BoundedThreadingHTTPServer(ThreadingHTTPServer):"` | — |
+| [SRC-EEF2E6447C-L000681](../../api/omarai.py#L681) | 681 | `"    \"\"\"Threaded HTTP server with a hard process-local ceiling on handler threads.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000682](../../api/omarai.py#L682) | 682 | `""` | — |
+| [SRC-EEF2E6447C-L000683](../../api/omarai.py#L683) | 683 | `"    daemon_threads = True"` | — |
+| [SRC-EEF2E6447C-L000684](../../api/omarai.py#L684) | 684 | `"    overload_response = ("` | — |
+| [SRC-EEF2E6447C-L000685](../../api/omarai.py#L685) | 685 | `"        b\"HTTP/1.1 503 Service Unavailable\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000686](../../api/omarai.py#L686) | 686 | `"        b\"Connection: close\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000687](../../api/omarai.py#L687) | 687 | `"        b\"Retry-After: 5\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000688](../../api/omarai.py#L688) | 688 | `"        b\"Content-Length: 0\\r\\n\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000689](../../api/omarai.py#L689) | 689 | `"    )"` | — |
+| [SRC-EEF2E6447C-L000690](../../api/omarai.py#L690) | 690 | `""` | — |
+| [SRC-EEF2E6447C-L000691](../../api/omarai.py#L691) | 691 | `"    def __init__("` | — |
+| [SRC-EEF2E6447C-L000692](../../api/omarai.py#L692) | 692 | `"        self,"` | — |
+| [SRC-EEF2E6447C-L000693](../../api/omarai.py#L693) | 693 | `"        server_address,"` | — |
+| [SRC-EEF2E6447C-L000694](../../api/omarai.py#L694) | 694 | `"        request_handler_class,"` | — |
+| [SRC-EEF2E6447C-L000695](../../api/omarai.py#L695) | 695 | `"        bind_and_activate: bool = True,"` | — |
+| [SRC-EEF2E6447C-L000696](../../api/omarai.py#L696) | 696 | `"        *,"` | — |
+| [SRC-EEF2E6447C-L000697](../../api/omarai.py#L697) | 697 | `"        max_concurrent_connections: int \| None = None,"` | — |
+| [SRC-EEF2E6447C-L000698](../../api/omarai.py#L698) | 698 | `"    ):"` | — |
+| [SRC-EEF2E6447C-L000699](../../api/omarai.py#L699) | 699 | `"        super().__init__(server_address, request_handler_class, bind_and_activate)"` | — |
+| [SRC-EEF2E6447C-L000700](../../api/omarai.py#L700) | 700 | `"        configured = ("` | — |
+| [SRC-EEF2E6447C-L000701](../../api/omarai.py#L701) | 701 | `"            _configured_http_connection_limit()"` | — |
+| [SRC-EEF2E6447C-L000702](../../api/omarai.py#L702) | 702 | `"            if max_concurrent_connections is None"` | — |
+| [SRC-EEF2E6447C-L000703](../../api/omarai.py#L703) | 703 | `"            else int(max_concurrent_connections)"` | — |
+| [SRC-EEF2E6447C-L000704](../../api/omarai.py#L704) | 704 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000705](../../api/omarai.py#L705) | 705 | `"        limit = max(1, min(configured, MAX_HTTP_CONNECTION_LIMIT))"` | — |
+| [SRC-EEF2E6447C-L000706](../../api/omarai.py#L706) | 706 | `"        self.max_concurrent_connections = limit"` | — |
+| [SRC-EEF2E6447C-L000707](../../api/omarai.py#L707) | 707 | `"        self._connection_slots = threading.BoundedSemaphore(limit)"` | — |
+| [SRC-EEF2E6447C-L000708](../../api/omarai.py#L708) | 708 | `""` | — |
+| [SRC-EEF2E6447C-L000709](../../api/omarai.py#L709) | 709 | `"    def process_request(self, request, client_address):"` | — |
+| [SRC-EEF2E6447C-L000710](../../api/omarai.py#L710) | 710 | `"        \"\"\"Reject excess accepted sockets before creating another handler thread.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000711](../../api/omarai.py#L711) | 711 | `"        if not self._connection_slots.acquire(blocking=False):"` | — |
+| [SRC-EEF2E6447C-L000712](../../api/omarai.py#L712) | 712 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000713](../../api/omarai.py#L713) | 713 | `"                request.sendall(self.overload_response)"` | — |
+| [SRC-EEF2E6447C-L000714](../../api/omarai.py#L714) | 714 | `"            except OSError:"` | — |
+| [SRC-EEF2E6447C-L000715](../../api/omarai.py#L715) | 715 | `"                pass"` | — |
+| [SRC-EEF2E6447C-L000716](../../api/omarai.py#L716) | 716 | `"            finally:"` | — |
+| [SRC-EEF2E6447C-L000717](../../api/omarai.py#L717) | 717 | `"                self.shutdown_request(request)"` | — |
+| [SRC-EEF2E6447C-L000718](../../api/omarai.py#L718) | 718 | `"            return"` | — |
+| [SRC-EEF2E6447C-L000719](../../api/omarai.py#L719) | 719 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000720](../../api/omarai.py#L720) | 720 | `"            super().process_request(request, client_address)"` | — |
+| [SRC-EEF2E6447C-L000721](../../api/omarai.py#L721) | 721 | `"        except BaseException:"` | — |
+| [SRC-EEF2E6447C-L000722](../../api/omarai.py#L722) | 722 | `"            # Thread creation can fail before a worker owns the reserved slot."` | — |
+| [SRC-EEF2E6447C-L000723](../../api/omarai.py#L723) | 723 | `"            self._connection_slots.release()"` | — |
+| [SRC-EEF2E6447C-L000724](../../api/omarai.py#L724) | 724 | `"            raise"` | — |
+| [SRC-EEF2E6447C-L000725](../../api/omarai.py#L725) | 725 | `""` | — |
+| [SRC-EEF2E6447C-L000726](../../api/omarai.py#L726) | 726 | `"    def process_request_thread(self, request, client_address):"` | — |
+| [SRC-EEF2E6447C-L000727](../../api/omarai.py#L727) | 727 | `"        \"\"\"Return a slot after the handler has shut down the accepted socket.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000728](../../api/omarai.py#L728) | 728 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000729](../../api/omarai.py#L729) | 729 | `"            super().process_request_thread(request, client_address)"` | — |
+| [SRC-EEF2E6447C-L000730](../../api/omarai.py#L730) | 730 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000731](../../api/omarai.py#L731) | 731 | `"            self._connection_slots.release()"` | — |
+| [SRC-EEF2E6447C-L000732](../../api/omarai.py#L732) | 732 | `""` | — |
+| [SRC-EEF2E6447C-L000733](../../api/omarai.py#L733) | 733 | `""` | — |
+| [SRC-EEF2E6447C-L000734](../../api/omarai.py#L734) | 734 | `"def serve(host=\"127.0.0.1\", port=8765):"` | — |
+| [SRC-EEF2E6447C-L000735](../../api/omarai.py#L735) | 735 | `"    public_deployment = os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\""` | — |
+| [SRC-EEF2E6447C-L000736](../../api/omarai.py#L736) | 736 | `"    access_token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000737](../../api/omarai.py#L737) | 737 | `"    if host not in (\"127.0.0.1\", \"localhost\", \"::1\") and ("` | — |
+| [SRC-EEF2E6447C-L000738](../../api/omarai.py#L738) | 738 | `"        not public_deployment or len(access_token) < 32"` | — |
+| [SRC-EEF2E6447C-L000739](../../api/omarai.py#L739) | 739 | `"    ):"` | — |
+| [SRC-EEF2E6447C-L000740](../../api/omarai.py#L740) | 740 | `"        raise ValueError("` | — |
+| [SRC-EEF2E6447C-L000741](../../api/omarai.py#L741) | 741 | `"                \"Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and \""` | — |
+| [SRC-EEF2E6447C-L000742](../../api/omarai.py#L742) | 742 | `"                \"a private OMARAI_ACCESS_TOKEN of at least 32 characters.\""` | — |
+| [SRC-EEF2E6447C-L000743](../../api/omarai.py#L743) | 743 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000744](../../api/omarai.py#L744) | 744 | `"    server = BoundedThreadingHTTPServer((host, port), Handler)"` | — |
+| [SRC-EEF2E6447C-L000745](../../api/omarai.py#L745) | 745 | `"    print(f\"Omarai running at http://{host}:{port} — Ctrl+C to stop\")"` | — |
+| [SRC-EEF2E6447C-L000746](../../api/omarai.py#L746) | 746 | `"    print(\"Web research agent: /   \|   Lead workspace: /leads\")"` | — |
+| [SRC-EEF2E6447C-L000747](../../api/omarai.py#L747) | 747 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000748](../../api/omarai.py#L748) | 748 | `"        server.serve_forever()"` | — |
+| [SRC-EEF2E6447C-L000749](../../api/omarai.py#L749) | 749 | `"    except KeyboardInterrupt:"` | — |
+| [SRC-EEF2E6447C-L000750](../../api/omarai.py#L750) | 750 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000751](../../api/omarai.py#L751) | 751 | `"    finally:"` | — |
+| [SRC-EEF2E6447C-L000752](../../api/omarai.py#L752) | 752 | `"        server.server_close()"` | — |
+| [SRC-EEF2E6447C-L000753](../../api/omarai.py#L753) | 753 | `""` | — |
+| [SRC-EEF2E6447C-L000754](../../api/omarai.py#L754) | 754 | `""` | — |
+| [SRC-EEF2E6447C-L000755](../../api/omarai.py#L755) | 755 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-EEF2E6447C-L000756](../../api/omarai.py#L756) | 756 | `"    serve()"` | — |
 ## وثائق ونصوص
 
 ### FILE-65AAF94960 — [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1)
@@ -16,6 +174,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65AAF94960-L000001](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | 1 | `"# تقرير قبول الاستضافة — Omarai"` | — |
+| [SRC-65AAF94960-L000002](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L2) | 2 | `"**التاريخ:** 27 أكتوبر 2026  "` | — |
+| [SRC-65AAF94960-L000003](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L3) | 3 | `"**المضيف:** https://omarai-dec45.containers.snapdeploy.app/  "` | — |
+| [SRC-65AAF94960-L000004](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L4) | 4 | `"**جلسة المتصفح:** [TinyFish run af7ebb42-e032-4321-8454-a3628432f53d](https://agent.tinyfish.ai/runs/af7ebb42-e032-4321-8454-a3628432f53d)  "` | — |
+| [SRC-65AAF94960-L000005](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L5) | 5 | `"**التصنيف:** PARTIAL / BLOCKED — لا إعلان جاهزية."` | — |
+| [SRC-65AAF94960-L000006](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | 6 | `""` | — |
+| [SRC-65AAF94960-L000007](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L7) | 7 | `"## الملخص التنفيذي"` | — |
+| [SRC-65AAF94960-L000008](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L8) | 8 | `"أُعيد اختبار الواجهة في ملف المتصفح المخصص، دون خزنة أسرار ودون إدخال أو كشف أي رمز. الصفحة حملت، لكن حقل رمز الوصول في **ملف المتصفح الاختباري فارغ**. لذلك فشل سؤال «ما عاصمة مصر؟» قبل تنفيذ البحث. لم تُختبر بعد مصادر البحث الحية ولا البحث الحديث ولا البحث المعمق فعليًا."` | — |
+| [SRC-65AAF94960-L000009](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L9) | 9 | `""` | — |
+| [SRC-65AAF94960-L000010](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L10) | 10 | `"هذه النتيجة لا تثبت أن الرمز المخزن في متصفح المستخدم غير صحيح؛ إنها تثبت فقط أن رمزًا لم يكن متاحًا في ملف المتصفح الاختباري. التخزين المحلي في المتصفحات/الملفات منفصل."` | — |
+| [SRC-65AAF94960-L000011](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | 11 | `""` | — |
+| [SRC-65AAF94960-L000012](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L12) | 12 | `"## أدلة القبول"` | — |
+| [SRC-65AAF94960-L000013](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L13) | 13 | `"\| الفحص \| النتيجة \| الحالة \|"` | — |
+| [SRC-65AAF94960-L000014](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L14) | 14 | `"\|---\|---\|---\|"` | — |
+| [SRC-65AAF94960-L000015](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L15) | 15 | `"\| تحميل الصفحة الرئيسية \| ظهرت واجهة Omarai \| VERIFIED \|"` | — |
+| [SRC-65AAF94960-L000016](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L16) | 16 | ``"\| وجود رمز وصول في ملف المتصفح الاختباري \| الحقل `accessToken` فارغ ويعرض «أدخل رمز الاستضافة الذي أنشأته» \| VERIFIED \|"`` | — |
+| [SRC-65AAF94960-L000017](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L17) | 17 | `"\| سؤال «ما عاصمة مصر؟» في الوضع الافتراضي الظاهر «بحث معمّق» \| فشل قبل استرجاع إجابة أو مصادر \| FAILED / BLOCKED \|"` | — |
+| [SRC-65AAF94960-L000018](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L18) | 18 | `"\| نص الخطأ \| «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.» \| VERIFIED \|"` | — |
+| [SRC-65AAF94960-L000019](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L19) | 19 | `"\| البحث عن الموقع الرسمي لـ OpenAI في «الأحدث الآن» \| لم يُنفذ بسبب حاجز المصادقة \| NOT_RUN \|"` | — |
 | [SRC-65AAF94960-L000020](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L20) | 20 | `"\| سؤال بحث معمّق إضافي \| لم يُنفذ بسبب حاجز المصادقة \| NOT_RUN \|"` | — |
 | [SRC-65AAF94960-L000021](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L21) | 21 | ``"\| `GET /api/health` \| `ok=true` \| VERIFIED — لكنه لا يثبت صلاحية البحث الحي \|"`` | — |
 | [SRC-65AAF94960-L000022](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L22) | 22 | ``"\| هوية البناء \| `build.sha=unknown`, `sha_status=unknown`, `sha_source=unknown` \| BLOCKED / NOT VERIFIED \|"`` | — |
@@ -702,189 +879,3 @@
 | [SRC-26428BDA96-L000139](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L139) | 139 | `"\| GOV-001 \| INFERRED \| يعرض وكيل البحث حقولًا مثل search_outcome وresearch_quality_semantics وcitation_validation، وتوجد اختبارات لحفظ UNKNOWN عند فشل البحث؛ لكن لم تُراجع جميع مخرجات المشروع لإثبات أن كل تقرير مؤثر يستخدم حالات موحدة. انظر agents/web_agent.py: 3065–3251 و3583–3642، والاختبارات test_web_agent.py: 1739–1753 و1957–2046 و2310–2345. \|"` | — |
 | [SRC-26428BDA96-L000140](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L140) | 140 | `"\| GOV-003 \| UNKNOWN \| توجد سياسة للاستثناءات في الدستور وAGENTS.md، لكن لم يُعثر ضمن نطاق ملفات التشغيل المدققة على سجل فعلي للاستثناءات المقبولة وتواريخ انتهائها. غياب السجل من الملفات المفحوصة لا يثبت عدم وجود قرار خارجي؛ يلزم تأكيد واعتماد سجل الاستثناءات. \|"` | — |
 | [SRC-26428BDA96-L000141](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L141) | 141 | `"\| GOV-005 \| INFERRED \| سياسة عدم الدمج/النشر دون صلاحية بشرية مثبتة في AGENTS.md ووثائق الحوكمة. فُحص workflow الخاص بالاختبارات، لا إعدادات حماية الفروع أو أذونات النشر في الحساب الفعلي؛ إذن enforcement التشغيلي UNKNOWN. \|"` | — |
-| [SRC-26428BDA96-L000142](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L142) | 142 | `"\| PRD-001 \| INFERRED \| الواجهة تعرض تحذيرًا عندما لا يؤكد النظام البحث الحي، والتشخيص يفرق بين نتائج حقيقية وتعطل الموفر؛ لكن لم تجرِ مراجعة شاملة لكل ادعاءات README والواجهة مقابل كل قدرة تشغيلية. انظر web/agent.html: 204–215 وagents/web_agent.py: 2676–2896. \|"` | — |
-| [SRC-26428BDA96-L000143](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L143) | 143 | `"\| PRD-003 \| VERIFIED (نطاق جزئي) \| توجد حالات فشل/نقص دليل صريحة واختبارات تمنع ادعاء وجود عميل عند انقطاع البحث، وكذلك fallback للمقتطفات عند غياب النموذج. انظر tests/test_web_agent.py: 101–130 و1220–1268 و1957–2046 و2310–2345. لا يشمل ذلك جميع الموفرين الحقيقيين في الإنتاج. \|"` | — |
-| [SRC-26428BDA96-L000144](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L144) | 144 | `"\| API-001 \| INFERRED \| API يفرض JSON، حد 200KB، وbody كائنًا، ويفحص السؤال؛ WebAgent يقيد السؤال عند 4000 حرف، والسجل يقيد النص عند 12000. لكن التحقق النوعي الصارم من كل حقول product_terms/location_terms/platform ومدة قراءة body/نهاية الطلب ليس شاملًا. انظر api/omarai.py: 164–247 وagents/web_agent.py: 35–45 وagents/omarai.py: 51–110. \|"` | — |
-| [SRC-26428BDA96-L000145](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L145) | 145 | `"\| API-002 \| PROPOSED/GAP عند تعدد المستخدمين \| لا يوجد تفويض بحسب مالك السجل؛ كل حامل للرمز نفسه يصل إلى LeadStore واحد مشترك. مناسب فقط لنطاق مشغّل واحد، وغير كافٍ لحسابات مستقلة أو tenants. انظر api/omarai.py: 24–40 و207–240، وagents/omarai.py: 81–124. \|"` | — |
-| [SRC-26428BDA96-L000146](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L146) | 146 | `"\| API-004 \| VERIFIED (العمليات الحالية فقط) \| LeadStore.add يستخدم fingerprint فريدًا وINSERT OR IGNORE لمنع تكرار السجل؛ ومسودات التواصل تصرح أنها لم تُرسل. لا توجد حاليًا أداة نموذجية ترسل رسائل تلقائيًا. انظر agents/omarai.py: 96–114 وapi/omarai.py: 269–304 وtests/test_omarai.py: 25–47. يجب إعادة التقييم لو أضيف إرسال خارجي. \|"` | — |
-| [SRC-26428BDA96-L000147](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L147) | 147 | `"\| IDN-001 \| INFERRED / GAP متعدد المستخدمين \| Bearer token يتحقق على مستوى التطبيق فقط؛ لا توجد هوية فردية/أدوار أو تفويض لكل سجل. التوثيق الحالي مناسب للمدخل الخاص أكثر من خدمة متعددة المستخدمين. انظر api/omarai.py: 33–40 و164–180. \|"` | — |
-| [SRC-26428BDA96-L000148](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L148) | 148 | `"\| IDN-002 \| INFERRED / GAP \| الرمز المشترك يمكن تغييره من إعداد البيئة، لكن لا توجد صلاحية انتهاء/إبطال فردية أو جلسات لكل مستخدم ضمن الكود المرصود. التدوير اليدوي يتطلب إجراء تشغيليًا لم يُختبر في هذه الجولة. \|"` | — |
-| [SRC-26428BDA96-L000149](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L149) | 149 | `"\| IDN-003 \| PARTIAL \| إنشاء WebAgent مستقل لكل /api/agent مع تصفير حالته يقلل مشاركة mutable search state بين الطلبات. لكن LeadStore عالمي ومشترك ولا توجد owner/tenant keys؛ لذلك عزل بيانات المستخدمين غير متحقق. انظر api/omarai.py: 25–26 و207–213، وagents/web_agent.py: 2897–2915. \|"` | — |
-| [SRC-26428BDA96-L000150](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L150) | 150 | `"\| IDN-004 \| VERIFIED (نطاق API الحالي) \| المصادقة مطلوبة لمسارات /api في وضع النشر العام، وGET /api/leads محمي، والـ CI smoke يثبت 401 لطلبات غير مصادق عليها. /api/health عام ويكشف بيانات حالة/إعدادات غير سرية نسبيًا؛ يجب عدم خلط ذلك مع حماية بيانات العملاء. انظر api/omarai.py: 130–162 و164–180، وCI container smoke. \|"` | — |
-| [SRC-26428BDA96-L000151](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L151) | 151 | `"\| SEC-001 \| INFERRED \| مفاتيح النموذج تؤخذ من متغيرات البيئة، وأخطاء النموذج لا تعيد جسم استجابة المزود، و.env وSQLite ضمن .gitignore، ويوجد اختبار تنقيح السر من ناتج benchmark. لم يُنفذ secret scanning لتاريخ Git أو فحص أسرار على تشغيل إنتاج حقيقي في هذا التدقيق. انظر agents/web_agent.py: 268–310 و2150–2277، .gitignore، وtests/test_answer_quality_runner.py: 92–99. \|"` | — |
-| [SRC-26428BDA96-L000152](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L152) | 152 | `"\| SEC-002 \| PARTIAL \| توجد حماية SSRF متعددة الطبقات في agents/web_agent.py: 183–252 و1769–1874، واختبارات URL محلية وcredentials/file scheme في tests/test_web_agent.py: 148–155. يلزم إضافة اختبارات DNS مختلط، وredirect إلى IP داخلي، وDNS rebinding وIPv6 metadata/الحجم. لا تُعلن SSRF VERIFIED بالكامل قبل هذه الاختبارات. \|"` | — |
-| [SRC-26428BDA96-L000153](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L153) | 153 | `"\| SEC-003 \| INFERRED \| system prompts تصف نص صفحات الويب كمحتوى غير موثوق، وتفصله في رسالة user عن system policy؛ اختبارات test_web_agent.py: 1269–1337 تفحص الفصل في مسار الإجابة والمراجعة. لا توجد مجموعة red-team شاملة لكل حقن مباشر وغير مباشر أو لكل موصل. \|"` | — |
-| [SRC-26428BDA96-L000154](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L154) | 154 | `"\| SEC-004 \| N/A مشروط للقدرات الحالية / INFERRED \| لم يظهر منفذ أدوات يمنح النموذج عمليات كتابة أو إرسال خارجية؛ OpenRouter web search اختياري ومقيد بعدد استدعاءات، وواجهات تعديل سجل العملاء تتطلب رمز التطبيق. هذا لا يغطي المستقبل: أي أداة تنفذ فعلًا خارجيًا أو عملية حساسة يجب أن تحصل على policy gate وتفويض مستقلين. انظر agents/web_agent.py: 2150–2200 وapi/omarai.py: 164–247. \|"` | — |
-| [SRC-26428BDA96-L000155](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L155) | 155 | `"\| SEC-005 \| INFERRED \| جلب الصفحات يستخدم verify=True، والاتصالات الخارجية تستخدم عميلًا/مكتبات افتراضيها تحقق TLS؛ لم يُنفذ اختبار شهادة حية أو اختبار نشر طرف إلى طرف في هذه الجولة. انظر agents/web_agent.py: 1782–1789 و2150–2200. \|"` | — |
-| [SRC-26428BDA96-L000156](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L156) | 156 | `"\| SEC-006 \| INFERRED \| web/agent.html وweb/dashboard.html تستخدمان escaping للنص الديناميكي والتحقق من الروابط قبل بناء HTML؛ لكن لم يُنفذ اختبار متصفح عدائي يثبت رفض XSS لجميع حقول API، ولم يظهر فحص CSP ضمن الملفات المفحوصة. انظر web/agent.html: 107–145 وweb/dashboard.html: 31–40. \|"` | — |
-| [SRC-26428BDA96-L000157](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L157) | 157 | `"\| SEC-008 \| PARTIAL \| البحث يعتمد على موصلات محددة وبيانات اعتماد من البيئة، ولا توجد صلاحيات تعسفية يختارها النموذج؛ لكن رمز API مشترك على نطاق التطبيق، ولا توجد صلاحيات لكل مستخدم أو لكل نوع سجل، كما لا يوجد سقف توازي عام. انظر agents/web_agent.py: 1019–1125 وapi/omarai.py: 33–40. \|"` | — |
-| [SRC-26428BDA96-L000158](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L158) | 158 | `"\| PRI-001 \| PARTIAL \| يوجد تحديد لأطوال السؤال/التاريخ/مقتطفات الصفحات والمصادر المرسلة للنموذج، وتحذير من إرسال أسرار أو بيانات عميل سرية؛ لكن لا توجد مراجعة مكتملة لخريطة الاحتفاظ/الحذف والتسجيل في كل خدمة خارجية، وحد history الكلي يمكن أن يصل إلى عدة عناصر × 4000 حرف. انظر agents/web_agent.py: 35–45 و2117–2130 و2394–2534. \|"` | — |
-| [SRC-26428BDA96-L000159](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L159) | 159 | `"\| PRI-002 \| INFERRED \| status() يعرض إشعارًا بأن السؤال وبعض مقتطفات الصفحات تُرسل إلى مزود نموذج خارجي؛ ويستخدم fallback model عنوان base_url نفسه في التنفيذ الحالي. لم يتم التحقق من ظهور الإشعار للمستخدم قبل إدخال معلومات حساسة، ولا من شروط موفر خارجي بعينه أو طلب حي. انظر agents/web_agent.py: 311–360 و2150–2277، والواجهة web/agent.html. \|"` | — |
-| [SRC-26428BDA96-L000160](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L160) | 160 | `"\| REL-001 \| PARTIAL \| توجد مهلات لعمليات الجلب والبحث والنماذج، لكن لا يوجد deadline شامل من بداية HTTP request حتى الرد ولا ميزانية زمنية تنتقل بين المراحل. قد تتراكم مهلات متتابعة/احتياطية مع تعدد الاستعلامات. انظر agents/web_agent.py: 35–45 و1059–1125 و1769–1874 و2150–2277 و2534–2630. \|"` | — |
-| [SRC-26428BDA96-L000161](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L161) | 161 | `"\| REL-002 \| INFERRED \| عدد نماذج fallback محدود، وعدد استعلامات التخطيط والأدلة الإضافية محدد، ويوجد اختبار لحد طلب DeepSeek؛ لكن لا توجد سياسة backoff موحدة لكل الموفرين ولا ميزانية retry زمنية شاملة. انظر agents/web_agent.py: 997–1018 و2150–2277 و3280–3467، والاختبار test_web_agent.py: 2265–2279. \|"` | — |
-| [SRC-26428BDA96-L000162](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L162) | 162 | `"\| REL-003 \| VERIFIED (نطاق الاختبارات الحالية) \| اختبارات موثقّة تفصل تعطل البحث عن غياب النتائج وتبقي حالة فشل البحث غير محسومة، واختبارات fallback للمقتطفات/تعذر النموذج موجودة. راجع tests/test_web_agent.py: 101–130 و874–906 و1957–2046 و2280–2299. التشغيل الحي لجميع الموفرين ما زال UNKNOWN. \|"` | — |
-| [SRC-26428BDA96-L000163](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L163) | 163 | `"\| PER-002 \| PARTIAL \| توجد حدود للطلب والصفحات والنتائج وعدد العمال داخل عملية بحث واحدة. لا يوجد حد عالمي لعدد HTTP worker threads، ولا اختبار حمل يثبت سلوك النظام تحت آلاف الطلبات المتزامنة؛ كما لا يوجد حد إجمالي موحد لتكلفة جميع مراحل الطلب. انظر api/omarai.py: 24–30 و305–319، agents/web_agent.py: 35–45 و1893–1980. \|"` | — |
-| [SRC-26428BDA96-L000164](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L164) | 164 | `"\| PER-003 \| PROPOSED/GAP \| توجد حدود لكل مرحلة وعدد الاستعلامات وبعض استدعاءات الموفرين، لكن لا توجد ميزانية واحدة قابلة للقياس للزمن وعدد اتصالات النموذج/البحث/جلب الصفحات عبر الطلب كاملًا. هذه الفجوة مشتركة مع A-01 وتحتاج deadline + global semaphore/queue + اختبارات إغلاق الميزانية. \|"` | — |
-| [SRC-26428BDA96-L000165](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L165) | 165 | `"\| SRH-001 \| VERIFIED لسلوك التشخيص فقط؛ UNKNOWN للتوافر الحي الحالي \| diagnostics() تنفذ مجسات بحث عامة ولا تعتبر وجود مفتاح/اسم موصل دليلًا على نجاحه؛ توجد اختبارات تميز عدم وجود نتائج عن عطل الاتصال. لكنها لا تثبت أن البحث الحي يعمل الآن في حساب الاستضافة أو بمفاتيحك. انظر agents/web_agent.py: 2676–2896 وtests/test_web_agent.py: 826–906 و2245–2299. \|"` | — |
-| [SRC-26428BDA96-L000166](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L166) | 166 | `"\| EVD-001 \| PARTIAL \| توجد مراجعة نموذجية تطلب دعم الادعاءات من مقتطف المصدر، وطلب إظهار نقص الأدلة، وحد لرقم الاستشهاد؛ لكن لا يوجد تحقق دلالي مستقل لكل claim-source pair. انظر agents/web_agent.py: 2394–2676 و3714–3795، والاختبارات 310–358. \|"` | — |
-| [SRC-26428BDA96-L000167](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L167) | 167 | `"\| EVD-002 \| PARTIAL \| توجد تعليمات صريحة لاختلاق URL/التواريخ/الأرقام، وتنقية روابط المصدر، وإزالة أرقام الاستشهاد غير الصالحة. لكن لا توجد قاعدة حتمية تثبت أن كل تاريخ أو سعر أو ادعاء ظهر في النص موجود في المصدر؛ تبقى مخاطرة هلوسة غير صفرية. \|"` | — |
-| [SRC-26428BDA96-L000168](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L168) | 168 | `"\| EVD-004 \| INFERRED \| تقارير البحث تميز بعض حالات insufficient_evidence وfailed وpartial، وتوضح أن research_quality قياس لتغطية العملية لا احتمال صحة، وتفصح أن مراجعة النموذج ليست تحققًا مستقلًا. لكن ليس كل جواب عام يضع وسومًا صريحة لكل معلوم/استنتاج/مقترح/مجهول. انظر agents/web_agent.py: 2676–2896 و3583–3848. \|"` | — |
-| [SRC-26428BDA96-L000169](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L169) | 169 | `"\| AIG-001 \| INFERRED \| قيود الأمان موجودة في الكود وAPI، ومحتوى الويب يُفصل عن تعليمات النظام؛ لكن policy gate مستقل عن النموذج لا يغطي أفعالًا متنوعة لأن نطاق الأدوات الحالي يغلب عليه البحث فقط. يُعاد التقييم قبل إضافة أدوات ذات آثار جانبية. \|"` | — |
-| [SRC-26428BDA96-L000170](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L170) | 170 | `"\| AIG-002 \| PARTIAL \| التخطيط bounded بثمانية استعلامات كحد، والبحث المتوازي داخل العملية بثمانية عمال، ومعالجة نقص الأدلة بمحاولة إضافية واحدة في المسار المحدد، وأداة web search الاختيارية بحد max_tool_calls=5. تبقى فجوة توازي الخادم والdeadline الشامل. انظر agents/research.py: 16–18 وagents/web_agent.py: 35–45 و2150–2200 و3280–3467. \|"` | — |
-| [SRC-26428BDA96-L000171](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L171) | 171 | `"\| AIG-003 \| INFERRED \| المقترح التخطيطي يحلل JSON ثم يمر عبر validate_plan، ويُرفض شكل الرد غير الصالح أو المبتور من النموذج. لا توجد أداة كتابة مفعّلة عبر LLM تحتاج تنفيذ فعل حساس حاليًا؛ ينبغي اختبار schemas مباشرة عند إضافة أي أداة جديدة. انظر agents/web_agent.py: 2278–2394 و2150–2277. \|"` | — |
-| [SRC-26428BDA96-L000172](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L172) | 172 | `"\| AIG-005 \| INFERRED \| fallback_model يتصل عبر base_url نفسه، وتوجد رسالة خصوصية على إرسال prompts ومقتطفات إلى المزود المضبوط؛ لكن لم تتم مراجعة تدفقات البيانات لكل موصل اجتماعي اختياري أو إجراء فحص حي لمحتوى الطلب المرسل. انظر agents/web_agent.py: 311–360 و2150–2277 وموصلات البحث الاختيارية. \|"` | — |
-| [SRC-26428BDA96-L000173](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L173) | 173 | `"\| AIG-006 \| N/A مشروط للقدرات الحالية \| لم يُرصد إرسال تلقائي لرسالة أو تنفيذ خارجي على قرار LLM؛ مسودة التواصل توضح أن الإرسال لم يحدث. أي connector جديد يرسل أو يعدّل أو يشتري أو يحذف أو ينشر يجب أن يُعامل كقدرة جديدة مع تحقق صلاحيات وموافقة مناسبة. انظر api/omarai.py: 269–304. \|"` | — |
-| [SRC-26428BDA96-L000174](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L174) | 174 | `"\| AIE-003 \| PARTIAL \| اختبارات تثبت فصل محتوى الويب غير الموثوق عن system message في مساري التوليد والمراجعة، لكن لم تُثبت بعد مجموعة red-team كاملة بهجمات injection مباشرة/غير مباشرة واختبارات انحدار لكل المصادر. انظر tests/test_web_agent.py: 1269–1337. \|"` | — |
-| [SRC-26428BDA96-L000175](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L175) | 175 | `"\| TST-003 \| VERIFIED (سياسة اختبارات الجودة) \| test_answer_quality_runner.py يتضمن test_live_records_not_tested_not_pass؛ وسكربت القياس يرفض التشغيل الحي غير المحدود ويصنّف فشل النقل بشكل غير ناجح. أما هذا التدقيق نفسه فلم ينفذ تشغيلًا محليًا، ولذلك يذكر بوضوح أنه لم ينفذ محليًا. انظر tests/test_answer_quality_runner.py: 67–135 و191–232. \|"` | — |
-| [SRC-26428BDA96-L000176](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L176) | 176 | `"\| SCM-002 \| PARTIAL \| workflow يحدد permissions: contents: read ولا يطلب مفاتيح موفر النموذج لتشغيل الاختبارات، وهذا جيد. لكنه يستخدم actions بالـ major tag مثل checkout@v4 وsetup-python@v5 لا SHA ثابتًا، ولم يظهر ضمن workflow فحص أسرار/ثغرات اعتماديات/CodeQL. لا تُوصف سلسلة التوريد بالمكتملة. انظر .github/workflows/tests.yml: 1–25. \|"` | — |
-| [SRC-26428BDA96-L000177](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L177) | 177 | `"\| DPL-001 \| UNKNOWN للتوزيع الحقيقي / VERIFIED لاختبار الحاوية على CI \| بنيت الحاوية واختُبر smoke test عند نسخة معروفة من main، لكن لم يتم إثبات أن نشر الاستضافة الفعلي يطابق هذه النسخة، أو أن هناك سجل deployment/rollback يمكن ربطه بالـ commit. انظر .github/workflows/tests.yml وrender.yaml؛ تحقق النشر يحتاج منصة الاستضافة نفسها. \|"` | — |
-| [SRC-26428BDA96-L000178](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L178) | 178 | `"\| DPL-005 \| INFERRED \| الدستور وAGENTS.md يثبتان قاعدة موافقة مدير المشروع، لكن لم تُقرأ إعدادات branch protection أو deployment protection في حساب GitHub/الاستضافة. وجود نص القاعدة لا يثبت فرضها آليًا. \|"` | — |
-| [SRC-26428BDA96-L000179](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L179) | 179 | `"\| UX-004 \| INFERRED \| الواجهات تستخدم escapeHtml/esc وتفحص روابط HTTP(S) قبل عرضها؛ هذا يقلل خطر XSS. لم يظهر اختبار متصفح يغطي حمولة عدائية في كل حقل، ولم يظهر CSP في فحص الملفات. انظر web/agent.html: 107–145 وweb/dashboard.html: 31–40. \|"` | — |
-| [SRC-26428BDA96-L000180](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L180) | 180 | `"\| FIN-001 \| PARTIAL / فجوة مهمة عند النشر العام \| يوجد rate limit 20 طلبًا/60 ثانية لكل عنوان عميل وحدود داخلية للبحث والنماذج، لكن لا يوجد سقف تكلفة أو توازي عالمي، والاحتياط النموذجي يمكن أن يضاعف الطلبات. لا يكفي تحديد المعدل وحده لمنع الحمل المجمع من عدد كبير من العملاء. انظر api/omarai.py: 24–115 وagents/web_agent.py: 2150–2277. \|"` | — |
-| [SRC-26428BDA96-L000181](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L181) | 181 | `""` | — |
-| [SRC-26428BDA96-L000182](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L182) | 182 | `"## 6. ماذا نعدّ مثبتًا حاليًا، وماذا لا نعدّه مثبتًا؟"` | — |
-| [SRC-26428BDA96-L000183](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L183) | 183 | `""` | — |
-| [SRC-26428BDA96-L000184](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L184) | 184 | `"### مثبت ضمن نطاق محدود"` | — |
-| [SRC-26428BDA96-L000185](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L185) | 185 | `"1. فحوص Python/Ruff/pytest وDocker smoke test نجحت في GitHub Actions لنسخة main المسجلة."` | — |
-| [SRC-26428BDA96-L000186](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L186) | 186 | `"2. هناك مصادقة server-side في وضع النشر العام، وحد أقصى لطول جسم الطلب، وحد معدل محلي، وخيارات آمنة افتراضية للربط المحلي."` | — |
-| [SRC-26428BDA96-L000187](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L187) | 187 | `"3. توجد آليات واضحة للحد من SSRF، وفصل محتوى البحث غير الموثوق، وتنقية HTML في الواجهات، وإزالة أرقام الاستشهاد غير الصالحة."` | — |
-| [SRC-26428BDA96-L000188](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L188) | 188 | `"4. توجد اختبارات انحدار مهمة للبحث الفاشل، والنقص في الأدلة، وفشل الموفر، ومجموعة من أخطاء النماذج، وفشل HTTP غير المصادق عليه."` | — |
-| [SRC-26428BDA96-L000189](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L189) | 189 | `"5. أدوات البحث/قراءة الصفحات الحالية لا تنفذ بحد ذاتها إرسال رسائل للناس أو عمليات كتابة خارجية؛ مسودة التواصل ليست إرسالًا."` | — |
-| [SRC-26428BDA96-L000190](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L190) | 190 | `""` | — |
-| [SRC-26428BDA96-L000191](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L191) | 191 | `"### استدلالي أو جزئي"` | — |
-| [SRC-26428BDA96-L000192](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L192) | 192 | `"1. القوة الفعلية لدفاعات SSRF أمام DNS/redirect adversarial inputs."` | — |
-| [SRC-26428BDA96-L000193](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L193) | 193 | `"2. مقاومة prompt injection عبر طيف كامل من المصادر."` | — |
-| [SRC-26428BDA96-L000194](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L194) | 194 | `"3. صحة الاستشهادات دلاليًا، لا مجرد صحة فهرس المصدر."` | — |
-| [SRC-26428BDA96-L000195](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L195) | 195 | `"4. جودة الناتج على أسئلة فعلية متنوعة ومصادر حية عربية/إنجليزية."` | — |
-| [SRC-26428BDA96-L000196](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L196) | 196 | `"5. متانة حدود الوقت تحت فشل مزود متكرر أو تزامن كبير."` | — |
-| [SRC-26428BDA96-L000197](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L197) | 197 | `"6. حماية الواجهات من XSS على مستوى كل حقل؛ يوجد escaping لكن التغطية الاختبارية المباشرة محدودة."` | — |
-| [SRC-26428BDA96-L000198](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L198) | 198 | `""` | — |
-| [SRC-26428BDA96-L000199](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L199) | 199 | `"### غير معلوم أو غير مستوفى في النطاق الأوسع"` | — |
-| [SRC-26428BDA96-L000200](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L200) | 200 | `"1. فصل سجلات المستخدمين: غير متاح في نموذج رمز مشترك/مخزن مشترك."` | — |
-| [SRC-26428BDA96-L000201](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L201) | 201 | `"2. حد توازي عام وdeadline موحد: لا تظهر لهما آلية كافية في الكود الحالي."` | — |
-| [SRC-26428BDA96-L000202](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L202) | 202 | `"3. استمرارية البيانات على الاستضافة الفعلية والنسخ الاحتياطي والاستعادة."` | — |
-| [SRC-26428BDA96-L000203](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L203) | 203 | `"4. قواعد حساب GitHub/الاستضافة التي تفرض الموافقة البشرية عمليًا."` | — |
-| [SRC-26428BDA96-L000204](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L204) | 204 | `"5. سلامة الاتصال الحي بمفاتيحك ومزوديك من بيئة النشر الحالية."` | — |
-| [SRC-26428BDA96-L000205](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L205) | 205 | `"6. نتائج load test أو اختبار اختراق حي أو مراجعة قانونية/امتثال."` | — |
-| [SRC-26428BDA96-L000206](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L206) | 206 | `""` | — |
-| [SRC-26428BDA96-L000207](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L207) | 207 | `"## 7. خطة إغلاق بالترتيب"` | — |
-| [SRC-26428BDA96-L000208](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L208) | 208 | `""` | — |
-| [SRC-26428BDA96-L000209](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L209) | 209 | `"### Gate 1 — قبل توسيع الوصول العام"` | — |
-| [SRC-26428BDA96-L000210](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L210) | 210 | `"1. إضافة global semaphore/queue محدودة لطلبات الوكيل و/أو عمليات البحث والنماذج، مع رفض ازدحام واضح."` | — |
-| [SRC-26428BDA96-L000211](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L211) | 211 | `"2. تطبيق deadline موحد يمرر الوقت المتبقي إلى البحث وجلب الصفحة وكل استدعاء نموذج، ويمنع بدء مراحل لا يمكن إكمالها ضمن الميزانية."` | — |
-| [SRC-26428BDA96-L000212](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L212) | 212 | `"3. وضع حدود صريحة للتوازي وعدد صفحات fetch وإجمالي model calls لكل طلب ونمط؛ توثيق سقف التكلفة والقياس."` | — |
-| [SRC-26428BDA96-L000213](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L213) | 213 | `"4. اختبار سوء استخدام عبر طلبات متزامنة وموفر متأخر/معلق، وتأكيد أن عدد الخيوط والمهام لا يرتفع بلا سقف."` | — |
-| [SRC-26428BDA96-L000214](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L214) | 214 | `""` | — |
-| [SRC-26428BDA96-L000215](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L215) | 215 | `"### Gate 2 — تحديد نموذج المستخدمين"` | — |
-| [SRC-26428BDA96-L000216](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L216) | 216 | `"1. تسجيل قرار منتج صريح: هل Omarai حاليًا تطبيق خاص بمشغّل واحد أم خدمة متعددة المستخدمين؟"` | — |
-| [SRC-26428BDA96-L000217](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L217) | 217 | `"2. إذا خاص بمشغّل واحد: وثّق ذلك في README والواجهة وسياسة الخصوصية، واحتفظ بالرمز سرًا، ولا تفتح مشاركة السجلات."` | — |
-| [SRC-26428BDA96-L000218](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L218) | 218 | `"3. إذا متعدد المستخدمين: إضافة user_id/tenant_id وسياق هوية في API وقاعدة البيانات، وحصر list/update لكل مالك، وتغيير الرمز المشترك لجلسات/رموز فردية، واختبار A لا يرى أو يعدّل بيانات B."` | — |
-| [SRC-26428BDA96-L000219](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L219) | 219 | `""` | — |
-| [SRC-26428BDA96-L000220](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L220) | 220 | `"### Gate 3 — استكمال اختبارات الأمن"` | — |
-| [SRC-26428BDA96-L000221](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L221) | 221 | `"1. SSRF: private/mixed DNS، DNS rebinding، redirect إلى localhost/127.0.0.1/169.254.169.254 وIPv6 link-local، port/protocol variants وحجم غير محدود."` | — |
-| [SRC-26428BDA96-L000222](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L222) | 222 | `"2. Prompt injection: تعليمات هجومية في title/snippet/full page ونتائج اجتماعية، والتأكد من أنها لا تغير policy ولا تكشف secrets ولا تتجاوز tool permissions."` | — |
-| [SRC-26428BDA96-L000223](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L223) | 223 | `"3. XSS/HTML: حمولة عدائية في title/snippet/URL/lead text/platform/note وأخطاء API، مع اختبار في متصفح أو مختبر واجهة مناسب."` | — |
-| [SRC-26428BDA96-L000224](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L224) | 224 | `"4. CORS/proxy: origins مزورة، Host/X-Forwarded-Host/X-Forwarded-Proto غير موثوقين، وسلوك العنوان الحقيقي تحت الوكيل العكسي."` | — |
-| [SRC-26428BDA96-L000225](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L225) | 225 | `""` | — |
-| [SRC-26428BDA96-L000226](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L226) | 226 | `"### Gate 4 — صدق الأدلة"` | — |
-| [SRC-26428BDA96-L000227](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L227) | 227 | `"1. إضافة corpus مرجعي فيه ادعاء مدعوم، وادعاء غير مدعوم، ومصدر متعارض، ومصدر قديم، ورابط لا يدعم النص."` | — |
-| [SRC-26428BDA96-L000228](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L228) | 228 | `"2. قياس precision وrecall لدعم الادعاءات والاستشهادات بدل الاعتماد على مراجعة نموذج فقط."` | — |
-| [SRC-26428BDA96-L000229](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L229) | 229 | `"3. الحفاظ على metadata الحالية التي تفرق بين فحص index-range وبين fact check."` | — |
-| [SRC-26428BDA96-L000230](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L230) | 230 | `"4. عدم تسمية الجودة good/excellent ضمانًا لصحة الحقيقة؛ إنها حاليًا تشير إلى تغطية عملية البحث كما تقول metadata نفسها."` | — |
-| [SRC-26428BDA96-L000231](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L231) | 231 | `""` | — |
-| [SRC-26428BDA96-L000232](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L232) | 232 | `"### Gate 5 — إثبات النشر والتخزين"` | — |
-| [SRC-26428BDA96-L000233](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L233) | 233 | `"1. تشغيل live diagnostics من البيئة المنشورة مع عرض النتائج الفعلية دون كشف الأسرار."` | — |
-| [SRC-26428BDA96-L000234](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L234) | 234 | `"2. ربط deployment بوضوح مع commit محدد."` | — |
-| [SRC-26428BDA96-L000235](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L235) | 235 | `"3. حفظ سجل اختبار، ثم restart/redeploy، ثم التحقق من استمرار البيانات أو توثيق كونها مؤقتة."` | — |
-| [SRC-26428BDA96-L000236](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L236) | 236 | `"4. إعداد نسخة احتياطية وتجربة استعادة إن كانت البيانات لا يمكن تعويضها."` | — |
-| [SRC-26428BDA96-L000237](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L237) | 237 | `""` | — |
-| [SRC-26428BDA96-L000238](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L238) | 238 | `"## 8. متى نسمح بالانتقال للمرحلة التالية؟"` | — |
-| [SRC-26428BDA96-L000239](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L239) | 239 | `""` | — |
-| [SRC-26428BDA96-L000240](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L240) | 240 | `"لا نعتمد التقدم على انطباع عام. شروط البوابة المقترحة:"` | — |
-| [SRC-26428BDA96-L000241](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L241) | 241 | `"- [ ] اختبار deadline شامل يثبت توقف مراحل البحث والنموذج قبل تجاوز حد الطلب."` | — |
-| [SRC-26428BDA96-L000242](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L242) | 242 | `"- [ ] اختبار توازٍ يثبت أن عدد الطلبات المكلفة المتزامنة محدود."` | — |
-| [SRC-26428BDA96-L000243](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L243) | 243 | `"- [ ] قرار نطاق موثق: single-operator أو multi-user؛ وإذا multi-user، تمر جميع اختبارات العزل."` | — |
-| [SRC-26428BDA96-L000244](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L244) | 244 | `"- [ ] نجاح اختبارات SSRF adversarial الجديدة."` | — |
-| [SRC-26428BDA96-L000245](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L245) | 245 | `"- [ ] نجاح اختبارات prompt injection وXSS الجديدة."` | — |
-| [SRC-26428BDA96-L000246](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L246) | 246 | `"- [ ] مجموعة تقييم citations/claim-support بنتائج مسجلة، وحدود قبول متفق عليها."` | — |
-| [SRC-26428BDA96-L000247](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L247) | 247 | `"- [ ] مراجعة تهيئة الوكيل العكسي وOrigin وrate limit في منصة الاستضافة الفعلية."` | — |
-| [SRC-26428BDA96-L000248](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L248) | 248 | `"- [ ] إثبات استمرارية قاعدة البيانات أو تنبيه المستخدم بوضوح أنها غير دائمة."` | — |
-| [SRC-26428BDA96-L000249](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L249) | 249 | `"- [ ] إرفاق commit لكل تغيير، ونتائج CI لكل نسخة، وتحديث سجل المتطلبات بالحالة والدليل."` | — |
-| [SRC-26428BDA96-L000250](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L250) | 250 | `""` | — |
-| [SRC-26428BDA96-L000251](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L251) | 251 | `"لا تعني كل هذه البنود أن يجب بناء بنية ضخمة. يمكن معالجة كثير منها داخل التطبيق الحالي؛ المطلوب هو وضع الحدود الصحيحة، ثم اختبارها."` | — |
-| [SRC-26428BDA96-L000252](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L252) | 252 | `""` | — |
-| [SRC-26428BDA96-L000253](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L253) | 253 | `"## 9. الخلاصة النهائية"` | — |
-| [SRC-26428BDA96-L000254](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L254) | 254 | `""` | — |
-| [SRC-26428BDA96-L000255](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L255) | 255 | `"**Omarai يسير في اتجاه هندسي صحيح أكثر مما يوحي به كونه مشروعًا صغيرًا: توجد اختبارات، وإخفاقات تُعامل بصدق، وضوابط شبكة، ومراجعة للأدلة، وواجهات تُنقّي النصوص، وأساس CI جيد. وهذه نتيجة إيجابية مدعومة بدليل.**"` | — |
-| [SRC-26428BDA96-L000256](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L256) | 256 | `""` | — |
-| [SRC-26428BDA96-L000257](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L257) | 257 | `"لكن التأكيد الاحترافي ليس «مطابق 100%». النتيجة الأدق هي:"` | — |
-| [SRC-26428BDA96-L000258](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L258) | 258 | `"- **مناسب للاستمرار في التطوير والاختبار كنسخة خاصة ذات نطاق محدود، بشروط واضحة.**"` | — |
-| [SRC-26428BDA96-L000259](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L259) | 259 | `"- **غير مثبت بعد كخدمة عامة متعددة المستخدمين ذات ميزانية تشغيل شاملة واستشهادات متحققة دلاليًا.**"` | — |
-| [SRC-26428BDA96-L000260](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L260) | 260 | `"- **الأولوية القادمة ليست إضافة مزيد من المصطلحات أو الخدمات؛ بل إغلاق A-01 وA-02 وA-03 وA-04 واختبارها، ثم تحديث حالات سجل المتطلبات من UNKNOWN إلى حالات مدعومة بالأدلة.**"` | — |
-| [SRC-26428BDA96-L000261](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L261) | 261 | `""` | — |
-| [SRC-26428BDA96-L000262](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L262) | 262 | `"هذا التقرير لا يغيّر الكود ولا ينشر التطبيق. الغرض منه تثبيت صورة صادقة عن الوضع الحالي وتحديد أقصر مسار إلى جاهزية أعلى."` | — |
-## وثائق وفهرسة
-
-### FILE-160DC0B3E4 — [docs/archive/README.md](../archive/README.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-160DC0B3E4-L000001](../archive/README.md#L1) | 1 | `"# أرشيف تقارير Omarai"` | — |
-| [SRC-160DC0B3E4-L000002](../archive/README.md#L2) | 2 | `""` | — |
-| [SRC-160DC0B3E4-L000003](../archive/README.md#L3) | 3 | `"يحتوي هذا المجلد على لقطات تاريخية مرتبطة بـSHA وتاريخ تدقيق سابق. الهدف حفظ السياق والأدلة التاريخية دون خلطها بالحالة الحالية."` | — |
-| [SRC-160DC0B3E4-L000004](../archive/README.md#L4) | 4 | `""` | — |
-| [SRC-160DC0B3E4-L000005](../archive/README.md#L5) | 5 | `"- [تدقيق P0 المؤرخ 19 أكتوبر 2026](OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md): تدقيق أولي قبل دمج إصلاحات لاحقة."` | — |
-| [SRC-160DC0B3E4-L000006](../archive/README.md#L6) | 6 | `"- [تسوية الأدلة التشغيلية المؤرخة 19 أكتوبر 2026](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md): تسلسل تاريخي لنتائج الاختبارات والفروع السابقة."` | — |
-| [SRC-160DC0B3E4-L000007](../archive/README.md#L7) | 7 | `""` | — |
-| [SRC-160DC0B3E4-L000008](../archive/README.md#L8) | 8 | `"للحالة الحالية ابدأ من [نطاق التنفيذ](../IMPLEMENTATION_SCOPE.md)، و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)، و[تقرير التحقق بعد الدمج](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md)، و[مصفوفة أدلة الاختبار](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md)."` | — |
-## وثائق وفهرسة
-
-### FILE-914817100D — [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-914817100D-L000001](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) | 1 | `"# إصلاح حلقة الإجابة المركبة في Omarai — 27 أكتوبر 2026"` | — |
-| [SRC-914817100D-L000002](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L2) | 2 | `""` | — |
-| [SRC-914817100D-L000003](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L3) | 3 | `"## الغرض"` | — |
-| [SRC-914817100D-L000004](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L4) | 4 | `""` | — |
-| [SRC-914817100D-L000005](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L5) | 5 | `"إغلاق الفجوة بين محاور السؤال المركب، وخطة البحث، والأدلة التي جُمعت، والإجابة النهائية. هذا التغيير لا يدّعي إثبات صحة المعنى آليًا؛ فهو يحسّن تخصيص البحث ويعرض إشارات الأدلة لكل محور، مع الإبقاء على الفصل بين الإشارة اللفظية والتحقق الدلالي."` | — |
-| [SRC-914817100D-L000006](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L6) | 6 | `""` | — |
-| [SRC-914817100D-L000007](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L7) | 7 | `"## خط الأساس الذي تمت مراجعته"` | — |
-| [SRC-914817100D-L000008](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L8) | 8 | `""` | — |
-| [SRC-914817100D-L000009](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L9) | 9 | ``"- الفرع المرجعي: `main`"`` | — |
-| [SRC-914817100D-L000010](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L10) | 10 | ``"- Commit المرجع الذي تمت مراجعته: `aa42c52c5c98a7788de91269e3d8b51542483a6b` (دمج PR #104)."`` | — |
-| [SRC-914817100D-L000011](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L11) | 11 | `"- نقطة الضعف المؤكدة في الاختبار السابق: اختبار المقارنة المركبة كان يتحقق من أن الخطة عميقة وتحتوي أكثر من استعلام، وأن محاور السعر والبطارية والكاميرا استُخرجت، لكنه كان يقبل إجابة اختبارية قصيرة «مقارنة أولية [المصدر 1]» مع توثيق صريح بأن التغطية لم تُقيّم آليًا. لذلك لم يكن الاختبار يثبت أن كل محور حصل على بحث مخصص أو أن لكل محور إشارة مصدر."` | — |
-| [SRC-914817100D-L000012](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L12) | 12 | `"- توجد بالفعل مراجعة للنموذج ومحاولة إصلاح تغطية محدودة وفحص استشهادات. لا ينبغي إعادة بناء هذه الأجزاء أو وصفها بأنها غير موجودة؛ التغيير يعالج الفجوة المحددة في تخصيص الاستعلامات وتشخيص الأدلة لكل محور."` | — |
-| [SRC-914817100D-L000013](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L13) | 13 | `""` | — |
-| [SRC-914817100D-L000014](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L14) | 14 | `"## التغييرات في هذا الفرع"` | — |
-| [SRC-914817100D-L000015](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L15) | 15 | `""` | — |
-| [SRC-914817100D-L000016](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L16) | 16 | `"### 1. استعلامات مخصصة لكل معيار"` | — |
-| [SRC-914817100D-L000017](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L17) | 17 | `""` | — |
-| [SRC-914817100D-L000018](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L18) | 18 | ``"في البحث العميق التلقائي والبحث العميق المحدد من المستخدم، أصبحت المعايير الصريحة المستخرجة من السؤال تحصل على استعلامات مستقلة قبل الاستعلامات العامة مثل «المخاطر والقيود» أو «التحليل الحديث». يتضمن كل استعلام معيار الموضوع الأساسي؛ لذلك تحصل المعايير الثمانية القصوى المستخرجة على ثمانية استعلامات عند الحاجة، وتُضاف الاستعلامات العامة فقط إذا بقيت مساحة ضمن حد `MAX_PLAN_QUERIES`."`` | — |
-| [SRC-914817100D-L000019](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L19) | 19 | `""` | — |
-| [SRC-914817100D-L000020](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L20) | 20 | `"هذا تحسين في توزيع ميزانية البحث، وليس ضمانًا بأن المصادر ستحتوي على المعلومات المطلوبة. لا تُرفع الحدود ولا يُلغى التحقق من صلة النتائج."` | — |
-| [SRC-914817100D-L000021](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L21) | 21 | `""` | — |
-| [SRC-914817100D-L000022](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L22) | 22 | `"### 2. تخصيص الميزانية وإصلاح فجوات البحث"` | — |
-| [SRC-914817100D-L000023](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L23) | 23 | `""` | — |
-| [SRC-914817100D-L000024](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L24) | 24 | `"- في الأسئلة المركبة المعتادة (حتى ستة معايير صريحة)، يُحجز موضع بحث واحد لمرحلة التحقق بعد صياغة الإجابة، ويقتصر توسيع البحث الأولي على سبعة استعلامات كحد أقصى."` | — |
-| [SRC-914817100D-L000025](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L25) | 25 | `"- بعد مراجعة المسودة، إذا ذُكر معيار في الإجابة دون إشارة في نصوص المصادر، يحاول النظام بحثًا إضافيًا محدودًا يستهدف حتى ثلاثة محاور ناقصة في استعلام واحد، بشرط توفر ميزانية الاستعلام المحجوزة."` | — |
-| [SRC-914817100D-L000026](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L26) | 26 | `"- إذا لم توجد ميزانية محجوزة، أو لم ينتج البحث نص مصدر جديدًا، أو لم تتغير الأدلة، تسجل الحالة بوضوح ولا تُعامل المحاور على أنها محسومة."` | — |
-| [SRC-914817100D-L000027](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L27) | 27 | `"- عندما تتطلب المهمة ثمانية معايير صريحة، قد تستهلك الاستعلامات المخصصة كامل الحد؛ لا يتجاوز النظام حد الموارد، ويسجل فجوة الأدلة بدل إطلاق استعلام تاسع."` | — |
-| [SRC-914817100D-L000028](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L28) | 28 | `""` | — |
-| [SRC-914817100D-L000029](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L29) | 29 | `"### 3. إشارة مصدر مستقلة لكل معيار"` | — |
-| [SRC-914817100D-L000030](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L30) | 30 | `""` | — |
-| [SRC-914817100D-L000031](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L31) | 31 | ``"يضيف `audit_answer_integrity` لكل معيار:"`` | — |
-| [SRC-914817100D-L000032](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L32) | 32 | `"- حالة الإشارة اللفظية في الإجابة."` | — |
-| [SRC-914817100D-L000033](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L33) | 33 | `"- حالة الإشارة اللفظية في نصوص المصادر."` | — |
-| [SRC-914817100D-L000034](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L34) | 34 | `"- أرقام المصادر التي ظهرت فيها الإشارة، ونوع النص المستخدم: نص صفحة مستخرجة أو مقتطف بحث أو عنوان."` | — |
-| [SRC-914817100D-L000035](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L35) | 35 | ``"- `source_evidence_gap_count` وعدد الفجوات على مستوى المصادر."`` | — |
-| [SRC-914817100D-L000036](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L36) | 36 | ``"- عرض عدد المحاور التي لا توجد لها إشارة لفظية في المصادر ضمن ملخص الفحص في واجهة `web/agent.html`، بدل إبقاء الفجوة داخل بيانات التشخيص فقط."`` | — |
-| [SRC-914817100D-L000037](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L37) | 37 | `""` | — |
-| [SRC-914817100D-L000038](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L38) | 38 | `"إذا ذكرت الإجابة محورًا دون وجود إشارة لفظية له في المصادر، فسيظهر ذلك كفجوة أدلة حتى لو ورد اسم المحور في الإجابة. هذا فحص استدلالي لفظي محدود؛ لا يثبت أن المصدر يدعم الادعاء ولا يثبت الاستلزام أو الحقيقة."` | — |
-| [SRC-914817100D-L000039](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L39) | 39 | `""` | — |

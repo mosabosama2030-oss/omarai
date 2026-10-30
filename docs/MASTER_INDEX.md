@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **114**
-- ملفات Python المحللة: **68**
-- تعريفات Python المفهرسة: **1483**
-- تعريفات Python موثقة بوجود Docstring: **251**
-- تعريفات Python بلا Docstring: **930**
-- تعريفات لا ينطبق عليها Docstring: **302**
-- الرموز الساكنة الإضافية: **1857**
-- الأسطر النصية المفهرسة حرفيًا: **39158**
+- ملفات المستودع في الجرد: **115**
+- ملفات Python المحللة: **69**
+- تعريفات Python المفهرسة: **1488**
+- تعريفات Python موثقة بوجود Docstring: **253**
+- تعريفات Python بلا Docstring: **931**
+- تعريفات لا ينطبق عليها Docstring: **304**
+- الرموز الساكنة الإضافية: **1860**
+- الأسطر النصية المفهرسة حرفيًا: **39326**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -47,6 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38402 | 907 | جرد الملف + AST Python |
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 11879 | 296 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
+| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 6439 | 168 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
@@ -353,6 +354,11 @@
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L182) | دالة | classify_social_source.has_term | لا توجد Docstring. | ناقص | 182 | [SRC-3AA6165B18-L000182](../agents/research_guardrails.py#L182) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L203) | دالة | apply_source_guardrails | Apply official-domain, current-evidence, and explicit social-mode guards. | موثق | 203 | [SRC-3AA6165B18-L000203](../agents/research_guardrails.py#L203) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L240) | دالة | apply_source_guardrails.reject | لا توجد Docstring. | ناقص | 240 | [SRC-3AA6165B18-L000240](../agents/research_guardrails.py#L240) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L19) | متغير/ثابت Python | MAX_PIPELINE_QUESTION_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-60066C6786-L000019](../agents/research_pipeline.py#L19) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L20) | متغير/ثابت Python | MAX_PIPELINE_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-60066C6786-L000020](../agents/research_pipeline.py#L20) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L23) | دالة | _clean_aspects | لا توجد Docstring. | ناقص | 23 | [SRC-60066C6786-L000023](../agents/research_pipeline.py#L23) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L42) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 42 | [SRC-60066C6786-L000042](../agents/research_pipeline.py#L42) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L94) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 94 | [SRC-60066C6786-L000094](../agents/research_pipeline.py#L94) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1791,6 +1797,9 @@
 | [agents/research.py](../agents/research.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_FUSED_RESULTS | 23 | [SRC-59CF4B7DE8-L000023](../agents/research.py#L23) |
 | [agents/research.py](../agents/research.py#L60) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 60 | [SRC-59CF4B7DE8-L000060](../agents/research.py#L60) |
 | [agents/research_guardrails.py](../agents/research_guardrails.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 13 | [SRC-3AA6165B18-L000013](../agents/research_guardrails.py#L13) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_ASPECTS | 14 | [SRC-60066C6786-L000014](../agents/research_pipeline.py#L14) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_QUESTION_CHARS | 19 | [SRC-60066C6786-L000019](../agents/research_pipeline.py#L19) |
+| [agents/research_pipeline.py](../agents/research_pipeline.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_SOURCES | 20 | [SRC-60066C6786-L000020](../agents/research_pipeline.py#L20) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
