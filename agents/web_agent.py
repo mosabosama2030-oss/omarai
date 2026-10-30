@@ -5040,7 +5040,6 @@ class WebAgent:
             mode=clean_mode,
             intent_route=intent_route,
             dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
-            task_spec=preflight_task_spec,
             compact_fn=compact_search_query,
         )
         task_spec = pipeline["task_spec"]
