@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006377 إلى SRC-EEF2E6447C-L000554
+- النطاق: SRC-1AE03B9EC3-L006371 إلى SRC-EEF2E6447C-L000548
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006371](../../agents/web_agent.py#L6371) | 6371 | `"            research_quality = \"good\""` | — |
+| [SRC-1AE03B9EC3-L006372](../../agents/web_agent.py#L6372) | 6372 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006373](../../agents/web_agent.py#L6373) | 6373 | `"            research_quality = \"partial\""` | — |
+| [SRC-1AE03B9EC3-L006374](../../agents/web_agent.py#L6374) | 6374 | `""` | — |
+| [SRC-1AE03B9EC3-L006375](../../agents/web_agent.py#L6375) | 6375 | `"        # Source breadth and a completed model-assisted review do not justify a"` | — |
+| [SRC-1AE03B9EC3-L006376](../../agents/web_agent.py#L6376) | 6376 | `"        # positive research-quality label if the final answer has no valid source"` | — |
 | [SRC-1AE03B9EC3-L006377](../../agents/web_agent.py#L6377) | 6377 | `"        # citation markers. This is a deterministic presentation guard, not a"` | — |
 | [SRC-1AE03B9EC3-L006378](../../agents/web_agent.py#L6378) | 6378 | `"        # semantic entailment check."` | — |
 | [SRC-1AE03B9EC3-L006379](../../agents/web_agent.py#L6379) | 6379 | `"        uncited_reviewed_answer = ("` | — |
@@ -828,9 +834,3 @@
 | [SRC-EEF2E6447C-L000546](../../api/omarai.py#L546) | 546 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
 | [SRC-EEF2E6447C-L000547](../../api/omarai.py#L547) | 547 | `""` | — |
 | [SRC-EEF2E6447C-L000548](../../api/omarai.py#L548) | 548 | `"            content_type = self.headers.get(\"Content-Type\", \"\").split(\";\", 1)[0].strip().lower()"` | — |
-| [SRC-EEF2E6447C-L000549](../../api/omarai.py#L549) | 549 | `"            if content_type != \"application/json\":"` | — |
-| [SRC-EEF2E6447C-L000550](../../api/omarai.py#L550) | 550 | `"                return self.respond(415, {\"error\": \"Content-Type must be application/json\"})"` | — |
-| [SRC-EEF2E6447C-L000551](../../api/omarai.py#L551) | 551 | `"            origin = self.headers.get(\"Origin\")"` | — |
-| [SRC-EEF2E6447C-L000552](../../api/omarai.py#L552) | 552 | `"            if origin and not self._origin_allowed(origin):"` | — |
-| [SRC-EEF2E6447C-L000553](../../api/omarai.py#L553) | 553 | `"                return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
-| [SRC-EEF2E6447C-L000554](../../api/omarai.py#L554) | 554 | `""` | — |

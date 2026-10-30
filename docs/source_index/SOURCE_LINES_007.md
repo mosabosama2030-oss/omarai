@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000105 إلى SRC-686F71AA50-L000904
+- النطاق: SRC-686F71AA50-L000099 إلى SRC-686F71AA50-L000898
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000099](../../agents/task_understanding.py#L99) | 99 | `"    selected.extend(_REASONING_FAMILY_IDS.get(family, ()))"` | — |
+| [SRC-686F71AA50-L000100](../../agents/task_understanding.py#L100) | 100 | `"    if missing_required_inputs or context_resolution.get(\"needs_clarification\"):"` | — |
+| [SRC-686F71AA50-L000101](../../agents/task_understanding.py#L101) | 101 | `"        selected.append(\"clarify_required_input\")"` | — |
+| [SRC-686F71AA50-L000102](../../agents/task_understanding.py#L102) | 102 | `"    if context_resolution.get(\"is_follow_up\"):"` | — |
+| [SRC-686F71AA50-L000103](../../agents/task_understanding.py#L103) | 103 | `"        selected.append(\"resolve_followup_slots\")"` | — |
+| [SRC-686F71AA50-L000104](../../agents/task_understanding.py#L104) | 104 | `"    if constraints.get(\"time_sensitive_request\"):"` | — |
 | [SRC-686F71AA50-L000105](../../agents/task_understanding.py#L105) | 105 | `"        selected.extend((\"separate_event_and_publication_dates\", \"reject_stale_current_claims\"))"` | — |
 | [SRC-686F71AA50-L000106](../../agents/task_understanding.py#L106) | 106 | `"    if constraints.get(\"official_destination_required\"):"` | — |
 | [SRC-686F71AA50-L000107](../../agents/task_understanding.py#L107) | 107 | `"        selected.append(\"verify_official_destination\")"` | — |
@@ -810,9 +816,3 @@
 | [SRC-686F71AA50-L000896](../../agents/task_understanding.py#L896) | 896 | `"            \"json_requested\": bool(output_matches[\"output_json\"]),"` | — |
 | [SRC-686F71AA50-L000897](../../agents/task_understanding.py#L897) | 897 | `"        },"` | — |
 | [SRC-686F71AA50-L000898](../../agents/task_understanding.py#L898) | 898 | `"        \"evidence_requirements\": evidence_requirements,"` | — |
-| [SRC-686F71AA50-L000899](../../agents/task_understanding.py#L899) | 899 | `"        \"query_strategies\": query_strategies,"` | — |
-| [SRC-686F71AA50-L000900](../../agents/task_understanding.py#L900) | 900 | `"        \"tool_requirements\": list(dict.fromkeys(tools)),"` | — |
-| [SRC-686F71AA50-L000901](../../agents/task_understanding.py#L901) | 901 | `"        \"decision_checks\": ["` | — |
-| [SRC-686F71AA50-L000902](../../agents/task_understanding.py#L902) | 902 | `"            \"resolve_context_without_carrying_stale_topic\","` | — |
-| [SRC-686F71AA50-L000903](../../agents/task_understanding.py#L903) | 903 | `"            \"preserve_explicit_entities_and_constraints\","` | — |
-| [SRC-686F71AA50-L000904](../../agents/task_understanding.py#L904) | 904 | `"            \"validate_topic_relevance\","` | — |

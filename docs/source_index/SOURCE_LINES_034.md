@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000062 إلى SRC-B3062EB677-L000143
+- النطاق: SRC-6A7519AC10-L000056 إلى SRC-B3062EB677-L000137
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000056](../../tests/test_answer_quality_comparison.py#L56) | 56 | `"        row[\"provider_reported_model_cost_usd\"] = cost"` | — |
+| [SRC-6A7519AC10-L000057](../../tests/test_answer_quality_comparison.py#L57) | 57 | `"    if request_cost is not None:"` | — |
+| [SRC-6A7519AC10-L000058](../../tests/test_answer_quality_comparison.py#L58) | 58 | `"        row[\"request_cost_usd\"] = request_cost"` | — |
+| [SRC-6A7519AC10-L000059](../../tests/test_answer_quality_comparison.py#L59) | 59 | `"    return row"` | — |
+| [SRC-6A7519AC10-L000060](../../tests/test_answer_quality_comparison.py#L60) | 60 | `""` | — |
+| [SRC-6A7519AC10-L000061](../../tests/test_answer_quality_comparison.py#L61) | 61 | `""` | — |
 | [SRC-6A7519AC10-L000062](../../tests/test_answer_quality_comparison.py#L62) | 62 | `"def _reviews(*, correct: int, supported_citations: int) -> dict:"` | — |
 | [SRC-6A7519AC10-L000063](../../tests/test_answer_quality_comparison.py#L63) | 63 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
 | [SRC-6A7519AC10-L000064](../../tests/test_answer_quality_comparison.py#L64) | 64 | `"    return {"` | — |
@@ -846,9 +852,3 @@
 | [SRC-B3062EB677-L000135](../../tests/test_answer_quality_runner.py#L135) | 135 | `"    assert payload[\"build_sha\"] == \"a\" * 40"` | — |
 | [SRC-B3062EB677-L000136](../../tests/test_answer_quality_runner.py#L136) | 136 | `"    assert payload[\"build_sha_verification\"] == \"confirmed_by_api_health\""` | — |
 | [SRC-B3062EB677-L000137](../../tests/test_answer_quality_runner.py#L137) | 137 | `""` | — |
-| [SRC-B3062EB677-L000138](../../tests/test_answer_quality_runner.py#L138) | 138 | `""` | — |
-| [SRC-B3062EB677-L000139](../../tests/test_answer_quality_runner.py#L139) | 139 | `"def test_validate_base_url_rejects_non_loopback_http():"` | — |
-| [SRC-B3062EB677-L000140](../../tests/test_answer_quality_runner.py#L140) | 140 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000141](../../tests/test_answer_quality_runner.py#L141) | 141 | `"    with pytest.raises(ValueError, match=\"Plain HTTP\"):"` | — |
-| [SRC-B3062EB677-L000142](../../tests/test_answer_quality_runner.py#L142) | 142 | `"        mod.validate_base_url(\"http://research.example\")"` | — |
-| [SRC-B3062EB677-L000143](../../tests/test_answer_quality_runner.py#L143) | 143 | `""` | — |

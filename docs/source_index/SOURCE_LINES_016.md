@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005577 إلى SRC-1AE03B9EC3-L006376
+- النطاق: SRC-1AE03B9EC3-L005571 إلى SRC-1AE03B9EC3-L006370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005571](../../agents/web_agent.py#L5571) | 5571 | `"            pre_final_guardrail_count"` | — |
+| [SRC-1AE03B9EC3-L005572](../../agents/web_agent.py#L5572) | 5572 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L005573](../../agents/web_agent.py#L5573) | 5573 | `"        if final_source_guardrails[\"rejected_sources\"]:"` | — |
+| [SRC-1AE03B9EC3-L005574](../../agents/web_agent.py#L5574) | 5574 | `"            search_warnings.append("` | — |
+| [SRC-1AE03B9EC3-L005575](../../agents/web_agent.py#L5575) | 5575 | `"                \"أُعيد تطبيق شروط قبول الأدلة بعد محاولة الإصلاح؛ لم تُستخدم النتائج \""` | — |
+| [SRC-1AE03B9EC3-L005576](../../agents/web_agent.py#L5576) | 5576 | `"                \"التي أخفقت في شروط الرسمية أو الحداثة أو كونها منشورات اجتماعية.\""` | — |
 | [SRC-1AE03B9EC3-L005577](../../agents/web_agent.py#L5577) | 5577 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005578](../../agents/web_agent.py#L5578) | 5578 | `"        if evidence_repair.get(\"attempted\") and \"final_source_count\" in evidence_repair:"` | — |
 | [SRC-1AE03B9EC3-L005579](../../agents/web_agent.py#L5579) | 5579 | `"            final_domains = {"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L006368](../../agents/web_agent.py#L6368) | 6368 | `"            and (len(distinct_providers) >= 2 or fetched_pages >= 1)"` | — |
 | [SRC-1AE03B9EC3-L006369](../../agents/web_agent.py#L6369) | 6369 | `"            and review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L006370](../../agents/web_agent.py#L6370) | 6370 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L006371](../../agents/web_agent.py#L6371) | 6371 | `"            research_quality = \"good\""` | — |
-| [SRC-1AE03B9EC3-L006372](../../agents/web_agent.py#L6372) | 6372 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L006373](../../agents/web_agent.py#L6373) | 6373 | `"            research_quality = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L006374](../../agents/web_agent.py#L6374) | 6374 | `""` | — |
-| [SRC-1AE03B9EC3-L006375](../../agents/web_agent.py#L6375) | 6375 | `"        # Source breadth and a completed model-assisted review do not justify a"` | — |
-| [SRC-1AE03B9EC3-L006376](../../agents/web_agent.py#L6376) | 6376 | `"        # positive research-quality label if the final answer has no valid source"` | — |

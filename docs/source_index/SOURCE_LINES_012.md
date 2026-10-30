@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002377 إلى SRC-1AE03B9EC3-L003176
+- النطاق: SRC-1AE03B9EC3-L002371 إلى SRC-1AE03B9EC3-L003170
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"                        encoding = response.encoding or \"utf-8\""` | — |
+| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"                        html = raw.decode(encoding, errors=\"replace\")"` | — |
+| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"                        break"` | — |
+| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"                    return result(status=\"redirect_limit\", error_class=\"RedirectLimit\")"` | — |
+| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"        except (OSError, ValueError, httpx.HTTPError) as exc:"` | — |
 | [SRC-1AE03B9EC3-L002377](../../agents/web_agent.py#L2377) | 2377 | `"            return result(status=\"network_error\", error_class=type(exc).__name__)"` | — |
 | [SRC-1AE03B9EC3-L002378](../../agents/web_agent.py#L2378) | 2378 | `""` | — |
 | [SRC-1AE03B9EC3-L002379](../../agents/web_agent.py#L2379) | 2379 | `"        if media_type == \"text/plain\":"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L003168](../../agents/web_agent.py#L3168) | 3168 | `"                    \"Content-Type\": \"application/json\","` | — |
 | [SRC-1AE03B9EC3-L003169](../../agents/web_agent.py#L3169) | 3169 | `"                    \"HTTP-Referer\": \"https://github.com/mosabosama2030-oss/omarai\","` | — |
 | [SRC-1AE03B9EC3-L003170](../../agents/web_agent.py#L3170) | 3170 | `"                    \"X-Title\": \"Omarai Web Agent\","` | — |
-| [SRC-1AE03B9EC3-L003171](../../agents/web_agent.py#L3171) | 3171 | `"                },"` | — |
-| [SRC-1AE03B9EC3-L003172](../../agents/web_agent.py#L3172) | 3172 | `"                method=\"POST\","` | — |
-| [SRC-1AE03B9EC3-L003173](../../agents/web_agent.py#L3173) | 3173 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003174](../../agents/web_agent.py#L3174) | 3174 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L003175](../../agents/web_agent.py#L3175) | 3175 | `"                with urllib.request.urlopen(request, timeout=request_timeout) as response:"` | — |
-| [SRC-1AE03B9EC3-L003176](../../agents/web_agent.py#L3176) | 3176 | `"                    data = json.loads(response.read(2_000_000).decode(\"utf-8\"))"` | — |

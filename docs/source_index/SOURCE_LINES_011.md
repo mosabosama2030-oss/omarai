@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001577 إلى SRC-1AE03B9EC3-L002376
+- النطاق: SRC-1AE03B9EC3-L001571 إلى SRC-1AE03B9EC3-L002370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001571](../../agents/web_agent.py#L1571) | 1571 | `"            provider_batches = asyncio.run(run_all())"` | — |
+| [SRC-1AE03B9EC3-L001572](../../agents/web_agent.py#L1572) | 1572 | `"            combined = [item for batch in provider_batches for item in batch]"` | — |
+| [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"            # Scholarly fallback only for explicit research-shaped queries; reuse"` | — |
+| [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"            # run_one so budget, timeouts, public-URL/SSRF, blocklist and relevance"` | — |
+| [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `"            # validation are identical to ordinary search connectors."` | — |
+| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"            academic_markers = ("` | — |
 | [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"                \"دراسة علمية\", \"دراسات\", \"ابحاث\", \"أبحاث\", \"بحث علمي\","` | — |
 | [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"                \"ورقة علمية\", \"أوراق علمية\", \"academic\", \"research\","` | — |
 | [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"                \"scientific study\", \"research paper\", \"peer reviewed\","` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"                                break"` | — |
 | [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"                            chunks.append(chunk)"` | — |
 | [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"                        raw = b\"\".join(chunks)"` | — |
-| [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"                        encoding = response.encoding or \"utf-8\""` | — |
-| [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"                        html = raw.decode(encoding, errors=\"replace\")"` | — |
-| [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"                        break"` | — |
-| [SRC-1AE03B9EC3-L002374](../../agents/web_agent.py#L2374) | 2374 | `"                else:"` | — |
-| [SRC-1AE03B9EC3-L002375](../../agents/web_agent.py#L2375) | 2375 | `"                    return result(status=\"redirect_limit\", error_class=\"RedirectLimit\")"` | — |
-| [SRC-1AE03B9EC3-L002376](../../agents/web_agent.py#L2376) | 2376 | `"        except (OSError, ValueError, httpx.HTTPError) as exc:"` | — |

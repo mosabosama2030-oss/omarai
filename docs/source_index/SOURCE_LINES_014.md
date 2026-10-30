@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003977 إلى SRC-1AE03B9EC3-L004776
+- النطاق: SRC-1AE03B9EC3-L003971 إلى SRC-1AE03B9EC3-L004770
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003971](../../agents/web_agent.py#L3971) | 3971 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003972](../../agents/web_agent.py#L3972) | 3972 | `"                    \"سجل فرز الأدلة التالي إشارة لفظية فقط وليس تحققًا من المعنى أو الحقيقة. \""` | — |
+| [SRC-1AE03B9EC3-L003973](../../agents/web_agent.py#L3973) | 3973 | `"                    \"استخدمه لتحديد المحاور التي يجب إعلان نقص أدلتها؛ لا تعتبر أي تطابق إثباتًا.\\n\""` | — |
+| [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                    + json.dumps(requirement_evidence, ensure_ascii=False)"` | — |
+| [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"            })"` | — |
 | [SRC-1AE03B9EC3-L003977](../../agents/web_agent.py#L3977) | 3977 | `"        raw_review = self._request_completion("` | — |
 | [SRC-1AE03B9EC3-L003978](../../agents/web_agent.py#L3978) | 3978 | `"            messages,"` | — |
 | [SRC-1AE03B9EC3-L003979](../../agents/web_agent.py#L3979) | 3979 | `"            max_tokens=1700,"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L004768](../../agents/web_agent.py#L4768) | 4768 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004769](../../agents/web_agent.py#L4769) | 4769 | `"            return self._clarification_result(question, clean_mode, decision)"` | — |
 | [SRC-1AE03B9EC3-L004770](../../agents/web_agent.py#L4770) | 4770 | `""` | — |
-| [SRC-1AE03B9EC3-L004771](../../agents/web_agent.py#L4771) | 4771 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
-| [SRC-1AE03B9EC3-L004772](../../agents/web_agent.py#L4772) | 4772 | `"            general_answer = self._answer_without_search(working_question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004773](../../agents/web_agent.py#L4773) | 4773 | `"            if general_answer is not None:"` | — |
-| [SRC-1AE03B9EC3-L004774](../../agents/web_agent.py#L4774) | 4774 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
-| [SRC-1AE03B9EC3-L004775](../../agents/web_agent.py#L4775) | 4775 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
-| [SRC-1AE03B9EC3-L004776](../../agents/web_agent.py#L4776) | 4776 | `"                general_answer[\"question\"] = question"` | — |

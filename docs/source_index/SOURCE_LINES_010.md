@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000777 إلى SRC-1AE03B9EC3-L001576
+- النطاق: SRC-1AE03B9EC3-L000771 إلى SRC-1AE03B9EC3-L001570
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000771](../../agents/web_agent.py#L771) | 771 | `"            return urllib.parse.urlunsplit((scheme, netloc, path, query, \"\"))"` | — |
+| [SRC-1AE03B9EC3-L000772](../../agents/web_agent.py#L772) | 772 | `"        except (TypeError, ValueError):"` | — |
+| [SRC-1AE03B9EC3-L000773](../../agents/web_agent.py#L773) | 773 | `"            return \"\""` | — |
+| [SRC-1AE03B9EC3-L000774](../../agents/web_agent.py#L774) | 774 | `""` | — |
+| [SRC-1AE03B9EC3-L000775](../../agents/web_agent.py#L775) | 775 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `"    def _question_coverage_targets(question: str) -> list[str]:"` | — |
 | [SRC-1AE03B9EC3-L000777](../../agents/web_agent.py#L777) | 777 | `"        \"\"\"Use the richer aspect parser, then the shared deterministic fallback.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000778](../../agents/web_agent.py#L778) | 778 | `"        enhanced_targets = extract_aspects(question)"` | — |
 | [SRC-1AE03B9EC3-L000779](../../agents/web_agent.py#L779) | 779 | `"        if enhanced_targets:"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L001568](../../agents/web_agent.py#L1568) | 1568 | `"        async def run_all() -> list[list[dict[str, Any]]]:"` | — |
 | [SRC-1AE03B9EC3-L001569](../../agents/web_agent.py#L1569) | 1569 | `"            return await asyncio.gather(*(run_one(name, method) for name, method in adapters))"` | — |
 | [SRC-1AE03B9EC3-L001570](../../agents/web_agent.py#L1570) | 1570 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L001571](../../agents/web_agent.py#L1571) | 1571 | `"            provider_batches = asyncio.run(run_all())"` | — |
-| [SRC-1AE03B9EC3-L001572](../../agents/web_agent.py#L1572) | 1572 | `"            combined = [item for batch in provider_batches for item in batch]"` | — |
-| [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"            # Scholarly fallback only for explicit research-shaped queries; reuse"` | — |
-| [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"            # run_one so budget, timeouts, public-URL/SSRF, blocklist and relevance"` | — |
-| [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `"            # validation are identical to ordinary search connectors."` | — |
-| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"            academic_markers = ("` | — |

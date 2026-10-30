@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000961 إلى SRC-29A9CD43D1-L000197
+- النطاق: SRC-3451CC474D-L000955 إلى SRC-29A9CD43D1-L000191
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000955](../../tests/test_api.py#L955) | 955 | `"    assert style_attributes >= 10"` | — |
+| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `""` | — |
+| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `""` | — |
+| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"def test_dashboard_uses_delegated_status_action_not_inline_onclick():"` | — |
+| [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"    dashboard = (Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\").read_text("` | — |
+| [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"        encoding=\"utf-8\""` | — |
 | [SRC-3451CC474D-L000961](../../tests/test_api.py#L961) | 961 | `"    )"` | — |
 | [SRC-3451CC474D-L000962](../../tests/test_api.py#L962) | 962 | `"    assert 'data-action=\"save-status\"' in dashboard"` | — |
 | [SRC-3451CC474D-L000963](../../tests/test_api.py#L963) | 963 | `"    assert 'onclick=\"saveStatus' not in dashboard"` | — |
@@ -864,9 +870,3 @@
 | [SRC-29A9CD43D1-L000189](../../tests/test_dialogue_context_pipeline.py#L189) | 189 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
 | [SRC-29A9CD43D1-L000190](../../tests/test_dialogue_context_pipeline.py#L190) | 190 | `"    monkeypatch.setattr(agent, \"_collect_research\", forbidden_search)"` | — |
 | [SRC-29A9CD43D1-L000191](../../tests/test_dialogue_context_pipeline.py#L191) | 191 | `""` | — |
-| [SRC-29A9CD43D1-L000192](../../tests/test_dialogue_context_pipeline.py#L192) | 192 | `"    result = agent.answer(\"What about the second one?\", history=history)"` | — |
-| [SRC-29A9CD43D1-L000193](../../tests/test_dialogue_context_pipeline.py#L193) | 193 | `""` | — |
-| [SRC-29A9CD43D1-L000194](../../tests/test_dialogue_context_pipeline.py#L194) | 194 | `"    assert result[\"kind\"] == \"clarification_needed\""` | — |
-| [SRC-29A9CD43D1-L000195](../../tests/test_dialogue_context_pipeline.py#L195) | 195 | `"    assert result[\"intent_route\"] == \"CLARIFY\""` | — |
-| [SRC-29A9CD43D1-L000196](../../tests/test_dialogue_context_pipeline.py#L196) | 196 | `"    assert \"iPhone 17\" in result[\"answer\"]"` | — |
-| [SRC-29A9CD43D1-L000197](../../tests/test_dialogue_context_pipeline.py#L197) | 197 | `"    assert \"Samsung S26\" in result[\"answer\"]"` | — |

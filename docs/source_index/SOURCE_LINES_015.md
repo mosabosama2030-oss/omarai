@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004777 إلى SRC-1AE03B9EC3-L005576
+- النطاق: SRC-1AE03B9EC3-L004771 إلى SRC-1AE03B9EC3-L005570
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004771](../../agents/web_agent.py#L4771) | 4771 | `"        if intent_route == \"MODEL_ONLY\":"` | — |
+| [SRC-1AE03B9EC3-L004772](../../agents/web_agent.py#L4772) | 4772 | `"            general_answer = self._answer_without_search(working_question, clean_history)"` | — |
+| [SRC-1AE03B9EC3-L004773](../../agents/web_agent.py#L4773) | 4773 | `"            if general_answer is not None:"` | — |
+| [SRC-1AE03B9EC3-L004774](../../agents/web_agent.py#L4774) | 4774 | `"                # Keep the public API question verbatim; the resolved wording is for"` | — |
+| [SRC-1AE03B9EC3-L004775](../../agents/web_agent.py#L4775) | 4775 | `"                # internal reasoning and generation, not a replacement for user input."` | — |
+| [SRC-1AE03B9EC3-L004776](../../agents/web_agent.py#L4776) | 4776 | `"                general_answer[\"question\"] = question"` | — |
 | [SRC-1AE03B9EC3-L004777](../../agents/web_agent.py#L4777) | 4777 | `"                if context_override is not None:"` | — |
 | [SRC-1AE03B9EC3-L004778](../../agents/web_agent.py#L4778) | 4778 | `"                    general_answer[\"dialogue_context\"] = context_override"` | — |
 | [SRC-1AE03B9EC3-L004779](../../agents/web_agent.py#L4779) | 4779 | `"                    if isinstance(general_answer.get(\"research_plan\"), dict):"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L005568](../../agents/web_agent.py#L5568) | 5568 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L005569](../../agents/web_agent.py#L5569) | 5569 | `"        report[\"source_guardrails\"][\"final\"] = final_source_guardrails"` | — |
 | [SRC-1AE03B9EC3-L005570](../../agents/web_agent.py#L5570) | 5570 | `"        report[\"source_guardrails\"][\"repair_candidates_before_final_filter\"] = ("` | — |
-| [SRC-1AE03B9EC3-L005571](../../agents/web_agent.py#L5571) | 5571 | `"            pre_final_guardrail_count"` | — |
-| [SRC-1AE03B9EC3-L005572](../../agents/web_agent.py#L5572) | 5572 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L005573](../../agents/web_agent.py#L5573) | 5573 | `"        if final_source_guardrails[\"rejected_sources\"]:"` | — |
-| [SRC-1AE03B9EC3-L005574](../../agents/web_agent.py#L5574) | 5574 | `"            search_warnings.append("` | — |
-| [SRC-1AE03B9EC3-L005575](../../agents/web_agent.py#L5575) | 5575 | `"                \"أُعيد تطبيق شروط قبول الأدلة بعد محاولة الإصلاح؛ لم تُستخدم النتائج \""` | — |
-| [SRC-1AE03B9EC3-L005576](../../agents/web_agent.py#L5576) | 5576 | `"                \"التي أخفقت في شروط الرسمية أو الحداثة أو كونها منشورات اجتماعية.\""` | — |

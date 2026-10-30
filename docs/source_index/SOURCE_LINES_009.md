@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0799EEEB02-L000288 إلى SRC-1AE03B9EC3-L000776
+- النطاق: SRC-0799EEEB02-L000282 إلى SRC-1AE03B9EC3-L000770
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0799EEEB02-L000282](../../agents/tool_execution_status.py#L282) | 282 | `"        \"used_language_model\": used_model,"` | — |
+| [SRC-0799EEEB02-L000283](../../agents/tool_execution_status.py#L283) | 283 | `"        \"final_answer_status\": final_status or \"unknown\","` | — |
+| [SRC-0799EEEB02-L000284](../../agents/tool_execution_status.py#L284) | 284 | `"    }))"` | — |
+| [SRC-0799EEEB02-L000285](../../agents/tool_execution_status.py#L285) | 285 | `""` | — |
+| [SRC-0799EEEB02-L000286](../../agents/tool_execution_status.py#L286) | 286 | `"    tool = \"claim_review_if_configured\""` | — |
+| [SRC-0799EEEB02-L000287](../../agents/tool_execution_status.py#L287) | 287 | `"    review_status = str("` | — |
 | [SRC-0799EEEB02-L000288](../../agents/tool_execution_status.py#L288) | 288 | `"        search_report.get(\"claim_audit\")"` | — |
 | [SRC-0799EEEB02-L000289](../../agents/tool_execution_status.py#L289) | 289 | `"        or search_report.get(\"second_pass_review\")"` | — |
 | [SRC-0799EEEB02-L000290](../../agents/tool_execution_status.py#L290) | 290 | `"        or \"unknown\""` | — |
@@ -819,9 +825,3 @@
 | [SRC-1AE03B9EC3-L000768](../../agents/web_agent.py#L768) | 768 | `"                if not key.lower().startswith(\"utm_\") and key.lower() not in tracking_keys"` | — |
 | [SRC-1AE03B9EC3-L000769](../../agents/web_agent.py#L769) | 769 | `"            ]"` | — |
 | [SRC-1AE03B9EC3-L000770](../../agents/web_agent.py#L770) | 770 | `"            query = urllib.parse.urlencode(query_items, doseq=True)"` | — |
-| [SRC-1AE03B9EC3-L000771](../../agents/web_agent.py#L771) | 771 | `"            return urllib.parse.urlunsplit((scheme, netloc, path, query, \"\"))"` | — |
-| [SRC-1AE03B9EC3-L000772](../../agents/web_agent.py#L772) | 772 | `"        except (TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L000773](../../agents/web_agent.py#L773) | 773 | `"            return \"\""` | — |
-| [SRC-1AE03B9EC3-L000774](../../agents/web_agent.py#L774) | 774 | `""` | — |
-| [SRC-1AE03B9EC3-L000775](../../agents/web_agent.py#L775) | 775 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `"    def _question_coverage_targets(question: str) -> list[str]:"` | — |

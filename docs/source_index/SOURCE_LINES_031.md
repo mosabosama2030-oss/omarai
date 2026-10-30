@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000565 إلى SRC-90FAA34ADE-L000247
+- النطاق: SRC-4FFD5AFC54-L000559 إلى SRC-90FAA34ADE-L000241
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000559](../../scripts/run_answer_quality_benchmark.py#L559) | 559 | `"    except ValueError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000560](../../scripts/run_answer_quality_benchmark.py#L560) | 560 | `"        print(f\"Unverified deployed build; refusing live run: {exc}\", file=sys.stderr)"` | — |
+| [SRC-4FFD5AFC54-L000561](../../scripts/run_answer_quality_benchmark.py#L561) | 561 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000562](../../scripts/run_answer_quality_benchmark.py#L562) | 562 | `"    expected_build_sha = build_sha.strip().lower() if isinstance(build_sha, str) else \"\""` | — |
+| [SRC-4FFD5AFC54-L000563](../../scripts/run_answer_quality_benchmark.py#L563) | 563 | `"    if expected_build_sha and expected_build_sha != verified_build_sha:"` | — |
+| [SRC-4FFD5AFC54-L000564](../../scripts/run_answer_quality_benchmark.py#L564) | 564 | `"        print("` | — |
 | [SRC-4FFD5AFC54-L000565](../../scripts/run_answer_quality_benchmark.py#L565) | 565 | `"            \"Build SHA mismatch: --build-sha does not match /api/health build.sha; \""` | — |
 | [SRC-4FFD5AFC54-L000566](../../scripts/run_answer_quality_benchmark.py#L566) | 566 | `"            \"refusing live requests.\","` | — |
 | [SRC-4FFD5AFC54-L000567](../../scripts/run_answer_quality_benchmark.py#L567) | 567 | `"            file=sys.stderr,"` | — |
@@ -837,9 +843,3 @@
 | [SRC-90FAA34ADE-L000239](../../tests/fixtures/answer_quality_cases.json#L239) | 239 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000240](../../tests/fixtures/answer_quality_cases.json#L240) | 240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000241](../../tests/fixtures/answer_quality_cases.json#L241) | 241 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000242](../../tests/fixtures/answer_quality_cases.json#L242) | 242 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000243](../../tests/fixtures/answer_quality_cases.json#L243) | 243 | `"      \"case_id\": \"AQ-010\","` | — |
-| [SRC-90FAA34ADE-L000244](../../tests/fixtures/answer_quality_cases.json#L244) | 244 | `"      \"category\": \"multi_subquestions\","` | — |
-| [SRC-90FAA34ADE-L000245](../../tests/fixtures/answer_quality_cases.json#L245) | 245 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L000246](../../tests/fixtures/answer_quality_cases.json#L246) | 246 | `"      \"question\": \"Compare public EV incentives in Egypt vs UAE briefly, and list one official source for each if available.\","` | — |
-| [SRC-90FAA34ADE-L000247](../../tests/fixtures/answer_quality_cases.json#L247) | 247 | `"      \"expected_strategy\": \"web_search\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003177 إلى SRC-1AE03B9EC3-L003976
+- النطاق: SRC-1AE03B9EC3-L003171 إلى SRC-1AE03B9EC3-L003970
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003171](../../agents/web_agent.py#L3171) | 3171 | `"                },"` | — |
+| [SRC-1AE03B9EC3-L003172](../../agents/web_agent.py#L3172) | 3172 | `"                method=\"POST\","` | — |
+| [SRC-1AE03B9EC3-L003173](../../agents/web_agent.py#L3173) | 3173 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003174](../../agents/web_agent.py#L3174) | 3174 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L003175](../../agents/web_agent.py#L3175) | 3175 | `"                with urllib.request.urlopen(request, timeout=request_timeout) as response:"` | — |
+| [SRC-1AE03B9EC3-L003176](../../agents/web_agent.py#L3176) | 3176 | `"                    data = json.loads(response.read(2_000_000).decode(\"utf-8\"))"` | — |
 | [SRC-1AE03B9EC3-L003177](../../agents/web_agent.py#L3177) | 3177 | `"                choice = data[\"choices\"][0]"` | — |
 | [SRC-1AE03B9EC3-L003178](../../agents/web_agent.py#L3178) | 3178 | `"                if not isinstance(choice, dict):"` | — |
 | [SRC-1AE03B9EC3-L003179](../../agents/web_agent.py#L3179) | 3179 | `"                    raise TypeError(\"invalid completion choice\")"` | — |
@@ -810,9 +816,3 @@
 | [SRC-1AE03B9EC3-L003968](../../agents/web_agent.py#L3968) | 3968 | `"            requirement_evidence = build_requirement_evidence_ledger(coverage_targets, sources)"` | — |
 | [SRC-1AE03B9EC3-L003969](../../agents/web_agent.py#L3969) | 3969 | `"            messages.insert(3, {"` | — |
 | [SRC-1AE03B9EC3-L003970](../../agents/web_agent.py#L3970) | 3970 | `"                \"role\": \"user\","` | — |
-| [SRC-1AE03B9EC3-L003971](../../agents/web_agent.py#L3971) | 3971 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003972](../../agents/web_agent.py#L3972) | 3972 | `"                    \"سجل فرز الأدلة التالي إشارة لفظية فقط وليس تحققًا من المعنى أو الحقيقة. \""` | — |
-| [SRC-1AE03B9EC3-L003973](../../agents/web_agent.py#L3973) | 3973 | `"                    \"استخدمه لتحديد المحاور التي يجب إعلان نقص أدلتها؛ لا تعتبر أي تطابق إثباتًا.\\n\""` | — |
-| [SRC-1AE03B9EC3-L003974](../../agents/web_agent.py#L3974) | 3974 | `"                    + json.dumps(requirement_evidence, ensure_ascii=False)"` | — |
-| [SRC-1AE03B9EC3-L003975](../../agents/web_agent.py#L3975) | 3975 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L003976](../../agents/web_agent.py#L3976) | 3976 | `"            })"` | — |

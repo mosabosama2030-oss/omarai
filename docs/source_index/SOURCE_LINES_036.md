@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000161 إلى SRC-3451CC474D-L000960
+- النطاق: SRC-3451CC474D-L000155 إلى SRC-3451CC474D-L000954
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000155](../../tests/test_api.py#L155) | 155 | `"        headers={\"Content-Type\": \"text/plain\"},"` | — |
+| [SRC-3451CC474D-L000156](../../tests/test_api.py#L156) | 156 | `"    )"` | — |
+| [SRC-3451CC474D-L000157](../../tests/test_api.py#L157) | 157 | `"    assert status == 415"` | — |
+| [SRC-3451CC474D-L000158](../../tests/test_api.py#L158) | 158 | `"    assert \"Content-Type\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L000159](../../tests/test_api.py#L159) | 159 | `""` | — |
+| [SRC-3451CC474D-L000160](../../tests/test_api.py#L160) | 160 | `"    status, error = request_json("` | — |
 | [SRC-3451CC474D-L000161](../../tests/test_api.py#L161) | 161 | `"        local_api,"` | — |
 | [SRC-3451CC474D-L000162](../../tests/test_api.py#L162) | 162 | `"        \"/api/ask\","` | — |
 | [SRC-3451CC474D-L000163](../../tests/test_api.py#L163) | 163 | `"        method=\"POST\","` | — |
@@ -810,9 +816,3 @@
 | [SRC-3451CC474D-L000952](../../tests/test_api.py#L952) | 952 | `"            assert api_module._csp_hash_source(match.group(2).strip()) in policy"` | — |
 | [SRC-3451CC474D-L000953](../../tests/test_api.py#L953) | 953 | `"    assert script_blocks >= 2"` | — |
 | [SRC-3451CC474D-L000954](../../tests/test_api.py#L954) | 954 | `"    assert style_blocks >= 2"` | — |
-| [SRC-3451CC474D-L000955](../../tests/test_api.py#L955) | 955 | `"    assert style_attributes >= 10"` | — |
-| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `""` | — |
-| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `""` | — |
-| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"def test_dashboard_uses_delegated_status_action_not_inline_onclick():"` | — |
-| [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"    dashboard = (Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\").read_text("` | — |
-| [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"        encoding=\"utf-8\""` | — |
