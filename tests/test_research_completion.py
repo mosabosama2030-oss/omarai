@@ -158,3 +158,44 @@ def test_unflagged_page_text_marker_is_counted_without_exposing_page_text() -> N
         "search_report": {},
     })
     assert result["counters"]["page_text_without_fetched_flag_count"] == 1
+
+
+
+def test_unresolved_citation_support_flags_prevent_completed_research_status() -> None:
+    base = {
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [
+            {
+                "url": "https://example.com/report",
+                "snippet": "A readable report excerpt.",
+                "page_fetched": True,
+                "page_text": "A readable report excerpt.",
+            }
+        ],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    }
+
+    unsupported_number = build_research_completion({
+        **base,
+        "answer_integrity": {
+            "potentially_unsupported_numeric_by_citation_count": 1,
+        },
+    })
+    weak_alignment = build_research_completion({
+        **base,
+        "answer_integrity": {"weak_citation_alignment_count": 1},
+    })
+
+    assert unsupported_number["status"] == "partial_answer_evidence_gaps_detected"
+    assert weak_alignment["status"] == "partial_answer_evidence_gaps_detected"
+    assert unsupported_number["counters"]["citation_support_warning_count"] == 1
+    assert weak_alignment["counters"]["citation_support_warning_count"] == 1
+    assert unsupported_number["phases"]["semantic_verification"] == "not_performed"
+    assert weak_alignment["phases"]["semantic_verification"] == "not_performed"
