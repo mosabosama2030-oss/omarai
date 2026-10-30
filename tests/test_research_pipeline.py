@@ -101,3 +101,17 @@ def test_fallback_plan_exposes_same_unified_pipeline_contract():
     assert plan["research_pipeline"]["aspects"]
     assert plan["research_pipeline"]["stages"]["query_planning"] == "completed"
     assert plan["query_strategy_matrix"]
+
+
+def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():
+    result = build_research_pipeline(
+        "ما سعر الهاتف؟",
+        {"queries": ["الهاتف"]},
+        intent_route="WEB_DEEP",
+        sources=[{"title": "سعر الهاتف", "url": "https://example.com"}],
+        semantic_matcher=lambda _aspect, _source: (_ for _ in ()).throw(RuntimeError("model timeout")),
+    )
+
+    assert result["stages"]["semantic_matching"] == "degraded"
+    assert result["evidence"]["semantic_matching"]["errors"] == 1
+    assert result["evidence"]["lexical_ledger"]["aspects"] == result["aspects"]
