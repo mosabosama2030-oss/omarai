@@ -90,6 +90,12 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     assert result["search_report"]["claim_audit_semantics"] == (
         "model_assisted_not_independent_fact_check"
     )
+    assert result["search_report"]["research_pipeline"]["stages"]["semantic_matching"] == (
+        "not_configured"
+    )
+    assert result["search_report"]["research_pipeline"]["evidence"]["claim_verification"] == (
+        "delegated_to_existing_validator"
+    )
     assert result["search_report"]["distinct_registrable_domains"] == 2
     assert result["search_report"]["editorial_independence_status"] == "not_assessed"
     assert result["search_report"]["independent_sources_field_semantics"] == (
