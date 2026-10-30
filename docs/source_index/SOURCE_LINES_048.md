@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002614 إلى SRC-F725E90B2A-L003413
+- النطاق: SRC-F725E90B2A-L002613 إلى SRC-F725E90B2A-L003412
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002613](../../tests/test_web_agent.py#L2613) | 2613 | `"    assert result[\"citation_validation\"][\"claim_support\"] == ("` | — |
 | [SRC-F725E90B2A-L002614](../../tests/test_web_agent.py#L2614) | 2614 | `"        \"not_established_no_valid_source_citations\""` | — |
 | [SRC-F725E90B2A-L002615](../../tests/test_web_agent.py#L2615) | 2615 | `"    )"` | — |
 | [SRC-F725E90B2A-L002616](../../tests/test_web_agent.py#L2616) | 2616 | `"    assert any(\"لا تحتوي على إحالات صالحة\" in warning for warning in result[\"warnings\"])"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003410](../../tests/test_web_agent.py#L3410) | 3410 | `"            \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L003411](../../tests/test_web_agent.py#L3411) | 3411 | `"            \"evidence_signals\": {},"` | — |
 | [SRC-F725E90B2A-L003412](../../tests/test_web_agent.py#L3412) | 3412 | `"        }"` | — |
-| [SRC-F725E90B2A-L003413](../../tests/test_web_agent.py#L3413) | 3413 | `""` | — |

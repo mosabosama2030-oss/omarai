@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000059 إلى SRC-F725E90B2A-L000213
+- النطاق: SRC-1C0D3D1206-L000058 إلى SRC-F725E90B2A-L000212
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000058](../../tests/test_sqlite_backup_restore.py#L58) | 58 | `""` | — |
 | [SRC-1C0D3D1206-L000059](../../tests/test_sqlite_backup_restore.py#L59) | 59 | `"    assert destination.read_text(encoding=\"utf-8\") == \"do not overwrite\""` | — |
 | [SRC-1C0D3D1206-L000060](../../tests/test_sqlite_backup_restore.py#L60) | 60 | `""` | — |
 | [SRC-1C0D3D1206-L000061](../../tests/test_sqlite_backup_restore.py#L61) | 61 | `""` | — |
@@ -842,4 +843,3 @@
 | [SRC-F725E90B2A-L000210](../../tests/test_web_agent.py#L210) | 210 | `"    def fake_get(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000211](../../tests/test_web_agent.py#L211) | 211 | `"        calls.append(url)"` | — |
 | [SRC-F725E90B2A-L000212](../../tests/test_web_agent.py#L212) | 212 | `"        return FakeResponse(html if \"duckduckgo.com\" in url else rss)"` | — |
-| [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `""` | — |

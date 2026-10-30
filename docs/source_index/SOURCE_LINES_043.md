@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000163 إلى SRC-1C0D3D1206-L000058
+- النطاق: SRC-01E35ABC46-L000163 إلى SRC-1C0D3D1206-L000057
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -519,32 +519,33 @@
 | [SRC-96F6863E3C-L000165](../../tests/test_research_pipeline.py#L165) | 165 | `"        \"ما ضمان iPhone 17 في مصر؟\""` | — |
 | [SRC-96F6863E3C-L000166](../../tests/test_research_pipeline.py#L166) | 166 | `"    )"` | — |
 | [SRC-96F6863E3C-L000167](../../tests/test_research_pipeline.py#L167) | 167 | `"    assert result[\"stages\"][\"context_resolution\"] == \"completed\""` | — |
-| [SRC-96F6863E3C-L000168](../../tests/test_research_pipeline.py#L168) | 168 | `""` | — |
-| [SRC-96F6863E3C-L000169](../../tests/test_research_pipeline.py#L169) | 169 | `"def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():"` | — |
-| [SRC-96F6863E3C-L000170](../../tests/test_research_pipeline.py#L170) | 170 | `"    result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000171](../../tests/test_research_pipeline.py#L171) | 171 | `"        \"ما سعر الهاتف؟\","` | — |
-| [SRC-96F6863E3C-L000172](../../tests/test_research_pipeline.py#L172) | 172 | `"        {\"queries\": [\"سعر الهاتف\"]},"` | — |
-| [SRC-96F6863E3C-L000173](../../tests/test_research_pipeline.py#L173) | 173 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000174](../../tests/test_research_pipeline.py#L174) | 174 | `"        dialogue_context={\"trace_label\": \"upstream_metadata_only\"},"` | — |
-| [SRC-96F6863E3C-L000175](../../tests/test_research_pipeline.py#L175) | 175 | `"    )"` | — |
-| [SRC-96F6863E3C-L000176](../../tests/test_research_pipeline.py#L176) | 176 | `""` | — |
-| [SRC-96F6863E3C-L000177](../../tests/test_research_pipeline.py#L177) | 177 | `"    assert result[\"stages\"][\"context_resolution\"] == \"not_needed\""` | — |
-| [SRC-96F6863E3C-L000178](../../tests/test_research_pipeline.py#L178) | 178 | `""` | — |
-| [SRC-96F6863E3C-L000179](../../tests/test_research_pipeline.py#L179) | 179 | `"def test_pipeline_does_not_claim_lexical_matching_without_readable_source_text():"` | — |
-| [SRC-96F6863E3C-L000180](../../tests/test_research_pipeline.py#L180) | 180 | `"    for sources in ("` | — |
-| [SRC-96F6863E3C-L000181](../../tests/test_research_pipeline.py#L181) | 181 | `"        [None, \"not-a-source\", {}],"` | — |
-| [SRC-96F6863E3C-L000182](../../tests/test_research_pipeline.py#L182) | 182 | `"        [{\"url\": \"https://example.com/no-text\"}],"` | — |
-| [SRC-96F6863E3C-L000183](../../tests/test_research_pipeline.py#L183) | 183 | `"        [],"` | — |
-| [SRC-96F6863E3C-L000184](../../tests/test_research_pipeline.py#L184) | 184 | `"    ):"` | — |
-| [SRC-96F6863E3C-L000185](../../tests/test_research_pipeline.py#L185) | 185 | `"        result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000186](../../tests/test_research_pipeline.py#L186) | 186 | `"            \"ما سعر الهاتف والضمان؟\","` | — |
-| [SRC-96F6863E3C-L000187](../../tests/test_research_pipeline.py#L187) | 187 | `"            {\"queries\": [\"سعر الهاتف والضمان\"]},"` | — |
-| [SRC-96F6863E3C-L000188](../../tests/test_research_pipeline.py#L188) | 188 | `"            intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000189](../../tests/test_research_pipeline.py#L189) | 189 | `"            sources=sources,"` | — |
-| [SRC-96F6863E3C-L000190](../../tests/test_research_pipeline.py#L190) | 190 | `"        )"` | — |
-| [SRC-96F6863E3C-L000191](../../tests/test_research_pipeline.py#L191) | 191 | `""` | — |
-| [SRC-96F6863E3C-L000192](../../tests/test_research_pipeline.py#L192) | 192 | `"        assert result[\"stages\"][\"lexical_matching\"] == \"not_assessed\""` | — |
-| [SRC-96F6863E3C-L000193](../../tests/test_research_pipeline.py#L193) | 193 | `"        assert result[\"evidence_ledger\"][\"covered\"] == []"` | — |
+| [SRC-96F6863E3C-L000168](../../tests/test_research_pipeline.py#L168) | 168 | `"    assert result[\"intent\"][\"context_available\"] is True"` | — |
+| [SRC-96F6863E3C-L000169](../../tests/test_research_pipeline.py#L169) | 169 | `""` | — |
+| [SRC-96F6863E3C-L000170](../../tests/test_research_pipeline.py#L170) | 170 | `"def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():"` | — |
+| [SRC-96F6863E3C-L000171](../../tests/test_research_pipeline.py#L171) | 171 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000172](../../tests/test_research_pipeline.py#L172) | 172 | `"        \"ما سعر الهاتف؟\","` | — |
+| [SRC-96F6863E3C-L000173](../../tests/test_research_pipeline.py#L173) | 173 | `"        {\"queries\": [\"سعر الهاتف\"]},"` | — |
+| [SRC-96F6863E3C-L000174](../../tests/test_research_pipeline.py#L174) | 174 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-96F6863E3C-L000175](../../tests/test_research_pipeline.py#L175) | 175 | `"        dialogue_context={\"trace_label\": \"upstream_metadata_only\"},"` | — |
+| [SRC-96F6863E3C-L000176](../../tests/test_research_pipeline.py#L176) | 176 | `"    )"` | — |
+| [SRC-96F6863E3C-L000177](../../tests/test_research_pipeline.py#L177) | 177 | `""` | — |
+| [SRC-96F6863E3C-L000178](../../tests/test_research_pipeline.py#L178) | 178 | `"    assert result[\"stages\"][\"context_resolution\"] == \"not_needed\""` | — |
+| [SRC-96F6863E3C-L000179](../../tests/test_research_pipeline.py#L179) | 179 | `""` | — |
+| [SRC-96F6863E3C-L000180](../../tests/test_research_pipeline.py#L180) | 180 | `"def test_pipeline_does_not_claim_lexical_matching_without_readable_source_text():"` | — |
+| [SRC-96F6863E3C-L000181](../../tests/test_research_pipeline.py#L181) | 181 | `"    for sources in ("` | — |
+| [SRC-96F6863E3C-L000182](../../tests/test_research_pipeline.py#L182) | 182 | `"        [None, \"not-a-source\", {}],"` | — |
+| [SRC-96F6863E3C-L000183](../../tests/test_research_pipeline.py#L183) | 183 | `"        [{\"url\": \"https://example.com/no-text\"}],"` | — |
+| [SRC-96F6863E3C-L000184](../../tests/test_research_pipeline.py#L184) | 184 | `"        [],"` | — |
+| [SRC-96F6863E3C-L000185](../../tests/test_research_pipeline.py#L185) | 185 | `"    ):"` | — |
+| [SRC-96F6863E3C-L000186](../../tests/test_research_pipeline.py#L186) | 186 | `"        result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000187](../../tests/test_research_pipeline.py#L187) | 187 | `"            \"ما سعر الهاتف والضمان؟\","` | — |
+| [SRC-96F6863E3C-L000188](../../tests/test_research_pipeline.py#L188) | 188 | `"            {\"queries\": [\"سعر الهاتف والضمان\"]},"` | — |
+| [SRC-96F6863E3C-L000189](../../tests/test_research_pipeline.py#L189) | 189 | `"            intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-96F6863E3C-L000190](../../tests/test_research_pipeline.py#L190) | 190 | `"            sources=sources,"` | — |
+| [SRC-96F6863E3C-L000191](../../tests/test_research_pipeline.py#L191) | 191 | `"        )"` | — |
+| [SRC-96F6863E3C-L000192](../../tests/test_research_pipeline.py#L192) | 192 | `""` | — |
+| [SRC-96F6863E3C-L000193](../../tests/test_research_pipeline.py#L193) | 193 | `"        assert result[\"stages\"][\"lexical_matching\"] == \"not_assessed\""` | — |
+| [SRC-96F6863E3C-L000194](../../tests/test_research_pipeline.py#L194) | 194 | `"        assert result[\"evidence_ledger\"][\"covered\"] == []"` | — |
 ## اختبارات
 
 ### FILE-2614DCB6FB — [tests/test_search_code.py](../../tests/test_search_code.py#L1)
@@ -851,4 +852,3 @@
 | [SRC-1C0D3D1206-L000055](../../tests/test_sqlite_backup_restore.py#L55) | 55 | `""` | — |
 | [SRC-1C0D3D1206-L000056](../../tests/test_sqlite_backup_restore.py#L56) | 56 | `"    with pytest.raises(FileExistsError):"` | — |
 | [SRC-1C0D3D1206-L000057](../../tests/test_sqlite_backup_restore.py#L57) | 57 | `"        backup_database(source_path, destination)"` | — |
-| [SRC-1C0D3D1206-L000058](../../tests/test_sqlite_backup_restore.py#L58) | 58 | `""` | — |

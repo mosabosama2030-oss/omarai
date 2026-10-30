@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000214 إلى SRC-F725E90B2A-L001013
+- النطاق: SRC-F725E90B2A-L000213 إلى SRC-F725E90B2A-L001012
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000213](../../tests/test_web_agent.py#L213) | 213 | `""` | — |
 | [SRC-F725E90B2A-L000214](../../tests/test_web_agent.py#L214) | 214 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
 | [SRC-F725E90B2A-L000215](../../tests/test_web_agent.py#L215) | 215 | `"    results = WebAgent()._search_web(\"سؤال بحث تجريبي\")"` | — |
 | [SRC-F725E90B2A-L000216](../../tests/test_web_agent.py#L216) | 216 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001010](../../tests/test_web_agent.py#L1010) | 1010 | `"    import json"` | — |
 | [SRC-F725E90B2A-L001011](../../tests/test_web_agent.py#L1011) | 1011 | `""` | — |
 | [SRC-F725E90B2A-L001012](../../tests/test_web_agent.py#L1012) | 1012 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
-| [SRC-F725E90B2A-L001013](../../tests/test_web_agent.py#L1013) | 1013 | `"    monkeypatch.setenv(\"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\")"` | — |

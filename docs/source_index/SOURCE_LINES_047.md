@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001814 إلى SRC-F725E90B2A-L002613
+- النطاق: SRC-F725E90B2A-L001813 إلى SRC-F725E90B2A-L002612
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001813](../../tests/test_web_agent.py#L1813) | 1813 | `"            \"url\": \"https://www.reddit.com/r/example/comments/test\","` | — |
 | [SRC-F725E90B2A-L001814](../../tests/test_web_agent.py#L1814) | 1814 | `"            \"domain\": \"reddit.com\","` | — |
 | [SRC-F725E90B2A-L001815](../../tests/test_web_agent.py#L1815) | 1815 | `"            \"platform\": \"reddit\","` | — |
 | [SRC-F725E90B2A-L001816](../../tests/test_web_agent.py#L1816) | 1816 | `"            \"source_class\": \"social\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002610](../../tests/test_web_agent.py#L2610) | 2610 | `"    assert result[\"research_quality\"] == \"partial\""` | — |
 | [SRC-F725E90B2A-L002611](../../tests/test_web_agent.py#L2611) | 2611 | `"    assert result[\"search_report\"][\"research_quality\"] == \"partial\""` | — |
 | [SRC-F725E90B2A-L002612](../../tests/test_web_agent.py#L2612) | 2612 | `"    assert result[\"answer_evidence_status\"] == \"reviewed_answer_has_no_valid_citations\""` | — |
-| [SRC-F725E90B2A-L002613](../../tests/test_web_agent.py#L2613) | 2613 | `"    assert result[\"citation_validation\"][\"claim_support\"] == ("` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003414 إلى SRC-DE7EABE998-L000180
+- النطاق: SRC-F725E90B2A-L003413 إلى SRC-DE7EABE998-L000179
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003413](../../tests/test_web_agent.py#L3413) | 3413 | `""` | — |
 | [SRC-F725E90B2A-L003414](../../tests/test_web_agent.py#L3414) | 3414 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
 | [SRC-F725E90B2A-L003415](../../tests/test_web_agent.py#L3415) | 3415 | `""` | — |
 | [SRC-F725E90B2A-L003416](../../tests/test_web_agent.py#L3416) | 3416 | `"    agent.answer(instruction_only, mode=mode)"` | — |
@@ -833,4 +834,3 @@
 | [SRC-DE7EABE998-L000177](../../web/agent.html#L177) | 177 | `" };"` | — |
 | [SRC-DE7EABE998-L000178](../../web/agent.html#L178) | 178 | `" const completionPhaseLabels={"` | — |
 | [SRC-DE7EABE998-L000179](../../web/agent.html#L179) | 179 | `"  planning:\"التخطيط\",search:\"البحث\",source_filtering:\"تصفية المصادر\","` | — |
-| [SRC-DE7EABE998-L000180](../../web/agent.html#L180) | 180 | `"  page_reading:\"قراءة الصفحات\",answer_generation:\"توليد الإجابة\","` | — |

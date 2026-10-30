@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001014 إلى SRC-F725E90B2A-L001813
+- النطاق: SRC-F725E90B2A-L001013 إلى SRC-F725E90B2A-L001812
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001013](../../tests/test_web_agent.py#L1013) | 1013 | `"    monkeypatch.setenv(\"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\")"` | — |
 | [SRC-F725E90B2A-L001014](../../tests/test_web_agent.py#L1014) | 1014 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001015](../../tests/test_web_agent.py#L1015) | 1015 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001016](../../tests/test_web_agent.py#L1016) | 1016 | `"    seen = {}"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001810](../../tests/test_web_agent.py#L1810) | 1810 | `"        calls.append(dict(research_plan))"` | — |
 | [SRC-F725E90B2A-L001811](../../tests/test_web_agent.py#L1811) | 1811 | `"        social_source = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L001812](../../tests/test_web_agent.py#L1812) | 1812 | `"        social_source.update({"` | — |
-| [SRC-F725E90B2A-L001813](../../tests/test_web_agent.py#L1813) | 1813 | `"            \"url\": \"https://www.reddit.com/r/example/comments/test\","` | — |
