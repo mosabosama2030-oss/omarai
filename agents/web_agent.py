@@ -4612,10 +4612,14 @@ class WebAgent:
             result["research_completion"] = completion
             # Keep the public terminal state aligned with evidence warnings discovered
             # by the final completion audit, including early/fallback result builders.
-            if completion.get("status") in {
-                "partial_answer_evidence_gaps_detected",
-                "answer_generated_without_valid_citation_markers",
-            }:
+            completion_phases = completion.get("phases")
+            completion_phases = (
+                completion_phases if isinstance(completion_phases, dict) else {}
+            )
+            if (
+                completion_phases.get("citation_support_screen") == "warning_signals_detected"
+                or completion.get("status") == "answer_generated_without_valid_citation_markers"
+            ):
                 result["pipeline_completion_status"] = "partial"
             if isinstance(result.get("search_report"), dict):
                 result["search_report"]["research_completion"] = completion
