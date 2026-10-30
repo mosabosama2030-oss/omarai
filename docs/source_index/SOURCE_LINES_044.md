@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000127 إلى SRC-F725E90B2A-L000386
+- النطاق: SRC-AFEDC2645A-L000126 إلى SRC-F725E90B2A-L000385
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000126](../../tests/test_task_understanding.py#L126) | 126 | `""` | — |
 | [SRC-AFEDC2645A-L000127](../../tests/test_task_understanding.py#L127) | 127 | `"def test_compound_task_keeps_current_social_and_comparison_requirements_together():"` | — |
 | [SRC-AFEDC2645A-L000128](../../tests/test_task_understanding.py#L128) | 128 | `"    spec = build_task_spec("` | — |
 | [SRC-AFEDC2645A-L000129](../../tests/test_task_understanding.py#L129) | 129 | `"        \"قارن تجارب ملاك نيسان صني 2022 في مصر اليوم من حيث السعر والأعطال\","` | — |
@@ -833,4 +834,3 @@
 | [SRC-F725E90B2A-L000383](../../tests/test_web_agent.py#L383) | 383 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
 | [SRC-F725E90B2A-L000384](../../tests/test_web_agent.py#L384) | 384 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L000385](../../tests/test_web_agent.py#L385) | 385 | `"        agent, \"_fetch_page\", lambda url: (\"Read title\", \"Extracted public page text\")"` | — |
-| [SRC-F725E90B2A-L000386](../../tests/test_web_agent.py#L386) | 386 | `"    )"` | — |

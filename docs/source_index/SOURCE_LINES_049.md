@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003587 إلى SRC-DE7EABE998-L000359
+- النطاق: SRC-F725E90B2A-L003586 إلى SRC-DE7EABE998-L000358
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003586](../../tests/test_web_agent.py#L3586) | 3586 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
 | [SRC-F725E90B2A-L003587](../../tests/test_web_agent.py#L3587) | 3587 | `"    assert result[\"sources\"] == []"` | — |
 | [SRC-F725E90B2A-L003588](../../tests/test_web_agent.py#L3588) | 3588 | `"    guardrails = result[\"search_report\"][\"source_guardrails\"]"` | — |
 | [SRC-F725E90B2A-L003589](../../tests/test_web_agent.py#L3589) | 3589 | `"    assert guardrails[\"initial\"][\"official_government_domain_required\"] is True"` | — |
@@ -833,4 +834,3 @@
 | [SRC-DE7EABE998-L000356](../../web/agent.html#L356) | 356 | `"  const context=document.createElement(\"div\");context.className=\"message-context\";"` | — |
 | [SRC-DE7EABE998-L000357](../../web/agent.html#L357) | 357 | `"  context.textContent=\"ردًا على السؤال: \"+linkedQuestion;box.appendChild(context);"` | — |
 | [SRC-DE7EABE998-L000358](../../web/agent.html#L358) | 358 | `" }"` | — |
-| [SRC-DE7EABE998-L000359](../../web/agent.html#L359) | 359 | `" const bubble=document.createElement(\"div\");bubble.className=\"bubble\";bubble.innerHTML=answerMarkup(text);box.appendChild(bubble);"` | — |

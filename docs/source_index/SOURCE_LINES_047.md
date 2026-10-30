@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001987 إلى SRC-F725E90B2A-L002786
+- النطاق: SRC-F725E90B2A-L001986 إلى SRC-F725E90B2A-L002785
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001986](../../tests/test_web_agent.py#L1986) | 1986 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001987](../../tests/test_web_agent.py#L1987) | 1987 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001988](../../tests/test_web_agent.py#L1988) | 1988 | `"        agent,"` | — |
 | [SRC-F725E90B2A-L001989](../../tests/test_web_agent.py#L1989) | 1989 | `"        \"_collect_research\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002783](../../tests/test_web_agent.py#L2783) | 2783 | `""` | — |
 | [SRC-F725E90B2A-L002784](../../tests/test_web_agent.py#L2784) | 2784 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L002785](../../tests/test_web_agent.py#L2785) | 2785 | `"    observed = []"` | — |
-| [SRC-F725E90B2A-L002786](../../tests/test_web_agent.py#L2786) | 2786 | `""` | — |

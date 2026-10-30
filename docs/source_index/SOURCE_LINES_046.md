@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001187 إلى SRC-F725E90B2A-L001986
+- النطاق: SRC-F725E90B2A-L001186 إلى SRC-F725E90B2A-L001985
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001186](../../tests/test_web_agent.py#L1186) | 1186 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |
 | [SRC-F725E90B2A-L001187](../../tests/test_web_agent.py#L1187) | 1187 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L001188](../../tests/test_web_agent.py#L1188) | 1188 | `"            \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L001189](../../tests/test_web_agent.py#L1189) | 1189 | `"            \"planning_method\": \"test\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001983](../../tests/test_web_agent.py#L1983) | 1983 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001984](../../tests/test_web_agent.py#L1984) | 1984 | `"    }"` | — |
 | [SRC-F725E90B2A-L001985](../../tests/test_web_agent.py#L1985) | 1985 | `""` | — |
-| [SRC-F725E90B2A-L001986](../../tests/test_web_agent.py#L1986) | 1986 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |

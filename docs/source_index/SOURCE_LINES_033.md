@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001136 إلى SRC-6A7519AC10-L000149
+- النطاق: SRC-90FAA34ADE-L001135 إلى SRC-6A7519AC10-L000148
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001135](../../tests/fixtures/answer_quality_cases.json#L1135) | 1135 | `"        \"يؤكد وجود إعلان لمجرد ورود اسمه في السؤال\""` | — |
 | [SRC-90FAA34ADE-L001136](../../tests/fixtures/answer_quality_cases.json#L1136) | 1136 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001137](../../tests/fixtures/answer_quality_cases.json#L1137) | 1137 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L001138](../../tests/fixtures/answer_quality_cases.json#L1138) | 1138 | `"        \"type\": \"controlled_search\","` | — |
@@ -851,4 +852,3 @@
 | [SRC-6A7519AC10-L000146](../../tests/test_answer_quality_comparison.py#L146) | 146 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"factual_accuracy\"][\"candidate\"] == 1.0"` | — |
 | [SRC-6A7519AC10-L000147](../../tests/test_answer_quality_comparison.py#L147) | 147 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"citation_support\"][\"delta\"] == 0.5"` | — |
 | [SRC-6A7519AC10-L000148](../../tests/test_answer_quality_comparison.py#L148) | 148 | `""` | — |
-| [SRC-6A7519AC10-L000149](../../tests/test_answer_quality_comparison.py#L149) | 149 | `""` | — |

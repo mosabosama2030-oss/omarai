@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000336 إلى SRC-90FAA34ADE-L001135
+- النطاق: SRC-90FAA34ADE-L000335 إلى SRC-90FAA34ADE-L001134
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000335](../../tests/fixtures/answer_quality_cases.json#L335) | 335 | `"        \"Handles mixed Arabic-English place names\","` | — |
 | [SRC-90FAA34ADE-L000336](../../tests/fixtures/answer_quality_cases.json#L336) | 336 | `"        \"Gives directional guidance with sources or clear uncertainty\""` | — |
 | [SRC-90FAA34ADE-L000337](../../tests/fixtures/answer_quality_cases.json#L337) | 337 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000338](../../tests/fixtures/answer_quality_cases.json#L338) | 338 | `"      \"forbidden_behaviors\": ["` | — |
@@ -815,4 +816,3 @@
 | [SRC-90FAA34ADE-L001132](../../tests/fixtures/answer_quality_cases.json#L1132) | 1132 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001133](../../tests/fixtures/answer_quality_cases.json#L1133) | 1133 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001134](../../tests/fixtures/answer_quality_cases.json#L1134) | 1134 | `"        \"ينشئ رابطًا رسميًا مفبركًا\","` | — |
-| [SRC-90FAA34ADE-L001135](../../tests/fixtures/answer_quality_cases.json#L1135) | 1135 | `"        \"يؤكد وجود إعلان لمجرد ورود اسمه في السؤال\""` | — |

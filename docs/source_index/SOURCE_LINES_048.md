@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002787 إلى SRC-F725E90B2A-L003586
+- النطاق: SRC-F725E90B2A-L002786 إلى SRC-F725E90B2A-L003585
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002786](../../tests/test_web_agent.py#L2786) | 2786 | `""` | — |
 | [SRC-F725E90B2A-L002787](../../tests/test_web_agent.py#L2787) | 2787 | `"    class RedirectResponse:"` | — |
 | [SRC-F725E90B2A-L002788](../../tests/test_web_agent.py#L2788) | 2788 | `"        def __init__(self):"` | — |
 | [SRC-F725E90B2A-L002789](../../tests/test_web_agent.py#L2789) | 2789 | `"            self.status_code = 302"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003583](../../tests/test_web_agent.py#L3583) | 3583 | `"    result = agent.answer(question, mode=\"auto\")"` | — |
 | [SRC-F725E90B2A-L003584](../../tests/test_web_agent.py#L3584) | 3584 | `""` | — |
 | [SRC-F725E90B2A-L003585](../../tests/test_web_agent.py#L3585) | 3585 | `"    assert calls  # initial research, plus bounded repair where applicable"` | — |
-| [SRC-F725E90B2A-L003586](../../tests/test_web_agent.py#L3586) | 3586 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
