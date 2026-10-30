@@ -167,6 +167,21 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
         _int(integrity.get(key)) or 0
         for key in ("potentially_missing_target_count", "source_evidence_gap_count")
     )
+    unsupported_numeric_count = _int(
+        integrity.get("potentially_unsupported_numeric_count")
+    ) or 0
+    unsupported_numeric_by_citation_count = _int(
+        integrity.get("potentially_unsupported_numeric_by_citation_count")
+    ) or 0
+    weak_citation_alignment_count = _int(
+        integrity.get("weak_citation_alignment_count")
+    ) or 0
+    # The cited-source numeric count can overlap with the general unsupported-number
+    # count. Use the larger count, then add weakly aligned cited segments.
+    citation_support_warning_count = (
+        max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
+        + weak_citation_alignment_count
+    )
     fulfillment = str(
         result.get("task_fulfillment_status") or report.get("task_fulfillment_status") or ""
     )
@@ -198,7 +213,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
         )
     elif generation_failed:
         status = "answer_generation_or_review_failed"
-    elif gap_count or fulfillment in {
+    elif gap_count or citation_support_warning_count or fulfillment in {
         "possible_gap_detected", "source_evidence_gap_unresolved",
         "not_assessed_insufficient_evidence",
     }:
@@ -252,6 +267,17 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "page_reading": read_phase,
             "answer_generation": generation_phase,
             "citation_validation": str(citations.get("status") or "not_run"),
+            "citation_support_screen": (
+                "warning_signals_detected"
+                if citation_support_warning_count
+                else "no_lexical_warning_signals_detected_not_verified"
+                if any(key in integrity for key in (
+                    "potentially_unsupported_numeric_count",
+                    "potentially_unsupported_numeric_by_citation_count",
+                    "weak_citation_alignment_count",
+                ))
+                else "not_assessed"
+            ),
             "semantic_verification": "not_performed",
         },
         "counters": {
@@ -276,6 +302,10 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "connector_failure_count": connector_errors,
             "connector_success_count": connector_ok,
             "guardrail_rejected_candidate_count": rejected,
+            "potentially_unsupported_numeric_count": unsupported_numeric_count,
+            "potentially_unsupported_numeric_by_citation_count": unsupported_numeric_by_citation_count,
+            "weak_citation_alignment_count": weak_citation_alignment_count,
+            "citation_support_warning_count": citation_support_warning_count,
         },
         "counter_consistency": {
             "status": "mismatch_detected" if counter_issues else (
