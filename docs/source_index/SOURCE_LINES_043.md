@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000072 إلى SRC-D033B34F41-L000037
+- النطاق: SRC-01E35ABC46-L000068 إلى SRC-D033B34F41-L000033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000068](../../tests/test_research_guardrails.py#L68) | 68 | `"    assert detect_freshness(\"knowledge graph basics\") is False"` | — |
+| [SRC-01E35ABC46-L000069](../../tests/test_research_guardrails.py#L69) | 69 | `"    assert detect_freshness(\"ما عاصمة فرنسا\") is False"` | — |
+| [SRC-01E35ABC46-L000070](../../tests/test_research_guardrails.py#L70) | 70 | `""` | — |
+| [SRC-01E35ABC46-L000071](../../tests/test_research_guardrails.py#L71) | 71 | `""` | — |
 | [SRC-01E35ABC46-L000072](../../tests/test_research_guardrails.py#L72) | 72 | `"# --- relevance gate ---------------------------------------------------------"` | — |
 | [SRC-01E35ABC46-L000073](../../tests/test_research_guardrails.py#L73) | 73 | `""` | — |
 | [SRC-01E35ABC46-L000074](../../tests/test_research_guardrails.py#L74) | 74 | `"def test_relevance_keeps_matching_source():"` | — |
@@ -839,7 +843,3 @@
 | [SRC-D033B34F41-L000031](../../tests/test_source_metadata_audit.py#L31) | 31 | `"        \"ما عدد سكان القاهرة؟\","` | — |
 | [SRC-D033B34F41-L000032](../../tests/test_source_metadata_audit.py#L32) | 32 | `"        \"العدد وفق المصدر [المصدر 1].\","` | — |
 | [SRC-D033B34F41-L000033](../../tests/test_source_metadata_audit.py#L33) | 33 | `"        [{"` | — |
-| [SRC-D033B34F41-L000034](../../tests/test_source_metadata_audit.py#L34) | 34 | `"            \"title\": \"Population report\","` | — |
-| [SRC-D033B34F41-L000035](../../tests/test_source_metadata_audit.py#L35) | 35 | `"            \"publisher\": \"Example Statistics Office\","` | — |
-| [SRC-D033B34F41-L000036](../../tests/test_source_metadata_audit.py#L36) | 36 | `"            \"url\": \"https://example.org/population\","` | — |
-| [SRC-D033B34F41-L000037](../../tests/test_source_metadata_audit.py#L37) | 37 | `"            \"published_at\": \"2025-06-01\","` | — |

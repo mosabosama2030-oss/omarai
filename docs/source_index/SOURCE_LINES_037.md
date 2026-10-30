@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000916 إلى SRC-29A9CD43D1-L000152
+- النطاق: SRC-3451CC474D-L000912 إلى SRC-29A9CD43D1-L000148
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000912](../../tests/test_api.py#L912) | 912 | `"    state[\"fail\"] = False"` | — |
+| [SRC-3451CC474D-L000913](../../tests/test_api.py#L913) | 913 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000914](../../tests/test_api.py#L914) | 914 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الثاني\"}"` | — |
+| [SRC-3451CC474D-L000915](../../tests/test_api.py#L915) | 915 | `"    )"` | — |
 | [SRC-3451CC474D-L000916](../../tests/test_api.py#L916) | 916 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000917](../../tests/test_api.py#L917) | 917 | `"    assert payload[\"answer\"] == \"اختبار ناجح\""` | — |
 | [SRC-3451CC474D-L000918](../../tests/test_api.py#L918) | 918 | `""` | — |
@@ -866,7 +870,3 @@
 | [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert \"الضمان الدولي\" in seen[\"generated_question\"]"` | — |
 | [SRC-29A9CD43D1-L000147](../../tests/test_dialogue_context_pipeline.py#L147) | 147 | `"    assert seen[\"reviewed_question\"] == seen[\"generated_question\"]"` | — |
 | [SRC-29A9CD43D1-L000148](../../tests/test_dialogue_context_pipeline.py#L148) | 148 | `"    context_result = result[\"research_plan\"][\"dialogue_context\"]"` | — |
-| [SRC-29A9CD43D1-L000149](../../tests/test_dialogue_context_pipeline.py#L149) | 149 | `"    assert context_result[\"method\"] == \"llm_semantic_context\""` | — |
-| [SRC-29A9CD43D1-L000150](../../tests/test_dialogue_context_pipeline.py#L150) | 150 | `"    assert context_result[\"slots\"][\"country\"] == \"مصر\""` | — |
-| [SRC-29A9CD43D1-L000151](../../tests/test_dialogue_context_pipeline.py#L151) | 151 | `"    assert context_result[\"changed_slots\"] == [\"aspect\"]"` | — |
-| [SRC-29A9CD43D1-L000152](../../tests/test_dialogue_context_pipeline.py#L152) | 152 | `"    assert context_result[\"needs_web\"] is True"` | — |

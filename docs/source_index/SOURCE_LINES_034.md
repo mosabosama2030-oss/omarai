@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000017 إلى SRC-B3062EB677-L000098
+- النطاق: SRC-6A7519AC10-L000013 إلى SRC-B3062EB677-L000094
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000013](../../tests/test_answer_quality_comparison.py#L13) | 13 | `""` | — |
+| [SRC-6A7519AC10-L000014](../../tests/test_answer_quality_comparison.py#L14) | 14 | `"def load_module():"` | — |
+| [SRC-6A7519AC10-L000015](../../tests/test_answer_quality_comparison.py#L15) | 15 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_run_comparison\", SCRIPT)"` | — |
+| [SRC-6A7519AC10-L000016](../../tests/test_answer_quality_comparison.py#L16) | 16 | `"    assert spec and spec.loader"` | — |
 | [SRC-6A7519AC10-L000017](../../tests/test_answer_quality_comparison.py#L17) | 17 | `"    module = importlib.util.module_from_spec(spec)"` | — |
 | [SRC-6A7519AC10-L000018](../../tests/test_answer_quality_comparison.py#L18) | 18 | `"    spec.loader.exec_module(module)"` | — |
 | [SRC-6A7519AC10-L000019](../../tests/test_answer_quality_comparison.py#L19) | 19 | `"    return module"` | — |
@@ -848,7 +852,3 @@
 | [SRC-B3062EB677-L000092](../../tests/test_answer_quality_runner.py#L92) | 92 | `"def test_redact_secrets_strips_token_value(monkeypatch):"` | — |
 | [SRC-B3062EB677-L000093](../../tests/test_answer_quality_runner.py#L93) | 93 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000094](../../tests/test_answer_quality_runner.py#L94) | 94 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"super-secret-token-value-xyz\")"` | — |
-| [SRC-B3062EB677-L000095](../../tests/test_answer_quality_runner.py#L95) | 95 | `"    text = \"token=super-secret-token-value-xyz and OPENROUTER_API_KEY\""` | — |
-| [SRC-B3062EB677-L000096](../../tests/test_answer_quality_runner.py#L96) | 96 | `"    out = mod.redact_secrets(text)"` | — |
-| [SRC-B3062EB677-L000097](../../tests/test_answer_quality_runner.py#L97) | 97 | `"    assert \"super-secret-token-value-xyz\" not in out"` | — |
-| [SRC-B3062EB677-L000098](../../tests/test_answer_quality_runner.py#L98) | 98 | `"    assert \"REDACTED\" in out"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000203 إلى SRC-90FAA34ADE-L001002
+- النطاق: SRC-90FAA34ADE-L000199 إلى SRC-90FAA34ADE-L000998
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000199](../../tests/fixtures/answer_quality_cases.json#L199) | 199 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000200](../../tests/fixtures/answer_quality_cases.json#L200) | 200 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000201](../../tests/fixtures/answer_quality_cases.json#L201) | 201 | `"        \"Uses current-oriented search\","` | — |
+| [SRC-90FAA34ADE-L000202](../../tests/fixtures/answer_quality_cases.json#L202) | 202 | `"        \"Cites sources for claims\","` | — |
 | [SRC-90FAA34ADE-L000203](../../tests/fixtures/answer_quality_cases.json#L203) | 203 | `"        \"Flags uncertainty if results are thin\""` | — |
 | [SRC-90FAA34ADE-L000204](../../tests/fixtures/answer_quality_cases.json#L204) | 204 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000205](../../tests/fixtures/answer_quality_cases.json#L205) | 205 | `"      \"forbidden_behaviors\": ["` | — |
@@ -812,7 +816,3 @@
 | [SRC-90FAA34ADE-L000996](../../tests/fixtures/answer_quality_cases.json#L996) | 996 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000997](../../tests/fixtures/answer_quality_cases.json#L997) | 997 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000998](../../tests/fixtures/answer_quality_cases.json#L998) | 998 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000999](../../tests/fixtures/answer_quality_cases.json#L999) | 999 | `"          {"` | — |
-| [SRC-90FAA34ADE-L001000](../../tests/fixtures/answer_quality_cases.json#L1000) | 1000 | `"            \"title\": \"Visa guidance 2021\","` | — |
-| [SRC-90FAA34ADE-L001001](../../tests/fixtures/answer_quality_cases.json#L1001) | 1001 | `"            \"url\": \"https://consulate.example.test/visa-2021\","` | — |
-| [SRC-90FAA34ADE-L001002](../../tests/fixtures/answer_quality_cases.json#L1002) | 1002 | `"            \"snippet\": \"Required documents listed for 2021 applications.\","` | — |

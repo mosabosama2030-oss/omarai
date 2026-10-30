@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000263 إلى SRC-E1EAC11EFE-L000027
+- النطاق: SRC-D17CE3D12F-L000259 إلى SRC-E1EAC11EFE-L000023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000259](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L259) | 259 | `"8. MUST عدم تسجيل Authorization headers أو cookies أو tokens أو بيانات نموذج حساسة في telemetry."` | — |
+| [SRC-D17CE3D12F-L000260](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L260) | 260 | `"9. SHOULD مراجعة تدوير الشهادات والرموز وانتهاء الصلاحية كجزء من الجاهزية التشغيلية."` | — |
+| [SRC-D17CE3D12F-L000261](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L261) | 261 | `"10. MUST أن تعتمد سياسات التفويض على محرك موثوق خارج مخرجات النموذج؛ لا يستطيع النموذج أن يمنح نفسه صلاحية."` | — |
+| [SRC-D17CE3D12F-L000262](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L262) | 262 | `""` | — |
 | [SRC-D17CE3D12F-L000263](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L263) | 263 | `"## 18. أمن سلسلة توريد البرمجيات"` | — |
 | [SRC-D17CE3D12F-L000264](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L264) | 264 | `""` | — |
 | [SRC-D17CE3D12F-L000265](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L265) | 265 | `"1. MUST تثبيت إصدارات الاعتماديات المباشرة وغير المباشرة بآلية قابلة لإعادة الإنتاج حيثما أمكن."` | — |
@@ -821,7 +825,3 @@
 | [SRC-E1EAC11EFE-L000021](../OMARAI_HANDOFF_CHECKLIST_AR.md#L21) | 21 | ``"- **PR #95:** **MERGED** في 27 أكتوبر 2026؛ التزام الدمج [#3760418b5f32294faec7e49ef2cccb006419ee27](https://github.com/mosabosama2030-oss/omarai/commit/3760418b5f32294faec7e49ef2cccb006419ee27). اجتاز رأس PR `07a4099da00ca2d506d3782615622361389f5171` تشغيل CI [#40467019476](https://github.com/mosabosama2030-oss/omarai/actions/runs/40467019476)؛ ثم اجتاز SHA الدمج CI في [#40469019954](https://github.com/mosabosama2030-oss/omarai/actions/runs/40469019954). هذا يثبت الفحوص الآلية فقط ولا يثبت سلامة البحث الحي."`` | — |
 | [SRC-E1EAC11EFE-L000022](../OMARAI_HANDOFF_CHECKLIST_AR.md#L22) | 22 | ``"- **هوية نسخة الاستضافة:** لا تُعتبر مؤكدة حتى يُرجع `GET /api/health` قيمة `build.sha` تطابق SHA المعتمد بالضبط. ظهور `unknown` لا يثبت أن الاستضافة تشغل `main`."`` | — |
 | [SRC-E1EAC11EFE-L000023](../OMARAI_HANDOFF_CHECKLIST_AR.md#L23) | 23 | ``"- **إعادة فحص الاستضافة (27 أكتوبر 2026):** الصفحة الرئيسية وواجهة Omarai وحقل السؤال ظهرت في المتصفح. في وضع «بحث معمّق»، انتهى السؤال «ما عاصمة مصر؟» برسالة: «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف». وقراءة `GET /api/health` أعادت `ok=true` لكن `build.sha=unknown` و`sha_status=unknown`؛ كما تنص الاستجابة على أن فحص الشبكة الحي لم يُنفّذ وأن أعلام الجاهزية لا تثبت اتصال الموفرين أو اكتمال إجابة النموذج. لا يحسم الخطأ المرئي هل رمز التطبيق مفقود أم غير مطابق. لم تُدخل أو تُكشف أسرار، ولم تتغير إعدادات الاستضافة أو يحدث نشر."`` | — |
-| [SRC-E1EAC11EFE-L000024](../OMARAI_HANDOFF_CHECKLIST_AR.md#L24) | 24 | ``"- **الاختبارات الحية المدفوعة/ذات الاستهلاك:** لا تُشغّل تلقائيًا. يتطلب فحص `POST /api/diagnostics` أو hosted smoke موافقة المشغّل، لأنهما قد يرسلان طلبات فعلية إلى موفر النموذج والبحث."`` | — |
-| [SRC-E1EAC11EFE-L000025](../OMARAI_HANDOFF_CHECKLIST_AR.md#L25) | 25 | `""` | — |
-| [SRC-E1EAC11EFE-L000026](../OMARAI_HANDOFF_CHECKLIST_AR.md#L26) | 26 | `"## إصلاح البحث المعمّق — اجتاز CI؛ القبول الحي ما زال متعطلًا"` | — |
-| [SRC-E1EAC11EFE-L000027](../OMARAI_HANDOFF_CHECKLIST_AR.md#L27) | 27 | `""` | — |

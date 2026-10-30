@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000469 إلى SRC-EA6EC52573-L000171
+- النطاق: SRC-829A979985-L000465 إلى SRC-EA6EC52573-L000167
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000465](../../tests/test_generation_acceptance_matrix.py#L465) | 465 | `"    monkeypatch.setattr("` | — |
+| [SRC-829A979985-L000466](../../tests/test_generation_acceptance_matrix.py#L466) | 466 | `"        agent,"` | — |
+| [SRC-829A979985-L000467](../../tests/test_generation_acceptance_matrix.py#L467) | 467 | `"        \"_plan_search\","` | — |
+| [SRC-829A979985-L000468](../../tests/test_generation_acceptance_matrix.py#L468) | 468 | `"        lambda question, history: {"` | — |
 | [SRC-829A979985-L000469](../../tests/test_generation_acceptance_matrix.py#L469) | 469 | `"            \"queries\": [question],"` | — |
 | [SRC-829A979985-L000470](../../tests/test_generation_acceptance_matrix.py#L470) | 470 | `"            \"direct_urls\": [],"` | — |
 | [SRC-829A979985-L000471](../../tests/test_generation_acceptance_matrix.py#L471) | 471 | `"            \"social_focus\": False,"` | — |
@@ -839,7 +843,3 @@
 | [SRC-EA6EC52573-L000165](../../tests/test_intent_router.py#L165) | 165 | `"    history = ["` | — |
 | [SRC-EA6EC52573-L000166](../../tests/test_intent_router.py#L166) | 166 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر آيفون 16 في مصر\"},"` | — |
 | [SRC-EA6EC52573-L000167](../../tests/test_intent_router.py#L167) | 167 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات موثوقة.\"},"` | — |
-| [SRC-EA6EC52573-L000168](../../tests/test_intent_router.py#L168) | 168 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
-| [SRC-EA6EC52573-L000169](../../tests/test_intent_router.py#L169) | 169 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
-| [SRC-EA6EC52573-L000170](../../tests/test_intent_router.py#L170) | 170 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000171](../../tests/test_intent_router.py#L171) | 171 | `"    assert resolve_followup_query(\"فين؟\", history) == \"فين؟\""` | — |

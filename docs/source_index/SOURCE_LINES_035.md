@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000099 إلى SRC-3451CC474D-L000115
+- النطاق: SRC-B3062EB677-L000095 إلى SRC-3451CC474D-L000111
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000095](../../tests/test_answer_quality_runner.py#L95) | 95 | `"    text = \"token=super-secret-token-value-xyz and OPENROUTER_API_KEY\""` | — |
+| [SRC-B3062EB677-L000096](../../tests/test_answer_quality_runner.py#L96) | 96 | `"    out = mod.redact_secrets(text)"` | — |
+| [SRC-B3062EB677-L000097](../../tests/test_answer_quality_runner.py#L97) | 97 | `"    assert \"super-secret-token-value-xyz\" not in out"` | — |
+| [SRC-B3062EB677-L000098](../../tests/test_answer_quality_runner.py#L98) | 98 | `"    assert \"REDACTED\" in out"` | — |
 | [SRC-B3062EB677-L000099](../../tests/test_answer_quality_runner.py#L99) | 99 | `""` | — |
 | [SRC-B3062EB677-L000100](../../tests/test_answer_quality_runner.py#L100) | 100 | `""` | — |
 | [SRC-B3062EB677-L000101](../../tests/test_answer_quality_runner.py#L101) | 101 | `"def test_live_records_not_tested_not_pass(monkeypatch, tmp_path, capsys):"` | — |
@@ -839,7 +843,3 @@
 | [SRC-3451CC474D-L000109](../../tests/test_api.py#L109) | 109 | `"    assert \"1 إشارة\" in stats[\"answer\"]"` | — |
 | [SRC-3451CC474D-L000110](../../tests/test_api.py#L110) | 110 | `""` | — |
 | [SRC-3451CC474D-L000111](../../tests/test_api.py#L111) | 111 | `"    status, recommendation = request_json("` | — |
-| [SRC-3451CC474D-L000112](../../tests/test_api.py#L112) | 112 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000113](../../tests/test_api.py#L113) | 113 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L000114](../../tests/test_api.py#L114) | 114 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000115](../../tests/test_api.py#L115) | 115 | `"        payload={\"question\": \"مين أفضل إشارة أراجعها؟\"},"` | — |

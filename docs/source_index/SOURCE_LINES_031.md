@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000520 إلى SRC-90FAA34ADE-L000202
+- النطاق: SRC-4FFD5AFC54-L000516 إلى SRC-90FAA34ADE-L000198
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000516](../../scripts/run_answer_quality_benchmark.py#L516) | 516 | `"        print(\"eval_modes:\", dict(Counter(c[\"evaluation_mode\"] for c in cases)))"` | — |
+| [SRC-4FFD5AFC54-L000517](../../scripts/run_answer_quality_benchmark.py#L517) | 517 | `"        print(\"categories:\", \", \".join(cats))"` | — |
+| [SRC-4FFD5AFC54-L000518](../../scripts/run_answer_quality_benchmark.py#L518) | 518 | `"    print("` | — |
+| [SRC-4FFD5AFC54-L000519](../../scripts/run_answer_quality_benchmark.py#L519) | 519 | `"        \"NOTE: Structural validation is not answer-quality evaluation. \""` | — |
 | [SRC-4FFD5AFC54-L000520](../../scripts/run_answer_quality_benchmark.py#L520) | 520 | `"        \"All reasoning cases remain NOT_TESTED until reviewed.\""` | — |
 | [SRC-4FFD5AFC54-L000521](../../scripts/run_answer_quality_benchmark.py#L521) | 521 | `"    )"` | — |
 | [SRC-4FFD5AFC54-L000522](../../scripts/run_answer_quality_benchmark.py#L522) | 522 | `"    return 0"` | — |
@@ -839,7 +843,3 @@
 | [SRC-90FAA34ADE-L000196](../../tests/fixtures/answer_quality_cases.json#L196) | 196 | `"      \"category\": \"current_information\","` | — |
 | [SRC-90FAA34ADE-L000197](../../tests/fixtures/answer_quality_cases.json#L197) | 197 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000198](../../tests/fixtures/answer_quality_cases.json#L198) | 198 | `"      \"question\": \"What are the latest public headlines about Egyptian electricity supply today?\","` | — |
-| [SRC-90FAA34ADE-L000199](../../tests/fixtures/answer_quality_cases.json#L199) | 199 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000200](../../tests/fixtures/answer_quality_cases.json#L200) | 200 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000201](../../tests/fixtures/answer_quality_cases.json#L201) | 201 | `"        \"Uses current-oriented search\","` | — |
-| [SRC-90FAA34ADE-L000202](../../tests/fixtures/answer_quality_cases.json#L202) | 202 | `"        \"Cites sources for claims\","` | — |

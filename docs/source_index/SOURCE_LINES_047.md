@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001704 إلى SRC-F725E90B2A-L002503
+- النطاق: SRC-F725E90B2A-L001700 إلى SRC-F725E90B2A-L002499
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001700](../../tests/test_web_agent.py#L1700) | 1700 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001701](../../tests/test_web_agent.py#L1701) | 1701 | `"        agent, \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L001702](../../tests/test_web_agent.py#L1702) | 1702 | `"        lambda question, history: {"` | — |
+| [SRC-F725E90B2A-L001703](../../tests/test_web_agent.py#L1703) | 1703 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001704](../../tests/test_web_agent.py#L1704) | 1704 | `"            \"freshness\": \"any\", \"depth\": \"standard\", \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001705](../../tests/test_web_agent.py#L1705) | 1705 | `"            \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001706](../../tests/test_web_agent.py#L1706) | 1706 | `"        },"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002497](../../tests/test_web_agent.py#L2497) | 2497 | `"    plan = {"` | — |
 | [SRC-F725E90B2A-L002498](../../tests/test_web_agent.py#L2498) | 2498 | `"        \"queries\": [question],"` | — |
 | [SRC-F725E90B2A-L002499](../../tests/test_web_agent.py#L2499) | 2499 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L002500](../../tests/test_web_agent.py#L2500) | 2500 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L002501](../../tests/test_web_agent.py#L2501) | 2501 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L002502](../../tests/test_web_agent.py#L2502) | 2502 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L002503](../../tests/test_web_agent.py#L2503) | 2503 | `"        \"platforms\": [],"` | — |

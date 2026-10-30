@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001003 إلى SRC-6A7519AC10-L000016
+- النطاق: SRC-90FAA34ADE-L000999 إلى SRC-6A7519AC10-L000012
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000999](../../tests/fixtures/answer_quality_cases.json#L999) | 999 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001000](../../tests/fixtures/answer_quality_cases.json#L1000) | 1000 | `"            \"title\": \"Visa guidance 2021\","` | — |
+| [SRC-90FAA34ADE-L001001](../../tests/fixtures/answer_quality_cases.json#L1001) | 1001 | `"            \"url\": \"https://consulate.example.test/visa-2021\","` | — |
+| [SRC-90FAA34ADE-L001002](../../tests/fixtures/answer_quality_cases.json#L1002) | 1002 | `"            \"snippet\": \"Required documents listed for 2021 applications.\","` | — |
 | [SRC-90FAA34ADE-L001003](../../tests/fixtures/answer_quality_cases.json#L1003) | 1003 | `"            \"published_at\": \"2021-06-10\","` | — |
 | [SRC-90FAA34ADE-L001004](../../tests/fixtures/answer_quality_cases.json#L1004) | 1004 | `"            \"domain\": \"consulate.example.test\","` | — |
 | [SRC-90FAA34ADE-L001005](../../tests/fixtures/answer_quality_cases.json#L1005) | 1005 | `"            \"provider\": \"fixture_search\""` | — |
@@ -848,7 +852,3 @@
 | [SRC-6A7519AC10-L000010](../../tests/test_answer_quality_comparison.py#L10) | 10 | `"SCRIPT = ROOT / \"scripts\" / \"compare_answer_quality_runs.py\""` | — |
 | [SRC-6A7519AC10-L000011](../../tests/test_answer_quality_comparison.py#L11) | 11 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
 | [SRC-6A7519AC10-L000012](../../tests/test_answer_quality_comparison.py#L12) | 12 | `""` | — |
-| [SRC-6A7519AC10-L000013](../../tests/test_answer_quality_comparison.py#L13) | 13 | `""` | — |
-| [SRC-6A7519AC10-L000014](../../tests/test_answer_quality_comparison.py#L14) | 14 | `"def load_module():"` | — |
-| [SRC-6A7519AC10-L000015](../../tests/test_answer_quality_comparison.py#L15) | 15 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_run_comparison\", SCRIPT)"` | — |
-| [SRC-6A7519AC10-L000016](../../tests/test_answer_quality_comparison.py#L16) | 16 | `"    assert spec and spec.loader"` | — |

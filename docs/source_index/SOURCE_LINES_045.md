@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000104 إلى SRC-F725E90B2A-L000903
+- النطاق: SRC-F725E90B2A-L000100 إلى SRC-F725E90B2A-L000899
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000100](../../tests/test_web_agent.py#L100) | 100 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
+| [SRC-F725E90B2A-L000101](../../tests/test_web_agent.py#L101) | 101 | `"    assert result[\"search_report\"][\"independent_sources_field_semantics\"] == ("` | — |
+| [SRC-F725E90B2A-L000102](../../tests/test_web_agent.py#L102) | 102 | `"        \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
+| [SRC-F725E90B2A-L000103](../../tests/test_web_agent.py#L103) | 103 | `"    )"` | — |
 | [SRC-F725E90B2A-L000104](../../tests/test_web_agent.py#L104) | 104 | `"    assert any(\"تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري\" in warning"` | — |
 | [SRC-F725E90B2A-L000105](../../tests/test_web_agent.py#L105) | 105 | `"               for warning in result[\"warnings\"])"` | — |
 | [SRC-F725E90B2A-L000106](../../tests/test_web_agent.py#L106) | 106 | `"    assert result[\"used_language_model\"] is True"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L000897](../../tests/test_web_agent.py#L897) | 897 | `""` | — |
 | [SRC-F725E90B2A-L000898](../../tests/test_web_agent.py#L898) | 898 | `"def test_health_status_reports_models_without_credentials(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000899](../../tests/test_web_agent.py#L899) | 899 | `"    monkeypatch.delenv(\"OPENROUTER_API_KEY\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000900](../../tests/test_web_agent.py#L900) | 900 | `"    monkeypatch.delenv(\"OMARAI_LLM_API_KEY\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000901](../../tests/test_web_agent.py#L901) | 901 | `"    status = WebAgent.status()"` | — |
-| [SRC-F725E90B2A-L000902](../../tests/test_web_agent.py#L902) | 902 | `"    assert status[\"planner_model\"] == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
-| [SRC-F725E90B2A-L000903](../../tests/test_web_agent.py#L903) | 903 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000265 إلى SRC-E599346ABE-L001064
+- النطاق: SRC-E599346ABE-L000261 إلى SRC-E599346ABE-L001060
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000261](../generate_index.py#L261) | 261 | `"        \"\"\"Record declared names from a module-level or class-level assignment.\"\"\""` | — |
+| [SRC-E599346ABE-L000262](../generate_index.py#L262) | 262 | `"        if isinstance(node, ast.Name):"` | — |
+| [SRC-E599346ABE-L000263](../generate_index.py#L263) | 263 | `"            qualified_name = \".\".join((*self.scope, node.id))"` | — |
+| [SRC-E599346ABE-L000264](../generate_index.py#L264) | 264 | `"            self.symbols.append("` | — |
 | [SRC-E599346ABE-L000265](../generate_index.py#L265) | 265 | `"                IndexedSymbol("` | — |
 | [SRC-E599346ABE-L000266](../generate_index.py#L266) | 266 | `"                    file=self.relative_file,"` | — |
 | [SRC-E599346ABE-L000267](../generate_index.py#L267) | 267 | `"                    name=qualified_name,"` | — |
@@ -812,7 +816,3 @@
 | [SRC-E599346ABE-L001058](../generate_index.py#L1058) | 1058 | `""` | — |
 | [SRC-E599346ABE-L001059](../generate_index.py#L1059) | 1059 | `"def scan_source_lines(root: Path, inventory: list[IndexedFile]) -> list[IndexedLine]:"` | — |
 | [SRC-E599346ABE-L001060](../generate_index.py#L1060) | 1060 | `"    \"\"\"Index every logical line of each eligible text file readable within the size bound.\"\"\""` | — |
-| [SRC-E599346ABE-L001061](../generate_index.py#L1061) | 1061 | `"    indexed_lines: list[IndexedLine] = []"` | — |
-| [SRC-E599346ABE-L001062](../generate_index.py#L1062) | 1062 | `"    for item in inventory:"` | — |
-| [SRC-E599346ABE-L001063](../generate_index.py#L1063) | 1063 | `"        source = _read_text_bounded(root / item.file)"` | — |
-| [SRC-E599346ABE-L001064](../generate_index.py#L1064) | 1064 | `"        if source is None:"` | — |

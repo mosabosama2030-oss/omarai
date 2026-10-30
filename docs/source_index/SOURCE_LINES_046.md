@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000904 إلى SRC-F725E90B2A-L001703
+- النطاق: SRC-F725E90B2A-L000900 إلى SRC-F725E90B2A-L001699
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000900](../../tests/test_web_agent.py#L900) | 900 | `"    monkeypatch.delenv(\"OMARAI_LLM_API_KEY\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000901](../../tests/test_web_agent.py#L901) | 901 | `"    status = WebAgent.status()"` | — |
+| [SRC-F725E90B2A-L000902](../../tests/test_web_agent.py#L902) | 902 | `"    assert status[\"planner_model\"] == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
+| [SRC-F725E90B2A-L000903](../../tests/test_web_agent.py#L903) | 903 | `"    assert status[\"answer_model\"] == \"google/gemma-4-31b-it:free\""` | — |
 | [SRC-F725E90B2A-L000904](../../tests/test_web_agent.py#L904) | 904 | `"    assert status[\"fallback_model\"] == \"openrouter/free\""` | — |
 | [SRC-F725E90B2A-L000905](../../tests/test_web_agent.py#L905) | 905 | `"    assert status[\"language_model_configured\"] is False"` | — |
 | [SRC-F725E90B2A-L000906](../../tests/test_web_agent.py#L906) | 906 | `"    assert status[\"verification_scope\"][\"kind\"] == \"configuration_snapshot\""` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001697](../../tests/test_web_agent.py#L1697) | 1697 | `"        \"source_class\": \"general\","` | — |
 | [SRC-F725E90B2A-L001698](../../tests/test_web_agent.py#L1698) | 1698 | `"        \"platform\": \"web\","` | — |
 | [SRC-F725E90B2A-L001699](../../tests/test_web_agent.py#L1699) | 1699 | `"    }"` | — |
-| [SRC-F725E90B2A-L001700](../../tests/test_web_agent.py#L1700) | 1700 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001701](../../tests/test_web_agent.py#L1701) | 1701 | `"        agent, \"_plan_search\","` | — |
-| [SRC-F725E90B2A-L001702](../../tests/test_web_agent.py#L1702) | 1702 | `"        lambda question, history: {"` | — |
-| [SRC-F725E90B2A-L001703](../../tests/test_web_agent.py#L1703) | 1703 | `"            \"queries\": [question], \"direct_urls\": [], \"social_focus\": False,"` | — |

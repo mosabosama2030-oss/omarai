@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000116 إلى SRC-3451CC474D-L000915
+- النطاق: SRC-3451CC474D-L000112 إلى SRC-3451CC474D-L000911
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000112](../../tests/test_api.py#L112) | 112 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L000113](../../tests/test_api.py#L113) | 113 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L000114](../../tests/test_api.py#L114) | 114 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000115](../../tests/test_api.py#L115) | 115 | `"        payload={\"question\": \"مين أفضل إشارة أراجعها؟\"},"` | — |
 | [SRC-3451CC474D-L000116](../../tests/test_api.py#L116) | 116 | `"    )"` | — |
 | [SRC-3451CC474D-L000117](../../tests/test_api.py#L117) | 117 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000118](../../tests/test_api.py#L118) | 118 | `"    assert recommendation[\"kind\"] == \"lead_recommendation\""` | — |
@@ -812,7 +816,3 @@
 | [SRC-3451CC474D-L000909](../../tests/test_api.py#L909) | 909 | `"    assert status == 500"` | — |
 | [SRC-3451CC474D-L000910](../../tests/test_api.py#L910) | 910 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
 | [SRC-3451CC474D-L000911](../../tests/test_api.py#L911) | 911 | `""` | — |
-| [SRC-3451CC474D-L000912](../../tests/test_api.py#L912) | 912 | `"    state[\"fail\"] = False"` | — |
-| [SRC-3451CC474D-L000913](../../tests/test_api.py#L913) | 913 | `"    status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000914](../../tests/test_api.py#L914) | 914 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الثاني\"}"` | — |
-| [SRC-3451CC474D-L000915](../../tests/test_api.py#L915) | 915 | `"    )"` | — |

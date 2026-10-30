@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B9C3015420-L000052 إلى SRC-0F910493E8-L000038
+- النطاق: SRC-B9C3015420-L000048 إلى SRC-0F910493E8-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B9C3015420-L000048](../OMARAI_REQUIREMENTS_REGISTER.md#L48) | 48 | `"\| SEC-005 \| الأمن \| الاتصالات المطلوبة تستخدم TLS والتحقق الصحيح من الشهادات. \| BASE للاتصالات الشبكية \| P0 \| مراجعة إعدادات واختبار اتصال مناسب \| INFERRED \| [تقرير P0 §5](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md) — verify=True لجلب الصفحات؛ لم ينفذ اختبار TLS حي عبر مزودي/الاستضافة؛ انظر §5. \|"` | — |
+| [SRC-B9C3015420-L000049](../OMARAI_REQUIREMENTS_REGISTER.md#L49) | 49 | `"\| SEC-006 \| الأمن \| المدخلات والمخرجات لا تُعرض كـ HTML/كود نشط دون تنقية وحدود آمنة. \| BASE \| P0 \| اختبارات XSS/content handling \| INFERRED \| [تقرير P0 §5](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md) — escaping للواجهة وروابط آمنة موجودان؛ اختبار XSS شامل/CSP غير مثبت؛ انظر §5. \|"` | — |
+| [SRC-B9C3015420-L000050](../OMARAI_REQUIREMENTS_REGISTER.md#L50) | 50 | `"\| SEC-007 \| الأمن \| توجد آلية لتسجيل الثغرات وتصنيفها وإعادة اختبار إصلاحها. \| BASE بقدر التعرض \| P1 \| سجل ثغرات/اختبار انحدار \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
+| [SRC-B9C3015420-L000051](../OMARAI_REQUIREMENTS_REGISTER.md#L51) | 51 | ``"\| SEC-008 \| الأمن \| حدود الصلاحيات والموارد تمنع استخدام أداة واحدة للوصول الشامل غير الضروري. \| BASE \| P0 \| مراجعة scopes واختبارات صلاحيات \| INFERRED \| [تقرير P0 §5](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md) — موصلات محددة ومدخلات سرية من البيئة؛ لا يوجد فصل صلاحيات لكل مستخدم ولا حد توازٍ موزع عبر عمليات/نسخ متعددة؛ ضوابط حدود الاتصال والميزانية المذكورة في تحديث `OMR-API-RESOURCE-001` process-local فقط ولا تنشئ تفويضًا فرديًا؛ انظر §5. \|"`` | — |
 | [SRC-B9C3015420-L000052](../OMARAI_REQUIREMENTS_REGISTER.md#L52) | 52 | `"\| DAT-001 \| البيانات \| بيانات الطلب والتحويلات تبقى قابلة للتتبع إلى المصدر حيث يلزم. \| BASE للمعلومة المسترجعة \| P1 \| metadata/provenance واختبارات مصدر \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
 | [SRC-B9C3015420-L000053](../OMARAI_REQUIREMENTS_REGISTER.md#L53) | 53 | `"\| DAT-002 \| البيانات \| تغيير مخطط البيانات الدائمة له migration واختبار بيانات قديمة وخطة استعادة مناسبة. \| TRIGGERED \| P0 عند البيانات غير القابلة للتعويض \| اختبار migration/rollback أو restore \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
 | [SRC-B9C3015420-L000054](../OMARAI_REQUIREMENTS_REGISTER.md#L54) | 54 | `"\| DAT-003 \| البيانات \| سياسة cache تحدد TTL والإبطال والعزل وما يحدث عند فشل التحديث. \| TRIGGERED عند استخدام cache \| P1 \| اختبارات stale/invalidation/isolation \| UNKNOWN \| خارج نطاق تدقيق P0 المؤرخ 2026-10-19؛ لم يُفحص ولم يُحكم عليه. \|"` | — |
@@ -830,7 +834,3 @@
 | [SRC-0F910493E8-L000032](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L32) | 32 | `""` | — |
 | [SRC-0F910493E8-L000033](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L33) | 33 | `"# 1. القرار المعماري الحاكم"` | — |
 | [SRC-0F910493E8-L000034](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L34) | 34 | `""` | — |
-| [SRC-0F910493E8-L000035](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L35) | 35 | `"## 1.1 الاتجاه"` | — |
-| [SRC-0F910493E8-L000036](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L36) | 36 | `""` | — |
-| [SRC-0F910493E8-L000037](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L37) | 37 | `"**[PROPOSED] يعتمد الاتجاه المستهدف: Capability-First + Skill/Workflow-First + Agent-Later.**"` | — |
-| [SRC-0F910493E8-L000038](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L38) | 38 | `""` | — |
