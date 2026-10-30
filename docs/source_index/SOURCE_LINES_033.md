@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000966 إلى SRC-63610B9E85-L000109
+- النطاق: SRC-90FAA34ADE-L000963 إلى SRC-63610B9E85-L000106
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000963](../../tests/fixtures/answer_quality_cases.json#L963) | 963 | `"        \"يرفض استنتاج موافقة أو منصب شخص من مجرد صفحة التواصل\","` | — |
+| [SRC-90FAA34ADE-L000964](../../tests/fixtures/answer_quality_cases.json#L964) | 964 | `"        \"يسجل البريد العام كمعلومة منشورة غير مؤكدة عند الاقتضاء\","` | — |
+| [SRC-90FAA34ADE-L000965](../../tests/fixtures/answer_quality_cases.json#L965) | 965 | `"        \"يقترح التواصل المهني الشفاف دون انتحال أو ادعاء موافقة\""` | — |
 | [SRC-90FAA34ADE-L000966](../../tests/fixtures/answer_quality_cases.json#L966) | 966 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000967](../../tests/fixtures/answer_quality_cases.json#L967) | 967 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000968](../../tests/fixtures/answer_quality_cases.json#L968) | 968 | `"        \"اختلاق اسم مدير المشتريات\","` | — |
@@ -840,6 +843,3 @@
 | [SRC-63610B9E85-L000104](../../tests/test_agentic_retrieval.py#L104) | 104 | `"    captured: dict[str, object] = {}"` | — |
 | [SRC-63610B9E85-L000105](../../tests/test_agentic_retrieval.py#L105) | 105 | `""` | — |
 | [SRC-63610B9E85-L000106](../../tests/test_agentic_retrieval.py#L106) | 106 | `"    def fake_completion(messages, **_kwargs):"` | — |
-| [SRC-63610B9E85-L000107](../../tests/test_agentic_retrieval.py#L107) | 107 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-63610B9E85-L000108](../../tests/test_agentic_retrieval.py#L108) | 108 | `"        return \"إجابة تجريبية.\""` | — |
-| [SRC-63610B9E85-L000109](../../tests/test_agentic_retrieval.py#L109) | 109 | `""` | — |

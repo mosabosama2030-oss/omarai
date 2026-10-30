@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006324 إلى SRC-EEF2E6447C-L000488
+- النطاق: SRC-1AE03B9EC3-L006321 إلى SRC-EEF2E6447C-L000485
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006321](../../agents/web_agent.py#L6321) | 6321 | `"            \"status\": ("` | — |
+| [SRC-1AE03B9EC3-L006322](../../agents/web_agent.py#L6322) | 6322 | `"                \"model_review_requested_not_machine_verified\""` | — |
+| [SRC-1AE03B9EC3-L006323](../../agents/web_agent.py#L6323) | 6323 | `"                if coverage_targets and review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L006324](../../agents/web_agent.py#L6324) | 6324 | `"                else \"review_unavailable\""` | — |
 | [SRC-1AE03B9EC3-L006325](../../agents/web_agent.py#L6325) | 6325 | `"                if coverage_targets"` | — |
 | [SRC-1AE03B9EC3-L006326](../../agents/web_agent.py#L6326) | 6326 | `"                else \"no_explicit_targets_detected\""` | — |
@@ -831,6 +834,3 @@
 | [SRC-EEF2E6447C-L000483](../../api/omarai.py#L483) | 483 | `""` | — |
 | [SRC-EEF2E6447C-L000484](../../api/omarai.py#L484) | 484 | `"    def respond(self, status, payload, content_type=\"application/json; charset=utf-8\"):"` | — |
 | [SRC-EEF2E6447C-L000485](../../api/omarai.py#L485) | 485 | `"        body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()"` | — |
-| [SRC-EEF2E6447C-L000486](../../api/omarai.py#L486) | 486 | `"        self.send_response(status)"` | — |
-| [SRC-EEF2E6447C-L000487](../../api/omarai.py#L487) | 487 | `"        self.send_header(\"Content-Type\", content_type)"` | — |
-| [SRC-EEF2E6447C-L000488](../../api/omarai.py#L488) | 488 | `"        self.send_header(\"Content-Length\", str(len(body)))"` | — |

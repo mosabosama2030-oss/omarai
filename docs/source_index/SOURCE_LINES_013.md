@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003124 إلى SRC-1AE03B9EC3-L003923
+- النطاق: SRC-1AE03B9EC3-L003121 إلى SRC-1AE03B9EC3-L003920
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"                    budget.reserve(\"model_calls\")"` | — |
+| [SRC-1AE03B9EC3-L003122](../../agents/web_agent.py#L3122) | 3122 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
+| [SRC-1AE03B9EC3-L003123](../../agents/web_agent.py#L3123) | 3123 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
 | [SRC-1AE03B9EC3-L003124](../../agents/web_agent.py#L3124) | 3124 | `"                        # The model may still answer, but the optional server-side search"` | — |
 | [SRC-1AE03B9EC3-L003125](../../agents/web_agent.py#L3125) | 3125 | `"                        # tool is disabled when its separate budget is unavailable."` | — |
 | [SRC-1AE03B9EC3-L003126](../../agents/web_agent.py#L3126) | 3126 | `"                        use_web_search = False"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L003918](../../agents/web_agent.py#L3918) | 3918 | `"                    \"وليست إصدار شهادة مستقلة بصحة الحقيقة. افحص كل ادعاء واقعي في المسودة على حدة \""` | — |
 | [SRC-1AE03B9EC3-L003919](../../agents/web_agent.py#L3919) | 3919 | `"                    \"مقابل النصوص المرفقة: هل تدعمه بوضوح، أم تدعمه جزئيًا، أم لا تدعمه؟ احتفظ فقط \""` | — |
 | [SRC-1AE03B9EC3-L003920](../../agents/web_agent.py#L3920) | 3920 | `"                    \"بالادعاءات المدعومة، وقيّد الادعاءات الجزئية، واحذف غير المدعوم، وصحح كل \""` | — |
-| [SRC-1AE03B9EC3-L003921](../../agents/web_agent.py#L3921) | 3921 | `"                    \"استشهاد ليرتبط بمصدر يدعم الادعاء تحديدًا. افحص كذلك اكتمال الإجابة مقابل \""` | — |
-| [SRC-1AE03B9EC3-L003922](../../agents/web_agent.py#L3922) | 3922 | `"                    \"جميع المحاور الصريحة في سؤال المستخدم؛ لا تسقط محورًا مطلوبًا بلا توضيح. \""` | — |
-| [SRC-1AE03B9EC3-L003923](../../agents/web_agent.py#L3923) | 3923 | `"                    \"إذا لم يكف الدليل لمحور، فاذكر عدم كفاية الأدلة لذلك المحور تحديدًا. \""` | — |

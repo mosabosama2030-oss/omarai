@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005524 إلى SRC-1AE03B9EC3-L006323
+- النطاق: SRC-1AE03B9EC3-L005521 إلى SRC-1AE03B9EC3-L006320
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005521](../../agents/web_agent.py#L5521) | 5521 | `"                        repair_report.get(\"queries_planned\", 1) or 0"` | — |
+| [SRC-1AE03B9EC3-L005522](../../agents/web_agent.py#L5522) | 5522 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L005523](../../agents/web_agent.py#L5523) | 5523 | `"                    initial_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
 | [SRC-1AE03B9EC3-L005524](../../agents/web_agent.py#L5524) | 5524 | `"                    repair_attempt_count = repair_report.get(\"queries_attempted\", 0)"` | — |
 | [SRC-1AE03B9EC3-L005525](../../agents/web_agent.py#L5525) | 5525 | `"                    if initial_attempt_count is None or repair_attempt_count is None:"` | — |
 | [SRC-1AE03B9EC3-L005526](../../agents/web_agent.py#L5526) | 5526 | `"                        report[\"queries_attempted\"] = None"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L006318](../../agents/web_agent.py#L6318) | 6318 | `"            \"method\": \"explicit_criteria_heuristic\","` | — |
 | [SRC-1AE03B9EC3-L006319](../../agents/web_agent.py#L6319) | 6319 | `"            \"targets\": coverage_targets,"` | — |
 | [SRC-1AE03B9EC3-L006320](../../agents/web_agent.py#L6320) | 6320 | `"            \"review_prompted\": review_status == \"model_claim_audit_completed\","` | — |
-| [SRC-1AE03B9EC3-L006321](../../agents/web_agent.py#L6321) | 6321 | `"            \"status\": ("` | — |
-| [SRC-1AE03B9EC3-L006322](../../agents/web_agent.py#L6322) | 6322 | `"                \"model_review_requested_not_machine_verified\""` | — |
-| [SRC-1AE03B9EC3-L006323](../../agents/web_agent.py#L6323) | 6323 | `"                if coverage_targets and review_status == \"model_claim_audit_completed\""` | — |

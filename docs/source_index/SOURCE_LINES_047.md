@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001511 إلى SRC-F725E90B2A-L002310
+- النطاق: SRC-F725E90B2A-L001490 إلى SRC-F725E90B2A-L002289
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001490](../../tests/test_web_agent.py#L1490) | 1490 | `""` | — |
+| [SRC-F725E90B2A-L001491](../../tests/test_web_agent.py#L1491) | 1491 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
+| [SRC-F725E90B2A-L001492](../../tests/test_web_agent.py#L1492) | 1492 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001493](../../tests/test_web_agent.py#L1493) | 1493 | `"    assert \"DuckDuckGo HTML\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001494](../../tests/test_web_agent.py#L1494) | 1494 | `"    assert \"ليست إثباتًا\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001495](../../tests/test_web_agent.py#L1495) | 1495 | `""` | — |
+| [SRC-F725E90B2A-L001496](../../tests/test_web_agent.py#L1496) | 1496 | `""` | — |
+| [SRC-F725E90B2A-L001497](../../tests/test_web_agent.py#L1497) | 1497 | `"def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001498](../../tests/test_web_agent.py#L1498) | 1498 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001499](../../tests/test_web_agent.py#L1499) | 1499 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001500](../../tests/test_web_agent.py#L1500) | 1500 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L001501](../../tests/test_web_agent.py#L1501) | 1501 | `"        \"title\": \"موقع مصر الرقمية والخدمات الحكومية\","` | — |
+| [SRC-F725E90B2A-L001502](../../tests/test_web_agent.py#L1502) | 1502 | `"        \"url\": \"https://digital.gov.eg/\","` | — |
+| [SRC-F725E90B2A-L001503](../../tests/test_web_agent.py#L1503) | 1503 | `"        \"snippet\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
+| [SRC-F725E90B2A-L001504](../../tests/test_web_agent.py#L1504) | 1504 | `"        \"page_text\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
+| [SRC-F725E90B2A-L001505](../../tests/test_web_agent.py#L1505) | 1505 | `"        \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L001506](../../tests/test_web_agent.py#L1506) | 1506 | `"        \"providers\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001507](../../tests/test_web_agent.py#L1507) | 1507 | `"        \"queries\": [\"ابحث عن موقع مصر الرقمية\"],"` | — |
+| [SRC-F725E90B2A-L001508](../../tests/test_web_agent.py#L1508) | 1508 | `"        \"domain\": \"digital.gov.eg\","` | — |
+| [SRC-F725E90B2A-L001509](../../tests/test_web_agent.py#L1509) | 1509 | `"        \"source_class\": \"government\","` | — |
+| [SRC-F725E90B2A-L001510](../../tests/test_web_agent.py#L1510) | 1510 | `"        \"platform\": \"web\","` | — |
 | [SRC-F725E90B2A-L001511](../../tests/test_web_agent.py#L1511) | 1511 | `"    }"` | — |
 | [SRC-F725E90B2A-L001512](../../tests/test_web_agent.py#L1512) | 1512 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001513](../../tests/test_web_agent.py#L1513) | 1513 | `"        agent, \"_plan_search\","` | — |
@@ -795,24 +816,3 @@
 | [SRC-F725E90B2A-L002287](../../tests/test_web_agent.py#L2287) | 2287 | `"    source_a.update({"` | — |
 | [SRC-F725E90B2A-L002288](../../tests/test_web_agent.py#L2288) | 2288 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
 | [SRC-F725E90B2A-L002289](../../tests/test_web_agent.py#L2289) | 2289 | `"        \"snippet\": \"قارن أسعار الشقق والمساحات وخطط السداد.\","` | — |
-| [SRC-F725E90B2A-L002290](../../tests/test_web_agent.py#L2290) | 2290 | `"        \"page_text\": \"إعلانات شقق للبيع من شركات تطوير عقاري.\","` | — |
-| [SRC-F725E90B2A-L002291](../../tests/test_web_agent.py#L2291) | 2291 | `"        \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L002292](../../tests/test_web_agent.py#L2292) | 2292 | `"    })"` | — |
-| [SRC-F725E90B2A-L002293](../../tests/test_web_agent.py#L2293) | 2293 | `"    source_b = sample_source(1)"` | — |
-| [SRC-F725E90B2A-L002294](../../tests/test_web_agent.py#L2294) | 2294 | `"    source_b.update({"` | — |
-| [SRC-F725E90B2A-L002295](../../tests/test_web_agent.py#L2295) | 2295 | `"        \"title\": \"مشروعات عقارية في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002296](../../tests/test_web_agent.py#L2296) | 2296 | `"        \"snippet\": \"تعرف على الوحدات السكنية المتاحة للبيع.\","` | — |
-| [SRC-F725E90B2A-L002297](../../tests/test_web_agent.py#L2297) | 2297 | `"        \"page_text\": \"معلومات عامة عن مشروعات وشقق للبيع.\","` | — |
-| [SRC-F725E90B2A-L002298](../../tests/test_web_agent.py#L2298) | 2298 | `"        \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L002299](../../tests/test_web_agent.py#L2299) | 2299 | `"    })"` | — |
-| [SRC-F725E90B2A-L002300](../../tests/test_web_agent.py#L2300) | 2300 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L002301](../../tests/test_web_agent.py#L2301) | 2301 | `"        \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L002302](../../tests/test_web_agent.py#L2302) | 2302 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L002303](../../tests/test_web_agent.py#L2303) | 2303 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L002304](../../tests/test_web_agent.py#L2304) | 2304 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L002305](../../tests/test_web_agent.py#L2305) | 2305 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L002306](../../tests/test_web_agent.py#L2306) | 2306 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002307](../../tests/test_web_agent.py#L2307) | 2307 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002308](../../tests/test_web_agent.py#L2308) | 2308 | `"    }"` | — |
-| [SRC-F725E90B2A-L002309](../../tests/test_web_agent.py#L2309) | 2309 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda q, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L002310](../../tests/test_web_agent.py#L2310) | 2310 | `"    monkeypatch.setattr(agent, \"_collect_research\", lambda p: ("` | — |

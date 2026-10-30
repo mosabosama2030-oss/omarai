@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000236 إلى SRC-96F6863E3C-L000189
+- النطاق: SRC-AFFCF23BD4-L000233 إلى SRC-96F6863E3C-L000168
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000233](../../tests/test_research_completion.py#L233) | 233 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000234](../../tests/test_research_completion.py#L234) | 234 | `""` | — |
+| [SRC-AFFCF23BD4-L000235](../../tests/test_research_completion.py#L235) | 235 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
 | [SRC-AFFCF23BD4-L000236](../../tests/test_research_completion.py#L236) | 236 | `"    assert result[\"counters\"][\"out_of_range_citation_reference_count\"] == 1"` | — |
 | [SRC-AFFCF23BD4-L000237](../../tests/test_research_completion.py#L237) | 237 | `"    assert result[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
 | [SRC-AFFCF23BD4-L000238](../../tests/test_research_completion.py#L238) | 238 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
@@ -138,6 +141,24 @@
 | [SRC-AFFCF23BD4-L000355](../../tests/test_research_completion.py#L355) | 355 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 1"` | — |
 | [SRC-AFFCF23BD4-L000356](../../tests/test_research_completion.py#L356) | 356 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
 | [SRC-AFFCF23BD4-L000357](../../tests/test_research_completion.py#L357) | 357 | `"    assert result[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000358](../../tests/test_research_completion.py#L358) | 358 | `""` | — |
+| [SRC-AFFCF23BD4-L000359](../../tests/test_research_completion.py#L359) | 359 | `""` | — |
+| [SRC-AFFCF23BD4-L000360](../../tests/test_research_completion.py#L360) | 360 | `"def test_lead_discovery_without_claim_ledger_is_not_a_ledger_build_failure() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000361](../../tests/test_research_completion.py#L361) | 361 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000362](../../tests/test_research_completion.py#L362) | 362 | `"        \"kind\": \"lead_discovery_no_qualified_candidates\","` | — |
+| [SRC-AFFCF23BD4-L000363](../../tests/test_research_completion.py#L363) | 363 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000364](../../tests/test_research_completion.py#L364) | 364 | `"        \"used_language_model\": False,"` | — |
+| [SRC-AFFCF23BD4-L000365](../../tests/test_research_completion.py#L365) | 365 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000366](../../tests/test_research_completion.py#L366) | 366 | `"            \"url\": \"https://example.com/listing\","` | — |
+| [SRC-AFFCF23BD4-L000367](../../tests/test_research_completion.py#L367) | 367 | `"            \"snippet\": \"Related listing, not a buyer-intent signal.\","` | — |
+| [SRC-AFFCF23BD4-L000368](../../tests/test_research_completion.py#L368) | 368 | `"            \"page_fetched\": False,"` | — |
+| [SRC-AFFCF23BD4-L000369](../../tests/test_research_completion.py#L369) | 369 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000370](../../tests/test_research_completion.py#L370) | 370 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 0},"` | — |
+| [SRC-AFFCF23BD4-L000371](../../tests/test_research_completion.py#L371) | 371 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000372](../../tests/test_research_completion.py#L372) | 372 | `""` | — |
+| [SRC-AFFCF23BD4-L000373](../../tests/test_research_completion.py#L373) | 373 | `"    assert result[\"counters\"][\"claim_ledger_status\"] == \"missing\""` | — |
+| [SRC-AFFCF23BD4-L000374](../../tests/test_research_completion.py#L374) | 374 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000375](../../tests/test_research_completion.py#L375) | 375 | `"    assert result[\"counters\"][\"citation_support_warning_count\"] == 0"` | — |
 ## اختبارات
 
 ### FILE-01E35ABC46 — [tests/test_research_guardrails.py](../../tests/test_research_guardrails.py#L1)
@@ -813,24 +834,3 @@
 | [SRC-96F6863E3C-L000166](../../tests/test_research_pipeline.py#L166) | 166 | `"    )"` | — |
 | [SRC-96F6863E3C-L000167](../../tests/test_research_pipeline.py#L167) | 167 | `"    assert result[\"stages\"][\"context_resolution\"] == \"completed\""` | — |
 | [SRC-96F6863E3C-L000168](../../tests/test_research_pipeline.py#L168) | 168 | `"    assert result[\"intent\"][\"context_available\"] is True"` | — |
-| [SRC-96F6863E3C-L000169](../../tests/test_research_pipeline.py#L169) | 169 | `"    assert result[\"query_strategy_matrix\"]"` | — |
-| [SRC-96F6863E3C-L000170](../../tests/test_research_pipeline.py#L170) | 170 | `"    assert all(\"iPhone 17\" in item[\"query\"] for item in result[\"query_strategy_matrix\"])"` | — |
-| [SRC-96F6863E3C-L000171](../../tests/test_research_pipeline.py#L171) | 171 | `""` | — |
-| [SRC-96F6863E3C-L000172](../../tests/test_research_pipeline.py#L172) | 172 | `"def test_pipeline_does_not_reuse_resolved_question_after_explicit_topic_shift():"` | — |
-| [SRC-96F6863E3C-L000173](../../tests/test_research_pipeline.py#L173) | 173 | `"    result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000174](../../tests/test_research_pipeline.py#L174) | 174 | `"        \"ما سعر سامسونج S26؟\","` | — |
-| [SRC-96F6863E3C-L000175](../../tests/test_research_pipeline.py#L175) | 175 | `"        {\"queries\": [\"سعر سامسونج S26\"]},"` | — |
-| [SRC-96F6863E3C-L000176](../../tests/test_research_pipeline.py#L176) | 176 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000177](../../tests/test_research_pipeline.py#L177) | 177 | `"        dialogue_context={"` | — |
-| [SRC-96F6863E3C-L000178](../../tests/test_research_pipeline.py#L178) | 178 | `"            \"resolved_question\": \"ما ضمان iPhone 17 في مصر؟\","` | — |
-| [SRC-96F6863E3C-L000179](../../tests/test_research_pipeline.py#L179) | 179 | `"            \"topic_shift\": True,"` | — |
-| [SRC-96F6863E3C-L000180](../../tests/test_research_pipeline.py#L180) | 180 | `"        },"` | — |
-| [SRC-96F6863E3C-L000181](../../tests/test_research_pipeline.py#L181) | 181 | `"    )"` | — |
-| [SRC-96F6863E3C-L000182](../../tests/test_research_pipeline.py#L182) | 182 | `""` | — |
-| [SRC-96F6863E3C-L000183](../../tests/test_research_pipeline.py#L183) | 183 | `"    assert result[\"contextual_question\"] == \"ما سعر سامسونج S26؟\""` | — |
-| [SRC-96F6863E3C-L000184](../../tests/test_research_pipeline.py#L184) | 184 | `"    assert result[\"task_spec\"][\"context_resolution\"][\"resolved_question\"] == ("` | — |
-| [SRC-96F6863E3C-L000185](../../tests/test_research_pipeline.py#L185) | 185 | `"        \"ما سعر سامسونج S26؟\""` | — |
-| [SRC-96F6863E3C-L000186](../../tests/test_research_pipeline.py#L186) | 186 | `"    )"` | — |
-| [SRC-96F6863E3C-L000187](../../tests/test_research_pipeline.py#L187) | 187 | `""` | — |
-| [SRC-96F6863E3C-L000188](../../tests/test_research_pipeline.py#L188) | 188 | `"def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():"` | — |
-| [SRC-96F6863E3C-L000189](../../tests/test_research_pipeline.py#L189) | 189 | `"    result = build_research_pipeline("` | — |

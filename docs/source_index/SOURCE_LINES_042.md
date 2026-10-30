@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000159 إلى SRC-AFFCF23BD4-L000235
+- النطاق: SRC-3D0DE98F65-L000156 إلى SRC-AFFCF23BD4-L000232
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000156](../../tests/test_question_requirement_loop.py#L156) | 156 | `""` | — |
+| [SRC-3D0DE98F65-L000157](../../tests/test_question_requirement_loop.py#L157) | 157 | `"    monkeypatch.setattr(agent, \"_search_web\", fake_search)"` | — |
+| [SRC-3D0DE98F65-L000158](../../tests/test_question_requirement_loop.py#L158) | 158 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fake_fetch)"` | — |
 | [SRC-3D0DE98F65-L000159](../../tests/test_question_requirement_loop.py#L159) | 159 | `""` | — |
 | [SRC-3D0DE98F65-L000160](../../tests/test_question_requirement_loop.py#L160) | 160 | `"    sources, _warnings, report = agent._collect_research(plan)"` | — |
 | [SRC-3D0DE98F65-L000161](../../tests/test_question_requirement_loop.py#L161) | 161 | `""` | — |
@@ -840,6 +843,3 @@
 | [SRC-AFFCF23BD4-L000230](../../tests/test_research_completion.py#L230) | 230 | `"            \"page_text\": \"A readable report excerpt.\","` | — |
 | [SRC-AFFCF23BD4-L000231](../../tests/test_research_completion.py#L231) | 231 | `"        }],"` | — |
 | [SRC-AFFCF23BD4-L000232](../../tests/test_research_completion.py#L232) | 232 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000233](../../tests/test_research_completion.py#L233) | 233 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000234](../../tests/test_research_completion.py#L234) | 234 | `""` | — |
-| [SRC-AFFCF23BD4-L000235](../../tests/test_research_completion.py#L235) | 235 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |

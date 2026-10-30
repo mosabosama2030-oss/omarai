@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002324 إلى SRC-1AE03B9EC3-L003123
+- النطاق: SRC-1AE03B9EC3-L002321 إلى SRC-1AE03B9EC3-L003120
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002321](../../agents/web_agent.py#L2321) | 2321 | `"                    connect_url = _pinned_connect_url(current_url, public_ips[0])"` | — |
+| [SRC-1AE03B9EC3-L002322](../../agents/web_agent.py#L2322) | 2322 | `"                    if not connect_url:"` | — |
+| [SRC-1AE03B9EC3-L002323](../../agents/web_agent.py#L2323) | 2323 | `"                        return result(status=\"blocked_connection_target\", error_class=\"PinnedTargetRejected\")"` | — |
 | [SRC-1AE03B9EC3-L002324](../../agents/web_agent.py#L2324) | 2324 | `"                    request_headers = {\"Host\": host}"` | — |
 | [SRC-1AE03B9EC3-L002325](../../agents/web_agent.py#L2325) | 2325 | `"                    extensions = {\"sni_hostname\": host} if parsed.scheme == \"https\" else {}"` | — |
 | [SRC-1AE03B9EC3-L002326](../../agents/web_agent.py#L2326) | 2326 | `"                    with client.stream("` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L003118](../../agents/web_agent.py#L3118) | 3118 | `"            use_web_search = enable_web_search and self.openrouter_web_search_enabled"` | — |
 | [SRC-1AE03B9EC3-L003119](../../agents/web_agent.py#L3119) | 3119 | `"            if budget is not None:"` | — |
 | [SRC-1AE03B9EC3-L003120](../../agents/web_agent.py#L3120) | 3120 | `"                try:"` | — |
-| [SRC-1AE03B9EC3-L003121](../../agents/web_agent.py#L3121) | 3121 | `"                    budget.reserve(\"model_calls\")"` | — |
-| [SRC-1AE03B9EC3-L003122](../../agents/web_agent.py#L3122) | 3122 | `"                    request_timeout = budget.timeout_for(timeout or self.timeout)"` | — |
-| [SRC-1AE03B9EC3-L003123](../../agents/web_agent.py#L3123) | 3123 | `"                    if use_web_search and budget.remaining_units(\"tool_calls\") < 3:"` | — |
