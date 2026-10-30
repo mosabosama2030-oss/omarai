@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001791 إلى SRC-1AE03B9EC3-L002590
+- النطاق: SRC-1AE03B9EC3-L001787 إلى SRC-1AE03B9EC3-L002586
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001787](../../agents/web_agent.py#L1787) | 1787 | `"            if len(results) >= MAX_PROVIDER_RESULTS:"` | — |
+| [SRC-1AE03B9EC3-L001788](../../agents/web_agent.py#L1788) | 1788 | `"                break"` | — |
+| [SRC-1AE03B9EC3-L001789](../../agents/web_agent.py#L1789) | 1789 | `"        return results"` | — |
+| [SRC-1AE03B9EC3-L001790](../../agents/web_agent.py#L1790) | 1790 | `""` | — |
 | [SRC-1AE03B9EC3-L001791](../../agents/web_agent.py#L1791) | 1791 | `"    def _search_social("` | — |
 | [SRC-1AE03B9EC3-L001792](../../agents/web_agent.py#L1792) | 1792 | `"        self, query: str, platforms: list[str]"` | — |
 | [SRC-1AE03B9EC3-L001793](../../agents/web_agent.py#L1793) | 1793 | `"    ) -> tuple[list[dict[str, Any]], list[str]]:"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L002584](../../agents/web_agent.py#L2584) | 2584 | `"                # Broad social research: always try no-key public sources, and add"` | — |
 | [SRC-1AE03B9EC3-L002585](../../agents/web_agent.py#L2585) | 2585 | `"                # official platform connectors only when they are configured."` | — |
 | [SRC-1AE03B9EC3-L002586](../../agents/web_agent.py#L2586) | 2586 | `"                platforms = [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-1AE03B9EC3-L002587](../../agents/web_agent.py#L2587) | 2587 | `"                optional_connectors = {"` | — |
-| [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"                    \"facebook\": bool("` | — |
-| [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"                        os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"                        and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |

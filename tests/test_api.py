@@ -325,6 +325,98 @@ def test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip(monkeypatch
     assert Handler._rate_limit_client_key(handler) == "192.0.2.44"
 
 
+@pytest.mark.parametrize(
+    ("configured", "expected"),
+    [("", 32), ("invalid", 32), ("0", 1), ("12", 12), ("999", 128)],
+)
+def test_http_connection_limit_configuration_is_bounded(monkeypatch, configured, expected):
+    from api.omarai import _configured_http_connection_limit
+
+    monkeypatch.setenv("OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS", configured)
+
+    assert _configured_http_connection_limit() == expected
+
+
+def test_http_ingress_rejects_excess_connections_and_releases_capacity():
+    from api.omarai import BoundedThreadingHTTPServer
+
+    server = BoundedThreadingHTTPServer(
+        ("127.0.0.1", 0),
+        Handler,
+        max_concurrent_connections=1,
+    )
+    first_client, first_request = socket.socketpair()
+    second_client, second_request = socket.socketpair()
+    worker_started = threading.Event()
+    release_worker = threading.Event()
+    worker_finished = threading.Event()
+
+    def hold_handler(_request, _client_address):
+        worker_started.set()
+        release_worker.wait(timeout=2)
+
+    server.finish_request = hold_handler
+    original_worker = server.process_request_thread
+
+    def track_worker(request, client_address):
+        try:
+            original_worker(request, client_address)
+        finally:
+            worker_finished.set()
+
+    server.process_request_thread = track_worker
+    try:
+        server.process_request(first_request, ("127.0.0.1", 10001))
+        assert worker_started.wait(timeout=1)
+
+        # The saturated listener rejects before creating a second handler thread.
+        server.process_request(second_request, ("127.0.0.1", 10002))
+        response = second_client.recv(512)
+        assert response.startswith(b"HTTP/1.1 503 Service Unavailable\r\n")
+        assert b"Retry-After: 5\r\n" in response
+        assert not server._connection_slots.acquire(blocking=False)
+
+        release_worker.set()
+        assert worker_finished.wait(timeout=1)
+        assert server._connection_slots.acquire(blocking=False)
+        server._connection_slots.release()
+    finally:
+        release_worker.set()
+        first_client.close()
+        second_client.close()
+        server.server_close()
+
+
+def test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota(monkeypatch):
+    monkeypatch.delenv("OMARAI_TRUST_PROXY_HEADERS", raising=False)
+
+    class RateLimitHarness:
+        _rate_lock = threading.Lock()
+        _request_times = None
+        _rate_last_cleanup = 0.0
+        RATE_LIMIT_REQUESTS = 1
+        RATE_LIMIT_WINDOW_SECONDS = 60
+        RATE_LIMIT_CLEANUP_INTERVAL_SECONDS = 60
+        MAX_RATE_LIMIT_CLIENT_BUCKETS = 3
+        RATE_LIMIT_OVERFLOW_KEY = Handler.RATE_LIMIT_OVERFLOW_KEY
+        _rate_limit_client_key = Handler._rate_limit_client_key
+        _rate_limit_ok = Handler._rate_limit_ok
+
+        def __init__(self, address):
+            self.client_address = (address, 12345)
+            self.headers = {}
+
+    RateLimitHarness._request_times = defaultdict(deque)
+
+    assert RateLimitHarness("198.51.100.1")._rate_limit_ok() is True
+    assert RateLimitHarness("198.51.100.2")._rate_limit_ok() is True
+    assert RateLimitHarness("198.51.100.3")._rate_limit_ok() is True
+    # New identities share the reserved overflow bucket and its rate ceiling.
+    assert RateLimitHarness("198.51.100.4")._rate_limit_ok() is False
+    assert len(RateLimitHarness._request_times) == 3
+    assert RateLimitHarness.RATE_LIMIT_OVERFLOW_KEY in RateLimitHarness._request_times
+
+
 def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):
     """Reject untrusted API calls before parsing bodies and throttle repeated failures."""
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")

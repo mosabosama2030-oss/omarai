@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002591 إلى SRC-1AE03B9EC3-L003390
+- النطاق: SRC-1AE03B9EC3-L002587 إلى SRC-1AE03B9EC3-L003386
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002587](../../agents/web_agent.py#L2587) | 2587 | `"                optional_connectors = {"` | — |
+| [SRC-1AE03B9EC3-L002588](../../agents/web_agent.py#L2588) | 2588 | `"                    \"facebook\": bool("` | — |
+| [SRC-1AE03B9EC3-L002589](../../agents/web_agent.py#L2589) | 2589 | `"                        os.getenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L002590](../../agents/web_agent.py#L2590) | 2590 | `"                        and os.getenv(\"FACEBOOK_PAGE_IDS\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L002591](../../agents/web_agent.py#L2591) | 2591 | `"                    ),"` | — |
 | [SRC-1AE03B9EC3-L002592](../../agents/web_agent.py#L2592) | 2592 | `"                    \"instagram\": bool("` | — |
 | [SRC-1AE03B9EC3-L002593](../../agents/web_agent.py#L2593) | 2593 | `"                        os.getenv(\"INSTAGRAM_USER_ID\", \"\").strip()"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L003384](../../agents/web_agent.py#L3384) | 3384 | `"                    \"دون Markdown. الشكل المطلوب: \""` | — |
 | [SRC-1AE03B9EC3-L003385](../../agents/web_agent.py#L3385) | 3385 | `"                    '{\"queries\":[\"...\"],\"social_focus\":false,\"freshness\":\"any\",\"depth\":\"standard\",'"` | — |
 | [SRC-1AE03B9EC3-L003386](../../agents/web_agent.py#L3386) | 3386 | `"                    '\"platforms\":[],\"dialogue_context\":{\"resolved_question\":\"السؤال المكتمل المقصود\",'"` | — |
-| [SRC-1AE03B9EC3-L003387](../../agents/web_agent.py#L3387) | 3387 | `"                    '\"intent\":\"current_information\",\"topic\":\"...\",\"entities\":[\"...\"],\"slots\":{\"entity\":\"...\",\"aspect\":\"...\"},'"` | — |
-| [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"                    '\"changed_slots\":[\"aspect\"],\"is_follow_up\":true,\"topic_shift\":false,\"needs_web\":true,'"` | — |
-| [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"                    '\"research_depth\":\"standard\",\"needs_clarification\":false,\"clarification_question\":\"\",'"` | — |
-| [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"                    '\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",\"confidence_band\":\"medium\"}}. '"` | — |
