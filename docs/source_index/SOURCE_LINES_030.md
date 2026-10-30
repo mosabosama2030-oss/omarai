@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000036 إلى SRC-4FFD5AFC54-L000605
+- النطاق: SRC-A8360B1B03-L000025 إلى SRC-4FFD5AFC54-L000594
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000025](../../scripts/hosted_smoke_test.py#L25) | 25 | `"        parsed = urllib.parse.urlsplit(url)"` | — |
+| [SRC-A8360B1B03-L000026](../../scripts/hosted_smoke_test.py#L26) | 26 | `"        try:"` | — |
+| [SRC-A8360B1B03-L000027](../../scripts/hosted_smoke_test.py#L27) | 27 | `"            port = parsed.port"` | — |
+| [SRC-A8360B1B03-L000028](../../scripts/hosted_smoke_test.py#L28) | 28 | `"        except ValueError:"` | — |
+| [SRC-A8360B1B03-L000029](../../scripts/hosted_smoke_test.py#L29) | 29 | `"            return \"\", \"\", None"` | — |
+| [SRC-A8360B1B03-L000030](../../scripts/hosted_smoke_test.py#L30) | 30 | `"        if port is None:"` | — |
+| [SRC-A8360B1B03-L000031](../../scripts/hosted_smoke_test.py#L31) | 31 | `"            port = 443 if parsed.scheme.lower() == \"https\" else 80 if parsed.scheme.lower() == \"http\" else None"` | — |
+| [SRC-A8360B1B03-L000032](../../scripts/hosted_smoke_test.py#L32) | 32 | `"        return parsed.scheme.lower(), (parsed.hostname or \"\").lower(), port"` | — |
+| [SRC-A8360B1B03-L000033](../../scripts/hosted_smoke_test.py#L33) | 33 | `""` | — |
+| [SRC-A8360B1B03-L000034](../../scripts/hosted_smoke_test.py#L34) | 34 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
+| [SRC-A8360B1B03-L000035](../../scripts/hosted_smoke_test.py#L35) | 35 | `"        target_url = urllib.parse.urljoin(req.full_url, newurl)"` | — |
 | [SRC-A8360B1B03-L000036](../../scripts/hosted_smoke_test.py#L36) | 36 | `"        target = urllib.parse.urlsplit(target_url)"` | — |
 | [SRC-A8360B1B03-L000037](../../scripts/hosted_smoke_test.py#L37) | 37 | `"        if ("` | — |
 | [SRC-A8360B1B03-L000038](../../scripts/hosted_smoke_test.py#L38) | 38 | `"            self._origin(req.full_url) != self._origin(target_url)"` | — |
@@ -814,14 +825,3 @@
 | [SRC-4FFD5AFC54-L000592](../../scripts/run_answer_quality_benchmark.py#L592) | 592 | `"        else:"` | — |
 | [SRC-4FFD5AFC54-L000593](../../scripts/run_answer_quality_benchmark.py#L593) | 593 | `"            safe_payload = redact_secrets(str(payload))"` | — |
 | [SRC-4FFD5AFC54-L000594](../../scripts/run_answer_quality_benchmark.py#L594) | 594 | `""` | — |
-| [SRC-4FFD5AFC54-L000595](../../scripts/run_answer_quality_benchmark.py#L595) | 595 | `"        transport_ok = 200 <= status_code < 300"` | — |
-| [SRC-4FFD5AFC54-L000596](../../scripts/run_answer_quality_benchmark.py#L596) | 596 | `"        response_metrics = _response_metrics(safe_payload, case[\"expected_strategy\"], transport_ok)"` | — |
-| [SRC-4FFD5AFC54-L000597](../../scripts/run_answer_quality_benchmark.py#L597) | 597 | `"        if request_cost_source is not None:"` | — |
-| [SRC-4FFD5AFC54-L000598](../../scripts/run_answer_quality_benchmark.py#L598) | 598 | `"            if cid in request_costs:"` | — |
-| [SRC-4FFD5AFC54-L000599](../../scripts/run_answer_quality_benchmark.py#L599) | 599 | `"                response_metrics[\"request_cost_usd\"] = request_costs[cid]"` | — |
-| [SRC-4FFD5AFC54-L000600](../../scripts/run_answer_quality_benchmark.py#L600) | 600 | `"                response_metrics[\"request_cost_status\"] = \"RECONCILED_COMPLETE_REQUEST_COST\""` | — |
-| [SRC-4FFD5AFC54-L000601](../../scripts/run_answer_quality_benchmark.py#L601) | 601 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
-| [SRC-4FFD5AFC54-L000602](../../scripts/run_answer_quality_benchmark.py#L602) | 602 | `"            else:"` | — |
-| [SRC-4FFD5AFC54-L000603](../../scripts/run_answer_quality_benchmark.py#L603) | 603 | `"                response_metrics[\"request_cost_status\"] = \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
-| [SRC-4FFD5AFC54-L000604](../../scripts/run_answer_quality_benchmark.py#L604) | 604 | `"                response_metrics[\"request_cost_source\"] = request_cost_source"` | — |
-| [SRC-4FFD5AFC54-L000605](../../scripts/run_answer_quality_benchmark.py#L605) | 605 | `"        record = {"` | — |

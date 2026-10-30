@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000296 إلى SRC-F725E90B2A-L001095
+- النطاق: SRC-F725E90B2A-L000285 إلى SRC-F725E90B2A-L001084
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000285](../../tests/test_web_agent.py#L285) | 285 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000286](../../tests/test_web_agent.py#L286) | 286 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
+| [SRC-F725E90B2A-L000287](../../tests/test_web_agent.py#L287) | 287 | `"    )"` | — |
+| [SRC-F725E90B2A-L000288](../../tests/test_web_agent.py#L288) | 288 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000289](../../tests/test_web_agent.py#L289) | 289 | `"    assert any(item[\"provider\"] == \"reddit_public_rss\" for item in results)"` | — |
+| [SRC-F725E90B2A-L000290](../../tests/test_web_agent.py#L290) | 290 | `"    bsky = next(item for item in results if item[\"provider\"] == \"bluesky_public_search\")"` | — |
+| [SRC-F725E90B2A-L000291](../../tests/test_web_agent.py#L291) | 291 | `"    assert bsky[\"url\"] == \"https://bsky.app/profile/driver.bsky.social/post/rkey123\""` | — |
+| [SRC-F725E90B2A-L000292](../../tests/test_web_agent.py#L292) | 292 | `"    assert bsky[\"snippet\"] == \"استخدمت السيارة شهرًا\""` | — |
+| [SRC-F725E90B2A-L000293](../../tests/test_web_agent.py#L293) | 293 | `""` | — |
+| [SRC-F725E90B2A-L000294](../../tests/test_web_agent.py#L294) | 294 | `""` | — |
+| [SRC-F725E90B2A-L000295](../../tests/test_web_agent.py#L295) | 295 | `"def test_research_collection_fuses_multiple_queries_and_reports_provenance(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000296](../../tests/test_web_agent.py#L296) | 296 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L000297](../../tests/test_web_agent.py#L297) | 297 | `""` | — |
 | [SRC-F725E90B2A-L000298](../../tests/test_web_agent.py#L298) | 298 | `"    def search(query):"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L001082](../../tests/test_web_agent.py#L1082) | 1082 | `"        \"أول شركة ناشئة في صعيد مصر عام 2019\","` | — |
 | [SRC-F725E90B2A-L001083](../../tests/test_web_agent.py#L1083) | 1083 | `"        \"نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم\","` | — |
 | [SRC-F725E90B2A-L001084](../../tests/test_web_agent.py#L1084) | 1084 | `"    ) < 0.20"` | — |
-| [SRC-F725E90B2A-L001085](../../tests/test_web_agent.py#L1085) | 1085 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L001086](../../tests/test_web_agent.py#L1086) | 1086 | `"        query, \"Railway vs Render for Python app hosting comparison\""` | — |
-| [SRC-F725E90B2A-L001087](../../tests/test_web_agent.py#L1087) | 1087 | `"    ) >= 0.20"` | — |
-| [SRC-F725E90B2A-L001088](../../tests/test_web_agent.py#L1088) | 1088 | `""` | — |
-| [SRC-F725E90B2A-L001089](../../tests/test_web_agent.py#L1089) | 1089 | `""` | — |
-| [SRC-F725E90B2A-L001090](../../tests/test_web_agent.py#L1090) | 1090 | `"def test_search_provider_failure_isolated_and_logged(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001091](../../tests/test_web_agent.py#L1091) | 1091 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001092](../../tests/test_web_agent.py#L1092) | 1092 | `""` | — |
-| [SRC-F725E90B2A-L001093](../../tests/test_web_agent.py#L1093) | 1093 | `"    def broken(_query):"` | — |
-| [SRC-F725E90B2A-L001094](../../tests/test_web_agent.py#L1094) | 1094 | `"        raise RuntimeError(\"upstream HTTP 503\")"` | — |
-| [SRC-F725E90B2A-L001095](../../tests/test_web_agent.py#L1095) | 1095 | `""` | — |

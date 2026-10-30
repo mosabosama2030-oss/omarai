@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000103 إلى SRC-B3062EB677-L000184
+- النطاق: SRC-6A7519AC10-L000092 إلى SRC-B3062EB677-L000173
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000092](../../tests/test_answer_quality_comparison.py#L92) | 92 | `"        case_id = case[\"case_id\"]"` | — |
+| [SRC-6A7519AC10-L000093](../../tests/test_answer_quality_comparison.py#L93) | 93 | `"        is_aq007 = case_id == \"AQ-007\""` | — |
+| [SRC-6A7519AC10-L000094](../../tests/test_answer_quality_comparison.py#L94) | 94 | `"        is_aq008 = case_id == \"AQ-008\""` | — |
+| [SRC-6A7519AC10-L000095](../../tests/test_answer_quality_comparison.py#L95) | 95 | `"        if candidate:"` | — |
+| [SRC-6A7519AC10-L000096](../../tests/test_answer_quality_comparison.py#L96) | 96 | `"            latency = 80 if is_aq007 else 120 if is_aq008 else 100"` | — |
+| [SRC-6A7519AC10-L000097](../../tests/test_answer_quality_comparison.py#L97) | 97 | `"            status = \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
+| [SRC-6A7519AC10-L000098](../../tests/test_answer_quality_comparison.py#L98) | 98 | `"            model_cost = 0.005 if is_aq007 else 0.002 if is_aq008 else None"` | — |
+| [SRC-6A7519AC10-L000099](../../tests/test_answer_quality_comparison.py#L99) | 99 | `"            request_cost = 0.007 if is_aq007 else 0.009 if is_aq008 else 0.001"` | — |
+| [SRC-6A7519AC10-L000100](../../tests/test_answer_quality_comparison.py#L100) | 100 | `"        else:"` | — |
+| [SRC-6A7519AC10-L000101](../../tests/test_answer_quality_comparison.py#L101) | 101 | `"            latency = 100 if is_aq007 else 200 if is_aq008 else 150"` | — |
+| [SRC-6A7519AC10-L000102](../../tests/test_answer_quality_comparison.py#L102) | 102 | `"            status = \"SUCCESS_WITH_USABLE_RESULTS\" if is_aq007 else \"ATTEMPTED_NO_USABLE_RESULTS\""` | — |
 | [SRC-6A7519AC10-L000103](../../tests/test_answer_quality_comparison.py#L103) | 103 | `"            model_cost = 0.01 if is_aq007 else None"` | — |
 | [SRC-6A7519AC10-L000104](../../tests/test_answer_quality_comparison.py#L104) | 104 | `"            request_cost = 0.012 if is_aq007 else 0.015 if is_aq008 else 0.001"` | — |
 | [SRC-6A7519AC10-L000105](../../tests/test_answer_quality_comparison.py#L105) | 105 | `"        rows.append({"` | — |
@@ -841,14 +852,3 @@
 | [SRC-B3062EB677-L000171](../../tests/test_answer_quality_runner.py#L171) | 171 | `""` | — |
 | [SRC-B3062EB677-L000172](../../tests/test_answer_quality_runner.py#L172) | 172 | `"def test_remote_token_origin_comparison_normalizes_default_https_port(monkeypatch):"` | — |
 | [SRC-B3062EB677-L000173](../../tests/test_answer_quality_runner.py#L173) | 173 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000174](../../tests/test_answer_quality_runner.py#L174) | 174 | `"    monkeypatch.setenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"https://app.example\")"` | — |
-| [SRC-B3062EB677-L000175](../../tests/test_answer_quality_runner.py#L175) | 175 | `"    assert ("` | — |
-| [SRC-B3062EB677-L000176](../../tests/test_answer_quality_runner.py#L176) | 176 | `"        mod.validate_base_url(\"https://app.example:443\", token_present=True)"` | — |
-| [SRC-B3062EB677-L000177](../../tests/test_answer_quality_runner.py#L177) | 177 | `"        == \"https://app.example\""` | — |
-| [SRC-B3062EB677-L000178](../../tests/test_answer_quality_runner.py#L178) | 178 | `"    )"` | — |
-| [SRC-B3062EB677-L000179](../../tests/test_answer_quality_runner.py#L179) | 179 | `""` | — |
-| [SRC-B3062EB677-L000180](../../tests/test_answer_quality_runner.py#L180) | 180 | `""` | — |
-| [SRC-B3062EB677-L000181](../../tests/test_answer_quality_runner.py#L181) | 181 | `"def test_redirect_handler_refuses_following_redirects():"` | — |
-| [SRC-B3062EB677-L000182](../../tests/test_answer_quality_runner.py#L182) | 182 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000183](../../tests/test_answer_quality_runner.py#L183) | 183 | `"    handler = mod._NoRedirectHandler()"` | — |
-| [SRC-B3062EB677-L000184](../../tests/test_answer_quality_runner.py#L184) | 184 | `"    assert handler.redirect_request("` | — |

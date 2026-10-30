@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001089 إلى SRC-6A7519AC10-L000102
+- النطاق: SRC-90FAA34ADE-L001078 إلى SRC-6A7519AC10-L000091
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001078](../../tests/fixtures/answer_quality_cases.json#L1078) | 1078 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001079](../../tests/fixtures/answer_quality_cases.json#L1079) | 1079 | `"        \"type\": \"controlled_page\","` | — |
+| [SRC-90FAA34ADE-L001080](../../tests/fixtures/answer_quality_cases.json#L1080) | 1080 | `"        \"url\": \"https://product.example.test/spec\","` | — |
+| [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
+| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001084](../../tests/fixtures/answer_quality_cases.json#L1084) | 1084 | `"        \"States 18 hours as supported by this page\","` | — |
+| [SRC-90FAA34ADE-L001085](../../tests/fixtures/answer_quality_cases.json#L1085) | 1085 | `"        \"Attributes a nonexistent runtime specification to the source\""` | — |
+| [SRC-90FAA34ADE-L001086](../../tests/fixtures/answer_quality_cases.json#L1086) | 1086 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001087](../../tests/fixtures/answer_quality_cases.json#L1087) | 1087 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001088](../../tests/fixtures/answer_quality_cases.json#L1088) | 1088 | `"    },"` | — |
 | [SRC-90FAA34ADE-L001089](../../tests/fixtures/answer_quality_cases.json#L1089) | 1089 | `"    {"` | — |
 | [SRC-90FAA34ADE-L001090](../../tests/fixtures/answer_quality_cases.json#L1090) | 1090 | `"      \"case_id\": \"AQ-037\","` | — |
 | [SRC-90FAA34ADE-L001091](../../tests/fixtures/answer_quality_cases.json#L1091) | 1091 | `"      \"category\": \"invalid_links\","` | — |
@@ -841,14 +852,3 @@
 | [SRC-6A7519AC10-L000089](../../tests/test_answer_quality_comparison.py#L89) | 89 | `"    corpus = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
 | [SRC-6A7519AC10-L000090](../../tests/test_answer_quality_comparison.py#L90) | 90 | `"    rows = []"` | — |
 | [SRC-6A7519AC10-L000091](../../tests/test_answer_quality_comparison.py#L91) | 91 | `"    for case in corpus[\"cases\"]:"` | — |
-| [SRC-6A7519AC10-L000092](../../tests/test_answer_quality_comparison.py#L92) | 92 | `"        case_id = case[\"case_id\"]"` | — |
-| [SRC-6A7519AC10-L000093](../../tests/test_answer_quality_comparison.py#L93) | 93 | `"        is_aq007 = case_id == \"AQ-007\""` | — |
-| [SRC-6A7519AC10-L000094](../../tests/test_answer_quality_comparison.py#L94) | 94 | `"        is_aq008 = case_id == \"AQ-008\""` | — |
-| [SRC-6A7519AC10-L000095](../../tests/test_answer_quality_comparison.py#L95) | 95 | `"        if candidate:"` | — |
-| [SRC-6A7519AC10-L000096](../../tests/test_answer_quality_comparison.py#L96) | 96 | `"            latency = 80 if is_aq007 else 120 if is_aq008 else 100"` | — |
-| [SRC-6A7519AC10-L000097](../../tests/test_answer_quality_comparison.py#L97) | 97 | `"            status = \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
-| [SRC-6A7519AC10-L000098](../../tests/test_answer_quality_comparison.py#L98) | 98 | `"            model_cost = 0.005 if is_aq007 else 0.002 if is_aq008 else None"` | — |
-| [SRC-6A7519AC10-L000099](../../tests/test_answer_quality_comparison.py#L99) | 99 | `"            request_cost = 0.007 if is_aq007 else 0.009 if is_aq008 else 0.001"` | — |
-| [SRC-6A7519AC10-L000100](../../tests/test_answer_quality_comparison.py#L100) | 100 | `"        else:"` | — |
-| [SRC-6A7519AC10-L000101](../../tests/test_answer_quality_comparison.py#L101) | 101 | `"            latency = 100 if is_aq007 else 200 if is_aq008 else 150"` | — |
-| [SRC-6A7519AC10-L000102](../../tests/test_answer_quality_comparison.py#L102) | 102 | `"            status = \"SUCCESS_WITH_USABLE_RESULTS\" if is_aq007 else \"ATTEMPTED_NO_USABLE_RESULTS\""` | — |

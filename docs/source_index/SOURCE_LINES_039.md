@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000230 إلى SRC-829A979985-L000554
+- النطاق: SRC-FA4E1423C3-L000219 إلى SRC-829A979985-L000543
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000219](../../tests/test_generate_index.py#L219) | 219 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000220](../../tests/test_generate_index.py#L220) | 220 | `"    first_symbols, first_count = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000221](../../tests/test_generate_index.py#L221) | 221 | `"    second_symbols, second_count = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000222](../../tests/test_generate_index.py#L222) | 222 | `"    first_inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000223](../../tests/test_generate_index.py#L223) | 223 | `"    second_inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000224](../../tests/test_generate_index.py#L224) | 224 | `"    first_static = INDEXER.scan_static_symbols(tmp_path, first_inventory)"` | — |
+| [SRC-FA4E1423C3-L000225](../../tests/test_generate_index.py#L225) | 225 | `"    second_static = INDEXER.scan_static_symbols(tmp_path, second_inventory)"` | — |
+| [SRC-FA4E1423C3-L000226](../../tests/test_generate_index.py#L226) | 226 | `"    first_markdown = INDEXER.render_markdown("` | — |
+| [SRC-FA4E1423C3-L000227](../../tests/test_generate_index.py#L227) | 227 | `"        first_symbols, first_count, first_inventory, first_static"` | — |
+| [SRC-FA4E1423C3-L000228](../../tests/test_generate_index.py#L228) | 228 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000229](../../tests/test_generate_index.py#L229) | 229 | `"    second_markdown = INDEXER.render_markdown("` | — |
 | [SRC-FA4E1423C3-L000230](../../tests/test_generate_index.py#L230) | 230 | `"        second_symbols, second_count, second_inventory, second_static"` | — |
 | [SRC-FA4E1423C3-L000231](../../tests/test_generate_index.py#L231) | 231 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000232](../../tests/test_generate_index.py#L232) | 232 | `"    output_path = tmp_path / \"docs\" / \"MASTER_INDEX.md\""` | — |
@@ -814,14 +825,3 @@
 | [SRC-829A979985-L000541](../../tests/test_generation_acceptance_matrix.py#L541) | 541 | `"                \"queries_attempted\": 1,"` | — |
 | [SRC-829A979985-L000542](../../tests/test_generation_acceptance_matrix.py#L542) | 542 | `"                \"search_attempted\": True,"` | — |
 | [SRC-829A979985-L000543](../../tests/test_generation_acceptance_matrix.py#L543) | 543 | `"                \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-829A979985-L000544](../../tests/test_generation_acceptance_matrix.py#L544) | 544 | `"                \"unique_sources\": 2,"` | — |
-| [SRC-829A979985-L000545](../../tests/test_generation_acceptance_matrix.py#L545) | 545 | `"                \"pages_fetched\": 1,"` | — |
-| [SRC-829A979985-L000546](../../tests/test_generation_acceptance_matrix.py#L546) | 546 | `"                \"providers_used\": [\"duckduckgo_html\", \"bing_rss\"],"` | — |
-| [SRC-829A979985-L000547](../../tests/test_generation_acceptance_matrix.py#L547) | 547 | `"                \"provider_counts\": {\"duckduckgo_html\": 1, \"bing_rss\": 1},"` | — |
-| [SRC-829A979985-L000548](../../tests/test_generation_acceptance_matrix.py#L548) | 548 | `"                \"platform_counts\": {\"web\": 2},"` | — |
-| [SRC-829A979985-L000549](../../tests/test_generation_acceptance_matrix.py#L549) | 549 | `"                \"social_direct_results\": 0,"` | — |
-| [SRC-829A979985-L000550](../../tests/test_generation_acceptance_matrix.py#L550) | 550 | `"                \"provider_diagnostics\": [],"` | — |
-| [SRC-829A979985-L000551](../../tests/test_generation_acceptance_matrix.py#L551) | 551 | `"                \"evidence_signals\": {},"` | — |
-| [SRC-829A979985-L000552](../../tests/test_generation_acceptance_matrix.py#L552) | 552 | `"            },"` | — |
-| [SRC-829A979985-L000553](../../tests/test_generation_acceptance_matrix.py#L553) | 553 | `"        ),"` | — |
-| [SRC-829A979985-L000554](../../tests/test_generation_acceptance_matrix.py#L554) | 554 | `"    )"` | — |

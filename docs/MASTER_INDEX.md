@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **253**
 - تعريفات Python بلا Docstring: **937**
 - تعريفات لا ينطبق عليها Docstring: **304**
-- الرموز الساكنة الإضافية: **1864**
-- الأسطر النصية المفهرسة حرفيًا: **39469**
+- الرموز الساكنة الإضافية: **1866**
+- الأسطر النصية المفهرسة حرفيًا: **39480**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -85,7 +85,7 @@
 | FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 4756 | 48 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15036 | 130 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
-| FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 7531 | 103 | جرد الملف + عناوين Markdown |
+| FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 8452 | 114 | جرد الملف + عناوين Markdown |
 | FILE-8524B08F5D | وثائق وفهرسة | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | Markdown | 5319 | 47 | جرد الملف + عناوين Markdown |
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -2760,6 +2760,8 @@
 | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 76 | [SRC-BBB7222984-L000076](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L76) |
 | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L78) | عنوان Markdown (H2) | تنفيذ موثق — 2026-10-30 | 78 | [SRC-BBB7222984-L000078](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L78) |
 | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L93) | عنوان Markdown (H3) | مراجعة نهائية بعد إعادة بناء TaskSpec — 2026-10-30 | 93 | [SRC-BBB7222984-L000093](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L93) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L104) | عنوان Markdown (H3) | بوابة التوضيح الإلزامي — 2026-10-30 | 104 | [SRC-BBB7222984-L000104](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L104) |
+| [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 107 | [SRC-BBB7222984-L000107](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L107) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | عنوان Markdown (H1) | تصميم خط المعالجة الهجين الموحد للبحث والفهم | 1 | [SRC-8524B08F5D-L000001](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) | عنوان Markdown (H2) | الهدف | 5 | [SRC-8524B08F5D-L000005](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) | عنوان Markdown (H2) | الحالة الحالية المثبتة | 8 | [SRC-8524B08F5D-L000008](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) |

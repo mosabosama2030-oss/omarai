@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000036 إلى SRC-F725E90B2A-L000295
+- النطاق: SRC-AFEDC2645A-L000025 إلى SRC-F725E90B2A-L000284
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000025](../../tests/test_task_understanding.py#L25) | 25 | `"    assert spec[\"task_family\"] == family"` | — |
+| [SRC-AFEDC2645A-L000026](../../tests/test_task_understanding.py#L26) | 26 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
+| [SRC-AFEDC2645A-L000027](../../tests/test_task_understanding.py#L27) | 27 | `"    assert spec[\"decision_checks\"]"` | — |
+| [SRC-AFEDC2645A-L000028](../../tests/test_task_understanding.py#L28) | 28 | `""` | — |
+| [SRC-AFEDC2645A-L000029](../../tests/test_task_understanding.py#L29) | 29 | `""` | — |
+| [SRC-AFEDC2645A-L000030](../../tests/test_task_understanding.py#L30) | 30 | `"def test_task_spec_preserves_only_explicit_constraints():"` | — |
+| [SRC-AFEDC2645A-L000031](../../tests/test_task_understanding.py#L31) | 31 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000032](../../tests/test_task_understanding.py#L32) | 32 | `"        \"قارن نيسان صني 2022 مع BYD Dolphin في مصر، بميزانية أقل من 400 ألف جنيه\","` | — |
+| [SRC-AFEDC2645A-L000033](../../tests/test_task_understanding.py#L33) | 33 | `"        mode=\"deep\","` | — |
+| [SRC-AFEDC2645A-L000034](../../tests/test_task_understanding.py#L34) | 34 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000035](../../tests/test_task_understanding.py#L35) | 35 | `"    )"` | — |
 | [SRC-AFEDC2645A-L000036](../../tests/test_task_understanding.py#L36) | 36 | `"    constraints = spec[\"constraints\"]"` | — |
 | [SRC-AFEDC2645A-L000037](../../tests/test_task_understanding.py#L37) | 37 | `"    assert \"2022\" in constraints[\"explicit_years\"]"` | — |
 | [SRC-AFEDC2645A-L000038](../../tests/test_task_understanding.py#L38) | 38 | `"    assert \"مصر\" in constraints[\"explicit_locations\"]"` | — |
@@ -823,14 +834,3 @@
 | [SRC-F725E90B2A-L000282](../../tests/test_web_agent.py#L282) | 282 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
 | [SRC-F725E90B2A-L000283](../../tests/test_web_agent.py#L283) | 283 | `""` | — |
 | [SRC-F725E90B2A-L000284](../../tests/test_web_agent.py#L284) | 284 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000285](../../tests/test_web_agent.py#L285) | 285 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000286](../../tests/test_web_agent.py#L286) | 286 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
-| [SRC-F725E90B2A-L000287](../../tests/test_web_agent.py#L287) | 287 | `"    )"` | — |
-| [SRC-F725E90B2A-L000288](../../tests/test_web_agent.py#L288) | 288 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000289](../../tests/test_web_agent.py#L289) | 289 | `"    assert any(item[\"provider\"] == \"reddit_public_rss\" for item in results)"` | — |
-| [SRC-F725E90B2A-L000290](../../tests/test_web_agent.py#L290) | 290 | `"    bsky = next(item for item in results if item[\"provider\"] == \"bluesky_public_search\")"` | — |
-| [SRC-F725E90B2A-L000291](../../tests/test_web_agent.py#L291) | 291 | `"    assert bsky[\"url\"] == \"https://bsky.app/profile/driver.bsky.social/post/rkey123\""` | — |
-| [SRC-F725E90B2A-L000292](../../tests/test_web_agent.py#L292) | 292 | `"    assert bsky[\"snippet\"] == \"استخدمت السيارة شهرًا\""` | — |
-| [SRC-F725E90B2A-L000293](../../tests/test_web_agent.py#L293) | 293 | `""` | — |
-| [SRC-F725E90B2A-L000294](../../tests/test_web_agent.py#L294) | 294 | `""` | — |
-| [SRC-F725E90B2A-L000295](../../tests/test_web_agent.py#L295) | 295 | `"def test_research_collection_fuses_multiple_queries_and_reports_provenance(monkeypatch):"` | — |

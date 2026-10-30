@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001896 إلى SRC-F725E90B2A-L002695
+- النطاق: SRC-F725E90B2A-L001885 إلى SRC-F725E90B2A-L002684
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001885](../../tests/test_web_agent.py#L1885) | 1885 | `"        search_report={},"` | — |
+| [SRC-F725E90B2A-L001886](../../tests/test_web_agent.py#L1886) | 1886 | `"    )"` | — |
+| [SRC-F725E90B2A-L001887](../../tests/test_web_agent.py#L1887) | 1887 | `""` | — |
+| [SRC-F725E90B2A-L001888](../../tests/test_web_agent.py#L1888) | 1888 | `"    user_content = \"\\n\".join(m[\"content\"] for m in captured[\"messages\"] if m[\"role\"] == \"user\")"` | — |
+| [SRC-F725E90B2A-L001889](../../tests/test_web_agent.py#L1889) | 1889 | `"    assert result == \"مقارنة مختصرة.\""` | — |
+| [SRC-F725E90B2A-L001890](../../tests/test_web_agent.py#L1890) | 1890 | `"    assert \"قائمة محاور مستخرجة آليًا\" in user_content"` | — |
+| [SRC-F725E90B2A-L001891](../../tests/test_web_agent.py#L1891) | 1891 | `"    for target in (\"السعر\", \"الخصوصية\", \"الاعتمادية\"):"` | — |
+| [SRC-F725E90B2A-L001892](../../tests/test_web_agent.py#L1892) | 1892 | `"        assert target in user_content"` | — |
+| [SRC-F725E90B2A-L001893](../../tests/test_web_agent.py#L1893) | 1893 | `""` | — |
+| [SRC-F725E90B2A-L001894](../../tests/test_web_agent.py#L1894) | 1894 | `""` | — |
+| [SRC-F725E90B2A-L001895](../../tests/test_web_agent.py#L1895) | 1895 | `"def test_reviewer_checks_coverage_targets_without_claiming_independent_verification(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001896](../../tests/test_web_agent.py#L1896) | 1896 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001897](../../tests/test_web_agent.py#L1897) | 1897 | `"    captured = {}"` | — |
 | [SRC-F725E90B2A-L001898](../../tests/test_web_agent.py#L1898) | 1898 | `""` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L002682](../../tests/test_web_agent.py#L2682) | 2682 | `"        def __exit__(self, *_args):"` | — |
 | [SRC-F725E90B2A-L002683](../../tests/test_web_agent.py#L2683) | 2683 | `"            return False"` | — |
 | [SRC-F725E90B2A-L002684](../../tests/test_web_agent.py#L2684) | 2684 | `""` | — |
-| [SRC-F725E90B2A-L002685](../../tests/test_web_agent.py#L2685) | 2685 | `"        stream = fake_stream"` | — |
-| [SRC-F725E90B2A-L002686](../../tests/test_web_agent.py#L2686) | 2686 | `""` | — |
-| [SRC-F725E90B2A-L002687](../../tests/test_web_agent.py#L2687) | 2687 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
-| [SRC-F725E90B2A-L002688](../../tests/test_web_agent.py#L2688) | 2688 | `""` | — |
-| [SRC-F725E90B2A-L002689](../../tests/test_web_agent.py#L2689) | 2689 | `"    assert web_agent.WebAgent()._fetch_page(\"https://first.example/article\") == (\"\", \"\")"` | — |
-| [SRC-F725E90B2A-L002690](../../tests/test_web_agent.py#L2690) | 2690 | `"    assert resolved_hosts == [\"first.example\"]"` | — |
-| [SRC-F725E90B2A-L002691](../../tests/test_web_agent.py#L2691) | 2691 | `"    assert len(requests) == 1"` | — |
-| [SRC-F725E90B2A-L002692](../../tests/test_web_agent.py#L2692) | 2692 | `"    assert requests[0][1] == \"https://93.184.216.34/article\""` | — |
-| [SRC-F725E90B2A-L002693](../../tests/test_web_agent.py#L2693) | 2693 | `"    assert requests[0][2][\"headers\"][\"Host\"] == \"first.example\""` | — |
-| [SRC-F725E90B2A-L002694](../../tests/test_web_agent.py#L2694) | 2694 | `"    assert requests[0][2][\"extensions\"][\"sni_hostname\"] == \"first.example\""` | — |
-| [SRC-F725E90B2A-L002695](../../tests/test_web_agent.py#L2695) | 2695 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000289 إلى SRC-90FAA34ADE-L001088
+- النطاق: SRC-90FAA34ADE-L000278 إلى SRC-90FAA34ADE-L001077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000278](../../tests/fixtures/answer_quality_cases.json#L278) | 278 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000279](../../tests/fixtures/answer_quality_cases.json#L279) | 279 | `"        \"type\": \"none\""` | — |
+| [SRC-90FAA34ADE-L000280](../../tests/fixtures/answer_quality_cases.json#L280) | 280 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000281](../../tests/fixtures/answer_quality_cases.json#L281) | 281 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000282](../../tests/fixtures/answer_quality_cases.json#L282) | 282 | `"        \"Numeric price given without referent\""` | — |
+| [SRC-90FAA34ADE-L000283](../../tests/fixtures/answer_quality_cases.json#L283) | 283 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000284](../../tests/fixtures/answer_quality_cases.json#L284) | 284 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L000285](../../tests/fixtures/answer_quality_cases.json#L285) | 285 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000286](../../tests/fixtures/answer_quality_cases.json#L286) | 286 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000287](../../tests/fixtures/answer_quality_cases.json#L287) | 287 | `"      \"case_id\": \"AQ-012\","` | — |
+| [SRC-90FAA34ADE-L000288](../../tests/fixtures/answer_quality_cases.json#L288) | 288 | `"      \"category\": \"ambiguous_clarify\","` | — |
 | [SRC-90FAA34ADE-L000289](../../tests/fixtures/answer_quality_cases.json#L289) | 289 | `"      \"language\": \"en\","` | — |
 | [SRC-90FAA34ADE-L000290](../../tests/fixtures/answer_quality_cases.json#L290) | 290 | `"      \"question\": \"Is it good?\","` | — |
 | [SRC-90FAA34ADE-L000291](../../tests/fixtures/answer_quality_cases.json#L291) | 291 | `"      \"expected_strategy\": \"clarify\","` | — |
@@ -805,14 +816,3 @@
 | [SRC-90FAA34ADE-L001075](../../tests/fixtures/answer_quality_cases.json#L1075) | 1075 | `"        \"Claims 18-hour battery life from a page that never mentions duration\","` | — |
 | [SRC-90FAA34ADE-L001076](../../tests/fixtures/answer_quality_cases.json#L1076) | 1076 | `"        \"Invents a specification sheet\""` | — |
 | [SRC-90FAA34ADE-L001077](../../tests/fixtures/answer_quality_cases.json#L1077) | 1077 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001078](../../tests/fixtures/answer_quality_cases.json#L1078) | 1078 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001079](../../tests/fixtures/answer_quality_cases.json#L1079) | 1079 | `"        \"type\": \"controlled_page\","` | — |
-| [SRC-90FAA34ADE-L001080](../../tests/fixtures/answer_quality_cases.json#L1080) | 1080 | `"        \"url\": \"https://product.example.test/spec\","` | — |
-| [SRC-90FAA34ADE-L001081](../../tests/fixtures/answer_quality_cases.json#L1081) | 1081 | `"        \"body\": \"Package includes: device, cable, and battery. No runtime figure is listed.\""` | — |
-| [SRC-90FAA34ADE-L001082](../../tests/fixtures/answer_quality_cases.json#L1082) | 1082 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001083](../../tests/fixtures/answer_quality_cases.json#L1083) | 1083 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001084](../../tests/fixtures/answer_quality_cases.json#L1084) | 1084 | `"        \"States 18 hours as supported by this page\","` | — |
-| [SRC-90FAA34ADE-L001085](../../tests/fixtures/answer_quality_cases.json#L1085) | 1085 | `"        \"Attributes a nonexistent runtime specification to the source\""` | — |
-| [SRC-90FAA34ADE-L001086](../../tests/fixtures/answer_quality_cases.json#L1086) | 1086 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001087](../../tests/fixtures/answer_quality_cases.json#L1087) | 1087 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001088](../../tests/fixtures/answer_quality_cases.json#L1088) | 1088 | `"    },"` | — |
