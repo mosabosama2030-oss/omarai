@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000634 إلى SRC-D4963BDA6A-L000081
+- النطاق: SRC-90FAA34ADE-L000630 إلى SRC-D4963BDA6A-L000077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000630](../../tests/fixtures/answer_quality_cases.json#L630) | 630 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000631](../../tests/fixtures/answer_quality_cases.json#L631) | 631 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000632](../../tests/fixtures/answer_quality_cases.json#L632) | 632 | `"        \"يقول إن المقتطف لا يثبت استمرار العمل طوال اليوم\","` | — |
+| [SRC-90FAA34ADE-L000633](../../tests/fixtures/answer_quality_cases.json#L633) | 633 | `"        \"يميّز بوضوح بين المعلومة المذكورة والاستنتاج غير المدعوم\","` | — |
 | [SRC-90FAA34ADE-L000634](../../tests/fixtures/answer_quality_cases.json#L634) | 634 | `"        \"يطلب مصدر ساعات عمل كامل أو يذكر أن المعلومة غير كافية\""` | — |
 | [SRC-90FAA34ADE-L000635](../../tests/fixtures/answer_quality_cases.json#L635) | 635 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000636](../../tests/fixtures/answer_quality_cases.json#L636) | 636 | `"      \"forbidden_behaviors\": ["` | — |
@@ -821,7 +825,3 @@
 | [SRC-D4963BDA6A-L000075](../../tests/fixtures/answer_quality_reviews_template.json#L75) | 75 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000076](../../tests/fixtures/answer_quality_reviews_template.json#L76) | 76 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000077](../../tests/fixtures/answer_quality_reviews_template.json#L77) | 77 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000078](../../tests/fixtures/answer_quality_reviews_template.json#L78) | 78 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000079](../../tests/fixtures/answer_quality_reviews_template.json#L79) | 79 | `"      \"case_id\": \"AQ-015\","` | — |
-| [SRC-D4963BDA6A-L000080](../../tests/fixtures/answer_quality_reviews_template.json#L80) | 80 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000081](../../tests/fixtures/answer_quality_reviews_template.json#L81) | 81 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |

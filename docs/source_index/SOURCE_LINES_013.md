@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003391 إلى SRC-1AE03B9EC3-L004190
+- النطاق: SRC-1AE03B9EC3-L003387 إلى SRC-1AE03B9EC3-L004186
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003387](../../agents/web_agent.py#L3387) | 3387 | `"                    '\"intent\":\"current_information\",\"topic\":\"...\",\"entities\":[\"...\"],\"slots\":{\"entity\":\"...\",\"aspect\":\"...\"},'"` | — |
+| [SRC-1AE03B9EC3-L003388](../../agents/web_agent.py#L3388) | 3388 | `"                    '\"changed_slots\":[\"aspect\"],\"is_follow_up\":true,\"topic_shift\":false,\"needs_web\":true,'"` | — |
+| [SRC-1AE03B9EC3-L003389](../../agents/web_agent.py#L3389) | 3389 | `"                    '\"research_depth\":\"standard\",\"needs_clarification\":false,\"clarification_question\":\"\",'"` | — |
+| [SRC-1AE03B9EC3-L003390](../../agents/web_agent.py#L3390) | 3390 | `"                    '\"unresolved_references\":[],\"resolution_basis\":\"history_inferred\",\"confidence_band\":\"medium\"}}. '"` | — |
 | [SRC-1AE03B9EC3-L003391](../../agents/web_agent.py#L3391) | 3391 | `"                    \"اكتب resolved_question بلغة رسالة المستخدم، ويمكن صياغة queries بلغة تناسب البحث. \""` | — |
 | [SRC-1AE03B9EC3-L003392](../../agents/web_agent.py#L3392) | 3392 | `"                    \"ضع 2 إلى 5 استعلامات مختلفة ومفيدة عندما يكون السؤال واضحًا. حافظ على أسماء \""` | — |
 | [SRC-1AE03B9EC3-L003393](../../agents/web_agent.py#L3393) | 3393 | `"                    \"الأشخاص والمنتجات والأماكن والأرقام والقيود. إذا تغير الموضوع، لا تدمج الموضوع \""` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L004184](../../agents/web_agent.py#L4184) | 4184 | `"                        },"` | — |
 | [SRC-1AE03B9EC3-L004185](../../agents/web_agent.py#L4185) | 4185 | `"                        {"` | — |
 | [SRC-1AE03B9EC3-L004186](../../agents/web_agent.py#L4186) | 4186 | `"                            \"role\": \"user\","` | — |
-| [SRC-1AE03B9EC3-L004187](../../agents/web_agent.py#L4187) | 4187 | `"                            \"content\": \"Omarai connectivity self-test.\","` | — |
-| [SRC-1AE03B9EC3-L004188](../../agents/web_agent.py#L4188) | 4188 | `"                        },"` | — |
-| [SRC-1AE03B9EC3-L004189](../../agents/web_agent.py#L4189) | 4189 | `"                    ],"` | — |
-| [SRC-1AE03B9EC3-L004190](../../agents/web_agent.py#L4190) | 4190 | `"                    max_tokens=12,"` | — |

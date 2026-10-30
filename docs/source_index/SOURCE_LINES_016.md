@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005791 إلى SRC-1AE03B9EC3-L006590
+- النطاق: SRC-1AE03B9EC3-L005787 إلى SRC-1AE03B9EC3-L006586
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005787](../../agents/web_agent.py#L5787) | 5787 | `"                    \"not_reviewed_insufficient_evidence\""` | — |
+| [SRC-1AE03B9EC3-L005788](../../agents/web_agent.py#L5788) | 5788 | `"                    if coverage_targets else \"no_explicit_targets_detected\""` | — |
+| [SRC-1AE03B9EC3-L005789](../../agents/web_agent.py#L5789) | 5789 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L005790](../../agents/web_agent.py#L5790) | 5790 | `"                \"automatically_graded\": False,"` | — |
 | [SRC-1AE03B9EC3-L005791](../../agents/web_agent.py#L5791) | 5791 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L005792](../../agents/web_agent.py#L5792) | 5792 | `"            answer_integrity = audit_answer_integrity(working_question, reason, sources, coverage_targets, plan.get(\"requirement_queries\"))"` | — |
 | [SRC-1AE03B9EC3-L005793](../../agents/web_agent.py#L5793) | 5793 | `"            answer_coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L006584](../../agents/web_agent.py#L6584) | 6584 | `"        value = usage.get(source_key)"` | — |
 | [SRC-1AE03B9EC3-L006585](../../agents/web_agent.py#L6585) | 6585 | `"        if isinstance(value, (int, float)) and not isinstance(value, bool):"` | — |
 | [SRC-1AE03B9EC3-L006586](../../agents/web_agent.py#L6586) | 6586 | `"            number = float(value)"` | — |
-| [SRC-1AE03B9EC3-L006587](../../agents/web_agent.py#L6587) | 6587 | `"            if number >= 0 and math.isfinite(number):"` | — |
-| [SRC-1AE03B9EC3-L006588](../../agents/web_agent.py#L6588) | 6588 | `"                normalized[\"cost_usd\"] = number"` | — |
-| [SRC-1AE03B9EC3-L006589](../../agents/web_agent.py#L6589) | 6589 | `"                break"` | — |
-| [SRC-1AE03B9EC3-L006590](../../agents/web_agent.py#L6590) | 6590 | `"    return normalized or None"` | — |

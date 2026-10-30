@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000324
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000320
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -56,12 +56,16 @@
 | [SRC-A3046DA0D1-L000018](../../.env.example#L18) | 18 | `"# TAVILY_API_KEY="` | — |
 | [SRC-A3046DA0D1-L000019](../../.env.example#L19) | 19 | `""` | — |
 | [SRC-A3046DA0D1-L000020](../../.env.example#L20) | 20 | `""` | — |
-| [SRC-A3046DA0D1-L000021](../../.env.example#L21) | 21 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
-| [SRC-A3046DA0D1-L000022](../../.env.example#L22) | 22 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
-| [SRC-A3046DA0D1-L000023](../../.env.example#L23) | 23 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
-| [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
-| [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
+| [SRC-A3046DA0D1-L000021](../../.env.example#L21) | 21 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
+| [SRC-A3046DA0D1-L000022](../../.env.example#L22) | 22 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
+| [SRC-A3046DA0D1-L000023](../../.env.example#L23) | 23 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
+| [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `""` | — |
+| [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
+| [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
+| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
+| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
+| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
 ## وثائق ونصوص
 
 ### FILE-18813C8694 — [.github/PULL_REQUEST_TEMPLATE.md](../../.github/PULL_REQUEST_TEMPLATE.md#L1)
@@ -893,7 +897,3 @@
 | [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"            \"source_index\": index,"` | — |
 | [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"            \"metadata_status\": \"metadata_gaps_found\" if missing else \"minimum_metadata_present\","` | — |
 | [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"            \"missing_fields\": missing,"` | — |
-| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"            \"publication_date_value_present\": audit.get(\"has_publication_date\") is True,"` | — |
-| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"            \"data_reference_period_value_present\": audit.get(\"has_data_reference_period\") is True,"` | — |
-| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"            \"geographic_scope_value_present\": audit.get(\"has_geographic_scope\") is True,"` | — |
-| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"            \"publisher_identity_value_present\": audit.get(\"has_publisher_identity\") is True,"` | — |

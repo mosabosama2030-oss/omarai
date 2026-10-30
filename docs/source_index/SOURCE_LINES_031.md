@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000231 إلى SRC-90FAA34ADE-L000633
+- النطاق: SRC-03FF422A16-L000227 إلى SRC-90FAA34ADE-L000629
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000227](../../scripts/score_answer_quality_reviews.py#L227) | 227 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-03FF422A16-L000228](../../scripts/score_answer_quality_reviews.py#L228) | 228 | `""` | — |
+| [SRC-03FF422A16-L000229](../../scripts/score_answer_quality_reviews.py#L229) | 229 | `"    try:"` | — |
+| [SRC-03FF422A16-L000230](../../scripts/score_answer_quality_reviews.py#L230) | 230 | `"        reviews = load_json_object(args.reviews)"` | — |
 | [SRC-03FF422A16-L000231](../../scripts/score_answer_quality_reviews.py#L231) | 231 | `"        corpus = load_json_object(args.corpus)"` | — |
 | [SRC-03FF422A16-L000232](../../scripts/score_answer_quality_reviews.py#L232) | 232 | `"        summary = summarize_reviews(reviews, corpus)"` | — |
 | [SRC-03FF422A16-L000233](../../scripts/score_answer_quality_reviews.py#L233) | 233 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
@@ -830,7 +834,3 @@
 | [SRC-90FAA34ADE-L000627](../../tests/fixtures/answer_quality_cases.json#L627) | 627 | `"      \"category\": \"unsupported_claim\","` | — |
 | [SRC-90FAA34ADE-L000628](../../tests/fixtures/answer_quality_cases.json#L628) | 628 | `"      \"language\": \"ar-MSA\","` | — |
 | [SRC-90FAA34ADE-L000629](../../tests/fixtures/answer_quality_cases.json#L629) | 629 | `"      \"question\": \"المصدر المرفق يذكر أن المتجر يفتح الساعة التاسعة فقط. هل هذا يثبت أنه يعمل طوال اليوم؟\","` | — |
-| [SRC-90FAA34ADE-L000630](../../tests/fixtures/answer_quality_cases.json#L630) | 630 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000631](../../tests/fixtures/answer_quality_cases.json#L631) | 631 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000632](../../tests/fixtures/answer_quality_cases.json#L632) | 632 | `"        \"يقول إن المقتطف لا يثبت استمرار العمل طوال اليوم\","` | — |
-| [SRC-90FAA34ADE-L000633](../../tests/fixtures/answer_quality_cases.json#L633) | 633 | `"        \"يميّز بوضوح بين المعلومة المذكورة والاستنتاج غير المدعوم\","` | — |

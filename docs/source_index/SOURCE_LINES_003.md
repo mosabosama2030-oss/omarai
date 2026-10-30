@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000173 إلى SRC-5587371288-L000460
+- النطاق: SRC-7D6FC391EC-L000169 إلى SRC-5587371288-L000456
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-7D6FC391EC-L000169](../../agents/claim_evidence.py#L169) | 169 | `"        has_readable = False"` | — |
+| [SRC-7D6FC391EC-L000170](../../agents/claim_evidence.py#L170) | 170 | `"        for index in indexes:"` | — |
+| [SRC-7D6FC391EC-L000171](../../agents/claim_evidence.py#L171) | 171 | `"            if index < 1 or index > len(safe_sources):"` | — |
+| [SRC-7D6FC391EC-L000172](../../agents/claim_evidence.py#L172) | 172 | `"                invalid_refs += 1"` | — |
 | [SRC-7D6FC391EC-L000173](../../agents/claim_evidence.py#L173) | 173 | `"                refs.append({"` | — |
 | [SRC-7D6FC391EC-L000174](../../agents/claim_evidence.py#L174) | 174 | `"                    \"source_index\": index, \"reference_status\": \"index_out_of_citable_range\","` | — |
 | [SRC-7D6FC391EC-L000175](../../agents/claim_evidence.py#L175) | 175 | `"                    \"title\": \"\", \"url\": \"\", \"evidence_basis\": \"unavailable\","` | — |
@@ -830,7 +834,3 @@
 | [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"    context_available = _has_context(history)"` | — |
 | [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `""` | — |
 | [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
-| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"    # questions before honoring the UI's explicit research mode."` | — |
-| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"    if _needs_clarification(question) and not context_available:"` | — |
-| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"        return {"` | — |
-| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"            \"route\": \"CLARIFY\","` | — |

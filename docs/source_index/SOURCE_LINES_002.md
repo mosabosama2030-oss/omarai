@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000325 إلى SRC-7D6FC391EC-L000172
+- النطاق: SRC-138992B1FC-L000321 إلى SRC-7D6FC391EC-L000168
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"            \"publication_date_value_present\": audit.get(\"has_publication_date\") is True,"` | — |
+| [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"            \"data_reference_period_value_present\": audit.get(\"has_data_reference_period\") is True,"` | — |
+| [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"            \"geographic_scope_value_present\": audit.get(\"has_geographic_scope\") is True,"` | — |
+| [SRC-138992B1FC-L000324](../../agents/answer_validation.py#L324) | 324 | `"            \"publisher_identity_value_present\": audit.get(\"has_publisher_identity\") is True,"` | — |
 | [SRC-138992B1FC-L000325](../../agents/answer_validation.py#L325) | 325 | `"            \"readable_evidence_present\": audit.get(\"has_readable_evidence\") is True,"` | — |
 | [SRC-138992B1FC-L000326](../../agents/answer_validation.py#L326) | 326 | `"            \"valid_http_url_present\": audit.get(\"valid_http_url\") is True,"` | — |
 | [SRC-138992B1FC-L000327](../../agents/answer_validation.py#L327) | 327 | `"        })"` | — |
@@ -830,7 +834,3 @@
 | [SRC-7D6FC391EC-L000166](../../agents/claim_evidence.py#L166) | 166 | `"    for number, segment in enumerate(segments, 1):"` | — |
 | [SRC-7D6FC391EC-L000167](../../agents/claim_evidence.py#L167) | 167 | `"        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]"` | — |
 | [SRC-7D6FC391EC-L000168](../../agents/claim_evidence.py#L168) | 168 | `"        refs: list[dict[str, Any]] = []"` | — |
-| [SRC-7D6FC391EC-L000169](../../agents/claim_evidence.py#L169) | 169 | `"        has_readable = False"` | — |
-| [SRC-7D6FC391EC-L000170](../../agents/claim_evidence.py#L170) | 170 | `"        for index in indexes:"` | — |
-| [SRC-7D6FC391EC-L000171](../../agents/claim_evidence.py#L171) | 171 | `"            if index < 1 or index > len(safe_sources):"` | — |
-| [SRC-7D6FC391EC-L000172](../../agents/claim_evidence.py#L172) | 172 | `"                invalid_refs += 1"` | — |

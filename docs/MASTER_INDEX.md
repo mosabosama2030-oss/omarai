@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **251**
 - تعريفات Python بلا Docstring: **926**
 - تعريفات لا ينطبق عليها Docstring: **302**
-- الرموز الساكنة الإضافية: **1838**
-- الأسطر النصية المفهرسة حرفيًا: **38971**
+- الرموز الساكنة الإضافية: **1840**
+- الأسطر النصية المفهرسة حرفيًا: **38975**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -29,7 +29,7 @@
 | معرّف الملف | التصنيف | الملف | النوع | الحجم (بايت) | عدد الأسطر | نطاق الفهرسة |
 |---|---|---|---|---:|---:|---|
 | FILE-2F754321D6 | إعدادات وتشغيل | [.dockerignore](../.dockerignore#L1) | بدون امتداد | 103 | 11 | جرد ملف نصي فقط |
-| FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1193 | 26 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1386 | 30 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-18813C8694 | وثائق ونصوص | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L1) | Markdown | 1913 | 33 | جرد الملف + عناوين Markdown |
 | FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1661 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 6517 | 157 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -87,7 +87,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22391 | 183 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 22768 | 183 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 24754 | 531 | جرد الملف + AST Python |
@@ -1642,8 +1642,9 @@
 | [.env.example](../.env.example#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 14 | [SRC-A3046DA0D1-L000014](../.env.example#L14) |
 | [.env.example](../.env.example#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 17 | [SRC-A3046DA0D1-L000017](../.env.example#L17) |
 | [.env.example](../.env.example#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 18 | [SRC-A3046DA0D1-L000018](../.env.example#L18) |
-| [.env.example](../.env.example#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 24 | [SRC-A3046DA0D1-L000024](../.env.example#L24) |
-| [.env.example](../.env.example#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 26 | [SRC-A3046DA0D1-L000026](../.env.example#L26) |
+| [.env.example](../.env.example#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 23 | [SRC-A3046DA0D1-L000023](../.env.example#L23) |
+| [.env.example](../.env.example#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 28 | [SRC-A3046DA0D1-L000028](../.env.example#L28) |
+| [.env.example](../.env.example#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 30 | [SRC-A3046DA0D1-L000030](../.env.example#L30) |
 | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L1) | عنوان Markdown (H2) | الهدف والنطاق | 1 | [SRC-18813C8694-L000001](../.github/PULL_REQUEST_TEMPLATE.md#L1) |
 | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L4) | عنوان Markdown (H2) | الأدلة | 4 | [SRC-18813C8694-L000004](../.github/PULL_REQUEST_TEMPLATE.md#L4) |
 | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 9 | [SRC-18813C8694-L000009](../.github/PULL_REQUEST_TEMPLATE.md#L9) |
@@ -2787,6 +2788,7 @@
 | [README.md](../README.md#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 58 | [SRC-B335630551-L000058](../README.md#L58) |
 | [README.md](../README.md#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 58 | [SRC-B335630551-L000058](../README.md#L58) |
 | [README.md](../README.md#L62) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 62 | [SRC-B335630551-L000062](../README.md#L62) |
+| [README.md](../README.md#L62) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 62 | [SRC-B335630551-L000062](../README.md#L62) |
 | [README.md](../README.md#L63) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 63 | [SRC-B335630551-L000063](../README.md#L63) |
 | [README.md](../README.md#L67) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 67 | [SRC-B335630551-L000067](../README.md#L67) |
 | [README.md](../README.md#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 71 | [SRC-B335630551-L000071](../README.md#L71) |

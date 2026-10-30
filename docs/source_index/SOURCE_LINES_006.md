@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000293 إلى SRC-686F71AA50-L000318
+- النطاق: SRC-1E32639872-L000289 إلى SRC-686F71AA50-L000314
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1E32639872-L000289](../../agents/research_completion.py#L289) | 289 | `"            \"issues\": counter_issues,"` | — |
+| [SRC-1E32639872-L000290](../../agents/research_completion.py#L290) | 290 | `"        },"` | — |
+| [SRC-1E32639872-L000291](../../agents/research_completion.py#L291) | 291 | `"        \"semantic_verification\": \"not_performed\","` | — |
+| [SRC-1E32639872-L000292](../../agents/research_completion.py#L292) | 292 | `"        \"warning\": ("` | — |
 | [SRC-1E32639872-L000293](../../agents/research_completion.py#L293) | 293 | `"            \"Readable pages and valid citation indexes do not prove semantic support \""` | — |
 | [SRC-1E32639872-L000294](../../agents/research_completion.py#L294) | 294 | `"            \"for each claim in the answer.\""` | — |
 | [SRC-1E32639872-L000295](../../agents/research_completion.py#L295) | 295 | `"        ),"` | — |
@@ -839,7 +843,3 @@
 | [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    removing a short, explicit list of common prefixes/suffixes. This avoids"` | — |
 | [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"    collisions such as treating \"الإنذار\" as \"الآن\"."` | — |
 | [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    \"\"\""` | — |
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    matched: list[str] = []"` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\", \"ين\", \"ات\", \"ون\")"` | — |

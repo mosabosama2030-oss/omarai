@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000082 إلى SRC-4CCB1F172B-L000197
+- النطاق: SRC-D4963BDA6A-L000078 إلى SRC-4CCB1F172B-L000193
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000078](../../tests/fixtures/answer_quality_reviews_template.json#L78) | 78 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000079](../../tests/fixtures/answer_quality_reviews_template.json#L79) | 79 | `"      \"case_id\": \"AQ-015\","` | — |
+| [SRC-D4963BDA6A-L000080](../../tests/fixtures/answer_quality_reviews_template.json#L80) | 80 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000081](../../tests/fixtures/answer_quality_reviews_template.json#L81) | 81 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000082](../../tests/fixtures/answer_quality_reviews_template.json#L82) | 82 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000083](../../tests/fixtures/answer_quality_reviews_template.json#L83) | 83 | `"    {"` | — |
 | [SRC-D4963BDA6A-L000084](../../tests/fixtures/answer_quality_reviews_template.json#L84) | 84 | `"      \"case_id\": \"AQ-016\","` | — |
@@ -848,7 +852,3 @@
 | [SRC-4CCB1F172B-L000191](../../tests/test_answer_quality_corpus.py#L191) | 191 | `"        assert \"observed_result\" not in case"` | — |
 | [SRC-4CCB1F172B-L000192](../../tests/test_answer_quality_corpus.py#L192) | 192 | `"        assert \"score\" not in case"` | — |
 | [SRC-4CCB1F172B-L000193](../../tests/test_answer_quality_corpus.py#L193) | 193 | `"        assert case.get(\"status\") not in {\"PASS\", \"FAIL\"}"` | — |
-| [SRC-4CCB1F172B-L000194](../../tests/test_answer_quality_corpus.py#L194) | 194 | `""` | — |
-| [SRC-4CCB1F172B-L000195](../../tests/test_answer_quality_corpus.py#L195) | 195 | `""` | — |
-| [SRC-4CCB1F172B-L000196](../../tests/test_answer_quality_corpus.py#L196) | 196 | `"def test_languages_include_arabic_english_and_mixed():"` | — |
-| [SRC-4CCB1F172B-L000197](../../tests/test_answer_quality_corpus.py#L197) | 197 | `"    data = _load_corpus()"` | — |
