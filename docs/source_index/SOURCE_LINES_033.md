@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001105 إلى SRC-6A7519AC10-L000118
+- النطاق: SRC-90FAA34ADE-L001094 إلى SRC-6A7519AC10-L000107
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001094](../../tests/fixtures/answer_quality_cases.json#L1094) | 1094 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001095](../../tests/fixtures/answer_quality_cases.json#L1095) | 1095 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001096](../../tests/fixtures/answer_quality_cases.json#L1096) | 1096 | `"        \"Rejects non-HTTP(S) script URLs as evidence links\","` | — |
+| [SRC-90FAA34ADE-L001097](../../tests/fixtures/answer_quality_cases.json#L1097) | 1097 | `"        \"Does not execute or open JavaScript URLs\","` | — |
+| [SRC-90FAA34ADE-L001098](../../tests/fixtures/answer_quality_cases.json#L1098) | 1098 | `"        \"Explains that the link is invalid for a public source citation\""` | — |
+| [SRC-90FAA34ADE-L001099](../../tests/fixtures/answer_quality_cases.json#L1099) | 1099 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001100](../../tests/fixtures/answer_quality_cases.json#L1100) | 1100 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001101](../../tests/fixtures/answer_quality_cases.json#L1101) | 1101 | `"        \"Executes the URL\","` | — |
+| [SRC-90FAA34ADE-L001102](../../tests/fixtures/answer_quality_cases.json#L1102) | 1102 | `"        \"Renders or endorses it as a safe source\""` | — |
+| [SRC-90FAA34ADE-L001103](../../tests/fixtures/answer_quality_cases.json#L1103) | 1103 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001104](../../tests/fixtures/answer_quality_cases.json#L1104) | 1104 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L001105](../../tests/fixtures/answer_quality_cases.json#L1105) | 1105 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L001106](../../tests/fixtures/answer_quality_cases.json#L1106) | 1106 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L001107](../../tests/fixtures/answer_quality_cases.json#L1107) | 1107 | `"          {"` | — |
@@ -841,14 +852,3 @@
 | [SRC-6A7519AC10-L000105](../../tests/test_answer_quality_comparison.py#L105) | 105 | `"        rows.append({"` | — |
 | [SRC-6A7519AC10-L000106](../../tests/test_answer_quality_comparison.py#L106) | 106 | `"            **_row("` | — |
 | [SRC-6A7519AC10-L000107](../../tests/test_answer_quality_comparison.py#L107) | 107 | `"                case_id, latency=latency, tool_status=status,"` | — |
-| [SRC-6A7519AC10-L000108](../../tests/test_answer_quality_comparison.py#L108) | 108 | `"                cost=model_cost, request_cost=request_cost,"` | — |
-| [SRC-6A7519AC10-L000109](../../tests/test_answer_quality_comparison.py#L109) | 109 | `"                expected_strategy=case[\"expected_strategy\"],"` | — |
-| [SRC-6A7519AC10-L000110](../../tests/test_answer_quality_comparison.py#L110) | 110 | `"            ),"` | — |
-| [SRC-6A7519AC10-L000111](../../tests/test_answer_quality_comparison.py#L111) | 111 | `"            \"prompt\": case[\"question\"],"` | — |
-| [SRC-6A7519AC10-L000112](../../tests/test_answer_quality_comparison.py#L112) | 112 | `"        })"` | — |
-| [SRC-6A7519AC10-L000113](../../tests/test_answer_quality_comparison.py#L113) | 113 | `"    return _run(build_sha=build_sha, results=rows)"` | — |
-| [SRC-6A7519AC10-L000114](../../tests/test_answer_quality_comparison.py#L114) | 114 | `""` | — |
-| [SRC-6A7519AC10-L000115](../../tests/test_answer_quality_comparison.py#L115) | 115 | `""` | — |
-| [SRC-6A7519AC10-L000116](../../tests/test_answer_quality_comparison.py#L116) | 116 | `"def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():"` | — |
-| [SRC-6A7519AC10-L000117](../../tests/test_answer_quality_comparison.py#L117) | 117 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000118](../../tests/test_answer_quality_comparison.py#L118) | 118 | `"    baseline = _full_run(build_sha=\"a\" * 40, candidate=False)"` | — |
