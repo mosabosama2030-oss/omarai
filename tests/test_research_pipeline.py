@@ -165,6 +165,7 @@ def test_pipeline_marks_upstream_dialogue_context_resolution_as_completed():
         "ما ضمان iPhone 17 في مصر؟"
     )
     assert result["stages"]["context_resolution"] == "completed"
+    assert result["intent"]["context_available"] is True
 
 def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():
     result = build_research_pipeline(
