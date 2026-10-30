@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000147 إلى SRC-03FF422A16-L000226
+- النطاق: SRC-4FFD5AFC54-L000169 إلى SRC-547CAF1FE3-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4FFD5AFC54-L000147](../../scripts/run_answer_quality_benchmark.py#L147) | 147 | `"        for name in requirements_raw"` | — |
-| [SRC-4FFD5AFC54-L000148](../../scripts/run_answer_quality_benchmark.py#L148) | 148 | `"        if isinstance(name, str) and name.strip()"` | — |
-| [SRC-4FFD5AFC54-L000149](../../scripts/run_answer_quality_benchmark.py#L149) | 149 | `"    ] if isinstance(requirements_raw, list) else []"` | — |
-| [SRC-4FFD5AFC54-L000150](../../scripts/run_answer_quality_benchmark.py#L150) | 150 | `"    allowed_statuses = {"` | — |
-| [SRC-4FFD5AFC54-L000151](../../scripts/run_answer_quality_benchmark.py#L151) | 151 | `"        \"web_search\": {"` | — |
-| [SRC-4FFD5AFC54-L000152](../../scripts/run_answer_quality_benchmark.py#L152) | 152 | `"            \"failed\", \"unknown\", \"not_attempted\", \"counter_mismatch\","` | — |
-| [SRC-4FFD5AFC54-L000153](../../scripts/run_answer_quality_benchmark.py#L153) | 153 | `"            \"completed_with_results\", \"completed_no_usable_results\","` | — |
-| [SRC-4FFD5AFC54-L000154](../../scripts/run_answer_quality_benchmark.py#L154) | 154 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000155](../../scripts/run_answer_quality_benchmark.py#L155) | 155 | `"        \"page_fetch\": {"` | — |
-| [SRC-4FFD5AFC54-L000156](../../scripts/run_answer_quality_benchmark.py#L156) | 156 | `"            \"counter_mismatch\", \"completed_with_read_pages\","` | — |
-| [SRC-4FFD5AFC54-L000157](../../scripts/run_answer_quality_benchmark.py#L157) | 157 | `"            \"attempted_no_readable_pages\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000158](../../scripts/run_answer_quality_benchmark.py#L158) | 158 | `"            \"not_attempted_after_search_error\", \"not_attempted_no_fetchable_candidates\","` | — |
-| [SRC-4FFD5AFC54-L000159](../../scripts/run_answer_quality_benchmark.py#L159) | 159 | `"            \"not_attempted\","` | — |
-| [SRC-4FFD5AFC54-L000160](../../scripts/run_answer_quality_benchmark.py#L160) | 160 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000161](../../scripts/run_answer_quality_benchmark.py#L161) | 161 | `"        \"public_social_search_if_configured\": {"` | — |
-| [SRC-4FFD5AFC54-L000162](../../scripts/run_answer_quality_benchmark.py#L162) | 162 | `"            \"completed_with_results\", \"failed\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000163](../../scripts/run_answer_quality_benchmark.py#L163) | 163 | `"            \"completed_no_usable_results\", \"not_attempted\", \"not_configured\","` | — |
-| [SRC-4FFD5AFC54-L000164](../../scripts/run_answer_quality_benchmark.py#L164) | 164 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000165](../../scripts/run_answer_quality_benchmark.py#L165) | 165 | `"        \"language_model_generation_if_configured\": {"` | — |
-| [SRC-4FFD5AFC54-L000166](../../scripts/run_answer_quality_benchmark.py#L166) | 166 | `"            \"completed\", \"not_configured\", \"failed\", \"not_attempted\","` | — |
-| [SRC-4FFD5AFC54-L000167](../../scripts/run_answer_quality_benchmark.py#L167) | 167 | `"            \"not_attempted_no_evidence\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000168](../../scripts/run_answer_quality_benchmark.py#L168) | 168 | `"        },"` | — |
 | [SRC-4FFD5AFC54-L000169](../../scripts/run_answer_quality_benchmark.py#L169) | 169 | `"        \"claim_review_if_configured\": {"` | — |
 | [SRC-4FFD5AFC54-L000170](../../scripts/run_answer_quality_benchmark.py#L170) | 170 | `"            \"completed_model_assisted_review\", \"failed\","` | — |
 | [SRC-4FFD5AFC54-L000171](../../scripts/run_answer_quality_benchmark.py#L171) | 171 | `"            \"not_attempted_no_evidence\", \"not_attempted\", \"unknown\","` | — |
@@ -825,3 +803,34 @@
 | [SRC-03FF422A16-L000224](../../scripts/score_answer_quality_reviews.py#L224) | 224 | `"    parser.add_argument(\"--reviews\", required=True, type=Path, help=\"JSON file containing explicit human review annotations\")"` | — |
 | [SRC-03FF422A16-L000225](../../scripts/score_answer_quality_reviews.py#L225) | 225 | `"    parser.add_argument(\"--corpus\", default=DEFAULT_CORPUS, type=Path, help=\"Answer-quality corpus used to validate case IDs\")"` | — |
 | [SRC-03FF422A16-L000226](../../scripts/score_answer_quality_reviews.py#L226) | 226 | `"    parser.add_argument(\"--out\", type=Path, help=\"Optional path to write the summary JSON\")"` | — |
+| [SRC-03FF422A16-L000227](../../scripts/score_answer_quality_reviews.py#L227) | 227 | `"    args = parser.parse_args(argv)"` | — |
+| [SRC-03FF422A16-L000228](../../scripts/score_answer_quality_reviews.py#L228) | 228 | `""` | — |
+| [SRC-03FF422A16-L000229](../../scripts/score_answer_quality_reviews.py#L229) | 229 | `"    try:"` | — |
+| [SRC-03FF422A16-L000230](../../scripts/score_answer_quality_reviews.py#L230) | 230 | `"        reviews = load_json_object(args.reviews)"` | — |
+| [SRC-03FF422A16-L000231](../../scripts/score_answer_quality_reviews.py#L231) | 231 | `"        corpus = load_json_object(args.corpus)"` | — |
+| [SRC-03FF422A16-L000232](../../scripts/score_answer_quality_reviews.py#L232) | 232 | `"        summary = summarize_reviews(reviews, corpus)"` | — |
+| [SRC-03FF422A16-L000233](../../scripts/score_answer_quality_reviews.py#L233) | 233 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-03FF422A16-L000234](../../scripts/score_answer_quality_reviews.py#L234) | 234 | `"        print(\"REVIEW SCORECARD INVALID: \" + str(exc), file=sys.stderr)"` | — |
+| [SRC-03FF422A16-L000235](../../scripts/score_answer_quality_reviews.py#L235) | 235 | `"        return 2"` | — |
+| [SRC-03FF422A16-L000236](../../scripts/score_answer_quality_reviews.py#L236) | 236 | `""` | — |
+| [SRC-03FF422A16-L000237](../../scripts/score_answer_quality_reviews.py#L237) | 237 | `"    output = json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True)"` | — |
+| [SRC-03FF422A16-L000238](../../scripts/score_answer_quality_reviews.py#L238) | 238 | `"    if args.out:"` | — |
+| [SRC-03FF422A16-L000239](../../scripts/score_answer_quality_reviews.py#L239) | 239 | `"        args.out.write_text(output + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-03FF422A16-L000240](../../scripts/score_answer_quality_reviews.py#L240) | 240 | `"    print(output)"` | — |
+| [SRC-03FF422A16-L000241](../../scripts/score_answer_quality_reviews.py#L241) | 241 | `"    return 0"` | — |
+| [SRC-03FF422A16-L000242](../../scripts/score_answer_quality_reviews.py#L242) | 242 | `""` | — |
+| [SRC-03FF422A16-L000243](../../scripts/score_answer_quality_reviews.py#L243) | 243 | `""` | — |
+| [SRC-03FF422A16-L000244](../../scripts/score_answer_quality_reviews.py#L244) | 244 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-03FF422A16-L000245](../../scripts/score_answer_quality_reviews.py#L245) | 245 | `"    raise SystemExit(main())"` | — |
+## ملفات أخرى
+
+### FILE-547CAF1FE3 — [scripts/sqlite_backup_restore.py](../../scripts/sqlite_backup_restore.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-547CAF1FE3-L000001](../../scripts/sqlite_backup_restore.py#L1) | 1 | `"#!/usr/bin/env python3"` | — |
+| [SRC-547CAF1FE3-L000002](../../scripts/sqlite_backup_restore.py#L2) | 2 | `"\"\"\"Create and restore verified, non-overwriting snapshots of Omarai's SQLite lead DB.\"\"\""` | — |
+| [SRC-547CAF1FE3-L000003](../../scripts/sqlite_backup_restore.py#L3) | 3 | `"from __future__ import annotations"` | — |

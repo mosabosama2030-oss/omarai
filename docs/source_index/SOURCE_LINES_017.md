@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006587 إلى SRC-65AAF94960-L000019
+- النطاق: SRC-1AE03B9EC3-L006609 إلى SRC-65AAF94960-L000041
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L006587](../../agents/web_agent.py#L6587) | 6587 | `"            if number >= 0 and math.isfinite(number):"` | — |
-| [SRC-1AE03B9EC3-L006588](../../agents/web_agent.py#L6588) | 6588 | `"                normalized[\"cost_usd\"] = number"` | — |
-| [SRC-1AE03B9EC3-L006589](../../agents/web_agent.py#L6589) | 6589 | `"                break"` | — |
-| [SRC-1AE03B9EC3-L006590](../../agents/web_agent.py#L6590) | 6590 | `"    return normalized or None"` | — |
-| [SRC-1AE03B9EC3-L006591](../../agents/web_agent.py#L6591) | 6591 | `""` | — |
-| [SRC-1AE03B9EC3-L006592](../../agents/web_agent.py#L6592) | 6592 | `""` | — |
-| [SRC-1AE03B9EC3-L006593](../../agents/web_agent.py#L6593) | 6593 | `"def _model_usage_record("` | — |
-| [SRC-1AE03B9EC3-L006594](../../agents/web_agent.py#L6594) | 6594 | `"    requested_model: str,"` | — |
-| [SRC-1AE03B9EC3-L006595](../../agents/web_agent.py#L6595) | 6595 | `"    candidate_model: str,"` | — |
-| [SRC-1AE03B9EC3-L006596](../../agents/web_agent.py#L6596) | 6596 | `"    response_data: dict[str, Any],"` | — |
-| [SRC-1AE03B9EC3-L006597](../../agents/web_agent.py#L6597) | 6597 | `"    provider_base_url: str,"` | — |
-| [SRC-1AE03B9EC3-L006598](../../agents/web_agent.py#L6598) | 6598 | `") -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L006599](../../agents/web_agent.py#L6599) | 6599 | `"    \"\"\"Return only allowlisted provider usage metadata, never raw prompts/responses.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L006600](../../agents/web_agent.py#L6600) | 6600 | `"    record: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L006601](../../agents/web_agent.py#L6601) | 6601 | `"        \"requested_model\": requested_model,"` | — |
-| [SRC-1AE03B9EC3-L006602](../../agents/web_agent.py#L6602) | 6602 | `"        \"used_model\": candidate_model,"` | — |
-| [SRC-1AE03B9EC3-L006603](../../agents/web_agent.py#L6603) | 6603 | `"        \"fallback_used\": \"true\" if candidate_model != requested_model else \"false\","` | — |
-| [SRC-1AE03B9EC3-L006604](../../agents/web_agent.py#L6604) | 6604 | `"    }"` | — |
-| [SRC-1AE03B9EC3-L006605](../../agents/web_agent.py#L6605) | 6605 | `"    provider_usage = _normalized_provider_usage("` | — |
-| [SRC-1AE03B9EC3-L006606](../../agents/web_agent.py#L6606) | 6606 | `"        response_data.get(\"usage\"), provider_base_url=provider_base_url"` | — |
-| [SRC-1AE03B9EC3-L006607](../../agents/web_agent.py#L6607) | 6607 | `"    )"` | — |
-| [SRC-1AE03B9EC3-L006608](../../agents/web_agent.py#L6608) | 6608 | `"    if provider_usage is not None:"` | — |
 | [SRC-1AE03B9EC3-L006609](../../agents/web_agent.py#L6609) | 6609 | `"        record[\"provider_usage\"] = provider_usage"` | — |
 | [SRC-1AE03B9EC3-L006610](../../agents/web_agent.py#L6610) | 6610 | `"    return record"` | — |
 ## واجهات API
@@ -843,3 +821,25 @@
 | [SRC-65AAF94960-L000017](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L17) | 17 | `"\| سؤال «ما عاصمة مصر؟» في الوضع الافتراضي الظاهر «بحث معمّق» \| فشل قبل استرجاع إجابة أو مصادر \| FAILED / BLOCKED \|"` | — |
 | [SRC-65AAF94960-L000018](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L18) | 18 | `"\| نص الخطأ \| «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.» \| VERIFIED \|"` | — |
 | [SRC-65AAF94960-L000019](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L19) | 19 | `"\| البحث عن الموقع الرسمي لـ OpenAI في «الأحدث الآن» \| لم يُنفذ بسبب حاجز المصادقة \| NOT_RUN \|"` | — |
+| [SRC-65AAF94960-L000020](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L20) | 20 | `"\| سؤال بحث معمّق إضافي \| لم يُنفذ بسبب حاجز المصادقة \| NOT_RUN \|"` | — |
+| [SRC-65AAF94960-L000021](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L21) | 21 | ``"\| `GET /api/health` \| `ok=true` \| VERIFIED — لكنه لا يثبت صلاحية البحث الحي \|"`` | — |
+| [SRC-65AAF94960-L000022](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L22) | 22 | ``"\| هوية البناء \| `build.sha=unknown`, `sha_status=unknown`, `sha_source=unknown` \| BLOCKED / NOT VERIFIED \|"`` | — |
+| [SRC-65AAF94960-L000023](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L23) | 23 | ``"\| فحص الشبكة الحي \| `live_network_checks_performed=false` \| NOT_RUN \|"`` | — |
+| [SRC-65AAF94960-L000024](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L24) | 24 | `""` | — |
+| [SRC-65AAF94960-L000025](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L25) | 25 | `"## تفسير الاستجابة الصحية"` | — |
+| [SRC-65AAF94960-L000026](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L26) | 26 | ``"يصرّح رد الصحة بأن `web_search_ready` يعني أن الاعتماديات قابلة للاستيراد، وليس أن مزود البحث متصل؛ وأن `language_model_configured` يعني وجود بيانات اعتماد، وليس نجاح إكمال طلب. ويعرض مصادر منها DuckDuckGo HTML وBing RSS وGoogle News RSS كمدعومة، بينما يعرض DeepSeek/Brave/Tavily على أنها مشروطة الإعداد، ويعرض OpenRouter server-side live web search على أنه معطل. هذه أوصاف إعداد وليست اختبارات اتصال."`` | — |
+| [SRC-65AAF94960-L000027](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L27) | 27 | `""` | — |
+| [SRC-65AAF94960-L000028](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L28) | 28 | `"## السبب والحالة"` | — |
+| [SRC-65AAF94960-L000029](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L29) | 29 | `"- **OMR-LIVE-004 — PARTIAL / BLOCKED:** اختبار الطلبات المحمية يتوقف عند المصادقة. السبب الدقيق وراء عدم وجود الرمز في ملف المتصفح الاختباري هو اختلاف سياق التخزين، لا دليل على فساد الرمز نفسه."` | — |
+| [SRC-65AAF94960-L000030](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L30) | 30 | ``"- **OMR-LIVE-005 — CODE/CI FIXED_AND_TESTED; HOST_CONFIGURATION_PENDING:** إصلاح Dockerfile الذي يقرأ `PUBLIC_OMARAI_BUILD_SHA` موجود في #98، لكن المضيف ما زال يعرض SHA مجهولًا. يلزم تعيين متغير الإصدار العام إلى SHA الكامل المعتمد وإعادة البناء/النشر من مالك الاستضافة، ثم التحقق من التطابق. لا تضع أي أسرار في متغير الإصدار."`` | — |
+| [SRC-65AAF94960-L000031](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L31) | 31 | ``"- لا يجوز اعتبار نجاح CI أو `ok=true` إثباتًا لصحة البحث أو الإجابات في الإنتاج."`` | — |
+| [SRC-65AAF94960-L000032](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L32) | 32 | `""` | — |
+| [SRC-65AAF94960-L000033](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L33) | 33 | `"## الخطوات اللازمة للإغلاق"` | — |
+| [SRC-65AAF94960-L000034](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L34) | 34 | `"1. افتح جلسة إعداد ملف المتصفح الآمنة من الرابط الذي يوفره ChatGPT، على الموقع المستضاف."` | — |
+| [SRC-65AAF94960-L000035](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L35) | 35 | `"2. أدخل رمز الوصول بنفسك في حقل التطبيق، واحفظه داخل ملف المتصفح الاختباري. **لا ترسل الرمز في المحادثة ولا تضعه في سجل GitHub.**"` | — |
+| [SRC-65AAF94960-L000036](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L36) | 36 | `"3. أعد اختبار سؤال معرفي بسيط، ثم بحث الموقع الرسمي في وضع «الأحدث الآن»، ثم بحث معمّق؛ سجل حالة الطلب وروابط المصادر الفعلية."` | — |
+| [SRC-65AAF94960-L000037](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L37) | 37 | ``"4. راجع إعدادات SnapDeploy لتعيين `PUBLIC_OMARAI_BUILD_SHA` إلى SHA الكامل النهائي المعتمد، ثم أعد البناء/النشر عبر مسار النشر المعتاد، وبعدها تحقق أن `/api/health` يعرض SHA المطابق. هذا التقرير لا يغير إعدادات المضيف ولا ينشر."`` | — |
+| [SRC-65AAF94960-L000038](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L38) | 38 | `"5. لا تعلن القبول النهائي حتى تنجح هذه الاختبارات وتوثق مصادر حقيقية قابلة للفتح، أو تسجل كل عائق متبقٍ بوضوح."` | — |
+| [SRC-65AAF94960-L000039](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L39) | 39 | `""` | — |
+| [SRC-65AAF94960-L000040](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L40) | 40 | `"## حدود العمل"` | — |
+| [SRC-65AAF94960-L000041](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L41) | 41 | `"لم تُقرأ أو تُكشف أسرار، ولم تُغير إعدادات الاستضافة، ولم يُنفذ نشر أو إجراء مدفوع. تم استخدام المتصفح للقراءة والاختبار فقط."` | — |

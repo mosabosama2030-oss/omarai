@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000194 إلى SRC-1C77C97630-L000073
+- النطاق: SRC-4CCB1F172B-L000216 إلى SRC-1C77C97630-L000095
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4CCB1F172B-L000194](../../tests/test_answer_quality_corpus.py#L194) | 194 | `""` | — |
-| [SRC-4CCB1F172B-L000195](../../tests/test_answer_quality_corpus.py#L195) | 195 | `""` | — |
-| [SRC-4CCB1F172B-L000196](../../tests/test_answer_quality_corpus.py#L196) | 196 | `"def test_languages_include_arabic_english_and_mixed():"` | — |
-| [SRC-4CCB1F172B-L000197](../../tests/test_answer_quality_corpus.py#L197) | 197 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000198](../../tests/test_answer_quality_corpus.py#L198) | 198 | `"    langs = {c[\"language\"] for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000199](../../tests/test_answer_quality_corpus.py#L199) | 199 | `"    assert any(x.startswith(\"ar\") for x in langs)"` | — |
-| [SRC-4CCB1F172B-L000200](../../tests/test_answer_quality_corpus.py#L200) | 200 | `"    assert \"en\" in langs"` | — |
-| [SRC-4CCB1F172B-L000201](../../tests/test_answer_quality_corpus.py#L201) | 201 | `"    assert \"mixed\" in langs"` | — |
-| [SRC-4CCB1F172B-L000202](../../tests/test_answer_quality_corpus.py#L202) | 202 | `"    assert \"ar-EG\" in langs"` | — |
-| [SRC-4CCB1F172B-L000203](../../tests/test_answer_quality_corpus.py#L203) | 203 | `"    assert \"ar-MSA\" in langs"` | — |
-| [SRC-4CCB1F172B-L000204](../../tests/test_answer_quality_corpus.py#L204) | 204 | `""` | — |
-| [SRC-4CCB1F172B-L000205](../../tests/test_answer_quality_corpus.py#L205) | 205 | `""` | — |
-| [SRC-4CCB1F172B-L000206](../../tests/test_answer_quality_corpus.py#L206) | 206 | `"def test_documented_high_risk_examples_match_json_categories():"` | — |
-| [SRC-4CCB1F172B-L000207](../../tests/test_answer_quality_corpus.py#L207) | 207 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000208](../../tests/test_answer_quality_corpus.py#L208) | 208 | `"    by_id = {c[\"case_id\"]: c for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000209](../../tests/test_answer_quality_corpus.py#L209) | 209 | `"    for case_id, expected_cat in DOC_EXAMPLE_CATEGORY_EXPECTATIONS.items():"` | — |
-| [SRC-4CCB1F172B-L000210](../../tests/test_answer_quality_corpus.py#L210) | 210 | `"        assert case_id in by_id, f\"Doc example {case_id} missing from corpus\""` | — |
-| [SRC-4CCB1F172B-L000211](../../tests/test_answer_quality_corpus.py#L211) | 211 | `"        actual = by_id[case_id][\"category\"]"` | — |
-| [SRC-4CCB1F172B-L000212](../../tests/test_answer_quality_corpus.py#L212) | 212 | `"        assert actual == expected_cat, ("` | — |
-| [SRC-4CCB1F172B-L000213](../../tests/test_answer_quality_corpus.py#L213) | 213 | `"            f\"Doc/example mismatch: {case_id} is category={actual!r}, \""` | — |
-| [SRC-4CCB1F172B-L000214](../../tests/test_answer_quality_corpus.py#L214) | 214 | `"            f\"expected {expected_cat!r}\""` | — |
-| [SRC-4CCB1F172B-L000215](../../tests/test_answer_quality_corpus.py#L215) | 215 | `"        )"` | — |
 | [SRC-4CCB1F172B-L000216](../../tests/test_answer_quality_corpus.py#L216) | 216 | `""` | — |
 | [SRC-4CCB1F172B-L000217](../../tests/test_answer_quality_corpus.py#L217) | 217 | `""` | — |
 | [SRC-4CCB1F172B-L000218](../../tests/test_answer_quality_corpus.py#L218) | 218 | `"def test_docs_mention_corrected_high_risk_ids():"` | — |
@@ -861,3 +839,25 @@
 | [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"            \"title\": \"سعر الهاتف\","` | — |
 | [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"            \"snippet\": \"سعر الهاتف 100 جنيه\","` | — |
 | [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"        }],"` | — |
+| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `"        [\"السعر\", \"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `"    )"` | — |
+| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
+| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `""` | — |
+| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    # Both dimensions are mentioned in the answer, but only price has a source signal."` | — |
+| [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `"    assert checks[\"السعر\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    assert checks[\"السعر\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"    assert checks[\"المساحة\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000083](../../tests/test_answer_validation.py#L83) | 83 | `"    assert checks[\"المساحة\"][\"source_evidence_status\"] == \"no_source_lexical_signal\""` | — |
+| [SRC-1C77C97630-L000084](../../tests/test_answer_validation.py#L84) | 84 | `"    assert result[\"source_evidence_gap_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000085](../../tests/test_answer_validation.py#L85) | 85 | `"    assert result[\"source_evidence_assessment\"] == ("` | — |
+| [SRC-1C77C97630-L000086](../../tests/test_answer_validation.py#L86) | 86 | `"        \"criterion_level_lexical_signals_not_claim_support_or_entailment\""` | — |
+| [SRC-1C77C97630-L000087](../../tests/test_answer_validation.py#L87) | 87 | `"    )"` | — |
+| [SRC-1C77C97630-L000088](../../tests/test_answer_validation.py#L88) | 88 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000089](../../tests/test_answer_validation.py#L89) | 89 | `""` | — |
+| [SRC-1C77C97630-L000090](../../tests/test_answer_validation.py#L90) | 90 | `""` | — |
+| [SRC-1C77C97630-L000091](../../tests/test_answer_validation.py#L91) | 91 | `"def test_arabic_criterion_can_match_common_english_source_terms():"` | — |
+| [SRC-1C77C97630-L000092](../../tests/test_answer_validation.py#L92) | 92 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000093](../../tests/test_answer_validation.py#L93) | 93 | `"        \"قارن من حيث السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000094](../../tests/test_answer_validation.py#L94) | 94 | `"        \"السعر مذكور، لكن المساحة غير متاحة في الأدلة.\","` | — |
+| [SRC-1C77C97630-L000095](../../tests/test_answer_validation.py#L95) | 95 | `"        [{"` | — |

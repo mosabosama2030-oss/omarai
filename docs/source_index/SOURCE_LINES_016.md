@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005787 إلى SRC-1AE03B9EC3-L006586
+- النطاق: SRC-1AE03B9EC3-L005809 إلى SRC-1AE03B9EC3-L006608
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L005787](../../agents/web_agent.py#L5787) | 5787 | `"                    \"not_reviewed_insufficient_evidence\""` | — |
-| [SRC-1AE03B9EC3-L005788](../../agents/web_agent.py#L5788) | 5788 | `"                    if coverage_targets else \"no_explicit_targets_detected\""` | — |
-| [SRC-1AE03B9EC3-L005789](../../agents/web_agent.py#L5789) | 5789 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L005790](../../agents/web_agent.py#L5790) | 5790 | `"                \"automatically_graded\": False,"` | — |
-| [SRC-1AE03B9EC3-L005791](../../agents/web_agent.py#L5791) | 5791 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L005792](../../agents/web_agent.py#L5792) | 5792 | `"            answer_integrity = audit_answer_integrity(working_question, reason, sources, coverage_targets, plan.get(\"requirement_queries\"))"` | — |
-| [SRC-1AE03B9EC3-L005793](../../agents/web_agent.py#L5793) | 5793 | `"            answer_coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
-| [SRC-1AE03B9EC3-L005794](../../agents/web_agent.py#L5794) | 5794 | `"            answer_coverage[\"potentially_missing_target_count\"] = answer_integrity[\"potentially_missing_target_count\"]"` | — |
-| [SRC-1AE03B9EC3-L005795](../../agents/web_agent.py#L5795) | 5795 | `"            answer_coverage[\"source_evidence_gap_count\"] = answer_integrity[\"source_evidence_gap_count\"]"` | — |
-| [SRC-1AE03B9EC3-L005796](../../agents/web_agent.py#L5796) | 5796 | `"            answer_coverage[\"lexical_screen_method\"] = \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
-| [SRC-1AE03B9EC3-L005797](../../agents/web_agent.py#L5797) | 5797 | `"            task_fulfillment_status = ("` | — |
-| [SRC-1AE03B9EC3-L005798](../../agents/web_agent.py#L5798) | 5798 | `"                \"not_assessed_insufficient_evidence\" if coverage_targets"` | — |
-| [SRC-1AE03B9EC3-L005799](../../agents/web_agent.py#L5799) | 5799 | `"                else \"not_machine_assessed_no_explicit_targets_detected\""` | — |
-| [SRC-1AE03B9EC3-L005800](../../agents/web_agent.py#L5800) | 5800 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005801](../../agents/web_agent.py#L5801) | 5801 | `"            answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L005802](../../agents/web_agent.py#L5802) | 5802 | `"            research_failed = search_outcome in _RESEARCH_ERROR_OUTCOMES"` | — |
-| [SRC-1AE03B9EC3-L005803](../../agents/web_agent.py#L5803) | 5803 | `"            report.update({"` | — |
-| [SRC-1AE03B9EC3-L005804](../../agents/web_agent.py#L5804) | 5804 | `"                # When collection failed, an empty local list is not evidence that"` | — |
-| [SRC-1AE03B9EC3-L005805](../../agents/web_agent.py#L5805) | 5805 | `"                # the remote search returned zero sources; preserve unknown counts."` | — |
-| [SRC-1AE03B9EC3-L005806](../../agents/web_agent.py#L5806) | 5806 | `"                \"unique_sources\": None if research_failed else len(sources),"` | — |
-| [SRC-1AE03B9EC3-L005807](../../agents/web_agent.py#L5807) | 5807 | `"                \"independent_sources\": None if research_failed else len(independent_domains),"` | — |
-| [SRC-1AE03B9EC3-L005808](../../agents/web_agent.py#L5808) | 5808 | `"                \"distinct_registrable_domains\": None if research_failed else len(independent_domains),"` | — |
 | [SRC-1AE03B9EC3-L005809](../../agents/web_agent.py#L5809) | 5809 | `"                \"pages_fetched\": ("` | — |
 | [SRC-1AE03B9EC3-L005810](../../agents/web_agent.py#L5810) | 5810 | `"                    None if research_failed"` | — |
 | [SRC-1AE03B9EC3-L005811](../../agents/web_agent.py#L5811) | 5811 | `"                    else sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
@@ -816,3 +794,25 @@
 | [SRC-1AE03B9EC3-L006584](../../agents/web_agent.py#L6584) | 6584 | `"        value = usage.get(source_key)"` | — |
 | [SRC-1AE03B9EC3-L006585](../../agents/web_agent.py#L6585) | 6585 | `"        if isinstance(value, (int, float)) and not isinstance(value, bool):"` | — |
 | [SRC-1AE03B9EC3-L006586](../../agents/web_agent.py#L6586) | 6586 | `"            number = float(value)"` | — |
+| [SRC-1AE03B9EC3-L006587](../../agents/web_agent.py#L6587) | 6587 | `"            if number >= 0 and math.isfinite(number):"` | — |
+| [SRC-1AE03B9EC3-L006588](../../agents/web_agent.py#L6588) | 6588 | `"                normalized[\"cost_usd\"] = number"` | — |
+| [SRC-1AE03B9EC3-L006589](../../agents/web_agent.py#L6589) | 6589 | `"                break"` | — |
+| [SRC-1AE03B9EC3-L006590](../../agents/web_agent.py#L6590) | 6590 | `"    return normalized or None"` | — |
+| [SRC-1AE03B9EC3-L006591](../../agents/web_agent.py#L6591) | 6591 | `""` | — |
+| [SRC-1AE03B9EC3-L006592](../../agents/web_agent.py#L6592) | 6592 | `""` | — |
+| [SRC-1AE03B9EC3-L006593](../../agents/web_agent.py#L6593) | 6593 | `"def _model_usage_record("` | — |
+| [SRC-1AE03B9EC3-L006594](../../agents/web_agent.py#L6594) | 6594 | `"    requested_model: str,"` | — |
+| [SRC-1AE03B9EC3-L006595](../../agents/web_agent.py#L6595) | 6595 | `"    candidate_model: str,"` | — |
+| [SRC-1AE03B9EC3-L006596](../../agents/web_agent.py#L6596) | 6596 | `"    response_data: dict[str, Any],"` | — |
+| [SRC-1AE03B9EC3-L006597](../../agents/web_agent.py#L6597) | 6597 | `"    provider_base_url: str,"` | — |
+| [SRC-1AE03B9EC3-L006598](../../agents/web_agent.py#L6598) | 6598 | `") -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L006599](../../agents/web_agent.py#L6599) | 6599 | `"    \"\"\"Return only allowlisted provider usage metadata, never raw prompts/responses.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L006600](../../agents/web_agent.py#L6600) | 6600 | `"    record: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L006601](../../agents/web_agent.py#L6601) | 6601 | `"        \"requested_model\": requested_model,"` | — |
+| [SRC-1AE03B9EC3-L006602](../../agents/web_agent.py#L6602) | 6602 | `"        \"used_model\": candidate_model,"` | — |
+| [SRC-1AE03B9EC3-L006603](../../agents/web_agent.py#L6603) | 6603 | `"        \"fallback_used\": \"true\" if candidate_model != requested_model else \"false\","` | — |
+| [SRC-1AE03B9EC3-L006604](../../agents/web_agent.py#L6604) | 6604 | `"    }"` | — |
+| [SRC-1AE03B9EC3-L006605](../../agents/web_agent.py#L6605) | 6605 | `"    provider_usage = _normalized_provider_usage("` | — |
+| [SRC-1AE03B9EC3-L006606](../../agents/web_agent.py#L6606) | 6606 | `"        response_data.get(\"usage\"), provider_base_url=provider_base_url"` | — |
+| [SRC-1AE03B9EC3-L006607](../../agents/web_agent.py#L6607) | 6607 | `"    )"` | — |
+| [SRC-1AE03B9EC3-L006608](../../agents/web_agent.py#L6608) | 6608 | `"    if provider_usage is not None:"` | — |

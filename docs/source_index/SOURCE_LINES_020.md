@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000531 إلى SRC-E599346ABE-L001330
+- النطاق: SRC-E599346ABE-L000553 إلى SRC-E599346ABE-L001352
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000531](../generate_index.py#L531) | 531 | `"    \"\"\"List excluded tracked path names and reasons without opening excluded contents.\"\"\""` | — |
-| [SRC-E599346ABE-L000532](../generate_index.py#L532) | 532 | `"    tracked_paths = _tracked_paths_or_none(root)"` | — |
-| [SRC-E599346ABE-L000533](../generate_index.py#L533) | 533 | `""` | — |
-| [SRC-E599346ABE-L000534](../generate_index.py#L534) | 534 | `"    def tracked_scope_contains(relative_path: str, is_directory: bool = False) -> bool:"` | — |
-| [SRC-E599346ABE-L000535](../generate_index.py#L535) | 535 | `"        if tracked_paths is None:"` | — |
-| [SRC-E599346ABE-L000536](../generate_index.py#L536) | 536 | `"            return True"` | — |
-| [SRC-E599346ABE-L000537](../generate_index.py#L537) | 537 | `"        normalized = relative_path.rstrip(\"/\")"` | — |
-| [SRC-E599346ABE-L000538](../generate_index.py#L538) | 538 | `"        if is_directory:"` | — |
-| [SRC-E599346ABE-L000539](../generate_index.py#L539) | 539 | `"            prefix = normalized + \"/\""` | — |
-| [SRC-E599346ABE-L000540](../generate_index.py#L540) | 540 | `"            return any(path.startswith(prefix) for path in tracked_paths)"` | — |
-| [SRC-E599346ABE-L000541](../generate_index.py#L541) | 541 | `"        return normalized in tracked_paths"` | — |
-| [SRC-E599346ABE-L000542](../generate_index.py#L542) | 542 | `""` | — |
-| [SRC-E599346ABE-L000543](../generate_index.py#L543) | 543 | `"    excluded: list[tuple[str, str]] = ["` | — |
-| [SRC-E599346ABE-L000544](../generate_index.py#L544) | 544 | `"        (path, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\")"` | — |
-| [SRC-E599346ABE-L000545](../generate_index.py#L545) | 545 | `"        for path in sorted(INDEX_OUTPUT_PATHS)"` | — |
-| [SRC-E599346ABE-L000546](../generate_index.py#L546) | 546 | `"    ]"` | — |
-| [SRC-E599346ABE-L000547](../generate_index.py#L547) | 547 | `"    excluded.append("` | — |
-| [SRC-E599346ABE-L000548](../generate_index.py#L548) | 548 | `"        ("` | — |
-| [SRC-E599346ABE-L000549](../generate_index.py#L549) | 549 | `"            SOURCE_LINES_PAGES_DIR + \"/\","` | — |
-| [SRC-E599346ABE-L000550](../generate_index.py#L550) | 550 | `"            \"مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية\","` | — |
-| [SRC-E599346ABE-L000551](../generate_index.py#L551) | 551 | `"        )"` | — |
-| [SRC-E599346ABE-L000552](../generate_index.py#L552) | 552 | `"    )"` | — |
 | [SRC-E599346ABE-L000553](../generate_index.py#L553) | 553 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
 | [SRC-E599346ABE-L000554](../generate_index.py#L554) | 554 | `"        root,"` | — |
 | [SRC-E599346ABE-L000555](../generate_index.py#L555) | 555 | `"        topdown=True,"` | — |
@@ -816,3 +794,25 @@
 | [SRC-E599346ABE-L001328](../generate_index.py#L1328) | 1328 | `"    for page_number, start in enumerate("` | — |
 | [SRC-E599346ABE-L001329](../generate_index.py#L1329) | 1329 | `"        range(0, len(source_lines), SOURCE_LINES_PAGE_SIZE),"` | — |
 | [SRC-E599346ABE-L001330](../generate_index.py#L1330) | 1330 | `"        start=1,"` | — |
+| [SRC-E599346ABE-L001331](../generate_index.py#L1331) | 1331 | `"    ):"` | — |
+| [SRC-E599346ABE-L001332](../generate_index.py#L1332) | 1332 | `"        chunk = source_lines[start : start + SOURCE_LINES_PAGE_SIZE]"` | — |
+| [SRC-E599346ABE-L001333](../generate_index.py#L1333) | 1333 | `"        page_path = f\"{SOURCE_LINES_PAGES_DIR}/SOURCE_LINES_{page_number:03d}.md\""` | — |
+| [SRC-E599346ABE-L001334](../generate_index.py#L1334) | 1334 | `"        lines = ["` | — |
+| [SRC-E599346ABE-L001335](../generate_index.py#L1335) | 1335 | `"            \"# Omarai Source Lines\","` | — |
+| [SRC-E599346ABE-L001336](../generate_index.py#L1336) | 1336 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001337](../generate_index.py#L1337) | 1337 | `"            \"<!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->\","` | — |
+| [SRC-E599346ABE-L001338](../generate_index.py#L1338) | 1338 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001339](../generate_index.py#L1339) | 1339 | `"            f\"- الصفحة: **{page_number:03d}**\","` | — |
+| [SRC-E599346ABE-L001340](../generate_index.py#L1340) | 1340 | `"            f\"- سجلات الأسطر: **{len(chunk)}**\","` | — |
+| [SRC-E599346ABE-L001341](../generate_index.py#L1341) | 1341 | `"            f\"- النطاق: {chunk[0].line_id} إلى {chunk[-1].line_id}\","` | — |
+| [SRC-E599346ABE-L001342](../generate_index.py#L1342) | 1342 | `"            \"- الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)\","` | — |
+| [SRC-E599346ABE-L001343](../generate_index.py#L1343) | 1343 | `"            \"\","` | — |
+| [SRC-E599346ABE-L001344](../generate_index.py#L1344) | 1344 | `"        ]"` | — |
+| [SRC-E599346ABE-L001345](../generate_index.py#L1345) | 1345 | `"        current_file: str \| None = None"` | — |
+| [SRC-E599346ABE-L001346](../generate_index.py#L1346) | 1346 | `"        for source_line in chunk:"` | — |
+| [SRC-E599346ABE-L001347](../generate_index.py#L1347) | 1347 | `"            item = inventory_by_path[source_line.file]"` | — |
+| [SRC-E599346ABE-L001348](../generate_index.py#L1348) | 1348 | `"            if source_line.file != current_file:"` | — |
+| [SRC-E599346ABE-L001349](../generate_index.py#L1349) | 1349 | `"                current_file = source_line.file"` | — |
+| [SRC-E599346ABE-L001350](../generate_index.py#L1350) | 1350 | `"                lines.extend("` | — |
+| [SRC-E599346ABE-L001351](../generate_index.py#L1351) | 1351 | `"                    ["` | — |
+| [SRC-E599346ABE-L001352](../generate_index.py#L1352) | 1352 | `"                        f\"## {item.category}\","` | — |

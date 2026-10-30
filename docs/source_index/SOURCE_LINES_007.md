@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000315 إلى SRC-686F71AA50-L001114
+- النطاق: SRC-686F71AA50-L000337 إلى SRC-686F71AA50-L001136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    matched: list[str] = []"` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\", \"ين\", \"ات\", \"ون\")"` | — |
-| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    english_suffixes = (\"ing\", \"ed\", \"es\", \"s\")"` | — |
-| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    cache: dict[str, set[str]] = {}"` | — |
-| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `""` | — |
-| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    def token_forms(raw_token: str) -> set[str]:"` | — |
-| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"        original = normalize_text(raw_token)"` | — |
-| [SRC-686F71AA50-L000324](../../agents/task_understanding.py#L324) | 324 | `"        if original in cache:"` | — |
-| [SRC-686F71AA50-L000325](../../agents/task_understanding.py#L325) | 325 | `"            return cache[original]"` | — |
-| [SRC-686F71AA50-L000326](../../agents/task_understanding.py#L326) | 326 | `"        forms = {original} if original else set()"` | — |
-| [SRC-686F71AA50-L000327](../../agents/task_understanding.py#L327) | 327 | `"        queue = list(forms)"` | — |
-| [SRC-686F71AA50-L000328](../../agents/task_understanding.py#L328) | 328 | `"        while queue:"` | — |
-| [SRC-686F71AA50-L000329](../../agents/task_understanding.py#L329) | 329 | `"            current = queue.pop()"` | — |
-| [SRC-686F71AA50-L000330](../../agents/task_understanding.py#L330) | 330 | `"            for prefix in prefixes:"` | — |
-| [SRC-686F71AA50-L000331](../../agents/task_understanding.py#L331) | 331 | `"                if current.startswith(prefix) and len(current) - len(prefix) >= 3:"` | — |
-| [SRC-686F71AA50-L000332](../../agents/task_understanding.py#L332) | 332 | `"                    candidate = current[len(prefix):]"` | — |
-| [SRC-686F71AA50-L000333](../../agents/task_understanding.py#L333) | 333 | `"                    if candidate not in forms:"` | — |
-| [SRC-686F71AA50-L000334](../../agents/task_understanding.py#L334) | 334 | `"                        forms.add(candidate)"` | — |
-| [SRC-686F71AA50-L000335](../../agents/task_understanding.py#L335) | 335 | `"                        queue.append(candidate)"` | — |
-| [SRC-686F71AA50-L000336](../../agents/task_understanding.py#L336) | 336 | `"            for suffix in suffixes:"` | — |
 | [SRC-686F71AA50-L000337](../../agents/task_understanding.py#L337) | 337 | `"                if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |
 | [SRC-686F71AA50-L000338](../../agents/task_understanding.py#L338) | 338 | `"                    candidate = current[:-len(suffix)]"` | — |
 | [SRC-686F71AA50-L000339](../../agents/task_understanding.py#L339) | 339 | `"                    if candidate not in forms:"` | — |
@@ -816,3 +794,25 @@
 | [SRC-686F71AA50-L001112](../../agents/task_understanding.py#L1112) | 1112 | `"    seen: set[str] = set()"` | — |
 | [SRC-686F71AA50-L001113](../../agents/task_understanding.py#L1113) | 1113 | `""` | — |
 | [SRC-686F71AA50-L001114](../../agents/task_understanding.py#L1114) | 1114 | `"    def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:"` | — |
+| [SRC-686F71AA50-L001115](../../agents/task_understanding.py#L1115) | 1115 | `"        if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:"` | — |
+| [SRC-686F71AA50-L001116](../../agents/task_understanding.py#L1116) | 1116 | `"            return"` | — |
+| [SRC-686F71AA50-L001117](../../agents/task_understanding.py#L1117) | 1117 | `"        candidate = query.strip()"` | — |
+| [SRC-686F71AA50-L001118](../../agents/task_understanding.py#L1118) | 1118 | `"        if compact_fn is not None:"` | — |
+| [SRC-686F71AA50-L001119](../../agents/task_understanding.py#L1119) | 1119 | `"            try:"` | — |
+| [SRC-686F71AA50-L001120](../../agents/task_understanding.py#L1120) | 1120 | `"                candidate = compact_fn(candidate) or \"\""` | — |
+| [SRC-686F71AA50-L001121](../../agents/task_understanding.py#L1121) | 1121 | `"            except (TypeError, ValueError):"` | — |
+| [SRC-686F71AA50-L001122](../../agents/task_understanding.py#L1122) | 1122 | `"                candidate = \"\""` | — |
+| [SRC-686F71AA50-L001123](../../agents/task_understanding.py#L1123) | 1123 | `"        candidate = _SPACE.sub(\" \", candidate).strip()[:240]"` | — |
+| [SRC-686F71AA50-L001124](../../agents/task_understanding.py#L1124) | 1124 | `"        key = _query_key(candidate)"` | — |
+| [SRC-686F71AA50-L001125](../../agents/task_understanding.py#L1125) | 1125 | `"        if not candidate or not key or key in seen:"` | — |
+| [SRC-686F71AA50-L001126](../../agents/task_understanding.py#L1126) | 1126 | `"            return"` | — |
+| [SRC-686F71AA50-L001127](../../agents/task_understanding.py#L1127) | 1127 | `"        # Search modifications must preserve a subject anchor. Existing planner"` | — |
+| [SRC-686F71AA50-L001128](../../agents/task_understanding.py#L1128) | 1128 | `"        # queries are retained because they may already contain resolved context."` | — |
+| [SRC-686F71AA50-L001129](../../agents/task_understanding.py#L1129) | 1129 | `"        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or \"\")"` | — |
+| [SRC-686F71AA50-L001130](../../agents/task_understanding.py#L1130) | 1130 | `"        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))"` | — |
+| [SRC-686F71AA50-L001131](../../agents/task_understanding.py#L1131) | 1131 | `"        query_tokens = _TOKEN_RE.findall(key)"` | — |
+| [SRC-686F71AA50-L001132](../../agents/task_understanding.py#L1132) | 1132 | `"        if enforce_topic and len(topic_tokens) >= 2 and not any("` | — |
+| [SRC-686F71AA50-L001133](../../agents/task_understanding.py#L1133) | 1133 | `"            token in query_tokens for token in topic_tokens[:3]"` | — |
+| [SRC-686F71AA50-L001134](../../agents/task_understanding.py#L1134) | 1134 | `"        ):"` | — |
+| [SRC-686F71AA50-L001135](../../agents/task_understanding.py#L1135) | 1135 | `"            return"` | — |
+| [SRC-686F71AA50-L001136](../../agents/task_understanding.py#L1136) | 1136 | `"        seen.add(key)"` | — |

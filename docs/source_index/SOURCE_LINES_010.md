@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000987 إلى SRC-1AE03B9EC3-L001786
+- النطاق: SRC-1AE03B9EC3-L001009 إلى SRC-1AE03B9EC3-L001808
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000987](../../agents/web_agent.py#L987) | 987 | `"            \"used_web_search\": False,"` | — |
-| [SRC-1AE03B9EC3-L000988](../../agents/web_agent.py#L988) | 988 | `"            \"search_attempted\": False,"` | — |
-| [SRC-1AE03B9EC3-L000989](../../agents/web_agent.py#L989) | 989 | `"            \"used_social_search\": False,"` | — |
-| [SRC-1AE03B9EC3-L000990](../../agents/web_agent.py#L990) | 990 | `"            \"warnings\": [],"` | — |
-| [SRC-1AE03B9EC3-L000991](../../agents/web_agent.py#L991) | 991 | `"            \"kind\": kind,"` | — |
-| [SRC-1AE03B9EC3-L000992](../../agents/web_agent.py#L992) | 992 | `"            \"research_quality\": \"not_applicable\","` | — |
-| [SRC-1AE03B9EC3-L000993](../../agents/web_agent.py#L993) | 993 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L000994](../../agents/web_agent.py#L994) | 994 | `""` | — |
-| [SRC-1AE03B9EC3-L000995](../../agents/web_agent.py#L995) | 995 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L000996](../../agents/web_agent.py#L996) | 996 | `"    def _local_conversation_reply(question: str) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000997](../../agents/web_agent.py#L997) | 997 | `"        \"\"\"Return a short greeting/acknowledgment without a model or web request.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L000998](../../agents/web_agent.py#L998) | 998 | `"        value = _normalize_search_query(question).casefold().strip(\" \\t\\r\\n؟?!.,،؛;\")"` | — |
-| [SRC-1AE03B9EC3-L000999](../../agents/web_agent.py#L999) | 999 | `"        if \"السلام عليكم\" in value:"` | — |
-| [SRC-1AE03B9EC3-L001000](../../agents/web_agent.py#L1000) | 1000 | `"            return \"وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟\""` | — |
-| [SRC-1AE03B9EC3-L001001](../../agents/web_agent.py#L1001) | 1001 | `"        if any(term in value for term in (\"شكرا\", \"متشكر\", \"متشكره\", \"العفو\")):"` | — |
-| [SRC-1AE03B9EC3-L001002](../../agents/web_agent.py#L1002) | 1002 | `"            return \"العفو، تحت أمرك.\""` | — |
-| [SRC-1AE03B9EC3-L001003](../../agents/web_agent.py#L1003) | 1003 | `"        if re.search(r\"[a-z]\", value):"` | — |
-| [SRC-1AE03B9EC3-L001004](../../agents/web_agent.py#L1004) | 1004 | `"            if any(term in value for term in (\"thanks\", \"thank you\", \"got it\")):"` | — |
-| [SRC-1AE03B9EC3-L001005](../../agents/web_agent.py#L1005) | 1005 | `"                return \"You're welcome—glad it helped.\""` | — |
-| [SRC-1AE03B9EC3-L001006](../../agents/web_agent.py#L1006) | 1006 | `"            return \"Hi! I'm here and ready to help. What would you like to work on?\""` | — |
-| [SRC-1AE03B9EC3-L001007](../../agents/web_agent.py#L1007) | 1007 | `"        return \"أهلًا! أنا معاك. أقدر أساعدك في إيه؟\""` | — |
-| [SRC-1AE03B9EC3-L001008](../../agents/web_agent.py#L1008) | 1008 | `""` | — |
 | [SRC-1AE03B9EC3-L001009](../../agents/web_agent.py#L1009) | 1009 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L001010](../../agents/web_agent.py#L1010) | 1010 | `"    def _annotate_intent_route("` | — |
 | [SRC-1AE03B9EC3-L001011](../../agents/web_agent.py#L1011) | 1011 | `"        result: dict[str, Any], route: str, reason: str, mode: str = \"auto\""` | — |
@@ -816,3 +794,25 @@
 | [SRC-1AE03B9EC3-L001784](../../agents/web_agent.py#L1784) | 1784 | `"                \"publisher_url\": publisher_url or \"\","` | — |
 | [SRC-1AE03B9EC3-L001785](../../agents/web_agent.py#L1785) | 1785 | `"                \"publisher_domain\": publisher_domain,"` | — |
 | [SRC-1AE03B9EC3-L001786](../../agents/web_agent.py#L1786) | 1786 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L001787](../../agents/web_agent.py#L1787) | 1787 | `"            if len(results) >= MAX_PROVIDER_RESULTS:"` | — |
+| [SRC-1AE03B9EC3-L001788](../../agents/web_agent.py#L1788) | 1788 | `"                break"` | — |
+| [SRC-1AE03B9EC3-L001789](../../agents/web_agent.py#L1789) | 1789 | `"        return results"` | — |
+| [SRC-1AE03B9EC3-L001790](../../agents/web_agent.py#L1790) | 1790 | `""` | — |
+| [SRC-1AE03B9EC3-L001791](../../agents/web_agent.py#L1791) | 1791 | `"    def _search_social("` | — |
+| [SRC-1AE03B9EC3-L001792](../../agents/web_agent.py#L1792) | 1792 | `"        self, query: str, platforms: list[str]"` | — |
+| [SRC-1AE03B9EC3-L001793](../../agents/web_agent.py#L1793) | 1793 | `"    ) -> tuple[list[dict[str, Any]], list[str]]:"` | — |
+| [SRC-1AE03B9EC3-L001794](../../agents/web_agent.py#L1794) | 1794 | `"        \"\"\"Search public social content through exposed public endpoints only.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001795](../../agents/web_agent.py#L1795) | 1795 | `"        query = compact_search_query(query)"` | — |
+| [SRC-1AE03B9EC3-L001796](../../agents/web_agent.py#L1796) | 1796 | `"        if not query:"` | — |
+| [SRC-1AE03B9EC3-L001797](../../agents/web_agent.py#L1797) | 1797 | `"            return [], [\"لم يبدأ البحث الاجتماعي لعدم وجود كلمات موضوعية قابلة للبحث.\"]"` | — |
+| [SRC-1AE03B9EC3-L001798](../../agents/web_agent.py#L1798) | 1798 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L001799](../../agents/web_agent.py#L1799) | 1799 | `"            import xml.etree.ElementTree as ET"` | — |
+| [SRC-1AE03B9EC3-L001800](../../agents/web_agent.py#L1800) | 1800 | `""` | — |
+| [SRC-1AE03B9EC3-L001801](../../agents/web_agent.py#L1801) | 1801 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L001802](../../agents/web_agent.py#L1802) | 1802 | `"            from bs4 import BeautifulSoup"` | — |
+| [SRC-1AE03B9EC3-L001803](../../agents/web_agent.py#L1803) | 1803 | `"        except ImportError as exc:"` | — |
+| [SRC-1AE03B9EC3-L001804](../../agents/web_agent.py#L1804) | 1804 | `"            raise AgentDependencyError("` | — |
+| [SRC-1AE03B9EC3-L001805](../../agents/web_agent.py#L1805) | 1805 | `"                \"حزم البحث الاجتماعي غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
+| [SRC-1AE03B9EC3-L001806](../../agents/web_agent.py#L1806) | 1806 | `"            ) from exc"` | — |
+| [SRC-1AE03B9EC3-L001807](../../agents/web_agent.py#L1807) | 1807 | `""` | — |
+| [SRC-1AE03B9EC3-L001808](../../agents/web_agent.py#L1808) | 1808 | `"        results: list[dict[str, Any]] = []"` | — |

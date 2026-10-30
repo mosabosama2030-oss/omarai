@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000543 إلى SRC-DA61479D59-L000181
+- النطاق: SRC-3451CC474D-L000565 إلى SRC-DA61479D59-L000203
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,28 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    first_result = {}"` | — |
-| [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `""` | — |
-| [SRC-3451CC474D-L000545](../../tests/test_api.py#L545) | 545 | `"    def slow_answer(self, question, history=None, mode=\"auto\"):"` | — |
-| [SRC-3451CC474D-L000546](../../tests/test_api.py#L546) | 546 | `"        entered.set()"` | — |
-| [SRC-3451CC474D-L000547](../../tests/test_api.py#L547) | 547 | `"        assert release.wait(timeout=2), \"test did not release the held research slot\""` | — |
-| [SRC-3451CC474D-L000548](../../tests/test_api.py#L548) | 548 | `"        return {"` | — |
-| [SRC-3451CC474D-L000549](../../tests/test_api.py#L549) | 549 | `"            \"answer\": \"نتيجة اختبار محدودة\","` | — |
-| [SRC-3451CC474D-L000550](../../tests/test_api.py#L550) | 550 | `"            \"question\": question,"` | — |
-| [SRC-3451CC474D-L000551](../../tests/test_api.py#L551) | 551 | `"            \"search_query\": question,"` | — |
-| [SRC-3451CC474D-L000552](../../tests/test_api.py#L552) | 552 | `"            \"search_queries\": [],"` | — |
-| [SRC-3451CC474D-L000553](../../tests/test_api.py#L553) | 553 | `"            \"search_report\": {\"search_attempted\": False, \"search_outcome\": \"not_attempted\"},"` | — |
-| [SRC-3451CC474D-L000554](../../tests/test_api.py#L554) | 554 | `"            \"sources\": [],"` | — |
-| [SRC-3451CC474D-L000555](../../tests/test_api.py#L555) | 555 | `"            \"used_language_model\": False,"` | — |
-| [SRC-3451CC474D-L000556](../../tests/test_api.py#L556) | 556 | `"            \"used_web_search\": False,"` | — |
-| [SRC-3451CC474D-L000557](../../tests/test_api.py#L557) | 557 | `"            \"search_attempted\": False,"` | — |
-| [SRC-3451CC474D-L000558](../../tests/test_api.py#L558) | 558 | `"            \"used_social_search\": False,"` | — |
-| [SRC-3451CC474D-L000559](../../tests/test_api.py#L559) | 559 | `"            \"warnings\": [],"` | — |
-| [SRC-3451CC474D-L000560](../../tests/test_api.py#L560) | 560 | `"            \"kind\": \"web_fallback\","` | — |
-| [SRC-3451CC474D-L000561](../../tests/test_api.py#L561) | 561 | `"        }"` | — |
-| [SRC-3451CC474D-L000562](../../tests/test_api.py#L562) | 562 | `""` | — |
-| [SRC-3451CC474D-L000563](../../tests/test_api.py#L563) | 563 | `"    monkeypatch.setattr(WebAgent, \"answer\", slow_answer)"` | — |
-| [SRC-3451CC474D-L000564](../../tests/test_api.py#L564) | 564 | `""` | — |
 | [SRC-3451CC474D-L000565](../../tests/test_api.py#L565) | 565 | `"    def first_request():"` | — |
 | [SRC-3451CC474D-L000566](../../tests/test_api.py#L566) | 566 | `"        first_result[\"response\"] = request_json("` | — |
 | [SRC-3451CC474D-L000567](../../tests/test_api.py#L567) | 567 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الأول\"}"` | — |
@@ -843,3 +821,25 @@
 | [SRC-DA61479D59-L000179](../../tests/test_connector_summary_counters.py#L179) | 179 | `"            \"published_at\": \"\","` | — |
 | [SRC-DA61479D59-L000180](../../tests/test_connector_summary_counters.py#L180) | 180 | `"        },"` | — |
 | [SRC-DA61479D59-L000181](../../tests/test_connector_summary_counters.py#L181) | 181 | `"    ]"` | — |
+| [SRC-DA61479D59-L000182](../../tests/test_connector_summary_counters.py#L182) | 182 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda _query: results)"` | — |
+| [SRC-DA61479D59-L000183](../../tests/test_connector_summary_counters.py#L183) | 183 | `""` | — |
+| [SRC-DA61479D59-L000184](../../tests/test_connector_summary_counters.py#L184) | 184 | `"    def fetch(url: str):"` | — |
+| [SRC-DA61479D59-L000185](../../tests/test_connector_summary_counters.py#L185) | 185 | `"        if \"example.com\" in url:"` | — |
+| [SRC-DA61479D59-L000186](../../tests/test_connector_summary_counters.py#L186) | 186 | `"            return PageFetchResult("` | — |
+| [SRC-DA61479D59-L000187](../../tests/test_connector_summary_counters.py#L187) | 187 | `"                \"Report page\","` | — |
+| [SRC-DA61479D59-L000188](../../tests/test_connector_summary_counters.py#L188) | 188 | `"                \"Renewable energy storage body, with an explicit note that extraction was capped.\","` | — |
+| [SRC-DA61479D59-L000189](../../tests/test_connector_summary_counters.py#L189) | 189 | `"                \"partial_extraction\","` | — |
+| [SRC-DA61479D59-L000190](../../tests/test_connector_summary_counters.py#L190) | 190 | `"            )"` | — |
+| [SRC-DA61479D59-L000191](../../tests/test_connector_summary_counters.py#L191) | 191 | `"        return PageFetchResult(\"\", \"\", \"http_error\", \"HTTPStatus\")"` | — |
+| [SRC-DA61479D59-L000192](../../tests/test_connector_summary_counters.py#L192) | 192 | `""` | — |
+| [SRC-DA61479D59-L000193](../../tests/test_connector_summary_counters.py#L193) | 193 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fetch)"` | — |
+| [SRC-DA61479D59-L000194](../../tests/test_connector_summary_counters.py#L194) | 194 | `"    sources, warnings, report = agent._collect_research({"` | — |
+| [SRC-DA61479D59-L000195](../../tests/test_connector_summary_counters.py#L195) | 195 | `"        \"queries\": [query],"` | — |
+| [SRC-DA61479D59-L000196](../../tests/test_connector_summary_counters.py#L196) | 196 | `"        \"direct_urls\": [],"` | — |
+| [SRC-DA61479D59-L000197](../../tests/test_connector_summary_counters.py#L197) | 197 | `"        \"social_focus\": False,"` | — |
+| [SRC-DA61479D59-L000198](../../tests/test_connector_summary_counters.py#L198) | 198 | `"        \"freshness\": \"any\","` | — |
+| [SRC-DA61479D59-L000199](../../tests/test_connector_summary_counters.py#L199) | 199 | `"        \"depth\": \"standard\","` | — |
+| [SRC-DA61479D59-L000200](../../tests/test_connector_summary_counters.py#L200) | 200 | `"        \"platforms\": [],"` | — |
+| [SRC-DA61479D59-L000201](../../tests/test_connector_summary_counters.py#L201) | 201 | `"        \"planning_method\": \"unit_test\","` | — |
+| [SRC-DA61479D59-L000202](../../tests/test_connector_summary_counters.py#L202) | 202 | `"    })"` | — |
+| [SRC-DA61479D59-L000203](../../tests/test_connector_summary_counters.py#L203) | 203 | `""` | — |
