@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **115**
-- ملفات Python المحللة: **69**
-- تعريفات Python المفهرسة: **1500**
-- تعريفات Python موثقة بوجود Docstring: **253**
+- ملفات المستودع في الجرد: **116**
+- ملفات Python المحللة: **70**
+- تعريفات Python المفهرسة: **1501**
+- تعريفات Python موثقة بوجود Docstring: **254**
 - تعريفات Python بلا Docstring: **943**
 - تعريفات لا ينطبق عليها Docstring: **304**
 - الرموز الساكنة الإضافية: **1867**
-- الأسطر النصية المفهرسة حرفيًا: **39690**
+- الأسطر النصية المفهرسة حرفيًا: **39702**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -125,6 +125,7 @@
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
+| FILE-7D6A914C18 | اختبارات | [tests/test_intent_router_no_duplicates.py](../tests/test_intent_router_no_duplicates.py#L1) | Python | 568 | 12 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
@@ -1199,6 +1200,7 @@
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L194) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget | لا توجد Docstring. | ناقص | 194 | [SRC-4397BC2CD2-L000194](../tests/test_intent_router_integration.py#L194) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L203) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.plan | لا توجد Docstring. | ناقص | 203 | [SRC-4397BC2CD2-L000203](../tests/test_intent_router_integration.py#L203) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L214) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.collect | لا توجد Docstring. | ناقص | 214 | [SRC-4397BC2CD2-L000214](../tests/test_intent_router_integration.py#L214) |
+| [tests/test_intent_router_no_duplicates.py](../tests/test_intent_router_no_duplicates.py#L7) | دالة | test_followup_symbols_are_defined_once | Prevent the residual duplicate definitions of follow-up helpers from returning. | موثق | 7 | [SRC-7D6A914C18-L000007](../tests/test_intent_router_no_duplicates.py#L7) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L8) | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 8 | [SRC-62DC597310-L000008](../tests/test_live_search_connectors.py#L8) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L9) | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 9 | [SRC-62DC597310-L000009](../tests/test_live_search_connectors.py#L9) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L13) | دالة | FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 13 | [SRC-62DC597310-L000013](../tests/test_live_search_connectors.py#L13) |
