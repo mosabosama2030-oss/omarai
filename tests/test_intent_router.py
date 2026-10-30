@@ -280,3 +280,11 @@ def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> N
 
     assert "Lenovo ThinkPad E14" in resolved
     assert "أقدر أشتريه منين" in resolved
+
+
+def test_followup_leadin_stripping_preserves_aspect_query() -> None:
+    """Regression: Egyptian lead-ins like 'طيب'/'طب' must not hide the real follow-up."""
+    from agents.intent_router import _strip_followup_leadin, _normalize
+    assert _strip_followup_leadin(_normalize("طيب كام سعرها")) == "كام سعرها"
+    assert _strip_followup_leadin(_normalize("طب والضمان")) == "والضمان"
+    assert _strip_followup_leadin(_normalize("تمام والسعر")) == "والسعر"
