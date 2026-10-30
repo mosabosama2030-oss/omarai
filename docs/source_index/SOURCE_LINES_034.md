@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2477C41448-L000035 إلى SRC-1C77C97630-L000164
+- النطاق: SRC-2477C41448-L000056 إلى SRC-1C77C97630-L000185
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,27 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-2477C41448-L000035](../../tests/test_answer_quality_provider_usage.py#L35) | 35 | `""` | — |
-| [SRC-2477C41448-L000036](../../tests/test_answer_quality_provider_usage.py#L36) | 36 | `"def test_nonfinite_or_negative_provider_cost_is_not_recorded():"` | — |
-| [SRC-2477C41448-L000037](../../tests/test_answer_quality_provider_usage.py#L37) | 37 | `"    normalized = _normalized_provider_usage("` | — |
-| [SRC-2477C41448-L000038](../../tests/test_answer_quality_provider_usage.py#L38) | 38 | `"        {\"prompt_tokens\": 2, \"cost\": float(\"nan\"), \"total_cost\": -1},"` | — |
-| [SRC-2477C41448-L000039](../../tests/test_answer_quality_provider_usage.py#L39) | 39 | `"        provider_base_url=\"https://openrouter.ai/api/v1\","` | — |
-| [SRC-2477C41448-L000040](../../tests/test_answer_quality_provider_usage.py#L40) | 40 | `"    )"` | — |
-| [SRC-2477C41448-L000041](../../tests/test_answer_quality_provider_usage.py#L41) | 41 | `"    assert normalized == {\"prompt_tokens\": 2}"` | — |
-| [SRC-2477C41448-L000042](../../tests/test_answer_quality_provider_usage.py#L42) | 42 | `""` | — |
-| [SRC-2477C41448-L000043](../../tests/test_answer_quality_provider_usage.py#L43) | 43 | `""` | — |
-| [SRC-2477C41448-L000044](../../tests/test_answer_quality_provider_usage.py#L44) | 44 | `"def test_completion_records_provider_usage_without_retaining_provider_body(monkeypatch):"` | — |
-| [SRC-2477C41448-L000045](../../tests/test_answer_quality_provider_usage.py#L45) | 45 | `"    agent = WebAgent()"` | — |
-| [SRC-2477C41448-L000046](../../tests/test_answer_quality_provider_usage.py#L46) | 46 | `"    agent.api_key = \"unit-test-key\""` | — |
-| [SRC-2477C41448-L000047](../../tests/test_answer_quality_provider_usage.py#L47) | 47 | `"    agent.base_url = \"https://openrouter.ai/api/v1\""` | — |
-| [SRC-2477C41448-L000048](../../tests/test_answer_quality_provider_usage.py#L48) | 48 | `"    agent.fallback_model = \"\""` | — |
-| [SRC-2477C41448-L000049](../../tests/test_answer_quality_provider_usage.py#L49) | 49 | `""` | — |
-| [SRC-2477C41448-L000050](../../tests/test_answer_quality_provider_usage.py#L50) | 50 | `"    class FakeResponse:"` | — |
-| [SRC-2477C41448-L000051](../../tests/test_answer_quality_provider_usage.py#L51) | 51 | `"        status = 200"` | — |
-| [SRC-2477C41448-L000052](../../tests/test_answer_quality_provider_usage.py#L52) | 52 | `""` | — |
-| [SRC-2477C41448-L000053](../../tests/test_answer_quality_provider_usage.py#L53) | 53 | `"        def __enter__(self):"` | — |
-| [SRC-2477C41448-L000054](../../tests/test_answer_quality_provider_usage.py#L54) | 54 | `"            return self"` | — |
-| [SRC-2477C41448-L000055](../../tests/test_answer_quality_provider_usage.py#L55) | 55 | `""` | — |
 | [SRC-2477C41448-L000056](../../tests/test_answer_quality_provider_usage.py#L56) | 56 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
 | [SRC-2477C41448-L000057](../../tests/test_answer_quality_provider_usage.py#L57) | 57 | `"            return False"` | — |
 | [SRC-2477C41448-L000058](../../tests/test_answer_quality_provider_usage.py#L58) | 58 | `""` | — |
@@ -852,3 +831,24 @@
 | [SRC-1C77C97630-L000162](../../tests/test_answer_validation.py#L162) | 162 | `"    assert good[\"citation_lexical_alignment\"][0][\"status\"] == \"lexical_overlap_signal_found\""` | — |
 | [SRC-1C77C97630-L000163](../../tests/test_answer_validation.py#L163) | 163 | `"    assert good[\"citation_lexical_alignment\"][0][\"citations\"][0][\"evidence_basis\"] == \"extracted_page_text\""` | — |
 | [SRC-1C77C97630-L000164](../../tests/test_answer_validation.py#L164) | 164 | `"    assert good[\"citation_entailment\"] == \"not_checked\""` | — |
+| [SRC-1C77C97630-L000165](../../tests/test_answer_validation.py#L165) | 165 | `""` | — |
+| [SRC-1C77C97630-L000166](../../tests/test_answer_validation.py#L166) | 166 | `"    weak = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000167](../../tests/test_answer_validation.py#L167) | 167 | `"        \"What happened?\","` | — |
+| [SRC-1C77C97630-L000168](../../tests/test_answer_validation.py#L168) | 168 | `"        \"Mango harvest volume rose sharply [source 1].\","` | — |
+| [SRC-1C77C97630-L000169](../../tests/test_answer_validation.py#L169) | 169 | `"        [page_source],"` | — |
+| [SRC-1C77C97630-L000170](../../tests/test_answer_validation.py#L170) | 170 | `"    )"` | — |
+| [SRC-1C77C97630-L000171](../../tests/test_answer_validation.py#L171) | 171 | `"    assert weak[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
+| [SRC-1C77C97630-L000172](../../tests/test_answer_validation.py#L172) | 172 | `"    assert weak[\"weak_citation_alignment_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000173](../../tests/test_answer_validation.py#L173) | 173 | `"    assert weak[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000174](../../tests/test_answer_validation.py#L174) | 174 | `""` | — |
+| [SRC-1C77C97630-L000175](../../tests/test_answer_validation.py#L175) | 175 | `""` | — |
+| [SRC-1C77C97630-L000176](../../tests/test_answer_validation.py#L176) | 176 | `"def test_snippet_only_citation_alignment_is_labeled_as_snippet_evidence():"` | — |
+| [SRC-1C77C97630-L000177](../../tests/test_answer_validation.py#L177) | 177 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000178](../../tests/test_answer_validation.py#L178) | 178 | `"        \"What was reported?\","` | — |
+| [SRC-1C77C97630-L000179](../../tests/test_answer_validation.py#L179) | 179 | `"        \"The reported costs changed [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000180](../../tests/test_answer_validation.py#L180) | 180 | `"        [{"` | — |
+| [SRC-1C77C97630-L000181](../../tests/test_answer_validation.py#L181) | 181 | `"            \"title\": \"Costs report\","` | — |
+| [SRC-1C77C97630-L000182](../../tests/test_answer_validation.py#L182) | 182 | `"            \"snippet\": \"Reported costs changed in the new report.\","` | — |
+| [SRC-1C77C97630-L000183](../../tests/test_answer_validation.py#L183) | 183 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000184](../../tests/test_answer_validation.py#L184) | 184 | `"        }],"` | — |
+| [SRC-1C77C97630-L000185](../../tests/test_answer_validation.py#L185) | 185 | `"    )"` | — |
