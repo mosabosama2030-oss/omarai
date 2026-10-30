@@ -1,6 +1,7 @@
 """Tests for truthful research completion states and counter reconciliation."""
 from __future__ import annotations
 
+from agents.claim_evidence import build_claim_evidence_ledger
 from agents.research_completion import build_research_completion
 
 
@@ -259,3 +260,39 @@ def test_missing_claim_ledger_does_not_create_citation_reference_warning() -> No
     assert result["status"] == (
         "answer_generated_citations_range_checked_semantic_support_unverified"
     )
+
+
+def test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate() -> None:
+    answer = "The verified report says 100 EGP [source 1], and the unsupported claim is also cited [source 2]."
+    sources = [{
+        "url": "https://example.com/report",
+        "title": "Report",
+        "snippet": "The verified report says 100 EGP.",
+        "page_fetched": True,
+        "page_text": "The verified report says 100 EGP.",
+    }]
+    ledger = build_claim_evidence_ledger(answer, sources)
+
+    assert ledger["summary"]["out_of_range_reference_count"] == 1
+    assert ledger["segments"][0]["citation_status"] == "citation_index_out_of_range"
+
+    completion = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": ledger,
+        "answer_integrity": {"weak_citation_alignment_count": 0},
+        "sources": sources,
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert completion["status"] == "partial_answer_evidence_gaps_detected"
+    assert completion["counters"]["out_of_range_citation_reference_count"] == 1
+    assert completion["counters"]["citation_support_warning_count"] == 1
+    assert completion["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert completion["phases"]["semantic_verification"] == "not_performed"
