@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003516 إلى SRC-DE7EABE998-L000282
+- النطاق: SRC-F725E90B2A-L003525 إلى SRC-DE7EABE998-L000291
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,15 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L003516](../../tests/test_web_agent.py#L3516) | 3516 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 1}],"` | — |
-| [SRC-F725E90B2A-L003517](../../tests/test_web_agent.py#L3517) | 3517 | `"        }"` | — |
-| [SRC-F725E90B2A-L003518](../../tests/test_web_agent.py#L3518) | 3518 | `""` | — |
-| [SRC-F725E90B2A-L003519](../../tests/test_web_agent.py#L3519) | 3519 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda *args, **kwargs: dict(plan))"` | — |
-| [SRC-F725E90B2A-L003520](../../tests/test_web_agent.py#L3520) | 3520 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L003521](../../tests/test_web_agent.py#L3521) | 3521 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-F725E90B2A-L003522](../../tests/test_web_agent.py#L3522) | 3522 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L003523](../../tests/test_web_agent.py#L3523) | 3523 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L003524](../../tests/test_web_agent.py#L3524) | 3524 | `"        \"_generate\","` | — |
 | [SRC-F725E90B2A-L003525](../../tests/test_web_agent.py#L3525) | 3525 | `"        lambda *args, **kwargs: pytest.fail(\"Stale pages must not be passed to generation\"),"` | — |
 | [SRC-F725E90B2A-L003526](../../tests/test_web_agent.py#L3526) | 3526 | `"    )"` | — |
 | [SRC-F725E90B2A-L003527](../../tests/test_web_agent.py#L3527) | 3527 | `""` | — |
@@ -834,3 +825,12 @@
 | [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `"  candidate_evidence_gaps_or_linkage_unknown:\"لا توجد إشارات نصية كافية لبعض المحاور أو تعذر ربط نتائج البحث بها؛ راجع الاستعلامات والمصادر قبل اعتماد الإجابة.\","` | — |
 | [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `"  not_assessed_insufficient_evidence:\"الأدلة غير كافية؛ لم يتم التحقق من اكتمال المهمة.\","` | — |
 | [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `"  not_machine_assessed_no_explicit_targets_detected:\"لم تُستخرج محاور صريحة قابلة للفحص؛ اكتمال المهمة لم يُقيّم آليًا.\""` | — |
+| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `" })[taskFulfillmentStatus]\|\|\"حالة اكتمال المهمة غير محسومة آليًا.\";"` | — |
+| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `" const taskFulfillmentHtml='<p class=\"'+([\"possible_gap_detected\",\"candidate_evidence_gaps_or_linkage_unknown\"].includes(taskFulfillmentStatus)?\"warning\":\"report-note\")+'\">حالة تنفيذ المطلوب: '+escapeHtml(taskFulfillmentText)+'</p>';"` | — |
+| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `" const coverageRepairStatus=r.coverage_repair_status\|\|result.coverage_repair_status\|\|\"\";"` | — |
+| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `" const coverageRepairMessages={"` | — |
+| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `"  revised_and_reaudited:\"عُدّلت الإجابة بعد رصد محور محتمل النقص ثم خضعت لمراجعة أدلة ثانية؛ تظل المراجعة بمساعدة نموذج وليست تحققًا مستقلًا.\","` | — |
+| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `"  revised_and_reaudited_remaining_gaps:\"خضعت الإجابة المعدلة لمراجعة ثانية، لكن بقي محور محتمل النقص؛ لا تعتبر المهمة مكتملة قبل مراجعة الأدلة.\","` | — |
+| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `"  reaudit_budget_exhausted:\"انتهت ميزانية النماذج قبل إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.\","` | — |
+| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `"  reaudit_unavailable:\"تعذرت إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.\","` | — |
+| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `"  budget_exhausted:\"انتهت ميزانية النماذج قبل استكمال محور محتمل النقص.\","` | — |

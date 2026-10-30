@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001116 إلى SRC-F725E90B2A-L001915
+- النطاق: SRC-F725E90B2A-L001125 إلى SRC-F725E90B2A-L001924
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,15 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L001116](../../tests/test_web_agent.py#L1116) | 1116 | `"    assert any("` | — |
-| [SRC-F725E90B2A-L001117](../../tests/test_web_agent.py#L1117) | 1117 | `"        row[\"provider\"] == \"bing_rss\" and row[\"status\"] == \"ok\""` | — |
-| [SRC-F725E90B2A-L001118](../../tests/test_web_agent.py#L1118) | 1118 | `"        for row in diagnostics"` | — |
-| [SRC-F725E90B2A-L001119](../../tests/test_web_agent.py#L1119) | 1119 | `"    )"` | — |
-| [SRC-F725E90B2A-L001120](../../tests/test_web_agent.py#L1120) | 1120 | `""` | — |
-| [SRC-F725E90B2A-L001121](../../tests/test_web_agent.py#L1121) | 1121 | `""` | — |
-| [SRC-F725E90B2A-L001122](../../tests/test_web_agent.py#L1122) | 1122 | `"def test_single_user_supplied_page_can_be_summarized_without_claiming_corroboration(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001123](../../tests/test_web_agent.py#L1123) | 1123 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001124](../../tests/test_web_agent.py#L1124) | 1124 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001125](../../tests/test_web_agent.py#L1125) | 1125 | `"    source = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L001126](../../tests/test_web_agent.py#L1126) | 1126 | `"    source[\"providers\"] = [\"user_supplied_url\"]"` | — |
 | [SRC-F725E90B2A-L001127](../../tests/test_web_agent.py#L1127) | 1127 | `"    source[\"page_fetched\"] = True"` | — |
@@ -816,3 +807,12 @@
 | [SRC-F725E90B2A-L001913](../../tests/test_web_agent.py#L1913) | 1913 | `"    assert \"الاعتمادية\" in user_content"` | — |
 | [SRC-F725E90B2A-L001914](../../tests/test_web_agent.py#L1914) | 1914 | `"    assert \"قائمة محاور مستخرجة آليًا\" in user_content"` | — |
 | [SRC-F725E90B2A-L001915](../../tests/test_web_agent.py#L1915) | 1915 | `""` | — |
+| [SRC-F725E90B2A-L001916](../../tests/test_web_agent.py#L1916) | 1916 | `""` | — |
+| [SRC-F725E90B2A-L001917](../../tests/test_web_agent.py#L1917) | 1917 | `"def test_search_attempt_is_reported_when_no_sources_survive(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001918](../../tests/test_web_agent.py#L1918) | 1918 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001919](../../tests/test_web_agent.py#L1919) | 1919 | `"    agent.api_key = \"\""` | — |
+| [SRC-F725E90B2A-L001920](../../tests/test_web_agent.py#L1920) | 1920 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L001921](../../tests/test_web_agent.py#L1921) | 1921 | `"        \"queries\": [\"ما آخر تطورات الطاقة المتجددة اليوم؟\"],"` | — |
+| [SRC-F725E90B2A-L001922](../../tests/test_web_agent.py#L1922) | 1922 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L001923](../../tests/test_web_agent.py#L1923) | 1923 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L001924](../../tests/test_web_agent.py#L1924) | 1924 | `"        \"freshness\": \"today\","` | — |

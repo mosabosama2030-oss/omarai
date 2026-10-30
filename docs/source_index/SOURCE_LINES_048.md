@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002716 إلى SRC-F725E90B2A-L003515
+- النطاق: SRC-F725E90B2A-L002725 إلى SRC-F725E90B2A-L003524
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,15 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002716](../../tests/test_web_agent.py#L2716) | 2716 | `"    class RedirectResponse:"` | — |
-| [SRC-F725E90B2A-L002717](../../tests/test_web_agent.py#L2717) | 2717 | `"        status_code = 302"` | — |
-| [SRC-F725E90B2A-L002718](../../tests/test_web_agent.py#L2718) | 2718 | `""` | — |
-| [SRC-F725E90B2A-L002719](../../tests/test_web_agent.py#L2719) | 2719 | `"        def __init__(self):"` | — |
-| [SRC-F725E90B2A-L002720](../../tests/test_web_agent.py#L2720) | 2720 | `"            self.headers = {\"location\": \"https://second.example/internal\"}"` | — |
-| [SRC-F725E90B2A-L002721](../../tests/test_web_agent.py#L2721) | 2721 | `""` | — |
-| [SRC-F725E90B2A-L002722](../../tests/test_web_agent.py#L2722) | 2722 | `"    @contextmanager"` | — |
-| [SRC-F725E90B2A-L002723](../../tests/test_web_agent.py#L2723) | 2723 | `"    def fake_stream(self, method, url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L002724](../../tests/test_web_agent.py#L2724) | 2724 | `"        requests.append((method, str(url), kwargs))"` | — |
 | [SRC-F725E90B2A-L002725](../../tests/test_web_agent.py#L2725) | 2725 | `"        yield RedirectResponse()"` | — |
 | [SRC-F725E90B2A-L002726](../../tests/test_web_agent.py#L2726) | 2726 | `""` | — |
 | [SRC-F725E90B2A-L002727](../../tests/test_web_agent.py#L2727) | 2727 | `"    class FakeClient:"` | — |
@@ -816,3 +807,12 @@
 | [SRC-F725E90B2A-L003513](../../tests/test_web_agent.py#L3513) | 3513 | `"            \"social_direct_results\": 0,"` | — |
 | [SRC-F725E90B2A-L003514](../../tests/test_web_agent.py#L3514) | 3514 | `"            \"expansion_queries\": [],"` | — |
 | [SRC-F725E90B2A-L003515](../../tests/test_web_agent.py#L3515) | 3515 | `"            \"provider_diagnostics\": [],"` | — |
+| [SRC-F725E90B2A-L003516](../../tests/test_web_agent.py#L3516) | 3516 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 1}],"` | — |
+| [SRC-F725E90B2A-L003517](../../tests/test_web_agent.py#L3517) | 3517 | `"        }"` | — |
+| [SRC-F725E90B2A-L003518](../../tests/test_web_agent.py#L3518) | 3518 | `""` | — |
+| [SRC-F725E90B2A-L003519](../../tests/test_web_agent.py#L3519) | 3519 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda *args, **kwargs: dict(plan))"` | — |
+| [SRC-F725E90B2A-L003520](../../tests/test_web_agent.py#L3520) | 3520 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L003521](../../tests/test_web_agent.py#L3521) | 3521 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-F725E90B2A-L003522](../../tests/test_web_agent.py#L3522) | 3522 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003523](../../tests/test_web_agent.py#L3523) | 3523 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003524](../../tests/test_web_agent.py#L3524) | 3524 | `"        \"_generate\","` | — |

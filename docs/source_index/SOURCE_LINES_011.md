@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001604 إلى SRC-1AE03B9EC3-L002403
+- النطاق: SRC-1AE03B9EC3-L001612 إلى SRC-1AE03B9EC3-L002411
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,14 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L001604](../../agents/web_agent.py#L1604) | 1604 | `"            if key not in unique or len(str(item.get(\"snippet\") or \"\")) > len(str(unique[key].get(\"snippet\") or \"\")):"` | — |
-| [SRC-1AE03B9EC3-L001605](../../agents/web_agent.py#L1605) | 1605 | `"                unique[key] = item"` | — |
-| [SRC-1AE03B9EC3-L001606](../../agents/web_agent.py#L1606) | 1606 | `"        if not unique:"` | — |
-| [SRC-1AE03B9EC3-L001607](../../agents/web_agent.py#L1607) | 1607 | `"            raise RuntimeError(\"لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.\")"` | — |
-| [SRC-1AE03B9EC3-L001608](../../agents/web_agent.py#L1608) | 1608 | `"        return list(unique.values())"` | — |
-| [SRC-1AE03B9EC3-L001609](../../agents/web_agent.py#L1609) | 1609 | `""` | — |
-| [SRC-1AE03B9EC3-L001610](../../agents/web_agent.py#L1610) | 1610 | `"    def _reserve_search_call(self) -> None:"` | — |
-| [SRC-1AE03B9EC3-L001611](../../agents/web_agent.py#L1611) | 1611 | `"        \"\"\"Reserve one outbound search/social-provider request before network I/O.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001612](../../agents/web_agent.py#L1612) | 1612 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
 | [SRC-1AE03B9EC3-L001613](../../agents/web_agent.py#L1613) | 1613 | `"        if budget is not None:"` | — |
 | [SRC-1AE03B9EC3-L001614](../../agents/web_agent.py#L1614) | 1614 | `"            budget.reserve(\"search_calls\")"` | — |
@@ -816,3 +808,11 @@
 | [SRC-1AE03B9EC3-L002401](../../agents/web_agent.py#L2401) | 2401 | `"        status = ("` | — |
 | [SRC-1AE03B9EC3-L002402](../../agents/web_agent.py#L2402) | 2402 | `"            \"no_text_extracted\" if not page_text"` | — |
 | [SRC-1AE03B9EC3-L002403](../../agents/web_agent.py#L2403) | 2403 | `"            else \"partial_extraction\" if bytes_truncated or text_truncated"` | — |
+| [SRC-1AE03B9EC3-L002404](../../agents/web_agent.py#L2404) | 2404 | `"            else \"content_extracted\""` | — |
+| [SRC-1AE03B9EC3-L002405](../../agents/web_agent.py#L2405) | 2405 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L002406](../../agents/web_agent.py#L2406) | 2406 | `"        return result(title, page_text, status)"` | — |
+| [SRC-1AE03B9EC3-L002407](../../agents/web_agent.py#L2407) | 2407 | `""` | — |
+| [SRC-1AE03B9EC3-L002408](../../agents/web_agent.py#L2408) | 2408 | `"    def _collect_sources(self, query: str) -> tuple[list[dict[str, Any]], str \| None]:"` | — |
+| [SRC-1AE03B9EC3-L002409](../../agents/web_agent.py#L2409) | 2409 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002410](../../agents/web_agent.py#L2410) | 2410 | `"            sources = self._search_web(query)"` | — |
+| [SRC-1AE03B9EC3-L002411](../../agents/web_agent.py#L2411) | 2411 | `"        except (RuntimeError, AgentDependencyError) as exc:"` | — |

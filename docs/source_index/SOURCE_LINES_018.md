@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000581 إلى SRC-26428BDA96-L000114
+- النطاق: SRC-EEF2E6447C-L000590 إلى SRC-26428BDA96-L000123
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,15 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-EEF2E6447C-L000581](../../api/omarai.py#L581) | 581 | `"                history = data.get(\"history\", [])"` | — |
-| [SRC-EEF2E6447C-L000582](../../api/omarai.py#L582) | 582 | `"                if \"mode\" not in data:"` | — |
-| [SRC-EEF2E6447C-L000583](../../api/omarai.py#L583) | 583 | `"                    return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000584](../../api/omarai.py#L584) | 584 | `"                        lambda: agent.answer(question, history)"` | — |
-| [SRC-EEF2E6447C-L000585](../../api/omarai.py#L585) | 585 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000586](../../api/omarai.py#L586) | 586 | `"                return self._run_bounded_agent_operation("` | — |
-| [SRC-EEF2E6447C-L000587](../../api/omarai.py#L587) | 587 | `"                    lambda: agent.answer(question, history, data.get(\"mode\"))"` | — |
-| [SRC-EEF2E6447C-L000588](../../api/omarai.py#L588) | 588 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000589](../../api/omarai.py#L589) | 589 | `""` | — |
 | [SRC-EEF2E6447C-L000590](../../api/omarai.py#L590) | 590 | `"            if path == \"/api/ask\":"` | — |
 | [SRC-EEF2E6447C-L000591](../../api/omarai.py#L591) | 591 | `"                question = data.get(\"question\", \"\")"` | — |
 | [SRC-EEF2E6447C-L000592](../../api/omarai.py#L592) | 592 | `"                if not isinstance(question, str) or not question.strip():"` | — |
@@ -879,3 +870,12 @@
 | [SRC-26428BDA96-L000112](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L112) | 112 | `"### A-05 — تهيئة Origin خلف الوكيل العكسي تحتاج تأكيدًا تشغيليًا"` | — |
 | [SRC-26428BDA96-L000113](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L113) | 113 | `"**النتيجة:** مشروطة بإعداد الاستضافة الفعلي."` | — |
 | [SRC-26428BDA96-L000114](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L114) | 114 | `""` | — |
+| [SRC-26428BDA96-L000115](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L115) | 115 | `"في وضع النشر العام، يضيف _allowed_origins أصولًا مشتقة من Host وX-Forwarded-Host وX-Forwarded-Proto في الطلب الوارد. ويمكن أن يكون هذا مقبولًا إذا كان الوكيل العكسي الموثوق يحذف رؤوس العميل ويعيد كتابتها بشكل صحيح؛ أما الاعتماد على رؤوس قابلة للتلاعب مباشرة دون إثبات هذا الشرط في بيئة النشر فلا يكفي. كما يعتمد rate limiting على عنوان اتصال الخادم افتراضيًا، ولا يقرأ X-Forwarded-For إلا عند تفعيل OMARAI_TRUST_PROXY_HEADERS=1؛ يجب التأكد أن الإعداد في البيئة الحقيقية لا يجعل كل العملاء خلف الوكيل يشاركون bucket واحدًا أو يجعل الترويسات القابلة للانتحال أساسًا للحدود."` | — |
+| [SRC-26428BDA96-L000116](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L116) | 116 | `""` | — |
+| [SRC-26428BDA96-L000117](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L117) | 117 | `"**المطلوب:** ضبط OMARAI_ALLOWED_ORIGINS صراحةً للنطاق الموثوق، والتحقق من سلوك proxy headers في الاستضافة الفعلية، واختبار الطلبات من أصول غير مسموحة ومن ترويسات مزورة."` | — |
+| [SRC-26428BDA96-L000118](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L118) | 118 | `""` | — |
+| [SRC-26428BDA96-L000119](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L119) | 119 | `"### A-06 — رمز Bearer مشترك محفوظ في localStorage"` | — |
+| [SRC-26428BDA96-L000120](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L120) | 120 | `"**النتيجة:** تصميم مقبول لتجربة خاصة بسيطة، لكنه يوسّع أثر أي XSS ولا يقدم هوية أو صلاحيات فردية."` | — |
+| [SRC-26428BDA96-L000121](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L121) | 121 | `""` | — |
+| [SRC-26428BDA96-L000122](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L122) | 122 | `"تعالج الواجهات قدرًا كبيرًا من نصوص المستخدم والمصادر عبر escaping، وتتحقق من أن رابط المصدر HTTP(S) ولا يحتوي بيانات مصادقة. لكن صفحة الوكيل وصفحة العملاء تحفظان رمز التطبيق في localStorage؛ الرمز المشترك يعني أن أي سكربت خبيث ينجح في سياق الصفحة يمكنه نظريًا قراءته واستخدام الصلاحيات نفسها. لا توجد جلسات لكل مستخدم أو صلاحيات سجل أو انتهاء صلاحية مدمجة في الرمز."` | — |
+| [SRC-26428BDA96-L000123](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L123) | 123 | `""` | — |
