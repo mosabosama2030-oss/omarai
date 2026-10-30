@@ -4714,12 +4714,13 @@ class WebAgent:
         # A small deterministic preflight catches requests whose required subject
         # or source is absent before the planner or search connectors are invoked.
         # This is intentionally limited to hard missing inputs, not optional details.
-        preflight_task_spec = build_task_spec(
+        preflight_pipeline = build_research_pipeline(
             working_question,
             mode=clean_mode,
             intent_route=intent_route,
             dialogue_context=context_override,
         )
+        preflight_task_spec = preflight_pipeline["task_spec"]
         missing_inputs = set(preflight_task_spec.get("missing_required_inputs") or [])
         actionable_missing_inputs = missing_inputs & {
             "official_destination_target_entity",
@@ -5039,6 +5040,7 @@ class WebAgent:
             mode=clean_mode,
             intent_route=intent_route,
             dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
+            task_spec=preflight_task_spec,
             compact_fn=compact_search_query,
         )
         task_spec = pipeline["task_spec"]
