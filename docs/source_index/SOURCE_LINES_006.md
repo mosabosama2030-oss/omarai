@@ -513,7 +513,7 @@
 | [SRC-60066C6786-L000169](../../agents/research_pipeline.py#L169) | 169 | `"        \"evidence\": evidence,"` | — |
 | [SRC-60066C6786-L000170](../../agents/research_pipeline.py#L170) | 170 | `"        \"evidence_ledger\": evidence[\"lexical_ledger\"],"` | — |
 | [SRC-60066C6786-L000171](../../agents/research_pipeline.py#L171) | 171 | `"        \"stages\": {"` | — |
-| [SRC-60066C6786-L000172](../../agents/research_pipeline.py#L172) | 172 | `"            \"context_resolution\": \"completed\" if history else \"not_needed\","` | — |
+| [SRC-60066C6786-L000172](../../agents/research_pipeline.py#L172) | 172 | `"            \"context_resolution\": \"completed\" if history or dialogue_context else \"not_needed\","` | — |
 | [SRC-60066C6786-L000173](../../agents/research_pipeline.py#L173) | 173 | `"            \"intent_routing\": \"completed\","` | — |
 | [SRC-60066C6786-L000174](../../agents/research_pipeline.py#L174) | 174 | `"            \"task_understanding\": \"completed\","` | — |
 | [SRC-60066C6786-L000175](../../agents/research_pipeline.py#L175) | 175 | `"            \"aspect_extraction\": \"completed\","` | — |

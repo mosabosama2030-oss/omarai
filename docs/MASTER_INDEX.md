@@ -47,7 +47,7 @@
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 11879 | 296 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
-| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 7092 | 181 | جرد الملف + AST Python |
+| FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 7112 | 181 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
