@@ -132,3 +132,16 @@ def test_pipeline_preserves_planner_depth_and_freshness_metadata():
 
     assert result["task_spec"]["planner_depth"] == "deep"
     assert result["task_spec"]["planner_freshness"] == "current"
+
+
+def test_pipeline_blocks_official_site_search_when_target_entity_is_missing():
+    result = build_research_pipeline(
+        "هات الموقع الرسمي",
+        {"queries": ["الموقع الرسمي"]},
+        intent_route="WEB_SIMPLE",
+    )
+
+    assert result["task_spec"]["requires_clarification"] is True
+    assert result["intent"]["needs_clarification"] is True
+    assert result["queries"] == []
+    assert result["stages"]["query_planning"] == "blocked_pending_clarification"
