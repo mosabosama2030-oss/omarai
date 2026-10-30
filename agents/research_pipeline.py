@@ -41,6 +41,18 @@ def _clean_aspects(task_spec: dict[str, Any], question: str) -> list[str]:
     return aspects
 
 
+
+def _has_resolved_dialogue_context(dialogue_context: dict[str, Any] | None) -> bool:
+    if not isinstance(dialogue_context, dict):
+        return False
+    resolved_question = dialogue_context.get("resolved_question")
+    return bool(
+        isinstance(resolved_question, str) and resolved_question.strip()
+    ) or dialogue_context.get("topic_shift") is True or dialogue_context.get(
+        "needs_clarification"
+    ) is True
+
+
 def evaluate_research_evidence(
     aspects: list[str],
     sources: list[dict[str, Any]] | None,
@@ -130,8 +142,12 @@ def build_research_pipeline(
     )
     supplied_route = intent_route if isinstance(intent_route, str) else ""
     intent = (
-        {"route": supplied_route, "reason": "upstream_route", "context_available": bool(history),
-         "needs_clarification": supplied_route == "CLARIFY"}
+        {
+            "route": supplied_route,
+            "reason": "upstream_route",
+            "context_available": bool(history) or _has_resolved_dialogue_context(dialogue_context),
+            "needs_clarification": supplied_route == "CLARIFY",
+        }
         if supplied_route in ROUTES
         else route_intent(contextual_question, history, mode=mode)
     )
@@ -181,18 +197,7 @@ def build_research_pipeline(
         "stages": {
             "context_resolution": (
                 "completed"
-                if history
-                or (
-                    isinstance(dialogue_context, dict)
-                    and (
-                        bool(
-                            isinstance(dialogue_context.get("resolved_question"), str)
-                            and dialogue_context["resolved_question"].strip()
-                        )
-                        or dialogue_context.get("topic_shift") is True
-                        or dialogue_context.get("needs_clarification") is True
-                    )
-                )
+                if history or _has_resolved_dialogue_context(dialogue_context)
                 else "not_needed"
             ),
             "intent_routing": "completed",
