@@ -169,7 +169,22 @@ def build_research_pipeline(
         "evidence": evidence,
         "evidence_ledger": evidence["lexical_ledger"],
         "stages": {
-            "context_resolution": "completed" if history or dialogue_context else "not_needed",
+            "context_resolution": (
+                "completed"
+                if history
+                or (
+                    isinstance(dialogue_context, dict)
+                    and (
+                        bool(
+                            isinstance(dialogue_context.get("resolved_question"), str)
+                            and dialogue_context["resolved_question"].strip()
+                        )
+                        or dialogue_context.get("topic_shift") is True
+                        or dialogue_context.get("needs_clarification") is True
+                    )
+                )
+                else "not_needed"
+            ),
             "intent_routing": "completed",
             "task_understanding": "completed",
             "aspect_extraction": "completed",
