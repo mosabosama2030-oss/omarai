@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AAA21D04E8-L000251 إلى SRC-4397BC2CD2-L000228
+- النطاق: SRC-AAA21D04E8-L000251 إلى SRC-4397BC2CD2-L000193
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -114,6 +114,41 @@
 | [SRC-AAA21D04E8-L000346](../../tests/test_generation_capabilities.py#L346) | 346 | `"    ]"` | — |
 | [SRC-AAA21D04E8-L000347](../../tests/test_generation_capabilities.py#L347) | 347 | `"    assert [row[\"http_status_code\"] for row in agent.generation_diagnostics] == [429, 429]"` | — |
 | [SRC-AAA21D04E8-L000348](../../tests/test_generation_capabilities.py#L348) | 348 | `"    assert \"private provider detail\" not in repr(agent.generation_diagnostics)"` | — |
+| [SRC-AAA21D04E8-L000349](../../tests/test_generation_capabilities.py#L349) | 349 | `""` | — |
+| [SRC-AAA21D04E8-L000350](../../tests/test_generation_capabilities.py#L350) | 350 | `""` | — |
+| [SRC-AAA21D04E8-L000351](../../tests/test_generation_capabilities.py#L351) | 351 | `"@pytest.mark.parametrize(\"status_code\", [401, 403])"` | — |
+| [SRC-AAA21D04E8-L000352](../../tests/test_generation_capabilities.py#L352) | 352 | `"def test_model_auth_http_errors_are_classified_and_fallback_is_bounded("` | — |
+| [SRC-AAA21D04E8-L000353](../../tests/test_generation_capabilities.py#L353) | 353 | `"    monkeypatch, status_code"` | — |
+| [SRC-AAA21D04E8-L000354](../../tests/test_generation_capabilities.py#L354) | 354 | `"):"` | — |
+| [SRC-AAA21D04E8-L000355](../../tests/test_generation_capabilities.py#L355) | 355 | `"    from urllib.error import HTTPError"` | — |
+| [SRC-AAA21D04E8-L000356](../../tests/test_generation_capabilities.py#L356) | 356 | `""` | — |
+| [SRC-AAA21D04E8-L000357](../../tests/test_generation_capabilities.py#L357) | 357 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000358](../../tests/test_generation_capabilities.py#L358) | 358 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-AAA21D04E8-L000359](../../tests/test_generation_capabilities.py#L359) | 359 | `"    agent.fallback_model = \"backup/model\""` | — |
+| [SRC-AAA21D04E8-L000360](../../tests/test_generation_capabilities.py#L360) | 360 | `"    calls: list[str] = []"` | — |
+| [SRC-AAA21D04E8-L000361](../../tests/test_generation_capabilities.py#L361) | 361 | `""` | — |
+| [SRC-AAA21D04E8-L000362](../../tests/test_generation_capabilities.py#L362) | 362 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-AAA21D04E8-L000363](../../tests/test_generation_capabilities.py#L363) | 363 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
+| [SRC-AAA21D04E8-L000364](../../tests/test_generation_capabilities.py#L364) | 364 | `"        calls.append(model)"` | — |
+| [SRC-AAA21D04E8-L000365](../../tests/test_generation_capabilities.py#L365) | 365 | `"        raise HTTPError(request.full_url, status_code, \"private auth detail\", None, None)"` | — |
+| [SRC-AAA21D04E8-L000366](../../tests/test_generation_capabilities.py#L366) | 366 | `""` | — |
+| [SRC-AAA21D04E8-L000367](../../tests/test_generation_capabilities.py#L367) | 367 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
+| [SRC-AAA21D04E8-L000368](../../tests/test_generation_capabilities.py#L368) | 368 | `"    with pytest.raises(RuntimeError, match=f\"HTTP {status_code}\"):"` | — |
+| [SRC-AAA21D04E8-L000369](../../tests/test_generation_capabilities.py#L369) | 369 | `"        agent._request_completion("` | — |
+| [SRC-AAA21D04E8-L000370](../../tests/test_generation_capabilities.py#L370) | 370 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-AAA21D04E8-L000371](../../tests/test_generation_capabilities.py#L371) | 371 | `"            model=\"primary/model\","` | — |
+| [SRC-AAA21D04E8-L000372](../../tests/test_generation_capabilities.py#L372) | 372 | `"        )"` | — |
+| [SRC-AAA21D04E8-L000373](../../tests/test_generation_capabilities.py#L373) | 373 | `""` | — |
+| [SRC-AAA21D04E8-L000374](../../tests/test_generation_capabilities.py#L374) | 374 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
+| [SRC-AAA21D04E8-L000375](../../tests/test_generation_capabilities.py#L375) | 375 | `"    assert [row[\"status\"] for row in agent.generation_diagnostics] == ["` | — |
+| [SRC-AAA21D04E8-L000376](../../tests/test_generation_capabilities.py#L376) | 376 | `"        \"unauthorized\","` | — |
+| [SRC-AAA21D04E8-L000377](../../tests/test_generation_capabilities.py#L377) | 377 | `"        \"unauthorized\","` | — |
+| [SRC-AAA21D04E8-L000378](../../tests/test_generation_capabilities.py#L378) | 378 | `"    ]"` | — |
+| [SRC-AAA21D04E8-L000379](../../tests/test_generation_capabilities.py#L379) | 379 | `"    assert [row[\"http_status_code\"] for row in agent.generation_diagnostics] == ["` | — |
+| [SRC-AAA21D04E8-L000380](../../tests/test_generation_capabilities.py#L380) | 380 | `"        status_code,"` | — |
+| [SRC-AAA21D04E8-L000381](../../tests/test_generation_capabilities.py#L381) | 381 | `"        status_code,"` | — |
+| [SRC-AAA21D04E8-L000382](../../tests/test_generation_capabilities.py#L382) | 382 | `"    ]"` | — |
+| [SRC-AAA21D04E8-L000383](../../tests/test_generation_capabilities.py#L383) | 383 | `"    assert \"private auth detail\" not in repr(agent.generation_diagnostics)"` | — |
 ## اختبارات
 
 ### FILE-1A176AD4F0 — [tests/test_hosted_smoke.py](../../tests/test_hosted_smoke.py#L1)
@@ -808,38 +843,3 @@
 | [SRC-4397BC2CD2-L000191](../../tests/test_intent_router_integration.py#L191) | 191 | `"    assert result[\"search_report\"][\"criterion_gap_research\"][\"attempted\"] is True"` | — |
 | [SRC-4397BC2CD2-L000192](../../tests/test_intent_router_integration.py#L192) | 192 | `"    assert result[\"search_report\"][\"criterion_gap_research\"][\"status\"] == \"search_completed_no_new_criterion_evidence\""` | — |
 | [SRC-4397BC2CD2-L000193](../../tests/test_intent_router_integration.py#L193) | 193 | `""` | — |
-| [SRC-4397BC2CD2-L000194](../../tests/test_intent_router_integration.py#L194) | 194 | `"def test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget(monkeypatch) -> None:"` | — |
-| [SRC-4397BC2CD2-L000195](../../tests/test_intent_router_integration.py#L195) | 195 | `"    agent = WebAgent()"` | — |
-| [SRC-4397BC2CD2-L000196](../../tests/test_intent_router_integration.py#L196) | 196 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-4397BC2CD2-L000197](../../tests/test_intent_router_integration.py#L197) | 197 | `"    seen: dict = {\"plans\": []}"` | — |
-| [SRC-4397BC2CD2-L000198](../../tests/test_intent_router_integration.py#L198) | 198 | `"    question = ("` | — |
-| [SRC-4397BC2CD2-L000199](../../tests/test_intent_router_integration.py#L199) | 199 | `"        \"قارن بين خدمات من حيث السعر، الخصوصية، الاعتمادية، الدعم، \""` | — |
-| [SRC-4397BC2CD2-L000200](../../tests/test_intent_router_integration.py#L200) | 200 | `"        \"الأمان، السرعة، الجودة، والتوفر\""` | — |
-| [SRC-4397BC2CD2-L000201](../../tests/test_intent_router_integration.py#L201) | 201 | `"    )"` | — |
-| [SRC-4397BC2CD2-L000202](../../tests/test_intent_router_integration.py#L202) | 202 | `""` | — |
-| [SRC-4397BC2CD2-L000203](../../tests/test_intent_router_integration.py#L203) | 203 | `"    def plan(_question, _history):"` | — |
-| [SRC-4397BC2CD2-L000204](../../tests/test_intent_router_integration.py#L204) | 204 | `"        return {"` | — |
-| [SRC-4397BC2CD2-L000205](../../tests/test_intent_router_integration.py#L205) | 205 | `"            \"queries\": [\"مقارنة الخدمات\"],"` | — |
-| [SRC-4397BC2CD2-L000206](../../tests/test_intent_router_integration.py#L206) | 206 | `"            \"direct_urls\": [],"` | — |
-| [SRC-4397BC2CD2-L000207](../../tests/test_intent_router_integration.py#L207) | 207 | `"            \"social_focus\": False,"` | — |
-| [SRC-4397BC2CD2-L000208](../../tests/test_intent_router_integration.py#L208) | 208 | `"            \"freshness\": \"any\","` | — |
-| [SRC-4397BC2CD2-L000209](../../tests/test_intent_router_integration.py#L209) | 209 | `"            \"depth\": \"standard\","` | — |
-| [SRC-4397BC2CD2-L000210](../../tests/test_intent_router_integration.py#L210) | 210 | `"            \"platforms\": [],"` | — |
-| [SRC-4397BC2CD2-L000211](../../tests/test_intent_router_integration.py#L211) | 211 | `"            \"planning_method\": \"test_single_query\","` | — |
-| [SRC-4397BC2CD2-L000212](../../tests/test_intent_router_integration.py#L212) | 212 | `"        }"` | — |
-| [SRC-4397BC2CD2-L000213](../../tests/test_intent_router_integration.py#L213) | 213 | `""` | — |
-| [SRC-4397BC2CD2-L000214](../../tests/test_intent_router_integration.py#L214) | 214 | `"    def collect(research_plan):"` | — |
-| [SRC-4397BC2CD2-L000215](../../tests/test_intent_router_integration.py#L215) | 215 | `"        seen[\"plans\"].append(dict(research_plan))"` | — |
-| [SRC-4397BC2CD2-L000216](../../tests/test_intent_router_integration.py#L216) | 216 | `"        sources = ["` | — |
-| [SRC-4397BC2CD2-L000217](../../tests/test_intent_router_integration.py#L217) | 217 | `"            _evidence(\"example.com\", research_plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000218](../../tests/test_intent_router_integration.py#L218) | 218 | `"            _evidence(\"example.net\", research_plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000219](../../tests/test_intent_router_integration.py#L219) | 219 | `"        ]"` | — |
-| [SRC-4397BC2CD2-L000220](../../tests/test_intent_router_integration.py#L220) | 220 | `"        return sources, [], _report(research_plan, sources)"` | — |
-| [SRC-4397BC2CD2-L000221](../../tests/test_intent_router_integration.py#L221) | 221 | `""` | — |
-| [SRC-4397BC2CD2-L000222](../../tests/test_intent_router_integration.py#L222) | 222 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
-| [SRC-4397BC2CD2-L000223](../../tests/test_intent_router_integration.py#L223) | 223 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-4397BC2CD2-L000224](../../tests/test_intent_router_integration.py#L224) | 224 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
-| [SRC-4397BC2CD2-L000225](../../tests/test_intent_router_integration.py#L225) | 225 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"مقارنة أولية [المصدر 1].\")"` | — |
-| [SRC-4397BC2CD2-L000226](../../tests/test_intent_router_integration.py#L226) | 226 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
-| [SRC-4397BC2CD2-L000227](../../tests/test_intent_router_integration.py#L227) | 227 | `"    monkeypatch.setattr(agent, \"_repair_answer_coverage\", lambda _q, answer, _s, _m: answer)"` | — |
-| [SRC-4397BC2CD2-L000228](../../tests/test_intent_router_integration.py#L228) | 228 | `""` | — |

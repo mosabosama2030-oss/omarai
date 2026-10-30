@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **112**
 - ملفات Python المحللة: **68**
-- تعريفات Python المفهرسة: **1488**
+- تعريفات Python المفهرسة: **1490**
 - تعريفات Python موثقة بوجود Docstring: **251**
-- تعريفات Python بلا Docstring: **935**
+- تعريفات Python بلا Docstring: **937**
 - تعريفات لا ينطبق عليها Docstring: **302**
 - الرموز الساكنة الإضافية: **1844**
-- الأسطر النصية المفهرسة حرفيًا: **39180**
+- الأسطر النصية المفهرسة حرفيًا: **39215**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -118,7 +118,7 @@
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23466 | 616 | جرد الملف + AST Python |
-| FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 13178 | 348 | جرد الملف + AST Python |
+| FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 14397 | 383 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
@@ -1131,6 +1131,8 @@
 | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L300) | دالة | test_model_http_429_is_classified_and_bounded_fallback_can_recover.fake_urlopen | لا توجد Docstring. | ناقص | 300 | [SRC-AAA21D04E8-L000300](../tests/test_generation_capabilities.py#L300) |
 | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L322) | دالة | test_model_http_429_from_all_models_is_bounded_and_does_not_leak_provider_body | لا توجد Docstring. | ناقص | 322 | [SRC-AAA21D04E8-L000322](../tests/test_generation_capabilities.py#L322) |
 | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L330) | دالة | test_model_http_429_from_all_models_is_bounded_and_does_not_leak_provider_body.fake_urlopen | لا توجد Docstring. | ناقص | 330 | [SRC-AAA21D04E8-L000330](../tests/test_generation_capabilities.py#L330) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L352) | دالة | test_model_auth_http_errors_are_classified_and_fallback_is_bounded | لا توجد Docstring. | ناقص | 352 | [SRC-AAA21D04E8-L000352](../tests/test_generation_capabilities.py#L352) |
+| [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L362) | دالة | test_model_auth_http_errors_are_classified_and_fallback_is_bounded.fake_urlopen | لا توجد Docstring. | ناقص | 362 | [SRC-AAA21D04E8-L000362](../tests/test_generation_capabilities.py#L362) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L13) | متغير/ثابت Python | TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-1A176AD4F0-L000013](../tests/test_hosted_smoke.py#L13) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L16) | كلاس | Handler | لا توجد Docstring. | ناقص | 16 | [SRC-1A176AD4F0-L000016](../tests/test_hosted_smoke.py#L16) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L17) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 17 | [SRC-1A176AD4F0-L000017](../tests/test_hosted_smoke.py#L17) |
