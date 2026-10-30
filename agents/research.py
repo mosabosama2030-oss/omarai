@@ -371,23 +371,23 @@ def _attach_task_understanding(
 ) -> dict[str, Any]:
     """Attach deterministic task interpretation and a bounded strategy matrix."""
     result = dict(plan)
-    spec = build_task_spec(
+    from agents.research_pipeline import build_research_pipeline
+
+    pipeline = build_research_pipeline(
         question,
+        result,
         mode=mode,
         intent_route=intent_route,
-        plan=result,
-    )
-    matrix = build_query_strategy_matrix(
-        question,
-        spec,
-        result.get("queries", []),
-        limit=MAX_PLAN_QUERIES,
         compact_fn=compact_search_query,
     )
-    # This layer records strategies but does not mutate executable queries.
-    # The request runner applies them only after it knows the selected mode and budget.
-    result["task_spec"] = spec
-    result["query_strategy_matrix"] = matrix
+    # Planning remains declarative here; the request runner enforces its own
+    # selected-mode and budget limits before executing the bounded query matrix.
+    result["task_spec"] = pipeline["task_spec"]
+    result["query_strategy_matrix"] = pipeline["query_strategy_matrix"]
+    result["research_pipeline"] = {
+        "aspects": pipeline["aspects"],
+        "stages": pipeline["stages"],
+    }
     return result
 
 
