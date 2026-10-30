@@ -116,6 +116,11 @@ _GENERIC_QUERY_MODIFIER_TOKENS = frozenset({
     "study", "studies", "analysis", "latest", "news", "update", "updates",
     "announcement", "announcements", "comprehensive", "research", "statistic",
     "statistics", "trend", "trends",
+    # Navigation/format words are request modifiers, not topical evidence.
+    "website", "websites", "site", "sites", "homepage", "homepages", "portal", "portals",
+    "link", "links", "url", "urls", "direct", "officially",
+    "موقع", "الموقع", "مواقع", "رابط", "الرابط", "رابطه", "الرابطه",
+    "مباشر", "مباشره", "المباشر", "المباشره", "رسمي", "الرسمي", "رسميه", "الرسميه",
 })
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
@@ -286,7 +291,7 @@ def _arabic_query_token_forms(token: str) -> set[str]:
 
 
 def _minimum_relevance_ratio(_query: str) -> float:
-    """Keep the established 20% relevance floor after query normalization and token cleanup."""
+    """Keep the score floor; multi-concept checks enforce topical overlap separately."""
     return 0.20
 
 
@@ -322,9 +327,9 @@ def _relevance_ratio(query: str, evidence: str) -> float:
 
     matched = sum(1 for token in query_tokens if concept_found(token))
     ratio = matched / len(query_tokens)
-    # On longer questions, two matching topic concepts are required; request wording
-    # should not silently raise that floor to three or four concepts.
-    if len(query_tokens) >= 4 and matched < 2:
+    # A multi-concept query must match at least two topic concepts. One generic
+    # or incidental word is not enough to make a candidate relevant.
+    if len(query_tokens) >= 3 and matched < 2:
         return 0.0
     return ratio
 
@@ -3063,6 +3068,7 @@ class WebAgent:
         error_class: str | None = None,
         request_started: bool = True,
         remote_response_received: bool | None = None,
+        http_status_code: int | None = None,
     ) -> None:
         """Store bounded metadata for each model attempt; never retain prompts or output."""
         self._generation_attempt_sequence = getattr(self, "_generation_attempt_sequence", 0) + 1
@@ -3083,6 +3089,12 @@ class WebAgent:
             record["finish_reason"] = finish_reason.strip()[:48]
         if isinstance(error_class, str) and error_class:
             record["error_class"] = error_class[:80]
+        if (
+            isinstance(http_status_code, int)
+            and not isinstance(http_status_code, bool)
+            and 100 <= http_status_code <= 599
+        ):
+            record["http_status_code"] = http_status_code
         self.generation_diagnostics.append(record)
         self.generation_diagnostics = self.generation_diagnostics[-12:]
 
@@ -3265,10 +3277,15 @@ class WebAgent:
                 return answer.strip()
             except urllib.error.HTTPError as exc:
                 # Never echo provider response bodies: they may contain private diagnostics.
+                status = (
+                    "rate_limited" if exc.code == 429
+                    else "unauthorized" if exc.code in {401, 403}
+                    else "provider_http_error"
+                )
                 self._record_generation_diagnostic(
-                    requested_model, candidate_model, "provider_http_error",
+                    requested_model, candidate_model, status,
                     error_class="HTTPError", request_started=True,
-                    remote_response_received=True,
+                    remote_response_received=True, http_status_code=exc.code,
                 )
                 last_error = RuntimeError(
                     f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد."
