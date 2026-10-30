@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000662 إلى SRC-90FAA34ADE-L000344
+- النطاق: SRC-4FFD5AFC54-L000653 إلى SRC-90FAA34ADE-L000335
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000653](../../scripts/run_answer_quality_benchmark.py#L653) | 653 | `"        \"expected_build_sha\": expected_build_sha or None,"` | — |
+| [SRC-4FFD5AFC54-L000654](../../scripts/run_answer_quality_benchmark.py#L654) | 654 | `"        \"executed_at_utc\": _utc_now(),"` | — |
+| [SRC-4FFD5AFC54-L000655](../../scripts/run_answer_quality_benchmark.py#L655) | 655 | `"        \"case_count\": len(results),"` | — |
+| [SRC-4FFD5AFC54-L000656](../../scripts/run_answer_quality_benchmark.py#L656) | 656 | `"        \"results\": results,"` | — |
+| [SRC-4FFD5AFC54-L000657](../../scripts/run_answer_quality_benchmark.py#L657) | 657 | `"        \"disclaimer\": ("` | — |
+| [SRC-4FFD5AFC54-L000658](../../scripts/run_answer_quality_benchmark.py#L658) | 658 | `"            \"status=NOT_TESTED means answer quality was not auto-graded. \""` | — |
+| [SRC-4FFD5AFC54-L000659](../../scripts/run_answer_quality_benchmark.py#L659) | 659 | `"            \"Fixtures in JSON were not applied to the live server.\""` | — |
+| [SRC-4FFD5AFC54-L000660](../../scripts/run_answer_quality_benchmark.py#L660) | 660 | `"        ),"` | — |
+| [SRC-4FFD5AFC54-L000661](../../scripts/run_answer_quality_benchmark.py#L661) | 661 | `"    }"` | — |
 | [SRC-4FFD5AFC54-L000662](../../scripts/run_answer_quality_benchmark.py#L662) | 662 | `"    text = json.dumps(envelope, ensure_ascii=False, indent=2)"` | — |
 | [SRC-4FFD5AFC54-L000663](../../scripts/run_answer_quality_benchmark.py#L663) | 663 | `"    if out_path:"` | — |
 | [SRC-4FFD5AFC54-L000664](../../scripts/run_answer_quality_benchmark.py#L664) | 664 | `"        out_path.write_text(text + \"\\n\", encoding=\"utf-8\")"` | — |
@@ -834,12 +843,3 @@
 | [SRC-90FAA34ADE-L000333](../../tests/fixtures/answer_quality_cases.json#L333) | 333 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000334](../../tests/fixtures/answer_quality_cases.json#L334) | 334 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000335](../../tests/fixtures/answer_quality_cases.json#L335) | 335 | `"        \"Handles mixed Arabic-English place names\","` | — |
-| [SRC-90FAA34ADE-L000336](../../tests/fixtures/answer_quality_cases.json#L336) | 336 | `"        \"Gives directional guidance with sources or clear uncertainty\""` | — |
-| [SRC-90FAA34ADE-L000337](../../tests/fixtures/answer_quality_cases.json#L337) | 337 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000338](../../tests/fixtures/answer_quality_cases.json#L338) | 338 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000339](../../tests/fixtures/answer_quality_cases.json#L339) | 339 | `"        \"Ignores English tokens\""` | — |
-| [SRC-90FAA34ADE-L000340](../../tests/fixtures/answer_quality_cases.json#L340) | 340 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000341](../../tests/fixtures/answer_quality_cases.json#L341) | 341 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000342](../../tests/fixtures/answer_quality_cases.json#L342) | 342 | `"        \"type\": \"controlled_search\""` | — |
-| [SRC-90FAA34ADE-L000343](../../tests/fixtures/answer_quality_cases.json#L343) | 343 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000344](../../tests/fixtures/answer_quality_cases.json#L344) | 344 | `"      \"failure_conditions\": ["` | — |

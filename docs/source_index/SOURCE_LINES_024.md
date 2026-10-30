@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000361 إلى SRC-9A0DFA994E-L000051
+- النطاق: SRC-D17CE3D12F-L000352 إلى SRC-9A0DFA994E-L000042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000352](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L352) | 352 | `""` | — |
+| [SRC-D17CE3D12F-L000353](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L353) | 353 | `"1. SHOULD وضع ميزانية أداء للواجهة باستخدام مقاييس واقعية مثل Core Web Vitals عندما تنطبق."` | — |
+| [SRC-D17CE3D12F-L000354](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L354) | 354 | `"2. MUST إظهار حالة الطلب بوضوح عند التنفيذ الطويل: جاري البحث، جُمعت المصادر، تعطل مصدر، أو انتهى الطلب."` | — |
+| [SRC-D17CE3D12F-L000355](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L355) | 355 | `"3. SHOULD دعم إلغاء الطلب أو إعادة المحاولة دون تكرار إجراءات ضارة."` | — |
+| [SRC-D17CE3D12F-L000356](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L356) | 356 | `"4. MUST ألا يفقد المستخدم نصًا كتبه بسبب فشل شبكة غير متوقع دون توضيح أو وسيلة استعادة مناسبة."` | — |
+| [SRC-D17CE3D12F-L000357](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L357) | 357 | `"5. MUST التعامل مع الشبكات الضعيفة والأخطاء المؤقتة دون loops إعادة تحميل أو طلبات متكررة غير محدودة."` | — |
+| [SRC-D17CE3D12F-L000358](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L358) | 358 | `"6. SHOULD إظهار حالة جزئية صادقة إن كانت مفيدة، وفصلها عن النجاح الكامل."` | — |
+| [SRC-D17CE3D12F-L000359](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L359) | 359 | `"7. MUST عدم إظهار مصادر أو بيانات تجريبية وكأنها نتائج حقيقية في وضع الإنتاج."` | — |
+| [SRC-D17CE3D12F-L000360](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L360) | 360 | `"8. SHOULD الحفاظ على قابلية استخدام الواجهة عند غياب JavaScript أو تعطل مكوّن بصري إذا كانت طبيعة المنتج تسمح."` | — |
 | [SRC-D17CE3D12F-L000361](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L361) | 361 | `""` | — |
 | [SRC-D17CE3D12F-L000362](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L362) | 362 | `"---"` | — |
 | [SRC-D17CE3D12F-L000363](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L363) | 363 | `""` | — |
@@ -825,12 +834,3 @@
 | [SRC-9A0DFA994E-L000040](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L40) | 40 | `"- تمييز منشور تجربة شخصية محتملة عن ترويج تجاري؛"` | — |
 | [SRC-9A0DFA994E-L000041](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L41) | 41 | `"- الامتناع عن تحويل عينة صغيرة إلى حكم عام على كل الملاك."` | — |
 | [SRC-9A0DFA994E-L000042](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L42) | 42 | `""` | — |
-| [SRC-9A0DFA994E-L000043](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L43) | 43 | `"هذه القيود مستقلة في المواصفة، وتُضاف متطلبات البحث الحديثة والاجتماعية والمقارنة معًا عند انطباقها. وينطبق النمط نفسه على المجالات الأخرى: المقارنة قد تحتاج بحثًا متعدد المعايير، والصحة تميّز المعلومات العامة من التشخيص الشخصي، والقانون يحتفظ بالاختصاص وتاريخ النفاذ، والبرمجة تفصل الخطأ المرصود عن فرضيات السبب، وتحليل البيانات يحافظ على تعريف المقياس ودرجة جودة البيانات. أما طلب «الموقع الرسمي» فهو بحث عن وجهة وليس بحثًا عن خبر حديث، حتى عند اختيار واجهة Latest؛ لا يثبت امتداد النطاق وحده ملكية الجهة."` | — |
-| [SRC-9A0DFA994E-L000044](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L44) | 44 | `""` | — |
-| [SRC-9A0DFA994E-L000045](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L45) | 45 | `"## مصفوفة استراتيجية البحث"` | — |
-| [SRC-9A0DFA994E-L000046](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L46) | 46 | `""` | — |
-| [SRC-9A0DFA994E-L000047](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L47) | 47 | ``"تسجل `build_query_strategy_matrix` الاستعلامات المخططة مع وسم الاستراتيجية والسبب. ويمكن أن تتضمن:"`` | — |
-| [SRC-9A0DFA994E-L000048](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L48) | 48 | `""` | — |
-| [SRC-9A0DFA994E-L000049](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L49) | 49 | `"- استعلام الموضوع الأساسي؛"` | — |
-| [SRC-9A0DFA994E-L000050](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L50) | 50 | `"- استعلامًا لكل معيار مقارنة صريح؛"` | — |
-| [SRC-9A0DFA994E-L000051](../OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L51) | 51 | `"- بحثًا عن مصدر أولي أو دليل فني؛"` | — |

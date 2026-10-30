@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000345 إلى SRC-90FAA34ADE-L001144
+- النطاق: SRC-90FAA34ADE-L000336 إلى SRC-90FAA34ADE-L001135
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000336](../../tests/fixtures/answer_quality_cases.json#L336) | 336 | `"        \"Gives directional guidance with sources or clear uncertainty\""` | — |
+| [SRC-90FAA34ADE-L000337](../../tests/fixtures/answer_quality_cases.json#L337) | 337 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000338](../../tests/fixtures/answer_quality_cases.json#L338) | 338 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000339](../../tests/fixtures/answer_quality_cases.json#L339) | 339 | `"        \"Ignores English tokens\""` | — |
+| [SRC-90FAA34ADE-L000340](../../tests/fixtures/answer_quality_cases.json#L340) | 340 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000341](../../tests/fixtures/answer_quality_cases.json#L341) | 341 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000342](../../tests/fixtures/answer_quality_cases.json#L342) | 342 | `"        \"type\": \"controlled_search\""` | — |
+| [SRC-90FAA34ADE-L000343](../../tests/fixtures/answer_quality_cases.json#L343) | 343 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000344](../../tests/fixtures/answer_quality_cases.json#L344) | 344 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000345](../../tests/fixtures/answer_quality_cases.json#L345) | 345 | `"        \"Treats Roxy/New Cairo as unknown solely due to script mix\""` | — |
 | [SRC-90FAA34ADE-L000346](../../tests/fixtures/answer_quality_cases.json#L346) | 346 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000347](../../tests/fixtures/answer_quality_cases.json#L347) | 347 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
@@ -807,12 +816,3 @@
 | [SRC-90FAA34ADE-L001133](../../tests/fixtures/answer_quality_cases.json#L1133) | 1133 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001134](../../tests/fixtures/answer_quality_cases.json#L1134) | 1134 | `"        \"ينشئ رابطًا رسميًا مفبركًا\","` | — |
 | [SRC-90FAA34ADE-L001135](../../tests/fixtures/answer_quality_cases.json#L1135) | 1135 | `"        \"يؤكد وجود إعلان لمجرد ورود اسمه في السؤال\""` | — |
-| [SRC-90FAA34ADE-L001136](../../tests/fixtures/answer_quality_cases.json#L1136) | 1136 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001137](../../tests/fixtures/answer_quality_cases.json#L1137) | 1137 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001138](../../tests/fixtures/answer_quality_cases.json#L1138) | 1138 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L001139](../../tests/fixtures/answer_quality_cases.json#L1139) | 1139 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L001140](../../tests/fixtures/answer_quality_cases.json#L1140) | 1140 | `"        \"providers\": ["` | — |
-| [SRC-90FAA34ADE-L001141](../../tests/fixtures/answer_quality_cases.json#L1141) | 1141 | `"          \"fixture_search\""` | — |
-| [SRC-90FAA34ADE-L001142](../../tests/fixtures/answer_quality_cases.json#L1142) | 1142 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L001143](../../tests/fixtures/answer_quality_cases.json#L1143) | 1143 | `"        \"notes\": \"نتائج فارغة عمدًا\""` | — |
-| [SRC-90FAA34ADE-L001144](../../tests/fixtures/answer_quality_cases.json#L1144) | 1144 | `"      },"` | — |

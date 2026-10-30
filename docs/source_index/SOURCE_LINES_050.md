@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **050**
-- سجلات الأسطر: **126**
-- النطاق: SRC-DE7EABE998-L000406 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **135**
+- النطاق: SRC-DE7EABE998-L000397 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000397](../../web/agent.html#L397) | 397 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000398](../../web/agent.html#L398) | 398 | `" try{"` | — |
+| [SRC-DE7EABE998-L000399](../../web/agent.html#L399) | 399 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
+| [SRC-DE7EABE998-L000400](../../web/agent.html#L400) | 400 | `"  const data=await response.json().catch(()=>({}));"` | — |
+| [SRC-DE7EABE998-L000401](../../web/agent.html#L401) | 401 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000402](../../web/agent.html#L402) | 402 | `"  if(!response.ok){"` | — |
+| [SRC-DE7EABE998-L000403](../../web/agent.html#L403) | 403 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
+| [SRC-DE7EABE998-L000404](../../web/agent.html#L404) | 404 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
+| [SRC-DE7EABE998-L000405](../../web/agent.html#L405) | 405 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
 | [SRC-DE7EABE998-L000406](../../web/agent.html#L406) | 406 | `"  }"` | — |
 | [SRC-DE7EABE998-L000407](../../web/agent.html#L407) | 407 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
 | [SRC-DE7EABE998-L000408](../../web/agent.html#L408) | 408 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |

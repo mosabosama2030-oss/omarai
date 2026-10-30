@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001145 إلى SRC-6A7519AC10-L000158
+- النطاق: SRC-90FAA34ADE-L001136 إلى SRC-6A7519AC10-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001136](../../tests/fixtures/answer_quality_cases.json#L1136) | 1136 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001137](../../tests/fixtures/answer_quality_cases.json#L1137) | 1137 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001138](../../tests/fixtures/answer_quality_cases.json#L1138) | 1138 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001139](../../tests/fixtures/answer_quality_cases.json#L1139) | 1139 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L001140](../../tests/fixtures/answer_quality_cases.json#L1140) | 1140 | `"        \"providers\": ["` | — |
+| [SRC-90FAA34ADE-L001141](../../tests/fixtures/answer_quality_cases.json#L1141) | 1141 | `"          \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001142](../../tests/fixtures/answer_quality_cases.json#L1142) | 1142 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L001143](../../tests/fixtures/answer_quality_cases.json#L1143) | 1143 | `"        \"notes\": \"نتائج فارغة عمدًا\""` | — |
+| [SRC-90FAA34ADE-L001144](../../tests/fixtures/answer_quality_cases.json#L1144) | 1144 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001145](../../tests/fixtures/answer_quality_cases.json#L1145) | 1145 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L001146](../../tests/fixtures/answer_quality_cases.json#L1146) | 1146 | `"        \"اختلاق إعلان أو رابط\","` | — |
 | [SRC-90FAA34ADE-L001147](../../tests/fixtures/answer_quality_cases.json#L1147) | 1147 | `"        \"صياغة الادعاء كأنه متحقق\""` | — |
@@ -843,12 +852,3 @@
 | [SRC-6A7519AC10-L000147](../../tests/test_answer_quality_comparison.py#L147) | 147 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"citation_support\"][\"delta\"] == 0.5"` | — |
 | [SRC-6A7519AC10-L000148](../../tests/test_answer_quality_comparison.py#L148) | 148 | `""` | — |
 | [SRC-6A7519AC10-L000149](../../tests/test_answer_quality_comparison.py#L149) | 149 | `""` | — |
-| [SRC-6A7519AC10-L000150](../../tests/test_answer_quality_comparison.py#L150) | 150 | `"def test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance():"` | — |
-| [SRC-6A7519AC10-L000151](../../tests/test_answer_quality_comparison.py#L151) | 151 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000152](../../tests/test_answer_quality_comparison.py#L152) | 152 | `"    baseline = _run(build_sha=\"unknown\", results=[_row(\"AQ-001\", latency=100, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000153](../../tests/test_answer_quality_comparison.py#L153) | 153 | `"    candidate = _run(build_sha=\"\", results=[_row(\"AQ-001\", latency=90, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000154](../../tests/test_answer_quality_comparison.py#L154) | 154 | `"    result = mod.compare_runs(baseline, candidate)"` | — |
-| [SRC-6A7519AC10-L000155](../../tests/test_answer_quality_comparison.py#L155) | 155 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
-| [SRC-6A7519AC10-L000156](../../tests/test_answer_quality_comparison.py#L156) | 156 | `"    assert \"baseline_build_sha_missing_or_invalid\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000157](../../tests/test_answer_quality_comparison.py#L157) | 157 | `"    assert \"candidate_build_sha_missing_or_invalid\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000158](../../tests/test_answer_quality_comparison.py#L158) | 158 | `"    assert \"human_review_files_missing\" in result[\"acceptance_blockers\"]"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000433 إلى SRC-F725E90B2A-L001232
+- النطاق: SRC-F725E90B2A-L000424 إلى SRC-F725E90B2A-L001223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000424](../../tests/test_web_agent.py#L424) | 424 | `"        \"max_citable_source_index\": 1,"` | — |
+| [SRC-F725E90B2A-L000425](../../tests/test_web_agent.py#L425) | 425 | `"        \"claim_support\": \"model_review_not_independent_fact_check\","` | — |
+| [SRC-F725E90B2A-L000426](../../tests/test_web_agent.py#L426) | 426 | `"    }"` | — |
+| [SRC-F725E90B2A-L000427](../../tests/test_web_agent.py#L427) | 427 | `""` | — |
+| [SRC-F725E90B2A-L000428](../../tests/test_web_agent.py#L428) | 428 | `""` | — |
+| [SRC-F725E90B2A-L000429](../../tests/test_web_agent.py#L429) | 429 | `"def test_citation_metadata_reports_invalid_reference_repair():"` | — |
+| [SRC-F725E90B2A-L000430](../../tests/test_web_agent.py#L430) | 430 | `"    cleaned, warnings = WebAgent._remove_invalid_citations("` | — |
+| [SRC-F725E90B2A-L000431](../../tests/test_web_agent.py#L431) | 431 | `"        \"صحيح [المصدر 1] وخاطئ [المصدر 9].\", 1"` | — |
+| [SRC-F725E90B2A-L000432](../../tests/test_web_agent.py#L432) | 432 | `"    )"` | — |
 | [SRC-F725E90B2A-L000433](../../tests/test_web_agent.py#L433) | 433 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
 | [SRC-F725E90B2A-L000434](../../tests/test_web_agent.py#L434) | 434 | `"        cleaned, 1, warnings, \"not_run\""` | — |
 | [SRC-F725E90B2A-L000435](../../tests/test_web_agent.py#L435) | 435 | `"    )"` | — |
@@ -807,12 +816,3 @@
 | [SRC-F725E90B2A-L001221](../../tests/test_web_agent.py#L1221) | 1221 | `"    first[\"domain\"] = \"news.example.com\""` | — |
 | [SRC-F725E90B2A-L001222](../../tests/test_web_agent.py#L1222) | 1222 | `"    second = sample_source(1)"` | — |
 | [SRC-F725E90B2A-L001223](../../tests/test_web_agent.py#L1223) | 1223 | `"    second[\"url\"] = \"https://offers.example.com/research\""` | — |
-| [SRC-F725E90B2A-L001224](../../tests/test_web_agent.py#L1224) | 1224 | `"    second[\"domain\"] = \"offers.example.com\""` | — |
-| [SRC-F725E90B2A-L001225](../../tests/test_web_agent.py#L1225) | 1225 | `""` | — |
-| [SRC-F725E90B2A-L001226](../../tests/test_web_agent.py#L1226) | 1226 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001227](../../tests/test_web_agent.py#L1227) | 1227 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L001228](../../tests/test_web_agent.py#L1228) | 1228 | `"        \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001229](../../tests/test_web_agent.py#L1229) | 1229 | `"        lambda plan: ("` | — |
-| [SRC-F725E90B2A-L001230](../../tests/test_web_agent.py#L1230) | 1230 | `"            [first, second],"` | — |
-| [SRC-F725E90B2A-L001231](../../tests/test_web_agent.py#L1231) | 1231 | `"            [],"` | — |
-| [SRC-F725E90B2A-L001232](../../tests/test_web_agent.py#L1232) | 1232 | `"            {"` | — |

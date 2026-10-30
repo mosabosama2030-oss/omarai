@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000142 إلى SRC-E599346ABE-L000362
+- النطاق: SRC-26428BDA96-L000133 إلى SRC-E599346ABE-L000353
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000133](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L133) | 133 | `"## 5. سجل نتائج جميع متطلبات P0 (42 متطلبًا)"` | — |
+| [SRC-26428BDA96-L000134](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L134) | 134 | `""` | — |
+| [SRC-26428BDA96-L000135](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L135) | 135 | `"الحالة هنا تصف قوة الدليل على **تنفيذ المتطلب في النطاق المدقق**، وليست تصنيفًا نهائيًا لكل التطبيق. المراجع المحلية تشير إلى ملف/سطر أو اختبار يدعم النتيجة. وُسِمت البنود المشروطة صراحةً حتى لا تختلط جاهزية مشغّل واحد بجاهزية منصة متعددة المستخدمين."` | — |
+| [SRC-26428BDA96-L000136](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L136) | 136 | `""` | — |
+| [SRC-26428BDA96-L000137](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L137) | 137 | `"\| المعرف \| نتيجة التدقيق \| الدليل المرصود والحد المتبقي \|"` | — |
+| [SRC-26428BDA96-L000138](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L138) | 138 | `"\|---\|---\|---\|"` | — |
+| [SRC-26428BDA96-L000139](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L139) | 139 | `"\| GOV-001 \| INFERRED \| يعرض وكيل البحث حقولًا مثل search_outcome وresearch_quality_semantics وcitation_validation، وتوجد اختبارات لحفظ UNKNOWN عند فشل البحث؛ لكن لم تُراجع جميع مخرجات المشروع لإثبات أن كل تقرير مؤثر يستخدم حالات موحدة. انظر agents/web_agent.py: 3065–3251 و3583–3642، والاختبارات test_web_agent.py: 1739–1753 و1957–2046 و2310–2345. \|"` | — |
+| [SRC-26428BDA96-L000140](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L140) | 140 | `"\| GOV-003 \| UNKNOWN \| توجد سياسة للاستثناءات في الدستور وAGENTS.md، لكن لم يُعثر ضمن نطاق ملفات التشغيل المدققة على سجل فعلي للاستثناءات المقبولة وتواريخ انتهائها. غياب السجل من الملفات المفحوصة لا يثبت عدم وجود قرار خارجي؛ يلزم تأكيد واعتماد سجل الاستثناءات. \|"` | — |
+| [SRC-26428BDA96-L000141](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L141) | 141 | `"\| GOV-005 \| INFERRED \| سياسة عدم الدمج/النشر دون صلاحية بشرية مثبتة في AGENTS.md ووثائق الحوكمة. فُحص workflow الخاص بالاختبارات، لا إعدادات حماية الفروع أو أذونات النشر في الحساب الفعلي؛ إذن enforcement التشغيلي UNKNOWN. \|"` | — |
 | [SRC-26428BDA96-L000142](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L142) | 142 | `"\| PRD-001 \| INFERRED \| الواجهة تعرض تحذيرًا عندما لا يؤكد النظام البحث الحي، والتشخيص يفرق بين نتائج حقيقية وتعطل الموفر؛ لكن لم تجرِ مراجعة شاملة لكل ادعاءات README والواجهة مقابل كل قدرة تشغيلية. انظر web/agent.html: 204–215 وagents/web_agent.py: 2676–2896. \|"` | — |
 | [SRC-26428BDA96-L000143](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L143) | 143 | `"\| PRD-003 \| VERIFIED (نطاق جزئي) \| توجد حالات فشل/نقص دليل صريحة واختبارات تمنع ادعاء وجود عميل عند انقطاع البحث، وكذلك fallback للمقتطفات عند غياب النموذج. انظر tests/test_web_agent.py: 101–130 و1220–1268 و1957–2046 و2310–2345. لا يشمل ذلك جميع الموفرين الحقيقيين في الإنتاج. \|"` | — |
 | [SRC-26428BDA96-L000144](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L144) | 144 | `"\| API-001 \| INFERRED \| API يفرض JSON، حد 200KB، وbody كائنًا، ويفحص السؤال؛ WebAgent يقيد السؤال عند 4000 حرف، والسجل يقيد النص عند 12000. لكن التحقق النوعي الصارم من كل حقول product_terms/location_terms/platform ومدة قراءة body/نهاية الطلب ليس شاملًا. انظر api/omarai.py: 164–247 وagents/web_agent.py: 35–45 وagents/omarai.py: 51–110. \|"` | — |
@@ -861,12 +870,3 @@
 | [SRC-E599346ABE-L000351](../generate_index.py#L351) | 351 | `"        return \"واجهات API\""` | — |
 | [SRC-E599346ABE-L000352](../generate_index.py#L352) | 352 | `"    if normalized.startswith(\"cli/\"):"` | — |
 | [SRC-E599346ABE-L000353](../generate_index.py#L353) | 353 | `"        return \"واجهة سطر الأوامر\""` | — |
-| [SRC-E599346ABE-L000354](../generate_index.py#L354) | 354 | `"    if normalized.startswith(\"docs/\"):"` | — |
-| [SRC-E599346ABE-L000355](../generate_index.py#L355) | 355 | `"        return \"وثائق وفهرسة\""` | — |
-| [SRC-E599346ABE-L000356](../generate_index.py#L356) | 356 | `"    if normalized.startswith((\"web/\", \"static/\", \"templates/\")) or suffix in {"` | — |
-| [SRC-E599346ABE-L000357](../generate_index.py#L357) | 357 | `"        \".html\", \".htm\", \".css\", \".scss\", \".js\", \".mjs\", \".cjs\", \".jsx\", \".ts\", \".tsx\","` | — |
-| [SRC-E599346ABE-L000358](../generate_index.py#L358) | 358 | `"        \".vue\", \".svelte\","` | — |
-| [SRC-E599346ABE-L000359](../generate_index.py#L359) | 359 | `"    }:"` | — |
-| [SRC-E599346ABE-L000360](../generate_index.py#L360) | 360 | `"        return \"واجهة الويب\""` | — |
-| [SRC-E599346ABE-L000361](../generate_index.py#L361) | 361 | `"    if name in {"` | — |
-| [SRC-E599346ABE-L000362](../generate_index.py#L362) | 362 | `"        \"dockerfile\", \"makefile\", \"procfile\", \"pyproject.toml\","` | — |

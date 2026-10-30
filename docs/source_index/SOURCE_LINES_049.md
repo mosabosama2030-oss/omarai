@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003633 إلى SRC-DE7EABE998-L000405
+- النطاق: SRC-F725E90B2A-L003624 إلى SRC-DE7EABE998-L000396
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003624](../../tests/test_web_agent.py#L3624) | 3624 | `"    ]"` | — |
+| [SRC-F725E90B2A-L003625](../../tests/test_web_agent.py#L3625) | 3625 | `"    repair_candidate = {"` | — |
+| [SRC-F725E90B2A-L003626](../../tests/test_web_agent.py#L3626) | 3626 | `"        **sample_source(2),"` | — |
+| [SRC-F725E90B2A-L003627](../../tests/test_web_agent.py#L3627) | 3627 | `"        \"url\": \"https://example.com/unrelated-repair\","` | — |
+| [SRC-F725E90B2A-L003628](../../tests/test_web_agent.py#L3628) | 3628 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-F725E90B2A-L003629](../../tests/test_web_agent.py#L3629) | 3629 | `"        \"title\": \"معلومات عن الخدمة\","` | — |
+| [SRC-F725E90B2A-L003630](../../tests/test_web_agent.py#L3630) | 3630 | `"        \"snippet\": \"معلومات عامة عن الخدمة\","` | — |
+| [SRC-F725E90B2A-L003631](../../tests/test_web_agent.py#L3631) | 3631 | `"        \"page_text\": \"معلومات عامة عن الخدمة\","` | — |
+| [SRC-F725E90B2A-L003632](../../tests/test_web_agent.py#L3632) | 3632 | `"        \"providers\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L003633](../../tests/test_web_agent.py#L3633) | 3633 | `"    }"` | — |
 | [SRC-F725E90B2A-L003634](../../tests/test_web_agent.py#L3634) | 3634 | `"    collect_calls = []"` | — |
 | [SRC-F725E90B2A-L003635](../../tests/test_web_agent.py#L3635) | 3635 | `""` | — |
@@ -825,12 +834,3 @@
 | [SRC-DE7EABE998-L000394](../../web/agent.html#L394) | 394 | `" setStatus(\"جارٍ تنفيذ البحث عن السؤال الحالي…\",\"warn\");"` | — |
 | [SRC-DE7EABE998-L000395](../../web/agent.html#L395) | 395 | `" const pending=document.createElement(\"div\");pending.className=\"message assistant\";"` | — |
 | [SRC-DE7EABE998-L000396](../../web/agent.html#L396) | 396 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
-| [SRC-DE7EABE998-L000397](../../web/agent.html#L397) | 397 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
-| [SRC-DE7EABE998-L000398](../../web/agent.html#L398) | 398 | `" try{"` | — |
-| [SRC-DE7EABE998-L000399](../../web/agent.html#L399) | 399 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
-| [SRC-DE7EABE998-L000400](../../web/agent.html#L400) | 400 | `"  const data=await response.json().catch(()=>({}));"` | — |
-| [SRC-DE7EABE998-L000401](../../web/agent.html#L401) | 401 | `"  pending.remove();"` | — |
-| [SRC-DE7EABE998-L000402](../../web/agent.html#L402) | 402 | `"  if(!response.ok){"` | — |
-| [SRC-DE7EABE998-L000403](../../web/agent.html#L403) | 403 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
-| [SRC-DE7EABE998-L000404](../../web/agent.html#L404) | 404 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
-| [SRC-DE7EABE998-L000405](../../web/agent.html#L405) | 405 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |

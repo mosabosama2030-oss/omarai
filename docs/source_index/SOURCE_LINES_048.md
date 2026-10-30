@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002833 إلى SRC-F725E90B2A-L003632
+- النطاق: SRC-F725E90B2A-L002824 إلى SRC-F725E90B2A-L003623
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002824](../../tests/test_web_agent.py#L2824) | 2824 | `"            ],"` | — |
+| [SRC-F725E90B2A-L002825](../../tests/test_web_agent.py#L2825) | 2825 | `"            \"unique_sources\": len(sources),"` | — |
+| [SRC-F725E90B2A-L002826](../../tests/test_web_agent.py#L2826) | 2826 | `"            \"pages_fetched\": len(sources),"` | — |
+| [SRC-F725E90B2A-L002827](../../tests/test_web_agent.py#L2827) | 2827 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L002828](../../tests/test_web_agent.py#L2828) | 2828 | `"            \"platform_counts\": {\"web\": len(sources)},"` | — |
+| [SRC-F725E90B2A-L002829](../../tests/test_web_agent.py#L2829) | 2829 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L002830](../../tests/test_web_agent.py#L2830) | 2830 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-F725E90B2A-L002831](../../tests/test_web_agent.py#L2831) | 2831 | `"            \"planning_method\": \"deterministic_fallback\","` | — |
+| [SRC-F725E90B2A-L002832](../../tests/test_web_agent.py#L2832) | 2832 | `"        }"` | — |
 | [SRC-F725E90B2A-L002833](../../tests/test_web_agent.py#L2833) | 2833 | `""` | — |
 | [SRC-F725E90B2A-L002834](../../tests/test_web_agent.py#L2834) | 2834 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
 | [SRC-F725E90B2A-L002835](../../tests/test_web_agent.py#L2835) | 2835 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
@@ -807,12 +816,3 @@
 | [SRC-F725E90B2A-L003621](../../tests/test_web_agent.py#L3621) | 3621 | `"            \"platform\": \"reddit\","` | — |
 | [SRC-F725E90B2A-L003622](../../tests/test_web_agent.py#L3622) | 3622 | `"            \"providers\": [\"reddit\"],"` | — |
 | [SRC-F725E90B2A-L003623](../../tests/test_web_agent.py#L3623) | 3623 | `"        },"` | — |
-| [SRC-F725E90B2A-L003624](../../tests/test_web_agent.py#L3624) | 3624 | `"    ]"` | — |
-| [SRC-F725E90B2A-L003625](../../tests/test_web_agent.py#L3625) | 3625 | `"    repair_candidate = {"` | — |
-| [SRC-F725E90B2A-L003626](../../tests/test_web_agent.py#L3626) | 3626 | `"        **sample_source(2),"` | — |
-| [SRC-F725E90B2A-L003627](../../tests/test_web_agent.py#L3627) | 3627 | `"        \"url\": \"https://example.com/unrelated-repair\","` | — |
-| [SRC-F725E90B2A-L003628](../../tests/test_web_agent.py#L3628) | 3628 | `"        \"domain\": \"example.com\","` | — |
-| [SRC-F725E90B2A-L003629](../../tests/test_web_agent.py#L3629) | 3629 | `"        \"title\": \"معلومات عن الخدمة\","` | — |
-| [SRC-F725E90B2A-L003630](../../tests/test_web_agent.py#L3630) | 3630 | `"        \"snippet\": \"معلومات عامة عن الخدمة\","` | — |
-| [SRC-F725E90B2A-L003631](../../tests/test_web_agent.py#L3631) | 3631 | `"        \"page_text\": \"معلومات عامة عن الخدمة\","` | — |
-| [SRC-F725E90B2A-L003632](../../tests/test_web_agent.py#L3632) | 3632 | `"        \"providers\": [\"test_provider\"],"` | — |

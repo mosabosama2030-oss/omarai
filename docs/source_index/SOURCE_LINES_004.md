@@ -821,23 +821,23 @@
 | [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `") -> dict[str, Any]:"` | — |
 | [SRC-59CF4B7DE8-L000372](../../agents/research.py#L372) | 372 | `"    \"\"\"Attach deterministic task interpretation and a bounded strategy matrix.\"\"\""` | — |
 | [SRC-59CF4B7DE8-L000373](../../agents/research.py#L373) | 373 | `"    result = dict(plan)"` | — |
-| [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `"    spec = build_task_spec("` | — |
-| [SRC-59CF4B7DE8-L000375](../../agents/research.py#L375) | 375 | `"        question,"` | — |
-| [SRC-59CF4B7DE8-L000376](../../agents/research.py#L376) | 376 | `"        mode=mode,"` | — |
-| [SRC-59CF4B7DE8-L000377](../../agents/research.py#L377) | 377 | `"        intent_route=intent_route,"` | — |
-| [SRC-59CF4B7DE8-L000378](../../agents/research.py#L378) | 378 | `"        plan=result,"` | — |
-| [SRC-59CF4B7DE8-L000379](../../agents/research.py#L379) | 379 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"    matrix = build_query_strategy_matrix("` | — |
-| [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"        question,"` | — |
-| [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"        spec,"` | — |
-| [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"        result.get(\"queries\", []),"` | — |
-| [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"        limit=MAX_PLAN_QUERIES,"` | — |
-| [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"        compact_fn=compact_search_query,"` | — |
-| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"    # This layer records strategies but does not mutate executable queries."` | — |
-| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"    # The request runner applies them only after it knows the selected mode and budget."` | — |
-| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"    result[\"task_spec\"] = spec"` | — |
-| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    result[\"query_strategy_matrix\"] = matrix"` | — |
+| [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `"    from agents.research_pipeline import build_research_pipeline"` | — |
+| [SRC-59CF4B7DE8-L000375](../../agents/research.py#L375) | 375 | `""` | — |
+| [SRC-59CF4B7DE8-L000376](../../agents/research.py#L376) | 376 | `"    pipeline = build_research_pipeline("` | — |
+| [SRC-59CF4B7DE8-L000377](../../agents/research.py#L377) | 377 | `"        question,"` | — |
+| [SRC-59CF4B7DE8-L000378](../../agents/research.py#L378) | 378 | `"        result,"` | — |
+| [SRC-59CF4B7DE8-L000379](../../agents/research.py#L379) | 379 | `"        mode=mode,"` | — |
+| [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"        intent_route=intent_route,"` | — |
+| [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"        compact_fn=compact_search_query,"` | — |
+| [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"    )"` | — |
+| [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"    # Planning remains declarative here; the request runner enforces its own"` | — |
+| [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"    # selected-mode and budget limits before executing the bounded query matrix."` | — |
+| [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"    result[\"task_spec\"] = pipeline[\"task_spec\"]"` | — |
+| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    result[\"query_strategy_matrix\"] = pipeline[\"query_strategy_matrix\"]"` | — |
+| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"    result[\"research_pipeline\"] = {"` | — |
+| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"        \"aspects\": pipeline[\"aspects\"],"` | — |
+| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"        \"stages\": pipeline[\"stages\"],"` | — |
+| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    }"` | — |
 | [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `"    return result"` | — |
 | [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `""` | — |
 | [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `""` | — |

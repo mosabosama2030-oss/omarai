@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001233 إلى SRC-F725E90B2A-L002032
+- النطاق: SRC-F725E90B2A-L001224 إلى SRC-F725E90B2A-L002023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001224](../../tests/test_web_agent.py#L1224) | 1224 | `"    second[\"domain\"] = \"offers.example.com\""` | — |
+| [SRC-F725E90B2A-L001225](../../tests/test_web_agent.py#L1225) | 1225 | `""` | — |
+| [SRC-F725E90B2A-L001226](../../tests/test_web_agent.py#L1226) | 1226 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001227](../../tests/test_web_agent.py#L1227) | 1227 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L001228](../../tests/test_web_agent.py#L1228) | 1228 | `"        \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001229](../../tests/test_web_agent.py#L1229) | 1229 | `"        lambda plan: ("` | — |
+| [SRC-F725E90B2A-L001230](../../tests/test_web_agent.py#L1230) | 1230 | `"            [first, second],"` | — |
+| [SRC-F725E90B2A-L001231](../../tests/test_web_agent.py#L1231) | 1231 | `"            [],"` | — |
+| [SRC-F725E90B2A-L001232](../../tests/test_web_agent.py#L1232) | 1232 | `"            {"` | — |
 | [SRC-F725E90B2A-L001233](../../tests/test_web_agent.py#L1233) | 1233 | `"                \"queries_planned\": 1,"` | — |
 | [SRC-F725E90B2A-L001234](../../tests/test_web_agent.py#L1234) | 1234 | `"                \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001235](../../tests/test_web_agent.py#L1235) | 1235 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 2}],"` | — |
@@ -807,12 +816,3 @@
 | [SRC-F725E90B2A-L002021](../../tests/test_web_agent.py#L2021) | 2021 | `""` | — |
 | [SRC-F725E90B2A-L002022](../../tests/test_web_agent.py#L2022) | 2022 | `"def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L002023](../../tests/test_web_agent.py#L2023) | 2023 | `"    import json"` | — |
-| [SRC-F725E90B2A-L002024](../../tests/test_web_agent.py#L2024) | 2024 | `""` | — |
-| [SRC-F725E90B2A-L002025](../../tests/test_web_agent.py#L2025) | 2025 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002026](../../tests/test_web_agent.py#L2026) | 2026 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L002027](../../tests/test_web_agent.py#L2027) | 2027 | `"    agent.fallback_model = \"fallback/model\""` | — |
-| [SRC-F725E90B2A-L002028](../../tests/test_web_agent.py#L2028) | 2028 | `"    called = []"` | — |
-| [SRC-F725E90B2A-L002029](../../tests/test_web_agent.py#L2029) | 2029 | `""` | — |
-| [SRC-F725E90B2A-L002030](../../tests/test_web_agent.py#L2030) | 2030 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L002031](../../tests/test_web_agent.py#L2031) | 2031 | `"        def __init__(self, content, finish_reason):"` | — |
-| [SRC-F725E90B2A-L002032](../../tests/test_web_agent.py#L2032) | 2032 | `"            self.body = json.dumps({"` | — |
