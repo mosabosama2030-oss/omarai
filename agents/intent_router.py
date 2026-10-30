@@ -157,28 +157,6 @@ _FOLLOWUP_ASPECT_FRAGMENTS = frozenset({
 })
 
 
-def _strip_followup_leadin(value: str) -> str:
-    return _FOLLOWUP_LEAD_IN_RE.sub("", value).strip()
-
-
-_FOLLOWUP_LEAD_IN_RE = re.compile(
-    r"^(?:(?:و?طيب|و?طب|و?تمام|well|okay|ok|so)\s+)+",
-    re.IGNORECASE,
-)
-
-_FOLLOWUP_ASPECT_FRAGMENTS = frozenset({
-    "السعر", "سعرها كام", "سعره كام", "سعرها", "سعره", "والسعر", "وسعرها",
-    "الاسعار", "والاسعار", "الاسعار الحاليه", "اسعار الحاليه", "السعر الحالي",
-    "سعر اليوم", "اسعار اليوم", "التكلفه", "والتكلفه", "الضمان", "والضمان",
-    "ضمانها", "ضمانه", "البطاريه", "والبطاريه", "الكاميرا", "والكاميرا",
-    "المميزات", "والمميزات", "العيوب", "والعيوب", "المكان", "والمكان",
-    "المصدر", "والمصدر", "الرابط", "والرابط", "التاريخ", "والتاريخ",
-    "المراجعات", "والمراجعات", "الاراء", "والاراء", "and the price",
-    "and the warranty", "what about the warranty", "what about the price",
-    "its price", "the warranty", "the location", "the pros", "the cons",
-})
-
-
 _CONTEXTUAL_ASPECT_RE = re.compile(
     r"^(?:ال)?(?:سعر|ثمن|اسعار|تكلفه|ضمان|بطاريه|كاميرا|مميزات|عيوب|"
     r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه)"
