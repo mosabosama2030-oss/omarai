@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003941 إلى SRC-1AE03B9EC3-L004740
+- النطاق: SRC-1AE03B9EC3-L003934 إلى SRC-1AE03B9EC3-L004733
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003934](../../agents/web_agent.py#L3934) | 3934 | `"                    \"ولا تضع أي نص خارجهما. هذا تدقيق اتساق الأدلة وتغطية السؤال، وليس تحققًا \""` | — |
+| [SRC-1AE03B9EC3-L003935](../../agents/web_agent.py#L3935) | 3935 | `"                    \"مستقلاً من الحقيقة.\""` | — |
+| [SRC-1AE03B9EC3-L003936](../../agents/web_agent.py#L3936) | 3936 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L003937](../../agents/web_agent.py#L3937) | 3937 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L003938](../../agents/web_agent.py#L3938) | 3938 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003939](../../agents/web_agent.py#L3939) | 3939 | `"                \"role\": \"user\","` | — |
+| [SRC-1AE03B9EC3-L003940](../../agents/web_agent.py#L3940) | 3940 | `"                \"content\": \"سؤال المستخدم الأصلي:\\n\" + question[:2000],"` | — |
 | [SRC-1AE03B9EC3-L003941](../../agents/web_agent.py#L3941) | 3941 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L003942](../../agents/web_agent.py#L3942) | 3942 | `"            {"` | — |
 | [SRC-1AE03B9EC3-L003943](../../agents/web_agent.py#L3943) | 3943 | `"                \"role\": \"user\","` | — |
@@ -809,10 +816,3 @@
 | [SRC-1AE03B9EC3-L004731](../../agents/web_agent.py#L4731) | 4731 | `"            working_question,"` | — |
 | [SRC-1AE03B9EC3-L004732](../../agents/web_agent.py#L4732) | 4732 | `"            mode=clean_mode,"` | — |
 | [SRC-1AE03B9EC3-L004733](../../agents/web_agent.py#L4733) | 4733 | `"            intent_route=intent_route,"` | — |
-| [SRC-1AE03B9EC3-L004734](../../agents/web_agent.py#L4734) | 4734 | `"            dialogue_context=context_override,"` | — |
-| [SRC-1AE03B9EC3-L004735](../../agents/web_agent.py#L4735) | 4735 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004736](../../agents/web_agent.py#L4736) | 4736 | `"        preflight_task_spec = preflight_pipeline[\"task_spec\"]"` | — |
-| [SRC-1AE03B9EC3-L004737](../../agents/web_agent.py#L4737) | 4737 | `"        missing_inputs = set(preflight_task_spec.get(\"missing_required_inputs\") or [])"` | — |
-| [SRC-1AE03B9EC3-L004738](../../agents/web_agent.py#L4738) | 4738 | `"        actionable_missing_inputs = missing_inputs & {"` | — |
-| [SRC-1AE03B9EC3-L004739](../../agents/web_agent.py#L4739) | 4739 | `"            \"official_destination_target_entity\","` | — |
-| [SRC-1AE03B9EC3-L004740](../../agents/web_agent.py#L4740) | 4740 | `"            \"summary_source_url_or_pasted_text\","` | — |
