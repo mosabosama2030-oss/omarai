@@ -165,3 +165,13 @@ def test_pipeline_marks_upstream_dialogue_context_resolution_as_completed():
         "ما ضمان iPhone 17 في مصر؟"
     )
     assert result["stages"]["context_resolution"] == "completed"
+
+def test_pipeline_does_not_claim_context_resolution_for_unstructured_metadata():
+    result = build_research_pipeline(
+        "ما سعر الهاتف؟",
+        {"queries": ["سعر الهاتف"]},
+        intent_route="WEB_SIMPLE",
+        dialogue_context={"trace_label": "upstream_metadata_only"},
+    )
+
+    assert result["stages"]["context_resolution"] == "not_needed"
