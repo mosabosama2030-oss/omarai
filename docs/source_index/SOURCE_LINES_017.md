@@ -739,10 +739,10 @@
 | [SRC-EEF2E6447C-L000682](../../api/omarai.py#L682) | 682 | `""` | — |
 | [SRC-EEF2E6447C-L000683](../../api/omarai.py#L683) | 683 | `"    daemon_threads = True"` | — |
 | [SRC-EEF2E6447C-L000684](../../api/omarai.py#L684) | 684 | `"    overload_response = ("` | — |
-| [SRC-EEF2E6447C-L000685](../../api/omarai.py#L685) | 685 | `"        b\"HTTP/1.1 503 Service Unavailable\\\\r\\\\n\""` | — |
-| [SRC-EEF2E6447C-L000686](../../api/omarai.py#L686) | 686 | `"        b\"Connection: close\\\\r\\\\n\""` | — |
-| [SRC-EEF2E6447C-L000687](../../api/omarai.py#L687) | 687 | `"        b\"Retry-After: 5\\\\r\\\\n\""` | — |
-| [SRC-EEF2E6447C-L000688](../../api/omarai.py#L688) | 688 | `"        b\"Content-Length: 0\\\\r\\\\n\\\\r\\\\n\""` | — |
+| [SRC-EEF2E6447C-L000685](../../api/omarai.py#L685) | 685 | `"        b\"HTTP/1.1 503 Service Unavailable\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000686](../../api/omarai.py#L686) | 686 | `"        b\"Connection: close\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000687](../../api/omarai.py#L687) | 687 | `"        b\"Retry-After: 5\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000688](../../api/omarai.py#L688) | 688 | `"        b\"Content-Length: 0\\r\\n\\r\\n\""` | — |
 | [SRC-EEF2E6447C-L000689](../../api/omarai.py#L689) | 689 | `"    )"` | — |
 | [SRC-EEF2E6447C-L000690](../../api/omarai.py#L690) | 690 | `""` | — |
 | [SRC-EEF2E6447C-L000691](../../api/omarai.py#L691) | 691 | `"    def __init__("` | — |
