@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005571 إلى SRC-1AE03B9EC3-L006370
+- النطاق: SRC-1AE03B9EC3-L005541 إلى SRC-1AE03B9EC3-L006340
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005541](../../agents/web_agent.py#L5541) | 5541 | `"                            str(other.get(\"platform\", \"web\"))"` | — |
+| [SRC-1AE03B9EC3-L005542](../../agents/web_agent.py#L5542) | 5542 | `"                            == str(source.get(\"platform\", \"web\"))"` | — |
+| [SRC-1AE03B9EC3-L005543](../../agents/web_agent.py#L5543) | 5543 | `"                            for other in sources"` | — |
+| [SRC-1AE03B9EC3-L005544](../../agents/web_agent.py#L5544) | 5544 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L005545](../../agents/web_agent.py#L5545) | 5545 | `"                        for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005546](../../agents/web_agent.py#L5546) | 5546 | `"                    }"` | — |
+| [SRC-1AE03B9EC3-L005547](../../agents/web_agent.py#L5547) | 5547 | `"                    report[\"unique_sources\"] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L005548](../../agents/web_agent.py#L5548) | 5548 | `"                    report[\"pages_fetched\"] = sum("` | — |
+| [SRC-1AE03B9EC3-L005549](../../agents/web_agent.py#L5549) | 5549 | `"                        bool(source.get(\"page_fetched\")) for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005550](../../agents/web_agent.py#L5550) | 5550 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L005551](../../agents/web_agent.py#L5551) | 5551 | `"                    report[\"independent_sources\"] = len(independent_domains)"` | — |
+| [SRC-1AE03B9EC3-L005552](../../agents/web_agent.py#L5552) | 5552 | `"                    report[\"provider_diagnostics\"] = list(self._provider_diagnostics)"` | — |
+| [SRC-1AE03B9EC3-L005553](../../agents/web_agent.py#L5553) | 5553 | `"                    report[\"evidence_signals\"] = evidence_signal_report("` | — |
+| [SRC-1AE03B9EC3-L005554](../../agents/web_agent.py#L5554) | 5554 | `"                        sources, plan.get(\"freshness\", \"any\")"` | — |
+| [SRC-1AE03B9EC3-L005555](../../agents/web_agent.py#L5555) | 5555 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L005556](../../agents/web_agent.py#L5556) | 5556 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L005557](../../agents/web_agent.py#L5557) | 5557 | `"                    evidence_repair[\"reason\"] = \"repair_query_was_not_distinct\""` | — |
+| [SRC-1AE03B9EC3-L005558](../../agents/web_agent.py#L5558) | 5558 | `"        # Re-apply task guardrails after the optional repair query so stale,"` | — |
+| [SRC-1AE03B9EC3-L005559](../../agents/web_agent.py#L5559) | 5559 | `"        # non-government, or non-social candidates cannot re-enter the answer."` | — |
+| [SRC-1AE03B9EC3-L005560](../../agents/web_agent.py#L5560) | 5560 | `"        pre_final_guardrail_count = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L005561](../../agents/web_agent.py#L5561) | 5561 | `"        sources, final_source_guardrails = apply_source_guardrails("` | — |
+| [SRC-1AE03B9EC3-L005562](../../agents/web_agent.py#L5562) | 5562 | `"            working_question, clean_mode, plan, sources"` | — |
+| [SRC-1AE03B9EC3-L005563](../../agents/web_agent.py#L5563) | 5563 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L005564](../../agents/web_agent.py#L5564) | 5564 | `"        report[\"research_pipeline\"] = {"` | — |
+| [SRC-1AE03B9EC3-L005565](../../agents/web_agent.py#L5565) | 5565 | `"            \"aspects\": pipeline[\"aspects\"],"` | — |
+| [SRC-1AE03B9EC3-L005566](../../agents/web_agent.py#L5566) | 5566 | `"            \"evidence\": evaluate_research_evidence(pipeline[\"aspects\"], sources),"` | — |
+| [SRC-1AE03B9EC3-L005567](../../agents/web_agent.py#L5567) | 5567 | `"            \"stages\": pipeline[\"stages\"],"` | — |
+| [SRC-1AE03B9EC3-L005568](../../agents/web_agent.py#L5568) | 5568 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L005569](../../agents/web_agent.py#L5569) | 5569 | `"        report[\"source_guardrails\"][\"final\"] = final_source_guardrails"` | — |
+| [SRC-1AE03B9EC3-L005570](../../agents/web_agent.py#L5570) | 5570 | `"        report[\"source_guardrails\"][\"repair_candidates_before_final_filter\"] = ("` | — |
 | [SRC-1AE03B9EC3-L005571](../../agents/web_agent.py#L5571) | 5571 | `"            pre_final_guardrail_count"` | — |
 | [SRC-1AE03B9EC3-L005572](../../agents/web_agent.py#L5572) | 5572 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L005573](../../agents/web_agent.py#L5573) | 5573 | `"        if final_source_guardrails[\"rejected_sources\"]:"` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L006338](../../agents/web_agent.py#L6338) | 6338 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L006339](../../agents/web_agent.py#L6339) | 6339 | `"        answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
 | [SRC-1AE03B9EC3-L006340](../../agents/web_agent.py#L6340) | 6340 | `"        report[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
-| [SRC-1AE03B9EC3-L006341](../../agents/web_agent.py#L6341) | 6341 | `"        report[\"answer_integrity\"] = answer_integrity"` | — |
-| [SRC-1AE03B9EC3-L006342](../../agents/web_agent.py#L6342) | 6342 | `"        report[\"requirement_evidence\"] = answer_integrity.get(\"requirement_evidence\", [])"` | — |
-| [SRC-1AE03B9EC3-L006343](../../agents/web_agent.py#L6343) | 6343 | `"        report[\"connector_summary\"] = self._connector_status_summary("` | — |
-| [SRC-1AE03B9EC3-L006344](../../agents/web_agent.py#L6344) | 6344 | `"            list(self._provider_diagnostics), sources"` | — |
-| [SRC-1AE03B9EC3-L006345](../../agents/web_agent.py#L6345) | 6345 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L006346](../../agents/web_agent.py#L6346) | 6346 | `"        report[\"provider_diagnostics\"] = list(self._provider_diagnostics)"` | — |
-| [SRC-1AE03B9EC3-L006347](../../agents/web_agent.py#L6347) | 6347 | `"        distinct_providers = {"` | — |
-| [SRC-1AE03B9EC3-L006348](../../agents/web_agent.py#L6348) | 6348 | `"            provider for source in sources for provider in source.get(\"providers\", [])"` | — |
-| [SRC-1AE03B9EC3-L006349](../../agents/web_agent.py#L6349) | 6349 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L006350](../../agents/web_agent.py#L6350) | 6350 | `"        distinct_domains = {"` | — |
-| [SRC-1AE03B9EC3-L006351](../../agents/web_agent.py#L6351) | 6351 | `"            registrable_domain("` | — |
-| [SRC-1AE03B9EC3-L006352](../../agents/web_agent.py#L6352) | 6352 | `"                source.get(\"domain\")"` | — |
-| [SRC-1AE03B9EC3-L006353](../../agents/web_agent.py#L6353) | 6353 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L006354](../../agents/web_agent.py#L6354) | 6354 | `"                or \"\""` | — |
-| [SRC-1AE03B9EC3-L006355](../../agents/web_agent.py#L6355) | 6355 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L006356](../../agents/web_agent.py#L6356) | 6356 | `"            for source in sources"` | — |
-| [SRC-1AE03B9EC3-L006357](../../agents/web_agent.py#L6357) | 6357 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L006358](../../agents/web_agent.py#L6358) | 6358 | `"        distinct_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L006359](../../agents/web_agent.py#L6359) | 6359 | `"        fetched_pages = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
-| [SRC-1AE03B9EC3-L006360](../../agents/web_agent.py#L6360) | 6360 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L006361](../../agents/web_agent.py#L6361) | 6361 | `"            len(sources) >= 4 and len(distinct_domains) >= 3"` | — |
-| [SRC-1AE03B9EC3-L006362](../../agents/web_agent.py#L6362) | 6362 | `"            and len(distinct_providers) >= 2 and fetched_pages >= 1"` | — |
-| [SRC-1AE03B9EC3-L006363](../../agents/web_agent.py#L6363) | 6363 | `"            and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006364](../../agents/web_agent.py#L6364) | 6364 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L006365](../../agents/web_agent.py#L6365) | 6365 | `"            research_quality = \"excellent\""` | — |
-| [SRC-1AE03B9EC3-L006366](../../agents/web_agent.py#L6366) | 6366 | `"        elif ("` | — |
-| [SRC-1AE03B9EC3-L006367](../../agents/web_agent.py#L6367) | 6367 | `"            len(sources) >= 2 and len(distinct_domains) >= 2"` | — |
-| [SRC-1AE03B9EC3-L006368](../../agents/web_agent.py#L6368) | 6368 | `"            and (len(distinct_providers) >= 2 or fetched_pages >= 1)"` | — |
-| [SRC-1AE03B9EC3-L006369](../../agents/web_agent.py#L6369) | 6369 | `"            and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006370](../../agents/web_agent.py#L6370) | 6370 | `"        ):"` | — |

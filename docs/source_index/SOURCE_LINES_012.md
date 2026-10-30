@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002371 إلى SRC-1AE03B9EC3-L003170
+- النطاق: SRC-1AE03B9EC3-L002341 إلى SRC-1AE03B9EC3-L003140
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002341](../../agents/web_agent.py#L2341) | 2341 | `"                            current_url = target"` | — |
+| [SRC-1AE03B9EC3-L002342](../../agents/web_agent.py#L2342) | 2342 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L002343](../../agents/web_agent.py#L2343) | 2343 | `"                        if response.status_code < 200 or response.status_code >= 300:"` | — |
+| [SRC-1AE03B9EC3-L002344](../../agents/web_agent.py#L2344) | 2344 | `"                            return result(status=\"http_error\", error_class=\"HTTPStatus\")"` | — |
+| [SRC-1AE03B9EC3-L002345](../../agents/web_agent.py#L2345) | 2345 | `"                        media_type = response.headers.get("` | — |
+| [SRC-1AE03B9EC3-L002346](../../agents/web_agent.py#L2346) | 2346 | `"                            \"content-type\", \"\""` | — |
+| [SRC-1AE03B9EC3-L002347](../../agents/web_agent.py#L2347) | 2347 | `"                        ).split(\";\")[0].lower()"` | — |
+| [SRC-1AE03B9EC3-L002348](../../agents/web_agent.py#L2348) | 2348 | `"                        if media_type not in {"` | — |
+| [SRC-1AE03B9EC3-L002349](../../agents/web_agent.py#L2349) | 2349 | `"                            \"text/html\", \"application/xhtml+xml\", \"text/plain\""` | — |
+| [SRC-1AE03B9EC3-L002350](../../agents/web_agent.py#L2350) | 2350 | `"                        }:"` | — |
+| [SRC-1AE03B9EC3-L002351](../../agents/web_agent.py#L2351) | 2351 | `"                            return result(status=\"unsupported_content_type\", error_class=\"UnsupportedContentType\")"` | — |
+| [SRC-1AE03B9EC3-L002352](../../agents/web_agent.py#L2352) | 2352 | `"                        content_length = response.headers.get(\"content-length\")"` | — |
+| [SRC-1AE03B9EC3-L002353](../../agents/web_agent.py#L2353) | 2353 | `"                        if content_length:"` | — |
+| [SRC-1AE03B9EC3-L002354](../../agents/web_agent.py#L2354) | 2354 | `"                            try:"` | — |
+| [SRC-1AE03B9EC3-L002355](../../agents/web_agent.py#L2355) | 2355 | `"                                if int(content_length) > MAX_PAGE_BYTES:"` | — |
+| [SRC-1AE03B9EC3-L002356](../../agents/web_agent.py#L2356) | 2356 | `"                                    return result(status=\"page_too_large\", error_class=\"ContentLengthLimit\")"` | — |
+| [SRC-1AE03B9EC3-L002357](../../agents/web_agent.py#L2357) | 2357 | `"                            except ValueError:"` | — |
+| [SRC-1AE03B9EC3-L002358](../../agents/web_agent.py#L2358) | 2358 | `"                                pass"` | — |
+| [SRC-1AE03B9EC3-L002359](../../agents/web_agent.py#L2359) | 2359 | `"                        chunks: list[bytes] = []"` | — |
+| [SRC-1AE03B9EC3-L002360](../../agents/web_agent.py#L2360) | 2360 | `"                        count = 0"` | — |
+| [SRC-1AE03B9EC3-L002361](../../agents/web_agent.py#L2361) | 2361 | `"                        for chunk in response.iter_bytes():"` | — |
+| [SRC-1AE03B9EC3-L002362](../../agents/web_agent.py#L2362) | 2362 | `"                            count += len(chunk)"` | — |
+| [SRC-1AE03B9EC3-L002363](../../agents/web_agent.py#L2363) | 2363 | `"                            if count > MAX_PAGE_BYTES:"` | — |
+| [SRC-1AE03B9EC3-L002364](../../agents/web_agent.py#L2364) | 2364 | `"                                remaining = max(0, MAX_PAGE_BYTES - (count - len(chunk)))"` | — |
+| [SRC-1AE03B9EC3-L002365](../../agents/web_agent.py#L2365) | 2365 | `"                                if remaining:"` | — |
+| [SRC-1AE03B9EC3-L002366](../../agents/web_agent.py#L2366) | 2366 | `"                                    chunks.append(chunk[:remaining])"` | — |
+| [SRC-1AE03B9EC3-L002367](../../agents/web_agent.py#L2367) | 2367 | `"                                bytes_truncated = True"` | — |
+| [SRC-1AE03B9EC3-L002368](../../agents/web_agent.py#L2368) | 2368 | `"                                break"` | — |
+| [SRC-1AE03B9EC3-L002369](../../agents/web_agent.py#L2369) | 2369 | `"                            chunks.append(chunk)"` | — |
+| [SRC-1AE03B9EC3-L002370](../../agents/web_agent.py#L2370) | 2370 | `"                        raw = b\"\".join(chunks)"` | — |
 | [SRC-1AE03B9EC3-L002371](../../agents/web_agent.py#L2371) | 2371 | `"                        encoding = response.encoding or \"utf-8\""` | — |
 | [SRC-1AE03B9EC3-L002372](../../agents/web_agent.py#L2372) | 2372 | `"                        html = raw.decode(encoding, errors=\"replace\")"` | — |
 | [SRC-1AE03B9EC3-L002373](../../agents/web_agent.py#L2373) | 2373 | `"                        break"` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L003138](../../agents/web_agent.py#L3138) | 3138 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L003139](../../agents/web_agent.py#L3139) | 3139 | `"                    raise"` | — |
 | [SRC-1AE03B9EC3-L003140](../../agents/web_agent.py#L3140) | 3140 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L003141](../../agents/web_agent.py#L3141) | 3141 | `"                request_timeout = timeout or self.timeout"` | — |
-| [SRC-1AE03B9EC3-L003142](../../agents/web_agent.py#L3142) | 3142 | `"            request_payload: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L003143](../../agents/web_agent.py#L3143) | 3143 | `"                \"model\": candidate_model,"` | — |
-| [SRC-1AE03B9EC3-L003144](../../agents/web_agent.py#L3144) | 3144 | `"                \"messages\": messages,"` | — |
-| [SRC-1AE03B9EC3-L003145](../../agents/web_agent.py#L3145) | 3145 | `"                \"temperature\": temperature,"` | — |
-| [SRC-1AE03B9EC3-L003146](../../agents/web_agent.py#L3146) | 3146 | `"                \"max_tokens\": max(100, min(int(max_tokens), 3000)),"` | — |
-| [SRC-1AE03B9EC3-L003147](../../agents/web_agent.py#L3147) | 3147 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L003148](../../agents/web_agent.py#L3148) | 3148 | `"            if use_web_search:"` | — |
-| [SRC-1AE03B9EC3-L003149](../../agents/web_agent.py#L3149) | 3149 | `"                # OpenRouter executes these searches server-side and returns URL citations."` | — |
-| [SRC-1AE03B9EC3-L003150](../../agents/web_agent.py#L3150) | 3150 | `"                # This is opt-in because provider search incurs usage charges."` | — |
-| [SRC-1AE03B9EC3-L003151](../../agents/web_agent.py#L3151) | 3151 | `"                request_payload[\"tools\"] = [{"` | — |
-| [SRC-1AE03B9EC3-L003152](../../agents/web_agent.py#L3152) | 3152 | `"                    \"type\": \"openrouter:web_search\","` | — |
-| [SRC-1AE03B9EC3-L003153](../../agents/web_agent.py#L3153) | 3153 | `"                    \"parameters\": {"` | — |
-| [SRC-1AE03B9EC3-L003154](../../agents/web_agent.py#L3154) | 3154 | `"                        \"engine\": \"auto\","` | — |
-| [SRC-1AE03B9EC3-L003155](../../agents/web_agent.py#L3155) | 3155 | `"                        \"max_results\": 5,"` | — |
-| [SRC-1AE03B9EC3-L003156](../../agents/web_agent.py#L3156) | 3156 | `"                        \"max_total_results\": 12,"` | — |
-| [SRC-1AE03B9EC3-L003157](../../agents/web_agent.py#L3157) | 3157 | `"                        \"max_uses\": 3,"` | — |
-| [SRC-1AE03B9EC3-L003158](../../agents/web_agent.py#L3158) | 3158 | `"                        \"search_context_size\": \"medium\","` | — |
-| [SRC-1AE03B9EC3-L003159](../../agents/web_agent.py#L3159) | 3159 | `"                    },"` | — |
-| [SRC-1AE03B9EC3-L003160](../../agents/web_agent.py#L3160) | 3160 | `"                }]"` | — |
-| [SRC-1AE03B9EC3-L003161](../../agents/web_agent.py#L3161) | 3161 | `"                request_payload[\"max_tool_calls\"] = 5"` | — |
-| [SRC-1AE03B9EC3-L003162](../../agents/web_agent.py#L3162) | 3162 | `"            payload = json.dumps(request_payload, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-1AE03B9EC3-L003163](../../agents/web_agent.py#L3163) | 3163 | `"            request = urllib.request.Request("` | — |
-| [SRC-1AE03B9EC3-L003164](../../agents/web_agent.py#L3164) | 3164 | `"                self.base_url + \"/chat/completions\","` | — |
-| [SRC-1AE03B9EC3-L003165](../../agents/web_agent.py#L3165) | 3165 | `"                data=payload,"` | — |
-| [SRC-1AE03B9EC3-L003166](../../agents/web_agent.py#L3166) | 3166 | `"                headers={"` | — |
-| [SRC-1AE03B9EC3-L003167](../../agents/web_agent.py#L3167) | 3167 | `"                    \"Authorization\": \"Bearer \" + self.api_key,"` | — |
-| [SRC-1AE03B9EC3-L003168](../../agents/web_agent.py#L3168) | 3168 | `"                    \"Content-Type\": \"application/json\","` | — |
-| [SRC-1AE03B9EC3-L003169](../../agents/web_agent.py#L3169) | 3169 | `"                    \"HTTP-Referer\": \"https://github.com/mosabosama2030-oss/omarai\","` | — |
-| [SRC-1AE03B9EC3-L003170](../../agents/web_agent.py#L3170) | 3170 | `"                    \"X-Title\": \"Omarai Web Agent\","` | — |
