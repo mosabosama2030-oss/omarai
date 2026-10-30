@@ -355,3 +355,21 @@ def test_unrecognized_claim_ledger_status_prevents_completed_status() -> None:
     assert result["counters"]["claim_ledger_build_failure_count"] == 1
     assert result["status"] == "partial_answer_evidence_gaps_detected"
     assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+
+
+def test_lead_discovery_without_claim_ledger_is_not_a_ledger_build_failure() -> None:
+    result = build_research_completion({
+        "kind": "lead_discovery_no_qualified_candidates",
+        "search_attempted": True,
+        "used_language_model": False,
+        "sources": [{
+            "url": "https://example.com/listing",
+            "snippet": "Related listing, not a buyer-intent signal.",
+            "page_fetched": False,
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 0},
+    })
+
+    assert result["counters"]["claim_ledger_status"] == "missing"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 0
+    assert result["counters"]["citation_support_warning_count"] == 0
