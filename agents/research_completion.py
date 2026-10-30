@@ -163,6 +163,11 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     model_used = result.get("used_language_model") is True
     final_status = str(result.get("final_answer_status") or "")
     integrity = _dict(result.get("answer_integrity"))
+    claim_ledger = _dict(result.get("claim_evidence_ledger"))
+    claim_ledger_summary = _dict(claim_ledger.get("summary"))
+    out_of_range_citation_reference_count = _int(
+        claim_ledger_summary.get("out_of_range_reference_count")
+    ) or 0
     gap_count = sum(
         _int(integrity.get(key)) or 0
         for key in ("potentially_missing_target_count", "source_evidence_gap_count")
@@ -181,6 +186,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     citation_support_warning_count = (
         max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
         + weak_citation_alignment_count
+        + out_of_range_citation_reference_count
     )
     fulfillment = str(
         result.get("task_fulfillment_status") or report.get("task_fulfillment_status") or ""
@@ -306,6 +312,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "potentially_unsupported_numeric_by_citation_count": unsupported_numeric_by_citation_count,
             "weak_citation_alignment_count": weak_citation_alignment_count,
             "citation_support_warning_count": citation_support_warning_count,
+            "out_of_range_citation_reference_count": out_of_range_citation_reference_count,
         },
         "counter_consistency": {
             "status": "mismatch_detected" if counter_issues else (
