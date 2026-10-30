@@ -392,7 +392,7 @@ def test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota(monke
 
     class RateLimitHarness:
         _rate_lock = threading.Lock()
-        _request_times = defaultdict(deque)
+        _request_times = None
         _rate_last_cleanup = 0.0
         RATE_LIMIT_REQUESTS = 1
         RATE_LIMIT_WINDOW_SECONDS = 60
@@ -405,6 +405,8 @@ def test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota(monke
         def __init__(self, address):
             self.client_address = (address, 12345)
             self.headers = {}
+
+    RateLimitHarness._request_times = defaultdict(deque)
 
     assert RateLimitHarness("198.51.100.1")._rate_limit_ok() is True
     assert RateLimitHarness("198.51.100.2")._rate_limit_ok() is True
