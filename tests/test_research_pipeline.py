@@ -115,3 +115,20 @@ def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():
     assert result["stages"]["semantic_matching"] == "degraded"
     assert result["evidence"]["semantic_matching"]["errors"] == len(result["aspects"])
     assert result["evidence"]["lexical_ledger"]["aspects"] == result["aspects"]
+
+
+def test_pipeline_reuses_preflight_task_spec_without_rebuilding_it():
+    from agents.task_understanding import build_task_spec
+
+    question = "ما سعر الهاتف ومدة الضمان؟"
+    task_spec = build_task_spec(question, intent_route="WEB_DEEP")
+
+    result = build_research_pipeline(
+        question,
+        {"queries": ["الهاتف"]},
+        intent_route="WEB_DEEP",
+        task_spec=task_spec,
+    )
+
+    assert result["task_spec"] is task_spec
+    assert result["query_strategy_matrix"]
