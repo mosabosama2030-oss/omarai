@@ -53,11 +53,10 @@ from agents.research_guardrails import apply_source_guardrails
 from agents.research_completion import build_research_completion
 from agents.tool_execution_status import build_tool_execution_matrix
 from agents.task_understanding import (
-    build_query_strategy_matrix,
-    build_task_spec,
     reasoning_guidance_for_task_spec,
     validate_task_spec,
 )
+from agents.research_pipeline import build_research_pipeline, evaluate_research_evidence
 
 MAX_QUESTION_CHARS = 4000
 MAX_HISTORY_ITEMS = 8
@@ -5033,30 +5032,30 @@ class WebAgent:
                     allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
-        task_spec = build_task_spec(
+        pipeline = build_research_pipeline(
             working_question,
+            plan,
             mode=clean_mode,
             intent_route=intent_route,
-            plan=plan,
             dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
+            compact_fn=compact_search_query,
         )
+        task_spec = pipeline["task_spec"]
         query_strategy_limit = (
             MAX_PLAN_QUERIES
             if clean_mode in {"deep", "latest", "social"}
             or intent_route in {"WEB_DEEP", "LEAD_GENERATION"}
             else 3
         )
-        query_strategy_matrix = build_query_strategy_matrix(
-            working_question,
-            task_spec,
-            plan.get("queries", []),
-            limit=query_strategy_limit,
-            compact_fn=compact_search_query,
-        )
+        query_strategy_matrix = pipeline["query_strategy_matrix"][:query_strategy_limit]
         if query_strategy_matrix:
             plan["queries"] = [item["query"] for item in query_strategy_matrix]
         plan["task_spec"] = task_spec
         plan["query_strategy_matrix"] = query_strategy_matrix
+        plan["research_pipeline"] = {
+            "aspects": pipeline["aspects"],
+            "stages": pipeline["stages"],
+        }
 
         final_topic_queries = []
         for raw_query in plan.get("queries", []):
@@ -5157,6 +5156,11 @@ class WebAgent:
         sources, initial_source_guardrails = apply_source_guardrails(
             working_question, clean_mode, plan, sources
         )
+        report["research_pipeline"] = {
+            "aspects": pipeline["aspects"],
+            "evidence": evaluate_research_evidence(pipeline["aspects"], sources),
+            "stages": pipeline["stages"],
+        }
         report["source_guardrails"] = {
             "initial": initial_source_guardrails,
             "initial_eligible_source_count": len(sources),
@@ -5555,6 +5559,11 @@ class WebAgent:
         sources, final_source_guardrails = apply_source_guardrails(
             working_question, clean_mode, plan, sources
         )
+        report["research_pipeline"] = {
+            "aspects": pipeline["aspects"],
+            "evidence": evaluate_research_evidence(pipeline["aspects"], sources),
+            "stages": pipeline["stages"],
+        }
         report["source_guardrails"]["final"] = final_source_guardrails
         report["source_guardrails"]["repair_candidates_before_final_filter"] = (
             pre_final_guardrail_count
