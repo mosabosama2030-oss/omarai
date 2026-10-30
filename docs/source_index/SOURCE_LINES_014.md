@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003901 إلى SRC-1AE03B9EC3-L004700
+- النطاق: SRC-1AE03B9EC3-L003893 إلى SRC-1AE03B9EC3-L004692
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003893](../../agents/web_agent.py#L3893) | 3893 | `"    def _review_answer("` | — |
+| [SRC-1AE03B9EC3-L003894](../../agents/web_agent.py#L3894) | 3894 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003895](../../agents/web_agent.py#L3895) | 3895 | `"        question: str,"` | — |
+| [SRC-1AE03B9EC3-L003896](../../agents/web_agent.py#L3896) | 3896 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L003897](../../agents/web_agent.py#L3897) | 3897 | `"        sources: list[dict[str, Any]],"` | — |
+| [SRC-1AE03B9EC3-L003898](../../agents/web_agent.py#L3898) | 3898 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003899](../../agents/web_agent.py#L3899) | 3899 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003900](../../agents/web_agent.py#L3900) | 3900 | `"        source_blocks: list[str] = []"` | — |
 | [SRC-1AE03B9EC3-L003901](../../agents/web_agent.py#L3901) | 3901 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
 | [SRC-1AE03B9EC3-L003902](../../agents/web_agent.py#L3902) | 3902 | `"            evidence = _clean_text("` | — |
 | [SRC-1AE03B9EC3-L003903](../../agents/web_agent.py#L3903) | 3903 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L004690](../../agents/web_agent.py#L4690) | 4690 | `"        if probe_dialogue:"` | — |
 | [SRC-1AE03B9EC3-L004691](../../agents/web_agent.py#L4691) | 4691 | `"            semantic_context = self._resolve_dialogue_context(question, clean_history)"` | — |
 | [SRC-1AE03B9EC3-L004692](../../agents/web_agent.py#L4692) | 4692 | `"            if semantic_context.get(\"method\") == \"llm_semantic_context\":"` | — |
-| [SRC-1AE03B9EC3-L004693](../../agents/web_agent.py#L4693) | 4693 | `"                context_override = semantic_context"` | — |
-| [SRC-1AE03B9EC3-L004694](../../agents/web_agent.py#L4694) | 4694 | `"                if semantic_context.get(\"needs_clarification\"):"` | — |
-| [SRC-1AE03B9EC3-L004695](../../agents/web_agent.py#L4695) | 4695 | `"                    return self._dialogue_clarification_result("` | — |
-| [SRC-1AE03B9EC3-L004696](../../agents/web_agent.py#L4696) | 4696 | `"                        question, clean_mode, semantic_context,"` | — |
-| [SRC-1AE03B9EC3-L004697](../../agents/web_agent.py#L4697) | 4697 | `"                        \"semantic_context_has_unresolved_referent\","` | — |
-| [SRC-1AE03B9EC3-L004698](../../agents/web_agent.py#L4698) | 4698 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004699](../../agents/web_agent.py#L4699) | 4699 | `"                working_question = ("` | — |
-| [SRC-1AE03B9EC3-L004700](../../agents/web_agent.py#L4700) | 4700 | `"                    question if semantic_context.get(\"topic_shift\")"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002301 إلى SRC-1AE03B9EC3-L003100
+- النطاق: SRC-1AE03B9EC3-L002293 إلى SRC-1AE03B9EC3-L003092
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002293](../../agents/web_agent.py#L2293) | 2293 | `"        except ImportError as exc:"` | — |
+| [SRC-1AE03B9EC3-L002294](../../agents/web_agent.py#L2294) | 2294 | `"            raise AgentDependencyError("` | — |
+| [SRC-1AE03B9EC3-L002295](../../agents/web_agent.py#L2295) | 2295 | `"                \"حزم استخراج الصفحات غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
+| [SRC-1AE03B9EC3-L002296](../../agents/web_agent.py#L2296) | 2296 | `"            ) from exc"` | — |
+| [SRC-1AE03B9EC3-L002297](../../agents/web_agent.py#L2297) | 2297 | `""` | — |
+| [SRC-1AE03B9EC3-L002298](../../agents/web_agent.py#L2298) | 2298 | `"        headers = {"` | — |
+| [SRC-1AE03B9EC3-L002299](../../agents/web_agent.py#L2299) | 2299 | `"            \"User-Agent\": \"OmaraiResearchBot/1.1 (public page research; no login)\","` | — |
+| [SRC-1AE03B9EC3-L002300](../../agents/web_agent.py#L2300) | 2300 | `"            \"Accept\": \"text/html,application/xhtml+xml,text/plain;q=0.8\","` | — |
 | [SRC-1AE03B9EC3-L002301](../../agents/web_agent.py#L2301) | 2301 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L002302](../../agents/web_agent.py#L2302) | 2302 | `"        media_type = \"\""` | — |
 | [SRC-1AE03B9EC3-L002303](../../agents/web_agent.py#L2303) | 2303 | `"        html = \"\""` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L003090](../../agents/web_agent.py#L3090) | 3090 | `"        self,"` | — |
 | [SRC-1AE03B9EC3-L003091](../../agents/web_agent.py#L3091) | 3091 | `"        messages: list[dict[str, str]],"` | — |
 | [SRC-1AE03B9EC3-L003092](../../agents/web_agent.py#L3092) | 3092 | `"        max_tokens: int = 1400,"` | — |
-| [SRC-1AE03B9EC3-L003093](../../agents/web_agent.py#L3093) | 3093 | `"        temperature: float = 0.2,"` | — |
-| [SRC-1AE03B9EC3-L003094](../../agents/web_agent.py#L3094) | 3094 | `"        timeout: int \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003095](../../agents/web_agent.py#L3095) | 3095 | `"        model: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003096](../../agents/web_agent.py#L3096) | 3096 | `"        enable_web_search: bool = False,"` | — |
-| [SRC-1AE03B9EC3-L003097](../../agents/web_agent.py#L3097) | 3097 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003098](../../agents/web_agent.py#L3098) | 3098 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003099](../../agents/web_agent.py#L3099) | 3099 | `"        requested_model = (model or self.answer_model).strip()"` | — |
-| [SRC-1AE03B9EC3-L003100](../../agents/web_agent.py#L3100) | 3100 | `"        if not self.api_key:"` | — |

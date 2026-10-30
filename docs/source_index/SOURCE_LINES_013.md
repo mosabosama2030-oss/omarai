@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003101 إلى SRC-1AE03B9EC3-L003900
+- النطاق: SRC-1AE03B9EC3-L003093 إلى SRC-1AE03B9EC3-L003892
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003093](../../agents/web_agent.py#L3093) | 3093 | `"        temperature: float = 0.2,"` | — |
+| [SRC-1AE03B9EC3-L003094](../../agents/web_agent.py#L3094) | 3094 | `"        timeout: int \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003095](../../agents/web_agent.py#L3095) | 3095 | `"        model: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003096](../../agents/web_agent.py#L3096) | 3096 | `"        enable_web_search: bool = False,"` | — |
+| [SRC-1AE03B9EC3-L003097](../../agents/web_agent.py#L3097) | 3097 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003098](../../agents/web_agent.py#L3098) | 3098 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003099](../../agents/web_agent.py#L3099) | 3099 | `"        requested_model = (model or self.answer_model).strip()"` | — |
+| [SRC-1AE03B9EC3-L003100](../../agents/web_agent.py#L3100) | 3100 | `"        if not self.api_key:"` | — |
 | [SRC-1AE03B9EC3-L003101](../../agents/web_agent.py#L3101) | 3101 | `"            self._record_generation_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L003102](../../agents/web_agent.py#L3102) | 3102 | `"                requested_model=requested_model,"` | — |
 | [SRC-1AE03B9EC3-L003103](../../agents/web_agent.py#L3103) | 3103 | `"                attempted_model=requested_model,"` | — |
@@ -808,11 +816,3 @@
 | [SRC-1AE03B9EC3-L003890](../../agents/web_agent.py#L3890) | 3890 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
 | [SRC-1AE03B9EC3-L003891](../../agents/web_agent.py#L3891) | 3891 | `"        return repaired.group(1).strip()"` | — |
 | [SRC-1AE03B9EC3-L003892](../../agents/web_agent.py#L3892) | 3892 | `""` | — |
-| [SRC-1AE03B9EC3-L003893](../../agents/web_agent.py#L3893) | 3893 | `"    def _review_answer("` | — |
-| [SRC-1AE03B9EC3-L003894](../../agents/web_agent.py#L3894) | 3894 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003895](../../agents/web_agent.py#L3895) | 3895 | `"        question: str,"` | — |
-| [SRC-1AE03B9EC3-L003896](../../agents/web_agent.py#L3896) | 3896 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L003897](../../agents/web_agent.py#L3897) | 3897 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L003898](../../agents/web_agent.py#L3898) | 3898 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003899](../../agents/web_agent.py#L3899) | 3899 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003900](../../agents/web_agent.py#L3900) | 3900 | `"        source_blocks: list[str] = []"` | — |

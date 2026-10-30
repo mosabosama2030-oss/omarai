@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006301 إلى SRC-EEF2E6447C-L000465
+- النطاق: SRC-1AE03B9EC3-L006293 إلى SRC-EEF2E6447C-L000457
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006293](../../agents/web_agent.py#L6293) | 6293 | `"                        \"تعذرت محاولة إصلاح محور قد يكون ناقصًا (\""` | — |
+| [SRC-1AE03B9EC3-L006294](../../agents/web_agent.py#L6294) | 6294 | `"                        + type(exc).__name__"` | — |
+| [SRC-1AE03B9EC3-L006295](../../agents/web_agent.py#L6295) | 6295 | `"                        + \")؛ راجع المحاور المطلوبة قبل اعتماد الإجابة.\""` | — |
+| [SRC-1AE03B9EC3-L006296](../../agents/web_agent.py#L6296) | 6296 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L006297](../../agents/web_agent.py#L6297) | 6297 | `"        elif coverage_targets and review_status == \"model_claim_audit_completed\" and not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L006298](../../agents/web_agent.py#L6298) | 6298 | `"            coverage_repair_status = \"skipped_no_model_configuration\""` | — |
+| [SRC-1AE03B9EC3-L006299](../../agents/web_agent.py#L6299) | 6299 | `"        elif coverage_targets:"` | — |
+| [SRC-1AE03B9EC3-L006300](../../agents/web_agent.py#L6300) | 6300 | `"            coverage_repair_status = \"skipped_review_unavailable\""` | — |
 | [SRC-1AE03B9EC3-L006301](../../agents/web_agent.py#L6301) | 6301 | `""` | — |
 | [SRC-1AE03B9EC3-L006302](../../agents/web_agent.py#L6302) | 6302 | `"        if self.server_search_sources:"` | — |
 | [SRC-1AE03B9EC3-L006303](../../agents/web_agent.py#L6303) | 6303 | `"            answer += \"\\n\\nروابط إضافية من البحث المباشر عبر الويب:\""` | — |
@@ -826,11 +834,3 @@
 | [SRC-EEF2E6447C-L000455](../../api/omarai.py#L455) | 455 | `"                    break"` | — |
 | [SRC-EEF2E6447C-L000456](../../api/omarai.py#L456) | 456 | `"                if not chunk:"` | — |
 | [SRC-EEF2E6447C-L000457](../../api/omarai.py#L457) | 457 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000458](../../api/omarai.py#L458) | 458 | `"                body.extend(chunk)"` | — |
-| [SRC-EEF2E6447C-L000459](../../api/omarai.py#L459) | 459 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000460](../../api/omarai.py#L460) | 460 | `"            try:"` | — |
-| [SRC-EEF2E6447C-L000461](../../api/omarai.py#L461) | 461 | `"                self.connection.settimeout(previous_timeout)"` | — |
-| [SRC-EEF2E6447C-L000462](../../api/omarai.py#L462) | 462 | `"            except OSError:"` | — |
-| [SRC-EEF2E6447C-L000463](../../api/omarai.py#L463) | 463 | `"                pass"` | — |
-| [SRC-EEF2E6447C-L000464](../../api/omarai.py#L464) | 464 | `""` | — |
-| [SRC-EEF2E6447C-L000465](../../api/omarai.py#L465) | 465 | `"        if timed_out:"` | — |

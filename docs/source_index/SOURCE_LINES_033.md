@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000943 إلى SRC-63610B9E85-L000086
+- النطاق: SRC-90FAA34ADE-L000935 إلى SRC-63610B9E85-L000078
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000935](../../tests/fixtures/answer_quality_cases.json#L935) | 935 | `"        \"Marks the prospect fully verified from one directory entry\","` | — |
+| [SRC-90FAA34ADE-L000936](../../tests/fixtures/answer_quality_cases.json#L936) | 936 | `"        \"Infers purchase intent solely from business category\""` | — |
+| [SRC-90FAA34ADE-L000937](../../tests/fixtures/answer_quality_cases.json#L937) | 937 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000938](../../tests/fixtures/answer_quality_cases.json#L938) | 938 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000939](../../tests/fixtures/answer_quality_cases.json#L939) | 939 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000940](../../tests/fixtures/answer_quality_cases.json#L940) | 940 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000941](../../tests/fixtures/answer_quality_cases.json#L941) | 941 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000942](../../tests/fixtures/answer_quality_cases.json#L942) | 942 | `"            \"title\": \"Bakery directory listing\","` | — |
 | [SRC-90FAA34ADE-L000943](../../tests/fixtures/answer_quality_cases.json#L943) | 943 | `"            \"url\": \"https://directory.example.test/bakery\","` | — |
 | [SRC-90FAA34ADE-L000944](../../tests/fixtures/answer_quality_cases.json#L944) | 944 | `"            \"snippet\": \"Bakery in Cairo; phone number shown; last updated not stated.\","` | — |
 | [SRC-90FAA34ADE-L000945](../../tests/fixtures/answer_quality_cases.json#L945) | 945 | `"            \"domain\": \"directory.example.test\","` | — |
@@ -835,11 +843,3 @@
 | [SRC-63610B9E85-L000076](../../tests/test_agentic_retrieval.py#L76) | 76 | `"            \"snippet\": \"Solar battery price: 100 EGP.\","` | — |
 | [SRC-63610B9E85-L000077](../../tests/test_agentic_retrieval.py#L77) | 77 | `"            \"provider\": \"fixture_search\","` | — |
 | [SRC-63610B9E85-L000078](../../tests/test_agentic_retrieval.py#L78) | 78 | `"            \"provider_rank\": 1,"` | — |
-| [SRC-63610B9E85-L000079](../../tests/test_agentic_retrieval.py#L79) | 79 | `"        }]"` | — |
-| [SRC-63610B9E85-L000080](../../tests/test_agentic_retrieval.py#L80) | 80 | `""` | — |
-| [SRC-63610B9E85-L000081](../../tests/test_agentic_retrieval.py#L81) | 81 | `"    monkeypatch.setattr(agent, \"_search_web\", fake_search)"` | — |
-| [SRC-63610B9E85-L000082](../../tests/test_agentic_retrieval.py#L82) | 82 | `"    monkeypatch.setattr("` | — |
-| [SRC-63610B9E85-L000083](../../tests/test_agentic_retrieval.py#L83) | 83 | `"        agent, \"_fetch_page\","` | — |
-| [SRC-63610B9E85-L000084](../../tests/test_agentic_retrieval.py#L84) | 84 | `"        lambda _url: (\"Fixture page\", \"Solar battery price and warranty evidence text.\"),"` | — |
-| [SRC-63610B9E85-L000085](../../tests/test_agentic_retrieval.py#L85) | 85 | `"    )"` | — |
-| [SRC-63610B9E85-L000086](../../tests/test_agentic_retrieval.py#L86) | 86 | `"    sources, _warnings, report = agent._collect_research({"` | — |
