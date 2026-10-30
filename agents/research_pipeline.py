@@ -169,7 +169,7 @@ def build_research_pipeline(
         "evidence": evidence,
         "evidence_ledger": evidence["lexical_ledger"],
         "stages": {
-            "context_resolution": "completed" if history else "not_needed",
+            "context_resolution": "completed" if history or dialogue_context else "not_needed",
             "intent_routing": "completed",
             "task_understanding": "completed",
             "aspect_extraction": "completed",
