@@ -135,8 +135,13 @@ def build_research_pipeline(
         dialogue_context=dialogue_context if isinstance(dialogue_context, dict) else None,
     )
     aspects = _clean_aspects(task_spec, contextual_question)
+    task_requires_clarification = bool(task_spec.get("requires_clarification"))
+    if task_requires_clarification and not intent.get("needs_clarification"):
+        intent = dict(intent)
+        intent["needs_clarification"] = True
+        intent["reason"] = "task_spec_missing_required_input"
 
-    if route == "CLARIFY" or intent.get("needs_clarification"):
+    if route == "CLARIFY" or intent.get("needs_clarification") or task_requires_clarification:
         strategy_matrix: list[dict[str, str]] = []
         queries: list[str] = []
         query_status = "blocked_pending_clarification"
