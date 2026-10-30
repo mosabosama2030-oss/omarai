@@ -6,7 +6,8 @@ signal; semantic matching is explicitly unassessed unless a scorer is injected.
 """
 from __future__ import annotations
 
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from agents.aspect_planning import build_evidence_ledger, extract_aspects
 from agents.intent_router import ROUTES, resolve_followup_query, route_intent
