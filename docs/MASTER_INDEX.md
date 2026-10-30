@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **116**
 - ملفات Python المحللة: **70**
-- تعريفات Python المفهرسة: **1466**
+- تعريفات Python المفهرسة: **1496**
 - تعريفات Python موثقة بوجود Docstring: **242**
-- تعريفات Python بلا Docstring: **936**
-- تعريفات لا ينطبق عليها Docstring: **288**
-- الرموز الساكنة الإضافية: **1863**
-- الأسطر النصية المفهرسة حرفيًا: **39180**
+- تعريفات Python بلا Docstring: **952**
+- تعريفات لا ينطبق عليها Docstring: **302**
+- الرموز الساكنة الإضافية: **1867**
+- الأسطر النصية المفهرسة حرفيًا: **39553**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -41,7 +41,7 @@
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10662 | 253 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
-| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16 | 1 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 16959 | 374 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
@@ -213,6 +213,36 @@
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L74) | دالة | fallback_dialogue_context | Build a conservative context record from the deterministic follow-up resolver. | موثق | 74 | [SRC-2D53795445-L000074](../agents/dialogue_state.py#L74) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L103) | دالة | validate_dialogue_context | Validate bounded context output from a planner without treating it as truth. | موثق | 103 | [SRC-2D53795445-L000103](../agents/dialogue_state.py#L103) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L223) | دالة | might_be_context_dependent | Cheap trigger only; it does not decide the meaning of a contextual message. | موثق | 223 | [SRC-2D53795445-L000223](../agents/dialogue_state.py#L223) |
+| [agents/intent_router.py](../agents/intent_router.py#L12) | متغير/ثابت Python | MAX_CONTEXT_TURNS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
+| [agents/intent_router.py](../agents/intent_router.py#L14) | متغير/ثابت Python | ROUTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-5587371288-L000014](../agents/intent_router.py#L14) |
+| [agents/intent_router.py](../agents/intent_router.py#L19) | متغير/ثابت Python | _ARABIC_DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-5587371288-L000019](../agents/intent_router.py#L19) |
+| [agents/intent_router.py](../agents/intent_router.py#L20) | متغير/ثابت Python | _PUNCTUATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-5587371288-L000020](../agents/intent_router.py#L20) |
+| [agents/intent_router.py](../agents/intent_router.py#L21) | متغير/ثابت Python | _SPACE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-5587371288-L000021](../agents/intent_router.py#L21) |
+| [agents/intent_router.py](../agents/intent_router.py#L23) | متغير/ثابت Python | _SMALLTALK | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-5587371288-L000023](../agents/intent_router.py#L23) |
+| [agents/intent_router.py](../agents/intent_router.py#L35) | متغير/ثابت Python | _AMBIGUOUS_ARABIC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 35 | [SRC-5587371288-L000035](../agents/intent_router.py#L35) |
+| [agents/intent_router.py](../agents/intent_router.py#L49) | متغير/ثابت Python | _AMBIGUOUS_ENGLISH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 49 | [SRC-5587371288-L000049](../agents/intent_router.py#L49) |
+| [agents/intent_router.py](../agents/intent_router.py#L57) | متغير/ثابت Python | _DEEP_TERMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 57 | [SRC-5587371288-L000057](../agents/intent_router.py#L57) |
+| [agents/intent_router.py](../agents/intent_router.py#L63) | متغير/ثابت Python | _MULTIPART_MARKERS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 63 | [SRC-5587371288-L000063](../agents/intent_router.py#L63) |
+| [agents/intent_router.py](../agents/intent_router.py#L70) | دالة | _normalize | لا توجد Docstring. | ناقص | 70 | [SRC-5587371288-L000070](../agents/intent_router.py#L70) |
+| [agents/intent_router.py](../agents/intent_router.py#L80) | دالة | _is_smalltalk | لا توجد Docstring. | ناقص | 80 | [SRC-5587371288-L000080](../agents/intent_router.py#L80) |
+| [agents/intent_router.py](../agents/intent_router.py#L90) | دالة | _has_context | لا توجد Docstring. | ناقص | 90 | [SRC-5587371288-L000090](../agents/intent_router.py#L90) |
+| [agents/intent_router.py](../agents/intent_router.py#L94) | دالة | _has_live_signal | لا توجد Docstring. | ناقص | 94 | [SRC-5587371288-L000094](../agents/intent_router.py#L94) |
+| [agents/intent_router.py](../agents/intent_router.py#L111) | دالة | _is_lead_generation_request | لا توجد Docstring. | ناقص | 111 | [SRC-5587371288-L000111](../agents/intent_router.py#L111) |
+| [agents/intent_router.py](../agents/intent_router.py#L133) | متغير/ثابت Python | _FOLLOWUP_LEAD_IN_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 133 | [SRC-5587371288-L000133](../agents/intent_router.py#L133) |
+| [agents/intent_router.py](../agents/intent_router.py#L138) | متغير/ثابت Python | _FOLLOWUP_ASPECT_FRAGMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 138 | [SRC-5587371288-L000138](../agents/intent_router.py#L138) |
+| [agents/intent_router.py](../agents/intent_router.py#L151) | دالة | _strip_followup_leadin | لا توجد Docstring. | ناقص | 151 | [SRC-5587371288-L000151](../agents/intent_router.py#L151) |
+| [agents/intent_router.py](../agents/intent_router.py#L155) | متغير/ثابت Python | _CONTEXTUAL_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 155 | [SRC-5587371288-L000155](../agents/intent_router.py#L155) |
+| [agents/intent_router.py](../agents/intent_router.py#L159) | متغير/ثابت Python | _CONTEXTUAL_ENGLISH_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 159 | [SRC-5587371288-L000159](../agents/intent_router.py#L159) |
+| [agents/intent_router.py](../agents/intent_router.py#L165) | دالة | _starts_with_contextual_aspect | لا توجد Docstring. | ناقص | 165 | [SRC-5587371288-L000165](../agents/intent_router.py#L165) |
+| [agents/intent_router.py](../agents/intent_router.py#L177) | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 177 | [SRC-5587371288-L000177](../agents/intent_router.py#L177) |
+| [agents/intent_router.py](../agents/intent_router.py#L194) | دالة | _is_clarification_message | لا توجد Docstring. | ناقص | 194 | [SRC-5587371288-L000194](../agents/intent_router.py#L194) |
+| [agents/intent_router.py](../agents/intent_router.py#L205) | دالة | _latest_context_anchor | لا توجد Docstring. | ناقص | 205 | [SRC-5587371288-L000205](../agents/intent_router.py#L205) |
+| [agents/intent_router.py](../agents/intent_router.py#L232) | دالة | _pending_clarification_query | لا توجد Docstring. | ناقص | 232 | [SRC-5587371288-L000232](../agents/intent_router.py#L232) |
+| [agents/intent_router.py](../agents/intent_router.py#L258) | دالة | _is_clarification_answer | لا توجد Docstring. | ناقص | 258 | [SRC-5587371288-L000258](../agents/intent_router.py#L258) |
+| [agents/intent_router.py](../agents/intent_router.py#L267) | دالة | _is_contextual_followup | لا توجد Docstring. | ناقص | 267 | [SRC-5587371288-L000267](../agents/intent_router.py#L267) |
+| [agents/intent_router.py](../agents/intent_router.py#L288) | دالة | resolve_followup_query | لا توجد Docstring. | ناقص | 288 | [SRC-5587371288-L000288](../agents/intent_router.py#L288) |
+| [agents/intent_router.py](../agents/intent_router.py#L307) | دالة | _has_explicit_source_request | لا توجد Docstring. | ناقص | 307 | [SRC-5587371288-L000307](../agents/intent_router.py#L307) |
+| [agents/intent_router.py](../agents/intent_router.py#L319) | دالة | route_intent | لا توجد Docstring. | ناقص | 319 | [SRC-5587371288-L000319](../agents/intent_router.py#L319) |
 | [agents/omarai.py](../agents/omarai.py#L14) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
 | [agents/omarai.py](../agents/omarai.py#L15) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-C9CF9B54F8-L000015](../agents/omarai.py#L15) |
 | [agents/omarai.py](../agents/omarai.py#L16) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-C9CF9B54F8-L000016](../agents/omarai.py#L16) |
@@ -1759,7 +1789,11 @@
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TEXT_CHARS | 16 | [SRC-2D53795445-L000016](../agents/dialogue_state.py#L16) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_ENTITIES | 17 | [SRC-2D53795445-L000017](../agents/dialogue_state.py#L17) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_SLOT_VALUES | 18 | [SRC-2D53795445-L000018](../agents/dialogue_state.py#L18) |
-| [agents/intent_router.py](../agents/intent_router.py#L1) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PLACEHOLDER_FULL | 1 | [SRC-5587371288-L000001](../agents/intent_router.py#L1) |
+| [agents/intent_router.py](../agents/intent_router.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONTEXT_TURNS | 12 | [SRC-5587371288-L000012](../agents/intent_router.py#L12) |
+| [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
+| [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
+| [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
+| [agents/intent_router.py](../agents/intent_router.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 16 | [SRC-5587371288-L000016](../agents/intent_router.py#L16) |
 | [agents/omarai.py](../agents/omarai.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT | 14 | [SRC-C9CF9B54F8-L000014](../agents/omarai.py#L14) |
 | [agents/omarai.py](../agents/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
 | [agents/omarai.py](../agents/omarai.py#L150) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 150 | [SRC-C9CF9B54F8-L000150](../agents/omarai.py#L150) |
