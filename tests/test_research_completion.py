@@ -238,7 +238,7 @@ def test_out_of_range_citation_reference_prevents_completed_research_status() ->
     assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
 
 
-def test_missing_claim_ledger_does_not_create_citation_reference_warning() -> None:
+def test_missing_claim_ledger_prevents_completed_research_status() -> None:
     result = build_research_completion({
         "kind": "web_research",
         "used_language_model": True,
@@ -257,9 +257,12 @@ def test_missing_claim_ledger_does_not_create_citation_reference_warning() -> No
     })
 
     assert result["counters"]["out_of_range_citation_reference_count"] == 0
-    assert result["status"] == (
-        "answer_generated_citations_range_checked_semantic_support_unverified"
-    )
+    assert result["counters"]["claim_ledger_status"] == "missing"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert result["phases"]["semantic_verification"] == "not_performed"
 
 
 def test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate() -> None:
@@ -327,3 +330,28 @@ def test_explicit_claim_ledger_build_failure_prevents_completed_status() -> None
     assert result["counters"]["citation_support_warning_count"] == 1
     assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
     assert result["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_unrecognized_claim_ledger_status_prevents_completed_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "claim_evidence_ledger": {"status": "partial"},
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["claim_ledger_status"] == "partial"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
