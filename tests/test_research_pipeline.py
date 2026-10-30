@@ -64,3 +64,40 @@ def test_pipeline_bounds_malformed_inputs_and_keeps_semantic_stage_unassessed():
     assert len(result["queries"]) <= 8
     assert result["evidence_ledger"]["aspects"] == []
     assert result["stages"]["semantic_matching"] == "not_configured"
+
+
+
+def test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores():
+    calls = []
+
+    def matcher(aspect, source):
+        calls.append((aspect, source.get("url")))
+        return 0.9 if source.get("url", "").endswith("/relevant") else float("nan")
+
+    result = build_research_pipeline(
+        "ما سعر الهاتف ومدة الضمان؟",
+        {"queries": ["الهاتف"]},
+        intent_route="WEB_DEEP",
+        sources=[
+            {"title": "سعر الهاتف", "url": "https://example.com/relevant", "snippet": "السعر"},
+            {"title": "صفحة أخرى", "url": "https://example.com/other", "snippet": "عام"},
+        ],
+        semantic_matcher=matcher,
+    )
+
+    assert result["evidence"]["semantic_matching"]["status"] == "evaluated"
+    assert len(calls) == len(result["aspects"]) * 2
+    for candidates in result["evidence"]["semantic_matching"]["candidates"].values():
+        assert all(0.0 <= item["score"] <= 1.0 for item in candidates)
+    # A semantic relevance score never promotes an aspect into the lexical evidence ledger.
+    assert result["evidence"]["lexical_ledger"]["covered"] != result["aspects"]
+
+
+def test_fallback_plan_exposes_same_unified_pipeline_contract():
+    from agents.research import fallback_plan
+
+    plan = fallback_plan("حلل السيارات الكهربائية في مصر من حيث السعر والضمان")
+
+    assert plan["research_pipeline"]["aspects"]
+    assert plan["research_pipeline"]["stages"]["query_planning"] == "completed"
+    assert plan["query_strategy_matrix"]
