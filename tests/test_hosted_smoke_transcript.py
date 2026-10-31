@@ -26,6 +26,11 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
                 "provider_diagnostics": [
                     {"provider": "bing_rss", "status": "ok", "accepted_count": 2}
                 ],
+                "configuration": {
+                    "brave_search_api_configured": False,
+                    "tavily_search_api_configured": False,
+                    "deepseek_search_api_configured": False,
+                },
                 "warnings": [],
             }
         if url.endswith("/api/agent") and token:
@@ -62,6 +67,8 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
     assert transcript["sources"][0]["url"] == "https://example.test/fire-alarm-tender"
     assert transcript["pipeline_completion_status"] == "completed"
     assert report["provider_diagnostics"][0]["provider"] == "bing_rss"
+    assert report["connector_configuration"]["brave_search_api_configured"] is False
+    assert report["connector_check"]["provider_counts"] == {"bing_rss": 2}
     diagnostics_call = next(call for call in calls if call[0].endswith("/api/diagnostics"))
     assert diagnostics_call[2]["test_model"] is False
     assert all("T" * 40 not in str(item) for item in report.values())
