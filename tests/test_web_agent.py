@@ -4205,7 +4205,7 @@ def test_model_provider_rejects_remote_http_before_sending_bearer_key(monkeypatc
         )
 
     assert agent.generation_diagnostics[-1]["status"] == "unsafe_provider_url"
-    assert agent.generation_diagnostics[-1]["request_started"] == "false"
+    assert agent.generation_diagnostics[-1]["request_started"] is False
 
 
 def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatch):
