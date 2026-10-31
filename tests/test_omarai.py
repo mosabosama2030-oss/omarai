@@ -105,7 +105,7 @@ def test_legacy_leads_migrate_into_the_initial_company_without_data_loss(tmp_pat
             """INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 "legacy-id", hashlib.sha256((
-                    "https://example.com/legacy\\n" + normalize("بدور على شقة")
+                    "https://example.com/legacy\n" + normalize("بدور على شقة")
                 ).encode()).hexdigest(), "بدور على شقة",
                 "https://example.com/legacy", "manual", now,
                 json.dumps({"score": 1}), "new", "", now, now,
