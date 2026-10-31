@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000681 إلى SRC-90FAA34ADE-L000363
+- النطاق: SRC-4FFD5AFC54-L000653 إلى SRC-90FAA34ADE-L000335
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000653](../../scripts/run_answer_quality_benchmark.py#L653) | 653 | `"        \"expected_build_sha\": expected_build_sha or None,"` | — |
+| [SRC-4FFD5AFC54-L000654](../../scripts/run_answer_quality_benchmark.py#L654) | 654 | `"        \"executed_at_utc\": _utc_now(),"` | — |
+| [SRC-4FFD5AFC54-L000655](../../scripts/run_answer_quality_benchmark.py#L655) | 655 | `"        \"case_count\": len(results),"` | — |
+| [SRC-4FFD5AFC54-L000656](../../scripts/run_answer_quality_benchmark.py#L656) | 656 | `"        \"results\": results,"` | — |
+| [SRC-4FFD5AFC54-L000657](../../scripts/run_answer_quality_benchmark.py#L657) | 657 | `"        \"disclaimer\": ("` | — |
+| [SRC-4FFD5AFC54-L000658](../../scripts/run_answer_quality_benchmark.py#L658) | 658 | `"            \"status=NOT_TESTED means answer quality was not auto-graded. \""` | — |
+| [SRC-4FFD5AFC54-L000659](../../scripts/run_answer_quality_benchmark.py#L659) | 659 | `"            \"Fixtures in JSON were not applied to the live server.\""` | — |
+| [SRC-4FFD5AFC54-L000660](../../scripts/run_answer_quality_benchmark.py#L660) | 660 | `"        ),"` | — |
+| [SRC-4FFD5AFC54-L000661](../../scripts/run_answer_quality_benchmark.py#L661) | 661 | `"    }"` | — |
+| [SRC-4FFD5AFC54-L000662](../../scripts/run_answer_quality_benchmark.py#L662) | 662 | `"    text = json.dumps(envelope, ensure_ascii=False, indent=2)"` | — |
+| [SRC-4FFD5AFC54-L000663](../../scripts/run_answer_quality_benchmark.py#L663) | 663 | `"    if out_path:"` | — |
+| [SRC-4FFD5AFC54-L000664](../../scripts/run_answer_quality_benchmark.py#L664) | 664 | `"        out_path.write_text(text + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-4FFD5AFC54-L000665](../../scripts/run_answer_quality_benchmark.py#L665) | 665 | `"        print(f\"Wrote {out_path}\")"` | — |
+| [SRC-4FFD5AFC54-L000666](../../scripts/run_answer_quality_benchmark.py#L666) | 666 | `"    else:"` | — |
+| [SRC-4FFD5AFC54-L000667](../../scripts/run_answer_quality_benchmark.py#L667) | 667 | `"        print(text)"` | — |
+| [SRC-4FFD5AFC54-L000668](../../scripts/run_answer_quality_benchmark.py#L668) | 668 | `"    return 0"` | — |
+| [SRC-4FFD5AFC54-L000669](../../scripts/run_answer_quality_benchmark.py#L669) | 669 | `""` | — |
+| [SRC-4FFD5AFC54-L000670](../../scripts/run_answer_quality_benchmark.py#L670) | 670 | `""` | — |
+| [SRC-4FFD5AFC54-L000671](../../scripts/run_answer_quality_benchmark.py#L671) | 671 | `"def main(argv: list[str] \| None = None) -> int:"` | — |
+| [SRC-4FFD5AFC54-L000672](../../scripts/run_answer_quality_benchmark.py#L672) | 672 | `"    parser = argparse.ArgumentParser(description=\"Omarai answer-quality benchmark runner\")"` | — |
+| [SRC-4FFD5AFC54-L000673](../../scripts/run_answer_quality_benchmark.py#L673) | 673 | `"    parser.add_argument("` | — |
+| [SRC-4FFD5AFC54-L000674](../../scripts/run_answer_quality_benchmark.py#L674) | 674 | `"        \"--mode\","` | — |
+| [SRC-4FFD5AFC54-L000675](../../scripts/run_answer_quality_benchmark.py#L675) | 675 | `"        choices=(\"validate\", \"live\"),"` | — |
+| [SRC-4FFD5AFC54-L000676](../../scripts/run_answer_quality_benchmark.py#L676) | 676 | `"        default=\"validate\","` | — |
+| [SRC-4FFD5AFC54-L000677](../../scripts/run_answer_quality_benchmark.py#L677) | 677 | `"        help=\"validate=offline corpus check (default); live=opt-in API calls\","` | — |
+| [SRC-4FFD5AFC54-L000678](../../scripts/run_answer_quality_benchmark.py#L678) | 678 | `"    )"` | — |
+| [SRC-4FFD5AFC54-L000679](../../scripts/run_answer_quality_benchmark.py#L679) | 679 | `"    parser.add_argument("` | — |
+| [SRC-4FFD5AFC54-L000680](../../scripts/run_answer_quality_benchmark.py#L680) | 680 | `"        \"--corpus\","` | — |
 | [SRC-4FFD5AFC54-L000681](../../scripts/run_answer_quality_benchmark.py#L681) | 681 | `"        type=Path,"` | — |
 | [SRC-4FFD5AFC54-L000682](../../scripts/run_answer_quality_benchmark.py#L682) | 682 | `"        default=DEFAULT_CORPUS,"` | — |
 | [SRC-4FFD5AFC54-L000683](../../scripts/run_answer_quality_benchmark.py#L683) | 683 | `"        help=\"Path to answer_quality_cases.json\","` | — |
@@ -815,31 +843,3 @@
 | [SRC-90FAA34ADE-L000333](../../tests/fixtures/answer_quality_cases.json#L333) | 333 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L000334](../../tests/fixtures/answer_quality_cases.json#L334) | 334 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000335](../../tests/fixtures/answer_quality_cases.json#L335) | 335 | `"        \"Handles mixed Arabic-English place names\","` | — |
-| [SRC-90FAA34ADE-L000336](../../tests/fixtures/answer_quality_cases.json#L336) | 336 | `"        \"Gives directional guidance with sources or clear uncertainty\""` | — |
-| [SRC-90FAA34ADE-L000337](../../tests/fixtures/answer_quality_cases.json#L337) | 337 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000338](../../tests/fixtures/answer_quality_cases.json#L338) | 338 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000339](../../tests/fixtures/answer_quality_cases.json#L339) | 339 | `"        \"Ignores English tokens\""` | — |
-| [SRC-90FAA34ADE-L000340](../../tests/fixtures/answer_quality_cases.json#L340) | 340 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000341](../../tests/fixtures/answer_quality_cases.json#L341) | 341 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000342](../../tests/fixtures/answer_quality_cases.json#L342) | 342 | `"        \"type\": \"controlled_search\""` | — |
-| [SRC-90FAA34ADE-L000343](../../tests/fixtures/answer_quality_cases.json#L343) | 343 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000344](../../tests/fixtures/answer_quality_cases.json#L344) | 344 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000345](../../tests/fixtures/answer_quality_cases.json#L345) | 345 | `"        \"Treats Roxy/New Cairo as unknown solely due to script mix\""` | — |
-| [SRC-90FAA34ADE-L000346](../../tests/fixtures/answer_quality_cases.json#L346) | 346 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000347](../../tests/fixtures/answer_quality_cases.json#L347) | 347 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000348](../../tests/fixtures/answer_quality_cases.json#L348) | 348 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000349](../../tests/fixtures/answer_quality_cases.json#L349) | 349 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000350](../../tests/fixtures/answer_quality_cases.json#L350) | 350 | `"      \"case_id\": \"AQ-015\","` | — |
-| [SRC-90FAA34ADE-L000351](../../tests/fixtures/answer_quality_cases.json#L351) | 351 | `"      \"category\": \"irrelevant_results\","` | — |
-| [SRC-90FAA34ADE-L000352](../../tests/fixtures/answer_quality_cases.json#L352) | 352 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000353](../../tests/fixtures/answer_quality_cases.json#L353) | 353 | `"      \"question\": \"ما إجراءات تجديد جواز السفر المصري؟\","` | — |
-| [SRC-90FAA34ADE-L000354](../../tests/fixtures/answer_quality_cases.json#L354) | 354 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000355](../../tests/fixtures/answer_quality_cases.json#L355) | 355 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000356](../../tests/fixtures/answer_quality_cases.json#L356) | 356 | `"        \"Rejects or downranks off-topic sources\","` | — |
-| [SRC-90FAA34ADE-L000357](../../tests/fixtures/answer_quality_cases.json#L357) | 357 | `"        \"Abstains or warns if only irrelevant hits remain\""` | — |
-| [SRC-90FAA34ADE-L000358](../../tests/fixtures/answer_quality_cases.json#L358) | 358 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000359](../../tests/fixtures/answer_quality_cases.json#L359) | 359 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000360](../../tests/fixtures/answer_quality_cases.json#L360) | 360 | `"        \"Answers from unrelated travel blog about visas to Canada as if it were passport renewal\""` | — |
-| [SRC-90FAA34ADE-L000361](../../tests/fixtures/answer_quality_cases.json#L361) | 361 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000362](../../tests/fixtures/answer_quality_cases.json#L362) | 362 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000363](../../tests/fixtures/answer_quality_cases.json#L363) | 363 | `"        \"type\": \"controlled_search\","` | — |

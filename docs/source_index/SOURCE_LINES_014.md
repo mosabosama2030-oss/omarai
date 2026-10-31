@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003483 إلى SRC-1AE03B9EC3-L004282
+- النطاق: SRC-1AE03B9EC3-L003455 إلى SRC-1AE03B9EC3-L004254
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003455](../../agents/web_agent.py#L3455) | 3455 | `""` | — |
+| [SRC-1AE03B9EC3-L003456](../../agents/web_agent.py#L3456) | 3456 | `"        # Remove calendar-month artifacts hallucinated by the planner, but preserve dates in the resolved context."` | — |
+| [SRC-1AE03B9EC3-L003457](../../agents/web_agent.py#L3457) | 3457 | `"        user_query_norm = _normalize_search_query(search_question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L003458](../../agents/web_agent.py#L3458) | 3458 | `"        cleaned_queries = []"` | — |
+| [SRC-1AE03B9EC3-L003459](../../agents/web_agent.py#L3459) | 3459 | `"        for candidate_query in plan.get(\"queries\", []):"` | — |
+| [SRC-1AE03B9EC3-L003460](../../agents/web_agent.py#L3460) | 3460 | `"            cleaned_query = _normalize_search_query(str(candidate_query))"` | — |
+| [SRC-1AE03B9EC3-L003461](../../agents/web_agent.py#L3461) | 3461 | `"            for month in _CALENDAR_MONTHS:"` | — |
+| [SRC-1AE03B9EC3-L003462](../../agents/web_agent.py#L3462) | 3462 | `"                if month.casefold() not in user_query_norm:"` | — |
+| [SRC-1AE03B9EC3-L003463](../../agents/web_agent.py#L3463) | 3463 | `"                    cleaned_query = re.sub("` | — |
+| [SRC-1AE03B9EC3-L003464](../../agents/web_agent.py#L3464) | 3464 | `"                        rf\"(?i)(?<!\\\\w){re.escape(month)}(?!\\\\w)\", \" \", cleaned_query"` | — |
+| [SRC-1AE03B9EC3-L003465](../../agents/web_agent.py#L3465) | 3465 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L003466](../../agents/web_agent.py#L3466) | 3466 | `"            cleaned_query = re.sub(r\"\\\\s+\", \" \", cleaned_query).strip()"` | — |
+| [SRC-1AE03B9EC3-L003467](../../agents/web_agent.py#L3467) | 3467 | `"            if cleaned_query:"` | — |
+| [SRC-1AE03B9EC3-L003468](../../agents/web_agent.py#L3468) | 3468 | `"                cleaned_queries.append(cleaned_query)"` | — |
+| [SRC-1AE03B9EC3-L003469](../../agents/web_agent.py#L3469) | 3469 | `"        fallback_queries = []"` | — |
+| [SRC-1AE03B9EC3-L003470](../../agents/web_agent.py#L3470) | 3470 | `"        for fallback_query in fallback.get(\"queries\", []):"` | — |
+| [SRC-1AE03B9EC3-L003471](../../agents/web_agent.py#L3471) | 3471 | `"            if not isinstance(fallback_query, str):"` | — |
+| [SRC-1AE03B9EC3-L003472](../../agents/web_agent.py#L3472) | 3472 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L003473](../../agents/web_agent.py#L3473) | 3473 | `"            compacted_fallback = compact_search_query(fallback_query)"` | — |
+| [SRC-1AE03B9EC3-L003474](../../agents/web_agent.py#L3474) | 3474 | `"            if compacted_fallback and _relevance_query_tokens(compacted_fallback):"` | — |
+| [SRC-1AE03B9EC3-L003475](../../agents/web_agent.py#L3475) | 3475 | `"                fallback_queries.append(compacted_fallback)"` | — |
+| [SRC-1AE03B9EC3-L003476](../../agents/web_agent.py#L3476) | 3476 | `"        compact_question = compact_search_query(search_question)"` | — |
+| [SRC-1AE03B9EC3-L003477](../../agents/web_agent.py#L3477) | 3477 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L003478](../../agents/web_agent.py#L3478) | 3478 | `"            not cleaned_queries"` | — |
+| [SRC-1AE03B9EC3-L003479](../../agents/web_agent.py#L3479) | 3479 | `"            or not compact_question"` | — |
+| [SRC-1AE03B9EC3-L003480](../../agents/web_agent.py#L3480) | 3480 | `"            or _relevance_ratio(compact_question, cleaned_queries[0]) < 0.20"` | — |
+| [SRC-1AE03B9EC3-L003481](../../agents/web_agent.py#L3481) | 3481 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003482](../../agents/web_agent.py#L3482) | 3482 | `"            cleaned_queries = fallback_queries"` | — |
 | [SRC-1AE03B9EC3-L003483](../../agents/web_agent.py#L3483) | 3483 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L003484](../../agents/web_agent.py#L3484) | 3484 | `"            cleaned_queries = ["` | — |
 | [SRC-1AE03B9EC3-L003485](../../agents/web_agent.py#L3485) | 3485 | `"                compact_search_query(item)"` | — |
@@ -788,31 +816,3 @@
 | [SRC-1AE03B9EC3-L004252](../../agents/web_agent.py#L4252) | 4252 | `"                report[\"checks\"][\"social_search\"] = {"` | — |
 | [SRC-1AE03B9EC3-L004253](../../agents/web_agent.py#L4253) | 4253 | `"                    \"status\": \"failed\","` | — |
 | [SRC-1AE03B9EC3-L004254](../../agents/web_agent.py#L4254) | 4254 | `"                    \"platforms_tested\": configured_platforms,"` | — |
-| [SRC-1AE03B9EC3-L004255](../../agents/web_agent.py#L4255) | 4255 | `"                    \"result_count\": 0,"` | — |
-| [SRC-1AE03B9EC3-L004256](../../agents/web_agent.py#L4256) | 4256 | `"                    \"note\": _clean_text(str(exc), 400),"` | — |
-| [SRC-1AE03B9EC3-L004257](../../agents/web_agent.py#L4257) | 4257 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L004258](../../agents/web_agent.py#L4258) | 4258 | `""` | — |
-| [SRC-1AE03B9EC3-L004259](../../agents/web_agent.py#L4259) | 4259 | `"        report[\"model_usage\"] = list(self.model_usage)"` | — |
-| [SRC-1AE03B9EC3-L004260](../../agents/web_agent.py#L4260) | 4260 | `"        report[\"elapsed_ms\"] = round((time.monotonic() - started) * 1000)"` | — |
-| [SRC-1AE03B9EC3-L004261](../../agents/web_agent.py#L4261) | 4261 | `"        statuses = [check.get(\"status\") for check in report[\"checks\"].values()]"` | — |
-| [SRC-1AE03B9EC3-L004262](../../agents/web_agent.py#L4262) | 4262 | `"        report[\"overall_status\"] = ("` | — |
-| [SRC-1AE03B9EC3-L004263](../../agents/web_agent.py#L4263) | 4263 | `"            \"passed\""` | — |
-| [SRC-1AE03B9EC3-L004264](../../agents/web_agent.py#L4264) | 4264 | `"            if all(status in {\"passed\", \"skipped\"} for status in statuses)"` | — |
-| [SRC-1AE03B9EC3-L004265](../../agents/web_agent.py#L4265) | 4265 | `"            else \"degraded\""` | — |
-| [SRC-1AE03B9EC3-L004266](../../agents/web_agent.py#L4266) | 4266 | `"            if any(status in {\"passed\", \"degraded\"} for status in statuses)"` | — |
-| [SRC-1AE03B9EC3-L004267](../../agents/web_agent.py#L4267) | 4267 | `"            else \"failed\""` | — |
-| [SRC-1AE03B9EC3-L004268](../../agents/web_agent.py#L4268) | 4268 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004269](../../agents/web_agent.py#L4269) | 4269 | `"        return report"` | — |
-| [SRC-1AE03B9EC3-L004270](../../agents/web_agent.py#L4270) | 4270 | `""` | — |
-| [SRC-1AE03B9EC3-L004271](../../agents/web_agent.py#L4271) | 4271 | `"    def answer("` | — |
-| [SRC-1AE03B9EC3-L004272](../../agents/web_agent.py#L4272) | 4272 | `"        self, question: str, history: Any = None, mode: str = \"auto\""` | — |
-| [SRC-1AE03B9EC3-L004273](../../agents/web_agent.py#L4273) | 4273 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L004274](../../agents/web_agent.py#L4274) | 4274 | `"        \"\"\"Run one answer with an isolated, observable resource budget.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L004275](../../agents/web_agent.py#L4275) | 4275 | `"        previous_budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L004276](../../agents/web_agent.py#L4276) | 4276 | `"        self.generation_diagnostics = []"` | — |
-| [SRC-1AE03B9EC3-L004277](../../agents/web_agent.py#L4277) | 4277 | `"        self._generation_attempt_sequence = 0"` | — |
-| [SRC-1AE03B9EC3-L004278](../../agents/web_agent.py#L4278) | 4278 | `"        budget = RequestBudget.from_environment()"` | — |
-| [SRC-1AE03B9EC3-L004279](../../agents/web_agent.py#L4279) | 4279 | `"        self._request_budget = budget"` | — |
-| [SRC-1AE03B9EC3-L004280](../../agents/web_agent.py#L4280) | 4280 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L004281](../../agents/web_agent.py#L4281) | 4281 | `"            result = self._answer_with_budget(question, history, mode)"` | — |
-| [SRC-1AE03B9EC3-L004282](../../agents/web_agent.py#L4282) | 4282 | `"        except RequestBudgetExceeded as exc:"` | — |

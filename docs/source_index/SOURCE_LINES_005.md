@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D565C3B85-L000127 إلى SRC-59CF4B7DE8-L000778
+- النطاق: SRC-3D565C3B85-L000099 إلى SRC-59CF4B7DE8-L000750
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D565C3B85-L000099](../../agents/requirement_evidence.py#L99) | 99 | `"                evidence_basis = \"search_snippet\""` | — |
+| [SRC-3D565C3B85-L000100](../../agents/requirement_evidence.py#L100) | 100 | `"            elif title.strip():"` | — |
+| [SRC-3D565C3B85-L000101](../../agents/requirement_evidence.py#L101) | 101 | `"                candidate_text = title"` | — |
+| [SRC-3D565C3B85-L000102](../../agents/requirement_evidence.py#L102) | 102 | `"                evidence_basis = \"title_only\""` | — |
+| [SRC-3D565C3B85-L000103](../../agents/requirement_evidence.py#L103) | 103 | `"            else:"` | — |
+| [SRC-3D565C3B85-L000104](../../agents/requirement_evidence.py#L104) | 104 | `"                candidate_text = \"\""` | — |
+| [SRC-3D565C3B85-L000105](../../agents/requirement_evidence.py#L105) | 105 | `"                evidence_basis = \"no_readable_text\""` | — |
+| [SRC-3D565C3B85-L000106](../../agents/requirement_evidence.py#L106) | 106 | `"            available_tokens = set(tokenize_text(candidate_text, drop_stopwords=True))"` | — |
+| [SRC-3D565C3B85-L000107](../../agents/requirement_evidence.py#L107) | 107 | `"            matched_terms = _matched_target_terms(target_tokens, available_tokens)"` | — |
+| [SRC-3D565C3B85-L000108](../../agents/requirement_evidence.py#L108) | 108 | `"            ratio = len(matched_terms) / len(target_tokens) if target_tokens else 0.0"` | — |
+| [SRC-3D565C3B85-L000109](../../agents/requirement_evidence.py#L109) | 109 | `"            likely_candidate = bool(matched_terms) and ("` | — |
+| [SRC-3D565C3B85-L000110](../../agents/requirement_evidence.py#L110) | 110 | `"                ratio >= 0.5 if len(target_tokens) > 1 else True"` | — |
+| [SRC-3D565C3B85-L000111](../../agents/requirement_evidence.py#L111) | 111 | `"            )"` | — |
+| [SRC-3D565C3B85-L000112](../../agents/requirement_evidence.py#L112) | 112 | `"            if likely_candidate:"` | — |
+| [SRC-3D565C3B85-L000113](../../agents/requirement_evidence.py#L113) | 113 | `"                candidate_sources.append({"` | — |
+| [SRC-3D565C3B85-L000114](../../agents/requirement_evidence.py#L114) | 114 | `"                    \"source_index\": source_index,"` | — |
+| [SRC-3D565C3B85-L000115](../../agents/requirement_evidence.py#L115) | 115 | `"                    \"matched_target_terms\": matched_terms[:8],"` | — |
+| [SRC-3D565C3B85-L000116](../../agents/requirement_evidence.py#L116) | 116 | `"                    \"token_overlap_ratio\": round(ratio, 3),"` | — |
+| [SRC-3D565C3B85-L000117](../../agents/requirement_evidence.py#L117) | 117 | `"                    \"evidence_basis\": evidence_basis,"` | — |
+| [SRC-3D565C3B85-L000118](../../agents/requirement_evidence.py#L118) | 118 | `"                })"` | — |
+| [SRC-3D565C3B85-L000119](../../agents/requirement_evidence.py#L119) | 119 | `""` | — |
+| [SRC-3D565C3B85-L000120](../../agents/requirement_evidence.py#L120) | 120 | `"        if candidate_sources:"` | — |
+| [SRC-3D565C3B85-L000121](../../agents/requirement_evidence.py#L121) | 121 | `"            status = \"candidate_evidence_found_not_verified\""` | — |
+| [SRC-3D565C3B85-L000122](../../agents/requirement_evidence.py#L122) | 122 | `"        elif query_result_indexes:"` | — |
+| [SRC-3D565C3B85-L000123](../../agents/requirement_evidence.py#L123) | 123 | `"            status = \"query_returned_candidates_no_lexical_signal\""` | — |
+| [SRC-3D565C3B85-L000124](../../agents/requirement_evidence.py#L124) | 124 | `"        elif targeted_query and not any_query_metadata:"` | — |
+| [SRC-3D565C3B85-L000125](../../agents/requirement_evidence.py#L125) | 125 | `"            status = \"query_result_linkage_unavailable\""` | — |
+| [SRC-3D565C3B85-L000126](../../agents/requirement_evidence.py#L126) | 126 | `"        elif targeted_query:"` | — |
 | [SRC-3D565C3B85-L000127](../../agents/requirement_evidence.py#L127) | 127 | `"            status = \"no_candidate_evidence_found\""` | — |
 | [SRC-3D565C3B85-L000128](../../agents/requirement_evidence.py#L128) | 128 | `"        else:"` | — |
 | [SRC-3D565C3B85-L000129](../../agents/requirement_evidence.py#L129) | 129 | `"            status = \"query_not_available\""` | — |
@@ -797,31 +825,3 @@
 | [SRC-59CF4B7DE8-L000748](../../agents/research.py#L748) | 748 | `"        warnings.append(\"تمت قراءة أقل من صفحتين مباشرة؛ بعض الأدلة مقتطفات من محركات البحث فقط.\")"` | — |
 | [SRC-59CF4B7DE8-L000749](../../agents/research.py#L749) | 749 | `"    if freshness == \"current\":"` | — |
 | [SRC-59CF4B7DE8-L000750](../../agents/research.py#L750) | 750 | `"        if not dates:"` | — |
-| [SRC-59CF4B7DE8-L000751](../../agents/research.py#L751) | 751 | `"            warnings.append(\"لا تتوفر تواريخ نشر قابلة للتحليل؛ حداثة النتائج غير مؤكدة.\")"` | — |
-| [SRC-59CF4B7DE8-L000752](../../agents/research.py#L752) | 752 | `"        elif recent_count == 0:"` | — |
-| [SRC-59CF4B7DE8-L000753](../../agents/research.py#L753) | 753 | `"            warnings.append(f\"لم يُعثر على مصدر مؤرخ خلال آخر {recent_days} يومًا ضمن التواريخ القابلة للتحليل.\")"` | — |
-| [SRC-59CF4B7DE8-L000754](../../agents/research.py#L754) | 754 | `"    if future_dates:"` | — |
-| [SRC-59CF4B7DE8-L000755](../../agents/research.py#L755) | 755 | `"        warnings.append(\"توجد تواريخ مستقبلية غير متوقعة؛ يجب مراجعتها يدويًا.\")"` | — |
-| [SRC-59CF4B7DE8-L000756](../../agents/research.py#L756) | 756 | `"    if social_count and primary_count == 0:"` | — |
-| [SRC-59CF4B7DE8-L000757](../../agents/research.py#L757) | 757 | `"        warnings.append(\"المصادر اجتماعية فقط دون مصدر رسمي/أكاديمي؛ تعامل معها كآراء أو إشارات لا كحقائق مثبتة.\")"` | — |
-| [SRC-59CF4B7DE8-L000758](../../agents/research.py#L758) | 758 | `"    return {"` | — |
-| [SRC-59CF4B7DE8-L000759](../../agents/research.py#L759) | 759 | `"        \"unique_sources\": unique_sources,"` | — |
-| [SRC-59CF4B7DE8-L000760](../../agents/research.py#L760) | 760 | `"        \"unique_domains\": len(domains),"` | — |
-| [SRC-59CF4B7DE8-L000761](../../agents/research.py#L761) | 761 | `"        \"providers_count\": len(providers),"` | — |
-| [SRC-59CF4B7DE8-L000762](../../agents/research.py#L762) | 762 | `"        \"providers\": sorted(providers),"` | — |
-| [SRC-59CF4B7DE8-L000763](../../agents/research.py#L763) | 763 | `"        \"pages_read\": pages_read,"` | — |
-| [SRC-59CF4B7DE8-L000764](../../agents/research.py#L764) | 764 | `"        \"primary_sources\": primary_count,"` | — |
-| [SRC-59CF4B7DE8-L000765](../../agents/research.py#L765) | 765 | `"        \"news_sources\": news_count,"` | — |
-| [SRC-59CF4B7DE8-L000766](../../agents/research.py#L766) | 766 | `"        \"social_sources\": social_count,"` | — |
-| [SRC-59CF4B7DE8-L000767](../../agents/research.py#L767) | 767 | `"        \"dated_sources\": len(dates),"` | — |
-| [SRC-59CF4B7DE8-L000768](../../agents/research.py#L768) | 768 | `"        \"recent_sources\": recent_count,"` | — |
-| [SRC-59CF4B7DE8-L000769](../../agents/research.py#L769) | 769 | `"        \"undated_sources\": max(0, unique_sources - len(dates)),"` | — |
-| [SRC-59CF4B7DE8-L000770](../../agents/research.py#L770) | 770 | `"        \"date_coverage_percent\": round(100 * len(dates) / unique_sources) if unique_sources else 0,"` | — |
-| [SRC-59CF4B7DE8-L000771](../../agents/research.py#L771) | 771 | `"        \"coverage_score\": coverage_score,"` | — |
-| [SRC-59CF4B7DE8-L000772](../../agents/research.py#L772) | 772 | `"        \"coverage_level\": coverage_level,"` | — |
-| [SRC-59CF4B7DE8-L000773](../../agents/research.py#L773) | 773 | `"        \"score_meaning\": \"مؤشر تغطية وتنوع الأدلة، وليس احتمال صحة الإجابة.\","` | — |
-| [SRC-59CF4B7DE8-L000774](../../agents/research.py#L774) | 774 | `"        \"warnings\": warnings,"` | — |
-| [SRC-59CF4B7DE8-L000775](../../agents/research.py#L775) | 775 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000776](../../agents/research.py#L776) | 776 | `""` | — |
-| [SRC-59CF4B7DE8-L000777](../../agents/research.py#L777) | 777 | `""` | — |
-| [SRC-59CF4B7DE8-L000778](../../agents/research.py#L778) | 778 | `""` | — |

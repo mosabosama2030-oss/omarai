@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000452 إلى SRC-686F71AA50-L001251
+- النطاق: SRC-686F71AA50-L000424 إلى SRC-686F71AA50-L001223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000424](../../agents/task_understanding.py#L424) | 424 | `"            changed = False"` | — |
+| [SRC-686F71AA50-L000425](../../agents/task_understanding.py#L425) | 425 | `"            for prefix in (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\"):"` | — |
+| [SRC-686F71AA50-L000426](../../agents/task_understanding.py#L426) | 426 | `"                if token.startswith(prefix) and len(token) - len(prefix) >= 3:"` | — |
+| [SRC-686F71AA50-L000427](../../agents/task_understanding.py#L427) | 427 | `"                    token = token[len(prefix):]"` | — |
+| [SRC-686F71AA50-L000428](../../agents/task_understanding.py#L428) | 428 | `"                    changed = True"` | — |
+| [SRC-686F71AA50-L000429](../../agents/task_understanding.py#L429) | 429 | `"                    break"` | — |
+| [SRC-686F71AA50-L000430](../../agents/task_understanding.py#L430) | 430 | `"        if token and token not in ignored and len(token) >= 2:"` | — |
+| [SRC-686F71AA50-L000431](../../agents/task_understanding.py#L431) | 431 | `"            return True"` | — |
+| [SRC-686F71AA50-L000432](../../agents/task_understanding.py#L432) | 432 | `"    return False"` | — |
+| [SRC-686F71AA50-L000433](../../agents/task_understanding.py#L433) | 433 | `""` | — |
+| [SRC-686F71AA50-L000434](../../agents/task_understanding.py#L434) | 434 | `""` | — |
+| [SRC-686F71AA50-L000435](../../agents/task_understanding.py#L435) | 435 | `"def _extract_explicit_locations(question: str) -> list[str]:"` | — |
+| [SRC-686F71AA50-L000436](../../agents/task_understanding.py#L436) | 436 | `"    \"\"\"Return only a small, explicit location vocabulary; never infer geolocation.\"\"\""` | — |
+| [SRC-686F71AA50-L000437](../../agents/task_understanding.py#L437) | 437 | `"    normalized = normalize_text(question)"` | — |
+| [SRC-686F71AA50-L000438](../../agents/task_understanding.py#L438) | 438 | `"    known = ("` | — |
+| [SRC-686F71AA50-L000439](../../agents/task_understanding.py#L439) | 439 | `"        (\"مصر\", (\"في مصر\", \"داخل مصر\", \"المصري\", \"المصرية\", \"مصر\", \"egypt\", \"egyptian\")),"` | — |
+| [SRC-686F71AA50-L000440](../../agents/task_understanding.py#L440) | 440 | `"        (\"القاهرة\", (\"القاهرة\", \"القاهره\", \"cairo\")),"` | — |
+| [SRC-686F71AA50-L000441](../../agents/task_understanding.py#L441) | 441 | `"        (\"الإسكندرية\", (\"الاسكندرية\", \"الاسكندريه\", \"alexandria\")),"` | — |
+| [SRC-686F71AA50-L000442](../../agents/task_understanding.py#L442) | 442 | `"        (\"السعودية\", (\"السعودية\", \"السعوديه\", \"saudi arabia\")),"` | — |
+| [SRC-686F71AA50-L000443](../../agents/task_understanding.py#L443) | 443 | `"        (\"الإمارات\", (\"الامارات\", \"uae\", \"united arab emirates\")),"` | — |
+| [SRC-686F71AA50-L000444](../../agents/task_understanding.py#L444) | 444 | `"        (\"المملكة المتحدة\", (\"المملكة المتحدة\", \"united kingdom\", \"the uk\")),"` | — |
+| [SRC-686F71AA50-L000445](../../agents/task_understanding.py#L445) | 445 | `"        (\"الولايات المتحدة\", (\"الولايات المتحدة\", \"united states\", \"the us\")),"` | — |
+| [SRC-686F71AA50-L000446](../../agents/task_understanding.py#L446) | 446 | `"    )"` | — |
+| [SRC-686F71AA50-L000447](../../agents/task_understanding.py#L447) | 447 | `"    result: list[str] = []"` | — |
+| [SRC-686F71AA50-L000448](../../agents/task_understanding.py#L448) | 448 | `"    for canonical, cues in known:"` | — |
+| [SRC-686F71AA50-L000449](../../agents/task_understanding.py#L449) | 449 | `"        if any(_contains(normalized, (cue,)) for cue in cues):"` | — |
+| [SRC-686F71AA50-L000450](../../agents/task_understanding.py#L450) | 450 | `"            result.append(canonical)"` | — |
+| [SRC-686F71AA50-L000451](../../agents/task_understanding.py#L451) | 451 | `"    return result"` | — |
 | [SRC-686F71AA50-L000452](../../agents/task_understanding.py#L452) | 452 | `""` | — |
 | [SRC-686F71AA50-L000453](../../agents/task_understanding.py#L453) | 453 | `""` | — |
 | [SRC-686F71AA50-L000454](../../agents/task_understanding.py#L454) | 454 | `"def _language_profile(question: str) -> str:"` | — |
@@ -788,31 +816,3 @@
 | [SRC-686F71AA50-L001221](../../agents/task_understanding.py#L1221) | 1221 | `"    unavailable = {"` | — |
 | [SRC-686F71AA50-L001222](../../agents/task_understanding.py#L1222) | 1222 | `"        \"schema\": \"omarai.task_spec.v1\","` | — |
 | [SRC-686F71AA50-L001223](../../agents/task_understanding.py#L1223) | 1223 | `"        \"status\": \"not_available\","` | — |
-| [SRC-686F71AA50-L001224](../../agents/task_understanding.py#L1224) | 1224 | `"        \"claim\": \"no validated task specification supplied\","` | — |
-| [SRC-686F71AA50-L001225](../../agents/task_understanding.py#L1225) | 1225 | `"    }"` | — |
-| [SRC-686F71AA50-L001226](../../agents/task_understanding.py#L1226) | 1226 | `"    if not isinstance(value, dict) or value.get(\"schema\") != \"omarai.task_spec.v1\":"` | — |
-| [SRC-686F71AA50-L001227](../../agents/task_understanding.py#L1227) | 1227 | `"        return unavailable"` | — |
-| [SRC-686F71AA50-L001228](../../agents/task_understanding.py#L1228) | 1228 | `""` | — |
-| [SRC-686F71AA50-L001229](../../agents/task_understanding.py#L1229) | 1229 | `"    def clean_text(item: Any, limit: int = 160) -> str:"` | — |
-| [SRC-686F71AA50-L001230](../../agents/task_understanding.py#L1230) | 1230 | `"        if not isinstance(item, str):"` | — |
-| [SRC-686F71AA50-L001231](../../agents/task_understanding.py#L1231) | 1231 | `"            return \"\""` | — |
-| [SRC-686F71AA50-L001232](../../agents/task_understanding.py#L1232) | 1232 | `"        return _SPACE.sub(\" \", unicodedata.normalize(\"NFKC\", item).replace(\"\\x00\", \" \")).strip()[:limit]"` | — |
-| [SRC-686F71AA50-L001233](../../agents/task_understanding.py#L1233) | 1233 | `""` | — |
-| [SRC-686F71AA50-L001234](../../agents/task_understanding.py#L1234) | 1234 | `"    def clean_list(item: Any, *, items: int = 16, chars: int = 160) -> list[str]:"` | — |
-| [SRC-686F71AA50-L001235](../../agents/task_understanding.py#L1235) | 1235 | `"        if not isinstance(item, list):"` | — |
-| [SRC-686F71AA50-L001236](../../agents/task_understanding.py#L1236) | 1236 | `"            return []"` | — |
-| [SRC-686F71AA50-L001237](../../agents/task_understanding.py#L1237) | 1237 | `"        result: list[str] = []"` | — |
-| [SRC-686F71AA50-L001238](../../agents/task_understanding.py#L1238) | 1238 | `"        seen: set[str] = set()"` | — |
-| [SRC-686F71AA50-L001239](../../agents/task_understanding.py#L1239) | 1239 | `"        for raw_item in item[:items * 2]:"` | — |
-| [SRC-686F71AA50-L001240](../../agents/task_understanding.py#L1240) | 1240 | `"            cleaned = clean_text(raw_item, chars)"` | — |
-| [SRC-686F71AA50-L001241](../../agents/task_understanding.py#L1241) | 1241 | `"            key = cleaned.casefold()"` | — |
-| [SRC-686F71AA50-L001242](../../agents/task_understanding.py#L1242) | 1242 | `"            if cleaned and key not in seen:"` | — |
-| [SRC-686F71AA50-L001243](../../agents/task_understanding.py#L1243) | 1243 | `"                result.append(cleaned)"` | — |
-| [SRC-686F71AA50-L001244](../../agents/task_understanding.py#L1244) | 1244 | `"                seen.add(key)"` | — |
-| [SRC-686F71AA50-L001245](../../agents/task_understanding.py#L1245) | 1245 | `"            if len(result) >= items:"` | — |
-| [SRC-686F71AA50-L001246](../../agents/task_understanding.py#L1246) | 1246 | `"                break"` | — |
-| [SRC-686F71AA50-L001247](../../agents/task_understanding.py#L1247) | 1247 | `"        return result"` | — |
-| [SRC-686F71AA50-L001248](../../agents/task_understanding.py#L1248) | 1248 | `""` | — |
-| [SRC-686F71AA50-L001249](../../agents/task_understanding.py#L1249) | 1249 | `"    raw_constraints = value.get(\"constraints\")"` | — |
-| [SRC-686F71AA50-L001250](../../agents/task_understanding.py#L1250) | 1250 | `"    raw_constraints = raw_constraints if isinstance(raw_constraints, dict) else {}"` | — |
-| [SRC-686F71AA50-L001251](../../agents/task_understanding.py#L1251) | 1251 | `"    list_constraint_keys = ("` | — |

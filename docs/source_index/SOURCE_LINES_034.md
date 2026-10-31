@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001164 إلى SRC-6A7519AC10-L000177
+- النطاق: SRC-90FAA34ADE-L001136 إلى SRC-6A7519AC10-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001136](../../tests/fixtures/answer_quality_cases.json#L1136) | 1136 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001137](../../tests/fixtures/answer_quality_cases.json#L1137) | 1137 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001138](../../tests/fixtures/answer_quality_cases.json#L1138) | 1138 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001139](../../tests/fixtures/answer_quality_cases.json#L1139) | 1139 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L001140](../../tests/fixtures/answer_quality_cases.json#L1140) | 1140 | `"        \"providers\": ["` | — |
+| [SRC-90FAA34ADE-L001141](../../tests/fixtures/answer_quality_cases.json#L1141) | 1141 | `"          \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001142](../../tests/fixtures/answer_quality_cases.json#L1142) | 1142 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L001143](../../tests/fixtures/answer_quality_cases.json#L1143) | 1143 | `"        \"notes\": \"نتائج فارغة عمدًا\""` | — |
+| [SRC-90FAA34ADE-L001144](../../tests/fixtures/answer_quality_cases.json#L1144) | 1144 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001145](../../tests/fixtures/answer_quality_cases.json#L1145) | 1145 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001146](../../tests/fixtures/answer_quality_cases.json#L1146) | 1146 | `"        \"اختلاق إعلان أو رابط\","` | — |
+| [SRC-90FAA34ADE-L001147](../../tests/fixtures/answer_quality_cases.json#L1147) | 1147 | `"        \"صياغة الادعاء كأنه متحقق\""` | — |
+| [SRC-90FAA34ADE-L001148](../../tests/fixtures/answer_quality_cases.json#L1148) | 1148 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001149](../../tests/fixtures/answer_quality_cases.json#L1149) | 1149 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001150](../../tests/fixtures/answer_quality_cases.json#L1150) | 1150 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001151](../../tests/fixtures/answer_quality_cases.json#L1151) | 1151 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001152](../../tests/fixtures/answer_quality_cases.json#L1152) | 1152 | `"      \"case_id\": \"AQ-039\","` | — |
+| [SRC-90FAA34ADE-L001153](../../tests/fixtures/answer_quality_cases.json#L1153) | 1153 | `"      \"category\": \"missing_model_credentials\","` | — |
+| [SRC-90FAA34ADE-L001154](../../tests/fixtures/answer_quality_cases.json#L1154) | 1154 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L001155](../../tests/fixtures/answer_quality_cases.json#L1155) | 1155 | `"      \"question\": \"الموديل الأساسي ومراجع الإجابة مش متاحين بسبب غياب المفاتيح. جاوب المستخدم من غير ما تدّعي إن النماذج اشتغلت.\","` | — |
+| [SRC-90FAA34ADE-L001156](../../tests/fixtures/answer_quality_cases.json#L1156) | 1156 | `"      \"expected_strategy\": \"model_no_search\","` | — |
+| [SRC-90FAA34ADE-L001157](../../tests/fixtures/answer_quality_cases.json#L1157) | 1157 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001158](../../tests/fixtures/answer_quality_cases.json#L1158) | 1158 | `"        \"يصرح بتعطل المكون المعتمد على بيانات الاعتماد عند الحاجة\","` | — |
+| [SRC-90FAA34ADE-L001159](../../tests/fixtures/answer_quality_cases.json#L1159) | 1159 | `"        \"يستخدم fallback موثق إن وُجد أو يشرح القيد\","` | — |
+| [SRC-90FAA34ADE-L001160](../../tests/fixtures/answer_quality_cases.json#L1160) | 1160 | `"        \"لا يدّعي أن النموذج أو المراجع نفّذوا الطلب\""` | — |
+| [SRC-90FAA34ADE-L001161](../../tests/fixtures/answer_quality_cases.json#L1161) | 1161 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001162](../../tests/fixtures/answer_quality_cases.json#L1162) | 1162 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001163](../../tests/fixtures/answer_quality_cases.json#L1163) | 1163 | `"        \"يعرض إجابة على أنها مراجعة بنموذج لم يعمل\","` | — |
 | [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
 | [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001166](../../tests/fixtures/answer_quality_cases.json#L1166) | 1166 | `"      \"evidence_fixture\": {"` | — |
@@ -824,31 +852,3 @@
 | [SRC-6A7519AC10-L000147](../../tests/test_answer_quality_comparison.py#L147) | 147 | `"    assert result[\"quality_comparison\"][\"metrics\"][\"citation_support\"][\"delta\"] == 0.5"` | — |
 | [SRC-6A7519AC10-L000148](../../tests/test_answer_quality_comparison.py#L148) | 148 | `""` | — |
 | [SRC-6A7519AC10-L000149](../../tests/test_answer_quality_comparison.py#L149) | 149 | `""` | — |
-| [SRC-6A7519AC10-L000150](../../tests/test_answer_quality_comparison.py#L150) | 150 | `"def test_missing_build_sha_and_review_data_cannot_claim_complete_acceptance():"` | — |
-| [SRC-6A7519AC10-L000151](../../tests/test_answer_quality_comparison.py#L151) | 151 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000152](../../tests/test_answer_quality_comparison.py#L152) | 152 | `"    baseline = _run(build_sha=\"unknown\", results=[_row(\"AQ-001\", latency=100, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000153](../../tests/test_answer_quality_comparison.py#L153) | 153 | `"    candidate = _run(build_sha=\"\", results=[_row(\"AQ-001\", latency=90, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000154](../../tests/test_answer_quality_comparison.py#L154) | 154 | `"    result = mod.compare_runs(baseline, candidate)"` | — |
-| [SRC-6A7519AC10-L000155](../../tests/test_answer_quality_comparison.py#L155) | 155 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
-| [SRC-6A7519AC10-L000156](../../tests/test_answer_quality_comparison.py#L156) | 156 | `"    assert \"baseline_build_sha_missing_or_invalid\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000157](../../tests/test_answer_quality_comparison.py#L157) | 157 | `"    assert \"candidate_build_sha_missing_or_invalid\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000158](../../tests/test_answer_quality_comparison.py#L158) | 158 | `"    assert \"human_review_files_missing\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000159](../../tests/test_answer_quality_comparison.py#L159) | 159 | `"    assert result[\"quality_comparison\"] is None"` | — |
-| [SRC-6A7519AC10-L000160](../../tests/test_answer_quality_comparison.py#L160) | 160 | `"    assert result[\"baseline\"][\"metrics\"][\"provider_reported_model_cost\"][\"reported_sum_usd\"] is None"` | — |
-| [SRC-6A7519AC10-L000161](../../tests/test_answer_quality_comparison.py#L161) | 161 | `"    assert result[\"runtime_deltas\"][\"provider_reported_model_cost_usd\"][\"status\"] == \"NOT_MEASURED\""` | — |
-| [SRC-6A7519AC10-L000162](../../tests/test_answer_quality_comparison.py#L162) | 162 | `""` | — |
-| [SRC-6A7519AC10-L000163](../../tests/test_answer_quality_comparison.py#L163) | 163 | `""` | — |
-| [SRC-6A7519AC10-L000164](../../tests/test_answer_quality_comparison.py#L164) | 164 | `"def test_comparison_rejects_different_case_sets_and_questions():"` | — |
-| [SRC-6A7519AC10-L000165](../../tests/test_answer_quality_comparison.py#L165) | 165 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000166](../../tests/test_answer_quality_comparison.py#L166) | 166 | `"    baseline = _run(build_sha=\"a\" * 40, results=[_row(\"AQ-007\", latency=100, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000167](../../tests/test_answer_quality_comparison.py#L167) | 167 | `"    missing = _run(build_sha=\"b\" * 40, results=[_row(\"AQ-008\", latency=90, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None)])"` | — |
-| [SRC-6A7519AC10-L000168](../../tests/test_answer_quality_comparison.py#L168) | 168 | `"    with pytest.raises(ValueError, match=\"incomparable case sets\"):"` | — |
-| [SRC-6A7519AC10-L000169](../../tests/test_answer_quality_comparison.py#L169) | 169 | `"        mod.compare_runs(baseline, missing)"` | — |
-| [SRC-6A7519AC10-L000170](../../tests/test_answer_quality_comparison.py#L170) | 170 | `"    changed_question = _run("` | — |
-| [SRC-6A7519AC10-L000171](../../tests/test_answer_quality_comparison.py#L171) | 171 | `"        build_sha=\"b\" * 40,"` | — |
-| [SRC-6A7519AC10-L000172](../../tests/test_answer_quality_comparison.py#L172) | 172 | `"        results=[{**_row(\"AQ-007\", latency=90, tool_status=\"SUCCESS_WITH_USABLE_RESULTS\", cost=None), \"prompt\": \"A different prompt\"}],"` | — |
-| [SRC-6A7519AC10-L000173](../../tests/test_answer_quality_comparison.py#L173) | 173 | `"    )"` | — |
-| [SRC-6A7519AC10-L000174](../../tests/test_answer_quality_comparison.py#L174) | 174 | `"    with pytest.raises(ValueError, match=\"incomparable question text\"):"` | — |
-| [SRC-6A7519AC10-L000175](../../tests/test_answer_quality_comparison.py#L175) | 175 | `"        mod.compare_runs(baseline, changed_question)"` | — |
-| [SRC-6A7519AC10-L000176](../../tests/test_answer_quality_comparison.py#L176) | 176 | `""` | — |
-| [SRC-6A7519AC10-L000177](../../tests/test_answer_quality_comparison.py#L177) | 177 | `""` | — |

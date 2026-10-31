@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002683 إلى SRC-1AE03B9EC3-L003482
+- النطاق: SRC-1AE03B9EC3-L002655 إلى SRC-1AE03B9EC3-L003454
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002655](../../agents/web_agent.py#L2655) | 2655 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L002656](../../agents/web_agent.py#L2656) | 2656 | `"                target_query = compact_search_query(str(requirement.get(\"query\") or \"\"))"` | — |
+| [SRC-1AE03B9EC3-L002657](../../agents/web_agent.py#L2657) | 2657 | `"                if not target_query:"` | — |
+| [SRC-1AE03B9EC3-L002658](../../agents/web_agent.py#L2658) | 2658 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L002659](../../agents/web_agent.py#L2659) | 2659 | `"                query_key = re.sub(r\"\\s+\", \" \", target_query).strip().casefold()"` | — |
+| [SRC-1AE03B9EC3-L002660](../../agents/web_agent.py#L2660) | 2660 | `"                criterion_batches = ["` | — |
+| [SRC-1AE03B9EC3-L002661](../../agents/web_agent.py#L2661) | 2661 | `"                    batch for batch in batches"` | — |
+| [SRC-1AE03B9EC3-L002662](../../agents/web_agent.py#L2662) | 2662 | `"                    if re.sub("` | — |
+| [SRC-1AE03B9EC3-L002663](../../agents/web_agent.py#L2663) | 2663 | `"                        r\"\\s+\", \" \", str(batch.get(\"query\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L002664](../../agents/web_agent.py#L2664) | 2664 | `"                    ).strip().casefold() == query_key"` | — |
+| [SRC-1AE03B9EC3-L002665](../../agents/web_agent.py#L2665) | 2665 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L002666](../../agents/web_agent.py#L2666) | 2666 | `"                criterion_candidates = fuse_ranked_results("` | — |
+| [SRC-1AE03B9EC3-L002667](../../agents/web_agent.py#L2667) | 2667 | `"                    criterion_batches, limit=MAX_SEARCH_RESULTS"` | — |
+| [SRC-1AE03B9EC3-L002668](../../agents/web_agent.py#L2668) | 2668 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002669](../../agents/web_agent.py#L2669) | 2669 | `"                candidate = None"` | — |
+| [SRC-1AE03B9EC3-L002670](../../agents/web_agent.py#L2670) | 2670 | `"                if criterion_candidates:"` | — |
+| [SRC-1AE03B9EC3-L002671](../../agents/web_agent.py#L2671) | 2671 | `"                    criterion_ledger = build_requirement_evidence_ledger("` | — |
+| [SRC-1AE03B9EC3-L002672](../../agents/web_agent.py#L2672) | 2672 | `"                        [str(requirement.get(\"target\") or \"\")],"` | — |
+| [SRC-1AE03B9EC3-L002673](../../agents/web_agent.py#L2673) | 2673 | `"                        criterion_candidates,"` | — |
+| [SRC-1AE03B9EC3-L002674](../../agents/web_agent.py#L2674) | 2674 | `"                        [requirement],"` | — |
+| [SRC-1AE03B9EC3-L002675](../../agents/web_agent.py#L2675) | 2675 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L002676](../../agents/web_agent.py#L2676) | 2676 | `"                    candidate_indexes = ("` | — |
+| [SRC-1AE03B9EC3-L002677](../../agents/web_agent.py#L2677) | 2677 | `"                        criterion_ledger[0].get(\"candidate_source_indexes\", [])"` | — |
+| [SRC-1AE03B9EC3-L002678](../../agents/web_agent.py#L2678) | 2678 | `"                        if criterion_ledger else []"` | — |
+| [SRC-1AE03B9EC3-L002679](../../agents/web_agent.py#L2679) | 2679 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L002680](../../agents/web_agent.py#L2680) | 2680 | `"                    if candidate_indexes:"` | — |
+| [SRC-1AE03B9EC3-L002681](../../agents/web_agent.py#L2681) | 2681 | `"                        candidate = criterion_candidates[int(candidate_indexes[0]) - 1]"` | — |
+| [SRC-1AE03B9EC3-L002682](../../agents/web_agent.py#L2682) | 2682 | `"                if candidate is None:"` | — |
 | [SRC-1AE03B9EC3-L002683](../../agents/web_agent.py#L2683) | 2683 | `"                    candidate = next("` | — |
 | [SRC-1AE03B9EC3-L002684](../../agents/web_agent.py#L2684) | 2684 | `"                        ("` | — |
 | [SRC-1AE03B9EC3-L002685](../../agents/web_agent.py#L2685) | 2685 | `"                            item for item in globally_fused"` | — |
@@ -788,31 +816,3 @@
 | [SRC-1AE03B9EC3-L003452](../../agents/web_agent.py#L3452) | 3452 | `"            plan[\"dialogue_context\"] = dialogue_context"` | — |
 | [SRC-1AE03B9EC3-L003453](../../agents/web_agent.py#L3453) | 3453 | `"        except (RuntimeError, ValueError, TypeError, json.JSONDecodeError):"` | — |
 | [SRC-1AE03B9EC3-L003454](../../agents/web_agent.py#L3454) | 3454 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003455](../../agents/web_agent.py#L3455) | 3455 | `""` | — |
-| [SRC-1AE03B9EC3-L003456](../../agents/web_agent.py#L3456) | 3456 | `"        # Remove calendar-month artifacts hallucinated by the planner, but preserve dates in the resolved context."` | — |
-| [SRC-1AE03B9EC3-L003457](../../agents/web_agent.py#L3457) | 3457 | `"        user_query_norm = _normalize_search_query(search_question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L003458](../../agents/web_agent.py#L3458) | 3458 | `"        cleaned_queries = []"` | — |
-| [SRC-1AE03B9EC3-L003459](../../agents/web_agent.py#L3459) | 3459 | `"        for candidate_query in plan.get(\"queries\", []):"` | — |
-| [SRC-1AE03B9EC3-L003460](../../agents/web_agent.py#L3460) | 3460 | `"            cleaned_query = _normalize_search_query(str(candidate_query))"` | — |
-| [SRC-1AE03B9EC3-L003461](../../agents/web_agent.py#L3461) | 3461 | `"            for month in _CALENDAR_MONTHS:"` | — |
-| [SRC-1AE03B9EC3-L003462](../../agents/web_agent.py#L3462) | 3462 | `"                if month.casefold() not in user_query_norm:"` | — |
-| [SRC-1AE03B9EC3-L003463](../../agents/web_agent.py#L3463) | 3463 | `"                    cleaned_query = re.sub("` | — |
-| [SRC-1AE03B9EC3-L003464](../../agents/web_agent.py#L3464) | 3464 | `"                        rf\"(?i)(?<!\\\\w){re.escape(month)}(?!\\\\w)\", \" \", cleaned_query"` | — |
-| [SRC-1AE03B9EC3-L003465](../../agents/web_agent.py#L3465) | 3465 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L003466](../../agents/web_agent.py#L3466) | 3466 | `"            cleaned_query = re.sub(r\"\\\\s+\", \" \", cleaned_query).strip()"` | — |
-| [SRC-1AE03B9EC3-L003467](../../agents/web_agent.py#L3467) | 3467 | `"            if cleaned_query:"` | — |
-| [SRC-1AE03B9EC3-L003468](../../agents/web_agent.py#L3468) | 3468 | `"                cleaned_queries.append(cleaned_query)"` | — |
-| [SRC-1AE03B9EC3-L003469](../../agents/web_agent.py#L3469) | 3469 | `"        fallback_queries = []"` | — |
-| [SRC-1AE03B9EC3-L003470](../../agents/web_agent.py#L3470) | 3470 | `"        for fallback_query in fallback.get(\"queries\", []):"` | — |
-| [SRC-1AE03B9EC3-L003471](../../agents/web_agent.py#L3471) | 3471 | `"            if not isinstance(fallback_query, str):"` | — |
-| [SRC-1AE03B9EC3-L003472](../../agents/web_agent.py#L3472) | 3472 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L003473](../../agents/web_agent.py#L3473) | 3473 | `"            compacted_fallback = compact_search_query(fallback_query)"` | — |
-| [SRC-1AE03B9EC3-L003474](../../agents/web_agent.py#L3474) | 3474 | `"            if compacted_fallback and _relevance_query_tokens(compacted_fallback):"` | — |
-| [SRC-1AE03B9EC3-L003475](../../agents/web_agent.py#L3475) | 3475 | `"                fallback_queries.append(compacted_fallback)"` | — |
-| [SRC-1AE03B9EC3-L003476](../../agents/web_agent.py#L3476) | 3476 | `"        compact_question = compact_search_query(search_question)"` | — |
-| [SRC-1AE03B9EC3-L003477](../../agents/web_agent.py#L3477) | 3477 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L003478](../../agents/web_agent.py#L3478) | 3478 | `"            not cleaned_queries"` | — |
-| [SRC-1AE03B9EC3-L003479](../../agents/web_agent.py#L3479) | 3479 | `"            or not compact_question"` | — |
-| [SRC-1AE03B9EC3-L003480](../../agents/web_agent.py#L3480) | 3480 | `"            or _relevance_ratio(compact_question, cleaned_queries[0]) < 0.20"` | — |
-| [SRC-1AE03B9EC3-L003481](../../agents/web_agent.py#L3481) | 3481 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003482](../../agents/web_agent.py#L3482) | 3482 | `"            cleaned_queries = fallback_queries"` | — |

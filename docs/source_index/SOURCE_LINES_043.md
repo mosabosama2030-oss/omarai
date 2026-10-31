@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000139 إلى SRC-6BF96689A8-L000189
+- النطاق: SRC-4405E7912C-L000080 إلى SRC-6BF96689A8-L000130
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,65 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4405E7912C-L000080](../../tests/test_multitenant_api.py#L80) | 80 | `"        base,"` | — |
+| [SRC-4405E7912C-L000081](../../tests/test_multitenant_api.py#L81) | 81 | `"        \"/api/leads\","` | — |
+| [SRC-4405E7912C-L000082](../../tests/test_multitenant_api.py#L82) | 82 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000083](../../tests/test_multitenant_api.py#L83) | 83 | `"        token=token_b,"` | — |
+| [SRC-4405E7912C-L000084](../../tests/test_multitenant_api.py#L84) | 84 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000085](../../tests/test_multitenant_api.py#L85) | 85 | `"            \"tenant_id\": tenant_a,"` | — |
+| [SRC-4405E7912C-L000086](../../tests/test_multitenant_api.py#L86) | 86 | `"            \"text\": \"Buyer B wants to purchase\","` | — |
+| [SRC-4405E7912C-L000087](../../tests/test_multitenant_api.py#L87) | 87 | `"            \"source_url\": \"https://example.test/b\","` | — |
+| [SRC-4405E7912C-L000088](../../tests/test_multitenant_api.py#L88) | 88 | `"            \"platform\": \"public\","` | — |
+| [SRC-4405E7912C-L000089](../../tests/test_multitenant_api.py#L89) | 89 | `"        },"` | — |
+| [SRC-4405E7912C-L000090](../../tests/test_multitenant_api.py#L90) | 90 | `"    )"` | — |
+| [SRC-4405E7912C-L000091](../../tests/test_multitenant_api.py#L91) | 91 | `"    assert status == 201"` | — |
+| [SRC-4405E7912C-L000092](../../tests/test_multitenant_api.py#L92) | 92 | `"    assert created_b[\"lead\"][\"tenant_id\"] == tenant_b"` | — |
+| [SRC-4405E7912C-L000093](../../tests/test_multitenant_api.py#L93) | 93 | `""` | — |
+| [SRC-4405E7912C-L000094](../../tests/test_multitenant_api.py#L94) | 94 | `"    status, listing_a = request_json("` | — |
+| [SRC-4405E7912C-L000095](../../tests/test_multitenant_api.py#L95) | 95 | `"        base, f\"/api/leads?tenant_id={tenant_b}\", token=token_a"` | — |
+| [SRC-4405E7912C-L000096](../../tests/test_multitenant_api.py#L96) | 96 | `"    )"` | — |
+| [SRC-4405E7912C-L000097](../../tests/test_multitenant_api.py#L97) | 97 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000098](../../tests/test_multitenant_api.py#L98) | 98 | `"    assert [lead[\"id\"] for lead in listing_a[\"leads\"]] == [created_a[\"lead\"][\"id\"]]"` | — |
+| [SRC-4405E7912C-L000099](../../tests/test_multitenant_api.py#L99) | 99 | `""` | — |
+| [SRC-4405E7912C-L000100](../../tests/test_multitenant_api.py#L100) | 100 | `"    status, listing_b = request_json(base, \"/api/leads\", token=token_b)"` | — |
+| [SRC-4405E7912C-L000101](../../tests/test_multitenant_api.py#L101) | 101 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000102](../../tests/test_multitenant_api.py#L102) | 102 | `"    assert [lead[\"id\"] for lead in listing_b[\"leads\"]] == [created_b[\"lead\"][\"id\"]]"` | — |
+| [SRC-4405E7912C-L000103](../../tests/test_multitenant_api.py#L103) | 103 | `""` | — |
+| [SRC-4405E7912C-L000104](../../tests/test_multitenant_api.py#L104) | 104 | `"    status, denied = request_json("` | — |
+| [SRC-4405E7912C-L000105](../../tests/test_multitenant_api.py#L105) | 105 | `"        base,"` | — |
+| [SRC-4405E7912C-L000106](../../tests/test_multitenant_api.py#L106) | 106 | `"        f\"/api/leads/{created_b['lead']['id']}/status\","` | — |
+| [SRC-4405E7912C-L000107](../../tests/test_multitenant_api.py#L107) | 107 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000108](../../tests/test_multitenant_api.py#L108) | 108 | `"        token=token_a,"` | — |
+| [SRC-4405E7912C-L000109](../../tests/test_multitenant_api.py#L109) | 109 | `"        payload={\"status\": \"qualified\"},"` | — |
+| [SRC-4405E7912C-L000110](../../tests/test_multitenant_api.py#L110) | 110 | `"    )"` | — |
+| [SRC-4405E7912C-L000111](../../tests/test_multitenant_api.py#L111) | 111 | `"    assert status == 404"` | — |
+| [SRC-4405E7912C-L000112](../../tests/test_multitenant_api.py#L112) | 112 | `"    assert denied[\"error\"] == \"lead not found\""` | — |
+| [SRC-4405E7912C-L000113](../../tests/test_multitenant_api.py#L113) | 113 | `""` | — |
+| [SRC-4405E7912C-L000114](../../tests/test_multitenant_api.py#L114) | 114 | `"    status, changed = request_json("` | — |
+| [SRC-4405E7912C-L000115](../../tests/test_multitenant_api.py#L115) | 115 | `"        base,"` | — |
+| [SRC-4405E7912C-L000116](../../tests/test_multitenant_api.py#L116) | 116 | `"        f\"/api/leads/{created_b['lead']['id']}/status\","` | — |
+| [SRC-4405E7912C-L000117](../../tests/test_multitenant_api.py#L117) | 117 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000118](../../tests/test_multitenant_api.py#L118) | 118 | `"        token=token_b,"` | — |
+| [SRC-4405E7912C-L000119](../../tests/test_multitenant_api.py#L119) | 119 | `"        payload={\"status\": \"qualified\"},"` | — |
+| [SRC-4405E7912C-L000120](../../tests/test_multitenant_api.py#L120) | 120 | `"    )"` | — |
+| [SRC-4405E7912C-L000121](../../tests/test_multitenant_api.py#L121) | 121 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000122](../../tests/test_multitenant_api.py#L122) | 122 | `"    assert changed[\"lead\"][\"status\"] == \"qualified\""` | — |
+| [SRC-4405E7912C-L000123](../../tests/test_multitenant_api.py#L123) | 123 | `""` | — |
+| [SRC-4405E7912C-L000124](../../tests/test_multitenant_api.py#L124) | 124 | `""` | — |
+| [SRC-4405E7912C-L000125](../../tests/test_multitenant_api.py#L125) | 125 | `"def test_public_api_rejects_unknown_token(tenant_api):"` | — |
+| [SRC-4405E7912C-L000126](../../tests/test_multitenant_api.py#L126) | 126 | `"    base, _ = tenant_api"` | — |
+| [SRC-4405E7912C-L000127](../../tests/test_multitenant_api.py#L127) | 127 | `"    status, error = request_json("` | — |
+| [SRC-4405E7912C-L000128](../../tests/test_multitenant_api.py#L128) | 128 | `"        base,"` | — |
+| [SRC-4405E7912C-L000129](../../tests/test_multitenant_api.py#L129) | 129 | `"        \"/api/leads\","` | — |
+| [SRC-4405E7912C-L000130](../../tests/test_multitenant_api.py#L130) | 130 | `"        token=\"unknown-token-\" + \"X\" * 32,"` | — |
+| [SRC-4405E7912C-L000131](../../tests/test_multitenant_api.py#L131) | 131 | `"    )"` | — |
+| [SRC-4405E7912C-L000132](../../tests/test_multitenant_api.py#L132) | 132 | `"    assert status == 401"` | — |
+| [SRC-4405E7912C-L000133](../../tests/test_multitenant_api.py#L133) | 133 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
+| [SRC-4405E7912C-L000134](../../tests/test_multitenant_api.py#L134) | 134 | `""` | — |
+| [SRC-4405E7912C-L000135](../../tests/test_multitenant_api.py#L135) | 135 | `""` | — |
+| [SRC-4405E7912C-L000136](../../tests/test_multitenant_api.py#L136) | 136 | `"def test_viewer_membership_is_read_only(tenant_api):"` | — |
+| [SRC-4405E7912C-L000137](../../tests/test_multitenant_api.py#L137) | 137 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000138](../../tests/test_multitenant_api.py#L138) | 138 | `"    tenant_id = store.create_tenant(\"Read Only Company\", \"read-only-company\")"` | — |
 | [SRC-4405E7912C-L000139](../../tests/test_multitenant_api.py#L139) | 139 | `"    user_id = store.create_user(\"viewer@example.test\", \"Viewer\")"` | — |
 | [SRC-4405E7912C-L000140](../../tests/test_multitenant_api.py#L140) | 140 | `"    store.add_membership(tenant_id, user_id, \"viewer\")"` | — |
 | [SRC-4405E7912C-L000141](../../tests/test_multitenant_api.py#L141) | 141 | `"    token = \"viewer-token-\" + \"V\" * 32"` | — |
@@ -811,62 +870,3 @@
 | [SRC-6BF96689A8-L000128](../../tests/test_research.py#L128) | 128 | `""` | — |
 | [SRC-6BF96689A8-L000129](../../tests/test_research.py#L129) | 129 | `"def test_fallback_plan_expands_warranty_followup_with_previous_topic():"` | — |
 | [SRC-6BF96689A8-L000130](../../tests/test_research.py#L130) | 130 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000131](../../tests/test_research.py#L131) | 131 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-6BF96689A8-L000132](../../tests/test_research.py#L132) | 132 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
-| [SRC-6BF96689A8-L000133](../../tests/test_research.py#L133) | 133 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000134](../../tests/test_research.py#L134) | 134 | `"    plan = fallback_plan(\"هل فيه ضمان؟\", history)"` | — |
-| [SRC-6BF96689A8-L000135](../../tests/test_research.py#L135) | 135 | `"    assert \"آيفون 16\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000136](../../tests/test_research.py#L136) | 136 | `"    assert \"ضمان\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000137](../../tests/test_research.py#L137) | 137 | `""` | — |
-| [SRC-6BF96689A8-L000138](../../tests/test_research.py#L138) | 138 | `""` | — |
-| [SRC-6BF96689A8-L000139](../../tests/test_research.py#L139) | 139 | `"def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():"` | — |
-| [SRC-6BF96689A8-L000140](../../tests/test_research.py#L140) | 140 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000141](../../tests/test_research.py#L141) | 141 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-6BF96689A8-L000142](../../tests/test_research.py#L142) | 142 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
-| [SRC-6BF96689A8-L000143](../../tests/test_research.py#L143) | 143 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
-| [SRC-6BF96689A8-L000144](../../tests/test_research.py#L144) | 144 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
-| [SRC-6BF96689A8-L000145](../../tests/test_research.py#L145) | 145 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000146](../../tests/test_research.py#L146) | 146 | `"    plan = fallback_plan(\"فين؟\", history)"` | — |
-| [SRC-6BF96689A8-L000147](../../tests/test_research.py#L147) | 147 | `"    assert \"آيفون 16\" not in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000148](../../tests/test_research.py#L148) | 148 | `""` | — |
-| [SRC-6BF96689A8-L000149](../../tests/test_research.py#L149) | 149 | `""` | — |
-| [SRC-6BF96689A8-L000150](../../tests/test_research.py#L150) | 150 | `"def test_compact_search_query_keeps_subject_and_removes_answer_format_instructions():"` | — |
-| [SRC-6BF96689A8-L000151](../../tests/test_research.py#L151) | 151 | `"    cases = ["` | — |
-| [SRC-6BF96689A8-L000152](../../tests/test_research.py#L152) | 152 | `"        ("` | — |
-| [SRC-6BF96689A8-L000153](../../tests/test_research.py#L153) | 153 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
-| [SRC-6BF96689A8-L000154](../../tests/test_research.py#L154) | 154 | `"            (\"عاصمة مصر\",),"` | — |
-| [SRC-6BF96689A8-L000155](../../tests/test_research.py#L155) | 155 | `"            (\"اذكر مصدرًا موثوقًا\", \"رابط مباشر\", \"بالعربية بإيجاز\"),"` | — |
-| [SRC-6BF96689A8-L000156](../../tests/test_research.py#L156) | 156 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000157](../../tests/test_research.py#L157) | 157 | `"        ("` | — |
-| [SRC-6BF96689A8-L000158](../../tests/test_research.py#L158) | 158 | `"            \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
-| [SRC-6BF96689A8-L000159](../../tests/test_research.py#L159) | 159 | `"            (\"السيارات الكهربائية\", \"مصر\", \"التكلفة\", \"البنية التحتية\", \"الشحن\"),"` | — |
-| [SRC-6BF96689A8-L000160](../../tests/test_research.py#L160) | 160 | `"            (\"استخدم مصادر متعددة\", \"الحقائق والاستنتاجات\", \"روابط المصادر\"),"` | — |
-| [SRC-6BF96689A8-L000161](../../tests/test_research.py#L161) | 161 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000162](../../tests/test_research.py#L162) | 162 | `"        ("` | — |
-| [SRC-6BF96689A8-L000163](../../tests/test_research.py#L163) | 163 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
-| [SRC-6BF96689A8-L000164](../../tests/test_research.py#L164) | 164 | `"            (\"وكلاء الذكاء الاصطناعي\", \"الأيام السبعة الماضية\"),"` | — |
-| [SRC-6BF96689A8-L000165](../../tests/test_research.py#L165) | 165 | `"            (\"تواريخ الأخبار\", \"روابط المصادر\", \"معلومات قديمة\"),"` | — |
-| [SRC-6BF96689A8-L000166](../../tests/test_research.py#L166) | 166 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000167](../../tests/test_research.py#L167) | 167 | `"        ("` | — |
-| [SRC-6BF96689A8-L000168](../../tests/test_research.py#L168) | 168 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
-| [SRC-6BF96689A8-L000169](../../tests/test_research.py#L169) | 169 | `"            (\"آراء وتجارب المستخدمين\", \"السيارات الكهربائية في مصر\", \"الإيجابية والسلبية\"),"` | — |
-| [SRC-6BF96689A8-L000170](../../tests/test_research.py#L170) | 170 | `"            (\"روابط المنشورات\", \"النتائج غير كافية\", \"تمثيل آراء المستخدمين عمومًا\"),"` | — |
-| [SRC-6BF96689A8-L000171](../../tests/test_research.py#L171) | 171 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000172](../../tests/test_research.py#L172) | 172 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000173](../../tests/test_research.py#L173) | 173 | `"    for question, required_terms, removed_terms in cases:"` | — |
-| [SRC-6BF96689A8-L000174](../../tests/test_research.py#L174) | 174 | `"        query = compact_search_query(question)"` | — |
-| [SRC-6BF96689A8-L000175](../../tests/test_research.py#L175) | 175 | `"        assert 2 <= len(query) <= 240"` | — |
-| [SRC-6BF96689A8-L000176](../../tests/test_research.py#L176) | 176 | `"        for term in required_terms:"` | — |
-| [SRC-6BF96689A8-L000177](../../tests/test_research.py#L177) | 177 | `"            assert term in query, f\"topic term was lost: {term!r} in {query!r}\""` | — |
-| [SRC-6BF96689A8-L000178](../../tests/test_research.py#L178) | 178 | `"        for term in removed_terms:"` | — |
-| [SRC-6BF96689A8-L000179](../../tests/test_research.py#L179) | 179 | `"            assert term not in query, f\"format instruction remains: {term!r} in {query!r}\""` | — |
-| [SRC-6BF96689A8-L000180](../../tests/test_research.py#L180) | 180 | `""` | — |
-| [SRC-6BF96689A8-L000181](../../tests/test_research.py#L181) | 181 | `""` | — |
-| [SRC-6BF96689A8-L000182](../../tests/test_research.py#L182) | 182 | `"def test_fallback_plan_compacts_four_representative_arabic_tasks_before_expansion():"` | — |
-| [SRC-6BF96689A8-L000183](../../tests/test_research.py#L183) | 183 | `"    questions = ["` | — |
-| [SRC-6BF96689A8-L000184](../../tests/test_research.py#L184) | 184 | `"        \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
-| [SRC-6BF96689A8-L000185](../../tests/test_research.py#L185) | 185 | `"        \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
-| [SRC-6BF96689A8-L000186](../../tests/test_research.py#L186) | 186 | `"        \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
-| [SRC-6BF96689A8-L000187](../../tests/test_research.py#L187) | 187 | `"        \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
-| [SRC-6BF96689A8-L000188](../../tests/test_research.py#L188) | 188 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000189](../../tests/test_research.py#L189) | 189 | `"    for question in questions:"` | — |

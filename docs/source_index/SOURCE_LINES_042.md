@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000179 إلى SRC-4405E7912C-L000138
+- النطاق: SRC-EA6EC52573-L000151 إلى SRC-4405E7912C-L000079
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000151](../../tests/test_intent_router.py#L151) | 151 | `"    assert decision[\"needs_clarification\"] is True"` | — |
+| [SRC-EA6EC52573-L000152](../../tests/test_intent_router.py#L152) | 152 | `""` | — |
+| [SRC-EA6EC52573-L000153](../../tests/test_intent_router.py#L153) | 153 | `""` | — |
+| [SRC-EA6EC52573-L000154](../../tests/test_intent_router.py#L154) | 154 | `"def test_followup_resolver_uses_topic_from_latest_user_turn() -> None:"` | — |
+| [SRC-EA6EC52573-L000155](../../tests/test_intent_router.py#L155) | 155 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000156](../../tests/test_intent_router.py#L156) | 156 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر آيفون 16 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000157](../../tests/test_intent_router.py#L157) | 157 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات موثوقة.\"},"` | — |
+| [SRC-EA6EC52573-L000158](../../tests/test_intent_router.py#L158) | 158 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000159](../../tests/test_intent_router.py#L159) | 159 | `"    resolved = resolve_followup_query(\"هل فيه ضمان؟\", history)"` | — |
+| [SRC-EA6EC52573-L000160](../../tests/test_intent_router.py#L160) | 160 | `"    assert \"آيفون 16\" in resolved"` | — |
+| [SRC-EA6EC52573-L000161](../../tests/test_intent_router.py#L161) | 161 | `"    assert \"ضمان\" in resolved"` | — |
+| [SRC-EA6EC52573-L000162](../../tests/test_intent_router.py#L162) | 162 | `""` | — |
+| [SRC-EA6EC52573-L000163](../../tests/test_intent_router.py#L163) | 163 | `""` | — |
+| [SRC-EA6EC52573-L000164](../../tests/test_intent_router.py#L164) | 164 | `"def test_followup_resolver_does_not_resurrect_topic_after_acknowledgment() -> None:"` | — |
+| [SRC-EA6EC52573-L000165](../../tests/test_intent_router.py#L165) | 165 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000166](../../tests/test_intent_router.py#L166) | 166 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر آيفون 16 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000167](../../tests/test_intent_router.py#L167) | 167 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات موثوقة.\"},"` | — |
+| [SRC-EA6EC52573-L000168](../../tests/test_intent_router.py#L168) | 168 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
+| [SRC-EA6EC52573-L000169](../../tests/test_intent_router.py#L169) | 169 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
+| [SRC-EA6EC52573-L000170](../../tests/test_intent_router.py#L170) | 170 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000171](../../tests/test_intent_router.py#L171) | 171 | `"    assert resolve_followup_query(\"فين؟\", history) == \"فين؟\""` | — |
+| [SRC-EA6EC52573-L000172](../../tests/test_intent_router.py#L172) | 172 | `""` | — |
+| [SRC-EA6EC52573-L000173](../../tests/test_intent_router.py#L173) | 173 | `""` | — |
+| [SRC-EA6EC52573-L000174](../../tests/test_intent_router.py#L174) | 174 | `"def test_followup_resolver_bounds_output_and_handles_malformed_history() -> None:"` | — |
+| [SRC-EA6EC52573-L000175](../../tests/test_intent_router.py#L175) | 175 | `"    history = [{\"role\": \"user\", \"content\": \"س\" * 4000}]"` | — |
+| [SRC-EA6EC52573-L000176](../../tests/test_intent_router.py#L176) | 176 | `"    assert len(resolve_followup_query(\"والسعر؟\", history)) <= 500"` | — |
+| [SRC-EA6EC52573-L000177](../../tests/test_intent_router.py#L177) | 177 | `"    assert resolve_followup_query(\"فين؟\", {\"role\": \"user\", \"content\": \"topic\"}) == \"فين؟\""` | — |
+| [SRC-EA6EC52573-L000178](../../tests/test_intent_router.py#L178) | 178 | `""` | — |
 | [SRC-EA6EC52573-L000179](../../tests/test_intent_router.py#L179) | 179 | `"def test_prefixed_elliptical_followup_is_clarified_without_topic():"` | — |
 | [SRC-EA6EC52573-L000180](../../tests/test_intent_router.py#L180) | 180 | `"    for question in (\"طب هل فيه ضمان؟\", \"طيب كام سعرها؟\", \"والضمان؟\", \"والسعر؟\"):"` | — |
 | [SRC-EA6EC52573-L000181](../../tests/test_intent_router.py#L181) | 181 | `"        decision = route_intent(question)"` | — |
@@ -705,6 +733,37 @@
 | [SRC-1521F490CA-L000232](../../tests/test_multitenant.py#L232) | 232 | `"                user_id,"` | — |
 | [SRC-1521F490CA-L000233](../../tests/test_multitenant.py#L233) | 233 | `"                expires_at=expiry,"` | — |
 | [SRC-1521F490CA-L000234](../../tests/test_multitenant.py#L234) | 234 | `"            )"` | — |
+| [SRC-1521F490CA-L000235](../../tests/test_multitenant.py#L235) | 235 | `""` | — |
+| [SRC-1521F490CA-L000236](../../tests/test_multitenant.py#L236) | 236 | `""` | — |
+| [SRC-1521F490CA-L000237](../../tests/test_multitenant.py#L237) | 237 | `""` | — |
+| [SRC-1521F490CA-L000238](../../tests/test_multitenant.py#L238) | 238 | `"def test_api_token_revocation_is_scoped_to_the_owning_user_and_tenant(tmp_path):"` | — |
+| [SRC-1521F490CA-L000239](../../tests/test_multitenant.py#L239) | 239 | `"    store = LeadStore(tmp_path / \"revoke-token.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000240](../../tests/test_multitenant.py#L240) | 240 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000241](../../tests/test_multitenant.py#L241) | 241 | `"        store, \"Revocation Company\", \"owner@example.test\", \"K\" * 40"` | — |
+| [SRC-1521F490CA-L000242](../../tests/test_multitenant.py#L242) | 242 | `"    )"` | — |
+| [SRC-1521F490CA-L000243](../../tests/test_multitenant.py#L243) | 243 | `"    other_tenant_id, other_user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000244](../../tests/test_multitenant.py#L244) | 244 | `"        store, \"Other Revocation Company\", \"other@example.test\", \"L\" * 40"` | — |
+| [SRC-1521F490CA-L000245](../../tests/test_multitenant.py#L245) | 245 | `"    )"` | — |
+| [SRC-1521F490CA-L000246](../../tests/test_multitenant.py#L246) | 246 | `"    token = \"M\" * 40"` | — |
+| [SRC-1521F490CA-L000247](../../tests/test_multitenant.py#L247) | 247 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-1521F490CA-L000248](../../tests/test_multitenant.py#L248) | 248 | `""` | — |
+| [SRC-1521F490CA-L000249](../../tests/test_multitenant.py#L249) | 249 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-1521F490CA-L000250](../../tests/test_multitenant.py#L250) | 250 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000251](../../tests/test_multitenant.py#L251) | 251 | `"        token, tenant_id=other_tenant_id, user_id=other_user_id"` | — |
+| [SRC-1521F490CA-L000252](../../tests/test_multitenant.py#L252) | 252 | `"    ) is False"` | — |
+| [SRC-1521F490CA-L000253](../../tests/test_multitenant.py#L253) | 253 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-1521F490CA-L000254](../../tests/test_multitenant.py#L254) | 254 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000255](../../tests/test_multitenant.py#L255) | 255 | `"        token, tenant_id=tenant_id, user_id=other_user_id"` | — |
+| [SRC-1521F490CA-L000256](../../tests/test_multitenant.py#L256) | 256 | `"    ) is False"` | — |
+| [SRC-1521F490CA-L000257](../../tests/test_multitenant.py#L257) | 257 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-1521F490CA-L000258](../../tests/test_multitenant.py#L258) | 258 | `""` | — |
+| [SRC-1521F490CA-L000259](../../tests/test_multitenant.py#L259) | 259 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000260](../../tests/test_multitenant.py#L260) | 260 | `"        token, tenant_id=tenant_id, user_id=user_id"` | — |
+| [SRC-1521F490CA-L000261](../../tests/test_multitenant.py#L261) | 261 | `"    ) is True"` | — |
+| [SRC-1521F490CA-L000262](../../tests/test_multitenant.py#L262) | 262 | `"    assert store.resolve_api_token(token) is None"` | — |
+| [SRC-1521F490CA-L000263](../../tests/test_multitenant.py#L263) | 263 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000264](../../tests/test_multitenant.py#L264) | 264 | `"        token, tenant_id=tenant_id, user_id=user_id"` | — |
+| [SRC-1521F490CA-L000265](../../tests/test_multitenant.py#L265) | 265 | `"    ) is False"` | — |
 ## اختبارات
 
 ### FILE-4405E7912C — [tests/test_multitenant_api.py](../../tests/test_multitenant_api.py#L1)
@@ -793,62 +852,3 @@
 | [SRC-4405E7912C-L000077](../../tests/test_multitenant_api.py#L77) | 77 | `"    assert created_a[\"lead\"][\"tenant_id\"] == tenant_a"` | — |
 | [SRC-4405E7912C-L000078](../../tests/test_multitenant_api.py#L78) | 78 | `""` | — |
 | [SRC-4405E7912C-L000079](../../tests/test_multitenant_api.py#L79) | 79 | `"    status, created_b = request_json("` | — |
-| [SRC-4405E7912C-L000080](../../tests/test_multitenant_api.py#L80) | 80 | `"        base,"` | — |
-| [SRC-4405E7912C-L000081](../../tests/test_multitenant_api.py#L81) | 81 | `"        \"/api/leads\","` | — |
-| [SRC-4405E7912C-L000082](../../tests/test_multitenant_api.py#L82) | 82 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000083](../../tests/test_multitenant_api.py#L83) | 83 | `"        token=token_b,"` | — |
-| [SRC-4405E7912C-L000084](../../tests/test_multitenant_api.py#L84) | 84 | `"        payload={"` | — |
-| [SRC-4405E7912C-L000085](../../tests/test_multitenant_api.py#L85) | 85 | `"            \"tenant_id\": tenant_a,"` | — |
-| [SRC-4405E7912C-L000086](../../tests/test_multitenant_api.py#L86) | 86 | `"            \"text\": \"Buyer B wants to purchase\","` | — |
-| [SRC-4405E7912C-L000087](../../tests/test_multitenant_api.py#L87) | 87 | `"            \"source_url\": \"https://example.test/b\","` | — |
-| [SRC-4405E7912C-L000088](../../tests/test_multitenant_api.py#L88) | 88 | `"            \"platform\": \"public\","` | — |
-| [SRC-4405E7912C-L000089](../../tests/test_multitenant_api.py#L89) | 89 | `"        },"` | — |
-| [SRC-4405E7912C-L000090](../../tests/test_multitenant_api.py#L90) | 90 | `"    )"` | — |
-| [SRC-4405E7912C-L000091](../../tests/test_multitenant_api.py#L91) | 91 | `"    assert status == 201"` | — |
-| [SRC-4405E7912C-L000092](../../tests/test_multitenant_api.py#L92) | 92 | `"    assert created_b[\"lead\"][\"tenant_id\"] == tenant_b"` | — |
-| [SRC-4405E7912C-L000093](../../tests/test_multitenant_api.py#L93) | 93 | `""` | — |
-| [SRC-4405E7912C-L000094](../../tests/test_multitenant_api.py#L94) | 94 | `"    status, listing_a = request_json("` | — |
-| [SRC-4405E7912C-L000095](../../tests/test_multitenant_api.py#L95) | 95 | `"        base, f\"/api/leads?tenant_id={tenant_b}\", token=token_a"` | — |
-| [SRC-4405E7912C-L000096](../../tests/test_multitenant_api.py#L96) | 96 | `"    )"` | — |
-| [SRC-4405E7912C-L000097](../../tests/test_multitenant_api.py#L97) | 97 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000098](../../tests/test_multitenant_api.py#L98) | 98 | `"    assert [lead[\"id\"] for lead in listing_a[\"leads\"]] == [created_a[\"lead\"][\"id\"]]"` | — |
-| [SRC-4405E7912C-L000099](../../tests/test_multitenant_api.py#L99) | 99 | `""` | — |
-| [SRC-4405E7912C-L000100](../../tests/test_multitenant_api.py#L100) | 100 | `"    status, listing_b = request_json(base, \"/api/leads\", token=token_b)"` | — |
-| [SRC-4405E7912C-L000101](../../tests/test_multitenant_api.py#L101) | 101 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000102](../../tests/test_multitenant_api.py#L102) | 102 | `"    assert [lead[\"id\"] for lead in listing_b[\"leads\"]] == [created_b[\"lead\"][\"id\"]]"` | — |
-| [SRC-4405E7912C-L000103](../../tests/test_multitenant_api.py#L103) | 103 | `""` | — |
-| [SRC-4405E7912C-L000104](../../tests/test_multitenant_api.py#L104) | 104 | `"    status, denied = request_json("` | — |
-| [SRC-4405E7912C-L000105](../../tests/test_multitenant_api.py#L105) | 105 | `"        base,"` | — |
-| [SRC-4405E7912C-L000106](../../tests/test_multitenant_api.py#L106) | 106 | `"        f\"/api/leads/{created_b['lead']['id']}/status\","` | — |
-| [SRC-4405E7912C-L000107](../../tests/test_multitenant_api.py#L107) | 107 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000108](../../tests/test_multitenant_api.py#L108) | 108 | `"        token=token_a,"` | — |
-| [SRC-4405E7912C-L000109](../../tests/test_multitenant_api.py#L109) | 109 | `"        payload={\"status\": \"qualified\"},"` | — |
-| [SRC-4405E7912C-L000110](../../tests/test_multitenant_api.py#L110) | 110 | `"    )"` | — |
-| [SRC-4405E7912C-L000111](../../tests/test_multitenant_api.py#L111) | 111 | `"    assert status == 404"` | — |
-| [SRC-4405E7912C-L000112](../../tests/test_multitenant_api.py#L112) | 112 | `"    assert denied[\"error\"] == \"lead not found\""` | — |
-| [SRC-4405E7912C-L000113](../../tests/test_multitenant_api.py#L113) | 113 | `""` | — |
-| [SRC-4405E7912C-L000114](../../tests/test_multitenant_api.py#L114) | 114 | `"    status, changed = request_json("` | — |
-| [SRC-4405E7912C-L000115](../../tests/test_multitenant_api.py#L115) | 115 | `"        base,"` | — |
-| [SRC-4405E7912C-L000116](../../tests/test_multitenant_api.py#L116) | 116 | `"        f\"/api/leads/{created_b['lead']['id']}/status\","` | — |
-| [SRC-4405E7912C-L000117](../../tests/test_multitenant_api.py#L117) | 117 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000118](../../tests/test_multitenant_api.py#L118) | 118 | `"        token=token_b,"` | — |
-| [SRC-4405E7912C-L000119](../../tests/test_multitenant_api.py#L119) | 119 | `"        payload={\"status\": \"qualified\"},"` | — |
-| [SRC-4405E7912C-L000120](../../tests/test_multitenant_api.py#L120) | 120 | `"    )"` | — |
-| [SRC-4405E7912C-L000121](../../tests/test_multitenant_api.py#L121) | 121 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000122](../../tests/test_multitenant_api.py#L122) | 122 | `"    assert changed[\"lead\"][\"status\"] == \"qualified\""` | — |
-| [SRC-4405E7912C-L000123](../../tests/test_multitenant_api.py#L123) | 123 | `""` | — |
-| [SRC-4405E7912C-L000124](../../tests/test_multitenant_api.py#L124) | 124 | `""` | — |
-| [SRC-4405E7912C-L000125](../../tests/test_multitenant_api.py#L125) | 125 | `"def test_public_api_rejects_unknown_token(tenant_api):"` | — |
-| [SRC-4405E7912C-L000126](../../tests/test_multitenant_api.py#L126) | 126 | `"    base, _ = tenant_api"` | — |
-| [SRC-4405E7912C-L000127](../../tests/test_multitenant_api.py#L127) | 127 | `"    status, error = request_json("` | — |
-| [SRC-4405E7912C-L000128](../../tests/test_multitenant_api.py#L128) | 128 | `"        base,"` | — |
-| [SRC-4405E7912C-L000129](../../tests/test_multitenant_api.py#L129) | 129 | `"        \"/api/leads\","` | — |
-| [SRC-4405E7912C-L000130](../../tests/test_multitenant_api.py#L130) | 130 | `"        token=\"unknown-token-\" + \"X\" * 32,"` | — |
-| [SRC-4405E7912C-L000131](../../tests/test_multitenant_api.py#L131) | 131 | `"    )"` | — |
-| [SRC-4405E7912C-L000132](../../tests/test_multitenant_api.py#L132) | 132 | `"    assert status == 401"` | — |
-| [SRC-4405E7912C-L000133](../../tests/test_multitenant_api.py#L133) | 133 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
-| [SRC-4405E7912C-L000134](../../tests/test_multitenant_api.py#L134) | 134 | `""` | — |
-| [SRC-4405E7912C-L000135](../../tests/test_multitenant_api.py#L135) | 135 | `""` | — |
-| [SRC-4405E7912C-L000136](../../tests/test_multitenant_api.py#L136) | 136 | `"def test_viewer_membership_is_read_only(tenant_api):"` | — |
-| [SRC-4405E7912C-L000137](../../tests/test_multitenant_api.py#L137) | 137 | `"    base, store = tenant_api"` | — |
-| [SRC-4405E7912C-L000138](../../tests/test_multitenant_api.py#L138) | 138 | `"    tenant_id = store.create_tenant(\"Read Only Company\", \"read-only-company\")"` | — |

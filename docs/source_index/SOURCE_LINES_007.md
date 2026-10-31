@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-60066C6786-L000046 إلى SRC-686F71AA50-L000451
+- النطاق: SRC-60066C6786-L000018 إلى SRC-686F71AA50-L000423
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-60066C6786-L000018](../../agents/research_pipeline.py#L18) | 18 | `"    build_task_spec,"` | — |
+| [SRC-60066C6786-L000019](../../agents/research_pipeline.py#L19) | 19 | `")"` | — |
+| [SRC-60066C6786-L000020](../../agents/research_pipeline.py#L20) | 20 | `""` | — |
+| [SRC-60066C6786-L000021](../../agents/research_pipeline.py#L21) | 21 | `"MAX_PIPELINE_QUESTION_CHARS = 4000"` | — |
+| [SRC-60066C6786-L000022](../../agents/research_pipeline.py#L22) | 22 | `"MAX_PIPELINE_SOURCES = 18"` | — |
+| [SRC-60066C6786-L000023](../../agents/research_pipeline.py#L23) | 23 | `""` | — |
+| [SRC-60066C6786-L000024](../../agents/research_pipeline.py#L24) | 24 | `""` | — |
+| [SRC-60066C6786-L000025](../../agents/research_pipeline.py#L25) | 25 | `"def _clean_aspects(task_spec: dict[str, Any], question: str) -> list[str]:"` | — |
+| [SRC-60066C6786-L000026](../../agents/research_pipeline.py#L26) | 26 | `"    constraints = task_spec.get(\"constraints\")"` | — |
+| [SRC-60066C6786-L000027](../../agents/research_pipeline.py#L27) | 27 | `"    declared = constraints.get(\"explicit_aspects\", []) if isinstance(constraints, dict) else []"` | — |
+| [SRC-60066C6786-L000028](../../agents/research_pipeline.py#L28) | 28 | `"    extracted = extract_aspects(question)"` | — |
+| [SRC-60066C6786-L000029](../../agents/research_pipeline.py#L29) | 29 | `"    aspects: list[str] = []"` | — |
+| [SRC-60066C6786-L000030](../../agents/research_pipeline.py#L30) | 30 | `"    seen: set[str] = set()"` | — |
+| [SRC-60066C6786-L000031](../../agents/research_pipeline.py#L31) | 31 | `"    for value in [*(declared if isinstance(declared, list) else []), *extracted]:"` | — |
+| [SRC-60066C6786-L000032](../../agents/research_pipeline.py#L32) | 32 | `"        if not isinstance(value, str):"` | — |
+| [SRC-60066C6786-L000033](../../agents/research_pipeline.py#L33) | 33 | `"            continue"` | — |
+| [SRC-60066C6786-L000034](../../agents/research_pipeline.py#L34) | 34 | `"        item = \" \".join(value.split())[:120]"` | — |
+| [SRC-60066C6786-L000035](../../agents/research_pipeline.py#L35) | 35 | `"        key = item.casefold()"` | — |
+| [SRC-60066C6786-L000036](../../agents/research_pipeline.py#L36) | 36 | `"        if item and key not in seen:"` | — |
+| [SRC-60066C6786-L000037](../../agents/research_pipeline.py#L37) | 37 | `"            seen.add(key)"` | — |
+| [SRC-60066C6786-L000038](../../agents/research_pipeline.py#L38) | 38 | `"            aspects.append(item)"` | — |
+| [SRC-60066C6786-L000039](../../agents/research_pipeline.py#L39) | 39 | `"        if len(aspects) >= MAX_TASK_ASPECTS:"` | — |
+| [SRC-60066C6786-L000040](../../agents/research_pipeline.py#L40) | 40 | `"            break"` | — |
+| [SRC-60066C6786-L000041](../../agents/research_pipeline.py#L41) | 41 | `"    return aspects"` | — |
+| [SRC-60066C6786-L000042](../../agents/research_pipeline.py#L42) | 42 | `""` | — |
+| [SRC-60066C6786-L000043](../../agents/research_pipeline.py#L43) | 43 | `""` | — |
+| [SRC-60066C6786-L000044](../../agents/research_pipeline.py#L44) | 44 | `""` | — |
+| [SRC-60066C6786-L000045](../../agents/research_pipeline.py#L45) | 45 | `"def _has_resolved_dialogue_context(dialogue_context: dict[str, Any] \| None) -> bool:"` | — |
 | [SRC-60066C6786-L000046](../../agents/research_pipeline.py#L46) | 46 | `"    if not isinstance(dialogue_context, dict):"` | — |
 | [SRC-60066C6786-L000047](../../agents/research_pipeline.py#L47) | 47 | `"        return False"` | — |
 | [SRC-60066C6786-L000048](../../agents/research_pipeline.py#L48) | 48 | `"    resolved_question = dialogue_context.get(\"resolved_question\")"` | — |
@@ -806,31 +834,3 @@
 | [SRC-686F71AA50-L000421](../../agents/task_understanding.py#L421) | 421 | `"        token = normalize_text(raw_token)"` | — |
 | [SRC-686F71AA50-L000422](../../agents/task_understanding.py#L422) | 422 | `"        changed = True"` | — |
 | [SRC-686F71AA50-L000423](../../agents/task_understanding.py#L423) | 423 | `"        while changed:"` | — |
-| [SRC-686F71AA50-L000424](../../agents/task_understanding.py#L424) | 424 | `"            changed = False"` | — |
-| [SRC-686F71AA50-L000425](../../agents/task_understanding.py#L425) | 425 | `"            for prefix in (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\"):"` | — |
-| [SRC-686F71AA50-L000426](../../agents/task_understanding.py#L426) | 426 | `"                if token.startswith(prefix) and len(token) - len(prefix) >= 3:"` | — |
-| [SRC-686F71AA50-L000427](../../agents/task_understanding.py#L427) | 427 | `"                    token = token[len(prefix):]"` | — |
-| [SRC-686F71AA50-L000428](../../agents/task_understanding.py#L428) | 428 | `"                    changed = True"` | — |
-| [SRC-686F71AA50-L000429](../../agents/task_understanding.py#L429) | 429 | `"                    break"` | — |
-| [SRC-686F71AA50-L000430](../../agents/task_understanding.py#L430) | 430 | `"        if token and token not in ignored and len(token) >= 2:"` | — |
-| [SRC-686F71AA50-L000431](../../agents/task_understanding.py#L431) | 431 | `"            return True"` | — |
-| [SRC-686F71AA50-L000432](../../agents/task_understanding.py#L432) | 432 | `"    return False"` | — |
-| [SRC-686F71AA50-L000433](../../agents/task_understanding.py#L433) | 433 | `""` | — |
-| [SRC-686F71AA50-L000434](../../agents/task_understanding.py#L434) | 434 | `""` | — |
-| [SRC-686F71AA50-L000435](../../agents/task_understanding.py#L435) | 435 | `"def _extract_explicit_locations(question: str) -> list[str]:"` | — |
-| [SRC-686F71AA50-L000436](../../agents/task_understanding.py#L436) | 436 | `"    \"\"\"Return only a small, explicit location vocabulary; never infer geolocation.\"\"\""` | — |
-| [SRC-686F71AA50-L000437](../../agents/task_understanding.py#L437) | 437 | `"    normalized = normalize_text(question)"` | — |
-| [SRC-686F71AA50-L000438](../../agents/task_understanding.py#L438) | 438 | `"    known = ("` | — |
-| [SRC-686F71AA50-L000439](../../agents/task_understanding.py#L439) | 439 | `"        (\"مصر\", (\"في مصر\", \"داخل مصر\", \"المصري\", \"المصرية\", \"مصر\", \"egypt\", \"egyptian\")),"` | — |
-| [SRC-686F71AA50-L000440](../../agents/task_understanding.py#L440) | 440 | `"        (\"القاهرة\", (\"القاهرة\", \"القاهره\", \"cairo\")),"` | — |
-| [SRC-686F71AA50-L000441](../../agents/task_understanding.py#L441) | 441 | `"        (\"الإسكندرية\", (\"الاسكندرية\", \"الاسكندريه\", \"alexandria\")),"` | — |
-| [SRC-686F71AA50-L000442](../../agents/task_understanding.py#L442) | 442 | `"        (\"السعودية\", (\"السعودية\", \"السعوديه\", \"saudi arabia\")),"` | — |
-| [SRC-686F71AA50-L000443](../../agents/task_understanding.py#L443) | 443 | `"        (\"الإمارات\", (\"الامارات\", \"uae\", \"united arab emirates\")),"` | — |
-| [SRC-686F71AA50-L000444](../../agents/task_understanding.py#L444) | 444 | `"        (\"المملكة المتحدة\", (\"المملكة المتحدة\", \"united kingdom\", \"the uk\")),"` | — |
-| [SRC-686F71AA50-L000445](../../agents/task_understanding.py#L445) | 445 | `"        (\"الولايات المتحدة\", (\"الولايات المتحدة\", \"united states\", \"the us\")),"` | — |
-| [SRC-686F71AA50-L000446](../../agents/task_understanding.py#L446) | 446 | `"    )"` | — |
-| [SRC-686F71AA50-L000447](../../agents/task_understanding.py#L447) | 447 | `"    result: list[str] = []"` | — |
-| [SRC-686F71AA50-L000448](../../agents/task_understanding.py#L448) | 448 | `"    for canonical, cues in known:"` | — |
-| [SRC-686F71AA50-L000449](../../agents/task_understanding.py#L449) | 449 | `"        if any(_contains(normalized, (cue,)) for cue in cues):"` | — |
-| [SRC-686F71AA50-L000450](../../agents/task_understanding.py#L450) | 450 | `"            result.append(canonical)"` | — |
-| [SRC-686F71AA50-L000451](../../agents/task_understanding.py#L451) | 451 | `"    return result"` | — |
