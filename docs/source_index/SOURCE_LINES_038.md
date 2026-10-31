@@ -225,7 +225,7 @@
 | [SRC-3451CC474D-L001155](../../tests/test_api.py#L1155) | 1155 | `"    assert lead_b[\"id\"][:8] in recommendation_b[\"answer\"]"` | — |
 | [SRC-3451CC474D-L001156](../../tests/test_api.py#L1156) | 1156 | `""` | — |
 | [SRC-3451CC474D-L001157](../../tests/test_api.py#L1157) | 1157 | `"    # The default-company operator cannot select company B for a recommendation."` | — |
-| [SRC-3451CC474D-L001158](../../tests/test_api.py#L1158) | 1158 | `"    status, denied = request_json("` | — |
+| [SRC-3451CC474D-L001158](../../tests/test_api.py#L1158) | 1158 | `"    status, _denied = request_json("` | — |
 | [SRC-3451CC474D-L001159](../../tests/test_api.py#L1159) | 1159 | `"        local_api,"` | — |
 | [SRC-3451CC474D-L001160](../../tests/test_api.py#L1160) | 1160 | `"        \"/api/ask\","` | — |
 | [SRC-3451CC474D-L001161](../../tests/test_api.py#L1161) | 1161 | `"        method=\"POST\","` | — |
