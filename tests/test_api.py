@@ -277,7 +277,7 @@ def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, mon
         local_api,
         "/api/diagnostics",
         method="POST",
-        payload={"test_model": True, "test_social": False},
+        payload={"test_model": True, "test_social": False, "allow_provider_usage": True},
     )
     assert status == 200
     assert report["overall_status"] == "passed"
