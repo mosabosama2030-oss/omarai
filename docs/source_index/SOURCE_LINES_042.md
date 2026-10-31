@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000189 إلى SRC-B106ADC5EF-L000004
+- النطاق: SRC-1A176AD4F0-L000162 إلى SRC-44CDA52D01-L000163
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000162](../../tests/test_hosted_smoke.py#L162) | 162 | `"    original = hosted_smoke_test.request_json"` | — |
+| [SRC-1A176AD4F0-L000163](../../tests/test_hosted_smoke.py#L163) | 163 | `""` | — |
+| [SRC-1A176AD4F0-L000164](../../tests/test_hosted_smoke.py#L164) | 164 | `"    def without_sources(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000165](../../tests/test_hosted_smoke.py#L165) | 165 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
+| [SRC-1A176AD4F0-L000166](../../tests/test_hosted_smoke.py#L166) | 166 | `"            return 200, {"` | — |
+| [SRC-1A176AD4F0-L000167](../../tests/test_hosted_smoke.py#L167) | 167 | `"                \"answer\": \"إجابة بلا مصادر\", \"used_web_search\": False,"` | — |
+| [SRC-1A176AD4F0-L000168](../../tests/test_hosted_smoke.py#L168) | 168 | `"                \"used_language_model\": True, \"sources\": [],"` | — |
+| [SRC-1A176AD4F0-L000169](../../tests/test_hosted_smoke.py#L169) | 169 | `"            }"` | — |
+| [SRC-1A176AD4F0-L000170](../../tests/test_hosted_smoke.py#L170) | 170 | `"        return original(url, **kwargs)"` | — |
+| [SRC-1A176AD4F0-L000171](../../tests/test_hosted_smoke.py#L171) | 171 | `""` | — |
+| [SRC-1A176AD4F0-L000172](../../tests/test_hosted_smoke.py#L172) | 172 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", without_sources)"` | — |
+| [SRC-1A176AD4F0-L000173](../../tests/test_hosted_smoke.py#L173) | 173 | `"    with pytest.raises(SmokeError, match=\"usable source URLs\"):"` | — |
+| [SRC-1A176AD4F0-L000174](../../tests/test_hosted_smoke.py#L174) | 174 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, timeout=5)"` | — |
+| [SRC-1A176AD4F0-L000175](../../tests/test_hosted_smoke.py#L175) | 175 | `""` | — |
+| [SRC-1A176AD4F0-L000176](../../tests/test_hosted_smoke.py#L176) | 176 | `""` | — |
+| [SRC-1A176AD4F0-L000177](../../tests/test_hosted_smoke.py#L177) | 177 | `"def test_smoke_rejects_invalid_expected_source_sha(hosted_server):"` | — |
+| [SRC-1A176AD4F0-L000178](../../tests/test_hosted_smoke.py#L178) | 178 | `"    with pytest.raises(SmokeError, match=\"40-character Git SHA\"):"` | — |
+| [SRC-1A176AD4F0-L000179](../../tests/test_hosted_smoke.py#L179) | 179 | `"        run_smoke("` | — |
+| [SRC-1A176AD4F0-L000180](../../tests/test_hosted_smoke.py#L180) | 180 | `"            hosted_server, TOKEN, allow_http=True, timeout=5, expected_sha=\"main\""` | — |
+| [SRC-1A176AD4F0-L000181](../../tests/test_hosted_smoke.py#L181) | 181 | `"        )"` | — |
+| [SRC-1A176AD4F0-L000182](../../tests/test_hosted_smoke.py#L182) | 182 | `""` | — |
+| [SRC-1A176AD4F0-L000183](../../tests/test_hosted_smoke.py#L183) | 183 | `""` | — |
+| [SRC-1A176AD4F0-L000184](../../tests/test_hosted_smoke.py#L184) | 184 | `"def test_smoke_rejects_deployed_build_sha_mismatch(hosted_server):"` | — |
+| [SRC-1A176AD4F0-L000185](../../tests/test_hosted_smoke.py#L185) | 185 | `"    with pytest.raises(SmokeError, match=\"does not match the expected Git commit\"):"` | — |
+| [SRC-1A176AD4F0-L000186](../../tests/test_hosted_smoke.py#L186) | 186 | `"        run_smoke("` | — |
+| [SRC-1A176AD4F0-L000187](../../tests/test_hosted_smoke.py#L187) | 187 | `"            hosted_server,"` | — |
+| [SRC-1A176AD4F0-L000188](../../tests/test_hosted_smoke.py#L188) | 188 | `"            TOKEN,"` | — |
 | [SRC-1A176AD4F0-L000189](../../tests/test_hosted_smoke.py#L189) | 189 | `"            allow_http=True,"` | — |
 | [SRC-1A176AD4F0-L000190](../../tests/test_hosted_smoke.py#L190) | 190 | `"            timeout=5,"` | — |
 | [SRC-1A176AD4F0-L000191](../../tests/test_hosted_smoke.py#L191) | 191 | `"            expected_sha=\"a\" * 40,"` | — |
@@ -825,39 +852,3 @@
 | [SRC-44CDA52D01-L000161](../../tests/test_omarai.py#L161) | 161 | `"        lead_b[\"id\"], \"qualified\", tenant_id=\"company-b\""` | — |
 | [SRC-44CDA52D01-L000162](../../tests/test_omarai.py#L162) | 162 | `"    )"` | — |
 | [SRC-44CDA52D01-L000163](../../tests/test_omarai.py#L163) | 163 | `"    assert updated is not None and updated[\"status\"] == \"qualified\""` | — |
-| [SRC-44CDA52D01-L000164](../../tests/test_omarai.py#L164) | 164 | `""` | — |
-| [SRC-44CDA52D01-L000165](../../tests/test_omarai.py#L165) | 165 | `"    exported = tmp_path / \"company-a.csv\""` | — |
-| [SRC-44CDA52D01-L000166](../../tests/test_omarai.py#L166) | 166 | `"    assert store.export_csv(exported, tenant_id=\"default\") == 1"` | — |
-| [SRC-44CDA52D01-L000167](../../tests/test_omarai.py#L167) | 167 | `"    csv_text = exported.read_text(encoding=\"utf-8-sig\")"` | — |
-| [SRC-44CDA52D01-L000168](../../tests/test_omarai.py#L168) | 168 | `"    assert \"company-b\" not in csv_text"` | — |
-| [SRC-44CDA52D01-L000169](../../tests/test_omarai.py#L169) | 169 | `"    assert lead_a[\"id\"] in csv_text"` | — |
-| [SRC-44CDA52D01-L000170](../../tests/test_omarai.py#L170) | 170 | `"    assert lead_b[\"id\"] not in csv_text"` | — |
-| [SRC-44CDA52D01-L000171](../../tests/test_omarai.py#L171) | 171 | `""` | — |
-| [SRC-44CDA52D01-L000172](../../tests/test_omarai.py#L172) | 172 | `"    export_text_b = store.export_csv_text(tenant_id=\"company-b\")"` | — |
-| [SRC-44CDA52D01-L000173](../../tests/test_omarai.py#L173) | 173 | `"    assert lead_b[\"id\"] in export_text_b"` | — |
-| [SRC-44CDA52D01-L000174](../../tests/test_omarai.py#L174) | 174 | `"    assert lead_a[\"id\"] not in export_text_b"` | — |
-| [SRC-44CDA52D01-L000175](../../tests/test_omarai.py#L175) | 175 | `""` | — |
-| [SRC-44CDA52D01-L000176](../../tests/test_omarai.py#L176) | 176 | `""` | — |
-| [SRC-44CDA52D01-L000177](../../tests/test_omarai.py#L177) | 177 | `"def test_membership_resolution_requires_active_company_user_and_membership(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000178](../../tests/test_omarai.py#L178) | 178 | `"    store = LeadStore(tmp_path / \"memberships.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000179](../../tests/test_omarai.py#L179) | 179 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
-| [SRC-44CDA52D01-L000180](../../tests/test_omarai.py#L180) | 180 | `"    store.create_user(\"user-b\", email=\"user-b@example.test\", display_name=\"موظف ب\")"` | — |
-| [SRC-44CDA52D01-L000181](../../tests/test_omarai.py#L181) | 181 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"sales_agent\")"` | — |
-| [SRC-44CDA52D01-L000182](../../tests/test_omarai.py#L182) | 182 | `""` | — |
-| [SRC-44CDA52D01-L000183](../../tests/test_omarai.py#L183) | 183 | `"    assert store.resolve_membership(\"user-b\", \"company-b\")[\"role\"] == \"sales_agent\""` | — |
-| [SRC-44CDA52D01-L000184](../../tests/test_omarai.py#L184) | 184 | `"    assert store.resolve_membership(\"user-b\", \"default\") is None"` | — |
-| [SRC-44CDA52D01-L000185](../../tests/test_omarai.py#L185) | 185 | `"    assert store.resolve_membership(\"operator\", \"company-b\") is None"` | — |
-| [SRC-44CDA52D01-L000186](../../tests/test_omarai.py#L186) | 186 | `"    assert store.resolve_membership(\"unknown-user\", \"company-b\") is None"` | — |
-## اختبارات
-
-### FILE-B106ADC5EF — [tests/test_proxy_origin.py](../../tests/test_proxy_origin.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B106ADC5EF-L000001](../../tests/test_proxy_origin.py#L1) | 1 | `"\"\"\"Regression tests for the proxy-aware Origin check. OMARAI-PROXY-ORIGIN-PATCH\"\"\""` | — |
-| [SRC-B106ADC5EF-L000002](../../tests/test_proxy_origin.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-B106ADC5EF-L000003](../../tests/test_proxy_origin.py#L3) | 3 | `"import http.client"` | — |
-| [SRC-B106ADC5EF-L000004](../../tests/test_proxy_origin.py#L4) | 4 | `"import threading"` | — |

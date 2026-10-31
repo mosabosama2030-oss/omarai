@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000949 إلى SRC-6BECF5AD00-L000075
+- النطاق: SRC-3451CC474D-L000922 إلى SRC-6BECF5AD00-L000048
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,33 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000922](../../tests/test_api.py#L922) | 922 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000923](../../tests/test_api.py#L923) | 923 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000924](../../tests/test_api.py#L924) | 924 | `"        }"` | — |
+| [SRC-3451CC474D-L000925](../../tests/test_api.py#L925) | 925 | `""` | — |
+| [SRC-3451CC474D-L000926](../../tests/test_api.py#L926) | 926 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
+| [SRC-3451CC474D-L000927](../../tests/test_api.py#L927) | 927 | `""` | — |
+| [SRC-3451CC474D-L000928](../../tests/test_api.py#L928) | 928 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000929](../../tests/test_api.py#L929) | 929 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
+| [SRC-3451CC474D-L000930](../../tests/test_api.py#L930) | 930 | `"    )"` | — |
+| [SRC-3451CC474D-L000931](../../tests/test_api.py#L931) | 931 | `"    assert status == 500"` | — |
+| [SRC-3451CC474D-L000932](../../tests/test_api.py#L932) | 932 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
+| [SRC-3451CC474D-L000933](../../tests/test_api.py#L933) | 933 | `""` | — |
+| [SRC-3451CC474D-L000934](../../tests/test_api.py#L934) | 934 | `"    state[\"fail\"] = False"` | — |
+| [SRC-3451CC474D-L000935](../../tests/test_api.py#L935) | 935 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000936](../../tests/test_api.py#L936) | 936 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الثاني\"}"` | — |
+| [SRC-3451CC474D-L000937](../../tests/test_api.py#L937) | 937 | `"    )"` | — |
+| [SRC-3451CC474D-L000938](../../tests/test_api.py#L938) | 938 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000939](../../tests/test_api.py#L939) | 939 | `"    assert payload[\"answer\"] == \"اختبار ناجح\""` | — |
+| [SRC-3451CC474D-L000940](../../tests/test_api.py#L940) | 940 | `""` | — |
+| [SRC-3451CC474D-L000941](../../tests/test_api.py#L941) | 941 | `""` | — |
+| [SRC-3451CC474D-L000942](../../tests/test_api.py#L942) | 942 | `"def test_csp_hashes_match_all_first_party_inline_content_and_attributes():"` | — |
+| [SRC-3451CC474D-L000943](../../tests/test_api.py#L943) | 943 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000944](../../tests/test_api.py#L944) | 944 | `""` | — |
+| [SRC-3451CC474D-L000945](../../tests/test_api.py#L945) | 945 | `"    policy = api_module._content_security_policy()"` | — |
+| [SRC-3451CC474D-L000946](../../tests/test_api.py#L946) | 946 | `"    assert \"'unsafe-inline'\" not in policy"` | — |
+| [SRC-3451CC474D-L000947](../../tests/test_api.py#L947) | 947 | `"    script_blocks = 0"` | — |
+| [SRC-3451CC474D-L000948](../../tests/test_api.py#L948) | 948 | `"    style_blocks = 0"` | — |
 | [SRC-3451CC474D-L000949](../../tests/test_api.py#L949) | 949 | `"    style_attributes = 0"` | — |
 | [SRC-3451CC474D-L000950](../../tests/test_api.py#L950) | 950 | `"    for html_path in api_module.ROOT.glob(\"*.html\"):"` | — |
 | [SRC-3451CC474D-L000951](../../tests/test_api.py#L951) | 951 | `"        document = html_path.read_text(encoding=\"utf-8\")"` | — |
@@ -825,30 +852,3 @@
 | [SRC-6BECF5AD00-L000046](../../tests/test_connectors_mocked.py#L46) | 46 | `"    assert len(rows) == 1"` | — |
 | [SRC-6BECF5AD00-L000047](../../tests/test_connectors_mocked.py#L47) | 47 | `"    assert rows[0][\"provider\"] == \"arxiv\""` | — |
 | [SRC-6BECF5AD00-L000048](../../tests/test_connectors_mocked.py#L48) | 48 | `"    assert \"arxiv.org\" in rows[0][\"url\"]"` | — |
-| [SRC-6BECF5AD00-L000049](../../tests/test_connectors_mocked.py#L49) | 49 | `""` | — |
-| [SRC-6BECF5AD00-L000050](../../tests/test_connectors_mocked.py#L50) | 50 | `""` | — |
-| [SRC-6BECF5AD00-L000051](../../tests/test_connectors_mocked.py#L51) | 51 | `"def test_connector_failure_returns_empty(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000052](../../tests/test_connectors_mocked.py#L52) | 52 | `"    def boom(*args, **kwargs):"` | — |
-| [SRC-6BECF5AD00-L000053](../../tests/test_connectors_mocked.py#L53) | 53 | `"        raise sc.urllib.error.URLError(\"down\")"` | — |
-| [SRC-6BECF5AD00-L000054](../../tests/test_connectors_mocked.py#L54) | 54 | `""` | — |
-| [SRC-6BECF5AD00-L000055](../../tests/test_connectors_mocked.py#L55) | 55 | `"    monkeypatch.setattr(sc, \"_http_get_json\", boom)"` | — |
-| [SRC-6BECF5AD00-L000056](../../tests/test_connectors_mocked.py#L56) | 56 | `"    assert sc.run_connector(\"openalex\", \"query\") == []"` | — |
-| [SRC-6BECF5AD00-L000057](../../tests/test_connectors_mocked.py#L57) | 57 | `""` | — |
-| [SRC-6BECF5AD00-L000058](../../tests/test_connectors_mocked.py#L58) | 58 | `""` | — |
-| [SRC-6BECF5AD00-L000059](../../tests/test_connectors_mocked.py#L59) | 59 | `"def test_run_free_academic_dedupe_path(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000060](../../tests/test_connectors_mocked.py#L60) | 60 | `"    def fake_run(name, query, limit=4):"` | — |
-| [SRC-6BECF5AD00-L000061](../../tests/test_connectors_mocked.py#L61) | 61 | `"        return ["` | — |
-| [SRC-6BECF5AD00-L000062](../../tests/test_connectors_mocked.py#L62) | 62 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000063](../../tests/test_connectors_mocked.py#L63) | 63 | `"                \"title\": f\"{name}-title\","` | — |
-| [SRC-6BECF5AD00-L000064](../../tests/test_connectors_mocked.py#L64) | 64 | `"                \"url\": f\"https://example.com/{name}\","` | — |
-| [SRC-6BECF5AD00-L000065](../../tests/test_connectors_mocked.py#L65) | 65 | `"                \"snippet\": \"x\","` | — |
-| [SRC-6BECF5AD00-L000066](../../tests/test_connectors_mocked.py#L66) | 66 | `"                \"page_fetched\": False,"` | — |
-| [SRC-6BECF5AD00-L000067](../../tests/test_connectors_mocked.py#L67) | 67 | `"                \"provider\": name,"` | — |
-| [SRC-6BECF5AD00-L000068](../../tests/test_connectors_mocked.py#L68) | 68 | `"                \"provider_rank\": 1,"` | — |
-| [SRC-6BECF5AD00-L000069](../../tests/test_connectors_mocked.py#L69) | 69 | `"                \"search_query\": query,"` | — |
-| [SRC-6BECF5AD00-L000070](../../tests/test_connectors_mocked.py#L70) | 70 | `"                \"published_at\": \"\","` | — |
-| [SRC-6BECF5AD00-L000071](../../tests/test_connectors_mocked.py#L71) | 71 | `"                \"source_class\": \"academic\","` | — |
-| [SRC-6BECF5AD00-L000072](../../tests/test_connectors_mocked.py#L72) | 72 | `"            }"` | — |
-| [SRC-6BECF5AD00-L000073](../../tests/test_connectors_mocked.py#L73) | 73 | `"        ]"` | — |
-| [SRC-6BECF5AD00-L000074](../../tests/test_connectors_mocked.py#L74) | 74 | `""` | — |
-| [SRC-6BECF5AD00-L000075](../../tests/test_connectors_mocked.py#L75) | 75 | `"    monkeypatch.setattr(sc, \"run_connector\", fake_run)"` | — |

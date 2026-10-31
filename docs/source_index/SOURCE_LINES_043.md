@@ -4,9 +4,41 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B106ADC5EF-L000005 إلى SRC-6BF96689A8-L000298
+- النطاق: SRC-44CDA52D01-L000164 إلى SRC-6BF96689A8-L000271
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-44CDA52D01-L000164](../../tests/test_omarai.py#L164) | 164 | `""` | — |
+| [SRC-44CDA52D01-L000165](../../tests/test_omarai.py#L165) | 165 | `"    exported = tmp_path / \"company-a.csv\""` | — |
+| [SRC-44CDA52D01-L000166](../../tests/test_omarai.py#L166) | 166 | `"    assert store.export_csv(exported, tenant_id=\"default\") == 1"` | — |
+| [SRC-44CDA52D01-L000167](../../tests/test_omarai.py#L167) | 167 | `"    csv_text = exported.read_text(encoding=\"utf-8-sig\")"` | — |
+| [SRC-44CDA52D01-L000168](../../tests/test_omarai.py#L168) | 168 | `"    assert \"company-b\" not in csv_text"` | — |
+| [SRC-44CDA52D01-L000169](../../tests/test_omarai.py#L169) | 169 | `"    assert lead_a[\"id\"] in csv_text"` | — |
+| [SRC-44CDA52D01-L000170](../../tests/test_omarai.py#L170) | 170 | `"    assert lead_b[\"id\"] not in csv_text"` | — |
+| [SRC-44CDA52D01-L000171](../../tests/test_omarai.py#L171) | 171 | `""` | — |
+| [SRC-44CDA52D01-L000172](../../tests/test_omarai.py#L172) | 172 | `"    export_text_b = store.export_csv_text(tenant_id=\"company-b\")"` | — |
+| [SRC-44CDA52D01-L000173](../../tests/test_omarai.py#L173) | 173 | `"    assert lead_b[\"id\"] in export_text_b"` | — |
+| [SRC-44CDA52D01-L000174](../../tests/test_omarai.py#L174) | 174 | `"    assert lead_a[\"id\"] not in export_text_b"` | — |
+| [SRC-44CDA52D01-L000175](../../tests/test_omarai.py#L175) | 175 | `""` | — |
+| [SRC-44CDA52D01-L000176](../../tests/test_omarai.py#L176) | 176 | `""` | — |
+| [SRC-44CDA52D01-L000177](../../tests/test_omarai.py#L177) | 177 | `"def test_membership_resolution_requires_active_company_user_and_membership(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000178](../../tests/test_omarai.py#L178) | 178 | `"    store = LeadStore(tmp_path / \"memberships.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000179](../../tests/test_omarai.py#L179) | 179 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
+| [SRC-44CDA52D01-L000180](../../tests/test_omarai.py#L180) | 180 | `"    store.create_user(\"user-b\", email=\"user-b@example.test\", display_name=\"موظف ب\")"` | — |
+| [SRC-44CDA52D01-L000181](../../tests/test_omarai.py#L181) | 181 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"sales_agent\")"` | — |
+| [SRC-44CDA52D01-L000182](../../tests/test_omarai.py#L182) | 182 | `""` | — |
+| [SRC-44CDA52D01-L000183](../../tests/test_omarai.py#L183) | 183 | `"    assert store.resolve_membership(\"user-b\", \"company-b\")[\"role\"] == \"sales_agent\""` | — |
+| [SRC-44CDA52D01-L000184](../../tests/test_omarai.py#L184) | 184 | `"    assert store.resolve_membership(\"user-b\", \"default\") is None"` | — |
+| [SRC-44CDA52D01-L000185](../../tests/test_omarai.py#L185) | 185 | `"    assert store.resolve_membership(\"operator\", \"company-b\") is None"` | — |
+| [SRC-44CDA52D01-L000186](../../tests/test_omarai.py#L186) | 186 | `"    assert store.resolve_membership(\"unknown-user\", \"company-b\") is None"` | — |
 ## اختبارات
 
 ### FILE-B106ADC5EF — [tests/test_proxy_origin.py](../../tests/test_proxy_origin.py#L1)
@@ -16,6 +48,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B106ADC5EF-L000001](../../tests/test_proxy_origin.py#L1) | 1 | `"\"\"\"Regression tests for the proxy-aware Origin check. OMARAI-PROXY-ORIGIN-PATCH\"\"\""` | — |
+| [SRC-B106ADC5EF-L000002](../../tests/test_proxy_origin.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-B106ADC5EF-L000003](../../tests/test_proxy_origin.py#L3) | 3 | `"import http.client"` | — |
+| [SRC-B106ADC5EF-L000004](../../tests/test_proxy_origin.py#L4) | 4 | `"import threading"` | — |
 | [SRC-B106ADC5EF-L000005](../../tests/test_proxy_origin.py#L5) | 5 | `"from http.server import ThreadingHTTPServer"` | — |
 | [SRC-B106ADC5EF-L000006](../../tests/test_proxy_origin.py#L6) | 6 | `"import pytest"` | — |
 | [SRC-B106ADC5EF-L000007](../../tests/test_proxy_origin.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
@@ -825,30 +861,3 @@
 | [SRC-6BF96689A8-L000269](../../tests/test_research.py#L269) | 269 | `"    assert \"سيارات البنزين\" in query"` | — |
 | [SRC-6BF96689A8-L000270](../../tests/test_research.py#L270) | 270 | `"    assert \"مصر\" in query"` | — |
 | [SRC-6BF96689A8-L000271](../../tests/test_research.py#L271) | 271 | `""` | — |
-| [SRC-6BF96689A8-L000272](../../tests/test_research.py#L272) | 272 | `""` | — |
-| [SRC-6BF96689A8-L000273](../../tests/test_research.py#L273) | 273 | `"def test_compact_search_query_discards_standalone_fact_vs_inference_instruction():"` | — |
-| [SRC-6BF96689A8-L000274](../../tests/test_research.py#L274) | 274 | `"    assert compact_search_query(\"ميّز بين الحقائق والاستنتاجات.\") == \"\""` | — |
-| [SRC-6BF96689A8-L000275](../../tests/test_research.py#L275) | 275 | `""` | — |
-| [SRC-6BF96689A8-L000276](../../tests/test_research.py#L276) | 276 | `""` | — |
-| [SRC-6BF96689A8-L000277](../../tests/test_research.py#L277) | 277 | `"def test_fallback_plan_does_not_invent_query_for_instruction_only_prompt():"` | — |
-| [SRC-6BF96689A8-L000278](../../tests/test_research.py#L278) | 278 | `"    plan = fallback_plan(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
-| [SRC-6BF96689A8-L000279](../../tests/test_research.py#L279) | 279 | `"    assert plan[\"queries\"] == []"` | — |
-| [SRC-6BF96689A8-L000280](../../tests/test_research.py#L280) | 280 | `""` | — |
-| [SRC-6BF96689A8-L000281](../../tests/test_research.py#L281) | 281 | `""` | — |
-| [SRC-6BF96689A8-L000282](../../tests/test_research.py#L282) | 282 | `"def test_collect_research_compacts_queries_before_provider_calls(monkeypatch):"` | — |
-| [SRC-6BF96689A8-L000283](../../tests/test_research.py#L283) | 283 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-6BF96689A8-L000284](../../tests/test_research.py#L284) | 284 | `""` | — |
-| [SRC-6BF96689A8-L000285](../../tests/test_research.py#L285) | 285 | `"    agent = WebAgent()"` | — |
-| [SRC-6BF96689A8-L000286](../../tests/test_research.py#L286) | 286 | `"    seen = []"` | — |
-| [SRC-6BF96689A8-L000287](../../tests/test_research.py#L287) | 287 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
-| [SRC-6BF96689A8-L000288](../../tests/test_research.py#L288) | 288 | `"    sources, _warnings, report = agent._collect_research({"` | — |
-| [SRC-6BF96689A8-L000289](../../tests/test_research.py#L289) | 289 | `"        \"queries\": ["` | — |
-| [SRC-6BF96689A8-L000290](../../tests/test_research.py#L290) | 290 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\""` | — |
-| [SRC-6BF96689A8-L000291](../../tests/test_research.py#L291) | 291 | `"        ],"` | — |
-| [SRC-6BF96689A8-L000292](../../tests/test_research.py#L292) | 292 | `"        \"direct_urls\": [],"` | — |
-| [SRC-6BF96689A8-L000293](../../tests/test_research.py#L293) | 293 | `"        \"social_focus\": False,"` | — |
-| [SRC-6BF96689A8-L000294](../../tests/test_research.py#L294) | 294 | `"        \"freshness\": \"any\","` | — |
-| [SRC-6BF96689A8-L000295](../../tests/test_research.py#L295) | 295 | `"        \"depth\": \"standard\","` | — |
-| [SRC-6BF96689A8-L000296](../../tests/test_research.py#L296) | 296 | `"        \"platforms\": [],"` | — |
-| [SRC-6BF96689A8-L000297](../../tests/test_research.py#L297) | 297 | `"    })"` | — |
-| [SRC-6BF96689A8-L000298](../../tests/test_research.py#L298) | 298 | `""` | — |
