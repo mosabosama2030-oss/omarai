@@ -4151,3 +4151,74 @@ def test_review_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch):
     assert answer == "تم تدقيق الإجابة."
     assert injected_text not in system_content
     assert any(injected_text in value for value in user_contents)
+
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://api.example.test/v1",
+        "http://localhost:11434/v1",
+        "http://127.0.0.1:8080/v1",
+        "http://[::1]:8000/v1",
+    ],
+)
+def test_model_provider_base_url_allows_https_or_loopback(url):
+    from agents.web_agent import _is_safe_model_base_url
+
+    assert _is_safe_model_base_url(url) is True
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "http://api.example.test/v1",
+        "ftp://api.example.test/v1",
+        "https://user:password@api.example.test/v1",
+        "https://api.example.test/v1?token=secret",
+        "https://api.example.test/v1#fragment",
+        "https:///missing-host",
+        "https://api.example.test:99999/v1",
+    ],
+)
+def test_model_provider_base_url_rejects_insecure_or_ambiguous_urls(url):
+    from agents.web_agent import _is_safe_model_base_url
+
+    assert _is_safe_model_base_url(url) is False
+
+
+def test_model_provider_rejects_remote_http_before_sending_bearer_key(monkeypatch):
+    from agents import web_agent
+
+    agent = WebAgent()
+    agent.api_key = "unit-test-secret"
+    agent.base_url = "http://provider.example/api/v1"
+
+    def unexpected_request(*_args, **_kwargs):
+        pytest.fail("bearer credentials must not be sent to a remote HTTP URL")
+
+    monkeypatch.setattr(web_agent, "_open_model_request", unexpected_request)
+    with pytest.raises(RuntimeError, match="HTTPS"):
+        agent._request_completion(
+            [{"role": "user", "content": "test"}],
+            max_tokens=100,
+        )
+
+    assert agent.generation_diagnostics[-1]["status"] == "unsafe_provider_url"
+    assert agent.generation_diagnostics[-1]["request_started"] == "false"
+
+
+def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatch):
+    monkeypatch.setenv(
+        "OMARAI_LLM_BASE_URL",
+        "https://health-user:health-password@provider.example/api/v1?token=health-secret",
+    )
+
+    status = WebAgent.status()
+    provider = status["language_model_provider"]
+
+    assert provider == "https://provider.example"
+    assert "health-user" not in provider
+    assert "health-password" not in provider
+    assert "health-secret" not in provider
+    assert "/api/v1" not in provider
