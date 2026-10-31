@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002747 إلى SRC-1AE03B9EC3-L003546
+- النطاق: SRC-1AE03B9EC3-L002733 إلى SRC-1AE03B9EC3-L003532
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002733](../../agents/web_agent.py#L2733) | 2733 | `"                    try:"` | — |
+| [SRC-1AE03B9EC3-L002734](../../agents/web_agent.py#L2734) | 2734 | `"                        fetch_result = future.result()"` | — |
+| [SRC-1AE03B9EC3-L002735](../../agents/web_agent.py#L2735) | 2735 | `"                    except RequestBudgetExceeded as exc:"` | — |
+| [SRC-1AE03B9EC3-L002736](../../agents/web_agent.py#L2736) | 2736 | `"                        source[\"page_fetch_status\"] = \"budget_exhausted\""` | — |
+| [SRC-1AE03B9EC3-L002737](../../agents/web_agent.py#L2737) | 2737 | `"                        source[\"page_fetch_error_class\"] = type(exc).__name__"` | — |
+| [SRC-1AE03B9EC3-L002738](../../agents/web_agent.py#L2738) | 2738 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L002739](../../agents/web_agent.py#L2739) | 2739 | `"                    except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L002740](../../agents/web_agent.py#L2740) | 2740 | `"                        source[\"page_fetch_status\"] = \"fetch_failed\""` | — |
+| [SRC-1AE03B9EC3-L002741](../../agents/web_agent.py#L2741) | 2741 | `"                        source[\"page_fetch_error_class\"] = type(exc).__name__"` | — |
+| [SRC-1AE03B9EC3-L002742](../../agents/web_agent.py#L2742) | 2742 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L002743](../../agents/web_agent.py#L2743) | 2743 | `"                    title, page_text = fetch_result"` | — |
+| [SRC-1AE03B9EC3-L002744](../../agents/web_agent.py#L2744) | 2744 | `"                    observed_status = getattr(fetch_result, \"status\", None)"` | — |
+| [SRC-1AE03B9EC3-L002745](../../agents/web_agent.py#L2745) | 2745 | `"                    error_class = getattr(fetch_result, \"error_class\", None)"` | — |
+| [SRC-1AE03B9EC3-L002746](../../agents/web_agent.py#L2746) | 2746 | `"                    if title:"` | — |
 | [SRC-1AE03B9EC3-L002747](../../agents/web_agent.py#L2747) | 2747 | `"                        source[\"title\"] = title"` | — |
 | [SRC-1AE03B9EC3-L002748](../../agents/web_agent.py#L2748) | 2748 | `"                    if page_text and page_text.strip():"` | — |
 | [SRC-1AE03B9EC3-L002749](../../agents/web_agent.py#L2749) | 2749 | `"                        source[\"page_text\"] = page_text"` | — |
@@ -802,17 +816,3 @@
 | [SRC-1AE03B9EC3-L003530](../../agents/web_agent.py#L3530) | 3530 | `"                if len(query_list) < MAX_PLAN_QUERIES:"` | — |
 | [SRC-1AE03B9EC3-L003531](../../agents/web_agent.py#L3531) | 3531 | `"                    query_list.append(targeted)"` | — |
 | [SRC-1AE03B9EC3-L003532](../../agents/web_agent.py#L3532) | 3532 | `"                elif len(query_list) > 1:"` | — |
-| [SRC-1AE03B9EC3-L003533](../../agents/web_agent.py#L3533) | 3533 | `"                    query_list[-1] = targeted"` | — |
-| [SRC-1AE03B9EC3-L003534](../../agents/web_agent.py#L3534) | 3534 | `"            plan[\"queries\"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L003535](../../agents/web_agent.py#L3535) | 3535 | `"        plan[\"dialogue_context\"] = dialogue_context"` | — |
-| [SRC-1AE03B9EC3-L003536](../../agents/web_agent.py#L3536) | 3536 | `"        plan[\"coverage_targets\"] = list(fallback.get(\"coverage_targets\") or [])"` | — |
-| [SRC-1AE03B9EC3-L003537](../../agents/web_agent.py#L3537) | 3537 | `"        plan[\"requirement_queries\"] = list(fallback.get(\"requirement_queries\") or [])"` | — |
-| [SRC-1AE03B9EC3-L003538](../../agents/web_agent.py#L3538) | 3538 | `"        if plan[\"requirement_queries\"]:"` | — |
-| [SRC-1AE03B9EC3-L003539](../../agents/web_agent.py#L3539) | 3539 | `"            required_prefix: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003540](../../agents/web_agent.py#L3540) | 3540 | `"            if len(plan[\"requirement_queries\"]) < MAX_PLAN_QUERIES:"` | — |
-| [SRC-1AE03B9EC3-L003541](../../agents/web_agent.py#L3541) | 3541 | `"                fallback_queries = fallback.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L003542](../../agents/web_agent.py#L3542) | 3542 | `"                if fallback_queries:"` | — |
-| [SRC-1AE03B9EC3-L003543](../../agents/web_agent.py#L3543) | 3543 | `"                    required_prefix.append(fallback_queries[0])"` | — |
-| [SRC-1AE03B9EC3-L003544](../../agents/web_agent.py#L3544) | 3544 | `"            required_prefix.extend("` | — |
-| [SRC-1AE03B9EC3-L003545](../../agents/web_agent.py#L3545) | 3545 | `"                item[\"query\"] for item in plan[\"requirement_queries\"] if item.get(\"query\")"` | — |
-| [SRC-1AE03B9EC3-L003546](../../agents/web_agent.py#L3546) | 3546 | `"            )"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003547 إلى SRC-1AE03B9EC3-L004346
+- النطاق: SRC-1AE03B9EC3-L003533 إلى SRC-1AE03B9EC3-L004332
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003533](../../agents/web_agent.py#L3533) | 3533 | `"                    query_list[-1] = targeted"` | — |
+| [SRC-1AE03B9EC3-L003534](../../agents/web_agent.py#L3534) | 3534 | `"            plan[\"queries\"] = list(dict.fromkeys(query_list))[:MAX_PLAN_QUERIES]"` | — |
+| [SRC-1AE03B9EC3-L003535](../../agents/web_agent.py#L3535) | 3535 | `"        plan[\"dialogue_context\"] = dialogue_context"` | — |
+| [SRC-1AE03B9EC3-L003536](../../agents/web_agent.py#L3536) | 3536 | `"        plan[\"coverage_targets\"] = list(fallback.get(\"coverage_targets\") or [])"` | — |
+| [SRC-1AE03B9EC3-L003537](../../agents/web_agent.py#L3537) | 3537 | `"        plan[\"requirement_queries\"] = list(fallback.get(\"requirement_queries\") or [])"` | — |
+| [SRC-1AE03B9EC3-L003538](../../agents/web_agent.py#L3538) | 3538 | `"        if plan[\"requirement_queries\"]:"` | — |
+| [SRC-1AE03B9EC3-L003539](../../agents/web_agent.py#L3539) | 3539 | `"            required_prefix: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L003540](../../agents/web_agent.py#L3540) | 3540 | `"            if len(plan[\"requirement_queries\"]) < MAX_PLAN_QUERIES:"` | — |
+| [SRC-1AE03B9EC3-L003541](../../agents/web_agent.py#L3541) | 3541 | `"                fallback_queries = fallback.get(\"queries\", [])"` | — |
+| [SRC-1AE03B9EC3-L003542](../../agents/web_agent.py#L3542) | 3542 | `"                if fallback_queries:"` | — |
+| [SRC-1AE03B9EC3-L003543](../../agents/web_agent.py#L3543) | 3543 | `"                    required_prefix.append(fallback_queries[0])"` | — |
+| [SRC-1AE03B9EC3-L003544](../../agents/web_agent.py#L3544) | 3544 | `"            required_prefix.extend("` | — |
+| [SRC-1AE03B9EC3-L003545](../../agents/web_agent.py#L3545) | 3545 | `"                item[\"query\"] for item in plan[\"requirement_queries\"] if item.get(\"query\")"` | — |
+| [SRC-1AE03B9EC3-L003546](../../agents/web_agent.py#L3546) | 3546 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003547](../../agents/web_agent.py#L3547) | 3547 | `"            plan[\"queries\"] = list(dict.fromkeys("` | — |
 | [SRC-1AE03B9EC3-L003548](../../agents/web_agent.py#L3548) | 3548 | `"                required_prefix + list(plan.get(\"queries\") or [])"` | — |
 | [SRC-1AE03B9EC3-L003549](../../agents/web_agent.py#L3549) | 3549 | `"            ))[:MAX_PLAN_QUERIES]"` | — |
@@ -802,17 +816,3 @@
 | [SRC-1AE03B9EC3-L004330](../../agents/web_agent.py#L4330) | 4330 | `""` | — |
 | [SRC-1AE03B9EC3-L004331](../../agents/web_agent.py#L4331) | 4331 | `"        # Keep the public result contract resilient if a fallback/alternate result"` | — |
 | [SRC-1AE03B9EC3-L004332](../../agents/web_agent.py#L4332) | 4332 | `"        # builder omitted the lexical integrity fields. Normal research results are"` | — |
-| [SRC-1AE03B9EC3-L004333](../../agents/web_agent.py#L4333) | 4333 | `"        # already audited inside _answer_with_budget, so do not duplicate that work."` | — |
-| [SRC-1AE03B9EC3-L004334](../../agents/web_agent.py#L4334) | 4334 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L004335](../../agents/web_agent.py#L4335) | 4335 | `"            result.get(\"kind\") in {\"web_research\", \"web_fallback\", \"insufficient_evidence\"}"` | — |
-| [SRC-1AE03B9EC3-L004336](../../agents/web_agent.py#L4336) | 4336 | `"            and \"answer_integrity\" not in result"` | — |
-| [SRC-1AE03B9EC3-L004337](../../agents/web_agent.py#L4337) | 4337 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L004338](../../agents/web_agent.py#L4338) | 4338 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L004339](../../agents/web_agent.py#L4339) | 4339 | `"                coverage_targets = self._question_coverage_targets(question)"` | — |
-| [SRC-1AE03B9EC3-L004340](../../agents/web_agent.py#L4340) | 4340 | `"                source_rows = result.get(\"sources\")"` | — |
-| [SRC-1AE03B9EC3-L004341](../../agents/web_agent.py#L4341) | 4341 | `"                safe_sources = source_rows if isinstance(source_rows, list) else []"` | — |
-| [SRC-1AE03B9EC3-L004342](../../agents/web_agent.py#L4342) | 4342 | `"                answer_integrity = audit_answer_integrity("` | — |
-| [SRC-1AE03B9EC3-L004343](../../agents/web_agent.py#L4343) | 4343 | `"                    question,"` | — |
-| [SRC-1AE03B9EC3-L004344](../../agents/web_agent.py#L4344) | 4344 | `"                    str(result.get(\"answer\") or \"\"),"` | — |
-| [SRC-1AE03B9EC3-L004345](../../agents/web_agent.py#L4345) | 4345 | `"                    safe_sources,"` | — |
-| [SRC-1AE03B9EC3-L004346](../../agents/web_agent.py#L4346) | 4346 | `"                    coverage_targets,"` | — |
