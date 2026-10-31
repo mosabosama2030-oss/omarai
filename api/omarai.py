@@ -108,9 +108,15 @@ REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
 
 def _lead_store_from_environment() -> LeadStore:
-    """Use an operator-configured database path when a persistent volume is available."""
+    """Use the configured database and the initial single-company tenant identity."""
     configured_path = os.getenv("OMARAI_DB_PATH", "").strip()
-    return LeadStore(configured_path or None)
+    return LeadStore(
+        configured_path or None,
+        default_tenant_id=os.getenv("OMARAI_DEFAULT_TENANT_ID", "default").strip() or "default",
+        default_tenant_name=os.getenv(
+            "OMARAI_DEFAULT_TENANT_NAME", "المنشأة الرئيسية"
+        ).strip() or "المنشأة الرئيسية",
+    )
 
 
 class _DeadlineRequestReader:
@@ -309,14 +315,59 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             cls._agent_semaphore.release()
 
-    def _authorized(self):
-        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
-        if not expected:
-            return os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
-        supplied = self.headers.get("Authorization", "")
-        if not supplied.startswith("Bearer "):
+    @staticmethod
+    def _is_loopback_address(value: str) -> bool:
+        try:
+            address = ipaddress.ip_address(str(value).split("%", 1)[0])
+        except ValueError:
             return False
-        return hmac.compare_digest(supplied[7:].strip(), expected)
+        return address.is_loopback or bool(
+            getattr(address, "ipv4_mapped", None)
+            and address.ipv4_mapped.is_loopback
+        )
+
+    def _is_loopback_test_request(self) -> bool:
+        """Allow the tokenless test identity only on a loopback-bound local server."""
+        bind_host = self.server.server_address[0]
+        peer_host = self.client_address[0]
+        return (
+            os.getenv("OMARAI_TEST_MODE", "").strip() == "1"
+            and os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
+            and self._is_loopback_address(bind_host)
+            and self._is_loopback_address(peer_host)
+        )
+
+    def _authenticated_user_id(self) -> str | None:
+        """Resolve a user identity from a token or the isolated loopback test harness."""
+        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
+        supplied = self.headers.get("Authorization", "")
+        if expected:
+            if not supplied.startswith("Bearer "):
+                return None
+            if not hmac.compare_digest(supplied[7:].strip(), expected):
+                return None
+            user_id = os.getenv("OMARAI_ACCESS_USER_ID", "operator").strip()
+            return user_id or None
+
+        if self._is_loopback_test_request():
+            user_id = (
+                self.headers.get("X-Omarai-Test-User", "").strip()
+                or os.getenv("OMARAI_TEST_USER_ID", "operator").strip()
+            )
+            return user_id or None
+        return None
+
+    def _authorized(self):
+        return self._authenticated_user_id() is not None
+
+    def _resolve_request_membership(self, requested_tenant_id: str | None = None):
+        user_id = self._authenticated_user_id()
+        if not user_id:
+            return None
+        try:
+            return self.store.resolve_membership(user_id, requested_tenant_id)
+        except ValueError:
+            return None
 
     def _allowed_origins(self):
         """Return configured browser origins plus this service’s own origin.
@@ -521,15 +572,31 @@ class Handler(BaseHTTPRequestHandler):
                     },
                 },
             )
-        if parsed.path == "/api/leads":
+        if parsed.path in {"/api/leads", "/api/leads/export.csv"}:
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
             if not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+                return self.respond(401, {"error": "يلزم مستخدم مصرح به للوصول إلى بيانات العملاء."})
             q = parse_qs(parsed.query)
+            requested_tenant = q.get("tenant_id", [None])[0]
+            membership = self._resolve_request_membership(requested_tenant)
+            if not membership:
+                return self.respond(403, {"error": "لا توجد عضوية نشطة للمستخدم في الشركة المطلوبة."})
+            tenant_id = membership["tenant_id"]
+            if parsed.path == "/api/leads/export.csv":
+                if membership["role"] not in {"owner", "admin", "manager"}:
+                    return self.respond(403, {"error": "تصدير بيانات العملاء يتطلب دور إدارة الشركة."})
+                csv_text = "\ufeff" + self.store.export_csv_text(tenant_id=tenant_id)
+                return self.respond(
+                    200,
+                    csv_text,
+                    "text/csv; charset=utf-8",
+                )
             try:
                 limit = max(1, min(int(q.get("limit", ["100"])[0]), 500))
-                leads = self.store.list(q.get("status", [None])[0], limit)
+                leads = self.store.list(
+                    q.get("status", [None])[0], limit, tenant_id=tenant_id
+                )
             except (ValueError, TypeError):
                 return self.respond(400, {"error": "invalid status or limit"})
             return self.respond(200, {"leads": leads, "count": len(leads)})
@@ -543,7 +610,7 @@ class Handler(BaseHTTPRequestHandler):
             if path.startswith("/api/") and not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
             if path.startswith("/api/") and not self._authorized():
-                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+                return self.respond(401, {"error": "يلزم مستخدم مصرح به ورمز وصول صالح أو بيئة اختبار محلية."})
 
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
             if content_type != "application/json":
@@ -558,6 +625,22 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(raw_body)
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
+
+            user_id = self._authenticated_user_id()
+            if path.startswith("/api/") and not user_id:
+                return self.respond(401, {"error": "تعذر تحديد هوية المستخدم لهذا الطلب."})
+            requested_tenant = data.get("tenant_id")
+            header_tenant = self.headers.get("X-Omarai-Tenant-ID", "").strip()
+            if requested_tenant is not None and not isinstance(requested_tenant, str):
+                return self.respond(400, {"error": "tenant_id must be a string"})
+            if requested_tenant and header_tenant and requested_tenant.strip() != header_tenant:
+                return self.respond(400, {"error": "conflicting tenant selections"})
+            requested_tenant = (requested_tenant or header_tenant or "").strip() or None
+            membership = self._resolve_request_membership(requested_tenant)
+            if path.startswith("/api/") and not membership:
+                return self.respond(403, {"error": "لا توجد عضوية نشطة للمستخدم في الشركة المطلوبة."})
+            tenant_id = membership["tenant_id"] if membership else None
+            tenant_role = membership["role"] if membership else None
             if path == "/api/diagnostics":
                 test_model = data.get("test_model", True)
                 test_social = data.get("test_social", False)
@@ -604,6 +687,8 @@ class Handler(BaseHTTPRequestHandler):
                     ),
                 )
             if path == "/api/leads":
+                if tenant_role not in {"owner", "admin", "manager", "sales_agent"}:
+                    return self.respond(403, {"error": "دور المستخدم لا يسمح بإضافة فرص إلى الشركة."})
                 lead, created = self.store.add(
                     data.get("text", ""),
                     data.get("source_url", ""),
@@ -612,11 +697,16 @@ class Handler(BaseHTTPRequestHandler):
                     data.get("note", ""),
                     data.get("product_terms", []),
                     data.get("location_terms", []),
+                    tenant_id=tenant_id,
                 )
                 return self.respond(201 if created else 200, {"lead": lead, "created": created})
             route = path.split("/")
             if len(route) == 5 and route[1:3] == ["api", "leads"] and route[4] == "status":
-                lead = self.store.update_status(route[3], data.get("status", "new"))
+                if tenant_role not in {"owner", "admin", "manager", "sales_agent"}:
+                    return self.respond(403, {"error": "دور المستخدم لا يسمح بتعديل الفرص."})
+                lead = self.store.update_status(
+                    route[3], data.get("status", "new"), tenant_id=tenant_id
+                )
                 return self.respond(200, {"lead": lead}) if lead else self.respond(404, {"error": "lead not found"})
             return self.respond(404, {"error": "not found"})
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
@@ -632,7 +722,10 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", origin)
         self.send_header("Vary", "Origin")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Authorization, Content-Type")
+        self.send_header(
+            "Access-Control-Allow-Headers",
+            "Authorization, Content-Type, X-Omarai-Test-User, X-Omarai-Tenant-ID",
+        )
         self.send_header("Access-Control-Max-Age", "600")
         self.send_header("Content-Length", "0")
         self.end_headers()
