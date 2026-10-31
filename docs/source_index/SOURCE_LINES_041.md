@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000186 إلى SRC-62DC597310-L000268
+- النطاق: SRC-1A176AD4F0-L000185 إلى SRC-62DC597310-L000267
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000185](../../tests/test_hosted_smoke.py#L185) | 185 | `"    with pytest.raises(SmokeError, match=\"does not match the expected Git commit\"):"` | — |
 | [SRC-1A176AD4F0-L000186](../../tests/test_hosted_smoke.py#L186) | 186 | `"        run_smoke("` | — |
 | [SRC-1A176AD4F0-L000187](../../tests/test_hosted_smoke.py#L187) | 187 | `"            hosted_server,"` | — |
 | [SRC-1A176AD4F0-L000188](../../tests/test_hosted_smoke.py#L188) | 188 | `"            TOKEN,"` | — |
@@ -842,4 +843,3 @@
 | [SRC-62DC597310-L000265](../../tests/test_live_search_connectors.py#L265) | 265 | `"            \"GET\","` | — |
 | [SRC-62DC597310-L000266](../../tests/test_live_search_connectors.py#L266) | 266 | `"            \"https://provider.example/search\","` | — |
 | [SRC-62DC597310-L000267](../../tests/test_live_search_connectors.py#L267) | 267 | `"            total_timeout=total_timeout,"` | — |
-| [SRC-62DC597310-L000268](../../tests/test_live_search_connectors.py#L268) | 268 | `"        )"` | — |

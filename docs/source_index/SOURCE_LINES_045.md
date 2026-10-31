@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000093 إلى SRC-F725E90B2A-L000352
+- النطاق: SRC-AFEDC2645A-L000092 إلى SRC-F725E90B2A-L000351
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000092](../../tests/test_task_understanding.py#L92) | 92 | `"    ]"` | — |
 | [SRC-AFEDC2645A-L000093](../../tests/test_task_understanding.py#L93) | 93 | `"    rows = build_query_strategy_matrix(question, spec, existing, limit=6)"` | — |
 | [SRC-AFEDC2645A-L000094](../../tests/test_task_understanding.py#L94) | 94 | `"    queries = [row[\"query\"] for row in rows]"` | — |
 | [SRC-AFEDC2645A-L000095](../../tests/test_task_understanding.py#L95) | 95 | `"    assert 1 <= len(queries) <= 6"` | — |
@@ -833,4 +834,3 @@
 | [SRC-F725E90B2A-L000349](../../tests/test_web_agent.py#L349) | 349 | `"                \"queries\": [query],"` | — |
 | [SRC-F725E90B2A-L000350](../../tests/test_web_agent.py#L350) | 350 | `"            },"` | — |
 | [SRC-F725E90B2A-L000351](../../tests/test_web_agent.py#L351) | 351 | `"            {"` | — |
-| [SRC-F725E90B2A-L000352](../../tests/test_web_agent.py#L352) | 352 | `"                **sample_source(1),"` | — |

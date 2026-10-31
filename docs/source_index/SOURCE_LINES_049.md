@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002753 إلى SRC-F725E90B2A-L003552
+- النطاق: SRC-F725E90B2A-L002752 إلى SRC-F725E90B2A-L003551
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002752](../../tests/test_web_agent.py#L2752) | 2752 | `""` | — |
 | [SRC-F725E90B2A-L002753](../../tests/test_web_agent.py#L2753) | 2753 | `"        def __exit__(self, *_args):"` | — |
 | [SRC-F725E90B2A-L002754](../../tests/test_web_agent.py#L2754) | 2754 | `"            return False"` | — |
 | [SRC-F725E90B2A-L002755](../../tests/test_web_agent.py#L2755) | 2755 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003549](../../tests/test_web_agent.py#L3549) | 3549 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda *args, **kwargs: dict(plan))"` | — |
 | [SRC-F725E90B2A-L003550](../../tests/test_web_agent.py#L3550) | 3550 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
 | [SRC-F725E90B2A-L003551](../../tests/test_web_agent.py#L3551) | 3551 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-F725E90B2A-L003552](../../tests/test_web_agent.py#L3552) | 3552 | `"    monkeypatch.setattr("` | — |
