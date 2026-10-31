@@ -25,6 +25,7 @@ _STOPWORDS = {
     "where", "compare", "comparison", "based", "terms", "respect",
 }
 
+
 def normalize_text(value: Any) -> str:
     """Normalize Unicode, Arabic letter variants, diacritics, and Arabic-Indic digits."""
     text = unicodedata.normalize("NFKC", str(value or "")).casefold().translate(_DIGITS)
