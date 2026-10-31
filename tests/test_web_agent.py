@@ -2439,7 +2439,7 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
     assert len(seen["queries"]) >= 4
     assert any('"مطلوب شراء"' in q or '"مطلوب شقه تمليك"' in q for q in seen["queries"])
     assert result["search_report"]["lead_generation"]["candidate_signal_count"] == 1
-    assert result["sources"][0]["lead_qualification"] == "public_buyer_intent_signal"
+    assert result["sources"][0]["lead_qualification"] == "public_demand_signal"
 
 
 def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):
