@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000698 إلى SRC-F725E90B2A-L001497
+- النطاق: SRC-F725E90B2A-L000675 إلى SRC-F725E90B2A-L001474
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000675](../../tests/test_web_agent.py#L675) | 675 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
+| [SRC-F725E90B2A-L000676](../../tests/test_web_agent.py#L676) | 676 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
+| [SRC-F725E90B2A-L000677](../../tests/test_web_agent.py#L677) | 677 | `"        \"OMARAI_LLM_FALLBACK_MODEL\","` | — |
+| [SRC-F725E90B2A-L000678](../../tests/test_web_agent.py#L678) | 678 | `"    ):"` | — |
+| [SRC-F725E90B2A-L000679](../../tests/test_web_agent.py#L679) | 679 | `"        monkeypatch.delenv(name, raising=False)"` | — |
+| [SRC-F725E90B2A-L000680](../../tests/test_web_agent.py#L680) | 680 | `""` | — |
+| [SRC-F725E90B2A-L000681](../../tests/test_web_agent.py#L681) | 681 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000682](../../tests/test_web_agent.py#L682) | 682 | `"    assert agent.planner_model == \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
+| [SRC-F725E90B2A-L000683](../../tests/test_web_agent.py#L683) | 683 | `"    assert agent.answer_model == \"google/gemma-4-31b-it:free\""` | — |
+| [SRC-F725E90B2A-L000684](../../tests/test_web_agent.py#L684) | 684 | `"    assert agent.review_model == agent.answer_model"` | — |
+| [SRC-F725E90B2A-L000685](../../tests/test_web_agent.py#L685) | 685 | `"    assert agent.fallback_model == \"openrouter/free\""` | — |
+| [SRC-F725E90B2A-L000686](../../tests/test_web_agent.py#L686) | 686 | `""` | — |
+| [SRC-F725E90B2A-L000687](../../tests/test_web_agent.py#L687) | 687 | `""` | — |
+| [SRC-F725E90B2A-L000688](../../tests/test_web_agent.py#L688) | 688 | `"def test_global_model_override_is_preserved_for_existing_users(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000689](../../tests/test_web_agent.py#L689) | 689 | `"    monkeypatch.setenv(\"OMARAI_LLM_MODEL\", \"example/custom-model\")"` | — |
+| [SRC-F725E90B2A-L000690](../../tests/test_web_agent.py#L690) | 690 | `"    monkeypatch.delenv(\"OMARAI_PLANNER_MODEL\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000691](../../tests/test_web_agent.py#L691) | 691 | `"    monkeypatch.delenv(\"OMARAI_ANSWER_MODEL\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000692](../../tests/test_web_agent.py#L692) | 692 | `"    monkeypatch.delenv(\"OMARAI_REVIEW_MODEL\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000693](../../tests/test_web_agent.py#L693) | 693 | `""` | — |
+| [SRC-F725E90B2A-L000694](../../tests/test_web_agent.py#L694) | 694 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000695](../../tests/test_web_agent.py#L695) | 695 | `"    assert agent.planner_model == \"example/custom-model\""` | — |
+| [SRC-F725E90B2A-L000696](../../tests/test_web_agent.py#L696) | 696 | `"    assert agent.answer_model == \"example/custom-model\""` | — |
+| [SRC-F725E90B2A-L000697](../../tests/test_web_agent.py#L697) | 697 | `"    assert agent.review_model == \"example/custom-model\""` | — |
 | [SRC-F725E90B2A-L000698](../../tests/test_web_agent.py#L698) | 698 | `""` | — |
 | [SRC-F725E90B2A-L000699](../../tests/test_web_agent.py#L699) | 699 | `""` | — |
 | [SRC-F725E90B2A-L000700](../../tests/test_web_agent.py#L700) | 700 | `"def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):"` | — |
@@ -793,26 +816,3 @@
 | [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
 | [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `"    assert result[\"used_language_model\"] is True"` | — |
 | [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001475](../../tests/test_web_agent.py#L1475) | 1475 | `"    assert result[\"sources\"] == []"` | — |
-| [SRC-F725E90B2A-L001476](../../tests/test_web_agent.py#L1476) | 1476 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001478](../../tests/test_web_agent.py#L1478) | 1478 | `""` | — |
-| [SRC-F725E90B2A-L001479](../../tests/test_web_agent.py#L1479) | 1479 | `""` | — |
-| [SRC-F725E90B2A-L001480](../../tests/test_web_agent.py#L1480) | 1480 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001481](../../tests/test_web_agent.py#L1481) | 1481 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001482](../../tests/test_web_agent.py#L1482) | 1482 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L001483](../../tests/test_web_agent.py#L1483) | 1483 | `""` | — |
-| [SRC-F725E90B2A-L001484](../../tests/test_web_agent.py#L1484) | 1484 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001485](../../tests/test_web_agent.py#L1485) | 1485 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001486](../../tests/test_web_agent.py#L1486) | 1486 | `"        lambda plan: pytest.fail(\"Self-description must not call external search\"),"` | — |
-| [SRC-F725E90B2A-L001487](../../tests/test_web_agent.py#L1487) | 1487 | `"    )"` | — |
-| [SRC-F725E90B2A-L001488](../../tests/test_web_agent.py#L1488) | 1488 | `""` | — |
-| [SRC-F725E90B2A-L001489](../../tests/test_web_agent.py#L1489) | 1489 | `"    result = agent.answer(\"كيف تبحث أنت في الإنترنت؟\")"` | — |
-| [SRC-F725E90B2A-L001490](../../tests/test_web_agent.py#L1490) | 1490 | `""` | — |
-| [SRC-F725E90B2A-L001491](../../tests/test_web_agent.py#L1491) | 1491 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
-| [SRC-F725E90B2A-L001492](../../tests/test_web_agent.py#L1492) | 1492 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-F725E90B2A-L001493](../../tests/test_web_agent.py#L1493) | 1493 | `"    assert \"DuckDuckGo HTML\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001494](../../tests/test_web_agent.py#L1494) | 1494 | `"    assert \"ليست إثباتًا\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L001495](../../tests/test_web_agent.py#L1495) | 1495 | `""` | — |
-| [SRC-F725E90B2A-L001496](../../tests/test_web_agent.py#L1496) | 1496 | `""` | — |
-| [SRC-F725E90B2A-L001497](../../tests/test_web_agent.py#L1497) | 1497 | `"def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):"` | — |

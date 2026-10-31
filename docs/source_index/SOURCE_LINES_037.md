@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000387 إلى SRC-DA61479D59-L000025
+- النطاق: SRC-3451CC474D-L000364 إلى SRC-DA61479D59-L000002
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000364](../../tests/test_api.py#L364) | 364 | `"        finally:"` | — |
+| [SRC-3451CC474D-L000365](../../tests/test_api.py#L365) | 365 | `"            worker_finished.set()"` | — |
+| [SRC-3451CC474D-L000366](../../tests/test_api.py#L366) | 366 | `""` | — |
+| [SRC-3451CC474D-L000367](../../tests/test_api.py#L367) | 367 | `"    server.process_request_thread = track_worker"` | — |
+| [SRC-3451CC474D-L000368](../../tests/test_api.py#L368) | 368 | `"    try:"` | — |
+| [SRC-3451CC474D-L000369](../../tests/test_api.py#L369) | 369 | `"        server.process_request(first_request, (\"127.0.0.1\", 10001))"` | — |
+| [SRC-3451CC474D-L000370](../../tests/test_api.py#L370) | 370 | `"        assert worker_started.wait(timeout=1)"` | — |
+| [SRC-3451CC474D-L000371](../../tests/test_api.py#L371) | 371 | `""` | — |
+| [SRC-3451CC474D-L000372](../../tests/test_api.py#L372) | 372 | `"        # The saturated listener rejects before creating a second handler thread."` | — |
+| [SRC-3451CC474D-L000373](../../tests/test_api.py#L373) | 373 | `"        server.process_request(second_request, (\"127.0.0.1\", 10002))"` | — |
+| [SRC-3451CC474D-L000374](../../tests/test_api.py#L374) | 374 | `"        response = second_client.recv(512)"` | — |
+| [SRC-3451CC474D-L000375](../../tests/test_api.py#L375) | 375 | `"        assert response.startswith(b\"HTTP/1.1 503 Service Unavailable\\r\\n\")"` | — |
+| [SRC-3451CC474D-L000376](../../tests/test_api.py#L376) | 376 | `"        assert b\"Retry-After: 5\\r\\n\" in response"` | — |
+| [SRC-3451CC474D-L000377](../../tests/test_api.py#L377) | 377 | `"        assert not server._connection_slots.acquire(blocking=False)"` | — |
+| [SRC-3451CC474D-L000378](../../tests/test_api.py#L378) | 378 | `""` | — |
+| [SRC-3451CC474D-L000379](../../tests/test_api.py#L379) | 379 | `"        release_worker.set()"` | — |
+| [SRC-3451CC474D-L000380](../../tests/test_api.py#L380) | 380 | `"        assert worker_finished.wait(timeout=1)"` | — |
+| [SRC-3451CC474D-L000381](../../tests/test_api.py#L381) | 381 | `"        assert server._connection_slots.acquire(blocking=False)"` | — |
+| [SRC-3451CC474D-L000382](../../tests/test_api.py#L382) | 382 | `"        server._connection_slots.release()"` | — |
+| [SRC-3451CC474D-L000383](../../tests/test_api.py#L383) | 383 | `"    finally:"` | — |
+| [SRC-3451CC474D-L000384](../../tests/test_api.py#L384) | 384 | `"        release_worker.set()"` | — |
+| [SRC-3451CC474D-L000385](../../tests/test_api.py#L385) | 385 | `"        first_client.close()"` | — |
+| [SRC-3451CC474D-L000386](../../tests/test_api.py#L386) | 386 | `"        second_client.close()"` | — |
 | [SRC-3451CC474D-L000387](../../tests/test_api.py#L387) | 387 | `"        server.server_close()"` | — |
 | [SRC-3451CC474D-L000388](../../tests/test_api.py#L388) | 388 | `""` | — |
 | [SRC-3451CC474D-L000389](../../tests/test_api.py#L389) | 389 | `""` | — |
@@ -820,26 +843,3 @@
 |---|---:|---|---|
 | [SRC-DA61479D59-L000001](../../tests/test_connector_summary_counters.py#L1) | 1 | `"from __future__ import annotations"` | — |
 | [SRC-DA61479D59-L000002](../../tests/test_connector_summary_counters.py#L2) | 2 | `""` | — |
-| [SRC-DA61479D59-L000003](../../tests/test_connector_summary_counters.py#L3) | 3 | `"import json"` | — |
-| [SRC-DA61479D59-L000004](../../tests/test_connector_summary_counters.py#L4) | 4 | `""` | — |
-| [SRC-DA61479D59-L000005](../../tests/test_connector_summary_counters.py#L5) | 5 | `"from agents.web_agent import PageFetchResult, WebAgent"` | — |
-| [SRC-DA61479D59-L000006](../../tests/test_connector_summary_counters.py#L6) | 6 | `""` | — |
-| [SRC-DA61479D59-L000007](../../tests/test_connector_summary_counters.py#L7) | 7 | `""` | — |
-| [SRC-DA61479D59-L000008](../../tests/test_connector_summary_counters.py#L8) | 8 | `"def test_connector_summary_reports_request_scope_worst_state_and_redacts_secrets(monkeypatch):"` | — |
-| [SRC-DA61479D59-L000009](../../tests/test_connector_summary_counters.py#L9) | 9 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000010](../../tests/test_connector_summary_counters.py#L10) | 10 | `"    monkeypatch.delenv(\"BRAVE_SEARCH_API_KEY\", raising=False)"` | — |
-| [SRC-DA61479D59-L000011](../../tests/test_connector_summary_counters.py#L11) | 11 | `"    diagnostics = ["` | — |
-| [SRC-DA61479D59-L000012](../../tests/test_connector_summary_counters.py#L12) | 12 | `"        {"` | — |
-| [SRC-DA61479D59-L000013](../../tests/test_connector_summary_counters.py#L13) | 13 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-DA61479D59-L000014](../../tests/test_connector_summary_counters.py#L14) | 14 | `"            \"query\": \"renewable energy\","` | — |
-| [SRC-DA61479D59-L000015](../../tests/test_connector_summary_counters.py#L15) | 15 | `"            \"status\": \"ok\","` | — |
-| [SRC-DA61479D59-L000016](../../tests/test_connector_summary_counters.py#L16) | 16 | `"            \"result_count\": 3,"` | — |
-| [SRC-DA61479D59-L000017](../../tests/test_connector_summary_counters.py#L17) | 17 | `"            \"rejected_count\": 1,"` | — |
-| [SRC-DA61479D59-L000018](../../tests/test_connector_summary_counters.py#L18) | 18 | `"        },"` | — |
-| [SRC-DA61479D59-L000019](../../tests/test_connector_summary_counters.py#L19) | 19 | `"        {"` | — |
-| [SRC-DA61479D59-L000020](../../tests/test_connector_summary_counters.py#L20) | 20 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-DA61479D59-L000021](../../tests/test_connector_summary_counters.py#L21) | 21 | `"            \"query\": \"renewable energy\","` | — |
-| [SRC-DA61479D59-L000022](../../tests/test_connector_summary_counters.py#L22) | 22 | `"            \"status\": \"failed\","` | — |
-| [SRC-DA61479D59-L000023](../../tests/test_connector_summary_counters.py#L23) | 23 | `"            \"result_count\": 0,"` | — |
-| [SRC-DA61479D59-L000024](../../tests/test_connector_summary_counters.py#L24) | 24 | `"            \"rejected_count\": 0,"` | — |
-| [SRC-DA61479D59-L000025](../../tests/test_connector_summary_counters.py#L25) | 25 | `"            \"error\": \"HTTP 500 token=secret-value\","` | — |

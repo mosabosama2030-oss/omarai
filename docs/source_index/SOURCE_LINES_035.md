@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000038 إلى SRC-B3062EB677-L000369
+- النطاق: SRC-4CCB1F172B-L000015 إلى SRC-B3062EB677-L000346
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000015](../../tests/test_answer_quality_corpus.py#L15) | 15 | `"DOCS_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"ANSWER_QUALITY_BENCHMARK_AR.md\""` | — |
+| [SRC-4CCB1F172B-L000016](../../tests/test_answer_quality_corpus.py#L16) | 16 | `""` | — |
+| [SRC-4CCB1F172B-L000017](../../tests/test_answer_quality_corpus.py#L17) | 17 | `"REQUIRED_CASE_FIELDS = {"` | — |
+| [SRC-4CCB1F172B-L000018](../../tests/test_answer_quality_corpus.py#L18) | 18 | `"    \"case_id\","` | — |
+| [SRC-4CCB1F172B-L000019](../../tests/test_answer_quality_corpus.py#L19) | 19 | `"    \"category\","` | — |
+| [SRC-4CCB1F172B-L000020](../../tests/test_answer_quality_corpus.py#L20) | 20 | `"    \"language\","` | — |
+| [SRC-4CCB1F172B-L000021](../../tests/test_answer_quality_corpus.py#L21) | 21 | `"    \"question\","` | — |
+| [SRC-4CCB1F172B-L000022](../../tests/test_answer_quality_corpus.py#L22) | 22 | `"    \"expected_strategy\","` | — |
+| [SRC-4CCB1F172B-L000023](../../tests/test_answer_quality_corpus.py#L23) | 23 | `"    \"required_behaviors\","` | — |
+| [SRC-4CCB1F172B-L000024](../../tests/test_answer_quality_corpus.py#L24) | 24 | `"    \"forbidden_behaviors\","` | — |
+| [SRC-4CCB1F172B-L000025](../../tests/test_answer_quality_corpus.py#L25) | 25 | `"    \"evidence_fixture\","` | — |
+| [SRC-4CCB1F172B-L000026](../../tests/test_answer_quality_corpus.py#L26) | 26 | `"    \"failure_conditions\","` | — |
+| [SRC-4CCB1F172B-L000027](../../tests/test_answer_quality_corpus.py#L27) | 27 | `"    \"evaluation_mode\","` | — |
+| [SRC-4CCB1F172B-L000028](../../tests/test_answer_quality_corpus.py#L28) | 28 | `"}"` | — |
+| [SRC-4CCB1F172B-L000029](../../tests/test_answer_quality_corpus.py#L29) | 29 | `""` | — |
+| [SRC-4CCB1F172B-L000030](../../tests/test_answer_quality_corpus.py#L30) | 30 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
+| [SRC-4CCB1F172B-L000031](../../tests/test_answer_quality_corpus.py#L31) | 31 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
+| [SRC-4CCB1F172B-L000032](../../tests/test_answer_quality_corpus.py#L32) | 32 | `""` | — |
+| [SRC-4CCB1F172B-L000033](../../tests/test_answer_quality_corpus.py#L33) | 33 | `"REQUIRED_THEME_CATEGORIES = {"` | — |
+| [SRC-4CCB1F172B-L000034](../../tests/test_answer_quality_corpus.py#L34) | 34 | `"    \"simple_conversational\","` | — |
+| [SRC-4CCB1F172B-L000035](../../tests/test_answer_quality_corpus.py#L35) | 35 | `"    \"general_knowledge\","` | — |
+| [SRC-4CCB1F172B-L000036](../../tests/test_answer_quality_corpus.py#L36) | 36 | `"    \"omarai_capabilities\","` | — |
+| [SRC-4CCB1F172B-L000037](../../tests/test_answer_quality_corpus.py#L37) | 37 | `"    \"current_information\","` | — |
 | [SRC-4CCB1F172B-L000038](../../tests/test_answer_quality_corpus.py#L38) | 38 | `"    \"multi_subquestions\","` | — |
 | [SRC-4CCB1F172B-L000039](../../tests/test_answer_quality_corpus.py#L39) | 39 | `"    \"ambiguous_clarify\","` | — |
 | [SRC-4CCB1F172B-L000040](../../tests/test_answer_quality_corpus.py#L40) | 40 | `"    \"spelling_variation\","` | — |
@@ -820,26 +843,3 @@
 | [SRC-B3062EB677-L000344](../../tests/test_answer_quality_runner.py#L344) | 344 | `"    \"ledger, allowed_ids, message\","` | — |
 | [SRC-B3062EB677-L000345](../../tests/test_answer_quality_runner.py#L345) | 345 | `"    ["` | — |
 | [SRC-B3062EB677-L000346](../../tests/test_answer_quality_runner.py#L346) | 346 | `"        ({\"currency\": \"EUR\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": []}, {\"AQ-001\"}, \"currency=USD\"),"` | — |
-| [SRC-B3062EB677-L000347](../../tests/test_answer_quality_runner.py#L347) | 347 | `"        ({\"currency\": \"USD\", \"scope\": \"model_only\", \"source\": \"invoice\", \"costs\": []}, {\"AQ-001\"}, \"scope=complete_request\"),"` | — |
-| [SRC-B3062EB677-L000348](../../tests/test_answer_quality_runner.py#L348) | 348 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"\", \"costs\": []}, {\"AQ-001\"}, \"non-empty source\"),"` | — |
-| [SRC-B3062EB677-L000349](../../tests/test_answer_quality_runner.py#L349) | 349 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": [{\"case_id\": \"AQ-404\", \"cost_usd\": 0.0}]}, {\"AQ-001\"}, \"unknown case_id\"),"` | — |
-| [SRC-B3062EB677-L000350](../../tests/test_answer_quality_runner.py#L350) | 350 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": [{\"case_id\": \"AQ-001\", \"cost_usd\": -0.1}]}, {\"AQ-001\"}, \"finite and non-negative\"),"` | — |
-| [SRC-B3062EB677-L000351](../../tests/test_answer_quality_runner.py#L351) | 351 | `"    ],"` | — |
-| [SRC-B3062EB677-L000352](../../tests/test_answer_quality_runner.py#L352) | 352 | `")"` | — |
-| [SRC-B3062EB677-L000353](../../tests/test_answer_quality_runner.py#L353) | 353 | `"def test_request_cost_ledger_rejects_unverifiable_values(tmp_path, ledger, allowed_ids, message):"` | — |
-| [SRC-B3062EB677-L000354](../../tests/test_answer_quality_runner.py#L354) | 354 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000355](../../tests/test_answer_quality_runner.py#L355) | 355 | `"    path = tmp_path / \"cost-ledger.json\""` | — |
-| [SRC-B3062EB677-L000356](../../tests/test_answer_quality_runner.py#L356) | 356 | `"    path.write_text(json.dumps(ledger), encoding=\"utf-8\")"` | — |
-| [SRC-B3062EB677-L000357](../../tests/test_answer_quality_runner.py#L357) | 357 | `"    with pytest.raises(ValueError, match=message):"` | — |
-| [SRC-B3062EB677-L000358](../../tests/test_answer_quality_runner.py#L358) | 358 | `"        mod._load_request_cost_ledger(path, allowed_ids)"` | — |
-| [SRC-B3062EB677-L000359](../../tests/test_answer_quality_runner.py#L359) | 359 | `""` | — |
-| [SRC-B3062EB677-L000360](../../tests/test_answer_quality_runner.py#L360) | 360 | `""` | — |
-| [SRC-B3062EB677-L000361](../../tests/test_answer_quality_runner.py#L361) | 361 | `"def test_live_refuses_build_sha_mismatch_before_posting(monkeypatch, capsys):"` | — |
-| [SRC-B3062EB677-L000362](../../tests/test_answer_quality_runner.py#L362) | 362 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000363](../../tests/test_answer_quality_runner.py#L363) | 363 | `"    calls = []"` | — |
-| [SRC-B3062EB677-L000364](../../tests/test_answer_quality_runner.py#L364) | 364 | `""` | — |
-| [SRC-B3062EB677-L000365](../../tests/test_answer_quality_runner.py#L365) | 365 | `"    def fake_post(base_url, question, timeout, token):"` | — |
-| [SRC-B3062EB677-L000366](../../tests/test_answer_quality_runner.py#L366) | 366 | `"        calls.append(question)"` | — |
-| [SRC-B3062EB677-L000367](../../tests/test_answer_quality_runner.py#L367) | 367 | `"        return 200, {\"answer\": \"must not run\"}"` | — |
-| [SRC-B3062EB677-L000368](../../tests/test_answer_quality_runner.py#L368) | 368 | `""` | — |
-| [SRC-B3062EB677-L000369](../../tests/test_answer_quality_runner.py#L369) | 369 | `"    monkeypatch.setattr(mod, \"get_verified_build_sha\", lambda base_url, timeout, token=None: \"a\" * 40)"` | — |

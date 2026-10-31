@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000370 إلى SRC-3451CC474D-L000386
+- النطاق: SRC-B3062EB677-L000347 إلى SRC-3451CC474D-L000363
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000347](../../tests/test_answer_quality_runner.py#L347) | 347 | `"        ({\"currency\": \"USD\", \"scope\": \"model_only\", \"source\": \"invoice\", \"costs\": []}, {\"AQ-001\"}, \"scope=complete_request\"),"` | — |
+| [SRC-B3062EB677-L000348](../../tests/test_answer_quality_runner.py#L348) | 348 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"\", \"costs\": []}, {\"AQ-001\"}, \"non-empty source\"),"` | — |
+| [SRC-B3062EB677-L000349](../../tests/test_answer_quality_runner.py#L349) | 349 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": [{\"case_id\": \"AQ-404\", \"cost_usd\": 0.0}]}, {\"AQ-001\"}, \"unknown case_id\"),"` | — |
+| [SRC-B3062EB677-L000350](../../tests/test_answer_quality_runner.py#L350) | 350 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": [{\"case_id\": \"AQ-001\", \"cost_usd\": -0.1}]}, {\"AQ-001\"}, \"finite and non-negative\"),"` | — |
+| [SRC-B3062EB677-L000351](../../tests/test_answer_quality_runner.py#L351) | 351 | `"    ],"` | — |
+| [SRC-B3062EB677-L000352](../../tests/test_answer_quality_runner.py#L352) | 352 | `")"` | — |
+| [SRC-B3062EB677-L000353](../../tests/test_answer_quality_runner.py#L353) | 353 | `"def test_request_cost_ledger_rejects_unverifiable_values(tmp_path, ledger, allowed_ids, message):"` | — |
+| [SRC-B3062EB677-L000354](../../tests/test_answer_quality_runner.py#L354) | 354 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000355](../../tests/test_answer_quality_runner.py#L355) | 355 | `"    path = tmp_path / \"cost-ledger.json\""` | — |
+| [SRC-B3062EB677-L000356](../../tests/test_answer_quality_runner.py#L356) | 356 | `"    path.write_text(json.dumps(ledger), encoding=\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000357](../../tests/test_answer_quality_runner.py#L357) | 357 | `"    with pytest.raises(ValueError, match=message):"` | — |
+| [SRC-B3062EB677-L000358](../../tests/test_answer_quality_runner.py#L358) | 358 | `"        mod._load_request_cost_ledger(path, allowed_ids)"` | — |
+| [SRC-B3062EB677-L000359](../../tests/test_answer_quality_runner.py#L359) | 359 | `""` | — |
+| [SRC-B3062EB677-L000360](../../tests/test_answer_quality_runner.py#L360) | 360 | `""` | — |
+| [SRC-B3062EB677-L000361](../../tests/test_answer_quality_runner.py#L361) | 361 | `"def test_live_refuses_build_sha_mismatch_before_posting(monkeypatch, capsys):"` | — |
+| [SRC-B3062EB677-L000362](../../tests/test_answer_quality_runner.py#L362) | 362 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000363](../../tests/test_answer_quality_runner.py#L363) | 363 | `"    calls = []"` | — |
+| [SRC-B3062EB677-L000364](../../tests/test_answer_quality_runner.py#L364) | 364 | `""` | — |
+| [SRC-B3062EB677-L000365](../../tests/test_answer_quality_runner.py#L365) | 365 | `"    def fake_post(base_url, question, timeout, token):"` | — |
+| [SRC-B3062EB677-L000366](../../tests/test_answer_quality_runner.py#L366) | 366 | `"        calls.append(question)"` | — |
+| [SRC-B3062EB677-L000367](../../tests/test_answer_quality_runner.py#L367) | 367 | `"        return 200, {\"answer\": \"must not run\"}"` | — |
+| [SRC-B3062EB677-L000368](../../tests/test_answer_quality_runner.py#L368) | 368 | `""` | — |
+| [SRC-B3062EB677-L000369](../../tests/test_answer_quality_runner.py#L369) | 369 | `"    monkeypatch.setattr(mod, \"get_verified_build_sha\", lambda base_url, timeout, token=None: \"a\" * 40)"` | — |
 | [SRC-B3062EB677-L000370](../../tests/test_answer_quality_runner.py#L370) | 370 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
 | [SRC-B3062EB677-L000371](../../tests/test_answer_quality_runner.py#L371) | 371 | `"    rc = mod.run_live("` | — |
 | [SRC-B3062EB677-L000372](../../tests/test_answer_quality_runner.py#L372) | 372 | `"        CORPUS, \"http://127.0.0.1:8765\", \"AQ-001\", 1, 1.0, 0.0, None,"` | — |
@@ -820,26 +843,3 @@
 | [SRC-3451CC474D-L000361](../../tests/test_api.py#L361) | 361 | `"    def track_worker(request, client_address):"` | — |
 | [SRC-3451CC474D-L000362](../../tests/test_api.py#L362) | 362 | `"        try:"` | — |
 | [SRC-3451CC474D-L000363](../../tests/test_api.py#L363) | 363 | `"            original_worker(request, client_address)"` | — |
-| [SRC-3451CC474D-L000364](../../tests/test_api.py#L364) | 364 | `"        finally:"` | — |
-| [SRC-3451CC474D-L000365](../../tests/test_api.py#L365) | 365 | `"            worker_finished.set()"` | — |
-| [SRC-3451CC474D-L000366](../../tests/test_api.py#L366) | 366 | `""` | — |
-| [SRC-3451CC474D-L000367](../../tests/test_api.py#L367) | 367 | `"    server.process_request_thread = track_worker"` | — |
-| [SRC-3451CC474D-L000368](../../tests/test_api.py#L368) | 368 | `"    try:"` | — |
-| [SRC-3451CC474D-L000369](../../tests/test_api.py#L369) | 369 | `"        server.process_request(first_request, (\"127.0.0.1\", 10001))"` | — |
-| [SRC-3451CC474D-L000370](../../tests/test_api.py#L370) | 370 | `"        assert worker_started.wait(timeout=1)"` | — |
-| [SRC-3451CC474D-L000371](../../tests/test_api.py#L371) | 371 | `""` | — |
-| [SRC-3451CC474D-L000372](../../tests/test_api.py#L372) | 372 | `"        # The saturated listener rejects before creating a second handler thread."` | — |
-| [SRC-3451CC474D-L000373](../../tests/test_api.py#L373) | 373 | `"        server.process_request(second_request, (\"127.0.0.1\", 10002))"` | — |
-| [SRC-3451CC474D-L000374](../../tests/test_api.py#L374) | 374 | `"        response = second_client.recv(512)"` | — |
-| [SRC-3451CC474D-L000375](../../tests/test_api.py#L375) | 375 | `"        assert response.startswith(b\"HTTP/1.1 503 Service Unavailable\\r\\n\")"` | — |
-| [SRC-3451CC474D-L000376](../../tests/test_api.py#L376) | 376 | `"        assert b\"Retry-After: 5\\r\\n\" in response"` | — |
-| [SRC-3451CC474D-L000377](../../tests/test_api.py#L377) | 377 | `"        assert not server._connection_slots.acquire(blocking=False)"` | — |
-| [SRC-3451CC474D-L000378](../../tests/test_api.py#L378) | 378 | `""` | — |
-| [SRC-3451CC474D-L000379](../../tests/test_api.py#L379) | 379 | `"        release_worker.set()"` | — |
-| [SRC-3451CC474D-L000380](../../tests/test_api.py#L380) | 380 | `"        assert worker_finished.wait(timeout=1)"` | — |
-| [SRC-3451CC474D-L000381](../../tests/test_api.py#L381) | 381 | `"        assert server._connection_slots.acquire(blocking=False)"` | — |
-| [SRC-3451CC474D-L000382](../../tests/test_api.py#L382) | 382 | `"        server._connection_slots.release()"` | — |
-| [SRC-3451CC474D-L000383](../../tests/test_api.py#L383) | 383 | `"    finally:"` | — |
-| [SRC-3451CC474D-L000384](../../tests/test_api.py#L384) | 384 | `"        release_worker.set()"` | — |
-| [SRC-3451CC474D-L000385](../../tests/test_api.py#L385) | 385 | `"        first_client.close()"` | — |
-| [SRC-3451CC474D-L000386](../../tests/test_api.py#L386) | 386 | `"        second_client.close()"` | — |

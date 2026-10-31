@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000044 إلى SRC-A8360B1B03-L000312
+- النطاق: SRC-70795F4B61-L000021 إلى SRC-A8360B1B03-L000289
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000021](../../scripts/compare_answer_quality_runs.py#L21) | 21 | `""` | — |
+| [SRC-70795F4B61-L000022](../../scripts/compare_answer_quality_runs.py#L22) | 22 | `""` | — |
+| [SRC-70795F4B61-L000023](../../scripts/compare_answer_quality_runs.py#L23) | 23 | `"def load_json_object(path: Path) -> dict[str, Any]:"` | — |
+| [SRC-70795F4B61-L000024](../../scripts/compare_answer_quality_runs.py#L24) | 24 | `"    if not path.is_file():"` | — |
+| [SRC-70795F4B61-L000025](../../scripts/compare_answer_quality_runs.py#L25) | 25 | `"        raise FileNotFoundError(\"Input file not found: \" + str(path))"` | — |
+| [SRC-70795F4B61-L000026](../../scripts/compare_answer_quality_runs.py#L26) | 26 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-70795F4B61-L000027](../../scripts/compare_answer_quality_runs.py#L27) | 27 | `"    if not isinstance(data, dict):"` | — |
+| [SRC-70795F4B61-L000028](../../scripts/compare_answer_quality_runs.py#L28) | 28 | `"        raise TypeError(\"JSON root must be an object: \" + str(path))"` | — |
+| [SRC-70795F4B61-L000029](../../scripts/compare_answer_quality_runs.py#L29) | 29 | `"    return data"` | — |
+| [SRC-70795F4B61-L000030](../../scripts/compare_answer_quality_runs.py#L30) | 30 | `""` | — |
+| [SRC-70795F4B61-L000031](../../scripts/compare_answer_quality_runs.py#L31) | 31 | `""` | — |
+| [SRC-70795F4B61-L000032](../../scripts/compare_answer_quality_runs.py#L32) | 32 | `"def _finite_nonnegative(value: Any) -> float \| None:"` | — |
+| [SRC-70795F4B61-L000033](../../scripts/compare_answer_quality_runs.py#L33) | 33 | `"    if isinstance(value, bool) or not isinstance(value, (int, float)):"` | — |
+| [SRC-70795F4B61-L000034](../../scripts/compare_answer_quality_runs.py#L34) | 34 | `"        return None"` | — |
+| [SRC-70795F4B61-L000035](../../scripts/compare_answer_quality_runs.py#L35) | 35 | `"    number = float(value)"` | — |
+| [SRC-70795F4B61-L000036](../../scripts/compare_answer_quality_runs.py#L36) | 36 | `"    if not math.isfinite(number) or number < 0:"` | — |
+| [SRC-70795F4B61-L000037](../../scripts/compare_answer_quality_runs.py#L37) | 37 | `"        return None"` | — |
+| [SRC-70795F4B61-L000038](../../scripts/compare_answer_quality_runs.py#L38) | 38 | `"    return number"` | — |
+| [SRC-70795F4B61-L000039](../../scripts/compare_answer_quality_runs.py#L39) | 39 | `""` | — |
+| [SRC-70795F4B61-L000040](../../scripts/compare_answer_quality_runs.py#L40) | 40 | `""` | — |
+| [SRC-70795F4B61-L000041](../../scripts/compare_answer_quality_runs.py#L41) | 41 | `"def validate_run(run: dict[str, Any], label: str) -> list[str]:"` | — |
+| [SRC-70795F4B61-L000042](../../scripts/compare_answer_quality_runs.py#L42) | 42 | `"    problems: list[str] = []"` | — |
+| [SRC-70795F4B61-L000043](../../scripts/compare_answer_quality_runs.py#L43) | 43 | `"    missing = REQUIRED_RUN_FIELDS - set(run)"` | — |
 | [SRC-70795F4B61-L000044](../../scripts/compare_answer_quality_runs.py#L44) | 44 | `"    if missing:"` | — |
 | [SRC-70795F4B61-L000045](../../scripts/compare_answer_quality_runs.py#L45) | 45 | `"        problems.append(f\"{label}: missing run fields {sorted(missing)}\")"` | — |
 | [SRC-70795F4B61-L000046](../../scripts/compare_answer_quality_runs.py#L46) | 46 | `"    results = run.get(\"results\")"` | — |
@@ -802,26 +825,3 @@
 | [SRC-A8360B1B03-L000287](../../scripts/hosted_smoke_test.py#L287) | 287 | `"    )"` | — |
 | [SRC-A8360B1B03-L000288](../../scripts/hosted_smoke_test.py#L288) | 288 | `"    parser.add_argument("` | — |
 | [SRC-A8360B1B03-L000289](../../scripts/hosted_smoke_test.py#L289) | 289 | `"        \"--output\","` | — |
-| [SRC-A8360B1B03-L000290](../../scripts/hosted_smoke_test.py#L290) | 290 | `"        default=\"\","` | — |
-| [SRC-A8360B1B03-L000291](../../scripts/hosted_smoke_test.py#L291) | 291 | `"        help=\"Optional path for a JSON report containing the exact test question, answer, and sources.\","` | — |
-| [SRC-A8360B1B03-L000292](../../scripts/hosted_smoke_test.py#L292) | 292 | `"    )"` | — |
-| [SRC-A8360B1B03-L000293](../../scripts/hosted_smoke_test.py#L293) | 293 | `"    args = parser.parse_args()"` | — |
-| [SRC-A8360B1B03-L000294](../../scripts/hosted_smoke_test.py#L294) | 294 | `"    try:"` | — |
-| [SRC-A8360B1B03-L000295](../../scripts/hosted_smoke_test.py#L295) | 295 | `"        result = run_smoke("` | — |
-| [SRC-A8360B1B03-L000296](../../scripts/hosted_smoke_test.py#L296) | 296 | `"            args.base_url,"` | — |
-| [SRC-A8360B1B03-L000297](../../scripts/hosted_smoke_test.py#L297) | 297 | `"            os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip(),"` | — |
-| [SRC-A8360B1B03-L000298](../../scripts/hosted_smoke_test.py#L298) | 298 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
-| [SRC-A8360B1B03-L000299](../../scripts/hosted_smoke_test.py#L299) | 299 | `"            allow_http=args.allow_http,"` | — |
-| [SRC-A8360B1B03-L000300](../../scripts/hosted_smoke_test.py#L300) | 300 | `"            expected_sha=args.expected_sha or None,"` | — |
-| [SRC-A8360B1B03-L000301](../../scripts/hosted_smoke_test.py#L301) | 301 | `"            local_dev_no_token=args.local_dev_no_token,"` | — |
-| [SRC-A8360B1B03-L000302](../../scripts/hosted_smoke_test.py#L302) | 302 | `"        )"` | — |
-| [SRC-A8360B1B03-L000303](../../scripts/hosted_smoke_test.py#L303) | 303 | `"    except SmokeError as exc:"` | — |
-| [SRC-A8360B1B03-L000304](../../scripts/hosted_smoke_test.py#L304) | 304 | `"        failed_report = {**exc.report, \"result\": \"failed\", \"error\": str(exc)}"` | — |
-| [SRC-A8360B1B03-L000305](../../scripts/hosted_smoke_test.py#L305) | 305 | `"        rendered = json.dumps(failed_report, ensure_ascii=False, indent=2)"` | — |
-| [SRC-A8360B1B03-L000306](../../scripts/hosted_smoke_test.py#L306) | 306 | `"        if args.output:"` | — |
-| [SRC-A8360B1B03-L000307](../../scripts/hosted_smoke_test.py#L307) | 307 | `"            output_path = Path(args.output)"` | — |
-| [SRC-A8360B1B03-L000308](../../scripts/hosted_smoke_test.py#L308) | 308 | `"            output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-A8360B1B03-L000309](../../scripts/hosted_smoke_test.py#L309) | 309 | `"            output_path.write_text(rendered + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-A8360B1B03-L000310](../../scripts/hosted_smoke_test.py#L310) | 310 | `"        print(rendered)"` | — |
-| [SRC-A8360B1B03-L000311](../../scripts/hosted_smoke_test.py#L311) | 311 | `"        return 1"` | — |
-| [SRC-A8360B1B03-L000312](../../scripts/hosted_smoke_test.py#L312) | 312 | `"    rendered = json.dumps(result, ensure_ascii=False, indent=2)"` | — |

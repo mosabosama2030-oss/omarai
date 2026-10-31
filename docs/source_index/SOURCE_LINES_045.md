@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000177 إلى SRC-FBDC61DA0B-L000046
+- النطاق: SRC-96F6863E3C-L000154 إلى SRC-FBDC61DA0B-L000023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000154](../../tests/test_research_pipeline.py#L154) | 154 | `"        dialogue_context={"` | — |
+| [SRC-96F6863E3C-L000155](../../tests/test_research_pipeline.py#L155) | 155 | `"            \"method\": \"llm_semantic_context\","` | — |
+| [SRC-96F6863E3C-L000156](../../tests/test_research_pipeline.py#L156) | 156 | `"            \"resolved_question\": \"ما ضمان iPhone 17 في مصر؟\","` | — |
+| [SRC-96F6863E3C-L000157](../../tests/test_research_pipeline.py#L157) | 157 | `"            \"topic\": \"iPhone 17\","` | — |
+| [SRC-96F6863E3C-L000158](../../tests/test_research_pipeline.py#L158) | 158 | `"            \"is_follow_up\": True,"` | — |
+| [SRC-96F6863E3C-L000159](../../tests/test_research_pipeline.py#L159) | 159 | `"            \"topic_shift\": False,"` | — |
+| [SRC-96F6863E3C-L000160](../../tests/test_research_pipeline.py#L160) | 160 | `"        },"` | — |
+| [SRC-96F6863E3C-L000161](../../tests/test_research_pipeline.py#L161) | 161 | `"    )"` | — |
+| [SRC-96F6863E3C-L000162](../../tests/test_research_pipeline.py#L162) | 162 | `""` | — |
+| [SRC-96F6863E3C-L000163](../../tests/test_research_pipeline.py#L163) | 163 | `"    assert result[\"contextual_question\"] == \"ما ضمان iPhone 17 في مصر؟\""` | — |
+| [SRC-96F6863E3C-L000164](../../tests/test_research_pipeline.py#L164) | 164 | `"    assert result[\"task_spec\"][\"context_resolution\"][\"resolved_question\"] == ("` | — |
+| [SRC-96F6863E3C-L000165](../../tests/test_research_pipeline.py#L165) | 165 | `"        \"ما ضمان iPhone 17 في مصر؟\""` | — |
+| [SRC-96F6863E3C-L000166](../../tests/test_research_pipeline.py#L166) | 166 | `"    )"` | — |
+| [SRC-96F6863E3C-L000167](../../tests/test_research_pipeline.py#L167) | 167 | `"    assert result[\"stages\"][\"context_resolution\"] == \"completed\""` | — |
+| [SRC-96F6863E3C-L000168](../../tests/test_research_pipeline.py#L168) | 168 | `"    assert result[\"intent\"][\"context_available\"] is True"` | — |
+| [SRC-96F6863E3C-L000169](../../tests/test_research_pipeline.py#L169) | 169 | `"    assert result[\"query_strategy_matrix\"]"` | — |
+| [SRC-96F6863E3C-L000170](../../tests/test_research_pipeline.py#L170) | 170 | `"    assert all(\"iPhone 17\" in item[\"query\"] for item in result[\"query_strategy_matrix\"])"` | — |
+| [SRC-96F6863E3C-L000171](../../tests/test_research_pipeline.py#L171) | 171 | `""` | — |
+| [SRC-96F6863E3C-L000172](../../tests/test_research_pipeline.py#L172) | 172 | `"def test_pipeline_does_not_reuse_resolved_question_after_explicit_topic_shift():"` | — |
+| [SRC-96F6863E3C-L000173](../../tests/test_research_pipeline.py#L173) | 173 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000174](../../tests/test_research_pipeline.py#L174) | 174 | `"        \"ما سعر سامسونج S26؟\","` | — |
+| [SRC-96F6863E3C-L000175](../../tests/test_research_pipeline.py#L175) | 175 | `"        {\"queries\": [\"سعر سامسونج S26\"]},"` | — |
+| [SRC-96F6863E3C-L000176](../../tests/test_research_pipeline.py#L176) | 176 | `"        intent_route=\"WEB_SIMPLE\","` | — |
 | [SRC-96F6863E3C-L000177](../../tests/test_research_pipeline.py#L177) | 177 | `"        dialogue_context={"` | — |
 | [SRC-96F6863E3C-L000178](../../tests/test_research_pipeline.py#L178) | 178 | `"            \"resolved_question\": \"ما ضمان iPhone 17 في مصر؟\","` | — |
 | [SRC-96F6863E3C-L000179](../../tests/test_research_pipeline.py#L179) | 179 | `"            \"topic_shift\": True,"` | — |
@@ -838,26 +861,3 @@
 | [SRC-FBDC61DA0B-L000021](../../tests/test_tool_execution_status.py#L21) | 21 | `"    result = {"` | — |
 | [SRC-FBDC61DA0B-L000022](../../tests/test_tool_execution_status.py#L22) | 22 | `"        \"search_attempted\": True,"` | — |
 | [SRC-FBDC61DA0B-L000023](../../tests/test_tool_execution_status.py#L23) | 23 | `"        \"used_language_model\": False,"` | — |
-| [SRC-FBDC61DA0B-L000024](../../tests/test_tool_execution_status.py#L24) | 24 | `"        \"final_answer_status\": \"model_not_configured_fallback\","` | — |
-| [SRC-FBDC61DA0B-L000025](../../tests/test_tool_execution_status.py#L25) | 25 | `"        \"sources\": [],"` | — |
-| [SRC-FBDC61DA0B-L000026](../../tests/test_tool_execution_status.py#L26) | 26 | `"    }"` | — |
-| [SRC-FBDC61DA0B-L000027](../../tests/test_tool_execution_status.py#L27) | 27 | `"    report = {"` | — |
-| [SRC-FBDC61DA0B-L000028](../../tests/test_tool_execution_status.py#L28) | 28 | `"        \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000029](../../tests/test_tool_execution_status.py#L29) | 29 | `"        \"usable_sources_after_filtering\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000030](../../tests/test_tool_execution_status.py#L30) | 30 | `"        \"pages_fetch_attempted\": 3,"` | — |
-| [SRC-FBDC61DA0B-L000031](../../tests/test_tool_execution_status.py#L31) | 31 | `"        \"pages_fetched\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000032](../../tests/test_tool_execution_status.py#L32) | 32 | `"        \"social_direct_results\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000033](../../tests/test_tool_execution_status.py#L33) | 33 | `"        \"claim_audit\": \"not_run\","` | — |
-| [SRC-FBDC61DA0B-L000034](../../tests/test_tool_execution_status.py#L34) | 34 | `"    }"` | — |
-| [SRC-FBDC61DA0B-L000035](../../tests/test_tool_execution_status.py#L35) | 35 | `""` | — |
-| [SRC-FBDC61DA0B-L000036](../../tests/test_tool_execution_status.py#L36) | 36 | `"    rows = build_tool_execution_matrix(spec, result, report)"` | — |
-| [SRC-FBDC61DA0B-L000037](../../tests/test_tool_execution_status.py#L37) | 37 | `"    statuses = _statuses(rows)"` | — |
-| [SRC-FBDC61DA0B-L000038](../../tests/test_tool_execution_status.py#L38) | 38 | `""` | — |
-| [SRC-FBDC61DA0B-L000039](../../tests/test_tool_execution_status.py#L39) | 39 | `"    assert set(statuses) == TOOLS"` | — |
-| [SRC-FBDC61DA0B-L000040](../../tests/test_tool_execution_status.py#L40) | 40 | `"    assert statuses[\"web_search\"] == \"completed_no_usable_results\""` | — |
-| [SRC-FBDC61DA0B-L000041](../../tests/test_tool_execution_status.py#L41) | 41 | `"    assert statuses[\"page_fetch\"] == \"attempted_no_readable_pages\""` | — |
-| [SRC-FBDC61DA0B-L000042](../../tests/test_tool_execution_status.py#L42) | 42 | `"    assert statuses[\"public_social_search_if_configured\"] == \"unknown\""` | — |
-| [SRC-FBDC61DA0B-L000043](../../tests/test_tool_execution_status.py#L43) | 43 | `"    assert statuses[\"language_model_generation_if_configured\"] == \"not_configured\""` | — |
-| [SRC-FBDC61DA0B-L000044](../../tests/test_tool_execution_status.py#L44) | 44 | `"    assert statuses[\"claim_review_if_configured\"] == \"not_attempted_no_evidence\""` | — |
-| [SRC-FBDC61DA0B-L000045](../../tests/test_tool_execution_status.py#L45) | 45 | `"    assert all(\"لا تثبت صحة المحتوى\" in row[\"semantics\"] for row in rows)"` | — |
-| [SRC-FBDC61DA0B-L000046](../../tests/test_tool_execution_status.py#L46) | 46 | `""` | — |

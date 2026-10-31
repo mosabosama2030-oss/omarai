@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000069 إلى SRC-65551FB29F-L000192
+- النطاق: SRC-62CE5126F9-L000069 إلى SRC-65551FB29F-L000169
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -386,6 +386,29 @@
 | [SRC-62CE5126F9-L000436](../OMARAI_REMEDIATION_REGISTER_AR.md#L436) | 436 | ``"- **حالة التكلفة:** تكلفة النموذج المعلنة تُسجل حيث يعيدها المزود؛ أما التكلفة الكاملة للطلب فلا تزال `UNKNOWN / NOT_MEASURED` حتى تُرفق مصالحة موثوقة لكل حالة في التشغيلين."`` | — |
 | [SRC-62CE5126F9-L000437](../OMARAI_REMEDIATION_REGISTER_AR.md#L437) | 437 | ``"- **حالة الاستضافة:** فحص القراءة فقط الموثق سابقًا أعاد HTTP 502، ولم تُرسل أسئلة إلى `/api/agent`. لا توجد هوية بناء مستضافة مثبتة في هذا التحقق. لذلك يبقى `HOSTED_ACCEPTANCE=BLOCKED / NOT_RUN`؛ لا يعني ذلك أن سبب 502 داخل الكود."`` | — |
 | [SRC-62CE5126F9-L000438](../OMARAI_REMEDIATION_REGISTER_AR.md#L438) | 438 | `"- **قرار الحوكمة:** لا إعلان عن تحسن أو اكتمال قبول الجودة قبل وجود ملفي تشغيل متطابقَي المجموعة والإصدار، ومراجعات بشرية قابلة للتدقيق، ومصالحة تكلفة موثوقة عند اشتراط التكلفة الكاملة، والتحقق من هوية البناء. الدمج لا يساوي قبول الجودة أو النشر."` | — |
+| [SRC-62CE5126F9-L000439](../OMARAI_REMEDIATION_REGISTER_AR.md#L439) | 439 | `""` | — |
+| [SRC-62CE5126F9-L000440](../OMARAI_REMEDIATION_REGISTER_AR.md#L440) | 440 | `""` | — |
+| [SRC-62CE5126F9-L000441](../OMARAI_REMEDIATION_REGISTER_AR.md#L441) | 441 | `"---"` | — |
+| [SRC-62CE5126F9-L000442](../OMARAI_REMEDIATION_REGISTER_AR.md#L442) | 442 | `""` | — |
+| [SRC-62CE5126F9-L000443](../OMARAI_REMEDIATION_REGISTER_AR.md#L443) | 443 | `"## تحديث حالة P0 والتنفيذ — 2026-10-31"` | — |
+| [SRC-62CE5126F9-L000444](../OMARAI_REMEDIATION_REGISTER_AR.md#L444) | 444 | `""` | — |
+| [SRC-62CE5126F9-L000445](../OMARAI_REMEDIATION_REGISTER_AR.md#L445) | 445 | `"\| المعرّف \| الحالة بعد الفحص والتنفيذ \| الدليل \| ما يمنع الإغلاق النهائي \|"` | — |
+| [SRC-62CE5126F9-L000446](../OMARAI_REMEDIATION_REGISTER_AR.md#L446) | 446 | `"\|---\|---\|---\|---\|"` | — |
+| [SRC-62CE5126F9-L000447](../OMARAI_REMEDIATION_REGISTER_AR.md#L447) | 447 | `"\| OMR-D-006 — هوية وعزل الشركات \| **FIXED_AND_TESTED لنطاق leads الحالي؛ SaaS متعدد الشركات PARTIAL** \| PR [#137](https://github.com/mosabosama2030-oss/omarai/pull/137): tenants/users/memberships/api_tokens، tenant-scoped CRUD/import/export، ترحيل قاعدة قديمة، اختبارات HTTP لمحاولات cross-tenant، 642 اختبارًا على Python 3.11 و642 على 3.12 في Actions [41179325195](https://github.com/mosabosama2030-oss/omarai/actions/runs/41179325195). \| أي كيان تجاري جديد يجب أن يحمل tenant_id ويُختبر. لا توجد بعد واجهة إدارة مستخدمين/شركات أو دورة تهيئة SaaS كاملة. لم تُختبر قاعدة إنتاج فعلية. \|"` | — |
+| [SRC-62CE5126F9-L000448](../OMARAI_REMEDIATION_REGISTER_AR.md#L448) | 448 | `"\| بوابة الأدلة والاستشهادات \| **FIXED_AND_TESTED** \| PR [#134](https://github.com/mosabosama2030-oss/omarai/pull/134): 644 اختبارًا على Python 3.11 و644 على 3.12 في Actions [41179189281](https://github.com/mosabosama2030-oss/omarai/actions/runs/41179189281)، مع تغطية المراجع المحذوفة وسجل الادعاءات المفقود. \| لا يثبت ذلك التحقق الدلالي من استلزام المصدر لكل ادعاء؛ semantic verification ما زال منفصلًا. \|"` | — |
+| [SRC-62CE5126F9-L000449](../OMARAI_REMEDIATION_REGISTER_AR.md#L449) | 449 | `"\| SSRF وعناوين IP الخاصة/المحلية \| **FIXED_AND_TESTED لحدود الشبكة المختبرة** \| PR [#136](https://github.com/mosabosama2030-oss/omarai/pull/136): منع redirects غير المفحوصة في الموصلات الأكاديمية، حد 2 MB، واختبارات IPv4/IPv6 private/loopback/link-local؛ 657 اختبارًا على كل من Python 3.11 و3.12 في Actions [41179196207](https://github.com/mosabosama2030-oss/omarai/actions/runs/41179196207). \| أي مصدر داخلي خاص يحتاج allowlist مستقلة ومحددة؛ لا يجوز فتح جلب عام لعناوين الشبكة الداخلية. \|"` | — |
+| [SRC-62CE5126F9-L000450](../OMARAI_REMEDIATION_REGISTER_AR.md#L450) | 450 | `"\| OMR-D-010 — حقن تعليمات صفحات الويب \| **FIXED_AND_TESTED للحدود الحتمية؛ red-team حي NOT_RUN** \| اختبارات WebAgent تفصل نص المصدر غير الموثوق عن system messages في التوليد والمراجعة، وتشمل نصوصًا مثل IGNORE PREVIOUS INSTRUCTIONS. \| تنفيذ مجموعة red-team أوسع بعد توفر بيئة اختبار معتمدة. \|"` | — |
+| [SRC-62CE5126F9-L000451](../OMARAI_REMEDIATION_REGISTER_AR.md#L451) | 451 | `"\| OMR-T-001 — hosted live acceptance \| **NOT_RUN على المضيف** \| أُضيف إلى PR #137 workflow يدوي ومجدول يوميًا 08:17 بتوقيت القاهرة بعد دمجه إلى main؛ يحفظ السؤال والجواب والمصادر في artifact، ويجري completion واحدًا فقط. \| يحتاج PR #137 إلى الدمج البشري، ووجود أسرار GitHub OMARAI_BASE_URL وOMARAI_ACCESS_TOKEN. لا توجد نتيجة hosted فعلية حتى الآن. \|"` | — |
+| [SRC-62CE5126F9-L000452](../OMARAI_REMEDIATION_REGISTER_AR.md#L452) | 452 | `"\| OMR-LIVE-001 — جودة البحث الحي \| **PARTIAL / HOSTED_RETEST_NOT_RUN** \| موصلات أكاديمية مؤمنة واختبارات CI ناجحة؛ لا توجد نتيجة جديدة من استضافة SnapDeploy تثبت مصادر صالحة وذات صلة. \| تشغيل اختبار البحث الحي ومراجعة المصادر والروابط والحداثة والملاءمة، لا الاكتفاء بعدد النتائج. \|"` | — |
+| [SRC-62CE5126F9-L000453](../OMARAI_REMEDIATION_REGISTER_AR.md#L453) | 453 | `"\| OMR-LIVE-004 — الوصول وبصمة البناء المستضاف \| **OPEN / UNKNOWN** \| الاختبار المجدول يقارن build SHA المنشور برأس main ويتوقف قبل النموذج إذا لم تتطابق البصمة. \| لم يُشغّل hosted workflow؛ حالة أسرار GitHub مجهولة. آخر حالة موثقة لـ/api/health كانت build.sha=unknown وlive_network_checks_performed=false. لا تُعطّل مصادقة public API؛ استخدم السر المخزن في GitHub Actions. \|"` | — |
+| [SRC-62CE5126F9-L000454](../OMARAI_REMEDIATION_REGISTER_AR.md#L454) | 454 | `""` | — |
+| [SRC-62CE5126F9-L000455](../OMARAI_REMEDIATION_REGISTER_AR.md#L455) | 455 | `"### سياسة الاختبار والدخول"` | — |
+| [SRC-62CE5126F9-L000456](../OMARAI_REMEDIATION_REGISTER_AR.md#L456) | 456 | `""` | — |
+| [SRC-62CE5126F9-L000457](../OMARAI_REMEDIATION_REGISTER_AR.md#L457) | 457 | `"- التطوير المحلي على loopback يمكن أن يعمل دون OMARAI_ACCESS_TOKEN عندما OMARAI_PUBLIC_DEPLOYMENT ليس public."` | — |
+| [SRC-62CE5126F9-L000458](../OMARAI_REMEDIATION_REGISTER_AR.md#L458) | 458 | `"- الاستضافة العامة تظل محمية برمز Bearer. لا يُسمح بتجاوز عام للمصادقة لمجرد تسهيل أدوات الاختبار."` | — |
+| [SRC-62CE5126F9-L000459](../OMARAI_REMEDIATION_REGISTER_AR.md#L459) | 459 | `"- hosted smoke يستخدم GitHub Actions secrets دون طباعة الرمز، ويصدر artifact يتضمن السؤال الفعلي والرد والمصادر حتى عند فشل شرط المصادر بعد وصول الرد."` | — |
+| [SRC-62CE5126F9-L000460](../OMARAI_REMEDIATION_REGISTER_AR.md#L460) | 460 | `"- الاختبار المجدول محدود إلى تشغيل واحد يوميًا، وcompletion واحد. يبدأ بعد دمج PR #137 إلى main. إذا غابت الأسرار أو لم تتطابق build SHA يتوقف قبل استدعاء النموذج."` | — |
+| [SRC-62CE5126F9-L000461](../OMARAI_REMEDIATION_REGISTER_AR.md#L461) | 461 | `"- **قرار الإغلاق:** لا يُغلق P0 كليًا قبل اجتياز hosted acceptance، والتحقق من جودة البحث الحي، ومراجعة سجل النتائج. نجاح CI وحده لا يغلق هذه البنود."` | — |
 ## وثائق وفهرسة
 
 ### FILE-B9C3015420 — [docs/OMARAI_REQUIREMENTS_REGISTER.md](../OMARAI_REQUIREMENTS_REGISTER.md#L1)
@@ -811,26 +834,3 @@
 | [SRC-65551FB29F-L000167](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L167) | 167 | `"- **NOT APPLICABLE:** لا ينطبق حاليًا مع سبب محدد ومراجعة موعد إعادة النظر."` | — |
 | [SRC-65551FB29F-L000168](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L168) | 168 | `"- **WAIVED:** استثناء محدود وافق عليه صاحب الصلاحية، مع خطر بديل وتاريخ انتهاء أو شرط إغلاق. لا يستخدم لتغطية جهل بالحالة."` | — |
 | [SRC-65551FB29F-L000169](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L169) | 169 | `""` | — |
-| [SRC-65551FB29F-L000170](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L170) | 170 | `"**مهم:** NOT APPLICABLE ليس بديلًا عن UNKNOWN. وWAIVED ليس حذفًا للمتطلب من السجل."` | — |
-| [SRC-65551FB29F-L000171](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L171) | 171 | `""` | — |
-| [SRC-65551FB29F-L000172](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L172) | 172 | `"## 7. تصنيف الإلزام"` | — |
-| [SRC-65551FB29F-L000173](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L173) | 173 | `""` | — |
-| [SRC-65551FB29F-L000174](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L174) | 174 | `"- **MUST-BASE:** ينطبق دائمًا على أي مسار يستخدمه المشروع، مثل عدم اختلاق دليل أو تنفيذ غير مصرح."` | — |
-| [SRC-65551FB29F-L000175](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L175) | 175 | `"- **MUST-TRIGGERED:** يصبح إلزاميًا عند تفعيل شرط معلوم، مثل multi-tenancy أو بيانات خاصة أو تشغيل مهمة ذات أثر خارجي."` | — |
-| [SRC-65551FB29F-L000176](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L176) | 176 | `"- **SHOULD:** الخيار المفضل ما لم توثق أسباب الاستثناء."` | — |
-| [SRC-65551FB29F-L000177](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L177) | 177 | `"- **MAY:** اختيار تحكمه القيمة والمخاطر."` | — |
-| [SRC-65551FB29F-L000178](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L178) | 178 | `"- **HOLD:** لا تنفذ تقنية/قدرة قبل استيفاء شرط سابق أو قرار مالك."` | — |
-| [SRC-65551FB29F-L000179](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L179) | 179 | `""` | — |
-| [SRC-65551FB29F-L000180](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L180) | 180 | `"## 8. معرفات المتطلبات"` | — |
-| [SRC-65551FB29F-L000181](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L181) | 181 | `""` | — |
-| [SRC-65551FB29F-L000182](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L182) | 182 | `"يجب أن يكون لكل متطلب مُعرف ثابت غير معتمد على اسم الملف، حتى يمكن نقله أو إعادة صياغته دون فقد أثره."` | — |
-| [SRC-65551FB29F-L000183](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L183) | 183 | `""` | — |
-| [SRC-65551FB29F-L000184](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L184) | 184 | `"\| البادئة \| المجال \|"` | — |
-| [SRC-65551FB29F-L000185](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L185) | 185 | `"\|---\|---\|"` | — |
-| [SRC-65551FB29F-L000186](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L186) | 186 | `"\| GOV \| الحوكمة، وإدارة المتطلبات، والمخاطر \|"` | — |
-| [SRC-65551FB29F-L000187](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L187) | 187 | `"\| PRD \| المنتج وسلوك المستخدم \|"` | — |
-| [SRC-65551FB29F-L000188](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L188) | 188 | `"\| ARC \| المعمارية والحدود والاعتماديات \|"` | — |
-| [SRC-65551FB29F-L000189](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L189) | 189 | `"\| API \| العقود وواجهات التكامل \|"` | — |
-| [SRC-65551FB29F-L000190](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L190) | 190 | `"\| IDN \| الهوية والصلاحيات والجلسات \|"` | — |
-| [SRC-65551FB29F-L000191](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L191) | 191 | `"\| SEC \| الأمن العام وأمن التطبيق والشبكات \|"` | — |
-| [SRC-65551FB29F-L000192](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L192) | 192 | `"\| DAT \| جودة البيانات والتخزين ودورة الحياة \|"` | — |

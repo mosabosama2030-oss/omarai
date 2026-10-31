@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **051**
-- سجلات الأسطر: **676**
-- النطاق: SRC-F725E90B2A-L003898 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **699**
+- النطاق: SRC-F725E90B2A-L003875 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003875](../../tests/test_web_agent.py#L3875) | 3875 | `"        },"` | — |
+| [SRC-F725E90B2A-L003876](../../tests/test_web_agent.py#L3876) | 3876 | `"    )"` | — |
+| [SRC-F725E90B2A-L003877](../../tests/test_web_agent.py#L3877) | 3877 | `"    monkeypatch.setattr(agent, \"_collect_research\", lambda plan: ("` | — |
+| [SRC-F725E90B2A-L003878](../../tests/test_web_agent.py#L3878) | 3878 | `"        [sample_source(0), sample_source(1)], [], {"` | — |
+| [SRC-F725E90B2A-L003879](../../tests/test_web_agent.py#L3879) | 3879 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L003880](../../tests/test_web_agent.py#L3880) | 3880 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L003881](../../tests/test_web_agent.py#L3881) | 3881 | `"            \"query_results\": [{\"query\": plan[\"queries\"][0], \"results\": 2}],"` | — |
+| [SRC-F725E90B2A-L003882](../../tests/test_web_agent.py#L3882) | 3882 | `"            \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L003883](../../tests/test_web_agent.py#L3883) | 3883 | `"            \"pages_fetched\": 2,"` | — |
+| [SRC-F725E90B2A-L003884](../../tests/test_web_agent.py#L3884) | 3884 | `"            \"providers_used\": [\"test\"],"` | — |
+| [SRC-F725E90B2A-L003885](../../tests/test_web_agent.py#L3885) | 3885 | `"            \"provider_diagnostics\": [],"` | — |
+| [SRC-F725E90B2A-L003886](../../tests/test_web_agent.py#L3886) | 3886 | `"        }"` | — |
+| [SRC-F725E90B2A-L003887](../../tests/test_web_agent.py#L3887) | 3887 | `"    ))"` | — |
+| [SRC-F725E90B2A-L003888](../../tests/test_web_agent.py#L3888) | 3888 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-F725E90B2A-L003889](../../tests/test_web_agent.py#L3889) | 3889 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L003890](../../tests/test_web_agent.py#L3890) | 3890 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"إجابة اختبارية [المصدر 1].\")"` | — |
+| [SRC-F725E90B2A-L003891](../../tests/test_web_agent.py#L3891) | 3891 | `""` | — |
+| [SRC-F725E90B2A-L003892](../../tests/test_web_agent.py#L3892) | 3892 | `"    def fail_diagnostics(_result):"` | — |
+| [SRC-F725E90B2A-L003893](../../tests/test_web_agent.py#L3893) | 3893 | `"        raise RuntimeError(\"diagnostics are optional\")"` | — |
+| [SRC-F725E90B2A-L003894](../../tests/test_web_agent.py#L3894) | 3894 | `""` | — |
+| [SRC-F725E90B2A-L003895](../../tests/test_web_agent.py#L3895) | 3895 | `"    monkeypatch.setattr(\"agents.web_agent.build_research_completion\", fail_diagnostics)"` | — |
+| [SRC-F725E90B2A-L003896](../../tests/test_web_agent.py#L3896) | 3896 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
+| [SRC-F725E90B2A-L003897](../../tests/test_web_agent.py#L3897) | 3897 | `"    assert result[\"answer\"] == \"إجابة اختبارية [المصدر 1].\""` | — |
 | [SRC-F725E90B2A-L003898](../../tests/test_web_agent.py#L3898) | 3898 | `"    assert result[\"research_completion\"][\"status\"] == \"diagnostics_not_computed\""` | — |
 | [SRC-F725E90B2A-L003899](../../tests/test_web_agent.py#L3899) | 3899 | `"    assert any(\"لا يُعد ذلك دليلًا على اكتمال البحث\" in warning for warning in result[\"warnings\"])"` | — |
 ## اختبارات

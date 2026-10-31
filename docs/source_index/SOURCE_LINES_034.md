@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001274 إلى SRC-4CCB1F172B-L000037
+- النطاق: SRC-90FAA34ADE-L001251 إلى SRC-4CCB1F172B-L000014
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001251](../../tests/fixtures/answer_quality_cases.json#L1251) | 1251 | `"        \"يعرض تاريخ المصدر بوضوح عند الاستشهاد به\""` | — |
+| [SRC-90FAA34ADE-L001252](../../tests/fixtures/answer_quality_cases.json#L1252) | 1252 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001253](../../tests/fixtures/answer_quality_cases.json#L1253) | 1253 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001254](../../tests/fixtures/answer_quality_cases.json#L1254) | 1254 | `"        \"يعتمد على شروط 2020 كأنها حالية بلا تنبيه\","` | — |
+| [SRC-90FAA34ADE-L001255](../../tests/fixtures/answer_quality_cases.json#L1255) | 1255 | `"        \"يختلق تحديثًا أحدث\""` | — |
+| [SRC-90FAA34ADE-L001256](../../tests/fixtures/answer_quality_cases.json#L1256) | 1256 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001257](../../tests/fixtures/answer_quality_cases.json#L1257) | 1257 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001258](../../tests/fixtures/answer_quality_cases.json#L1258) | 1258 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001259](../../tests/fixtures/answer_quality_cases.json#L1259) | 1259 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001260](../../tests/fixtures/answer_quality_cases.json#L1260) | 1260 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001261](../../tests/fixtures/answer_quality_cases.json#L1261) | 1261 | `"            \"title\": \"Service registration guide\","` | — |
+| [SRC-90FAA34ADE-L001262](../../tests/fixtures/answer_quality_cases.json#L1262) | 1262 | `"            \"url\": \"https://service.example.test/register-2020\","` | — |
+| [SRC-90FAA34ADE-L001263](../../tests/fixtures/answer_quality_cases.json#L1263) | 1263 | `"            \"snippet\": \"Registration terms updated in 2020.\","` | — |
+| [SRC-90FAA34ADE-L001264](../../tests/fixtures/answer_quality_cases.json#L1264) | 1264 | `"            \"published_at\": \"2020-01-10\","` | — |
+| [SRC-90FAA34ADE-L001265](../../tests/fixtures/answer_quality_cases.json#L1265) | 1265 | `"            \"domain\": \"service.example.test\","` | — |
+| [SRC-90FAA34ADE-L001266](../../tests/fixtures/answer_quality_cases.json#L1266) | 1266 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001267](../../tests/fixtures/answer_quality_cases.json#L1267) | 1267 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001268](../../tests/fixtures/answer_quality_cases.json#L1268) | 1268 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L001269](../../tests/fixtures/answer_quality_cases.json#L1269) | 1269 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001270](../../tests/fixtures/answer_quality_cases.json#L1270) | 1270 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001271](../../tests/fixtures/answer_quality_cases.json#L1271) | 1271 | `"        \"ادعاء أن الشروط حالية من مصدر 2020 فقط\","` | — |
+| [SRC-90FAA34ADE-L001272](../../tests/fixtures/answer_quality_cases.json#L1272) | 1272 | `"        \"غياب التحذير من قدم المصدر\""` | — |
+| [SRC-90FAA34ADE-L001273](../../tests/fixtures/answer_quality_cases.json#L1273) | 1273 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
 | [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
@@ -838,26 +861,3 @@
 | [SRC-4CCB1F172B-L000012](../../tests/test_answer_quality_corpus.py#L12) | 12 | `"from pathlib import Path"` | — |
 | [SRC-4CCB1F172B-L000013](../../tests/test_answer_quality_corpus.py#L13) | 13 | `""` | — |
 | [SRC-4CCB1F172B-L000014](../../tests/test_answer_quality_corpus.py#L14) | 14 | `"CORPUS_PATH = Path(__file__).resolve().parent / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-4CCB1F172B-L000015](../../tests/test_answer_quality_corpus.py#L15) | 15 | `"DOCS_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"ANSWER_QUALITY_BENCHMARK_AR.md\""` | — |
-| [SRC-4CCB1F172B-L000016](../../tests/test_answer_quality_corpus.py#L16) | 16 | `""` | — |
-| [SRC-4CCB1F172B-L000017](../../tests/test_answer_quality_corpus.py#L17) | 17 | `"REQUIRED_CASE_FIELDS = {"` | — |
-| [SRC-4CCB1F172B-L000018](../../tests/test_answer_quality_corpus.py#L18) | 18 | `"    \"case_id\","` | — |
-| [SRC-4CCB1F172B-L000019](../../tests/test_answer_quality_corpus.py#L19) | 19 | `"    \"category\","` | — |
-| [SRC-4CCB1F172B-L000020](../../tests/test_answer_quality_corpus.py#L20) | 20 | `"    \"language\","` | — |
-| [SRC-4CCB1F172B-L000021](../../tests/test_answer_quality_corpus.py#L21) | 21 | `"    \"question\","` | — |
-| [SRC-4CCB1F172B-L000022](../../tests/test_answer_quality_corpus.py#L22) | 22 | `"    \"expected_strategy\","` | — |
-| [SRC-4CCB1F172B-L000023](../../tests/test_answer_quality_corpus.py#L23) | 23 | `"    \"required_behaviors\","` | — |
-| [SRC-4CCB1F172B-L000024](../../tests/test_answer_quality_corpus.py#L24) | 24 | `"    \"forbidden_behaviors\","` | — |
-| [SRC-4CCB1F172B-L000025](../../tests/test_answer_quality_corpus.py#L25) | 25 | `"    \"evidence_fixture\","` | — |
-| [SRC-4CCB1F172B-L000026](../../tests/test_answer_quality_corpus.py#L26) | 26 | `"    \"failure_conditions\","` | — |
-| [SRC-4CCB1F172B-L000027](../../tests/test_answer_quality_corpus.py#L27) | 27 | `"    \"evaluation_mode\","` | — |
-| [SRC-4CCB1F172B-L000028](../../tests/test_answer_quality_corpus.py#L28) | 28 | `"}"` | — |
-| [SRC-4CCB1F172B-L000029](../../tests/test_answer_quality_corpus.py#L29) | 29 | `""` | — |
-| [SRC-4CCB1F172B-L000030](../../tests/test_answer_quality_corpus.py#L30) | 30 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
-| [SRC-4CCB1F172B-L000031](../../tests/test_answer_quality_corpus.py#L31) | 31 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
-| [SRC-4CCB1F172B-L000032](../../tests/test_answer_quality_corpus.py#L32) | 32 | `""` | — |
-| [SRC-4CCB1F172B-L000033](../../tests/test_answer_quality_corpus.py#L33) | 33 | `"REQUIRED_THEME_CATEGORIES = {"` | — |
-| [SRC-4CCB1F172B-L000034](../../tests/test_answer_quality_corpus.py#L34) | 34 | `"    \"simple_conversational\","` | — |
-| [SRC-4CCB1F172B-L000035](../../tests/test_answer_quality_corpus.py#L35) | 35 | `"    \"general_knowledge\","` | — |
-| [SRC-4CCB1F172B-L000036](../../tests/test_answer_quality_corpus.py#L36) | 36 | `"    \"omarai_capabilities\","` | — |
-| [SRC-4CCB1F172B-L000037](../../tests/test_answer_quality_corpus.py#L37) | 37 | `"    \"current_information\","` | — |

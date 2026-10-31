@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001498 إلى SRC-F725E90B2A-L002297
+- النطاق: SRC-F725E90B2A-L001475 إلى SRC-F725E90B2A-L002274
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001475](../../tests/test_web_agent.py#L1475) | 1475 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-F725E90B2A-L001476](../../tests/test_web_agent.py#L1476) | 1476 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001478](../../tests/test_web_agent.py#L1478) | 1478 | `""` | — |
+| [SRC-F725E90B2A-L001479](../../tests/test_web_agent.py#L1479) | 1479 | `""` | — |
+| [SRC-F725E90B2A-L001480](../../tests/test_web_agent.py#L1480) | 1480 | `"def test_omarai_capability_question_is_answered_without_network(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001481](../../tests/test_web_agent.py#L1481) | 1481 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001482](../../tests/test_web_agent.py#L1482) | 1482 | `"    agent.api_key = \"\""` | — |
+| [SRC-F725E90B2A-L001483](../../tests/test_web_agent.py#L1483) | 1483 | `""` | — |
+| [SRC-F725E90B2A-L001484](../../tests/test_web_agent.py#L1484) | 1484 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001485](../../tests/test_web_agent.py#L1485) | 1485 | `"        agent, \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001486](../../tests/test_web_agent.py#L1486) | 1486 | `"        lambda plan: pytest.fail(\"Self-description must not call external search\"),"` | — |
+| [SRC-F725E90B2A-L001487](../../tests/test_web_agent.py#L1487) | 1487 | `"    )"` | — |
+| [SRC-F725E90B2A-L001488](../../tests/test_web_agent.py#L1488) | 1488 | `""` | — |
+| [SRC-F725E90B2A-L001489](../../tests/test_web_agent.py#L1489) | 1489 | `"    result = agent.answer(\"كيف تبحث أنت في الإنترنت؟\")"` | — |
+| [SRC-F725E90B2A-L001490](../../tests/test_web_agent.py#L1490) | 1490 | `""` | — |
+| [SRC-F725E90B2A-L001491](../../tests/test_web_agent.py#L1491) | 1491 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
+| [SRC-F725E90B2A-L001492](../../tests/test_web_agent.py#L1492) | 1492 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-F725E90B2A-L001493](../../tests/test_web_agent.py#L1493) | 1493 | `"    assert \"DuckDuckGo HTML\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001494](../../tests/test_web_agent.py#L1494) | 1494 | `"    assert \"ليست إثباتًا\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L001495](../../tests/test_web_agent.py#L1495) | 1495 | `""` | — |
+| [SRC-F725E90B2A-L001496](../../tests/test_web_agent.py#L1496) | 1496 | `""` | — |
+| [SRC-F725E90B2A-L001497](../../tests/test_web_agent.py#L1497) | 1497 | `"def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001498](../../tests/test_web_agent.py#L1498) | 1498 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001499](../../tests/test_web_agent.py#L1499) | 1499 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001500](../../tests/test_web_agent.py#L1500) | 1500 | `"    source = {"` | — |
@@ -793,26 +816,3 @@
 | [SRC-F725E90B2A-L002272](../../tests/test_web_agent.py#L2272) | 2272 | `"    buyer_post = {"` | — |
 | [SRC-F725E90B2A-L002273](../../tests/test_web_agent.py#L2273) | 2273 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |
 | [SRC-F725E90B2A-L002274](../../tests/test_web_agent.py#L2274) | 2274 | `"        \"snippet\": \"مطلوب شقة تمليك في العاصمة الإدارية.\","` | — |
-| [SRC-F725E90B2A-L002275](../../tests/test_web_agent.py#L2275) | 2275 | `"        \"page_text\": \"أنا بدور على شقة تمليك في العاصمة الإدارية وعايز أشتري خلال شهر.\","` | — |
-| [SRC-F725E90B2A-L002276](../../tests/test_web_agent.py#L2276) | 2276 | `"    }"` | — |
-| [SRC-F725E90B2A-L002277](../../tests/test_web_agent.py#L2277) | 2277 | `"    assert WebAgent._lead_intent_evidence(listing) is None"` | — |
-| [SRC-F725E90B2A-L002278](../../tests/test_web_agent.py#L2278) | 2278 | `"    signal = WebAgent._lead_intent_evidence(buyer_post)"` | — |
-| [SRC-F725E90B2A-L002279](../../tests/test_web_agent.py#L2279) | 2279 | `"    assert signal is not None"` | — |
-| [SRC-F725E90B2A-L002280](../../tests/test_web_agent.py#L2280) | 2280 | `"    assert signal[\"basis\"] == \"page_text\""` | — |
-| [SRC-F725E90B2A-L002281](../../tests/test_web_agent.py#L2281) | 2281 | `""` | — |
-| [SRC-F725E90B2A-L002282](../../tests/test_web_agent.py#L2282) | 2282 | `""` | — |
-| [SRC-F725E90B2A-L002283](../../tests/test_web_agent.py#L2283) | 2283 | `"def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002284](../../tests/test_web_agent.py#L2284) | 2284 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002285](../../tests/test_web_agent.py#L2285) | 2285 | `"    question = \"ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر\""` | — |
-| [SRC-F725E90B2A-L002286](../../tests/test_web_agent.py#L2286) | 2286 | `"    source_a = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L002287](../../tests/test_web_agent.py#L2287) | 2287 | `"    source_a.update({"` | — |
-| [SRC-F725E90B2A-L002288](../../tests/test_web_agent.py#L2288) | 2288 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
-| [SRC-F725E90B2A-L002289](../../tests/test_web_agent.py#L2289) | 2289 | `"        \"snippet\": \"قارن أسعار الشقق والمساحات وخطط السداد.\","` | — |
-| [SRC-F725E90B2A-L002290](../../tests/test_web_agent.py#L2290) | 2290 | `"        \"page_text\": \"إعلانات شقق للبيع من شركات تطوير عقاري.\","` | — |
-| [SRC-F725E90B2A-L002291](../../tests/test_web_agent.py#L2291) | 2291 | `"        \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L002292](../../tests/test_web_agent.py#L2292) | 2292 | `"    })"` | — |
-| [SRC-F725E90B2A-L002293](../../tests/test_web_agent.py#L2293) | 2293 | `"    source_b = sample_source(1)"` | — |
-| [SRC-F725E90B2A-L002294](../../tests/test_web_agent.py#L2294) | 2294 | `"    source_b.update({"` | — |
-| [SRC-F725E90B2A-L002295](../../tests/test_web_agent.py#L2295) | 2295 | `"        \"title\": \"مشروعات عقارية في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002296](../../tests/test_web_agent.py#L2296) | 2296 | `"        \"snippet\": \"تعرف على الوحدات السكنية المتاحة للبيع.\","` | — |
-| [SRC-F725E90B2A-L002297](../../tests/test_web_agent.py#L2297) | 2297 | `"        \"page_text\": \"معلومات عامة عن مشروعات وشقق للبيع.\","` | — |
