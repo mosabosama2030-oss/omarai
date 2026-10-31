@@ -78,34 +78,33 @@ def _bounded_http_request(method: str, url: str, **kwargs):
         timeout=timeout,
         follow_redirects=False,
         trust_env=False,
-    ) as client:
-        with client.stream(method, url, **kwargs) as response:
-            declared_length = response.headers.get("content-length")
-            if declared_length:
-                try:
-                    declared_bytes = int(declared_length)
-                except (TypeError, ValueError):
-                    declared_bytes = None
-                if (
-                    declared_bytes is not None
-                    and declared_bytes > MAX_PROVIDER_RESPONSE_BYTES
-                ):
-                    raise ValueError(
-                        "search provider response exceeds the configured size limit"
-                    )
-            body = bytearray()
-            for chunk in response.iter_bytes():
-                if len(body) + len(chunk) > MAX_PROVIDER_RESPONSE_BYTES:
-                    raise ValueError(
-                        "search provider response exceeds the configured size limit"
-                    )
-                body.extend(chunk)
-            return httpx.Response(
-                status_code=response.status_code,
-                headers=response.headers,
-                content=bytes(body),
-                request=response.request,
-            )
+    ) as client, client.stream(method, url, **kwargs) as response:
+        declared_length = response.headers.get("content-length")
+        if declared_length:
+            try:
+                declared_bytes = int(declared_length)
+            except (TypeError, ValueError):
+                declared_bytes = None
+            if (
+                declared_bytes is not None
+                and declared_bytes > MAX_PROVIDER_RESPONSE_BYTES
+            ):
+                raise ValueError(
+                    "search provider response exceeds the configured size limit"
+                )
+        body = bytearray()
+        for chunk in response.iter_bytes():
+            if len(body) + len(chunk) > MAX_PROVIDER_RESPONSE_BYTES:
+                raise ValueError(
+                    "search provider response exceeds the configured size limit"
+                )
+            body.extend(chunk)
+        return httpx.Response(
+            status_code=response.status_code,
+            headers=response.headers,
+            content=bytes(body),
+            request=response.request,
+        )
 MAX_FETCHED_PAGES = 8
 MAX_LLM_CITED_SOURCES = 12
 MAX_RESEARCH_WORKERS = 8
