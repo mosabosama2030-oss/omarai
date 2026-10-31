@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **119**
 - ملفات Python المحللة: **73**
-- تعريفات Python المفهرسة: **1549**
+- تعريفات Python المفهرسة: **1569**
 - تعريفات Python موثقة بوجود Docstring: **261**
-- تعريفات Python بلا Docstring: **982**
+- تعريفات Python بلا Docstring: **1002**
 - تعريفات لا ينطبق عليها Docstring: **306**
-- الرموز الساكنة الإضافية: **1878**
-- الأسطر النصية المفهرسة حرفيًا: **40242**
+- الرموز الساكنة الإضافية: **1879**
+- الأسطر النصية المفهرسة حرفيًا: **40359**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -127,7 +127,7 @@
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
-| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 3047 | 85 | جرد الملف + AST Python |
+| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 6450 | 202 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
@@ -1213,15 +1213,35 @@
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L194) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget | لا توجد Docstring. | ناقص | 194 | [SRC-4397BC2CD2-L000194](../tests/test_intent_router_integration.py#L194) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L203) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.plan | لا توجد Docstring. | ناقص | 203 | [SRC-4397BC2CD2-L000203](../tests/test_intent_router_integration.py#L203) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L214) | دالة | test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget.collect | لا توجد Docstring. | ناقص | 214 | [SRC-4397BC2CD2-L000214](../tests/test_intent_router_integration.py#L214) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L6) | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 6 | [SRC-62DC597310-L000006](../tests/test_live_search_connectors.py#L6) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L7) | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 7 | [SRC-62DC597310-L000007](../tests/test_live_search_connectors.py#L7) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L11) | دالة | FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 11 | [SRC-62DC597310-L000011](../tests/test_live_search_connectors.py#L11) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L14) | دالة | FakeResponse.json | لا توجد Docstring. | ناقص | 14 | [SRC-62DC597310-L000014](../tests/test_live_search_connectors.py#L14) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L18) | دالة | test_brave_search_adapter_normalizes_real_api_response | لا توجد Docstring. | ناقص | 18 | [SRC-62DC597310-L000018](../tests/test_live_search_connectors.py#L18) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L22) | دالة | test_brave_search_adapter_normalizes_real_api_response.fake_get | لا توجد Docstring. | ناقص | 22 | [SRC-62DC597310-L000022](../tests/test_live_search_connectors.py#L22) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L49) | دالة | test_tavily_search_adapter_normalizes_live_search_results | لا توجد Docstring. | ناقص | 49 | [SRC-62DC597310-L000049](../tests/test_live_search_connectors.py#L49) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L53) | دالة | test_tavily_search_adapter_normalizes_live_search_results.fake_post | لا توجد Docstring. | ناقص | 53 | [SRC-62DC597310-L000053](../tests/test_live_search_connectors.py#L53) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L78) | دالة | test_search_api_setup_status_reports_only_presence_not_secret_values | لا توجد Docstring. | ناقص | 78 | [SRC-62DC597310-L000078](../tests/test_live_search_connectors.py#L78) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L13) | كلاس | FakeResponse | لا توجد Docstring. | ناقص | 13 | [SRC-62DC597310-L000013](../tests/test_live_search_connectors.py#L13) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L14) | دالة | FakeResponse.__init__ | لا توجد Docstring. | ناقص | 14 | [SRC-62DC597310-L000014](../tests/test_live_search_connectors.py#L14) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L18) | دالة | FakeResponse.raise_for_status | لا توجد Docstring. | ناقص | 18 | [SRC-62DC597310-L000018](../tests/test_live_search_connectors.py#L18) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L21) | دالة | FakeResponse.json | لا توجد Docstring. | ناقص | 21 | [SRC-62DC597310-L000021](../tests/test_live_search_connectors.py#L21) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L25) | دالة | test_brave_search_adapter_normalizes_real_api_response | لا توجد Docstring. | ناقص | 25 | [SRC-62DC597310-L000025](../tests/test_live_search_connectors.py#L25) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L29) | دالة | test_brave_search_adapter_normalizes_real_api_response.fake_get | لا توجد Docstring. | ناقص | 29 | [SRC-62DC597310-L000029](../tests/test_live_search_connectors.py#L29) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L56) | دالة | test_tavily_search_adapter_normalizes_live_search_results | لا توجد Docstring. | ناقص | 56 | [SRC-62DC597310-L000056](../tests/test_live_search_connectors.py#L56) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L60) | دالة | test_tavily_search_adapter_normalizes_live_search_results.fake_post | لا توجد Docstring. | ناقص | 60 | [SRC-62DC597310-L000060](../tests/test_live_search_connectors.py#L60) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L85) | دالة | test_search_api_setup_status_reports_only_presence_not_secret_values | لا توجد Docstring. | ناقص | 85 | [SRC-62DC597310-L000085](../tests/test_live_search_connectors.py#L85) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L96) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies | لا توجد Docstring. | ناقص | 96 | [SRC-62DC597310-L000096](../tests/test_live_search_connectors.py#L96) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L100) | كلاس | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeResponse | لا توجد Docstring. | ناقص | 100 | [SRC-62DC597310-L000100](../tests/test_live_search_connectors.py#L100) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L105) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 105 | [SRC-62DC597310-L000105](../tests/test_live_search_connectors.py#L105) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L108) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 108 | [SRC-62DC597310-L000108](../tests/test_live_search_connectors.py#L108) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L111) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 111 | [SRC-62DC597310-L000111](../tests/test_live_search_connectors.py#L111) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L120) | كلاس | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeClient | لا توجد Docstring. | ناقص | 120 | [SRC-62DC597310-L000120](../tests/test_live_search_connectors.py#L120) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L121) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeClient.__init__ | لا توجد Docstring. | ناقص | 121 | [SRC-62DC597310-L000121](../tests/test_live_search_connectors.py#L121) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L124) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 124 | [SRC-62DC597310-L000124](../tests/test_live_search_connectors.py#L124) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L127) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 127 | [SRC-62DC597310-L000127](../tests/test_live_search_connectors.py#L127) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L130) | دالة | test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies.FakeClient.stream | لا توجد Docstring. | ناقص | 130 | [SRC-62DC597310-L000130](../tests/test_live_search_connectors.py#L130) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L155) | دالة | test_bounded_provider_transport_returns_buffered_response | لا توجد Docstring. | ناقص | 155 | [SRC-62DC597310-L000155](../tests/test_live_search_connectors.py#L155) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L159) | كلاس | test_bounded_provider_transport_returns_buffered_response.FakeResponse | لا توجد Docstring. | ناقص | 159 | [SRC-62DC597310-L000159](../tests/test_live_search_connectors.py#L159) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L164) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 164 | [SRC-62DC597310-L000164](../tests/test_live_search_connectors.py#L164) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L167) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 167 | [SRC-62DC597310-L000167](../tests/test_live_search_connectors.py#L167) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L170) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 170 | [SRC-62DC597310-L000170](../tests/test_live_search_connectors.py#L170) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L174) | كلاس | test_bounded_provider_transport_returns_buffered_response.FakeClient | لا توجد Docstring. | ناقص | 174 | [SRC-62DC597310-L000174](../tests/test_live_search_connectors.py#L174) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L175) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeClient.__init__ | لا توجد Docstring. | ناقص | 175 | [SRC-62DC597310-L000175](../tests/test_live_search_connectors.py#L175) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L178) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 178 | [SRC-62DC597310-L000178](../tests/test_live_search_connectors.py#L178) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L181) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 181 | [SRC-62DC597310-L000181](../tests/test_live_search_connectors.py#L181) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L184) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeClient.stream | لا توجد Docstring. | ناقص | 184 | [SRC-62DC597310-L000184](../tests/test_live_search_connectors.py#L184) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L8) | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 | [SRC-44CDA52D01-L000008](../tests/test_omarai.py#L8) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L11) | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 | [SRC-44CDA52D01-L000011](../tests/test_omarai.py#L11) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L16) | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 | [SRC-44CDA52D01-L000016](../tests/test_omarai.py#L16) |
@@ -3166,8 +3186,9 @@
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 32 | [SRC-EA6EC52573-L000032](../tests/test_intent_router.py#L32) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 115 | [SRC-4397BC2CD2-L000115](../tests/test_intent_router_integration.py#L115) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L165) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 165 | [SRC-4397BC2CD2-L000165](../tests/test_intent_router_integration.py#L165) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 19 | [SRC-62DC597310-L000019](../tests/test_live_search_connectors.py#L19) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L50) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 50 | [SRC-62DC597310-L000050](../tests/test_live_search_connectors.py#L50) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PROVIDER_RESPONSE_BYTES | 7 | [SRC-62DC597310-L000007](../tests/test_live_search_connectors.py#L7) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 26 | [SRC-62DC597310-L000026](../tests/test_live_search_connectors.py#L26) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L57) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 57 | [SRC-62DC597310-L000057](../tests/test_live_search_connectors.py#L57) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_NAME | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 15 | [SRC-B106ADC5EF-L000015](../tests/test_proxy_origin.py#L15) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 16 | [SRC-B106ADC5EF-L000016](../tests/test_proxy_origin.py#L16) |
