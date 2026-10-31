@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000331 إلى SRC-D17CE3D12F-L000227
+- النطاق: SRC-E73001D9AC-L000327 إلى SRC-D17CE3D12F-L000223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000327](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L327) | 327 | `"- لا يسمح النموذج بتوسيع الصلاحيات بنفسه."` | — |
+| [SRC-E73001D9AC-L000328](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L328) | 328 | `"- تصنف الأدوات حسب المخاطر: قراءة عامة، قراءة خاصة، تعديل بيانات، فعل خارجي، فعل حساس أو غير قابل للعكس."` | — |
+| [SRC-E73001D9AC-L000329](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L329) | 329 | `"- تتطلب الإجراءات الأشد خطورة تأكيدًا بشريًا واضحًا، ومعاينة لما سيحدث، وإمكانية مراجعة السجل."` | — |
+| [SRC-E73001D9AC-L000330](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L330) | 330 | `"- استخدام idempotency والتحقق من الحالة الحالية قبل إعادة المحاولة."` | — |
 | [SRC-E73001D9AC-L000331](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L331) | 331 | `"- تطبيق فصل المهام أو موافقة إضافية عندما تستدعي المخاطر ذلك."` | — |
 | [SRC-E73001D9AC-L000332](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L332) | 332 | `"- توفير kill switch لتعطيل أداة أو موصل على نحو محدد دون إيقاف التطبيق كله متى أمكن."` | — |
 | [SRC-E73001D9AC-L000333](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L333) | 333 | `""` | — |
@@ -821,7 +825,3 @@
 | [SRC-D17CE3D12F-L000221](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L221) | 221 | `""` | — |
 | [SRC-D17CE3D12F-L000222](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L222) | 222 | `"# القسم الخامس — أمن التطبيق وواجهات API وسلسلة التوريد"` | — |
 | [SRC-D17CE3D12F-L000223](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L223) | 223 | `""` | — |
-| [SRC-D17CE3D12F-L000224](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L224) | 224 | `"## 15. دورة حياة التطوير الآمن (Secure SDLC)"` | — |
-| [SRC-D17CE3D12F-L000225](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L225) | 225 | `""` | — |
-| [SRC-D17CE3D12F-L000226](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L226) | 226 | `"1. MUST دمج الأمن في التخطيط والتصميم والبرمجة والاختبار والنشر والصيانة، لا في فحص أخير فقط."` | — |
-| [SRC-D17CE3D12F-L000227](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L227) | 227 | `"2. MUST إجراء threat modeling عند تغير تدفق حساس للبيانات أو الأدوات أو الهوية أو الاتصالات الخارجية."` | — |

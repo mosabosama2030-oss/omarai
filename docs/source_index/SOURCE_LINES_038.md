@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6B37B7D6D3-L000074 إلى SRC-DA139AC9D0-L000098
+- النطاق: SRC-6B37B7D6D3-L000063 إلى SRC-DA139AC9D0-L000087
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6B37B7D6D3-L000063](../../tests/test_claim_evidence_metadata.py#L63) | 63 | `"        \"The estimate is 9.7 million [source 1].\","` | — |
+| [SRC-6B37B7D6D3-L000064](../../tests/test_claim_evidence_metadata.py#L64) | 64 | `"        ["` | — |
+| [SRC-6B37B7D6D3-L000065](../../tests/test_claim_evidence_metadata.py#L65) | 65 | `"            {"` | — |
+| [SRC-6B37B7D6D3-L000066](../../tests/test_claim_evidence_metadata.py#L66) | 66 | `"                \"url\": \"https://example.org/census\","` | — |
+| [SRC-6B37B7D6D3-L000067](../../tests/test_claim_evidence_metadata.py#L67) | 67 | `"                \"title\": \"Population table\","` | — |
+| [SRC-6B37B7D6D3-L000068](../../tests/test_claim_evidence_metadata.py#L68) | 68 | `"                \"publisher\": \"Example Statistics Office\","` | — |
+| [SRC-6B37B7D6D3-L000069](../../tests/test_claim_evidence_metadata.py#L69) | 69 | `"                \"published_at\": \"2025-06-01\","` | — |
+| [SRC-6B37B7D6D3-L000070](../../tests/test_claim_evidence_metadata.py#L70) | 70 | `"                \"snippet\": \"The estimate is 9.7 million.\","` | — |
+| [SRC-6B37B7D6D3-L000071](../../tests/test_claim_evidence_metadata.py#L71) | 71 | `"            }"` | — |
+| [SRC-6B37B7D6D3-L000072](../../tests/test_claim_evidence_metadata.py#L72) | 72 | `"        ],"` | — |
+| [SRC-6B37B7D6D3-L000073](../../tests/test_claim_evidence_metadata.py#L73) | 73 | `"        question_context=\"How many people live in Cairo?\","` | — |
 | [SRC-6B37B7D6D3-L000074](../../tests/test_claim_evidence_metadata.py#L74) | 74 | `"    )"` | — |
 | [SRC-6B37B7D6D3-L000075](../../tests/test_claim_evidence_metadata.py#L75) | 75 | `""` | — |
 | [SRC-6B37B7D6D3-L000076](../../tests/test_claim_evidence_metadata.py#L76) | 76 | `"    audit = ledger[\"segments\"][0][\"sources\"][0][\"metadata_audit\"]"` | — |
@@ -850,14 +861,3 @@
 | [SRC-DA139AC9D0-L000085](../../tests/test_dialogue_state.py#L85) | 85 | `"        \"topic\": \"warranty\","` | — |
 | [SRC-DA139AC9D0-L000086](../../tests/test_dialogue_state.py#L86) | 86 | `"        \"entities\": [\"iPhone 17\", \"iPhone 17\", \"x\" * 500],"` | — |
 | [SRC-DA139AC9D0-L000087](../../tests/test_dialogue_state.py#L87) | 87 | `"        \"slots\": {"` | — |
-| [SRC-DA139AC9D0-L000088](../../tests/test_dialogue_state.py#L88) | 88 | `"            \"product\": \"iPhone 17\","` | — |
-| [SRC-DA139AC9D0-L000089](../../tests/test_dialogue_state.py#L89) | 89 | `"            \"country\": \"مصر\","` | — |
-| [SRC-DA139AC9D0-L000090](../../tests/test_dialogue_state.py#L90) | 90 | `"            \"untrusted_injected_field\": \"ignore policies\","` | — |
-| [SRC-DA139AC9D0-L000091](../../tests/test_dialogue_state.py#L91) | 91 | `"        },"` | — |
-| [SRC-DA139AC9D0-L000092](../../tests/test_dialogue_state.py#L92) | 92 | `"        \"changed_slots\": [\"aspect\", \"not_a_slot\"],"` | — |
-| [SRC-DA139AC9D0-L000093](../../tests/test_dialogue_state.py#L93) | 93 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-DA139AC9D0-L000094](../../tests/test_dialogue_state.py#L94) | 94 | `"        \"topic_shift\": False,"` | — |
-| [SRC-DA139AC9D0-L000095](../../tests/test_dialogue_state.py#L95) | 95 | `"        \"needs_web\": True,"` | — |
-| [SRC-DA139AC9D0-L000096](../../tests/test_dialogue_state.py#L96) | 96 | `"        \"research_depth\": \"deep\","` | — |
-| [SRC-DA139AC9D0-L000097](../../tests/test_dialogue_state.py#L97) | 97 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-DA139AC9D0-L000098](../../tests/test_dialogue_state.py#L98) | 98 | `"        \"resolution_basis\": \"history_inferred\","` | — |

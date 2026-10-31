@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005511 إلى SRC-1AE03B9EC3-L006310
+- النطاق: SRC-1AE03B9EC3-L005510 إلى SRC-1AE03B9EC3-L006309
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005510](../../agents/web_agent.py#L5510) | 5510 | `"                        len(sources) < 2 or len(independent_domains) < 2"` | — |
 | [SRC-1AE03B9EC3-L005511](../../agents/web_agent.py#L5511) | 5511 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L005512](../../agents/web_agent.py#L5512) | 5512 | `"                    evidence_repair.update({"` | — |
 | [SRC-1AE03B9EC3-L005513](../../agents/web_agent.py#L5513) | 5513 | `"                        \"final_source_count\": len(sources),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L006307](../../agents/web_agent.py#L6307) | 6307 | `"        max_citable_sources = min(MAX_LLM_CITED_SOURCES, len(sources))"` | — |
 | [SRC-1AE03B9EC3-L006308](../../agents/web_agent.py#L6308) | 6308 | `"        answer, citation_warnings = self._remove_invalid_citations("` | — |
 | [SRC-1AE03B9EC3-L006309](../../agents/web_agent.py#L6309) | 6309 | `"            answer, max_citable_sources"` | — |
-| [SRC-1AE03B9EC3-L006310](../../agents/web_agent.py#L6310) | 6310 | `"        )"` | — |

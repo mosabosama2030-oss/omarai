@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000355 إلى SRC-6B37B7D6D3-L000073
+- النطاق: SRC-3451CC474D-L000344 إلى SRC-6B37B7D6D3-L000062
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000344](../../tests/test_api.py#L344) | 344 | `"        (\"127.0.0.1\", 0),"` | — |
+| [SRC-3451CC474D-L000345](../../tests/test_api.py#L345) | 345 | `"        Handler,"` | — |
+| [SRC-3451CC474D-L000346](../../tests/test_api.py#L346) | 346 | `"        max_concurrent_connections=1,"` | — |
+| [SRC-3451CC474D-L000347](../../tests/test_api.py#L347) | 347 | `"    )"` | — |
+| [SRC-3451CC474D-L000348](../../tests/test_api.py#L348) | 348 | `"    first_client, first_request = socket.socketpair()"` | — |
+| [SRC-3451CC474D-L000349](../../tests/test_api.py#L349) | 349 | `"    second_client, second_request = socket.socketpair()"` | — |
+| [SRC-3451CC474D-L000350](../../tests/test_api.py#L350) | 350 | `"    worker_started = threading.Event()"` | — |
+| [SRC-3451CC474D-L000351](../../tests/test_api.py#L351) | 351 | `"    release_worker = threading.Event()"` | — |
+| [SRC-3451CC474D-L000352](../../tests/test_api.py#L352) | 352 | `"    worker_finished = threading.Event()"` | — |
+| [SRC-3451CC474D-L000353](../../tests/test_api.py#L353) | 353 | `""` | — |
+| [SRC-3451CC474D-L000354](../../tests/test_api.py#L354) | 354 | `"    def hold_handler(_request, _client_address):"` | — |
 | [SRC-3451CC474D-L000355](../../tests/test_api.py#L355) | 355 | `"        worker_started.set()"` | — |
 | [SRC-3451CC474D-L000356](../../tests/test_api.py#L356) | 356 | `"        release_worker.wait(timeout=2)"` | — |
 | [SRC-3451CC474D-L000357](../../tests/test_api.py#L357) | 357 | `""` | — |
@@ -823,14 +834,3 @@
 | [SRC-6B37B7D6D3-L000060](../../tests/test_claim_evidence_metadata.py#L60) | 60 | `""` | — |
 | [SRC-6B37B7D6D3-L000061](../../tests/test_claim_evidence_metadata.py#L61) | 61 | `"def test_claim_evidence_ledger_uses_question_context_for_population_metadata():"` | — |
 | [SRC-6B37B7D6D3-L000062](../../tests/test_claim_evidence_metadata.py#L62) | 62 | `"    ledger = build_claim_evidence_ledger("` | — |
-| [SRC-6B37B7D6D3-L000063](../../tests/test_claim_evidence_metadata.py#L63) | 63 | `"        \"The estimate is 9.7 million [source 1].\","` | — |
-| [SRC-6B37B7D6D3-L000064](../../tests/test_claim_evidence_metadata.py#L64) | 64 | `"        ["` | — |
-| [SRC-6B37B7D6D3-L000065](../../tests/test_claim_evidence_metadata.py#L65) | 65 | `"            {"` | — |
-| [SRC-6B37B7D6D3-L000066](../../tests/test_claim_evidence_metadata.py#L66) | 66 | `"                \"url\": \"https://example.org/census\","` | — |
-| [SRC-6B37B7D6D3-L000067](../../tests/test_claim_evidence_metadata.py#L67) | 67 | `"                \"title\": \"Population table\","` | — |
-| [SRC-6B37B7D6D3-L000068](../../tests/test_claim_evidence_metadata.py#L68) | 68 | `"                \"publisher\": \"Example Statistics Office\","` | — |
-| [SRC-6B37B7D6D3-L000069](../../tests/test_claim_evidence_metadata.py#L69) | 69 | `"                \"published_at\": \"2025-06-01\","` | — |
-| [SRC-6B37B7D6D3-L000070](../../tests/test_claim_evidence_metadata.py#L70) | 70 | `"                \"snippet\": \"The estimate is 9.7 million.\","` | — |
-| [SRC-6B37B7D6D3-L000071](../../tests/test_claim_evidence_metadata.py#L71) | 71 | `"            }"` | — |
-| [SRC-6B37B7D6D3-L000072](../../tests/test_claim_evidence_metadata.py#L72) | 72 | `"        ],"` | — |
-| [SRC-6B37B7D6D3-L000073](../../tests/test_claim_evidence_metadata.py#L73) | 73 | `"        question_context=\"How many people live in Cairo?\","` | — |

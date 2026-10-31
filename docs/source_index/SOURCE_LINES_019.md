@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000009 إلى SRC-E599346ABE-L000229
+- النطاق: SRC-26428BDA96-L000008 إلى SRC-E599346ABE-L000228
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000008](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L8) | 8 | `"**تاريخ التدقيق:** 2026-10-19  "` | — |
 | [SRC-26428BDA96-L000009](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L9) | 9 | `"**الفرع المرجعي للكود:** main  "` | — |
 | [SRC-26428BDA96-L000010](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L10) | 10 | `"**نسخة المصدر المدققة:** 08319cce3652c332e414f691a71cc153dfbfd92e  "` | — |
 | [SRC-26428BDA96-L000011](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | 11 | `"**نسخة التطبيق السابقة لدمج وثائق المتطلبات:** 3cad5031de3dfdea6977d2428bc00d1e8bfd1303  "` | — |
@@ -869,4 +870,3 @@
 | [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `"        self.function_depth = 0"` | — |
 | [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `""` | — |
 | [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    @staticmethod"` | — |
-| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |

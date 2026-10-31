@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002684 إلى SRC-F725E90B2A-L003483
+- النطاق: SRC-F725E90B2A-L002673 إلى SRC-F725E90B2A-L003472
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002673](../../tests/test_web_agent.py#L2673) | 2673 | `"        yield RedirectResponse()"` | — |
+| [SRC-F725E90B2A-L002674](../../tests/test_web_agent.py#L2674) | 2674 | `""` | — |
+| [SRC-F725E90B2A-L002675](../../tests/test_web_agent.py#L2675) | 2675 | `"    class FakeClient:"` | — |
+| [SRC-F725E90B2A-L002676](../../tests/test_web_agent.py#L2676) | 2676 | `"        def __init__(self, **kwargs):"` | — |
+| [SRC-F725E90B2A-L002677](../../tests/test_web_agent.py#L2677) | 2677 | `"            self.options = kwargs"` | — |
+| [SRC-F725E90B2A-L002678](../../tests/test_web_agent.py#L2678) | 2678 | `""` | — |
+| [SRC-F725E90B2A-L002679](../../tests/test_web_agent.py#L2679) | 2679 | `"        def __enter__(self):"` | — |
+| [SRC-F725E90B2A-L002680](../../tests/test_web_agent.py#L2680) | 2680 | `"            return self"` | — |
+| [SRC-F725E90B2A-L002681](../../tests/test_web_agent.py#L2681) | 2681 | `""` | — |
+| [SRC-F725E90B2A-L002682](../../tests/test_web_agent.py#L2682) | 2682 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-F725E90B2A-L002683](../../tests/test_web_agent.py#L2683) | 2683 | `"            return False"` | — |
 | [SRC-F725E90B2A-L002684](../../tests/test_web_agent.py#L2684) | 2684 | `""` | — |
 | [SRC-F725E90B2A-L002685](../../tests/test_web_agent.py#L2685) | 2685 | `"        stream = fake_stream"` | — |
 | [SRC-F725E90B2A-L002686](../../tests/test_web_agent.py#L2686) | 2686 | `""` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L003470](../../tests/test_web_agent.py#L3470) | 3470 | `"            \"pages_fetched\": 0,"` | — |
 | [SRC-F725E90B2A-L003471](../../tests/test_web_agent.py#L3471) | 3471 | `"            \"providers_used\": [],"` | — |
 | [SRC-F725E90B2A-L003472](../../tests/test_web_agent.py#L3472) | 3472 | `"            \"platform_counts\": {},"` | — |
-| [SRC-F725E90B2A-L003473](../../tests/test_web_agent.py#L3473) | 3473 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L003474](../../tests/test_web_agent.py#L3474) | 3474 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L003475](../../tests/test_web_agent.py#L3475) | 3475 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L003476](../../tests/test_web_agent.py#L3476) | 3476 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L003477](../../tests/test_web_agent.py#L3477) | 3477 | `"        }"` | — |
-| [SRC-F725E90B2A-L003478](../../tests/test_web_agent.py#L3478) | 3478 | `""` | — |
-| [SRC-F725E90B2A-L003479](../../tests/test_web_agent.py#L3479) | 3479 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-F725E90B2A-L003480](../../tests/test_web_agent.py#L3480) | 3480 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"لم أعثر على مصدر.\")"` | — |
-| [SRC-F725E90B2A-L003481](../../tests/test_web_agent.py#L3481) | 3481 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
-| [SRC-F725E90B2A-L003482](../../tests/test_web_agent.py#L3482) | 3482 | `""` | — |
-| [SRC-F725E90B2A-L003483](../../tests/test_web_agent.py#L3483) | 3483 | `"    agent.answer(question, mode=\"auto\")"` | — |

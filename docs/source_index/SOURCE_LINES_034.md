@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001242 إلى SRC-4CCB1F172B-L000005
+- النطاق: SRC-90FAA34ADE-L001231 إلى SRC-6A7519AC10-L000244
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001231](../../tests/fixtures/answer_quality_cases.json#L1231) | 1231 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001232](../../tests/fixtures/answer_quality_cases.json#L1232) | 1232 | `"          }"` | — |
+| [SRC-90FAA34ADE-L001233](../../tests/fixtures/answer_quality_cases.json#L1233) | 1233 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L001234](../../tests/fixtures/answer_quality_cases.json#L1234) | 1234 | `"        \"notes\": \"No Alexandria weather fixture; reviewer must check explicit missing-data handling\""` | — |
+| [SRC-90FAA34ADE-L001235](../../tests/fixtures/answer_quality_cases.json#L1235) | 1235 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001236](../../tests/fixtures/answer_quality_cases.json#L1236) | 1236 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001237](../../tests/fixtures/answer_quality_cases.json#L1237) | 1237 | `"        \"One city or one of the four dimensions is silently omitted\","` | — |
+| [SRC-90FAA34ADE-L001238](../../tests/fixtures/answer_quality_cases.json#L1238) | 1238 | `"        \"Claims a verified Alexandria forecast despite no such result\""` | — |
+| [SRC-90FAA34ADE-L001239](../../tests/fixtures/answer_quality_cases.json#L1239) | 1239 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001240](../../tests/fixtures/answer_quality_cases.json#L1240) | 1240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001241](../../tests/fixtures/answer_quality_cases.json#L1241) | 1241 | `"    },"` | — |
 | [SRC-90FAA34ADE-L001242](../../tests/fixtures/answer_quality_cases.json#L1242) | 1242 | `"    {"` | — |
 | [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
 | [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
@@ -841,23 +852,3 @@
 | [SRC-6A7519AC10-L000242](../../tests/test_answer_quality_comparison.py#L242) | 242 | `""` | — |
 | [SRC-6A7519AC10-L000243](../../tests/test_answer_quality_comparison.py#L243) | 243 | `"def test_comparison_requires_nonempty_recorded_question_text():"` | — |
 | [SRC-6A7519AC10-L000244](../../tests/test_answer_quality_comparison.py#L244) | 244 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000245](../../tests/test_answer_quality_comparison.py#L245) | 245 | `"    baseline = _run(build_sha=\"a\" * 40, results=[{\"case_id\": \"AQ-001\", \"elapsed_ms\": 20}])"` | — |
-| [SRC-6A7519AC10-L000246](../../tests/test_answer_quality_comparison.py#L246) | 246 | `"    candidate = _run(build_sha=\"b\" * 40, results=[{\"case_id\": \"AQ-001\", \"elapsed_ms\": 10}])"` | — |
-| [SRC-6A7519AC10-L000247](../../tests/test_answer_quality_comparison.py#L247) | 247 | `"    errors = mod.validate_run(baseline, \"baseline\")"` | — |
-| [SRC-6A7519AC10-L000248](../../tests/test_answer_quality_comparison.py#L248) | 248 | `"    assert any(\"prompt must be a non-empty string\" in error for error in errors)"` | — |
-| [SRC-6A7519AC10-L000249](../../tests/test_answer_quality_comparison.py#L249) | 249 | `"    with pytest.raises(ValueError, match=\"prompt must be a non-empty string\"):"` | — |
-| [SRC-6A7519AC10-L000250](../../tests/test_answer_quality_comparison.py#L250) | 250 | `"        mod.compare_runs(baseline, candidate)"` | — |
-## اختبارات
-
-### FILE-4CCB1F172B — [tests/test_answer_quality_corpus.py](../../tests/test_answer_quality_corpus.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-4CCB1F172B-L000001](../../tests/test_answer_quality_corpus.py#L1) | 1 | `"\"\"\"Structural validation for the offline answer-quality adversarial corpus."` | — |
-| [SRC-4CCB1F172B-L000002](../../tests/test_answer_quality_corpus.py#L2) | 2 | `""` | — |
-| [SRC-4CCB1F172B-L000003](../../tests/test_answer_quality_corpus.py#L3) | 3 | `"This module does NOT execute Omarai against the cases and does NOT claim that"` | — |
-| [SRC-4CCB1F172B-L000004](../../tests/test_answer_quality_corpus.py#L4) | 4 | `"any reasoning case passed. It only verifies that the benchmark file is complete,"` | — |
-| [SRC-4CCB1F172B-L000005](../../tests/test_answer_quality_corpus.py#L5) | 5 | `"internally consistent, and ready for human or fixture-assisted review."` | — |

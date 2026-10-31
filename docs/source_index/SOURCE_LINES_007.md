@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000080 إلى SRC-686F71AA50-L000879
+- النطاق: SRC-686F71AA50-L000079 إلى SRC-686F71AA50-L000878
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000079](../../agents/task_understanding.py#L79) | 79 | `"_DECISION_STAGES = {row[\"stage\"] for row in _DECISION_MATRIX}"` | — |
 | [SRC-686F71AA50-L000080](../../agents/task_understanding.py#L80) | 80 | `"_DECISION_IDS = {"` | — |
 | [SRC-686F71AA50-L000081](../../agents/task_understanding.py#L81) | 81 | `"    field: {row[field] for row in _DECISION_MATRIX}"` | — |
 | [SRC-686F71AA50-L000082](../../agents/task_understanding.py#L82) | 82 | `"    for field in (\"check\", \"pass_action\", \"fail_action\")"` | — |
@@ -815,4 +816,3 @@
 | [SRC-686F71AA50-L000876](../../agents/task_understanding.py#L876) | 876 | `"        \"secondary_task_types\": ["` | — |
 | [SRC-686F71AA50-L000877](../../agents/task_understanding.py#L877) | 877 | `"            name for name, signals in matches.items()"` | — |
 | [SRC-686F71AA50-L000878](../../agents/task_understanding.py#L878) | 878 | `"            if signals and name != family"` | — |
-| [SRC-686F71AA50-L000879](../../agents/task_understanding.py#L879) | 879 | `"        ],"` | — |

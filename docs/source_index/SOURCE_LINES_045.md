@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000024 إلى SRC-F725E90B2A-L000283
+- النطاق: SRC-AFEDC2645A-L000013 إلى SRC-F725E90B2A-L000272
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000013](../../tests/test_task_understanding.py#L13) | 13 | `"        (\"قارن نيسان صني 2022 وهيونداي أكسنت من حيث السعر والصيانة\", \"compare\"),"` | — |
+| [SRC-AFEDC2645A-L000014](../../tests/test_task_understanding.py#L14) | 14 | `"        (\"عايز تجارب ملاك BYD Dolphin في مصر\", \"social_opinions\"),"` | — |
+| [SRC-AFEDC2645A-L000015](../../tests/test_task_understanding.py#L15) | 15 | `"        (\"ازاي أصلح خطأ الشبكة في لوحة إنذار الحريق؟\", \"troubleshoot\"),"` | — |
+| [SRC-AFEDC2645A-L000016](../../tests/test_task_understanding.py#L16) | 16 | `"        (\"اشرح خطوات صيانة حساس الدخان\", \"how_to\"),"` | — |
+| [SRC-AFEDC2645A-L000017](../../tests/test_task_understanding.py#L17) | 17 | `"        (\"لخص الصفحة https://example.com/article\", \"summarize\"),"` | — |
+| [SRC-AFEDC2645A-L000018](../../tests/test_task_understanding.py#L18) | 18 | `"        (\"ابحث عن مشترين يريدون شراء شقة في القاهرة\", \"lead_generation\"),"` | — |
+| [SRC-AFEDC2645A-L000019](../../tests/test_task_understanding.py#L19) | 19 | `"        (\"رشح لي أفضل سيارة بميزانية أقل من 500000 جنيه\", \"recommendation\"),"` | — |
+| [SRC-AFEDC2645A-L000020](../../tests/test_task_understanding.py#L20) | 20 | `"        (\"ما معنى نظام الإنذار المعنون؟\", \"explain_or_define\"),"` | — |
+| [SRC-AFEDC2645A-L000021](../../tests/test_task_understanding.py#L21) | 21 | `"    ],"` | — |
+| [SRC-AFEDC2645A-L000022](../../tests/test_task_understanding.py#L22) | 22 | `")"` | — |
+| [SRC-AFEDC2645A-L000023](../../tests/test_task_understanding.py#L23) | 23 | `"def test_task_family_covers_diverse_natural_language_patterns(question, family):"` | — |
 | [SRC-AFEDC2645A-L000024](../../tests/test_task_understanding.py#L24) | 24 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
 | [SRC-AFEDC2645A-L000025](../../tests/test_task_understanding.py#L25) | 25 | `"    assert spec[\"task_family\"] == family"` | — |
 | [SRC-AFEDC2645A-L000026](../../tests/test_task_understanding.py#L26) | 26 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
@@ -823,14 +834,3 @@
 | [SRC-F725E90B2A-L000270](../../tests/test_web_agent.py#L270) | 270 | `"            return FakeResponse(reddit_xml)"` | — |
 | [SRC-F725E90B2A-L000271](../../tests/test_web_agent.py#L271) | 271 | `"        if \"bsky.app\" in url or \"public.api.bsky.app\" in url:"` | — |
 | [SRC-F725E90B2A-L000272](../../tests/test_web_agent.py#L272) | 272 | `"            return FakeResponse(data={"` | — |
-| [SRC-F725E90B2A-L000273](../../tests/test_web_agent.py#L273) | 273 | `"                \"posts\": [{"` | — |
-| [SRC-F725E90B2A-L000274](../../tests/test_web_agent.py#L274) | 274 | `"                    \"post\": {"` | — |
-| [SRC-F725E90B2A-L000275](../../tests/test_web_agent.py#L275) | 275 | `"                        \"uri\": \"at://did:plc:example/app.bsky.feed.post/rkey123\","` | — |
-| [SRC-F725E90B2A-L000276](../../tests/test_web_agent.py#L276) | 276 | `"                        \"indexedAt\": \"2026-10-12T10:00:00Z\","` | — |
-| [SRC-F725E90B2A-L000277](../../tests/test_web_agent.py#L277) | 277 | `"                        \"record\": {\"text\": \"استخدمت السيارة شهرًا\"},"` | — |
-| [SRC-F725E90B2A-L000278](../../tests/test_web_agent.py#L278) | 278 | `"                        \"author\": {\"handle\": \"driver.bsky.social\", \"displayName\": \"Driver\"},"` | — |
-| [SRC-F725E90B2A-L000279](../../tests/test_web_agent.py#L279) | 279 | `"                    }"` | — |
-| [SRC-F725E90B2A-L000280](../../tests/test_web_agent.py#L280) | 280 | `"                }]"` | — |
-| [SRC-F725E90B2A-L000281](../../tests/test_web_agent.py#L281) | 281 | `"            })"` | — |
-| [SRC-F725E90B2A-L000282](../../tests/test_web_agent.py#L282) | 282 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
-| [SRC-F725E90B2A-L000283](../../tests/test_web_agent.py#L283) | 283 | `""` | — |

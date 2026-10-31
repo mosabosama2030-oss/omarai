@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001511 إلى SRC-1AE03B9EC3-L002310
+- النطاق: SRC-1AE03B9EC3-L001510 إلى SRC-1AE03B9EC3-L002309
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001510](../../agents/web_agent.py#L1510) | 1510 | `"                    if not safe_url:"` | — |
 | [SRC-1AE03B9EC3-L001511](../../agents/web_agent.py#L1511) | 1511 | `"                        rejected += 1"` | — |
 | [SRC-1AE03B9EC3-L001512](../../agents/web_agent.py#L1512) | 1512 | `"                        rejection_counts[\"invalid_url_or_unsafe_target\"] += 1"` | — |
 | [SRC-1AE03B9EC3-L001513](../../agents/web_agent.py#L1513) | 1513 | `"                        continue"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002307](../../agents/web_agent.py#L2307) | 2307 | `"            with httpx.Client("` | — |
 | [SRC-1AE03B9EC3-L002308](../../agents/web_agent.py#L2308) | 2308 | `"                timeout=self._effective_timeout(8.0),"` | — |
 | [SRC-1AE03B9EC3-L002309](../../agents/web_agent.py#L2309) | 2309 | `"                follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L002310](../../agents/web_agent.py#L2310) | 2310 | `"                headers=headers,"` | — |

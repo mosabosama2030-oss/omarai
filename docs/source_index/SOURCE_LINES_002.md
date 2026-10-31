@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000321 إلى SRC-2D53795445-L000074
+- النطاق: SRC-138992B1FC-L000320 إلى SRC-2D53795445-L000073
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"    source_numbers_by_index = {"` | — |
 | [SRC-138992B1FC-L000321](../../agents/answer_validation.py#L321) | 321 | `"        index: _numeric_literals(text)"` | — |
 | [SRC-138992B1FC-L000322](../../agents/answer_validation.py#L322) | 322 | `"        for index, text in source_text_by_index.items()"` | — |
 | [SRC-138992B1FC-L000323](../../agents/answer_validation.py#L323) | 323 | `"    }"` | — |
@@ -842,4 +843,3 @@
 | [SRC-2D53795445-L000071](../../agents/dialogue_state.py#L71) | 71 | `"    return result"` | — |
 | [SRC-2D53795445-L000072](../../agents/dialogue_state.py#L72) | 72 | `""` | — |
 | [SRC-2D53795445-L000073](../../agents/dialogue_state.py#L73) | 73 | `""` | — |
-| [SRC-2D53795445-L000074](../../agents/dialogue_state.py#L74) | 74 | `"def fallback_dialogue_context(question: str, history: Any = None) -> dict[str, Any]:"` | — |

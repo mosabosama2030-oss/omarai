@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000475 إلى SRC-26428BDA96-L000008
+- النطاق: SRC-EEF2E6447C-L000474 إلى SRC-26428BDA96-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000474](../../api/omarai.py#L474) | 474 | `""` | — |
 | [SRC-EEF2E6447C-L000475](../../api/omarai.py#L475) | 475 | `"    def end_headers(self):"` | — |
 | [SRC-EEF2E6447C-L000476](../../api/omarai.py#L476) | 476 | `"        \"\"\"Apply defensive browser headers to successful and error responses alike.\"\"\""` | — |
 | [SRC-EEF2E6447C-L000477](../../api/omarai.py#L477) | 477 | `"        self.send_header(\"X-Content-Type-Options\", \"nosniff\")"` | — |
@@ -878,4 +879,3 @@
 | [SRC-26428BDA96-L000005](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L5) | 5 | ``"> **تنبيه تاريخي:** هذا التقرير لقطة تدقيق مرتبطة بالنسخة `08319cce3652c332e414f691a71cc153dfbfd92e`، قبل دمج PR #44–#47. لا يُستخدم وحده للحكم على `main` الحالي. اقرأ معه [تسوية الأدلة التشغيلية بعد الدمج](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md)، وهي المرجع لتغييرات الموارد والاستشهادات وحالة PR #48 وطلبات التحقق المفتوحة."`` | — |
 | [SRC-26428BDA96-L000006](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L6) | 6 | `""` | — |
 | [SRC-26428BDA96-L000007](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L7) | 7 | `"**المعرّف:** OMARAI-AUDIT-P0-2026-10-19  "` | — |
-| [SRC-26428BDA96-L000008](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L8) | 8 | `"**تاريخ التدقيق:** 2026-10-19  "` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000119 إلى SRC-A8360B1B03-L000188
+- النطاق: SRC-B335630551-L000112 إلى SRC-A8360B1B03-L000177
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,71 +16,82 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-B335630551-L000119](../../README.md#L119) | 119 | ````"```bash"```` | — |
-| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
-| [SRC-B335630551-L000121](../../README.md#L121) | 121 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
-| [SRC-B335630551-L000122](../../README.md#L122) | 122 | ````"```"```` | — |
-| [SRC-B335630551-L000123](../../README.md#L123) | 123 | `""` | — |
-| [SRC-B335630551-L000124](../../README.md#L124) | 124 | `""` | — |
-| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
-| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
-| [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |
-| [SRC-B335630551-L000128](../../README.md#L128) | 128 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
-| [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
-| [SRC-B335630551-L000130](../../README.md#L130) | 130 | ````"```"```` | — |
-| [SRC-B335630551-L000131](../../README.md#L131) | 131 | `""` | — |
-| [SRC-B335630551-L000132](../../README.md#L132) | 132 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
-| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `""` | — |
-| [SRC-B335630551-L000134](../../README.md#L134) | 134 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
+| [SRC-B335630551-L000112](../../README.md#L112) | 112 | `"python -m cli.omarai serve"` | — |
+| [SRC-B335630551-L000113](../../README.md#L113) | 113 | ````"```"```` | — |
+| [SRC-B335630551-L000114](../../README.md#L114) | 114 | `""` | — |
+| [SRC-B335630551-L000115](../../README.md#L115) | 115 | `"Keep this Termux session running and open **http://127.0.0.1:8765** in the phone's browser. The agent chat is the home screen. The existing lead workspace remains available at **http://127.0.0.1:8765/leads**."` | — |
+| [SRC-B335630551-L000116](../../README.md#L116) | 116 | `""` | — |
+| [SRC-B335630551-L000117](../../README.md#L117) | 117 | `"The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat."` | — |
+| [SRC-B335630551-L000118](../../README.md#L118) | 118 | `""` | — |
+| [SRC-B335630551-L000119](../../README.md#L119) | 119 | `"### Optional configuration"` | — |
+| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `""` | — |
+| [SRC-B335630551-L000121](../../README.md#L121) | 121 | `"For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics."` | — |
+| [SRC-B335630551-L000122](../../README.md#L122) | 122 | `""` | — |
+| [SRC-B335630551-L000123](../../README.md#L123) | 123 | ````"```bash"```` | — |
+| [SRC-B335630551-L000124](../../README.md#L124) | 124 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-B335630551-L000126](../../README.md#L126) | 126 | ````"```"```` | — |
+| [SRC-B335630551-L000127](../../README.md#L127) | 127 | `""` | — |
+| [SRC-B335630551-L000128](../../README.md#L128) | 128 | `""` | — |
+| [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
+| [SRC-B335630551-L000130](../../README.md#L130) | 130 | `""` | — |
+| [SRC-B335630551-L000131](../../README.md#L131) | 131 | ````"```bash"```` | — |
+| [SRC-B335630551-L000132](../../README.md#L132) | 132 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
+| [SRC-B335630551-L000133](../../README.md#L133) | 133 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
+| [SRC-B335630551-L000134](../../README.md#L134) | 134 | ````"```"```` | — |
 | [SRC-B335630551-L000135](../../README.md#L135) | 135 | `""` | — |
-| [SRC-B335630551-L000136](../../README.md#L136) | 136 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
+| [SRC-B335630551-L000136](../../README.md#L136) | 136 | ``"Use `OMARAI_LLM_API_KEY` instead of `OPENROUTER_API_KEY` when you want a separate environment variable. `OMARAI_LLM_TIMEOUT` accepts a timeout in seconds from 5 to 60. To customize model roles, set `OMARAI_PLANNER_MODEL`, `OMARAI_ANSWER_MODEL`, and/or `OMARAI_REVIEW_MODEL`; `OMARAI_LLM_MODEL` remains a global override for all roles that have no role-specific override. `OMARAI_LLM_FALLBACK_MODEL` changes the default `openrouter/free` fallback. Provider pricing, model availability and rate limits can change; check the chosen provider before using a paid model. Optional social credentials may be configured in the same Termux session before starting the server: `REDDIT_CLIENT_ID` + `REDDIT_CLIENT_SECRET` (official OAuth access), `X_BEARER_TOKEN`, `YOUTUBE_API_KEY`, `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` + optional `META_GRAPH_VERSION`, and `FACEBOOK_PAGE_ACCESS_TOKEN` + `FACEBOOK_PAGE_IDS` (comma-separated Page IDs that the authorized token can access). Use `read -r -s` to enter secrets privately rather than saving them in shell history. Do not store keys in source files, HTML, commits or chat messages."`` | — |
 | [SRC-B335630551-L000137](../../README.md#L137) | 137 | `""` | — |
-| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"## API"` | — |
+| [SRC-B335630551-L000138](../../README.md#L138) | 138 | `"If no language-model key is configured, Omarai can still attempt web search and show source snippets, but it cannot provide the full generative understanding/synthesis layer. If search providers are temporarily unavailable, the agent reports the limitation rather than pretending that a search succeeded."` | — |
 | [SRC-B335630551-L000139](../../README.md#L139) | 139 | `""` | — |
-| [SRC-B335630551-L000140](../../README.md#L140) | 140 | ``"- `GET /` — web-research chat"`` | — |
-| [SRC-B335630551-L000141](../../README.md#L141) | 141 | ``"- `GET /leads` — existing lead workspace"`` | — |
-| [SRC-B335630551-L000142](../../README.md#L142) | 142 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
-| [SRC-B335630551-L000143](../../README.md#L143) | 143 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
-| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
-| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
-| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
-| [SRC-B335630551-L000147](../../README.md#L147) | 147 | `""` | — |
-| [SRC-B335630551-L000148](../../README.md#L148) | 148 | `"Example request:"` | — |
-| [SRC-B335630551-L000149](../../README.md#L149) | 149 | `""` | — |
-| [SRC-B335630551-L000150](../../README.md#L150) | 150 | ````"```json"```` | — |
-| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `"{"` | — |
-| [SRC-B335630551-L000152](../../README.md#L152) | 152 | `"  \"question\": \"Compare the latest public information about two technologies\","` | — |
-| [SRC-B335630551-L000153](../../README.md#L153) | 153 | `"  \"history\": []"` | — |
-| [SRC-B335630551-L000154](../../README.md#L154) | 154 | `"}"` | — |
-| [SRC-B335630551-L000155](../../README.md#L155) | 155 | ````"```"```` | — |
-| [SRC-B335630551-L000156](../../README.md#L156) | 156 | `""` | — |
-| [SRC-B335630551-L000157](../../README.md#L157) | 157 | ``"The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose."`` | — |
-| [SRC-B335630551-L000158](../../README.md#L158) | 158 | `""` | — |
-| [SRC-B335630551-L000159](../../README.md#L159) | 159 | `"## Existing lead workspace"` | — |
+| [SRC-B335630551-L000140](../../README.md#L140) | 140 | `"For the platform boundaries, optional credentials and safe Termux setup for social connectors, see the [Arabic research connectors guide](docs/RESEARCH_CONNECTORS_AR.md)."` | — |
+| [SRC-B335630551-L000141](../../README.md#L141) | 141 | `""` | — |
+| [SRC-B335630551-L000142](../../README.md#L142) | 142 | `"## API"` | — |
+| [SRC-B335630551-L000143](../../README.md#L143) | 143 | `""` | — |
+| [SRC-B335630551-L000144](../../README.md#L144) | 144 | ``"- `GET /` — web-research chat"`` | — |
+| [SRC-B335630551-L000145](../../README.md#L145) | 145 | ``"- `GET /leads` — existing lead workspace"`` | — |
+| [SRC-B335630551-L000146](../../README.md#L146) | 146 | ``"- `GET /api/health` — setup and dependency status (never returns the API key)"`` | — |
+| [SRC-B335630551-L000147](../../README.md#L147) | 147 | ``"- `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors"`` | — |
+| [SRC-B335630551-L000148](../../README.md#L148) | 148 | ``"- `POST /api/agent` — open-ended question plus optional recent `history`"`` | — |
+| [SRC-B335630551-L000149](../../README.md#L149) | 149 | ``"- `POST /api/analyze` — existing rule-based lead-text assessment"`` | — |
+| [SRC-B335630551-L000150](../../README.md#L150) | 150 | ``"- `GET/POST /api/leads` — existing local lead records"`` | — |
+| [SRC-B335630551-L000151](../../README.md#L151) | 151 | `""` | — |
+| [SRC-B335630551-L000152](../../README.md#L152) | 152 | `"Example request:"` | — |
+| [SRC-B335630551-L000153](../../README.md#L153) | 153 | `""` | — |
+| [SRC-B335630551-L000154](../../README.md#L154) | 154 | ````"```json"```` | — |
+| [SRC-B335630551-L000155](../../README.md#L155) | 155 | `"{"` | — |
+| [SRC-B335630551-L000156](../../README.md#L156) | 156 | `"  \"question\": \"Compare the latest public information about two technologies\","` | — |
+| [SRC-B335630551-L000157](../../README.md#L157) | 157 | `"  \"history\": []"` | — |
+| [SRC-B335630551-L000158](../../README.md#L158) | 158 | `"}"` | — |
+| [SRC-B335630551-L000159](../../README.md#L159) | 159 | ````"```"```` | — |
 | [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
-| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
+| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose."`` | — |
 | [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
-| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"Analyze text from the CLI:"` | — |
+| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"## Existing lead workspace"` | — |
 | [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
-| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ````"```bash"```` | — |
-| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
-| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```"```` | — |
+| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
+| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `""` | — |
+| [SRC-B335630551-L000167](../../README.md#L167) | 167 | `"Analyze text from the CLI:"` | — |
 | [SRC-B335630551-L000168](../../README.md#L168) | 168 | `""` | — |
-| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
-| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
-| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```bash"```` | — |
-| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
-| [SRC-B335630551-L000173](../../README.md#L173) | 173 | `"python -m cli.omarai list --limit 50"` | — |
-| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
-| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```"```` | — |
-| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `""` | — |
-| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"## Checks"` | — |
-| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `""` | — |
-| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```bash"```` | — |
-| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `"python -m pip install -e \".[dev]\""` | — |
-| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"ruff check agents api cli tests"` | — |
-| [SRC-B335630551-L000182](../../README.md#L182) | 182 | `"python -m pytest -q"` | — |
-| [SRC-B335630551-L000183](../../README.md#L183) | 183 | ````"```"```` | — |
+| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ````"```bash"```` | — |
+| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
+| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```"```` | — |
+| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `""` | — |
+| [SRC-B335630551-L000173](../../README.md#L173) | 173 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
+| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `""` | — |
+| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```bash"```` | — |
+| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
+| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"python -m cli.omarai list --limit 50"` | — |
+| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
+| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```"```` | — |
+| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `""` | — |
+| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"## Checks"` | — |
+| [SRC-B335630551-L000182](../../README.md#L182) | 182 | `""` | — |
+| [SRC-B335630551-L000183](../../README.md#L183) | 183 | ````"```bash"```` | — |
+| [SRC-B335630551-L000184](../../README.md#L184) | 184 | `"python -m pip install -e \".[dev]\""` | — |
+| [SRC-B335630551-L000185](../../README.md#L185) | 185 | `"ruff check agents api cli tests"` | — |
+| [SRC-B335630551-L000186](../../README.md#L186) | 186 | `"python -m pytest -q"` | — |
+| [SRC-B335630551-L000187](../../README.md#L187) | 187 | ````"```"```` | — |
 ## إعدادات وتشغيل
 
 ### FILE-A64CF250B4 — [render.yaml](../../render.yaml#L1)
@@ -841,14 +852,3 @@
 | [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"    if status != 200 or not answer:"` | — |
 | [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\")"` | — |
 | [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"    sources = answer.get(\"sources\")"` | — |
-| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    usable = ["` | — |
-| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        item for item in sources if isinstance(item, dict)"` | — |
-| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"        and isinstance(item.get(\"url\"), str)"` | — |
-| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
-| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
-| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"    ] if isinstance(sources, list) else []"` | — |
-| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
-| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        raise SmokeError(\"Agent request did not return a live web search with usable source URLs.\")"` | — |
-| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"        raise SmokeError(\"Agent request did not confirm that a language model was used.\")"` | — |
-| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    report = answer.get(\"search_report\")"` | — |

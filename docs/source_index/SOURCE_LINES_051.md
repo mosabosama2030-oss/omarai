@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **051**
-- سجلات الأسطر: **290**
-- النطاق: SRC-DE7EABE998-L000242 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **301**
+- النطاق: SRC-DE7EABE998-L000231 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000231](../../web/agent.html#L231) | 231 | `" const leadSignalCount=lead&&lead.candidate_signal_count!==null&&lead.candidate_signal_count!==undefined&&Number.isFinite(Number(lead.candidate_signal_count))?Number(lead.candidate_signal_count):null;"` | — |
+| [SRC-DE7EABE998-L000232](../../web/agent.html#L232) | 232 | `" const noQualifiedLeads=!!lead&&!leadResearchIncomplete&&leadSignalCount===0;"` | — |
+| [SRC-DE7EABE998-L000233](../../web/agent.html#L233) | 233 | `" const scoreLabel=lead?(leadResearchIncomplete?\"تعذر حسم البحث عن العملاء\":noQualifiedLeads?\"لم يُثبت وجود عميل محتمل\":\"إشارات نية شراء مرشحة\"):(researchErrorOutcome?\"تعذر تحديد التغطية\":(e.coverage_level\|\|\"تغطية محدودة\"));"` | — |
+| [SRC-DE7EABE998-L000234](../../web/agent.html#L234) | 234 | `" const metrics=lead?["` | — |
+| [SRC-DE7EABE998-L000235](../../web/agent.html#L235) | 235 | `"  [leadSignalCount??\"غير محدد\",\"إشارة نصية مرشحة لنية شراء\"],"` | — |
+| [SRC-DE7EABE998-L000236](../../web/agent.html#L236) | 236 | `"  [lead.related_results_reviewed??\"غير محدد\",\"نتيجة تمت مراجعتها\"],"` | — |
+| [SRC-DE7EABE998-L000237](../../web/agent.html#L237) | 237 | `"  [r.pages_fetched??(leadResearchIncomplete?\"غير محدد\":0),\"صفحة قُرئت\"],"` | — |
+| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `"  [leadResearchIncomplete?\"غير محدد\":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),\"واجهة أسهمت بمصدر صالح\"]"` | — |
+| [SRC-DE7EABE998-L000239](../../web/agent.html#L239) | 239 | `" ]:["` | — |
+| [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `"  [researchErrorOutcome?(r.unique_sources??\"غير محدد\"):(r.unique_sources??sources.length),\"مصدرًا فريدًا\"],"` | — |
+| [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `"  [researchErrorOutcome?\"غير محدد\":(e.unique_domains??\"—\"),\"نطاقًا مختلفًا\"],"` | — |
 | [SRC-DE7EABE998-L000242](../../web/agent.html#L242) | 242 | `"  [researchErrorOutcome?(r.pages_fetched??\"غير محدد\"):(r.pages_fetched??e.pages_read??0),\"صفحة قُرئت\"],"` | — |
 | [SRC-DE7EABE998-L000243](../../web/agent.html#L243) | 243 | `"  [researchErrorOutcome?\"غير محدد\":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),\"واجهة أسهمت بمصدر صالح\"]"` | — |
 | [SRC-DE7EABE998-L000244](../../web/agent.html#L244) | 244 | `" ];"` | — |

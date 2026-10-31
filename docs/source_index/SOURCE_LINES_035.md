@@ -4,9 +4,24 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000006 إلى SRC-B3062EB677-L000337
+- النطاق: SRC-6A7519AC10-L000245 إلى SRC-B3062EB677-L000326
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-6A7519AC10 — [tests/test_answer_quality_comparison.py](../../tests/test_answer_quality_comparison.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-6A7519AC10-L000245](../../tests/test_answer_quality_comparison.py#L245) | 245 | `"    baseline = _run(build_sha=\"a\" * 40, results=[{\"case_id\": \"AQ-001\", \"elapsed_ms\": 20}])"` | — |
+| [SRC-6A7519AC10-L000246](../../tests/test_answer_quality_comparison.py#L246) | 246 | `"    candidate = _run(build_sha=\"b\" * 40, results=[{\"case_id\": \"AQ-001\", \"elapsed_ms\": 10}])"` | — |
+| [SRC-6A7519AC10-L000247](../../tests/test_answer_quality_comparison.py#L247) | 247 | `"    errors = mod.validate_run(baseline, \"baseline\")"` | — |
+| [SRC-6A7519AC10-L000248](../../tests/test_answer_quality_comparison.py#L248) | 248 | `"    assert any(\"prompt must be a non-empty string\" in error for error in errors)"` | — |
+| [SRC-6A7519AC10-L000249](../../tests/test_answer_quality_comparison.py#L249) | 249 | `"    with pytest.raises(ValueError, match=\"prompt must be a non-empty string\"):"` | — |
+| [SRC-6A7519AC10-L000250](../../tests/test_answer_quality_comparison.py#L250) | 250 | `"        mod.compare_runs(baseline, candidate)"` | — |
 ## اختبارات
 
 ### FILE-4CCB1F172B — [tests/test_answer_quality_corpus.py](../../tests/test_answer_quality_corpus.py#L1)
@@ -16,6 +31,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000001](../../tests/test_answer_quality_corpus.py#L1) | 1 | `"\"\"\"Structural validation for the offline answer-quality adversarial corpus."` | — |
+| [SRC-4CCB1F172B-L000002](../../tests/test_answer_quality_corpus.py#L2) | 2 | `""` | — |
+| [SRC-4CCB1F172B-L000003](../../tests/test_answer_quality_corpus.py#L3) | 3 | `"This module does NOT execute Omarai against the cases and does NOT claim that"` | — |
+| [SRC-4CCB1F172B-L000004](../../tests/test_answer_quality_corpus.py#L4) | 4 | `"any reasoning case passed. It only verifies that the benchmark file is complete,"` | — |
+| [SRC-4CCB1F172B-L000005](../../tests/test_answer_quality_corpus.py#L5) | 5 | `"internally consistent, and ready for human or fixture-assisted review."` | — |
 | [SRC-4CCB1F172B-L000006](../../tests/test_answer_quality_corpus.py#L6) | 6 | `"\"\"\""` | — |
 | [SRC-4CCB1F172B-L000007](../../tests/test_answer_quality_corpus.py#L7) | 7 | `"from __future__ import annotations"` | — |
 | [SRC-4CCB1F172B-L000008](../../tests/test_answer_quality_corpus.py#L8) | 8 | `""` | — |
@@ -832,14 +852,3 @@
 | [SRC-B3062EB677-L000324](../../tests/test_answer_quality_runner.py#L324) | 324 | `""` | — |
 | [SRC-B3062EB677-L000325](../../tests/test_answer_quality_runner.py#L325) | 325 | `"def test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation(tmp_path):"` | — |
 | [SRC-B3062EB677-L000326](../../tests/test_answer_quality_runner.py#L326) | 326 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000327](../../tests/test_answer_quality_runner.py#L327) | 327 | `"    ledger_path = tmp_path / \"cost-ledger.json\""` | — |
-| [SRC-B3062EB677-L000328](../../tests/test_answer_quality_runner.py#L328) | 328 | `"    ledger_path.write_text("` | — |
-| [SRC-B3062EB677-L000329](../../tests/test_answer_quality_runner.py#L329) | 329 | `"        json.dumps({"` | — |
-| [SRC-B3062EB677-L000330](../../tests/test_answer_quality_runner.py#L330) | 330 | `"            \"schema_version\": \"1.0\","` | — |
-| [SRC-B3062EB677-L000331](../../tests/test_answer_quality_runner.py#L331) | 331 | `"            \"currency\": \"USD\","` | — |
-| [SRC-B3062EB677-L000332](../../tests/test_answer_quality_runner.py#L332) | 332 | `"            \"scope\": \"complete_request\","` | — |
-| [SRC-B3062EB677-L000333](../../tests/test_answer_quality_runner.py#L333) | 333 | `"            \"source\": \"provider usage export reviewed by operator\","` | — |
-| [SRC-B3062EB677-L000334](../../tests/test_answer_quality_runner.py#L334) | 334 | `"            \"costs\": [{\"case_id\": \"AQ-001\", \"cost_usd\": 0.0042}],"` | — |
-| [SRC-B3062EB677-L000335](../../tests/test_answer_quality_runner.py#L335) | 335 | `"        }),"` | — |
-| [SRC-B3062EB677-L000336](../../tests/test_answer_quality_runner.py#L336) | 336 | `"        encoding=\"utf-8\","` | — |
-| [SRC-B3062EB677-L000337](../../tests/test_answer_quality_runner.py#L337) | 337 | `"    )"` | — |

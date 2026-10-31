@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0799EEEB02-L000222 إلى SRC-1AE03B9EC3-L000710
+- النطاق: SRC-0799EEEB02-L000221 إلى SRC-1AE03B9EC3-L000709
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0799EEEB02-L000221](../../agents/tool_execution_status.py#L221) | 221 | `"        status = \"failed\" if social_connector_errors else \"completed_no_usable_results\""` | — |
 | [SRC-0799EEEB02-L000222](../../agents/tool_execution_status.py#L222) | 222 | `"    elif social_configured_connectors and all("` | — |
 | [SRC-0799EEEB02-L000223](../../agents/tool_execution_status.py#L223) | 223 | `"        row.get(\"attempted\") is False for row in social_configured_connectors"` | — |
 | [SRC-0799EEEB02-L000224](../../agents/tool_execution_status.py#L224) | 224 | `"    ):"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000707](../../agents/web_agent.py#L707) | 707 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000708](../../agents/web_agent.py#L708) | 708 | `"            safe = re.sub("` | — |
 | [SRC-1AE03B9EC3-L000709](../../agents/web_agent.py#L709) | 709 | `"                r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\s]+\","` | — |
-| [SRC-1AE03B9EC3-L000710](../../agents/web_agent.py#L710) | 710 | `"                r\"\\1[REDACTED]\","` | — |

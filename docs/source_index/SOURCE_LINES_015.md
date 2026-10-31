@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004711 إلى SRC-1AE03B9EC3-L005510
+- النطاق: SRC-1AE03B9EC3-L004710 إلى SRC-1AE03B9EC3-L005509
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004710](../../agents/web_agent.py#L4710) | 4710 | `"                        bool(semantic_context.get(\"needs_web\"))"` | — |
 | [SRC-1AE03B9EC3-L004711](../../agents/web_agent.py#L4711) | 4711 | `"                        or self._requires_web_research(working_question, routing_mode)"` | — |
 | [SRC-1AE03B9EC3-L004712](../../agents/web_agent.py#L4712) | 4712 | `"                    ),"` | — |
 | [SRC-1AE03B9EC3-L004713](../../agents/web_agent.py#L4713) | 4713 | `"                )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005507](../../agents/web_agent.py#L5507) | 5507 | `"                    }"` | — |
 | [SRC-1AE03B9EC3-L005508](../../agents/web_agent.py#L5508) | 5508 | `"                    independent_domains.discard(\"\")"` | — |
 | [SRC-1AE03B9EC3-L005509](../../agents/web_agent.py#L5509) | 5509 | `"                    needs_corroboration = ("` | — |
-| [SRC-1AE03B9EC3-L005510](../../agents/web_agent.py#L5510) | 5510 | `"                        len(sources) < 2 or len(independent_domains) < 2"` | — |

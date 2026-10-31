@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000230 إلى SRC-E599346ABE-L001029
+- النطاق: SRC-E599346ABE-L000229 إلى SRC-E599346ABE-L001028
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |
 | [SRC-E599346ABE-L000230](../generate_index.py#L230) | 230 | `"        \"\"\"Return a compact first-paragraph summary and its documentation state.\"\"\""` | — |
 | [SRC-E599346ABE-L000231](../generate_index.py#L231) | 231 | `"        docstring = ast.get_docstring(node, clean=True)"` | — |
 | [SRC-E599346ABE-L000232](../generate_index.py#L232) | 232 | `"        if not docstring or not docstring.strip():"` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001026](../generate_index.py#L1026) | 1026 | `"            marker.file.casefold(),"` | — |
 | [SRC-E599346ABE-L001027](../generate_index.py#L1027) | 1027 | `"            marker.line,"` | — |
 | [SRC-E599346ABE-L001028](../generate_index.py#L1028) | 1028 | `"            marker.kind.casefold(),"` | — |
-| [SRC-E599346ABE-L001029](../generate_index.py#L1029) | 1029 | `"            marker.name.casefold(),"` | — |

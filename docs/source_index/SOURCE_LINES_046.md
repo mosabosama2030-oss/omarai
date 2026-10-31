@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000284 إلى SRC-F725E90B2A-L001083
+- النطاق: SRC-F725E90B2A-L000273 إلى SRC-F725E90B2A-L001072
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000273](../../tests/test_web_agent.py#L273) | 273 | `"                \"posts\": [{"` | — |
+| [SRC-F725E90B2A-L000274](../../tests/test_web_agent.py#L274) | 274 | `"                    \"post\": {"` | — |
+| [SRC-F725E90B2A-L000275](../../tests/test_web_agent.py#L275) | 275 | `"                        \"uri\": \"at://did:plc:example/app.bsky.feed.post/rkey123\","` | — |
+| [SRC-F725E90B2A-L000276](../../tests/test_web_agent.py#L276) | 276 | `"                        \"indexedAt\": \"2026-10-12T10:00:00Z\","` | — |
+| [SRC-F725E90B2A-L000277](../../tests/test_web_agent.py#L277) | 277 | `"                        \"record\": {\"text\": \"استخدمت السيارة شهرًا\"},"` | — |
+| [SRC-F725E90B2A-L000278](../../tests/test_web_agent.py#L278) | 278 | `"                        \"author\": {\"handle\": \"driver.bsky.social\", \"displayName\": \"Driver\"},"` | — |
+| [SRC-F725E90B2A-L000279](../../tests/test_web_agent.py#L279) | 279 | `"                    }"` | — |
+| [SRC-F725E90B2A-L000280](../../tests/test_web_agent.py#L280) | 280 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000281](../../tests/test_web_agent.py#L281) | 281 | `"            })"` | — |
+| [SRC-F725E90B2A-L000282](../../tests/test_web_agent.py#L282) | 282 | `"        raise AssertionError(f\"Unexpected URL: {url}\")"` | — |
+| [SRC-F725E90B2A-L000283](../../tests/test_web_agent.py#L283) | 283 | `""` | — |
 | [SRC-F725E90B2A-L000284](../../tests/test_web_agent.py#L284) | 284 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
 | [SRC-F725E90B2A-L000285](../../tests/test_web_agent.py#L285) | 285 | `"    results, warnings = WebAgent()._search_social("` | — |
 | [SRC-F725E90B2A-L000286](../../tests/test_web_agent.py#L286) | 286 | `"        \"سيارة كهربائية\", [\"reddit\", \"bluesky\"]"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L001070](../../tests/test_web_agent.py#L1070) | 1070 | `"def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():"` | — |
 | [SRC-F725E90B2A-L001071](../../tests/test_web_agent.py#L1071) | 1071 | `"    normalized = _normalize_search_query(\"إِنَّ أَسْعَارَ أُسْتُرَالِيَا\")"` | — |
 | [SRC-F725E90B2A-L001072](../../tests/test_web_agent.py#L1072) | 1072 | `"    assert \"إ\" not in normalized"` | — |
-| [SRC-F725E90B2A-L001073](../../tests/test_web_agent.py#L1073) | 1073 | `"    assert \"أ\" not in normalized"` | — |
-| [SRC-F725E90B2A-L001074](../../tests/test_web_agent.py#L1074) | 1074 | `"    assert \"ا\" in normalized"` | — |
-| [SRC-F725E90B2A-L001075](../../tests/test_web_agent.py#L1075) | 1075 | `"    assert normalized == \"ان اسعار استراليا\""` | — |
-| [SRC-F725E90B2A-L001076](../../tests/test_web_agent.py#L1076) | 1076 | `""` | — |
-| [SRC-F725E90B2A-L001077](../../tests/test_web_agent.py#L1077) | 1077 | `""` | — |
-| [SRC-F725E90B2A-L001078](../../tests/test_web_agent.py#L1078) | 1078 | `"def test_relevance_filter_rejects_translation_and_sports_noise():"` | — |
-| [SRC-F725E90B2A-L001079](../../tests/test_web_agent.py#L1079) | 1079 | `"    query = \"قارن Railway و Render لاستضافة Python\""` | — |
-| [SRC-F725E90B2A-L001080](../../tests/test_web_agent.py#L1080) | 1080 | `"    assert _relevance_ratio(query, \"Google Translate: error in translation\") < 0.20"` | — |
-| [SRC-F725E90B2A-L001081](../../tests/test_web_agent.py#L1081) | 1081 | `"    assert _relevance_ratio("` | — |
-| [SRC-F725E90B2A-L001082](../../tests/test_web_agent.py#L1082) | 1082 | `"        \"أول شركة ناشئة في صعيد مصر عام 2019\","` | — |
-| [SRC-F725E90B2A-L001083](../../tests/test_web_agent.py#L1083) | 1083 | `"        \"نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم\","` | — |

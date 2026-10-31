@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000228 إلى SRC-D17CE3D12F-L001027
+- النطاق: SRC-D17CE3D12F-L000224 إلى SRC-D17CE3D12F-L001023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000224](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L224) | 224 | `"## 15. دورة حياة التطوير الآمن (Secure SDLC)"` | — |
+| [SRC-D17CE3D12F-L000225](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L225) | 225 | `""` | — |
+| [SRC-D17CE3D12F-L000226](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L226) | 226 | `"1. MUST دمج الأمن في التخطيط والتصميم والبرمجة والاختبار والنشر والصيانة، لا في فحص أخير فقط."` | — |
+| [SRC-D17CE3D12F-L000227](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L227) | 227 | `"2. MUST إجراء threat modeling عند تغير تدفق حساس للبيانات أو الأدوات أو الهوية أو الاتصالات الخارجية."` | — |
 | [SRC-D17CE3D12F-L000228](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L228) | 228 | `"3. SHOULD استخدام نمذجة تهديدات عملية مثل STRIDE أو أسلوب مكافئ عندما يساعد في كشف الأصول والحدود والخصوم ومسارات الهجوم."` | — |
 | [SRC-D17CE3D12F-L000229](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L229) | 229 | `"4. MUST وجود سياسة للتعامل مع الثغرات: تسجيلها، وتقييم شدتها، وإصلاحها، وإعادة اختبارها، وتوثيق المخاطر المتبقية."` | — |
 | [SRC-D17CE3D12F-L000230](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L230) | 230 | `"5. MUST اعتماد إعدادات آمنة افتراضيًا، وعدم فتح وضع تشخيصي أو CORS واسع أو endpoint إداري للعامة بلا حاجة."` | — |
@@ -812,7 +816,3 @@
 | [SRC-D17CE3D12F-L001021](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1021) | 1021 | `"1. المرجع معيار/دليل لتصميم التقييم؛ ليس شهادة اعتماد."` | — |
 | [SRC-D17CE3D12F-L001022](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1022) | 1022 | `"2. عند اختيار بند منه، سجل اسم المرجع وإصداره وتاريخ المراجعة والنطاق الذي ينطبق."` | — |
 | [SRC-D17CE3D12F-L001023](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1023) | 1023 | `"3. لا تُعلن «متوافق مع معيار» إلا بعد تحديد المتطلبات المنطبقة وإجراء تقييم موثق وأدلة تحقق."` | — |
-| [SRC-D17CE3D12F-L001024](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1024) | 1024 | `"4. لا تتبع إصدارًا متغيرًا دون مراجعة أثر التحديث على الضوابط الحالية."` | — |
-| [SRC-D17CE3D12F-L001025](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1025) | 1025 | `"5. إذا تعارضت توصية عامة مع قيد موثق في Omarai، سجّل التعارض والقرار والسبب ولا تتجاهل التوصية بصمت."` | — |
-| [SRC-D17CE3D12F-L001026](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1026) | 1026 | `""` | — |
-| [SRC-D17CE3D12F-L001027](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1027) | 1027 | `"---"` | — |

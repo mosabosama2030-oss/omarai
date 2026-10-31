@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001084 إلى SRC-F725E90B2A-L001883
+- النطاق: SRC-F725E90B2A-L001073 إلى SRC-F725E90B2A-L001872
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001073](../../tests/test_web_agent.py#L1073) | 1073 | `"    assert \"أ\" not in normalized"` | — |
+| [SRC-F725E90B2A-L001074](../../tests/test_web_agent.py#L1074) | 1074 | `"    assert \"ا\" in normalized"` | — |
+| [SRC-F725E90B2A-L001075](../../tests/test_web_agent.py#L1075) | 1075 | `"    assert normalized == \"ان اسعار استراليا\""` | — |
+| [SRC-F725E90B2A-L001076](../../tests/test_web_agent.py#L1076) | 1076 | `""` | — |
+| [SRC-F725E90B2A-L001077](../../tests/test_web_agent.py#L1077) | 1077 | `""` | — |
+| [SRC-F725E90B2A-L001078](../../tests/test_web_agent.py#L1078) | 1078 | `"def test_relevance_filter_rejects_translation_and_sports_noise():"` | — |
+| [SRC-F725E90B2A-L001079](../../tests/test_web_agent.py#L1079) | 1079 | `"    query = \"قارن Railway و Render لاستضافة Python\""` | — |
+| [SRC-F725E90B2A-L001080](../../tests/test_web_agent.py#L1080) | 1080 | `"    assert _relevance_ratio(query, \"Google Translate: error in translation\") < 0.20"` | — |
+| [SRC-F725E90B2A-L001081](../../tests/test_web_agent.py#L1081) | 1081 | `"    assert _relevance_ratio("` | — |
+| [SRC-F725E90B2A-L001082](../../tests/test_web_agent.py#L1082) | 1082 | `"        \"أول شركة ناشئة في صعيد مصر عام 2019\","` | — |
+| [SRC-F725E90B2A-L001083](../../tests/test_web_agent.py#L1083) | 1083 | `"        \"نتائج مباراة كرة القدم وأهداف الدوري المصري اليوم\","` | — |
 | [SRC-F725E90B2A-L001084](../../tests/test_web_agent.py#L1084) | 1084 | `"    ) < 0.20"` | — |
 | [SRC-F725E90B2A-L001085](../../tests/test_web_agent.py#L1085) | 1085 | `"    assert _relevance_ratio("` | — |
 | [SRC-F725E90B2A-L001086](../../tests/test_web_agent.py#L1086) | 1086 | `"        query, \"Railway vs Render for Python app hosting comparison\""` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L001870](../../tests/test_web_agent.py#L1870) | 1870 | `"def test_generator_includes_extracted_targets_as_a_non_authoritative_checklist(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001871](../../tests/test_web_agent.py#L1871) | 1871 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001872](../../tests/test_web_agent.py#L1872) | 1872 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001873](../../tests/test_web_agent.py#L1873) | 1873 | `""` | — |
-| [SRC-F725E90B2A-L001874](../../tests/test_web_agent.py#L1874) | 1874 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001875](../../tests/test_web_agent.py#L1875) | 1875 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001876](../../tests/test_web_agent.py#L1876) | 1876 | `"        return \"مقارنة مختصرة.\""` | — |
-| [SRC-F725E90B2A-L001877](../../tests/test_web_agent.py#L1877) | 1877 | `""` | — |
-| [SRC-F725E90B2A-L001878](../../tests/test_web_agent.py#L1878) | 1878 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001879](../../tests/test_web_agent.py#L1879) | 1879 | `"    result = agent._generate("` | — |
-| [SRC-F725E90B2A-L001880](../../tests/test_web_agent.py#L1880) | 1880 | `"        question=\"قارن بين خدمتين من حيث السعر، الخصوصية والاعتمادية\","` | — |
-| [SRC-F725E90B2A-L001881](../../tests/test_web_agent.py#L1881) | 1881 | `"        history=[],"` | — |
-| [SRC-F725E90B2A-L001882](../../tests/test_web_agent.py#L1882) | 1882 | `"        sources=[sample_source(0), sample_source(1)],"` | — |
-| [SRC-F725E90B2A-L001883](../../tests/test_web_agent.py#L1883) | 1883 | `"        search_warning=None,"` | — |

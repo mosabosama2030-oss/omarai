@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000301 إلى SRC-686F71AA50-L000079
+- النطاق: SRC-1E32639872-L000300 إلى SRC-686F71AA50-L000078
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1E32639872-L000300](../../agents/research_completion.py#L300) | 300 | `"            \"page_text_without_fetched_flag_count\": unflagged_text,"` | — |
 | [SRC-1E32639872-L000301](../../agents/research_completion.py#L301) | 301 | `"            \"connector_status_counts\": connector_counts,"` | — |
 | [SRC-1E32639872-L000302](../../agents/research_completion.py#L302) | 302 | `"            \"connector_failure_count\": connector_errors,"` | — |
 | [SRC-1E32639872-L000303](../../agents/research_completion.py#L303) | 303 | `"            \"connector_success_count\": connector_ok,"` | — |
@@ -851,4 +852,3 @@
 | [SRC-686F71AA50-L000076](../../agents/task_understanding.py#L76) | 76 | `"    {\"stage\": \"synthesize\", \"check\": \"claim_support_and_scope\", \"pass_action\": \"cite_supported_claims_and_qualify_inference\", \"fail_action\": \"answer_partially_or_abstain\"},"` | — |
 | [SRC-686F71AA50-L000077](../../agents/task_understanding.py#L77) | 77 | `"    {\"stage\": \"terminate\", \"check\": \"actual_stage_outcomes\", \"pass_action\": \"report_observed_completion_state\", \"fail_action\": \"mark_partial_failed_or_not_run\"},"` | — |
 | [SRC-686F71AA50-L000078](../../agents/task_understanding.py#L78) | 78 | `")"` | — |
-| [SRC-686F71AA50-L000079](../../agents/task_understanding.py#L79) | 79 | `"_DECISION_STAGES = {row[\"stage\"] for row in _DECISION_MATRIX}"` | — |
