@@ -5,6 +5,8 @@ import csv
 import hashlib
 import sqlite3
 
+import pytest
+
 from agents.omarai import DEFAULT_TENANT_ID, LeadStore, normalize
 
 
