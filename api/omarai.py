@@ -310,13 +310,30 @@ class Handler(BaseHTTPRequestHandler):
             cls._agent_semaphore.release()
 
     def _authorized(self):
-        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
-        if not expected:
-            return os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
+        """Resolve the request identity from a verified token or loopback dev mode.
+
+        Request-body tenant IDs are never used to establish tenant context.
+        Public deployments always require a valid bearer credential.
+        """
+        self._authenticated_principal = None
         supplied = self.headers.get("Authorization", "")
-        if not supplied.startswith("Bearer "):
-            return False
-        return hmac.compare_digest(supplied[7:].strip(), expected)
+        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
+        if supplied.startswith("Bearer "):
+            token = supplied[7:].strip()
+            if expected and hmac.compare_digest(token, expected):
+                self._authenticated_principal = self.store.default_principal()
+            else:
+                self._authenticated_principal = self.store.resolve_api_token(token)
+            return bool(self._authenticated_principal)
+
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1":
+            try:
+                if ipaddress.ip_address(self.client_address[0]).is_loopback:
+                    self._authenticated_principal = self.store.default_principal()
+                    return bool(self._authenticated_principal)
+            except ValueError:
+                pass
+        return False
 
     def _allowed_origins(self):
         """Return configured browser origins plus this service’s own origin.
@@ -529,7 +546,7 @@ class Handler(BaseHTTPRequestHandler):
             q = parse_qs(parsed.query)
             try:
                 limit = max(1, min(int(q.get("limit", ["100"])[0]), 500))
-                leads = self.store.list(q.get("status", [None])[0], limit)
+                leads = self.store.list(q.get("status", [None])[0], limit, tenant_id=self._authenticated_principal["tenant_id"])
             except (ValueError, TypeError):
                 return self.respond(400, {"error": "invalid status or limit"})
             return self.respond(200, {"leads": leads, "count": len(leads)})
@@ -593,7 +610,7 @@ class Handler(BaseHTTPRequestHandler):
                     return self.respond(400, {"error": "question must be a non-empty string"})
                 if len(question) > 1000:
                     return self.respond(400, {"error": "question must be at most 1000 characters"})
-                return self.respond(200, answer_question(question, self.store))
+                return self.respond(200, answer_question(question, self.store, tenant_id=self._authenticated_principal["tenant_id"]))
             if path == "/api/analyze":
                 return self.respond(
                     200,
@@ -612,11 +629,12 @@ class Handler(BaseHTTPRequestHandler):
                     data.get("note", ""),
                     data.get("product_terms", []),
                     data.get("location_terms", []),
+                    tenant_id=self._authenticated_principal["tenant_id"],
                 )
                 return self.respond(201 if created else 200, {"lead": lead, "created": created})
             route = path.split("/")
             if len(route) == 5 and route[1:3] == ["api", "leads"] and route[4] == "status":
-                lead = self.store.update_status(route[3], data.get("status", "new"))
+                lead = self.store.update_status(route[3], data.get("status", "new"), tenant_id=self._authenticated_principal["tenant_id"])
                 return self.respond(200, {"lead": lead}) if lead else self.respond(404, {"error": "lead not found"})
             return self.respond(404, {"error": "not found"})
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
@@ -641,10 +659,10 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
-def answer_question(question, store):
+def answer_question(question, store, *, tenant_id=None):
     """Answer common operational questions from local records using explicit rules."""
     normalized = normalize(question)
-    leads = store.list(limit=500)
+    leads = store.list(limit=500, tenant_id=tenant_id)
     active = [lead for lead in leads if lead["status"] not in {"rejected", "converted"}]
     if any(term in normalized for term in ("افضل عميل", "احسن عميل", "افضل اشارة", "احسن اشارة", "اشارة اراجعها", "مين افضل", "مين اتابع", "اتابع مين", "اهم عميل")):
         if not active:
