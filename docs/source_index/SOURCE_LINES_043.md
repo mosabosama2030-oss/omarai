@@ -217,7 +217,7 @@
 | [SRC-4405E7912C-L000223](../../tests/test_multitenant_api.py#L223) | 223 | `"        payload={\"test_model\": True, \"test_social\": True},"` | — |
 | [SRC-4405E7912C-L000224](../../tests/test_multitenant_api.py#L224) | 224 | `"    )"` | — |
 | [SRC-4405E7912C-L000225](../../tests/test_multitenant_api.py#L225) | 225 | `"    assert status == 403"` | — |
-| [SRC-4405E7912C-L000226](../../tests/test_multitenant_api.py#L226) | 226 | `"    assert \"explicit approval\" in result[\"error\"]"` | — |
+| [SRC-4405E7912C-L000226](../../tests/test_multitenant_api.py#L226) | 226 | `"    assert \"explicit owner approval\" in result[\"error\"]"` | — |
 | [SRC-4405E7912C-L000227](../../tests/test_multitenant_api.py#L227) | 227 | `""` | — |
 | [SRC-4405E7912C-L000228](../../tests/test_multitenant_api.py#L228) | 228 | `""` | — |
 | [SRC-4405E7912C-L000229](../../tests/test_multitenant_api.py#L229) | 229 | `"def test_live_diagnostics_is_owner_only_even_with_explicit_approval("` | — |
@@ -249,7 +249,7 @@
 | [SRC-4405E7912C-L000255](../../tests/test_multitenant_api.py#L255) | 255 | `"        },"` | — |
 | [SRC-4405E7912C-L000256](../../tests/test_multitenant_api.py#L256) | 256 | `"    )"` | — |
 | [SRC-4405E7912C-L000257](../../tests/test_multitenant_api.py#L257) | 257 | `"    assert status == 403"` | — |
-| [SRC-4405E7912C-L000258](../../tests/test_multitenant_api.py#L258) | 258 | `"    assert \"owner\" in result[\"error\"]"` | — |
+| [SRC-4405E7912C-L000258](../../tests/test_multitenant_api.py#L258) | 258 | `"    assert \"مالك مساحة العمل\" in result[\"error\"]"` | — |
 | [SRC-4405E7912C-L000259](../../tests/test_multitenant_api.py#L259) | 259 | `""` | — |
 | [SRC-4405E7912C-L000260](../../tests/test_multitenant_api.py#L260) | 260 | `""` | — |
 | [SRC-4405E7912C-L000261](../../tests/test_multitenant_api.py#L261) | 261 | `"def test_owner_can_run_diagnostics_only_after_explicit_approval("` | — |
