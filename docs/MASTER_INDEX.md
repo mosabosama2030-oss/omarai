@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **986**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1902**
-- الأسطر النصية المفهرسة حرفيًا: **41190**
+- الأسطر النصية المفهرسة حرفيًا: **41191**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -130,7 +130,7 @@
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 9140 | 265 | جرد الملف + AST Python |
-| FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 10466 | 319 | جرد الملف + AST Python |
+| FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 10536 | 320 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
@@ -1263,7 +1263,7 @@
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L261) | دالة | test_owner_can_run_diagnostics_only_after_explicit_approval | لا توجد Docstring. | ناقص | 261 | [SRC-4405E7912C-L000261](../tests/test_multitenant_api.py#L261) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L274) | دالة | test_owner_can_run_diagnostics_only_after_explicit_approval.fake_diagnostics | لا توجد Docstring. | ناقص | 274 | [SRC-4405E7912C-L000274](../tests/test_multitenant_api.py#L274) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L297) | دالة | test_viewer_cannot_invoke_agent_research_or_model_calls | لا توجد Docstring. | ناقص | 297 | [SRC-4405E7912C-L000297](../tests/test_multitenant_api.py#L297) |
-| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L307) | دالة | test_viewer_cannot_invoke_agent_research_or_model_calls.unexpected_answer | لا توجد Docstring. | ناقص | 307 | [SRC-4405E7912C-L000307](../tests/test_multitenant_api.py#L307) |
+| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L308) | دالة | test_viewer_cannot_invoke_agent_research_or_model_calls.unexpected_answer | لا توجد Docstring. | ناقص | 308 | [SRC-4405E7912C-L000308](../tests/test_multitenant_api.py#L308) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L8) | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 | [SRC-44CDA52D01-L000008](../tests/test_omarai.py#L8) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L11) | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 | [SRC-44CDA52D01-L000011](../tests/test_omarai.py#L11) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L16) | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 | [SRC-44CDA52D01-L000016](../tests/test_omarai.py#L16) |
@@ -3207,7 +3207,7 @@
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L66) | مسار API/واجهة محتمل | /api/leads | 66 | [SRC-4405E7912C-L000066](../tests/test_multitenant_api.py#L66) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L172) | مسار API/واجهة محتمل | /api/tokens/revoke | 172 | [SRC-4405E7912C-L000172](../tests/test_multitenant_api.py#L172) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L220) | مسار API/واجهة محتمل | /api/diagnostics | 220 | [SRC-4405E7912C-L000220](../tests/test_multitenant_api.py#L220) |
-| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L313) | مسار API/واجهة محتمل | /api/agent | 313 | [SRC-4405E7912C-L000313](../tests/test_multitenant_api.py#L313) |
+| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L314) | مسار API/واجهة محتمل | /api/agent | 314 | [SRC-4405E7912C-L000314](../tests/test_multitenant_api.py#L314) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_NAME | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 15 | [SRC-B106ADC5EF-L000015](../tests/test_proxy_origin.py#L15) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 16 | [SRC-B106ADC5EF-L000016](../tests/test_proxy_origin.py#L16) |

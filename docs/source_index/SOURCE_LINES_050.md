@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002585 إلى SRC-F725E90B2A-L003384
+- النطاق: SRC-F725E90B2A-L002584 إلى SRC-F725E90B2A-L003383
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002584](../../tests/test_web_agent.py#L2584) | 2584 | `"        \"query_results\": [{\"query\": plan[\"queries\"][0], \"results\": 4}],"` | — |
 | [SRC-F725E90B2A-L002585](../../tests/test_web_agent.py#L2585) | 2585 | `"        \"unique_sources\": 4,"` | — |
 | [SRC-F725E90B2A-L002586](../../tests/test_web_agent.py#L2586) | 2586 | `"        \"pages_fetched\": 4,"` | — |
 | [SRC-F725E90B2A-L002587](../../tests/test_web_agent.py#L2587) | 2587 | `"        \"providers_used\": providers,"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003381](../../tests/test_web_agent.py#L3381) | 3381 | `")"` | — |
 | [SRC-F725E90B2A-L003382](../../tests/test_web_agent.py#L3382) | 3382 | `"def test_modes_do_not_create_generic_queries_without_topic("` | — |
 | [SRC-F725E90B2A-L003383](../../tests/test_web_agent.py#L3383) | 3383 | `"    monkeypatch, mode, planner_query"` | — |
-| [SRC-F725E90B2A-L003384](../../tests/test_web_agent.py#L3384) | 3384 | `"):"` | — |

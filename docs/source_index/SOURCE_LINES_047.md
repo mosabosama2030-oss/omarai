@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000185 إلى SRC-F725E90B2A-L000984
+- النطاق: SRC-F725E90B2A-L000184 إلى SRC-F725E90B2A-L000983
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000184](../../tests/test_web_agent.py#L184) | 184 | `""` | — |
 | [SRC-F725E90B2A-L000185](../../tests/test_web_agent.py#L185) | 185 | `"    html = \"\"\""` | — |
 | [SRC-F725E90B2A-L000186](../../tests/test_web_agent.py#L186) | 186 | `"    <html><body>"` | — |
 | [SRC-F725E90B2A-L000187](../../tests/test_web_agent.py#L187) | 187 | `"      <div class=\"result\">"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L000981](../../tests/test_web_agent.py#L981) | 981 | `"    report = agent.diagnostics(test_model=True, test_social=False)"` | — |
 | [SRC-F725E90B2A-L000982](../../tests/test_web_agent.py#L982) | 982 | `""` | — |
 | [SRC-F725E90B2A-L000983](../../tests/test_web_agent.py#L983) | 983 | `"    assert report[\"checks\"][\"web_search\"][\"status\"] == \"degraded\""` | — |
-| [SRC-F725E90B2A-L000984](../../tests/test_web_agent.py#L984) | 984 | `"    assert report[\"checks\"][\"language_model\"][\"status\"] == \"not_configured\""` | — |

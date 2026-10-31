@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000985 إلى SRC-F725E90B2A-L001784
+- النطاق: SRC-F725E90B2A-L000984 إلى SRC-F725E90B2A-L001783
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000984](../../tests/test_web_agent.py#L984) | 984 | `"    assert report[\"checks\"][\"language_model\"][\"status\"] == \"not_configured\""` | — |
 | [SRC-F725E90B2A-L000985](../../tests/test_web_agent.py#L985) | 985 | `"    assert report[\"checks\"][\"social_search\"][\"status\"] == \"skipped\""` | — |
 | [SRC-F725E90B2A-L000986](../../tests/test_web_agent.py#L986) | 986 | `"    assert report[\"overall_status\"] == \"degraded\""` | — |
 | [SRC-F725E90B2A-L000987](../../tests/test_web_agent.py#L987) | 987 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001781](../../tests/test_web_agent.py#L1781) | 1781 | `"        lambda *args, **kwargs: pytest.fail(\"Duplicate URL must not satisfy corroboration\"),"` | — |
 | [SRC-F725E90B2A-L001782](../../tests/test_web_agent.py#L1782) | 1782 | `"    )"` | — |
 | [SRC-F725E90B2A-L001783](../../tests/test_web_agent.py#L1783) | 1783 | `""` | — |
-| [SRC-F725E90B2A-L001784](../../tests/test_web_agent.py#L1784) | 1784 | `"    result = agent.answer(\"ما آخر معلومات عن شركة ألفا اليوم؟\")"` | — |

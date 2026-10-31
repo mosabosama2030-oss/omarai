@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001785 إلى SRC-F725E90B2A-L002584
+- النطاق: SRC-F725E90B2A-L001784 إلى SRC-F725E90B2A-L002583
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001784](../../tests/test_web_agent.py#L1784) | 1784 | `"    result = agent.answer(\"ما آخر معلومات عن شركة ألفا اليوم؟\")"` | — |
 | [SRC-F725E90B2A-L001785](../../tests/test_web_agent.py#L1785) | 1785 | `""` | — |
 | [SRC-F725E90B2A-L001786](../../tests/test_web_agent.py#L1786) | 1786 | `"    assert len(calls) == 2"` | — |
 | [SRC-F725E90B2A-L001787](../../tests/test_web_agent.py#L1787) | 1787 | `"    repair = result[\"search_report\"][\"evidence_repair\"]"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002581](../../tests/test_web_agent.py#L2581) | 2581 | `"    report = {"` | — |
 | [SRC-F725E90B2A-L002582](../../tests/test_web_agent.py#L2582) | 2582 | `"        \"queries_planned\": 1,"` | — |
 | [SRC-F725E90B2A-L002583](../../tests/test_web_agent.py#L2583) | 2583 | `"        \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L002584](../../tests/test_web_agent.py#L2584) | 2584 | `"        \"query_results\": [{\"query\": plan[\"queries\"][0], \"results\": 4}],"` | — |
