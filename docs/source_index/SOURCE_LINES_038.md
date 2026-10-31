@@ -44,7 +44,7 @@
 | [SRC-3451CC474D-L000983](../../tests/test_api.py#L983) | 983 | `"    assert leads[\"count\"] == 0"` | — |
 | [SRC-3451CC474D-L000984](../../tests/test_api.py#L984) | 984 | `""` | — |
 | [SRC-3451CC474D-L000985](../../tests/test_api.py#L985) | 985 | `"    monkeypatch.delenv(\"OMARAI_TEST_MODE\", raising=False)"` | — |
-| [SRC-3451CC474D-L000986](../../tests/test_api.py#L986) | 986 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L000986](../../tests/test_api.py#L986) | 986 | `"    status, _error = request_json(local_api, \"/api/leads\")"` | — |
 | [SRC-3451CC474D-L000987](../../tests/test_api.py#L987) | 987 | `"    assert status == 401"` | — |
 | [SRC-3451CC474D-L000988](../../tests/test_api.py#L988) | 988 | `""` | — |
 | [SRC-3451CC474D-L000989](../../tests/test_api.py#L989) | 989 | `"    from types import SimpleNamespace"` | — |
