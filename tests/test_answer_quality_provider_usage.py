@@ -71,7 +71,7 @@ def test_completion_records_provider_usage_without_retaining_provider_body(monke
                 },
             }).encode("utf-8")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", lambda request, timeout: FakeResponse())
+    monkeypatch.setattr("agents.web_agent._open_model_request", lambda request, timeout: FakeResponse())
     answer = agent._request_completion(
         [{"role": "user", "content": "اختبر"}],
         model="test/model",

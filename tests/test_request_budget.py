@@ -74,7 +74,7 @@ def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):
 
     agent._request_budget = RequestBudget(limits={"model_calls": 0})
     monkeypatch.setattr(
-        "agents.web_agent.urllib.request.urlopen",
+        "agents.web_agent._open_model_request",
         lambda *args, **kwargs: pytest.fail("model HTTP request must not start"),
     )
     with pytest.raises(RequestBudgetExceeded, match="model_calls"):

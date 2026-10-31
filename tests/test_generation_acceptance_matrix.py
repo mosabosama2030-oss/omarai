@@ -68,7 +68,7 @@ def test_only_normal_stop_is_accepted_as_a_complete_text_answer(
     agent.fallback_model = ""
     partial_text = "نص لا يجب قبوله كإجابة نهائية"
     monkeypatch.setattr(
-        "agents.web_agent.urllib.request.urlopen",
+        "agents.web_agent._open_model_request",
         lambda request, timeout: FakeCompletionResponse(partial_text, finish_reason),
     )
 
@@ -104,7 +104,7 @@ def test_both_models_truncated_fail_without_returning_either_partial_answer(monk
         calls.append(model)
         return FakeCompletionResponse(f"نص مبتور من {model}", "length")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     with pytest.raises(RuntimeError, match="مبتورة"):
         agent._request_completion(
@@ -134,7 +134,7 @@ def test_model_fallback_cannot_exceed_request_model_call_budget(monkeypatch):
         calls.append(model)
         return FakeCompletionResponse("محتوى مبتور", "length")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     with pytest.raises(RequestBudgetExceeded):
         agent._request_completion(
@@ -304,7 +304,7 @@ def test_generation_budget_exhaustion_preserves_partial_sources(monkeypatch):
         calls.append(model)
         return FakeCompletionResponse("إجابة مبتورة لا يجوز عرضها", "length")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     result = agent.answer(question)
 
@@ -386,7 +386,7 @@ def test_review_budget_exhaustion_discards_draft_and_preserves_sources(monkeypat
             "stop",
         )
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     result = agent.answer(question)
 

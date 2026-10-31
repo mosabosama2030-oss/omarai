@@ -4,9 +4,51 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-63610B9E85-L000096 إلى SRC-B3062EB677-L000047
+- النطاق: SRC-CAC5F305FE-L000038 إلى SRC-D186ED3822-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-CAC5F305FE — [tests/test_agent_modes.py](../../tests/test_agent_modes.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-CAC5F305FE-L000038](../../tests/test_agent_modes.py#L38) | 38 | `""` | — |
+| [SRC-CAC5F305FE-L000039](../../tests/test_agent_modes.py#L39) | 39 | `"    def collect(research_plan):"` | — |
+| [SRC-CAC5F305FE-L000040](../../tests/test_agent_modes.py#L40) | 40 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
+| [SRC-CAC5F305FE-L000041](../../tests/test_agent_modes.py#L41) | 41 | `"        report = {"` | — |
+| [SRC-CAC5F305FE-L000042](../../tests/test_agent_modes.py#L42) | 42 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-CAC5F305FE-L000043](../../tests/test_agent_modes.py#L43) | 43 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-CAC5F305FE-L000044](../../tests/test_agent_modes.py#L44) | 44 | `"            \"query_results\": [],"` | — |
+| [SRC-CAC5F305FE-L000045](../../tests/test_agent_modes.py#L45) | 45 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-CAC5F305FE-L000046](../../tests/test_agent_modes.py#L46) | 46 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-CAC5F305FE-L000047](../../tests/test_agent_modes.py#L47) | 47 | `"            \"providers_used\": [\"test_search\"],"` | — |
+| [SRC-CAC5F305FE-L000048](../../tests/test_agent_modes.py#L48) | 48 | `"            \"provider_counts\": {\"test_search\": 1},"` | — |
+| [SRC-CAC5F305FE-L000049](../../tests/test_agent_modes.py#L49) | 49 | `"            \"platform_counts\": {\"web\": 1},"` | — |
+| [SRC-CAC5F305FE-L000050](../../tests/test_agent_modes.py#L50) | 50 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-CAC5F305FE-L000051](../../tests/test_agent_modes.py#L51) | 51 | `"            \"depth\": research_plan[\"depth\"],"` | — |
+| [SRC-CAC5F305FE-L000052](../../tests/test_agent_modes.py#L52) | 52 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-CAC5F305FE-L000053](../../tests/test_agent_modes.py#L53) | 53 | `"            \"evidence_signals\": evidence_signal_report([source]),"` | — |
+| [SRC-CAC5F305FE-L000054](../../tests/test_agent_modes.py#L54) | 54 | `"        }"` | — |
+| [SRC-CAC5F305FE-L000055](../../tests/test_agent_modes.py#L55) | 55 | `"        return [source], [], report"` | — |
+| [SRC-CAC5F305FE-L000056](../../tests/test_agent_modes.py#L56) | 56 | `""` | — |
+| [SRC-CAC5F305FE-L000057](../../tests/test_agent_modes.py#L57) | 57 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
+| [SRC-CAC5F305FE-L000058](../../tests/test_agent_modes.py#L58) | 58 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-CAC5F305FE-L000059](../../tests/test_agent_modes.py#L59) | 59 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"الخلاصة [المصدر 1]\")"` | — |
+| [SRC-CAC5F305FE-L000060](../../tests/test_agent_modes.py#L60) | 60 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-CAC5F305FE-L000061](../../tests/test_agent_modes.py#L61) | 61 | `""` | — |
+| [SRC-CAC5F305FE-L000062](../../tests/test_agent_modes.py#L62) | 62 | `"    result = agent.answer(\"حلل الموضوع\", mode=\"deep\")"` | — |
+| [SRC-CAC5F305FE-L000063](../../tests/test_agent_modes.py#L63) | 63 | `""` | — |
+| [SRC-CAC5F305FE-L000064](../../tests/test_agent_modes.py#L64) | 64 | `"    assert seen[\"plan\"][\"depth\"] == \"deep\""` | — |
+| [SRC-CAC5F305FE-L000065](../../tests/test_agent_modes.py#L65) | 65 | `"    assert len(seen[\"plan\"][\"queries\"]) > 1"` | — |
+| [SRC-CAC5F305FE-L000066](../../tests/test_agent_modes.py#L66) | 66 | `"    assert result[\"research_plan\"][\"mode\"] == \"deep\""` | — |
+| [SRC-CAC5F305FE-L000067](../../tests/test_agent_modes.py#L67) | 67 | `"    assert \"evidence_signals\" in result[\"search_report\"]"` | — |
+| [SRC-CAC5F305FE-L000068](../../tests/test_agent_modes.py#L68) | 68 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
+| [SRC-CAC5F305FE-L000069](../../tests/test_agent_modes.py#L69) | 69 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"deep_research_already_expanded\""` | — |
+| [SRC-CAC5F305FE-L000070](../../tests/test_agent_modes.py#L70) | 70 | `"    assert result[\"search_report\"][\"evidence_signals\"][\"unique_domains\"] == 1"` | — |
 ## اختبارات
 
 ### FILE-63610B9E85 — [tests/test_agentic_retrieval.py](../../tests/test_agentic_retrieval.py#L1)
@@ -16,6 +58,101 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-63610B9E85-L000001](../../tests/test_agentic_retrieval.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-63610B9E85-L000002](../../tests/test_agentic_retrieval.py#L2) | 2 | `""` | — |
+| [SRC-63610B9E85-L000003](../../tests/test_agentic_retrieval.py#L3) | 3 | `"from agents.claim_evidence import build_claim_evidence_ledger"` | — |
+| [SRC-63610B9E85-L000004](../../tests/test_agentic_retrieval.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-63610B9E85-L000005](../../tests/test_agentic_retrieval.py#L5) | 5 | `""` | — |
+| [SRC-63610B9E85-L000006](../../tests/test_agentic_retrieval.py#L6) | 6 | `""` | — |
+| [SRC-63610B9E85-L000007](../../tests/test_agentic_retrieval.py#L7) | 7 | `"def test_claim_ledger_maps_citations_to_exact_sources() -> None:"` | — |
+| [SRC-63610B9E85-L000008](../../tests/test_agentic_retrieval.py#L8) | 8 | `"    sources = ["` | — |
+| [SRC-63610B9E85-L000009](../../tests/test_agentic_retrieval.py#L9) | 9 | `"        {\"title\": \"Price source\", \"url\": \"https://example.com/price\","` | — |
+| [SRC-63610B9E85-L000010](../../tests/test_agentic_retrieval.py#L10) | 10 | `"         \"snippet\": \"Solar battery price is 100 EGP.\", \"provider\": \"fixture\"},"` | — |
+| [SRC-63610B9E85-L000011](../../tests/test_agentic_retrieval.py#L11) | 11 | `"        {\"title\": \"Warranty source\", \"url\": \"https://example.org/warranty\","` | — |
+| [SRC-63610B9E85-L000012](../../tests/test_agentic_retrieval.py#L12) | 12 | `"         \"page_text\": \"Warranty terms are listed here.\", \"page_fetched\": True,"` | — |
+| [SRC-63610B9E85-L000013](../../tests/test_agentic_retrieval.py#L13) | 13 | `"         \"provider\": \"fixture\"},"` | — |
+| [SRC-63610B9E85-L000014](../../tests/test_agentic_retrieval.py#L14) | 14 | `"    ]"` | — |
+| [SRC-63610B9E85-L000015](../../tests/test_agentic_retrieval.py#L15) | 15 | `"    result = build_claim_evidence_ledger("` | — |
+| [SRC-63610B9E85-L000016](../../tests/test_agentic_retrieval.py#L16) | 16 | `"        \"The price is 100 EGP [source 1]. Warranty terms are shown [المصدر 2].\","` | — |
+| [SRC-63610B9E85-L000017](../../tests/test_agentic_retrieval.py#L17) | 17 | `"        sources,"` | — |
+| [SRC-63610B9E85-L000018](../../tests/test_agentic_retrieval.py#L18) | 18 | `"        {\"citation_lexical_alignment\": ["` | — |
+| [SRC-63610B9E85-L000019](../../tests/test_agentic_retrieval.py#L19) | 19 | `"            {\"sentence_number\": 1, \"status\": \"lexical_overlap_signal_found\"},"` | — |
+| [SRC-63610B9E85-L000020](../../tests/test_agentic_retrieval.py#L20) | 20 | `"            {\"sentence_number\": 2, \"status\": \"weak_lexical_overlap\"},"` | — |
+| [SRC-63610B9E85-L000021](../../tests/test_agentic_retrieval.py#L21) | 21 | `"        ]},"` | — |
+| [SRC-63610B9E85-L000022](../../tests/test_agentic_retrieval.py#L22) | 22 | `"    )"` | — |
+| [SRC-63610B9E85-L000023](../../tests/test_agentic_retrieval.py#L23) | 23 | `"    assert result[\"semantic_verification\"] is False"` | — |
+| [SRC-63610B9E85-L000024](../../tests/test_agentic_retrieval.py#L24) | 24 | `"    assert result[\"claim_entailment\"] == \"not_checked\""` | — |
+| [SRC-63610B9E85-L000025](../../tests/test_agentic_retrieval.py#L25) | 25 | `"    assert result[\"summary\"][\"segment_candidate_count\"] == 2"` | — |
+| [SRC-63610B9E85-L000026](../../tests/test_agentic_retrieval.py#L26) | 26 | `"    assert result[\"summary\"][\"valid_source_reference_count\"] == 2"` | — |
+| [SRC-63610B9E85-L000027](../../tests/test_agentic_retrieval.py#L27) | 27 | `"    assert result[\"segments\"][0][\"sources\"][0][\"url\"] == \"https://example.com/price\""` | — |
+| [SRC-63610B9E85-L000028](../../tests/test_agentic_retrieval.py#L28) | 28 | `"    assert result[\"segments\"][1][\"sources\"][0][\"evidence_basis\"] == \"extracted_page_text\""` | — |
+| [SRC-63610B9E85-L000029](../../tests/test_agentic_retrieval.py#L29) | 29 | `"    assert result[\"segments\"][0][\"lexical_audit_status\"] == \"lexical_overlap_signal_found\""` | — |
+| [SRC-63610B9E85-L000030](../../tests/test_agentic_retrieval.py#L30) | 30 | `""` | — |
+| [SRC-63610B9E85-L000031](../../tests/test_agentic_retrieval.py#L31) | 31 | `""` | — |
+| [SRC-63610B9E85-L000032](../../tests/test_agentic_retrieval.py#L32) | 32 | `"def test_claim_ledger_marks_uncited_and_out_of_range_references() -> None:"` | — |
+| [SRC-63610B9E85-L000033](../../tests/test_agentic_retrieval.py#L33) | 33 | `"    result = build_claim_evidence_ledger("` | — |
+| [SRC-63610B9E85-L000034](../../tests/test_agentic_retrieval.py#L34) | 34 | `"        \"Uncited sentence. Bad reference [المصدر 2]. Valid [source 1].\","` | — |
+| [SRC-63610B9E85-L000035](../../tests/test_agentic_retrieval.py#L35) | 35 | `"        [{\"title\": \"Source\", \"url\": \"https://example.com\", \"snippet\": \"text\"}],"` | — |
+| [SRC-63610B9E85-L000036](../../tests/test_agentic_retrieval.py#L36) | 36 | `"    )"` | — |
+| [SRC-63610B9E85-L000037](../../tests/test_agentic_retrieval.py#L37) | 37 | `"    assert result[\"summary\"][\"segments_without_citation_markers\"] == 1"` | — |
+| [SRC-63610B9E85-L000038](../../tests/test_agentic_retrieval.py#L38) | 38 | `"    assert result[\"summary\"][\"out_of_range_reference_count\"] == 1"` | — |
+| [SRC-63610B9E85-L000039](../../tests/test_agentic_retrieval.py#L39) | 39 | `"    assert result[\"segments\"][0][\"citation_status\"] == \"no_citation_marker\""` | — |
+| [SRC-63610B9E85-L000040](../../tests/test_agentic_retrieval.py#L40) | 40 | `"    assert result[\"segments\"][1][\"citation_status\"] == \"citation_index_out_of_range\""` | — |
+| [SRC-63610B9E85-L000041](../../tests/test_agentic_retrieval.py#L41) | 41 | `"    assert result[\"segments\"][2][\"citation_status\"] == \"cited_source_attached\""` | — |
+| [SRC-63610B9E85-L000042](../../tests/test_agentic_retrieval.py#L42) | 42 | `""` | — |
+| [SRC-63610B9E85-L000043](../../tests/test_agentic_retrieval.py#L43) | 43 | `""` | — |
+| [SRC-63610B9E85-L000044](../../tests/test_agentic_retrieval.py#L44) | 44 | `"def test_claim_ledger_does_not_equate_valid_index_with_verification() -> None:"` | — |
+| [SRC-63610B9E85-L000045](../../tests/test_agentic_retrieval.py#L45) | 45 | `"    result = build_claim_evidence_ledger("` | — |
+| [SRC-63610B9E85-L000046](../../tests/test_agentic_retrieval.py#L46) | 46 | `"        \"Claim with a marker [المصدر 1].\","` | — |
+| [SRC-63610B9E85-L000047](../../tests/test_agentic_retrieval.py#L47) | 47 | `"        [{\"title\": \"Only a title\", \"url\": \"https://example.com\"}],"` | — |
+| [SRC-63610B9E85-L000048](../../tests/test_agentic_retrieval.py#L48) | 48 | `"    )"` | — |
+| [SRC-63610B9E85-L000049](../../tests/test_agentic_retrieval.py#L49) | 49 | `"    assert result[\"segments\"][0][\"citation_status\"] == \"valid_index_without_readable_evidence\""` | — |
+| [SRC-63610B9E85-L000050](../../tests/test_agentic_retrieval.py#L50) | 50 | `"    assert result[\"segments\"][0][\"sources\"][0][\"evidence_basis\"] == \"title_only\""` | — |
+| [SRC-63610B9E85-L000051](../../tests/test_agentic_retrieval.py#L51) | 51 | `"    # A title is metadata, not a source passage available for evidence review."` | — |
+| [SRC-63610B9E85-L000052](../../tests/test_agentic_retrieval.py#L52) | 52 | `"    assert result[\"segments\"][0][\"sources\"][0][\"reference_status\"] == \"valid_index_without_readable_evidence\""` | — |
+| [SRC-63610B9E85-L000053](../../tests/test_agentic_retrieval.py#L53) | 53 | `"    assert result[\"summary\"][\"cited_segments_with_readable_source_evidence\"] == 0"` | — |
+| [SRC-63610B9E85-L000054](../../tests/test_agentic_retrieval.py#L54) | 54 | `"    assert result[\"fact_correctness\"] == \"not_checked\""` | — |
+| [SRC-63610B9E85-L000055](../../tests/test_agentic_retrieval.py#L55) | 55 | `"    assert any(\"do not prove\" in item for item in result[\"limitations\"])"` | — |
+| [SRC-63610B9E85-L000056](../../tests/test_agentic_retrieval.py#L56) | 56 | `""` | — |
+| [SRC-63610B9E85-L000057](../../tests/test_agentic_retrieval.py#L57) | 57 | `""` | — |
+| [SRC-63610B9E85-L000058](../../tests/test_agentic_retrieval.py#L58) | 58 | `"def test_collect_research_retries_missing_aspect_within_query_limit(monkeypatch) -> None:"` | — |
+| [SRC-63610B9E85-L000059](../../tests/test_agentic_retrieval.py#L59) | 59 | `"    agent = WebAgent()"` | — |
+| [SRC-63610B9E85-L000060](../../tests/test_agentic_retrieval.py#L60) | 60 | `"    agent._request_budget = None"` | — |
+| [SRC-63610B9E85-L000061](../../tests/test_agentic_retrieval.py#L61) | 61 | `"    queries: list[str] = []"` | — |
+| [SRC-63610B9E85-L000062](../../tests/test_agentic_retrieval.py#L62) | 62 | `""` | — |
+| [SRC-63610B9E85-L000063](../../tests/test_agentic_retrieval.py#L63) | 63 | `"    def fake_search(query: str):"` | — |
+| [SRC-63610B9E85-L000064](../../tests/test_agentic_retrieval.py#L64) | 64 | `"        queries.append(query)"` | — |
+| [SRC-63610B9E85-L000065](../../tests/test_agentic_retrieval.py#L65) | 65 | `"        if \"warranty\" in query.casefold():"` | — |
+| [SRC-63610B9E85-L000066](../../tests/test_agentic_retrieval.py#L66) | 66 | `"            return [{"` | — |
+| [SRC-63610B9E85-L000067](../../tests/test_agentic_retrieval.py#L67) | 67 | `"                \"title\": \"Solar battery warranty terms\","` | — |
+| [SRC-63610B9E85-L000068](../../tests/test_agentic_retrieval.py#L68) | 68 | `"                \"url\": \"https://example.org/warranty\","` | — |
+| [SRC-63610B9E85-L000069](../../tests/test_agentic_retrieval.py#L69) | 69 | `"                \"snippet\": \"Solar battery warranty terms and coverage.\","` | — |
+| [SRC-63610B9E85-L000070](../../tests/test_agentic_retrieval.py#L70) | 70 | `"                \"provider\": \"fixture_search\","` | — |
+| [SRC-63610B9E85-L000071](../../tests/test_agentic_retrieval.py#L71) | 71 | `"                \"provider_rank\": 1,"` | — |
+| [SRC-63610B9E85-L000072](../../tests/test_agentic_retrieval.py#L72) | 72 | `"            }]"` | — |
+| [SRC-63610B9E85-L000073](../../tests/test_agentic_retrieval.py#L73) | 73 | `"        return [{"` | — |
+| [SRC-63610B9E85-L000074](../../tests/test_agentic_retrieval.py#L74) | 74 | `"            \"title\": \"Solar battery price details\","` | — |
+| [SRC-63610B9E85-L000075](../../tests/test_agentic_retrieval.py#L75) | 75 | `"            \"url\": \"https://example.com/price\","` | — |
+| [SRC-63610B9E85-L000076](../../tests/test_agentic_retrieval.py#L76) | 76 | `"            \"snippet\": \"Solar battery price: 100 EGP.\","` | — |
+| [SRC-63610B9E85-L000077](../../tests/test_agentic_retrieval.py#L77) | 77 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-63610B9E85-L000078](../../tests/test_agentic_retrieval.py#L78) | 78 | `"            \"provider_rank\": 1,"` | — |
+| [SRC-63610B9E85-L000079](../../tests/test_agentic_retrieval.py#L79) | 79 | `"        }]"` | — |
+| [SRC-63610B9E85-L000080](../../tests/test_agentic_retrieval.py#L80) | 80 | `""` | — |
+| [SRC-63610B9E85-L000081](../../tests/test_agentic_retrieval.py#L81) | 81 | `"    monkeypatch.setattr(agent, \"_search_web\", fake_search)"` | — |
+| [SRC-63610B9E85-L000082](../../tests/test_agentic_retrieval.py#L82) | 82 | `"    monkeypatch.setattr("` | — |
+| [SRC-63610B9E85-L000083](../../tests/test_agentic_retrieval.py#L83) | 83 | `"        agent, \"_fetch_page\","` | — |
+| [SRC-63610B9E85-L000084](../../tests/test_agentic_retrieval.py#L84) | 84 | `"        lambda _url: (\"Fixture page\", \"Solar battery price and warranty evidence text.\"),"` | — |
+| [SRC-63610B9E85-L000085](../../tests/test_agentic_retrieval.py#L85) | 85 | `"    )"` | — |
+| [SRC-63610B9E85-L000086](../../tests/test_agentic_retrieval.py#L86) | 86 | `"    sources, _warnings, report = agent._collect_research({"` | — |
+| [SRC-63610B9E85-L000087](../../tests/test_agentic_retrieval.py#L87) | 87 | `"        \"query_limit\": 3,"` | — |
+| [SRC-63610B9E85-L000088](../../tests/test_agentic_retrieval.py#L88) | 88 | `"        \"queries\": [\"solar battery\", \"solar battery price\", \"solar battery warranty\"],"` | — |
+| [SRC-63610B9E85-L000089](../../tests/test_agentic_retrieval.py#L89) | 89 | `"        \"coverage_targets\": [\"price\", \"warranty\"],"` | — |
+| [SRC-63610B9E85-L000090](../../tests/test_agentic_retrieval.py#L90) | 90 | `"        \"depth\": \"standard\","` | — |
+| [SRC-63610B9E85-L000091](../../tests/test_agentic_retrieval.py#L91) | 91 | `"        \"social_focus\": False,"` | — |
+| [SRC-63610B9E85-L000092](../../tests/test_agentic_retrieval.py#L92) | 92 | `"        \"platforms\": [],"` | — |
+| [SRC-63610B9E85-L000093](../../tests/test_agentic_retrieval.py#L93) | 93 | `"        \"direct_urls\": [],"` | — |
+| [SRC-63610B9E85-L000094](../../tests/test_agentic_retrieval.py#L94) | 94 | `"    })"` | — |
+| [SRC-63610B9E85-L000095](../../tests/test_agentic_retrieval.py#L95) | 95 | `"    assert len(queries) <= 3"` | — |
 | [SRC-63610B9E85-L000096](../../tests/test_agentic_retrieval.py#L96) | 96 | `"    assert any(\"warranty\" in query.casefold() for query in queries)"` | — |
 | [SRC-63610B9E85-L000097](../../tests/test_agentic_retrieval.py#L97) | 97 | `"    assert report[\"queries_attempted\"] == len(queries)"` | — |
 | [SRC-63610B9E85-L000098](../../tests/test_agentic_retrieval.py#L98) | 98 | `"    assert any(\"warranty\" in str(source.get(\"url\", \"\")).casefold() for source in sources)"` | — |
@@ -651,7 +788,7 @@
 | [SRC-2477C41448-L000071](../../tests/test_answer_quality_provider_usage.py#L71) | 71 | `"                },"` | — |
 | [SRC-2477C41448-L000072](../../tests/test_answer_quality_provider_usage.py#L72) | 72 | `"            }).encode(\"utf-8\")"` | — |
 | [SRC-2477C41448-L000073](../../tests/test_answer_quality_provider_usage.py#L73) | 73 | `""` | — |
-| [SRC-2477C41448-L000074](../../tests/test_answer_quality_provider_usage.py#L74) | 74 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", lambda request, timeout: FakeResponse())"` | — |
+| [SRC-2477C41448-L000074](../../tests/test_answer_quality_provider_usage.py#L74) | 74 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", lambda request, timeout: FakeResponse())"` | — |
 | [SRC-2477C41448-L000075](../../tests/test_answer_quality_provider_usage.py#L75) | 75 | `"    answer = agent._request_completion("` | — |
 | [SRC-2477C41448-L000076](../../tests/test_answer_quality_provider_usage.py#L76) | 76 | `"        [{\"role\": \"user\", \"content\": \"اختبر\"}],"` | — |
 | [SRC-2477C41448-L000077](../../tests/test_answer_quality_provider_usage.py#L77) | 77 | `"        model=\"test/model\","` | — |
@@ -724,140 +861,3 @@
 | [SRC-D186ED3822-L000035](../../tests/test_answer_quality_review_scorecard.py#L35) | 35 | `"                \"correctness\": {\"correct_facts\": 3, \"reviewed_facts\": 4},"` | — |
 | [SRC-D186ED3822-L000036](../../tests/test_answer_quality_review_scorecard.py#L36) | 36 | `"                \"citations\": {\"supported_citations\": 2, \"reviewed_citations\": 3},"` | — |
 | [SRC-D186ED3822-L000037](../../tests/test_answer_quality_review_scorecard.py#L37) | 37 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-D186ED3822-L000038](../../tests/test_answer_quality_review_scorecard.py#L38) | 38 | `"            },"` | — |
-| [SRC-D186ED3822-L000039](../../tests/test_answer_quality_review_scorecard.py#L39) | 39 | `"            {"` | — |
-| [SRC-D186ED3822-L000040](../../tests/test_answer_quality_review_scorecard.py#L40) | 40 | `"                \"case_id\": \"AQ-008\","` | — |
-| [SRC-D186ED3822-L000041](../../tests/test_answer_quality_review_scorecard.py#L41) | 41 | `"                \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000042](../../tests/test_answer_quality_review_scorecard.py#L42) | 42 | `"                \"writing_quality\": 4,"` | — |
-| [SRC-D186ED3822-L000043](../../tests/test_answer_quality_review_scorecard.py#L43) | 43 | `"            },"` | — |
-| [SRC-D186ED3822-L000044](../../tests/test_answer_quality_review_scorecard.py#L44) | 44 | `"            {\"case_id\": \"AQ-009\", \"status\": \"NOT_TESTED\", \"notes\": \"No reviewer judgment yet.\"},"` | — |
-| [SRC-D186ED3822-L000045](../../tests/test_answer_quality_review_scorecard.py#L45) | 45 | `"        ],"` | — |
-| [SRC-D186ED3822-L000046](../../tests/test_answer_quality_review_scorecard.py#L46) | 46 | `"    }"` | — |
-| [SRC-D186ED3822-L000047](../../tests/test_answer_quality_review_scorecard.py#L47) | 47 | `"    result = mod.summarize_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000048](../../tests/test_answer_quality_review_scorecard.py#L48) | 48 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] == 0.6"` | — |
-| [SRC-D186ED3822-L000049](../../tests/test_answer_quality_review_scorecard.py#L49) | 49 | `"    assert result[\"metrics\"][\"retrieval_recall\"][\"score\"] == 0.75"` | — |
-| [SRC-D186ED3822-L000050](../../tests/test_answer_quality_review_scorecard.py#L50) | 50 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] == 0.8"` | — |
-| [SRC-D186ED3822-L000051](../../tests/test_answer_quality_review_scorecard.py#L51) | 51 | `"    assert result[\"metrics\"][\"correctness\"][\"score\"] == 0.75"` | — |
-| [SRC-D186ED3822-L000052](../../tests/test_answer_quality_review_scorecard.py#L52) | 52 | `"    assert result[\"metrics\"][\"citation_support\"][\"score\"] == pytest.approx(2 / 3, abs=0.0001)"` | — |
-| [SRC-D186ED3822-L000053](../../tests/test_answer_quality_review_scorecard.py#L53) | 53 | `"    assert result[\"metrics\"][\"writing_quality_1_to_5\"][\"score\"] == 4.0"` | — |
-| [SRC-D186ED3822-L000054](../../tests/test_answer_quality_review_scorecard.py#L54) | 54 | `"    assert result[\"case_status_counts\"][\"NOT_TESTED\"] == 1"` | — |
-| [SRC-D186ED3822-L000055](../../tests/test_answer_quality_review_scorecard.py#L55) | 55 | `"    assert result[\"unique_reviewed_case_count\"] == 2"` | — |
-| [SRC-D186ED3822-L000056](../../tests/test_answer_quality_review_scorecard.py#L56) | 56 | `"    assert result[\"automatic_answer_grading\"] is False"` | — |
-| [SRC-D186ED3822-L000057](../../tests/test_answer_quality_review_scorecard.py#L57) | 57 | `"    assert result[\"ragas_executed\"] is False"` | — |
-| [SRC-D186ED3822-L000058](../../tests/test_answer_quality_review_scorecard.py#L58) | 58 | `""` | — |
-| [SRC-D186ED3822-L000059](../../tests/test_answer_quality_review_scorecard.py#L59) | 59 | `""` | — |
-| [SRC-D186ED3822-L000060](../../tests/test_answer_quality_review_scorecard.py#L60) | 60 | `"def test_scorecard_keeps_unmeasured_denominators_not_scorable():"` | — |
-| [SRC-D186ED3822-L000061](../../tests/test_answer_quality_review_scorecard.py#L61) | 61 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000062](../../tests/test_answer_quality_review_scorecard.py#L62) | 62 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000063](../../tests/test_answer_quality_review_scorecard.py#L63) | 63 | `"        \"reviews\": [{"` | — |
-| [SRC-D186ED3822-L000064](../../tests/test_answer_quality_review_scorecard.py#L64) | 64 | `"            \"case_id\": \"AQ-001\","` | — |
-| [SRC-D186ED3822-L000065](../../tests/test_answer_quality_review_scorecard.py#L65) | 65 | `"            \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000066](../../tests/test_answer_quality_review_scorecard.py#L66) | 66 | `"            \"faithfulness\": {\"supported_claims\": 0, \"reviewed_claims\": 0},"` | — |
-| [SRC-D186ED3822-L000067](../../tests/test_answer_quality_review_scorecard.py#L67) | 67 | `"        }],"` | — |
-| [SRC-D186ED3822-L000068](../../tests/test_answer_quality_review_scorecard.py#L68) | 68 | `"    }"` | — |
-| [SRC-D186ED3822-L000069](../../tests/test_answer_quality_review_scorecard.py#L69) | 69 | `"    result = mod.summarize_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000070](../../tests/test_answer_quality_review_scorecard.py#L70) | 70 | `"    assert result[\"metrics\"][\"faithfulness\"][\"score\"] is None"` | — |
-| [SRC-D186ED3822-L000071](../../tests/test_answer_quality_review_scorecard.py#L71) | 71 | `"    assert result[\"metrics\"][\"faithfulness\"][\"status\"] == \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\""` | — |
-| [SRC-D186ED3822-L000072](../../tests/test_answer_quality_review_scorecard.py#L72) | 72 | `"    assert result[\"metrics\"][\"retrieval_precision\"][\"score\"] is None"` | — |
-| [SRC-D186ED3822-L000073](../../tests/test_answer_quality_review_scorecard.py#L73) | 73 | `""` | — |
-| [SRC-D186ED3822-L000074](../../tests/test_answer_quality_review_scorecard.py#L74) | 74 | `""` | — |
-| [SRC-D186ED3822-L000075](../../tests/test_answer_quality_review_scorecard.py#L75) | 75 | `"def test_scorecard_rejects_numerator_larger_than_denominator():"` | — |
-| [SRC-D186ED3822-L000076](../../tests/test_answer_quality_review_scorecard.py#L76) | 76 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000077](../../tests/test_answer_quality_review_scorecard.py#L77) | 77 | `"    data = {"` | — |
-| [SRC-D186ED3822-L000078](../../tests/test_answer_quality_review_scorecard.py#L78) | 78 | `"        \"reviews\": [{"` | — |
-| [SRC-D186ED3822-L000079](../../tests/test_answer_quality_review_scorecard.py#L79) | 79 | `"            \"case_id\": \"AQ-007\","` | — |
-| [SRC-D186ED3822-L000080](../../tests/test_answer_quality_review_scorecard.py#L80) | 80 | `"            \"status\": \"REVIEWED\","` | — |
-| [SRC-D186ED3822-L000081](../../tests/test_answer_quality_review_scorecard.py#L81) | 81 | `"            \"faithfulness\": {\"supported_claims\": 3, \"reviewed_claims\": 2},"` | — |
-| [SRC-D186ED3822-L000082](../../tests/test_answer_quality_review_scorecard.py#L82) | 82 | `"        }],"` | — |
-| [SRC-D186ED3822-L000083](../../tests/test_answer_quality_review_scorecard.py#L83) | 83 | `"    }"` | — |
-| [SRC-D186ED3822-L000084](../../tests/test_answer_quality_review_scorecard.py#L84) | 84 | `"    with pytest.raises(ValueError, match=\"cannot exceed\"):"` | — |
-| [SRC-D186ED3822-L000085](../../tests/test_answer_quality_review_scorecard.py#L85) | 85 | `"        mod.summarize_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000086](../../tests/test_answer_quality_review_scorecard.py#L86) | 86 | `""` | — |
-| [SRC-D186ED3822-L000087](../../tests/test_answer_quality_review_scorecard.py#L87) | 87 | `""` | — |
-| [SRC-D186ED3822-L000088](../../tests/test_answer_quality_review_scorecard.py#L88) | 88 | `"def test_scorecard_rejects_unknown_case_ids_and_duplicate_reviews():"` | — |
-| [SRC-D186ED3822-L000089](../../tests/test_answer_quality_review_scorecard.py#L89) | 89 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000090](../../tests/test_answer_quality_review_scorecard.py#L90) | 90 | `"    data = {\"reviews\": ["` | — |
-| [SRC-D186ED3822-L000091](../../tests/test_answer_quality_review_scorecard.py#L91) | 91 | `"        {\"case_id\": \"AQ-999\", \"status\": \"NOT_TESTED\"},"` | — |
-| [SRC-D186ED3822-L000092](../../tests/test_answer_quality_review_scorecard.py#L92) | 92 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
-| [SRC-D186ED3822-L000093](../../tests/test_answer_quality_review_scorecard.py#L93) | 93 | `"        {\"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\"},"` | — |
-| [SRC-D186ED3822-L000094](../../tests/test_answer_quality_review_scorecard.py#L94) | 94 | `"    ]}"` | — |
-| [SRC-D186ED3822-L000095](../../tests/test_answer_quality_review_scorecard.py#L95) | 95 | `"    issues = mod.validate_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000096](../../tests/test_answer_quality_review_scorecard.py#L96) | 96 | `"    assert any(\"unknown case_id\" in issue for issue in issues)"` | — |
-| [SRC-D186ED3822-L000097](../../tests/test_answer_quality_review_scorecard.py#L97) | 97 | `"    assert any(\"duplicate review\" in issue for issue in issues)"` | — |
-| [SRC-D186ED3822-L000098](../../tests/test_answer_quality_review_scorecard.py#L98) | 98 | `""` | — |
-| [SRC-D186ED3822-L000099](../../tests/test_answer_quality_review_scorecard.py#L99) | 99 | `""` | — |
-| [SRC-D186ED3822-L000100](../../tests/test_answer_quality_review_scorecard.py#L100) | 100 | `"def test_not_tested_cases_must_not_carry_metric_scores():"` | — |
-| [SRC-D186ED3822-L000101](../../tests/test_answer_quality_review_scorecard.py#L101) | 101 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000102](../../tests/test_answer_quality_review_scorecard.py#L102) | 102 | `"    data = {\"reviews\": [{"` | — |
-| [SRC-D186ED3822-L000103](../../tests/test_answer_quality_review_scorecard.py#L103) | 103 | `"        \"case_id\": \"AQ-001\", \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D186ED3822-L000104](../../tests/test_answer_quality_review_scorecard.py#L104) | 104 | `"        \"writing_quality\": 5,"` | — |
-| [SRC-D186ED3822-L000105](../../tests/test_answer_quality_review_scorecard.py#L105) | 105 | `"    }]}"` | — |
-| [SRC-D186ED3822-L000106](../../tests/test_answer_quality_review_scorecard.py#L106) | 106 | `"    issues = mod.validate_reviews(data, corpus())"` | — |
-| [SRC-D186ED3822-L000107](../../tests/test_answer_quality_review_scorecard.py#L107) | 107 | `"    assert any(\"unreviewed case must not contain metric scores\" in issue for issue in issues)"` | — |
-| [SRC-D186ED3822-L000108](../../tests/test_answer_quality_review_scorecard.py#L108) | 108 | `""` | — |
-| [SRC-D186ED3822-L000109](../../tests/test_answer_quality_review_scorecard.py#L109) | 109 | `""` | — |
-| [SRC-D186ED3822-L000110](../../tests/test_answer_quality_review_scorecard.py#L110) | 110 | `"def test_scorecard_cli_writes_a_machine_readable_summary(tmp_path, capsys):"` | — |
-| [SRC-D186ED3822-L000111](../../tests/test_answer_quality_review_scorecard.py#L111) | 111 | `"    mod = load_module()"` | — |
-| [SRC-D186ED3822-L000112](../../tests/test_answer_quality_review_scorecard.py#L112) | 112 | `"    reviews_path = tmp_path / \"reviews.json\""` | — |
-| [SRC-D186ED3822-L000113](../../tests/test_answer_quality_review_scorecard.py#L113) | 113 | `"    output_path = tmp_path / \"summary.json\""` | — |
-| [SRC-D186ED3822-L000114](../../tests/test_answer_quality_review_scorecard.py#L114) | 114 | `"    reviews_path.write_text('{\"schema_version\":\"1.0\",\"reviews\":[{\"case_id\":\"AQ-001\",\"status\":\"REVIEWED\",\"writing_quality\":5}]}', encoding=\"utf-8\")"` | — |
-| [SRC-D186ED3822-L000115](../../tests/test_answer_quality_review_scorecard.py#L115) | 115 | `"    rc = mod.main([\"--reviews\", str(reviews_path), \"--corpus\", str(CORPUS_PATH), \"--out\", str(output_path)])"` | — |
-| [SRC-D186ED3822-L000116](../../tests/test_answer_quality_review_scorecard.py#L116) | 116 | `"    assert rc == 0"` | — |
-| [SRC-D186ED3822-L000117](../../tests/test_answer_quality_review_scorecard.py#L117) | 117 | `"    assert '\"score\": 5.0' in capsys.readouterr().out"` | — |
-| [SRC-D186ED3822-L000118](../../tests/test_answer_quality_review_scorecard.py#L118) | 118 | `"    assert output_path.is_file()"` | — |
-## اختبارات
-
-### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B3062EB677-L000001](../../tests/test_answer_quality_runner.py#L1) | 1 | `"\"\"\"Offline tests for scripts/run_answer_quality_benchmark.py (no network).\"\"\""` | — |
-| [SRC-B3062EB677-L000002](../../tests/test_answer_quality_runner.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-B3062EB677-L000003](../../tests/test_answer_quality_runner.py#L3) | 3 | `""` | — |
-| [SRC-B3062EB677-L000004](../../tests/test_answer_quality_runner.py#L4) | 4 | `"import importlib.util"` | — |
-| [SRC-B3062EB677-L000005](../../tests/test_answer_quality_runner.py#L5) | 5 | `"import json"` | — |
-| [SRC-B3062EB677-L000006](../../tests/test_answer_quality_runner.py#L6) | 6 | `"import sys"` | — |
-| [SRC-B3062EB677-L000007](../../tests/test_answer_quality_runner.py#L7) | 7 | `"from pathlib import Path"` | — |
-| [SRC-B3062EB677-L000008](../../tests/test_answer_quality_runner.py#L8) | 8 | `""` | — |
-| [SRC-B3062EB677-L000009](../../tests/test_answer_quality_runner.py#L9) | 9 | `"import pytest"` | — |
-| [SRC-B3062EB677-L000010](../../tests/test_answer_quality_runner.py#L10) | 10 | `""` | — |
-| [SRC-B3062EB677-L000011](../../tests/test_answer_quality_runner.py#L11) | 11 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-B3062EB677-L000012](../../tests/test_answer_quality_runner.py#L12) | 12 | `"SCRIPT = ROOT / \"scripts\" / \"run_answer_quality_benchmark.py\""` | — |
-| [SRC-B3062EB677-L000013](../../tests/test_answer_quality_runner.py#L13) | 13 | `"CORPUS = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
-| [SRC-B3062EB677-L000014](../../tests/test_answer_quality_runner.py#L14) | 14 | `""` | — |
-| [SRC-B3062EB677-L000015](../../tests/test_answer_quality_runner.py#L15) | 15 | `""` | — |
-| [SRC-B3062EB677-L000016](../../tests/test_answer_quality_runner.py#L16) | 16 | `"def _load_runner():"` | — |
-| [SRC-B3062EB677-L000017](../../tests/test_answer_quality_runner.py#L17) | 17 | `"    spec = importlib.util.spec_from_file_location(\"aq_runner\", SCRIPT)"` | — |
-| [SRC-B3062EB677-L000018](../../tests/test_answer_quality_runner.py#L18) | 18 | `"    assert spec and spec.loader"` | — |
-| [SRC-B3062EB677-L000019](../../tests/test_answer_quality_runner.py#L19) | 19 | `"    mod = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-B3062EB677-L000020](../../tests/test_answer_quality_runner.py#L20) | 20 | `"    sys.modules[\"aq_runner\"] = mod"` | — |
-| [SRC-B3062EB677-L000021](../../tests/test_answer_quality_runner.py#L21) | 21 | `"    spec.loader.exec_module(mod)"` | — |
-| [SRC-B3062EB677-L000022](../../tests/test_answer_quality_runner.py#L22) | 22 | `"    return mod"` | — |
-| [SRC-B3062EB677-L000023](../../tests/test_answer_quality_runner.py#L23) | 23 | `""` | — |
-| [SRC-B3062EB677-L000024](../../tests/test_answer_quality_runner.py#L24) | 24 | `""` | — |
-| [SRC-B3062EB677-L000025](../../tests/test_answer_quality_runner.py#L25) | 25 | `"def test_runner_script_exists():"` | — |
-| [SRC-B3062EB677-L000026](../../tests/test_answer_quality_runner.py#L26) | 26 | `"    assert SCRIPT.is_file()"` | — |
-| [SRC-B3062EB677-L000027](../../tests/test_answer_quality_runner.py#L27) | 27 | `""` | — |
-| [SRC-B3062EB677-L000028](../../tests/test_answer_quality_runner.py#L28) | 28 | `""` | — |
-| [SRC-B3062EB677-L000029](../../tests/test_answer_quality_runner.py#L29) | 29 | `"def test_validate_mode_succeeds_on_real_corpus(capsys):"` | — |
-| [SRC-B3062EB677-L000030](../../tests/test_answer_quality_runner.py#L30) | 30 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000031](../../tests/test_answer_quality_runner.py#L31) | 31 | `"    rc = mod.main([\"--mode\", \"validate\", \"--corpus\", str(CORPUS), \"--summary\"])"` | — |
-| [SRC-B3062EB677-L000032](../../tests/test_answer_quality_runner.py#L32) | 32 | `"    assert rc == 0"` | — |
-| [SRC-B3062EB677-L000033](../../tests/test_answer_quality_runner.py#L33) | 33 | `"    out = capsys.readouterr().out"` | — |
-| [SRC-B3062EB677-L000034](../../tests/test_answer_quality_runner.py#L34) | 34 | `"    assert \"VALIDATE OK\" in out"` | — |
-| [SRC-B3062EB677-L000035](../../tests/test_answer_quality_runner.py#L35) | 35 | `"    assert \"NOT_TESTED\" in out"` | — |
-| [SRC-B3062EB677-L000036](../../tests/test_answer_quality_runner.py#L36) | 36 | `""` | — |
-| [SRC-B3062EB677-L000037](../../tests/test_answer_quality_runner.py#L37) | 37 | `""` | — |
-| [SRC-B3062EB677-L000038](../../tests/test_answer_quality_runner.py#L38) | 38 | `"def test_validate_rejects_missing_file(tmp_path):"` | — |
-| [SRC-B3062EB677-L000039](../../tests/test_answer_quality_runner.py#L39) | 39 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000040](../../tests/test_answer_quality_runner.py#L40) | 40 | `"    missing = tmp_path / \"nope.json\""` | — |
-| [SRC-B3062EB677-L000041](../../tests/test_answer_quality_runner.py#L41) | 41 | `"    with pytest.raises(FileNotFoundError):"` | — |
-| [SRC-B3062EB677-L000042](../../tests/test_answer_quality_runner.py#L42) | 42 | `"        mod.load_corpus(missing)"` | — |
-| [SRC-B3062EB677-L000043](../../tests/test_answer_quality_runner.py#L43) | 43 | `""` | — |
-| [SRC-B3062EB677-L000044](../../tests/test_answer_quality_runner.py#L44) | 44 | `""` | — |
-| [SRC-B3062EB677-L000045](../../tests/test_answer_quality_runner.py#L45) | 45 | `"def test_validate_detects_bad_case_count(tmp_path):"` | — |
-| [SRC-B3062EB677-L000046](../../tests/test_answer_quality_runner.py#L46) | 46 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000047](../../tests/test_answer_quality_runner.py#L47) | 47 | `"    data = json.loads(CORPUS.read_text(encoding=\"utf-8\"))"` | — |

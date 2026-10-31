@@ -180,7 +180,6 @@ def test_public_url_filter_accepts_basic_https_url():
 
 
 def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
-    import httpx
 
     html = """
     <html><body>
@@ -211,7 +210,10 @@ def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
         calls.append(url)
         return FakeResponse(html if "duckduckgo.com" in url else rss)
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results = WebAgent()._search_web("سؤال بحث تجريبي")
 
     assert len(results) == 2
@@ -245,7 +247,6 @@ def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypat
 
 
 def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):
-    import httpx
 
     reddit_xml = """<rss><channel><item>
       <title>تجربة سيارة كهربائية</title>
@@ -281,7 +282,10 @@ def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatc
             })
         raise AssertionError(f"Unexpected URL: {url}")
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "سيارة كهربائية", ["reddit", "bluesky"]
     )
@@ -480,7 +484,6 @@ def test_user_supplied_url_is_prioritized_and_page_content_is_extracted(monkeypa
 
 
 def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("X_BEARER_TOKEN", "test-token")
 
@@ -506,7 +509,10 @@ def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
         calls.append((url, kwargs))
         return FakeResponse()
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "سيارة كهربائية", ["x"]
     )
@@ -519,7 +525,6 @@ def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
 
 
 def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("INSTAGRAM_USER_ID", "ig-user-123")
     monkeypatch.setenv("INSTAGRAM_ACCESS_TOKEN", "test-ig-token")
@@ -551,7 +556,10 @@ def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):
             }]})
         raise AssertionError(f"Unexpected URL {url}")
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "Instagram #cars", ["instagram"]
     )
@@ -576,7 +584,6 @@ def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):
 
 
 def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("FACEBOOK_PAGE_ACCESS_TOKEN", "test-page-token")
     monkeypatch.setenv("FACEBOOK_PAGE_IDS", "page-1,page-2")
@@ -600,7 +607,10 @@ def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
         calls.append((url, kwargs))
         return FakeResponse()
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "electric car", ["facebook"]
     )
@@ -613,7 +623,6 @@ def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
 
 
 def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("REDDIT_CLIENT_ID", "client-test")
     monkeypatch.setenv("REDDIT_CLIENT_SECRET", "secret-test")
@@ -652,8 +661,12 @@ def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypat
             }
         }]}})
 
-    monkeypatch.setattr(httpx, "post", fake_post)
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: (
+            fake_post(url, **kwargs) if method == "POST" else fake_get(url, **kwargs)
+        ),
+    )
     results, warnings = WebAgent()._search_social(
         "electric vehicles", ["reddit"]
     )
@@ -735,7 +748,7 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
             )
         return FakeResponse()
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
         model="broken/primary",
@@ -800,7 +813,7 @@ def test_completion_discards_truncated_primary_and_uses_complete_fallback(monkey
             return FakeResponse("جزء مبتور لا يجوز عرضه", "length")
         return FakeResponse("إجابة مكتملة", "stop")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
         model="broken/primary",
@@ -843,7 +856,7 @@ def test_completion_rejects_response_when_all_models_are_truncated(monkeypatch):
         called.append(json.loads(request.data.decode("utf-8"))["model"])
         return FakeResponse()
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     with pytest.raises(RuntimeError, match="مبتورة"):
         agent._request_completion(
             [{"role": "user", "content": "اختبار"}],
@@ -885,7 +898,7 @@ def test_completion_falls_back_for_malformed_choice(monkeypatch):
         )
         return FakeResponse(json.dumps({"choices": choices}).encode("utf-8"))
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "test"}],
         model="broken/primary",
@@ -1044,7 +1057,7 @@ def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeyp
         seen["payload"] = json.loads(request.data.decode("utf-8"))
         return FakeResponse()
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "ابحث عن أحدث تقرير"}],
         model="example/model",
@@ -1541,7 +1554,6 @@ def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):
 
 
 def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):
-    import httpx
 
     rss = """<rss><channel>
     <item>
@@ -1565,7 +1577,10 @@ def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeyp
         content = rss.encode("utf-8")
 
     agent = WebAgent()
-    monkeypatch.setattr(httpx, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: FakeResponse(),
+    )
     monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
     monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
 
@@ -1585,7 +1600,6 @@ def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeyp
 
 
 def test_google_news_preserves_publisher_identity(monkeypatch):
-    import httpx
 
     rss = """<rss><channel><item>
       <title>مصر الرقمية: تحديث جديد للخدمات</title>
@@ -1599,7 +1613,10 @@ def test_google_news_preserves_publisher_identity(monkeypatch):
         status_code = 200
         content = rss.encode("utf-8")
 
-    monkeypatch.setattr(httpx, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: FakeResponse(),
+    )
     agent = WebAgent()
     results = agent._search_news("مصر الرقمية أحدث الأخبار")
 
@@ -2058,7 +2075,7 @@ def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypat
             return FakeResponse("جزء جواب مفلتر لا ينبغي اعتباره مكتملا", "content_filter")
         return FakeResponse("إجابة الاحتياط المكتملة", "stop")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
         model="filtered/primary",
@@ -2384,7 +2401,6 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
 
 
 def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("DEEPSEEK_SEARCH_API_KEY", "test-secret-key-that-must-not-appear")
     agent = WebAgent()
@@ -2413,7 +2429,10 @@ def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(mon
         seen.update(kwargs)
         return FakeResponse()
 
-    monkeypatch.setattr(httpx, "post", fake_post)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_post(url, **kwargs),
+    )
     rows = agent._search_deepseek_api("buyers looking to buy a flat")
 
     assert seen["url"] == "https://api.deepseek.com/v1/tools/search"
@@ -2785,7 +2804,6 @@ def test_frontend_exposes_structured_page_fetch_statuses():
 def test_search_providers_do_not_follow_redirects_automatically(
     monkeypatch, method_name
 ):
-    import httpx
 
     agent = WebAgent()
     observed = []
@@ -2801,7 +2819,10 @@ def test_search_providers_do_not_follow_redirects_automatically(
         observed.append((url, kwargs.get("follow_redirects")))
         return RedirectResponse()
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     method = getattr(agent, method_name)
     with pytest.raises(RuntimeError, match="HTTP 302"):
         method("redirect regression test")
@@ -3897,3 +3918,307 @@ def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
     assert result["answer"] == "إجابة اختبارية [المصدر 1]."
     assert result["research_completion"]["status"] == "diagnostics_not_computed"
     assert any("لا يُعد ذلك دليلًا على اكتمال البحث" in warning for warning in result["warnings"])
+
+
+
+def test_model_request_transport_disables_automatic_redirects(monkeypatch):
+    from agents import web_agent
+
+    observed = {}
+    sentinel = object()
+
+    class FakeOpener:
+        def open(self, request, *, timeout):
+            observed["request"] = request
+            observed["timeout"] = timeout
+            return sentinel
+
+    def fake_build_opener(*handlers):
+        observed["handlers"] = handlers
+        return FakeOpener()
+
+    monkeypatch.setattr(web_agent.urllib.request, "build_opener", fake_build_opener)
+    request = web_agent.urllib.request.Request(
+        "https://provider.example/v1/chat/completions",
+        data=b"{}",
+        headers={"Authorization": "Bearer test-only-token"},
+        method="POST",
+    )
+
+    assert web_agent._open_model_request(request, timeout=3.5) is sentinel
+    assert observed["request"] is request
+    assert observed["timeout"] == 3.5
+    assert observed["handlers"] == (web_agent._NoRedirectHandler,)
+
+    handler = web_agent._NoRedirectHandler()
+    redirected = handler.redirect_request(
+        request,
+        None,
+        302,
+        "Found",
+        {},
+        "https://attacker.example/collect",
+    )
+    assert redirected is None
+
+
+def test_openrouter_web_search_does_not_match_spoofed_hostname(monkeypatch):
+    monkeypatch.setenv("OMARAI_OPENROUTER_WEB_SEARCH", "1")
+    monkeypatch.setenv(
+        "OMARAI_LLM_BASE_URL",
+        "https://openrouter.ai.attacker.example/api/v1",
+    )
+
+    assert WebAgent().openrouter_web_search_enabled is False
+
+
+
+@pytest.mark.parametrize(
+    "address,family",
+    [
+        ("127.0.0.1", __import__("socket").AF_INET),
+        ("169.254.169.254", __import__("socket").AF_INET),
+        ("::1", __import__("socket").AF_INET6),
+        ("fe80::1", __import__("socket").AF_INET6),
+        ("fd00::1", __import__("socket").AF_INET6),
+    ],
+)
+def test_public_ip_literals_rejects_non_global_ipv4_and_ipv6_answers(
+    monkeypatch, address, family
+):
+    import socket
+
+    from agents import web_agent
+
+    answers = [
+        (family, socket.SOCK_STREAM, socket.IPPROTO_TCP, "", (address, 80))
+    ]
+    monkeypatch.setattr(
+        web_agent.socket,
+        "getaddrinfo",
+        lambda host, port, type: answers,
+    )
+
+    assert web_agent._public_ip_literals("untrusted.example") is None
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "http://127.0.0.1/private",
+        "http://169.254.169.254/latest/meta-data/",
+        "http://[::1]/private",
+        "http://[fe80::1]/private",
+        "http://[fd00::1]/private",
+        "file:///etc/passwd",
+        "https://user:password@example.com/private",
+        "https://example.com:8443/private",
+    ],
+)
+def test_public_http_url_rejects_non_public_or_unsafe_targets(url):
+    from agents.web_agent import _public_http_url
+
+    assert _public_http_url(url) is None
+
+
+def test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies(monkeypatch):
+    from contextlib import contextmanager
+
+    import httpx
+
+    from agents import web_agent
+
+    monkeypatch.setattr(
+        web_agent, "_public_ip_literals", lambda _host: ["93.184.216.34"]
+    )
+    chunks_yielded = []
+
+    class FakeResponse:
+        status_code = 200
+        encoding = "utf-8"
+
+        def __init__(self):
+            self.headers = {
+                "content-type": "text/plain; charset=utf-8",
+                # Deliberately under-reports the actual streamed body length.
+                "content-length": "1",
+            }
+
+        def iter_bytes(self):
+            chunks = (
+                b"A" * web_agent.MAX_PAGE_BYTES,
+                b"B" * 32,
+                b"C" * 32,
+            )
+            for chunk in chunks:
+                chunks_yielded.append(len(chunk))
+                yield chunk
+
+    @contextmanager
+    def fake_stream(self, method, url, **kwargs):
+        assert method == "GET"
+        assert str(url) == "https://93.184.216.34/large.txt"
+        yield FakeResponse()
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            self.options = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        stream = fake_stream
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+    result = web_agent.WebAgent()._fetch_page("https://example.com/large.txt")
+
+    assert result.status == "partial_extraction"
+    assert len(result[1]) <= web_agent.MAX_PAGE_TEXT_CHARS
+    # The reader stops as soon as the byte cap is crossed; it never asks for chunk 3.
+    assert chunks_yielded == [web_agent.MAX_PAGE_BYTES, 32]
+
+
+
+@pytest.mark.parametrize("field", ["title", "snippet", "page_text"])
+def test_generate_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch):
+    agent = WebAgent()
+    source = sample_source(0)
+    injected_text = f"INJECTED INSTRUCTION FROM UNTRUSTED {field.upper()}"
+    source[field] = injected_text
+    if field == "snippet":
+        source["page_text"] = ""
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "إجابة اختبارية."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    answer = agent._generate(
+        question="ما الذي يقوله المصدر؟",
+        history=[],
+        sources=[source],
+        search_warning=None,
+        research_plan={"depth": "standard", "queries": ["ما الذي يقوله المصدر؟"]},
+        search_report={},
+    )
+
+    messages = captured["messages"]
+    system_content = "\n".join(
+        message["content"] for message in messages if message["role"] == "system"
+    )
+    user_contents = [
+        message["content"] for message in messages if message["role"] == "user"
+    ]
+
+    assert answer == "إجابة اختبارية."
+    assert injected_text not in system_content
+    assert any(injected_text in value for value in user_contents)
+
+
+@pytest.mark.parametrize("field", ["title", "snippet", "page_text"])
+def test_review_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch):
+    agent = WebAgent()
+    source = sample_source(0)
+    injected_text = f"INJECTED REVIEW INSTRUCTION FROM UNTRUSTED {field.upper()}"
+    source[field] = injected_text
+    if field == "snippet":
+        source["page_text"] = ""
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "<<<OMARAI_FINAL_ANSWER>>>تم تدقيق الإجابة.<<<END_OMARAI_FINAL_ANSWER>>>"
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    answer = agent._review_answer(
+        question="ما الذي يقوله المصدر؟",
+        answer="مسودة إجابة تحتاج التحقق.",
+        sources=[source],
+    )
+
+    messages = captured["messages"]
+    system_content = "\n".join(
+        message["content"] for message in messages if message["role"] == "system"
+    )
+    user_contents = [
+        message["content"] for message in messages if message["role"] == "user"
+    ]
+
+    assert answer == "تم تدقيق الإجابة."
+    assert injected_text not in system_content
+    assert any(injected_text in value for value in user_contents)
+
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "https://api.example.test/v1",
+        "http://localhost:11434/v1",
+        "http://127.0.0.1:8080/v1",
+        "http://[::1]:8000/v1",
+    ],
+)
+def test_model_provider_base_url_allows_https_or_loopback(url):
+    from agents.web_agent import _is_safe_model_base_url
+
+    assert _is_safe_model_base_url(url) is True
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "http://api.example.test/v1",
+        "ftp://api.example.test/v1",
+        "https://user:password@api.example.test/v1",
+        "https://api.example.test/v1?token=secret",
+        "https://api.example.test/v1#fragment",
+        "https:///missing-host",
+        "https://api.example.test:99999/v1",
+    ],
+)
+def test_model_provider_base_url_rejects_insecure_or_ambiguous_urls(url):
+    from agents.web_agent import _is_safe_model_base_url
+
+    assert _is_safe_model_base_url(url) is False
+
+
+def test_model_provider_rejects_remote_http_before_sending_bearer_key(monkeypatch):
+    from agents import web_agent
+
+    agent = WebAgent()
+    agent.api_key = "unit-test-secret"
+    agent.base_url = "http://provider.example/api/v1"
+
+    def unexpected_request(*_args, **_kwargs):
+        pytest.fail("bearer credentials must not be sent to a remote HTTP URL")
+
+    monkeypatch.setattr(web_agent, "_open_model_request", unexpected_request)
+    with pytest.raises(RuntimeError, match="HTTPS"):
+        agent._request_completion(
+            [{"role": "user", "content": "test"}],
+            max_tokens=100,
+        )
+
+    assert agent.generation_diagnostics[-1]["status"] == "unsafe_provider_url"
+    assert agent.generation_diagnostics[-1]["request_started"] is False
+
+
+def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatch):
+    monkeypatch.setenv(
+        "OMARAI_LLM_BASE_URL",
+        "https://health-user:health-password@provider.example/api/v1?token=health-secret",
+    )
+
+    status = WebAgent.status()
+    provider = status["language_model_provider"]
+
+    assert provider == "https://provider.example"
+    assert "health-user" not in provider
+    assert "health-password" not in provider
+    assert "health-secret" not in provider
+    assert "/api/v1" not in provider
