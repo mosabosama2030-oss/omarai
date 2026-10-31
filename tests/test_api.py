@@ -991,6 +991,7 @@ def test_loopback_test_mode_allows_tokenless_local_api_but_not_remote_or_public_
     harness = SimpleNamespace(
         client_address=("203.0.113.10", 50000),
         server=SimpleNamespace(server_address=("127.0.0.1", 8765)),
+        _is_loopback_address=Handler._is_loopback_address,
     )
     monkeypatch.setenv("OMARAI_TEST_MODE", "1")
     assert Handler._is_loopback_test_request(harness) is False
