@@ -186,7 +186,6 @@ def run_smoke(
         raise SmokeError(f"Authenticated diagnostics failed (HTTP {status}).", partial_report)
     parts = diagnostics.get("checks", {})
     web = parts.get("web_search", {}) if isinstance(parts, dict) else {}
-    model = parts.get("language_model", {}) if isinstance(parts, dict) else {}
     if not isinstance(web, dict) or web.get("status") != "passed":
         raise SmokeError("The real web-search connectivity test did not pass.", partial_report)
     checks["live_search"] = {
@@ -302,7 +301,7 @@ def main() -> int:
             local_dev_no_token=args.local_dev_no_token,
         )
     except SmokeError as exc:
-        failed_report = {"result": "failed", "error": str(exc), **exc.report}
+        failed_report = {**exc.report, "result": "failed", "error": str(exc)}
         rendered = json.dumps(failed_report, ensure_ascii=False, indent=2)
         if args.output:
             output_path = Path(args.output)
