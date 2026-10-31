@@ -633,7 +633,7 @@
 | [SRC-A8360B1B03-L000120](../../scripts/hosted_smoke_test.py#L120) | 120 | `"            raise SmokeError(\"OMARAI_ACCESS_TOKEN is shorter than 32 characters.\")"` | — |
 | [SRC-A8360B1B03-L000121](../../scripts/hosted_smoke_test.py#L121) | 121 | `"    elif not (local_dev_no_token and loopback_host):"` | — |
 | [SRC-A8360B1B03-L000122](../../scripts/hosted_smoke_test.py#L122) | 122 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"            \"A bearer token is required for hosted targets. No-token mode is restricted to localhost/loopback.\""` | — |
+| [SRC-A8360B1B03-L000123](../../scripts/hosted_smoke_test.py#L123) | 123 | `"            \"OMARAI_ACCESS_TOKEN is required for hosted targets. No-token mode is restricted to localhost/loopback.\""` | — |
 | [SRC-A8360B1B03-L000124](../../scripts/hosted_smoke_test.py#L124) | 124 | `"        )"` | — |
 | [SRC-A8360B1B03-L000125](../../scripts/hosted_smoke_test.py#L125) | 125 | `""` | — |
 | [SRC-A8360B1B03-L000126](../../scripts/hosted_smoke_test.py#L126) | 126 | `"    status, health = request_json(f\"{origin}/api/health\", timeout=min(timeout, 20))"` | — |
