@@ -211,7 +211,10 @@ def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
         calls.append(url)
         return FakeResponse(html if "duckduckgo.com" in url else rss)
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results = WebAgent()._search_web("سؤال بحث تجريبي")
 
     assert len(results) == 2
@@ -281,7 +284,10 @@ def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatc
             })
         raise AssertionError(f"Unexpected URL: {url}")
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "سيارة كهربائية", ["reddit", "bluesky"]
     )
@@ -506,7 +512,10 @@ def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
         calls.append((url, kwargs))
         return FakeResponse()
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "سيارة كهربائية", ["x"]
     )
@@ -551,7 +560,10 @@ def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):
             }]})
         raise AssertionError(f"Unexpected URL {url}")
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "Instagram #cars", ["instagram"]
     )
@@ -600,7 +612,10 @@ def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
         calls.append((url, kwargs))
         return FakeResponse()
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     results, warnings = WebAgent()._search_social(
         "electric car", ["facebook"]
     )
@@ -652,8 +667,12 @@ def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypat
             }
         }]}})
 
-    monkeypatch.setattr(httpx, "post", fake_post)
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: (
+            fake_post(url, **kwargs) if method == "POST" else fake_get(url, **kwargs)
+        ),
+    )
     results, warnings = WebAgent()._search_social(
         "electric vehicles", ["reddit"]
     )
@@ -1565,7 +1584,10 @@ def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeyp
         content = rss.encode("utf-8")
 
     agent = WebAgent()
-    monkeypatch.setattr(httpx, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: FakeResponse(),
+    )
     monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
     monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
 
@@ -1599,7 +1621,10 @@ def test_google_news_preserves_publisher_identity(monkeypatch):
         status_code = 200
         content = rss.encode("utf-8")
 
-    monkeypatch.setattr(httpx, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: FakeResponse(),
+    )
     agent = WebAgent()
     results = agent._search_news("مصر الرقمية أحدث الأخبار")
 
@@ -2413,7 +2438,10 @@ def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(mon
         seen.update(kwargs)
         return FakeResponse()
 
-    monkeypatch.setattr(httpx, "post", fake_post)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_post(url, **kwargs),
+    )
     rows = agent._search_deepseek_api("buyers looking to buy a flat")
 
     assert seen["url"] == "https://api.deepseek.com/v1/tools/search"
@@ -2801,7 +2829,10 @@ def test_search_providers_do_not_follow_redirects_automatically(
         observed.append((url, kwargs.get("follow_redirects")))
         return RedirectResponse()
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     method = getattr(agent, method_name)
     with pytest.raises(RuntimeError, match="HTTP 302"):
         method("redirect regression test")
