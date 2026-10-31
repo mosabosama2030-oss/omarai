@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000119 إلى SRC-AFEDC2645A-L000251
+- النطاق: SRC-96F6863E3C-L000119 إلى SRC-AFEDC2645A-L000230
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -306,6 +306,27 @@
 | [SRC-CDCF4DCBEA-L000043](../../tests/test_self_acceptance.py#L43) | 43 | `"    assert result[\"research_completion_status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
 | [SRC-CDCF4DCBEA-L000044](../../tests/test_self_acceptance.py#L44) | 44 | `"    assert result[\"invalid_citation_references_removed_count\"] == 1"` | — |
 | [SRC-CDCF4DCBEA-L000045](../../tests/test_self_acceptance.py#L45) | 45 | `"    assert result[\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-CDCF4DCBEA-L000046](../../tests/test_self_acceptance.py#L46) | 46 | `""` | — |
+| [SRC-CDCF4DCBEA-L000047](../../tests/test_self_acceptance.py#L47) | 47 | `"def test_tokenless_local_self_acceptance_executes_real_health_and_analyze_routes("` | — |
+| [SRC-CDCF4DCBEA-L000048](../../tests/test_self_acceptance.py#L48) | 48 | `"    tmp_path, monkeypatch"` | — |
+| [SRC-CDCF4DCBEA-L000049](../../tests/test_self_acceptance.py#L49) | 49 | `"):"` | — |
+| [SRC-CDCF4DCBEA-L000050](../../tests/test_self_acceptance.py#L50) | 50 | `"    import json"` | — |
+| [SRC-CDCF4DCBEA-L000051](../../tests/test_self_acceptance.py#L51) | 51 | `""` | — |
+| [SRC-CDCF4DCBEA-L000052](../../tests/test_self_acceptance.py#L52) | 52 | `"    from scripts.self_acceptance_test import run_acceptance"` | — |
+| [SRC-CDCF4DCBEA-L000053](../../tests/test_self_acceptance.py#L53) | 53 | `""` | — |
+| [SRC-CDCF4DCBEA-L000054](../../tests/test_self_acceptance.py#L54) | 54 | `"    monkeypatch.delenv(\"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\", raising=False)"` | — |
+| [SRC-CDCF4DCBEA-L000055](../../tests/test_self_acceptance.py#L55) | 55 | `"    output = tmp_path / \"self-acceptance.json\""` | — |
+| [SRC-CDCF4DCBEA-L000056](../../tests/test_self_acceptance.py#L56) | 56 | `"    report = run_acceptance(output_path=output, live=False)"` | — |
+| [SRC-CDCF4DCBEA-L000057](../../tests/test_self_acceptance.py#L57) | 57 | `""` | — |
+| [SRC-CDCF4DCBEA-L000058](../../tests/test_self_acceptance.py#L58) | 58 | `"    assert report[\"environment\"] == \"local_loopback_isolated_database\""` | — |
+| [SRC-CDCF4DCBEA-L000059](../../tests/test_self_acceptance.py#L59) | 59 | `"    assert report[\"authentication\"][\"access_token_required\"] is False"` | — |
+| [SRC-CDCF4DCBEA-L000060](../../tests/test_self_acceptance.py#L60) | 60 | `"    assert report[\"authentication\"][\"bind_host\"] == \"127.0.0.1\""` | — |
+| [SRC-CDCF4DCBEA-L000061](../../tests/test_self_acceptance.py#L61) | 61 | `"    assert report[\"external_calls_enabled\"] is False"` | — |
+| [SRC-CDCF4DCBEA-L000062](../../tests/test_self_acceptance.py#L62) | 62 | `"    assert report[\"checks\"][\"health\"][\"status\"] == \"passed\""` | — |
+| [SRC-CDCF4DCBEA-L000063](../../tests/test_self_acceptance.py#L63) | 63 | `"    assert report[\"checks\"][\"local_analyze\"][\"status\"] == \"passed\""` | — |
+| [SRC-CDCF4DCBEA-L000064](../../tests/test_self_acceptance.py#L64) | 64 | `"    assert report[\"questions\"] == []"` | — |
+| [SRC-CDCF4DCBEA-L000065](../../tests/test_self_acceptance.py#L65) | 65 | `"    saved = json.loads(output.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-CDCF4DCBEA-L000066](../../tests/test_self_acceptance.py#L66) | 66 | `"    assert saved[\"authentication\"][\"test_mode\"] is True"` | — |
 ## اختبارات
 
 ### FILE-D033B34F41 — [tests/test_source_metadata_audit.py](../../tests/test_source_metadata_audit.py#L1)
@@ -849,24 +870,3 @@
 | [SRC-AFEDC2645A-L000228](../../tests/test_task_understanding.py#L228) | 228 | `"def test_summary_without_url_or_text_marks_required_input():"` | — |
 | [SRC-AFEDC2645A-L000229](../../tests/test_task_understanding.py#L229) | 229 | `"    spec = build_task_spec(\"لخص\", mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
 | [SRC-AFEDC2645A-L000230](../../tests/test_task_understanding.py#L230) | 230 | `"    assert \"summary_source_url_or_pasted_text\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `""` | — |
-| [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `""` | — |
-| [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"def test_output_preferences_do_not_count_as_competing_intent_hypotheses():"` | — |
-| [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل\","` | — |
-| [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    families = {row[\"family\"] for row in spec[\"hypothesis_interpretations\"]}"` | — |
-| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert \"compare\" in families"` | — |
-| [SRC-AFEDC2645A-L000242](../../tests/test_task_understanding.py#L242) | 242 | `"    assert not any(family.startswith(\"output_\") for family in families)"` | — |
-| [SRC-AFEDC2645A-L000243](../../tests/test_task_understanding.py#L243) | 243 | `"    assert spec[\"ambiguity_status\"] == \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-AFEDC2645A-L000244](../../tests/test_task_understanding.py#L244) | 244 | `""` | — |
-| [SRC-AFEDC2645A-L000245](../../tests/test_task_understanding.py#L245) | 245 | `""` | — |
-| [SRC-AFEDC2645A-L000246](../../tests/test_task_understanding.py#L246) | 246 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000247](../../tests/test_task_understanding.py#L247) | 247 | `"    (\"question\", \"family\"),"` | — |
-| [SRC-AFEDC2645A-L000248](../../tests/test_task_understanding.py#L248) | 248 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000249](../../tests/test_task_understanding.py#L249) | 249 | `"        (\"ترجم هذا النص إلى الإنجليزية: Hello world\", \"translation\"),"` | — |
-| [SRC-AFEDC2645A-L000250](../../tests/test_task_understanding.py#L250) | 250 | `"        (\"اكتب بريد إلكتروني للعميل بنبرة مهنية\", \"writing_or_editing\"),"` | — |
-| [SRC-AFEDC2645A-L000251](../../tests/test_task_understanding.py#L251) | 251 | `"        (\"احسب 17 بالمئة من 500\", \"calculation\"),"` | — |

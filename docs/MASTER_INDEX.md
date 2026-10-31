@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **121**
 - ملفات Python المحللة: **75**
-- تعريفات Python المفهرسة: **1539**
+- تعريفات Python المفهرسة: **1540**
 - تعريفات Python موثقة بوجود Docstring: **259**
-- تعريفات Python بلا Docstring: **974**
+- تعريفات Python بلا Docstring: **975**
 - تعريفات لا ينطبق عليها Docstring: **306**
-- الرموز الساكنة الإضافية: **1887**
-- الأسطر النصية المفهرسة حرفيًا: **40862**
+- الرموز الساكنة الإضافية: **1888**
+- الأسطر النصية المفهرسة حرفيًا: **40883**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -139,7 +139,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
-| FILE-CDCF4DCBEA | اختبارات | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L1) | Python | 1870 | 45 | جرد الملف + AST Python |
+| FILE-CDCF4DCBEA | اختبارات | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L1) | Python | 2784 | 66 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-3A58E86240 | اختبارات | [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L1) | Python | 2522 | 83 | جرد الملف + AST Python |
@@ -1385,6 +1385,7 @@
 | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L4) | دالة | test_self_acceptance_questions_cover_research_followup_and_optional_buyer_intent | لا توجد Docstring. | ناقص | 4 | [SRC-CDCF4DCBEA-L000004](../tests/test_self_acceptance.py#L4) |
 | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L17) | دالة | test_custom_self_acceptance_questions_are_preserved_without_rewriting | لا توجد Docstring. | ناقص | 17 | [SRC-CDCF4DCBEA-L000017](../tests/test_self_acceptance.py#L17) |
 | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L25) | دالة | test_live_response_summary_keeps_quality_gaps_visible | لا توجد Docstring. | ناقص | 25 | [SRC-CDCF4DCBEA-L000025](../tests/test_self_acceptance.py#L25) |
+| [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L47) | دالة | test_tokenless_local_self_acceptance_executes_real_health_and_analyze_routes | لا توجد Docstring. | ناقص | 47 | [SRC-CDCF4DCBEA-L000047](../tests/test_self_acceptance.py#L47) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L6) | دالة | test_population_question_reports_missing_url_publication_date_period_and_scope | لا توجد Docstring. | ناقص | 6 | [SRC-D033B34F41-L000006](../tests/test_source_metadata_audit.py#L6) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L29) | دالة | test_population_source_metadata_presence_does_not_claim_truth_verification | لا توجد Docstring. | ناقص | 29 | [SRC-D033B34F41-L000029](../tests/test_source_metadata_audit.py#L29) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L57) | دالة | test_zero_sources_are_not_reported_as_metadata_complete | لا توجد Docstring. | ناقص | 57 | [SRC-D033B34F41-L000057](../tests/test_source_metadata_audit.py#L57) |
@@ -3195,6 +3196,7 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 108 | [SRC-2614DCB6FB-L000108](../tests/test_search_code.py#L108) |
+| [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS | 54 | [SRC-CDCF4DCBEA-L000054](../tests/test_self_acceptance.py#L54) |
 | [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 55 | [SRC-3A58E86240-L000055](../tests/test_ssrf_address_policy.py#L55) |
 | [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 55 | [SRC-3A58E86240-L000055](../tests/test_ssrf_address_policy.py#L55) |
 | [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 64 | [SRC-3A58E86240-L000064](../tests/test_ssrf_address_policy.py#L64) |
