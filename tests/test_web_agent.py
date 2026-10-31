@@ -4014,12 +4014,14 @@ def test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies(monkey
 
     class FakeResponse:
         status_code = 200
-        headers = {
-            "content-type": "text/plain; charset=utf-8",
-            # Deliberately under-reports the actual streamed body length.
-            "content-length": "1",
-        }
         encoding = "utf-8"
+
+        def __init__(self):
+            self.headers = {
+                "content-type": "text/plain; charset=utf-8",
+                # Deliberately under-reports the actual streamed body length.
+                "content-length": "1",
+            }
 
         def iter_bytes(self):
             chunks = (
