@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001342 إلى SRC-F725E90B2A-L002141
+- النطاق: SRC-F725E90B2A-L001338 إلى SRC-F725E90B2A-L002137
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"        \"queries\": [\"معلومات عن هذه التقنية\"],"` | — |
+| [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"        \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `"        \"platforms\": [],"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002135](../../tests/test_web_agent.py#L2135) | 2135 | `"    assert report[\"pages_fetched\"] is None"` | — |
 | [SRC-F725E90B2A-L002136](../../tests/test_web_agent.py#L2136) | 2136 | `""` | — |
 | [SRC-F725E90B2A-L002137](../../tests/test_web_agent.py#L2137) | 2137 | `""` | — |
-| [SRC-F725E90B2A-L002138](../../tests/test_web_agent.py#L2138) | 2138 | `"def test_research_error_without_provider_diagnostics_is_reported_as_unknown(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002139](../../tests/test_web_agent.py#L2139) | 2139 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002140](../../tests/test_web_agent.py#L2140) | 2140 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L002141](../../tests/test_web_agent.py#L2141) | 2141 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |

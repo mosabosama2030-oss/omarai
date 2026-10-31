@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000622 إلى SRC-90FAA34ADE-L000304
+- النطاق: SRC-4FFD5AFC54-L000618 إلى SRC-90FAA34ADE-L000300
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000618](../../scripts/run_answer_quality_benchmark.py#L618) | 618 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
+| [SRC-4FFD5AFC54-L000619](../../scripts/run_answer_quality_benchmark.py#L619) | 619 | `"            \"category\": case[\"category\"],"` | — |
+| [SRC-4FFD5AFC54-L000620](../../scripts/run_answer_quality_benchmark.py#L620) | 620 | `"            \"response\": safe_payload,"` | — |
+| [SRC-4FFD5AFC54-L000621](../../scripts/run_answer_quality_benchmark.py#L621) | 621 | `"            \"used_web_search\": ("` | — |
 | [SRC-4FFD5AFC54-L000622](../../scripts/run_answer_quality_benchmark.py#L622) | 622 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
 | [SRC-4FFD5AFC54-L000623](../../scripts/run_answer_quality_benchmark.py#L623) | 623 | `"            ),"` | — |
 | [SRC-4FFD5AFC54-L000624](../../scripts/run_answer_quality_benchmark.py#L624) | 624 | `"            \"used_language_model\": ("` | — |
@@ -839,7 +843,3 @@
 | [SRC-90FAA34ADE-L000298](../../tests/fixtures/answer_quality_cases.json#L298) | 298 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000299](../../tests/fixtures/answer_quality_cases.json#L299) | 299 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000300](../../tests/fixtures/answer_quality_cases.json#L300) | 300 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000301](../../tests/fixtures/answer_quality_cases.json#L301) | 301 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000302](../../tests/fixtures/answer_quality_cases.json#L302) | 302 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000303](../../tests/fixtures/answer_quality_cases.json#L303) | 303 | `"        \"Confident yes/no without identified subject\""` | — |
-| [SRC-90FAA34ADE-L000304](../../tests/fixtures/answer_quality_cases.json#L304) | 304 | `"      ],"` | — |

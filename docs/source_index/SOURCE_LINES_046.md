@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000299 إلى SRC-F725E90B2A-L000541
+- النطاق: SRC-AFEDC2645A-L000295 إلى SRC-F725E90B2A-L000537
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000295](../../tests/test_task_understanding.py#L295) | 295 | `"    legal = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000296](../../tests/test_task_understanding.py#L296) | 296 | `"        \"ما نص القانون الحالي المنظم للإيجار في مصر؟\","` | — |
+| [SRC-AFEDC2645A-L000297](../../tests/test_task_understanding.py#L297) | 297 | `"        mode=\"latest\","` | — |
+| [SRC-AFEDC2645A-L000298](../../tests/test_task_understanding.py#L298) | 298 | `"        intent_route=\"WEB_SIMPLE\","` | — |
 | [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `"    )"` | — |
 | [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
 | [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
@@ -830,7 +834,3 @@
 | [SRC-F725E90B2A-L000535](../../tests/test_web_agent.py#L535) | 535 | `"            return self.payload"` | — |
 | [SRC-F725E90B2A-L000536](../../tests/test_web_agent.py#L536) | 536 | `""` | — |
 | [SRC-F725E90B2A-L000537](../../tests/test_web_agent.py#L537) | 537 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `""` | — |
-| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000305 إلى SRC-90FAA34ADE-L001104
+- النطاق: SRC-90FAA34ADE-L000301 إلى SRC-90FAA34ADE-L001100
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000301](../../tests/fixtures/answer_quality_cases.json#L301) | 301 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000302](../../tests/fixtures/answer_quality_cases.json#L302) | 302 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000303](../../tests/fixtures/answer_quality_cases.json#L303) | 303 | `"        \"Confident yes/no without identified subject\""` | — |
+| [SRC-90FAA34ADE-L000304](../../tests/fixtures/answer_quality_cases.json#L304) | 304 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000305](../../tests/fixtures/answer_quality_cases.json#L305) | 305 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000306](../../tests/fixtures/answer_quality_cases.json#L306) | 306 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000307](../../tests/fixtures/answer_quality_cases.json#L307) | 307 | `"    {"` | — |
@@ -812,7 +816,3 @@
 | [SRC-90FAA34ADE-L001098](../../tests/fixtures/answer_quality_cases.json#L1098) | 1098 | `"        \"Explains that the link is invalid for a public source citation\""` | — |
 | [SRC-90FAA34ADE-L001099](../../tests/fixtures/answer_quality_cases.json#L1099) | 1099 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001100](../../tests/fixtures/answer_quality_cases.json#L1100) | 1100 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001101](../../tests/fixtures/answer_quality_cases.json#L1101) | 1101 | `"        \"Executes the URL\","` | — |
-| [SRC-90FAA34ADE-L001102](../../tests/fixtures/answer_quality_cases.json#L1102) | 1102 | `"        \"Renders or endorses it as a safe source\""` | — |
-| [SRC-90FAA34ADE-L001103](../../tests/fixtures/answer_quality_cases.json#L1103) | 1103 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001104](../../tests/fixtures/answer_quality_cases.json#L1104) | 1104 | `"      \"evidence_fixture\": {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000542 إلى SRC-F725E90B2A-L001341
+- النطاق: SRC-F725E90B2A-L000538 إلى SRC-F725E90B2A-L001337
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000538](../../tests/test_web_agent.py#L538) | 538 | `""` | — |
+| [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"        calls.append((url, kwargs))"` | — |
+| [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
 | [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
 | [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
 | [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"            return FakeResponse({\"data\": [{"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001335](../../tests/test_web_agent.py#L1335) | 1335 | `""` | — |
 | [SRC-F725E90B2A-L001336](../../tests/test_web_agent.py#L1336) | 1336 | `"def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L001337](../../tests/test_web_agent.py#L1337) | 1337 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001338](../../tests/test_web_agent.py#L1338) | 1338 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"        \"queries\": [\"معلومات عن هذه التقنية\"],"` | — |
-| [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"        \"social_focus\": False,"` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **96**
-- النطاق: SRC-DE7EABE998-L000441 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **116**
+- النطاق: SRC-DE7EABE998-L000421 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000421](../../web/agent.html#L421) | 421 | `"  }else if(data.used_web_search===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000422](../../web/agent.html#L422) | 422 | `"   setStatus(\"البحث أعاد مصادر، لكن التحليل غير مكتمل\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000423](../../web/agent.html#L423) | 423 | `"  }else{"` | — |
+| [SRC-DE7EABE998-L000424](../../web/agent.html#L424) | 424 | `"   setStatus(\"نتيجة جزئية: لا يوجد بحث حي مؤكد مع مصادر كافية\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000425](../../web/agent.html#L425) | 425 | `"  }"` | — |
+| [SRC-DE7EABE998-L000426](../../web/agent.html#L426) | 426 | `" }catch(error){"` | — |
+| [SRC-DE7EABE998-L000427](../../web/agent.html#L427) | 427 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000428](../../web/agent.html#L428) | 428 | `"  const safeMessage=error&&error.message?error.message:\"تعذر إكمال الطلب.\";"` | — |
+| [SRC-DE7EABE998-L000429](../../web/agent.html#L429) | 429 | `"  const box=addMessage(\"assistant\",safeMessage,null,{question:q});"` | — |
+| [SRC-DE7EABE998-L000430](../../web/agent.html#L430) | 430 | `"  const actions=document.createElement(\"div\");actions.className=\"retry-row\";"` | — |
+| [SRC-DE7EABE998-L000431](../../web/agent.html#L431) | 431 | `"  const retry=document.createElement(\"button\");retry.type=\"button\";retry.className=\"retry-button\";"` | — |
+| [SRC-DE7EABE998-L000432](../../web/agent.html#L432) | 432 | `"  retry.textContent=\"إعادة محاولة هذا السؤال\";"` | — |
+| [SRC-DE7EABE998-L000433](../../web/agent.html#L433) | 433 | `"  retry.addEventListener(\"click\",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);"` | — |
+| [SRC-DE7EABE998-L000434](../../web/agent.html#L434) | 434 | `"  setStatus(\"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000435](../../web/agent.html#L435) | 435 | `" }finally{"` | — |
+| [SRC-DE7EABE998-L000436](../../web/agent.html#L436) | 436 | `"  setBusy(false);$(\"question\").focus();"` | — |
+| [SRC-DE7EABE998-L000437](../../web/agent.html#L437) | 437 | `" }"` | — |
+| [SRC-DE7EABE998-L000438](../../web/agent.html#L438) | 438 | `"}"` | — |
+| [SRC-DE7EABE998-L000439](../../web/agent.html#L439) | 439 | `"async function runDiagnostics(){"` | — |
+| [SRC-DE7EABE998-L000440](../../web/agent.html#L440) | 440 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |
 | [SRC-DE7EABE998-L000441](../../web/agent.html#L441) | 441 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
 | [SRC-DE7EABE998-L000442](../../web/agent.html#L442) | 442 | `" try{"` | — |
 | [SRC-DE7EABE998-L000443](../../web/agent.html#L443) | 443 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
