@@ -72,6 +72,14 @@ def _bounded_http_request(method: str, url: str, **kwargs):
     import httpx
 
     timeout = kwargs.pop("timeout", 9.0)
+    total_timeout = kwargs.pop("total_timeout", timeout)
+    try:
+        total_timeout = float(total_timeout)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("total_timeout must be a positive number") from exc
+    if not math.isfinite(total_timeout) or total_timeout <= 0:
+        raise ValueError("total_timeout must be a positive number")
+    deadline = time.monotonic() + total_timeout
     # Redirects are never followed for search/social APIs, including credentialed calls.
     kwargs.pop("follow_redirects", None)
     with httpx.Client(
@@ -93,7 +101,16 @@ def _bounded_http_request(method: str, url: str, **kwargs):
                     "search provider response exceeds the configured size limit"
                 )
         body = bytearray()
-        for chunk in response.iter_bytes():
+        chunks = iter(response.iter_bytes())
+        while True:
+            # timeout limits idle waits; this deadline also limits a slow trickle
+            # where each chunk arrives just before the per-read timeout.
+            if time.monotonic() >= deadline:
+                raise TimeoutError("search provider exceeded the total request deadline")
+            try:
+                chunk = next(chunks)
+            except StopIteration:
+                break
             if len(body) + len(chunk) > MAX_PROVIDER_RESPONSE_BYTES:
                 raise ValueError(
                     "search provider response exceeds the configured size limit"
