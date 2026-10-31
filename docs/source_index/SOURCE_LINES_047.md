@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000968 إلى SRC-F725E90B2A-L001767
+- النطاق: SRC-F725E90B2A-L000969 إلى SRC-F725E90B2A-L001768
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000968](../../tests/test_web_agent.py#L968) | 968 | `"    report = agent.diagnostics(test_model=True, test_social=False)"` | — |
 | [SRC-F725E90B2A-L000969](../../tests/test_web_agent.py#L969) | 969 | `"    assert report[\"checks\"][\"language_model\"][\"status\"] == \"passed\""` | — |
 | [SRC-F725E90B2A-L000970](../../tests/test_web_agent.py#L970) | 970 | `"    assert calls == [agent.answer_model]"` | — |
 | [SRC-F725E90B2A-L000971](../../tests/test_web_agent.py#L971) | 971 | `"    assert len(report[\"model_usage\"]) == 1"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L001765](../../tests/test_web_agent.py#L1765) | 1765 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 1}],"` | — |
 | [SRC-F725E90B2A-L001766](../../tests/test_web_agent.py#L1766) | 1766 | `"            \"unique_sources\": 1,"` | — |
 | [SRC-F725E90B2A-L001767](../../tests/test_web_agent.py#L1767) | 1767 | `"            \"pages_fetched\": 1 if len(calls) == 1 else 0,"` | — |
+| [SRC-F725E90B2A-L001768](../../tests/test_web_agent.py#L1768) | 1768 | `"            \"providers_used\": [\"test_provider\"],"` | — |

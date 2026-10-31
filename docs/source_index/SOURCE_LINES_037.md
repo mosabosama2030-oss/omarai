@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000486 إلى SRC-6B37B7D6D3-L000056
+- النطاق: SRC-3451CC474D-L000486 إلى SRC-6B37B7D6D3-L000057
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -618,31 +618,30 @@
 | [SRC-3451CC474D-L001085](../../tests/test_api.py#L1085) | 1085 | `""` | — |
 | [SRC-3451CC474D-L001086](../../tests/test_api.py#L1086) | 1086 | `"    status, _ = request_json("` | — |
 | [SRC-3451CC474D-L001087](../../tests/test_api.py#L1087) | 1087 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001088](../../tests/test_api.py#L1088) | 1088 | `"        \"/api/agent\","` | — |
+| [SRC-3451CC474D-L001088](../../tests/test_api.py#L1088) | 1088 | `"        \"/api/analyze\","` | — |
 | [SRC-3451CC474D-L001089](../../tests/test_api.py#L1089) | 1089 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001090](../../tests/test_api.py#L1090) | 1090 | `"        payload={\"question\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
+| [SRC-3451CC474D-L001090](../../tests/test_api.py#L1090) | 1090 | `"        payload={\"text\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
 | [SRC-3451CC474D-L001091](../../tests/test_api.py#L1091) | 1091 | `"    )"` | — |
 | [SRC-3451CC474D-L001092](../../tests/test_api.py#L1092) | 1092 | `"    assert status == 403"` | — |
 | [SRC-3451CC474D-L001093](../../tests/test_api.py#L1093) | 1093 | `""` | — |
 | [SRC-3451CC474D-L001094](../../tests/test_api.py#L1094) | 1094 | `"    status, _ = request_json("` | — |
 | [SRC-3451CC474D-L001095](../../tests/test_api.py#L1095) | 1095 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001096](../../tests/test_api.py#L1096) | 1096 | `"        \"/api/agent\","` | — |
+| [SRC-3451CC474D-L001096](../../tests/test_api.py#L1096) | 1096 | `"        \"/api/analyze\","` | — |
 | [SRC-3451CC474D-L001097](../../tests/test_api.py#L1097) | 1097 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001098](../../tests/test_api.py#L1098) | 1098 | `"        payload={\"question\": \"اختبار\"},"` | — |
+| [SRC-3451CC474D-L001098](../../tests/test_api.py#L1098) | 1098 | `"        payload={\"text\": \"اختبار\"},"` | — |
 | [SRC-3451CC474D-L001099](../../tests/test_api.py#L1099) | 1099 | `"        headers={\"X-Omarai-Tenant-ID\": \"company-c\"},"` | — |
 | [SRC-3451CC474D-L001100](../../tests/test_api.py#L1100) | 1100 | `"    )"` | — |
 | [SRC-3451CC474D-L001101](../../tests/test_api.py#L1101) | 1101 | `"    assert status == 403"` | — |
 | [SRC-3451CC474D-L001102](../../tests/test_api.py#L1102) | 1102 | `""` | — |
-| [SRC-3451CC474D-L001103](../../tests/test_api.py#L1103) | 1103 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001103](../../tests/test_api.py#L1103) | 1103 | `"    status, result = request_json("` | — |
 | [SRC-3451CC474D-L001104](../../tests/test_api.py#L1104) | 1104 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001105](../../tests/test_api.py#L1105) | 1105 | `"        \"/api/agent\","` | — |
+| [SRC-3451CC474D-L001105](../../tests/test_api.py#L1105) | 1105 | `"        \"/api/analyze\","` | — |
 | [SRC-3451CC474D-L001106](../../tests/test_api.py#L1106) | 1106 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001107](../../tests/test_api.py#L1107) | 1107 | `"        payload={\"question\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
+| [SRC-3451CC474D-L001107](../../tests/test_api.py#L1107) | 1107 | `"        payload={\"text\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
 | [SRC-3451CC474D-L001108](../../tests/test_api.py#L1108) | 1108 | `"        headers={\"X-Omarai-Test-User\": \"user-c\"},"` | — |
 | [SRC-3451CC474D-L001109](../../tests/test_api.py#L1109) | 1109 | `"    )"` | — |
-| [SRC-3451CC474D-L001110](../../tests/test_api.py#L1110) | 1110 | `"    # The identity is correctly authorized; the agent may still fail for missing"` | — |
-| [SRC-3451CC474D-L001111](../../tests/test_api.py#L1111) | 1111 | `"    # external model/search configuration, so this test only proves tenant resolution."` | — |
-| [SRC-3451CC474D-L001112](../../tests/test_api.py#L1112) | 1112 | `"    assert status in {200, 503}"` | — |
+| [SRC-3451CC474D-L001110](../../tests/test_api.py#L1110) | 1110 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001111](../../tests/test_api.py#L1111) | 1111 | `"    assert \"score\" in result"` | — |
 ## اختبارات
 
 ### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
@@ -834,3 +833,4 @@
 | [SRC-6B37B7D6D3-L000054](../../tests/test_claim_evidence_metadata.py#L54) | 54 | `"            claim_text=\"general research\","` | — |
 | [SRC-6B37B7D6D3-L000055](../../tests/test_claim_evidence_metadata.py#L55) | 55 | `"        )"` | — |
 | [SRC-6B37B7D6D3-L000056](../../tests/test_claim_evidence_metadata.py#L56) | 56 | `""` | — |
+| [SRC-6B37B7D6D3-L000057](../../tests/test_claim_evidence_metadata.py#L57) | 57 | `"        assert result[\"valid_http_url\"] is False"` | — |
