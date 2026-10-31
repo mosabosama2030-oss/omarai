@@ -598,9 +598,9 @@
 | [SRC-8D00DCEC0D-L000009](../../agents/sales_domain.py#L9) | 9 | `"import re"` | — |
 | [SRC-8D00DCEC0D-L000010](../../agents/sales_domain.py#L10) | 10 | `"import unicodedata"` | — |
 | [SRC-8D00DCEC0D-L000011](../../agents/sales_domain.py#L11) | 11 | `"from dataclasses import dataclass"` | — |
-| [SRC-8D00DCEC0D-L000012](../../agents/sales_domain.py#L12) | 12 | `"from datetime import date, datetime"` | — |
-| [SRC-8D00DCEC0D-L000013](../../agents/sales_domain.py#L13) | 13 | `"from enum import Enum"` | — |
-| [SRC-8D00DCEC0D-L000014](../../agents/sales_domain.py#L14) | 14 | `"from typing import Iterable"` | — |
+| [SRC-8D00DCEC0D-L000012](../../agents/sales_domain.py#L12) | 12 | `"from collections.abc import Iterable"` | — |
+| [SRC-8D00DCEC0D-L000013](../../agents/sales_domain.py#L13) | 13 | `"from datetime import date, datetime"` | — |
+| [SRC-8D00DCEC0D-L000014](../../agents/sales_domain.py#L14) | 14 | `"from enum import Enum"` | — |
 | [SRC-8D00DCEC0D-L000015](../../agents/sales_domain.py#L15) | 15 | `"from urllib.parse import urlsplit"` | — |
 | [SRC-8D00DCEC0D-L000016](../../agents/sales_domain.py#L16) | 16 | `""` | — |
 | [SRC-8D00DCEC0D-L000017](../../agents/sales_domain.py#L17) | 17 | `""` | — |
@@ -762,7 +762,7 @@
 | [SRC-8D00DCEC0D-L000173](../../agents/sales_domain.py#L173) | 173 | `"        return None"` | — |
 | [SRC-8D00DCEC0D-L000174](../../agents/sales_domain.py#L174) | 174 | `"    cleaned = _clean_text(value, field_name=field_name, maximum=64)"` | — |
 | [SRC-8D00DCEC0D-L000175](../../agents/sales_domain.py#L175) | 175 | `"    try:"` | — |
-| [SRC-8D00DCEC0D-L000176](../../agents/sales_domain.py#L176) | 176 | `"        parsed = datetime.fromisoformat(cleaned.replace(\"Z\", \"+00:00\"))"` | — |
+| [SRC-8D00DCEC0D-L000176](../../agents/sales_domain.py#L176) | 176 | `"        parsed = datetime.fromisoformat(cleaned)"` | — |
 | [SRC-8D00DCEC0D-L000177](../../agents/sales_domain.py#L177) | 177 | `"    except ValueError as exc:"` | — |
 | [SRC-8D00DCEC0D-L000178](../../agents/sales_domain.py#L178) | 178 | `"        raise ValueError(f\"{field_name} must be an ISO-8601 datetime\") from exc"` | — |
 | [SRC-8D00DCEC0D-L000179](../../agents/sales_domain.py#L179) | 179 | `"    if parsed.tzinfo is None:"` | — |
