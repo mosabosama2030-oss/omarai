@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000922 إلى SRC-6BECF5AD00-L000048
+- النطاق: SRC-3451CC474D-L000928 إلى SRC-6BECF5AD00-L000054
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,12 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000922](../../tests/test_api.py#L922) | 922 | `"            \"warnings\": [],"` | — |
-| [SRC-3451CC474D-L000923](../../tests/test_api.py#L923) | 923 | `"            \"kind\": \"web_fallback\","` | — |
-| [SRC-3451CC474D-L000924](../../tests/test_api.py#L924) | 924 | `"        }"` | — |
-| [SRC-3451CC474D-L000925](../../tests/test_api.py#L925) | 925 | `""` | — |
-| [SRC-3451CC474D-L000926](../../tests/test_api.py#L926) | 926 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
-| [SRC-3451CC474D-L000927](../../tests/test_api.py#L927) | 927 | `""` | — |
 | [SRC-3451CC474D-L000928](../../tests/test_api.py#L928) | 928 | `"    status, payload = request_json("` | — |
 | [SRC-3451CC474D-L000929](../../tests/test_api.py#L929) | 929 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
 | [SRC-3451CC474D-L000930](../../tests/test_api.py#L930) | 930 | `"    )"` | — |
@@ -852,3 +846,9 @@
 | [SRC-6BECF5AD00-L000046](../../tests/test_connectors_mocked.py#L46) | 46 | `"    assert len(rows) == 1"` | — |
 | [SRC-6BECF5AD00-L000047](../../tests/test_connectors_mocked.py#L47) | 47 | `"    assert rows[0][\"provider\"] == \"arxiv\""` | — |
 | [SRC-6BECF5AD00-L000048](../../tests/test_connectors_mocked.py#L48) | 48 | `"    assert \"arxiv.org\" in rows[0][\"url\"]"` | — |
+| [SRC-6BECF5AD00-L000049](../../tests/test_connectors_mocked.py#L49) | 49 | `""` | — |
+| [SRC-6BECF5AD00-L000050](../../tests/test_connectors_mocked.py#L50) | 50 | `""` | — |
+| [SRC-6BECF5AD00-L000051](../../tests/test_connectors_mocked.py#L51) | 51 | `"def test_connector_failure_returns_empty(monkeypatch):"` | — |
+| [SRC-6BECF5AD00-L000052](../../tests/test_connectors_mocked.py#L52) | 52 | `"    def boom(*args, **kwargs):"` | — |
+| [SRC-6BECF5AD00-L000053](../../tests/test_connectors_mocked.py#L53) | 53 | `"        raise sc.urllib.error.URLError(\"down\")"` | — |
+| [SRC-6BECF5AD00-L000054](../../tests/test_connectors_mocked.py#L54) | 54 | `""` | — |

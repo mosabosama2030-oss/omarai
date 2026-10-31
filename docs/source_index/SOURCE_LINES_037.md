@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000122 إلى SRC-3451CC474D-L000921
+- النطاق: SRC-3451CC474D-L000128 إلى SRC-3451CC474D-L000927
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,12 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000122](../../tests/test_api.py#L122) | 122 | `"    assert changed[\"lead\"][\"status\"] == \"qualified\""` | — |
-| [SRC-3451CC474D-L000123](../../tests/test_api.py#L123) | 123 | `""` | — |
-| [SRC-3451CC474D-L000124](../../tests/test_api.py#L124) | 124 | `"    status, stats = request_json("` | — |
-| [SRC-3451CC474D-L000125](../../tests/test_api.py#L125) | 125 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"كام عميل عندي؟\"}"` | — |
-| [SRC-3451CC474D-L000126](../../tests/test_api.py#L126) | 126 | `"    )"` | — |
-| [SRC-3451CC474D-L000127](../../tests/test_api.py#L127) | 127 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000128](../../tests/test_api.py#L128) | 128 | `"    assert stats[\"kind\"] == \"local_statistics\""` | — |
 | [SRC-3451CC474D-L000129](../../tests/test_api.py#L129) | 129 | `"    assert \"1 إشارة\" in stats[\"answer\"]"` | — |
 | [SRC-3451CC474D-L000130](../../tests/test_api.py#L130) | 130 | `""` | — |
@@ -816,3 +810,9 @@
 | [SRC-3451CC474D-L000919](../../tests/test_api.py#L919) | 919 | `"            \"used_web_search\": False,"` | — |
 | [SRC-3451CC474D-L000920](../../tests/test_api.py#L920) | 920 | `"            \"search_attempted\": False,"` | — |
 | [SRC-3451CC474D-L000921](../../tests/test_api.py#L921) | 921 | `"            \"used_social_search\": False,"` | — |
+| [SRC-3451CC474D-L000922](../../tests/test_api.py#L922) | 922 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000923](../../tests/test_api.py#L923) | 923 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000924](../../tests/test_api.py#L924) | 924 | `"        }"` | — |
+| [SRC-3451CC474D-L000925](../../tests/test_api.py#L925) | 925 | `""` | — |
+| [SRC-3451CC474D-L000926](../../tests/test_api.py#L926) | 926 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
+| [SRC-3451CC474D-L000927](../../tests/test_api.py#L927) | 927 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-44CDA52D01-L000164 إلى SRC-6BF96689A8-L000271
+- النطاق: SRC-44CDA52D01-L000119 إلى SRC-6BF96689A8-L000226
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-44CDA52D01-L000119](../../tests/test_omarai.py#L119) | 119 | `"    assert rows[0][\"tenant_id\"] == \"default\""` | — |
+| [SRC-44CDA52D01-L000120](../../tests/test_omarai.py#L120) | 120 | `"    assert rows[0][\"source_url\"] == \"https://example.com/legacy\""` | — |
+| [SRC-44CDA52D01-L000121](../../tests/test_omarai.py#L121) | 121 | `""` | — |
+| [SRC-44CDA52D01-L000122](../../tests/test_omarai.py#L122) | 122 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
+| [SRC-44CDA52D01-L000123](../../tests/test_omarai.py#L123) | 123 | `"    duplicate_in_other_company, created = store.add("` | — |
+| [SRC-44CDA52D01-L000124](../../tests/test_omarai.py#L124) | 124 | `"        \"بدور على شقة\","` | — |
+| [SRC-44CDA52D01-L000125](../../tests/test_omarai.py#L125) | 125 | `"        \"https://example.com/legacy\","` | — |
+| [SRC-44CDA52D01-L000126](../../tests/test_omarai.py#L126) | 126 | `"        tenant_id=\"company-b\","` | — |
+| [SRC-44CDA52D01-L000127](../../tests/test_omarai.py#L127) | 127 | `"    )"` | — |
+| [SRC-44CDA52D01-L000128](../../tests/test_omarai.py#L128) | 128 | `"    assert created is True"` | — |
+| [SRC-44CDA52D01-L000129](../../tests/test_omarai.py#L129) | 129 | `"    assert duplicate_in_other_company[\"tenant_id\"] == \"company-b\""` | — |
+| [SRC-44CDA52D01-L000130](../../tests/test_omarai.py#L130) | 130 | `"    assert duplicate_in_other_company[\"id\"] != \"legacy-id\""` | — |
+| [SRC-44CDA52D01-L000131](../../tests/test_omarai.py#L131) | 131 | `""` | — |
+| [SRC-44CDA52D01-L000132](../../tests/test_omarai.py#L132) | 132 | `"    duplicate_in_default, created_again = store.add("` | — |
+| [SRC-44CDA52D01-L000133](../../tests/test_omarai.py#L133) | 133 | `"        \"بدور على شقة\","` | — |
+| [SRC-44CDA52D01-L000134](../../tests/test_omarai.py#L134) | 134 | `"        \"https://example.com/legacy\","` | — |
+| [SRC-44CDA52D01-L000135](../../tests/test_omarai.py#L135) | 135 | `"        tenant_id=\"default\","` | — |
+| [SRC-44CDA52D01-L000136](../../tests/test_omarai.py#L136) | 136 | `"    )"` | — |
+| [SRC-44CDA52D01-L000137](../../tests/test_omarai.py#L137) | 137 | `"    assert created_again is False"` | — |
+| [SRC-44CDA52D01-L000138](../../tests/test_omarai.py#L138) | 138 | `"    assert duplicate_in_default[\"id\"] == \"legacy-id\""` | — |
+| [SRC-44CDA52D01-L000139](../../tests/test_omarai.py#L139) | 139 | `""` | — |
+| [SRC-44CDA52D01-L000140](../../tests/test_omarai.py#L140) | 140 | `""` | — |
+| [SRC-44CDA52D01-L000141](../../tests/test_omarai.py#L141) | 141 | `"def test_lead_store_reads_updates_and_exports_are_company_scoped(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000142](../../tests/test_omarai.py#L142) | 142 | `"    store = LeadStore(tmp_path / \"tenant-scoped.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000143](../../tests/test_omarai.py#L143) | 143 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
+| [SRC-44CDA52D01-L000144](../../tests/test_omarai.py#L144) | 144 | `"    lead_a, created_a = store.add("` | — |
+| [SRC-44CDA52D01-L000145](../../tests/test_omarai.py#L145) | 145 | `"        \"مطلوب شراء جهاز\", \"https://example.com/request\","` | — |
+| [SRC-44CDA52D01-L000146](../../tests/test_omarai.py#L146) | 146 | `"        tenant_id=\"default\","` | — |
+| [SRC-44CDA52D01-L000147](../../tests/test_omarai.py#L147) | 147 | `"    )"` | — |
+| [SRC-44CDA52D01-L000148](../../tests/test_omarai.py#L148) | 148 | `"    lead_b, created_b = store.add("` | — |
+| [SRC-44CDA52D01-L000149](../../tests/test_omarai.py#L149) | 149 | `"        \"مطلوب شراء جهاز\", \"https://example.com/request\","` | — |
+| [SRC-44CDA52D01-L000150](../../tests/test_omarai.py#L150) | 150 | `"        tenant_id=\"company-b\","` | — |
+| [SRC-44CDA52D01-L000151](../../tests/test_omarai.py#L151) | 151 | `"    )"` | — |
+| [SRC-44CDA52D01-L000152](../../tests/test_omarai.py#L152) | 152 | `"    assert created_a is True and created_b is True"` | — |
+| [SRC-44CDA52D01-L000153](../../tests/test_omarai.py#L153) | 153 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
+| [SRC-44CDA52D01-L000154](../../tests/test_omarai.py#L154) | 154 | `"    assert [row[\"id\"] for row in store.list(tenant_id=\"default\")] == [lead_a[\"id\"]]"` | — |
+| [SRC-44CDA52D01-L000155](../../tests/test_omarai.py#L155) | 155 | `"    assert [row[\"id\"] for row in store.list(tenant_id=\"company-b\")] == [lead_b[\"id\"]]"` | — |
+| [SRC-44CDA52D01-L000156](../../tests/test_omarai.py#L156) | 156 | `""` | — |
+| [SRC-44CDA52D01-L000157](../../tests/test_omarai.py#L157) | 157 | `"    assert store.update_status("` | — |
+| [SRC-44CDA52D01-L000158](../../tests/test_omarai.py#L158) | 158 | `"        lead_b[\"id\"], \"qualified\", tenant_id=\"default\""` | — |
+| [SRC-44CDA52D01-L000159](../../tests/test_omarai.py#L159) | 159 | `"    ) is None"` | — |
+| [SRC-44CDA52D01-L000160](../../tests/test_omarai.py#L160) | 160 | `"    updated = store.update_status("` | — |
+| [SRC-44CDA52D01-L000161](../../tests/test_omarai.py#L161) | 161 | `"        lead_b[\"id\"], \"qualified\", tenant_id=\"company-b\""` | — |
+| [SRC-44CDA52D01-L000162](../../tests/test_omarai.py#L162) | 162 | `"    )"` | — |
+| [SRC-44CDA52D01-L000163](../../tests/test_omarai.py#L163) | 163 | `"    assert updated is not None and updated[\"status\"] == \"qualified\""` | — |
 | [SRC-44CDA52D01-L000164](../../tests/test_omarai.py#L164) | 164 | `""` | — |
 | [SRC-44CDA52D01-L000165](../../tests/test_omarai.py#L165) | 165 | `"    exported = tmp_path / \"company-a.csv\""` | — |
 | [SRC-44CDA52D01-L000166](../../tests/test_omarai.py#L166) | 166 | `"    assert store.export_csv(exported, tenant_id=\"default\") == 1"` | — |
@@ -816,48 +861,3 @@
 | [SRC-6BF96689A8-L000224](../../tests/test_research.py#L224) | 224 | `"    )"` | — |
 | [SRC-6BF96689A8-L000225](../../tests/test_research.py#L225) | 225 | `"    assert \"السيارات الكهربائية في مصر\" in query"` | — |
 | [SRC-6BF96689A8-L000226](../../tests/test_research.py#L226) | 226 | `"    assert \"أسعارها\" in query"` | — |
-| [SRC-6BF96689A8-L000227](../../tests/test_research.py#L227) | 227 | `"    assert \"اذكر أبرز\" not in query"` | — |
-| [SRC-6BF96689A8-L000228](../../tests/test_research.py#L228) | 228 | `""` | — |
-| [SRC-6BF96689A8-L000229](../../tests/test_research.py#L229) | 229 | `""` | — |
-| [SRC-6BF96689A8-L000230](../../tests/test_research.py#L230) | 230 | `""` | — |
-| [SRC-6BF96689A8-L000231](../../tests/test_research.py#L231) | 231 | `"def test_compact_search_query_returns_empty_for_instruction_only_request():"` | — |
-| [SRC-6BF96689A8-L000232](../../tests/test_research.py#L232) | 232 | `"    query = compact_search_query(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
-| [SRC-6BF96689A8-L000233](../../tests/test_research.py#L233) | 233 | `"    assert query == \"\""` | — |
-| [SRC-6BF96689A8-L000234](../../tests/test_research.py#L234) | 234 | `""` | — |
-| [SRC-6BF96689A8-L000235](../../tests/test_research.py#L235) | 235 | `""` | — |
-| [SRC-6BF96689A8-L000236](../../tests/test_research.py#L236) | 236 | `"def test_compact_search_query_removes_diacritic_uncertainty_instruction():"` | — |
-| [SRC-6BF96689A8-L000237](../../tests/test_research.py#L237) | 237 | `"    question = ("` | — |
-| [SRC-6BF96689A8-L000238](../../tests/test_research.py#L238) | 238 | `"        \"اجمع آراء العملاء عن السيارات الكهربائية. \""` | — |
-| [SRC-6BF96689A8-L000239](../../tests/test_research.py#L239) | 239 | `"        \"وَضِّحْ إِذَا كَانَتِ النَّتَائِجُ غَيْرَ كَافِيَةٍ \""` | — |
-| [SRC-6BF96689A8-L000240](../../tests/test_research.py#L240) | 240 | `"        \"لِتَمْثِيلِ آراء المستخدمين عمومًا.\""` | — |
-| [SRC-6BF96689A8-L000241](../../tests/test_research.py#L241) | 241 | `"    )"` | — |
-| [SRC-6BF96689A8-L000242](../../tests/test_research.py#L242) | 242 | `"    query = compact_search_query(question)"` | — |
-| [SRC-6BF96689A8-L000243](../../tests/test_research.py#L243) | 243 | `"    assert \"السيارات الكهربائية\" in query"` | — |
-| [SRC-6BF96689A8-L000244](../../tests/test_research.py#L244) | 244 | `"    assert \"النتائج\" not in query"` | — |
-| [SRC-6BF96689A8-L000245](../../tests/test_research.py#L245) | 245 | `"    assert \"تمثيل آراء المستخدمين\" not in query"` | — |
-| [SRC-6BF96689A8-L000246](../../tests/test_research.py#L246) | 246 | `""` | — |
-| [SRC-6BF96689A8-L000247](../../tests/test_research.py#L247) | 247 | `""` | — |
-| [SRC-6BF96689A8-L000248](../../tests/test_research.py#L248) | 248 | `"def test_compact_search_query_preserves_topic_after_source_quality_lead_in():"` | — |
-| [SRC-6BF96689A8-L000249](../../tests/test_research.py#L249) | 249 | `"    cases = ("` | — |
-| [SRC-6BF96689A8-L000250](../../tests/test_research.py#L250) | 250 | `"        ("` | — |
-| [SRC-6BF96689A8-L000251](../../tests/test_research.py#L251) | 251 | `"            \"استخدم مصادر متعددة للبحث عن السيارات الكهربائية في مصر\","` | — |
-| [SRC-6BF96689A8-L000252](../../tests/test_research.py#L252) | 252 | `"            (\"السيارات الكهربائية\", \"مصر\"),"` | — |
-| [SRC-6BF96689A8-L000253](../../tests/test_research.py#L253) | 253 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000254](../../tests/test_research.py#L254) | 254 | `"        ("` | — |
-| [SRC-6BF96689A8-L000255](../../tests/test_research.py#L255) | 255 | `"            \"Use multiple sources to research electric vehicle charging in Egypt\","` | — |
-| [SRC-6BF96689A8-L000256](../../tests/test_research.py#L256) | 256 | `"            (\"electric vehicle charging\", \"Egypt\"),"` | — |
-| [SRC-6BF96689A8-L000257](../../tests/test_research.py#L257) | 257 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000258](../../tests/test_research.py#L258) | 258 | `"    )"` | — |
-| [SRC-6BF96689A8-L000259](../../tests/test_research.py#L259) | 259 | `"    for question, required_terms in cases:"` | — |
-| [SRC-6BF96689A8-L000260](../../tests/test_research.py#L260) | 260 | `"        query = compact_search_query(question)"` | — |
-| [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        assert query"` | — |
-| [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"        for term in required_terms:"` | — |
-| [SRC-6BF96689A8-L000263](../../tests/test_research.py#L263) | 263 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
-| [SRC-6BF96689A8-L000264](../../tests/test_research.py#L264) | 264 | `""` | — |
-| [SRC-6BF96689A8-L000265](../../tests/test_research.py#L265) | 265 | `""` | — |
-| [SRC-6BF96689A8-L000266](../../tests/test_research.py#L266) | 266 | `"def test_compact_search_query_preserves_topic_after_distinguish_action():"` | — |
-| [SRC-6BF96689A8-L000267](../../tests/test_research.py#L267) | 267 | `"    query = compact_search_query(\"ميّز بين السيارات الكهربائية وسيارات البنزين في مصر\")"` | — |
-| [SRC-6BF96689A8-L000268](../../tests/test_research.py#L268) | 268 | `"    assert \"السيارات الكهربائية\" in query"` | — |
-| [SRC-6BF96689A8-L000269](../../tests/test_research.py#L269) | 269 | `"    assert \"سيارات البنزين\" in query"` | — |
-| [SRC-6BF96689A8-L000270](../../tests/test_research.py#L270) | 270 | `"    assert \"مصر\" in query"` | — |
-| [SRC-6BF96689A8-L000271](../../tests/test_research.py#L271) | 271 | `""` | — |
