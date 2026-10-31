@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000057 إلى SRC-6BF96689A8-L000069
+- النطاق: SRC-4405E7912C-L000032 إلى SRC-6BF96689A8-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4405E7912C-L000032](../../tests/test_multitenant_api.py#L32) | 32 | `""` | — |
+| [SRC-4405E7912C-L000033](../../tests/test_multitenant_api.py#L33) | 33 | `""` | — |
+| [SRC-4405E7912C-L000034](../../tests/test_multitenant_api.py#L34) | 34 | `"def request_json(base, path, *, method=\"GET\", payload=None, token=\"\"):"` | — |
+| [SRC-4405E7912C-L000035](../../tests/test_multitenant_api.py#L35) | 35 | `"    body = None if payload is None else json.dumps(payload).encode(\"utf-8\")"` | — |
+| [SRC-4405E7912C-L000036](../../tests/test_multitenant_api.py#L36) | 36 | `"    headers = {}"` | — |
+| [SRC-4405E7912C-L000037](../../tests/test_multitenant_api.py#L37) | 37 | `"    if body is not None:"` | — |
+| [SRC-4405E7912C-L000038](../../tests/test_multitenant_api.py#L38) | 38 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
+| [SRC-4405E7912C-L000039](../../tests/test_multitenant_api.py#L39) | 39 | `"    if token:"` | — |
+| [SRC-4405E7912C-L000040](../../tests/test_multitenant_api.py#L40) | 40 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
+| [SRC-4405E7912C-L000041](../../tests/test_multitenant_api.py#L41) | 41 | `"    request = Request(base + path, data=body, method=method, headers=headers)"` | — |
+| [SRC-4405E7912C-L000042](../../tests/test_multitenant_api.py#L42) | 42 | `"    try:"` | — |
+| [SRC-4405E7912C-L000043](../../tests/test_multitenant_api.py#L43) | 43 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-4405E7912C-L000044](../../tests/test_multitenant_api.py#L44) | 44 | `"            return response.status, json.loads(response.read().decode(\"utf-8\"))"` | — |
+| [SRC-4405E7912C-L000045](../../tests/test_multitenant_api.py#L45) | 45 | `"    except HTTPError as error:"` | — |
+| [SRC-4405E7912C-L000046](../../tests/test_multitenant_api.py#L46) | 46 | `"        return error.code, json.loads(error.read().decode(\"utf-8\"))"` | — |
+| [SRC-4405E7912C-L000047](../../tests/test_multitenant_api.py#L47) | 47 | `""` | — |
+| [SRC-4405E7912C-L000048](../../tests/test_multitenant_api.py#L48) | 48 | `""` | — |
+| [SRC-4405E7912C-L000049](../../tests/test_multitenant_api.py#L49) | 49 | `"def _tenant(store, name, email, token):"` | — |
+| [SRC-4405E7912C-L000050](../../tests/test_multitenant_api.py#L50) | 50 | `"    tenant_id = store.create_tenant(name, name.casefold())"` | — |
+| [SRC-4405E7912C-L000051](../../tests/test_multitenant_api.py#L51) | 51 | `"    user_id = store.create_user(email, name + \" User\")"` | — |
+| [SRC-4405E7912C-L000052](../../tests/test_multitenant_api.py#L52) | 52 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
+| [SRC-4405E7912C-L000053](../../tests/test_multitenant_api.py#L53) | 53 | `"    store.create_api_token(token, tenant_id, user_id, label=name)"` | — |
+| [SRC-4405E7912C-L000054](../../tests/test_multitenant_api.py#L54) | 54 | `"    return tenant_id"` | — |
+| [SRC-4405E7912C-L000055](../../tests/test_multitenant_api.py#L55) | 55 | `""` | — |
+| [SRC-4405E7912C-L000056](../../tests/test_multitenant_api.py#L56) | 56 | `""` | — |
 | [SRC-4405E7912C-L000057](../../tests/test_multitenant_api.py#L57) | 57 | `"def test_api_ignores_client_tenant_id_and_blocks_cross_tenant_reads_and_updates(tenant_api):"` | — |
 | [SRC-4405E7912C-L000058](../../tests/test_multitenant_api.py#L58) | 58 | `"    base, store = tenant_api"` | — |
 | [SRC-4405E7912C-L000059](../../tests/test_multitenant_api.py#L59) | 59 | `"    token_a = \"tenant-a-token-\" + \"A\" * 32"` | — |
@@ -845,28 +870,3 @@
 | [SRC-6BF96689A8-L000042](../../tests/test_research.py#L42) | 42 | `""` | — |
 | [SRC-6BF96689A8-L000043](../../tests/test_research.py#L43) | 43 | `""` | — |
 | [SRC-6BF96689A8-L000044](../../tests/test_research.py#L44) | 44 | `"def test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates():"` | — |
-| [SRC-6BF96689A8-L000045](../../tests/test_research.py#L45) | 45 | `"    batches = ["` | — |
-| [SRC-6BF96689A8-L000046](../../tests/test_research.py#L46) | 46 | `"        {"` | — |
-| [SRC-6BF96689A8-L000047](../../tests/test_research.py#L47) | 47 | `"            \"query\": \"cars Egypt\","` | — |
-| [SRC-6BF96689A8-L000048](../../tests/test_research.py#L48) | 48 | `"            \"provider\": \"ddg\","` | — |
-| [SRC-6BF96689A8-L000049](../../tests/test_research.py#L49) | 49 | `"            \"results\": ["` | — |
-| [SRC-6BF96689A8-L000050](../../tests/test_research.py#L50) | 50 | `"                {\"title\": \"A\", \"url\": \"https://www.example.com/a?utm_source=x\", \"snippet\": \"A\"},"` | — |
-| [SRC-6BF96689A8-L000051](../../tests/test_research.py#L51) | 51 | `"                {\"title\": \"B\", \"url\": \"https://example.com/b\", \"snippet\": \"B\"},"` | — |
-| [SRC-6BF96689A8-L000052](../../tests/test_research.py#L52) | 52 | `"            ],"` | — |
-| [SRC-6BF96689A8-L000053](../../tests/test_research.py#L53) | 53 | `"        },"` | — |
-| [SRC-6BF96689A8-L000054](../../tests/test_research.py#L54) | 54 | `"        {"` | — |
-| [SRC-6BF96689A8-L000055](../../tests/test_research.py#L55) | 55 | `"            \"query\": \"electric vehicles Egypt\","` | — |
-| [SRC-6BF96689A8-L000056](../../tests/test_research.py#L56) | 56 | `"            \"provider\": \"bing\","` | — |
-| [SRC-6BF96689A8-L000057](../../tests/test_research.py#L57) | 57 | `"            \"results\": ["` | — |
-| [SRC-6BF96689A8-L000058](../../tests/test_research.py#L58) | 58 | `"                {\"title\": \"A better title\", \"url\": \"https://example.com/a\", \"snippet\": \"Longer evidence snippet\"},"` | — |
-| [SRC-6BF96689A8-L000059](../../tests/test_research.py#L59) | 59 | `"                {\"title\": \"C\", \"url\": \"https://example.com/c\", \"snippet\": \"C\"},"` | — |
-| [SRC-6BF96689A8-L000060](../../tests/test_research.py#L60) | 60 | `"            ],"` | — |
-| [SRC-6BF96689A8-L000061](../../tests/test_research.py#L61) | 61 | `"        },"` | — |
-| [SRC-6BF96689A8-L000062](../../tests/test_research.py#L62) | 62 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000063](../../tests/test_research.py#L63) | 63 | `"    ranked = fuse_ranked_results(batches)"` | — |
-| [SRC-6BF96689A8-L000064](../../tests/test_research.py#L64) | 64 | `"    urls = [source[\"url\"] for source in ranked]"` | — |
-| [SRC-6BF96689A8-L000065](../../tests/test_research.py#L65) | 65 | `"    assert len(urls) == 3"` | — |
-| [SRC-6BF96689A8-L000066](../../tests/test_research.py#L66) | 66 | `"    source_a = next(source for source in ranked if \"example.com/a\" in source[\"url\"])"` | — |
-| [SRC-6BF96689A8-L000067](../../tests/test_research.py#L67) | 67 | `"    assert len(source_a[\"providers\"]) == 2"` | — |
-| [SRC-6BF96689A8-L000068](../../tests/test_research.py#L68) | 68 | `"    assert len(source_a[\"queries\"]) == 2"` | — |
-| [SRC-6BF96689A8-L000069](../../tests/test_research.py#L69) | 69 | `"    assert source_a[\"rank_score\"] > next("` | — |

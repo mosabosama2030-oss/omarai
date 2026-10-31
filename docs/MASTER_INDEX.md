@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **978**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1900**
-- الأسطر النصية المفهرسة حرفيًا: **41035**
+- الأسطر النصية المفهرسة حرفيًا: **41060**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -55,7 +55,7 @@
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 356325 | 6635 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 37340 | 801 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 38490 | 826 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
@@ -604,16 +604,16 @@
 | [api/omarai.py](../api/omarai.py#L501) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 501 | [SRC-EEF2E6447C-L000501](../api/omarai.py#L501) |
 | [api/omarai.py](../api/omarai.py#L514) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 514 | [SRC-EEF2E6447C-L000514](../api/omarai.py#L514) |
 | [api/omarai.py](../api/omarai.py#L555) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 555 | [SRC-EEF2E6447C-L000555](../api/omarai.py#L555) |
-| [api/omarai.py](../api/omarai.py#L672) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 672 | [SRC-EEF2E6447C-L000672](../api/omarai.py#L672) |
-| [api/omarai.py](../api/omarai.py#L685) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 685 | [SRC-EEF2E6447C-L000685](../api/omarai.py#L685) |
-| [api/omarai.py](../api/omarai.py#L689) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 689 | [SRC-EEF2E6447C-L000689](../api/omarai.py#L689) |
-| [api/omarai.py](../api/omarai.py#L725) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 725 | [SRC-EEF2E6447C-L000725](../api/omarai.py#L725) |
-| [api/omarai.py](../api/omarai.py#L728) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 728 | [SRC-EEF2E6447C-L000728](../api/omarai.py#L728) |
-| [api/omarai.py](../api/omarai.py#L729) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 729 | [SRC-EEF2E6447C-L000729](../api/omarai.py#L729) |
-| [api/omarai.py](../api/omarai.py#L736) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 736 | [SRC-EEF2E6447C-L000736](../api/omarai.py#L736) |
-| [api/omarai.py](../api/omarai.py#L754) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 754 | [SRC-EEF2E6447C-L000754](../api/omarai.py#L754) |
-| [api/omarai.py](../api/omarai.py#L771) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 771 | [SRC-EEF2E6447C-L000771](../api/omarai.py#L771) |
-| [api/omarai.py](../api/omarai.py#L779) | دالة | serve | لا توجد Docstring. | ناقص | 779 | [SRC-EEF2E6447C-L000779](../api/omarai.py#L779) |
+| [api/omarai.py](../api/omarai.py#L697) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 697 | [SRC-EEF2E6447C-L000697](../api/omarai.py#L697) |
+| [api/omarai.py](../api/omarai.py#L710) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 710 | [SRC-EEF2E6447C-L000710](../api/omarai.py#L710) |
+| [api/omarai.py](../api/omarai.py#L714) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 714 | [SRC-EEF2E6447C-L000714](../api/omarai.py#L714) |
+| [api/omarai.py](../api/omarai.py#L750) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 750 | [SRC-EEF2E6447C-L000750](../api/omarai.py#L750) |
+| [api/omarai.py](../api/omarai.py#L753) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 753 | [SRC-EEF2E6447C-L000753](../api/omarai.py#L753) |
+| [api/omarai.py](../api/omarai.py#L754) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 754 | [SRC-EEF2E6447C-L000754](../api/omarai.py#L754) |
+| [api/omarai.py](../api/omarai.py#L761) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 761 | [SRC-EEF2E6447C-L000761](../api/omarai.py#L761) |
+| [api/omarai.py](../api/omarai.py#L779) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 779 | [SRC-EEF2E6447C-L000779](../api/omarai.py#L779) |
+| [api/omarai.py](../api/omarai.py#L796) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 796 | [SRC-EEF2E6447C-L000796](../api/omarai.py#L796) |
+| [api/omarai.py](../api/omarai.py#L804) | دالة | serve | لا توجد Docstring. | ناقص | 804 | [SRC-EEF2E6447C-L000804](../api/omarai.py#L804) |
 | [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
 | [docs/generate_index.py](generate_index.py#L22) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
@@ -1977,9 +1977,9 @@
 | [api/omarai.py](../api/omarai.py#L541) | مسار API/واجهة محتمل | /api/leads | 541 | [SRC-EEF2E6447C-L000541](../api/omarai.py#L541) |
 | [api/omarai.py](../api/omarai.py#L578) | مسار API/واجهة محتمل | /api/tokens/revoke | 578 | [SRC-EEF2E6447C-L000578](../api/omarai.py#L578) |
 | [api/omarai.py](../api/omarai.py#L601) | مسار API/واجهة محتمل | /api/diagnostics | 601 | [SRC-EEF2E6447C-L000601](../api/omarai.py#L601) |
-| [api/omarai.py](../api/omarai.py#L616) | مسار API/واجهة محتمل | /api/agent | 616 | [SRC-EEF2E6447C-L000616](../api/omarai.py#L616) |
-| [api/omarai.py](../api/omarai.py#L630) | مسار API/واجهة محتمل | /api/ask | 630 | [SRC-EEF2E6447C-L000630](../api/omarai.py#L630) |
-| [api/omarai.py](../api/omarai.py#L637) | مسار API/واجهة محتمل | /api/analyze | 637 | [SRC-EEF2E6447C-L000637](../api/omarai.py#L637) |
+| [api/omarai.py](../api/omarai.py#L641) | مسار API/واجهة محتمل | /api/agent | 641 | [SRC-EEF2E6447C-L000641](../api/omarai.py#L641) |
+| [api/omarai.py](../api/omarai.py#L655) | مسار API/واجهة محتمل | /api/ask | 655 | [SRC-EEF2E6447C-L000655](../api/omarai.py#L655) |
+| [api/omarai.py](../api/omarai.py#L662) | مسار API/واجهة محتمل | /api/analyze | 662 | [SRC-EEF2E6447C-L000662](../api/omarai.py#L662) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | عنوان Markdown (H1) | تقرير قبول الاستضافة — Omarai | 1 | [SRC-65AAF94960-L000001](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | عنوان Markdown (H2) | الملخص التنفيذي | 6 | [SRC-65AAF94960-L000006](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | عنوان Markdown (H2) | أدلة القبول | 11 | [SRC-65AAF94960-L000011](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) |

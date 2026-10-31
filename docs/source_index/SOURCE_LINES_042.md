@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000128 إلى SRC-4405E7912C-L000056
+- النطاق: SRC-EA6EC52573-L000103 إلى SRC-4405E7912C-L000031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000103](../../tests/test_intent_router.py#L103) | 103 | `"            \"WEB_SIMPLE\","` | — |
+| [SRC-EA6EC52573-L000104](../../tests/test_intent_router.py#L104) | 104 | `"            \"summarization_request\","` | — |
+| [SRC-EA6EC52573-L000105](../../tests/test_intent_router.py#L105) | 105 | `"        ),"` | — |
+| [SRC-EA6EC52573-L000106](../../tests/test_intent_router.py#L106) | 106 | `"        ("` | — |
+| [SRC-EA6EC52573-L000107](../../tests/test_intent_router.py#L107) | 107 | `"            \"Summarize this page https://example.com/article\","` | — |
+| [SRC-EA6EC52573-L000108](../../tests/test_intent_router.py#L108) | 108 | `"            \"WEB_SIMPLE\","` | — |
+| [SRC-EA6EC52573-L000109](../../tests/test_intent_router.py#L109) | 109 | `"            \"summarization_request\","` | — |
+| [SRC-EA6EC52573-L000110](../../tests/test_intent_router.py#L110) | 110 | `"        ),"` | — |
+| [SRC-EA6EC52573-L000111](../../tests/test_intent_router.py#L111) | 111 | `"        (\"لخص الصفحة\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
+| [SRC-EA6EC52573-L000112](../../tests/test_intent_router.py#L112) | 112 | `"        (\"لخص لي هذا الرابط\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
+| [SRC-EA6EC52573-L000113](../../tests/test_intent_router.py#L113) | 113 | `"        (\"summarize the page\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
+| [SRC-EA6EC52573-L000114](../../tests/test_intent_router.py#L114) | 114 | `"        (\"تلخيص المقال\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
+| [SRC-EA6EC52573-L000115](../../tests/test_intent_router.py#L115) | 115 | `"        (\"لخص النص التالي: هذا نص تجريبي\", \"MODEL_ONLY\", \"stable_knowledge_or_conversation\"),"` | — |
+| [SRC-EA6EC52573-L000116](../../tests/test_intent_router.py#L116) | 116 | `"        (\"Summarize this text: the test content is here\", \"MODEL_ONLY\", \"stable_knowledge_or_conversation\"),"` | — |
+| [SRC-EA6EC52573-L000117](../../tests/test_intent_router.py#L117) | 117 | `"    ],"` | — |
+| [SRC-EA6EC52573-L000118](../../tests/test_intent_router.py#L118) | 118 | `")"` | — |
+| [SRC-EA6EC52573-L000119](../../tests/test_intent_router.py#L119) | 119 | `"def test_summarization_routing_respects_page_text_and_missing_input("` | — |
+| [SRC-EA6EC52573-L000120](../../tests/test_intent_router.py#L120) | 120 | `"    question: str, expected_route: str, expected_reason: str"` | — |
+| [SRC-EA6EC52573-L000121](../../tests/test_intent_router.py#L121) | 121 | `") -> None:"` | — |
+| [SRC-EA6EC52573-L000122](../../tests/test_intent_router.py#L122) | 122 | `"    decision = route_intent(question, [])"` | — |
+| [SRC-EA6EC52573-L000123](../../tests/test_intent_router.py#L123) | 123 | `"    assert decision[\"route\"] == expected_route"` | — |
+| [SRC-EA6EC52573-L000124](../../tests/test_intent_router.py#L124) | 124 | `"    assert decision[\"reason\"] == expected_reason"` | — |
+| [SRC-EA6EC52573-L000125](../../tests/test_intent_router.py#L125) | 125 | `""` | — |
+| [SRC-EA6EC52573-L000126](../../tests/test_intent_router.py#L126) | 126 | `""` | — |
+| [SRC-EA6EC52573-L000127](../../tests/test_intent_router.py#L127) | 127 | `"@pytest.mark.parametrize("` | — |
 | [SRC-EA6EC52573-L000128](../../tests/test_intent_router.py#L128) | 128 | `"    \"question\","` | — |
 | [SRC-EA6EC52573-L000129](../../tests/test_intent_router.py#L129) | 129 | `"    ["` | — |
 | [SRC-EA6EC52573-L000130](../../tests/test_intent_router.py#L130) | 130 | `"        \"فين؟\","` | — |
@@ -827,28 +852,3 @@
 | [SRC-4405E7912C-L000029](../../tests/test_multitenant_api.py#L29) | 29 | `"        server.server_close()"` | — |
 | [SRC-4405E7912C-L000030](../../tests/test_multitenant_api.py#L30) | 30 | `"        thread.join(timeout=3)"` | — |
 | [SRC-4405E7912C-L000031](../../tests/test_multitenant_api.py#L31) | 31 | `"        Handler.store = previous_store"` | — |
-| [SRC-4405E7912C-L000032](../../tests/test_multitenant_api.py#L32) | 32 | `""` | — |
-| [SRC-4405E7912C-L000033](../../tests/test_multitenant_api.py#L33) | 33 | `""` | — |
-| [SRC-4405E7912C-L000034](../../tests/test_multitenant_api.py#L34) | 34 | `"def request_json(base, path, *, method=\"GET\", payload=None, token=\"\"):"` | — |
-| [SRC-4405E7912C-L000035](../../tests/test_multitenant_api.py#L35) | 35 | `"    body = None if payload is None else json.dumps(payload).encode(\"utf-8\")"` | — |
-| [SRC-4405E7912C-L000036](../../tests/test_multitenant_api.py#L36) | 36 | `"    headers = {}"` | — |
-| [SRC-4405E7912C-L000037](../../tests/test_multitenant_api.py#L37) | 37 | `"    if body is not None:"` | — |
-| [SRC-4405E7912C-L000038](../../tests/test_multitenant_api.py#L38) | 38 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
-| [SRC-4405E7912C-L000039](../../tests/test_multitenant_api.py#L39) | 39 | `"    if token:"` | — |
-| [SRC-4405E7912C-L000040](../../tests/test_multitenant_api.py#L40) | 40 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
-| [SRC-4405E7912C-L000041](../../tests/test_multitenant_api.py#L41) | 41 | `"    request = Request(base + path, data=body, method=method, headers=headers)"` | — |
-| [SRC-4405E7912C-L000042](../../tests/test_multitenant_api.py#L42) | 42 | `"    try:"` | — |
-| [SRC-4405E7912C-L000043](../../tests/test_multitenant_api.py#L43) | 43 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-4405E7912C-L000044](../../tests/test_multitenant_api.py#L44) | 44 | `"            return response.status, json.loads(response.read().decode(\"utf-8\"))"` | — |
-| [SRC-4405E7912C-L000045](../../tests/test_multitenant_api.py#L45) | 45 | `"    except HTTPError as error:"` | — |
-| [SRC-4405E7912C-L000046](../../tests/test_multitenant_api.py#L46) | 46 | `"        return error.code, json.loads(error.read().decode(\"utf-8\"))"` | — |
-| [SRC-4405E7912C-L000047](../../tests/test_multitenant_api.py#L47) | 47 | `""` | — |
-| [SRC-4405E7912C-L000048](../../tests/test_multitenant_api.py#L48) | 48 | `""` | — |
-| [SRC-4405E7912C-L000049](../../tests/test_multitenant_api.py#L49) | 49 | `"def _tenant(store, name, email, token):"` | — |
-| [SRC-4405E7912C-L000050](../../tests/test_multitenant_api.py#L50) | 50 | `"    tenant_id = store.create_tenant(name, name.casefold())"` | — |
-| [SRC-4405E7912C-L000051](../../tests/test_multitenant_api.py#L51) | 51 | `"    user_id = store.create_user(email, name + \" User\")"` | — |
-| [SRC-4405E7912C-L000052](../../tests/test_multitenant_api.py#L52) | 52 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
-| [SRC-4405E7912C-L000053](../../tests/test_multitenant_api.py#L53) | 53 | `"    store.create_api_token(token, tenant_id, user_id, label=name)"` | — |
-| [SRC-4405E7912C-L000054](../../tests/test_multitenant_api.py#L54) | 54 | `"    return tenant_id"` | — |
-| [SRC-4405E7912C-L000055](../../tests/test_multitenant_api.py#L55) | 55 | `""` | — |
-| [SRC-4405E7912C-L000056](../../tests/test_multitenant_api.py#L56) | 56 | `""` | — |
