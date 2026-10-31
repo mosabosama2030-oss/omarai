@@ -5254,7 +5254,7 @@ class WebAgent:
             for source in sources:
                 signal = self._lead_intent_evidence(source)
                 if signal:
-                    source["lead_qualification"] = "public_buyer_intent_signal"
+                    source["lead_qualification"] = "public_demand_signal"
                     source["lead_intent_evidence"] = signal
                     lead_evidence_sources.append(source)
                 else:
@@ -5275,7 +5275,8 @@ class WebAgent:
                 "related_results_reviewed": (
                     None if lead_research_incomplete else related_lead_results_count
                 ),
-                "qualification_rule": "explicit_public_buyer_intent_phrase",
+                "qualification_rule": "public_demand_signal_phrase_by_type",
+                "product_fit": "unassessed_until_independently_matched",
                 "identity_verified": False,
             }
             if not lead_evidence_sources:
