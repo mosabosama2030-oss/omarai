@@ -223,7 +223,7 @@ def test_live_diagnostics_requires_explicit_approval_before_any_provider_call(
         payload={"test_model": True, "test_social": True},
     )
     assert status == 403
-    assert "explicit approval" in result["error"]
+    assert "explicit owner approval" in result["error"]
 
 
 def test_live_diagnostics_is_owner_only_even_with_explicit_approval(
@@ -255,7 +255,7 @@ def test_live_diagnostics_is_owner_only_even_with_explicit_approval(
         },
     )
     assert status == 403
-    assert "owner" in result["error"]
+    assert "مالك مساحة العمل" in result["error"]
 
 
 def test_owner_can_run_diagnostics_only_after_explicit_approval(
