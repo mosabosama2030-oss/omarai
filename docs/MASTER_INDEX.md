@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **119**
 - ملفات Python المحللة: **73**
-- تعريفات Python المفهرسة: **1589**
+- تعريفات Python المفهرسة: **1590**
 - تعريفات Python موثقة بوجود Docstring: **263**
-- تعريفات Python بلا Docstring: **1020**
+- تعريفات Python بلا Docstring: **1021**
 - تعريفات لا ينطبق عليها Docstring: **306**
 - الرموز الساكنة الإضافية: **1880**
-- الأسطر النصية المفهرسة حرفيًا: **40547**
+- الأسطر النصية المفهرسة حرفيًا: **40549**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -127,7 +127,7 @@
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
-| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 8395 | 268 | جرد الملف + AST Python |
+| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 8442 | 270 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
@@ -1248,15 +1248,16 @@
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L188) | دالة | test_bounded_provider_transport_returns_buffered_response.FakeClient.stream | لا توجد Docstring. | ناقص | 188 | [SRC-62DC597310-L000188](../tests/test_live_search_connectors.py#L188) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L210) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline | لا توجد Docstring. | ناقص | 210 | [SRC-62DC597310-L000210](../tests/test_live_search_connectors.py#L210) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L213) | كلاس | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse | لا توجد Docstring. | ناقص | 213 | [SRC-62DC597310-L000213](../tests/test_live_search_connectors.py#L213) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L218) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 218 | [SRC-62DC597310-L000218](../tests/test_live_search_connectors.py#L218) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L221) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 221 | [SRC-62DC597310-L000221](../tests/test_live_search_connectors.py#L221) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L224) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 224 | [SRC-62DC597310-L000224](../tests/test_live_search_connectors.py#L224) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L229) | كلاس | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient | لا توجد Docstring. | ناقص | 229 | [SRC-62DC597310-L000229](../tests/test_live_search_connectors.py#L229) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L230) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.__init__ | لا توجد Docstring. | ناقص | 230 | [SRC-62DC597310-L000230](../tests/test_live_search_connectors.py#L230) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L234) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 234 | [SRC-62DC597310-L000234](../tests/test_live_search_connectors.py#L234) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L237) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 237 | [SRC-62DC597310-L000237](../tests/test_live_search_connectors.py#L237) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L240) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.stream | لا توجد Docstring. | ناقص | 240 | [SRC-62DC597310-L000240](../tests/test_live_search_connectors.py#L240) |
-| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L262) | دالة | test_bounded_provider_transport_rejects_invalid_total_deadlines | لا توجد Docstring. | ناقص | 262 | [SRC-62DC597310-L000262](../tests/test_live_search_connectors.py#L262) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L216) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.__init__ | لا توجد Docstring. | ناقص | 216 | [SRC-62DC597310-L000216](../tests/test_live_search_connectors.py#L216) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L220) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 220 | [SRC-62DC597310-L000220](../tests/test_live_search_connectors.py#L220) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L223) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 223 | [SRC-62DC597310-L000223](../tests/test_live_search_connectors.py#L223) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L226) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 226 | [SRC-62DC597310-L000226](../tests/test_live_search_connectors.py#L226) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L231) | كلاس | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient | لا توجد Docstring. | ناقص | 231 | [SRC-62DC597310-L000231](../tests/test_live_search_connectors.py#L231) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L232) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.__init__ | لا توجد Docstring. | ناقص | 232 | [SRC-62DC597310-L000232](../tests/test_live_search_connectors.py#L232) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L236) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 236 | [SRC-62DC597310-L000236](../tests/test_live_search_connectors.py#L236) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L239) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 239 | [SRC-62DC597310-L000239](../tests/test_live_search_connectors.py#L239) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L242) | دالة | test_bounded_provider_transport_enforces_absolute_total_deadline.FakeClient.stream | لا توجد Docstring. | ناقص | 242 | [SRC-62DC597310-L000242](../tests/test_live_search_connectors.py#L242) |
+| [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L264) | دالة | test_bounded_provider_transport_rejects_invalid_total_deadlines | لا توجد Docstring. | ناقص | 264 | [SRC-62DC597310-L000264](../tests/test_live_search_connectors.py#L264) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L8) | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 | [SRC-44CDA52D01-L000008](../tests/test_omarai.py#L8) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L11) | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 | [SRC-44CDA52D01-L000011](../tests/test_omarai.py#L11) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L16) | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 | [SRC-44CDA52D01-L000016](../tests/test_omarai.py#L16) |

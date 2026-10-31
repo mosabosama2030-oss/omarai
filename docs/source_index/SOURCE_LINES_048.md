@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001952 إلى SRC-F725E90B2A-L002751
+- النطاق: SRC-F725E90B2A-L001950 إلى SRC-F725E90B2A-L002749
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001950](../../tests/test_web_agent.py#L1950) | 1950 | `"        return [], [], {"` | — |
+| [SRC-F725E90B2A-L001951](../../tests/test_web_agent.py#L1951) | 1951 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
 | [SRC-F725E90B2A-L001952](../../tests/test_web_agent.py#L1952) | 1952 | `"            \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001953](../../tests/test_web_agent.py#L1953) | 1953 | `"            \"query_results\": [{\"query\": research_plan[\"queries\"][0], \"results\": 0}],"` | — |
 | [SRC-F725E90B2A-L001954](../../tests/test_web_agent.py#L1954) | 1954 | `"            \"unique_sources\": 0,"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002747](../../tests/test_web_agent.py#L2747) | 2747 | `"        def __init__(self, **kwargs):"` | — |
 | [SRC-F725E90B2A-L002748](../../tests/test_web_agent.py#L2748) | 2748 | `"            self.options = kwargs"` | — |
 | [SRC-F725E90B2A-L002749](../../tests/test_web_agent.py#L2749) | 2749 | `""` | — |
-| [SRC-F725E90B2A-L002750](../../tests/test_web_agent.py#L2750) | 2750 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L002751](../../tests/test_web_agent.py#L2751) | 2751 | `"            return self"` | — |

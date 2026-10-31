@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001152 إلى SRC-F725E90B2A-L001951
+- النطاق: SRC-F725E90B2A-L001150 إلى SRC-F725E90B2A-L001949
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001150](../../tests/test_web_agent.py#L1150) | 1150 | `"    }"` | — |
+| [SRC-F725E90B2A-L001151](../../tests/test_web_agent.py#L1151) | 1151 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
 | [SRC-F725E90B2A-L001152](../../tests/test_web_agent.py#L1152) | 1152 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001153](../../tests/test_web_agent.py#L1153) | 1153 | `"        agent,"` | — |
 | [SRC-F725E90B2A-L001154](../../tests/test_web_agent.py#L1154) | 1154 | `"        \"_collect_research\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001947](../../tests/test_web_agent.py#L1947) | 1947 | `""` | — |
 | [SRC-F725E90B2A-L001948](../../tests/test_web_agent.py#L1948) | 1948 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L001949](../../tests/test_web_agent.py#L1949) | 1949 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001950](../../tests/test_web_agent.py#L1950) | 1950 | `"        return [], [], {"` | — |
-| [SRC-F725E90B2A-L001951](../../tests/test_web_agent.py#L1951) | 1951 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
