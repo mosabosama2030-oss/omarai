@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001273 إلى SRC-F725E90B2A-L002072
+- النطاق: SRC-F725E90B2A-L001259 إلى SRC-F725E90B2A-L002058
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001259](../../tests/test_web_agent.py#L1259) | 1259 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
+| [SRC-F725E90B2A-L001260](../../tests/test_web_agent.py#L1260) | 1260 | `""` | — |
+| [SRC-F725E90B2A-L001261](../../tests/test_web_agent.py#L1261) | 1261 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
+| [SRC-F725E90B2A-L001262](../../tests/test_web_agent.py#L1262) | 1262 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
+| [SRC-F725E90B2A-L001263](../../tests/test_web_agent.py#L1263) | 1263 | `"    assert result[\"search_report\"][\"unique_sources\"] == 2"` | — |
+| [SRC-F725E90B2A-L001264](../../tests/test_web_agent.py#L1264) | 1264 | `""` | — |
+| [SRC-F725E90B2A-L001265](../../tests/test_web_agent.py#L1265) | 1265 | `""` | — |
+| [SRC-F725E90B2A-L001266](../../tests/test_web_agent.py#L1266) | 1266 | `"def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001267](../../tests/test_web_agent.py#L1267) | 1267 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001268](../../tests/test_web_agent.py#L1268) | 1268 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"        \"queries\": [\"شركة ألفا التقنية معلومات\"],"` | — |
+| [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"        \"freshness\": \"any\","` | — |
 | [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"        \"depth\": \"standard\","` | — |
 | [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"        \"platforms\": [],"` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L002056](../../tests/test_web_agent.py#L2056) | 2056 | `"        called.append(model)"` | — |
 | [SRC-F725E90B2A-L002057](../../tests/test_web_agent.py#L2057) | 2057 | `"        if model == \"filtered/primary\":"` | — |
 | [SRC-F725E90B2A-L002058](../../tests/test_web_agent.py#L2058) | 2058 | `"            return FakeResponse(\"جزء جواب مفلتر لا ينبغي اعتباره مكتملا\", \"content_filter\")"` | — |
-| [SRC-F725E90B2A-L002059](../../tests/test_web_agent.py#L2059) | 2059 | `"        return FakeResponse(\"إجابة الاحتياط المكتملة\", \"stop\")"` | — |
-| [SRC-F725E90B2A-L002060](../../tests/test_web_agent.py#L2060) | 2060 | `""` | — |
-| [SRC-F725E90B2A-L002061](../../tests/test_web_agent.py#L2061) | 2061 | `"    monkeypatch.setattr(\"agents.web_agent.urllib.request.urlopen\", fake_urlopen)"` | — |
-| [SRC-F725E90B2A-L002062](../../tests/test_web_agent.py#L2062) | 2062 | `"    result = agent._request_completion("` | — |
-| [SRC-F725E90B2A-L002063](../../tests/test_web_agent.py#L2063) | 2063 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
-| [SRC-F725E90B2A-L002064](../../tests/test_web_agent.py#L2064) | 2064 | `"        model=\"filtered/primary\","` | — |
-| [SRC-F725E90B2A-L002065](../../tests/test_web_agent.py#L2065) | 2065 | `"    )"` | — |
-| [SRC-F725E90B2A-L002066](../../tests/test_web_agent.py#L2066) | 2066 | `""` | — |
-| [SRC-F725E90B2A-L002067](../../tests/test_web_agent.py#L2067) | 2067 | `"    assert result == \"إجابة الاحتياط المكتملة\""` | — |
-| [SRC-F725E90B2A-L002068](../../tests/test_web_agent.py#L2068) | 2068 | `"    assert called == [\"filtered/primary\", \"fallback/model\"]"` | — |
-| [SRC-F725E90B2A-L002069](../../tests/test_web_agent.py#L2069) | 2069 | `"    assert \"جزء جواب مفلتر\" not in result"` | — |
-| [SRC-F725E90B2A-L002070](../../tests/test_web_agent.py#L2070) | 2070 | `""` | — |
-| [SRC-F725E90B2A-L002071](../../tests/test_web_agent.py#L2071) | 2071 | `""` | — |
-| [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"def test_reviewer_rejects_duplicate_final_answer_delimiters(monkeypatch):"` | — |

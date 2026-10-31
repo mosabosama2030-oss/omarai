@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000179 إلى SRC-4405E7912C-L000152
+- النطاق: SRC-EA6EC52573-L000179 إلى SRC-4405E7912C-L000138
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -671,26 +671,40 @@
 | [SRC-1521F490CA-L000198](../../tests/test_multitenant.py#L198) | 198 | `"    assert row[\"expires_at\"] == \"2099-01-01T00:00:00Z\""` | — |
 | [SRC-1521F490CA-L000199](../../tests/test_multitenant.py#L199) | 199 | `"    assert store.resolve_api_token(token) is not None"` | — |
 | [SRC-1521F490CA-L000200](../../tests/test_multitenant.py#L200) | 200 | `""` | — |
-| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `""` | — |
-| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
-| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
-| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"    )"` | — |
-| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"    invalid_values = ("` | — |
-| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `"        \"2099-01-01T00:00:00\","` | — |
-| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"        \"not-a-timestamp\","` | — |
-| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"        \"2000-01-01T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"        \"\","` | — |
+| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `"    # Expired tokens must stop resolving even when their membership stays active."` | — |
+| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"            \"UPDATE api_tokens SET expires_at=? WHERE token_hash=?\","` | — |
+| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"            (\"2000-01-01T00:00:00Z\", store._token_hash(token)),"` | — |
+| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"        )"` | — |
+| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"    assert store.resolve_api_token(token) is None"` | — |
+| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `""` | — |
+| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"    utc_token = \"J\" * 40"` | — |
+| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"    store.create_api_token("` | — |
+| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"        utc_token, tenant_id, user_id, expires_at=\"2099-01-01T00:00:00Z\""` | — |
 | [SRC-1521F490CA-L000212](../../tests/test_multitenant.py#L212) | 212 | `"    )"` | — |
-| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"    for index, expiry in enumerate(invalid_values):"` | — |
-| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
-| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `"            store.create_api_token("` | — |
-| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"                (\"H\" * 39) + str(index),"` | — |
-| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"                tenant_id,"` | — |
-| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"                user_id,"` | — |
-| [SRC-1521F490CA-L000219](../../tests/test_multitenant.py#L219) | 219 | `"                expires_at=expiry,"` | — |
-| [SRC-1521F490CA-L000220](../../tests/test_multitenant.py#L220) | 220 | `"            )"` | — |
+| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"    assert store.resolve_api_token(utc_token) is not None"` | — |
+| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `""` | — |
+| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `""` | — |
+| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
+| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000219](../../tests/test_multitenant.py#L219) | 219 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
+| [SRC-1521F490CA-L000220](../../tests/test_multitenant.py#L220) | 220 | `"    )"` | — |
+| [SRC-1521F490CA-L000221](../../tests/test_multitenant.py#L221) | 221 | `"    invalid_values = ("` | — |
+| [SRC-1521F490CA-L000222](../../tests/test_multitenant.py#L222) | 222 | `"        \"2099-01-01T00:00:00\","` | — |
+| [SRC-1521F490CA-L000223](../../tests/test_multitenant.py#L223) | 223 | `"        \"not-a-timestamp\","` | — |
+| [SRC-1521F490CA-L000224](../../tests/test_multitenant.py#L224) | 224 | `"        \"2000-01-01T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000225](../../tests/test_multitenant.py#L225) | 225 | `"        \"\","` | — |
+| [SRC-1521F490CA-L000226](../../tests/test_multitenant.py#L226) | 226 | `"    )"` | — |
+| [SRC-1521F490CA-L000227](../../tests/test_multitenant.py#L227) | 227 | `"    for index, expiry in enumerate(invalid_values):"` | — |
+| [SRC-1521F490CA-L000228](../../tests/test_multitenant.py#L228) | 228 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
+| [SRC-1521F490CA-L000229](../../tests/test_multitenant.py#L229) | 229 | `"            store.create_api_token("` | — |
+| [SRC-1521F490CA-L000230](../../tests/test_multitenant.py#L230) | 230 | `"                (\"H\" * 39) + str(index),"` | — |
+| [SRC-1521F490CA-L000231](../../tests/test_multitenant.py#L231) | 231 | `"                tenant_id,"` | — |
+| [SRC-1521F490CA-L000232](../../tests/test_multitenant.py#L232) | 232 | `"                user_id,"` | — |
+| [SRC-1521F490CA-L000233](../../tests/test_multitenant.py#L233) | 233 | `"                expires_at=expiry,"` | — |
+| [SRC-1521F490CA-L000234](../../tests/test_multitenant.py#L234) | 234 | `"            )"` | — |
 ## اختبارات
 
 ### FILE-4405E7912C — [tests/test_multitenant_api.py](../../tests/test_multitenant_api.py#L1)
@@ -838,17 +852,3 @@
 | [SRC-4405E7912C-L000136](../../tests/test_multitenant_api.py#L136) | 136 | `"def test_viewer_membership_is_read_only(tenant_api):"` | — |
 | [SRC-4405E7912C-L000137](../../tests/test_multitenant_api.py#L137) | 137 | `"    base, store = tenant_api"` | — |
 | [SRC-4405E7912C-L000138](../../tests/test_multitenant_api.py#L138) | 138 | `"    tenant_id = store.create_tenant(\"Read Only Company\", \"read-only-company\")"` | — |
-| [SRC-4405E7912C-L000139](../../tests/test_multitenant_api.py#L139) | 139 | `"    user_id = store.create_user(\"viewer@example.test\", \"Viewer\")"` | — |
-| [SRC-4405E7912C-L000140](../../tests/test_multitenant_api.py#L140) | 140 | `"    store.add_membership(tenant_id, user_id, \"viewer\")"` | — |
-| [SRC-4405E7912C-L000141](../../tests/test_multitenant_api.py#L141) | 141 | `"    token = \"viewer-token-\" + \"V\" * 32"` | — |
-| [SRC-4405E7912C-L000142](../../tests/test_multitenant_api.py#L142) | 142 | `"    store.create_api_token(token, tenant_id, user_id, label=\"viewer\")"` | — |
-| [SRC-4405E7912C-L000143](../../tests/test_multitenant_api.py#L143) | 143 | `""` | — |
-| [SRC-4405E7912C-L000144](../../tests/test_multitenant_api.py#L144) | 144 | `"    status, listing = request_json(base, \"/api/leads\", token=token)"` | — |
-| [SRC-4405E7912C-L000145](../../tests/test_multitenant_api.py#L145) | 145 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000146](../../tests/test_multitenant_api.py#L146) | 146 | `"    assert listing[\"count\"] == 0"` | — |
-| [SRC-4405E7912C-L000147](../../tests/test_multitenant_api.py#L147) | 147 | `""` | — |
-| [SRC-4405E7912C-L000148](../../tests/test_multitenant_api.py#L148) | 148 | `"    status, error = request_json("` | — |
-| [SRC-4405E7912C-L000149](../../tests/test_multitenant_api.py#L149) | 149 | `"        base,"` | — |
-| [SRC-4405E7912C-L000150](../../tests/test_multitenant_api.py#L150) | 150 | `"        \"/api/leads\","` | — |
-| [SRC-4405E7912C-L000151](../../tests/test_multitenant_api.py#L151) | 151 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000152](../../tests/test_multitenant_api.py#L152) | 152 | `"        token=token,"` | — |

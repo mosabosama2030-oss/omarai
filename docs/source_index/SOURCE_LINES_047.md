@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000473 إلى SRC-F725E90B2A-L001272
+- النطاق: SRC-F725E90B2A-L000459 إلى SRC-F725E90B2A-L001258
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000459](../../tests/test_web_agent.py#L459) | 459 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: [])"` | — |
+| [SRC-F725E90B2A-L000460](../../tests/test_web_agent.py#L460) | 460 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L000461](../../tests/test_web_agent.py#L461) | 461 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L000462](../../tests/test_web_agent.py#L462) | 462 | `"        \"_fetch_page\","` | — |
+| [SRC-F725E90B2A-L000463](../../tests/test_web_agent.py#L463) | 463 | `"        lambda url: (\"User page title\", \"Full public page text supplied for analysis\"),"` | — |
+| [SRC-F725E90B2A-L000464](../../tests/test_web_agent.py#L464) | 464 | `"    )"` | — |
+| [SRC-F725E90B2A-L000465](../../tests/test_web_agent.py#L465) | 465 | `"    sources, warnings, report = agent._collect_research({"` | — |
+| [SRC-F725E90B2A-L000466](../../tests/test_web_agent.py#L466) | 466 | `"        \"queries\": [\"لخص هذه الصفحة\"],"` | — |
+| [SRC-F725E90B2A-L000467](../../tests/test_web_agent.py#L467) | 467 | `"        \"direct_urls\": [\"https://example.com/article\"],"` | — |
+| [SRC-F725E90B2A-L000468](../../tests/test_web_agent.py#L468) | 468 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L000469](../../tests/test_web_agent.py#L469) | 469 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L000470](../../tests/test_web_agent.py#L470) | 470 | `"        \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L000471](../../tests/test_web_agent.py#L471) | 471 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L000472](../../tests/test_web_agent.py#L472) | 472 | `"    })"` | — |
 | [SRC-F725E90B2A-L000473](../../tests/test_web_agent.py#L473) | 473 | `"    assert warnings == []"` | — |
 | [SRC-F725E90B2A-L000474](../../tests/test_web_agent.py#L474) | 474 | `"    assert len(sources) == 1"` | — |
 | [SRC-F725E90B2A-L000475](../../tests/test_web_agent.py#L475) | 475 | `"    assert sources[0][\"url\"] == \"https://example.com/article\""` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L001256](../../tests/test_web_agent.py#L1256) | 1256 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001257](../../tests/test_web_agent.py#L1257) | 1257 | `"    )"` | — |
 | [SRC-F725E90B2A-L001258](../../tests/test_web_agent.py#L1258) | 1258 | `""` | — |
-| [SRC-F725E90B2A-L001259](../../tests/test_web_agent.py#L1259) | 1259 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
-| [SRC-F725E90B2A-L001260](../../tests/test_web_agent.py#L1260) | 1260 | `""` | — |
-| [SRC-F725E90B2A-L001261](../../tests/test_web_agent.py#L1261) | 1261 | `"    assert result[\"kind\"] == \"insufficient_evidence\""` | — |
-| [SRC-F725E90B2A-L001262](../../tests/test_web_agent.py#L1262) | 1262 | `"    assert result[\"search_report\"][\"independent_sources\"] == 1"` | — |
-| [SRC-F725E90B2A-L001263](../../tests/test_web_agent.py#L1263) | 1263 | `"    assert result[\"search_report\"][\"unique_sources\"] == 2"` | — |
-| [SRC-F725E90B2A-L001264](../../tests/test_web_agent.py#L1264) | 1264 | `""` | — |
-| [SRC-F725E90B2A-L001265](../../tests/test_web_agent.py#L1265) | 1265 | `""` | — |
-| [SRC-F725E90B2A-L001266](../../tests/test_web_agent.py#L1266) | 1266 | `"def test_bounded_evidence_repair_recovers_with_one_relevant_independent_source(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001267](../../tests/test_web_agent.py#L1267) | 1267 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001268](../../tests/test_web_agent.py#L1268) | 1268 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"        \"queries\": [\"شركة ألفا التقنية معلومات\"],"` | — |
-| [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"        \"social_focus\": False,"` | — |

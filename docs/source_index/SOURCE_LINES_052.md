@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **101**
-- النطاق: SRC-DE7EABE998-L000431 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **115**
+- النطاق: SRC-DE7EABE998-L000417 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000417](../../web/agent.html#L417) | 417 | `"   setStatus(\"البحث أعاد مصادر، لكن التحليل غير مكتمل\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000418](../../web/agent.html#L418) | 418 | `"  }else{"` | — |
+| [SRC-DE7EABE998-L000419](../../web/agent.html#L419) | 419 | `"   setStatus(\"نتيجة جزئية: لا يوجد بحث حي مؤكد مع مصادر كافية\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000420](../../web/agent.html#L420) | 420 | `"  }"` | — |
+| [SRC-DE7EABE998-L000421](../../web/agent.html#L421) | 421 | `" }catch(error){"` | — |
+| [SRC-DE7EABE998-L000422](../../web/agent.html#L422) | 422 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000423](../../web/agent.html#L423) | 423 | `"  const safeMessage=error&&error.message?error.message:\"تعذر إكمال الطلب.\";"` | — |
+| [SRC-DE7EABE998-L000424](../../web/agent.html#L424) | 424 | `"  const box=addMessage(\"assistant\",safeMessage,null,{question:q});"` | — |
+| [SRC-DE7EABE998-L000425](../../web/agent.html#L425) | 425 | `"  const actions=document.createElement(\"div\");actions.className=\"retry-row\";"` | — |
+| [SRC-DE7EABE998-L000426](../../web/agent.html#L426) | 426 | `"  const retry=document.createElement(\"button\");retry.type=\"button\";retry.className=\"retry-button\";"` | — |
+| [SRC-DE7EABE998-L000427](../../web/agent.html#L427) | 427 | `"  retry.textContent=\"إعادة محاولة هذا السؤال\";"` | — |
+| [SRC-DE7EABE998-L000428](../../web/agent.html#L428) | 428 | `"  retry.addEventListener(\"click\",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);"` | — |
+| [SRC-DE7EABE998-L000429](../../web/agent.html#L429) | 429 | `"  setStatus(\"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000430](../../web/agent.html#L430) | 430 | `" }finally{"` | — |
 | [SRC-DE7EABE998-L000431](../../web/agent.html#L431) | 431 | `"  setBusy(false);$(\"question\").focus();"` | — |
 | [SRC-DE7EABE998-L000432](../../web/agent.html#L432) | 432 | `" }"` | — |
 | [SRC-DE7EABE998-L000433](../../web/agent.html#L433) | 433 | `"}"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000153 إلى SRC-6BF96689A8-L000203
+- النطاق: SRC-4405E7912C-L000139 إلى SRC-6BF96689A8-L000189
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4405E7912C-L000139](../../tests/test_multitenant_api.py#L139) | 139 | `"    user_id = store.create_user(\"viewer@example.test\", \"Viewer\")"` | — |
+| [SRC-4405E7912C-L000140](../../tests/test_multitenant_api.py#L140) | 140 | `"    store.add_membership(tenant_id, user_id, \"viewer\")"` | — |
+| [SRC-4405E7912C-L000141](../../tests/test_multitenant_api.py#L141) | 141 | `"    token = \"viewer-token-\" + \"V\" * 32"` | — |
+| [SRC-4405E7912C-L000142](../../tests/test_multitenant_api.py#L142) | 142 | `"    store.create_api_token(token, tenant_id, user_id, label=\"viewer\")"` | — |
+| [SRC-4405E7912C-L000143](../../tests/test_multitenant_api.py#L143) | 143 | `""` | — |
+| [SRC-4405E7912C-L000144](../../tests/test_multitenant_api.py#L144) | 144 | `"    status, listing = request_json(base, \"/api/leads\", token=token)"` | — |
+| [SRC-4405E7912C-L000145](../../tests/test_multitenant_api.py#L145) | 145 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000146](../../tests/test_multitenant_api.py#L146) | 146 | `"    assert listing[\"count\"] == 0"` | — |
+| [SRC-4405E7912C-L000147](../../tests/test_multitenant_api.py#L147) | 147 | `""` | — |
+| [SRC-4405E7912C-L000148](../../tests/test_multitenant_api.py#L148) | 148 | `"    status, error = request_json("` | — |
+| [SRC-4405E7912C-L000149](../../tests/test_multitenant_api.py#L149) | 149 | `"        base,"` | — |
+| [SRC-4405E7912C-L000150](../../tests/test_multitenant_api.py#L150) | 150 | `"        \"/api/leads\","` | — |
+| [SRC-4405E7912C-L000151](../../tests/test_multitenant_api.py#L151) | 151 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000152](../../tests/test_multitenant_api.py#L152) | 152 | `"        token=token,"` | — |
 | [SRC-4405E7912C-L000153](../../tests/test_multitenant_api.py#L153) | 153 | `"        payload={"` | — |
 | [SRC-4405E7912C-L000154](../../tests/test_multitenant_api.py#L154) | 154 | `"            \"text\": \"Viewer must not write\","` | — |
 | [SRC-4405E7912C-L000155](../../tests/test_multitenant_api.py#L155) | 155 | `"            \"source_url\": \"https://example.test/viewer\","` | — |
@@ -856,17 +870,3 @@
 | [SRC-6BF96689A8-L000187](../../tests/test_research.py#L187) | 187 | `"        \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
 | [SRC-6BF96689A8-L000188](../../tests/test_research.py#L188) | 188 | `"    ]"` | — |
 | [SRC-6BF96689A8-L000189](../../tests/test_research.py#L189) | 189 | `"    for question in questions:"` | — |
-| [SRC-6BF96689A8-L000190](../../tests/test_research.py#L190) | 190 | `"        plan = fallback_plan(question)"` | — |
-| [SRC-6BF96689A8-L000191](../../tests/test_research.py#L191) | 191 | `"        assert plan[\"queries\"]"` | — |
-| [SRC-6BF96689A8-L000192](../../tests/test_research.py#L192) | 192 | `"        assert all(2 <= len(query) <= 240 for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000193](../../tests/test_research.py#L193) | 193 | `""` | — |
-| [SRC-6BF96689A8-L000194](../../tests/test_research.py#L194) | 194 | `""` | — |
-| [SRC-6BF96689A8-L000195](../../tests/test_research.py#L195) | 195 | `"def test_compact_search_query_preserves_site_operator_and_discards_separate_citation_instruction():"` | — |
-| [SRC-6BF96689A8-L000196](../../tests/test_research.py#L196) | 196 | `"    query = compact_search_query("` | — |
-| [SRC-6BF96689A8-L000197](../../tests/test_research.py#L197) | 197 | `"        'site:reddit.com electric car reviews Egypt. Cite the original posts and provide links.'"` | — |
-| [SRC-6BF96689A8-L000198](../../tests/test_research.py#L198) | 198 | `"    )"` | — |
-| [SRC-6BF96689A8-L000199](../../tests/test_research.py#L199) | 199 | `"    assert query.startswith(\"site:reddit.com\")"` | — |
-| [SRC-6BF96689A8-L000200](../../tests/test_research.py#L200) | 200 | `"    assert \"electric car reviews Egypt\" in query"` | — |
-| [SRC-6BF96689A8-L000201](../../tests/test_research.py#L201) | 201 | `"    assert \"Cite the original posts\" not in query"` | — |
-| [SRC-6BF96689A8-L000202](../../tests/test_research.py#L202) | 202 | `"    assert len(query) <= 240"` | — |
-| [SRC-6BF96689A8-L000203](../../tests/test_research.py#L203) | 203 | `""` | — |

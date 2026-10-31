@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000213 إلى SRC-F725E90B2A-L000472
+- النطاق: SRC-AFEDC2645A-L000199 إلى SRC-F725E90B2A-L000458
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000199](../../tests/test_task_understanding.py#L199) | 199 | `"        mode=\"social\","` | — |
+| [SRC-AFEDC2645A-L000200](../../tests/test_task_understanding.py#L200) | 200 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000201](../../tests/test_task_understanding.py#L201) | 201 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000202](../../tests/test_task_understanding.py#L202) | 202 | `"    policies = spec[\"constraints\"][\"source_policies\"]"` | — |
+| [SRC-AFEDC2645A-L000203](../../tests/test_task_understanding.py#L203) | 203 | `"    assert \"current_read_page\" in policies"` | — |
+| [SRC-AFEDC2645A-L000204](../../tests/test_task_understanding.py#L204) | 204 | `"    assert \"public_social_content\" in policies"` | — |
+| [SRC-AFEDC2645A-L000205](../../tests/test_task_understanding.py#L205) | 205 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
+| [SRC-AFEDC2645A-L000206](../../tests/test_task_understanding.py#L206) | 206 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
+| [SRC-AFEDC2645A-L000207](../../tests/test_task_understanding.py#L207) | 207 | `"    assert \"publication_or_update_date\" in spec[\"evidence_requirements\"]"` | — |
+| [SRC-AFEDC2645A-L000208](../../tests/test_task_understanding.py#L208) | 208 | `"    assert \"heuristic_classification_is_not_identity_or_truth_verification\" in spec[\"evidence_requirements\"]"` | — |
+| [SRC-AFEDC2645A-L000209](../../tests/test_task_understanding.py#L209) | 209 | `""` | — |
+| [SRC-AFEDC2645A-L000210](../../tests/test_task_understanding.py#L210) | 210 | `""` | — |
+| [SRC-AFEDC2645A-L000211](../../tests/test_task_understanding.py#L211) | 211 | `"def test_official_site_request_without_a_target_marks_required_input():"` | — |
+| [SRC-AFEDC2645A-L000212](../../tests/test_task_understanding.py#L212) | 212 | `"    spec = build_task_spec(\"هات الموقع الرسمي\", mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
 | [SRC-AFEDC2645A-L000213](../../tests/test_task_understanding.py#L213) | 213 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
 | [SRC-AFEDC2645A-L000214](../../tests/test_task_understanding.py#L214) | 214 | `"    assert \"official_destination_target_entity\" in spec[\"missing_required_inputs\"]"` | — |
 | [SRC-AFEDC2645A-L000215](../../tests/test_task_understanding.py#L215) | 215 | `"    assert spec[\"requires_clarification\"] is True"` | — |
@@ -820,17 +834,3 @@
 | [SRC-F725E90B2A-L000456](../../tests/test_web_agent.py#L456) | 456 | `""` | — |
 | [SRC-F725E90B2A-L000457](../../tests/test_web_agent.py#L457) | 457 | `"def test_user_supplied_url_is_prioritized_and_page_content_is_extracted(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000458](../../tests/test_web_agent.py#L458) | 458 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000459](../../tests/test_web_agent.py#L459) | 459 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: [])"` | — |
-| [SRC-F725E90B2A-L000460](../../tests/test_web_agent.py#L460) | 460 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000461](../../tests/test_web_agent.py#L461) | 461 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000462](../../tests/test_web_agent.py#L462) | 462 | `"        \"_fetch_page\","` | — |
-| [SRC-F725E90B2A-L000463](../../tests/test_web_agent.py#L463) | 463 | `"        lambda url: (\"User page title\", \"Full public page text supplied for analysis\"),"` | — |
-| [SRC-F725E90B2A-L000464](../../tests/test_web_agent.py#L464) | 464 | `"    )"` | — |
-| [SRC-F725E90B2A-L000465](../../tests/test_web_agent.py#L465) | 465 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-F725E90B2A-L000466](../../tests/test_web_agent.py#L466) | 466 | `"        \"queries\": [\"لخص هذه الصفحة\"],"` | — |
-| [SRC-F725E90B2A-L000467](../../tests/test_web_agent.py#L467) | 467 | `"        \"direct_urls\": [\"https://example.com/article\"],"` | — |
-| [SRC-F725E90B2A-L000468](../../tests/test_web_agent.py#L468) | 468 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L000469](../../tests/test_web_agent.py#L469) | 469 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L000470](../../tests/test_web_agent.py#L470) | 470 | `"        \"depth\": \"deep\","` | — |
-| [SRC-F725E90B2A-L000471](../../tests/test_web_agent.py#L471) | 471 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L000472](../../tests/test_web_agent.py#L472) | 472 | `"    })"` | — |

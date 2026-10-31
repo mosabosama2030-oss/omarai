@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **975**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1898**
-- الأسطر النصية المفهرسة حرفيًا: **40901**
+- الأسطر النصية المفهرسة حرفيًا: **40915**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -129,7 +129,7 @@
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
-| FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 7476 | 220 | جرد الملف + AST Python |
+| FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 7995 | 234 | جرد الملف + AST Python |
 | FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 5143 | 159 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
@@ -1245,7 +1245,7 @@
 | [tests/test_multitenant.py](../tests/test_multitenant.py#L86) | دالة | test_legacy_single_company_database_migrates_without_losing_leads | لا توجد Docstring. | ناقص | 86 | [SRC-1521F490CA-L000086](../tests/test_multitenant.py#L86) |
 | [tests/test_multitenant.py](../tests/test_multitenant.py#L150) | دالة | test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error | لا توجد Docstring. | ناقص | 150 | [SRC-1521F490CA-L000150](../tests/test_multitenant.py#L150) |
 | [tests/test_multitenant.py](../tests/test_multitenant.py#L181) | دالة | test_api_token_expiry_is_normalized_to_utc | لا توجد Docstring. | ناقص | 181 | [SRC-1521F490CA-L000181](../tests/test_multitenant.py#L181) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L202) | دالة | test_api_token_expiry_rejects_naive_malformed_and_past_values | لا توجد Docstring. | ناقص | 202 | [SRC-1521F490CA-L000202](../tests/test_multitenant.py#L202) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L216) | دالة | test_api_token_expiry_rejects_naive_malformed_and_past_values | لا توجد Docstring. | ناقص | 216 | [SRC-1521F490CA-L000216](../tests/test_multitenant.py#L216) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L17) | دالة | tenant_api | لا توجد Docstring. | ناقص | 17 | [SRC-4405E7912C-L000017](../tests/test_multitenant_api.py#L17) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L34) | دالة | request_json | لا توجد Docstring. | ناقص | 34 | [SRC-4405E7912C-L000034](../tests/test_multitenant_api.py#L34) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L49) | دالة | _tenant | لا توجد Docstring. | ناقص | 49 | [SRC-4405E7912C-L000049](../tests/test_multitenant_api.py#L49) |
