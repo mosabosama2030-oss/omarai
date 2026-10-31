@@ -2,6 +2,8 @@ name: Omarai hosted acceptance smoke
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *' # daily at 08:17 Cairo time
 
 permissions:
   contents: read
