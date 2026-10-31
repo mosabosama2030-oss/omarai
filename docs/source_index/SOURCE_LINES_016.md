@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005493 إلى SRC-1AE03B9EC3-L006292
+- النطاق: SRC-1AE03B9EC3-L005478 إلى SRC-1AE03B9EC3-L006277
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005478](../../agents/web_agent.py#L5478) | 5478 | `"                            list(existing_source.get(\"providers\", []))"` | — |
+| [SRC-1AE03B9EC3-L005479](../../agents/web_agent.py#L5479) | 5479 | `"                            + list(source.get(\"providers\", []))"` | — |
+| [SRC-1AE03B9EC3-L005480](../../agents/web_agent.py#L5480) | 5480 | `"                        ))"` | — |
+| [SRC-1AE03B9EC3-L005481](../../agents/web_agent.py#L5481) | 5481 | `"                        source_queries = list(dict.fromkeys("` | — |
+| [SRC-1AE03B9EC3-L005482](../../agents/web_agent.py#L5482) | 5482 | `"                            list(existing_source.get(\"queries\", []))"` | — |
+| [SRC-1AE03B9EC3-L005483](../../agents/web_agent.py#L5483) | 5483 | `"                            + list(source.get(\"queries\", []))"` | — |
+| [SRC-1AE03B9EC3-L005484](../../agents/web_agent.py#L5484) | 5484 | `"                        ))"` | — |
+| [SRC-1AE03B9EC3-L005485](../../agents/web_agent.py#L5485) | 5485 | `"                        if source.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
+| [SRC-1AE03B9EC3-L005486](../../agents/web_agent.py#L5486) | 5486 | `"                            merged_source = dict(existing_source)"` | — |
+| [SRC-1AE03B9EC3-L005487](../../agents/web_agent.py#L5487) | 5487 | `"                            merged_source.update(source)"` | — |
+| [SRC-1AE03B9EC3-L005488](../../agents/web_agent.py#L5488) | 5488 | `"                            merged_source[\"providers\"] = providers"` | — |
+| [SRC-1AE03B9EC3-L005489](../../agents/web_agent.py#L5489) | 5489 | `"                            merged_source[\"queries\"] = source_queries"` | — |
+| [SRC-1AE03B9EC3-L005490](../../agents/web_agent.py#L5490) | 5490 | `"                            sources[existing_index] = merged_source"` | — |
+| [SRC-1AE03B9EC3-L005491](../../agents/web_agent.py#L5491) | 5491 | `"                        else:"` | — |
+| [SRC-1AE03B9EC3-L005492](../../agents/web_agent.py#L5492) | 5492 | `"                            existing_source[\"providers\"] = providers"` | — |
 | [SRC-1AE03B9EC3-L005493](../../agents/web_agent.py#L5493) | 5493 | `"                            existing_source[\"queries\"] = source_queries"` | — |
 | [SRC-1AE03B9EC3-L005494](../../agents/web_agent.py#L5494) | 5494 | `"                    sources.sort("` | — |
 | [SRC-1AE03B9EC3-L005495](../../agents/web_agent.py#L5495) | 5495 | `"                        key=lambda item: float(item.get(\"rank_score\", 0) or 0),"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L006275](../../agents/web_agent.py#L6275) | 6275 | `"                                \"وأعرض مقتطفات المصادر بدلًا منها.\""` | — |
 | [SRC-1AE03B9EC3-L006276](../../agents/web_agent.py#L6276) | 6276 | `"                            )"` | — |
 | [SRC-1AE03B9EC3-L006277](../../agents/web_agent.py#L6277) | 6277 | `"                            answer = _fallback_answer(sources, review_warning)"` | — |
-| [SRC-1AE03B9EC3-L006278](../../agents/web_agent.py#L6278) | 6278 | `"                    else:"` | — |
-| [SRC-1AE03B9EC3-L006279](../../agents/web_agent.py#L6279) | 6279 | `"                        coverage_repair_status = \"no_change_gap_unresolved\""` | — |
-| [SRC-1AE03B9EC3-L006280](../../agents/web_agent.py#L6280) | 6280 | `"                        coverage_repair_warning = ("` | — |
-| [SRC-1AE03B9EC3-L006281](../../agents/web_agent.py#L6281) | 6281 | `"                            \"رصد الفحص اللفظي محورًا قد يكون ناقصًا، لكن محاولة الإصلاح لم تغيّر الإجابة؛ \""` | — |
-| [SRC-1AE03B9EC3-L006282](../../agents/web_agent.py#L6282) | 6282 | `"                            \"تحقق من تغطية هذا المحور يدويًا.\""` | — |
-| [SRC-1AE03B9EC3-L006283](../../agents/web_agent.py#L6283) | 6283 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L006284](../../agents/web_agent.py#L6284) | 6284 | `"                except RequestBudgetExceeded:"` | — |
-| [SRC-1AE03B9EC3-L006285](../../agents/web_agent.py#L6285) | 6285 | `"                    coverage_repair_status = \"budget_exhausted\""` | — |
-| [SRC-1AE03B9EC3-L006286](../../agents/web_agent.py#L6286) | 6286 | `"                    coverage_repair_warning = ("` | — |
-| [SRC-1AE03B9EC3-L006287](../../agents/web_agent.py#L6287) | 6287 | `"                        \"استُنفدت ميزانية النماذج قبل محاولة إصلاح محور قد يكون ناقصًا؛ \""` | — |
-| [SRC-1AE03B9EC3-L006288](../../agents/web_agent.py#L6288) | 6288 | `"                        \"لا تعتبر التغطية مكتملة دون مراجعة المحور المذكور.\""` | — |
-| [SRC-1AE03B9EC3-L006289](../../agents/web_agent.py#L6289) | 6289 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L006290](../../agents/web_agent.py#L6290) | 6290 | `"                except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L006291](../../agents/web_agent.py#L6291) | 6291 | `"                    coverage_repair_status = \"unavailable\""` | — |
-| [SRC-1AE03B9EC3-L006292](../../agents/web_agent.py#L6292) | 6292 | `"                    coverage_repair_warning = ("` | — |

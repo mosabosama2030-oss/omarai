@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L001011 إلى SRC-62CE5126F9-L000437
+- النطاق: SRC-D17CE3D12F-L000996 إلى SRC-62CE5126F9-L000422
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000996](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L996) | 996 | `"- [NIST SP 800-61 Rev. 3 — Incident Response](https://csrc.nist.gov/pubs/sp/800/61/r3/final)."` | — |
+| [SRC-D17CE3D12F-L000997](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L997) | 997 | `"- [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/)."` | — |
+| [SRC-D17CE3D12F-L000998](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L998) | 998 | `"- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/)."` | — |
+| [SRC-D17CE3D12F-L000999](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L999) | 999 | `"- [OWASP GenAI Security Project](https://genai.owasp.org/)."` | — |
+| [SRC-D17CE3D12F-L001000](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1000) | 1000 | `"- [OWASP Artificial Intelligence Security Verification Standard (AISVS)](https://owasp.org/projects/artificial-intelligence-security-verification-standard-aisvs-docs)."` | — |
+| [SRC-D17CE3D12F-L001001](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1001) | 1001 | `"- [SLSA — Supply-chain Levels for Software Artifacts](https://slsa.dev/)."` | — |
+| [SRC-D17CE3D12F-L001002](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1002) | 1002 | `"- [GitHub — Secure use of Actions](https://docs.github.com/en/actions/reference/security/secure-use)."` | — |
+| [SRC-D17CE3D12F-L001003](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1003) | 1003 | `""` | — |
+| [SRC-D17CE3D12F-L001004](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1004) | 1004 | `"## الرصد والوصولية والتكلفة"` | — |
+| [SRC-D17CE3D12F-L001005](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1005) | 1005 | `"- [OpenTelemetry Documentation](https://opentelemetry.io/docs/) — توحيد traces وmetrics وlogs ومعانيها."` | — |
+| [SRC-D17CE3D12F-L001006](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1006) | 1006 | `"- [W3C Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)."` | — |
+| [SRC-D17CE3D12F-L001007](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1007) | 1007 | `"- [FinOps Framework](https://www.finops.org/framework/) — مسؤولية استخدام الموارد وشفافية التكلفة وتحسينها."` | — |
+| [SRC-D17CE3D12F-L001008](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1008) | 1008 | `""` | — |
+| [SRC-D17CE3D12F-L001009](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1009) | 1009 | `"## الذكاء الاصطناعي وتقييم المخاطر"` | — |
+| [SRC-D17CE3D12F-L001010](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1010) | 1010 | `"- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — تحقق من الإصدار/المراجعة الرسمية الحالية قبل أي تقييم؛ تعرض الصفحة الرسمية حالة المراجعة والمستجدات."` | — |
 | [SRC-D17CE3D12F-L001011](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1011) | 1011 | `"- [NIST Generative AI Profile (NIST AI 600-1)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) — مخاطر الذكاء الاصطناعي التوليدي ودورة حياته."` | — |
 | [SRC-D17CE3D12F-L001012](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1012) | 1012 | `"- [NIST Zero Trust Architecture (SP 800-207)](https://www.nist.gov/publications/zero-trust-architecture) — هوية المورد/العملية والتفويض عند الوصول إلى الموارد."` | — |
 | [SRC-D17CE3D12F-L001013](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1013) | 1013 | `"- [CISA Secure by Design](https://www.cisa.gov/securebydesign) — جعل الحماية والخيارات الآمنة جزءًا من تصميم المنتج."` | — |
@@ -837,18 +852,3 @@
 | [SRC-62CE5126F9-L000420](../OMARAI_REMEDIATION_REGISTER_AR.md#L420) | 420 | `""` | — |
 | [SRC-62CE5126F9-L000421](../OMARAI_REMEDIATION_REGISTER_AR.md#L421) | 421 | `"## تحديث التحقق على PR #125 — 29 أكتوبر 2026"` | — |
 | [SRC-62CE5126F9-L000422](../OMARAI_REMEDIATION_REGISTER_AR.md#L422) | 422 | `""` | — |
-| [SRC-62CE5126F9-L000423](../OMARAI_REMEDIATION_REGISTER_AR.md#L423) | 423 | ``"- CI ناجح على SHA `611e5e97397b5d82c6c4009aa84f57943320737b`: [GitHub Actions #40905555660](https://github.com/mosabosama2030-oss/omarai/actions/runs/40905555660). نجح Ruff وفحوص الفهرسة، و608 اختبارًا على Python 3.11 و608 على Python 3.12، وبناء الحاوية وprotected API smoke."`` | — |
-| [SRC-62CE5126F9-L000424](../OMARAI_REMEDIATION_REGISTER_AR.md#L424) | 424 | `"- اختبار الانحدار الجديد يمنع اعتبار حالة أداة غير معروفة مصفوفة مكتملة."` | — |
-| [SRC-62CE5126F9-L000425](../OMARAI_REMEDIATION_REGISTER_AR.md#L425) | 425 | `"- baseline/candidate الحي والمراجعات البشرية الكاملة والتكلفة الكاملة الموثقة: NOT_RUN/UNKNOWN؛ لا يوجد ادعاء تحسن جودة. PR #125 ما زال Draft/Open وغير مدمج."` | — |
-| [SRC-62CE5126F9-L000426](../OMARAI_REMEDIATION_REGISTER_AR.md#L426) | 426 | `""` | — |
-| [SRC-62CE5126F9-L000427](../OMARAI_REMEDIATION_REGISTER_AR.md#L427) | 427 | `""` | — |
-| [SRC-62CE5126F9-L000428](../OMARAI_REMEDIATION_REGISTER_AR.md#L428) | 428 | `"---"` | — |
-| [SRC-62CE5126F9-L000429](../OMARAI_REMEDIATION_REGISTER_AR.md#L429) | 429 | `""` | — |
-| [SRC-62CE5126F9-L000430](../OMARAI_REMEDIATION_REGISTER_AR.md#L430) | 430 | `"## تصحيح حالة التقييم بعد دمج PR #125 — 29 أكتوبر 2026"` | — |
-| [SRC-62CE5126F9-L000431](../OMARAI_REMEDIATION_REGISTER_AR.md#L431) | 431 | `""` | — |
-| [SRC-62CE5126F9-L000432](../OMARAI_REMEDIATION_REGISTER_AR.md#L432) | 432 | ``"- **حالة المستودع:** PR [#125](https://github.com/mosabosama2030-oss/omarai/pull/125) مدمج في commit `8c332c78c07d20efe89f88043d3df8540110c03a`. أي ملاحظة تاريخية سابقة تقول إن PR #125 ما زال مفتوحًا كانت صحيحة وقت تسجيلها فقط، ولم تعد تصف الحالة الحالية."`` | — |
-| [SRC-62CE5126F9-L000433](../OMARAI_REMEDIATION_REGISTER_AR.md#L433) | 433 | ``"- **دليل الاختبارات الآلية:** رأس PR `6d5e9071e77645889de4596664c407801f6bc6ad` اجتاز [CI #40906010312](https://github.com/mosabosama2030-oss/omarai/actions/runs/40906010312): 608 اختبارًا على Python 3.11 و608 على Python 3.12، وRuff، وفحوص الفهرسة، وبناء الحاوية وprotected API smoke. هذا دليل على الشفرة والاختبارات عند SHA المذكور، وليس نتيجة benchmark لجودة الإجابات."`` | — |
-| [SRC-62CE5126F9-L000434](../OMARAI_REMEDIATION_REGISTER_AR.md#L434) | 434 | ``"- **المجموعة:** `OMARAI-REDTEAM-001`، الإصدار `1.0.0`، 45 حالة موزعة على ar-EG (14)، ar-MSA (9)، en (13)، وmixed (9)، ضمن 20 فئة. وجود الحالات والتحقق البنيوي لا يثبت دقة إجابات Omarai."`` | — |
-| [SRC-62CE5126F9-L000435](../OMARAI_REMEDIATION_REGISTER_AR.md#L435) | 435 | ``"- **حالة المقارنة التجريبية:** baseline/candidate على الأسئلة نفسها = `NOT_RUN`. المراجعات البشرية المكتملة للدقة والاستدعاء والإخلاص ودعم الاستشهادات وجودة الكتابة = `NOT_RUN`. لا توجد نسبة تحسن مثبتة."`` | — |
-| [SRC-62CE5126F9-L000436](../OMARAI_REMEDIATION_REGISTER_AR.md#L436) | 436 | ``"- **حالة التكلفة:** تكلفة النموذج المعلنة تُسجل حيث يعيدها المزود؛ أما التكلفة الكاملة للطلب فلا تزال `UNKNOWN / NOT_MEASURED` حتى تُرفق مصالحة موثوقة لكل حالة في التشغيلين."`` | — |
-| [SRC-62CE5126F9-L000437](../OMARAI_REMEDIATION_REGISTER_AR.md#L437) | 437 | ``"- **حالة الاستضافة:** فحص القراءة فقط الموثق سابقًا أعاد HTTP 502، ولم تُرسل أسئلة إلى `/api/agent`. لا توجد هوية بناء مستضافة مثبتة في هذا التحقق. لذلك يبقى `HOSTED_ACCEPTANCE=BLOCKED / NOT_RUN`؛ لا يعني ذلك أن سبب 502 داخل الكود."`` | — |

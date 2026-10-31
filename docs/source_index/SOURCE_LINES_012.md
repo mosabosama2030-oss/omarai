@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002293 إلى SRC-1AE03B9EC3-L003092
+- النطاق: SRC-1AE03B9EC3-L002278 إلى SRC-1AE03B9EC3-L003077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002278](../../agents/web_agent.py#L2278) | 2278 | `"            page_text: str = \"\","` | — |
+| [SRC-1AE03B9EC3-L002279](../../agents/web_agent.py#L2279) | 2279 | `"            status: str = \"unknown\","` | — |
+| [SRC-1AE03B9EC3-L002280](../../agents/web_agent.py#L2280) | 2280 | `"            error_class: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L002281](../../agents/web_agent.py#L2281) | 2281 | `"        ) -> PageFetchResult:"` | — |
+| [SRC-1AE03B9EC3-L002282](../../agents/web_agent.py#L2282) | 2282 | `"            return PageFetchResult(title, page_text, status, error_class)"` | — |
+| [SRC-1AE03B9EC3-L002283](../../agents/web_agent.py#L2283) | 2283 | `""` | — |
+| [SRC-1AE03B9EC3-L002284](../../agents/web_agent.py#L2284) | 2284 | `"        current_url = _public_http_url(url)"` | — |
+| [SRC-1AE03B9EC3-L002285](../../agents/web_agent.py#L2285) | 2285 | `"        if not current_url:"` | — |
+| [SRC-1AE03B9EC3-L002286](../../agents/web_agent.py#L2286) | 2286 | `"            return result(status=\"rejected_url\", error_class=\"PublicUrlRejected\")"` | — |
+| [SRC-1AE03B9EC3-L002287](../../agents/web_agent.py#L2287) | 2287 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L002288](../../agents/web_agent.py#L2288) | 2288 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L002289](../../agents/web_agent.py#L2289) | 2289 | `"            budget.reserve(\"page_fetches\")"` | — |
+| [SRC-1AE03B9EC3-L002290](../../agents/web_agent.py#L2290) | 2290 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002291](../../agents/web_agent.py#L2291) | 2291 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L002292](../../agents/web_agent.py#L2292) | 2292 | `"            from bs4 import BeautifulSoup"` | — |
 | [SRC-1AE03B9EC3-L002293](../../agents/web_agent.py#L2293) | 2293 | `"        except ImportError as exc:"` | — |
 | [SRC-1AE03B9EC3-L002294](../../agents/web_agent.py#L2294) | 2294 | `"            raise AgentDependencyError("` | — |
 | [SRC-1AE03B9EC3-L002295](../../agents/web_agent.py#L2295) | 2295 | `"                \"حزم استخراج الصفحات غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L003075](../../agents/web_agent.py#L3075) | 3075 | `"            \"status\": str(status)[:48],"` | — |
 | [SRC-1AE03B9EC3-L003076](../../agents/web_agent.py#L3076) | 3076 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L003077](../../agents/web_agent.py#L3077) | 3077 | `"        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():"` | — |
-| [SRC-1AE03B9EC3-L003078](../../agents/web_agent.py#L3078) | 3078 | `"            # A concrete finish_reason can only be observed after a provider response was received."` | — |
-| [SRC-1AE03B9EC3-L003079](../../agents/web_agent.py#L3079) | 3079 | `"            remote_response_received = True"` | — |
-| [SRC-1AE03B9EC3-L003080](../../agents/web_agent.py#L3080) | 3080 | `"        if remote_response_received is not None:"` | — |
-| [SRC-1AE03B9EC3-L003081](../../agents/web_agent.py#L3081) | 3081 | `"            record[\"remote_response_received\"] = bool(remote_response_received)"` | — |
-| [SRC-1AE03B9EC3-L003082](../../agents/web_agent.py#L3082) | 3082 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
-| [SRC-1AE03B9EC3-L003083](../../agents/web_agent.py#L3083) | 3083 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
-| [SRC-1AE03B9EC3-L003084](../../agents/web_agent.py#L3084) | 3084 | `"        if isinstance(error_class, str) and error_class:"` | — |
-| [SRC-1AE03B9EC3-L003085](../../agents/web_agent.py#L3085) | 3085 | `"            record[\"error_class\"] = error_class[:80]"` | — |
-| [SRC-1AE03B9EC3-L003086](../../agents/web_agent.py#L3086) | 3086 | `"        self.generation_diagnostics.append(record)"` | — |
-| [SRC-1AE03B9EC3-L003087](../../agents/web_agent.py#L3087) | 3087 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
-| [SRC-1AE03B9EC3-L003088](../../agents/web_agent.py#L3088) | 3088 | `""` | — |
-| [SRC-1AE03B9EC3-L003089](../../agents/web_agent.py#L3089) | 3089 | `"    def _request_completion("` | — |
-| [SRC-1AE03B9EC3-L003090](../../agents/web_agent.py#L3090) | 3090 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003091](../../agents/web_agent.py#L3091) | 3091 | `"        messages: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003092](../../agents/web_agent.py#L3092) | 3092 | `"        max_tokens: int = 1400,"` | — |

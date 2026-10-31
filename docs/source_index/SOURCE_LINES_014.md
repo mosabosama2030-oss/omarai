@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003893 إلى SRC-1AE03B9EC3-L004692
+- النطاق: SRC-1AE03B9EC3-L003878 إلى SRC-1AE03B9EC3-L004677
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003878](../../agents/web_agent.py#L3878) | 3878 | `"        repaired = re.fullmatch("` | — |
+| [SRC-1AE03B9EC3-L003879](../../agents/web_agent.py#L3879) | 3879 | `"            r\"\\s*<<<OMARAI_COVERAGE_REPAIR>>>\\s*(.*?)\\s*<<<END_OMARAI_COVERAGE_REPAIR>>>\\s*\","` | — |
+| [SRC-1AE03B9EC3-L003880](../../agents/web_agent.py#L3880) | 3880 | `"            raw,"` | — |
+| [SRC-1AE03B9EC3-L003881](../../agents/web_agent.py#L3881) | 3881 | `"            flags=re.DOTALL,"` | — |
+| [SRC-1AE03B9EC3-L003882](../../agents/web_agent.py#L3882) | 3882 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L003883](../../agents/web_agent.py#L3883) | 3883 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L003884](../../agents/web_agent.py#L3884) | 3884 | `"            raw.count(start_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003885](../../agents/web_agent.py#L3885) | 3885 | `"            or raw.count(end_marker) != 1"` | — |
+| [SRC-1AE03B9EC3-L003886](../../agents/web_agent.py#L3886) | 3886 | `"            or repaired is None"` | — |
+| [SRC-1AE03B9EC3-L003887](../../agents/web_agent.py#L3887) | 3887 | `"            or not repaired.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003888](../../agents/web_agent.py#L3888) | 3888 | `"            or len(repaired.group(1)) > 24_000"` | — |
+| [SRC-1AE03B9EC3-L003889](../../agents/web_agent.py#L3889) | 3889 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003890](../../agents/web_agent.py#L3890) | 3890 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
+| [SRC-1AE03B9EC3-L003891](../../agents/web_agent.py#L3891) | 3891 | `"        return repaired.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003892](../../agents/web_agent.py#L3892) | 3892 | `""` | — |
 | [SRC-1AE03B9EC3-L003893](../../agents/web_agent.py#L3893) | 3893 | `"    def _review_answer("` | — |
 | [SRC-1AE03B9EC3-L003894](../../agents/web_agent.py#L3894) | 3894 | `"        self,"` | — |
 | [SRC-1AE03B9EC3-L003895](../../agents/web_agent.py#L3895) | 3895 | `"        question: str,"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L004675](../../agents/web_agent.py#L4675) | 4675 | `"        intent_route = str(decision[\"route\"])"` | — |
 | [SRC-1AE03B9EC3-L004676](../../agents/web_agent.py#L4676) | 4676 | `"        intent_reason = str(decision[\"reason\"])"` | — |
 | [SRC-1AE03B9EC3-L004677](../../agents/web_agent.py#L4677) | 4677 | `"        context_override: dict[str, Any] \| None = None"` | — |
-| [SRC-1AE03B9EC3-L004678](../../agents/web_agent.py#L4678) | 4678 | `""` | — |
-| [SRC-1AE03B9EC3-L004679](../../agents/web_agent.py#L4679) | 4679 | `"        # Rules only decide when a context probe may be needed. The model interprets"` | — |
-| [SRC-1AE03B9EC3-L004680](../../agents/web_agent.py#L4680) | 4680 | `"        # meaning only on those turns; it never receives authority to execute tools."` | — |
-| [SRC-1AE03B9EC3-L004681](../../agents/web_agent.py#L4681) | 4681 | `"        probe_dialogue = ("` | — |
-| [SRC-1AE03B9EC3-L004682](../../agents/web_agent.py#L4682) | 4682 | `"            bool(clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004683](../../agents/web_agent.py#L4683) | 4683 | `"            and not current_search_status_question"` | — |
-| [SRC-1AE03B9EC3-L004684](../../agents/web_agent.py#L4684) | 4684 | `"            and not self._is_self_question(question)"` | — |
-| [SRC-1AE03B9EC3-L004685](../../agents/web_agent.py#L4685) | 4685 | `"            and ("` | — |
-| [SRC-1AE03B9EC3-L004686](../../agents/web_agent.py#L4686) | 4686 | `"                intent_route != \"LOCAL\""` | — |
-| [SRC-1AE03B9EC3-L004687](../../agents/web_agent.py#L4687) | 4687 | `"                or might_be_context_dependent(question)"` | — |
-| [SRC-1AE03B9EC3-L004688](../../agents/web_agent.py#L4688) | 4688 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004689](../../agents/web_agent.py#L4689) | 4689 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004690](../../agents/web_agent.py#L4690) | 4690 | `"        if probe_dialogue:"` | — |
-| [SRC-1AE03B9EC3-L004691](../../agents/web_agent.py#L4691) | 4691 | `"            semantic_context = self._resolve_dialogue_context(question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004692](../../agents/web_agent.py#L4692) | 4692 | `"            if semantic_context.get(\"method\") == \"llm_semantic_context\":"` | — |

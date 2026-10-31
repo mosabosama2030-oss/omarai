@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000821 إلى SRC-0799EEEB02-L000203
+- النطاق: SRC-686F71AA50-L000806 إلى SRC-0799EEEB02-L000188
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000806](../../agents/task_understanding.py#L806) | 806 | `"    raw_changed_slots = context.get(\"changed_slots\")"` | — |
+| [SRC-686F71AA50-L000807](../../agents/task_understanding.py#L807) | 807 | `"    context_changed_slots = ["` | — |
+| [SRC-686F71AA50-L000808](../../agents/task_understanding.py#L808) | 808 | `"        str(item).strip()[:40]"` | — |
+| [SRC-686F71AA50-L000809](../../agents/task_understanding.py#L809) | 809 | `"        for item in raw_changed_slots[:8]"` | — |
+| [SRC-686F71AA50-L000810](../../agents/task_understanding.py#L810) | 810 | `"        if isinstance(item, str) and item.strip()"` | — |
+| [SRC-686F71AA50-L000811](../../agents/task_understanding.py#L811) | 811 | `"    ] if isinstance(raw_changed_slots, list) else []"` | — |
+| [SRC-686F71AA50-L000812](../../agents/task_understanding.py#L812) | 812 | `"    context_resolution = {"` | — |
+| [SRC-686F71AA50-L000813](../../agents/task_understanding.py#L813) | 813 | `"        \"method\": str(context.get(\"method\") or \"not_provided\")[:80],"` | — |
+| [SRC-686F71AA50-L000814](../../agents/task_understanding.py#L814) | 814 | `"        \"resolved_question\": ("` | — |
+| [SRC-686F71AA50-L000815](../../agents/task_understanding.py#L815) | 815 | `"            str(context.get(\"resolved_question\") or raw)[:MAX_TASK_CHARS]"` | — |
+| [SRC-686F71AA50-L000816](../../agents/task_understanding.py#L816) | 816 | `"            if not context.get(\"topic_shift\") else raw"` | — |
+| [SRC-686F71AA50-L000817](../../agents/task_understanding.py#L817) | 817 | `"        ),"` | — |
+| [SRC-686F71AA50-L000818](../../agents/task_understanding.py#L818) | 818 | `"        \"topic\": str(context.get(\"topic\") or \"\")[:180],"` | — |
+| [SRC-686F71AA50-L000819](../../agents/task_understanding.py#L819) | 819 | `"        \"entities\": context_entities,"` | — |
+| [SRC-686F71AA50-L000820](../../agents/task_understanding.py#L820) | 820 | `"        \"slots\": context_slots,"` | — |
 | [SRC-686F71AA50-L000821](../../agents/task_understanding.py#L821) | 821 | `"        \"changed_slots\": context_changed_slots,"` | — |
 | [SRC-686F71AA50-L000822](../../agents/task_understanding.py#L822) | 822 | `"        \"is_follow_up\": context.get(\"is_follow_up\") is True,"` | — |
 | [SRC-686F71AA50-L000823](../../agents/task_understanding.py#L823) | 823 | `"        \"topic_shift\": context.get(\"topic_shift\") is True,"` | — |
@@ -810,18 +825,3 @@
 | [SRC-0799EEEB02-L000186](../../agents/tool_execution_status.py#L186) | 186 | `"        \"reddit_public_rss\", \"bluesky_public_search\", \"reddit_oauth_api\","` | — |
 | [SRC-0799EEEB02-L000187](../../agents/tool_execution_status.py#L187) | 187 | `"        \"facebook_pages_api\", \"instagram_graph_api\", \"x_official_api\","` | — |
 | [SRC-0799EEEB02-L000188](../../agents/tool_execution_status.py#L188) | 188 | `"        \"youtube_data_api\","` | — |
-| [SRC-0799EEEB02-L000189](../../agents/tool_execution_status.py#L189) | 189 | `"    }"` | — |
-| [SRC-0799EEEB02-L000190](../../agents/tool_execution_status.py#L190) | 190 | `"    social_connector_states = ["` | — |
-| [SRC-0799EEEB02-L000191](../../agents/tool_execution_status.py#L191) | 191 | `"        row for row in connector_rows"` | — |
-| [SRC-0799EEEB02-L000192](../../agents/tool_execution_status.py#L192) | 192 | `"        if isinstance(row, dict) and row.get(\"name\") in social_connector_names"` | — |
-| [SRC-0799EEEB02-L000193](../../agents/tool_execution_status.py#L193) | 193 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000194](../../agents/tool_execution_status.py#L194) | 194 | `"    attempted_social_connectors = ["` | — |
-| [SRC-0799EEEB02-L000195](../../agents/tool_execution_status.py#L195) | 195 | `"        row for row in social_connector_states if row.get(\"attempted\") is True"` | — |
-| [SRC-0799EEEB02-L000196](../../agents/tool_execution_status.py#L196) | 196 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000197](../../agents/tool_execution_status.py#L197) | 197 | `"    social_connector_errors = ["` | — |
-| [SRC-0799EEEB02-L000198](../../agents/tool_execution_status.py#L198) | 198 | `"        row for row in social_connector_states"` | — |
-| [SRC-0799EEEB02-L000199](../../agents/tool_execution_status.py#L199) | 199 | `"        if row.get(\"status\") in {"` | — |
-| [SRC-0799EEEB02-L000200](../../agents/tool_execution_status.py#L200) | 200 | `"            \"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\","` | — |
-| [SRC-0799EEEB02-L000201](../../agents/tool_execution_status.py#L201) | 201 | `"            \"rate_limited\", \"budget_exhausted\","` | — |
-| [SRC-0799EEEB02-L000202](../../agents/tool_execution_status.py#L202) | 202 | `"        }"` | — |
-| [SRC-0799EEEB02-L000203](../../agents/tool_execution_status.py#L203) | 203 | `"    ]"` | — |

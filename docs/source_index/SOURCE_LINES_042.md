@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000102 إلى SRC-AFFCF23BD4-L000178
+- النطاق: SRC-3D0DE98F65-L000087 إلى SRC-AFFCF23BD4-L000163
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000087](../../tests/test_question_requirement_loop.py#L87) | 87 | `"        {"` | — |
+| [SRC-3D0DE98F65-L000088](../../tests/test_question_requirement_loop.py#L88) | 88 | `"            \"url\": \"https://example.net/specs\","` | — |
+| [SRC-3D0DE98F65-L000089](../../tests/test_question_requirement_loop.py#L89) | 89 | `"            \"title\": \"General technical specifications\","` | — |
+| [SRC-3D0DE98F65-L000090](../../tests/test_question_requirement_loop.py#L90) | 90 | `"            \"snippet\": \"Technical specifications for the two products are listed here.\","` | — |
+| [SRC-3D0DE98F65-L000091](../../tests/test_question_requirement_loop.py#L91) | 91 | `"            \"page_fetched\": False,"` | — |
+| [SRC-3D0DE98F65-L000092](../../tests/test_question_requirement_loop.py#L92) | 92 | `"            \"queries\": [battery_query],"` | — |
+| [SRC-3D0DE98F65-L000093](../../tests/test_question_requirement_loop.py#L93) | 93 | `"        },"` | — |
+| [SRC-3D0DE98F65-L000094](../../tests/test_question_requirement_loop.py#L94) | 94 | `"    ]"` | — |
+| [SRC-3D0DE98F65-L000095](../../tests/test_question_requirement_loop.py#L95) | 95 | `""` | — |
+| [SRC-3D0DE98F65-L000096](../../tests/test_question_requirement_loop.py#L96) | 96 | `"    ledger = build_requirement_evidence_ledger(plan[\"coverage_targets\"], sources, queries)"` | — |
+| [SRC-3D0DE98F65-L000097](../../tests/test_question_requirement_loop.py#L97) | 97 | `"    by_target = {item[\"target\"]: item for item in ledger}"` | — |
+| [SRC-3D0DE98F65-L000098](../../tests/test_question_requirement_loop.py#L98) | 98 | `""` | — |
+| [SRC-3D0DE98F65-L000099](../../tests/test_question_requirement_loop.py#L99) | 99 | `"    assert by_target[\"السعر\"][\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
+| [SRC-3D0DE98F65-L000100](../../tests/test_question_requirement_loop.py#L100) | 100 | `"    assert by_target[\"السعر\"][\"candidate_source_indexes\"] == [1]"` | — |
+| [SRC-3D0DE98F65-L000101](../../tests/test_question_requirement_loop.py#L101) | 101 | `"    assert by_target[\"البطارية\"][\"status\"] == \"query_returned_candidates_no_lexical_signal\""` | — |
 | [SRC-3D0DE98F65-L000102](../../tests/test_question_requirement_loop.py#L102) | 102 | `"    assert by_target[\"البطارية\"][\"query_result_source_indexes\"] == [2]"` | — |
 | [SRC-3D0DE98F65-L000103](../../tests/test_question_requirement_loop.py#L103) | 103 | `"    assert by_target[\"الكاميرا\"][\"status\"] == \"no_candidate_evidence_found\""` | — |
 | [SRC-3D0DE98F65-L000104](../../tests/test_question_requirement_loop.py#L104) | 104 | `"    assert all(item[\"semantic_verification\"] is False for item in ledger)"` | — |
@@ -828,18 +843,3 @@
 | [SRC-AFFCF23BD4-L000161](../../tests/test_research_completion.py#L161) | 161 | `"            \"page_fetched\": False,"` | — |
 | [SRC-AFFCF23BD4-L000162](../../tests/test_research_completion.py#L162) | 162 | `"            \"page_text_present_without_fetch_flag\": True,"` | — |
 | [SRC-AFFCF23BD4-L000163](../../tests/test_research_completion.py#L163) | 163 | `"        }],"` | — |
-| [SRC-AFFCF23BD4-L000164](../../tests/test_research_completion.py#L164) | 164 | `"        \"search_report\": {},"` | — |
-| [SRC-AFFCF23BD4-L000165](../../tests/test_research_completion.py#L165) | 165 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000166](../../tests/test_research_completion.py#L166) | 166 | `"    assert result[\"counters\"][\"page_text_without_fetched_flag_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000167](../../tests/test_research_completion.py#L167) | 167 | `""` | — |
-| [SRC-AFFCF23BD4-L000168](../../tests/test_research_completion.py#L168) | 168 | `""` | — |
-| [SRC-AFFCF23BD4-L000169](../../tests/test_research_completion.py#L169) | 169 | `""` | — |
-| [SRC-AFFCF23BD4-L000170](../../tests/test_research_completion.py#L170) | 170 | `"def test_unresolved_citation_support_flags_prevent_completed_research_status() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000171](../../tests/test_research_completion.py#L171) | 171 | `"    base = {"` | — |
-| [SRC-AFFCF23BD4-L000172](../../tests/test_research_completion.py#L172) | 172 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000173](../../tests/test_research_completion.py#L173) | 173 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000174](../../tests/test_research_completion.py#L174) | 174 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000175](../../tests/test_research_completion.py#L175) | 175 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000176](../../tests/test_research_completion.py#L176) | 176 | `"        \"citation_validation\": {"` | — |
-| [SRC-AFFCF23BD4-L000177](../../tests/test_research_completion.py#L177) | 177 | `"            \"status\": \"index_range_check_passed\","` | — |
-| [SRC-AFFCF23BD4-L000178](../../tests/test_research_completion.py#L178) | 178 | `"            \"valid_citation_count\": 1,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001493 إلى SRC-1AE03B9EC3-L002292
+- النطاق: SRC-1AE03B9EC3-L001478 إلى SRC-1AE03B9EC3-L002277
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001478](../../agents/web_agent.py#L1478) | 1478 | `"                error=\"BRAVE_SEARCH_API_KEY is not set\","` | — |
+| [SRC-1AE03B9EC3-L001479](../../agents/web_agent.py#L1479) | 1479 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001480](../../agents/web_agent.py#L1480) | 1480 | `"        if os.getenv(\"TAVILY_API_KEY\", \"\").strip():"` | — |
+| [SRC-1AE03B9EC3-L001481](../../agents/web_agent.py#L1481) | 1481 | `"            adapters.append((\"tavily_search_api\", self._search_tavily))"` | — |
+| [SRC-1AE03B9EC3-L001482](../../agents/web_agent.py#L1482) | 1482 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L001483](../../agents/web_agent.py#L1483) | 1483 | `"            self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L001484](../../agents/web_agent.py#L1484) | 1484 | `"                \"tavily_search_api\", search_query, \"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L001485](../../agents/web_agent.py#L1485) | 1485 | `"                error=\"TAVILY_API_KEY is not set\","` | — |
+| [SRC-1AE03B9EC3-L001486](../../agents/web_agent.py#L1486) | 1486 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001487](../../agents/web_agent.py#L1487) | 1487 | `"        if detect_freshness(search_query):"` | — |
+| [SRC-1AE03B9EC3-L001488](../../agents/web_agent.py#L1488) | 1488 | `"            adapters.append((\"google_news_rss\", self._search_news))"` | — |
+| [SRC-1AE03B9EC3-L001489](../../agents/web_agent.py#L1489) | 1489 | `""` | — |
+| [SRC-1AE03B9EC3-L001490](../../agents/web_agent.py#L1490) | 1490 | `"        async def run_one(name: str, method: Any) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001491](../../agents/web_agent.py#L1491) | 1491 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L001492](../../agents/web_agent.py#L1492) | 1492 | `"                if budget is not None:"` | — |
 | [SRC-1AE03B9EC3-L001493](../../agents/web_agent.py#L1493) | 1493 | `"                    budget.reserve(\"search_calls\")"` | — |
 | [SRC-1AE03B9EC3-L001494](../../agents/web_agent.py#L1494) | 1494 | `"                provider_timeout = self._effective_timeout(10.0)"` | — |
 | [SRC-1AE03B9EC3-L001495](../../agents/web_agent.py#L1495) | 1495 | `"                raw = await asyncio.wait_for("` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L002275](../../agents/web_agent.py#L2275) | 2275 | `"        \"\"\"Fetch a public page with bounded redirects and an inspectable extraction outcome.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L002276](../../agents/web_agent.py#L2276) | 2276 | `"        def result("` | — |
 | [SRC-1AE03B9EC3-L002277](../../agents/web_agent.py#L2277) | 2277 | `"            title: str = \"\","` | — |
-| [SRC-1AE03B9EC3-L002278](../../agents/web_agent.py#L2278) | 2278 | `"            page_text: str = \"\","` | — |
-| [SRC-1AE03B9EC3-L002279](../../agents/web_agent.py#L2279) | 2279 | `"            status: str = \"unknown\","` | — |
-| [SRC-1AE03B9EC3-L002280](../../agents/web_agent.py#L2280) | 2280 | `"            error_class: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002281](../../agents/web_agent.py#L2281) | 2281 | `"        ) -> PageFetchResult:"` | — |
-| [SRC-1AE03B9EC3-L002282](../../agents/web_agent.py#L2282) | 2282 | `"            return PageFetchResult(title, page_text, status, error_class)"` | — |
-| [SRC-1AE03B9EC3-L002283](../../agents/web_agent.py#L2283) | 2283 | `""` | — |
-| [SRC-1AE03B9EC3-L002284](../../agents/web_agent.py#L2284) | 2284 | `"        current_url = _public_http_url(url)"` | — |
-| [SRC-1AE03B9EC3-L002285](../../agents/web_agent.py#L2285) | 2285 | `"        if not current_url:"` | — |
-| [SRC-1AE03B9EC3-L002286](../../agents/web_agent.py#L2286) | 2286 | `"            return result(status=\"rejected_url\", error_class=\"PublicUrlRejected\")"` | — |
-| [SRC-1AE03B9EC3-L002287](../../agents/web_agent.py#L2287) | 2287 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L002288](../../agents/web_agent.py#L2288) | 2288 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L002289](../../agents/web_agent.py#L2289) | 2289 | `"            budget.reserve(\"page_fetches\")"` | — |
-| [SRC-1AE03B9EC3-L002290](../../agents/web_agent.py#L2290) | 2290 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002291](../../agents/web_agent.py#L2291) | 2291 | `"            import httpx"` | — |
-| [SRC-1AE03B9EC3-L002292](../../agents/web_agent.py#L2292) | 2292 | `"            from bs4 import BeautifulSoup"` | — |

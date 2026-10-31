@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000562 إلى SRC-0F910493E8-L000786
+- النطاق: SRC-65551FB29F-L000547 إلى SRC-0F910493E8-L000771
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000547](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L547) | 547 | `"## الأمن والهوية وسلسلة التوريد"` | — |
+| [SRC-65551FB29F-L000548](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L548) | 548 | `"- [NIST SSDF SP 800-218](https://csrc.nist.gov/pubs/sp/800/218/final) — راجع وضع المراجعة والإصدارات الحديثة قبل التقييم."` | — |
+| [SRC-65551FB29F-L000549](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L549) | 549 | `"- [NIST Zero Trust Architecture SP 800-207](https://www.nist.gov/publications/zero-trust-architecture)"` | — |
+| [SRC-65551FB29F-L000550](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L550) | 550 | `"- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)"` | — |
+| [SRC-65551FB29F-L000551](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L551) | 551 | `"- [OWASP API Security Top 10](https://owasp.org/www-project-api-security/)"` | — |
+| [SRC-65551FB29F-L000552](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L552) | 552 | `"- [SLSA](https://slsa.dev/)"` | — |
+| [SRC-65551FB29F-L000553](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L553) | 553 | `"- [CISA Secure by Design](https://www.cisa.gov/securebydesign)"` | — |
+| [SRC-65551FB29F-L000554](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L554) | 554 | `""` | — |
+| [SRC-65551FB29F-L000555](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L555) | 555 | `"## الذكاء الاصطناعي والبيانات والرصد"` | — |
+| [SRC-65551FB29F-L000556](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L556) | 556 | `"- [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)"` | — |
+| [SRC-65551FB29F-L000557](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L557) | 557 | `"- [NIST Generative AI Profile — AI 600-1](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)"` | — |
+| [SRC-65551FB29F-L000558](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L558) | 558 | `"- [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)"` | — |
+| [SRC-65551FB29F-L000559](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L559) | 559 | `"- [OpenTelemetry](https://opentelemetry.io/docs/)"` | — |
+| [SRC-65551FB29F-L000560](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L560) | 560 | `""` | — |
+| [SRC-65551FB29F-L000561](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L561) | 561 | `"## تجربة المستخدم والاقتصاد"` | — |
 | [SRC-65551FB29F-L000562](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L562) | 562 | `"- [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)"` | — |
 | [SRC-65551FB29F-L000563](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L563) | 563 | `"- [FinOps Framework](https://www.finops.org/framework/)"` | — |
 | [SRC-65551FB29F-L000564](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L564) | 564 | `""` | — |
@@ -810,18 +825,3 @@
 | [SRC-0F910493E8-L000769](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L769) | 769 | `"- لا تسجل API keys أو cookies أو Authorization headers أو أسرار النموذج أو بيانات خاصة لا حاجة إليها."` | — |
 | [SRC-0F910493E8-L000770](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L770) | 770 | `"- قيد الوصول إلى السجلات، وحدد مدة الاحتفاظ والحذف ومراجعة الوصول."` | — |
 | [SRC-0F910493E8-L000771](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L771) | 771 | `"- افصل خطأ التطبيق العادي عن الحادث الأمني وعن فشل الموفر."` | — |
-| [SRC-0F910493E8-L000772](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L772) | 772 | `"- وفر طريقة لإيقاف أداة أو موصل أو تكوين خطير بسرعة (kill switch) متى أمكن."` | — |
-| [SRC-0F910493E8-L000773](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L773) | 773 | `"- وثّق إجراءً مختصرًا للتعامل مع: سر مسرب، وصول غير مصرح، ثغرة حرجة، تسريب بيانات، إساءة استهلاك، وخلل في سلسلة التوريد."` | — |
-| [SRC-0F910493E8-L000774](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L774) | 774 | `"- يتضمن الإجراء الاحتواء، وإلغاء الأسرار، وحفظ أدلة مناسبة، وتقييم نطاق الأثر، وإصلاحًا واختبارًا، ومراجعة سبب جذري، واختبار منع تكرار."` | — |
-| [SRC-0F910493E8-L000775](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L775) | 775 | `"- اختبر النسخ الاحتياطي والاستعادة للبيانات المهمة. وجود ملف backup غير كافٍ."` | — |
-| [SRC-0F910493E8-L000776](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L776) | 776 | `"- يحدّث سجل المتطلبات والمخاطر بعد الحادث، ولا تُخفى القيود التي لم تُعالج."` | — |
-| [SRC-0F910493E8-L000777](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L777) | 777 | `""` | — |
-| [SRC-0F910493E8-L000778](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L778) | 778 | `"## 17.16 فحوص الأمان الإلزامية قبل اعتماد تغيير مؤثر"` | — |
-| [SRC-0F910493E8-L000779](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L779) | 779 | `""` | — |
-| [SRC-0F910493E8-L000780](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L780) | 780 | `"لا يلزم تشغيل كل فحص على كل تعديل توثيقي؛ لكن أي تغيير يؤثر في مسار أمني يجب أن يرتبط بالاختبارات المنطبقة، على الأقل من المجموعة التالية:"` | — |
-| [SRC-0F910493E8-L000781](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L781) | 781 | `"- **AuthN/AuthZ:** رفض وصول مجهول أو غير مالك للمورد؛ اختبار BOLA/IDOR إن وجدت موارد خاصة."` | — |
-| [SRC-0F910493E8-L000782](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L782) | 782 | `"- **Input validation:** الأنواع والأطوال والحقول المجهولة والحدود والمدخلات المشوهة."` | — |
-| [SRC-0F910493E8-L000783](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L783) | 783 | `"- **SSRF/network:** loopback/private/IPv6/metadata/redirect/DNS changes/oversized responses/timeouts."` | — |
-| [SRC-0F910493E8-L000784](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L784) | 784 | `"- **Prompt injection:** محتوى خبيث داخل صفحات أو مرفقات أو ذاكرة، مع التحقق من عدم نشوء استدعاء أداة غير مسموح."` | — |
-| [SRC-0F910493E8-L000785](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L785) | 785 | `"- **Tool permissions:** أداة غير مسجلة، صلاحية مرفوضة، تجاوز budget، وسياسة تتطلب تأكيدًا بشريًا."` | — |
-| [SRC-0F910493E8-L000786](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L786) | 786 | `"- **XSS/output safety:** HTML/Markdown/URL مسترجع أو مولد، وروابط ذات مخططات خطرة."` | — |

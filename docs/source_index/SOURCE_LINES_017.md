@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006293 إلى SRC-EEF2E6447C-L000457
+- النطاق: SRC-1AE03B9EC3-L006278 إلى SRC-EEF2E6447C-L000442
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006278](../../agents/web_agent.py#L6278) | 6278 | `"                    else:"` | — |
+| [SRC-1AE03B9EC3-L006279](../../agents/web_agent.py#L6279) | 6279 | `"                        coverage_repair_status = \"no_change_gap_unresolved\""` | — |
+| [SRC-1AE03B9EC3-L006280](../../agents/web_agent.py#L6280) | 6280 | `"                        coverage_repair_warning = ("` | — |
+| [SRC-1AE03B9EC3-L006281](../../agents/web_agent.py#L6281) | 6281 | `"                            \"رصد الفحص اللفظي محورًا قد يكون ناقصًا، لكن محاولة الإصلاح لم تغيّر الإجابة؛ \""` | — |
+| [SRC-1AE03B9EC3-L006282](../../agents/web_agent.py#L6282) | 6282 | `"                            \"تحقق من تغطية هذا المحور يدويًا.\""` | — |
+| [SRC-1AE03B9EC3-L006283](../../agents/web_agent.py#L6283) | 6283 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L006284](../../agents/web_agent.py#L6284) | 6284 | `"                except RequestBudgetExceeded:"` | — |
+| [SRC-1AE03B9EC3-L006285](../../agents/web_agent.py#L6285) | 6285 | `"                    coverage_repair_status = \"budget_exhausted\""` | — |
+| [SRC-1AE03B9EC3-L006286](../../agents/web_agent.py#L6286) | 6286 | `"                    coverage_repair_warning = ("` | — |
+| [SRC-1AE03B9EC3-L006287](../../agents/web_agent.py#L6287) | 6287 | `"                        \"استُنفدت ميزانية النماذج قبل محاولة إصلاح محور قد يكون ناقصًا؛ \""` | — |
+| [SRC-1AE03B9EC3-L006288](../../agents/web_agent.py#L6288) | 6288 | `"                        \"لا تعتبر التغطية مكتملة دون مراجعة المحور المذكور.\""` | — |
+| [SRC-1AE03B9EC3-L006289](../../agents/web_agent.py#L6289) | 6289 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L006290](../../agents/web_agent.py#L6290) | 6290 | `"                except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L006291](../../agents/web_agent.py#L6291) | 6291 | `"                    coverage_repair_status = \"unavailable\""` | — |
+| [SRC-1AE03B9EC3-L006292](../../agents/web_agent.py#L6292) | 6292 | `"                    coverage_repair_warning = ("` | — |
 | [SRC-1AE03B9EC3-L006293](../../agents/web_agent.py#L6293) | 6293 | `"                        \"تعذرت محاولة إصلاح محور قد يكون ناقصًا (\""` | — |
 | [SRC-1AE03B9EC3-L006294](../../agents/web_agent.py#L6294) | 6294 | `"                        + type(exc).__name__"` | — |
 | [SRC-1AE03B9EC3-L006295](../../agents/web_agent.py#L6295) | 6295 | `"                        + \")؛ راجع المحاور المطلوبة قبل اعتماد الإجابة.\""` | — |
@@ -819,18 +834,3 @@
 | [SRC-EEF2E6447C-L000440](../../api/omarai.py#L440) | 440 | `"        try:"` | — |
 | [SRC-EEF2E6447C-L000441](../../api/omarai.py#L441) | 441 | `"            while len(body) < size:"` | — |
 | [SRC-EEF2E6447C-L000442](../../api/omarai.py#L442) | 442 | `"                remaining = deadline - time.monotonic()"` | — |
-| [SRC-EEF2E6447C-L000443](../../api/omarai.py#L443) | 443 | `"                if remaining <= 0:"` | — |
-| [SRC-EEF2E6447C-L000444](../../api/omarai.py#L444) | 444 | `"                    timed_out = True"` | — |
-| [SRC-EEF2E6447C-L000445](../../api/omarai.py#L445) | 445 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000446](../../api/omarai.py#L446) | 446 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |
-| [SRC-EEF2E6447C-L000447](../../api/omarai.py#L447) | 447 | `"                try:"` | — |
-| [SRC-EEF2E6447C-L000448](../../api/omarai.py#L448) | 448 | `"                    # read1 performs at most one underlying read, letting us re-check"` | — |
-| [SRC-EEF2E6447C-L000449](../../api/omarai.py#L449) | 449 | `"                    # the absolute deadline between body fragments."` | — |
-| [SRC-EEF2E6447C-L000450](../../api/omarai.py#L450) | 450 | `"                    chunk = self.rfile.read1("` | — |
-| [SRC-EEF2E6447C-L000451](../../api/omarai.py#L451) | 451 | `"                        min(size - len(body), REQUEST_BODY_READ_CHUNK_BYTES)"` | — |
-| [SRC-EEF2E6447C-L000452](../../api/omarai.py#L452) | 452 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000453](../../api/omarai.py#L453) | 453 | `"                except TimeoutError:"` | — |
-| [SRC-EEF2E6447C-L000454](../../api/omarai.py#L454) | 454 | `"                    timed_out = True"` | — |
-| [SRC-EEF2E6447C-L000455](../../api/omarai.py#L455) | 455 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000456](../../api/omarai.py#L456) | 456 | `"                if not chunk:"` | — |
-| [SRC-EEF2E6447C-L000457](../../api/omarai.py#L457) | 457 | `"                    break"` | — |

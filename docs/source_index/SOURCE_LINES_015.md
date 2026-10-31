@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004693 إلى SRC-1AE03B9EC3-L005492
+- النطاق: SRC-1AE03B9EC3-L004678 إلى SRC-1AE03B9EC3-L005477
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004678](../../agents/web_agent.py#L4678) | 4678 | `""` | — |
+| [SRC-1AE03B9EC3-L004679](../../agents/web_agent.py#L4679) | 4679 | `"        # Rules only decide when a context probe may be needed. The model interprets"` | — |
+| [SRC-1AE03B9EC3-L004680](../../agents/web_agent.py#L4680) | 4680 | `"        # meaning only on those turns; it never receives authority to execute tools."` | — |
+| [SRC-1AE03B9EC3-L004681](../../agents/web_agent.py#L4681) | 4681 | `"        probe_dialogue = ("` | — |
+| [SRC-1AE03B9EC3-L004682](../../agents/web_agent.py#L4682) | 4682 | `"            bool(clean_history)"` | — |
+| [SRC-1AE03B9EC3-L004683](../../agents/web_agent.py#L4683) | 4683 | `"            and not current_search_status_question"` | — |
+| [SRC-1AE03B9EC3-L004684](../../agents/web_agent.py#L4684) | 4684 | `"            and not self._is_self_question(question)"` | — |
+| [SRC-1AE03B9EC3-L004685](../../agents/web_agent.py#L4685) | 4685 | `"            and ("` | — |
+| [SRC-1AE03B9EC3-L004686](../../agents/web_agent.py#L4686) | 4686 | `"                intent_route != \"LOCAL\""` | — |
+| [SRC-1AE03B9EC3-L004687](../../agents/web_agent.py#L4687) | 4687 | `"                or might_be_context_dependent(question)"` | — |
+| [SRC-1AE03B9EC3-L004688](../../agents/web_agent.py#L4688) | 4688 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004689](../../agents/web_agent.py#L4689) | 4689 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004690](../../agents/web_agent.py#L4690) | 4690 | `"        if probe_dialogue:"` | — |
+| [SRC-1AE03B9EC3-L004691](../../agents/web_agent.py#L4691) | 4691 | `"            semantic_context = self._resolve_dialogue_context(question, clean_history)"` | — |
+| [SRC-1AE03B9EC3-L004692](../../agents/web_agent.py#L4692) | 4692 | `"            if semantic_context.get(\"method\") == \"llm_semantic_context\":"` | — |
 | [SRC-1AE03B9EC3-L004693](../../agents/web_agent.py#L4693) | 4693 | `"                context_override = semantic_context"` | — |
 | [SRC-1AE03B9EC3-L004694](../../agents/web_agent.py#L4694) | 4694 | `"                if semantic_context.get(\"needs_clarification\"):"` | — |
 | [SRC-1AE03B9EC3-L004695](../../agents/web_agent.py#L4695) | 4695 | `"                    return self._dialogue_clarification_result("` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L005475](../../agents/web_agent.py#L5475) | 5475 | `"                            continue"` | — |
 | [SRC-1AE03B9EC3-L005476](../../agents/web_agent.py#L5476) | 5476 | `"                        existing_source = sources[existing_index]"` | — |
 | [SRC-1AE03B9EC3-L005477](../../agents/web_agent.py#L5477) | 5477 | `"                        providers = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L005478](../../agents/web_agent.py#L5478) | 5478 | `"                            list(existing_source.get(\"providers\", []))"` | — |
-| [SRC-1AE03B9EC3-L005479](../../agents/web_agent.py#L5479) | 5479 | `"                            + list(source.get(\"providers\", []))"` | — |
-| [SRC-1AE03B9EC3-L005480](../../agents/web_agent.py#L5480) | 5480 | `"                        ))"` | — |
-| [SRC-1AE03B9EC3-L005481](../../agents/web_agent.py#L5481) | 5481 | `"                        source_queries = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L005482](../../agents/web_agent.py#L5482) | 5482 | `"                            list(existing_source.get(\"queries\", []))"` | — |
-| [SRC-1AE03B9EC3-L005483](../../agents/web_agent.py#L5483) | 5483 | `"                            + list(source.get(\"queries\", []))"` | — |
-| [SRC-1AE03B9EC3-L005484](../../agents/web_agent.py#L5484) | 5484 | `"                        ))"` | — |
-| [SRC-1AE03B9EC3-L005485](../../agents/web_agent.py#L5485) | 5485 | `"                        if source.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
-| [SRC-1AE03B9EC3-L005486](../../agents/web_agent.py#L5486) | 5486 | `"                            merged_source = dict(existing_source)"` | — |
-| [SRC-1AE03B9EC3-L005487](../../agents/web_agent.py#L5487) | 5487 | `"                            merged_source.update(source)"` | — |
-| [SRC-1AE03B9EC3-L005488](../../agents/web_agent.py#L5488) | 5488 | `"                            merged_source[\"providers\"] = providers"` | — |
-| [SRC-1AE03B9EC3-L005489](../../agents/web_agent.py#L5489) | 5489 | `"                            merged_source[\"queries\"] = source_queries"` | — |
-| [SRC-1AE03B9EC3-L005490](../../agents/web_agent.py#L5490) | 5490 | `"                            sources[existing_index] = merged_source"` | — |
-| [SRC-1AE03B9EC3-L005491](../../agents/web_agent.py#L5491) | 5491 | `"                        else:"` | — |
-| [SRC-1AE03B9EC3-L005492](../../agents/web_agent.py#L5492) | 5492 | `"                            existing_source[\"providers\"] = providers"` | — |

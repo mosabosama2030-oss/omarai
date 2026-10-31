@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0799EEEB02-L000204 إلى SRC-1AE03B9EC3-L000692
+- النطاق: SRC-0799EEEB02-L000189 إلى SRC-1AE03B9EC3-L000677
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0799EEEB02-L000189](../../agents/tool_execution_status.py#L189) | 189 | `"    }"` | — |
+| [SRC-0799EEEB02-L000190](../../agents/tool_execution_status.py#L190) | 190 | `"    social_connector_states = ["` | — |
+| [SRC-0799EEEB02-L000191](../../agents/tool_execution_status.py#L191) | 191 | `"        row for row in connector_rows"` | — |
+| [SRC-0799EEEB02-L000192](../../agents/tool_execution_status.py#L192) | 192 | `"        if isinstance(row, dict) and row.get(\"name\") in social_connector_names"` | — |
+| [SRC-0799EEEB02-L000193](../../agents/tool_execution_status.py#L193) | 193 | `"    ]"` | — |
+| [SRC-0799EEEB02-L000194](../../agents/tool_execution_status.py#L194) | 194 | `"    attempted_social_connectors = ["` | — |
+| [SRC-0799EEEB02-L000195](../../agents/tool_execution_status.py#L195) | 195 | `"        row for row in social_connector_states if row.get(\"attempted\") is True"` | — |
+| [SRC-0799EEEB02-L000196](../../agents/tool_execution_status.py#L196) | 196 | `"    ]"` | — |
+| [SRC-0799EEEB02-L000197](../../agents/tool_execution_status.py#L197) | 197 | `"    social_connector_errors = ["` | — |
+| [SRC-0799EEEB02-L000198](../../agents/tool_execution_status.py#L198) | 198 | `"        row for row in social_connector_states"` | — |
+| [SRC-0799EEEB02-L000199](../../agents/tool_execution_status.py#L199) | 199 | `"        if row.get(\"status\") in {"` | — |
+| [SRC-0799EEEB02-L000200](../../agents/tool_execution_status.py#L200) | 200 | `"            \"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\","` | — |
+| [SRC-0799EEEB02-L000201](../../agents/tool_execution_status.py#L201) | 201 | `"            \"rate_limited\", \"budget_exhausted\","` | — |
+| [SRC-0799EEEB02-L000202](../../agents/tool_execution_status.py#L202) | 202 | `"        }"` | — |
+| [SRC-0799EEEB02-L000203](../../agents/tool_execution_status.py#L203) | 203 | `"    ]"` | — |
 | [SRC-0799EEEB02-L000204](../../agents/tool_execution_status.py#L204) | 204 | `"    social_configured_connectors = ["` | — |
 | [SRC-0799EEEB02-L000205](../../agents/tool_execution_status.py#L205) | 205 | `"        row for row in social_connector_states"` | — |
 | [SRC-0799EEEB02-L000206](../../agents/tool_execution_status.py#L206) | 206 | `"        if row.get(\"configured\") is True"` | — |
@@ -810,18 +825,3 @@
 | [SRC-1AE03B9EC3-L000675](../../agents/web_agent.py#L675) | 675 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L000676](../../agents/web_agent.py#L676) | 676 | `"    def _unwrap_search_url(value: str) -> str:"` | — |
 | [SRC-1AE03B9EC3-L000677](../../agents/web_agent.py#L677) | 677 | `"        if value.startswith(\"//\"):"` | — |
-| [SRC-1AE03B9EC3-L000678](../../agents/web_agent.py#L678) | 678 | `"            value = \"https:\" + value"` | — |
-| [SRC-1AE03B9EC3-L000679](../../agents/web_agent.py#L679) | 679 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L000680](../../agents/web_agent.py#L680) | 680 | `"            parsed = urllib.parse.urlparse(value)"` | — |
-| [SRC-1AE03B9EC3-L000681](../../agents/web_agent.py#L681) | 681 | `"            host = (parsed.hostname or \"\").lower()"` | — |
-| [SRC-1AE03B9EC3-L000682](../../agents/web_agent.py#L682) | 682 | `"            if host.endswith(\"duckduckgo.com\") and parsed.path.startswith(\"/l/\"):"` | — |
-| [SRC-1AE03B9EC3-L000683](../../agents/web_agent.py#L683) | 683 | `"                target = urllib.parse.parse_qs(parsed.query).get(\"uddg\", [\"\"])[0]"` | — |
-| [SRC-1AE03B9EC3-L000684](../../agents/web_agent.py#L684) | 684 | `"                return urllib.parse.unquote(target) if target else \"\""` | — |
-| [SRC-1AE03B9EC3-L000685](../../agents/web_agent.py#L685) | 685 | `"        except (ValueError, TypeError):"` | — |
-| [SRC-1AE03B9EC3-L000686](../../agents/web_agent.py#L686) | 686 | `"            return \"\""` | — |
-| [SRC-1AE03B9EC3-L000687](../../agents/web_agent.py#L687) | 687 | `"        return value"` | — |
-| [SRC-1AE03B9EC3-L000688](../../agents/web_agent.py#L688) | 688 | `""` | — |
-| [SRC-1AE03B9EC3-L000689](../../agents/web_agent.py#L689) | 689 | `"    def _record_provider_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L000690](../../agents/web_agent.py#L690) | 690 | `"        self, provider: str, query: str, status: str, result_count: int = 0,"` | — |
-| [SRC-1AE03B9EC3-L000691](../../agents/web_agent.py#L691) | 691 | `"        rejected_count: int = 0, error: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L000692](../../agents/web_agent.py#L692) | 692 | `"        accepted_count: int \| None = None,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003093 إلى SRC-1AE03B9EC3-L003892
+- النطاق: SRC-1AE03B9EC3-L003078 إلى SRC-1AE03B9EC3-L003877
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003078](../../agents/web_agent.py#L3078) | 3078 | `"            # A concrete finish_reason can only be observed after a provider response was received."` | — |
+| [SRC-1AE03B9EC3-L003079](../../agents/web_agent.py#L3079) | 3079 | `"            remote_response_received = True"` | — |
+| [SRC-1AE03B9EC3-L003080](../../agents/web_agent.py#L3080) | 3080 | `"        if remote_response_received is not None:"` | — |
+| [SRC-1AE03B9EC3-L003081](../../agents/web_agent.py#L3081) | 3081 | `"            record[\"remote_response_received\"] = bool(remote_response_received)"` | — |
+| [SRC-1AE03B9EC3-L003082](../../agents/web_agent.py#L3082) | 3082 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
+| [SRC-1AE03B9EC3-L003083](../../agents/web_agent.py#L3083) | 3083 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
+| [SRC-1AE03B9EC3-L003084](../../agents/web_agent.py#L3084) | 3084 | `"        if isinstance(error_class, str) and error_class:"` | — |
+| [SRC-1AE03B9EC3-L003085](../../agents/web_agent.py#L3085) | 3085 | `"            record[\"error_class\"] = error_class[:80]"` | — |
+| [SRC-1AE03B9EC3-L003086](../../agents/web_agent.py#L3086) | 3086 | `"        self.generation_diagnostics.append(record)"` | — |
+| [SRC-1AE03B9EC3-L003087](../../agents/web_agent.py#L3087) | 3087 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
+| [SRC-1AE03B9EC3-L003088](../../agents/web_agent.py#L3088) | 3088 | `""` | — |
+| [SRC-1AE03B9EC3-L003089](../../agents/web_agent.py#L3089) | 3089 | `"    def _request_completion("` | — |
+| [SRC-1AE03B9EC3-L003090](../../agents/web_agent.py#L3090) | 3090 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003091](../../agents/web_agent.py#L3091) | 3091 | `"        messages: list[dict[str, str]],"` | — |
+| [SRC-1AE03B9EC3-L003092](../../agents/web_agent.py#L3092) | 3092 | `"        max_tokens: int = 1400,"` | — |
 | [SRC-1AE03B9EC3-L003093](../../agents/web_agent.py#L3093) | 3093 | `"        temperature: float = 0.2,"` | — |
 | [SRC-1AE03B9EC3-L003094](../../agents/web_agent.py#L3094) | 3094 | `"        timeout: int \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L003095](../../agents/web_agent.py#L3095) | 3095 | `"        model: str \| None = None,"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L003875](../../agents/web_agent.py#L3875) | 3875 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L003876](../../agents/web_agent.py#L3876) | 3876 | `"        start_marker = \"<<<OMARAI_COVERAGE_REPAIR>>>\""` | — |
 | [SRC-1AE03B9EC3-L003877](../../agents/web_agent.py#L3877) | 3877 | `"        end_marker = \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
-| [SRC-1AE03B9EC3-L003878](../../agents/web_agent.py#L3878) | 3878 | `"        repaired = re.fullmatch("` | — |
-| [SRC-1AE03B9EC3-L003879](../../agents/web_agent.py#L3879) | 3879 | `"            r\"\\s*<<<OMARAI_COVERAGE_REPAIR>>>\\s*(.*?)\\s*<<<END_OMARAI_COVERAGE_REPAIR>>>\\s*\","` | — |
-| [SRC-1AE03B9EC3-L003880](../../agents/web_agent.py#L3880) | 3880 | `"            raw,"` | — |
-| [SRC-1AE03B9EC3-L003881](../../agents/web_agent.py#L3881) | 3881 | `"            flags=re.DOTALL,"` | — |
-| [SRC-1AE03B9EC3-L003882](../../agents/web_agent.py#L3882) | 3882 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003883](../../agents/web_agent.py#L3883) | 3883 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L003884](../../agents/web_agent.py#L3884) | 3884 | `"            raw.count(start_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003885](../../agents/web_agent.py#L3885) | 3885 | `"            or raw.count(end_marker) != 1"` | — |
-| [SRC-1AE03B9EC3-L003886](../../agents/web_agent.py#L3886) | 3886 | `"            or repaired is None"` | — |
-| [SRC-1AE03B9EC3-L003887](../../agents/web_agent.py#L3887) | 3887 | `"            or not repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003888](../../agents/web_agent.py#L3888) | 3888 | `"            or len(repaired.group(1)) > 24_000"` | — |
-| [SRC-1AE03B9EC3-L003889](../../agents/web_agent.py#L3889) | 3889 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003890](../../agents/web_agent.py#L3890) | 3890 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
-| [SRC-1AE03B9EC3-L003891](../../agents/web_agent.py#L3891) | 3891 | `"        return repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003892](../../agents/web_agent.py#L3892) | 3892 | `""` | — |

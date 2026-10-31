@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000848 إلى SRC-29A9CD43D1-L000058
+- النطاق: SRC-3451CC474D-L000833 إلى SRC-29A9CD43D1-L000043
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000833](../../tests/test_api.py#L833) | 833 | `"def test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable("` | — |
+| [SRC-3451CC474D-L000834](../../tests/test_api.py#L834) | 834 | `"    monkeypatch, tmp_path, variable, source"` | — |
+| [SRC-3451CC474D-L000835](../../tests/test_api.py#L835) | 835 | `"):"` | — |
+| [SRC-3451CC474D-L000836](../../tests/test_api.py#L836) | 836 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000837](../../tests/test_api.py#L837) | 837 | `""` | — |
+| [SRC-3451CC474D-L000838](../../tests/test_api.py#L838) | 838 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
+| [SRC-3451CC474D-L000839](../../tests/test_api.py#L839) | 839 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
+| [SRC-3451CC474D-L000840](../../tests/test_api.py#L840) | 840 | `"    build_sha_file.write_text(\"unknown\", encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000841](../../tests/test_api.py#L841) | 841 | `"    for name, _label in api_module._PLATFORM_BUILD_SHA_ENVIRONMENTS:"` | — |
+| [SRC-3451CC474D-L000842](../../tests/test_api.py#L842) | 842 | `"        monkeypatch.delenv(name, raising=False)"` | — |
+| [SRC-3451CC474D-L000843](../../tests/test_api.py#L843) | 843 | `"    monkeypatch.setenv(variable, \"b\" * 40)"` | — |
+| [SRC-3451CC474D-L000844](../../tests/test_api.py#L844) | 844 | `""` | — |
+| [SRC-3451CC474D-L000845](../../tests/test_api.py#L845) | 845 | `"    assert api_module._build_identity() == (\"b\" * 40, source)"` | — |
+| [SRC-3451CC474D-L000846](../../tests/test_api.py#L846) | 846 | `""` | — |
+| [SRC-3451CC474D-L000847](../../tests/test_api.py#L847) | 847 | `""` | — |
 | [SRC-3451CC474D-L000848](../../tests/test_api.py#L848) | 848 | `"def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):"` | — |
 | [SRC-3451CC474D-L000849](../../tests/test_api.py#L849) | 849 | `"    import api.omarai as api_module"` | — |
 | [SRC-3451CC474D-L000850](../../tests/test_api.py#L850) | 850 | `""` | — |
@@ -855,18 +870,3 @@
 | [SRC-29A9CD43D1-L000041](../../tests/test_dialogue_context_pipeline.py#L41) | 41 | `"        \"provider_counts\": {\"test_search\": len(sources)},"` | — |
 | [SRC-29A9CD43D1-L000042](../../tests/test_dialogue_context_pipeline.py#L42) | 42 | `"        \"platform_counts\": {\"web\": len(sources)},"` | — |
 | [SRC-29A9CD43D1-L000043](../../tests/test_dialogue_context_pipeline.py#L43) | 43 | `"        \"social_direct_results\": 0,"` | — |
-| [SRC-29A9CD43D1-L000044](../../tests/test_dialogue_context_pipeline.py#L44) | 44 | `"        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-29A9CD43D1-L000045](../../tests/test_dialogue_context_pipeline.py#L45) | 45 | `"        \"planning_method\": plan.get(\"planning_method\", \"test\"),"` | — |
-| [SRC-29A9CD43D1-L000046](../../tests/test_dialogue_context_pipeline.py#L46) | 46 | `"        \"evidence_signals\": evidence_signal_report(sources),"` | — |
-| [SRC-29A9CD43D1-L000047](../../tests/test_dialogue_context_pipeline.py#L47) | 47 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000048](../../tests/test_dialogue_context_pipeline.py#L48) | 48 | `""` | — |
-| [SRC-29A9CD43D1-L000049](../../tests/test_dialogue_context_pipeline.py#L49) | 49 | `""` | — |
-| [SRC-29A9CD43D1-L000050](../../tests/test_dialogue_context_pipeline.py#L50) | 50 | `"def _semantic_context(*, needs_clarification: bool = False) -> dict[str, Any]:"` | — |
-| [SRC-29A9CD43D1-L000051](../../tests/test_dialogue_context_pipeline.py#L51) | 51 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000052](../../tests/test_dialogue_context_pipeline.py#L52) | 52 | `"        \"resolved_question\": ("` | — |
-| [SRC-29A9CD43D1-L000053](../../tests/test_dialogue_context_pipeline.py#L53) | 53 | `"            \"هل الضمان الدولي لهاتف iPhone 17 سعة 256 جيجابايت الذي اشتريته \""` | — |
-| [SRC-29A9CD43D1-L000054](../../tests/test_dialogue_context_pipeline.py#L54) | 54 | `"            \"في مصر يغطي الصيانة داخل مصر؟\""` | — |
-| [SRC-29A9CD43D1-L000055](../../tests/test_dialogue_context_pipeline.py#L55) | 55 | `"        ),"` | — |
-| [SRC-29A9CD43D1-L000056](../../tests/test_dialogue_context_pipeline.py#L56) | 56 | `"        \"intent\": \"current_information\","` | — |
-| [SRC-29A9CD43D1-L000057](../../tests/test_dialogue_context_pipeline.py#L57) | 57 | `"        \"topic\": \"تغطية الضمان\","` | — |
-| [SRC-29A9CD43D1-L000058](../../tests/test_dialogue_context_pipeline.py#L58) | 58 | `"        \"entities\": [\"iPhone 17\"],"` | — |

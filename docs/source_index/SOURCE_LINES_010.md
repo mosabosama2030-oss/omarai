@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000693 إلى SRC-1AE03B9EC3-L001492
+- النطاق: SRC-1AE03B9EC3-L000678 إلى SRC-1AE03B9EC3-L001477
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000678](../../agents/web_agent.py#L678) | 678 | `"            value = \"https:\" + value"` | — |
+| [SRC-1AE03B9EC3-L000679](../../agents/web_agent.py#L679) | 679 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L000680](../../agents/web_agent.py#L680) | 680 | `"            parsed = urllib.parse.urlparse(value)"` | — |
+| [SRC-1AE03B9EC3-L000681](../../agents/web_agent.py#L681) | 681 | `"            host = (parsed.hostname or \"\").lower()"` | — |
+| [SRC-1AE03B9EC3-L000682](../../agents/web_agent.py#L682) | 682 | `"            if host.endswith(\"duckduckgo.com\") and parsed.path.startswith(\"/l/\"):"` | — |
+| [SRC-1AE03B9EC3-L000683](../../agents/web_agent.py#L683) | 683 | `"                target = urllib.parse.parse_qs(parsed.query).get(\"uddg\", [\"\"])[0]"` | — |
+| [SRC-1AE03B9EC3-L000684](../../agents/web_agent.py#L684) | 684 | `"                return urllib.parse.unquote(target) if target else \"\""` | — |
+| [SRC-1AE03B9EC3-L000685](../../agents/web_agent.py#L685) | 685 | `"        except (ValueError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L000686](../../agents/web_agent.py#L686) | 686 | `"            return \"\""` | — |
+| [SRC-1AE03B9EC3-L000687](../../agents/web_agent.py#L687) | 687 | `"        return value"` | — |
+| [SRC-1AE03B9EC3-L000688](../../agents/web_agent.py#L688) | 688 | `""` | — |
+| [SRC-1AE03B9EC3-L000689](../../agents/web_agent.py#L689) | 689 | `"    def _record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L000690](../../agents/web_agent.py#L690) | 690 | `"        self, provider: str, query: str, status: str, result_count: int = 0,"` | — |
+| [SRC-1AE03B9EC3-L000691](../../agents/web_agent.py#L691) | 691 | `"        rejected_count: int = 0, error: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L000692](../../agents/web_agent.py#L692) | 692 | `"        accepted_count: int \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000693](../../agents/web_agent.py#L693) | 693 | `"        rejection_counts: dict[str, int] \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000694](../../agents/web_agent.py#L694) | 694 | `"    ) -> None:"` | — |
 | [SRC-1AE03B9EC3-L000695](../../agents/web_agent.py#L695) | 695 | `"        def redact(value: Any, limit: int) -> str:"` | — |
@@ -801,18 +816,3 @@
 | [SRC-1AE03B9EC3-L001475](../../agents/web_agent.py#L1475) | 1475 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L001476](../../agents/web_agent.py#L1476) | 1476 | `"            self._record_provider_diagnostic("` | — |
 | [SRC-1AE03B9EC3-L001477](../../agents/web_agent.py#L1477) | 1477 | `"                \"brave_search_api\", search_query, \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001478](../../agents/web_agent.py#L1478) | 1478 | `"                error=\"BRAVE_SEARCH_API_KEY is not set\","` | — |
-| [SRC-1AE03B9EC3-L001479](../../agents/web_agent.py#L1479) | 1479 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001480](../../agents/web_agent.py#L1480) | 1480 | `"        if os.getenv(\"TAVILY_API_KEY\", \"\").strip():"` | — |
-| [SRC-1AE03B9EC3-L001481](../../agents/web_agent.py#L1481) | 1481 | `"            adapters.append((\"tavily_search_api\", self._search_tavily))"` | — |
-| [SRC-1AE03B9EC3-L001482](../../agents/web_agent.py#L1482) | 1482 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L001483](../../agents/web_agent.py#L1483) | 1483 | `"            self._record_provider_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L001484](../../agents/web_agent.py#L1484) | 1484 | `"                \"tavily_search_api\", search_query, \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001485](../../agents/web_agent.py#L1485) | 1485 | `"                error=\"TAVILY_API_KEY is not set\","` | — |
-| [SRC-1AE03B9EC3-L001486](../../agents/web_agent.py#L1486) | 1486 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001487](../../agents/web_agent.py#L1487) | 1487 | `"        if detect_freshness(search_query):"` | — |
-| [SRC-1AE03B9EC3-L001488](../../agents/web_agent.py#L1488) | 1488 | `"            adapters.append((\"google_news_rss\", self._search_news))"` | — |
-| [SRC-1AE03B9EC3-L001489](../../agents/web_agent.py#L1489) | 1489 | `""` | — |
-| [SRC-1AE03B9EC3-L001490](../../agents/web_agent.py#L1490) | 1490 | `"        async def run_one(name: str, method: Any) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001491](../../agents/web_agent.py#L1491) | 1491 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L001492](../../agents/web_agent.py#L1492) | 1492 | `"                if budget is not None:"` | — |

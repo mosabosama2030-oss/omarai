@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000059 إلى SRC-FA4E1423C3-L000049
+- النطاق: SRC-29A9CD43D1-L000044 إلى SRC-FA4E1423C3-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000044](../../tests/test_dialogue_context_pipeline.py#L44) | 44 | `"        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
+| [SRC-29A9CD43D1-L000045](../../tests/test_dialogue_context_pipeline.py#L45) | 45 | `"        \"planning_method\": plan.get(\"planning_method\", \"test\"),"` | — |
+| [SRC-29A9CD43D1-L000046](../../tests/test_dialogue_context_pipeline.py#L46) | 46 | `"        \"evidence_signals\": evidence_signal_report(sources),"` | — |
+| [SRC-29A9CD43D1-L000047](../../tests/test_dialogue_context_pipeline.py#L47) | 47 | `"    }"` | — |
+| [SRC-29A9CD43D1-L000048](../../tests/test_dialogue_context_pipeline.py#L48) | 48 | `""` | — |
+| [SRC-29A9CD43D1-L000049](../../tests/test_dialogue_context_pipeline.py#L49) | 49 | `""` | — |
+| [SRC-29A9CD43D1-L000050](../../tests/test_dialogue_context_pipeline.py#L50) | 50 | `"def _semantic_context(*, needs_clarification: bool = False) -> dict[str, Any]:"` | — |
+| [SRC-29A9CD43D1-L000051](../../tests/test_dialogue_context_pipeline.py#L51) | 51 | `"    return {"` | — |
+| [SRC-29A9CD43D1-L000052](../../tests/test_dialogue_context_pipeline.py#L52) | 52 | `"        \"resolved_question\": ("` | — |
+| [SRC-29A9CD43D1-L000053](../../tests/test_dialogue_context_pipeline.py#L53) | 53 | `"            \"هل الضمان الدولي لهاتف iPhone 17 سعة 256 جيجابايت الذي اشتريته \""` | — |
+| [SRC-29A9CD43D1-L000054](../../tests/test_dialogue_context_pipeline.py#L54) | 54 | `"            \"في مصر يغطي الصيانة داخل مصر؟\""` | — |
+| [SRC-29A9CD43D1-L000055](../../tests/test_dialogue_context_pipeline.py#L55) | 55 | `"        ),"` | — |
+| [SRC-29A9CD43D1-L000056](../../tests/test_dialogue_context_pipeline.py#L56) | 56 | `"        \"intent\": \"current_information\","` | — |
+| [SRC-29A9CD43D1-L000057](../../tests/test_dialogue_context_pipeline.py#L57) | 57 | `"        \"topic\": \"تغطية الضمان\","` | — |
+| [SRC-29A9CD43D1-L000058](../../tests/test_dialogue_context_pipeline.py#L58) | 58 | `"        \"entities\": [\"iPhone 17\"],"` | — |
 | [SRC-29A9CD43D1-L000059](../../tests/test_dialogue_context_pipeline.py#L59) | 59 | `"        \"slots\": {"` | — |
 | [SRC-29A9CD43D1-L000060](../../tests/test_dialogue_context_pipeline.py#L60) | 60 | `"            \"product\": \"iPhone 17\","` | — |
 | [SRC-29A9CD43D1-L000061](../../tests/test_dialogue_context_pipeline.py#L61) | 61 | `"            \"capacity\": \"256 جيجابايت\","` | — |
@@ -837,18 +852,3 @@
 | [SRC-FA4E1423C3-L000032](../../tests/test_generate_index.py#L32) | 32 | `"        '        return None\\n\\n'"` | — |
 | [SRC-FA4E1423C3-L000033](../../tests/test_generate_index.py#L33) | 33 | `"        'class UndocumentedClass:\\n'"` | — |
 | [SRC-FA4E1423C3-L000034](../../tests/test_generate_index.py#L34) | 34 | `"        '    pass\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000035](../../tests/test_generate_index.py#L35) | 35 | `"        'def documented_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000036](../../tests/test_generate_index.py#L36) | 36 | `"        '    \"\"\"A documented function.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000037](../../tests/test_generate_index.py#L37) | 37 | `"        '    return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000038](../../tests/test_generate_index.py#L38) | 38 | `"        'def undocumented_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000039](../../tests/test_generate_index.py#L39) | 39 | `"        '    return None\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000040](../../tests/test_generate_index.py#L40) | 40 | `"        'async def async_function():\\n'"` | — |
-| [SRC-FA4E1423C3-L000041](../../tests/test_generate_index.py#L41) | 41 | `"        '    \"\"\"An asynchronous function.\"\"\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000042](../../tests/test_generate_index.py#L42) | 42 | `"        '    return None\\n',"` | — |
-| [SRC-FA4E1423C3-L000043](../../tests/test_generate_index.py#L43) | 43 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000044](../../tests/test_generate_index.py#L44) | 44 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000045](../../tests/test_generate_index.py#L45) | 45 | `""` | — |
-| [SRC-FA4E1423C3-L000046](../../tests/test_generate_index.py#L46) | 46 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000047](../../tests/test_generate_index.py#L47) | 47 | `"    by_name = {symbol.name: symbol for symbol in symbols}"` | — |
-| [SRC-FA4E1423C3-L000048](../../tests/test_generate_index.py#L48) | 48 | `"    markdown = INDEXER.render_markdown(symbols, files_scanned)"` | — |
-| [SRC-FA4E1423C3-L000049](../../tests/test_generate_index.py#L49) | 49 | `""` | — |
