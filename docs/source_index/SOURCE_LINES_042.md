@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62DC597310-L000028 إلى SRC-C353AAAC10-L000096
+- النطاق: SRC-62DC597310-L000024 إلى SRC-C353AAAC10-L000066
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62DC597310-L000024](../../tests/test_live_search_connectors.py#L24) | 24 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-62DC597310-L000025](../../tests/test_live_search_connectors.py#L25) | 25 | `"        requested[\"url\"] = url"` | — |
+| [SRC-62DC597310-L000026](../../tests/test_live_search_connectors.py#L26) | 26 | `"        requested.update(kwargs)"` | — |
+| [SRC-62DC597310-L000027](../../tests/test_live_search_connectors.py#L27) | 27 | `"        return FakeResponse({"` | — |
 | [SRC-62DC597310-L000028](../../tests/test_live_search_connectors.py#L28) | 28 | `"            \"web\": {"` | — |
 | [SRC-62DC597310-L000029](../../tests/test_live_search_connectors.py#L29) | 29 | `"                \"results\": [{"` | — |
 | [SRC-62DC597310-L000030](../../tests/test_live_search_connectors.py#L30) | 30 | `"                    \"title\": \"Current research\","` | — |
@@ -353,6 +357,32 @@
 | [SRC-4405E7912C-L000131](../../tests/test_multitenant_api.py#L131) | 131 | `"    )"` | — |
 | [SRC-4405E7912C-L000132](../../tests/test_multitenant_api.py#L132) | 132 | `"    assert status == 401"` | — |
 | [SRC-4405E7912C-L000133](../../tests/test_multitenant_api.py#L133) | 133 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
+| [SRC-4405E7912C-L000134](../../tests/test_multitenant_api.py#L134) | 134 | `""` | — |
+| [SRC-4405E7912C-L000135](../../tests/test_multitenant_api.py#L135) | 135 | `""` | — |
+| [SRC-4405E7912C-L000136](../../tests/test_multitenant_api.py#L136) | 136 | `"def test_viewer_membership_is_read_only(tenant_api):"` | — |
+| [SRC-4405E7912C-L000137](../../tests/test_multitenant_api.py#L137) | 137 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000138](../../tests/test_multitenant_api.py#L138) | 138 | `"    tenant_id = store.create_tenant(\"Read Only Company\", \"read-only-company\")"` | — |
+| [SRC-4405E7912C-L000139](../../tests/test_multitenant_api.py#L139) | 139 | `"    user_id = store.create_user(\"viewer@example.test\", \"Viewer\")"` | — |
+| [SRC-4405E7912C-L000140](../../tests/test_multitenant_api.py#L140) | 140 | `"    store.add_membership(tenant_id, user_id, \"viewer\")"` | — |
+| [SRC-4405E7912C-L000141](../../tests/test_multitenant_api.py#L141) | 141 | `"    token = \"viewer-token-\" + \"V\" * 32"` | — |
+| [SRC-4405E7912C-L000142](../../tests/test_multitenant_api.py#L142) | 142 | `"    store.create_api_token(token, tenant_id, user_id, label=\"viewer\")"` | — |
+| [SRC-4405E7912C-L000143](../../tests/test_multitenant_api.py#L143) | 143 | `""` | — |
+| [SRC-4405E7912C-L000144](../../tests/test_multitenant_api.py#L144) | 144 | `"    status, listing = request_json(base, \"/api/leads\", token=token)"` | — |
+| [SRC-4405E7912C-L000145](../../tests/test_multitenant_api.py#L145) | 145 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000146](../../tests/test_multitenant_api.py#L146) | 146 | `"    assert listing[\"count\"] == 0"` | — |
+| [SRC-4405E7912C-L000147](../../tests/test_multitenant_api.py#L147) | 147 | `""` | — |
+| [SRC-4405E7912C-L000148](../../tests/test_multitenant_api.py#L148) | 148 | `"    status, error = request_json("` | — |
+| [SRC-4405E7912C-L000149](../../tests/test_multitenant_api.py#L149) | 149 | `"        base,"` | — |
+| [SRC-4405E7912C-L000150](../../tests/test_multitenant_api.py#L150) | 150 | `"        \"/api/leads\","` | — |
+| [SRC-4405E7912C-L000151](../../tests/test_multitenant_api.py#L151) | 151 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000152](../../tests/test_multitenant_api.py#L152) | 152 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000153](../../tests/test_multitenant_api.py#L153) | 153 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000154](../../tests/test_multitenant_api.py#L154) | 154 | `"            \"text\": \"Viewer must not write\","` | — |
+| [SRC-4405E7912C-L000155](../../tests/test_multitenant_api.py#L155) | 155 | `"            \"source_url\": \"https://example.test/viewer\","` | — |
+| [SRC-4405E7912C-L000156](../../tests/test_multitenant_api.py#L156) | 156 | `"        },"` | — |
+| [SRC-4405E7912C-L000157](../../tests/test_multitenant_api.py#L157) | 157 | `"    )"` | — |
+| [SRC-4405E7912C-L000158](../../tests/test_multitenant_api.py#L158) | 158 | `"    assert status == 403"` | — |
+| [SRC-4405E7912C-L000159](../../tests/test_multitenant_api.py#L159) | 159 | `"    assert \"للقراءة فقط\" in error[\"error\"]"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -840,33 +870,3 @@
 | [SRC-C353AAAC10-L000064](../../tests/test_request_budget.py#L64) | 64 | `""` | — |
 | [SRC-C353AAAC10-L000065](../../tests/test_request_budget.py#L65) | 65 | `"def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):"` | — |
 | [SRC-C353AAAC10-L000066](../../tests/test_request_budget.py#L66) | 66 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-C353AAAC10-L000067](../../tests/test_request_budget.py#L67) | 67 | `""` | — |
-| [SRC-C353AAAC10-L000068](../../tests/test_request_budget.py#L68) | 68 | `"    agent = WebAgent()"` | — |
-| [SRC-C353AAAC10-L000069](../../tests/test_request_budget.py#L69) | 69 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-C353AAAC10-L000070](../../tests/test_request_budget.py#L70) | 70 | `""` | — |
-| [SRC-C353AAAC10-L000071](../../tests/test_request_budget.py#L71) | 71 | `"    agent._request_budget = RequestBudget(limits={\"search_queries\": 0})"` | — |
-| [SRC-C353AAAC10-L000072](../../tests/test_request_budget.py#L72) | 72 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_queries\"):"` | — |
-| [SRC-C353AAAC10-L000073](../../tests/test_request_budget.py#L73) | 73 | `"        agent._search_web(\"budget test\")"` | — |
-| [SRC-C353AAAC10-L000074](../../tests/test_request_budget.py#L74) | 74 | `""` | — |
-| [SRC-C353AAAC10-L000075](../../tests/test_request_budget.py#L75) | 75 | `"    agent._request_budget = RequestBudget(limits={\"model_calls\": 0})"` | — |
-| [SRC-C353AAAC10-L000076](../../tests/test_request_budget.py#L76) | 76 | `"    monkeypatch.setattr("` | — |
-| [SRC-C353AAAC10-L000077](../../tests/test_request_budget.py#L77) | 77 | `"        \"agents.web_agent.urllib.request.urlopen\","` | — |
-| [SRC-C353AAAC10-L000078](../../tests/test_request_budget.py#L78) | 78 | `"        lambda *args, **kwargs: pytest.fail(\"model HTTP request must not start\"),"` | — |
-| [SRC-C353AAAC10-L000079](../../tests/test_request_budget.py#L79) | 79 | `"    )"` | — |
-| [SRC-C353AAAC10-L000080](../../tests/test_request_budget.py#L80) | 80 | `"    with pytest.raises(RequestBudgetExceeded, match=\"model_calls\"):"` | — |
-| [SRC-C353AAAC10-L000081](../../tests/test_request_budget.py#L81) | 81 | `"        agent._request_completion([{\"role\": \"user\", \"content\": \"test\"}])"` | — |
-| [SRC-C353AAAC10-L000082](../../tests/test_request_budget.py#L82) | 82 | `""` | — |
-| [SRC-C353AAAC10-L000083](../../tests/test_request_budget.py#L83) | 83 | `"    agent._request_budget = RequestBudget(limits={\"page_fetches\": 0})"` | — |
-| [SRC-C353AAAC10-L000084](../../tests/test_request_budget.py#L84) | 84 | `"    with pytest.raises(RequestBudgetExceeded, match=\"page_fetches\"):"` | — |
-| [SRC-C353AAAC10-L000085](../../tests/test_request_budget.py#L85) | 85 | `"        agent._fetch_page(\"https://example.com/\")"` | — |
-| [SRC-C353AAAC10-L000086](../../tests/test_request_budget.py#L86) | 86 | `""` | — |
-| [SRC-C353AAAC10-L000087](../../tests/test_request_budget.py#L87) | 87 | `""` | — |
-| [SRC-C353AAAC10-L000088](../../tests/test_request_budget.py#L88) | 88 | `"def test_social_provider_reserves_budget_before_network_io(monkeypatch):"` | — |
-| [SRC-C353AAAC10-L000089](../../tests/test_request_budget.py#L89) | 89 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-C353AAAC10-L000090](../../tests/test_request_budget.py#L90) | 90 | `""` | — |
-| [SRC-C353AAAC10-L000091](../../tests/test_request_budget.py#L91) | 91 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"test-client\")"` | — |
-| [SRC-C353AAAC10-L000092](../../tests/test_request_budget.py#L92) | 92 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"test-secret\")"` | — |
-| [SRC-C353AAAC10-L000093](../../tests/test_request_budget.py#L93) | 93 | `"    agent = WebAgent()"` | — |
-| [SRC-C353AAAC10-L000094](../../tests/test_request_budget.py#L94) | 94 | `"    agent._request_budget = RequestBudget(limits={\"search_calls\": 0})"` | — |
-| [SRC-C353AAAC10-L000095](../../tests/test_request_budget.py#L95) | 95 | `""` | — |
-| [SRC-C353AAAC10-L000096](../../tests/test_request_budget.py#L96) | 96 | `"    monkeypatch.setattr("` | — |

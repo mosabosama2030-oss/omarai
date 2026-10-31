@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000050 إلى SRC-AAA21D04E8-L000233
+- النطاق: SRC-829A979985-L000046 إلى SRC-AAA21D04E8-L000229
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000046](../../tests/test_generation_acceptance_matrix.py#L46) | 46 | `"        \"snippet\": snippet or page_text[:200],"` | — |
+| [SRC-829A979985-L000047](../../tests/test_generation_acceptance_matrix.py#L47) | 47 | `"        \"page_text\": page_text,"` | — |
+| [SRC-829A979985-L000048](../../tests/test_generation_acceptance_matrix.py#L48) | 48 | `"        \"page_fetched\": page_fetched,"` | — |
+| [SRC-829A979985-L000049](../../tests/test_generation_acceptance_matrix.py#L49) | 49 | `"        \"providers\": [provider],"` | — |
 | [SRC-829A979985-L000050](../../tests/test_generation_acceptance_matrix.py#L50) | 50 | `"        \"queries\": [\"قارن بين سعر المنتج ومساحته\"],"` | — |
 | [SRC-829A979985-L000051](../../tests/test_generation_acceptance_matrix.py#L51) | 51 | `"        \"domain\": domain,"` | — |
 | [SRC-829A979985-L000052](../../tests/test_generation_acceptance_matrix.py#L52) | 52 | `"        \"source_class\": \"general\","` | — |
@@ -821,7 +825,3 @@
 | [SRC-AAA21D04E8-L000227](../../tests/test_generation_capabilities.py#L227) | 227 | `"                \"provider_counts\": {\"duckduckgo_html\": 1, \"bing_rss\": 1},"` | — |
 | [SRC-AAA21D04E8-L000228](../../tests/test_generation_capabilities.py#L228) | 228 | `"                \"platform_counts\": {\"web\": 2},"` | — |
 | [SRC-AAA21D04E8-L000229](../../tests/test_generation_capabilities.py#L229) | 229 | `"                \"evidence_signals\": {},"` | — |
-| [SRC-AAA21D04E8-L000230](../../tests/test_generation_capabilities.py#L230) | 230 | `"            },"` | — |
-| [SRC-AAA21D04E8-L000231](../../tests/test_generation_capabilities.py#L231) | 231 | `"        ),"` | — |
-| [SRC-AAA21D04E8-L000232](../../tests/test_generation_capabilities.py#L232) | 232 | `"    )"` | — |
-| [SRC-AAA21D04E8-L000233](../../tests/test_generation_capabilities.py#L233) | 233 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |

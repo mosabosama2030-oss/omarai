@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000584 إلى SRC-D4963BDA6A-L000031
+- النطاق: SRC-90FAA34ADE-L000580 إلى SRC-D4963BDA6A-L000027
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000580](../../tests/fixtures/answer_quality_cases.json#L580) | 580 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000581](../../tests/fixtures/answer_quality_cases.json#L581) | 581 | `"        \"يتحقق من تطابق النص والناشر الأصلي أو الإسناد\","` | — |
+| [SRC-90FAA34ADE-L000582](../../tests/fixtures/answer_quality_cases.json#L582) | 582 | `"        \"يوضح أن إعادة نشر بيان واحد ليست بالضرورة corroboration مستقلة\","` | — |
+| [SRC-90FAA34ADE-L000583](../../tests/fixtures/answer_quality_cases.json#L583) | 583 | `"        \"لا يبالغ في عدد مصادر التأكيد\""` | — |
 | [SRC-90FAA34ADE-L000584](../../tests/fixtures/answer_quality_cases.json#L584) | 584 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000585](../../tests/fixtures/answer_quality_cases.json#L585) | 585 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000586](../../tests/fixtures/answer_quality_cases.json#L586) | 586 | `"        \"يصف النسخ المتطابقة بأنها ثلاث شهادات مستقلة\","` | — |
@@ -821,7 +825,3 @@
 | [SRC-D4963BDA6A-L000025](../../tests/fixtures/answer_quality_reviews_template.json#L25) | 25 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000026](../../tests/fixtures/answer_quality_reviews_template.json#L26) | 26 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000027](../../tests/fixtures/answer_quality_reviews_template.json#L27) | 27 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000028](../../tests/fixtures/answer_quality_reviews_template.json#L28) | 28 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000029](../../tests/fixtures/answer_quality_reviews_template.json#L29) | 29 | `"      \"case_id\": \"AQ-005\","` | — |
-| [SRC-D4963BDA6A-L000030](../../tests/fixtures/answer_quality_reviews_template.json#L30) | 30 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000031](../../tests/fixtures/answer_quality_reviews_template.json#L31) | 31 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000125 إلى SRC-792A9A235D-L000047
+- النطاق: SRC-EEF2E6447C-L000125 إلى SRC-792A9A235D-L000043
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -515,157 +515,161 @@
 | [SRC-EEF2E6447C-L000621](../../api/omarai.py#L621) | 621 | `"                    ),"` | — |
 | [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"                )"` | — |
 | [SRC-EEF2E6447C-L000623](../../api/omarai.py#L623) | 623 | `"            if path == \"/api/leads\":"` | — |
-| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"                lead, created = self.store.add("` | — |
-| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"                    data.get(\"text\", \"\"),"` | — |
-| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `"                    data.get(\"source_url\", \"\"),"` | — |
-| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"                    data.get(\"platform\", \"manual\"),"` | — |
-| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"                    data.get(\"observed_at\"),"` | — |
-| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"                    data.get(\"note\", \"\"),"` | — |
-| [SRC-EEF2E6447C-L000630](../../api/omarai.py#L630) | 630 | `"                    data.get(\"product_terms\", []),"` | — |
-| [SRC-EEF2E6447C-L000631](../../api/omarai.py#L631) | 631 | `"                    data.get(\"location_terms\", []),"` | — |
-| [SRC-EEF2E6447C-L000632](../../api/omarai.py#L632) | 632 | `"                    tenant_id=self._authenticated_principal[\"tenant_id\"],"` | — |
-| [SRC-EEF2E6447C-L000633](../../api/omarai.py#L633) | 633 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000634](../../api/omarai.py#L634) | 634 | `"                return self.respond(201 if created else 200, {\"lead\": lead, \"created\": created})"` | — |
-| [SRC-EEF2E6447C-L000635](../../api/omarai.py#L635) | 635 | `"            route = path.split(\"/\")"` | — |
-| [SRC-EEF2E6447C-L000636](../../api/omarai.py#L636) | 636 | `"            if len(route) == 5 and route[1:3] == [\"api\", \"leads\"] and route[4] == \"status\":"` | — |
-| [SRC-EEF2E6447C-L000637](../../api/omarai.py#L637) | 637 | `"                lead = self.store.update_status(route[3], data.get(\"status\", \"new\"), tenant_id=self._authenticated_principal[\"tenant_id\"])"` | — |
-| [SRC-EEF2E6447C-L000638](../../api/omarai.py#L638) | 638 | `"                return self.respond(200, {\"lead\": lead}) if lead else self.respond(404, {\"error\": \"lead not found\"})"` | — |
-| [SRC-EEF2E6447C-L000639](../../api/omarai.py#L639) | 639 | `"            return self.respond(404, {\"error\": \"not found\"})"` | — |
-| [SRC-EEF2E6447C-L000640](../../api/omarai.py#L640) | 640 | `"        except (ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
-| [SRC-EEF2E6447C-L000641](../../api/omarai.py#L641) | 641 | `"            return self.respond(400, {\"error\": str(exc)})"` | — |
-| [SRC-EEF2E6447C-L000642](../../api/omarai.py#L642) | 642 | `"        except Exception:  # noqa: BLE001 — keep unexpected details out of API responses"` | — |
-| [SRC-EEF2E6447C-L000643](../../api/omarai.py#L643) | 643 | `"            return self.respond(500, {\"error\": \"internal server error\"})"` | — |
-| [SRC-EEF2E6447C-L000644](../../api/omarai.py#L644) | 644 | `""` | — |
-| [SRC-EEF2E6447C-L000645](../../api/omarai.py#L645) | 645 | `"    def do_OPTIONS(self):"` | — |
-| [SRC-EEF2E6447C-L000646](../../api/omarai.py#L646) | 646 | `"        origin = self.headers.get(\"Origin\")"` | — |
-| [SRC-EEF2E6447C-L000647](../../api/omarai.py#L647) | 647 | `"        if not origin or not self._origin_allowed(origin):"` | — |
-| [SRC-EEF2E6447C-L000648](../../api/omarai.py#L648) | 648 | `"            return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
-| [SRC-EEF2E6447C-L000649](../../api/omarai.py#L649) | 649 | `"        self.send_response(204)"` | — |
-| [SRC-EEF2E6447C-L000650](../../api/omarai.py#L650) | 650 | `"        self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
-| [SRC-EEF2E6447C-L000651](../../api/omarai.py#L651) | 651 | `"        self.send_header(\"Vary\", \"Origin\")"` | — |
-| [SRC-EEF2E6447C-L000652](../../api/omarai.py#L652) | 652 | `"        self.send_header(\"Access-Control-Allow-Methods\", \"GET, POST, OPTIONS\")"` | — |
-| [SRC-EEF2E6447C-L000653](../../api/omarai.py#L653) | 653 | `"        self.send_header(\"Access-Control-Allow-Headers\", \"Authorization, Content-Type\")"` | — |
-| [SRC-EEF2E6447C-L000654](../../api/omarai.py#L654) | 654 | `"        self.send_header(\"Access-Control-Max-Age\", \"600\")"` | — |
-| [SRC-EEF2E6447C-L000655](../../api/omarai.py#L655) | 655 | `"        self.send_header(\"Content-Length\", \"0\")"` | — |
-| [SRC-EEF2E6447C-L000656](../../api/omarai.py#L656) | 656 | `"        self.end_headers()"` | — |
-| [SRC-EEF2E6447C-L000657](../../api/omarai.py#L657) | 657 | `""` | — |
-| [SRC-EEF2E6447C-L000658](../../api/omarai.py#L658) | 658 | `"    def log_message(self, *args):"` | — |
-| [SRC-EEF2E6447C-L000659](../../api/omarai.py#L659) | 659 | `"        pass"` | — |
-| [SRC-EEF2E6447C-L000660](../../api/omarai.py#L660) | 660 | `""` | — |
+| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"                if self._authenticated_principal[\"role\"] == \"viewer\":"` | — |
+| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"                    return self.respond(403, {\"error\": \"هذه العضوية للقراءة فقط.\"})"` | — |
+| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `"                lead, created = self.store.add("` | — |
+| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"                    data.get(\"text\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"                    data.get(\"source_url\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"                    data.get(\"platform\", \"manual\"),"` | — |
+| [SRC-EEF2E6447C-L000630](../../api/omarai.py#L630) | 630 | `"                    data.get(\"observed_at\"),"` | — |
+| [SRC-EEF2E6447C-L000631](../../api/omarai.py#L631) | 631 | `"                    data.get(\"note\", \"\"),"` | — |
+| [SRC-EEF2E6447C-L000632](../../api/omarai.py#L632) | 632 | `"                    data.get(\"product_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000633](../../api/omarai.py#L633) | 633 | `"                    data.get(\"location_terms\", []),"` | — |
+| [SRC-EEF2E6447C-L000634](../../api/omarai.py#L634) | 634 | `"                    tenant_id=self._authenticated_principal[\"tenant_id\"],"` | — |
+| [SRC-EEF2E6447C-L000635](../../api/omarai.py#L635) | 635 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000636](../../api/omarai.py#L636) | 636 | `"                return self.respond(201 if created else 200, {\"lead\": lead, \"created\": created})"` | — |
+| [SRC-EEF2E6447C-L000637](../../api/omarai.py#L637) | 637 | `"            route = path.split(\"/\")"` | — |
+| [SRC-EEF2E6447C-L000638](../../api/omarai.py#L638) | 638 | `"            if len(route) == 5 and route[1:3] == [\"api\", \"leads\"] and route[4] == \"status\":"` | — |
+| [SRC-EEF2E6447C-L000639](../../api/omarai.py#L639) | 639 | `"                if self._authenticated_principal[\"role\"] == \"viewer\":"` | — |
+| [SRC-EEF2E6447C-L000640](../../api/omarai.py#L640) | 640 | `"                    return self.respond(403, {\"error\": \"هذه العضوية للقراءة فقط.\"})"` | — |
+| [SRC-EEF2E6447C-L000641](../../api/omarai.py#L641) | 641 | `"                lead = self.store.update_status(route[3], data.get(\"status\", \"new\"), tenant_id=self._authenticated_principal[\"tenant_id\"])"` | — |
+| [SRC-EEF2E6447C-L000642](../../api/omarai.py#L642) | 642 | `"                return self.respond(200, {\"lead\": lead}) if lead else self.respond(404, {\"error\": \"lead not found\"})"` | — |
+| [SRC-EEF2E6447C-L000643](../../api/omarai.py#L643) | 643 | `"            return self.respond(404, {\"error\": \"not found\"})"` | — |
+| [SRC-EEF2E6447C-L000644](../../api/omarai.py#L644) | 644 | `"        except (ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
+| [SRC-EEF2E6447C-L000645](../../api/omarai.py#L645) | 645 | `"            return self.respond(400, {\"error\": str(exc)})"` | — |
+| [SRC-EEF2E6447C-L000646](../../api/omarai.py#L646) | 646 | `"        except Exception:  # noqa: BLE001 — keep unexpected details out of API responses"` | — |
+| [SRC-EEF2E6447C-L000647](../../api/omarai.py#L647) | 647 | `"            return self.respond(500, {\"error\": \"internal server error\"})"` | — |
+| [SRC-EEF2E6447C-L000648](../../api/omarai.py#L648) | 648 | `""` | — |
+| [SRC-EEF2E6447C-L000649](../../api/omarai.py#L649) | 649 | `"    def do_OPTIONS(self):"` | — |
+| [SRC-EEF2E6447C-L000650](../../api/omarai.py#L650) | 650 | `"        origin = self.headers.get(\"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000651](../../api/omarai.py#L651) | 651 | `"        if not origin or not self._origin_allowed(origin):"` | — |
+| [SRC-EEF2E6447C-L000652](../../api/omarai.py#L652) | 652 | `"            return self.respond(403, {\"error\": \"cross-origin requests are not allowed\"})"` | — |
+| [SRC-EEF2E6447C-L000653](../../api/omarai.py#L653) | 653 | `"        self.send_response(204)"` | — |
+| [SRC-EEF2E6447C-L000654](../../api/omarai.py#L654) | 654 | `"        self.send_header(\"Access-Control-Allow-Origin\", origin)"` | — |
+| [SRC-EEF2E6447C-L000655](../../api/omarai.py#L655) | 655 | `"        self.send_header(\"Vary\", \"Origin\")"` | — |
+| [SRC-EEF2E6447C-L000656](../../api/omarai.py#L656) | 656 | `"        self.send_header(\"Access-Control-Allow-Methods\", \"GET, POST, OPTIONS\")"` | — |
+| [SRC-EEF2E6447C-L000657](../../api/omarai.py#L657) | 657 | `"        self.send_header(\"Access-Control-Allow-Headers\", \"Authorization, Content-Type\")"` | — |
+| [SRC-EEF2E6447C-L000658](../../api/omarai.py#L658) | 658 | `"        self.send_header(\"Access-Control-Max-Age\", \"600\")"` | — |
+| [SRC-EEF2E6447C-L000659](../../api/omarai.py#L659) | 659 | `"        self.send_header(\"Content-Length\", \"0\")"` | — |
+| [SRC-EEF2E6447C-L000660](../../api/omarai.py#L660) | 660 | `"        self.end_headers()"` | — |
 | [SRC-EEF2E6447C-L000661](../../api/omarai.py#L661) | 661 | `""` | — |
-| [SRC-EEF2E6447C-L000662](../../api/omarai.py#L662) | 662 | `"def answer_question(question, store, *, tenant_id=None):"` | — |
-| [SRC-EEF2E6447C-L000663](../../api/omarai.py#L663) | 663 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000664](../../api/omarai.py#L664) | 664 | `"    normalized = normalize(question)"` | — |
-| [SRC-EEF2E6447C-L000665](../../api/omarai.py#L665) | 665 | `"    leads = store.list(limit=500, tenant_id=tenant_id)"` | — |
-| [SRC-EEF2E6447C-L000666](../../api/omarai.py#L666) | 666 | `"    active = [lead for lead in leads if lead[\"status\"] not in {\"rejected\", \"converted\"}]"` | — |
-| [SRC-EEF2E6447C-L000667](../../api/omarai.py#L667) | 667 | `"    if any(term in normalized for term in (\"افضل عميل\", \"احسن عميل\", \"افضل اشارة\", \"احسن اشارة\", \"اشارة اراجعها\", \"مين افضل\", \"مين اتابع\", \"اتابع مين\", \"اهم عميل\")):"` | — |
-| [SRC-EEF2E6447C-L000668](../../api/omarai.py#L668) | 668 | `"        if not active:"` | — |
-| [SRC-EEF2E6447C-L000669](../../api/omarai.py#L669) | 669 | `"            return {\"answer\": \"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.\", \"kind\": \"no_data\", \"lead_id\": None}"` | — |
-| [SRC-EEF2E6447C-L000670](../../api/omarai.py#L670) | 670 | `"        lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
-| [SRC-EEF2E6447C-L000671](../../api/omarai.py#L671) | 671 | `"        assessment = lead[\"assessment\"]"` | — |
-| [SRC-EEF2E6447C-L000672](../../api/omarai.py#L672) | 672 | `"        answer = \"الأولوية المقترحة للمراجعة هي الإشارة \" + lead[\"id\"][:8] + \" بدرجة قواعد \" + str(assessment[\"score\"]) + \"/100. السبب: \" + assessment[\"summary\"] + \" المصدر: \" + lead[\"source_url\"] + \". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري.\""` | — |
-| [SRC-EEF2E6447C-L000673](../../api/omarai.py#L673) | 673 | `"        return {\"answer\": answer, \"kind\": \"lead_recommendation\", \"lead_id\": lead[\"id\"]}"` | — |
-| [SRC-EEF2E6447C-L000674](../../api/omarai.py#L674) | 674 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
-| [SRC-EEF2E6447C-L000675](../../api/omarai.py#L675) | 675 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
-| [SRC-EEF2E6447C-L000676](../../api/omarai.py#L676) | 676 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
-| [SRC-EEF2E6447C-L000677](../../api/omarai.py#L677) | 677 | `"        high = sum(lead[\"assessment\"][\"label\"] == \"high_intent\" for lead in leads)"` | — |
-| [SRC-EEF2E6447C-L000678](../../api/omarai.py#L678) | 678 | `"        answer = \"في السجل المحلي \" + str(len(leads)) + \" إشارة، منها \" + str(high) + \" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد \" + str(by_status[\"new\"]) + \"، مؤهل \" + str(by_status[\"qualified\"]) + \"، تم التواصل \" + str(by_status[\"contacted\"]) + \"، تم البيع \" + str(by_status[\"converted\"]) + \"، تحتاج مراجعة \" + str(by_status[\"needs_review\"]) + \"، مرفوض \" + str(by_status[\"rejected\"]) + \".\""` | — |
-| [SRC-EEF2E6447C-L000679](../../api/omarai.py#L679) | 679 | `"        return {\"answer\": answer, \"kind\": \"local_statistics\", \"lead_id\": None}"` | — |
-| [SRC-EEF2E6447C-L000680](../../api/omarai.py#L680) | 680 | `"    if any(term in normalized for term in (\"ليه الدرجه\", \"سبب الدرجه\", \"طريقة التقييم\", \"بتقيم ازاي\", \"معيار التقييم\")):"` | — |
-| [SRC-EEF2E6447C-L000681](../../api/omarai.py#L681) | 681 | `"        latest = max(leads, key=lambda item: item[\"updated_at\"], default=None)"` | — |
-| [SRC-EEF2E6447C-L000682](../../api/omarai.py#L682) | 682 | `"        if latest:"` | — |
-| [SRC-EEF2E6447C-L000683](../../api/omarai.py#L683) | 683 | `"            signals = \"، \".join(signal[\"phrase\"] for signal in latest[\"assessment\"][\"matched_signals\"]) or \"لم تُطابق عبارات معروفة\""` | — |
-| [SRC-EEF2E6447C-L000684](../../api/omarai.py#L684) | 684 | `"            answer = \"الإشارة الأحدث درجتها \" + str(latest[\"assessment\"][\"score\"]) + \"/100 لأن القواعد طابقت: \" + signals + \". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب.\""` | — |
-| [SRC-EEF2E6447C-L000685](../../api/omarai.py#L685) | 685 | `"        else:"` | — |
-| [SRC-EEF2E6447C-L000686](../../api/omarai.py#L686) | 686 | `"            answer = \"أحسب الدرجة بقواعد واضحة: تعبير الشراء، خطوة تجارية تالية، السعر أو الميزانية، وسياق المنتج والمكان. كل فئة تحتسب مرة واحدة فقط.\""` | — |
-| [SRC-EEF2E6447C-L000687](../../api/omarai.py#L687) | 687 | `"        return {\"answer\": answer, \"kind\": \"scoring_explanation\", \"lead_id\": latest[\"id\"] if latest else None}"` | — |
-| [SRC-EEF2E6447C-L000688](../../api/omarai.py#L688) | 688 | `"    if any(term in normalized for term in (\"اكتب رساله\", \"اكتب رسالة\", \"رساله تواصل\", \"رسالة تواصل\", \"ابعتله\", \"اتواصل ازاي\")):"` | — |
-| [SRC-EEF2E6447C-L000689](../../api/omarai.py#L689) | 689 | `"        if not active:"` | — |
-| [SRC-EEF2E6447C-L000690](../../api/omarai.py#L690) | 690 | `"            answer = \"لا توجد إشارة محفوظة أخصص مسودة لها بعد. أدخل نصًا ومصدرًا أولًا.\""` | — |
-| [SRC-EEF2E6447C-L000691](../../api/omarai.py#L691) | 691 | `"        else:"` | — |
-| [SRC-EEF2E6447C-L000692](../../api/omarai.py#L692) | 692 | `"            lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
-| [SRC-EEF2E6447C-L000693](../../api/omarai.py#L693) | 693 | `"            answer = \"مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة \" + lead[\"id\"][:8] + \". لم يتم إرسال أي رسالة.\""` | — |
-| [SRC-EEF2E6447C-L000694](../../api/omarai.py#L694) | 694 | `"        return {\"answer\": answer, \"kind\": \"message_draft\", \"lead_id\": active[0][\"id\"] if active else None}"` | — |
-| [SRC-EEF2E6447C-L000695](../../api/omarai.py#L695) | 695 | `"    return {\"answer\": \"أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.\", \"kind\": \"help\", \"lead_id\": None}"` | — |
-| [SRC-EEF2E6447C-L000696](../../api/omarai.py#L696) | 696 | `""` | — |
-| [SRC-EEF2E6447C-L000697](../../api/omarai.py#L697) | 697 | `""` | — |
-| [SRC-EEF2E6447C-L000698](../../api/omarai.py#L698) | 698 | `"class BoundedThreadingHTTPServer(ThreadingHTTPServer):"` | — |
-| [SRC-EEF2E6447C-L000699](../../api/omarai.py#L699) | 699 | `"    \"\"\"Threaded HTTP server with a hard process-local ceiling on handler threads.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000662](../../api/omarai.py#L662) | 662 | `"    def log_message(self, *args):"` | — |
+| [SRC-EEF2E6447C-L000663](../../api/omarai.py#L663) | 663 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000664](../../api/omarai.py#L664) | 664 | `""` | — |
+| [SRC-EEF2E6447C-L000665](../../api/omarai.py#L665) | 665 | `""` | — |
+| [SRC-EEF2E6447C-L000666](../../api/omarai.py#L666) | 666 | `"def answer_question(question, store, *, tenant_id=None):"` | — |
+| [SRC-EEF2E6447C-L000667](../../api/omarai.py#L667) | 667 | `"    \"\"\"Answer common operational questions from local records using explicit rules.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000668](../../api/omarai.py#L668) | 668 | `"    normalized = normalize(question)"` | — |
+| [SRC-EEF2E6447C-L000669](../../api/omarai.py#L669) | 669 | `"    leads = store.list(limit=500, tenant_id=tenant_id)"` | — |
+| [SRC-EEF2E6447C-L000670](../../api/omarai.py#L670) | 670 | `"    active = [lead for lead in leads if lead[\"status\"] not in {\"rejected\", \"converted\"}]"` | — |
+| [SRC-EEF2E6447C-L000671](../../api/omarai.py#L671) | 671 | `"    if any(term in normalized for term in (\"افضل عميل\", \"احسن عميل\", \"افضل اشارة\", \"احسن اشارة\", \"اشارة اراجعها\", \"مين افضل\", \"مين اتابع\", \"اتابع مين\", \"اهم عميل\")):"` | — |
+| [SRC-EEF2E6447C-L000672](../../api/omarai.py#L672) | 672 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000673](../../api/omarai.py#L673) | 673 | `"            return {\"answer\": \"لا توجد إشارة نشطة محفوظة بعد. حلّل نصًا من مصدر مسموح واحفظه أولًا، ثم اسألني مرة أخرى.\", \"kind\": \"no_data\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000674](../../api/omarai.py#L674) | 674 | `"        lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000675](../../api/omarai.py#L675) | 675 | `"        assessment = lead[\"assessment\"]"` | — |
+| [SRC-EEF2E6447C-L000676](../../api/omarai.py#L676) | 676 | `"        answer = \"الأولوية المقترحة للمراجعة هي الإشارة \" + lead[\"id\"][:8] + \" بدرجة قواعد \" + str(assessment[\"score\"]) + \"/100. السبب: \" + assessment[\"summary\"] + \" المصدر: \" + lead[\"source_url\"] + \". هذه أولوية مراجعة وليست تأكيدًا أن صاحبه سيشتري.\""` | — |
+| [SRC-EEF2E6447C-L000677](../../api/omarai.py#L677) | 677 | `"        return {\"answer\": answer, \"kind\": \"lead_recommendation\", \"lead_id\": lead[\"id\"]}"` | — |
+| [SRC-EEF2E6447C-L000678](../../api/omarai.py#L678) | 678 | `"    if any(term in normalized for term in (\"كام عميل\", \"كم عميل\", \"عدد العملاء\", \"عدد الاشارات\", \"الاحصائيات\", \"احصائيات\")):"` | — |
+| [SRC-EEF2E6447C-L000679](../../api/omarai.py#L679) | 679 | `"        keys = (\"new\", \"qualified\", \"contacted\", \"converted\", \"needs_review\", \"rejected\")"` | — |
+| [SRC-EEF2E6447C-L000680](../../api/omarai.py#L680) | 680 | `"        by_status = {key: sum(lead[\"status\"] == key for lead in leads) for key in keys}"` | — |
+| [SRC-EEF2E6447C-L000681](../../api/omarai.py#L681) | 681 | `"        high = sum(lead[\"assessment\"][\"label\"] == \"high_intent\" for lead in leads)"` | — |
+| [SRC-EEF2E6447C-L000682](../../api/omarai.py#L682) | 682 | `"        answer = \"في السجل المحلي \" + str(len(leads)) + \" إشارة، منها \" + str(high) + \" بإشارة قوية نسبيًا وفق القواعد. الحالات: جديد \" + str(by_status[\"new\"]) + \"، مؤهل \" + str(by_status[\"qualified\"]) + \"، تم التواصل \" + str(by_status[\"contacted\"]) + \"، تم البيع \" + str(by_status[\"converted\"]) + \"، تحتاج مراجعة \" + str(by_status[\"needs_review\"]) + \"، مرفوض \" + str(by_status[\"rejected\"]) + \".\""` | — |
+| [SRC-EEF2E6447C-L000683](../../api/omarai.py#L683) | 683 | `"        return {\"answer\": answer, \"kind\": \"local_statistics\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000684](../../api/omarai.py#L684) | 684 | `"    if any(term in normalized for term in (\"ليه الدرجه\", \"سبب الدرجه\", \"طريقة التقييم\", \"بتقيم ازاي\", \"معيار التقييم\")):"` | — |
+| [SRC-EEF2E6447C-L000685](../../api/omarai.py#L685) | 685 | `"        latest = max(leads, key=lambda item: item[\"updated_at\"], default=None)"` | — |
+| [SRC-EEF2E6447C-L000686](../../api/omarai.py#L686) | 686 | `"        if latest:"` | — |
+| [SRC-EEF2E6447C-L000687](../../api/omarai.py#L687) | 687 | `"            signals = \"، \".join(signal[\"phrase\"] for signal in latest[\"assessment\"][\"matched_signals\"]) or \"لم تُطابق عبارات معروفة\""` | — |
+| [SRC-EEF2E6447C-L000688](../../api/omarai.py#L688) | 688 | `"            answer = \"الإشارة الأحدث درجتها \" + str(latest[\"assessment\"][\"score\"]) + \"/100 لأن القواعد طابقت: \" + signals + \". الدرجة ليست احتمالًا إحصائيًا ولا تثبت نية الكاتب.\""` | — |
+| [SRC-EEF2E6447C-L000689](../../api/omarai.py#L689) | 689 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000690](../../api/omarai.py#L690) | 690 | `"            answer = \"أحسب الدرجة بقواعد واضحة: تعبير الشراء، خطوة تجارية تالية، السعر أو الميزانية، وسياق المنتج والمكان. كل فئة تحتسب مرة واحدة فقط.\""` | — |
+| [SRC-EEF2E6447C-L000691](../../api/omarai.py#L691) | 691 | `"        return {\"answer\": answer, \"kind\": \"scoring_explanation\", \"lead_id\": latest[\"id\"] if latest else None}"` | — |
+| [SRC-EEF2E6447C-L000692](../../api/omarai.py#L692) | 692 | `"    if any(term in normalized for term in (\"اكتب رساله\", \"اكتب رسالة\", \"رساله تواصل\", \"رسالة تواصل\", \"ابعتله\", \"اتواصل ازاي\")):"` | — |
+| [SRC-EEF2E6447C-L000693](../../api/omarai.py#L693) | 693 | `"        if not active:"` | — |
+| [SRC-EEF2E6447C-L000694](../../api/omarai.py#L694) | 694 | `"            answer = \"لا توجد إشارة محفوظة أخصص مسودة لها بعد. أدخل نصًا ومصدرًا أولًا.\""` | — |
+| [SRC-EEF2E6447C-L000695](../../api/omarai.py#L695) | 695 | `"        else:"` | — |
+| [SRC-EEF2E6447C-L000696](../../api/omarai.py#L696) | 696 | `"            lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
+| [SRC-EEF2E6447C-L000697](../../api/omarai.py#L697) | 697 | `"            answer = \"مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة \" + lead[\"id\"][:8] + \". لم يتم إرسال أي رسالة.\""` | — |
+| [SRC-EEF2E6447C-L000698](../../api/omarai.py#L698) | 698 | `"        return {\"answer\": answer, \"kind\": \"message_draft\", \"lead_id\": active[0][\"id\"] if active else None}"` | — |
+| [SRC-EEF2E6447C-L000699](../../api/omarai.py#L699) | 699 | `"    return {\"answer\": \"أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.\", \"kind\": \"help\", \"lead_id\": None}"` | — |
 | [SRC-EEF2E6447C-L000700](../../api/omarai.py#L700) | 700 | `""` | — |
-| [SRC-EEF2E6447C-L000701](../../api/omarai.py#L701) | 701 | `"    daemon_threads = True"` | — |
-| [SRC-EEF2E6447C-L000702](../../api/omarai.py#L702) | 702 | `"    overload_response = ("` | — |
-| [SRC-EEF2E6447C-L000703](../../api/omarai.py#L703) | 703 | `"        b\"HTTP/1.1 503 Service Unavailable\\r\\n\""` | — |
-| [SRC-EEF2E6447C-L000704](../../api/omarai.py#L704) | 704 | `"        b\"Connection: close\\r\\n\""` | — |
-| [SRC-EEF2E6447C-L000705](../../api/omarai.py#L705) | 705 | `"        b\"Retry-After: 5\\r\\n\""` | — |
-| [SRC-EEF2E6447C-L000706](../../api/omarai.py#L706) | 706 | `"        b\"Content-Length: 0\\r\\n\\r\\n\""` | — |
-| [SRC-EEF2E6447C-L000707](../../api/omarai.py#L707) | 707 | `"    )"` | — |
-| [SRC-EEF2E6447C-L000708](../../api/omarai.py#L708) | 708 | `""` | — |
-| [SRC-EEF2E6447C-L000709](../../api/omarai.py#L709) | 709 | `"    def __init__("` | — |
-| [SRC-EEF2E6447C-L000710](../../api/omarai.py#L710) | 710 | `"        self,"` | — |
-| [SRC-EEF2E6447C-L000711](../../api/omarai.py#L711) | 711 | `"        server_address,"` | — |
-| [SRC-EEF2E6447C-L000712](../../api/omarai.py#L712) | 712 | `"        request_handler_class,"` | — |
-| [SRC-EEF2E6447C-L000713](../../api/omarai.py#L713) | 713 | `"        bind_and_activate: bool = True,"` | — |
-| [SRC-EEF2E6447C-L000714](../../api/omarai.py#L714) | 714 | `"        *,"` | — |
-| [SRC-EEF2E6447C-L000715](../../api/omarai.py#L715) | 715 | `"        max_concurrent_connections: int \| None = None,"` | — |
-| [SRC-EEF2E6447C-L000716](../../api/omarai.py#L716) | 716 | `"    ):"` | — |
-| [SRC-EEF2E6447C-L000717](../../api/omarai.py#L717) | 717 | `"        super().__init__(server_address, request_handler_class, bind_and_activate)"` | — |
-| [SRC-EEF2E6447C-L000718](../../api/omarai.py#L718) | 718 | `"        configured = ("` | — |
-| [SRC-EEF2E6447C-L000719](../../api/omarai.py#L719) | 719 | `"            _configured_http_connection_limit()"` | — |
-| [SRC-EEF2E6447C-L000720](../../api/omarai.py#L720) | 720 | `"            if max_concurrent_connections is None"` | — |
-| [SRC-EEF2E6447C-L000721](../../api/omarai.py#L721) | 721 | `"            else int(max_concurrent_connections)"` | — |
-| [SRC-EEF2E6447C-L000722](../../api/omarai.py#L722) | 722 | `"        )"` | — |
-| [SRC-EEF2E6447C-L000723](../../api/omarai.py#L723) | 723 | `"        limit = max(1, min(configured, MAX_HTTP_CONNECTION_LIMIT))"` | — |
-| [SRC-EEF2E6447C-L000724](../../api/omarai.py#L724) | 724 | `"        self.max_concurrent_connections = limit"` | — |
-| [SRC-EEF2E6447C-L000725](../../api/omarai.py#L725) | 725 | `"        self._connection_slots = threading.BoundedSemaphore(limit)"` | — |
-| [SRC-EEF2E6447C-L000726](../../api/omarai.py#L726) | 726 | `""` | — |
-| [SRC-EEF2E6447C-L000727](../../api/omarai.py#L727) | 727 | `"    def process_request(self, request, client_address):"` | — |
-| [SRC-EEF2E6447C-L000728](../../api/omarai.py#L728) | 728 | `"        \"\"\"Reject excess accepted sockets before creating another handler thread.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000729](../../api/omarai.py#L729) | 729 | `"        if not self._connection_slots.acquire(blocking=False):"` | — |
-| [SRC-EEF2E6447C-L000730](../../api/omarai.py#L730) | 730 | `"            try:"` | — |
-| [SRC-EEF2E6447C-L000731](../../api/omarai.py#L731) | 731 | `"                request.sendall(self.overload_response)"` | — |
-| [SRC-EEF2E6447C-L000732](../../api/omarai.py#L732) | 732 | `"            except OSError:"` | — |
-| [SRC-EEF2E6447C-L000733](../../api/omarai.py#L733) | 733 | `"                pass"` | — |
-| [SRC-EEF2E6447C-L000734](../../api/omarai.py#L734) | 734 | `"            finally:"` | — |
-| [SRC-EEF2E6447C-L000735](../../api/omarai.py#L735) | 735 | `"                self.shutdown_request(request)"` | — |
-| [SRC-EEF2E6447C-L000736](../../api/omarai.py#L736) | 736 | `"            return"` | — |
-| [SRC-EEF2E6447C-L000737](../../api/omarai.py#L737) | 737 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000738](../../api/omarai.py#L738) | 738 | `"            super().process_request(request, client_address)"` | — |
-| [SRC-EEF2E6447C-L000739](../../api/omarai.py#L739) | 739 | `"        except BaseException:"` | — |
-| [SRC-EEF2E6447C-L000740](../../api/omarai.py#L740) | 740 | `"            # Thread creation can fail before a worker owns the reserved slot."` | — |
-| [SRC-EEF2E6447C-L000741](../../api/omarai.py#L741) | 741 | `"            self._connection_slots.release()"` | — |
-| [SRC-EEF2E6447C-L000742](../../api/omarai.py#L742) | 742 | `"            raise"` | — |
-| [SRC-EEF2E6447C-L000743](../../api/omarai.py#L743) | 743 | `""` | — |
-| [SRC-EEF2E6447C-L000744](../../api/omarai.py#L744) | 744 | `"    def process_request_thread(self, request, client_address):"` | — |
-| [SRC-EEF2E6447C-L000745](../../api/omarai.py#L745) | 745 | `"        \"\"\"Return a slot after the handler has shut down the accepted socket.\"\"\""` | — |
-| [SRC-EEF2E6447C-L000746](../../api/omarai.py#L746) | 746 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000747](../../api/omarai.py#L747) | 747 | `"            super().process_request_thread(request, client_address)"` | — |
-| [SRC-EEF2E6447C-L000748](../../api/omarai.py#L748) | 748 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000749](../../api/omarai.py#L749) | 749 | `"            self._connection_slots.release()"` | — |
-| [SRC-EEF2E6447C-L000750](../../api/omarai.py#L750) | 750 | `""` | — |
-| [SRC-EEF2E6447C-L000751](../../api/omarai.py#L751) | 751 | `""` | — |
-| [SRC-EEF2E6447C-L000752](../../api/omarai.py#L752) | 752 | `"def serve(host=\"127.0.0.1\", port=8765):"` | — |
-| [SRC-EEF2E6447C-L000753](../../api/omarai.py#L753) | 753 | `"    public_deployment = os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\""` | — |
-| [SRC-EEF2E6447C-L000754](../../api/omarai.py#L754) | 754 | `"    access_token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
-| [SRC-EEF2E6447C-L000755](../../api/omarai.py#L755) | 755 | `"    if host not in (\"127.0.0.1\", \"localhost\", \"::1\") and ("` | — |
-| [SRC-EEF2E6447C-L000756](../../api/omarai.py#L756) | 756 | `"        not public_deployment or len(access_token) < 32"` | — |
-| [SRC-EEF2E6447C-L000757](../../api/omarai.py#L757) | 757 | `"    ):"` | — |
-| [SRC-EEF2E6447C-L000758](../../api/omarai.py#L758) | 758 | `"        raise ValueError("` | — |
-| [SRC-EEF2E6447C-L000759](../../api/omarai.py#L759) | 759 | `"                \"Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and \""` | — |
-| [SRC-EEF2E6447C-L000760](../../api/omarai.py#L760) | 760 | `"                \"a private OMARAI_ACCESS_TOKEN of at least 32 characters.\""` | — |
-| [SRC-EEF2E6447C-L000761](../../api/omarai.py#L761) | 761 | `"            )"` | — |
-| [SRC-EEF2E6447C-L000762](../../api/omarai.py#L762) | 762 | `"    server = BoundedThreadingHTTPServer((host, port), Handler)"` | — |
-| [SRC-EEF2E6447C-L000763](../../api/omarai.py#L763) | 763 | `"    print(f\"Omarai running at http://{host}:{port} — Ctrl+C to stop\")"` | — |
-| [SRC-EEF2E6447C-L000764](../../api/omarai.py#L764) | 764 | `"    print(\"Web research agent: /   \|   Lead workspace: /leads\")"` | — |
-| [SRC-EEF2E6447C-L000765](../../api/omarai.py#L765) | 765 | `"    try:"` | — |
-| [SRC-EEF2E6447C-L000766](../../api/omarai.py#L766) | 766 | `"        server.serve_forever()"` | — |
-| [SRC-EEF2E6447C-L000767](../../api/omarai.py#L767) | 767 | `"    except KeyboardInterrupt:"` | — |
-| [SRC-EEF2E6447C-L000768](../../api/omarai.py#L768) | 768 | `"        pass"` | — |
-| [SRC-EEF2E6447C-L000769](../../api/omarai.py#L769) | 769 | `"    finally:"` | — |
-| [SRC-EEF2E6447C-L000770](../../api/omarai.py#L770) | 770 | `"        server.server_close()"` | — |
-| [SRC-EEF2E6447C-L000771](../../api/omarai.py#L771) | 771 | `""` | — |
-| [SRC-EEF2E6447C-L000772](../../api/omarai.py#L772) | 772 | `""` | — |
-| [SRC-EEF2E6447C-L000773](../../api/omarai.py#L773) | 773 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-EEF2E6447C-L000774](../../api/omarai.py#L774) | 774 | `"    serve()"` | — |
+| [SRC-EEF2E6447C-L000701](../../api/omarai.py#L701) | 701 | `""` | — |
+| [SRC-EEF2E6447C-L000702](../../api/omarai.py#L702) | 702 | `"class BoundedThreadingHTTPServer(ThreadingHTTPServer):"` | — |
+| [SRC-EEF2E6447C-L000703](../../api/omarai.py#L703) | 703 | `"    \"\"\"Threaded HTTP server with a hard process-local ceiling on handler threads.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000704](../../api/omarai.py#L704) | 704 | `""` | — |
+| [SRC-EEF2E6447C-L000705](../../api/omarai.py#L705) | 705 | `"    daemon_threads = True"` | — |
+| [SRC-EEF2E6447C-L000706](../../api/omarai.py#L706) | 706 | `"    overload_response = ("` | — |
+| [SRC-EEF2E6447C-L000707](../../api/omarai.py#L707) | 707 | `"        b\"HTTP/1.1 503 Service Unavailable\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000708](../../api/omarai.py#L708) | 708 | `"        b\"Connection: close\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000709](../../api/omarai.py#L709) | 709 | `"        b\"Retry-After: 5\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000710](../../api/omarai.py#L710) | 710 | `"        b\"Content-Length: 0\\r\\n\\r\\n\""` | — |
+| [SRC-EEF2E6447C-L000711](../../api/omarai.py#L711) | 711 | `"    )"` | — |
+| [SRC-EEF2E6447C-L000712](../../api/omarai.py#L712) | 712 | `""` | — |
+| [SRC-EEF2E6447C-L000713](../../api/omarai.py#L713) | 713 | `"    def __init__("` | — |
+| [SRC-EEF2E6447C-L000714](../../api/omarai.py#L714) | 714 | `"        self,"` | — |
+| [SRC-EEF2E6447C-L000715](../../api/omarai.py#L715) | 715 | `"        server_address,"` | — |
+| [SRC-EEF2E6447C-L000716](../../api/omarai.py#L716) | 716 | `"        request_handler_class,"` | — |
+| [SRC-EEF2E6447C-L000717](../../api/omarai.py#L717) | 717 | `"        bind_and_activate: bool = True,"` | — |
+| [SRC-EEF2E6447C-L000718](../../api/omarai.py#L718) | 718 | `"        *,"` | — |
+| [SRC-EEF2E6447C-L000719](../../api/omarai.py#L719) | 719 | `"        max_concurrent_connections: int \| None = None,"` | — |
+| [SRC-EEF2E6447C-L000720](../../api/omarai.py#L720) | 720 | `"    ):"` | — |
+| [SRC-EEF2E6447C-L000721](../../api/omarai.py#L721) | 721 | `"        super().__init__(server_address, request_handler_class, bind_and_activate)"` | — |
+| [SRC-EEF2E6447C-L000722](../../api/omarai.py#L722) | 722 | `"        configured = ("` | — |
+| [SRC-EEF2E6447C-L000723](../../api/omarai.py#L723) | 723 | `"            _configured_http_connection_limit()"` | — |
+| [SRC-EEF2E6447C-L000724](../../api/omarai.py#L724) | 724 | `"            if max_concurrent_connections is None"` | — |
+| [SRC-EEF2E6447C-L000725](../../api/omarai.py#L725) | 725 | `"            else int(max_concurrent_connections)"` | — |
+| [SRC-EEF2E6447C-L000726](../../api/omarai.py#L726) | 726 | `"        )"` | — |
+| [SRC-EEF2E6447C-L000727](../../api/omarai.py#L727) | 727 | `"        limit = max(1, min(configured, MAX_HTTP_CONNECTION_LIMIT))"` | — |
+| [SRC-EEF2E6447C-L000728](../../api/omarai.py#L728) | 728 | `"        self.max_concurrent_connections = limit"` | — |
+| [SRC-EEF2E6447C-L000729](../../api/omarai.py#L729) | 729 | `"        self._connection_slots = threading.BoundedSemaphore(limit)"` | — |
+| [SRC-EEF2E6447C-L000730](../../api/omarai.py#L730) | 730 | `""` | — |
+| [SRC-EEF2E6447C-L000731](../../api/omarai.py#L731) | 731 | `"    def process_request(self, request, client_address):"` | — |
+| [SRC-EEF2E6447C-L000732](../../api/omarai.py#L732) | 732 | `"        \"\"\"Reject excess accepted sockets before creating another handler thread.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000733](../../api/omarai.py#L733) | 733 | `"        if not self._connection_slots.acquire(blocking=False):"` | — |
+| [SRC-EEF2E6447C-L000734](../../api/omarai.py#L734) | 734 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000735](../../api/omarai.py#L735) | 735 | `"                request.sendall(self.overload_response)"` | — |
+| [SRC-EEF2E6447C-L000736](../../api/omarai.py#L736) | 736 | `"            except OSError:"` | — |
+| [SRC-EEF2E6447C-L000737](../../api/omarai.py#L737) | 737 | `"                pass"` | — |
+| [SRC-EEF2E6447C-L000738](../../api/omarai.py#L738) | 738 | `"            finally:"` | — |
+| [SRC-EEF2E6447C-L000739](../../api/omarai.py#L739) | 739 | `"                self.shutdown_request(request)"` | — |
+| [SRC-EEF2E6447C-L000740](../../api/omarai.py#L740) | 740 | `"            return"` | — |
+| [SRC-EEF2E6447C-L000741](../../api/omarai.py#L741) | 741 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000742](../../api/omarai.py#L742) | 742 | `"            super().process_request(request, client_address)"` | — |
+| [SRC-EEF2E6447C-L000743](../../api/omarai.py#L743) | 743 | `"        except BaseException:"` | — |
+| [SRC-EEF2E6447C-L000744](../../api/omarai.py#L744) | 744 | `"            # Thread creation can fail before a worker owns the reserved slot."` | — |
+| [SRC-EEF2E6447C-L000745](../../api/omarai.py#L745) | 745 | `"            self._connection_slots.release()"` | — |
+| [SRC-EEF2E6447C-L000746](../../api/omarai.py#L746) | 746 | `"            raise"` | — |
+| [SRC-EEF2E6447C-L000747](../../api/omarai.py#L747) | 747 | `""` | — |
+| [SRC-EEF2E6447C-L000748](../../api/omarai.py#L748) | 748 | `"    def process_request_thread(self, request, client_address):"` | — |
+| [SRC-EEF2E6447C-L000749](../../api/omarai.py#L749) | 749 | `"        \"\"\"Return a slot after the handler has shut down the accepted socket.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000750](../../api/omarai.py#L750) | 750 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000751](../../api/omarai.py#L751) | 751 | `"            super().process_request_thread(request, client_address)"` | — |
+| [SRC-EEF2E6447C-L000752](../../api/omarai.py#L752) | 752 | `"        finally:"` | — |
+| [SRC-EEF2E6447C-L000753](../../api/omarai.py#L753) | 753 | `"            self._connection_slots.release()"` | — |
+| [SRC-EEF2E6447C-L000754](../../api/omarai.py#L754) | 754 | `""` | — |
+| [SRC-EEF2E6447C-L000755](../../api/omarai.py#L755) | 755 | `""` | — |
+| [SRC-EEF2E6447C-L000756](../../api/omarai.py#L756) | 756 | `"def serve(host=\"127.0.0.1\", port=8765):"` | — |
+| [SRC-EEF2E6447C-L000757](../../api/omarai.py#L757) | 757 | `"    public_deployment = os.getenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"\").strip() == \"1\""` | — |
+| [SRC-EEF2E6447C-L000758](../../api/omarai.py#L758) | 758 | `"    access_token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000759](../../api/omarai.py#L759) | 759 | `"    if host not in (\"127.0.0.1\", \"localhost\", \"::1\") and ("` | — |
+| [SRC-EEF2E6447C-L000760](../../api/omarai.py#L760) | 760 | `"        not public_deployment or len(access_token) < 32"` | — |
+| [SRC-EEF2E6447C-L000761](../../api/omarai.py#L761) | 761 | `"    ):"` | — |
+| [SRC-EEF2E6447C-L000762](../../api/omarai.py#L762) | 762 | `"        raise ValueError("` | — |
+| [SRC-EEF2E6447C-L000763](../../api/omarai.py#L763) | 763 | `"                \"Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and \""` | — |
+| [SRC-EEF2E6447C-L000764](../../api/omarai.py#L764) | 764 | `"                \"a private OMARAI_ACCESS_TOKEN of at least 32 characters.\""` | — |
+| [SRC-EEF2E6447C-L000765](../../api/omarai.py#L765) | 765 | `"            )"` | — |
+| [SRC-EEF2E6447C-L000766](../../api/omarai.py#L766) | 766 | `"    server = BoundedThreadingHTTPServer((host, port), Handler)"` | — |
+| [SRC-EEF2E6447C-L000767](../../api/omarai.py#L767) | 767 | `"    print(f\"Omarai running at http://{host}:{port} — Ctrl+C to stop\")"` | — |
+| [SRC-EEF2E6447C-L000768](../../api/omarai.py#L768) | 768 | `"    print(\"Web research agent: /   \|   Lead workspace: /leads\")"` | — |
+| [SRC-EEF2E6447C-L000769](../../api/omarai.py#L769) | 769 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000770](../../api/omarai.py#L770) | 770 | `"        server.serve_forever()"` | — |
+| [SRC-EEF2E6447C-L000771](../../api/omarai.py#L771) | 771 | `"    except KeyboardInterrupt:"` | — |
+| [SRC-EEF2E6447C-L000772](../../api/omarai.py#L772) | 772 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000773](../../api/omarai.py#L773) | 773 | `"    finally:"` | — |
+| [SRC-EEF2E6447C-L000774](../../api/omarai.py#L774) | 774 | `"        server.server_close()"` | — |
+| [SRC-EEF2E6447C-L000775](../../api/omarai.py#L775) | 775 | `""` | — |
+| [SRC-EEF2E6447C-L000776](../../api/omarai.py#L776) | 776 | `""` | — |
+| [SRC-EEF2E6447C-L000777](../../api/omarai.py#L777) | 777 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-EEF2E6447C-L000778](../../api/omarai.py#L778) | 778 | `"    serve()"` | — |
 ## وثائق ونصوص
 
 ### FILE-65AAF94960 — [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1)
@@ -857,7 +861,3 @@
 | [SRC-792A9A235D-L000041](../ANSWER_QUALITY_BENCHMARK_AR.md#L41) | 41 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
 | [SRC-792A9A235D-L000042](../ANSWER_QUALITY_BENCHMARK_AR.md#L42) | 42 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
 | [SRC-792A9A235D-L000043](../ANSWER_QUALITY_BENCHMARK_AR.md#L43) | 43 | ``"\| `human_judgment` \| حكم بشري على الاكتمال/اللغة/جودة عدم اليقين \|"`` | — |
-| [SRC-792A9A235D-L000044](../ANSWER_QUALITY_BENCHMARK_AR.md#L44) | 44 | `""` | — |
-| [SRC-792A9A235D-L000045](../ANSWER_QUALITY_BENCHMARK_AR.md#L45) | 45 | `"## بروتوكول تسجيل النتيجة"` | — |
-| [SRC-792A9A235D-L000046](../ANSWER_QUALITY_BENCHMARK_AR.md#L46) | 46 | `""` | — |
-| [SRC-792A9A235D-L000047](../ANSWER_QUALITY_BENCHMARK_AR.md#L47) | 47 | ``"لكل `case_id` سجّل واحدًا فقط:"`` | — |

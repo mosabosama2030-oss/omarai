@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000089 إلى SRC-829A979985-L000049
+- النطاق: SRC-6BCB799CEC-L000085 إلى SRC-829A979985-L000045
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000085](../../tests/test_evidence_provenance.py#L85) | 85 | `"                \"providers\": [\"duckduckgo_html\"],"` | — |
+| [SRC-6BCB799CEC-L000086](../../tests/test_evidence_provenance.py#L86) | 86 | `"                \"queries\": [question],"` | — |
+| [SRC-6BCB799CEC-L000087](../../tests/test_evidence_provenance.py#L87) | 87 | `"                \"domain\": \"beta.example.org\","` | — |
+| [SRC-6BCB799CEC-L000088](../../tests/test_evidence_provenance.py#L88) | 88 | `"                \"source_class\": \"general\","` | — |
 | [SRC-6BCB799CEC-L000089](../../tests/test_evidence_provenance.py#L89) | 89 | `"                \"platform\": \"web\","` | — |
 | [SRC-6BCB799CEC-L000090](../../tests/test_evidence_provenance.py#L90) | 90 | `"                \"published_at\": \"\","` | — |
 | [SRC-6BCB799CEC-L000091](../../tests/test_evidence_provenance.py#L91) | 91 | `"                \"rank_score\": 0.7,"` | — |
@@ -839,7 +843,3 @@
 | [SRC-829A979985-L000043](../../tests/test_generation_acceptance_matrix.py#L43) | 43 | `"    return {"` | — |
 | [SRC-829A979985-L000044](../../tests/test_generation_acceptance_matrix.py#L44) | 44 | `"        \"title\": f\"نتيجة عن {domain}\","` | — |
 | [SRC-829A979985-L000045](../../tests/test_generation_acceptance_matrix.py#L45) | 45 | `"        \"url\": url,"` | — |
-| [SRC-829A979985-L000046](../../tests/test_generation_acceptance_matrix.py#L46) | 46 | `"        \"snippet\": snippet or page_text[:200],"` | — |
-| [SRC-829A979985-L000047](../../tests/test_generation_acceptance_matrix.py#L47) | 47 | `"        \"page_text\": page_text,"` | — |
-| [SRC-829A979985-L000048](../../tests/test_generation_acceptance_matrix.py#L48) | 48 | `"        \"page_fetched\": page_fetched,"` | — |
-| [SRC-829A979985-L000049](../../tests/test_generation_acceptance_matrix.py#L49) | 49 | `"        \"providers\": [provider],"` | — |

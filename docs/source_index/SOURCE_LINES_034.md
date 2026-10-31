@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000032 إلى SRC-4CCB1F172B-L000147
+- النطاق: SRC-D4963BDA6A-L000028 إلى SRC-4CCB1F172B-L000143
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000028](../../tests/fixtures/answer_quality_reviews_template.json#L28) | 28 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000029](../../tests/fixtures/answer_quality_reviews_template.json#L29) | 29 | `"      \"case_id\": \"AQ-005\","` | — |
+| [SRC-D4963BDA6A-L000030](../../tests/fixtures/answer_quality_reviews_template.json#L30) | 30 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000031](../../tests/fixtures/answer_quality_reviews_template.json#L31) | 31 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000032](../../tests/fixtures/answer_quality_reviews_template.json#L32) | 32 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000033](../../tests/fixtures/answer_quality_reviews_template.json#L33) | 33 | `"    {"` | — |
 | [SRC-D4963BDA6A-L000034](../../tests/fixtures/answer_quality_reviews_template.json#L34) | 34 | `"      \"case_id\": \"AQ-006\","` | — |
@@ -848,7 +852,3 @@
 | [SRC-4CCB1F172B-L000141](../../tests/test_answer_quality_corpus.py#L141) | 141 | `""` | — |
 | [SRC-4CCB1F172B-L000142](../../tests/test_answer_quality_corpus.py#L142) | 142 | `"def test_no_empty_or_exact_duplicate_questions():"` | — |
 | [SRC-4CCB1F172B-L000143](../../tests/test_answer_quality_corpus.py#L143) | 143 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000144](../../tests/test_answer_quality_corpus.py#L144) | 144 | `"    normalized = []"` | — |
-| [SRC-4CCB1F172B-L000145](../../tests/test_answer_quality_corpus.py#L145) | 145 | `"    for case in data[\"cases\"]:"` | — |
-| [SRC-4CCB1F172B-L000146](../../tests/test_answer_quality_corpus.py#L146) | 146 | `"        q = \" \".join(case[\"question\"].casefold().split())"` | — |
-| [SRC-4CCB1F172B-L000147](../../tests/test_answer_quality_corpus.py#L147) | 147 | `"        assert len(q) >= 3, f\"{case['case_id']}: question too short\""` | — |

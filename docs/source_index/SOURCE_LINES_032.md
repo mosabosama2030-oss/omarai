@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000181 إلى SRC-90FAA34ADE-L000583
+- النطاق: SRC-03FF422A16-L000177 إلى SRC-90FAA34ADE-L000579
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000177](../../scripts/score_answer_quality_reviews.py#L177) | 177 | `"            correctness_cases.add(case_id)"` | — |
+| [SRC-03FF422A16-L000178](../../scripts/score_answer_quality_reviews.py#L178) | 178 | `"        citations = item.get(\"citations\")"` | — |
+| [SRC-03FF422A16-L000179](../../scripts/score_answer_quality_reviews.py#L179) | 179 | `"        if isinstance(citations, dict):"` | — |
+| [SRC-03FF422A16-L000180](../../scripts/score_answer_quality_reviews.py#L180) | 180 | `"            citation_supported += citations[\"supported_citations\"]"` | — |
 | [SRC-03FF422A16-L000181](../../scripts/score_answer_quality_reviews.py#L181) | 181 | `"            citation_total += citations[\"reviewed_citations\"]"` | — |
 | [SRC-03FF422A16-L000182](../../scripts/score_answer_quality_reviews.py#L182) | 182 | `"            citation_cases.add(case_id)"` | — |
 | [SRC-03FF422A16-L000183](../../scripts/score_answer_quality_reviews.py#L183) | 183 | `"        score = item.get(\"writing_quality\")"` | — |
@@ -830,7 +834,3 @@
 | [SRC-90FAA34ADE-L000577](../../tests/fixtures/answer_quality_cases.json#L577) | 577 | `"      \"language\": \"mixed\","` | — |
 | [SRC-90FAA34ADE-L000578](../../tests/fixtures/answer_quality_cases.json#L578) | 578 | `"      \"question\": \"The same press release appears on three websites. هل دول 3 مصادر مستقلة تؤكد الخبر؟\","` | — |
 | [SRC-90FAA34ADE-L000579](../../tests/fixtures/answer_quality_cases.json#L579) | 579 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000580](../../tests/fixtures/answer_quality_cases.json#L580) | 580 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000581](../../tests/fixtures/answer_quality_cases.json#L581) | 581 | `"        \"يتحقق من تطابق النص والناشر الأصلي أو الإسناد\","` | — |
-| [SRC-90FAA34ADE-L000582](../../tests/fixtures/answer_quality_cases.json#L582) | 582 | `"        \"يوضح أن إعادة نشر بيان واحد ليست بالضرورة corroboration مستقلة\","` | — |
-| [SRC-90FAA34ADE-L000583](../../tests/fixtures/answer_quality_cases.json#L583) | 583 | `"        \"لا يبالغ في عدد مصادر التأكيد\""` | — |

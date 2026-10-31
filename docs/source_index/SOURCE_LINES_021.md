@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000662 إلى SRC-E599346ABE-L001461
+- النطاق: SRC-E599346ABE-L000658 إلى SRC-E599346ABE-L001457
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000658](../generate_index.py#L658) | 658 | `"    }"` | — |
+| [SRC-E599346ABE-L000659](../generate_index.py#L659) | 659 | `"    for source_line in source_lines:"` | — |
+| [SRC-E599346ABE-L000660](../generate_index.py#L660) | 660 | `"        if source_line.file not in eligible_files:"` | — |
+| [SRC-E599346ABE-L000661](../generate_index.py#L661) | 661 | `"            failures.append(f\"{source_line.file}: سجل سطر لملف غير مؤهل\")"` | — |
 | [SRC-E599346ABE-L000662](../generate_index.py#L662) | 662 | `"            continue"` | — |
 | [SRC-E599346ABE-L000663](../generate_index.py#L663) | 663 | `""` | — |
 | [SRC-E599346ABE-L000664](../generate_index.py#L664) | 664 | `"        actual_lines[source_line.file].append(source_line.line)"` | — |
@@ -812,7 +816,3 @@
 | [SRC-E599346ABE-L001455](../generate_index.py#L1455) | 1455 | `"        elif item.line_count == 0:"` | — |
 | [SRC-E599346ABE-L001456](../generate_index.py#L1456) | 1456 | `"            link_text = \"ملف نصي فارغ\""` | — |
 | [SRC-E599346ABE-L001457](../generate_index.py#L1457) | 1457 | `"        elif item.line_count is None:"` | — |
-| [SRC-E599346ABE-L001458](../generate_index.py#L1458) | 1458 | `"            link_text = \"غير مفهرس سطرًا بسطر\""` | — |
-| [SRC-E599346ABE-L001459](../generate_index.py#L1459) | 1459 | `"        else:"` | — |
-| [SRC-E599346ABE-L001460](../generate_index.py#L1460) | 1460 | `"            link_text = \"لا توجد سجلات\""` | — |
-| [SRC-E599346ABE-L001461](../generate_index.py#L1461) | 1461 | `"        target = _source_file_href(item.file, index_directory=\"docs\")"` | — |

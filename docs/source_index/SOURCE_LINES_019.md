@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000048 إلى SRC-D57B0BB030-L000034
+- النطاق: SRC-792A9A235D-L000044 إلى SRC-D57B0BB030-L000030
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000044](../ANSWER_QUALITY_BENCHMARK_AR.md#L44) | 44 | `""` | — |
+| [SRC-792A9A235D-L000045](../ANSWER_QUALITY_BENCHMARK_AR.md#L45) | 45 | `"## بروتوكول تسجيل النتيجة"` | — |
+| [SRC-792A9A235D-L000046](../ANSWER_QUALITY_BENCHMARK_AR.md#L46) | 46 | `""` | — |
+| [SRC-792A9A235D-L000047](../ANSWER_QUALITY_BENCHMARK_AR.md#L47) | 47 | ``"لكل `case_id` سجّل واحدًا فقط:"`` | — |
 | [SRC-792A9A235D-L000048](../ANSWER_QUALITY_BENCHMARK_AR.md#L48) | 48 | `""` | — |
 | [SRC-792A9A235D-L000049](../ANSWER_QUALITY_BENCHMARK_AR.md#L49) | 49 | `"- **PASS** — تحققت السلوكيات المطلوبة ولم يظهر أي شرط فشل"` | — |
 | [SRC-792A9A235D-L000050](../ANSWER_QUALITY_BENCHMARK_AR.md#L50) | 50 | `"- **FAIL** — ظهر شرط فشل واحد على الأقل، أو غاب سلوك مطلوب جوهري"` | — |
@@ -866,7 +870,3 @@
 | [SRC-D57B0BB030-L000028](../DEPLOY_RENDER_AR.md#L28) | 28 | `""` | — |
 | [SRC-D57B0BB030-L000029](../DEPLOY_RENDER_AR.md#L29) | 29 | `"## توليد رمز الوصول"` | — |
 | [SRC-D57B0BB030-L000030](../DEPLOY_RENDER_AR.md#L30) | 30 | `""` | — |
-| [SRC-D57B0BB030-L000031](../DEPLOY_RENDER_AR.md#L31) | 31 | `"ولّد رمزًا مستقلًا قويًا على جهازك، باستخدام Python:"` | — |
-| [SRC-D57B0BB030-L000032](../DEPLOY_RENDER_AR.md#L32) | 32 | `""` | — |
-| [SRC-D57B0BB030-L000033](../DEPLOY_RENDER_AR.md#L33) | 33 | ````"```bash"```` | — |
-| [SRC-D57B0BB030-L000034](../DEPLOY_RENDER_AR.md#L34) | 34 | `"python -c \"import secrets; print(secrets.token_urlsafe(48))\""` | — |
