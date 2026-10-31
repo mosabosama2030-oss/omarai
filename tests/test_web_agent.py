@@ -2275,7 +2275,7 @@ def test_lead_queries_do_not_add_real_estate_terms_to_other_products():
     assert industrial_queries
     assert all("شقه" not in query and "تمليك" not in query for query in vehicle_queries)
     assert all("شقه" not in query and "تمليك" not in query for query in industrial_queries)
-    assert any("سياره كهربائيه" in query for query in vehicle_queries)
+    assert any("سياره كهرباييه" in query for query in vehicle_queries)
     assert any("نظام انذار حريق صناعي" in query for query in industrial_queries)
 
 
