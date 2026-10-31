@@ -621,6 +621,8 @@ class Handler(BaseHTTPRequestHandler):
                     ),
                 )
             if path == "/api/leads":
+                if self._authenticated_principal["role"] == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
                 lead, created = self.store.add(
                     data.get("text", ""),
                     data.get("source_url", ""),
@@ -634,6 +636,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(201 if created else 200, {"lead": lead, "created": created})
             route = path.split("/")
             if len(route) == 5 and route[1:3] == ["api", "leads"] and route[4] == "status":
+                if self._authenticated_principal["role"] == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
                 lead = self.store.update_status(route[3], data.get("status", "new"), tenant_id=self._authenticated_principal["tenant_id"])
                 return self.respond(200, {"lead": lead}) if lead else self.respond(404, {"error": "lead not found"})
             return self.respond(404, {"error": "not found"})
