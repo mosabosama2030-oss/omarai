@@ -676,7 +676,9 @@ class Handler(BaseHTTPRequestHandler):
                     return self.respond(400, {"error": "question must be a non-empty string"})
                 if len(question) > 1000:
                     return self.respond(400, {"error": "question must be at most 1000 characters"})
-                return self.respond(200, answer_question(question, self.store))
+                return self.respond(
+                    200, answer_question(question, self.store, tenant_id=tenant_id)
+                )
             if path == "/api/analyze":
                 return self.respond(
                     200,
@@ -734,10 +736,10 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
-def answer_question(question, store):
-    """Answer common operational questions from local records using explicit rules."""
+def answer_question(question, store, *, tenant_id: str = LeadStore.DEFAULT_TENANT_ID):
+    """Answer common operational questions using only the selected company records."""
     normalized = normalize(question)
-    leads = store.list(limit=500)
+    leads = store.list(limit=500, tenant_id=tenant_id)
     active = [lead for lead in leads if lead["status"] not in {"rejected", "converted"}]
     if any(term in normalized for term in ("افضل عميل", "احسن عميل", "افضل اشارة", "احسن اشارة", "اشارة اراجعها", "مين افضل", "مين اتابع", "اتابع مين", "اهم عميل")):
         if not active:
