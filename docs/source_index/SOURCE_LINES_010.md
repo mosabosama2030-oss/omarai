@@ -791,7 +791,7 @@
 | [SRC-1AE03B9EC3-L000871](../../agents/web_agent.py#L871) | 871 | `"                    \"عايز اشتري عقار\", \"عاوز اشتري عقار\", \"اريد شراء شقه\","` | — |
 | [SRC-1AE03B9EC3-L000872](../../agents/web_agent.py#L872) | 872 | `"                    \"ارغب في شراء شقه\", \"اريد شراء عقار\", \"ارغب في شراء عقار\","` | — |
 | [SRC-1AE03B9EC3-L000873](../../agents/web_agent.py#L873) | 873 | `"                    \"مطلوب شراء\", \"عايز اشتري\", \"عاوز اشتري\", \"اريد شراء\","` | — |
-| [SRC-1AE03B9EC3-L000874](../../agents/web_agent.py#L874) | 874 | `"                    \"ارغب في شراء\", \"محتاج اشتري\","` | — |
+| [SRC-1AE03B9EC3-L000874](../../agents/web_agent.py#L874) | 874 | `"                    \"ارغب في شراء\", \"نرغب في شراء\", \"نرغب بشراء\", \"محتاج اشتري\","` | — |
 | [SRC-1AE03B9EC3-L000875](../../agents/web_agent.py#L875) | 875 | `"                    \"looking to buy\", \"looking to purchase\", \"want to buy\","` | — |
 | [SRC-1AE03B9EC3-L000876](../../agents/web_agent.py#L876) | 876 | `"                    \"wants to buy\", \"want to purchase\", \"wants to purchase\","` | — |
 | [SRC-1AE03B9EC3-L000877](../../agents/web_agent.py#L877) | 877 | `"                    \"seeking to buy\", \"seeking to purchase\", \"interested in buying\","` | — |
