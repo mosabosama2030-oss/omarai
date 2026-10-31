@@ -9,9 +9,9 @@ from __future__ import annotations
 import re
 import unicodedata
 from dataclasses import dataclass
+from collections.abc import Iterable
 from datetime import date, datetime
 from enum import Enum
-from typing import Iterable
 from urllib.parse import urlsplit
 
 
@@ -173,7 +173,7 @@ def _validate_optional_datetime(value: str | None, *, field_name: str) -> str | 
         return None
     cleaned = _clean_text(value, field_name=field_name, maximum=64)
     try:
-        parsed = datetime.fromisoformat(cleaned.replace("Z", "+00:00"))
+        parsed = datetime.fromisoformat(cleaned)
     except ValueError as exc:
         raise ValueError(f"{field_name} must be an ISO-8601 datetime") from exc
     if parsed.tzinfo is None:
