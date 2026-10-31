@@ -195,3 +195,99 @@ def test_api_does_not_claim_to_revoke_shared_environment_token(
     )
     assert status == 409
     assert "rotated by the operator" in result["error"]
+
+
+
+def test_live_diagnostics_requires_explicit_approval_before_any_provider_call(
+    tenant_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Diagnostics Owner", "diagnostics-owner")
+    user_id = store.create_user("diagnostics-owner@example.test", "Owner")
+    store.add_membership(tenant_id, user_id, "owner")
+    token = "diagnostics-owner-token-" + "O" * 32
+
+    def unexpected_diagnostics(*_args, **_kwargs):
+        pytest.fail("diagnostics must not run without explicit provider-use approval")
+
+    store.create_api_token(token, tenant_id, user_id)
+    monkeypatch.setattr(WebAgent, "diagnostics", unexpected_diagnostics)
+
+    status, result = request_json(
+        base,
+        "/api/diagnostics",
+        method="POST",
+        token=token,
+        payload={"test_model": True, "test_social": True},
+    )
+    assert status == 403
+    assert "explicit approval" in result["error"]
+
+
+def test_live_diagnostics_is_owner_only_even_with_explicit_approval(
+    tenant_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Sales Member Diagnostics", "sales-member-diagnostics")
+    user_id = store.create_user("sales-member@example.test", "Sales Member")
+    store.add_membership(tenant_id, user_id, "sales_agent")
+    token = "sales-member-diagnostics-token-" + "S" * 32
+
+    def unexpected_diagnostics(*_args, **_kwargs):
+        pytest.fail("non-owner diagnostics must be rejected before provider calls")
+
+    store.create_api_token(token, tenant_id, user_id)
+    monkeypatch.setattr(WebAgent, "diagnostics", unexpected_diagnostics)
+
+    status, result = request_json(
+        base,
+        "/api/diagnostics",
+        method="POST",
+        token=token,
+        payload={
+            "test_model": True,
+            "test_social": True,
+            "allow_provider_usage": True,
+        },
+    )
+    assert status == 403
+    assert "owner" in result["error"]
+
+
+def test_owner_can_run_diagnostics_only_after_explicit_approval(
+    tenant_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Approved Diagnostics", "approved-diagnostics")
+    user_id = store.create_user("approved-owner@example.test", "Owner")
+    store.add_membership(tenant_id, user_id, "owner")
+    token = "approved-diagnostics-token-" + "A" * 32
+    store.create_api_token(token, tenant_id, user_id)
+    observed = {}
+
+    def fake_diagnostics(self, *, test_model, test_social):
+        observed["test_model"] = test_model
+        observed["test_social"] = test_social
+        return {"overall_status": "passed", "model_usage": []}
+
+    monkeypatch.setattr(WebAgent, "diagnostics", fake_diagnostics)
+    status, result = request_json(
+        base,
+        "/api/diagnostics",
+        method="POST",
+        token=token,
+        payload={
+            "test_model": True,
+            "test_social": False,
+            "allow_provider_usage": True,
+        },
+    )
+    assert status == 200
+    assert result["overall_status"] == "passed"
+    assert observed == {"test_model": True, "test_social": False}
