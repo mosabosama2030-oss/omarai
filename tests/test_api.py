@@ -1155,7 +1155,7 @@ def test_api_ask_statistics_and_recommendations_are_company_scoped(local_api):
     assert lead_b["id"][:8] in recommendation_b["answer"]
 
     # The default-company operator cannot select company B for a recommendation.
-    status, denied = request_json(
+    status, _denied = request_json(
         local_api,
         "/api/ask",
         method="POST",
