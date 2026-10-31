@@ -692,6 +692,7 @@ class WebAgent:
         rejected_count: int = 0, error: str | None = None,
         accepted_count: int | None = None,
         rejection_counts: dict[str, int] | None = None,
+        http_status_code: int | None = None,
     ) -> None:
         def redact(value: Any, limit: int) -> str:
             safe = _clean_text(str(value or ""), limit)
@@ -730,6 +731,12 @@ class WebAgent:
             record["rejection_counts"] = safe_counts
         if error:
             record["error"] = redact(error, 180)
+        if (
+            isinstance(http_status_code, int)
+            and not isinstance(http_status_code, bool)
+            and 100 <= http_status_code <= 599
+        ):
+            record["http_status_code"] = http_status_code
         with self._provider_diagnostics_lock:
             self._provider_diagnostics.append(record)
             # Bound memory when the instance serves many user requests.
@@ -1551,19 +1558,39 @@ class WebAgent:
                     name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
-                detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
+                detail = (
+                    f"HTTP {exc.response.status_code}"
+                    if isinstance(getattr(exc, "response", None), object)
+                    and isinstance(getattr(getattr(exc, "response", None), "status_code", None), int)
+                    and not isinstance(getattr(getattr(exc, "response", None), "status_code", None), bool)
+                    else type(exc).__name__
+                )
                 status = "failed"
-                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
-                if status_match:
-                    status_code = int(status_match.group(1))
-                    if status_code == 429:
-                        status = "rate_limited"
-                    elif status_code in {401, 403}:
-                        status = "unauthorized"
-                    elif status_code == 202 or 300 <= status_code < 600:
-                        # Do not bypass anti-bot/challenge responses; mark the provider degraded.
-                        status = "http_error"
-                self._record_provider_diagnostic(name, search_query, status, error=detail)
+                status_code = None
+                response = getattr(exc, "response", None)
+                response_status = getattr(response, "status_code", None)
+                if (
+                    isinstance(response_status, int)
+                    and not isinstance(response_status, bool)
+                    and 100 <= response_status <= 599
+                ):
+                    status_code = response_status
+                else:
+                    status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
+                    if status_match:
+                        status_code = int(status_match.group(1))
+                if status_code == 429:
+                    status = "rate_limited"
+                elif status_code in {401, 403}:
+                    status = "unauthorized"
+                elif status_code is not None and (
+                    status_code == 202 or 300 <= status_code < 600
+                ):
+                    # Do not bypass anti-bot/challenge responses; mark the provider degraded.
+                    status = "http_error"
+                self._record_provider_diagnostic(
+                    name, search_query, status, error=detail, http_status_code=status_code
+                )
             return []
 
         async def run_all() -> list[list[dict[str, Any]]]:
