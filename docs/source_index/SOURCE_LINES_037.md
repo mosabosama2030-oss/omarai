@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000344 إلى SRC-6B37B7D6D3-L000062
+- النطاق: SRC-3451CC474D-L000334 إلى SRC-6B37B7D6D3-L000052
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000334](../../tests/test_api.py#L334) | 334 | `""` | — |
+| [SRC-3451CC474D-L000335](../../tests/test_api.py#L335) | 335 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS\", configured)"` | — |
+| [SRC-3451CC474D-L000336](../../tests/test_api.py#L336) | 336 | `""` | — |
+| [SRC-3451CC474D-L000337](../../tests/test_api.py#L337) | 337 | `"    assert _configured_http_connection_limit() == expected"` | — |
+| [SRC-3451CC474D-L000338](../../tests/test_api.py#L338) | 338 | `""` | — |
+| [SRC-3451CC474D-L000339](../../tests/test_api.py#L339) | 339 | `""` | — |
+| [SRC-3451CC474D-L000340](../../tests/test_api.py#L340) | 340 | `"def test_http_ingress_rejects_excess_connections_and_releases_capacity():"` | — |
+| [SRC-3451CC474D-L000341](../../tests/test_api.py#L341) | 341 | `"    from api.omarai import BoundedThreadingHTTPServer"` | — |
+| [SRC-3451CC474D-L000342](../../tests/test_api.py#L342) | 342 | `""` | — |
+| [SRC-3451CC474D-L000343](../../tests/test_api.py#L343) | 343 | `"    server = BoundedThreadingHTTPServer("` | — |
 | [SRC-3451CC474D-L000344](../../tests/test_api.py#L344) | 344 | `"        (\"127.0.0.1\", 0),"` | — |
 | [SRC-3451CC474D-L000345](../../tests/test_api.py#L345) | 345 | `"        Handler,"` | — |
 | [SRC-3451CC474D-L000346](../../tests/test_api.py#L346) | 346 | `"        max_concurrent_connections=1,"` | — |
@@ -824,13 +834,3 @@
 | [SRC-6B37B7D6D3-L000050](../../tests/test_claim_evidence_metadata.py#L50) | 50 | `"                \"publisher\": \"Example Statistics Office\","` | — |
 | [SRC-6B37B7D6D3-L000051](../../tests/test_claim_evidence_metadata.py#L51) | 51 | `"                \"published_at\": \"2025-06-01\","` | — |
 | [SRC-6B37B7D6D3-L000052](../../tests/test_claim_evidence_metadata.py#L52) | 52 | `"                \"snippet\": \"A readable summary.\","` | — |
-| [SRC-6B37B7D6D3-L000053](../../tests/test_claim_evidence_metadata.py#L53) | 53 | `"            },"` | — |
-| [SRC-6B37B7D6D3-L000054](../../tests/test_claim_evidence_metadata.py#L54) | 54 | `"            claim_text=\"general research\","` | — |
-| [SRC-6B37B7D6D3-L000055](../../tests/test_claim_evidence_metadata.py#L55) | 55 | `"        )"` | — |
-| [SRC-6B37B7D6D3-L000056](../../tests/test_claim_evidence_metadata.py#L56) | 56 | `""` | — |
-| [SRC-6B37B7D6D3-L000057](../../tests/test_claim_evidence_metadata.py#L57) | 57 | `"        assert result[\"valid_http_url\"] is False"` | — |
-| [SRC-6B37B7D6D3-L000058](../../tests/test_claim_evidence_metadata.py#L58) | 58 | `"        assert \"valid_http_source_url\" in result[\"required_fields_missing\"]"` | — |
-| [SRC-6B37B7D6D3-L000059](../../tests/test_claim_evidence_metadata.py#L59) | 59 | `""` | — |
-| [SRC-6B37B7D6D3-L000060](../../tests/test_claim_evidence_metadata.py#L60) | 60 | `""` | — |
-| [SRC-6B37B7D6D3-L000061](../../tests/test_claim_evidence_metadata.py#L61) | 61 | `"def test_claim_evidence_ledger_uses_question_context_for_population_metadata():"` | — |
-| [SRC-6B37B7D6D3-L000062](../../tests/test_claim_evidence_metadata.py#L62) | 62 | `"    ledger = build_claim_evidence_ledger("` | — |

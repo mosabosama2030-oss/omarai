@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001073 إلى SRC-F725E90B2A-L001872
+- النطاق: SRC-F725E90B2A-L001063 إلى SRC-F725E90B2A-L001862
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001063](../../tests/test_web_agent.py#L1063) | 1063 | `"def test_openrouter_live_web_search_remains_disabled_without_explicit_opt_in(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001064](../../tests/test_web_agent.py#L1064) | 1064 | `"    monkeypatch.delenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", raising=False)"` | — |
+| [SRC-F725E90B2A-L001065](../../tests/test_web_agent.py#L1065) | 1065 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001066](../../tests/test_web_agent.py#L1066) | 1066 | `"    assert agent.openrouter_web_search_enabled is False"` | — |
+| [SRC-F725E90B2A-L001067](../../tests/test_web_agent.py#L1067) | 1067 | `""` | — |
+| [SRC-F725E90B2A-L001068](../../tests/test_web_agent.py#L1068) | 1068 | `""` | — |
+| [SRC-F725E90B2A-L001069](../../tests/test_web_agent.py#L1069) | 1069 | `""` | — |
+| [SRC-F725E90B2A-L001070](../../tests/test_web_agent.py#L1070) | 1070 | `"def test_arabic_query_normalization_removes_diacritics_and_unifies_hamza():"` | — |
+| [SRC-F725E90B2A-L001071](../../tests/test_web_agent.py#L1071) | 1071 | `"    normalized = _normalize_search_query(\"إِنَّ أَسْعَارَ أُسْتُرَالِيَا\")"` | — |
+| [SRC-F725E90B2A-L001072](../../tests/test_web_agent.py#L1072) | 1072 | `"    assert \"إ\" not in normalized"` | — |
 | [SRC-F725E90B2A-L001073](../../tests/test_web_agent.py#L1073) | 1073 | `"    assert \"أ\" not in normalized"` | — |
 | [SRC-F725E90B2A-L001074](../../tests/test_web_agent.py#L1074) | 1074 | `"    assert \"ا\" in normalized"` | — |
 | [SRC-F725E90B2A-L001075](../../tests/test_web_agent.py#L1075) | 1075 | `"    assert normalized == \"ان اسعار استراليا\""` | — |
@@ -806,13 +816,3 @@
 | [SRC-F725E90B2A-L001860](../../tests/test_web_agent.py#L1860) | 1860 | `"    english_with_period = WebAgent._question_coverage_targets("` | — |
 | [SRC-F725E90B2A-L001861](../../tests/test_web_agent.py#L1861) | 1861 | `"        \"Compare two services in terms of price, privacy and reliability.\""` | — |
 | [SRC-F725E90B2A-L001862](../../tests/test_web_agent.py#L1862) | 1862 | `"    )"` | — |
-| [SRC-F725E90B2A-L001863](../../tests/test_web_agent.py#L1863) | 1863 | `"    assert english_with_period == [\"price\", \"privacy\", \"reliability\"]"` | — |
-| [SRC-F725E90B2A-L001864](../../tests/test_web_agent.py#L1864) | 1864 | `""` | — |
-| [SRC-F725E90B2A-L001865](../../tests/test_web_agent.py#L1865) | 1865 | `""` | — |
-| [SRC-F725E90B2A-L001866](../../tests/test_web_agent.py#L1866) | 1866 | `"def test_question_coverage_targets_do_not_invent_parts_for_simple_question():"` | — |
-| [SRC-F725E90B2A-L001867](../../tests/test_web_agent.py#L1867) | 1867 | `"    assert WebAgent._question_coverage_targets(\"ما الذي يقوله المصدر؟\") == []"` | — |
-| [SRC-F725E90B2A-L001868](../../tests/test_web_agent.py#L1868) | 1868 | `""` | — |
-| [SRC-F725E90B2A-L001869](../../tests/test_web_agent.py#L1869) | 1869 | `""` | — |
-| [SRC-F725E90B2A-L001870](../../tests/test_web_agent.py#L1870) | 1870 | `"def test_generator_includes_extracted_targets_as_a_non_authoritative_checklist(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001871](../../tests/test_web_agent.py#L1871) | 1871 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001872](../../tests/test_web_agent.py#L1872) | 1872 | `"    captured = {}"` | — |

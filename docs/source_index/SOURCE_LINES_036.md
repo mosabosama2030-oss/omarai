@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000327 إلى SRC-3451CC474D-L000343
+- النطاق: SRC-B3062EB677-L000317 إلى SRC-3451CC474D-L000333
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000317](../../tests/test_answer_quality_runner.py#L317) | 317 | `"        expected_strategy=\"web_search\","` | — |
+| [SRC-B3062EB677-L000318](../../tests/test_answer_quality_runner.py#L318) | 318 | `"        transport_ok=True,"` | — |
+| [SRC-B3062EB677-L000319](../../tests/test_answer_quality_runner.py#L319) | 319 | `"    )"` | — |
+| [SRC-B3062EB677-L000320](../../tests/test_answer_quality_runner.py#L320) | 320 | `"    assert metrics[\"tool_status\"] == \"INCONSISTENT_SEARCH_OUTCOME_NO_RETURNED_SOURCES\""` | — |
+| [SRC-B3062EB677-L000321](../../tests/test_answer_quality_runner.py#L321) | 321 | `"    assert metrics[\"source_count\"] == 0"` | — |
+| [SRC-B3062EB677-L000322](../../tests/test_answer_quality_runner.py#L322) | 322 | `"    assert metrics[\"required_tool_success_rate\"] is None"` | — |
+| [SRC-B3062EB677-L000323](../../tests/test_answer_quality_runner.py#L323) | 323 | `""` | — |
+| [SRC-B3062EB677-L000324](../../tests/test_answer_quality_runner.py#L324) | 324 | `""` | — |
+| [SRC-B3062EB677-L000325](../../tests/test_answer_quality_runner.py#L325) | 325 | `"def test_request_cost_ledger_accepts_explicit_full_request_usd_reconciliation(tmp_path):"` | — |
+| [SRC-B3062EB677-L000326](../../tests/test_answer_quality_runner.py#L326) | 326 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000327](../../tests/test_answer_quality_runner.py#L327) | 327 | `"    ledger_path = tmp_path / \"cost-ledger.json\""` | — |
 | [SRC-B3062EB677-L000328](../../tests/test_answer_quality_runner.py#L328) | 328 | `"    ledger_path.write_text("` | — |
 | [SRC-B3062EB677-L000329](../../tests/test_answer_quality_runner.py#L329) | 329 | `"        json.dumps({"` | — |
@@ -833,13 +843,3 @@
 | [SRC-3451CC474D-L000331](../../tests/test_api.py#L331) | 331 | `")"` | — |
 | [SRC-3451CC474D-L000332](../../tests/test_api.py#L332) | 332 | `"def test_http_connection_limit_configuration_is_bounded(monkeypatch, configured, expected):"` | — |
 | [SRC-3451CC474D-L000333](../../tests/test_api.py#L333) | 333 | `"    from api.omarai import _configured_http_connection_limit"` | — |
-| [SRC-3451CC474D-L000334](../../tests/test_api.py#L334) | 334 | `""` | — |
-| [SRC-3451CC474D-L000335](../../tests/test_api.py#L335) | 335 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS\", configured)"` | — |
-| [SRC-3451CC474D-L000336](../../tests/test_api.py#L336) | 336 | `""` | — |
-| [SRC-3451CC474D-L000337](../../tests/test_api.py#L337) | 337 | `"    assert _configured_http_connection_limit() == expected"` | — |
-| [SRC-3451CC474D-L000338](../../tests/test_api.py#L338) | 338 | `""` | — |
-| [SRC-3451CC474D-L000339](../../tests/test_api.py#L339) | 339 | `""` | — |
-| [SRC-3451CC474D-L000340](../../tests/test_api.py#L340) | 340 | `"def test_http_ingress_rejects_excess_connections_and_releases_capacity():"` | — |
-| [SRC-3451CC474D-L000341](../../tests/test_api.py#L341) | 341 | `"    from api.omarai import BoundedThreadingHTTPServer"` | — |
-| [SRC-3451CC474D-L000342](../../tests/test_api.py#L342) | 342 | `""` | — |
-| [SRC-3451CC474D-L000343](../../tests/test_api.py#L343) | 343 | `"    server = BoundedThreadingHTTPServer("` | — |

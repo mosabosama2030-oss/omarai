@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001231 إلى SRC-6A7519AC10-L000244
+- النطاق: SRC-90FAA34ADE-L001221 إلى SRC-6A7519AC10-L000234
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001221](../../tests/fixtures/answer_quality_cases.json#L1221) | 1221 | `"        \"Invents live weather without a retrieval source\""` | — |
+| [SRC-90FAA34ADE-L001222](../../tests/fixtures/answer_quality_cases.json#L1222) | 1222 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001223](../../tests/fixtures/answer_quality_cases.json#L1223) | 1223 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001224](../../tests/fixtures/answer_quality_cases.json#L1224) | 1224 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001225](../../tests/fixtures/answer_quality_cases.json#L1225) | 1225 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001226](../../tests/fixtures/answer_quality_cases.json#L1226) | 1226 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001227](../../tests/fixtures/answer_quality_cases.json#L1227) | 1227 | `"            \"title\": \"Cairo forecast fixture\","` | — |
+| [SRC-90FAA34ADE-L001228](../../tests/fixtures/answer_quality_cases.json#L1228) | 1228 | `"            \"url\": \"https://weather-cairo.example.test/forecast\","` | — |
+| [SRC-90FAA34ADE-L001229](../../tests/fixtures/answer_quality_cases.json#L1229) | 1229 | `"            \"snippet\": \"Forecast available only for Cairo on 2026-10-18.\","` | — |
+| [SRC-90FAA34ADE-L001230](../../tests/fixtures/answer_quality_cases.json#L1230) | 1230 | `"            \"domain\": \"weather-cairo.example.test\","` | — |
 | [SRC-90FAA34ADE-L001231](../../tests/fixtures/answer_quality_cases.json#L1231) | 1231 | `"            \"provider\": \"fixture_search\""` | — |
 | [SRC-90FAA34ADE-L001232](../../tests/fixtures/answer_quality_cases.json#L1232) | 1232 | `"          }"` | — |
 | [SRC-90FAA34ADE-L001233](../../tests/fixtures/answer_quality_cases.json#L1233) | 1233 | `"        ],"` | — |
@@ -842,13 +852,3 @@
 | [SRC-6A7519AC10-L000232](../../tests/test_answer_quality_comparison.py#L232) | 232 | `"        \"reviews\": [{"` | — |
 | [SRC-6A7519AC10-L000233](../../tests/test_answer_quality_comparison.py#L233) | 233 | `"            \"case_id\": \"AQ-001\","` | — |
 | [SRC-6A7519AC10-L000234](../../tests/test_answer_quality_comparison.py#L234) | 234 | `"            \"status\": \"REVIEWED\","` | — |
-| [SRC-6A7519AC10-L000235](../../tests/test_answer_quality_comparison.py#L235) | 235 | `"            \"correctness\": {\"correct_facts\": 1, \"reviewed_facts\": 1},"` | — |
-| [SRC-6A7519AC10-L000236](../../tests/test_answer_quality_comparison.py#L236) | 236 | `"        }],"` | — |
-| [SRC-6A7519AC10-L000237](../../tests/test_answer_quality_comparison.py#L237) | 237 | `"    }"` | — |
-| [SRC-6A7519AC10-L000238](../../tests/test_answer_quality_comparison.py#L238) | 238 | `"    full = _reviews(correct=1, supported_citations=1)"` | — |
-| [SRC-6A7519AC10-L000239](../../tests/test_answer_quality_comparison.py#L239) | 239 | `"    with pytest.raises(ValueError, match=\"incomplete human review coverage\"):"` | — |
-| [SRC-6A7519AC10-L000240](../../tests/test_answer_quality_comparison.py#L240) | 240 | `"        mod.review_comparison(partial, full, corpus)"` | — |
-| [SRC-6A7519AC10-L000241](../../tests/test_answer_quality_comparison.py#L241) | 241 | `""` | — |
-| [SRC-6A7519AC10-L000242](../../tests/test_answer_quality_comparison.py#L242) | 242 | `""` | — |
-| [SRC-6A7519AC10-L000243](../../tests/test_answer_quality_comparison.py#L243) | 243 | `"def test_comparison_requires_nonempty_recorded_question_text():"` | — |
-| [SRC-6A7519AC10-L000244](../../tests/test_answer_quality_comparison.py#L244) | 244 | `"    mod = load_module()"` | — |
