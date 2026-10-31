@@ -198,6 +198,20 @@ def test_api_token_expiry_is_normalized_to_utc(tmp_path):
     assert row["expires_at"] == "2099-01-01T00:00:00Z"
     assert store.resolve_api_token(token) is not None
 
+    # Expired tokens must stop resolving even when their membership stays active.
+    with store.connect() as db:
+        db.execute(
+            "UPDATE api_tokens SET expires_at=? WHERE token_hash=?",
+            ("2000-01-01T00:00:00Z", store._token_hash(token)),
+        )
+    assert store.resolve_api_token(token) is None
+
+    utc_token = "J" * 40
+    store.create_api_token(
+        utc_token, tenant_id, user_id, expires_at="2099-01-01T00:00:00Z"
+    )
+    assert store.resolve_api_token(utc_token) is not None
+
 
 def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):
     store = LeadStore(tmp_path / "invalid-token-expiry.sqlite3")
