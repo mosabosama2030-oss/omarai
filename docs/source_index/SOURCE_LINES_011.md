@@ -47,23 +47,23 @@
 | [SRC-1AE03B9EC3-L000927](../../agents/web_agent.py#L927) | 927 | `"        \"\"\"Build bounded buying-intent queries from the requested product, not a sector template.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000928](../../agents/web_agent.py#L928) | 928 | `"        subject = _normalize_search_query(question).strip()"` | — |
 | [SRC-1AE03B9EC3-L000929](../../agents/web_agent.py#L929) | 929 | `"        subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L000930](../../agents/web_agent.py#L930) | 930 | `"            r\"^(?:(?:من فضلك\|لو سمحت)\\\\s*)?(?:ابحث\|بحث\|دور\|دورلي\|اعثر)\\\\s+\""` | — |
-| [SRC-1AE03B9EC3-L000931](../../agents/web_agent.py#L931) | 931 | `"            r\"(?:عن\|على)\\\\s+(?:عميل(?:\\\\s+محتمل)?\|عملاء(?:\\\\s+محتملين)?\|\""` | — |
-| [SRC-1AE03B9EC3-L000932](../../agents/web_agent.py#L932) | 932 | `"            r\"مشتري(?:ن)?\|مشترين)\\\\s*(?:(?:الذي\|اللي\|الذين)\\\\s*)?\""` | — |
-| [SRC-1AE03B9EC3-L000933](../../agents/web_agent.py#L933) | 933 | `"            r\"(?:(?:يريد\|عايز\|عاوز)\\\\s*(?:ان\\\\s*)?(?:يشتري\|شراء))?\\\\s*\","` | — |
+| [SRC-1AE03B9EC3-L000930](../../agents/web_agent.py#L930) | 930 | `"            r\"^(?:(?:من فضلك\|لو سمحت)\\s*)?(?:ابحث\|بحث\|دور\|دورلي\|اعثر)\\s+\""` | — |
+| [SRC-1AE03B9EC3-L000931](../../agents/web_agent.py#L931) | 931 | `"            r\"(?:عن\|على)\\s+(?:عميل(?:\\s+محتمل)?\|عملاء(?:\\s+محتملين)?\|\""` | — |
+| [SRC-1AE03B9EC3-L000932](../../agents/web_agent.py#L932) | 932 | `"            r\"مشتري(?:ن)?\|مشترين)\\s*(?:(?:الذي\|اللي\|الذين)\\s*)?\""` | — |
+| [SRC-1AE03B9EC3-L000933](../../agents/web_agent.py#L933) | 933 | `"            r\"(?:(?:يريد\|عايز\|عاوز)\\s*(?:ان\\s*)?(?:يشتري\|شراء))?\\s*\","` | — |
 | [SRC-1AE03B9EC3-L000934](../../agents/web_agent.py#L934) | 934 | `"            \"\", subject, flags=re.IGNORECASE,"` | — |
 | [SRC-1AE03B9EC3-L000935](../../agents/web_agent.py#L935) | 935 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L000936](../../agents/web_agent.py#L936) | 936 | `"        subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L000937](../../agents/web_agent.py#L937) | 937 | `"            r\"^(?:please\\\\s+)?(?:find\|search for\|look for)\\\\s+(?:(?:a\|an)\\\\s+)?\""` | — |
-| [SRC-1AE03B9EC3-L000938](../../agents/web_agent.py#L938) | 938 | `"            r\"(?:(?:potential\\\\s+)?(?:customer\|buyer\|prospect\|lead)s?)\\\\s*\""` | — |
-| [SRC-1AE03B9EC3-L000939](../../agents/web_agent.py#L939) | 939 | `"            r\"(?:(?:who\|that)\\\\s*)?(?:(?:wants?\|looking to\|seeking to)\\\\s+\""` | — |
-| [SRC-1AE03B9EC3-L000940](../../agents/web_agent.py#L940) | 940 | `"            r\"(?:buy\|purchase)\\\\s*)?\","` | — |
+| [SRC-1AE03B9EC3-L000937](../../agents/web_agent.py#L937) | 937 | `"            r\"^(?:please\\s+)?(?:find\|search for\|look for)\\s+(?:(?:a\|an)\\s+)?\""` | — |
+| [SRC-1AE03B9EC3-L000938](../../agents/web_agent.py#L938) | 938 | `"            r\"(?:(?:potential\\s+)?(?:customer\|buyer\|prospect\|lead)s?)\\s*\""` | — |
+| [SRC-1AE03B9EC3-L000939](../../agents/web_agent.py#L939) | 939 | `"            r\"(?:(?:who\|that)\\s*)?(?:(?:wants?\|looking to\|seeking to)\\s+\""` | — |
+| [SRC-1AE03B9EC3-L000940](../../agents/web_agent.py#L940) | 940 | `"            r\"(?:buy\|purchase)\\s*)?\","` | — |
 | [SRC-1AE03B9EC3-L000941](../../agents/web_agent.py#L941) | 941 | `"            \"\", subject, flags=re.IGNORECASE,"` | — |
-| [SRC-1AE03B9EC3-L000942](../../agents/web_agent.py#L942) | 942 | `"        ).strip(\" \\\\t:;,.-\")"` | — |
+| [SRC-1AE03B9EC3-L000942](../../agents/web_agent.py#L942) | 942 | `"        ).strip(\" \\t:;,.-\")"` | — |
 | [SRC-1AE03B9EC3-L000943](../../agents/web_agent.py#L943) | 943 | `"        if len(_search_tokens(subject)) < 2:"` | — |
 | [SRC-1AE03B9EC3-L000944](../../agents/web_agent.py#L944) | 944 | `"            subject = _normalize_search_query(question).strip()"` | — |
 | [SRC-1AE03B9EC3-L000945](../../agents/web_agent.py#L945) | 945 | `"        profile = ProductProfile(name=subject[:240])"` | — |
-| [SRC-1AE03B9EC3-L000946](../../agents/web_agent.py#L946) | 946 | `"        has_arabic = bool(re.search(r\"[\\\\u0600-\\\\u06FF]\", question))"` | — |
+| [SRC-1AE03B9EC3-L000946](../../agents/web_agent.py#L946) | 946 | `"        has_arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", question))"` | — |
 | [SRC-1AE03B9EC3-L000947](../../agents/web_agent.py#L947) | 947 | `"        has_latin = bool(re.search(r\"[A-Za-z]\", question))"` | — |
 | [SRC-1AE03B9EC3-L000948](../../agents/web_agent.py#L948) | 948 | `"        locale = \"mixed\" if has_arabic and has_latin else \"ar\" if has_arabic else \"en\""` | — |
 | [SRC-1AE03B9EC3-L000949](../../agents/web_agent.py#L949) | 949 | `"        return build_buyer_queries("` | — |
