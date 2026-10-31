@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001949 إلى SRC-1AE03B9EC3-L002748
+- النطاق: SRC-1AE03B9EC3-L001947 إلى SRC-1AE03B9EC3-L002746
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001947](../../agents/web_agent.py#L1947) | 1947 | `"        if \"bluesky\" in platforms:"` | — |
+| [SRC-1AE03B9EC3-L001948](../../agents/web_agent.py#L1948) | 1948 | `"            try:"` | — |
 | [SRC-1AE03B9EC3-L001949](../../agents/web_agent.py#L1949) | 1949 | `"                self._reserve_search_call()"` | — |
 | [SRC-1AE03B9EC3-L001950](../../agents/web_agent.py#L1950) | 1950 | `"                response = httpx.get("` | — |
 | [SRC-1AE03B9EC3-L001951](../../agents/web_agent.py#L1951) | 1951 | `"                    \"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L002744](../../agents/web_agent.py#L2744) | 2744 | `"                    observed_status = getattr(fetch_result, \"status\", None)"` | — |
 | [SRC-1AE03B9EC3-L002745](../../agents/web_agent.py#L2745) | 2745 | `"                    error_class = getattr(fetch_result, \"error_class\", None)"` | — |
 | [SRC-1AE03B9EC3-L002746](../../agents/web_agent.py#L2746) | 2746 | `"                    if title:"` | — |
-| [SRC-1AE03B9EC3-L002747](../../agents/web_agent.py#L2747) | 2747 | `"                        source[\"title\"] = title"` | — |
-| [SRC-1AE03B9EC3-L002748](../../agents/web_agent.py#L2748) | 2748 | `"                    if page_text and page_text.strip():"` | — |

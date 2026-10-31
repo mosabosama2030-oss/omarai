@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000747 إلى SRC-D17CE3D12F-L000643
+- النطاق: SRC-E73001D9AC-L000745 إلى SRC-D17CE3D12F-L000641
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000745](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L745) | 745 | `"يُحافظ على سلوك الوظائف الحالية أثناء استخراج المهارات أو سير العمل، ويجب توفير اختبارات regression قبل اعتماد التغيير. لا نعيد كتابة المكونات القائمة لمجرد نقلها إلى أسماء معمارية جديدة."` | — |
+| [SRC-E73001D9AC-L000746](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L746) | 746 | `" "` | — |
 | [SRC-E73001D9AC-L000747](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L747) | 747 | `"## 23. إصدار واجهات API وعقود الرسائل"` | — |
 | [SRC-E73001D9AC-L000748](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L748) | 748 | `""` | — |
 | [SRC-E73001D9AC-L000749](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L749) | 749 | `"- تُوثق الواجهات العامة بعقود ومخططات قابلة للمراجعة، ويفضل توليد أو اختبار المخططات من مصدر واحد للحقيقة عندما يكون ذلك عمليًا."` | — |
@@ -823,5 +825,3 @@
 | [SRC-D17CE3D12F-L000639](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L639) | 639 | `""` | — |
 | [SRC-D17CE3D12F-L000640](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L640) | 640 | `"عندما تتيح منصة التشغيل ذلك ويكون الأثر مناسبًا، يجب أن تكون البنية والإعدادات المهمة قابلة لإعادة الإنشاء والمراجعة بدل الاعتماد على تغييرات يدوية غير موثقة."` | — |
 | [SRC-D17CE3D12F-L000641](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L641) | 641 | `""` | — |
-| [SRC-D17CE3D12F-L000642](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L642) | 642 | `"1. SHOULD حفظ تعريف البنية القابل لإعادة الإنشاء ضمن نظام إصدارات، مع مراجعة التغييرات وبيان أثرها."` | — |
-| [SRC-D17CE3D12F-L000643](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L643) | 643 | `"2. MUST فصل التكوين عن الشيفرة والأسرار، والتحقق من القيم المطلوبة عند بدء التشغيل."` | — |

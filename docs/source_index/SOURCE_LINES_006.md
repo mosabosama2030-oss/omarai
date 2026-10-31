@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000845 إلى SRC-60066C6786-L000111
+- النطاق: SRC-59CF4B7DE8-L000843 إلى SRC-60066C6786-L000109
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000843](../../agents/research.py#L843) | 843 | `"        if not isinstance(src, dict):"` | — |
+| [SRC-59CF4B7DE8-L000844](../../agents/research.py#L844) | 844 | `"            diag.append({\"reason\": \"malformed\", \"url\": \"\"})"` | — |
 | [SRC-59CF4B7DE8-L000845](../../agents/research.py#L845) | 845 | `"            continue"` | — |
 | [SRC-59CF4B7DE8-L000846](../../agents/research.py#L846) | 846 | `"        url = str(src.get(\"url\") or \"\")"` | — |
 | [SRC-59CF4B7DE8-L000847](../../agents/research.py#L847) | 847 | `"        domain = str(src.get(\"domain\") or \"\").lower()"` | — |
@@ -841,5 +843,3 @@
 | [SRC-60066C6786-L000107](../../agents/research_pipeline.py#L107) | 107 | `"            )[:5]"` | — |
 | [SRC-60066C6786-L000108](../../agents/research_pipeline.py#L108) | 108 | `""` | — |
 | [SRC-60066C6786-L000109](../../agents/research_pipeline.py#L109) | 109 | `"    return {"` | — |
-| [SRC-60066C6786-L000110](../../agents/research_pipeline.py#L110) | 110 | `"        \"lexical_ledger\": lexical_ledger,"` | — |
-| [SRC-60066C6786-L000111](../../agents/research_pipeline.py#L111) | 111 | `"        \"lexical_matching_status\": lexical_matching_status,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000071 إلى SRC-65551FB29F-L000194
+- النطاق: SRC-62CE5126F9-L000069 إلى SRC-65551FB29F-L000192
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000069](../OMARAI_REMEDIATION_REGISTER_AR.md#L69) | 69 | ``"- **الاختبار الآلي:** نجح PR CI على SHA `9b97dfe9d7a996349c374134fb2ae1ebcfdcf5fa` في [#40471611641](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471611641)، ونجح CI بعد الدمج على SHA `d9a8f83796547591d651c41ff657475bcec9b0ab` في [#40471732289](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732289)، كما نجح توليد الفهرس [#40471732508](https://github.com/mosabosama2030-oss/omarai/actions/runs/40471732508). تشمل الفحوص Python 3.11 و3.12 وRuff وبناء الحاوية وAPI smoke المحمي."`` | — |
+| [SRC-62CE5126F9-L000070](../OMARAI_REMEDIATION_REGISTER_AR.md#L70) | 70 | ``"- **ما لم يُغلق:** فحص `/api/health` بعد الدمج ما زال يعيد `build.sha=unknown`؛ هذا متوقع ما لم يُضبط متغير البناء العام في الخدمة ثم تعاد عملية البناء. يلزم تحديد SHA النهائي بعد آخر تغييرات على `main`، وتعيين `PUBLIC_OMARAI_BUILD_SHA` إلى تلك القيمة في SnapDeploy ثم التأكد من أن `build.sha` يطابقها بالضبط. لا تضع أي رمز أو مفتاح API في هذا المتغير."`` | — |
 | [SRC-62CE5126F9-L000071](../OMARAI_REMEDIATION_REGISTER_AR.md#L71) | 71 | ``"- **قبول البحث الحي:** ما زال `PARTIAL / BLOCKED` لأن جلسة المتصفح الاختبارية لا تتشارك التخزين المحلي مع متصفح المستخدم؛ يجب حفظ رمز الوصول داخل ملف المتصفح الاختباري من خلال صفحة الإعداد بنفسه، دون إرساله في المحادثة. لم ينجح أي طلب بحث حي في هذه الجلسة بعد."`` | — |
 | [SRC-62CE5126F9-L000072](../OMARAI_REMEDIATION_REGISTER_AR.md#L72) | 72 | `"- **مراجع المنصة:** [SnapDeploy deployment guide](https://snapdeploy.dev/docs/deployment) و[environment variables](https://snapdeploy.dev/docs/environment-variables). لا يثبت نجاح CI اتصال موفري البحث أو صحة الإجابات الحية."` | — |
 | [SRC-62CE5126F9-L000073](../OMARAI_REMEDIATION_REGISTER_AR.md#L73) | 73 | `""` | — |
@@ -832,5 +834,3 @@
 | [SRC-65551FB29F-L000190](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L190) | 190 | `"\| IDN \| الهوية والصلاحيات والجلسات \|"` | — |
 | [SRC-65551FB29F-L000191](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L191) | 191 | `"\| SEC \| الأمن العام وأمن التطبيق والشبكات \|"` | — |
 | [SRC-65551FB29F-L000192](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L192) | 192 | `"\| DAT \| جودة البيانات والتخزين ودورة الحياة \|"` | — |
-| [SRC-65551FB29F-L000193](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L193) | 193 | `"\| PRI \| الخصوصية \|"` | — |
-| [SRC-65551FB29F-L000194](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L194) | 194 | `"\| REL \| الموثوقية والتعافي \|"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000053 إلى SRC-AFFCF23BD4-L000070
+- النطاق: SRC-3D0DE98F65-L000049 إلى SRC-AFFCF23BD4-L000066
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000049](../../tests/test_question_requirement_loop.py#L49) | 49 | `"def test_model_planner_cannot_replace_every_criterion_with_one_generic_query(monkeypatch) -> None:"` | — |
+| [SRC-3D0DE98F65-L000050](../../tests/test_question_requirement_loop.py#L50) | 50 | `"    agent = WebAgent()"` | — |
+| [SRC-3D0DE98F65-L000051](../../tests/test_question_requirement_loop.py#L51) | 51 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-3D0DE98F65-L000052](../../tests/test_question_requirement_loop.py#L52) | 52 | `"    monkeypatch.setattr("` | — |
 | [SRC-3D0DE98F65-L000053](../../tests/test_question_requirement_loop.py#L53) | 53 | `"        agent,"` | — |
 | [SRC-3D0DE98F65-L000054](../../tests/test_question_requirement_loop.py#L54) | 54 | `"        \"_request_completion\","` | — |
 | [SRC-3D0DE98F65-L000055](../../tests/test_question_requirement_loop.py#L55) | 55 | `"        lambda *args, **kwargs: json.dumps("` | — |
@@ -848,7 +852,3 @@
 | [SRC-AFFCF23BD4-L000064](../../tests/test_research_completion.py#L64) | 64 | `"        ],"` | — |
 | [SRC-AFFCF23BD4-L000065](../../tests/test_research_completion.py#L65) | 65 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 0},"` | — |
 | [SRC-AFFCF23BD4-L000066](../../tests/test_research_completion.py#L66) | 66 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000067](../../tests/test_research_completion.py#L67) | 67 | `"    assert result[\"status\"] == \"source_snippets_only_generation_not_completed\""` | — |
-| [SRC-AFFCF23BD4-L000068](../../tests/test_research_completion.py#L68) | 68 | `"    assert result[\"phases\"][\"page_reading\"] == \"no_final_source_page_read\""` | — |
-| [SRC-AFFCF23BD4-L000069](../../tests/test_research_completion.py#L69) | 69 | `"    assert result[\"counters\"][\"pages_read_with_text_count\"] == 0"` | — |
-| [SRC-AFFCF23BD4-L000070](../../tests/test_research_completion.py#L70) | 70 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000349 إلى SRC-1AE03B9EC3-L001148
+- النطاق: SRC-1AE03B9EC3-L000347 إلى SRC-1AE03B9EC3-L001146
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000347](../../agents/web_agent.py#L347) | 347 | `"    return \" \".join(value.replace(\"\\x00\", \" \").split())[:limit]"` | — |
+| [SRC-1AE03B9EC3-L000348](../../agents/web_agent.py#L348) | 348 | `""` | — |
 | [SRC-1AE03B9EC3-L000349](../../agents/web_agent.py#L349) | 349 | `""` | — |
 | [SRC-1AE03B9EC3-L000350](../../agents/web_agent.py#L350) | 350 | `"def _public_http_url(value: Any) -> str \| None:"` | — |
 | [SRC-1AE03B9EC3-L000351](../../agents/web_agent.py#L351) | 351 | `"    \"\"\"Lexically validate an HTTP URL before using it as a search source.\"\"\""` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L001144](../../agents/web_agent.py#L1144) | 1144 | `"            \"language_model\": {"` | — |
 | [SRC-1AE03B9EC3-L001145](../../agents/web_agent.py#L1145) | 1145 | `"                \"configured\": bool(status.get(\"language_model_configured\")),"` | — |
 | [SRC-1AE03B9EC3-L001146](../../agents/web_agent.py#L1146) | 1146 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001147](../../agents/web_agent.py#L1147) | 1147 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001148](../../agents/web_agent.py#L1148) | 1148 | `"        }"` | — |

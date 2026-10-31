@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000032 إلى SRC-D57B0BB030-L000018
+- النطاق: SRC-792A9A235D-L000030 إلى SRC-D57B0BB030-L000016
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | `"\| القيمة \| المعنى العملي \|"` | — |
+| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | `"\|--------\|----------------\|"` | — |
 | [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
 | [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
 | [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
@@ -868,5 +870,3 @@
 | [SRC-D57B0BB030-L000014](../DEPLOY_RENDER_AR.md#L14) | 14 | `"## خطوات النشر"` | — |
 | [SRC-D57B0BB030-L000015](../DEPLOY_RENDER_AR.md#L15) | 15 | `""` | — |
 | [SRC-D57B0BB030-L000016](../DEPLOY_RENDER_AR.md#L16) | 16 | `"1. سجّل الدخول إلى Render وافتح Dashboard."` | — |
-| [SRC-D57B0BB030-L000017](../DEPLOY_RENDER_AR.md#L17) | 17 | ``"2. اختر إنشاء **Blueprint** جديد واربط حساب GitHub بالمستودع `mosabosama2030-oss/omarai`."`` | — |
-| [SRC-D57B0BB030-L000018](../DEPLOY_RENDER_AR.md#L18) | 18 | ``"3. اختر الفرع `main`، ودع Render يقرأ ملف `render.yaml` الموجود في جذر المستودع."`` | — |

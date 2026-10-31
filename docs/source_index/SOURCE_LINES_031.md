@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000315 إلى SRC-03FF422A16-L000072
+- النطاق: SRC-A8360B1B03-L000313 إلى SRC-03FF422A16-L000070
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000313](../../scripts/hosted_smoke_test.py#L313) | 313 | `"    if args.output:"` | — |
+| [SRC-A8360B1B03-L000314](../../scripts/hosted_smoke_test.py#L314) | 314 | `"        output_path = Path(args.output)"` | — |
 | [SRC-A8360B1B03-L000315](../../scripts/hosted_smoke_test.py#L315) | 315 | `"        output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
 | [SRC-A8360B1B03-L000316](../../scripts/hosted_smoke_test.py#L316) | 316 | `"        output_path.write_text(rendered + \"\\n\", encoding=\"utf-8\")"` | — |
 | [SRC-A8360B1B03-L000317](../../scripts/hosted_smoke_test.py#L317) | 317 | `"    print(rendered)"` | — |
@@ -832,5 +834,3 @@
 | [SRC-03FF422A16-L000068](../../scripts/score_answer_quality_reviews.py#L68) | 68 | `"            problems.append(case_id + \": duplicate review\")"` | — |
 | [SRC-03FF422A16-L000069](../../scripts/score_answer_quality_reviews.py#L69) | 69 | `"        seen.add(case_id)"` | — |
 | [SRC-03FF422A16-L000070](../../scripts/score_answer_quality_reviews.py#L70) | 70 | `"        if case_id not in valid_case_ids:"` | — |
-| [SRC-03FF422A16-L000071](../../scripts/score_answer_quality_reviews.py#L71) | 71 | `"            problems.append(case_id + \": unknown case_id (not in the supplied corpus)\")"` | — |
-| [SRC-03FF422A16-L000072](../../scripts/score_answer_quality_reviews.py#L72) | 72 | `"        status = item.get(\"status\")"` | — |

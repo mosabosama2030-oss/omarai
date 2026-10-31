@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000046 إلى SRC-A8360B1B03-L000314
+- النطاق: SRC-70795F4B61-L000044 إلى SRC-A8360B1B03-L000312
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000044](../../scripts/compare_answer_quality_runs.py#L44) | 44 | `"    if missing:"` | — |
+| [SRC-70795F4B61-L000045](../../scripts/compare_answer_quality_runs.py#L45) | 45 | `"        problems.append(f\"{label}: missing run fields {sorted(missing)}\")"` | — |
 | [SRC-70795F4B61-L000046](../../scripts/compare_answer_quality_runs.py#L46) | 46 | `"    results = run.get(\"results\")"` | — |
 | [SRC-70795F4B61-L000047](../../scripts/compare_answer_quality_runs.py#L47) | 47 | `"    if not isinstance(results, list) or not results:"` | — |
 | [SRC-70795F4B61-L000048](../../scripts/compare_answer_quality_runs.py#L48) | 48 | `"        problems.append(f\"{label}: results must be a non-empty array\")"` | — |
@@ -823,5 +825,3 @@
 | [SRC-A8360B1B03-L000310](../../scripts/hosted_smoke_test.py#L310) | 310 | `"        print(rendered)"` | — |
 | [SRC-A8360B1B03-L000311](../../scripts/hosted_smoke_test.py#L311) | 311 | `"        return 1"` | — |
 | [SRC-A8360B1B03-L000312](../../scripts/hosted_smoke_test.py#L312) | 312 | `"    rendered = json.dumps(result, ensure_ascii=False, indent=2)"` | — |
-| [SRC-A8360B1B03-L000313](../../scripts/hosted_smoke_test.py#L313) | 313 | `"    if args.output:"` | — |
-| [SRC-A8360B1B03-L000314](../../scripts/hosted_smoke_test.py#L314) | 314 | `"        output_path = Path(args.output)"` | — |

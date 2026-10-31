@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000518 إلى SRC-686F71AA50-L001317
+- النطاق: SRC-686F71AA50-L000516 إلى SRC-686F71AA50-L001315
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000516](../../agents/task_understanding.py#L516) | 516 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
+| [SRC-686F71AA50-L000517](../../agents/task_understanding.py#L517) | 517 | `"    except (ImportError, TypeError, ValueError):"` | — |
 | [SRC-686F71AA50-L000518](../../agents/task_understanding.py#L518) | 518 | `"        aspect_values = []"` | — |
 | [SRC-686F71AA50-L000519](../../agents/task_understanding.py#L519) | 519 | `""` | — |
 | [SRC-686F71AA50-L000520](../../agents/task_understanding.py#L520) | 520 | `"    official_destination = bool(matches[\"official_site_lookup\"])"` | — |
@@ -814,5 +816,3 @@
 | [SRC-686F71AA50-L001313](../../agents/task_understanding.py#L1313) | 1313 | `"        \"resolution_basis\": clean_text(raw_context.get(\"resolution_basis\"), 80) or \"unassessed\","` | — |
 | [SRC-686F71AA50-L001314](../../agents/task_understanding.py#L1314) | 1314 | `"        \"confidence_band\": ("` | — |
 | [SRC-686F71AA50-L001315](../../agents/task_understanding.py#L1315) | 1315 | `"            raw_context.get(\"confidence_band\")"` | — |
-| [SRC-686F71AA50-L001316](../../agents/task_understanding.py#L1316) | 1316 | `"            if isinstance(raw_context.get(\"confidence_band\"), str)"` | — |
-| [SRC-686F71AA50-L001317](../../agents/task_understanding.py#L1317) | 1317 | `"            and raw_context.get(\"confidence_band\") in {\"low\", \"medium\", \"high\", \"unassessed\"}"` | — |

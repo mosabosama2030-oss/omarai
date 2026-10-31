@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000476 إلى SRC-90FAA34ADE-L001275
+- النطاق: SRC-90FAA34ADE-L000474 إلى SRC-90FAA34ADE-L001273
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000474](../../tests/fixtures/answer_quality_cases.json#L474) | 474 | `"            \"title\": \"Announcement A\","` | — |
+| [SRC-90FAA34ADE-L000475](../../tests/fixtures/answer_quality_cases.json#L475) | 475 | `"            \"url\": \"https://agency-a.example.test/notice\","` | — |
 | [SRC-90FAA34ADE-L000476](../../tests/fixtures/answer_quality_cases.json#L476) | 476 | `"            \"snippet\": \"Implementation begins on 1 November.\","` | — |
 | [SRC-90FAA34ADE-L000477](../../tests/fixtures/answer_quality_cases.json#L477) | 477 | `"            \"published_at\": \"2026-10-10\","` | — |
 | [SRC-90FAA34ADE-L000478](../../tests/fixtures/answer_quality_cases.json#L478) | 478 | `"            \"domain\": \"agency-a.example.test\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-90FAA34ADE-L001271](../../tests/fixtures/answer_quality_cases.json#L1271) | 1271 | `"        \"ادعاء أن الشروط حالية من مصدر 2020 فقط\","` | — |
 | [SRC-90FAA34ADE-L001272](../../tests/fixtures/answer_quality_cases.json#L1272) | 1272 | `"        \"غياب التحذير من قدم المصدر\""` | — |
 | [SRC-90FAA34ADE-L001273](../../tests/fixtures/answer_quality_cases.json#L1273) | 1273 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |

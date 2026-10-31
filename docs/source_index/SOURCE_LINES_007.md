@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-60066C6786-L000112 إلى SRC-686F71AA50-L000517
+- النطاق: SRC-60066C6786-L000110 إلى SRC-686F71AA50-L000515
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-60066C6786-L000110](../../agents/research_pipeline.py#L110) | 110 | `"        \"lexical_ledger\": lexical_ledger,"` | — |
+| [SRC-60066C6786-L000111](../../agents/research_pipeline.py#L111) | 111 | `"        \"lexical_matching_status\": lexical_matching_status,"` | — |
 | [SRC-60066C6786-L000112](../../agents/research_pipeline.py#L112) | 112 | `"        \"semantic_matching\": {"` | — |
 | [SRC-60066C6786-L000113](../../agents/research_pipeline.py#L113) | 113 | `"            \"status\": \"degraded\" if semantic_errors else semantic_status,"` | — |
 | [SRC-60066C6786-L000114](../../agents/research_pipeline.py#L114) | 114 | `"            \"errors\": semantic_errors,"` | — |
@@ -832,5 +834,3 @@
 | [SRC-686F71AA50-L000513](../../agents/task_understanding.py#L513) | 513 | `"    aspect_values: list[str] = []"` | — |
 | [SRC-686F71AA50-L000514](../../agents/task_understanding.py#L514) | 514 | `"    try:"` | — |
 | [SRC-686F71AA50-L000515](../../agents/task_understanding.py#L515) | 515 | `"        from agents.aspect_planning import extract_aspects"` | — |
-| [SRC-686F71AA50-L000516](../../agents/task_understanding.py#L516) | 516 | `"        aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000517](../../agents/task_understanding.py#L517) | 517 | `"    except (ImportError, TypeError, ValueError):"` | — |

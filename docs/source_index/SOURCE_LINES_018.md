@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000113 إلى SRC-792A9A235D-L000031
+- النطاق: SRC-EEF2E6447C-L000111 إلى SRC-792A9A235D-L000029
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000111](../../api/omarai.py#L111) | 111 | `"    \"\"\"Use an operator-configured database path when a persistent volume is available.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000112](../../api/omarai.py#L112) | 112 | `"    configured_path = os.getenv(\"OMARAI_DB_PATH\", \"\").strip()"` | — |
 | [SRC-EEF2E6447C-L000113](../../api/omarai.py#L113) | 113 | `"    return LeadStore(configured_path or None)"` | — |
 | [SRC-EEF2E6447C-L000114](../../api/omarai.py#L114) | 114 | `""` | — |
 | [SRC-EEF2E6447C-L000115](../../api/omarai.py#L115) | 115 | `""` | — |
@@ -859,5 +861,3 @@
 | [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `""` | — |
 | [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
 | [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | `""` | — |
-| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | `"\| القيمة \| المعنى العملي \|"` | — |
-| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | `"\|--------\|----------------\|"` | — |

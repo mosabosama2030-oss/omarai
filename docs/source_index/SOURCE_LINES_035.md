@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000040 إلى SRC-B3062EB677-L000371
+- النطاق: SRC-4CCB1F172B-L000038 إلى SRC-B3062EB677-L000369
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000038](../../tests/test_answer_quality_corpus.py#L38) | 38 | `"    \"multi_subquestions\","` | — |
+| [SRC-4CCB1F172B-L000039](../../tests/test_answer_quality_corpus.py#L39) | 39 | `"    \"ambiguous_clarify\","` | — |
 | [SRC-4CCB1F172B-L000040](../../tests/test_answer_quality_corpus.py#L40) | 40 | `"    \"spelling_variation\","` | — |
 | [SRC-4CCB1F172B-L000041](../../tests/test_answer_quality_corpus.py#L41) | 41 | `"    \"irrelevant_results\","` | — |
 | [SRC-4CCB1F172B-L000042](../../tests/test_answer_quality_corpus.py#L42) | 42 | `"    \"empty_or_failed_search\","` | — |
@@ -841,5 +843,3 @@
 | [SRC-B3062EB677-L000367](../../tests/test_answer_quality_runner.py#L367) | 367 | `"        return 200, {\"answer\": \"must not run\"}"` | — |
 | [SRC-B3062EB677-L000368](../../tests/test_answer_quality_runner.py#L368) | 368 | `""` | — |
 | [SRC-B3062EB677-L000369](../../tests/test_answer_quality_runner.py#L369) | 369 | `"    monkeypatch.setattr(mod, \"get_verified_build_sha\", lambda base_url, timeout, token=None: \"a\" * 40)"` | — |
-| [SRC-B3062EB677-L000370](../../tests/test_answer_quality_runner.py#L370) | 370 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
-| [SRC-B3062EB677-L000371](../../tests/test_answer_quality_runner.py#L371) | 371 | `"    rc = mod.run_live("` | — |

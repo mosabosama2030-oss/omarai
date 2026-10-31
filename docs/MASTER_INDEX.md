@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **257**
 - تعريفات Python بلا Docstring: **969**
 - تعريفات لا ينطبق عليها Docstring: **309**
-- الرموز الساكنة الإضافية: **1885**
-- الأسطر النصية المفهرسة حرفيًا: **40672**
+- الرموز الساكنة الإضافية: **1886**
+- الأسطر النصية المفهرسة حرفيًا: **40676**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -31,7 +31,7 @@
 | FILE-2F754321D6 | إعدادات وتشغيل | [.dockerignore](../.dockerignore#L1) | بدون امتداد | 103 | 11 | جرد ملف نصي فقط |
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1386 | 30 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-18813C8694 | وثائق ونصوص | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L1) | Markdown | 1913 | 33 | جرد الملف + عناوين Markdown |
-| FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 2113 | 56 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 2178 | 58 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 6517 | 157 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4970 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
@@ -125,7 +125,7 @@
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23466 | 616 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7323 | 196 | جرد الملف + AST Python |
-| FILE-1BB2FDD5B7 | اختبارات | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L1) | Python | 4248 | 109 | جرد الملف + AST Python |
+| FILE-1BB2FDD5B7 | اختبارات | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L1) | Python | 4394 | 111 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
@@ -1182,9 +1182,9 @@
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L188) | دالة | test_smoke_rejects_deployed_build_sha_mismatch | لا توجد Docstring. | ناقص | 188 | [SRC-1A176AD4F0-L000188](../tests/test_hosted_smoke.py#L188) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L7) | دالة | test_hosted_smoke_returns_exact_question_answer_and_sources | لا توجد Docstring. | ناقص | 7 | [SRC-1BB2FDD5B7-L000007](../tests/test_hosted_smoke_transcript.py#L7) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L10) | دالة | test_hosted_smoke_returns_exact_question_answer_and_sources.fake_request_json | لا توجد Docstring. | ناقص | 10 | [SRC-1BB2FDD5B7-L000010](../tests/test_hosted_smoke_transcript.py#L10) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L69) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev | لا توجد Docstring. | ناقص | 69 | [SRC-1BB2FDD5B7-L000069](../tests/test_hosted_smoke_transcript.py#L69) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L70) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev.fake_request_json | لا توجد Docstring. | ناقص | 70 | [SRC-1BB2FDD5B7-L000070](../tests/test_hosted_smoke_transcript.py#L70) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L101) | دالة | test_hosted_smoke_rejects_no_token_for_remote_host | لا توجد Docstring. | ناقص | 101 | [SRC-1BB2FDD5B7-L000101](../tests/test_hosted_smoke_transcript.py#L101) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L71) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev | لا توجد Docstring. | ناقص | 71 | [SRC-1BB2FDD5B7-L000071](../tests/test_hosted_smoke_transcript.py#L71) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L72) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev.fake_request_json | لا توجد Docstring. | ناقص | 72 | [SRC-1BB2FDD5B7-L000072](../tests/test_hosted_smoke_transcript.py#L72) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L103) | دالة | test_hosted_smoke_rejects_no_token_for_remote_host | لا توجد Docstring. | ناقص | 103 | [SRC-1BB2FDD5B7-L000103](../tests/test_hosted_smoke_transcript.py#L103) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L23) | دالة | test_deterministic_intent_routes | لا توجد Docstring. | ناقص | 23 | [SRC-EA6EC52573-L000023](../tests/test_intent_router.py#L23) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L40) | دالة | test_lead_generation_and_summarization_routes | لا توجد Docstring. | ناقص | 40 | [SRC-EA6EC52573-L000040](../tests/test_intent_router.py#L40) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L46) | دالة | test_generic_explanation_of_lead_generation_is_not_a_lead_search | لا توجد Docstring. | ناقص | 46 | [SRC-EA6EC52573-L000046](../tests/test_intent_router.py#L46) |
@@ -1721,30 +1721,31 @@
 | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-9F6E30987B-L000001](../.github/workflows/hosted-smoke.yml#L1) |
 | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-9F6E30987B-L000002](../.github/workflows/hosted-smoke.yml#L2) |
 | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L4) | مفتاح إعداد YAML | workflow_dispatch | 4 | [SRC-9F6E30987B-L000004](../.github/workflows/hosted-smoke.yml#L4) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L5) | مفتاح إعداد YAML | permissions | 5 | [SRC-9F6E30987B-L000005](../.github/workflows/hosted-smoke.yml#L5) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L7) | مفتاح إعداد YAML | contents | 7 | [SRC-9F6E30987B-L000007](../.github/workflows/hosted-smoke.yml#L7) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L8) | مفتاح إعداد YAML | concurrency | 8 | [SRC-9F6E30987B-L000008](../.github/workflows/hosted-smoke.yml#L8) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L10) | مفتاح إعداد YAML | group | 10 | [SRC-9F6E30987B-L000010](../.github/workflows/hosted-smoke.yml#L10) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L11) | مفتاح إعداد YAML | cancel-in-progress | 11 | [SRC-9F6E30987B-L000011](../.github/workflows/hosted-smoke.yml#L11) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L12) | مفتاح إعداد YAML | jobs | 12 | [SRC-9F6E30987B-L000012](../.github/workflows/hosted-smoke.yml#L12) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L14) | مفتاح إعداد YAML | hosted-smoke | 14 | [SRC-9F6E30987B-L000014](../.github/workflows/hosted-smoke.yml#L14) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L15) | مفتاح إعداد YAML | runs-on | 15 | [SRC-9F6E30987B-L000015](../.github/workflows/hosted-smoke.yml#L15) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L16) | مفتاح إعداد YAML | timeout-minutes | 16 | [SRC-9F6E30987B-L000016](../.github/workflows/hosted-smoke.yml#L16) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L17) | مفتاح إعداد YAML | env | 17 | [SRC-9F6E30987B-L000017](../.github/workflows/hosted-smoke.yml#L17) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 18 | [SRC-9F6E30987B-L000018](../.github/workflows/hosted-smoke.yml#L18) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L18) | مفتاح إعداد YAML | OMARAI_BASE_URL | 18 | [SRC-9F6E30987B-L000018](../.github/workflows/hosted-smoke.yml#L18) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 19 | [SRC-9F6E30987B-L000019](../.github/workflows/hosted-smoke.yml#L19) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L19) | مفتاح إعداد YAML | OMARAI_ACCESS_TOKEN | 19 | [SRC-9F6E30987B-L000019](../.github/workflows/hosted-smoke.yml#L19) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L20) | مفتاح إعداد YAML | steps | 20 | [SRC-9F6E30987B-L000020](../.github/workflows/hosted-smoke.yml#L20) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L22) | مفتاح إعداد YAML | shell | 22 | [SRC-9F6E30987B-L000022](../.github/workflows/hosted-smoke.yml#L22) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L23) | مفتاح إعداد YAML | run | 23 | [SRC-9F6E30987B-L000023](../.github/workflows/hosted-smoke.yml#L23) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L39) | مفتاح إعداد YAML | uses | 39 | [SRC-9F6E30987B-L000039](../.github/workflows/hosted-smoke.yml#L39) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L43) | مفتاح إعداد YAML | with | 43 | [SRC-9F6E30987B-L000043](../.github/workflows/hosted-smoke.yml#L43) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L44) | مفتاح إعداد YAML | python-version | 44 | [SRC-9F6E30987B-L000044](../.github/workflows/hosted-smoke.yml#L44) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L50) | مفتاح إعداد YAML | if | 50 | [SRC-9F6E30987B-L000050](../.github/workflows/hosted-smoke.yml#L50) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L54) | مفتاح إعداد YAML | path | 54 | [SRC-9F6E30987B-L000054](../.github/workflows/hosted-smoke.yml#L54) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L55) | مفتاح إعداد YAML | if-no-files-found | 55 | [SRC-9F6E30987B-L000055](../.github/workflows/hosted-smoke.yml#L55) |
-| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L56) | مفتاح إعداد YAML | retention-days | 56 | [SRC-9F6E30987B-L000056](../.github/workflows/hosted-smoke.yml#L56) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L5) | مفتاح إعداد YAML | schedule | 5 | [SRC-9F6E30987B-L000005](../.github/workflows/hosted-smoke.yml#L5) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L7) | مفتاح إعداد YAML | permissions | 7 | [SRC-9F6E30987B-L000007](../.github/workflows/hosted-smoke.yml#L7) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L9) | مفتاح إعداد YAML | contents | 9 | [SRC-9F6E30987B-L000009](../.github/workflows/hosted-smoke.yml#L9) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L10) | مفتاح إعداد YAML | concurrency | 10 | [SRC-9F6E30987B-L000010](../.github/workflows/hosted-smoke.yml#L10) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L12) | مفتاح إعداد YAML | group | 12 | [SRC-9F6E30987B-L000012](../.github/workflows/hosted-smoke.yml#L12) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L13) | مفتاح إعداد YAML | cancel-in-progress | 13 | [SRC-9F6E30987B-L000013](../.github/workflows/hosted-smoke.yml#L13) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L14) | مفتاح إعداد YAML | jobs | 14 | [SRC-9F6E30987B-L000014](../.github/workflows/hosted-smoke.yml#L14) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L16) | مفتاح إعداد YAML | hosted-smoke | 16 | [SRC-9F6E30987B-L000016](../.github/workflows/hosted-smoke.yml#L16) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L17) | مفتاح إعداد YAML | runs-on | 17 | [SRC-9F6E30987B-L000017](../.github/workflows/hosted-smoke.yml#L17) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L18) | مفتاح إعداد YAML | timeout-minutes | 18 | [SRC-9F6E30987B-L000018](../.github/workflows/hosted-smoke.yml#L18) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L19) | مفتاح إعداد YAML | env | 19 | [SRC-9F6E30987B-L000019](../.github/workflows/hosted-smoke.yml#L19) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 20 | [SRC-9F6E30987B-L000020](../.github/workflows/hosted-smoke.yml#L20) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L20) | مفتاح إعداد YAML | OMARAI_BASE_URL | 20 | [SRC-9F6E30987B-L000020](../.github/workflows/hosted-smoke.yml#L20) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 21 | [SRC-9F6E30987B-L000021](../.github/workflows/hosted-smoke.yml#L21) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L21) | مفتاح إعداد YAML | OMARAI_ACCESS_TOKEN | 21 | [SRC-9F6E30987B-L000021](../.github/workflows/hosted-smoke.yml#L21) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L22) | مفتاح إعداد YAML | steps | 22 | [SRC-9F6E30987B-L000022](../.github/workflows/hosted-smoke.yml#L22) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L24) | مفتاح إعداد YAML | shell | 24 | [SRC-9F6E30987B-L000024](../.github/workflows/hosted-smoke.yml#L24) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L25) | مفتاح إعداد YAML | run | 25 | [SRC-9F6E30987B-L000025](../.github/workflows/hosted-smoke.yml#L25) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L41) | مفتاح إعداد YAML | uses | 41 | [SRC-9F6E30987B-L000041](../.github/workflows/hosted-smoke.yml#L41) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L45) | مفتاح إعداد YAML | with | 45 | [SRC-9F6E30987B-L000045](../.github/workflows/hosted-smoke.yml#L45) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L46) | مفتاح إعداد YAML | python-version | 46 | [SRC-9F6E30987B-L000046](../.github/workflows/hosted-smoke.yml#L46) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L52) | مفتاح إعداد YAML | if | 52 | [SRC-9F6E30987B-L000052](../.github/workflows/hosted-smoke.yml#L52) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L56) | مفتاح إعداد YAML | path | 56 | [SRC-9F6E30987B-L000056](../.github/workflows/hosted-smoke.yml#L56) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L57) | مفتاح إعداد YAML | if-no-files-found | 57 | [SRC-9F6E30987B-L000057](../.github/workflows/hosted-smoke.yml#L57) |
+| [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L58) | مفتاح إعداد YAML | retention-days | 58 | [SRC-9F6E30987B-L000058](../.github/workflows/hosted-smoke.yml#L58) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-1DB27D9318-L000001](../.github/workflows/tests.yml#L1) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-1DB27D9318-L000002](../.github/workflows/tests.yml#L2) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L3) | مفتاح إعداد YAML | push | 3 | [SRC-1DB27D9318-L000003](../.github/workflows/tests.yml#L3) |

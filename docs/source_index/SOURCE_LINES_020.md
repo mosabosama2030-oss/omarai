@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D57B0BB030-L000019 إلى SRC-E599346ABE-L000645
+- النطاق: SRC-D57B0BB030-L000017 إلى SRC-E599346ABE-L000643
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D57B0BB030-L000017](../DEPLOY_RENDER_AR.md#L17) | 17 | ``"2. اختر إنشاء **Blueprint** جديد واربط حساب GitHub بالمستودع `mosabosama2030-oss/omarai`."`` | — |
+| [SRC-D57B0BB030-L000018](../DEPLOY_RENDER_AR.md#L18) | 18 | ``"3. اختر الفرع `main`، ودع Render يقرأ ملف `render.yaml` الموجود في جذر المستودع."`` | — |
 | [SRC-D57B0BB030-L000019](../DEPLOY_RENDER_AR.md#L19) | 19 | `"4. راجع إعداد الخدمة وتأكد أن الخطة هي **Free**. سيطلب منك Render قيم المتغيرات السرية؛ أدخل رمز الوصول ومفتاح النموذج في النموذج الآمن فقط."` | — |
 | [SRC-D57B0BB030-L000020](../DEPLOY_RENDER_AR.md#L20) | 20 | `"5. أنشئ الخدمة وانتظر انتهاء بناء Docker والنشر. إذا طلب Render التأكيد على خطة مدفوعة، لا تتابع؛ ارجع وتحقق من اختيار Free."` | — |
 | [SRC-D57B0BB030-L000021](../DEPLOY_RENDER_AR.md#L21) | 21 | ``"6. افتح عنوان `onrender.com` الذي يقدمه Render، ثم جرّب `/api/health`."`` | — |
@@ -832,5 +834,3 @@
 | [SRC-E599346ABE-L000641](../generate_index.py#L641) | 641 | `"    # Re-read every eligible source independently to detect races or corrupted line records."` | — |
 | [SRC-E599346ABE-L000642](../generate_index.py#L642) | 642 | `"    for file, item in eligible_files.items():"` | — |
 | [SRC-E599346ABE-L000643](../generate_index.py#L643) | 643 | `"        source = _read_text_bounded(root / file)"` | — |
-| [SRC-E599346ABE-L000644](../generate_index.py#L644) | 644 | `"        if source is None:"` | — |
-| [SRC-E599346ABE-L000645](../generate_index.py#L645) | 645 | `"            failures.append(f\"{file}: تعذرت إعادة قراءة ملف مؤهل للتحقق\")"` | — |

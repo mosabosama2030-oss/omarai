@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005149 إلى SRC-1AE03B9EC3-L005948
+- النطاق: SRC-1AE03B9EC3-L005147 إلى SRC-1AE03B9EC3-L005946
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005147](../../agents/web_agent.py#L5147) | 5147 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L005148](../../agents/web_agent.py#L5148) | 5148 | `"        if isinstance(report, dict):"` | — |
 | [SRC-1AE03B9EC3-L005149](../../agents/web_agent.py#L5149) | 5149 | `"            report[\"dialogue_context\"] = plan.get(\"dialogue_context\", {})"` | — |
 | [SRC-1AE03B9EC3-L005150](../../agents/web_agent.py#L5150) | 5150 | `"            report[\"task_understanding\"] = {"` | — |
 | [SRC-1AE03B9EC3-L005151](../../agents/web_agent.py#L5151) | 5151 | `"                \"task_spec\": task_spec,"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L005944](../../agents/web_agent.py#L5944) | 5944 | `"                    \"أعرض مقتطفات المصادر المتاحة فقط، ولا أعتبر المهمة مكتملة.\""` | — |
 | [SRC-1AE03B9EC3-L005945](../../agents/web_agent.py#L5945) | 5945 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L005946](../../agents/web_agent.py#L5946) | 5946 | `"            elif not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L005947](../../agents/web_agent.py#L5947) | 5947 | `"                reason = ("` | — |
-| [SRC-1AE03B9EC3-L005948](../../agents/web_agent.py#L5948) | 5948 | `"                    \"تم البحث، لكن الفهم التوليدي غير مفعّل بعد. اضبط OPENROUTER_API_KEY \""` | — |

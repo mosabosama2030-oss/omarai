@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002302 إلى SRC-F725E90B2A-L003101
+- النطاق: SRC-F725E90B2A-L002298 إلى SRC-F725E90B2A-L003097
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002298](../../tests/test_web_agent.py#L2298) | 2298 | `"        \"queries\": [question],"` | — |
+| [SRC-F725E90B2A-L002299](../../tests/test_web_agent.py#L2299) | 2299 | `"    })"` | — |
+| [SRC-F725E90B2A-L002300](../../tests/test_web_agent.py#L2300) | 2300 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L002301](../../tests/test_web_agent.py#L2301) | 2301 | `"        \"queries\": [question],"` | — |
 | [SRC-F725E90B2A-L002302](../../tests/test_web_agent.py#L2302) | 2302 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L002303](../../tests/test_web_agent.py#L2303) | 2303 | `"        \"social_focus\": False,"` | — |
 | [SRC-F725E90B2A-L002304](../../tests/test_web_agent.py#L2304) | 2304 | `"        \"freshness\": \"any\","` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L003095](../../tests/test_web_agent.py#L3095) | 3095 | `"def test_search_web_classifies_http_302_as_degraded_without_following_provider_redirect(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L003096](../../tests/test_web_agent.py#L3096) | 3096 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L003097](../../tests/test_web_agent.py#L3097) | 3097 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L003098](../../tests/test_web_agent.py#L3098) | 3098 | `""` | — |
-| [SRC-F725E90B2A-L003099](../../tests/test_web_agent.py#L3099) | 3099 | `"    def redirect_response(query):"` | — |
-| [SRC-F725E90B2A-L003100](../../tests/test_web_agent.py#L3100) | 3100 | `"        calls.append((\"duckduckgo_html\", query))"` | — |
-| [SRC-F725E90B2A-L003101](../../tests/test_web_agent.py#L3101) | 3101 | `"        raise RuntimeError(\"HTTP 302\")"` | — |

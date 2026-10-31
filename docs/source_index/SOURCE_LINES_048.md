@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001502 إلى SRC-F725E90B2A-L002301
+- النطاق: SRC-F725E90B2A-L001498 إلى SRC-F725E90B2A-L002297
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001498](../../tests/test_web_agent.py#L1498) | 1498 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L001499](../../tests/test_web_agent.py#L1499) | 1499 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L001500](../../tests/test_web_agent.py#L1500) | 1500 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L001501](../../tests/test_web_agent.py#L1501) | 1501 | `"        \"title\": \"موقع مصر الرقمية والخدمات الحكومية\","` | — |
 | [SRC-F725E90B2A-L001502](../../tests/test_web_agent.py#L1502) | 1502 | `"        \"url\": \"https://digital.gov.eg/\","` | — |
 | [SRC-F725E90B2A-L001503](../../tests/test_web_agent.py#L1503) | 1503 | `"        \"snippet\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
 | [SRC-F725E90B2A-L001504](../../tests/test_web_agent.py#L1504) | 1504 | `"        \"page_text\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002295](../../tests/test_web_agent.py#L2295) | 2295 | `"        \"title\": \"مشروعات عقارية في العاصمة الإدارية\","` | — |
 | [SRC-F725E90B2A-L002296](../../tests/test_web_agent.py#L2296) | 2296 | `"        \"snippet\": \"تعرف على الوحدات السكنية المتاحة للبيع.\","` | — |
 | [SRC-F725E90B2A-L002297](../../tests/test_web_agent.py#L2297) | 2297 | `"        \"page_text\": \"معلومات عامة عن مشروعات وشقق للبيع.\","` | — |
-| [SRC-F725E90B2A-L002298](../../tests/test_web_agent.py#L2298) | 2298 | `"        \"queries\": [question],"` | — |
-| [SRC-F725E90B2A-L002299](../../tests/test_web_agent.py#L2299) | 2299 | `"    })"` | — |
-| [SRC-F725E90B2A-L002300](../../tests/test_web_agent.py#L2300) | 2300 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L002301](../../tests/test_web_agent.py#L2301) | 2301 | `"        \"queries\": [question],"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002749 إلى SRC-1AE03B9EC3-L003548
+- النطاق: SRC-1AE03B9EC3-L002747 إلى SRC-1AE03B9EC3-L003546
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002747](../../agents/web_agent.py#L2747) | 2747 | `"                        source[\"title\"] = title"` | — |
+| [SRC-1AE03B9EC3-L002748](../../agents/web_agent.py#L2748) | 2748 | `"                    if page_text and page_text.strip():"` | — |
 | [SRC-1AE03B9EC3-L002749](../../agents/web_agent.py#L2749) | 2749 | `"                        source[\"page_text\"] = page_text"` | — |
 | [SRC-1AE03B9EC3-L002750](../../agents/web_agent.py#L2750) | 2750 | `"                        source[\"snippet\"] = page_text[:1800]"` | — |
 | [SRC-1AE03B9EC3-L002751](../../agents/web_agent.py#L2751) | 2751 | `"                        source[\"page_fetched\"] = True"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L003544](../../agents/web_agent.py#L3544) | 3544 | `"            required_prefix.extend("` | — |
 | [SRC-1AE03B9EC3-L003545](../../agents/web_agent.py#L3545) | 3545 | `"                item[\"query\"] for item in plan[\"requirement_queries\"] if item.get(\"query\")"` | — |
 | [SRC-1AE03B9EC3-L003546](../../agents/web_agent.py#L3546) | 3546 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003547](../../agents/web_agent.py#L3547) | 3547 | `"            plan[\"queries\"] = list(dict.fromkeys("` | — |
-| [SRC-1AE03B9EC3-L003548](../../agents/web_agent.py#L3548) | 3548 | `"                required_prefix + list(plan.get(\"queries\") or [])"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2D53795445-L000066 إلى SRC-C9CF9B54F8-L000047
+- النطاق: SRC-2D53795445-L000064 إلى SRC-C9CF9B54F8-L000045
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2D53795445-L000064](../../agents/dialogue_state.py#L64) | 64 | `"        clean = _clean_text(item, max_chars)"` | — |
+| [SRC-2D53795445-L000065](../../agents/dialogue_state.py#L65) | 65 | `"        key = clean.casefold()"` | — |
 | [SRC-2D53795445-L000066](../../agents/dialogue_state.py#L66) | 66 | `"        if clean and key not in seen:"` | — |
 | [SRC-2D53795445-L000067](../../agents/dialogue_state.py#L67) | 67 | `"            result.append(clean)"` | — |
 | [SRC-2D53795445-L000068](../../agents/dialogue_state.py#L68) | 68 | `"            seen.add(key)"` | — |
@@ -832,5 +834,3 @@
 | [SRC-C9CF9B54F8-L000043](../../agents/omarai.py#L43) | 43 | `"        or unicodedata.category(text[index]) in {\"Cc\", \"Cf\"}"` | — |
 | [SRC-C9CF9B54F8-L000044](../../agents/omarai.py#L44) | 44 | `"    ):"` | — |
 | [SRC-C9CF9B54F8-L000045](../../agents/omarai.py#L45) | 45 | `"        index += 1"` | — |
-| [SRC-C9CF9B54F8-L000046](../../agents/omarai.py#L46) | 46 | `"    first_non_format = text[index:index + 1]"` | — |
-| [SRC-C9CF9B54F8-L000047](../../agents/omarai.py#L47) | 47 | `"    formula_prefixes = {\"=\", \"+\", \"-\", \"@\", \"＝\", \"＋\", \"－\", \"＠\"}"` | — |

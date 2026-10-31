@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000073 إلى SRC-90FAA34ADE-L000475
+- النطاق: SRC-03FF422A16-L000071 إلى SRC-90FAA34ADE-L000473
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000071](../../scripts/score_answer_quality_reviews.py#L71) | 71 | `"            problems.append(case_id + \": unknown case_id (not in the supplied corpus)\")"` | — |
+| [SRC-03FF422A16-L000072](../../scripts/score_answer_quality_reviews.py#L72) | 72 | `"        status = item.get(\"status\")"` | — |
 | [SRC-03FF422A16-L000073](../../scripts/score_answer_quality_reviews.py#L73) | 73 | `"        if status not in ALLOWED_STATUSES:"` | — |
 | [SRC-03FF422A16-L000074](../../scripts/score_answer_quality_reviews.py#L74) | 74 | `"            problems.append(case_id + \": status must be one of \" + \", \".join(sorted(ALLOWED_STATUSES)))"` | — |
 | [SRC-03FF422A16-L000075](../../scripts/score_answer_quality_reviews.py#L75) | 75 | `"            continue"` | — |
@@ -832,5 +834,3 @@
 | [SRC-90FAA34ADE-L000471](../../tests/fixtures/answer_quality_cases.json#L471) | 471 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000472](../../tests/fixtures/answer_quality_cases.json#L472) | 472 | `"        \"sources\": ["` | — |
 | [SRC-90FAA34ADE-L000473](../../tests/fixtures/answer_quality_cases.json#L473) | 473 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000474](../../tests/fixtures/answer_quality_cases.json#L474) | 474 | `"            \"title\": \"Announcement A\","` | — |
-| [SRC-90FAA34ADE-L000475](../../tests/fixtures/answer_quality_cases.json#L475) | 475 | `"            \"url\": \"https://agency-a.example.test/notice\","` | — |

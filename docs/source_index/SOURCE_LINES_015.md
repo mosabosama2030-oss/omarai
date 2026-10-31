@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004349 إلى SRC-1AE03B9EC3-L005148
+- النطاق: SRC-1AE03B9EC3-L004347 إلى SRC-1AE03B9EC3-L005146
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004347](../../agents/web_agent.py#L4347) | 4347 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004348](../../agents/web_agent.py#L4348) | 4348 | `"                result[\"answer_integrity\"] = answer_integrity"` | — |
 | [SRC-1AE03B9EC3-L004349](../../agents/web_agent.py#L4349) | 4349 | `"                coverage = result.get(\"answer_coverage\")"` | — |
 | [SRC-1AE03B9EC3-L004350](../../agents/web_agent.py#L4350) | 4350 | `"                if not isinstance(coverage, dict):"` | — |
 | [SRC-1AE03B9EC3-L004351](../../agents/web_agent.py#L4351) | 4351 | `"                    coverage = {}"` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L005144](../../agents/web_agent.py#L5144) | 5144 | `"                \"planning_method\": plan.get(\"planning_method\", \"deterministic_fallback\"),"` | — |
 | [SRC-1AE03B9EC3-L005145](../../agents/web_agent.py#L5145) | 5145 | `"                \"dialogue_context\": plan.get(\"dialogue_context\", {}),"` | — |
 | [SRC-1AE03B9EC3-L005146](../../agents/web_agent.py#L5146) | 5146 | `"                \"evidence_signals\": evidence_signal_report([], plan.get(\"freshness\", \"any\")),"` | — |
-| [SRC-1AE03B9EC3-L005147](../../agents/web_agent.py#L5147) | 5147 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L005148](../../agents/web_agent.py#L5148) | 5148 | `"        if isinstance(report, dict):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000181 إلى SRC-FBDC61DA0B-L000050
+- النطاق: SRC-96F6863E3C-L000177 إلى SRC-FBDC61DA0B-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000177](../../tests/test_research_pipeline.py#L177) | 177 | `"        dialogue_context={"` | — |
+| [SRC-96F6863E3C-L000178](../../tests/test_research_pipeline.py#L178) | 178 | `"            \"resolved_question\": \"ما ضمان iPhone 17 في مصر؟\","` | — |
+| [SRC-96F6863E3C-L000179](../../tests/test_research_pipeline.py#L179) | 179 | `"            \"topic_shift\": True,"` | — |
+| [SRC-96F6863E3C-L000180](../../tests/test_research_pipeline.py#L180) | 180 | `"        },"` | — |
 | [SRC-96F6863E3C-L000181](../../tests/test_research_pipeline.py#L181) | 181 | `"    )"` | — |
 | [SRC-96F6863E3C-L000182](../../tests/test_research_pipeline.py#L182) | 182 | `""` | — |
 | [SRC-96F6863E3C-L000183](../../tests/test_research_pipeline.py#L183) | 183 | `"    assert result[\"contextual_question\"] == \"ما سعر سامسونج S26؟\""` | — |
@@ -857,7 +861,3 @@
 | [SRC-FBDC61DA0B-L000044](../../tests/test_tool_execution_status.py#L44) | 44 | `"    assert statuses[\"claim_review_if_configured\"] == \"not_attempted_no_evidence\""` | — |
 | [SRC-FBDC61DA0B-L000045](../../tests/test_tool_execution_status.py#L45) | 45 | `"    assert all(\"لا تثبت صحة المحتوى\" in row[\"semantics\"] for row in rows)"` | — |
 | [SRC-FBDC61DA0B-L000046](../../tests/test_tool_execution_status.py#L46) | 46 | `""` | — |
-| [SRC-FBDC61DA0B-L000047](../../tests/test_tool_execution_status.py#L47) | 47 | `""` | — |
-| [SRC-FBDC61DA0B-L000048](../../tests/test_tool_execution_status.py#L48) | 48 | `"def test_tool_matrix_reports_observed_success_without_claiming_fact_verification():"` | — |
-| [SRC-FBDC61DA0B-L000049](../../tests/test_tool_execution_status.py#L49) | 49 | `"    spec = {\"tool_requirements\": sorted(TOOLS)}"` | — |
-| [SRC-FBDC61DA0B-L000050](../../tests/test_tool_execution_status.py#L50) | 50 | `"    result = {"` | — |

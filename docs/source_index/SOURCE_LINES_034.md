@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001276 إلى SRC-4CCB1F172B-L000039
+- النطاق: SRC-90FAA34ADE-L001274 إلى SRC-4CCB1F172B-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001274](../../tests/fixtures/answer_quality_cases.json#L1274) | 1274 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001275](../../tests/fixtures/answer_quality_cases.json#L1275) | 1275 | `"    },"` | — |
 | [SRC-90FAA34ADE-L001276](../../tests/fixtures/answer_quality_cases.json#L1276) | 1276 | `"    {"` | — |
 | [SRC-90FAA34ADE-L001277](../../tests/fixtures/answer_quality_cases.json#L1277) | 1277 | `"      \"case_id\": \"AQ-043\","` | — |
 | [SRC-90FAA34ADE-L001278](../../tests/fixtures/answer_quality_cases.json#L1278) | 1278 | `"      \"category\": \"ambiguous_clarify\","` | — |
@@ -859,5 +861,3 @@
 | [SRC-4CCB1F172B-L000035](../../tests/test_answer_quality_corpus.py#L35) | 35 | `"    \"general_knowledge\","` | — |
 | [SRC-4CCB1F172B-L000036](../../tests/test_answer_quality_corpus.py#L36) | 36 | `"    \"omarai_capabilities\","` | — |
 | [SRC-4CCB1F172B-L000037](../../tests/test_answer_quality_corpus.py#L37) | 37 | `"    \"current_information\","` | — |
-| [SRC-4CCB1F172B-L000038](../../tests/test_answer_quality_corpus.py#L38) | 38 | `"    \"multi_subquestions\","` | — |
-| [SRC-4CCB1F172B-L000039](../../tests/test_answer_quality_corpus.py#L39) | 39 | `"    \"ambiguous_clarify\","` | — |

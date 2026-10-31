@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003102 إلى SRC-8C13B81AB4-L000002
+- النطاق: SRC-F725E90B2A-L003098 إلى SRC-F725E90B2A-L003897
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003098](../../tests/test_web_agent.py#L3098) | 3098 | `""` | — |
+| [SRC-F725E90B2A-L003099](../../tests/test_web_agent.py#L3099) | 3099 | `"    def redirect_response(query):"` | — |
+| [SRC-F725E90B2A-L003100](../../tests/test_web_agent.py#L3100) | 3100 | `"        calls.append((\"duckduckgo_html\", query))"` | — |
+| [SRC-F725E90B2A-L003101](../../tests/test_web_agent.py#L3101) | 3101 | `"        raise RuntimeError(\"HTTP 302\")"` | — |
 | [SRC-F725E90B2A-L003102](../../tests/test_web_agent.py#L3102) | 3102 | `""` | — |
 | [SRC-F725E90B2A-L003103](../../tests/test_web_agent.py#L3103) | 3103 | `"    def no_results(query):"` | — |
 | [SRC-F725E90B2A-L003104](../../tests/test_web_agent.py#L3104) | 3104 | `"        calls.append((\"bing_rss\", query))"` | — |
@@ -812,16 +816,3 @@
 | [SRC-F725E90B2A-L003895](../../tests/test_web_agent.py#L3895) | 3895 | `"    monkeypatch.setattr(\"agents.web_agent.build_research_completion\", fail_diagnostics)"` | — |
 | [SRC-F725E90B2A-L003896](../../tests/test_web_agent.py#L3896) | 3896 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
 | [SRC-F725E90B2A-L003897](../../tests/test_web_agent.py#L3897) | 3897 | `"    assert result[\"answer\"] == \"إجابة اختبارية [المصدر 1].\""` | — |
-| [SRC-F725E90B2A-L003898](../../tests/test_web_agent.py#L3898) | 3898 | `"    assert result[\"research_completion\"][\"status\"] == \"diagnostics_not_computed\""` | — |
-| [SRC-F725E90B2A-L003899](../../tests/test_web_agent.py#L3899) | 3899 | `"    assert any(\"لا يُعد ذلك دليلًا على اكتمال البحث\" in warning for warning in result[\"warnings\"])"` | — |
-## اختبارات
-
-### FILE-8C13B81AB4 — [tests/test_web_agent_nlu_integration.py](../../tests/test_web_agent_nlu_integration.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-8C13B81AB4-L000001](../../tests/test_web_agent_nlu_integration.py#L1) | 1 | `"\"\"\"Integration regressions for budgeted academic fallback and compound facets.\"\"\""` | — |
-| [SRC-8C13B81AB4-L000002](../../tests/test_web_agent_nlu_integration.py#L2) | 2 | `"from __future__ import annotations"` | — |

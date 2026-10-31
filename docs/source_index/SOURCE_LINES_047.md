@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000702 إلى SRC-F725E90B2A-L001501
+- النطاق: SRC-F725E90B2A-L000698 إلى SRC-F725E90B2A-L001497
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000698](../../tests/test_web_agent.py#L698) | 698 | `""` | — |
+| [SRC-F725E90B2A-L000699](../../tests/test_web_agent.py#L699) | 699 | `""` | — |
+| [SRC-F725E90B2A-L000700](../../tests/test_web_agent.py#L700) | 700 | `"def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000701](../../tests/test_web_agent.py#L701) | 701 | `"    import io"` | — |
 | [SRC-F725E90B2A-L000702](../../tests/test_web_agent.py#L702) | 702 | `"    import json"` | — |
 | [SRC-F725E90B2A-L000703](../../tests/test_web_agent.py#L703) | 703 | `"    import urllib.error"` | — |
 | [SRC-F725E90B2A-L000704](../../tests/test_web_agent.py#L704) | 704 | `""` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001495](../../tests/test_web_agent.py#L1495) | 1495 | `""` | — |
 | [SRC-F725E90B2A-L001496](../../tests/test_web_agent.py#L1496) | 1496 | `""` | — |
 | [SRC-F725E90B2A-L001497](../../tests/test_web_agent.py#L1497) | 1497 | `"def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001498](../../tests/test_web_agent.py#L1498) | 1498 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001499](../../tests/test_web_agent.py#L1499) | 1499 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L001500](../../tests/test_web_agent.py#L1500) | 1500 | `"    source = {"` | — |
-| [SRC-F725E90B2A-L001501](../../tests/test_web_agent.py#L1501) | 1501 | `"        \"title\": \"موقع مصر الرقمية والخدمات الحكومية\","` | — |

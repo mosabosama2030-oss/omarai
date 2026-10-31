@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001149 إلى SRC-1AE03B9EC3-L001948
+- النطاق: SRC-1AE03B9EC3-L001147 إلى SRC-1AE03B9EC3-L001946
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001147](../../agents/web_agent.py#L1147) | 1147 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L001148](../../agents/web_agent.py#L1148) | 1148 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L001149](../../agents/web_agent.py#L1149) | 1149 | `""` | — |
 | [SRC-1AE03B9EC3-L001150](../../agents/web_agent.py#L1150) | 1150 | `"    def _self_description_answer(self, question: str) -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L001151](../../agents/web_agent.py#L1151) | 1151 | `"        \"\"\"Answer self/capability questions without inventing a live health result.\"\"\""` | — |
@@ -814,5 +816,3 @@
 | [SRC-1AE03B9EC3-L001944](../../agents/web_agent.py#L1944) | 1944 | `"            except (httpx.HTTPError, OSError, ValueError, ET.ParseError):"` | — |
 | [SRC-1AE03B9EC3-L001945](../../agents/web_agent.py#L1945) | 1945 | `"                warnings.append(\"Reddit public RSS unavailable for this request\")"` | — |
 | [SRC-1AE03B9EC3-L001946](../../agents/web_agent.py#L1946) | 1946 | `""` | — |
-| [SRC-1AE03B9EC3-L001947](../../agents/web_agent.py#L1947) | 1947 | `"        if \"bluesky\" in platforms:"` | — |
-| [SRC-1AE03B9EC3-L001948](../../agents/web_agent.py#L1948) | 1948 | `"            try:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000372 إلى SRC-3451CC474D-L000388
+- النطاق: SRC-B3062EB677-L000370 إلى SRC-3451CC474D-L000386
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000370](../../tests/test_answer_quality_runner.py#L370) | 370 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
+| [SRC-B3062EB677-L000371](../../tests/test_answer_quality_runner.py#L371) | 371 | `"    rc = mod.run_live("` | — |
 | [SRC-B3062EB677-L000372](../../tests/test_answer_quality_runner.py#L372) | 372 | `"        CORPUS, \"http://127.0.0.1:8765\", \"AQ-001\", 1, 1.0, 0.0, None,"` | — |
 | [SRC-B3062EB677-L000373](../../tests/test_answer_quality_runner.py#L373) | 373 | `"        build_sha=\"b\" * 40,"` | — |
 | [SRC-B3062EB677-L000374](../../tests/test_answer_quality_runner.py#L374) | 374 | `"    )"` | — |
@@ -841,5 +843,3 @@
 | [SRC-3451CC474D-L000384](../../tests/test_api.py#L384) | 384 | `"        release_worker.set()"` | — |
 | [SRC-3451CC474D-L000385](../../tests/test_api.py#L385) | 385 | `"        first_client.close()"` | — |
 | [SRC-3451CC474D-L000386](../../tests/test_api.py#L386) | 386 | `"        second_client.close()"` | — |
-| [SRC-3451CC474D-L000387](../../tests/test_api.py#L387) | 387 | `"        server.server_close()"` | — |
-| [SRC-3451CC474D-L000388](../../tests/test_api.py#L388) | 388 | `""` | — |

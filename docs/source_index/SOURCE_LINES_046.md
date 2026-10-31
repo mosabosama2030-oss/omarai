@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FBDC61DA0B-L000051 إلى SRC-F725E90B2A-L000701
+- النطاق: SRC-FBDC61DA0B-L000047 إلى SRC-F725E90B2A-L000697
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FBDC61DA0B-L000047](../../tests/test_tool_execution_status.py#L47) | 47 | `""` | — |
+| [SRC-FBDC61DA0B-L000048](../../tests/test_tool_execution_status.py#L48) | 48 | `"def test_tool_matrix_reports_observed_success_without_claiming_fact_verification():"` | — |
+| [SRC-FBDC61DA0B-L000049](../../tests/test_tool_execution_status.py#L49) | 49 | `"    spec = {\"tool_requirements\": sorted(TOOLS)}"` | — |
+| [SRC-FBDC61DA0B-L000050](../../tests/test_tool_execution_status.py#L50) | 50 | `"    result = {"` | — |
 | [SRC-FBDC61DA0B-L000051](../../tests/test_tool_execution_status.py#L51) | 51 | `"        \"search_attempted\": True,"` | — |
 | [SRC-FBDC61DA0B-L000052](../../tests/test_tool_execution_status.py#L52) | 52 | `"        \"used_language_model\": True,"` | — |
 | [SRC-FBDC61DA0B-L000053](../../tests/test_tool_execution_status.py#L53) | 53 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
@@ -821,7 +825,3 @@
 | [SRC-F725E90B2A-L000695](../../tests/test_web_agent.py#L695) | 695 | `"    assert agent.planner_model == \"example/custom-model\""` | — |
 | [SRC-F725E90B2A-L000696](../../tests/test_web_agent.py#L696) | 696 | `"    assert agent.answer_model == \"example/custom-model\""` | — |
 | [SRC-F725E90B2A-L000697](../../tests/test_web_agent.py#L697) | 697 | `"    assert agent.review_model == \"example/custom-model\""` | — |
-| [SRC-F725E90B2A-L000698](../../tests/test_web_agent.py#L698) | 698 | `""` | — |
-| [SRC-F725E90B2A-L000699](../../tests/test_web_agent.py#L699) | 699 | `""` | — |
-| [SRC-F725E90B2A-L000700](../../tests/test_web_agent.py#L700) | 700 | `"def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000701](../../tests/test_web_agent.py#L701) | 701 | `"    import io"` | — |

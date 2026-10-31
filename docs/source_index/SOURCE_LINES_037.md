@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000389 إلى SRC-DA61479D59-L000027
+- النطاق: SRC-3451CC474D-L000387 إلى SRC-DA61479D59-L000025
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000387](../../tests/test_api.py#L387) | 387 | `"        server.server_close()"` | — |
+| [SRC-3451CC474D-L000388](../../tests/test_api.py#L388) | 388 | `""` | — |
 | [SRC-3451CC474D-L000389](../../tests/test_api.py#L389) | 389 | `""` | — |
 | [SRC-3451CC474D-L000390](../../tests/test_api.py#L390) | 390 | `"def test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota(monkeypatch):"` | — |
 | [SRC-3451CC474D-L000391](../../tests/test_api.py#L391) | 391 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
@@ -841,5 +843,3 @@
 | [SRC-DA61479D59-L000023](../../tests/test_connector_summary_counters.py#L23) | 23 | `"            \"result_count\": 0,"` | — |
 | [SRC-DA61479D59-L000024](../../tests/test_connector_summary_counters.py#L24) | 24 | `"            \"rejected_count\": 0,"` | — |
 | [SRC-DA61479D59-L000025](../../tests/test_connector_summary_counters.py#L25) | 25 | `"            \"error\": \"HTTP 500 token=secret-value\","` | — |
-| [SRC-DA61479D59-L000026](../../tests/test_connector_summary_counters.py#L26) | 26 | `"        },"` | — |
-| [SRC-DA61479D59-L000027](../../tests/test_connector_summary_counters.py#L27) | 27 | `"    ]"` | — |

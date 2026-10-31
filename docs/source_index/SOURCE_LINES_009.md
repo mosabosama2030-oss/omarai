@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001318 إلى SRC-1AE03B9EC3-L000348
+- النطاق: SRC-686F71AA50-L001316 إلى SRC-1AE03B9EC3-L000346
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001316](../../agents/task_understanding.py#L1316) | 1316 | `"            if isinstance(raw_context.get(\"confidence_band\"), str)"` | — |
+| [SRC-686F71AA50-L001317](../../agents/task_understanding.py#L1317) | 1317 | `"            and raw_context.get(\"confidence_band\") in {\"low\", \"medium\", \"high\", \"unassessed\"}"` | — |
 | [SRC-686F71AA50-L001318](../../agents/task_understanding.py#L1318) | 1318 | `"            else \"unassessed\""` | — |
 | [SRC-686F71AA50-L001319](../../agents/task_understanding.py#L1319) | 1319 | `"        ),"` | — |
 | [SRC-686F71AA50-L001320](../../agents/task_understanding.py#L1320) | 1320 | `"        \"needs_clarification\": raw_context.get(\"needs_clarification\") is True,"` | — |
@@ -841,5 +843,3 @@
 | [SRC-1AE03B9EC3-L000344](../../agents/web_agent.py#L344) | 344 | `"def _clean_text(value: Any, limit: int) -> str:"` | — |
 | [SRC-1AE03B9EC3-L000345](../../agents/web_agent.py#L345) | 345 | `"    if not isinstance(value, str):"` | — |
 | [SRC-1AE03B9EC3-L000346](../../agents/web_agent.py#L346) | 346 | `"        return \"\""` | — |
-| [SRC-1AE03B9EC3-L000347](../../agents/web_agent.py#L347) | 347 | `"    return \" \".join(value.replace(\"\\x00\", \" \").split())[:limit]"` | — |
-| [SRC-1AE03B9EC3-L000348](../../agents/web_agent.py#L348) | 348 | `""` | — |

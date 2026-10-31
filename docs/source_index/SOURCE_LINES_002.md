@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000312 إلى SRC-2D53795445-L000065
+- النطاق: SRC-138992B1FC-L000310 إلى SRC-2D53795445-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"        citation_alignment.append({"` | — |
+| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"            \"sentence_number\": sentence_number,"` | — |
 | [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"            \"status\": sentence_status,"` | — |
 | [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"            \"claim_terms_checked\": claim_tokens[:16],"` | — |
 | [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"            \"citations\": cited_checks,"` | — |
@@ -841,5 +843,3 @@
 | [SRC-2D53795445-L000061](../../agents/dialogue_state.py#L61) | 61 | `"    result: list[str] = []"` | — |
 | [SRC-2D53795445-L000062](../../agents/dialogue_state.py#L62) | 62 | `"    seen: set[str] = set()"` | — |
 | [SRC-2D53795445-L000063](../../agents/dialogue_state.py#L63) | 63 | `"    for item in value[:max_items * 2]:"` | — |
-| [SRC-2D53795445-L000064](../../agents/dialogue_state.py#L64) | 64 | `"        clean = _clean_text(item, max_chars)"` | — |
-| [SRC-2D53795445-L000065](../../agents/dialogue_state.py#L65) | 65 | `"        key = clean.casefold()"` | — |

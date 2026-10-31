@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000071 إلى SRC-96F6863E3C-L000180
+- النطاق: SRC-AFFCF23BD4-L000067 إلى SRC-96F6863E3C-L000176
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000067](../../tests/test_research_completion.py#L67) | 67 | `"    assert result[\"status\"] == \"source_snippets_only_generation_not_completed\""` | — |
+| [SRC-AFFCF23BD4-L000068](../../tests/test_research_completion.py#L68) | 68 | `"    assert result[\"phases\"][\"page_reading\"] == \"no_final_source_page_read\""` | — |
+| [SRC-AFFCF23BD4-L000069](../../tests/test_research_completion.py#L69) | 69 | `"    assert result[\"counters\"][\"pages_read_with_text_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000070](../../tests/test_research_completion.py#L70) | 70 | `""` | — |
 | [SRC-AFFCF23BD4-L000071](../../tests/test_research_completion.py#L71) | 71 | `""` | — |
 | [SRC-AFFCF23BD4-L000072](../../tests/test_research_completion.py#L72) | 72 | `"def test_answer_with_valid_citation_indices_still_discloses_semantic_gap() -> None:"` | — |
 | [SRC-AFFCF23BD4-L000073](../../tests/test_research_completion.py#L73) | 73 | `"    result = build_research_completion({"` | — |
@@ -830,7 +834,3 @@
 | [SRC-96F6863E3C-L000174](../../tests/test_research_pipeline.py#L174) | 174 | `"        \"ما سعر سامسونج S26؟\","` | — |
 | [SRC-96F6863E3C-L000175](../../tests/test_research_pipeline.py#L175) | 175 | `"        {\"queries\": [\"سعر سامسونج S26\"]},"` | — |
 | [SRC-96F6863E3C-L000176](../../tests/test_research_pipeline.py#L176) | 176 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000177](../../tests/test_research_pipeline.py#L177) | 177 | `"        dialogue_context={"` | — |
-| [SRC-96F6863E3C-L000178](../../tests/test_research_pipeline.py#L178) | 178 | `"            \"resolved_question\": \"ما ضمان iPhone 17 في مصر؟\","` | — |
-| [SRC-96F6863E3C-L000179](../../tests/test_research_pipeline.py#L179) | 179 | `"            \"topic_shift\": True,"` | — |
-| [SRC-96F6863E3C-L000180](../../tests/test_research_pipeline.py#L180) | 180 | `"        },"` | — |

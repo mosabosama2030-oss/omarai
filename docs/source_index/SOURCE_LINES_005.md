@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000045 إلى SRC-59CF4B7DE8-L000844
+- النطاق: SRC-59CF4B7DE8-L000043 إلى SRC-59CF4B7DE8-L000842
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000043](../../agents/research.py#L43) | 43 | `"        return \"\""` | — |
+| [SRC-59CF4B7DE8-L000044](../../agents/research.py#L44) | 44 | `"    parsed = urlparse(candidate if \"://\" in candidate else \"//\" + candidate)"` | — |
 | [SRC-59CF4B7DE8-L000045](../../agents/research.py#L45) | 45 | `"    host = (parsed.hostname or \"\").rstrip(\".\").lower()"` | — |
 | [SRC-59CF4B7DE8-L000046](../../agents/research.py#L46) | 46 | `"    if not host:"` | — |
 | [SRC-59CF4B7DE8-L000047](../../agents/research.py#L47) | 47 | `"        return \"\""` | — |
@@ -814,5 +816,3 @@
 | [SRC-59CF4B7DE8-L000840](../../agents/research.py#L840) | 840 | `"    combined = \" \".join([query] + list(extra_queries or []))"` | — |
 | [SRC-59CF4B7DE8-L000841](../../agents/research.py#L841) | 841 | `""` | — |
 | [SRC-59CF4B7DE8-L000842](../../agents/research.py#L842) | 842 | `"    for src in sources or []:"` | — |
-| [SRC-59CF4B7DE8-L000843](../../agents/research.py#L843) | 843 | `"        if not isinstance(src, dict):"` | — |
-| [SRC-59CF4B7DE8-L000844](../../agents/research.py#L844) | 844 | `"            diag.append({\"reason\": \"malformed\", \"url\": \"\"})"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000048 إلى SRC-59CF4B7DE8-L000044
+- النطاق: SRC-C9CF9B54F8-L000046 إلى SRC-59CF4B7DE8-L000042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000046](../../agents/omarai.py#L46) | 46 | `"    first_non_format = text[index:index + 1]"` | — |
+| [SRC-C9CF9B54F8-L000047](../../agents/omarai.py#L47) | 47 | `"    formula_prefixes = {\"=\", \"+\", \"-\", \"@\", \"＝\", \"＋\", \"－\", \"＠\"}"` | — |
 | [SRC-C9CF9B54F8-L000048](../../agents/omarai.py#L48) | 48 | `"    if text[0] in \"\\t\\r\\n\" or first_non_format in formula_prefixes:"` | — |
 | [SRC-C9CF9B54F8-L000049](../../agents/omarai.py#L49) | 49 | `"        # OWASP notes that a tab inside the quoted CSV field is more resilient"` | — |
 | [SRC-C9CF9B54F8-L000050](../../agents/omarai.py#L50) | 50 | `"        # in Excel than an apostrophe, although no CSV mitigation is universal."` | — |
@@ -841,5 +843,3 @@
 | [SRC-59CF4B7DE8-L000040](../../agents/research.py#L40) | 40 | `"    \"\"\""` | — |
 | [SRC-59CF4B7DE8-L000041](../../agents/research.py#L41) | 41 | `"    candidate = str(value or \"\").strip()"` | — |
 | [SRC-59CF4B7DE8-L000042](../../agents/research.py#L42) | 42 | `"    if not candidate:"` | — |
-| [SRC-59CF4B7DE8-L000043](../../agents/research.py#L43) | 43 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000044](../../agents/research.py#L44) | 44 | `"    parsed = urlparse(candidate if \"://\" in candidate else \"//\" + candidate)"` | — |
