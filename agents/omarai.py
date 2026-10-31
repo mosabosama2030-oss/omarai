@@ -227,7 +227,7 @@ class LeadStore:
                     )
                 else:
                     db.execute(
-                        f"""INSERT OR IGNORE INTO leads
+                        """INSERT OR IGNORE INTO leads
                             (id, tenant_id, fingerprint, text, source_url, platform,
                              observed_at, assessment, status, note, created_at, updated_at)
                             SELECT id, tenant_id, fingerprint, text, source_url, platform,
