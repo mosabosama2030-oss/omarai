@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002825 إلى SRC-1AE03B9EC3-L003624
+- النطاق: SRC-1AE03B9EC3-L002824 إلى SRC-1AE03B9EC3-L003623
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002824](../../agents/web_agent.py#L2824) | 2824 | `"            max(0, int(row.get(\"result_count\", 0) or 0))"` | — |
 | [SRC-1AE03B9EC3-L002825](../../agents/web_agent.py#L2825) | 2825 | `"            for row in provider_diagnostics if isinstance(row, dict)"` | — |
 | [SRC-1AE03B9EC3-L002826](../../agents/web_agent.py#L2826) | 2826 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L002827](../../agents/web_agent.py#L2827) | 2827 | `"        provider_candidates_accepted = sum("` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003621](../../agents/web_agent.py#L3621) | 3621 | `"                    continue"` | — |
 | [SRC-1AE03B9EC3-L003622](../../agents/web_agent.py#L3622) | 3622 | `"                matrix_query = _clean_text(matrix_query, 240)"` | — |
 | [SRC-1AE03B9EC3-L003623](../../agents/web_agent.py#L3623) | 3623 | `"                if not matrix_query or matrix_query not in planned_query_set:"` | — |
-| [SRC-1AE03B9EC3-L003624](../../agents/web_agent.py#L3624) | 3624 | `"                    continue"` | — |

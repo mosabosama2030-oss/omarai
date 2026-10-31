@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000959 إلى SRC-29A9CD43D1-L000047
+- النطاق: SRC-3451CC474D-L000958 إلى SRC-29A9CD43D1-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"        for match in re.finditer("` | — |
 | [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
 | [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"            document,"` | — |
 | [SRC-3451CC474D-L000961](../../tests/test_api.py#L961) | 961 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
@@ -869,4 +870,3 @@
 | [SRC-29A9CD43D1-L000044](../../tests/test_dialogue_context_pipeline.py#L44) | 44 | `"        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
 | [SRC-29A9CD43D1-L000045](../../tests/test_dialogue_context_pipeline.py#L45) | 45 | `"        \"planning_method\": plan.get(\"planning_method\", \"test\"),"` | — |
 | [SRC-29A9CD43D1-L000046](../../tests/test_dialogue_context_pipeline.py#L46) | 46 | `"        \"evidence_signals\": evidence_signal_report(sources),"` | — |
-| [SRC-29A9CD43D1-L000047](../../tests/test_dialogue_context_pipeline.py#L47) | 47 | `"    }"` | — |

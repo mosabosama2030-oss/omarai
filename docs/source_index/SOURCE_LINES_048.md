@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001313 إلى SRC-F725E90B2A-L002112
+- النطاق: SRC-F725E90B2A-L001312 إلى SRC-F725E90B2A-L002111
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001312](../../tests/test_web_agent.py#L1312) | 1312 | `"        lambda *args, **kwargs: \"توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].\","` | — |
 | [SRC-F725E90B2A-L001313](../../tests/test_web_agent.py#L1313) | 1313 | `"    )"` | — |
 | [SRC-F725E90B2A-L001314](../../tests/test_web_agent.py#L1314) | 1314 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
 | [SRC-F725E90B2A-L001315](../../tests/test_web_agent.py#L1315) | 1315 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002109](../../tests/test_web_agent.py#L2109) | 2109 | `"    }"` | — |
 | [SRC-F725E90B2A-L002110](../../tests/test_web_agent.py#L2110) | 2110 | `""` | — |
 | [SRC-F725E90B2A-L002111](../../tests/test_web_agent.py#L2111) | 2111 | `"    def failed_after_provider_result(research_plan):"` | — |
-| [SRC-F725E90B2A-L002112](../../tests/test_web_agent.py#L2112) | 2112 | `"        # A completed provider result-processing state confirms that a search"` | — |

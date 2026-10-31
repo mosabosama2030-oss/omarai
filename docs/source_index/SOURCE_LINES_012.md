@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002025 إلى SRC-1AE03B9EC3-L002824
+- النطاق: SRC-1AE03B9EC3-L002024 إلى SRC-1AE03B9EC3-L002823
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002024](../../agents/web_agent.py#L2024) | 2024 | `"                            warnings.append("` | — |
 | [SRC-1AE03B9EC3-L002025](../../agents/web_agent.py#L2025) | 2025 | `"                                \"Facebook Pages API unavailable for one configured page \""` | — |
 | [SRC-1AE03B9EC3-L002026](../../agents/web_agent.py#L2026) | 2026 | `"                                f\"(HTTP {response.status_code}); verify page ownership, token and permissions.\""` | — |
 | [SRC-1AE03B9EC3-L002027](../../agents/web_agent.py#L2027) | 2027 | `"                            )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002821](../../agents/web_agent.py#L2821) | 2821 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L002822](../../agents/web_agent.py#L2822) | 2822 | `"        provider_diagnostics = list(self._provider_diagnostics)"` | — |
 | [SRC-1AE03B9EC3-L002823](../../agents/web_agent.py#L2823) | 2823 | `"        provider_candidates_received = sum("` | — |
-| [SRC-1AE03B9EC3-L002824](../../agents/web_agent.py#L2824) | 2824 | `"            max(0, int(row.get(\"result_count\", 0) or 0))"` | — |

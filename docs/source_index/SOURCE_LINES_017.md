@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006025 إلى SRC-EEF2E6447C-L000188
+- النطاق: SRC-1AE03B9EC3-L006024 إلى SRC-EEF2E6447C-L000187
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006024](../../agents/web_agent.py#L6024) | 6024 | `"                    gap_query = compact_search_query("` | — |
 | [SRC-1AE03B9EC3-L006025](../../agents/web_agent.py#L6025) | 6025 | `"                        f\"{topic_query} {' '.join(source_gap_targets)} official specific evidence data\""` | — |
 | [SRC-1AE03B9EC3-L006026](../../agents/web_agent.py#L6026) | 6026 | `"                    )"` | — |
 | [SRC-1AE03B9EC3-L006027](../../agents/web_agent.py#L6027) | 6027 | `"                    known_query_keys = {"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000185](../../api/omarai.py#L185) | 185 | `"        return bytes(line)"` | — |
 | [SRC-EEF2E6447C-L000186](../../api/omarai.py#L186) | 186 | `""` | — |
 | [SRC-EEF2E6447C-L000187](../../api/omarai.py#L187) | 187 | `"    def read1(self, size=-1):"` | — |
-| [SRC-EEF2E6447C-L000188](../../api/omarai.py#L188) | 188 | `"        \"\"\"Read one chunk; body code applies its own idle and absolute deadlines.\"\"\""` | — |

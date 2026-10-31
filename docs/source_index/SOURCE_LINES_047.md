@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000513 إلى SRC-F725E90B2A-L001312
+- النطاق: SRC-F725E90B2A-L000512 إلى SRC-F725E90B2A-L001311
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000512](../../tests/test_web_agent.py#L512) | 512 | `"    )"` | — |
 | [SRC-F725E90B2A-L000513](../../tests/test_web_agent.py#L513) | 513 | `"    assert warnings == []"` | — |
 | [SRC-F725E90B2A-L000514](../../tests/test_web_agent.py#L514) | 514 | `"    assert len(results) == 1"` | — |
 | [SRC-F725E90B2A-L000515](../../tests/test_web_agent.py#L515) | 515 | `"    assert results[0][\"provider\"] == \"x_official_api\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001309](../../tests/test_web_agent.py#L1309) | 1309 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", capture_source_match_query)"` | — |
 | [SRC-F725E90B2A-L001310](../../tests/test_web_agent.py#L1310) | 1310 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001311](../../tests/test_web_agent.py#L1311) | 1311 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001312](../../tests/test_web_agent.py#L1312) | 1312 | `"        lambda *args, **kwargs: \"توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].\","` | — |

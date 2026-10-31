@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001394 إلى SRC-1AE03B9EC3-L000424
+- النطاق: SRC-686F71AA50-L001393 إلى SRC-1AE03B9EC3-L000423
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001393](../../agents/task_understanding.py#L1393) | 1393 | `"        \"query_strategies\": clean_list(value.get(\"query_strategies\"), items=32, chars=100),"` | — |
 | [SRC-686F71AA50-L001394](../../agents/task_understanding.py#L1394) | 1394 | `"        \"tool_requirements\": ["` | — |
 | [SRC-686F71AA50-L001395](../../agents/task_understanding.py#L1395) | 1395 | `"            item for item in clean_list(value.get(\"tool_requirements\"), items=12, chars=100)"` | — |
 | [SRC-686F71AA50-L001396](../../agents/task_understanding.py#L1396) | 1396 | `"            if item in allowed_tools"` | — |
@@ -842,4 +843,3 @@
 | [SRC-1AE03B9EC3-L000421](../../agents/web_agent.py#L421) | 421 | `""` | — |
 | [SRC-1AE03B9EC3-L000422](../../agents/web_agent.py#L422) | 422 | `"def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:"` | — |
 | [SRC-1AE03B9EC3-L000423](../../agents/web_agent.py#L423) | 423 | `"    lines = [reason]"` | — |
-| [SRC-1AE03B9EC3-L000424](../../agents/web_agent.py#L424) | 424 | `"    usable = [source for source in sources if source.get(\"snippet\")]"` | — |

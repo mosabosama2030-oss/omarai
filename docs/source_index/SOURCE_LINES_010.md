@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000425 إلى SRC-1AE03B9EC3-L001224
+- النطاق: SRC-1AE03B9EC3-L000424 إلى SRC-1AE03B9EC3-L001223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000424](../../agents/web_agent.py#L424) | 424 | `"    usable = [source for source in sources if source.get(\"snippet\")]"` | — |
 | [SRC-1AE03B9EC3-L000425](../../agents/web_agent.py#L425) | 425 | `"    for index, source in enumerate(usable[:5], 1):"` | — |
 | [SRC-1AE03B9EC3-L000426](../../agents/web_agent.py#L426) | 426 | `"        lines.append("` | — |
 | [SRC-1AE03B9EC3-L000427](../../agents/web_agent.py#L427) | 427 | `"            f\"{index}. {source.get('title', 'نتيجة ويب')}: \""` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001221](../../agents/web_agent.py#L1221) | 1221 | `"                \"role\": \"system\","` | — |
 | [SRC-1AE03B9EC3-L001222](../../agents/web_agent.py#L1222) | 1222 | `"                \"content\": ("` | — |
 | [SRC-1AE03B9EC3-L001223](../../agents/web_agent.py#L1223) | 1223 | `"                    \"أنت Omarai، مساعد عربي عملي. أجب مباشرة وباللغة التي استخدمها الشخص، \""` | — |
-| [SRC-1AE03B9EC3-L001224](../../agents/web_agent.py#L1224) | 1224 | `"                    \"وافهم المقصود حتى لو كان باللهجة المصرية أو به أخطاء كتابية. هذا المسار \""` | — |

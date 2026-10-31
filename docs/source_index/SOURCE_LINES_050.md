@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002913 إلى SRC-F725E90B2A-L003712
+- النطاق: SRC-F725E90B2A-L002912 إلى SRC-F725E90B2A-L003711
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002912](../../tests/test_web_agent.py#L2912) | 2912 | `"        \"واعرض رابط المصدر وتاريخ الصفحة إن توفر\""` | — |
 | [SRC-F725E90B2A-L002913](../../tests/test_web_agent.py#L2913) | 2913 | `"    )"` | — |
 | [SRC-F725E90B2A-L002914](../../tests/test_web_agent.py#L2914) | 2914 | `"    result = agent.answer(question, mode=\"latest\")"` | — |
 | [SRC-F725E90B2A-L002915](../../tests/test_web_agent.py#L2915) | 2915 | `"    plan = seen[\"plan\"]"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003709](../../tests/test_web_agent.py#L3709) | 3709 | `"    }"` | — |
 | [SRC-F725E90B2A-L003710](../../tests/test_web_agent.py#L3710) | 3710 | `""` | — |
 | [SRC-F725E90B2A-L003711](../../tests/test_web_agent.py#L3711) | 3711 | `"def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003712](../../tests/test_web_agent.py#L3712) | 3712 | `"    agent = WebAgent()"` | — |

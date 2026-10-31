@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003625 إلى SRC-1AE03B9EC3-L004424
+- النطاق: SRC-1AE03B9EC3-L003624 إلى SRC-1AE03B9EC3-L004423
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003624](../../agents/web_agent.py#L3624) | 3624 | `"                    continue"` | — |
 | [SRC-1AE03B9EC3-L003625](../../agents/web_agent.py#L3625) | 3625 | `"                strategy_matrix.append({"` | — |
 | [SRC-1AE03B9EC3-L003626](../../agents/web_agent.py#L3626) | 3626 | `"                    \"query\": matrix_query,"` | — |
 | [SRC-1AE03B9EC3-L003627](../../agents/web_agent.py#L3627) | 3627 | `"                    \"strategy\": _clean_text(row.get(\"strategy\"), 80),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004421](../../agents/web_agent.py#L4421) | 4421 | `"        terminal_report = result.get(\"search_report\")"` | — |
 | [SRC-1AE03B9EC3-L004422](../../agents/web_agent.py#L4422) | 4422 | `"        if not isinstance(terminal_report, dict):"` | — |
 | [SRC-1AE03B9EC3-L004423](../../agents/web_agent.py#L4423) | 4423 | `"            terminal_report = {}"` | — |
-| [SRC-1AE03B9EC3-L004424](../../agents/web_agent.py#L4424) | 4424 | `"        terminal_kind = str(result.get(\"kind\") or \"\")"` | — |

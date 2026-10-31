@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000159 إلى SRC-3451CC474D-L000958
+- النطاق: SRC-3451CC474D-L000158 إلى SRC-3451CC474D-L000957
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000158](../../tests/test_api.py#L158) | 158 | `""` | — |
 | [SRC-3451CC474D-L000159](../../tests/test_api.py#L159) | 159 | `""` | — |
 | [SRC-3451CC474D-L000160](../../tests/test_api.py#L160) | 160 | `"def test_api_blocks_non_json_and_cross_origin_posts(local_api, monkeypatch):"` | — |
 | [SRC-3451CC474D-L000161](../../tests/test_api.py#L161) | 161 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
@@ -327,7 +328,7 @@
 | [SRC-3451CC474D-L000467](../../tests/test_api.py#L467) | 467 | `"    assert status == 401"` | — |
 | [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
 | [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `""` | — |
-| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `"    status, _error = request_json(local_api, \"/api/leads\")"` | — |
 | [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `"    assert status == 401"` | — |
 | [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `""` | — |
 | [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"    headers = {\"Authorization\": \"Bearer \" + \"x\" * 48}"` | — |
@@ -815,4 +816,3 @@
 | [SRC-3451CC474D-L000955](../../tests/test_api.py#L955) | 955 | `"        ):"` | — |
 | [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `"            style_blocks += 1"` | — |
 | [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
-| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"        for match in re.finditer("` | — |

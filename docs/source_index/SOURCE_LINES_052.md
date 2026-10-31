@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **61**
-- النطاق: SRC-DE7EABE998-L000471 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **62**
+- النطاق: SRC-DE7EABE998-L000470 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000470](../../web/agent.html#L470) | 470 | `" }catch(e){setStatus(\"تعذر فحص الإعداد\",\"bad\");$(\"setupStatus\").textContent=\"تعذر الاتصال بخادم Omarai المحلي. تأكد أن الخادم يعمل في Termux.\";}"` | — |
 | [SRC-DE7EABE998-L000471](../../web/agent.html#L471) | 471 | `"}"` | — |
 | [SRC-DE7EABE998-L000472](../../web/agent.html#L472) | 472 | `"document.querySelectorAll(\".mode-btn\").forEach(button=>button.addEventListener(\"click\",()=>{"` | — |
 | [SRC-DE7EABE998-L000473](../../web/agent.html#L473) | 473 | `" activeMode=button.dataset.mode;"` | — |

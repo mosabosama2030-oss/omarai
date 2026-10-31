@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004425 إلى SRC-1AE03B9EC3-L005224
+- النطاق: SRC-1AE03B9EC3-L004424 إلى SRC-1AE03B9EC3-L005223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004424](../../agents/web_agent.py#L4424) | 4424 | `"        terminal_kind = str(result.get(\"kind\") or \"\")"` | — |
 | [SRC-1AE03B9EC3-L004425](../../agents/web_agent.py#L4425) | 4425 | `"        terminal_search_outcome = str(terminal_report.get(\"search_outcome\") or \"\")"` | — |
 | [SRC-1AE03B9EC3-L004426](../../agents/web_agent.py#L4426) | 4426 | `"        terminal_sources = result.get(\"sources\")"` | — |
 | [SRC-1AE03B9EC3-L004427](../../agents/web_agent.py#L4427) | 4427 | `"        if not isinstance(terminal_sources, list):"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005221](../../agents/web_agent.py#L5221) | 5221 | `"        # as uncorroborated instead of refusing a lone result as if it were no result."` | — |
 | [SRC-1AE03B9EC3-L005222](../../agents/web_agent.py#L5222) | 5222 | `"        navigation_request = self._is_navigation_request(working_question)"` | — |
 | [SRC-1AE03B9EC3-L005223](../../agents/web_agent.py#L5223) | 5223 | `"        lead_request = intent_route == \"LEAD_GENERATION\" or self._is_lead_search(working_question)"` | — |
-| [SRC-1AE03B9EC3-L005224](../../agents/web_agent.py#L5224) | 5224 | `"        listing_request = self._is_listing_discovery(working_question)"` | — |

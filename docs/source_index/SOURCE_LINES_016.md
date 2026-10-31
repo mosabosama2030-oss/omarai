@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005225 إلى SRC-1AE03B9EC3-L006024
+- النطاق: SRC-1AE03B9EC3-L005224 إلى SRC-1AE03B9EC3-L006023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005224](../../agents/web_agent.py#L5224) | 5224 | `"        listing_request = self._is_listing_discovery(working_question)"` | — |
 | [SRC-1AE03B9EC3-L005225](../../agents/web_agent.py#L5225) | 5225 | `"        lead_evidence_sources: list[dict[str, Any]] = []"` | — |
 | [SRC-1AE03B9EC3-L005226](../../agents/web_agent.py#L5226) | 5226 | `"        related_lead_results_count = 0"` | — |
 | [SRC-1AE03B9EC3-L005227](../../agents/web_agent.py#L5227) | 5227 | `"        if lead_request:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L006021](../../agents/web_agent.py#L6021) | 6021 | `"                    topic_query = compact_search_query("` | — |
 | [SRC-1AE03B9EC3-L006022](../../agents/web_agent.py#L6022) | 6022 | `"                        fallback_queries[0] if fallback_queries else working_question"` | — |
 | [SRC-1AE03B9EC3-L006023](../../agents/web_agent.py#L6023) | 6023 | `"                    ) or compact_search_query(working_question)"` | — |
-| [SRC-1AE03B9EC3-L006024](../../agents/web_agent.py#L6024) | 6024 | `"                    gap_query = compact_search_query("` | — |
