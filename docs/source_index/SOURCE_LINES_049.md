@@ -126,7 +126,7 @@
 | [SRC-F725E90B2A-L002275](../../tests/test_web_agent.py#L2275) | 2275 | `"    assert industrial_queries"` | — |
 | [SRC-F725E90B2A-L002276](../../tests/test_web_agent.py#L2276) | 2276 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in vehicle_queries)"` | — |
 | [SRC-F725E90B2A-L002277](../../tests/test_web_agent.py#L2277) | 2277 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in industrial_queries)"` | — |
-| [SRC-F725E90B2A-L002278](../../tests/test_web_agent.py#L2278) | 2278 | `"    assert any(\"سياره كهربائيه\" in query for query in vehicle_queries)"` | — |
+| [SRC-F725E90B2A-L002278](../../tests/test_web_agent.py#L2278) | 2278 | `"    assert any(\"سياره كهرباييه\" in query for query in vehicle_queries)"` | — |
 | [SRC-F725E90B2A-L002279](../../tests/test_web_agent.py#L2279) | 2279 | `"    assert any(\"نظام انذار حريق صناعي\" in query for query in industrial_queries)"` | — |
 | [SRC-F725E90B2A-L002280](../../tests/test_web_agent.py#L2280) | 2280 | `""` | — |
 | [SRC-F725E90B2A-L002281](../../tests/test_web_agent.py#L2281) | 2281 | `""` | — |
