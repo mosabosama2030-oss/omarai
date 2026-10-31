@@ -116,7 +116,7 @@ def test_dns_resolution_fails_closed_for_private_or_local_answers(monkeypatch, a
     family = socket.AF_INET6 if ":" in address else socket.AF_INET
     answer = (family, socket.SOCK_STREAM, socket.IPPROTO_TCP, "", (address, 443, 0, 0))
     monkeypatch.setattr(
-        search_connectors.socket if hasattr(search_connectors, "socket") else __import__("socket"),
+        socket,
         "getaddrinfo",
         lambda *_args, **_kwargs: [answer],
     )
