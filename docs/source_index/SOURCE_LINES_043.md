@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000032 إلى SRC-6BF96689A8-L000044
+- النطاق: SRC-4405E7912C-L000032 إلى SRC-50E7F53B84-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -182,6 +182,102 @@
 | [SRC-4405E7912C-L000195](../../tests/test_multitenant_api.py#L195) | 195 | `"    )"` | — |
 | [SRC-4405E7912C-L000196](../../tests/test_multitenant_api.py#L196) | 196 | `"    assert status == 409"` | — |
 | [SRC-4405E7912C-L000197](../../tests/test_multitenant_api.py#L197) | 197 | `"    assert \"rotated by the operator\" in result[\"error\"]"` | — |
+| [SRC-4405E7912C-L000198](../../tests/test_multitenant_api.py#L198) | 198 | `""` | — |
+| [SRC-4405E7912C-L000199](../../tests/test_multitenant_api.py#L199) | 199 | `""` | — |
+| [SRC-4405E7912C-L000200](../../tests/test_multitenant_api.py#L200) | 200 | `""` | — |
+| [SRC-4405E7912C-L000201](../../tests/test_multitenant_api.py#L201) | 201 | `"def test_live_diagnostics_requires_explicit_approval_before_any_provider_call("` | — |
+| [SRC-4405E7912C-L000202](../../tests/test_multitenant_api.py#L202) | 202 | `"    tenant_api, monkeypatch"` | — |
+| [SRC-4405E7912C-L000203](../../tests/test_multitenant_api.py#L203) | 203 | `"):"` | — |
+| [SRC-4405E7912C-L000204](../../tests/test_multitenant_api.py#L204) | 204 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-4405E7912C-L000205](../../tests/test_multitenant_api.py#L205) | 205 | `""` | — |
+| [SRC-4405E7912C-L000206](../../tests/test_multitenant_api.py#L206) | 206 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000207](../../tests/test_multitenant_api.py#L207) | 207 | `"    tenant_id = store.create_tenant(\"Diagnostics Owner\", \"diagnostics-owner\")"` | — |
+| [SRC-4405E7912C-L000208](../../tests/test_multitenant_api.py#L208) | 208 | `"    user_id = store.create_user(\"diagnostics-owner@example.test\", \"Owner\")"` | — |
+| [SRC-4405E7912C-L000209](../../tests/test_multitenant_api.py#L209) | 209 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
+| [SRC-4405E7912C-L000210](../../tests/test_multitenant_api.py#L210) | 210 | `"    token = \"diagnostics-owner-token-\" + \"O\" * 32"` | — |
+| [SRC-4405E7912C-L000211](../../tests/test_multitenant_api.py#L211) | 211 | `""` | — |
+| [SRC-4405E7912C-L000212](../../tests/test_multitenant_api.py#L212) | 212 | `"    def unexpected_diagnostics(*_args, **_kwargs):"` | — |
+| [SRC-4405E7912C-L000213](../../tests/test_multitenant_api.py#L213) | 213 | `"        pytest.fail(\"diagnostics must not run without explicit provider-use approval\")"` | — |
+| [SRC-4405E7912C-L000214](../../tests/test_multitenant_api.py#L214) | 214 | `""` | — |
+| [SRC-4405E7912C-L000215](../../tests/test_multitenant_api.py#L215) | 215 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-4405E7912C-L000216](../../tests/test_multitenant_api.py#L216) | 216 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", unexpected_diagnostics)"` | — |
+| [SRC-4405E7912C-L000217](../../tests/test_multitenant_api.py#L217) | 217 | `""` | — |
+| [SRC-4405E7912C-L000218](../../tests/test_multitenant_api.py#L218) | 218 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000219](../../tests/test_multitenant_api.py#L219) | 219 | `"        base,"` | — |
+| [SRC-4405E7912C-L000220](../../tests/test_multitenant_api.py#L220) | 220 | `"        \"/api/diagnostics\","` | — |
+| [SRC-4405E7912C-L000221](../../tests/test_multitenant_api.py#L221) | 221 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000222](../../tests/test_multitenant_api.py#L222) | 222 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000223](../../tests/test_multitenant_api.py#L223) | 223 | `"        payload={\"test_model\": True, \"test_social\": True},"` | — |
+| [SRC-4405E7912C-L000224](../../tests/test_multitenant_api.py#L224) | 224 | `"    )"` | — |
+| [SRC-4405E7912C-L000225](../../tests/test_multitenant_api.py#L225) | 225 | `"    assert status == 403"` | — |
+| [SRC-4405E7912C-L000226](../../tests/test_multitenant_api.py#L226) | 226 | `"    assert \"explicit approval\" in result[\"error\"]"` | — |
+| [SRC-4405E7912C-L000227](../../tests/test_multitenant_api.py#L227) | 227 | `""` | — |
+| [SRC-4405E7912C-L000228](../../tests/test_multitenant_api.py#L228) | 228 | `""` | — |
+| [SRC-4405E7912C-L000229](../../tests/test_multitenant_api.py#L229) | 229 | `"def test_live_diagnostics_is_owner_only_even_with_explicit_approval("` | — |
+| [SRC-4405E7912C-L000230](../../tests/test_multitenant_api.py#L230) | 230 | `"    tenant_api, monkeypatch"` | — |
+| [SRC-4405E7912C-L000231](../../tests/test_multitenant_api.py#L231) | 231 | `"):"` | — |
+| [SRC-4405E7912C-L000232](../../tests/test_multitenant_api.py#L232) | 232 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-4405E7912C-L000233](../../tests/test_multitenant_api.py#L233) | 233 | `""` | — |
+| [SRC-4405E7912C-L000234](../../tests/test_multitenant_api.py#L234) | 234 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000235](../../tests/test_multitenant_api.py#L235) | 235 | `"    tenant_id = store.create_tenant(\"Sales Member Diagnostics\", \"sales-member-diagnostics\")"` | — |
+| [SRC-4405E7912C-L000236](../../tests/test_multitenant_api.py#L236) | 236 | `"    user_id = store.create_user(\"sales-member@example.test\", \"Sales Member\")"` | — |
+| [SRC-4405E7912C-L000237](../../tests/test_multitenant_api.py#L237) | 237 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
+| [SRC-4405E7912C-L000238](../../tests/test_multitenant_api.py#L238) | 238 | `"    token = \"sales-member-diagnostics-token-\" + \"S\" * 32"` | — |
+| [SRC-4405E7912C-L000239](../../tests/test_multitenant_api.py#L239) | 239 | `""` | — |
+| [SRC-4405E7912C-L000240](../../tests/test_multitenant_api.py#L240) | 240 | `"    def unexpected_diagnostics(*_args, **_kwargs):"` | — |
+| [SRC-4405E7912C-L000241](../../tests/test_multitenant_api.py#L241) | 241 | `"        pytest.fail(\"non-owner diagnostics must be rejected before provider calls\")"` | — |
+| [SRC-4405E7912C-L000242](../../tests/test_multitenant_api.py#L242) | 242 | `""` | — |
+| [SRC-4405E7912C-L000243](../../tests/test_multitenant_api.py#L243) | 243 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-4405E7912C-L000244](../../tests/test_multitenant_api.py#L244) | 244 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", unexpected_diagnostics)"` | — |
+| [SRC-4405E7912C-L000245](../../tests/test_multitenant_api.py#L245) | 245 | `""` | — |
+| [SRC-4405E7912C-L000246](../../tests/test_multitenant_api.py#L246) | 246 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000247](../../tests/test_multitenant_api.py#L247) | 247 | `"        base,"` | — |
+| [SRC-4405E7912C-L000248](../../tests/test_multitenant_api.py#L248) | 248 | `"        \"/api/diagnostics\","` | — |
+| [SRC-4405E7912C-L000249](../../tests/test_multitenant_api.py#L249) | 249 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000250](../../tests/test_multitenant_api.py#L250) | 250 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000251](../../tests/test_multitenant_api.py#L251) | 251 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000252](../../tests/test_multitenant_api.py#L252) | 252 | `"            \"test_model\": True,"` | — |
+| [SRC-4405E7912C-L000253](../../tests/test_multitenant_api.py#L253) | 253 | `"            \"test_social\": True,"` | — |
+| [SRC-4405E7912C-L000254](../../tests/test_multitenant_api.py#L254) | 254 | `"            \"allow_provider_usage\": True,"` | — |
+| [SRC-4405E7912C-L000255](../../tests/test_multitenant_api.py#L255) | 255 | `"        },"` | — |
+| [SRC-4405E7912C-L000256](../../tests/test_multitenant_api.py#L256) | 256 | `"    )"` | — |
+| [SRC-4405E7912C-L000257](../../tests/test_multitenant_api.py#L257) | 257 | `"    assert status == 403"` | — |
+| [SRC-4405E7912C-L000258](../../tests/test_multitenant_api.py#L258) | 258 | `"    assert \"owner\" in result[\"error\"]"` | — |
+| [SRC-4405E7912C-L000259](../../tests/test_multitenant_api.py#L259) | 259 | `""` | — |
+| [SRC-4405E7912C-L000260](../../tests/test_multitenant_api.py#L260) | 260 | `""` | — |
+| [SRC-4405E7912C-L000261](../../tests/test_multitenant_api.py#L261) | 261 | `"def test_owner_can_run_diagnostics_only_after_explicit_approval("` | — |
+| [SRC-4405E7912C-L000262](../../tests/test_multitenant_api.py#L262) | 262 | `"    tenant_api, monkeypatch"` | — |
+| [SRC-4405E7912C-L000263](../../tests/test_multitenant_api.py#L263) | 263 | `"):"` | — |
+| [SRC-4405E7912C-L000264](../../tests/test_multitenant_api.py#L264) | 264 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-4405E7912C-L000265](../../tests/test_multitenant_api.py#L265) | 265 | `""` | — |
+| [SRC-4405E7912C-L000266](../../tests/test_multitenant_api.py#L266) | 266 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000267](../../tests/test_multitenant_api.py#L267) | 267 | `"    tenant_id = store.create_tenant(\"Approved Diagnostics\", \"approved-diagnostics\")"` | — |
+| [SRC-4405E7912C-L000268](../../tests/test_multitenant_api.py#L268) | 268 | `"    user_id = store.create_user(\"approved-owner@example.test\", \"Owner\")"` | — |
+| [SRC-4405E7912C-L000269](../../tests/test_multitenant_api.py#L269) | 269 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
+| [SRC-4405E7912C-L000270](../../tests/test_multitenant_api.py#L270) | 270 | `"    token = \"approved-diagnostics-token-\" + \"A\" * 32"` | — |
+| [SRC-4405E7912C-L000271](../../tests/test_multitenant_api.py#L271) | 271 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-4405E7912C-L000272](../../tests/test_multitenant_api.py#L272) | 272 | `"    observed = {}"` | — |
+| [SRC-4405E7912C-L000273](../../tests/test_multitenant_api.py#L273) | 273 | `""` | — |
+| [SRC-4405E7912C-L000274](../../tests/test_multitenant_api.py#L274) | 274 | `"    def fake_diagnostics(self, *, test_model, test_social):"` | — |
+| [SRC-4405E7912C-L000275](../../tests/test_multitenant_api.py#L275) | 275 | `"        observed[\"test_model\"] = test_model"` | — |
+| [SRC-4405E7912C-L000276](../../tests/test_multitenant_api.py#L276) | 276 | `"        observed[\"test_social\"] = test_social"` | — |
+| [SRC-4405E7912C-L000277](../../tests/test_multitenant_api.py#L277) | 277 | `"        return {\"overall_status\": \"passed\", \"model_usage\": []}"` | — |
+| [SRC-4405E7912C-L000278](../../tests/test_multitenant_api.py#L278) | 278 | `""` | — |
+| [SRC-4405E7912C-L000279](../../tests/test_multitenant_api.py#L279) | 279 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", fake_diagnostics)"` | — |
+| [SRC-4405E7912C-L000280](../../tests/test_multitenant_api.py#L280) | 280 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000281](../../tests/test_multitenant_api.py#L281) | 281 | `"        base,"` | — |
+| [SRC-4405E7912C-L000282](../../tests/test_multitenant_api.py#L282) | 282 | `"        \"/api/diagnostics\","` | — |
+| [SRC-4405E7912C-L000283](../../tests/test_multitenant_api.py#L283) | 283 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000284](../../tests/test_multitenant_api.py#L284) | 284 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000285](../../tests/test_multitenant_api.py#L285) | 285 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000286](../../tests/test_multitenant_api.py#L286) | 286 | `"            \"test_model\": True,"` | — |
+| [SRC-4405E7912C-L000287](../../tests/test_multitenant_api.py#L287) | 287 | `"            \"test_social\": False,"` | — |
+| [SRC-4405E7912C-L000288](../../tests/test_multitenant_api.py#L288) | 288 | `"            \"allow_provider_usage\": True,"` | — |
+| [SRC-4405E7912C-L000289](../../tests/test_multitenant_api.py#L289) | 289 | `"        },"` | — |
+| [SRC-4405E7912C-L000290](../../tests/test_multitenant_api.py#L290) | 290 | `"    )"` | — |
+| [SRC-4405E7912C-L000291](../../tests/test_multitenant_api.py#L291) | 291 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000292](../../tests/test_multitenant_api.py#L292) | 292 | `"    assert result[\"overall_status\"] == \"passed\""` | — |
+| [SRC-4405E7912C-L000293](../../tests/test_multitenant_api.py#L293) | 293 | `"    assert observed == {\"test_model\": True, \"test_social\": False}"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -765,108 +861,3 @@
 | [SRC-50E7F53B84-L000005](../../tests/test_requirement_evidence.py#L5) | 5 | `"from agents.requirement_evidence import build_requirement_evidence_ledger"` | — |
 | [SRC-50E7F53B84-L000006](../../tests/test_requirement_evidence.py#L6) | 6 | `"from agents.text_normalization import normalize_text, tokenize_text"` | — |
 | [SRC-50E7F53B84-L000007](../../tests/test_requirement_evidence.py#L7) | 7 | `""` | — |
-| [SRC-50E7F53B84-L000008](../../tests/test_requirement_evidence.py#L8) | 8 | `""` | — |
-| [SRC-50E7F53B84-L000009](../../tests/test_requirement_evidence.py#L9) | 9 | `"def test_legacy_import_path_reexports_the_dedicated_builder() -> None:"` | — |
-| [SRC-50E7F53B84-L000010](../../tests/test_requirement_evidence.py#L10) | 10 | `"    assert legacy_builder is build_requirement_evidence_ledger"` | — |
-| [SRC-50E7F53B84-L000011](../../tests/test_requirement_evidence.py#L11) | 11 | `""` | — |
-| [SRC-50E7F53B84-L000012](../../tests/test_requirement_evidence.py#L12) | 12 | `""` | — |
-| [SRC-50E7F53B84-L000013](../../tests/test_requirement_evidence.py#L13) | 13 | `"def test_shared_normalizer_handles_arabic_diacritics_and_digits() -> None:"` | — |
-| [SRC-50E7F53B84-L000014](../../tests/test_requirement_evidence.py#L14) | 14 | `"    assert normalize_text(\"أَهْلًا ١٢٣\") == \"اهلا 123\""` | — |
-| [SRC-50E7F53B84-L000015](../../tests/test_requirement_evidence.py#L15) | 15 | `"    assert tokenize_text(\"The phone السعر ١٢\", drop_stopwords=True) == [\"phone\", \"السعر\", \"12\"]"` | — |
-| [SRC-50E7F53B84-L000016](../../tests/test_requirement_evidence.py#L16) | 16 | `""` | — |
-| [SRC-50E7F53B84-L000017](../../tests/test_requirement_evidence.py#L17) | 17 | `""` | — |
-| [SRC-50E7F53B84-L000018](../../tests/test_requirement_evidence.py#L18) | 18 | `"def test_requirement_ledger_links_query_provenance_and_lexical_candidates() -> None:"` | — |
-| [SRC-50E7F53B84-L000019](../../tests/test_requirement_evidence.py#L19) | 19 | `"    targets = [\"السعر\", \"البطارية\"]"` | — |
-| [SRC-50E7F53B84-L000020](../../tests/test_requirement_evidence.py#L20) | 20 | `"    queries = ["` | — |
-| [SRC-50E7F53B84-L000021](../../tests/test_requirement_evidence.py#L21) | 21 | `"        {\"target\": \"السعر\", \"query\": \"سعر الهاتف\"},"` | — |
-| [SRC-50E7F53B84-L000022](../../tests/test_requirement_evidence.py#L22) | 22 | `"        {\"target\": \"البطارية\", \"query\": \"بطارية الهاتف\"},"` | — |
-| [SRC-50E7F53B84-L000023](../../tests/test_requirement_evidence.py#L23) | 23 | `"    ]"` | — |
-| [SRC-50E7F53B84-L000024](../../tests/test_requirement_evidence.py#L24) | 24 | `"    sources = ["` | — |
-| [SRC-50E7F53B84-L000025](../../tests/test_requirement_evidence.py#L25) | 25 | `"        {"` | — |
-| [SRC-50E7F53B84-L000026](../../tests/test_requirement_evidence.py#L26) | 26 | `"            \"title\": \"Phone price guide\","` | — |
-| [SRC-50E7F53B84-L000027](../../tests/test_requirement_evidence.py#L27) | 27 | `"            \"snippet\": \"The price and cost are listed for the phone.\","` | — |
-| [SRC-50E7F53B84-L000028](../../tests/test_requirement_evidence.py#L28) | 28 | `"            \"page_fetched\": False,"` | — |
-| [SRC-50E7F53B84-L000029](../../tests/test_requirement_evidence.py#L29) | 29 | `"            \"queries\": [\"سعر الهاتف\"],"` | — |
-| [SRC-50E7F53B84-L000030](../../tests/test_requirement_evidence.py#L30) | 30 | `"        },"` | — |
-| [SRC-50E7F53B84-L000031](../../tests/test_requirement_evidence.py#L31) | 31 | `"    ]"` | — |
-| [SRC-50E7F53B84-L000032](../../tests/test_requirement_evidence.py#L32) | 32 | `""` | — |
-| [SRC-50E7F53B84-L000033](../../tests/test_requirement_evidence.py#L33) | 33 | `"    ledger = build_requirement_evidence_ledger(targets, sources, queries)"` | — |
-| [SRC-50E7F53B84-L000034](../../tests/test_requirement_evidence.py#L34) | 34 | `"    by_target = {item[\"target\"]: item for item in ledger}"` | — |
-| [SRC-50E7F53B84-L000035](../../tests/test_requirement_evidence.py#L35) | 35 | `""` | — |
-| [SRC-50E7F53B84-L000036](../../tests/test_requirement_evidence.py#L36) | 36 | `"    price = by_target[\"السعر\"]"` | — |
-| [SRC-50E7F53B84-L000037](../../tests/test_requirement_evidence.py#L37) | 37 | `"    assert price[\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
-| [SRC-50E7F53B84-L000038](../../tests/test_requirement_evidence.py#L38) | 38 | `"    assert price[\"query_result_source_indexes\"] == [1]"` | — |
-| [SRC-50E7F53B84-L000039](../../tests/test_requirement_evidence.py#L39) | 39 | `"    assert price[\"candidate_source_indexes\"] == [1]"` | — |
-| [SRC-50E7F53B84-L000040](../../tests/test_requirement_evidence.py#L40) | 40 | `"    assert price[\"candidate_sources\"][0][\"evidence_basis\"] == \"search_snippet\""` | — |
-| [SRC-50E7F53B84-L000041](../../tests/test_requirement_evidence.py#L41) | 41 | `"    assert price[\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000042](../../tests/test_requirement_evidence.py#L42) | 42 | `"    assert price[\"source_entailment_verified\"] is False"` | — |
-| [SRC-50E7F53B84-L000043](../../tests/test_requirement_evidence.py#L43) | 43 | `""` | — |
-| [SRC-50E7F53B84-L000044](../../tests/test_requirement_evidence.py#L44) | 44 | `"    battery = by_target[\"البطارية\"]"` | — |
-| [SRC-50E7F53B84-L000045](../../tests/test_requirement_evidence.py#L45) | 45 | `"    assert battery[\"status\"] == \"no_candidate_evidence_found\""` | — |
-| [SRC-50E7F53B84-L000046](../../tests/test_requirement_evidence.py#L46) | 46 | `"    assert battery[\"candidate_source_indexes\"] == []"` | — |
-| [SRC-50E7F53B84-L000047](../../tests/test_requirement_evidence.py#L47) | 47 | `"    assert battery[\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000048](../../tests/test_requirement_evidence.py#L48) | 48 | `""` | — |
-| [SRC-50E7F53B84-L000049](../../tests/test_requirement_evidence.py#L49) | 49 | `""` | — |
-| [SRC-50E7F53B84-L000050](../../tests/test_requirement_evidence.py#L50) | 50 | `"def test_title_only_match_remains_a_candidate_not_verified_evidence() -> None:"` | — |
-| [SRC-50E7F53B84-L000051](../../tests/test_requirement_evidence.py#L51) | 51 | `"    ledger = build_requirement_evidence_ledger("` | — |
-| [SRC-50E7F53B84-L000052](../../tests/test_requirement_evidence.py#L52) | 52 | `"        [\"battery\"],"` | — |
-| [SRC-50E7F53B84-L000053](../../tests/test_requirement_evidence.py#L53) | 53 | `"        [{\"title\": \"Battery overview\", \"page_fetched\": False}],"` | — |
-| [SRC-50E7F53B84-L000054](../../tests/test_requirement_evidence.py#L54) | 54 | `"    )"` | — |
-| [SRC-50E7F53B84-L000055](../../tests/test_requirement_evidence.py#L55) | 55 | `""` | — |
-| [SRC-50E7F53B84-L000056](../../tests/test_requirement_evidence.py#L56) | 56 | `"    assert ledger[0][\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
-| [SRC-50E7F53B84-L000057](../../tests/test_requirement_evidence.py#L57) | 57 | `"    assert ledger[0][\"candidate_sources\"][0][\"evidence_basis\"] == \"title_only\""` | — |
-| [SRC-50E7F53B84-L000058](../../tests/test_requirement_evidence.py#L58) | 58 | `"    assert ledger[0][\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000059](../../tests/test_requirement_evidence.py#L59) | 59 | `"    assert ledger[0][\"source_entailment_verified\"] is False"` | — |
-## اختبارات
-
-### FILE-6BF96689A8 — [tests/test_research.py](../../tests/test_research.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BF96689A8-L000001](../../tests/test_research.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-6BF96689A8-L000002](../../tests/test_research.py#L2) | 2 | `""` | — |
-| [SRC-6BF96689A8-L000003](../../tests/test_research.py#L3) | 3 | `"from agents.research import ("` | — |
-| [SRC-6BF96689A8-L000004](../../tests/test_research.py#L4) | 4 | `"    classify_source,"` | — |
-| [SRC-6BF96689A8-L000005](../../tests/test_research.py#L5) | 5 | `"    compact_search_query,"` | — |
-| [SRC-6BF96689A8-L000006](../../tests/test_research.py#L6) | 6 | `"    evidence_signal_report,"` | — |
-| [SRC-6BF96689A8-L000007](../../tests/test_research.py#L7) | 7 | `"    fallback_plan,"` | — |
-| [SRC-6BF96689A8-L000008](../../tests/test_research.py#L8) | 8 | `"    fuse_ranked_results,"` | — |
-| [SRC-6BF96689A8-L000009](../../tests/test_research.py#L9) | 9 | `"    registrable_domain,"` | — |
-| [SRC-6BF96689A8-L000010](../../tests/test_research.py#L10) | 10 | `"    validate_plan,"` | — |
-| [SRC-6BF96689A8-L000011](../../tests/test_research.py#L11) | 11 | `")"` | — |
-| [SRC-6BF96689A8-L000012](../../tests/test_research.py#L12) | 12 | `""` | — |
-| [SRC-6BF96689A8-L000013](../../tests/test_research.py#L13) | 13 | `""` | — |
-| [SRC-6BF96689A8-L000014](../../tests/test_research.py#L14) | 14 | `"def test_social_question_gets_platform_targeted_queries():"` | — |
-| [SRC-6BF96689A8-L000015](../../tests/test_research.py#L15) | 15 | `"    plan = fallback_plan(\"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\")"` | — |
-| [SRC-6BF96689A8-L000016](../../tests/test_research.py#L16) | 16 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-6BF96689A8-L000017](../../tests/test_research.py#L17) | 17 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-6BF96689A8-L000018](../../tests/test_research.py#L18) | 18 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000019](../../tests/test_research.py#L19) | 19 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
-| [SRC-6BF96689A8-L000020](../../tests/test_research.py#L20) | 20 | `""` | — |
-| [SRC-6BF96689A8-L000021](../../tests/test_research.py#L21) | 21 | `""` | — |
-| [SRC-6BF96689A8-L000022](../../tests/test_research.py#L22) | 22 | `"def test_follow_up_query_keeps_prior_topic():"` | — |
-| [SRC-6BF96689A8-L000023](../../tests/test_research.py#L23) | 23 | `"    history = [{\"role\": \"user\", \"content\": \"قارن سوق السيارات الكهربائية في مصر\"}]"` | — |
-| [SRC-6BF96689A8-L000024](../../tests/test_research.py#L24) | 24 | `"    plan = fallback_plan(\"وطب الأسعار الحالية؟\", history)"` | — |
-| [SRC-6BF96689A8-L000025](../../tests/test_research.py#L25) | 25 | `"    assert \"السيارات الكهربائية\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000026](../../tests/test_research.py#L26) | 26 | `"    assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-6BF96689A8-L000027](../../tests/test_research.py#L27) | 27 | `""` | — |
-| [SRC-6BF96689A8-L000028](../../tests/test_research.py#L28) | 28 | `""` | — |
-| [SRC-6BF96689A8-L000029](../../tests/test_research.py#L29) | 29 | `"def test_plan_validation_caps_queries_and_rejects_non_string_values():"` | — |
-| [SRC-6BF96689A8-L000030](../../tests/test_research.py#L30) | 30 | `"    candidate = {"` | — |
-| [SRC-6BF96689A8-L000031](../../tests/test_research.py#L31) | 31 | `"        \"queries\": [\"بحث أ\", \"بحث ب\", None, \"بحث ج\", \"بحث د\", \"بحث هـ\", \"بحث سادس\", \"بحث سابع\", \"بحث ثامن\", \"بحث تاسع\"],"` | — |
-| [SRC-6BF96689A8-L000032](../../tests/test_research.py#L32) | 32 | `"        \"social_focus\": True,"` | — |
-| [SRC-6BF96689A8-L000033](../../tests/test_research.py#L33) | 33 | `"        \"freshness\": \"current\","` | — |
-| [SRC-6BF96689A8-L000034](../../tests/test_research.py#L34) | 34 | `"        \"depth\": \"deep\","` | — |
-| [SRC-6BF96689A8-L000035](../../tests/test_research.py#L35) | 35 | `"        \"platforms\": [\"reddit\", \"unknown\"],"` | — |
-| [SRC-6BF96689A8-L000036](../../tests/test_research.py#L36) | 36 | `"    }"` | — |
-| [SRC-6BF96689A8-L000037](../../tests/test_research.py#L37) | 37 | `"    plan = validate_plan(candidate, \"بحث عن منشورات\")"` | — |
-| [SRC-6BF96689A8-L000038](../../tests/test_research.py#L38) | 38 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
-| [SRC-6BF96689A8-L000039](../../tests/test_research.py#L39) | 39 | `"    assert \"unknown\" not in plan[\"platforms\"]"` | — |
-| [SRC-6BF96689A8-L000040](../../tests/test_research.py#L40) | 40 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-6BF96689A8-L000041](../../tests/test_research.py#L41) | 41 | `"    assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-6BF96689A8-L000042](../../tests/test_research.py#L42) | 42 | `""` | — |
-| [SRC-6BF96689A8-L000043](../../tests/test_research.py#L43) | 43 | `""` | — |
-| [SRC-6BF96689A8-L000044](../../tests/test_research.py#L44) | 44 | `"def test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates():"` | — |
