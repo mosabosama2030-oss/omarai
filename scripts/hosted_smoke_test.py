@@ -118,6 +118,7 @@ def run_smoke(
     allow_http: bool = False,
     expected_sha: str | None = None,
     local_dev_no_token: bool = False,
+    allow_provider_usage: bool = False,
 ) -> dict[str, Any]:
     origin = normalize_origin(origin, allow_http or local_dev_no_token)
     target_host = urllib.parse.urlsplit(origin).hostname or ""
@@ -130,6 +131,12 @@ def run_smoke(
     elif not (local_dev_no_token and loopback_host):
         raise SmokeError(
             "OMARAI_ACCESS_TOKEN is required for hosted targets. No-token mode is restricted to localhost/loopback."
+        )
+
+    if not allow_provider_usage:
+        raise SmokeError(
+            "This acceptance test performs live search and one model completion that may consume provider quota or incur charges. "
+            "Pass --allow-provider-usage only after explicit human approval."
         )
 
     auth_mode = "bearer_token" if token.strip() else "local_loopback_dev_bypass"
@@ -296,6 +303,11 @@ def main() -> int:
         help="Use the app's existing no-token development bypass on loopback only; never for hosted URLs.",
     )
     parser.add_argument(
+        "--allow-provider-usage",
+        action="store_true",
+        help="Explicitly authorize one live search and one model completion that may consume provider quota or incur charges.",
+    )
+    parser.add_argument(
         "--output",
         default="",
         help="Optional path for a JSON report containing the exact test question, answer, and sources.",
@@ -309,6 +321,7 @@ def main() -> int:
             allow_http=args.allow_http,
             expected_sha=args.expected_sha or None,
             local_dev_no_token=args.local_dev_no_token,
+            allow_provider_usage=args.allow_provider_usage,
         )
     except SmokeError as exc:
         failed_report = {**exc.report, "result": "failed", "error": str(exc)}
