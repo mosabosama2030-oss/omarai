@@ -58,7 +58,8 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
 
     monkeypatch.setattr(hosted_smoke_test, "request_json", fake_request_json)
     report = hosted_smoke_test.run_smoke(
-        "https://omarai.example", "T" * 40, expected_sha="a" * 40
+        "https://omarai.example", "T" * 40, expected_sha="a" * 40,
+        allow_provider_usage=True,
     )
 
     transcript = report["transcript"][0]
@@ -102,6 +103,7 @@ def test_hosted_smoke_allows_no_token_only_for_loopback_dev(monkeypatch):
         "http://127.0.0.1:8000",
         "",
         local_dev_no_token=True,
+        allow_provider_usage=True,
     )
     assert report["auth_mode"] == "local_loopback_dev_bypass"
     assert report["transcript"][0]["answer"] == "لا توجد إشارة شراء مؤكدة في المصادر التي تم فحصها."
