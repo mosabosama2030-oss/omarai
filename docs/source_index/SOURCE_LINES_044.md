@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000150 إلى SRC-2822F30DAD-L000248
+- النطاق: SRC-01E35ABC46-L000125 إلى SRC-2822F30DAD-L000223
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000125](../../tests/test_research_guardrails.py#L125) | 125 | `""` | — |
+| [SRC-01E35ABC46-L000126](../../tests/test_research_guardrails.py#L126) | 126 | `""` | — |
+| [SRC-01E35ABC46-L000127](../../tests/test_research_guardrails.py#L127) | 127 | `"def test_filter_deduplicates():"` | — |
+| [SRC-01E35ABC46-L000128](../../tests/test_research_guardrails.py#L128) | 128 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000129](../../tests/test_research_guardrails.py#L129) | 129 | `"        {"` | — |
+| [SRC-01E35ABC46-L000130](../../tests/test_research_guardrails.py#L130) | 130 | `"            \"title\": \"Same Article Title\","` | — |
+| [SRC-01E35ABC46-L000131](../../tests/test_research_guardrails.py#L131) | 131 | `"            \"url\": \"https://a.example/1\","` | — |
+| [SRC-01E35ABC46-L000132](../../tests/test_research_guardrails.py#L132) | 132 | `"            \"snippet\": \"electric vehicles Egypt market\","` | — |
+| [SRC-01E35ABC46-L000133](../../tests/test_research_guardrails.py#L133) | 133 | `"            \"domain\": \"a.example\","` | — |
+| [SRC-01E35ABC46-L000134](../../tests/test_research_guardrails.py#L134) | 134 | `"            \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000135](../../tests/test_research_guardrails.py#L135) | 135 | `"            \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000136](../../tests/test_research_guardrails.py#L136) | 136 | `"        },"` | — |
+| [SRC-01E35ABC46-L000137](../../tests/test_research_guardrails.py#L137) | 137 | `"        {"` | — |
+| [SRC-01E35ABC46-L000138](../../tests/test_research_guardrails.py#L138) | 138 | `"            \"title\": \"Same Article Title\","` | — |
+| [SRC-01E35ABC46-L000139](../../tests/test_research_guardrails.py#L139) | 139 | `"            \"url\": \"https://a.example/1?utm=x\","` | — |
+| [SRC-01E35ABC46-L000140](../../tests/test_research_guardrails.py#L140) | 140 | `"            \"snippet\": \"electric vehicles Egypt market again\","` | — |
+| [SRC-01E35ABC46-L000141](../../tests/test_research_guardrails.py#L141) | 141 | `"            \"domain\": \"a.example\","` | — |
+| [SRC-01E35ABC46-L000142](../../tests/test_research_guardrails.py#L142) | 142 | `"            \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000143](../../tests/test_research_guardrails.py#L143) | 143 | `"            \"providers\": [\"bing\"],"` | — |
+| [SRC-01E35ABC46-L000144](../../tests/test_research_guardrails.py#L144) | 144 | `"        },"` | — |
+| [SRC-01E35ABC46-L000145](../../tests/test_research_guardrails.py#L145) | 145 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000146](../../tests/test_research_guardrails.py#L146) | 146 | `"    kept, diag = filter_relevant_sources("` | — |
+| [SRC-01E35ABC46-L000147](../../tests/test_research_guardrails.py#L147) | 147 | `"        sources, \"electric vehicles Egypt\", [\"electric vehicles Egypt\"]"` | — |
+| [SRC-01E35ABC46-L000148](../../tests/test_research_guardrails.py#L148) | 148 | `"    )"` | — |
+| [SRC-01E35ABC46-L000149](../../tests/test_research_guardrails.py#L149) | 149 | `"    assert len(kept) == 1"` | — |
 | [SRC-01E35ABC46-L000150](../../tests/test_research_guardrails.py#L150) | 150 | `"    assert any(d[\"reason\"] == \"duplicate_title_domain\" for d in diag)"` | — |
 | [SRC-01E35ABC46-L000151](../../tests/test_research_guardrails.py#L151) | 151 | `""` | — |
 | [SRC-01E35ABC46-L000152](../../tests/test_research_guardrails.py#L152) | 152 | `""` | — |
@@ -809,28 +834,3 @@
 | [SRC-2822F30DAD-L000221](../../tests/test_sales_domain.py#L221) | 221 | `"    title = page_evidence("` | — |
 | [SRC-2822F30DAD-L000222](../../tests/test_sales_domain.py#L222) | 222 | `"        content_basis=EvidenceBasis.TITLE,"` | — |
 | [SRC-2822F30DAD-L000223](../../tests/test_sales_domain.py#L223) | 223 | `"        page_read=False,"` | — |
-| [SRC-2822F30DAD-L000224](../../tests/test_sales_domain.py#L224) | 224 | `"    )"` | — |
-| [SRC-2822F30DAD-L000225](../../tests/test_sales_domain.py#L225) | 225 | `"    snippet = page_evidence("` | — |
-| [SRC-2822F30DAD-L000226](../../tests/test_sales_domain.py#L226) | 226 | `"        content_basis=EvidenceBasis.SEARCH_SNIPPET,"` | — |
-| [SRC-2822F30DAD-L000227](../../tests/test_sales_domain.py#L227) | 227 | `"        page_read=False,"` | — |
-| [SRC-2822F30DAD-L000228](../../tests/test_sales_domain.py#L228) | 228 | `"    )"` | — |
-| [SRC-2822F30DAD-L000229](../../tests/test_sales_domain.py#L229) | 229 | `""` | — |
-| [SRC-2822F30DAD-L000230](../../tests/test_sales_domain.py#L230) | 230 | `"    assert title.page_read is False"` | — |
-| [SRC-2822F30DAD-L000231](../../tests/test_sales_domain.py#L231) | 231 | `"    assert snippet.page_read is False"` | — |
-| [SRC-2822F30DAD-L000232](../../tests/test_sales_domain.py#L232) | 232 | `""` | — |
-| [SRC-2822F30DAD-L000233](../../tests/test_sales_domain.py#L233) | 233 | `""` | — |
-| [SRC-2822F30DAD-L000234](../../tests/test_sales_domain.py#L234) | 234 | `"def test_demand_type_and_product_fit_are_independent():"` | — |
-| [SRC-2822F30DAD-L000235](../../tests/test_sales_domain.py#L235) | 235 | `"    signal = DemandSignal("` | — |
-| [SRC-2822F30DAD-L000236](../../tests/test_sales_domain.py#L236) | 236 | `"        signal_id=\"signal-direct\","` | — |
-| [SRC-2822F30DAD-L000237](../../tests/test_sales_domain.py#L237) | 237 | `"        signal_type=DemandSignalType.DIRECT_PURCHASE_REQUEST,"` | — |
-| [SRC-2822F30DAD-L000238](../../tests/test_sales_domain.py#L238) | 238 | `"        evidence=page_evidence(),"` | — |
-| [SRC-2822F30DAD-L000239](../../tests/test_sales_domain.py#L239) | 239 | `"        product_fit=ProductFit.UNASSESSED,"` | — |
-| [SRC-2822F30DAD-L000240](../../tests/test_sales_domain.py#L240) | 240 | `"        classification_reason=\"The source explicitly asks to buy.\","` | — |
-| [SRC-2822F30DAD-L000241](../../tests/test_sales_domain.py#L241) | 241 | `"    )"` | — |
-| [SRC-2822F30DAD-L000242](../../tests/test_sales_domain.py#L242) | 242 | `""` | — |
-| [SRC-2822F30DAD-L000243](../../tests/test_sales_domain.py#L243) | 243 | `"    assert signal.signal_type == DemandSignalType.DIRECT_PURCHASE_REQUEST"` | — |
-| [SRC-2822F30DAD-L000244](../../tests/test_sales_domain.py#L244) | 244 | `"    assert signal.product_fit == ProductFit.UNASSESSED"` | — |
-| [SRC-2822F30DAD-L000245](../../tests/test_sales_domain.py#L245) | 245 | `"    assert signal.identity_status == IdentityStatus.UNKNOWN"` | — |
-| [SRC-2822F30DAD-L000246](../../tests/test_sales_domain.py#L246) | 246 | `""` | — |
-| [SRC-2822F30DAD-L000247](../../tests/test_sales_domain.py#L247) | 247 | `""` | — |
-| [SRC-2822F30DAD-L000248](../../tests/test_sales_domain.py#L248) | 248 | `"def test_assessed_product_fit_requires_a_rationale():"` | — |
