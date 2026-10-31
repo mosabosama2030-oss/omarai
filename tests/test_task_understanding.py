@@ -27,6 +27,23 @@ def test_task_family_covers_diverse_natural_language_patterns(question, family):
     assert spec["decision_checks"]
 
 
+def test_lead_generation_task_separates_demand_signal_from_product_fit():
+    spec = build_task_spec(
+        "ابحث عن مشترين يريدون شراء نظام إنذار حريق صناعي في مصر",
+        mode="auto",
+        intent_route="LEAD_GENERATION",
+    )
+
+    requirements = set(spec["evidence_requirements"])
+    strategies = set(spec["query_strategies"])
+    assert "classify_public_demand_signal_by_type" in requirements
+    assert "distinguish_direct_purchase_from_rfq_and_stated_need" in requirements
+    assert "keep_product_fit_unassessed_until_separately_supported" in requirements
+    assert "do_not_treat_product_mention_or_icp_match_as_demand" in requirements
+    assert "product_anchored_rfq" in strategies
+    assert "product_anchored_stated_need" in strategies
+
+
 def test_task_spec_preserves_only_explicit_constraints():
     spec = build_task_spec(
         "قارن نيسان صني 2022 مع BYD Dolphin في مصر، بميزانية أقل من 400 ألف جنيه",
