@@ -983,7 +983,7 @@ def test_loopback_test_mode_allows_tokenless_local_api_but_not_remote_or_public_
     assert leads["count"] == 0
 
     monkeypatch.delenv("OMARAI_TEST_MODE", raising=False)
-    status, error = request_json(local_api, "/api/leads")
+    status, _error = request_json(local_api, "/api/leads")
     assert status == 401
 
     from types import SimpleNamespace
