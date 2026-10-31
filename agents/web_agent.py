@@ -23,6 +23,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 from agents.intent_router import resolve_followup_query, route_intent
+from agents.sales_domain import ProductProfile, build_buyer_queries
 from agents.dialogue_state import (
     fallback_dialogue_context,
     might_be_context_dependent,
@@ -853,79 +854,103 @@ class WebAgent:
 
     @staticmethod
     def _lead_intent_evidence(source: dict[str, Any]) -> dict[str, str] | None:
-        """Return a narrow, inspectable public buyer-intent phrase signal, if present."""
-        phrases = (
-            "مطلوب شقه تمليك", "مطلوب شقه للشراء", "مطلوب شراء شقه",
-            "مطلوب عقار للشراء", "مطلوب فيلا للشراء",
-            "بدور على شقه تمليك", "بدور على شقه للشراء",
-            "ابحث عن شقه للشراء", "عايز اشتري شقه", "عاوز اشتري شقه",
-            "عايز اشتري عقار", "عاوز اشتري عقار", "اريد شراء شقه",
-            "ارغب في شراء شقه", "اريد شراء عقار", "ارغب في شراء عقار",
-            "looking to buy", "looking to purchase", "want to buy",
-            "wants to buy", "want to purchase", "wants to purchase",
-            "seeking to buy", "seeking to purchase", "interested in buying",
-            "interested in purchasing", "buyer looking to buy",
+        """Extract a public demand phrase without guessing identity or product fit."""
+        evidence_fields = (
+            ("page_text", "page_text"),
+            ("title", "title"),
+            ("snippet", "search_snippet"),
         )
-        for field, basis in (("page_text", "page_text"), ("title", "title"), ("snippet", "search_snippet")):
+        signal_phrases = (
+            (
+                "direct_purchase_request",
+                (
+                    "مطلوب شقه تمليك", "مطلوب شقه للشراء", "مطلوب شراء شقه",
+                    "مطلوب عقار للشراء", "مطلوب فيلا للشراء",
+                    "بدور على شقه تمليك", "بدور على شقه للشراء",
+                    "ابحث عن شقه للشراء", "عايز اشتري شقه", "عاوز اشتري شقه",
+                    "عايز اشتري عقار", "عاوز اشتري عقار", "اريد شراء شقه",
+                    "ارغب في شراء شقه", "اريد شراء عقار", "ارغب في شراء عقار",
+                    "مطلوب شراء", "عايز اشتري", "عاوز اشتري", "اريد شراء",
+                    "ارغب في شراء", "محتاج اشتري",
+                    "looking to buy", "looking to purchase", "want to buy",
+                    "wants to buy", "want to purchase", "wants to purchase",
+                    "seeking to buy", "seeking to purchase", "interested in buying",
+                    "interested in purchasing", "buyer looking to buy",
+                ),
+            ),
+            (
+                "request_for_quotation",
+                (
+                    "طلب عرض سعر", "مطلوب عرض سعر", "اطلب عرض سعر",
+                    "request for quotation", "request a quote",
+                    "request for quote", "seeking quotations",
+                ),
+            ),
+            (
+                "stated_need",
+                (
+                    "بدور على", "ابحث عن", "أبحث عن", "محتاج", "محتاجين",
+                    "looking for", "in need of", "need a supplier",
+                ),
+            ),
+        )
+        negations = (
+            "not looking to buy", "not interested in buying",
+            "not interested in purchasing", "no longer looking to buy",
+            "do not want to buy", "don't want to buy",
+            "مش بدور على", "مش عايز اشتري", "مش عاوز اشتري",
+            "لا اريد شراء", "لا ارغب في شراء", "مش محتاج اشتري",
+        )
+        for field, basis in evidence_fields:
             raw = source.get(field)
             if not isinstance(raw, str) or not raw.strip():
                 continue
             normalized = _normalize_search_query(raw).casefold()
-            negations = (
-                "not looking to buy", "not interested in buying",
-                "not interested in purchasing", "no longer looking to buy",
-                "مش بدور على", "مش عايز اشتري", "مش عاوز اشتري",
-                "لا اريد شراء", "لا ارغب في شراء", "مش محتاج اشتري",
-            )
             if any(_normalize_search_query(term).casefold() in normalized for term in negations):
                 continue
-            for phrase in phrases:
-                needle = _normalize_search_query(phrase).casefold()
-                if needle and needle in normalized:
-                    return {"phrase": phrase, "basis": basis}
+            for signal_type, phrases in signal_phrases:
+                for phrase in phrases:
+                    needle = _normalize_search_query(phrase).casefold()
+                    if needle and needle in normalized:
+                        return {
+                            "phrase": phrase,
+                            "basis": basis,
+                            "signal_type": signal_type,
+                            "product_fit": "unassessed",
+                        }
         return None
 
     @staticmethod
     def _lead_generation_queries(
         question: str, existing_queries: list[str] | None = None
     ) -> list[str]:
-        """Create high-intent buyer-search variants without changing the product/location."""
+        """Build bounded buying-intent queries from the requested product, not a sector template."""
         subject = _normalize_search_query(question).strip()
         subject = re.sub(
-            r"^(?:(?:من فضلك|لو سمحت)\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)\s+"
-            r"(?:عن|على)\s+(?:عميل(?:\s+محتمل)?|عملاء(?:\s+محتملين)?|"
-            r"مشتري(?:ن)?|مشترين)\s*(?:(?:الذي|اللي|الذين)\s*)?"
-            r"(?:(?:يريد|عايز|عاوز)\s*(?:ان\s*)?(?:يشتري|شراء))?\s*",
+            r"^(?:(?:من فضلك|لو سمحت)\\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)\\s+"
+            r"(?:عن|على)\\s+(?:عميل(?:\\s+محتمل)?|عملاء(?:\\s+محتملين)?|"
+            r"مشتري(?:ن)?|مشترين)\\s*(?:(?:الذي|اللي|الذين)\\s*)?"
+            r"(?:(?:يريد|عايز|عاوز)\\s*(?:ان\\s*)?(?:يشتري|شراء))?\\s*",
             "", subject, flags=re.IGNORECASE,
         )
         subject = re.sub(
-            r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?"
-            r"(?:(?:potential\s+)?(?:customer|buyer|prospect|lead)s?)\s*"
-            r"(?:(?:who|that)\s*)?(?:(?:wants?|looking to|seeking to)\s+"
-            r"(?:buy|purchase)\s*)?",
+            r"^(?:please\\s+)?(?:find|search for|look for)\\s+(?:(?:a|an)\\s+)?"
+            r"(?:(?:potential\\s+)?(?:customer|buyer|prospect|lead)s?)\\s*"
+            r"(?:(?:who|that)\\s*)?(?:(?:wants?|looking to|seeking to)\\s+"
+            r"(?:buy|purchase)\\s*)?",
             "", subject, flags=re.IGNORECASE,
-        ).strip(" \t:;,.-")
+        ).strip(" \\t:;,.-")
         if len(_search_tokens(subject)) < 2:
             subject = _normalize_search_query(question).strip()
-        arabic = bool(re.search(r"[\u0600-\u06FF]", question))
-        if arabic:
-            targeted = [
-                f'"مطلوب شراء" {subject}',
-                f'"مطلوب شقه تمليك" {subject}',
-                f'"بدور على" {subject} تمليك',
-                f'"عايز اشتري" {subject}',
-                f'site:facebook.com/groups "{subject}" ("مطلوب" OR "تمليك")',
-                f'site:linkedin.com/posts "{subject}" ("looking to buy" OR "purchase")',
-            ]
-        else:
-            targeted = [
-                f'"looking to buy" {subject}',
-                f'"want to purchase" {subject}',
-                f'site:linkedin.com/posts "{subject}" ("looking to buy" OR "purchase")',
-                f'site:facebook.com/groups "{subject}" ("looking for" OR "want to buy")',
-            ]
-        candidates = targeted + [_normalize_search_query(q) for q in (existing_queries or [])]
-        return list(dict.fromkeys(q[:500] for q in candidates if q and q.strip()))[:MAX_PLAN_QUERIES]
+        profile = ProductProfile(name=subject[:240])
+        has_arabic = bool(re.search(r"[\\u0600-\\u06FF]", question))
+        has_latin = bool(re.search(r"[A-Za-z]", question))
+        locale = "mixed" if has_arabic and has_latin else "ar" if has_arabic else "en"
+        return build_buyer_queries(
+            profile,
+            locale=locale,
+            existing_queries=existing_queries or (),
+        )
 
     @staticmethod
     def _is_listing_discovery(question: str) -> bool:
