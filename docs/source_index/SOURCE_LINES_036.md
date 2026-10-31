@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000110 إلى SRC-3451CC474D-L000578
+- النطاق: SRC-1C77C97630-L000017 إلى SRC-3451CC474D-L000485
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,99 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000017](../../tests/test_answer_validation.py#L17) | 17 | `"            \"snippet\": \"السعر 100,000 جنيه\","` | — |
+| [SRC-1C77C97630-L000018](../../tests/test_answer_validation.py#L18) | 18 | `"            \"page_text\": \"السعر 100,000 جنيه\","` | — |
+| [SRC-1C77C97630-L000019](../../tests/test_answer_validation.py#L19) | 19 | `"            \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000020](../../tests/test_answer_validation.py#L20) | 20 | `"            \"published_at\": \"\","` | — |
+| [SRC-1C77C97630-L000021](../../tests/test_answer_validation.py#L21) | 21 | `"        }],"` | — |
+| [SRC-1C77C97630-L000022](../../tests/test_answer_validation.py#L22) | 22 | `"        [\"السعر\"],"` | — |
+| [SRC-1C77C97630-L000023](../../tests/test_answer_validation.py#L23) | 23 | `"    )"` | — |
+| [SRC-1C77C97630-L000024](../../tests/test_answer_validation.py#L24) | 24 | `"    assert result[\"numeric_check_status\"] == \"all_checked_numeric_literals_appear_in_source_text\""` | — |
+| [SRC-1C77C97630-L000025](../../tests/test_answer_validation.py#L25) | 25 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
+| [SRC-1C77C97630-L000026](../../tests/test_answer_validation.py#L26) | 26 | `"    assert result[\"source_evidence_scope\"] == \"contains_extracted_page_text_and_or_snippets\""` | — |
+| [SRC-1C77C97630-L000027](../../tests/test_answer_validation.py#L27) | 27 | `"    assert result[\"citation_marker_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000028](../../tests/test_answer_validation.py#L28) | 28 | `"    assert result[\"semantic_verification\"] is False"` | — |
+| [SRC-1C77C97630-L000029](../../tests/test_answer_validation.py#L29) | 29 | `""` | — |
+| [SRC-1C77C97630-L000030](../../tests/test_answer_validation.py#L30) | 30 | `""` | — |
+| [SRC-1C77C97630-L000031](../../tests/test_answer_validation.py#L31) | 31 | `"def test_numeric_screen_flags_number_absent_from_available_evidence():"` | — |
+| [SRC-1C77C97630-L000032](../../tests/test_answer_validation.py#L32) | 32 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000033](../../tests/test_answer_validation.py#L33) | 33 | `"        \"ما السعر؟\","` | — |
+| [SRC-1C77C97630-L000034](../../tests/test_answer_validation.py#L34) | 34 | `"        \"السعر 500 جنيه [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000035](../../tests/test_answer_validation.py#L35) | 35 | `"        [{"` | — |
+| [SRC-1C77C97630-L000036](../../tests/test_answer_validation.py#L36) | 36 | `"            \"title\": \"تفاصيل السعر\","` | — |
+| [SRC-1C77C97630-L000037](../../tests/test_answer_validation.py#L37) | 37 | `"            \"snippet\": \"السعر 300 جنيه\","` | — |
+| [SRC-1C77C97630-L000038](../../tests/test_answer_validation.py#L38) | 38 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000039](../../tests/test_answer_validation.py#L39) | 39 | `"            \"published_at\": \"\","` | — |
+| [SRC-1C77C97630-L000040](../../tests/test_answer_validation.py#L40) | 40 | `"        }],"` | — |
+| [SRC-1C77C97630-L000041](../../tests/test_answer_validation.py#L41) | 41 | `"    )"` | — |
+| [SRC-1C77C97630-L000042](../../tests/test_answer_validation.py#L42) | 42 | `"    assert result[\"numeric_check_status\"] == \"potentially_unsupported_numeric_literals\""` | — |
+| [SRC-1C77C97630-L000043](../../tests/test_answer_validation.py#L43) | 43 | `"    assert \"500\" in result[\"potentially_unsupported_numeric_literals\"]"` | — |
+| [SRC-1C77C97630-L000044](../../tests/test_answer_validation.py#L44) | 44 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
+| [SRC-1C77C97630-L000045](../../tests/test_answer_validation.py#L45) | 45 | `""` | — |
+| [SRC-1C77C97630-L000046](../../tests/test_answer_validation.py#L46) | 46 | `""` | — |
+| [SRC-1C77C97630-L000047](../../tests/test_answer_validation.py#L47) | 47 | `"def test_task_coverage_screen_flags_a_potentially_missing_target_without_claiming_failure():"` | — |
+| [SRC-1C77C97630-L000048](../../tests/test_answer_validation.py#L48) | 48 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000049](../../tests/test_answer_validation.py#L49) | 49 | `"        \"قارن من حيث السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000050](../../tests/test_answer_validation.py#L50) | 50 | `"        \"من حيث السعر، الخيار الأول أقل تكلفة.\","` | — |
+| [SRC-1C77C97630-L000051](../../tests/test_answer_validation.py#L51) | 51 | `"        [{"` | — |
+| [SRC-1C77C97630-L000052](../../tests/test_answer_validation.py#L52) | 52 | `"            \"title\": \"إعلان\","` | — |
+| [SRC-1C77C97630-L000053](../../tests/test_answer_validation.py#L53) | 53 | `"            \"snippet\": \"السعر والمساحة غير موضحين\","` | — |
+| [SRC-1C77C97630-L000054](../../tests/test_answer_validation.py#L54) | 54 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000055](../../tests/test_answer_validation.py#L55) | 55 | `"        }],"` | — |
+| [SRC-1C77C97630-L000056](../../tests/test_answer_validation.py#L56) | 56 | `"        [\"السعر\", \"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000057](../../tests/test_answer_validation.py#L57) | 57 | `"    )"` | — |
+| [SRC-1C77C97630-L000058](../../tests/test_answer_validation.py#L58) | 58 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
+| [SRC-1C77C97630-L000059](../../tests/test_answer_validation.py#L59) | 59 | `"    assert checks[\"السعر\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000060](../../tests/test_answer_validation.py#L60) | 60 | `"    assert checks[\"المساحة\"][\"status\"] == \"possibly_missing\""` | — |
+| [SRC-1C77C97630-L000061](../../tests/test_answer_validation.py#L61) | 61 | `"    assert result[\"potentially_missing_target_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000062](../../tests/test_answer_validation.py#L62) | 62 | `"    assert result[\"method\"] == \"deterministic_lexical_screen_only\""` | — |
+| [SRC-1C77C97630-L000063](../../tests/test_answer_validation.py#L63) | 63 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000064](../../tests/test_answer_validation.py#L64) | 64 | `""` | — |
+| [SRC-1C77C97630-L000065](../../tests/test_answer_validation.py#L65) | 65 | `""` | — |
+| [SRC-1C77C97630-L000066](../../tests/test_answer_validation.py#L66) | 66 | `"def test_criterion_coverage_distinguishes_answer_mentions_from_source_evidence():"` | — |
+| [SRC-1C77C97630-L000067](../../tests/test_answer_validation.py#L67) | 67 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000068](../../tests/test_answer_validation.py#L68) | 68 | `"        \"قارن من حيث السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000069](../../tests/test_answer_validation.py#L69) | 69 | `"        \"السعر واضح، أما المساحة فلا تتوفر بيانات عنها.\","` | — |
+| [SRC-1C77C97630-L000070](../../tests/test_answer_validation.py#L70) | 70 | `"        [{"` | — |
+| [SRC-1C77C97630-L000071](../../tests/test_answer_validation.py#L71) | 71 | `"            \"title\": \"سعر الهاتف\","` | — |
+| [SRC-1C77C97630-L000072](../../tests/test_answer_validation.py#L72) | 72 | `"            \"snippet\": \"سعر الهاتف 100 جنيه\","` | — |
+| [SRC-1C77C97630-L000073](../../tests/test_answer_validation.py#L73) | 73 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000074](../../tests/test_answer_validation.py#L74) | 74 | `"        }],"` | — |
+| [SRC-1C77C97630-L000075](../../tests/test_answer_validation.py#L75) | 75 | `"        [\"السعر\", \"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000076](../../tests/test_answer_validation.py#L76) | 76 | `"    )"` | — |
+| [SRC-1C77C97630-L000077](../../tests/test_answer_validation.py#L77) | 77 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
+| [SRC-1C77C97630-L000078](../../tests/test_answer_validation.py#L78) | 78 | `""` | — |
+| [SRC-1C77C97630-L000079](../../tests/test_answer_validation.py#L79) | 79 | `"    # Both dimensions are mentioned in the answer, but only price has a source signal."` | — |
+| [SRC-1C77C97630-L000080](../../tests/test_answer_validation.py#L80) | 80 | `"    assert checks[\"السعر\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000081](../../tests/test_answer_validation.py#L81) | 81 | `"    assert checks[\"السعر\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000082](../../tests/test_answer_validation.py#L82) | 82 | `"    assert checks[\"المساحة\"][\"status\"] == \"lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000083](../../tests/test_answer_validation.py#L83) | 83 | `"    assert checks[\"المساحة\"][\"source_evidence_status\"] == \"no_source_lexical_signal\""` | — |
+| [SRC-1C77C97630-L000084](../../tests/test_answer_validation.py#L84) | 84 | `"    assert result[\"source_evidence_gap_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000085](../../tests/test_answer_validation.py#L85) | 85 | `"    assert result[\"source_evidence_assessment\"] == ("` | — |
+| [SRC-1C77C97630-L000086](../../tests/test_answer_validation.py#L86) | 86 | `"        \"criterion_level_lexical_signals_not_claim_support_or_entailment\""` | — |
+| [SRC-1C77C97630-L000087](../../tests/test_answer_validation.py#L87) | 87 | `"    )"` | — |
+| [SRC-1C77C97630-L000088](../../tests/test_answer_validation.py#L88) | 88 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000089](../../tests/test_answer_validation.py#L89) | 89 | `""` | — |
+| [SRC-1C77C97630-L000090](../../tests/test_answer_validation.py#L90) | 90 | `""` | — |
+| [SRC-1C77C97630-L000091](../../tests/test_answer_validation.py#L91) | 91 | `"def test_arabic_criterion_can_match_common_english_source_terms():"` | — |
+| [SRC-1C77C97630-L000092](../../tests/test_answer_validation.py#L92) | 92 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000093](../../tests/test_answer_validation.py#L93) | 93 | `"        \"قارن من حيث السعر والمساحة\","` | — |
+| [SRC-1C77C97630-L000094](../../tests/test_answer_validation.py#L94) | 94 | `"        \"السعر مذكور، لكن المساحة غير متاحة في الأدلة.\","` | — |
+| [SRC-1C77C97630-L000095](../../tests/test_answer_validation.py#L95) | 95 | `"        [{"` | — |
+| [SRC-1C77C97630-L000096](../../tests/test_answer_validation.py#L96) | 96 | `"            \"title\": \"Product listing\","` | — |
+| [SRC-1C77C97630-L000097](../../tests/test_answer_validation.py#L97) | 97 | `"            \"snippet\": \"Price: 100 EGP. Size: 80 sqm.\","` | — |
+| [SRC-1C77C97630-L000098](../../tests/test_answer_validation.py#L98) | 98 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000099](../../tests/test_answer_validation.py#L99) | 99 | `"        }],"` | — |
+| [SRC-1C77C97630-L000100](../../tests/test_answer_validation.py#L100) | 100 | `"        [\"السعر\", \"المساحة\"],"` | — |
+| [SRC-1C77C97630-L000101](../../tests/test_answer_validation.py#L101) | 101 | `"    )"` | — |
+| [SRC-1C77C97630-L000102](../../tests/test_answer_validation.py#L102) | 102 | `"    checks = {item[\"target\"]: item for item in result[\"target_coverage\"]}"` | — |
+| [SRC-1C77C97630-L000103](../../tests/test_answer_validation.py#L103) | 103 | `"    assert checks[\"السعر\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000104](../../tests/test_answer_validation.py#L104) | 104 | `"    assert checks[\"المساحة\"][\"source_evidence_status\"] == \"source_lexical_signal_found\""` | — |
+| [SRC-1C77C97630-L000105](../../tests/test_answer_validation.py#L105) | 105 | `"    assert result[\"source_evidence_gap_count\"] == 0"` | — |
+| [SRC-1C77C97630-L000106](../../tests/test_answer_validation.py#L106) | 106 | `"    # Cross-language lexical matching remains a retrieval hint, not entailment."` | — |
+| [SRC-1C77C97630-L000107](../../tests/test_answer_validation.py#L107) | 107 | `"    assert result[\"semantic_verification\"] is False"` | — |
+| [SRC-1C77C97630-L000108](../../tests/test_answer_validation.py#L108) | 108 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000109](../../tests/test_answer_validation.py#L109) | 109 | `""` | — |
 | [SRC-1C77C97630-L000110](../../tests/test_answer_validation.py#L110) | 110 | `""` | — |
 | [SRC-1C77C97630-L000111](../../tests/test_answer_validation.py#L111) | 111 | `"def test_source_scope_does_not_confuse_snippet_with_fetched_page():"` | — |
 | [SRC-1C77C97630-L000112](../../tests/test_answer_validation.py#L112) | 112 | `"    result = audit_answer_integrity("` | — |
@@ -732,96 +825,3 @@
 | [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `"    )"` | — |
 | [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `""` | — |
-| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"second\"}, headers=headers"` | — |
-| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"    )"` | — |
-| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `"    assert status == 429"` | — |
-| [SRC-3451CC474D-L000490](../../tests/test_api.py#L490) | 490 | `"    assert \"حد الطلبات\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000491](../../tests/test_api.py#L491) | 491 | `""` | — |
-| [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `""` | — |
-| [SRC-3451CC474D-L000493](../../tests/test_api.py#L493) | 493 | `""` | — |
-| [SRC-3451CC474D-L000494](../../tests/test_api.py#L494) | 494 | `"def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000495](../../tests/test_api.py#L495) | 495 | `"    from api.omarai import serve"` | — |
-| [SRC-3451CC474D-L000496](../../tests/test_api.py#L496) | 496 | `""` | — |
-| [SRC-3451CC474D-L000497](../../tests/test_api.py#L497) | 497 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000498](../../tests/test_api.py#L498) | 498 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000499](../../tests/test_api.py#L499) | 499 | `"    with pytest.raises(ValueError, match=\"Public binding requires\"):"` | — |
-| [SRC-3451CC474D-L000500](../../tests/test_api.py#L500) | 500 | `"        serve(\"0.0.0.0\", 0)"` | — |
-| [SRC-3451CC474D-L000501](../../tests/test_api.py#L501) | 501 | `""` | — |
-| [SRC-3451CC474D-L000502](../../tests/test_api.py#L502) | 502 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000503](../../tests/test_api.py#L503) | 503 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"short\")"` | — |
-| [SRC-3451CC474D-L000504](../../tests/test_api.py#L504) | 504 | `"    with pytest.raises(ValueError, match=\"at least 32 characters\"):"` | — |
-| [SRC-3451CC474D-L000505](../../tests/test_api.py#L505) | 505 | `"        serve(\"0.0.0.0\", 0)"` | — |
-| [SRC-3451CC474D-L000506](../../tests/test_api.py#L506) | 506 | `""` | — |
-| [SRC-3451CC474D-L000507](../../tests/test_api.py#L507) | 507 | `"def test_rate_limiter_prunes_expired_client_buckets(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000508](../../tests/test_api.py#L508) | 508 | `"    \"\"\"Client IPs do not accumulate forever after their 60-second window expires.\"\"\""` | — |
-| [SRC-3451CC474D-L000509](../../tests/test_api.py#L509) | 509 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000510](../../tests/test_api.py#L510) | 510 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000511](../../tests/test_api.py#L511) | 511 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000512](../../tests/test_api.py#L512) | 512 | `"    clock = {\"now\": 100.0}"` | — |
-| [SRC-3451CC474D-L000513](../../tests/test_api.py#L513) | 513 | `"    monkeypatch.setattr(\"api.omarai.time.monotonic\", lambda: clock[\"now\"])"` | — |
-| [SRC-3451CC474D-L000514](../../tests/test_api.py#L514) | 514 | `""` | — |
-| [SRC-3451CC474D-L000515](../../tests/test_api.py#L515) | 515 | `"    class FakeHandler(Handler):"` | — |
-| [SRC-3451CC474D-L000516](../../tests/test_api.py#L516) | 516 | `"        def __init__(self, ip):"` | — |
-| [SRC-3451CC474D-L000517](../../tests/test_api.py#L517) | 517 | `"            self.headers = {}"` | — |
-| [SRC-3451CC474D-L000518](../../tests/test_api.py#L518) | 518 | `"            self.client_address = (ip, 1234)"` | — |
-| [SRC-3451CC474D-L000519](../../tests/test_api.py#L519) | 519 | `""` | — |
-| [SRC-3451CC474D-L000520](../../tests/test_api.py#L520) | 520 | `"    first = FakeHandler(\"192.0.2.1\")"` | — |
-| [SRC-3451CC474D-L000521](../../tests/test_api.py#L521) | 521 | `"    second = FakeHandler(\"192.0.2.2\")"` | — |
-| [SRC-3451CC474D-L000522](../../tests/test_api.py#L522) | 522 | `"    assert first._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000523](../../tests/test_api.py#L523) | 523 | `"    assert \"192.0.2.1\" in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000524](../../tests/test_api.py#L524) | 524 | `""` | — |
-| [SRC-3451CC474D-L000525](../../tests/test_api.py#L525) | 525 | `"    clock[\"now\"] = 161.0"` | — |
-| [SRC-3451CC474D-L000526](../../tests/test_api.py#L526) | 526 | `"    assert second._rate_limit_ok() is True"` | — |
-| [SRC-3451CC474D-L000527](../../tests/test_api.py#L527) | 527 | `"    assert \"192.0.2.1\" not in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000528](../../tests/test_api.py#L528) | 528 | `"    assert \"192.0.2.2\" in Handler._request_times"` | — |
-| [SRC-3451CC474D-L000529](../../tests/test_api.py#L529) | 529 | `""` | — |
-| [SRC-3451CC474D-L000530](../../tests/test_api.py#L530) | 530 | `""` | — |
-| [SRC-3451CC474D-L000531](../../tests/test_api.py#L531) | 531 | `""` | — |
-| [SRC-3451CC474D-L000532](../../tests/test_api.py#L532) | 532 | `"def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000533](../../tests/test_api.py#L533) | 533 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-3451CC474D-L000534](../../tests/test_api.py#L534) | 534 | `""` | — |
-| [SRC-3451CC474D-L000535](../../tests/test_api.py#L535) | 535 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000536](../../tests/test_api.py#L536) | 536 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000537](../../tests/test_api.py#L537) | 537 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
-| [SRC-3451CC474D-L000538](../../tests/test_api.py#L538) | 538 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
-| [SRC-3451CC474D-L000539](../../tests/test_api.py#L539) | 539 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
-| [SRC-3451CC474D-L000540](../../tests/test_api.py#L540) | 540 | `""` | — |
-| [SRC-3451CC474D-L000541](../../tests/test_api.py#L541) | 541 | `"    entered = threading.Event()"` | — |
-| [SRC-3451CC474D-L000542](../../tests/test_api.py#L542) | 542 | `"    release = threading.Event()"` | — |
-| [SRC-3451CC474D-L000543](../../tests/test_api.py#L543) | 543 | `"    first_result = {}"` | — |
-| [SRC-3451CC474D-L000544](../../tests/test_api.py#L544) | 544 | `""` | — |
-| [SRC-3451CC474D-L000545](../../tests/test_api.py#L545) | 545 | `"    def slow_answer(self, question, history=None, mode=\"auto\"):"` | — |
-| [SRC-3451CC474D-L000546](../../tests/test_api.py#L546) | 546 | `"        entered.set()"` | — |
-| [SRC-3451CC474D-L000547](../../tests/test_api.py#L547) | 547 | `"        assert release.wait(timeout=2), \"test did not release the held research slot\""` | — |
-| [SRC-3451CC474D-L000548](../../tests/test_api.py#L548) | 548 | `"        return {"` | — |
-| [SRC-3451CC474D-L000549](../../tests/test_api.py#L549) | 549 | `"            \"answer\": \"نتيجة اختبار محدودة\","` | — |
-| [SRC-3451CC474D-L000550](../../tests/test_api.py#L550) | 550 | `"            \"question\": question,"` | — |
-| [SRC-3451CC474D-L000551](../../tests/test_api.py#L551) | 551 | `"            \"search_query\": question,"` | — |
-| [SRC-3451CC474D-L000552](../../tests/test_api.py#L552) | 552 | `"            \"search_queries\": [],"` | — |
-| [SRC-3451CC474D-L000553](../../tests/test_api.py#L553) | 553 | `"            \"search_report\": {\"search_attempted\": False, \"search_outcome\": \"not_attempted\"},"` | — |
-| [SRC-3451CC474D-L000554](../../tests/test_api.py#L554) | 554 | `"            \"sources\": [],"` | — |
-| [SRC-3451CC474D-L000555](../../tests/test_api.py#L555) | 555 | `"            \"used_language_model\": False,"` | — |
-| [SRC-3451CC474D-L000556](../../tests/test_api.py#L556) | 556 | `"            \"used_web_search\": False,"` | — |
-| [SRC-3451CC474D-L000557](../../tests/test_api.py#L557) | 557 | `"            \"search_attempted\": False,"` | — |
-| [SRC-3451CC474D-L000558](../../tests/test_api.py#L558) | 558 | `"            \"used_social_search\": False,"` | — |
-| [SRC-3451CC474D-L000559](../../tests/test_api.py#L559) | 559 | `"            \"warnings\": [],"` | — |
-| [SRC-3451CC474D-L000560](../../tests/test_api.py#L560) | 560 | `"            \"kind\": \"web_fallback\","` | — |
-| [SRC-3451CC474D-L000561](../../tests/test_api.py#L561) | 561 | `"        }"` | — |
-| [SRC-3451CC474D-L000562](../../tests/test_api.py#L562) | 562 | `""` | — |
-| [SRC-3451CC474D-L000563](../../tests/test_api.py#L563) | 563 | `"    monkeypatch.setattr(WebAgent, \"answer\", slow_answer)"` | — |
-| [SRC-3451CC474D-L000564](../../tests/test_api.py#L564) | 564 | `""` | — |
-| [SRC-3451CC474D-L000565](../../tests/test_api.py#L565) | 565 | `"    def first_request():"` | — |
-| [SRC-3451CC474D-L000566](../../tests/test_api.py#L566) | 566 | `"        first_result[\"response\"] = request_json("` | — |
-| [SRC-3451CC474D-L000567](../../tests/test_api.py#L567) | 567 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الأول\"}"` | — |
-| [SRC-3451CC474D-L000568](../../tests/test_api.py#L568) | 568 | `"        )"` | — |
-| [SRC-3451CC474D-L000569](../../tests/test_api.py#L569) | 569 | `""` | — |
-| [SRC-3451CC474D-L000570](../../tests/test_api.py#L570) | 570 | `"    worker = threading.Thread(target=first_request, daemon=True)"` | — |
-| [SRC-3451CC474D-L000571](../../tests/test_api.py#L571) | 571 | `"    worker.start()"` | — |
-| [SRC-3451CC474D-L000572](../../tests/test_api.py#L572) | 572 | `"    try:"` | — |
-| [SRC-3451CC474D-L000573](../../tests/test_api.py#L573) | 573 | `"        assert entered.wait(timeout=1), \"first request did not acquire the research slot\""` | — |
-| [SRC-3451CC474D-L000574](../../tests/test_api.py#L574) | 574 | `"        status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000575](../../tests/test_api.py#L575) | 575 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الثاني\"}"` | — |
-| [SRC-3451CC474D-L000576](../../tests/test_api.py#L576) | 576 | `"        )"` | — |
-| [SRC-3451CC474D-L000577](../../tests/test_api.py#L577) | 577 | `"        assert status == 503"` | — |
-| [SRC-3451CC474D-L000578](../../tests/test_api.py#L578) | 578 | `"        assert payload[\"retry_after_seconds\"] == 5"` | — |
