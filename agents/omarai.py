@@ -11,6 +11,7 @@ import unicodedata
 from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import urlparse
+from typing import ClassVar
 
 MAX_TEXT = 12000
 _TRANSLATION = str.maketrans({"أ":"ا","إ":"ا","آ":"ا","ٱ":"ا","ى":"ي","ئ":"ي","ؤ":"و","ـ":""})
@@ -82,7 +83,7 @@ def validate_url(url: str) -> str:
 class LeadStore:
     """Tenant-scoped SQLite storage for customer-demand signals."""
 
-    ROLES = {"owner", "admin", "manager", "sales_agent", "viewer"}
+    ROLES: ClassVar[frozenset[str]] = frozenset({"owner", "admin", "manager", "sales_agent", "viewer"})
     DEFAULT_TENANT_ID = "default"
 
     def __init__(
