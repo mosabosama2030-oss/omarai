@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **972**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1898**
-- الأسطر النصية المفهرسة حرفيًا: **40773**
+- الأسطر النصية المفهرسة حرفيًا: **40775**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -125,7 +125,7 @@
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23466 | 616 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 8412 | 226 | جرد الملف + AST Python |
-| FILE-1BB2FDD5B7 | اختبارات | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L1) | Python | 5130 | 118 | جرد الملف + AST Python |
+| FILE-1BB2FDD5B7 | اختبارات | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L1) | Python | 5201 | 120 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
@@ -1185,9 +1185,9 @@
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L221) | دالة | test_hosted_smoke_workflow_is_manual_and_cost_gated | لا توجد Docstring. | ناقص | 221 | [SRC-1A176AD4F0-L000221](../tests/test_hosted_smoke.py#L221) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L7) | دالة | test_hosted_smoke_returns_exact_question_answer_and_sources | لا توجد Docstring. | ناقص | 7 | [SRC-1BB2FDD5B7-L000007](../tests/test_hosted_smoke_transcript.py#L7) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L10) | دالة | test_hosted_smoke_returns_exact_question_answer_and_sources.fake_request_json | لا توجد Docstring. | ناقص | 10 | [SRC-1BB2FDD5B7-L000010](../tests/test_hosted_smoke_transcript.py#L10) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L78) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev | لا توجد Docstring. | ناقص | 78 | [SRC-1BB2FDD5B7-L000078](../tests/test_hosted_smoke_transcript.py#L78) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L79) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev.fake_request_json | لا توجد Docstring. | ناقص | 79 | [SRC-1BB2FDD5B7-L000079](../tests/test_hosted_smoke_transcript.py#L79) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L110) | دالة | test_hosted_smoke_rejects_no_token_for_remote_host | لا توجد Docstring. | ناقص | 110 | [SRC-1BB2FDD5B7-L000110](../tests/test_hosted_smoke_transcript.py#L110) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L79) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev | لا توجد Docstring. | ناقص | 79 | [SRC-1BB2FDD5B7-L000079](../tests/test_hosted_smoke_transcript.py#L79) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L80) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev.fake_request_json | لا توجد Docstring. | ناقص | 80 | [SRC-1BB2FDD5B7-L000080](../tests/test_hosted_smoke_transcript.py#L80) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L112) | دالة | test_hosted_smoke_rejects_no_token_for_remote_host | لا توجد Docstring. | ناقص | 112 | [SRC-1BB2FDD5B7-L000112](../tests/test_hosted_smoke_transcript.py#L112) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L23) | دالة | test_deterministic_intent_routes | لا توجد Docstring. | ناقص | 23 | [SRC-EA6EC52573-L000023](../tests/test_intent_router.py#L23) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L40) | دالة | test_lead_generation_and_summarization_routes | لا توجد Docstring. | ناقص | 40 | [SRC-EA6EC52573-L000040](../tests/test_intent_router.py#L40) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L46) | دالة | test_generic_explanation_of_lead_generation_is_not_a_lead_search | لا توجد Docstring. | ناقص | 46 | [SRC-EA6EC52573-L000046](../tests/test_intent_router.py#L46) |
@@ -3175,7 +3175,7 @@
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L12) | مسار API/واجهة محتمل | /api/health | 12 | [SRC-1BB2FDD5B7-L000012](../tests/test_hosted_smoke_transcript.py#L12) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L14) | مسار API/واجهة محتمل | /api/agent | 14 | [SRC-1BB2FDD5B7-L000014](../tests/test_hosted_smoke_transcript.py#L14) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L16) | مسار API/واجهة محتمل | /api/diagnostics | 16 | [SRC-1BB2FDD5B7-L000016](../tests/test_hosted_smoke_transcript.py#L16) |
-| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LIVE_TEST_QUESTION | 65 | [SRC-1BB2FDD5B7-L000065](../tests/test_hosted_smoke_transcript.py#L65) |
+| [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LIVE_TEST_QUESTION | 66 | [SRC-1BB2FDD5B7-L000066](../tests/test_hosted_smoke_transcript.py#L66) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 13 | [SRC-EA6EC52573-L000013](../tests/test_intent_router.py#L13) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 16 | [SRC-EA6EC52573-L000016](../tests/test_intent_router.py#L16) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 19 | [SRC-EA6EC52573-L000019](../tests/test_intent_router.py#L19) |

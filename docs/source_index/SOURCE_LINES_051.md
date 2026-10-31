@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **051**
-- سجلات الأسطر: **773**
-- النطاق: SRC-F725E90B2A-L003801 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **775**
+- النطاق: SRC-F725E90B2A-L003799 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003799](../../tests/test_web_agent.py#L3799) | 3799 | `"        \"task_spec\": task_spec,"` | — |
+| [SRC-F725E90B2A-L003800](../../tests/test_web_agent.py#L3800) | 3800 | `"        \"query_strategy_matrix\": matrix,"` | — |
 | [SRC-F725E90B2A-L003801](../../tests/test_web_agent.py#L3801) | 3801 | `"    }"` | — |
 | [SRC-F725E90B2A-L003802](../../tests/test_web_agent.py#L3802) | 3802 | `""` | — |
 | [SRC-F725E90B2A-L003803](../../tests/test_web_agent.py#L3803) | 3803 | `"    def fake_completion(messages, **kwargs):"` | — |

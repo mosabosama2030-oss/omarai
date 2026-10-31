@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001401 إلى SRC-F725E90B2A-L002200
+- النطاق: SRC-F725E90B2A-L001399 إلى SRC-F725E90B2A-L002198
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001399](../../tests/test_web_agent.py#L1399) | 1399 | `"        history=[],"` | — |
+| [SRC-F725E90B2A-L001400](../../tests/test_web_agent.py#L1400) | 1400 | `"        sources=[source],"` | — |
 | [SRC-F725E90B2A-L001401](../../tests/test_web_agent.py#L1401) | 1401 | `"        search_warning=None,"` | — |
 | [SRC-F725E90B2A-L001402](../../tests/test_web_agent.py#L1402) | 1402 | `"        research_plan={\"depth\": \"standard\", \"queries\": [\"ما الذي يقوله المصدر؟\"]},"` | — |
 | [SRC-F725E90B2A-L001403](../../tests/test_web_agent.py#L1403) | 1403 | `"        search_report={},"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002196](../../tests/test_web_agent.py#L2196) | 2196 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |
 | [SRC-F725E90B2A-L002197](../../tests/test_web_agent.py#L2197) | 2197 | `"        \"direct_urls\": [],"` | — |
 | [SRC-F725E90B2A-L002198](../../tests/test_web_agent.py#L2198) | 2198 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L002199](../../tests/test_web_agent.py#L2199) | 2199 | `"        \"freshness\": \"current\","` | — |
-| [SRC-F725E90B2A-L002200](../../tests/test_web_agent.py#L2200) | 2200 | `"        \"depth\": \"deep\","` | — |

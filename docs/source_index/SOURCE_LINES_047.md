@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000601 إلى SRC-F725E90B2A-L001400
+- النطاق: SRC-F725E90B2A-L000599 إلى SRC-F725E90B2A-L001398
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000599](../../tests/test_web_agent.py#L599) | 599 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000600](../../tests/test_web_agent.py#L600) | 600 | `"        calls.append((url, kwargs))"` | — |
 | [SRC-F725E90B2A-L000601](../../tests/test_web_agent.py#L601) | 601 | `"        return FakeResponse()"` | — |
 | [SRC-F725E90B2A-L000602](../../tests/test_web_agent.py#L602) | 602 | `""` | — |
 | [SRC-F725E90B2A-L000603](../../tests/test_web_agent.py#L603) | 603 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001396](../../tests/test_web_agent.py#L1396) | 1396 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
 | [SRC-F725E90B2A-L001397](../../tests/test_web_agent.py#L1397) | 1397 | `"    answer = agent._generate("` | — |
 | [SRC-F725E90B2A-L001398](../../tests/test_web_agent.py#L1398) | 1398 | `"        question=\"ما الذي يقوله المصدر؟\","` | — |
-| [SRC-F725E90B2A-L001399](../../tests/test_web_agent.py#L1399) | 1399 | `"        history=[],"` | — |
-| [SRC-F725E90B2A-L001400](../../tests/test_web_agent.py#L1400) | 1400 | `"        sources=[source],"` | — |

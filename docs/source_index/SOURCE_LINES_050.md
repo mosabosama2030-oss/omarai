@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003001 إلى SRC-F725E90B2A-L003800
+- النطاق: SRC-F725E90B2A-L002999 إلى SRC-F725E90B2A-L003798
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002999](../../tests/test_web_agent.py#L2999) | 2999 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة.\","` | — |
+| [SRC-F725E90B2A-L003000](../../tests/test_web_agent.py#L3000) | 3000 | `"            \"Reddit users share electric car experiences in Egypt\","` | — |
 | [SRC-F725E90B2A-L003001](../../tests/test_web_agent.py#L3001) | 3001 | `"            \"Owners discuss electric vehicles, charging and daily use.\","` | — |
 | [SRC-F725E90B2A-L003002](../../tests/test_web_agent.py#L3002) | 3002 | `"        ),"` | — |
 | [SRC-F725E90B2A-L003003](../../tests/test_web_agent.py#L3003) | 3003 | `"    ]"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L003796](../../tests/test_web_agent.py#L3796) | 3796 | `"        \"queries\": [row[\"query\"] for row in matrix],"` | — |
 | [SRC-F725E90B2A-L003797](../../tests/test_web_agent.py#L3797) | 3797 | `"        \"dialogue_context\": {},"` | — |
 | [SRC-F725E90B2A-L003798](../../tests/test_web_agent.py#L3798) | 3798 | `"        \"intent_route\": \"WEB_DEEP\","` | — |
-| [SRC-F725E90B2A-L003799](../../tests/test_web_agent.py#L3799) | 3799 | `"        \"task_spec\": task_spec,"` | — |
-| [SRC-F725E90B2A-L003800](../../tests/test_web_agent.py#L3800) | 3800 | `"        \"query_strategy_matrix\": matrix,"` | — |

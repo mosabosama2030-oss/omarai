@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000341 إلى SRC-F725E90B2A-L000600
+- النطاق: SRC-AFEDC2645A-L000339 إلى SRC-F725E90B2A-L000598
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"            \"is_follow_up\": True,"` | — |
+| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"            \"topic_shift\": False,"` | — |
 | [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
 | [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"            \"method\": \"test_context\","` | — |
 | [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"        },"` | — |
@@ -832,5 +834,3 @@
 | [SRC-F725E90B2A-L000596](../../tests/test_web_agent.py#L596) | 596 | `""` | — |
 | [SRC-F725E90B2A-L000597](../../tests/test_web_agent.py#L597) | 597 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L000598](../../tests/test_web_agent.py#L598) | 598 | `""` | — |
-| [SRC-F725E90B2A-L000599](../../tests/test_web_agent.py#L599) | 599 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000600](../../tests/test_web_agent.py#L600) | 600 | `"        calls.append((url, kwargs))"` | — |

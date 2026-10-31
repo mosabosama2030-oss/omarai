@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000332 إلى SRC-96F6863E3C-L000079
+- النطاق: SRC-6BF96689A8-L000330 إلى SRC-96F6863E3C-L000077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000330](../../tests/test_research.py#L330) | 330 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-6BF96689A8-L000331](../../tests/test_research.py#L331) | 331 | `""` | — |
 | [SRC-6BF96689A8-L000332](../../tests/test_research.py#L332) | 332 | `""` | — |
 | [SRC-6BF96689A8-L000333](../../tests/test_research.py#L333) | 333 | `""` | — |
 | [SRC-6BF96689A8-L000334](../../tests/test_research.py#L334) | 334 | `"def test_followup_plan_keeps_topic_across_chained_turns():"` | — |
@@ -841,5 +843,3 @@
 | [SRC-96F6863E3C-L000075](../../tests/test_research_pipeline.py#L75) | 75 | `"        return 0.9 if source.get(\"url\", \"\").endswith(\"/relevant\") else float(\"nan\")"` | — |
 | [SRC-96F6863E3C-L000076](../../tests/test_research_pipeline.py#L76) | 76 | `""` | — |
 | [SRC-96F6863E3C-L000077](../../tests/test_research_pipeline.py#L77) | 77 | `"    result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000078](../../tests/test_research_pipeline.py#L78) | 78 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
-| [SRC-96F6863E3C-L000079](../../tests/test_research_pipeline.py#L79) | 79 | `"        {\"queries\": [\"الهاتف\"]},"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000080 إلى SRC-AFEDC2645A-L000340
+- النطاق: SRC-96F6863E3C-L000078 إلى SRC-AFEDC2645A-L000338
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000078](../../tests/test_research_pipeline.py#L78) | 78 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
+| [SRC-96F6863E3C-L000079](../../tests/test_research_pipeline.py#L79) | 79 | `"        {\"queries\": [\"الهاتف\"]},"` | — |
 | [SRC-96F6863E3C-L000080](../../tests/test_research_pipeline.py#L80) | 80 | `"        intent_route=\"WEB_DEEP\","` | — |
 | [SRC-96F6863E3C-L000081](../../tests/test_research_pipeline.py#L81) | 81 | `"        sources=["` | — |
 | [SRC-96F6863E3C-L000082](../../tests/test_research_pipeline.py#L82) | 82 | `"            {\"title\": \"سعر الهاتف\", \"url\": \"https://example.com/relevant\", \"snippet\": \"السعر\"},"` | — |
@@ -850,5 +852,3 @@
 | [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"        mode=\"latest\","` | — |
 | [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"        intent_route=\"WEB_DEEP\","` | — |
 | [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"            \"topic_shift\": False,"` | — |

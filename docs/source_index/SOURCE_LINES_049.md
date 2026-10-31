@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002201 إلى SRC-F725E90B2A-L003000
+- النطاق: SRC-F725E90B2A-L002199 إلى SRC-F725E90B2A-L002998
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002199](../../tests/test_web_agent.py#L2199) | 2199 | `"        \"freshness\": \"current\","` | — |
+| [SRC-F725E90B2A-L002200](../../tests/test_web_agent.py#L2200) | 2200 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L002201](../../tests/test_web_agent.py#L2201) | 2201 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L002202](../../tests/test_web_agent.py#L2202) | 2202 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L002203](../../tests/test_web_agent.py#L2203) | 2203 | `"    }"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002996](../../tests/test_web_agent.py#L2996) | 2996 | `"            \"New AI agent tools and launches this week.\","` | — |
 | [SRC-F725E90B2A-L002997](../../tests/test_web_agent.py#L2997) | 2997 | `"        ),"` | — |
 | [SRC-F725E90B2A-L002998](../../tests/test_web_agent.py#L2998) | 2998 | `"        ("` | — |
-| [SRC-F725E90B2A-L002999](../../tests/test_web_agent.py#L2999) | 2999 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة.\","` | — |
-| [SRC-F725E90B2A-L003000](../../tests/test_web_agent.py#L3000) | 3000 | `"            \"Reddit users share electric car experiences in Egypt\","` | — |
