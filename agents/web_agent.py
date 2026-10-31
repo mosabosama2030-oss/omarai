@@ -898,6 +898,10 @@ class WebAgent:
             "not looking to buy", "not interested in buying",
             "not interested in purchasing", "no longer looking to buy",
             "do not want to buy", "don't want to buy",
+            "looking for a buyer", "looking for buyers", "seeking a buyer",
+            "need a buyer", "buyer wanted", "buyers wanted",
+            "نبحث عن مشتري", "نبحث عن مشترين", "ابحث عن مشتري",
+            "مطلوب مشتري", "مطلوب مشترين", "نبحث عن عميل", "نبحث عن عملاء",
             "مش بدور على", "مش عايز اشتري", "مش عاوز اشتري",
             "لا اريد شراء", "لا ارغب في شراء", "مش محتاج اشتري",
         )
