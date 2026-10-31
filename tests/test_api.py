@@ -1110,3 +1110,53 @@ def test_api_tenant_id_header_requires_verified_membership(local_api):
     )
     assert status == 200
     assert "score" in result
+
+def test_api_ask_statistics_and_recommendations_are_company_scoped(local_api):
+    store = Handler.store
+    store.create_company("company-b", "شركة ب")
+    store.create_user("user-b", display_name="مسؤول ب")
+    store.add_membership("company-b", "user-b", role="admin")
+    lead_b, created = store.add(
+        "بدور على شقة وممكن معاينة والسعر كام",
+        "https://example.com/company-b/housing",
+        tenant_id="company-b",
+    )
+    assert created is True
+
+    status, stats_a = request_json(
+        local_api,
+        "/api/ask",
+        method="POST",
+        payload={"question": "كام عميل", "tenant_id": "default"},
+    )
+    assert status == 200
+    assert "0 إشارة" in stats_a["answer"]
+
+    status, stats_b = request_json(
+        local_api,
+        "/api/ask",
+        method="POST",
+        payload={"question": "كام عميل", "tenant_id": "company-b"},
+        headers={"X-Omarai-Test-User": "user-b"},
+    )
+    assert status == 200
+    assert "1 إشارة" in stats_b["answer"]
+
+    status, recommendation_b = request_json(
+        local_api,
+        "/api/ask",
+        method="POST",
+        payload={"question": "مين افضل عميل", "tenant_id": "company-b"},
+        headers={"X-Omarai-Test-User": "user-b"},
+    )
+    assert status == 200
+    assert lead_b["id"][:8] in recommendation_b["answer"]
+
+    # The default-company operator cannot select company B for a recommendation.
+    status, denied = request_json(
+        local_api,
+        "/api/ask",
+        method="POST",
+        payload={"question": "مين افضل عميل", "tenant_id": "company-b"},
+    )
+    assert status == 403
