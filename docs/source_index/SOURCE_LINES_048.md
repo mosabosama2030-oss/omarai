@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002091 إلى SRC-F725E90B2A-L002890
+- النطاق: SRC-F725E90B2A-L002092 إلى SRC-F725E90B2A-L002891
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002091](../../tests/test_web_agent.py#L2091) | 2091 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L002092](../../tests/test_web_agent.py#L2092) | 2092 | `"    source = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L002093](../../tests/test_web_agent.py#L2093) | 2093 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L002094](../../tests/test_web_agent.py#L2094) | 2094 | `"        agent,"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L002888](../../tests/test_web_agent.py#L2888) | 2888 | `"            \"latest\" in query.lower() or \"recent\" in query.lower()"` | — |
 | [SRC-F725E90B2A-L002889](../../tests/test_web_agent.py#L2889) | 2889 | `"            for query in plan[\"queries\"]"` | — |
 | [SRC-F725E90B2A-L002890](../../tests/test_web_agent.py#L2890) | 2890 | `"        )"` | — |
+| [SRC-F725E90B2A-L002891](../../tests/test_web_agent.py#L2891) | 2891 | `"    else:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000179 إلى SRC-E599346ABE-L000978
+- النطاق: SRC-E599346ABE-L000180 إلى SRC-E599346ABE-L000979
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |
 | [SRC-E599346ABE-L000180](../generate_index.py#L180) | 180 | `""` | — |
 | [SRC-E599346ABE-L000181](../generate_index.py#L181) | 181 | `"@dataclass(frozen=True, slots=True)"` | — |
 | [SRC-E599346ABE-L000182](../generate_index.py#L182) | 182 | `"class IndexedMarker:"` | — |
@@ -816,3 +815,4 @@
 | [SRC-E599346ABE-L000976](../generate_index.py#L976) | 976 | `"                heading = match.group(2).strip()"` | — |
 | [SRC-E599346ABE-L000977](../generate_index.py#L977) | 977 | `"                _add_marker("` | — |
 | [SRC-E599346ABE-L000978](../generate_index.py#L978) | 978 | `"                    markers,"` | — |
+| [SRC-E599346ABE-L000979](../generate_index.py#L979) | 979 | `"                    seen,"` | — |

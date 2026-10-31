@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000977 إلى SRC-62CE5126F9-L000403
+- النطاق: SRC-D17CE3D12F-L000978 إلى SRC-62CE5126F9-L000404
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D17CE3D12F-L000977](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L977) | 977 | `""` | — |
 | [SRC-D17CE3D12F-L000978](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L978) | 978 | `"---"` | — |
 | [SRC-D17CE3D12F-L000979](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L979) | 979 | `""` | — |
 | [SRC-D17CE3D12F-L000980](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L980) | 980 | `"# القسم السادس عشر — خريطة المرجعيات الخارجية"` | — |
@@ -852,3 +851,4 @@
 | [SRC-62CE5126F9-L000401](../OMARAI_REMEDIATION_REGISTER_AR.md#L401) | 401 | `""` | — |
 | [SRC-62CE5126F9-L000402](../OMARAI_REMEDIATION_REGISTER_AR.md#L402) | 402 | ``"- **OMR-EVAL-002 — FIXED_AND_TESTED في اختبارات CI على SHA `449912938fc0067301e0541552199a8e67ecc46b`:** نجح Ruff؛ نجح pytest بعدد **607 اختبارًا على Python 3.11** و**607 على Python 3.12**؛ ونجح بناء الحاوية وprotected API smoke. التشغيل: [GitHub Actions #40901777951](https://github.com/mosabosama2030-oss/omarai/actions/runs/40901777951)."`` | — |
 | [SRC-62CE5126F9-L000403](../OMARAI_REMEDIATION_REGISTER_AR.md#L403) | 403 | ``"- **حاجز هوية البناء:** المشغّل لا يرسل أسئلة benchmark إلى `/api/agent` ما لم يثبت `/api/health` قيمة `build.sha` كاملة ومتطابقة مع SHA المتوقع عند تقديمه."`` | — |
+| [SRC-62CE5126F9-L000404](../OMARAI_REMEDIATION_REGISTER_AR.md#L404) | 404 | ``"- **حاجز دليل البحث وحالة الأداة:** لا تُحسب عبارة `attempted_with_usable_sources` نجاحًا إذا خلت الاستجابة من مصادر أو ناقض عدد المصادر نتيجة البحث. كل أداة مطلوبة يجب أن تمتلك صف حالة واحدًا معلومًا؛ الصف المفقود أو المكرر أو بلا حالة يجعل مصفوفة الأدوات غير مكتملة ويمنع القبول الكامل."`` | — |

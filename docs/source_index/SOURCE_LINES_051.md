@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **051**
-- سجلات الأسطر: **337**
-- النطاق: SRC-DE7EABE998-L000195 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **336**
+- النطاق: SRC-DE7EABE998-L000196 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-DE7EABE998-L000195](../../web/agent.html#L195) | 195 | `"  no_citation_markers_present:\"لا توجد علامات إحالة\",diagnostics_not_computed:\"تعذر احتساب التشخيص\""` | — |
 | [SRC-DE7EABE998-L000196](../../web/agent.html#L196) | 196 | `" };"` | — |
 | [SRC-DE7EABE998-L000197](../../web/agent.html#L197) | 197 | `" const completionSummary=completion&&completion.status"` | — |
 | [SRC-DE7EABE998-L000198](../../web/agent.html#L198) | 198 | `"  ?'<p class=\"'+([\"search_failed_or_incomplete\",\"execution_stopped_budget\",\"answer_generation_or_review_failed\",\"no_eligible_sources_after_filtering\",\"partial_answer_evidence_gaps_detected\"].includes(completion.status)?\"warning\":\"report-note\")+'\"><b>حالة إكمال البحث:</b> '+escapeHtml(completionStatusLabels[completion.status]\|\|completion.status)+'. هذه حالة تشغيلية وليست احتمالًا لصحة الإجابة.</p>'"` | — |

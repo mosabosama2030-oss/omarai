@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000231 إلى SRC-F725E90B2A-L000490
+- النطاق: SRC-AFEDC2645A-L000232 إلى SRC-F725E90B2A-L000491
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"    assert spec[\"requires_clarification\"] is True"` | — |
 | [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `""` | — |
 | [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `""` | — |
 | [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"def test_output_preferences_do_not_count_as_competing_intent_hypotheses():"` | — |
@@ -834,3 +833,4 @@
 | [SRC-F725E90B2A-L000488](../../tests/test_web_agent.py#L488) | 488 | `"    monkeypatch.setenv(\"X_BEARER_TOKEN\", \"test-token\")"` | — |
 | [SRC-F725E90B2A-L000489](../../tests/test_web_agent.py#L489) | 489 | `""` | — |
 | [SRC-F725E90B2A-L000490](../../tests/test_web_agent.py#L490) | 490 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000491](../../tests/test_web_agent.py#L491) | 491 | `"        status_code = 200"` | — |

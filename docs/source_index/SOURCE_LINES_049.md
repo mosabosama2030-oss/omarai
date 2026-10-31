@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002891 إلى SRC-F725E90B2A-L003690
+- النطاق: SRC-F725E90B2A-L002892 إلى SRC-F725E90B2A-L003691
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L002891](../../tests/test_web_agent.py#L2891) | 2891 | `"    else:"` | — |
 | [SRC-F725E90B2A-L002892](../../tests/test_web_agent.py#L2892) | 2892 | `"        assert plan[\"social_focus\"] is True"` | — |
 | [SRC-F725E90B2A-L002893](../../tests/test_web_agent.py#L2893) | 2893 | `"        assert any(query.startswith(\"site:\") for query in plan[\"queries\"])"` | — |
 | [SRC-F725E90B2A-L002894](../../tests/test_web_agent.py#L2894) | 2894 | `""` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L003688](../../tests/test_web_agent.py#L3688) | 3688 | `"            sources = [repair_candidate]"` | — |
 | [SRC-F725E90B2A-L003689](../../tests/test_web_agent.py#L3689) | 3689 | `"        return sources, [], {"` | — |
 | [SRC-F725E90B2A-L003690](../../tests/test_web_agent.py#L3690) | 3690 | `"            \"queries_planned\": len(research_plan.get(\"queries\", [])),"` | — |
+| [SRC-F725E90B2A-L003691](../../tests/test_web_agent.py#L3691) | 3691 | `"            \"queries_attempted\": 1,"` | — |

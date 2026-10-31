@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000814 إلى SRC-29A9CD43D1-L000050
+- النطاق: SRC-3451CC474D-L000815 إلى SRC-29A9CD43D1-L000051
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000814](../../tests/test_api.py#L814) | 814 | `"    import api.omarai as api_module"` | — |
 | [SRC-3451CC474D-L000815](../../tests/test_api.py#L815) | 815 | `""` | — |
 | [SRC-3451CC474D-L000816](../../tests/test_api.py#L816) | 816 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
 | [SRC-3451CC474D-L000817](../../tests/test_api.py#L817) | 817 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
@@ -870,3 +869,4 @@
 | [SRC-29A9CD43D1-L000048](../../tests/test_dialogue_context_pipeline.py#L48) | 48 | `""` | — |
 | [SRC-29A9CD43D1-L000049](../../tests/test_dialogue_context_pipeline.py#L49) | 49 | `""` | — |
 | [SRC-29A9CD43D1-L000050](../../tests/test_dialogue_context_pipeline.py#L50) | 50 | `"def _semantic_context(*, needs_clarification: bool = False) -> dict[str, Any]:"` | — |
+| [SRC-29A9CD43D1-L000051](../../tests/test_dialogue_context_pipeline.py#L51) | 51 | `"    return {"` | — |

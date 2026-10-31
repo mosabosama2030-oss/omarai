@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000014 إلى SRC-3451CC474D-L000813
+- النطاق: SRC-3451CC474D-L000015 إلى SRC-3451CC474D-L000814
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000014](../../tests/test_api.py#L14) | 14 | `""` | — |
 | [SRC-3451CC474D-L000015](../../tests/test_api.py#L15) | 15 | `"import pytest"` | — |
 | [SRC-3451CC474D-L000016](../../tests/test_api.py#L16) | 16 | `""` | — |
 | [SRC-3451CC474D-L000017](../../tests/test_api.py#L17) | 17 | `"from agents.omarai import LeadStore"` | — |
@@ -816,3 +815,4 @@
 | [SRC-3451CC474D-L000811](../../tests/test_api.py#L811) | 811 | `""` | — |
 | [SRC-3451CC474D-L000812](../../tests/test_api.py#L812) | 812 | `""` | — |
 | [SRC-3451CC474D-L000813](../../tests/test_api.py#L813) | 813 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000814](../../tests/test_api.py#L814) | 814 | `"    import api.omarai as api_module"` | — |

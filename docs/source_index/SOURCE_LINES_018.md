@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000424 إلى SRC-C4C6C55E1A-L000148
+- النطاق: SRC-EEF2E6447C-L000425 إلى SRC-C4C6C55E1A-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-EEF2E6447C-L000424](../../api/omarai.py#L424) | 424 | `"            min("` | — |
 | [SRC-EEF2E6447C-L000425](../../api/omarai.py#L425) | 425 | `"                float(REQUEST_BODY_READ_TIMEOUT_SECONDS),"` | — |
 | [SRC-EEF2E6447C-L000426](../../api/omarai.py#L426) | 426 | `"                MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS,"` | — |
 | [SRC-EEF2E6447C-L000427](../../api/omarai.py#L427) | 427 | `"            ),"` | — |
@@ -870,3 +869,4 @@
 | [SRC-C4C6C55E1A-L000146](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L146) | 146 | `""` | — |
 | [SRC-C4C6C55E1A-L000147](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L147) | 147 | `"## 6. حكم الحالة"` | — |
 | [SRC-C4C6C55E1A-L000148](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L148) | 148 | `""` | — |
+| [SRC-C4C6C55E1A-L000149](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L149) | 149 | `"توجد أدلة مهمة على تحسن ضوابط الميزانية والإبلاغ عن الاستشهادات. ومع ذلك، لا تدعم الأدلة الحالية القول إن جميع متطلبات P0 مكتملة، أو أن الخدمة منشورة ومجربة حيًا، أو أن التخزين قابل للاستعادة على المضيف الفعلي، أو أن التطبيق جاهز لخدمة عامة متعددة المستخدمين."` | — |

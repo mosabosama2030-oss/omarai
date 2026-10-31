@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003691 إلى SRC-DE7EABE998-L000194
+- النطاق: SRC-F725E90B2A-L003692 إلى SRC-DE7EABE998-L000195
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L003691](../../tests/test_web_agent.py#L3691) | 3691 | `"            \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L003692](../../tests/test_web_agent.py#L3692) | 3692 | `"            \"query_results\": [],"` | — |
 | [SRC-F725E90B2A-L003693](../../tests/test_web_agent.py#L3693) | 3693 | `"            \"unique_sources\": len(sources),"` | — |
 | [SRC-F725E90B2A-L003694](../../tests/test_web_agent.py#L3694) | 3694 | `"            \"pages_fetched\": len(sources),"` | — |
@@ -834,3 +833,4 @@
 | [SRC-DE7EABE998-L000192](../../web/agent.html#L192) | 192 | `"  rejected_all_candidates:\"رُفضت كل المرشحات\",no_eligible_sources:\"لا توجد مصادر مقبولة\","` | — |
 | [SRC-DE7EABE998-L000193](../../web/agent.html#L193) | 193 | `"  index_range_check_passed:\"فُحص نطاق أرقام الإحالات فقط\","` | — |
 | [SRC-DE7EABE998-L000194](../../web/agent.html#L194) | 194 | `"  invalid_index_references_removed:\"حُذفت إحالات خارج النطاق\","` | — |
+| [SRC-DE7EABE998-L000195](../../web/agent.html#L195) | 195 | `"  no_citation_markers_present:\"لا توجد علامات إحالة\",diagnostics_not_computed:\"تعذر احتساب التشخيص\""` | — |

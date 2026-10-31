@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C4C6C55E1A-L000149 إلى SRC-E599346ABE-L000178
+- النطاق: SRC-C4C6C55E1A-L000150 إلى SRC-E599346ABE-L000179
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-C4C6C55E1A-L000149](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L149) | 149 | `"توجد أدلة مهمة على تحسن ضوابط الميزانية والإبلاغ عن الاستشهادات. ومع ذلك، لا تدعم الأدلة الحالية القول إن جميع متطلبات P0 مكتملة، أو أن الخدمة منشورة ومجربة حيًا، أو أن التخزين قابل للاستعادة على المضيف الفعلي، أو أن التطبيق جاهز لخدمة عامة متعددة المستخدمين."` | — |
 | [SRC-C4C6C55E1A-L000150](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L150) | 150 | `""` | — |
 | [SRC-C4C6C55E1A-L000151](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L151) | 151 | `"**القرار الآمن الحالي:** استمرار التطوير على فروع مستقلة، مع إبقاء المخاطر غير المثبتة مفتوحة، وعدم دمج أي PR أو نشر دون موافقة مدير المشروع."` | — |
 | [SRC-C4C6C55E1A-L000152](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L152) | 152 | `""` | — |
@@ -879,3 +878,4 @@
 | [SRC-E599346ABE-L000176](../generate_index.py#L176) | 176 | `"    indexing_scope: str"` | — |
 | [SRC-E599346ABE-L000177](../generate_index.py#L177) | 177 | `"    file_id: str"` | — |
 | [SRC-E599346ABE-L000178](../generate_index.py#L178) | 178 | `"    category: str"` | — |
+| [SRC-E599346ABE-L000179](../generate_index.py#L179) | 179 | `""` | — |

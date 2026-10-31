@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-63610B9E85-L000045 إلى SRC-D186ED3822-L000114
+- النطاق: SRC-63610B9E85-L000046 إلى SRC-D186ED3822-L000115
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-63610B9E85-L000045](../../tests/test_agentic_retrieval.py#L45) | 45 | `"    result = build_claim_evidence_ledger("` | — |
 | [SRC-63610B9E85-L000046](../../tests/test_agentic_retrieval.py#L46) | 46 | `"        \"Claim with a marker [المصدر 1].\","` | — |
 | [SRC-63610B9E85-L000047](../../tests/test_agentic_retrieval.py#L47) | 47 | `"        [{\"title\": \"Only a title\", \"url\": \"https://example.com\"}],"` | — |
 | [SRC-63610B9E85-L000048](../../tests/test_agentic_retrieval.py#L48) | 48 | `"    )"` | — |
@@ -852,3 +851,4 @@
 | [SRC-D186ED3822-L000112](../../tests/test_answer_quality_review_scorecard.py#L112) | 112 | `"    reviews_path = tmp_path / \"reviews.json\""` | — |
 | [SRC-D186ED3822-L000113](../../tests/test_answer_quality_review_scorecard.py#L113) | 113 | `"    output_path = tmp_path / \"summary.json\""` | — |
 | [SRC-D186ED3822-L000114](../../tests/test_answer_quality_review_scorecard.py#L114) | 114 | `"    reviews_path.write_text('{\"schema_version\":\"1.0\",\"reviews\":[{\"case_id\":\"AQ-001\",\"status\":\"REVIEWED\",\"writing_quality\":5}]}', encoding=\"utf-8\")"` | — |
+| [SRC-D186ED3822-L000115](../../tests/test_answer_quality_review_scorecard.py#L115) | 115 | `"    rc = mod.main([\"--reviews\", str(reviews_path), \"--corpus\", str(CORPUS_PATH), \"--out\", str(output_path)])"` | — |

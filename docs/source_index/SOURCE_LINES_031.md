@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000418 إلى SRC-90FAA34ADE-L000100
+- النطاق: SRC-4FFD5AFC54-L000419 إلى SRC-90FAA34ADE-L000101
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4FFD5AFC54-L000418](../../scripts/run_answer_quality_benchmark.py#L418) | 418 | `"    for env_name in (\"OPENROUTER_API_KEY\", \"OMARAI_LLM_API_KEY\"):"` | — |
 | [SRC-4FFD5AFC54-L000419](../../scripts/run_answer_quality_benchmark.py#L419) | 419 | `"        val = os.getenv(env_name, \"\").strip()"` | — |
 | [SRC-4FFD5AFC54-L000420](../../scripts/run_answer_quality_benchmark.py#L420) | 420 | `"        if val and val in out:"` | — |
 | [SRC-4FFD5AFC54-L000421](../../scripts/run_answer_quality_benchmark.py#L421) | 421 | `"            out = out.replace(val, f\"[REDACTED:{env_name}]\")"` | — |
@@ -843,3 +842,4 @@
 | [SRC-90FAA34ADE-L000098](../../tests/fixtures/answer_quality_cases.json#L98) | 98 | `"        \"Concise\""` | — |
 | [SRC-90FAA34ADE-L000099](../../tests/fixtures/answer_quality_cases.json#L99) | 99 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000100](../../tests/fixtures/answer_quality_cases.json#L100) | 100 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000101](../../tests/fixtures/answer_quality_cases.json#L101) | 101 | `"        \"Claims live experimental measurement from the web\","` | — |

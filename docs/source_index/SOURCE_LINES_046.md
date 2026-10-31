@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000491 إلى SRC-F725E90B2A-L001290
+- النطاق: SRC-F725E90B2A-L000492 إلى SRC-F725E90B2A-L001291
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000491](../../tests/test_web_agent.py#L491) | 491 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000492](../../tests/test_web_agent.py#L492) | 492 | `""` | — |
 | [SRC-F725E90B2A-L000493](../../tests/test_web_agent.py#L493) | 493 | `"        def json(self):"` | — |
 | [SRC-F725E90B2A-L000494](../../tests/test_web_agent.py#L494) | 494 | `"            return {"` | — |
@@ -816,3 +815,4 @@
 | [SRC-F725E90B2A-L001288](../../tests/test_web_agent.py#L1288) | 1288 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L001289](../../tests/test_web_agent.py#L1289) | 1289 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L001290](../../tests/test_web_agent.py#L1290) | 1290 | `"    }"` | — |
+| [SRC-F725E90B2A-L001291](../../tests/test_web_agent.py#L1291) | 1291 | `"    calls = []"` | — |
