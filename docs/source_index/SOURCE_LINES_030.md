@@ -4,9 +4,80 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000007 إلى SRC-A8360B1B03-L000275
+- النطاق: SRC-B335630551-L000156 إلى SRC-A8360B1B03-L000225
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق ونصوص
+
+### FILE-B335630551 — [README.md](../../README.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B335630551-L000156](../../README.md#L156) | 156 | `""` | — |
+| [SRC-B335630551-L000157](../../README.md#L157) | 157 | ``"The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose."`` | — |
+| [SRC-B335630551-L000158](../../README.md#L158) | 158 | `""` | — |
+| [SRC-B335630551-L000159](../../README.md#L159) | 159 | `"## Existing lead workspace"` | — |
+| [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
+| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
+| [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
+| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"Analyze text from the CLI:"` | — |
+| [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
+| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ````"```bash"```` | — |
+| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
+| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```"```` | — |
+| [SRC-B335630551-L000168](../../README.md#L168) | 168 | `""` | — |
+| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
+| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
+| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```bash"```` | — |
+| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
+| [SRC-B335630551-L000173](../../README.md#L173) | 173 | `"python -m cli.omarai list --limit 50"` | — |
+| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
+| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```"```` | — |
+| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `""` | — |
+| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"## Checks"` | — |
+| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `""` | — |
+| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```bash"```` | — |
+| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `"python -m pip install -e \".[dev]\""` | — |
+| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"ruff check agents api cli tests"` | — |
+| [SRC-B335630551-L000182](../../README.md#L182) | 182 | `"python -m pytest -q"` | — |
+| [SRC-B335630551-L000183](../../README.md#L183) | 183 | ````"```"```` | — |
+## إعدادات وتشغيل
+
+### FILE-A64CF250B4 — [render.yaml](../../render.yaml#L1)
+
+- النوع: **YAML**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-A64CF250B4-L000001](../../render.yaml#L1) | 1 | `"services:"` | — |
+| [SRC-A64CF250B4-L000002](../../render.yaml#L2) | 2 | `"  - type: web"` | — |
+| [SRC-A64CF250B4-L000003](../../render.yaml#L3) | 3 | `"    name: omarai"` | — |
+| [SRC-A64CF250B4-L000004](../../render.yaml#L4) | 4 | `"    runtime: docker"` | — |
+| [SRC-A64CF250B4-L000005](../../render.yaml#L5) | 5 | `"    plan: free"` | — |
+| [SRC-A64CF250B4-L000006](../../render.yaml#L6) | 6 | `"    region: frankfurt"` | — |
+| [SRC-A64CF250B4-L000007](../../render.yaml#L7) | 7 | `"    dockerfilePath: ./Dockerfile"` | — |
+| [SRC-A64CF250B4-L000008](../../render.yaml#L8) | 8 | `"    healthCheckPath: /api/health"` | — |
+| [SRC-A64CF250B4-L000009](../../render.yaml#L9) | 9 | `"    envVars:"` | — |
+| [SRC-A64CF250B4-L000010](../../render.yaml#L10) | 10 | `"      - key: OMARAI_PUBLIC_DEPLOYMENT"` | — |
+| [SRC-A64CF250B4-L000011](../../render.yaml#L11) | 11 | `"        value: \"1\""` | — |
+| [SRC-A64CF250B4-L000012](../../render.yaml#L12) | 12 | `"      - key: OMARAI_ACCESS_TOKEN"` | — |
+| [SRC-A64CF250B4-L000013](../../render.yaml#L13) | 13 | `"        sync: false"` | — |
+| [SRC-A64CF250B4-L000014](../../render.yaml#L14) | 14 | `"      - key: OPENROUTER_API_KEY"` | — |
+| [SRC-A64CF250B4-L000015](../../render.yaml#L15) | 15 | `"        sync: false"` | — |
+## ملفات أخرى
+
+### FILE-64EDD7FC2B — [scripts/__init__.py](../../scripts/__init__.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-64EDD7FC2B-L000001](../../scripts/__init__.py#L1) | 1 | `"\"\"\"Operational helper scripts for Omarai.\"\"\""` | — |
 ## ملفات أخرى
 
 ### FILE-70795F4B61 — [scripts/compare_answer_quality_runs.py](../../scripts/compare_answer_quality_runs.py#L1)
@@ -16,6 +87,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000001](../../scripts/compare_answer_quality_runs.py#L1) | 1 | `"\"\"\"Compare two Omarai benchmark runs without inventing quality or cost measurements."` | — |
+| [SRC-70795F4B61-L000002](../../scripts/compare_answer_quality_runs.py#L2) | 2 | `""` | — |
+| [SRC-70795F4B61-L000003](../../scripts/compare_answer_quality_runs.py#L3) | 3 | `"Runtime measurements come from explicit run telemetry. Factual accuracy, retrieval"` | — |
+| [SRC-70795F4B61-L000004](../../scripts/compare_answer_quality_runs.py#L4) | 4 | `"precision/recall, faithfulness, citation support, and writing quality require matching"` | — |
+| [SRC-70795F4B61-L000005](../../scripts/compare_answer_quality_runs.py#L5) | 5 | `"human-review files; missing annotations remain unscored. The comparator is offline."` | — |
+| [SRC-70795F4B61-L000006](../../scripts/compare_answer_quality_runs.py#L6) | 6 | `"\"\"\""` | — |
 | [SRC-70795F4B61-L000007](../../scripts/compare_answer_quality_runs.py#L7) | 7 | `"from __future__ import annotations"` | — |
 | [SRC-70795F4B61-L000008](../../scripts/compare_answer_quality_runs.py#L8) | 8 | `""` | — |
 | [SRC-70795F4B61-L000009](../../scripts/compare_answer_quality_runs.py#L9) | 9 | `"import argparse"` | — |
@@ -775,53 +852,3 @@
 | [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"    search_report = answer.get(\"search_report\")"` | — |
 | [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"    answer_text = str(answer.get(\"answer\", \"\")).strip()"` | — |
 | [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"    source_records = ["` | — |
-| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"        {"` | — |
-| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `"            \"title\": str(item.get(\"title\") or \"\")[:300],"` | — |
-| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `"            \"url\": str(item.get(\"url\") or \"\")[:2048],"` | — |
-| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"            \"provider\": str(item.get(\"provider\") or \"\")[:80],"` | — |
-| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"            \"snippet\": str(item.get(\"snippet\") or \"\")[:1200],"` | — |
-| [SRC-A8360B1B03-L000231](../../scripts/hosted_smoke_test.py#L231) | 231 | `"            \"published_at\": str(item.get(\"published_at\") or \"\")[:100],"` | — |
-| [SRC-A8360B1B03-L000232](../../scripts/hosted_smoke_test.py#L232) | 232 | `"        }"` | — |
-| [SRC-A8360B1B03-L000233](../../scripts/hosted_smoke_test.py#L233) | 233 | `"        for item in usable"` | — |
-| [SRC-A8360B1B03-L000234](../../scripts/hosted_smoke_test.py#L234) | 234 | `"    ]"` | — |
-| [SRC-A8360B1B03-L000235](../../scripts/hosted_smoke_test.py#L235) | 235 | `"    transcript = {"` | — |
-| [SRC-A8360B1B03-L000236](../../scripts/hosted_smoke_test.py#L236) | 236 | `"        \"case_id\": \"sales_intent_fire_alarm_egypt\","` | — |
-| [SRC-A8360B1B03-L000237](../../scripts/hosted_smoke_test.py#L237) | 237 | `"        \"question\": LIVE_TEST_QUESTION,"` | — |
-| [SRC-A8360B1B03-L000238](../../scripts/hosted_smoke_test.py#L238) | 238 | `"        \"answer\": answer_text,"` | — |
-| [SRC-A8360B1B03-L000239](../../scripts/hosted_smoke_test.py#L239) | 239 | `"        \"used_web_search\": answer.get(\"used_web_search\") is True,"` | — |
-| [SRC-A8360B1B03-L000240](../../scripts/hosted_smoke_test.py#L240) | 240 | `"        \"used_language_model\": answer.get(\"used_language_model\") is True,"` | — |
-| [SRC-A8360B1B03-L000241](../../scripts/hosted_smoke_test.py#L241) | 241 | `"        \"sources\": source_records,"` | — |
-| [SRC-A8360B1B03-L000242](../../scripts/hosted_smoke_test.py#L242) | 242 | `"        \"pipeline_completion_status\": ("` | — |
-| [SRC-A8360B1B03-L000243](../../scripts/hosted_smoke_test.py#L243) | 243 | `"            search_report.get(\"pipeline_completion_status\")"` | — |
-| [SRC-A8360B1B03-L000244](../../scripts/hosted_smoke_test.py#L244) | 244 | `"            if isinstance(search_report, dict) else None"` | — |
-| [SRC-A8360B1B03-L000245](../../scripts/hosted_smoke_test.py#L245) | 245 | `"        ),"` | — |
-| [SRC-A8360B1B03-L000246](../../scripts/hosted_smoke_test.py#L246) | 246 | `"        \"answer_evidence_status\": answer.get(\"answer_evidence_status\"),"` | — |
-| [SRC-A8360B1B03-L000247](../../scripts/hosted_smoke_test.py#L247) | 247 | `"    }"` | — |
-| [SRC-A8360B1B03-L000248](../../scripts/hosted_smoke_test.py#L248) | 248 | `"    partial_report[\"transcript\"] = [transcript]"` | — |
-| [SRC-A8360B1B03-L000249](../../scripts/hosted_smoke_test.py#L249) | 249 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
-| [SRC-A8360B1B03-L000250](../../scripts/hosted_smoke_test.py#L250) | 250 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000251](../../scripts/hosted_smoke_test.py#L251) | 251 | `"            \"Agent request did not return a live web search with usable source URLs.\","` | — |
-| [SRC-A8360B1B03-L000252](../../scripts/hosted_smoke_test.py#L252) | 252 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000253](../../scripts/hosted_smoke_test.py#L253) | 253 | `"        )"` | — |
-| [SRC-A8360B1B03-L000254](../../scripts/hosted_smoke_test.py#L254) | 254 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000255](../../scripts/hosted_smoke_test.py#L255) | 255 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000256](../../scripts/hosted_smoke_test.py#L256) | 256 | `"            \"Agent request did not confirm that a language model was used.\","` | — |
-| [SRC-A8360B1B03-L000257](../../scripts/hosted_smoke_test.py#L257) | 257 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000258](../../scripts/hosted_smoke_test.py#L258) | 258 | `"        )"` | — |
-| [SRC-A8360B1B03-L000259](../../scripts/hosted_smoke_test.py#L259) | 259 | `"    checks[\"language_model\"] = {"` | — |
-| [SRC-A8360B1B03-L000260](../../scripts/hosted_smoke_test.py#L260) | 260 | `"        \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000261](../../scripts/hosted_smoke_test.py#L261) | 261 | `"        \"response_received\": bool(answer_text),"` | — |
-| [SRC-A8360B1B03-L000262](../../scripts/hosted_smoke_test.py#L262) | 262 | `"        \"verified_by\": \"agent_request\","` | — |
-| [SRC-A8360B1B03-L000263](../../scripts/hosted_smoke_test.py#L263) | 263 | `"    }"` | — |
-| [SRC-A8360B1B03-L000264](../../scripts/hosted_smoke_test.py#L264) | 264 | `"    checks[\"agent_request\"] = {"` | — |
-| [SRC-A8360B1B03-L000265](../../scripts/hosted_smoke_test.py#L265) | 265 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
-| [SRC-A8360B1B03-L000266](../../scripts/hosted_smoke_test.py#L266) | 266 | `"        \"direct_pages_read\": search_report.get(\"pages_fetched\") if isinstance(search_report, dict) else None,"` | — |
-| [SRC-A8360B1B03-L000267](../../scripts/hosted_smoke_test.py#L267) | 267 | `"        \"providers_reported\": search_report.get(\"providers_used\", []) if isinstance(search_report, dict) else [],"` | — |
-| [SRC-A8360B1B03-L000268](../../scripts/hosted_smoke_test.py#L268) | 268 | `"        \"answer_received\": bool(answer_text),"` | — |
-| [SRC-A8360B1B03-L000269](../../scripts/hosted_smoke_test.py#L269) | 269 | `"        \"pipeline_completion_status\": ("` | — |
-| [SRC-A8360B1B03-L000270](../../scripts/hosted_smoke_test.py#L270) | 270 | `"            search_report.get(\"pipeline_completion_status\") if isinstance(search_report, dict) else None"` | — |
-| [SRC-A8360B1B03-L000271](../../scripts/hosted_smoke_test.py#L271) | 271 | `"        ),"` | — |
-| [SRC-A8360B1B03-L000272](../../scripts/hosted_smoke_test.py#L272) | 272 | `"        \"answer_evidence_status\": answer.get(\"answer_evidence_status\"),"` | — |
-| [SRC-A8360B1B03-L000273](../../scripts/hosted_smoke_test.py#L273) | 273 | `"    }"` | — |
-| [SRC-A8360B1B03-L000274](../../scripts/hosted_smoke_test.py#L274) | 274 | `"    partial_report.update({"` | — |
-| [SRC-A8360B1B03-L000275](../../scripts/hosted_smoke_test.py#L275) | 275 | `"        \"result\": \"passed\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000381 إلى SRC-D911B73392-L000113
+- النطاق: SRC-0F910493E8-L000331 إلى SRC-D911B73392-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000331](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L331) | 331 | `"عند نقص الأدلة أو فشل المصدر، يقدم Omarai إجابة جزئية صادقة أو يوضح تعذر التحقق. لا يحول الفشل إلى نجاح، ولا يصنع مصدرًا أو نتيجة أو حالة أداة غير موجودة."` | — |
+| [SRC-0F910493E8-L000332](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L332) | 332 | `""` | — |
+| [SRC-0F910493E8-L000333](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L333) | 333 | `"---"` | — |
+| [SRC-0F910493E8-L000334](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L334) | 334 | `""` | — |
+| [SRC-0F910493E8-L000335](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L335) | 335 | `"# 9. Meta-Agent: قدرة مؤجلة ومشروطة"` | — |
+| [SRC-0F910493E8-L000336](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L336) | 336 | `""` | — |
+| [SRC-0F910493E8-L000337](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L337) | 337 | `"لا يدخل Meta-Agent في المسار الحرج للإجابة في المرحلة التأسيسية."` | — |
+| [SRC-0F910493E8-L000338](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L338) | 338 | `""` | — |
+| [SRC-0F910493E8-L000339](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L339) | 339 | `"إذا أثبت القياس الحاجة إلى إنشاء قوالب أو تعريفات جديدة، يبدأ Meta-Agent بوظيفة محدودة: إنتاج **مسودات** TaskSpec أو Skill أو Workflow أو Agent Profile من العناصر المسجلة."` | — |
+| [SRC-0F910493E8-L000340](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L340) | 340 | `""` | — |
+| [SRC-0F910493E8-L000341](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L341) | 341 | `"لا يحق له:"` | — |
+| [SRC-0F910493E8-L000342](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L342) | 342 | `"- تسجيل أداة تنفيذية جديدة مباشرة."` | — |
+| [SRC-0F910493E8-L000343](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L343) | 343 | `"- توليد كود وتشغيله في مسار الإنتاج."` | — |
+| [SRC-0F910493E8-L000344](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L344) | 344 | `"- تعديل قواعد الأمان أو سقف الصلاحيات."` | — |
+| [SRC-0F910493E8-L000345](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L345) | 345 | `"- منح نفسه قدرة جديدة."` | — |
+| [SRC-0F910493E8-L000346](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L346) | 346 | `"- اعتماد أو تفعيل مخرجاته."` | — |
+| [SRC-0F910493E8-L000347](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L347) | 347 | `"- الادعاء بأن مسودته صالحة للتنفيذ دون اختبار."` | — |
+| [SRC-0F910493E8-L000348](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L348) | 348 | `""` | — |
+| [SRC-0F910493E8-L000349](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L349) | 349 | `"ويجب أن يثبت تقييمه فائدته مقارنة بكتابة التكوين يدويًا، بما يشمل جودة المخرجات، ووقت المراجعة، وحالات الرفض، والكلفة، وعدم تراجع الأمان."` | — |
+| [SRC-0F910493E8-L000350](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L350) | 350 | `""` | — |
+| [SRC-0F910493E8-L000351](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L351) | 351 | `"## 9.1 توليد الكود التنفيذي"` | — |
+| [SRC-0F910493E8-L000352](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |
+| [SRC-0F910493E8-L000353](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L353) | 353 | `"هذه مرحلة مستقبلية مستقلة واختيارية. لا تُفتح إلا إذا:"` | — |
+| [SRC-0F910493E8-L000354](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L354) | 354 | `"- ثبت أن مجموعة الأدوات والمهارات الحالية لا تغطي حاجة حقيقية متكررة."` | — |
+| [SRC-0F910493E8-L000355](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L355) | 355 | `"- وُجدت بيئة عزل ملائمة واختُبرت حدودها."` | — |
+| [SRC-0F910493E8-L000356](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L356) | 356 | `"- كانت الصلاحيات والشبكة والملفات والأسرار والموارد محدودة."` | — |
+| [SRC-0F910493E8-L000357](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L357) | 357 | `"- توفرت اختبارات مستقلة عن الاختبارات التي أنشأها النموذج."` | — |
+| [SRC-0F910493E8-L000358](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L358) | 358 | `"- تمت مراجعة بشرية وأُنشئت خطة تعطيل وتراجع."` | — |
+| [SRC-0F910493E8-L000359](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L359) | 359 | `"- تمت الموافقة على المخاطر المتبقية."` | — |
+| [SRC-0F910493E8-L000360](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L360) | 360 | `""` | — |
+| [SRC-0F910493E8-L000361](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L361) | 361 | `"نجاح الاختبارات الوظيفية وحده ليس إذنًا للنشر."` | — |
+| [SRC-0F910493E8-L000362](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L362) | 362 | `""` | — |
+| [SRC-0F910493E8-L000363](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L363) | 363 | `"---"` | — |
+| [SRC-0F910493E8-L000364](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L364) | 364 | `""` | — |
+| [SRC-0F910493E8-L000365](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L365) | 365 | `"# 10. التعامل مع الفشل والتدهور الآمن"` | — |
+| [SRC-0F910493E8-L000366](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L366) | 366 | `""` | — |
+| [SRC-0F910493E8-L000367](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L367) | 367 | `"يجب أن تكون حالات الفشل جزءًا من عقد كل أداة ومهارة وسير عمل."` | — |
+| [SRC-0F910493E8-L000368](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L368) | 368 | `""` | — |
+| [SRC-0F910493E8-L000369](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L369) | 369 | `"أمثلة:"` | — |
+| [SRC-0F910493E8-L000370](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L370) | 370 | `"- أداة غير مسجلة: رفض صريح، لا اختراع تنفيذ."` | — |
+| [SRC-0F910493E8-L000371](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L371) | 371 | `"- أداة مسجلة لكنها غير مهيأة: توضيح أن التهيئة ناقصة."` | — |
+| [SRC-0F910493E8-L000372](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L372) | 372 | `"- موصل فشل: تسجيل الفشل وإكمال المصادر الأخرى فقط إن كانت الخطة تسمح."` | — |
+| [SRC-0F910493E8-L000373](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L373) | 373 | `"- مصادر غير كافية: إجابة محدودة أو تصريح بعدم كفاية الأدلة."` | — |
+| [SRC-0F910493E8-L000374](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L374) | 374 | `"- طلب غامض: سؤال توضيحي عندما يؤثر الغموض في النتيجة."` | — |
+| [SRC-0F910493E8-L000375](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L375) | 375 | `"- تجاوز ميزانية: توقف مضبوط، لا حلقة إعادة محاولة غير محدودة."` | — |
+| [SRC-0F910493E8-L000376](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L376) | 376 | `"- رفض سياسة: بيان مختصر بالحد الممكن من الإفصاح دون كشف أسرار النظام."` | — |
+| [SRC-0F910493E8-L000377](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L377) | 377 | `"- فشل في التحقق: لا تعرض حالة مكتملة كأنها مؤكدة."` | — |
+| [SRC-0F910493E8-L000378](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L378) | 378 | `""` | — |
+| [SRC-0F910493E8-L000379](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L379) | 379 | `"يجوز تقديم بديل مفيد، مثل الإجابة من المعرفة المتاحة دون بحث حي، لكن يجب وصف مصدر المعرفة والقيود بصدق، وعدم اختراع حداثة أو مصدر حي."` | — |
+| [SRC-0F910493E8-L000380](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L380) | 380 | `""` | — |
 | [SRC-0F910493E8-L000381](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L381) | 381 | `"---"` | — |
 | [SRC-0F910493E8-L000382](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L382) | 382 | `""` | — |
 | [SRC-0F910493E8-L000383](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L383) | 383 | `"# 11. منع التضخم والتكرار المعماري"` | — |
@@ -802,53 +852,3 @@
 | [SRC-D911B73392-L000061](../RESEARCH_CONNECTORS_AR.md#L61) | 61 | `""` | — |
 | [SRC-D911B73392-L000062](../RESEARCH_CONNECTORS_AR.md#L62) | 62 | ````"```bash"```` | — |
 | [SRC-D911B73392-L000063](../RESEARCH_CONNECTORS_AR.md#L63) | 63 | `"read -r -s -p \"Reddit client ID: \" REDDIT_CLIENT_ID; printf '\\n'; export REDDIT_CLIENT_ID"` | — |
-| [SRC-D911B73392-L000064](../RESEARCH_CONNECTORS_AR.md#L64) | 64 | `"read -r -s -p \"Reddit client secret: \" REDDIT_CLIENT_SECRET; printf '\\n'; export REDDIT_CLIENT_SECRET"` | — |
-| [SRC-D911B73392-L000065](../RESEARCH_CONNECTORS_AR.md#L65) | 65 | `"read -r -p \"Reddit User-Agent: \" REDDIT_USER_AGENT; export REDDIT_USER_AGENT"` | — |
-| [SRC-D911B73392-L000066](../RESEARCH_CONNECTORS_AR.md#L66) | 66 | ````"```"```` | — |
-| [SRC-D911B73392-L000067](../RESEARCH_CONNECTORS_AR.md#L67) | 67 | `""` | — |
-| [SRC-D911B73392-L000068](../RESEARCH_CONNECTORS_AR.md#L68) | 68 | `"عند ضبط هذه القيم، يجرّب Omarai OAuth API. إن تعذر العثور على نتائج عبر API، فقد يحاول موجز البحث العام كبديل؛ ولا يعني ذلك أن البديل مضمون."` | — |
-| [SRC-D911B73392-L000069](../RESEARCH_CONNECTORS_AR.md#L69) | 69 | `""` | — |
-| [SRC-D911B73392-L000070](../RESEARCH_CONNECTORS_AR.md#L70) | 70 | `"### Instagram Graph API — وسوم عامة"` | — |
-| [SRC-D911B73392-L000071](../RESEARCH_CONNECTORS_AR.md#L71) | 71 | `""` | — |
-| [SRC-D911B73392-L000072](../RESEARCH_CONNECTORS_AR.md#L72) | 72 | `"يتطلب Instagram User ID ورمز وصول صالحًا، مع الأذونات/الميزات اللازمة في تطبيق Meta. يقتصر الموصل على بحث الوسوم وجلب عينة من الوسائط العامة الحديثة؛ لا يصل إلى الحسابات الخاصة ولا يبحث كل Instagram."` | — |
-| [SRC-D911B73392-L000073](../RESEARCH_CONNECTORS_AR.md#L73) | 73 | `""` | — |
-| [SRC-D911B73392-L000074](../RESEARCH_CONNECTORS_AR.md#L74) | 74 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000075](../RESEARCH_CONNECTORS_AR.md#L75) | 75 | `"read -r -p \"Instagram professional user ID: \" INSTAGRAM_USER_ID; export INSTAGRAM_USER_ID"` | — |
-| [SRC-D911B73392-L000076](../RESEARCH_CONNECTORS_AR.md#L76) | 76 | `"read -r -s -p \"Instagram access token: \" INSTAGRAM_ACCESS_TOKEN; printf '\\n'; export INSTAGRAM_ACCESS_TOKEN"` | — |
-| [SRC-D911B73392-L000077](../RESEARCH_CONNECTORS_AR.md#L77) | 77 | ````"```"```` | — |
-| [SRC-D911B73392-L000078](../RESEARCH_CONNECTORS_AR.md#L78) | 78 | `""` | — |
-| [SRC-D911B73392-L000079](../RESEARCH_CONNECTORS_AR.md#L79) | 79 | ``"يمكن ضبط إصدار Graph API الذي يطابق تطبيقك عبر `META_GRAPH_VERSION`. يبدأ Omarai بوسم واحد في الطلب لتقليل استهلاك حصة الوسوم؛ قد يظل الموصل يرفض الطلب إذا لم تكن الصلاحيات أو الحصة أو نسخة API مناسبة."`` | — |
-| [SRC-D911B73392-L000080](../RESEARCH_CONNECTORS_AR.md#L80) | 80 | `""` | — |
-| [SRC-D911B73392-L000081](../RESEARCH_CONNECTORS_AR.md#L81) | 81 | `"### Facebook Pages — صفحات محددة فقط"` | — |
-| [SRC-D911B73392-L000082](../RESEARCH_CONNECTORS_AR.md#L82) | 82 | `""` | — |
-| [SRC-D911B73392-L000083](../RESEARCH_CONNECTORS_AR.md#L83) | 83 | `"حدّد الصفحات التي لديك وصول مصرح بها. لا تضع رمزًا عامًا أو تحاول استخدام رمز لا يملك صلاحية الوصول للصفحة:"` | — |
-| [SRC-D911B73392-L000084](../RESEARCH_CONNECTORS_AR.md#L84) | 84 | `""` | — |
-| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000086](../RESEARCH_CONNECTORS_AR.md#L86) | 86 | `"read -r -s -p \"Facebook Page access token: \" FACEBOOK_PAGE_ACCESS_TOKEN; printf '\\n'; export FACEBOOK_PAGE_ACCESS_TOKEN"` | — |
-| [SRC-D911B73392-L000087](../RESEARCH_CONNECTORS_AR.md#L87) | 87 | `"read -r -p \"Authorized Page IDs, comma-separated: \" FACEBOOK_PAGE_IDS; export FACEBOOK_PAGE_IDS"` | — |
-| [SRC-D911B73392-L000088](../RESEARCH_CONNECTORS_AR.md#L88) | 88 | ````"```"```` | — |
-| [SRC-D911B73392-L000089](../RESEARCH_CONNECTORS_AR.md#L89) | 89 | `""` | — |
-| [SRC-D911B73392-L000090](../RESEARCH_CONNECTORS_AR.md#L90) | 90 | `"يقرأ الموصل أحدث منشورات الصفحات المحددة وعينة محدودة من التعليقات العامة التي تسمح بها الصلاحيات. قد تفشل قراءة المنشورات أو التعليقات إذا كانت صلاحيات التطبيق لا تسمح بها."` | — |
-| [SRC-D911B73392-L000091](../RESEARCH_CONNECTORS_AR.md#L91) | 91 | `""` | — |
-| [SRC-D911B73392-L000092](../RESEARCH_CONNECTORS_AR.md#L92) | 92 | `"### X وYouTube"` | — |
-| [SRC-D911B73392-L000093](../RESEARCH_CONNECTORS_AR.md#L93) | 93 | `""` | — |
-| [SRC-D911B73392-L000094](../RESEARCH_CONNECTORS_AR.md#L94) | 94 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000095](../RESEARCH_CONNECTORS_AR.md#L95) | 95 | `"read -r -s -p \"X API bearer token: \" X_BEARER_TOKEN; printf '\\n'; export X_BEARER_TOKEN"` | — |
-| [SRC-D911B73392-L000096](../RESEARCH_CONNECTORS_AR.md#L96) | 96 | `"read -r -s -p \"YouTube Data API key: \" YOUTUBE_API_KEY; printf '\\n'; export YOUTUBE_API_KEY"` | — |
-| [SRC-D911B73392-L000097](../RESEARCH_CONNECTORS_AR.md#L97) | 97 | ````"```"```` | — |
-| [SRC-D911B73392-L000098](../RESEARCH_CONNECTORS_AR.md#L98) | 98 | `""` | — |
-| [SRC-D911B73392-L000099](../RESEARCH_CONNECTORS_AR.md#L99) | 99 | `"يجب أن يكون رمز X مرتبطًا بخطة وصول تشمل نقطة البحث المستخدمة. مفتاح YouTube يحتاج إلى مشروع Google Cloud تم تفعيل YouTube Data API فيه، ويخضع للحصة. لا يضمن وجود المفتاح أن الحساب يملك كل الصلاحيات أو حصة كافية."` | — |
-| [SRC-D911B73392-L000100](../RESEARCH_CONNECTORS_AR.md#L100) | 100 | `""` | — |
-| [SRC-D911B73392-L000101](../RESEARCH_CONNECTORS_AR.md#L101) | 101 | `"### البدء بعد الإعداد"` | — |
-| [SRC-D911B73392-L000102](../RESEARCH_CONNECTORS_AR.md#L102) | 102 | `""` | — |
-| [SRC-D911B73392-L000103](../RESEARCH_CONNECTORS_AR.md#L103) | 103 | `"بعد إعداد أي متغيرات اختيارية تريدها، ابدأ الخادم في **جلسة Termux نفسها**:"` | — |
-| [SRC-D911B73392-L000104](../RESEARCH_CONNECTORS_AR.md#L104) | 104 | `""` | — |
-| [SRC-D911B73392-L000105](../RESEARCH_CONNECTORS_AR.md#L105) | 105 | ````"```bash"```` | — |
-| [SRC-D911B73392-L000106](../RESEARCH_CONNECTORS_AR.md#L106) | 106 | `"python -m cli.omarai serve"` | — |
-| [SRC-D911B73392-L000107](../RESEARCH_CONNECTORS_AR.md#L107) | 107 | ````"```"```` | — |
-| [SRC-D911B73392-L000108](../RESEARCH_CONNECTORS_AR.md#L108) | 108 | `""` | — |
-| [SRC-D911B73392-L000109](../RESEARCH_CONNECTORS_AR.md#L109) | 109 | ``"افتح `http://127.0.0.1:8765` للمحادثة البحثية و`http://127.0.0.1:8765/api/health` لحالة الإعداد. تقرير الصحة يذكر ما إذا كانت المتغيرات موجودة فقط؛ ولا يمكنه التأكد من صلاحيتها حتى يجرب الموصل طلبًا حقيقيًا."`` | — |
-| [SRC-D911B73392-L000110](../RESEARCH_CONNECTORS_AR.md#L110) | 110 | `""` | — |
-| [SRC-D911B73392-L000111](../RESEARCH_CONNECTORS_AR.md#L111) | 111 | `"## 5. اختبار حي للاتصال"` | — |
-| [SRC-D911B73392-L000112](../RESEARCH_CONNECTORS_AR.md#L112) | 112 | `""` | — |
-| [SRC-D911B73392-L000113](../RESEARCH_CONNECTORS_AR.md#L113) | 113 | `"افتح لوحة Omarai واضغط **«اختبار حي للبحث والنموذج»**. هذا الفحص ينفّذ طلب بحث فعليًا إلى محركات البحث العامة، ويرسل طلبًا صغيرًا إلى نموذج الإجابة إذا كان المفتاح مضبوطًا. إذا فعّلت خيار اختبار المصادر الاجتماعية، فسينفّذ طلبات عامة/مصرحًا بها إلى الموصلات المناسبة. قد يستغرق فحص الشبكات الاجتماعية وقتًا أطول، وقد يستهلك حصص APIs أو يواجه حدود المعدل."` | — |

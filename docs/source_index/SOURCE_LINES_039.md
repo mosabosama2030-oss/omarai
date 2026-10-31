@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA139AC9D0-L000071 إلى SRC-FA4E1423C3-L000354
+- النطاق: SRC-DA139AC9D0-L000021 إلى SRC-FA4E1423C3-L000304
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA139AC9D0-L000021](../../tests/test_dialogue_state.py#L21) | 21 | `"    assert \"كام سعرها\" in context[\"resolved_question\"]"` | — |
+| [SRC-DA139AC9D0-L000022](../../tests/test_dialogue_state.py#L22) | 22 | `"    assert context[\"confidence_band\"] == \"unassessed\""` | — |
+| [SRC-DA139AC9D0-L000023](../../tests/test_dialogue_state.py#L23) | 23 | `""` | — |
+| [SRC-DA139AC9D0-L000024](../../tests/test_dialogue_state.py#L24) | 24 | `""` | — |
+| [SRC-DA139AC9D0-L000025](../../tests/test_dialogue_state.py#L25) | 25 | `"def test_topic_shift_is_a_hard_boundary_against_stale_context() -> None:"` | — |
+| [SRC-DA139AC9D0-L000026](../../tests/test_dialogue_state.py#L26) | 26 | `"    question = \"ازاي أنظف شاشة اللابتوب بأمان؟\""` | — |
+| [SRC-DA139AC9D0-L000027](../../tests/test_dialogue_state.py#L27) | 27 | `"    history = ["` | — |
+| [SRC-DA139AC9D0-L000028](../../tests/test_dialogue_state.py#L28) | 28 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26\"},"` | — |
+| [SRC-DA139AC9D0-L000029](../../tests/test_dialogue_state.py#L29) | 29 | `"        {\"role\": \"assistant\", \"content\": \"هذه مقارنة بين هاتفين.\"},"` | — |
+| [SRC-DA139AC9D0-L000030](../../tests/test_dialogue_state.py#L30) | 30 | `"    ]"` | — |
+| [SRC-DA139AC9D0-L000031](../../tests/test_dialogue_state.py#L31) | 31 | `"    proposed = {"` | — |
+| [SRC-DA139AC9D0-L000032](../../tests/test_dialogue_state.py#L32) | 32 | `"        \"resolved_question\": \"قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان\","` | — |
+| [SRC-DA139AC9D0-L000033](../../tests/test_dialogue_state.py#L33) | 33 | `"        \"topic_shift\": True,"` | — |
+| [SRC-DA139AC9D0-L000034](../../tests/test_dialogue_state.py#L34) | 34 | `"        \"is_follow_up\": True,"` | — |
+| [SRC-DA139AC9D0-L000035](../../tests/test_dialogue_state.py#L35) | 35 | `"        \"intent\": \"how_to\","` | — |
+| [SRC-DA139AC9D0-L000036](../../tests/test_dialogue_state.py#L36) | 36 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-DA139AC9D0-L000037](../../tests/test_dialogue_state.py#L37) | 37 | `"    }"` | — |
+| [SRC-DA139AC9D0-L000038](../../tests/test_dialogue_state.py#L38) | 38 | `""` | — |
+| [SRC-DA139AC9D0-L000039](../../tests/test_dialogue_state.py#L39) | 39 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
+| [SRC-DA139AC9D0-L000040](../../tests/test_dialogue_state.py#L40) | 40 | `""` | — |
+| [SRC-DA139AC9D0-L000041](../../tests/test_dialogue_state.py#L41) | 41 | `"    assert context[\"topic_shift\"] is True"` | — |
+| [SRC-DA139AC9D0-L000042](../../tests/test_dialogue_state.py#L42) | 42 | `"    assert context[\"is_follow_up\"] is False"` | — |
+| [SRC-DA139AC9D0-L000043](../../tests/test_dialogue_state.py#L43) | 43 | `"    assert context[\"resolved_question\"] == question"` | — |
+| [SRC-DA139AC9D0-L000044](../../tests/test_dialogue_state.py#L44) | 44 | `"    assert context[\"resolution_basis\"] == \"current_message\""` | — |
+| [SRC-DA139AC9D0-L000045](../../tests/test_dialogue_state.py#L45) | 45 | `"    assert context[\"topic\"] == \"\""` | — |
+| [SRC-DA139AC9D0-L000046](../../tests/test_dialogue_state.py#L46) | 46 | `"    assert context[\"entities\"] == []"` | — |
+| [SRC-DA139AC9D0-L000047](../../tests/test_dialogue_state.py#L47) | 47 | `"    assert context[\"slots\"] == {}"` | — |
+| [SRC-DA139AC9D0-L000048](../../tests/test_dialogue_state.py#L48) | 48 | `"    assert context[\"changed_slots\"] == []"` | — |
+| [SRC-DA139AC9D0-L000049](../../tests/test_dialogue_state.py#L49) | 49 | `""` | — |
+| [SRC-DA139AC9D0-L000050](../../tests/test_dialogue_state.py#L50) | 50 | `""` | — |
+| [SRC-DA139AC9D0-L000051](../../tests/test_dialogue_state.py#L51) | 51 | `"def test_standalone_question_cannot_inherit_old_topic_without_followup_signal() -> None:"` | — |
+| [SRC-DA139AC9D0-L000052](../../tests/test_dialogue_state.py#L52) | 52 | `"    question = \"ازاي أنظف شاشة اللابتوب بأمان؟\""` | — |
+| [SRC-DA139AC9D0-L000053](../../tests/test_dialogue_state.py#L53) | 53 | `"    history = ["` | — |
+| [SRC-DA139AC9D0-L000054](../../tests/test_dialogue_state.py#L54) | 54 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26 من حيث السعر\"},"` | — |
+| [SRC-DA139AC9D0-L000055](../../tests/test_dialogue_state.py#L55) | 55 | `"        {\"role\": \"assistant\", \"content\": \"هذه مقارنة بين هاتفين.\"},"` | — |
+| [SRC-DA139AC9D0-L000056](../../tests/test_dialogue_state.py#L56) | 56 | `"    ]"` | — |
+| [SRC-DA139AC9D0-L000057](../../tests/test_dialogue_state.py#L57) | 57 | `"    proposed = {"` | — |
+| [SRC-DA139AC9D0-L000058](../../tests/test_dialogue_state.py#L58) | 58 | `"        \"resolved_question\": \"قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان\","` | — |
+| [SRC-DA139AC9D0-L000059](../../tests/test_dialogue_state.py#L59) | 59 | `"        \"topic\": \"مقارنة الهواتف\","` | — |
+| [SRC-DA139AC9D0-L000060](../../tests/test_dialogue_state.py#L60) | 60 | `"        \"entities\": [\"iPhone 17\", \"Samsung S26\"],"` | — |
+| [SRC-DA139AC9D0-L000061](../../tests/test_dialogue_state.py#L61) | 61 | `"        \"slots\": {\"product\": \"iPhone 17\", \"country\": \"مصر\"},"` | — |
+| [SRC-DA139AC9D0-L000062](../../tests/test_dialogue_state.py#L62) | 62 | `"        \"changed_slots\": [\"aspect\"],"` | — |
+| [SRC-DA139AC9D0-L000063](../../tests/test_dialogue_state.py#L63) | 63 | `"        \"is_follow_up\": False,"` | — |
+| [SRC-DA139AC9D0-L000064](../../tests/test_dialogue_state.py#L64) | 64 | `"        \"topic_shift\": False,"` | — |
+| [SRC-DA139AC9D0-L000065](../../tests/test_dialogue_state.py#L65) | 65 | `"        \"intent\": \"how_to\","` | — |
+| [SRC-DA139AC9D0-L000066](../../tests/test_dialogue_state.py#L66) | 66 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-DA139AC9D0-L000067](../../tests/test_dialogue_state.py#L67) | 67 | `"    }"` | — |
+| [SRC-DA139AC9D0-L000068](../../tests/test_dialogue_state.py#L68) | 68 | `""` | — |
+| [SRC-DA139AC9D0-L000069](../../tests/test_dialogue_state.py#L69) | 69 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
+| [SRC-DA139AC9D0-L000070](../../tests/test_dialogue_state.py#L70) | 70 | `""` | — |
 | [SRC-DA139AC9D0-L000071](../../tests/test_dialogue_state.py#L71) | 71 | `"    assert context[\"resolved_question\"] == question"` | — |
 | [SRC-DA139AC9D0-L000072](../../tests/test_dialogue_state.py#L72) | 72 | `"    assert context[\"is_follow_up\"] is False"` | — |
 | [SRC-DA139AC9D0-L000073](../../tests/test_dialogue_state.py#L73) | 73 | `"    assert context[\"topic\"] == \"\""` | — |
@@ -793,53 +843,3 @@
 | [SRC-FA4E1423C3-L000302](../../tests/test_generate_index.py#L302) | 302 | `"    (tmp_path / \"module.py\").write_text("` | — |
 | [SRC-FA4E1423C3-L000303](../../tests/test_generate_index.py#L303) | 303 | `"        \"# TODO: verify fallback\\n\""` | — |
 | [SRC-FA4E1423C3-L000304](../../tests/test_generate_index.py#L304) | 304 | `"        \"value = 1  # FIXME: handle overflow\\n\""` | — |
-| [SRC-FA4E1423C3-L000305](../../tests/test_generate_index.py#L305) | 305 | `"        \"# SECURITY: check token handling\\n\""` | — |
-| [SRC-FA4E1423C3-L000306](../../tests/test_generate_index.py#L306) | 306 | `"        \"def ready():\\n\""` | — |
-| [SRC-FA4E1423C3-L000307](../../tests/test_generate_index.py#L307) | 307 | `"        \"    return True\\n\","` | — |
-| [SRC-FA4E1423C3-L000308](../../tests/test_generate_index.py#L308) | 308 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000309](../../tests/test_generate_index.py#L309) | 309 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000310](../../tests/test_generate_index.py#L310) | 310 | `""` | — |
-| [SRC-FA4E1423C3-L000311](../../tests/test_generate_index.py#L311) | 311 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000312](../../tests/test_generate_index.py#L312) | 312 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000313](../../tests/test_generate_index.py#L313) | 313 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000314](../../tests/test_generate_index.py#L314) | 314 | `""` | — |
-| [SRC-FA4E1423C3-L000315](../../tests/test_generate_index.py#L315) | 315 | `"    assert [item.marker for item in findings] == [\"FIXME\", \"SECURITY\", \"TODO\"]"` | — |
-| [SRC-FA4E1423C3-L000316](../../tests/test_generate_index.py#L316) | 316 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
-| [SRC-FA4E1423C3-L000317](../../tests/test_generate_index.py#L317) | 317 | `"    for finding in findings:"` | — |
-| [SRC-FA4E1423C3-L000318](../../tests/test_generate_index.py#L318) | 318 | `"        assert finding.finding_id.startswith(f\"FND-{finding.marker}-\")"` | — |
-| [SRC-FA4E1423C3-L000319](../../tests/test_generate_index.py#L319) | 319 | `"        assert finding.line_id.startswith(\"SRC-\")"` | — |
-| [SRC-FA4E1423C3-L000320](../../tests/test_generate_index.py#L320) | 320 | `"        assert finding.file == \"module.py\""` | — |
-| [SRC-FA4E1423C3-L000321](../../tests/test_generate_index.py#L321) | 321 | `""` | — |
-| [SRC-FA4E1423C3-L000322](../../tests/test_generate_index.py#L322) | 322 | `""` | — |
-| [SRC-FA4E1423C3-L000323](../../tests/test_generate_index.py#L323) | 323 | `"def test_check_mode_validates_all_generated_indexes(tmp_path: Path, capsys) -> None:"` | — |
-| [SRC-FA4E1423C3-L000324](../../tests/test_generate_index.py#L324) | 324 | `"    \"\"\"Check mode detects stale master, line, and coverage indexes.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000325](../../tests/test_generate_index.py#L325) | 325 | `""` | — |
-| [SRC-FA4E1423C3-L000326](../../tests/test_generate_index.py#L326) | 326 | `"    (tmp_path / \"app.py\").write_text(\"VALUE = 1\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000327](../../tests/test_generate_index.py#L327) | 327 | `""` | — |
-| [SRC-FA4E1423C3-L000328](../../tests/test_generate_index.py#L328) | 328 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
-| [SRC-FA4E1423C3-L000329](../../tests/test_generate_index.py#L329) | 329 | `"    master_path = tmp_path / INDEXER.INDEX_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000330](../../tests/test_generate_index.py#L330) | 330 | `"    line_index_path = tmp_path / INDEXER.SOURCE_LINES_INDEX_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000331](../../tests/test_generate_index.py#L331) | 331 | `"    coverage_path = tmp_path / INDEXER.COVERAGE_AUDIT_RELATIVE_PATH"` | — |
-| [SRC-FA4E1423C3-L000332](../../tests/test_generate_index.py#L332) | 332 | `"    assert master_path.exists()"` | — |
-| [SRC-FA4E1423C3-L000333](../../tests/test_generate_index.py#L333) | 333 | `"    assert line_index_path.exists()"` | — |
-| [SRC-FA4E1423C3-L000334](../../tests/test_generate_index.py#L334) | 334 | `"    assert coverage_path.exists()"` | — |
-| [SRC-FA4E1423C3-L000335](../../tests/test_generate_index.py#L335) | 335 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
-| [SRC-FA4E1423C3-L000336](../../tests/test_generate_index.py#L336) | 336 | `""` | — |
-| [SRC-FA4E1423C3-L000337](../../tests/test_generate_index.py#L337) | 337 | `"    original_line_index = line_index_path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000338](../../tests/test_generate_index.py#L338) | 338 | `"    line_index_path.write_text(\"stale line index\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000339](../../tests/test_generate_index.py#L339) | 339 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
-| [SRC-FA4E1423C3-L000340](../../tests/test_generate_index.py#L340) | 340 | `"    assert line_index_path.read_text(encoding=\"utf-8\") == \"stale line index\""` | — |
-| [SRC-FA4E1423C3-L000341](../../tests/test_generate_index.py#L341) | 341 | `"    assert \"فهرس الأسطر قديم\" in capsys.readouterr().err"` | — |
-| [SRC-FA4E1423C3-L000342](../../tests/test_generate_index.py#L342) | 342 | `""` | — |
-| [SRC-FA4E1423C3-L000343](../../tests/test_generate_index.py#L343) | 343 | `"    line_index_path.write_text(original_line_index, encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000344](../../tests/test_generate_index.py#L344) | 344 | `"    coverage_path.write_text(\"stale coverage audit\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000345](../../tests/test_generate_index.py#L345) | 345 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 1"` | — |
-| [SRC-FA4E1423C3-L000346](../../tests/test_generate_index.py#L346) | 346 | `"    assert coverage_path.read_text(encoding=\"utf-8\") == \"stale coverage audit\""` | — |
-| [SRC-FA4E1423C3-L000347](../../tests/test_generate_index.py#L347) | 347 | `"    assert \"فهرس تغطية الفهرسة قديم\" in capsys.readouterr().err"` | — |
-| [SRC-FA4E1423C3-L000348](../../tests/test_generate_index.py#L348) | 348 | `""` | — |
-| [SRC-FA4E1423C3-L000349](../../tests/test_generate_index.py#L349) | 349 | `""` | — |
-| [SRC-FA4E1423C3-L000350](../../tests/test_generate_index.py#L350) | 350 | `""` | — |
-| [SRC-FA4E1423C3-L000351](../../tests/test_generate_index.py#L351) | 351 | `"def test_source_line_coverage_validator_rejects_missing_or_duplicate_lines(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000352](../../tests/test_generate_index.py#L352) | 352 | `"    \"\"\"A gap or duplicate in line IDs prevents the generator from claiming full coverage.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000353](../../tests/test_generate_index.py#L353) | 353 | `"    source_file = tmp_path / \"src.py\""` | — |
-| [SRC-FA4E1423C3-L000354](../../tests/test_generate_index.py#L354) | 354 | `"    source_file.write_text(\"FIRST = 1\\nSECOND = 2\\n\", encoding=\"utf-8\")"` | — |

@@ -4,9 +4,62 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000016 إلى SRC-D57B0BB030-L000002
+- النطاق: SRC-9C97DF51AC-L000027 إلى SRC-C7C7FA8853-L000002
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## واجهة سطر الأوامر
+
+### FILE-9C97DF51AC — [cli/omarai.py](../../cli/omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-9C97DF51AC-L000027](../../cli/omarai.py#L27) | 27 | `"    if args.command==\"analyze\":"` | — |
+| [SRC-9C97DF51AC-L000028](../../cli/omarai.py#L28) | 28 | `"        result=analyze(args.text,[x.strip() for x in args.product.split(\",\") if x.strip()],[x.strip() for x in args.location.split(\",\") if x.strip()])"` | — |
+| [SRC-9C97DF51AC-L000029](../../cli/omarai.py#L29) | 29 | `"        print(json.dumps(result,ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000030](../../cli/omarai.py#L30) | 30 | `"        return"` | — |
+| [SRC-9C97DF51AC-L000031](../../cli/omarai.py#L31) | 31 | `"    store=LeadStore()"` | — |
+| [SRC-9C97DF51AC-L000032](../../cli/omarai.py#L32) | 32 | `"    if args.command==\"serve\":"` | — |
+| [SRC-9C97DF51AC-L000033](../../cli/omarai.py#L33) | 33 | `"        serve(args.host,args.port)"` | — |
+| [SRC-9C97DF51AC-L000034](../../cli/omarai.py#L34) | 34 | `"    elif args.command==\"import-csv\":"` | — |
+| [SRC-9C97DF51AC-L000035](../../cli/omarai.py#L35) | 35 | `"        print(json.dumps(store.import_csv(args.file),ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000036](../../cli/omarai.py#L36) | 36 | `"    elif args.command==\"list\":"` | — |
+| [SRC-9C97DF51AC-L000037](../../cli/omarai.py#L37) | 37 | `"        print(json.dumps(store.list(args.status,args.limit),ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000038](../../cli/omarai.py#L38) | 38 | `"    elif args.command==\"export-csv\":"` | — |
+| [SRC-9C97DF51AC-L000039](../../cli/omarai.py#L39) | 39 | `"        print(f\"Exported {store.export_csv(args.file)} leads to {args.file}\")"` | — |
+| [SRC-9C97DF51AC-L000040](../../cli/omarai.py#L40) | 40 | `"if __name__==\"__main__\":"` | — |
+| [SRC-9C97DF51AC-L000041](../../cli/omarai.py#L41) | 41 | `"    main()"` | — |
+## إعدادات وتشغيل
+
+### FILE-DD2C0EB6EA — [Dockerfile](../../Dockerfile#L1)
+
+- النوع: **Dockerfile**
+- نطاق الفهرسة: جرد الملف + أسماء إعدادات عامة إن وجدت
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-DD2C0EB6EA-L000001](../../Dockerfile#L1) | 1 | `"FROM python:3.12-slim"` | — |
+| [SRC-DD2C0EB6EA-L000002](../../Dockerfile#L2) | 2 | `""` | — |
+| [SRC-DD2C0EB6EA-L000003](../../Dockerfile#L3) | 3 | `"ARG OMARAI_BUILD_SHA=unknown"` | — |
+| [SRC-DD2C0EB6EA-L000004](../../Dockerfile#L4) | 4 | `"ARG PUBLIC_OMARAI_BUILD_SHA=unknown"` | — |
+| [SRC-DD2C0EB6EA-L000005](../../Dockerfile#L5) | 5 | `"ENV PYTHONDONTWRITEBYTECODE=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PYTHONUNBUFFERED=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
+| [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `""` | — |
+| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"WORKDIR /app"` | — |
+| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
+| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
+| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
+| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
+| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
+| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
+| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
+| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
+| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
+| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
+| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
 ## وثائق وفهرسة
 
 ### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
@@ -16,6 +69,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000001](../ANSWER_QUALITY_BENCHMARK_AR.md#L1) | 1 | `"# معيار تقييم جودة الإجابة (عدائي / Red-Team)"` | — |
+| [SRC-792A9A235D-L000002](../ANSWER_QUALITY_BENCHMARK_AR.md#L2) | 2 | `""` | — |
+| [SRC-792A9A235D-L000003](../ANSWER_QUALITY_BENCHMARK_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REDTEAM-001  "` | — |
+| [SRC-792A9A235D-L000004](../ANSWER_QUALITY_BENCHMARK_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0 (تصحيح أمثلة الحالة + بروتوكول المقارنة)  "` | — |
+| [SRC-792A9A235D-L000005](../ANSWER_QUALITY_BENCHMARK_AR.md#L5) | 5 | ``"**مرجع الكود عند التصميم:** `ac05f4777f140694b285c5364e6c3875fdecdae6` (main)"`` | — |
+| [SRC-792A9A235D-L000006](../ANSWER_QUALITY_BENCHMARK_AR.md#L6) | 6 | `""` | — |
+| [SRC-792A9A235D-L000007](../ANSWER_QUALITY_BENCHMARK_AR.md#L7) | 7 | `"هذا المجلد يوفّر **مجموعة تقييم قابلة لإعادة التشغيل** لفحص فهم عمرai، استراتيجية البحث، استخدام الأدلة، التعامل مع عدم اليقين، والأمان."` | — |
+| [SRC-792A9A235D-L000008](../ANSWER_QUALITY_BENCHMARK_AR.md#L8) | 8 | `""` | — |
+| [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
+| [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
+| [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
+| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | `"لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر."` | — |
+| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
+| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
+| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
 | [SRC-792A9A235D-L000016](../ANSWER_QUALITY_BENCHMARK_AR.md#L16) | 16 | `"\| الملف \| الوظيفة \|"` | — |
 | [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
 | [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
@@ -811,62 +879,3 @@
 |---|---:|---|---|
 | [SRC-C7C7FA8853-L000001](../DEPLOY_RAILWAY_AR.md#L1) | 1 | `"# نشر Omarai على Railway — دليل عربي"` | — |
 | [SRC-C7C7FA8853-L000002](../DEPLOY_RAILWAY_AR.md#L2) | 2 | `""` | — |
-| [SRC-C7C7FA8853-L000003](../DEPLOY_RAILWAY_AR.md#L3) | 3 | `"هذا المستودع أصبح يحتوي على Dockerfile وإعداد Railway قابلين للبناء. **وجود الإعدادات لا يعني أن الخدمة نُشرت بالفعل**؛ يلزم ربط حساب الاستضافة بالمستودع وإضافة الأسرار من لوحة التحكم."` | — |
-| [SRC-C7C7FA8853-L000004](../DEPLOY_RAILWAY_AR.md#L4) | 4 | `""` | — |
-| [SRC-C7C7FA8853-L000005](../DEPLOY_RAILWAY_AR.md#L5) | 5 | `"## المتطلبات"` | — |
-| [SRC-C7C7FA8853-L000006](../DEPLOY_RAILWAY_AR.md#L6) | 6 | `""` | — |
-| [SRC-C7C7FA8853-L000007](../DEPLOY_RAILWAY_AR.md#L7) | 7 | `"1. حساب GitHub لديه صلاحية قراءة المستودع."` | — |
-| [SRC-C7C7FA8853-L000008](../DEPLOY_RAILWAY_AR.md#L8) | 8 | `"2. حساب Railway وربطه بـ GitHub."` | — |
-| [SRC-C7C7FA8853-L000009](../DEPLOY_RAILWAY_AR.md#L9) | 9 | `"3. مفتاح OpenRouter صالح. استخدام النموذج والبحث قد يستهلك رصيدًا؛ راجع أسعار النموذج وأدوات البحث قبل التشغيل."` | — |
-| [SRC-C7C7FA8853-L000010](../DEPLOY_RAILWAY_AR.md#L10) | 10 | `"4. رمز وصول منفصل وسري للتطبيق، لا يقل عن 32 حرفًا. لا تستخدم مفتاح OpenRouter نفسه."` | — |
-| [SRC-C7C7FA8853-L000011](../DEPLOY_RAILWAY_AR.md#L11) | 11 | `""` | — |
-| [SRC-C7C7FA8853-L000012](../DEPLOY_RAILWAY_AR.md#L12) | 12 | `"## النشر"` | — |
-| [SRC-C7C7FA8853-L000013](../DEPLOY_RAILWAY_AR.md#L13) | 13 | `""` | — |
-| [SRC-C7C7FA8853-L000014](../DEPLOY_RAILWAY_AR.md#L14) | 14 | `"1. افتح Railway وسجّل الدخول."` | — |
-| [SRC-C7C7FA8853-L000015](../DEPLOY_RAILWAY_AR.md#L15) | 15 | `"2. أنشئ مشروعًا جديدًا واختر النشر من مستودع GitHub."` | — |
-| [SRC-C7C7FA8853-L000016](../DEPLOY_RAILWAY_AR.md#L16) | 16 | `"3. اختر mosabosama2030-oss/omarai والفرع main."` | — |
-| [SRC-C7C7FA8853-L000017](../DEPLOY_RAILWAY_AR.md#L17) | 17 | `"4. اجعل Railway يبني باستخدام Dockerfile الموجود في المستودع."` | — |
-| [SRC-C7C7FA8853-L000018](../DEPLOY_RAILWAY_AR.md#L18) | 18 | ``"5. يقرأ Omarai SHA من `BUILD_SHA` المخبوز في الصورة إن توفر؛ وإلا يستخدم المتغير الرسمي `RAILWAY_GIT_COMMIT_SHA` الذي توفره Railway لنشر GitHub. بعد النشر يجب أن تعرض `/api/health` قيمة `build.sha` و`build.sha_source`؛ ويجب أن ينجح hosted smoke مع SHA الالتزام المتوقع."`` | — |
-| [SRC-C7C7FA8853-L000019](../DEPLOY_RAILWAY_AR.md#L19) | 19 | `"6. افتح Variables وأضف:"` | — |
-| [SRC-C7C7FA8853-L000020](../DEPLOY_RAILWAY_AR.md#L20) | 20 | `"   - OMARAI_PUBLIC_DEPLOYMENT=1"` | — |
-| [SRC-C7C7FA8853-L000021](../DEPLOY_RAILWAY_AR.md#L21) | 21 | `"   - OMARAI_ACCESS_TOKEN = رمز عشوائي سري قوي (32 حرفًا على الأقل)"` | — |
-| [SRC-C7C7FA8853-L000022](../DEPLOY_RAILWAY_AR.md#L22) | 22 | `"   - OPENROUTER_API_KEY = مفتاحك الشخصي"` | — |
-| [SRC-C7C7FA8853-L000023](../DEPLOY_RAILWAY_AR.md#L23) | 23 | `"   - اختياريًا: OMARAI_ANSWER_MODEL وOMARAI_PLANNER_MODEL وOMARAI_REVIEW_MODEL بعد التحقق من صلاحية النماذج وأسعارها."` | — |
-| [SRC-C7C7FA8853-L000024](../DEPLOY_RAILWAY_AR.md#L24) | 24 | `"   - اختياريًا لتفعيل بحث مباشر ينفذه مزود OpenRouter داخل طلب التوليد: OMARAI_OPENROUTER_WEB_SEARCH=1. هذا خيار إضافي قد يستهلك رصيد بحث فوق تكلفة النموذج؛ اتركه غير مضبوط إذا لم توافق على التكلفة."` | — |
-| [SRC-C7C7FA8853-L000025](../DEPLOY_RAILWAY_AR.md#L25) | 25 | `"7. انشر الخدمة، ثم فعّل Generate Domain من Networking."` | — |
-| [SRC-C7C7FA8853-L000026](../DEPLOY_RAILWAY_AR.md#L26) | 26 | `"8. افتح الرابط العام. أدخل OMARAI_ACCESS_TOKEN في قسم «الوصول الآمن» واضغط «حفظ الرمز على هذا الجهاز»."` | — |
-| [SRC-C7C7FA8853-L000027](../DEPLOY_RAILWAY_AR.md#L27) | 27 | `"9. اضغط «اختبار حي للإنترنت والنموذج». لا تعتبر الصفحة منشورة بنجاح حتى ينجح اختبار الشبكة والنموذج من رابط الاستضافة."` | — |
-| [SRC-C7C7FA8853-L000028](../DEPLOY_RAILWAY_AR.md#L28) | 28 | `""` | — |
-| [SRC-C7C7FA8853-L000029](../DEPLOY_RAILWAY_AR.md#L29) | 29 | `"## الحماية"` | — |
-| [SRC-C7C7FA8853-L000030](../DEPLOY_RAILWAY_AR.md#L30) | 30 | `""` | — |
-| [SRC-C7C7FA8853-L000031](../DEPLOY_RAILWAY_AR.md#L31) | 31 | `"- يمنع التطبيق الربط على واجهة عامة إلا عند تفعيل OMARAI_PUBLIC_DEPLOYMENT=1 وضبط رمز قوي."` | — |
-| [SRC-C7C7FA8853-L000032](../DEPLOY_RAILWAY_AR.md#L32) | 32 | `"- طلبات API محمية برمز Bearer، مع حد مبدئي 20 طلبًا في الدقيقة لكل عنوان عميل."` | — |
-| [SRC-C7C7FA8853-L000033](../DEPLOY_RAILWAY_AR.md#L33) | 33 | `"- رمز الوصول يُخزن في localStorage للمتصفح الذي تختاره. استخدم جهازًا موثوقًا، وامسح الرمز من المتصفح عند الحاجة."` | — |
-| [SRC-C7C7FA8853-L000034](../DEPLOY_RAILWAY_AR.md#L34) | 34 | `"- لا تضع مفاتيح مزود النموذج في HTML أو GitHub أو في خانة رمز الوصول."` | — |
-| [SRC-C7C7FA8853-L000035](../DEPLOY_RAILWAY_AR.md#L35) | 35 | `"- لا يوجد تسجيل مستخدمين متعددين حتى الآن؛ الرمز مشترك لمن تتيحه لهم. لا تفتح الخدمة للجمهور دون خطة مصادقة وإدارة استخدام أقوى."` | — |
-| [SRC-C7C7FA8853-L000036](../DEPLOY_RAILWAY_AR.md#L36) | 36 | `""` | — |
-| [SRC-C7C7FA8853-L000037](../DEPLOY_RAILWAY_AR.md#L37) | 37 | `"## خيار تخزين SQLite على Volume دائم"` | — |
-| [SRC-C7C7FA8853-L000038](../DEPLOY_RAILWAY_AR.md#L38) | 38 | `""` | — |
-| [SRC-C7C7FA8853-L000039](../DEPLOY_RAILWAY_AR.md#L39) | 39 | ``"إذا اخترت خدمة وخطة توفران Volume دائمًا، اربط الـVolume بمسار مثل `/data` واضبط متغير الخدمة `OMARAI_DB_PATH=/data/omarai.sqlite3`. هذا الإعداد لا ينشئ Volume تلقائيًا. بعد ضبطه، اختبر حفظ سجل ثم إعادة التشغيل/النشر وبقاء السجل، ونفّذ اختبار نسخ احتياطي واستعادة على قاعدة اختبار. إن لم تُثبت هذه الخطوات، لا تعتبر SQLite مكانًا آمنًا لبيانات العملاء المهمة؛ استخدم قاعدة مُدارة أو أبقِ مساحة العملاء للتجربة فقط."`` | — |
-| [SRC-C7C7FA8853-L000040](../DEPLOY_RAILWAY_AR.md#L40) | 40 | `"## حدود الإنتاج الحالية"` | — |
-| [SRC-C7C7FA8853-L000041](../DEPLOY_RAILWAY_AR.md#L41) | 41 | `""` | — |
-| [SRC-C7C7FA8853-L000042](../DEPLOY_RAILWAY_AR.md#L42) | 42 | `"- هذا نشر أولي آمن نسبيًا للاستخدام الشخصي/المحدود، وليس منصة SaaS عامة جاهزة للتوسع."` | — |
-| [SRC-C7C7FA8853-L000043](../DEPLOY_RAILWAY_AR.md#L43) | 43 | `"- SQLite وسجل العملاء المحلي لا يضمنان استمرارية البيانات على حاوية استضافة مؤقتة. لا تعتمد على صفحة العملاء كقاعدة بيانات دائمة قبل ربط PostgreSQL واختبار النسخ الاحتياطي."` | — |
-| [SRC-C7C7FA8853-L000044](../DEPLOY_RAILWAY_AR.md#L44) | 44 | `"- حدود المعدل الحالية محفوظة في ذاكرة العملية، فلا تستبدل نظام تحديد معدل موزعًا عند تشغيل أكثر من نسخة."` | — |
-| [SRC-C7C7FA8853-L000045](../DEPLOY_RAILWAY_AR.md#L45) | 45 | `"- واجهات البحث العامة قد تتعرض للحجب أو تحديد المعدل. أضف مفاتيح البحث الاختيارية إذا كنت تحتاج تغطية أوسع، وراقب تكلفتها. أداة OpenRouter الحية اختيارية، وتكاليفها تتغير حسب محرك البحث والمزود."` | — |
-| [SRC-C7C7FA8853-L000046](../DEPLOY_RAILWAY_AR.md#L46) | 46 | `"- اختبر الوصول، وطلبات API غير المصرح بها، وسلوك حدود المزود قبل مشاركة الرابط مع أي شخص."` | — |
-| [SRC-C7C7FA8853-L000047](../DEPLOY_RAILWAY_AR.md#L47) | 47 | `""` | — |
-| [SRC-C7C7FA8853-L000048](../DEPLOY_RAILWAY_AR.md#L48) | 48 | `"## إعادة النشر"` | — |
-| [SRC-C7C7FA8853-L000049](../DEPLOY_RAILWAY_AR.md#L49) | 49 | `""` | — |
-| [SRC-C7C7FA8853-L000050](../DEPLOY_RAILWAY_AR.md#L50) | 50 | `"كل تحديث إلى الفرع main يمكن أن يؤدي إلى إعادة بناء تلقائية إذا فُعّلت عمليات النشر التلقائية في إعدادات Railway."` | — |
-## وثائق وفهرسة
-
-### FILE-D57B0BB030 — [docs/DEPLOY_RENDER_AR.md](../DEPLOY_RENDER_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-D57B0BB030-L000001](../DEPLOY_RENDER_AR.md#L1) | 1 | `"# نشر Omarai على Render Free — دليل عربي"` | — |
-| [SRC-D57B0BB030-L000002](../DEPLOY_RENDER_AR.md#L2) | 2 | `""` | — |

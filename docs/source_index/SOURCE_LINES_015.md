@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004333 إلى SRC-1AE03B9EC3-L005132
+- النطاق: SRC-1AE03B9EC3-L004283 إلى SRC-1AE03B9EC3-L005082
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004283](../../agents/web_agent.py#L4283) | 4283 | `"            safe_question = ("` | — |
+| [SRC-1AE03B9EC3-L004284](../../agents/web_agent.py#L4284) | 4284 | `"                question.strip()[:MAX_QUESTION_CHARS]"` | — |
+| [SRC-1AE03B9EC3-L004285](../../agents/web_agent.py#L4285) | 4285 | `"                if isinstance(question, str)"` | — |
+| [SRC-1AE03B9EC3-L004286](../../agents/web_agent.py#L4286) | 4286 | `"                else \"\""` | — |
+| [SRC-1AE03B9EC3-L004287](../../agents/web_agent.py#L4287) | 4287 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004288](../../agents/web_agent.py#L4288) | 4288 | `"            budget_at_failure = budget.snapshot()"` | — |
+| [SRC-1AE03B9EC3-L004289](../../agents/web_agent.py#L4289) | 4289 | `"            search_attempted = budget_at_failure[\"counts\"][\"search_calls\"] > 0"` | — |
+| [SRC-1AE03B9EC3-L004290](../../agents/web_agent.py#L4290) | 4290 | `"            result = {"` | — |
+| [SRC-1AE03B9EC3-L004291](../../agents/web_agent.py#L4291) | 4291 | `"                \"answer\": ("` | — |
+| [SRC-1AE03B9EC3-L004292](../../agents/web_agent.py#L4292) | 4292 | `"                    \"توقفت العملية لأن ميزانية الوقت أو الموارد المحددة لهذا الطلب \""` | — |
+| [SRC-1AE03B9EC3-L004293](../../agents/web_agent.py#L4293) | 4293 | `"                    \"قد استُنفدت. لم أتمكن من إكمال البحث ضمن الحدود الحالية؛ \""` | — |
+| [SRC-1AE03B9EC3-L004294](../../agents/web_agent.py#L4294) | 4294 | `"                    \"لا تعتبر هذه النتيجة بحثًا مكتملًا.\""` | — |
+| [SRC-1AE03B9EC3-L004295](../../agents/web_agent.py#L4295) | 4295 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L004296](../../agents/web_agent.py#L4296) | 4296 | `"                \"question\": safe_question,"` | — |
+| [SRC-1AE03B9EC3-L004297](../../agents/web_agent.py#L4297) | 4297 | `"                \"search_query\": safe_question,"` | — |
+| [SRC-1AE03B9EC3-L004298](../../agents/web_agent.py#L4298) | 4298 | `"                \"search_queries\": [],"` | — |
+| [SRC-1AE03B9EC3-L004299](../../agents/web_agent.py#L4299) | 4299 | `"                \"search_report\": {"` | — |
+| [SRC-1AE03B9EC3-L004300](../../agents/web_agent.py#L4300) | 4300 | `"                    \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L004301](../../agents/web_agent.py#L4301) | 4301 | `"                    \"search_outcome\": ("` | — |
+| [SRC-1AE03B9EC3-L004302](../../agents/web_agent.py#L4302) | 4302 | `"                        \"unknown_after_budget_exhaustion\""` | — |
+| [SRC-1AE03B9EC3-L004303](../../agents/web_agent.py#L4303) | 4303 | `"                        if search_attempted"` | — |
+| [SRC-1AE03B9EC3-L004304](../../agents/web_agent.py#L4304) | 4304 | `"                        else \"not_attempted\""` | — |
+| [SRC-1AE03B9EC3-L004305](../../agents/web_agent.py#L4305) | 4305 | `"                    ),"` | — |
+| [SRC-1AE03B9EC3-L004306](../../agents/web_agent.py#L4306) | 4306 | `"                    \"insufficient_evidence\": True,"` | — |
+| [SRC-1AE03B9EC3-L004307](../../agents/web_agent.py#L4307) | 4307 | `"                    \"budget_exhausted\": True,"` | — |
+| [SRC-1AE03B9EC3-L004308](../../agents/web_agent.py#L4308) | 4308 | `"                    \"warnings\": [str(exc)],"` | — |
+| [SRC-1AE03B9EC3-L004309](../../agents/web_agent.py#L4309) | 4309 | `"                },"` | — |
+| [SRC-1AE03B9EC3-L004310](../../agents/web_agent.py#L4310) | 4310 | `"                \"sources\": [],"` | — |
+| [SRC-1AE03B9EC3-L004311](../../agents/web_agent.py#L4311) | 4311 | `"                \"research_quality\": \"failed\","` | — |
+| [SRC-1AE03B9EC3-L004312](../../agents/web_agent.py#L4312) | 4312 | `"                \"citation_validation\": {\"status\": \"not_checked\"},"` | — |
+| [SRC-1AE03B9EC3-L004313](../../agents/web_agent.py#L4313) | 4313 | `"                \"answer_coverage\": {},"` | — |
+| [SRC-1AE03B9EC3-L004314](../../agents/web_agent.py#L4314) | 4314 | `"                \"used_language_model\": False,"` | — |
+| [SRC-1AE03B9EC3-L004315](../../agents/web_agent.py#L4315) | 4315 | `"                \"used_web_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L004316](../../agents/web_agent.py#L4316) | 4316 | `"                \"search_attempted\": search_attempted,"` | — |
+| [SRC-1AE03B9EC3-L004317](../../agents/web_agent.py#L4317) | 4317 | `"                \"used_social_search\": False,"` | — |
+| [SRC-1AE03B9EC3-L004318](../../agents/web_agent.py#L4318) | 4318 | `"                \"warnings\": [str(exc)],"` | — |
+| [SRC-1AE03B9EC3-L004319](../../agents/web_agent.py#L4319) | 4319 | `"                \"kind\": \"web_fallback\","` | — |
+| [SRC-1AE03B9EC3-L004320](../../agents/web_agent.py#L4320) | 4320 | `"                \"final_answer_status\": \"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L004321](../../agents/web_agent.py#L4321) | 4321 | `"                \"intent_route\": \"BUDGET_EXHAUSTED\","` | — |
+| [SRC-1AE03B9EC3-L004322](../../agents/web_agent.py#L4322) | 4322 | `"                \"intent_route_reason\": \"request_budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L004323](../../agents/web_agent.py#L4323) | 4323 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004324](../../agents/web_agent.py#L4324) | 4324 | `"        finally:"` | — |
+| [SRC-1AE03B9EC3-L004325](../../agents/web_agent.py#L4325) | 4325 | `"            budget_summary = budget.snapshot()"` | — |
+| [SRC-1AE03B9EC3-L004326](../../agents/web_agent.py#L4326) | 4326 | `"            self._request_budget = previous_budget"` | — |
+| [SRC-1AE03B9EC3-L004327](../../agents/web_agent.py#L4327) | 4327 | `""` | — |
+| [SRC-1AE03B9EC3-L004328](../../agents/web_agent.py#L4328) | 4328 | `"        result[\"request_budget\"] = budget_summary"` | — |
+| [SRC-1AE03B9EC3-L004329](../../agents/web_agent.py#L4329) | 4329 | `"        result[\"generation_diagnostics\"] = list(self.generation_diagnostics[-12:])"` | — |
+| [SRC-1AE03B9EC3-L004330](../../agents/web_agent.py#L4330) | 4330 | `""` | — |
+| [SRC-1AE03B9EC3-L004331](../../agents/web_agent.py#L4331) | 4331 | `"        # Keep the public result contract resilient if a fallback/alternate result"` | — |
+| [SRC-1AE03B9EC3-L004332](../../agents/web_agent.py#L4332) | 4332 | `"        # builder omitted the lexical integrity fields. Normal research results are"` | — |
 | [SRC-1AE03B9EC3-L004333](../../agents/web_agent.py#L4333) | 4333 | `"        # already audited inside _answer_with_budget, so do not duplicate that work."` | — |
 | [SRC-1AE03B9EC3-L004334](../../agents/web_agent.py#L4334) | 4334 | `"        if ("` | — |
 | [SRC-1AE03B9EC3-L004335](../../agents/web_agent.py#L4335) | 4335 | `"            result.get(\"kind\") in {\"web_research\", \"web_fallback\", \"insufficient_evidence\"}"` | — |
@@ -766,53 +816,3 @@
 | [SRC-1AE03B9EC3-L005080](../../agents/web_agent.py#L5080) | 5080 | `"            compacted_query = compact_search_query(raw_query)"` | — |
 | [SRC-1AE03B9EC3-L005081](../../agents/web_agent.py#L5081) | 5081 | `"            if compacted_query and _relevance_query_tokens(compacted_query):"` | — |
 | [SRC-1AE03B9EC3-L005082](../../agents/web_agent.py#L5082) | 5082 | `"                final_topic_queries.append(compacted_query)"` | — |
-| [SRC-1AE03B9EC3-L005083](../../agents/web_agent.py#L5083) | 5083 | `"        coverage_targets_for_budget = self._question_coverage_targets(question)"` | — |
-| [SRC-1AE03B9EC3-L005084](../../agents/web_agent.py#L5084) | 5084 | `"        # Reserve one bounded search slot for a post-review criterion-evidence gap."` | — |
-| [SRC-1AE03B9EC3-L005085](../../agents/web_agent.py#L5085) | 5085 | `"        # Keep all explicit criterion queries when there are many dimensions; the"` | — |
-| [SRC-1AE03B9EC3-L005086](../../agents/web_agent.py#L5086) | 5086 | `"        # reserve applies only to ordinary compound tasks with up to six targets."` | — |
-| [SRC-1AE03B9EC3-L005087](../../agents/web_agent.py#L5087) | 5087 | `"        reserve_coverage_gap_query = ("` | — |
-| [SRC-1AE03B9EC3-L005088](../../agents/web_agent.py#L5088) | 5088 | `"            2 <= len(coverage_targets_for_budget) <= 6"` | — |
-| [SRC-1AE03B9EC3-L005089](../../agents/web_agent.py#L5089) | 5089 | `"            and plan.get(\"depth\") == \"deep\""` | — |
-| [SRC-1AE03B9EC3-L005090](../../agents/web_agent.py#L5090) | 5090 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L005091](../../agents/web_agent.py#L5091) | 5091 | `"        query_limit = MAX_PLAN_QUERIES - 1 if reserve_coverage_gap_query else MAX_PLAN_QUERIES"` | — |
-| [SRC-1AE03B9EC3-L005092](../../agents/web_agent.py#L5092) | 5092 | `"        plan[\"coverage_gap_repair_slot_reserved\"] = reserve_coverage_gap_query"` | — |
-| [SRC-1AE03B9EC3-L005093](../../agents/web_agent.py#L5093) | 5093 | `"        plan[\"query_limit\"] = query_limit"` | — |
-| [SRC-1AE03B9EC3-L005094](../../agents/web_agent.py#L5094) | 5094 | `"        plan[\"coverage_targets\"] = list(coverage_targets_for_budget)"` | — |
-| [SRC-1AE03B9EC3-L005095](../../agents/web_agent.py#L5095) | 5095 | `"        plan[\"queries\"] = list(dict.fromkeys(final_topic_queries))[:query_limit]"` | — |
-| [SRC-1AE03B9EC3-L005096](../../agents/web_agent.py#L5096) | 5096 | `"        actual_query_keys = set(plan[\"queries\"])"` | — |
-| [SRC-1AE03B9EC3-L005097](../../agents/web_agent.py#L5097) | 5097 | `"        plan[\"query_strategy_matrix\"] = ["` | — |
-| [SRC-1AE03B9EC3-L005098](../../agents/web_agent.py#L5098) | 5098 | `"            item for item in query_strategy_matrix"` | — |
-| [SRC-1AE03B9EC3-L005099](../../agents/web_agent.py#L5099) | 5099 | `"            if item.get(\"query\") in actual_query_keys"` | — |
-| [SRC-1AE03B9EC3-L005100](../../agents/web_agent.py#L5100) | 5100 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L005101](../../agents/web_agent.py#L5101) | 5101 | `""` | — |
-| [SRC-1AE03B9EC3-L005102](../../agents/web_agent.py#L5102) | 5102 | `"        sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L005103](../../agents/web_agent.py#L5103) | 5103 | `"        search_warnings: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L005104](../../agents/web_agent.py#L5104) | 5104 | `"        report: dict[str, Any] = {}"` | — |
-| [SRC-1AE03B9EC3-L005105](../../agents/web_agent.py#L5105) | 5105 | `"        # Scope diagnostic evidence to this research attempt; a reused WebAgent must not"` | — |
-| [SRC-1AE03B9EC3-L005106](../../agents/web_agent.py#L5106) | 5106 | `"        # accidentally inherit provider attempts from an earlier question."` | — |
-| [SRC-1AE03B9EC3-L005107](../../agents/web_agent.py#L5107) | 5107 | `"        with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L005108](../../agents/web_agent.py#L5108) | 5108 | `"            research_diagnostic_baseline = list(self._provider_diagnostics)"` | — |
-| [SRC-1AE03B9EC3-L005109](../../agents/web_agent.py#L5109) | 5109 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L005110](../../agents/web_agent.py#L5110) | 5110 | `"            sources, search_warnings, report = self._collect_research(plan)"` | — |
-| [SRC-1AE03B9EC3-L005111](../../agents/web_agent.py#L5111) | 5111 | `"        except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L005112](../../agents/web_agent.py#L5112) | 5112 | `"            search_warnings.append(str(exc))"` | — |
-| [SRC-1AE03B9EC3-L005113](../../agents/web_agent.py#L5113) | 5113 | `"            baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}"` | — |
-| [SRC-1AE03B9EC3-L005114](../../agents/web_agent.py#L5114) | 5114 | `"            with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L005115](../../agents/web_agent.py#L5115) | 5115 | `"                failure_diagnostics = ["` | — |
-| [SRC-1AE03B9EC3-L005116](../../agents/web_agent.py#L5116) | 5116 | `"                    item for item in self._provider_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L005117](../../agents/web_agent.py#L5117) | 5117 | `"                    if id(item) not in baseline_diagnostic_ids"` | — |
-| [SRC-1AE03B9EC3-L005118](../../agents/web_agent.py#L5118) | 5118 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L005119](../../agents/web_agent.py#L5119) | 5119 | `"            provider_attempt_observed = any("` | — |
-| [SRC-1AE03B9EC3-L005120](../../agents/web_agent.py#L5120) | 5120 | `"                item.get(\"status\") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
-| [SRC-1AE03B9EC3-L005121](../../agents/web_agent.py#L5121) | 5121 | `"                for item in failure_diagnostics"` | — |
-| [SRC-1AE03B9EC3-L005122](../../agents/web_agent.py#L5122) | 5122 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L005123](../../agents/web_agent.py#L5123) | 5123 | `"            report = {"` | — |
-| [SRC-1AE03B9EC3-L005124](../../agents/web_agent.py#L5124) | 5124 | `"                \"queries_planned\": len(plan.get(\"queries\", [])),"` | — |
-| [SRC-1AE03B9EC3-L005125](../../agents/web_agent.py#L5125) | 5125 | `"                # The exact query count is unknowable when the pipeline fails before it"` | — |
-| [SRC-1AE03B9EC3-L005126](../../agents/web_agent.py#L5126) | 5126 | `"                # returns its report. A provider diagnostic may still prove an attempt."` | — |
-| [SRC-1AE03B9EC3-L005127](../../agents/web_agent.py#L5127) | 5127 | `"                \"queries_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L005128](../../agents/web_agent.py#L5128) | 5128 | `"                \"queries_attempted_known\": False,"` | — |
-| [SRC-1AE03B9EC3-L005129](../../agents/web_agent.py#L5129) | 5129 | `"                \"search_attempted\": True if provider_attempt_observed else None,"` | — |
-| [SRC-1AE03B9EC3-L005130](../../agents/web_agent.py#L5130) | 5130 | `"                \"search_outcome\": ("` | — |
-| [SRC-1AE03B9EC3-L005131](../../agents/web_agent.py#L5131) | 5131 | `"                    \"attempted_research_error\""` | — |
-| [SRC-1AE03B9EC3-L005132](../../agents/web_agent.py#L5132) | 5132 | `"                    if provider_attempt_observed"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000276 إلى SRC-03FF422A16-L000010
+- النطاق: SRC-A8360B1B03-L000226 إلى SRC-4FFD5AFC54-L000680
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"        {"` | — |
+| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `"            \"title\": str(item.get(\"title\") or \"\")[:300],"` | — |
+| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `"            \"url\": str(item.get(\"url\") or \"\")[:2048],"` | — |
+| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"            \"provider\": str(item.get(\"provider\") or \"\")[:80],"` | — |
+| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"            \"snippet\": str(item.get(\"snippet\") or \"\")[:1200],"` | — |
+| [SRC-A8360B1B03-L000231](../../scripts/hosted_smoke_test.py#L231) | 231 | `"            \"published_at\": str(item.get(\"published_at\") or \"\")[:100],"` | — |
+| [SRC-A8360B1B03-L000232](../../scripts/hosted_smoke_test.py#L232) | 232 | `"        }"` | — |
+| [SRC-A8360B1B03-L000233](../../scripts/hosted_smoke_test.py#L233) | 233 | `"        for item in usable"` | — |
+| [SRC-A8360B1B03-L000234](../../scripts/hosted_smoke_test.py#L234) | 234 | `"    ]"` | — |
+| [SRC-A8360B1B03-L000235](../../scripts/hosted_smoke_test.py#L235) | 235 | `"    transcript = {"` | — |
+| [SRC-A8360B1B03-L000236](../../scripts/hosted_smoke_test.py#L236) | 236 | `"        \"case_id\": \"sales_intent_fire_alarm_egypt\","` | — |
+| [SRC-A8360B1B03-L000237](../../scripts/hosted_smoke_test.py#L237) | 237 | `"        \"question\": LIVE_TEST_QUESTION,"` | — |
+| [SRC-A8360B1B03-L000238](../../scripts/hosted_smoke_test.py#L238) | 238 | `"        \"answer\": answer_text,"` | — |
+| [SRC-A8360B1B03-L000239](../../scripts/hosted_smoke_test.py#L239) | 239 | `"        \"used_web_search\": answer.get(\"used_web_search\") is True,"` | — |
+| [SRC-A8360B1B03-L000240](../../scripts/hosted_smoke_test.py#L240) | 240 | `"        \"used_language_model\": answer.get(\"used_language_model\") is True,"` | — |
+| [SRC-A8360B1B03-L000241](../../scripts/hosted_smoke_test.py#L241) | 241 | `"        \"sources\": source_records,"` | — |
+| [SRC-A8360B1B03-L000242](../../scripts/hosted_smoke_test.py#L242) | 242 | `"        \"pipeline_completion_status\": ("` | — |
+| [SRC-A8360B1B03-L000243](../../scripts/hosted_smoke_test.py#L243) | 243 | `"            search_report.get(\"pipeline_completion_status\")"` | — |
+| [SRC-A8360B1B03-L000244](../../scripts/hosted_smoke_test.py#L244) | 244 | `"            if isinstance(search_report, dict) else None"` | — |
+| [SRC-A8360B1B03-L000245](../../scripts/hosted_smoke_test.py#L245) | 245 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000246](../../scripts/hosted_smoke_test.py#L246) | 246 | `"        \"answer_evidence_status\": answer.get(\"answer_evidence_status\"),"` | — |
+| [SRC-A8360B1B03-L000247](../../scripts/hosted_smoke_test.py#L247) | 247 | `"    }"` | — |
+| [SRC-A8360B1B03-L000248](../../scripts/hosted_smoke_test.py#L248) | 248 | `"    partial_report[\"transcript\"] = [transcript]"` | — |
+| [SRC-A8360B1B03-L000249](../../scripts/hosted_smoke_test.py#L249) | 249 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
+| [SRC-A8360B1B03-L000250](../../scripts/hosted_smoke_test.py#L250) | 250 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000251](../../scripts/hosted_smoke_test.py#L251) | 251 | `"            \"Agent request did not return a live web search with usable source URLs.\","` | — |
+| [SRC-A8360B1B03-L000252](../../scripts/hosted_smoke_test.py#L252) | 252 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000253](../../scripts/hosted_smoke_test.py#L253) | 253 | `"        )"` | — |
+| [SRC-A8360B1B03-L000254](../../scripts/hosted_smoke_test.py#L254) | 254 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
+| [SRC-A8360B1B03-L000255](../../scripts/hosted_smoke_test.py#L255) | 255 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000256](../../scripts/hosted_smoke_test.py#L256) | 256 | `"            \"Agent request did not confirm that a language model was used.\","` | — |
+| [SRC-A8360B1B03-L000257](../../scripts/hosted_smoke_test.py#L257) | 257 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000258](../../scripts/hosted_smoke_test.py#L258) | 258 | `"        )"` | — |
+| [SRC-A8360B1B03-L000259](../../scripts/hosted_smoke_test.py#L259) | 259 | `"    checks[\"language_model\"] = {"` | — |
+| [SRC-A8360B1B03-L000260](../../scripts/hosted_smoke_test.py#L260) | 260 | `"        \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000261](../../scripts/hosted_smoke_test.py#L261) | 261 | `"        \"response_received\": bool(answer_text),"` | — |
+| [SRC-A8360B1B03-L000262](../../scripts/hosted_smoke_test.py#L262) | 262 | `"        \"verified_by\": \"agent_request\","` | — |
+| [SRC-A8360B1B03-L000263](../../scripts/hosted_smoke_test.py#L263) | 263 | `"    }"` | — |
+| [SRC-A8360B1B03-L000264](../../scripts/hosted_smoke_test.py#L264) | 264 | `"    checks[\"agent_request\"] = {"` | — |
+| [SRC-A8360B1B03-L000265](../../scripts/hosted_smoke_test.py#L265) | 265 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
+| [SRC-A8360B1B03-L000266](../../scripts/hosted_smoke_test.py#L266) | 266 | `"        \"direct_pages_read\": search_report.get(\"pages_fetched\") if isinstance(search_report, dict) else None,"` | — |
+| [SRC-A8360B1B03-L000267](../../scripts/hosted_smoke_test.py#L267) | 267 | `"        \"providers_reported\": search_report.get(\"providers_used\", []) if isinstance(search_report, dict) else [],"` | — |
+| [SRC-A8360B1B03-L000268](../../scripts/hosted_smoke_test.py#L268) | 268 | `"        \"answer_received\": bool(answer_text),"` | — |
+| [SRC-A8360B1B03-L000269](../../scripts/hosted_smoke_test.py#L269) | 269 | `"        \"pipeline_completion_status\": ("` | — |
+| [SRC-A8360B1B03-L000270](../../scripts/hosted_smoke_test.py#L270) | 270 | `"            search_report.get(\"pipeline_completion_status\") if isinstance(search_report, dict) else None"` | — |
+| [SRC-A8360B1B03-L000271](../../scripts/hosted_smoke_test.py#L271) | 271 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000272](../../scripts/hosted_smoke_test.py#L272) | 272 | `"        \"answer_evidence_status\": answer.get(\"answer_evidence_status\"),"` | — |
+| [SRC-A8360B1B03-L000273](../../scripts/hosted_smoke_test.py#L273) | 273 | `"    }"` | — |
+| [SRC-A8360B1B03-L000274](../../scripts/hosted_smoke_test.py#L274) | 274 | `"    partial_report.update({"` | — |
+| [SRC-A8360B1B03-L000275](../../scripts/hosted_smoke_test.py#L275) | 275 | `"        \"result\": \"passed\","` | — |
 | [SRC-A8360B1B03-L000276](../../scripts/hosted_smoke_test.py#L276) | 276 | `"        \"checks\": checks,"` | — |
 | [SRC-A8360B1B03-L000277](../../scripts/hosted_smoke_test.py#L277) | 277 | `"        \"connector_check\": ("` | — |
 | [SRC-A8360B1B03-L000278](../../scripts/hosted_smoke_test.py#L278) | 278 | `"            diagnostics.get(\"checks\", {}).get(\"web_search\", {})"` | — |
@@ -775,62 +825,3 @@
 | [SRC-4FFD5AFC54-L000678](../../scripts/run_answer_quality_benchmark.py#L678) | 678 | `"    )"` | — |
 | [SRC-4FFD5AFC54-L000679](../../scripts/run_answer_quality_benchmark.py#L679) | 679 | `"    parser.add_argument("` | — |
 | [SRC-4FFD5AFC54-L000680](../../scripts/run_answer_quality_benchmark.py#L680) | 680 | `"        \"--corpus\","` | — |
-| [SRC-4FFD5AFC54-L000681](../../scripts/run_answer_quality_benchmark.py#L681) | 681 | `"        type=Path,"` | — |
-| [SRC-4FFD5AFC54-L000682](../../scripts/run_answer_quality_benchmark.py#L682) | 682 | `"        default=DEFAULT_CORPUS,"` | — |
-| [SRC-4FFD5AFC54-L000683](../../scripts/run_answer_quality_benchmark.py#L683) | 683 | `"        help=\"Path to answer_quality_cases.json\","` | — |
-| [SRC-4FFD5AFC54-L000684](../../scripts/run_answer_quality_benchmark.py#L684) | 684 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000685](../../scripts/run_answer_quality_benchmark.py#L685) | 685 | `"    parser.add_argument(\"--summary\", action=\"store_true\", help=\"Extra validate summary\")"` | — |
-| [SRC-4FFD5AFC54-L000686](../../scripts/run_answer_quality_benchmark.py#L686) | 686 | `"    parser.add_argument(\"--base-url\", default=\"http://127.0.0.1:8765\")"` | — |
-| [SRC-4FFD5AFC54-L000687](../../scripts/run_answer_quality_benchmark.py#L687) | 687 | `"    parser.add_argument(\"--case-id\", default=None, help=\"Run a single case (live)\")"` | — |
-| [SRC-4FFD5AFC54-L000688](../../scripts/run_answer_quality_benchmark.py#L688) | 688 | `"    parser.add_argument(\"--limit\", type=int, default=0, help=\"Max cases in live mode (0=all selected)\")"` | — |
-| [SRC-4FFD5AFC54-L000689](../../scripts/run_answer_quality_benchmark.py#L689) | 689 | `"    parser.add_argument(\"--timeout\", type=float, default=60.0)"` | — |
-| [SRC-4FFD5AFC54-L000690](../../scripts/run_answer_quality_benchmark.py#L690) | 690 | `"    parser.add_argument(\"--build-sha\", default=None, help=\"Optional expected deployed SHA; checked against /api/health before any benchmark request\")"` | — |
-| [SRC-4FFD5AFC54-L000691](../../scripts/run_answer_quality_benchmark.py#L691) | 691 | `"    parser.add_argument(\"--request-costs\", type=Path, default=None, help=\"Optional externally reconciled per-case full-request costs in USD\")"` | — |
-| [SRC-4FFD5AFC54-L000692](../../scripts/run_answer_quality_benchmark.py#L692) | 692 | `"    parser.add_argument(\"--delay\", type=float, default=0.0, help=\"Seconds between live requests\")"` | — |
-| [SRC-4FFD5AFC54-L000693](../../scripts/run_answer_quality_benchmark.py#L693) | 693 | `"    parser.add_argument(\"--out\", type=Path, default=None, help=\"Write live results JSON\")"` | — |
-| [SRC-4FFD5AFC54-L000694](../../scripts/run_answer_quality_benchmark.py#L694) | 694 | `"    args = parser.parse_args(argv)"` | — |
-| [SRC-4FFD5AFC54-L000695](../../scripts/run_answer_quality_benchmark.py#L695) | 695 | `""` | — |
-| [SRC-4FFD5AFC54-L000696](../../scripts/run_answer_quality_benchmark.py#L696) | 696 | `"    if args.mode == \"validate\":"` | — |
-| [SRC-4FFD5AFC54-L000697](../../scripts/run_answer_quality_benchmark.py#L697) | 697 | `"        return run_validate(args.corpus, args.summary)"` | — |
-| [SRC-4FFD5AFC54-L000698](../../scripts/run_answer_quality_benchmark.py#L698) | 698 | `"    if args.mode == \"live\":"` | — |
-| [SRC-4FFD5AFC54-L000699](../../scripts/run_answer_quality_benchmark.py#L699) | 699 | `"        if not args.case_id and args.limit <= 0:"` | — |
-| [SRC-4FFD5AFC54-L000700](../../scripts/run_answer_quality_benchmark.py#L700) | 700 | `"            print("` | — |
-| [SRC-4FFD5AFC54-L000701](../../scripts/run_answer_quality_benchmark.py#L701) | 701 | `"                \"Refusing unbounded live run. Pass --case-id and/or --limit > 0.\","` | — |
-| [SRC-4FFD5AFC54-L000702](../../scripts/run_answer_quality_benchmark.py#L702) | 702 | `"                file=sys.stderr,"` | — |
-| [SRC-4FFD5AFC54-L000703](../../scripts/run_answer_quality_benchmark.py#L703) | 703 | `"            )"` | — |
-| [SRC-4FFD5AFC54-L000704](../../scripts/run_answer_quality_benchmark.py#L704) | 704 | `"            return 2"` | — |
-| [SRC-4FFD5AFC54-L000705](../../scripts/run_answer_quality_benchmark.py#L705) | 705 | `"        return run_live("` | — |
-| [SRC-4FFD5AFC54-L000706](../../scripts/run_answer_quality_benchmark.py#L706) | 706 | `"            args.corpus,"` | — |
-| [SRC-4FFD5AFC54-L000707](../../scripts/run_answer_quality_benchmark.py#L707) | 707 | `"            args.base_url,"` | — |
-| [SRC-4FFD5AFC54-L000708](../../scripts/run_answer_quality_benchmark.py#L708) | 708 | `"            args.case_id,"` | — |
-| [SRC-4FFD5AFC54-L000709](../../scripts/run_answer_quality_benchmark.py#L709) | 709 | `"            args.limit,"` | — |
-| [SRC-4FFD5AFC54-L000710](../../scripts/run_answer_quality_benchmark.py#L710) | 710 | `"            args.timeout,"` | — |
-| [SRC-4FFD5AFC54-L000711](../../scripts/run_answer_quality_benchmark.py#L711) | 711 | `"            args.delay,"` | — |
-| [SRC-4FFD5AFC54-L000712](../../scripts/run_answer_quality_benchmark.py#L712) | 712 | `"            args.out,"` | — |
-| [SRC-4FFD5AFC54-L000713](../../scripts/run_answer_quality_benchmark.py#L713) | 713 | `"            args.build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000714](../../scripts/run_answer_quality_benchmark.py#L714) | 714 | `"            args.request_costs,"` | — |
-| [SRC-4FFD5AFC54-L000715](../../scripts/run_answer_quality_benchmark.py#L715) | 715 | `"        )"` | — |
-| [SRC-4FFD5AFC54-L000716](../../scripts/run_answer_quality_benchmark.py#L716) | 716 | `"    return 2"` | — |
-| [SRC-4FFD5AFC54-L000717](../../scripts/run_answer_quality_benchmark.py#L717) | 717 | `""` | — |
-| [SRC-4FFD5AFC54-L000718](../../scripts/run_answer_quality_benchmark.py#L718) | 718 | `""` | — |
-| [SRC-4FFD5AFC54-L000719](../../scripts/run_answer_quality_benchmark.py#L719) | 719 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-4FFD5AFC54-L000720](../../scripts/run_answer_quality_benchmark.py#L720) | 720 | `"    raise SystemExit(main())"` | — |
-## ملفات أخرى
-
-### FILE-03FF422A16 — [scripts/score_answer_quality_reviews.py](../../scripts/score_answer_quality_reviews.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-03FF422A16-L000001](../../scripts/score_answer_quality_reviews.py#L1) | 1 | `"\"\"\"Score manually reviewed Omarai answer-quality cases without auto-grading."` | — |
-| [SRC-03FF422A16-L000002](../../scripts/score_answer_quality_reviews.py#L2) | 2 | `""` | — |
-| [SRC-03FF422A16-L000003](../../scripts/score_answer_quality_reviews.py#L3) | 3 | `"This offline tool calculates aggregate retrieval, faithfulness, correctness, citation,"` | — |
-| [SRC-03FF422A16-L000004](../../scripts/score_answer_quality_reviews.py#L4) | 4 | `"and writing-quality metrics only from explicit review annotations. Missing judgments"` | — |
-| [SRC-03FF422A16-L000005](../../scripts/score_answer_quality_reviews.py#L5) | 5 | `"remain NOT_TESTED; this script never calls an LLM or treats transport success as PASS."` | — |
-| [SRC-03FF422A16-L000006](../../scripts/score_answer_quality_reviews.py#L6) | 6 | `"\"\"\""` | — |
-| [SRC-03FF422A16-L000007](../../scripts/score_answer_quality_reviews.py#L7) | 7 | `"from __future__ import annotations"` | — |
-| [SRC-03FF422A16-L000008](../../scripts/score_answer_quality_reviews.py#L8) | 8 | `""` | — |
-| [SRC-03FF422A16-L000009](../../scripts/score_answer_quality_reviews.py#L9) | 9 | `"import argparse"` | — |
-| [SRC-03FF422A16-L000010](../../scripts/score_answer_quality_reviews.py#L10) | 10 | `"import json"` | — |

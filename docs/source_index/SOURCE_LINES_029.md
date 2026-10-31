@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D911B73392-L000114 إلى SRC-70795F4B61-L000006
+- النطاق: SRC-D911B73392-L000064 إلى SRC-B335630551-L000155
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D911B73392-L000064](../RESEARCH_CONNECTORS_AR.md#L64) | 64 | `"read -r -s -p \"Reddit client secret: \" REDDIT_CLIENT_SECRET; printf '\\n'; export REDDIT_CLIENT_SECRET"` | — |
+| [SRC-D911B73392-L000065](../RESEARCH_CONNECTORS_AR.md#L65) | 65 | `"read -r -p \"Reddit User-Agent: \" REDDIT_USER_AGENT; export REDDIT_USER_AGENT"` | — |
+| [SRC-D911B73392-L000066](../RESEARCH_CONNECTORS_AR.md#L66) | 66 | ````"```"```` | — |
+| [SRC-D911B73392-L000067](../RESEARCH_CONNECTORS_AR.md#L67) | 67 | `""` | — |
+| [SRC-D911B73392-L000068](../RESEARCH_CONNECTORS_AR.md#L68) | 68 | `"عند ضبط هذه القيم، يجرّب Omarai OAuth API. إن تعذر العثور على نتائج عبر API، فقد يحاول موجز البحث العام كبديل؛ ولا يعني ذلك أن البديل مضمون."` | — |
+| [SRC-D911B73392-L000069](../RESEARCH_CONNECTORS_AR.md#L69) | 69 | `""` | — |
+| [SRC-D911B73392-L000070](../RESEARCH_CONNECTORS_AR.md#L70) | 70 | `"### Instagram Graph API — وسوم عامة"` | — |
+| [SRC-D911B73392-L000071](../RESEARCH_CONNECTORS_AR.md#L71) | 71 | `""` | — |
+| [SRC-D911B73392-L000072](../RESEARCH_CONNECTORS_AR.md#L72) | 72 | `"يتطلب Instagram User ID ورمز وصول صالحًا، مع الأذونات/الميزات اللازمة في تطبيق Meta. يقتصر الموصل على بحث الوسوم وجلب عينة من الوسائط العامة الحديثة؛ لا يصل إلى الحسابات الخاصة ولا يبحث كل Instagram."` | — |
+| [SRC-D911B73392-L000073](../RESEARCH_CONNECTORS_AR.md#L73) | 73 | `""` | — |
+| [SRC-D911B73392-L000074](../RESEARCH_CONNECTORS_AR.md#L74) | 74 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000075](../RESEARCH_CONNECTORS_AR.md#L75) | 75 | `"read -r -p \"Instagram professional user ID: \" INSTAGRAM_USER_ID; export INSTAGRAM_USER_ID"` | — |
+| [SRC-D911B73392-L000076](../RESEARCH_CONNECTORS_AR.md#L76) | 76 | `"read -r -s -p \"Instagram access token: \" INSTAGRAM_ACCESS_TOKEN; printf '\\n'; export INSTAGRAM_ACCESS_TOKEN"` | — |
+| [SRC-D911B73392-L000077](../RESEARCH_CONNECTORS_AR.md#L77) | 77 | ````"```"```` | — |
+| [SRC-D911B73392-L000078](../RESEARCH_CONNECTORS_AR.md#L78) | 78 | `""` | — |
+| [SRC-D911B73392-L000079](../RESEARCH_CONNECTORS_AR.md#L79) | 79 | ``"يمكن ضبط إصدار Graph API الذي يطابق تطبيقك عبر `META_GRAPH_VERSION`. يبدأ Omarai بوسم واحد في الطلب لتقليل استهلاك حصة الوسوم؛ قد يظل الموصل يرفض الطلب إذا لم تكن الصلاحيات أو الحصة أو نسخة API مناسبة."`` | — |
+| [SRC-D911B73392-L000080](../RESEARCH_CONNECTORS_AR.md#L80) | 80 | `""` | — |
+| [SRC-D911B73392-L000081](../RESEARCH_CONNECTORS_AR.md#L81) | 81 | `"### Facebook Pages — صفحات محددة فقط"` | — |
+| [SRC-D911B73392-L000082](../RESEARCH_CONNECTORS_AR.md#L82) | 82 | `""` | — |
+| [SRC-D911B73392-L000083](../RESEARCH_CONNECTORS_AR.md#L83) | 83 | `"حدّد الصفحات التي لديك وصول مصرح بها. لا تضع رمزًا عامًا أو تحاول استخدام رمز لا يملك صلاحية الوصول للصفحة:"` | — |
+| [SRC-D911B73392-L000084](../RESEARCH_CONNECTORS_AR.md#L84) | 84 | `""` | — |
+| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000086](../RESEARCH_CONNECTORS_AR.md#L86) | 86 | `"read -r -s -p \"Facebook Page access token: \" FACEBOOK_PAGE_ACCESS_TOKEN; printf '\\n'; export FACEBOOK_PAGE_ACCESS_TOKEN"` | — |
+| [SRC-D911B73392-L000087](../RESEARCH_CONNECTORS_AR.md#L87) | 87 | `"read -r -p \"Authorized Page IDs, comma-separated: \" FACEBOOK_PAGE_IDS; export FACEBOOK_PAGE_IDS"` | — |
+| [SRC-D911B73392-L000088](../RESEARCH_CONNECTORS_AR.md#L88) | 88 | ````"```"```` | — |
+| [SRC-D911B73392-L000089](../RESEARCH_CONNECTORS_AR.md#L89) | 89 | `""` | — |
+| [SRC-D911B73392-L000090](../RESEARCH_CONNECTORS_AR.md#L90) | 90 | `"يقرأ الموصل أحدث منشورات الصفحات المحددة وعينة محدودة من التعليقات العامة التي تسمح بها الصلاحيات. قد تفشل قراءة المنشورات أو التعليقات إذا كانت صلاحيات التطبيق لا تسمح بها."` | — |
+| [SRC-D911B73392-L000091](../RESEARCH_CONNECTORS_AR.md#L91) | 91 | `""` | — |
+| [SRC-D911B73392-L000092](../RESEARCH_CONNECTORS_AR.md#L92) | 92 | `"### X وYouTube"` | — |
+| [SRC-D911B73392-L000093](../RESEARCH_CONNECTORS_AR.md#L93) | 93 | `""` | — |
+| [SRC-D911B73392-L000094](../RESEARCH_CONNECTORS_AR.md#L94) | 94 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000095](../RESEARCH_CONNECTORS_AR.md#L95) | 95 | `"read -r -s -p \"X API bearer token: \" X_BEARER_TOKEN; printf '\\n'; export X_BEARER_TOKEN"` | — |
+| [SRC-D911B73392-L000096](../RESEARCH_CONNECTORS_AR.md#L96) | 96 | `"read -r -s -p \"YouTube Data API key: \" YOUTUBE_API_KEY; printf '\\n'; export YOUTUBE_API_KEY"` | — |
+| [SRC-D911B73392-L000097](../RESEARCH_CONNECTORS_AR.md#L97) | 97 | ````"```"```` | — |
+| [SRC-D911B73392-L000098](../RESEARCH_CONNECTORS_AR.md#L98) | 98 | `""` | — |
+| [SRC-D911B73392-L000099](../RESEARCH_CONNECTORS_AR.md#L99) | 99 | `"يجب أن يكون رمز X مرتبطًا بخطة وصول تشمل نقطة البحث المستخدمة. مفتاح YouTube يحتاج إلى مشروع Google Cloud تم تفعيل YouTube Data API فيه، ويخضع للحصة. لا يضمن وجود المفتاح أن الحساب يملك كل الصلاحيات أو حصة كافية."` | — |
+| [SRC-D911B73392-L000100](../RESEARCH_CONNECTORS_AR.md#L100) | 100 | `""` | — |
+| [SRC-D911B73392-L000101](../RESEARCH_CONNECTORS_AR.md#L101) | 101 | `"### البدء بعد الإعداد"` | — |
+| [SRC-D911B73392-L000102](../RESEARCH_CONNECTORS_AR.md#L102) | 102 | `""` | — |
+| [SRC-D911B73392-L000103](../RESEARCH_CONNECTORS_AR.md#L103) | 103 | `"بعد إعداد أي متغيرات اختيارية تريدها، ابدأ الخادم في **جلسة Termux نفسها**:"` | — |
+| [SRC-D911B73392-L000104](../RESEARCH_CONNECTORS_AR.md#L104) | 104 | `""` | — |
+| [SRC-D911B73392-L000105](../RESEARCH_CONNECTORS_AR.md#L105) | 105 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000106](../RESEARCH_CONNECTORS_AR.md#L106) | 106 | `"python -m cli.omarai serve"` | — |
+| [SRC-D911B73392-L000107](../RESEARCH_CONNECTORS_AR.md#L107) | 107 | ````"```"```` | — |
+| [SRC-D911B73392-L000108](../RESEARCH_CONNECTORS_AR.md#L108) | 108 | `""` | — |
+| [SRC-D911B73392-L000109](../RESEARCH_CONNECTORS_AR.md#L109) | 109 | ``"افتح `http://127.0.0.1:8765` للمحادثة البحثية و`http://127.0.0.1:8765/api/health` لحالة الإعداد. تقرير الصحة يذكر ما إذا كانت المتغيرات موجودة فقط؛ ولا يمكنه التأكد من صلاحيتها حتى يجرب الموصل طلبًا حقيقيًا."`` | — |
+| [SRC-D911B73392-L000110](../RESEARCH_CONNECTORS_AR.md#L110) | 110 | `""` | — |
+| [SRC-D911B73392-L000111](../RESEARCH_CONNECTORS_AR.md#L111) | 111 | `"## 5. اختبار حي للاتصال"` | — |
+| [SRC-D911B73392-L000112](../RESEARCH_CONNECTORS_AR.md#L112) | 112 | `""` | — |
+| [SRC-D911B73392-L000113](../RESEARCH_CONNECTORS_AR.md#L113) | 113 | `"افتح لوحة Omarai واضغط **«اختبار حي للبحث والنموذج»**. هذا الفحص ينفّذ طلب بحث فعليًا إلى محركات البحث العامة، ويرسل طلبًا صغيرًا إلى نموذج الإجابة إذا كان المفتاح مضبوطًا. إذا فعّلت خيار اختبار المصادر الاجتماعية، فسينفّذ طلبات عامة/مصرحًا بها إلى الموصلات المناسبة. قد يستغرق فحص الشبكات الاجتماعية وقتًا أطول، وقد يستهلك حصص APIs أو يواجه حدود المعدل."` | — |
 | [SRC-D911B73392-L000114](../RESEARCH_CONNECTORS_AR.md#L114) | 114 | `""` | — |
 | [SRC-D911B73392-L000115](../RESEARCH_CONNECTORS_AR.md#L115) | 115 | `"يمكن تنفيذ الفحص نفسه من الطرفية أو أداة API:"` | — |
 | [SRC-D911B73392-L000116](../RESEARCH_CONNECTORS_AR.md#L116) | 116 | `""` | — |
@@ -829,80 +879,3 @@
 | [SRC-B335630551-L000153](../../README.md#L153) | 153 | `"  \"history\": []"` | — |
 | [SRC-B335630551-L000154](../../README.md#L154) | 154 | `"}"` | — |
 | [SRC-B335630551-L000155](../../README.md#L155) | 155 | ````"```"```` | — |
-| [SRC-B335630551-L000156](../../README.md#L156) | 156 | `""` | — |
-| [SRC-B335630551-L000157](../../README.md#L157) | 157 | ``"The `/api/diagnostics` response reports pass/fail/degraded states, returned result counts, provider counts, elapsed time, and the model that actually answered (including fallback use). The Arabic web UI offers automatic, deep, latest-information, and public-social research modes, plus a live-test button. The model check sends one small completion request; optional social checks perform real public/API requests and can take longer. The response from `/api/agent` includes `answer`, `sources`, `search_queries`, `research_plan`, `search_report`, `used_web_search`, `used_social_search`, `used_language_model`, and any warnings. The request can pass `mode` as `auto`, `deep`, `latest`, or `social`. The report records planned and attempted queries, unique result count, pages read, providers, platform breakdown, citation-range checks and whether an optional second-pass consistency review completed. That second pass uses the same configured model/provider and is not independent fact verification. URL syntax and resolved private/local addresses are checked before page fetches; public redirects are followed only through a small bounded loop with each destination revalidated. Search engines may still return inaccessible, stale or noisy results, which the agent must disclose."`` | — |
-| [SRC-B335630551-L000158](../../README.md#L158) | 158 | `""` | — |
-| [SRC-B335630551-L000159](../../README.md#L159) | 159 | `"## Existing lead workspace"` | — |
-| [SRC-B335630551-L000160](../../README.md#L160) | 160 | `""` | — |
-| [SRC-B335630551-L000161](../../README.md#L161) | 161 | ``"The previous local lead-intent tool is preserved at `/leads`. It stores data locally in `~/.omarai/omarai.sqlite3`. Its transparent rule score is not a statistical probability of a purchase. Process only public/authorized data, minimize personal information, and manually review business decisions."`` | — |
-| [SRC-B335630551-L000162](../../README.md#L162) | 162 | `""` | — |
-| [SRC-B335630551-L000163](../../README.md#L163) | 163 | `"Analyze text from the CLI:"` | — |
-| [SRC-B335630551-L000164](../../README.md#L164) | 164 | `""` | — |
-| [SRC-B335630551-L000165](../../README.md#L165) | 165 | ````"```bash"```` | — |
-| [SRC-B335630551-L000166](../../README.md#L166) | 166 | `"python -m cli.omarai analyze --text \"بدور على شقة في التجمع الخامس وممكن معاينة\" --product \"شقة,عقار\" --location \"التجمع الخامس\""` | — |
-| [SRC-B335630551-L000167](../../README.md#L167) | 167 | ````"```"```` | — |
-| [SRC-B335630551-L000168](../../README.md#L168) | 168 | `""` | — |
-| [SRC-B335630551-L000169](../../README.md#L169) | 169 | ``"CSV import requires `text,source_url,platform` columns:"`` | — |
-| [SRC-B335630551-L000170](../../README.md#L170) | 170 | `""` | — |
-| [SRC-B335630551-L000171](../../README.md#L171) | 171 | ````"```bash"```` | — |
-| [SRC-B335630551-L000172](../../README.md#L172) | 172 | `"python -m cli.omarai import-csv --file leads.csv"` | — |
-| [SRC-B335630551-L000173](../../README.md#L173) | 173 | `"python -m cli.omarai list --limit 50"` | — |
-| [SRC-B335630551-L000174](../../README.md#L174) | 174 | `"python -m cli.omarai export-csv --file leads-export.csv"` | — |
-| [SRC-B335630551-L000175](../../README.md#L175) | 175 | ````"```"```` | — |
-| [SRC-B335630551-L000176](../../README.md#L176) | 176 | `""` | — |
-| [SRC-B335630551-L000177](../../README.md#L177) | 177 | `"## Checks"` | — |
-| [SRC-B335630551-L000178](../../README.md#L178) | 178 | `""` | — |
-| [SRC-B335630551-L000179](../../README.md#L179) | 179 | ````"```bash"```` | — |
-| [SRC-B335630551-L000180](../../README.md#L180) | 180 | `"python -m pip install -e \".[dev]\""` | — |
-| [SRC-B335630551-L000181](../../README.md#L181) | 181 | `"ruff check agents api cli tests"` | — |
-| [SRC-B335630551-L000182](../../README.md#L182) | 182 | `"python -m pytest -q"` | — |
-| [SRC-B335630551-L000183](../../README.md#L183) | 183 | ````"```"```` | — |
-## إعدادات وتشغيل
-
-### FILE-A64CF250B4 — [render.yaml](../../render.yaml#L1)
-
-- النوع: **YAML**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-A64CF250B4-L000001](../../render.yaml#L1) | 1 | `"services:"` | — |
-| [SRC-A64CF250B4-L000002](../../render.yaml#L2) | 2 | `"  - type: web"` | — |
-| [SRC-A64CF250B4-L000003](../../render.yaml#L3) | 3 | `"    name: omarai"` | — |
-| [SRC-A64CF250B4-L000004](../../render.yaml#L4) | 4 | `"    runtime: docker"` | — |
-| [SRC-A64CF250B4-L000005](../../render.yaml#L5) | 5 | `"    plan: free"` | — |
-| [SRC-A64CF250B4-L000006](../../render.yaml#L6) | 6 | `"    region: frankfurt"` | — |
-| [SRC-A64CF250B4-L000007](../../render.yaml#L7) | 7 | `"    dockerfilePath: ./Dockerfile"` | — |
-| [SRC-A64CF250B4-L000008](../../render.yaml#L8) | 8 | `"    healthCheckPath: /api/health"` | — |
-| [SRC-A64CF250B4-L000009](../../render.yaml#L9) | 9 | `"    envVars:"` | — |
-| [SRC-A64CF250B4-L000010](../../render.yaml#L10) | 10 | `"      - key: OMARAI_PUBLIC_DEPLOYMENT"` | — |
-| [SRC-A64CF250B4-L000011](../../render.yaml#L11) | 11 | `"        value: \"1\""` | — |
-| [SRC-A64CF250B4-L000012](../../render.yaml#L12) | 12 | `"      - key: OMARAI_ACCESS_TOKEN"` | — |
-| [SRC-A64CF250B4-L000013](../../render.yaml#L13) | 13 | `"        sync: false"` | — |
-| [SRC-A64CF250B4-L000014](../../render.yaml#L14) | 14 | `"      - key: OPENROUTER_API_KEY"` | — |
-| [SRC-A64CF250B4-L000015](../../render.yaml#L15) | 15 | `"        sync: false"` | — |
-## ملفات أخرى
-
-### FILE-64EDD7FC2B — [scripts/__init__.py](../../scripts/__init__.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-64EDD7FC2B-L000001](../../scripts/__init__.py#L1) | 1 | `"\"\"\"Operational helper scripts for Omarai.\"\"\""` | — |
-## ملفات أخرى
-
-### FILE-70795F4B61 — [scripts/compare_answer_quality_runs.py](../../scripts/compare_answer_quality_runs.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-70795F4B61-L000001](../../scripts/compare_answer_quality_runs.py#L1) | 1 | `"\"\"\"Compare two Omarai benchmark runs without inventing quality or cost measurements."` | — |
-| [SRC-70795F4B61-L000002](../../scripts/compare_answer_quality_runs.py#L2) | 2 | `""` | — |
-| [SRC-70795F4B61-L000003](../../scripts/compare_answer_quality_runs.py#L3) | 3 | `"Runtime measurements come from explicit run telemetry. Factual accuracy, retrieval"` | — |
-| [SRC-70795F4B61-L000004](../../scripts/compare_answer_quality_runs.py#L4) | 4 | `"precision/recall, faithfulness, citation support, and writing quality require matching"` | — |
-| [SRC-70795F4B61-L000005](../../scripts/compare_answer_quality_runs.py#L5) | 5 | `"human-review files; missing annotations remain unscored. The comparator is offline."` | — |
-| [SRC-70795F4B61-L000006](../../scripts/compare_answer_quality_runs.py#L6) | 6 | `"\"\"\""` | — |

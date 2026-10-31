@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000229 إلى SRC-B106ADC5EF-L000035
+- النطاق: SRC-EA6EC52573-L000179 إلى SRC-4405E7912C-L000154
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000179](../../tests/test_intent_router.py#L179) | 179 | `"def test_prefixed_elliptical_followup_is_clarified_without_topic():"` | — |
+| [SRC-EA6EC52573-L000180](../../tests/test_intent_router.py#L180) | 180 | `"    for question in (\"طب هل فيه ضمان؟\", \"طيب كام سعرها؟\", \"والضمان؟\", \"والسعر؟\"):"` | — |
+| [SRC-EA6EC52573-L000181](../../tests/test_intent_router.py#L181) | 181 | `"        decision = route_intent(question)"` | — |
+| [SRC-EA6EC52573-L000182](../../tests/test_intent_router.py#L182) | 182 | `"        assert decision[\"route\"] == \"CLARIFY\", question"` | — |
+| [SRC-EA6EC52573-L000183](../../tests/test_intent_router.py#L183) | 183 | `""` | — |
+| [SRC-EA6EC52573-L000184](../../tests/test_intent_router.py#L184) | 184 | `"def test_prefixed_elliptical_followup_uses_topic_when_available():"` | — |
+| [SRC-EA6EC52573-L000185](../../tests/test_intent_router.py#L185) | 185 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000186](../../tests/test_intent_router.py#L186) | 186 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 16 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000187](../../tests/test_intent_router.py#L187) | 187 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن iPhone 16 في مصر.\"},"` | — |
+| [SRC-EA6EC52573-L000188](../../tests/test_intent_router.py#L188) | 188 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000189](../../tests/test_intent_router.py#L189) | 189 | `"    for question in (\"طب هل فيه ضمان؟\", \"طيب كام سعرها؟\", \"والضمان؟\"):"` | — |
+| [SRC-EA6EC52573-L000190](../../tests/test_intent_router.py#L190) | 190 | `"        decision = route_intent(question, history, requires_web=True)"` | — |
+| [SRC-EA6EC52573-L000191](../../tests/test_intent_router.py#L191) | 191 | `"        assert decision[\"route\"] == \"WEB_SIMPLE\", question"` | — |
+| [SRC-EA6EC52573-L000192](../../tests/test_intent_router.py#L192) | 192 | `"        resolved = resolve_followup_query(question, history)"` | — |
+| [SRC-EA6EC52573-L000193](../../tests/test_intent_router.py#L193) | 193 | `"        assert \"iPhone 16\" in resolved"` | — |
+| [SRC-EA6EC52573-L000194](../../tests/test_intent_router.py#L194) | 194 | `"        assert \"مصر\" in resolved"` | — |
+| [SRC-EA6EC52573-L000195](../../tests/test_intent_router.py#L195) | 195 | `""` | — |
+| [SRC-EA6EC52573-L000196](../../tests/test_intent_router.py#L196) | 196 | `"def test_long_arabic_warranty_followup_resolves_with_context():"` | — |
+| [SRC-EA6EC52573-L000197](../../tests/test_intent_router.py#L197) | 197 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000198](../../tests/test_intent_router.py#L198) | 198 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 نسخة 256 جيجابايت في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000199](../../tests/test_intent_router.py#L199) | 199 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن السعر.\"},"` | — |
+| [SRC-EA6EC52573-L000200](../../tests/test_intent_router.py#L200) | 200 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000201](../../tests/test_intent_router.py#L201) | 201 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-EA6EC52573-L000202](../../tests/test_intent_router.py#L202) | 202 | `"    resolved = resolve_followup_query(question, history)"` | — |
+| [SRC-EA6EC52573-L000203](../../tests/test_intent_router.py#L203) | 203 | `"    assert \"iPhone 17\" in resolved"` | — |
+| [SRC-EA6EC52573-L000204](../../tests/test_intent_router.py#L204) | 204 | `"    assert question in resolved"` | — |
+| [SRC-EA6EC52573-L000205](../../tests/test_intent_router.py#L205) | 205 | `""` | — |
+| [SRC-EA6EC52573-L000206](../../tests/test_intent_router.py#L206) | 206 | `"def test_long_arabic_warranty_followup_without_context_clarifies():"` | — |
+| [SRC-EA6EC52573-L000207](../../tests/test_intent_router.py#L207) | 207 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-EA6EC52573-L000208](../../tests/test_intent_router.py#L208) | 208 | `"    decision = route_intent(question)"` | — |
+| [SRC-EA6EC52573-L000209](../../tests/test_intent_router.py#L209) | 209 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
+| [SRC-EA6EC52573-L000210](../../tests/test_intent_router.py#L210) | 210 | `"    assert decision[\"needs_clarification\"] is True"` | — |
+| [SRC-EA6EC52573-L000211](../../tests/test_intent_router.py#L211) | 211 | `""` | — |
+| [SRC-EA6EC52573-L000212](../../tests/test_intent_router.py#L212) | 212 | `"def test_new_question_starting_with_tayyib_does_not_inherit_old_topic():"` | — |
+| [SRC-EA6EC52573-L000213](../../tests/test_intent_router.py#L213) | 213 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000214](../../tests/test_intent_router.py#L214) | 214 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
+| [SRC-EA6EC52573-L000215](../../tests/test_intent_router.py#L215) | 215 | `"        {\"role\": \"assistant\", \"content\": \"هذه بعض معلومات السعر.\"},"` | — |
+| [SRC-EA6EC52573-L000216](../../tests/test_intent_router.py#L216) | 216 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000217](../../tests/test_intent_router.py#L217) | 217 | `"    question = \"طيب اشرح الذكاء الاصطناعي في المدارس\""` | — |
+| [SRC-EA6EC52573-L000218](../../tests/test_intent_router.py#L218) | 218 | `"    assert resolve_followup_query(question, history) == question"` | — |
+| [SRC-EA6EC52573-L000219](../../tests/test_intent_router.py#L219) | 219 | `"    decision = route_intent(question, history)"` | — |
+| [SRC-EA6EC52573-L000220](../../tests/test_intent_router.py#L220) | 220 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
+| [SRC-EA6EC52573-L000221](../../tests/test_intent_router.py#L221) | 221 | `""` | — |
+| [SRC-EA6EC52573-L000222](../../tests/test_intent_router.py#L222) | 222 | `"def test_chained_followups_keep_the_last_substantive_topic():"` | — |
+| [SRC-EA6EC52573-L000223](../../tests/test_intent_router.py#L223) | 223 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000224](../../tests/test_intent_router.py#L224) | 224 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
+| [SRC-EA6EC52573-L000225](../../tests/test_intent_router.py#L225) | 225 | `"        {\"role\": \"assistant\", \"content\": \"السعر يختلف حسب المتجر.\"},"` | — |
+| [SRC-EA6EC52573-L000226](../../tests/test_intent_router.py#L226) | 226 | `"        {\"role\": \"user\", \"content\": \"والضمان؟\"},"` | — |
+| [SRC-EA6EC52573-L000227](../../tests/test_intent_router.py#L227) | 227 | `"        {\"role\": \"assistant\", \"content\": \"سأوضح الضمان.\"},"` | — |
+| [SRC-EA6EC52573-L000228](../../tests/test_intent_router.py#L228) | 228 | `"    ]"` | — |
 | [SRC-EA6EC52573-L000229](../../tests/test_intent_router.py#L229) | 229 | `"    resolved = resolve_followup_query(\"والبطارية؟\", history)"` | — |
 | [SRC-EA6EC52573-L000230](../../tests/test_intent_router.py#L230) | 230 | `"    assert \"iPhone 16\" in resolved"` | — |
 | [SRC-EA6EC52573-L000231](../../tests/test_intent_router.py#L231) | 231 | `"    assert \"البطارية\" in resolved"` | — |
@@ -565,6 +615,80 @@
 | [SRC-1521F490CA-L000142](../../tests/test_multitenant.py#L142) | 142 | `"    assert \"tenant_id\" in columns"` | — |
 | [SRC-1521F490CA-L000143](../../tests/test_multitenant.py#L143) | 143 | `"    assert [\"fingerprint\"] not in unique_columns"` | — |
 | [SRC-1521F490CA-L000144](../../tests/test_multitenant.py#L144) | 144 | `"    assert [\"tenant_id\", \"fingerprint\"] in unique_columns"` | — |
+| [SRC-1521F490CA-L000145](../../tests/test_multitenant.py#L145) | 145 | `""` | — |
+| [SRC-1521F490CA-L000146](../../tests/test_multitenant.py#L146) | 146 | `""` | — |
+| [SRC-1521F490CA-L000147](../../tests/test_multitenant.py#L147) | 147 | `""` | — |
+| [SRC-1521F490CA-L000148](../../tests/test_multitenant.py#L148) | 148 | `"def test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error(tmp_path):"` | — |
+| [SRC-1521F490CA-L000149](../../tests/test_multitenant.py#L149) | 149 | `"    path = tmp_path / \"incomplete-legacy.sqlite3\""` | — |
+| [SRC-1521F490CA-L000150](../../tests/test_multitenant.py#L150) | 150 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000151](../../tests/test_multitenant.py#L151) | 151 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000152](../../tests/test_multitenant.py#L152) | 152 | `"            \"CREATE TABLE leads (id TEXT PRIMARY KEY, fingerprint TEXT UNIQUE NOT NULL, text TEXT NOT NULL)\""` | — |
+| [SRC-1521F490CA-L000153](../../tests/test_multitenant.py#L153) | 153 | `"        )"` | — |
+| [SRC-1521F490CA-L000154](../../tests/test_multitenant.py#L154) | 154 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000155](../../tests/test_multitenant.py#L155) | 155 | `"            \"INSERT INTO leads (id, fingerprint, text) VALUES (?, ?, ?)\","` | — |
+| [SRC-1521F490CA-L000156](../../tests/test_multitenant.py#L156) | 156 | `"            (\"legacy-1\", \"fingerprint-1\", \"preserve me\"),"` | — |
+| [SRC-1521F490CA-L000157](../../tests/test_multitenant.py#L157) | 157 | `"        )"` | — |
+| [SRC-1521F490CA-L000158](../../tests/test_multitenant.py#L158) | 158 | `""` | — |
+| [SRC-1521F490CA-L000159](../../tests/test_multitenant.py#L159) | 159 | `"    import pytest"` | — |
+| [SRC-1521F490CA-L000160](../../tests/test_multitenant.py#L160) | 160 | `""` | — |
+| [SRC-1521F490CA-L000161](../../tests/test_multitenant.py#L161) | 161 | `"    with pytest.raises(sqlite3.OperationalError):"` | — |
+| [SRC-1521F490CA-L000162](../../tests/test_multitenant.py#L162) | 162 | `"        LeadStore(path)"` | — |
+| [SRC-1521F490CA-L000163](../../tests/test_multitenant.py#L163) | 163 | `""` | — |
+| [SRC-1521F490CA-L000164](../../tests/test_multitenant.py#L164) | 164 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000165](../../tests/test_multitenant.py#L165) | 165 | `"        tables = {"` | — |
+| [SRC-1521F490CA-L000166](../../tests/test_multitenant.py#L166) | 166 | `"            row[0]"` | — |
+| [SRC-1521F490CA-L000167](../../tests/test_multitenant.py#L167) | 167 | `"            for row in db.execute("` | — |
+| [SRC-1521F490CA-L000168](../../tests/test_multitenant.py#L168) | 168 | `"                \"SELECT name FROM sqlite_master WHERE type='table'\""` | — |
+| [SRC-1521F490CA-L000169](../../tests/test_multitenant.py#L169) | 169 | `"            )"` | — |
+| [SRC-1521F490CA-L000170](../../tests/test_multitenant.py#L170) | 170 | `"        }"` | — |
+| [SRC-1521F490CA-L000171](../../tests/test_multitenant.py#L171) | 171 | `"        original = db.execute("` | — |
+| [SRC-1521F490CA-L000172](../../tests/test_multitenant.py#L172) | 172 | `"            \"SELECT id, fingerprint, text FROM leads\""` | — |
+| [SRC-1521F490CA-L000173](../../tests/test_multitenant.py#L173) | 173 | `"        ).fetchone()"` | — |
+| [SRC-1521F490CA-L000174](../../tests/test_multitenant.py#L174) | 174 | `"    assert \"leads\" in tables"` | — |
+| [SRC-1521F490CA-L000175](../../tests/test_multitenant.py#L175) | 175 | `"    assert \"leads_legacy_migration\" not in tables"` | — |
+| [SRC-1521F490CA-L000176](../../tests/test_multitenant.py#L176) | 176 | `"    assert original == (\"legacy-1\", \"fingerprint-1\", \"preserve me\")"` | — |
+| [SRC-1521F490CA-L000177](../../tests/test_multitenant.py#L177) | 177 | `""` | — |
+| [SRC-1521F490CA-L000178](../../tests/test_multitenant.py#L178) | 178 | `""` | — |
+| [SRC-1521F490CA-L000179](../../tests/test_multitenant.py#L179) | 179 | `"def test_api_token_expiry_is_normalized_to_utc(tmp_path):"` | — |
+| [SRC-1521F490CA-L000180](../../tests/test_multitenant.py#L180) | 180 | `"    store = LeadStore(tmp_path / \"token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000181](../../tests/test_multitenant.py#L181) | 181 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000182](../../tests/test_multitenant.py#L182) | 182 | `"        store, \"Expiry Company\", \"expiry@example.test\", \"E\" * 40"` | — |
+| [SRC-1521F490CA-L000183](../../tests/test_multitenant.py#L183) | 183 | `"    )"` | — |
+| [SRC-1521F490CA-L000184](../../tests/test_multitenant.py#L184) | 184 | `"    token = \"F\" * 40"` | — |
+| [SRC-1521F490CA-L000185](../../tests/test_multitenant.py#L185) | 185 | `"    store.create_api_token("` | — |
+| [SRC-1521F490CA-L000186](../../tests/test_multitenant.py#L186) | 186 | `"        token,"` | — |
+| [SRC-1521F490CA-L000187](../../tests/test_multitenant.py#L187) | 187 | `"        tenant_id,"` | — |
+| [SRC-1521F490CA-L000188](../../tests/test_multitenant.py#L188) | 188 | `"        user_id,"` | — |
+| [SRC-1521F490CA-L000189](../../tests/test_multitenant.py#L189) | 189 | `"        expires_at=\"2099-01-01T03:00:00+03:00\","` | — |
+| [SRC-1521F490CA-L000190](../../tests/test_multitenant.py#L190) | 190 | `"    )"` | — |
+| [SRC-1521F490CA-L000191](../../tests/test_multitenant.py#L191) | 191 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000192](../../tests/test_multitenant.py#L192) | 192 | `"        row = db.execute("` | — |
+| [SRC-1521F490CA-L000193](../../tests/test_multitenant.py#L193) | 193 | `"            \"SELECT expires_at FROM api_tokens WHERE token_hash=?\","` | — |
+| [SRC-1521F490CA-L000194](../../tests/test_multitenant.py#L194) | 194 | `"            (store._token_hash(token),),"` | — |
+| [SRC-1521F490CA-L000195](../../tests/test_multitenant.py#L195) | 195 | `"        ).fetchone()"` | — |
+| [SRC-1521F490CA-L000196](../../tests/test_multitenant.py#L196) | 196 | `"    assert row[\"expires_at\"] == \"2099-01-01T00:00:00Z\""` | — |
+| [SRC-1521F490CA-L000197](../../tests/test_multitenant.py#L197) | 197 | `"    assert store.resolve_api_token(token) is not None"` | — |
+| [SRC-1521F490CA-L000198](../../tests/test_multitenant.py#L198) | 198 | `""` | — |
+| [SRC-1521F490CA-L000199](../../tests/test_multitenant.py#L199) | 199 | `""` | — |
+| [SRC-1521F490CA-L000200](../../tests/test_multitenant.py#L200) | 200 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
+| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
+| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"    )"` | — |
+| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"    invalid_values = ("` | — |
+| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"        \"2099-01-01T00:00:00\","` | — |
+| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"        \"not-a-timestamp\","` | — |
+| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `"        \"2000-01-01T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"        \"\","` | — |
+| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"    )"` | — |
+| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"    for index, expiry in enumerate(invalid_values):"` | — |
+| [SRC-1521F490CA-L000212](../../tests/test_multitenant.py#L212) | 212 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
+| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"            store.create_api_token("` | — |
+| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `"                (\"H\" * 39) + str(index),"` | — |
+| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `"                tenant_id,"` | — |
+| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"                user_id,"` | — |
+| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"                expires_at=expiry,"` | — |
+| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"            )"` | — |
 ## اختبارات
 
 ### FILE-4405E7912C — [tests/test_multitenant_api.py](../../tests/test_multitenant_api.py#L1)
@@ -728,145 +852,3 @@
 | [SRC-4405E7912C-L000152](../../tests/test_multitenant_api.py#L152) | 152 | `"        token=token,"` | — |
 | [SRC-4405E7912C-L000153](../../tests/test_multitenant_api.py#L153) | 153 | `"        payload={"` | — |
 | [SRC-4405E7912C-L000154](../../tests/test_multitenant_api.py#L154) | 154 | `"            \"text\": \"Viewer must not write\","` | — |
-| [SRC-4405E7912C-L000155](../../tests/test_multitenant_api.py#L155) | 155 | `"            \"source_url\": \"https://example.test/viewer\","` | — |
-| [SRC-4405E7912C-L000156](../../tests/test_multitenant_api.py#L156) | 156 | `"        },"` | — |
-| [SRC-4405E7912C-L000157](../../tests/test_multitenant_api.py#L157) | 157 | `"    )"` | — |
-| [SRC-4405E7912C-L000158](../../tests/test_multitenant_api.py#L158) | 158 | `"    assert status == 403"` | — |
-| [SRC-4405E7912C-L000159](../../tests/test_multitenant_api.py#L159) | 159 | `"    assert \"للقراءة فقط\" in error[\"error\"]"` | — |
-## اختبارات
-
-### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-44CDA52D01-L000001](../../tests/test_omarai.py#L1) | 1 | `"import csv"` | — |
-| [SRC-44CDA52D01-L000002](../../tests/test_omarai.py#L2) | 2 | `""` | — |
-| [SRC-44CDA52D01-L000003](../../tests/test_omarai.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-44CDA52D01-L000004](../../tests/test_omarai.py#L4) | 4 | `""` | — |
-| [SRC-44CDA52D01-L000005](../../tests/test_omarai.py#L5) | 5 | `"from agents.omarai import LeadStore, analyze, normalize"` | — |
-| [SRC-44CDA52D01-L000006](../../tests/test_omarai.py#L6) | 6 | `""` | — |
-| [SRC-44CDA52D01-L000007](../../tests/test_omarai.py#L7) | 7 | `""` | — |
-| [SRC-44CDA52D01-L000008](../../tests/test_omarai.py#L8) | 8 | `"def test_arabic_normalization():"` | — |
-| [SRC-44CDA52D01-L000009](../../tests/test_omarai.py#L9) | 9 | `"    assert normalize(\"إيجارٌ ـ شقة\") == normalize(\"ايجار شقة\")"` | — |
-| [SRC-44CDA52D01-L000010](../../tests/test_omarai.py#L10) | 10 | `""` | — |
-| [SRC-44CDA52D01-L000011](../../tests/test_omarai.py#L11) | 11 | `"def test_high_intent_with_next_step():"` | — |
-| [SRC-44CDA52D01-L000012](../../tests/test_omarai.py#L12) | 12 | `"    result=analyze(\"بدور على شقة وممكن معاينة\")"` | — |
-| [SRC-44CDA52D01-L000013](../../tests/test_omarai.py#L13) | 13 | `"    assert result[\"label\"]==\"high_intent\""` | — |
-| [SRC-44CDA52D01-L000014](../../tests/test_omarai.py#L14) | 14 | `"    assert result[\"score\"]>=55"` | — |
-| [SRC-44CDA52D01-L000015](../../tests/test_omarai.py#L15) | 15 | `""` | — |
-| [SRC-44CDA52D01-L000016](../../tests/test_omarai.py#L16) | 16 | `"def test_non_buyer_override():"` | — |
-| [SRC-44CDA52D01-L000017](../../tests/test_omarai.py#L17) | 17 | `"    result=analyze(\"مش عايز اشتري، عايز ابيع شقة\")"` | — |
-| [SRC-44CDA52D01-L000018](../../tests/test_omarai.py#L18) | 18 | `"    assert result[\"label\"]==\"not_buyer_signal\""` | — |
-| [SRC-44CDA52D01-L000019](../../tests/test_omarai.py#L19) | 19 | `"    assert result[\"score\"]==0"` | — |
-| [SRC-44CDA52D01-L000020](../../tests/test_omarai.py#L20) | 20 | `""` | — |
-| [SRC-44CDA52D01-L000021](../../tests/test_omarai.py#L21) | 21 | `"def test_empty_text_rejected():"` | — |
-| [SRC-44CDA52D01-L000022](../../tests/test_omarai.py#L22) | 22 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000023](../../tests/test_omarai.py#L23) | 23 | `"        analyze(\" \")"` | — |
-| [SRC-44CDA52D01-L000024](../../tests/test_omarai.py#L24) | 24 | `""` | — |
-| [SRC-44CDA52D01-L000025](../../tests/test_omarai.py#L25) | 25 | `"def test_url_required_and_validated(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000026](../../tests/test_omarai.py#L26) | 26 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000027](../../tests/test_omarai.py#L27) | 27 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000028](../../tests/test_omarai.py#L28) | 28 | `"        store.add(\"بدور على شقة\",\"\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000029](../../tests/test_omarai.py#L29) | 29 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000030](../../tests/test_omarai.py#L30) | 30 | `"        store.add(\"بدور على شقة\",\"file:///tmp/private\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000031](../../tests/test_omarai.py#L31) | 31 | `""` | — |
-| [SRC-44CDA52D01-L000032](../../tests/test_omarai.py#L32) | 32 | `"def test_duplicate_is_idempotent(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000033](../../tests/test_omarai.py#L33) | 33 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000034](../../tests/test_omarai.py#L34) | 34 | `"    one,created1=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
-| [SRC-44CDA52D01-L000035](../../tests/test_omarai.py#L35) | 35 | `"    two,created2=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
-| [SRC-44CDA52D01-L000036](../../tests/test_omarai.py#L36) | 36 | `"    assert created1 is True and created2 is False"` | — |
-| [SRC-44CDA52D01-L000037](../../tests/test_omarai.py#L37) | 37 | `"    assert one[\"id\"]==two[\"id\"]"` | — |
-| [SRC-44CDA52D01-L000038](../../tests/test_omarai.py#L38) | 38 | `"    assert len(store.list())==1"` | — |
-| [SRC-44CDA52D01-L000039](../../tests/test_omarai.py#L39) | 39 | `""` | — |
-| [SRC-44CDA52D01-L000040](../../tests/test_omarai.py#L40) | 40 | `"def test_status_updates_are_explicit(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000041](../../tests/test_omarai.py#L41) | 41 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000042](../../tests/test_omarai.py#L42) | 42 | `"    lead,_=store.add(\"بدور على شقة\",\"https://example.com/p\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000043](../../tests/test_omarai.py#L43) | 43 | `"    updated=store.update_status(lead[\"id\"],\"qualified\")"` | — |
-| [SRC-44CDA52D01-L000044](../../tests/test_omarai.py#L44) | 44 | `"    assert updated[\"status\"]==\"qualified\""` | — |
-| [SRC-44CDA52D01-L000045](../../tests/test_omarai.py#L45) | 45 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000046](../../tests/test_omarai.py#L46) | 46 | `"        store.update_status(lead[\"id\"],\"magic\")"` | — |
-| [SRC-44CDA52D01-L000047](../../tests/test_omarai.py#L47) | 47 | `""` | — |
-| [SRC-44CDA52D01-L000048](../../tests/test_omarai.py#L48) | 48 | `"def test_csv_requires_columns(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000049](../../tests/test_omarai.py#L49) | 49 | `"    bad=tmp_path/\"bad.csv\""` | — |
-| [SRC-44CDA52D01-L000050](../../tests/test_omarai.py#L50) | 50 | `"    bad.write_text(\"foo,bar\\na,b\\n\",encoding=\"utf-8\")"` | — |
-| [SRC-44CDA52D01-L000051](../../tests/test_omarai.py#L51) | 51 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000052](../../tests/test_omarai.py#L52) | 52 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000053](../../tests/test_omarai.py#L53) | 53 | `"        store.import_csv(bad)"` | — |
-| [SRC-44CDA52D01-L000054](../../tests/test_omarai.py#L54) | 54 | `""` | — |
-| [SRC-44CDA52D01-L000055](../../tests/test_omarai.py#L55) | 55 | `"def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000056](../../tests/test_omarai.py#L56) | 56 | `"    store = LeadStore(tmp_path / \"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000057](../../tests/test_omarai.py#L57) | 57 | `"    store.add("` | — |
-| [SRC-44CDA52D01-L000058](../../tests/test_omarai.py#L58) | 58 | `"        '=HYPERLINK(\"https://evil.example\",\"click\")',"` | — |
-| [SRC-44CDA52D01-L000059](../../tests/test_omarai.py#L59) | 59 | `"        \"https://example.com/post/1\","` | — |
-| [SRC-44CDA52D01-L000060](../../tests/test_omarai.py#L60) | 60 | `"        platform=\"manual\","` | — |
-| [SRC-44CDA52D01-L000061](../../tests/test_omarai.py#L61) | 61 | `"        note=\"  +SUM(1,1)\","` | — |
-| [SRC-44CDA52D01-L000062](../../tests/test_omarai.py#L62) | 62 | `"    )"` | — |
-| [SRC-44CDA52D01-L000063](../../tests/test_omarai.py#L63) | 63 | `"    store.add("` | — |
-| [SRC-44CDA52D01-L000064](../../tests/test_omarai.py#L64) | 64 | `"        \"\\u00a0\\ufeff=1+1\","` | — |
-| [SRC-44CDA52D01-L000065](../../tests/test_omarai.py#L65) | 65 | `"        \"https://example.com/post/2\","` | — |
-| [SRC-44CDA52D01-L000066](../../tests/test_omarai.py#L66) | 66 | `"        platform=\"manual\","` | — |
-| [SRC-44CDA52D01-L000067](../../tests/test_omarai.py#L67) | 67 | `"        note=\"\\u00a0\\ufeff=SUM(1,1)\","` | — |
-| [SRC-44CDA52D01-L000068](../../tests/test_omarai.py#L68) | 68 | `"    )"` | — |
-| [SRC-44CDA52D01-L000069](../../tests/test_omarai.py#L69) | 69 | `"    destination = tmp_path / \"export.csv\""` | — |
-| [SRC-44CDA52D01-L000070](../../tests/test_omarai.py#L70) | 70 | `"    assert store.export_csv(destination) == 2"` | — |
-| [SRC-44CDA52D01-L000071](../../tests/test_omarai.py#L71) | 71 | `"    raw_csv = destination.read_text(encoding=\"utf-8-sig\")"` | — |
-| [SRC-44CDA52D01-L000072](../../tests/test_omarai.py#L72) | 72 | `"    assert '\"\\t=HYPERLINK(' in raw_csv"` | — |
-| [SRC-44CDA52D01-L000073](../../tests/test_omarai.py#L73) | 73 | `"    assert '\"\\t  +SUM' in raw_csv"` | — |
-| [SRC-44CDA52D01-L000074](../../tests/test_omarai.py#L74) | 74 | `""` | — |
-| [SRC-44CDA52D01-L000075](../../tests/test_omarai.py#L75) | 75 | `"    with destination.open(newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
-| [SRC-44CDA52D01-L000076](../../tests/test_omarai.py#L76) | 76 | `"        rows = list(csv.DictReader(stream))"` | — |
-| [SRC-44CDA52D01-L000077](../../tests/test_omarai.py#L77) | 77 | `""` | — |
-| [SRC-44CDA52D01-L000078](../../tests/test_omarai.py#L78) | 78 | `"    row1 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/1\")"` | — |
-| [SRC-44CDA52D01-L000079](../../tests/test_omarai.py#L79) | 79 | `"    row2 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/2\")"` | — |
-| [SRC-44CDA52D01-L000080](../../tests/test_omarai.py#L80) | 80 | `"    assert row1[\"text\"].startswith(\"\\t=\")"` | — |
-| [SRC-44CDA52D01-L000081](../../tests/test_omarai.py#L81) | 81 | `"    assert row1[\"note\"].startswith(\"\\t  +\")"` | — |
-| [SRC-44CDA52D01-L000082](../../tests/test_omarai.py#L82) | 82 | `"    assert row2[\"text\"].startswith(\"\\t\\ufeff=\")"` | — |
-| [SRC-44CDA52D01-L000083](../../tests/test_omarai.py#L83) | 83 | `"    assert row2[\"note\"].startswith(\"\\t\\u00a0\\ufeff=\")"` | — |
-| [SRC-44CDA52D01-L000084](../../tests/test_omarai.py#L84) | 84 | `""` | — |
-## اختبارات
-
-### FILE-B106ADC5EF — [tests/test_proxy_origin.py](../../tests/test_proxy_origin.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B106ADC5EF-L000001](../../tests/test_proxy_origin.py#L1) | 1 | `"\"\"\"Regression tests for the proxy-aware Origin check. OMARAI-PROXY-ORIGIN-PATCH\"\"\""` | — |
-| [SRC-B106ADC5EF-L000002](../../tests/test_proxy_origin.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-B106ADC5EF-L000003](../../tests/test_proxy_origin.py#L3) | 3 | `"import http.client"` | — |
-| [SRC-B106ADC5EF-L000004](../../tests/test_proxy_origin.py#L4) | 4 | `"import threading"` | — |
-| [SRC-B106ADC5EF-L000005](../../tests/test_proxy_origin.py#L5) | 5 | `"from http.server import ThreadingHTTPServer"` | — |
-| [SRC-B106ADC5EF-L000006](../../tests/test_proxy_origin.py#L6) | 6 | `"import pytest"` | — |
-| [SRC-B106ADC5EF-L000007](../../tests/test_proxy_origin.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-B106ADC5EF-L000008](../../tests/test_proxy_origin.py#L8) | 8 | `"from api.omarai import Handler"` | — |
-| [SRC-B106ADC5EF-L000009](../../tests/test_proxy_origin.py#L9) | 9 | `""` | — |
-| [SRC-B106ADC5EF-L000010](../../tests/test_proxy_origin.py#L10) | 10 | `"TOKEN = \"t\" * 40"` | — |
-| [SRC-B106ADC5EF-L000011](../../tests/test_proxy_origin.py#L11) | 11 | `"PUBLIC_NAME = \"app-1234.hosting.example\""` | — |
-| [SRC-B106ADC5EF-L000012](../../tests/test_proxy_origin.py#L12) | 12 | `""` | — |
-| [SRC-B106ADC5EF-L000013](../../tests/test_proxy_origin.py#L13) | 13 | `"@pytest.fixture"` | — |
-| [SRC-B106ADC5EF-L000014](../../tests/test_proxy_origin.py#L14) | 14 | `"def port(tmp_path, monkeypatch):"` | — |
-| [SRC-B106ADC5EF-L000015](../../tests/test_proxy_origin.py#L15) | 15 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-B106ADC5EF-L000016](../../tests/test_proxy_origin.py#L16) | 16 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", TOKEN)"` | — |
-| [SRC-B106ADC5EF-L000017](../../tests/test_proxy_origin.py#L17) | 17 | `"    # The public host is explicitly configured; do not infer it from a client header."` | — |
-| [SRC-B106ADC5EF-L000018](../../tests/test_proxy_origin.py#L18) | 18 | `"    monkeypatch.setenv(\"OMARAI_ALLOWED_ORIGINS\", \"https://\" + PUBLIC_NAME)"` | — |
-| [SRC-B106ADC5EF-L000019](../../tests/test_proxy_origin.py#L19) | 19 | `"    monkeypatch.setattr(Handler, \"store\", LeadStore(tmp_path / \"origin-test.sqlite3\"))"` | — |
-| [SRC-B106ADC5EF-L000020](../../tests/test_proxy_origin.py#L20) | 20 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 10_000)"` | — |
-| [SRC-B106ADC5EF-L000021](../../tests/test_proxy_origin.py#L21) | 21 | `"    server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)"` | — |
-| [SRC-B106ADC5EF-L000022](../../tests/test_proxy_origin.py#L22) | 22 | `"    thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
-| [SRC-B106ADC5EF-L000023](../../tests/test_proxy_origin.py#L23) | 23 | `"    thread.start()"` | — |
-| [SRC-B106ADC5EF-L000024](../../tests/test_proxy_origin.py#L24) | 24 | `"    try:"` | — |
-| [SRC-B106ADC5EF-L000025](../../tests/test_proxy_origin.py#L25) | 25 | `"        yield server.server_port"` | — |
-| [SRC-B106ADC5EF-L000026](../../tests/test_proxy_origin.py#L26) | 26 | `"    finally:"` | — |
-| [SRC-B106ADC5EF-L000027](../../tests/test_proxy_origin.py#L27) | 27 | `"        server.shutdown()"` | — |
-| [SRC-B106ADC5EF-L000028](../../tests/test_proxy_origin.py#L28) | 28 | `"        server.server_close()"` | — |
-| [SRC-B106ADC5EF-L000029](../../tests/test_proxy_origin.py#L29) | 29 | `"        thread.join(timeout=3)"` | — |
-| [SRC-B106ADC5EF-L000030](../../tests/test_proxy_origin.py#L30) | 30 | `""` | — |
-| [SRC-B106ADC5EF-L000031](../../tests/test_proxy_origin.py#L31) | 31 | `"def call(port, method, extra):"` | — |
-| [SRC-B106ADC5EF-L000032](../../tests/test_proxy_origin.py#L32) | 32 | `"    body = b'{\"question\": \"x\"}' if method == \"POST\" else b\"\""` | — |
-| [SRC-B106ADC5EF-L000033](../../tests/test_proxy_origin.py#L33) | 33 | `"    headers = {\"Content-Type\": \"application/json\", \"Authorization\": \"Bearer \" + TOKEN, **extra}"` | — |
-| [SRC-B106ADC5EF-L000034](../../tests/test_proxy_origin.py#L34) | 34 | `"    connection = http.client.HTTPConnection(\"127.0.0.1\", port, timeout=5)"` | — |
-| [SRC-B106ADC5EF-L000035](../../tests/test_proxy_origin.py#L35) | 35 | `"    connection.putrequest(method, \"/api/ask\", skip_host=True)"` | — |

@@ -4,9 +4,66 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D57B0BB030-L000003 إلى SRC-E599346ABE-L000629
+- النطاق: SRC-C7C7FA8853-L000003 إلى SRC-E599346ABE-L000579
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-C7C7FA8853 — [docs/DEPLOY_RAILWAY_AR.md](../DEPLOY_RAILWAY_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-C7C7FA8853-L000003](../DEPLOY_RAILWAY_AR.md#L3) | 3 | `"هذا المستودع أصبح يحتوي على Dockerfile وإعداد Railway قابلين للبناء. **وجود الإعدادات لا يعني أن الخدمة نُشرت بالفعل**؛ يلزم ربط حساب الاستضافة بالمستودع وإضافة الأسرار من لوحة التحكم."` | — |
+| [SRC-C7C7FA8853-L000004](../DEPLOY_RAILWAY_AR.md#L4) | 4 | `""` | — |
+| [SRC-C7C7FA8853-L000005](../DEPLOY_RAILWAY_AR.md#L5) | 5 | `"## المتطلبات"` | — |
+| [SRC-C7C7FA8853-L000006](../DEPLOY_RAILWAY_AR.md#L6) | 6 | `""` | — |
+| [SRC-C7C7FA8853-L000007](../DEPLOY_RAILWAY_AR.md#L7) | 7 | `"1. حساب GitHub لديه صلاحية قراءة المستودع."` | — |
+| [SRC-C7C7FA8853-L000008](../DEPLOY_RAILWAY_AR.md#L8) | 8 | `"2. حساب Railway وربطه بـ GitHub."` | — |
+| [SRC-C7C7FA8853-L000009](../DEPLOY_RAILWAY_AR.md#L9) | 9 | `"3. مفتاح OpenRouter صالح. استخدام النموذج والبحث قد يستهلك رصيدًا؛ راجع أسعار النموذج وأدوات البحث قبل التشغيل."` | — |
+| [SRC-C7C7FA8853-L000010](../DEPLOY_RAILWAY_AR.md#L10) | 10 | `"4. رمز وصول منفصل وسري للتطبيق، لا يقل عن 32 حرفًا. لا تستخدم مفتاح OpenRouter نفسه."` | — |
+| [SRC-C7C7FA8853-L000011](../DEPLOY_RAILWAY_AR.md#L11) | 11 | `""` | — |
+| [SRC-C7C7FA8853-L000012](../DEPLOY_RAILWAY_AR.md#L12) | 12 | `"## النشر"` | — |
+| [SRC-C7C7FA8853-L000013](../DEPLOY_RAILWAY_AR.md#L13) | 13 | `""` | — |
+| [SRC-C7C7FA8853-L000014](../DEPLOY_RAILWAY_AR.md#L14) | 14 | `"1. افتح Railway وسجّل الدخول."` | — |
+| [SRC-C7C7FA8853-L000015](../DEPLOY_RAILWAY_AR.md#L15) | 15 | `"2. أنشئ مشروعًا جديدًا واختر النشر من مستودع GitHub."` | — |
+| [SRC-C7C7FA8853-L000016](../DEPLOY_RAILWAY_AR.md#L16) | 16 | `"3. اختر mosabosama2030-oss/omarai والفرع main."` | — |
+| [SRC-C7C7FA8853-L000017](../DEPLOY_RAILWAY_AR.md#L17) | 17 | `"4. اجعل Railway يبني باستخدام Dockerfile الموجود في المستودع."` | — |
+| [SRC-C7C7FA8853-L000018](../DEPLOY_RAILWAY_AR.md#L18) | 18 | ``"5. يقرأ Omarai SHA من `BUILD_SHA` المخبوز في الصورة إن توفر؛ وإلا يستخدم المتغير الرسمي `RAILWAY_GIT_COMMIT_SHA` الذي توفره Railway لنشر GitHub. بعد النشر يجب أن تعرض `/api/health` قيمة `build.sha` و`build.sha_source`؛ ويجب أن ينجح hosted smoke مع SHA الالتزام المتوقع."`` | — |
+| [SRC-C7C7FA8853-L000019](../DEPLOY_RAILWAY_AR.md#L19) | 19 | `"6. افتح Variables وأضف:"` | — |
+| [SRC-C7C7FA8853-L000020](../DEPLOY_RAILWAY_AR.md#L20) | 20 | `"   - OMARAI_PUBLIC_DEPLOYMENT=1"` | — |
+| [SRC-C7C7FA8853-L000021](../DEPLOY_RAILWAY_AR.md#L21) | 21 | `"   - OMARAI_ACCESS_TOKEN = رمز عشوائي سري قوي (32 حرفًا على الأقل)"` | — |
+| [SRC-C7C7FA8853-L000022](../DEPLOY_RAILWAY_AR.md#L22) | 22 | `"   - OPENROUTER_API_KEY = مفتاحك الشخصي"` | — |
+| [SRC-C7C7FA8853-L000023](../DEPLOY_RAILWAY_AR.md#L23) | 23 | `"   - اختياريًا: OMARAI_ANSWER_MODEL وOMARAI_PLANNER_MODEL وOMARAI_REVIEW_MODEL بعد التحقق من صلاحية النماذج وأسعارها."` | — |
+| [SRC-C7C7FA8853-L000024](../DEPLOY_RAILWAY_AR.md#L24) | 24 | `"   - اختياريًا لتفعيل بحث مباشر ينفذه مزود OpenRouter داخل طلب التوليد: OMARAI_OPENROUTER_WEB_SEARCH=1. هذا خيار إضافي قد يستهلك رصيد بحث فوق تكلفة النموذج؛ اتركه غير مضبوط إذا لم توافق على التكلفة."` | — |
+| [SRC-C7C7FA8853-L000025](../DEPLOY_RAILWAY_AR.md#L25) | 25 | `"7. انشر الخدمة، ثم فعّل Generate Domain من Networking."` | — |
+| [SRC-C7C7FA8853-L000026](../DEPLOY_RAILWAY_AR.md#L26) | 26 | `"8. افتح الرابط العام. أدخل OMARAI_ACCESS_TOKEN في قسم «الوصول الآمن» واضغط «حفظ الرمز على هذا الجهاز»."` | — |
+| [SRC-C7C7FA8853-L000027](../DEPLOY_RAILWAY_AR.md#L27) | 27 | `"9. اضغط «اختبار حي للإنترنت والنموذج». لا تعتبر الصفحة منشورة بنجاح حتى ينجح اختبار الشبكة والنموذج من رابط الاستضافة."` | — |
+| [SRC-C7C7FA8853-L000028](../DEPLOY_RAILWAY_AR.md#L28) | 28 | `""` | — |
+| [SRC-C7C7FA8853-L000029](../DEPLOY_RAILWAY_AR.md#L29) | 29 | `"## الحماية"` | — |
+| [SRC-C7C7FA8853-L000030](../DEPLOY_RAILWAY_AR.md#L30) | 30 | `""` | — |
+| [SRC-C7C7FA8853-L000031](../DEPLOY_RAILWAY_AR.md#L31) | 31 | `"- يمنع التطبيق الربط على واجهة عامة إلا عند تفعيل OMARAI_PUBLIC_DEPLOYMENT=1 وضبط رمز قوي."` | — |
+| [SRC-C7C7FA8853-L000032](../DEPLOY_RAILWAY_AR.md#L32) | 32 | `"- طلبات API محمية برمز Bearer، مع حد مبدئي 20 طلبًا في الدقيقة لكل عنوان عميل."` | — |
+| [SRC-C7C7FA8853-L000033](../DEPLOY_RAILWAY_AR.md#L33) | 33 | `"- رمز الوصول يُخزن في localStorage للمتصفح الذي تختاره. استخدم جهازًا موثوقًا، وامسح الرمز من المتصفح عند الحاجة."` | — |
+| [SRC-C7C7FA8853-L000034](../DEPLOY_RAILWAY_AR.md#L34) | 34 | `"- لا تضع مفاتيح مزود النموذج في HTML أو GitHub أو في خانة رمز الوصول."` | — |
+| [SRC-C7C7FA8853-L000035](../DEPLOY_RAILWAY_AR.md#L35) | 35 | `"- لا يوجد تسجيل مستخدمين متعددين حتى الآن؛ الرمز مشترك لمن تتيحه لهم. لا تفتح الخدمة للجمهور دون خطة مصادقة وإدارة استخدام أقوى."` | — |
+| [SRC-C7C7FA8853-L000036](../DEPLOY_RAILWAY_AR.md#L36) | 36 | `""` | — |
+| [SRC-C7C7FA8853-L000037](../DEPLOY_RAILWAY_AR.md#L37) | 37 | `"## خيار تخزين SQLite على Volume دائم"` | — |
+| [SRC-C7C7FA8853-L000038](../DEPLOY_RAILWAY_AR.md#L38) | 38 | `""` | — |
+| [SRC-C7C7FA8853-L000039](../DEPLOY_RAILWAY_AR.md#L39) | 39 | ``"إذا اخترت خدمة وخطة توفران Volume دائمًا، اربط الـVolume بمسار مثل `/data` واضبط متغير الخدمة `OMARAI_DB_PATH=/data/omarai.sqlite3`. هذا الإعداد لا ينشئ Volume تلقائيًا. بعد ضبطه، اختبر حفظ سجل ثم إعادة التشغيل/النشر وبقاء السجل، ونفّذ اختبار نسخ احتياطي واستعادة على قاعدة اختبار. إن لم تُثبت هذه الخطوات، لا تعتبر SQLite مكانًا آمنًا لبيانات العملاء المهمة؛ استخدم قاعدة مُدارة أو أبقِ مساحة العملاء للتجربة فقط."`` | — |
+| [SRC-C7C7FA8853-L000040](../DEPLOY_RAILWAY_AR.md#L40) | 40 | `"## حدود الإنتاج الحالية"` | — |
+| [SRC-C7C7FA8853-L000041](../DEPLOY_RAILWAY_AR.md#L41) | 41 | `""` | — |
+| [SRC-C7C7FA8853-L000042](../DEPLOY_RAILWAY_AR.md#L42) | 42 | `"- هذا نشر أولي آمن نسبيًا للاستخدام الشخصي/المحدود، وليس منصة SaaS عامة جاهزة للتوسع."` | — |
+| [SRC-C7C7FA8853-L000043](../DEPLOY_RAILWAY_AR.md#L43) | 43 | `"- SQLite وسجل العملاء المحلي لا يضمنان استمرارية البيانات على حاوية استضافة مؤقتة. لا تعتمد على صفحة العملاء كقاعدة بيانات دائمة قبل ربط PostgreSQL واختبار النسخ الاحتياطي."` | — |
+| [SRC-C7C7FA8853-L000044](../DEPLOY_RAILWAY_AR.md#L44) | 44 | `"- حدود المعدل الحالية محفوظة في ذاكرة العملية، فلا تستبدل نظام تحديد معدل موزعًا عند تشغيل أكثر من نسخة."` | — |
+| [SRC-C7C7FA8853-L000045](../DEPLOY_RAILWAY_AR.md#L45) | 45 | `"- واجهات البحث العامة قد تتعرض للحجب أو تحديد المعدل. أضف مفاتيح البحث الاختيارية إذا كنت تحتاج تغطية أوسع، وراقب تكلفتها. أداة OpenRouter الحية اختيارية، وتكاليفها تتغير حسب محرك البحث والمزود."` | — |
+| [SRC-C7C7FA8853-L000046](../DEPLOY_RAILWAY_AR.md#L46) | 46 | `"- اختبر الوصول، وطلبات API غير المصرح بها، وسلوك حدود المزود قبل مشاركة الرابط مع أي شخص."` | — |
+| [SRC-C7C7FA8853-L000047](../DEPLOY_RAILWAY_AR.md#L47) | 47 | `""` | — |
+| [SRC-C7C7FA8853-L000048](../DEPLOY_RAILWAY_AR.md#L48) | 48 | `"## إعادة النشر"` | — |
+| [SRC-C7C7FA8853-L000049](../DEPLOY_RAILWAY_AR.md#L49) | 49 | `""` | — |
+| [SRC-C7C7FA8853-L000050](../DEPLOY_RAILWAY_AR.md#L50) | 50 | `"كل تحديث إلى الفرع main يمكن أن يؤدي إلى إعادة بناء تلقائية إذا فُعّلت عمليات النشر التلقائية في إعدادات Railway."` | — |
 ## وثائق وفهرسة
 
 ### FILE-D57B0BB030 — [docs/DEPLOY_RENDER_AR.md](../DEPLOY_RENDER_AR.md#L1)
@@ -16,6 +73,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D57B0BB030-L000001](../DEPLOY_RENDER_AR.md#L1) | 1 | `"# نشر Omarai على Render Free — دليل عربي"` | — |
+| [SRC-D57B0BB030-L000002](../DEPLOY_RENDER_AR.md#L2) | 2 | `""` | — |
 | [SRC-D57B0BB030-L000003](../DEPLOY_RENDER_AR.md#L3) | 3 | `"هذا الخيار يستخدم خدمة ويب مجانية بمواصفات محدودة لتجربة Omarai والتحقق منه. ليس ضمانًا لتشغيل دائم أو مناسبًا لبيانات العملاء المهمة."` | — |
 | [SRC-D57B0BB030-L000004](../DEPLOY_RENDER_AR.md#L4) | 4 | `""` | — |
 | [SRC-D57B0BB030-L000005](../DEPLOY_RENDER_AR.md#L5) | 5 | `"## ما الذي أُعدّ في المستودع؟"` | — |
@@ -784,53 +843,3 @@
 | [SRC-E599346ABE-L000577](../generate_index.py#L577) | 577 | `"                )"` | — |
 | [SRC-E599346ABE-L000578](../generate_index.py#L578) | 578 | `"            else:"` | — |
 | [SRC-E599346ABE-L000579](../generate_index.py#L579) | 579 | `"                kept_directories.append(name)"` | — |
-| [SRC-E599346ABE-L000580](../generate_index.py#L580) | 580 | `"        directory_names[:] = kept_directories"` | — |
-| [SRC-E599346ABE-L000581](../generate_index.py#L581) | 581 | `""` | — |
-| [SRC-E599346ABE-L000582](../generate_index.py#L582) | 582 | `"        for name in sorted(file_names):"` | — |
-| [SRC-E599346ABE-L000583](../generate_index.py#L583) | 583 | `"            candidate = Path(current_directory) / name"` | — |
-| [SRC-E599346ABE-L000584](../generate_index.py#L584) | 584 | `"            relative = candidate.relative_to(root).as_posix()"` | — |
-| [SRC-E599346ABE-L000585](../generate_index.py#L585) | 585 | `"            if candidate.is_symlink():"` | — |
-| [SRC-E599346ABE-L000586](../generate_index.py#L586) | 586 | `"                if tracked_scope_contains(relative):"` | — |
-| [SRC-E599346ABE-L000587](../generate_index.py#L587) | 587 | `"                    excluded.append((relative, \"رابط رمزي مستبعد لسلامة التتبع\"))"` | — |
-| [SRC-E599346ABE-L000588](../generate_index.py#L588) | 588 | `"            elif _is_sensitive_or_runtime_path(candidate):"` | — |
-| [SRC-E599346ABE-L000589](../generate_index.py#L589) | 589 | `"                if tracked_scope_contains(relative):"` | — |
-| [SRC-E599346ABE-L000590](../generate_index.py#L590) | 590 | `"                    if name.lower().startswith(\".env\") and name.lower() != \".env.example\":"` | — |
-| [SRC-E599346ABE-L000591](../generate_index.py#L591) | 591 | `"                        reason = \"ملف بيئة محلي مستبعد وقائيًا؛ لم تُقرأ محتوياته\""` | — |
-| [SRC-E599346ABE-L000592](../generate_index.py#L592) | 592 | `"                    elif candidate.suffix.lower() in EXCLUDED_SUFFIXES:"` | — |
-| [SRC-E599346ABE-L000593](../generate_index.py#L593) | 593 | `"                        reason = \"قاعدة بيانات أو ملف مفتاح/شهادة مستبعد\""` | — |
-| [SRC-E599346ABE-L000594](../generate_index.py#L594) | 594 | `"                    else:"` | — |
-| [SRC-E599346ABE-L000595](../generate_index.py#L595) | 595 | `"                        reason = \"اسم ملف حساس معروف؛ لم تُقرأ محتوياته\""` | — |
-| [SRC-E599346ABE-L000596](../generate_index.py#L596) | 596 | `"                    excluded.append((relative, reason))"` | — |
-| [SRC-E599346ABE-L000597](../generate_index.py#L597) | 597 | `"            elif relative in INDEX_OUTPUT_PATHS:"` | — |
-| [SRC-E599346ABE-L000598](../generate_index.py#L598) | 598 | `"                excluded.append((relative, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\"))"` | — |
-| [SRC-E599346ABE-L000599](../generate_index.py#L599) | 599 | `"            elif ("` | — |
-| [SRC-E599346ABE-L000600](../generate_index.py#L600) | 600 | `"                relative.startswith(SOURCE_LINES_PAGES_DIR + \"/\")"` | — |
-| [SRC-E599346ABE-L000601](../generate_index.py#L601) | 601 | `"                and tracked_scope_contains(relative)"` | — |
-| [SRC-E599346ABE-L000602](../generate_index.py#L602) | 602 | `"            ):"` | — |
-| [SRC-E599346ABE-L000603](../generate_index.py#L603) | 603 | `"                excluded.append((relative, \"صفحة فهرسة مولدة مستبعدة لمنع الحلقة الذاتية\"))"` | — |
-| [SRC-E599346ABE-L000604](../generate_index.py#L604) | 604 | `""` | — |
-| [SRC-E599346ABE-L000605](../generate_index.py#L605) | 605 | `"    return sorted(set(excluded), key=lambda item: (item[0].casefold(), item[1]))"` | — |
-| [SRC-E599346ABE-L000606](../generate_index.py#L606) | 606 | `""` | — |
-| [SRC-E599346ABE-L000607](../generate_index.py#L607) | 607 | `""` | — |
-| [SRC-E599346ABE-L000608](../generate_index.py#L608) | 608 | `"def _text_index_skip_reason(path: Path) -> str:"` | — |
-| [SRC-E599346ABE-L000609](../generate_index.py#L609) | 609 | `"    \"\"\"Return a concrete safe reason when a file could not be line-indexed.\"\"\""` | — |
-| [SRC-E599346ABE-L000610](../generate_index.py#L610) | 610 | `"    try:"` | — |
-| [SRC-E599346ABE-L000611](../generate_index.py#L611) | 611 | `"        if path.stat().st_size > MAX_INDEXED_TEXT_BYTES:"` | — |
-| [SRC-E599346ABE-L000612](../generate_index.py#L612) | 612 | `"            return f\"الحجم يتجاوز حد الفهرسة ({MAX_INDEXED_TEXT_BYTES} بايت)\""` | — |
-| [SRC-E599346ABE-L000613](../generate_index.py#L613) | 613 | `"        if path.suffix.lower() == \".py\":"` | — |
-| [SRC-E599346ABE-L000614](../generate_index.py#L614) | 614 | `"            with tokenize.open(str(path)) as source_stream:"` | — |
-| [SRC-E599346ABE-L000615](../generate_index.py#L615) | 615 | `"                source = source_stream.read()"` | — |
-| [SRC-E599346ABE-L000616](../generate_index.py#L616) | 616 | `"        else:"` | — |
-| [SRC-E599346ABE-L000617](../generate_index.py#L617) | 617 | `"            source = path.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-E599346ABE-L000618](../generate_index.py#L618) | 618 | `"        if \"\\x00\" in source:"` | — |
-| [SRC-E599346ABE-L000619](../generate_index.py#L619) | 619 | `"            return \"يحتوي محرف NUL؛ عومل كملف غير نصي\""` | — |
-| [SRC-E599346ABE-L000620](../generate_index.py#L620) | 620 | `"    except (OSError, UnicodeError, LookupError, tokenize.TokenError):"` | — |
-| [SRC-E599346ABE-L000621](../generate_index.py#L621) | 621 | `"        return \"تعذرت قراءته كنص صالح بترميز مدعوم\""` | — |
-| [SRC-E599346ABE-L000622](../generate_index.py#L622) | 622 | `"    return \"سبب غير مصنف؛ يحتاج مراجعة أداة الفهرسة\""` | — |
-| [SRC-E599346ABE-L000623](../generate_index.py#L623) | 623 | `""` | — |
-| [SRC-E599346ABE-L000624](../generate_index.py#L624) | 624 | `""` | — |
-| [SRC-E599346ABE-L000625](../generate_index.py#L625) | 625 | `"def validate_source_line_coverage("` | — |
-| [SRC-E599346ABE-L000626](../generate_index.py#L626) | 626 | `"    root: Path,"` | — |
-| [SRC-E599346ABE-L000627](../generate_index.py#L627) | 627 | `"    inventory: list[IndexedFile],"` | — |
-| [SRC-E599346ABE-L000628](../generate_index.py#L628) | 628 | `"    source_lines: list[IndexedLine],"` | — |
-| [SRC-E599346ABE-L000629](../generate_index.py#L629) | 629 | `") -> None:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000097 إلى SRC-792A9A235D-L000015
+- النطاق: SRC-EEF2E6447C-L000047 إلى SRC-9C97DF51AC-L000026
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000047](../../api/omarai.py#L47) | 47 | `"    for html_path in sorted(ROOT.glob(\"*.html\")):"` | — |
+| [SRC-EEF2E6447C-L000048](../../api/omarai.py#L48) | 48 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000049](../../api/omarai.py#L49) | 49 | `"            document = html_path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000050](../../api/omarai.py#L50) | 50 | `"        except (OSError, UnicodeError):"` | — |
+| [SRC-EEF2E6447C-L000051](../../api/omarai.py#L51) | 51 | `"            continue"` | — |
+| [SRC-EEF2E6447C-L000052](../../api/omarai.py#L52) | 52 | `""` | — |
+| [SRC-EEF2E6447C-L000053](../../api/omarai.py#L53) | 53 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000054](../../api/omarai.py#L54) | 54 | `"            r\"<script\\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\\s*>\","` | — |
+| [SRC-EEF2E6447C-L000055](../../api/omarai.py#L55) | 55 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000056](../../api/omarai.py#L56) | 56 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000057](../../api/omarai.py#L57) | 57 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000058](../../api/omarai.py#L58) | 58 | `"            if re.search(r\"\\bsrc\\s*=\", match.group(\"attrs\"), re.IGNORECASE):"` | — |
+| [SRC-EEF2E6447C-L000059](../../api/omarai.py#L59) | 59 | `"                continue"` | — |
+| [SRC-EEF2E6447C-L000060](../../api/omarai.py#L60) | 60 | `"            script_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
+| [SRC-EEF2E6447C-L000061](../../api/omarai.py#L61) | 61 | `""` | — |
+| [SRC-EEF2E6447C-L000062](../../api/omarai.py#L62) | 62 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000063](../../api/omarai.py#L63) | 63 | `"            r\"<style\\b[^>]*>(?P<body>.*?)</style\\s*>\","` | — |
+| [SRC-EEF2E6447C-L000064](../../api/omarai.py#L64) | 64 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000065](../../api/omarai.py#L65) | 65 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000066](../../api/omarai.py#L66) | 66 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000067](../../api/omarai.py#L67) | 67 | `"            style_hashes.add(_csp_hash_source(match.group(\"body\")))"` | — |
+| [SRC-EEF2E6447C-L000068](../../api/omarai.py#L68) | 68 | `""` | — |
+| [SRC-EEF2E6447C-L000069](../../api/omarai.py#L69) | 69 | `"        # This scan intentionally includes style/event attributes embedded in"` | — |
+| [SRC-EEF2E6447C-L000070](../../api/omarai.py#L70) | 70 | `"        # trusted first-party HTML templates assembled by inline scripts."` | — |
+| [SRC-EEF2E6447C-L000071](../../api/omarai.py#L71) | 71 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000072](../../api/omarai.py#L72) | 72 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-EEF2E6447C-L000073](../../api/omarai.py#L73) | 73 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000074](../../api/omarai.py#L74) | 74 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000075](../../api/omarai.py#L75) | 75 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000076](../../api/omarai.py#L76) | 76 | `"            style_attribute_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
+| [SRC-EEF2E6447C-L000077](../../api/omarai.py#L77) | 77 | `""` | — |
+| [SRC-EEF2E6447C-L000078](../../api/omarai.py#L78) | 78 | `"        for match in re.finditer("` | — |
+| [SRC-EEF2E6447C-L000079](../../api/omarai.py#L79) | 79 | `"            r\"\"\"\\bon[a-z]+\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-EEF2E6447C-L000080](../../api/omarai.py#L80) | 80 | `"            document,"` | — |
+| [SRC-EEF2E6447C-L000081](../../api/omarai.py#L81) | 81 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-EEF2E6447C-L000082](../../api/omarai.py#L82) | 82 | `"        ):"` | — |
+| [SRC-EEF2E6447C-L000083](../../api/omarai.py#L83) | 83 | `"            event_handler_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
+| [SRC-EEF2E6447C-L000084](../../api/omarai.py#L84) | 84 | `""` | — |
+| [SRC-EEF2E6447C-L000085](../../api/omarai.py#L85) | 85 | `"    script_sources = [\"'self'\", *sorted(script_hashes)]"` | — |
+| [SRC-EEF2E6447C-L000086](../../api/omarai.py#L86) | 86 | `"    style_sources = [\"'self'\", *sorted(style_hashes)]"` | — |
+| [SRC-EEF2E6447C-L000087](../../api/omarai.py#L87) | 87 | `"    if event_handler_hashes:"` | — |
+| [SRC-EEF2E6447C-L000088](../../api/omarai.py#L88) | 88 | `"        script_sources.extend([\"'unsafe-hashes'\", *sorted(event_handler_hashes)])"` | — |
+| [SRC-EEF2E6447C-L000089](../../api/omarai.py#L89) | 89 | `"    if style_attribute_hashes:"` | — |
+| [SRC-EEF2E6447C-L000090](../../api/omarai.py#L90) | 90 | `"        style_sources.extend([\"'unsafe-hashes'\", *sorted(style_attribute_hashes)])"` | — |
+| [SRC-EEF2E6447C-L000091](../../api/omarai.py#L91) | 91 | `""` | — |
+| [SRC-EEF2E6447C-L000092](../../api/omarai.py#L92) | 92 | `"    return ("` | — |
+| [SRC-EEF2E6447C-L000093](../../api/omarai.py#L93) | 93 | `"        \"default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; \""` | — |
+| [SRC-EEF2E6447C-L000094](../../api/omarai.py#L94) | 94 | `"        \"form-action 'self'; connect-src 'self'; img-src 'self' data:; \""` | — |
+| [SRC-EEF2E6447C-L000095](../../api/omarai.py#L95) | 95 | `"        f\"script-src {' '.join(script_sources)}; \""` | — |
+| [SRC-EEF2E6447C-L000096](../../api/omarai.py#L96) | 96 | `"        f\"style-src {' '.join(style_sources)}; font-src 'self' data:\""` | — |
 | [SRC-EEF2E6447C-L000097](../../api/omarai.py#L97) | 97 | `"    )"` | — |
 | [SRC-EEF2E6447C-L000098](../../api/omarai.py#L98) | 98 | `"# Bound request-line + header parsing before application code or body processing."` | — |
 | [SRC-EEF2E6447C-L000099](../../api/omarai.py#L99) | 99 | `"REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0"` | — |
@@ -793,71 +843,3 @@
 | [SRC-9C97DF51AC-L000024](../../cli/omarai.py#L24) | 24 | `"    p=sub.add_parser(\"export-csv\")"` | — |
 | [SRC-9C97DF51AC-L000025](../../cli/omarai.py#L25) | 25 | `"    p.add_argument(\"--file\",required=True)"` | — |
 | [SRC-9C97DF51AC-L000026](../../cli/omarai.py#L26) | 26 | `"    args=parser.parse_args()"` | — |
-| [SRC-9C97DF51AC-L000027](../../cli/omarai.py#L27) | 27 | `"    if args.command==\"analyze\":"` | — |
-| [SRC-9C97DF51AC-L000028](../../cli/omarai.py#L28) | 28 | `"        result=analyze(args.text,[x.strip() for x in args.product.split(\",\") if x.strip()],[x.strip() for x in args.location.split(\",\") if x.strip()])"` | — |
-| [SRC-9C97DF51AC-L000029](../../cli/omarai.py#L29) | 29 | `"        print(json.dumps(result,ensure_ascii=False,indent=2))"` | — |
-| [SRC-9C97DF51AC-L000030](../../cli/omarai.py#L30) | 30 | `"        return"` | — |
-| [SRC-9C97DF51AC-L000031](../../cli/omarai.py#L31) | 31 | `"    store=LeadStore()"` | — |
-| [SRC-9C97DF51AC-L000032](../../cli/omarai.py#L32) | 32 | `"    if args.command==\"serve\":"` | — |
-| [SRC-9C97DF51AC-L000033](../../cli/omarai.py#L33) | 33 | `"        serve(args.host,args.port)"` | — |
-| [SRC-9C97DF51AC-L000034](../../cli/omarai.py#L34) | 34 | `"    elif args.command==\"import-csv\":"` | — |
-| [SRC-9C97DF51AC-L000035](../../cli/omarai.py#L35) | 35 | `"        print(json.dumps(store.import_csv(args.file),ensure_ascii=False,indent=2))"` | — |
-| [SRC-9C97DF51AC-L000036](../../cli/omarai.py#L36) | 36 | `"    elif args.command==\"list\":"` | — |
-| [SRC-9C97DF51AC-L000037](../../cli/omarai.py#L37) | 37 | `"        print(json.dumps(store.list(args.status,args.limit),ensure_ascii=False,indent=2))"` | — |
-| [SRC-9C97DF51AC-L000038](../../cli/omarai.py#L38) | 38 | `"    elif args.command==\"export-csv\":"` | — |
-| [SRC-9C97DF51AC-L000039](../../cli/omarai.py#L39) | 39 | `"        print(f\"Exported {store.export_csv(args.file)} leads to {args.file}\")"` | — |
-| [SRC-9C97DF51AC-L000040](../../cli/omarai.py#L40) | 40 | `"if __name__==\"__main__\":"` | — |
-| [SRC-9C97DF51AC-L000041](../../cli/omarai.py#L41) | 41 | `"    main()"` | — |
-## إعدادات وتشغيل
-
-### FILE-DD2C0EB6EA — [Dockerfile](../../Dockerfile#L1)
-
-- النوع: **Dockerfile**
-- نطاق الفهرسة: جرد الملف + أسماء إعدادات عامة إن وجدت
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DD2C0EB6EA-L000001](../../Dockerfile#L1) | 1 | `"FROM python:3.12-slim"` | — |
-| [SRC-DD2C0EB6EA-L000002](../../Dockerfile#L2) | 2 | `""` | — |
-| [SRC-DD2C0EB6EA-L000003](../../Dockerfile#L3) | 3 | `"ARG OMARAI_BUILD_SHA=unknown"` | — |
-| [SRC-DD2C0EB6EA-L000004](../../Dockerfile#L4) | 4 | `"ARG PUBLIC_OMARAI_BUILD_SHA=unknown"` | — |
-| [SRC-DD2C0EB6EA-L000005](../../Dockerfile#L5) | 5 | `"ENV PYTHONDONTWRITEBYTECODE=1 \\"` | — |
-| [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PYTHONUNBUFFERED=1 \\"` | — |
-| [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
-| [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `""` | — |
-| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"WORKDIR /app"` | — |
-| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
-| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
-| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
-| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
-| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
-| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
-| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
-| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
-| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
-| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
-| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
-## وثائق وفهرسة
-
-### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-792A9A235D-L000001](../ANSWER_QUALITY_BENCHMARK_AR.md#L1) | 1 | `"# معيار تقييم جودة الإجابة (عدائي / Red-Team)"` | — |
-| [SRC-792A9A235D-L000002](../ANSWER_QUALITY_BENCHMARK_AR.md#L2) | 2 | `""` | — |
-| [SRC-792A9A235D-L000003](../ANSWER_QUALITY_BENCHMARK_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REDTEAM-001  "` | — |
-| [SRC-792A9A235D-L000004](../ANSWER_QUALITY_BENCHMARK_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0 (تصحيح أمثلة الحالة + بروتوكول المقارنة)  "` | — |
-| [SRC-792A9A235D-L000005](../ANSWER_QUALITY_BENCHMARK_AR.md#L5) | 5 | ``"**مرجع الكود عند التصميم:** `ac05f4777f140694b285c5364e6c3875fdecdae6` (main)"`` | — |
-| [SRC-792A9A235D-L000006](../ANSWER_QUALITY_BENCHMARK_AR.md#L6) | 6 | `""` | — |
-| [SRC-792A9A235D-L000007](../ANSWER_QUALITY_BENCHMARK_AR.md#L7) | 7 | `"هذا المجلد يوفّر **مجموعة تقييم قابلة لإعادة التشغيل** لفحص فهم عمرai، استراتيجية البحث، استخدام الأدلة، التعامل مع عدم اليقين، والأمان."` | — |
-| [SRC-792A9A235D-L000008](../ANSWER_QUALITY_BENCHMARK_AR.md#L8) | 8 | `""` | — |
-| [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
-| [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
-| [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
-| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | `"لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر."` | — |
-| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
-| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
-| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |

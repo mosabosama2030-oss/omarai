@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000310 إلى SRC-3451CC474D-L000326
+- النطاق: SRC-B3062EB677-L000260 إلى SRC-3451CC474D-L000276
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000260](../../tests/test_answer_quality_runner.py#L260) | 260 | `"                    \"provider_usage\": {"` | — |
+| [SRC-B3062EB677-L000261](../../tests/test_answer_quality_runner.py#L261) | 261 | `"                        \"prompt_tokens\": 10,"` | — |
+| [SRC-B3062EB677-L000262](../../tests/test_answer_quality_runner.py#L262) | 262 | `"                        \"completion_tokens\": 20,"` | — |
+| [SRC-B3062EB677-L000263](../../tests/test_answer_quality_runner.py#L263) | 263 | `"                        \"total_tokens\": 30,"` | — |
+| [SRC-B3062EB677-L000264](../../tests/test_answer_quality_runner.py#L264) | 264 | `"                        \"cost_usd\": 0.0008,"` | — |
+| [SRC-B3062EB677-L000265](../../tests/test_answer_quality_runner.py#L265) | 265 | `"                    },"` | — |
+| [SRC-B3062EB677-L000266](../../tests/test_answer_quality_runner.py#L266) | 266 | `"                }],"` | — |
+| [SRC-B3062EB677-L000267](../../tests/test_answer_quality_runner.py#L267) | 267 | `"            },"` | — |
+| [SRC-B3062EB677-L000268](../../tests/test_answer_quality_runner.py#L268) | 268 | `"            \"model_calls\": [],"` | — |
+| [SRC-B3062EB677-L000269](../../tests/test_answer_quality_runner.py#L269) | 269 | `"            \"task_understanding\": {"` | — |
+| [SRC-B3062EB677-L000270](../../tests/test_answer_quality_runner.py#L270) | 270 | `"                \"tool_execution\": {"` | — |
+| [SRC-B3062EB677-L000271](../../tests/test_answer_quality_runner.py#L271) | 271 | `"                    \"required_tools\": ["` | — |
+| [SRC-B3062EB677-L000272](../../tests/test_answer_quality_runner.py#L272) | 272 | `"                        \"web_search\","` | — |
+| [SRC-B3062EB677-L000273](../../tests/test_answer_quality_runner.py#L273) | 273 | `"                        \"page_fetch\","` | — |
+| [SRC-B3062EB677-L000274](../../tests/test_answer_quality_runner.py#L274) | 274 | `"                        \"public_social_search_if_configured\","` | — |
+| [SRC-B3062EB677-L000275](../../tests/test_answer_quality_runner.py#L275) | 275 | `"                    ],"` | — |
+| [SRC-B3062EB677-L000276](../../tests/test_answer_quality_runner.py#L276) | 276 | `"                    \"tool_status_matrix\": ["` | — |
+| [SRC-B3062EB677-L000277](../../tests/test_answer_quality_runner.py#L277) | 277 | `"                        {"` | — |
+| [SRC-B3062EB677-L000278](../../tests/test_answer_quality_runner.py#L278) | 278 | `"                            \"tool\": \"web_search\","` | — |
+| [SRC-B3062EB677-L000279](../../tests/test_answer_quality_runner.py#L279) | 279 | `"                            \"required_by_task_spec\": True,"` | — |
+| [SRC-B3062EB677-L000280](../../tests/test_answer_quality_runner.py#L280) | 280 | `"                            \"status\": \"completed_with_results\","` | — |
+| [SRC-B3062EB677-L000281](../../tests/test_answer_quality_runner.py#L281) | 281 | `"                        },"` | — |
+| [SRC-B3062EB677-L000282](../../tests/test_answer_quality_runner.py#L282) | 282 | `"                        {"` | — |
+| [SRC-B3062EB677-L000283](../../tests/test_answer_quality_runner.py#L283) | 283 | `"                            \"tool\": \"page_fetch\","` | — |
+| [SRC-B3062EB677-L000284](../../tests/test_answer_quality_runner.py#L284) | 284 | `"                            \"required_by_task_spec\": True,"` | — |
+| [SRC-B3062EB677-L000285](../../tests/test_answer_quality_runner.py#L285) | 285 | `"                            \"status\": \"attempted_no_readable_pages\","` | — |
+| [SRC-B3062EB677-L000286](../../tests/test_answer_quality_runner.py#L286) | 286 | `"                        },"` | — |
+| [SRC-B3062EB677-L000287](../../tests/test_answer_quality_runner.py#L287) | 287 | `"                    ],"` | — |
+| [SRC-B3062EB677-L000288](../../tests/test_answer_quality_runner.py#L288) | 288 | `"                },"` | — |
+| [SRC-B3062EB677-L000289](../../tests/test_answer_quality_runner.py#L289) | 289 | `"            },"` | — |
+| [SRC-B3062EB677-L000290](../../tests/test_answer_quality_runner.py#L290) | 290 | `"            \"sources\": [{\"url\": \"https://example.org\"}],"` | — |
+| [SRC-B3062EB677-L000291](../../tests/test_answer_quality_runner.py#L291) | 291 | `"        },"` | — |
+| [SRC-B3062EB677-L000292](../../tests/test_answer_quality_runner.py#L292) | 292 | `"        expected_strategy=\"web_search\","` | — |
+| [SRC-B3062EB677-L000293](../../tests/test_answer_quality_runner.py#L293) | 293 | `"        transport_ok=True,"` | — |
+| [SRC-B3062EB677-L000294](../../tests/test_answer_quality_runner.py#L294) | 294 | `"    )"` | — |
+| [SRC-B3062EB677-L000295](../../tests/test_answer_quality_runner.py#L295) | 295 | `"    assert successful_search[\"tool_status\"] == \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
+| [SRC-B3062EB677-L000296](../../tests/test_answer_quality_runner.py#L296) | 296 | `"    assert successful_search[\"source_count\"] == 1"` | — |
+| [SRC-B3062EB677-L000297](../../tests/test_answer_quality_runner.py#L297) | 297 | `"    assert successful_search[\"provider_reported_model_cost_usd\"] == 0.0008"` | — |
+| [SRC-B3062EB677-L000298](../../tests/test_answer_quality_runner.py#L298) | 298 | `"    assert successful_search[\"provider_reported_model_cost_status\"] == \"COMPLETE_FOR_RETURNED_MODEL_CALLS\""` | — |
+| [SRC-B3062EB677-L000299](../../tests/test_answer_quality_runner.py#L299) | 299 | `"    assert successful_search[\"required_tool_count\"] == 3"` | — |
+| [SRC-B3062EB677-L000300](../../tests/test_answer_quality_runner.py#L300) | 300 | `"    assert successful_search[\"required_tool_success_count\"] == 1"` | — |
+| [SRC-B3062EB677-L000301](../../tests/test_answer_quality_runner.py#L301) | 301 | `"    assert successful_search[\"required_tool_success_rate\"] == pytest.approx(0.3333)"` | — |
+| [SRC-B3062EB677-L000302](../../tests/test_answer_quality_runner.py#L302) | 302 | `"    assert successful_search[\"required_tool_matrix_complete\"] is False"` | — |
+| [SRC-B3062EB677-L000303](../../tests/test_answer_quality_runner.py#L303) | 303 | `"    assert successful_search[\"required_tool_status_metrics_status\"] == \"INCOMPLETE_TOOL_STATUS_MATRIX\""` | — |
+| [SRC-B3062EB677-L000304](../../tests/test_answer_quality_runner.py#L304) | 304 | `"    assert [item[\"tool\"] for item in successful_search[\"required_tool_statuses\"]] == ["` | — |
+| [SRC-B3062EB677-L000305](../../tests/test_answer_quality_runner.py#L305) | 305 | `"        \"web_search\", \"page_fetch\", \"public_social_search_if_configured\""` | — |
+| [SRC-B3062EB677-L000306](../../tests/test_answer_quality_runner.py#L306) | 306 | `"    ]"` | — |
+| [SRC-B3062EB677-L000307](../../tests/test_answer_quality_runner.py#L307) | 307 | `"    assert successful_search[\"required_tool_statuses\"][2][\"status\"] == \"missing_matrix_row\""` | — |
+| [SRC-B3062EB677-L000308](../../tests/test_answer_quality_runner.py#L308) | 308 | `""` | — |
+| [SRC-B3062EB677-L000309](../../tests/test_answer_quality_runner.py#L309) | 309 | `""` | — |
 | [SRC-B3062EB677-L000310](../../tests/test_answer_quality_runner.py#L310) | 310 | `"def test_search_success_label_requires_returned_source_rows():"` | — |
 | [SRC-B3062EB677-L000311](../../tests/test_answer_quality_runner.py#L311) | 311 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000312](../../tests/test_answer_quality_runner.py#L312) | 312 | `"    metrics = mod._response_metrics("` | — |
@@ -793,53 +843,3 @@
 | [SRC-3451CC474D-L000274](../../tests/test_api.py#L274) | 274 | `""` | — |
 | [SRC-3451CC474D-L000275](../../tests/test_api.py#L275) | 275 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", fake_diagnostics)"` | — |
 | [SRC-3451CC474D-L000276](../../tests/test_api.py#L276) | 276 | `"    status, report = request_json("` | — |
-| [SRC-3451CC474D-L000277](../../tests/test_api.py#L277) | 277 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000278](../../tests/test_api.py#L278) | 278 | `"        \"/api/diagnostics\","` | — |
-| [SRC-3451CC474D-L000279](../../tests/test_api.py#L279) | 279 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000280](../../tests/test_api.py#L280) | 280 | `"        payload={\"test_model\": True, \"test_social\": False},"` | — |
-| [SRC-3451CC474D-L000281](../../tests/test_api.py#L281) | 281 | `"    )"` | — |
-| [SRC-3451CC474D-L000282](../../tests/test_api.py#L282) | 282 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000283](../../tests/test_api.py#L283) | 283 | `"    assert report[\"overall_status\"] == \"passed\""` | — |
-| [SRC-3451CC474D-L000284](../../tests/test_api.py#L284) | 284 | `"    assert report[\"checks\"][\"web_search\"][\"result_count\"] == 4"` | — |
-| [SRC-3451CC474D-L000285](../../tests/test_api.py#L285) | 285 | `"    assert \"api_key\" not in report"` | — |
-| [SRC-3451CC474D-L000286](../../tests/test_api.py#L286) | 286 | `"    assert \"secret\" not in str(report)"` | — |
-| [SRC-3451CC474D-L000287](../../tests/test_api.py#L287) | 287 | `""` | — |
-| [SRC-3451CC474D-L000288](../../tests/test_api.py#L288) | 288 | `""` | — |
-| [SRC-3451CC474D-L000289](../../tests/test_api.py#L289) | 289 | `"def test_diagnostics_endpoint_requires_boolean_options(local_api):"` | — |
-| [SRC-3451CC474D-L000290](../../tests/test_api.py#L290) | 290 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L000291](../../tests/test_api.py#L291) | 291 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000292](../../tests/test_api.py#L292) | 292 | `"        \"/api/diagnostics\","` | — |
-| [SRC-3451CC474D-L000293](../../tests/test_api.py#L293) | 293 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000294](../../tests/test_api.py#L294) | 294 | `"        payload={\"test_model\": \"yes\", \"test_social\": False},"` | — |
-| [SRC-3451CC474D-L000295](../../tests/test_api.py#L295) | 295 | `"    )"` | — |
-| [SRC-3451CC474D-L000296](../../tests/test_api.py#L296) | 296 | `"    assert status == 400"` | — |
-| [SRC-3451CC474D-L000297](../../tests/test_api.py#L297) | 297 | `"    assert \"booleans\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L000298](../../tests/test_api.py#L298) | 298 | `""` | — |
-| [SRC-3451CC474D-L000299](../../tests/test_api.py#L299) | 299 | `""` | — |
-| [SRC-3451CC474D-L000300](../../tests/test_api.py#L300) | 300 | `""` | — |
-| [SRC-3451CC474D-L000301](../../tests/test_api.py#L301) | 301 | `"def test_rate_limit_ignores_spoofed_forwarded_for_by_default(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000302](../../tests/test_api.py#L302) | 302 | `"    monkeypatch.delenv(\"OMARAI_TRUST_PROXY_HEADERS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000303](../../tests/test_api.py#L303) | 303 | `"    handler = SimpleNamespace("` | — |
-| [SRC-3451CC474D-L000304](../../tests/test_api.py#L304) | 304 | `"        headers={\"X-Forwarded-For\": \"198.51.100.77, 203.0.113.10\"},"` | — |
-| [SRC-3451CC474D-L000305](../../tests/test_api.py#L305) | 305 | `"        client_address=(\"192.0.2.44\", 12345),"` | — |
-| [SRC-3451CC474D-L000306](../../tests/test_api.py#L306) | 306 | `"    )"` | — |
-| [SRC-3451CC474D-L000307](../../tests/test_api.py#L307) | 307 | `"    assert Handler._rate_limit_client_key(handler) == \"192.0.2.44\""` | — |
-| [SRC-3451CC474D-L000308](../../tests/test_api.py#L308) | 308 | `""` | — |
-| [SRC-3451CC474D-L000309](../../tests/test_api.py#L309) | 309 | `""` | — |
-| [SRC-3451CC474D-L000310](../../tests/test_api.py#L310) | 310 | `"def test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000311](../../tests/test_api.py#L311) | 311 | `"    monkeypatch.setenv(\"OMARAI_TRUST_PROXY_HEADERS\", \"1\")"` | — |
-| [SRC-3451CC474D-L000312](../../tests/test_api.py#L312) | 312 | `"    handler = SimpleNamespace("` | — |
-| [SRC-3451CC474D-L000313](../../tests/test_api.py#L313) | 313 | `"        headers={\"X-Forwarded-For\": \"198.51.100.77, 203.0.113.10\"},"` | — |
-| [SRC-3451CC474D-L000314](../../tests/test_api.py#L314) | 314 | `"        client_address=(\"192.0.2.44\", 12345),"` | — |
-| [SRC-3451CC474D-L000315](../../tests/test_api.py#L315) | 315 | `"    )"` | — |
-| [SRC-3451CC474D-L000316](../../tests/test_api.py#L316) | 316 | `"    assert Handler._rate_limit_client_key(handler) == \"203.0.113.10\""` | — |
-| [SRC-3451CC474D-L000317](../../tests/test_api.py#L317) | 317 | `""` | — |
-| [SRC-3451CC474D-L000318](../../tests/test_api.py#L318) | 318 | `""` | — |
-| [SRC-3451CC474D-L000319](../../tests/test_api.py#L319) | 319 | `"def test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000320](../../tests/test_api.py#L320) | 320 | `"    monkeypatch.setenv(\"OMARAI_TRUST_PROXY_HEADERS\", \"1\")"` | — |
-| [SRC-3451CC474D-L000321](../../tests/test_api.py#L321) | 321 | `"    handler = SimpleNamespace("` | — |
-| [SRC-3451CC474D-L000322](../../tests/test_api.py#L322) | 322 | `"        headers={\"X-Forwarded-For\": \"198.51.100.77, not-an-ip\"},"` | — |
-| [SRC-3451CC474D-L000323](../../tests/test_api.py#L323) | 323 | `"        client_address=(\"192.0.2.44\", 12345),"` | — |
-| [SRC-3451CC474D-L000324](../../tests/test_api.py#L324) | 324 | `"    )"` | — |
-| [SRC-3451CC474D-L000325](../../tests/test_api.py#L325) | 325 | `"    assert Handler._rate_limit_client_key(handler) == \"192.0.2.44\""` | — |
-| [SRC-3451CC474D-L000326](../../tests/test_api.py#L326) | 326 | `""` | — |

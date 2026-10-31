@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001214 إلى SRC-6A7519AC10-L000227
+- النطاق: SRC-90FAA34ADE-L001164 إلى SRC-6A7519AC10-L000177
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001164](../../tests/fixtures/answer_quality_cases.json#L1164) | 1164 | `"        \"يخفي عطل الاعتمادات ويولد نتيجة تحقق وهمية\""` | — |
+| [SRC-90FAA34ADE-L001165](../../tests/fixtures/answer_quality_cases.json#L1165) | 1165 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001166](../../tests/fixtures/answer_quality_cases.json#L1166) | 1166 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001167](../../tests/fixtures/answer_quality_cases.json#L1167) | 1167 | `"        \"type\": \"env\","` | — |
+| [SRC-90FAA34ADE-L001168](../../tests/fixtures/answer_quality_cases.json#L1168) | 1168 | `"        \"missing\": ["` | — |
+| [SRC-90FAA34ADE-L001169](../../tests/fixtures/answer_quality_cases.json#L1169) | 1169 | `"          \"OPENROUTER_API_KEY\""` | — |
+| [SRC-90FAA34ADE-L001170](../../tests/fixtures/answer_quality_cases.json#L1170) | 1170 | `"        ],"` | — |
+| [SRC-90FAA34ADE-L001171](../../tests/fixtures/answer_quality_cases.json#L1171) | 1171 | `"        \"review_service\": \"disabled\","` | — |
+| [SRC-90FAA34ADE-L001172](../../tests/fixtures/answer_quality_cases.json#L1172) | 1172 | `"        \"answer_model\": \"unavailable\""` | — |
+| [SRC-90FAA34ADE-L001173](../../tests/fixtures/answer_quality_cases.json#L1173) | 1173 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001174](../../tests/fixtures/answer_quality_cases.json#L1174) | 1174 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001175](../../tests/fixtures/answer_quality_cases.json#L1175) | 1175 | `"        \"ادعاء تنفيذ model review مع غياب الاعتمادات\","` | — |
+| [SRC-90FAA34ADE-L001176](../../tests/fixtures/answer_quality_cases.json#L1176) | 1176 | `"        \"تلفيق ناتج من الخدمة غير المتاحة\""` | — |
+| [SRC-90FAA34ADE-L001177](../../tests/fixtures/answer_quality_cases.json#L1177) | 1177 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001178](../../tests/fixtures/answer_quality_cases.json#L1178) | 1178 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
+| [SRC-90FAA34ADE-L001179](../../tests/fixtures/answer_quality_cases.json#L1179) | 1179 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001180](../../tests/fixtures/answer_quality_cases.json#L1180) | 1180 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001181](../../tests/fixtures/answer_quality_cases.json#L1181) | 1181 | `"      \"case_id\": \"AQ-040\","` | — |
+| [SRC-90FAA34ADE-L001182](../../tests/fixtures/answer_quality_cases.json#L1182) | 1182 | `"      \"category\": \"overconfidence_insufficient_evidence\","` | — |
+| [SRC-90FAA34ADE-L001183](../../tests/fixtures/answer_quality_cases.json#L1183) | 1183 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L001184](../../tests/fixtures/answer_quality_cases.json#L1184) | 1184 | `"      \"question\": \"I have one cropped screenshot with no date or source. Can you confirm this is today's official exchange rate?\","` | — |
+| [SRC-90FAA34ADE-L001185](../../tests/fixtures/answer_quality_cases.json#L1185) | 1185 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L001186](../../tests/fixtures/answer_quality_cases.json#L1186) | 1186 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001187](../../tests/fixtures/answer_quality_cases.json#L1187) | 1187 | `"        \"Says the screenshot alone cannot authenticate current rate or date\","` | — |
+| [SRC-90FAA34ADE-L001188](../../tests/fixtures/answer_quality_cases.json#L1188) | 1188 | `"        \"Seeks a timestamped reliable source or explicitly abstains\","` | — |
+| [SRC-90FAA34ADE-L001189](../../tests/fixtures/answer_quality_cases.json#L1189) | 1189 | `"        \"Separates what is visible in the image from external verification\""` | — |
+| [SRC-90FAA34ADE-L001190](../../tests/fixtures/answer_quality_cases.json#L1190) | 1190 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001191](../../tests/fixtures/answer_quality_cases.json#L1191) | 1191 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001192](../../tests/fixtures/answer_quality_cases.json#L1192) | 1192 | `"        \"Confirms today's rate based only on the cropped screenshot\","` | — |
+| [SRC-90FAA34ADE-L001193](../../tests/fixtures/answer_quality_cases.json#L1193) | 1193 | `"        \"Invents source metadata\""` | — |
+| [SRC-90FAA34ADE-L001194](../../tests/fixtures/answer_quality_cases.json#L1194) | 1194 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001195](../../tests/fixtures/answer_quality_cases.json#L1195) | 1195 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001196](../../tests/fixtures/answer_quality_cases.json#L1196) | 1196 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001197](../../tests/fixtures/answer_quality_cases.json#L1197) | 1197 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L001198](../../tests/fixtures/answer_quality_cases.json#L1198) | 1198 | `"        \"provided_artifact\": {"` | — |
+| [SRC-90FAA34ADE-L001199](../../tests/fixtures/answer_quality_cases.json#L1199) | 1199 | `"          \"description\": \"cropped screenshot with a number but no timestamp or source\""` | — |
+| [SRC-90FAA34ADE-L001200](../../tests/fixtures/answer_quality_cases.json#L1200) | 1200 | `"        }"` | — |
+| [SRC-90FAA34ADE-L001201](../../tests/fixtures/answer_quality_cases.json#L1201) | 1201 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001202](../../tests/fixtures/answer_quality_cases.json#L1202) | 1202 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001203](../../tests/fixtures/answer_quality_cases.json#L1203) | 1203 | `"        \"Claims screenshot proves a current official rate\","` | — |
+| [SRC-90FAA34ADE-L001204](../../tests/fixtures/answer_quality_cases.json#L1204) | 1204 | `"        \"Provides unverified rate as confirmed\""` | — |
+| [SRC-90FAA34ADE-L001205](../../tests/fixtures/answer_quality_cases.json#L1205) | 1205 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001206](../../tests/fixtures/answer_quality_cases.json#L1206) | 1206 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001207](../../tests/fixtures/answer_quality_cases.json#L1207) | 1207 | `"    },"` | — |
+| [SRC-90FAA34ADE-L001208](../../tests/fixtures/answer_quality_cases.json#L1208) | 1208 | `"    {"` | — |
+| [SRC-90FAA34ADE-L001209](../../tests/fixtures/answer_quality_cases.json#L1209) | 1209 | `"      \"case_id\": \"AQ-041\","` | — |
+| [SRC-90FAA34ADE-L001210](../../tests/fixtures/answer_quality_cases.json#L1210) | 1210 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L001211](../../tests/fixtures/answer_quality_cases.json#L1211) | 1211 | `"      \"language\": \"mixed\","` | — |
+| [SRC-90FAA34ADE-L001212](../../tests/fixtures/answer_quality_cases.json#L1212) | 1212 | `"      \"question\": \"Compare Cairo and Alexandria for a two-day family trip: transport, likely weather, kid-friendly activities, and one caveat for each city.\","` | — |
+| [SRC-90FAA34ADE-L001213](../../tests/fixtures/answer_quality_cases.json#L1213) | 1213 | `"      \"expected_strategy\": \"web_search\","` | — |
 | [SRC-90FAA34ADE-L001214](../../tests/fixtures/answer_quality_cases.json#L1214) | 1214 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L001215](../../tests/fixtures/answer_quality_cases.json#L1215) | 1215 | `"        \"Addresses all four requested dimensions for both cities or states which could not be verified\","` | — |
 | [SRC-90FAA34ADE-L001216](../../tests/fixtures/answer_quality_cases.json#L1216) | 1216 | `"        \"Uses current sources for likely weather and labels forecasts by date\","` | — |
@@ -802,53 +852,3 @@
 | [SRC-6A7519AC10-L000175](../../tests/test_answer_quality_comparison.py#L175) | 175 | `"        mod.compare_runs(baseline, changed_question)"` | — |
 | [SRC-6A7519AC10-L000176](../../tests/test_answer_quality_comparison.py#L176) | 176 | `""` | — |
 | [SRC-6A7519AC10-L000177](../../tests/test_answer_quality_comparison.py#L177) | 177 | `""` | — |
-| [SRC-6A7519AC10-L000178](../../tests/test_answer_quality_comparison.py#L178) | 178 | `"def test_run_validation_rejects_duplicate_ids_and_invalid_latency():"` | — |
-| [SRC-6A7519AC10-L000179](../../tests/test_answer_quality_comparison.py#L179) | 179 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000180](../../tests/test_answer_quality_comparison.py#L180) | 180 | `"    run = _run("` | — |
-| [SRC-6A7519AC10-L000181](../../tests/test_answer_quality_comparison.py#L181) | 181 | `"        build_sha=\"a\" * 40,"` | — |
-| [SRC-6A7519AC10-L000182](../../tests/test_answer_quality_comparison.py#L182) | 182 | `"        results=["` | — |
-| [SRC-6A7519AC10-L000183](../../tests/test_answer_quality_comparison.py#L183) | 183 | `"            _row(\"AQ-007\", latency=-1, tool_status=\"UNKNOWN\", cost=None),"` | — |
-| [SRC-6A7519AC10-L000184](../../tests/test_answer_quality_comparison.py#L184) | 184 | `"            _row(\"AQ-007\", latency=10, tool_status=\"UNKNOWN\", cost=None),"` | — |
-| [SRC-6A7519AC10-L000185](../../tests/test_answer_quality_comparison.py#L185) | 185 | `"        ],"` | — |
-| [SRC-6A7519AC10-L000186](../../tests/test_answer_quality_comparison.py#L186) | 186 | `"    )"` | — |
-| [SRC-6A7519AC10-L000187](../../tests/test_answer_quality_comparison.py#L187) | 187 | `"    errors = mod.validate_run(run, \"run\")"` | — |
-| [SRC-6A7519AC10-L000188](../../tests/test_answer_quality_comparison.py#L188) | 188 | `"    assert any(\"duplicate case_id\" in error for error in errors)"` | — |
-| [SRC-6A7519AC10-L000189](../../tests/test_answer_quality_comparison.py#L189) | 189 | `"    assert any(\"elapsed_ms must be finite and non-negative\" in error for error in errors)"` | — |
-| [SRC-6A7519AC10-L000190](../../tests/test_answer_quality_comparison.py#L190) | 190 | `""` | — |
-| [SRC-6A7519AC10-L000191](../../tests/test_answer_quality_comparison.py#L191) | 191 | `""` | — |
-| [SRC-6A7519AC10-L000192](../../tests/test_answer_quality_comparison.py#L192) | 192 | `"def test_comparison_blocks_incomplete_required_tool_matrix_coverage():"` | — |
-| [SRC-6A7519AC10-L000193](../../tests/test_answer_quality_comparison.py#L193) | 193 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000194](../../tests/test_answer_quality_comparison.py#L194) | 194 | `"    baseline = _full_run(build_sha=\"a\" * 40, candidate=False)"` | — |
-| [SRC-6A7519AC10-L000195](../../tests/test_answer_quality_comparison.py#L195) | 195 | `"    candidate = _full_run(build_sha=\"b\" * 40, candidate=True)"` | — |
-| [SRC-6A7519AC10-L000196](../../tests/test_answer_quality_comparison.py#L196) | 196 | `"    baseline[\"results\"][0][\"required_tool_matrix_complete\"] = False"` | — |
-| [SRC-6A7519AC10-L000197](../../tests/test_answer_quality_comparison.py#L197) | 197 | `"    result = mod.compare_runs("` | — |
-| [SRC-6A7519AC10-L000198](../../tests/test_answer_quality_comparison.py#L198) | 198 | `"        baseline,"` | — |
-| [SRC-6A7519AC10-L000199](../../tests/test_answer_quality_comparison.py#L199) | 199 | `"        candidate,"` | — |
-| [SRC-6A7519AC10-L000200](../../tests/test_answer_quality_comparison.py#L200) | 200 | `"        corpus=mod.load_json_object(CORPUS_PATH),"` | — |
-| [SRC-6A7519AC10-L000201](../../tests/test_answer_quality_comparison.py#L201) | 201 | `"        baseline_reviews=_reviews(correct=2, supported_citations=1),"` | — |
-| [SRC-6A7519AC10-L000202](../../tests/test_answer_quality_comparison.py#L202) | 202 | `"        candidate_reviews=_reviews(correct=3, supported_citations=2),"` | — |
-| [SRC-6A7519AC10-L000203](../../tests/test_answer_quality_comparison.py#L203) | 203 | `"    )"` | — |
-| [SRC-6A7519AC10-L000204](../../tests/test_answer_quality_comparison.py#L204) | 204 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
-| [SRC-6A7519AC10-L000205](../../tests/test_answer_quality_comparison.py#L205) | 205 | `"    assert \"baseline_required_tool_matrix_incomplete\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000206](../../tests/test_answer_quality_comparison.py#L206) | 206 | `"    assert result[\"baseline\"][\"metrics\"][\"tool_usage\"][\"required_tool_matrix_coverage\"][\"score\"] < 1.0"` | — |
-| [SRC-6A7519AC10-L000207](../../tests/test_answer_quality_comparison.py#L207) | 207 | `""` | — |
-| [SRC-6A7519AC10-L000208](../../tests/test_answer_quality_comparison.py#L208) | 208 | `""` | — |
-| [SRC-6A7519AC10-L000209](../../tests/test_answer_quality_comparison.py#L209) | 209 | `"def test_comparison_blocks_partially_reconciled_request_costs():"` | — |
-| [SRC-6A7519AC10-L000210](../../tests/test_answer_quality_comparison.py#L210) | 210 | `"    mod = load_module()"` | — |
-| [SRC-6A7519AC10-L000211](../../tests/test_answer_quality_comparison.py#L211) | 211 | `"    baseline = _full_run(build_sha=\"a\" * 40, candidate=False)"` | — |
-| [SRC-6A7519AC10-L000212](../../tests/test_answer_quality_comparison.py#L212) | 212 | `"    candidate = _full_run(build_sha=\"b\" * 40, candidate=True)"` | — |
-| [SRC-6A7519AC10-L000213](../../tests/test_answer_quality_comparison.py#L213) | 213 | `"    baseline[\"results\"][0][\"request_cost_usd\"] = None"` | — |
-| [SRC-6A7519AC10-L000214](../../tests/test_answer_quality_comparison.py#L214) | 214 | `"    baseline[\"results\"][0][\"request_cost_status\"] = \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
-| [SRC-6A7519AC10-L000215](../../tests/test_answer_quality_comparison.py#L215) | 215 | `"    result = mod.compare_runs("` | — |
-| [SRC-6A7519AC10-L000216](../../tests/test_answer_quality_comparison.py#L216) | 216 | `"        baseline,"` | — |
-| [SRC-6A7519AC10-L000217](../../tests/test_answer_quality_comparison.py#L217) | 217 | `"        candidate,"` | — |
-| [SRC-6A7519AC10-L000218](../../tests/test_answer_quality_comparison.py#L218) | 218 | `"        corpus=mod.load_json_object(CORPUS_PATH),"` | — |
-| [SRC-6A7519AC10-L000219](../../tests/test_answer_quality_comparison.py#L219) | 219 | `"        baseline_reviews=_reviews(correct=2, supported_citations=1),"` | — |
-| [SRC-6A7519AC10-L000220](../../tests/test_answer_quality_comparison.py#L220) | 220 | `"        candidate_reviews=_reviews(correct=3, supported_citations=2),"` | — |
-| [SRC-6A7519AC10-L000221](../../tests/test_answer_quality_comparison.py#L221) | 221 | `"    )"` | — |
-| [SRC-6A7519AC10-L000222](../../tests/test_answer_quality_comparison.py#L222) | 222 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
-| [SRC-6A7519AC10-L000223](../../tests/test_answer_quality_comparison.py#L223) | 223 | `"    assert \"baseline_complete_request_cost_missing_or_partial\" in result[\"acceptance_blockers\"]"` | — |
-| [SRC-6A7519AC10-L000224](../../tests/test_answer_quality_comparison.py#L224) | 224 | `"    assert result[\"baseline\"][\"metrics\"][\"provider_reported_model_cost\"][\"complete_request_cost_usd\"] is None"` | — |
-| [SRC-6A7519AC10-L000225](../../tests/test_answer_quality_comparison.py#L225) | 225 | `""` | — |
-| [SRC-6A7519AC10-L000226](../../tests/test_answer_quality_comparison.py#L226) | 226 | `""` | — |
-| [SRC-6A7519AC10-L000227](../../tests/test_answer_quality_comparison.py#L227) | 227 | `"def test_quality_comparison_rejects_incomplete_human_review_coverage():"` | — |

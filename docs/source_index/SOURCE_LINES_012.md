@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001933 إلى SRC-1AE03B9EC3-L002732
+- النطاق: SRC-1AE03B9EC3-L001883 إلى SRC-1AE03B9EC3-L002682
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001883](../../agents/web_agent.py#L1883) | 1883 | `"                                    \"search_query\": query,"` | — |
+| [SRC-1AE03B9EC3-L001884](../../agents/web_agent.py#L1884) | 1884 | `"                                    \"published_at\": _clean_text(str(post.get(\"created_utc\") or \"\"), 100),"` | — |
+| [SRC-1AE03B9EC3-L001885](../../agents/web_agent.py#L1885) | 1885 | `"                                })"` | — |
+| [SRC-1AE03B9EC3-L001886](../../agents/web_agent.py#L1886) | 1886 | `"                        else:"` | — |
+| [SRC-1AE03B9EC3-L001887](../../agents/web_agent.py#L1887) | 1887 | `"                            warnings.append("` | — |
+| [SRC-1AE03B9EC3-L001888](../../agents/web_agent.py#L1888) | 1888 | `"                                f\"Reddit OAuth search unavailable (HTTP {search_response.status_code}).\""` | — |
+| [SRC-1AE03B9EC3-L001889](../../agents/web_agent.py#L1889) | 1889 | `"                            )"` | — |
+| [SRC-1AE03B9EC3-L001890](../../agents/web_agent.py#L1890) | 1890 | `"                    else:"` | — |
+| [SRC-1AE03B9EC3-L001891](../../agents/web_agent.py#L1891) | 1891 | `"                        warnings.append(\"Reddit OAuth did not return an access token.\")"` | — |
+| [SRC-1AE03B9EC3-L001892](../../agents/web_agent.py#L1892) | 1892 | `"                else:"` | — |
+| [SRC-1AE03B9EC3-L001893](../../agents/web_agent.py#L1893) | 1893 | `"                    warnings.append("` | — |
+| [SRC-1AE03B9EC3-L001894](../../agents/web_agent.py#L1894) | 1894 | `"                        f\"Reddit OAuth authentication unavailable (HTTP {token_response.status_code}).\""` | — |
+| [SRC-1AE03B9EC3-L001895](../../agents/web_agent.py#L1895) | 1895 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L001896](../../agents/web_agent.py#L1896) | 1896 | `"            except (httpx.HTTPError, OSError, ValueError, KeyError, TypeError):"` | — |
+| [SRC-1AE03B9EC3-L001897](../../agents/web_agent.py#L1897) | 1897 | `"                warnings.append(\"Reddit OAuth search failed for this request.\")"` | — |
+| [SRC-1AE03B9EC3-L001898](../../agents/web_agent.py#L1898) | 1898 | `""` | — |
+| [SRC-1AE03B9EC3-L001899](../../agents/web_agent.py#L1899) | 1899 | `"        if \"reddit\" in platforms and not any("` | — |
+| [SRC-1AE03B9EC3-L001900](../../agents/web_agent.py#L1900) | 1900 | `"            row.get(\"provider\") == \"reddit_oauth_api\" for row in results"` | — |
+| [SRC-1AE03B9EC3-L001901](../../agents/web_agent.py#L1901) | 1901 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L001902](../../agents/web_agent.py#L1902) | 1902 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L001903](../../agents/web_agent.py#L1903) | 1903 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L001904](../../agents/web_agent.py#L1904) | 1904 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001905](../../agents/web_agent.py#L1905) | 1905 | `"                    \"https://www.reddit.com/search.rss\","` | — |
+| [SRC-1AE03B9EC3-L001906](../../agents/web_agent.py#L1906) | 1906 | `"                    params={\"q\": query, \"sort\": \"relevance\", \"t\": \"all\", \"limit\": \"8\"},"` | — |
+| [SRC-1AE03B9EC3-L001907](../../agents/web_agent.py#L1907) | 1907 | `"                    headers=headers,"` | — |
+| [SRC-1AE03B9EC3-L001908](../../agents/web_agent.py#L1908) | 1908 | `"                    timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001909](../../agents/web_agent.py#L1909) | 1909 | `"                    follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L001910](../../agents/web_agent.py#L1910) | 1910 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001911](../../agents/web_agent.py#L1911) | 1911 | `"                if response.status_code == 200:"` | — |
+| [SRC-1AE03B9EC3-L001912](../../agents/web_agent.py#L1912) | 1912 | `"                    root = ET.fromstring(response.content)"` | — |
+| [SRC-1AE03B9EC3-L001913](../../agents/web_agent.py#L1913) | 1913 | `"                    for item in root.iter():"` | — |
+| [SRC-1AE03B9EC3-L001914](../../agents/web_agent.py#L1914) | 1914 | `"                        if item.tag.rsplit(\"}\", 1)[-1] != \"item\":"` | — |
+| [SRC-1AE03B9EC3-L001915](../../agents/web_agent.py#L1915) | 1915 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L001916](../../agents/web_agent.py#L1916) | 1916 | `"                        fields = {"` | — |
+| [SRC-1AE03B9EC3-L001917](../../agents/web_agent.py#L1917) | 1917 | `"                            child.tag.rsplit(\"}\", 1)[-1]: (child.text or \"\")"` | — |
+| [SRC-1AE03B9EC3-L001918](../../agents/web_agent.py#L1918) | 1918 | `"                            for child in item"` | — |
+| [SRC-1AE03B9EC3-L001919](../../agents/web_agent.py#L1919) | 1919 | `"                        }"` | — |
+| [SRC-1AE03B9EC3-L001920](../../agents/web_agent.py#L1920) | 1920 | `"                        url = _public_http_url(fields.get(\"link\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L001921](../../agents/web_agent.py#L1921) | 1921 | `"                        if not url or \"reddit.com/\" not in url:"` | — |
+| [SRC-1AE03B9EC3-L001922](../../agents/web_agent.py#L1922) | 1922 | `"                            continue"` | — |
+| [SRC-1AE03B9EC3-L001923](../../agents/web_agent.py#L1923) | 1923 | `"                        description = BeautifulSoup("` | — |
+| [SRC-1AE03B9EC3-L001924](../../agents/web_agent.py#L1924) | 1924 | `"                            fields.get(\"description\", \"\"), \"html.parser\""` | — |
+| [SRC-1AE03B9EC3-L001925](../../agents/web_agent.py#L1925) | 1925 | `"                        ).get_text(\" \", strip=True)"` | — |
+| [SRC-1AE03B9EC3-L001926](../../agents/web_agent.py#L1926) | 1926 | `"                        results.append({"` | — |
+| [SRC-1AE03B9EC3-L001927](../../agents/web_agent.py#L1927) | 1927 | `"                            \"title\": _clean_text(fields.get(\"title\", \"\"), 300),"` | — |
+| [SRC-1AE03B9EC3-L001928](../../agents/web_agent.py#L1928) | 1928 | `"                            \"url\": url,"` | — |
+| [SRC-1AE03B9EC3-L001929](../../agents/web_agent.py#L1929) | 1929 | `"                            \"snippet\": _clean_text(description, 1200),"` | — |
+| [SRC-1AE03B9EC3-L001930](../../agents/web_agent.py#L1930) | 1930 | `"                            \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L001931](../../agents/web_agent.py#L1931) | 1931 | `"                            \"page_fetched\": False,"` | — |
+| [SRC-1AE03B9EC3-L001932](../../agents/web_agent.py#L1932) | 1932 | `"                            \"provider\": \"reddit_public_rss\","` | — |
 | [SRC-1AE03B9EC3-L001933](../../agents/web_agent.py#L1933) | 1933 | `"                            \"provider_rank\": len(["` | — |
 | [SRC-1AE03B9EC3-L001934](../../agents/web_agent.py#L1934) | 1934 | `"                                row for row in results"` | — |
 | [SRC-1AE03B9EC3-L001935](../../agents/web_agent.py#L1935) | 1935 | `"                                if row.get(\"provider\") == \"reddit_public_rss\""` | — |
@@ -766,53 +816,3 @@
 | [SRC-1AE03B9EC3-L002680](../../agents/web_agent.py#L2680) | 2680 | `"                    if candidate_indexes:"` | — |
 | [SRC-1AE03B9EC3-L002681](../../agents/web_agent.py#L2681) | 2681 | `"                        candidate = criterion_candidates[int(candidate_indexes[0]) - 1]"` | — |
 | [SRC-1AE03B9EC3-L002682](../../agents/web_agent.py#L2682) | 2682 | `"                if candidate is None:"` | — |
-| [SRC-1AE03B9EC3-L002683](../../agents/web_agent.py#L2683) | 2683 | `"                    candidate = next("` | — |
-| [SRC-1AE03B9EC3-L002684](../../agents/web_agent.py#L2684) | 2684 | `"                        ("` | — |
-| [SRC-1AE03B9EC3-L002685](../../agents/web_agent.py#L2685) | 2685 | `"                            item for item in globally_fused"` | — |
-| [SRC-1AE03B9EC3-L002686](../../agents/web_agent.py#L2686) | 2686 | `"                            if query_key in {"` | — |
-| [SRC-1AE03B9EC3-L002687](../../agents/web_agent.py#L2687) | 2687 | `"                                re.sub(r\"\\s+\", \" \", str(value)).strip().casefold()"` | — |
-| [SRC-1AE03B9EC3-L002688](../../agents/web_agent.py#L2688) | 2688 | `"                                for value in item.get(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L002689](../../agents/web_agent.py#L2689) | 2689 | `"                            }"` | — |
-| [SRC-1AE03B9EC3-L002690](../../agents/web_agent.py#L2690) | 2690 | `"                        ),"` | — |
-| [SRC-1AE03B9EC3-L002691](../../agents/web_agent.py#L2691) | 2691 | `"                        criterion_candidates[0] if criterion_candidates else None,"` | — |
-| [SRC-1AE03B9EC3-L002692](../../agents/web_agent.py#L2692) | 2692 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L002693](../../agents/web_agent.py#L2693) | 2693 | `"                if not candidate:"` | — |
-| [SRC-1AE03B9EC3-L002694](../../agents/web_agent.py#L2694) | 2694 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L002695](../../agents/web_agent.py#L2695) | 2695 | `"                source_key = self._normalized_source_url_key(candidate.get(\"url\", \"\"))"` | — |
-| [SRC-1AE03B9EC3-L002696](../../agents/web_agent.py#L2696) | 2696 | `"                if not source_key:"` | — |
-| [SRC-1AE03B9EC3-L002697](../../agents/web_agent.py#L2697) | 2697 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L002698](../../agents/web_agent.py#L2698) | 2698 | `"                selected = ("` | — |
-| [SRC-1AE03B9EC3-L002699](../../agents/web_agent.py#L2699) | 2699 | `"                    pinned_by_url.get(source_key)"` | — |
-| [SRC-1AE03B9EC3-L002700](../../agents/web_agent.py#L2700) | 2700 | `"                    or globally_fused_by_url.get(source_key)"` | — |
-| [SRC-1AE03B9EC3-L002701](../../agents/web_agent.py#L2701) | 2701 | `"                    or candidate"` | — |
-| [SRC-1AE03B9EC3-L002702](../../agents/web_agent.py#L2702) | 2702 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L002703](../../agents/web_agent.py#L2703) | 2703 | `"                if source_key not in pinned_by_url:"` | — |
-| [SRC-1AE03B9EC3-L002704](../../agents/web_agent.py#L2704) | 2704 | `"                    pinned_by_url[source_key] = selected"` | — |
-| [SRC-1AE03B9EC3-L002705](../../agents/web_agent.py#L2705) | 2705 | `"                    pinned_sources.append(selected)"` | — |
-| [SRC-1AE03B9EC3-L002706](../../agents/web_agent.py#L2706) | 2706 | `"                selected_queries = selected.setdefault(\"queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L002707](../../agents/web_agent.py#L2707) | 2707 | `"                if target_query not in selected_queries:"` | — |
-| [SRC-1AE03B9EC3-L002708](../../agents/web_agent.py#L2708) | 2708 | `"                    selected_queries.append(target_query)"` | — |
-| [SRC-1AE03B9EC3-L002709](../../agents/web_agent.py#L2709) | 2709 | `"            pinned_keys = set(pinned_by_url)"` | — |
-| [SRC-1AE03B9EC3-L002710](../../agents/web_agent.py#L2710) | 2710 | `"            sources = ("` | — |
-| [SRC-1AE03B9EC3-L002711](../../agents/web_agent.py#L2711) | 2711 | `"                pinned_sources"` | — |
-| [SRC-1AE03B9EC3-L002712](../../agents/web_agent.py#L2712) | 2712 | `"                + ["` | — |
-| [SRC-1AE03B9EC3-L002713](../../agents/web_agent.py#L2713) | 2713 | `"                    item for item in globally_fused"` | — |
-| [SRC-1AE03B9EC3-L002714](../../agents/web_agent.py#L2714) | 2714 | `"                    if self._normalized_source_url_key(item.get(\"url\", \"\")) not in pinned_keys"` | — |
-| [SRC-1AE03B9EC3-L002715](../../agents/web_agent.py#L2715) | 2715 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L002716](../../agents/web_agent.py#L2716) | 2716 | `"            )[:MAX_SEARCH_RESULTS]"` | — |
-| [SRC-1AE03B9EC3-L002717](../../agents/web_agent.py#L2717) | 2717 | `""` | — |
-| [SRC-1AE03B9EC3-L002718](../../agents/web_agent.py#L2718) | 2718 | `"        for source in sources:"` | — |
-| [SRC-1AE03B9EC3-L002719](../../agents/web_agent.py#L2719) | 2719 | `"            source.setdefault(\"page_fetch_status\", \"not_attempted\")"` | — |
-| [SRC-1AE03B9EC3-L002720](../../agents/web_agent.py#L2720) | 2720 | `"        # Fetch page text only for the best few public URLs; do it concurrently with strict bounds."` | — |
-| [SRC-1AE03B9EC3-L002721](../../agents/web_agent.py#L2721) | 2721 | `"        fetch_targets = sources[:MAX_FETCHED_PAGES]"` | — |
-| [SRC-1AE03B9EC3-L002722](../../agents/web_agent.py#L2722) | 2722 | `"        for source in fetch_targets:"` | — |
-| [SRC-1AE03B9EC3-L002723](../../agents/web_agent.py#L2723) | 2723 | `"            source[\"page_fetch_status\"] = \"attempted\""` | — |
-| [SRC-1AE03B9EC3-L002724](../../agents/web_agent.py#L2724) | 2724 | `"        fetched_count = 0"` | — |
-| [SRC-1AE03B9EC3-L002725](../../agents/web_agent.py#L2725) | 2725 | `"        if fetch_targets:"` | — |
-| [SRC-1AE03B9EC3-L002726](../../agents/web_agent.py#L2726) | 2726 | `"            with ThreadPoolExecutor(max_workers=min(4, len(fetch_targets))) as pool:"` | — |
-| [SRC-1AE03B9EC3-L002727](../../agents/web_agent.py#L2727) | 2727 | `"                futures = {"` | — |
-| [SRC-1AE03B9EC3-L002728](../../agents/web_agent.py#L2728) | 2728 | `"                    pool.submit(self._fetch_page, source[\"url\"]): source"` | — |
-| [SRC-1AE03B9EC3-L002729](../../agents/web_agent.py#L2729) | 2729 | `"                    for source in fetch_targets"` | — |
-| [SRC-1AE03B9EC3-L002730](../../agents/web_agent.py#L2730) | 2730 | `"                }"` | — |
-| [SRC-1AE03B9EC3-L002731](../../agents/web_agent.py#L2731) | 2731 | `"                for future in as_completed(futures):"` | — |
-| [SRC-1AE03B9EC3-L002732](../../agents/web_agent.py#L2732) | 2732 | `"                    source = futures[future]"` | — |

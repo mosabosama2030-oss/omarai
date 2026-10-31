@@ -4,9 +4,40 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000029 إلى SRC-59CF4B7DE8-L000828
+- النطاق: SRC-3D565C3B85-L000127 إلى SRC-59CF4B7DE8-L000778
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-3D565C3B85 — [agents/requirement_evidence.py](../../agents/requirement_evidence.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-3D565C3B85-L000127](../../agents/requirement_evidence.py#L127) | 127 | `"            status = \"no_candidate_evidence_found\""` | — |
+| [SRC-3D565C3B85-L000128](../../agents/requirement_evidence.py#L128) | 128 | `"        else:"` | — |
+| [SRC-3D565C3B85-L000129](../../agents/requirement_evidence.py#L129) | 129 | `"            status = \"query_not_available\""` | — |
+| [SRC-3D565C3B85-L000130](../../agents/requirement_evidence.py#L130) | 130 | `""` | — |
+| [SRC-3D565C3B85-L000131](../../agents/requirement_evidence.py#L131) | 131 | `"        ledger.append({"` | — |
+| [SRC-3D565C3B85-L000132](../../agents/requirement_evidence.py#L132) | 132 | `"            \"target\": target_text,"` | — |
+| [SRC-3D565C3B85-L000133](../../agents/requirement_evidence.py#L133) | 133 | `"            \"targeted_query\": targeted_query or None,"` | — |
+| [SRC-3D565C3B85-L000134](../../agents/requirement_evidence.py#L134) | 134 | `"            \"targeted_query_status\": ("` | — |
+| [SRC-3D565C3B85-L000135](../../agents/requirement_evidence.py#L135) | 135 | `"                \"linked_to_returned_sources\" if query_result_indexes"` | — |
+| [SRC-3D565C3B85-L000136](../../agents/requirement_evidence.py#L136) | 136 | `"                else \"no_linked_source_record\""` | — |
+| [SRC-3D565C3B85-L000137](../../agents/requirement_evidence.py#L137) | 137 | `"            ),"` | — |
+| [SRC-3D565C3B85-L000138](../../agents/requirement_evidence.py#L138) | 138 | `"            \"query_result_source_indexes\": query_result_indexes[:12],"` | — |
+| [SRC-3D565C3B85-L000139](../../agents/requirement_evidence.py#L139) | 139 | `"            \"candidate_source_indexes\": ["` | — |
+| [SRC-3D565C3B85-L000140](../../agents/requirement_evidence.py#L140) | 140 | `"                item[\"source_index\"] for item in candidate_sources"` | — |
+| [SRC-3D565C3B85-L000141](../../agents/requirement_evidence.py#L141) | 141 | `"            ],"` | — |
+| [SRC-3D565C3B85-L000142](../../agents/requirement_evidence.py#L142) | 142 | `"            \"candidate_sources\": candidate_sources[:8],"` | — |
+| [SRC-3D565C3B85-L000143](../../agents/requirement_evidence.py#L143) | 143 | `"            \"status\": status,"` | — |
+| [SRC-3D565C3B85-L000144](../../agents/requirement_evidence.py#L144) | 144 | `"            \"method\": \"targeted_query_provenance_plus_lexical_source_screen\","` | — |
+| [SRC-3D565C3B85-L000145](../../agents/requirement_evidence.py#L145) | 145 | `"            \"semantic_verification\": False,"` | — |
+| [SRC-3D565C3B85-L000146](../../agents/requirement_evidence.py#L146) | 146 | `"            \"source_entailment_verified\": False,"` | — |
+| [SRC-3D565C3B85-L000147](../../agents/requirement_evidence.py#L147) | 147 | `"        })"` | — |
+| [SRC-3D565C3B85-L000148](../../agents/requirement_evidence.py#L148) | 148 | `"    return ledger"` | — |
 ## الوكيل والمنطق
 
 ### FILE-59CF4B7DE8 — [agents/research.py](../../agents/research.py#L1)
@@ -16,6 +47,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000001](../../agents/research.py#L1) | 1 | `"\"\"\"Research planning, domain targeting, and multi-query source ranking."` | — |
+| [SRC-59CF4B7DE8-L000002](../../agents/research.py#L2) | 2 | `""` | — |
+| [SRC-59CF4B7DE8-L000003](../../agents/research.py#L3) | 3 | `"This module is deterministic by design: the language model may propose a plan,"` | — |
+| [SRC-59CF4B7DE8-L000004](../../agents/research.py#L4) | 4 | `"but all queries, result counts and source records are validated before use."` | — |
+| [SRC-59CF4B7DE8-L000005](../../agents/research.py#L5) | 5 | `"\"\"\""` | — |
+| [SRC-59CF4B7DE8-L000006](../../agents/research.py#L6) | 6 | `"from __future__ import annotations"` | — |
+| [SRC-59CF4B7DE8-L000007](../../agents/research.py#L7) | 7 | `""` | — |
+| [SRC-59CF4B7DE8-L000008](../../agents/research.py#L8) | 8 | `"import ipaddress"` | — |
+| [SRC-59CF4B7DE8-L000009](../../agents/research.py#L9) | 9 | `"import re"` | — |
+| [SRC-59CF4B7DE8-L000010](../../agents/research.py#L10) | 10 | `"from datetime import UTC, datetime, timedelta"` | — |
+| [SRC-59CF4B7DE8-L000011](../../agents/research.py#L11) | 11 | `"from email.utils import parsedate_to_datetime"` | — |
+| [SRC-59CF4B7DE8-L000012](../../agents/research.py#L12) | 12 | `"from typing import Any"` | — |
+| [SRC-59CF4B7DE8-L000013](../../agents/research.py#L13) | 13 | `"from urllib.parse import urlparse"` | — |
+| [SRC-59CF4B7DE8-L000014](../../agents/research.py#L14) | 14 | `""` | — |
+| [SRC-59CF4B7DE8-L000015](../../agents/research.py#L15) | 15 | `"import tldextract"` | — |
+| [SRC-59CF4B7DE8-L000016](../../agents/research.py#L16) | 16 | `""` | — |
+| [SRC-59CF4B7DE8-L000017](../../agents/research.py#L17) | 17 | `"from agents.aspect_planning import extract_aspects"` | — |
+| [SRC-59CF4B7DE8-L000018](../../agents/research.py#L18) | 18 | `"from agents.intent_router import resolve_followup_query"` | — |
+| [SRC-59CF4B7DE8-L000019](../../agents/research.py#L19) | 19 | `""` | — |
+| [SRC-59CF4B7DE8-L000020](../../agents/research.py#L20) | 20 | `"MAX_PLAN_QUERIES = 8"` | — |
+| [SRC-59CF4B7DE8-L000021](../../agents/research.py#L21) | 21 | `"MAX_QUERY_CHARS = 240"` | — |
+| [SRC-59CF4B7DE8-L000022](../../agents/research.py#L22) | 22 | `"MAX_FUSED_RESULTS = 18"` | — |
+| [SRC-59CF4B7DE8-L000023](../../agents/research.py#L23) | 23 | `""` | — |
+| [SRC-59CF4B7DE8-L000024](../../agents/research.py#L24) | 24 | `""` | — |
+| [SRC-59CF4B7DE8-L000025](../../agents/research.py#L25) | 25 | `"# Use the Public Suffix List snapshot bundled with tldextract; never fetch it at"` | — |
+| [SRC-59CF4B7DE8-L000026](../../agents/research.py#L26) | 26 | `"# runtime. Including private suffixes keeps tenant-hosted sites (e.g. github.io)"` | — |
+| [SRC-59CF4B7DE8-L000027](../../agents/research.py#L27) | 27 | `"# separate, while subdomains belonging to one registrable site share one identity."` | — |
+| [SRC-59CF4B7DE8-L000028](../../agents/research.py#L28) | 28 | `"_DOMAIN_EXTRACTOR = tldextract.TLDExtract("` | — |
 | [SRC-59CF4B7DE8-L000029](../../agents/research.py#L29) | 29 | `"    suffix_list_urls=(),"` | — |
 | [SRC-59CF4B7DE8-L000030](../../agents/research.py#L30) | 30 | `"    include_psl_private_domains=True,"` | — |
 | [SRC-59CF4B7DE8-L000031](../../agents/research.py#L31) | 31 | `")"` | — |
@@ -766,53 +825,3 @@
 | [SRC-59CF4B7DE8-L000776](../../agents/research.py#L776) | 776 | `""` | — |
 | [SRC-59CF4B7DE8-L000777](../../agents/research.py#L777) | 777 | `""` | — |
 | [SRC-59CF4B7DE8-L000778](../../agents/research.py#L778) | 778 | `""` | — |
-| [SRC-59CF4B7DE8-L000779](../../agents/research.py#L779) | 779 | `"# ---------------------------------------------------------------------------"` | — |
-| [SRC-59CF4B7DE8-L000780](../../agents/research.py#L780) | 780 | `"# Evidence-aware helpers"` | — |
-| [SRC-59CF4B7DE8-L000781](../../agents/research.py#L781) | 781 | `"# ---------------------------------------------------------------------------"` | — |
-| [SRC-59CF4B7DE8-L000782](../../agents/research.py#L782) | 782 | `""` | — |
-| [SRC-59CF4B7DE8-L000783](../../agents/research.py#L783) | 783 | `"_RELEVANCE_STOPWORDS = {"` | — |
-| [SRC-59CF4B7DE8-L000784](../../agents/research.py#L784) | 784 | `"    \"the\", \"a\", \"an\", \"of\", \"in\", \"on\", \"at\", \"to\", \"for\","` | — |
-| [SRC-59CF4B7DE8-L000785](../../agents/research.py#L785) | 785 | `"    \"is\", \"are\", \"was\", \"were\", \"be\", \"been\", \"being\","` | — |
-| [SRC-59CF4B7DE8-L000786](../../agents/research.py#L786) | 786 | `"    \"and\", \"or\", \"but\", \"not\", \"with\", \"without\","` | — |
-| [SRC-59CF4B7DE8-L000787](../../agents/research.py#L787) | 787 | `"    \"this\", \"that\", \"these\", \"those\", \"it\", \"its\","` | — |
-| [SRC-59CF4B7DE8-L000788](../../agents/research.py#L788) | 788 | `"}"` | — |
-| [SRC-59CF4B7DE8-L000789](../../agents/research.py#L789) | 789 | `""` | — |
-| [SRC-59CF4B7DE8-L000790](../../agents/research.py#L790) | 790 | `"_OFFICIAL_CLASSES = {\"government\", \"education\", \"official\"}"` | — |
-| [SRC-59CF4B7DE8-L000791](../../agents/research.py#L791) | 791 | `""` | — |
-| [SRC-59CF4B7DE8-L000792](../../agents/research.py#L792) | 792 | `""` | — |
-| [SRC-59CF4B7DE8-L000793](../../agents/research.py#L793) | 793 | `"def _tokenize(text: str) -> set:"` | — |
-| [SRC-59CF4B7DE8-L000794](../../agents/research.py#L794) | 794 | `"    if not text:"` | — |
-| [SRC-59CF4B7DE8-L000795](../../agents/research.py#L795) | 795 | `"        return set()"` | — |
-| [SRC-59CF4B7DE8-L000796](../../agents/research.py#L796) | 796 | `"    norm = _normalize_arabic(text.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000797](../../agents/research.py#L797) | 797 | `"    tokens = re.findall(r\"\\w+\", norm, flags=re.UNICODE)"` | — |
-| [SRC-59CF4B7DE8-L000798](../../agents/research.py#L798) | 798 | `"    return {t for t in tokens if len(t) >= 3 and t not in _RELEVANCE_STOPWORDS}"` | — |
-| [SRC-59CF4B7DE8-L000799](../../agents/research.py#L799) | 799 | `""` | — |
-| [SRC-59CF4B7DE8-L000800](../../agents/research.py#L800) | 800 | `""` | — |
-| [SRC-59CF4B7DE8-L000801](../../agents/research.py#L801) | 801 | `"def source_relevance_score(src, query: str) -> dict:"` | — |
-| [SRC-59CF4B7DE8-L000802](../../agents/research.py#L802) | 802 | `"    if not isinstance(src, dict):"` | — |
-| [SRC-59CF4B7DE8-L000803](../../agents/research.py#L803) | 803 | `"        return {\"accepted\": False, \"score\": 0, \"reason\": \"malformed\"}"` | — |
-| [SRC-59CF4B7DE8-L000804](../../agents/research.py#L804) | 804 | `""` | — |
-| [SRC-59CF4B7DE8-L000805](../../agents/research.py#L805) | 805 | `"    title = str(src.get(\"title\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000806](../../agents/research.py#L806) | 806 | `"    snippet = str(src.get(\"snippet\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000807](../../agents/research.py#L807) | 807 | `"    page_text = str(src.get(\"page_text\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000808](../../agents/research.py#L808) | 808 | `"    source_class = str(src.get(\"source_class\") or \"general\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000809](../../agents/research.py#L809) | 809 | `""` | — |
-| [SRC-59CF4B7DE8-L000810](../../agents/research.py#L810) | 810 | `"    q_tokens = _tokenize(query)"` | — |
-| [SRC-59CF4B7DE8-L000811](../../agents/research.py#L811) | 811 | `"    if not q_tokens:"` | — |
-| [SRC-59CF4B7DE8-L000812](../../agents/research.py#L812) | 812 | `"        return {\"accepted\": False, \"score\": 0, \"reason\": \"no_query_tokens\"}"` | — |
-| [SRC-59CF4B7DE8-L000813](../../agents/research.py#L813) | 813 | `""` | — |
-| [SRC-59CF4B7DE8-L000814](../../agents/research.py#L814) | 814 | `"    t_tokens = _tokenize(title)"` | — |
-| [SRC-59CF4B7DE8-L000815](../../agents/research.py#L815) | 815 | `"    s_tokens = _tokenize(snippet)"` | — |
-| [SRC-59CF4B7DE8-L000816](../../agents/research.py#L816) | 816 | `"    p_tokens = _tokenize(page_text[:3000])"` | — |
-| [SRC-59CF4B7DE8-L000817](../../agents/research.py#L817) | 817 | `""` | — |
-| [SRC-59CF4B7DE8-L000818](../../agents/research.py#L818) | 818 | `"    title_ratio = len(q_tokens & t_tokens) / max(len(q_tokens), 1)"` | — |
-| [SRC-59CF4B7DE8-L000819](../../agents/research.py#L819) | 819 | `"    snippet_ratio = len(q_tokens & s_tokens) / max(len(q_tokens), 1)"` | — |
-| [SRC-59CF4B7DE8-L000820](../../agents/research.py#L820) | 820 | `"    page_ratio = len(q_tokens & p_tokens) / max(len(q_tokens), 1)"` | — |
-| [SRC-59CF4B7DE8-L000821](../../agents/research.py#L821) | 821 | `""` | — |
-| [SRC-59CF4B7DE8-L000822](../../agents/research.py#L822) | 822 | `"    score = int(title_ratio * 15 + snippet_ratio * 20 + page_ratio * 5)"` | — |
-| [SRC-59CF4B7DE8-L000823](../../agents/research.py#L823) | 823 | `""` | — |
-| [SRC-59CF4B7DE8-L000824](../../agents/research.py#L824) | 824 | `"    if source_class in _OFFICIAL_CLASSES:"` | — |
-| [SRC-59CF4B7DE8-L000825](../../agents/research.py#L825) | 825 | `"        if score >= 5:"` | — |
-| [SRC-59CF4B7DE8-L000826](../../agents/research.py#L826) | 826 | `"            return {\"accepted\": True, \"score\": score, \"reason\": \"accepted\"}"` | — |
-| [SRC-59CF4B7DE8-L000827](../../agents/research.py#L827) | 827 | `"        return {\"accepted\": True, \"score\": score,"` | — |
-| [SRC-59CF4B7DE8-L000828](../../agents/research.py#L828) | 828 | `"                \"reason\": \"kept_official_despite_low_overlap\"}"` | — |

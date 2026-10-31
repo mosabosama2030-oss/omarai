@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000228 إلى SRC-B3062EB677-L000309
+- النطاق: SRC-6A7519AC10-L000178 إلى SRC-B3062EB677-L000259
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,56 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000178](../../tests/test_answer_quality_comparison.py#L178) | 178 | `"def test_run_validation_rejects_duplicate_ids_and_invalid_latency():"` | — |
+| [SRC-6A7519AC10-L000179](../../tests/test_answer_quality_comparison.py#L179) | 179 | `"    mod = load_module()"` | — |
+| [SRC-6A7519AC10-L000180](../../tests/test_answer_quality_comparison.py#L180) | 180 | `"    run = _run("` | — |
+| [SRC-6A7519AC10-L000181](../../tests/test_answer_quality_comparison.py#L181) | 181 | `"        build_sha=\"a\" * 40,"` | — |
+| [SRC-6A7519AC10-L000182](../../tests/test_answer_quality_comparison.py#L182) | 182 | `"        results=["` | — |
+| [SRC-6A7519AC10-L000183](../../tests/test_answer_quality_comparison.py#L183) | 183 | `"            _row(\"AQ-007\", latency=-1, tool_status=\"UNKNOWN\", cost=None),"` | — |
+| [SRC-6A7519AC10-L000184](../../tests/test_answer_quality_comparison.py#L184) | 184 | `"            _row(\"AQ-007\", latency=10, tool_status=\"UNKNOWN\", cost=None),"` | — |
+| [SRC-6A7519AC10-L000185](../../tests/test_answer_quality_comparison.py#L185) | 185 | `"        ],"` | — |
+| [SRC-6A7519AC10-L000186](../../tests/test_answer_quality_comparison.py#L186) | 186 | `"    )"` | — |
+| [SRC-6A7519AC10-L000187](../../tests/test_answer_quality_comparison.py#L187) | 187 | `"    errors = mod.validate_run(run, \"run\")"` | — |
+| [SRC-6A7519AC10-L000188](../../tests/test_answer_quality_comparison.py#L188) | 188 | `"    assert any(\"duplicate case_id\" in error for error in errors)"` | — |
+| [SRC-6A7519AC10-L000189](../../tests/test_answer_quality_comparison.py#L189) | 189 | `"    assert any(\"elapsed_ms must be finite and non-negative\" in error for error in errors)"` | — |
+| [SRC-6A7519AC10-L000190](../../tests/test_answer_quality_comparison.py#L190) | 190 | `""` | — |
+| [SRC-6A7519AC10-L000191](../../tests/test_answer_quality_comparison.py#L191) | 191 | `""` | — |
+| [SRC-6A7519AC10-L000192](../../tests/test_answer_quality_comparison.py#L192) | 192 | `"def test_comparison_blocks_incomplete_required_tool_matrix_coverage():"` | — |
+| [SRC-6A7519AC10-L000193](../../tests/test_answer_quality_comparison.py#L193) | 193 | `"    mod = load_module()"` | — |
+| [SRC-6A7519AC10-L000194](../../tests/test_answer_quality_comparison.py#L194) | 194 | `"    baseline = _full_run(build_sha=\"a\" * 40, candidate=False)"` | — |
+| [SRC-6A7519AC10-L000195](../../tests/test_answer_quality_comparison.py#L195) | 195 | `"    candidate = _full_run(build_sha=\"b\" * 40, candidate=True)"` | — |
+| [SRC-6A7519AC10-L000196](../../tests/test_answer_quality_comparison.py#L196) | 196 | `"    baseline[\"results\"][0][\"required_tool_matrix_complete\"] = False"` | — |
+| [SRC-6A7519AC10-L000197](../../tests/test_answer_quality_comparison.py#L197) | 197 | `"    result = mod.compare_runs("` | — |
+| [SRC-6A7519AC10-L000198](../../tests/test_answer_quality_comparison.py#L198) | 198 | `"        baseline,"` | — |
+| [SRC-6A7519AC10-L000199](../../tests/test_answer_quality_comparison.py#L199) | 199 | `"        candidate,"` | — |
+| [SRC-6A7519AC10-L000200](../../tests/test_answer_quality_comparison.py#L200) | 200 | `"        corpus=mod.load_json_object(CORPUS_PATH),"` | — |
+| [SRC-6A7519AC10-L000201](../../tests/test_answer_quality_comparison.py#L201) | 201 | `"        baseline_reviews=_reviews(correct=2, supported_citations=1),"` | — |
+| [SRC-6A7519AC10-L000202](../../tests/test_answer_quality_comparison.py#L202) | 202 | `"        candidate_reviews=_reviews(correct=3, supported_citations=2),"` | — |
+| [SRC-6A7519AC10-L000203](../../tests/test_answer_quality_comparison.py#L203) | 203 | `"    )"` | — |
+| [SRC-6A7519AC10-L000204](../../tests/test_answer_quality_comparison.py#L204) | 204 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
+| [SRC-6A7519AC10-L000205](../../tests/test_answer_quality_comparison.py#L205) | 205 | `"    assert \"baseline_required_tool_matrix_incomplete\" in result[\"acceptance_blockers\"]"` | — |
+| [SRC-6A7519AC10-L000206](../../tests/test_answer_quality_comparison.py#L206) | 206 | `"    assert result[\"baseline\"][\"metrics\"][\"tool_usage\"][\"required_tool_matrix_coverage\"][\"score\"] < 1.0"` | — |
+| [SRC-6A7519AC10-L000207](../../tests/test_answer_quality_comparison.py#L207) | 207 | `""` | — |
+| [SRC-6A7519AC10-L000208](../../tests/test_answer_quality_comparison.py#L208) | 208 | `""` | — |
+| [SRC-6A7519AC10-L000209](../../tests/test_answer_quality_comparison.py#L209) | 209 | `"def test_comparison_blocks_partially_reconciled_request_costs():"` | — |
+| [SRC-6A7519AC10-L000210](../../tests/test_answer_quality_comparison.py#L210) | 210 | `"    mod = load_module()"` | — |
+| [SRC-6A7519AC10-L000211](../../tests/test_answer_quality_comparison.py#L211) | 211 | `"    baseline = _full_run(build_sha=\"a\" * 40, candidate=False)"` | — |
+| [SRC-6A7519AC10-L000212](../../tests/test_answer_quality_comparison.py#L212) | 212 | `"    candidate = _full_run(build_sha=\"b\" * 40, candidate=True)"` | — |
+| [SRC-6A7519AC10-L000213](../../tests/test_answer_quality_comparison.py#L213) | 213 | `"    baseline[\"results\"][0][\"request_cost_usd\"] = None"` | — |
+| [SRC-6A7519AC10-L000214](../../tests/test_answer_quality_comparison.py#L214) | 214 | `"    baseline[\"results\"][0][\"request_cost_status\"] = \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
+| [SRC-6A7519AC10-L000215](../../tests/test_answer_quality_comparison.py#L215) | 215 | `"    result = mod.compare_runs("` | — |
+| [SRC-6A7519AC10-L000216](../../tests/test_answer_quality_comparison.py#L216) | 216 | `"        baseline,"` | — |
+| [SRC-6A7519AC10-L000217](../../tests/test_answer_quality_comparison.py#L217) | 217 | `"        candidate,"` | — |
+| [SRC-6A7519AC10-L000218](../../tests/test_answer_quality_comparison.py#L218) | 218 | `"        corpus=mod.load_json_object(CORPUS_PATH),"` | — |
+| [SRC-6A7519AC10-L000219](../../tests/test_answer_quality_comparison.py#L219) | 219 | `"        baseline_reviews=_reviews(correct=2, supported_citations=1),"` | — |
+| [SRC-6A7519AC10-L000220](../../tests/test_answer_quality_comparison.py#L220) | 220 | `"        candidate_reviews=_reviews(correct=3, supported_citations=2),"` | — |
+| [SRC-6A7519AC10-L000221](../../tests/test_answer_quality_comparison.py#L221) | 221 | `"    )"` | — |
+| [SRC-6A7519AC10-L000222](../../tests/test_answer_quality_comparison.py#L222) | 222 | `"    assert result[\"acceptance_status\"] == \"INCOMPLETE\""` | — |
+| [SRC-6A7519AC10-L000223](../../tests/test_answer_quality_comparison.py#L223) | 223 | `"    assert \"baseline_complete_request_cost_missing_or_partial\" in result[\"acceptance_blockers\"]"` | — |
+| [SRC-6A7519AC10-L000224](../../tests/test_answer_quality_comparison.py#L224) | 224 | `"    assert result[\"baseline\"][\"metrics\"][\"provider_reported_model_cost\"][\"complete_request_cost_usd\"] is None"` | — |
+| [SRC-6A7519AC10-L000225](../../tests/test_answer_quality_comparison.py#L225) | 225 | `""` | — |
+| [SRC-6A7519AC10-L000226](../../tests/test_answer_quality_comparison.py#L226) | 226 | `""` | — |
+| [SRC-6A7519AC10-L000227](../../tests/test_answer_quality_comparison.py#L227) | 227 | `"def test_quality_comparison_rejects_incomplete_human_review_coverage():"` | — |
 | [SRC-6A7519AC10-L000228](../../tests/test_answer_quality_comparison.py#L228) | 228 | `"    mod = load_module()"` | — |
 | [SRC-6A7519AC10-L000229](../../tests/test_answer_quality_comparison.py#L229) | 229 | `"    corpus = mod.load_json_object(CORPUS_PATH)"` | — |
 | [SRC-6A7519AC10-L000230](../../tests/test_answer_quality_comparison.py#L230) | 230 | `"    partial = {"` | — |
@@ -802,53 +852,3 @@
 | [SRC-B3062EB677-L000257](../../tests/test_answer_quality_runner.py#L257) | 257 | `"                \"pipeline_completion_status\": \"completed\","` | — |
 | [SRC-B3062EB677-L000258](../../tests/test_answer_quality_runner.py#L258) | 258 | `"                \"model_calls\": [{"` | — |
 | [SRC-B3062EB677-L000259](../../tests/test_answer_quality_runner.py#L259) | 259 | `"                    \"requested_model\": \"test/model\","` | — |
-| [SRC-B3062EB677-L000260](../../tests/test_answer_quality_runner.py#L260) | 260 | `"                    \"provider_usage\": {"` | — |
-| [SRC-B3062EB677-L000261](../../tests/test_answer_quality_runner.py#L261) | 261 | `"                        \"prompt_tokens\": 10,"` | — |
-| [SRC-B3062EB677-L000262](../../tests/test_answer_quality_runner.py#L262) | 262 | `"                        \"completion_tokens\": 20,"` | — |
-| [SRC-B3062EB677-L000263](../../tests/test_answer_quality_runner.py#L263) | 263 | `"                        \"total_tokens\": 30,"` | — |
-| [SRC-B3062EB677-L000264](../../tests/test_answer_quality_runner.py#L264) | 264 | `"                        \"cost_usd\": 0.0008,"` | — |
-| [SRC-B3062EB677-L000265](../../tests/test_answer_quality_runner.py#L265) | 265 | `"                    },"` | — |
-| [SRC-B3062EB677-L000266](../../tests/test_answer_quality_runner.py#L266) | 266 | `"                }],"` | — |
-| [SRC-B3062EB677-L000267](../../tests/test_answer_quality_runner.py#L267) | 267 | `"            },"` | — |
-| [SRC-B3062EB677-L000268](../../tests/test_answer_quality_runner.py#L268) | 268 | `"            \"model_calls\": [],"` | — |
-| [SRC-B3062EB677-L000269](../../tests/test_answer_quality_runner.py#L269) | 269 | `"            \"task_understanding\": {"` | — |
-| [SRC-B3062EB677-L000270](../../tests/test_answer_quality_runner.py#L270) | 270 | `"                \"tool_execution\": {"` | — |
-| [SRC-B3062EB677-L000271](../../tests/test_answer_quality_runner.py#L271) | 271 | `"                    \"required_tools\": ["` | — |
-| [SRC-B3062EB677-L000272](../../tests/test_answer_quality_runner.py#L272) | 272 | `"                        \"web_search\","` | — |
-| [SRC-B3062EB677-L000273](../../tests/test_answer_quality_runner.py#L273) | 273 | `"                        \"page_fetch\","` | — |
-| [SRC-B3062EB677-L000274](../../tests/test_answer_quality_runner.py#L274) | 274 | `"                        \"public_social_search_if_configured\","` | — |
-| [SRC-B3062EB677-L000275](../../tests/test_answer_quality_runner.py#L275) | 275 | `"                    ],"` | — |
-| [SRC-B3062EB677-L000276](../../tests/test_answer_quality_runner.py#L276) | 276 | `"                    \"tool_status_matrix\": ["` | — |
-| [SRC-B3062EB677-L000277](../../tests/test_answer_quality_runner.py#L277) | 277 | `"                        {"` | — |
-| [SRC-B3062EB677-L000278](../../tests/test_answer_quality_runner.py#L278) | 278 | `"                            \"tool\": \"web_search\","` | — |
-| [SRC-B3062EB677-L000279](../../tests/test_answer_quality_runner.py#L279) | 279 | `"                            \"required_by_task_spec\": True,"` | — |
-| [SRC-B3062EB677-L000280](../../tests/test_answer_quality_runner.py#L280) | 280 | `"                            \"status\": \"completed_with_results\","` | — |
-| [SRC-B3062EB677-L000281](../../tests/test_answer_quality_runner.py#L281) | 281 | `"                        },"` | — |
-| [SRC-B3062EB677-L000282](../../tests/test_answer_quality_runner.py#L282) | 282 | `"                        {"` | — |
-| [SRC-B3062EB677-L000283](../../tests/test_answer_quality_runner.py#L283) | 283 | `"                            \"tool\": \"page_fetch\","` | — |
-| [SRC-B3062EB677-L000284](../../tests/test_answer_quality_runner.py#L284) | 284 | `"                            \"required_by_task_spec\": True,"` | — |
-| [SRC-B3062EB677-L000285](../../tests/test_answer_quality_runner.py#L285) | 285 | `"                            \"status\": \"attempted_no_readable_pages\","` | — |
-| [SRC-B3062EB677-L000286](../../tests/test_answer_quality_runner.py#L286) | 286 | `"                        },"` | — |
-| [SRC-B3062EB677-L000287](../../tests/test_answer_quality_runner.py#L287) | 287 | `"                    ],"` | — |
-| [SRC-B3062EB677-L000288](../../tests/test_answer_quality_runner.py#L288) | 288 | `"                },"` | — |
-| [SRC-B3062EB677-L000289](../../tests/test_answer_quality_runner.py#L289) | 289 | `"            },"` | — |
-| [SRC-B3062EB677-L000290](../../tests/test_answer_quality_runner.py#L290) | 290 | `"            \"sources\": [{\"url\": \"https://example.org\"}],"` | — |
-| [SRC-B3062EB677-L000291](../../tests/test_answer_quality_runner.py#L291) | 291 | `"        },"` | — |
-| [SRC-B3062EB677-L000292](../../tests/test_answer_quality_runner.py#L292) | 292 | `"        expected_strategy=\"web_search\","` | — |
-| [SRC-B3062EB677-L000293](../../tests/test_answer_quality_runner.py#L293) | 293 | `"        transport_ok=True,"` | — |
-| [SRC-B3062EB677-L000294](../../tests/test_answer_quality_runner.py#L294) | 294 | `"    )"` | — |
-| [SRC-B3062EB677-L000295](../../tests/test_answer_quality_runner.py#L295) | 295 | `"    assert successful_search[\"tool_status\"] == \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
-| [SRC-B3062EB677-L000296](../../tests/test_answer_quality_runner.py#L296) | 296 | `"    assert successful_search[\"source_count\"] == 1"` | — |
-| [SRC-B3062EB677-L000297](../../tests/test_answer_quality_runner.py#L297) | 297 | `"    assert successful_search[\"provider_reported_model_cost_usd\"] == 0.0008"` | — |
-| [SRC-B3062EB677-L000298](../../tests/test_answer_quality_runner.py#L298) | 298 | `"    assert successful_search[\"provider_reported_model_cost_status\"] == \"COMPLETE_FOR_RETURNED_MODEL_CALLS\""` | — |
-| [SRC-B3062EB677-L000299](../../tests/test_answer_quality_runner.py#L299) | 299 | `"    assert successful_search[\"required_tool_count\"] == 3"` | — |
-| [SRC-B3062EB677-L000300](../../tests/test_answer_quality_runner.py#L300) | 300 | `"    assert successful_search[\"required_tool_success_count\"] == 1"` | — |
-| [SRC-B3062EB677-L000301](../../tests/test_answer_quality_runner.py#L301) | 301 | `"    assert successful_search[\"required_tool_success_rate\"] == pytest.approx(0.3333)"` | — |
-| [SRC-B3062EB677-L000302](../../tests/test_answer_quality_runner.py#L302) | 302 | `"    assert successful_search[\"required_tool_matrix_complete\"] is False"` | — |
-| [SRC-B3062EB677-L000303](../../tests/test_answer_quality_runner.py#L303) | 303 | `"    assert successful_search[\"required_tool_status_metrics_status\"] == \"INCOMPLETE_TOOL_STATUS_MATRIX\""` | — |
-| [SRC-B3062EB677-L000304](../../tests/test_answer_quality_runner.py#L304) | 304 | `"    assert [item[\"tool\"] for item in successful_search[\"required_tool_statuses\"]] == ["` | — |
-| [SRC-B3062EB677-L000305](../../tests/test_answer_quality_runner.py#L305) | 305 | `"        \"web_search\", \"page_fetch\", \"public_social_search_if_configured\""` | — |
-| [SRC-B3062EB677-L000306](../../tests/test_answer_quality_runner.py#L306) | 306 | `"    ]"` | — |
-| [SRC-B3062EB677-L000307](../../tests/test_answer_quality_runner.py#L307) | 307 | `"    assert successful_search[\"required_tool_statuses\"][2][\"status\"] == \"missing_matrix_row\""` | — |
-| [SRC-B3062EB677-L000308](../../tests/test_answer_quality_runner.py#L308) | 308 | `""` | — |
-| [SRC-B3062EB677-L000309](../../tests/test_answer_quality_runner.py#L309) | 309 | `""` | — |

@@ -4,9 +4,65 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000078 إلى SRC-AFEDC2645A-L000338
+- النطاق: SRC-01E35ABC46-L000443 إلى SRC-AFEDC2645A-L000214
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-01E35ABC46 — [tests/test_research_guardrails.py](../../tests/test_research_guardrails.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-01E35ABC46-L000443](../../tests/test_research_guardrails.py#L443) | 443 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
+| [SRC-01E35ABC46-L000444](../../tests/test_research_guardrails.py#L444) | 444 | `""` | — |
+| [SRC-01E35ABC46-L000445](../../tests/test_research_guardrails.py#L445) | 445 | `""` | — |
+| [SRC-01E35ABC46-L000446](../../tests/test_research_guardrails.py#L446) | 446 | `""` | — |
+| [SRC-01E35ABC46-L000447](../../tests/test_research_guardrails.py#L447) | 447 | `"def test_current_government_office_hours_require_official_fresh_page_in_auto_mode() -> None:"` | — |
+| [SRC-01E35ABC46-L000448](../../tests/test_research_guardrails.py#L448) | 448 | `"    question = \"مواعيد عمل مكتب الجوازات بالعباسية اليوم\""` | — |
+| [SRC-01E35ABC46-L000449](../../tests/test_research_guardrails.py#L449) | 449 | `"    assert requires_official_current_government_source(question)"` | — |
+| [SRC-01E35ABC46-L000450](../../tests/test_research_guardrails.py#L450) | 450 | `"    candidates = ["` | — |
+| [SRC-01E35ABC46-L000451](../../tests/test_research_guardrails.py#L451) | 451 | `"        _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000452](../../tests/test_research_guardrails.py#L452) | 452 | `"            \"https://news.example.com/passport-hours\","` | — |
+| [SRC-01E35ABC46-L000453](../../tests/test_research_guardrails.py#L453) | 453 | `"            title=\"مواعيد الجوازات اليوم\","` | — |
+| [SRC-01E35ABC46-L000454](../../tests/test_research_guardrails.py#L454) | 454 | `"            snippet=\"ساعات العمل الحالية لمكتب الجوازات\","` | — |
+| [SRC-01E35ABC46-L000455](../../tests/test_research_guardrails.py#L455) | 455 | `"        ),"` | — |
+| [SRC-01E35ABC46-L000456](../../tests/test_research_guardrails.py#L456) | 456 | `"        _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000457](../../tests/test_research_guardrails.py#L457) | 457 | `"            \"https://moi.gov.eg/\","` | — |
+| [SRC-01E35ABC46-L000458](../../tests/test_research_guardrails.py#L458) | 458 | `"            title=\"بوابة وزارة الداخلية\","` | — |
+| [SRC-01E35ABC46-L000459](../../tests/test_research_guardrails.py#L459) | 459 | `"            snippet=\"مواعيد عمل خدمات الجوازات\","` | — |
+| [SRC-01E35ABC46-L000460](../../tests/test_research_guardrails.py#L460) | 460 | `"        ),"` | — |
+| [SRC-01E35ABC46-L000461](../../tests/test_research_guardrails.py#L461) | 461 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000462](../../tests/test_research_guardrails.py#L462) | 462 | `"    accepted, report = apply_source_guardrails("` | — |
+| [SRC-01E35ABC46-L000463](../../tests/test_research_guardrails.py#L463) | 463 | `"        question, \"auto\", {\"freshness\": \"any\"}, candidates, now=_GUARDRAIL_NOW"` | — |
+| [SRC-01E35ABC46-L000464](../../tests/test_research_guardrails.py#L464) | 464 | `"    )"` | — |
+| [SRC-01E35ABC46-L000465](../../tests/test_research_guardrails.py#L465) | 465 | `"    assert [item[\"url\"] for item in accepted] == [\"https://moi.gov.eg/\"]"` | — |
+| [SRC-01E35ABC46-L000466](../../tests/test_research_guardrails.py#L466) | 466 | `"    assert report[\"official_government_domain_required\"] is True"` | — |
+| [SRC-01E35ABC46-L000467](../../tests/test_research_guardrails.py#L467) | 467 | `"    assert report[\"official_government_domain_reason\"] == \"current_government_service_hours\""` | — |
+| [SRC-01E35ABC46-L000468](../../tests/test_research_guardrails.py#L468) | 468 | `"    assert report[\"current_evidence_required\"] is True"` | — |
+| [SRC-01E35ABC46-L000469](../../tests/test_research_guardrails.py#L469) | 469 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
+| [SRC-01E35ABC46-L000470](../../tests/test_research_guardrails.py#L470) | 470 | `""` | — |
+| [SRC-01E35ABC46-L000471](../../tests/test_research_guardrails.py#L471) | 471 | `""` | — |
+| [SRC-01E35ABC46-L000472](../../tests/test_research_guardrails.py#L472) | 472 | `"def test_government_service_hour_request_rejects_undated_official_page() -> None:"` | — |
+| [SRC-01E35ABC46-L000473](../../tests/test_research_guardrails.py#L473) | 473 | `"    question = \"مواعيد عمل مكتب الجوازات اليوم\""` | — |
+| [SRC-01E35ABC46-L000474](../../tests/test_research_guardrails.py#L474) | 474 | `"    official = _guardrail_source(\"https://moi.gov.eg/\", published_at=\"\")"` | — |
+| [SRC-01E35ABC46-L000475](../../tests/test_research_guardrails.py#L475) | 475 | `"    accepted, report = apply_source_guardrails("` | — |
+| [SRC-01E35ABC46-L000476](../../tests/test_research_guardrails.py#L476) | 476 | `"        question, \"auto\", {\"freshness\": \"any\"}, [official], now=_GUARDRAIL_NOW"` | — |
+| [SRC-01E35ABC46-L000477](../../tests/test_research_guardrails.py#L477) | 477 | `"    )"` | — |
+| [SRC-01E35ABC46-L000478](../../tests/test_research_guardrails.py#L478) | 478 | `"    assert accepted == []"` | — |
+| [SRC-01E35ABC46-L000479](../../tests/test_research_guardrails.py#L479) | 479 | `"    assert report[\"rejection_counts\"] == {\"date_unavailable\": 1}"` | — |
+| [SRC-01E35ABC46-L000480](../../tests/test_research_guardrails.py#L480) | 480 | `""` | — |
+| [SRC-01E35ABC46-L000481](../../tests/test_research_guardrails.py#L481) | 481 | `""` | — |
+| [SRC-01E35ABC46-L000482](../../tests/test_research_guardrails.py#L482) | 482 | `"def test_general_current_commercial_question_does_not_require_government_domain() -> None:"` | — |
+| [SRC-01E35ABC46-L000483](../../tests/test_research_guardrails.py#L483) | 483 | `"    question = \"سعر الذهب اليوم في مصر\""` | — |
+| [SRC-01E35ABC46-L000484](../../tests/test_research_guardrails.py#L484) | 484 | `"    candidates = [_guardrail_source(\"https://example.com/gold\")]"` | — |
+| [SRC-01E35ABC46-L000485](../../tests/test_research_guardrails.py#L485) | 485 | `"    accepted, report = apply_source_guardrails("` | — |
+| [SRC-01E35ABC46-L000486](../../tests/test_research_guardrails.py#L486) | 486 | `"        question, \"auto\", {\"freshness\": \"any\"}, candidates, now=_GUARDRAIL_NOW"` | — |
+| [SRC-01E35ABC46-L000487](../../tests/test_research_guardrails.py#L487) | 487 | `"    )"` | — |
+| [SRC-01E35ABC46-L000488](../../tests/test_research_guardrails.py#L488) | 488 | `"    assert accepted == candidates"` | — |
+| [SRC-01E35ABC46-L000489](../../tests/test_research_guardrails.py#L489) | 489 | `"    assert report[\"official_government_domain_required\"] is False"` | — |
 ## اختبارات
 
 ### FILE-96F6863E3C — [tests/test_research_pipeline.py](../../tests/test_research_pipeline.py#L1)
@@ -16,6 +72,83 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000001](../../tests/test_research_pipeline.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-96F6863E3C-L000002](../../tests/test_research_pipeline.py#L2) | 2 | `""` | — |
+| [SRC-96F6863E3C-L000003](../../tests/test_research_pipeline.py#L3) | 3 | `"from agents.research_pipeline import build_research_pipeline"` | — |
+| [SRC-96F6863E3C-L000004](../../tests/test_research_pipeline.py#L4) | 4 | `""` | — |
+| [SRC-96F6863E3C-L000005](../../tests/test_research_pipeline.py#L5) | 5 | `""` | — |
+| [SRC-96F6863E3C-L000006](../../tests/test_research_pipeline.py#L6) | 6 | `"def test_pipeline_unifies_intent_aspects_queries_and_evidence():"` | — |
+| [SRC-96F6863E3C-L000007](../../tests/test_research_pipeline.py#L7) | 7 | `"    question = \"حلل السيارات الكهربائية في مصر من حيث السعر والبطارية والضمان\""` | — |
+| [SRC-96F6863E3C-L000008](../../tests/test_research_pipeline.py#L8) | 8 | `"    sources = ["` | — |
+| [SRC-96F6863E3C-L000009](../../tests/test_research_pipeline.py#L9) | 9 | `"        {"` | — |
+| [SRC-96F6863E3C-L000010](../../tests/test_research_pipeline.py#L10) | 10 | `"            \"title\": \"أسعار السيارات الكهربائية في مصر\","` | — |
+| [SRC-96F6863E3C-L000011](../../tests/test_research_pipeline.py#L11) | 11 | `"            \"url\": \"https://example.com/ev-prices\","` | — |
+| [SRC-96F6863E3C-L000012](../../tests/test_research_pipeline.py#L12) | 12 | `"            \"snippet\": \"تفاصيل أسعار السيارات الكهربائية في مصر\","` | — |
+| [SRC-96F6863E3C-L000013](../../tests/test_research_pipeline.py#L13) | 13 | `"            \"provider\": \"fixture\","` | — |
+| [SRC-96F6863E3C-L000014](../../tests/test_research_pipeline.py#L14) | 14 | `"        }"` | — |
+| [SRC-96F6863E3C-L000015](../../tests/test_research_pipeline.py#L15) | 15 | `"    ]"` | — |
+| [SRC-96F6863E3C-L000016](../../tests/test_research_pipeline.py#L16) | 16 | `""` | — |
+| [SRC-96F6863E3C-L000017](../../tests/test_research_pipeline.py#L17) | 17 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000018](../../tests/test_research_pipeline.py#L18) | 18 | `"        question,"` | — |
+| [SRC-96F6863E3C-L000019](../../tests/test_research_pipeline.py#L19) | 19 | `"        {\"queries\": [\"السيارات الكهربائية في مصر\"]},"` | — |
+| [SRC-96F6863E3C-L000020](../../tests/test_research_pipeline.py#L20) | 20 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-96F6863E3C-L000021](../../tests/test_research_pipeline.py#L21) | 21 | `"        sources=sources,"` | — |
+| [SRC-96F6863E3C-L000022](../../tests/test_research_pipeline.py#L22) | 22 | `"    )"` | — |
+| [SRC-96F6863E3C-L000023](../../tests/test_research_pipeline.py#L23) | 23 | `""` | — |
+| [SRC-96F6863E3C-L000024](../../tests/test_research_pipeline.py#L24) | 24 | `"    assert result[\"intent\"][\"route\"] == \"WEB_DEEP\""` | — |
+| [SRC-96F6863E3C-L000025](../../tests/test_research_pipeline.py#L25) | 25 | `"    assert {\"السعر\", \"البطارية\", \"الضمان\"}.issubset(set(result[\"aspects\"]))"` | — |
+| [SRC-96F6863E3C-L000026](../../tests/test_research_pipeline.py#L26) | 26 | `"    assert result[\"queries\"]"` | — |
+| [SRC-96F6863E3C-L000027](../../tests/test_research_pipeline.py#L27) | 27 | `"    assert len(result[\"queries\"]) <= 8"` | — |
+| [SRC-96F6863E3C-L000028](../../tests/test_research_pipeline.py#L28) | 28 | `"    assert result[\"evidence_ledger\"][\"aspects\"] == result[\"aspects\"]"` | — |
+| [SRC-96F6863E3C-L000029](../../tests/test_research_pipeline.py#L29) | 29 | `"    assert result[\"evidence_ledger\"][\"missing\"]"` | — |
+| [SRC-96F6863E3C-L000030](../../tests/test_research_pipeline.py#L30) | 30 | `"    assert result[\"stages\"][\"semantic_matching\"] == \"not_configured\""` | — |
+| [SRC-96F6863E3C-L000031](../../tests/test_research_pipeline.py#L31) | 31 | `"    assert result[\"stages\"][\"claim_verification\"] == \"delegated_to_existing_validator\""` | — |
+| [SRC-96F6863E3C-L000032](../../tests/test_research_pipeline.py#L32) | 32 | `""` | — |
+| [SRC-96F6863E3C-L000033](../../tests/test_research_pipeline.py#L33) | 33 | `""` | — |
+| [SRC-96F6863E3C-L000034](../../tests/test_research_pipeline.py#L34) | 34 | `"def test_pipeline_clarifies_elliptical_question_without_search_plan():"` | — |
+| [SRC-96F6863E3C-L000035](../../tests/test_research_pipeline.py#L35) | 35 | `"    result = build_research_pipeline(\"كام سعرها؟\", {\"queries\": [\"كام سعرها\"]})"` | — |
+| [SRC-96F6863E3C-L000036](../../tests/test_research_pipeline.py#L36) | 36 | `""` | — |
+| [SRC-96F6863E3C-L000037](../../tests/test_research_pipeline.py#L37) | 37 | `"    assert result[\"intent\"][\"route\"] == \"CLARIFY\""` | — |
+| [SRC-96F6863E3C-L000038](../../tests/test_research_pipeline.py#L38) | 38 | `"    assert result[\"intent\"][\"needs_clarification\"] is True"` | — |
+| [SRC-96F6863E3C-L000039](../../tests/test_research_pipeline.py#L39) | 39 | `"    assert result[\"queries\"] == []"` | — |
+| [SRC-96F6863E3C-L000040](../../tests/test_research_pipeline.py#L40) | 40 | `"    assert result[\"stages\"][\"query_planning\"] == \"blocked_pending_clarification\""` | — |
+| [SRC-96F6863E3C-L000041](../../tests/test_research_pipeline.py#L41) | 41 | `""` | — |
+| [SRC-96F6863E3C-L000042](../../tests/test_research_pipeline.py#L42) | 42 | `""` | — |
+| [SRC-96F6863E3C-L000043](../../tests/test_research_pipeline.py#L43) | 43 | `"def test_pipeline_resolves_followup_using_latest_context_anchor():"` | — |
+| [SRC-96F6863E3C-L000044](../../tests/test_research_pipeline.py#L44) | 44 | `"    history = ["` | — |
+| [SRC-96F6863E3C-L000045](../../tests/test_research_pipeline.py#L45) | 45 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
+| [SRC-96F6863E3C-L000046](../../tests/test_research_pipeline.py#L46) | 46 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن السعر.\"},"` | — |
+| [SRC-96F6863E3C-L000047](../../tests/test_research_pipeline.py#L47) | 47 | `"    ]"` | — |
+| [SRC-96F6863E3C-L000048](../../tests/test_research_pipeline.py#L48) | 48 | `""` | — |
+| [SRC-96F6863E3C-L000049](../../tests/test_research_pipeline.py#L49) | 49 | `"    result = build_research_pipeline(\"والضمان؟\", {\"queries\": [\"iPhone 17 مصر\"]}, history=history)"` | — |
+| [SRC-96F6863E3C-L000050](../../tests/test_research_pipeline.py#L50) | 50 | `""` | — |
+| [SRC-96F6863E3C-L000051](../../tests/test_research_pipeline.py#L51) | 51 | `"    assert \"iPhone 17\" in result[\"contextual_question\"]"` | — |
+| [SRC-96F6863E3C-L000052](../../tests/test_research_pipeline.py#L52) | 52 | `"    assert \"الضمان\" in result[\"contextual_question\"]"` | — |
+| [SRC-96F6863E3C-L000053](../../tests/test_research_pipeline.py#L53) | 53 | `"    assert result[\"intent\"][\"context_available\"] is True"` | — |
+| [SRC-96F6863E3C-L000054](../../tests/test_research_pipeline.py#L54) | 54 | `""` | — |
+| [SRC-96F6863E3C-L000055](../../tests/test_research_pipeline.py#L55) | 55 | `""` | — |
+| [SRC-96F6863E3C-L000056](../../tests/test_research_pipeline.py#L56) | 56 | `"def test_pipeline_bounds_malformed_inputs_and_keeps_semantic_stage_unassessed():"` | — |
+| [SRC-96F6863E3C-L000057](../../tests/test_research_pipeline.py#L57) | 57 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000058](../../tests/test_research_pipeline.py#L58) | 58 | `"        \"س\" * 9000,"` | — |
+| [SRC-96F6863E3C-L000059](../../tests/test_research_pipeline.py#L59) | 59 | `"        {\"queries\": [\"س\" * 1000] * 20},"` | — |
+| [SRC-96F6863E3C-L000060](../../tests/test_research_pipeline.py#L60) | 60 | `"        sources=[None, \"not-a-source\", {}],"` | — |
+| [SRC-96F6863E3C-L000061](../../tests/test_research_pipeline.py#L61) | 61 | `"    )"` | — |
+| [SRC-96F6863E3C-L000062](../../tests/test_research_pipeline.py#L62) | 62 | `""` | — |
+| [SRC-96F6863E3C-L000063](../../tests/test_research_pipeline.py#L63) | 63 | `"    assert len(result[\"contextual_question\"]) <= 4000"` | — |
+| [SRC-96F6863E3C-L000064](../../tests/test_research_pipeline.py#L64) | 64 | `"    assert len(result[\"queries\"]) <= 8"` | — |
+| [SRC-96F6863E3C-L000065](../../tests/test_research_pipeline.py#L65) | 65 | `"    assert result[\"evidence_ledger\"][\"aspects\"] == []"` | — |
+| [SRC-96F6863E3C-L000066](../../tests/test_research_pipeline.py#L66) | 66 | `"    assert result[\"stages\"][\"semantic_matching\"] == \"not_configured\""` | — |
+| [SRC-96F6863E3C-L000067](../../tests/test_research_pipeline.py#L67) | 67 | `""` | — |
+| [SRC-96F6863E3C-L000068](../../tests/test_research_pipeline.py#L68) | 68 | `""` | — |
+| [SRC-96F6863E3C-L000069](../../tests/test_research_pipeline.py#L69) | 69 | `""` | — |
+| [SRC-96F6863E3C-L000070](../../tests/test_research_pipeline.py#L70) | 70 | `"def test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores():"` | — |
+| [SRC-96F6863E3C-L000071](../../tests/test_research_pipeline.py#L71) | 71 | `"    calls = []"` | — |
+| [SRC-96F6863E3C-L000072](../../tests/test_research_pipeline.py#L72) | 72 | `""` | — |
+| [SRC-96F6863E3C-L000073](../../tests/test_research_pipeline.py#L73) | 73 | `"    def matcher(aspect, source):"` | — |
+| [SRC-96F6863E3C-L000074](../../tests/test_research_pipeline.py#L74) | 74 | `"        calls.append((aspect, source.get(\"url\")))"` | — |
+| [SRC-96F6863E3C-L000075](../../tests/test_research_pipeline.py#L75) | 75 | `"        return 0.9 if source.get(\"url\", \"\").endswith(\"/relevant\") else float(\"nan\")"` | — |
+| [SRC-96F6863E3C-L000076](../../tests/test_research_pipeline.py#L76) | 76 | `""` | — |
+| [SRC-96F6863E3C-L000077](../../tests/test_research_pipeline.py#L77) | 77 | `"    result = build_research_pipeline("` | — |
 | [SRC-96F6863E3C-L000078](../../tests/test_research_pipeline.py#L78) | 78 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
 | [SRC-96F6863E3C-L000079](../../tests/test_research_pipeline.py#L79) | 79 | `"        {\"queries\": [\"الهاتف\"]},"` | — |
 | [SRC-96F6863E3C-L000080](../../tests/test_research_pipeline.py#L80) | 80 | `"        intent_route=\"WEB_DEEP\","` | — |
@@ -728,127 +861,3 @@
 | [SRC-AFEDC2645A-L000212](../../tests/test_task_understanding.py#L212) | 212 | `"    spec = build_task_spec(\"هات الموقع الرسمي\", mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
 | [SRC-AFEDC2645A-L000213](../../tests/test_task_understanding.py#L213) | 213 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
 | [SRC-AFEDC2645A-L000214](../../tests/test_task_understanding.py#L214) | 214 | `"    assert \"official_destination_target_entity\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000215](../../tests/test_task_understanding.py#L215) | 215 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000216](../../tests/test_task_understanding.py#L216) | 216 | `""` | — |
-| [SRC-AFEDC2645A-L000217](../../tests/test_task_understanding.py#L217) | 217 | `""` | — |
-| [SRC-AFEDC2645A-L000218](../../tests/test_task_understanding.py#L218) | 218 | `"def test_official_site_request_with_a_named_target_does_not_require_subject_clarification():"` | — |
-| [SRC-AFEDC2645A-L000219](../../tests/test_task_understanding.py#L219) | 219 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000220](../../tests/test_task_understanding.py#L220) | 220 | `"        \"هات الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
-| [SRC-AFEDC2645A-L000221](../../tests/test_task_understanding.py#L221) | 221 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000222](../../tests/test_task_understanding.py#L222) | 222 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000223](../../tests/test_task_understanding.py#L223) | 223 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000224](../../tests/test_task_understanding.py#L224) | 224 | `"    assert \"official_destination_target_entity\" not in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000225](../../tests/test_task_understanding.py#L225) | 225 | `"    assert spec[\"constraints\"][\"official_destination_required\"] is True"` | — |
-| [SRC-AFEDC2645A-L000226](../../tests/test_task_understanding.py#L226) | 226 | `""` | — |
-| [SRC-AFEDC2645A-L000227](../../tests/test_task_understanding.py#L227) | 227 | `""` | — |
-| [SRC-AFEDC2645A-L000228](../../tests/test_task_understanding.py#L228) | 228 | `"def test_summary_without_url_or_text_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000229](../../tests/test_task_understanding.py#L229) | 229 | `"    spec = build_task_spec(\"لخص\", mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000230](../../tests/test_task_understanding.py#L230) | 230 | `"    assert \"summary_source_url_or_pasted_text\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `""` | — |
-| [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `""` | — |
-| [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"def test_output_preferences_do_not_count_as_competing_intent_hypotheses():"` | — |
-| [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل\","` | — |
-| [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    families = {row[\"family\"] for row in spec[\"hypothesis_interpretations\"]}"` | — |
-| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert \"compare\" in families"` | — |
-| [SRC-AFEDC2645A-L000242](../../tests/test_task_understanding.py#L242) | 242 | `"    assert not any(family.startswith(\"output_\") for family in families)"` | — |
-| [SRC-AFEDC2645A-L000243](../../tests/test_task_understanding.py#L243) | 243 | `"    assert spec[\"ambiguity_status\"] == \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-AFEDC2645A-L000244](../../tests/test_task_understanding.py#L244) | 244 | `""` | — |
-| [SRC-AFEDC2645A-L000245](../../tests/test_task_understanding.py#L245) | 245 | `""` | — |
-| [SRC-AFEDC2645A-L000246](../../tests/test_task_understanding.py#L246) | 246 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000247](../../tests/test_task_understanding.py#L247) | 247 | `"    (\"question\", \"family\"),"` | — |
-| [SRC-AFEDC2645A-L000248](../../tests/test_task_understanding.py#L248) | 248 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000249](../../tests/test_task_understanding.py#L249) | 249 | `"        (\"ترجم هذا النص إلى الإنجليزية: Hello world\", \"translation\"),"` | — |
-| [SRC-AFEDC2645A-L000250](../../tests/test_task_understanding.py#L250) | 250 | `"        (\"اكتب بريد إلكتروني للعميل بنبرة مهنية\", \"writing_or_editing\"),"` | — |
-| [SRC-AFEDC2645A-L000251](../../tests/test_task_understanding.py#L251) | 251 | `"        (\"احسب 17 بالمئة من 500\", \"calculation\"),"` | — |
-| [SRC-AFEDC2645A-L000252](../../tests/test_task_understanding.py#L252) | 252 | `"        (\"حلل البيانات في ملف CSV وحدد القيم الناقصة\", \"data_analysis\"),"` | — |
-| [SRC-AFEDC2645A-L000253](../../tests/test_task_understanding.py#L253) | 253 | `"        (\"راجع كود Python الذي يعرض stack trace\", \"coding_or_technical_design\"),"` | — |
-| [SRC-AFEDC2645A-L000254](../../tests/test_task_understanding.py#L254) | 254 | `"        (\"ضع خطة عمل لافتتاح متجر خلال شهر\", \"planning\"),"` | — |
-| [SRC-AFEDC2645A-L000255](../../tests/test_task_understanding.py#L255) | 255 | `"        (\"ما أعراض الإنفلونزا؟\", \"medical_information\"),"` | — |
-| [SRC-AFEDC2645A-L000256](../../tests/test_task_understanding.py#L256) | 256 | `"        (\"ما شروط العقد وفق القانون المصري؟\", \"legal_information\"),"` | — |
-| [SRC-AFEDC2645A-L000257](../../tests/test_task_understanding.py#L257) | 257 | `"        (\"اكتب قصة قصيرة عن رحلة خيالية\", \"creative_generation\"),"` | — |
-| [SRC-AFEDC2645A-L000258](../../tests/test_task_understanding.py#L258) | 258 | `"    ],"` | — |
-| [SRC-AFEDC2645A-L000259](../../tests/test_task_understanding.py#L259) | 259 | `")"` | — |
-| [SRC-AFEDC2645A-L000260](../../tests/test_task_understanding.py#L260) | 260 | `"def test_extended_task_families_cover_non_search_and_specialized_requests(question, family):"` | — |
-| [SRC-AFEDC2645A-L000261](../../tests/test_task_understanding.py#L261) | 261 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000262](../../tests/test_task_understanding.py#L262) | 262 | `"    assert spec[\"task_family\"] == family"` | — |
-| [SRC-AFEDC2645A-L000263](../../tests/test_task_understanding.py#L263) | 263 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
-| [SRC-AFEDC2645A-L000264](../../tests/test_task_understanding.py#L264) | 264 | `"    assert spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000265](../../tests/test_task_understanding.py#L265) | 265 | `"    assert spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000266](../../tests/test_task_understanding.py#L266) | 266 | `""` | — |
-| [SRC-AFEDC2645A-L000267](../../tests/test_task_understanding.py#L267) | 267 | `""` | — |
-| [SRC-AFEDC2645A-L000268](../../tests/test_task_understanding.py#L268) | 268 | `"def test_health_and_legal_tasks_attach_domain_specific_caution():"` | — |
-| [SRC-AFEDC2645A-L000269](../../tests/test_task_understanding.py#L269) | 269 | `"    health = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000270](../../tests/test_task_understanding.py#L270) | 270 | `"        \"ما أعراض الإنفلونزا اليوم؟\","` | — |
-| [SRC-AFEDC2645A-L000271](../../tests/test_task_understanding.py#L271) | 271 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000272](../../tests/test_task_understanding.py#L272) | 272 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000273](../../tests/test_task_understanding.py#L273) | 273 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000274](../../tests/test_task_understanding.py#L274) | 274 | `"    assert \"authoritative_health_content\" in health[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000275](../../tests/test_task_understanding.py#L275) | 275 | `"    assert \"distinguish_general_health_information_from_personal_diagnosis\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000276](../../tests/test_task_understanding.py#L276) | 276 | `"    assert \"page_text_successfully_read\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000277](../../tests/test_task_understanding.py#L277) | 277 | `""` | — |
-| [SRC-AFEDC2645A-L000278](../../tests/test_task_understanding.py#L278) | 278 | `"    legal = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000279](../../tests/test_task_understanding.py#L279) | 279 | `"        \"ما نص القانون الحالي المنظم للإيجار في مصر؟\","` | — |
-| [SRC-AFEDC2645A-L000280](../../tests/test_task_understanding.py#L280) | 280 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000281](../../tests/test_task_understanding.py#L281) | 281 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000282](../../tests/test_task_understanding.py#L282) | 282 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000283](../../tests/test_task_understanding.py#L283) | 283 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000284](../../tests/test_task_understanding.py#L284) | 284 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000285](../../tests/test_task_understanding.py#L285) | 285 | `""` | — |
-| [SRC-AFEDC2645A-L000286](../../tests/test_task_understanding.py#L286) | 286 | `""` | — |
-| [SRC-AFEDC2645A-L000287](../../tests/test_task_understanding.py#L287) | 287 | `"def test_output_audience_and_delivery_preferences_are_distinct_fields():"` | — |
-| [SRC-AFEDC2645A-L000288](../../tests/test_task_understanding.py#L288) | 288 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000289](../../tests/test_task_understanding.py#L289) | 289 | `"        \"اشرح الموضوع ببساطة مع مصادر وروابط مباشرة وبصيغة JSON\","` | — |
-| [SRC-AFEDC2645A-L000290](../../tests/test_task_understanding.py#L290) | 290 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000291](../../tests/test_task_understanding.py#L291) | 291 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000292](../../tests/test_task_understanding.py#L292) | 292 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000293](../../tests/test_task_understanding.py#L293) | 293 | `"    preferences = spec[\"output_preferences\"]"` | — |
-| [SRC-AFEDC2645A-L000294](../../tests/test_task_understanding.py#L294) | 294 | `"    assert preferences[\"beginner_friendly_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000295](../../tests/test_task_understanding.py#L295) | 295 | `"    assert preferences[\"citations_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000296](../../tests/test_task_understanding.py#L296) | 296 | `"    assert preferences[\"links_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000297](../../tests/test_task_understanding.py#L297) | 297 | `"    assert preferences[\"json_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000298](../../tests/test_task_understanding.py#L298) | 298 | `""` | — |
-| [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `""` | — |
-| [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"def test_task_spec_validator_allowlists_tools_policies_and_context_slots():"` | — |
-| [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000302](../../tests/test_task_understanding.py#L302) | 302 | `""` | — |
-| [SRC-AFEDC2645A-L000303](../../tests/test_task_understanding.py#L303) | 303 | `"    candidate = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000304](../../tests/test_task_understanding.py#L304) | 304 | `"        \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000305](../../tests/test_task_understanding.py#L305) | 305 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000306](../../tests/test_task_understanding.py#L306) | 306 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000307](../../tests/test_task_understanding.py#L307) | 307 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"            \"method\": \"test\","` | — |
-| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"            \"resolved_question\": \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"            \"topic\": \"هواتف\","` | — |
-| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"            \"entities\": [\"Phone A\", \"Phone B\"],"` | — |
-| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"            \"slots\": {\"product\": \"Phone A\", \"untrusted_command\": \"execute something\"},"` | — |
-| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
-| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
-| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |
-| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"    candidate[\"extra_unexpected_key\"] = \"must not survive\""` | — |
-| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `""` | — |
-| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `"    assert safe[\"tool_requirements\"] == [\"web_search\"]"` | — |
-| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `"    assert safe[\"constraints\"][\"source_policies\"] == [\"task_relevant_sources\"]"` | — |
-| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"    assert safe[\"constraints\"][\"language_profile\"] == \"und\""` | — |
-| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"    assert \"untrusted_command\" not in safe[\"context_resolution\"][\"slots\"]"` | — |
-| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"    assert safe[\"context_resolution\"][\"confidence_band\"] == \"unassessed\""` | — |
-| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"    assert \"extra_unexpected_key\" not in safe"` | — |
-| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `""` | — |
-| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `""` | — |
-| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():"` | — |
-| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    from agents.task_understanding import reasoning_guidance_for_task_spec"` | — |
-| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `""` | — |
-| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"        dialogue_context={"` | — |
