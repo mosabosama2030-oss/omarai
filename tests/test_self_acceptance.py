@@ -43,3 +43,24 @@ def test_live_response_summary_keeps_quality_gaps_visible():
     assert result["research_completion_status"] == "partial_answer_evidence_gaps_detected"
     assert result["invalid_citation_references_removed_count"] == 1
     assert result["citation_support_warning_count"] == 1
+
+def test_tokenless_local_self_acceptance_executes_real_health_and_analyze_routes(
+    tmp_path, monkeypatch
+):
+    import json
+
+    from scripts.self_acceptance_test import run_acceptance
+
+    monkeypatch.delenv("OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS", raising=False)
+    output = tmp_path / "self-acceptance.json"
+    report = run_acceptance(output_path=output, live=False)
+
+    assert report["environment"] == "local_loopback_isolated_database"
+    assert report["authentication"]["access_token_required"] is False
+    assert report["authentication"]["bind_host"] == "127.0.0.1"
+    assert report["external_calls_enabled"] is False
+    assert report["checks"]["health"]["status"] == "passed"
+    assert report["checks"]["local_analyze"]["status"] == "passed"
+    assert report["questions"] == []
+    saved = json.loads(output.read_text(encoding="utf-8"))
+    assert saved["authentication"]["test_mode"] is True
