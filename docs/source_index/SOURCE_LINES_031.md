@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000419 إلى SRC-90FAA34ADE-L000101
+- النطاق: SRC-4FFD5AFC54-L000359 إلى SRC-90FAA34ADE-L000041
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,66 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000359](../../scripts/run_answer_quality_benchmark.py#L359) | 359 | `"    if not path.is_file():"` | — |
+| [SRC-4FFD5AFC54-L000360](../../scripts/run_answer_quality_benchmark.py#L360) | 360 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
+| [SRC-4FFD5AFC54-L000361](../../scripts/run_answer_quality_benchmark.py#L361) | 361 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-4FFD5AFC54-L000362](../../scripts/run_answer_quality_benchmark.py#L362) | 362 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
+| [SRC-4FFD5AFC54-L000363](../../scripts/run_answer_quality_benchmark.py#L363) | 363 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
+| [SRC-4FFD5AFC54-L000364](../../scripts/run_answer_quality_benchmark.py#L364) | 364 | `"    if data.get(\"parts\"):"` | — |
+| [SRC-4FFD5AFC54-L000365](../../scripts/run_answer_quality_benchmark.py#L365) | 365 | `"        raise ValueError(\"Incomplete shard index is not accepted; use merged cases[] corpus\")"` | — |
+| [SRC-4FFD5AFC54-L000366](../../scripts/run_answer_quality_benchmark.py#L366) | 366 | `"    return data"` | — |
+| [SRC-4FFD5AFC54-L000367](../../scripts/run_answer_quality_benchmark.py#L367) | 367 | `""` | — |
+| [SRC-4FFD5AFC54-L000368](../../scripts/run_answer_quality_benchmark.py#L368) | 368 | `""` | — |
+| [SRC-4FFD5AFC54-L000369](../../scripts/run_answer_quality_benchmark.py#L369) | 369 | `"def validate_corpus(data: dict) -> list[str]:"` | — |
+| [SRC-4FFD5AFC54-L000370](../../scripts/run_answer_quality_benchmark.py#L370) | 370 | `"    \"\"\"Return a list of human-readable problems (empty => OK).\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000371](../../scripts/run_answer_quality_benchmark.py#L371) | 371 | `"    problems: list[str] = []"` | — |
+| [SRC-4FFD5AFC54-L000372](../../scripts/run_answer_quality_benchmark.py#L372) | 372 | `"    cases = data.get(\"cases\") or []"` | — |
+| [SRC-4FFD5AFC54-L000373](../../scripts/run_answer_quality_benchmark.py#L373) | 373 | `"    if data.get(\"case_count\") != len(cases):"` | — |
+| [SRC-4FFD5AFC54-L000374](../../scripts/run_answer_quality_benchmark.py#L374) | 374 | `"        problems.append("` | — |
+| [SRC-4FFD5AFC54-L000375](../../scripts/run_answer_quality_benchmark.py#L375) | 375 | `"            f\"case_count metadata {data.get('case_count')!r} != len(cases) {len(cases)}\""` | — |
+| [SRC-4FFD5AFC54-L000376](../../scripts/run_answer_quality_benchmark.py#L376) | 376 | `"        )"` | — |
+| [SRC-4FFD5AFC54-L000377](../../scripts/run_answer_quality_benchmark.py#L377) | 377 | `"    if len(cases) < 40:"` | — |
+| [SRC-4FFD5AFC54-L000378](../../scripts/run_answer_quality_benchmark.py#L378) | 378 | `"        problems.append(f\"expected at least 40 cases, found {len(cases)}\")"` | — |
+| [SRC-4FFD5AFC54-L000379](../../scripts/run_answer_quality_benchmark.py#L379) | 379 | `"    ids: list[str] = []"` | — |
+| [SRC-4FFD5AFC54-L000380](../../scripts/run_answer_quality_benchmark.py#L380) | 380 | `"    for i, case in enumerate(cases):"` | — |
+| [SRC-4FFD5AFC54-L000381](../../scripts/run_answer_quality_benchmark.py#L381) | 381 | `"        if not isinstance(case, dict):"` | — |
+| [SRC-4FFD5AFC54-L000382](../../scripts/run_answer_quality_benchmark.py#L382) | 382 | `"            problems.append(f\"cases[{i}] is not an object\")"` | — |
+| [SRC-4FFD5AFC54-L000383](../../scripts/run_answer_quality_benchmark.py#L383) | 383 | `"            continue"` | — |
+| [SRC-4FFD5AFC54-L000384](../../scripts/run_answer_quality_benchmark.py#L384) | 384 | `"        missing = REQUIRED_FIELDS - set(case)"` | — |
+| [SRC-4FFD5AFC54-L000385](../../scripts/run_answer_quality_benchmark.py#L385) | 385 | `"        if missing:"` | — |
+| [SRC-4FFD5AFC54-L000386](../../scripts/run_answer_quality_benchmark.py#L386) | 386 | `"            problems.append(f\"{case.get('case_id', i)}: missing {sorted(missing)}\")"` | — |
+| [SRC-4FFD5AFC54-L000387](../../scripts/run_answer_quality_benchmark.py#L387) | 387 | `"        cid = case.get(\"case_id\")"` | — |
+| [SRC-4FFD5AFC54-L000388](../../scripts/run_answer_quality_benchmark.py#L388) | 388 | `"        if isinstance(cid, str):"` | — |
+| [SRC-4FFD5AFC54-L000389](../../scripts/run_answer_quality_benchmark.py#L389) | 389 | `"            ids.append(cid)"` | — |
+| [SRC-4FFD5AFC54-L000390](../../scripts/run_answer_quality_benchmark.py#L390) | 390 | `"        if case.get(\"expected_strategy\") not in ALLOWED_STRATEGIES:"` | — |
+| [SRC-4FFD5AFC54-L000391](../../scripts/run_answer_quality_benchmark.py#L391) | 391 | `"            problems.append(f\"{cid}: bad strategy {case.get('expected_strategy')!r}\")"` | — |
+| [SRC-4FFD5AFC54-L000392](../../scripts/run_answer_quality_benchmark.py#L392) | 392 | `"        if case.get(\"evaluation_mode\") not in ALLOWED_EVAL_MODES:"` | — |
+| [SRC-4FFD5AFC54-L000393](../../scripts/run_answer_quality_benchmark.py#L393) | 393 | `"            problems.append(f\"{cid}: bad evaluation_mode {case.get('evaluation_mode')!r}\")"` | — |
+| [SRC-4FFD5AFC54-L000394](../../scripts/run_answer_quality_benchmark.py#L394) | 394 | `"        q = case.get(\"question\")"` | — |
+| [SRC-4FFD5AFC54-L000395](../../scripts/run_answer_quality_benchmark.py#L395) | 395 | `"        if not isinstance(q, str) or len(q.strip()) < 2:"` | — |
+| [SRC-4FFD5AFC54-L000396](../../scripts/run_answer_quality_benchmark.py#L396) | 396 | `"            problems.append(f\"{cid}: empty question\")"` | — |
+| [SRC-4FFD5AFC54-L000397](../../scripts/run_answer_quality_benchmark.py#L397) | 397 | `"    if len(ids) != len(set(ids)):"` | — |
+| [SRC-4FFD5AFC54-L000398](../../scripts/run_answer_quality_benchmark.py#L398) | 398 | `"        problems.append(\"duplicate case_id values\")"` | — |
+| [SRC-4FFD5AFC54-L000399](../../scripts/run_answer_quality_benchmark.py#L399) | 399 | `"    return problems"` | — |
+| [SRC-4FFD5AFC54-L000400](../../scripts/run_answer_quality_benchmark.py#L400) | 400 | `""` | — |
+| [SRC-4FFD5AFC54-L000401](../../scripts/run_answer_quality_benchmark.py#L401) | 401 | `""` | — |
+| [SRC-4FFD5AFC54-L000402](../../scripts/run_answer_quality_benchmark.py#L402) | 402 | `"def redact_secrets(text: str) -> str:"` | — |
+| [SRC-4FFD5AFC54-L000403](../../scripts/run_answer_quality_benchmark.py#L403) | 403 | `"    \"\"\"Best-effort redaction of common secret patterns from stored outputs.\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000404](../../scripts/run_answer_quality_benchmark.py#L404) | 404 | `"    if not text:"` | — |
+| [SRC-4FFD5AFC54-L000405](../../scripts/run_answer_quality_benchmark.py#L405) | 405 | `"        return text"` | — |
+| [SRC-4FFD5AFC54-L000406](../../scripts/run_answer_quality_benchmark.py#L406) | 406 | `"    out = text"` | — |
+| [SRC-4FFD5AFC54-L000407](../../scripts/run_answer_quality_benchmark.py#L407) | 407 | `"    for key in ("` | — |
+| [SRC-4FFD5AFC54-L000408](../../scripts/run_answer_quality_benchmark.py#L408) | 408 | `"        \"OPENROUTER_API_KEY\","` | — |
+| [SRC-4FFD5AFC54-L000409](../../scripts/run_answer_quality_benchmark.py#L409) | 409 | `"        \"OMARAI_ACCESS_TOKEN\","` | — |
+| [SRC-4FFD5AFC54-L000410](../../scripts/run_answer_quality_benchmark.py#L410) | 410 | `"        \"OMARAI_LLM_API_KEY\","` | — |
+| [SRC-4FFD5AFC54-L000411](../../scripts/run_answer_quality_benchmark.py#L411) | 411 | `"        \"Authorization\","` | — |
+| [SRC-4FFD5AFC54-L000412](../../scripts/run_answer_quality_benchmark.py#L412) | 412 | `"        \"Bearer \","` | — |
+| [SRC-4FFD5AFC54-L000413](../../scripts/run_answer_quality_benchmark.py#L413) | 413 | `"    ):"` | — |
+| [SRC-4FFD5AFC54-L000414](../../scripts/run_answer_quality_benchmark.py#L414) | 414 | `"        out = out.replace(key, f\"[REDACTED:{key.strip()}]\")"` | — |
+| [SRC-4FFD5AFC54-L000415](../../scripts/run_answer_quality_benchmark.py#L415) | 415 | `"    token = os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip()"` | — |
+| [SRC-4FFD5AFC54-L000416](../../scripts/run_answer_quality_benchmark.py#L416) | 416 | `"    if token and token in out:"` | — |
+| [SRC-4FFD5AFC54-L000417](../../scripts/run_answer_quality_benchmark.py#L417) | 417 | `"        out = out.replace(token, \"[REDACTED:OMARAI_ACCESS_TOKEN]\")"` | — |
+| [SRC-4FFD5AFC54-L000418](../../scripts/run_answer_quality_benchmark.py#L418) | 418 | `"    for env_name in (\"OPENROUTER_API_KEY\", \"OMARAI_LLM_API_KEY\"):"` | — |
 | [SRC-4FFD5AFC54-L000419](../../scripts/run_answer_quality_benchmark.py#L419) | 419 | `"        val = os.getenv(env_name, \"\").strip()"` | — |
 | [SRC-4FFD5AFC54-L000420](../../scripts/run_answer_quality_benchmark.py#L420) | 420 | `"        if val and val in out:"` | — |
 | [SRC-4FFD5AFC54-L000421](../../scripts/run_answer_quality_benchmark.py#L421) | 421 | `"            out = out.replace(val, f\"[REDACTED:{env_name}]\")"` | — |
@@ -783,63 +843,3 @@
 | [SRC-90FAA34ADE-L000039](../../tests/fixtures/answer_quality_cases.json#L39) | 39 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000040](../../tests/fixtures/answer_quality_cases.json#L40) | 40 | `"        \"used_web_search is true\","` | — |
 | [SRC-90FAA34ADE-L000041](../../tests/fixtures/answer_quality_cases.json#L41) | 41 | `"        \"Answer contains fabricated source URLs\""` | — |
-| [SRC-90FAA34ADE-L000042](../../tests/fixtures/answer_quality_cases.json#L42) | 42 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000043](../../tests/fixtures/answer_quality_cases.json#L43) | 43 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000044](../../tests/fixtures/answer_quality_cases.json#L44) | 44 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000045](../../tests/fixtures/answer_quality_cases.json#L45) | 45 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000046](../../tests/fixtures/answer_quality_cases.json#L46) | 46 | `"      \"case_id\": \"AQ-002\","` | — |
-| [SRC-90FAA34ADE-L000047](../../tests/fixtures/answer_quality_cases.json#L47) | 47 | `"      \"category\": \"simple_conversational\","` | — |
-| [SRC-90FAA34ADE-L000048](../../tests/fixtures/answer_quality_cases.json#L48) | 48 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000049](../../tests/fixtures/answer_quality_cases.json#L49) | 49 | `"      \"question\": \"Thanks, that helps.\","` | — |
-| [SRC-90FAA34ADE-L000050](../../tests/fixtures/answer_quality_cases.json#L50) | 50 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000051](../../tests/fixtures/answer_quality_cases.json#L51) | 51 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000052](../../tests/fixtures/answer_quality_cases.json#L52) | 52 | `"        \"Brief acknowledgment\","` | — |
-| [SRC-90FAA34ADE-L000053](../../tests/fixtures/answer_quality_cases.json#L53) | 53 | `"        \"No unnecessary research\""` | — |
-| [SRC-90FAA34ADE-L000054](../../tests/fixtures/answer_quality_cases.json#L54) | 54 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000055](../../tests/fixtures/answer_quality_cases.json#L55) | 55 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000056](../../tests/fixtures/answer_quality_cases.json#L56) | 56 | `"        \"Starts a web search\","` | — |
-| [SRC-90FAA34ADE-L000057](../../tests/fixtures/answer_quality_cases.json#L57) | 57 | `"        \"Invented follow-up facts\""` | — |
-| [SRC-90FAA34ADE-L000058](../../tests/fixtures/answer_quality_cases.json#L58) | 58 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000059](../../tests/fixtures/answer_quality_cases.json#L59) | 59 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000060](../../tests/fixtures/answer_quality_cases.json#L60) | 60 | `"        \"type\": \"none\""` | — |
-| [SRC-90FAA34ADE-L000061](../../tests/fixtures/answer_quality_cases.json#L61) | 61 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000062](../../tests/fixtures/answer_quality_cases.json#L62) | 62 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000063](../../tests/fixtures/answer_quality_cases.json#L63) | 63 | `"        \"used_web_search is true\""` | — |
-| [SRC-90FAA34ADE-L000064](../../tests/fixtures/answer_quality_cases.json#L64) | 64 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000065](../../tests/fixtures/answer_quality_cases.json#L65) | 65 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000066](../../tests/fixtures/answer_quality_cases.json#L66) | 66 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000067](../../tests/fixtures/answer_quality_cases.json#L67) | 67 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000068](../../tests/fixtures/answer_quality_cases.json#L68) | 68 | `"      \"case_id\": \"AQ-003\","` | — |
-| [SRC-90FAA34ADE-L000069](../../tests/fixtures/answer_quality_cases.json#L69) | 69 | `"      \"category\": \"general_knowledge\","` | — |
-| [SRC-90FAA34ADE-L000070](../../tests/fixtures/answer_quality_cases.json#L70) | 70 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L000071](../../tests/fixtures/answer_quality_cases.json#L71) | 71 | `"      \"question\": \"ما عاصمة مصر؟\","` | — |
-| [SRC-90FAA34ADE-L000072](../../tests/fixtures/answer_quality_cases.json#L72) | 72 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000073](../../tests/fixtures/answer_quality_cases.json#L73) | 73 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000074](../../tests/fixtures/answer_quality_cases.json#L74) | 74 | `"        \"States Cairo/القاهرة\","` | — |
-| [SRC-90FAA34ADE-L000075](../../tests/fixtures/answer_quality_cases.json#L75) | 75 | `"        \"Does not require live web search\""` | — |
-| [SRC-90FAA34ADE-L000076](../../tests/fixtures/answer_quality_cases.json#L76) | 76 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000077](../../tests/fixtures/answer_quality_cases.json#L77) | 77 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000078](../../tests/fixtures/answer_quality_cases.json#L78) | 78 | `"        \"Claims uncertainty about Egypt's capital\","` | — |
-| [SRC-90FAA34ADE-L000079](../../tests/fixtures/answer_quality_cases.json#L79) | 79 | `"        \"Invented alternative capitals\""` | — |
-| [SRC-90FAA34ADE-L000080](../../tests/fixtures/answer_quality_cases.json#L80) | 80 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000081](../../tests/fixtures/answer_quality_cases.json#L81) | 81 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000082](../../tests/fixtures/answer_quality_cases.json#L82) | 82 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000083](../../tests/fixtures/answer_quality_cases.json#L83) | 83 | `"        \"notes\": \"Stable geographic fact\""` | — |
-| [SRC-90FAA34ADE-L000084](../../tests/fixtures/answer_quality_cases.json#L84) | 84 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000085](../../tests/fixtures/answer_quality_cases.json#L85) | 85 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000086](../../tests/fixtures/answer_quality_cases.json#L86) | 86 | `"        \"Answer denies Cairo as capital without clarification\""` | — |
-| [SRC-90FAA34ADE-L000087](../../tests/fixtures/answer_quality_cases.json#L87) | 87 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000088](../../tests/fixtures/answer_quality_cases.json#L88) | 88 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000089](../../tests/fixtures/answer_quality_cases.json#L89) | 89 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000090](../../tests/fixtures/answer_quality_cases.json#L90) | 90 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000091](../../tests/fixtures/answer_quality_cases.json#L91) | 91 | `"      \"case_id\": \"AQ-004\","` | — |
-| [SRC-90FAA34ADE-L000092](../../tests/fixtures/answer_quality_cases.json#L92) | 92 | `"      \"category\": \"general_knowledge\","` | — |
-| [SRC-90FAA34ADE-L000093](../../tests/fixtures/answer_quality_cases.json#L93) | 93 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000094](../../tests/fixtures/answer_quality_cases.json#L94) | 94 | `"      \"question\": \"What is photosynthesis in one short paragraph?\","` | — |
-| [SRC-90FAA34ADE-L000095](../../tests/fixtures/answer_quality_cases.json#L95) | 95 | `"      \"expected_strategy\": \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000096](../../tests/fixtures/answer_quality_cases.json#L96) | 96 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000097](../../tests/fixtures/answer_quality_cases.json#L97) | 97 | `"        \"Mentions light, plants/organisms, conversion to chemical energy\","` | — |
-| [SRC-90FAA34ADE-L000098](../../tests/fixtures/answer_quality_cases.json#L98) | 98 | `"        \"Concise\""` | — |
-| [SRC-90FAA34ADE-L000099](../../tests/fixtures/answer_quality_cases.json#L99) | 99 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000100](../../tests/fixtures/answer_quality_cases.json#L100) | 100 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000101](../../tests/fixtures/answer_quality_cases.json#L101) | 101 | `"        \"Claims live experimental measurement from the web\","` | — |
