@@ -3,7 +3,7 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **050**
-- سجلات الأسطر: **742**
+- سجلات الأسطر: **794**
 - النطاق: SRC-F725E90B2A-L003832 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
@@ -84,6 +84,58 @@
 | [SRC-F725E90B2A-L003897](../../tests/test_web_agent.py#L3897) | 3897 | `"    assert result[\"answer\"] == \"إجابة اختبارية [المصدر 1].\""` | — |
 | [SRC-F725E90B2A-L003898](../../tests/test_web_agent.py#L3898) | 3898 | `"    assert result[\"research_completion\"][\"status\"] == \"diagnostics_not_computed\""` | — |
 | [SRC-F725E90B2A-L003899](../../tests/test_web_agent.py#L3899) | 3899 | `"    assert any(\"لا يُعد ذلك دليلًا على اكتمال البحث\" in warning for warning in result[\"warnings\"])"` | — |
+| [SRC-F725E90B2A-L003900](../../tests/test_web_agent.py#L3900) | 3900 | `""` | — |
+| [SRC-F725E90B2A-L003901](../../tests/test_web_agent.py#L3901) | 3901 | `""` | — |
+| [SRC-F725E90B2A-L003902](../../tests/test_web_agent.py#L3902) | 3902 | `""` | — |
+| [SRC-F725E90B2A-L003903](../../tests/test_web_agent.py#L3903) | 3903 | `"def test_model_request_transport_disables_automatic_redirects(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003904](../../tests/test_web_agent.py#L3904) | 3904 | `"    from agents import web_agent"` | — |
+| [SRC-F725E90B2A-L003905](../../tests/test_web_agent.py#L3905) | 3905 | `""` | — |
+| [SRC-F725E90B2A-L003906](../../tests/test_web_agent.py#L3906) | 3906 | `"    observed = {}"` | — |
+| [SRC-F725E90B2A-L003907](../../tests/test_web_agent.py#L3907) | 3907 | `"    sentinel = object()"` | — |
+| [SRC-F725E90B2A-L003908](../../tests/test_web_agent.py#L3908) | 3908 | `""` | — |
+| [SRC-F725E90B2A-L003909](../../tests/test_web_agent.py#L3909) | 3909 | `"    class FakeOpener:"` | — |
+| [SRC-F725E90B2A-L003910](../../tests/test_web_agent.py#L3910) | 3910 | `"        def open(self, request, *, timeout):"` | — |
+| [SRC-F725E90B2A-L003911](../../tests/test_web_agent.py#L3911) | 3911 | `"            observed[\"request\"] = request"` | — |
+| [SRC-F725E90B2A-L003912](../../tests/test_web_agent.py#L3912) | 3912 | `"            observed[\"timeout\"] = timeout"` | — |
+| [SRC-F725E90B2A-L003913](../../tests/test_web_agent.py#L3913) | 3913 | `"            return sentinel"` | — |
+| [SRC-F725E90B2A-L003914](../../tests/test_web_agent.py#L3914) | 3914 | `""` | — |
+| [SRC-F725E90B2A-L003915](../../tests/test_web_agent.py#L3915) | 3915 | `"    def fake_build_opener(*handlers):"` | — |
+| [SRC-F725E90B2A-L003916](../../tests/test_web_agent.py#L3916) | 3916 | `"        observed[\"handlers\"] = handlers"` | — |
+| [SRC-F725E90B2A-L003917](../../tests/test_web_agent.py#L3917) | 3917 | `"        return FakeOpener()"` | — |
+| [SRC-F725E90B2A-L003918](../../tests/test_web_agent.py#L3918) | 3918 | `""` | — |
+| [SRC-F725E90B2A-L003919](../../tests/test_web_agent.py#L3919) | 3919 | `"    monkeypatch.setattr(web_agent.urllib.request, \"build_opener\", fake_build_opener)"` | — |
+| [SRC-F725E90B2A-L003920](../../tests/test_web_agent.py#L3920) | 3920 | `"    request = web_agent.urllib.request.Request("` | — |
+| [SRC-F725E90B2A-L003921](../../tests/test_web_agent.py#L3921) | 3921 | `"        \"https://provider.example/v1/chat/completions\","` | — |
+| [SRC-F725E90B2A-L003922](../../tests/test_web_agent.py#L3922) | 3922 | `"        data=b\"{}\","` | — |
+| [SRC-F725E90B2A-L003923](../../tests/test_web_agent.py#L3923) | 3923 | `"        headers={\"Authorization\": \"Bearer test-only-token\"},"` | — |
+| [SRC-F725E90B2A-L003924](../../tests/test_web_agent.py#L3924) | 3924 | `"        method=\"POST\","` | — |
+| [SRC-F725E90B2A-L003925](../../tests/test_web_agent.py#L3925) | 3925 | `"    )"` | — |
+| [SRC-F725E90B2A-L003926](../../tests/test_web_agent.py#L3926) | 3926 | `""` | — |
+| [SRC-F725E90B2A-L003927](../../tests/test_web_agent.py#L3927) | 3927 | `"    assert web_agent._open_model_request(request, timeout=3.5) is sentinel"` | — |
+| [SRC-F725E90B2A-L003928](../../tests/test_web_agent.py#L3928) | 3928 | `"    assert observed[\"request\"] is request"` | — |
+| [SRC-F725E90B2A-L003929](../../tests/test_web_agent.py#L3929) | 3929 | `"    assert observed[\"timeout\"] == 3.5"` | — |
+| [SRC-F725E90B2A-L003930](../../tests/test_web_agent.py#L3930) | 3930 | `"    assert observed[\"handlers\"] == (web_agent._NoRedirectHandler,)"` | — |
+| [SRC-F725E90B2A-L003931](../../tests/test_web_agent.py#L3931) | 3931 | `""` | — |
+| [SRC-F725E90B2A-L003932](../../tests/test_web_agent.py#L3932) | 3932 | `"    handler = web_agent._NoRedirectHandler()"` | — |
+| [SRC-F725E90B2A-L003933](../../tests/test_web_agent.py#L3933) | 3933 | `"    redirected = handler.redirect_request("` | — |
+| [SRC-F725E90B2A-L003934](../../tests/test_web_agent.py#L3934) | 3934 | `"        request,"` | — |
+| [SRC-F725E90B2A-L003935](../../tests/test_web_agent.py#L3935) | 3935 | `"        None,"` | — |
+| [SRC-F725E90B2A-L003936](../../tests/test_web_agent.py#L3936) | 3936 | `"        302,"` | — |
+| [SRC-F725E90B2A-L003937](../../tests/test_web_agent.py#L3937) | 3937 | `"        \"Found\","` | — |
+| [SRC-F725E90B2A-L003938](../../tests/test_web_agent.py#L3938) | 3938 | `"        {},"` | — |
+| [SRC-F725E90B2A-L003939](../../tests/test_web_agent.py#L3939) | 3939 | `"        \"https://attacker.example/collect\","` | — |
+| [SRC-F725E90B2A-L003940](../../tests/test_web_agent.py#L3940) | 3940 | `"    )"` | — |
+| [SRC-F725E90B2A-L003941](../../tests/test_web_agent.py#L3941) | 3941 | `"    assert redirected is None"` | — |
+| [SRC-F725E90B2A-L003942](../../tests/test_web_agent.py#L3942) | 3942 | `""` | — |
+| [SRC-F725E90B2A-L003943](../../tests/test_web_agent.py#L3943) | 3943 | `""` | — |
+| [SRC-F725E90B2A-L003944](../../tests/test_web_agent.py#L3944) | 3944 | `"def test_openrouter_web_search_does_not_match_spoofed_hostname(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003945](../../tests/test_web_agent.py#L3945) | 3945 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
+| [SRC-F725E90B2A-L003946](../../tests/test_web_agent.py#L3946) | 3946 | `"    monkeypatch.setenv("` | — |
+| [SRC-F725E90B2A-L003947](../../tests/test_web_agent.py#L3947) | 3947 | `"        \"OMARAI_LLM_BASE_URL\","` | — |
+| [SRC-F725E90B2A-L003948](../../tests/test_web_agent.py#L3948) | 3948 | `"        \"https://openrouter.ai.attacker.example/api/v1\","` | — |
+| [SRC-F725E90B2A-L003949](../../tests/test_web_agent.py#L3949) | 3949 | `"    )"` | — |
+| [SRC-F725E90B2A-L003950](../../tests/test_web_agent.py#L3950) | 3950 | `""` | — |
+| [SRC-F725E90B2A-L003951](../../tests/test_web_agent.py#L3951) | 3951 | `"    assert WebAgent().openrouter_web_search_enabled is False"` | — |
 ## اختبارات
 
 ### FILE-8C13B81AB4 — [tests/test_web_agent_nlu_integration.py](../../tests/test_web_agent_nlu_integration.py#L1)

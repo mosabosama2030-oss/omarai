@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **119**
 - ملفات Python المحللة: **73**
-- تعريفات Python المفهرسة: **1527**
+- تعريفات Python المفهرسة: **1532**
 - تعريفات Python موثقة بوجود Docstring: **260**
-- تعريفات Python بلا Docstring: **962**
+- تعريفات Python بلا Docstring: **967**
 - تعريفات لا ينطبق عليها Docstring: **305**
 - الرموز الساكنة الإضافية: **1874**
-- الأسطر النصية المفهرسة حرفيًا: **39942**
+- الأسطر النصية المفهرسة حرفيًا: **39994**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -106,7 +106,7 @@
 | FILE-63610B9E85 | اختبارات | [tests/test_agentic_retrieval.py](../tests/test_agentic_retrieval.py#L1) | Python | 5620 | 130 | جرد الملف + AST Python |
 | FILE-6A7519AC10 | اختبارات | [tests/test_answer_quality_comparison.py](../tests/test_answer_quality_comparison.py#L1) | Python | 11936 | 250 | جرد الملف + AST Python |
 | FILE-4CCB1F172B | اختبارات | [tests/test_answer_quality_corpus.py](../tests/test_answer_quality_corpus.py#L1) | Python | 9183 | 250 | جرد الملف + AST Python |
-| FILE-2477C41448 | اختبارات | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L1) | Python | 3130 | 100 | جرد الملف + AST Python |
+| FILE-2477C41448 | اختبارات | [tests/test_answer_quality_provider_usage.py](../tests/test_answer_quality_provider_usage.py#L1) | Python | 3127 | 100 | جرد الملف + AST Python |
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
@@ -122,8 +122,8 @@
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
-| FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23466 | 616 | جرد الملف + AST Python |
-| FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
+| FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23451 | 616 | جرد الملف + AST Python |
+| FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10752 | 289 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
@@ -131,7 +131,7 @@
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
-| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
+| FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5015 | 146 | جرد الملف + AST Python |
 | FILE-50E7F53B84 | اختبارات | [tests/test_requirement_evidence.py](../tests/test_requirement_evidence.py#L1) | Python | 2509 | 59 | جرد الملف + AST Python |
 | FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 7922 | 201 | جرد الملف + AST Python |
@@ -143,7 +143,7 @@
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 153471 | 3899 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 154979 | 3951 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69054 | 485 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1674,6 +1674,11 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3855) | دالة | test_bilingual_relevance_matches_english_queries_to_arabic_source_text | لا توجد Docstring. | ناقص | 3855 | [SRC-F725E90B2A-L003855](../tests/test_web_agent.py#L3855) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3861) | دالة | test_completion_diagnostics_failure_does_not_break_answer | لا توجد Docstring. | ناقص | 3861 | [SRC-F725E90B2A-L003861](../tests/test_web_agent.py#L3861) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3892) | دالة | test_completion_diagnostics_failure_does_not_break_answer.fail_diagnostics | لا توجد Docstring. | ناقص | 3892 | [SRC-F725E90B2A-L003892](../tests/test_web_agent.py#L3892) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3903) | دالة | test_model_request_transport_disables_automatic_redirects | لا توجد Docstring. | ناقص | 3903 | [SRC-F725E90B2A-L003903](../tests/test_web_agent.py#L3903) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3909) | كلاس | test_model_request_transport_disables_automatic_redirects.FakeOpener | لا توجد Docstring. | ناقص | 3909 | [SRC-F725E90B2A-L003909](../tests/test_web_agent.py#L3909) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3910) | دالة | test_model_request_transport_disables_automatic_redirects.FakeOpener.open | لا توجد Docstring. | ناقص | 3910 | [SRC-F725E90B2A-L003910](../tests/test_web_agent.py#L3910) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3915) | دالة | test_model_request_transport_disables_automatic_redirects.fake_build_opener | لا توجد Docstring. | ناقص | 3915 | [SRC-F725E90B2A-L003915](../tests/test_web_agent.py#L3915) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3944) | دالة | test_openrouter_web_search_does_not_match_spoofed_hostname | لا توجد Docstring. | ناقص | 3944 | [SRC-F725E90B2A-L003944](../tests/test_web_agent.py#L3944) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L10) | دالة | _academic_result | لا توجد Docstring. | ناقص | 10 | [SRC-8C13B81AB4-L000010](../tests/test_web_agent_nlu_integration.py#L10) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L29) | دالة | test_sparse_academic_search_uses_budgeted_safe_connectors | لا توجد Docstring. | ناقص | 29 | [SRC-8C13B81AB4-L000029](../tests/test_web_agent_nlu_integration.py#L29) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L49) | دالة | test_academic_connectors_are_not_called_for_ordinary_sparse_queries | لا توجد Docstring. | ناقص | 49 | [SRC-8C13B81AB4-L000049](../tests/test_web_agent_nlu_integration.py#L49) |
