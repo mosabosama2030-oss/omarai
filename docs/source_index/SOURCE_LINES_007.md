@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000080 إلى SRC-686F71AA50-L000879
+- النطاق: SRC-686F71AA50-L000058 إلى SRC-686F71AA50-L000857
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000058](../../agents/task_understanding.py#L58) | 58 | `"    \"how_to\": (\"ordered_safe_procedure\",),"` | — |
+| [SRC-686F71AA50-L000059](../../agents/task_understanding.py#L59) | 59 | `"    \"lead_generation\": (\"qualify_buyer_intent\",),"` | — |
+| [SRC-686F71AA50-L000060](../../agents/task_understanding.py#L60) | 60 | `"    \"recommendation\": (\"compare_recommendation_tradeoffs\",),"` | — |
+| [SRC-686F71AA50-L000061](../../agents/task_understanding.py#L61) | 61 | `"    \"medical_information\": (\"check_health_scope_and_urgency\",),"` | — |
+| [SRC-686F71AA50-L000062](../../agents/task_understanding.py#L62) | 62 | `"    \"legal_information\": (\"check_legal_jurisdiction_and_effective_date\",),"` | — |
+| [SRC-686F71AA50-L000063](../../agents/task_understanding.py#L63) | 63 | `"    \"coding_or_technical_design\": (\"record_observed_symptoms\", \"rank_testable_hypotheses\", \"verify_primary_technical_docs\"),"` | — |
+| [SRC-686F71AA50-L000064](../../agents/task_understanding.py#L64) | 64 | `"    \"data_analysis\": (\"validate_data_before_interpreting\",),"` | — |
+| [SRC-686F71AA50-L000065](../../agents/task_understanding.py#L65) | 65 | `"    \"calculation\": (\"validate_units_and_arithmetic\",),"` | — |
+| [SRC-686F71AA50-L000066](../../agents/task_understanding.py#L66) | 66 | `"    \"translation\": (\"preserve_translation_meaning\",),"` | — |
+| [SRC-686F71AA50-L000067](../../agents/task_understanding.py#L67) | 67 | `"    \"writing_or_editing\": (\"preserve_user_facts_in_writing\",),"` | — |
+| [SRC-686F71AA50-L000068](../../agents/task_understanding.py#L68) | 68 | `"    \"planning\": (\"plan_dependencies_and_fallbacks\",),"` | — |
+| [SRC-686F71AA50-L000069](../../agents/task_understanding.py#L69) | 69 | `"    \"creative_generation\": (\"preserve_user_facts_in_writing\",),"` | — |
+| [SRC-686F71AA50-L000070](../../agents/task_understanding.py#L70) | 70 | `"}"` | — |
+| [SRC-686F71AA50-L000071](../../agents/task_understanding.py#L71) | 71 | `"_DECISION_MATRIX = ("` | — |
+| [SRC-686F71AA50-L000072](../../agents/task_understanding.py#L72) | 72 | `"    {\"stage\": \"interpret\", \"check\": \"goal_context_required_inputs\", \"pass_action\": \"preserve_explicit_constraints\", \"fail_action\": \"clarify_missing_required_input\"},"` | — |
+| [SRC-686F71AA50-L000073](../../agents/task_understanding.py#L73) | 73 | `"    {\"stage\": \"route\", \"check\": \"tool_permission_and_readiness\", \"pass_action\": \"use_only_allowed_configured_tools\", \"fail_action\": \"report_not_configured_or_blocked\"},"` | — |
+| [SRC-686F71AA50-L000074](../../agents/task_understanding.py#L74) | 74 | `"    {\"stage\": \"plan\", \"check\": \"distinct_relevant_queries_and_budget\", \"pass_action\": \"execute_bounded_deduplicated_plan\", \"fail_action\": \"stop_and_report_limit\"},"` | — |
+| [SRC-686F71AA50-L000075](../../agents/task_understanding.py#L75) | 75 | `"    {\"stage\": \"evidence\", \"check\": \"relevance_identity_freshness_readability\", \"pass_action\": \"retain_task_eligible_evidence\", \"fail_action\": \"exclude_and_record_reason\"},"` | — |
+| [SRC-686F71AA50-L000076](../../agents/task_understanding.py#L76) | 76 | `"    {\"stage\": \"synthesize\", \"check\": \"claim_support_and_scope\", \"pass_action\": \"cite_supported_claims_and_qualify_inference\", \"fail_action\": \"answer_partially_or_abstain\"},"` | — |
+| [SRC-686F71AA50-L000077](../../agents/task_understanding.py#L77) | 77 | `"    {\"stage\": \"terminate\", \"check\": \"actual_stage_outcomes\", \"pass_action\": \"report_observed_completion_state\", \"fail_action\": \"mark_partial_failed_or_not_run\"},"` | — |
+| [SRC-686F71AA50-L000078](../../agents/task_understanding.py#L78) | 78 | `")"` | — |
+| [SRC-686F71AA50-L000079](../../agents/task_understanding.py#L79) | 79 | `"_DECISION_STAGES = {row[\"stage\"] for row in _DECISION_MATRIX}"` | — |
 | [SRC-686F71AA50-L000080](../../agents/task_understanding.py#L80) | 80 | `"_DECISION_IDS = {"` | — |
 | [SRC-686F71AA50-L000081](../../agents/task_understanding.py#L81) | 81 | `"    field: {row[field] for row in _DECISION_MATRIX}"` | — |
 | [SRC-686F71AA50-L000082](../../agents/task_understanding.py#L82) | 82 | `"    for field in (\"check\", \"pass_action\", \"fail_action\")"` | — |
@@ -794,25 +816,3 @@
 | [SRC-686F71AA50-L000855](../../agents/task_understanding.py#L855) | 855 | `"            ([\"government_official_destination\"] if government_official_site else [])"` | — |
 | [SRC-686F71AA50-L000856](../../agents/task_understanding.py#L856) | 856 | `"            + ([\"official_destination\"] if official_destination else [])"` | — |
 | [SRC-686F71AA50-L000857](../../agents/task_understanding.py#L857) | 857 | `"            + ([\"current_read_page\"] if current_required else [])"` | — |
-| [SRC-686F71AA50-L000858](../../agents/task_understanding.py#L858) | 858 | `"            + ([\"public_social_content\"] if social_required else [])"` | — |
-| [SRC-686F71AA50-L000859](../../agents/task_understanding.py#L859) | 859 | `"            + ([\"authoritative_health_content\"] if matches[\"medical_information\"] else [])"` | — |
-| [SRC-686F71AA50-L000860](../../agents/task_understanding.py#L860) | 860 | `"            + ([\"official_legal_text\"] if matches[\"legal_information\"] else [])"` | — |
-| [SRC-686F71AA50-L000861](../../agents/task_understanding.py#L861) | 861 | `"            + ([\"task_relevant_sources\"] if not (government_official_site or official_destination or current_required or social_required or matches[\"medical_information\"] or matches[\"legal_information\"]) else [])"` | — |
-| [SRC-686F71AA50-L000862](../../agents/task_understanding.py#L862) | 862 | `"        )),"` | — |
-| [SRC-686F71AA50-L000863](../../agents/task_understanding.py#L863) | 863 | `"    }"` | — |
-| [SRC-686F71AA50-L000864](../../agents/task_understanding.py#L864) | 864 | `"    spec = {"` | — |
-| [SRC-686F71AA50-L000865](../../agents/task_understanding.py#L865) | 865 | `"        \"schema\": \"omarai.task_spec.v1\","` | — |
-| [SRC-686F71AA50-L000866](../../agents/task_understanding.py#L866) | 866 | `"        \"task_family\": family,"` | — |
-| [SRC-686F71AA50-L000867](../../agents/task_understanding.py#L867) | 867 | `"        \"mode\": clean_mode,"` | — |
-| [SRC-686F71AA50-L000868](../../agents/task_understanding.py#L868) | 868 | `"        \"intent_route\": intent_route or \"unassessed\","` | — |
-| [SRC-686F71AA50-L000869](../../agents/task_understanding.py#L869) | 869 | `"        \"normalization\": \"unicode_nfkc_arabic_diacritic_and_letter_normalization\","` | — |
-| [SRC-686F71AA50-L000870](../../agents/task_understanding.py#L870) | 870 | `"        \"classification_method\": \"deterministic_multi_pattern_hypotheses\","` | — |
-| [SRC-686F71AA50-L000871](../../agents/task_understanding.py#L871) | 871 | `"        \"classification_is_probability\": False,"` | — |
-| [SRC-686F71AA50-L000872](../../agents/task_understanding.py#L872) | 872 | `"        \"ambiguity_status\": ambiguity_status,"` | — |
-| [SRC-686F71AA50-L000873](../../agents/task_understanding.py#L873) | 873 | `"        \"missing_required_inputs\": list(dict.fromkeys(missing_required_inputs)),"` | — |
-| [SRC-686F71AA50-L000874](../../agents/task_understanding.py#L874) | 874 | `"        \"requires_clarification\": ambiguity_status == \"needs_clarification\","` | — |
-| [SRC-686F71AA50-L000875](../../agents/task_understanding.py#L875) | 875 | `"        \"context_resolution\": context_resolution,"` | — |
-| [SRC-686F71AA50-L000876](../../agents/task_understanding.py#L876) | 876 | `"        \"secondary_task_types\": ["` | — |
-| [SRC-686F71AA50-L000877](../../agents/task_understanding.py#L877) | 877 | `"            name for name, signals in matches.items()"` | — |
-| [SRC-686F71AA50-L000878](../../agents/task_understanding.py#L878) | 878 | `"            if signals and name != family"` | — |
-| [SRC-686F71AA50-L000879](../../agents/task_understanding.py#L879) | 879 | `"        ],"` | — |

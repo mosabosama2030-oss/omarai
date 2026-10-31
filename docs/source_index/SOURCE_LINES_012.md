@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002311 إلى SRC-1AE03B9EC3-L003110
+- النطاق: SRC-1AE03B9EC3-L002289 إلى SRC-1AE03B9EC3-L003088
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002289](../../agents/web_agent.py#L2289) | 2289 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L002290](../../agents/web_agent.py#L2290) | 2290 | `"            budget.reserve(\"page_fetches\")"` | — |
+| [SRC-1AE03B9EC3-L002291](../../agents/web_agent.py#L2291) | 2291 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002292](../../agents/web_agent.py#L2292) | 2292 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L002293](../../agents/web_agent.py#L2293) | 2293 | `"            from bs4 import BeautifulSoup"` | — |
+| [SRC-1AE03B9EC3-L002294](../../agents/web_agent.py#L2294) | 2294 | `"        except ImportError as exc:"` | — |
+| [SRC-1AE03B9EC3-L002295](../../agents/web_agent.py#L2295) | 2295 | `"            raise AgentDependencyError("` | — |
+| [SRC-1AE03B9EC3-L002296](../../agents/web_agent.py#L2296) | 2296 | `"                \"حزم استخراج الصفحات غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
+| [SRC-1AE03B9EC3-L002297](../../agents/web_agent.py#L2297) | 2297 | `"            ) from exc"` | — |
+| [SRC-1AE03B9EC3-L002298](../../agents/web_agent.py#L2298) | 2298 | `""` | — |
+| [SRC-1AE03B9EC3-L002299](../../agents/web_agent.py#L2299) | 2299 | `"        headers = {"` | — |
+| [SRC-1AE03B9EC3-L002300](../../agents/web_agent.py#L2300) | 2300 | `"            \"User-Agent\": \"OmaraiResearchBot/1.1 (public page research; no login)\","` | — |
+| [SRC-1AE03B9EC3-L002301](../../agents/web_agent.py#L2301) | 2301 | `"            \"Accept\": \"text/html,application/xhtml+xml,text/plain;q=0.8\","` | — |
+| [SRC-1AE03B9EC3-L002302](../../agents/web_agent.py#L2302) | 2302 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002303](../../agents/web_agent.py#L2303) | 2303 | `"        media_type = \"\""` | — |
+| [SRC-1AE03B9EC3-L002304](../../agents/web_agent.py#L2304) | 2304 | `"        html = \"\""` | — |
+| [SRC-1AE03B9EC3-L002305](../../agents/web_agent.py#L2305) | 2305 | `"        bytes_truncated = False"` | — |
+| [SRC-1AE03B9EC3-L002306](../../agents/web_agent.py#L2306) | 2306 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002307](../../agents/web_agent.py#L2307) | 2307 | `"            with httpx.Client("` | — |
+| [SRC-1AE03B9EC3-L002308](../../agents/web_agent.py#L2308) | 2308 | `"                timeout=self._effective_timeout(8.0),"` | — |
+| [SRC-1AE03B9EC3-L002309](../../agents/web_agent.py#L2309) | 2309 | `"                follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L002310](../../agents/web_agent.py#L2310) | 2310 | `"                headers=headers,"` | — |
 | [SRC-1AE03B9EC3-L002311](../../agents/web_agent.py#L2311) | 2311 | `"                verify=True,"` | — |
 | [SRC-1AE03B9EC3-L002312](../../agents/web_agent.py#L2312) | 2312 | `"                trust_env=False,"` | — |
 | [SRC-1AE03B9EC3-L002313](../../agents/web_agent.py#L2313) | 2313 | `"            ) as client:"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L003086](../../agents/web_agent.py#L3086) | 3086 | `"            record[\"error_class\"] = error_class[:80]"` | — |
 | [SRC-1AE03B9EC3-L003087](../../agents/web_agent.py#L3087) | 3087 | `"        self.generation_diagnostics.append(record)"` | — |
 | [SRC-1AE03B9EC3-L003088](../../agents/web_agent.py#L3088) | 3088 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
-| [SRC-1AE03B9EC3-L003089](../../agents/web_agent.py#L3089) | 3089 | `""` | — |
-| [SRC-1AE03B9EC3-L003090](../../agents/web_agent.py#L3090) | 3090 | `"    def _request_completion("` | — |
-| [SRC-1AE03B9EC3-L003091](../../agents/web_agent.py#L3091) | 3091 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003092](../../agents/web_agent.py#L3092) | 3092 | `"        messages: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003093](../../agents/web_agent.py#L3093) | 3093 | `"        max_tokens: int = 1400,"` | — |
-| [SRC-1AE03B9EC3-L003094](../../agents/web_agent.py#L3094) | 3094 | `"        temperature: float = 0.2,"` | — |
-| [SRC-1AE03B9EC3-L003095](../../agents/web_agent.py#L3095) | 3095 | `"        timeout: int \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003096](../../agents/web_agent.py#L3096) | 3096 | `"        model: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003097](../../agents/web_agent.py#L3097) | 3097 | `"        enable_web_search: bool = False,"` | — |
-| [SRC-1AE03B9EC3-L003098](../../agents/web_agent.py#L3098) | 3098 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003099](../../agents/web_agent.py#L3099) | 3099 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003100](../../agents/web_agent.py#L3100) | 3100 | `"        requested_model = (model or self.answer_model).strip()"` | — |
-| [SRC-1AE03B9EC3-L003101](../../agents/web_agent.py#L3101) | 3101 | `"        if not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L003102](../../agents/web_agent.py#L3102) | 3102 | `"            self._record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L003103](../../agents/web_agent.py#L3103) | 3103 | `"                requested_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L003104](../../agents/web_agent.py#L3104) | 3104 | `"                attempted_model=requested_model,"` | — |
-| [SRC-1AE03B9EC3-L003105](../../agents/web_agent.py#L3105) | 3105 | `"                status=\"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L003106](../../agents/web_agent.py#L3106) | 3106 | `"                error_class=\"MissingAPIKey\","` | — |
-| [SRC-1AE03B9EC3-L003107](../../agents/web_agent.py#L3107) | 3107 | `"                request_started=False,"` | — |
-| [SRC-1AE03B9EC3-L003108](../../agents/web_agent.py#L3108) | 3108 | `"                remote_response_received=False,"` | — |
-| [SRC-1AE03B9EC3-L003109](../../agents/web_agent.py#L3109) | 3109 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003110](../../agents/web_agent.py#L3110) | 3110 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |

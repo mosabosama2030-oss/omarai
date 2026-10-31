@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003111 إلى SRC-1AE03B9EC3-L003910
+- النطاق: SRC-1AE03B9EC3-L003089 إلى SRC-1AE03B9EC3-L003888
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003089](../../agents/web_agent.py#L3089) | 3089 | `""` | — |
+| [SRC-1AE03B9EC3-L003090](../../agents/web_agent.py#L3090) | 3090 | `"    def _request_completion("` | — |
+| [SRC-1AE03B9EC3-L003091](../../agents/web_agent.py#L3091) | 3091 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003092](../../agents/web_agent.py#L3092) | 3092 | `"        messages: list[dict[str, str]],"` | — |
+| [SRC-1AE03B9EC3-L003093](../../agents/web_agent.py#L3093) | 3093 | `"        max_tokens: int = 1400,"` | — |
+| [SRC-1AE03B9EC3-L003094](../../agents/web_agent.py#L3094) | 3094 | `"        temperature: float = 0.2,"` | — |
+| [SRC-1AE03B9EC3-L003095](../../agents/web_agent.py#L3095) | 3095 | `"        timeout: int \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003096](../../agents/web_agent.py#L3096) | 3096 | `"        model: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L003097](../../agents/web_agent.py#L3097) | 3097 | `"        enable_web_search: bool = False,"` | — |
+| [SRC-1AE03B9EC3-L003098](../../agents/web_agent.py#L3098) | 3098 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003099](../../agents/web_agent.py#L3099) | 3099 | `"        \"\"\"Call an OpenAI-compatible API with bounded fallback and optional live server search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003100](../../agents/web_agent.py#L3100) | 3100 | `"        requested_model = (model or self.answer_model).strip()"` | — |
+| [SRC-1AE03B9EC3-L003101](../../agents/web_agent.py#L3101) | 3101 | `"        if not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L003102](../../agents/web_agent.py#L3102) | 3102 | `"            self._record_generation_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L003103](../../agents/web_agent.py#L3103) | 3103 | `"                requested_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L003104](../../agents/web_agent.py#L3104) | 3104 | `"                attempted_model=requested_model,"` | — |
+| [SRC-1AE03B9EC3-L003105](../../agents/web_agent.py#L3105) | 3105 | `"                status=\"not_configured\","` | — |
+| [SRC-1AE03B9EC3-L003106](../../agents/web_agent.py#L3106) | 3106 | `"                error_class=\"MissingAPIKey\","` | — |
+| [SRC-1AE03B9EC3-L003107](../../agents/web_agent.py#L3107) | 3107 | `"                request_started=False,"` | — |
+| [SRC-1AE03B9EC3-L003108](../../agents/web_agent.py#L3108) | 3108 | `"                remote_response_received=False,"` | — |
+| [SRC-1AE03B9EC3-L003109](../../agents/web_agent.py#L3109) | 3109 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003110](../../agents/web_agent.py#L3110) | 3110 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
 | [SRC-1AE03B9EC3-L003111](../../agents/web_agent.py#L3111) | 3111 | `""` | — |
 | [SRC-1AE03B9EC3-L003112](../../agents/web_agent.py#L3112) | 3112 | `"        model_candidates = [requested_model]"` | — |
 | [SRC-1AE03B9EC3-L003113](../../agents/web_agent.py#L3113) | 3113 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L003886](../../agents/web_agent.py#L3886) | 3886 | `"            or raw.count(end_marker) != 1"` | — |
 | [SRC-1AE03B9EC3-L003887](../../agents/web_agent.py#L3887) | 3887 | `"            or repaired is None"` | — |
 | [SRC-1AE03B9EC3-L003888](../../agents/web_agent.py#L3888) | 3888 | `"            or not repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003889](../../agents/web_agent.py#L3889) | 3889 | `"            or len(repaired.group(1)) > 24_000"` | — |
-| [SRC-1AE03B9EC3-L003890](../../agents/web_agent.py#L3890) | 3890 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003891](../../agents/web_agent.py#L3891) | 3891 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
-| [SRC-1AE03B9EC3-L003892](../../agents/web_agent.py#L3892) | 3892 | `"        return repaired.group(1).strip()"` | — |
-| [SRC-1AE03B9EC3-L003893](../../agents/web_agent.py#L3893) | 3893 | `""` | — |
-| [SRC-1AE03B9EC3-L003894](../../agents/web_agent.py#L3894) | 3894 | `"    def _review_answer("` | — |
-| [SRC-1AE03B9EC3-L003895](../../agents/web_agent.py#L3895) | 3895 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003896](../../agents/web_agent.py#L3896) | 3896 | `"        question: str,"` | — |
-| [SRC-1AE03B9EC3-L003897](../../agents/web_agent.py#L3897) | 3897 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L003898](../../agents/web_agent.py#L3898) | 3898 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L003899](../../agents/web_agent.py#L3899) | 3899 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003900](../../agents/web_agent.py#L3900) | 3900 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003901](../../agents/web_agent.py#L3901) | 3901 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L003902](../../agents/web_agent.py#L3902) | 3902 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L003903](../../agents/web_agent.py#L3903) | 3903 | `"            evidence = _clean_text("` | — |
-| [SRC-1AE03B9EC3-L003904](../../agents/web_agent.py#L3904) | 3904 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
-| [SRC-1AE03B9EC3-L003905](../../agents/web_agent.py#L3905) | 3905 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003906](../../agents/web_agent.py#L3906) | 3906 | `"            source_blocks.append("` | — |
-| [SRC-1AE03B9EC3-L003907](../../agents/web_agent.py#L3907) | 3907 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003908](../../agents/web_agent.py#L3908) | 3908 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L003909](../../agents/web_agent.py#L3909) | 3909 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
-| [SRC-1AE03B9EC3-L003910](../../agents/web_agent.py#L3910) | 3910 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |

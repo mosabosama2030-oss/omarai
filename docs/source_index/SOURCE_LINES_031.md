@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000469 إلى SRC-90FAA34ADE-L000151
+- النطاق: SRC-4FFD5AFC54-L000447 إلى SRC-90FAA34ADE-L000129
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000447](../../scripts/run_answer_quality_benchmark.py#L447) | 447 | `"            except json.JSONDecodeError:"` | — |
+| [SRC-4FFD5AFC54-L000448](../../scripts/run_answer_quality_benchmark.py#L448) | 448 | `"                return status, raw"` | — |
+| [SRC-4FFD5AFC54-L000449](../../scripts/run_answer_quality_benchmark.py#L449) | 449 | `"    except urllib.error.HTTPError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000450](../../scripts/run_answer_quality_benchmark.py#L450) | 450 | `"        raw_bytes = exc.read(MAX_RESPONSE_BYTES + 1)"` | — |
+| [SRC-4FFD5AFC54-L000451](../../scripts/run_answer_quality_benchmark.py#L451) | 451 | `"        if len(raw_bytes) > MAX_RESPONSE_BYTES:"` | — |
+| [SRC-4FFD5AFC54-L000452](../../scripts/run_answer_quality_benchmark.py#L452) | 452 | `"            return exc.code, {\"error\": \"ResponseTooLarge\", \"detail\": \"Response exceeded the 2 MB limit.\"}"` | — |
+| [SRC-4FFD5AFC54-L000453](../../scripts/run_answer_quality_benchmark.py#L453) | 453 | `"        raw = raw_bytes.decode(\"utf-8\", errors=\"replace\")"` | — |
+| [SRC-4FFD5AFC54-L000454](../../scripts/run_answer_quality_benchmark.py#L454) | 454 | `"        try:"` | — |
+| [SRC-4FFD5AFC54-L000455](../../scripts/run_answer_quality_benchmark.py#L455) | 455 | `"            return exc.code, json.loads(raw)"` | — |
+| [SRC-4FFD5AFC54-L000456](../../scripts/run_answer_quality_benchmark.py#L456) | 456 | `"        except json.JSONDecodeError:"` | — |
+| [SRC-4FFD5AFC54-L000457](../../scripts/run_answer_quality_benchmark.py#L457) | 457 | `"            return exc.code, raw"` | — |
+| [SRC-4FFD5AFC54-L000458](../../scripts/run_answer_quality_benchmark.py#L458) | 458 | `"    except ValueError as exc:"` | — |
+| [SRC-4FFD5AFC54-L000459](../../scripts/run_answer_quality_benchmark.py#L459) | 459 | `"        return 0, {\"error\": \"UnsafeBaseURL\", \"detail\": str(exc)}"` | — |
+| [SRC-4FFD5AFC54-L000460](../../scripts/run_answer_quality_benchmark.py#L460) | 460 | `"    except (urllib.error.URLError, TimeoutError, OSError) as exc:"` | — |
+| [SRC-4FFD5AFC54-L000461](../../scripts/run_answer_quality_benchmark.py#L461) | 461 | `"        return 0, {\"error\": type(exc).__name__, \"detail\": str(exc)}"` | — |
+| [SRC-4FFD5AFC54-L000462](../../scripts/run_answer_quality_benchmark.py#L462) | 462 | `""` | — |
+| [SRC-4FFD5AFC54-L000463](../../scripts/run_answer_quality_benchmark.py#L463) | 463 | `""` | — |
+| [SRC-4FFD5AFC54-L000464](../../scripts/run_answer_quality_benchmark.py#L464) | 464 | `"def get_verified_build_sha(base_url: str, timeout: float, token: str \| None = None) -> str:"` | — |
+| [SRC-4FFD5AFC54-L000465](../../scripts/run_answer_quality_benchmark.py#L465) | 465 | `"    \"\"\"Read the deployed build identity from /api/health; never trust a caller-only SHA.\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000466](../../scripts/run_answer_quality_benchmark.py#L466) | 466 | `"    origin = validate_base_url(base_url, token_present=bool(token))"` | — |
+| [SRC-4FFD5AFC54-L000467](../../scripts/run_answer_quality_benchmark.py#L467) | 467 | `"    request = urllib.request.Request("` | — |
+| [SRC-4FFD5AFC54-L000468](../../scripts/run_answer_quality_benchmark.py#L468) | 468 | `"        origin + \"/api/health\","` | — |
 | [SRC-4FFD5AFC54-L000469](../../scripts/run_answer_quality_benchmark.py#L469) | 469 | `"        headers={\"Accept\": \"application/json\"},"` | — |
 | [SRC-4FFD5AFC54-L000470](../../scripts/run_answer_quality_benchmark.py#L470) | 470 | `"        method=\"GET\","` | — |
 | [SRC-4FFD5AFC54-L000471](../../scripts/run_answer_quality_benchmark.py#L471) | 471 | `"    )"` | — |
@@ -821,25 +843,3 @@
 | [SRC-90FAA34ADE-L000127](../../tests/fixtures/answer_quality_cases.json#L127) | 127 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000128](../../tests/fixtures/answer_quality_cases.json#L128) | 128 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000129](../../tests/fixtures/answer_quality_cases.json#L129) | 129 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000130](../../tests/fixtures/answer_quality_cases.json#L130) | 130 | `"        \"notes\": \"Local capability router in WebAgent._is_self_question\""` | — |
-| [SRC-90FAA34ADE-L000131](../../tests/fixtures/answer_quality_cases.json#L131) | 131 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000132](../../tests/fixtures/answer_quality_cases.json#L132) | 132 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000133](../../tests/fixtures/answer_quality_cases.json#L133) | 133 | `"        \"used_web_search is true for pure capability question\""` | — |
-| [SRC-90FAA34ADE-L000134](../../tests/fixtures/answer_quality_cases.json#L134) | 134 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000135](../../tests/fixtures/answer_quality_cases.json#L135) | 135 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000136](../../tests/fixtures/answer_quality_cases.json#L136) | 136 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000137](../../tests/fixtures/answer_quality_cases.json#L137) | 137 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000138](../../tests/fixtures/answer_quality_cases.json#L138) | 138 | `"      \"case_id\": \"AQ-006\","` | — |
-| [SRC-90FAA34ADE-L000139](../../tests/fixtures/answer_quality_cases.json#L139) | 139 | `"      \"category\": \"omarai_capabilities\","` | — |
-| [SRC-90FAA34ADE-L000140](../../tests/fixtures/answer_quality_cases.json#L140) | 140 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000141](../../tests/fixtures/answer_quality_cases.json#L141) | 141 | `"      \"question\": \"How do you search the web and which engines can you use?\","` | — |
-| [SRC-90FAA34ADE-L000142](../../tests/fixtures/answer_quality_cases.json#L142) | 142 | `"      \"expected_strategy\": \"local\","` | — |
-| [SRC-90FAA34ADE-L000143](../../tests/fixtures/answer_quality_cases.json#L143) | 143 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000144](../../tests/fixtures/answer_quality_cases.json#L144) | 144 | `"        \"Mentions public search sources without inventing paid access as always-on\","` | — |
-| [SRC-90FAA34ADE-L000145](../../tests/fixtures/answer_quality_cases.json#L145) | 145 | `"        \"Does not expose API keys\""` | — |
-| [SRC-90FAA34ADE-L000146](../../tests/fixtures/answer_quality_cases.json#L146) | 146 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000147](../../tests/fixtures/answer_quality_cases.json#L147) | 147 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000148](../../tests/fixtures/answer_quality_cases.json#L148) | 148 | `"        \"Prints OPENROUTER_API_KEY or OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-90FAA34ADE-L000149](../../tests/fixtures/answer_quality_cases.json#L149) | 149 | `"        \"Claims unrestricted access to logged-in social feeds\""` | — |
-| [SRC-90FAA34ADE-L000150](../../tests/fixtures/answer_quality_cases.json#L150) | 150 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000151](../../tests/fixtures/answer_quality_cases.json#L151) | 151 | `"      \"evidence_fixture\": {"` | — |

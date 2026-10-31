@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006311 إلى SRC-EEF2E6447C-L000474
+- النطاق: SRC-1AE03B9EC3-L006289 إلى SRC-EEF2E6447C-L000452
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006289](../../agents/web_agent.py#L6289) | 6289 | `"                        \"لا تعتبر التغطية مكتملة دون مراجعة المحور المذكور.\""` | — |
+| [SRC-1AE03B9EC3-L006290](../../agents/web_agent.py#L6290) | 6290 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L006291](../../agents/web_agent.py#L6291) | 6291 | `"                except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L006292](../../agents/web_agent.py#L6292) | 6292 | `"                    coverage_repair_status = \"unavailable\""` | — |
+| [SRC-1AE03B9EC3-L006293](../../agents/web_agent.py#L6293) | 6293 | `"                    coverage_repair_warning = ("` | — |
+| [SRC-1AE03B9EC3-L006294](../../agents/web_agent.py#L6294) | 6294 | `"                        \"تعذرت محاولة إصلاح محور قد يكون ناقصًا (\""` | — |
+| [SRC-1AE03B9EC3-L006295](../../agents/web_agent.py#L6295) | 6295 | `"                        + type(exc).__name__"` | — |
+| [SRC-1AE03B9EC3-L006296](../../agents/web_agent.py#L6296) | 6296 | `"                        + \")؛ راجع المحاور المطلوبة قبل اعتماد الإجابة.\""` | — |
+| [SRC-1AE03B9EC3-L006297](../../agents/web_agent.py#L6297) | 6297 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L006298](../../agents/web_agent.py#L6298) | 6298 | `"        elif coverage_targets and review_status == \"model_claim_audit_completed\" and not self.api_key:"` | — |
+| [SRC-1AE03B9EC3-L006299](../../agents/web_agent.py#L6299) | 6299 | `"            coverage_repair_status = \"skipped_no_model_configuration\""` | — |
+| [SRC-1AE03B9EC3-L006300](../../agents/web_agent.py#L6300) | 6300 | `"        elif coverage_targets:"` | — |
+| [SRC-1AE03B9EC3-L006301](../../agents/web_agent.py#L6301) | 6301 | `"            coverage_repair_status = \"skipped_review_unavailable\""` | — |
+| [SRC-1AE03B9EC3-L006302](../../agents/web_agent.py#L6302) | 6302 | `""` | — |
+| [SRC-1AE03B9EC3-L006303](../../agents/web_agent.py#L6303) | 6303 | `"        if self.server_search_sources:"` | — |
+| [SRC-1AE03B9EC3-L006304](../../agents/web_agent.py#L6304) | 6304 | `"            answer += \"\\n\\nروابط إضافية من البحث المباشر عبر الويب:\""` | — |
+| [SRC-1AE03B9EC3-L006305](../../agents/web_agent.py#L6305) | 6305 | `"            for source in self.server_search_sources[:8]:"` | — |
+| [SRC-1AE03B9EC3-L006306](../../agents/web_agent.py#L6306) | 6306 | `"                answer += \"\\n- \" + source[\"title\"] + \" — \" + source[\"url\"]"` | — |
+| [SRC-1AE03B9EC3-L006307](../../agents/web_agent.py#L6307) | 6307 | `"        max_citable_sources = min(MAX_LLM_CITED_SOURCES, len(sources))"` | — |
+| [SRC-1AE03B9EC3-L006308](../../agents/web_agent.py#L6308) | 6308 | `"        answer, citation_warnings = self._remove_invalid_citations("` | — |
+| [SRC-1AE03B9EC3-L006309](../../agents/web_agent.py#L6309) | 6309 | `"            answer, max_citable_sources"` | — |
+| [SRC-1AE03B9EC3-L006310](../../agents/web_agent.py#L6310) | 6310 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L006311](../../agents/web_agent.py#L6311) | 6311 | `"        citation_validation = self._citation_validation_metadata("` | — |
 | [SRC-1AE03B9EC3-L006312](../../agents/web_agent.py#L6312) | 6312 | `"            answer, max_citable_sources, citation_warnings, review_status"` | — |
 | [SRC-1AE03B9EC3-L006313](../../agents/web_agent.py#L6313) | 6313 | `"        )"` | — |
@@ -812,25 +834,3 @@
 | [SRC-EEF2E6447C-L000450](../../api/omarai.py#L450) | 450 | `"                    chunk = self.rfile.read1("` | — |
 | [SRC-EEF2E6447C-L000451](../../api/omarai.py#L451) | 451 | `"                        min(size - len(body), REQUEST_BODY_READ_CHUNK_BYTES)"` | — |
 | [SRC-EEF2E6447C-L000452](../../api/omarai.py#L452) | 452 | `"                    )"` | — |
-| [SRC-EEF2E6447C-L000453](../../api/omarai.py#L453) | 453 | `"                except TimeoutError:"` | — |
-| [SRC-EEF2E6447C-L000454](../../api/omarai.py#L454) | 454 | `"                    timed_out = True"` | — |
-| [SRC-EEF2E6447C-L000455](../../api/omarai.py#L455) | 455 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000456](../../api/omarai.py#L456) | 456 | `"                if not chunk:"` | — |
-| [SRC-EEF2E6447C-L000457](../../api/omarai.py#L457) | 457 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000458](../../api/omarai.py#L458) | 458 | `"                body.extend(chunk)"` | — |
-| [SRC-EEF2E6447C-L000459](../../api/omarai.py#L459) | 459 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000460](../../api/omarai.py#L460) | 460 | `"            try:"` | — |
-| [SRC-EEF2E6447C-L000461](../../api/omarai.py#L461) | 461 | `"                self.connection.settimeout(previous_timeout)"` | — |
-| [SRC-EEF2E6447C-L000462](../../api/omarai.py#L462) | 462 | `"            except OSError:"` | — |
-| [SRC-EEF2E6447C-L000463](../../api/omarai.py#L463) | 463 | `"                pass"` | — |
-| [SRC-EEF2E6447C-L000464](../../api/omarai.py#L464) | 464 | `""` | — |
-| [SRC-EEF2E6447C-L000465](../../api/omarai.py#L465) | 465 | `"        if timed_out:"` | — |
-| [SRC-EEF2E6447C-L000466](../../api/omarai.py#L466) | 466 | `"            self.close_connection = True"` | — |
-| [SRC-EEF2E6447C-L000467](../../api/omarai.py#L467) | 467 | `"            self.respond(408, {\"error\": \"request body read timed out\"})"` | — |
-| [SRC-EEF2E6447C-L000468](../../api/omarai.py#L468) | 468 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000469](../../api/omarai.py#L469) | 469 | `"        if len(body) != size:"` | — |
-| [SRC-EEF2E6447C-L000470](../../api/omarai.py#L470) | 470 | `"            self.close_connection = True"` | — |
-| [SRC-EEF2E6447C-L000471](../../api/omarai.py#L471) | 471 | `"            self.respond(400, {\"error\": \"incomplete request body\"})"` | — |
-| [SRC-EEF2E6447C-L000472](../../api/omarai.py#L472) | 472 | `"            return None"` | — |
-| [SRC-EEF2E6447C-L000473](../../api/omarai.py#L473) | 473 | `"        return bytes(body)"` | — |
-| [SRC-EEF2E6447C-L000474](../../api/omarai.py#L474) | 474 | `""` | — |

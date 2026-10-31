@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001511 إلى SRC-1AE03B9EC3-L002310
+- النطاق: SRC-1AE03B9EC3-L001489 إلى SRC-1AE03B9EC3-L002288
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001489](../../agents/web_agent.py#L1489) | 1489 | `"            adapters.append((\"google_news_rss\", self._search_news))"` | — |
+| [SRC-1AE03B9EC3-L001490](../../agents/web_agent.py#L1490) | 1490 | `""` | — |
+| [SRC-1AE03B9EC3-L001491](../../agents/web_agent.py#L1491) | 1491 | `"        async def run_one(name: str, method: Any) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001492](../../agents/web_agent.py#L1492) | 1492 | `"            try:"` | — |
+| [SRC-1AE03B9EC3-L001493](../../agents/web_agent.py#L1493) | 1493 | `"                if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L001494](../../agents/web_agent.py#L1494) | 1494 | `"                    budget.reserve(\"search_calls\")"` | — |
+| [SRC-1AE03B9EC3-L001495](../../agents/web_agent.py#L1495) | 1495 | `"                provider_timeout = self._effective_timeout(10.0)"` | — |
+| [SRC-1AE03B9EC3-L001496](../../agents/web_agent.py#L1496) | 1496 | `"                raw = await asyncio.wait_for("` | — |
+| [SRC-1AE03B9EC3-L001497](../../agents/web_agent.py#L1497) | 1497 | `"                    asyncio.to_thread(method, search_query), timeout=provider_timeout"` | — |
+| [SRC-1AE03B9EC3-L001498](../../agents/web_agent.py#L1498) | 1498 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001499](../../agents/web_agent.py#L1499) | 1499 | `"                if not isinstance(raw, list):"` | — |
+| [SRC-1AE03B9EC3-L001500](../../agents/web_agent.py#L1500) | 1500 | `"                    raise TypeError(\"connector returned a non-list result\")"` | — |
+| [SRC-1AE03B9EC3-L001501](../../agents/web_agent.py#L1501) | 1501 | `"                accepted: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L001502](../../agents/web_agent.py#L1502) | 1502 | `"                rejected = 0"` | — |
+| [SRC-1AE03B9EC3-L001503](../../agents/web_agent.py#L1503) | 1503 | `"                rejection_counts = {reason: 0 for reason in _PROVIDER_REJECTION_REASONS}"` | — |
+| [SRC-1AE03B9EC3-L001504](../../agents/web_agent.py#L1504) | 1504 | `"                for item in raw:"` | — |
+| [SRC-1AE03B9EC3-L001505](../../agents/web_agent.py#L1505) | 1505 | `"                    if not isinstance(item, dict):"` | — |
+| [SRC-1AE03B9EC3-L001506](../../agents/web_agent.py#L1506) | 1506 | `"                        rejected += 1"` | — |
+| [SRC-1AE03B9EC3-L001507](../../agents/web_agent.py#L1507) | 1507 | `"                        rejection_counts[\"malformed_candidate\"] += 1"` | — |
+| [SRC-1AE03B9EC3-L001508](../../agents/web_agent.py#L1508) | 1508 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L001509](../../agents/web_agent.py#L1509) | 1509 | `"                    safe_url = _public_http_url(item.get(\"url\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L001510](../../agents/web_agent.py#L1510) | 1510 | `"                    if not safe_url:"` | — |
 | [SRC-1AE03B9EC3-L001511](../../agents/web_agent.py#L1511) | 1511 | `"                        rejected += 1"` | — |
 | [SRC-1AE03B9EC3-L001512](../../agents/web_agent.py#L1512) | 1512 | `"                        rejection_counts[\"invalid_url_or_unsafe_target\"] += 1"` | — |
 | [SRC-1AE03B9EC3-L001513](../../agents/web_agent.py#L1513) | 1513 | `"                        continue"` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L002286](../../agents/web_agent.py#L2286) | 2286 | `"        if not current_url:"` | — |
 | [SRC-1AE03B9EC3-L002287](../../agents/web_agent.py#L2287) | 2287 | `"            return result(status=\"rejected_url\", error_class=\"PublicUrlRejected\")"` | — |
 | [SRC-1AE03B9EC3-L002288](../../agents/web_agent.py#L2288) | 2288 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L002289](../../agents/web_agent.py#L2289) | 2289 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L002290](../../agents/web_agent.py#L2290) | 2290 | `"            budget.reserve(\"page_fetches\")"` | — |
-| [SRC-1AE03B9EC3-L002291](../../agents/web_agent.py#L2291) | 2291 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002292](../../agents/web_agent.py#L2292) | 2292 | `"            import httpx"` | — |
-| [SRC-1AE03B9EC3-L002293](../../agents/web_agent.py#L2293) | 2293 | `"            from bs4 import BeautifulSoup"` | — |
-| [SRC-1AE03B9EC3-L002294](../../agents/web_agent.py#L2294) | 2294 | `"        except ImportError as exc:"` | — |
-| [SRC-1AE03B9EC3-L002295](../../agents/web_agent.py#L2295) | 2295 | `"            raise AgentDependencyError("` | — |
-| [SRC-1AE03B9EC3-L002296](../../agents/web_agent.py#L2296) | 2296 | `"                \"حزم استخراج الصفحات غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
-| [SRC-1AE03B9EC3-L002297](../../agents/web_agent.py#L2297) | 2297 | `"            ) from exc"` | — |
-| [SRC-1AE03B9EC3-L002298](../../agents/web_agent.py#L2298) | 2298 | `""` | — |
-| [SRC-1AE03B9EC3-L002299](../../agents/web_agent.py#L2299) | 2299 | `"        headers = {"` | — |
-| [SRC-1AE03B9EC3-L002300](../../agents/web_agent.py#L2300) | 2300 | `"            \"User-Agent\": \"OmaraiResearchBot/1.1 (public page research; no login)\","` | — |
-| [SRC-1AE03B9EC3-L002301](../../agents/web_agent.py#L2301) | 2301 | `"            \"Accept\": \"text/html,application/xhtml+xml,text/plain;q=0.8\","` | — |
-| [SRC-1AE03B9EC3-L002302](../../agents/web_agent.py#L2302) | 2302 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002303](../../agents/web_agent.py#L2303) | 2303 | `"        media_type = \"\""` | — |
-| [SRC-1AE03B9EC3-L002304](../../agents/web_agent.py#L2304) | 2304 | `"        html = \"\""` | — |
-| [SRC-1AE03B9EC3-L002305](../../agents/web_agent.py#L2305) | 2305 | `"        bytes_truncated = False"` | — |
-| [SRC-1AE03B9EC3-L002306](../../agents/web_agent.py#L2306) | 2306 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002307](../../agents/web_agent.py#L2307) | 2307 | `"            with httpx.Client("` | — |
-| [SRC-1AE03B9EC3-L002308](../../agents/web_agent.py#L2308) | 2308 | `"                timeout=self._effective_timeout(8.0),"` | — |
-| [SRC-1AE03B9EC3-L002309](../../agents/web_agent.py#L2309) | 2309 | `"                follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L002310](../../agents/web_agent.py#L2310) | 2310 | `"                headers=headers,"` | — |

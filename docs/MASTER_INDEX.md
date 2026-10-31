@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **118**
-- ملفات Python المحللة: **72**
-- تعريفات Python المفهرسة: **1504**
-- تعريفات Python موثقة بوجود Docstring: **255**
-- تعريفات Python بلا Docstring: **945**
-- تعريفات لا ينطبق عليها Docstring: **304**
-- الرموز الساكنة الإضافية: **1867**
-- الأسطر النصية المفهرسة حرفيًا: **39780**
+- ملفات المستودع في الجرد: **119**
+- ملفات Python المحللة: **73**
+- تعريفات Python المفهرسة: **1524**
+- تعريفات Python موثقة بوجود Docstring: **258**
+- تعريفات Python بلا Docstring: **961**
+- تعريفات لا ينطبق عليها Docstring: **305**
+- الرموز الساكنة الإضافية: **1874**
+- الأسطر النصية المفهرسة حرفيًا: **39929**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -49,7 +49,7 @@
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 13446 | 326 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
-| FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
+| FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 9565 | 199 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
@@ -138,6 +138,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
+| FILE-888168CDEB | اختبارات | [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L1) | Python | 3867 | 127 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
@@ -357,20 +358,25 @@
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L56) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 56 | [SRC-60066C6786-L000056](../agents/research_pipeline.py#L56) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L124) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 124 | [SRC-60066C6786-L000124](../agents/research_pipeline.py#L124) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L16) | متغير/ثابت Python | ConnectorFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L19) | دالة | _clean_text | لا توجد Docstring. | ناقص | 19 | [SRC-6E58A660BC-L000019](../agents/search_connectors.py#L19) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L25) | دالة | _http_get_json | لا توجد Docstring. | ناقص | 25 | [SRC-6E58A660BC-L000025](../agents/search_connectors.py#L25) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L34) | دالة | _http_get_text | لا توجد Docstring. | ناقص | 34 | [SRC-6E58A660BC-L000034](../agents/search_connectors.py#L34) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L40) | دالة | _result | لا توجد Docstring. | ناقص | 40 | [SRC-6E58A660BC-L000040](../agents/search_connectors.py#L40) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L54) | دالة | search_openalex | لا توجد Docstring. | ناقص | 54 | [SRC-6E58A660BC-L000054](../agents/search_connectors.py#L54) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L77) | دالة | search_arxiv | لا توجد Docstring. | ناقص | 77 | [SRC-6E58A660BC-L000077](../agents/search_connectors.py#L77) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L98) | دالة | search_crossref | لا توجد Docstring. | ناقص | 98 | [SRC-6E58A660BC-L000098](../agents/search_connectors.py#L98) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L126) | دالة | search_semantic_scholar | لا توجد Docstring. | ناقص | 126 | [SRC-6E58A660BC-L000126](../agents/search_connectors.py#L126) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L152) | متغير/ثابت Python | CONNECTOR_REGISTRY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 152 | [SRC-6E58A660BC-L000152](../agents/search_connectors.py#L152) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L160) | دالة | run_connector | لا توجد Docstring. | ناقص | 160 | [SRC-6E58A660BC-L000160](../agents/search_connectors.py#L160) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L173) | دالة | run_free_academic_connectors | لا توجد Docstring. | ناقص | 173 | [SRC-6E58A660BC-L000173](../agents/search_connectors.py#L173) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | MAX_CONNECTOR_RESPONSE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L16) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L17) | متغير/ثابت Python | ConnectorFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-6E58A660BC-L000017](../agents/search_connectors.py#L17) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L20) | دالة | _clean_text | لا توجد Docstring. | ناقص | 20 | [SRC-6E58A660BC-L000020](../agents/search_connectors.py#L20) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L26) | كلاس | _NoRedirectHandler | Fail closed on redirects from fixed academic-provider endpoints. | موثق | 26 | [SRC-6E58A660BC-L000026](../agents/search_connectors.py#L26) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L29) | دالة | _NoRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 29 | [SRC-6E58A660BC-L000029](../agents/search_connectors.py#L29) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L33) | دالة | _open_provider_request | Open a provider request without following an unchecked redirect. | موثق | 33 | [SRC-6E58A660BC-L000033](../agents/search_connectors.py#L33) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L39) | دالة | _read_bounded | Read at most the configured response ceiling plus one sentinel byte. | موثق | 39 | [SRC-6E58A660BC-L000039](../agents/search_connectors.py#L39) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L47) | دالة | _http_get_json | لا توجد Docstring. | ناقص | 47 | [SRC-6E58A660BC-L000047](../agents/search_connectors.py#L47) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L56) | دالة | _http_get_text | لا توجد Docstring. | ناقص | 56 | [SRC-6E58A660BC-L000056](../agents/search_connectors.py#L56) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L62) | دالة | _result | لا توجد Docstring. | ناقص | 62 | [SRC-6E58A660BC-L000062](../agents/search_connectors.py#L62) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L76) | دالة | search_openalex | لا توجد Docstring. | ناقص | 76 | [SRC-6E58A660BC-L000076](../agents/search_connectors.py#L76) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L99) | دالة | search_arxiv | لا توجد Docstring. | ناقص | 99 | [SRC-6E58A660BC-L000099](../agents/search_connectors.py#L99) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L120) | دالة | search_crossref | لا توجد Docstring. | ناقص | 120 | [SRC-6E58A660BC-L000120](../agents/search_connectors.py#L120) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L148) | دالة | search_semantic_scholar | لا توجد Docstring. | ناقص | 148 | [SRC-6E58A660BC-L000148](../agents/search_connectors.py#L148) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L174) | متغير/ثابت Python | CONNECTOR_REGISTRY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 174 | [SRC-6E58A660BC-L000174](../agents/search_connectors.py#L174) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L182) | دالة | run_connector | لا توجد Docstring. | ناقص | 182 | [SRC-6E58A660BC-L000182](../agents/search_connectors.py#L182) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L195) | دالة | run_free_academic_connectors | لا توجد Docstring. | ناقص | 195 | [SRC-6E58A660BC-L000195](../agents/search_connectors.py#L195) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L14) | متغير/ثابت Python | MAX_TASK_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-686F71AA50-L000014](../agents/task_understanding.py#L14) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L15) | متغير/ثابت Python | MAX_TASK_ASPECTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-686F71AA50-L000015](../agents/task_understanding.py#L15) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L16) | متغير/ثابت Python | MAX_STRATEGY_QUERIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-686F71AA50-L000016](../agents/task_understanding.py#L16) |
@@ -1352,6 +1358,21 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L104) | دالة | test_default_repository_ref_prefers_explicit_environment_override | لا توجد Docstring. | ناقص | 104 | [SRC-2614DCB6FB-L000104](../tests/test_search_code.py#L104) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L113) | دالة | test_default_repository_ref_uses_valid_ci_sha | لا توجد Docstring. | ناقص | 113 | [SRC-2614DCB6FB-L000113](../tests/test_search_code.py#L113) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L121) | دالة | test_cli_uses_explicit_ref_for_source_links | لا توجد Docstring. | ناقص | 121 | [SRC-2614DCB6FB-L000121](../tests/test_search_code.py#L121) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L14) | كلاس | _FakeResponse | لا توجد Docstring. | ناقص | 14 | [SRC-888168CDEB-L000014](../tests/test_search_connector_boundaries.py#L14) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L15) | دالة | _FakeResponse.__init__ | لا توجد Docstring. | ناقص | 15 | [SRC-888168CDEB-L000015](../tests/test_search_connector_boundaries.py#L15) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L19) | دالة | _FakeResponse.__enter__ | لا توجد Docstring. | ناقص | 19 | [SRC-888168CDEB-L000019](../tests/test_search_connector_boundaries.py#L19) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L22) | دالة | _FakeResponse.__exit__ | لا توجد Docstring. | ناقص | 22 | [SRC-888168CDEB-L000022](../tests/test_search_connector_boundaries.py#L22) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L25) | دالة | _FakeResponse.read | لا توجد Docstring. | ناقص | 25 | [SRC-888168CDEB-L000025](../tests/test_search_connector_boundaries.py#L25) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L30) | كلاس | _FakeOpener | لا توجد Docstring. | ناقص | 30 | [SRC-888168CDEB-L000030](../tests/test_search_connector_boundaries.py#L30) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L31) | دالة | _FakeOpener.__init__ | لا توجد Docstring. | ناقص | 31 | [SRC-888168CDEB-L000031](../tests/test_search_connector_boundaries.py#L31) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L36) | دالة | _FakeOpener.open | لا توجد Docstring. | ناقص | 36 | [SRC-888168CDEB-L000036](../tests/test_search_connector_boundaries.py#L36) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L42) | دالة | test_academic_connectors_do_not_follow_provider_redirects | لا توجد Docstring. | ناقص | 42 | [SRC-888168CDEB-L000042](../tests/test_search_connector_boundaries.py#L42) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L50) | دالة | test_academic_json_connector_uses_no_redirect_handler_and_bounded_read | لا توجد Docstring. | ناقص | 50 | [SRC-888168CDEB-L000050](../tests/test_search_connector_boundaries.py#L50) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L56) | دالة | test_academic_json_connector_uses_no_redirect_handler_and_bounded_read.build_opener | لا توجد Docstring. | ناقص | 56 | [SRC-888168CDEB-L000056](../tests/test_search_connector_boundaries.py#L56) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L69) | دالة | test_academic_text_connector_rejects_oversized_response | لا توجد Docstring. | ناقص | 69 | [SRC-888168CDEB-L000069](../tests/test_search_connector_boundaries.py#L69) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L99) | دالة | test_public_url_filter_rejects_private_local_and_non_global_targets | لا توجد Docstring. | ناقص | 99 | [SRC-888168CDEB-L000099](../tests/test_search_connector_boundaries.py#L99) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L115) | دالة | test_dns_resolution_fails_closed_for_private_or_local_answers | لا توجد Docstring. | ناقص | 115 | [SRC-888168CDEB-L000115](../tests/test_search_connector_boundaries.py#L115) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L126) | دالة | test_public_url_filter_keeps_public_https_targets | لا توجد Docstring. | ناقص | 126 | [SRC-888168CDEB-L000126](../tests/test_search_connector_boundaries.py#L126) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L6) | دالة | test_population_question_reports_missing_url_publication_date_period_and_scope | لا توجد Docstring. | ناقص | 6 | [SRC-D033B34F41-L000006](../tests/test_source_metadata_audit.py#L6) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L29) | دالة | test_population_source_metadata_presence_does_not_claim_truth_verification | لا توجد Docstring. | ناقص | 29 | [SRC-D033B34F41-L000029](../tests/test_source_metadata_audit.py#L29) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L57) | دالة | test_zero_sources_are_not_reported_as_metadata_complete | لا توجد Docstring. | ناقص | 57 | [SRC-D033B34F41-L000057](../tests/test_source_metadata_audit.py#L57) |
@@ -1820,12 +1841,13 @@
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_QUESTION_CHARS | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_SOURCES | 22 | [SRC-60066C6786-L000022](../agents/research_pipeline.py#L22) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L57) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_MAILTO | 57 | [SRC-6E58A660BC-L000057](../agents/search_connectors.py#L57) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 101 | [SRC-6E58A660BC-L000101](../agents/search_connectors.py#L101) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEMANTIC_SCHOLAR_API_KEY | 129 | [SRC-6E58A660BC-L000129](../agents/search_connectors.py#L129) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L152) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONNECTOR_REGISTRY | 152 | [SRC-6E58A660BC-L000152](../agents/search_connectors.py#L152) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESPONSE_BYTES | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_MAILTO | 79 | [SRC-6E58A660BC-L000079](../agents/search_connectors.py#L79) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 123 | [SRC-6E58A660BC-L000123](../agents/search_connectors.py#L123) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEMANTIC_SCHOLAR_API_KEY | 151 | [SRC-6E58A660BC-L000151](../agents/search_connectors.py#L151) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L174) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONNECTOR_REGISTRY | 174 | [SRC-6E58A660BC-L000174](../agents/search_connectors.py#L174) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_CHARS | 14 | [SRC-686F71AA50-L000014](../agents/task_understanding.py#L14) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_ASPECTS | 15 | [SRC-686F71AA50-L000015](../agents/task_understanding.py#L15) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_STRATEGY_QUERIES | 16 | [SRC-686F71AA50-L000016](../agents/task_understanding.py#L16) |
@@ -3140,6 +3162,12 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 108 | [SRC-2614DCB6FB-L000108](../tests/test_search_code.py#L108) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESPONSE_BYTES | 65 | [SRC-888168CDEB-L000065](../tests/test_search_connector_boundaries.py#L65) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 66 | [SRC-888168CDEB-L000066](../tests/test_search_connector_boundaries.py#L66) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 116 | [SRC-888168CDEB-L000116](../tests/test_search_connector_boundaries.py#L116) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 116 | [SRC-888168CDEB-L000116](../tests/test_search_connector_boundaries.py#L116) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IPPROTO_TCP | 117 | [SRC-888168CDEB-L000117](../tests/test_search_connector_boundaries.py#L117) |
+| [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 117 | [SRC-888168CDEB-L000117](../tests/test_search_connector_boundaries.py#L117) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 24 | [SRC-AFEDC2645A-L000024](../tests/test_task_understanding.py#L24) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 34 | [SRC-AFEDC2645A-L000034](../tests/test_task_understanding.py#L34) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 143 | [SRC-AFEDC2645A-L000143](../tests/test_task_understanding.py#L143) |

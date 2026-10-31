@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000093 إلى SRC-829A979985-L000417
+- النطاق: SRC-FA4E1423C3-L000071 إلى SRC-829A979985-L000395
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000071](../../tests/test_generate_index.py#L71) | 71 | `"        '        local_only = \"do not index\"\\n'"` | — |
+| [SRC-FA4E1423C3-L000072](../../tests/test_generate_index.py#L72) | 72 | `"        '        return local_only\\n',"` | — |
+| [SRC-FA4E1423C3-L000073](../../tests/test_generate_index.py#L73) | 73 | `"        encoding=\"utf-8\","` | — |
+| [SRC-FA4E1423C3-L000074](../../tests/test_generate_index.py#L74) | 74 | `"    )"` | — |
+| [SRC-FA4E1423C3-L000075](../../tests/test_generate_index.py#L75) | 75 | `""` | — |
+| [SRC-FA4E1423C3-L000076](../../tests/test_generate_index.py#L76) | 76 | `"    symbols, _ = INDEXER.scan_repository(tmp_path)"` | — |
+| [SRC-FA4E1423C3-L000077](../../tests/test_generate_index.py#L77) | 77 | `"    by_name = {symbol.name: symbol for symbol in symbols}"` | — |
+| [SRC-FA4E1423C3-L000078](../../tests/test_generate_index.py#L78) | 78 | `""` | — |
+| [SRC-FA4E1423C3-L000079](../../tests/test_generate_index.py#L79) | 79 | `"    assert by_name[\"MODULE_SETTING\"].kind == \"متغير/ثابت Python\""` | — |
+| [SRC-FA4E1423C3-L000080](../../tests/test_generate_index.py#L80) | 80 | `"    assert by_name[\"MODULE_SETTING\"].documented is None"` | — |
+| [SRC-FA4E1423C3-L000081](../../tests/test_generate_index.py#L81) | 81 | `"    assert by_name[\"Settings.CLASS_SETTING\"].kind == \"متغير/ثابت Python\""` | — |
+| [SRC-FA4E1423C3-L000082](../../tests/test_generate_index.py#L82) | 82 | `"    assert \"local_only\" not in by_name"` | — |
+| [SRC-FA4E1423C3-L000083](../../tests/test_generate_index.py#L83) | 83 | `""` | — |
+| [SRC-FA4E1423C3-L000084](../../tests/test_generate_index.py#L84) | 84 | `""` | — |
+| [SRC-FA4E1423C3-L000085](../../tests/test_generate_index.py#L85) | 85 | `"def test_indexes_frontend_ids_javascript_symbols_css_and_documentation_headings("` | — |
+| [SRC-FA4E1423C3-L000086](../../tests/test_generate_index.py#L86) | 86 | `"    tmp_path: Path,"` | — |
+| [SRC-FA4E1423C3-L000087](../../tests/test_generate_index.py#L87) | 87 | `") -> None:"` | — |
+| [SRC-FA4E1423C3-L000088](../../tests/test_generate_index.py#L88) | 88 | `"    \"\"\"Frontend declarations and Markdown headings remain navigable without language parsers.\"\"\""` | — |
+| [SRC-FA4E1423C3-L000089](../../tests/test_generate_index.py#L89) | 89 | `"    web_dir = tmp_path / \"web\""` | — |
+| [SRC-FA4E1423C3-L000090](../../tests/test_generate_index.py#L90) | 90 | `"    docs_dir = tmp_path / \"docs\""` | — |
+| [SRC-FA4E1423C3-L000091](../../tests/test_generate_index.py#L91) | 91 | `"    web_dir.mkdir()"` | — |
+| [SRC-FA4E1423C3-L000092](../../tests/test_generate_index.py#L92) | 92 | `"    docs_dir.mkdir()"` | — |
 | [SRC-FA4E1423C3-L000093](../../tests/test_generate_index.py#L93) | 93 | `"    (web_dir / \"agent.html\").write_text("` | — |
 | [SRC-FA4E1423C3-L000094](../../tests/test_generate_index.py#L94) | 94 | `"        '<div id=\"chat-panel\" name=\"question-box\" data-testid=\"send-button\"></div>\\n'"` | — |
 | [SRC-FA4E1423C3-L000095](../../tests/test_generate_index.py#L95) | 95 | `"        \"<style>\\n\""` | — |
@@ -803,25 +825,3 @@
 | [SRC-829A979985-L000393](../../tests/test_generation_acceptance_matrix.py#L393) | 393 | `"    assert len(calls) == 1"` | — |
 | [SRC-829A979985-L000394](../../tests/test_generation_acceptance_matrix.py#L394) | 394 | `"    assert result[\"request_budget\"][\"counts\"][\"model_calls\"] == 1"` | — |
 | [SRC-829A979985-L000395](../../tests/test_generation_acceptance_matrix.py#L395) | 395 | `"    assert \"model_calls\" in result[\"request_budget\"][\"exhausted_reasons\"]"` | — |
-| [SRC-829A979985-L000396](../../tests/test_generation_acceptance_matrix.py#L396) | 396 | `"    assert result[\"final_answer_status\"] == \"budget_exhausted_with_source_fallback\""` | — |
-| [SRC-829A979985-L000397](../../tests/test_generation_acceptance_matrix.py#L397) | 397 | `"    assert result[\"search_report\"][\"second_pass_review\"] == \"model_claim_audit_unavailable\""` | — |
-| [SRC-829A979985-L000398](../../tests/test_generation_acceptance_matrix.py#L398) | 398 | `"    assert len(result[\"sources\"]) == 2"` | — |
-| [SRC-829A979985-L000399](../../tests/test_generation_acceptance_matrix.py#L399) | 399 | `"    assert \"مسودة تحليل مولدة لكنها لم تخضع للتدقيق النهائي\" not in result[\"answer\"]"` | — |
-| [SRC-829A979985-L000400](../../tests/test_generation_acceptance_matrix.py#L400) | 400 | `"    assert \"السعر الإجمالي 100000 جنيه والمساحة 100 متر.\" in result[\"answer\"]"` | — |
-| [SRC-829A979985-L000401](../../tests/test_generation_acceptance_matrix.py#L401) | 401 | `""` | — |
-| [SRC-829A979985-L000402](../../tests/test_generation_acceptance_matrix.py#L402) | 402 | `""` | — |
-| [SRC-829A979985-L000403](../../tests/test_generation_acceptance_matrix.py#L403) | 403 | `"def test_search_failure_is_not_reported_as_no_attempt_or_completed_answer(monkeypatch):"` | — |
-| [SRC-829A979985-L000404](../../tests/test_generation_acceptance_matrix.py#L404) | 404 | `"    agent = WebAgent()"` | — |
-| [SRC-829A979985-L000405](../../tests/test_generation_acceptance_matrix.py#L405) | 405 | `"    question = \"ابحث عن أحدث معلومات حول الطاقة المتجددة\""` | — |
-| [SRC-829A979985-L000406](../../tests/test_generation_acceptance_matrix.py#L406) | 406 | `""` | — |
-| [SRC-829A979985-L000407](../../tests/test_generation_acceptance_matrix.py#L407) | 407 | `"    monkeypatch.setattr("` | — |
-| [SRC-829A979985-L000408](../../tests/test_generation_acceptance_matrix.py#L408) | 408 | `"        agent,"` | — |
-| [SRC-829A979985-L000409](../../tests/test_generation_acceptance_matrix.py#L409) | 409 | `"        \"_plan_search\","` | — |
-| [SRC-829A979985-L000410](../../tests/test_generation_acceptance_matrix.py#L410) | 410 | `"        lambda question, history: {"` | — |
-| [SRC-829A979985-L000411](../../tests/test_generation_acceptance_matrix.py#L411) | 411 | `"            \"queries\": [question],"` | — |
-| [SRC-829A979985-L000412](../../tests/test_generation_acceptance_matrix.py#L412) | 412 | `"            \"direct_urls\": [],"` | — |
-| [SRC-829A979985-L000413](../../tests/test_generation_acceptance_matrix.py#L413) | 413 | `"            \"social_focus\": False,"` | — |
-| [SRC-829A979985-L000414](../../tests/test_generation_acceptance_matrix.py#L414) | 414 | `"            \"freshness\": \"current\","` | — |
-| [SRC-829A979985-L000415](../../tests/test_generation_acceptance_matrix.py#L415) | 415 | `"            \"depth\": \"standard\","` | — |
-| [SRC-829A979985-L000416](../../tests/test_generation_acceptance_matrix.py#L416) | 416 | `"            \"platforms\": [],"` | — |
-| [SRC-829A979985-L000417](../../tests/test_generation_acceptance_matrix.py#L417) | 417 | `"            \"planning_method\": \"test\","` | — |

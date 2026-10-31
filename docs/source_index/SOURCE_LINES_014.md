@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003911 إلى SRC-1AE03B9EC3-L004710
+- النطاق: SRC-1AE03B9EC3-L003889 إلى SRC-1AE03B9EC3-L004688
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,28 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003889](../../agents/web_agent.py#L3889) | 3889 | `"            or len(repaired.group(1)) > 24_000"` | — |
+| [SRC-1AE03B9EC3-L003890](../../agents/web_agent.py#L3890) | 3890 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L003891](../../agents/web_agent.py#L3891) | 3891 | `"            raise RuntimeError(\"تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.\")"` | — |
+| [SRC-1AE03B9EC3-L003892](../../agents/web_agent.py#L3892) | 3892 | `"        return repaired.group(1).strip()"` | — |
+| [SRC-1AE03B9EC3-L003893](../../agents/web_agent.py#L3893) | 3893 | `""` | — |
+| [SRC-1AE03B9EC3-L003894](../../agents/web_agent.py#L3894) | 3894 | `"    def _review_answer("` | — |
+| [SRC-1AE03B9EC3-L003895](../../agents/web_agent.py#L3895) | 3895 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L003896](../../agents/web_agent.py#L3896) | 3896 | `"        question: str,"` | — |
+| [SRC-1AE03B9EC3-L003897](../../agents/web_agent.py#L3897) | 3897 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L003898](../../agents/web_agent.py#L3898) | 3898 | `"        sources: list[dict[str, Any]],"` | — |
+| [SRC-1AE03B9EC3-L003899](../../agents/web_agent.py#L3899) | 3899 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003900](../../agents/web_agent.py#L3900) | 3900 | `"        \"\"\"Run a bounded evidence audit on deep-research answers; not an independent verifier.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003901](../../agents/web_agent.py#L3901) | 3901 | `"        source_blocks: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L003902](../../agents/web_agent.py#L3902) | 3902 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L003903](../../agents/web_agent.py#L3903) | 3903 | `"            evidence = _clean_text("` | — |
+| [SRC-1AE03B9EC3-L003904](../../agents/web_agent.py#L3904) | 3904 | `"                source.get(\"page_text\") or source.get(\"snippet\") or \"\", 1400"` | — |
+| [SRC-1AE03B9EC3-L003905](../../agents/web_agent.py#L3905) | 3905 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003906](../../agents/web_agent.py#L3906) | 3906 | `"            source_blocks.append("` | — |
+| [SRC-1AE03B9EC3-L003907](../../agents/web_agent.py#L3907) | 3907 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003908](../../agents/web_agent.py#L3908) | 3908 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L003909](../../agents/web_agent.py#L3909) | 3909 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
+| [SRC-1AE03B9EC3-L003910](../../agents/web_agent.py#L3910) | 3910 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003911](../../agents/web_agent.py#L3911) | 3911 | `"                f\"نص المصدر: {evidence}\""` | — |
 | [SRC-1AE03B9EC3-L003912](../../agents/web_agent.py#L3912) | 3912 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003913](../../agents/web_agent.py#L3913) | 3913 | `"        evidence_text = \"\\n\\n\".join(source_blocks) or \"لا توجد أدلة ويب متاحة.\""` | — |
@@ -794,25 +816,3 @@
 | [SRC-1AE03B9EC3-L004686](../../agents/web_agent.py#L4686) | 4686 | `"            and ("` | — |
 | [SRC-1AE03B9EC3-L004687](../../agents/web_agent.py#L4687) | 4687 | `"                intent_route != \"LOCAL\""` | — |
 | [SRC-1AE03B9EC3-L004688](../../agents/web_agent.py#L4688) | 4688 | `"                or might_be_context_dependent(question)"` | — |
-| [SRC-1AE03B9EC3-L004689](../../agents/web_agent.py#L4689) | 4689 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004690](../../agents/web_agent.py#L4690) | 4690 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004691](../../agents/web_agent.py#L4691) | 4691 | `"        if probe_dialogue:"` | — |
-| [SRC-1AE03B9EC3-L004692](../../agents/web_agent.py#L4692) | 4692 | `"            semantic_context = self._resolve_dialogue_context(question, clean_history)"` | — |
-| [SRC-1AE03B9EC3-L004693](../../agents/web_agent.py#L4693) | 4693 | `"            if semantic_context.get(\"method\") == \"llm_semantic_context\":"` | — |
-| [SRC-1AE03B9EC3-L004694](../../agents/web_agent.py#L4694) | 4694 | `"                context_override = semantic_context"` | — |
-| [SRC-1AE03B9EC3-L004695](../../agents/web_agent.py#L4695) | 4695 | `"                if semantic_context.get(\"needs_clarification\"):"` | — |
-| [SRC-1AE03B9EC3-L004696](../../agents/web_agent.py#L4696) | 4696 | `"                    return self._dialogue_clarification_result("` | — |
-| [SRC-1AE03B9EC3-L004697](../../agents/web_agent.py#L4697) | 4697 | `"                        question, clean_mode, semantic_context,"` | — |
-| [SRC-1AE03B9EC3-L004698](../../agents/web_agent.py#L4698) | 4698 | `"                        \"semantic_context_has_unresolved_referent\","` | — |
-| [SRC-1AE03B9EC3-L004699](../../agents/web_agent.py#L4699) | 4699 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004700](../../agents/web_agent.py#L4700) | 4700 | `"                working_question = ("` | — |
-| [SRC-1AE03B9EC3-L004701](../../agents/web_agent.py#L4701) | 4701 | `"                    question if semantic_context.get(\"topic_shift\")"` | — |
-| [SRC-1AE03B9EC3-L004702](../../agents/web_agent.py#L4702) | 4702 | `"                    else semantic_context.get(\"resolved_question\") or question"` | — |
-| [SRC-1AE03B9EC3-L004703](../../agents/web_agent.py#L4703) | 4703 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L004704](../../agents/web_agent.py#L4704) | 4704 | `"                semantic_decision = route_intent("` | — |
-| [SRC-1AE03B9EC3-L004705](../../agents/web_agent.py#L4705) | 4705 | `"                    working_question,"` | — |
-| [SRC-1AE03B9EC3-L004706](../../agents/web_agent.py#L4706) | 4706 | `"                    clean_history,"` | — |
-| [SRC-1AE03B9EC3-L004707](../../agents/web_agent.py#L4707) | 4707 | `"                    routing_mode,"` | — |
-| [SRC-1AE03B9EC3-L004708](../../agents/web_agent.py#L4708) | 4708 | `"                    capability_question=self._is_self_question(working_question),"` | — |
-| [SRC-1AE03B9EC3-L004709](../../agents/web_agent.py#L4709) | 4709 | `"                    requires_web=("` | — |
-| [SRC-1AE03B9EC3-L004710](../../agents/web_agent.py#L4710) | 4710 | `"                        bool(semantic_context.get(\"needs_web\"))"` | — |

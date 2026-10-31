@@ -4,9 +4,32 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000009 إلى SRC-E599346ABE-L000229
+- النطاق: SRC-C4C6C55E1A-L000178 إلى SRC-E599346ABE-L000207
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-C4C6C55E1A — [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-C4C6C55E1A-L000178](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L178) | 178 | `"## تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026"` | — |
+| [SRC-C4C6C55E1A-L000179](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L179) | 179 | `""` | — |
+| [SRC-C4C6C55E1A-L000180](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L180) | 180 | ``"تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
+| [SRC-C4C6C55E1A-L000181](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L181) | 181 | `""` | — |
+| [SRC-C4C6C55E1A-L000182](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L182) | 182 | `""` | — |
+| [SRC-C4C6C55E1A-L000183](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L183) | 183 | `"## تحديث ما بعد دمج PR #76 — 21 أكتوبر 2026"` | — |
+| [SRC-C4C6C55E1A-L000184](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L184) | 184 | `""` | — |
+| [SRC-C4C6C55E1A-L000185](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L185) | 185 | ``"هذه الإضافة أحدث من لقطات CI القديمة في هذه الوثيقة، ولا تغير معناها التاريخي. دمج PR #76 في `main` عبر `528a2552c0cda809d6c444713466e0e075c13ed9` بتاريخ 2026-10-21 19:19:54 UTC."`` | — |
+| [SRC-C4C6C55E1A-L000186](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L186) | 186 | `""` | — |
+| [SRC-C4C6C55E1A-L000187](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L187) | 187 | ``"أحدث تشغيل PR فُحص هو [#39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) على رأس PR قبل الدمج. نجحت وظائف `test (3.11)` و`test (3.12)` و`container-build`; سجّلت اختبارات Pytest 384 نجاحًا في كل إصدار Python، كما نجح Ruff وفحص الفهرس وبناء الحاوية واختبار API المحمي."`` | — |
+| [SRC-C4C6C55E1A-L000188](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L188) | 188 | `""` | — |
+| [SRC-C4C6C55E1A-L000189](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L189) | 189 | ``"**لا يوجد في هذه المراجعة دليل مباشر على تشغيل push مستقل مكتمل على SHA الدمج نفسه**؛ لذا الحالة `NOT_CONFIRMED` وليست `PASS` أو `FAIL`. لا تخلط دليل CI على رأس PR بدليل تشغيل منشور."`` | — |
+| [SRC-C4C6C55E1A-L000190](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L190) | 190 | `""` | — |
+| [SRC-C4C6C55E1A-L000191](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L191) | 191 | `"كل ما سبق لا يغلق تلقائيًا الاختبارات الحية التالية: صحة إجابات AQ-001–AQ-045 دلاليًا، توافر مزودي البحث والنموذج، hosted smoke، دوام SQLite والنسخ الاحتياطي والاستعادة، اختبار الحمل، prompt-injection red-team، القبول اليدوي للواجهة، أو المراجعة المستقلة من Grok. التفاصيل ومعايير الإغلاق الحالية في [تقرير التحقق بعد الدمج](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md)."` | — |
 ## وثائق وفهرسة
 
 ### FILE-26428BDA96 — [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1)
@@ -16,6 +39,14 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000001](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | 1 | ``"> **سجل تدقيق تاريخي مؤرشف:** يرتبط هذا التقرير بالـSHA والتاريخ المثبتين داخله؛ لا يُستخدم وحده للحكم على `main` الحالي أو حالات PR الحية. ارجع إلى [نطاق التنفيذ الحالي](../IMPLEMENTATION_SCOPE.md) و[سجل المعالجة المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md) للحالة الراهنة."`` | — |
+| [SRC-26428BDA96-L000002](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L2) | 2 | `""` | — |
+| [SRC-26428BDA96-L000003](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L3) | 3 | `"# تدقيق Omarai التأسيسي — نتائج P0 من الكود والاختبارات"` | — |
+| [SRC-26428BDA96-L000004](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L4) | 4 | `""` | — |
+| [SRC-26428BDA96-L000005](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L5) | 5 | ``"> **تنبيه تاريخي:** هذا التقرير لقطة تدقيق مرتبطة بالنسخة `08319cce3652c332e414f691a71cc153dfbfd92e`، قبل دمج PR #44–#47. لا يُستخدم وحده للحكم على `main` الحالي. اقرأ معه [تسوية الأدلة التشغيلية بعد الدمج](OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md)، وهي المرجع لتغييرات الموارد والاستشهادات وحالة PR #48 وطلبات التحقق المفتوحة."`` | — |
+| [SRC-26428BDA96-L000006](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L6) | 6 | `""` | — |
+| [SRC-26428BDA96-L000007](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L7) | 7 | `"**المعرّف:** OMARAI-AUDIT-P0-2026-10-19  "` | — |
+| [SRC-26428BDA96-L000008](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L8) | 8 | `"**تاريخ التدقيق:** 2026-10-19  "` | — |
 | [SRC-26428BDA96-L000009](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L9) | 9 | `"**الفرع المرجعي للكود:** main  "` | — |
 | [SRC-26428BDA96-L000010](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L10) | 10 | `"**نسخة المصدر المدققة:** 08319cce3652c332e414f691a71cc153dfbfd92e  "` | — |
 | [SRC-26428BDA96-L000011](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L11) | 11 | `"**نسخة التطبيق السابقة لدمج وثائق المتطلبات:** 3cad5031de3dfdea6977d2428bc00d1e8bfd1303  "` | — |
@@ -848,25 +879,3 @@
 | [SRC-E599346ABE-L000205](../generate_index.py#L205) | 205 | `"    \"\"\"Represent a source annotation that explicitly requests attention.\"\"\""` | — |
 | [SRC-E599346ABE-L000206](../generate_index.py#L206) | 206 | `""` | — |
 | [SRC-E599346ABE-L000207](../generate_index.py#L207) | 207 | `"    finding_id: str"` | — |
-| [SRC-E599346ABE-L000208](../generate_index.py#L208) | 208 | `"    file: str"` | — |
-| [SRC-E599346ABE-L000209](../generate_index.py#L209) | 209 | `"    line_id: str"` | — |
-| [SRC-E599346ABE-L000210](../generate_index.py#L210) | 210 | `"    marker: str"` | — |
-| [SRC-E599346ABE-L000211](../generate_index.py#L211) | 211 | `"    description: str"` | — |
-| [SRC-E599346ABE-L000212](../generate_index.py#L212) | 212 | `""` | — |
-| [SRC-E599346ABE-L000213](../generate_index.py#L213) | 213 | `""` | — |
-| [SRC-E599346ABE-L000214](../generate_index.py#L214) | 214 | `"class IndexGenerationError(RuntimeError):"` | — |
-| [SRC-E599346ABE-L000215](../generate_index.py#L215) | 215 | `"    \"\"\"Signal that a complete Python AST index could not be generated.\"\"\""` | — |
-| [SRC-E599346ABE-L000216](../generate_index.py#L216) | 216 | `""` | — |
-| [SRC-E599346ABE-L000217](../generate_index.py#L217) | 217 | `""` | — |
-| [SRC-E599346ABE-L000218](../generate_index.py#L218) | 218 | `"class SymbolVisitor(ast.NodeVisitor):"` | — |
-| [SRC-E599346ABE-L000219](../generate_index.py#L219) | 219 | `"    \"\"\"Collect Python classes, functions, methods and module/class assignments.\"\"\""` | — |
-| [SRC-E599346ABE-L000220](../generate_index.py#L220) | 220 | `""` | — |
-| [SRC-E599346ABE-L000221](../generate_index.py#L221) | 221 | `"    def __init__(self, relative_file: str) -> None:"` | — |
-| [SRC-E599346ABE-L000222](../generate_index.py#L222) | 222 | `"        \"\"\"Initialize the visitor for one repository-relative Python file.\"\"\""` | — |
-| [SRC-E599346ABE-L000223](../generate_index.py#L223) | 223 | `"        self.relative_file = relative_file"` | — |
-| [SRC-E599346ABE-L000224](../generate_index.py#L224) | 224 | `"        self.symbols: list[IndexedSymbol] = []"` | — |
-| [SRC-E599346ABE-L000225](../generate_index.py#L225) | 225 | `"        self.scope: list[str] = []"` | — |
-| [SRC-E599346ABE-L000226](../generate_index.py#L226) | 226 | `"        self.function_depth = 0"` | — |
-| [SRC-E599346ABE-L000227](../generate_index.py#L227) | 227 | `""` | — |
-| [SRC-E599346ABE-L000228](../generate_index.py#L228) | 228 | `"    @staticmethod"` | — |
-| [SRC-E599346ABE-L000229](../generate_index.py#L229) | 229 | `"    def _description(node: ast.AST) -> tuple[str, bool]:"` | — |
