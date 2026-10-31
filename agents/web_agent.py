@@ -1558,23 +1558,17 @@ class WebAgent:
                     name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
-                detail = (
-                    f"HTTP {exc.response.status_code}"
-                    if isinstance(getattr(exc, "response", None), object)
-                    and isinstance(getattr(getattr(exc, "response", None), "status_code", None), int)
-                    and not isinstance(getattr(getattr(exc, "response", None), "status_code", None), bool)
-                    else type(exc).__name__
-                )
-                status = "failed"
-                status_code = None
                 response = getattr(exc, "response", None)
                 response_status = getattr(response, "status_code", None)
-                if (
-                    isinstance(response_status, int)
+                status_code = (
+                    response_status
+                    if isinstance(response_status, int)
                     and not isinstance(response_status, bool)
                     and 100 <= response_status <= 599
-                ):
-                    status_code = response_status
+                    else None
+                )
+                detail = f"HTTP {status_code}" if status_code is not None else type(exc).__name__
+                status = "failed"
                 else:
                     status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
                     if status_match:
