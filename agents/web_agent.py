@@ -525,29 +525,76 @@ class WebAgent:
     """Search, inspect, and synthesize web evidence for open-ended questions."""
 
     def __init__(self) -> None:
-        self.api_key = (
+        generic_api_key = (
             os.getenv("OMARAI_LLM_API_KEY", "").strip()
             or os.getenv("OPENROUTER_API_KEY", "").strip()
         )
-        self.base_url = os.getenv(
+        configured_base_url = os.getenv(
             "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
         ).strip().rstrip("/")
-        # Pin explicit role models for more consistent behaviour than a random free router.
-        # OMARAI_LLM_MODEL remains a global override for users who want one model everywhere.
+        gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        mistral_api_key = os.getenv("MISTRAL_API_KEY", "").strip()
+        if generic_api_key:
+            primary_provider = (
+                "openrouter" if "openrouter.ai" in configured_base_url.lower() else "custom"
+            )
+            primary_api_key = generic_api_key
+            primary_base_url = configured_base_url
+            default_model = "google/gemma-4-31b-it:free"
+        elif gemini_api_key:
+            primary_provider = "gemini"
+            primary_api_key = gemini_api_key
+            primary_base_url = "https://generativelanguage.googleapis.com/v1beta/openai"
+            default_model = os.getenv("OMARAI_GEMINI_MODEL", "gemini-3.8-flash").strip()
+        elif mistral_api_key:
+            primary_provider = "mistral"
+            primary_api_key = mistral_api_key
+            primary_base_url = "https://api.mistral.ai/v1"
+            default_model = os.getenv("OMARAI_MISTRAL_MODEL", "mistral-small-latest").strip()
+        else:
+            primary_provider = "openrouter"
+            primary_api_key = ""
+            primary_base_url = configured_base_url
+            default_model = "google/gemma-4-31b-it:free"
+        self.api_key = primary_api_key
+        self.base_url = primary_base_url.rstrip("/")
+        # The primary provider stays first; Gemini and Mistral are independent failover targets.
         global_model = os.getenv("OMARAI_LLM_MODEL", "").strip()
         self.answer_model = os.getenv(
-            "OMARAI_ANSWER_MODEL", global_model or "google/gemma-4-31b-it:free"
+            "OMARAI_ANSWER_MODEL", global_model or default_model
         ).strip()
+        default_planner_model = (
+            "nvidia/nemotron-3-ultra-550b-a55b:free"
+            if primary_provider == "openrouter" else default_model
+        )
         self.planner_model = os.getenv(
-            "OMARAI_PLANNER_MODEL",
-            global_model or "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "OMARAI_PLANNER_MODEL", global_model or default_planner_model
         ).strip()
         self.review_model = os.getenv(
             "OMARAI_REVIEW_MODEL", self.answer_model
         ).strip()
+        default_fallback_model = "openrouter/free" if primary_provider == "openrouter" else ""
         self.fallback_model = os.getenv(
-            "OMARAI_LLM_FALLBACK_MODEL", "openrouter/free"
+            "OMARAI_LLM_FALLBACK_MODEL", default_fallback_model
         ).strip()
+        self.model_providers: list[dict[str, str]] = []
+        if primary_api_key:
+            self.model_providers.append({
+                "name": primary_provider, "api_key": primary_api_key,
+                "base_url": self.base_url, "model": self.answer_model,
+            })
+        if gemini_api_key and primary_provider != "gemini":
+            self.model_providers.append({
+                "name": "gemini", "api_key": gemini_api_key,
+                "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+                "model": os.getenv("OMARAI_GEMINI_MODEL", "gemini-3.8-flash").strip(),
+            })
+        if mistral_api_key and primary_provider != "mistral":
+            self.model_providers.append({
+                "name": "mistral", "api_key": mistral_api_key,
+                "base_url": "https://api.mistral.ai/v1",
+                "model": os.getenv("OMARAI_MISTRAL_MODEL", "mistral-small-latest").strip(),
+            })
         self.model = self.answer_model  # Backwards-compatible alias.
         self.model_usage: list[dict[str, Any]] = []
         # Per-answer, bounded diagnostics contain only model identifiers and status metadata.
@@ -584,29 +631,59 @@ class WebAgent:
             search_ready = False
 
         global_model = os.getenv("OMARAI_LLM_MODEL", "").strip()
+        primary_is_openrouter = bool(
+            os.getenv("OMARAI_LLM_API_KEY", "").strip()
+            or os.getenv("OPENROUTER_API_KEY", "").strip()
+        )
+        primary_default_model = (
+            "google/gemma-4-31b-it:free" if primary_is_openrouter
+            else os.getenv("OMARAI_GEMINI_MODEL", "gemini-3.8-flash").strip()
+            if os.getenv("GEMINI_API_KEY", "").strip()
+            else os.getenv("OMARAI_MISTRAL_MODEL", "mistral-small-latest").strip()
+        )
         answer_model = (
             os.getenv("OMARAI_ANSWER_MODEL", "").strip()
             or global_model
-            or "google/gemma-4-31b-it:free"
+            or primary_default_model
         )
         planner_model = (
             os.getenv("OMARAI_PLANNER_MODEL", "").strip()
             or global_model
-            or "nvidia/nemotron-3-ultra-550b-a55b:free"
+            or ("nvidia/nemotron-3-ultra-550b-a55b:free" if primary_is_openrouter else primary_default_model)
         )
         review_model = os.getenv("OMARAI_REVIEW_MODEL", "").strip() or answer_model
         fallback_model = (
-            os.getenv("OMARAI_LLM_FALLBACK_MODEL", "").strip() or "openrouter/free"
+            os.getenv("OMARAI_LLM_FALLBACK_MODEL", "").strip()
+            or ("openrouter/free" if primary_is_openrouter else "")
         )
         return {
             "web_search_ready": search_ready,
             "language_model_configured": bool(
                 os.getenv("OMARAI_LLM_API_KEY", "").strip()
                 or os.getenv("OPENROUTER_API_KEY", "").strip()
+                or os.getenv("GEMINI_API_KEY", "").strip()
+                or os.getenv("MISTRAL_API_KEY", "").strip()
             ),
-            "language_model_provider": os.getenv(
-                "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
-            ).strip().rstrip("/"),
+            "language_model_provider": (
+                os.getenv("OMARAI_LLM_BASE_URL", "").strip().rstrip("/")
+                or ("https://openrouter.ai/api/v1" if (
+                    os.getenv("OMARAI_LLM_API_KEY", "").strip()
+                    or os.getenv("OPENROUTER_API_KEY", "").strip()
+                ) else "https://generativelanguage.googleapis.com/v1beta/openai"
+                if os.getenv("GEMINI_API_KEY", "").strip()
+                else "https://api.mistral.ai/v1" if os.getenv("MISTRAL_API_KEY", "").strip()
+                else "https://openrouter.ai/api/v1")
+            ),
+            "model_providers": [
+                {"name": "openrouter", "configured": bool(
+                    os.getenv("OMARAI_LLM_API_KEY", "").strip()
+                    or os.getenv("OPENROUTER_API_KEY", "").strip()
+                )},
+                {"name": "gemini", "configured": bool(os.getenv("GEMINI_API_KEY", "").strip()),
+                 "model": os.getenv("OMARAI_GEMINI_MODEL", "gemini-3.8-flash").strip()},
+                {"name": "mistral", "configured": bool(os.getenv("MISTRAL_API_KEY", "").strip()),
+                 "model": os.getenv("OMARAI_MISTRAL_MODEL", "mistral-small-latest").strip()},
+            ],
             "default_model": answer_model,
             "planner_model": planner_model,
             "answer_model": answer_model,
@@ -3098,25 +3175,32 @@ class WebAgent:
     ) -> str:
         """Call an OpenAI-compatible API with bounded fallback and optional live server search."""
         requested_model = (model or self.answer_model).strip()
-        if not self.api_key:
+        provider_attempts: list[tuple[str, str, str, str]] = []
+        for index, provider in enumerate(self.model_providers):
+            if index == 0:
+                provider_models = [requested_model]
+                if self.fallback_model and self.fallback_model not in provider_models:
+                    provider_models.append(self.fallback_model)
+            else:
+                provider_models = [provider["model"]]
+            for provider_model in provider_models:
+                provider_attempts.append((
+                    provider["name"], provider["api_key"], provider["base_url"], provider_model
+                ))
+        if not provider_attempts:
             self._record_generation_diagnostic(
-                requested_model=requested_model,
-                attempted_model=requested_model,
-                status="not_configured",
-                error_class="MissingAPIKey",
-                request_started=False,
-                remote_response_received=False,
+                requested_model=requested_model, attempted_model=requested_model,
+                status="not_configured", error_class="MissingAPIKey",
+                request_started=False, remote_response_received=False,
             )
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
-
-        model_candidates = [requested_model]
-        if self.fallback_model and self.fallback_model not in model_candidates:
-            model_candidates.append(self.fallback_model)
-
         last_error: RuntimeError | None = None
-        for candidate_model in model_candidates:
+        for provider_name, active_api_key, active_base_url, candidate_model in provider_attempts:
             budget = getattr(self, "_request_budget", None)
-            use_web_search = enable_web_search and self.openrouter_web_search_enabled
+            use_web_search = (
+                enable_web_search and provider_name == "openrouter"
+                and self.openrouter_web_search_enabled
+            )
             if budget is not None:
                 try:
                     budget.reserve("model_calls")
@@ -3162,10 +3246,10 @@ class WebAgent:
                 request_payload["max_tool_calls"] = 5
             payload = json.dumps(request_payload, ensure_ascii=False).encode("utf-8")
             request = urllib.request.Request(
-                self.base_url + "/chat/completions",
+                active_base_url + "/chat/completions",
                 data=payload,
                 headers={
-                    "Authorization": "Bearer " + self.api_key,
+                    "Authorization": "Bearer " + active_api_key,
                     "Content-Type": "application/json",
                     "HTTP-Referer": "https://github.com/mosabosama2030-oss/omarai",
                     "X-Title": "Omarai Web Agent",
@@ -3260,7 +3344,7 @@ class WebAgent:
                 )
                 self.model_usage.append(_model_usage_record(
                     requested_model, candidate_model,
-                    data, self.base_url,
+                    data, active_base_url,
                     # Keep this to allowlisted usage counters, never raw provider data.
                 ))
                 return answer.strip()

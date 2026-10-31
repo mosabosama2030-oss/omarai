@@ -3897,3 +3897,56 @@ def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
     assert result["answer"] == "إجابة اختبارية [المصدر 1]."
     assert result["research_completion"]["status"] == "diagnostics_not_computed"
     assert any("لا يُعد ذلك دليلًا على اكتمال البحث" in warning for warning in result["warnings"])
+
+def test_model_provider_failover_uses_gemini_after_primary_failure(monkeypatch):
+    import json
+    import urllib.error
+    from io import BytesIO
+
+    monkeypatch.setenv("OPENROUTER_API_KEY", "openrouter-test")
+    monkeypatch.setenv("GEMINI_API_KEY", "gemini-test")
+    monkeypatch.delenv("MISTRAL_API_KEY", raising=False)
+    agent = WebAgent()
+    seen = []
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def read(self, limit):
+            return json.dumps({
+                "choices": [{
+                    "finish_reason": "stop",
+                    "message": {"content": "إجابة اختبارية"},
+                }],
+                "usage": {"prompt_tokens": 2, "completion_tokens": 3, "total_tokens": 5},
+            }).encode("utf-8")
+
+    def fake_urlopen(request, timeout):
+        seen.append({
+            "url": request.full_url,
+            "authorization": request.get_header("Authorization"),
+            "model": json.loads(request.data.decode("utf-8"))["model"],
+        })
+        if "openrouter.ai" in request.full_url:
+            raise urllib.error.HTTPError(
+                request.full_url, 503, "unavailable", {}, BytesIO(b"")
+            )
+        return FakeResponse()
+
+    monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
+    result = agent._request_completion(
+        [{"role": "user", "content": "اختبار"}], model=agent.answer_model
+    )
+
+    assert result == "إجابة اختبارية"
+    assert seen[0]["url"] == "https://openrouter.ai/api/v1/chat/completions"
+    assert seen[0]["authorization"] == "Bearer openrouter-test"
+    assert seen[-1]["url"] == (
+        "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    )
+    assert seen[-1]["authorization"] == "Bearer gemini-test"
+    assert seen[-1]["model"] == "gemini-3.8-flash"
