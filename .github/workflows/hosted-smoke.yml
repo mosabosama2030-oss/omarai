@@ -44,4 +44,13 @@ jobs:
           python-version: "3.12"
 
       - name: Run live hosted acceptance test
-        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --expected-sha "$(git rev-parse HEAD)" --timeout 180
+        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --expected-sha "$(git rev-parse HEAD)" --timeout 180 --output artifacts/hosted-smoke-report.json
+
+      - name: Upload hosted question-and-answer transcript
+        if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: omarai-hosted-acceptance-transcript
+          path: artifacts/hosted-smoke-report.json
+          if-no-files-found: ignore
+          retention-days: 14
