@@ -83,6 +83,7 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     assert row2["note"].startswith("\t\u00a0\ufeff=")
 
 def test_legacy_leads_migrate_into_the_initial_company_without_data_loss(tmp_path):
+    import hashlib
     import json
     import sqlite3
 
@@ -103,7 +104,9 @@ def test_legacy_leads_migrate_into_the_initial_company_without_data_loss(tmp_pat
         db.execute(
             """INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
-                "legacy-id", "legacy-fingerprint", "بدور على شقة",
+                "legacy-id", hashlib.sha256((
+                    "https://example.com/legacy\\n" + normalize("بدور على شقة")
+                ).encode()).hexdigest(), "بدور على شقة",
                 "https://example.com/legacy", "manual", now,
                 json.dumps({"score": 1}), "new", "", now, now,
             ),
