@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000164 إلى SRC-01E35ABC46-L000473
+- النطاق: SRC-AFFCF23BD4-L000164 إلى SRC-01E35ABC46-L000465
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -301,48 +301,56 @@
 | [SRC-AFFCF23BD4-L000446](../../tests/test_research_completion.py#L446) | 446 | `""` | — |
 | [SRC-AFFCF23BD4-L000447](../../tests/test_research_completion.py#L447) | 447 | `""` | — |
 | [SRC-AFFCF23BD4-L000448](../../tests/test_research_completion.py#L448) | 448 | `"def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000449](../../tests/test_research_completion.py#L449) | 449 | `"    # Production removes out-of-range markers before building the claim ledger."` | — |
-| [SRC-AFFCF23BD4-L000450](../../tests/test_research_completion.py#L450) | 450 | `"    # The surviving valid marker means the ledger alone cannot reveal the removed one."` | — |
-| [SRC-AFFCF23BD4-L000451](../../tests/test_research_completion.py#L451) | 451 | `"    sanitized_answer = \"The report states 100 EGP [المصدر 1], with another claim withheld.\""` | — |
-| [SRC-AFFCF23BD4-L000452](../../tests/test_research_completion.py#L452) | 452 | `"    sources = [{"` | — |
-| [SRC-AFFCF23BD4-L000453](../../tests/test_research_completion.py#L453) | 453 | `"        \"url\": \"https://example.com/report\","` | — |
-| [SRC-AFFCF23BD4-L000454](../../tests/test_research_completion.py#L454) | 454 | `"        \"title\": \"Report\","` | — |
-| [SRC-AFFCF23BD4-L000455](../../tests/test_research_completion.py#L455) | 455 | `"        \"snippet\": \"The report states 100 EGP.\","` | — |
-| [SRC-AFFCF23BD4-L000456](../../tests/test_research_completion.py#L456) | 456 | `"        \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000457](../../tests/test_research_completion.py#L457) | 457 | `"        \"page_text\": \"The report states 100 EGP.\","` | — |
-| [SRC-AFFCF23BD4-L000458](../../tests/test_research_completion.py#L458) | 458 | `"    }]"` | — |
-| [SRC-AFFCF23BD4-L000459](../../tests/test_research_completion.py#L459) | 459 | `"    ledger = build_claim_evidence_ledger(sanitized_answer, sources)"` | — |
-| [SRC-AFFCF23BD4-L000460](../../tests/test_research_completion.py#L460) | 460 | `"    assert ledger[\"summary\"][\"out_of_range_reference_count\"] == 0"` | — |
-| [SRC-AFFCF23BD4-L000461](../../tests/test_research_completion.py#L461) | 461 | `""` | — |
-| [SRC-AFFCF23BD4-L000462](../../tests/test_research_completion.py#L462) | 462 | `"    completion = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000463](../../tests/test_research_completion.py#L463) | 463 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000464](../../tests/test_research_completion.py#L464) | 464 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000465](../../tests/test_research_completion.py#L465) | 465 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000466](../../tests/test_research_completion.py#L466) | 466 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000467](../../tests/test_research_completion.py#L467) | 467 | `"        \"citation_validation\": {"` | — |
-| [SRC-AFFCF23BD4-L000468](../../tests/test_research_completion.py#L468) | 468 | `"            \"status\": \"invalid_index_references_removed\","` | — |
-| [SRC-AFFCF23BD4-L000469](../../tests/test_research_completion.py#L469) | 469 | `"            \"valid_citation_count\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000470](../../tests/test_research_completion.py#L470) | 470 | `"            \"invalid_references_removed\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000471](../../tests/test_research_completion.py#L471) | 471 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000472](../../tests/test_research_completion.py#L472) | 472 | `"        \"claim_evidence_ledger\": ledger,"` | — |
-| [SRC-AFFCF23BD4-L000473](../../tests/test_research_completion.py#L473) | 473 | `"        \"sources\": sources,"` | — |
-| [SRC-AFFCF23BD4-L000474](../../tests/test_research_completion.py#L474) | 474 | `"        \"search_report\": {"` | — |
-| [SRC-AFFCF23BD4-L000475](../../tests/test_research_completion.py#L475) | 475 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000476](../../tests/test_research_completion.py#L476) | 476 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000477](../../tests/test_research_completion.py#L477) | 477 | `"            \"citation_validation\": {"` | — |
-| [SRC-AFFCF23BD4-L000478](../../tests/test_research_completion.py#L478) | 478 | `"                \"status\": \"invalid_index_references_removed\","` | — |
-| [SRC-AFFCF23BD4-L000479](../../tests/test_research_completion.py#L479) | 479 | `"                \"valid_citation_count\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000480](../../tests/test_research_completion.py#L480) | 480 | `"                \"invalid_references_removed\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000481](../../tests/test_research_completion.py#L481) | 481 | `"            },"` | — |
-| [SRC-AFFCF23BD4-L000482](../../tests/test_research_completion.py#L482) | 482 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000483](../../tests/test_research_completion.py#L483) | 483 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000484](../../tests/test_research_completion.py#L484) | 484 | `""` | — |
-| [SRC-AFFCF23BD4-L000485](../../tests/test_research_completion.py#L485) | 485 | `"    assert completion[\"counters\"][\"out_of_range_citation_reference_count\"] == 0"` | — |
-| [SRC-AFFCF23BD4-L000486](../../tests/test_research_completion.py#L486) | 486 | `"    assert completion[\"counters\"][\"invalid_citation_references_removed_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000487](../../tests/test_research_completion.py#L487) | 487 | `"    assert completion[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000488](../../tests/test_research_completion.py#L488) | 488 | `"    assert completion[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-AFFCF23BD4-L000489](../../tests/test_research_completion.py#L489) | 489 | `"    assert completion[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
-| [SRC-AFFCF23BD4-L000490](../../tests/test_research_completion.py#L490) | 490 | `"    assert completion[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
+| [SRC-AFFCF23BD4-L000449](../../tests/test_research_completion.py#L449) | 449 | `"    # Exercise the same ordering as production: sanitize first, then build the ledger."` | — |
+| [SRC-AFFCF23BD4-L000450](../../tests/test_research_completion.py#L450) | 450 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-AFFCF23BD4-L000451](../../tests/test_research_completion.py#L451) | 451 | `""` | — |
+| [SRC-AFFCF23BD4-L000452](../../tests/test_research_completion.py#L452) | 452 | `"    raw_answer = ("` | — |
+| [SRC-AFFCF23BD4-L000453](../../tests/test_research_completion.py#L453) | 453 | `"        \"The report states 100 EGP [المصدر 1], and a second unsupported claim \""` | — |
+| [SRC-AFFCF23BD4-L000454](../../tests/test_research_completion.py#L454) | 454 | `"        \"points to [المصدر 2].\""` | — |
+| [SRC-AFFCF23BD4-L000455](../../tests/test_research_completion.py#L455) | 455 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000456](../../tests/test_research_completion.py#L456) | 456 | `"    sources = [{"` | — |
+| [SRC-AFFCF23BD4-L000457](../../tests/test_research_completion.py#L457) | 457 | `"        \"url\": \"https://example.com/report\","` | — |
+| [SRC-AFFCF23BD4-L000458](../../tests/test_research_completion.py#L458) | 458 | `"        \"title\": \"Report\","` | — |
+| [SRC-AFFCF23BD4-L000459](../../tests/test_research_completion.py#L459) | 459 | `"        \"snippet\": \"The report states 100 EGP.\","` | — |
+| [SRC-AFFCF23BD4-L000460](../../tests/test_research_completion.py#L460) | 460 | `"        \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000461](../../tests/test_research_completion.py#L461) | 461 | `"        \"page_text\": \"The report states 100 EGP.\","` | — |
+| [SRC-AFFCF23BD4-L000462](../../tests/test_research_completion.py#L462) | 462 | `"    }]"` | — |
+| [SRC-AFFCF23BD4-L000463](../../tests/test_research_completion.py#L463) | 463 | `""` | — |
+| [SRC-AFFCF23BD4-L000464](../../tests/test_research_completion.py#L464) | 464 | `"    sanitized_answer, citation_warnings = WebAgent._remove_invalid_citations("` | — |
+| [SRC-AFFCF23BD4-L000465](../../tests/test_research_completion.py#L465) | 465 | `"        raw_answer, len(sources)"` | — |
+| [SRC-AFFCF23BD4-L000466](../../tests/test_research_completion.py#L466) | 466 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000467](../../tests/test_research_completion.py#L467) | 467 | `"    citation_validation = WebAgent._citation_validation_metadata("` | — |
+| [SRC-AFFCF23BD4-L000468](../../tests/test_research_completion.py#L468) | 468 | `"        sanitized_answer, len(sources), citation_warnings, \"not_reviewed\""` | — |
+| [SRC-AFFCF23BD4-L000469](../../tests/test_research_completion.py#L469) | 469 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000470](../../tests/test_research_completion.py#L470) | 470 | `"    assert \"[المصدر 1]\" in sanitized_answer"` | — |
+| [SRC-AFFCF23BD4-L000471](../../tests/test_research_completion.py#L471) | 471 | `"    assert \"[المصدر 2]\" not in sanitized_answer"` | — |
+| [SRC-AFFCF23BD4-L000472](../../tests/test_research_completion.py#L472) | 472 | `"    assert len(citation_warnings) == 1"` | — |
+| [SRC-AFFCF23BD4-L000473](../../tests/test_research_completion.py#L473) | 473 | `"    assert citation_validation[\"invalid_references_removed\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000474](../../tests/test_research_completion.py#L474) | 474 | `""` | — |
+| [SRC-AFFCF23BD4-L000475](../../tests/test_research_completion.py#L475) | 475 | `"    ledger = build_claim_evidence_ledger(sanitized_answer, sources)"` | — |
+| [SRC-AFFCF23BD4-L000476](../../tests/test_research_completion.py#L476) | 476 | `"    assert ledger[\"summary\"][\"out_of_range_reference_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000477](../../tests/test_research_completion.py#L477) | 477 | `""` | — |
+| [SRC-AFFCF23BD4-L000478](../../tests/test_research_completion.py#L478) | 478 | `"    completion = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000479](../../tests/test_research_completion.py#L479) | 479 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000480](../../tests/test_research_completion.py#L480) | 480 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000481](../../tests/test_research_completion.py#L481) | 481 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000482](../../tests/test_research_completion.py#L482) | 482 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000483](../../tests/test_research_completion.py#L483) | 483 | `"        \"citation_validation\": citation_validation,"` | — |
+| [SRC-AFFCF23BD4-L000484](../../tests/test_research_completion.py#L484) | 484 | `"        \"claim_evidence_ledger\": ledger,"` | — |
+| [SRC-AFFCF23BD4-L000485](../../tests/test_research_completion.py#L485) | 485 | `"        \"sources\": sources,"` | — |
+| [SRC-AFFCF23BD4-L000486](../../tests/test_research_completion.py#L486) | 486 | `"        \"search_report\": {"` | — |
+| [SRC-AFFCF23BD4-L000487](../../tests/test_research_completion.py#L487) | 487 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000488](../../tests/test_research_completion.py#L488) | 488 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000489](../../tests/test_research_completion.py#L489) | 489 | `"            \"citation_validation\": citation_validation,"` | — |
+| [SRC-AFFCF23BD4-L000490](../../tests/test_research_completion.py#L490) | 490 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000491](../../tests/test_research_completion.py#L491) | 491 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000492](../../tests/test_research_completion.py#L492) | 492 | `""` | — |
+| [SRC-AFFCF23BD4-L000493](../../tests/test_research_completion.py#L493) | 493 | `"    assert completion[\"counters\"][\"out_of_range_citation_reference_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000494](../../tests/test_research_completion.py#L494) | 494 | `"    assert completion[\"counters\"][\"invalid_citation_references_removed_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000495](../../tests/test_research_completion.py#L495) | 495 | `"    assert completion[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000496](../../tests/test_research_completion.py#L496) | 496 | `"    assert completion[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-AFFCF23BD4-L000497](../../tests/test_research_completion.py#L497) | 497 | `"    assert completion[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000498](../../tests/test_research_completion.py#L498) | 498 | `"    assert completion[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
 ## اختبارات
 
 ### FILE-01E35ABC46 — [tests/test_research_guardrails.py](../../tests/test_research_guardrails.py#L1)
@@ -817,11 +825,3 @@
 | [SRC-01E35ABC46-L000463](../../tests/test_research_guardrails.py#L463) | 463 | `"        question, \"auto\", {\"freshness\": \"any\"}, candidates, now=_GUARDRAIL_NOW"` | — |
 | [SRC-01E35ABC46-L000464](../../tests/test_research_guardrails.py#L464) | 464 | `"    )"` | — |
 | [SRC-01E35ABC46-L000465](../../tests/test_research_guardrails.py#L465) | 465 | `"    assert [item[\"url\"] for item in accepted] == [\"https://moi.gov.eg/\"]"` | — |
-| [SRC-01E35ABC46-L000466](../../tests/test_research_guardrails.py#L466) | 466 | `"    assert report[\"official_government_domain_required\"] is True"` | — |
-| [SRC-01E35ABC46-L000467](../../tests/test_research_guardrails.py#L467) | 467 | `"    assert report[\"official_government_domain_reason\"] == \"current_government_service_hours\""` | — |
-| [SRC-01E35ABC46-L000468](../../tests/test_research_guardrails.py#L468) | 468 | `"    assert report[\"current_evidence_required\"] is True"` | — |
-| [SRC-01E35ABC46-L000469](../../tests/test_research_guardrails.py#L469) | 469 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
-| [SRC-01E35ABC46-L000470](../../tests/test_research_guardrails.py#L470) | 470 | `""` | — |
-| [SRC-01E35ABC46-L000471](../../tests/test_research_guardrails.py#L471) | 471 | `""` | — |
-| [SRC-01E35ABC46-L000472](../../tests/test_research_guardrails.py#L472) | 472 | `"def test_government_service_hour_request_rejects_undated_official_page() -> None:"` | — |
-| [SRC-01E35ABC46-L000473](../../tests/test_research_guardrails.py#L473) | 473 | `"    question = \"مواعيد عمل مكتب الجوازات اليوم\""` | — |
