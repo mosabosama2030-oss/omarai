@@ -575,6 +575,29 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(raw_body)
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
+            if path == "/api/tokens/revoke":
+                supplied = self.headers.get("Authorization", "")
+                token = supplied[7:].strip() if supplied.startswith("Bearer ") else ""
+                shared_token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
+                if shared_token and hmac.compare_digest(token, shared_token):
+                    return self.respond(
+                        409,
+                        {
+                            "error": (
+                                "shared application token must be rotated by the operator "
+                                "through the deployment configuration"
+                            )
+                        },
+                    )
+                revoked = self.store.revoke_api_token(
+                    token,
+                    tenant_id=self._authenticated_principal["tenant_id"],
+                    user_id=self._authenticated_principal["user_id"],
+                )
+                if not revoked:
+                    return self.respond(404, {"error": "token not found"})
+                return self.respond(200, {"revoked": True})
+
             if path == "/api/diagnostics":
                 test_model = data.get("test_model", True)
                 test_social = data.get("test_social", False)
