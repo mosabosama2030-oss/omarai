@@ -131,3 +131,29 @@ def test_public_api_rejects_unknown_token(tenant_api):
     )
     assert status == 401
     assert "رمز الوصول" in error["error"]
+
+
+def test_viewer_membership_is_read_only(tenant_api):
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Read Only Company", "read-only-company")
+    user_id = store.create_user("viewer@example.test", "Viewer")
+    store.add_membership(tenant_id, user_id, "viewer")
+    token = "viewer-token-" + "V" * 32
+    store.create_api_token(token, tenant_id, user_id, label="viewer")
+
+    status, listing = request_json(base, "/api/leads", token=token)
+    assert status == 200
+    assert listing["count"] == 0
+
+    status, error = request_json(
+        base,
+        "/api/leads",
+        method="POST",
+        token=token,
+        payload={
+            "text": "Viewer must not write",
+            "source_url": "https://example.test/viewer",
+        },
+    )
+    assert status == 403
+    assert "للقراءة فقط" in error["error"]
