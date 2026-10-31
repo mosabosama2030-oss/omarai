@@ -426,6 +426,34 @@ class LeadStore:
             ).fetchone()
         return dict(row) if row else None
 
+    def revoke_api_token(
+        self,
+        token: str,
+        *,
+        tenant_id: str,
+        user_id: str,
+    ) -> bool:
+        """Revoke only a token owned by the authenticated user in the active tenant."""
+        if not isinstance(token, str) or len(token.strip()) < 32:
+            return False
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            membership = db.execute(
+                """SELECT 1 FROM tenant_memberships m
+                   JOIN tenants t ON t.id=m.tenant_id AND t.active=1
+                   JOIN users u ON u.id=m.user_id AND u.active=1
+                   WHERE m.tenant_id=? AND m.user_id=? AND m.active=1""",
+                (tenant, user_id),
+            ).fetchone()
+            if not membership:
+                return False
+            cursor = db.execute(
+                """UPDATE api_tokens SET active=0
+                   WHERE token_hash=? AND tenant_id=? AND user_id=? AND active=1""",
+                (self._token_hash(token.strip()), tenant, user_id),
+            )
+        return cursor.rowcount == 1
+
     def add(
         self,
         text: str,
