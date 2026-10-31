@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2822F30DAD-L000224 إلى SRC-AFEDC2645A-L000356
+- النطاق: SRC-2822F30DAD-L000223 إلى SRC-AFEDC2645A-L000355
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2822F30DAD-L000223](../../tests/test_sales_domain.py#L223) | 223 | `"        page_read=False,"` | — |
 | [SRC-2822F30DAD-L000224](../../tests/test_sales_domain.py#L224) | 224 | `"    )"` | — |
 | [SRC-2822F30DAD-L000225](../../tests/test_sales_domain.py#L225) | 225 | `"    snippet = page_evidence("` | — |
 | [SRC-2822F30DAD-L000226](../../tests/test_sales_domain.py#L226) | 226 | `"        content_basis=EvidenceBasis.SEARCH_SNIPPET,"` | — |
@@ -851,4 +852,3 @@
 | [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"    assert \"resolve_followup_slots\" in ids"` | — |
 | [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
 | [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
-| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `""` | — |

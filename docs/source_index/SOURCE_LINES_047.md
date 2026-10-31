@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000617 إلى SRC-F725E90B2A-L001416
+- النطاق: SRC-F725E90B2A-L000616 إلى SRC-F725E90B2A-L001415
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000616](../../tests/test_web_agent.py#L616) | 616 | `"    import httpx"` | — |
 | [SRC-F725E90B2A-L000617](../../tests/test_web_agent.py#L617) | 617 | `""` | — |
 | [SRC-F725E90B2A-L000618](../../tests/test_web_agent.py#L618) | 618 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"client-test\")"` | — |
 | [SRC-F725E90B2A-L000619](../../tests/test_web_agent.py#L619) | 619 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"secret-test\")"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001413](../../tests/test_web_agent.py#L1413) | 1413 | `"    assert len(user_messages) == 2"` | — |
 | [SRC-F725E90B2A-L001414](../../tests/test_web_agent.py#L1414) | 1414 | `"    assert \"سؤال المستخدم الأصلي\" in user_messages[0][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001415](../../tests/test_web_agent.py#L1415) | 1415 | `"    assert \"ما الذي يقوله المصدر؟\" in user_messages[0][\"content\"]"` | — |
-| [SRC-F725E90B2A-L001416](../../tests/test_web_agent.py#L1416) | 1416 | `"    assert \"بيانات خارجية غير موثوقة\" in user_messages[1][\"content\"]"` | — |

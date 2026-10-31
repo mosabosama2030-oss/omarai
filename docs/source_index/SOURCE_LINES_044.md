@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000125 إلى SRC-2822F30DAD-L000223
+- النطاق: SRC-01E35ABC46-L000124 إلى SRC-2822F30DAD-L000222
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000124](../../tests/test_research_guardrails.py#L124) | 124 | `"    assert rel[\"reason\"] in {\"accepted\", \"kept_official_despite_low_overlap\"}"` | — |
 | [SRC-01E35ABC46-L000125](../../tests/test_research_guardrails.py#L125) | 125 | `""` | — |
 | [SRC-01E35ABC46-L000126](../../tests/test_research_guardrails.py#L126) | 126 | `""` | — |
 | [SRC-01E35ABC46-L000127](../../tests/test_research_guardrails.py#L127) | 127 | `"def test_filter_deduplicates():"` | — |
@@ -833,4 +834,3 @@
 | [SRC-2822F30DAD-L000220](../../tests/test_sales_domain.py#L220) | 220 | `"def test_title_and_snippet_evidence_can_remain_unread():"` | — |
 | [SRC-2822F30DAD-L000221](../../tests/test_sales_domain.py#L221) | 221 | `"    title = page_evidence("` | — |
 | [SRC-2822F30DAD-L000222](../../tests/test_sales_domain.py#L222) | 222 | `"        content_basis=EvidenceBasis.TITLE,"` | — |
-| [SRC-2822F30DAD-L000223](../../tests/test_sales_domain.py#L223) | 223 | `"        page_read=False,"` | — |

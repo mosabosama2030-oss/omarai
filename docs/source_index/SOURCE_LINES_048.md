@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001417 إلى SRC-F725E90B2A-L002216
+- النطاق: SRC-F725E90B2A-L001416 إلى SRC-F725E90B2A-L002215
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001416](../../tests/test_web_agent.py#L1416) | 1416 | `"    assert \"بيانات خارجية غير موثوقة\" in user_messages[1][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001417](../../tests/test_web_agent.py#L1417) | 1417 | `"    assert injected_text in user_messages[1][\"content\"]"` | — |
 | [SRC-F725E90B2A-L001418](../../tests/test_web_agent.py#L1418) | 1418 | `"    assert injected_text not in system_content"` | — |
 | [SRC-F725E90B2A-L001419](../../tests/test_web_agent.py#L1419) | 1419 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002213](../../tests/test_web_agent.py#L2213) | 2213 | `"        )"` | — |
 | [SRC-F725E90B2A-L002214](../../tests/test_web_agent.py#L2214) | 2214 | `"        raise RuntimeError(\"simulated research pipeline failure\")"` | — |
 | [SRC-F725E90B2A-L002215](../../tests/test_web_agent.py#L2215) | 2215 | `""` | — |
-| [SRC-F725E90B2A-L002216](../../tests/test_web_agent.py#L2216) | 2216 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003017 إلى SRC-F725E90B2A-L003816
+- النطاق: SRC-F725E90B2A-L003016 إلى SRC-F725E90B2A-L003815
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003016](../../tests/test_web_agent.py#L3016) | 3016 | `"    assert result[\"answer_integrity\"][\"semantic_verification\"] is False"` | — |
 | [SRC-F725E90B2A-L003017](../../tests/test_web_agent.py#L3017) | 3017 | `"    assert result[\"answer_integrity\"][\"independent_fact_check\"] is False"` | — |
 | [SRC-F725E90B2A-L003018](../../tests/test_web_agent.py#L3018) | 3018 | `"    assert result[\"answer_integrity\"][\"potentially_unsupported_numeric_count\"] == 1"` | — |
 | [SRC-F725E90B2A-L003019](../../tests/test_web_agent.py#L3019) | 3019 | `"    assert result[\"answer_integrity\"][\"potentially_unsupported_numeric_by_citation_count\"] == 1"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003813](../../tests/test_web_agent.py#L3813) | 3813 | `"        lambda *args, **kwargs: pytest.fail(\"Missing summary source must be clarified before planning\"),"` | — |
 | [SRC-F725E90B2A-L003814](../../tests/test_web_agent.py#L3814) | 3814 | `"    )"` | — |
 | [SRC-F725E90B2A-L003815](../../tests/test_web_agent.py#L3815) | 3815 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L003816](../../tests/test_web_agent.py#L3816) | 3816 | `"        agent,"` | — |
