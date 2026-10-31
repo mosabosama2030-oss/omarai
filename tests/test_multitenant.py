@@ -142,3 +142,77 @@ def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):
     assert "tenant_id" in columns
     assert ["fingerprint"] not in unique_columns
     assert ["tenant_id", "fingerprint"] in unique_columns
+
+
+
+def test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error(tmp_path):
+    path = tmp_path / "incomplete-legacy.sqlite3"
+    with sqlite3.connect(path) as db:
+        db.execute(
+            "CREATE TABLE leads (id TEXT PRIMARY KEY, fingerprint TEXT UNIQUE NOT NULL, text TEXT NOT NULL)"
+        )
+        db.execute(
+            "INSERT INTO leads (id, fingerprint, text) VALUES (?, ?, ?)",
+            ("legacy-1", "fingerprint-1", "preserve me"),
+        )
+
+    import pytest
+
+    with pytest.raises(sqlite3.OperationalError):
+        LeadStore(path)
+
+    with sqlite3.connect(path) as db:
+        tables = {
+            row[0]
+            for row in db.execute(
+                "SELECT name FROM sqlite_master WHERE type='table'"
+            )
+        }
+        original = db.execute(
+            "SELECT id, fingerprint, text FROM leads"
+        ).fetchone()
+    assert "leads" in tables
+    assert "leads_legacy_migration" not in tables
+    assert original == ("legacy-1", "fingerprint-1", "preserve me")
+
+
+def test_api_token_expiry_is_normalized_to_utc(tmp_path):
+    store = LeadStore(tmp_path / "token-expiry.sqlite3")
+    tenant_id, user_id = _tenant_member(
+        store, "Expiry Company", "expiry@example.test", "E" * 40
+    )
+    token = "F" * 40
+    store.create_api_token(
+        token,
+        tenant_id,
+        user_id,
+        expires_at="2099-01-01T03:00:00+03:00",
+    )
+    with store.connect() as db:
+        row = db.execute(
+            "SELECT expires_at FROM api_tokens WHERE token_hash=?",
+            (store._token_hash(token),),
+        ).fetchone()
+    assert row["expires_at"] == "2099-01-01T00:00:00Z"
+    assert store.resolve_api_token(token) is not None
+
+
+def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):
+    store = LeadStore(tmp_path / "invalid-token-expiry.sqlite3")
+    tenant_id, user_id = _tenant_member(
+        store, "Expiry Validation Company", "expiry-validation@example.test", "G" * 40
+    )
+    invalid_values = (
+        "2099-01-01T00:00:00",
+        "not-a-timestamp",
+        "2000-01-01T00:00:00Z",
+        "",
+    )
+    for index, expiry in enumerate(invalid_values):
+        with pytest.raises(ValueError, match="expires_at"):
+            store.create_api_token(
+                ("H" * 39) + str(index),
+                tenant_id,
+                user_id,
+                expires_at=expiry,
+            )
