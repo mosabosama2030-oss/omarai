@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000956 إلى SRC-3D0A619359-L000013
+- النطاق: SRC-3451CC474D-L000949 إلى SRC-3D0A619359-L000004
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,213 +16,222 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `"            style_blocks += 1"` | — |
-| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
-| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"        for match in re.finditer("` | — |
-| [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
-| [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"            document,"` | — |
-| [SRC-3451CC474D-L000961](../../tests/test_api.py#L961) | 961 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
-| [SRC-3451CC474D-L000962](../../tests/test_api.py#L962) | 962 | `"        ):"` | — |
-| [SRC-3451CC474D-L000963](../../tests/test_api.py#L963) | 963 | `"            style_attributes += 1"` | — |
-| [SRC-3451CC474D-L000964](../../tests/test_api.py#L964) | 964 | `"            assert api_module._csp_hash_source(match.group(2).strip()) in policy"` | — |
-| [SRC-3451CC474D-L000965](../../tests/test_api.py#L965) | 965 | `"    assert script_blocks >= 2"` | — |
-| [SRC-3451CC474D-L000966](../../tests/test_api.py#L966) | 966 | `"    assert style_blocks >= 2"` | — |
-| [SRC-3451CC474D-L000967](../../tests/test_api.py#L967) | 967 | `"    assert style_attributes >= 10"` | — |
-| [SRC-3451CC474D-L000968](../../tests/test_api.py#L968) | 968 | `""` | — |
-| [SRC-3451CC474D-L000969](../../tests/test_api.py#L969) | 969 | `""` | — |
-| [SRC-3451CC474D-L000970](../../tests/test_api.py#L970) | 970 | `"def test_dashboard_uses_delegated_status_action_not_inline_onclick():"` | — |
-| [SRC-3451CC474D-L000971](../../tests/test_api.py#L971) | 971 | `"    dashboard = (Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\").read_text("` | — |
-| [SRC-3451CC474D-L000972](../../tests/test_api.py#L972) | 972 | `"        encoding=\"utf-8\""` | — |
-| [SRC-3451CC474D-L000973](../../tests/test_api.py#L973) | 973 | `"    )"` | — |
-| [SRC-3451CC474D-L000974](../../tests/test_api.py#L974) | 974 | `"    assert 'data-action=\"save-status\"' in dashboard"` | — |
-| [SRC-3451CC474D-L000975](../../tests/test_api.py#L975) | 975 | `"    assert 'onclick=\"saveStatus' not in dashboard"` | — |
-| [SRC-3451CC474D-L000976](../../tests/test_api.py#L976) | 976 | `"    assert \"\"\"data-lead-id=\"'+esc(l.id)+'\">\"\"\" in dashboard"` | — |
-| [SRC-3451CC474D-L000977](../../tests/test_api.py#L977) | 977 | `""` | — |
-| [SRC-3451CC474D-L000978](../../tests/test_api.py#L978) | 978 | `"def test_loopback_test_mode_allows_tokenless_local_api_but_not_remote_or_public_clients("` | — |
-| [SRC-3451CC474D-L000979](../../tests/test_api.py#L979) | 979 | `"    local_api, monkeypatch"` | — |
-| [SRC-3451CC474D-L000980](../../tests/test_api.py#L980) | 980 | `"):"` | — |
-| [SRC-3451CC474D-L000981](../../tests/test_api.py#L981) | 981 | `"    status, leads = request_json(local_api, \"/api/leads\")"` | — |
-| [SRC-3451CC474D-L000982](../../tests/test_api.py#L982) | 982 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000983](../../tests/test_api.py#L983) | 983 | `"    assert leads[\"count\"] == 0"` | — |
-| [SRC-3451CC474D-L000984](../../tests/test_api.py#L984) | 984 | `""` | — |
-| [SRC-3451CC474D-L000985](../../tests/test_api.py#L985) | 985 | `"    monkeypatch.delenv(\"OMARAI_TEST_MODE\", raising=False)"` | — |
-| [SRC-3451CC474D-L000986](../../tests/test_api.py#L986) | 986 | `"    status, _error = request_json(local_api, \"/api/leads\")"` | — |
-| [SRC-3451CC474D-L000987](../../tests/test_api.py#L987) | 987 | `"    assert status == 401"` | — |
-| [SRC-3451CC474D-L000988](../../tests/test_api.py#L988) | 988 | `""` | — |
-| [SRC-3451CC474D-L000989](../../tests/test_api.py#L989) | 989 | `"    from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L000949](../../tests/test_api.py#L949) | 949 | `"            if re.search(r\"\\bsrc\\s*=\", match.group(\"attrs\"), re.IGNORECASE):"` | — |
+| [SRC-3451CC474D-L000950](../../tests/test_api.py#L950) | 950 | `"                continue"` | — |
+| [SRC-3451CC474D-L000951](../../tests/test_api.py#L951) | 951 | `"            script_blocks += 1"` | — |
+| [SRC-3451CC474D-L000952](../../tests/test_api.py#L952) | 952 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
+| [SRC-3451CC474D-L000953](../../tests/test_api.py#L953) | 953 | `"        for match in re.finditer("` | — |
+| [SRC-3451CC474D-L000954](../../tests/test_api.py#L954) | 954 | `"            r\"<style\\b[^>]*>(?P<body>.*?)</style\\s*>\","` | — |
+| [SRC-3451CC474D-L000955](../../tests/test_api.py#L955) | 955 | `"            document,"` | — |
+| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `"        ):"` | — |
+| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"            style_blocks += 1"` | — |
+| [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
+| [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"        for match in re.finditer("` | — |
+| [SRC-3451CC474D-L000961](../../tests/test_api.py#L961) | 961 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
+| [SRC-3451CC474D-L000962](../../tests/test_api.py#L962) | 962 | `"            document,"` | — |
+| [SRC-3451CC474D-L000963](../../tests/test_api.py#L963) | 963 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-3451CC474D-L000964](../../tests/test_api.py#L964) | 964 | `"        ):"` | — |
+| [SRC-3451CC474D-L000965](../../tests/test_api.py#L965) | 965 | `"            style_attributes += 1"` | — |
+| [SRC-3451CC474D-L000966](../../tests/test_api.py#L966) | 966 | `"            assert api_module._csp_hash_source(match.group(2).strip()) in policy"` | — |
+| [SRC-3451CC474D-L000967](../../tests/test_api.py#L967) | 967 | `"    assert script_blocks >= 2"` | — |
+| [SRC-3451CC474D-L000968](../../tests/test_api.py#L968) | 968 | `"    assert style_blocks >= 2"` | — |
+| [SRC-3451CC474D-L000969](../../tests/test_api.py#L969) | 969 | `"    assert style_attributes >= 10"` | — |
+| [SRC-3451CC474D-L000970](../../tests/test_api.py#L970) | 970 | `""` | — |
+| [SRC-3451CC474D-L000971](../../tests/test_api.py#L971) | 971 | `""` | — |
+| [SRC-3451CC474D-L000972](../../tests/test_api.py#L972) | 972 | `"def test_dashboard_uses_delegated_status_action_not_inline_onclick():"` | — |
+| [SRC-3451CC474D-L000973](../../tests/test_api.py#L973) | 973 | `"    dashboard = (Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\").read_text("` | — |
+| [SRC-3451CC474D-L000974](../../tests/test_api.py#L974) | 974 | `"        encoding=\"utf-8\""` | — |
+| [SRC-3451CC474D-L000975](../../tests/test_api.py#L975) | 975 | `"    )"` | — |
+| [SRC-3451CC474D-L000976](../../tests/test_api.py#L976) | 976 | `"    assert 'data-action=\"save-status\"' in dashboard"` | — |
+| [SRC-3451CC474D-L000977](../../tests/test_api.py#L977) | 977 | `"    assert 'onclick=\"saveStatus' not in dashboard"` | — |
+| [SRC-3451CC474D-L000978](../../tests/test_api.py#L978) | 978 | `"    assert \"\"\"data-lead-id=\"'+esc(l.id)+'\">\"\"\" in dashboard"` | — |
+| [SRC-3451CC474D-L000979](../../tests/test_api.py#L979) | 979 | `""` | — |
+| [SRC-3451CC474D-L000980](../../tests/test_api.py#L980) | 980 | `"def test_loopback_test_mode_allows_tokenless_local_api_but_not_remote_or_public_clients("` | — |
+| [SRC-3451CC474D-L000981](../../tests/test_api.py#L981) | 981 | `"    local_api, monkeypatch"` | — |
+| [SRC-3451CC474D-L000982](../../tests/test_api.py#L982) | 982 | `"):"` | — |
+| [SRC-3451CC474D-L000983](../../tests/test_api.py#L983) | 983 | `"    status, leads = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L000984](../../tests/test_api.py#L984) | 984 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000985](../../tests/test_api.py#L985) | 985 | `"    assert leads[\"count\"] == 0"` | — |
+| [SRC-3451CC474D-L000986](../../tests/test_api.py#L986) | 986 | `""` | — |
+| [SRC-3451CC474D-L000987](../../tests/test_api.py#L987) | 987 | `"    monkeypatch.delenv(\"OMARAI_TEST_MODE\", raising=False)"` | — |
+| [SRC-3451CC474D-L000988](../../tests/test_api.py#L988) | 988 | `"    status, _error = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L000989](../../tests/test_api.py#L989) | 989 | `"    assert status == 401"` | — |
 | [SRC-3451CC474D-L000990](../../tests/test_api.py#L990) | 990 | `""` | — |
-| [SRC-3451CC474D-L000991](../../tests/test_api.py#L991) | 991 | `"    harness = SimpleNamespace("` | — |
-| [SRC-3451CC474D-L000992](../../tests/test_api.py#L992) | 992 | `"        client_address=(\"203.0.113.10\", 50000),"` | — |
-| [SRC-3451CC474D-L000993](../../tests/test_api.py#L993) | 993 | `"        server=SimpleNamespace(server_address=(\"127.0.0.1\", 8765)),"` | — |
-| [SRC-3451CC474D-L000994](../../tests/test_api.py#L994) | 994 | `"        _is_loopback_address=Handler._is_loopback_address,"` | — |
-| [SRC-3451CC474D-L000995](../../tests/test_api.py#L995) | 995 | `"    )"` | — |
-| [SRC-3451CC474D-L000996](../../tests/test_api.py#L996) | 996 | `"    monkeypatch.setenv(\"OMARAI_TEST_MODE\", \"1\")"` | — |
-| [SRC-3451CC474D-L000997](../../tests/test_api.py#L997) | 997 | `"    assert Handler._is_loopback_test_request(harness) is False"` | — |
-| [SRC-3451CC474D-L000998](../../tests/test_api.py#L998) | 998 | `"    harness.client_address = (\"127.0.0.1\", 50000)"` | — |
-| [SRC-3451CC474D-L000999](../../tests/test_api.py#L999) | 999 | `"    assert Handler._is_loopback_test_request(harness) is True"` | — |
-| [SRC-3451CC474D-L001000](../../tests/test_api.py#L1000) | 1000 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L001001](../../tests/test_api.py#L1001) | 1001 | `"    assert Handler._is_loopback_test_request(harness) is False"` | — |
-| [SRC-3451CC474D-L001002](../../tests/test_api.py#L1002) | 1002 | `""` | — |
-| [SRC-3451CC474D-L001003](../../tests/test_api.py#L1003) | 1003 | `""` | — |
-| [SRC-3451CC474D-L001004](../../tests/test_api.py#L1004) | 1004 | `"def test_api_rejects_cross_company_list_write_update_and_export(local_api):"` | — |
-| [SRC-3451CC474D-L001005](../../tests/test_api.py#L1005) | 1005 | `"    store = Handler.store"` | — |
-| [SRC-3451CC474D-L001006](../../tests/test_api.py#L1006) | 1006 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
-| [SRC-3451CC474D-L001007](../../tests/test_api.py#L1007) | 1007 | `"    store.create_user(\"user-b\", display_name=\"مسؤول ب\")"` | — |
-| [SRC-3451CC474D-L001008](../../tests/test_api.py#L1008) | 1008 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"admin\")"` | — |
-| [SRC-3451CC474D-L001009](../../tests/test_api.py#L1009) | 1009 | `"    lead_b, created = store.add("` | — |
-| [SRC-3451CC474D-L001010](../../tests/test_api.py#L1010) | 1010 | `"        \"مطلوب شراء منتج\","` | — |
-| [SRC-3451CC474D-L001011](../../tests/test_api.py#L1011) | 1011 | `"        \"https://example.com/company-b/request\","` | — |
-| [SRC-3451CC474D-L001012](../../tests/test_api.py#L1012) | 1012 | `"        tenant_id=\"company-b\","` | — |
-| [SRC-3451CC474D-L001013](../../tests/test_api.py#L1013) | 1013 | `"    )"` | — |
-| [SRC-3451CC474D-L001014](../../tests/test_api.py#L1014) | 1014 | `"    assert created is True"` | — |
-| [SRC-3451CC474D-L001015](../../tests/test_api.py#L1015) | 1015 | `""` | — |
-| [SRC-3451CC474D-L001016](../../tests/test_api.py#L1016) | 1016 | `"    # The default operator has no membership in company B, even if it forges tenant_id."` | — |
-| [SRC-3451CC474D-L001017](../../tests/test_api.py#L1017) | 1017 | `"    status, _ = request_json(local_api, \"/api/leads?tenant_id=company-b\")"` | — |
-| [SRC-3451CC474D-L001018](../../tests/test_api.py#L1018) | 1018 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001019](../../tests/test_api.py#L1019) | 1019 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L001020](../../tests/test_api.py#L1020) | 1020 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001021](../../tests/test_api.py#L1021) | 1021 | `"        \"/api/leads\","` | — |
-| [SRC-3451CC474D-L001022](../../tests/test_api.py#L1022) | 1022 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001023](../../tests/test_api.py#L1023) | 1023 | `"        payload={"` | — |
-| [SRC-3451CC474D-L001024](../../tests/test_api.py#L1024) | 1024 | `"            \"tenant_id\": \"company-b\","` | — |
-| [SRC-3451CC474D-L001025](../../tests/test_api.py#L1025) | 1025 | `"            \"text\": \"مطلوب شراء منتج آخر\","` | — |
-| [SRC-3451CC474D-L001026](../../tests/test_api.py#L1026) | 1026 | `"            \"source_url\": \"https://example.com/company-b/forged\","` | — |
-| [SRC-3451CC474D-L001027](../../tests/test_api.py#L1027) | 1027 | `"        },"` | — |
-| [SRC-3451CC474D-L001028](../../tests/test_api.py#L1028) | 1028 | `"    )"` | — |
-| [SRC-3451CC474D-L001029](../../tests/test_api.py#L1029) | 1029 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001030](../../tests/test_api.py#L1030) | 1030 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L001031](../../tests/test_api.py#L1031) | 1031 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001032](../../tests/test_api.py#L1032) | 1032 | `"        f\"/api/leads/{lead_b['id']}/status\","` | — |
-| [SRC-3451CC474D-L001033](../../tests/test_api.py#L1033) | 1033 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001034](../../tests/test_api.py#L1034) | 1034 | `"        payload={\"tenant_id\": \"company-b\", \"status\": \"qualified\"},"` | — |
-| [SRC-3451CC474D-L001035](../../tests/test_api.py#L1035) | 1035 | `"    )"` | — |
-| [SRC-3451CC474D-L001036](../../tests/test_api.py#L1036) | 1036 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001037](../../tests/test_api.py#L1037) | 1037 | `"    status, _ = request_text(local_api, \"/api/leads/export.csv?tenant_id=company-b\")"` | — |
+| [SRC-3451CC474D-L000991](../../tests/test_api.py#L991) | 991 | `"    from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L000992](../../tests/test_api.py#L992) | 992 | `""` | — |
+| [SRC-3451CC474D-L000993](../../tests/test_api.py#L993) | 993 | `"    harness = SimpleNamespace("` | — |
+| [SRC-3451CC474D-L000994](../../tests/test_api.py#L994) | 994 | `"        client_address=(\"203.0.113.10\", 50000),"` | — |
+| [SRC-3451CC474D-L000995](../../tests/test_api.py#L995) | 995 | `"        server=SimpleNamespace(server_address=(\"127.0.0.1\", 8765)),"` | — |
+| [SRC-3451CC474D-L000996](../../tests/test_api.py#L996) | 996 | `"        _is_loopback_address=Handler._is_loopback_address,"` | — |
+| [SRC-3451CC474D-L000997](../../tests/test_api.py#L997) | 997 | `"    )"` | — |
+| [SRC-3451CC474D-L000998](../../tests/test_api.py#L998) | 998 | `"    monkeypatch.setenv(\"OMARAI_TEST_MODE\", \"1\")"` | — |
+| [SRC-3451CC474D-L000999](../../tests/test_api.py#L999) | 999 | `"    assert Handler._is_loopback_test_request(harness) is False"` | — |
+| [SRC-3451CC474D-L001000](../../tests/test_api.py#L1000) | 1000 | `"    harness.client_address = (\"127.0.0.1\", 50000)"` | — |
+| [SRC-3451CC474D-L001001](../../tests/test_api.py#L1001) | 1001 | `"    assert Handler._is_loopback_test_request(harness) is True"` | — |
+| [SRC-3451CC474D-L001002](../../tests/test_api.py#L1002) | 1002 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L001003](../../tests/test_api.py#L1003) | 1003 | `"    assert Handler._is_loopback_test_request(harness) is False"` | — |
+| [SRC-3451CC474D-L001004](../../tests/test_api.py#L1004) | 1004 | `""` | — |
+| [SRC-3451CC474D-L001005](../../tests/test_api.py#L1005) | 1005 | `""` | — |
+| [SRC-3451CC474D-L001006](../../tests/test_api.py#L1006) | 1006 | `"def test_api_rejects_cross_company_list_write_update_and_export(local_api):"` | — |
+| [SRC-3451CC474D-L001007](../../tests/test_api.py#L1007) | 1007 | `"    store = Handler.store"` | — |
+| [SRC-3451CC474D-L001008](../../tests/test_api.py#L1008) | 1008 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
+| [SRC-3451CC474D-L001009](../../tests/test_api.py#L1009) | 1009 | `"    store.create_user(\"user-b\", display_name=\"مسؤول ب\")"` | — |
+| [SRC-3451CC474D-L001010](../../tests/test_api.py#L1010) | 1010 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"admin\")"` | — |
+| [SRC-3451CC474D-L001011](../../tests/test_api.py#L1011) | 1011 | `"    lead_b, created = store.add("` | — |
+| [SRC-3451CC474D-L001012](../../tests/test_api.py#L1012) | 1012 | `"        \"مطلوب شراء منتج\","` | — |
+| [SRC-3451CC474D-L001013](../../tests/test_api.py#L1013) | 1013 | `"        \"https://example.com/company-b/request\","` | — |
+| [SRC-3451CC474D-L001014](../../tests/test_api.py#L1014) | 1014 | `"        tenant_id=\"company-b\","` | — |
+| [SRC-3451CC474D-L001015](../../tests/test_api.py#L1015) | 1015 | `"    )"` | — |
+| [SRC-3451CC474D-L001016](../../tests/test_api.py#L1016) | 1016 | `"    assert created is True"` | — |
+| [SRC-3451CC474D-L001017](../../tests/test_api.py#L1017) | 1017 | `""` | — |
+| [SRC-3451CC474D-L001018](../../tests/test_api.py#L1018) | 1018 | `"    # The default operator has no membership in company B, even if it forges tenant_id."` | — |
+| [SRC-3451CC474D-L001019](../../tests/test_api.py#L1019) | 1019 | `"    status, _ = request_json(local_api, \"/api/leads?tenant_id=company-b\")"` | — |
+| [SRC-3451CC474D-L001020](../../tests/test_api.py#L1020) | 1020 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001021](../../tests/test_api.py#L1021) | 1021 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001022](../../tests/test_api.py#L1022) | 1022 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001023](../../tests/test_api.py#L1023) | 1023 | `"        \"/api/leads\","` | — |
+| [SRC-3451CC474D-L001024](../../tests/test_api.py#L1024) | 1024 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001025](../../tests/test_api.py#L1025) | 1025 | `"        payload={"` | — |
+| [SRC-3451CC474D-L001026](../../tests/test_api.py#L1026) | 1026 | `"            \"tenant_id\": \"company-b\","` | — |
+| [SRC-3451CC474D-L001027](../../tests/test_api.py#L1027) | 1027 | `"            \"text\": \"مطلوب شراء منتج آخر\","` | — |
+| [SRC-3451CC474D-L001028](../../tests/test_api.py#L1028) | 1028 | `"            \"source_url\": \"https://example.com/company-b/forged\","` | — |
+| [SRC-3451CC474D-L001029](../../tests/test_api.py#L1029) | 1029 | `"        },"` | — |
+| [SRC-3451CC474D-L001030](../../tests/test_api.py#L1030) | 1030 | `"    )"` | — |
+| [SRC-3451CC474D-L001031](../../tests/test_api.py#L1031) | 1031 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001032](../../tests/test_api.py#L1032) | 1032 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001033](../../tests/test_api.py#L1033) | 1033 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001034](../../tests/test_api.py#L1034) | 1034 | `"        f\"/api/leads/{lead_b['id']}/status\","` | — |
+| [SRC-3451CC474D-L001035](../../tests/test_api.py#L1035) | 1035 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001036](../../tests/test_api.py#L1036) | 1036 | `"        payload={\"tenant_id\": \"company-b\", \"status\": \"qualified\"},"` | — |
+| [SRC-3451CC474D-L001037](../../tests/test_api.py#L1037) | 1037 | `"    )"` | — |
 | [SRC-3451CC474D-L001038](../../tests/test_api.py#L1038) | 1038 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001039](../../tests/test_api.py#L1039) | 1039 | `""` | — |
-| [SRC-3451CC474D-L001040](../../tests/test_api.py#L1040) | 1040 | `"    headers_b = {\"X-Omarai-Test-User\": \"user-b\"}"` | — |
-| [SRC-3451CC474D-L001041](../../tests/test_api.py#L1041) | 1041 | `"    status, leads_b = request_json("` | — |
-| [SRC-3451CC474D-L001042](../../tests/test_api.py#L1042) | 1042 | `"        local_api, \"/api/leads?tenant_id=company-b\", headers=headers_b"` | — |
-| [SRC-3451CC474D-L001043](../../tests/test_api.py#L1043) | 1043 | `"    )"` | — |
-| [SRC-3451CC474D-L001044](../../tests/test_api.py#L1044) | 1044 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001045](../../tests/test_api.py#L1045) | 1045 | `"    assert [item[\"id\"] for item in leads_b[\"leads\"]] == [lead_b[\"id\"]]"` | — |
-| [SRC-3451CC474D-L001046](../../tests/test_api.py#L1046) | 1046 | `""` | — |
-| [SRC-3451CC474D-L001047](../../tests/test_api.py#L1047) | 1047 | `"    # Membership in company B does not grant access to the default company."` | — |
-| [SRC-3451CC474D-L001048](../../tests/test_api.py#L1048) | 1048 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L001049](../../tests/test_api.py#L1049) | 1049 | `"        local_api, \"/api/leads?tenant_id=default\", headers=headers_b"` | — |
-| [SRC-3451CC474D-L001050](../../tests/test_api.py#L1050) | 1050 | `"    )"` | — |
-| [SRC-3451CC474D-L001051](../../tests/test_api.py#L1051) | 1051 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001052](../../tests/test_api.py#L1052) | 1052 | `""` | — |
-| [SRC-3451CC474D-L001053](../../tests/test_api.py#L1053) | 1053 | `"    status, exported_b = request_text("` | — |
-| [SRC-3451CC474D-L001054](../../tests/test_api.py#L1054) | 1054 | `"        local_api, \"/api/leads/export.csv?tenant_id=company-b\", headers=headers_b"` | — |
-| [SRC-3451CC474D-L001055](../../tests/test_api.py#L1055) | 1055 | `"    )"` | — |
-| [SRC-3451CC474D-L001056](../../tests/test_api.py#L1056) | 1056 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001057](../../tests/test_api.py#L1057) | 1057 | `"    assert lead_b[\"id\"] in exported_b"` | — |
-| [SRC-3451CC474D-L001058](../../tests/test_api.py#L1058) | 1058 | `"    assert \"company-b\" in exported_b"` | — |
-| [SRC-3451CC474D-L001059](../../tests/test_api.py#L1059) | 1059 | `""` | — |
-| [SRC-3451CC474D-L001060](../../tests/test_api.py#L1060) | 1060 | `"    status, updated = request_json("` | — |
-| [SRC-3451CC474D-L001061](../../tests/test_api.py#L1061) | 1061 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001062](../../tests/test_api.py#L1062) | 1062 | `"        f\"/api/leads/{lead_b['id']}/status\","` | — |
-| [SRC-3451CC474D-L001063](../../tests/test_api.py#L1063) | 1063 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001064](../../tests/test_api.py#L1064) | 1064 | `"        payload={\"tenant_id\": \"company-b\", \"status\": \"qualified\"},"` | — |
-| [SRC-3451CC474D-L001065](../../tests/test_api.py#L1065) | 1065 | `"        headers=headers_b,"` | — |
-| [SRC-3451CC474D-L001066](../../tests/test_api.py#L1066) | 1066 | `"    )"` | — |
-| [SRC-3451CC474D-L001067](../../tests/test_api.py#L1067) | 1067 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001068](../../tests/test_api.py#L1068) | 1068 | `"    assert updated[\"lead\"][\"tenant_id\"] == \"company-b\""` | — |
-| [SRC-3451CC474D-L001069](../../tests/test_api.py#L1069) | 1069 | `"    assert updated[\"lead\"][\"status\"] == \"qualified\""` | — |
-| [SRC-3451CC474D-L001070](../../tests/test_api.py#L1070) | 1070 | `""` | — |
-| [SRC-3451CC474D-L001071](../../tests/test_api.py#L1071) | 1071 | `"    # A default-company identity cannot mutate a foreign row even by guessing its ID."` | — |
-| [SRC-3451CC474D-L001072](../../tests/test_api.py#L1072) | 1072 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L001073](../../tests/test_api.py#L1073) | 1073 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001074](../../tests/test_api.py#L1074) | 1074 | `"        f\"/api/leads/{lead_b['id']}/status\","` | — |
-| [SRC-3451CC474D-L001075](../../tests/test_api.py#L1075) | 1075 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001076](../../tests/test_api.py#L1076) | 1076 | `"        payload={\"status\": \"rejected\"},"` | — |
-| [SRC-3451CC474D-L001077](../../tests/test_api.py#L1077) | 1077 | `"    )"` | — |
-| [SRC-3451CC474D-L001078](../../tests/test_api.py#L1078) | 1078 | `"    assert status == 404"` | — |
-| [SRC-3451CC474D-L001079](../../tests/test_api.py#L1079) | 1079 | `""` | — |
-| [SRC-3451CC474D-L001080](../../tests/test_api.py#L1080) | 1080 | `""` | — |
-| [SRC-3451CC474D-L001081](../../tests/test_api.py#L1081) | 1081 | `"def test_api_tenant_id_header_requires_verified_membership(local_api):"` | — |
-| [SRC-3451CC474D-L001082](../../tests/test_api.py#L1082) | 1082 | `"    store = Handler.store"` | — |
-| [SRC-3451CC474D-L001083](../../tests/test_api.py#L1083) | 1083 | `"    store.create_company(\"company-c\", \"شركة ج\")"` | — |
-| [SRC-3451CC474D-L001084](../../tests/test_api.py#L1084) | 1084 | `"    store.create_user(\"user-c\")"` | — |
-| [SRC-3451CC474D-L001085](../../tests/test_api.py#L1085) | 1085 | `"    store.add_membership(\"company-c\", \"user-c\", role=\"viewer\")"` | — |
-| [SRC-3451CC474D-L001086](../../tests/test_api.py#L1086) | 1086 | `""` | — |
-| [SRC-3451CC474D-L001087](../../tests/test_api.py#L1087) | 1087 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L001088](../../tests/test_api.py#L1088) | 1088 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001089](../../tests/test_api.py#L1089) | 1089 | `"        \"/api/analyze\","` | — |
-| [SRC-3451CC474D-L001090](../../tests/test_api.py#L1090) | 1090 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001091](../../tests/test_api.py#L1091) | 1091 | `"        payload={\"text\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
-| [SRC-3451CC474D-L001092](../../tests/test_api.py#L1092) | 1092 | `"    )"` | — |
-| [SRC-3451CC474D-L001093](../../tests/test_api.py#L1093) | 1093 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001094](../../tests/test_api.py#L1094) | 1094 | `""` | — |
-| [SRC-3451CC474D-L001095](../../tests/test_api.py#L1095) | 1095 | `"    status, _ = request_json("` | — |
-| [SRC-3451CC474D-L001096](../../tests/test_api.py#L1096) | 1096 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001097](../../tests/test_api.py#L1097) | 1097 | `"        \"/api/analyze\","` | — |
-| [SRC-3451CC474D-L001098](../../tests/test_api.py#L1098) | 1098 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001099](../../tests/test_api.py#L1099) | 1099 | `"        payload={\"text\": \"اختبار\"},"` | — |
-| [SRC-3451CC474D-L001100](../../tests/test_api.py#L1100) | 1100 | `"        headers={\"X-Omarai-Tenant-ID\": \"company-c\"},"` | — |
-| [SRC-3451CC474D-L001101](../../tests/test_api.py#L1101) | 1101 | `"    )"` | — |
-| [SRC-3451CC474D-L001102](../../tests/test_api.py#L1102) | 1102 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001103](../../tests/test_api.py#L1103) | 1103 | `""` | — |
-| [SRC-3451CC474D-L001104](../../tests/test_api.py#L1104) | 1104 | `"    status, result = request_json("` | — |
-| [SRC-3451CC474D-L001105](../../tests/test_api.py#L1105) | 1105 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001106](../../tests/test_api.py#L1106) | 1106 | `"        \"/api/analyze\","` | — |
-| [SRC-3451CC474D-L001107](../../tests/test_api.py#L1107) | 1107 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001108](../../tests/test_api.py#L1108) | 1108 | `"        payload={\"text\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
-| [SRC-3451CC474D-L001109](../../tests/test_api.py#L1109) | 1109 | `"        headers={\"X-Omarai-Test-User\": \"user-c\"},"` | — |
-| [SRC-3451CC474D-L001110](../../tests/test_api.py#L1110) | 1110 | `"    )"` | — |
-| [SRC-3451CC474D-L001111](../../tests/test_api.py#L1111) | 1111 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001112](../../tests/test_api.py#L1112) | 1112 | `"    assert \"score\" in result"` | — |
-| [SRC-3451CC474D-L001113](../../tests/test_api.py#L1113) | 1113 | `""` | — |
-| [SRC-3451CC474D-L001114](../../tests/test_api.py#L1114) | 1114 | `"def test_api_ask_statistics_and_recommendations_are_company_scoped(local_api):"` | — |
-| [SRC-3451CC474D-L001115](../../tests/test_api.py#L1115) | 1115 | `"    store = Handler.store"` | — |
-| [SRC-3451CC474D-L001116](../../tests/test_api.py#L1116) | 1116 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
-| [SRC-3451CC474D-L001117](../../tests/test_api.py#L1117) | 1117 | `"    store.create_user(\"user-b\", display_name=\"مسؤول ب\")"` | — |
-| [SRC-3451CC474D-L001118](../../tests/test_api.py#L1118) | 1118 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"admin\")"` | — |
-| [SRC-3451CC474D-L001119](../../tests/test_api.py#L1119) | 1119 | `"    lead_b, created = store.add("` | — |
-| [SRC-3451CC474D-L001120](../../tests/test_api.py#L1120) | 1120 | `"        \"بدور على شقة وممكن معاينة والسعر كام\","` | — |
-| [SRC-3451CC474D-L001121](../../tests/test_api.py#L1121) | 1121 | `"        \"https://example.com/company-b/housing\","` | — |
-| [SRC-3451CC474D-L001122](../../tests/test_api.py#L1122) | 1122 | `"        tenant_id=\"company-b\","` | — |
-| [SRC-3451CC474D-L001123](../../tests/test_api.py#L1123) | 1123 | `"    )"` | — |
-| [SRC-3451CC474D-L001124](../../tests/test_api.py#L1124) | 1124 | `"    assert created is True"` | — |
-| [SRC-3451CC474D-L001125](../../tests/test_api.py#L1125) | 1125 | `""` | — |
-| [SRC-3451CC474D-L001126](../../tests/test_api.py#L1126) | 1126 | `"    status, stats_a = request_json("` | — |
-| [SRC-3451CC474D-L001127](../../tests/test_api.py#L1127) | 1127 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001128](../../tests/test_api.py#L1128) | 1128 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L001129](../../tests/test_api.py#L1129) | 1129 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001130](../../tests/test_api.py#L1130) | 1130 | `"        payload={\"question\": \"كام عميل\", \"tenant_id\": \"default\"},"` | — |
-| [SRC-3451CC474D-L001131](../../tests/test_api.py#L1131) | 1131 | `"    )"` | — |
-| [SRC-3451CC474D-L001132](../../tests/test_api.py#L1132) | 1132 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001133](../../tests/test_api.py#L1133) | 1133 | `"    assert \"0 إشارة\" in stats_a[\"answer\"]"` | — |
-| [SRC-3451CC474D-L001134](../../tests/test_api.py#L1134) | 1134 | `""` | — |
-| [SRC-3451CC474D-L001135](../../tests/test_api.py#L1135) | 1135 | `"    status, stats_b = request_json("` | — |
-| [SRC-3451CC474D-L001136](../../tests/test_api.py#L1136) | 1136 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001137](../../tests/test_api.py#L1137) | 1137 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L001138](../../tests/test_api.py#L1138) | 1138 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001139](../../tests/test_api.py#L1139) | 1139 | `"        payload={\"question\": \"كام عميل\", \"tenant_id\": \"company-b\"},"` | — |
-| [SRC-3451CC474D-L001140](../../tests/test_api.py#L1140) | 1140 | `"        headers={\"X-Omarai-Test-User\": \"user-b\"},"` | — |
-| [SRC-3451CC474D-L001141](../../tests/test_api.py#L1141) | 1141 | `"    )"` | — |
-| [SRC-3451CC474D-L001142](../../tests/test_api.py#L1142) | 1142 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001143](../../tests/test_api.py#L1143) | 1143 | `"    assert \"1 إشارة\" in stats_b[\"answer\"]"` | — |
-| [SRC-3451CC474D-L001144](../../tests/test_api.py#L1144) | 1144 | `""` | — |
-| [SRC-3451CC474D-L001145](../../tests/test_api.py#L1145) | 1145 | `"    status, recommendation_b = request_json("` | — |
-| [SRC-3451CC474D-L001146](../../tests/test_api.py#L1146) | 1146 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001147](../../tests/test_api.py#L1147) | 1147 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L001148](../../tests/test_api.py#L1148) | 1148 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001149](../../tests/test_api.py#L1149) | 1149 | `"        payload={\"question\": \"مين افضل عميل\", \"tenant_id\": \"company-b\"},"` | — |
-| [SRC-3451CC474D-L001150](../../tests/test_api.py#L1150) | 1150 | `"        headers={\"X-Omarai-Test-User\": \"user-b\"},"` | — |
-| [SRC-3451CC474D-L001151](../../tests/test_api.py#L1151) | 1151 | `"    )"` | — |
-| [SRC-3451CC474D-L001152](../../tests/test_api.py#L1152) | 1152 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001153](../../tests/test_api.py#L1153) | 1153 | `"    assert lead_b[\"id\"][:8] in recommendation_b[\"answer\"]"` | — |
-| [SRC-3451CC474D-L001154](../../tests/test_api.py#L1154) | 1154 | `""` | — |
-| [SRC-3451CC474D-L001155](../../tests/test_api.py#L1155) | 1155 | `"    # The default-company operator cannot select company B for a recommendation."` | — |
-| [SRC-3451CC474D-L001156](../../tests/test_api.py#L1156) | 1156 | `"    status, denied = request_json("` | — |
-| [SRC-3451CC474D-L001157](../../tests/test_api.py#L1157) | 1157 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001158](../../tests/test_api.py#L1158) | 1158 | `"        \"/api/ask\","` | — |
-| [SRC-3451CC474D-L001159](../../tests/test_api.py#L1159) | 1159 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001160](../../tests/test_api.py#L1160) | 1160 | `"        payload={\"question\": \"مين افضل عميل\", \"tenant_id\": \"company-b\"},"` | — |
-| [SRC-3451CC474D-L001161](../../tests/test_api.py#L1161) | 1161 | `"    )"` | — |
-| [SRC-3451CC474D-L001162](../../tests/test_api.py#L1162) | 1162 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001039](../../tests/test_api.py#L1039) | 1039 | `"    status, _ = request_text(local_api, \"/api/leads/export.csv?tenant_id=company-b\")"` | — |
+| [SRC-3451CC474D-L001040](../../tests/test_api.py#L1040) | 1040 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001041](../../tests/test_api.py#L1041) | 1041 | `""` | — |
+| [SRC-3451CC474D-L001042](../../tests/test_api.py#L1042) | 1042 | `"    headers_b = {\"X-Omarai-Test-User\": \"user-b\"}"` | — |
+| [SRC-3451CC474D-L001043](../../tests/test_api.py#L1043) | 1043 | `"    status, leads_b = request_json("` | — |
+| [SRC-3451CC474D-L001044](../../tests/test_api.py#L1044) | 1044 | `"        local_api, \"/api/leads?tenant_id=company-b\", headers=headers_b"` | — |
+| [SRC-3451CC474D-L001045](../../tests/test_api.py#L1045) | 1045 | `"    )"` | — |
+| [SRC-3451CC474D-L001046](../../tests/test_api.py#L1046) | 1046 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001047](../../tests/test_api.py#L1047) | 1047 | `"    assert [item[\"id\"] for item in leads_b[\"leads\"]] == [lead_b[\"id\"]]"` | — |
+| [SRC-3451CC474D-L001048](../../tests/test_api.py#L1048) | 1048 | `""` | — |
+| [SRC-3451CC474D-L001049](../../tests/test_api.py#L1049) | 1049 | `"    # Membership in company B does not grant access to the default company."` | — |
+| [SRC-3451CC474D-L001050](../../tests/test_api.py#L1050) | 1050 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001051](../../tests/test_api.py#L1051) | 1051 | `"        local_api, \"/api/leads?tenant_id=default\", headers=headers_b"` | — |
+| [SRC-3451CC474D-L001052](../../tests/test_api.py#L1052) | 1052 | `"    )"` | — |
+| [SRC-3451CC474D-L001053](../../tests/test_api.py#L1053) | 1053 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001054](../../tests/test_api.py#L1054) | 1054 | `""` | — |
+| [SRC-3451CC474D-L001055](../../tests/test_api.py#L1055) | 1055 | `"    status, exported_b = request_text("` | — |
+| [SRC-3451CC474D-L001056](../../tests/test_api.py#L1056) | 1056 | `"        local_api, \"/api/leads/export.csv?tenant_id=company-b\", headers=headers_b"` | — |
+| [SRC-3451CC474D-L001057](../../tests/test_api.py#L1057) | 1057 | `"    )"` | — |
+| [SRC-3451CC474D-L001058](../../tests/test_api.py#L1058) | 1058 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001059](../../tests/test_api.py#L1059) | 1059 | `"    assert lead_b[\"id\"] in exported_b"` | — |
+| [SRC-3451CC474D-L001060](../../tests/test_api.py#L1060) | 1060 | `"    assert \"company-b\" in exported_b"` | — |
+| [SRC-3451CC474D-L001061](../../tests/test_api.py#L1061) | 1061 | `""` | — |
+| [SRC-3451CC474D-L001062](../../tests/test_api.py#L1062) | 1062 | `"    status, updated = request_json("` | — |
+| [SRC-3451CC474D-L001063](../../tests/test_api.py#L1063) | 1063 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001064](../../tests/test_api.py#L1064) | 1064 | `"        f\"/api/leads/{lead_b['id']}/status\","` | — |
+| [SRC-3451CC474D-L001065](../../tests/test_api.py#L1065) | 1065 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001066](../../tests/test_api.py#L1066) | 1066 | `"        payload={\"tenant_id\": \"company-b\", \"status\": \"qualified\"},"` | — |
+| [SRC-3451CC474D-L001067](../../tests/test_api.py#L1067) | 1067 | `"        headers=headers_b,"` | — |
+| [SRC-3451CC474D-L001068](../../tests/test_api.py#L1068) | 1068 | `"    )"` | — |
+| [SRC-3451CC474D-L001069](../../tests/test_api.py#L1069) | 1069 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001070](../../tests/test_api.py#L1070) | 1070 | `"    assert updated[\"lead\"][\"tenant_id\"] == \"company-b\""` | — |
+| [SRC-3451CC474D-L001071](../../tests/test_api.py#L1071) | 1071 | `"    assert updated[\"lead\"][\"status\"] == \"qualified\""` | — |
+| [SRC-3451CC474D-L001072](../../tests/test_api.py#L1072) | 1072 | `""` | — |
+| [SRC-3451CC474D-L001073](../../tests/test_api.py#L1073) | 1073 | `"    # A default-company identity cannot mutate a foreign row even by guessing its ID."` | — |
+| [SRC-3451CC474D-L001074](../../tests/test_api.py#L1074) | 1074 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001075](../../tests/test_api.py#L1075) | 1075 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001076](../../tests/test_api.py#L1076) | 1076 | `"        f\"/api/leads/{lead_b['id']}/status\","` | — |
+| [SRC-3451CC474D-L001077](../../tests/test_api.py#L1077) | 1077 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001078](../../tests/test_api.py#L1078) | 1078 | `"        payload={\"status\": \"rejected\"},"` | — |
+| [SRC-3451CC474D-L001079](../../tests/test_api.py#L1079) | 1079 | `"    )"` | — |
+| [SRC-3451CC474D-L001080](../../tests/test_api.py#L1080) | 1080 | `"    assert status == 404"` | — |
+| [SRC-3451CC474D-L001081](../../tests/test_api.py#L1081) | 1081 | `""` | — |
+| [SRC-3451CC474D-L001082](../../tests/test_api.py#L1082) | 1082 | `""` | — |
+| [SRC-3451CC474D-L001083](../../tests/test_api.py#L1083) | 1083 | `"def test_api_tenant_id_header_requires_verified_membership(local_api):"` | — |
+| [SRC-3451CC474D-L001084](../../tests/test_api.py#L1084) | 1084 | `"    store = Handler.store"` | — |
+| [SRC-3451CC474D-L001085](../../tests/test_api.py#L1085) | 1085 | `"    store.create_company(\"company-c\", \"شركة ج\")"` | — |
+| [SRC-3451CC474D-L001086](../../tests/test_api.py#L1086) | 1086 | `"    store.create_user(\"user-c\")"` | — |
+| [SRC-3451CC474D-L001087](../../tests/test_api.py#L1087) | 1087 | `"    store.add_membership(\"company-c\", \"user-c\", role=\"viewer\")"` | — |
+| [SRC-3451CC474D-L001088](../../tests/test_api.py#L1088) | 1088 | `""` | — |
+| [SRC-3451CC474D-L001089](../../tests/test_api.py#L1089) | 1089 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001090](../../tests/test_api.py#L1090) | 1090 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001091](../../tests/test_api.py#L1091) | 1091 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L001092](../../tests/test_api.py#L1092) | 1092 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001093](../../tests/test_api.py#L1093) | 1093 | `"        payload={\"text\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
+| [SRC-3451CC474D-L001094](../../tests/test_api.py#L1094) | 1094 | `"    )"` | — |
+| [SRC-3451CC474D-L001095](../../tests/test_api.py#L1095) | 1095 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001096](../../tests/test_api.py#L1096) | 1096 | `""` | — |
+| [SRC-3451CC474D-L001097](../../tests/test_api.py#L1097) | 1097 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L001098](../../tests/test_api.py#L1098) | 1098 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001099](../../tests/test_api.py#L1099) | 1099 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L001100](../../tests/test_api.py#L1100) | 1100 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001101](../../tests/test_api.py#L1101) | 1101 | `"        payload={\"text\": \"اختبار\"},"` | — |
+| [SRC-3451CC474D-L001102](../../tests/test_api.py#L1102) | 1102 | `"        headers={\"X-Omarai-Tenant-ID\": \"company-c\"},"` | — |
+| [SRC-3451CC474D-L001103](../../tests/test_api.py#L1103) | 1103 | `"    )"` | — |
+| [SRC-3451CC474D-L001104](../../tests/test_api.py#L1104) | 1104 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001105](../../tests/test_api.py#L1105) | 1105 | `""` | — |
+| [SRC-3451CC474D-L001106](../../tests/test_api.py#L1106) | 1106 | `"    status, result = request_json("` | — |
+| [SRC-3451CC474D-L001107](../../tests/test_api.py#L1107) | 1107 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001108](../../tests/test_api.py#L1108) | 1108 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L001109](../../tests/test_api.py#L1109) | 1109 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001110](../../tests/test_api.py#L1110) | 1110 | `"        payload={\"text\": \"اختبار\", \"tenant_id\": \"company-c\"},"` | — |
+| [SRC-3451CC474D-L001111](../../tests/test_api.py#L1111) | 1111 | `"        headers={\"X-Omarai-Test-User\": \"user-c\"},"` | — |
+| [SRC-3451CC474D-L001112](../../tests/test_api.py#L1112) | 1112 | `"    )"` | — |
+| [SRC-3451CC474D-L001113](../../tests/test_api.py#L1113) | 1113 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001114](../../tests/test_api.py#L1114) | 1114 | `"    assert \"score\" in result"` | — |
+| [SRC-3451CC474D-L001115](../../tests/test_api.py#L1115) | 1115 | `""` | — |
+| [SRC-3451CC474D-L001116](../../tests/test_api.py#L1116) | 1116 | `"def test_api_ask_statistics_and_recommendations_are_company_scoped(local_api):"` | — |
+| [SRC-3451CC474D-L001117](../../tests/test_api.py#L1117) | 1117 | `"    store = Handler.store"` | — |
+| [SRC-3451CC474D-L001118](../../tests/test_api.py#L1118) | 1118 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
+| [SRC-3451CC474D-L001119](../../tests/test_api.py#L1119) | 1119 | `"    store.create_user(\"user-b\", display_name=\"مسؤول ب\")"` | — |
+| [SRC-3451CC474D-L001120](../../tests/test_api.py#L1120) | 1120 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"admin\")"` | — |
+| [SRC-3451CC474D-L001121](../../tests/test_api.py#L1121) | 1121 | `"    lead_b, created = store.add("` | — |
+| [SRC-3451CC474D-L001122](../../tests/test_api.py#L1122) | 1122 | `"        \"بدور على شقة وممكن معاينة والسعر كام\","` | — |
+| [SRC-3451CC474D-L001123](../../tests/test_api.py#L1123) | 1123 | `"        \"https://example.com/company-b/housing\","` | — |
+| [SRC-3451CC474D-L001124](../../tests/test_api.py#L1124) | 1124 | `"        tenant_id=\"company-b\","` | — |
+| [SRC-3451CC474D-L001125](../../tests/test_api.py#L1125) | 1125 | `"    )"` | — |
+| [SRC-3451CC474D-L001126](../../tests/test_api.py#L1126) | 1126 | `"    assert created is True"` | — |
+| [SRC-3451CC474D-L001127](../../tests/test_api.py#L1127) | 1127 | `""` | — |
+| [SRC-3451CC474D-L001128](../../tests/test_api.py#L1128) | 1128 | `"    status, stats_a = request_json("` | — |
+| [SRC-3451CC474D-L001129](../../tests/test_api.py#L1129) | 1129 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001130](../../tests/test_api.py#L1130) | 1130 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001131](../../tests/test_api.py#L1131) | 1131 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001132](../../tests/test_api.py#L1132) | 1132 | `"        payload={\"question\": \"كام عميل\", \"tenant_id\": \"default\"},"` | — |
+| [SRC-3451CC474D-L001133](../../tests/test_api.py#L1133) | 1133 | `"    )"` | — |
+| [SRC-3451CC474D-L001134](../../tests/test_api.py#L1134) | 1134 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001135](../../tests/test_api.py#L1135) | 1135 | `"    assert \"0 إشارة\" in stats_a[\"answer\"]"` | — |
+| [SRC-3451CC474D-L001136](../../tests/test_api.py#L1136) | 1136 | `""` | — |
+| [SRC-3451CC474D-L001137](../../tests/test_api.py#L1137) | 1137 | `"    status, stats_b = request_json("` | — |
+| [SRC-3451CC474D-L001138](../../tests/test_api.py#L1138) | 1138 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001139](../../tests/test_api.py#L1139) | 1139 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001140](../../tests/test_api.py#L1140) | 1140 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001141](../../tests/test_api.py#L1141) | 1141 | `"        payload={\"question\": \"كام عميل\", \"tenant_id\": \"company-b\"},"` | — |
+| [SRC-3451CC474D-L001142](../../tests/test_api.py#L1142) | 1142 | `"        headers={\"X-Omarai-Test-User\": \"user-b\"},"` | — |
+| [SRC-3451CC474D-L001143](../../tests/test_api.py#L1143) | 1143 | `"    )"` | — |
+| [SRC-3451CC474D-L001144](../../tests/test_api.py#L1144) | 1144 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001145](../../tests/test_api.py#L1145) | 1145 | `"    assert \"1 إشارة\" in stats_b[\"answer\"]"` | — |
+| [SRC-3451CC474D-L001146](../../tests/test_api.py#L1146) | 1146 | `""` | — |
+| [SRC-3451CC474D-L001147](../../tests/test_api.py#L1147) | 1147 | `"    status, recommendation_b = request_json("` | — |
+| [SRC-3451CC474D-L001148](../../tests/test_api.py#L1148) | 1148 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001149](../../tests/test_api.py#L1149) | 1149 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001150](../../tests/test_api.py#L1150) | 1150 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001151](../../tests/test_api.py#L1151) | 1151 | `"        payload={\"question\": \"مين افضل عميل\", \"tenant_id\": \"company-b\"},"` | — |
+| [SRC-3451CC474D-L001152](../../tests/test_api.py#L1152) | 1152 | `"        headers={\"X-Omarai-Test-User\": \"user-b\"},"` | — |
+| [SRC-3451CC474D-L001153](../../tests/test_api.py#L1153) | 1153 | `"    )"` | — |
+| [SRC-3451CC474D-L001154](../../tests/test_api.py#L1154) | 1154 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001155](../../tests/test_api.py#L1155) | 1155 | `"    assert lead_b[\"id\"][:8] in recommendation_b[\"answer\"]"` | — |
+| [SRC-3451CC474D-L001156](../../tests/test_api.py#L1156) | 1156 | `""` | — |
+| [SRC-3451CC474D-L001157](../../tests/test_api.py#L1157) | 1157 | `"    # The default-company operator cannot select company B for a recommendation."` | — |
+| [SRC-3451CC474D-L001158](../../tests/test_api.py#L1158) | 1158 | `"    status, denied = request_json("` | — |
+| [SRC-3451CC474D-L001159](../../tests/test_api.py#L1159) | 1159 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001160](../../tests/test_api.py#L1160) | 1160 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001161](../../tests/test_api.py#L1161) | 1161 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001162](../../tests/test_api.py#L1162) | 1162 | `"        payload={\"question\": \"مين افضل عميل\", \"tenant_id\": \"company-b\"},"` | — |
+| [SRC-3451CC474D-L001163](../../tests/test_api.py#L1163) | 1163 | `"    )"` | — |
+| [SRC-3451CC474D-L001164](../../tests/test_api.py#L1164) | 1164 | `"    assert status == 403"` | — |
 ## اختبارات
 
 ### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
@@ -852,12 +861,3 @@
 | [SRC-3D0A619359-L000002](../../tests/test_dashboard_security.py#L2) | 2 | `"from pathlib import Path"` | — |
 | [SRC-3D0A619359-L000003](../../tests/test_dashboard_security.py#L3) | 3 | `""` | — |
 | [SRC-3D0A619359-L000004](../../tests/test_dashboard_security.py#L4) | 4 | `"DASHBOARD = Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\""` | — |
-| [SRC-3D0A619359-L000005](../../tests/test_dashboard_security.py#L5) | 5 | `""` | — |
-| [SRC-3D0A619359-L000006](../../tests/test_dashboard_security.py#L6) | 6 | `""` | — |
-| [SRC-3D0A619359-L000007](../../tests/test_dashboard_security.py#L7) | 7 | `"def test_hosted_lead_dashboard_can_send_the_private_access_token():"` | — |
-| [SRC-3D0A619359-L000008](../../tests/test_dashboard_security.py#L8) | 8 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000009](../../tests/test_dashboard_security.py#L9) | 9 | `"    assert 'const ACCESS_TOKEN_STORAGE_KEY=\"omarai_access_token\"' in html"` | — |
-| [SRC-3D0A619359-L000010](../../tests/test_dashboard_security.py#L10) | 10 | `"    assert 'headers.Authorization=\"Bearer \"+token' in html"` | — |
-| [SRC-3D0A619359-L000011](../../tests/test_dashboard_security.py#L11) | 11 | `"    assert '$(\"saveAccessToken\").onclick' in html"` | — |
-| [SRC-3D0A619359-L000012](../../tests/test_dashboard_security.py#L12) | 12 | `""` | — |
-| [SRC-3D0A619359-L000013](../../tests/test_dashboard_security.py#L13) | 13 | `""` | — |

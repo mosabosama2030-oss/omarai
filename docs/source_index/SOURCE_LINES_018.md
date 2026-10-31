@@ -441,7 +441,7 @@
 | [SRC-EEF2E6447C-L000610](../../api/omarai.py#L610) | 610 | `"            if path.startswith(\"/api/\") and not self._rate_limit_ok():"` | — |
 | [SRC-EEF2E6447C-L000611](../../api/omarai.py#L611) | 611 | `"                return self.respond(429, {\"error\": \"تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة.\"})"` | — |
 | [SRC-EEF2E6447C-L000612](../../api/omarai.py#L612) | 612 | `"            if path.startswith(\"/api/\") and not self._authorized():"` | — |
-| [SRC-EEF2E6447C-L000613](../../api/omarai.py#L613) | 613 | `"                return self.respond(401, {\"error\": \"يلزم مستخدم مصرح به ورمز وصول صالح أو بيئة اختبار محلية.\"})"` | — |
+| [SRC-EEF2E6447C-L000613](../../api/omarai.py#L613) | 613 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول وهوية مستخدم مصرح بها، أو بيئة اختبار محلية.\"})"` | — |
 | [SRC-EEF2E6447C-L000614](../../api/omarai.py#L614) | 614 | `""` | — |
 | [SRC-EEF2E6447C-L000615](../../api/omarai.py#L615) | 615 | `"            content_type = self.headers.get(\"Content-Type\", \"\").split(\";\", 1)[0].strip().lower()"` | — |
 | [SRC-EEF2E6447C-L000616](../../api/omarai.py#L616) | 616 | `"            if content_type != \"application/json\":"` | — |

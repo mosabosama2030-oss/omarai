@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000167 إلى SRC-90FAA34ADE-L000242
+- النطاق: SRC-03FF422A16-L000167 إلى SRC-90FAA34ADE-L000235
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -113,324 +113,331 @@
 | [SRC-497366DEF4-L000007](../../scripts/self_acceptance_test.py#L7) | 7 | `"from __future__ import annotations"` | — |
 | [SRC-497366DEF4-L000008](../../scripts/self_acceptance_test.py#L8) | 8 | `""` | — |
 | [SRC-497366DEF4-L000009](../../scripts/self_acceptance_test.py#L9) | 9 | `"import argparse"` | — |
-| [SRC-497366DEF4-L000010](../../scripts/self_acceptance_test.py#L10) | 10 | `"import json"` | — |
-| [SRC-497366DEF4-L000011](../../scripts/self_acceptance_test.py#L11) | 11 | `"import os"` | — |
-| [SRC-497366DEF4-L000012](../../scripts/self_acceptance_test.py#L12) | 12 | `"import sys"` | — |
-| [SRC-497366DEF4-L000013](../../scripts/self_acceptance_test.py#L13) | 13 | `"import tempfile"` | — |
-| [SRC-497366DEF4-L000014](../../scripts/self_acceptance_test.py#L14) | 14 | `"import threading"` | — |
-| [SRC-497366DEF4-L000015](../../scripts/self_acceptance_test.py#L15) | 15 | `"import time"` | — |
-| [SRC-497366DEF4-L000016](../../scripts/self_acceptance_test.py#L16) | 16 | `"from datetime import UTC, datetime"` | — |
-| [SRC-497366DEF4-L000017](../../scripts/self_acceptance_test.py#L17) | 17 | `"from pathlib import Path"` | — |
-| [SRC-497366DEF4-L000018](../../scripts/self_acceptance_test.py#L18) | 18 | `"from typing import Any"` | — |
-| [SRC-497366DEF4-L000019](../../scripts/self_acceptance_test.py#L19) | 19 | `"from urllib.error import HTTPError, URLError"` | — |
-| [SRC-497366DEF4-L000020](../../scripts/self_acceptance_test.py#L20) | 20 | `"from urllib.request import Request, urlopen"` | — |
-| [SRC-497366DEF4-L000021](../../scripts/self_acceptance_test.py#L21) | 21 | `""` | — |
+| [SRC-497366DEF4-L000010](../../scripts/self_acceptance_test.py#L10) | 10 | `"from collections import defaultdict, deque"` | — |
+| [SRC-497366DEF4-L000011](../../scripts/self_acceptance_test.py#L11) | 11 | `"import json"` | — |
+| [SRC-497366DEF4-L000012](../../scripts/self_acceptance_test.py#L12) | 12 | `"import os"` | — |
+| [SRC-497366DEF4-L000013](../../scripts/self_acceptance_test.py#L13) | 13 | `"import sys"` | — |
+| [SRC-497366DEF4-L000014](../../scripts/self_acceptance_test.py#L14) | 14 | `"import tempfile"` | — |
+| [SRC-497366DEF4-L000015](../../scripts/self_acceptance_test.py#L15) | 15 | `"import threading"` | — |
+| [SRC-497366DEF4-L000016](../../scripts/self_acceptance_test.py#L16) | 16 | `"import time"` | — |
+| [SRC-497366DEF4-L000017](../../scripts/self_acceptance_test.py#L17) | 17 | `"from datetime import UTC, datetime"` | — |
+| [SRC-497366DEF4-L000018](../../scripts/self_acceptance_test.py#L18) | 18 | `"from pathlib import Path"` | — |
+| [SRC-497366DEF4-L000019](../../scripts/self_acceptance_test.py#L19) | 19 | `"from typing import Any"` | — |
+| [SRC-497366DEF4-L000020](../../scripts/self_acceptance_test.py#L20) | 20 | `"from urllib.error import HTTPError, URLError"` | — |
+| [SRC-497366DEF4-L000021](../../scripts/self_acceptance_test.py#L21) | 21 | `"from urllib.request import Request, urlopen"` | — |
 | [SRC-497366DEF4-L000022](../../scripts/self_acceptance_test.py#L22) | 22 | `""` | — |
-| [SRC-497366DEF4-L000023](../../scripts/self_acceptance_test.py#L23) | 23 | `"def build_live_questions(product: str = \"\", custom_questions: list[str] \| None = None):"` | — |
-| [SRC-497366DEF4-L000024](../../scripts/self_acceptance_test.py#L24) | 24 | `"    if custom_questions:"` | — |
-| [SRC-497366DEF4-L000025](../../scripts/self_acceptance_test.py#L25) | 25 | `"        return ["` | — |
-| [SRC-497366DEF4-L000026](../../scripts/self_acceptance_test.py#L26) | 26 | `"            {\"id\": f\"custom-{index}\", \"question\": item, \"mode\": \"deep\", \"history\": []}"` | — |
-| [SRC-497366DEF4-L000027](../../scripts/self_acceptance_test.py#L27) | 27 | `"            for index, item in enumerate(custom_questions, 1)"` | — |
-| [SRC-497366DEF4-L000028](../../scripts/self_acceptance_test.py#L28) | 28 | `"        ]"` | — |
-| [SRC-497366DEF4-L000029](../../scripts/self_acceptance_test.py#L29) | 29 | `"    questions = ["` | — |
-| [SRC-497366DEF4-L000030](../../scripts/self_acceptance_test.py#L30) | 30 | `"        {"` | — |
-| [SRC-497366DEF4-L000031](../../scripts/self_acceptance_test.py#L31) | 31 | `"            \"id\": \"web-research-smoke\","` | — |
-| [SRC-497366DEF4-L000032](../../scripts/self_acceptance_test.py#L32) | 32 | `"            \"question\": \"ما عاصمة مصر؟ استخدم البحث العميق وأرفق المصادر التي اعتمدت عليها.\","` | — |
-| [SRC-497366DEF4-L000033](../../scripts/self_acceptance_test.py#L33) | 33 | `"            \"mode\": \"deep\","` | — |
-| [SRC-497366DEF4-L000034](../../scripts/self_acceptance_test.py#L34) | 34 | `"            \"history\": [],"` | — |
-| [SRC-497366DEF4-L000035](../../scripts/self_acceptance_test.py#L35) | 35 | `"        },"` | — |
-| [SRC-497366DEF4-L000036](../../scripts/self_acceptance_test.py#L36) | 36 | `"        {"` | — |
-| [SRC-497366DEF4-L000037](../../scripts/self_acceptance_test.py#L37) | 37 | `"            \"id\": \"context-followup\","` | — |
-| [SRC-497366DEF4-L000038](../../scripts/self_acceptance_test.py#L38) | 38 | `"            \"question\": \"ما الدليل من المصادر السابقة على إجابتك؟ لا تضف معلومة غير مسندة.\","` | — |
-| [SRC-497366DEF4-L000039](../../scripts/self_acceptance_test.py#L39) | 39 | `"            \"mode\": \"auto\","` | — |
-| [SRC-497366DEF4-L000040](../../scripts/self_acceptance_test.py#L40) | 40 | `"            \"history_from_previous\": True,"` | — |
-| [SRC-497366DEF4-L000041](../../scripts/self_acceptance_test.py#L41) | 41 | `"        },"` | — |
-| [SRC-497366DEF4-L000042](../../scripts/self_acceptance_test.py#L42) | 42 | `"    ]"` | — |
-| [SRC-497366DEF4-L000043](../../scripts/self_acceptance_test.py#L43) | 43 | `"    product = str(product or \"\").strip()"` | — |
-| [SRC-497366DEF4-L000044](../../scripts/self_acceptance_test.py#L44) | 44 | `"    if product:"` | — |
-| [SRC-497366DEF4-L000045](../../scripts/self_acceptance_test.py#L45) | 45 | `"        questions.append({"` | — |
-| [SRC-497366DEF4-L000046](../../scripts/self_acceptance_test.py#L46) | 46 | `"            \"id\": \"buyer-intent-smoke\","` | — |
-| [SRC-497366DEF4-L000047](../../scripts/self_acceptance_test.py#L47) | 47 | `"            \"question\": ("` | — |
-| [SRC-497366DEF4-L000048](../../scripts/self_acceptance_test.py#L48) | 48 | `"                f\"ابحث عن إشارات شراء معلنة علنًا تخص {product} في مصر. \""` | — |
-| [SRC-497366DEF4-L000049](../../scripts/self_acceptance_test.py#L49) | 49 | `"                \"لا تعرض جهة كعميل محتمل إلا إذا وجدت طلب شراء أو احتياجًا مباشرًا موثقًا \""` | — |
-| [SRC-497366DEF4-L000050](../../scripts/self_acceptance_test.py#L50) | 50 | `"                \"برابط ومقتطف وتاريخ؛ استبعد قوائم البيع والتخمين.\""` | — |
-| [SRC-497366DEF4-L000051](../../scripts/self_acceptance_test.py#L51) | 51 | `"            ),"` | — |
-| [SRC-497366DEF4-L000052](../../scripts/self_acceptance_test.py#L52) | 52 | `"            \"mode\": \"deep\","` | — |
-| [SRC-497366DEF4-L000053](../../scripts/self_acceptance_test.py#L53) | 53 | `"            \"history\": [],"` | — |
-| [SRC-497366DEF4-L000054](../../scripts/self_acceptance_test.py#L54) | 54 | `"        })"` | — |
-| [SRC-497366DEF4-L000055](../../scripts/self_acceptance_test.py#L55) | 55 | `"    return questions"` | — |
-| [SRC-497366DEF4-L000056](../../scripts/self_acceptance_test.py#L56) | 56 | `""` | — |
+| [SRC-497366DEF4-L000023](../../scripts/self_acceptance_test.py#L23) | 23 | `""` | — |
+| [SRC-497366DEF4-L000024](../../scripts/self_acceptance_test.py#L24) | 24 | `"def build_live_questions(product: str = \"\", custom_questions: list[str] \| None = None):"` | — |
+| [SRC-497366DEF4-L000025](../../scripts/self_acceptance_test.py#L25) | 25 | `"    if custom_questions:"` | — |
+| [SRC-497366DEF4-L000026](../../scripts/self_acceptance_test.py#L26) | 26 | `"        return ["` | — |
+| [SRC-497366DEF4-L000027](../../scripts/self_acceptance_test.py#L27) | 27 | `"            {\"id\": f\"custom-{index}\", \"question\": item, \"mode\": \"deep\", \"history\": []}"` | — |
+| [SRC-497366DEF4-L000028](../../scripts/self_acceptance_test.py#L28) | 28 | `"            for index, item in enumerate(custom_questions, 1)"` | — |
+| [SRC-497366DEF4-L000029](../../scripts/self_acceptance_test.py#L29) | 29 | `"        ]"` | — |
+| [SRC-497366DEF4-L000030](../../scripts/self_acceptance_test.py#L30) | 30 | `"    questions = ["` | — |
+| [SRC-497366DEF4-L000031](../../scripts/self_acceptance_test.py#L31) | 31 | `"        {"` | — |
+| [SRC-497366DEF4-L000032](../../scripts/self_acceptance_test.py#L32) | 32 | `"            \"id\": \"web-research-smoke\","` | — |
+| [SRC-497366DEF4-L000033](../../scripts/self_acceptance_test.py#L33) | 33 | `"            \"question\": \"ما عاصمة مصر؟ استخدم البحث العميق وأرفق المصادر التي اعتمدت عليها.\","` | — |
+| [SRC-497366DEF4-L000034](../../scripts/self_acceptance_test.py#L34) | 34 | `"            \"mode\": \"deep\","` | — |
+| [SRC-497366DEF4-L000035](../../scripts/self_acceptance_test.py#L35) | 35 | `"            \"history\": [],"` | — |
+| [SRC-497366DEF4-L000036](../../scripts/self_acceptance_test.py#L36) | 36 | `"        },"` | — |
+| [SRC-497366DEF4-L000037](../../scripts/self_acceptance_test.py#L37) | 37 | `"        {"` | — |
+| [SRC-497366DEF4-L000038](../../scripts/self_acceptance_test.py#L38) | 38 | `"            \"id\": \"context-followup\","` | — |
+| [SRC-497366DEF4-L000039](../../scripts/self_acceptance_test.py#L39) | 39 | `"            \"question\": \"ما الدليل من المصادر السابقة على إجابتك؟ لا تضف معلومة غير مسندة.\","` | — |
+| [SRC-497366DEF4-L000040](../../scripts/self_acceptance_test.py#L40) | 40 | `"            \"mode\": \"auto\","` | — |
+| [SRC-497366DEF4-L000041](../../scripts/self_acceptance_test.py#L41) | 41 | `"            \"history_from_previous\": True,"` | — |
+| [SRC-497366DEF4-L000042](../../scripts/self_acceptance_test.py#L42) | 42 | `"        },"` | — |
+| [SRC-497366DEF4-L000043](../../scripts/self_acceptance_test.py#L43) | 43 | `"    ]"` | — |
+| [SRC-497366DEF4-L000044](../../scripts/self_acceptance_test.py#L44) | 44 | `"    product = str(product or \"\").strip()"` | — |
+| [SRC-497366DEF4-L000045](../../scripts/self_acceptance_test.py#L45) | 45 | `"    if product:"` | — |
+| [SRC-497366DEF4-L000046](../../scripts/self_acceptance_test.py#L46) | 46 | `"        questions.append({"` | — |
+| [SRC-497366DEF4-L000047](../../scripts/self_acceptance_test.py#L47) | 47 | `"            \"id\": \"buyer-intent-smoke\","` | — |
+| [SRC-497366DEF4-L000048](../../scripts/self_acceptance_test.py#L48) | 48 | `"            \"question\": ("` | — |
+| [SRC-497366DEF4-L000049](../../scripts/self_acceptance_test.py#L49) | 49 | `"                f\"ابحث عن إشارات شراء معلنة علنًا تخص {product} في مصر. \""` | — |
+| [SRC-497366DEF4-L000050](../../scripts/self_acceptance_test.py#L50) | 50 | `"                \"لا تعرض جهة كعميل محتمل إلا إذا وجدت طلب شراء أو احتياجًا مباشرًا موثقًا \""` | — |
+| [SRC-497366DEF4-L000051](../../scripts/self_acceptance_test.py#L51) | 51 | `"                \"برابط ومقتطف وتاريخ؛ استبعد قوائم البيع والتخمين.\""` | — |
+| [SRC-497366DEF4-L000052](../../scripts/self_acceptance_test.py#L52) | 52 | `"            ),"` | — |
+| [SRC-497366DEF4-L000053](../../scripts/self_acceptance_test.py#L53) | 53 | `"            \"mode\": \"deep\","` | — |
+| [SRC-497366DEF4-L000054](../../scripts/self_acceptance_test.py#L54) | 54 | `"            \"history\": [],"` | — |
+| [SRC-497366DEF4-L000055](../../scripts/self_acceptance_test.py#L55) | 55 | `"        })"` | — |
+| [SRC-497366DEF4-L000056](../../scripts/self_acceptance_test.py#L56) | 56 | `"    return questions"` | — |
 | [SRC-497366DEF4-L000057](../../scripts/self_acceptance_test.py#L57) | 57 | `""` | — |
-| [SRC-497366DEF4-L000058](../../scripts/self_acceptance_test.py#L58) | 58 | `"def summarize_response(status_code: int, payload: dict[str, Any] \| None) -> dict[str, Any]:"` | — |
-| [SRC-497366DEF4-L000059](../../scripts/self_acceptance_test.py#L59) | 59 | `"    payload = payload if isinstance(payload, dict) else {}"` | — |
-| [SRC-497366DEF4-L000060](../../scripts/self_acceptance_test.py#L60) | 60 | `"    answer = str(payload.get(\"answer\") or \"\")"` | — |
-| [SRC-497366DEF4-L000061](../../scripts/self_acceptance_test.py#L61) | 61 | `"    sources = payload.get(\"sources\")"` | — |
-| [SRC-497366DEF4-L000062](../../scripts/self_acceptance_test.py#L62) | 62 | `"    sources = sources if isinstance(sources, list) else []"` | — |
-| [SRC-497366DEF4-L000063](../../scripts/self_acceptance_test.py#L63) | 63 | `"    report = payload.get(\"search_report\")"` | — |
-| [SRC-497366DEF4-L000064](../../scripts/self_acceptance_test.py#L64) | 64 | `"    report = report if isinstance(report, dict) else {}"` | — |
-| [SRC-497366DEF4-L000065](../../scripts/self_acceptance_test.py#L65) | 65 | `"    completion = payload.get(\"research_completion\")"` | — |
-| [SRC-497366DEF4-L000066](../../scripts/self_acceptance_test.py#L66) | 66 | `"    completion = completion if isinstance(completion, dict) else {}"` | — |
-| [SRC-497366DEF4-L000067](../../scripts/self_acceptance_test.py#L67) | 67 | `"    counters = completion.get(\"counters\")"` | — |
-| [SRC-497366DEF4-L000068](../../scripts/self_acceptance_test.py#L68) | 68 | `"    counters = counters if isinstance(counters, dict) else {}"` | — |
-| [SRC-497366DEF4-L000069](../../scripts/self_acceptance_test.py#L69) | 69 | `"    return {"` | — |
-| [SRC-497366DEF4-L000070](../../scripts/self_acceptance_test.py#L70) | 70 | `"        \"http_status\": status_code,"` | — |
-| [SRC-497366DEF4-L000071](../../scripts/self_acceptance_test.py#L71) | 71 | `"        \"answer_present\": bool(answer.strip()),"` | — |
-| [SRC-497366DEF4-L000072](../../scripts/self_acceptance_test.py#L72) | 72 | `"        \"answer_length\": len(answer),"` | — |
-| [SRC-497366DEF4-L000073](../../scripts/self_acceptance_test.py#L73) | 73 | `"        \"source_count\": len(sources),"` | — |
-| [SRC-497366DEF4-L000074](../../scripts/self_acceptance_test.py#L74) | 74 | `"        \"used_web_search\": payload.get(\"used_web_search\") is True,"` | — |
-| [SRC-497366DEF4-L000075](../../scripts/self_acceptance_test.py#L75) | 75 | `"        \"used_language_model\": payload.get(\"used_language_model\") is True,"` | — |
-| [SRC-497366DEF4-L000076](../../scripts/self_acceptance_test.py#L76) | 76 | `"        \"research_completion_status\": completion.get(\"status\")"` | — |
-| [SRC-497366DEF4-L000077](../../scripts/self_acceptance_test.py#L77) | 77 | `"            or report.get(\"pipeline_completion_status\")"` | — |
-| [SRC-497366DEF4-L000078](../../scripts/self_acceptance_test.py#L78) | 78 | `"            or \"unknown\","` | — |
-| [SRC-497366DEF4-L000079](../../scripts/self_acceptance_test.py#L79) | 79 | `"        \"invalid_citation_references_removed_count\": counters.get("` | — |
-| [SRC-497366DEF4-L000080](../../scripts/self_acceptance_test.py#L80) | 80 | `"            \"invalid_citation_references_removed_count\""` | — |
-| [SRC-497366DEF4-L000081](../../scripts/self_acceptance_test.py#L81) | 81 | `"        ),"` | — |
-| [SRC-497366DEF4-L000082](../../scripts/self_acceptance_test.py#L82) | 82 | `"        \"citation_support_warning_count\": counters.get(\"citation_support_warning_count\"),"` | — |
-| [SRC-497366DEF4-L000083](../../scripts/self_acceptance_test.py#L83) | 83 | `"    }"` | — |
-| [SRC-497366DEF4-L000084](../../scripts/self_acceptance_test.py#L84) | 84 | `""` | — |
+| [SRC-497366DEF4-L000058](../../scripts/self_acceptance_test.py#L58) | 58 | `""` | — |
+| [SRC-497366DEF4-L000059](../../scripts/self_acceptance_test.py#L59) | 59 | `"def summarize_response(status_code: int, payload: dict[str, Any] \| None) -> dict[str, Any]:"` | — |
+| [SRC-497366DEF4-L000060](../../scripts/self_acceptance_test.py#L60) | 60 | `"    payload = payload if isinstance(payload, dict) else {}"` | — |
+| [SRC-497366DEF4-L000061](../../scripts/self_acceptance_test.py#L61) | 61 | `"    answer = str(payload.get(\"answer\") or \"\")"` | — |
+| [SRC-497366DEF4-L000062](../../scripts/self_acceptance_test.py#L62) | 62 | `"    sources = payload.get(\"sources\")"` | — |
+| [SRC-497366DEF4-L000063](../../scripts/self_acceptance_test.py#L63) | 63 | `"    sources = sources if isinstance(sources, list) else []"` | — |
+| [SRC-497366DEF4-L000064](../../scripts/self_acceptance_test.py#L64) | 64 | `"    report = payload.get(\"search_report\")"` | — |
+| [SRC-497366DEF4-L000065](../../scripts/self_acceptance_test.py#L65) | 65 | `"    report = report if isinstance(report, dict) else {}"` | — |
+| [SRC-497366DEF4-L000066](../../scripts/self_acceptance_test.py#L66) | 66 | `"    completion = payload.get(\"research_completion\")"` | — |
+| [SRC-497366DEF4-L000067](../../scripts/self_acceptance_test.py#L67) | 67 | `"    completion = completion if isinstance(completion, dict) else {}"` | — |
+| [SRC-497366DEF4-L000068](../../scripts/self_acceptance_test.py#L68) | 68 | `"    counters = completion.get(\"counters\")"` | — |
+| [SRC-497366DEF4-L000069](../../scripts/self_acceptance_test.py#L69) | 69 | `"    counters = counters if isinstance(counters, dict) else {}"` | — |
+| [SRC-497366DEF4-L000070](../../scripts/self_acceptance_test.py#L70) | 70 | `"    return {"` | — |
+| [SRC-497366DEF4-L000071](../../scripts/self_acceptance_test.py#L71) | 71 | `"        \"http_status\": status_code,"` | — |
+| [SRC-497366DEF4-L000072](../../scripts/self_acceptance_test.py#L72) | 72 | `"        \"answer_present\": bool(answer.strip()),"` | — |
+| [SRC-497366DEF4-L000073](../../scripts/self_acceptance_test.py#L73) | 73 | `"        \"answer_length\": len(answer),"` | — |
+| [SRC-497366DEF4-L000074](../../scripts/self_acceptance_test.py#L74) | 74 | `"        \"source_count\": len(sources),"` | — |
+| [SRC-497366DEF4-L000075](../../scripts/self_acceptance_test.py#L75) | 75 | `"        \"used_web_search\": payload.get(\"used_web_search\") is True,"` | — |
+| [SRC-497366DEF4-L000076](../../scripts/self_acceptance_test.py#L76) | 76 | `"        \"used_language_model\": payload.get(\"used_language_model\") is True,"` | — |
+| [SRC-497366DEF4-L000077](../../scripts/self_acceptance_test.py#L77) | 77 | `"        \"research_completion_status\": completion.get(\"status\")"` | — |
+| [SRC-497366DEF4-L000078](../../scripts/self_acceptance_test.py#L78) | 78 | `"            or report.get(\"pipeline_completion_status\")"` | — |
+| [SRC-497366DEF4-L000079](../../scripts/self_acceptance_test.py#L79) | 79 | `"            or \"unknown\","` | — |
+| [SRC-497366DEF4-L000080](../../scripts/self_acceptance_test.py#L80) | 80 | `"        \"invalid_citation_references_removed_count\": counters.get("` | — |
+| [SRC-497366DEF4-L000081](../../scripts/self_acceptance_test.py#L81) | 81 | `"            \"invalid_citation_references_removed_count\""` | — |
+| [SRC-497366DEF4-L000082](../../scripts/self_acceptance_test.py#L82) | 82 | `"        ),"` | — |
+| [SRC-497366DEF4-L000083](../../scripts/self_acceptance_test.py#L83) | 83 | `"        \"citation_support_warning_count\": counters.get(\"citation_support_warning_count\"),"` | — |
+| [SRC-497366DEF4-L000084](../../scripts/self_acceptance_test.py#L84) | 84 | `"    }"` | — |
 | [SRC-497366DEF4-L000085](../../scripts/self_acceptance_test.py#L85) | 85 | `""` | — |
-| [SRC-497366DEF4-L000086](../../scripts/self_acceptance_test.py#L86) | 86 | `"def _request_json(url: str, payload: dict[str, Any] \| None = None, timeout: float = 90):"` | — |
-| [SRC-497366DEF4-L000087](../../scripts/self_acceptance_test.py#L87) | 87 | `"    headers = {\"Accept\": \"application/json\"}"` | — |
-| [SRC-497366DEF4-L000088](../../scripts/self_acceptance_test.py#L88) | 88 | `"    data = None"` | — |
-| [SRC-497366DEF4-L000089](../../scripts/self_acceptance_test.py#L89) | 89 | `"    method = \"GET\""` | — |
-| [SRC-497366DEF4-L000090](../../scripts/self_acceptance_test.py#L90) | 90 | `"    if payload is not None:"` | — |
-| [SRC-497366DEF4-L000091](../../scripts/self_acceptance_test.py#L91) | 91 | `"        method = \"POST\""` | — |
-| [SRC-497366DEF4-L000092](../../scripts/self_acceptance_test.py#L92) | 92 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
-| [SRC-497366DEF4-L000093](../../scripts/self_acceptance_test.py#L93) | 93 | `"        data = json.dumps(payload, ensure_ascii=False).encode(\"utf-8\")"` | — |
-| [SRC-497366DEF4-L000094](../../scripts/self_acceptance_test.py#L94) | 94 | `"    request = Request(url, data=data, headers=headers, method=method)"` | — |
-| [SRC-497366DEF4-L000095](../../scripts/self_acceptance_test.py#L95) | 95 | `"    try:"` | — |
-| [SRC-497366DEF4-L000096](../../scripts/self_acceptance_test.py#L96) | 96 | `"        with urlopen(request, timeout=timeout) as response:"` | — |
-| [SRC-497366DEF4-L000097](../../scripts/self_acceptance_test.py#L97) | 97 | `"            body = response.read(2_000_000)"` | — |
-| [SRC-497366DEF4-L000098](../../scripts/self_acceptance_test.py#L98) | 98 | `"            status = response.status"` | — |
-| [SRC-497366DEF4-L000099](../../scripts/self_acceptance_test.py#L99) | 99 | `"    except HTTPError as exc:"` | — |
-| [SRC-497366DEF4-L000100](../../scripts/self_acceptance_test.py#L100) | 100 | `"        body = exc.read(200_000)"` | — |
-| [SRC-497366DEF4-L000101](../../scripts/self_acceptance_test.py#L101) | 101 | `"        status = exc.code"` | — |
-| [SRC-497366DEF4-L000102](../../scripts/self_acceptance_test.py#L102) | 102 | `"    except (URLError, TimeoutError, OSError) as exc:"` | — |
-| [SRC-497366DEF4-L000103](../../scripts/self_acceptance_test.py#L103) | 103 | `"        raise RuntimeError(f\"Local acceptance request failed: {type(exc).__name__}\") from exc"` | — |
-| [SRC-497366DEF4-L000104](../../scripts/self_acceptance_test.py#L104) | 104 | `"    try:"` | — |
-| [SRC-497366DEF4-L000105](../../scripts/self_acceptance_test.py#L105) | 105 | `"        parsed = json.loads(body.decode(\"utf-8\"))"` | — |
-| [SRC-497366DEF4-L000106](../../scripts/self_acceptance_test.py#L106) | 106 | `"    except (UnicodeDecodeError, json.JSONDecodeError):"` | — |
-| [SRC-497366DEF4-L000107](../../scripts/self_acceptance_test.py#L107) | 107 | `"        parsed = None"` | — |
-| [SRC-497366DEF4-L000108](../../scripts/self_acceptance_test.py#L108) | 108 | `"    return status, parsed if isinstance(parsed, dict) else None"` | — |
-| [SRC-497366DEF4-L000109](../../scripts/self_acceptance_test.py#L109) | 109 | `""` | — |
+| [SRC-497366DEF4-L000086](../../scripts/self_acceptance_test.py#L86) | 86 | `""` | — |
+| [SRC-497366DEF4-L000087](../../scripts/self_acceptance_test.py#L87) | 87 | `"def _request_json(url: str, payload: dict[str, Any] \| None = None, timeout: float = 90):"` | — |
+| [SRC-497366DEF4-L000088](../../scripts/self_acceptance_test.py#L88) | 88 | `"    headers = {\"Accept\": \"application/json\"}"` | — |
+| [SRC-497366DEF4-L000089](../../scripts/self_acceptance_test.py#L89) | 89 | `"    data = None"` | — |
+| [SRC-497366DEF4-L000090](../../scripts/self_acceptance_test.py#L90) | 90 | `"    method = \"GET\""` | — |
+| [SRC-497366DEF4-L000091](../../scripts/self_acceptance_test.py#L91) | 91 | `"    if payload is not None:"` | — |
+| [SRC-497366DEF4-L000092](../../scripts/self_acceptance_test.py#L92) | 92 | `"        method = \"POST\""` | — |
+| [SRC-497366DEF4-L000093](../../scripts/self_acceptance_test.py#L93) | 93 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
+| [SRC-497366DEF4-L000094](../../scripts/self_acceptance_test.py#L94) | 94 | `"        data = json.dumps(payload, ensure_ascii=False).encode(\"utf-8\")"` | — |
+| [SRC-497366DEF4-L000095](../../scripts/self_acceptance_test.py#L95) | 95 | `"    request = Request(url, data=data, headers=headers, method=method)"` | — |
+| [SRC-497366DEF4-L000096](../../scripts/self_acceptance_test.py#L96) | 96 | `"    try:"` | — |
+| [SRC-497366DEF4-L000097](../../scripts/self_acceptance_test.py#L97) | 97 | `"        with urlopen(request, timeout=timeout) as response:"` | — |
+| [SRC-497366DEF4-L000098](../../scripts/self_acceptance_test.py#L98) | 98 | `"            body = response.read(2_000_000)"` | — |
+| [SRC-497366DEF4-L000099](../../scripts/self_acceptance_test.py#L99) | 99 | `"            status = response.status"` | — |
+| [SRC-497366DEF4-L000100](../../scripts/self_acceptance_test.py#L100) | 100 | `"    except HTTPError as exc:"` | — |
+| [SRC-497366DEF4-L000101](../../scripts/self_acceptance_test.py#L101) | 101 | `"        body = exc.read(200_000)"` | — |
+| [SRC-497366DEF4-L000102](../../scripts/self_acceptance_test.py#L102) | 102 | `"        status = exc.code"` | — |
+| [SRC-497366DEF4-L000103](../../scripts/self_acceptance_test.py#L103) | 103 | `"    except (URLError, TimeoutError, OSError) as exc:"` | — |
+| [SRC-497366DEF4-L000104](../../scripts/self_acceptance_test.py#L104) | 104 | `"        raise RuntimeError(f\"Local acceptance request failed: {type(exc).__name__}\") from exc"` | — |
+| [SRC-497366DEF4-L000105](../../scripts/self_acceptance_test.py#L105) | 105 | `"    try:"` | — |
+| [SRC-497366DEF4-L000106](../../scripts/self_acceptance_test.py#L106) | 106 | `"        parsed = json.loads(body.decode(\"utf-8\"))"` | — |
+| [SRC-497366DEF4-L000107](../../scripts/self_acceptance_test.py#L107) | 107 | `"    except (UnicodeDecodeError, json.JSONDecodeError):"` | — |
+| [SRC-497366DEF4-L000108](../../scripts/self_acceptance_test.py#L108) | 108 | `"        parsed = None"` | — |
+| [SRC-497366DEF4-L000109](../../scripts/self_acceptance_test.py#L109) | 109 | `"    return status, parsed if isinstance(parsed, dict) else None"` | — |
 | [SRC-497366DEF4-L000110](../../scripts/self_acceptance_test.py#L110) | 110 | `""` | — |
-| [SRC-497366DEF4-L000111](../../scripts/self_acceptance_test.py#L111) | 111 | `"def run_acceptance("` | — |
-| [SRC-497366DEF4-L000112](../../scripts/self_acceptance_test.py#L112) | 112 | `"    *,"` | — |
-| [SRC-497366DEF4-L000113](../../scripts/self_acceptance_test.py#L113) | 113 | `"    output_path: str \| Path,"` | — |
-| [SRC-497366DEF4-L000114](../../scripts/self_acceptance_test.py#L114) | 114 | `"    live: bool = False,"` | — |
-| [SRC-497366DEF4-L000115](../../scripts/self_acceptance_test.py#L115) | 115 | `"    product: str = \"\","` | — |
-| [SRC-497366DEF4-L000116](../../scripts/self_acceptance_test.py#L116) | 116 | `"    custom_questions: list[str] \| None = None,"` | — |
-| [SRC-497366DEF4-L000117](../../scripts/self_acceptance_test.py#L117) | 117 | `"    timeout: float = 90,"` | — |
-| [SRC-497366DEF4-L000118](../../scripts/self_acceptance_test.py#L118) | 118 | `") -> dict[str, Any]:"` | — |
-| [SRC-497366DEF4-L000119](../../scripts/self_acceptance_test.py#L119) | 119 | `"    if live and os.getenv(\"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\") != \"1\":"` | — |
-| [SRC-497366DEF4-L000120](../../scripts/self_acceptance_test.py#L120) | 120 | `"        raise RuntimeError("` | — |
-| [SRC-497366DEF4-L000121](../../scripts/self_acceptance_test.py#L121) | 121 | `"            \"Live tests require OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS=1; \""` | — |
-| [SRC-497366DEF4-L000122](../../scripts/self_acceptance_test.py#L122) | 122 | `"            \"providers may consume quota or money.\""` | — |
-| [SRC-497366DEF4-L000123](../../scripts/self_acceptance_test.py#L123) | 123 | `"        )"` | — |
-| [SRC-497366DEF4-L000124](../../scripts/self_acceptance_test.py#L124) | 124 | `""` | — |
-| [SRC-497366DEF4-L000125](../../scripts/self_acceptance_test.py#L125) | 125 | `"    original_environment = {"` | — |
-| [SRC-497366DEF4-L000126](../../scripts/self_acceptance_test.py#L126) | 126 | `"        key: os.environ.get(key)"` | — |
-| [SRC-497366DEF4-L000127](../../scripts/self_acceptance_test.py#L127) | 127 | `"        for key in ("` | — |
-| [SRC-497366DEF4-L000128](../../scripts/self_acceptance_test.py#L128) | 128 | `"            \"OMARAI_TEST_MODE\", \"OMARAI_PUBLIC_DEPLOYMENT\", \"OMARAI_ACCESS_TOKEN\","` | — |
-| [SRC-497366DEF4-L000129](../../scripts/self_acceptance_test.py#L129) | 129 | `"            \"OMARAI_ACCESS_USER_ID\", \"OMARAI_DB_PATH\", \"OMARAI_DEFAULT_TENANT_ID\","` | — |
-| [SRC-497366DEF4-L000130](../../scripts/self_acceptance_test.py#L130) | 130 | `"            \"OMARAI_DEFAULT_TENANT_NAME\", \"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\","` | — |
-| [SRC-497366DEF4-L000131](../../scripts/self_acceptance_test.py#L131) | 131 | `"        )"` | — |
-| [SRC-497366DEF4-L000132](../../scripts/self_acceptance_test.py#L132) | 132 | `"    }"` | — |
-| [SRC-497366DEF4-L000133](../../scripts/self_acceptance_test.py#L133) | 133 | `"    with tempfile.TemporaryDirectory(prefix=\"omarai-self-test-\") as temporary:"` | — |
-| [SRC-497366DEF4-L000134](../../scripts/self_acceptance_test.py#L134) | 134 | `"        os.environ[\"OMARAI_TEST_MODE\"] = \"1\""` | — |
-| [SRC-497366DEF4-L000135](../../scripts/self_acceptance_test.py#L135) | 135 | `"        os.environ.pop(\"OMARAI_PUBLIC_DEPLOYMENT\", None)"` | — |
-| [SRC-497366DEF4-L000136](../../scripts/self_acceptance_test.py#L136) | 136 | `"        os.environ.pop(\"OMARAI_ACCESS_TOKEN\", None)"` | — |
-| [SRC-497366DEF4-L000137](../../scripts/self_acceptance_test.py#L137) | 137 | `"        os.environ.pop(\"OMARAI_ACCESS_USER_ID\", None)"` | — |
-| [SRC-497366DEF4-L000138](../../scripts/self_acceptance_test.py#L138) | 138 | `"        os.environ[\"OMARAI_DB_PATH\"] = str(Path(temporary) / \"self-test.sqlite3\")"` | — |
-| [SRC-497366DEF4-L000139](../../scripts/self_acceptance_test.py#L139) | 139 | `"        os.environ[\"OMARAI_DEFAULT_TENANT_ID\"] = \"self-test\""` | — |
-| [SRC-497366DEF4-L000140](../../scripts/self_acceptance_test.py#L140) | 140 | `"        os.environ[\"OMARAI_DEFAULT_TENANT_NAME\"] = \"Omarai Self-Test\""` | — |
-| [SRC-497366DEF4-L000141](../../scripts/self_acceptance_test.py#L141) | 141 | `""` | — |
-| [SRC-497366DEF4-L000142](../../scripts/self_acceptance_test.py#L142) | 142 | `"        try:"` | — |
-| [SRC-497366DEF4-L000143](../../scripts/self_acceptance_test.py#L143) | 143 | `"            # Import only after test environment and isolated database are configured."` | — |
-| [SRC-497366DEF4-L000144](../../scripts/self_acceptance_test.py#L144) | 144 | `"            from http.server import ThreadingHTTPServer"` | — |
-| [SRC-497366DEF4-L000145](../../scripts/self_acceptance_test.py#L145) | 145 | `"            from api.omarai import Handler"` | — |
-| [SRC-497366DEF4-L000146](../../scripts/self_acceptance_test.py#L146) | 146 | `"            from agents.omarai import LeadStore"` | — |
-| [SRC-497366DEF4-L000147](../../scripts/self_acceptance_test.py#L147) | 147 | `""` | — |
-| [SRC-497366DEF4-L000148](../../scripts/self_acceptance_test.py#L148) | 148 | `"            previous_store = Handler.store"` | — |
-| [SRC-497366DEF4-L000149](../../scripts/self_acceptance_test.py#L149) | 149 | `"            Handler.store = LeadStore("` | — |
-| [SRC-497366DEF4-L000150](../../scripts/self_acceptance_test.py#L150) | 150 | `"                os.environ[\"OMARAI_DB_PATH\"],"` | — |
-| [SRC-497366DEF4-L000151](../../scripts/self_acceptance_test.py#L151) | 151 | `"                default_tenant_id=\"self-test\","` | — |
-| [SRC-497366DEF4-L000152](../../scripts/self_acceptance_test.py#L152) | 152 | `"                default_tenant_name=\"Omarai Self-Test\","` | — |
-| [SRC-497366DEF4-L000153](../../scripts/self_acceptance_test.py#L153) | 153 | `"            )"` | — |
-| [SRC-497366DEF4-L000154](../../scripts/self_acceptance_test.py#L154) | 154 | `"            server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)"` | — |
-| [SRC-497366DEF4-L000155](../../scripts/self_acceptance_test.py#L155) | 155 | `"            server.daemon_threads = True"` | — |
-| [SRC-497366DEF4-L000156](../../scripts/self_acceptance_test.py#L156) | 156 | `"            thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
-| [SRC-497366DEF4-L000157](../../scripts/self_acceptance_test.py#L157) | 157 | `"            thread.start()"` | — |
-| [SRC-497366DEF4-L000158](../../scripts/self_acceptance_test.py#L158) | 158 | `"            origin = f\"http://127.0.0.1:{server.server_port}\""` | — |
-| [SRC-497366DEF4-L000159](../../scripts/self_acceptance_test.py#L159) | 159 | `"            started = time.monotonic()"` | — |
-| [SRC-497366DEF4-L000160](../../scripts/self_acceptance_test.py#L160) | 160 | `"            try:"` | — |
-| [SRC-497366DEF4-L000161](../../scripts/self_acceptance_test.py#L161) | 161 | `"                health_status, health = _request_json(f\"{origin}/api/health\", timeout=10)"` | — |
-| [SRC-497366DEF4-L000162](../../scripts/self_acceptance_test.py#L162) | 162 | `"                if health_status != 200 or not health or health.get(\"ok\") is not True:"` | — |
-| [SRC-497366DEF4-L000163](../../scripts/self_acceptance_test.py#L163) | 163 | `"                    raise RuntimeError(f\"Health check failed with HTTP {health_status}\")"` | — |
-| [SRC-497366DEF4-L000164](../../scripts/self_acceptance_test.py#L164) | 164 | `""` | — |
-| [SRC-497366DEF4-L000165](../../scripts/self_acceptance_test.py#L165) | 165 | `"                analyze_status, analysis = _request_json("` | — |
-| [SRC-497366DEF4-L000166](../../scripts/self_acceptance_test.py#L166) | 166 | `"                    f\"{origin}/api/analyze\","` | — |
-| [SRC-497366DEF4-L000167](../../scripts/self_acceptance_test.py#L167) | 167 | `"                    {\"text\": \"مطلوب شراء منتج تجريبي\", \"tenant_id\": \"self-test\"},"` | — |
-| [SRC-497366DEF4-L000168](../../scripts/self_acceptance_test.py#L168) | 168 | `"                    timeout=10,"` | — |
-| [SRC-497366DEF4-L000169](../../scripts/self_acceptance_test.py#L169) | 169 | `"                )"` | — |
-| [SRC-497366DEF4-L000170](../../scripts/self_acceptance_test.py#L170) | 170 | `"                if analyze_status != 200 or not analysis:"` | — |
-| [SRC-497366DEF4-L000171](../../scripts/self_acceptance_test.py#L171) | 171 | `"                    raise RuntimeError(f\"Local API analysis failed with HTTP {analyze_status}\")"` | — |
+| [SRC-497366DEF4-L000111](../../scripts/self_acceptance_test.py#L111) | 111 | `""` | — |
+| [SRC-497366DEF4-L000112](../../scripts/self_acceptance_test.py#L112) | 112 | `"def run_acceptance("` | — |
+| [SRC-497366DEF4-L000113](../../scripts/self_acceptance_test.py#L113) | 113 | `"    *,"` | — |
+| [SRC-497366DEF4-L000114](../../scripts/self_acceptance_test.py#L114) | 114 | `"    output_path: str \| Path,"` | — |
+| [SRC-497366DEF4-L000115](../../scripts/self_acceptance_test.py#L115) | 115 | `"    live: bool = False,"` | — |
+| [SRC-497366DEF4-L000116](../../scripts/self_acceptance_test.py#L116) | 116 | `"    product: str = \"\","` | — |
+| [SRC-497366DEF4-L000117](../../scripts/self_acceptance_test.py#L117) | 117 | `"    custom_questions: list[str] \| None = None,"` | — |
+| [SRC-497366DEF4-L000118](../../scripts/self_acceptance_test.py#L118) | 118 | `"    timeout: float = 90,"` | — |
+| [SRC-497366DEF4-L000119](../../scripts/self_acceptance_test.py#L119) | 119 | `") -> dict[str, Any]:"` | — |
+| [SRC-497366DEF4-L000120](../../scripts/self_acceptance_test.py#L120) | 120 | `"    if live and os.getenv(\"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\") != \"1\":"` | — |
+| [SRC-497366DEF4-L000121](../../scripts/self_acceptance_test.py#L121) | 121 | `"        raise RuntimeError("` | — |
+| [SRC-497366DEF4-L000122](../../scripts/self_acceptance_test.py#L122) | 122 | `"            \"Live tests require OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS=1; \""` | — |
+| [SRC-497366DEF4-L000123](../../scripts/self_acceptance_test.py#L123) | 123 | `"            \"providers may consume quota or money.\""` | — |
+| [SRC-497366DEF4-L000124](../../scripts/self_acceptance_test.py#L124) | 124 | `"        )"` | — |
+| [SRC-497366DEF4-L000125](../../scripts/self_acceptance_test.py#L125) | 125 | `""` | — |
+| [SRC-497366DEF4-L000126](../../scripts/self_acceptance_test.py#L126) | 126 | `"    original_environment = {"` | — |
+| [SRC-497366DEF4-L000127](../../scripts/self_acceptance_test.py#L127) | 127 | `"        key: os.environ.get(key)"` | — |
+| [SRC-497366DEF4-L000128](../../scripts/self_acceptance_test.py#L128) | 128 | `"        for key in ("` | — |
+| [SRC-497366DEF4-L000129](../../scripts/self_acceptance_test.py#L129) | 129 | `"            \"OMARAI_TEST_MODE\", \"OMARAI_PUBLIC_DEPLOYMENT\", \"OMARAI_ACCESS_TOKEN\","` | — |
+| [SRC-497366DEF4-L000130](../../scripts/self_acceptance_test.py#L130) | 130 | `"            \"OMARAI_ACCESS_USER_ID\", \"OMARAI_DB_PATH\", \"OMARAI_DEFAULT_TENANT_ID\","` | — |
+| [SRC-497366DEF4-L000131](../../scripts/self_acceptance_test.py#L131) | 131 | `"            \"OMARAI_DEFAULT_TENANT_NAME\", \"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\","` | — |
+| [SRC-497366DEF4-L000132](../../scripts/self_acceptance_test.py#L132) | 132 | `"        )"` | — |
+| [SRC-497366DEF4-L000133](../../scripts/self_acceptance_test.py#L133) | 133 | `"    }"` | — |
+| [SRC-497366DEF4-L000134](../../scripts/self_acceptance_test.py#L134) | 134 | `"    with tempfile.TemporaryDirectory(prefix=\"omarai-self-test-\") as temporary:"` | — |
+| [SRC-497366DEF4-L000135](../../scripts/self_acceptance_test.py#L135) | 135 | `"        os.environ[\"OMARAI_TEST_MODE\"] = \"1\""` | — |
+| [SRC-497366DEF4-L000136](../../scripts/self_acceptance_test.py#L136) | 136 | `"        os.environ.pop(\"OMARAI_PUBLIC_DEPLOYMENT\", None)"` | — |
+| [SRC-497366DEF4-L000137](../../scripts/self_acceptance_test.py#L137) | 137 | `"        os.environ.pop(\"OMARAI_ACCESS_TOKEN\", None)"` | — |
+| [SRC-497366DEF4-L000138](../../scripts/self_acceptance_test.py#L138) | 138 | `"        os.environ.pop(\"OMARAI_ACCESS_USER_ID\", None)"` | — |
+| [SRC-497366DEF4-L000139](../../scripts/self_acceptance_test.py#L139) | 139 | `"        os.environ[\"OMARAI_DB_PATH\"] = str(Path(temporary) / \"self-test.sqlite3\")"` | — |
+| [SRC-497366DEF4-L000140](../../scripts/self_acceptance_test.py#L140) | 140 | `"        os.environ[\"OMARAI_DEFAULT_TENANT_ID\"] = \"self-test\""` | — |
+| [SRC-497366DEF4-L000141](../../scripts/self_acceptance_test.py#L141) | 141 | `"        os.environ[\"OMARAI_DEFAULT_TENANT_NAME\"] = \"Omarai Self-Test\""` | — |
+| [SRC-497366DEF4-L000142](../../scripts/self_acceptance_test.py#L142) | 142 | `""` | — |
+| [SRC-497366DEF4-L000143](../../scripts/self_acceptance_test.py#L143) | 143 | `"        try:"` | — |
+| [SRC-497366DEF4-L000144](../../scripts/self_acceptance_test.py#L144) | 144 | `"            # Import only after test environment and isolated database are configured."` | — |
+| [SRC-497366DEF4-L000145](../../scripts/self_acceptance_test.py#L145) | 145 | `"            from http.server import ThreadingHTTPServer"` | — |
+| [SRC-497366DEF4-L000146](../../scripts/self_acceptance_test.py#L146) | 146 | `"            from api.omarai import Handler"` | — |
+| [SRC-497366DEF4-L000147](../../scripts/self_acceptance_test.py#L147) | 147 | `"            from agents.omarai import LeadStore"` | — |
+| [SRC-497366DEF4-L000148](../../scripts/self_acceptance_test.py#L148) | 148 | `""` | — |
+| [SRC-497366DEF4-L000149](../../scripts/self_acceptance_test.py#L149) | 149 | `"            class SelfTestHandler(Handler):"` | — |
+| [SRC-497366DEF4-L000150](../../scripts/self_acceptance_test.py#L150) | 150 | `"                # Keep the test server's rate buckets isolated from the application"` | — |
+| [SRC-497366DEF4-L000151](../../scripts/self_acceptance_test.py#L151) | 151 | `"                # process and from other test clients sharing 127.0.0.1."` | — |
+| [SRC-497366DEF4-L000152](../../scripts/self_acceptance_test.py#L152) | 152 | `"                _rate_lock = threading.Lock()"` | — |
+| [SRC-497366DEF4-L000153](../../scripts/self_acceptance_test.py#L153) | 153 | `"                _request_times = defaultdict(deque)"` | — |
+| [SRC-497366DEF4-L000154](../../scripts/self_acceptance_test.py#L154) | 154 | `"                _rate_last_cleanup = 0.0"` | — |
+| [SRC-497366DEF4-L000155](../../scripts/self_acceptance_test.py#L155) | 155 | `"                _agent_semaphore = threading.BoundedSemaphore(Handler.AGENT_CONCURRENCY_LIMIT)"` | — |
+| [SRC-497366DEF4-L000156](../../scripts/self_acceptance_test.py#L156) | 156 | `"                store = LeadStore("` | — |
+| [SRC-497366DEF4-L000157](../../scripts/self_acceptance_test.py#L157) | 157 | `"                    os.environ[\"OMARAI_DB_PATH\"],"` | — |
+| [SRC-497366DEF4-L000158](../../scripts/self_acceptance_test.py#L158) | 158 | `"                    default_tenant_id=\"self-test\","` | — |
+| [SRC-497366DEF4-L000159](../../scripts/self_acceptance_test.py#L159) | 159 | `"                    default_tenant_name=\"Omarai Self-Test\","` | — |
+| [SRC-497366DEF4-L000160](../../scripts/self_acceptance_test.py#L160) | 160 | `"                )"` | — |
+| [SRC-497366DEF4-L000161](../../scripts/self_acceptance_test.py#L161) | 161 | `""` | — |
+| [SRC-497366DEF4-L000162](../../scripts/self_acceptance_test.py#L162) | 162 | `"            server = ThreadingHTTPServer((\"127.0.0.1\", 0), SelfTestHandler)"` | — |
+| [SRC-497366DEF4-L000163](../../scripts/self_acceptance_test.py#L163) | 163 | `"            server.daemon_threads = True"` | — |
+| [SRC-497366DEF4-L000164](../../scripts/self_acceptance_test.py#L164) | 164 | `"            thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
+| [SRC-497366DEF4-L000165](../../scripts/self_acceptance_test.py#L165) | 165 | `"            thread.start()"` | — |
+| [SRC-497366DEF4-L000166](../../scripts/self_acceptance_test.py#L166) | 166 | `"            origin = f\"http://127.0.0.1:{server.server_port}\""` | — |
+| [SRC-497366DEF4-L000167](../../scripts/self_acceptance_test.py#L167) | 167 | `"            started = time.monotonic()"` | — |
+| [SRC-497366DEF4-L000168](../../scripts/self_acceptance_test.py#L168) | 168 | `"            try:"` | — |
+| [SRC-497366DEF4-L000169](../../scripts/self_acceptance_test.py#L169) | 169 | `"                health_status, health = _request_json(f\"{origin}/api/health\", timeout=10)"` | — |
+| [SRC-497366DEF4-L000170](../../scripts/self_acceptance_test.py#L170) | 170 | `"                if health_status != 200 or not health or health.get(\"ok\") is not True:"` | — |
+| [SRC-497366DEF4-L000171](../../scripts/self_acceptance_test.py#L171) | 171 | `"                    raise RuntimeError(f\"Health check failed with HTTP {health_status}\")"` | — |
 | [SRC-497366DEF4-L000172](../../scripts/self_acceptance_test.py#L172) | 172 | `""` | — |
-| [SRC-497366DEF4-L000173](../../scripts/self_acceptance_test.py#L173) | 173 | `"                report: dict[str, Any] = {"` | — |
-| [SRC-497366DEF4-L000174](../../scripts/self_acceptance_test.py#L174) | 174 | `"                    \"schema_version\": \"1.0\","` | — |
-| [SRC-497366DEF4-L000175](../../scripts/self_acceptance_test.py#L175) | 175 | `"                    \"created_at\": datetime.now(UTC).isoformat(),"` | — |
-| [SRC-497366DEF4-L000176](../../scripts/self_acceptance_test.py#L176) | 176 | `"                    \"environment\": \"local_loopback_isolated_database\","` | — |
-| [SRC-497366DEF4-L000177](../../scripts/self_acceptance_test.py#L177) | 177 | `"                    \"authentication\": {"` | — |
-| [SRC-497366DEF4-L000178](../../scripts/self_acceptance_test.py#L178) | 178 | `"                        \"access_token_required\": False,"` | — |
-| [SRC-497366DEF4-L000179](../../scripts/self_acceptance_test.py#L179) | 179 | `"                        \"test_mode\": True,"` | — |
-| [SRC-497366DEF4-L000180](../../scripts/self_acceptance_test.py#L180) | 180 | `"                        \"bind_host\": \"127.0.0.1\","` | — |
-| [SRC-497366DEF4-L000181](../../scripts/self_acceptance_test.py#L181) | 181 | `"                        \"tenant_id\": \"self-test\","` | — |
-| [SRC-497366DEF4-L000182](../../scripts/self_acceptance_test.py#L182) | 182 | `"                    },"` | — |
-| [SRC-497366DEF4-L000183](../../scripts/self_acceptance_test.py#L183) | 183 | `"                    \"external_calls_enabled\": live,"` | — |
-| [SRC-497366DEF4-L000184](../../scripts/self_acceptance_test.py#L184) | 184 | `"                    \"checks\": {"` | — |
-| [SRC-497366DEF4-L000185](../../scripts/self_acceptance_test.py#L185) | 185 | `"                        \"health\": {\"status\": \"passed\", \"http_status\": health_status},"` | — |
-| [SRC-497366DEF4-L000186](../../scripts/self_acceptance_test.py#L186) | 186 | `"                        \"local_analyze\": {"` | — |
-| [SRC-497366DEF4-L000187](../../scripts/self_acceptance_test.py#L187) | 187 | `"                            \"status\": \"passed\","` | — |
-| [SRC-497366DEF4-L000188](../../scripts/self_acceptance_test.py#L188) | 188 | `"                            \"http_status\": analyze_status,"` | — |
-| [SRC-497366DEF4-L000189](../../scripts/self_acceptance_test.py#L189) | 189 | `"                            \"result\": analysis,"` | — |
-| [SRC-497366DEF4-L000190](../../scripts/self_acceptance_test.py#L190) | 190 | `"                        },"` | — |
-| [SRC-497366DEF4-L000191](../../scripts/self_acceptance_test.py#L191) | 191 | `"                    },"` | — |
-| [SRC-497366DEF4-L000192](../../scripts/self_acceptance_test.py#L192) | 192 | `"                    \"build\": health.get(\"build\", {}),"` | — |
-| [SRC-497366DEF4-L000193](../../scripts/self_acceptance_test.py#L193) | 193 | `"                    \"questions\": [],"` | — |
-| [SRC-497366DEF4-L000194](../../scripts/self_acceptance_test.py#L194) | 194 | `"                }"` | — |
-| [SRC-497366DEF4-L000195](../../scripts/self_acceptance_test.py#L195) | 195 | `""` | — |
-| [SRC-497366DEF4-L000196](../../scripts/self_acceptance_test.py#L196) | 196 | `"                if live:"` | — |
-| [SRC-497366DEF4-L000197](../../scripts/self_acceptance_test.py#L197) | 197 | `"                    history: list[dict[str, str]] = []"` | — |
-| [SRC-497366DEF4-L000198](../../scripts/self_acceptance_test.py#L198) | 198 | `"                    question_specs = build_live_questions(product, custom_questions)"` | — |
-| [SRC-497366DEF4-L000199](../../scripts/self_acceptance_test.py#L199) | 199 | `"                    for spec in question_specs:"` | — |
-| [SRC-497366DEF4-L000200](../../scripts/self_acceptance_test.py#L200) | 200 | `"                        question = spec[\"question\"]"` | — |
-| [SRC-497366DEF4-L000201](../../scripts/self_acceptance_test.py#L201) | 201 | `"                        request_history = list(history) if spec.get(\"history_from_previous\") else spec.get(\"history\", [])"` | — |
-| [SRC-497366DEF4-L000202](../../scripts/self_acceptance_test.py#L202) | 202 | `"                        request_payload = {"` | — |
-| [SRC-497366DEF4-L000203](../../scripts/self_acceptance_test.py#L203) | 203 | `"                            \"question\": question,"` | — |
-| [SRC-497366DEF4-L000204](../../scripts/self_acceptance_test.py#L204) | 204 | `"                            \"history\": request_history,"` | — |
-| [SRC-497366DEF4-L000205](../../scripts/self_acceptance_test.py#L205) | 205 | `"                            \"mode\": spec.get(\"mode\", \"deep\"),"` | — |
-| [SRC-497366DEF4-L000206](../../scripts/self_acceptance_test.py#L206) | 206 | `"                            \"tenant_id\": \"self-test\","` | — |
-| [SRC-497366DEF4-L000207](../../scripts/self_acceptance_test.py#L207) | 207 | `"                        }"` | — |
-| [SRC-497366DEF4-L000208](../../scripts/self_acceptance_test.py#L208) | 208 | `"                        request_started = time.monotonic()"` | — |
-| [SRC-497366DEF4-L000209](../../scripts/self_acceptance_test.py#L209) | 209 | `"                        status, response = _request_json("` | — |
-| [SRC-497366DEF4-L000210](../../scripts/self_acceptance_test.py#L210) | 210 | `"                            f\"{origin}/api/agent\", request_payload, timeout=timeout"` | — |
-| [SRC-497366DEF4-L000211](../../scripts/self_acceptance_test.py#L211) | 211 | `"                        )"` | — |
-| [SRC-497366DEF4-L000212](../../scripts/self_acceptance_test.py#L212) | 212 | `"                        response = response if isinstance(response, dict) else {}"` | — |
-| [SRC-497366DEF4-L000213](../../scripts/self_acceptance_test.py#L213) | 213 | `"                        answer = str(response.get(\"answer\") or \"\")"` | — |
-| [SRC-497366DEF4-L000214](../../scripts/self_acceptance_test.py#L214) | 214 | `"                        source_rows = response.get(\"sources\")"` | — |
-| [SRC-497366DEF4-L000215](../../scripts/self_acceptance_test.py#L215) | 215 | `"                        source_rows = source_rows if isinstance(source_rows, list) else []"` | — |
-| [SRC-497366DEF4-L000216](../../scripts/self_acceptance_test.py#L216) | 216 | `"                        search_report = response.get(\"search_report\")"` | — |
-| [SRC-497366DEF4-L000217](../../scripts/self_acceptance_test.py#L217) | 217 | `"                        search_report = search_report if isinstance(search_report, dict) else {}"` | — |
-| [SRC-497366DEF4-L000218](../../scripts/self_acceptance_test.py#L218) | 218 | `"                        report[\"questions\"].append({"` | — |
-| [SRC-497366DEF4-L000219](../../scripts/self_acceptance_test.py#L219) | 219 | `"                            \"id\": spec[\"id\"],"` | — |
-| [SRC-497366DEF4-L000220](../../scripts/self_acceptance_test.py#L220) | 220 | `"                            \"question\": question,"` | — |
-| [SRC-497366DEF4-L000221](../../scripts/self_acceptance_test.py#L221) | 221 | `"                            \"mode\": spec.get(\"mode\", \"deep\"),"` | — |
-| [SRC-497366DEF4-L000222](../../scripts/self_acceptance_test.py#L222) | 222 | `"                            \"http_status\": status,"` | — |
-| [SRC-497366DEF4-L000223](../../scripts/self_acceptance_test.py#L223) | 223 | `"                            \"answer\": answer,"` | — |
-| [SRC-497366DEF4-L000224](../../scripts/self_acceptance_test.py#L224) | 224 | `"                            \"summary\": summarize_response(status, response),"` | — |
-| [SRC-497366DEF4-L000225](../../scripts/self_acceptance_test.py#L225) | 225 | `"                            \"sources\": ["` | — |
-| [SRC-497366DEF4-L000226](../../scripts/self_acceptance_test.py#L226) | 226 | `"                                {"` | — |
-| [SRC-497366DEF4-L000227](../../scripts/self_acceptance_test.py#L227) | 227 | `"                                    \"title\": item.get(\"title\"),"` | — |
-| [SRC-497366DEF4-L000228](../../scripts/self_acceptance_test.py#L228) | 228 | `"                                    \"url\": item.get(\"url\"),"` | — |
-| [SRC-497366DEF4-L000229](../../scripts/self_acceptance_test.py#L229) | 229 | `"                                    \"provider\": item.get(\"provider\"),"` | — |
-| [SRC-497366DEF4-L000230](../../scripts/self_acceptance_test.py#L230) | 230 | `"                                    \"snippet\": item.get(\"snippet\"),"` | — |
-| [SRC-497366DEF4-L000231](../../scripts/self_acceptance_test.py#L231) | 231 | `"                                    \"published_at\": item.get(\"published_at\"),"` | — |
-| [SRC-497366DEF4-L000232](../../scripts/self_acceptance_test.py#L232) | 232 | `"                                    \"page_fetch_status\": item.get(\"page_fetch_status\"),"` | — |
-| [SRC-497366DEF4-L000233](../../scripts/self_acceptance_test.py#L233) | 233 | `"                                }"` | — |
-| [SRC-497366DEF4-L000234](../../scripts/self_acceptance_test.py#L234) | 234 | `"                                for item in source_rows if isinstance(item, dict)"` | — |
-| [SRC-497366DEF4-L000235](../../scripts/self_acceptance_test.py#L235) | 235 | `"                            ],"` | — |
-| [SRC-497366DEF4-L000236](../../scripts/self_acceptance_test.py#L236) | 236 | `"                            \"provider_diagnostics\": search_report.get("` | — |
-| [SRC-497366DEF4-L000237](../../scripts/self_acceptance_test.py#L237) | 237 | `"                                \"provider_diagnostics\", []"` | — |
-| [SRC-497366DEF4-L000238](../../scripts/self_acceptance_test.py#L238) | 238 | `"                            ),"` | — |
-| [SRC-497366DEF4-L000239](../../scripts/self_acceptance_test.py#L239) | 239 | `"                            \"warnings\": response.get(\"warnings\", []),"` | — |
-| [SRC-497366DEF4-L000240](../../scripts/self_acceptance_test.py#L240) | 240 | `"                            \"elapsed_seconds\": round(time.monotonic() - request_started, 2),"` | — |
-| [SRC-497366DEF4-L000241](../../scripts/self_acceptance_test.py#L241) | 241 | `"                        })"` | — |
-| [SRC-497366DEF4-L000242](../../scripts/self_acceptance_test.py#L242) | 242 | `"                        if spec.get(\"history_from_previous\"):"` | — |
-| [SRC-497366DEF4-L000243](../../scripts/self_acceptance_test.py#L243) | 243 | `"                            history = []"` | — |
-| [SRC-497366DEF4-L000244](../../scripts/self_acceptance_test.py#L244) | 244 | `"                        else:"` | — |
-| [SRC-497366DEF4-L000245](../../scripts/self_acceptance_test.py#L245) | 245 | `"                            history = ["` | — |
-| [SRC-497366DEF4-L000246](../../scripts/self_acceptance_test.py#L246) | 246 | `"                                {\"role\": \"user\", \"content\": question},"` | — |
-| [SRC-497366DEF4-L000247](../../scripts/self_acceptance_test.py#L247) | 247 | `"                                {\"role\": \"assistant\", \"content\": answer},"` | — |
-| [SRC-497366DEF4-L000248](../../scripts/self_acceptance_test.py#L248) | 248 | `"                            ]"` | — |
-| [SRC-497366DEF4-L000249](../../scripts/self_acceptance_test.py#L249) | 249 | `""` | — |
-| [SRC-497366DEF4-L000250](../../scripts/self_acceptance_test.py#L250) | 250 | `"                report[\"elapsed_seconds\"] = round(time.monotonic() - started, 2)"` | — |
-| [SRC-497366DEF4-L000251](../../scripts/self_acceptance_test.py#L251) | 251 | `"                destination = Path(output_path).expanduser()"` | — |
-| [SRC-497366DEF4-L000252](../../scripts/self_acceptance_test.py#L252) | 252 | `"                destination.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-497366DEF4-L000253](../../scripts/self_acceptance_test.py#L253) | 253 | `"                destination.write_text("` | — |
-| [SRC-497366DEF4-L000254](../../scripts/self_acceptance_test.py#L254) | 254 | `"                    json.dumps(report, ensure_ascii=False, indent=2),"` | — |
-| [SRC-497366DEF4-L000255](../../scripts/self_acceptance_test.py#L255) | 255 | `"                    encoding=\"utf-8\","` | — |
-| [SRC-497366DEF4-L000256](../../scripts/self_acceptance_test.py#L256) | 256 | `"                )"` | — |
-| [SRC-497366DEF4-L000257](../../scripts/self_acceptance_test.py#L257) | 257 | `"                return report"` | — |
-| [SRC-497366DEF4-L000258](../../scripts/self_acceptance_test.py#L258) | 258 | `"            finally:"` | — |
-| [SRC-497366DEF4-L000259](../../scripts/self_acceptance_test.py#L259) | 259 | `"                server.shutdown()"` | — |
-| [SRC-497366DEF4-L000260](../../scripts/self_acceptance_test.py#L260) | 260 | `"                server.server_close()"` | — |
-| [SRC-497366DEF4-L000261](../../scripts/self_acceptance_test.py#L261) | 261 | `"                thread.join(timeout=2)"` | — |
-| [SRC-497366DEF4-L000262](../../scripts/self_acceptance_test.py#L262) | 262 | `"                Handler.store = previous_store"` | — |
-| [SRC-497366DEF4-L000263](../../scripts/self_acceptance_test.py#L263) | 263 | `"        finally:"` | — |
-| [SRC-497366DEF4-L000264](../../scripts/self_acceptance_test.py#L264) | 264 | `"            for key, value in original_environment.items():"` | — |
-| [SRC-497366DEF4-L000265](../../scripts/self_acceptance_test.py#L265) | 265 | `"                if value is None:"` | — |
-| [SRC-497366DEF4-L000266](../../scripts/self_acceptance_test.py#L266) | 266 | `"                    os.environ.pop(key, None)"` | — |
-| [SRC-497366DEF4-L000267](../../scripts/self_acceptance_test.py#L267) | 267 | `"                else:"` | — |
-| [SRC-497366DEF4-L000268](../../scripts/self_acceptance_test.py#L268) | 268 | `"                    os.environ[key] = value"` | — |
-| [SRC-497366DEF4-L000269](../../scripts/self_acceptance_test.py#L269) | 269 | `""` | — |
-| [SRC-497366DEF4-L000270](../../scripts/self_acceptance_test.py#L270) | 270 | `""` | — |
-| [SRC-497366DEF4-L000271](../../scripts/self_acceptance_test.py#L271) | 271 | `"def main() -> int:"` | — |
-| [SRC-497366DEF4-L000272](../../scripts/self_acceptance_test.py#L272) | 272 | `"    parser = argparse.ArgumentParser("` | — |
-| [SRC-497366DEF4-L000273](../../scripts/self_acceptance_test.py#L273) | 273 | `"        description=\"Run Omarai's isolated tokenless self-acceptance checks.\""` | — |
-| [SRC-497366DEF4-L000274](../../scripts/self_acceptance_test.py#L274) | 274 | `"    )"` | — |
-| [SRC-497366DEF4-L000275](../../scripts/self_acceptance_test.py#L275) | 275 | `"    parser.add_argument(\"--live\", action=\"store_true\","` | — |
-| [SRC-497366DEF4-L000276](../../scripts/self_acceptance_test.py#L276) | 276 | `"                        help=\"Also ask the real agent and record full answers and source evidence.\")"` | — |
-| [SRC-497366DEF4-L000277](../../scripts/self_acceptance_test.py#L277) | 277 | `"    parser.add_argument(\"--allow-external-calls\", action=\"store_true\","` | — |
-| [SRC-497366DEF4-L000278](../../scripts/self_acceptance_test.py#L278) | 278 | `"                        help=\"Explicitly allow live provider calls; they may consume quota or money.\")"` | — |
-| [SRC-497366DEF4-L000279](../../scripts/self_acceptance_test.py#L279) | 279 | `"    parser.add_argument(\"--product\", default=\"\","` | — |
-| [SRC-497366DEF4-L000280](../../scripts/self_acceptance_test.py#L280) | 280 | `"                        help=\"Optional product to test public buyer-intent discovery.\")"` | — |
-| [SRC-497366DEF4-L000281](../../scripts/self_acceptance_test.py#L281) | 281 | `"    parser.add_argument(\"--question\", action=\"append\", default=[],"` | — |
-| [SRC-497366DEF4-L000282](../../scripts/self_acceptance_test.py#L282) | 282 | `"                        help=\"Custom live question; repeat to add more questions.\")"` | — |
-| [SRC-497366DEF4-L000283](../../scripts/self_acceptance_test.py#L283) | 283 | `"    parser.add_argument(\"--output\", default=\"artifacts/self_acceptance/latest.json\")"` | — |
-| [SRC-497366DEF4-L000284](../../scripts/self_acceptance_test.py#L284) | 284 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
-| [SRC-497366DEF4-L000285](../../scripts/self_acceptance_test.py#L285) | 285 | `"    args = parser.parse_args()"` | — |
-| [SRC-497366DEF4-L000286](../../scripts/self_acceptance_test.py#L286) | 286 | `""` | — |
-| [SRC-497366DEF4-L000287](../../scripts/self_acceptance_test.py#L287) | 287 | `"    if args.live and not args.allow_external_calls:"` | — |
-| [SRC-497366DEF4-L000288](../../scripts/self_acceptance_test.py#L288) | 288 | `"        parser.error(\"--live requires --allow-external-calls\")"` | — |
-| [SRC-497366DEF4-L000289](../../scripts/self_acceptance_test.py#L289) | 289 | `"    if args.allow_external_calls:"` | — |
-| [SRC-497366DEF4-L000290](../../scripts/self_acceptance_test.py#L290) | 290 | `"        os.environ[\"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\"] = \"1\""` | — |
-| [SRC-497366DEF4-L000291](../../scripts/self_acceptance_test.py#L291) | 291 | `"    try:"` | — |
-| [SRC-497366DEF4-L000292](../../scripts/self_acceptance_test.py#L292) | 292 | `"        result = run_acceptance("` | — |
-| [SRC-497366DEF4-L000293](../../scripts/self_acceptance_test.py#L293) | 293 | `"            output_path=args.output,"` | — |
-| [SRC-497366DEF4-L000294](../../scripts/self_acceptance_test.py#L294) | 294 | `"            live=args.live,"` | — |
-| [SRC-497366DEF4-L000295](../../scripts/self_acceptance_test.py#L295) | 295 | `"            product=args.product,"` | — |
-| [SRC-497366DEF4-L000296](../../scripts/self_acceptance_test.py#L296) | 296 | `"            custom_questions=args.question or None,"` | — |
-| [SRC-497366DEF4-L000297](../../scripts/self_acceptance_test.py#L297) | 297 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
-| [SRC-497366DEF4-L000298](../../scripts/self_acceptance_test.py#L298) | 298 | `"        )"` | — |
-| [SRC-497366DEF4-L000299](../../scripts/self_acceptance_test.py#L299) | 299 | `"    except Exception as exc:  # noqa: BLE001 - CLI boundary"` | — |
-| [SRC-497366DEF4-L000300](../../scripts/self_acceptance_test.py#L300) | 300 | `"        print(json.dumps({"` | — |
-| [SRC-497366DEF4-L000301](../../scripts/self_acceptance_test.py#L301) | 301 | `"            \"result\": \"failed\","` | — |
-| [SRC-497366DEF4-L000302](../../scripts/self_acceptance_test.py#L302) | 302 | `"            \"error\": f\"{type(exc).__name__}: {exc}\","` | — |
-| [SRC-497366DEF4-L000303](../../scripts/self_acceptance_test.py#L303) | 303 | `"        }, ensure_ascii=False, indent=2))"` | — |
-| [SRC-497366DEF4-L000304](../../scripts/self_acceptance_test.py#L304) | 304 | `"        return 1"` | — |
-| [SRC-497366DEF4-L000305](../../scripts/self_acceptance_test.py#L305) | 305 | `""` | — |
-| [SRC-497366DEF4-L000306](../../scripts/self_acceptance_test.py#L306) | 306 | `"    print(json.dumps({"` | — |
-| [SRC-497366DEF4-L000307](../../scripts/self_acceptance_test.py#L307) | 307 | `"        \"result\": \"passed\" if not args.live else \"completed_with_live_questions\","` | — |
-| [SRC-497366DEF4-L000308](../../scripts/self_acceptance_test.py#L308) | 308 | `"        \"output\": str(Path(args.output).expanduser()),"` | — |
-| [SRC-497366DEF4-L000309](../../scripts/self_acceptance_test.py#L309) | 309 | `"        \"token_required\": False,"` | — |
-| [SRC-497366DEF4-L000310](../../scripts/self_acceptance_test.py#L310) | 310 | `"        \"live_question_count\": len(result[\"questions\"]),"` | — |
-| [SRC-497366DEF4-L000311](../../scripts/self_acceptance_test.py#L311) | 311 | `"        \"checks\": result[\"checks\"],"` | — |
-| [SRC-497366DEF4-L000312](../../scripts/self_acceptance_test.py#L312) | 312 | `"        \"questions\": ["` | — |
-| [SRC-497366DEF4-L000313](../../scripts/self_acceptance_test.py#L313) | 313 | `"            {"` | — |
-| [SRC-497366DEF4-L000314](../../scripts/self_acceptance_test.py#L314) | 314 | `"                \"id\": item[\"id\"],"` | — |
-| [SRC-497366DEF4-L000315](../../scripts/self_acceptance_test.py#L315) | 315 | `"                \"question\": item[\"question\"],"` | — |
-| [SRC-497366DEF4-L000316](../../scripts/self_acceptance_test.py#L316) | 316 | `"                \"answer\": item[\"answer\"],"` | — |
-| [SRC-497366DEF4-L000317](../../scripts/self_acceptance_test.py#L317) | 317 | `"                \"summary\": item[\"summary\"],"` | — |
-| [SRC-497366DEF4-L000318](../../scripts/self_acceptance_test.py#L318) | 318 | `"                \"sources\": [source.get(\"url\") for source in item[\"sources\"]],"` | — |
-| [SRC-497366DEF4-L000319](../../scripts/self_acceptance_test.py#L319) | 319 | `"            }"` | — |
-| [SRC-497366DEF4-L000320](../../scripts/self_acceptance_test.py#L320) | 320 | `"            for item in result[\"questions\"]"` | — |
-| [SRC-497366DEF4-L000321](../../scripts/self_acceptance_test.py#L321) | 321 | `"        ],"` | — |
-| [SRC-497366DEF4-L000322](../../scripts/self_acceptance_test.py#L322) | 322 | `"    }, ensure_ascii=False, indent=2))"` | — |
-| [SRC-497366DEF4-L000323](../../scripts/self_acceptance_test.py#L323) | 323 | `"    return 0"` | — |
-| [SRC-497366DEF4-L000324](../../scripts/self_acceptance_test.py#L324) | 324 | `""` | — |
-| [SRC-497366DEF4-L000325](../../scripts/self_acceptance_test.py#L325) | 325 | `""` | — |
-| [SRC-497366DEF4-L000326](../../scripts/self_acceptance_test.py#L326) | 326 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-497366DEF4-L000327](../../scripts/self_acceptance_test.py#L327) | 327 | `"    sys.exit(main())"` | — |
+| [SRC-497366DEF4-L000173](../../scripts/self_acceptance_test.py#L173) | 173 | `"                analyze_status, analysis = _request_json("` | — |
+| [SRC-497366DEF4-L000174](../../scripts/self_acceptance_test.py#L174) | 174 | `"                    f\"{origin}/api/analyze\","` | — |
+| [SRC-497366DEF4-L000175](../../scripts/self_acceptance_test.py#L175) | 175 | `"                    {\"text\": \"مطلوب شراء منتج تجريبي\", \"tenant_id\": \"self-test\"},"` | — |
+| [SRC-497366DEF4-L000176](../../scripts/self_acceptance_test.py#L176) | 176 | `"                    timeout=10,"` | — |
+| [SRC-497366DEF4-L000177](../../scripts/self_acceptance_test.py#L177) | 177 | `"                )"` | — |
+| [SRC-497366DEF4-L000178](../../scripts/self_acceptance_test.py#L178) | 178 | `"                if analyze_status != 200 or not analysis:"` | — |
+| [SRC-497366DEF4-L000179](../../scripts/self_acceptance_test.py#L179) | 179 | `"                    raise RuntimeError(f\"Local API analysis failed with HTTP {analyze_status}\")"` | — |
+| [SRC-497366DEF4-L000180](../../scripts/self_acceptance_test.py#L180) | 180 | `""` | — |
+| [SRC-497366DEF4-L000181](../../scripts/self_acceptance_test.py#L181) | 181 | `"                report: dict[str, Any] = {"` | — |
+| [SRC-497366DEF4-L000182](../../scripts/self_acceptance_test.py#L182) | 182 | `"                    \"schema_version\": \"1.0\","` | — |
+| [SRC-497366DEF4-L000183](../../scripts/self_acceptance_test.py#L183) | 183 | `"                    \"created_at\": datetime.now(UTC).isoformat(),"` | — |
+| [SRC-497366DEF4-L000184](../../scripts/self_acceptance_test.py#L184) | 184 | `"                    \"environment\": \"local_loopback_isolated_database\","` | — |
+| [SRC-497366DEF4-L000185](../../scripts/self_acceptance_test.py#L185) | 185 | `"                    \"authentication\": {"` | — |
+| [SRC-497366DEF4-L000186](../../scripts/self_acceptance_test.py#L186) | 186 | `"                        \"access_token_required\": False,"` | — |
+| [SRC-497366DEF4-L000187](../../scripts/self_acceptance_test.py#L187) | 187 | `"                        \"test_mode\": True,"` | — |
+| [SRC-497366DEF4-L000188](../../scripts/self_acceptance_test.py#L188) | 188 | `"                        \"bind_host\": \"127.0.0.1\","` | — |
+| [SRC-497366DEF4-L000189](../../scripts/self_acceptance_test.py#L189) | 189 | `"                        \"tenant_id\": \"self-test\","` | — |
+| [SRC-497366DEF4-L000190](../../scripts/self_acceptance_test.py#L190) | 190 | `"                    },"` | — |
+| [SRC-497366DEF4-L000191](../../scripts/self_acceptance_test.py#L191) | 191 | `"                    \"external_calls_enabled\": live,"` | — |
+| [SRC-497366DEF4-L000192](../../scripts/self_acceptance_test.py#L192) | 192 | `"                    \"checks\": {"` | — |
+| [SRC-497366DEF4-L000193](../../scripts/self_acceptance_test.py#L193) | 193 | `"                        \"health\": {\"status\": \"passed\", \"http_status\": health_status},"` | — |
+| [SRC-497366DEF4-L000194](../../scripts/self_acceptance_test.py#L194) | 194 | `"                        \"local_analyze\": {"` | — |
+| [SRC-497366DEF4-L000195](../../scripts/self_acceptance_test.py#L195) | 195 | `"                            \"status\": \"passed\","` | — |
+| [SRC-497366DEF4-L000196](../../scripts/self_acceptance_test.py#L196) | 196 | `"                            \"http_status\": analyze_status,"` | — |
+| [SRC-497366DEF4-L000197](../../scripts/self_acceptance_test.py#L197) | 197 | `"                            \"result\": analysis,"` | — |
+| [SRC-497366DEF4-L000198](../../scripts/self_acceptance_test.py#L198) | 198 | `"                        },"` | — |
+| [SRC-497366DEF4-L000199](../../scripts/self_acceptance_test.py#L199) | 199 | `"                    },"` | — |
+| [SRC-497366DEF4-L000200](../../scripts/self_acceptance_test.py#L200) | 200 | `"                    \"build\": health.get(\"build\", {}),"` | — |
+| [SRC-497366DEF4-L000201](../../scripts/self_acceptance_test.py#L201) | 201 | `"                    \"questions\": [],"` | — |
+| [SRC-497366DEF4-L000202](../../scripts/self_acceptance_test.py#L202) | 202 | `"                }"` | — |
+| [SRC-497366DEF4-L000203](../../scripts/self_acceptance_test.py#L203) | 203 | `""` | — |
+| [SRC-497366DEF4-L000204](../../scripts/self_acceptance_test.py#L204) | 204 | `"                if live:"` | — |
+| [SRC-497366DEF4-L000205](../../scripts/self_acceptance_test.py#L205) | 205 | `"                    history: list[dict[str, str]] = []"` | — |
+| [SRC-497366DEF4-L000206](../../scripts/self_acceptance_test.py#L206) | 206 | `"                    question_specs = build_live_questions(product, custom_questions)"` | — |
+| [SRC-497366DEF4-L000207](../../scripts/self_acceptance_test.py#L207) | 207 | `"                    for spec in question_specs:"` | — |
+| [SRC-497366DEF4-L000208](../../scripts/self_acceptance_test.py#L208) | 208 | `"                        question = spec[\"question\"]"` | — |
+| [SRC-497366DEF4-L000209](../../scripts/self_acceptance_test.py#L209) | 209 | `"                        request_history = list(history) if spec.get(\"history_from_previous\") else spec.get(\"history\", [])"` | — |
+| [SRC-497366DEF4-L000210](../../scripts/self_acceptance_test.py#L210) | 210 | `"                        request_payload = {"` | — |
+| [SRC-497366DEF4-L000211](../../scripts/self_acceptance_test.py#L211) | 211 | `"                            \"question\": question,"` | — |
+| [SRC-497366DEF4-L000212](../../scripts/self_acceptance_test.py#L212) | 212 | `"                            \"history\": request_history,"` | — |
+| [SRC-497366DEF4-L000213](../../scripts/self_acceptance_test.py#L213) | 213 | `"                            \"mode\": spec.get(\"mode\", \"deep\"),"` | — |
+| [SRC-497366DEF4-L000214](../../scripts/self_acceptance_test.py#L214) | 214 | `"                            \"tenant_id\": \"self-test\","` | — |
+| [SRC-497366DEF4-L000215](../../scripts/self_acceptance_test.py#L215) | 215 | `"                        }"` | — |
+| [SRC-497366DEF4-L000216](../../scripts/self_acceptance_test.py#L216) | 216 | `"                        request_started = time.monotonic()"` | — |
+| [SRC-497366DEF4-L000217](../../scripts/self_acceptance_test.py#L217) | 217 | `"                        status, response = _request_json("` | — |
+| [SRC-497366DEF4-L000218](../../scripts/self_acceptance_test.py#L218) | 218 | `"                            f\"{origin}/api/agent\", request_payload, timeout=timeout"` | — |
+| [SRC-497366DEF4-L000219](../../scripts/self_acceptance_test.py#L219) | 219 | `"                        )"` | — |
+| [SRC-497366DEF4-L000220](../../scripts/self_acceptance_test.py#L220) | 220 | `"                        response = response if isinstance(response, dict) else {}"` | — |
+| [SRC-497366DEF4-L000221](../../scripts/self_acceptance_test.py#L221) | 221 | `"                        answer = str(response.get(\"answer\") or \"\")"` | — |
+| [SRC-497366DEF4-L000222](../../scripts/self_acceptance_test.py#L222) | 222 | `"                        source_rows = response.get(\"sources\")"` | — |
+| [SRC-497366DEF4-L000223](../../scripts/self_acceptance_test.py#L223) | 223 | `"                        source_rows = source_rows if isinstance(source_rows, list) else []"` | — |
+| [SRC-497366DEF4-L000224](../../scripts/self_acceptance_test.py#L224) | 224 | `"                        search_report = response.get(\"search_report\")"` | — |
+| [SRC-497366DEF4-L000225](../../scripts/self_acceptance_test.py#L225) | 225 | `"                        search_report = search_report if isinstance(search_report, dict) else {}"` | — |
+| [SRC-497366DEF4-L000226](../../scripts/self_acceptance_test.py#L226) | 226 | `"                        report[\"questions\"].append({"` | — |
+| [SRC-497366DEF4-L000227](../../scripts/self_acceptance_test.py#L227) | 227 | `"                            \"id\": spec[\"id\"],"` | — |
+| [SRC-497366DEF4-L000228](../../scripts/self_acceptance_test.py#L228) | 228 | `"                            \"question\": question,"` | — |
+| [SRC-497366DEF4-L000229](../../scripts/self_acceptance_test.py#L229) | 229 | `"                            \"mode\": spec.get(\"mode\", \"deep\"),"` | — |
+| [SRC-497366DEF4-L000230](../../scripts/self_acceptance_test.py#L230) | 230 | `"                            \"http_status\": status,"` | — |
+| [SRC-497366DEF4-L000231](../../scripts/self_acceptance_test.py#L231) | 231 | `"                            \"answer\": answer,"` | — |
+| [SRC-497366DEF4-L000232](../../scripts/self_acceptance_test.py#L232) | 232 | `"                            \"summary\": summarize_response(status, response),"` | — |
+| [SRC-497366DEF4-L000233](../../scripts/self_acceptance_test.py#L233) | 233 | `"                            \"sources\": ["` | — |
+| [SRC-497366DEF4-L000234](../../scripts/self_acceptance_test.py#L234) | 234 | `"                                {"` | — |
+| [SRC-497366DEF4-L000235](../../scripts/self_acceptance_test.py#L235) | 235 | `"                                    \"title\": item.get(\"title\"),"` | — |
+| [SRC-497366DEF4-L000236](../../scripts/self_acceptance_test.py#L236) | 236 | `"                                    \"url\": item.get(\"url\"),"` | — |
+| [SRC-497366DEF4-L000237](../../scripts/self_acceptance_test.py#L237) | 237 | `"                                    \"provider\": item.get(\"provider\"),"` | — |
+| [SRC-497366DEF4-L000238](../../scripts/self_acceptance_test.py#L238) | 238 | `"                                    \"snippet\": item.get(\"snippet\"),"` | — |
+| [SRC-497366DEF4-L000239](../../scripts/self_acceptance_test.py#L239) | 239 | `"                                    \"published_at\": item.get(\"published_at\"),"` | — |
+| [SRC-497366DEF4-L000240](../../scripts/self_acceptance_test.py#L240) | 240 | `"                                    \"page_fetch_status\": item.get(\"page_fetch_status\"),"` | — |
+| [SRC-497366DEF4-L000241](../../scripts/self_acceptance_test.py#L241) | 241 | `"                                }"` | — |
+| [SRC-497366DEF4-L000242](../../scripts/self_acceptance_test.py#L242) | 242 | `"                                for item in source_rows if isinstance(item, dict)"` | — |
+| [SRC-497366DEF4-L000243](../../scripts/self_acceptance_test.py#L243) | 243 | `"                            ],"` | — |
+| [SRC-497366DEF4-L000244](../../scripts/self_acceptance_test.py#L244) | 244 | `"                            \"provider_diagnostics\": search_report.get("` | — |
+| [SRC-497366DEF4-L000245](../../scripts/self_acceptance_test.py#L245) | 245 | `"                                \"provider_diagnostics\", []"` | — |
+| [SRC-497366DEF4-L000246](../../scripts/self_acceptance_test.py#L246) | 246 | `"                            ),"` | — |
+| [SRC-497366DEF4-L000247](../../scripts/self_acceptance_test.py#L247) | 247 | `"                            \"warnings\": response.get(\"warnings\", []),"` | — |
+| [SRC-497366DEF4-L000248](../../scripts/self_acceptance_test.py#L248) | 248 | `"                            \"elapsed_seconds\": round(time.monotonic() - request_started, 2),"` | — |
+| [SRC-497366DEF4-L000249](../../scripts/self_acceptance_test.py#L249) | 249 | `"                        })"` | — |
+| [SRC-497366DEF4-L000250](../../scripts/self_acceptance_test.py#L250) | 250 | `"                        if spec.get(\"history_from_previous\"):"` | — |
+| [SRC-497366DEF4-L000251](../../scripts/self_acceptance_test.py#L251) | 251 | `"                            history = []"` | — |
+| [SRC-497366DEF4-L000252](../../scripts/self_acceptance_test.py#L252) | 252 | `"                        else:"` | — |
+| [SRC-497366DEF4-L000253](../../scripts/self_acceptance_test.py#L253) | 253 | `"                            history = ["` | — |
+| [SRC-497366DEF4-L000254](../../scripts/self_acceptance_test.py#L254) | 254 | `"                                {\"role\": \"user\", \"content\": question},"` | — |
+| [SRC-497366DEF4-L000255](../../scripts/self_acceptance_test.py#L255) | 255 | `"                                {\"role\": \"assistant\", \"content\": answer},"` | — |
+| [SRC-497366DEF4-L000256](../../scripts/self_acceptance_test.py#L256) | 256 | `"                            ]"` | — |
+| [SRC-497366DEF4-L000257](../../scripts/self_acceptance_test.py#L257) | 257 | `""` | — |
+| [SRC-497366DEF4-L000258](../../scripts/self_acceptance_test.py#L258) | 258 | `"                report[\"elapsed_seconds\"] = round(time.monotonic() - started, 2)"` | — |
+| [SRC-497366DEF4-L000259](../../scripts/self_acceptance_test.py#L259) | 259 | `"                destination = Path(output_path).expanduser()"` | — |
+| [SRC-497366DEF4-L000260](../../scripts/self_acceptance_test.py#L260) | 260 | `"                destination.parent.mkdir(parents=True, exist_ok=True)"` | — |
+| [SRC-497366DEF4-L000261](../../scripts/self_acceptance_test.py#L261) | 261 | `"                destination.write_text("` | — |
+| [SRC-497366DEF4-L000262](../../scripts/self_acceptance_test.py#L262) | 262 | `"                    json.dumps(report, ensure_ascii=False, indent=2),"` | — |
+| [SRC-497366DEF4-L000263](../../scripts/self_acceptance_test.py#L263) | 263 | `"                    encoding=\"utf-8\","` | — |
+| [SRC-497366DEF4-L000264](../../scripts/self_acceptance_test.py#L264) | 264 | `"                )"` | — |
+| [SRC-497366DEF4-L000265](../../scripts/self_acceptance_test.py#L265) | 265 | `"                return report"` | — |
+| [SRC-497366DEF4-L000266](../../scripts/self_acceptance_test.py#L266) | 266 | `"            finally:"` | — |
+| [SRC-497366DEF4-L000267](../../scripts/self_acceptance_test.py#L267) | 267 | `"                server.shutdown()"` | — |
+| [SRC-497366DEF4-L000268](../../scripts/self_acceptance_test.py#L268) | 268 | `"                server.server_close()"` | — |
+| [SRC-497366DEF4-L000269](../../scripts/self_acceptance_test.py#L269) | 269 | `"                thread.join(timeout=2)"` | — |
+| [SRC-497366DEF4-L000270](../../scripts/self_acceptance_test.py#L270) | 270 | `"        finally:"` | — |
+| [SRC-497366DEF4-L000271](../../scripts/self_acceptance_test.py#L271) | 271 | `"            for key, value in original_environment.items():"` | — |
+| [SRC-497366DEF4-L000272](../../scripts/self_acceptance_test.py#L272) | 272 | `"                if value is None:"` | — |
+| [SRC-497366DEF4-L000273](../../scripts/self_acceptance_test.py#L273) | 273 | `"                    os.environ.pop(key, None)"` | — |
+| [SRC-497366DEF4-L000274](../../scripts/self_acceptance_test.py#L274) | 274 | `"                else:"` | — |
+| [SRC-497366DEF4-L000275](../../scripts/self_acceptance_test.py#L275) | 275 | `"                    os.environ[key] = value"` | — |
+| [SRC-497366DEF4-L000276](../../scripts/self_acceptance_test.py#L276) | 276 | `""` | — |
+| [SRC-497366DEF4-L000277](../../scripts/self_acceptance_test.py#L277) | 277 | `""` | — |
+| [SRC-497366DEF4-L000278](../../scripts/self_acceptance_test.py#L278) | 278 | `"def main() -> int:"` | — |
+| [SRC-497366DEF4-L000279](../../scripts/self_acceptance_test.py#L279) | 279 | `"    parser = argparse.ArgumentParser("` | — |
+| [SRC-497366DEF4-L000280](../../scripts/self_acceptance_test.py#L280) | 280 | `"        description=\"Run Omarai's isolated tokenless self-acceptance checks.\""` | — |
+| [SRC-497366DEF4-L000281](../../scripts/self_acceptance_test.py#L281) | 281 | `"    )"` | — |
+| [SRC-497366DEF4-L000282](../../scripts/self_acceptance_test.py#L282) | 282 | `"    parser.add_argument(\"--live\", action=\"store_true\","` | — |
+| [SRC-497366DEF4-L000283](../../scripts/self_acceptance_test.py#L283) | 283 | `"                        help=\"Also ask the real agent and record full answers and source evidence.\")"` | — |
+| [SRC-497366DEF4-L000284](../../scripts/self_acceptance_test.py#L284) | 284 | `"    parser.add_argument(\"--allow-external-calls\", action=\"store_true\","` | — |
+| [SRC-497366DEF4-L000285](../../scripts/self_acceptance_test.py#L285) | 285 | `"                        help=\"Explicitly allow live provider calls; they may consume quota or money.\")"` | — |
+| [SRC-497366DEF4-L000286](../../scripts/self_acceptance_test.py#L286) | 286 | `"    parser.add_argument(\"--product\", default=\"\","` | — |
+| [SRC-497366DEF4-L000287](../../scripts/self_acceptance_test.py#L287) | 287 | `"                        help=\"Optional product to test public buyer-intent discovery.\")"` | — |
+| [SRC-497366DEF4-L000288](../../scripts/self_acceptance_test.py#L288) | 288 | `"    parser.add_argument(\"--question\", action=\"append\", default=[],"` | — |
+| [SRC-497366DEF4-L000289](../../scripts/self_acceptance_test.py#L289) | 289 | `"                        help=\"Custom live question; repeat to add more questions.\")"` | — |
+| [SRC-497366DEF4-L000290](../../scripts/self_acceptance_test.py#L290) | 290 | `"    parser.add_argument(\"--output\", default=\"artifacts/self_acceptance/latest.json\")"` | — |
+| [SRC-497366DEF4-L000291](../../scripts/self_acceptance_test.py#L291) | 291 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
+| [SRC-497366DEF4-L000292](../../scripts/self_acceptance_test.py#L292) | 292 | `"    args = parser.parse_args()"` | — |
+| [SRC-497366DEF4-L000293](../../scripts/self_acceptance_test.py#L293) | 293 | `""` | — |
+| [SRC-497366DEF4-L000294](../../scripts/self_acceptance_test.py#L294) | 294 | `"    if args.live and not args.allow_external_calls:"` | — |
+| [SRC-497366DEF4-L000295](../../scripts/self_acceptance_test.py#L295) | 295 | `"        parser.error(\"--live requires --allow-external-calls\")"` | — |
+| [SRC-497366DEF4-L000296](../../scripts/self_acceptance_test.py#L296) | 296 | `"    if args.allow_external_calls:"` | — |
+| [SRC-497366DEF4-L000297](../../scripts/self_acceptance_test.py#L297) | 297 | `"        os.environ[\"OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS\"] = \"1\""` | — |
+| [SRC-497366DEF4-L000298](../../scripts/self_acceptance_test.py#L298) | 298 | `"    try:"` | — |
+| [SRC-497366DEF4-L000299](../../scripts/self_acceptance_test.py#L299) | 299 | `"        result = run_acceptance("` | — |
+| [SRC-497366DEF4-L000300](../../scripts/self_acceptance_test.py#L300) | 300 | `"            output_path=args.output,"` | — |
+| [SRC-497366DEF4-L000301](../../scripts/self_acceptance_test.py#L301) | 301 | `"            live=args.live,"` | — |
+| [SRC-497366DEF4-L000302](../../scripts/self_acceptance_test.py#L302) | 302 | `"            product=args.product,"` | — |
+| [SRC-497366DEF4-L000303](../../scripts/self_acceptance_test.py#L303) | 303 | `"            custom_questions=args.question or None,"` | — |
+| [SRC-497366DEF4-L000304](../../scripts/self_acceptance_test.py#L304) | 304 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
+| [SRC-497366DEF4-L000305](../../scripts/self_acceptance_test.py#L305) | 305 | `"        )"` | — |
+| [SRC-497366DEF4-L000306](../../scripts/self_acceptance_test.py#L306) | 306 | `"    except Exception as exc:  # noqa: BLE001 - CLI boundary"` | — |
+| [SRC-497366DEF4-L000307](../../scripts/self_acceptance_test.py#L307) | 307 | `"        print(json.dumps({"` | — |
+| [SRC-497366DEF4-L000308](../../scripts/self_acceptance_test.py#L308) | 308 | `"            \"result\": \"failed\","` | — |
+| [SRC-497366DEF4-L000309](../../scripts/self_acceptance_test.py#L309) | 309 | `"            \"error\": f\"{type(exc).__name__}: {exc}\","` | — |
+| [SRC-497366DEF4-L000310](../../scripts/self_acceptance_test.py#L310) | 310 | `"        }, ensure_ascii=False, indent=2))"` | — |
+| [SRC-497366DEF4-L000311](../../scripts/self_acceptance_test.py#L311) | 311 | `"        return 1"` | — |
+| [SRC-497366DEF4-L000312](../../scripts/self_acceptance_test.py#L312) | 312 | `""` | — |
+| [SRC-497366DEF4-L000313](../../scripts/self_acceptance_test.py#L313) | 313 | `"    print(json.dumps({"` | — |
+| [SRC-497366DEF4-L000314](../../scripts/self_acceptance_test.py#L314) | 314 | `"        \"result\": \"passed\" if not args.live else \"completed_with_live_questions\","` | — |
+| [SRC-497366DEF4-L000315](../../scripts/self_acceptance_test.py#L315) | 315 | `"        \"output\": str(Path(args.output).expanduser()),"` | — |
+| [SRC-497366DEF4-L000316](../../scripts/self_acceptance_test.py#L316) | 316 | `"        \"token_required\": False,"` | — |
+| [SRC-497366DEF4-L000317](../../scripts/self_acceptance_test.py#L317) | 317 | `"        \"live_question_count\": len(result[\"questions\"]),"` | — |
+| [SRC-497366DEF4-L000318](../../scripts/self_acceptance_test.py#L318) | 318 | `"        \"checks\": result[\"checks\"],"` | — |
+| [SRC-497366DEF4-L000319](../../scripts/self_acceptance_test.py#L319) | 319 | `"        \"questions\": ["` | — |
+| [SRC-497366DEF4-L000320](../../scripts/self_acceptance_test.py#L320) | 320 | `"            {"` | — |
+| [SRC-497366DEF4-L000321](../../scripts/self_acceptance_test.py#L321) | 321 | `"                \"id\": item[\"id\"],"` | — |
+| [SRC-497366DEF4-L000322](../../scripts/self_acceptance_test.py#L322) | 322 | `"                \"question\": item[\"question\"],"` | — |
+| [SRC-497366DEF4-L000323](../../scripts/self_acceptance_test.py#L323) | 323 | `"                \"answer\": item[\"answer\"],"` | — |
+| [SRC-497366DEF4-L000324](../../scripts/self_acceptance_test.py#L324) | 324 | `"                \"summary\": item[\"summary\"],"` | — |
+| [SRC-497366DEF4-L000325](../../scripts/self_acceptance_test.py#L325) | 325 | `"                \"sources\": [source.get(\"url\") for source in item[\"sources\"]],"` | — |
+| [SRC-497366DEF4-L000326](../../scripts/self_acceptance_test.py#L326) | 326 | `"            }"` | — |
+| [SRC-497366DEF4-L000327](../../scripts/self_acceptance_test.py#L327) | 327 | `"            for item in result[\"questions\"]"` | — |
+| [SRC-497366DEF4-L000328](../../scripts/self_acceptance_test.py#L328) | 328 | `"        ],"` | — |
+| [SRC-497366DEF4-L000329](../../scripts/self_acceptance_test.py#L329) | 329 | `"    }, ensure_ascii=False, indent=2))"` | — |
+| [SRC-497366DEF4-L000330](../../scripts/self_acceptance_test.py#L330) | 330 | `"    return 0"` | — |
+| [SRC-497366DEF4-L000331](../../scripts/self_acceptance_test.py#L331) | 331 | `""` | — |
+| [SRC-497366DEF4-L000332](../../scripts/self_acceptance_test.py#L332) | 332 | `""` | — |
+| [SRC-497366DEF4-L000333](../../scripts/self_acceptance_test.py#L333) | 333 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-497366DEF4-L000334](../../scripts/self_acceptance_test.py#L334) | 334 | `"    sys.exit(main())"` | — |
 ## ملفات أخرى
 
 ### FILE-547CAF1FE3 — [scripts/sqlite_backup_restore.py](../../scripts/sqlite_backup_restore.py#L1)
@@ -836,10 +843,3 @@
 | [SRC-90FAA34ADE-L000233](../../tests/fixtures/answer_quality_cases.json#L233) | 233 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000234](../../tests/fixtures/answer_quality_cases.json#L234) | 234 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000235](../../tests/fixtures/answer_quality_cases.json#L235) | 235 | `"        \"notes\": \"Reviewer checks completeness across three asks\""` | — |
-| [SRC-90FAA34ADE-L000236](../../tests/fixtures/answer_quality_cases.json#L236) | 236 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000237](../../tests/fixtures/answer_quality_cases.json#L237) | 237 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000238](../../tests/fixtures/answer_quality_cases.json#L238) | 238 | `"        \"One or more subquestions ignored with no acknowledgment\""` | — |
-| [SRC-90FAA34ADE-L000239](../../tests/fixtures/answer_quality_cases.json#L239) | 239 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000240](../../tests/fixtures/answer_quality_cases.json#L240) | 240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000241](../../tests/fixtures/answer_quality_cases.json#L241) | 241 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000242](../../tests/fixtures/answer_quality_cases.json#L242) | 242 | `"    {"` | — |
