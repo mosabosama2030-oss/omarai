@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003832 إلى SRC-DE7EABE998-L000430
+- النطاق: SRC-F725E90B2A-L003832 إلى SRC-DE7EABE998-L000428
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -201,48 +201,50 @@
 | [SRC-F725E90B2A-L004014](../../tests/test_web_agent.py#L4014) | 4014 | `""` | — |
 | [SRC-F725E90B2A-L004015](../../tests/test_web_agent.py#L4015) | 4015 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L004016](../../tests/test_web_agent.py#L4016) | 4016 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L004017](../../tests/test_web_agent.py#L4017) | 4017 | `"        headers = {"` | — |
-| [SRC-F725E90B2A-L004018](../../tests/test_web_agent.py#L4018) | 4018 | `"            \"content-type\": \"text/plain; charset=utf-8\","` | — |
-| [SRC-F725E90B2A-L004019](../../tests/test_web_agent.py#L4019) | 4019 | `"            # Deliberately under-reports the actual streamed body length."` | — |
-| [SRC-F725E90B2A-L004020](../../tests/test_web_agent.py#L4020) | 4020 | `"            \"content-length\": \"1\","` | — |
-| [SRC-F725E90B2A-L004021](../../tests/test_web_agent.py#L4021) | 4021 | `"        }"` | — |
-| [SRC-F725E90B2A-L004022](../../tests/test_web_agent.py#L4022) | 4022 | `"        encoding = \"utf-8\""` | — |
-| [SRC-F725E90B2A-L004023](../../tests/test_web_agent.py#L4023) | 4023 | `""` | — |
-| [SRC-F725E90B2A-L004024](../../tests/test_web_agent.py#L4024) | 4024 | `"        def iter_bytes(self):"` | — |
-| [SRC-F725E90B2A-L004025](../../tests/test_web_agent.py#L4025) | 4025 | `"            chunks = ("` | — |
-| [SRC-F725E90B2A-L004026](../../tests/test_web_agent.py#L4026) | 4026 | `"                b\"A\" * web_agent.MAX_PAGE_BYTES,"` | — |
-| [SRC-F725E90B2A-L004027](../../tests/test_web_agent.py#L4027) | 4027 | `"                b\"B\" * 32,"` | — |
-| [SRC-F725E90B2A-L004028](../../tests/test_web_agent.py#L4028) | 4028 | `"                b\"C\" * 32,"` | — |
-| [SRC-F725E90B2A-L004029](../../tests/test_web_agent.py#L4029) | 4029 | `"            )"` | — |
-| [SRC-F725E90B2A-L004030](../../tests/test_web_agent.py#L4030) | 4030 | `"            for chunk in chunks:"` | — |
-| [SRC-F725E90B2A-L004031](../../tests/test_web_agent.py#L4031) | 4031 | `"                chunks_yielded.append(len(chunk))"` | — |
-| [SRC-F725E90B2A-L004032](../../tests/test_web_agent.py#L4032) | 4032 | `"                yield chunk"` | — |
-| [SRC-F725E90B2A-L004033](../../tests/test_web_agent.py#L4033) | 4033 | `""` | — |
-| [SRC-F725E90B2A-L004034](../../tests/test_web_agent.py#L4034) | 4034 | `"    @contextmanager"` | — |
-| [SRC-F725E90B2A-L004035](../../tests/test_web_agent.py#L4035) | 4035 | `"    def fake_stream(self, method, url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L004036](../../tests/test_web_agent.py#L4036) | 4036 | `"        assert method == \"GET\""` | — |
-| [SRC-F725E90B2A-L004037](../../tests/test_web_agent.py#L4037) | 4037 | `"        assert str(url) == \"https://93.184.216.34/large.txt\""` | — |
-| [SRC-F725E90B2A-L004038](../../tests/test_web_agent.py#L4038) | 4038 | `"        yield FakeResponse()"` | — |
-| [SRC-F725E90B2A-L004039](../../tests/test_web_agent.py#L4039) | 4039 | `""` | — |
-| [SRC-F725E90B2A-L004040](../../tests/test_web_agent.py#L4040) | 4040 | `"    class FakeClient:"` | — |
-| [SRC-F725E90B2A-L004041](../../tests/test_web_agent.py#L4041) | 4041 | `"        def __init__(self, **kwargs):"` | — |
-| [SRC-F725E90B2A-L004042](../../tests/test_web_agent.py#L4042) | 4042 | `"            self.options = kwargs"` | — |
-| [SRC-F725E90B2A-L004043](../../tests/test_web_agent.py#L4043) | 4043 | `""` | — |
-| [SRC-F725E90B2A-L004044](../../tests/test_web_agent.py#L4044) | 4044 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L004045](../../tests/test_web_agent.py#L4045) | 4045 | `"            return self"` | — |
-| [SRC-F725E90B2A-L004046](../../tests/test_web_agent.py#L4046) | 4046 | `""` | — |
-| [SRC-F725E90B2A-L004047](../../tests/test_web_agent.py#L4047) | 4047 | `"        def __exit__(self, *_args):"` | — |
-| [SRC-F725E90B2A-L004048](../../tests/test_web_agent.py#L4048) | 4048 | `"            return False"` | — |
-| [SRC-F725E90B2A-L004049](../../tests/test_web_agent.py#L4049) | 4049 | `""` | — |
-| [SRC-F725E90B2A-L004050](../../tests/test_web_agent.py#L4050) | 4050 | `"        stream = fake_stream"` | — |
+| [SRC-F725E90B2A-L004017](../../tests/test_web_agent.py#L4017) | 4017 | `"        encoding = \"utf-8\""` | — |
+| [SRC-F725E90B2A-L004018](../../tests/test_web_agent.py#L4018) | 4018 | `""` | — |
+| [SRC-F725E90B2A-L004019](../../tests/test_web_agent.py#L4019) | 4019 | `"        def __init__(self):"` | — |
+| [SRC-F725E90B2A-L004020](../../tests/test_web_agent.py#L4020) | 4020 | `"            self.headers = {"` | — |
+| [SRC-F725E90B2A-L004021](../../tests/test_web_agent.py#L4021) | 4021 | `"                \"content-type\": \"text/plain; charset=utf-8\","` | — |
+| [SRC-F725E90B2A-L004022](../../tests/test_web_agent.py#L4022) | 4022 | `"                # Deliberately under-reports the actual streamed body length."` | — |
+| [SRC-F725E90B2A-L004023](../../tests/test_web_agent.py#L4023) | 4023 | `"                \"content-length\": \"1\","` | — |
+| [SRC-F725E90B2A-L004024](../../tests/test_web_agent.py#L4024) | 4024 | `"            }"` | — |
+| [SRC-F725E90B2A-L004025](../../tests/test_web_agent.py#L4025) | 4025 | `""` | — |
+| [SRC-F725E90B2A-L004026](../../tests/test_web_agent.py#L4026) | 4026 | `"        def iter_bytes(self):"` | — |
+| [SRC-F725E90B2A-L004027](../../tests/test_web_agent.py#L4027) | 4027 | `"            chunks = ("` | — |
+| [SRC-F725E90B2A-L004028](../../tests/test_web_agent.py#L4028) | 4028 | `"                b\"A\" * web_agent.MAX_PAGE_BYTES,"` | — |
+| [SRC-F725E90B2A-L004029](../../tests/test_web_agent.py#L4029) | 4029 | `"                b\"B\" * 32,"` | — |
+| [SRC-F725E90B2A-L004030](../../tests/test_web_agent.py#L4030) | 4030 | `"                b\"C\" * 32,"` | — |
+| [SRC-F725E90B2A-L004031](../../tests/test_web_agent.py#L4031) | 4031 | `"            )"` | — |
+| [SRC-F725E90B2A-L004032](../../tests/test_web_agent.py#L4032) | 4032 | `"            for chunk in chunks:"` | — |
+| [SRC-F725E90B2A-L004033](../../tests/test_web_agent.py#L4033) | 4033 | `"                chunks_yielded.append(len(chunk))"` | — |
+| [SRC-F725E90B2A-L004034](../../tests/test_web_agent.py#L4034) | 4034 | `"                yield chunk"` | — |
+| [SRC-F725E90B2A-L004035](../../tests/test_web_agent.py#L4035) | 4035 | `""` | — |
+| [SRC-F725E90B2A-L004036](../../tests/test_web_agent.py#L4036) | 4036 | `"    @contextmanager"` | — |
+| [SRC-F725E90B2A-L004037](../../tests/test_web_agent.py#L4037) | 4037 | `"    def fake_stream(self, method, url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L004038](../../tests/test_web_agent.py#L4038) | 4038 | `"        assert method == \"GET\""` | — |
+| [SRC-F725E90B2A-L004039](../../tests/test_web_agent.py#L4039) | 4039 | `"        assert str(url) == \"https://93.184.216.34/large.txt\""` | — |
+| [SRC-F725E90B2A-L004040](../../tests/test_web_agent.py#L4040) | 4040 | `"        yield FakeResponse()"` | — |
+| [SRC-F725E90B2A-L004041](../../tests/test_web_agent.py#L4041) | 4041 | `""` | — |
+| [SRC-F725E90B2A-L004042](../../tests/test_web_agent.py#L4042) | 4042 | `"    class FakeClient:"` | — |
+| [SRC-F725E90B2A-L004043](../../tests/test_web_agent.py#L4043) | 4043 | `"        def __init__(self, **kwargs):"` | — |
+| [SRC-F725E90B2A-L004044](../../tests/test_web_agent.py#L4044) | 4044 | `"            self.options = kwargs"` | — |
+| [SRC-F725E90B2A-L004045](../../tests/test_web_agent.py#L4045) | 4045 | `""` | — |
+| [SRC-F725E90B2A-L004046](../../tests/test_web_agent.py#L4046) | 4046 | `"        def __enter__(self):"` | — |
+| [SRC-F725E90B2A-L004047](../../tests/test_web_agent.py#L4047) | 4047 | `"            return self"` | — |
+| [SRC-F725E90B2A-L004048](../../tests/test_web_agent.py#L4048) | 4048 | `""` | — |
+| [SRC-F725E90B2A-L004049](../../tests/test_web_agent.py#L4049) | 4049 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-F725E90B2A-L004050](../../tests/test_web_agent.py#L4050) | 4050 | `"            return False"` | — |
 | [SRC-F725E90B2A-L004051](../../tests/test_web_agent.py#L4051) | 4051 | `""` | — |
-| [SRC-F725E90B2A-L004052](../../tests/test_web_agent.py#L4052) | 4052 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
-| [SRC-F725E90B2A-L004053](../../tests/test_web_agent.py#L4053) | 4053 | `"    result = web_agent.WebAgent()._fetch_page(\"https://example.com/large.txt\")"` | — |
-| [SRC-F725E90B2A-L004054](../../tests/test_web_agent.py#L4054) | 4054 | `""` | — |
-| [SRC-F725E90B2A-L004055](../../tests/test_web_agent.py#L4055) | 4055 | `"    assert result.status == \"partial_extraction\""` | — |
-| [SRC-F725E90B2A-L004056](../../tests/test_web_agent.py#L4056) | 4056 | `"    assert len(result[1]) <= web_agent.MAX_PAGE_TEXT_CHARS"` | — |
-| [SRC-F725E90B2A-L004057](../../tests/test_web_agent.py#L4057) | 4057 | `"    # The reader stops as soon as the byte cap is crossed; it never asks for chunk 3."` | — |
-| [SRC-F725E90B2A-L004058](../../tests/test_web_agent.py#L4058) | 4058 | `"    assert chunks_yielded == [web_agent.MAX_PAGE_BYTES, 32]"` | — |
+| [SRC-F725E90B2A-L004052](../../tests/test_web_agent.py#L4052) | 4052 | `"        stream = fake_stream"` | — |
+| [SRC-F725E90B2A-L004053](../../tests/test_web_agent.py#L4053) | 4053 | `""` | — |
+| [SRC-F725E90B2A-L004054](../../tests/test_web_agent.py#L4054) | 4054 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
+| [SRC-F725E90B2A-L004055](../../tests/test_web_agent.py#L4055) | 4055 | `"    result = web_agent.WebAgent()._fetch_page(\"https://example.com/large.txt\")"` | — |
+| [SRC-F725E90B2A-L004056](../../tests/test_web_agent.py#L4056) | 4056 | `""` | — |
+| [SRC-F725E90B2A-L004057](../../tests/test_web_agent.py#L4057) | 4057 | `"    assert result.status == \"partial_extraction\""` | — |
+| [SRC-F725E90B2A-L004058](../../tests/test_web_agent.py#L4058) | 4058 | `"    assert len(result[1]) <= web_agent.MAX_PAGE_TEXT_CHARS"` | — |
+| [SRC-F725E90B2A-L004059](../../tests/test_web_agent.py#L4059) | 4059 | `"    # The reader stops as soon as the byte cap is crossed; it never asks for chunk 3."` | — |
+| [SRC-F725E90B2A-L004060](../../tests/test_web_agent.py#L4060) | 4060 | `"    assert chunks_yielded == [web_agent.MAX_PAGE_BYTES, 32]"` | — |
 ## اختبارات
 
 ### FILE-8C13B81AB4 — [tests/test_web_agent_nlu_integration.py](../../tests/test_web_agent_nlu_integration.py#L1)
@@ -832,5 +834,3 @@
 | [SRC-DE7EABE998-L000426](../../web/agent.html#L426) | 426 | `"  const retry=document.createElement(\"button\");retry.type=\"button\";retry.className=\"retry-button\";"` | — |
 | [SRC-DE7EABE998-L000427](../../web/agent.html#L427) | 427 | `"  retry.textContent=\"إعادة محاولة هذا السؤال\";"` | — |
 | [SRC-DE7EABE998-L000428](../../web/agent.html#L428) | 428 | `"  retry.addEventListener(\"click\",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);"` | — |
-| [SRC-DE7EABE998-L000429](../../web/agent.html#L429) | 429 | `"  setStatus(\"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه\",\"bad\");"` | — |
-| [SRC-DE7EABE998-L000430](../../web/agent.html#L430) | 430 | `" }finally{"` | — |
