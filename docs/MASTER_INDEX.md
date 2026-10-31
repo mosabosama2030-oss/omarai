@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **119**
 - ملفات Python المحللة: **73**
-- تعريفات Python المفهرسة: **1532**
+- تعريفات Python المفهرسة: **1542**
 - تعريفات Python موثقة بوجود Docstring: **260**
-- تعريفات Python بلا Docstring: **967**
+- تعريفات Python بلا Docstring: **977**
 - تعريفات لا ينطبق عليها Docstring: **305**
-- الرموز الساكنة الإضافية: **1874**
-- الأسطر النصية المفهرسة حرفيًا: **39994**
+- الرموز الساكنة الإضافية: **1877**
+- الأسطر النصية المفهرسة حرفيًا: **40101**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -143,7 +143,7 @@
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 154979 | 3951 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 157983 | 4058 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69054 | 485 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1679,6 +1679,16 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3910) | دالة | test_model_request_transport_disables_automatic_redirects.FakeOpener.open | لا توجد Docstring. | ناقص | 3910 | [SRC-F725E90B2A-L003910](../tests/test_web_agent.py#L3910) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3915) | دالة | test_model_request_transport_disables_automatic_redirects.fake_build_opener | لا توجد Docstring. | ناقص | 3915 | [SRC-F725E90B2A-L003915](../tests/test_web_agent.py#L3915) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3944) | دالة | test_openrouter_web_search_does_not_match_spoofed_hostname | لا توجد Docstring. | ناقص | 3944 | [SRC-F725E90B2A-L003944](../tests/test_web_agent.py#L3944) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3965) | دالة | test_public_ip_literals_rejects_non_global_ipv4_and_ipv6_answers | لا توجد Docstring. | ناقص | 3965 | [SRC-F725E90B2A-L003965](../tests/test_web_agent.py#L3965) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3997) | دالة | test_public_http_url_rejects_non_public_or_unsafe_targets | لا توجد Docstring. | ناقص | 3997 | [SRC-F725E90B2A-L003997](../tests/test_web_agent.py#L3997) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4003) | دالة | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies | لا توجد Docstring. | ناقص | 4003 | [SRC-F725E90B2A-L004003](../tests/test_web_agent.py#L4003) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4015) | كلاس | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.FakeResponse | لا توجد Docstring. | ناقص | 4015 | [SRC-F725E90B2A-L004015](../tests/test_web_agent.py#L4015) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4024) | دالة | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.FakeResponse.iter_bytes | لا توجد Docstring. | ناقص | 4024 | [SRC-F725E90B2A-L004024](../tests/test_web_agent.py#L4024) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4035) | دالة | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.fake_stream | لا توجد Docstring. | ناقص | 4035 | [SRC-F725E90B2A-L004035](../tests/test_web_agent.py#L4035) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4040) | كلاس | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.FakeClient | لا توجد Docstring. | ناقص | 4040 | [SRC-F725E90B2A-L004040](../tests/test_web_agent.py#L4040) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4041) | دالة | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.FakeClient.__init__ | لا توجد Docstring. | ناقص | 4041 | [SRC-F725E90B2A-L004041](../tests/test_web_agent.py#L4041) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4044) | دالة | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.FakeClient.__enter__ | لا توجد Docstring. | ناقص | 4044 | [SRC-F725E90B2A-L004044](../tests/test_web_agent.py#L4044) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4047) | دالة | test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies.FakeClient.__exit__ | لا توجد Docstring. | ناقص | 4047 | [SRC-F725E90B2A-L004047](../tests/test_web_agent.py#L4047) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L10) | دالة | _academic_result | لا توجد Docstring. | ناقص | 10 | [SRC-8C13B81AB4-L000010](../tests/test_web_agent_nlu_integration.py#L10) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L29) | دالة | test_sparse_academic_search_uses_budgeted_safe_connectors | لا توجد Docstring. | ناقص | 29 | [SRC-8C13B81AB4-L000029](../tests/test_web_agent_nlu_integration.py#L29) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L49) | دالة | test_academic_connectors_are_not_called_for_ordinary_sparse_queries | لا توجد Docstring. | ناقص | 49 | [SRC-8C13B81AB4-L000049](../tests/test_web_agent_nlu_integration.py#L49) |
@@ -3209,6 +3219,9 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 3149 | [SRC-F725E90B2A-L003149](../tests/test_web_agent.py#L3149) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3234) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 3234 | [SRC-F725E90B2A-L003234](../tests/test_web_agent.py#L3234) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L3392) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 3392 | [SRC-F725E90B2A-L003392](../tests/test_web_agent.py#L3392) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L3960) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 3960 | [SRC-F725E90B2A-L003960](../tests/test_web_agent.py#L3960) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4026) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PAGE_BYTES | 4026 | [SRC-F725E90B2A-L004026](../tests/test_web_agent.py#L4026) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4056) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PAGE_TEXT_CHARS | 4056 | [SRC-F725E90B2A-L004056](../tests/test_web_agent.py#L4056) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 32 | [SRC-8C13B81AB4-L000032](../tests/test_web_agent_nlu_integration.py#L32) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 32 | [SRC-8C13B81AB4-L000032](../tests/test_web_agent_nlu_integration.py#L32) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 32 | [SRC-8C13B81AB4-L000032](../tests/test_web_agent_nlu_integration.py#L32) |
