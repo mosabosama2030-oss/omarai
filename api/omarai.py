@@ -599,12 +599,37 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200, {"revoked": True})
 
             if path == "/api/diagnostics":
-                test_model = data.get("test_model", True)
+                test_model = data.get("test_model", False)
                 test_social = data.get("test_social", False)
-                if not isinstance(test_model, bool) or not isinstance(test_social, bool):
+                allow_provider_usage = data.get("allow_provider_usage", False)
+                if (
+                    not isinstance(test_model, bool)
+                    or not isinstance(test_social, bool)
+                    or not isinstance(allow_provider_usage, bool)
+                ):
                     return self.respond(
                         400,
-                        {"error": "test_model and test_social must be booleans"},
+                        {
+                            "error": (
+                                "test_model, test_social, and allow_provider_usage "
+                                "must be booleans"
+                            )
+                        },
+                    )
+                if not allow_provider_usage:
+                    return self.respond(
+                        403,
+                        {
+                            "error": (
+                                "live diagnostics perform outbound search and may consume "
+                                "provider quota or incur charges; explicit owner approval is required"
+                            )
+                        },
+                    )
+                if self._authenticated_principal.get("role") != "owner":
+                    return self.respond(
+                        403,
+                        {"error": "فحص الموصلات الحي واستهلاك الحصص متاح لمالك مساحة العمل فقط."},
                     )
                 return self._run_bounded_agent_operation(
                     lambda: WebAgent().diagnostics(
