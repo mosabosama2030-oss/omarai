@@ -197,7 +197,9 @@ def test_configured_frontend_origin_supports_preflight_and_post(local_api, monke
         assert response.status == 204
         assert response.headers.get("Access-Control-Allow-Origin") == origin
         assert response.headers.get("Access-Control-Allow-Methods") == "GET, POST, OPTIONS"
-        assert response.headers.get("Access-Control-Allow-Headers") == "Authorization, Content-Type"
+        assert response.headers.get("Access-Control-Allow-Headers") == (
+            "Authorization, Content-Type, X-Omarai-Test-User, X-Omarai-Tenant-ID"
+        )
 
     body = json.dumps({"question": "مين أفضل إشارة أراجعها؟"}, ensure_ascii=False).encode("utf-8")
     post = Request(
