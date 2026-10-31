@@ -28,7 +28,8 @@ from agents.dialogue_state import (
     might_be_context_dependent,
     validate_dialogue_context,
 )
-from agents.answer_validation import audit_answer_integrity, build_requirement_evidence_ledger
+from agents.answer_validation import audit_answer_integrity
+from agents.requirement_evidence import build_requirement_evidence_ledger
 from agents.claim_evidence import build_claim_evidence_ledger
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.aspect_planning import (
