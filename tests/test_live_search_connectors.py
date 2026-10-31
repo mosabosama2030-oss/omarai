@@ -204,3 +204,65 @@ def test_bounded_provider_transport_returns_buffered_response(monkeypatch):
     assert observed["request_options"] == {"json": {"query": "test"}}
     assert observed["client_options"]["follow_redirects"] is False
     assert observed["client_options"]["trust_env"] is False
+
+
+
+def test_bounded_provider_transport_enforces_absolute_total_deadline(monkeypatch):
+    chunks_read = []
+
+    class FakeResponse:
+        status_code = 200
+        request = httpx.Request("GET", "https://provider.example/slow")
+        headers = {}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def iter_bytes(self):
+            for chunk in (b"first", b"second"):
+                chunks_read.append(chunk)
+                yield chunk
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            assert kwargs["timeout"] == 9.0
+            assert kwargs["follow_redirects"] is False
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def stream(self, method, url, **kwargs):
+            assert method == "GET"
+            return FakeResponse()
+
+    # Start at t=0; the first chunk arrives before the deadline.
+    # The deadline expires before requesting the second chunk.
+    clock = iter((0.0, 0.0, 2.0))
+    monkeypatch.setattr("agents.web_agent.time.monotonic", lambda: next(clock))
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+
+    with pytest.raises(TimeoutError, match="total request deadline"):
+        _bounded_http_request(
+            "GET",
+            "https://provider.example/slow",
+            timeout=9.0,
+            total_timeout=1.5,
+        )
+
+    assert chunks_read == [b"first"]
+
+
+@pytest.mark.parametrize("total_timeout", [0, -1, float("inf"), "not-a-number"])
+def test_bounded_provider_transport_rejects_invalid_total_deadlines(total_timeout):
+    with pytest.raises(ValueError, match="total_timeout"):
+        _bounded_http_request(
+            "GET",
+            "https://provider.example/search",
+            total_timeout=total_timeout,
+        )
