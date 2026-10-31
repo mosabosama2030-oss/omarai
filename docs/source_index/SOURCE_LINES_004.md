@@ -198,7 +198,7 @@
 | [SRC-C9CF9B54F8-L000227](../../agents/omarai.py#L227) | 227 | `"                    )"` | — |
 | [SRC-C9CF9B54F8-L000228](../../agents/omarai.py#L228) | 228 | `"                else:"` | — |
 | [SRC-C9CF9B54F8-L000229](../../agents/omarai.py#L229) | 229 | `"                    db.execute("` | — |
-| [SRC-C9CF9B54F8-L000230](../../agents/omarai.py#L230) | 230 | `"                        f\"\"\"INSERT OR IGNORE INTO leads"` | — |
+| [SRC-C9CF9B54F8-L000230](../../agents/omarai.py#L230) | 230 | `"                        \"\"\"INSERT OR IGNORE INTO leads"` | — |
 | [SRC-C9CF9B54F8-L000231](../../agents/omarai.py#L231) | 231 | `"                            (id, tenant_id, fingerprint, text, source_url, platform,"` | — |
 | [SRC-C9CF9B54F8-L000232](../../agents/omarai.py#L232) | 232 | `"                             observed_at, assessment, status, note, created_at, updated_at)"` | — |
 | [SRC-C9CF9B54F8-L000233](../../agents/omarai.py#L233) | 233 | `"                            SELECT id, tenant_id, fingerprint, text, source_url, platform,"` | — |
