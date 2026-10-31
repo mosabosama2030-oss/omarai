@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B9C3015420-L000017 إلى SRC-0F910493E8-L000003
+- النطاق: SRC-B9C3015420-L000013 إلى SRC-65551FB29F-L000574
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B9C3015420-L000013](../OMARAI_REQUIREMENTS_REGISTER.md#L13) | 13 | `"- **P2:** استعداد للنمو وتشغيل أكثر نضجًا عند انطباق الحاجة."` | — |
+| [SRC-B9C3015420-L000014](../OMARAI_REQUIREMENTS_REGISTER.md#L14) | 14 | `"- **P3:** قدرة مؤسسية أو موزعة مشروطة بحجم الاستخدام أو الالتزام أو الخطر."` | — |
+| [SRC-B9C3015420-L000015](../OMARAI_REQUIREMENTS_REGISTER.md#L15) | 15 | `"- **BASE:** ينطبق على المسار الأساسي."` | — |
+| [SRC-B9C3015420-L000016](../OMARAI_REQUIREMENTS_REGISTER.md#L16) | 16 | `"- **TRIGGERED:** يصبح إلزاميًا عند تحقق الشرط المذكور."` | — |
 | [SRC-B9C3015420-L000017](../OMARAI_REQUIREMENTS_REGISTER.md#L17) | 17 | `""` | — |
 | [SRC-B9C3015420-L000018](../OMARAI_REQUIREMENTS_REGISTER.md#L18) | 18 | `"حالة اعتماد مجموعة المتطلبات تظل **PROPOSED** إلى أن يعتمدها مدير المشروع. حالة التنفيذ في الجدول هي لقطة تدقيق أولية لا يغني عنها سجل الأدلة الأحدث؛ التغييرات اللاحقة وقيودها موضحة في تقرير التسوية. لا تُحوّل حالة إلى VERIFIED دون دليل مربوط بنسخة وبيئة ونتيجة محددة."` | — |
 | [SRC-B9C3015420-L000019](../OMARAI_REQUIREMENTS_REGISTER.md#L19) | 19 | `""` | — |
@@ -821,16 +825,3 @@
 | [SRC-65551FB29F-L000572](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L572) | 572 | `""` | — |
 | [SRC-65551FB29F-L000573](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L573) | 573 | `"**لا نعتمد اكتمال Omarai بعدد صفحات المواصفات أو عدد الطبقات. نعتمده بقدر ما لدينا من سلوك صحيح ومختبر، وحدود أمنية قابلة للتحقق، وقياسات صادقة، وقدرة على الاستعادة والتغيير دون تدهور.**"` | — |
 | [SRC-65551FB29F-L000574](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L574) | 574 | `""` | — |
-| [SRC-65551FB29F-L000575](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L575) | 575 | `"كل ما لم يُفحص في التنفيذ يجب أن يبقى UNKNOWN أو PROPOSED حتى يظهر دليل مناسب."` | — |
-## وثائق وفهرسة
-
-### FILE-0F910493E8 — [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-0F910493E8-L000001](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | 1 | `"# Omarai — المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء"` | — |
-| [SRC-0F910493E8-L000002](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L2) | 2 | `""` | — |
-| [SRC-0F910493E8-L000003](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-ARCH-SKILL-WORKFLOW-AGENT-001  "` | — |

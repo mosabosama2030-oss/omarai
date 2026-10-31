@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000057 إلى SRC-59CF4B7DE8-L000406
+- النطاق: SRC-C9CF9B54F8-L000056 إلى SRC-59CF4B7DE8-L000405
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000056](../../agents/omarai.py#L56) | 56 | `"    body = normalize(text)"` | — |
 | [SRC-C9CF9B54F8-L000057](../../agents/omarai.py#L57) | 57 | `"    excluded = [p for p in NOT_BUYER if normalize(p) in body]"` | — |
 | [SRC-C9CF9B54F8-L000058](../../agents/omarai.py#L58) | 58 | `"    if excluded:"` | — |
 | [SRC-C9CF9B54F8-L000059](../../agents/omarai.py#L59) | 59 | `"        return {\"score\": 0, \"label\": \"not_buyer_signal\", \"summary\": \"قد لا تكون إشارة شراء مباشرة؛ راجع النص يدويًا.\", \"matched_signals\": [{\"phrase\": p, \"category\": \"exclusion\", \"points\": 0} for p in excluded], \"warnings\": [\"تصنيف أولي وليس حكمًا نهائيًا.\"]}"` | — |
@@ -842,4 +843,3 @@
 | [SRC-59CF4B7DE8-L000403](../../agents/research.py#L403) | 403 | `"    fresh = detect_freshness(contextual_question)"` | — |
 | [SRC-59CF4B7DE8-L000404](../../agents/research.py#L404) | 404 | `"    detected_depth = detect_depth(contextual_question)"` | — |
 | [SRC-59CF4B7DE8-L000405](../../agents/research.py#L405) | 405 | `"    deep = detected_depth == \"deep\""` | — |
-| [SRC-59CF4B7DE8-L000406](../../agents/research.py#L406) | 406 | `"    platforms = mentioned_social_platforms(contextual_question)"` | — |

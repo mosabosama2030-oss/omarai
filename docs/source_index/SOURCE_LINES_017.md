@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006311 إلى SRC-EEF2E6447C-L000474
+- النطاق: SRC-1AE03B9EC3-L006310 إلى SRC-EEF2E6447C-L000473
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006310](../../agents/web_agent.py#L6310) | 6310 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L006311](../../agents/web_agent.py#L6311) | 6311 | `"        citation_validation = self._citation_validation_metadata("` | — |
 | [SRC-1AE03B9EC3-L006312](../../agents/web_agent.py#L6312) | 6312 | `"            answer, max_citable_sources, citation_warnings, review_status"` | — |
 | [SRC-1AE03B9EC3-L006313](../../agents/web_agent.py#L6313) | 6313 | `"        )"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000471](../../api/omarai.py#L471) | 471 | `"            self.respond(400, {\"error\": \"incomplete request body\"})"` | — |
 | [SRC-EEF2E6447C-L000472](../../api/omarai.py#L472) | 472 | `"            return None"` | — |
 | [SRC-EEF2E6447C-L000473](../../api/omarai.py#L473) | 473 | `"        return bytes(body)"` | — |
-| [SRC-EEF2E6447C-L000474](../../api/omarai.py#L474) | 474 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000880 إلى SRC-0799EEEB02-L000221
+- النطاق: SRC-686F71AA50-L000879 إلى SRC-0799EEEB02-L000220
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000879](../../agents/task_understanding.py#L879) | 879 | `"        ],"` | — |
 | [SRC-686F71AA50-L000880](../../agents/task_understanding.py#L880) | 880 | `"        \"clarification_reason\": ("` | — |
 | [SRC-686F71AA50-L000881](../../agents/task_understanding.py#L881) | 881 | `"            \"missing_required_input\""` | — |
 | [SRC-686F71AA50-L000882](../../agents/task_understanding.py#L882) | 882 | `"            if missing_required_inputs"` | — |
@@ -833,4 +834,3 @@
 | [SRC-0799EEEB02-L000218](../../agents/tool_execution_status.py#L218) | 218 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
 | [SRC-0799EEEB02-L000219](../../agents/tool_execution_status.py#L219) | 219 | `"        status = \"unknown\""` | — |
 | [SRC-0799EEEB02-L000220](../../agents/tool_execution_status.py#L220) | 220 | `"    elif attempted_social_connectors:"` | — |
-| [SRC-0799EEEB02-L000221](../../agents/tool_execution_status.py#L221) | 221 | `"        status = \"failed\" if social_connector_errors else \"completed_no_usable_results\""` | — |

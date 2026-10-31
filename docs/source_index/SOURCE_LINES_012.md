@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002311 إلى SRC-1AE03B9EC3-L003110
+- النطاق: SRC-1AE03B9EC3-L002310 إلى SRC-1AE03B9EC3-L003109
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002310](../../agents/web_agent.py#L2310) | 2310 | `"                headers=headers,"` | — |
 | [SRC-1AE03B9EC3-L002311](../../agents/web_agent.py#L2311) | 2311 | `"                verify=True,"` | — |
 | [SRC-1AE03B9EC3-L002312](../../agents/web_agent.py#L2312) | 2312 | `"                trust_env=False,"` | — |
 | [SRC-1AE03B9EC3-L002313](../../agents/web_agent.py#L2313) | 2313 | `"            ) as client:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003107](../../agents/web_agent.py#L3107) | 3107 | `"                request_started=False,"` | — |
 | [SRC-1AE03B9EC3-L003108](../../agents/web_agent.py#L3108) | 3108 | `"                remote_response_received=False,"` | — |
 | [SRC-1AE03B9EC3-L003109](../../agents/web_agent.py#L3109) | 3109 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003110](../../agents/web_agent.py#L3110) | 3110 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |

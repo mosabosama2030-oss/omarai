@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003911 إلى SRC-1AE03B9EC3-L004710
+- النطاق: SRC-1AE03B9EC3-L003910 إلى SRC-1AE03B9EC3-L004709
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003910](../../agents/web_agent.py#L3910) | 3910 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003911](../../agents/web_agent.py#L3911) | 3911 | `"                f\"نص المصدر: {evidence}\""` | — |
 | [SRC-1AE03B9EC3-L003912](../../agents/web_agent.py#L3912) | 3912 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003913](../../agents/web_agent.py#L3913) | 3913 | `"        evidence_text = \"\\n\\n\".join(source_blocks) or \"لا توجد أدلة ويب متاحة.\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004707](../../agents/web_agent.py#L4707) | 4707 | `"                    routing_mode,"` | — |
 | [SRC-1AE03B9EC3-L004708](../../agents/web_agent.py#L4708) | 4708 | `"                    capability_question=self._is_self_question(working_question),"` | — |
 | [SRC-1AE03B9EC3-L004709](../../agents/web_agent.py#L4709) | 4709 | `"                    requires_web=("` | — |
-| [SRC-1AE03B9EC3-L004710](../../agents/web_agent.py#L4710) | 4710 | `"                        bool(semantic_context.get(\"needs_web\"))"` | — |

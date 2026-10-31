@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003111 إلى SRC-1AE03B9EC3-L003910
+- النطاق: SRC-1AE03B9EC3-L003110 إلى SRC-1AE03B9EC3-L003909
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003110](../../agents/web_agent.py#L3110) | 3110 | `"            raise RuntimeError(\"لم يتم ضبط مفتاح نموذج اللغة.\")"` | — |
 | [SRC-1AE03B9EC3-L003111](../../agents/web_agent.py#L3111) | 3111 | `""` | — |
 | [SRC-1AE03B9EC3-L003112](../../agents/web_agent.py#L3112) | 3112 | `"        model_candidates = [requested_model]"` | — |
 | [SRC-1AE03B9EC3-L003113](../../agents/web_agent.py#L3113) | 3113 | `"        if self.fallback_model and self.fallback_model not in model_candidates:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003907](../../agents/web_agent.py#L3907) | 3907 | `"                f\"[المصدر {index}] {source.get('title', '')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003908](../../agents/web_agent.py#L3908) | 3908 | `"                f\"URL: {source.get('url', '')}\\n\""` | — |
 | [SRC-1AE03B9EC3-L003909](../../agents/web_agent.py#L3909) | 3909 | `"                f\"نوع: {source.get('source_class', 'general')}؛ \""` | — |
-| [SRC-1AE03B9EC3-L003910](../../agents/web_agent.py#L3910) | 3910 | `"                f\"منصة: {source.get('platform', 'web')}\\n\""` | — |

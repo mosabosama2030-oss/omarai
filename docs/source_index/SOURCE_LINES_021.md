@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L001030 إلى SRC-E599346ABE-L001829
+- النطاق: SRC-E599346ABE-L001029 إلى SRC-E599346ABE-L001828
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L001029](../generate_index.py#L1029) | 1029 | `"            marker.name.casefold(),"` | — |
 | [SRC-E599346ABE-L001030](../generate_index.py#L1030) | 1030 | `"        )"` | — |
 | [SRC-E599346ABE-L001031](../generate_index.py#L1031) | 1031 | `"    )"` | — |
 | [SRC-E599346ABE-L001032](../generate_index.py#L1032) | 1032 | `"    return markers"` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L001826](../generate_index.py#L1826) | 1826 | `"        markdown,"` | — |
 | [SRC-E599346ABE-L001827](../generate_index.py#L1827) | 1827 | `"        source_lines_markdown,"` | — |
 | [SRC-E599346ABE-L001828](../generate_index.py#L1828) | 1828 | `"        coverage_audit_markdown,"` | — |
-| [SRC-E599346ABE-L001829](../generate_index.py#L1829) | 1829 | `"        source_pages,"` | — |

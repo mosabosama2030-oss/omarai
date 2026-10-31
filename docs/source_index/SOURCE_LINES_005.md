@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000407 إلى SRC-1E32639872-L000300
+- النطاق: SRC-59CF4B7DE8-L000406 إلى SRC-1E32639872-L000299
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000406](../../agents/research.py#L406) | 406 | `"    platforms = mentioned_social_platforms(contextual_question)"` | — |
 | [SRC-59CF4B7DE8-L000407](../../agents/research.py#L407) | 407 | `"    queries: list[str] = [base] if base else []"` | — |
 | [SRC-59CF4B7DE8-L000408](../../agents/research.py#L408) | 408 | `""` | — |
 | [SRC-59CF4B7DE8-L000409](../../agents/research.py#L409) | 409 | `"    if fresh and base:"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1E32639872-L000297](../../agents/research_completion.py#L297) | 297 | `"            \"pages_fetched_flag_count\": fetched,"` | — |
 | [SRC-1E32639872-L000298](../../agents/research_completion.py#L298) | 298 | `"            \"pages_read_with_text_count\": read,"` | — |
 | [SRC-1E32639872-L000299](../../agents/research_completion.py#L299) | 299 | `"            \"snippet_only_source_count\": snippet_only,"` | — |
-| [SRC-1E32639872-L000300](../../agents/research_completion.py#L300) | 300 | `"            \"page_text_without_fetched_flag_count\": unflagged_text,"` | — |

@@ -1,8 +1,12 @@
-# Omarai — Web Research & Generative Q&A Agent
+# Omarai — Arabic-First AI Sales Intelligence & Customer Acquisition Agent
 
 > **Foundational engineering requirements:** mandatory contributor/agent rules are in [AGENTS.md](AGENTS.md). The core architecture and security charter is [OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md); the expanded platform practices across reliability, security, privacy, data, SRE, AI, accessibility, supply chain, and cost are in [OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md); and the requirement IDs, expert-review lenses, evidence model, risk priorities, maturity stages, and release gates are in [OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md). The initial foundational requirements checklist is [OMARAI_REQUIREMENTS_REGISTER.md](docs/OMARAI_REQUIREMENTS_REGISTER.md). These documents define required direction; they do not prove every control is implemented or tested. Use the [documentation index](docs/README.md) to find the current source of truth for each topic.
 
-Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You can ask open-ended questions in natural language, search the public web, extract text from accessible pages, compare and summarize findings, ask follow-up questions, and inspect the source links.
+Omarai's product mission is to be an Arabic-first AI Sales Intelligence and Customer Acquisition Agent: understand a product or service and its market, discover public and permitted buying-demand signals, verify their evidence, qualify opportunities, and recommend useful sales follow-ups.
+
+The current repository already provides a bounded web-research and evidence pipeline, a `LEAD_GENERATION` intent route, an initial buyer-signal detector, and a local lead workspace. These are foundational capabilities, **not proof of a complete end-to-end sales intelligence product**. Product understanding, ICP-aware demand discovery, multi-type signal classification, evidence-backed qualification, and the full sales workflow remain subject to the implementation and acceptance gates in the [Sales Intelligence Architecture](docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md).
+
+The existing responsive RTL research interface and general web-research capabilities remain shared platform capabilities. The sales domain should reuse them rather than create a second search engine.
 
 ## What this version does
 

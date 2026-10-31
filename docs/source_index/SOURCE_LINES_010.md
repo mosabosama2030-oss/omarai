@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000711 إلى SRC-1AE03B9EC3-L001510
+- النطاق: SRC-1AE03B9EC3-L000710 إلى SRC-1AE03B9EC3-L001509
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000710](../../agents/web_agent.py#L710) | 710 | `"                r\"\\1[REDACTED]\","` | — |
 | [SRC-1AE03B9EC3-L000711](../../agents/web_agent.py#L711) | 711 | `"                safe,"` | — |
 | [SRC-1AE03B9EC3-L000712](../../agents/web_agent.py#L712) | 712 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L000713](../../agents/web_agent.py#L713) | 713 | `"            return safe[:limit]"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001507](../../agents/web_agent.py#L1507) | 1507 | `"                        rejection_counts[\"malformed_candidate\"] += 1"` | — |
 | [SRC-1AE03B9EC3-L001508](../../agents/web_agent.py#L1508) | 1508 | `"                        continue"` | — |
 | [SRC-1AE03B9EC3-L001509](../../agents/web_agent.py#L1509) | 1509 | `"                    safe_url = _public_http_url(item.get(\"url\", \"\"))"` | — |
-| [SRC-1AE03B9EC3-L001510](../../agents/web_agent.py#L1510) | 1510 | `"                    if not safe_url:"` | — |
