@@ -127,7 +127,7 @@ def run_acceptance(
         for key in (
             "OMARAI_TEST_MODE", "OMARAI_PUBLIC_DEPLOYMENT", "OMARAI_ACCESS_TOKEN",
             "OMARAI_ACCESS_USER_ID", "OMARAI_DB_PATH", "OMARAI_DEFAULT_TENANT_ID",
-            "OMARAI_DEFAULT_TENANT_NAME",
+            "OMARAI_DEFAULT_TENANT_NAME", "OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS",
         )
     }
     with tempfile.TemporaryDirectory(prefix="omarai-self-test-") as temporary:
@@ -196,8 +196,6 @@ def run_acceptance(
                 if live:
                     history: list[dict[str, str]] = []
                     question_specs = build_live_questions(product, custom_questions)
-                    previous_answer = ""
-                    previous_question = ""
                     for spec in question_specs:
                         question = spec["question"]
                         request_history = list(history) if spec.get("history_from_previous") else spec.get("history", [])
@@ -248,7 +246,6 @@ def run_acceptance(
                                 {"role": "user", "content": question},
                                 {"role": "assistant", "content": answer},
                             ]
-                        previous_question, previous_answer = question, answer
 
                 report["elapsed_seconds"] = round(time.monotonic() - started, 2)
                 destination = Path(output_path).expanduser()
