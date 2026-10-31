@@ -304,9 +304,10 @@ class LeadStore:
             raise ValueError("unsupported membership role")
         with self.connect() as db:
             exists = db.execute(
-                """SELECT 1 FROM tenants t JOIN users u
-                   WHERE t.id=? AND t.active=1 AND u.id=? AND u.active=1""",
-                (tenant, user_id),
+                """SELECT 1 FROM tenants t
+                   JOIN users u ON u.id=?
+                   WHERE t.id=? AND t.active=1 AND u.active=1""",
+                (user_id, tenant),
             ).fetchone()
             if not exists:
                 raise ValueError("active tenant and user are required")
