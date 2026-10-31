@@ -381,6 +381,51 @@ def _open_model_request(request: urllib.request.Request, timeout: float):
     opener = urllib.request.build_opener(_NoRedirectHandler)
     return opener.open(request, timeout=timeout)
 
+
+def _is_safe_model_base_url(value: str) -> bool:
+    """Require HTTPS for remote model providers; permit HTTP only on loopback."""
+    if not isinstance(value, str) or not value or any(ord(char) < 32 for char in value):
+        return False
+    try:
+        parsed = urllib.parse.urlsplit(value)
+        hostname = parsed.hostname
+        _ = parsed.port
+    except ValueError:
+        return False
+    if (
+        not hostname
+        or parsed.username is not None
+        or parsed.password is not None
+        or parsed.query
+        or parsed.fragment
+    ):
+        return False
+    if parsed.scheme == "https":
+        return True
+    if parsed.scheme != "http":
+        return False
+    if hostname.casefold() == "localhost":
+        return True
+    try:
+        return ipaddress.ip_address(hostname).is_loopback
+    except ValueError:
+        return False
+
+
+def _safe_model_provider_label(value: str) -> str:
+    """Expose only scheme/host/port in health output; never URL credentials or paths."""
+    try:
+        parsed = urllib.parse.urlsplit(value)
+        hostname = parsed.hostname
+        if not parsed.scheme or not hostname:
+            return "invalid_provider_url"
+        port = parsed.port
+    except (TypeError, ValueError):
+        return "invalid_provider_url"
+    display_host = f"[{hostname}]" if ":" in hostname else hostname
+    display_port = f":{port}" if port is not None else ""
+    return f"{parsed.scheme}://{display_host}{display_port}"
+
 def _clean_text(value: Any, limit: int) -> str:
     if not isinstance(value, str):
         return ""
@@ -636,9 +681,11 @@ class WebAgent:
                 os.getenv("OMARAI_LLM_API_KEY", "").strip()
                 or os.getenv("OPENROUTER_API_KEY", "").strip()
             ),
-            "language_model_provider": os.getenv(
-                "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
-            ).strip().rstrip("/"),
+            "language_model_provider": _safe_model_provider_label(
+                os.getenv("OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1")
+                .strip()
+                .rstrip("/")
+            ),
             "default_model": answer_model,
             "planner_model": planner_model,
             "answer_model": answer_model,
@@ -3138,6 +3185,19 @@ class WebAgent:
                 remote_response_received=False,
             )
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
+
+        if not _is_safe_model_base_url(self.base_url):
+            self._record_generation_diagnostic(
+                requested_model=requested_model,
+                attempted_model=requested_model,
+                status="unsafe_provider_url",
+                error_class="UnsafeProviderURL",
+                request_started=False,
+                remote_response_received=False,
+            )
+            raise RuntimeError(
+                "عنوان مزود النموذج يجب أن يستخدم HTTPS؛ HTTP مسموح فقط على loopback المحلي."
+            )
 
         model_candidates = [requested_model]
         if self.fallback_model and self.fallback_model not in model_candidates:
