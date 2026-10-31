@@ -68,8 +68,11 @@ def test_product_matching_uses_only_explicit_product_terms():
 
 
 def test_product_mention_does_not_create_demand_or_product_fit():
-    profile = ProductProfile(name="Fire Alarm Panel")
-    assert profile.matching_terms("The company sells fire alarm panels.") == ("Fire Alarm Panel",)
+    profile = ProductProfile(
+        name="Fire Alarm Panel",
+        aliases=("Fire Alarm Panels",),
+    )
+    assert profile.matching_terms("The company sells Fire Alarm Panels.") == ("Fire Alarm Panels",)
 
     signal = DemandSignal(
         signal_id="signal-1",
@@ -157,6 +160,51 @@ def test_market_profile_is_a_constraint_not_a_demand_signal():
     assert market.to_dict()["industries"] == ["construction", "manufacturing"]
     assert not hasattr(market, "purchase_probability")
 
+
+def test_buyer_query_generation_is_sector_neutral_and_product_anchored():
+    from agents.sales_domain import build_buyer_queries
+
+    vehicle = ProductProfile(name="سيارة كهربائية")
+    industrial = ProductProfile(name="نظام إنذار حريق صناعي")
+    vehicle_queries = build_buyer_queries(vehicle, locale="ar")
+    industrial_queries = build_buyer_queries(industrial, locale="ar")
+
+    assert vehicle_queries
+    assert industrial_queries
+    assert all("شقه" not in query and "تمليك" not in query for query in vehicle_queries)
+    assert all("شقه" not in query and "تمليك" not in query for query in industrial_queries)
+    assert any("سياره كهربائيه" in query for query in vehicle_queries)
+    assert any("نظام انذار حريق صناعي" in query for query in industrial_queries)
+
+
+def test_buyer_query_generation_uses_only_explicit_market_location():
+    from agents.sales_domain import build_buyer_queries
+
+    product = ProductProfile(name="FACP")
+    market = MarketProfile(locations=("Cairo", "Egypt"))
+    queries = build_buyer_queries(product, market, locale="en")
+
+    assert queries
+    assert all("Cairo Egypt" in query for query in queries)
+
+
+def test_buyer_query_generation_drops_unrelated_planner_queries():
+    from agents.sales_domain import build_buyer_queries
+
+    product = ProductProfile(name="industrial fire alarm", aliases=("FACP",))
+    queries = build_buyer_queries(
+        product,
+        locale="en",
+        existing_queries=(
+            "apartments for sale in Cairo",
+            "FACP procurement request",
+            "generic buying intent",
+        ),
+    )
+
+    assert any("FACP procurement request" in query for query in queries)
+    assert all("apartments" not in query for query in queries)
+    assert all("generic buying intent" not in query for query in queries)
 
 def test_demand_evidence_requires_an_absolute_http_url():
     with pytest.raises(ValueError, match="absolute HTTP"):
