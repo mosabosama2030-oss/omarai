@@ -597,7 +597,7 @@
 | [SRC-8D00DCEC0D-L000008](../../agents/sales_domain.py#L8) | 8 | `""` | — |
 | [SRC-8D00DCEC0D-L000009](../../agents/sales_domain.py#L9) | 9 | `"import re"` | — |
 | [SRC-8D00DCEC0D-L000010](../../agents/sales_domain.py#L10) | 10 | `"import unicodedata"` | — |
-| [SRC-8D00DCEC0D-L000011](../../agents/sales_domain.py#L11) | 11 | `"from dataclasses import asdict, dataclass"` | — |
+| [SRC-8D00DCEC0D-L000011](../../agents/sales_domain.py#L11) | 11 | `"from dataclasses import dataclass"` | — |
 | [SRC-8D00DCEC0D-L000012](../../agents/sales_domain.py#L12) | 12 | `"from datetime import date, datetime"` | — |
 | [SRC-8D00DCEC0D-L000013](../../agents/sales_domain.py#L13) | 13 | `"from enum import Enum"` | — |
 | [SRC-8D00DCEC0D-L000014](../../agents/sales_domain.py#L14) | 14 | `"from typing import Iterable"` | — |
