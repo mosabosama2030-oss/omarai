@@ -291,3 +291,29 @@ def test_owner_can_run_diagnostics_only_after_explicit_approval(
     assert status == 200
     assert result["overall_status"] == "passed"
     assert observed == {"test_model": True, "test_social": False}
+
+
+
+def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Viewer Agent Block", "viewer-agent-block")
+    user_id = store.create_user("viewer-agent@example.test", "Viewer")
+    store.add_membership(tenant_id, user_id, "viewer")
+    token = "viewer-agent-token-" + "W" * 32
+    store.create_api_token(token, tenant_id, user_id)
+
+    def unexpected_answer(*_args, **_kwargs):
+        pytest.fail("viewer must be denied before agent/model execution")
+
+    monkeypatch.setattr(WebAgent, "answer", unexpected_answer)
+    status, result = request_json(
+        base,
+        "/api/agent",
+        method="POST",
+        token=token,
+        payload={"question": "نفّذ بحثًا جديدًا"},
+    )
+    assert status == 403
+    assert "viewer" in result["error"]
