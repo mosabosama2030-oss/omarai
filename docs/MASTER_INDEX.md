@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **118**
-- ملفات Python المحللة: **72**
-- تعريفات Python المفهرسة: **1504**
-- تعريفات Python موثقة بوجود Docstring: **255**
-- تعريفات Python بلا Docstring: **945**
-- تعريفات لا ينطبق عليها Docstring: **304**
-- الرموز الساكنة الإضافية: **1867**
-- الأسطر النصية المفهرسة حرفيًا: **39780**
+- ملفات المستودع في الجرد: **119**
+- ملفات Python المحللة: **73**
+- تعريفات Python المفهرسة: **1631**
+- تعريفات Python موثقة بوجود Docstring: **267**
+- تعريفات Python بلا Docstring: **976**
+- تعريفات لا ينطبق عليها Docstring: **388**
+- الرموز الساكنة الإضافية: **1889**
+- الأسطر النصية المفهرسة حرفيًا: **40315**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -49,6 +49,7 @@
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 13446 | 326 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
+| FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 19239 | 535 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
@@ -356,6 +357,133 @@
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L45) | دالة | _has_resolved_dialogue_context | لا توجد Docstring. | ناقص | 45 | [SRC-60066C6786-L000045](../agents/research_pipeline.py#L45) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L56) | دالة | evaluate_research_evidence | Evaluate per-aspect candidates without equating relevance with claim truth. | موثق | 56 | [SRC-60066C6786-L000056](../agents/research_pipeline.py#L56) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L124) | دالة | build_research_pipeline | Run context→intent→task→aspects→queries→evidence as one auditable pipeline. | موثق | 124 | [SRC-60066C6786-L000124](../agents/research_pipeline.py#L124) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L18) | متغير/ثابت Python | MAX_NAME_LENGTH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-8D00DCEC0D-L000018](../agents/sales_domain.py#L18) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L19) | متغير/ثابت Python | MAX_TEXT_LENGTH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-8D00DCEC0D-L000019](../agents/sales_domain.py#L19) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L20) | متغير/ثابت Python | MAX_TERM_COUNT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-8D00DCEC0D-L000020](../agents/sales_domain.py#L20) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L21) | متغير/ثابت Python | _MAX_CATEGORY_DEPTH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-8D00DCEC0D-L000021](../agents/sales_domain.py#L21) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L23) | متغير/ثابت Python | _ARABIC_MARKS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-8D00DCEC0D-L000023](../agents/sales_domain.py#L23) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L24) | متغير/ثابت Python | _PUNCTUATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-8D00DCEC0D-L000024](../agents/sales_domain.py#L24) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L25) | متغير/ثابت Python | _SPACE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-8D00DCEC0D-L000025](../agents/sales_domain.py#L25) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L28) | كلاس | FactOrigin | لا توجد Docstring. | ناقص | 28 | [SRC-8D00DCEC0D-L000028](../agents/sales_domain.py#L28) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L29) | متغير/ثابت Python | FactOrigin.USER_PROVIDED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-8D00DCEC0D-L000029](../agents/sales_domain.py#L29) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L30) | متغير/ثابت Python | FactOrigin.SOURCE_VERIFIED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-8D00DCEC0D-L000030](../agents/sales_domain.py#L30) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L31) | متغير/ثابت Python | FactOrigin.INFERRED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 31 | [SRC-8D00DCEC0D-L000031](../agents/sales_domain.py#L31) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L32) | متغير/ثابت Python | FactOrigin.UNKNOWN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 32 | [SRC-8D00DCEC0D-L000032](../agents/sales_domain.py#L32) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L35) | كلاس | DemandSignalType | لا توجد Docstring. | ناقص | 35 | [SRC-8D00DCEC0D-L000035](../agents/sales_domain.py#L35) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L36) | متغير/ثابت Python | DemandSignalType.DIRECT_PURCHASE_REQUEST | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 36 | [SRC-8D00DCEC0D-L000036](../agents/sales_domain.py#L36) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L37) | متغير/ثابت Python | DemandSignalType.REQUEST_FOR_QUOTATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 37 | [SRC-8D00DCEC0D-L000037](../agents/sales_domain.py#L37) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L38) | متغير/ثابت Python | DemandSignalType.TENDER_OR_PROCUREMENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 38 | [SRC-8D00DCEC0D-L000038](../agents/sales_domain.py#L38) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L39) | متغير/ثابت Python | DemandSignalType.STATED_NEED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 39 | [SRC-8D00DCEC0D-L000039](../agents/sales_domain.py#L39) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L40) | متغير/ثابت Python | DemandSignalType.INDIRECT_INDICATOR | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 40 | [SRC-8D00DCEC0D-L000040](../agents/sales_domain.py#L40) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L41) | متغير/ثابت Python | DemandSignalType.ICP_MATCH_ONLY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 41 | [SRC-8D00DCEC0D-L000041](../agents/sales_domain.py#L41) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L42) | متغير/ثابت Python | DemandSignalType.NEGATED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 42 | [SRC-8D00DCEC0D-L000042](../agents/sales_domain.py#L42) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L43) | متغير/ثابت Python | DemandSignalType.CANCELLED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-8D00DCEC0D-L000043](../agents/sales_domain.py#L43) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L44) | متغير/ثابت Python | DemandSignalType.EXPIRED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 44 | [SRC-8D00DCEC0D-L000044](../agents/sales_domain.py#L44) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L45) | متغير/ثابت Python | DemandSignalType.CONFLICTING | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 45 | [SRC-8D00DCEC0D-L000045](../agents/sales_domain.py#L45) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L46) | متغير/ثابت Python | DemandSignalType.UNKNOWN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 46 | [SRC-8D00DCEC0D-L000046](../agents/sales_domain.py#L46) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L49) | كلاس | ProductFit | لا توجد Docstring. | ناقص | 49 | [SRC-8D00DCEC0D-L000049](../agents/sales_domain.py#L49) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L50) | متغير/ثابت Python | ProductFit.FIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 50 | [SRC-8D00DCEC0D-L000050](../agents/sales_domain.py#L50) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L51) | متغير/ثابت Python | ProductFit.NO_FIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 51 | [SRC-8D00DCEC0D-L000051](../agents/sales_domain.py#L51) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L52) | متغير/ثابت Python | ProductFit.UNASSESSED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 52 | [SRC-8D00DCEC0D-L000052](../agents/sales_domain.py#L52) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L55) | كلاس | EvidenceBasis | لا توجد Docstring. | ناقص | 55 | [SRC-8D00DCEC0D-L000055](../agents/sales_domain.py#L55) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L56) | متغير/ثابت Python | EvidenceBasis.PAGE_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 56 | [SRC-8D00DCEC0D-L000056](../agents/sales_domain.py#L56) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L57) | متغير/ثابت Python | EvidenceBasis.TITLE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 57 | [SRC-8D00DCEC0D-L000057](../agents/sales_domain.py#L57) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L58) | متغير/ثابت Python | EvidenceBasis.SEARCH_SNIPPET | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 58 | [SRC-8D00DCEC0D-L000058](../agents/sales_domain.py#L58) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L59) | متغير/ثابت Python | EvidenceBasis.OFFICIAL_DOCUMENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 59 | [SRC-8D00DCEC0D-L000059](../agents/sales_domain.py#L59) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L60) | متغير/ثابت Python | EvidenceBasis.USER_PROVIDED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 60 | [SRC-8D00DCEC0D-L000060](../agents/sales_domain.py#L60) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L63) | كلاس | IdentityStatus | لا توجد Docstring. | ناقص | 63 | [SRC-8D00DCEC0D-L000063](../agents/sales_domain.py#L63) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L64) | متغير/ثابت Python | IdentityStatus.VERIFIED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 64 | [SRC-8D00DCEC0D-L000064](../agents/sales_domain.py#L64) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L65) | متغير/ثابت Python | IdentityStatus.UNVERIFIED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 65 | [SRC-8D00DCEC0D-L000065](../agents/sales_domain.py#L65) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L66) | متغير/ثابت Python | IdentityStatus.UNKNOWN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 66 | [SRC-8D00DCEC0D-L000066](../agents/sales_domain.py#L66) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L69) | كلاس | SourceQuality | لا توجد Docstring. | ناقص | 69 | [SRC-8D00DCEC0D-L000069](../agents/sales_domain.py#L69) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L70) | متغير/ثابت Python | SourceQuality.PRIMARY_SOURCE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 70 | [SRC-8D00DCEC0D-L000070](../agents/sales_domain.py#L70) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L71) | متغير/ثابت Python | SourceQuality.SECONDARY_SOURCE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 71 | [SRC-8D00DCEC0D-L000071](../agents/sales_domain.py#L71) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L72) | متغير/ثابت Python | SourceQuality.SNIPPET_ONLY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 72 | [SRC-8D00DCEC0D-L000072](../agents/sales_domain.py#L72) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L73) | متغير/ثابت Python | SourceQuality.PAGE_UNREAD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 73 | [SRC-8D00DCEC0D-L000073](../agents/sales_domain.py#L73) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L74) | متغير/ثابت Python | SourceQuality.UNKNOWN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 74 | [SRC-8D00DCEC0D-L000074](../agents/sales_domain.py#L74) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L77) | كلاس | FreshnessStatus | لا توجد Docstring. | ناقص | 77 | [SRC-8D00DCEC0D-L000077](../agents/sales_domain.py#L77) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L78) | متغير/ثابت Python | FreshnessStatus.CURRENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 78 | [SRC-8D00DCEC0D-L000078](../agents/sales_domain.py#L78) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L79) | متغير/ثابت Python | FreshnessStatus.STALE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 79 | [SRC-8D00DCEC0D-L000079](../agents/sales_domain.py#L79) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L80) | متغير/ثابت Python | FreshnessStatus.UNKNOWN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 80 | [SRC-8D00DCEC0D-L000080](../agents/sales_domain.py#L80) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L83) | كلاس | ContactabilityStatus | لا توجد Docstring. | ناقص | 83 | [SRC-8D00DCEC0D-L000083](../agents/sales_domain.py#L83) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L84) | متغير/ثابت Python | ContactabilityStatus.PUBLIC_CHANNEL_AVAILABLE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 84 | [SRC-8D00DCEC0D-L000084](../agents/sales_domain.py#L84) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L85) | متغير/ثابت Python | ContactabilityStatus.NOT_FOUND | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 85 | [SRC-8D00DCEC0D-L000085](../agents/sales_domain.py#L85) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L86) | متغير/ثابت Python | ContactabilityStatus.NOT_ASSESSED | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 86 | [SRC-8D00DCEC0D-L000086](../agents/sales_domain.py#L86) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L89) | دالة | normalize_text | Normalize Arabic/Latin text for deterministic matching, not for display. | موثق | 89 | [SRC-8D00DCEC0D-L000089](../agents/sales_domain.py#L89) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L111) | دالة | _clean_text | لا توجد Docstring. | ناقص | 111 | [SRC-8D00DCEC0D-L000111](../agents/sales_domain.py#L111) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L122) | دالة | _clean_terms | لا توجد Docstring. | ناقص | 122 | [SRC-8D00DCEC0D-L000122](../agents/sales_domain.py#L122) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L143) | دالة | _clean_path | لا توجد Docstring. | ناقص | 143 | [SRC-8D00DCEC0D-L000143](../agents/sales_domain.py#L143) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L150) | دالة | _enum_value | لا توجد Docstring. | ناقص | 150 | [SRC-8D00DCEC0D-L000150](../agents/sales_domain.py#L150) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L158) | دالة | _validate_optional_date | لا توجد Docstring. | ناقص | 158 | [SRC-8D00DCEC0D-L000158](../agents/sales_domain.py#L158) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L171) | دالة | _validate_optional_datetime | لا توجد Docstring. | ناقص | 171 | [SRC-8D00DCEC0D-L000171](../agents/sales_domain.py#L171) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L184) | دالة | _validate_http_url | لا توجد Docstring. | ناقص | 184 | [SRC-8D00DCEC0D-L000184](../agents/sales_domain.py#L184) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L194) | دالة | _contains_phrase | لا توجد Docstring. | ناقص | 194 | [SRC-8D00DCEC0D-L000194](../agents/sales_domain.py#L194) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L208) | كلاس | ProductFact | One product attribute with an explicit origin and optional evidence pointer. | موثق | 208 | [SRC-8D00DCEC0D-L000208](../agents/sales_domain.py#L208) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L211) | متغير/ثابت Python | ProductFact.field | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 211 | [SRC-8D00DCEC0D-L000211](../agents/sales_domain.py#L211) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L212) | متغير/ثابت Python | ProductFact.value | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 212 | [SRC-8D00DCEC0D-L000212](../agents/sales_domain.py#L212) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L213) | متغير/ثابت Python | ProductFact.origin | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 213 | [SRC-8D00DCEC0D-L000213](../agents/sales_domain.py#L213) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L214) | متغير/ثابت Python | ProductFact.evidence_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 214 | [SRC-8D00DCEC0D-L000214](../agents/sales_domain.py#L214) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L216) | دالة | ProductFact.__post_init__ | لا توجد Docstring. | ناقص | 216 | [SRC-8D00DCEC0D-L000216](../agents/sales_domain.py#L216) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L233) | دالة | ProductFact.to_dict | لا توجد Docstring. | ناقص | 233 | [SRC-8D00DCEC0D-L000233](../agents/sales_domain.py#L233) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L243) | كلاس | ProductProfile | Explicit product/service facts supplied by a user or supported by sources. | موثق | 243 | [SRC-8D00DCEC0D-L000243](../agents/sales_domain.py#L243) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L246) | متغير/ثابت Python | ProductProfile.name | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 246 | [SRC-8D00DCEC0D-L000246](../agents/sales_domain.py#L246) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L247) | متغير/ثابت Python | ProductProfile.aliases | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 247 | [SRC-8D00DCEC0D-L000247](../agents/sales_domain.py#L247) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L248) | متغير/ثابت Python | ProductProfile.category_path | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 248 | [SRC-8D00DCEC0D-L000248](../agents/sales_domain.py#L248) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L249) | متغير/ثابت Python | ProductProfile.use_cases | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 249 | [SRC-8D00DCEC0D-L000249](../agents/sales_domain.py#L249) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L250) | متغير/ثابت Python | ProductProfile.problems_solved | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 250 | [SRC-8D00DCEC0D-L000250](../agents/sales_domain.py#L250) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L251) | متغير/ثابت Python | ProductProfile.facts | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 251 | [SRC-8D00DCEC0D-L000251](../agents/sales_domain.py#L251) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L253) | دالة | ProductProfile.__post_init__ | لا توجد Docstring. | ناقص | 253 | [SRC-8D00DCEC0D-L000253](../agents/sales_domain.py#L253) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L273) | دالة | ProductProfile.matching_terms | Return explicitly configured product terms mentioned in text. | موثق | 273 | [SRC-8D00DCEC0D-L000273](../agents/sales_domain.py#L273) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L281) | دالة | ProductProfile.to_dict | لا توجد Docstring. | ناقص | 281 | [SRC-8D00DCEC0D-L000281](../agents/sales_domain.py#L281) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L293) | كلاس | MarketProfile | Target-market constraints; matching an ICP is not evidence of purchase intent. | موثق | 293 | [SRC-8D00DCEC0D-L000293](../agents/sales_domain.py#L293) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L296) | متغير/ثابت Python | MarketProfile.locations | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 296 | [SRC-8D00DCEC0D-L000296](../agents/sales_domain.py#L296) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L297) | متغير/ثابت Python | MarketProfile.industries | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 297 | [SRC-8D00DCEC0D-L000297](../agents/sales_domain.py#L297) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L298) | متغير/ثابت Python | MarketProfile.customer_types | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 298 | [SRC-8D00DCEC0D-L000298](../agents/sales_domain.py#L298) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L299) | متغير/ثابت Python | MarketProfile.decision_roles | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 299 | [SRC-8D00DCEC0D-L000299](../agents/sales_domain.py#L299) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L300) | متغير/ثابت Python | MarketProfile.exclusions | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 300 | [SRC-8D00DCEC0D-L000300](../agents/sales_domain.py#L300) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L302) | دالة | MarketProfile.__post_init__ | لا توجد Docstring. | ناقص | 302 | [SRC-8D00DCEC0D-L000302](../agents/sales_domain.py#L302) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L310) | دالة | MarketProfile.to_dict | لا توجد Docstring. | ناقص | 310 | [SRC-8D00DCEC0D-L000310](../agents/sales_domain.py#L310) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L318) | كلاس | TaxonomyCategory | A caller-defined taxonomy node; no sector is hard-coded in the matcher. | موثق | 318 | [SRC-8D00DCEC0D-L000318](../agents/sales_domain.py#L318) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L321) | متغير/ثابت Python | TaxonomyCategory.path | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 321 | [SRC-8D00DCEC0D-L000321](../agents/sales_domain.py#L321) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L322) | متغير/ثابت Python | TaxonomyCategory.aliases | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 322 | [SRC-8D00DCEC0D-L000322](../agents/sales_domain.py#L322) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L324) | دالة | TaxonomyCategory.__post_init__ | لا توجد Docstring. | ناقص | 324 | [SRC-8D00DCEC0D-L000324](../agents/sales_domain.py#L324) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L332) | كلاس | ProductTaxonomy | Extensible taxonomy supplied by configuration or a verified product catalogue. | موثق | 332 | [SRC-8D00DCEC0D-L000332](../agents/sales_domain.py#L332) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L335) | متغير/ثابت Python | ProductTaxonomy.categories | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 335 | [SRC-8D00DCEC0D-L000335](../agents/sales_domain.py#L335) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L337) | دالة | ProductTaxonomy.__post_init__ | لا توجد Docstring. | ناقص | 337 | [SRC-8D00DCEC0D-L000337](../agents/sales_domain.py#L337) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L344) | دالة | ProductTaxonomy.match_categories | Return all explicit taxonomy matches; never choose a winner by guessing. | موثق | 344 | [SRC-8D00DCEC0D-L000344](../agents/sales_domain.py#L344) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L353) | دالة | ProductTaxonomy.to_list | لا توجد Docstring. | ناقص | 353 | [SRC-8D00DCEC0D-L000353](../agents/sales_domain.py#L353) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L361) | كلاس | DemandEvidence | Source provenance for a demand signal; dates remain distinct and optional. | موثق | 361 | [SRC-8D00DCEC0D-L000361](../agents/sales_domain.py#L361) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L364) | متغير/ثابت Python | DemandEvidence.source_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 364 | [SRC-8D00DCEC0D-L000364](../agents/sales_domain.py#L364) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L365) | متغير/ثابت Python | DemandEvidence.source_url | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 365 | [SRC-8D00DCEC0D-L000365](../agents/sales_domain.py#L365) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L366) | متغير/ثابت Python | DemandEvidence.excerpt | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 366 | [SRC-8D00DCEC0D-L000366](../agents/sales_domain.py#L366) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L367) | متغير/ثابت Python | DemandEvidence.content_basis | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 367 | [SRC-8D00DCEC0D-L000367](../agents/sales_domain.py#L367) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L368) | متغير/ثابت Python | DemandEvidence.publication_date | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 368 | [SRC-8D00DCEC0D-L000368](../agents/sales_domain.py#L368) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L369) | متغير/ثابت Python | DemandEvidence.event_date | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 369 | [SRC-8D00DCEC0D-L000369](../agents/sales_domain.py#L369) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L370) | متغير/ثابت Python | DemandEvidence.observed_at | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 370 | [SRC-8D00DCEC0D-L000370](../agents/sales_domain.py#L370) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L371) | متغير/ثابت Python | DemandEvidence.page_read | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 371 | [SRC-8D00DCEC0D-L000371](../agents/sales_domain.py#L371) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L373) | دالة | DemandEvidence.__post_init__ | لا توجد Docstring. | ناقص | 373 | [SRC-8D00DCEC0D-L000373](../agents/sales_domain.py#L373) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L412) | دالة | DemandEvidence.to_dict | لا توجد Docstring. | ناقص | 412 | [SRC-8D00DCEC0D-L000412](../agents/sales_domain.py#L412) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L426) | كلاس | DemandSignal | A classified demand signal, kept independent from product-fit assessment. | موثق | 426 | [SRC-8D00DCEC0D-L000426](../agents/sales_domain.py#L426) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L429) | متغير/ثابت Python | DemandSignal.signal_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 429 | [SRC-8D00DCEC0D-L000429](../agents/sales_domain.py#L429) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L430) | متغير/ثابت Python | DemandSignal.signal_type | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 430 | [SRC-8D00DCEC0D-L000430](../agents/sales_domain.py#L430) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L431) | متغير/ثابت Python | DemandSignal.evidence | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 431 | [SRC-8D00DCEC0D-L000431](../agents/sales_domain.py#L431) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L432) | متغير/ثابت Python | DemandSignal.product_fit | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 432 | [SRC-8D00DCEC0D-L000432](../agents/sales_domain.py#L432) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L433) | متغير/ثابت Python | DemandSignal.identity_status | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 433 | [SRC-8D00DCEC0D-L000433](../agents/sales_domain.py#L433) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L434) | متغير/ثابت Python | DemandSignal.classification_reason | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 434 | [SRC-8D00DCEC0D-L000434](../agents/sales_domain.py#L434) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L435) | متغير/ثابت Python | DemandSignal.product_fit_reason | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 435 | [SRC-8D00DCEC0D-L000435](../agents/sales_domain.py#L435) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L437) | دالة | DemandSignal.__post_init__ | لا توجد Docstring. | ناقص | 437 | [SRC-8D00DCEC0D-L000437](../agents/sales_domain.py#L437) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L471) | دالة | DemandSignal.to_dict | لا توجد Docstring. | ناقص | 471 | [SRC-8D00DCEC0D-L000471](../agents/sales_domain.py#L471) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L484) | كلاس | LeadQualification | Independent qualification dimensions; deliberately contains no purchase score. | موثق | 484 | [SRC-8D00DCEC0D-L000484](../agents/sales_domain.py#L484) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L487) | متغير/ثابت Python | LeadQualification.signal_id | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 487 | [SRC-8D00DCEC0D-L000487](../agents/sales_domain.py#L487) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L488) | متغير/ثابت Python | LeadQualification.product_fit | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 488 | [SRC-8D00DCEC0D-L000488](../agents/sales_domain.py#L488) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L489) | متغير/ثابت Python | LeadQualification.source_quality | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 489 | [SRC-8D00DCEC0D-L000489](../agents/sales_domain.py#L489) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L490) | متغير/ثابت Python | LeadQualification.freshness | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 490 | [SRC-8D00DCEC0D-L000490](../agents/sales_domain.py#L490) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L491) | متغير/ثابت Python | LeadQualification.identity_status | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 491 | [SRC-8D00DCEC0D-L000491](../agents/sales_domain.py#L491) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L492) | متغير/ثابت Python | LeadQualification.contactability | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 492 | [SRC-8D00DCEC0D-L000492](../agents/sales_domain.py#L492) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L493) | متغير/ثابت Python | LeadQualification.missing_information | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 493 | [SRC-8D00DCEC0D-L000493](../agents/sales_domain.py#L493) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L495) | دالة | LeadQualification.__post_init__ | لا توجد Docstring. | ناقص | 495 | [SRC-8D00DCEC0D-L000495](../agents/sales_domain.py#L495) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L519) | دالة | LeadQualification.to_dict | لا توجد Docstring. | ناقص | 519 | [SRC-8D00DCEC0D-L000519](../agents/sales_domain.py#L519) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L531) | دالة | to_json_dict | Serialize a supported domain object without silently dropping evidence fields. | موثق | 531 | [SRC-8D00DCEC0D-L000531](../agents/sales_domain.py#L531) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1819,6 +1947,28 @@
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TASK_ASPECTS | 16 | [SRC-60066C6786-L000016](../agents/research_pipeline.py#L16) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_QUESTION_CHARS | 21 | [SRC-60066C6786-L000021](../agents/research_pipeline.py#L21) |
 | [agents/research_pipeline.py](../agents/research_pipeline.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PIPELINE_SOURCES | 22 | [SRC-60066C6786-L000022](../agents/research_pipeline.py#L22) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_NAME_LENGTH | 18 | [SRC-8D00DCEC0D-L000018](../agents/sales_domain.py#L18) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT_LENGTH | 19 | [SRC-8D00DCEC0D-L000019](../agents/sales_domain.py#L19) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TERM_COUNT | 20 | [SRC-8D00DCEC0D-L000020](../agents/sales_domain.py#L20) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_PROVIDED | 29 | [SRC-8D00DCEC0D-L000029](../agents/sales_domain.py#L29) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_VERIFIED | 30 | [SRC-8D00DCEC0D-L000030](../agents/sales_domain.py#L30) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DIRECT_PURCHASE_REQUEST | 36 | [SRC-8D00DCEC0D-L000036](../agents/sales_domain.py#L36) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L37) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_FOR_QUOTATION | 37 | [SRC-8D00DCEC0D-L000037](../agents/sales_domain.py#L37) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TENDER_OR_PROCUREMENT | 38 | [SRC-8D00DCEC0D-L000038](../agents/sales_domain.py#L38) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L39) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | STATED_NEED | 39 | [SRC-8D00DCEC0D-L000039](../agents/sales_domain.py#L39) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDIRECT_INDICATOR | 40 | [SRC-8D00DCEC0D-L000040](../agents/sales_domain.py#L40) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ICP_MATCH_ONLY | 41 | [SRC-8D00DCEC0D-L000041](../agents/sales_domain.py#L41) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NO_FIT | 51 | [SRC-8D00DCEC0D-L000051](../agents/sales_domain.py#L51) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PAGE_TEXT | 56 | [SRC-8D00DCEC0D-L000056](../agents/sales_domain.py#L56) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SNIPPET | 58 | [SRC-8D00DCEC0D-L000058](../agents/sales_domain.py#L58) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OFFICIAL_DOCUMENT | 59 | [SRC-8D00DCEC0D-L000059](../agents/sales_domain.py#L59) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIMARY_SOURCE | 70 | [SRC-8D00DCEC0D-L000070](../agents/sales_domain.py#L70) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L71) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SECONDARY_SOURCE | 71 | [SRC-8D00DCEC0D-L000071](../agents/sales_domain.py#L71) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L72) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SNIPPET_ONLY | 72 | [SRC-8D00DCEC0D-L000072](../agents/sales_domain.py#L72) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L73) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PAGE_UNREAD | 73 | [SRC-8D00DCEC0D-L000073](../agents/sales_domain.py#L73) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_CHANNEL_AVAILABLE | 84 | [SRC-8D00DCEC0D-L000084](../agents/sales_domain.py#L84) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L85) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_FOUND | 85 | [SRC-8D00DCEC0D-L000085](../agents/sales_domain.py#L85) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_ASSESSED | 86 | [SRC-8D00DCEC0D-L000086](../agents/sales_domain.py#L86) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
