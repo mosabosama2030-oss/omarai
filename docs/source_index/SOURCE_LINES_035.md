@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000059 إلى SRC-B3062EB677-L000140
+- النطاق: SRC-6A7519AC10-L000057 إلى SRC-B3062EB677-L000138
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000057](../../tests/test_answer_quality_comparison.py#L57) | 57 | `"    if request_cost is not None:"` | — |
+| [SRC-6A7519AC10-L000058](../../tests/test_answer_quality_comparison.py#L58) | 58 | `"        row[\"request_cost_usd\"] = request_cost"` | — |
 | [SRC-6A7519AC10-L000059](../../tests/test_answer_quality_comparison.py#L59) | 59 | `"    return row"` | — |
 | [SRC-6A7519AC10-L000060](../../tests/test_answer_quality_comparison.py#L60) | 60 | `""` | — |
 | [SRC-6A7519AC10-L000061](../../tests/test_answer_quality_comparison.py#L61) | 61 | `""` | — |
@@ -850,5 +852,3 @@
 | [SRC-B3062EB677-L000136](../../tests/test_answer_quality_runner.py#L136) | 136 | `"    assert payload[\"build_sha_verification\"] == \"confirmed_by_api_health\""` | — |
 | [SRC-B3062EB677-L000137](../../tests/test_answer_quality_runner.py#L137) | 137 | `""` | — |
 | [SRC-B3062EB677-L000138](../../tests/test_answer_quality_runner.py#L138) | 138 | `""` | — |
-| [SRC-B3062EB677-L000139](../../tests/test_answer_quality_runner.py#L139) | 139 | `"def test_validate_base_url_rejects_non_loopback_http():"` | — |
-| [SRC-B3062EB677-L000140](../../tests/test_answer_quality_runner.py#L140) | 140 | `"    mod = _load_runner()"` | — |

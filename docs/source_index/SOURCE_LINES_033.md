@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000245 إلى SRC-90FAA34ADE-L001044
+- النطاق: SRC-90FAA34ADE-L000243 إلى SRC-90FAA34ADE-L001042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000243](../../tests/fixtures/answer_quality_cases.json#L243) | 243 | `"      \"case_id\": \"AQ-010\","` | — |
+| [SRC-90FAA34ADE-L000244](../../tests/fixtures/answer_quality_cases.json#L244) | 244 | `"      \"category\": \"multi_subquestions\","` | — |
 | [SRC-90FAA34ADE-L000245](../../tests/fixtures/answer_quality_cases.json#L245) | 245 | `"      \"language\": \"mixed\","` | — |
 | [SRC-90FAA34ADE-L000246](../../tests/fixtures/answer_quality_cases.json#L246) | 246 | `"      \"question\": \"Compare public EV incentives in Egypt vs UAE briefly, and list one official source for each if available.\","` | — |
 | [SRC-90FAA34ADE-L000247](../../tests/fixtures/answer_quality_cases.json#L247) | 247 | `"      \"expected_strategy\": \"web_search\","` | — |
@@ -814,5 +816,3 @@
 | [SRC-90FAA34ADE-L001040](../../tests/fixtures/answer_quality_cases.json#L1040) | 1040 | `"          {"` | — |
 | [SRC-90FAA34ADE-L001041](../../tests/fixtures/answer_quality_cases.json#L1041) | 1041 | `"            \"title\": \"Blog B\","` | — |
 | [SRC-90FAA34ADE-L001042](../../tests/fixtures/answer_quality_cases.json#L1042) | 1042 | `"            \"url\": \"https://blog-b.example.test/stop\","` | — |
-| [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
-| [SRC-90FAA34ADE-L001044](../../tests/fixtures/answer_quality_cases.json#L1044) | 1044 | `"            \"domain\": \"blog-b.example.test\","` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **83**
-- النطاق: SRC-DE7EABE998-L000449 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **135**
+- النطاق: SRC-DE7EABE998-L000397 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,58 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000397](../../web/agent.html#L397) | 397 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
+| [SRC-DE7EABE998-L000398](../../web/agent.html#L398) | 398 | `" try{"` | — |
+| [SRC-DE7EABE998-L000399](../../web/agent.html#L399) | 399 | `"  const response=await fetch(\"/api/agent\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});"` | — |
+| [SRC-DE7EABE998-L000400](../../web/agent.html#L400) | 400 | `"  const data=await response.json().catch(()=>({}));"` | — |
+| [SRC-DE7EABE998-L000401](../../web/agent.html#L401) | 401 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000402](../../web/agent.html#L402) | 402 | `"  if(!response.ok){"` | — |
+| [SRC-DE7EABE998-L000403](../../web/agent.html#L403) | 403 | `"   if(response.status===401)throw Error(\"رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف.\");"` | — |
+| [SRC-DE7EABE998-L000404](../../web/agent.html#L404) | 404 | `"   if(response.status===429)throw Error(\"تجاوز حد الطلبات المؤقت. انتظر قليلًا ثم أعد المحاولة.\");"` | — |
+| [SRC-DE7EABE998-L000405](../../web/agent.html#L405) | 405 | `"   throw Error(data.error\|\|\"تعذر إكمال البحث. أعد المحاولة بعد التحقق من الاتصال.\");"` | — |
+| [SRC-DE7EABE998-L000406](../../web/agent.html#L406) | 406 | `"  }"` | — |
+| [SRC-DE7EABE998-L000407](../../web/agent.html#L407) | 407 | `"  addMessage(\"assistant\",data.answer\|\|\"لم يرجع الخادم نص إجابة.\",data);"` | — |
+| [SRC-DE7EABE998-L000408](../../web/agent.html#L408) | 408 | `"  history.push({role:\"user\",content:q},{role:\"assistant\",content:String(data.answer\|\|\"\")});"` | — |
+| [SRC-DE7EABE998-L000409](../../web/agent.html#L409) | 409 | `"  const sources=Array.isArray(data.sources)?data.sources.filter(s=>s&&safeSourceUrl(s.url)):[];"` | — |
+| [SRC-DE7EABE998-L000410](../../web/agent.html#L410) | 410 | `"  if(data.kind===\"general_answer\"){"` | — |
+| [SRC-DE7EABE998-L000411](../../web/agent.html#L411) | 411 | `"   setStatus(\"اكتملت إجابة المعرفة العامة دون بحث ويب\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000412](../../web/agent.html#L412) | 412 | `"  }else if(data.kind===\"capability_answer\"){"` | — |
+| [SRC-DE7EABE998-L000413](../../web/agent.html#L413) | 413 | `"   setStatus(\"إجابة عن قدرات Omarai وحدوده · لم يُجر بحث حي\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000414](../../web/agent.html#L414) | 414 | `"  }else if(data.used_web_search===true&&data.used_language_model===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000415](../../web/agent.html#L415) | 415 | `"   setStatus(\"اكتمل البحث والتحليل · \"+sources.length+\" مصدرًا صالحًا\",\"ok\");"` | — |
+| [SRC-DE7EABE998-L000416](../../web/agent.html#L416) | 416 | `"  }else if(data.used_web_search===true&&sources.length>0){"` | — |
+| [SRC-DE7EABE998-L000417](../../web/agent.html#L417) | 417 | `"   setStatus(\"البحث أعاد مصادر، لكن التحليل غير مكتمل\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000418](../../web/agent.html#L418) | 418 | `"  }else{"` | — |
+| [SRC-DE7EABE998-L000419](../../web/agent.html#L419) | 419 | `"   setStatus(\"نتيجة جزئية: لا يوجد بحث حي مؤكد مع مصادر كافية\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000420](../../web/agent.html#L420) | 420 | `"  }"` | — |
+| [SRC-DE7EABE998-L000421](../../web/agent.html#L421) | 421 | `" }catch(error){"` | — |
+| [SRC-DE7EABE998-L000422](../../web/agent.html#L422) | 422 | `"  pending.remove();"` | — |
+| [SRC-DE7EABE998-L000423](../../web/agent.html#L423) | 423 | `"  const safeMessage=error&&error.message?error.message:\"تعذر إكمال الطلب.\";"` | — |
+| [SRC-DE7EABE998-L000424](../../web/agent.html#L424) | 424 | `"  const box=addMessage(\"assistant\",safeMessage,null,{question:q});"` | — |
+| [SRC-DE7EABE998-L000425](../../web/agent.html#L425) | 425 | `"  const actions=document.createElement(\"div\");actions.className=\"retry-row\";"` | — |
+| [SRC-DE7EABE998-L000426](../../web/agent.html#L426) | 426 | `"  const retry=document.createElement(\"button\");retry.type=\"button\";retry.className=\"retry-button\";"` | — |
+| [SRC-DE7EABE998-L000427](../../web/agent.html#L427) | 427 | `"  retry.textContent=\"إعادة محاولة هذا السؤال\";"` | — |
+| [SRC-DE7EABE998-L000428](../../web/agent.html#L428) | 428 | `"  retry.addEventListener(\"click\",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);"` | — |
+| [SRC-DE7EABE998-L000429](../../web/agent.html#L429) | 429 | `"  setStatus(\"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه\",\"bad\");"` | — |
+| [SRC-DE7EABE998-L000430](../../web/agent.html#L430) | 430 | `" }finally{"` | — |
+| [SRC-DE7EABE998-L000431](../../web/agent.html#L431) | 431 | `"  setBusy(false);$(\"question\").focus();"` | — |
+| [SRC-DE7EABE998-L000432](../../web/agent.html#L432) | 432 | `" }"` | — |
+| [SRC-DE7EABE998-L000433](../../web/agent.html#L433) | 433 | `"}"` | — |
+| [SRC-DE7EABE998-L000434](../../web/agent.html#L434) | 434 | `"async function runDiagnostics(){"` | — |
+| [SRC-DE7EABE998-L000435](../../web/agent.html#L435) | 435 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |
+| [SRC-DE7EABE998-L000436](../../web/agent.html#L436) | 436 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
+| [SRC-DE7EABE998-L000437](../../web/agent.html#L437) | 437 | `" try{"` | — |
+| [SRC-DE7EABE998-L000438](../../web/agent.html#L438) | 438 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
+| [SRC-DE7EABE998-L000439](../../web/agent.html#L439) | 439 | `"  const data=await response.json();if(!response.ok)throw Error(data.error\|\|\"فشل طلب الاختبار\");"` | — |
+| [SRC-DE7EABE998-L000440](../../web/agent.html#L440) | 440 | `"  const labels={passed:\"نجح فعليًا\",degraded:\"جزئي أو بلا نتائج كافية\",failed:\"فشل\",skipped:\"لم يُختبر\",not_configured:\"غير مضبوط\"};"` | — |
+| [SRC-DE7EABE998-L000441](../../web/agent.html#L441) | 441 | `"  const lines=[\"النتيجة: \"+(labels[data.overall_status]\|\|data.overall_status)];"` | — |
+| [SRC-DE7EABE998-L000442](../../web/agent.html#L442) | 442 | `"  for(const [key,label] of [[\"web_search\",\"بحث الإنترنت\"],[\"language_model\",\"النموذج اللغوي\"],[\"social_search\",\"المصادر الاجتماعية\"]]){"` | — |
+| [SRC-DE7EABE998-L000443](../../web/agent.html#L443) | 443 | `"   const item=(data.checks\|\|{})[key];if(!item)continue;"` | — |
+| [SRC-DE7EABE998-L000444](../../web/agent.html#L444) | 444 | `"   lines.push(label+\": \"+(labels[item.status]\|\|item.status)+(item.result_count!==undefined?\" · \"+item.result_count+\" نتيجة\":\"\"));"` | — |
+| [SRC-DE7EABE998-L000445](../../web/agent.html#L445) | 445 | `"   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push(\"المصادر التي أعادت نتائج: \"+Object.entries(item.provider_counts).map(([p,n])=>p+\" (\"+n+\")\").join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000446](../../web/agent.html#L446) | 446 | `"   if(item.note)lines.push(item.note);"` | — |
+| [SRC-DE7EABE998-L000447](../../web/agent.html#L447) | 447 | `"   if(item.warnings&&item.warnings.length)lines.push(item.warnings.join(\"؛ \"));"` | — |
+| [SRC-DE7EABE998-L000448](../../web/agent.html#L448) | 448 | `"  }"` | — |
 | [SRC-DE7EABE998-L000449](../../web/agent.html#L449) | 449 | `"  if(data.model_usage&&data.model_usage.length)lines.push(\"النموذج المستخدم: \"+data.model_usage.map(x=>x.used_model).join(\"، \"));"` | — |
 | [SRC-DE7EABE998-L000450](../../web/agent.html#L450) | 450 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
 | [SRC-DE7EABE998-L000451](../../web/agent.html#L451) | 451 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |

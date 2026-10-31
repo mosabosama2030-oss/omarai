@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000169 إلى SRC-90FAA34ADE-L000244
+- النطاق: SRC-03FF422A16-L000167 إلى SRC-90FAA34ADE-L000242
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000167](../../scripts/score_answer_quality_reviews.py#L167) | 167 | `"            retrieval_cases.add(case_id)"` | — |
+| [SRC-03FF422A16-L000168](../../scripts/score_answer_quality_reviews.py#L168) | 168 | `"        faithfulness = item.get(\"faithfulness\")"` | — |
 | [SRC-03FF422A16-L000169](../../scripts/score_answer_quality_reviews.py#L169) | 169 | `"        if isinstance(faithfulness, dict):"` | — |
 | [SRC-03FF422A16-L000170](../../scripts/score_answer_quality_reviews.py#L170) | 170 | `"            faithfulness_supported += faithfulness[\"supported_claims\"]"` | — |
 | [SRC-03FF422A16-L000171](../../scripts/score_answer_quality_reviews.py#L171) | 171 | `"            faithfulness_total += faithfulness[\"reviewed_claims\"]"` | — |
@@ -841,5 +843,3 @@
 | [SRC-90FAA34ADE-L000240](../../tests/fixtures/answer_quality_cases.json#L240) | 240 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L000241](../../tests/fixtures/answer_quality_cases.json#L241) | 241 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000242](../../tests/fixtures/answer_quality_cases.json#L242) | 242 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000243](../../tests/fixtures/answer_quality_cases.json#L243) | 243 | `"      \"case_id\": \"AQ-010\","` | — |
-| [SRC-90FAA34ADE-L000244](../../tests/fixtures/answer_quality_cases.json#L244) | 244 | `"      \"category\": \"multi_subquestions\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000141 إلى SRC-3451CC474D-L000157
+- النطاق: SRC-B3062EB677-L000139 إلى SRC-3451CC474D-L000155
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000139](../../tests/test_answer_quality_runner.py#L139) | 139 | `"def test_validate_base_url_rejects_non_loopback_http():"` | — |
+| [SRC-B3062EB677-L000140](../../tests/test_answer_quality_runner.py#L140) | 140 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000141](../../tests/test_answer_quality_runner.py#L141) | 141 | `"    with pytest.raises(ValueError, match=\"Plain HTTP\"):"` | — |
 | [SRC-B3062EB677-L000142](../../tests/test_answer_quality_runner.py#L142) | 142 | `"        mod.validate_base_url(\"http://research.example\")"` | — |
 | [SRC-B3062EB677-L000143](../../tests/test_answer_quality_runner.py#L143) | 143 | `""` | — |
@@ -841,5 +843,3 @@
 | [SRC-3451CC474D-L000153](../../tests/test_api.py#L153) | 153 | `"            \"text\": \"بدور على شقة\", \"source_url\": \"file:///private/data\", \"platform\": \"manual\""` | — |
 | [SRC-3451CC474D-L000154](../../tests/test_api.py#L154) | 154 | `"        }"` | — |
 | [SRC-3451CC474D-L000155](../../tests/test_api.py#L155) | 155 | `"    )"` | — |
-| [SRC-3451CC474D-L000156](../../tests/test_api.py#L156) | 156 | `"    assert status == 400"` | — |
-| [SRC-3451CC474D-L000157](../../tests/test_api.py#L157) | 157 | `"    assert \"absolute\" in error[\"error\"]"` | — |

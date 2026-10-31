@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000158 إلى SRC-3451CC474D-L000957
+- النطاق: SRC-3451CC474D-L000156 إلى SRC-3451CC474D-L000955
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000156](../../tests/test_api.py#L156) | 156 | `"    assert status == 400"` | — |
+| [SRC-3451CC474D-L000157](../../tests/test_api.py#L157) | 157 | `"    assert \"absolute\" in error[\"error\"]"` | — |
 | [SRC-3451CC474D-L000158](../../tests/test_api.py#L158) | 158 | `""` | — |
 | [SRC-3451CC474D-L000159](../../tests/test_api.py#L159) | 159 | `""` | — |
 | [SRC-3451CC474D-L000160](../../tests/test_api.py#L160) | 160 | `"def test_api_blocks_non_json_and_cross_origin_posts(local_api, monkeypatch):"` | — |
@@ -814,5 +816,3 @@
 | [SRC-3451CC474D-L000953](../../tests/test_api.py#L953) | 953 | `"            document,"` | — |
 | [SRC-3451CC474D-L000954](../../tests/test_api.py#L954) | 954 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
 | [SRC-3451CC474D-L000955](../../tests/test_api.py#L955) | 955 | `"        ):"` | — |
-| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `"            style_blocks += 1"` | — |
-| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |

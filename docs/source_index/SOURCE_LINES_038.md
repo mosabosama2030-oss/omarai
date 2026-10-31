@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000958 إلى SRC-29A9CD43D1-L000046
+- النطاق: SRC-3451CC474D-L000956 إلى SRC-3D0A619359-L000013
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `"            style_blocks += 1"` | — |
+| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
 | [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"        for match in re.finditer("` | — |
 | [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
 | [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"            document,"` | — |
@@ -171,6 +173,56 @@
 | [SRC-3451CC474D-L001110](../../tests/test_api.py#L1110) | 1110 | `"    )"` | — |
 | [SRC-3451CC474D-L001111](../../tests/test_api.py#L1111) | 1111 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L001112](../../tests/test_api.py#L1112) | 1112 | `"    assert \"score\" in result"` | — |
+| [SRC-3451CC474D-L001113](../../tests/test_api.py#L1113) | 1113 | `""` | — |
+| [SRC-3451CC474D-L001114](../../tests/test_api.py#L1114) | 1114 | `"def test_api_ask_statistics_and_recommendations_are_company_scoped(local_api):"` | — |
+| [SRC-3451CC474D-L001115](../../tests/test_api.py#L1115) | 1115 | `"    store = Handler.store"` | — |
+| [SRC-3451CC474D-L001116](../../tests/test_api.py#L1116) | 1116 | `"    store.create_company(\"company-b\", \"شركة ب\")"` | — |
+| [SRC-3451CC474D-L001117](../../tests/test_api.py#L1117) | 1117 | `"    store.create_user(\"user-b\", display_name=\"مسؤول ب\")"` | — |
+| [SRC-3451CC474D-L001118](../../tests/test_api.py#L1118) | 1118 | `"    store.add_membership(\"company-b\", \"user-b\", role=\"admin\")"` | — |
+| [SRC-3451CC474D-L001119](../../tests/test_api.py#L1119) | 1119 | `"    lead_b, created = store.add("` | — |
+| [SRC-3451CC474D-L001120](../../tests/test_api.py#L1120) | 1120 | `"        \"بدور على شقة وممكن معاينة والسعر كام\","` | — |
+| [SRC-3451CC474D-L001121](../../tests/test_api.py#L1121) | 1121 | `"        \"https://example.com/company-b/housing\","` | — |
+| [SRC-3451CC474D-L001122](../../tests/test_api.py#L1122) | 1122 | `"        tenant_id=\"company-b\","` | — |
+| [SRC-3451CC474D-L001123](../../tests/test_api.py#L1123) | 1123 | `"    )"` | — |
+| [SRC-3451CC474D-L001124](../../tests/test_api.py#L1124) | 1124 | `"    assert created is True"` | — |
+| [SRC-3451CC474D-L001125](../../tests/test_api.py#L1125) | 1125 | `""` | — |
+| [SRC-3451CC474D-L001126](../../tests/test_api.py#L1126) | 1126 | `"    status, stats_a = request_json("` | — |
+| [SRC-3451CC474D-L001127](../../tests/test_api.py#L1127) | 1127 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001128](../../tests/test_api.py#L1128) | 1128 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001129](../../tests/test_api.py#L1129) | 1129 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001130](../../tests/test_api.py#L1130) | 1130 | `"        payload={\"question\": \"كام عميل\", \"tenant_id\": \"default\"},"` | — |
+| [SRC-3451CC474D-L001131](../../tests/test_api.py#L1131) | 1131 | `"    )"` | — |
+| [SRC-3451CC474D-L001132](../../tests/test_api.py#L1132) | 1132 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001133](../../tests/test_api.py#L1133) | 1133 | `"    assert \"0 إشارة\" in stats_a[\"answer\"]"` | — |
+| [SRC-3451CC474D-L001134](../../tests/test_api.py#L1134) | 1134 | `""` | — |
+| [SRC-3451CC474D-L001135](../../tests/test_api.py#L1135) | 1135 | `"    status, stats_b = request_json("` | — |
+| [SRC-3451CC474D-L001136](../../tests/test_api.py#L1136) | 1136 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001137](../../tests/test_api.py#L1137) | 1137 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001138](../../tests/test_api.py#L1138) | 1138 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001139](../../tests/test_api.py#L1139) | 1139 | `"        payload={\"question\": \"كام عميل\", \"tenant_id\": \"company-b\"},"` | — |
+| [SRC-3451CC474D-L001140](../../tests/test_api.py#L1140) | 1140 | `"        headers={\"X-Omarai-Test-User\": \"user-b\"},"` | — |
+| [SRC-3451CC474D-L001141](../../tests/test_api.py#L1141) | 1141 | `"    )"` | — |
+| [SRC-3451CC474D-L001142](../../tests/test_api.py#L1142) | 1142 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001143](../../tests/test_api.py#L1143) | 1143 | `"    assert \"1 إشارة\" in stats_b[\"answer\"]"` | — |
+| [SRC-3451CC474D-L001144](../../tests/test_api.py#L1144) | 1144 | `""` | — |
+| [SRC-3451CC474D-L001145](../../tests/test_api.py#L1145) | 1145 | `"    status, recommendation_b = request_json("` | — |
+| [SRC-3451CC474D-L001146](../../tests/test_api.py#L1146) | 1146 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001147](../../tests/test_api.py#L1147) | 1147 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001148](../../tests/test_api.py#L1148) | 1148 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001149](../../tests/test_api.py#L1149) | 1149 | `"        payload={\"question\": \"مين افضل عميل\", \"tenant_id\": \"company-b\"},"` | — |
+| [SRC-3451CC474D-L001150](../../tests/test_api.py#L1150) | 1150 | `"        headers={\"X-Omarai-Test-User\": \"user-b\"},"` | — |
+| [SRC-3451CC474D-L001151](../../tests/test_api.py#L1151) | 1151 | `"    )"` | — |
+| [SRC-3451CC474D-L001152](../../tests/test_api.py#L1152) | 1152 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001153](../../tests/test_api.py#L1153) | 1153 | `"    assert lead_b[\"id\"][:8] in recommendation_b[\"answer\"]"` | — |
+| [SRC-3451CC474D-L001154](../../tests/test_api.py#L1154) | 1154 | `""` | — |
+| [SRC-3451CC474D-L001155](../../tests/test_api.py#L1155) | 1155 | `"    # The default-company operator cannot select company B for a recommendation."` | — |
+| [SRC-3451CC474D-L001156](../../tests/test_api.py#L1156) | 1156 | `"    status, denied = request_json("` | — |
+| [SRC-3451CC474D-L001157](../../tests/test_api.py#L1157) | 1157 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001158](../../tests/test_api.py#L1158) | 1158 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001159](../../tests/test_api.py#L1159) | 1159 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001160](../../tests/test_api.py#L1160) | 1160 | `"        payload={\"question\": \"مين افضل عميل\", \"tenant_id\": \"company-b\"},"` | — |
+| [SRC-3451CC474D-L001161](../../tests/test_api.py#L1161) | 1161 | `"    )"` | — |
+| [SRC-3451CC474D-L001162](../../tests/test_api.py#L1162) | 1162 | `"    assert status == 403"` | — |
 ## اختبارات
 
 ### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
@@ -809,64 +861,3 @@
 | [SRC-3D0A619359-L000011](../../tests/test_dashboard_security.py#L11) | 11 | `"    assert '$(\"saveAccessToken\").onclick' in html"` | — |
 | [SRC-3D0A619359-L000012](../../tests/test_dashboard_security.py#L12) | 12 | `""` | — |
 | [SRC-3D0A619359-L000013](../../tests/test_dashboard_security.py#L13) | 13 | `""` | — |
-| [SRC-3D0A619359-L000014](../../tests/test_dashboard_security.py#L14) | 14 | `"def test_saved_lead_source_links_reject_non_http_schemes():"` | — |
-| [SRC-3D0A619359-L000015](../../tests/test_dashboard_security.py#L15) | 15 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000016](../../tests/test_dashboard_security.py#L16) | 16 | `"    assert \"function safeSourceUrl(value)\" in html"` | — |
-| [SRC-3D0A619359-L000017](../../tests/test_dashboard_security.py#L17) | 17 | `"    assert '[\"http:\",\"https:\"]' in html"` | — |
-| [SRC-3D0A619359-L000018](../../tests/test_dashboard_security.py#L18) | 18 | `"    assert \"const sourceUrl=safeSourceUrl(l.source_url)\" in html"` | — |
-| [SRC-3D0A619359-L000019](../../tests/test_dashboard_security.py#L19) | 19 | `"    assert \"const sourceLink=sourceUrl?\" in html"` | — |
-## اختبارات
-
-### FILE-29A9CD43D1 — [tests/test_dialogue_context_pipeline.py](../../tests/test_dialogue_context_pipeline.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-29A9CD43D1-L000001](../../tests/test_dialogue_context_pipeline.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-29A9CD43D1-L000002](../../tests/test_dialogue_context_pipeline.py#L2) | 2 | `""` | — |
-| [SRC-29A9CD43D1-L000003](../../tests/test_dialogue_context_pipeline.py#L3) | 3 | `"import json"` | — |
-| [SRC-29A9CD43D1-L000004](../../tests/test_dialogue_context_pipeline.py#L4) | 4 | `"from typing import Any"` | — |
-| [SRC-29A9CD43D1-L000005](../../tests/test_dialogue_context_pipeline.py#L5) | 5 | `""` | — |
-| [SRC-29A9CD43D1-L000006](../../tests/test_dialogue_context_pipeline.py#L6) | 6 | `"import pytest"` | — |
-| [SRC-29A9CD43D1-L000007](../../tests/test_dialogue_context_pipeline.py#L7) | 7 | `""` | — |
-| [SRC-29A9CD43D1-L000008](../../tests/test_dialogue_context_pipeline.py#L8) | 8 | `"from agents.research import evidence_signal_report"` | — |
-| [SRC-29A9CD43D1-L000009](../../tests/test_dialogue_context_pipeline.py#L9) | 9 | `"from agents.dialogue_state import might_be_context_dependent"` | — |
-| [SRC-29A9CD43D1-L000010](../../tests/test_dialogue_context_pipeline.py#L10) | 10 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-29A9CD43D1-L000011](../../tests/test_dialogue_context_pipeline.py#L11) | 11 | `""` | — |
-| [SRC-29A9CD43D1-L000012](../../tests/test_dialogue_context_pipeline.py#L12) | 12 | `""` | — |
-| [SRC-29A9CD43D1-L000013](../../tests/test_dialogue_context_pipeline.py#L13) | 13 | `"def _source(domain: str, queries: list[str]) -> dict[str, Any]:"` | — |
-| [SRC-29A9CD43D1-L000014](../../tests/test_dialogue_context_pipeline.py#L14) | 14 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000015](../../tests/test_dialogue_context_pipeline.py#L15) | 15 | `"        \"title\": \"iPhone 17 256GB international warranty coverage in Egypt\","` | — |
-| [SRC-29A9CD43D1-L000016](../../tests/test_dialogue_context_pipeline.py#L16) | 16 | `"        \"url\": f\"https://{domain}/iphone-warranty\","` | — |
-| [SRC-29A9CD43D1-L000017](../../tests/test_dialogue_context_pipeline.py#L17) | 17 | `"        \"snippet\": \"Warranty coverage and service policy for iPhone 17 in Egypt.\","` | — |
-| [SRC-29A9CD43D1-L000018](../../tests/test_dialogue_context_pipeline.py#L18) | 18 | `"        \"page_text\": \"Warranty coverage and service policy for iPhone 17 in Egypt.\","` | — |
-| [SRC-29A9CD43D1-L000019](../../tests/test_dialogue_context_pipeline.py#L19) | 19 | `"        \"page_fetched\": True,"` | — |
-| [SRC-29A9CD43D1-L000020](../../tests/test_dialogue_context_pipeline.py#L20) | 20 | `"        \"providers\": [\"test_search\"],"` | — |
-| [SRC-29A9CD43D1-L000021](../../tests/test_dialogue_context_pipeline.py#L21) | 21 | `"        \"queries\": list(queries),"` | — |
-| [SRC-29A9CD43D1-L000022](../../tests/test_dialogue_context_pipeline.py#L22) | 22 | `"        \"domain\": domain,"` | — |
-| [SRC-29A9CD43D1-L000023](../../tests/test_dialogue_context_pipeline.py#L23) | 23 | `"        \"source_class\": \"general\","` | — |
-| [SRC-29A9CD43D1-L000024](../../tests/test_dialogue_context_pipeline.py#L24) | 24 | `"        \"platform\": \"web\","` | — |
-| [SRC-29A9CD43D1-L000025](../../tests/test_dialogue_context_pipeline.py#L25) | 25 | `"        \"published_at\": \"\","` | — |
-| [SRC-29A9CD43D1-L000026](../../tests/test_dialogue_context_pipeline.py#L26) | 26 | `"        \"rank_score\": 1.0,"` | — |
-| [SRC-29A9CD43D1-L000027](../../tests/test_dialogue_context_pipeline.py#L27) | 27 | `"    }"` | — |
-| [SRC-29A9CD43D1-L000028](../../tests/test_dialogue_context_pipeline.py#L28) | 28 | `""` | — |
-| [SRC-29A9CD43D1-L000029](../../tests/test_dialogue_context_pipeline.py#L29) | 29 | `""` | — |
-| [SRC-29A9CD43D1-L000030](../../tests/test_dialogue_context_pipeline.py#L30) | 30 | `"def _report(plan: dict[str, Any], sources: list[dict[str, Any]]) -> dict[str, Any]:"` | — |
-| [SRC-29A9CD43D1-L000031](../../tests/test_dialogue_context_pipeline.py#L31) | 31 | `"    return {"` | — |
-| [SRC-29A9CD43D1-L000032](../../tests/test_dialogue_context_pipeline.py#L32) | 32 | `"        \"queries_planned\": len(plan.get(\"queries\", [])),"` | — |
-| [SRC-29A9CD43D1-L000033](../../tests/test_dialogue_context_pipeline.py#L33) | 33 | `"        \"queries_attempted\": len(plan.get(\"queries\", [])),"` | — |
-| [SRC-29A9CD43D1-L000034](../../tests/test_dialogue_context_pipeline.py#L34) | 34 | `"        \"queries_attempted_known\": True,"` | — |
-| [SRC-29A9CD43D1-L000035](../../tests/test_dialogue_context_pipeline.py#L35) | 35 | `"        \"search_attempted\": True,"` | — |
-| [SRC-29A9CD43D1-L000036](../../tests/test_dialogue_context_pipeline.py#L36) | 36 | `"        \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-29A9CD43D1-L000037](../../tests/test_dialogue_context_pipeline.py#L37) | 37 | `"        \"query_results\": [],"` | — |
-| [SRC-29A9CD43D1-L000038](../../tests/test_dialogue_context_pipeline.py#L38) | 38 | `"        \"unique_sources\": len(sources),"` | — |
-| [SRC-29A9CD43D1-L000039](../../tests/test_dialogue_context_pipeline.py#L39) | 39 | `"        \"pages_fetched\": len(sources),"` | — |
-| [SRC-29A9CD43D1-L000040](../../tests/test_dialogue_context_pipeline.py#L40) | 40 | `"        \"providers_used\": [\"test_search\"],"` | — |
-| [SRC-29A9CD43D1-L000041](../../tests/test_dialogue_context_pipeline.py#L41) | 41 | `"        \"provider_counts\": {\"test_search\": len(sources)},"` | — |
-| [SRC-29A9CD43D1-L000042](../../tests/test_dialogue_context_pipeline.py#L42) | 42 | `"        \"platform_counts\": {\"web\": len(sources)},"` | — |
-| [SRC-29A9CD43D1-L000043](../../tests/test_dialogue_context_pipeline.py#L43) | 43 | `"        \"social_direct_results\": 0,"` | — |
-| [SRC-29A9CD43D1-L000044](../../tests/test_dialogue_context_pipeline.py#L44) | 44 | `"        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-29A9CD43D1-L000045](../../tests/test_dialogue_context_pipeline.py#L45) | 45 | `"        \"planning_method\": plan.get(\"planning_method\", \"test\"),"` | — |
-| [SRC-29A9CD43D1-L000046](../../tests/test_dialogue_context_pipeline.py#L46) | 46 | `"        \"evidence_signals\": evidence_signal_report(sources),"` | — |

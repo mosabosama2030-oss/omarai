@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001045 إلى SRC-6A7519AC10-L000058
+- النطاق: SRC-90FAA34ADE-L001043 إلى SRC-6A7519AC10-L000056
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001043](../../tests/fixtures/answer_quality_cases.json#L1043) | 1043 | `"            \"snippet\": \"A Facebook post claims the service stopped.\","` | — |
+| [SRC-90FAA34ADE-L001044](../../tests/fixtures/answer_quality_cases.json#L1044) | 1044 | `"            \"domain\": \"blog-b.example.test\","` | — |
 | [SRC-90FAA34ADE-L001045](../../tests/fixtures/answer_quality_cases.json#L1045) | 1045 | `"            \"provider\": \"fixture_b\""` | — |
 | [SRC-90FAA34ADE-L001046](../../tests/fixtures/answer_quality_cases.json#L1046) | 1046 | `"          },"` | — |
 | [SRC-90FAA34ADE-L001047](../../tests/fixtures/answer_quality_cases.json#L1047) | 1047 | `"          {"` | — |
@@ -850,5 +852,3 @@
 | [SRC-6A7519AC10-L000054](../../tests/test_answer_quality_comparison.py#L54) | 54 | `"    }"` | — |
 | [SRC-6A7519AC10-L000055](../../tests/test_answer_quality_comparison.py#L55) | 55 | `"    if cost is not None:"` | — |
 | [SRC-6A7519AC10-L000056](../../tests/test_answer_quality_comparison.py#L56) | 56 | `"        row[\"provider_reported_model_cost_usd\"] = cost"` | — |
-| [SRC-6A7519AC10-L000057](../../tests/test_answer_quality_comparison.py#L57) | 57 | `"    if request_cost is not None:"` | — |
-| [SRC-6A7519AC10-L000058](../../tests/test_answer_quality_comparison.py#L58) | 58 | `"        row[\"request_cost_usd\"] = request_cost"` | — |
