@@ -610,7 +610,7 @@ class Handler(BaseHTTPRequestHandler):
             if path.startswith("/api/") and not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
             if path.startswith("/api/") and not self._authorized():
-                return self.respond(401, {"error": "يلزم مستخدم مصرح به ورمز وصول صالح أو بيئة اختبار محلية."})
+                return self.respond(401, {"error": "يلزم رمز الوصول وهوية مستخدم مصرح بها، أو بيئة اختبار محلية."})
 
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
             if content_type != "application/json":
