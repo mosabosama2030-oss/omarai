@@ -1569,7 +1569,7 @@ class WebAgent:
                 )
                 detail = f"HTTP {status_code}" if status_code is not None else type(exc).__name__
                 status = "failed"
-                else:
+                if status_code is None:
                     status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
                     if status_match:
                         status_code = int(status_match.group(1))
