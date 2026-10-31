@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **120**
 - ملفات Python المحللة: **74**
-- تعريفات Python المفهرسة: **1663**
+- تعريفات Python المفهرسة: **1666**
 - تعريفات Python موثقة بوجود Docstring: **268**
-- تعريفات Python بلا Docstring: **1006**
+- تعريفات Python بلا Docstring: **1009**
 - تعريفات لا ينطبق عليها Docstring: **389**
 - الرموز الساكنة الإضافية: **1899**
-- الأسطر النصية المفهرسة حرفيًا: **40817**
+- الأسطر النصية المفهرسة حرفيًا: **40865**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -138,7 +138,7 @@
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 7922 | 201 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
-| FILE-2822F30DAD | اختبارات | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L1) | Python | 11445 | 340 | جرد الملف + AST Python |
+| FILE-2822F30DAD | اختبارات | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L1) | Python | 13375 | 388 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
@@ -1477,27 +1477,30 @@
 | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L47) | دالة | test_product_profile_requires_a_name_and_deduplicates_aliases | لا توجد Docstring. | ناقص | 47 | [SRC-2822F30DAD-L000047](../tests/test_sales_domain.py#L47) |
 | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L59) | دالة | test_product_matching_uses_only_explicit_product_terms | لا توجد Docstring. | ناقص | 59 | [SRC-2822F30DAD-L000059](../tests/test_sales_domain.py#L59) |
 | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L70) | دالة | test_product_mention_does_not_create_demand_or_product_fit | لا توجد Docstring. | ناقص | 70 | [SRC-2822F30DAD-L000070](../tests/test_sales_domain.py#L70) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L84) | دالة | test_product_taxonomy_is_caller_defined_and_supports_multiple_sectors | لا توجد Docstring. | ناقص | 84 | [SRC-2822F30DAD-L000084](../tests/test_sales_domain.py#L84) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L112) | دالة | test_taxonomy_does_not_match_partial_latin_words | لا توجد Docstring. | ناقص | 112 | [SRC-2822F30DAD-L000112](../tests/test_sales_domain.py#L112) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L123) | دالة | test_taxonomy_rejects_duplicate_paths | لا توجد Docstring. | ناقص | 123 | [SRC-2822F30DAD-L000123](../tests/test_sales_domain.py#L123) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L131) | دالة | test_source_verified_product_fact_requires_an_evidence_pointer | لا توجد Docstring. | ناقص | 131 | [SRC-2822F30DAD-L000131](../tests/test_sales_domain.py#L131) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L148) | دالة | test_market_profile_is_a_constraint_not_a_demand_signal | لا توجد Docstring. | ناقص | 148 | [SRC-2822F30DAD-L000148](../tests/test_sales_domain.py#L148) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L161) | دالة | test_demand_evidence_requires_an_absolute_http_url | لا توجد Docstring. | ناقص | 161 | [SRC-2822F30DAD-L000161](../tests/test_sales_domain.py#L161) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L169) | دالة | test_demand_evidence_keeps_publication_event_and_observation_dates_separate | لا توجد Docstring. | ناقص | 169 | [SRC-2822F30DAD-L000169](../tests/test_sales_domain.py#L169) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L182) | دالة | test_demand_evidence_rejects_invalid_dates | لا توجد Docstring. | ناقص | 182 | [SRC-2822F30DAD-L000182](../tests/test_sales_domain.py#L182) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L187) | دالة | test_demand_evidence_does_not_invent_missing_dates | لا توجد Docstring. | ناقص | 187 | [SRC-2822F30DAD-L000187](../tests/test_sales_domain.py#L187) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L199) | دالة | test_observation_timestamp_requires_timezone | لا توجد Docstring. | ناقص | 199 | [SRC-2822F30DAD-L000199](../tests/test_sales_domain.py#L199) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L204) | دالة | test_search_snippet_cannot_be_labelled_as_a_read_page | لا توجد Docstring. | ناقص | 204 | [SRC-2822F30DAD-L000204](../tests/test_sales_domain.py#L204) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L212) | دالة | test_page_text_requires_successful_page_read | لا توجد Docstring. | ناقص | 212 | [SRC-2822F30DAD-L000212](../tests/test_sales_domain.py#L212) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L220) | دالة | test_title_and_snippet_evidence_can_remain_unread | لا توجد Docstring. | ناقص | 220 | [SRC-2822F30DAD-L000220](../tests/test_sales_domain.py#L220) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L234) | دالة | test_demand_type_and_product_fit_are_independent | لا توجد Docstring. | ناقص | 234 | [SRC-2822F30DAD-L000234](../tests/test_sales_domain.py#L234) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L248) | دالة | test_assessed_product_fit_requires_a_rationale | لا توجد Docstring. | ناقص | 248 | [SRC-2822F30DAD-L000248](../tests/test_sales_domain.py#L248) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L267) | دالة | test_unassessed_product_fit_must_not_have_a_rationale | لا توجد Docstring. | ناقص | 267 | [SRC-2822F30DAD-L000267](../tests/test_sales_domain.py#L267) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L277) | دالة | test_icp_match_only_remains_distinct_from_direct_purchase | لا توجد Docstring. | ناقص | 277 | [SRC-2822F30DAD-L000277](../tests/test_sales_domain.py#L277) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L292) | دالة | test_lead_qualification_exposes_independent_dimensions_without_probability | لا توجد Docstring. | ناقص | 292 | [SRC-2822F30DAD-L000292](../tests/test_sales_domain.py#L292) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L313) | دالة | test_to_json_dict_preserves_all_evidence_provenance_fields | لا توجد Docstring. | ناقص | 313 | [SRC-2822F30DAD-L000313](../tests/test_sales_domain.py#L313) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L325) | دالة | test_domain_models_reject_invalid_sequence_types | لا توجد Docstring. | ناقص | 325 | [SRC-2822F30DAD-L000325](../tests/test_sales_domain.py#L325) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L333) | دالة | test_contactability_is_not_inferred_from_identity | لا توجد Docstring. | ناقص | 333 | [SRC-2822F30DAD-L000333](../tests/test_sales_domain.py#L333) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L87) | دالة | test_product_taxonomy_is_caller_defined_and_supports_multiple_sectors | لا توجد Docstring. | ناقص | 87 | [SRC-2822F30DAD-L000087](../tests/test_sales_domain.py#L87) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L115) | دالة | test_taxonomy_does_not_match_partial_latin_words | لا توجد Docstring. | ناقص | 115 | [SRC-2822F30DAD-L000115](../tests/test_sales_domain.py#L115) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L126) | دالة | test_taxonomy_rejects_duplicate_paths | لا توجد Docstring. | ناقص | 126 | [SRC-2822F30DAD-L000126](../tests/test_sales_domain.py#L126) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L134) | دالة | test_source_verified_product_fact_requires_an_evidence_pointer | لا توجد Docstring. | ناقص | 134 | [SRC-2822F30DAD-L000134](../tests/test_sales_domain.py#L134) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L151) | دالة | test_market_profile_is_a_constraint_not_a_demand_signal | لا توجد Docstring. | ناقص | 151 | [SRC-2822F30DAD-L000151](../tests/test_sales_domain.py#L151) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L164) | دالة | test_buyer_query_generation_is_sector_neutral_and_product_anchored | لا توجد Docstring. | ناقص | 164 | [SRC-2822F30DAD-L000164](../tests/test_sales_domain.py#L164) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L180) | دالة | test_buyer_query_generation_uses_only_explicit_market_location | لا توجد Docstring. | ناقص | 180 | [SRC-2822F30DAD-L000180](../tests/test_sales_domain.py#L180) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L191) | دالة | test_buyer_query_generation_drops_unrelated_planner_queries | لا توجد Docstring. | ناقص | 191 | [SRC-2822F30DAD-L000191](../tests/test_sales_domain.py#L191) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L209) | دالة | test_demand_evidence_requires_an_absolute_http_url | لا توجد Docstring. | ناقص | 209 | [SRC-2822F30DAD-L000209](../tests/test_sales_domain.py#L209) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L217) | دالة | test_demand_evidence_keeps_publication_event_and_observation_dates_separate | لا توجد Docstring. | ناقص | 217 | [SRC-2822F30DAD-L000217](../tests/test_sales_domain.py#L217) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L230) | دالة | test_demand_evidence_rejects_invalid_dates | لا توجد Docstring. | ناقص | 230 | [SRC-2822F30DAD-L000230](../tests/test_sales_domain.py#L230) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L235) | دالة | test_demand_evidence_does_not_invent_missing_dates | لا توجد Docstring. | ناقص | 235 | [SRC-2822F30DAD-L000235](../tests/test_sales_domain.py#L235) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L247) | دالة | test_observation_timestamp_requires_timezone | لا توجد Docstring. | ناقص | 247 | [SRC-2822F30DAD-L000247](../tests/test_sales_domain.py#L247) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L252) | دالة | test_search_snippet_cannot_be_labelled_as_a_read_page | لا توجد Docstring. | ناقص | 252 | [SRC-2822F30DAD-L000252](../tests/test_sales_domain.py#L252) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L260) | دالة | test_page_text_requires_successful_page_read | لا توجد Docstring. | ناقص | 260 | [SRC-2822F30DAD-L000260](../tests/test_sales_domain.py#L260) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L268) | دالة | test_title_and_snippet_evidence_can_remain_unread | لا توجد Docstring. | ناقص | 268 | [SRC-2822F30DAD-L000268](../tests/test_sales_domain.py#L268) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L282) | دالة | test_demand_type_and_product_fit_are_independent | لا توجد Docstring. | ناقص | 282 | [SRC-2822F30DAD-L000282](../tests/test_sales_domain.py#L282) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L296) | دالة | test_assessed_product_fit_requires_a_rationale | لا توجد Docstring. | ناقص | 296 | [SRC-2822F30DAD-L000296](../tests/test_sales_domain.py#L296) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L315) | دالة | test_unassessed_product_fit_must_not_have_a_rationale | لا توجد Docstring. | ناقص | 315 | [SRC-2822F30DAD-L000315](../tests/test_sales_domain.py#L315) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L325) | دالة | test_icp_match_only_remains_distinct_from_direct_purchase | لا توجد Docstring. | ناقص | 325 | [SRC-2822F30DAD-L000325](../tests/test_sales_domain.py#L325) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L340) | دالة | test_lead_qualification_exposes_independent_dimensions_without_probability | لا توجد Docstring. | ناقص | 340 | [SRC-2822F30DAD-L000340](../tests/test_sales_domain.py#L340) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L361) | دالة | test_to_json_dict_preserves_all_evidence_provenance_fields | لا توجد Docstring. | ناقص | 361 | [SRC-2822F30DAD-L000361](../tests/test_sales_domain.py#L361) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L373) | دالة | test_domain_models_reject_invalid_sequence_types | لا توجد Docstring. | ناقص | 373 | [SRC-2822F30DAD-L000373](../tests/test_sales_domain.py#L373) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L381) | دالة | test_contactability_is_not_inferred_from_identity | لا توجد Docstring. | ناقص | 381 | [SRC-2822F30DAD-L000381](../tests/test_sales_domain.py#L381) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | متغير/ثابت Python | SEARCH_PATH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | متغير/ثابت Python | SEARCH_SPEC | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L12) | متغير/ثابت Python | SEARCH | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-2614DCB6FB-L000012](../tests/test_search_code.py#L12) |
@@ -3321,14 +3324,14 @@
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 20 | [SRC-96F6863E3C-L000020](../tests/test_research_pipeline.py#L20) |
 | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L141) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 141 | [SRC-96F6863E3C-L000141](../tests/test_research_pipeline.py#L141) |
 | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PAGE_TEXT | 32 | [SRC-2822F30DAD-L000032](../tests/test_sales_domain.py#L32) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L136) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_VERIFIED | 136 | [SRC-2822F30DAD-L000136](../tests/test_sales_domain.py#L136) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L207) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SNIPPET | 207 | [SRC-2822F30DAD-L000207](../tests/test_sales_domain.py#L207) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L237) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DIRECT_PURCHASE_REQUEST | 237 | [SRC-2822F30DAD-L000237](../tests/test_sales_domain.py#L237) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L252) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | STATED_NEED | 252 | [SRC-2822F30DAD-L000252](../tests/test_sales_domain.py#L252) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L271) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDIRECT_INDICATOR | 271 | [SRC-2822F30DAD-L000271](../tests/test_sales_domain.py#L271) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L280) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ICP_MATCH_ONLY | 280 | [SRC-2822F30DAD-L000280](../tests/test_sales_domain.py#L280) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L296) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIMARY_SOURCE | 296 | [SRC-2822F30DAD-L000296](../tests/test_sales_domain.py#L296) |
-| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L299) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_ASSESSED | 299 | [SRC-2822F30DAD-L000299](../tests/test_sales_domain.py#L299) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_VERIFIED | 139 | [SRC-2822F30DAD-L000139](../tests/test_sales_domain.py#L139) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L255) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SNIPPET | 255 | [SRC-2822F30DAD-L000255](../tests/test_sales_domain.py#L255) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L285) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DIRECT_PURCHASE_REQUEST | 285 | [SRC-2822F30DAD-L000285](../tests/test_sales_domain.py#L285) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L300) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | STATED_NEED | 300 | [SRC-2822F30DAD-L000300](../tests/test_sales_domain.py#L300) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L319) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDIRECT_INDICATOR | 319 | [SRC-2822F30DAD-L000319](../tests/test_sales_domain.py#L319) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L328) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ICP_MATCH_ONLY | 328 | [SRC-2822F30DAD-L000328](../tests/test_sales_domain.py#L328) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L344) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PRIMARY_SOURCE | 344 | [SRC-2822F30DAD-L000344](../tests/test_sales_domain.py#L344) |
+| [tests/test_sales_domain.py](../tests/test_sales_domain.py#L347) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_ASSESSED | 347 | [SRC-2822F30DAD-L000347](../tests/test_sales_domain.py#L347) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_PATH | 8 | [SRC-2614DCB6FB-L000008](../tests/test_search_code.py#L8) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |

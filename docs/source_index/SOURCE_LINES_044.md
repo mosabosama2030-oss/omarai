@@ -682,155 +682,155 @@
 | [SRC-2822F30DAD-L000068](../../tests/test_sales_domain.py#L68) | 68 | `""` | — |
 | [SRC-2822F30DAD-L000069](../../tests/test_sales_domain.py#L69) | 69 | `""` | — |
 | [SRC-2822F30DAD-L000070](../../tests/test_sales_domain.py#L70) | 70 | `"def test_product_mention_does_not_create_demand_or_product_fit():"` | — |
-| [SRC-2822F30DAD-L000071](../../tests/test_sales_domain.py#L71) | 71 | `"    profile = ProductProfile(name=\"Fire Alarm Panel\")"` | — |
-| [SRC-2822F30DAD-L000072](../../tests/test_sales_domain.py#L72) | 72 | `"    assert profile.matching_terms(\"The company sells fire alarm panels.\") == (\"Fire Alarm Panel\",)"` | — |
-| [SRC-2822F30DAD-L000073](../../tests/test_sales_domain.py#L73) | 73 | `""` | — |
-| [SRC-2822F30DAD-L000074](../../tests/test_sales_domain.py#L74) | 74 | `"    signal = DemandSignal("` | — |
-| [SRC-2822F30DAD-L000075](../../tests/test_sales_domain.py#L75) | 75 | `"        signal_id=\"signal-1\","` | — |
-| [SRC-2822F30DAD-L000076](../../tests/test_sales_domain.py#L76) | 76 | `"        signal_type=DemandSignalType.UNKNOWN,"` | — |
-| [SRC-2822F30DAD-L000077](../../tests/test_sales_domain.py#L77) | 77 | `"        evidence=page_evidence(),"` | — |
-| [SRC-2822F30DAD-L000078](../../tests/test_sales_domain.py#L78) | 78 | `"    )"` | — |
-| [SRC-2822F30DAD-L000079](../../tests/test_sales_domain.py#L79) | 79 | `""` | — |
-| [SRC-2822F30DAD-L000080](../../tests/test_sales_domain.py#L80) | 80 | `"    assert signal.signal_type == DemandSignalType.UNKNOWN"` | — |
-| [SRC-2822F30DAD-L000081](../../tests/test_sales_domain.py#L81) | 81 | `"    assert signal.product_fit == ProductFit.UNASSESSED"` | — |
+| [SRC-2822F30DAD-L000071](../../tests/test_sales_domain.py#L71) | 71 | `"    profile = ProductProfile("` | — |
+| [SRC-2822F30DAD-L000072](../../tests/test_sales_domain.py#L72) | 72 | `"        name=\"Fire Alarm Panel\","` | — |
+| [SRC-2822F30DAD-L000073](../../tests/test_sales_domain.py#L73) | 73 | `"        aliases=(\"Fire Alarm Panels\",),"` | — |
+| [SRC-2822F30DAD-L000074](../../tests/test_sales_domain.py#L74) | 74 | `"    )"` | — |
+| [SRC-2822F30DAD-L000075](../../tests/test_sales_domain.py#L75) | 75 | `"    assert profile.matching_terms(\"The company sells Fire Alarm Panels.\") == (\"Fire Alarm Panels\",)"` | — |
+| [SRC-2822F30DAD-L000076](../../tests/test_sales_domain.py#L76) | 76 | `""` | — |
+| [SRC-2822F30DAD-L000077](../../tests/test_sales_domain.py#L77) | 77 | `"    signal = DemandSignal("` | — |
+| [SRC-2822F30DAD-L000078](../../tests/test_sales_domain.py#L78) | 78 | `"        signal_id=\"signal-1\","` | — |
+| [SRC-2822F30DAD-L000079](../../tests/test_sales_domain.py#L79) | 79 | `"        signal_type=DemandSignalType.UNKNOWN,"` | — |
+| [SRC-2822F30DAD-L000080](../../tests/test_sales_domain.py#L80) | 80 | `"        evidence=page_evidence(),"` | — |
+| [SRC-2822F30DAD-L000081](../../tests/test_sales_domain.py#L81) | 81 | `"    )"` | — |
 | [SRC-2822F30DAD-L000082](../../tests/test_sales_domain.py#L82) | 82 | `""` | — |
-| [SRC-2822F30DAD-L000083](../../tests/test_sales_domain.py#L83) | 83 | `""` | — |
-| [SRC-2822F30DAD-L000084](../../tests/test_sales_domain.py#L84) | 84 | `"def test_product_taxonomy_is_caller_defined_and_supports_multiple_sectors():"` | — |
-| [SRC-2822F30DAD-L000085](../../tests/test_sales_domain.py#L85) | 85 | `"    taxonomy = ProductTaxonomy("` | — |
-| [SRC-2822F30DAD-L000086](../../tests/test_sales_domain.py#L86) | 86 | `"        categories=("` | — |
-| [SRC-2822F30DAD-L000087](../../tests/test_sales_domain.py#L87) | 87 | `"            TaxonomyCategory("` | — |
-| [SRC-2822F30DAD-L000088](../../tests/test_sales_domain.py#L88) | 88 | `"                path=(\"safety\", \"fire_detection\"),"` | — |
-| [SRC-2822F30DAD-L000089](../../tests/test_sales_domain.py#L89) | 89 | `"                aliases=(\"fire alarm\", \"إنذار حريق\"),"` | — |
-| [SRC-2822F30DAD-L000090](../../tests/test_sales_domain.py#L90) | 90 | `"            ),"` | — |
-| [SRC-2822F30DAD-L000091](../../tests/test_sales_domain.py#L91) | 91 | `"            TaxonomyCategory("` | — |
-| [SRC-2822F30DAD-L000092](../../tests/test_sales_domain.py#L92) | 92 | `"                path=(\"mobility\", \"vehicles\"),"` | — |
-| [SRC-2822F30DAD-L000093](../../tests/test_sales_domain.py#L93) | 93 | `"                aliases=(\"vehicle\", \"سيارة\"),"` | — |
-| [SRC-2822F30DAD-L000094](../../tests/test_sales_domain.py#L94) | 94 | `"            ),"` | — |
-| [SRC-2822F30DAD-L000095](../../tests/test_sales_domain.py#L95) | 95 | `"            TaxonomyCategory("` | — |
-| [SRC-2822F30DAD-L000096](../../tests/test_sales_domain.py#L96) | 96 | `"                path=(\"construction\", \"residential_property\"),"` | — |
-| [SRC-2822F30DAD-L000097](../../tests/test_sales_domain.py#L97) | 97 | `"                aliases=(\"apartment\", \"شقة\"),"` | — |
-| [SRC-2822F30DAD-L000098](../../tests/test_sales_domain.py#L98) | 98 | `"            ),"` | — |
-| [SRC-2822F30DAD-L000099](../../tests/test_sales_domain.py#L99) | 99 | `"        )"` | — |
-| [SRC-2822F30DAD-L000100](../../tests/test_sales_domain.py#L100) | 100 | `"    )"` | — |
-| [SRC-2822F30DAD-L000101](../../tests/test_sales_domain.py#L101) | 101 | `""` | — |
-| [SRC-2822F30DAD-L000102](../../tests/test_sales_domain.py#L102) | 102 | `"    assert taxonomy.match_categories(\"نبحث عن إنذار حريق للمصنع\") == ("` | — |
-| [SRC-2822F30DAD-L000103](../../tests/test_sales_domain.py#L103) | 103 | `"        (\"safety\", \"fire_detection\"),"` | — |
-| [SRC-2822F30DAD-L000104](../../tests/test_sales_domain.py#L104) | 104 | `"    )"` | — |
-| [SRC-2822F30DAD-L000105](../../tests/test_sales_domain.py#L105) | 105 | `"    assert taxonomy.match_categories(\"vehicle and apartment\") == ("` | — |
-| [SRC-2822F30DAD-L000106](../../tests/test_sales_domain.py#L106) | 106 | `"        (\"mobility\", \"vehicles\"),"` | — |
-| [SRC-2822F30DAD-L000107](../../tests/test_sales_domain.py#L107) | 107 | `"        (\"construction\", \"residential_property\"),"` | — |
-| [SRC-2822F30DAD-L000108](../../tests/test_sales_domain.py#L108) | 108 | `"    )"` | — |
-| [SRC-2822F30DAD-L000109](../../tests/test_sales_domain.py#L109) | 109 | `"    assert taxonomy.match_categories(\"unknown equipment\") == ()"` | — |
-| [SRC-2822F30DAD-L000110](../../tests/test_sales_domain.py#L110) | 110 | `""` | — |
-| [SRC-2822F30DAD-L000111](../../tests/test_sales_domain.py#L111) | 111 | `""` | — |
-| [SRC-2822F30DAD-L000112](../../tests/test_sales_domain.py#L112) | 112 | `"def test_taxonomy_does_not_match_partial_latin_words():"` | — |
-| [SRC-2822F30DAD-L000113](../../tests/test_sales_domain.py#L113) | 113 | `"    taxonomy = ProductTaxonomy("` | — |
-| [SRC-2822F30DAD-L000114](../../tests/test_sales_domain.py#L114) | 114 | `"        categories=("` | — |
-| [SRC-2822F30DAD-L000115](../../tests/test_sales_domain.py#L115) | 115 | `"            TaxonomyCategory(path=(\"mobility\", \"cars\"), aliases=(\"car\",)),"` | — |
-| [SRC-2822F30DAD-L000116](../../tests/test_sales_domain.py#L116) | 116 | `"        )"` | — |
-| [SRC-2822F30DAD-L000117](../../tests/test_sales_domain.py#L117) | 117 | `"    )"` | — |
-| [SRC-2822F30DAD-L000118](../../tests/test_sales_domain.py#L118) | 118 | `""` | — |
-| [SRC-2822F30DAD-L000119](../../tests/test_sales_domain.py#L119) | 119 | `"    assert taxonomy.match_categories(\"carton packaging\") == ()"` | — |
-| [SRC-2822F30DAD-L000120](../../tests/test_sales_domain.py#L120) | 120 | `"    assert taxonomy.match_categories(\"used car\") == ((\"mobility\", \"cars\"),)"` | — |
+| [SRC-2822F30DAD-L000083](../../tests/test_sales_domain.py#L83) | 83 | `"    assert signal.signal_type == DemandSignalType.UNKNOWN"` | — |
+| [SRC-2822F30DAD-L000084](../../tests/test_sales_domain.py#L84) | 84 | `"    assert signal.product_fit == ProductFit.UNASSESSED"` | — |
+| [SRC-2822F30DAD-L000085](../../tests/test_sales_domain.py#L85) | 85 | `""` | — |
+| [SRC-2822F30DAD-L000086](../../tests/test_sales_domain.py#L86) | 86 | `""` | — |
+| [SRC-2822F30DAD-L000087](../../tests/test_sales_domain.py#L87) | 87 | `"def test_product_taxonomy_is_caller_defined_and_supports_multiple_sectors():"` | — |
+| [SRC-2822F30DAD-L000088](../../tests/test_sales_domain.py#L88) | 88 | `"    taxonomy = ProductTaxonomy("` | — |
+| [SRC-2822F30DAD-L000089](../../tests/test_sales_domain.py#L89) | 89 | `"        categories=("` | — |
+| [SRC-2822F30DAD-L000090](../../tests/test_sales_domain.py#L90) | 90 | `"            TaxonomyCategory("` | — |
+| [SRC-2822F30DAD-L000091](../../tests/test_sales_domain.py#L91) | 91 | `"                path=(\"safety\", \"fire_detection\"),"` | — |
+| [SRC-2822F30DAD-L000092](../../tests/test_sales_domain.py#L92) | 92 | `"                aliases=(\"fire alarm\", \"إنذار حريق\"),"` | — |
+| [SRC-2822F30DAD-L000093](../../tests/test_sales_domain.py#L93) | 93 | `"            ),"` | — |
+| [SRC-2822F30DAD-L000094](../../tests/test_sales_domain.py#L94) | 94 | `"            TaxonomyCategory("` | — |
+| [SRC-2822F30DAD-L000095](../../tests/test_sales_domain.py#L95) | 95 | `"                path=(\"mobility\", \"vehicles\"),"` | — |
+| [SRC-2822F30DAD-L000096](../../tests/test_sales_domain.py#L96) | 96 | `"                aliases=(\"vehicle\", \"سيارة\"),"` | — |
+| [SRC-2822F30DAD-L000097](../../tests/test_sales_domain.py#L97) | 97 | `"            ),"` | — |
+| [SRC-2822F30DAD-L000098](../../tests/test_sales_domain.py#L98) | 98 | `"            TaxonomyCategory("` | — |
+| [SRC-2822F30DAD-L000099](../../tests/test_sales_domain.py#L99) | 99 | `"                path=(\"construction\", \"residential_property\"),"` | — |
+| [SRC-2822F30DAD-L000100](../../tests/test_sales_domain.py#L100) | 100 | `"                aliases=(\"apartment\", \"شقة\"),"` | — |
+| [SRC-2822F30DAD-L000101](../../tests/test_sales_domain.py#L101) | 101 | `"            ),"` | — |
+| [SRC-2822F30DAD-L000102](../../tests/test_sales_domain.py#L102) | 102 | `"        )"` | — |
+| [SRC-2822F30DAD-L000103](../../tests/test_sales_domain.py#L103) | 103 | `"    )"` | — |
+| [SRC-2822F30DAD-L000104](../../tests/test_sales_domain.py#L104) | 104 | `""` | — |
+| [SRC-2822F30DAD-L000105](../../tests/test_sales_domain.py#L105) | 105 | `"    assert taxonomy.match_categories(\"نبحث عن إنذار حريق للمصنع\") == ("` | — |
+| [SRC-2822F30DAD-L000106](../../tests/test_sales_domain.py#L106) | 106 | `"        (\"safety\", \"fire_detection\"),"` | — |
+| [SRC-2822F30DAD-L000107](../../tests/test_sales_domain.py#L107) | 107 | `"    )"` | — |
+| [SRC-2822F30DAD-L000108](../../tests/test_sales_domain.py#L108) | 108 | `"    assert taxonomy.match_categories(\"vehicle and apartment\") == ("` | — |
+| [SRC-2822F30DAD-L000109](../../tests/test_sales_domain.py#L109) | 109 | `"        (\"mobility\", \"vehicles\"),"` | — |
+| [SRC-2822F30DAD-L000110](../../tests/test_sales_domain.py#L110) | 110 | `"        (\"construction\", \"residential_property\"),"` | — |
+| [SRC-2822F30DAD-L000111](../../tests/test_sales_domain.py#L111) | 111 | `"    )"` | — |
+| [SRC-2822F30DAD-L000112](../../tests/test_sales_domain.py#L112) | 112 | `"    assert taxonomy.match_categories(\"unknown equipment\") == ()"` | — |
+| [SRC-2822F30DAD-L000113](../../tests/test_sales_domain.py#L113) | 113 | `""` | — |
+| [SRC-2822F30DAD-L000114](../../tests/test_sales_domain.py#L114) | 114 | `""` | — |
+| [SRC-2822F30DAD-L000115](../../tests/test_sales_domain.py#L115) | 115 | `"def test_taxonomy_does_not_match_partial_latin_words():"` | — |
+| [SRC-2822F30DAD-L000116](../../tests/test_sales_domain.py#L116) | 116 | `"    taxonomy = ProductTaxonomy("` | — |
+| [SRC-2822F30DAD-L000117](../../tests/test_sales_domain.py#L117) | 117 | `"        categories=("` | — |
+| [SRC-2822F30DAD-L000118](../../tests/test_sales_domain.py#L118) | 118 | `"            TaxonomyCategory(path=(\"mobility\", \"cars\"), aliases=(\"car\",)),"` | — |
+| [SRC-2822F30DAD-L000119](../../tests/test_sales_domain.py#L119) | 119 | `"        )"` | — |
+| [SRC-2822F30DAD-L000120](../../tests/test_sales_domain.py#L120) | 120 | `"    )"` | — |
 | [SRC-2822F30DAD-L000121](../../tests/test_sales_domain.py#L121) | 121 | `""` | — |
-| [SRC-2822F30DAD-L000122](../../tests/test_sales_domain.py#L122) | 122 | `""` | — |
-| [SRC-2822F30DAD-L000123](../../tests/test_sales_domain.py#L123) | 123 | `"def test_taxonomy_rejects_duplicate_paths():"` | — |
-| [SRC-2822F30DAD-L000124](../../tests/test_sales_domain.py#L124) | 124 | `"    first = TaxonomyCategory(path=(\"industry\", \"equipment\"), aliases=(\"machine\",))"` | — |
-| [SRC-2822F30DAD-L000125](../../tests/test_sales_domain.py#L125) | 125 | `"    second = TaxonomyCategory(path=(\"industry\", \"equipment\"), aliases=(\"device\",))"` | — |
-| [SRC-2822F30DAD-L000126](../../tests/test_sales_domain.py#L126) | 126 | `""` | — |
-| [SRC-2822F30DAD-L000127](../../tests/test_sales_domain.py#L127) | 127 | `"    with pytest.raises(ValueError, match=\"paths must be unique\"):"` | — |
-| [SRC-2822F30DAD-L000128](../../tests/test_sales_domain.py#L128) | 128 | `"        ProductTaxonomy(categories=(first, second))"` | — |
+| [SRC-2822F30DAD-L000122](../../tests/test_sales_domain.py#L122) | 122 | `"    assert taxonomy.match_categories(\"carton packaging\") == ()"` | — |
+| [SRC-2822F30DAD-L000123](../../tests/test_sales_domain.py#L123) | 123 | `"    assert taxonomy.match_categories(\"used car\") == ((\"mobility\", \"cars\"),)"` | — |
+| [SRC-2822F30DAD-L000124](../../tests/test_sales_domain.py#L124) | 124 | `""` | — |
+| [SRC-2822F30DAD-L000125](../../tests/test_sales_domain.py#L125) | 125 | `""` | — |
+| [SRC-2822F30DAD-L000126](../../tests/test_sales_domain.py#L126) | 126 | `"def test_taxonomy_rejects_duplicate_paths():"` | — |
+| [SRC-2822F30DAD-L000127](../../tests/test_sales_domain.py#L127) | 127 | `"    first = TaxonomyCategory(path=(\"industry\", \"equipment\"), aliases=(\"machine\",))"` | — |
+| [SRC-2822F30DAD-L000128](../../tests/test_sales_domain.py#L128) | 128 | `"    second = TaxonomyCategory(path=(\"industry\", \"equipment\"), aliases=(\"device\",))"` | — |
 | [SRC-2822F30DAD-L000129](../../tests/test_sales_domain.py#L129) | 129 | `""` | — |
-| [SRC-2822F30DAD-L000130](../../tests/test_sales_domain.py#L130) | 130 | `""` | — |
-| [SRC-2822F30DAD-L000131](../../tests/test_sales_domain.py#L131) | 131 | `"def test_source_verified_product_fact_requires_an_evidence_pointer():"` | — |
-| [SRC-2822F30DAD-L000132](../../tests/test_sales_domain.py#L132) | 132 | `"    with pytest.raises(ValueError, match=\"require evidence_id\"):"` | — |
-| [SRC-2822F30DAD-L000133](../../tests/test_sales_domain.py#L133) | 133 | `"        ProductFact("` | — |
-| [SRC-2822F30DAD-L000134](../../tests/test_sales_domain.py#L134) | 134 | `"            field=\"operating_voltage\","` | — |
-| [SRC-2822F30DAD-L000135](../../tests/test_sales_domain.py#L135) | 135 | `"            value=\"24V\","` | — |
-| [SRC-2822F30DAD-L000136](../../tests/test_sales_domain.py#L136) | 136 | `"            origin=FactOrigin.SOURCE_VERIFIED,"` | — |
-| [SRC-2822F30DAD-L000137](../../tests/test_sales_domain.py#L137) | 137 | `"        )"` | — |
-| [SRC-2822F30DAD-L000138](../../tests/test_sales_domain.py#L138) | 138 | `""` | — |
-| [SRC-2822F30DAD-L000139](../../tests/test_sales_domain.py#L139) | 139 | `"    fact = ProductFact("` | — |
-| [SRC-2822F30DAD-L000140](../../tests/test_sales_domain.py#L140) | 140 | `"        field=\"operating_voltage\","` | — |
-| [SRC-2822F30DAD-L000141](../../tests/test_sales_domain.py#L141) | 141 | `"        value=\"24V\","` | — |
-| [SRC-2822F30DAD-L000142](../../tests/test_sales_domain.py#L142) | 142 | `"        origin=FactOrigin.SOURCE_VERIFIED,"` | — |
-| [SRC-2822F30DAD-L000143](../../tests/test_sales_domain.py#L143) | 143 | `"        evidence_id=\"manual-page-12\","` | — |
-| [SRC-2822F30DAD-L000144](../../tests/test_sales_domain.py#L144) | 144 | `"    )"` | — |
-| [SRC-2822F30DAD-L000145](../../tests/test_sales_domain.py#L145) | 145 | `"    assert fact.to_dict()[\"evidence_id\"] == \"manual-page-12\""` | — |
-| [SRC-2822F30DAD-L000146](../../tests/test_sales_domain.py#L146) | 146 | `""` | — |
-| [SRC-2822F30DAD-L000147](../../tests/test_sales_domain.py#L147) | 147 | `""` | — |
-| [SRC-2822F30DAD-L000148](../../tests/test_sales_domain.py#L148) | 148 | `"def test_market_profile_is_a_constraint_not_a_demand_signal():"` | — |
-| [SRC-2822F30DAD-L000149](../../tests/test_sales_domain.py#L149) | 149 | `"    market = MarketProfile("` | — |
-| [SRC-2822F30DAD-L000150](../../tests/test_sales_domain.py#L150) | 150 | `"        locations=(\"Egypt\", \"Cairo\"),"` | — |
-| [SRC-2822F30DAD-L000151](../../tests/test_sales_domain.py#L151) | 151 | `"        industries=(\"construction\", \"manufacturing\"),"` | — |
-| [SRC-2822F30DAD-L000152](../../tests/test_sales_domain.py#L152) | 152 | `"        customer_types=(\"contractor\", \"facility owner\"),"` | — |
-| [SRC-2822F30DAD-L000153](../../tests/test_sales_domain.py#L153) | 153 | `"        decision_roles=(\"procurement manager\",),"` | — |
-| [SRC-2822F30DAD-L000154](../../tests/test_sales_domain.py#L154) | 154 | `"        exclusions=(\"residential end users\",),"` | — |
-| [SRC-2822F30DAD-L000155](../../tests/test_sales_domain.py#L155) | 155 | `"    )"` | — |
-| [SRC-2822F30DAD-L000156](../../tests/test_sales_domain.py#L156) | 156 | `""` | — |
-| [SRC-2822F30DAD-L000157](../../tests/test_sales_domain.py#L157) | 157 | `"    assert market.to_dict()[\"industries\"] == [\"construction\", \"manufacturing\"]"` | — |
-| [SRC-2822F30DAD-L000158](../../tests/test_sales_domain.py#L158) | 158 | `"    assert not hasattr(market, \"purchase_probability\")"` | — |
+| [SRC-2822F30DAD-L000130](../../tests/test_sales_domain.py#L130) | 130 | `"    with pytest.raises(ValueError, match=\"paths must be unique\"):"` | — |
+| [SRC-2822F30DAD-L000131](../../tests/test_sales_domain.py#L131) | 131 | `"        ProductTaxonomy(categories=(first, second))"` | — |
+| [SRC-2822F30DAD-L000132](../../tests/test_sales_domain.py#L132) | 132 | `""` | — |
+| [SRC-2822F30DAD-L000133](../../tests/test_sales_domain.py#L133) | 133 | `""` | — |
+| [SRC-2822F30DAD-L000134](../../tests/test_sales_domain.py#L134) | 134 | `"def test_source_verified_product_fact_requires_an_evidence_pointer():"` | — |
+| [SRC-2822F30DAD-L000135](../../tests/test_sales_domain.py#L135) | 135 | `"    with pytest.raises(ValueError, match=\"require evidence_id\"):"` | — |
+| [SRC-2822F30DAD-L000136](../../tests/test_sales_domain.py#L136) | 136 | `"        ProductFact("` | — |
+| [SRC-2822F30DAD-L000137](../../tests/test_sales_domain.py#L137) | 137 | `"            field=\"operating_voltage\","` | — |
+| [SRC-2822F30DAD-L000138](../../tests/test_sales_domain.py#L138) | 138 | `"            value=\"24V\","` | — |
+| [SRC-2822F30DAD-L000139](../../tests/test_sales_domain.py#L139) | 139 | `"            origin=FactOrigin.SOURCE_VERIFIED,"` | — |
+| [SRC-2822F30DAD-L000140](../../tests/test_sales_domain.py#L140) | 140 | `"        )"` | — |
+| [SRC-2822F30DAD-L000141](../../tests/test_sales_domain.py#L141) | 141 | `""` | — |
+| [SRC-2822F30DAD-L000142](../../tests/test_sales_domain.py#L142) | 142 | `"    fact = ProductFact("` | — |
+| [SRC-2822F30DAD-L000143](../../tests/test_sales_domain.py#L143) | 143 | `"        field=\"operating_voltage\","` | — |
+| [SRC-2822F30DAD-L000144](../../tests/test_sales_domain.py#L144) | 144 | `"        value=\"24V\","` | — |
+| [SRC-2822F30DAD-L000145](../../tests/test_sales_domain.py#L145) | 145 | `"        origin=FactOrigin.SOURCE_VERIFIED,"` | — |
+| [SRC-2822F30DAD-L000146](../../tests/test_sales_domain.py#L146) | 146 | `"        evidence_id=\"manual-page-12\","` | — |
+| [SRC-2822F30DAD-L000147](../../tests/test_sales_domain.py#L147) | 147 | `"    )"` | — |
+| [SRC-2822F30DAD-L000148](../../tests/test_sales_domain.py#L148) | 148 | `"    assert fact.to_dict()[\"evidence_id\"] == \"manual-page-12\""` | — |
+| [SRC-2822F30DAD-L000149](../../tests/test_sales_domain.py#L149) | 149 | `""` | — |
+| [SRC-2822F30DAD-L000150](../../tests/test_sales_domain.py#L150) | 150 | `""` | — |
+| [SRC-2822F30DAD-L000151](../../tests/test_sales_domain.py#L151) | 151 | `"def test_market_profile_is_a_constraint_not_a_demand_signal():"` | — |
+| [SRC-2822F30DAD-L000152](../../tests/test_sales_domain.py#L152) | 152 | `"    market = MarketProfile("` | — |
+| [SRC-2822F30DAD-L000153](../../tests/test_sales_domain.py#L153) | 153 | `"        locations=(\"Egypt\", \"Cairo\"),"` | — |
+| [SRC-2822F30DAD-L000154](../../tests/test_sales_domain.py#L154) | 154 | `"        industries=(\"construction\", \"manufacturing\"),"` | — |
+| [SRC-2822F30DAD-L000155](../../tests/test_sales_domain.py#L155) | 155 | `"        customer_types=(\"contractor\", \"facility owner\"),"` | — |
+| [SRC-2822F30DAD-L000156](../../tests/test_sales_domain.py#L156) | 156 | `"        decision_roles=(\"procurement manager\",),"` | — |
+| [SRC-2822F30DAD-L000157](../../tests/test_sales_domain.py#L157) | 157 | `"        exclusions=(\"residential end users\",),"` | — |
+| [SRC-2822F30DAD-L000158](../../tests/test_sales_domain.py#L158) | 158 | `"    )"` | — |
 | [SRC-2822F30DAD-L000159](../../tests/test_sales_domain.py#L159) | 159 | `""` | — |
-| [SRC-2822F30DAD-L000160](../../tests/test_sales_domain.py#L160) | 160 | `""` | — |
-| [SRC-2822F30DAD-L000161](../../tests/test_sales_domain.py#L161) | 161 | `"def test_demand_evidence_requires_an_absolute_http_url():"` | — |
-| [SRC-2822F30DAD-L000162](../../tests/test_sales_domain.py#L162) | 162 | `"    with pytest.raises(ValueError, match=\"absolute HTTP\"):"` | — |
-| [SRC-2822F30DAD-L000163](../../tests/test_sales_domain.py#L163) | 163 | `"        page_evidence(source_url=\"/relative/path\")"` | — |
-| [SRC-2822F30DAD-L000164](../../tests/test_sales_domain.py#L164) | 164 | `""` | — |
-| [SRC-2822F30DAD-L000165](../../tests/test_sales_domain.py#L165) | 165 | `"    with pytest.raises(ValueError, match=\"embedded credentials\"):"` | — |
-| [SRC-2822F30DAD-L000166](../../tests/test_sales_domain.py#L166) | 166 | `"        page_evidence(source_url=\"https://user:secret@example.org/post\")"` | — |
-| [SRC-2822F30DAD-L000167](../../tests/test_sales_domain.py#L167) | 167 | `""` | — |
-| [SRC-2822F30DAD-L000168](../../tests/test_sales_domain.py#L168) | 168 | `""` | — |
-| [SRC-2822F30DAD-L000169](../../tests/test_sales_domain.py#L169) | 169 | `"def test_demand_evidence_keeps_publication_event_and_observation_dates_separate():"` | — |
-| [SRC-2822F30DAD-L000170](../../tests/test_sales_domain.py#L170) | 170 | `"    evidence = page_evidence("` | — |
-| [SRC-2822F30DAD-L000171](../../tests/test_sales_domain.py#L171) | 171 | `"        publication_date=\"2026-10-20\","` | — |
-| [SRC-2822F30DAD-L000172](../../tests/test_sales_domain.py#L172) | 172 | `"        event_date=\"2026-10-18\","` | — |
-| [SRC-2822F30DAD-L000173](../../tests/test_sales_domain.py#L173) | 173 | `"        observed_at=\"2026-10-31T08:00:00+02:00\","` | — |
-| [SRC-2822F30DAD-L000174](../../tests/test_sales_domain.py#L174) | 174 | `"    )"` | — |
-| [SRC-2822F30DAD-L000175](../../tests/test_sales_domain.py#L175) | 175 | `""` | — |
-| [SRC-2822F30DAD-L000176](../../tests/test_sales_domain.py#L176) | 176 | `"    assert evidence.publication_date == \"2026-10-20\""` | — |
-| [SRC-2822F30DAD-L000177](../../tests/test_sales_domain.py#L177) | 177 | `"    assert evidence.event_date == \"2026-10-18\""` | — |
-| [SRC-2822F30DAD-L000178](../../tests/test_sales_domain.py#L178) | 178 | `"    assert evidence.observed_at == \"2026-10-31T08:00:00+02:00\""` | — |
+| [SRC-2822F30DAD-L000160](../../tests/test_sales_domain.py#L160) | 160 | `"    assert market.to_dict()[\"industries\"] == [\"construction\", \"manufacturing\"]"` | — |
+| [SRC-2822F30DAD-L000161](../../tests/test_sales_domain.py#L161) | 161 | `"    assert not hasattr(market, \"purchase_probability\")"` | — |
+| [SRC-2822F30DAD-L000162](../../tests/test_sales_domain.py#L162) | 162 | `""` | — |
+| [SRC-2822F30DAD-L000163](../../tests/test_sales_domain.py#L163) | 163 | `""` | — |
+| [SRC-2822F30DAD-L000164](../../tests/test_sales_domain.py#L164) | 164 | `"def test_buyer_query_generation_is_sector_neutral_and_product_anchored():"` | — |
+| [SRC-2822F30DAD-L000165](../../tests/test_sales_domain.py#L165) | 165 | `"    from agents.sales_domain import build_buyer_queries"` | — |
+| [SRC-2822F30DAD-L000166](../../tests/test_sales_domain.py#L166) | 166 | `""` | — |
+| [SRC-2822F30DAD-L000167](../../tests/test_sales_domain.py#L167) | 167 | `"    vehicle = ProductProfile(name=\"سيارة كهربائية\")"` | — |
+| [SRC-2822F30DAD-L000168](../../tests/test_sales_domain.py#L168) | 168 | `"    industrial = ProductProfile(name=\"نظام إنذار حريق صناعي\")"` | — |
+| [SRC-2822F30DAD-L000169](../../tests/test_sales_domain.py#L169) | 169 | `"    vehicle_queries = build_buyer_queries(vehicle, locale=\"ar\")"` | — |
+| [SRC-2822F30DAD-L000170](../../tests/test_sales_domain.py#L170) | 170 | `"    industrial_queries = build_buyer_queries(industrial, locale=\"ar\")"` | — |
+| [SRC-2822F30DAD-L000171](../../tests/test_sales_domain.py#L171) | 171 | `""` | — |
+| [SRC-2822F30DAD-L000172](../../tests/test_sales_domain.py#L172) | 172 | `"    assert vehicle_queries"` | — |
+| [SRC-2822F30DAD-L000173](../../tests/test_sales_domain.py#L173) | 173 | `"    assert industrial_queries"` | — |
+| [SRC-2822F30DAD-L000174](../../tests/test_sales_domain.py#L174) | 174 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in vehicle_queries)"` | — |
+| [SRC-2822F30DAD-L000175](../../tests/test_sales_domain.py#L175) | 175 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in industrial_queries)"` | — |
+| [SRC-2822F30DAD-L000176](../../tests/test_sales_domain.py#L176) | 176 | `"    assert any(\"سياره كهربائيه\" in query for query in vehicle_queries)"` | — |
+| [SRC-2822F30DAD-L000177](../../tests/test_sales_domain.py#L177) | 177 | `"    assert any(\"نظام انذار حريق صناعي\" in query for query in industrial_queries)"` | — |
+| [SRC-2822F30DAD-L000178](../../tests/test_sales_domain.py#L178) | 178 | `""` | — |
 | [SRC-2822F30DAD-L000179](../../tests/test_sales_domain.py#L179) | 179 | `""` | — |
-| [SRC-2822F30DAD-L000180](../../tests/test_sales_domain.py#L180) | 180 | `""` | — |
-| [SRC-2822F30DAD-L000181](../../tests/test_sales_domain.py#L181) | 181 | `"@pytest.mark.parametrize(\"field\", [\"publication_date\", \"event_date\"])"` | — |
-| [SRC-2822F30DAD-L000182](../../tests/test_sales_domain.py#L182) | 182 | `"def test_demand_evidence_rejects_invalid_dates(field):"` | — |
-| [SRC-2822F30DAD-L000183](../../tests/test_sales_domain.py#L183) | 183 | `"    with pytest.raises(ValueError, match=\"ISO date\"):"` | — |
-| [SRC-2822F30DAD-L000184](../../tests/test_sales_domain.py#L184) | 184 | `"        page_evidence(**{field: \"yesterday\"})"` | — |
-| [SRC-2822F30DAD-L000185](../../tests/test_sales_domain.py#L185) | 185 | `""` | — |
+| [SRC-2822F30DAD-L000180](../../tests/test_sales_domain.py#L180) | 180 | `"def test_buyer_query_generation_uses_only_explicit_market_location():"` | — |
+| [SRC-2822F30DAD-L000181](../../tests/test_sales_domain.py#L181) | 181 | `"    from agents.sales_domain import build_buyer_queries"` | — |
+| [SRC-2822F30DAD-L000182](../../tests/test_sales_domain.py#L182) | 182 | `""` | — |
+| [SRC-2822F30DAD-L000183](../../tests/test_sales_domain.py#L183) | 183 | `"    product = ProductProfile(name=\"FACP\")"` | — |
+| [SRC-2822F30DAD-L000184](../../tests/test_sales_domain.py#L184) | 184 | `"    market = MarketProfile(locations=(\"Cairo\", \"Egypt\"))"` | — |
+| [SRC-2822F30DAD-L000185](../../tests/test_sales_domain.py#L185) | 185 | `"    queries = build_buyer_queries(product, market, locale=\"en\")"` | — |
 | [SRC-2822F30DAD-L000186](../../tests/test_sales_domain.py#L186) | 186 | `""` | — |
-| [SRC-2822F30DAD-L000187](../../tests/test_sales_domain.py#L187) | 187 | `"def test_demand_evidence_does_not_invent_missing_dates():"` | — |
-| [SRC-2822F30DAD-L000188](../../tests/test_sales_domain.py#L188) | 188 | `"    evidence = page_evidence("` | — |
-| [SRC-2822F30DAD-L000189](../../tests/test_sales_domain.py#L189) | 189 | `"        publication_date=None,"` | — |
-| [SRC-2822F30DAD-L000190](../../tests/test_sales_domain.py#L190) | 190 | `"        event_date=None,"` | — |
-| [SRC-2822F30DAD-L000191](../../tests/test_sales_domain.py#L191) | 191 | `"        observed_at=None,"` | — |
-| [SRC-2822F30DAD-L000192](../../tests/test_sales_domain.py#L192) | 192 | `"    )"` | — |
+| [SRC-2822F30DAD-L000187](../../tests/test_sales_domain.py#L187) | 187 | `"    assert queries"` | — |
+| [SRC-2822F30DAD-L000188](../../tests/test_sales_domain.py#L188) | 188 | `"    assert all(\"Cairo Egypt\" in query for query in queries)"` | — |
+| [SRC-2822F30DAD-L000189](../../tests/test_sales_domain.py#L189) | 189 | `""` | — |
+| [SRC-2822F30DAD-L000190](../../tests/test_sales_domain.py#L190) | 190 | `""` | — |
+| [SRC-2822F30DAD-L000191](../../tests/test_sales_domain.py#L191) | 191 | `"def test_buyer_query_generation_drops_unrelated_planner_queries():"` | — |
+| [SRC-2822F30DAD-L000192](../../tests/test_sales_domain.py#L192) | 192 | `"    from agents.sales_domain import build_buyer_queries"` | — |
 | [SRC-2822F30DAD-L000193](../../tests/test_sales_domain.py#L193) | 193 | `""` | — |
-| [SRC-2822F30DAD-L000194](../../tests/test_sales_domain.py#L194) | 194 | `"    assert evidence.publication_date is None"` | — |
-| [SRC-2822F30DAD-L000195](../../tests/test_sales_domain.py#L195) | 195 | `"    assert evidence.event_date is None"` | — |
-| [SRC-2822F30DAD-L000196](../../tests/test_sales_domain.py#L196) | 196 | `"    assert evidence.observed_at is None"` | — |
-| [SRC-2822F30DAD-L000197](../../tests/test_sales_domain.py#L197) | 197 | `""` | — |
-| [SRC-2822F30DAD-L000198](../../tests/test_sales_domain.py#L198) | 198 | `""` | — |
-| [SRC-2822F30DAD-L000199](../../tests/test_sales_domain.py#L199) | 199 | `"def test_observation_timestamp_requires_timezone():"` | — |
-| [SRC-2822F30DAD-L000200](../../tests/test_sales_domain.py#L200) | 200 | `"    with pytest.raises(ValueError, match=\"timezone offset\"):"` | — |
-| [SRC-2822F30DAD-L000201](../../tests/test_sales_domain.py#L201) | 201 | `"        page_evidence(observed_at=\"2026-10-31T08:00:00\")"` | — |
-| [SRC-2822F30DAD-L000202](../../tests/test_sales_domain.py#L202) | 202 | `""` | — |
-| [SRC-2822F30DAD-L000203](../../tests/test_sales_domain.py#L203) | 203 | `""` | — |
-| [SRC-2822F30DAD-L000204](../../tests/test_sales_domain.py#L204) | 204 | `"def test_search_snippet_cannot_be_labelled_as_a_read_page():"` | — |
-| [SRC-2822F30DAD-L000205](../../tests/test_sales_domain.py#L205) | 205 | `"    with pytest.raises(ValueError, match=\"cannot be marked\"):"` | — |
-| [SRC-2822F30DAD-L000206](../../tests/test_sales_domain.py#L206) | 206 | `"        page_evidence("` | — |
-| [SRC-2822F30DAD-L000207](../../tests/test_sales_domain.py#L207) | 207 | `"            content_basis=EvidenceBasis.SEARCH_SNIPPET,"` | — |
-| [SRC-2822F30DAD-L000208](../../tests/test_sales_domain.py#L208) | 208 | `"            page_read=True,"` | — |
-| [SRC-2822F30DAD-L000209](../../tests/test_sales_domain.py#L209) | 209 | `"        )"` | — |
-| [SRC-2822F30DAD-L000210](../../tests/test_sales_domain.py#L210) | 210 | `""` | — |
-| [SRC-2822F30DAD-L000211](../../tests/test_sales_domain.py#L211) | 211 | `""` | — |
-| [SRC-2822F30DAD-L000212](../../tests/test_sales_domain.py#L212) | 212 | `"def test_page_text_requires_successful_page_read():"` | — |
-| [SRC-2822F30DAD-L000213](../../tests/test_sales_domain.py#L213) | 213 | `"    with pytest.raises(ValueError, match=\"requires page_read\"):"` | — |
-| [SRC-2822F30DAD-L000214](../../tests/test_sales_domain.py#L214) | 214 | `"        page_evidence("` | — |
-| [SRC-2822F30DAD-L000215](../../tests/test_sales_domain.py#L215) | 215 | `"            content_basis=EvidenceBasis.PAGE_TEXT,"` | — |
-| [SRC-2822F30DAD-L000216](../../tests/test_sales_domain.py#L216) | 216 | `"            page_read=False,"` | — |
-| [SRC-2822F30DAD-L000217](../../tests/test_sales_domain.py#L217) | 217 | `"        )"` | — |
-| [SRC-2822F30DAD-L000218](../../tests/test_sales_domain.py#L218) | 218 | `""` | — |
-| [SRC-2822F30DAD-L000219](../../tests/test_sales_domain.py#L219) | 219 | `""` | — |
-| [SRC-2822F30DAD-L000220](../../tests/test_sales_domain.py#L220) | 220 | `"def test_title_and_snippet_evidence_can_remain_unread():"` | — |
-| [SRC-2822F30DAD-L000221](../../tests/test_sales_domain.py#L221) | 221 | `"    title = page_evidence("` | — |
-| [SRC-2822F30DAD-L000222](../../tests/test_sales_domain.py#L222) | 222 | `"        content_basis=EvidenceBasis.TITLE,"` | — |
+| [SRC-2822F30DAD-L000194](../../tests/test_sales_domain.py#L194) | 194 | `"    product = ProductProfile(name=\"industrial fire alarm\", aliases=(\"FACP\",))"` | — |
+| [SRC-2822F30DAD-L000195](../../tests/test_sales_domain.py#L195) | 195 | `"    queries = build_buyer_queries("` | — |
+| [SRC-2822F30DAD-L000196](../../tests/test_sales_domain.py#L196) | 196 | `"        product,"` | — |
+| [SRC-2822F30DAD-L000197](../../tests/test_sales_domain.py#L197) | 197 | `"        locale=\"en\","` | — |
+| [SRC-2822F30DAD-L000198](../../tests/test_sales_domain.py#L198) | 198 | `"        existing_queries=("` | — |
+| [SRC-2822F30DAD-L000199](../../tests/test_sales_domain.py#L199) | 199 | `"            \"apartments for sale in Cairo\","` | — |
+| [SRC-2822F30DAD-L000200](../../tests/test_sales_domain.py#L200) | 200 | `"            \"FACP procurement request\","` | — |
+| [SRC-2822F30DAD-L000201](../../tests/test_sales_domain.py#L201) | 201 | `"            \"generic buying intent\","` | — |
+| [SRC-2822F30DAD-L000202](../../tests/test_sales_domain.py#L202) | 202 | `"        ),"` | — |
+| [SRC-2822F30DAD-L000203](../../tests/test_sales_domain.py#L203) | 203 | `"    )"` | — |
+| [SRC-2822F30DAD-L000204](../../tests/test_sales_domain.py#L204) | 204 | `""` | — |
+| [SRC-2822F30DAD-L000205](../../tests/test_sales_domain.py#L205) | 205 | `"    assert any(\"FACP procurement request\" in query for query in queries)"` | — |
+| [SRC-2822F30DAD-L000206](../../tests/test_sales_domain.py#L206) | 206 | `"    assert all(\"apartments\" not in query for query in queries)"` | — |
+| [SRC-2822F30DAD-L000207](../../tests/test_sales_domain.py#L207) | 207 | `"    assert all(\"generic buying intent\" not in query for query in queries)"` | — |
+| [SRC-2822F30DAD-L000208](../../tests/test_sales_domain.py#L208) | 208 | `""` | — |
+| [SRC-2822F30DAD-L000209](../../tests/test_sales_domain.py#L209) | 209 | `"def test_demand_evidence_requires_an_absolute_http_url():"` | — |
+| [SRC-2822F30DAD-L000210](../../tests/test_sales_domain.py#L210) | 210 | `"    with pytest.raises(ValueError, match=\"absolute HTTP\"):"` | — |
+| [SRC-2822F30DAD-L000211](../../tests/test_sales_domain.py#L211) | 211 | `"        page_evidence(source_url=\"/relative/path\")"` | — |
+| [SRC-2822F30DAD-L000212](../../tests/test_sales_domain.py#L212) | 212 | `""` | — |
+| [SRC-2822F30DAD-L000213](../../tests/test_sales_domain.py#L213) | 213 | `"    with pytest.raises(ValueError, match=\"embedded credentials\"):"` | — |
+| [SRC-2822F30DAD-L000214](../../tests/test_sales_domain.py#L214) | 214 | `"        page_evidence(source_url=\"https://user:secret@example.org/post\")"` | — |
+| [SRC-2822F30DAD-L000215](../../tests/test_sales_domain.py#L215) | 215 | `""` | — |
+| [SRC-2822F30DAD-L000216](../../tests/test_sales_domain.py#L216) | 216 | `""` | — |
+| [SRC-2822F30DAD-L000217](../../tests/test_sales_domain.py#L217) | 217 | `"def test_demand_evidence_keeps_publication_event_and_observation_dates_separate():"` | — |
+| [SRC-2822F30DAD-L000218](../../tests/test_sales_domain.py#L218) | 218 | `"    evidence = page_evidence("` | — |
+| [SRC-2822F30DAD-L000219](../../tests/test_sales_domain.py#L219) | 219 | `"        publication_date=\"2026-10-20\","` | — |
+| [SRC-2822F30DAD-L000220](../../tests/test_sales_domain.py#L220) | 220 | `"        event_date=\"2026-10-18\","` | — |
+| [SRC-2822F30DAD-L000221](../../tests/test_sales_domain.py#L221) | 221 | `"        observed_at=\"2026-10-31T08:00:00+02:00\","` | — |
+| [SRC-2822F30DAD-L000222](../../tests/test_sales_domain.py#L222) | 222 | `"    )"` | — |
