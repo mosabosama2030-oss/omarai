@@ -735,7 +735,7 @@ def test_completion_uses_fallback_model_after_primary_http_error(monkeypatch):
             )
         return FakeResponse()
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
         model="broken/primary",
@@ -800,7 +800,7 @@ def test_completion_discards_truncated_primary_and_uses_complete_fallback(monkey
             return FakeResponse("جزء مبتور لا يجوز عرضه", "length")
         return FakeResponse("إجابة مكتملة", "stop")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
         model="broken/primary",
@@ -843,7 +843,7 @@ def test_completion_rejects_response_when_all_models_are_truncated(monkeypatch):
         called.append(json.loads(request.data.decode("utf-8"))["model"])
         return FakeResponse()
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     with pytest.raises(RuntimeError, match="مبتورة"):
         agent._request_completion(
             [{"role": "user", "content": "اختبار"}],
@@ -885,7 +885,7 @@ def test_completion_falls_back_for_malformed_choice(monkeypatch):
         )
         return FakeResponse(json.dumps({"choices": choices}).encode("utf-8"))
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "test"}],
         model="broken/primary",
@@ -1044,7 +1044,7 @@ def test_openrouter_live_web_search_tool_is_opt_in_and_returns_citations(monkeyp
         seen["payload"] = json.loads(request.data.decode("utf-8"))
         return FakeResponse()
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "ابحث عن أحدث تقرير"}],
         model="example/model",
@@ -2058,7 +2058,7 @@ def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypat
             return FakeResponse("جزء جواب مفلتر لا ينبغي اعتباره مكتملا", "content_filter")
         return FakeResponse("إجابة الاحتياط المكتملة", "stop")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
     result = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
         model="filtered/primary",
@@ -3897,3 +3897,55 @@ def test_completion_diagnostics_failure_does_not_break_answer(monkeypatch):
     assert result["answer"] == "إجابة اختبارية [المصدر 1]."
     assert result["research_completion"]["status"] == "diagnostics_not_computed"
     assert any("لا يُعد ذلك دليلًا على اكتمال البحث" in warning for warning in result["warnings"])
+
+
+
+def test_model_request_transport_disables_automatic_redirects(monkeypatch):
+    from agents import web_agent
+
+    observed = {}
+    sentinel = object()
+
+    class FakeOpener:
+        def open(self, request, *, timeout):
+            observed["request"] = request
+            observed["timeout"] = timeout
+            return sentinel
+
+    def fake_build_opener(*handlers):
+        observed["handlers"] = handlers
+        return FakeOpener()
+
+    monkeypatch.setattr(web_agent.urllib.request, "build_opener", fake_build_opener)
+    request = web_agent.urllib.request.Request(
+        "https://provider.example/v1/chat/completions",
+        data=b"{}",
+        headers={"Authorization": "Bearer test-only-token"},
+        method="POST",
+    )
+
+    assert web_agent._open_model_request(request, timeout=3.5) is sentinel
+    assert observed["request"] is request
+    assert observed["timeout"] == 3.5
+    assert observed["handlers"] == (web_agent._NoRedirectHandler,)
+
+    handler = web_agent._NoRedirectHandler()
+    redirected = handler.redirect_request(
+        request,
+        None,
+        302,
+        "Found",
+        {},
+        "https://attacker.example/collect",
+    )
+    assert redirected is None
+
+
+def test_openrouter_web_search_does_not_match_spoofed_hostname(monkeypatch):
+    monkeypatch.setenv("OMARAI_OPENROUTER_WEB_SEARCH", "1")
+    monkeypatch.setenv(
+        "OMARAI_LLM_BASE_URL",
+        "https://openrouter.ai.attacker.example/api/v1",
+    )
+
+    assert WebAgent().openrouter_web_search_enabled is False
