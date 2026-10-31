@@ -157,3 +157,41 @@ def test_viewer_membership_is_read_only(tenant_api):
     )
     assert status == 403
     assert "للقراءة فقط" in error["error"]
+
+
+
+def test_api_revokes_only_the_authenticated_api_token(tenant_api):
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Revocable Company", "revocable-company")
+    user_id = store.create_user("revoker@example.test", "Token Owner")
+    store.add_membership(tenant_id, user_id, "owner")
+    token = "revocable-token-" + "R" * 32
+    store.create_api_token(token, tenant_id, user_id)
+
+    status, result = request_json(
+        base, "/api/tokens/revoke", method="POST", token=token, payload={}
+    )
+    assert status == 200
+    assert result == {"revoked": True}
+
+    status, denied = request_json(base, "/api/leads", token=token)
+    assert status == 401
+    assert "رمز الوصول" in denied["error"]
+
+
+def test_api_does_not_claim_to_revoke_shared_environment_token(
+    tenant_api, monkeypatch
+):
+    base, _ = tenant_api
+    shared_token = "shared-application-token-" + "S" * 32
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", shared_token)
+
+    status, result = request_json(
+        base,
+        "/api/tokens/revoke",
+        method="POST",
+        token=shared_token,
+        payload={},
+    )
+    assert status == 409
+    assert "rotated by the operator" in result["error"]
