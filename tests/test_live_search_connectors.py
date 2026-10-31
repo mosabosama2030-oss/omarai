@@ -212,8 +212,10 @@ def test_bounded_provider_transport_enforces_absolute_total_deadline(monkeypatch
 
     class FakeResponse:
         status_code = 200
-        request = httpx.Request("GET", "https://provider.example/slow")
-        headers = {}
+
+        def __init__(self):
+            self.request = httpx.Request("GET", "https://provider.example/slow")
+            self.headers = {}
 
         def __enter__(self):
             return self
