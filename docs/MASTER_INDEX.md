@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **118**
 - ملفات Python المحللة: **72**
-- تعريفات Python المفهرسة: **1519**
+- تعريفات Python المفهرسة: **1522**
 - تعريفات Python موثقة بوجود Docstring: **259**
-- تعريفات Python بلا Docstring: **954**
+- تعريفات Python بلا Docstring: **957**
 - تعريفات لا ينطبق عليها Docstring: **306**
 - الرموز الساكنة الإضافية: **1874**
-- الأسطر النصية المفهرسة حرفيًا: **40159**
+- الأسطر النصية المفهرسة حرفيًا: **40258**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -128,7 +128,7 @@
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
-| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
+| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 7097 | 183 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 5018 | 146 | جرد الملف + AST Python |
@@ -1235,6 +1235,9 @@
 | [tests/test_omarai.py](../tests/test_omarai.py#L40) | دالة | test_status_updates_are_explicit | لا توجد Docstring. | ناقص | 40 | [SRC-44CDA52D01-L000040](../tests/test_omarai.py#L40) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L48) | دالة | test_csv_requires_columns | لا توجد Docstring. | ناقص | 48 | [SRC-44CDA52D01-L000048](../tests/test_omarai.py#L48) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L55) | دالة | test_csv_export_neutralizes_spreadsheet_formula_injection | لا توجد Docstring. | ناقص | 55 | [SRC-44CDA52D01-L000055](../tests/test_omarai.py#L55) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L85) | دالة | test_legacy_leads_migrate_into_the_initial_company_without_data_loss | لا توجد Docstring. | ناقص | 85 | [SRC-44CDA52D01-L000085](../tests/test_omarai.py#L85) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L138) | دالة | test_lead_store_reads_updates_and_exports_are_company_scoped | لا توجد Docstring. | ناقص | 138 | [SRC-44CDA52D01-L000138](../tests/test_omarai.py#L138) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L174) | دالة | test_membership_resolution_requires_active_company_user_and_membership | لا توجد Docstring. | ناقص | 174 | [SRC-44CDA52D01-L000174](../tests/test_omarai.py#L174) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L10) | متغير/ثابت Python | TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-B106ADC5EF-L000010](../tests/test_proxy_origin.py#L10) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | متغير/ثابت Python | PUBLIC_NAME | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L14) | دالة | port | لا توجد Docstring. | ناقص | 14 | [SRC-B106ADC5EF-L000014](../tests/test_proxy_origin.py#L14) |
