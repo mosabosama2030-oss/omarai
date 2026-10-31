@@ -11,7 +11,7 @@
 
 - الملفات في جرد المستودع: **119**
 - الملفات النصية المفهرسة سطرًا بسطر: **119**
-- الأسطر المفهرسة: **40217**
+- الأسطر المفهرسة: **40252**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 - صفحات الأسطر: **51**
 
@@ -59,17 +59,17 @@
 | [SOURCE_LINES_038](source_index/SOURCE_LINES_038.md) | 800 | SRC-29A9CD43D1-L000025 | SRC-FA4E1423C3-L000015 |
 | [SOURCE_LINES_039](source_index/SOURCE_LINES_039.md) | 800 | SRC-FA4E1423C3-L000016 | SRC-829A979985-L000340 |
 | [SOURCE_LINES_040](source_index/SOURCE_LINES_040.md) | 800 | SRC-829A979985-L000341 | SRC-EA6EC52573-L000043 |
-| [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) | 800 | SRC-EA6EC52573-L000044 | SRC-3D0DE98F65-L000067 |
-| [SOURCE_LINES_042](source_index/SOURCE_LINES_042.md) | 800 | SRC-3D0DE98F65-L000068 | SRC-AFFCF23BD4-L000085 |
-| [SOURCE_LINES_043](source_index/SOURCE_LINES_043.md) | 800 | SRC-AFFCF23BD4-L000086 | SRC-96F6863E3C-L000195 |
-| [SOURCE_LINES_044](source_index/SOURCE_LINES_044.md) | 800 | SRC-96F6863E3C-L000196 | SRC-AFEDC2645A-L000329 |
-| [SOURCE_LINES_045](source_index/SOURCE_LINES_045.md) | 800 | SRC-AFEDC2645A-L000330 | SRC-F725E90B2A-L000589 |
-| [SOURCE_LINES_046](source_index/SOURCE_LINES_046.md) | 800 | SRC-F725E90B2A-L000590 | SRC-F725E90B2A-L001389 |
-| [SOURCE_LINES_047](source_index/SOURCE_LINES_047.md) | 800 | SRC-F725E90B2A-L001390 | SRC-F725E90B2A-L002189 |
-| [SOURCE_LINES_048](source_index/SOURCE_LINES_048.md) | 800 | SRC-F725E90B2A-L002190 | SRC-F725E90B2A-L002989 |
-| [SOURCE_LINES_049](source_index/SOURCE_LINES_049.md) | 800 | SRC-F725E90B2A-L002990 | SRC-F725E90B2A-L003789 |
-| [SOURCE_LINES_050](source_index/SOURCE_LINES_050.md) | 800 | SRC-F725E90B2A-L003790 | SRC-DE7EABE998-L000314 |
-| [SOURCE_LINES_051](source_index/SOURCE_LINES_051.md) | 217 | SRC-DE7EABE998-L000315 | SRC-A16FA6D4B5-L000046 |
+| [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) | 800 | SRC-EA6EC52573-L000044 | SRC-3D0DE98F65-L000063 |
+| [SOURCE_LINES_042](source_index/SOURCE_LINES_042.md) | 800 | SRC-3D0DE98F65-L000064 | SRC-AFFCF23BD4-L000081 |
+| [SOURCE_LINES_043](source_index/SOURCE_LINES_043.md) | 800 | SRC-AFFCF23BD4-L000082 | SRC-96F6863E3C-L000191 |
+| [SOURCE_LINES_044](source_index/SOURCE_LINES_044.md) | 800 | SRC-96F6863E3C-L000192 | SRC-AFEDC2645A-L000325 |
+| [SOURCE_LINES_045](source_index/SOURCE_LINES_045.md) | 800 | SRC-AFEDC2645A-L000326 | SRC-F725E90B2A-L000585 |
+| [SOURCE_LINES_046](source_index/SOURCE_LINES_046.md) | 800 | SRC-F725E90B2A-L000586 | SRC-F725E90B2A-L001385 |
+| [SOURCE_LINES_047](source_index/SOURCE_LINES_047.md) | 800 | SRC-F725E90B2A-L001386 | SRC-F725E90B2A-L002185 |
+| [SOURCE_LINES_048](source_index/SOURCE_LINES_048.md) | 800 | SRC-F725E90B2A-L002186 | SRC-F725E90B2A-L002985 |
+| [SOURCE_LINES_049](source_index/SOURCE_LINES_049.md) | 800 | SRC-F725E90B2A-L002986 | SRC-F725E90B2A-L003785 |
+| [SOURCE_LINES_050](source_index/SOURCE_LINES_050.md) | 800 | SRC-F725E90B2A-L003786 | SRC-DE7EABE998-L000279 |
+| [SOURCE_LINES_051](source_index/SOURCE_LINES_051.md) | 252 | SRC-DE7EABE998-L000280 | SRC-A16FA6D4B5-L000046 |
 
 ## جرد الملفات والوصول حسب الاسم
 
@@ -111,7 +111,7 @@
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | 192 | [SOURCE_LINES_040](source_index/SOURCE_LINES_040.md) |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | 282 | [SOURCE_LINES_040](source_index/SOURCE_LINES_040.md), [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | 243 | [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) |
-| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | 81 | [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) |
+| FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | 85 | [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | 84 | [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | 86 | [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md) |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | 215 | [SOURCE_LINES_041](source_index/SOURCE_LINES_041.md), [SOURCE_LINES_042](source_index/SOURCE_LINES_042.md) |
@@ -127,7 +127,7 @@
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | 105 | [SOURCE_LINES_044](source_index/SOURCE_LINES_044.md) |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | 391 | [SOURCE_LINES_044](source_index/SOURCE_LINES_044.md), [SOURCE_LINES_045](source_index/SOURCE_LINES_045.md) |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | 149 | [SOURCE_LINES_045](source_index/SOURCE_LINES_045.md) |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | 4132 | [SOURCE_LINES_045](source_index/SOURCE_LINES_045.md), [SOURCE_LINES_046](source_index/SOURCE_LINES_046.md), [SOURCE_LINES_047](source_index/SOURCE_LINES_047.md), [SOURCE_LINES_048](source_index/SOURCE_LINES_048.md), [SOURCE_LINES_049](source_index/SOURCE_LINES_049.md), [SOURCE_LINES_050](source_index/SOURCE_LINES_050.md) |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | 4163 | [SOURCE_LINES_045](source_index/SOURCE_LINES_045.md), [SOURCE_LINES_046](source_index/SOURCE_LINES_046.md), [SOURCE_LINES_047](source_index/SOURCE_LINES_047.md), [SOURCE_LINES_048](source_index/SOURCE_LINES_048.md), [SOURCE_LINES_049](source_index/SOURCE_LINES_049.md), [SOURCE_LINES_050](source_index/SOURCE_LINES_050.md) |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | 143 | [SOURCE_LINES_050](source_index/SOURCE_LINES_050.md) |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | 1 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md) |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | 521 | [SOURCE_LINES_001](source_index/SOURCE_LINES_001.md), [SOURCE_LINES_002](source_index/SOURCE_LINES_002.md) |

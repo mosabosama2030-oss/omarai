@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000044 إلى SRC-3D0DE98F65-L000067
+- النطاق: SRC-EA6EC52573-L000044 إلى SRC-3D0DE98F65-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -518,85 +518,89 @@
 |---|---:|---|---|
 | [SRC-62DC597310-L000001](../../tests/test_live_search_connectors.py#L1) | 1 | `"from __future__ import annotations"` | — |
 | [SRC-62DC597310-L000002](../../tests/test_live_search_connectors.py#L2) | 2 | `""` | — |
-| [SRC-62DC597310-L000003](../../tests/test_live_search_connectors.py#L3) | 3 | `"import httpx"` | — |
+| [SRC-62DC597310-L000003](../../tests/test_live_search_connectors.py#L3) | 3 | `"from agents.web_agent import WebAgent"` | — |
 | [SRC-62DC597310-L000004](../../tests/test_live_search_connectors.py#L4) | 4 | `""` | — |
-| [SRC-62DC597310-L000005](../../tests/test_live_search_connectors.py#L5) | 5 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-62DC597310-L000006](../../tests/test_live_search_connectors.py#L6) | 6 | `""` | — |
-| [SRC-62DC597310-L000007](../../tests/test_live_search_connectors.py#L7) | 7 | `""` | — |
-| [SRC-62DC597310-L000008](../../tests/test_live_search_connectors.py#L8) | 8 | `"class FakeResponse:"` | — |
-| [SRC-62DC597310-L000009](../../tests/test_live_search_connectors.py#L9) | 9 | `"    def __init__(self, payload):"` | — |
-| [SRC-62DC597310-L000010](../../tests/test_live_search_connectors.py#L10) | 10 | `"        self.payload = payload"` | — |
-| [SRC-62DC597310-L000011](../../tests/test_live_search_connectors.py#L11) | 11 | `"        self.status_code = 200"` | — |
-| [SRC-62DC597310-L000012](../../tests/test_live_search_connectors.py#L12) | 12 | `""` | — |
-| [SRC-62DC597310-L000013](../../tests/test_live_search_connectors.py#L13) | 13 | `"    def raise_for_status(self):"` | — |
-| [SRC-62DC597310-L000014](../../tests/test_live_search_connectors.py#L14) | 14 | `"        return None"` | — |
-| [SRC-62DC597310-L000015](../../tests/test_live_search_connectors.py#L15) | 15 | `""` | — |
-| [SRC-62DC597310-L000016](../../tests/test_live_search_connectors.py#L16) | 16 | `"    def json(self):"` | — |
-| [SRC-62DC597310-L000017](../../tests/test_live_search_connectors.py#L17) | 17 | `"        return self.payload"` | — |
-| [SRC-62DC597310-L000018](../../tests/test_live_search_connectors.py#L18) | 18 | `""` | — |
-| [SRC-62DC597310-L000019](../../tests/test_live_search_connectors.py#L19) | 19 | `""` | — |
-| [SRC-62DC597310-L000020](../../tests/test_live_search_connectors.py#L20) | 20 | `"def test_brave_search_adapter_normalizes_real_api_response(monkeypatch):"` | — |
-| [SRC-62DC597310-L000021](../../tests/test_live_search_connectors.py#L21) | 21 | `"    monkeypatch.setenv(\"BRAVE_SEARCH_API_KEY\", \"unit-test-secret\")"` | — |
-| [SRC-62DC597310-L000022](../../tests/test_live_search_connectors.py#L22) | 22 | `"    requested = {}"` | — |
-| [SRC-62DC597310-L000023](../../tests/test_live_search_connectors.py#L23) | 23 | `""` | — |
-| [SRC-62DC597310-L000024](../../tests/test_live_search_connectors.py#L24) | 24 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-62DC597310-L000025](../../tests/test_live_search_connectors.py#L25) | 25 | `"        requested[\"url\"] = url"` | — |
-| [SRC-62DC597310-L000026](../../tests/test_live_search_connectors.py#L26) | 26 | `"        requested.update(kwargs)"` | — |
-| [SRC-62DC597310-L000027](../../tests/test_live_search_connectors.py#L27) | 27 | `"        return FakeResponse({"` | — |
-| [SRC-62DC597310-L000028](../../tests/test_live_search_connectors.py#L28) | 28 | `"            \"web\": {"` | — |
-| [SRC-62DC597310-L000029](../../tests/test_live_search_connectors.py#L29) | 29 | `"                \"results\": [{"` | — |
-| [SRC-62DC597310-L000030](../../tests/test_live_search_connectors.py#L30) | 30 | `"                    \"title\": \"Current research\","` | — |
-| [SRC-62DC597310-L000031](../../tests/test_live_search_connectors.py#L31) | 31 | `"                    \"url\": \"https://example.org/research\","` | — |
-| [SRC-62DC597310-L000032](../../tests/test_live_search_connectors.py#L32) | 32 | `"                    \"description\": \"A substantive search result.\","` | — |
-| [SRC-62DC597310-L000033](../../tests/test_live_search_connectors.py#L33) | 33 | `"                    \"page_age\": \"October 10, 2026\","` | — |
-| [SRC-62DC597310-L000034](../../tests/test_live_search_connectors.py#L34) | 34 | `"                }]"` | — |
-| [SRC-62DC597310-L000035](../../tests/test_live_search_connectors.py#L35) | 35 | `"            }"` | — |
-| [SRC-62DC597310-L000036](../../tests/test_live_search_connectors.py#L36) | 36 | `"        })"` | — |
-| [SRC-62DC597310-L000037](../../tests/test_live_search_connectors.py#L37) | 37 | `""` | — |
-| [SRC-62DC597310-L000038](../../tests/test_live_search_connectors.py#L38) | 38 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-62DC597310-L000039](../../tests/test_live_search_connectors.py#L39) | 39 | `"    rows = WebAgent()._search_brave(\"بحث حديث\")"` | — |
-| [SRC-62DC597310-L000040](../../tests/test_live_search_connectors.py#L40) | 40 | `"    assert requested[\"url\"] == \"https://api.search.brave.com/res/v1/web/search\""` | — |
-| [SRC-62DC597310-L000041](../../tests/test_live_search_connectors.py#L41) | 41 | `"    assert requested[\"headers\"][\"X-Subscription-Token\"] == \"unit-test-secret\""` | — |
-| [SRC-62DC597310-L000042](../../tests/test_live_search_connectors.py#L42) | 42 | `"    assert requested[\"params\"][\"country\"] == \"EG\""` | — |
-| [SRC-62DC597310-L000043](../../tests/test_live_search_connectors.py#L43) | 43 | `"    assert rows[0][\"provider\"] == \"brave_search_api\""` | — |
-| [SRC-62DC597310-L000044](../../tests/test_live_search_connectors.py#L44) | 44 | `"    assert rows[0][\"published_at\"] == \"October 10, 2026\""` | — |
-| [SRC-62DC597310-L000045](../../tests/test_live_search_connectors.py#L45) | 45 | `"    assert \"unit-test-secret\" not in str(rows)"` | — |
-| [SRC-62DC597310-L000046](../../tests/test_live_search_connectors.py#L46) | 46 | `""` | — |
+| [SRC-62DC597310-L000005](../../tests/test_live_search_connectors.py#L5) | 5 | `""` | — |
+| [SRC-62DC597310-L000006](../../tests/test_live_search_connectors.py#L6) | 6 | `"class FakeResponse:"` | — |
+| [SRC-62DC597310-L000007](../../tests/test_live_search_connectors.py#L7) | 7 | `"    def __init__(self, payload):"` | — |
+| [SRC-62DC597310-L000008](../../tests/test_live_search_connectors.py#L8) | 8 | `"        self.payload = payload"` | — |
+| [SRC-62DC597310-L000009](../../tests/test_live_search_connectors.py#L9) | 9 | `"        self.status_code = 200"` | — |
+| [SRC-62DC597310-L000010](../../tests/test_live_search_connectors.py#L10) | 10 | `""` | — |
+| [SRC-62DC597310-L000011](../../tests/test_live_search_connectors.py#L11) | 11 | `"    def raise_for_status(self):"` | — |
+| [SRC-62DC597310-L000012](../../tests/test_live_search_connectors.py#L12) | 12 | `"        return None"` | — |
+| [SRC-62DC597310-L000013](../../tests/test_live_search_connectors.py#L13) | 13 | `""` | — |
+| [SRC-62DC597310-L000014](../../tests/test_live_search_connectors.py#L14) | 14 | `"    def json(self):"` | — |
+| [SRC-62DC597310-L000015](../../tests/test_live_search_connectors.py#L15) | 15 | `"        return self.payload"` | — |
+| [SRC-62DC597310-L000016](../../tests/test_live_search_connectors.py#L16) | 16 | `""` | — |
+| [SRC-62DC597310-L000017](../../tests/test_live_search_connectors.py#L17) | 17 | `""` | — |
+| [SRC-62DC597310-L000018](../../tests/test_live_search_connectors.py#L18) | 18 | `"def test_brave_search_adapter_normalizes_real_api_response(monkeypatch):"` | — |
+| [SRC-62DC597310-L000019](../../tests/test_live_search_connectors.py#L19) | 19 | `"    monkeypatch.setenv(\"BRAVE_SEARCH_API_KEY\", \"unit-test-secret\")"` | — |
+| [SRC-62DC597310-L000020](../../tests/test_live_search_connectors.py#L20) | 20 | `"    requested = {}"` | — |
+| [SRC-62DC597310-L000021](../../tests/test_live_search_connectors.py#L21) | 21 | `""` | — |
+| [SRC-62DC597310-L000022](../../tests/test_live_search_connectors.py#L22) | 22 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-62DC597310-L000023](../../tests/test_live_search_connectors.py#L23) | 23 | `"        requested[\"url\"] = url"` | — |
+| [SRC-62DC597310-L000024](../../tests/test_live_search_connectors.py#L24) | 24 | `"        requested.update(kwargs)"` | — |
+| [SRC-62DC597310-L000025](../../tests/test_live_search_connectors.py#L25) | 25 | `"        return FakeResponse({"` | — |
+| [SRC-62DC597310-L000026](../../tests/test_live_search_connectors.py#L26) | 26 | `"            \"web\": {"` | — |
+| [SRC-62DC597310-L000027](../../tests/test_live_search_connectors.py#L27) | 27 | `"                \"results\": [{"` | — |
+| [SRC-62DC597310-L000028](../../tests/test_live_search_connectors.py#L28) | 28 | `"                    \"title\": \"Current research\","` | — |
+| [SRC-62DC597310-L000029](../../tests/test_live_search_connectors.py#L29) | 29 | `"                    \"url\": \"https://example.org/research\","` | — |
+| [SRC-62DC597310-L000030](../../tests/test_live_search_connectors.py#L30) | 30 | `"                    \"description\": \"A substantive search result.\","` | — |
+| [SRC-62DC597310-L000031](../../tests/test_live_search_connectors.py#L31) | 31 | `"                    \"page_age\": \"October 10, 2026\","` | — |
+| [SRC-62DC597310-L000032](../../tests/test_live_search_connectors.py#L32) | 32 | `"                }]"` | — |
+| [SRC-62DC597310-L000033](../../tests/test_live_search_connectors.py#L33) | 33 | `"            }"` | — |
+| [SRC-62DC597310-L000034](../../tests/test_live_search_connectors.py#L34) | 34 | `"        })"` | — |
+| [SRC-62DC597310-L000035](../../tests/test_live_search_connectors.py#L35) | 35 | `""` | — |
+| [SRC-62DC597310-L000036](../../tests/test_live_search_connectors.py#L36) | 36 | `"    monkeypatch.setattr("` | — |
+| [SRC-62DC597310-L000037](../../tests/test_live_search_connectors.py#L37) | 37 | `"        \"agents.web_agent._bounded_http_request\","` | — |
+| [SRC-62DC597310-L000038](../../tests/test_live_search_connectors.py#L38) | 38 | `"        lambda method, url, **kwargs: fake_get(url, **kwargs),"` | — |
+| [SRC-62DC597310-L000039](../../tests/test_live_search_connectors.py#L39) | 39 | `"    )"` | — |
+| [SRC-62DC597310-L000040](../../tests/test_live_search_connectors.py#L40) | 40 | `"    rows = WebAgent()._search_brave(\"بحث حديث\")"` | — |
+| [SRC-62DC597310-L000041](../../tests/test_live_search_connectors.py#L41) | 41 | `"    assert requested[\"url\"] == \"https://api.search.brave.com/res/v1/web/search\""` | — |
+| [SRC-62DC597310-L000042](../../tests/test_live_search_connectors.py#L42) | 42 | `"    assert requested[\"headers\"][\"X-Subscription-Token\"] == \"unit-test-secret\""` | — |
+| [SRC-62DC597310-L000043](../../tests/test_live_search_connectors.py#L43) | 43 | `"    assert requested[\"params\"][\"country\"] == \"EG\""` | — |
+| [SRC-62DC597310-L000044](../../tests/test_live_search_connectors.py#L44) | 44 | `"    assert rows[0][\"provider\"] == \"brave_search_api\""` | — |
+| [SRC-62DC597310-L000045](../../tests/test_live_search_connectors.py#L45) | 45 | `"    assert rows[0][\"published_at\"] == \"October 10, 2026\""` | — |
+| [SRC-62DC597310-L000046](../../tests/test_live_search_connectors.py#L46) | 46 | `"    assert \"unit-test-secret\" not in str(rows)"` | — |
 | [SRC-62DC597310-L000047](../../tests/test_live_search_connectors.py#L47) | 47 | `""` | — |
-| [SRC-62DC597310-L000048](../../tests/test_live_search_connectors.py#L48) | 48 | `"def test_tavily_search_adapter_normalizes_live_search_results(monkeypatch):"` | — |
-| [SRC-62DC597310-L000049](../../tests/test_live_search_connectors.py#L49) | 49 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"unit-test-tavily-secret\")"` | — |
-| [SRC-62DC597310-L000050](../../tests/test_live_search_connectors.py#L50) | 50 | `"    requested = {}"` | — |
-| [SRC-62DC597310-L000051](../../tests/test_live_search_connectors.py#L51) | 51 | `""` | — |
-| [SRC-62DC597310-L000052](../../tests/test_live_search_connectors.py#L52) | 52 | `"    def fake_post(url, **kwargs):"` | — |
-| [SRC-62DC597310-L000053](../../tests/test_live_search_connectors.py#L53) | 53 | `"        requested[\"url\"] = url"` | — |
-| [SRC-62DC597310-L000054](../../tests/test_live_search_connectors.py#L54) | 54 | `"        requested.update(kwargs)"` | — |
-| [SRC-62DC597310-L000055](../../tests/test_live_search_connectors.py#L55) | 55 | `"        return FakeResponse({"` | — |
-| [SRC-62DC597310-L000056](../../tests/test_live_search_connectors.py#L56) | 56 | `"            \"results\": [{"` | — |
-| [SRC-62DC597310-L000057](../../tests/test_live_search_connectors.py#L57) | 57 | `"                \"title\": \"Official report\","` | — |
-| [SRC-62DC597310-L000058](../../tests/test_live_search_connectors.py#L58) | 58 | `"                \"url\": \"https://example.org/report\","` | — |
-| [SRC-62DC597310-L000059](../../tests/test_live_search_connectors.py#L59) | 59 | `"                \"content\": \"A source excerpt from the search response.\","` | — |
-| [SRC-62DC597310-L000060](../../tests/test_live_search_connectors.py#L60) | 60 | `"                \"published_date\": \"2026-10-11\","` | — |
-| [SRC-62DC597310-L000061](../../tests/test_live_search_connectors.py#L61) | 61 | `"            }]"` | — |
-| [SRC-62DC597310-L000062](../../tests/test_live_search_connectors.py#L62) | 62 | `"        })"` | — |
-| [SRC-62DC597310-L000063](../../tests/test_live_search_connectors.py#L63) | 63 | `""` | — |
-| [SRC-62DC597310-L000064](../../tests/test_live_search_connectors.py#L64) | 64 | `"    monkeypatch.setattr(httpx, \"post\", fake_post)"` | — |
-| [SRC-62DC597310-L000065](../../tests/test_live_search_connectors.py#L65) | 65 | `"    rows = WebAgent()._search_tavily(\"official sources report\")"` | — |
-| [SRC-62DC597310-L000066](../../tests/test_live_search_connectors.py#L66) | 66 | `"    assert requested[\"url\"] == \"https://api.tavily.com/search\""` | — |
-| [SRC-62DC597310-L000067](../../tests/test_live_search_connectors.py#L67) | 67 | `"    assert requested[\"json\"][\"api_key\"] == \"unit-test-tavily-secret\""` | — |
-| [SRC-62DC597310-L000068](../../tests/test_live_search_connectors.py#L68) | 68 | `"    assert requested[\"json\"][\"include_answer\"] is False"` | — |
-| [SRC-62DC597310-L000069](../../tests/test_live_search_connectors.py#L69) | 69 | `"    assert rows[0][\"provider\"] == \"tavily_search_api\""` | — |
-| [SRC-62DC597310-L000070](../../tests/test_live_search_connectors.py#L70) | 70 | `"    assert rows[0][\"snippet\"].startswith(\"A source excerpt\")"` | — |
-| [SRC-62DC597310-L000071](../../tests/test_live_search_connectors.py#L71) | 71 | `"    assert \"unit-test-tavily-secret\" not in str(rows)"` | — |
-| [SRC-62DC597310-L000072](../../tests/test_live_search_connectors.py#L72) | 72 | `""` | — |
-| [SRC-62DC597310-L000073](../../tests/test_live_search_connectors.py#L73) | 73 | `""` | — |
-| [SRC-62DC597310-L000074](../../tests/test_live_search_connectors.py#L74) | 74 | `"def test_search_api_setup_status_reports_only_presence_not_secret_values(monkeypatch):"` | — |
-| [SRC-62DC597310-L000075](../../tests/test_live_search_connectors.py#L75) | 75 | `"    monkeypatch.setenv(\"BRAVE_SEARCH_API_KEY\", \"brave-secret\")"` | — |
-| [SRC-62DC597310-L000076](../../tests/test_live_search_connectors.py#L76) | 76 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"tavily-secret\")"` | — |
-| [SRC-62DC597310-L000077](../../tests/test_live_search_connectors.py#L77) | 77 | `"    status = WebAgent.status()"` | — |
-| [SRC-62DC597310-L000078](../../tests/test_live_search_connectors.py#L78) | 78 | `"    assert status[\"brave_search_api_configured\"] is True"` | — |
-| [SRC-62DC597310-L000079](../../tests/test_live_search_connectors.py#L79) | 79 | `"    assert status[\"tavily_search_api_configured\"] is True"` | — |
-| [SRC-62DC597310-L000080](../../tests/test_live_search_connectors.py#L80) | 80 | `"    assert \"brave-secret\" not in str(status)"` | — |
-| [SRC-62DC597310-L000081](../../tests/test_live_search_connectors.py#L81) | 81 | `"    assert \"tavily-secret\" not in str(status)"` | — |
+| [SRC-62DC597310-L000048](../../tests/test_live_search_connectors.py#L48) | 48 | `""` | — |
+| [SRC-62DC597310-L000049](../../tests/test_live_search_connectors.py#L49) | 49 | `"def test_tavily_search_adapter_normalizes_live_search_results(monkeypatch):"` | — |
+| [SRC-62DC597310-L000050](../../tests/test_live_search_connectors.py#L50) | 50 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"unit-test-tavily-secret\")"` | — |
+| [SRC-62DC597310-L000051](../../tests/test_live_search_connectors.py#L51) | 51 | `"    requested = {}"` | — |
+| [SRC-62DC597310-L000052](../../tests/test_live_search_connectors.py#L52) | 52 | `""` | — |
+| [SRC-62DC597310-L000053](../../tests/test_live_search_connectors.py#L53) | 53 | `"    def fake_post(url, **kwargs):"` | — |
+| [SRC-62DC597310-L000054](../../tests/test_live_search_connectors.py#L54) | 54 | `"        requested[\"url\"] = url"` | — |
+| [SRC-62DC597310-L000055](../../tests/test_live_search_connectors.py#L55) | 55 | `"        requested.update(kwargs)"` | — |
+| [SRC-62DC597310-L000056](../../tests/test_live_search_connectors.py#L56) | 56 | `"        return FakeResponse({"` | — |
+| [SRC-62DC597310-L000057](../../tests/test_live_search_connectors.py#L57) | 57 | `"            \"results\": [{"` | — |
+| [SRC-62DC597310-L000058](../../tests/test_live_search_connectors.py#L58) | 58 | `"                \"title\": \"Official report\","` | — |
+| [SRC-62DC597310-L000059](../../tests/test_live_search_connectors.py#L59) | 59 | `"                \"url\": \"https://example.org/report\","` | — |
+| [SRC-62DC597310-L000060](../../tests/test_live_search_connectors.py#L60) | 60 | `"                \"content\": \"A source excerpt from the search response.\","` | — |
+| [SRC-62DC597310-L000061](../../tests/test_live_search_connectors.py#L61) | 61 | `"                \"published_date\": \"2026-10-11\","` | — |
+| [SRC-62DC597310-L000062](../../tests/test_live_search_connectors.py#L62) | 62 | `"            }]"` | — |
+| [SRC-62DC597310-L000063](../../tests/test_live_search_connectors.py#L63) | 63 | `"        })"` | — |
+| [SRC-62DC597310-L000064](../../tests/test_live_search_connectors.py#L64) | 64 | `""` | — |
+| [SRC-62DC597310-L000065](../../tests/test_live_search_connectors.py#L65) | 65 | `"    monkeypatch.setattr("` | — |
+| [SRC-62DC597310-L000066](../../tests/test_live_search_connectors.py#L66) | 66 | `"        \"agents.web_agent._bounded_http_request\","` | — |
+| [SRC-62DC597310-L000067](../../tests/test_live_search_connectors.py#L67) | 67 | `"        lambda method, url, **kwargs: fake_post(url, **kwargs),"` | — |
+| [SRC-62DC597310-L000068](../../tests/test_live_search_connectors.py#L68) | 68 | `"    )"` | — |
+| [SRC-62DC597310-L000069](../../tests/test_live_search_connectors.py#L69) | 69 | `"    rows = WebAgent()._search_tavily(\"official sources report\")"` | — |
+| [SRC-62DC597310-L000070](../../tests/test_live_search_connectors.py#L70) | 70 | `"    assert requested[\"url\"] == \"https://api.tavily.com/search\""` | — |
+| [SRC-62DC597310-L000071](../../tests/test_live_search_connectors.py#L71) | 71 | `"    assert requested[\"json\"][\"api_key\"] == \"unit-test-tavily-secret\""` | — |
+| [SRC-62DC597310-L000072](../../tests/test_live_search_connectors.py#L72) | 72 | `"    assert requested[\"json\"][\"include_answer\"] is False"` | — |
+| [SRC-62DC597310-L000073](../../tests/test_live_search_connectors.py#L73) | 73 | `"    assert rows[0][\"provider\"] == \"tavily_search_api\""` | — |
+| [SRC-62DC597310-L000074](../../tests/test_live_search_connectors.py#L74) | 74 | `"    assert rows[0][\"snippet\"].startswith(\"A source excerpt\")"` | — |
+| [SRC-62DC597310-L000075](../../tests/test_live_search_connectors.py#L75) | 75 | `"    assert \"unit-test-tavily-secret\" not in str(rows)"` | — |
+| [SRC-62DC597310-L000076](../../tests/test_live_search_connectors.py#L76) | 76 | `""` | — |
+| [SRC-62DC597310-L000077](../../tests/test_live_search_connectors.py#L77) | 77 | `""` | — |
+| [SRC-62DC597310-L000078](../../tests/test_live_search_connectors.py#L78) | 78 | `"def test_search_api_setup_status_reports_only_presence_not_secret_values(monkeypatch):"` | — |
+| [SRC-62DC597310-L000079](../../tests/test_live_search_connectors.py#L79) | 79 | `"    monkeypatch.setenv(\"BRAVE_SEARCH_API_KEY\", \"brave-secret\")"` | — |
+| [SRC-62DC597310-L000080](../../tests/test_live_search_connectors.py#L80) | 80 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"tavily-secret\")"` | — |
+| [SRC-62DC597310-L000081](../../tests/test_live_search_connectors.py#L81) | 81 | `"    status = WebAgent.status()"` | — |
+| [SRC-62DC597310-L000082](../../tests/test_live_search_connectors.py#L82) | 82 | `"    assert status[\"brave_search_api_configured\"] is True"` | — |
+| [SRC-62DC597310-L000083](../../tests/test_live_search_connectors.py#L83) | 83 | `"    assert status[\"tavily_search_api_configured\"] is True"` | — |
+| [SRC-62DC597310-L000084](../../tests/test_live_search_connectors.py#L84) | 84 | `"    assert \"brave-secret\" not in str(status)"` | — |
+| [SRC-62DC597310-L000085](../../tests/test_live_search_connectors.py#L85) | 85 | `"    assert \"tavily-secret\" not in str(status)"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -857,7 +861,3 @@
 | [SRC-3D0DE98F65-L000061](../../tests/test_question_requirement_loop.py#L61) | 61 | `"                \"platforms\": [],"` | — |
 | [SRC-3D0DE98F65-L000062](../../tests/test_question_requirement_loop.py#L62) | 62 | `"            }"` | — |
 | [SRC-3D0DE98F65-L000063](../../tests/test_question_requirement_loop.py#L63) | 63 | `"        ),"` | — |
-| [SRC-3D0DE98F65-L000064](../../tests/test_question_requirement_loop.py#L64) | 64 | `"    )"` | — |
-| [SRC-3D0DE98F65-L000065](../../tests/test_question_requirement_loop.py#L65) | 65 | `""` | — |
-| [SRC-3D0DE98F65-L000066](../../tests/test_question_requirement_loop.py#L66) | 66 | `"    plan = agent._plan_search(QUESTION, [])"` | — |
-| [SRC-3D0DE98F65-L000067](../../tests/test_question_requirement_loop.py#L67) | 67 | `""` | — |

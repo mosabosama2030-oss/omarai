@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000068 إلى SRC-AFFCF23BD4-L000085
+- النطاق: SRC-3D0DE98F65-L000064 إلى SRC-AFFCF23BD4-L000081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000064](../../tests/test_question_requirement_loop.py#L64) | 64 | `"    )"` | — |
+| [SRC-3D0DE98F65-L000065](../../tests/test_question_requirement_loop.py#L65) | 65 | `""` | — |
+| [SRC-3D0DE98F65-L000066](../../tests/test_question_requirement_loop.py#L66) | 66 | `"    plan = agent._plan_search(QUESTION, [])"` | — |
+| [SRC-3D0DE98F65-L000067](../../tests/test_question_requirement_loop.py#L67) | 67 | `""` | — |
 | [SRC-3D0DE98F65-L000068](../../tests/test_question_requirement_loop.py#L68) | 68 | `"    assert plan[\"coverage_targets\"] == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
 | [SRC-3D0DE98F65-L000069](../../tests/test_question_requirement_loop.py#L69) | 69 | `"    assert all(item[\"query\"] in plan[\"queries\"] for item in plan[\"requirement_queries\"])"` | — |
 | [SRC-3D0DE98F65-L000070](../../tests/test_question_requirement_loop.py#L70) | 70 | `"    assert len(plan[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
@@ -848,7 +852,3 @@
 | [SRC-AFFCF23BD4-L000079](../../tests/test_research_completion.py#L79) | 79 | `"        \"sources\": ["` | — |
 | [SRC-AFFCF23BD4-L000080](../../tests/test_research_completion.py#L80) | 80 | `"            {\"url\": \"https://example.com/a\", \"snippet\": \"text\", \"page_fetched\": True, \"page_text\": \"read\"}"` | — |
 | [SRC-AFFCF23BD4-L000081](../../tests/test_research_completion.py#L81) | 81 | `"        ],"` | — |
-| [SRC-AFFCF23BD4-L000082](../../tests/test_research_completion.py#L82) | 82 | `"        \"search_report\": {"` | — |
-| [SRC-AFFCF23BD4-L000083](../../tests/test_research_completion.py#L83) | 83 | `"            \"unique_sources\": 1, \"pages_fetched\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000084](../../tests/test_research_completion.py#L84) | 84 | `"            \"query_results\": [{\"query\": \"topic\", \"results\": 1}],"` | — |
-| [SRC-AFFCF23BD4-L000085](../../tests/test_research_completion.py#L85) | 85 | `"        },"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000086 إلى SRC-96F6863E3C-L000195
+- النطاق: SRC-AFFCF23BD4-L000082 إلى SRC-96F6863E3C-L000191
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000082](../../tests/test_research_completion.py#L82) | 82 | `"        \"search_report\": {"` | — |
+| [SRC-AFFCF23BD4-L000083](../../tests/test_research_completion.py#L83) | 83 | `"            \"unique_sources\": 1, \"pages_fetched\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000084](../../tests/test_research_completion.py#L84) | 84 | `"            \"query_results\": [{\"query\": \"topic\", \"results\": 1}],"` | — |
+| [SRC-AFFCF23BD4-L000085](../../tests/test_research_completion.py#L85) | 85 | `"        },"` | — |
 | [SRC-AFFCF23BD4-L000086](../../tests/test_research_completion.py#L86) | 86 | `"    })"` | — |
 | [SRC-AFFCF23BD4-L000087](../../tests/test_research_completion.py#L87) | 87 | `"    assert result[\"status\"] == \"answer_generated_citations_range_checked_semantic_support_unverified\""` | — |
 | [SRC-AFFCF23BD4-L000088](../../tests/test_research_completion.py#L88) | 88 | `"    assert result[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
@@ -830,7 +834,3 @@
 | [SRC-96F6863E3C-L000189](../../tests/test_research_pipeline.py#L189) | 189 | `"    result = build_research_pipeline("` | — |
 | [SRC-96F6863E3C-L000190](../../tests/test_research_pipeline.py#L190) | 190 | `"        \"ما سعر الهاتف؟\","` | — |
 | [SRC-96F6863E3C-L000191](../../tests/test_research_pipeline.py#L191) | 191 | `"        {\"queries\": [\"سعر الهاتف\"]},"` | — |
-| [SRC-96F6863E3C-L000192](../../tests/test_research_pipeline.py#L192) | 192 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000193](../../tests/test_research_pipeline.py#L193) | 193 | `"        dialogue_context={\"trace_label\": \"upstream_metadata_only\"},"` | — |
-| [SRC-96F6863E3C-L000194](../../tests/test_research_pipeline.py#L194) | 194 | `"    )"` | — |
-| [SRC-96F6863E3C-L000195](../../tests/test_research_pipeline.py#L195) | 195 | `""` | — |
