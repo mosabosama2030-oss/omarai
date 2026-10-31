@@ -215,13 +215,9 @@ class LeadStore:
                 tenant_expression = (
                     "tenant_id" if "tenant_id" in legacy_columns else "?"
                 )
-                fields = (
-                    "id, fingerprint, text, source_url, platform, observed_at, "
-                    "assessment, status, note, created_at, updated_at"
-                )
                 if tenant_expression == "?":
                     db.execute(
-                        f"""INSERT OR IGNORE INTO leads
+                        """INSERT OR IGNORE INTO leads
                             (id, tenant_id, fingerprint, text, source_url, platform,
                              observed_at, assessment, status, note, created_at, updated_at)
                             SELECT id, ?, fingerprint, text, source_url, platform,
