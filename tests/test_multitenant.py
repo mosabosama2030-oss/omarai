@@ -114,6 +114,12 @@ def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):
     assert leads[0]["id"] == "legacy-lead"
     assert leads[0]["tenant_id"] == DEFAULT_TENANT_ID
 
+    duplicate, created = store.add(
+        "Old lead", "https://example.test/legacy", tenant_id=DEFAULT_TENANT_ID
+    )
+    assert created is False
+    assert duplicate["id"] == "legacy-lead"
+
     with store.connect() as db:
         columns = {row["name"] for row in db.execute("PRAGMA table_info(leads)")}
         unique_indexes = [
