@@ -752,7 +752,7 @@
 | [SRC-44CDA52D01-L000105](../../tests/test_omarai.py#L105) | 105 | `"            \"\"\"INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\"\"\","` | — |
 | [SRC-44CDA52D01-L000106](../../tests/test_omarai.py#L106) | 106 | `"            ("` | — |
 | [SRC-44CDA52D01-L000107](../../tests/test_omarai.py#L107) | 107 | `"                \"legacy-id\", hashlib.sha256(("` | — |
-| [SRC-44CDA52D01-L000108](../../tests/test_omarai.py#L108) | 108 | `"                    \"https://example.com/legacy\\\\n\" + normalize(\"بدور على شقة\")"` | — |
+| [SRC-44CDA52D01-L000108](../../tests/test_omarai.py#L108) | 108 | `"                    \"https://example.com/legacy\\n\" + normalize(\"بدور على شقة\")"` | — |
 | [SRC-44CDA52D01-L000109](../../tests/test_omarai.py#L109) | 109 | `"                ).encode()).hexdigest(), \"بدور على شقة\","` | — |
 | [SRC-44CDA52D01-L000110](../../tests/test_omarai.py#L110) | 110 | `"                \"https://example.com/legacy\", \"manual\", now,"` | — |
 | [SRC-44CDA52D01-L000111](../../tests/test_omarai.py#L111) | 111 | `"                json.dumps({\"score\": 1}), \"new\", \"\", now, now,"` | — |
