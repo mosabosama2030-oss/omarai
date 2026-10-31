@@ -19,9 +19,13 @@ from api.omarai import Handler
 
 
 @pytest.fixture
-def local_api(tmp_path):
-    """Run the real handler on an ephemeral loopback port with an isolated database."""
+def local_api(tmp_path, monkeypatch):
+    """Run the real handler on loopback with an isolated DB and explicit tokenless test mode."""
     previous_store = Handler.store
+    monkeypatch.setenv("OMARAI_TEST_MODE", "1")
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
+    monkeypatch.delenv("OMARAI_ACCESS_USER_ID", raising=False)
     Handler.store = LeadStore(tmp_path / "api-test.sqlite3")
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
@@ -46,6 +50,14 @@ def request_json(base, path, method="GET", payload=None, headers=None):
             return response.status, json.loads(response.read().decode("utf-8"))
     except HTTPError as error:
         return error.code, json.loads(error.read().decode("utf-8"))
+
+def request_text(base, path, headers=None):
+    request = Request(base + path, headers=dict(headers or {}))
+    try:
+        with urlopen(request, timeout=3) as response:
+            return response.status, response.read().decode("utf-8")
+    except HTTPError as error:
+        return error.code, error.read().decode("utf-8")
 
 
 def test_api_health_analyze_save_duplicate_list_and_status(local_api):
@@ -962,3 +974,139 @@ def test_dashboard_uses_delegated_status_action_not_inline_onclick():
     assert 'data-action="save-status"' in dashboard
     assert 'onclick="saveStatus' not in dashboard
     assert """data-lead-id="'+esc(l.id)+'">""" in dashboard
+
+def test_loopback_test_mode_allows_tokenless_local_api_but_not_remote_or_public_clients(
+    local_api, monkeypatch
+):
+    status, leads = request_json(local_api, "/api/leads")
+    assert status == 200
+    assert leads["count"] == 0
+
+    monkeypatch.delenv("OMARAI_TEST_MODE", raising=False)
+    status, error = request_json(local_api, "/api/leads")
+    assert status == 401
+
+    from types import SimpleNamespace
+
+    harness = SimpleNamespace(
+        client_address=("203.0.113.10", 50000),
+        server=SimpleNamespace(server_address=("127.0.0.1", 8765)),
+    )
+    monkeypatch.setenv("OMARAI_TEST_MODE", "1")
+    assert Handler._is_loopback_test_request(harness) is False
+    harness.client_address = ("127.0.0.1", 50000)
+    assert Handler._is_loopback_test_request(harness) is True
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    assert Handler._is_loopback_test_request(harness) is False
+
+
+def test_api_rejects_cross_company_list_write_update_and_export(local_api):
+    store = Handler.store
+    store.create_company("company-b", "شركة ب")
+    store.create_user("user-b", display_name="مسؤول ب")
+    store.add_membership("company-b", "user-b", role="admin")
+    lead_b, created = store.add(
+        "مطلوب شراء منتج",
+        "https://example.com/company-b/request",
+        tenant_id="company-b",
+    )
+    assert created is True
+
+    # The default operator has no membership in company B, even if it forges tenant_id.
+    status, _ = request_json(local_api, "/api/leads?tenant_id=company-b")
+    assert status == 403
+    status, _ = request_json(
+        local_api,
+        "/api/leads",
+        method="POST",
+        payload={
+            "tenant_id": "company-b",
+            "text": "مطلوب شراء منتج آخر",
+            "source_url": "https://example.com/company-b/forged",
+        },
+    )
+    assert status == 403
+    status, _ = request_json(
+        local_api,
+        f"/api/leads/{lead_b['id']}/status",
+        method="POST",
+        payload={"tenant_id": "company-b", "status": "qualified"},
+    )
+    assert status == 403
+    status, _ = request_text(local_api, "/api/leads/export.csv?tenant_id=company-b")
+    assert status == 403
+
+    headers_b = {"X-Omarai-Test-User": "user-b"}
+    status, leads_b = request_json(
+        local_api, "/api/leads?tenant_id=company-b", headers=headers_b
+    )
+    assert status == 200
+    assert [item["id"] for item in leads_b["leads"]] == [lead_b["id"]]
+
+    # Membership in company B does not grant access to the default company.
+    status, _ = request_json(
+        local_api, "/api/leads?tenant_id=default", headers=headers_b
+    )
+    assert status == 403
+
+    status, exported_b = request_text(
+        local_api, "/api/leads/export.csv?tenant_id=company-b", headers=headers_b
+    )
+    assert status == 200
+    assert lead_b["id"] in exported_b
+    assert "company-b" in exported_b
+
+    status, updated = request_json(
+        local_api,
+        f"/api/leads/{lead_b['id']}/status",
+        method="POST",
+        payload={"tenant_id": "company-b", "status": "qualified"},
+        headers=headers_b,
+    )
+    assert status == 200
+    assert updated["lead"]["tenant_id"] == "company-b"
+    assert updated["lead"]["status"] == "qualified"
+
+    # A default-company identity cannot mutate a foreign row even by guessing its ID.
+    status, _ = request_json(
+        local_api,
+        f"/api/leads/{lead_b['id']}/status",
+        method="POST",
+        payload={"status": "rejected"},
+    )
+    assert status == 404
+
+
+def test_api_tenant_id_header_requires_verified_membership(local_api):
+    store = Handler.store
+    store.create_company("company-c", "شركة ج")
+    store.create_user("user-c")
+    store.add_membership("company-c", "user-c", role="viewer")
+
+    status, _ = request_json(
+        local_api,
+        "/api/agent",
+        method="POST",
+        payload={"question": "اختبار", "tenant_id": "company-c"},
+    )
+    assert status == 403
+
+    status, _ = request_json(
+        local_api,
+        "/api/agent",
+        method="POST",
+        payload={"question": "اختبار"},
+        headers={"X-Omarai-Tenant-ID": "company-c"},
+    )
+    assert status == 403
+
+    status, _ = request_json(
+        local_api,
+        "/api/agent",
+        method="POST",
+        payload={"question": "اختبار", "tenant_id": "company-c"},
+        headers={"X-Omarai-Test-User": "user-c"},
+    )
+    # The identity is correctly authorized; the agent may still fail for missing
+    # external model/search configuration, so this test only proves tenant resolution.
+    assert status in {200, 503}
