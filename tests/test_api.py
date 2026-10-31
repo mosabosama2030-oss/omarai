@@ -467,7 +467,7 @@ def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, m
     assert status == 401
     assert "رمز الوصول" in error["error"]
 
-    status, error = request_json(local_api, "/api/leads")
+    status, _error = request_json(local_api, "/api/leads")
     assert status == 401
 
     headers = {"Authorization": "Bearer " + "x" * 48}
