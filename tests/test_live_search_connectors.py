@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import httpx
-
 from agents.web_agent import WebAgent
 
 
@@ -35,7 +33,10 @@ def test_brave_search_adapter_normalizes_real_api_response(monkeypatch):
             }
         })
 
-    monkeypatch.setattr(httpx, "get", fake_get)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_get(url, **kwargs),
+    )
     rows = WebAgent()._search_brave("بحث حديث")
     assert requested["url"] == "https://api.search.brave.com/res/v1/web/search"
     assert requested["headers"]["X-Subscription-Token"] == "unit-test-secret"
@@ -61,7 +62,10 @@ def test_tavily_search_adapter_normalizes_live_search_results(monkeypatch):
             }]
         })
 
-    monkeypatch.setattr(httpx, "post", fake_post)
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda method, url, **kwargs: fake_post(url, **kwargs),
+    )
     rows = WebAgent()._search_tavily("official sources report")
     assert requested["url"] == "https://api.tavily.com/search"
     assert requested["json"]["api_key"] == "unit-test-tavily-secret"
