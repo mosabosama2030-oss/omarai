@@ -79,3 +79,53 @@ def test_search_api_setup_status_reports_only_presence_not_secret_values(monkeyp
     assert status["tavily_search_api_configured"] is True
     assert "brave-secret" not in str(status)
     assert "tavily-secret" not in str(status)
+
+@pytest.mark.parametrize(
+    ("status_code", "expected_status"),
+    [
+        (202, "http_error"),
+        (302, "http_error"),
+        (401, "unauthorized"),
+        (403, "unauthorized"),
+        (429, "rate_limited"),
+        (503, "http_error"),
+    ],
+)
+def test_search_web_classifies_httpx_provider_failures_without_provider_body_leaks(
+    monkeypatch, status_code, expected_status
+):
+    agent = WebAgent()
+    request = httpx.Request("GET", "https://provider.example/search")
+    response = httpx.Response(status_code, request=request)
+    error = httpx.HTTPStatusError(
+        "private provider response body must not enter diagnostics",
+        request=request,
+        response=response,
+    )
+
+    def fail_search(_query):
+        raise error
+
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", fail_search)
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [{
+        "title": "Climate emissions report",
+        "url": "https://example.org/climate-emissions",
+        "snippet": "Climate emissions policy report.",
+        "provider": "bing_rss",
+    }])
+    for env_name in (
+        "DEEPSEEK_SEARCH_API_KEY",
+        "BRAVE_SEARCH_API_KEY",
+        "TAVILY_API_KEY",
+    ):
+        monkeypatch.delenv(env_name, raising=False)
+
+    results = agent._search_web("climate emissions")
+    assert any(item["provider"] == "bing_rss" for item in results)
+    diagnostic = next(
+        row for row in agent._provider_diagnostics
+        if row.get("provider") == "duckduckgo_html"
+    )
+    assert diagnostic["status"] == expected_status
+    assert diagnostic["http_status_code"] == status_code
+    assert "private provider response body" not in repr(diagnostic)
