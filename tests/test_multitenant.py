@@ -2,9 +2,10 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import sqlite3
 
-from agents.omarai import DEFAULT_TENANT_ID, LeadStore
+from agents.omarai import DEFAULT_TENANT_ID, LeadStore, normalize
 
 
 def _tenant_member(store: LeadStore, name: str, email: str, token: str):
@@ -82,6 +83,11 @@ def test_api_tokens_resolve_only_active_tenant_memberships(tmp_path):
 
 def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):
     path = tmp_path / "legacy.sqlite3"
+    legacy_text = "Old lead"
+    legacy_url = "https://example.test/legacy"
+    legacy_fingerprint = hashlib.sha256(
+        (legacy_url.rstrip("/") + "\n" + normalize(legacy_text)).encode()
+    ).hexdigest()
     with sqlite3.connect(path) as db:
         db.execute(
             """CREATE TABLE leads (
@@ -101,8 +107,8 @@ def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):
         db.execute(
             """INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
-                "legacy-lead", "legacy-fingerprint", "Old lead",
-                "https://example.test/legacy", "manual", "2026-10-30T00:00:00Z",
+                "legacy-lead", legacy_fingerprint, legacy_text,
+                legacy_url, "manual", "2026-10-30T00:00:00Z",
                 '{"score": 0}', "new", "", "2026-10-30T00:00:00Z",
                 "2026-10-30T00:00:00Z",
             ),
