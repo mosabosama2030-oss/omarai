@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000026 إلى SRC-AFFCF23BD4-L000043
+- النطاق: SRC-3D0DE98F65-L000021 إلى SRC-AFFCF23BD4-L000038
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000021](../../tests/test_question_requirement_loop.py#L21) | 21 | `""` | — |
+| [SRC-3D0DE98F65-L000022](../../tests/test_question_requirement_loop.py#L22) | 22 | `"def test_fallback_plan_assigns_a_bounded_query_to_every_criterion() -> None:"` | — |
+| [SRC-3D0DE98F65-L000023](../../tests/test_question_requirement_loop.py#L23) | 23 | `"    plan = fallback_plan(QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000024](../../tests/test_question_requirement_loop.py#L24) | 24 | `"    requirement_queries = plan[\"requirement_queries\"]"` | — |
+| [SRC-3D0DE98F65-L000025](../../tests/test_question_requirement_loop.py#L25) | 25 | `"    assert [item[\"target\"] for item in requirement_queries] == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
 | [SRC-3D0DE98F65-L000026](../../tests/test_question_requirement_loop.py#L26) | 26 | `"    assert all(item[\"query\"] in plan[\"queries\"] for item in requirement_queries)"` | — |
 | [SRC-3D0DE98F65-L000027](../../tests/test_question_requirement_loop.py#L27) | 27 | `"    assert len(plan[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
 | [SRC-3D0DE98F65-L000028](../../tests/test_question_requirement_loop.py#L28) | 28 | `"    assert all(item[\"target\"] in item[\"query\"] for item in requirement_queries)"` | — |
@@ -847,8 +852,3 @@
 | [SRC-AFFCF23BD4-L000036](../../tests/test_research_completion.py#L36) | 36 | `"    assert no_results[\"phases\"][\"search\"] == \"completed_no_results\""` | — |
 | [SRC-AFFCF23BD4-L000037](../../tests/test_research_completion.py#L37) | 37 | `"    assert failure[\"status\"] == \"search_failed_or_incomplete\""` | — |
 | [SRC-AFFCF23BD4-L000038](../../tests/test_research_completion.py#L38) | 38 | `"    assert failure[\"counters\"][\"connector_failure_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000039](../../tests/test_research_completion.py#L39) | 39 | `""` | — |
-| [SRC-AFFCF23BD4-L000040](../../tests/test_research_completion.py#L40) | 40 | `""` | — |
-| [SRC-AFFCF23BD4-L000041](../../tests/test_research_completion.py#L41) | 41 | `"def test_all_rejected_sources_are_not_mislabeled_as_no_results() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000042](../../tests/test_research_completion.py#L42) | 42 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000043](../../tests/test_research_completion.py#L43) | 43 | `"        \"kind\": \"insufficient_evidence\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001475 إلى SRC-F725E90B2A-L002274
+- النطاق: SRC-F725E90B2A-L001470 إلى SRC-F725E90B2A-L002269
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
+| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `""` | — |
+| [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
+| [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `"    assert result[\"used_language_model\"] is True"` | — |
+| [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"    assert result[\"used_web_search\"] is False"` | — |
 | [SRC-F725E90B2A-L001475](../../tests/test_web_agent.py#L1475) | 1475 | `"    assert result[\"sources\"] == []"` | — |
 | [SRC-F725E90B2A-L001476](../../tests/test_web_agent.py#L1476) | 1476 | `"    assert \"عاصمتها القاهرة\" in result[\"answer\"]"` | — |
 | [SRC-F725E90B2A-L001477](../../tests/test_web_agent.py#L1477) | 1477 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L002267](../../tests/test_web_agent.py#L2267) | 2267 | `"    listing = {"` | — |
 | [SRC-F725E90B2A-L002268](../../tests/test_web_agent.py#L2268) | 2268 | `"        \"title\": \"شقق للبيع في العاصمة الإدارية الجديدة\","` | — |
 | [SRC-F725E90B2A-L002269](../../tests/test_web_agent.py#L2269) | 2269 | `"        \"snippet\": \"أفضل شقق للبيع بالتقسيط\","` | — |
-| [SRC-F725E90B2A-L002270](../../tests/test_web_agent.py#L2270) | 2270 | `"        \"page_text\": \"إعلانات وحدات سكنية للبيع بمساحات مختلفة.\","` | — |
-| [SRC-F725E90B2A-L002271](../../tests/test_web_agent.py#L2271) | 2271 | `"    }"` | — |
-| [SRC-F725E90B2A-L002272](../../tests/test_web_agent.py#L2272) | 2272 | `"    buyer_post = {"` | — |
-| [SRC-F725E90B2A-L002273](../../tests/test_web_agent.py#L2273) | 2273 | `"        \"title\": \"بدور على شقة تمليك في العاصمة الإدارية\","` | — |
-| [SRC-F725E90B2A-L002274](../../tests/test_web_agent.py#L2274) | 2274 | `"        \"snippet\": \"مطلوب شقة تمليك في العاصمة الإدارية.\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000347 إلى SRC-3451CC474D-L000363
+- النطاق: SRC-B3062EB677-L000342 إلى SRC-3451CC474D-L000358
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000342](../../tests/test_answer_quality_runner.py#L342) | 342 | `""` | — |
+| [SRC-B3062EB677-L000343](../../tests/test_answer_quality_runner.py#L343) | 343 | `"@pytest.mark.parametrize("` | — |
+| [SRC-B3062EB677-L000344](../../tests/test_answer_quality_runner.py#L344) | 344 | `"    \"ledger, allowed_ids, message\","` | — |
+| [SRC-B3062EB677-L000345](../../tests/test_answer_quality_runner.py#L345) | 345 | `"    ["` | — |
+| [SRC-B3062EB677-L000346](../../tests/test_answer_quality_runner.py#L346) | 346 | `"        ({\"currency\": \"EUR\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": []}, {\"AQ-001\"}, \"currency=USD\"),"` | — |
 | [SRC-B3062EB677-L000347](../../tests/test_answer_quality_runner.py#L347) | 347 | `"        ({\"currency\": \"USD\", \"scope\": \"model_only\", \"source\": \"invoice\", \"costs\": []}, {\"AQ-001\"}, \"scope=complete_request\"),"` | — |
 | [SRC-B3062EB677-L000348](../../tests/test_answer_quality_runner.py#L348) | 348 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"\", \"costs\": []}, {\"AQ-001\"}, \"non-empty source\"),"` | — |
 | [SRC-B3062EB677-L000349](../../tests/test_answer_quality_runner.py#L349) | 349 | `"        ({\"currency\": \"USD\", \"scope\": \"complete_request\", \"source\": \"invoice\", \"costs\": [{\"case_id\": \"AQ-404\", \"cost_usd\": 0.0}]}, {\"AQ-001\"}, \"unknown case_id\"),"` | — |
@@ -838,8 +843,3 @@
 | [SRC-3451CC474D-L000356](../../tests/test_api.py#L356) | 356 | `"        release_worker.wait(timeout=2)"` | — |
 | [SRC-3451CC474D-L000357](../../tests/test_api.py#L357) | 357 | `""` | — |
 | [SRC-3451CC474D-L000358](../../tests/test_api.py#L358) | 358 | `"    server.finish_request = hold_handler"` | — |
-| [SRC-3451CC474D-L000359](../../tests/test_api.py#L359) | 359 | `"    original_worker = server.process_request_thread"` | — |
-| [SRC-3451CC474D-L000360](../../tests/test_api.py#L360) | 360 | `""` | — |
-| [SRC-3451CC474D-L000361](../../tests/test_api.py#L361) | 361 | `"    def track_worker(request, client_address):"` | — |
-| [SRC-3451CC474D-L000362](../../tests/test_api.py#L362) | 362 | `"        try:"` | — |
-| [SRC-3451CC474D-L000363](../../tests/test_api.py#L363) | 363 | `"            original_worker(request, client_address)"` | — |

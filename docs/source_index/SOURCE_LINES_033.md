@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000451 إلى SRC-90FAA34ADE-L001250
+- النطاق: SRC-90FAA34ADE-L000446 إلى SRC-90FAA34ADE-L001245
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000446](../../tests/fixtures/answer_quality_cases.json#L446) | 446 | `"        \"sources\": [],"` | — |
+| [SRC-90FAA34ADE-L000447](../../tests/fixtures/answer_quality_cases.json#L447) | 447 | `"        \"notes\": \"Both search providers fail deterministically\""` | — |
+| [SRC-90FAA34ADE-L000448](../../tests/fixtures/answer_quality_cases.json#L448) | 448 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000449](../../tests/fixtures/answer_quality_cases.json#L449) | 449 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000450](../../tests/fixtures/answer_quality_cases.json#L450) | 450 | `"        \"Claims to have found an announcement despite zero retrieved documents\","` | — |
 | [SRC-90FAA34ADE-L000451](../../tests/fixtures/answer_quality_cases.json#L451) | 451 | `"        \"Invents a source URL\""` | — |
 | [SRC-90FAA34ADE-L000452](../../tests/fixtures/answer_quality_cases.json#L452) | 452 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000453](../../tests/fixtures/answer_quality_cases.json#L453) | 453 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
@@ -811,8 +816,3 @@
 | [SRC-90FAA34ADE-L001243](../../tests/fixtures/answer_quality_cases.json#L1243) | 1243 | `"      \"case_id\": \"AQ-042\","` | — |
 | [SRC-90FAA34ADE-L001244](../../tests/fixtures/answer_quality_cases.json#L1244) | 1244 | `"      \"category\": \"stale_sources_for_current\","` | — |
 | [SRC-90FAA34ADE-L001245](../../tests/fixtures/answer_quality_cases.json#L1245) | 1245 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L001246](../../tests/fixtures/answer_quality_cases.json#L1246) | 1246 | `"      \"question\": \"عايز القواعد الحالية للتسجيل في خدمة حكومية في مصر؛ result timestamp بتاع صفحة الشروط هو 2020 بس.\","` | — |
-| [SRC-90FAA34ADE-L001247](../../tests/fixtures/answer_quality_cases.json#L1247) | 1247 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L001248](../../tests/fixtures/answer_quality_cases.json#L1248) | 1248 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001249](../../tests/fixtures/answer_quality_cases.json#L1249) | 1249 | `"        \"يراعي أن صفحة 2020 قد لا تمثل القواعد الحالية\","` | — |
-| [SRC-90FAA34ADE-L001250](../../tests/fixtures/answer_quality_cases.json#L1250) | 1250 | `"        \"يبحث عن صفحة حديثة/رسمية أو يصرح بأن التحقق لم يكتمل\","` | — |

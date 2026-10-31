@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000675 إلى SRC-F725E90B2A-L001474
+- النطاق: SRC-F725E90B2A-L000670 إلى SRC-F725E90B2A-L001469
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `""` | — |
+| [SRC-F725E90B2A-L000671](../../tests/test_web_agent.py#L671) | 671 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000672](../../tests/test_web_agent.py#L672) | 672 | `"    for name in ("` | — |
+| [SRC-F725E90B2A-L000673](../../tests/test_web_agent.py#L673) | 673 | `"        \"OMARAI_LLM_MODEL\","` | — |
+| [SRC-F725E90B2A-L000674](../../tests/test_web_agent.py#L674) | 674 | `"        \"OMARAI_PLANNER_MODEL\","` | — |
 | [SRC-F725E90B2A-L000675](../../tests/test_web_agent.py#L675) | 675 | `"        \"OMARAI_ANSWER_MODEL\","` | — |
 | [SRC-F725E90B2A-L000676](../../tests/test_web_agent.py#L676) | 676 | `"        \"OMARAI_REVIEW_MODEL\","` | — |
 | [SRC-F725E90B2A-L000677](../../tests/test_web_agent.py#L677) | 677 | `"        \"OMARAI_LLM_FALLBACK_MODEL\","` | — |
@@ -811,8 +816,3 @@
 | [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
 | [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    )"` | — |
 | [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `""` | — |
-| [SRC-F725E90B2A-L001470](../../tests/test_web_agent.py#L1470) | 1470 | `"    result = agent.answer(\"ما هي جمهورية مصر العربية؟\")"` | — |
-| [SRC-F725E90B2A-L001471](../../tests/test_web_agent.py#L1471) | 1471 | `""` | — |
-| [SRC-F725E90B2A-L001472](../../tests/test_web_agent.py#L1472) | 1472 | `"    assert result[\"kind\"] == \"general_answer\""` | — |
-| [SRC-F725E90B2A-L001473](../../tests/test_web_agent.py#L1473) | 1473 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L001474](../../tests/test_web_agent.py#L1474) | 1474 | `"    assert result[\"used_web_search\"] is False"` | — |

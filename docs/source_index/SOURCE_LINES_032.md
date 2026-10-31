@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000048 إلى SRC-90FAA34ADE-L000450
+- النطاق: SRC-03FF422A16-L000043 إلى SRC-90FAA34ADE-L000445
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000043](../../scripts/score_answer_quality_reviews.py#L43) | 43 | `") -> list[str]:"` | — |
+| [SRC-03FF422A16-L000044](../../scripts/score_answer_quality_reviews.py#L44) | 44 | `"    problems: list[str] = []"` | — |
+| [SRC-03FF422A16-L000045](../../scripts/score_answer_quality_reviews.py#L45) | 45 | `"    reviews = review_data.get(\"reviews\")"` | — |
+| [SRC-03FF422A16-L000046](../../scripts/score_answer_quality_reviews.py#L46) | 46 | `"    corpus_cases = corpus_data.get(\"cases\")"` | — |
+| [SRC-03FF422A16-L000047](../../scripts/score_answer_quality_reviews.py#L47) | 47 | `"    if not isinstance(reviews, list):"` | — |
 | [SRC-03FF422A16-L000048](../../scripts/score_answer_quality_reviews.py#L48) | 48 | `"        return [\"reviews must be an array\"]"` | — |
 | [SRC-03FF422A16-L000049](../../scripts/score_answer_quality_reviews.py#L49) | 49 | `"    if not isinstance(corpus_cases, list):"` | — |
 | [SRC-03FF422A16-L000050](../../scripts/score_answer_quality_reviews.py#L50) | 50 | `"        return [\"corpus must contain a cases array\"]"` | — |
@@ -829,8 +834,3 @@
 | [SRC-90FAA34ADE-L000443](../../tests/fixtures/answer_quality_cases.json#L443) | 443 | `"            \"error\": \"503\""` | — |
 | [SRC-90FAA34ADE-L000444](../../tests/fixtures/answer_quality_cases.json#L444) | 444 | `"          }"` | — |
 | [SRC-90FAA34ADE-L000445](../../tests/fixtures/answer_quality_cases.json#L445) | 445 | `"        ],"` | — |
-| [SRC-90FAA34ADE-L000446](../../tests/fixtures/answer_quality_cases.json#L446) | 446 | `"        \"sources\": [],"` | — |
-| [SRC-90FAA34ADE-L000447](../../tests/fixtures/answer_quality_cases.json#L447) | 447 | `"        \"notes\": \"Both search providers fail deterministically\""` | — |
-| [SRC-90FAA34ADE-L000448](../../tests/fixtures/answer_quality_cases.json#L448) | 448 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000449](../../tests/fixtures/answer_quality_cases.json#L449) | 449 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000450](../../tests/fixtures/answer_quality_cases.json#L450) | 450 | `"        \"Claims to have found an announcement despite zero retrieved documents\","` | — |
