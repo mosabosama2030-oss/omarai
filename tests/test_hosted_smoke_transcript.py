@@ -62,6 +62,8 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
     assert transcript["sources"][0]["url"] == "https://example.test/egypt"
     assert transcript["pipeline_completion_status"] == "completed"
     assert report["provider_diagnostics"][0]["provider"] == "bing_rss"
+    diagnostics_call = next(call for call in calls if call[0].endswith("/api/diagnostics"))
+    assert diagnostics_call[2]["test_model"] is False
     assert all("T" * 40 not in str(item) for item in report.values())
     assert len(calls) == 4
 
