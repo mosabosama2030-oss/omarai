@@ -927,23 +927,23 @@ class WebAgent:
         """Build bounded buying-intent queries from the requested product, not a sector template."""
         subject = _normalize_search_query(question).strip()
         subject = re.sub(
-            r"^(?:(?:من فضلك|لو سمحت)\\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)\\s+"
-            r"(?:عن|على)\\s+(?:عميل(?:\\s+محتمل)?|عملاء(?:\\s+محتملين)?|"
-            r"مشتري(?:ن)?|مشترين)\\s*(?:(?:الذي|اللي|الذين)\\s*)?"
-            r"(?:(?:يريد|عايز|عاوز)\\s*(?:ان\\s*)?(?:يشتري|شراء))?\\s*",
+            r"^(?:(?:من فضلك|لو سمحت)\s*)?(?:ابحث|بحث|دور|دورلي|اعثر)\s+"
+            r"(?:عن|على)\s+(?:عميل(?:\s+محتمل)?|عملاء(?:\s+محتملين)?|"
+            r"مشتري(?:ن)?|مشترين)\s*(?:(?:الذي|اللي|الذين)\s*)?"
+            r"(?:(?:يريد|عايز|عاوز)\s*(?:ان\s*)?(?:يشتري|شراء))?\s*",
             "", subject, flags=re.IGNORECASE,
         )
         subject = re.sub(
-            r"^(?:please\\s+)?(?:find|search for|look for)\\s+(?:(?:a|an)\\s+)?"
-            r"(?:(?:potential\\s+)?(?:customer|buyer|prospect|lead)s?)\\s*"
-            r"(?:(?:who|that)\\s*)?(?:(?:wants?|looking to|seeking to)\\s+"
-            r"(?:buy|purchase)\\s*)?",
+            r"^(?:please\s+)?(?:find|search for|look for)\s+(?:(?:a|an)\s+)?"
+            r"(?:(?:potential\s+)?(?:customer|buyer|prospect|lead)s?)\s*"
+            r"(?:(?:who|that)\s*)?(?:(?:wants?|looking to|seeking to)\s+"
+            r"(?:buy|purchase)\s*)?",
             "", subject, flags=re.IGNORECASE,
-        ).strip(" \\t:;,.-")
+        ).strip(" \t:;,.-")
         if len(_search_tokens(subject)) < 2:
             subject = _normalize_search_query(question).strip()
         profile = ProductProfile(name=subject[:240])
-        has_arabic = bool(re.search(r"[\\u0600-\\u06FF]", question))
+        has_arabic = bool(re.search(r"[\u0600-\u06FF]", question))
         has_latin = bool(re.search(r"[A-Za-z]", question))
         locale = "mixed" if has_arabic and has_latin else "ar" if has_arabic else "en"
         return build_buyer_queries(
