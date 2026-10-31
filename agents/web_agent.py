@@ -341,6 +341,19 @@ class AgentDependencyError(RuntimeError):
     """A required optional runtime dependency is unavailable."""
 
 
+class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Fail closed on provider redirects so bearer credentials stay on the configured origin."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def _open_model_request(request: urllib.request.Request, timeout: float):
+    """Open one model-provider request without following any HTTP redirect."""
+    opener = urllib.request.build_opener(_NoRedirectHandler)
+    return opener.open(request, timeout=timeout)
+
+
 def _clean_text(value: Any, limit: int) -> str:
     if not isinstance(value, str):
         return ""
@@ -560,7 +573,7 @@ class WebAgent:
         self._deepseek_search_requests_reserved = 0
         self.openrouter_web_search_enabled = (
             os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
-            and "openrouter.ai" in self.base_url.lower()
+            and (urllib.parse.urlsplit(self.base_url).hostname or "").lower().rstrip(".") == "openrouter.ai"
         )
         self.timeout = max(
             5, min(int(os.getenv("OMARAI_LLM_TIMEOUT", str(LLM_TIMEOUT_SECONDS))), 60)
@@ -3173,7 +3186,7 @@ class WebAgent:
                 method="POST",
             )
             try:
-                with urllib.request.urlopen(request, timeout=request_timeout) as response:
+                with _open_model_request(request, timeout=request_timeout) as response:
                     data = json.loads(response.read(2_000_000).decode("utf-8"))
                 choice = data["choices"][0]
                 if not isinstance(choice, dict):
