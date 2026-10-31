@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **99**
-- النطاق: SRC-DE7EABE998-L000433 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **101**
+- النطاق: SRC-DE7EABE998-L000431 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000431](../../web/agent.html#L431) | 431 | `"  setBusy(false);$(\"question\").focus();"` | — |
+| [SRC-DE7EABE998-L000432](../../web/agent.html#L432) | 432 | `" }"` | — |
 | [SRC-DE7EABE998-L000433](../../web/agent.html#L433) | 433 | `"}"` | — |
 | [SRC-DE7EABE998-L000434](../../web/agent.html#L434) | 434 | `"async function runDiagnostics(){"` | — |
 | [SRC-DE7EABE998-L000435](../../web/agent.html#L435) | 435 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |

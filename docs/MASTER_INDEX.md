@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **975**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1898**
-- الأسطر النصية المفهرسة حرفيًا: **40899**
+- الأسطر النصية المفهرسة حرفيًا: **40901**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -129,7 +129,7 @@
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
-| FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 7461 | 218 | جرد الملف + AST Python |
+| FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 7476 | 220 | جرد الملف + AST Python |
 | FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 5143 | 159 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
@@ -1239,13 +1239,13 @@
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L48) | دالة | test_tavily_search_adapter_normalizes_live_search_results | لا توجد Docstring. | ناقص | 48 | [SRC-62DC597310-L000048](../tests/test_live_search_connectors.py#L48) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L52) | دالة | test_tavily_search_adapter_normalizes_live_search_results.fake_post | لا توجد Docstring. | ناقص | 52 | [SRC-62DC597310-L000052](../tests/test_live_search_connectors.py#L52) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L74) | دالة | test_search_api_setup_status_reports_only_presence_not_secret_values | لا توجد Docstring. | ناقص | 74 | [SRC-62DC597310-L000074](../tests/test_live_search_connectors.py#L74) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L11) | دالة | _tenant_member | لا توجد Docstring. | ناقص | 11 | [SRC-1521F490CA-L000011](../tests/test_multitenant.py#L11) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L19) | دالة | test_tenant_scoped_fingerprints_reads_updates_and_exports | لا توجد Docstring. | ناقص | 19 | [SRC-1521F490CA-L000019](../tests/test_multitenant.py#L19) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L62) | دالة | test_api_tokens_resolve_only_active_tenant_memberships | لا توجد Docstring. | ناقص | 62 | [SRC-1521F490CA-L000062](../tests/test_multitenant.py#L62) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L84) | دالة | test_legacy_single_company_database_migrates_without_losing_leads | لا توجد Docstring. | ناقص | 84 | [SRC-1521F490CA-L000084](../tests/test_multitenant.py#L84) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L148) | دالة | test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error | لا توجد Docstring. | ناقص | 148 | [SRC-1521F490CA-L000148](../tests/test_multitenant.py#L148) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L179) | دالة | test_api_token_expiry_is_normalized_to_utc | لا توجد Docstring. | ناقص | 179 | [SRC-1521F490CA-L000179](../tests/test_multitenant.py#L179) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L200) | دالة | test_api_token_expiry_rejects_naive_malformed_and_past_values | لا توجد Docstring. | ناقص | 200 | [SRC-1521F490CA-L000200](../tests/test_multitenant.py#L200) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L13) | دالة | _tenant_member | لا توجد Docstring. | ناقص | 13 | [SRC-1521F490CA-L000013](../tests/test_multitenant.py#L13) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L21) | دالة | test_tenant_scoped_fingerprints_reads_updates_and_exports | لا توجد Docstring. | ناقص | 21 | [SRC-1521F490CA-L000021](../tests/test_multitenant.py#L21) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L64) | دالة | test_api_tokens_resolve_only_active_tenant_memberships | لا توجد Docstring. | ناقص | 64 | [SRC-1521F490CA-L000064](../tests/test_multitenant.py#L64) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L86) | دالة | test_legacy_single_company_database_migrates_without_losing_leads | لا توجد Docstring. | ناقص | 86 | [SRC-1521F490CA-L000086](../tests/test_multitenant.py#L86) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L150) | دالة | test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error | لا توجد Docstring. | ناقص | 150 | [SRC-1521F490CA-L000150](../tests/test_multitenant.py#L150) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L181) | دالة | test_api_token_expiry_is_normalized_to_utc | لا توجد Docstring. | ناقص | 181 | [SRC-1521F490CA-L000181](../tests/test_multitenant.py#L181) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L202) | دالة | test_api_token_expiry_rejects_naive_malformed_and_past_values | لا توجد Docstring. | ناقص | 202 | [SRC-1521F490CA-L000202](../tests/test_multitenant.py#L202) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L17) | دالة | tenant_api | لا توجد Docstring. | ناقص | 17 | [SRC-4405E7912C-L000017](../tests/test_multitenant_api.py#L17) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L34) | دالة | request_json | لا توجد Docstring. | ناقص | 34 | [SRC-4405E7912C-L000034](../tests/test_multitenant_api.py#L34) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L49) | دالة | _tenant | لا توجد Docstring. | ناقص | 49 | [SRC-4405E7912C-L000049](../tests/test_multitenant_api.py#L49) |
@@ -3188,7 +3188,7 @@
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L165) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 165 | [SRC-4397BC2CD2-L000165](../tests/test_intent_router_integration.py#L165) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 21 | [SRC-62DC597310-L000021](../tests/test_live_search_connectors.py#L21) |
 | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 49 | [SRC-62DC597310-L000049](../tests/test_live_search_connectors.py#L49) |
-| [tests/test_multitenant.py](../tests/test_multitenant.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TENANT_ID | 8 | [SRC-1521F490CA-L000008](../tests/test_multitenant.py#L8) |
+| [tests/test_multitenant.py](../tests/test_multitenant.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TENANT_ID | 10 | [SRC-1521F490CA-L000010](../tests/test_multitenant.py#L10) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 18 | [SRC-4405E7912C-L000018](../tests/test_multitenant_api.py#L18) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 19 | [SRC-4405E7912C-L000019](../tests/test_multitenant_api.py#L19) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L66) | مسار API/واجهة محتمل | /api/leads | 66 | [SRC-4405E7912C-L000066](../tests/test_multitenant_api.py#L66) |

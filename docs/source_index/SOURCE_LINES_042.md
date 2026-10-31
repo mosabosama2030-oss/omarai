@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000179 إلى SRC-4405E7912C-L000154
+- النطاق: SRC-EA6EC52573-L000179 إلى SRC-4405E7912C-L000152
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -478,217 +478,219 @@
 | [SRC-1521F490CA-L000005](../../tests/test_multitenant.py#L5) | 5 | `"import hashlib"` | — |
 | [SRC-1521F490CA-L000006](../../tests/test_multitenant.py#L6) | 6 | `"import sqlite3"` | — |
 | [SRC-1521F490CA-L000007](../../tests/test_multitenant.py#L7) | 7 | `""` | — |
-| [SRC-1521F490CA-L000008](../../tests/test_multitenant.py#L8) | 8 | `"from agents.omarai import DEFAULT_TENANT_ID, LeadStore, normalize"` | — |
+| [SRC-1521F490CA-L000008](../../tests/test_multitenant.py#L8) | 8 | `"import pytest"` | — |
 | [SRC-1521F490CA-L000009](../../tests/test_multitenant.py#L9) | 9 | `""` | — |
-| [SRC-1521F490CA-L000010](../../tests/test_multitenant.py#L10) | 10 | `""` | — |
-| [SRC-1521F490CA-L000011](../../tests/test_multitenant.py#L11) | 11 | `"def _tenant_member(store: LeadStore, name: str, email: str, token: str):"` | — |
-| [SRC-1521F490CA-L000012](../../tests/test_multitenant.py#L12) | 12 | `"    tenant_id = store.create_tenant(name, name.casefold())"` | — |
-| [SRC-1521F490CA-L000013](../../tests/test_multitenant.py#L13) | 13 | `"    user_id = store.create_user(email, name + \" User\")"` | — |
-| [SRC-1521F490CA-L000014](../../tests/test_multitenant.py#L14) | 14 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
-| [SRC-1521F490CA-L000015](../../tests/test_multitenant.py#L15) | 15 | `"    store.create_api_token(token, tenant_id, user_id, label=name)"` | — |
-| [SRC-1521F490CA-L000016](../../tests/test_multitenant.py#L16) | 16 | `"    return tenant_id, user_id"` | — |
-| [SRC-1521F490CA-L000017](../../tests/test_multitenant.py#L17) | 17 | `""` | — |
-| [SRC-1521F490CA-L000018](../../tests/test_multitenant.py#L18) | 18 | `""` | — |
-| [SRC-1521F490CA-L000019](../../tests/test_multitenant.py#L19) | 19 | `"def test_tenant_scoped_fingerprints_reads_updates_and_exports(tmp_path):"` | — |
-| [SRC-1521F490CA-L000020](../../tests/test_multitenant.py#L20) | 20 | `"    store = LeadStore(tmp_path / \"multi.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000021](../../tests/test_multitenant.py#L21) | 21 | `"    tenant_a, _, = _tenant_member("` | — |
-| [SRC-1521F490CA-L000022](../../tests/test_multitenant.py#L22) | 22 | `"        store, \"Company A\", \"a@example.test\", \"A\" * 40"` | — |
-| [SRC-1521F490CA-L000023](../../tests/test_multitenant.py#L23) | 23 | `"    )"` | — |
-| [SRC-1521F490CA-L000024](../../tests/test_multitenant.py#L24) | 24 | `"    tenant_b, _, = _tenant_member("` | — |
-| [SRC-1521F490CA-L000025](../../tests/test_multitenant.py#L25) | 25 | `"        store, \"Company B\", \"b@example.test\", \"B\" * 40"` | — |
-| [SRC-1521F490CA-L000026](../../tests/test_multitenant.py#L26) | 26 | `"    )"` | — |
-| [SRC-1521F490CA-L000027](../../tests/test_multitenant.py#L27) | 27 | `""` | — |
-| [SRC-1521F490CA-L000028](../../tests/test_multitenant.py#L28) | 28 | `"    payload = (\"Buyer asks to purchase a product\", \"https://example.test/post/1\")"` | — |
-| [SRC-1521F490CA-L000029](../../tests/test_multitenant.py#L29) | 29 | `"    lead_a, created_a = store.add("` | — |
-| [SRC-1521F490CA-L000030](../../tests/test_multitenant.py#L30) | 30 | `"        *payload, tenant_id=tenant_a"` | — |
-| [SRC-1521F490CA-L000031](../../tests/test_multitenant.py#L31) | 31 | `"    )"` | — |
-| [SRC-1521F490CA-L000032](../../tests/test_multitenant.py#L32) | 32 | `"    lead_b, created_b = store.add("` | — |
-| [SRC-1521F490CA-L000033](../../tests/test_multitenant.py#L33) | 33 | `"        *payload, tenant_id=tenant_b"` | — |
-| [SRC-1521F490CA-L000034](../../tests/test_multitenant.py#L34) | 34 | `"    )"` | — |
-| [SRC-1521F490CA-L000035](../../tests/test_multitenant.py#L35) | 35 | `""` | — |
-| [SRC-1521F490CA-L000036](../../tests/test_multitenant.py#L36) | 36 | `"    assert created_a is True"` | — |
-| [SRC-1521F490CA-L000037](../../tests/test_multitenant.py#L37) | 37 | `"    assert created_b is True"` | — |
-| [SRC-1521F490CA-L000038](../../tests/test_multitenant.py#L38) | 38 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
-| [SRC-1521F490CA-L000039](../../tests/test_multitenant.py#L39) | 39 | `"    assert lead_a[\"tenant_id\"] == tenant_a"` | — |
-| [SRC-1521F490CA-L000040](../../tests/test_multitenant.py#L40) | 40 | `"    assert lead_b[\"tenant_id\"] == tenant_b"` | — |
-| [SRC-1521F490CA-L000041](../../tests/test_multitenant.py#L41) | 41 | `"    assert [row[\"id\"] for row in store.list(tenant_id=tenant_a)] == [lead_a[\"id\"]]"` | — |
-| [SRC-1521F490CA-L000042](../../tests/test_multitenant.py#L42) | 42 | `"    assert [row[\"id\"] for row in store.list(tenant_id=tenant_b)] == [lead_b[\"id\"]]"` | — |
-| [SRC-1521F490CA-L000043](../../tests/test_multitenant.py#L43) | 43 | `""` | — |
-| [SRC-1521F490CA-L000044](../../tests/test_multitenant.py#L44) | 44 | `"    assert store.update_status("` | — |
-| [SRC-1521F490CA-L000045](../../tests/test_multitenant.py#L45) | 45 | `"        lead_b[\"id\"], \"qualified\", tenant_id=tenant_a"` | — |
-| [SRC-1521F490CA-L000046](../../tests/test_multitenant.py#L46) | 46 | `"    ) is None"` | — |
-| [SRC-1521F490CA-L000047](../../tests/test_multitenant.py#L47) | 47 | `"    updated_b = store.update_status("` | — |
-| [SRC-1521F490CA-L000048](../../tests/test_multitenant.py#L48) | 48 | `"        lead_b[\"id\"], \"qualified\", tenant_id=tenant_b"` | — |
-| [SRC-1521F490CA-L000049](../../tests/test_multitenant.py#L49) | 49 | `"    )"` | — |
-| [SRC-1521F490CA-L000050](../../tests/test_multitenant.py#L50) | 50 | `"    assert updated_b is not None"` | — |
-| [SRC-1521F490CA-L000051](../../tests/test_multitenant.py#L51) | 51 | `"    assert updated_b[\"status\"] == \"qualified\""` | — |
-| [SRC-1521F490CA-L000052](../../tests/test_multitenant.py#L52) | 52 | `""` | — |
-| [SRC-1521F490CA-L000053](../../tests/test_multitenant.py#L53) | 53 | `"    export_path = tmp_path / \"company-a.csv\""` | — |
-| [SRC-1521F490CA-L000054](../../tests/test_multitenant.py#L54) | 54 | `"    assert store.export_csv(export_path, tenant_id=tenant_a) == 1"` | — |
-| [SRC-1521F490CA-L000055](../../tests/test_multitenant.py#L55) | 55 | `"    with export_path.open(newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
-| [SRC-1521F490CA-L000056](../../tests/test_multitenant.py#L56) | 56 | `"        rows = list(csv.DictReader(stream))"` | — |
-| [SRC-1521F490CA-L000057](../../tests/test_multitenant.py#L57) | 57 | `"    assert len(rows) == 1"` | — |
-| [SRC-1521F490CA-L000058](../../tests/test_multitenant.py#L58) | 58 | `"    assert rows[0][\"tenant_id\"] == tenant_a"` | — |
-| [SRC-1521F490CA-L000059](../../tests/test_multitenant.py#L59) | 59 | `"    assert rows[0][\"id\"] == lead_a[\"id\"]"` | — |
-| [SRC-1521F490CA-L000060](../../tests/test_multitenant.py#L60) | 60 | `""` | — |
-| [SRC-1521F490CA-L000061](../../tests/test_multitenant.py#L61) | 61 | `""` | — |
-| [SRC-1521F490CA-L000062](../../tests/test_multitenant.py#L62) | 62 | `"def test_api_tokens_resolve_only_active_tenant_memberships(tmp_path):"` | — |
-| [SRC-1521F490CA-L000063](../../tests/test_multitenant.py#L63) | 63 | `"    store = LeadStore(tmp_path / \"tokens.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000064](../../tests/test_multitenant.py#L64) | 64 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000065](../../tests/test_multitenant.py#L65) | 65 | `"        store, \"Company\", \"owner@example.test\", \"C\" * 40"` | — |
-| [SRC-1521F490CA-L000066](../../tests/test_multitenant.py#L66) | 66 | `"    )"` | — |
-| [SRC-1521F490CA-L000067](../../tests/test_multitenant.py#L67) | 67 | `""` | — |
-| [SRC-1521F490CA-L000068](../../tests/test_multitenant.py#L68) | 68 | `"    principal = store.resolve_api_token(\"C\" * 40)"` | — |
-| [SRC-1521F490CA-L000069](../../tests/test_multitenant.py#L69) | 69 | `"    assert principal == {"` | — |
-| [SRC-1521F490CA-L000070](../../tests/test_multitenant.py#L70) | 70 | `"        \"tenant_id\": tenant_id,"` | — |
-| [SRC-1521F490CA-L000071](../../tests/test_multitenant.py#L71) | 71 | `"        \"user_id\": user_id,"` | — |
-| [SRC-1521F490CA-L000072](../../tests/test_multitenant.py#L72) | 72 | `"        \"role\": \"sales_agent\","` | — |
-| [SRC-1521F490CA-L000073](../../tests/test_multitenant.py#L73) | 73 | `"    }"` | — |
-| [SRC-1521F490CA-L000074](../../tests/test_multitenant.py#L74) | 74 | `"    assert store.resolve_api_token(\"X\" * 40) is None"` | — |
-| [SRC-1521F490CA-L000075](../../tests/test_multitenant.py#L75) | 75 | `""` | — |
-| [SRC-1521F490CA-L000076](../../tests/test_multitenant.py#L76) | 76 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000077](../../tests/test_multitenant.py#L77) | 77 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000078](../../tests/test_multitenant.py#L78) | 78 | `"            \"UPDATE tenant_memberships SET active=0 WHERE tenant_id=? AND user_id=?\","` | — |
-| [SRC-1521F490CA-L000079](../../tests/test_multitenant.py#L79) | 79 | `"            (tenant_id, user_id),"` | — |
-| [SRC-1521F490CA-L000080](../../tests/test_multitenant.py#L80) | 80 | `"        )"` | — |
-| [SRC-1521F490CA-L000081](../../tests/test_multitenant.py#L81) | 81 | `"    assert store.resolve_api_token(\"C\" * 40) is None"` | — |
-| [SRC-1521F490CA-L000082](../../tests/test_multitenant.py#L82) | 82 | `""` | — |
-| [SRC-1521F490CA-L000083](../../tests/test_multitenant.py#L83) | 83 | `""` | — |
-| [SRC-1521F490CA-L000084](../../tests/test_multitenant.py#L84) | 84 | `"def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):"` | — |
-| [SRC-1521F490CA-L000085](../../tests/test_multitenant.py#L85) | 85 | `"    path = tmp_path / \"legacy.sqlite3\""` | — |
-| [SRC-1521F490CA-L000086](../../tests/test_multitenant.py#L86) | 86 | `"    legacy_text = \"Old lead\""` | — |
-| [SRC-1521F490CA-L000087](../../tests/test_multitenant.py#L87) | 87 | `"    legacy_url = \"https://example.test/legacy\""` | — |
-| [SRC-1521F490CA-L000088](../../tests/test_multitenant.py#L88) | 88 | `"    legacy_fingerprint = hashlib.sha256("` | — |
-| [SRC-1521F490CA-L000089](../../tests/test_multitenant.py#L89) | 89 | `"        (legacy_url.rstrip(\"/\") + \"\\n\" + normalize(legacy_text)).encode()"` | — |
-| [SRC-1521F490CA-L000090](../../tests/test_multitenant.py#L90) | 90 | `"    ).hexdigest()"` | — |
-| [SRC-1521F490CA-L000091](../../tests/test_multitenant.py#L91) | 91 | `"    with sqlite3.connect(path) as db:"` | — |
-| [SRC-1521F490CA-L000092](../../tests/test_multitenant.py#L92) | 92 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000093](../../tests/test_multitenant.py#L93) | 93 | `"            \"\"\"CREATE TABLE leads ("` | — |
-| [SRC-1521F490CA-L000094](../../tests/test_multitenant.py#L94) | 94 | `"                id TEXT PRIMARY KEY,"` | — |
-| [SRC-1521F490CA-L000095](../../tests/test_multitenant.py#L95) | 95 | `"                fingerprint TEXT UNIQUE NOT NULL,"` | — |
-| [SRC-1521F490CA-L000096](../../tests/test_multitenant.py#L96) | 96 | `"                text TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000097](../../tests/test_multitenant.py#L97) | 97 | `"                source_url TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000098](../../tests/test_multitenant.py#L98) | 98 | `"                platform TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000099](../../tests/test_multitenant.py#L99) | 99 | `"                observed_at TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000100](../../tests/test_multitenant.py#L100) | 100 | `"                assessment TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000101](../../tests/test_multitenant.py#L101) | 101 | `"                status TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000102](../../tests/test_multitenant.py#L102) | 102 | `"                note TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000103](../../tests/test_multitenant.py#L103) | 103 | `"                created_at TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000104](../../tests/test_multitenant.py#L104) | 104 | `"                updated_at TEXT NOT NULL"` | — |
-| [SRC-1521F490CA-L000105](../../tests/test_multitenant.py#L105) | 105 | `"            )\"\"\""` | — |
-| [SRC-1521F490CA-L000106](../../tests/test_multitenant.py#L106) | 106 | `"        )"` | — |
-| [SRC-1521F490CA-L000107](../../tests/test_multitenant.py#L107) | 107 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000108](../../tests/test_multitenant.py#L108) | 108 | `"            \"\"\"INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\"\"\","` | — |
-| [SRC-1521F490CA-L000109](../../tests/test_multitenant.py#L109) | 109 | `"            ("` | — |
-| [SRC-1521F490CA-L000110](../../tests/test_multitenant.py#L110) | 110 | `"                \"legacy-lead\", legacy_fingerprint, legacy_text,"` | — |
-| [SRC-1521F490CA-L000111](../../tests/test_multitenant.py#L111) | 111 | `"                legacy_url, \"manual\", \"2026-10-30T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000112](../../tests/test_multitenant.py#L112) | 112 | `"                '{\"score\": 0}', \"new\", \"\", \"2026-10-30T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000113](../../tests/test_multitenant.py#L113) | 113 | `"                \"2026-10-30T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000114](../../tests/test_multitenant.py#L114) | 114 | `"            ),"` | — |
-| [SRC-1521F490CA-L000115](../../tests/test_multitenant.py#L115) | 115 | `"        )"` | — |
-| [SRC-1521F490CA-L000116](../../tests/test_multitenant.py#L116) | 116 | `""` | — |
-| [SRC-1521F490CA-L000117](../../tests/test_multitenant.py#L117) | 117 | `"    store = LeadStore(path)"` | — |
-| [SRC-1521F490CA-L000118](../../tests/test_multitenant.py#L118) | 118 | `"    leads = store.list(tenant_id=DEFAULT_TENANT_ID)"` | — |
-| [SRC-1521F490CA-L000119](../../tests/test_multitenant.py#L119) | 119 | `"    assert len(leads) == 1"` | — |
-| [SRC-1521F490CA-L000120](../../tests/test_multitenant.py#L120) | 120 | `"    assert leads[0][\"id\"] == \"legacy-lead\""` | — |
-| [SRC-1521F490CA-L000121](../../tests/test_multitenant.py#L121) | 121 | `"    assert leads[0][\"tenant_id\"] == DEFAULT_TENANT_ID"` | — |
-| [SRC-1521F490CA-L000122](../../tests/test_multitenant.py#L122) | 122 | `""` | — |
-| [SRC-1521F490CA-L000123](../../tests/test_multitenant.py#L123) | 123 | `"    duplicate, created = store.add("` | — |
-| [SRC-1521F490CA-L000124](../../tests/test_multitenant.py#L124) | 124 | `"        \"Old lead\", \"https://example.test/legacy\", tenant_id=DEFAULT_TENANT_ID"` | — |
-| [SRC-1521F490CA-L000125](../../tests/test_multitenant.py#L125) | 125 | `"    )"` | — |
-| [SRC-1521F490CA-L000126](../../tests/test_multitenant.py#L126) | 126 | `"    assert created is False"` | — |
-| [SRC-1521F490CA-L000127](../../tests/test_multitenant.py#L127) | 127 | `"    assert duplicate[\"id\"] == \"legacy-lead\""` | — |
-| [SRC-1521F490CA-L000128](../../tests/test_multitenant.py#L128) | 128 | `""` | — |
-| [SRC-1521F490CA-L000129](../../tests/test_multitenant.py#L129) | 129 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000130](../../tests/test_multitenant.py#L130) | 130 | `"        columns = {row[\"name\"] for row in db.execute(\"PRAGMA table_info(leads)\")}"` | — |
-| [SRC-1521F490CA-L000131](../../tests/test_multitenant.py#L131) | 131 | `"        unique_indexes = ["` | — |
-| [SRC-1521F490CA-L000132](../../tests/test_multitenant.py#L132) | 132 | `"            row[\"name\"] for row in db.execute(\"PRAGMA index_list(leads)\")"` | — |
-| [SRC-1521F490CA-L000133](../../tests/test_multitenant.py#L133) | 133 | `"            if row[\"unique\"]"` | — |
-| [SRC-1521F490CA-L000134](../../tests/test_multitenant.py#L134) | 134 | `"        ]"` | — |
-| [SRC-1521F490CA-L000135](../../tests/test_multitenant.py#L135) | 135 | `"        unique_columns = ["` | — |
-| [SRC-1521F490CA-L000136](../../tests/test_multitenant.py#L136) | 136 | `"            ["` | — |
-| [SRC-1521F490CA-L000137](../../tests/test_multitenant.py#L137) | 137 | `"                item[\"name\"]"` | — |
-| [SRC-1521F490CA-L000138](../../tests/test_multitenant.py#L138) | 138 | `"                for item in db.execute(f\"PRAGMA index_info('{index_name}')\")"` | — |
-| [SRC-1521F490CA-L000139](../../tests/test_multitenant.py#L139) | 139 | `"            ]"` | — |
-| [SRC-1521F490CA-L000140](../../tests/test_multitenant.py#L140) | 140 | `"            for index_name in unique_indexes"` | — |
-| [SRC-1521F490CA-L000141](../../tests/test_multitenant.py#L141) | 141 | `"        ]"` | — |
-| [SRC-1521F490CA-L000142](../../tests/test_multitenant.py#L142) | 142 | `"    assert \"tenant_id\" in columns"` | — |
-| [SRC-1521F490CA-L000143](../../tests/test_multitenant.py#L143) | 143 | `"    assert [\"fingerprint\"] not in unique_columns"` | — |
-| [SRC-1521F490CA-L000144](../../tests/test_multitenant.py#L144) | 144 | `"    assert [\"tenant_id\", \"fingerprint\"] in unique_columns"` | — |
-| [SRC-1521F490CA-L000145](../../tests/test_multitenant.py#L145) | 145 | `""` | — |
-| [SRC-1521F490CA-L000146](../../tests/test_multitenant.py#L146) | 146 | `""` | — |
+| [SRC-1521F490CA-L000010](../../tests/test_multitenant.py#L10) | 10 | `"from agents.omarai import DEFAULT_TENANT_ID, LeadStore, normalize"` | — |
+| [SRC-1521F490CA-L000011](../../tests/test_multitenant.py#L11) | 11 | `""` | — |
+| [SRC-1521F490CA-L000012](../../tests/test_multitenant.py#L12) | 12 | `""` | — |
+| [SRC-1521F490CA-L000013](../../tests/test_multitenant.py#L13) | 13 | `"def _tenant_member(store: LeadStore, name: str, email: str, token: str):"` | — |
+| [SRC-1521F490CA-L000014](../../tests/test_multitenant.py#L14) | 14 | `"    tenant_id = store.create_tenant(name, name.casefold())"` | — |
+| [SRC-1521F490CA-L000015](../../tests/test_multitenant.py#L15) | 15 | `"    user_id = store.create_user(email, name + \" User\")"` | — |
+| [SRC-1521F490CA-L000016](../../tests/test_multitenant.py#L16) | 16 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
+| [SRC-1521F490CA-L000017](../../tests/test_multitenant.py#L17) | 17 | `"    store.create_api_token(token, tenant_id, user_id, label=name)"` | — |
+| [SRC-1521F490CA-L000018](../../tests/test_multitenant.py#L18) | 18 | `"    return tenant_id, user_id"` | — |
+| [SRC-1521F490CA-L000019](../../tests/test_multitenant.py#L19) | 19 | `""` | — |
+| [SRC-1521F490CA-L000020](../../tests/test_multitenant.py#L20) | 20 | `""` | — |
+| [SRC-1521F490CA-L000021](../../tests/test_multitenant.py#L21) | 21 | `"def test_tenant_scoped_fingerprints_reads_updates_and_exports(tmp_path):"` | — |
+| [SRC-1521F490CA-L000022](../../tests/test_multitenant.py#L22) | 22 | `"    store = LeadStore(tmp_path / \"multi.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000023](../../tests/test_multitenant.py#L23) | 23 | `"    tenant_a, _, = _tenant_member("` | — |
+| [SRC-1521F490CA-L000024](../../tests/test_multitenant.py#L24) | 24 | `"        store, \"Company A\", \"a@example.test\", \"A\" * 40"` | — |
+| [SRC-1521F490CA-L000025](../../tests/test_multitenant.py#L25) | 25 | `"    )"` | — |
+| [SRC-1521F490CA-L000026](../../tests/test_multitenant.py#L26) | 26 | `"    tenant_b, _, = _tenant_member("` | — |
+| [SRC-1521F490CA-L000027](../../tests/test_multitenant.py#L27) | 27 | `"        store, \"Company B\", \"b@example.test\", \"B\" * 40"` | — |
+| [SRC-1521F490CA-L000028](../../tests/test_multitenant.py#L28) | 28 | `"    )"` | — |
+| [SRC-1521F490CA-L000029](../../tests/test_multitenant.py#L29) | 29 | `""` | — |
+| [SRC-1521F490CA-L000030](../../tests/test_multitenant.py#L30) | 30 | `"    payload = (\"Buyer asks to purchase a product\", \"https://example.test/post/1\")"` | — |
+| [SRC-1521F490CA-L000031](../../tests/test_multitenant.py#L31) | 31 | `"    lead_a, created_a = store.add("` | — |
+| [SRC-1521F490CA-L000032](../../tests/test_multitenant.py#L32) | 32 | `"        *payload, tenant_id=tenant_a"` | — |
+| [SRC-1521F490CA-L000033](../../tests/test_multitenant.py#L33) | 33 | `"    )"` | — |
+| [SRC-1521F490CA-L000034](../../tests/test_multitenant.py#L34) | 34 | `"    lead_b, created_b = store.add("` | — |
+| [SRC-1521F490CA-L000035](../../tests/test_multitenant.py#L35) | 35 | `"        *payload, tenant_id=tenant_b"` | — |
+| [SRC-1521F490CA-L000036](../../tests/test_multitenant.py#L36) | 36 | `"    )"` | — |
+| [SRC-1521F490CA-L000037](../../tests/test_multitenant.py#L37) | 37 | `""` | — |
+| [SRC-1521F490CA-L000038](../../tests/test_multitenant.py#L38) | 38 | `"    assert created_a is True"` | — |
+| [SRC-1521F490CA-L000039](../../tests/test_multitenant.py#L39) | 39 | `"    assert created_b is True"` | — |
+| [SRC-1521F490CA-L000040](../../tests/test_multitenant.py#L40) | 40 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
+| [SRC-1521F490CA-L000041](../../tests/test_multitenant.py#L41) | 41 | `"    assert lead_a[\"tenant_id\"] == tenant_a"` | — |
+| [SRC-1521F490CA-L000042](../../tests/test_multitenant.py#L42) | 42 | `"    assert lead_b[\"tenant_id\"] == tenant_b"` | — |
+| [SRC-1521F490CA-L000043](../../tests/test_multitenant.py#L43) | 43 | `"    assert [row[\"id\"] for row in store.list(tenant_id=tenant_a)] == [lead_a[\"id\"]]"` | — |
+| [SRC-1521F490CA-L000044](../../tests/test_multitenant.py#L44) | 44 | `"    assert [row[\"id\"] for row in store.list(tenant_id=tenant_b)] == [lead_b[\"id\"]]"` | — |
+| [SRC-1521F490CA-L000045](../../tests/test_multitenant.py#L45) | 45 | `""` | — |
+| [SRC-1521F490CA-L000046](../../tests/test_multitenant.py#L46) | 46 | `"    assert store.update_status("` | — |
+| [SRC-1521F490CA-L000047](../../tests/test_multitenant.py#L47) | 47 | `"        lead_b[\"id\"], \"qualified\", tenant_id=tenant_a"` | — |
+| [SRC-1521F490CA-L000048](../../tests/test_multitenant.py#L48) | 48 | `"    ) is None"` | — |
+| [SRC-1521F490CA-L000049](../../tests/test_multitenant.py#L49) | 49 | `"    updated_b = store.update_status("` | — |
+| [SRC-1521F490CA-L000050](../../tests/test_multitenant.py#L50) | 50 | `"        lead_b[\"id\"], \"qualified\", tenant_id=tenant_b"` | — |
+| [SRC-1521F490CA-L000051](../../tests/test_multitenant.py#L51) | 51 | `"    )"` | — |
+| [SRC-1521F490CA-L000052](../../tests/test_multitenant.py#L52) | 52 | `"    assert updated_b is not None"` | — |
+| [SRC-1521F490CA-L000053](../../tests/test_multitenant.py#L53) | 53 | `"    assert updated_b[\"status\"] == \"qualified\""` | — |
+| [SRC-1521F490CA-L000054](../../tests/test_multitenant.py#L54) | 54 | `""` | — |
+| [SRC-1521F490CA-L000055](../../tests/test_multitenant.py#L55) | 55 | `"    export_path = tmp_path / \"company-a.csv\""` | — |
+| [SRC-1521F490CA-L000056](../../tests/test_multitenant.py#L56) | 56 | `"    assert store.export_csv(export_path, tenant_id=tenant_a) == 1"` | — |
+| [SRC-1521F490CA-L000057](../../tests/test_multitenant.py#L57) | 57 | `"    with export_path.open(newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
+| [SRC-1521F490CA-L000058](../../tests/test_multitenant.py#L58) | 58 | `"        rows = list(csv.DictReader(stream))"` | — |
+| [SRC-1521F490CA-L000059](../../tests/test_multitenant.py#L59) | 59 | `"    assert len(rows) == 1"` | — |
+| [SRC-1521F490CA-L000060](../../tests/test_multitenant.py#L60) | 60 | `"    assert rows[0][\"tenant_id\"] == tenant_a"` | — |
+| [SRC-1521F490CA-L000061](../../tests/test_multitenant.py#L61) | 61 | `"    assert rows[0][\"id\"] == lead_a[\"id\"]"` | — |
+| [SRC-1521F490CA-L000062](../../tests/test_multitenant.py#L62) | 62 | `""` | — |
+| [SRC-1521F490CA-L000063](../../tests/test_multitenant.py#L63) | 63 | `""` | — |
+| [SRC-1521F490CA-L000064](../../tests/test_multitenant.py#L64) | 64 | `"def test_api_tokens_resolve_only_active_tenant_memberships(tmp_path):"` | — |
+| [SRC-1521F490CA-L000065](../../tests/test_multitenant.py#L65) | 65 | `"    store = LeadStore(tmp_path / \"tokens.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000066](../../tests/test_multitenant.py#L66) | 66 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000067](../../tests/test_multitenant.py#L67) | 67 | `"        store, \"Company\", \"owner@example.test\", \"C\" * 40"` | — |
+| [SRC-1521F490CA-L000068](../../tests/test_multitenant.py#L68) | 68 | `"    )"` | — |
+| [SRC-1521F490CA-L000069](../../tests/test_multitenant.py#L69) | 69 | `""` | — |
+| [SRC-1521F490CA-L000070](../../tests/test_multitenant.py#L70) | 70 | `"    principal = store.resolve_api_token(\"C\" * 40)"` | — |
+| [SRC-1521F490CA-L000071](../../tests/test_multitenant.py#L71) | 71 | `"    assert principal == {"` | — |
+| [SRC-1521F490CA-L000072](../../tests/test_multitenant.py#L72) | 72 | `"        \"tenant_id\": tenant_id,"` | — |
+| [SRC-1521F490CA-L000073](../../tests/test_multitenant.py#L73) | 73 | `"        \"user_id\": user_id,"` | — |
+| [SRC-1521F490CA-L000074](../../tests/test_multitenant.py#L74) | 74 | `"        \"role\": \"sales_agent\","` | — |
+| [SRC-1521F490CA-L000075](../../tests/test_multitenant.py#L75) | 75 | `"    }"` | — |
+| [SRC-1521F490CA-L000076](../../tests/test_multitenant.py#L76) | 76 | `"    assert store.resolve_api_token(\"X\" * 40) is None"` | — |
+| [SRC-1521F490CA-L000077](../../tests/test_multitenant.py#L77) | 77 | `""` | — |
+| [SRC-1521F490CA-L000078](../../tests/test_multitenant.py#L78) | 78 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000079](../../tests/test_multitenant.py#L79) | 79 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000080](../../tests/test_multitenant.py#L80) | 80 | `"            \"UPDATE tenant_memberships SET active=0 WHERE tenant_id=? AND user_id=?\","` | — |
+| [SRC-1521F490CA-L000081](../../tests/test_multitenant.py#L81) | 81 | `"            (tenant_id, user_id),"` | — |
+| [SRC-1521F490CA-L000082](../../tests/test_multitenant.py#L82) | 82 | `"        )"` | — |
+| [SRC-1521F490CA-L000083](../../tests/test_multitenant.py#L83) | 83 | `"    assert store.resolve_api_token(\"C\" * 40) is None"` | — |
+| [SRC-1521F490CA-L000084](../../tests/test_multitenant.py#L84) | 84 | `""` | — |
+| [SRC-1521F490CA-L000085](../../tests/test_multitenant.py#L85) | 85 | `""` | — |
+| [SRC-1521F490CA-L000086](../../tests/test_multitenant.py#L86) | 86 | `"def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):"` | — |
+| [SRC-1521F490CA-L000087](../../tests/test_multitenant.py#L87) | 87 | `"    path = tmp_path / \"legacy.sqlite3\""` | — |
+| [SRC-1521F490CA-L000088](../../tests/test_multitenant.py#L88) | 88 | `"    legacy_text = \"Old lead\""` | — |
+| [SRC-1521F490CA-L000089](../../tests/test_multitenant.py#L89) | 89 | `"    legacy_url = \"https://example.test/legacy\""` | — |
+| [SRC-1521F490CA-L000090](../../tests/test_multitenant.py#L90) | 90 | `"    legacy_fingerprint = hashlib.sha256("` | — |
+| [SRC-1521F490CA-L000091](../../tests/test_multitenant.py#L91) | 91 | `"        (legacy_url.rstrip(\"/\") + \"\\n\" + normalize(legacy_text)).encode()"` | — |
+| [SRC-1521F490CA-L000092](../../tests/test_multitenant.py#L92) | 92 | `"    ).hexdigest()"` | — |
+| [SRC-1521F490CA-L000093](../../tests/test_multitenant.py#L93) | 93 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000094](../../tests/test_multitenant.py#L94) | 94 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000095](../../tests/test_multitenant.py#L95) | 95 | `"            \"\"\"CREATE TABLE leads ("` | — |
+| [SRC-1521F490CA-L000096](../../tests/test_multitenant.py#L96) | 96 | `"                id TEXT PRIMARY KEY,"` | — |
+| [SRC-1521F490CA-L000097](../../tests/test_multitenant.py#L97) | 97 | `"                fingerprint TEXT UNIQUE NOT NULL,"` | — |
+| [SRC-1521F490CA-L000098](../../tests/test_multitenant.py#L98) | 98 | `"                text TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000099](../../tests/test_multitenant.py#L99) | 99 | `"                source_url TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000100](../../tests/test_multitenant.py#L100) | 100 | `"                platform TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000101](../../tests/test_multitenant.py#L101) | 101 | `"                observed_at TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000102](../../tests/test_multitenant.py#L102) | 102 | `"                assessment TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000103](../../tests/test_multitenant.py#L103) | 103 | `"                status TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000104](../../tests/test_multitenant.py#L104) | 104 | `"                note TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000105](../../tests/test_multitenant.py#L105) | 105 | `"                created_at TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000106](../../tests/test_multitenant.py#L106) | 106 | `"                updated_at TEXT NOT NULL"` | — |
+| [SRC-1521F490CA-L000107](../../tests/test_multitenant.py#L107) | 107 | `"            )\"\"\""` | — |
+| [SRC-1521F490CA-L000108](../../tests/test_multitenant.py#L108) | 108 | `"        )"` | — |
+| [SRC-1521F490CA-L000109](../../tests/test_multitenant.py#L109) | 109 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000110](../../tests/test_multitenant.py#L110) | 110 | `"            \"\"\"INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\"\"\","` | — |
+| [SRC-1521F490CA-L000111](../../tests/test_multitenant.py#L111) | 111 | `"            ("` | — |
+| [SRC-1521F490CA-L000112](../../tests/test_multitenant.py#L112) | 112 | `"                \"legacy-lead\", legacy_fingerprint, legacy_text,"` | — |
+| [SRC-1521F490CA-L000113](../../tests/test_multitenant.py#L113) | 113 | `"                legacy_url, \"manual\", \"2026-10-30T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000114](../../tests/test_multitenant.py#L114) | 114 | `"                '{\"score\": 0}', \"new\", \"\", \"2026-10-30T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000115](../../tests/test_multitenant.py#L115) | 115 | `"                \"2026-10-30T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000116](../../tests/test_multitenant.py#L116) | 116 | `"            ),"` | — |
+| [SRC-1521F490CA-L000117](../../tests/test_multitenant.py#L117) | 117 | `"        )"` | — |
+| [SRC-1521F490CA-L000118](../../tests/test_multitenant.py#L118) | 118 | `""` | — |
+| [SRC-1521F490CA-L000119](../../tests/test_multitenant.py#L119) | 119 | `"    store = LeadStore(path)"` | — |
+| [SRC-1521F490CA-L000120](../../tests/test_multitenant.py#L120) | 120 | `"    leads = store.list(tenant_id=DEFAULT_TENANT_ID)"` | — |
+| [SRC-1521F490CA-L000121](../../tests/test_multitenant.py#L121) | 121 | `"    assert len(leads) == 1"` | — |
+| [SRC-1521F490CA-L000122](../../tests/test_multitenant.py#L122) | 122 | `"    assert leads[0][\"id\"] == \"legacy-lead\""` | — |
+| [SRC-1521F490CA-L000123](../../tests/test_multitenant.py#L123) | 123 | `"    assert leads[0][\"tenant_id\"] == DEFAULT_TENANT_ID"` | — |
+| [SRC-1521F490CA-L000124](../../tests/test_multitenant.py#L124) | 124 | `""` | — |
+| [SRC-1521F490CA-L000125](../../tests/test_multitenant.py#L125) | 125 | `"    duplicate, created = store.add("` | — |
+| [SRC-1521F490CA-L000126](../../tests/test_multitenant.py#L126) | 126 | `"        \"Old lead\", \"https://example.test/legacy\", tenant_id=DEFAULT_TENANT_ID"` | — |
+| [SRC-1521F490CA-L000127](../../tests/test_multitenant.py#L127) | 127 | `"    )"` | — |
+| [SRC-1521F490CA-L000128](../../tests/test_multitenant.py#L128) | 128 | `"    assert created is False"` | — |
+| [SRC-1521F490CA-L000129](../../tests/test_multitenant.py#L129) | 129 | `"    assert duplicate[\"id\"] == \"legacy-lead\""` | — |
+| [SRC-1521F490CA-L000130](../../tests/test_multitenant.py#L130) | 130 | `""` | — |
+| [SRC-1521F490CA-L000131](../../tests/test_multitenant.py#L131) | 131 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000132](../../tests/test_multitenant.py#L132) | 132 | `"        columns = {row[\"name\"] for row in db.execute(\"PRAGMA table_info(leads)\")}"` | — |
+| [SRC-1521F490CA-L000133](../../tests/test_multitenant.py#L133) | 133 | `"        unique_indexes = ["` | — |
+| [SRC-1521F490CA-L000134](../../tests/test_multitenant.py#L134) | 134 | `"            row[\"name\"] for row in db.execute(\"PRAGMA index_list(leads)\")"` | — |
+| [SRC-1521F490CA-L000135](../../tests/test_multitenant.py#L135) | 135 | `"            if row[\"unique\"]"` | — |
+| [SRC-1521F490CA-L000136](../../tests/test_multitenant.py#L136) | 136 | `"        ]"` | — |
+| [SRC-1521F490CA-L000137](../../tests/test_multitenant.py#L137) | 137 | `"        unique_columns = ["` | — |
+| [SRC-1521F490CA-L000138](../../tests/test_multitenant.py#L138) | 138 | `"            ["` | — |
+| [SRC-1521F490CA-L000139](../../tests/test_multitenant.py#L139) | 139 | `"                item[\"name\"]"` | — |
+| [SRC-1521F490CA-L000140](../../tests/test_multitenant.py#L140) | 140 | `"                for item in db.execute(f\"PRAGMA index_info('{index_name}')\")"` | — |
+| [SRC-1521F490CA-L000141](../../tests/test_multitenant.py#L141) | 141 | `"            ]"` | — |
+| [SRC-1521F490CA-L000142](../../tests/test_multitenant.py#L142) | 142 | `"            for index_name in unique_indexes"` | — |
+| [SRC-1521F490CA-L000143](../../tests/test_multitenant.py#L143) | 143 | `"        ]"` | — |
+| [SRC-1521F490CA-L000144](../../tests/test_multitenant.py#L144) | 144 | `"    assert \"tenant_id\" in columns"` | — |
+| [SRC-1521F490CA-L000145](../../tests/test_multitenant.py#L145) | 145 | `"    assert [\"fingerprint\"] not in unique_columns"` | — |
+| [SRC-1521F490CA-L000146](../../tests/test_multitenant.py#L146) | 146 | `"    assert [\"tenant_id\", \"fingerprint\"] in unique_columns"` | — |
 | [SRC-1521F490CA-L000147](../../tests/test_multitenant.py#L147) | 147 | `""` | — |
-| [SRC-1521F490CA-L000148](../../tests/test_multitenant.py#L148) | 148 | `"def test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error(tmp_path):"` | — |
-| [SRC-1521F490CA-L000149](../../tests/test_multitenant.py#L149) | 149 | `"    path = tmp_path / \"incomplete-legacy.sqlite3\""` | — |
-| [SRC-1521F490CA-L000150](../../tests/test_multitenant.py#L150) | 150 | `"    with sqlite3.connect(path) as db:"` | — |
-| [SRC-1521F490CA-L000151](../../tests/test_multitenant.py#L151) | 151 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000152](../../tests/test_multitenant.py#L152) | 152 | `"            \"CREATE TABLE leads (id TEXT PRIMARY KEY, fingerprint TEXT UNIQUE NOT NULL, text TEXT NOT NULL)\""` | — |
-| [SRC-1521F490CA-L000153](../../tests/test_multitenant.py#L153) | 153 | `"        )"` | — |
-| [SRC-1521F490CA-L000154](../../tests/test_multitenant.py#L154) | 154 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000155](../../tests/test_multitenant.py#L155) | 155 | `"            \"INSERT INTO leads (id, fingerprint, text) VALUES (?, ?, ?)\","` | — |
-| [SRC-1521F490CA-L000156](../../tests/test_multitenant.py#L156) | 156 | `"            (\"legacy-1\", \"fingerprint-1\", \"preserve me\"),"` | — |
-| [SRC-1521F490CA-L000157](../../tests/test_multitenant.py#L157) | 157 | `"        )"` | — |
-| [SRC-1521F490CA-L000158](../../tests/test_multitenant.py#L158) | 158 | `""` | — |
-| [SRC-1521F490CA-L000159](../../tests/test_multitenant.py#L159) | 159 | `"    import pytest"` | — |
+| [SRC-1521F490CA-L000148](../../tests/test_multitenant.py#L148) | 148 | `""` | — |
+| [SRC-1521F490CA-L000149](../../tests/test_multitenant.py#L149) | 149 | `""` | — |
+| [SRC-1521F490CA-L000150](../../tests/test_multitenant.py#L150) | 150 | `"def test_legacy_migration_rolls_back_and_keeps_original_table_on_copy_error(tmp_path):"` | — |
+| [SRC-1521F490CA-L000151](../../tests/test_multitenant.py#L151) | 151 | `"    path = tmp_path / \"incomplete-legacy.sqlite3\""` | — |
+| [SRC-1521F490CA-L000152](../../tests/test_multitenant.py#L152) | 152 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000153](../../tests/test_multitenant.py#L153) | 153 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000154](../../tests/test_multitenant.py#L154) | 154 | `"            \"CREATE TABLE leads (id TEXT PRIMARY KEY, fingerprint TEXT UNIQUE NOT NULL, text TEXT NOT NULL)\""` | — |
+| [SRC-1521F490CA-L000155](../../tests/test_multitenant.py#L155) | 155 | `"        )"` | — |
+| [SRC-1521F490CA-L000156](../../tests/test_multitenant.py#L156) | 156 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000157](../../tests/test_multitenant.py#L157) | 157 | `"            \"INSERT INTO leads (id, fingerprint, text) VALUES (?, ?, ?)\","` | — |
+| [SRC-1521F490CA-L000158](../../tests/test_multitenant.py#L158) | 158 | `"            (\"legacy-1\", \"fingerprint-1\", \"preserve me\"),"` | — |
+| [SRC-1521F490CA-L000159](../../tests/test_multitenant.py#L159) | 159 | `"        )"` | — |
 | [SRC-1521F490CA-L000160](../../tests/test_multitenant.py#L160) | 160 | `""` | — |
-| [SRC-1521F490CA-L000161](../../tests/test_multitenant.py#L161) | 161 | `"    with pytest.raises(sqlite3.OperationalError):"` | — |
-| [SRC-1521F490CA-L000162](../../tests/test_multitenant.py#L162) | 162 | `"        LeadStore(path)"` | — |
-| [SRC-1521F490CA-L000163](../../tests/test_multitenant.py#L163) | 163 | `""` | — |
-| [SRC-1521F490CA-L000164](../../tests/test_multitenant.py#L164) | 164 | `"    with sqlite3.connect(path) as db:"` | — |
-| [SRC-1521F490CA-L000165](../../tests/test_multitenant.py#L165) | 165 | `"        tables = {"` | — |
-| [SRC-1521F490CA-L000166](../../tests/test_multitenant.py#L166) | 166 | `"            row[0]"` | — |
-| [SRC-1521F490CA-L000167](../../tests/test_multitenant.py#L167) | 167 | `"            for row in db.execute("` | — |
-| [SRC-1521F490CA-L000168](../../tests/test_multitenant.py#L168) | 168 | `"                \"SELECT name FROM sqlite_master WHERE type='table'\""` | — |
-| [SRC-1521F490CA-L000169](../../tests/test_multitenant.py#L169) | 169 | `"            )"` | — |
-| [SRC-1521F490CA-L000170](../../tests/test_multitenant.py#L170) | 170 | `"        }"` | — |
-| [SRC-1521F490CA-L000171](../../tests/test_multitenant.py#L171) | 171 | `"        original = db.execute("` | — |
-| [SRC-1521F490CA-L000172](../../tests/test_multitenant.py#L172) | 172 | `"            \"SELECT id, fingerprint, text FROM leads\""` | — |
-| [SRC-1521F490CA-L000173](../../tests/test_multitenant.py#L173) | 173 | `"        ).fetchone()"` | — |
-| [SRC-1521F490CA-L000174](../../tests/test_multitenant.py#L174) | 174 | `"    assert \"leads\" in tables"` | — |
-| [SRC-1521F490CA-L000175](../../tests/test_multitenant.py#L175) | 175 | `"    assert \"leads_legacy_migration\" not in tables"` | — |
-| [SRC-1521F490CA-L000176](../../tests/test_multitenant.py#L176) | 176 | `"    assert original == (\"legacy-1\", \"fingerprint-1\", \"preserve me\")"` | — |
-| [SRC-1521F490CA-L000177](../../tests/test_multitenant.py#L177) | 177 | `""` | — |
-| [SRC-1521F490CA-L000178](../../tests/test_multitenant.py#L178) | 178 | `""` | — |
-| [SRC-1521F490CA-L000179](../../tests/test_multitenant.py#L179) | 179 | `"def test_api_token_expiry_is_normalized_to_utc(tmp_path):"` | — |
-| [SRC-1521F490CA-L000180](../../tests/test_multitenant.py#L180) | 180 | `"    store = LeadStore(tmp_path / \"token-expiry.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000181](../../tests/test_multitenant.py#L181) | 181 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000182](../../tests/test_multitenant.py#L182) | 182 | `"        store, \"Expiry Company\", \"expiry@example.test\", \"E\" * 40"` | — |
-| [SRC-1521F490CA-L000183](../../tests/test_multitenant.py#L183) | 183 | `"    )"` | — |
-| [SRC-1521F490CA-L000184](../../tests/test_multitenant.py#L184) | 184 | `"    token = \"F\" * 40"` | — |
-| [SRC-1521F490CA-L000185](../../tests/test_multitenant.py#L185) | 185 | `"    store.create_api_token("` | — |
-| [SRC-1521F490CA-L000186](../../tests/test_multitenant.py#L186) | 186 | `"        token,"` | — |
-| [SRC-1521F490CA-L000187](../../tests/test_multitenant.py#L187) | 187 | `"        tenant_id,"` | — |
-| [SRC-1521F490CA-L000188](../../tests/test_multitenant.py#L188) | 188 | `"        user_id,"` | — |
-| [SRC-1521F490CA-L000189](../../tests/test_multitenant.py#L189) | 189 | `"        expires_at=\"2099-01-01T03:00:00+03:00\","` | — |
-| [SRC-1521F490CA-L000190](../../tests/test_multitenant.py#L190) | 190 | `"    )"` | — |
-| [SRC-1521F490CA-L000191](../../tests/test_multitenant.py#L191) | 191 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000192](../../tests/test_multitenant.py#L192) | 192 | `"        row = db.execute("` | — |
-| [SRC-1521F490CA-L000193](../../tests/test_multitenant.py#L193) | 193 | `"            \"SELECT expires_at FROM api_tokens WHERE token_hash=?\","` | — |
-| [SRC-1521F490CA-L000194](../../tests/test_multitenant.py#L194) | 194 | `"            (store._token_hash(token),),"` | — |
-| [SRC-1521F490CA-L000195](../../tests/test_multitenant.py#L195) | 195 | `"        ).fetchone()"` | — |
-| [SRC-1521F490CA-L000196](../../tests/test_multitenant.py#L196) | 196 | `"    assert row[\"expires_at\"] == \"2099-01-01T00:00:00Z\""` | — |
-| [SRC-1521F490CA-L000197](../../tests/test_multitenant.py#L197) | 197 | `"    assert store.resolve_api_token(token) is not None"` | — |
-| [SRC-1521F490CA-L000198](../../tests/test_multitenant.py#L198) | 198 | `""` | — |
-| [SRC-1521F490CA-L000199](../../tests/test_multitenant.py#L199) | 199 | `""` | — |
-| [SRC-1521F490CA-L000200](../../tests/test_multitenant.py#L200) | 200 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
-| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
-| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"    )"` | — |
-| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"    invalid_values = ("` | — |
-| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"        \"2099-01-01T00:00:00\","` | — |
-| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"        \"not-a-timestamp\","` | — |
-| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `"        \"2000-01-01T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"        \"\","` | — |
-| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"    )"` | — |
-| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"    for index, expiry in enumerate(invalid_values):"` | — |
-| [SRC-1521F490CA-L000212](../../tests/test_multitenant.py#L212) | 212 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
-| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"            store.create_api_token("` | — |
-| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `"                (\"H\" * 39) + str(index),"` | — |
-| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `"                tenant_id,"` | — |
-| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"                user_id,"` | — |
-| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"                expires_at=expiry,"` | — |
-| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"            )"` | — |
+| [SRC-1521F490CA-L000161](../../tests/test_multitenant.py#L161) | 161 | `"    import pytest"` | — |
+| [SRC-1521F490CA-L000162](../../tests/test_multitenant.py#L162) | 162 | `""` | — |
+| [SRC-1521F490CA-L000163](../../tests/test_multitenant.py#L163) | 163 | `"    with pytest.raises(sqlite3.OperationalError):"` | — |
+| [SRC-1521F490CA-L000164](../../tests/test_multitenant.py#L164) | 164 | `"        LeadStore(path)"` | — |
+| [SRC-1521F490CA-L000165](../../tests/test_multitenant.py#L165) | 165 | `""` | — |
+| [SRC-1521F490CA-L000166](../../tests/test_multitenant.py#L166) | 166 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000167](../../tests/test_multitenant.py#L167) | 167 | `"        tables = {"` | — |
+| [SRC-1521F490CA-L000168](../../tests/test_multitenant.py#L168) | 168 | `"            row[0]"` | — |
+| [SRC-1521F490CA-L000169](../../tests/test_multitenant.py#L169) | 169 | `"            for row in db.execute("` | — |
+| [SRC-1521F490CA-L000170](../../tests/test_multitenant.py#L170) | 170 | `"                \"SELECT name FROM sqlite_master WHERE type='table'\""` | — |
+| [SRC-1521F490CA-L000171](../../tests/test_multitenant.py#L171) | 171 | `"            )"` | — |
+| [SRC-1521F490CA-L000172](../../tests/test_multitenant.py#L172) | 172 | `"        }"` | — |
+| [SRC-1521F490CA-L000173](../../tests/test_multitenant.py#L173) | 173 | `"        original = db.execute("` | — |
+| [SRC-1521F490CA-L000174](../../tests/test_multitenant.py#L174) | 174 | `"            \"SELECT id, fingerprint, text FROM leads\""` | — |
+| [SRC-1521F490CA-L000175](../../tests/test_multitenant.py#L175) | 175 | `"        ).fetchone()"` | — |
+| [SRC-1521F490CA-L000176](../../tests/test_multitenant.py#L176) | 176 | `"    assert \"leads\" in tables"` | — |
+| [SRC-1521F490CA-L000177](../../tests/test_multitenant.py#L177) | 177 | `"    assert \"leads_legacy_migration\" not in tables"` | — |
+| [SRC-1521F490CA-L000178](../../tests/test_multitenant.py#L178) | 178 | `"    assert original == (\"legacy-1\", \"fingerprint-1\", \"preserve me\")"` | — |
+| [SRC-1521F490CA-L000179](../../tests/test_multitenant.py#L179) | 179 | `""` | — |
+| [SRC-1521F490CA-L000180](../../tests/test_multitenant.py#L180) | 180 | `""` | — |
+| [SRC-1521F490CA-L000181](../../tests/test_multitenant.py#L181) | 181 | `"def test_api_token_expiry_is_normalized_to_utc(tmp_path):"` | — |
+| [SRC-1521F490CA-L000182](../../tests/test_multitenant.py#L182) | 182 | `"    store = LeadStore(tmp_path / \"token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000183](../../tests/test_multitenant.py#L183) | 183 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000184](../../tests/test_multitenant.py#L184) | 184 | `"        store, \"Expiry Company\", \"expiry@example.test\", \"E\" * 40"` | — |
+| [SRC-1521F490CA-L000185](../../tests/test_multitenant.py#L185) | 185 | `"    )"` | — |
+| [SRC-1521F490CA-L000186](../../tests/test_multitenant.py#L186) | 186 | `"    token = \"F\" * 40"` | — |
+| [SRC-1521F490CA-L000187](../../tests/test_multitenant.py#L187) | 187 | `"    store.create_api_token("` | — |
+| [SRC-1521F490CA-L000188](../../tests/test_multitenant.py#L188) | 188 | `"        token,"` | — |
+| [SRC-1521F490CA-L000189](../../tests/test_multitenant.py#L189) | 189 | `"        tenant_id,"` | — |
+| [SRC-1521F490CA-L000190](../../tests/test_multitenant.py#L190) | 190 | `"        user_id,"` | — |
+| [SRC-1521F490CA-L000191](../../tests/test_multitenant.py#L191) | 191 | `"        expires_at=\"2099-01-01T03:00:00+03:00\","` | — |
+| [SRC-1521F490CA-L000192](../../tests/test_multitenant.py#L192) | 192 | `"    )"` | — |
+| [SRC-1521F490CA-L000193](../../tests/test_multitenant.py#L193) | 193 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000194](../../tests/test_multitenant.py#L194) | 194 | `"        row = db.execute("` | — |
+| [SRC-1521F490CA-L000195](../../tests/test_multitenant.py#L195) | 195 | `"            \"SELECT expires_at FROM api_tokens WHERE token_hash=?\","` | — |
+| [SRC-1521F490CA-L000196](../../tests/test_multitenant.py#L196) | 196 | `"            (store._token_hash(token),),"` | — |
+| [SRC-1521F490CA-L000197](../../tests/test_multitenant.py#L197) | 197 | `"        ).fetchone()"` | — |
+| [SRC-1521F490CA-L000198](../../tests/test_multitenant.py#L198) | 198 | `"    assert row[\"expires_at\"] == \"2099-01-01T00:00:00Z\""` | — |
+| [SRC-1521F490CA-L000199](../../tests/test_multitenant.py#L199) | 199 | `"    assert store.resolve_api_token(token) is not None"` | — |
+| [SRC-1521F490CA-L000200](../../tests/test_multitenant.py#L200) | 200 | `""` | — |
+| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `""` | — |
+| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
+| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
+| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"    )"` | — |
+| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"    invalid_values = ("` | — |
+| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `"        \"2099-01-01T00:00:00\","` | — |
+| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"        \"not-a-timestamp\","` | — |
+| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"        \"2000-01-01T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"        \"\","` | — |
+| [SRC-1521F490CA-L000212](../../tests/test_multitenant.py#L212) | 212 | `"    )"` | — |
+| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"    for index, expiry in enumerate(invalid_values):"` | — |
+| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
+| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `"            store.create_api_token("` | — |
+| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"                (\"H\" * 39) + str(index),"` | — |
+| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"                tenant_id,"` | — |
+| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"                user_id,"` | — |
+| [SRC-1521F490CA-L000219](../../tests/test_multitenant.py#L219) | 219 | `"                expires_at=expiry,"` | — |
+| [SRC-1521F490CA-L000220](../../tests/test_multitenant.py#L220) | 220 | `"            )"` | — |
 ## اختبارات
 
 ### FILE-4405E7912C — [tests/test_multitenant_api.py](../../tests/test_multitenant_api.py#L1)
@@ -850,5 +852,3 @@
 | [SRC-4405E7912C-L000150](../../tests/test_multitenant_api.py#L150) | 150 | `"        \"/api/leads\","` | — |
 | [SRC-4405E7912C-L000151](../../tests/test_multitenant_api.py#L151) | 151 | `"        method=\"POST\","` | — |
 | [SRC-4405E7912C-L000152](../../tests/test_multitenant_api.py#L152) | 152 | `"        token=token,"` | — |
-| [SRC-4405E7912C-L000153](../../tests/test_multitenant_api.py#L153) | 153 | `"        payload={"` | — |
-| [SRC-4405E7912C-L000154](../../tests/test_multitenant_api.py#L154) | 154 | `"            \"text\": \"Viewer must not write\","` | — |
