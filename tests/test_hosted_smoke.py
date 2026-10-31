@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import threading
+from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlsplit
 
@@ -95,7 +96,9 @@ def test_normalize_origin_allows_plain_http_only_for_local_test():
 
 
 def test_smoke_checks_health_auth_live_diagnostics_and_agent(hosted_server):
-    result = run_smoke(hosted_server, TOKEN, allow_http=True, timeout=5)
+    result = run_smoke(
+        hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5
+    )
     assert result["result"] == "passed"
     assert result["checks"]["health"] == "passed"
     assert result["checks"]["authentication"] == "passed"
@@ -155,7 +158,7 @@ def test_smoke_never_forwards_bearer_to_cross_origin_redirect():
 
 def test_smoke_refuses_missing_or_short_access_token(hosted_server):
     with pytest.raises(SmokeError, match="OMARAI_ACCESS_TOKEN"):
-        run_smoke(hosted_server, "", allow_http=True, timeout=5)
+        run_smoke(hosted_server, "", allow_http=True, allow_provider_usage=True, timeout=5)
 
 
 def test_smoke_fails_when_agent_returns_no_live_source(hosted_server, monkeypatch):
@@ -171,7 +174,7 @@ def test_smoke_fails_when_agent_returns_no_live_source(hosted_server, monkeypatc
 
     monkeypatch.setattr(hosted_smoke_test, "request_json", without_sources)
     with pytest.raises(SmokeError, match="usable source URLs") as failure:
-        run_smoke(hosted_server, TOKEN, allow_http=True, timeout=5)
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
     assert failure.value.report["transcript"][0]["question"] == (
         hosted_smoke_test.LIVE_TEST_QUESTION
     )
@@ -191,6 +194,33 @@ def test_smoke_rejects_deployed_build_sha_mismatch(hosted_server):
             hosted_server,
             TOKEN,
             allow_http=True,
+            allow_provider_usage=True,
             timeout=5,
             expected_sha="a" * 40,
         )
+
+
+def test_smoke_requires_explicit_provider_usage_approval_before_network(monkeypatch):
+    calls = []
+
+    def unexpected_request(*args, **kwargs):
+        calls.append((args, kwargs))
+        raise AssertionError("network must not be called without explicit approval")
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", unexpected_request)
+    with pytest.raises(SmokeError, match="explicit human approval"):
+        run_smoke(
+            "https://omarai.example.test",
+            TOKEN,
+            allow_provider_usage=False,
+            expected_sha="a" * 40,
+        )
+    assert calls == []
+
+
+def test_hosted_smoke_workflow_is_manual_and_cost_gated():
+    workflow = Path(".github/workflows/hosted-smoke.yml").read_text(encoding="utf-8")
+    assert "schedule:" not in workflow
+    assert "allow_provider_usage:" in workflow
+    assert "default: false" in workflow
+    assert "--allow-provider-usage" in workflow
