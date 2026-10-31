@@ -174,7 +174,7 @@ def test_buyer_query_generation_is_sector_neutral_and_product_anchored():
     assert all("شقه" not in query and "تمليك" not in query for query in vehicle_queries)
     assert all("شقه" not in query and "تمليك" not in query for query in industrial_queries)
     assert any("سيارة كهربائية" in query for query in vehicle_queries)
-    assert any("نظام انذار حريق صناعي" in query for query in industrial_queries)
+    assert any("نظام إنذار حريق صناعي" in query for query in industrial_queries)
 
 
 def test_buyer_query_generation_uses_only_explicit_market_location():
