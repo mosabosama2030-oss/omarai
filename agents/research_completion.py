@@ -10,6 +10,9 @@ _RESEARCH_KINDS = frozenset({
     "web_research", "web_fallback", "insufficient_evidence",
     "lead_discovery_no_qualified_candidates",
 })
+_CLAIM_LEDGER_KINDS = frozenset({
+    "web_research", "web_fallback", "insufficient_evidence",
+})
 _RESEARCH_ERRORS = frozenset({
     "attempted_research_error", "unknown_after_research_error",
     "unknown_after_budget_exhaustion",
@@ -163,6 +166,42 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     model_used = result.get("used_language_model") is True
     final_status = str(result.get("final_answer_status") or "")
     integrity = _dict(result.get("answer_integrity"))
+    claim_ledger = _dict(result.get("claim_evidence_ledger"))
+    claim_ledger_summary = _dict(claim_ledger.get("summary"))
+    citation_validation = _dict(
+        result.get("citation_validation")
+        or result.get("citation_check")
+        or report.get("citation_validation")
+    )
+    # Invalid citation markers are removed before the claim ledger is built.
+    # Preserve that production-path evidence so a valid remaining citation cannot
+    # hide an invalid reference that was already sanitized from the answer.
+    invalid_citation_references_removed = _int(
+        citation_validation.get("invalid_references_removed")
+    ) or 0
+    claim_ledger_status = str(claim_ledger.get("status") or "").strip().lower()
+    # Every web-research result passes through the finalizer that builds this ledger.
+    # Missing, failed, or unknown ledger states must therefore remain visible as a
+    # completion warning instead of silently looking like a clean citation screen.
+    claim_ledger_reference_count_valid = (
+        _int(claim_ledger_summary.get("out_of_range_reference_count")) is not None
+    )
+    claim_ledger_build_failure_count = int(
+        kind in _CLAIM_LEDGER_KINDS
+        and (
+            claim_ledger_status != "built"
+            or not claim_ledger_reference_count_valid
+        )
+    )
+    out_of_range_citation_reference_count = _int(
+        claim_ledger_summary.get("out_of_range_reference_count")
+    ) or 0
+    truncated_citation_reference_list_count = _int(
+        claim_ledger_summary.get("truncated_citation_reference_list_count")
+    ) or 0
+    claim_ledger_truncated_count = int(
+        claim_ledger_status == "built" and claim_ledger.get("truncated") is True
+    )
     gap_count = sum(
         _int(integrity.get(key)) or 0
         for key in ("potentially_missing_target_count", "source_evidence_gap_count")
@@ -181,11 +220,18 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     citation_support_warning_count = (
         max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
         + weak_citation_alignment_count
+        + max(
+            out_of_range_citation_reference_count,
+            invalid_citation_references_removed,
+        )
+        + truncated_citation_reference_list_count
+        + claim_ledger_truncated_count
+        + claim_ledger_build_failure_count
     )
     fulfillment = str(
         result.get("task_fulfillment_status") or report.get("task_fulfillment_status") or ""
     )
-    citations = _dict(result.get("citation_validation") or result.get("citation_check"))
+    citations = citation_validation
     citation_count = _int(citations.get("valid_citation_count")) or 0
     generation_failed = any(
         token in final_status for token in ("failed", "unavailable", "budget_exhausted")
@@ -306,6 +352,13 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "potentially_unsupported_numeric_by_citation_count": unsupported_numeric_by_citation_count,
             "weak_citation_alignment_count": weak_citation_alignment_count,
             "citation_support_warning_count": citation_support_warning_count,
+            "out_of_range_citation_reference_count": out_of_range_citation_reference_count,
+            "invalid_citation_references_removed_count": invalid_citation_references_removed,
+            "truncated_citation_reference_list_count": truncated_citation_reference_list_count,
+            "claim_ledger_truncated_count": claim_ledger_truncated_count,
+            "claim_ledger_status": claim_ledger_status or "missing",
+            "claim_ledger_reference_count_valid": claim_ledger_reference_count_valid,
+            "claim_ledger_build_failure_count": claim_ledger_build_failure_count,
         },
         "counter_consistency": {
             "status": "mismatch_detected" if counter_issues else (

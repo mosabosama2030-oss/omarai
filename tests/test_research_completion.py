@@ -1,6 +1,7 @@
 """Tests for truthful research completion states and counter reconciliation."""
 from __future__ import annotations
 
+from agents.claim_evidence import build_claim_evidence_ledger
 from agents.research_completion import build_research_completion
 
 
@@ -76,6 +77,11 @@ def test_answer_with_valid_citation_indices_still_discloses_semantic_gap() -> No
         "used_language_model": True,
         "final_answer_status": "model_answer_generated",
         "citation_validation": {"status": "index_range_check_passed", "valid_citation_count": 2},
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": False,
+            "summary": {"out_of_range_reference_count": 0},
+        },
         "sources": [
             {"url": "https://example.com/a", "snippet": "text", "page_fetched": True, "page_text": "read"}
         ],
@@ -171,6 +177,11 @@ def test_unresolved_citation_support_flags_prevent_completed_research_status() -
             "status": "index_range_check_passed",
             "valid_citation_count": 1,
         },
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": False,
+            "summary": {"out_of_range_reference_count": 0},
+        },
         "sources": [
             {
                 "url": "https://example.com/report",
@@ -199,3 +210,289 @@ def test_unresolved_citation_support_flags_prevent_completed_research_status() -
     assert weak_alignment["counters"]["citation_support_warning_count"] == 1
     assert unsupported_number["phases"]["semantic_verification"] == "not_performed"
     assert weak_alignment["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_out_of_range_citation_reference_prevents_completed_research_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": {
+            "status": "built",
+            "summary": {
+                "out_of_range_reference_count": 1,
+            },
+        },
+        "answer_integrity": {
+            # One of multiple citations aligned lexically; this must not hide
+            # a separate out-of-range reference in the same answer.
+            "weak_citation_alignment_count": 0,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["counters"]["out_of_range_citation_reference_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+
+
+def test_missing_claim_ledger_prevents_completed_research_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["out_of_range_citation_reference_count"] == 0
+    assert result["counters"]["claim_ledger_status"] == "missing"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert result["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_real_claim_ledger_out_of_range_reference_flows_into_completion_gate() -> None:
+    answer = "The verified report says 100 EGP [source 1], and the unsupported claim is also cited [source 2]."
+    sources = [{
+        "url": "https://example.com/report",
+        "title": "Report",
+        "snippet": "The verified report says 100 EGP.",
+        "page_fetched": True,
+        "page_text": "The verified report says 100 EGP.",
+    }]
+    ledger = build_claim_evidence_ledger(answer, sources)
+
+    assert ledger["summary"]["out_of_range_reference_count"] == 1
+    assert ledger["segments"][0]["citation_status"] == "citation_index_out_of_range"
+
+    completion = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": ledger,
+        "answer_integrity": {"weak_citation_alignment_count": 0},
+        "sources": sources,
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert completion["status"] == "partial_answer_evidence_gaps_detected"
+    assert completion["counters"]["out_of_range_citation_reference_count"] == 1
+    assert completion["counters"]["citation_support_warning_count"] == 1
+    assert completion["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert completion["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_explicit_claim_ledger_build_failure_prevents_completed_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "claim_evidence_ledger": {
+            "status": "not_run",
+            "semantic_verification": False,
+            "error_class": "claim_evidence_trace_error",
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert result["phases"]["semantic_verification"] == "not_performed"
+
+
+def test_unrecognized_claim_ledger_status_prevents_completed_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "claim_evidence_ledger": {"status": "partial"},
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["claim_ledger_status"] == "partial"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+    assert result["phases"]["citation_support_screen"] == "warning_signals_detected"
+
+
+def test_lead_discovery_without_claim_ledger_is_not_a_ledger_build_failure() -> None:
+    result = build_research_completion({
+        "kind": "lead_discovery_no_qualified_candidates",
+        "search_attempted": True,
+        "used_language_model": False,
+        "sources": [{
+            "url": "https://example.com/listing",
+            "snippet": "Related listing, not a buyer-intent signal.",
+            "page_fetched": False,
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 0},
+    })
+
+    assert result["counters"]["claim_ledger_status"] == "missing"
+    assert result["counters"]["claim_ledger_build_failure_count"] == 0
+    assert result["counters"]["citation_support_warning_count"] == 0
+
+
+def test_truncated_claim_ledger_prevents_completed_research_status() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": True,
+            "summary": {
+                "out_of_range_reference_count": 0,
+                "truncated_citation_reference_list_count": 0,
+            },
+        },
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["claim_ledger_truncated_count"] == 1
+    assert result["counters"]["citation_support_warning_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+
+
+def test_built_claim_ledger_without_reference_counter_is_not_trusted() -> None:
+    result = build_research_completion({
+        "kind": "web_research",
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "claim_evidence_ledger": {
+            "status": "built",
+            "truncated": False,
+            "summary": {},
+        },
+        "citation_validation": {
+            "status": "index_range_check_passed",
+            "valid_citation_count": 1,
+        },
+        "sources": [{
+            "url": "https://example.com/report",
+            "snippet": "A readable report excerpt.",
+            "page_fetched": True,
+            "page_text": "A readable report excerpt.",
+        }],
+        "search_report": {"unique_sources": 1, "pages_fetched": 1},
+    })
+
+    assert result["counters"]["claim_ledger_reference_count_valid"] is False
+    assert result["counters"]["claim_ledger_build_failure_count"] == 1
+    assert result["status"] == "partial_answer_evidence_gaps_detected"
+
+
+
+def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> None:
+    # Exercise the same ordering as production: sanitize first, then build the ledger.
+    from agents.web_agent import WebAgent
+
+    raw_answer = (
+        "The report states 100 EGP [المصدر 1], and a second unsupported claim "
+        "points to [المصدر 2]."
+    )
+    sources = [{
+        "url": "https://example.com/report",
+        "title": "Report",
+        "snippet": "The report states 100 EGP.",
+        "page_fetched": True,
+        "page_text": "The report states 100 EGP.",
+    }]
+
+    sanitized_answer, citation_warnings = WebAgent._remove_invalid_citations(
+        raw_answer, len(sources)
+    )
+    citation_validation = WebAgent._citation_validation_metadata(
+        sanitized_answer, len(sources), citation_warnings, "not_reviewed"
+    )
+    assert "[المصدر 1]" in sanitized_answer
+    assert "[المصدر 2]" not in sanitized_answer
+    assert len(citation_warnings) == 1
+    assert citation_validation["invalid_references_removed"] == 1
+
+    ledger = build_claim_evidence_ledger(sanitized_answer, sources)
+    assert ledger["summary"]["out_of_range_reference_count"] == 0
+
+    completion = build_research_completion({
+        "kind": "web_research",
+        "search_attempted": True,
+        "used_language_model": True,
+        "final_answer_status": "model_answer_generated",
+        "citation_validation": citation_validation,
+        "claim_evidence_ledger": ledger,
+        "sources": sources,
+        "search_report": {
+            "unique_sources": 1,
+            "pages_fetched": 1,
+            "citation_validation": citation_validation,
+        },
+    })
+
+    assert completion["counters"]["out_of_range_citation_reference_count"] == 0
+    assert completion["counters"]["invalid_citation_references_removed_count"] == 1
+    assert completion["counters"]["citation_support_warning_count"] == 1
+    assert completion["status"] == "partial_answer_evidence_gaps_detected"
+    assert completion["phases"]["citation_support_screen"] == "warning_signals_detected"
+    assert completion["phases"]["semantic_verification"] == "not_performed"

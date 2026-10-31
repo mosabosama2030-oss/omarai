@@ -78,3 +78,29 @@ def test_claim_evidence_ledger_uses_question_context_for_population_metadata():
     assert "data_reference_period_for_population_claim" in audit["required_fields_missing"]
     assert "geographic_scope_for_population_claim" in audit["required_fields_missing"]
     assert ledger["fact_correctness"] == "not_checked"
+
+
+def test_claim_evidence_ledger_marks_citation_reference_overflow():
+    answer = "Claim [source 1] " + " ".join(f"[source {index}]" for index in range(2, 10))
+    ledger = build_claim_evidence_ledger(
+        answer,
+        [{
+            "url": "https://example.org/report",
+            "title": "Report",
+            "publisher": "Example publisher",
+            "published_at": "2026-01-01",
+            "snippet": "Claim evidence.",
+        }],
+    )
+
+    assert ledger["summary"]["truncated_citation_reference_list_count"] == 1
+    assert ledger["segments"][0]["citation_references_truncated"] is True
+    assert ledger["segments"][0]["citation_status"] == "citation_index_out_of_range"
+
+
+def test_claim_evidence_ledger_marks_segment_overflow():
+    answer = " ".join(f"Claim number {index}." for index in range(41))
+    ledger = build_claim_evidence_ledger(answer, [], max_segments=40)
+
+    assert ledger["truncated"] is True
+    assert len(ledger["segments"]) == 40
