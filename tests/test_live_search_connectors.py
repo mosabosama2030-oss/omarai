@@ -1,6 +1,13 @@
 from __future__ import annotations
 
-from agents.web_agent import WebAgent
+import httpx
+import pytest
+
+from agents.web_agent import (
+    MAX_PROVIDER_RESPONSE_BYTES,
+    WebAgent,
+    _bounded_http_request,
+)
 
 
 class FakeResponse:
@@ -83,3 +90,113 @@ def test_search_api_setup_status_reports_only_presence_not_secret_values(monkeyp
     assert status["tavily_search_api_configured"] is True
     assert "brave-secret" not in str(status)
     assert "tavily-secret" not in str(status)
+
+
+
+def test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies(monkeypatch):
+    chunks_read = []
+    observed = {}
+
+    class FakeResponse:
+        status_code = 200
+        headers = {"content-length": "1"}
+        request = httpx.Request("GET", "https://provider.example/search")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def iter_bytes(self):
+            for chunk in (
+                b"A" * MAX_PROVIDER_RESPONSE_BYTES,
+                b"B",
+                b"C",
+            ):
+                chunks_read.append(len(chunk))
+                yield chunk
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            observed["client_options"] = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def stream(self, method, url, **kwargs):
+            observed["method"] = method
+            observed["url"] = url
+            observed["request_options"] = kwargs
+            return FakeResponse()
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+    with pytest.raises(ValueError, match="size limit"):
+        _bounded_http_request(
+            "GET",
+            "https://provider.example/search",
+            timeout=4.0,
+            follow_redirects=True,
+            params={"q": "test"},
+        )
+
+    assert observed["client_options"]["timeout"] == 4.0
+    assert observed["client_options"]["follow_redirects"] is False
+    assert observed["client_options"]["trust_env"] is False
+    assert observed["method"] == "GET"
+    assert observed["url"] == "https://provider.example/search"
+    assert observed["request_options"] == {"params": {"q": "test"}}
+    assert chunks_read == [MAX_PROVIDER_RESPONSE_BYTES, 1]
+
+
+def test_bounded_provider_transport_returns_buffered_response(monkeypatch):
+    payload = b'{"results":[{"title":"bounded"}]}'
+    observed = {}
+
+    class FakeResponse:
+        status_code = 200
+        headers = {"content-type": "application/json"}
+        request = httpx.Request("POST", "https://provider.example/search")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def iter_bytes(self):
+            yield payload[:10]
+            yield payload[10:]
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            observed["client_options"] = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def stream(self, method, url, **kwargs):
+            observed["method"] = method
+            observed["request_options"] = kwargs
+            return FakeResponse()
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+    response = _bounded_http_request(
+        "POST",
+        "https://provider.example/search",
+        timeout=3.0,
+        json={"query": "test"},
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {"results": [{"title": "bounded"}]}
+    assert observed["method"] == "POST"
+    assert observed["request_options"] == {"json": {"query": "test"}}
+    assert observed["client_options"]["follow_redirects"] is False
+    assert observed["client_options"]["trust_env"] is False
