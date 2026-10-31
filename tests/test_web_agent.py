@@ -3949,3 +3949,110 @@ def test_openrouter_web_search_does_not_match_spoofed_hostname(monkeypatch):
     )
 
     assert WebAgent().openrouter_web_search_enabled is False
+
+
+
+@pytest.mark.parametrize(
+    "address,family",
+    [
+        ("127.0.0.1", __import__("socket").AF_INET),
+        ("169.254.169.254", __import__("socket").AF_INET),
+        ("::1", __import__("socket").AF_INET6),
+        ("fe80::1", __import__("socket").AF_INET6),
+        ("fd00::1", __import__("socket").AF_INET6),
+    ],
+)
+def test_public_ip_literals_rejects_non_global_ipv4_and_ipv6_answers(
+    monkeypatch, address, family
+):
+    import socket
+
+    from agents import web_agent
+
+    answers = [
+        (family, socket.SOCK_STREAM, socket.IPPROTO_TCP, "", (address, 80))
+    ]
+    monkeypatch.setattr(
+        web_agent.socket,
+        "getaddrinfo",
+        lambda host, port, type: answers,
+    )
+
+    assert web_agent._public_ip_literals("untrusted.example") is None
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "http://127.0.0.1/private",
+        "http://169.254.169.254/latest/meta-data/",
+        "http://[::1]/private",
+        "http://[fe80::1]/private",
+        "http://[fd00::1]/private",
+        "file:///etc/passwd",
+        "https://user:password@example.com/private",
+        "https://example.com:8443/private",
+    ],
+)
+def test_public_http_url_rejects_non_public_or_unsafe_targets(url):
+    from agents.web_agent import _public_http_url
+
+    assert _public_http_url(url) is None
+
+
+def test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies(monkeypatch):
+    from contextlib import contextmanager
+
+    import httpx
+
+    from agents import web_agent
+
+    monkeypatch.setattr(
+        web_agent, "_public_ip_literals", lambda _host: ["93.184.216.34"]
+    )
+    chunks_yielded = []
+
+    class FakeResponse:
+        status_code = 200
+        headers = {
+            "content-type": "text/plain; charset=utf-8",
+            # Deliberately under-reports the actual streamed body length.
+            "content-length": "1",
+        }
+        encoding = "utf-8"
+
+        def iter_bytes(self):
+            chunks = (
+                b"A" * web_agent.MAX_PAGE_BYTES,
+                b"B" * 32,
+                b"C" * 32,
+            )
+            for chunk in chunks:
+                chunks_yielded.append(len(chunk))
+                yield chunk
+
+    @contextmanager
+    def fake_stream(self, method, url, **kwargs):
+        assert method == "GET"
+        assert str(url) == "https://93.184.216.34/large.txt"
+        yield FakeResponse()
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            self.options = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        stream = fake_stream
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+    result = web_agent.WebAgent()._fetch_page("https://example.com/large.txt")
+
+    assert result.status == "partial_extraction"
+    assert len(result[1]) <= web_agent.MAX_PAGE_TEXT_CHARS
+    # The reader stops as soon as the byte cap is crossed; it never asks for chunk 3.
+    assert chunks_yielded == [web_agent.MAX_PAGE_BYTES, 32]
