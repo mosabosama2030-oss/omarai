@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000030 إلى SRC-50E7F53B84-L000005
+- النطاق: SRC-4405E7912C-L000025 إلى SRC-C353AAAC10-L000120
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4405E7912C-L000025](../../tests/test_multitenant_api.py#L25) | 25 | `"    try:"` | — |
+| [SRC-4405E7912C-L000026](../../tests/test_multitenant_api.py#L26) | 26 | `"        yield f\"http://127.0.0.1:{server.server_port}\", Handler.store"` | — |
+| [SRC-4405E7912C-L000027](../../tests/test_multitenant_api.py#L27) | 27 | `"    finally:"` | — |
+| [SRC-4405E7912C-L000028](../../tests/test_multitenant_api.py#L28) | 28 | `"        server.shutdown()"` | — |
+| [SRC-4405E7912C-L000029](../../tests/test_multitenant_api.py#L29) | 29 | `"        server.server_close()"` | — |
 | [SRC-4405E7912C-L000030](../../tests/test_multitenant_api.py#L30) | 30 | `"        thread.join(timeout=3)"` | — |
 | [SRC-4405E7912C-L000031](../../tests/test_multitenant_api.py#L31) | 31 | `"        Handler.store = previous_store"` | — |
 | [SRC-4405E7912C-L000032](../../tests/test_multitenant_api.py#L32) | 32 | `""` | — |
@@ -280,6 +285,32 @@
 | [SRC-4405E7912C-L000291](../../tests/test_multitenant_api.py#L291) | 291 | `"    assert status == 200"` | — |
 | [SRC-4405E7912C-L000292](../../tests/test_multitenant_api.py#L292) | 292 | `"    assert result[\"overall_status\"] == \"passed\""` | — |
 | [SRC-4405E7912C-L000293](../../tests/test_multitenant_api.py#L293) | 293 | `"    assert observed == {\"test_model\": True, \"test_social\": False}"` | — |
+| [SRC-4405E7912C-L000294](../../tests/test_multitenant_api.py#L294) | 294 | `""` | — |
+| [SRC-4405E7912C-L000295](../../tests/test_multitenant_api.py#L295) | 295 | `""` | — |
+| [SRC-4405E7912C-L000296](../../tests/test_multitenant_api.py#L296) | 296 | `""` | — |
+| [SRC-4405E7912C-L000297](../../tests/test_multitenant_api.py#L297) | 297 | `"def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypatch):"` | — |
+| [SRC-4405E7912C-L000298](../../tests/test_multitenant_api.py#L298) | 298 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-4405E7912C-L000299](../../tests/test_multitenant_api.py#L299) | 299 | `""` | — |
+| [SRC-4405E7912C-L000300](../../tests/test_multitenant_api.py#L300) | 300 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000301](../../tests/test_multitenant_api.py#L301) | 301 | `"    tenant_id = store.create_tenant(\"Viewer Agent Block\", \"viewer-agent-block\")"` | — |
+| [SRC-4405E7912C-L000302](../../tests/test_multitenant_api.py#L302) | 302 | `"    user_id = store.create_user(\"viewer-agent@example.test\", \"Viewer\")"` | — |
+| [SRC-4405E7912C-L000303](../../tests/test_multitenant_api.py#L303) | 303 | `"    store.add_membership(tenant_id, user_id, \"viewer\")"` | — |
+| [SRC-4405E7912C-L000304](../../tests/test_multitenant_api.py#L304) | 304 | `"    token = \"viewer-agent-token-\" + \"W\" * 32"` | — |
+| [SRC-4405E7912C-L000305](../../tests/test_multitenant_api.py#L305) | 305 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-4405E7912C-L000306](../../tests/test_multitenant_api.py#L306) | 306 | `""` | — |
+| [SRC-4405E7912C-L000307](../../tests/test_multitenant_api.py#L307) | 307 | `"    def unexpected_answer(*_args, **_kwargs):"` | — |
+| [SRC-4405E7912C-L000308](../../tests/test_multitenant_api.py#L308) | 308 | `"        pytest.fail(\"viewer must be denied before agent/model execution\")"` | — |
+| [SRC-4405E7912C-L000309](../../tests/test_multitenant_api.py#L309) | 309 | `""` | — |
+| [SRC-4405E7912C-L000310](../../tests/test_multitenant_api.py#L310) | 310 | `"    monkeypatch.setattr(WebAgent, \"answer\", unexpected_answer)"` | — |
+| [SRC-4405E7912C-L000311](../../tests/test_multitenant_api.py#L311) | 311 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000312](../../tests/test_multitenant_api.py#L312) | 312 | `"        base,"` | — |
+| [SRC-4405E7912C-L000313](../../tests/test_multitenant_api.py#L313) | 313 | `"        \"/api/agent\","` | — |
+| [SRC-4405E7912C-L000314](../../tests/test_multitenant_api.py#L314) | 314 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000315](../../tests/test_multitenant_api.py#L315) | 315 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000316](../../tests/test_multitenant_api.py#L316) | 316 | `"        payload={\"question\": \"نفّذ بحثًا جديدًا\"},"` | — |
+| [SRC-4405E7912C-L000317](../../tests/test_multitenant_api.py#L317) | 317 | `"    )"` | — |
+| [SRC-4405E7912C-L000318](../../tests/test_multitenant_api.py#L318) | 318 | `"    assert status == 403"` | — |
+| [SRC-4405E7912C-L000319](../../tests/test_multitenant_api.py#L319) | 319 | `"    assert \"viewer\" in result[\"error\"]"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -821,43 +852,3 @@
 | [SRC-C353AAAC10-L000118](../../tests/test_request_budget.py#L118) | 118 | `"        budget.reserve(resource)"` | — |
 | [SRC-C353AAAC10-L000119](../../tests/test_request_budget.py#L119) | 119 | `"        snapshot = budget.snapshot()"` | — |
 | [SRC-C353AAAC10-L000120](../../tests/test_request_budget.py#L120) | 120 | `"        assert snapshot[\"counts\"][resource] == expected_count"` | — |
-| [SRC-C353AAAC10-L000121](../../tests/test_request_budget.py#L121) | 121 | `"        assert snapshot[\"counts\"][resource] <= snapshot[\"limits\"][resource]"` | — |
-| [SRC-C353AAAC10-L000122](../../tests/test_request_budget.py#L122) | 122 | `""` | — |
-| [SRC-C353AAAC10-L000123](../../tests/test_request_budget.py#L123) | 123 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
-| [SRC-C353AAAC10-L000124](../../tests/test_request_budget.py#L124) | 124 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000125](../../tests/test_request_budget.py#L125) | 125 | `""` | — |
-| [SRC-C353AAAC10-L000126](../../tests/test_request_budget.py#L126) | 126 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000127](../../tests/test_request_budget.py#L127) | 127 | `"    assert snapshot[\"counts\"][resource] == limit"` | — |
-| [SRC-C353AAAC10-L000128](../../tests/test_request_budget.py#L128) | 128 | `"    assert resource in snapshot[\"exhausted_reasons\"]"` | — |
-| [SRC-C353AAAC10-L000129](../../tests/test_request_budget.py#L129) | 129 | `""` | — |
-| [SRC-C353AAAC10-L000130](../../tests/test_request_budget.py#L130) | 130 | `""` | — |
-| [SRC-C353AAAC10-L000131](../../tests/test_request_budget.py#L131) | 131 | `"@pytest.mark.parametrize("` | — |
-| [SRC-C353AAAC10-L000132](../../tests/test_request_budget.py#L132) | 132 | `"    \"resource\","` | — |
-| [SRC-C353AAAC10-L000133](../../tests/test_request_budget.py#L133) | 133 | `"    [\"search_queries\", \"search_calls\", \"model_calls\", \"page_fetches\", \"tool_calls\"],"` | — |
-| [SRC-C353AAAC10-L000134](../../tests/test_request_budget.py#L134) | 134 | `")"` | — |
-| [SRC-C353AAAC10-L000135](../../tests/test_request_budget.py#L135) | 135 | `"def test_disabled_resource_never_starts_work(resource):"` | — |
-| [SRC-C353AAAC10-L000136](../../tests/test_request_budget.py#L136) | 136 | `"    budget = RequestBudget(timeout_seconds=10, limits={resource: 0})"` | — |
-| [SRC-C353AAAC10-L000137](../../tests/test_request_budget.py#L137) | 137 | `""` | — |
-| [SRC-C353AAAC10-L000138](../../tests/test_request_budget.py#L138) | 138 | `"    assert budget.remaining_units(resource) == 0"` | — |
-| [SRC-C353AAAC10-L000139](../../tests/test_request_budget.py#L139) | 139 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
-| [SRC-C353AAAC10-L000140](../../tests/test_request_budget.py#L140) | 140 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000141](../../tests/test_request_budget.py#L141) | 141 | `""` | — |
-| [SRC-C353AAAC10-L000142](../../tests/test_request_budget.py#L142) | 142 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000143](../../tests/test_request_budget.py#L143) | 143 | `"    assert snapshot[\"counts\"][resource] == 0"` | — |
-| [SRC-C353AAAC10-L000144](../../tests/test_request_budget.py#L144) | 144 | `"    assert snapshot[\"limits\"][resource] == 0"` | — |
-| [SRC-C353AAAC10-L000145](../../tests/test_request_budget.py#L145) | 145 | `"    assert resource in snapshot[\"disabled_resources\"]"` | — |
-| [SRC-C353AAAC10-L000146](../../tests/test_request_budget.py#L146) | 146 | `"    assert resource in snapshot[\"exhausted_reasons\"]"` | — |
-## اختبارات
-
-### FILE-50E7F53B84 — [tests/test_requirement_evidence.py](../../tests/test_requirement_evidence.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-50E7F53B84-L000001](../../tests/test_requirement_evidence.py#L1) | 1 | `"\"\"\"Focused contract tests for the dedicated requirement-evidence module.\"\"\""` | — |
-| [SRC-50E7F53B84-L000002](../../tests/test_requirement_evidence.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-50E7F53B84-L000003](../../tests/test_requirement_evidence.py#L3) | 3 | `""` | — |
-| [SRC-50E7F53B84-L000004](../../tests/test_requirement_evidence.py#L4) | 4 | `"from agents.answer_validation import build_requirement_evidence_ledger as legacy_builder"` | — |
-| [SRC-50E7F53B84-L000005](../../tests/test_requirement_evidence.py#L5) | 5 | `"from agents.requirement_evidence import build_requirement_evidence_ledger"` | — |

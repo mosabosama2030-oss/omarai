@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000819 إلى SRC-914817100D-L000012
+- النطاق: SRC-EEF2E6447C-L000819 إلى SRC-914817100D-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,14 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-EEF2E6447C-L000819](../../api/omarai.py#L819) | 819 | `"    except KeyboardInterrupt:"` | — |
-| [SRC-EEF2E6447C-L000820](../../api/omarai.py#L820) | 820 | `"        pass"` | — |
-| [SRC-EEF2E6447C-L000821](../../api/omarai.py#L821) | 821 | `"    finally:"` | — |
-| [SRC-EEF2E6447C-L000822](../../api/omarai.py#L822) | 822 | `"        server.server_close()"` | — |
-| [SRC-EEF2E6447C-L000823](../../api/omarai.py#L823) | 823 | `""` | — |
-| [SRC-EEF2E6447C-L000824](../../api/omarai.py#L824) | 824 | `""` | — |
-| [SRC-EEF2E6447C-L000825](../../api/omarai.py#L825) | 825 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-EEF2E6447C-L000826](../../api/omarai.py#L826) | 826 | `"    serve()"` | — |
+| [SRC-EEF2E6447C-L000819](../../api/omarai.py#L819) | 819 | `"    server = BoundedThreadingHTTPServer((host, port), Handler)"` | — |
+| [SRC-EEF2E6447C-L000820](../../api/omarai.py#L820) | 820 | `"    print(f\"Omarai running at http://{host}:{port} — Ctrl+C to stop\")"` | — |
+| [SRC-EEF2E6447C-L000821](../../api/omarai.py#L821) | 821 | `"    print(\"Web research agent: /   \|   Lead workspace: /leads\")"` | — |
+| [SRC-EEF2E6447C-L000822](../../api/omarai.py#L822) | 822 | `"    try:"` | — |
+| [SRC-EEF2E6447C-L000823](../../api/omarai.py#L823) | 823 | `"        server.serve_forever()"` | — |
+| [SRC-EEF2E6447C-L000824](../../api/omarai.py#L824) | 824 | `"    except KeyboardInterrupt:"` | — |
+| [SRC-EEF2E6447C-L000825](../../api/omarai.py#L825) | 825 | `"        pass"` | — |
+| [SRC-EEF2E6447C-L000826](../../api/omarai.py#L826) | 826 | `"    finally:"` | — |
+| [SRC-EEF2E6447C-L000827](../../api/omarai.py#L827) | 827 | `"        server.server_close()"` | — |
+| [SRC-EEF2E6447C-L000828](../../api/omarai.py#L828) | 828 | `""` | — |
+| [SRC-EEF2E6447C-L000829](../../api/omarai.py#L829) | 829 | `""` | — |
+| [SRC-EEF2E6447C-L000830](../../api/omarai.py#L830) | 830 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-EEF2E6447C-L000831](../../api/omarai.py#L831) | 831 | `"    serve()"` | — |
 ## وثائق ونصوص
 
 ### FILE-65AAF94960 — [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1)
@@ -892,8 +897,3 @@
 | [SRC-914817100D-L000005](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L5) | 5 | `"إغلاق الفجوة بين محاور السؤال المركب، وخطة البحث، والأدلة التي جُمعت، والإجابة النهائية. هذا التغيير لا يدّعي إثبات صحة المعنى آليًا؛ فهو يحسّن تخصيص البحث ويعرض إشارات الأدلة لكل محور، مع الإبقاء على الفصل بين الإشارة اللفظية والتحقق الدلالي."` | — |
 | [SRC-914817100D-L000006](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L6) | 6 | `""` | — |
 | [SRC-914817100D-L000007](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L7) | 7 | `"## خط الأساس الذي تمت مراجعته"` | — |
-| [SRC-914817100D-L000008](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L8) | 8 | `""` | — |
-| [SRC-914817100D-L000009](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L9) | 9 | ``"- الفرع المرجعي: `main`"`` | — |
-| [SRC-914817100D-L000010](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L10) | 10 | ``"- Commit المرجع الذي تمت مراجعته: `aa42c52c5c98a7788de91269e3d8b51542483a6b` (دمج PR #104)."`` | — |
-| [SRC-914817100D-L000011](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L11) | 11 | `"- نقطة الضعف المؤكدة في الاختبار السابق: اختبار المقارنة المركبة كان يتحقق من أن الخطة عميقة وتحتوي أكثر من استعلام، وأن محاور السعر والبطارية والكاميرا استُخرجت، لكنه كان يقبل إجابة اختبارية قصيرة «مقارنة أولية [المصدر 1]» مع توثيق صريح بأن التغطية لم تُقيّم آليًا. لذلك لم يكن الاختبار يثبت أن كل محور حصل على بحث مخصص أو أن لكل محور إشارة مصدر."` | — |
-| [SRC-914817100D-L000012](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L12) | 12 | `"- توجد بالفعل مراجعة للنموذج ومحاولة إصلاح تغطية محدودة وفحص استشهادات. لا ينبغي إعادة بناء هذه الأجزاء أو وصفها بأنها غير موجودة؛ التغيير يعالج الفجوة المحددة في تخصيص الاستعلامات وتشخيص الأدلة لكل محور."` | — |

@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **121**
 - ملفات Python المحللة: **75**
-- تعريفات Python المفهرسة: **1552**
+- تعريفات Python المفهرسة: **1554**
 - تعريفات Python موثقة بوجود Docstring: **259**
-- تعريفات Python بلا Docstring: **984**
+- تعريفات Python بلا Docstring: **986**
 - تعريفات لا ينطبق عليها Docstring: **309**
-- الرموز الساكنة الإضافية: **1901**
-- الأسطر النصية المفهرسة حرفيًا: **41159**
+- الرموز الساكنة الإضافية: **1902**
+- الأسطر النصية المفهرسة حرفيًا: **41190**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -55,7 +55,7 @@
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 356325 | 6635 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 38490 | 826 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 38782 | 831 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
@@ -130,7 +130,7 @@
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 2870 | 81 | جرد الملف + AST Python |
 | FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 9140 | 265 | جرد الملف + AST Python |
-| FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 9539 | 293 | جرد الملف + AST Python |
+| FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 10435 | 319 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
@@ -604,16 +604,16 @@
 | [api/omarai.py](../api/omarai.py#L501) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 501 | [SRC-EEF2E6447C-L000501](../api/omarai.py#L501) |
 | [api/omarai.py](../api/omarai.py#L514) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 514 | [SRC-EEF2E6447C-L000514](../api/omarai.py#L514) |
 | [api/omarai.py](../api/omarai.py#L555) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 555 | [SRC-EEF2E6447C-L000555](../api/omarai.py#L555) |
-| [api/omarai.py](../api/omarai.py#L697) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 697 | [SRC-EEF2E6447C-L000697](../api/omarai.py#L697) |
-| [api/omarai.py](../api/omarai.py#L710) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 710 | [SRC-EEF2E6447C-L000710](../api/omarai.py#L710) |
-| [api/omarai.py](../api/omarai.py#L714) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 714 | [SRC-EEF2E6447C-L000714](../api/omarai.py#L714) |
-| [api/omarai.py](../api/omarai.py#L750) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 750 | [SRC-EEF2E6447C-L000750](../api/omarai.py#L750) |
-| [api/omarai.py](../api/omarai.py#L753) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 753 | [SRC-EEF2E6447C-L000753](../api/omarai.py#L753) |
-| [api/omarai.py](../api/omarai.py#L754) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 754 | [SRC-EEF2E6447C-L000754](../api/omarai.py#L754) |
-| [api/omarai.py](../api/omarai.py#L761) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 761 | [SRC-EEF2E6447C-L000761](../api/omarai.py#L761) |
-| [api/omarai.py](../api/omarai.py#L779) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 779 | [SRC-EEF2E6447C-L000779](../api/omarai.py#L779) |
-| [api/omarai.py](../api/omarai.py#L796) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 796 | [SRC-EEF2E6447C-L000796](../api/omarai.py#L796) |
-| [api/omarai.py](../api/omarai.py#L804) | دالة | serve | لا توجد Docstring. | ناقص | 804 | [SRC-EEF2E6447C-L000804](../api/omarai.py#L804) |
+| [api/omarai.py](../api/omarai.py#L702) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 702 | [SRC-EEF2E6447C-L000702](../api/omarai.py#L702) |
+| [api/omarai.py](../api/omarai.py#L715) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 715 | [SRC-EEF2E6447C-L000715](../api/omarai.py#L715) |
+| [api/omarai.py](../api/omarai.py#L719) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 719 | [SRC-EEF2E6447C-L000719](../api/omarai.py#L719) |
+| [api/omarai.py](../api/omarai.py#L755) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 755 | [SRC-EEF2E6447C-L000755](../api/omarai.py#L755) |
+| [api/omarai.py](../api/omarai.py#L758) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 758 | [SRC-EEF2E6447C-L000758](../api/omarai.py#L758) |
+| [api/omarai.py](../api/omarai.py#L759) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 759 | [SRC-EEF2E6447C-L000759](../api/omarai.py#L759) |
+| [api/omarai.py](../api/omarai.py#L766) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 766 | [SRC-EEF2E6447C-L000766](../api/omarai.py#L766) |
+| [api/omarai.py](../api/omarai.py#L784) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 784 | [SRC-EEF2E6447C-L000784](../api/omarai.py#L784) |
+| [api/omarai.py](../api/omarai.py#L801) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 801 | [SRC-EEF2E6447C-L000801](../api/omarai.py#L801) |
+| [api/omarai.py](../api/omarai.py#L809) | دالة | serve | لا توجد Docstring. | ناقص | 809 | [SRC-EEF2E6447C-L000809](../api/omarai.py#L809) |
 | [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
 | [docs/generate_index.py](generate_index.py#L22) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
@@ -1262,6 +1262,8 @@
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L240) | دالة | test_live_diagnostics_is_owner_only_even_with_explicit_approval.unexpected_diagnostics | لا توجد Docstring. | ناقص | 240 | [SRC-4405E7912C-L000240](../tests/test_multitenant_api.py#L240) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L261) | دالة | test_owner_can_run_diagnostics_only_after_explicit_approval | لا توجد Docstring. | ناقص | 261 | [SRC-4405E7912C-L000261](../tests/test_multitenant_api.py#L261) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L274) | دالة | test_owner_can_run_diagnostics_only_after_explicit_approval.fake_diagnostics | لا توجد Docstring. | ناقص | 274 | [SRC-4405E7912C-L000274](../tests/test_multitenant_api.py#L274) |
+| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L297) | دالة | test_viewer_cannot_invoke_agent_research_or_model_calls | لا توجد Docstring. | ناقص | 297 | [SRC-4405E7912C-L000297](../tests/test_multitenant_api.py#L297) |
+| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L307) | دالة | test_viewer_cannot_invoke_agent_research_or_model_calls.unexpected_answer | لا توجد Docstring. | ناقص | 307 | [SRC-4405E7912C-L000307](../tests/test_multitenant_api.py#L307) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L8) | دالة | test_arabic_normalization | لا توجد Docstring. | ناقص | 8 | [SRC-44CDA52D01-L000008](../tests/test_omarai.py#L8) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L11) | دالة | test_high_intent_with_next_step | لا توجد Docstring. | ناقص | 11 | [SRC-44CDA52D01-L000011](../tests/test_omarai.py#L11) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L16) | دالة | test_non_buyer_override | لا توجد Docstring. | ناقص | 16 | [SRC-44CDA52D01-L000016](../tests/test_omarai.py#L16) |
@@ -1984,8 +1986,8 @@
 | [api/omarai.py](../api/omarai.py#L578) | مسار API/واجهة محتمل | /api/tokens/revoke | 578 | [SRC-EEF2E6447C-L000578](../api/omarai.py#L578) |
 | [api/omarai.py](../api/omarai.py#L601) | مسار API/واجهة محتمل | /api/diagnostics | 601 | [SRC-EEF2E6447C-L000601](../api/omarai.py#L601) |
 | [api/omarai.py](../api/omarai.py#L641) | مسار API/واجهة محتمل | /api/agent | 641 | [SRC-EEF2E6447C-L000641](../api/omarai.py#L641) |
-| [api/omarai.py](../api/omarai.py#L655) | مسار API/واجهة محتمل | /api/ask | 655 | [SRC-EEF2E6447C-L000655](../api/omarai.py#L655) |
-| [api/omarai.py](../api/omarai.py#L662) | مسار API/واجهة محتمل | /api/analyze | 662 | [SRC-EEF2E6447C-L000662](../api/omarai.py#L662) |
+| [api/omarai.py](../api/omarai.py#L660) | مسار API/واجهة محتمل | /api/ask | 660 | [SRC-EEF2E6447C-L000660](../api/omarai.py#L660) |
+| [api/omarai.py](../api/omarai.py#L667) | مسار API/واجهة محتمل | /api/analyze | 667 | [SRC-EEF2E6447C-L000667](../api/omarai.py#L667) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | عنوان Markdown (H1) | تقرير قبول الاستضافة — Omarai | 1 | [SRC-65AAF94960-L000001](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | عنوان Markdown (H2) | الملخص التنفيذي | 6 | [SRC-65AAF94960-L000006](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | عنوان Markdown (H2) | أدلة القبول | 11 | [SRC-65AAF94960-L000011](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) |
@@ -3205,6 +3207,7 @@
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L66) | مسار API/واجهة محتمل | /api/leads | 66 | [SRC-4405E7912C-L000066](../tests/test_multitenant_api.py#L66) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L172) | مسار API/واجهة محتمل | /api/tokens/revoke | 172 | [SRC-4405E7912C-L000172](../tests/test_multitenant_api.py#L172) |
 | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L220) | مسار API/واجهة محتمل | /api/diagnostics | 220 | [SRC-4405E7912C-L000220](../tests/test_multitenant_api.py#L220) |
+| [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L313) | مسار API/واجهة محتمل | /api/agent | 313 | [SRC-4405E7912C-L000313](../tests/test_multitenant_api.py#L313) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_NAME | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 15 | [SRC-B106ADC5EF-L000015](../tests/test_proxy_origin.py#L15) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 16 | [SRC-B106ADC5EF-L000016](../tests/test_proxy_origin.py#L16) |
