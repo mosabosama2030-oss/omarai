@@ -37,7 +37,7 @@ def test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used(monkeypa
             return FakeResponse("possibly incomplete response", include_reason=False)
         return FakeResponse("إجابة مكتملة من النموذج الاحتياطي", "stop")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     answer = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
@@ -71,7 +71,7 @@ def test_unknown_finish_reason_is_rejected_and_fallback_is_used(monkeypatch):
             return FakeResponse("response with unrecognized termination", "vendor_specific_done")
         return FakeResponse("إجابة مكتملة", "stop")
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     answer = agent._request_completion(
         [{"role": "user", "content": "اختبار"}],
@@ -94,7 +94,7 @@ def test_missing_finish_reason_from_all_models_fails_closed(monkeypatch):
         calls.append(json.loads(request.data.decode("utf-8"))["model"])
         return FakeResponse("may be incomplete", include_reason=False)
 
-    monkeypatch.setattr("agents.web_agent.urllib.request.urlopen", fake_urlopen)
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_urlopen)
 
     with pytest.raises(RuntimeError, match="سبب انتهاء واضحًا"):
         agent._request_completion(
