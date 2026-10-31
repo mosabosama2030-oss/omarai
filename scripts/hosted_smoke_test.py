@@ -108,12 +108,20 @@ def run_smoke(
     timeout: float = 90,
     allow_http: bool = False,
     expected_sha: str | None = None,
+    local_dev_no_token: bool = False,
 ) -> dict[str, Any]:
-    origin = normalize_origin(origin, allow_http)
+    origin = normalize_origin(origin, allow_http or local_dev_no_token)
+    target_host = urllib.parse.urlsplit(origin).hostname or ""
+    loopback_host = target_host.lower() in {"localhost", "127.0.0.1", "::1"}
     if expected_sha is not None and not re.fullmatch(r"[0-9a-fA-F]{40}", expected_sha.strip()):
         raise SmokeError("The expected source revision must be a full 40-character Git SHA.")
-    if len(token.strip()) < 32:
-        raise SmokeError("OMARAI_ACCESS_TOKEN is missing or shorter than 32 characters.")
+    if token.strip():
+        if len(token.strip()) < 32:
+            raise SmokeError("OMARAI_ACCESS_TOKEN is shorter than 32 characters.")
+    elif not (local_dev_no_token and loopback_host):
+        raise SmokeError(
+            "A bearer token is required for hosted targets. No-token mode is restricted to localhost/loopback."
+        )
 
     status, health = request_json(f"{origin}/api/health", timeout=min(timeout, 20))
     if status != 200 or not health or health.get("ok") is not True:
@@ -141,13 +149,18 @@ def run_smoke(
             "reported_sha": reported_sha if isinstance(reported_sha, str) else "unknown",
         }
 
-    status, _ = request_json(
-        f"{origin}/api/agent", payload={"question": "اختبار رفض الوصول غير المصرح به"},
-        timeout=min(timeout, 20),
-    )
-    if status != 401:
-        raise SmokeError(f"Unauthenticated POST /api/agent should return 401, received {status}.")
-    checks["authentication"] = "passed"
+    if token.strip():
+        status, _ = request_json(
+            f"{origin}/api/agent", payload={"question": "اختبار رفض الوصول غير المصرح به"},
+            timeout=min(timeout, 20),
+        )
+        if status != 401:
+            raise SmokeError(f"Unauthenticated POST /api/agent should return 401, received {status}.")
+        checks["authentication"] = "passed"
+        auth_mode = "bearer_token"
+    else:
+        checks["authentication"] = "local_loopback_dev_bypass"
+        auth_mode = "local_loopback_dev_bypass"
 
     # These are real network/provider calls and may incur model/search usage.
     status, diagnostics = request_json(
@@ -212,7 +225,7 @@ def run_smoke(
         "answer_evidence_status": answer.get("answer_evidence_status"),
     }
     return {
-        "result": "passed", "target_host": urllib.parse.urlsplit(origin).hostname,
+        "result": "passed", "target_host": target_host, "auth_mode": auth_mode,
         "checks": checks,
         "transcript": [
             {
@@ -246,6 +259,11 @@ def main() -> int:
     parser.add_argument("--allow-http", action="store_true",
                         help="Allow HTTP only for localhost/127.0.0.1/::1 testing.")
     parser.add_argument(
+        "--local-dev-no-token",
+        action="store_true",
+        help="Use the app's existing no-token development bypass on loopback only; never for hosted URLs.",
+    )
+    parser.add_argument(
         "--output",
         default="",
         help="Optional path for a JSON report containing the exact test question, answer, and sources.",
@@ -258,6 +276,7 @@ def main() -> int:
             timeout=max(5, min(args.timeout, 240)),
             allow_http=args.allow_http,
             expected_sha=args.expected_sha or None,
+            local_dev_no_token=args.local_dev_no_token,
         )
     except SmokeError as exc:
         print(json.dumps({"result": "failed", "error": str(exc)}, ensure_ascii=False, indent=2))
