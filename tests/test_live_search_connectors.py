@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import httpx
+import pytest
 
 from agents.web_agent import WebAgent
 
