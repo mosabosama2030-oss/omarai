@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002411 إلى SRC-F725E90B2A-L003210
+- النطاق: SRC-F725E90B2A-L002408 إلى SRC-F725E90B2A-L003207
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002408](../../tests/test_web_agent.py#L2408) | 2408 | `"                }]"` | — |
+| [SRC-F725E90B2A-L002409](../../tests/test_web_agent.py#L2409) | 2409 | `"            }"` | — |
+| [SRC-F725E90B2A-L002410](../../tests/test_web_agent.py#L2410) | 2410 | `""` | — |
 | [SRC-F725E90B2A-L002411](../../tests/test_web_agent.py#L2411) | 2411 | `"    def fake_post(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L002412](../../tests/test_web_agent.py#L2412) | 2412 | `"        seen[\"url\"] = url"` | — |
 | [SRC-F725E90B2A-L002413](../../tests/test_web_agent.py#L2413) | 2413 | `"        seen.update(kwargs)"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L003205](../../tests/test_web_agent.py#L3205) | 3205 | `"            ),"` | — |
 | [SRC-F725E90B2A-L003206](../../tests/test_web_agent.py#L3206) | 3206 | `"        },"` | — |
 | [SRC-F725E90B2A-L003207](../../tests/test_web_agent.py#L3207) | 3207 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن مقارنة موثقة.\"},"` | — |
-| [SRC-F725E90B2A-L003208](../../tests/test_web_agent.py#L3208) | 3208 | `"    ]"` | — |
-| [SRC-F725E90B2A-L003209](../../tests/test_web_agent.py#L3209) | 3209 | `"    plan = agent._plan_search(\"وطب الأسعار الحالية؟\", history)"` | — |
-| [SRC-F725E90B2A-L003210](../../tests/test_web_agent.py#L3210) | 3210 | `""` | — |

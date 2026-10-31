@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001952 إلى SRC-1AE03B9EC3-L002751
+- النطاق: SRC-1AE03B9EC3-L001949 إلى SRC-1AE03B9EC3-L002748
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001949](../../agents/web_agent.py#L1949) | 1949 | `"                self._reserve_search_call()"` | — |
+| [SRC-1AE03B9EC3-L001950](../../agents/web_agent.py#L1950) | 1950 | `"                response = httpx.get("` | — |
+| [SRC-1AE03B9EC3-L001951](../../agents/web_agent.py#L1951) | 1951 | `"                    \"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts\","` | — |
 | [SRC-1AE03B9EC3-L001952](../../agents/web_agent.py#L1952) | 1952 | `"                    params={\"q\": query, \"limit\": 10},"` | — |
 | [SRC-1AE03B9EC3-L001953](../../agents/web_agent.py#L1953) | 1953 | `"                    headers=headers,"` | — |
 | [SRC-1AE03B9EC3-L001954](../../agents/web_agent.py#L1954) | 1954 | `"                    timeout=self._effective_timeout(9.0),"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L002746](../../agents/web_agent.py#L2746) | 2746 | `"                    if title:"` | — |
 | [SRC-1AE03B9EC3-L002747](../../agents/web_agent.py#L2747) | 2747 | `"                        source[\"title\"] = title"` | — |
 | [SRC-1AE03B9EC3-L002748](../../agents/web_agent.py#L2748) | 2748 | `"                    if page_text and page_text.strip():"` | — |
-| [SRC-1AE03B9EC3-L002749](../../agents/web_agent.py#L2749) | 2749 | `"                        source[\"page_text\"] = page_text"` | — |
-| [SRC-1AE03B9EC3-L002750](../../agents/web_agent.py#L2750) | 2750 | `"                        source[\"snippet\"] = page_text[:1800]"` | — |
-| [SRC-1AE03B9EC3-L002751](../../agents/web_agent.py#L2751) | 2751 | `"                        source[\"page_fetched\"] = True"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000048 إلى SRC-59CF4B7DE8-L000847
+- النطاق: SRC-59CF4B7DE8-L000045 إلى SRC-59CF4B7DE8-L000844
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000045](../../agents/research.py#L45) | 45 | `"    host = (parsed.hostname or \"\").rstrip(\".\").lower()"` | — |
+| [SRC-59CF4B7DE8-L000046](../../agents/research.py#L46) | 46 | `"    if not host:"` | — |
+| [SRC-59CF4B7DE8-L000047](../../agents/research.py#L47) | 47 | `"        return \"\""` | — |
 | [SRC-59CF4B7DE8-L000048](../../agents/research.py#L48) | 48 | `"    try:"` | — |
 | [SRC-59CF4B7DE8-L000049](../../agents/research.py#L49) | 49 | `"        return str(ipaddress.ip_address(host))"` | — |
 | [SRC-59CF4B7DE8-L000050](../../agents/research.py#L50) | 50 | `"    except ValueError:"` | — |
@@ -813,6 +816,3 @@
 | [SRC-59CF4B7DE8-L000842](../../agents/research.py#L842) | 842 | `"    for src in sources or []:"` | — |
 | [SRC-59CF4B7DE8-L000843](../../agents/research.py#L843) | 843 | `"        if not isinstance(src, dict):"` | — |
 | [SRC-59CF4B7DE8-L000844](../../agents/research.py#L844) | 844 | `"            diag.append({\"reason\": \"malformed\", \"url\": \"\"})"` | — |
-| [SRC-59CF4B7DE8-L000845](../../agents/research.py#L845) | 845 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000846](../../agents/research.py#L846) | 846 | `"        url = str(src.get(\"url\") or \"\")"` | — |
-| [SRC-59CF4B7DE8-L000847](../../agents/research.py#L847) | 847 | `"        domain = str(src.get(\"domain\") or \"\").lower()"` | — |

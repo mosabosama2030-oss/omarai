@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000848 إلى SRC-60066C6786-L000114
+- النطاق: SRC-59CF4B7DE8-L000845 إلى SRC-60066C6786-L000111
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000845](../../agents/research.py#L845) | 845 | `"            continue"` | — |
+| [SRC-59CF4B7DE8-L000846](../../agents/research.py#L846) | 846 | `"        url = str(src.get(\"url\") or \"\")"` | — |
+| [SRC-59CF4B7DE8-L000847](../../agents/research.py#L847) | 847 | `"        domain = str(src.get(\"domain\") or \"\").lower()"` | — |
 | [SRC-59CF4B7DE8-L000848](../../agents/research.py#L848) | 848 | `"        title = str(src.get(\"title\") or \"\").strip()"` | — |
 | [SRC-59CF4B7DE8-L000849](../../agents/research.py#L849) | 849 | `"        url_key = url.rstrip(\"/\").lower()"` | — |
 | [SRC-59CF4B7DE8-L000850](../../agents/research.py#L850) | 850 | `"        title_key = title.lower() + \"\|\" + domain"` | — |
@@ -840,6 +843,3 @@
 | [SRC-60066C6786-L000109](../../agents/research_pipeline.py#L109) | 109 | `"    return {"` | — |
 | [SRC-60066C6786-L000110](../../agents/research_pipeline.py#L110) | 110 | `"        \"lexical_ledger\": lexical_ledger,"` | — |
 | [SRC-60066C6786-L000111](../../agents/research_pipeline.py#L111) | 111 | `"        \"lexical_matching_status\": lexical_matching_status,"` | — |
-| [SRC-60066C6786-L000112](../../agents/research_pipeline.py#L112) | 112 | `"        \"semantic_matching\": {"` | — |
-| [SRC-60066C6786-L000113](../../agents/research_pipeline.py#L113) | 113 | `"            \"status\": \"degraded\" if semantic_errors else semantic_status,"` | — |
-| [SRC-60066C6786-L000114](../../agents/research_pipeline.py#L114) | 114 | `"            \"errors\": semantic_errors,"` | — |

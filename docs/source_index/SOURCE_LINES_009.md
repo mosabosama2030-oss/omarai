@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001321 إلى SRC-1AE03B9EC3-L000351
+- النطاق: SRC-686F71AA50-L001318 إلى SRC-1AE03B9EC3-L000348
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001318](../../agents/task_understanding.py#L1318) | 1318 | `"            else \"unassessed\""` | — |
+| [SRC-686F71AA50-L001319](../../agents/task_understanding.py#L1319) | 1319 | `"        ),"` | — |
+| [SRC-686F71AA50-L001320](../../agents/task_understanding.py#L1320) | 1320 | `"        \"needs_clarification\": raw_context.get(\"needs_clarification\") is True,"` | — |
 | [SRC-686F71AA50-L001321](../../agents/task_understanding.py#L1321) | 1321 | `"        \"unresolved_references\": clean_list(raw_context.get(\"unresolved_references\"), items=8, chars=100),"` | — |
 | [SRC-686F71AA50-L001322](../../agents/task_understanding.py#L1322) | 1322 | `"    }"` | — |
 | [SRC-686F71AA50-L001323](../../agents/task_understanding.py#L1323) | 1323 | `""` | — |
@@ -840,6 +843,3 @@
 | [SRC-1AE03B9EC3-L000346](../../agents/web_agent.py#L346) | 346 | `"        return \"\""` | — |
 | [SRC-1AE03B9EC3-L000347](../../agents/web_agent.py#L347) | 347 | `"    return \" \".join(value.replace(\"\\x00\", \" \").split())[:limit]"` | — |
 | [SRC-1AE03B9EC3-L000348](../../agents/web_agent.py#L348) | 348 | `""` | — |
-| [SRC-1AE03B9EC3-L000349](../../agents/web_agent.py#L349) | 349 | `""` | — |
-| [SRC-1AE03B9EC3-L000350](../../agents/web_agent.py#L350) | 350 | `"def _public_http_url(value: Any) -> str \| None:"` | — |
-| [SRC-1AE03B9EC3-L000351](../../agents/web_agent.py#L351) | 351 | `"    \"\"\"Lexically validate an HTTP URL before using it as a search source.\"\"\""` | — |

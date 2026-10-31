@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000467 إلى SRC-AAA21D04E8-L000175
+- النطاق: SRC-FA4E1423C3-L000464 إلى SRC-AAA21D04E8-L000172
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000464](../../tests/test_generate_index.py#L464) | 464 | `"    }"` | — |
+| [SRC-FA4E1423C3-L000465](../../tests/test_generate_index.py#L465) | 465 | `"    assert any(path == \"sample.py\" and marker == \"BUG\" and \"real Python defect\" in desc"` | — |
+| [SRC-FA4E1423C3-L000466](../../tests/test_generate_index.py#L466) | 466 | `"               for path, marker, desc in summarized)"` | — |
 | [SRC-FA4E1423C3-L000467](../../tests/test_generate_index.py#L467) | 467 | `"    assert any(path == \"app.js\" and marker == \"FIXME\" for path, marker, _ in summarized)"` | — |
 | [SRC-FA4E1423C3-L000468](../../tests/test_generate_index.py#L468) | 468 | `"    assert any(path == \"app.js\" and marker == \"SECURITY\" for path, marker, _ in summarized)"` | — |
 | [SRC-FA4E1423C3-L000469](../../tests/test_generate_index.py#L469) | 469 | `"    assert any(path == \"styles.css\" and marker == \"GAP\" for path, marker, _ in summarized)"` | — |
@@ -831,6 +834,3 @@
 | [SRC-AAA21D04E8-L000170](../../tests/test_generation_capabilities.py#L170) | 170 | `"    sources = ["` | — |
 | [SRC-AAA21D04E8-L000171](../../tests/test_generation_capabilities.py#L171) | 171 | `"        {"` | — |
 | [SRC-AAA21D04E8-L000172](../../tests/test_generation_capabilities.py#L172) | 172 | `"            \"title\": \"تقرير ذكاء اصطناعي\","` | — |
-| [SRC-AAA21D04E8-L000173](../../tests/test_generation_capabilities.py#L173) | 173 | `"            \"url\": \"https://example.com/report\","` | — |
-| [SRC-AAA21D04E8-L000174](../../tests/test_generation_capabilities.py#L174) | 174 | `"            \"snippet\": \"مقتطف تجريبي من المصدر الأول\","` | — |
-| [SRC-AAA21D04E8-L000175](../../tests/test_generation_capabilities.py#L175) | 175 | `"            \"page_fetched\": False,"` | — |

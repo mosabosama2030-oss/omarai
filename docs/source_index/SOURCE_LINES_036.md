@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B0DE4359ED-L000004 إلى SRC-3451CC474D-L000438
+- النطاق: SRC-B0DE4359ED-L000001 إلى SRC-3451CC474D-L000435
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B0DE4359ED-L000001](../../tests/test_answer_quality_unknown_tool_status.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-B0DE4359ED-L000002](../../tests/test_answer_quality_unknown_tool_status.py#L2) | 2 | `""` | — |
+| [SRC-B0DE4359ED-L000003](../../tests/test_answer_quality_unknown_tool_status.py#L3) | 3 | `"import importlib.util"` | — |
 | [SRC-B0DE4359ED-L000004](../../tests/test_answer_quality_unknown_tool_status.py#L4) | 4 | `"from pathlib import Path"` | — |
 | [SRC-B0DE4359ED-L000005](../../tests/test_answer_quality_unknown_tool_status.py#L5) | 5 | `""` | — |
 | [SRC-B0DE4359ED-L000006](../../tests/test_answer_quality_unknown_tool_status.py#L6) | 6 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
@@ -831,6 +834,3 @@
 | [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"    try:"` | — |
 | [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"        with urlopen(request, timeout=3) as response:"` | — |
 | [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"            first_status = response.status"` | — |
-| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    except HTTPError as error:"` | — |
-| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `"        first_status = error.code"` | — |
-| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `"    assert first_status == 401"` | — |

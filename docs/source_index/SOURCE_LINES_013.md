@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002752 إلى SRC-1AE03B9EC3-L003551
+- النطاق: SRC-1AE03B9EC3-L002749 إلى SRC-1AE03B9EC3-L003548
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002749](../../agents/web_agent.py#L2749) | 2749 | `"                        source[\"page_text\"] = page_text"` | — |
+| [SRC-1AE03B9EC3-L002750](../../agents/web_agent.py#L2750) | 2750 | `"                        source[\"snippet\"] = page_text[:1800]"` | — |
+| [SRC-1AE03B9EC3-L002751](../../agents/web_agent.py#L2751) | 2751 | `"                        source[\"page_fetched\"] = True"` | — |
 | [SRC-1AE03B9EC3-L002752](../../agents/web_agent.py#L2752) | 2752 | `"                        source[\"page_fetch_status\"] = ("` | — |
 | [SRC-1AE03B9EC3-L002753](../../agents/web_agent.py#L2753) | 2753 | `"                            observed_status"` | — |
 | [SRC-1AE03B9EC3-L002754](../../agents/web_agent.py#L2754) | 2754 | `"                            if observed_status in {\"content_extracted\", \"partial_extraction\"}"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L003546](../../agents/web_agent.py#L3546) | 3546 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003547](../../agents/web_agent.py#L3547) | 3547 | `"            plan[\"queries\"] = list(dict.fromkeys("` | — |
 | [SRC-1AE03B9EC3-L003548](../../agents/web_agent.py#L3548) | 3548 | `"                required_prefix + list(plan.get(\"queries\") or [])"` | — |
-| [SRC-1AE03B9EC3-L003549](../../agents/web_agent.py#L3549) | 3549 | `"            ))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L003550](../../agents/web_agent.py#L3550) | 3550 | `"        return plan"` | — |
-| [SRC-1AE03B9EC3-L003551](../../agents/web_agent.py#L3551) | 3551 | `""` | — |

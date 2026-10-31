@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000439 إلى SRC-DA61479D59-L000077
+- النطاق: SRC-3451CC474D-L000436 إلى SRC-DA61479D59-L000074
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    except HTTPError as error:"` | — |
+| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `"        first_status = error.code"` | — |
+| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `"    assert first_status == 401"` | — |
 | [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `""` | — |
 | [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"    try:"` | — |
 | [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"        with urlopen(request, timeout=3) as response:"` | — |
@@ -840,6 +843,3 @@
 | [SRC-DA61479D59-L000072](../../tests/test_connector_summary_counters.py#L72) | 72 | `"            \"url\": \"https://example.com/report?utm_source=test\","` | — |
 | [SRC-DA61479D59-L000073](../../tests/test_connector_summary_counters.py#L73) | 73 | `"            \"snippet\": \"Renewable energy storage data from a duplicate result\","` | — |
 | [SRC-DA61479D59-L000074](../../tests/test_connector_summary_counters.py#L74) | 74 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000075](../../tests/test_connector_summary_counters.py#L75) | 75 | `"            \"page_fetched\": False,"` | — |
-| [SRC-DA61479D59-L000076](../../tests/test_connector_summary_counters.py#L76) | 76 | `"            \"provider\": \"test_search\","` | — |
-| [SRC-DA61479D59-L000077](../../tests/test_connector_summary_counters.py#L77) | 77 | `"            \"provider_rank\": 2,"` | — |

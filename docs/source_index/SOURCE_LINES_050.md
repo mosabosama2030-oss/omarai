@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003211 إلى SRC-8C13B81AB4-L000111
+- النطاق: SRC-F725E90B2A-L003208 إلى SRC-8C13B81AB4-L000108
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003208](../../tests/test_web_agent.py#L3208) | 3208 | `"    ]"` | — |
+| [SRC-F725E90B2A-L003209](../../tests/test_web_agent.py#L3209) | 3209 | `"    plan = agent._plan_search(\"وطب الأسعار الحالية؟\", history)"` | — |
+| [SRC-F725E90B2A-L003210](../../tests/test_web_agent.py#L3210) | 3210 | `""` | — |
 | [SRC-F725E90B2A-L003211](../../tests/test_web_agent.py#L3211) | 3211 | `"    assert plan[\"queries\"]"` | — |
 | [SRC-F725E90B2A-L003212](../../tests/test_web_agent.py#L3212) | 3212 | `"    assert all(len(query) <= 240 for query in plan[\"queries\"])"` | — |
 | [SRC-F725E90B2A-L003213](../../tests/test_web_agent.py#L3213) | 3213 | `"    assert any(\"السيارات الكهربائية\" in query for query in plan[\"queries\"])"` | — |
@@ -822,6 +825,3 @@
 | [SRC-8C13B81AB4-L000106](../../tests/test_web_agent_nlu_integration.py#L106) | 106 | `"            },"` | — |
 | [SRC-8C13B81AB4-L000107](../../tests/test_web_agent_nlu_integration.py#L107) | 107 | `"            \"aspect_diagnostics_ar\": [],"` | — |
 | [SRC-8C13B81AB4-L000108](../../tests/test_web_agent_nlu_integration.py#L108) | 108 | `"        },"` | — |
-| [SRC-8C13B81AB4-L000109](../../tests/test_web_agent_nlu_integration.py#L109) | 109 | `"    }"` | — |
-| [SRC-8C13B81AB4-L000110](../../tests/test_web_agent_nlu_integration.py#L110) | 110 | `"    result = enforce_aspect_answer_completeness(payload)"` | — |
-| [SRC-8C13B81AB4-L000111](../../tests/test_web_agent_nlu_integration.py#L111) | 111 | `"    assert result[\"answer_was_withheld\"] is True"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003552 إلى SRC-1AE03B9EC3-L004351
+- النطاق: SRC-1AE03B9EC3-L003549 إلى SRC-1AE03B9EC3-L004348
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003549](../../agents/web_agent.py#L3549) | 3549 | `"            ))[:MAX_PLAN_QUERIES]"` | — |
+| [SRC-1AE03B9EC3-L003550](../../agents/web_agent.py#L3550) | 3550 | `"        return plan"` | — |
+| [SRC-1AE03B9EC3-L003551](../../agents/web_agent.py#L3551) | 3551 | `""` | — |
 | [SRC-1AE03B9EC3-L003552](../../agents/web_agent.py#L3552) | 3552 | `"    def _generate("` | — |
 | [SRC-1AE03B9EC3-L003553](../../agents/web_agent.py#L3553) | 3553 | `"        self,"` | — |
 | [SRC-1AE03B9EC3-L003554](../../agents/web_agent.py#L3554) | 3554 | `"        question: str,"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L004346](../../agents/web_agent.py#L4346) | 4346 | `"                    coverage_targets,"` | — |
 | [SRC-1AE03B9EC3-L004347](../../agents/web_agent.py#L4347) | 4347 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004348](../../agents/web_agent.py#L4348) | 4348 | `"                result[\"answer_integrity\"] = answer_integrity"` | — |
-| [SRC-1AE03B9EC3-L004349](../../agents/web_agent.py#L4349) | 4349 | `"                coverage = result.get(\"answer_coverage\")"` | — |
-| [SRC-1AE03B9EC3-L004350](../../agents/web_agent.py#L4350) | 4350 | `"                if not isinstance(coverage, dict):"` | — |
-| [SRC-1AE03B9EC3-L004351](../../agents/web_agent.py#L4351) | 4351 | `"                    coverage = {}"` | — |

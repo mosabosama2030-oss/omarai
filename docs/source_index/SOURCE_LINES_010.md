@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000352 إلى SRC-1AE03B9EC3-L001151
+- النطاق: SRC-1AE03B9EC3-L000349 إلى SRC-1AE03B9EC3-L001148
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000349](../../agents/web_agent.py#L349) | 349 | `""` | — |
+| [SRC-1AE03B9EC3-L000350](../../agents/web_agent.py#L350) | 350 | `"def _public_http_url(value: Any) -> str \| None:"` | — |
+| [SRC-1AE03B9EC3-L000351](../../agents/web_agent.py#L351) | 351 | `"    \"\"\"Lexically validate an HTTP URL before using it as a search source.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000352](../../agents/web_agent.py#L352) | 352 | `"    if not isinstance(value, str) or len(value) > 2048:"` | — |
 | [SRC-1AE03B9EC3-L000353](../../agents/web_agent.py#L353) | 353 | `"        return None"` | — |
 | [SRC-1AE03B9EC3-L000354](../../agents/web_agent.py#L354) | 354 | `"    try:"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L001146](../../agents/web_agent.py#L1146) | 1146 | `"                \"runtime_status\": not_tested,"` | — |
 | [SRC-1AE03B9EC3-L001147](../../agents/web_agent.py#L1147) | 1147 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001148](../../agents/web_agent.py#L1148) | 1148 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L001149](../../agents/web_agent.py#L1149) | 1149 | `""` | — |
-| [SRC-1AE03B9EC3-L001150](../../agents/web_agent.py#L1150) | 1150 | `"    def _self_description_answer(self, question: str) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L001151](../../agents/web_agent.py#L1151) | 1151 | `"        \"\"\"Answer self/capability questions without inventing a live health result.\"\"\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001611 إلى SRC-F725E90B2A-L002410
+- النطاق: SRC-F725E90B2A-L001608 إلى SRC-F725E90B2A-L002407
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001608](../../tests/test_web_agent.py#L1608) | 1608 | `"    assert results[0][\"publisher_name\"] == \"بوابة مصر الرقمية\""` | — |
+| [SRC-F725E90B2A-L001609](../../tests/test_web_agent.py#L1609) | 1609 | `"    assert results[0][\"publisher_url\"] == \"https://digital.gov.eg/\""` | — |
+| [SRC-F725E90B2A-L001610](../../tests/test_web_agent.py#L1610) | 1610 | `"    assert results[0][\"publisher_domain\"] == \"digital.gov.eg\""` | — |
 | [SRC-F725E90B2A-L001611](../../tests/test_web_agent.py#L1611) | 1611 | `""` | — |
 | [SRC-F725E90B2A-L001612](../../tests/test_web_agent.py#L1612) | 1612 | `""` | — |
 | [SRC-F725E90B2A-L001613](../../tests/test_web_agent.py#L1613) | 1613 | `"def test_relevance_matching_handles_arabic_names_with_english_results():"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L002405](../../tests/test_web_agent.py#L2405) | 2405 | `"                    \"site_name\": \"Example\","` | — |
 | [SRC-F725E90B2A-L002406](../../tests/test_web_agent.py#L2406) | 2406 | `"                    \"rerank_score\": 2.2,"` | — |
 | [SRC-F725E90B2A-L002407](../../tests/test_web_agent.py#L2407) | 2407 | `"                    \"authority\": 2,"` | — |
-| [SRC-F725E90B2A-L002408](../../tests/test_web_agent.py#L2408) | 2408 | `"                }]"` | — |
-| [SRC-F725E90B2A-L002409](../../tests/test_web_agent.py#L2409) | 2409 | `"            }"` | — |
-| [SRC-F725E90B2A-L002410](../../tests/test_web_agent.py#L2410) | 2410 | `""` | — |

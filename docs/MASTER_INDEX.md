@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **965**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1884**
-- الأسطر النصية المفهرسة حرفيًا: **40563**
+- الأسطر النصية المفهرسة حرفيًا: **40566**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -42,7 +42,7 @@
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 10662 | 253 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25333 | 559 | جرد الملف + AST Python |
-| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 22898 | 510 | جرد الملف + AST Python |
+| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 22975 | 513 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 5620 | 142 | جرد الملف + AST Python |
 | FILE-3D565C3B85 | الوكيل والمنطق | [agents/requirement_evidence.py](../agents/requirement_evidence.py#L1) | Python | 6723 | 148 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
@@ -266,15 +266,15 @@
 | [agents/omarai.py](../agents/omarai.py#L270) | دالة | LeadStore.create_tenant | لا توجد Docstring. | ناقص | 270 | [SRC-C9CF9B54F8-L000270](../agents/omarai.py#L270) |
 | [agents/omarai.py](../agents/omarai.py#L287) | دالة | LeadStore.create_user | لا توجد Docstring. | ناقص | 287 | [SRC-C9CF9B54F8-L000287](../agents/omarai.py#L287) |
 | [agents/omarai.py](../agents/omarai.py#L301) | دالة | LeadStore.add_membership | لا توجد Docstring. | ناقص | 301 | [SRC-C9CF9B54F8-L000301](../agents/omarai.py#L301) |
-| [agents/omarai.py](../agents/omarai.py#L323) | دالة | LeadStore._token_hash | لا توجد Docstring. | ناقص | 323 | [SRC-C9CF9B54F8-L000323](../agents/omarai.py#L323) |
-| [agents/omarai.py](../agents/omarai.py#L326) | دالة | LeadStore.create_api_token | لا توجد Docstring. | ناقص | 326 | [SRC-C9CF9B54F8-L000326](../agents/omarai.py#L326) |
-| [agents/omarai.py](../agents/omarai.py#L361) | دالة | LeadStore.resolve_api_token | لا توجد Docstring. | ناقص | 361 | [SRC-C9CF9B54F8-L000361](../agents/omarai.py#L361) |
-| [agents/omarai.py](../agents/omarai.py#L378) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 378 | [SRC-C9CF9B54F8-L000378](../agents/omarai.py#L378) |
-| [agents/omarai.py](../agents/omarai.py#L429) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 429 | [SRC-C9CF9B54F8-L000429](../agents/omarai.py#L429) |
-| [agents/omarai.py](../agents/omarai.py#L434) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 434 | [SRC-C9CF9B54F8-L000434](../agents/omarai.py#L434) |
-| [agents/omarai.py](../agents/omarai.py#L452) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 452 | [SRC-C9CF9B54F8-L000452](../agents/omarai.py#L452) |
-| [agents/omarai.py](../agents/omarai.py#L473) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 473 | [SRC-C9CF9B54F8-L000473](../agents/omarai.py#L473) |
-| [agents/omarai.py](../agents/omarai.py#L493) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 493 | [SRC-C9CF9B54F8-L000493](../agents/omarai.py#L493) |
+| [agents/omarai.py](../agents/omarai.py#L324) | دالة | LeadStore._token_hash | لا توجد Docstring. | ناقص | 324 | [SRC-C9CF9B54F8-L000324](../agents/omarai.py#L324) |
+| [agents/omarai.py](../agents/omarai.py#L327) | دالة | LeadStore.create_api_token | لا توجد Docstring. | ناقص | 327 | [SRC-C9CF9B54F8-L000327](../agents/omarai.py#L327) |
+| [agents/omarai.py](../agents/omarai.py#L362) | دالة | LeadStore.resolve_api_token | لا توجد Docstring. | ناقص | 362 | [SRC-C9CF9B54F8-L000362](../agents/omarai.py#L362) |
+| [agents/omarai.py](../agents/omarai.py#L379) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 379 | [SRC-C9CF9B54F8-L000379](../agents/omarai.py#L379) |
+| [agents/omarai.py](../agents/omarai.py#L432) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 432 | [SRC-C9CF9B54F8-L000432](../agents/omarai.py#L432) |
+| [agents/omarai.py](../agents/omarai.py#L437) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 437 | [SRC-C9CF9B54F8-L000437](../agents/omarai.py#L437) |
+| [agents/omarai.py](../agents/omarai.py#L455) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 455 | [SRC-C9CF9B54F8-L000455](../agents/omarai.py#L455) |
+| [agents/omarai.py](../agents/omarai.py#L476) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 476 | [SRC-C9CF9B54F8-L000476](../agents/omarai.py#L476) |
+| [agents/omarai.py](../agents/omarai.py#L496) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 496 | [SRC-C9CF9B54F8-L000496](../agents/omarai.py#L496) |
 | [agents/request_budget.py](../agents/request_budget.py#L17) | كلاس | RequestBudgetExceeded | Raised when a request cannot start more work within its resource budget. | موثق | 17 | [SRC-FDEEAFDFCA-L000017](../agents/request_budget.py#L17) |
 | [agents/request_budget.py](../agents/request_budget.py#L21) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
 | [agents/request_budget.py](../agents/request_budget.py#L22) | متغير/ثابت Python | MAX_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
@@ -1844,7 +1844,7 @@
 | [agents/omarai.py](../agents/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 25 | [SRC-C9CF9B54F8-L000025](../agents/omarai.py#L25) |
 | [agents/omarai.py](../agents/omarai.py#L87) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 87 | [SRC-C9CF9B54F8-L000087](../agents/omarai.py#L87) |
 | [agents/omarai.py](../agents/omarai.py#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 90 | [SRC-C9CF9B54F8-L000090](../agents/omarai.py#L90) |
-| [agents/omarai.py](../agents/omarai.py#L500) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 500 | [SRC-C9CF9B54F8-L000500](../agents/omarai.py#L500) |
+| [agents/omarai.py](../agents/omarai.py#L503) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 503 | [SRC-C9CF9B54F8-L000503](../agents/omarai.py#L503) |
 | [agents/request_budget.py](../agents/request_budget.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
 | [agents/request_budget.py](../agents/request_budget.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TIMEOUT_SECONDS | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
 | [agents/request_budget.py](../agents/request_budget.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESOURCE_LIMITS | 23 | [SRC-FDEEAFDFCA-L000023](../agents/request_budget.py#L23) |

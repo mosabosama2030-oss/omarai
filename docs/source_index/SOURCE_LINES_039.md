@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000031 إلى SRC-FA4E1423C3-L000466
+- النطاق: SRC-6BCB799CEC-L000028 إلى SRC-FA4E1423C3-L000463
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000028](../../tests/test_evidence_provenance.py#L28) | 28 | `"            \"published_at\": \"\","` | — |
+| [SRC-6BCB799CEC-L000029](../../tests/test_evidence_provenance.py#L29) | 29 | `"        }]"` | — |
+| [SRC-6BCB799CEC-L000030](../../tests/test_evidence_provenance.py#L30) | 30 | `""` | — |
 | [SRC-6BCB799CEC-L000031](../../tests/test_evidence_provenance.py#L31) | 31 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
 | [SRC-6BCB799CEC-L000032](../../tests/test_evidence_provenance.py#L32) | 32 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda query: [])"` | — |
 | [SRC-6BCB799CEC-L000033](../../tests/test_evidence_provenance.py#L33) | 33 | `"    monkeypatch.setattr(agent, \"_search_social\", lambda query, platforms: ([], []))"` | — |
@@ -831,6 +834,3 @@
 | [SRC-FA4E1423C3-L000461](../../tests/test_generate_index.py#L461) | 461 | `""` | — |
 | [SRC-FA4E1423C3-L000462](../../tests/test_generate_index.py#L462) | 462 | `"    assert {item.marker for item in findings} == {"` | — |
 | [SRC-FA4E1423C3-L000463](../../tests/test_generate_index.py#L463) | 463 | `"        \"BUG\", \"FIXME\", \"SECURITY\", \"GAP\", \"REVIEW\", \"DEFECT\""` | — |
-| [SRC-FA4E1423C3-L000464](../../tests/test_generate_index.py#L464) | 464 | `"    }"` | — |
-| [SRC-FA4E1423C3-L000465](../../tests/test_generate_index.py#L465) | 465 | `"    assert any(path == \"sample.py\" and marker == \"BUG\" and \"real Python defect\" in desc"` | — |
-| [SRC-FA4E1423C3-L000466](../../tests/test_generate_index.py#L466) | 466 | `"               for path, marker, desc in summarized)"` | — |

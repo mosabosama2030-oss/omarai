@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004352 إلى SRC-1AE03B9EC3-L005151
+- النطاق: SRC-1AE03B9EC3-L004349 إلى SRC-1AE03B9EC3-L005148
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004349](../../agents/web_agent.py#L4349) | 4349 | `"                coverage = result.get(\"answer_coverage\")"` | — |
+| [SRC-1AE03B9EC3-L004350](../../agents/web_agent.py#L4350) | 4350 | `"                if not isinstance(coverage, dict):"` | — |
+| [SRC-1AE03B9EC3-L004351](../../agents/web_agent.py#L4351) | 4351 | `"                    coverage = {}"` | — |
 | [SRC-1AE03B9EC3-L004352](../../agents/web_agent.py#L4352) | 4352 | `"                coverage[\"targets\"] = coverage_targets"` | — |
 | [SRC-1AE03B9EC3-L004353](../../agents/web_agent.py#L4353) | 4353 | `"                coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
 | [SRC-1AE03B9EC3-L004354](../../agents/web_agent.py#L4354) | 4354 | `"                coverage[\"potentially_missing_target_count\"] = ("` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L005146](../../agents/web_agent.py#L5146) | 5146 | `"                \"evidence_signals\": evidence_signal_report([], plan.get(\"freshness\", \"any\")),"` | — |
 | [SRC-1AE03B9EC3-L005147](../../agents/web_agent.py#L5147) | 5147 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L005148](../../agents/web_agent.py#L5148) | 5148 | `"        if isinstance(report, dict):"` | — |
-| [SRC-1AE03B9EC3-L005149](../../agents/web_agent.py#L5149) | 5149 | `"            report[\"dialogue_context\"] = plan.get(\"dialogue_context\", {})"` | — |
-| [SRC-1AE03B9EC3-L005150](../../agents/web_agent.py#L5150) | 5150 | `"            report[\"task_understanding\"] = {"` | — |
-| [SRC-1AE03B9EC3-L005151](../../agents/web_agent.py#L5151) | 5151 | `"                \"task_spec\": task_spec,"` | — |

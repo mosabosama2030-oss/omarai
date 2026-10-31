@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000011 إلى SRC-F725E90B2A-L000810
+- النطاق: SRC-F725E90B2A-L000008 إلى SRC-F725E90B2A-L000807
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000008](../../tests/test_web_agent.py#L8) | 8 | `"from agents.request_budget import RequestBudgetExceeded"` | — |
+| [SRC-F725E90B2A-L000009](../../tests/test_web_agent.py#L9) | 9 | `"from agents.web_agent import ("` | — |
+| [SRC-F725E90B2A-L000010](../../tests/test_web_agent.py#L10) | 10 | `"    WebAgent,"` | — |
 | [SRC-F725E90B2A-L000011](../../tests/test_web_agent.py#L11) | 11 | `"    _minimum_relevance_ratio,"` | — |
 | [SRC-F725E90B2A-L000012](../../tests/test_web_agent.py#L12) | 12 | `"    _normalize_search_query,"` | — |
 | [SRC-F725E90B2A-L000013](../../tests/test_web_agent.py#L13) | 13 | `"    _public_http_url,"` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L000805](../../tests/test_web_agent.py#L805) | 805 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
 | [SRC-F725E90B2A-L000806](../../tests/test_web_agent.py#L806) | 806 | `"        model=\"broken/primary\","` | — |
 | [SRC-F725E90B2A-L000807](../../tests/test_web_agent.py#L807) | 807 | `"    )"` | — |
-| [SRC-F725E90B2A-L000808](../../tests/test_web_agent.py#L808) | 808 | `""` | — |
-| [SRC-F725E90B2A-L000809](../../tests/test_web_agent.py#L809) | 809 | `"    assert result == \"إجابة مكتملة\""` | — |
-| [SRC-F725E90B2A-L000810](../../tests/test_web_agent.py#L810) | 810 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |

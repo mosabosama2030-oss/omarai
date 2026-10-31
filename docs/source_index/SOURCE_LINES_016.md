@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005152 إلى SRC-1AE03B9EC3-L005951
+- النطاق: SRC-1AE03B9EC3-L005149 إلى SRC-1AE03B9EC3-L005948
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005149](../../agents/web_agent.py#L5149) | 5149 | `"            report[\"dialogue_context\"] = plan.get(\"dialogue_context\", {})"` | — |
+| [SRC-1AE03B9EC3-L005150](../../agents/web_agent.py#L5150) | 5150 | `"            report[\"task_understanding\"] = {"` | — |
+| [SRC-1AE03B9EC3-L005151](../../agents/web_agent.py#L5151) | 5151 | `"                \"task_spec\": task_spec,"` | — |
 | [SRC-1AE03B9EC3-L005152](../../agents/web_agent.py#L5152) | 5152 | `"                \"query_strategy_matrix\": plan.get(\"query_strategy_matrix\", []),"` | — |
 | [SRC-1AE03B9EC3-L005153](../../agents/web_agent.py#L5153) | 5153 | `"                \"actual_queries\": list(plan.get(\"queries\") or []),"` | — |
 | [SRC-1AE03B9EC3-L005154](../../agents/web_agent.py#L5154) | 5154 | `"                \"actual_query_count\": len(plan.get(\"queries\") or []),"` | — |
@@ -813,6 +816,3 @@
 | [SRC-1AE03B9EC3-L005946](../../agents/web_agent.py#L5946) | 5946 | `"            elif not self.api_key:"` | — |
 | [SRC-1AE03B9EC3-L005947](../../agents/web_agent.py#L5947) | 5947 | `"                reason = ("` | — |
 | [SRC-1AE03B9EC3-L005948](../../agents/web_agent.py#L5948) | 5948 | `"                    \"تم البحث، لكن الفهم التوليدي غير مفعّل بعد. اضبط OPENROUTER_API_KEY \""` | — |
-| [SRC-1AE03B9EC3-L005949](../../agents/web_agent.py#L5949) | 5949 | `"                    \"في Termux لتفعيل تخطيط البحث والإجابة باللغة الطبيعية.\""` | — |
-| [SRC-1AE03B9EC3-L005950](../../agents/web_agent.py#L5950) | 5950 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L005951](../../agents/web_agent.py#L5951) | 5951 | `"            else:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000811 إلى SRC-F725E90B2A-L001610
+- النطاق: SRC-F725E90B2A-L000808 إلى SRC-F725E90B2A-L001607
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000808](../../tests/test_web_agent.py#L808) | 808 | `""` | — |
+| [SRC-F725E90B2A-L000809](../../tests/test_web_agent.py#L809) | 809 | `"    assert result == \"إجابة مكتملة\""` | — |
+| [SRC-F725E90B2A-L000810](../../tests/test_web_agent.py#L810) | 810 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |
 | [SRC-F725E90B2A-L000811](../../tests/test_web_agent.py#L811) | 811 | `"    assert \"جزء مبتور لا يجوز عرضه\" not in result"` | — |
 | [SRC-F725E90B2A-L000812](../../tests/test_web_agent.py#L812) | 812 | `"    assert agent.model_usage == [{"` | — |
 | [SRC-F725E90B2A-L000813](../../tests/test_web_agent.py#L813) | 813 | `"        \"requested_model\": \"broken/primary\","` | — |
@@ -813,6 +816,3 @@
 | [SRC-F725E90B2A-L001605](../../tests/test_web_agent.py#L1605) | 1605 | `""` | — |
 | [SRC-F725E90B2A-L001606](../../tests/test_web_agent.py#L1606) | 1606 | `"    assert len(results) == 1"` | — |
 | [SRC-F725E90B2A-L001607](../../tests/test_web_agent.py#L1607) | 1607 | `"    assert results[0][\"url\"].startswith(\"https://news.google.com/\")"` | — |
-| [SRC-F725E90B2A-L001608](../../tests/test_web_agent.py#L1608) | 1608 | `"    assert results[0][\"publisher_name\"] == \"بوابة مصر الرقمية\""` | — |
-| [SRC-F725E90B2A-L001609](../../tests/test_web_agent.py#L1609) | 1609 | `"    assert results[0][\"publisher_url\"] == \"https://digital.gov.eg/\""` | — |
-| [SRC-F725E90B2A-L001610](../../tests/test_web_agent.py#L1610) | 1610 | `"    assert results[0][\"publisher_domain\"] == \"digital.gov.eg\""` | — |

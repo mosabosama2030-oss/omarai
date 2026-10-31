@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000180 إلى SRC-2614DCB6FB-L000077
+- النطاق: SRC-AFFCF23BD4-L000177 إلى SRC-2614DCB6FB-L000074
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000177](../../tests/test_research_completion.py#L177) | 177 | `"                \"snippet\": \"A readable report excerpt.\","` | — |
+| [SRC-AFFCF23BD4-L000178](../../tests/test_research_completion.py#L178) | 178 | `"                \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000179](../../tests/test_research_completion.py#L179) | 179 | `"                \"page_text\": \"A readable report excerpt.\","` | — |
 | [SRC-AFFCF23BD4-L000180](../../tests/test_research_completion.py#L180) | 180 | `"            }"` | — |
 | [SRC-AFFCF23BD4-L000181](../../tests/test_research_completion.py#L181) | 181 | `"        ],"` | — |
 | [SRC-AFFCF23BD4-L000182](../../tests/test_research_completion.py#L182) | 182 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
@@ -840,6 +843,3 @@
 | [SRC-2614DCB6FB-L000072](../../tests/test_search_code.py#L72) | 72 | `"    else:"` | — |
 | [SRC-2614DCB6FB-L000073](../../tests/test_search_code.py#L73) | 73 | `"        raise AssertionError(\"An empty search query should be rejected.\")"` | — |
 | [SRC-2614DCB6FB-L000074](../../tests/test_search_code.py#L74) | 74 | `""` | — |
-| [SRC-2614DCB6FB-L000075](../../tests/test_search_code.py#L75) | 75 | `"    for kwargs in ({\"max_results\": 0}, {\"context\": -1}):"` | — |
-| [SRC-2614DCB6FB-L000076](../../tests/test_search_code.py#L76) | 76 | `"        try:"` | — |
-| [SRC-2614DCB6FB-L000077](../../tests/test_search_code.py#L77) | 77 | `"            SEARCH.search_repository(tmp_path, \"needle\", **kwargs)"` | — |

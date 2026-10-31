@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000162 إلى SRC-AFFCF23BD4-L000179
+- النطاق: SRC-3D0DE98F65-L000159 إلى SRC-AFFCF23BD4-L000176
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,9 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000159](../../tests/test_question_requirement_loop.py#L159) | 159 | `""` | — |
+| [SRC-3D0DE98F65-L000160](../../tests/test_question_requirement_loop.py#L160) | 160 | `"    sources, _warnings, report = agent._collect_research(plan)"` | — |
+| [SRC-3D0DE98F65-L000161](../../tests/test_question_requirement_loop.py#L161) | 161 | `""` | — |
 | [SRC-3D0DE98F65-L000162](../../tests/test_question_requirement_loop.py#L162) | 162 | `"    assert len(sources) <= 18"` | — |
 | [SRC-3D0DE98F65-L000163](../../tests/test_question_requirement_loop.py#L163) | 163 | `"    for item in requirement_queries:"` | — |
 | [SRC-3D0DE98F65-L000164](../../tests/test_question_requirement_loop.py#L164) | 164 | `"        matched = ["` | — |
@@ -849,6 +852,3 @@
 | [SRC-AFFCF23BD4-L000174](../../tests/test_research_completion.py#L174) | 174 | `"        \"sources\": ["` | — |
 | [SRC-AFFCF23BD4-L000175](../../tests/test_research_completion.py#L175) | 175 | `"            {"` | — |
 | [SRC-AFFCF23BD4-L000176](../../tests/test_research_completion.py#L176) | 176 | `"                \"url\": \"https://example.com/report\","` | — |
-| [SRC-AFFCF23BD4-L000177](../../tests/test_research_completion.py#L177) | 177 | `"                \"snippet\": \"A readable report excerpt.\","` | — |
-| [SRC-AFFCF23BD4-L000178](../../tests/test_research_completion.py#L178) | 178 | `"                \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000179](../../tests/test_research_completion.py#L179) | 179 | `"                \"page_text\": \"A readable report excerpt.\","` | — |
