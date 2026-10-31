@@ -22,6 +22,12 @@ from api.omarai import Handler
 def local_api(tmp_path, monkeypatch):
     """Run the real handler on loopback with an isolated DB and explicit tokenless test mode."""
     previous_store = Handler.store
+    previous_request_times = Handler._request_times
+    previous_rate_last_cleanup = Handler._rate_last_cleanup
+    # Every API test gets an isolated rate-limit window; requests from earlier tests
+    # must not cause a false 429 in this test's local HTTP server.
+    Handler._request_times = defaultdict(deque)
+    Handler._rate_last_cleanup = 0.0
     monkeypatch.setenv("OMARAI_TEST_MODE", "1")
     monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
     monkeypatch.delenv("OMARAI_ACCESS_TOKEN", raising=False)
@@ -37,6 +43,8 @@ def local_api(tmp_path, monkeypatch):
         server.server_close()
         thread.join(timeout=3)
         Handler.store = previous_store
+        Handler._request_times = previous_request_times
+        Handler._rate_last_cleanup = previous_rate_last_cleanup
 
 
 def request_json(base, path, method="GET", payload=None, headers=None):
