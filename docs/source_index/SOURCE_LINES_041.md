@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000152 إلى SRC-3D0DE98F65-L000175
+- النطاق: SRC-EA6EC52573-L000152 إلى SRC-3D0DE98F65-L000154
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -399,6 +399,36 @@
 | [SRC-4397BC2CD2-L000241](../../tests/test_intent_router_integration.py#L241) | 241 | `"    for target in targets:"` | — |
 | [SRC-4397BC2CD2-L000242](../../tests/test_intent_router_integration.py#L242) | 242 | `"        assert any(target in query for query in queries), f\"Missing criterion query for {target!r}\""` | — |
 | [SRC-4397BC2CD2-L000243](../../tests/test_intent_router_integration.py#L243) | 243 | `""` | — |
+## اختبارات
+
+### FILE-7D6A914C18 — [tests/test_intent_router_no_duplicates.py](../../tests/test_intent_router_no_duplicates.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-7D6A914C18-L000001](../../tests/test_intent_router_no_duplicates.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-7D6A914C18-L000002](../../tests/test_intent_router_no_duplicates.py#L2) | 2 | `""` | — |
+| [SRC-7D6A914C18-L000003](../../tests/test_intent_router_no_duplicates.py#L3) | 3 | `"import inspect"` | — |
+| [SRC-7D6A914C18-L000004](../../tests/test_intent_router_no_duplicates.py#L4) | 4 | `"from pathlib import Path"` | — |
+| [SRC-7D6A914C18-L000005](../../tests/test_intent_router_no_duplicates.py#L5) | 5 | `""` | — |
+| [SRC-7D6A914C18-L000006](../../tests/test_intent_router_no_duplicates.py#L6) | 6 | `"import agents.intent_router as intent_router"` | — |
+| [SRC-7D6A914C18-L000007](../../tests/test_intent_router_no_duplicates.py#L7) | 7 | `""` | — |
+| [SRC-7D6A914C18-L000008](../../tests/test_intent_router_no_duplicates.py#L8) | 8 | `""` | — |
+| [SRC-7D6A914C18-L000009](../../tests/test_intent_router_no_duplicates.py#L9) | 9 | `"def test_no_duplicate_followup_symbol_definitions() -> None:"` | — |
+| [SRC-7D6A914C18-L000010](../../tests/test_intent_router_no_duplicates.py#L10) | 10 | `"    \"\"\"Ensure follow-up lead-in symbols are defined only once."` | — |
+| [SRC-7D6A914C18-L000011](../../tests/test_intent_router_no_duplicates.py#L11) | 11 | `""` | — |
+| [SRC-7D6A914C18-L000012](../../tests/test_intent_router_no_duplicates.py#L12) | 12 | `"    Duplicate definitions previously appeared after merge conflicts and could"` | — |
+| [SRC-7D6A914C18-L000013](../../tests/test_intent_router_no_duplicates.py#L13) | 13 | `"    silently override earlier constants. This test fails if they reappear."` | — |
+| [SRC-7D6A914C18-L000014](../../tests/test_intent_router_no_duplicates.py#L14) | 14 | `"    \"\"\""` | — |
+| [SRC-7D6A914C18-L000015](../../tests/test_intent_router_no_duplicates.py#L15) | 15 | `"    source = inspect.getsource(intent_router)"` | — |
+| [SRC-7D6A914C18-L000016](../../tests/test_intent_router_no_duplicates.py#L16) | 16 | `"    assert source.count(\"_FOLLOWUP_LEAD_IN_RE = re.compile\") == 1"` | — |
+| [SRC-7D6A914C18-L000017](../../tests/test_intent_router_no_duplicates.py#L17) | 17 | `"    assert source.count(\"_FOLLOWUP_ASPECT_FRAGMENTS = frozenset\") == 1"` | — |
+| [SRC-7D6A914C18-L000018](../../tests/test_intent_router_no_duplicates.py#L18) | 18 | `"    assert source.count(\"def _strip_followup_leadin\") == 1"` | — |
+| [SRC-7D6A914C18-L000019](../../tests/test_intent_router_no_duplicates.py#L19) | 19 | `""` | — |
+| [SRC-7D6A914C18-L000020](../../tests/test_intent_router_no_duplicates.py#L20) | 20 | `"    # Sanity: the strip function is usable"` | — |
+| [SRC-7D6A914C18-L000021](../../tests/test_intent_router_no_duplicates.py#L21) | 21 | `"    assert intent_router._strip_followup_leadin(\"طيب السعر\") == \"السعر\""` | — |
 ## اختبارات
 
 ### FILE-62DC597310 — [tests/test_live_search_connectors.py](../../tests/test_live_search_connectors.py#L1)
@@ -840,24 +870,3 @@
 | [SRC-3D0DE98F65-L000152](../../tests/test_question_requirement_loop.py#L152) | 152 | `"        hostname = url.split(\"://\", 1)[1].split(\"/\", 1)[0]"` | — |
 | [SRC-3D0DE98F65-L000153](../../tests/test_question_requirement_loop.py#L153) | 153 | `"        index = int(hostname.split(\"-r\", 1)[0][1:])"` | — |
 | [SRC-3D0DE98F65-L000154](../../tests/test_question_requirement_loop.py#L154) | 154 | `"        target = targets[index]"` | — |
-| [SRC-3D0DE98F65-L000155](../../tests/test_question_requirement_loop.py#L155) | 155 | `"        return f\"{target} page\", f\"{target} evidence and detailed specifications.\""` | — |
-| [SRC-3D0DE98F65-L000156](../../tests/test_question_requirement_loop.py#L156) | 156 | `""` | — |
-| [SRC-3D0DE98F65-L000157](../../tests/test_question_requirement_loop.py#L157) | 157 | `"    monkeypatch.setattr(agent, \"_search_web\", fake_search)"` | — |
-| [SRC-3D0DE98F65-L000158](../../tests/test_question_requirement_loop.py#L158) | 158 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fake_fetch)"` | — |
-| [SRC-3D0DE98F65-L000159](../../tests/test_question_requirement_loop.py#L159) | 159 | `""` | — |
-| [SRC-3D0DE98F65-L000160](../../tests/test_question_requirement_loop.py#L160) | 160 | `"    sources, _warnings, report = agent._collect_research(plan)"` | — |
-| [SRC-3D0DE98F65-L000161](../../tests/test_question_requirement_loop.py#L161) | 161 | `""` | — |
-| [SRC-3D0DE98F65-L000162](../../tests/test_question_requirement_loop.py#L162) | 162 | `"    assert len(sources) <= 18"` | — |
-| [SRC-3D0DE98F65-L000163](../../tests/test_question_requirement_loop.py#L163) | 163 | `"    for item in requirement_queries:"` | — |
-| [SRC-3D0DE98F65-L000164](../../tests/test_question_requirement_loop.py#L164) | 164 | `"        matched = ["` | — |
-| [SRC-3D0DE98F65-L000165](../../tests/test_question_requirement_loop.py#L165) | 165 | `"            source for source in sources"` | — |
-| [SRC-3D0DE98F65-L000166](../../tests/test_question_requirement_loop.py#L166) | 166 | `"            if item[\"query\"] in source.get(\"queries\", [])"` | — |
-| [SRC-3D0DE98F65-L000167](../../tests/test_question_requirement_loop.py#L167) | 167 | `"        ]"` | — |
-| [SRC-3D0DE98F65-L000168](../../tests/test_question_requirement_loop.py#L168) | 168 | `"        assert matched, f\"criterion query lost from final source pool: {item['target']}\""` | — |
-| [SRC-3D0DE98F65-L000169](../../tests/test_question_requirement_loop.py#L169) | 169 | `"        assert any(item[\"target\"] in source[\"title\"] for source in matched[:2])"` | — |
-| [SRC-3D0DE98F65-L000170](../../tests/test_question_requirement_loop.py#L170) | 170 | `"    assert report[\"queries_planned\"] == 4"` | — |
-| [SRC-3D0DE98F65-L000171](../../tests/test_question_requirement_loop.py#L171) | 171 | `"    assert report[\"queries_attempted\"] == 4"` | — |
-| [SRC-3D0DE98F65-L000172](../../tests/test_question_requirement_loop.py#L172) | 172 | `""` | — |
-| [SRC-3D0DE98F65-L000173](../../tests/test_question_requirement_loop.py#L173) | 173 | `""` | — |
-| [SRC-3D0DE98F65-L000174](../../tests/test_question_requirement_loop.py#L174) | 174 | `"def test_answer_integrity_exposes_requirement_evidence_separately_from_word_overlap() -> None:"` | — |
-| [SRC-3D0DE98F65-L000175](../../tests/test_question_requirement_loop.py#L175) | 175 | `"    plan = fallback_plan(QUESTION)"` | — |
