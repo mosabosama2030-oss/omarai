@@ -3,7 +3,7 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **65**
+- سجلات الأسطر: **70**
 - النطاق: SRC-DE7EABE998-L000467 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
@@ -16,25 +16,30 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-DE7EABE998-L000467](../../web/agent.html#L467) | 467 | `"  $(\"setupStatus\").textContent=(search?\"حزم البحث مثبتة. \":\"حزم البحث تحتاج تثبيتًا. \")+(model?\"مفتاح نموذج اللغة موجود في جلسة الخادم. \":\"النموذج التوليدي غير مضبوط بعد. \")+\"لم يتم تأكيد اتصال الإنترنت من هذه الشاشة وحدها؛ شغّل الاختبار الحي. لا تظهر هنا مفاتيح الخدمات أو قيمها.\";"` | — |
-| [SRC-DE7EABE998-L000468](../../web/agent.html#L468) | 468 | `"  $(\"providerSetup\").innerHTML=configured.length?'<span class=\"config-label\">موصلات مفاتيحها مضبوطة: '+configured.map(escapeHtml).join(\" · \")+'</span>':'<p>لم تُضبط مفاتيح API البحثية الإضافية؛ يظل Omarai قادرًا على تجربة محركات البحث العامة المتاحة.</p>';"` | — |
-| [SRC-DE7EABE998-L000469](../../web/agent.html#L469) | 469 | `"  setStatus(\"الإعداد ظاهر · يلزم اختبار حي\",\"warn\");"` | — |
-| [SRC-DE7EABE998-L000470](../../web/agent.html#L470) | 470 | `" }catch(e){setStatus(\"تعذر فحص الإعداد\",\"bad\");$(\"setupStatus\").textContent=\"تعذر الاتصال بخادم Omarai المحلي. تأكد أن الخادم يعمل في Termux.\";}"` | — |
-| [SRC-DE7EABE998-L000471](../../web/agent.html#L471) | 471 | `"}"` | — |
-| [SRC-DE7EABE998-L000472](../../web/agent.html#L472) | 472 | `"document.querySelectorAll(\".mode-btn\").forEach(button=>button.addEventListener(\"click\",()=>{"` | — |
-| [SRC-DE7EABE998-L000473](../../web/agent.html#L473) | 473 | `" activeMode=button.dataset.mode;"` | — |
-| [SRC-DE7EABE998-L000474](../../web/agent.html#L474) | 474 | `" document.querySelectorAll(\".mode-btn\").forEach(other=>{const active=other===button;other.classList.toggle(\"active\",active);other.setAttribute(\"aria-pressed\",String(active));});"` | — |
-| [SRC-DE7EABE998-L000475](../../web/agent.html#L475) | 475 | `"}));"` | — |
-| [SRC-DE7EABE998-L000476](../../web/agent.html#L476) | 476 | `"$(\"send\").addEventListener(\"click\",()=>ask());"` | — |
-| [SRC-DE7EABE998-L000477](../../web/agent.html#L477) | 477 | `"$(\"question\").addEventListener(\"keydown\",e=>{if(e.key===\"Enter\"&&!e.shiftKey){e.preventDefault();ask();}});"` | — |
-| [SRC-DE7EABE998-L000478](../../web/agent.html#L478) | 478 | `"$(\"clear\").addEventListener(\"click\",()=>{history.length=0;$(\"messages\").innerHTML='<div class=\"welcome\" id=\"welcome\"><div class=\"welcome-icon\">⌕</div><h3>محادثة جديدة</h3><p>اكتب سؤالك واختر نمط البحث المناسب. المصادر والتغطية سيظهران أسفل الإجابة.</p></div>';$(\"question\").focus();});"` | — |
-| [SRC-DE7EABE998-L000479](../../web/agent.html#L479) | 479 | `"document.querySelectorAll(\".suggestions button\").forEach(b=>b.addEventListener(\"click\",()=>ask(b.textContent)));"` | — |
-| [SRC-DE7EABE998-L000480](../../web/agent.html#L480) | 480 | `"$(\"saveAccessToken\").addEventListener(\"click\",()=>{const token=$(\"accessToken\").value.trim();if(token)localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY,token);else localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);$(\"saveAccessToken\").textContent=token?\"تم حفظ الرمز على هذا الجهاز\":\"تم مسح الرمز المحفوظ\";});"` | — |
-| [SRC-DE7EABE998-L000481](../../web/agent.html#L481) | 481 | `"$(\"accessToken\").value=localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)\|\|\"\";"` | — |
-| [SRC-DE7EABE998-L000482](../../web/agent.html#L482) | 482 | `"$(\"runDiagnostics\").addEventListener(\"click\",runDiagnostics);checkHealth();"` | — |
-| [SRC-DE7EABE998-L000483](../../web/agent.html#L483) | 483 | `"</script>"` | — |
-| [SRC-DE7EABE998-L000484](../../web/agent.html#L484) | 484 | `"</body>"` | — |
-| [SRC-DE7EABE998-L000485](../../web/agent.html#L485) | 485 | `"</html>"` | — |
+| [SRC-DE7EABE998-L000467](../../web/agent.html#L467) | 467 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
+| [SRC-DE7EABE998-L000468](../../web/agent.html#L468) | 468 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
+| [SRC-DE7EABE998-L000469](../../web/agent.html#L469) | 469 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |
+| [SRC-DE7EABE998-L000470](../../web/agent.html#L470) | 470 | `"  if(a.youtube_api_configured)configured.push(\"YouTube API\");"` | — |
+| [SRC-DE7EABE998-L000471](../../web/agent.html#L471) | 471 | `"  const model=!!a.language_model_configured, search=!!a.web_search_ready;"` | — |
+| [SRC-DE7EABE998-L000472](../../web/agent.html#L472) | 472 | `"  $(\"setupStatus\").textContent=(search?\"حزم البحث مثبتة. \":\"حزم البحث تحتاج تثبيتًا. \")+(model?\"مفتاح نموذج اللغة موجود في جلسة الخادم. \":\"النموذج التوليدي غير مضبوط بعد. \")+\"لم يتم تأكيد اتصال الإنترنت من هذه الشاشة وحدها؛ شغّل الاختبار الحي. لا تظهر هنا مفاتيح الخدمات أو قيمها.\";"` | — |
+| [SRC-DE7EABE998-L000473](../../web/agent.html#L473) | 473 | `"  $(\"providerSetup\").innerHTML=configured.length?'<span class=\"config-label\">موصلات مفاتيحها مضبوطة: '+configured.map(escapeHtml).join(\" · \")+'</span>':'<p>لم تُضبط مفاتيح API البحثية الإضافية؛ يظل Omarai قادرًا على تجربة محركات البحث العامة المتاحة.</p>';"` | — |
+| [SRC-DE7EABE998-L000474](../../web/agent.html#L474) | 474 | `"  setStatus(\"الإعداد ظاهر · يلزم اختبار حي\",\"warn\");"` | — |
+| [SRC-DE7EABE998-L000475](../../web/agent.html#L475) | 475 | `" }catch(e){setStatus(\"تعذر فحص الإعداد\",\"bad\");$(\"setupStatus\").textContent=\"تعذر الاتصال بخادم Omarai المحلي. تأكد أن الخادم يعمل في Termux.\";}"` | — |
+| [SRC-DE7EABE998-L000476](../../web/agent.html#L476) | 476 | `"}"` | — |
+| [SRC-DE7EABE998-L000477](../../web/agent.html#L477) | 477 | `"document.querySelectorAll(\".mode-btn\").forEach(button=>button.addEventListener(\"click\",()=>{"` | — |
+| [SRC-DE7EABE998-L000478](../../web/agent.html#L478) | 478 | `" activeMode=button.dataset.mode;"` | — |
+| [SRC-DE7EABE998-L000479](../../web/agent.html#L479) | 479 | `" document.querySelectorAll(\".mode-btn\").forEach(other=>{const active=other===button;other.classList.toggle(\"active\",active);other.setAttribute(\"aria-pressed\",String(active));});"` | — |
+| [SRC-DE7EABE998-L000480](../../web/agent.html#L480) | 480 | `"}));"` | — |
+| [SRC-DE7EABE998-L000481](../../web/agent.html#L481) | 481 | `"$(\"send\").addEventListener(\"click\",()=>ask());"` | — |
+| [SRC-DE7EABE998-L000482](../../web/agent.html#L482) | 482 | `"$(\"question\").addEventListener(\"keydown\",e=>{if(e.key===\"Enter\"&&!e.shiftKey){e.preventDefault();ask();}});"` | — |
+| [SRC-DE7EABE998-L000483](../../web/agent.html#L483) | 483 | `"$(\"clear\").addEventListener(\"click\",()=>{history.length=0;$(\"messages\").innerHTML='<div class=\"welcome\" id=\"welcome\"><div class=\"welcome-icon\">⌕</div><h3>محادثة جديدة</h3><p>اكتب سؤالك واختر نمط البحث المناسب. المصادر والتغطية سيظهران أسفل الإجابة.</p></div>';$(\"question\").focus();});"` | — |
+| [SRC-DE7EABE998-L000484](../../web/agent.html#L484) | 484 | `"document.querySelectorAll(\".suggestions button\").forEach(b=>b.addEventListener(\"click\",()=>ask(b.textContent)));"` | — |
+| [SRC-DE7EABE998-L000485](../../web/agent.html#L485) | 485 | `"$(\"saveAccessToken\").addEventListener(\"click\",()=>{const token=$(\"accessToken\").value.trim();if(token)localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY,token);else localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);$(\"saveAccessToken\").textContent=token?\"تم حفظ الرمز على هذا الجهاز\":\"تم مسح الرمز المحفوظ\";});"` | — |
+| [SRC-DE7EABE998-L000486](../../web/agent.html#L486) | 486 | `"$(\"accessToken\").value=localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)\|\|\"\";"` | — |
+| [SRC-DE7EABE998-L000487](../../web/agent.html#L487) | 487 | `"$(\"runDiagnostics\").addEventListener(\"click\",runDiagnostics);checkHealth();"` | — |
+| [SRC-DE7EABE998-L000488](../../web/agent.html#L488) | 488 | `"</script>"` | — |
+| [SRC-DE7EABE998-L000489](../../web/agent.html#L489) | 489 | `"</body>"` | — |
+| [SRC-DE7EABE998-L000490](../../web/agent.html#L490) | 490 | `"</html>"` | — |
 ## واجهة الويب
 
 ### FILE-A16FA6D4B5 — [web/dashboard.html](../../web/dashboard.html#L1)

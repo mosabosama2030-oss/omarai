@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **268**
 - تعريفات Python بلا Docstring: **1009**
 - تعريفات لا ينطبق عليها Docstring: **389**
-- الرموز الساكنة الإضافية: **1899**
-- الأسطر النصية المفهرسة حرفيًا: **40865**
+- الرموز الساكنة الإضافية: **1902**
+- الأسطر النصية المفهرسة حرفيًا: **40870**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -146,7 +146,7 @@
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 155921 | 3958 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69112 | 485 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69573 | 490 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
@@ -3509,119 +3509,122 @@
 | [web/agent.html](../web/agent.html#L132) | متغير JavaScript/TypeScript | tags | 132 | [SRC-DE7EABE998-L000132](../web/agent.html#L132) |
 | [web/agent.html](../web/agent.html#L134) | متغير JavaScript/TypeScript | fetchStatus | 134 | [SRC-DE7EABE998-L000134](../web/agent.html#L134) |
 | [web/agent.html](../web/agent.html#L151) | متغير JavaScript/TypeScript | providers | 151 | [SRC-DE7EABE998-L000151](../web/agent.html#L151) |
-| [web/agent.html](../web/agent.html#L157) | متغير JavaScript/TypeScript | heading | 157 | [SRC-DE7EABE998-L000157](../web/agent.html#L157) |
-| [web/agent.html](../web/agent.html#L160) | دالة JavaScript/TypeScript | renderReport | 160 | [SRC-DE7EABE998-L000160](../web/agent.html#L160) |
-| [web/agent.html](../web/agent.html#L161) | متغير JavaScript/TypeScript | r | 161 | [SRC-DE7EABE998-L000161](../web/agent.html#L161) |
-| [web/agent.html](../web/agent.html#L162) | متغير JavaScript/TypeScript | completion | 162 | [SRC-DE7EABE998-L000162](../web/agent.html#L162) |
-| [web/agent.html](../web/agent.html#L164) | متغير JavaScript/TypeScript | completionStatusLabels | 164 | [SRC-DE7EABE998-L000164](../web/agent.html#L164) |
-| [web/agent.html](../web/agent.html#L178) | متغير JavaScript/TypeScript | completionPhaseLabels | 178 | [SRC-DE7EABE998-L000178](../web/agent.html#L178) |
-| [web/agent.html](../web/agent.html#L183) | متغير JavaScript/TypeScript | completionStateLabels | 183 | [SRC-DE7EABE998-L000183](../web/agent.html#L183) |
-| [web/agent.html](../web/agent.html#L197) | متغير JavaScript/TypeScript | completionSummary | 197 | [SRC-DE7EABE998-L000197](../web/agent.html#L197) |
-| [web/agent.html](../web/agent.html#L200) | متغير JavaScript/TypeScript | completionPhaseRows | 200 | [SRC-DE7EABE998-L000200](../web/agent.html#L200) |
-| [web/agent.html](../web/agent.html#L203) | متغير JavaScript/TypeScript | completionCounters | 203 | [SRC-DE7EABE998-L000203](../web/agent.html#L203) |
-| [web/agent.html](../web/agent.html#L204) | متغير JavaScript/TypeScript | completionCounterRows | 204 | [SRC-DE7EABE998-L000204](../web/agent.html#L204) |
-| [web/agent.html](../web/agent.html#L219) | متغير JavaScript/TypeScript | completionCounterHtml | 219 | [SRC-DE7EABE998-L000219](../web/agent.html#L219) |
-| [web/agent.html](../web/agent.html#L220) | متغير JavaScript/TypeScript | consistency | 220 | [SRC-DE7EABE998-L000220](../web/agent.html#L220) |
-| [web/agent.html](../web/agent.html#L221) | متغير JavaScript/TypeScript | consistencyLabels | 221 | [SRC-DE7EABE998-L000221](../web/agent.html#L221) |
-| [web/agent.html](../web/agent.html#L222) | متغير JavaScript/TypeScript | consistencyHtml | 222 | [SRC-DE7EABE998-L000222](../web/agent.html#L222) |
-| [web/agent.html](../web/agent.html#L223) | متغير JavaScript/TypeScript | completionDetailsHtml | 223 | [SRC-DE7EABE998-L000223](../web/agent.html#L223) |
-| [web/agent.html](../web/agent.html#L226) | متغير JavaScript/TypeScript | e | 226 | [SRC-DE7EABE998-L000226](../web/agent.html#L226) |
-| [web/agent.html](../web/agent.html#L227) | متغير JavaScript/TypeScript | sources | 227 | [SRC-DE7EABE998-L000227](../web/agent.html#L227) |
-| [web/agent.html](../web/agent.html#L228) | متغير JavaScript/TypeScript | researchErrorOutcome | 228 | [SRC-DE7EABE998-L000228](../web/agent.html#L228) |
-| [web/agent.html](../web/agent.html#L229) | متغير JavaScript/TypeScript | lead | 229 | [SRC-DE7EABE998-L000229](../web/agent.html#L229) |
-| [web/agent.html](../web/agent.html#L230) | متغير JavaScript/TypeScript | leadResearchIncomplete | 230 | [SRC-DE7EABE998-L000230](../web/agent.html#L230) |
-| [web/agent.html](../web/agent.html#L231) | متغير JavaScript/TypeScript | leadSignalCount | 231 | [SRC-DE7EABE998-L000231](../web/agent.html#L231) |
-| [web/agent.html](../web/agent.html#L232) | متغير JavaScript/TypeScript | noQualifiedLeads | 232 | [SRC-DE7EABE998-L000232](../web/agent.html#L232) |
-| [web/agent.html](../web/agent.html#L233) | متغير JavaScript/TypeScript | scoreLabel | 233 | [SRC-DE7EABE998-L000233](../web/agent.html#L233) |
-| [web/agent.html](../web/agent.html#L234) | متغير JavaScript/TypeScript | metrics | 234 | [SRC-DE7EABE998-L000234](../web/agent.html#L234) |
-| [web/agent.html](../web/agent.html#L245) | متغير JavaScript/TypeScript | metricHtml | 245 | [SRC-DE7EABE998-L000245](../web/agent.html#L245) |
-| [web/agent.html](../web/agent.html#L246) | متغير JavaScript/TypeScript | operationalMetrics | 246 | [SRC-DE7EABE998-L000246](../web/agent.html#L246) |
-| [web/agent.html](../web/agent.html#L257) | متغير JavaScript/TypeScript | operationalHtml | 257 | [SRC-DE7EABE998-L000257](../web/agent.html#L257) |
-| [web/agent.html](../web/agent.html#L258) | متغير JavaScript/TypeScript | connectors | 258 | [SRC-DE7EABE998-L000258](../web/agent.html#L258) |
-| [web/agent.html](../web/agent.html#L259) | متغير JavaScript/TypeScript | connectorDetails | 259 | [SRC-DE7EABE998-L000259](../web/agent.html#L259) |
-| [web/agent.html](../web/agent.html#L260) | متغير JavaScript/TypeScript | integrity | 260 | [SRC-DE7EABE998-L000260](../web/agent.html#L260) |
-| [web/agent.html](../web/agent.html#L261) | متغير JavaScript/TypeScript | integrityNumbers | 261 | [SRC-DE7EABE998-L000261](../web/agent.html#L261) |
-| [web/agent.html](../web/agent.html#L262) | متغير JavaScript/TypeScript | integrityTargets | 262 | [SRC-DE7EABE998-L000262](../web/agent.html#L262) |
-| [web/agent.html](../web/agent.html#L263) | متغير JavaScript/TypeScript | requirementEvidence | 263 | [SRC-DE7EABE998-L000263](../web/agent.html#L263) |
-| [web/agent.html](../web/agent.html#L264) | متغير JavaScript/TypeScript | ids | 264 | [SRC-DE7EABE998-L000264](../web/agent.html#L264) |
-| [web/agent.html](../web/agent.html#L264) | متغير JavaScript/TypeScript | qids | 264 | [SRC-DE7EABE998-L000264](../web/agent.html#L264) |
-| [web/agent.html](../web/agent.html#L264) | متغير JavaScript/TypeScript | requirementEvidenceHtml | 264 | [SRC-DE7EABE998-L000264](../web/agent.html#L264) |
-| [web/agent.html](../web/agent.html#L264) | متغير JavaScript/TypeScript | statusText | 264 | [SRC-DE7EABE998-L000264](../web/agent.html#L264) |
-| [web/agent.html](../web/agent.html#L265) | متغير JavaScript/TypeScript | citationNumericSupport | 265 | [SRC-DE7EABE998-L000265](../web/agent.html#L265) |
-| [web/agent.html](../web/agent.html#L266) | متغير JavaScript/TypeScript | citedNumberIssues | 266 | [SRC-DE7EABE998-L000266](../web/agent.html#L266) |
-| [web/agent.html](../web/agent.html#L267) | متغير JavaScript/TypeScript | citedNumberHtml | 267 | [SRC-DE7EABE998-L000267](../web/agent.html#L267) |
-| [web/agent.html](../web/agent.html#L268) | متغير JavaScript/TypeScript | valueDiscrepancies | 268 | [SRC-DE7EABE998-L000268](../web/agent.html#L268) |
-| [web/agent.html](../web/agent.html#L269) | متغير JavaScript/TypeScript | valueDimensionLabels | 269 | [SRC-DE7EABE998-L000269](../web/agent.html#L269) |
-| [web/agent.html](../web/agent.html#L270) | متغير JavaScript/TypeScript | valueDiscrepancyHtml | 270 | [SRC-DE7EABE998-L000270](../web/agent.html#L270) |
-| [web/agent.html](../web/agent.html#L271) | متغير JavaScript/TypeScript | citationAlignment | 271 | [SRC-DE7EABE998-L000271](../web/agent.html#L271) |
-| [web/agent.html](../web/agent.html#L272) | متغير JavaScript/TypeScript | weakCitationAlignment | 272 | [SRC-DE7EABE998-L000272](../web/agent.html#L272) |
-| [web/agent.html](../web/agent.html#L273) | متغير JavaScript/TypeScript | citationAlignmentHtml | 273 | [SRC-DE7EABE998-L000273](../web/agent.html#L273) |
-| [web/agent.html](../web/agent.html#L274) | متغير JavaScript/TypeScript | integrityScope | 274 | [SRC-DE7EABE998-L000274](../web/agent.html#L274) |
-| [web/agent.html](../web/agent.html#L275) | متغير JavaScript/TypeScript | integritySummary | 275 | [SRC-DE7EABE998-L000275](../web/agent.html#L275) |
-| [web/agent.html](../web/agent.html#L276) | متغير JavaScript/TypeScript | taskFulfillmentStatus | 276 | [SRC-DE7EABE998-L000276](../web/agent.html#L276) |
-| [web/agent.html](../web/agent.html#L277) | متغير JavaScript/TypeScript | taskFulfillmentText | 277 | [SRC-DE7EABE998-L000277](../web/agent.html#L277) |
-| [web/agent.html](../web/agent.html#L284) | متغير JavaScript/TypeScript | taskFulfillmentHtml | 284 | [SRC-DE7EABE998-L000284](../web/agent.html#L284) |
-| [web/agent.html](../web/agent.html#L285) | متغير JavaScript/TypeScript | coverageRepairStatus | 285 | [SRC-DE7EABE998-L000285](../web/agent.html#L285) |
-| [web/agent.html](../web/agent.html#L286) | متغير JavaScript/TypeScript | coverageRepairMessages | 286 | [SRC-DE7EABE998-L000286](../web/agent.html#L286) |
-| [web/agent.html](../web/agent.html#L296) | متغير JavaScript/TypeScript | coverageRepairHtml | 296 | [SRC-DE7EABE998-L000296](../web/agent.html#L296) |
-| [web/agent.html](../web/agent.html#L297) | متغير JavaScript/TypeScript | criterionGapResearch | 297 | [SRC-DE7EABE998-L000297](../web/agent.html#L297) |
-| [web/agent.html](../web/agent.html#L298) | متغير JavaScript/TypeScript | criterionGapResearchStatus | 298 | [SRC-DE7EABE998-L000298](../web/agent.html#L298) |
-| [web/agent.html](../web/agent.html#L299) | متغير JavaScript/TypeScript | criterionGapResearchMessages | 299 | [SRC-DE7EABE998-L000299](../web/agent.html#L299) |
-| [web/agent.html](../web/agent.html#L311) | متغير JavaScript/TypeScript | criterionGapResearchHtml | 311 | [SRC-DE7EABE998-L000311](../web/agent.html#L311) |
-| [web/agent.html](../web/agent.html#L312) | متغير JavaScript/TypeScript | claimLedger | 312 | [SRC-DE7EABE998-L000312](../web/agent.html#L312) |
-| [web/agent.html](../web/agent.html#L313) | متغير JavaScript/TypeScript | claimSegments | 313 | [SRC-DE7EABE998-L000313](../web/agent.html#L313) |
-| [web/agent.html](../web/agent.html#L314) | متغير JavaScript/TypeScript | claimSummary | 314 | [SRC-DE7EABE998-L000314](../web/agent.html#L314) |
-| [web/agent.html](../web/agent.html#L315) | متغير JavaScript/TypeScript | claimEvidenceHtml | 315 | [SRC-DE7EABE998-L000315](../web/agent.html#L315) |
-| [web/agent.html](../web/agent.html#L316) | متغير JavaScript/TypeScript | integrityHtml | 316 | [SRC-DE7EABE998-L000316](../web/agent.html#L316) |
-| [web/agent.html](../web/agent.html#L317) | متغير JavaScript/TypeScript | providerCounts | 317 | [SRC-DE7EABE998-L000317](../web/agent.html#L317) |
-| [web/agent.html](../web/agent.html#L318) | متغير JavaScript/TypeScript | providerHtml | 318 | [SRC-DE7EABE998-L000318](../web/agent.html#L318) |
-| [web/agent.html](../web/agent.html#L319) | متغير JavaScript/TypeScript | notes | 319 | [SRC-DE7EABE998-L000319](../web/agent.html#L319) |
-| [web/agent.html](../web/agent.html#L320) | متغير JavaScript/TypeScript | queryList | 320 | [SRC-DE7EABE998-L000320](../web/agent.html#L320) |
-| [web/agent.html](../web/agent.html#L321) | متغير JavaScript/TypeScript | details | 321 | [SRC-DE7EABE998-L000321](../web/agent.html#L321) |
-| [web/agent.html](../web/agent.html#L322) | متغير JavaScript/TypeScript | coverageText | 322 | [SRC-DE7EABE998-L000322](../web/agent.html#L322) |
-| [web/agent.html](../web/agent.html#L331) | متغير JavaScript/TypeScript | usableSourceCount | 331 | [SRC-DE7EABE998-L000331](../web/agent.html#L331) |
-| [web/agent.html](../web/agent.html#L332) | متغير JavaScript/TypeScript | attemptText | 332 | [SRC-DE7EABE998-L000332](../web/agent.html#L332) |
-| [web/agent.html](../web/agent.html#L341) | متغير JavaScript/TypeScript | qualityText | 341 | [SRC-DE7EABE998-L000341](../web/agent.html#L341) |
-| [web/agent.html](../web/agent.html#L342) | متغير JavaScript/TypeScript | reviewText | 342 | [SRC-DE7EABE998-L000342](../web/agent.html#L342) |
-| [web/agent.html](../web/agent.html#L343) | متغير JavaScript/TypeScript | diversityText | 343 | [SRC-DE7EABE998-L000343](../web/agent.html#L343) |
-| [web/agent.html](../web/agent.html#L344) | متغير JavaScript/TypeScript | reportNotes | 344 | [SRC-DE7EABE998-L000344](../web/agent.html#L344) |
-| [web/agent.html](../web/agent.html#L345) | متغير JavaScript/TypeScript | review | 345 | [SRC-DE7EABE998-L000345](../web/agent.html#L345) |
-| [web/agent.html](../web/agent.html#L348) | دالة JavaScript/TypeScript | addMessage | 348 | [SRC-DE7EABE998-L000348](../web/agent.html#L348) |
-| [web/agent.html](../web/agent.html#L349) | متغير JavaScript/TypeScript | welcome | 349 | [SRC-DE7EABE998-L000349](../web/agent.html#L349) |
-| [web/agent.html](../web/agent.html#L350) | متغير JavaScript/TypeScript | box | 350 | [SRC-DE7EABE998-L000350](../web/agent.html#L350) |
-| [web/agent.html](../web/agent.html#L351) | متغير JavaScript/TypeScript | who | 351 | [SRC-DE7EABE998-L000351](../web/agent.html#L351) |
-| [web/agent.html](../web/agent.html#L354) | متغير JavaScript/TypeScript | linkedQuestion | 354 | [SRC-DE7EABE998-L000354](../web/agent.html#L354) |
-| [web/agent.html](../web/agent.html#L356) | متغير JavaScript/TypeScript | context | 356 | [SRC-DE7EABE998-L000356](../web/agent.html#L356) |
-| [web/agent.html](../web/agent.html#L359) | متغير JavaScript/TypeScript | bubble | 359 | [SRC-DE7EABE998-L000359](../web/agent.html#L359) |
-| [web/agent.html](../web/agent.html#L361) | متغير JavaScript/TypeScript | notice | 361 | [SRC-DE7EABE998-L000361](../web/agent.html#L361) |
-| [web/agent.html](../web/agent.html#L371) | متغير JavaScript/TypeScript | report | 371 | [SRC-DE7EABE998-L000371](../web/agent.html#L371) |
-| [web/agent.html](../web/agent.html#L374) | متغير JavaScript/TypeScript | warning | 374 | [SRC-DE7EABE998-L000374](../web/agent.html#L374) |
-| [web/agent.html](../web/agent.html#L377) | متغير JavaScript/TypeScript | rawSources | 377 | [SRC-DE7EABE998-L000377](../web/agent.html#L377) |
-| [web/agent.html](../web/agent.html#L378) | متغير JavaScript/TypeScript | usableSources | 378 | [SRC-DE7EABE998-L000378](../web/agent.html#L378) |
-| [web/agent.html](../web/agent.html#L383) | متغير JavaScript/TypeScript | no | 383 | [SRC-DE7EABE998-L000383](../web/agent.html#L383) |
-| [web/agent.html](../web/agent.html#L390) | دالة JavaScript/TypeScript | setBusy | 390 | [SRC-DE7EABE998-L000390](../web/agent.html#L390) |
-| [web/agent.html](../web/agent.html#L391) | دالة JavaScript/TypeScript | ask | 391 | [SRC-DE7EABE998-L000391](../web/agent.html#L391) |
-| [web/agent.html](../web/agent.html#L392) | متغير JavaScript/TypeScript | q | 392 | [SRC-DE7EABE998-L000392](../web/agent.html#L392) |
-| [web/agent.html](../web/agent.html#L395) | متغير JavaScript/TypeScript | pending | 395 | [SRC-DE7EABE998-L000395](../web/agent.html#L395) |
-| [web/agent.html](../web/agent.html#L399) | متغير JavaScript/TypeScript | response | 399 | [SRC-DE7EABE998-L000399](../web/agent.html#L399) |
-| [web/agent.html](../web/agent.html#L399) | مسار API/واجهة محتمل | /api/agent | 399 | [SRC-DE7EABE998-L000399](../web/agent.html#L399) |
-| [web/agent.html](../web/agent.html#L400) | متغير JavaScript/TypeScript | data | 400 | [SRC-DE7EABE998-L000400](../web/agent.html#L400) |
-| [web/agent.html](../web/agent.html#L423) | متغير JavaScript/TypeScript | safeMessage | 423 | [SRC-DE7EABE998-L000423](../web/agent.html#L423) |
-| [web/agent.html](../web/agent.html#L425) | متغير JavaScript/TypeScript | actions | 425 | [SRC-DE7EABE998-L000425](../web/agent.html#L425) |
-| [web/agent.html](../web/agent.html#L426) | متغير JavaScript/TypeScript | retry | 426 | [SRC-DE7EABE998-L000426](../web/agent.html#L426) |
-| [web/agent.html](../web/agent.html#L434) | دالة JavaScript/TypeScript | runDiagnostics | 434 | [SRC-DE7EABE998-L000434](../web/agent.html#L434) |
-| [web/agent.html](../web/agent.html#L435) | متغير JavaScript/TypeScript | button | 435 | [SRC-DE7EABE998-L000435](../web/agent.html#L435) |
-| [web/agent.html](../web/agent.html#L438) | مسار API/واجهة محتمل | /api/diagnostics | 438 | [SRC-DE7EABE998-L000438](../web/agent.html#L438) |
-| [web/agent.html](../web/agent.html#L440) | متغير JavaScript/TypeScript | labels | 440 | [SRC-DE7EABE998-L000440](../web/agent.html#L440) |
-| [web/agent.html](../web/agent.html#L441) | متغير JavaScript/TypeScript | lines | 441 | [SRC-DE7EABE998-L000441](../web/agent.html#L441) |
-| [web/agent.html](../web/agent.html#L443) | متغير JavaScript/TypeScript | item | 443 | [SRC-DE7EABE998-L000443](../web/agent.html#L443) |
-| [web/agent.html](../web/agent.html#L455) | دالة JavaScript/TypeScript | checkHealth | 455 | [SRC-DE7EABE998-L000455](../web/agent.html#L455) |
-| [web/agent.html](../web/agent.html#L457) | متغير JavaScript/TypeScript | a | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
-| [web/agent.html](../web/agent.html#L457) | متغير JavaScript/TypeScript | d | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
-| [web/agent.html](../web/agent.html#L457) | مسار API/واجهة محتمل | /api/health | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
-| [web/agent.html](../web/agent.html#L458) | متغير JavaScript/TypeScript | configured | 458 | [SRC-DE7EABE998-L000458](../web/agent.html#L458) |
-| [web/agent.html](../web/agent.html#L466) | متغير JavaScript/TypeScript | model | 466 | [SRC-DE7EABE998-L000466](../web/agent.html#L466) |
-| [web/agent.html](../web/agent.html#L474) | متغير JavaScript/TypeScript | active | 474 | [SRC-DE7EABE998-L000474](../web/agent.html#L474) |
+| [web/agent.html](../web/agent.html#L157) | متغير JavaScript/TypeScript | demandType | 157 | [SRC-DE7EABE998-L000157](../web/agent.html#L157) |
+| [web/agent.html](../web/agent.html#L158) | متغير JavaScript/TypeScript | demandLabels | 158 | [SRC-DE7EABE998-L000158](../web/agent.html#L158) |
+| [web/agent.html](../web/agent.html#L159) | متغير JavaScript/TypeScript | demandLabel | 159 | [SRC-DE7EABE998-L000159](../web/agent.html#L159) |
+| [web/agent.html](../web/agent.html#L162) | متغير JavaScript/TypeScript | heading | 162 | [SRC-DE7EABE998-L000162](../web/agent.html#L162) |
+| [web/agent.html](../web/agent.html#L165) | دالة JavaScript/TypeScript | renderReport | 165 | [SRC-DE7EABE998-L000165](../web/agent.html#L165) |
+| [web/agent.html](../web/agent.html#L166) | متغير JavaScript/TypeScript | r | 166 | [SRC-DE7EABE998-L000166](../web/agent.html#L166) |
+| [web/agent.html](../web/agent.html#L167) | متغير JavaScript/TypeScript | completion | 167 | [SRC-DE7EABE998-L000167](../web/agent.html#L167) |
+| [web/agent.html](../web/agent.html#L169) | متغير JavaScript/TypeScript | completionStatusLabels | 169 | [SRC-DE7EABE998-L000169](../web/agent.html#L169) |
+| [web/agent.html](../web/agent.html#L183) | متغير JavaScript/TypeScript | completionPhaseLabels | 183 | [SRC-DE7EABE998-L000183](../web/agent.html#L183) |
+| [web/agent.html](../web/agent.html#L188) | متغير JavaScript/TypeScript | completionStateLabels | 188 | [SRC-DE7EABE998-L000188](../web/agent.html#L188) |
+| [web/agent.html](../web/agent.html#L202) | متغير JavaScript/TypeScript | completionSummary | 202 | [SRC-DE7EABE998-L000202](../web/agent.html#L202) |
+| [web/agent.html](../web/agent.html#L205) | متغير JavaScript/TypeScript | completionPhaseRows | 205 | [SRC-DE7EABE998-L000205](../web/agent.html#L205) |
+| [web/agent.html](../web/agent.html#L208) | متغير JavaScript/TypeScript | completionCounters | 208 | [SRC-DE7EABE998-L000208](../web/agent.html#L208) |
+| [web/agent.html](../web/agent.html#L209) | متغير JavaScript/TypeScript | completionCounterRows | 209 | [SRC-DE7EABE998-L000209](../web/agent.html#L209) |
+| [web/agent.html](../web/agent.html#L224) | متغير JavaScript/TypeScript | completionCounterHtml | 224 | [SRC-DE7EABE998-L000224](../web/agent.html#L224) |
+| [web/agent.html](../web/agent.html#L225) | متغير JavaScript/TypeScript | consistency | 225 | [SRC-DE7EABE998-L000225](../web/agent.html#L225) |
+| [web/agent.html](../web/agent.html#L226) | متغير JavaScript/TypeScript | consistencyLabels | 226 | [SRC-DE7EABE998-L000226](../web/agent.html#L226) |
+| [web/agent.html](../web/agent.html#L227) | متغير JavaScript/TypeScript | consistencyHtml | 227 | [SRC-DE7EABE998-L000227](../web/agent.html#L227) |
+| [web/agent.html](../web/agent.html#L228) | متغير JavaScript/TypeScript | completionDetailsHtml | 228 | [SRC-DE7EABE998-L000228](../web/agent.html#L228) |
+| [web/agent.html](../web/agent.html#L231) | متغير JavaScript/TypeScript | e | 231 | [SRC-DE7EABE998-L000231](../web/agent.html#L231) |
+| [web/agent.html](../web/agent.html#L232) | متغير JavaScript/TypeScript | sources | 232 | [SRC-DE7EABE998-L000232](../web/agent.html#L232) |
+| [web/agent.html](../web/agent.html#L233) | متغير JavaScript/TypeScript | researchErrorOutcome | 233 | [SRC-DE7EABE998-L000233](../web/agent.html#L233) |
+| [web/agent.html](../web/agent.html#L234) | متغير JavaScript/TypeScript | lead | 234 | [SRC-DE7EABE998-L000234](../web/agent.html#L234) |
+| [web/agent.html](../web/agent.html#L235) | متغير JavaScript/TypeScript | leadResearchIncomplete | 235 | [SRC-DE7EABE998-L000235](../web/agent.html#L235) |
+| [web/agent.html](../web/agent.html#L236) | متغير JavaScript/TypeScript | leadSignalCount | 236 | [SRC-DE7EABE998-L000236](../web/agent.html#L236) |
+| [web/agent.html](../web/agent.html#L237) | متغير JavaScript/TypeScript | noQualifiedLeads | 237 | [SRC-DE7EABE998-L000237](../web/agent.html#L237) |
+| [web/agent.html](../web/agent.html#L238) | متغير JavaScript/TypeScript | scoreLabel | 238 | [SRC-DE7EABE998-L000238](../web/agent.html#L238) |
+| [web/agent.html](../web/agent.html#L239) | متغير JavaScript/TypeScript | metrics | 239 | [SRC-DE7EABE998-L000239](../web/agent.html#L239) |
+| [web/agent.html](../web/agent.html#L250) | متغير JavaScript/TypeScript | metricHtml | 250 | [SRC-DE7EABE998-L000250](../web/agent.html#L250) |
+| [web/agent.html](../web/agent.html#L251) | متغير JavaScript/TypeScript | operationalMetrics | 251 | [SRC-DE7EABE998-L000251](../web/agent.html#L251) |
+| [web/agent.html](../web/agent.html#L262) | متغير JavaScript/TypeScript | operationalHtml | 262 | [SRC-DE7EABE998-L000262](../web/agent.html#L262) |
+| [web/agent.html](../web/agent.html#L263) | متغير JavaScript/TypeScript | connectors | 263 | [SRC-DE7EABE998-L000263](../web/agent.html#L263) |
+| [web/agent.html](../web/agent.html#L264) | متغير JavaScript/TypeScript | connectorDetails | 264 | [SRC-DE7EABE998-L000264](../web/agent.html#L264) |
+| [web/agent.html](../web/agent.html#L265) | متغير JavaScript/TypeScript | integrity | 265 | [SRC-DE7EABE998-L000265](../web/agent.html#L265) |
+| [web/agent.html](../web/agent.html#L266) | متغير JavaScript/TypeScript | integrityNumbers | 266 | [SRC-DE7EABE998-L000266](../web/agent.html#L266) |
+| [web/agent.html](../web/agent.html#L267) | متغير JavaScript/TypeScript | integrityTargets | 267 | [SRC-DE7EABE998-L000267](../web/agent.html#L267) |
+| [web/agent.html](../web/agent.html#L268) | متغير JavaScript/TypeScript | requirementEvidence | 268 | [SRC-DE7EABE998-L000268](../web/agent.html#L268) |
+| [web/agent.html](../web/agent.html#L269) | متغير JavaScript/TypeScript | ids | 269 | [SRC-DE7EABE998-L000269](../web/agent.html#L269) |
+| [web/agent.html](../web/agent.html#L269) | متغير JavaScript/TypeScript | qids | 269 | [SRC-DE7EABE998-L000269](../web/agent.html#L269) |
+| [web/agent.html](../web/agent.html#L269) | متغير JavaScript/TypeScript | requirementEvidenceHtml | 269 | [SRC-DE7EABE998-L000269](../web/agent.html#L269) |
+| [web/agent.html](../web/agent.html#L269) | متغير JavaScript/TypeScript | statusText | 269 | [SRC-DE7EABE998-L000269](../web/agent.html#L269) |
+| [web/agent.html](../web/agent.html#L270) | متغير JavaScript/TypeScript | citationNumericSupport | 270 | [SRC-DE7EABE998-L000270](../web/agent.html#L270) |
+| [web/agent.html](../web/agent.html#L271) | متغير JavaScript/TypeScript | citedNumberIssues | 271 | [SRC-DE7EABE998-L000271](../web/agent.html#L271) |
+| [web/agent.html](../web/agent.html#L272) | متغير JavaScript/TypeScript | citedNumberHtml | 272 | [SRC-DE7EABE998-L000272](../web/agent.html#L272) |
+| [web/agent.html](../web/agent.html#L273) | متغير JavaScript/TypeScript | valueDiscrepancies | 273 | [SRC-DE7EABE998-L000273](../web/agent.html#L273) |
+| [web/agent.html](../web/agent.html#L274) | متغير JavaScript/TypeScript | valueDimensionLabels | 274 | [SRC-DE7EABE998-L000274](../web/agent.html#L274) |
+| [web/agent.html](../web/agent.html#L275) | متغير JavaScript/TypeScript | valueDiscrepancyHtml | 275 | [SRC-DE7EABE998-L000275](../web/agent.html#L275) |
+| [web/agent.html](../web/agent.html#L276) | متغير JavaScript/TypeScript | citationAlignment | 276 | [SRC-DE7EABE998-L000276](../web/agent.html#L276) |
+| [web/agent.html](../web/agent.html#L277) | متغير JavaScript/TypeScript | weakCitationAlignment | 277 | [SRC-DE7EABE998-L000277](../web/agent.html#L277) |
+| [web/agent.html](../web/agent.html#L278) | متغير JavaScript/TypeScript | citationAlignmentHtml | 278 | [SRC-DE7EABE998-L000278](../web/agent.html#L278) |
+| [web/agent.html](../web/agent.html#L279) | متغير JavaScript/TypeScript | integrityScope | 279 | [SRC-DE7EABE998-L000279](../web/agent.html#L279) |
+| [web/agent.html](../web/agent.html#L280) | متغير JavaScript/TypeScript | integritySummary | 280 | [SRC-DE7EABE998-L000280](../web/agent.html#L280) |
+| [web/agent.html](../web/agent.html#L281) | متغير JavaScript/TypeScript | taskFulfillmentStatus | 281 | [SRC-DE7EABE998-L000281](../web/agent.html#L281) |
+| [web/agent.html](../web/agent.html#L282) | متغير JavaScript/TypeScript | taskFulfillmentText | 282 | [SRC-DE7EABE998-L000282](../web/agent.html#L282) |
+| [web/agent.html](../web/agent.html#L289) | متغير JavaScript/TypeScript | taskFulfillmentHtml | 289 | [SRC-DE7EABE998-L000289](../web/agent.html#L289) |
+| [web/agent.html](../web/agent.html#L290) | متغير JavaScript/TypeScript | coverageRepairStatus | 290 | [SRC-DE7EABE998-L000290](../web/agent.html#L290) |
+| [web/agent.html](../web/agent.html#L291) | متغير JavaScript/TypeScript | coverageRepairMessages | 291 | [SRC-DE7EABE998-L000291](../web/agent.html#L291) |
+| [web/agent.html](../web/agent.html#L301) | متغير JavaScript/TypeScript | coverageRepairHtml | 301 | [SRC-DE7EABE998-L000301](../web/agent.html#L301) |
+| [web/agent.html](../web/agent.html#L302) | متغير JavaScript/TypeScript | criterionGapResearch | 302 | [SRC-DE7EABE998-L000302](../web/agent.html#L302) |
+| [web/agent.html](../web/agent.html#L303) | متغير JavaScript/TypeScript | criterionGapResearchStatus | 303 | [SRC-DE7EABE998-L000303](../web/agent.html#L303) |
+| [web/agent.html](../web/agent.html#L304) | متغير JavaScript/TypeScript | criterionGapResearchMessages | 304 | [SRC-DE7EABE998-L000304](../web/agent.html#L304) |
+| [web/agent.html](../web/agent.html#L316) | متغير JavaScript/TypeScript | criterionGapResearchHtml | 316 | [SRC-DE7EABE998-L000316](../web/agent.html#L316) |
+| [web/agent.html](../web/agent.html#L317) | متغير JavaScript/TypeScript | claimLedger | 317 | [SRC-DE7EABE998-L000317](../web/agent.html#L317) |
+| [web/agent.html](../web/agent.html#L318) | متغير JavaScript/TypeScript | claimSegments | 318 | [SRC-DE7EABE998-L000318](../web/agent.html#L318) |
+| [web/agent.html](../web/agent.html#L319) | متغير JavaScript/TypeScript | claimSummary | 319 | [SRC-DE7EABE998-L000319](../web/agent.html#L319) |
+| [web/agent.html](../web/agent.html#L320) | متغير JavaScript/TypeScript | claimEvidenceHtml | 320 | [SRC-DE7EABE998-L000320](../web/agent.html#L320) |
+| [web/agent.html](../web/agent.html#L321) | متغير JavaScript/TypeScript | integrityHtml | 321 | [SRC-DE7EABE998-L000321](../web/agent.html#L321) |
+| [web/agent.html](../web/agent.html#L322) | متغير JavaScript/TypeScript | providerCounts | 322 | [SRC-DE7EABE998-L000322](../web/agent.html#L322) |
+| [web/agent.html](../web/agent.html#L323) | متغير JavaScript/TypeScript | providerHtml | 323 | [SRC-DE7EABE998-L000323](../web/agent.html#L323) |
+| [web/agent.html](../web/agent.html#L324) | متغير JavaScript/TypeScript | notes | 324 | [SRC-DE7EABE998-L000324](../web/agent.html#L324) |
+| [web/agent.html](../web/agent.html#L325) | متغير JavaScript/TypeScript | queryList | 325 | [SRC-DE7EABE998-L000325](../web/agent.html#L325) |
+| [web/agent.html](../web/agent.html#L326) | متغير JavaScript/TypeScript | details | 326 | [SRC-DE7EABE998-L000326](../web/agent.html#L326) |
+| [web/agent.html](../web/agent.html#L327) | متغير JavaScript/TypeScript | coverageText | 327 | [SRC-DE7EABE998-L000327](../web/agent.html#L327) |
+| [web/agent.html](../web/agent.html#L336) | متغير JavaScript/TypeScript | usableSourceCount | 336 | [SRC-DE7EABE998-L000336](../web/agent.html#L336) |
+| [web/agent.html](../web/agent.html#L337) | متغير JavaScript/TypeScript | attemptText | 337 | [SRC-DE7EABE998-L000337](../web/agent.html#L337) |
+| [web/agent.html](../web/agent.html#L346) | متغير JavaScript/TypeScript | qualityText | 346 | [SRC-DE7EABE998-L000346](../web/agent.html#L346) |
+| [web/agent.html](../web/agent.html#L347) | متغير JavaScript/TypeScript | reviewText | 347 | [SRC-DE7EABE998-L000347](../web/agent.html#L347) |
+| [web/agent.html](../web/agent.html#L348) | متغير JavaScript/TypeScript | diversityText | 348 | [SRC-DE7EABE998-L000348](../web/agent.html#L348) |
+| [web/agent.html](../web/agent.html#L349) | متغير JavaScript/TypeScript | reportNotes | 349 | [SRC-DE7EABE998-L000349](../web/agent.html#L349) |
+| [web/agent.html](../web/agent.html#L350) | متغير JavaScript/TypeScript | review | 350 | [SRC-DE7EABE998-L000350](../web/agent.html#L350) |
+| [web/agent.html](../web/agent.html#L353) | دالة JavaScript/TypeScript | addMessage | 353 | [SRC-DE7EABE998-L000353](../web/agent.html#L353) |
+| [web/agent.html](../web/agent.html#L354) | متغير JavaScript/TypeScript | welcome | 354 | [SRC-DE7EABE998-L000354](../web/agent.html#L354) |
+| [web/agent.html](../web/agent.html#L355) | متغير JavaScript/TypeScript | box | 355 | [SRC-DE7EABE998-L000355](../web/agent.html#L355) |
+| [web/agent.html](../web/agent.html#L356) | متغير JavaScript/TypeScript | who | 356 | [SRC-DE7EABE998-L000356](../web/agent.html#L356) |
+| [web/agent.html](../web/agent.html#L359) | متغير JavaScript/TypeScript | linkedQuestion | 359 | [SRC-DE7EABE998-L000359](../web/agent.html#L359) |
+| [web/agent.html](../web/agent.html#L361) | متغير JavaScript/TypeScript | context | 361 | [SRC-DE7EABE998-L000361](../web/agent.html#L361) |
+| [web/agent.html](../web/agent.html#L364) | متغير JavaScript/TypeScript | bubble | 364 | [SRC-DE7EABE998-L000364](../web/agent.html#L364) |
+| [web/agent.html](../web/agent.html#L366) | متغير JavaScript/TypeScript | notice | 366 | [SRC-DE7EABE998-L000366](../web/agent.html#L366) |
+| [web/agent.html](../web/agent.html#L376) | متغير JavaScript/TypeScript | report | 376 | [SRC-DE7EABE998-L000376](../web/agent.html#L376) |
+| [web/agent.html](../web/agent.html#L379) | متغير JavaScript/TypeScript | warning | 379 | [SRC-DE7EABE998-L000379](../web/agent.html#L379) |
+| [web/agent.html](../web/agent.html#L382) | متغير JavaScript/TypeScript | rawSources | 382 | [SRC-DE7EABE998-L000382](../web/agent.html#L382) |
+| [web/agent.html](../web/agent.html#L383) | متغير JavaScript/TypeScript | usableSources | 383 | [SRC-DE7EABE998-L000383](../web/agent.html#L383) |
+| [web/agent.html](../web/agent.html#L388) | متغير JavaScript/TypeScript | no | 388 | [SRC-DE7EABE998-L000388](../web/agent.html#L388) |
+| [web/agent.html](../web/agent.html#L395) | دالة JavaScript/TypeScript | setBusy | 395 | [SRC-DE7EABE998-L000395](../web/agent.html#L395) |
+| [web/agent.html](../web/agent.html#L396) | دالة JavaScript/TypeScript | ask | 396 | [SRC-DE7EABE998-L000396](../web/agent.html#L396) |
+| [web/agent.html](../web/agent.html#L397) | متغير JavaScript/TypeScript | q | 397 | [SRC-DE7EABE998-L000397](../web/agent.html#L397) |
+| [web/agent.html](../web/agent.html#L400) | متغير JavaScript/TypeScript | pending | 400 | [SRC-DE7EABE998-L000400](../web/agent.html#L400) |
+| [web/agent.html](../web/agent.html#L404) | متغير JavaScript/TypeScript | response | 404 | [SRC-DE7EABE998-L000404](../web/agent.html#L404) |
+| [web/agent.html](../web/agent.html#L404) | مسار API/واجهة محتمل | /api/agent | 404 | [SRC-DE7EABE998-L000404](../web/agent.html#L404) |
+| [web/agent.html](../web/agent.html#L405) | متغير JavaScript/TypeScript | data | 405 | [SRC-DE7EABE998-L000405](../web/agent.html#L405) |
+| [web/agent.html](../web/agent.html#L428) | متغير JavaScript/TypeScript | safeMessage | 428 | [SRC-DE7EABE998-L000428](../web/agent.html#L428) |
+| [web/agent.html](../web/agent.html#L430) | متغير JavaScript/TypeScript | actions | 430 | [SRC-DE7EABE998-L000430](../web/agent.html#L430) |
+| [web/agent.html](../web/agent.html#L431) | متغير JavaScript/TypeScript | retry | 431 | [SRC-DE7EABE998-L000431](../web/agent.html#L431) |
+| [web/agent.html](../web/agent.html#L439) | دالة JavaScript/TypeScript | runDiagnostics | 439 | [SRC-DE7EABE998-L000439](../web/agent.html#L439) |
+| [web/agent.html](../web/agent.html#L440) | متغير JavaScript/TypeScript | button | 440 | [SRC-DE7EABE998-L000440](../web/agent.html#L440) |
+| [web/agent.html](../web/agent.html#L443) | مسار API/واجهة محتمل | /api/diagnostics | 443 | [SRC-DE7EABE998-L000443](../web/agent.html#L443) |
+| [web/agent.html](../web/agent.html#L445) | متغير JavaScript/TypeScript | labels | 445 | [SRC-DE7EABE998-L000445](../web/agent.html#L445) |
+| [web/agent.html](../web/agent.html#L446) | متغير JavaScript/TypeScript | lines | 446 | [SRC-DE7EABE998-L000446](../web/agent.html#L446) |
+| [web/agent.html](../web/agent.html#L448) | متغير JavaScript/TypeScript | item | 448 | [SRC-DE7EABE998-L000448](../web/agent.html#L448) |
+| [web/agent.html](../web/agent.html#L460) | دالة JavaScript/TypeScript | checkHealth | 460 | [SRC-DE7EABE998-L000460](../web/agent.html#L460) |
+| [web/agent.html](../web/agent.html#L462) | متغير JavaScript/TypeScript | a | 462 | [SRC-DE7EABE998-L000462](../web/agent.html#L462) |
+| [web/agent.html](../web/agent.html#L462) | متغير JavaScript/TypeScript | d | 462 | [SRC-DE7EABE998-L000462](../web/agent.html#L462) |
+| [web/agent.html](../web/agent.html#L462) | مسار API/واجهة محتمل | /api/health | 462 | [SRC-DE7EABE998-L000462](../web/agent.html#L462) |
+| [web/agent.html](../web/agent.html#L463) | متغير JavaScript/TypeScript | configured | 463 | [SRC-DE7EABE998-L000463](../web/agent.html#L463) |
+| [web/agent.html](../web/agent.html#L471) | متغير JavaScript/TypeScript | model | 471 | [SRC-DE7EABE998-L000471](../web/agent.html#L471) |
+| [web/agent.html](../web/agent.html#L479) | متغير JavaScript/TypeScript | active | 479 | [SRC-DE7EABE998-L000479](../web/agent.html#L479) |
 | [web/dashboard.html](../web/dashboard.html#L4) | قيمة سمة HTML (name) | viewport | 4 | [SRC-A16FA6D4B5-L000004](../web/dashboard.html#L4) |
 | [web/dashboard.html](../web/dashboard.html#L5) | قيمة سمة HTML (name) | theme-color | 5 | [SRC-A16FA6D4B5-L000005](../web/dashboard.html#L5) |
 | [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | amber | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |

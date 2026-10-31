@@ -788,7 +788,7 @@
 | [SRC-2822F30DAD-L000174](../../tests/test_sales_domain.py#L174) | 174 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in vehicle_queries)"` | — |
 | [SRC-2822F30DAD-L000175](../../tests/test_sales_domain.py#L175) | 175 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in industrial_queries)"` | — |
 | [SRC-2822F30DAD-L000176](../../tests/test_sales_domain.py#L176) | 176 | `"    assert any(\"سيارة كهربائية\" in query for query in vehicle_queries)"` | — |
-| [SRC-2822F30DAD-L000177](../../tests/test_sales_domain.py#L177) | 177 | `"    assert any(\"نظام انذار حريق صناعي\" in query for query in industrial_queries)"` | — |
+| [SRC-2822F30DAD-L000177](../../tests/test_sales_domain.py#L177) | 177 | `"    assert any(\"نظام إنذار حريق صناعي\" in query for query in industrial_queries)"` | — |
 | [SRC-2822F30DAD-L000178](../../tests/test_sales_domain.py#L178) | 178 | `""` | — |
 | [SRC-2822F30DAD-L000179](../../tests/test_sales_domain.py#L179) | 179 | `""` | — |
 | [SRC-2822F30DAD-L000180](../../tests/test_sales_domain.py#L180) | 180 | `"def test_buyer_query_generation_uses_only_explicit_market_location():"` | — |
