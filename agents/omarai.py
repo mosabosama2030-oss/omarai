@@ -234,6 +234,32 @@ class LeadStore:
                                    observed_at, assessment, status, note, created_at, updated_at
                             FROM leads_legacy_migration"""
                     )
+                legacy_count = db.execute(
+                    "SELECT COUNT(*) FROM leads_legacy_migration"
+                ).fetchone()[0]
+                migrated_count = db.execute(
+                    "SELECT COUNT(*) FROM leads"
+                ).fetchone()[0]
+                missing_rows = db.execute(
+                    """SELECT COUNT(*)
+                       FROM leads_legacy_migration legacy
+                       LEFT JOIN leads migrated
+                         ON migrated.id=legacy.id
+                        AND migrated.fingerprint=legacy.fingerprint
+                       WHERE migrated.id IS NULL"""
+                ).fetchone()[0]
+                foreign_key_errors = db.execute(
+                    "PRAGMA foreign_key_check(leads)"
+                ).fetchall()
+                if (
+                    migrated_count != legacy_count
+                    or missing_rows
+                    or foreign_key_errors
+                ):
+                    raise RuntimeError(
+                        "lead migration verification failed; legacy data was retained"
+                    )
+                # Drop the old table only after count, identity, and FK checks pass.
                 db.execute("DROP TABLE leads_legacy_migration")
         else:
             self._create_leads_table(db)
@@ -324,6 +350,29 @@ class LeadStore:
     def _token_hash(token: str) -> str:
         return hashlib.sha256(token.encode("utf-8")).hexdigest()
 
+    @staticmethod
+    def _normalize_token_expiry(expires_at: str | None) -> str | None:
+        """Store token expiries as validated UTC timestamps for safe comparisons."""
+        if expires_at is None:
+            return None
+        if not isinstance(expires_at, str) or not expires_at.strip():
+            raise ValueError("expires_at must be an ISO-8601 timestamp with a timezone")
+        value = expires_at.strip()
+        if value.endswith("Z"):
+            value = value[:-1] + "+00:00"
+        try:
+            parsed = datetime.fromisoformat(value)
+        except ValueError as exc:
+            raise ValueError(
+                "expires_at must be an ISO-8601 timestamp with a timezone"
+            ) from exc
+        if parsed.tzinfo is None or parsed.utcoffset() is None:
+            raise ValueError("expires_at must include an explicit timezone")
+        normalized = parsed.astimezone(UTC)
+        if normalized <= datetime.now(UTC):
+            raise ValueError("expires_at must be in the future")
+        return normalized.isoformat(timespec="seconds").replace("+00:00", "Z")
+
     def create_api_token(
         self,
         token: str,
@@ -335,6 +384,7 @@ class LeadStore:
         if not isinstance(token, str) or len(token.strip()) < 32:
             raise ValueError("API token must contain at least 32 characters")
         tenant = self._tenant(tenant_id)
+        expires_at = self._normalize_token_expiry(expires_at)
         with self.connect() as db:
             membership = db.execute(
                 """SELECT 1 FROM tenant_memberships m
