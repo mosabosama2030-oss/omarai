@@ -1085,28 +1085,27 @@ def test_api_tenant_id_header_requires_verified_membership(local_api):
 
     status, _ = request_json(
         local_api,
-        "/api/agent",
+        "/api/analyze",
         method="POST",
-        payload={"question": "اختبار", "tenant_id": "company-c"},
+        payload={"text": "اختبار", "tenant_id": "company-c"},
     )
     assert status == 403
 
     status, _ = request_json(
         local_api,
-        "/api/agent",
+        "/api/analyze",
         method="POST",
-        payload={"question": "اختبار"},
+        payload={"text": "اختبار"},
         headers={"X-Omarai-Tenant-ID": "company-c"},
     )
     assert status == 403
 
-    status, _ = request_json(
+    status, result = request_json(
         local_api,
-        "/api/agent",
+        "/api/analyze",
         method="POST",
-        payload={"question": "اختبار", "tenant_id": "company-c"},
+        payload={"text": "اختبار", "tenant_id": "company-c"},
         headers={"X-Omarai-Test-User": "user-c"},
     )
-    # The identity is correctly authorized; the agent may still fail for missing
-    # external model/search configuration, so this test only proves tenant resolution.
-    assert status in {200, 503}
+    assert status == 200
+    assert "score" in result
