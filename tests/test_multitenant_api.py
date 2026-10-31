@@ -298,6 +298,7 @@ def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypa
     from api.omarai import WebAgent
 
     base, store = tenant_api
+    monkeypatch.setattr(Handler, "_rate_limit_ok", lambda self: True)
     tenant_id = store.create_tenant("Viewer Agent Block", "viewer-agent-block")
     user_id = store.create_user("viewer-agent@example.test", "Viewer")
     store.add_membership(tenant_id, user_id, "viewer")
