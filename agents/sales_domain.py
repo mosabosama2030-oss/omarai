@@ -556,7 +556,7 @@ def build_buyer_queries(
         raise ValueError(f"limit must be between 1 and {MAX_BUYER_QUERY_COUNT}")
 
     if locale == "auto":
-        locale = "ar" if re.search(r"[\\u0600-\\u06FF]", product.name) else "en"
+        locale = "ar" if re.search(r"[\u0600-\u06FF]", product.name) else "en"
 
     location_suffix = " ".join(market.locations) if market else ""
     product_terms = (product.name, *product.aliases)
