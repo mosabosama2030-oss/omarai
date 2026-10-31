@@ -528,6 +528,83 @@ class LeadQualification:
         }
 
 
+
+MAX_BUYER_QUERY_COUNT = 8
+
+
+def build_buyer_queries(
+    product: ProductProfile,
+    market: MarketProfile | None = None,
+    *,
+    locale: str = "auto",
+    existing_queries: Iterable[str] = (),
+    limit: int = MAX_BUYER_QUERY_COUNT,
+) -> list[str]:
+    """Build bounded, product-anchored buyer queries without sector-specific defaults.
+
+    Product-specific terms come only from ProductProfile. The default intent
+    vocabulary is sector-neutral; category-specific expansions must be supplied
+    by an explicit taxonomy/policy rather than silently defaulting to real estate.
+    """
+    if not isinstance(product, ProductProfile):
+        raise TypeError("product must be a ProductProfile instance")
+    if market is not None and not isinstance(market, MarketProfile):
+        raise TypeError("market must be a MarketProfile instance")
+    if locale not in {"auto", "ar", "en", "mixed"}:
+        raise ValueError("locale must be auto, ar, en, or mixed")
+    if not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= MAX_BUYER_QUERY_COUNT:
+        raise ValueError(f"limit must be between 1 and {MAX_BUYER_QUERY_COUNT}")
+
+    if locale == "auto":
+        locale = "ar" if re.search(r"[\\u0600-\\u06FF]", product.name) else "en"
+
+    location_suffix = " ".join(market.locations) if market else ""
+    product_terms = (product.name, *product.aliases)
+    candidates: list[str] = []
+
+    for term in product_terms:
+        subject = " ".join(part for part in (term, location_suffix) if part).strip()
+        if locale in {"ar", "mixed"}:
+            candidates.extend(
+                (
+                    f'"مطلوب شراء" "{subject}"',
+                    f'"عايز اشتري" "{subject}"',
+                    f'"أريد شراء" "{subject}"',
+                    f'"بدور على" "{subject}"',
+                    f'"طلب عرض سعر" "{subject}"',
+                    f'site:facebook.com/groups "{subject}" ("مطلوب" OR "عايز اشتري" OR "بدور على")',
+                )
+            )
+        if locale in {"en", "mixed"}:
+            candidates.extend(
+                (
+                    f'"looking to buy" "{subject}"',
+                    f'"want to purchase" "{subject}"',
+                    f'"request for quotation" "{subject}"',
+                    f'site:linkedin.com/posts "{subject}" ("looking to buy" OR "purchase")',
+                )
+            )
+
+    # Planner alternatives are supplementary only. Retain one only when it
+    # explicitly mentions a configured product name/alias; do not import an
+    # unrelated sector or generic listing query into this product's search.
+    for query in existing_queries:
+        if isinstance(query, str) and product.matching_terms(query):
+            candidates.append(query)
+
+    result: list[str] = []
+    seen: set[str] = set()
+    for query in candidates:
+        cleaned = _SPACE.sub(" ", query).strip()[:500]
+        key = normalize_text(cleaned)
+        if cleaned and key and key not in seen:
+            result.append(cleaned)
+            seen.add(key)
+        if len(result) >= limit:
+            break
+    return result
+
+
 def to_json_dict(value: ProductProfile | MarketProfile | DemandEvidence | DemandSignal | LeadQualification) -> dict[str, object]:
     """Serialize a supported domain object without silently dropping evidence fields."""
     if not hasattr(value, "to_dict"):
