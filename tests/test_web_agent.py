@@ -4058,3 +4058,71 @@ def test_fetch_page_enforces_streamed_byte_limit_when_content_length_lies(monkey
     assert len(result[1]) <= web_agent.MAX_PAGE_TEXT_CHARS
     # The reader stops as soon as the byte cap is crossed; it never asks for chunk 3.
     assert chunks_yielded == [web_agent.MAX_PAGE_BYTES, 32]
+
+
+
+@pytest.mark.parametrize("field", ["title", "snippet", "page_text"])
+def test_generate_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch):
+    agent = WebAgent()
+    source = sample_source(0)
+    injected_text = f"INJECTED INSTRUCTION FROM UNTRUSTED {field.upper()}"
+    source[field] = injected_text
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "إجابة اختبارية."
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    answer = agent._generate(
+        question="ما الذي يقوله المصدر؟",
+        history=[],
+        sources=[source],
+        search_warning=None,
+        research_plan={"depth": "standard", "queries": ["ما الذي يقوله المصدر؟"]},
+        search_report={},
+    )
+
+    messages = captured["messages"]
+    system_content = "\n".join(
+        message["content"] for message in messages if message["role"] == "system"
+    )
+    user_contents = [
+        message["content"] for message in messages if message["role"] == "user"
+    ]
+
+    assert answer == "إجابة اختبارية."
+    assert injected_text not in system_content
+    assert any(injected_text in value for value in user_contents)
+
+
+@pytest.mark.parametrize("field", ["title", "snippet", "page_text"])
+def test_review_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch):
+    agent = WebAgent()
+    source = sample_source(0)
+    injected_text = f"INJECTED REVIEW INSTRUCTION FROM UNTRUSTED {field.upper()}"
+    source[field] = injected_text
+    captured = {}
+
+    def fake_completion(messages, **kwargs):
+        captured["messages"] = messages
+        return "<<<OMARAI_FINAL_ANSWER>>>تم تدقيق الإجابة.<<<END_OMARAI_FINAL_ANSWER>>>"
+
+    monkeypatch.setattr(agent, "_request_completion", fake_completion)
+    answer = agent._review_answer(
+        question="ما الذي يقوله المصدر؟",
+        answer="مسودة إجابة تحتاج التحقق.",
+        sources=[source],
+    )
+
+    messages = captured["messages"]
+    system_content = "\n".join(
+        message["content"] for message in messages if message["role"] == "system"
+    )
+    user_contents = [
+        message["content"] for message in messages if message["role"] == "user"
+    ]
+
+    assert answer == "تم تدقيق الإجابة."
+    assert injected_text not in system_content
+    assert any(injected_text in value for value in user_contents)
