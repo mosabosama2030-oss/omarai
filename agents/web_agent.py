@@ -65,6 +65,48 @@ MAX_HISTORY_ITEMS = 8
 MAX_HISTORY_CHARS = 4000
 MAX_SEARCH_RESULTS = 18
 MAX_PROVIDER_RESULTS = 6
+MAX_PROVIDER_RESPONSE_BYTES = 2_000_000
+
+
+def _bounded_http_request(method: str, url: str, **kwargs):
+    """Perform one no-redirect provider request with a strict decoded-body byte cap."""
+    import httpx
+
+    timeout = kwargs.pop("timeout", 9.0)
+    # Redirects are never followed for search/social APIs, including credentialed calls.
+    kwargs.pop("follow_redirects", None)
+    with httpx.Client(
+        timeout=timeout,
+        follow_redirects=False,
+        trust_env=False,
+    ) as client:
+        with client.stream(method, url, **kwargs) as response:
+            declared_length = response.headers.get("content-length")
+            if declared_length:
+                try:
+                    declared_bytes = int(declared_length)
+                except (TypeError, ValueError):
+                    declared_bytes = None
+                if (
+                    declared_bytes is not None
+                    and declared_bytes > MAX_PROVIDER_RESPONSE_BYTES
+                ):
+                    raise ValueError(
+                        "search provider response exceeds the configured size limit"
+                    )
+            body = bytearray()
+            for chunk in response.iter_bytes():
+                if len(body) + len(chunk) > MAX_PROVIDER_RESPONSE_BYTES:
+                    raise ValueError(
+                        "search provider response exceeds the configured size limit"
+                    )
+                body.extend(chunk)
+            return httpx.Response(
+                status_code=response.status_code,
+                headers=response.headers,
+                content=bytes(body),
+                request=response.request,
+            )
 MAX_FETCHED_PAGES = 8
 MAX_LLM_CITED_SOURCES = 12
 MAX_RESEARCH_WORKERS = 8
@@ -1284,7 +1326,7 @@ class WebAgent:
         import httpx
         from bs4 import BeautifulSoup
 
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://html.duckduckgo.com/html/",
             params={"q": query},
             headers={
@@ -1335,7 +1377,7 @@ class WebAgent:
 
         import httpx
 
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://www.bing.com/search",
             params={"format": "rss", "q": query},
             headers={
@@ -1384,7 +1426,7 @@ class WebAgent:
             return []
         import httpx
 
-        response = httpx.post(
+        response = _bounded_http_request("POST", 
             "https://api.deepseek.com/v1/tools/search",
             headers={
                 "Authorization": "Bearer " + api_key,
@@ -1637,7 +1679,7 @@ class WebAgent:
         except ImportError as exc:
             raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
         is_arabic = bool(re.search(r"[\u0600-\u06FF]", query))
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://api.search.brave.com/res/v1/web/search",
             params={
                 "q": query[:600],
@@ -1690,7 +1732,7 @@ class WebAgent:
             raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
         from agents.research import detect_depth, detect_freshness
 
-        response = httpx.post(
+        response = _bounded_http_request("POST", 
             "https://api.tavily.com/search",
             json={
                 "api_key": api_key,
@@ -1738,7 +1780,7 @@ class WebAgent:
 
         import httpx
 
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://news.google.com/rss/search",
             params={"q": query, "hl": "ar", "gl": "EG", "ceid": "EG:ar"},
             headers={
@@ -1835,7 +1877,7 @@ class WebAgent:
         if "reddit" in platforms and reddit_client_id and reddit_client_secret:
             try:
                 self._reserve_search_call()
-                token_response = httpx.post(
+                token_response = _bounded_http_request("POST", 
                     "https://www.reddit.com/api/v1/access_token",
                     data={"grant_type": "client_credentials"},
                     auth=(reddit_client_id, reddit_client_secret),
@@ -1847,7 +1889,7 @@ class WebAgent:
                     access_token = token_response.json().get("access_token", "")
                     if access_token:
                         self._reserve_search_call()
-                        search_response = httpx.get(
+                        search_response = _bounded_http_request("GET", 
                             "https://oauth.reddit.com/search",
                             params={
                                 "q": query,
@@ -1914,7 +1956,7 @@ class WebAgent:
         ):
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://www.reddit.com/search.rss",
                     params={"q": query, "sort": "relevance", "t": "all", "limit": "8"},
                     headers=headers,
@@ -1960,7 +2002,7 @@ class WebAgent:
         if "bluesky" in platforms:
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
                     params={"q": query, "limit": 10},
                     headers=headers,
@@ -2017,7 +2059,7 @@ class WebAgent:
                 for page_id in page_ids:
                     try:
                         self._reserve_search_call()
-                        response = httpx.get(
+                        response = _bounded_http_request("GET", 
                             f"https://graph.facebook.com/{graph_version}/{page_id}/posts",
                             params={
                                 "fields": (
@@ -2110,7 +2152,7 @@ class WebAgent:
                 for hashtag in list(dict.fromkeys(hashtags))[:1]:
                     try:
                         self._reserve_search_call()
-                        search_response = httpx.get(
+                        search_response = _bounded_http_request("GET", 
                             f"https://graph.facebook.com/{graph_version}/ig_hashtag_search",
                             params={
                                 "user_id": ig_user_id,
@@ -2135,7 +2177,7 @@ class WebAgent:
                         if not hashtag_id:
                             continue
                         self._reserve_search_call()
-                        media_response = httpx.get(
+                        media_response = _bounded_http_request("GET", 
                             f"https://graph.facebook.com/{graph_version}/{hashtag_id}/recent_media",
                             params={
                                 "user_id": ig_user_id,
@@ -2190,7 +2232,7 @@ class WebAgent:
         if "x" in platforms and os.getenv("X_BEARER_TOKEN", "").strip():
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://api.x.com/2/tweets/search/recent",
                     params={
                         "query": query + " -is:retweet",
@@ -2242,7 +2284,7 @@ class WebAgent:
         if "youtube" in platforms and os.getenv("YOUTUBE_API_KEY", "").strip():
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://www.googleapis.com/youtube/v3/search",
                     params={
                         "part": "snippet",
