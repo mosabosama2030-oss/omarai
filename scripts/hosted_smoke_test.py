@@ -192,7 +192,7 @@ def run_smoke(
     # These are real network/provider calls and may incur model/search usage.
     status, diagnostics = request_json(
         f"{origin}/api/diagnostics", token=token,
-        payload={"test_model": False, "test_social": False}, timeout=timeout,
+        payload={"test_model": False, "test_social": False, "allow_provider_usage": True}, timeout=timeout,
     )
     if status != 200 or not diagnostics:
         raise SmokeError(f"Authenticated diagnostics failed (HTTP {status}).", partial_report)
