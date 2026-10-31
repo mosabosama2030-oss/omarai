@@ -61,7 +61,7 @@
 | [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
 | [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"    status, diagnostics = request_json("` | — |
 | [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
-| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"        payload={\"test_model\": False, \"test_social\": False}, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"        payload={\"test_model\": False, \"test_social\": False, \"allow_provider_usage\": True}, timeout=timeout,"` | — |
 | [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"    )"` | — |
 | [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"    if status != 200 or not diagnostics:"` | — |
 | [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\", partial_report)"` | — |

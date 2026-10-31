@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **978**
 - تعريفات لا ينطبق عليها Docstring: **309**
 - الرموز الساكنة الإضافية: **1900**
-- الأسطر النصية المفهرسة حرفيًا: **41060**
+- الأسطر النصية المفهرسة حرفيًا: **41061**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -96,7 +96,7 @@
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 24754 | 531 | جرد الملف + AST Python |
-| FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 14962 | 345 | جرد الملف + AST Python |
+| FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 14992 | 345 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 29961 | 720 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
@@ -147,7 +147,7 @@
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 153471 | 3899 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69054 | 485 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69274 | 486 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
@@ -3493,17 +3493,17 @@
 | [web/agent.html](../web/agent.html#L426) | متغير JavaScript/TypeScript | retry | 426 | [SRC-DE7EABE998-L000426](../web/agent.html#L426) |
 | [web/agent.html](../web/agent.html#L434) | دالة JavaScript/TypeScript | runDiagnostics | 434 | [SRC-DE7EABE998-L000434](../web/agent.html#L434) |
 | [web/agent.html](../web/agent.html#L435) | متغير JavaScript/TypeScript | button | 435 | [SRC-DE7EABE998-L000435](../web/agent.html#L435) |
-| [web/agent.html](../web/agent.html#L438) | مسار API/واجهة محتمل | /api/diagnostics | 438 | [SRC-DE7EABE998-L000438](../web/agent.html#L438) |
-| [web/agent.html](../web/agent.html#L440) | متغير JavaScript/TypeScript | labels | 440 | [SRC-DE7EABE998-L000440](../web/agent.html#L440) |
-| [web/agent.html](../web/agent.html#L441) | متغير JavaScript/TypeScript | lines | 441 | [SRC-DE7EABE998-L000441](../web/agent.html#L441) |
-| [web/agent.html](../web/agent.html#L443) | متغير JavaScript/TypeScript | item | 443 | [SRC-DE7EABE998-L000443](../web/agent.html#L443) |
-| [web/agent.html](../web/agent.html#L455) | دالة JavaScript/TypeScript | checkHealth | 455 | [SRC-DE7EABE998-L000455](../web/agent.html#L455) |
-| [web/agent.html](../web/agent.html#L457) | متغير JavaScript/TypeScript | a | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
-| [web/agent.html](../web/agent.html#L457) | متغير JavaScript/TypeScript | d | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
-| [web/agent.html](../web/agent.html#L457) | مسار API/واجهة محتمل | /api/health | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
-| [web/agent.html](../web/agent.html#L458) | متغير JavaScript/TypeScript | configured | 458 | [SRC-DE7EABE998-L000458](../web/agent.html#L458) |
-| [web/agent.html](../web/agent.html#L466) | متغير JavaScript/TypeScript | model | 466 | [SRC-DE7EABE998-L000466](../web/agent.html#L466) |
-| [web/agent.html](../web/agent.html#L474) | متغير JavaScript/TypeScript | active | 474 | [SRC-DE7EABE998-L000474](../web/agent.html#L474) |
+| [web/agent.html](../web/agent.html#L439) | مسار API/واجهة محتمل | /api/diagnostics | 439 | [SRC-DE7EABE998-L000439](../web/agent.html#L439) |
+| [web/agent.html](../web/agent.html#L441) | متغير JavaScript/TypeScript | labels | 441 | [SRC-DE7EABE998-L000441](../web/agent.html#L441) |
+| [web/agent.html](../web/agent.html#L442) | متغير JavaScript/TypeScript | lines | 442 | [SRC-DE7EABE998-L000442](../web/agent.html#L442) |
+| [web/agent.html](../web/agent.html#L444) | متغير JavaScript/TypeScript | item | 444 | [SRC-DE7EABE998-L000444](../web/agent.html#L444) |
+| [web/agent.html](../web/agent.html#L456) | دالة JavaScript/TypeScript | checkHealth | 456 | [SRC-DE7EABE998-L000456](../web/agent.html#L456) |
+| [web/agent.html](../web/agent.html#L458) | متغير JavaScript/TypeScript | a | 458 | [SRC-DE7EABE998-L000458](../web/agent.html#L458) |
+| [web/agent.html](../web/agent.html#L458) | متغير JavaScript/TypeScript | d | 458 | [SRC-DE7EABE998-L000458](../web/agent.html#L458) |
+| [web/agent.html](../web/agent.html#L458) | مسار API/واجهة محتمل | /api/health | 458 | [SRC-DE7EABE998-L000458](../web/agent.html#L458) |
+| [web/agent.html](../web/agent.html#L459) | متغير JavaScript/TypeScript | configured | 459 | [SRC-DE7EABE998-L000459](../web/agent.html#L459) |
+| [web/agent.html](../web/agent.html#L467) | متغير JavaScript/TypeScript | model | 467 | [SRC-DE7EABE998-L000467](../web/agent.html#L467) |
+| [web/agent.html](../web/agent.html#L475) | متغير JavaScript/TypeScript | active | 475 | [SRC-DE7EABE998-L000475](../web/agent.html#L475) |
 | [web/dashboard.html](../web/dashboard.html#L4) | قيمة سمة HTML (name) | viewport | 4 | [SRC-A16FA6D4B5-L000004](../web/dashboard.html#L4) |
 | [web/dashboard.html](../web/dashboard.html#L5) | قيمة سمة HTML (name) | theme-color | 5 | [SRC-A16FA6D4B5-L000005](../web/dashboard.html#L5) |
 | [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | amber | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |

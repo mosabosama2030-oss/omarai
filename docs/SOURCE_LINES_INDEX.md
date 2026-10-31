@@ -11,7 +11,7 @@
 
 - الملفات في جرد المستودع: **121**
 - الملفات النصية المفهرسة سطرًا بسطر: **121**
-- الأسطر المفهرسة: **41060**
+- الأسطر المفهرسة: **41061**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 - صفحات الأسطر: **52**
 
@@ -70,7 +70,7 @@
 | [SOURCE_LINES_049](source_index/SOURCE_LINES_049.md) | 800 | SRC-F725E90B2A-L001914 | SRC-F725E90B2A-L002713 |
 | [SOURCE_LINES_050](source_index/SOURCE_LINES_050.md) | 800 | SRC-F725E90B2A-L002714 | SRC-F725E90B2A-L003513 |
 | [SOURCE_LINES_051](source_index/SOURCE_LINES_051.md) | 800 | SRC-F725E90B2A-L003514 | SRC-DE7EABE998-L000271 |
-| [SOURCE_LINES_052](source_index/SOURCE_LINES_052.md) | 260 | SRC-DE7EABE998-L000272 | SRC-A16FA6D4B5-L000046 |
+| [SOURCE_LINES_052](source_index/SOURCE_LINES_052.md) | 261 | SRC-DE7EABE998-L000272 | SRC-A16FA6D4B5-L000046 |
 
 ## جرد الملفات والوصول حسب الاسم
 
@@ -160,7 +160,7 @@
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | 152 | [SOURCE_LINES_032](source_index/SOURCE_LINES_032.md) |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | 1 | [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md) |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | 826 | [SOURCE_LINES_017](source_index/SOURCE_LINES_017.md), [SOURCE_LINES_018](source_index/SOURCE_LINES_018.md), [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | 485 | [SOURCE_LINES_051](source_index/SOURCE_LINES_051.md), [SOURCE_LINES_052](source_index/SOURCE_LINES_052.md) |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | 486 | [SOURCE_LINES_051](source_index/SOURCE_LINES_051.md), [SOURCE_LINES_052](source_index/SOURCE_LINES_052.md) |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | 46 | [SOURCE_LINES_052](source_index/SOURCE_LINES_052.md) |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | 1 | [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | 41 | [SOURCE_LINES_019](source_index/SOURCE_LINES_019.md) |
