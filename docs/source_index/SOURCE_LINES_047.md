@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000670 إلى SRC-F725E90B2A-L001469
+- النطاق: SRC-F725E90B2A-L000658 إلى SRC-F725E90B2A-L001457
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,18 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000658](../../tests/test_web_agent.py#L658) | 658 | `"        \"electric vehicles\", [\"reddit\"]"` | — |
+| [SRC-F725E90B2A-L000659](../../tests/test_web_agent.py#L659) | 659 | `"    )"` | — |
+| [SRC-F725E90B2A-L000660](../../tests/test_web_agent.py#L660) | 660 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000661](../../tests/test_web_agent.py#L661) | 661 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000662](../../tests/test_web_agent.py#L662) | 662 | `"    assert results[0][\"provider\"] == \"reddit_oauth_api\""` | — |
+| [SRC-F725E90B2A-L000663](../../tests/test_web_agent.py#L663) | 663 | `"    assert results[0][\"url\"] == \"https://www.reddit.com/r/cars/comments/example/post/\""` | — |
+| [SRC-F725E90B2A-L000664](../../tests/test_web_agent.py#L664) | 664 | `"    assert \"score=25\" in results[0][\"snippet\"]"` | — |
+| [SRC-F725E90B2A-L000665](../../tests/test_web_agent.py#L665) | 665 | `"    assert len([call for call in calls if call[0] == \"POST\"]) == 1"` | — |
+| [SRC-F725E90B2A-L000666](../../tests/test_web_agent.py#L666) | 666 | `"    assert any(\"oauth.reddit.com/search\" in call[1] for call in calls if call[0] == \"GET\")"` | — |
+| [SRC-F725E90B2A-L000667](../../tests/test_web_agent.py#L667) | 667 | `"    assert \"test-reddit-access-token\" not in str(results)"` | — |
+| [SRC-F725E90B2A-L000668](../../tests/test_web_agent.py#L668) | 668 | `""` | — |
+| [SRC-F725E90B2A-L000669](../../tests/test_web_agent.py#L669) | 669 | `""` | — |
 | [SRC-F725E90B2A-L000670](../../tests/test_web_agent.py#L670) | 670 | `""` | — |
 | [SRC-F725E90B2A-L000671](../../tests/test_web_agent.py#L671) | 671 | `"def test_role_models_are_explicit_and_have_a_fallback(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L000672](../../tests/test_web_agent.py#L672) | 672 | `"    for name in ("` | — |
@@ -804,15 +816,3 @@
 | [SRC-F725E90B2A-L001455](../../tests/test_web_agent.py#L1455) | 1455 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001456](../../tests/test_web_agent.py#L1456) | 1456 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001457](../../tests/test_web_agent.py#L1457) | 1457 | `"    captured = {}"` | — |
-| [SRC-F725E90B2A-L001458](../../tests/test_web_agent.py#L1458) | 1458 | `""` | — |
-| [SRC-F725E90B2A-L001459](../../tests/test_web_agent.py#L1459) | 1459 | `"    def fake_completion(messages, **kwargs):"` | — |
-| [SRC-F725E90B2A-L001460](../../tests/test_web_agent.py#L1460) | 1460 | `"        captured[\"messages\"] = messages"` | — |
-| [SRC-F725E90B2A-L001461](../../tests/test_web_agent.py#L1461) | 1461 | `"        captured[\"kwargs\"] = kwargs"` | — |
-| [SRC-F725E90B2A-L001462](../../tests/test_web_agent.py#L1462) | 1462 | `"        return \"مصر دولة في شمال شرق أفريقيا، وعاصمتها القاهرة.\""` | — |
-| [SRC-F725E90B2A-L001463](../../tests/test_web_agent.py#L1463) | 1463 | `""` | — |
-| [SRC-F725E90B2A-L001464](../../tests/test_web_agent.py#L1464) | 1464 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
-| [SRC-F725E90B2A-L001465](../../tests/test_web_agent.py#L1465) | 1465 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001466](../../tests/test_web_agent.py#L1466) | 1466 | `"        agent, \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L001467](../../tests/test_web_agent.py#L1467) | 1467 | `"        lambda plan: pytest.fail(\"A stable general question should not start web research\"),"` | — |
-| [SRC-F725E90B2A-L001468](../../tests/test_web_agent.py#L1468) | 1468 | `"    )"` | — |
-| [SRC-F725E90B2A-L001469](../../tests/test_web_agent.py#L1469) | 1469 | `""` | — |

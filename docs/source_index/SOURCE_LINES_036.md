@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000342 إلى SRC-3451CC474D-L000358
+- النطاق: SRC-B3062EB677-L000337 إلى SRC-3451CC474D-L000353
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,11 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000337](../../tests/test_answer_quality_runner.py#L337) | 337 | `"    )"` | — |
+| [SRC-B3062EB677-L000338](../../tests/test_answer_quality_runner.py#L338) | 338 | `"    costs, source = mod._load_request_cost_ledger(ledger_path, {\"AQ-001\", \"AQ-002\"})"` | — |
+| [SRC-B3062EB677-L000339](../../tests/test_answer_quality_runner.py#L339) | 339 | `"    assert costs == {\"AQ-001\": 0.0042}"` | — |
+| [SRC-B3062EB677-L000340](../../tests/test_answer_quality_runner.py#L340) | 340 | `"    assert source == \"provider usage export reviewed by operator\""` | — |
+| [SRC-B3062EB677-L000341](../../tests/test_answer_quality_runner.py#L341) | 341 | `""` | — |
 | [SRC-B3062EB677-L000342](../../tests/test_answer_quality_runner.py#L342) | 342 | `""` | — |
 | [SRC-B3062EB677-L000343](../../tests/test_answer_quality_runner.py#L343) | 343 | `"@pytest.mark.parametrize("` | — |
 | [SRC-B3062EB677-L000344](../../tests/test_answer_quality_runner.py#L344) | 344 | `"    \"ledger, allowed_ids, message\","` | — |
@@ -838,8 +843,3 @@
 | [SRC-3451CC474D-L000351](../../tests/test_api.py#L351) | 351 | `"    release_worker = threading.Event()"` | — |
 | [SRC-3451CC474D-L000352](../../tests/test_api.py#L352) | 352 | `"    worker_finished = threading.Event()"` | — |
 | [SRC-3451CC474D-L000353](../../tests/test_api.py#L353) | 353 | `""` | — |
-| [SRC-3451CC474D-L000354](../../tests/test_api.py#L354) | 354 | `"    def hold_handler(_request, _client_address):"` | — |
-| [SRC-3451CC474D-L000355](../../tests/test_api.py#L355) | 355 | `"        worker_started.set()"` | — |
-| [SRC-3451CC474D-L000356](../../tests/test_api.py#L356) | 356 | `"        release_worker.wait(timeout=2)"` | — |
-| [SRC-3451CC474D-L000357](../../tests/test_api.py#L357) | 357 | `""` | — |
-| [SRC-3451CC474D-L000358](../../tests/test_api.py#L358) | 358 | `"    server.finish_request = hold_handler"` | — |
