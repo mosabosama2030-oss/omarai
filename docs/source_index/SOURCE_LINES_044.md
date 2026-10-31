@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000165 إلى SRC-2614DCB6FB-L000062
+- النطاق: SRC-AFFCF23BD4-L000103 إلى SRC-96F6863E3C-L000212
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,68 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000103](../../tests/test_research_completion.py#L103) | 103 | `"    assert result[\"counters\"][\"unique_normalized_url_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000104](../../tests/test_research_completion.py#L104) | 104 | `"    assert result[\"counters\"][\"duplicate_normalized_url_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000105](../../tests/test_research_completion.py#L105) | 105 | `"    assert result[\"counter_consistency\"][\"status\"] == \"mismatch_detected\""` | — |
+| [SRC-AFFCF23BD4-L000106](../../tests/test_research_completion.py#L106) | 106 | `"    assert len(result[\"counter_consistency\"][\"issues\"]) == 2"` | — |
+| [SRC-AFFCF23BD4-L000107](../../tests/test_research_completion.py#L107) | 107 | `""` | — |
+| [SRC-AFFCF23BD4-L000108](../../tests/test_research_completion.py#L108) | 108 | `""` | — |
+| [SRC-AFFCF23BD4-L000109](../../tests/test_research_completion.py#L109) | 109 | `"def test_counter_consistency_is_not_claimed_when_legacy_counters_are_missing() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000110](../../tests/test_research_completion.py#L110) | 110 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000111](../../tests/test_research_completion.py#L111) | 111 | `"        \"kind\": \"web_fallback\", \"search_attempted\": True, \"sources\": [],"` | — |
+| [SRC-AFFCF23BD4-L000112](../../tests/test_research_completion.py#L112) | 112 | `"        \"search_report\": {\"query_results\": []},"` | — |
+| [SRC-AFFCF23BD4-L000113](../../tests/test_research_completion.py#L113) | 113 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000114](../../tests/test_research_completion.py#L114) | 114 | `"    assert result[\"counter_consistency\"][\"status\"] == \"not_computable\""` | — |
+| [SRC-AFFCF23BD4-L000115](../../tests/test_research_completion.py#L115) | 115 | `""` | — |
+| [SRC-AFFCF23BD4-L000116](../../tests/test_research_completion.py#L116) | 116 | `""` | — |
+| [SRC-AFFCF23BD4-L000117](../../tests/test_research_completion.py#L117) | 117 | `""` | — |
+| [SRC-AFFCF23BD4-L000118](../../tests/test_research_completion.py#L118) | 118 | `"def test_public_readability_marker_counts_read_page_without_exposing_text() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000119](../../tests/test_research_completion.py#L119) | 119 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000120](../../tests/test_research_completion.py#L120) | 120 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000121](../../tests/test_research_completion.py#L121) | 121 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000122](../../tests/test_research_completion.py#L122) | 122 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000123](../../tests/test_research_completion.py#L123) | 123 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000124](../../tests/test_research_completion.py#L124) | 124 | `"            \"url\": \"https://example.com/a\","` | — |
+| [SRC-AFFCF23BD4-L000125](../../tests/test_research_completion.py#L125) | 125 | `"            \"snippet\": \"summary\","` | — |
+| [SRC-AFFCF23BD4-L000126](../../tests/test_research_completion.py#L126) | 126 | `"            \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000127](../../tests/test_research_completion.py#L127) | 127 | `"            \"readable_page_text_available\": True,"` | — |
+| [SRC-AFFCF23BD4-L000128](../../tests/test_research_completion.py#L128) | 128 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000129](../../tests/test_research_completion.py#L129) | 129 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
+| [SRC-AFFCF23BD4-L000130](../../tests/test_research_completion.py#L130) | 130 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000131](../../tests/test_research_completion.py#L131) | 131 | `"    assert result[\"counters\"][\"pages_read_with_text_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000132](../../tests/test_research_completion.py#L132) | 132 | `"    assert result[\"phases\"][\"page_reading\"] == \"all_final_sources_read\""` | — |
+| [SRC-AFFCF23BD4-L000133](../../tests/test_research_completion.py#L133) | 133 | `""` | — |
+| [SRC-AFFCF23BD4-L000134](../../tests/test_research_completion.py#L134) | 134 | `""` | — |
+| [SRC-AFFCF23BD4-L000135](../../tests/test_research_completion.py#L135) | 135 | `"def test_ref_query_parameters_are_not_assumed_to_be_tracking_ids() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000136](../../tests/test_research_completion.py#L136) | 136 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000137](../../tests/test_research_completion.py#L137) | 137 | `"        \"kind\": \"web_fallback\","` | — |
+| [SRC-AFFCF23BD4-L000138](../../tests/test_research_completion.py#L138) | 138 | `"        \"sources\": ["` | — |
+| [SRC-AFFCF23BD4-L000139](../../tests/test_research_completion.py#L139) | 139 | `"            {\"url\": \"https://example.com/post?ref=one\"},"` | — |
+| [SRC-AFFCF23BD4-L000140](../../tests/test_research_completion.py#L140) | 140 | `"            {\"url\": \"https://example.com/post?ref=two\"},"` | — |
+| [SRC-AFFCF23BD4-L000141](../../tests/test_research_completion.py#L141) | 141 | `"        ],"` | — |
+| [SRC-AFFCF23BD4-L000142](../../tests/test_research_completion.py#L142) | 142 | `"        \"search_report\": {},"` | — |
+| [SRC-AFFCF23BD4-L000143](../../tests/test_research_completion.py#L143) | 143 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000144](../../tests/test_research_completion.py#L144) | 144 | `"    assert result[\"counters\"][\"unique_normalized_url_count\"] == 2"` | — |
+| [SRC-AFFCF23BD4-L000145](../../tests/test_research_completion.py#L145) | 145 | `"    assert result[\"counters\"][\"duplicate_normalized_url_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000146](../../tests/test_research_completion.py#L146) | 146 | `""` | — |
+| [SRC-AFFCF23BD4-L000147](../../tests/test_research_completion.py#L147) | 147 | `""` | — |
+| [SRC-AFFCF23BD4-L000148](../../tests/test_research_completion.py#L148) | 148 | `""` | — |
+| [SRC-AFFCF23BD4-L000149](../../tests/test_research_completion.py#L149) | 149 | `"def test_unflagged_page_text_marker_is_counted_without_exposing_page_text() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000150](../../tests/test_research_completion.py#L150) | 150 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000151](../../tests/test_research_completion.py#L151) | 151 | `"        \"kind\": \"web_fallback\","` | — |
+| [SRC-AFFCF23BD4-L000152](../../tests/test_research_completion.py#L152) | 152 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000153](../../tests/test_research_completion.py#L153) | 153 | `"            \"url\": \"https://example.com/a\","` | — |
+| [SRC-AFFCF23BD4-L000154](../../tests/test_research_completion.py#L154) | 154 | `"            \"snippet\": \"summary\","` | — |
+| [SRC-AFFCF23BD4-L000155](../../tests/test_research_completion.py#L155) | 155 | `"            \"page_fetched\": False,"` | — |
+| [SRC-AFFCF23BD4-L000156](../../tests/test_research_completion.py#L156) | 156 | `"            \"page_text_present_without_fetch_flag\": True,"` | — |
+| [SRC-AFFCF23BD4-L000157](../../tests/test_research_completion.py#L157) | 157 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000158](../../tests/test_research_completion.py#L158) | 158 | `"        \"search_report\": {},"` | — |
+| [SRC-AFFCF23BD4-L000159](../../tests/test_research_completion.py#L159) | 159 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000160](../../tests/test_research_completion.py#L160) | 160 | `"    assert result[\"counters\"][\"page_text_without_fetched_flag_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000161](../../tests/test_research_completion.py#L161) | 161 | `""` | — |
+| [SRC-AFFCF23BD4-L000162](../../tests/test_research_completion.py#L162) | 162 | `""` | — |
+| [SRC-AFFCF23BD4-L000163](../../tests/test_research_completion.py#L163) | 163 | `""` | — |
+| [SRC-AFFCF23BD4-L000164](../../tests/test_research_completion.py#L164) | 164 | `"def test_unresolved_citation_support_flags_prevent_completed_research_status() -> None:"` | — |
 | [SRC-AFFCF23BD4-L000165](../../tests/test_research_completion.py#L165) | 165 | `"    base = {"` | — |
 | [SRC-AFFCF23BD4-L000166](../../tests/test_research_completion.py#L166) | 166 | `"        \"kind\": \"web_research\","` | — |
 | [SRC-AFFCF23BD4-L000167](../../tests/test_research_completion.py#L167) | 167 | `"        \"search_attempted\": True,"` | — |
@@ -772,74 +834,3 @@
 | [SRC-96F6863E3C-L000210](../../tests/test_research_pipeline.py#L210) | 210 | `""` | — |
 | [SRC-96F6863E3C-L000211](../../tests/test_research_pipeline.py#L211) | 211 | `"        assert result[\"stages\"][\"lexical_matching\"] == \"not_assessed\""` | — |
 | [SRC-96F6863E3C-L000212](../../tests/test_research_pipeline.py#L212) | 212 | `"        assert result[\"evidence_ledger\"][\"covered\"] == []"` | — |
-## اختبارات
-
-### FILE-2614DCB6FB — [tests/test_search_code.py](../../tests/test_search_code.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-2614DCB6FB-L000001](../../tests/test_search_code.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-2614DCB6FB-L000002](../../tests/test_search_code.py#L2) | 2 | `""` | — |
-| [SRC-2614DCB6FB-L000003](../../tests/test_search_code.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-2614DCB6FB-L000004](../../tests/test_search_code.py#L4) | 4 | `"import re"` | — |
-| [SRC-2614DCB6FB-L000005](../../tests/test_search_code.py#L5) | 5 | `"import sys"` | — |
-| [SRC-2614DCB6FB-L000006](../../tests/test_search_code.py#L6) | 6 | `"from pathlib import Path"` | — |
-| [SRC-2614DCB6FB-L000007](../../tests/test_search_code.py#L7) | 7 | `""` | — |
-| [SRC-2614DCB6FB-L000008](../../tests/test_search_code.py#L8) | 8 | `"SEARCH_PATH = Path(__file__).resolve().parents[1] / \"docs\" / \"search_code.py\""` | — |
-| [SRC-2614DCB6FB-L000009](../../tests/test_search_code.py#L9) | 9 | `"SEARCH_SPEC = importlib.util.spec_from_file_location(\"omarai_search_code_for_tests\", SEARCH_PATH)"` | — |
-| [SRC-2614DCB6FB-L000010](../../tests/test_search_code.py#L10) | 10 | `"assert SEARCH_SPEC is not None"` | — |
-| [SRC-2614DCB6FB-L000011](../../tests/test_search_code.py#L11) | 11 | `"assert SEARCH_SPEC.loader is not None"` | — |
-| [SRC-2614DCB6FB-L000012](../../tests/test_search_code.py#L12) | 12 | `"SEARCH = importlib.util.module_from_spec(SEARCH_SPEC)"` | — |
-| [SRC-2614DCB6FB-L000013](../../tests/test_search_code.py#L13) | 13 | `"sys.modules[SEARCH_SPEC.name] = SEARCH"` | — |
-| [SRC-2614DCB6FB-L000014](../../tests/test_search_code.py#L14) | 14 | `"SEARCH_SPEC.loader.exec_module(SEARCH)"` | — |
-| [SRC-2614DCB6FB-L000015](../../tests/test_search_code.py#L15) | 15 | `""` | — |
-| [SRC-2614DCB6FB-L000016](../../tests/test_search_code.py#L16) | 16 | `""` | — |
-| [SRC-2614DCB6FB-L000017](../../tests/test_search_code.py#L17) | 17 | `"def test_search_returns_stable_file_line_and_source_link(tmp_path: Path) -> None:"` | — |
-| [SRC-2614DCB6FB-L000018](../../tests/test_search_code.py#L18) | 18 | `"    \"\"\"Text search returns the exact file and 1-based line without network access.\"\"\""` | — |
-| [SRC-2614DCB6FB-L000019](../../tests/test_search_code.py#L19) | 19 | `"    source = tmp_path / \"app.py\""` | — |
-| [SRC-2614DCB6FB-L000020](../../tests/test_search_code.py#L20) | 20 | `"    source.write_text(\"first = 1\\nneedle = 2\\nlast = 3\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000021](../../tests/test_search_code.py#L21) | 21 | `""` | — |
-| [SRC-2614DCB6FB-L000022](../../tests/test_search_code.py#L22) | 22 | `"    hits = SEARCH.search_repository(tmp_path, \"needle\")"` | — |
-| [SRC-2614DCB6FB-L000023](../../tests/test_search_code.py#L23) | 23 | `""` | — |
-| [SRC-2614DCB6FB-L000024](../../tests/test_search_code.py#L24) | 24 | `"    assert len(hits) == 1"` | — |
-| [SRC-2614DCB6FB-L000025](../../tests/test_search_code.py#L25) | 25 | `"    assert hits[0].file == \"app.py\""` | — |
-| [SRC-2614DCB6FB-L000026](../../tests/test_search_code.py#L26) | 26 | `"    assert hits[0].line == 2"` | — |
-| [SRC-2614DCB6FB-L000027](../../tests/test_search_code.py#L27) | 27 | `"    assert \"needle = 2\" in hits[0].text"` | — |
-| [SRC-2614DCB6FB-L000028](../../tests/test_search_code.py#L28) | 28 | `"    assert hits[0].link.endswith(\"/app.py#L2\")"` | — |
-| [SRC-2614DCB6FB-L000029](../../tests/test_search_code.py#L29) | 29 | `""` | — |
-| [SRC-2614DCB6FB-L000030](../../tests/test_search_code.py#L30) | 30 | `""` | — |
-| [SRC-2614DCB6FB-L000031](../../tests/test_search_code.py#L31) | 31 | `"def test_search_supports_multiline_context_and_regex(tmp_path: Path) -> None:"` | — |
-| [SRC-2614DCB6FB-L000032](../../tests/test_search_code.py#L32) | 32 | `"    \"\"\"The context argument returns the requested number of adjacent lines.\"\"\""` | — |
-| [SRC-2614DCB6FB-L000033](../../tests/test_search_code.py#L33) | 33 | `"    source = tmp_path / \"app.py\""` | — |
-| [SRC-2614DCB6FB-L000034](../../tests/test_search_code.py#L34) | 34 | `"    source.write_text(\"before one\\nbefore two\\nVALUE_42 = 7\\nafter one\\nafter two\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000035](../../tests/test_search_code.py#L35) | 35 | `""` | — |
-| [SRC-2614DCB6FB-L000036](../../tests/test_search_code.py#L36) | 36 | `"    hits = SEARCH.search_repository("` | — |
-| [SRC-2614DCB6FB-L000037](../../tests/test_search_code.py#L37) | 37 | `"        tmp_path, r\"VALUE_\\d+\", use_regex=True, context=2"` | — |
-| [SRC-2614DCB6FB-L000038](../../tests/test_search_code.py#L38) | 38 | `"    )"` | — |
-| [SRC-2614DCB6FB-L000039](../../tests/test_search_code.py#L39) | 39 | `""` | — |
-| [SRC-2614DCB6FB-L000040](../../tests/test_search_code.py#L40) | 40 | `"    assert len(hits) == 1"` | — |
-| [SRC-2614DCB6FB-L000041](../../tests/test_search_code.py#L41) | 41 | `"    assert hits[0].context_before.splitlines() == [\"before one\", \"before two\"]"` | — |
-| [SRC-2614DCB6FB-L000042](../../tests/test_search_code.py#L42) | 42 | `"    assert hits[0].context_after.splitlines() == [\"after one\", \"after two\"]"` | — |
-| [SRC-2614DCB6FB-L000043](../../tests/test_search_code.py#L43) | 43 | `""` | — |
-| [SRC-2614DCB6FB-L000044](../../tests/test_search_code.py#L44) | 44 | `""` | — |
-| [SRC-2614DCB6FB-L000045](../../tests/test_search_code.py#L45) | 45 | `"def test_search_excludes_common_secret_files_and_runtime_directories(tmp_path: Path) -> None:"` | — |
-| [SRC-2614DCB6FB-L000046](../../tests/test_search_code.py#L46) | 46 | `"    \"\"\"Local searches skip common secret paths and binary/runtime data.\"\"\""` | — |
-| [SRC-2614DCB6FB-L000047](../../tests/test_search_code.py#L47) | 47 | `"    (tmp_path / \"app.py\").write_text(\"safe_value = 1\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000048](../../tests/test_search_code.py#L48) | 48 | `"    (tmp_path / \".env\").write_text(\"TOKEN=private-value\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000049](../../tests/test_search_code.py#L49) | 49 | `"    (tmp_path / \"credentials.json\").write_text('{\"token\":\"private-value\"}\\n', encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000050](../../tests/test_search_code.py#L50) | 50 | `"    aws_dir = tmp_path / \".aws\""` | — |
-| [SRC-2614DCB6FB-L000051](../../tests/test_search_code.py#L51) | 51 | `"    aws_dir.mkdir()"` | — |
-| [SRC-2614DCB6FB-L000052](../../tests/test_search_code.py#L52) | 52 | `"    (aws_dir / \"credentials\").write_text(\"token=private-value\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000053](../../tests/test_search_code.py#L53) | 53 | `"    data_dir = tmp_path / \"data\""` | — |
-| [SRC-2614DCB6FB-L000054](../../tests/test_search_code.py#L54) | 54 | `"    data_dir.mkdir()"` | — |
-| [SRC-2614DCB6FB-L000055](../../tests/test_search_code.py#L55) | 55 | `"    (data_dir / \"records.sqlite3\").write_bytes(b\"database-token\")"` | — |
-| [SRC-2614DCB6FB-L000056](../../tests/test_search_code.py#L56) | 56 | `"    (tmp_path / \"credentials.example\").write_text(\"TOKEN=replace-me\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-2614DCB6FB-L000057](../../tests/test_search_code.py#L57) | 57 | `""` | — |
-| [SRC-2614DCB6FB-L000058](../../tests/test_search_code.py#L58) | 58 | `"    hits = SEARCH.search_repository(tmp_path, \"private-value\")"` | — |
-| [SRC-2614DCB6FB-L000059](../../tests/test_search_code.py#L59) | 59 | `"    safe_example = SEARCH.search_repository(tmp_path, \"replace-me\")"` | — |
-| [SRC-2614DCB6FB-L000060](../../tests/test_search_code.py#L60) | 60 | `""` | — |
-| [SRC-2614DCB6FB-L000061](../../tests/test_search_code.py#L61) | 61 | `"    assert hits == []"` | — |
-| [SRC-2614DCB6FB-L000062](../../tests/test_search_code.py#L62) | 62 | `"    assert len(safe_example) == 1"` | — |

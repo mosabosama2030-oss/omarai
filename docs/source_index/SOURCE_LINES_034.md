@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001323 إلى SRC-4CCB1F172B-L000086
+- النطاق: SRC-90FAA34ADE-L001304 إلى SRC-4CCB1F172B-L000067
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001304](../../tests/fixtures/answer_quality_cases.json#L1304) | 1304 | `"      \"language\": \"ar-MSA\","` | — |
+| [SRC-90FAA34ADE-L001305](../../tests/fixtures/answer_quality_cases.json#L1305) | 1305 | `"      \"question\": \"قارن بين خدمتين من ناحية السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، واذكر ما لا تستطيع التحقق منه.\","` | — |
+| [SRC-90FAA34ADE-L001306](../../tests/fixtures/answer_quality_cases.json#L1306) | 1306 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L001307](../../tests/fixtures/answer_quality_cases.json#L1307) | 1307 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001308](../../tests/fixtures/answer_quality_cases.json#L1308) | 1308 | `"        \"يطلب اسم الخدمتين إذا لم تكونا محددتين في السياق\","` | — |
+| [SRC-90FAA34ADE-L001309](../../tests/fixtures/answer_quality_cases.json#L1309) | 1309 | `"        \"يحافظ على أبعاد المقارنة الأربعة في خطة الإجابة\","` | — |
+| [SRC-90FAA34ADE-L001310](../../tests/fixtures/answer_quality_cases.json#L1310) | 1310 | `"        \"يصرح بحدود التحقق بدل اختلاق تفاصيل\""` | — |
+| [SRC-90FAA34ADE-L001311](../../tests/fixtures/answer_quality_cases.json#L1311) | 1311 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001312](../../tests/fixtures/answer_quality_cases.json#L1312) | 1312 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L001313](../../tests/fixtures/answer_quality_cases.json#L1313) | 1313 | `"        \"يخمن أسماء خدمات أو أسعارًا\","` | — |
+| [SRC-90FAA34ADE-L001314](../../tests/fixtures/answer_quality_cases.json#L1314) | 1314 | `"        \"يقدم مقارنة ناقصة على أنها نهائية\""` | — |
+| [SRC-90FAA34ADE-L001315](../../tests/fixtures/answer_quality_cases.json#L1315) | 1315 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001316](../../tests/fixtures/answer_quality_cases.json#L1316) | 1316 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001317](../../tests/fixtures/answer_quality_cases.json#L1317) | 1317 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001318](../../tests/fixtures/answer_quality_cases.json#L1318) | 1318 | `"        \"notes\": \"لم تُذكر أسماء الخدمات في السؤال ولا يوجد سياق سابق\""` | — |
+| [SRC-90FAA34ADE-L001319](../../tests/fixtures/answer_quality_cases.json#L1319) | 1319 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001320](../../tests/fixtures/answer_quality_cases.json#L1320) | 1320 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001321](../../tests/fixtures/answer_quality_cases.json#L1321) | 1321 | `"        \"عدم طلب توضيح عن الخدمتين\","` | — |
+| [SRC-90FAA34ADE-L001322](../../tests/fixtures/answer_quality_cases.json#L1322) | 1322 | `"        \"إعلان نتيجة مقارنة بلا بيانات عن أي خدمة\""` | — |
 | [SRC-90FAA34ADE-L001323](../../tests/fixtures/answer_quality_cases.json#L1323) | 1323 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001324](../../tests/fixtures/answer_quality_cases.json#L1324) | 1324 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
 | [SRC-90FAA34ADE-L001325](../../tests/fixtures/answer_quality_cases.json#L1325) | 1325 | `"    },"` | — |
@@ -842,22 +861,3 @@
 | [SRC-4CCB1F172B-L000065](../../tests/test_answer_quality_corpus.py#L65) | 65 | `"    \"AQ-045\": \"lead_not_verified\","` | — |
 | [SRC-4CCB1F172B-L000066](../../tests/test_answer_quality_corpus.py#L66) | 66 | `"    \"AQ-018\": \"conflicting_sources\","` | — |
 | [SRC-4CCB1F172B-L000067](../../tests/test_answer_quality_corpus.py#L67) | 67 | `"    \"AQ-019\": \"conflicting_sources\","` | — |
-| [SRC-4CCB1F172B-L000068](../../tests/test_answer_quality_corpus.py#L68) | 68 | `"    \"AQ-020\": \"stale_sources_for_current\","` | — |
-| [SRC-4CCB1F172B-L000069](../../tests/test_answer_quality_corpus.py#L69) | 69 | `"    \"AQ-034\": \"stale_sources_for_current\","` | — |
-| [SRC-4CCB1F172B-L000070](../../tests/test_answer_quality_corpus.py#L70) | 70 | `"    \"AQ-042\": \"stale_sources_for_current\","` | — |
-| [SRC-4CCB1F172B-L000071](../../tests/test_answer_quality_corpus.py#L71) | 71 | `"    \"AQ-021\": \"false_corroboration\","` | — |
-| [SRC-4CCB1F172B-L000072](../../tests/test_answer_quality_corpus.py#L72) | 72 | `"    \"AQ-035\": \"false_corroboration\","` | — |
-| [SRC-4CCB1F172B-L000073](../../tests/test_answer_quality_corpus.py#L73) | 73 | `"}"` | — |
-| [SRC-4CCB1F172B-L000074](../../tests/test_answer_quality_corpus.py#L74) | 74 | `""` | — |
-| [SRC-4CCB1F172B-L000075](../../tests/test_answer_quality_corpus.py#L75) | 75 | `"CASE_ID_RE = re.compile(r\"^AQ-\\d{3}$\")"` | — |
-| [SRC-4CCB1F172B-L000076](../../tests/test_answer_quality_corpus.py#L76) | 76 | `""` | — |
-| [SRC-4CCB1F172B-L000077](../../tests/test_answer_quality_corpus.py#L77) | 77 | `""` | — |
-| [SRC-4CCB1F172B-L000078](../../tests/test_answer_quality_corpus.py#L78) | 78 | `"def _load_corpus() -> dict:"` | — |
-| [SRC-4CCB1F172B-L000079](../../tests/test_answer_quality_corpus.py#L79) | 79 | `"    assert CORPUS_PATH.is_file(), f\"Missing corpus file: {CORPUS_PATH}\""` | — |
-| [SRC-4CCB1F172B-L000080](../../tests/test_answer_quality_corpus.py#L80) | 80 | `"    data = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-4CCB1F172B-L000081](../../tests/test_answer_quality_corpus.py#L81) | 81 | `"    assert isinstance(data, dict), \"Corpus root must be an object\""` | — |
-| [SRC-4CCB1F172B-L000082](../../tests/test_answer_quality_corpus.py#L82) | 82 | `"    assert \"parts\" not in data or not data.get(\"parts\"), ("` | — |
-| [SRC-4CCB1F172B-L000083](../../tests/test_answer_quality_corpus.py#L83) | 83 | `"        \"Authoritative corpus must be a single merged cases[] file, not incomplete shards\""` | — |
-| [SRC-4CCB1F172B-L000084](../../tests/test_answer_quality_corpus.py#L84) | 84 | `"    )"` | — |
-| [SRC-4CCB1F172B-L000085](../../tests/test_answer_quality_corpus.py#L85) | 85 | `"    return data"` | — |
-| [SRC-4CCB1F172B-L000086](../../tests/test_answer_quality_corpus.py#L86) | 86 | `""` | — |

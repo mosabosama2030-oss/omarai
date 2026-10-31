@@ -4,9 +4,37 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B0DE4359ED-L000001 إلى SRC-3451CC474D-L000435
+- النطاق: SRC-B3062EB677-L000400 إلى SRC-3451CC474D-L000416
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-B3062EB677 — [tests/test_answer_quality_runner.py](../../tests/test_answer_quality_runner.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B3062EB677-L000400](../../tests/test_answer_quality_runner.py#L400) | 400 | `""` | — |
+| [SRC-B3062EB677-L000401](../../tests/test_answer_quality_runner.py#L401) | 401 | `"def test_get_verified_build_sha_requires_full_api_health_identity(monkeypatch):"` | — |
+| [SRC-B3062EB677-L000402](../../tests/test_answer_quality_runner.py#L402) | 402 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000403](../../tests/test_answer_quality_runner.py#L403) | 403 | `"    import json"` | — |
+| [SRC-B3062EB677-L000404](../../tests/test_answer_quality_runner.py#L404) | 404 | `""` | — |
+| [SRC-B3062EB677-L000405](../../tests/test_answer_quality_runner.py#L405) | 405 | `"    class FakeResponse:"` | — |
+| [SRC-B3062EB677-L000406](../../tests/test_answer_quality_runner.py#L406) | 406 | `"        status = 200"` | — |
+| [SRC-B3062EB677-L000407](../../tests/test_answer_quality_runner.py#L407) | 407 | `""` | — |
+| [SRC-B3062EB677-L000408](../../tests/test_answer_quality_runner.py#L408) | 408 | `"        def __enter__(self):"` | — |
+| [SRC-B3062EB677-L000409](../../tests/test_answer_quality_runner.py#L409) | 409 | `"            return self"` | — |
+| [SRC-B3062EB677-L000410](../../tests/test_answer_quality_runner.py#L410) | 410 | `""` | — |
+| [SRC-B3062EB677-L000411](../../tests/test_answer_quality_runner.py#L411) | 411 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
+| [SRC-B3062EB677-L000412](../../tests/test_answer_quality_runner.py#L412) | 412 | `"            return False"` | — |
+| [SRC-B3062EB677-L000413](../../tests/test_answer_quality_runner.py#L413) | 413 | `""` | — |
+| [SRC-B3062EB677-L000414](../../tests/test_answer_quality_runner.py#L414) | 414 | `"        def read(self, limit):"` | — |
+| [SRC-B3062EB677-L000415](../../tests/test_answer_quality_runner.py#L415) | 415 | `"            return json.dumps({\"ok\": True, \"build\": {\"sha\": \"C\" * 40}}).encode(\"utf-8\")"` | — |
+| [SRC-B3062EB677-L000416](../../tests/test_answer_quality_runner.py#L416) | 416 | `""` | — |
+| [SRC-B3062EB677-L000417](../../tests/test_answer_quality_runner.py#L417) | 417 | `"    monkeypatch.setattr(mod._NO_REDIRECT_OPENER, \"open\", lambda request, timeout: FakeResponse())"` | — |
+| [SRC-B3062EB677-L000418](../../tests/test_answer_quality_runner.py#L418) | 418 | `"    assert mod.get_verified_build_sha(\"http://127.0.0.1:8765\", 1.0) == \"c\" * 40"` | — |
 ## اختبارات
 
 ### FILE-B0DE4359ED — [tests/test_answer_quality_unknown_tool_status.py](../../tests/test_answer_quality_unknown_tool_status.py#L1)
@@ -815,22 +843,3 @@
 | [SRC-3451CC474D-L000414](../../tests/test_api.py#L414) | 414 | `"    # New identities share the reserved overflow bucket and its rate ceiling."` | — |
 | [SRC-3451CC474D-L000415](../../tests/test_api.py#L415) | 415 | `"    assert RateLimitHarness(\"198.51.100.4\")._rate_limit_ok() is False"` | — |
 | [SRC-3451CC474D-L000416](../../tests/test_api.py#L416) | 416 | `"    assert len(RateLimitHarness._request_times) == 3"` | — |
-| [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `"    assert RateLimitHarness.RATE_LIMIT_OVERFLOW_KEY in RateLimitHarness._request_times"` | — |
-| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `""` | — |
-| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `""` | — |
-| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `"def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    \"\"\"Reject untrusted API calls before parsing bodies and throttle repeated failures.\"\"\""` | — |
-| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"z\" * 48)"` | — |
-| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
-| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"    with Handler._rate_lock:"` | — |
-| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"        Handler._request_times.clear()"` | — |
-| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `"    request = Request("` | — |
-| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"        data=b\"invalid-json-body\","` | — |
-| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `"        headers={\"Content-Type\": \"application/json\"},"` | — |
-| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `"    )"` | — |
-| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"    try:"` | — |
-| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"            first_status = response.status"` | — |

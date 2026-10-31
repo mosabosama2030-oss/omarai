@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BCB799CEC-L000028 إلى SRC-FA4E1423C3-L000463
+- النطاق: SRC-6BCB799CEC-L000009 إلى SRC-FA4E1423C3-L000444
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BCB799CEC-L000009](../../tests/test_evidence_provenance.py#L9) | 9 | `""` | — |
+| [SRC-6BCB799CEC-L000010](../../tests/test_evidence_provenance.py#L10) | 10 | `""` | — |
+| [SRC-6BCB799CEC-L000011](../../tests/test_evidence_provenance.py#L11) | 11 | `"def _addrinfo(ip: str):"` | — |
+| [SRC-6BCB799CEC-L000012](../../tests/test_evidence_provenance.py#L12) | 12 | `"    family = socket.AF_INET6 if \":\" in ip else socket.AF_INET"` | — |
+| [SRC-6BCB799CEC-L000013](../../tests/test_evidence_provenance.py#L13) | 13 | `"    return [(family, socket.SOCK_STREAM, 6, \"\", (ip, 0))]"` | — |
+| [SRC-6BCB799CEC-L000014](../../tests/test_evidence_provenance.py#L14) | 14 | `""` | — |
+| [SRC-6BCB799CEC-L000015](../../tests/test_evidence_provenance.py#L15) | 15 | `""` | — |
+| [SRC-6BCB799CEC-L000016](../../tests/test_evidence_provenance.py#L16) | 16 | `"def test_failed_page_read_is_not_reported_as_fetched(monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000017](../../tests/test_evidence_provenance.py#L17) | 17 | `"    \"\"\"An empty extraction must not set page_fetched through the real collector.\"\"\""` | — |
+| [SRC-6BCB799CEC-L000018](../../tests/test_evidence_provenance.py#L18) | 18 | `"    agent = WebAgent()"` | — |
+| [SRC-6BCB799CEC-L000019](../../tests/test_evidence_provenance.py#L19) | 19 | `""` | — |
+| [SRC-6BCB799CEC-L000020](../../tests/test_evidence_provenance.py#L20) | 20 | `"    def search(query):"` | — |
+| [SRC-6BCB799CEC-L000021](../../tests/test_evidence_provenance.py#L21) | 21 | `"        return [{"` | — |
+| [SRC-6BCB799CEC-L000022](../../tests/test_evidence_provenance.py#L22) | 22 | `"            \"title\": \"عنوان فقط\","` | — |
+| [SRC-6BCB799CEC-L000023](../../tests/test_evidence_provenance.py#L23) | 23 | `"            \"url\": \"https://example.com/unread\","` | — |
+| [SRC-6BCB799CEC-L000024](../../tests/test_evidence_provenance.py#L24) | 24 | `"            \"snippet\": \"مقتطف محرك بحث\","` | — |
+| [SRC-6BCB799CEC-L000025](../../tests/test_evidence_provenance.py#L25) | 25 | `"            \"provider\": \"duckduckgo_html\","` | — |
+| [SRC-6BCB799CEC-L000026](../../tests/test_evidence_provenance.py#L26) | 26 | `"            \"provider_rank\": 1,"` | — |
+| [SRC-6BCB799CEC-L000027](../../tests/test_evidence_provenance.py#L27) | 27 | `"            \"search_query\": query,"` | — |
 | [SRC-6BCB799CEC-L000028](../../tests/test_evidence_provenance.py#L28) | 28 | `"            \"published_at\": \"\","` | — |
 | [SRC-6BCB799CEC-L000029](../../tests/test_evidence_provenance.py#L29) | 29 | `"        }]"` | — |
 | [SRC-6BCB799CEC-L000030](../../tests/test_evidence_provenance.py#L30) | 30 | `""` | — |
@@ -815,22 +834,3 @@
 | [SRC-FA4E1423C3-L000442](../../tests/test_generate_index.py#L442) | 442 | `"    )"` | — |
 | [SRC-FA4E1423C3-L000443](../../tests/test_generate_index.py#L443) | 443 | `"    (tmp_path / \"page.html\").write_text("` | — |
 | [SRC-FA4E1423C3-L000444](../../tests/test_generate_index.py#L444) | 444 | `"        '<!-- REVIEW: check the navigation landmark -->\\n'"` | — |
-| [SRC-FA4E1423C3-L000445](../../tests/test_generate_index.py#L445) | 445 | `"        '<script>const template = \"<!-- BUG: not a markup comment -->\";</script>\\n',"` | — |
-| [SRC-FA4E1423C3-L000446](../../tests/test_generate_index.py#L446) | 446 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000447](../../tests/test_generate_index.py#L447) | 447 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000448](../../tests/test_generate_index.py#L448) | 448 | `"    (tmp_path / \"guide.md\").write_text("` | — |
-| [SRC-FA4E1423C3-L000449](../../tests/test_generate_index.py#L449) | 449 | `"        \"The risk-management framework reports an error.\\n\""` | — |
-| [SRC-FA4E1423C3-L000450](../../tests/test_generate_index.py#L450) | 450 | ````"        \"```text\\n\""```` | — |
-| [SRC-FA4E1423C3-L000451](../../tests/test_generate_index.py#L451) | 451 | `"        \"# BUG: this sample should be ignored\\n\""` | — |
-| [SRC-FA4E1423C3-L000452](../../tests/test_generate_index.py#L452) | 452 | ````"        \"```\\n\""```` | — |
-| [SRC-FA4E1423C3-L000453](../../tests/test_generate_index.py#L453) | 453 | `"        \"- DEFECT: this explicitly documented defect should be indexed\\n\","` | — |
-| [SRC-FA4E1423C3-L000454](../../tests/test_generate_index.py#L454) | 454 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000455](../../tests/test_generate_index.py#L455) | 455 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000456](../../tests/test_generate_index.py#L456) | 456 | `""` | — |
-| [SRC-FA4E1423C3-L000457](../../tests/test_generate_index.py#L457) | 457 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000458](../../tests/test_generate_index.py#L458) | 458 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000459](../../tests/test_generate_index.py#L459) | 459 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000460](../../tests/test_generate_index.py#L460) | 460 | `"    summarized = {(item.file, item.marker, item.description) for item in findings}"` | — |
-| [SRC-FA4E1423C3-L000461](../../tests/test_generate_index.py#L461) | 461 | `""` | — |
-| [SRC-FA4E1423C3-L000462](../../tests/test_generate_index.py#L462) | 462 | `"    assert {item.marker for item in findings} == {"` | — |
-| [SRC-FA4E1423C3-L000463](../../tests/test_generate_index.py#L463) | 463 | `"        \"BUG\", \"FIXME\", \"SECURITY\", \"GAP\", \"REVIEW\", \"DEFECT\""` | — |

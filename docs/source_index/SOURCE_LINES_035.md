@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000087 إلى SRC-B3062EB677-L000418
+- النطاق: SRC-4CCB1F172B-L000068 إلى SRC-B3062EB677-L000399
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000068](../../tests/test_answer_quality_corpus.py#L68) | 68 | `"    \"AQ-020\": \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000069](../../tests/test_answer_quality_corpus.py#L69) | 69 | `"    \"AQ-034\": \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000070](../../tests/test_answer_quality_corpus.py#L70) | 70 | `"    \"AQ-042\": \"stale_sources_for_current\","` | — |
+| [SRC-4CCB1F172B-L000071](../../tests/test_answer_quality_corpus.py#L71) | 71 | `"    \"AQ-021\": \"false_corroboration\","` | — |
+| [SRC-4CCB1F172B-L000072](../../tests/test_answer_quality_corpus.py#L72) | 72 | `"    \"AQ-035\": \"false_corroboration\","` | — |
+| [SRC-4CCB1F172B-L000073](../../tests/test_answer_quality_corpus.py#L73) | 73 | `"}"` | — |
+| [SRC-4CCB1F172B-L000074](../../tests/test_answer_quality_corpus.py#L74) | 74 | `""` | — |
+| [SRC-4CCB1F172B-L000075](../../tests/test_answer_quality_corpus.py#L75) | 75 | `"CASE_ID_RE = re.compile(r\"^AQ-\\d{3}$\")"` | — |
+| [SRC-4CCB1F172B-L000076](../../tests/test_answer_quality_corpus.py#L76) | 76 | `""` | — |
+| [SRC-4CCB1F172B-L000077](../../tests/test_answer_quality_corpus.py#L77) | 77 | `""` | — |
+| [SRC-4CCB1F172B-L000078](../../tests/test_answer_quality_corpus.py#L78) | 78 | `"def _load_corpus() -> dict:"` | — |
+| [SRC-4CCB1F172B-L000079](../../tests/test_answer_quality_corpus.py#L79) | 79 | `"    assert CORPUS_PATH.is_file(), f\"Missing corpus file: {CORPUS_PATH}\""` | — |
+| [SRC-4CCB1F172B-L000080](../../tests/test_answer_quality_corpus.py#L80) | 80 | `"    data = json.loads(CORPUS_PATH.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-4CCB1F172B-L000081](../../tests/test_answer_quality_corpus.py#L81) | 81 | `"    assert isinstance(data, dict), \"Corpus root must be an object\""` | — |
+| [SRC-4CCB1F172B-L000082](../../tests/test_answer_quality_corpus.py#L82) | 82 | `"    assert \"parts\" not in data or not data.get(\"parts\"), ("` | — |
+| [SRC-4CCB1F172B-L000083](../../tests/test_answer_quality_corpus.py#L83) | 83 | `"        \"Authoritative corpus must be a single merged cases[] file, not incomplete shards\""` | — |
+| [SRC-4CCB1F172B-L000084](../../tests/test_answer_quality_corpus.py#L84) | 84 | `"    )"` | — |
+| [SRC-4CCB1F172B-L000085](../../tests/test_answer_quality_corpus.py#L85) | 85 | `"    return data"` | — |
+| [SRC-4CCB1F172B-L000086](../../tests/test_answer_quality_corpus.py#L86) | 86 | `""` | — |
 | [SRC-4CCB1F172B-L000087](../../tests/test_answer_quality_corpus.py#L87) | 87 | `""` | — |
 | [SRC-4CCB1F172B-L000088](../../tests/test_answer_quality_corpus.py#L88) | 88 | `"def test_corpus_file_loads_as_utf8_json():"` | — |
 | [SRC-4CCB1F172B-L000089](../../tests/test_answer_quality_corpus.py#L89) | 89 | `"    data = _load_corpus()"` | — |
@@ -824,22 +843,3 @@
 | [SRC-B3062EB677-L000397](../../tests/test_answer_quality_runner.py#L397) | 397 | `"    assert calls == []"` | — |
 | [SRC-B3062EB677-L000398](../../tests/test_answer_quality_runner.py#L398) | 398 | `"    assert \"Unverified deployed build\" in capsys.readouterr().err"` | — |
 | [SRC-B3062EB677-L000399](../../tests/test_answer_quality_runner.py#L399) | 399 | `""` | — |
-| [SRC-B3062EB677-L000400](../../tests/test_answer_quality_runner.py#L400) | 400 | `""` | — |
-| [SRC-B3062EB677-L000401](../../tests/test_answer_quality_runner.py#L401) | 401 | `"def test_get_verified_build_sha_requires_full_api_health_identity(monkeypatch):"` | — |
-| [SRC-B3062EB677-L000402](../../tests/test_answer_quality_runner.py#L402) | 402 | `"    mod = _load_runner()"` | — |
-| [SRC-B3062EB677-L000403](../../tests/test_answer_quality_runner.py#L403) | 403 | `"    import json"` | — |
-| [SRC-B3062EB677-L000404](../../tests/test_answer_quality_runner.py#L404) | 404 | `""` | — |
-| [SRC-B3062EB677-L000405](../../tests/test_answer_quality_runner.py#L405) | 405 | `"    class FakeResponse:"` | — |
-| [SRC-B3062EB677-L000406](../../tests/test_answer_quality_runner.py#L406) | 406 | `"        status = 200"` | — |
-| [SRC-B3062EB677-L000407](../../tests/test_answer_quality_runner.py#L407) | 407 | `""` | — |
-| [SRC-B3062EB677-L000408](../../tests/test_answer_quality_runner.py#L408) | 408 | `"        def __enter__(self):"` | — |
-| [SRC-B3062EB677-L000409](../../tests/test_answer_quality_runner.py#L409) | 409 | `"            return self"` | — |
-| [SRC-B3062EB677-L000410](../../tests/test_answer_quality_runner.py#L410) | 410 | `""` | — |
-| [SRC-B3062EB677-L000411](../../tests/test_answer_quality_runner.py#L411) | 411 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-B3062EB677-L000412](../../tests/test_answer_quality_runner.py#L412) | 412 | `"            return False"` | — |
-| [SRC-B3062EB677-L000413](../../tests/test_answer_quality_runner.py#L413) | 413 | `""` | — |
-| [SRC-B3062EB677-L000414](../../tests/test_answer_quality_runner.py#L414) | 414 | `"        def read(self, limit):"` | — |
-| [SRC-B3062EB677-L000415](../../tests/test_answer_quality_runner.py#L415) | 415 | `"            return json.dumps({\"ok\": True, \"build\": {\"sha\": \"C\" * 40}}).encode(\"utf-8\")"` | — |
-| [SRC-B3062EB677-L000416](../../tests/test_answer_quality_runner.py#L416) | 416 | `""` | — |
-| [SRC-B3062EB677-L000417](../../tests/test_answer_quality_runner.py#L417) | 417 | `"    monkeypatch.setattr(mod._NO_REDIRECT_OPENER, \"open\", lambda request, timeout: FakeResponse())"` | — |
-| [SRC-B3062EB677-L000418](../../tests/test_answer_quality_runner.py#L418) | 418 | `"    assert mod.get_verified_build_sha(\"http://127.0.0.1:8765\", 1.0) == \"c\" * 40"` | — |

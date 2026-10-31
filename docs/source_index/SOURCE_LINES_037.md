@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000436 إلى SRC-DA61479D59-L000074
+- النطاق: SRC-3451CC474D-L000417 إلى SRC-DA61479D59-L000055
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `"    assert RateLimitHarness.RATE_LIMIT_OVERFLOW_KEY in RateLimitHarness._request_times"` | — |
+| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `""` | — |
+| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `""` | — |
+| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `"def test_public_api_authentication_and_rate_limit_precede_json_parsing(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    \"\"\"Reject untrusted API calls before parsing bodies and throttle repeated failures.\"\"\""` | — |
+| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"z\" * 48)"` | — |
+| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
+| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"    with Handler._rate_lock:"` | — |
+| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"        Handler._request_times.clear()"` | — |
+| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `"    request = Request("` | — |
+| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"        data=b\"invalid-json-body\","` | — |
+| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `"        headers={\"Content-Type\": \"application/json\"},"` | — |
+| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `"    )"` | — |
+| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"    try:"` | — |
+| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `"            first_status = response.status"` | — |
 | [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    except HTTPError as error:"` | — |
 | [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `"        first_status = error.code"` | — |
 | [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `"    assert first_status == 401"` | — |
@@ -824,22 +843,3 @@
 | [SRC-DA61479D59-L000053](../../tests/test_connector_summary_counters.py#L53) | 53 | `""` | — |
 | [SRC-DA61479D59-L000054](../../tests/test_connector_summary_counters.py#L54) | 54 | `""` | — |
 | [SRC-DA61479D59-L000055](../../tests/test_connector_summary_counters.py#L55) | 55 | `"def test_collect_research_distinguishes_raw_rows_unique_urls_and_page_extraction(monkeypatch):"` | — |
-| [SRC-DA61479D59-L000056](../../tests/test_connector_summary_counters.py#L56) | 56 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000057](../../tests/test_connector_summary_counters.py#L57) | 57 | `"    query = \"renewable energy storage\""` | — |
-| [SRC-DA61479D59-L000058](../../tests/test_connector_summary_counters.py#L58) | 58 | `"    results = ["` | — |
-| [SRC-DA61479D59-L000059](../../tests/test_connector_summary_counters.py#L59) | 59 | `"        {"` | — |
-| [SRC-DA61479D59-L000060](../../tests/test_connector_summary_counters.py#L60) | 60 | `"            \"title\": \"Renewable energy storage report\","` | — |
-| [SRC-DA61479D59-L000061](../../tests/test_connector_summary_counters.py#L61) | 61 | `"            \"url\": \"https://example.com/report\","` | — |
-| [SRC-DA61479D59-L000062](../../tests/test_connector_summary_counters.py#L62) | 62 | `"            \"snippet\": \"Renewable energy storage data from the report\","` | — |
-| [SRC-DA61479D59-L000063](../../tests/test_connector_summary_counters.py#L63) | 63 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000064](../../tests/test_connector_summary_counters.py#L64) | 64 | `"            \"page_fetched\": False,"` | — |
-| [SRC-DA61479D59-L000065](../../tests/test_connector_summary_counters.py#L65) | 65 | `"            \"provider\": \"test_search\","` | — |
-| [SRC-DA61479D59-L000066](../../tests/test_connector_summary_counters.py#L66) | 66 | `"            \"provider_rank\": 1,"` | — |
-| [SRC-DA61479D59-L000067](../../tests/test_connector_summary_counters.py#L67) | 67 | `"            \"search_query\": query,"` | — |
-| [SRC-DA61479D59-L000068](../../tests/test_connector_summary_counters.py#L68) | 68 | `"            \"published_at\": \"\","` | — |
-| [SRC-DA61479D59-L000069](../../tests/test_connector_summary_counters.py#L69) | 69 | `"        },"` | — |
-| [SRC-DA61479D59-L000070](../../tests/test_connector_summary_counters.py#L70) | 70 | `"        {"` | — |
-| [SRC-DA61479D59-L000071](../../tests/test_connector_summary_counters.py#L71) | 71 | `"            \"title\": \"Renewable energy storage report (duplicate URL)\","` | — |
-| [SRC-DA61479D59-L000072](../../tests/test_connector_summary_counters.py#L72) | 72 | `"            \"url\": \"https://example.com/report?utm_source=test\","` | — |
-| [SRC-DA61479D59-L000073](../../tests/test_connector_summary_counters.py#L73) | 73 | `"            \"snippet\": \"Renewable energy storage data from a duplicate result\","` | — |
-| [SRC-DA61479D59-L000074](../../tests/test_connector_summary_counters.py#L74) | 74 | `"            \"page_text\": \"\","` | — |

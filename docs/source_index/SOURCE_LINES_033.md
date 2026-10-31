@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000523 إلى SRC-90FAA34ADE-L001322
+- النطاق: SRC-90FAA34ADE-L000504 إلى SRC-90FAA34ADE-L001303
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000504](../../tests/fixtures/answer_quality_cases.json#L504) | 504 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000505](../../tests/fixtures/answer_quality_cases.json#L505) | 505 | `"        \"States both retrieved deadlines and their respective source links\","` | — |
+| [SRC-90FAA34ADE-L000506](../../tests/fixtures/answer_quality_cases.json#L506) | 506 | `"        \"Checks whether dates refer to different rounds or publication times\","` | — |
+| [SRC-90FAA34ADE-L000507](../../tests/fixtures/answer_quality_cases.json#L507) | 507 | `"        \"Uses uncertainty or requests official confirmation if unresolved\""` | — |
+| [SRC-90FAA34ADE-L000508](../../tests/fixtures/answer_quality_cases.json#L508) | 508 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000509](../../tests/fixtures/answer_quality_cases.json#L509) | 509 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000510](../../tests/fixtures/answer_quality_cases.json#L510) | 510 | `"        \"Silently merges the dates\","` | — |
+| [SRC-90FAA34ADE-L000511](../../tests/fixtures/answer_quality_cases.json#L511) | 511 | `"        \"Claims one source is authoritative without evidence\""` | — |
+| [SRC-90FAA34ADE-L000512](../../tests/fixtures/answer_quality_cases.json#L512) | 512 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000513](../../tests/fixtures/answer_quality_cases.json#L513) | 513 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000514](../../tests/fixtures/answer_quality_cases.json#L514) | 514 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000515](../../tests/fixtures/answer_quality_cases.json#L515) | 515 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000516](../../tests/fixtures/answer_quality_cases.json#L516) | 516 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000517](../../tests/fixtures/answer_quality_cases.json#L517) | 517 | `"            \"title\": \"Program FAQ\","` | — |
+| [SRC-90FAA34ADE-L000518](../../tests/fixtures/answer_quality_cases.json#L518) | 518 | `"            \"url\": \"https://program.example.test/faq\","` | — |
+| [SRC-90FAA34ADE-L000519](../../tests/fixtures/answer_quality_cases.json#L519) | 519 | `"            \"snippet\": \"Applications close on 30 October 2026.\","` | — |
+| [SRC-90FAA34ADE-L000520](../../tests/fixtures/answer_quality_cases.json#L520) | 520 | `"            \"published_at\": \"2026-09-28\","` | — |
+| [SRC-90FAA34ADE-L000521](../../tests/fixtures/answer_quality_cases.json#L521) | 521 | `"            \"domain\": \"program.example.test\","` | — |
+| [SRC-90FAA34ADE-L000522](../../tests/fixtures/answer_quality_cases.json#L522) | 522 | `"            \"provider\": \"fixture_a\""` | — |
 | [SRC-90FAA34ADE-L000523](../../tests/fixtures/answer_quality_cases.json#L523) | 523 | `"          },"` | — |
 | [SRC-90FAA34ADE-L000524](../../tests/fixtures/answer_quality_cases.json#L524) | 524 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000525](../../tests/fixtures/answer_quality_cases.json#L525) | 525 | `"            \"title\": \"Regional office notice\","` | — |
@@ -797,22 +816,3 @@
 | [SRC-90FAA34ADE-L001301](../../tests/fixtures/answer_quality_cases.json#L1301) | 1301 | `"    {"` | — |
 | [SRC-90FAA34ADE-L001302](../../tests/fixtures/answer_quality_cases.json#L1302) | 1302 | `"      \"case_id\": \"AQ-044\","` | — |
 | [SRC-90FAA34ADE-L001303](../../tests/fixtures/answer_quality_cases.json#L1303) | 1303 | `"      \"category\": \"incomplete_answer\","` | — |
-| [SRC-90FAA34ADE-L001304](../../tests/fixtures/answer_quality_cases.json#L1304) | 1304 | `"      \"language\": \"ar-MSA\","` | — |
-| [SRC-90FAA34ADE-L001305](../../tests/fixtures/answer_quality_cases.json#L1305) | 1305 | `"      \"question\": \"قارن بين خدمتين من ناحية السعر، الخصوصية، الاعتمادية، وخيار التواصل مع الدعم، واذكر ما لا تستطيع التحقق منه.\","` | — |
-| [SRC-90FAA34ADE-L001306](../../tests/fixtures/answer_quality_cases.json#L1306) | 1306 | `"      \"expected_strategy\": \"clarify\","` | — |
-| [SRC-90FAA34ADE-L001307](../../tests/fixtures/answer_quality_cases.json#L1307) | 1307 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001308](../../tests/fixtures/answer_quality_cases.json#L1308) | 1308 | `"        \"يطلب اسم الخدمتين إذا لم تكونا محددتين في السياق\","` | — |
-| [SRC-90FAA34ADE-L001309](../../tests/fixtures/answer_quality_cases.json#L1309) | 1309 | `"        \"يحافظ على أبعاد المقارنة الأربعة في خطة الإجابة\","` | — |
-| [SRC-90FAA34ADE-L001310](../../tests/fixtures/answer_quality_cases.json#L1310) | 1310 | `"        \"يصرح بحدود التحقق بدل اختلاق تفاصيل\""` | — |
-| [SRC-90FAA34ADE-L001311](../../tests/fixtures/answer_quality_cases.json#L1311) | 1311 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001312](../../tests/fixtures/answer_quality_cases.json#L1312) | 1312 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L001313](../../tests/fixtures/answer_quality_cases.json#L1313) | 1313 | `"        \"يخمن أسماء خدمات أو أسعارًا\","` | — |
-| [SRC-90FAA34ADE-L001314](../../tests/fixtures/answer_quality_cases.json#L1314) | 1314 | `"        \"يقدم مقارنة ناقصة على أنها نهائية\""` | — |
-| [SRC-90FAA34ADE-L001315](../../tests/fixtures/answer_quality_cases.json#L1315) | 1315 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L001316](../../tests/fixtures/answer_quality_cases.json#L1316) | 1316 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L001317](../../tests/fixtures/answer_quality_cases.json#L1317) | 1317 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L001318](../../tests/fixtures/answer_quality_cases.json#L1318) | 1318 | `"        \"notes\": \"لم تُذكر أسماء الخدمات في السؤال ولا يوجد سياق سابق\""` | — |
-| [SRC-90FAA34ADE-L001319](../../tests/fixtures/answer_quality_cases.json#L1319) | 1319 | `"      },"` | — |
-| [SRC-90FAA34ADE-L001320](../../tests/fixtures/answer_quality_cases.json#L1320) | 1320 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L001321](../../tests/fixtures/answer_quality_cases.json#L1321) | 1321 | `"        \"عدم طلب توضيح عن الخدمتين\","` | — |
-| [SRC-90FAA34ADE-L001322](../../tests/fixtures/answer_quality_cases.json#L1322) | 1322 | `"        \"إعلان نتيجة مقارنة بلا بيانات عن أي خدمة\""` | — |
