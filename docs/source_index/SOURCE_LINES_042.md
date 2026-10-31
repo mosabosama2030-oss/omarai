@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000151 إلى SRC-4405E7912C-L000079
+- النطاق: SRC-EA6EC52573-L000128 إلى SRC-4405E7912C-L000056
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000128](../../tests/test_intent_router.py#L128) | 128 | `"    \"question\","` | — |
+| [SRC-EA6EC52573-L000129](../../tests/test_intent_router.py#L129) | 129 | `"    ["` | — |
+| [SRC-EA6EC52573-L000130](../../tests/test_intent_router.py#L130) | 130 | `"        \"فين؟\","` | — |
+| [SRC-EA6EC52573-L000131](../../tests/test_intent_router.py#L131) | 131 | `"        \"فين هي؟\","` | — |
+| [SRC-EA6EC52573-L000132](../../tests/test_intent_router.py#L132) | 132 | `"        \"مكانها فين؟\","` | — |
+| [SRC-EA6EC52573-L000133](../../tests/test_intent_router.py#L133) | 133 | `"        \"هل فيه ضمان؟\","` | — |
+| [SRC-EA6EC52573-L000134](../../tests/test_intent_router.py#L134) | 134 | `"        \"هل لها ضمان؟\","` | — |
+| [SRC-EA6EC52573-L000135](../../tests/test_intent_router.py#L135) | 135 | `"        \"ضمانها إيه؟\","` | — |
+| [SRC-EA6EC52573-L000136](../../tests/test_intent_router.py#L136) | 136 | `"        \"Where is it?\","` | — |
+| [SRC-EA6EC52573-L000137](../../tests/test_intent_router.py#L137) | 137 | `"        \"Does it have a warranty?\","` | — |
+| [SRC-EA6EC52573-L000138](../../tests/test_intent_router.py#L138) | 138 | `"    ],"` | — |
+| [SRC-EA6EC52573-L000139](../../tests/test_intent_router.py#L139) | 139 | `")"` | — |
+| [SRC-EA6EC52573-L000140](../../tests/test_intent_router.py#L140) | 140 | `"def test_missing_referent_questions_clarify_without_context(question: str) -> None:"` | — |
+| [SRC-EA6EC52573-L000141](../../tests/test_intent_router.py#L141) | 141 | `"    decision = route_intent(question, history=None, mode=\"auto\", requires_web=True)"` | — |
+| [SRC-EA6EC52573-L000142](../../tests/test_intent_router.py#L142) | 142 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
+| [SRC-EA6EC52573-L000143](../../tests/test_intent_router.py#L143) | 143 | `"    assert decision[\"needs_clarification\"] is True"` | — |
+| [SRC-EA6EC52573-L000144](../../tests/test_intent_router.py#L144) | 144 | `"    assert decision[\"context_available\"] is False"` | — |
+| [SRC-EA6EC52573-L000145](../../tests/test_intent_router.py#L145) | 145 | `""` | — |
+| [SRC-EA6EC52573-L000146](../../tests/test_intent_router.py#L146) | 146 | `""` | — |
+| [SRC-EA6EC52573-L000147](../../tests/test_intent_router.py#L147) | 147 | `"@pytest.mark.parametrize(\"question\", [\"فين؟\", \"هل فيه ضمان؟\", \"كام سعرها؟\"])"` | — |
+| [SRC-EA6EC52573-L000148](../../tests/test_intent_router.py#L148) | 148 | `"def test_missing_referent_still_clarifies_in_explicit_search_mode(question: str) -> None:"` | — |
+| [SRC-EA6EC52573-L000149](../../tests/test_intent_router.py#L149) | 149 | `"    decision = route_intent(question, history=None, mode=\"deep\")"` | — |
+| [SRC-EA6EC52573-L000150](../../tests/test_intent_router.py#L150) | 150 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
 | [SRC-EA6EC52573-L000151](../../tests/test_intent_router.py#L151) | 151 | `"    assert decision[\"needs_clarification\"] is True"` | — |
 | [SRC-EA6EC52573-L000152](../../tests/test_intent_router.py#L152) | 152 | `""` | — |
 | [SRC-EA6EC52573-L000153](../../tests/test_intent_router.py#L153) | 153 | `""` | — |
@@ -829,26 +852,3 @@
 | [SRC-4405E7912C-L000054](../../tests/test_multitenant_api.py#L54) | 54 | `"    return tenant_id"` | — |
 | [SRC-4405E7912C-L000055](../../tests/test_multitenant_api.py#L55) | 55 | `""` | — |
 | [SRC-4405E7912C-L000056](../../tests/test_multitenant_api.py#L56) | 56 | `""` | — |
-| [SRC-4405E7912C-L000057](../../tests/test_multitenant_api.py#L57) | 57 | `"def test_api_ignores_client_tenant_id_and_blocks_cross_tenant_reads_and_updates(tenant_api):"` | — |
-| [SRC-4405E7912C-L000058](../../tests/test_multitenant_api.py#L58) | 58 | `"    base, store = tenant_api"` | — |
-| [SRC-4405E7912C-L000059](../../tests/test_multitenant_api.py#L59) | 59 | `"    token_a = \"tenant-a-token-\" + \"A\" * 32"` | — |
-| [SRC-4405E7912C-L000060](../../tests/test_multitenant_api.py#L60) | 60 | `"    token_b = \"tenant-b-token-\" + \"B\" * 32"` | — |
-| [SRC-4405E7912C-L000061](../../tests/test_multitenant_api.py#L61) | 61 | `"    tenant_a = _tenant(store, \"Company A\", \"api-a@example.test\", token_a)"` | — |
-| [SRC-4405E7912C-L000062](../../tests/test_multitenant_api.py#L62) | 62 | `"    tenant_b = _tenant(store, \"Company B\", \"api-b@example.test\", token_b)"` | — |
-| [SRC-4405E7912C-L000063](../../tests/test_multitenant_api.py#L63) | 63 | `""` | — |
-| [SRC-4405E7912C-L000064](../../tests/test_multitenant_api.py#L64) | 64 | `"    status, created_a = request_json("` | — |
-| [SRC-4405E7912C-L000065](../../tests/test_multitenant_api.py#L65) | 65 | `"        base,"` | — |
-| [SRC-4405E7912C-L000066](../../tests/test_multitenant_api.py#L66) | 66 | `"        \"/api/leads\","` | — |
-| [SRC-4405E7912C-L000067](../../tests/test_multitenant_api.py#L67) | 67 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000068](../../tests/test_multitenant_api.py#L68) | 68 | `"        token=token_a,"` | — |
-| [SRC-4405E7912C-L000069](../../tests/test_multitenant_api.py#L69) | 69 | `"        payload={"` | — |
-| [SRC-4405E7912C-L000070](../../tests/test_multitenant_api.py#L70) | 70 | `"            \"tenant_id\": tenant_b,"` | — |
-| [SRC-4405E7912C-L000071](../../tests/test_multitenant_api.py#L71) | 71 | `"            \"text\": \"Buyer A wants to purchase\","` | — |
-| [SRC-4405E7912C-L000072](../../tests/test_multitenant_api.py#L72) | 72 | `"            \"source_url\": \"https://example.test/a\","` | — |
-| [SRC-4405E7912C-L000073](../../tests/test_multitenant_api.py#L73) | 73 | `"            \"platform\": \"public\","` | — |
-| [SRC-4405E7912C-L000074](../../tests/test_multitenant_api.py#L74) | 74 | `"        },"` | — |
-| [SRC-4405E7912C-L000075](../../tests/test_multitenant_api.py#L75) | 75 | `"    )"` | — |
-| [SRC-4405E7912C-L000076](../../tests/test_multitenant_api.py#L76) | 76 | `"    assert status == 201"` | — |
-| [SRC-4405E7912C-L000077](../../tests/test_multitenant_api.py#L77) | 77 | `"    assert created_a[\"lead\"][\"tenant_id\"] == tenant_a"` | — |
-| [SRC-4405E7912C-L000078](../../tests/test_multitenant_api.py#L78) | 78 | `""` | — |
-| [SRC-4405E7912C-L000079](../../tests/test_multitenant_api.py#L79) | 79 | `"    status, created_b = request_json("` | — |

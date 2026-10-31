@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000080 إلى SRC-6BF96689A8-L000130
+- النطاق: SRC-4405E7912C-L000057 إلى SRC-6BF96689A8-L000069
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4405E7912C-L000057](../../tests/test_multitenant_api.py#L57) | 57 | `"def test_api_ignores_client_tenant_id_and_blocks_cross_tenant_reads_and_updates(tenant_api):"` | — |
+| [SRC-4405E7912C-L000058](../../tests/test_multitenant_api.py#L58) | 58 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000059](../../tests/test_multitenant_api.py#L59) | 59 | `"    token_a = \"tenant-a-token-\" + \"A\" * 32"` | — |
+| [SRC-4405E7912C-L000060](../../tests/test_multitenant_api.py#L60) | 60 | `"    token_b = \"tenant-b-token-\" + \"B\" * 32"` | — |
+| [SRC-4405E7912C-L000061](../../tests/test_multitenant_api.py#L61) | 61 | `"    tenant_a = _tenant(store, \"Company A\", \"api-a@example.test\", token_a)"` | — |
+| [SRC-4405E7912C-L000062](../../tests/test_multitenant_api.py#L62) | 62 | `"    tenant_b = _tenant(store, \"Company B\", \"api-b@example.test\", token_b)"` | — |
+| [SRC-4405E7912C-L000063](../../tests/test_multitenant_api.py#L63) | 63 | `""` | — |
+| [SRC-4405E7912C-L000064](../../tests/test_multitenant_api.py#L64) | 64 | `"    status, created_a = request_json("` | — |
+| [SRC-4405E7912C-L000065](../../tests/test_multitenant_api.py#L65) | 65 | `"        base,"` | — |
+| [SRC-4405E7912C-L000066](../../tests/test_multitenant_api.py#L66) | 66 | `"        \"/api/leads\","` | — |
+| [SRC-4405E7912C-L000067](../../tests/test_multitenant_api.py#L67) | 67 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000068](../../tests/test_multitenant_api.py#L68) | 68 | `"        token=token_a,"` | — |
+| [SRC-4405E7912C-L000069](../../tests/test_multitenant_api.py#L69) | 69 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000070](../../tests/test_multitenant_api.py#L70) | 70 | `"            \"tenant_id\": tenant_b,"` | — |
+| [SRC-4405E7912C-L000071](../../tests/test_multitenant_api.py#L71) | 71 | `"            \"text\": \"Buyer A wants to purchase\","` | — |
+| [SRC-4405E7912C-L000072](../../tests/test_multitenant_api.py#L72) | 72 | `"            \"source_url\": \"https://example.test/a\","` | — |
+| [SRC-4405E7912C-L000073](../../tests/test_multitenant_api.py#L73) | 73 | `"            \"platform\": \"public\","` | — |
+| [SRC-4405E7912C-L000074](../../tests/test_multitenant_api.py#L74) | 74 | `"        },"` | — |
+| [SRC-4405E7912C-L000075](../../tests/test_multitenant_api.py#L75) | 75 | `"    )"` | — |
+| [SRC-4405E7912C-L000076](../../tests/test_multitenant_api.py#L76) | 76 | `"    assert status == 201"` | — |
+| [SRC-4405E7912C-L000077](../../tests/test_multitenant_api.py#L77) | 77 | `"    assert created_a[\"lead\"][\"tenant_id\"] == tenant_a"` | — |
+| [SRC-4405E7912C-L000078](../../tests/test_multitenant_api.py#L78) | 78 | `""` | — |
+| [SRC-4405E7912C-L000079](../../tests/test_multitenant_api.py#L79) | 79 | `"    status, created_b = request_json("` | — |
 | [SRC-4405E7912C-L000080](../../tests/test_multitenant_api.py#L80) | 80 | `"        base,"` | — |
 | [SRC-4405E7912C-L000081](../../tests/test_multitenant_api.py#L81) | 81 | `"        \"/api/leads\","` | — |
 | [SRC-4405E7912C-L000082](../../tests/test_multitenant_api.py#L82) | 82 | `"        method=\"POST\","` | — |
@@ -96,6 +119,44 @@
 | [SRC-4405E7912C-L000157](../../tests/test_multitenant_api.py#L157) | 157 | `"    )"` | — |
 | [SRC-4405E7912C-L000158](../../tests/test_multitenant_api.py#L158) | 158 | `"    assert status == 403"` | — |
 | [SRC-4405E7912C-L000159](../../tests/test_multitenant_api.py#L159) | 159 | `"    assert \"للقراءة فقط\" in error[\"error\"]"` | — |
+| [SRC-4405E7912C-L000160](../../tests/test_multitenant_api.py#L160) | 160 | `""` | — |
+| [SRC-4405E7912C-L000161](../../tests/test_multitenant_api.py#L161) | 161 | `""` | — |
+| [SRC-4405E7912C-L000162](../../tests/test_multitenant_api.py#L162) | 162 | `""` | — |
+| [SRC-4405E7912C-L000163](../../tests/test_multitenant_api.py#L163) | 163 | `"def test_api_revokes_only_the_authenticated_api_token(tenant_api):"` | — |
+| [SRC-4405E7912C-L000164](../../tests/test_multitenant_api.py#L164) | 164 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000165](../../tests/test_multitenant_api.py#L165) | 165 | `"    tenant_id = store.create_tenant(\"Revocable Company\", \"revocable-company\")"` | — |
+| [SRC-4405E7912C-L000166](../../tests/test_multitenant_api.py#L166) | 166 | `"    user_id = store.create_user(\"revoker@example.test\", \"Token Owner\")"` | — |
+| [SRC-4405E7912C-L000167](../../tests/test_multitenant_api.py#L167) | 167 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
+| [SRC-4405E7912C-L000168](../../tests/test_multitenant_api.py#L168) | 168 | `"    token = \"revocable-token-\" + \"R\" * 32"` | — |
+| [SRC-4405E7912C-L000169](../../tests/test_multitenant_api.py#L169) | 169 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-4405E7912C-L000170](../../tests/test_multitenant_api.py#L170) | 170 | `""` | — |
+| [SRC-4405E7912C-L000171](../../tests/test_multitenant_api.py#L171) | 171 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000172](../../tests/test_multitenant_api.py#L172) | 172 | `"        base, \"/api/tokens/revoke\", method=\"POST\", token=token, payload={}"` | — |
+| [SRC-4405E7912C-L000173](../../tests/test_multitenant_api.py#L173) | 173 | `"    )"` | — |
+| [SRC-4405E7912C-L000174](../../tests/test_multitenant_api.py#L174) | 174 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000175](../../tests/test_multitenant_api.py#L175) | 175 | `"    assert result == {\"revoked\": True}"` | — |
+| [SRC-4405E7912C-L000176](../../tests/test_multitenant_api.py#L176) | 176 | `""` | — |
+| [SRC-4405E7912C-L000177](../../tests/test_multitenant_api.py#L177) | 177 | `"    status, denied = request_json(base, \"/api/leads\", token=token)"` | — |
+| [SRC-4405E7912C-L000178](../../tests/test_multitenant_api.py#L178) | 178 | `"    assert status == 401"` | — |
+| [SRC-4405E7912C-L000179](../../tests/test_multitenant_api.py#L179) | 179 | `"    assert \"رمز الوصول\" in denied[\"error\"]"` | — |
+| [SRC-4405E7912C-L000180](../../tests/test_multitenant_api.py#L180) | 180 | `""` | — |
+| [SRC-4405E7912C-L000181](../../tests/test_multitenant_api.py#L181) | 181 | `""` | — |
+| [SRC-4405E7912C-L000182](../../tests/test_multitenant_api.py#L182) | 182 | `"def test_api_does_not_claim_to_revoke_shared_environment_token("` | — |
+| [SRC-4405E7912C-L000183](../../tests/test_multitenant_api.py#L183) | 183 | `"    tenant_api, monkeypatch"` | — |
+| [SRC-4405E7912C-L000184](../../tests/test_multitenant_api.py#L184) | 184 | `"):"` | — |
+| [SRC-4405E7912C-L000185](../../tests/test_multitenant_api.py#L185) | 185 | `"    base, _ = tenant_api"` | — |
+| [SRC-4405E7912C-L000186](../../tests/test_multitenant_api.py#L186) | 186 | `"    shared_token = \"shared-application-token-\" + \"S\" * 32"` | — |
+| [SRC-4405E7912C-L000187](../../tests/test_multitenant_api.py#L187) | 187 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", shared_token)"` | — |
+| [SRC-4405E7912C-L000188](../../tests/test_multitenant_api.py#L188) | 188 | `""` | — |
+| [SRC-4405E7912C-L000189](../../tests/test_multitenant_api.py#L189) | 189 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000190](../../tests/test_multitenant_api.py#L190) | 190 | `"        base,"` | — |
+| [SRC-4405E7912C-L000191](../../tests/test_multitenant_api.py#L191) | 191 | `"        \"/api/tokens/revoke\","` | — |
+| [SRC-4405E7912C-L000192](../../tests/test_multitenant_api.py#L192) | 192 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000193](../../tests/test_multitenant_api.py#L193) | 193 | `"        token=shared_token,"` | — |
+| [SRC-4405E7912C-L000194](../../tests/test_multitenant_api.py#L194) | 194 | `"        payload={},"` | — |
+| [SRC-4405E7912C-L000195](../../tests/test_multitenant_api.py#L195) | 195 | `"    )"` | — |
+| [SRC-4405E7912C-L000196](../../tests/test_multitenant_api.py#L196) | 196 | `"    assert status == 409"` | — |
+| [SRC-4405E7912C-L000197](../../tests/test_multitenant_api.py#L197) | 197 | `"    assert \"rotated by the operator\" in result[\"error\"]"` | — |
 ## اختبارات
 
 ### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
@@ -809,64 +870,3 @@
 | [SRC-6BF96689A8-L000067](../../tests/test_research.py#L67) | 67 | `"    assert len(source_a[\"providers\"]) == 2"` | — |
 | [SRC-6BF96689A8-L000068](../../tests/test_research.py#L68) | 68 | `"    assert len(source_a[\"queries\"]) == 2"` | — |
 | [SRC-6BF96689A8-L000069](../../tests/test_research.py#L69) | 69 | `"    assert source_a[\"rank_score\"] > next("` | — |
-| [SRC-6BF96689A8-L000070](../../tests/test_research.py#L70) | 70 | `"        source[\"rank_score\"] for source in ranked if \"example.com/c\" in source[\"url\"]"` | — |
-| [SRC-6BF96689A8-L000071](../../tests/test_research.py#L71) | 71 | `"    )"` | — |
-| [SRC-6BF96689A8-L000072](../../tests/test_research.py#L72) | 72 | `""` | — |
-| [SRC-6BF96689A8-L000073](../../tests/test_research.py#L73) | 73 | `""` | — |
-| [SRC-6BF96689A8-L000074](../../tests/test_research.py#L74) | 74 | `"def test_source_classification_distinguishes_social_and_government():"` | — |
-| [SRC-6BF96689A8-L000075](../../tests/test_research.py#L75) | 75 | `"    from agents.research import classify_source"` | — |
-| [SRC-6BF96689A8-L000076](../../tests/test_research.py#L76) | 76 | `""` | — |
-| [SRC-6BF96689A8-L000077](../../tests/test_research.py#L77) | 77 | `"    assert classify_source(\"https://www.reddit.com/r/example/comments/1\")[\"platform\"] == \"reddit\""` | — |
-| [SRC-6BF96689A8-L000078](../../tests/test_research.py#L78) | 78 | `"    assert classify_source(\"https://example.gov.eg/page\")[\"source_class\"] == \"government\""` | — |
-| [SRC-6BF96689A8-L000079](../../tests/test_research.py#L79) | 79 | `""` | — |
-| [SRC-6BF96689A8-L000080](../../tests/test_research.py#L80) | 80 | `""` | — |
-| [SRC-6BF96689A8-L000081](../../tests/test_research.py#L81) | 81 | `"def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():"` | — |
-| [SRC-6BF96689A8-L000082](../../tests/test_research.py#L82) | 82 | `"    from agents.research import extract_urls"` | — |
-| [SRC-6BF96689A8-L000083](../../tests/test_research.py#L83) | 83 | `""` | — |
-| [SRC-6BF96689A8-L000084](../../tests/test_research.py#L84) | 84 | `"    question = \"حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section.\""` | — |
-| [SRC-6BF96689A8-L000085](../../tests/test_research.py#L85) | 85 | `"    plan = fallback_plan(question)"` | — |
-| [SRC-6BF96689A8-L000086](../../tests/test_research.py#L86) | 86 | `"    assert extract_urls(question) == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
-| [SRC-6BF96689A8-L000087](../../tests/test_research.py#L87) | 87 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
-| [SRC-6BF96689A8-L000088](../../tests/test_research.py#L88) | 88 | `"    assert \"https://\" not in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000089](../../tests/test_research.py#L89) | 89 | `""` | — |
-| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
-| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
-| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
-| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
-| [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `""` | — |
-| [SRC-6BF96689A8-L000098](../../tests/test_research.py#L98) | 98 | `""` | — |
-| [SRC-6BF96689A8-L000099](../../tests/test_research.py#L99) | 99 | `"def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():"` | — |
-| [SRC-6BF96689A8-L000100](../../tests/test_research.py#L100) | 100 | `"    report = evidence_signal_report(["` | — |
-| [SRC-6BF96689A8-L000101](../../tests/test_research.py#L101) | 101 | `"        {"` | — |
-| [SRC-6BF96689A8-L000102](../../tests/test_research.py#L102) | 102 | `"            \"url\": \"https://news.example.com/story\","` | — |
-| [SRC-6BF96689A8-L000103](../../tests/test_research.py#L103) | 103 | `"            \"domain\": \"news.example.com\","` | — |
-| [SRC-6BF96689A8-L000104](../../tests/test_research.py#L104) | 104 | `"            \"providers\": [\"search_a\"],"` | — |
-| [SRC-6BF96689A8-L000105](../../tests/test_research.py#L105) | 105 | `"        },"` | — |
-| [SRC-6BF96689A8-L000106](../../tests/test_research.py#L106) | 106 | `"        {"` | — |
-| [SRC-6BF96689A8-L000107](../../tests/test_research.py#L107) | 107 | `"            \"url\": \"https://offers.example.com/second-story\","` | — |
-| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"            \"domain\": \"offers.example.com\","` | — |
-| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"            \"providers\": [\"search_b\"],"` | — |
-| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"        },"` | — |
-| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"    ])"` | — |
-| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `"    assert report[\"unique_domains\"] == 1"` | — |
-| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
-| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
-| [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `""` | — |
-| [SRC-6BF96689A8-L000116](../../tests/test_research.py#L116) | 116 | `""` | — |
-| [SRC-6BF96689A8-L000117](../../tests/test_research.py#L117) | 117 | `"def test_standard_fallback_plan_does_not_add_deep_research_query():"` | — |
-| [SRC-6BF96689A8-L000118](../../tests/test_research.py#L118) | 118 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\")"` | — |
-| [SRC-6BF96689A8-L000119](../../tests/test_research.py#L119) | 119 | `"    assert plan[\"depth\"] == \"standard\""` | — |
-| [SRC-6BF96689A8-L000120](../../tests/test_research.py#L120) | 120 | `"    assert not any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000121](../../tests/test_research.py#L121) | 121 | `""` | — |
-| [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `""` | — |
-| [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():"` | — |
-| [SRC-6BF96689A8-L000124](../../tests/test_research.py#L124) | 124 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
-| [SRC-6BF96689A8-L000125](../../tests/test_research.py#L125) | 125 | `"    assert plan[\"depth\"] == \"deep\""` | — |
-| [SRC-6BF96689A8-L000126](../../tests/test_research.py#L126) | 126 | `"    assert any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000127](../../tests/test_research.py#L127) | 127 | `""` | — |
-| [SRC-6BF96689A8-L000128](../../tests/test_research.py#L128) | 128 | `""` | — |
-| [SRC-6BF96689A8-L000129](../../tests/test_research.py#L129) | 129 | `"def test_fallback_plan_expands_warranty_followup_with_previous_topic():"` | — |
-| [SRC-6BF96689A8-L000130](../../tests/test_research.py#L130) | 130 | `"    history = ["` | — |

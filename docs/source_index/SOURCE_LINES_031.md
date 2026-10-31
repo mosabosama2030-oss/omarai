@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000198 إلى SRC-4FFD5AFC54-L000652
+- النطاق: SRC-A8360B1B03-L000175 إلى SRC-4FFD5AFC54-L000629
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
+| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        }"` | — |
+| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `""` | — |
+| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    if token.strip():"` | — |
+| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        status, _ = request_json("` | — |
+| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"            f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
+| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"            timeout=min(timeout, 20),"` | — |
+| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        )"` | — |
+| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"        if status != 401:"` | — |
+| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"                f\"Unauthenticated POST /api/agent should return 401, received {status}.\","` | — |
+| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"                partial_report,"` | — |
+| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"            )"` | — |
+| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"        checks[\"authentication\"] = \"passed\""` | — |
+| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        checks[\"authentication\"] = \"local_loopback_dev_bypass\""` | — |
+| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `""` | — |
+| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
+| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"    status, diagnostics = request_json("` | — |
+| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
+| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"        payload={\"test_model\": False, \"test_social\": False}, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"    )"` | — |
+| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"    if status != 200 or not diagnostics:"` | — |
 | [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"        raise SmokeError(f\"Authenticated diagnostics failed (HTTP {status}).\", partial_report)"` | — |
 | [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"    parts = diagnostics.get(\"checks\", {})"` | — |
 | [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `"    web = parts.get(\"web_search\", {}) if isinstance(parts, dict) else {}"` | — |
@@ -802,26 +825,3 @@
 | [SRC-4FFD5AFC54-L000627](../../scripts/run_answer_quality_benchmark.py#L627) | 627 | `"                else None"` | — |
 | [SRC-4FFD5AFC54-L000628](../../scripts/run_answer_quality_benchmark.py#L628) | 628 | `"            ),"` | — |
 | [SRC-4FFD5AFC54-L000629](../../scripts/run_answer_quality_benchmark.py#L629) | 629 | `"            \"sources\": ("` | — |
-| [SRC-4FFD5AFC54-L000630](../../scripts/run_answer_quality_benchmark.py#L630) | 630 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000631](../../scripts/run_answer_quality_benchmark.py#L631) | 631 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000632](../../scripts/run_answer_quality_benchmark.py#L632) | 632 | `"            \"status\": \"NOT_TESTED\","` | — |
-| [SRC-4FFD5AFC54-L000633](../../scripts/run_answer_quality_benchmark.py#L633) | 633 | `"            \"transport_ok\": transport_ok,"` | — |
-| [SRC-4FFD5AFC54-L000634](../../scripts/run_answer_quality_benchmark.py#L634) | 634 | `"            \"reviewer_notes\": ("` | — |
-| [SRC-4FFD5AFC54-L000635](../../scripts/run_answer_quality_benchmark.py#L635) | 635 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
-| [SRC-4FFD5AFC54-L000636](../../scripts/run_answer_quality_benchmark.py#L636) | 636 | `"                if transport_ok"` | — |
-| [SRC-4FFD5AFC54-L000637](../../scripts/run_answer_quality_benchmark.py#L637) | 637 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
-| [SRC-4FFD5AFC54-L000638](../../scripts/run_answer_quality_benchmark.py#L638) | 638 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000639](../../scripts/run_answer_quality_benchmark.py#L639) | 639 | `"            \"evidence_fixture_injected\": False,"` | — |
-| [SRC-4FFD5AFC54-L000640](../../scripts/run_answer_quality_benchmark.py#L640) | 640 | `"        }"` | — |
-| [SRC-4FFD5AFC54-L000641](../../scripts/run_answer_quality_benchmark.py#L641) | 641 | `"        results.append(record)"` | — |
-| [SRC-4FFD5AFC54-L000642](../../scripts/run_answer_quality_benchmark.py#L642) | 642 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
-| [SRC-4FFD5AFC54-L000643](../../scripts/run_answer_quality_benchmark.py#L643) | 643 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
-| [SRC-4FFD5AFC54-L000644](../../scripts/run_answer_quality_benchmark.py#L644) | 644 | `"        if delay > 0:"` | — |
-| [SRC-4FFD5AFC54-L000645](../../scripts/run_answer_quality_benchmark.py#L645) | 645 | `"            time.sleep(delay)"` | — |
-| [SRC-4FFD5AFC54-L000646](../../scripts/run_answer_quality_benchmark.py#L646) | 646 | `""` | — |
-| [SRC-4FFD5AFC54-L000647](../../scripts/run_answer_quality_benchmark.py#L647) | 647 | `"    envelope = {"` | — |
-| [SRC-4FFD5AFC54-L000648](../../scripts/run_answer_quality_benchmark.py#L648) | 648 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000649](../../scripts/run_answer_quality_benchmark.py#L649) | 649 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
-| [SRC-4FFD5AFC54-L000650](../../scripts/run_answer_quality_benchmark.py#L650) | 650 | `"        \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000651](../../scripts/run_answer_quality_benchmark.py#L651) | 651 | `"        \"build_sha\": verified_build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000652](../../scripts/run_answer_quality_benchmark.py#L652) | 652 | `"        \"build_sha_verification\": \"confirmed_by_api_health\","` | — |

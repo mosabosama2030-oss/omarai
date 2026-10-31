@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-53E640B937-L000088 إلى SRC-E73001D9AC-L000652
+- النطاق: SRC-53E640B937-L000065 إلى SRC-E73001D9AC-L000629
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-53E640B937-L000065](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L65) | 65 | `"- لا دمج ولا نشر مستضاف من دون قرار المدير البشري."` | — |
+| [SRC-53E640B937-L000066](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L66) | 66 | `""` | — |
+| [SRC-53E640B937-L000067](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L67) | 67 | `""` | — |
+| [SRC-53E640B937-L000068](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L68) | 68 | `"## إضافة تالية لنظام التقييم — 28 أكتوبر 2026"` | — |
+| [SRC-53E640B937-L000069](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L69) | 69 | `""` | — |
+| [SRC-53E640B937-L000070](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L70) | 70 | ``"أضيف إلى الفرع سكربت محلي دون اتصال باسم `scripts/score_answer_quality_reviews.py` لاشتقاق:"`` | — |
+| [SRC-53E640B937-L000071](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L71) | 71 | `"- Retrieval Precision وRecall من عدّ مرشحين ذوي صلة ومجموع المرشحين والمصادر/الحقائق ذات الصلة المتاحة."` | — |
+| [SRC-53E640B937-L000072](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L72) | 72 | `"- Faithfulness من عدد الادعاءات التي حكم المراجع بأنها مسندة إلى دليل وعدد الادعاءات التي راجعها."` | — |
+| [SRC-53E640B937-L000073](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L73) | 73 | `"- Correctness من الحقائق التي حكم المراجع بصحتها من مجموع الحقائق التي راجعها."` | — |
+| [SRC-53E640B937-L000074](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L74) | 74 | `"- Citation Support من الاستشهادات التي وجد المراجع أنها تسند الجملة من الاستشهادات التي فحصها."` | — |
+| [SRC-53E640B937-L000075](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L75) | 75 | `"- جودة الكتابة من تقييم بشري من 1 إلى 5."` | — |
+| [SRC-53E640B937-L000076](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L76) | 76 | `""` | — |
+| [SRC-53E640B937-L000077](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L77) | 77 | ``"يقبل السكربت أحكامًا صريحة فقط، ويرفض معرفات الحالات المجهولة والقيم غير المتسقة، ويبقي كل حالة غير مراجعة في `NOT_TESTED`. المقاييس تجميعية من تعليقات بشرية وليست درجات RAGAS أو تقييمًا آليًا. لا تُملأ أي نتائج تجريبية نيابة عن المراجع."`` | — |
+| [SRC-53E640B937-L000078](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L78) | 78 | `""` | — |
+| [SRC-53E640B937-L000079](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L79) | 79 | `""` | — |
+| [SRC-53E640B937-L000080](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L80) | 80 | `"### قاعدة أمثلة أسلوبية موجهة"` | — |
+| [SRC-53E640B937-L000081](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L81) | 81 | `"تتضمن مطالبة التوليد الآن مثالين قصيرين: استشهاد مضبوط بحدود ما يقوله المصدر، وامتناع صريح عندما لا تتضمن النتائج دليلًا كافيًا. المثال معلن على أنه توضيحي ولا يجوز نقل وقائعه للإجابة الحالية ما لم تؤيدها المصادر الفعلية؛ أضيف اختبار وحدات للتحقق من وصول القاعدة إلى مطالبة التوليد."` | — |
+| [SRC-53E640B937-L000082](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L82) | 82 | `""` | — |
+| [SRC-53E640B937-L000083](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L83) | 83 | `""` | — |
+| [SRC-53E640B937-L000084](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L84) | 84 | `"### تشغيل التقييم البشري القابل للتكرار"` | — |
+| [SRC-53E640B937-L000085](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L85) | 85 | `""` | — |
+| [SRC-53E640B937-L000086](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L86) | 86 | `"أداة تجميع المقاييس لا تستدعي النموذج ولا تزعم تقييمًا تلقائيًا. ينشئ المراجع ملف JSON مستقلًا مثل المثال التالي؛ **الأرقام توضيحية وهمية لشرح المخطط فقط وليست نتائج Omarai**:"` | — |
+| [SRC-53E640B937-L000087](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L87) | 87 | `""` | — |
 | [SRC-53E640B937-L000088](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L88) | 88 | ````"```json"```` | — |
 | [SRC-53E640B937-L000089](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L89) | 89 | `"{"` | — |
 | [SRC-53E640B937-L000090](../OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L90) | 90 | `"  \"schema_version\": \"1.0\","` | — |
@@ -811,26 +834,3 @@
 | [SRC-E73001D9AC-L000627](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L627) | 627 | `""` | — |
 | [SRC-E73001D9AC-L000628](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L628) | 628 | `"**المرحلة G — التوسع**"` | — |
 | [SRC-E73001D9AC-L000629](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L629) | 629 | `"- الانتقال من عملية واحدة إلى عمال أو طوابير أو نسخ أفقية فقط عندما تثبت القياسات الحاجة والجدوى."` | — |
-| [SRC-E73001D9AC-L000630](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L630) | 630 | `"- ترحيل التخزين عند بلوغ حدود الأداء أو التوافر الموثقة."` | — |
-| [SRC-E73001D9AC-L000631](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L631) | 631 | `"- إعادة اختبارات السعة والأمن بعد كل تغير معماري مؤثر."` | — |
-| [SRC-E73001D9AC-L000632](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L632) | 632 | `""` | — |
-| [SRC-E73001D9AC-L000633](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L633) | 633 | `"كل مرحلة لها معايير دخول وخروج وأدلة، ولا تُعد منجزة بمجرد كتابة خطة لها."` | — |
-| [SRC-E73001D9AC-L000634](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L634) | 634 | `""` | — |
-| [SRC-E73001D9AC-L000635](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L635) | 635 | `"---"` | — |
-| [SRC-E73001D9AC-L000636](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L636) | 636 | `""` | — |
-| [SRC-E73001D9AC-L000637](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L637) | 637 | `""` | — |
-| [SRC-E73001D9AC-L000638](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L638) | 638 | `"### ترتيب توسيع القدرات والمهارات والوكلاء"` | — |
-| [SRC-E73001D9AC-L000639](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L639) | 639 | `""` | — |
-| [SRC-E73001D9AC-L000640](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L640) | 640 | `"المراحل A–G أعلاه تغطي الجرد والحماية والاعتمادية والقياس والمعرفة والاستعداد التشغيلي والتوسع. وداخل هذه المراحل، يكون ترتيب بناء قدرات الذكاء الاصطناعي هو: (1) إثبات الحالة والاختبارات، (2) عقود الأدوات وفرض الصلاحيات، (3) المهارات وسير العمل، (4) مواصفات المهام والتركيب المحدود من العناصر المعتمدة، (5) تقييم الحاجة إلى Meta-Agent يولد مسودات فقط، (6) دراسة توليد الكود كقرار مستقبلي اختياري. هذا ترتيب متخصص يكمّل المراحل ولا يلغيها أو يستبدل متطلبات الأمن والتشغيل."` | — |
-| [SRC-E73001D9AC-L000641](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L641) | 641 | `""` | — |
-| [SRC-E73001D9AC-L000642](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L642) | 642 | `"**بوابة التوسع:** لا ننتقل إلى إنشاء الوكلاء لمجرد انتهاء المرحلة السابقة؛ يلزم دليل على حاجة لا تغطيها المهارات وسير العمل بصورة مناسبة، ومقارنة مفيدة في الجودة والكلفة والصيانة والمخاطر. لا يثبت نجاح الاختبارات التي كتبها النموذج لنفسه أمان التنفيذ، ولا تُفعل قدرة جديدة دون مراجعة مستقلة مناسبة وموافقة بشرية عند اللزوم."` | — |
-| [SRC-E73001D9AC-L000643](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L643) | 643 | `""` | — |
-| [SRC-E73001D9AC-L000644](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L644) | 644 | `"التفصيل المرجعي وبوابات قبول كل مرحلة وارد في [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md)."` | — |
-| [SRC-E73001D9AC-L000645](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L645) | 645 | `""` | — |
-| [SRC-E73001D9AC-L000646](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L646) | 646 | `"---"` | — |
-| [SRC-E73001D9AC-L000647](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) | 647 | `""` | — |
-| [SRC-E73001D9AC-L000648](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L648) | 648 | `"# الجزء العاشر — معمارية التوسع والتطوير المستمر"` | — |
-| [SRC-E73001D9AC-L000649](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L649) | 649 | `""` | — |
-| [SRC-E73001D9AC-L000650](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L650) | 650 | `"هذا الجزء متطلب تأسيسي مستقل. الغرض ليس توقع كل ميزة مستقبلية، بل بناء نظام يمكنه استيعاب التغيير بأقل كلفة ومخاطر ممكنة، مع الحفاظ على التوافق والأمان والموثوقية."` | — |
-| [SRC-E73001D9AC-L000651](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L651) | 651 | `""` | — |
-| [SRC-E73001D9AC-L000652](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L652) | 652 | `"## 19. النتيجة المعمارية المستهدفة"` | — |

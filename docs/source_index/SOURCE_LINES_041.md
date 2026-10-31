@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000602 إلى SRC-EA6EC52573-L000150
+- النطاق: SRC-829A979985-L000579 إلى SRC-EA6EC52573-L000127
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000579](../../tests/test_generation_acceptance_matrix.py#L579) | 579 | `"    assert result[\"answer_coverage\"][\"automatically_graded\"] is False"` | — |
+| [SRC-829A979985-L000580](../../tests/test_generation_acceptance_matrix.py#L580) | 580 | `"    assert result[\"answer_coverage\"][\"status\"] == \"model_review_requested_not_machine_verified\""` | — |
+| [SRC-829A979985-L000581](../../tests/test_generation_acceptance_matrix.py#L581) | 581 | `"    assert \"السعر الإجمالي\" in result[\"answer\"]"` | — |
+| [SRC-829A979985-L000582](../../tests/test_generation_acceptance_matrix.py#L582) | 582 | `"    assert \"البيانات الناقصة\" in result[\"answer\"]"` | — |
+| [SRC-829A979985-L000583](../../tests/test_generation_acceptance_matrix.py#L583) | 583 | `"    assert result[\"citation_validation\"][\"method\"] == \"numeric_source_index_range_only\""` | — |
+| [SRC-829A979985-L000584](../../tests/test_generation_acceptance_matrix.py#L584) | 584 | `"    assert result[\"answer_integrity\"][\"method\"] == \"deterministic_lexical_screen_only\""` | — |
+| [SRC-829A979985-L000585](../../tests/test_generation_acceptance_matrix.py#L585) | 585 | `"    assert result[\"answer_integrity\"][\"semantic_verification\"] is False"` | — |
+| [SRC-829A979985-L000586](../../tests/test_generation_acceptance_matrix.py#L586) | 586 | `"    assert result[\"search_report\"][\"answer_integrity\"] == result[\"answer_integrity\"]"` | — |
+| [SRC-829A979985-L000587](../../tests/test_generation_acceptance_matrix.py#L587) | 587 | `"    assert result[\"answer_integrity\"][\"pages_with_extracted_text\"] == 1"` | — |
+| [SRC-829A979985-L000588](../../tests/test_generation_acceptance_matrix.py#L588) | 588 | `"    assert result[\"answer_integrity\"][\"potentially_missing_target_count\"] >= 0"` | — |
+| [SRC-829A979985-L000589](../../tests/test_generation_acceptance_matrix.py#L589) | 589 | `""` | — |
+| [SRC-829A979985-L000590](../../tests/test_generation_acceptance_matrix.py#L590) | 590 | `""` | — |
+| [SRC-829A979985-L000591](../../tests/test_generation_acceptance_matrix.py#L591) | 591 | `"@pytest.mark.parametrize("` | — |
+| [SRC-829A979985-L000592](../../tests/test_generation_acceptance_matrix.py#L592) | 592 | `"    \"malformed_review\","` | — |
+| [SRC-829A979985-L000593](../../tests/test_generation_acceptance_matrix.py#L593) | 593 | `"    ["` | — |
+| [SRC-829A979985-L000594](../../tests/test_generation_acceptance_matrix.py#L594) | 594 | `"        \"إجابة من دون أي علامات فصل\","` | — |
+| [SRC-829A979985-L000595](../../tests/test_generation_acceptance_matrix.py#L595) | 595 | `"        \"<<<OMARAI_FINAL_ANSWER>>>إجابة بلا علامة نهاية\","` | — |
+| [SRC-829A979985-L000596](../../tests/test_generation_acceptance_matrix.py#L596) | 596 | `"        \"<<<OMARAI_FINAL_ANSWER>>>إجابة<<<END_OMARAI_FINAL_ANSWER>>> نص زائد خارج الإجابة\","` | — |
+| [SRC-829A979985-L000597](../../tests/test_generation_acceptance_matrix.py#L597) | 597 | `"    ],"` | — |
+| [SRC-829A979985-L000598](../../tests/test_generation_acceptance_matrix.py#L598) | 598 | `")"` | — |
+| [SRC-829A979985-L000599](../../tests/test_generation_acceptance_matrix.py#L599) | 599 | `"def test_reviewer_rejects_missing_or_unbounded_final_answer_delimiters("` | — |
+| [SRC-829A979985-L000600](../../tests/test_generation_acceptance_matrix.py#L600) | 600 | `"    monkeypatch, malformed_review"` | — |
+| [SRC-829A979985-L000601](../../tests/test_generation_acceptance_matrix.py#L601) | 601 | `"):"` | — |
 | [SRC-829A979985-L000602](../../tests/test_generation_acceptance_matrix.py#L602) | 602 | `"    agent = WebAgent()"` | — |
 | [SRC-829A979985-L000603](../../tests/test_generation_acceptance_matrix.py#L603) | 603 | `"    monkeypatch.setattr("` | — |
 | [SRC-829A979985-L000604](../../tests/test_generation_acceptance_matrix.py#L604) | 604 | `"        agent,"` | — |
@@ -829,26 +852,3 @@
 | [SRC-EA6EC52573-L000125](../../tests/test_intent_router.py#L125) | 125 | `""` | — |
 | [SRC-EA6EC52573-L000126](../../tests/test_intent_router.py#L126) | 126 | `""` | — |
 | [SRC-EA6EC52573-L000127](../../tests/test_intent_router.py#L127) | 127 | `"@pytest.mark.parametrize("` | — |
-| [SRC-EA6EC52573-L000128](../../tests/test_intent_router.py#L128) | 128 | `"    \"question\","` | — |
-| [SRC-EA6EC52573-L000129](../../tests/test_intent_router.py#L129) | 129 | `"    ["` | — |
-| [SRC-EA6EC52573-L000130](../../tests/test_intent_router.py#L130) | 130 | `"        \"فين؟\","` | — |
-| [SRC-EA6EC52573-L000131](../../tests/test_intent_router.py#L131) | 131 | `"        \"فين هي؟\","` | — |
-| [SRC-EA6EC52573-L000132](../../tests/test_intent_router.py#L132) | 132 | `"        \"مكانها فين؟\","` | — |
-| [SRC-EA6EC52573-L000133](../../tests/test_intent_router.py#L133) | 133 | `"        \"هل فيه ضمان؟\","` | — |
-| [SRC-EA6EC52573-L000134](../../tests/test_intent_router.py#L134) | 134 | `"        \"هل لها ضمان؟\","` | — |
-| [SRC-EA6EC52573-L000135](../../tests/test_intent_router.py#L135) | 135 | `"        \"ضمانها إيه؟\","` | — |
-| [SRC-EA6EC52573-L000136](../../tests/test_intent_router.py#L136) | 136 | `"        \"Where is it?\","` | — |
-| [SRC-EA6EC52573-L000137](../../tests/test_intent_router.py#L137) | 137 | `"        \"Does it have a warranty?\","` | — |
-| [SRC-EA6EC52573-L000138](../../tests/test_intent_router.py#L138) | 138 | `"    ],"` | — |
-| [SRC-EA6EC52573-L000139](../../tests/test_intent_router.py#L139) | 139 | `")"` | — |
-| [SRC-EA6EC52573-L000140](../../tests/test_intent_router.py#L140) | 140 | `"def test_missing_referent_questions_clarify_without_context(question: str) -> None:"` | — |
-| [SRC-EA6EC52573-L000141](../../tests/test_intent_router.py#L141) | 141 | `"    decision = route_intent(question, history=None, mode=\"auto\", requires_web=True)"` | — |
-| [SRC-EA6EC52573-L000142](../../tests/test_intent_router.py#L142) | 142 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
-| [SRC-EA6EC52573-L000143](../../tests/test_intent_router.py#L143) | 143 | `"    assert decision[\"needs_clarification\"] is True"` | — |
-| [SRC-EA6EC52573-L000144](../../tests/test_intent_router.py#L144) | 144 | `"    assert decision[\"context_available\"] is False"` | — |
-| [SRC-EA6EC52573-L000145](../../tests/test_intent_router.py#L145) | 145 | `""` | — |
-| [SRC-EA6EC52573-L000146](../../tests/test_intent_router.py#L146) | 146 | `""` | — |
-| [SRC-EA6EC52573-L000147](../../tests/test_intent_router.py#L147) | 147 | `"@pytest.mark.parametrize(\"question\", [\"فين؟\", \"هل فيه ضمان؟\", \"كام سعرها؟\"])"` | — |
-| [SRC-EA6EC52573-L000148](../../tests/test_intent_router.py#L148) | 148 | `"def test_missing_referent_still_clarifies_in_explicit_search_mode(question: str) -> None:"` | — |
-| [SRC-EA6EC52573-L000149](../../tests/test_intent_router.py#L149) | 149 | `"    decision = route_intent(question, history=None, mode=\"deep\")"` | — |
-| [SRC-EA6EC52573-L000150](../../tests/test_intent_router.py#L150) | 150 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |

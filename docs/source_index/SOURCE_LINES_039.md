@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000286 إلى SRC-FA4E1423C3-L000276
+- النطاق: SRC-29A9CD43D1-L000263 إلى SRC-FA4E1423C3-L000253
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000263](../../tests/test_dialogue_context_pipeline.py#L263) | 263 | `"                \"web_search_skipped\": True,"` | — |
+| [SRC-29A9CD43D1-L000264](../../tests/test_dialogue_context_pipeline.py#L264) | 264 | `"            },"` | — |
+| [SRC-29A9CD43D1-L000265](../../tests/test_dialogue_context_pipeline.py#L265) | 265 | `"            \"sources\": [],"` | — |
+| [SRC-29A9CD43D1-L000266](../../tests/test_dialogue_context_pipeline.py#L266) | 266 | `"            \"used_language_model\": True,"` | — |
+| [SRC-29A9CD43D1-L000267](../../tests/test_dialogue_context_pipeline.py#L267) | 267 | `"            \"used_web_search\": False,"` | — |
+| [SRC-29A9CD43D1-L000268](../../tests/test_dialogue_context_pipeline.py#L268) | 268 | `"            \"search_attempted\": False,"` | — |
+| [SRC-29A9CD43D1-L000269](../../tests/test_dialogue_context_pipeline.py#L269) | 269 | `"            \"used_social_search\": False,"` | — |
+| [SRC-29A9CD43D1-L000270](../../tests/test_dialogue_context_pipeline.py#L270) | 270 | `"            \"warnings\": [],"` | — |
+| [SRC-29A9CD43D1-L000271](../../tests/test_dialogue_context_pipeline.py#L271) | 271 | `"            \"kind\": \"general_answer\","` | — |
+| [SRC-29A9CD43D1-L000272](../../tests/test_dialogue_context_pipeline.py#L272) | 272 | `"            \"research_quality\": \"not_applicable\","` | — |
+| [SRC-29A9CD43D1-L000273](../../tests/test_dialogue_context_pipeline.py#L273) | 273 | `"            \"model_calls\": [],"` | — |
+| [SRC-29A9CD43D1-L000274](../../tests/test_dialogue_context_pipeline.py#L274) | 274 | `"        }"` | — |
+| [SRC-29A9CD43D1-L000275](../../tests/test_dialogue_context_pipeline.py#L275) | 275 | `""` | — |
+| [SRC-29A9CD43D1-L000276](../../tests/test_dialogue_context_pipeline.py#L276) | 276 | `"    def forbidden_search(*args, **kwargs):"` | — |
+| [SRC-29A9CD43D1-L000277](../../tests/test_dialogue_context_pipeline.py#L277) | 277 | `"        pytest.fail(\"This contextual study-plan question must not start web search.\")"` | — |
+| [SRC-29A9CD43D1-L000278](../../tests/test_dialogue_context_pipeline.py#L278) | 278 | `""` | — |
+| [SRC-29A9CD43D1-L000279](../../tests/test_dialogue_context_pipeline.py#L279) | 279 | `"    monkeypatch.setattr(agent, \"_request_completion\", mocked_completion)"` | — |
+| [SRC-29A9CD43D1-L000280](../../tests/test_dialogue_context_pipeline.py#L280) | 280 | `"    monkeypatch.setattr(agent, \"_answer_without_search\", answer_without_search)"` | — |
+| [SRC-29A9CD43D1-L000281](../../tests/test_dialogue_context_pipeline.py#L281) | 281 | `"    monkeypatch.setattr(agent, \"_collect_research\", forbidden_search)"` | — |
+| [SRC-29A9CD43D1-L000282](../../tests/test_dialogue_context_pipeline.py#L282) | 282 | `""` | — |
+| [SRC-29A9CD43D1-L000283](../../tests/test_dialogue_context_pipeline.py#L283) | 283 | `"    result = agent.answer(question, history=history)"` | — |
+| [SRC-29A9CD43D1-L000284](../../tests/test_dialogue_context_pipeline.py#L284) | 284 | `""` | — |
+| [SRC-29A9CD43D1-L000285](../../tests/test_dialogue_context_pipeline.py#L285) | 285 | `"    assert seen[\"context_calls\"] == 1"` | — |
 | [SRC-29A9CD43D1-L000286](../../tests/test_dialogue_context_pipeline.py#L286) | 286 | `"    assert \"الكيمياء\" in seen[\"resolved_question\"]"` | — |
 | [SRC-29A9CD43D1-L000287](../../tests/test_dialogue_context_pipeline.py#L287) | 287 | `"    assert \"ساعتين\" in seen[\"resolved_question\"]"` | — |
 | [SRC-29A9CD43D1-L000288](../../tests/test_dialogue_context_pipeline.py#L288) | 288 | `"    assert \"الاتزان الكيميائي\" in seen[\"resolved_question\"]"` | — |
@@ -829,26 +852,3 @@
 | [SRC-FA4E1423C3-L000251](../../tests/test_generate_index.py#L251) | 251 | `"    assert INDEXER.main([\"--root\", str(tmp_path)]) == 0"` | — |
 | [SRC-FA4E1423C3-L000252](../../tests/test_generate_index.py#L252) | 252 | `"    assert INDEXER.main([\"--root\", str(tmp_path), \"--check\"]) == 0"` | — |
 | [SRC-FA4E1423C3-L000253](../../tests/test_generate_index.py#L253) | 253 | `""` | — |
-| [SRC-FA4E1423C3-L000254](../../tests/test_generate_index.py#L254) | 254 | `""` | — |
-| [SRC-FA4E1423C3-L000255](../../tests/test_generate_index.py#L255) | 255 | `"def test_indexes_every_eligible_text_line_with_file_and_line_ids(tmp_path: Path) -> None:"` | — |
-| [SRC-FA4E1423C3-L000256](../../tests/test_generate_index.py#L256) | 256 | `"    \"\"\"All readable text lines, including blank lines and unfamiliar extensions, are searchable.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000257](../../tests/test_generate_index.py#L257) | 257 | `"    (tmp_path / \"app.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000258](../../tests/test_generate_index.py#L258) | 258 | `"        'VALUE = 1\\n\\n'"` | — |
-| [SRC-FA4E1423C3-L000259](../../tests/test_generate_index.py#L259) | 259 | `"        'def greet():\\n'"` | — |
-| [SRC-FA4E1423C3-L000260](../../tests/test_generate_index.py#L260) | 260 | `"        '    return \"hello\"\\n',"` | — |
-| [SRC-FA4E1423C3-L000261](../../tests/test_generate_index.py#L261) | 261 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000262](../../tests/test_generate_index.py#L262) | 262 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000263](../../tests/test_generate_index.py#L263) | 263 | `"    docs_dir = tmp_path / \"docs\""` | — |
-| [SRC-FA4E1423C3-L000264](../../tests/test_generate_index.py#L264) | 264 | `"    docs_dir.mkdir()"` | — |
-| [SRC-FA4E1423C3-L000265](../../tests/test_generate_index.py#L265) | 265 | `"    (docs_dir / \"guide.txt\").write_text("` | — |
-| [SRC-FA4E1423C3-L000266](../../tests/test_generate_index.py#L266) | 266 | `"        \"First documented step.\\nSecond documented step.\\n\","` | — |
-| [SRC-FA4E1423C3-L000267](../../tests/test_generate_index.py#L267) | 267 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000268](../../tests/test_generate_index.py#L268) | 268 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000269](../../tests/test_generate_index.py#L269) | 269 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_TOKEN=do-not-index\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000270](../../tests/test_generate_index.py#L270) | 270 | `"    (tmp_path / \"payload.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
-| [SRC-FA4E1423C3-L000271](../../tests/test_generate_index.py#L271) | 271 | `""` | — |
-| [SRC-FA4E1423C3-L000272](../../tests/test_generate_index.py#L272) | 272 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000273](../../tests/test_generate_index.py#L273) | 273 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000274](../../tests/test_generate_index.py#L274) | 274 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000275](../../tests/test_generate_index.py#L275) | 275 | `"    line_by_file_and_number = {(line.file, line.line): line for line in source_lines}"` | — |
-| [SRC-FA4E1423C3-L000276](../../tests/test_generate_index.py#L276) | 276 | `"    pages, pages_by_file = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B335630551-L000128 إلى SRC-A8360B1B03-L000197
+- النطاق: SRC-B335630551-L000105 إلى SRC-A8360B1B03-L000174
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق ونصوص
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B335630551-L000105](../../README.md#L105) | 105 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000106](../../README.md#L106) | 106 | `"printf '\\n'"` | — |
+| [SRC-B335630551-L000107](../../README.md#L107) | 107 | `"export OPENROUTER_API_KEY"` | — |
+| [SRC-B335630551-L000108](../../README.md#L108) | 108 | `"python -m cli.omarai serve"` | — |
+| [SRC-B335630551-L000109](../../README.md#L109) | 109 | ````"```"```` | — |
+| [SRC-B335630551-L000110](../../README.md#L110) | 110 | `""` | — |
+| [SRC-B335630551-L000111](../../README.md#L111) | 111 | `"Keep this Termux session running and open **http://127.0.0.1:8765** in the phone's browser. The agent chat is the home screen. The existing lead workspace remains available at **http://127.0.0.1:8765/leads**."` | — |
+| [SRC-B335630551-L000112](../../README.md#L112) | 112 | `""` | — |
+| [SRC-B335630551-L000113](../../README.md#L113) | 113 | `"The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat."` | — |
+| [SRC-B335630551-L000114](../../README.md#L114) | 114 | `""` | — |
+| [SRC-B335630551-L000115](../../README.md#L115) | 115 | `"### Optional configuration"` | — |
+| [SRC-B335630551-L000116](../../README.md#L116) | 116 | `""` | — |
+| [SRC-B335630551-L000117](../../README.md#L117) | 117 | `"For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics."` | — |
+| [SRC-B335630551-L000118](../../README.md#L118) | 118 | `""` | — |
+| [SRC-B335630551-L000119](../../README.md#L119) | 119 | ````"```bash"```` | — |
+| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-B335630551-L000121](../../README.md#L121) | 121 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-B335630551-L000122](../../README.md#L122) | 122 | ````"```"```` | — |
+| [SRC-B335630551-L000123](../../README.md#L123) | 123 | `""` | — |
+| [SRC-B335630551-L000124](../../README.md#L124) | 124 | `""` | — |
+| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
+| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
+| [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |
 | [SRC-B335630551-L000128](../../README.md#L128) | 128 | `"export OMARAI_LLM_BASE_URL=\"https://openrouter.ai/api/v1\""` | — |
 | [SRC-B335630551-L000129](../../README.md#L129) | 129 | `"export OMARAI_LLM_MODEL=\"openrouter/free\""` | — |
 | [SRC-B335630551-L000130](../../README.md#L130) | 130 | ````"```"```` | — |
@@ -829,26 +852,3 @@
 | [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"    else:"` | — |
 | [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        checks[\"build_identity\"] = {"` | — |
 | [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"            \"status\": \"not_checked\","` | — |
-| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
-| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        }"` | — |
-| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `""` | — |
-| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    if token.strip():"` | — |
-| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"        status, _ = request_json("` | — |
-| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"            f\"{origin}/api/agent\", payload={\"question\": \"اختبار رفض الوصول غير المصرح به\"},"` | — |
-| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"            timeout=min(timeout, 20),"` | — |
-| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        )"` | — |
-| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"        if status != 401:"` | — |
-| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"            raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"                f\"Unauthenticated POST /api/agent should return 401, received {status}.\","` | — |
-| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"                partial_report,"` | — |
-| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"            )"` | — |
-| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"        checks[\"authentication\"] = \"passed\""` | — |
-| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"    else:"` | — |
-| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        checks[\"authentication\"] = \"local_loopback_dev_bypass\""` | — |
-| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `""` | — |
-| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"    # These are real network/provider calls and may incur model/search usage."` | — |
-| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"    status, diagnostics = request_json("` | — |
-| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"        f\"{origin}/api/diagnostics\", token=token,"` | — |
-| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"        payload={\"test_model\": False, \"test_social\": False}, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"    )"` | — |
-| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"    if status != 200 or not diagnostics:"` | — |

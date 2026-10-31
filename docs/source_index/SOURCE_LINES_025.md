@@ -4,7 +4,7 @@
 
 - الصفحة: **025**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000550 إلى SRC-B2C95EAEE1-L000094
+- النطاق: SRC-D17CE3D12F-L000527 إلى SRC-B2C95EAEE1-L000071
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000527](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L527) | 527 | `"10. MUST التمييز بين التكلفة النقدية وتكلفة وقت المطور والمخاطر التشغيلية."` | — |
+| [SRC-D17CE3D12F-L000528](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L528) | 528 | `""` | — |
+| [SRC-D17CE3D12F-L000529](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L529) | 529 | `"## 36. الاستدامة وكفاءة الموارد"` | — |
+| [SRC-D17CE3D12F-L000530](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L530) | 530 | `""` | — |
+| [SRC-D17CE3D12F-L000531](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L531) | 531 | `"1. SHOULD تقليل العمل المكرر والتحميل غير الضروري والطلبات التي لا تضيف قيمة، بما يخفض الكلفة واستهلاك الموارد."` | — |
+| [SRC-D17CE3D12F-L000532](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L532) | 532 | `"2. SHOULD اختيار أحجام موارد مناسبة بدل الإفراط في تخصيصها أو جعلها قريبة من حد الانهيار."` | — |
+| [SRC-D17CE3D12F-L000533](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L533) | 533 | `"3. MUST عدم التضحية بالأمان أو سلامة النتيجة من أجل تخفيض تكلفة صغير."` | — |
+| [SRC-D17CE3D12F-L000534](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L534) | 534 | `"4. SHOULD قياس الأثر عندما يصبح استهلاك الموارد مهمًا، بدل إطلاق ادعاءات بيئية غير مقاسة."` | — |
+| [SRC-D17CE3D12F-L000535](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L535) | 535 | `"5. MUST تصميم حدود الموارد كجزء من الأمان والموثوقية، لا باعتبارها تحسينًا ماليًا فقط."` | — |
+| [SRC-D17CE3D12F-L000536](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L536) | 536 | `""` | — |
+| [SRC-D17CE3D12F-L000537](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L537) | 537 | `"## 37. الاعتمادية على الموردين وقابلية النقل"` | — |
+| [SRC-D17CE3D12F-L000538](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L538) | 538 | `""` | — |
+| [SRC-D17CE3D12F-L000539](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L539) | 539 | `"1. MUST تسجيل كل خدمة خارجية حرجة، وما البيانات التي ترسل إليها، وحدود حصتها، وشروطها المؤثرة، وطريقة كشف تعطلها."` | — |
+| [SRC-D17CE3D12F-L000540](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L540) | 540 | `"2. SHOULD عزل تفاصيل الموفر في adapter لتسهيل التبديل، مع الاعتراف بأن التكافؤ بين النماذج/المصادر غير مضمون."` | — |
+| [SRC-D17CE3D12F-L000541](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L541) | 541 | `"3. MUST تحديد ما الذي يستمر في العمل عند فقد كل موفر: الواجهة، والأسئلة غير المعتمدة على البحث، ونتائج cache المناسبة، ورسالة الفشل."` | — |
+| [SRC-D17CE3D12F-L000542](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L542) | 542 | `"4. SHOULD الاحتفاظ بخطة تصدير للبيانات الأساسية ونقلها من الاستضافة/المخزن، وفق الإمكانات الفعلية."` | — |
+| [SRC-D17CE3D12F-L000543](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L543) | 543 | `"5. MUST عدم الاعتماد على ميزة مجانية حساسة دون خطة بديلة أو التصريح بأن الخدمة قد تتوقف عند انتهاء الحصة."` | — |
+| [SRC-D17CE3D12F-L000544](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L544) | 544 | `"6. MUST عدم نقل أسرار أو بيانات خاصة إلى موفر احتياطي دون السماح بذلك بنفس سياسة الخصوصية والأمن."` | — |
+| [SRC-D17CE3D12F-L000545](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L545) | 545 | `"7. SHOULD اختبار fallbacks فعليًا بصورة دورية، لا افتراض أنها تعمل لأنها مذكورة في الإعداد."` | — |
+| [SRC-D17CE3D12F-L000546](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L546) | 546 | `""` | — |
+| [SRC-D17CE3D12F-L000547](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L547) | 547 | `"---"` | — |
+| [SRC-D17CE3D12F-L000548](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L548) | 548 | `""` | — |
+| [SRC-D17CE3D12F-L000549](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L549) | 549 | `"# القسم الثاني عشر — تجربة المنتج والنمو القابل للقياس"` | — |
 | [SRC-D17CE3D12F-L000550](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L550) | 550 | `""` | — |
 | [SRC-D17CE3D12F-L000551](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L551) | 551 | `"## 38. ملاحظات المستخدم والتحليلات والتجارب"` | — |
 | [SRC-D17CE3D12F-L000552](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L552) | 552 | `""` | — |
@@ -820,26 +843,3 @@
 | [SRC-B2C95EAEE1-L000069](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L69) | 69 | `"يشمل PR #76، وفق التغيير المدمج وفحوص CI:"` | — |
 | [SRC-B2C95EAEE1-L000070](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L70) | 70 | `""` | — |
 | [SRC-B2C95EAEE1-L000071](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L71) | 71 | `"- توحيد التعامل مع السؤال الغامض والمتابعات، مع توجيه الأسئلة القصيرة إلى الاستيضاح عند غياب مرجع صالح."` | — |
-| [SRC-B2C95EAEE1-L000072](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L72) | 72 | `"- عدم إظهار تغطية المصادر كمقياس رقمي يوحي باحتمال صحة الإجابة؛ إصلاح العمق القياسي/العميق من #75 ظل قائمًا."` | — |
-| [SRC-B2C95EAEE1-L000073](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L73) | 73 | `"- فحوص لفظية محافظة لسلامة الأدلة مع التصريح بأن الاستلزام الدلالي والتحقق المستقل من الحقيقة **غير مثبتين**."` | — |
-| [SRC-B2C95EAEE1-L000074](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L74) | 74 | `"- تحسين حالات تشخيص جلب الصفحات والموصلات، واختبارات منع التحويل التلقائي لبعض مزودي البحث المغطّين."` | — |
-| [SRC-B2C95EAEE1-L000075](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L75) | 75 | ``"- رؤوس أمان للمتصفح وسياسة CSP مع اختبارات تمنع عودة `unsafe-inline` إلى السياسة المختبرة."`` | — |
-| [SRC-B2C95EAEE1-L000076](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L76) | 76 | ``"- تضمين هوية البناء في الحاوية وإتاحتها عبر `/api/health`، ودعم `OMARAI_DB_PATH` لاختيار مسار SQLite."`` | — |
-| [SRC-B2C95EAEE1-L000077](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L77) | 77 | ``"- أداة بحث محلي في المصدر وروابط مرجعية قابلة للضبط، وإصلاح سباق فحص الفهرس في CI للفروع غير `main`."`` | — |
-| [SRC-B2C95EAEE1-L000078](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L78) | 78 | `""` | — |
-| [SRC-B2C95EAEE1-L000079](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L79) | 79 | `"هذه أدلة على وجود المسارات البرمجية واجتياز الاختبارات المحددة؛ ليست ضمانًا أمنيًا شاملًا أو شهادة صحة معرفية."` | — |
-| [SRC-B2C95EAEE1-L000080](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L80) | 80 | `""` | — |
-| [SRC-B2C95EAEE1-L000081](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L81) | 81 | `"## 4. المخاطر والبوابات التي لم تُغلق"` | — |
-| [SRC-B2C95EAEE1-L000082](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L82) | 82 | `""` | — |
-| [SRC-B2C95EAEE1-L000083](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L83) | 83 | `"\| الأولوية \| المعرف \| المجال \| الحالة الحالية \| معيار الإغلاق المطلوب \|"` | — |
-| [SRC-B2C95EAEE1-L000084](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L84) | 84 | `"\|---\|---\|---\|---\|---\|"` | — |
-| [SRC-B2C95EAEE1-L000085](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L85) | 85 | ``"\| P0 \| POST-001 \| CI على SHA الدمج \| **NOT_CONFIRMED** \| رابط تشغيل مكتمل على `528a255...` أو تحقق لاحق واضح على SHA أحدث في `main` مع نفس التغييرات. \|"`` | — |
-| [SRC-B2C95EAEE1-L000086](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L86) | 86 | ``"\| P1 \| POST-002 \| تحديث توثيق الحالة بعد الدمج \| **OPEN — توثيقي** \| إزالة أي عبارة حالية توحي أن #76 ما زال مفتوحًا أو أن تغييرات الفرع لم تدخل `main`؛ الحفاظ على اللقطات القديمة بوصفها تاريخية. \|"`` | — |
-| [SRC-B2C95EAEE1-L000087](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L87) | 87 | `"\| P1 \| POST-003 \| UI Android وRTL \| **NOT_RUN** — [Issue #11](https://github.com/mosabosama2030-oss/omarai/issues/11) \| اختبار يدوي للحالات: تحميل/نجاح/جزئي/فشل/إعادة المحاولة، مصادر حقيقية، RTL وعرض ضيق، ومنع عرض نتيجة قديمة. \|"` | — |
-| [SRC-B2C95EAEE1-L000088](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L88) | 88 | ``"\| P1 \| POST-004 \| مراجعة أمنية مستقلة \| **PENDING** — [Issue #68](https://github.com/mosabosama2030-oss/omarai/issues/68) \| تقرير فعلي مرتبط بـ`528a255...` أو SHA أحدث، يحتوي ملفات/أسطر ونتائج إعادة إنتاج واختبارات وحدود ما لم يُختبر. \|"`` | — |
-| [SRC-B2C95EAEE1-L000089](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L89) | 89 | `"\| P1 \| POST-005 \| مزودو البحث والنموذج الحيون \| **NOT_RUN / UNKNOWN** \| اختبار مستقل لكل مزود مفعّل في بيئة مخولة، مع تسجيل وقت الاستجابة والفشل والتكلفة المحتملة دون كشف الأسرار. \|"` | — |
-| [SRC-B2C95EAEE1-L000090](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L90) | 90 | `"\| P1 \| POST-006 \| دقة AQ-001–AQ-045 دلاليًا \| **PARTIAL / LIVE NOT_RUN** \| تشغيل مجموعة مرجعية على إجابات فعلية، مع مرجع متوقع ومراجعة بشرية. وجود corpus أو اجتياز pytest لا يثبت صحة إجابات النموذج. \|"` | — |
-| [SRC-B2C95EAEE1-L000091](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L91) | 91 | ``"\| P1 \| POST-007 \| استمرار SQLite والنسخ الاحتياطي والاستعادة \| **NOT_RUN** \| إثبات بقاء البيانات عبر إعادة التشغيل/النشر على المضيف الحقيقي، ثم نجاح استعادة نسخة احتياطية. `OMARAI_DB_PATH` لا ينشئ Volume ولا Backup بذاته. \|"`` | — |
-| [SRC-B2C95EAEE1-L000092](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L92) | 92 | `"\| P1 \| POST-008 \| Prompt injection واختبار أمني حي \| **PARTIAL / NOT_RUN** \| مصفوفة هجمات مسموح بها، إعادة إنتاج، وفحوص سلبية على البيئة المخصصة، دون توصيل بيانات سرية غير لازمة. \|"` | — |
-| [SRC-B2C95EAEE1-L000093](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L93) | 93 | `"\| P1 \| POST-009 \| الحمل والتزامن وحدود المعدل الموزعة \| **NOT_RUN** \| قياسات متكررة لزمن الاستجابة والأخطاء والموارد والتزامن؛ الحدود العملية الحالية محلية للعملية ولا تثبت السعة الإنتاجية. \|"` | — |
-| [SRC-B2C95EAEE1-L000094](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L94) | 94 | `"\| P0 للتوسع متعدد العملاء \| POST-010 \| الهوية وعزل بيانات المستأجرين \| **BLOCKER للتوسع** \| لا تستخدم Omarai كخدمة عامة متعددة العملاء أو لحفظ سجلات عملاء سرية قبل تنفيذ واختبار الهوية والتفويض والعزل والتخزين الدائم. \|"` | — |

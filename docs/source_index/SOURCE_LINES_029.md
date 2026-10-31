@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D911B73392-L000036 إلى SRC-B335630551-L000127
+- النطاق: SRC-D911B73392-L000013 إلى SRC-B335630551-L000104
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D911B73392-L000013](../RESEARCH_CONNECTORS_AR.md#L13) | 13 | `"7. في البحث العميق، يمرر المسودة على مراجعة ثانية للاتساق مع المصادر. هذه مراجعة من النموذج/الموفر نفسه وليست تحققًا مستقلًا من الحقيقة."` | — |
+| [SRC-D911B73392-L000014](../RESEARCH_CONNECTORS_AR.md#L14) | 14 | `""` | — |
+| [SRC-D911B73392-L000015](../RESEARCH_CONNECTORS_AR.md#L15) | 15 | `"لا ينبغي تفسير اتفاق نتيجتين بحثيتين على أنه تصديق مستقل، ولا اعتبار عينة من التعليقات ممثلة لكل المستخدمين."` | — |
+| [SRC-D911B73392-L000016](../RESEARCH_CONNECTORS_AR.md#L16) | 16 | `""` | — |
+| [SRC-D911B73392-L000017](../RESEARCH_CONNECTORS_AR.md#L17) | 17 | `"## 2.1 واجهات بحث ويب اختيارية"` | — |
+| [SRC-D911B73392-L000018](../RESEARCH_CONNECTORS_AR.md#L18) | 18 | `""` | — |
+| [SRC-D911B73392-L000019](../RESEARCH_CONNECTORS_AR.md#L19) | 19 | `"يمكنك إضافة فهرسين مباشرين للبحث بدل الاعتماد على استخراج صفحات نتائج محركات البحث فقط. قد يحتاج كل مزود إلى حساب أو خطة أو حصّة استخدام؛ لا تفترض أن الخدمة مجانية أو أن المفتاح صالح قبل الاختبار الحي."` | — |
+| [SRC-D911B73392-L000020](../RESEARCH_CONNECTORS_AR.md#L20) | 20 | `""` | — |
+| [SRC-D911B73392-L000021](../RESEARCH_CONNECTORS_AR.md#L21) | 21 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000022](../RESEARCH_CONNECTORS_AR.md#L22) | 22 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-D911B73392-L000023](../RESEARCH_CONNECTORS_AR.md#L23) | 23 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-D911B73392-L000024](../RESEARCH_CONNECTORS_AR.md#L24) | 24 | ````"```"```` | — |
+| [SRC-D911B73392-L000025](../RESEARCH_CONNECTORS_AR.md#L25) | 25 | `""` | — |
+| [SRC-D911B73392-L000026](../RESEARCH_CONNECTORS_AR.md#L26) | 26 | `"يدمج Omarai النتائج من هذه الواجهات مع محركات البحث العامة عند ضبط المتغيرات. لا تُحفظ المفاتيح في المستودع أو واجهة HTML، ولا يُرجعها تقرير الصحة. إذا فشل المفتاح أو انتهت الحصة، قد تظهر نتائج من المحركات العامة الأخرى؛ افحص أسماء المحركات الفعلية في تقرير البحث لتعرف ما أعاد نتائج في هذه الجولة."` | — |
+| [SRC-D911B73392-L000027](../RESEARCH_CONNECTORS_AR.md#L27) | 27 | `""` | — |
+| [SRC-D911B73392-L000028](../RESEARCH_CONNECTORS_AR.md#L28) | 28 | `"## 2. المصادر والحدود"` | — |
+| [SRC-D911B73392-L000029](../RESEARCH_CONNECTORS_AR.md#L29) | 29 | `""` | — |
+| [SRC-D911B73392-L000030](../RESEARCH_CONNECTORS_AR.md#L30) | 30 | `"\| المصدر \| ما يستخدمه Omarai \| ما يلزم أو ما لا يمكن ضمانه \|"` | — |
+| [SRC-D911B73392-L000031](../RESEARCH_CONNECTORS_AR.md#L31) | 31 | `"\| --- \| --- \| --- \|"` | — |
+| [SRC-D911B73392-L000032](../RESEARCH_CONNECTORS_AR.md#L32) | 32 | `"\| صفحات الويب العامة \| DuckDuckGo HTML وBing RSS، وBrave Search API وTavily Search API عند إعداد المفاتيح، واستخراج نص الصفحات المتاحة \| قد تمنع بعض المواقع القراءة أو لا تظهر في نتائج البحث؛ لا يتم تجاوز تسجيل الدخول أو الجدران المدفوعة \|"` | — |
+| [SRC-D911B73392-L000033](../RESEARCH_CONNECTORS_AR.md#L33) | 33 | `"\| الأخبار الحديثة \| Google News RSS بالإضافة إلى البحث العام \| التاريخ الذي يظهر في موجز البحث قد لا يكون تاريخ نشر الصفحة الأصلية؛ يجب فتح المصدر والتحقق \|"` | — |
+| [SRC-D911B73392-L000034](../RESEARCH_CONNECTORS_AR.md#L34) | 34 | `"\| Reddit \| موجز البحث العام RSS \| قد يُحجب أو يُقيَّد أحيانًا؛ يمكن إعداد OAuth لطلب API رسمي عند توفر وصول مسموح \|"` | — |
+| [SRC-D911B73392-L000035](../RESEARCH_CONNECTORS_AR.md#L35) | 35 | `"\| Bluesky \| واجهة البحث العامة للمنشورات \| بحث عام وليس بيانات خاصة أو رسائل مباشرة \|"` | — |
 | [SRC-D911B73392-L000036](../RESEARCH_CONNECTORS_AR.md#L36) | 36 | `"\| Instagram \| صفحات عامة مفهرسة؛ وموصل Graph API للوسوم العامة عند إعداده \| واجهة الوسوم الرسمية ليست بحثًا شاملًا في كل المنشورات، وتتطلب حسابًا وصلاحيات وموافقة/ميزات مناسبة وحدود استخدام \|"` | — |
 | [SRC-D911B73392-L000037](../RESEARCH_CONNECTORS_AR.md#L37) | 37 | `"\| Facebook \| صفحات عامة مفهرسة؛ وموصل مباشر لصفحات محددة صراحةً عند إعداده \| الموصل المباشر ليس بحثًا عالميًا في Facebook؛ يعمل فقط على Page IDs يمكن للرمز والصلاحيات قراءتها \|"` | — |
 | [SRC-D911B73392-L000038](../RESEARCH_CONNECTORS_AR.md#L38) | 38 | `"\| X \| صفحات عامة مفهرسة؛ وواجهة البحث الحديث الرسمية عند إعداد Bearer Token \| يتطلب وصول API مناسبًا، ونطاق البحث والحدود تابعان لخطة X \|"` | — |
@@ -856,26 +879,3 @@
 | [SRC-B335630551-L000102](../../README.md#L102) | 102 | ``"The default language-model configuration uses OpenRouter: Nemotron 3 Ultra (free) plans queries, Gemma 4 31B Instruct (free) writes the answer and performs the optional second-pass review, and `openrouter/free` is the fallback if a selected model fails. Create an OpenRouter API key, then enter it without putting the secret into a command-history entry. The model key enables both search planning and generative synthesis; general web search can still run without it, but results will not be turned into a full language-model analysis:"`` | — |
 | [SRC-B335630551-L000103](../../README.md#L103) | 103 | `""` | — |
 | [SRC-B335630551-L000104](../../README.md#L104) | 104 | ````"```bash"```` | — |
-| [SRC-B335630551-L000105](../../README.md#L105) | 105 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
-| [SRC-B335630551-L000106](../../README.md#L106) | 106 | `"printf '\\n'"` | — |
-| [SRC-B335630551-L000107](../../README.md#L107) | 107 | `"export OPENROUTER_API_KEY"` | — |
-| [SRC-B335630551-L000108](../../README.md#L108) | 108 | `"python -m cli.omarai serve"` | — |
-| [SRC-B335630551-L000109](../../README.md#L109) | 109 | ````"```"```` | — |
-| [SRC-B335630551-L000110](../../README.md#L110) | 110 | `""` | — |
-| [SRC-B335630551-L000111](../../README.md#L111) | 111 | `"Keep this Termux session running and open **http://127.0.0.1:8765** in the phone's browser. The agent chat is the home screen. The existing lead workspace remains available at **http://127.0.0.1:8765/leads**."` | — |
-| [SRC-B335630551-L000112](../../README.md#L112) | 112 | `""` | — |
-| [SRC-B335630551-L000113](../../README.md#L113) | 113 | `"The key is held in the current shell environment and is not written into the repository. Enter it again in a new Termux session. Never commit API keys or paste them into public issues or chat."` | — |
-| [SRC-B335630551-L000114](../../README.md#L114) | 114 | `""` | — |
-| [SRC-B335630551-L000115](../../README.md#L115) | 115 | `"### Optional configuration"` | — |
-| [SRC-B335630551-L000116](../../README.md#L116) | 116 | `""` | — |
-| [SRC-B335630551-L000117](../../README.md#L117) | 117 | `"For additional live web-search indexes, configure either official search API. These keys are optional: the built-in public engines are still attempted, and each API may have its own account, quota, rate limit or cost. Do not assume an API is free or that a configured key is valid until you run the live diagnostics."` | — |
-| [SRC-B335630551-L000118](../../README.md#L118) | 118 | `""` | — |
-| [SRC-B335630551-L000119](../../README.md#L119) | 119 | ````"```bash"```` | — |
-| [SRC-B335630551-L000120](../../README.md#L120) | 120 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
-| [SRC-B335630551-L000121](../../README.md#L121) | 121 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
-| [SRC-B335630551-L000122](../../README.md#L122) | 122 | ````"```"```` | — |
-| [SRC-B335630551-L000123](../../README.md#L123) | 123 | `""` | — |
-| [SRC-B335630551-L000124](../../README.md#L124) | 124 | `""` | — |
-| [SRC-B335630551-L000125](../../README.md#L125) | 125 | `"For a different OpenAI-compatible endpoint or model, set these environment variables before starting the server:"` | — |
-| [SRC-B335630551-L000126](../../README.md#L126) | 126 | `""` | — |
-| [SRC-B335630551-L000127](../../README.md#L127) | 127 | ````"```bash"```` | — |

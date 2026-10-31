@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000653 إلى SRC-90FAA34ADE-L000335
+- النطاق: SRC-4FFD5AFC54-L000630 إلى SRC-90FAA34ADE-L000312
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,29 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000630](../../scripts/run_answer_quality_benchmark.py#L630) | 630 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
+| [SRC-4FFD5AFC54-L000631](../../scripts/run_answer_quality_benchmark.py#L631) | 631 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000632](../../scripts/run_answer_quality_benchmark.py#L632) | 632 | `"            \"status\": \"NOT_TESTED\","` | — |
+| [SRC-4FFD5AFC54-L000633](../../scripts/run_answer_quality_benchmark.py#L633) | 633 | `"            \"transport_ok\": transport_ok,"` | — |
+| [SRC-4FFD5AFC54-L000634](../../scripts/run_answer_quality_benchmark.py#L634) | 634 | `"            \"reviewer_notes\": ("` | — |
+| [SRC-4FFD5AFC54-L000635](../../scripts/run_answer_quality_benchmark.py#L635) | 635 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
+| [SRC-4FFD5AFC54-L000636](../../scripts/run_answer_quality_benchmark.py#L636) | 636 | `"                if transport_ok"` | — |
+| [SRC-4FFD5AFC54-L000637](../../scripts/run_answer_quality_benchmark.py#L637) | 637 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
+| [SRC-4FFD5AFC54-L000638](../../scripts/run_answer_quality_benchmark.py#L638) | 638 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000639](../../scripts/run_answer_quality_benchmark.py#L639) | 639 | `"            \"evidence_fixture_injected\": False,"` | — |
+| [SRC-4FFD5AFC54-L000640](../../scripts/run_answer_quality_benchmark.py#L640) | 640 | `"        }"` | — |
+| [SRC-4FFD5AFC54-L000641](../../scripts/run_answer_quality_benchmark.py#L641) | 641 | `"        results.append(record)"` | — |
+| [SRC-4FFD5AFC54-L000642](../../scripts/run_answer_quality_benchmark.py#L642) | 642 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
+| [SRC-4FFD5AFC54-L000643](../../scripts/run_answer_quality_benchmark.py#L643) | 643 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
+| [SRC-4FFD5AFC54-L000644](../../scripts/run_answer_quality_benchmark.py#L644) | 644 | `"        if delay > 0:"` | — |
+| [SRC-4FFD5AFC54-L000645](../../scripts/run_answer_quality_benchmark.py#L645) | 645 | `"            time.sleep(delay)"` | — |
+| [SRC-4FFD5AFC54-L000646](../../scripts/run_answer_quality_benchmark.py#L646) | 646 | `""` | — |
+| [SRC-4FFD5AFC54-L000647](../../scripts/run_answer_quality_benchmark.py#L647) | 647 | `"    envelope = {"` | — |
+| [SRC-4FFD5AFC54-L000648](../../scripts/run_answer_quality_benchmark.py#L648) | 648 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
+| [SRC-4FFD5AFC54-L000649](../../scripts/run_answer_quality_benchmark.py#L649) | 649 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
+| [SRC-4FFD5AFC54-L000650](../../scripts/run_answer_quality_benchmark.py#L650) | 650 | `"        \"mode\": \"live_api\","` | — |
+| [SRC-4FFD5AFC54-L000651](../../scripts/run_answer_quality_benchmark.py#L651) | 651 | `"        \"build_sha\": verified_build_sha,"` | — |
+| [SRC-4FFD5AFC54-L000652](../../scripts/run_answer_quality_benchmark.py#L652) | 652 | `"        \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
 | [SRC-4FFD5AFC54-L000653](../../scripts/run_answer_quality_benchmark.py#L653) | 653 | `"        \"expected_build_sha\": expected_build_sha or None,"` | — |
 | [SRC-4FFD5AFC54-L000654](../../scripts/run_answer_quality_benchmark.py#L654) | 654 | `"        \"executed_at_utc\": _utc_now(),"` | — |
 | [SRC-4FFD5AFC54-L000655](../../scripts/run_answer_quality_benchmark.py#L655) | 655 | `"        \"case_count\": len(results),"` | — |
@@ -820,26 +843,3 @@
 | [SRC-90FAA34ADE-L000310](../../tests/fixtures/answer_quality_cases.json#L310) | 310 | `"      \"language\": \"ar-EG\","` | — |
 | [SRC-90FAA34ADE-L000311](../../tests/fixtures/answer_quality_cases.json#L311) | 311 | `"      \"question\": \"فين المطار في القاهره الجديده تقريبا؟\","` | — |
 | [SRC-90FAA34ADE-L000312](../../tests/fixtures/answer_quality_cases.json#L312) | 312 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000313](../../tests/fixtures/answer_quality_cases.json#L313) | 313 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000314](../../tests/fixtures/answer_quality_cases.json#L314) | 314 | `"        \"Interprets القاهرة الجديدة / New Cairo context\","` | — |
-| [SRC-90FAA34ADE-L000315](../../tests/fixtures/answer_quality_cases.json#L315) | 315 | `"        \"Does not refuse solely due to missing hamza/diacritics\""` | — |
-| [SRC-90FAA34ADE-L000316](../../tests/fixtures/answer_quality_cases.json#L316) | 316 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000317](../../tests/fixtures/answer_quality_cases.json#L317) | 317 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000318](../../tests/fixtures/answer_quality_cases.json#L318) | 318 | `"        \"Claims the place does not exist because of spelling\""` | — |
-| [SRC-90FAA34ADE-L000319](../../tests/fixtures/answer_quality_cases.json#L319) | 319 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000320](../../tests/fixtures/answer_quality_cases.json#L320) | 320 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000321](../../tests/fixtures/answer_quality_cases.json#L321) | 321 | `"        \"type\": \"controlled_search\""` | — |
-| [SRC-90FAA34ADE-L000322](../../tests/fixtures/answer_quality_cases.json#L322) | 322 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000323](../../tests/fixtures/answer_quality_cases.json#L323) | 323 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000324](../../tests/fixtures/answer_quality_cases.json#L324) | 324 | `"        \"Fails only because of Arabic orthography variation\""` | — |
-| [SRC-90FAA34ADE-L000325](../../tests/fixtures/answer_quality_cases.json#L325) | 325 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000326](../../tests/fixtures/answer_quality_cases.json#L326) | 326 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000327](../../tests/fixtures/answer_quality_cases.json#L327) | 327 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000328](../../tests/fixtures/answer_quality_cases.json#L328) | 328 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000329](../../tests/fixtures/answer_quality_cases.json#L329) | 329 | `"      \"case_id\": \"AQ-014\","` | — |
-| [SRC-90FAA34ADE-L000330](../../tests/fixtures/answer_quality_cases.json#L330) | 330 | `"      \"category\": \"spelling_variation\","` | — |
-| [SRC-90FAA34ADE-L000331](../../tests/fixtures/answer_quality_cases.json#L331) | 331 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L000332](../../tests/fixtures/answer_quality_cases.json#L332) | 332 | `"      \"question\": \"ازاي اروح New Cairo من Roxy؟\","` | — |
-| [SRC-90FAA34ADE-L000333](../../tests/fixtures/answer_quality_cases.json#L333) | 333 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000334](../../tests/fixtures/answer_quality_cases.json#L334) | 334 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000335](../../tests/fixtures/answer_quality_cases.json#L335) | 335 | `"        \"Handles mixed Arabic-English place names\","` | — |
