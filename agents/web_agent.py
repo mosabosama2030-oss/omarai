@@ -871,7 +871,7 @@ class WebAgent:
                     "عايز اشتري عقار", "عاوز اشتري عقار", "اريد شراء شقه",
                     "ارغب في شراء شقه", "اريد شراء عقار", "ارغب في شراء عقار",
                     "مطلوب شراء", "عايز اشتري", "عاوز اشتري", "اريد شراء",
-                    "ارغب في شراء", "محتاج اشتري",
+                    "ارغب في شراء", "نرغب في شراء", "نرغب بشراء", "محتاج اشتري",
                     "looking to buy", "looking to purchase", "want to buy",
                     "wants to buy", "want to purchase", "wants to purchase",
                     "seeking to buy", "seeking to purchase", "interested in buying",
