@@ -592,7 +592,7 @@
 | [SRC-F725E90B2A-L004205](../../tests/test_web_agent.py#L4205) | 4205 | `"        )"` | — |
 | [SRC-F725E90B2A-L004206](../../tests/test_web_agent.py#L4206) | 4206 | `""` | — |
 | [SRC-F725E90B2A-L004207](../../tests/test_web_agent.py#L4207) | 4207 | `"    assert agent.generation_diagnostics[-1][\"status\"] == \"unsafe_provider_url\""` | — |
-| [SRC-F725E90B2A-L004208](../../tests/test_web_agent.py#L4208) | 4208 | `"    assert agent.generation_diagnostics[-1][\"request_started\"] == \"false\""` | — |
+| [SRC-F725E90B2A-L004208](../../tests/test_web_agent.py#L4208) | 4208 | `"    assert agent.generation_diagnostics[-1][\"request_started\"] is False"` | — |
 | [SRC-F725E90B2A-L004209](../../tests/test_web_agent.py#L4209) | 4209 | `""` | — |
 | [SRC-F725E90B2A-L004210](../../tests/test_web_agent.py#L4210) | 4210 | `""` | — |
 | [SRC-F725E90B2A-L004211](../../tests/test_web_agent.py#L4211) | 4211 | `"def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatch):"` | — |
