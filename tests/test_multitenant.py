@@ -232,3 +232,34 @@ def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):
                 user_id,
                 expires_at=expiry,
             )
+
+
+
+def test_api_token_revocation_is_scoped_to_the_owning_user_and_tenant(tmp_path):
+    store = LeadStore(tmp_path / "revoke-token.sqlite3")
+    tenant_id, user_id = _tenant_member(
+        store, "Revocation Company", "owner@example.test", "K" * 40
+    )
+    other_tenant_id, other_user_id = _tenant_member(
+        store, "Other Revocation Company", "other@example.test", "L" * 40
+    )
+    token = "M" * 40
+    store.create_api_token(token, tenant_id, user_id)
+
+    assert store.resolve_api_token(token)["tenant_id"] == tenant_id
+    assert store.revoke_api_token(
+        token, tenant_id=other_tenant_id, user_id=other_user_id
+    ) is False
+    assert store.resolve_api_token(token)["tenant_id"] == tenant_id
+    assert store.revoke_api_token(
+        token, tenant_id=tenant_id, user_id=other_user_id
+    ) is False
+    assert store.resolve_api_token(token)["tenant_id"] == tenant_id
+
+    assert store.revoke_api_token(
+        token, tenant_id=tenant_id, user_id=user_id
+    ) is True
+    assert store.resolve_api_token(token) is None
+    assert store.revoke_api_token(
+        token, tenant_id=tenant_id, user_id=user_id
+    ) is False
