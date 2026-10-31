@@ -4,9 +4,44 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000065 إلى SRC-3451CC474D-L000864
+- النطاق: SRC-1C77C97630-L000306 إلى SRC-3451CC474D-L000774
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1C77C97630-L000306](../../tests/test_answer_validation.py#L306) | 306 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
+| [SRC-1C77C97630-L000307](../../tests/test_answer_validation.py#L307) | 307 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
+| [SRC-1C77C97630-L000308](../../tests/test_answer_validation.py#L308) | 308 | `"    html = html_path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-1C77C97630-L000309](../../tests/test_answer_validation.py#L309) | 309 | `""` | — |
+| [SRC-1C77C97630-L000310](../../tests/test_answer_validation.py#L310) | 310 | `"    assert \"citation_numeric_support\" in html"` | — |
+| [SRC-1C77C97630-L000311](../../tests/test_answer_validation.py#L311) | 311 | `"    assert \"potential_value_discrepancies\" in html"` | — |
+| [SRC-1C77C97630-L000312](../../tests/test_answer_validation.py#L312) | 312 | `"    assert \"claim_evidence_ledger\" in html"` | — |
+| [SRC-1C77C97630-L000313](../../tests/test_answer_validation.py#L313) | 313 | `"    assert \"سجل تتبع الاستشهادات\" in html"` | — |
+| [SRC-1C77C97630-L000314](../../tests/test_answer_validation.py#L314) | 314 | `"    assert \"هذه ليست إثباتًا تلقائيًا لوجود تناقض\" in html"` | — |
+| [SRC-1C77C97630-L000315](../../tests/test_answer_validation.py#L315) | 315 | `"    assert \"ليس تحققًا من الحقيقة\" in html"` | — |
+| [SRC-1C77C97630-L000316](../../tests/test_answer_validation.py#L316) | 316 | `""` | — |
+| [SRC-1C77C97630-L000317](../../tests/test_answer_validation.py#L317) | 317 | `""` | — |
+| [SRC-1C77C97630-L000318](../../tests/test_answer_validation.py#L318) | 318 | `"def test_single_coincidental_token_does_not_count_as_citation_support():"` | — |
+| [SRC-1C77C97630-L000319](../../tests/test_answer_validation.py#L319) | 319 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000320](../../tests/test_answer_validation.py#L320) | 320 | `"        \"What is the device quality?\","` | — |
+| [SRC-1C77C97630-L000321](../../tests/test_answer_validation.py#L321) | 321 | `"        \"Apple is a premium and exceptionally reliable device [source 1].\","` | — |
+| [SRC-1C77C97630-L000322](../../tests/test_answer_validation.py#L322) | 322 | `"        [{"` | — |
+| [SRC-1C77C97630-L000323](../../tests/test_answer_validation.py#L323) | 323 | `"            \"title\": \"Apple catalog\","` | — |
+| [SRC-1C77C97630-L000324](../../tests/test_answer_validation.py#L324) | 324 | `"            \"snippet\": \"Apple product listing\","` | — |
+| [SRC-1C77C97630-L000325](../../tests/test_answer_validation.py#L325) | 325 | `"            \"page_text\": \"Apple products are listed with model identifiers and availability.\","` | — |
+| [SRC-1C77C97630-L000326](../../tests/test_answer_validation.py#L326) | 326 | `"            \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000327](../../tests/test_answer_validation.py#L327) | 327 | `"        }],"` | — |
+| [SRC-1C77C97630-L000328](../../tests/test_answer_validation.py#L328) | 328 | `"    )"` | — |
+| [SRC-1C77C97630-L000329](../../tests/test_answer_validation.py#L329) | 329 | `"    assert result[\"citation_lexical_alignment\"][0][\"status\"] == \"weak_lexical_overlap\""` | — |
+| [SRC-1C77C97630-L000330](../../tests/test_answer_validation.py#L330) | 330 | `"    assert result[\"weak_citation_alignment_count\"] == 1"` | — |
+| [SRC-1C77C97630-L000331](../../tests/test_answer_validation.py#L331) | 331 | `"    assert result[\"citation_entailment\"] == \"not_checked\""` | — |
 ## اختبارات
 
 ### FILE-3451CC474D — [tests/test_api.py](../../tests/test_api.py#L1)
@@ -16,6 +51,70 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000001](../../tests/test_api.py#L1) | 1 | `"\"\"\"HTTP integration tests for Omarai local API and assistant endpoints.\"\"\""` | — |
+| [SRC-3451CC474D-L000002](../../tests/test_api.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-3451CC474D-L000003](../../tests/test_api.py#L3) | 3 | `""` | — |
+| [SRC-3451CC474D-L000004](../../tests/test_api.py#L4) | 4 | `"import json"` | — |
+| [SRC-3451CC474D-L000005](../../tests/test_api.py#L5) | 5 | `"import re"` | — |
+| [SRC-3451CC474D-L000006](../../tests/test_api.py#L6) | 6 | `"import socket"` | — |
+| [SRC-3451CC474D-L000007](../../tests/test_api.py#L7) | 7 | `"import threading"` | — |
+| [SRC-3451CC474D-L000008](../../tests/test_api.py#L8) | 8 | `"from collections import defaultdict, deque"` | — |
+| [SRC-3451CC474D-L000009](../../tests/test_api.py#L9) | 9 | `"from http.server import ThreadingHTTPServer"` | — |
+| [SRC-3451CC474D-L000010](../../tests/test_api.py#L10) | 10 | `"from pathlib import Path"` | — |
+| [SRC-3451CC474D-L000011](../../tests/test_api.py#L11) | 11 | `"from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L000012](../../tests/test_api.py#L12) | 12 | `"from urllib.error import HTTPError"` | — |
+| [SRC-3451CC474D-L000013](../../tests/test_api.py#L13) | 13 | `"from urllib.request import Request, urlopen"` | — |
+| [SRC-3451CC474D-L000014](../../tests/test_api.py#L14) | 14 | `""` | — |
+| [SRC-3451CC474D-L000015](../../tests/test_api.py#L15) | 15 | `"import pytest"` | — |
+| [SRC-3451CC474D-L000016](../../tests/test_api.py#L16) | 16 | `""` | — |
+| [SRC-3451CC474D-L000017](../../tests/test_api.py#L17) | 17 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-3451CC474D-L000018](../../tests/test_api.py#L18) | 18 | `"from api.omarai import Handler"` | — |
+| [SRC-3451CC474D-L000019](../../tests/test_api.py#L19) | 19 | `""` | — |
+| [SRC-3451CC474D-L000020](../../tests/test_api.py#L20) | 20 | `""` | — |
+| [SRC-3451CC474D-L000021](../../tests/test_api.py#L21) | 21 | `"@pytest.fixture"` | — |
+| [SRC-3451CC474D-L000022](../../tests/test_api.py#L22) | 22 | `"def local_api(tmp_path):"` | — |
+| [SRC-3451CC474D-L000023](../../tests/test_api.py#L23) | 23 | `"    \"\"\"Run the real handler on an ephemeral loopback port with an isolated database.\"\"\""` | — |
+| [SRC-3451CC474D-L000024](../../tests/test_api.py#L24) | 24 | `"    previous_store = Handler.store"` | — |
+| [SRC-3451CC474D-L000025](../../tests/test_api.py#L25) | 25 | `"    Handler.store = LeadStore(tmp_path / \"api-test.sqlite3\")"` | — |
+| [SRC-3451CC474D-L000026](../../tests/test_api.py#L26) | 26 | `"    server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)"` | — |
+| [SRC-3451CC474D-L000027](../../tests/test_api.py#L27) | 27 | `"    thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
+| [SRC-3451CC474D-L000028](../../tests/test_api.py#L28) | 28 | `"    thread.start()"` | — |
+| [SRC-3451CC474D-L000029](../../tests/test_api.py#L29) | 29 | `"    try:"` | — |
+| [SRC-3451CC474D-L000030](../../tests/test_api.py#L30) | 30 | `"        yield f\"http://127.0.0.1:{server.server_port}\""` | — |
+| [SRC-3451CC474D-L000031](../../tests/test_api.py#L31) | 31 | `"    finally:"` | — |
+| [SRC-3451CC474D-L000032](../../tests/test_api.py#L32) | 32 | `"        server.shutdown()"` | — |
+| [SRC-3451CC474D-L000033](../../tests/test_api.py#L33) | 33 | `"        server.server_close()"` | — |
+| [SRC-3451CC474D-L000034](../../tests/test_api.py#L34) | 34 | `"        thread.join(timeout=3)"` | — |
+| [SRC-3451CC474D-L000035](../../tests/test_api.py#L35) | 35 | `"        Handler.store = previous_store"` | — |
+| [SRC-3451CC474D-L000036](../../tests/test_api.py#L36) | 36 | `""` | — |
+| [SRC-3451CC474D-L000037](../../tests/test_api.py#L37) | 37 | `""` | — |
+| [SRC-3451CC474D-L000038](../../tests/test_api.py#L38) | 38 | `"def request_json(base, path, method=\"GET\", payload=None, headers=None):"` | — |
+| [SRC-3451CC474D-L000039](../../tests/test_api.py#L39) | 39 | `"    body = None if payload is None else json.dumps(payload, ensure_ascii=False).encode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L000040](../../tests/test_api.py#L40) | 40 | `"    request_headers = dict(headers or {})"` | — |
+| [SRC-3451CC474D-L000041](../../tests/test_api.py#L41) | 41 | `"    if body is not None and \"Content-Type\" not in request_headers:"` | — |
+| [SRC-3451CC474D-L000042](../../tests/test_api.py#L42) | 42 | `"        request_headers[\"Content-Type\"] = \"application/json\""` | — |
+| [SRC-3451CC474D-L000043](../../tests/test_api.py#L43) | 43 | `"    request = Request(base + path, data=body, method=method, headers=request_headers)"` | — |
+| [SRC-3451CC474D-L000044](../../tests/test_api.py#L44) | 44 | `"    try:"` | — |
+| [SRC-3451CC474D-L000045](../../tests/test_api.py#L45) | 45 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000046](../../tests/test_api.py#L46) | 46 | `"            return response.status, json.loads(response.read().decode(\"utf-8\"))"` | — |
+| [SRC-3451CC474D-L000047](../../tests/test_api.py#L47) | 47 | `"    except HTTPError as error:"` | — |
+| [SRC-3451CC474D-L000048](../../tests/test_api.py#L48) | 48 | `"        return error.code, json.loads(error.read().decode(\"utf-8\"))"` | — |
+| [SRC-3451CC474D-L000049](../../tests/test_api.py#L49) | 49 | `""` | — |
+| [SRC-3451CC474D-L000050](../../tests/test_api.py#L50) | 50 | `""` | — |
+| [SRC-3451CC474D-L000051](../../tests/test_api.py#L51) | 51 | `"def test_api_health_analyze_save_duplicate_list_and_status(local_api):"` | — |
+| [SRC-3451CC474D-L000052](../../tests/test_api.py#L52) | 52 | `"    status, health = request_json(local_api, \"/api/health\")"` | — |
+| [SRC-3451CC474D-L000053](../../tests/test_api.py#L53) | 53 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000054](../../tests/test_api.py#L54) | 54 | `"    assert health[\"app\"] == \"Omarai\""` | — |
+| [SRC-3451CC474D-L000055](../../tests/test_api.py#L55) | 55 | `"    assert health[\"mode\"] == \"web-research\""` | — |
+| [SRC-3451CC474D-L000056](../../tests/test_api.py#L56) | 56 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
+| [SRC-3451CC474D-L000057](../../tests/test_api.py#L57) | 57 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
+| [SRC-3451CC474D-L000058](../../tests/test_api.py#L58) | 58 | `""` | — |
+| [SRC-3451CC474D-L000059](../../tests/test_api.py#L59) | 59 | `"    text = \"بدور على شقة في التجمع الخامس وممكن معاينة\""` | — |
+| [SRC-3451CC474D-L000060](../../tests/test_api.py#L60) | 60 | `"    status, assessment = request_json("` | — |
+| [SRC-3451CC474D-L000061](../../tests/test_api.py#L61) | 61 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L000062](../../tests/test_api.py#L62) | 62 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L000063](../../tests/test_api.py#L63) | 63 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000064](../../tests/test_api.py#L64) | 64 | `"        payload={\"text\": text, \"product_terms\": [\"شقة\"], \"location_terms\": [\"التجمع الخامس\"]},"` | — |
 | [SRC-3451CC474D-L000065](../../tests/test_api.py#L65) | 65 | `"    )"` | — |
 | [SRC-3451CC474D-L000066](../../tests/test_api.py#L66) | 66 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000067](../../tests/test_api.py#L67) | 67 | `"    assert assessment[\"label\"] == \"high_intent\""` | — |
@@ -726,93 +825,3 @@
 | [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):"` | — |
 | [SRC-3451CC474D-L000773](../../tests/test_api.py#L773) | 773 | `"    \"\"\"Same-service public UI remains compatible when the request Host is trusted.\"\"\""` | — |
 | [SRC-3451CC474D-L000774](../../tests/test_api.py#L774) | 774 | `"    from types import SimpleNamespace"` | — |
-| [SRC-3451CC474D-L000775](../../tests/test_api.py#L775) | 775 | `""` | — |
-| [SRC-3451CC474D-L000776](../../tests/test_api.py#L776) | 776 | `"    from api.omarai import Handler"` | — |
-| [SRC-3451CC474D-L000777](../../tests/test_api.py#L777) | 777 | `""` | — |
-| [SRC-3451CC474D-L000778](../../tests/test_api.py#L778) | 778 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000779](../../tests/test_api.py#L779) | 779 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000780](../../tests/test_api.py#L780) | 780 | `"    handler = SimpleNamespace("` | — |
-| [SRC-3451CC474D-L000781](../../tests/test_api.py#L781) | 781 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000782](../../tests/test_api.py#L782) | 782 | `"            \"Host\": \"omarai.example\","` | — |
-| [SRC-3451CC474D-L000783](../../tests/test_api.py#L783) | 783 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
-| [SRC-3451CC474D-L000784](../../tests/test_api.py#L784) | 784 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
-| [SRC-3451CC474D-L000785](../../tests/test_api.py#L785) | 785 | `"        }"` | — |
-| [SRC-3451CC474D-L000786](../../tests/test_api.py#L786) | 786 | `"    )"` | — |
-| [SRC-3451CC474D-L000787](../../tests/test_api.py#L787) | 787 | `"    allowed = Handler._allowed_origins(handler)"` | — |
-| [SRC-3451CC474D-L000788](../../tests/test_api.py#L788) | 788 | `"    assert \"https://omarai.example\" in allowed"` | — |
-| [SRC-3451CC474D-L000789](../../tests/test_api.py#L789) | 789 | `"    assert \"https://attacker.example\" not in allowed"` | — |
-| [SRC-3451CC474D-L000790](../../tests/test_api.py#L790) | 790 | `""` | — |
-| [SRC-3451CC474D-L000791](../../tests/test_api.py#L791) | 791 | `""` | — |
-| [SRC-3451CC474D-L000792](../../tests/test_api.py#L792) | 792 | `""` | — |
-| [SRC-3451CC474D-L000793](../../tests/test_api.py#L793) | 793 | `"def test_security_headers_apply_to_json_and_html_responses(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000794](../../tests/test_api.py#L794) | 794 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
-| [SRC-3451CC474D-L000795](../../tests/test_api.py#L795) | 795 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-3451CC474D-L000796](../../tests/test_api.py#L796) | 796 | `"    for path in (\"/api/health\", \"/\"):"` | — |
-| [SRC-3451CC474D-L000797](../../tests/test_api.py#L797) | 797 | `"        request = Request(local_api + path)"` | — |
-| [SRC-3451CC474D-L000798](../../tests/test_api.py#L798) | 798 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L000799](../../tests/test_api.py#L799) | 799 | `"            headers = {name.lower(): value for name, value in response.headers.items()}"` | — |
-| [SRC-3451CC474D-L000800](../../tests/test_api.py#L800) | 800 | `"            assert headers[\"x-content-type-options\"] == \"nosniff\""` | — |
-| [SRC-3451CC474D-L000801](../../tests/test_api.py#L801) | 801 | `"            assert headers[\"x-frame-options\"] == \"DENY\""` | — |
-| [SRC-3451CC474D-L000802](../../tests/test_api.py#L802) | 802 | `"            assert headers[\"referrer-policy\"] == \"strict-origin-when-cross-origin\""` | — |
-| [SRC-3451CC474D-L000803](../../tests/test_api.py#L803) | 803 | `"            assert \"default-src 'self'\" in headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000804](../../tests/test_api.py#L804) | 804 | `"            policy = headers[\"content-security-policy\"]"` | — |
-| [SRC-3451CC474D-L000805](../../tests/test_api.py#L805) | 805 | `"            assert \"frame-ancestors 'none'\" in policy"` | — |
-| [SRC-3451CC474D-L000806](../../tests/test_api.py#L806) | 806 | `"            assert \"'unsafe-inline'\" not in policy"` | — |
-| [SRC-3451CC474D-L000807](../../tests/test_api.py#L807) | 807 | `"            assert \"'sha256-\" in policy"` | — |
-| [SRC-3451CC474D-L000808](../../tests/test_api.py#L808) | 808 | `"            assert headers[\"permissions-policy\"] == ("` | — |
-| [SRC-3451CC474D-L000809](../../tests/test_api.py#L809) | 809 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
-| [SRC-3451CC474D-L000810](../../tests/test_api.py#L810) | 810 | `"            )"` | — |
-| [SRC-3451CC474D-L000811](../../tests/test_api.py#L811) | 811 | `""` | — |
-| [SRC-3451CC474D-L000812](../../tests/test_api.py#L812) | 812 | `""` | — |
-| [SRC-3451CC474D-L000813](../../tests/test_api.py#L813) | 813 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000814](../../tests/test_api.py#L814) | 814 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000815](../../tests/test_api.py#L815) | 815 | `""` | — |
-| [SRC-3451CC474D-L000816](../../tests/test_api.py#L816) | 816 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
-| [SRC-3451CC474D-L000817](../../tests/test_api.py#L817) | 817 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
-| [SRC-3451CC474D-L000818](../../tests/test_api.py#L818) | 818 | `"    assert api_module._build_sha() == \"unknown\""` | — |
-| [SRC-3451CC474D-L000819](../../tests/test_api.py#L819) | 819 | `"    build_sha_file.write_text(\"a\" * 40, encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000820](../../tests/test_api.py#L820) | 820 | `"    assert api_module._build_sha() == \"a\" * 40"` | — |
-| [SRC-3451CC474D-L000821](../../tests/test_api.py#L821) | 821 | `"    build_sha_file.write_text(\"not-a-git-sha\", encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000822](../../tests/test_api.py#L822) | 822 | `"    assert api_module._build_sha() == \"unknown\""` | — |
-| [SRC-3451CC474D-L000823](../../tests/test_api.py#L823) | 823 | `""` | — |
-| [SRC-3451CC474D-L000824](../../tests/test_api.py#L824) | 824 | `""` | — |
-| [SRC-3451CC474D-L000825](../../tests/test_api.py#L825) | 825 | `""` | — |
-| [SRC-3451CC474D-L000826](../../tests/test_api.py#L826) | 826 | `"@pytest.mark.parametrize("` | — |
-| [SRC-3451CC474D-L000827](../../tests/test_api.py#L827) | 827 | `"    (\"variable\", \"source\"),"` | — |
-| [SRC-3451CC474D-L000828](../../tests/test_api.py#L828) | 828 | `"    ["` | — |
-| [SRC-3451CC474D-L000829](../../tests/test_api.py#L829) | 829 | `"        (\"RAILWAY_GIT_COMMIT_SHA\", \"platform:railway\"),"` | — |
-| [SRC-3451CC474D-L000830](../../tests/test_api.py#L830) | 830 | `"        (\"RENDER_GIT_COMMIT\", \"platform:render\"),"` | — |
-| [SRC-3451CC474D-L000831](../../tests/test_api.py#L831) | 831 | `"    ],"` | — |
-| [SRC-3451CC474D-L000832](../../tests/test_api.py#L832) | 832 | `")"` | — |
-| [SRC-3451CC474D-L000833](../../tests/test_api.py#L833) | 833 | `"def test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable("` | — |
-| [SRC-3451CC474D-L000834](../../tests/test_api.py#L834) | 834 | `"    monkeypatch, tmp_path, variable, source"` | — |
-| [SRC-3451CC474D-L000835](../../tests/test_api.py#L835) | 835 | `"):"` | — |
-| [SRC-3451CC474D-L000836](../../tests/test_api.py#L836) | 836 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000837](../../tests/test_api.py#L837) | 837 | `""` | — |
-| [SRC-3451CC474D-L000838](../../tests/test_api.py#L838) | 838 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
-| [SRC-3451CC474D-L000839](../../tests/test_api.py#L839) | 839 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
-| [SRC-3451CC474D-L000840](../../tests/test_api.py#L840) | 840 | `"    build_sha_file.write_text(\"unknown\", encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000841](../../tests/test_api.py#L841) | 841 | `"    for name, _label in api_module._PLATFORM_BUILD_SHA_ENVIRONMENTS:"` | — |
-| [SRC-3451CC474D-L000842](../../tests/test_api.py#L842) | 842 | `"        monkeypatch.delenv(name, raising=False)"` | — |
-| [SRC-3451CC474D-L000843](../../tests/test_api.py#L843) | 843 | `"    monkeypatch.setenv(variable, \"b\" * 40)"` | — |
-| [SRC-3451CC474D-L000844](../../tests/test_api.py#L844) | 844 | `""` | — |
-| [SRC-3451CC474D-L000845](../../tests/test_api.py#L845) | 845 | `"    assert api_module._build_identity() == (\"b\" * 40, source)"` | — |
-| [SRC-3451CC474D-L000846](../../tests/test_api.py#L846) | 846 | `""` | — |
-| [SRC-3451CC474D-L000847](../../tests/test_api.py#L847) | 847 | `""` | — |
-| [SRC-3451CC474D-L000848](../../tests/test_api.py#L848) | 848 | `"def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000849](../../tests/test_api.py#L849) | 849 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000850](../../tests/test_api.py#L850) | 850 | `""` | — |
-| [SRC-3451CC474D-L000851](../../tests/test_api.py#L851) | 851 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", tmp_path / \"BUILD_SHA\")"` | — |
-| [SRC-3451CC474D-L000852](../../tests/test_api.py#L852) | 852 | `"    api_module.BUILD_SHA_FILE.write_text(\"unknown\", encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000853](../../tests/test_api.py#L853) | 853 | `"    monkeypatch.setenv(\"RAILWAY_GIT_COMMIT_SHA\", \"not-a-sha\")"` | — |
-| [SRC-3451CC474D-L000854](../../tests/test_api.py#L854) | 854 | `"    monkeypatch.setenv(\"RENDER_GIT_COMMIT\", \"also-not-a-sha\")"` | — |
-| [SRC-3451CC474D-L000855](../../tests/test_api.py#L855) | 855 | `""` | — |
-| [SRC-3451CC474D-L000856](../../tests/test_api.py#L856) | 856 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
-| [SRC-3451CC474D-L000857](../../tests/test_api.py#L857) | 857 | `""` | — |
-| [SRC-3451CC474D-L000858](../../tests/test_api.py#L858) | 858 | `""` | — |
-| [SRC-3451CC474D-L000859](../../tests/test_api.py#L859) | 859 | `""` | — |
-| [SRC-3451CC474D-L000860](../../tests/test_api.py#L860) | 860 | `"def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000861](../../tests/test_api.py#L861) | 861 | `"    from api.omarai import _lead_store_from_environment"` | — |
-| [SRC-3451CC474D-L000862](../../tests/test_api.py#L862) | 862 | `""` | — |
-| [SRC-3451CC474D-L000863](../../tests/test_api.py#L863) | 863 | `"    database_path = tmp_path / \"persistent\" / \"omarai.sqlite3\""` | — |
-| [SRC-3451CC474D-L000864](../../tests/test_api.py#L864) | 864 | `"    monkeypatch.setenv(\"OMARAI_DB_PATH\", str(database_path))"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000320
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000314
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -41,31 +41,37 @@
 | [SRC-A3046DA0D1-L000003](../../.env.example#L3) | 3 | `"OMARAI_PUBLIC_DEPLOYMENT=1"` | — |
 | [SRC-A3046DA0D1-L000004](../../.env.example#L4) | 4 | `"OMARAI_ACCESS_TOKEN=replace-with-a-random-secret-at-least-32-characters"` | — |
 | [SRC-A3046DA0D1-L000005](../../.env.example#L5) | 5 | `"OPENROUTER_API_KEY=replace-with-your-own-provider-key"` | — |
-| [SRC-A3046DA0D1-L000006](../../.env.example#L6) | 6 | `""` | — |
-| [SRC-A3046DA0D1-L000007](../../.env.example#L7) | 7 | `"# Optional: pin stable/paid models after checking current availability and price."` | — |
-| [SRC-A3046DA0D1-L000008](../../.env.example#L8) | 8 | `"# OMARAI_PLANNER_MODEL=provider/model-id"` | — |
-| [SRC-A3046DA0D1-L000009](../../.env.example#L9) | 9 | `"# OMARAI_ANSWER_MODEL=provider/model-id"` | — |
-| [SRC-A3046DA0D1-L000010](../../.env.example#L10) | 10 | `"# OMARAI_REVIEW_MODEL=provider/model-id"` | — |
-| [SRC-A3046DA0D1-L000011](../../.env.example#L11) | 11 | `"# OMARAI_LLM_FALLBACK_MODEL=openrouter/free"` | — |
+| [SRC-A3046DA0D1-L000006](../../.env.example#L6) | 6 | `"# Optional independent model providers; failover order follows the configured primary."` | — |
+| [SRC-A3046DA0D1-L000007](../../.env.example#L7) | 7 | `"GEMINI_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000008](../../.env.example#L8) | 8 | `"MISTRAL_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000009](../../.env.example#L9) | 9 | `"# Optional model overrides for the provider fallback targets."` | — |
+| [SRC-A3046DA0D1-L000010](../../.env.example#L10) | 10 | `"# OMARAI_GEMINI_MODEL=gemini-3.8-flash"` | — |
+| [SRC-A3046DA0D1-L000011](../../.env.example#L11) | 11 | `"# OMARAI_MISTRAL_MODEL=mistral-small-latest"` | — |
 | [SRC-A3046DA0D1-L000012](../../.env.example#L12) | 12 | `""` | — |
-| [SRC-A3046DA0D1-L000013](../../.env.example#L13) | 13 | `"# Optional OpenRouter live web-search server tool; uses provider search and may incur charges."` | — |
-| [SRC-A3046DA0D1-L000014](../../.env.example#L14) | 14 | `"# OMARAI_OPENROUTER_WEB_SEARCH=1"` | — |
-| [SRC-A3046DA0D1-L000015](../../.env.example#L15) | 15 | `""` | — |
-| [SRC-A3046DA0D1-L000016](../../.env.example#L16) | 16 | `"# Optional live search APIs; may require separate accounts/credits."` | — |
-| [SRC-A3046DA0D1-L000017](../../.env.example#L17) | 17 | `"# BRAVE_SEARCH_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000018](../../.env.example#L18) | 18 | `"# TAVILY_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000019](../../.env.example#L19) | 19 | `""` | — |
-| [SRC-A3046DA0D1-L000020](../../.env.example#L20) | 20 | `""` | — |
-| [SRC-A3046DA0D1-L000021](../../.env.example#L21) | 21 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
-| [SRC-A3046DA0D1-L000022](../../.env.example#L22) | 22 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
-| [SRC-A3046DA0D1-L000023](../../.env.example#L23) | 23 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
-| [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `""` | — |
-| [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
-| [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
-| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
-| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
-| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
+| [SRC-A3046DA0D1-L000013](../../.env.example#L13) | 13 | `"# Optional: pin stable/paid models after checking current availability and price."` | — |
+| [SRC-A3046DA0D1-L000014](../../.env.example#L14) | 14 | `"# OMARAI_PLANNER_MODEL=provider/model-id"` | — |
+| [SRC-A3046DA0D1-L000015](../../.env.example#L15) | 15 | `"# OMARAI_ANSWER_MODEL=provider/model-id"` | — |
+| [SRC-A3046DA0D1-L000016](../../.env.example#L16) | 16 | `"# OMARAI_REVIEW_MODEL=provider/model-id"` | — |
+| [SRC-A3046DA0D1-L000017](../../.env.example#L17) | 17 | `"# OMARAI_LLM_FALLBACK_MODEL=openrouter/free"` | — |
+| [SRC-A3046DA0D1-L000018](../../.env.example#L18) | 18 | `""` | — |
+| [SRC-A3046DA0D1-L000019](../../.env.example#L19) | 19 | `"# Optional OpenRouter live web-search server tool; uses provider search and may incur charges."` | — |
+| [SRC-A3046DA0D1-L000020](../../.env.example#L20) | 20 | `"# OMARAI_OPENROUTER_WEB_SEARCH=1"` | — |
+| [SRC-A3046DA0D1-L000021](../../.env.example#L21) | 21 | `""` | — |
+| [SRC-A3046DA0D1-L000022](../../.env.example#L22) | 22 | `"# Optional live search APIs; may require separate accounts/credits."` | — |
+| [SRC-A3046DA0D1-L000023](../../.env.example#L23) | 23 | `"# BRAVE_SEARCH_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `"# TAVILY_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `""` | — |
+| [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `""` | — |
+| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
+| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
+| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
+| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `""` | — |
+| [SRC-A3046DA0D1-L000031](../../.env.example#L31) | 31 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
+| [SRC-A3046DA0D1-L000032](../../.env.example#L32) | 32 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
+| [SRC-A3046DA0D1-L000033](../../.env.example#L33) | 33 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
+| [SRC-A3046DA0D1-L000034](../../.env.example#L34) | 34 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000035](../../.env.example#L35) | 35 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
+| [SRC-A3046DA0D1-L000036](../../.env.example#L36) | 36 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
 ## وثائق ونصوص
 
 ### FILE-18813C8694 — [.github/PULL_REQUEST_TEMPLATE.md](../../.github/PULL_REQUEST_TEMPLATE.md#L1)
@@ -891,9 +897,3 @@
 | [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"            \"status\": sentence_status,"` | — |
 | [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"            \"claim_terms_checked\": claim_tokens[:16],"` | — |
 | [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"            \"citations\": cited_checks,"` | — |
-| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"        })"` | — |
-| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `""` | — |
-| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `""` | — |
-| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"    # Check numeric literals against the exact source indices cited in each sentence."` | — |
-| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"    # Values found in some unrelated source do not count as support for this citation."` | — |
-| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"    source_numbers_by_index = {"` | — |
