@@ -6,11 +6,15 @@ import argparse
 import json
 import os
 import re
+from pathlib import Path
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
 from typing import Any
+
+
+LIVE_TEST_QUESTION = "اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر."
 
 
 class SmokeError(RuntimeError):
@@ -168,7 +172,7 @@ def run_smoke(
     status, answer = request_json(
         f"{origin}/api/agent", token=token, timeout=timeout,
         payload={
-            "question": "اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر.",
+            "question": LIVE_TEST_QUESTION,
             "history": [], "mode": "auto",
         },
     )
@@ -186,16 +190,47 @@ def run_smoke(
     if answer.get("used_language_model") is not True:
         raise SmokeError("Agent request did not confirm that a language model was used.")
     report = answer.get("search_report")
+    answer_text = str(answer.get("answer", "")).strip()
+    source_records = [
+        {
+            "title": str(item.get("title") or "")[:300],
+            "url": str(item.get("url") or "")[:2048],
+            "provider": str(item.get("provider") or "")[:80],
+            "snippet": str(item.get("snippet") or "")[:1200],
+            "published_at": str(item.get("published_at") or "")[:100],
+        }
+        for item in usable
+    ]
     checks["agent_request"] = {
         "status": "passed", "source_count": len(usable),
         "direct_pages_read": report.get("pages_fetched") if isinstance(report, dict) else None,
         "providers_reported": report.get("providers_used", []) if isinstance(report, dict) else [],
-        "answer_received": bool(str(answer.get("answer", "")).strip()),
+        "answer_received": bool(answer_text),
+        "pipeline_completion_status": (
+            report.get("pipeline_completion_status") if isinstance(report, dict) else None
+        ),
+        "answer_evidence_status": answer.get("answer_evidence_status"),
     }
     return {
         "result": "passed", "target_host": urllib.parse.urlsplit(origin).hostname,
         "checks": checks,
-        "note": "This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.",
+        "transcript": [
+            {
+                "case_id": "knowledge_capital_egypt",
+                "question": LIVE_TEST_QUESTION,
+                "answer": answer_text,
+                "used_web_search": answer.get("used_web_search") is True,
+                "used_language_model": answer.get("used_language_model") is True,
+                "sources": source_records,
+                "pipeline_completion_status": (
+                    report.get("pipeline_completion_status") if isinstance(report, dict) else None
+                ),
+                "answer_evidence_status": answer.get("answer_evidence_status"),
+            }
+        ],
+        "provider_diagnostics": diagnostics.get("provider_diagnostics", []),
+        "diagnostic_warnings": diagnostics.get("warnings", []),
+        "note": "Transcript contains the exact fixed test question, answer, and returned source metadata. This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.",
     }
 
 
@@ -210,6 +245,11 @@ def main() -> int:
     )
     parser.add_argument("--allow-http", action="store_true",
                         help="Allow HTTP only for localhost/127.0.0.1/::1 testing.")
+    parser.add_argument(
+        "--output",
+        default="",
+        help="Optional path for a JSON report containing the exact test question, answer, and sources.",
+    )
     args = parser.parse_args()
     try:
         result = run_smoke(
@@ -222,7 +262,12 @@ def main() -> int:
     except SmokeError as exc:
         print(json.dumps({"result": "failed", "error": str(exc)}, ensure_ascii=False, indent=2))
         return 1
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    rendered = json.dumps(result, ensure_ascii=False, indent=2)
+    if args.output:
+        output_path = Path(args.output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(rendered + "\n", encoding="utf-8")
+    print(rendered)
     return 0
 
 
