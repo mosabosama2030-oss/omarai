@@ -2322,6 +2322,22 @@ def test_buyer_intent_evidence_distinguishes_stated_need_from_purchase():
     assert signal["product_fit"] == "unassessed"
 
 
+def test_seller_looking_for_a_buyer_is_not_a_buyer_demand_signal():
+    seller_post = {
+        "title": "نبحث عن مشتري لسيارة مستعملة",
+        "snippet": "مطلوب مشتري جاد للتواصل مع المالك.",
+        "page_text": "نبحث عن مشتري لسيارة مستعملة بحالة جيدة.",
+    }
+    english_seller_post = {
+        "title": "Looking for a buyer for our used equipment",
+        "snippet": "Buyer wanted; seller will contact interested parties.",
+        "page_text": "We are looking for a buyer for our used equipment.",
+    }
+
+    assert WebAgent._lead_intent_evidence(seller_post) is None
+    assert WebAgent._lead_intent_evidence(english_seller_post) is None
+
+
 def test_buyer_intent_evidence_requires_explicit_purchase_signal():
     listing = {
         "title": "شقق للبيع في العاصمة الإدارية الجديدة",
