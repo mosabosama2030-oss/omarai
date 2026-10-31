@@ -18,7 +18,11 @@ LIVE_TEST_QUESTION = "اختبار تشغيل: ما عاصمة مصر؟ أجب �
 
 
 class SmokeError(RuntimeError):
-    """A live acceptance check failed."""
+    """A live acceptance check failed, optionally carrying a safe partial report."""
+
+    def __init__(self, message: str, report: dict[str, Any] | None = None):
+        super().__init__(message)
+        self.report = report or {}
 
 
 class _SameOriginRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -123,10 +127,19 @@ def run_smoke(
             "OMARAI_ACCESS_TOKEN is required for hosted targets. No-token mode is restricted to localhost/loopback."
         )
 
+    auth_mode = "bearer_token" if token.strip() else "local_loopback_dev_bypass"
+    checks: dict[str, Any] = {}
+    partial_report: dict[str, Any] = {
+        "result": "running",
+        "target_host": target_host,
+        "auth_mode": auth_mode,
+        "checks": checks,
+        "transcript": [],
+    }
     status, health = request_json(f"{origin}/api/health", timeout=min(timeout, 20))
     if status != 200 or not health or health.get("ok") is not True:
-        raise SmokeError(f"Health check failed (HTTP {status}).")
-    checks: dict[str, Any] = {"health": "passed"}
+        raise SmokeError(f"Health check failed (HTTP {status}).", partial_report)
+    checks["health"] = "passed"
 
     build = health.get("build")
     reported_sha = build.get("sha") if isinstance(build, dict) else None
@@ -136,7 +149,8 @@ def run_smoke(
             raise SmokeError(
                 "The deployed service SHA does not match the expected Git commit. "
                 "Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, "
-                "then rebuild and redeploy."
+                "then rebuild and redeploy.",
+                partial_report,
             )
         checks["build_identity"] = {
             "status": "passed",
@@ -155,33 +169,30 @@ def run_smoke(
             timeout=min(timeout, 20),
         )
         if status != 401:
-            raise SmokeError(f"Unauthenticated POST /api/agent should return 401, received {status}.")
+            raise SmokeError(
+                f"Unauthenticated POST /api/agent should return 401, received {status}.",
+                partial_report,
+            )
         checks["authentication"] = "passed"
-        auth_mode = "bearer_token"
     else:
         checks["authentication"] = "local_loopback_dev_bypass"
-        auth_mode = "local_loopback_dev_bypass"
 
     # These are real network/provider calls and may incur model/search usage.
     status, diagnostics = request_json(
         f"{origin}/api/diagnostics", token=token,
-        payload={"test_model": True, "test_social": False}, timeout=timeout,
+        payload={"test_model": False, "test_social": False}, timeout=timeout,
     )
     if status != 200 or not diagnostics:
-        raise SmokeError(f"Authenticated diagnostics failed (HTTP {status}).")
+        raise SmokeError(f"Authenticated diagnostics failed (HTTP {status}).", partial_report)
     parts = diagnostics.get("checks", {})
     web = parts.get("web_search", {}) if isinstance(parts, dict) else {}
     model = parts.get("language_model", {}) if isinstance(parts, dict) else {}
     if not isinstance(web, dict) or web.get("status") != "passed":
-        raise SmokeError("The real web-search connectivity test did not pass.")
-    if not isinstance(model, dict) or model.get("status") != "passed":
-        raise SmokeError("The configured language model did not pass a real completion test.")
+        raise SmokeError("The real web-search connectivity test did not pass.", partial_report)
     checks["live_search"] = {
         "status": "passed", "result_count": web.get("result_count", 0),
         "provider_counts": web.get("provider_counts", {}),
     }
-    checks["language_model"] = {"status": "passed", "response_received": True}
-
     status, answer = request_json(
         f"{origin}/api/agent", token=token, timeout=timeout,
         payload={
@@ -190,7 +201,7 @@ def run_smoke(
         },
     )
     if status != 200 or not answer:
-        raise SmokeError(f"Authenticated agent request failed (HTTP {status}).")
+        raise SmokeError(f"Authenticated agent request failed (HTTP {status}).", partial_report)
     sources = answer.get("sources")
     usable = [
         item for item in sources if isinstance(item, dict)
@@ -198,11 +209,7 @@ def run_smoke(
         and urllib.parse.urlsplit(item["url"]).scheme in {"http", "https"}
         and urllib.parse.urlsplit(item["url"]).hostname
     ] if isinstance(sources, list) else []
-    if answer.get("used_web_search") is not True or not usable:
-        raise SmokeError("Agent request did not return a live web search with usable source URLs.")
-    if answer.get("used_language_model") is not True:
-        raise SmokeError("Agent request did not confirm that a language model was used.")
-    report = answer.get("search_report")
+    search_report = answer.get("search_report")
     answer_text = str(answer.get("answer", "")).strip()
     source_records = [
         {
@@ -214,37 +221,53 @@ def run_smoke(
         }
         for item in usable
     ]
-    checks["agent_request"] = {
-        "status": "passed", "source_count": len(usable),
-        "direct_pages_read": report.get("pages_fetched") if isinstance(report, dict) else None,
-        "providers_reported": report.get("providers_used", []) if isinstance(report, dict) else [],
-        "answer_received": bool(answer_text),
+    transcript = {
+        "case_id": "knowledge_capital_egypt",
+        "question": LIVE_TEST_QUESTION,
+        "answer": answer_text,
+        "used_web_search": answer.get("used_web_search") is True,
+        "used_language_model": answer.get("used_language_model") is True,
+        "sources": source_records,
         "pipeline_completion_status": (
-            report.get("pipeline_completion_status") if isinstance(report, dict) else None
+            search_report.get("pipeline_completion_status")
+            if isinstance(search_report, dict) else None
         ),
         "answer_evidence_status": answer.get("answer_evidence_status"),
     }
-    return {
-        "result": "passed", "target_host": target_host, "auth_mode": auth_mode,
+    partial_report["transcript"] = [transcript]
+    if answer.get("used_web_search") is not True or not usable:
+        raise SmokeError(
+            "Agent request did not return a live web search with usable source URLs.",
+            partial_report,
+        )
+    if answer.get("used_language_model") is not True:
+        raise SmokeError(
+            "Agent request did not confirm that a language model was used.",
+            partial_report,
+        )
+    checks["language_model"] = {
+        "status": "passed",
+        "response_received": bool(answer_text),
+        "verified_by": "agent_request",
+    }
+    checks["agent_request"] = {
+        "status": "passed", "source_count": len(usable),
+        "direct_pages_read": search_report.get("pages_fetched") if isinstance(search_report, dict) else None,
+        "providers_reported": search_report.get("providers_used", []) if isinstance(search_report, dict) else [],
+        "answer_received": bool(answer_text),
+        "pipeline_completion_status": (
+            search_report.get("pipeline_completion_status") if isinstance(search_report, dict) else None
+        ),
+        "answer_evidence_status": answer.get("answer_evidence_status"),
+    }
+    partial_report.update({
+        "result": "passed",
         "checks": checks,
-        "transcript": [
-            {
-                "case_id": "knowledge_capital_egypt",
-                "question": LIVE_TEST_QUESTION,
-                "answer": answer_text,
-                "used_web_search": answer.get("used_web_search") is True,
-                "used_language_model": answer.get("used_language_model") is True,
-                "sources": source_records,
-                "pipeline_completion_status": (
-                    report.get("pipeline_completion_status") if isinstance(report, dict) else None
-                ),
-                "answer_evidence_status": answer.get("answer_evidence_status"),
-            }
-        ],
         "provider_diagnostics": diagnostics.get("provider_diagnostics", []),
         "diagnostic_warnings": diagnostics.get("warnings", []),
-        "note": "Transcript contains the exact fixed test question, answer, and returned source metadata. This proves the request path worked at test time, not continuous uptime. Provider usage may incur charges.",
-    }
+        "note": "Transcript contains the exact fixed test question, answer, and returned source metadata. This proves the request path worked at test time, not continuous uptime. One model completion is made by the agent request; provider usage may incur charges.",
+    })
+    return partial_report
 
 
 def main() -> int:
@@ -279,7 +302,13 @@ def main() -> int:
             local_dev_no_token=args.local_dev_no_token,
         )
     except SmokeError as exc:
-        print(json.dumps({"result": "failed", "error": str(exc)}, ensure_ascii=False, indent=2))
+        failed_report = {"result": "failed", "error": str(exc), **exc.report}
+        rendered = json.dumps(failed_report, ensure_ascii=False, indent=2)
+        if args.output:
+            output_path = Path(args.output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_text(rendered + "\n", encoding="utf-8")
+        print(rendered)
         return 1
     rendered = json.dumps(result, ensure_ascii=False, indent=2)
     if args.output:
