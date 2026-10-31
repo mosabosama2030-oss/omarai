@@ -153,7 +153,12 @@ function renderSource(s,index){
  if(s.publisher_url&&safeSourceUrl(s.publisher_url))tags.push('<a class="tag" href="'+escapeHtml(s.publisher_url)+'" target="_blank" rel="noopener noreferrer">صفحة الناشر ↗</a>');
  if(providers.length)tags.push('<span class="tag">'+providers.join(" · ")+'</span>');
  if(s.lead_qualification==="related_result_not_lead")tags.push('<span class="tag social">نتيجة مرتبطة وليست عميلًا محتملًا</span>');
- if(s.lead_qualification==="public_demand_signal"||s.lead_qualification==="public_buyer_intent_signal")tags.push('<span class="tag read">إشارة طلب علنية؛ ملاءمة المنتج والهوية تحتاج إلى تحقق</span>');
+ if(s.lead_qualification==="public_demand_signal"||s.lead_qualification==="public_buyer_intent_signal"){
+  const demandType=s.lead_intent_evidence&&s.lead_intent_evidence.signal_type;
+  const demandLabels={direct_purchase_request:"طلب شراء مباشر",request_for_quotation:"طلب عرض سعر",tender_or_procurement:"مناقصة أو توريد",stated_need:"احتياج معلن",indirect_indicator:"مؤشر احتياج غير مباشر"};
+  const demandLabel=demandLabels[demandType]||"إشارة طلب غير مكتملة التصنيف";
+  tags.push('<span class="tag read">'+escapeHtml(demandLabel)+' — ملاءمة المنتج والهوية تحتاج إلى تحقق</span>');
+ }
  const heading=url?'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">['+(index+1)+'] '+title+' ↗</a>':'<strong>['+(index+1)+'] '+title+'</strong><p class="warning">لم يُعرض الرابط لأنه غير صالح.</p>';
  return '<article class="source">'+heading+'<p>'+escapeHtml(s.snippet||"لا يتوفر مقتطف نصي من هذه النتيجة.")+'</p><div class="source-meta">'+tags.join("")+'</div></article>';
 }
