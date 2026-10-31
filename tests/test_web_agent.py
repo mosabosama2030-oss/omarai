@@ -4067,6 +4067,8 @@ def test_generate_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch
     source = sample_source(0)
     injected_text = f"INJECTED INSTRUCTION FROM UNTRUSTED {field.upper()}"
     source[field] = injected_text
+    if field == "snippet":
+        source["page_text"] = ""
     captured = {}
 
     def fake_completion(messages, **kwargs):
@@ -4102,6 +4104,8 @@ def test_review_keeps_title_snippet_and_page_text_untrusted(field, monkeypatch):
     source = sample_source(0)
     injected_text = f"INJECTED REVIEW INSTRUCTION FROM UNTRUSTED {field.upper()}"
     source[field] = injected_text
+    if field == "snippet":
+        source["page_text"] = ""
     captured = {}
 
     def fake_completion(messages, **kwargs):
