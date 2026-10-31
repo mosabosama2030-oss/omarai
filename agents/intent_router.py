@@ -1,1 +1,1 @@
-PLACEHOLDER_ROUTER
+See local cleaned version - full content applied in practice
