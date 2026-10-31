@@ -7,7 +7,7 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 ## What this version does
 
 - Plans up to eight search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable.
-- Uses separate model roles by default: NVIDIA Nemotron 3 Ultra (free) for query planning and Google Gemma 4 31B Instruct (free) for answer synthesis and the second-pass consistency review; retries with OpenRouter's free-model router if a chosen model fails.
+- Uses separate model roles by default through OpenRouter; can fail over to separately configured Gemini and Mistral API keys using their OpenAI-compatible endpoints. Provider-specific model defaults are `gemini-3.8-flash` and `mistral-small-latest`; actual availability and free-tier quotas depend on each provider account.
 - Runs DuckDuckGo HTML and Bing RSS independently for every planned query; can add official Brave Search API and Tavily Search API result indexes when their environment keys are configured; uses Google News RSS for queries judged time-sensitive.
 - Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance.
 - Extracts text from up to eight accessible public pages per question with request-size and timeout bounds, following at most three individually validated public redirects.

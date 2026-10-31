@@ -49,7 +49,7 @@ printf '\n'
 export OPENROUTER_API_KEY
 ```
 
-يمكن تغيير موفر النموذج المتوافق مع OpenAI عبر `OMARAI_LLM_BASE_URL`. اضبط `OMARAI_PLANNER_MODEL` و`OMARAI_ANSWER_MODEL` و`OMARAI_REVIEW_MODEL` لتغيير الأدوار كلٌ على حدة، أو `OMARAI_LLM_MODEL` لتطبيق نموذج واحد على الأدوار التي لم تُحدد لها قيمة منفصلة، و`OMARAI_LLM_FALLBACK_MODEL` لتغيير النموذج الاحتياطي. توافر النماذج المجانية وحدودها يتغير؛ لذلك لا يفترض التطبيق أن النموذج مجاني دائمًا أو أن الطلب سينجح كل مرة.
+يمكن تغيير موفر النموذج الأساسي المتوافق مع OpenAI عبر `OMARAI_LLM_BASE_URL`. ويمكن إضافة `GEMINI_API_KEY` و`MISTRAL_API_KEY` كموفرين احتياطيين مستقلين؛ عند فشل المزود الأساسي ينتقل Omarai إلى Gemini ثم Mistral بحسب المفاتيح المتاحة. يستخدم Gemini نقطة النهاية `https://generativelanguage.googleapis.com/v1beta/openai` والنموذج الافتراضي `gemini-3.8-flash`، ويستخدم Mistral نقطة النهاية `https://api.mistral.ai/v1` والنموذج الافتراضي `mistral-small-latest`. يمكن تغييرهما عبر `OMARAI_GEMINI_MODEL` و`OMARAI_MISTRAL_MODEL`. اضبط `OMARAI_PLANNER_MODEL` و`OMARAI_ANSWER_MODEL` و`OMARAI_REVIEW_MODEL` لتغيير أدوار المزود الأساسي كلٌ على حدة، أو `OMARAI_LLM_MODEL` لتطبيق نموذج واحد على الأدوار التي لم تُحدد لها قيمة منفصلة، و`OMARAI_LLM_FALLBACK_MODEL` لتغيير النموذج الاحتياطي داخل المزود الأساسي. البحث المباشر الخاص بـ OpenRouter لا يُرسل إلى Gemini أو Mistral. توافر النماذج المجانية وحدودها يتغير؛ وجود المفتاح لا يثبت صلاحية الحساب أو نجاح الاتصال. لا تضف أي مفتاح إلى GitHub أو ملفات الواجهة؛ أضفه في مخزن أسرار الاستضافة فقط.
 
 ## 4. إعداد الموصلات الرسمية الاختيارية
 
