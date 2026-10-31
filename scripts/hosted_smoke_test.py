@@ -120,7 +120,7 @@ def run_smoke(
             raise SmokeError("OMARAI_ACCESS_TOKEN is shorter than 32 characters.")
     elif not (local_dev_no_token and loopback_host):
         raise SmokeError(
-            "A bearer token is required for hosted targets. No-token mode is restricted to localhost/loopback."
+            "OMARAI_ACCESS_TOKEN is required for hosted targets. No-token mode is restricted to localhost/loopback."
         )
 
     status, health = request_json(f"{origin}/api/health", timeout=min(timeout, 20))
