@@ -14,7 +14,12 @@ import urllib.request
 from typing import Any
 
 
-LIVE_TEST_QUESTION = "اختبار تشغيل: ما عاصمة مصر؟ أجب بالعربية بإيجاز واستند إلى المصادر."
+LIVE_TEST_QUESTION = (
+    "اختبار اكتساب عملاء: ابحث عن طلبات شراء أو مناقصات منشورة وحديثة في مصر تخص "
+    "أنظمة إنذار الحريق. لا تعتبر شركة عميلاً محتملاً إلا إذا وجدت إشارة شراء صريحة "
+    "أو طلب عرض سعر منشورًا. اعرض لكل إشارة المصدر والرابط والتاريخ ومقتطف الدليل، "
+    "وصرّح بوضوح إذا لم تجد طلبًا مؤكدًا."
+)
 
 
 class SmokeError(RuntimeError):
@@ -221,7 +226,7 @@ def run_smoke(
         for item in usable
     ]
     transcript = {
-        "case_id": "knowledge_capital_egypt",
+        "case_id": "sales_intent_fire_alarm_egypt",
         "question": LIVE_TEST_QUESTION,
         "answer": answer_text,
         "used_web_search": answer.get("used_web_search") is True,
