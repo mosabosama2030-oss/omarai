@@ -396,10 +396,10 @@ class LeadStore:
         url = validate_url(source_url)
         normalized = normalize(text)
         fingerprint = hashlib.sha256(
-            (url.rstrip("/") + "\\n" + normalized).encode()
+            (url.rstrip("/") + "\n" + normalized).encode()
         ).hexdigest()
         lead_id = hashlib.sha256(
-            (tenant + "\\n" + fingerprint).encode()
+            (tenant + "\n" + fingerprint).encode()
         ).hexdigest()[:24]
         timestamp = observed_at or now_utc()
         assessment = analyze(text, product_terms=product_terms, location_terms=location_terms)
