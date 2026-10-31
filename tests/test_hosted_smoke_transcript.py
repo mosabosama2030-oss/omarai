@@ -30,16 +30,16 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
             }
         if url.endswith("/api/agent") and token:
             return 200, {
-                "answer": "القاهرة عاصمة مصر.",
+                "answer": "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق.",
                 "used_web_search": True,
                 "used_language_model": True,
                 "answer_evidence_status": "sources_present",
                 "sources": [
                     {
-                        "title": "Egypt",
-                        "url": "https://example.test/egypt",
+                        "title": "Fire alarm tender notice",
+                        "url": "https://example.test/fire-alarm-tender",
                         "provider": "bing_rss",
-                        "snippet": "Cairo is the capital.",
+                        "snippet": "طلب عرض سعر لنظام إنذار الحريق.",
                         "published_at": "",
                     }
                 ],
@@ -58,8 +58,8 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
 
     transcript = report["transcript"][0]
     assert transcript["question"] == hosted_smoke_test.LIVE_TEST_QUESTION
-    assert transcript["answer"] == "القاهرة عاصمة مصر."
-    assert transcript["sources"][0]["url"] == "https://example.test/egypt"
+    assert transcript["answer"] == "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق."
+    assert transcript["sources"][0]["url"] == "https://example.test/fire-alarm-tender"
     assert transcript["pipeline_completion_status"] == "completed"
     assert report["provider_diagnostics"][0]["provider"] == "bing_rss"
     diagnostics_call = next(call for call in calls if call[0].endswith("/api/diagnostics"))
@@ -83,7 +83,7 @@ def test_hosted_smoke_allows_no_token_only_for_loopback_dev(monkeypatch):
             }
         if url.endswith("/api/agent"):
             return 200, {
-                "answer": "القاهرة.",
+                "answer": "لا توجد إشارة شراء مؤكدة في المصادر التي تم فحصها.",
                 "used_web_search": True,
                 "used_language_model": True,
                 "sources": [{"url": "https://example.test/egypt"}],
@@ -97,7 +97,7 @@ def test_hosted_smoke_allows_no_token_only_for_loopback_dev(monkeypatch):
         local_dev_no_token=True,
     )
     assert report["auth_mode"] == "local_loopback_dev_bypass"
-    assert report["transcript"][0]["answer"] == "القاهرة."
+    assert report["transcript"][0]["answer"] == "لا توجد إشارة شراء مؤكدة في المصادر التي تم فحصها."
 
 
 def test_hosted_smoke_rejects_no_token_for_remote_host():
