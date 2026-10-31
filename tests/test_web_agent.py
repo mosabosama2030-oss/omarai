@@ -2263,6 +2263,65 @@ def test_lead_discovery_is_distinct_from_listing_search():
     assert not WebAgent._is_lead_search("Find apartments for sale")
 
 
+def test_lead_queries_do_not_add_real_estate_terms_to_other_products():
+    vehicle_queries = WebAgent._lead_generation_queries(
+        "ابحث عن عميل يريد شراء سيارة كهربائية في القاهرة"
+    )
+    industrial_queries = WebAgent._lead_generation_queries(
+        "ابحث عن عميل يريد شراء نظام إنذار حريق صناعي"
+    )
+
+    assert vehicle_queries
+    assert industrial_queries
+    assert all("شقه" not in query and "تمليك" not in query for query in vehicle_queries)
+    assert all("شقه" not in query and "تمليك" not in query for query in industrial_queries)
+    assert any("سيارة كهربائية" in query for query in vehicle_queries)
+    assert any("نظام انذار حريق صناعي" in query for query in industrial_queries)
+
+
+def test_buyer_intent_evidence_supports_non_property_purchase_requests():
+    source = {
+        "title": "طلب شراء نظام إنذار حريق",
+        "snippet": "الجهة تبحث عن مورد لنظام إنذار حريق صناعي.",
+        "page_text": "نرغب في شراء نظام إنذار حريق للمصنع خلال هذا الربع.",
+    }
+
+    signal = WebAgent._lead_intent_evidence(source)
+
+    assert signal is not None
+    assert signal["signal_type"] == "direct_purchase_request"
+    assert signal["product_fit"] == "unassessed"
+    assert signal["basis"] == "page_text"
+
+
+def test_buyer_intent_evidence_distinguishes_rfq_from_direct_purchase():
+    source = {
+        "title": "طلب عرض سعر لتوريد معدات",
+        "snippet": "نرجو تقديم عرض سعر للمواصفات المرفقة.",
+        "page_text": "طلب عرض سعر لتوريد معدات للمشروع.",
+    }
+
+    signal = WebAgent._lead_intent_evidence(source)
+
+    assert signal is not None
+    assert signal["signal_type"] == "request_for_quotation"
+    assert signal["product_fit"] == "unassessed"
+
+
+def test_buyer_intent_evidence_distinguishes_stated_need_from_purchase():
+    source = {
+        "title": "بدور على مورد صيانة",
+        "snippet": "نحتاج إلى مورد صيانة موثوق.",
+        "page_text": "نبحث عن مورد صيانة للمصنع.",
+    }
+
+    signal = WebAgent._lead_intent_evidence(source)
+
+    assert signal is not None
+    assert signal["signal_type"] == "stated_need"
+    assert signal["product_fit"] == "unassessed"
+
+
 def test_buyer_intent_evidence_requires_explicit_purchase_signal():
     listing = {
         "title": "شقق للبيع في العاصمة الإدارية الجديدة",
