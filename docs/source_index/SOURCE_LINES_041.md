@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000186 إلى SRC-44CDA52D01-L000062
+- النطاق: SRC-1A176AD4F0-L000186 إلى SRC-62DC597310-L000268
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -781,74 +781,65 @@
 | [SRC-62DC597310-L000204](../../tests/test_live_search_connectors.py#L204) | 204 | `"    assert observed[\"request_options\"] == {\"json\": {\"query\": \"test\"}}"` | — |
 | [SRC-62DC597310-L000205](../../tests/test_live_search_connectors.py#L205) | 205 | `"    assert observed[\"client_options\"][\"follow_redirects\"] is False"` | — |
 | [SRC-62DC597310-L000206](../../tests/test_live_search_connectors.py#L206) | 206 | `"    assert observed[\"client_options\"][\"trust_env\"] is False"` | — |
-## اختبارات
-
-### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-44CDA52D01-L000001](../../tests/test_omarai.py#L1) | 1 | `"import csv"` | — |
-| [SRC-44CDA52D01-L000002](../../tests/test_omarai.py#L2) | 2 | `""` | — |
-| [SRC-44CDA52D01-L000003](../../tests/test_omarai.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-44CDA52D01-L000004](../../tests/test_omarai.py#L4) | 4 | `""` | — |
-| [SRC-44CDA52D01-L000005](../../tests/test_omarai.py#L5) | 5 | `"from agents.omarai import LeadStore, analyze, normalize"` | — |
-| [SRC-44CDA52D01-L000006](../../tests/test_omarai.py#L6) | 6 | `""` | — |
-| [SRC-44CDA52D01-L000007](../../tests/test_omarai.py#L7) | 7 | `""` | — |
-| [SRC-44CDA52D01-L000008](../../tests/test_omarai.py#L8) | 8 | `"def test_arabic_normalization():"` | — |
-| [SRC-44CDA52D01-L000009](../../tests/test_omarai.py#L9) | 9 | `"    assert normalize(\"إيجارٌ ـ شقة\") == normalize(\"ايجار شقة\")"` | — |
-| [SRC-44CDA52D01-L000010](../../tests/test_omarai.py#L10) | 10 | `""` | — |
-| [SRC-44CDA52D01-L000011](../../tests/test_omarai.py#L11) | 11 | `"def test_high_intent_with_next_step():"` | — |
-| [SRC-44CDA52D01-L000012](../../tests/test_omarai.py#L12) | 12 | `"    result=analyze(\"بدور على شقة وممكن معاينة\")"` | — |
-| [SRC-44CDA52D01-L000013](../../tests/test_omarai.py#L13) | 13 | `"    assert result[\"label\"]==\"high_intent\""` | — |
-| [SRC-44CDA52D01-L000014](../../tests/test_omarai.py#L14) | 14 | `"    assert result[\"score\"]>=55"` | — |
-| [SRC-44CDA52D01-L000015](../../tests/test_omarai.py#L15) | 15 | `""` | — |
-| [SRC-44CDA52D01-L000016](../../tests/test_omarai.py#L16) | 16 | `"def test_non_buyer_override():"` | — |
-| [SRC-44CDA52D01-L000017](../../tests/test_omarai.py#L17) | 17 | `"    result=analyze(\"مش عايز اشتري، عايز ابيع شقة\")"` | — |
-| [SRC-44CDA52D01-L000018](../../tests/test_omarai.py#L18) | 18 | `"    assert result[\"label\"]==\"not_buyer_signal\""` | — |
-| [SRC-44CDA52D01-L000019](../../tests/test_omarai.py#L19) | 19 | `"    assert result[\"score\"]==0"` | — |
-| [SRC-44CDA52D01-L000020](../../tests/test_omarai.py#L20) | 20 | `""` | — |
-| [SRC-44CDA52D01-L000021](../../tests/test_omarai.py#L21) | 21 | `"def test_empty_text_rejected():"` | — |
-| [SRC-44CDA52D01-L000022](../../tests/test_omarai.py#L22) | 22 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000023](../../tests/test_omarai.py#L23) | 23 | `"        analyze(\" \")"` | — |
-| [SRC-44CDA52D01-L000024](../../tests/test_omarai.py#L24) | 24 | `""` | — |
-| [SRC-44CDA52D01-L000025](../../tests/test_omarai.py#L25) | 25 | `"def test_url_required_and_validated(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000026](../../tests/test_omarai.py#L26) | 26 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000027](../../tests/test_omarai.py#L27) | 27 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000028](../../tests/test_omarai.py#L28) | 28 | `"        store.add(\"بدور على شقة\",\"\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000029](../../tests/test_omarai.py#L29) | 29 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000030](../../tests/test_omarai.py#L30) | 30 | `"        store.add(\"بدور على شقة\",\"file:///tmp/private\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000031](../../tests/test_omarai.py#L31) | 31 | `""` | — |
-| [SRC-44CDA52D01-L000032](../../tests/test_omarai.py#L32) | 32 | `"def test_duplicate_is_idempotent(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000033](../../tests/test_omarai.py#L33) | 33 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000034](../../tests/test_omarai.py#L34) | 34 | `"    one,created1=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
-| [SRC-44CDA52D01-L000035](../../tests/test_omarai.py#L35) | 35 | `"    two,created2=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
-| [SRC-44CDA52D01-L000036](../../tests/test_omarai.py#L36) | 36 | `"    assert created1 is True and created2 is False"` | — |
-| [SRC-44CDA52D01-L000037](../../tests/test_omarai.py#L37) | 37 | `"    assert one[\"id\"]==two[\"id\"]"` | — |
-| [SRC-44CDA52D01-L000038](../../tests/test_omarai.py#L38) | 38 | `"    assert len(store.list())==1"` | — |
-| [SRC-44CDA52D01-L000039](../../tests/test_omarai.py#L39) | 39 | `""` | — |
-| [SRC-44CDA52D01-L000040](../../tests/test_omarai.py#L40) | 40 | `"def test_status_updates_are_explicit(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000041](../../tests/test_omarai.py#L41) | 41 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000042](../../tests/test_omarai.py#L42) | 42 | `"    lead,_=store.add(\"بدور على شقة\",\"https://example.com/p\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000043](../../tests/test_omarai.py#L43) | 43 | `"    updated=store.update_status(lead[\"id\"],\"qualified\")"` | — |
-| [SRC-44CDA52D01-L000044](../../tests/test_omarai.py#L44) | 44 | `"    assert updated[\"status\"]==\"qualified\""` | — |
-| [SRC-44CDA52D01-L000045](../../tests/test_omarai.py#L45) | 45 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000046](../../tests/test_omarai.py#L46) | 46 | `"        store.update_status(lead[\"id\"],\"magic\")"` | — |
-| [SRC-44CDA52D01-L000047](../../tests/test_omarai.py#L47) | 47 | `""` | — |
-| [SRC-44CDA52D01-L000048](../../tests/test_omarai.py#L48) | 48 | `"def test_csv_requires_columns(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000049](../../tests/test_omarai.py#L49) | 49 | `"    bad=tmp_path/\"bad.csv\""` | — |
-| [SRC-44CDA52D01-L000050](../../tests/test_omarai.py#L50) | 50 | `"    bad.write_text(\"foo,bar\\na,b\\n\",encoding=\"utf-8\")"` | — |
-| [SRC-44CDA52D01-L000051](../../tests/test_omarai.py#L51) | 51 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000052](../../tests/test_omarai.py#L52) | 52 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000053](../../tests/test_omarai.py#L53) | 53 | `"        store.import_csv(bad)"` | — |
-| [SRC-44CDA52D01-L000054](../../tests/test_omarai.py#L54) | 54 | `""` | — |
-| [SRC-44CDA52D01-L000055](../../tests/test_omarai.py#L55) | 55 | `"def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000056](../../tests/test_omarai.py#L56) | 56 | `"    store = LeadStore(tmp_path / \"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000057](../../tests/test_omarai.py#L57) | 57 | `"    store.add("` | — |
-| [SRC-44CDA52D01-L000058](../../tests/test_omarai.py#L58) | 58 | `"        '=HYPERLINK(\"https://evil.example\",\"click\")',"` | — |
-| [SRC-44CDA52D01-L000059](../../tests/test_omarai.py#L59) | 59 | `"        \"https://example.com/post/1\","` | — |
-| [SRC-44CDA52D01-L000060](../../tests/test_omarai.py#L60) | 60 | `"        platform=\"manual\","` | — |
-| [SRC-44CDA52D01-L000061](../../tests/test_omarai.py#L61) | 61 | `"        note=\"  +SUM(1,1)\","` | — |
-| [SRC-44CDA52D01-L000062](../../tests/test_omarai.py#L62) | 62 | `"    )"` | — |
+| [SRC-62DC597310-L000207](../../tests/test_live_search_connectors.py#L207) | 207 | `""` | — |
+| [SRC-62DC597310-L000208](../../tests/test_live_search_connectors.py#L208) | 208 | `""` | — |
+| [SRC-62DC597310-L000209](../../tests/test_live_search_connectors.py#L209) | 209 | `""` | — |
+| [SRC-62DC597310-L000210](../../tests/test_live_search_connectors.py#L210) | 210 | `"def test_bounded_provider_transport_enforces_absolute_total_deadline(monkeypatch):"` | — |
+| [SRC-62DC597310-L000211](../../tests/test_live_search_connectors.py#L211) | 211 | `"    chunks_read = []"` | — |
+| [SRC-62DC597310-L000212](../../tests/test_live_search_connectors.py#L212) | 212 | `""` | — |
+| [SRC-62DC597310-L000213](../../tests/test_live_search_connectors.py#L213) | 213 | `"    class FakeResponse:"` | — |
+| [SRC-62DC597310-L000214](../../tests/test_live_search_connectors.py#L214) | 214 | `"        status_code = 200"` | — |
+| [SRC-62DC597310-L000215](../../tests/test_live_search_connectors.py#L215) | 215 | `"        request = httpx.Request(\"GET\", \"https://provider.example/slow\")"` | — |
+| [SRC-62DC597310-L000216](../../tests/test_live_search_connectors.py#L216) | 216 | `"        headers = {}"` | — |
+| [SRC-62DC597310-L000217](../../tests/test_live_search_connectors.py#L217) | 217 | `""` | — |
+| [SRC-62DC597310-L000218](../../tests/test_live_search_connectors.py#L218) | 218 | `"        def __enter__(self):"` | — |
+| [SRC-62DC597310-L000219](../../tests/test_live_search_connectors.py#L219) | 219 | `"            return self"` | — |
+| [SRC-62DC597310-L000220](../../tests/test_live_search_connectors.py#L220) | 220 | `""` | — |
+| [SRC-62DC597310-L000221](../../tests/test_live_search_connectors.py#L221) | 221 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-62DC597310-L000222](../../tests/test_live_search_connectors.py#L222) | 222 | `"            return False"` | — |
+| [SRC-62DC597310-L000223](../../tests/test_live_search_connectors.py#L223) | 223 | `""` | — |
+| [SRC-62DC597310-L000224](../../tests/test_live_search_connectors.py#L224) | 224 | `"        def iter_bytes(self):"` | — |
+| [SRC-62DC597310-L000225](../../tests/test_live_search_connectors.py#L225) | 225 | `"            for chunk in (b\"first\", b\"second\"):"` | — |
+| [SRC-62DC597310-L000226](../../tests/test_live_search_connectors.py#L226) | 226 | `"                chunks_read.append(chunk)"` | — |
+| [SRC-62DC597310-L000227](../../tests/test_live_search_connectors.py#L227) | 227 | `"                yield chunk"` | — |
+| [SRC-62DC597310-L000228](../../tests/test_live_search_connectors.py#L228) | 228 | `""` | — |
+| [SRC-62DC597310-L000229](../../tests/test_live_search_connectors.py#L229) | 229 | `"    class FakeClient:"` | — |
+| [SRC-62DC597310-L000230](../../tests/test_live_search_connectors.py#L230) | 230 | `"        def __init__(self, **kwargs):"` | — |
+| [SRC-62DC597310-L000231](../../tests/test_live_search_connectors.py#L231) | 231 | `"            assert kwargs[\"timeout\"] == 9.0"` | — |
+| [SRC-62DC597310-L000232](../../tests/test_live_search_connectors.py#L232) | 232 | `"            assert kwargs[\"follow_redirects\"] is False"` | — |
+| [SRC-62DC597310-L000233](../../tests/test_live_search_connectors.py#L233) | 233 | `""` | — |
+| [SRC-62DC597310-L000234](../../tests/test_live_search_connectors.py#L234) | 234 | `"        def __enter__(self):"` | — |
+| [SRC-62DC597310-L000235](../../tests/test_live_search_connectors.py#L235) | 235 | `"            return self"` | — |
+| [SRC-62DC597310-L000236](../../tests/test_live_search_connectors.py#L236) | 236 | `""` | — |
+| [SRC-62DC597310-L000237](../../tests/test_live_search_connectors.py#L237) | 237 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-62DC597310-L000238](../../tests/test_live_search_connectors.py#L238) | 238 | `"            return False"` | — |
+| [SRC-62DC597310-L000239](../../tests/test_live_search_connectors.py#L239) | 239 | `""` | — |
+| [SRC-62DC597310-L000240](../../tests/test_live_search_connectors.py#L240) | 240 | `"        def stream(self, method, url, **kwargs):"` | — |
+| [SRC-62DC597310-L000241](../../tests/test_live_search_connectors.py#L241) | 241 | `"            assert method == \"GET\""` | — |
+| [SRC-62DC597310-L000242](../../tests/test_live_search_connectors.py#L242) | 242 | `"            return FakeResponse()"` | — |
+| [SRC-62DC597310-L000243](../../tests/test_live_search_connectors.py#L243) | 243 | `""` | — |
+| [SRC-62DC597310-L000244](../../tests/test_live_search_connectors.py#L244) | 244 | `"    # Start at t=0; the first chunk arrives before the deadline."` | — |
+| [SRC-62DC597310-L000245](../../tests/test_live_search_connectors.py#L245) | 245 | `"    # The deadline expires before requesting the second chunk."` | — |
+| [SRC-62DC597310-L000246](../../tests/test_live_search_connectors.py#L246) | 246 | `"    clock = iter((0.0, 0.0, 2.0))"` | — |
+| [SRC-62DC597310-L000247](../../tests/test_live_search_connectors.py#L247) | 247 | `"    monkeypatch.setattr(\"agents.web_agent.time.monotonic\", lambda: next(clock))"` | — |
+| [SRC-62DC597310-L000248](../../tests/test_live_search_connectors.py#L248) | 248 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
+| [SRC-62DC597310-L000249](../../tests/test_live_search_connectors.py#L249) | 249 | `""` | — |
+| [SRC-62DC597310-L000250](../../tests/test_live_search_connectors.py#L250) | 250 | `"    with pytest.raises(TimeoutError, match=\"total request deadline\"):"` | — |
+| [SRC-62DC597310-L000251](../../tests/test_live_search_connectors.py#L251) | 251 | `"        _bounded_http_request("` | — |
+| [SRC-62DC597310-L000252](../../tests/test_live_search_connectors.py#L252) | 252 | `"            \"GET\","` | — |
+| [SRC-62DC597310-L000253](../../tests/test_live_search_connectors.py#L253) | 253 | `"            \"https://provider.example/slow\","` | — |
+| [SRC-62DC597310-L000254](../../tests/test_live_search_connectors.py#L254) | 254 | `"            timeout=9.0,"` | — |
+| [SRC-62DC597310-L000255](../../tests/test_live_search_connectors.py#L255) | 255 | `"            total_timeout=1.5,"` | — |
+| [SRC-62DC597310-L000256](../../tests/test_live_search_connectors.py#L256) | 256 | `"        )"` | — |
+| [SRC-62DC597310-L000257](../../tests/test_live_search_connectors.py#L257) | 257 | `""` | — |
+| [SRC-62DC597310-L000258](../../tests/test_live_search_connectors.py#L258) | 258 | `"    assert chunks_read == [b\"first\"]"` | — |
+| [SRC-62DC597310-L000259](../../tests/test_live_search_connectors.py#L259) | 259 | `""` | — |
+| [SRC-62DC597310-L000260](../../tests/test_live_search_connectors.py#L260) | 260 | `""` | — |
+| [SRC-62DC597310-L000261](../../tests/test_live_search_connectors.py#L261) | 261 | `"@pytest.mark.parametrize(\"total_timeout\", [0, -1, float(\"inf\"), \"not-a-number\"])"` | — |
+| [SRC-62DC597310-L000262](../../tests/test_live_search_connectors.py#L262) | 262 | `"def test_bounded_provider_transport_rejects_invalid_total_deadlines(total_timeout):"` | — |
+| [SRC-62DC597310-L000263](../../tests/test_live_search_connectors.py#L263) | 263 | `"    with pytest.raises(ValueError, match=\"total_timeout\"):"` | — |
+| [SRC-62DC597310-L000264](../../tests/test_live_search_connectors.py#L264) | 264 | `"        _bounded_http_request("` | — |
+| [SRC-62DC597310-L000265](../../tests/test_live_search_connectors.py#L265) | 265 | `"            \"GET\","` | — |
+| [SRC-62DC597310-L000266](../../tests/test_live_search_connectors.py#L266) | 266 | `"            \"https://provider.example/search\","` | — |
+| [SRC-62DC597310-L000267](../../tests/test_live_search_connectors.py#L267) | 267 | `"            total_timeout=total_timeout,"` | — |
+| [SRC-62DC597310-L000268](../../tests/test_live_search_connectors.py#L268) | 268 | `"        )"` | — |
