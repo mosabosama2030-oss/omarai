@@ -170,8 +170,12 @@ def test_smoke_fails_when_agent_returns_no_live_source(hosted_server, monkeypatc
         return original(url, **kwargs)
 
     monkeypatch.setattr(hosted_smoke_test, "request_json", without_sources)
-    with pytest.raises(SmokeError, match="usable source URLs"):
+    with pytest.raises(SmokeError, match="usable source URLs") as failure:
         run_smoke(hosted_server, TOKEN, allow_http=True, timeout=5)
+    assert failure.value.report["transcript"][0]["question"] == (
+        hosted_smoke_test.LIVE_TEST_QUESTION
+    )
+    assert failure.value.report["transcript"][0]["answer"] == "إجابة بلا مصادر"
 
 
 def test_smoke_rejects_invalid_expected_source_sha(hosted_server):
