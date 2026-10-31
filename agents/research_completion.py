@@ -168,6 +168,17 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     integrity = _dict(result.get("answer_integrity"))
     claim_ledger = _dict(result.get("claim_evidence_ledger"))
     claim_ledger_summary = _dict(claim_ledger.get("summary"))
+    citation_validation = _dict(
+        result.get("citation_validation")
+        or result.get("citation_check")
+        or report.get("citation_validation")
+    )
+    # Invalid citation markers are removed before the claim ledger is built.
+    # Preserve that production-path evidence so a valid remaining citation cannot
+    # hide an invalid reference that was already sanitized from the answer.
+    invalid_citation_references_removed = _int(
+        citation_validation.get("invalid_references_removed")
+    ) or 0
     claim_ledger_status = str(claim_ledger.get("status") or "").strip().lower()
     # Every web-research result passes through the finalizer that builds this ledger.
     # Missing, failed, or unknown ledger states must therefore remain visible as a
@@ -209,7 +220,10 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     citation_support_warning_count = (
         max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
         + weak_citation_alignment_count
-        + out_of_range_citation_reference_count
+        + max(
+            out_of_range_citation_reference_count,
+            invalid_citation_references_removed,
+        )
         + truncated_citation_reference_list_count
         + claim_ledger_truncated_count
         + claim_ledger_build_failure_count
@@ -217,7 +231,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     fulfillment = str(
         result.get("task_fulfillment_status") or report.get("task_fulfillment_status") or ""
     )
-    citations = _dict(result.get("citation_validation") or result.get("citation_check"))
+    citations = citation_validation
     citation_count = _int(citations.get("valid_citation_count")) or 0
     generation_failed = any(
         token in final_status for token in ("failed", "unavailable", "budget_exhausted")
@@ -339,6 +353,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "weak_citation_alignment_count": weak_citation_alignment_count,
             "citation_support_warning_count": citation_support_warning_count,
             "out_of_range_citation_reference_count": out_of_range_citation_reference_count,
+            "invalid_citation_references_removed_count": invalid_citation_references_removed,
             "truncated_citation_reference_list_count": truncated_citation_reference_list_count,
             "claim_ledger_truncated_count": claim_ledger_truncated_count,
             "claim_ledger_status": claim_ledger_status or "missing",
