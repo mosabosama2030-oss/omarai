@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000853 إلى SRC-60066C6786-L000119
+- النطاق: SRC-59CF4B7DE8-L000857 إلى SRC-60066C6786-L000123
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-59CF4B7DE8-L000853](../../agents/research.py#L853) | 853 | `"            diag.append({\"reason\": \"duplicate_url\", \"url\": url})"` | — |
-| [SRC-59CF4B7DE8-L000854](../../agents/research.py#L854) | 854 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000855](../../agents/research.py#L855) | 855 | `"        if title and title_key in seen_titles:"` | — |
-| [SRC-59CF4B7DE8-L000856](../../agents/research.py#L856) | 856 | `"            diag.append({\"reason\": \"duplicate_title_domain\", \"url\": url})"` | — |
 | [SRC-59CF4B7DE8-L000857](../../agents/research.py#L857) | 857 | `"            continue"` | — |
 | [SRC-59CF4B7DE8-L000858](../../agents/research.py#L858) | 858 | `""` | — |
 | [SRC-59CF4B7DE8-L000859](../../agents/research.py#L859) | 859 | `"        rel = source_relevance_score(src, combined)"` | — |
@@ -843,3 +839,7 @@
 | [SRC-60066C6786-L000117](../../agents/research_pipeline.py#L117) | 117 | `"                \"ترتيب مرشحات الصلة فقط؛ لا يثبت صحة الادعاءات أو كفاية الاستشهاد.\""` | — |
 | [SRC-60066C6786-L000118](../../agents/research_pipeline.py#L118) | 118 | `"            ),"` | — |
 | [SRC-60066C6786-L000119](../../agents/research_pipeline.py#L119) | 119 | `"        },"` | — |
+| [SRC-60066C6786-L000120](../../agents/research_pipeline.py#L120) | 120 | `"        \"claim_verification\": \"delegated_to_existing_validator\","` | — |
+| [SRC-60066C6786-L000121](../../agents/research_pipeline.py#L121) | 121 | `"    }"` | — |
+| [SRC-60066C6786-L000122](../../agents/research_pipeline.py#L122) | 122 | `""` | — |
+| [SRC-60066C6786-L000123](../../agents/research_pipeline.py#L123) | 123 | `""` | — |

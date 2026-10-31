@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000195 إلى SRC-90FAA34ADE-L000597
+- النطاق: SRC-03FF422A16-L000181 إلى SRC-90FAA34ADE-L000583
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000181](../../scripts/score_answer_quality_reviews.py#L181) | 181 | `"            citation_total += citations[\"reviewed_citations\"]"` | — |
+| [SRC-03FF422A16-L000182](../../scripts/score_answer_quality_reviews.py#L182) | 182 | `"            citation_cases.add(case_id)"` | — |
+| [SRC-03FF422A16-L000183](../../scripts/score_answer_quality_reviews.py#L183) | 183 | `"        score = item.get(\"writing_quality\")"` | — |
+| [SRC-03FF422A16-L000184](../../scripts/score_answer_quality_reviews.py#L184) | 184 | `"        if score is not None:"` | — |
+| [SRC-03FF422A16-L000185](../../scripts/score_answer_quality_reviews.py#L185) | 185 | `"            writing_scores.append(float(score))"` | — |
+| [SRC-03FF422A16-L000186](../../scripts/score_answer_quality_reviews.py#L186) | 186 | `""` | — |
+| [SRC-03FF422A16-L000187](../../scripts/score_answer_quality_reviews.py#L187) | 187 | `"    return {"` | — |
+| [SRC-03FF422A16-L000188](../../scripts/score_answer_quality_reviews.py#L188) | 188 | `"        \"benchmark_id\": corpus_data.get(\"benchmark_id\", \"unknown\"),"` | — |
+| [SRC-03FF422A16-L000189](../../scripts/score_answer_quality_reviews.py#L189) | 189 | `"        \"review_schema_version\": review_data.get(\"schema_version\", \"unknown\"),"` | — |
+| [SRC-03FF422A16-L000190](../../scripts/score_answer_quality_reviews.py#L190) | 190 | `"        \"scoring_method\": \"aggregate_from_explicit_human_annotations\","` | — |
+| [SRC-03FF422A16-L000191](../../scripts/score_answer_quality_reviews.py#L191) | 191 | `"        \"automatic_answer_grading\": False,"` | — |
+| [SRC-03FF422A16-L000192](../../scripts/score_answer_quality_reviews.py#L192) | 192 | `"        \"ragas_executed\": False,"` | — |
+| [SRC-03FF422A16-L000193](../../scripts/score_answer_quality_reviews.py#L193) | 193 | `"        \"corpus_case_count\": corpus_count,"` | — |
+| [SRC-03FF422A16-L000194](../../scripts/score_answer_quality_reviews.py#L194) | 194 | `"        \"submitted_review_count\": len(reviews),"` | — |
 | [SRC-03FF422A16-L000195](../../scripts/score_answer_quality_reviews.py#L195) | 195 | `"        \"unique_reviewed_case_count\": len(reviewed_ids),"` | — |
 | [SRC-03FF422A16-L000196](../../scripts/score_answer_quality_reviews.py#L196) | 196 | `"        \"case_status_counts\": {status: status_counts.get(status, 0) for status in sorted(ALLOWED_STATUSES)},"` | — |
 | [SRC-03FF422A16-L000197](../../scripts/score_answer_quality_reviews.py#L197) | 197 | `"        \"reviewed_case_coverage\": round(len(reviewed_ids) / corpus_count, 4) if corpus_count else 0.0,"` | — |
@@ -820,17 +834,3 @@
 | [SRC-90FAA34ADE-L000581](../../tests/fixtures/answer_quality_cases.json#L581) | 581 | `"        \"يتحقق من تطابق النص والناشر الأصلي أو الإسناد\","` | — |
 | [SRC-90FAA34ADE-L000582](../../tests/fixtures/answer_quality_cases.json#L582) | 582 | `"        \"يوضح أن إعادة نشر بيان واحد ليست بالضرورة corroboration مستقلة\","` | — |
 | [SRC-90FAA34ADE-L000583](../../tests/fixtures/answer_quality_cases.json#L583) | 583 | `"        \"لا يبالغ في عدد مصادر التأكيد\""` | — |
-| [SRC-90FAA34ADE-L000584](../../tests/fixtures/answer_quality_cases.json#L584) | 584 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000585](../../tests/fixtures/answer_quality_cases.json#L585) | 585 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000586](../../tests/fixtures/answer_quality_cases.json#L586) | 586 | `"        \"يصف النسخ المتطابقة بأنها ثلاث شهادات مستقلة\","` | — |
-| [SRC-90FAA34ADE-L000587](../../tests/fixtures/answer_quality_cases.json#L587) | 587 | `"        \"يخفي أن المواقع تنقل عن مصدر واحد\""` | — |
-| [SRC-90FAA34ADE-L000588](../../tests/fixtures/answer_quality_cases.json#L588) | 588 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000589](../../tests/fixtures/answer_quality_cases.json#L589) | 589 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000590](../../tests/fixtures/answer_quality_cases.json#L590) | 590 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000591](../../tests/fixtures/answer_quality_cases.json#L591) | 591 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000592](../../tests/fixtures/answer_quality_cases.json#L592) | 592 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000593](../../tests/fixtures/answer_quality_cases.json#L593) | 593 | `"            \"title\": \"Release copy A\","` | — |
-| [SRC-90FAA34ADE-L000594](../../tests/fixtures/answer_quality_cases.json#L594) | 594 | `"            \"url\": \"https://news-a.example.test/story\","` | — |
-| [SRC-90FAA34ADE-L000595](../../tests/fixtures/answer_quality_cases.json#L595) | 595 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
-| [SRC-90FAA34ADE-L000596](../../tests/fixtures/answer_quality_cases.json#L596) | 596 | `"            \"domain\": \"news-a.example.test\","` | — |
-| [SRC-90FAA34ADE-L000597](../../tests/fixtures/answer_quality_cases.json#L597) | 597 | `"            \"provider\": \"fixture_a\","` | — |

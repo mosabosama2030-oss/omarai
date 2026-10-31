@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000046 إلى SRC-4CCB1F172B-L000161
+- النطاق: SRC-D4963BDA6A-L000032 إلى SRC-4CCB1F172B-L000147
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000032](../../tests/fixtures/answer_quality_reviews_template.json#L32) | 32 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000033](../../tests/fixtures/answer_quality_reviews_template.json#L33) | 33 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000034](../../tests/fixtures/answer_quality_reviews_template.json#L34) | 34 | `"      \"case_id\": \"AQ-006\","` | — |
+| [SRC-D4963BDA6A-L000035](../../tests/fixtures/answer_quality_reviews_template.json#L35) | 35 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000036](../../tests/fixtures/answer_quality_reviews_template.json#L36) | 36 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000037](../../tests/fixtures/answer_quality_reviews_template.json#L37) | 37 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000038](../../tests/fixtures/answer_quality_reviews_template.json#L38) | 38 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000039](../../tests/fixtures/answer_quality_reviews_template.json#L39) | 39 | `"      \"case_id\": \"AQ-007\","` | — |
+| [SRC-D4963BDA6A-L000040](../../tests/fixtures/answer_quality_reviews_template.json#L40) | 40 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000041](../../tests/fixtures/answer_quality_reviews_template.json#L41) | 41 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000042](../../tests/fixtures/answer_quality_reviews_template.json#L42) | 42 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000043](../../tests/fixtures/answer_quality_reviews_template.json#L43) | 43 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000044](../../tests/fixtures/answer_quality_reviews_template.json#L44) | 44 | `"      \"case_id\": \"AQ-008\","` | — |
+| [SRC-D4963BDA6A-L000045](../../tests/fixtures/answer_quality_reviews_template.json#L45) | 45 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000046](../../tests/fixtures/answer_quality_reviews_template.json#L46) | 46 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000047](../../tests/fixtures/answer_quality_reviews_template.json#L47) | 47 | `"    },"` | — |
 | [SRC-D4963BDA6A-L000048](../../tests/fixtures/answer_quality_reviews_template.json#L48) | 48 | `"    {"` | — |
@@ -838,17 +852,3 @@
 | [SRC-4CCB1F172B-L000145](../../tests/test_answer_quality_corpus.py#L145) | 145 | `"    for case in data[\"cases\"]:"` | — |
 | [SRC-4CCB1F172B-L000146](../../tests/test_answer_quality_corpus.py#L146) | 146 | `"        q = \" \".join(case[\"question\"].casefold().split())"` | — |
 | [SRC-4CCB1F172B-L000147](../../tests/test_answer_quality_corpus.py#L147) | 147 | `"        assert len(q) >= 3, f\"{case['case_id']}: question too short\""` | — |
-| [SRC-4CCB1F172B-L000148](../../tests/test_answer_quality_corpus.py#L148) | 148 | `"        normalized.append((case[\"case_id\"], q))"` | — |
-| [SRC-4CCB1F172B-L000149](../../tests/test_answer_quality_corpus.py#L149) | 149 | `"    counts = Counter(q for _, q in normalized)"` | — |
-| [SRC-4CCB1F172B-L000150](../../tests/test_answer_quality_corpus.py#L150) | 150 | `"    dupes = [q for q, n in counts.items() if n > 1]"` | — |
-| [SRC-4CCB1F172B-L000151](../../tests/test_answer_quality_corpus.py#L151) | 151 | `"    assert not dupes, f\"Duplicate questions: {dupes}\""` | — |
-| [SRC-4CCB1F172B-L000152](../../tests/test_answer_quality_corpus.py#L152) | 152 | `""` | — |
-| [SRC-4CCB1F172B-L000153](../../tests/test_answer_quality_corpus.py#L153) | 153 | `""` | — |
-| [SRC-4CCB1F172B-L000154](../../tests/test_answer_quality_corpus.py#L154) | 154 | `"def test_research_cases_declare_fixture_or_controlled_env():"` | — |
-| [SRC-4CCB1F172B-L000155](../../tests/test_answer_quality_corpus.py#L155) | 155 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000156](../../tests/test_answer_quality_corpus.py#L156) | 156 | `"    for case in data[\"cases\"]:"` | — |
-| [SRC-4CCB1F172B-L000157](../../tests/test_answer_quality_corpus.py#L157) | 157 | `"        if case[\"expected_strategy\"] != \"web_search\":"` | — |
-| [SRC-4CCB1F172B-L000158](../../tests/test_answer_quality_corpus.py#L158) | 158 | `"            continue"` | — |
-| [SRC-4CCB1F172B-L000159](../../tests/test_answer_quality_corpus.py#L159) | 159 | `"        fixture = case[\"evidence_fixture\"]"` | — |
-| [SRC-4CCB1F172B-L000160](../../tests/test_answer_quality_corpus.py#L160) | 160 | `"        assert fixture.get(\"type\") in {"` | — |
-| [SRC-4CCB1F172B-L000161](../../tests/test_answer_quality_corpus.py#L161) | 161 | `"            \"controlled_search\","` | — |

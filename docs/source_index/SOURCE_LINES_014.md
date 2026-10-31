@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003557 إلى SRC-1AE03B9EC3-L004356
+- النطاق: SRC-1AE03B9EC3-L003561 إلى SRC-1AE03B9EC3-L004360
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003557](../../agents/web_agent.py#L3557) | 3557 | `"        search_warning: str \| None,"` | — |
-| [SRC-1AE03B9EC3-L003558](../../agents/web_agent.py#L3558) | 3558 | `"        research_plan: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003559](../../agents/web_agent.py#L3559) | 3559 | `"        search_report: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003560](../../agents/web_agent.py#L3560) | 3560 | `"    ) -> str:"` | — |
 | [SRC-1AE03B9EC3-L003561](../../agents/web_agent.py#L3561) | 3561 | `"        plan = research_plan or {}"` | — |
 | [SRC-1AE03B9EC3-L003562](../../agents/web_agent.py#L3562) | 3562 | `"        report = search_report if isinstance(search_report, dict) else {}"` | — |
 | [SRC-1AE03B9EC3-L003563](../../agents/web_agent.py#L3563) | 3563 | `"        coverage_targets = plan.get(\"coverage_targets\")"` | — |
@@ -816,3 +812,7 @@
 | [SRC-1AE03B9EC3-L004354](../../agents/web_agent.py#L4354) | 4354 | `"                coverage[\"potentially_missing_target_count\"] = ("` | — |
 | [SRC-1AE03B9EC3-L004355](../../agents/web_agent.py#L4355) | 4355 | `"                    answer_integrity[\"potentially_missing_target_count\"]"` | — |
 | [SRC-1AE03B9EC3-L004356](../../agents/web_agent.py#L4356) | 4356 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004357](../../agents/web_agent.py#L4357) | 4357 | `"                coverage[\"source_evidence_gap_count\"] = answer_integrity[\"source_evidence_gap_count\"]"` | — |
+| [SRC-1AE03B9EC3-L004358](../../agents/web_agent.py#L4358) | 4358 | `"                coverage[\"lexical_screen_method\"] = ("` | — |
+| [SRC-1AE03B9EC3-L004359](../../agents/web_agent.py#L4359) | 4359 | `"                    \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
+| [SRC-1AE03B9EC3-L004360](../../agents/web_agent.py#L4360) | 4360 | `"                )"` | — |

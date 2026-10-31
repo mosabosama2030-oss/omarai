@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005157 إلى SRC-1AE03B9EC3-L005956
+- النطاق: SRC-1AE03B9EC3-L005161 إلى SRC-1AE03B9EC3-L005960
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L005157](../../agents/web_agent.py#L5157) | 5157 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L005158](../../agents/web_agent.py#L5158) | 5158 | `"        # Final relevance check is intentionally repeated after fusion, before any answer LLM call."` | — |
-| [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"        filtered_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        for source in sources:"` | — |
 | [SRC-1AE03B9EC3-L005161](../../agents/web_agent.py#L5161) | 5161 | `"            if \"user_supplied_url\" in source.get(\"providers\", []):"` | — |
 | [SRC-1AE03B9EC3-L005162](../../agents/web_agent.py#L5162) | 5162 | `"                filtered_sources.append(source)"` | — |
 | [SRC-1AE03B9EC3-L005163](../../agents/web_agent.py#L5163) | 5163 | `"                continue"` | — |
@@ -816,3 +812,7 @@
 | [SRC-1AE03B9EC3-L005954](../../agents/web_agent.py#L5954) | 5954 | `"                    \"المتاحة بدلًا من اختلاق إجابة.\""` | — |
 | [SRC-1AE03B9EC3-L005955](../../agents/web_agent.py#L5955) | 5955 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L005956](../../agents/web_agent.py#L5956) | 5956 | `"            answer = _fallback_answer(sources, reason)"` | — |
+| [SRC-1AE03B9EC3-L005957](../../agents/web_agent.py#L5957) | 5957 | `""` | — |
+| [SRC-1AE03B9EC3-L005958](../../agents/web_agent.py#L5958) | 5958 | `"        coverage_targets = self._question_coverage_targets(question)"` | — |
+| [SRC-1AE03B9EC3-L005959](../../agents/web_agent.py#L5959) | 5959 | `"        coverage_repair_status = \"not_attempted\""` | — |
+| [SRC-1AE03B9EC3-L005960](../../agents/web_agent.py#L5960) | 5960 | `"        coverage_repair_warning: str \| None = None"` | — |

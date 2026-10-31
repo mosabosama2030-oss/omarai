@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005957 إلى SRC-EEF2E6447C-L000120
+- النطاق: SRC-1AE03B9EC3-L005961 إلى SRC-EEF2E6447C-L000124
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L005957](../../agents/web_agent.py#L5957) | 5957 | `""` | — |
-| [SRC-1AE03B9EC3-L005958](../../agents/web_agent.py#L5958) | 5958 | `"        coverage_targets = self._question_coverage_targets(question)"` | — |
-| [SRC-1AE03B9EC3-L005959](../../agents/web_agent.py#L5959) | 5959 | `"        coverage_repair_status = \"not_attempted\""` | — |
-| [SRC-1AE03B9EC3-L005960](../../agents/web_agent.py#L5960) | 5960 | `"        coverage_repair_warning: str \| None = None"` | — |
 | [SRC-1AE03B9EC3-L005961](../../agents/web_agent.py#L5961) | 5961 | `"        review_status = \"not_run\""` | — |
 | [SRC-1AE03B9EC3-L005962](../../agents/web_agent.py#L5962) | 5962 | `"        review_warning: str \| None = None"` | — |
 | [SRC-1AE03B9EC3-L005963](../../agents/web_agent.py#L5963) | 5963 | `"        review_budget_exhausted = False"` | — |
@@ -834,3 +830,7 @@
 | [SRC-EEF2E6447C-L000118](../../api/omarai.py#L118) | 118 | `""` | — |
 | [SRC-EEF2E6447C-L000119](../../api/omarai.py#L119) | 119 | `"    The standard buffered readline can wait indefinitely for a newline if a"` | — |
 | [SRC-EEF2E6447C-L000120](../../api/omarai.py#L120) | 120 | `"    client keeps trickling bytes. This reader checks the same deadline before"` | — |
+| [SRC-EEF2E6447C-L000121](../../api/omarai.py#L121) | 121 | `"    every socket read and buffers only bounded look-ahead so request body bytes"` | — |
+| [SRC-EEF2E6447C-L000122](../../api/omarai.py#L122) | 122 | `"    received with the headers are preserved for read1()."` | — |
+| [SRC-EEF2E6447C-L000123](../../api/omarai.py#L123) | 123 | `"    \"\"\""` | — |
+| [SRC-EEF2E6447C-L000124](../../api/omarai.py#L124) | 124 | `""` | — |

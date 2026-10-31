@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000357 إلى SRC-1AE03B9EC3-L001156
+- النطاق: SRC-1AE03B9EC3-L000361 إلى SRC-1AE03B9EC3-L001160
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L000357](../../agents/web_agent.py#L357) | 357 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000358](../../agents/web_agent.py#L358) | 358 | `"        if not parsed.hostname or parsed.username is not None or parsed.password is not None:"` | — |
-| [SRC-1AE03B9EC3-L000359](../../agents/web_agent.py#L359) | 359 | `"            return None"` | — |
-| [SRC-1AE03B9EC3-L000360](../../agents/web_agent.py#L360) | 360 | `"        if parsed.port not in (None, 80, 443):"` | — |
 | [SRC-1AE03B9EC3-L000361](../../agents/web_agent.py#L361) | 361 | `"            return None"` | — |
 | [SRC-1AE03B9EC3-L000362](../../agents/web_agent.py#L362) | 362 | `"        host = parsed.hostname.rstrip(\".\").lower()"` | — |
 | [SRC-1AE03B9EC3-L000363](../../agents/web_agent.py#L363) | 363 | `"        if not host or host in {\"localhost\"} or host.endswith((\".local\", \".internal\", \".localhost\")):"` | — |
@@ -816,3 +812,7 @@
 | [SRC-1AE03B9EC3-L001154](../../agents/web_agent.py#L1154) | 1154 | `""` | — |
 | [SRC-1AE03B9EC3-L001155](../../agents/web_agent.py#L1155) | 1155 | `"        if current_search_question:"` | — |
 | [SRC-1AE03B9EC3-L001156](../../agents/web_agent.py#L1156) | 1156 | `"            answer = ("` | — |
+| [SRC-1AE03B9EC3-L001157](../../agents/web_agent.py#L1157) | 1157 | `"                \"لا، لم أنفّذ بحثًا حيًا للإجابة عن هذا السؤال تحديدًا؛ هذا السؤال عن \""` | — |
+| [SRC-1AE03B9EC3-L001158](../../agents/web_agent.py#L1158) | 1158 | `"                \"طريقة عملي، ولذلك لم أبدأ بحث ويب في هذه الجولة. هذا لا يعني أن البحث \""` | — |
+| [SRC-1AE03B9EC3-L001159](../../agents/web_agent.py#L1159) | 1159 | `"                \"غير متاح؛ عند تنفيذ طلب يحتاج إلى معلومات حديثة سأوضح هل جرت محاولة البحث، \""` | — |
+| [SRC-1AE03B9EC3-L001160](../../agents/web_agent.py#L1160) | 1160 | `"                \"وما النتائج التي عادت، وما إذا اكتملت الإجابة.\""` | — |

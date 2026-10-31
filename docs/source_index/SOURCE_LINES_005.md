@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000053 إلى SRC-59CF4B7DE8-L000852
+- النطاق: SRC-59CF4B7DE8-L000057 إلى SRC-59CF4B7DE8-L000856
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,10 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-59CF4B7DE8-L000053](../../agents/research.py#L53) | 53 | `"        host = host.encode(\"idna\").decode(\"ascii\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000054](../../agents/research.py#L54) | 54 | `"    except UnicodeError:"` | — |
-| [SRC-59CF4B7DE8-L000055](../../agents/research.py#L55) | 55 | `"        return host"` | — |
-| [SRC-59CF4B7DE8-L000056](../../agents/research.py#L56) | 56 | `"    extracted = _DOMAIN_EXTRACTOR(host)"` | — |
 | [SRC-59CF4B7DE8-L000057](../../agents/research.py#L57) | 57 | `"    return (extracted.top_domain_under_public_suffix or host).lower()"` | — |
 | [SRC-59CF4B7DE8-L000058](../../agents/research.py#L58) | 58 | `""` | — |
 | [SRC-59CF4B7DE8-L000059](../../agents/research.py#L59) | 59 | `"SOCIAL_DOMAINS = {"` | — |
@@ -816,3 +812,7 @@
 | [SRC-59CF4B7DE8-L000850](../../agents/research.py#L850) | 850 | `"        title_key = title.lower() + \"\|\" + domain"` | — |
 | [SRC-59CF4B7DE8-L000851](../../agents/research.py#L851) | 851 | `""` | — |
 | [SRC-59CF4B7DE8-L000852](../../agents/research.py#L852) | 852 | `"        if url_key and url_key in seen_urls:"` | — |
+| [SRC-59CF4B7DE8-L000853](../../agents/research.py#L853) | 853 | `"            diag.append({\"reason\": \"duplicate_url\", \"url\": url})"` | — |
+| [SRC-59CF4B7DE8-L000854](../../agents/research.py#L854) | 854 | `"            continue"` | — |
+| [SRC-59CF4B7DE8-L000855](../../agents/research.py#L855) | 855 | `"        if title and title_key in seen_titles:"` | — |
+| [SRC-59CF4B7DE8-L000856](../../agents/research.py#L856) | 856 | `"            diag.append({\"reason\": \"duplicate_title_domain\", \"url\": url})"` | — |

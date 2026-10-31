@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000115 إلى SRC-03FF422A16-L000194
+- النطاق: SRC-4FFD5AFC54-L000101 إلى SRC-03FF422A16-L000180
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000101](../../scripts/run_answer_quality_benchmark.py#L101) | 101 | `"    if not isinstance(payload, dict):"` | — |
+| [SRC-4FFD5AFC54-L000102](../../scripts/run_answer_quality_benchmark.py#L102) | 102 | `"        payload = {}"` | — |
+| [SRC-4FFD5AFC54-L000103](../../scripts/run_answer_quality_benchmark.py#L103) | 103 | `"    report = payload.get(\"search_report\")"` | — |
+| [SRC-4FFD5AFC54-L000104](../../scripts/run_answer_quality_benchmark.py#L104) | 104 | `"    report = report if isinstance(report, dict) else {}"` | — |
+| [SRC-4FFD5AFC54-L000105](../../scripts/run_answer_quality_benchmark.py#L105) | 105 | `"    outcome = report.get(\"search_outcome\")"` | — |
+| [SRC-4FFD5AFC54-L000106](../../scripts/run_answer_quality_benchmark.py#L106) | 106 | `"    pipeline = report.get(\"pipeline_completion_status\")"` | — |
+| [SRC-4FFD5AFC54-L000107](../../scripts/run_answer_quality_benchmark.py#L107) | 107 | `"    source_rows = payload.get(\"sources\")"` | — |
+| [SRC-4FFD5AFC54-L000108](../../scripts/run_answer_quality_benchmark.py#L108) | 108 | `"    source_rows_known = isinstance(source_rows, list)"` | — |
+| [SRC-4FFD5AFC54-L000109](../../scripts/run_answer_quality_benchmark.py#L109) | 109 | `"    source_count = len(source_rows) if source_rows_known else None"` | — |
+| [SRC-4FFD5AFC54-L000110](../../scripts/run_answer_quality_benchmark.py#L110) | 110 | `"    if expected_strategy != \"web_search\":"` | — |
+| [SRC-4FFD5AFC54-L000111](../../scripts/run_answer_quality_benchmark.py#L111) | 111 | `"        tool_status = \"NOT_APPLICABLE\""` | — |
+| [SRC-4FFD5AFC54-L000112](../../scripts/run_answer_quality_benchmark.py#L112) | 112 | `"    elif not transport_ok:"` | — |
+| [SRC-4FFD5AFC54-L000113](../../scripts/run_answer_quality_benchmark.py#L113) | 113 | `"        tool_status = \"TRANSPORT_FAILED\""` | — |
+| [SRC-4FFD5AFC54-L000114](../../scripts/run_answer_quality_benchmark.py#L114) | 114 | `"    elif outcome == \"attempted_with_usable_sources\":"` | — |
 | [SRC-4FFD5AFC54-L000115](../../scripts/run_answer_quality_benchmark.py#L115) | 115 | `"        if source_count is None:"` | — |
 | [SRC-4FFD5AFC54-L000116](../../scripts/run_answer_quality_benchmark.py#L116) | 116 | `"            tool_status = \"UNKNOWN_SOURCE_COUNT\""` | — |
 | [SRC-4FFD5AFC54-L000117](../../scripts/run_answer_quality_benchmark.py#L117) | 117 | `"        elif source_count == 0:"` | — |
@@ -811,17 +825,3 @@
 | [SRC-03FF422A16-L000178](../../scripts/score_answer_quality_reviews.py#L178) | 178 | `"        citations = item.get(\"citations\")"` | — |
 | [SRC-03FF422A16-L000179](../../scripts/score_answer_quality_reviews.py#L179) | 179 | `"        if isinstance(citations, dict):"` | — |
 | [SRC-03FF422A16-L000180](../../scripts/score_answer_quality_reviews.py#L180) | 180 | `"            citation_supported += citations[\"supported_citations\"]"` | — |
-| [SRC-03FF422A16-L000181](../../scripts/score_answer_quality_reviews.py#L181) | 181 | `"            citation_total += citations[\"reviewed_citations\"]"` | — |
-| [SRC-03FF422A16-L000182](../../scripts/score_answer_quality_reviews.py#L182) | 182 | `"            citation_cases.add(case_id)"` | — |
-| [SRC-03FF422A16-L000183](../../scripts/score_answer_quality_reviews.py#L183) | 183 | `"        score = item.get(\"writing_quality\")"` | — |
-| [SRC-03FF422A16-L000184](../../scripts/score_answer_quality_reviews.py#L184) | 184 | `"        if score is not None:"` | — |
-| [SRC-03FF422A16-L000185](../../scripts/score_answer_quality_reviews.py#L185) | 185 | `"            writing_scores.append(float(score))"` | — |
-| [SRC-03FF422A16-L000186](../../scripts/score_answer_quality_reviews.py#L186) | 186 | `""` | — |
-| [SRC-03FF422A16-L000187](../../scripts/score_answer_quality_reviews.py#L187) | 187 | `"    return {"` | — |
-| [SRC-03FF422A16-L000188](../../scripts/score_answer_quality_reviews.py#L188) | 188 | `"        \"benchmark_id\": corpus_data.get(\"benchmark_id\", \"unknown\"),"` | — |
-| [SRC-03FF422A16-L000189](../../scripts/score_answer_quality_reviews.py#L189) | 189 | `"        \"review_schema_version\": review_data.get(\"schema_version\", \"unknown\"),"` | — |
-| [SRC-03FF422A16-L000190](../../scripts/score_answer_quality_reviews.py#L190) | 190 | `"        \"scoring_method\": \"aggregate_from_explicit_human_annotations\","` | — |
-| [SRC-03FF422A16-L000191](../../scripts/score_answer_quality_reviews.py#L191) | 191 | `"        \"automatic_answer_grading\": False,"` | — |
-| [SRC-03FF422A16-L000192](../../scripts/score_answer_quality_reviews.py#L192) | 192 | `"        \"ragas_executed\": False,"` | — |
-| [SRC-03FF422A16-L000193](../../scripts/score_answer_quality_reviews.py#L193) | 193 | `"        \"corpus_case_count\": corpus_count,"` | — |
-| [SRC-03FF422A16-L000194](../../scripts/score_answer_quality_reviews.py#L194) | 194 | `"        \"submitted_review_count\": len(reviews),"` | — |

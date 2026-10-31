@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000598 إلى SRC-D4963BDA6A-L000045
+- النطاق: SRC-90FAA34ADE-L000584 إلى SRC-D4963BDA6A-L000031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000584](../../tests/fixtures/answer_quality_cases.json#L584) | 584 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000585](../../tests/fixtures/answer_quality_cases.json#L585) | 585 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000586](../../tests/fixtures/answer_quality_cases.json#L586) | 586 | `"        \"يصف النسخ المتطابقة بأنها ثلاث شهادات مستقلة\","` | — |
+| [SRC-90FAA34ADE-L000587](../../tests/fixtures/answer_quality_cases.json#L587) | 587 | `"        \"يخفي أن المواقع تنقل عن مصدر واحد\""` | — |
+| [SRC-90FAA34ADE-L000588](../../tests/fixtures/answer_quality_cases.json#L588) | 588 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000589](../../tests/fixtures/answer_quality_cases.json#L589) | 589 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000590](../../tests/fixtures/answer_quality_cases.json#L590) | 590 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000591](../../tests/fixtures/answer_quality_cases.json#L591) | 591 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000592](../../tests/fixtures/answer_quality_cases.json#L592) | 592 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000593](../../tests/fixtures/answer_quality_cases.json#L593) | 593 | `"            \"title\": \"Release copy A\","` | — |
+| [SRC-90FAA34ADE-L000594](../../tests/fixtures/answer_quality_cases.json#L594) | 594 | `"            \"url\": \"https://news-a.example.test/story\","` | — |
+| [SRC-90FAA34ADE-L000595](../../tests/fixtures/answer_quality_cases.json#L595) | 595 | `"            \"snippet\": \"According to the ministry press release: Service launches on Monday.\","` | — |
+| [SRC-90FAA34ADE-L000596](../../tests/fixtures/answer_quality_cases.json#L596) | 596 | `"            \"domain\": \"news-a.example.test\","` | — |
+| [SRC-90FAA34ADE-L000597](../../tests/fixtures/answer_quality_cases.json#L597) | 597 | `"            \"provider\": \"fixture_a\","` | — |
 | [SRC-90FAA34ADE-L000598](../../tests/fixtures/answer_quality_cases.json#L598) | 598 | `"            \"publisher\": \"WireDesk\""` | — |
 | [SRC-90FAA34ADE-L000599](../../tests/fixtures/answer_quality_cases.json#L599) | 599 | `"          },"` | — |
 | [SRC-90FAA34ADE-L000600](../../tests/fixtures/answer_quality_cases.json#L600) | 600 | `"          {"` | — |
@@ -811,17 +825,3 @@
 | [SRC-D4963BDA6A-L000029](../../tests/fixtures/answer_quality_reviews_template.json#L29) | 29 | `"      \"case_id\": \"AQ-005\","` | — |
 | [SRC-D4963BDA6A-L000030](../../tests/fixtures/answer_quality_reviews_template.json#L30) | 30 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000031](../../tests/fixtures/answer_quality_reviews_template.json#L31) | 31 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000032](../../tests/fixtures/answer_quality_reviews_template.json#L32) | 32 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000033](../../tests/fixtures/answer_quality_reviews_template.json#L33) | 33 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000034](../../tests/fixtures/answer_quality_reviews_template.json#L34) | 34 | `"      \"case_id\": \"AQ-006\","` | — |
-| [SRC-D4963BDA6A-L000035](../../tests/fixtures/answer_quality_reviews_template.json#L35) | 35 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000036](../../tests/fixtures/answer_quality_reviews_template.json#L36) | 36 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000037](../../tests/fixtures/answer_quality_reviews_template.json#L37) | 37 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000038](../../tests/fixtures/answer_quality_reviews_template.json#L38) | 38 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000039](../../tests/fixtures/answer_quality_reviews_template.json#L39) | 39 | `"      \"case_id\": \"AQ-007\","` | — |
-| [SRC-D4963BDA6A-L000040](../../tests/fixtures/answer_quality_reviews_template.json#L40) | 40 | `"      \"status\": \"NOT_TESTED\","` | — |
-| [SRC-D4963BDA6A-L000041](../../tests/fixtures/answer_quality_reviews_template.json#L41) | 41 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
-| [SRC-D4963BDA6A-L000042](../../tests/fixtures/answer_quality_reviews_template.json#L42) | 42 | `"    },"` | — |
-| [SRC-D4963BDA6A-L000043](../../tests/fixtures/answer_quality_reviews_template.json#L43) | 43 | `"    {"` | — |
-| [SRC-D4963BDA6A-L000044](../../tests/fixtures/answer_quality_reviews_template.json#L44) | 44 | `"      \"case_id\": \"AQ-008\","` | — |
-| [SRC-D4963BDA6A-L000045](../../tests/fixtures/answer_quality_reviews_template.json#L45) | 45 | `"      \"status\": \"NOT_TESTED\","` | — |

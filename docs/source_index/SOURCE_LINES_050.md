@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003640 إلى SRC-DE7EABE998-L000397
+- النطاق: SRC-F725E90B2A-L003626 إلى SRC-DE7EABE998-L000383
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003626](../../tests/test_web_agent.py#L3626) | 3626 | `"            \"platform\": \"reddit\","` | — |
+| [SRC-F725E90B2A-L003627](../../tests/test_web_agent.py#L3627) | 3627 | `"            \"providers\": [\"reddit\"],"` | — |
+| [SRC-F725E90B2A-L003628](../../tests/test_web_agent.py#L3628) | 3628 | `"        },"` | — |
+| [SRC-F725E90B2A-L003629](../../tests/test_web_agent.py#L3629) | 3629 | `"        {"` | — |
+| [SRC-F725E90B2A-L003630](../../tests/test_web_agent.py#L3630) | 3630 | `"            **sample_source(1),"` | — |
+| [SRC-F725E90B2A-L003631](../../tests/test_web_agent.py#L3631) | 3631 | `"            \"url\": \"https://www.reddit.com/r/example/comments/2\","` | — |
+| [SRC-F725E90B2A-L003632](../../tests/test_web_agent.py#L3632) | 3632 | `"            \"domain\": \"reddit.com\","` | — |
+| [SRC-F725E90B2A-L003633](../../tests/test_web_agent.py#L3633) | 3633 | `"            \"title\": \"مناقشة أخرى عن الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003634](../../tests/test_web_agent.py#L3634) | 3634 | `"            \"snippet\": \"مناقشة وتجارب مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003635](../../tests/test_web_agent.py#L3635) | 3635 | `"            \"page_text\": \"مناقشة وتجارب مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003636](../../tests/test_web_agent.py#L3636) | 3636 | `"            \"platform\": \"reddit\","` | — |
+| [SRC-F725E90B2A-L003637](../../tests/test_web_agent.py#L3637) | 3637 | `"            \"providers\": [\"reddit\"],"` | — |
+| [SRC-F725E90B2A-L003638](../../tests/test_web_agent.py#L3638) | 3638 | `"        },"` | — |
+| [SRC-F725E90B2A-L003639](../../tests/test_web_agent.py#L3639) | 3639 | `"    ]"` | — |
 | [SRC-F725E90B2A-L003640](../../tests/test_web_agent.py#L3640) | 3640 | `"    repair_candidate = {"` | — |
 | [SRC-F725E90B2A-L003641](../../tests/test_web_agent.py#L3641) | 3641 | `"        **sample_source(2),"` | — |
 | [SRC-F725E90B2A-L003642](../../tests/test_web_agent.py#L3642) | 3642 | `"        \"url\": \"https://example.com/unrelated-repair\","` | — |
@@ -820,17 +834,3 @@
 | [SRC-DE7EABE998-L000381](../../web/agent.html#L381) | 381 | `"  sources.innerHTML=usableSources.map((s,i)=>renderSource(s,i)).join(\"\");box.appendChild(sources);"` | — |
 | [SRC-DE7EABE998-L000382](../../web/agent.html#L382) | 382 | `" }else if(role===\"assistant\"&&result&&result.kind!==\"general_answer\"&&result.kind!==\"capability_answer\"){"` | — |
 | [SRC-DE7EABE998-L000383](../../web/agent.html#L383) | 383 | `"  const no=document.createElement(\"p\");no.className=\"no-sources\";"` | — |
-| [SRC-DE7EABE998-L000384](../../web/agent.html#L384) | 384 | `"  no.textContent=\"لم يتم إرجاع مصدر صالح قابل للفتح في هذه الجولة. لا تعتبر الإجابة المدعومة بلا مصادر نتيجة بحث ناجحة.\";"` | — |
-| [SRC-DE7EABE998-L000385](../../web/agent.html#L385) | 385 | `"  box.appendChild(no);"` | — |
-| [SRC-DE7EABE998-L000386](../../web/agent.html#L386) | 386 | `" }"` | — |
-| [SRC-DE7EABE998-L000387](../../web/agent.html#L387) | 387 | `" $(\"messages\").appendChild(box);box.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |
-| [SRC-DE7EABE998-L000388](../../web/agent.html#L388) | 388 | `" return box;"` | — |
-| [SRC-DE7EABE998-L000389](../../web/agent.html#L389) | 389 | `"}"` | — |
-| [SRC-DE7EABE998-L000390](../../web/agent.html#L390) | 390 | `"function setBusy(on){busy=on;$(\"send\").disabled=on;$(\"send\").textContent=on?\"يبحث…\":\"ابحث ←\";$(\"question\").disabled=on;document.querySelectorAll(\".mode-btn\").forEach(b=>b.disabled=on);}"` | — |
-| [SRC-DE7EABE998-L000391](../../web/agent.html#L391) | 391 | `"async function ask(value){"` | — |
-| [SRC-DE7EABE998-L000392](../../web/agent.html#L392) | 392 | `" const q=(value??$(\"question\").value).trim();if(!q\|\|busy)return;"` | — |
-| [SRC-DE7EABE998-L000393](../../web/agent.html#L393) | 393 | `" addMessage(\"user\",q);$(\"question\").value=\"\";setBusy(true);"` | — |
-| [SRC-DE7EABE998-L000394](../../web/agent.html#L394) | 394 | `" setStatus(\"جارٍ تنفيذ البحث عن السؤال الحالي…\",\"warn\");"` | — |
-| [SRC-DE7EABE998-L000395](../../web/agent.html#L395) | 395 | `" const pending=document.createElement(\"div\");pending.className=\"message assistant\";"` | — |
-| [SRC-DE7EABE998-L000396](../../web/agent.html#L396) | 396 | `" pending.innerHTML='<div class=\"who\">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class=\"bubble\"><div class=\"pending\"><span class=\"spinner\"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';"` | — |
-| [SRC-DE7EABE998-L000397](../../web/agent.html#L397) | 397 | `" $(\"messages\").appendChild(pending);pending.scrollIntoView({behavior:\"smooth\",block:\"end\"});"` | — |

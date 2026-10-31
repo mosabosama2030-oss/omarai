@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001240 إلى SRC-F725E90B2A-L002039
+- النطاق: SRC-F725E90B2A-L001226 إلى SRC-F725E90B2A-L002025
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001226](../../tests/test_web_agent.py#L1226) | 1226 | `"    first[\"url\"] = \"https://news.example.com/research\""` | — |
+| [SRC-F725E90B2A-L001227](../../tests/test_web_agent.py#L1227) | 1227 | `"    first[\"domain\"] = \"news.example.com\""` | — |
+| [SRC-F725E90B2A-L001228](../../tests/test_web_agent.py#L1228) | 1228 | `"    second = sample_source(1)"` | — |
+| [SRC-F725E90B2A-L001229](../../tests/test_web_agent.py#L1229) | 1229 | `"    second[\"url\"] = \"https://offers.example.com/research\""` | — |
+| [SRC-F725E90B2A-L001230](../../tests/test_web_agent.py#L1230) | 1230 | `"    second[\"domain\"] = \"offers.example.com\""` | — |
+| [SRC-F725E90B2A-L001231](../../tests/test_web_agent.py#L1231) | 1231 | `""` | — |
+| [SRC-F725E90B2A-L001232](../../tests/test_web_agent.py#L1232) | 1232 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L001233](../../tests/test_web_agent.py#L1233) | 1233 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L001234](../../tests/test_web_agent.py#L1234) | 1234 | `"        \"_collect_research\","` | — |
+| [SRC-F725E90B2A-L001235](../../tests/test_web_agent.py#L1235) | 1235 | `"        lambda plan: ("` | — |
+| [SRC-F725E90B2A-L001236](../../tests/test_web_agent.py#L1236) | 1236 | `"            [first, second],"` | — |
+| [SRC-F725E90B2A-L001237](../../tests/test_web_agent.py#L1237) | 1237 | `"            [],"` | — |
+| [SRC-F725E90B2A-L001238](../../tests/test_web_agent.py#L1238) | 1238 | `"            {"` | — |
+| [SRC-F725E90B2A-L001239](../../tests/test_web_agent.py#L1239) | 1239 | `"                \"queries_planned\": 1,"` | — |
 | [SRC-F725E90B2A-L001240](../../tests/test_web_agent.py#L1240) | 1240 | `"                \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001241](../../tests/test_web_agent.py#L1241) | 1241 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 2}],"` | — |
 | [SRC-F725E90B2A-L001242](../../tests/test_web_agent.py#L1242) | 1242 | `"                \"unique_sources\": 2,"` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L002023](../../tests/test_web_agent.py#L2023) | 2023 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
 | [SRC-F725E90B2A-L002024](../../tests/test_web_agent.py#L2024) | 2024 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
 | [SRC-F725E90B2A-L002025](../../tests/test_web_agent.py#L2025) | 2025 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
-| [SRC-F725E90B2A-L002026](../../tests/test_web_agent.py#L2026) | 2026 | `""` | — |
-| [SRC-F725E90B2A-L002027](../../tests/test_web_agent.py#L2027) | 2027 | `""` | — |
-| [SRC-F725E90B2A-L002028](../../tests/test_web_agent.py#L2028) | 2028 | `"def test_completion_rejects_content_filtered_primary_and_uses_fallback(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L002029](../../tests/test_web_agent.py#L2029) | 2029 | `"    import json"` | — |
-| [SRC-F725E90B2A-L002030](../../tests/test_web_agent.py#L2030) | 2030 | `""` | — |
-| [SRC-F725E90B2A-L002031](../../tests/test_web_agent.py#L2031) | 2031 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002032](../../tests/test_web_agent.py#L2032) | 2032 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L002033](../../tests/test_web_agent.py#L2033) | 2033 | `"    agent.fallback_model = \"fallback/model\""` | — |
-| [SRC-F725E90B2A-L002034](../../tests/test_web_agent.py#L2034) | 2034 | `"    called = []"` | — |
-| [SRC-F725E90B2A-L002035](../../tests/test_web_agent.py#L2035) | 2035 | `""` | — |
-| [SRC-F725E90B2A-L002036](../../tests/test_web_agent.py#L2036) | 2036 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L002037](../../tests/test_web_agent.py#L2037) | 2037 | `"        def __init__(self, content, finish_reason):"` | — |
-| [SRC-F725E90B2A-L002038](../../tests/test_web_agent.py#L2038) | 2038 | `"            self.body = json.dumps({"` | — |
-| [SRC-F725E90B2A-L002039](../../tests/test_web_agent.py#L2039) | 2039 | `"                \"choices\": [{"` | — |
