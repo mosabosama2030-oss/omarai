@@ -7,6 +7,7 @@ must be explicitly enabled because configured providers may consume quota or mon
 from __future__ import annotations
 
 import argparse
+from collections import defaultdict, deque
 import json
 import os
 import sys
@@ -145,13 +146,20 @@ def run_acceptance(
             from api.omarai import Handler
             from agents.omarai import LeadStore
 
-            previous_store = Handler.store
-            Handler.store = LeadStore(
-                os.environ["OMARAI_DB_PATH"],
-                default_tenant_id="self-test",
-                default_tenant_name="Omarai Self-Test",
-            )
-            server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+            class SelfTestHandler(Handler):
+                # Keep the test server's rate buckets isolated from the application
+                # process and from other test clients sharing 127.0.0.1.
+                _rate_lock = threading.Lock()
+                _request_times = defaultdict(deque)
+                _rate_last_cleanup = 0.0
+                _agent_semaphore = threading.BoundedSemaphore(Handler.AGENT_CONCURRENCY_LIMIT)
+                store = LeadStore(
+                    os.environ["OMARAI_DB_PATH"],
+                    default_tenant_id="self-test",
+                    default_tenant_name="Omarai Self-Test",
+                )
+
+            server = ThreadingHTTPServer(("127.0.0.1", 0), SelfTestHandler)
             server.daemon_threads = True
             thread = threading.Thread(target=server.serve_forever, daemon=True)
             thread.start()
@@ -259,7 +267,6 @@ def run_acceptance(
                 server.shutdown()
                 server.server_close()
                 thread.join(timeout=2)
-                Handler.store = previous_store
         finally:
             for key, value in original_environment.items():
                 if value is None:
