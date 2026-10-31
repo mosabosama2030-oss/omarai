@@ -267,7 +267,12 @@ def run_smoke(
     partial_report.update({
         "result": "passed",
         "checks": checks,
+        "connector_check": (
+            diagnostics.get("checks", {}).get("web_search", {})
+            if isinstance(diagnostics.get("checks"), dict) else {}
+        ),
         "provider_diagnostics": diagnostics.get("provider_diagnostics", []),
+        "connector_configuration": diagnostics.get("configuration", {}),
         "diagnostic_warnings": diagnostics.get("warnings", []),
         "note": "Transcript contains the exact fixed test question, answer, and returned source metadata. This proves the request path worked at test time, not continuous uptime. One model completion is made by the agent request; provider usage may incur charges.",
     })
