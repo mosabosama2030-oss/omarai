@@ -446,9 +446,13 @@ def test_built_claim_ledger_without_reference_counter_is_not_trusted() -> None:
 
 
 def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> None:
-    # Production removes out-of-range markers before building the claim ledger.
-    # The surviving valid marker means the ledger alone cannot reveal the removed one.
-    sanitized_answer = "The report states 100 EGP [المصدر 1], with another claim withheld."
+    # Exercise the same ordering as production: sanitize first, then build the ledger.
+    from agents.web_agent import WebAgent
+
+    raw_answer = (
+        "The report states 100 EGP [المصدر 1], and a second unsupported claim "
+        "points to [المصدر 2]."
+    )
     sources = [{
         "url": "https://example.com/report",
         "title": "Report",
@@ -456,6 +460,18 @@ def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> 
         "page_fetched": True,
         "page_text": "The report states 100 EGP.",
     }]
+
+    sanitized_answer, citation_warnings = WebAgent._remove_invalid_citations(
+        raw_answer, len(sources)
+    )
+    citation_validation = WebAgent._citation_validation_metadata(
+        sanitized_answer, len(sources), citation_warnings, "not_reviewed"
+    )
+    assert "[المصدر 1]" in sanitized_answer
+    assert "[المصدر 2]" not in sanitized_answer
+    assert len(citation_warnings) == 1
+    assert citation_validation["invalid_references_removed"] == 1
+
     ledger = build_claim_evidence_ledger(sanitized_answer, sources)
     assert ledger["summary"]["out_of_range_reference_count"] == 0
 
@@ -464,21 +480,13 @@ def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> 
         "search_attempted": True,
         "used_language_model": True,
         "final_answer_status": "model_answer_generated",
-        "citation_validation": {
-            "status": "invalid_index_references_removed",
-            "valid_citation_count": 1,
-            "invalid_references_removed": 1,
-        },
+        "citation_validation": citation_validation,
         "claim_evidence_ledger": ledger,
         "sources": sources,
         "search_report": {
             "unique_sources": 1,
             "pages_fetched": 1,
-            "citation_validation": {
-                "status": "invalid_index_references_removed",
-                "valid_citation_count": 1,
-                "invalid_references_removed": 1,
-            },
+            "citation_validation": citation_validation,
         },
     })
 
