@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **118**
-- ملفات Python المحللة: **72**
-- تعريفات Python المفهرسة: **1526**
+- ملفات المستودع في الجرد: **120**
+- ملفات Python المحللة: **74**
+- تعريفات Python المفهرسة: **1534**
 - تعريفات Python موثقة بوجود Docstring: **259**
-- تعريفات Python بلا Docstring: **961**
+- تعريفات Python بلا Docstring: **969**
 - تعريفات لا ينطبق عليها Docstring: **306**
-- الرموز الساكنة الإضافية: **1876**
-- الأسطر النصية المفهرسة حرفيًا: **40405**
+- الرموز الساكنة الإضافية: **1884**
+- الأسطر النصية المفهرسة حرفيًا: **40777**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -99,6 +99,7 @@
 | FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 10054 | 230 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 29961 | 720 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
+| FILE-497366DEF4 | ملفات أخرى | [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L1) | Python | 14441 | 327 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
 | FILE-90FAA34ADE | اختبارات | [tests/fixtures/answer_quality_cases.json](../tests/fixtures/answer_quality_cases.json#L1) | JSON | 55276 | 1352 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-D4963BDA6A | اختبارات | [tests/fixtures/answer_quality_reviews_template.json](../tests/fixtures/answer_quality_reviews_template.json#L1) | JSON | 6454 | 234 | جرد الملف + مفاتيح إعداد ساكنة |
@@ -138,6 +139,7 @@
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
+| FILE-CDCF4DCBEA | اختبارات | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L1) | Python | 1870 | 45 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
@@ -816,6 +818,11 @@
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L128) | دالة | _ratio | لا توجد Docstring. | ناقص | 128 | [SRC-03FF422A16-L000128](../scripts/score_answer_quality_reviews.py#L128) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L138) | دالة | summarize_reviews | لا توجد Docstring. | ناقص | 138 | [SRC-03FF422A16-L000138](../scripts/score_answer_quality_reviews.py#L138) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L222) | دالة | main | لا توجد Docstring. | ناقص | 222 | [SRC-03FF422A16-L000222](../scripts/score_answer_quality_reviews.py#L222) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L23) | دالة | build_live_questions | لا توجد Docstring. | ناقص | 23 | [SRC-497366DEF4-L000023](../scripts/self_acceptance_test.py#L23) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L58) | دالة | summarize_response | لا توجد Docstring. | ناقص | 58 | [SRC-497366DEF4-L000058](../scripts/self_acceptance_test.py#L58) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L86) | دالة | _request_json | لا توجد Docstring. | ناقص | 86 | [SRC-497366DEF4-L000086](../scripts/self_acceptance_test.py#L86) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L111) | دالة | run_acceptance | لا توجد Docstring. | ناقص | 111 | [SRC-497366DEF4-L000111](../scripts/self_acceptance_test.py#L111) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L271) | دالة | main | لا توجد Docstring. | ناقص | 271 | [SRC-497366DEF4-L000271](../scripts/self_acceptance_test.py#L271) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L15) | كلاس | BackupError | Raised when a backup/restore operation cannot be proven safe. | موثق | 15 | [SRC-547CAF1FE3-L000015](../scripts/sqlite_backup_restore.py#L15) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L19) | دالة | _open_read_only | Open an existing SQLite database without accidentally creating a missing source. | موثق | 19 | [SRC-547CAF1FE3-L000019](../scripts/sqlite_backup_restore.py#L19) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L27) | دالة | _validate_omarai_database | Require a healthy SQLite file containing the Omarai leads table. | موثق | 27 | [SRC-547CAF1FE3-L000027](../scripts/sqlite_backup_restore.py#L27) |
@@ -1374,6 +1381,9 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L104) | دالة | test_default_repository_ref_prefers_explicit_environment_override | لا توجد Docstring. | ناقص | 104 | [SRC-2614DCB6FB-L000104](../tests/test_search_code.py#L104) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L113) | دالة | test_default_repository_ref_uses_valid_ci_sha | لا توجد Docstring. | ناقص | 113 | [SRC-2614DCB6FB-L000113](../tests/test_search_code.py#L113) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L121) | دالة | test_cli_uses_explicit_ref_for_source_links | لا توجد Docstring. | ناقص | 121 | [SRC-2614DCB6FB-L000121](../tests/test_search_code.py#L121) |
+| [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L4) | دالة | test_self_acceptance_questions_cover_research_followup_and_optional_buyer_intent | لا توجد Docstring. | ناقص | 4 | [SRC-CDCF4DCBEA-L000004](../tests/test_self_acceptance.py#L4) |
+| [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L17) | دالة | test_custom_self_acceptance_questions_are_preserved_without_rewriting | لا توجد Docstring. | ناقص | 17 | [SRC-CDCF4DCBEA-L000017](../tests/test_self_acceptance.py#L17) |
+| [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L25) | دالة | test_live_response_summary_keeps_quality_gaps_visible | لا توجد Docstring. | ناقص | 25 | [SRC-CDCF4DCBEA-L000025](../tests/test_self_acceptance.py#L25) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L6) | دالة | test_population_question_reports_missing_url_publication_date_period_and_scope | لا توجد Docstring. | ناقص | 6 | [SRC-D033B34F41-L000006](../tests/test_source_metadata_audit.py#L6) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L29) | دالة | test_population_source_metadata_presence_does_not_claim_truth_verification | لا توجد Docstring. | ناقص | 29 | [SRC-D033B34F41-L000029](../tests/test_source_metadata_audit.py#L29) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L57) | دالة | test_zero_sources_are_not_reported_as_metadata_complete | لا توجد Docstring. | ناقص | 57 | [SRC-D033B34F41-L000057](../tests/test_source_metadata_audit.py#L57) |
@@ -2984,6 +2994,14 @@
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR | 134 | [SRC-03FF422A16-L000134](../scripts/score_answer_quality_reviews.py#L134) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SCORED_FROM_HUMAN_REVIEW | 134 | [SRC-03FF422A16-L000134](../scripts/score_answer_quality_reviews.py#L134) |
 | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L209) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_SCORABLE_NO_HUMAN_SCORES | 209 | [SRC-03FF422A16-L000209](../scripts/score_answer_quality_reviews.py#L209) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L119) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SELF_TEST_ALLOW_EXTERNAL_CALLS | 119 | [SRC-497366DEF4-L000119](../scripts/self_acceptance_test.py#L119) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 128 | [SRC-497366DEF4-L000128](../scripts/self_acceptance_test.py#L128) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 128 | [SRC-497366DEF4-L000128](../scripts/self_acceptance_test.py#L128) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_MODE | 128 | [SRC-497366DEF4-L000128](../scripts/self_acceptance_test.py#L128) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_USER_ID | 129 | [SRC-497366DEF4-L000129](../scripts/self_acceptance_test.py#L129) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 129 | [SRC-497366DEF4-L000129](../scripts/self_acceptance_test.py#L129) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEFAULT_TENANT_ID | 129 | [SRC-497366DEF4-L000129](../scripts/self_acceptance_test.py#L129) |
+| [scripts/self_acceptance_test.py](../scripts/self_acceptance_test.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEFAULT_TENANT_NAME | 130 | [SRC-497366DEF4-L000130](../scripts/self_acceptance_test.py#L130) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_CREAT | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_EXCL | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
 | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | O_WRONLY | 49 | [SRC-547CAF1FE3-L000049](../scripts/sqlite_backup_restore.py#L49) |
