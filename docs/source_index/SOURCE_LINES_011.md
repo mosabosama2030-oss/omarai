@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001161 إلى SRC-1AE03B9EC3-L001960
+- النطاق: SRC-1AE03B9EC3-L001152 إلى SRC-1AE03B9EC3-L001951
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001152](../../agents/web_agent.py#L1152) | 1152 | `"        value = _normalize_search_query(question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001153](../../agents/web_agent.py#L1153) | 1153 | `"        current_search_question = self._is_current_search_status_question(question)"` | — |
+| [SRC-1AE03B9EC3-L001154](../../agents/web_agent.py#L1154) | 1154 | `""` | — |
+| [SRC-1AE03B9EC3-L001155](../../agents/web_agent.py#L1155) | 1155 | `"        if current_search_question:"` | — |
+| [SRC-1AE03B9EC3-L001156](../../agents/web_agent.py#L1156) | 1156 | `"            answer = ("` | — |
+| [SRC-1AE03B9EC3-L001157](../../agents/web_agent.py#L1157) | 1157 | `"                \"لا، لم أنفّذ بحثًا حيًا للإجابة عن هذا السؤال تحديدًا؛ هذا السؤال عن \""` | — |
+| [SRC-1AE03B9EC3-L001158](../../agents/web_agent.py#L1158) | 1158 | `"                \"طريقة عملي، ولذلك لم أبدأ بحث ويب في هذه الجولة. هذا لا يعني أن البحث \""` | — |
+| [SRC-1AE03B9EC3-L001159](../../agents/web_agent.py#L1159) | 1159 | `"                \"غير متاح؛ عند تنفيذ طلب يحتاج إلى معلومات حديثة سأوضح هل جرت محاولة البحث، \""` | — |
+| [SRC-1AE03B9EC3-L001160](../../agents/web_agent.py#L1160) | 1160 | `"                \"وما النتائج التي عادت، وما إذا اكتملت الإجابة.\""` | — |
 | [SRC-1AE03B9EC3-L001161](../../agents/web_agent.py#L1161) | 1161 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001162](../../agents/web_agent.py#L1162) | 1162 | `"            result = self._local_answer_result(question, answer, \"capability_answer\")"` | — |
 | [SRC-1AE03B9EC3-L001163](../../agents/web_agent.py#L1163) | 1163 | `"            result[\"request_execution_status\"] = {"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L001949](../../agents/web_agent.py#L1949) | 1949 | `"                self._reserve_search_call()"` | — |
 | [SRC-1AE03B9EC3-L001950](../../agents/web_agent.py#L1950) | 1950 | `"                response = httpx.get("` | — |
 | [SRC-1AE03B9EC3-L001951](../../agents/web_agent.py#L1951) | 1951 | `"                    \"https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts\","` | — |
-| [SRC-1AE03B9EC3-L001952](../../agents/web_agent.py#L1952) | 1952 | `"                    params={\"q\": query, \"limit\": 10},"` | — |
-| [SRC-1AE03B9EC3-L001953](../../agents/web_agent.py#L1953) | 1953 | `"                    headers=headers,"` | — |
-| [SRC-1AE03B9EC3-L001954](../../agents/web_agent.py#L1954) | 1954 | `"                    timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001955](../../agents/web_agent.py#L1955) | 1955 | `"                    follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L001956](../../agents/web_agent.py#L1956) | 1956 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L001957](../../agents/web_agent.py#L1957) | 1957 | `"                if response.status_code == 200:"` | — |
-| [SRC-1AE03B9EC3-L001958](../../agents/web_agent.py#L1958) | 1958 | `"                    data = response.json()"` | — |
-| [SRC-1AE03B9EC3-L001959](../../agents/web_agent.py#L1959) | 1959 | `"                    for item in data.get(\"posts\", []):"` | — |
-| [SRC-1AE03B9EC3-L001960](../../agents/web_agent.py#L1960) | 1960 | `"                        post = item.get(\"post\", {})"` | — |

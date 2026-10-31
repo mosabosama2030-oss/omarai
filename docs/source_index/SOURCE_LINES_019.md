@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000044 إلى SRC-D57B0BB030-L000030
+- النطاق: SRC-792A9A235D-L000035 إلى SRC-D57B0BB030-L000021
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
+| [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `""` | — |
+| [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
+| [SRC-792A9A235D-L000038](../ANSWER_QUALITY_BENCHMARK_AR.md#L38) | 38 | `""` | — |
+| [SRC-792A9A235D-L000039](../ANSWER_QUALITY_BENCHMARK_AR.md#L39) | 39 | `"\| الوضع \| متى يُستخدم \|"` | — |
+| [SRC-792A9A235D-L000040](../ANSWER_QUALITY_BENCHMARK_AR.md#L40) | 40 | `"\|--------\|-------------\|"` | — |
+| [SRC-792A9A235D-L000041](../ANSWER_QUALITY_BENCHMARK_AR.md#L41) | 41 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
+| [SRC-792A9A235D-L000042](../ANSWER_QUALITY_BENCHMARK_AR.md#L42) | 42 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
+| [SRC-792A9A235D-L000043](../ANSWER_QUALITY_BENCHMARK_AR.md#L43) | 43 | ``"\| `human_judgment` \| حكم بشري على الاكتمال/اللغة/جودة عدم اليقين \|"`` | — |
 | [SRC-792A9A235D-L000044](../ANSWER_QUALITY_BENCHMARK_AR.md#L44) | 44 | `""` | — |
 | [SRC-792A9A235D-L000045](../ANSWER_QUALITY_BENCHMARK_AR.md#L45) | 45 | `"## بروتوكول تسجيل النتيجة"` | — |
 | [SRC-792A9A235D-L000046](../ANSWER_QUALITY_BENCHMARK_AR.md#L46) | 46 | `""` | — |
@@ -861,12 +870,3 @@
 | [SRC-D57B0BB030-L000019](../DEPLOY_RENDER_AR.md#L19) | 19 | `"4. راجع إعداد الخدمة وتأكد أن الخطة هي **Free**. سيطلب منك Render قيم المتغيرات السرية؛ أدخل رمز الوصول ومفتاح النموذج في النموذج الآمن فقط."` | — |
 | [SRC-D57B0BB030-L000020](../DEPLOY_RENDER_AR.md#L20) | 20 | `"5. أنشئ الخدمة وانتظر انتهاء بناء Docker والنشر. إذا طلب Render التأكيد على خطة مدفوعة، لا تتابع؛ ارجع وتحقق من اختيار Free."` | — |
 | [SRC-D57B0BB030-L000021](../DEPLOY_RENDER_AR.md#L21) | 21 | ``"6. افتح عنوان `onrender.com` الذي يقدمه Render، ثم جرّب `/api/health`."`` | — |
-| [SRC-D57B0BB030-L000022](../DEPLOY_RENDER_AR.md#L22) | 22 | ``"7. افتح الواجهة، وأدخل `OMARAI_ACCESS_TOKEN` في خانة رمز الوصول. اضغط «اختبار حي للإنترنت والنموذج» وتحقق من كل حالة."`` | — |
-| [SRC-D57B0BB030-L000023](../DEPLOY_RENDER_AR.md#L23) | 23 | `"8. لا تعتبر النشر مقبولًا حتى ينجح سؤال عربي فعلي من الواجهة وتظهر مصادر قابلة للفتح."` | — |
-| [SRC-D57B0BB030-L000024](../DEPLOY_RENDER_AR.md#L24) | 24 | `""` | — |
-| [SRC-D57B0BB030-L000025](../DEPLOY_RENDER_AR.md#L25) | 25 | `"## ربط النسخة المنشورة بالمصدر"` | — |
-| [SRC-D57B0BB030-L000026](../DEPLOY_RENDER_AR.md#L26) | 26 | `""` | — |
-| [SRC-D57B0BB030-L000027](../DEPLOY_RENDER_AR.md#L27) | 27 | ``"يعرض Omarai في `/api/health` `build.sha` و`build.sha_source`. يفضّل التطبيق SHA المخبوز داخل الصورة؛ وإذا لم يوجد، يتحقق من متغير Render الرسمي `RENDER_GIT_COMMIT`. بعد النشر يجب أن يطابق SHA الالتزام المقصود. شغّل hosted smoke بعد ضبط أسراره؛ سيقارن الخدمة بالـSHA الموجود في الفرع الذي شُغّل منه الاختبار، ولذلك يفشل بأمان إذا كانت الخدمة لم تتحدث بعد."`` | — |
-| [SRC-D57B0BB030-L000028](../DEPLOY_RENDER_AR.md#L28) | 28 | `""` | — |
-| [SRC-D57B0BB030-L000029](../DEPLOY_RENDER_AR.md#L29) | 29 | `"## توليد رمز الوصول"` | — |
-| [SRC-D57B0BB030-L000030](../DEPLOY_RENDER_AR.md#L30) | 30 | `""` | — |

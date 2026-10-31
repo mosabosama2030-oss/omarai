@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-21D5D044E2-L000058 إلى SRC-E73001D9AC-L000758
+- النطاق: SRC-21D5D044E2-L000049 إلى SRC-E73001D9AC-L000749
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-21D5D044E2-L000049](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L49) | 49 | `"- **صاحب القرار:** مدير المشروع البشري."` | — |
+| [SRC-21D5D044E2-L000050](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L50) | 50 | `"- **الانتهاء/إعادة النظر:** قبل تخزين أي بيانات عمل حقيقية يُعتمد عليها."` | — |
+| [SRC-21D5D044E2-L000051](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L51) | 51 | ``"- **الحالة:** `PROPOSED — تنتظر الموافقة`."`` | — |
+| [SRC-21D5D044E2-L000052](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L52) | 52 | `""` | — |
+| [SRC-21D5D044E2-L000053](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L53) | 53 | `"### EX-PROP-003 — عدم إعلان سعة/توافر غير مقاس"` | — |
+| [SRC-21D5D044E2-L000054](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L54) | 54 | `""` | — |
+| [SRC-21D5D044E2-L000055](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L55) | 55 | ``"- **المتطلبات:** `PER-004` و`REL-006`، وأي ادعاء أداء أو توافر في `PRD-001`."`` | — |
+| [SRC-21D5D044E2-L000056](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L56) | 56 | `"- **المقترح:** عدم نشر أرقام عن throughput أو عدد مستخدمين مدعوم أو نسبة توافر، إلى أن تتوفر قياسات ممثلة."` | — |
+| [SRC-21D5D044E2-L000057](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L57) | 57 | `"- **الطبيعة:** هذا في الأساس قيد على الادعاءات، وليس إذنًا بتجاهل ضوابط الأمان أو حدود الموارد."` | — |
 | [SRC-21D5D044E2-L000058](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L58) | 58 | `"- **المخاطر:** توقعات غير واقعية من المستخدمين أو توقف الخدمة تحت ضغط لم يُختبر."` | — |
 | [SRC-21D5D044E2-L000059](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L59) | 59 | `"- **التعويض:** الإفصاح أن السعة والتوافر غير معروفين، وعدم إعطاء وعود تشغيلية رقمية."` | — |
 | [SRC-21D5D044E2-L000060](../OMARAI_EXCEPTIONS_REGISTER_AR.md#L60) | 60 | `"- **صاحب القرار:** مدير المشروع البشري."` | — |
@@ -816,12 +825,3 @@
 | [SRC-E73001D9AC-L000747](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L747) | 747 | `"## 23. إصدار واجهات API وعقود الرسائل"` | — |
 | [SRC-E73001D9AC-L000748](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L748) | 748 | `""` | — |
 | [SRC-E73001D9AC-L000749](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L749) | 749 | `"- تُوثق الواجهات العامة بعقود ومخططات قابلة للمراجعة، ويفضل توليد أو اختبار المخططات من مصدر واحد للحقيقة عندما يكون ذلك عمليًا."` | — |
-| [SRC-E73001D9AC-L000750](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L750) | 750 | `"- الإضافات المتوافقة، مثل حقول اختيارية جديدة لا تغير المعنى، تُفضّل على تغييرات تكسر العملاء."` | — |
-| [SRC-E73001D9AC-L000751](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L751) | 751 | `"- أي تغيير غير متوافق يتطلب إصدارًا أو مسار ترحيل واضحًا وفترة انتقال مناسبة."` | — |
-| [SRC-E73001D9AC-L000752](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L752) | 752 | `"- لا يُحذف حقل أو يغير معناه بصمت، ولا تتحول قيمة اختيارية إلى إلزامية دون خطة."` | — |
-| [SRC-E73001D9AC-L000753](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L753) | 753 | `"- يستخدم التحقق في جهة الخادم حتى عندما يتحقق العميل من نفس المخطط."` | — |
-| [SRC-E73001D9AC-L000754](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L754) | 754 | `"- تُختبر العقود بأمثلة صحيحة وخاطئة وحدود وأحجام قصوى وحالات إصدار قديم."` | — |
-| [SRC-E73001D9AC-L000755](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L755) | 755 | `"- عند استخدام أحداث أو رسائل طوابير، تتضمن الرسالة نوع الحدث وإصداره ومعرف تتبع وبيانات لازمة فقط، ولا تتضمن أسرارًا."` | — |
-| [SRC-E73001D9AC-L000756](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L756) | 756 | `"- يجب تحمل الرسائل المكررة أو الخارجة عن الترتيب إذا كان وسيط الرسائل أو طبيعة النظام يسمحان بذلك؛ لا يُفترض تنفيذ الرسالة مرة واحدة فقط دون ضمان."` | — |
-| [SRC-E73001D9AC-L000757](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L757) | 757 | `"- لا يوعد بالتوافق العكسي إلا ضمن نطاق إصدار وخطة دعم معلومة."` | — |
-| [SRC-E73001D9AC-L000758](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L758) | 758 | `""` | — |

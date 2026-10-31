@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000493 إلى SRC-DA61479D59-L000131
+- النطاق: SRC-3451CC474D-L000439 إلى SRC-DA61479D59-L000077
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `""` | — |
+| [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"    try:"` | — |
+| [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"        with urlopen(request, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `"            second_status = response.status"` | — |
+| [SRC-3451CC474D-L000443](../../tests/test_api.py#L443) | 443 | `"    except HTTPError as error:"` | — |
+| [SRC-3451CC474D-L000444](../../tests/test_api.py#L444) | 444 | `"        second_status = error.code"` | — |
+| [SRC-3451CC474D-L000445](../../tests/test_api.py#L445) | 445 | `"    assert second_status == 429"` | — |
+| [SRC-3451CC474D-L000446](../../tests/test_api.py#L446) | 446 | `""` | — |
+| [SRC-3451CC474D-L000447](../../tests/test_api.py#L447) | 447 | `""` | — |
+| [SRC-3451CC474D-L000448](../../tests/test_api.py#L448) | 448 | `"def test_hosted_api_requires_private_token_for_search_and_lead_data(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000449](../../tests/test_api.py#L449) | 449 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000450](../../tests/test_api.py#L450) | 450 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"x\" * 48)"` | — |
+| [SRC-3451CC474D-L000451](../../tests/test_api.py#L451) | 451 | `""` | — |
+| [SRC-3451CC474D-L000452](../../tests/test_api.py#L452) | 452 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L000453](../../tests/test_api.py#L453) | 453 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"test\"}"` | — |
+| [SRC-3451CC474D-L000454](../../tests/test_api.py#L454) | 454 | `"    )"` | — |
+| [SRC-3451CC474D-L000455](../../tests/test_api.py#L455) | 455 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L000456](../../tests/test_api.py#L456) | 456 | `"    assert \"رمز الوصول\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L000457](../../tests/test_api.py#L457) | 457 | `""` | — |
+| [SRC-3451CC474D-L000458](../../tests/test_api.py#L458) | 458 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L000459](../../tests/test_api.py#L459) | 459 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L000460](../../tests/test_api.py#L460) | 460 | `""` | — |
+| [SRC-3451CC474D-L000461](../../tests/test_api.py#L461) | 461 | `"    headers = {\"Authorization\": \"Bearer \" + \"x\" * 48}"` | — |
+| [SRC-3451CC474D-L000462](../../tests/test_api.py#L462) | 462 | `"    status, result = request_json("` | — |
+| [SRC-3451CC474D-L000463](../../tests/test_api.py#L463) | 463 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"بدور على شقة\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000464](../../tests/test_api.py#L464) | 464 | `"    )"` | — |
+| [SRC-3451CC474D-L000465](../../tests/test_api.py#L465) | 465 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000466](../../tests/test_api.py#L466) | 466 | `"    assert \"score\" in result"` | — |
+| [SRC-3451CC474D-L000467](../../tests/test_api.py#L467) | 467 | `""` | — |
+| [SRC-3451CC474D-L000468](../../tests/test_api.py#L468) | 468 | `"    status, result = request_json(local_api, \"/api/leads\", headers=headers)"` | — |
+| [SRC-3451CC474D-L000469](../../tests/test_api.py#L469) | 469 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000470](../../tests/test_api.py#L470) | 470 | `"    assert result[\"count\"] == 0"` | — |
+| [SRC-3451CC474D-L000471](../../tests/test_api.py#L471) | 471 | `""` | — |
+| [SRC-3451CC474D-L000472](../../tests/test_api.py#L472) | 472 | `""` | — |
+| [SRC-3451CC474D-L000473](../../tests/test_api.py#L473) | 473 | `"def test_hosted_api_rate_limits_authenticated_requests(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000474](../../tests/test_api.py#L474) | 474 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000475](../../tests/test_api.py#L475) | 475 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"y\" * 48)"` | — |
+| [SRC-3451CC474D-L000476](../../tests/test_api.py#L476) | 476 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 1)"` | — |
+| [SRC-3451CC474D-L000477](../../tests/test_api.py#L477) | 477 | `"    with Handler._rate_lock:"` | — |
+| [SRC-3451CC474D-L000478](../../tests/test_api.py#L478) | 478 | `"        Handler._request_times.clear()"` | — |
+| [SRC-3451CC474D-L000479](../../tests/test_api.py#L479) | 479 | `"    headers = {\"Authorization\": \"Bearer \" + \"y\" * 48}"` | — |
+| [SRC-3451CC474D-L000480](../../tests/test_api.py#L480) | 480 | `""` | — |
+| [SRC-3451CC474D-L000481](../../tests/test_api.py#L481) | 481 | `"    status, _ = request_json("` | — |
+| [SRC-3451CC474D-L000482](../../tests/test_api.py#L482) | 482 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"first\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000483](../../tests/test_api.py#L483) | 483 | `"    )"` | — |
+| [SRC-3451CC474D-L000484](../../tests/test_api.py#L484) | 484 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000485](../../tests/test_api.py#L485) | 485 | `""` | — |
+| [SRC-3451CC474D-L000486](../../tests/test_api.py#L486) | 486 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L000487](../../tests/test_api.py#L487) | 487 | `"        local_api, \"/api/analyze\", method=\"POST\", payload={\"text\": \"second\"}, headers=headers"` | — |
+| [SRC-3451CC474D-L000488](../../tests/test_api.py#L488) | 488 | `"    )"` | — |
+| [SRC-3451CC474D-L000489](../../tests/test_api.py#L489) | 489 | `"    assert status == 429"` | — |
+| [SRC-3451CC474D-L000490](../../tests/test_api.py#L490) | 490 | `"    assert \"حد الطلبات\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L000491](../../tests/test_api.py#L491) | 491 | `""` | — |
+| [SRC-3451CC474D-L000492](../../tests/test_api.py#L492) | 492 | `""` | — |
 | [SRC-3451CC474D-L000493](../../tests/test_api.py#L493) | 493 | `""` | — |
 | [SRC-3451CC474D-L000494](../../tests/test_api.py#L494) | 494 | `"def test_public_binding_requires_explicit_deployment_flag_and_strong_token(monkeypatch):"` | — |
 | [SRC-3451CC474D-L000495](../../tests/test_api.py#L495) | 495 | `"    from api.omarai import serve"` | — |
@@ -789,57 +843,3 @@
 | [SRC-DA61479D59-L000075](../../tests/test_connector_summary_counters.py#L75) | 75 | `"            \"page_fetched\": False,"` | — |
 | [SRC-DA61479D59-L000076](../../tests/test_connector_summary_counters.py#L76) | 76 | `"            \"provider\": \"test_search\","` | — |
 | [SRC-DA61479D59-L000077](../../tests/test_connector_summary_counters.py#L77) | 77 | `"            \"provider_rank\": 2,"` | — |
-| [SRC-DA61479D59-L000078](../../tests/test_connector_summary_counters.py#L78) | 78 | `"            \"search_query\": query,"` | — |
-| [SRC-DA61479D59-L000079](../../tests/test_connector_summary_counters.py#L79) | 79 | `"            \"published_at\": \"\","` | — |
-| [SRC-DA61479D59-L000080](../../tests/test_connector_summary_counters.py#L80) | 80 | `"        },"` | — |
-| [SRC-DA61479D59-L000081](../../tests/test_connector_summary_counters.py#L81) | 81 | `"        {"` | — |
-| [SRC-DA61479D59-L000082](../../tests/test_connector_summary_counters.py#L82) | 82 | `"            \"title\": \"Renewable energy storage statistics\","` | — |
-| [SRC-DA61479D59-L000083](../../tests/test_connector_summary_counters.py#L83) | 83 | `"            \"url\": \"https://example.org/statistics\","` | — |
-| [SRC-DA61479D59-L000084](../../tests/test_connector_summary_counters.py#L84) | 84 | `"            \"snippet\": \"Renewable energy storage statistics\","` | — |
-| [SRC-DA61479D59-L000085](../../tests/test_connector_summary_counters.py#L85) | 85 | `"            \"page_text\": \"\","` | — |
-| [SRC-DA61479D59-L000086](../../tests/test_connector_summary_counters.py#L86) | 86 | `"            \"page_fetched\": False,"` | — |
-| [SRC-DA61479D59-L000087](../../tests/test_connector_summary_counters.py#L87) | 87 | `"            \"provider\": \"test_search\","` | — |
-| [SRC-DA61479D59-L000088](../../tests/test_connector_summary_counters.py#L88) | 88 | `"            \"provider_rank\": 3,"` | — |
-| [SRC-DA61479D59-L000089](../../tests/test_connector_summary_counters.py#L89) | 89 | `"            \"search_query\": query,"` | — |
-| [SRC-DA61479D59-L000090](../../tests/test_connector_summary_counters.py#L90) | 90 | `"            \"published_at\": \"\","` | — |
-| [SRC-DA61479D59-L000091](../../tests/test_connector_summary_counters.py#L91) | 91 | `"        },"` | — |
-| [SRC-DA61479D59-L000092](../../tests/test_connector_summary_counters.py#L92) | 92 | `"    ]"` | — |
-| [SRC-DA61479D59-L000093](../../tests/test_connector_summary_counters.py#L93) | 93 | `""` | — |
-| [SRC-DA61479D59-L000094](../../tests/test_connector_summary_counters.py#L94) | 94 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda _query: results)"` | — |
-| [SRC-DA61479D59-L000095](../../tests/test_connector_summary_counters.py#L95) | 95 | `"    def fetch(url: str):"` | — |
-| [SRC-DA61479D59-L000096](../../tests/test_connector_summary_counters.py#L96) | 96 | `"        if \"example.com\" in url:"` | — |
-| [SRC-DA61479D59-L000097](../../tests/test_connector_summary_counters.py#L97) | 97 | `"            return \"Report page\", \"Renewable energy storage page body with extracted text.\""` | — |
-| [SRC-DA61479D59-L000098](../../tests/test_connector_summary_counters.py#L98) | 98 | `"        return \"\", \"\""` | — |
-| [SRC-DA61479D59-L000099](../../tests/test_connector_summary_counters.py#L99) | 99 | `""` | — |
-| [SRC-DA61479D59-L000100](../../tests/test_connector_summary_counters.py#L100) | 100 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fetch)"` | — |
-| [SRC-DA61479D59-L000101](../../tests/test_connector_summary_counters.py#L101) | 101 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-DA61479D59-L000102](../../tests/test_connector_summary_counters.py#L102) | 102 | `"        \"queries\": [query],"` | — |
-| [SRC-DA61479D59-L000103](../../tests/test_connector_summary_counters.py#L103) | 103 | `"        \"direct_urls\": [],"` | — |
-| [SRC-DA61479D59-L000104](../../tests/test_connector_summary_counters.py#L104) | 104 | `"        \"social_focus\": False,"` | — |
-| [SRC-DA61479D59-L000105](../../tests/test_connector_summary_counters.py#L105) | 105 | `"        \"freshness\": \"any\","` | — |
-| [SRC-DA61479D59-L000106](../../tests/test_connector_summary_counters.py#L106) | 106 | `"        \"depth\": \"standard\","` | — |
-| [SRC-DA61479D59-L000107](../../tests/test_connector_summary_counters.py#L107) | 107 | `"        \"platforms\": [],"` | — |
-| [SRC-DA61479D59-L000108](../../tests/test_connector_summary_counters.py#L108) | 108 | `"        \"planning_method\": \"unit_test\","` | — |
-| [SRC-DA61479D59-L000109](../../tests/test_connector_summary_counters.py#L109) | 109 | `"    })"` | — |
-| [SRC-DA61479D59-L000110](../../tests/test_connector_summary_counters.py#L110) | 110 | `""` | — |
-| [SRC-DA61479D59-L000111](../../tests/test_connector_summary_counters.py#L111) | 111 | `"    assert warnings"` | — |
-| [SRC-DA61479D59-L000112](../../tests/test_connector_summary_counters.py#L112) | 112 | `"    assert report[\"raw_results\"] == 3"` | — |
-| [SRC-DA61479D59-L000113](../../tests/test_connector_summary_counters.py#L113) | 113 | `"    assert report[\"unique_urls\"] == 2"` | — |
-| [SRC-DA61479D59-L000114](../../tests/test_connector_summary_counters.py#L114) | 114 | `"    assert report[\"unique_sources\"] == 2"` | — |
-| [SRC-DA61479D59-L000115](../../tests/test_connector_summary_counters.py#L115) | 115 | `"    assert report[\"pages_fetch_attempted\"] == 2"` | — |
-| [SRC-DA61479D59-L000116](../../tests/test_connector_summary_counters.py#L116) | 116 | `"    assert report[\"pages_content_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000117](../../tests/test_connector_summary_counters.py#L117) | 117 | `"    assert report[\"pages_extract_failed\"] == 1"` | — |
-| [SRC-DA61479D59-L000118](../../tests/test_connector_summary_counters.py#L118) | 118 | `"    assert report[\"page_fetch_status_counts\"][\"content_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000119](../../tests/test_connector_summary_counters.py#L119) | 119 | `"    assert report[\"page_fetch_status_counts\"][\"no_text_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000120](../../tests/test_connector_summary_counters.py#L120) | 120 | `"    assert report[\"page_fetch_status_counts\"][\"fetch_failed\"] == 0"` | — |
-| [SRC-DA61479D59-L000121](../../tests/test_connector_summary_counters.py#L121) | 121 | `"    assert report[\"page_fetch_status_counts\"][\"partial_extraction\"] == 0"` | — |
-| [SRC-DA61479D59-L000122](../../tests/test_connector_summary_counters.py#L122) | 122 | `"    assert report[\"pages_partial_extracted\"] == 0"` | — |
-| [SRC-DA61479D59-L000123](../../tests/test_connector_summary_counters.py#L123) | 123 | `"    assert sum(source[\"page_fetch_status\"] == \"content_extracted\" for source in sources) == 1"` | — |
-| [SRC-DA61479D59-L000124](../../tests/test_connector_summary_counters.py#L124) | 124 | `"    assert sum(source[\"page_fetch_status\"] == \"no_text_extracted\" for source in sources) == 1"` | — |
-| [SRC-DA61479D59-L000125](../../tests/test_connector_summary_counters.py#L125) | 125 | `"    assert report[\"connector_summary\"][\"scope\"] == \"this_request_only\""` | — |
-| [SRC-DA61479D59-L000126](../../tests/test_connector_summary_counters.py#L126) | 126 | `""` | — |
-| [SRC-DA61479D59-L000127](../../tests/test_connector_summary_counters.py#L127) | 127 | `""` | — |
-| [SRC-DA61479D59-L000128](../../tests/test_connector_summary_counters.py#L128) | 128 | `"def test_connector_summary_does_not_claim_timeout_or_budget_exhaustion_was_a_confirmed_attempt(monkeypatch):"` | — |
-| [SRC-DA61479D59-L000129](../../tests/test_connector_summary_counters.py#L129) | 129 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000130](../../tests/test_connector_summary_counters.py#L130) | 130 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"configured-test-key\")"` | — |
-| [SRC-DA61479D59-L000131](../../tests/test_connector_summary_counters.py#L131) | 131 | `"    monkeypatch.setenv(\"DEEPSEEK_SEARCH_API_KEY\", \"configured-test-key\")"` | — |

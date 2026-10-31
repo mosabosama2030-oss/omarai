@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000361 إلى SRC-1AE03B9EC3-L001160
+- النطاق: SRC-1AE03B9EC3-L000352 إلى SRC-1AE03B9EC3-L001151
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000352](../../agents/web_agent.py#L352) | 352 | `"    if not isinstance(value, str) or len(value) > 2048:"` | — |
+| [SRC-1AE03B9EC3-L000353](../../agents/web_agent.py#L353) | 353 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000354](../../agents/web_agent.py#L354) | 354 | `"    try:"` | — |
+| [SRC-1AE03B9EC3-L000355](../../agents/web_agent.py#L355) | 355 | `"        parsed = urllib.parse.urlparse(value.strip())"` | — |
+| [SRC-1AE03B9EC3-L000356](../../agents/web_agent.py#L356) | 356 | `"        if parsed.scheme not in {\"http\", \"https\"}:"` | — |
+| [SRC-1AE03B9EC3-L000357](../../agents/web_agent.py#L357) | 357 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L000358](../../agents/web_agent.py#L358) | 358 | `"        if not parsed.hostname or parsed.username is not None or parsed.password is not None:"` | — |
+| [SRC-1AE03B9EC3-L000359](../../agents/web_agent.py#L359) | 359 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L000360](../../agents/web_agent.py#L360) | 360 | `"        if parsed.port not in (None, 80, 443):"` | — |
 | [SRC-1AE03B9EC3-L000361](../../agents/web_agent.py#L361) | 361 | `"            return None"` | — |
 | [SRC-1AE03B9EC3-L000362](../../agents/web_agent.py#L362) | 362 | `"        host = parsed.hostname.rstrip(\".\").lower()"` | — |
 | [SRC-1AE03B9EC3-L000363](../../agents/web_agent.py#L363) | 363 | `"        if not host or host in {\"localhost\"} or host.endswith((\".local\", \".internal\", \".localhost\")):"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L001149](../../agents/web_agent.py#L1149) | 1149 | `""` | — |
 | [SRC-1AE03B9EC3-L001150](../../agents/web_agent.py#L1150) | 1150 | `"    def _self_description_answer(self, question: str) -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L001151](../../agents/web_agent.py#L1151) | 1151 | `"        \"\"\"Answer self/capability questions without inventing a live health result.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001152](../../agents/web_agent.py#L1152) | 1152 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001153](../../agents/web_agent.py#L1153) | 1153 | `"        current_search_question = self._is_current_search_status_question(question)"` | — |
-| [SRC-1AE03B9EC3-L001154](../../agents/web_agent.py#L1154) | 1154 | `""` | — |
-| [SRC-1AE03B9EC3-L001155](../../agents/web_agent.py#L1155) | 1155 | `"        if current_search_question:"` | — |
-| [SRC-1AE03B9EC3-L001156](../../agents/web_agent.py#L1156) | 1156 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L001157](../../agents/web_agent.py#L1157) | 1157 | `"                \"لا، لم أنفّذ بحثًا حيًا للإجابة عن هذا السؤال تحديدًا؛ هذا السؤال عن \""` | — |
-| [SRC-1AE03B9EC3-L001158](../../agents/web_agent.py#L1158) | 1158 | `"                \"طريقة عملي، ولذلك لم أبدأ بحث ويب في هذه الجولة. هذا لا يعني أن البحث \""` | — |
-| [SRC-1AE03B9EC3-L001159](../../agents/web_agent.py#L1159) | 1159 | `"                \"غير متاح؛ عند تنفيذ طلب يحتاج إلى معلومات حديثة سأوضح هل جرت محاولة البحث، \""` | — |
-| [SRC-1AE03B9EC3-L001160](../../agents/web_agent.py#L1160) | 1160 | `"                \"وما النتائج التي عادت، وما إذا اكتملت الإجابة.\""` | — |

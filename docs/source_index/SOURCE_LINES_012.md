@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001961 إلى SRC-1AE03B9EC3-L002760
+- النطاق: SRC-1AE03B9EC3-L001952 إلى SRC-1AE03B9EC3-L002751
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001952](../../agents/web_agent.py#L1952) | 1952 | `"                    params={\"q\": query, \"limit\": 10},"` | — |
+| [SRC-1AE03B9EC3-L001953](../../agents/web_agent.py#L1953) | 1953 | `"                    headers=headers,"` | — |
+| [SRC-1AE03B9EC3-L001954](../../agents/web_agent.py#L1954) | 1954 | `"                    timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001955](../../agents/web_agent.py#L1955) | 1955 | `"                    follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L001956](../../agents/web_agent.py#L1956) | 1956 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L001957](../../agents/web_agent.py#L1957) | 1957 | `"                if response.status_code == 200:"` | — |
+| [SRC-1AE03B9EC3-L001958](../../agents/web_agent.py#L1958) | 1958 | `"                    data = response.json()"` | — |
+| [SRC-1AE03B9EC3-L001959](../../agents/web_agent.py#L1959) | 1959 | `"                    for item in data.get(\"posts\", []):"` | — |
+| [SRC-1AE03B9EC3-L001960](../../agents/web_agent.py#L1960) | 1960 | `"                        post = item.get(\"post\", {})"` | — |
 | [SRC-1AE03B9EC3-L001961](../../agents/web_agent.py#L1961) | 1961 | `"                        record = post.get(\"record\", {})"` | — |
 | [SRC-1AE03B9EC3-L001962](../../agents/web_agent.py#L1962) | 1962 | `"                        author = post.get(\"author\", {})"` | — |
 | [SRC-1AE03B9EC3-L001963](../../agents/web_agent.py#L1963) | 1963 | `"                        uri = post.get(\"uri\", \"\")"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L002749](../../agents/web_agent.py#L2749) | 2749 | `"                        source[\"page_text\"] = page_text"` | — |
 | [SRC-1AE03B9EC3-L002750](../../agents/web_agent.py#L2750) | 2750 | `"                        source[\"snippet\"] = page_text[:1800]"` | — |
 | [SRC-1AE03B9EC3-L002751](../../agents/web_agent.py#L2751) | 2751 | `"                        source[\"page_fetched\"] = True"` | — |
-| [SRC-1AE03B9EC3-L002752](../../agents/web_agent.py#L2752) | 2752 | `"                        source[\"page_fetch_status\"] = ("` | — |
-| [SRC-1AE03B9EC3-L002753](../../agents/web_agent.py#L2753) | 2753 | `"                            observed_status"` | — |
-| [SRC-1AE03B9EC3-L002754](../../agents/web_agent.py#L2754) | 2754 | `"                            if observed_status in {\"content_extracted\", \"partial_extraction\"}"` | — |
-| [SRC-1AE03B9EC3-L002755](../../agents/web_agent.py#L2755) | 2755 | `"                            else \"partial_extraction\""` | — |
-| [SRC-1AE03B9EC3-L002756](../../agents/web_agent.py#L2756) | 2756 | `"                            if len(page_text) >= MAX_PAGE_TEXT_CHARS"` | — |
-| [SRC-1AE03B9EC3-L002757](../../agents/web_agent.py#L2757) | 2757 | `"                            else \"content_extracted\""` | — |
-| [SRC-1AE03B9EC3-L002758](../../agents/web_agent.py#L2758) | 2758 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L002759](../../agents/web_agent.py#L2759) | 2759 | `"                        if error_class:"` | — |
-| [SRC-1AE03B9EC3-L002760](../../agents/web_agent.py#L2760) | 2760 | `"                            source[\"page_fetch_error_class\"] = str(error_class)[:80]"` | — |

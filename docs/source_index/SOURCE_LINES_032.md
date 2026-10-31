@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-03FF422A16-L000177 إلى SRC-90FAA34ADE-L000579
+- النطاق: SRC-03FF422A16-L000123 إلى SRC-90FAA34ADE-L000525
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-03FF422A16-L000123](../../scripts/score_answer_quality_reviews.py#L123) | 123 | `"        if status == \"REVIEWED\" and not has_score:"` | — |
+| [SRC-03FF422A16-L000124](../../scripts/score_answer_quality_reviews.py#L124) | 124 | `"            problems.append(case_id + \": REVIEWED case must include at least one scored dimension\")"` | — |
+| [SRC-03FF422A16-L000125](../../scripts/score_answer_quality_reviews.py#L125) | 125 | `"    return problems"` | — |
+| [SRC-03FF422A16-L000126](../../scripts/score_answer_quality_reviews.py#L126) | 126 | `""` | — |
+| [SRC-03FF422A16-L000127](../../scripts/score_answer_quality_reviews.py#L127) | 127 | `""` | — |
+| [SRC-03FF422A16-L000128](../../scripts/score_answer_quality_reviews.py#L128) | 128 | `"def _ratio(numerator: int, denominator: int, case_count: int) -> dict[str, Any]:"` | — |
+| [SRC-03FF422A16-L000129](../../scripts/score_answer_quality_reviews.py#L129) | 129 | `"    return {"` | — |
+| [SRC-03FF422A16-L000130](../../scripts/score_answer_quality_reviews.py#L130) | 130 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
+| [SRC-03FF422A16-L000131](../../scripts/score_answer_quality_reviews.py#L131) | 131 | `"        \"numerator\": numerator,"` | — |
+| [SRC-03FF422A16-L000132](../../scripts/score_answer_quality_reviews.py#L132) | 132 | `"        \"denominator\": denominator,"` | — |
+| [SRC-03FF422A16-L000133](../../scripts/score_answer_quality_reviews.py#L133) | 133 | `"        \"reviewed_case_count\": case_count,"` | — |
+| [SRC-03FF422A16-L000134](../../scripts/score_answer_quality_reviews.py#L134) | 134 | `"        \"status\": \"SCORED_FROM_HUMAN_REVIEW\" if denominator else \"NOT_SCORABLE_NO_ANNOTATED_DENOMINATOR\","` | — |
+| [SRC-03FF422A16-L000135](../../scripts/score_answer_quality_reviews.py#L135) | 135 | `"    }"` | — |
+| [SRC-03FF422A16-L000136](../../scripts/score_answer_quality_reviews.py#L136) | 136 | `""` | — |
+| [SRC-03FF422A16-L000137](../../scripts/score_answer_quality_reviews.py#L137) | 137 | `""` | — |
+| [SRC-03FF422A16-L000138](../../scripts/score_answer_quality_reviews.py#L138) | 138 | `"def summarize_reviews("` | — |
+| [SRC-03FF422A16-L000139](../../scripts/score_answer_quality_reviews.py#L139) | 139 | `"    review_data: dict[str, Any], corpus_data: dict[str, Any]"` | — |
+| [SRC-03FF422A16-L000140](../../scripts/score_answer_quality_reviews.py#L140) | 140 | `") -> dict[str, Any]:"` | — |
+| [SRC-03FF422A16-L000141](../../scripts/score_answer_quality_reviews.py#L141) | 141 | `"    problems = validate_reviews(review_data, corpus_data)"` | — |
+| [SRC-03FF422A16-L000142](../../scripts/score_answer_quality_reviews.py#L142) | 142 | `"    if problems:"` | — |
+| [SRC-03FF422A16-L000143](../../scripts/score_answer_quality_reviews.py#L143) | 143 | `"        raise ValueError(\"; \".join(problems))"` | — |
+| [SRC-03FF422A16-L000144](../../scripts/score_answer_quality_reviews.py#L144) | 144 | `"    reviews = review_data[\"reviews\"]"` | — |
+| [SRC-03FF422A16-L000145](../../scripts/score_answer_quality_reviews.py#L145) | 145 | `"    reviewed = [item for item in reviews if item[\"status\"] == \"REVIEWED\"]"` | — |
+| [SRC-03FF422A16-L000146](../../scripts/score_answer_quality_reviews.py#L146) | 146 | `"    status_counts = Counter(item[\"status\"] for item in reviews)"` | — |
+| [SRC-03FF422A16-L000147](../../scripts/score_answer_quality_reviews.py#L147) | 147 | `"    corpus_count = len(corpus_data[\"cases\"])"` | — |
+| [SRC-03FF422A16-L000148](../../scripts/score_answer_quality_reviews.py#L148) | 148 | `"    reviewed_ids = {item[\"case_id\"] for item in reviewed}"` | — |
+| [SRC-03FF422A16-L000149](../../scripts/score_answer_quality_reviews.py#L149) | 149 | `""` | — |
+| [SRC-03FF422A16-L000150](../../scripts/score_answer_quality_reviews.py#L150) | 150 | `"    retrieval_rel = retrieval_total = retrieval_available = 0"` | — |
+| [SRC-03FF422A16-L000151](../../scripts/score_answer_quality_reviews.py#L151) | 151 | `"    retrieval_cases = set()"` | — |
+| [SRC-03FF422A16-L000152](../../scripts/score_answer_quality_reviews.py#L152) | 152 | `"    faithfulness_supported = faithfulness_total = 0"` | — |
+| [SRC-03FF422A16-L000153](../../scripts/score_answer_quality_reviews.py#L153) | 153 | `"    faithfulness_cases = set()"` | — |
+| [SRC-03FF422A16-L000154](../../scripts/score_answer_quality_reviews.py#L154) | 154 | `"    correctness_correct = correctness_total = 0"` | — |
+| [SRC-03FF422A16-L000155](../../scripts/score_answer_quality_reviews.py#L155) | 155 | `"    correctness_cases = set()"` | — |
+| [SRC-03FF422A16-L000156](../../scripts/score_answer_quality_reviews.py#L156) | 156 | `"    citation_supported = citation_total = 0"` | — |
+| [SRC-03FF422A16-L000157](../../scripts/score_answer_quality_reviews.py#L157) | 157 | `"    citation_cases = set()"` | — |
+| [SRC-03FF422A16-L000158](../../scripts/score_answer_quality_reviews.py#L158) | 158 | `"    writing_scores: list[float] = []"` | — |
+| [SRC-03FF422A16-L000159](../../scripts/score_answer_quality_reviews.py#L159) | 159 | `""` | — |
+| [SRC-03FF422A16-L000160](../../scripts/score_answer_quality_reviews.py#L160) | 160 | `"    for item in reviewed:"` | — |
+| [SRC-03FF422A16-L000161](../../scripts/score_answer_quality_reviews.py#L161) | 161 | `"        case_id = item[\"case_id\"]"` | — |
+| [SRC-03FF422A16-L000162](../../scripts/score_answer_quality_reviews.py#L162) | 162 | `"        retrieval = item.get(\"retrieval\")"` | — |
+| [SRC-03FF422A16-L000163](../../scripts/score_answer_quality_reviews.py#L163) | 163 | `"        if isinstance(retrieval, dict):"` | — |
+| [SRC-03FF422A16-L000164](../../scripts/score_answer_quality_reviews.py#L164) | 164 | `"            retrieval_rel += retrieval[\"relevant_retrieved\"]"` | — |
+| [SRC-03FF422A16-L000165](../../scripts/score_answer_quality_reviews.py#L165) | 165 | `"            retrieval_total += retrieval[\"retrieved_count\"]"` | — |
+| [SRC-03FF422A16-L000166](../../scripts/score_answer_quality_reviews.py#L166) | 166 | `"            retrieval_available += retrieval[\"relevant_available\"]"` | — |
+| [SRC-03FF422A16-L000167](../../scripts/score_answer_quality_reviews.py#L167) | 167 | `"            retrieval_cases.add(case_id)"` | — |
+| [SRC-03FF422A16-L000168](../../scripts/score_answer_quality_reviews.py#L168) | 168 | `"        faithfulness = item.get(\"faithfulness\")"` | — |
+| [SRC-03FF422A16-L000169](../../scripts/score_answer_quality_reviews.py#L169) | 169 | `"        if isinstance(faithfulness, dict):"` | — |
+| [SRC-03FF422A16-L000170](../../scripts/score_answer_quality_reviews.py#L170) | 170 | `"            faithfulness_supported += faithfulness[\"supported_claims\"]"` | — |
+| [SRC-03FF422A16-L000171](../../scripts/score_answer_quality_reviews.py#L171) | 171 | `"            faithfulness_total += faithfulness[\"reviewed_claims\"]"` | — |
+| [SRC-03FF422A16-L000172](../../scripts/score_answer_quality_reviews.py#L172) | 172 | `"            faithfulness_cases.add(case_id)"` | — |
+| [SRC-03FF422A16-L000173](../../scripts/score_answer_quality_reviews.py#L173) | 173 | `"        correctness = item.get(\"correctness\")"` | — |
+| [SRC-03FF422A16-L000174](../../scripts/score_answer_quality_reviews.py#L174) | 174 | `"        if isinstance(correctness, dict):"` | — |
+| [SRC-03FF422A16-L000175](../../scripts/score_answer_quality_reviews.py#L175) | 175 | `"            correctness_correct += correctness[\"correct_facts\"]"` | — |
+| [SRC-03FF422A16-L000176](../../scripts/score_answer_quality_reviews.py#L176) | 176 | `"            correctness_total += correctness[\"reviewed_facts\"]"` | — |
 | [SRC-03FF422A16-L000177](../../scripts/score_answer_quality_reviews.py#L177) | 177 | `"            correctness_cases.add(case_id)"` | — |
 | [SRC-03FF422A16-L000178](../../scripts/score_answer_quality_reviews.py#L178) | 178 | `"        citations = item.get(\"citations\")"` | — |
 | [SRC-03FF422A16-L000179](../../scripts/score_answer_quality_reviews.py#L179) | 179 | `"        if isinstance(citations, dict):"` | — |
@@ -780,57 +834,3 @@
 | [SRC-90FAA34ADE-L000523](../../tests/fixtures/answer_quality_cases.json#L523) | 523 | `"          },"` | — |
 | [SRC-90FAA34ADE-L000524](../../tests/fixtures/answer_quality_cases.json#L524) | 524 | `"          {"` | — |
 | [SRC-90FAA34ADE-L000525](../../tests/fixtures/answer_quality_cases.json#L525) | 525 | `"            \"title\": \"Regional office notice\","` | — |
-| [SRC-90FAA34ADE-L000526](../../tests/fixtures/answer_quality_cases.json#L526) | 526 | `"            \"url\": \"https://region.example.test/notice\","` | — |
-| [SRC-90FAA34ADE-L000527](../../tests/fixtures/answer_quality_cases.json#L527) | 527 | `"            \"snippet\": \"Applications close on 5 November 2026.\","` | — |
-| [SRC-90FAA34ADE-L000528](../../tests/fixtures/answer_quality_cases.json#L528) | 528 | `"            \"published_at\": \"2026-10-02\","` | — |
-| [SRC-90FAA34ADE-L000529](../../tests/fixtures/answer_quality_cases.json#L529) | 529 | `"            \"domain\": \"region.example.test\","` | — |
-| [SRC-90FAA34ADE-L000530](../../tests/fixtures/answer_quality_cases.json#L530) | 530 | `"            \"provider\": \"fixture_b\""` | — |
-| [SRC-90FAA34ADE-L000531](../../tests/fixtures/answer_quality_cases.json#L531) | 531 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000532](../../tests/fixtures/answer_quality_cases.json#L532) | 532 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000533](../../tests/fixtures/answer_quality_cases.json#L533) | 533 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000534](../../tests/fixtures/answer_quality_cases.json#L534) | 534 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000535](../../tests/fixtures/answer_quality_cases.json#L535) | 535 | `"        \"Omits one deadline\","` | — |
-| [SRC-90FAA34ADE-L000536](../../tests/fixtures/answer_quality_cases.json#L536) | 536 | `"        \"Presents a definitive deadline without describing the unresolved discrepancy\""` | — |
-| [SRC-90FAA34ADE-L000537](../../tests/fixtures/answer_quality_cases.json#L537) | 537 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000538](../../tests/fixtures/answer_quality_cases.json#L538) | 538 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000539](../../tests/fixtures/answer_quality_cases.json#L539) | 539 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000540](../../tests/fixtures/answer_quality_cases.json#L540) | 540 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000541](../../tests/fixtures/answer_quality_cases.json#L541) | 541 | `"      \"case_id\": \"AQ-020\","` | — |
-| [SRC-90FAA34ADE-L000542](../../tests/fixtures/answer_quality_cases.json#L542) | 542 | `"      \"category\": \"stale_sources_for_current\","` | — |
-| [SRC-90FAA34ADE-L000543](../../tests/fixtures/answer_quality_cases.json#L543) | 543 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000544](../../tests/fixtures/answer_quality_cases.json#L544) | 544 | `"      \"question\": \"إيه شروط التقديم الحالية لمنحة 2026؟ عندك نتيجة من صفحة منشورة سنة 2022 بس.\","` | — |
-| [SRC-90FAA34ADE-L000545](../../tests/fixtures/answer_quality_cases.json#L545) | 545 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000546](../../tests/fixtures/answer_quality_cases.json#L546) | 546 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000547](../../tests/fixtures/answer_quality_cases.json#L547) | 547 | `"        \"ينبّه أن المصدر قديم ولا يكفي لإثبات شروط 2026\","` | — |
-| [SRC-90FAA34ADE-L000548](../../tests/fixtures/answer_quality_cases.json#L548) | 548 | `"        \"يبحث عن إعلان حديث أو يصرح بأن الشروط الحالية غير مؤكدة\","` | — |
-| [SRC-90FAA34ADE-L000549](../../tests/fixtures/answer_quality_cases.json#L549) | 549 | `"        \"يفصل بين معلومات المصدر القديم وأي استنتاج\""` | — |
-| [SRC-90FAA34ADE-L000550](../../tests/fixtures/answer_quality_cases.json#L550) | 550 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000551](../../tests/fixtures/answer_quality_cases.json#L551) | 551 | `"      \"forbidden_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000552](../../tests/fixtures/answer_quality_cases.json#L552) | 552 | `"        \"يعيد نشر شروط 2022 باعتبارها شروط 2026\","` | — |
-| [SRC-90FAA34ADE-L000553](../../tests/fixtures/answer_quality_cases.json#L553) | 553 | `"        \"يخفي تاريخ المصدر\""` | — |
-| [SRC-90FAA34ADE-L000554](../../tests/fixtures/answer_quality_cases.json#L554) | 554 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000555](../../tests/fixtures/answer_quality_cases.json#L555) | 555 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000556](../../tests/fixtures/answer_quality_cases.json#L556) | 556 | `"        \"type\": \"controlled_search\","` | — |
-| [SRC-90FAA34ADE-L000557](../../tests/fixtures/answer_quality_cases.json#L557) | 557 | `"        \"sources\": ["` | — |
-| [SRC-90FAA34ADE-L000558](../../tests/fixtures/answer_quality_cases.json#L558) | 558 | `"          {"` | — |
-| [SRC-90FAA34ADE-L000559](../../tests/fixtures/answer_quality_cases.json#L559) | 559 | `"            \"title\": \"Scholarship rules 2022\","` | — |
-| [SRC-90FAA34ADE-L000560](../../tests/fixtures/answer_quality_cases.json#L560) | 560 | `"            \"url\": \"https://scholarship.example.test/rules-2022\","` | — |
-| [SRC-90FAA34ADE-L000561](../../tests/fixtures/answer_quality_cases.json#L561) | 561 | `"            \"snippet\": \"Eligibility rules for the 2022 cycle.\","` | — |
-| [SRC-90FAA34ADE-L000562](../../tests/fixtures/answer_quality_cases.json#L562) | 562 | `"            \"published_at\": \"2022-03-01\","` | — |
-| [SRC-90FAA34ADE-L000563](../../tests/fixtures/answer_quality_cases.json#L563) | 563 | `"            \"domain\": \"scholarship.example.test\","` | — |
-| [SRC-90FAA34ADE-L000564](../../tests/fixtures/answer_quality_cases.json#L564) | 564 | `"            \"provider\": \"fixture_search\""` | — |
-| [SRC-90FAA34ADE-L000565](../../tests/fixtures/answer_quality_cases.json#L565) | 565 | `"          }"` | — |
-| [SRC-90FAA34ADE-L000566](../../tests/fixtures/answer_quality_cases.json#L566) | 566 | `"        ]"` | — |
-| [SRC-90FAA34ADE-L000567](../../tests/fixtures/answer_quality_cases.json#L567) | 567 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000568](../../tests/fixtures/answer_quality_cases.json#L568) | 568 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000569](../../tests/fixtures/answer_quality_cases.json#L569) | 569 | `"        \"يدّعي أن شروط 2022 سارية في 2026 دون مصدر حديث\","` | — |
-| [SRC-90FAA34ADE-L000570](../../tests/fixtures/answer_quality_cases.json#L570) | 570 | `"        \"لا يذكر عمر المصدر\""` | — |
-| [SRC-90FAA34ADE-L000571](../../tests/fixtures/answer_quality_cases.json#L571) | 571 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000572](../../tests/fixtures/answer_quality_cases.json#L572) | 572 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000573](../../tests/fixtures/answer_quality_cases.json#L573) | 573 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000574](../../tests/fixtures/answer_quality_cases.json#L574) | 574 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000575](../../tests/fixtures/answer_quality_cases.json#L575) | 575 | `"      \"case_id\": \"AQ-021\","` | — |
-| [SRC-90FAA34ADE-L000576](../../tests/fixtures/answer_quality_cases.json#L576) | 576 | `"      \"category\": \"false_corroboration\","` | — |
-| [SRC-90FAA34ADE-L000577](../../tests/fixtures/answer_quality_cases.json#L577) | 577 | `"      \"language\": \"mixed\","` | — |
-| [SRC-90FAA34ADE-L000578](../../tests/fixtures/answer_quality_cases.json#L578) | 578 | `"      \"question\": \"The same press release appears on three websites. هل دول 3 مصادر مستقلة تؤكد الخبر؟\","` | — |
-| [SRC-90FAA34ADE-L000579](../../tests/fixtures/answer_quality_cases.json#L579) | 579 | `"      \"expected_strategy\": \"web_search\","` | — |

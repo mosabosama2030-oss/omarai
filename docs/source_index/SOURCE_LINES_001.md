@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000320
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000311
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -163,7 +163,16 @@
 | [SRC-9F6E30987B-L000044](../../.github/workflows/hosted-smoke.yml#L44) | 44 | `"          python-version: \"3.12\""` | — |
 | [SRC-9F6E30987B-L000045](../../.github/workflows/hosted-smoke.yml#L45) | 45 | `""` | — |
 | [SRC-9F6E30987B-L000046](../../.github/workflows/hosted-smoke.yml#L46) | 46 | `"      - name: Run live hosted acceptance test"` | — |
-| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        run: python scripts/hosted_smoke_test.py --base-url \"$OMARAI_BASE_URL\" --expected-sha \"$(git rev-parse HEAD)\" --timeout 180"` | — |
+| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        run: python scripts/hosted_smoke_test.py --base-url \"$OMARAI_BASE_URL\" --expected-sha \"$(git rev-parse HEAD)\" --timeout 180 --output artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000048](../../.github/workflows/hosted-smoke.yml#L48) | 48 | `""` | — |
+| [SRC-9F6E30987B-L000049](../../.github/workflows/hosted-smoke.yml#L49) | 49 | `"      - name: Upload hosted question-and-answer transcript"` | — |
+| [SRC-9F6E30987B-L000050](../../.github/workflows/hosted-smoke.yml#L50) | 50 | `"        if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''"` | — |
+| [SRC-9F6E30987B-L000051](../../.github/workflows/hosted-smoke.yml#L51) | 51 | `"        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2"` | — |
+| [SRC-9F6E30987B-L000052](../../.github/workflows/hosted-smoke.yml#L52) | 52 | `"        with:"` | — |
+| [SRC-9F6E30987B-L000053](../../.github/workflows/hosted-smoke.yml#L53) | 53 | `"          name: omarai-hosted-acceptance-transcript"` | — |
+| [SRC-9F6E30987B-L000054](../../.github/workflows/hosted-smoke.yml#L54) | 54 | `"          path: artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000055](../../.github/workflows/hosted-smoke.yml#L55) | 55 | `"          if-no-files-found: ignore"` | — |
+| [SRC-9F6E30987B-L000056](../../.github/workflows/hosted-smoke.yml#L56) | 56 | `"          retention-days: 14"` | — |
 ## CI وأتمتة
 
 ### FILE-1DB27D9318 — [.github/workflows/tests.yml](../../.github/workflows/tests.yml#L1)
@@ -888,12 +897,3 @@
 | [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `"        )"` | — |
 | [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"        citation_alignment.append({"` | — |
 | [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"            \"sentence_number\": sentence_number,"` | — |
-| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"            \"status\": sentence_status,"` | — |
-| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"            \"claim_terms_checked\": claim_tokens[:16],"` | — |
-| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"            \"citations\": cited_checks,"` | — |
-| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"        })"` | — |
-| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `""` | — |
-| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `""` | — |
-| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"    # Check numeric literals against the exact source indices cited in each sentence."` | — |
-| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"    # Values found in some unrelated source do not count as support for this citation."` | — |
-| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"    source_numbers_by_index = {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000083 إلى SRC-65551FB29F-L000206
+- النطاق: SRC-62CE5126F9-L000074 إلى SRC-65551FB29F-L000197
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000074](../OMARAI_REMEDIATION_REGISTER_AR.md#L74) | 74 | `"## تحديث تنفيذي — 27 أكتوبر 2026، بعد دمج PR #95 وإعادة فحص الاستضافة"` | — |
+| [SRC-62CE5126F9-L000075](../OMARAI_REMEDIATION_REGISTER_AR.md#L75) | 75 | `""` | — |
+| [SRC-62CE5126F9-L000076](../OMARAI_REMEDIATION_REGISTER_AR.md#L76) | 76 | `"### الحالة المثبتة بعد الإغلاق"` | — |
+| [SRC-62CE5126F9-L000077](../OMARAI_REMEDIATION_REGISTER_AR.md#L77) | 77 | ``"- **PR #95 — MERGED:** التزام الدمج `3760418b5f32294faec7e49ef2cccb006419ee27`. نجح CI على رأس PR في [#40467019476](https://github.com/mosabosama2030-oss/omarai/actions/runs/40467019476)، وعلى SHA الدمج نفسه في [#40469019954](https://github.com/mosabosama2030-oss/omarai/actions/runs/40469019954). اكتملت اختبارات Python 3.11/3.12 وبناء الحاوية وAPI smoke بنجاح."`` | — |
+| [SRC-62CE5126F9-L000078](../OMARAI_REMEDIATION_REGISTER_AR.md#L78) | 78 | `"- **توليد الفهرس:** نجح [#40469019921](https://github.com/mosabosama2030-oss/omarai/actions/runs/40469019921)."` | — |
+| [SRC-62CE5126F9-L000079](../OMARAI_REMEDIATION_REGISTER_AR.md#L79) | 79 | ``"- **PR #93 — CLOSED WITHOUT MERGE:** تم التحقق من أن التصحيح التوثيقي موجود في سجل المعالجة على `main` بعد دمج #95؛ لم يُدمج الفرع القديم لتجنب تكرار التغيير."`` | — |
+| [SRC-62CE5126F9-L000080](../OMARAI_REMEDIATION_REGISTER_AR.md#L80) | 80 | `"- نتائج CI لا تثبت صحة التشغيل المستضاف أو نجاح مزودي البحث الحقيقيين."` | — |
+| [SRC-62CE5126F9-L000081](../OMARAI_REMEDIATION_REGISTER_AR.md#L81) | 81 | `""` | — |
+| [SRC-62CE5126F9-L000082](../OMARAI_REMEDIATION_REGISTER_AR.md#L82) | 82 | `"### نتيجة القبول الحي المحدود"` | — |
 | [SRC-62CE5126F9-L000083](../OMARAI_REMEDIATION_REGISTER_AR.md#L83) | 83 | `"- **VERIFIED:** بعد إخراج الخدمة من الخمول، حمّلت الصفحة الرئيسية واجهة Omarai وحقل السؤال."` | — |
 | [SRC-62CE5126F9-L000084](../OMARAI_REMEDIATION_REGISTER_AR.md#L84) | 84 | ``"- **FAILED — hosted query:** كان الوضع المختار `deep`; السؤال `ما عاصمة مصر؟` انتهى برسالة التطبيق: «رمز الوصول غير صحيح أو غير محفوظ. راجع رمز التطبيق المستضاف»."`` | — |
 | [SRC-62CE5126F9-L000085](../OMARAI_REMEDIATION_REGISTER_AR.md#L85) | 85 | ``"- **UNKNOWN:** هل رمز الوصول مفقود أم غير مطابق، وما السبب الجذري الدقيق؛ الرسالة المرئية وحدها لا تكفي. أُجري `GET /api/health` للقراءة فقط وأعاد `ok=true`، لكن `build.sha=unknown` و`sha_status=unknown`، و`live_network_checks_performed=false`. يوضح الرد أن `web_search_ready` يعني أن الاعتماديات قابلة للاستيراد لا أن موفّر البحث متصل، وأن `language_model_configured` يعني وجود بيانات اعتماد لا أن الطلب اكتمل بنجاح. لم يُثبت تطابق البناء المستضاف مع SHA الدمج."`` | — |
@@ -825,12 +834,3 @@
 | [SRC-65551FB29F-L000195](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L195) | 195 | `"\| PER \| الأداء والسعة \|"` | — |
 | [SRC-65551FB29F-L000196](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L196) | 196 | `"\| OBS \| المراقبة والتدقيق \|"` | — |
 | [SRC-65551FB29F-L000197](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L197) | 197 | `"\| SRH \| البحث والاسترجاع ومصادر المعرفة \|"` | — |
-| [SRC-65551FB29F-L000198](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L198) | 198 | `"\| EVD \| الأدلة والإسناد والصدق \|"` | — |
-| [SRC-65551FB29F-L000199](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L199) | 199 | `"\| AIG \| حوكمة الذكاء الاصطناعي والوكلاء \|"` | — |
-| [SRC-65551FB29F-L000200](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L200) | 200 | `"\| AIE \| تقييم النماذج والجودة \|"` | — |
-| [SRC-65551FB29F-L000201](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L201) | 201 | `"\| TST \| الاختبارات \|"` | — |
-| [SRC-65551FB29F-L000202](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L202) | 202 | `"\| DEV \| تجربة المطور والتطوير الآمن \|"` | — |
-| [SRC-65551FB29F-L000203](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L203) | 203 | `"\| SCM \| سلسلة توريد البرمجيات \|"` | — |
-| [SRC-65551FB29F-L000204](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L204) | 204 | `"\| DPL \| النشر والإصدارات \|"` | — |
-| [SRC-65551FB29F-L000205](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L205) | 205 | `"\| UX \| واجهة المستخدم والوصولية والتدويل \|"` | — |
-| [SRC-65551FB29F-L000206](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L206) | 206 | `"\| FIN \| التكلفة والحصص والاستدامة \|"` | — |

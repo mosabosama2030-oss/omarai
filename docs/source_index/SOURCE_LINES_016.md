@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005161 إلى SRC-1AE03B9EC3-L005960
+- النطاق: SRC-1AE03B9EC3-L005152 إلى SRC-1AE03B9EC3-L005951
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005152](../../agents/web_agent.py#L5152) | 5152 | `"                \"query_strategy_matrix\": plan.get(\"query_strategy_matrix\", []),"` | — |
+| [SRC-1AE03B9EC3-L005153](../../agents/web_agent.py#L5153) | 5153 | `"                \"actual_queries\": list(plan.get(\"queries\") or []),"` | — |
+| [SRC-1AE03B9EC3-L005154](../../agents/web_agent.py#L5154) | 5154 | `"                \"actual_query_count\": len(plan.get(\"queries\") or []),"` | — |
+| [SRC-1AE03B9EC3-L005155](../../agents/web_agent.py#L5155) | 5155 | `"                \"max_query_count\": MAX_PLAN_QUERIES,"` | — |
+| [SRC-1AE03B9EC3-L005156](../../agents/web_agent.py#L5156) | 5156 | `"                \"status\": \"deterministic_interpretation_attached\","` | — |
+| [SRC-1AE03B9EC3-L005157](../../agents/web_agent.py#L5157) | 5157 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L005158](../../agents/web_agent.py#L5158) | 5158 | `"        # Final relevance check is intentionally repeated after fusion, before any answer LLM call."` | — |
+| [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"        filtered_sources: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        for source in sources:"` | — |
 | [SRC-1AE03B9EC3-L005161](../../agents/web_agent.py#L5161) | 5161 | `"            if \"user_supplied_url\" in source.get(\"providers\", []):"` | — |
 | [SRC-1AE03B9EC3-L005162](../../agents/web_agent.py#L5162) | 5162 | `"                filtered_sources.append(source)"` | — |
 | [SRC-1AE03B9EC3-L005163](../../agents/web_agent.py#L5163) | 5163 | `"                continue"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L005949](../../agents/web_agent.py#L5949) | 5949 | `"                    \"في Termux لتفعيل تخطيط البحث والإجابة باللغة الطبيعية.\""` | — |
 | [SRC-1AE03B9EC3-L005950](../../agents/web_agent.py#L5950) | 5950 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L005951](../../agents/web_agent.py#L5951) | 5951 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L005952](../../agents/web_agent.py#L5952) | 5952 | `"                reason = ("` | — |
-| [SRC-1AE03B9EC3-L005953](../../agents/web_agent.py#L5953) | 5953 | `"                    \"اكتمل البحث، لكن تعذر توليد إجابة تحليلية. أعرض لك مقتطفات المصادر \""` | — |
-| [SRC-1AE03B9EC3-L005954](../../agents/web_agent.py#L5954) | 5954 | `"                    \"المتاحة بدلًا من اختلاق إجابة.\""` | — |
-| [SRC-1AE03B9EC3-L005955](../../agents/web_agent.py#L5955) | 5955 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L005956](../../agents/web_agent.py#L5956) | 5956 | `"            answer = _fallback_answer(sources, reason)"` | — |
-| [SRC-1AE03B9EC3-L005957](../../agents/web_agent.py#L5957) | 5957 | `""` | — |
-| [SRC-1AE03B9EC3-L005958](../../agents/web_agent.py#L5958) | 5958 | `"        coverage_targets = self._question_coverage_targets(question)"` | — |
-| [SRC-1AE03B9EC3-L005959](../../agents/web_agent.py#L5959) | 5959 | `"        coverage_repair_status = \"not_attempted\""` | — |
-| [SRC-1AE03B9EC3-L005960](../../agents/web_agent.py#L5960) | 5960 | `"        coverage_repair_warning: str \| None = None"` | — |

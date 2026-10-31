@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000432 إلى SRC-69F3587825-L000034
+- النطاق: SRC-0F910493E8-L000423 إلى SRC-69F3587825-L000025
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000423](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L423) | 423 | `"**بوابة القبول:** نتائج فعلية تثبت السلوك في نطاق الاختبارات؛ وتبقى الحدود غير المختبرة UNKNOWN."` | — |
+| [SRC-0F910493E8-L000424](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L424) | 424 | `""` | — |
+| [SRC-0F910493E8-L000425](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L425) | 425 | `"## P2 — المهارات وسير العمل"` | — |
+| [SRC-0F910493E8-L000426](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L426) | 426 | `""` | — |
+| [SRC-0F910493E8-L000427](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L427) | 427 | `"- استخراج مهارات من وظائف موجودة عند وجود تكرار أو حاجة واضحة."` | — |
+| [SRC-0F910493E8-L000428](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L428) | 428 | `"- تحديد سير العمل للمسارات متعددة الخطوات."` | — |
+| [SRC-0F910493E8-L000429](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L429) | 429 | `"- الحفاظ على المسار المباشر للأسئلة البسيطة."` | — |
+| [SRC-0F910493E8-L000430](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L430) | 430 | `"- إضافة اختبارات لكل مهارة ومسار حرج."` | — |
+| [SRC-0F910493E8-L000431](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L431) | 431 | `"- إعادة تشغيل اختبارات الانحدار."` | — |
 | [SRC-0F910493E8-L000432](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L432) | 432 | `""` | — |
 | [SRC-0F910493E8-L000433](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L433) | 433 | `"**بوابة القبول:** تحسن قابل للقياس أو تنظيم يقلل التكرار دون تراجع في السلوك الحالي."` | — |
 | [SRC-0F910493E8-L000434](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L434) | 434 | `""` | — |
@@ -852,12 +861,3 @@
 | [SRC-69F3587825-L000023](../search_code.py#L23) | 23 | `"EXCLUDED_DIRECTORIES = frozenset("` | — |
 | [SRC-69F3587825-L000024](../search_code.py#L24) | 24 | `"    {"` | — |
 | [SRC-69F3587825-L000025](../search_code.py#L25) | 25 | `"        \".git\","` | — |
-| [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".hg\","` | — |
-| [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \".svn\","` | — |
-| [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \".venv\","` | — |
-| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |
-| [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"env\","` | — |
-| [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \"virtualenv\","` | — |
-| [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \"__pycache__\","` | — |
-| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".pytest_cache\","` | — |
-| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".ruff_cache\","` | — |

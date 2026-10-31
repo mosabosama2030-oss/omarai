@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000530 إلى SRC-686F71AA50-L001329
+- النطاق: SRC-686F71AA50-L000521 إلى SRC-686F71AA50-L001320
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000521](../../agents/task_understanding.py#L521) | 521 | `"    government_official_site = bool("` | — |
+| [SRC-686F71AA50-L000522](../../agents/task_understanding.py#L522) | 522 | `"        official_destination"` | — |
+| [SRC-686F71AA50-L000523](../../agents/task_understanding.py#L523) | 523 | `"        and bool(_contains(normalized, _OFFICIAL_WORDS))"` | — |
+| [SRC-686F71AA50-L000524](../../agents/task_understanding.py#L524) | 524 | `"    )"` | — |
+| [SRC-686F71AA50-L000525](../../agents/task_understanding.py#L525) | 525 | `"    navigation = official_destination or bool("` | — |
+| [SRC-686F71AA50-L000526](../../agents/task_understanding.py#L526) | 526 | `"        _URL_RE.search(raw)"` | — |
+| [SRC-686F71AA50-L000527](../../agents/task_understanding.py#L527) | 527 | `"        or any(normalize_text(term) in normalized for term in (\"هات رابط\", \"website\", \"homepage\"))"` | — |
+| [SRC-686F71AA50-L000528](../../agents/task_understanding.py#L528) | 528 | `"    )"` | — |
+| [SRC-686F71AA50-L000529](../../agents/task_understanding.py#L529) | 529 | `"    explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))"` | — |
 | [SRC-686F71AA50-L000530](../../agents/task_understanding.py#L530) | 530 | `"    current_required = (clean_mode == \"latest\" or explicit_freshness) and not navigation"` | — |
 | [SRC-686F71AA50-L000531](../../agents/task_understanding.py#L531) | 531 | `"    social_required = clean_mode == \"social\" or bool(matches[\"social_opinions\"])"` | — |
 | [SRC-686F71AA50-L000532](../../agents/task_understanding.py#L532) | 532 | `"    family = _primary_family(matches, clean_mode, intent_route, normalized)"` | — |
@@ -807,12 +816,3 @@
 | [SRC-686F71AA50-L001318](../../agents/task_understanding.py#L1318) | 1318 | `"            else \"unassessed\""` | — |
 | [SRC-686F71AA50-L001319](../../agents/task_understanding.py#L1319) | 1319 | `"        ),"` | — |
 | [SRC-686F71AA50-L001320](../../agents/task_understanding.py#L1320) | 1320 | `"        \"needs_clarification\": raw_context.get(\"needs_clarification\") is True,"` | — |
-| [SRC-686F71AA50-L001321](../../agents/task_understanding.py#L1321) | 1321 | `"        \"unresolved_references\": clean_list(raw_context.get(\"unresolved_references\"), items=8, chars=100),"` | — |
-| [SRC-686F71AA50-L001322](../../agents/task_understanding.py#L1322) | 1322 | `"    }"` | — |
-| [SRC-686F71AA50-L001323](../../agents/task_understanding.py#L1323) | 1323 | `""` | — |
-| [SRC-686F71AA50-L001324](../../agents/task_understanding.py#L1324) | 1324 | `"    raw_hypotheses = value.get(\"hypothesis_interpretations\")"` | — |
-| [SRC-686F71AA50-L001325](../../agents/task_understanding.py#L1325) | 1325 | `"    hypotheses: list[dict[str, Any]] = []"` | — |
-| [SRC-686F71AA50-L001326](../../agents/task_understanding.py#L1326) | 1326 | `"    if isinstance(raw_hypotheses, list):"` | — |
-| [SRC-686F71AA50-L001327](../../agents/task_understanding.py#L1327) | 1327 | `"        for item in raw_hypotheses[:8]:"` | — |
-| [SRC-686F71AA50-L001328](../../agents/task_understanding.py#L1328) | 1328 | `"            if not isinstance(item, dict):"` | — |
-| [SRC-686F71AA50-L001329](../../agents/task_understanding.py#L1329) | 1329 | `"                continue"` | — |

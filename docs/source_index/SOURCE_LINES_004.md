@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000057 إلى SRC-59CF4B7DE8-L000056
+- النطاق: SRC-C9CF9B54F8-L000048 إلى SRC-59CF4B7DE8-L000047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000048](../../agents/omarai.py#L48) | 48 | `"    if text[0] in \"\\t\\r\\n\" or first_non_format in formula_prefixes:"` | — |
+| [SRC-C9CF9B54F8-L000049](../../agents/omarai.py#L49) | 49 | `"        # OWASP notes that a tab inside the quoted CSV field is more resilient"` | — |
+| [SRC-C9CF9B54F8-L000050](../../agents/omarai.py#L50) | 50 | `"        # in Excel than an apostrophe, although no CSV mitigation is universal."` | — |
+| [SRC-C9CF9B54F8-L000051](../../agents/omarai.py#L51) | 51 | `"        return \"\\t\" + text"` | — |
+| [SRC-C9CF9B54F8-L000052](../../agents/omarai.py#L52) | 52 | `"    return text"` | — |
+| [SRC-C9CF9B54F8-L000053](../../agents/omarai.py#L53) | 53 | `""` | — |
+| [SRC-C9CF9B54F8-L000054](../../agents/omarai.py#L54) | 54 | `"def analyze(text: str, product_terms=(), location_terms=()) -> dict:"` | — |
+| [SRC-C9CF9B54F8-L000055](../../agents/omarai.py#L55) | 55 | `"    if not isinstance(text, str) or not text.strip():"` | — |
+| [SRC-C9CF9B54F8-L000056](../../agents/omarai.py#L56) | 56 | `"        raise ValueError(\"text must not be empty\")"` | — |
 | [SRC-C9CF9B54F8-L000057](../../agents/omarai.py#L57) | 57 | `"    if len(text) > MAX_TEXT:"` | — |
 | [SRC-C9CF9B54F8-L000058](../../agents/omarai.py#L58) | 58 | `"        raise ValueError(f\"text must be at most {MAX_TEXT} characters\")"` | — |
 | [SRC-C9CF9B54F8-L000059](../../agents/omarai.py#L59) | 59 | `"    body = normalize(text)"` | — |
@@ -834,12 +843,3 @@
 | [SRC-59CF4B7DE8-L000045](../../agents/research.py#L45) | 45 | `"    host = (parsed.hostname or \"\").rstrip(\".\").lower()"` | — |
 | [SRC-59CF4B7DE8-L000046](../../agents/research.py#L46) | 46 | `"    if not host:"` | — |
 | [SRC-59CF4B7DE8-L000047](../../agents/research.py#L47) | 47 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000048](../../agents/research.py#L48) | 48 | `"    try:"` | — |
-| [SRC-59CF4B7DE8-L000049](../../agents/research.py#L49) | 49 | `"        return str(ipaddress.ip_address(host))"` | — |
-| [SRC-59CF4B7DE8-L000050](../../agents/research.py#L50) | 50 | `"    except ValueError:"` | — |
-| [SRC-59CF4B7DE8-L000051](../../agents/research.py#L51) | 51 | `"        pass"` | — |
-| [SRC-59CF4B7DE8-L000052](../../agents/research.py#L52) | 52 | `"    try:"` | — |
-| [SRC-59CF4B7DE8-L000053](../../agents/research.py#L53) | 53 | `"        host = host.encode(\"idna\").decode(\"ascii\").lower()"` | — |
-| [SRC-59CF4B7DE8-L000054](../../agents/research.py#L54) | 54 | `"    except UnicodeError:"` | — |
-| [SRC-59CF4B7DE8-L000055](../../agents/research.py#L55) | 55 | `"        return host"` | — |
-| [SRC-59CF4B7DE8-L000056](../../agents/research.py#L56) | 56 | `"    extracted = _DOMAIN_EXTRACTOR(host)"` | — |

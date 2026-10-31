@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000125 إلى SRC-792A9A235D-L000043
+- النطاق: SRC-EEF2E6447C-L000116 إلى SRC-792A9A235D-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000116](../../api/omarai.py#L116) | 116 | `"class _DeadlineRequestReader:"` | — |
+| [SRC-EEF2E6447C-L000117](../../api/omarai.py#L117) | 117 | `"    \"\"\"Read HTTP header lines with one absolute deadline across all fragments."` | — |
+| [SRC-EEF2E6447C-L000118](../../api/omarai.py#L118) | 118 | `""` | — |
+| [SRC-EEF2E6447C-L000119](../../api/omarai.py#L119) | 119 | `"    The standard buffered readline can wait indefinitely for a newline if a"` | — |
+| [SRC-EEF2E6447C-L000120](../../api/omarai.py#L120) | 120 | `"    client keeps trickling bytes. This reader checks the same deadline before"` | — |
+| [SRC-EEF2E6447C-L000121](../../api/omarai.py#L121) | 121 | `"    every socket read and buffers only bounded look-ahead so request body bytes"` | — |
+| [SRC-EEF2E6447C-L000122](../../api/omarai.py#L122) | 122 | `"    received with the headers are preserved for read1()."` | — |
+| [SRC-EEF2E6447C-L000123](../../api/omarai.py#L123) | 123 | `"    \"\"\""` | — |
+| [SRC-EEF2E6447C-L000124](../../api/omarai.py#L124) | 124 | `""` | — |
 | [SRC-EEF2E6447C-L000125](../../api/omarai.py#L125) | 125 | `"    def __init__(self, connection, handler):"` | — |
 | [SRC-EEF2E6447C-L000126](../../api/omarai.py#L126) | 126 | `"        self.connection = connection"` | — |
 | [SRC-EEF2E6447C-L000127](../../api/omarai.py#L127) | 127 | `"        self.handler = handler"` | — |
@@ -852,12 +861,3 @@
 | [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
 | [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
 | [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
-| [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
-| [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `""` | — |
-| [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
-| [SRC-792A9A235D-L000038](../ANSWER_QUALITY_BENCHMARK_AR.md#L38) | 38 | `""` | — |
-| [SRC-792A9A235D-L000039](../ANSWER_QUALITY_BENCHMARK_AR.md#L39) | 39 | `"\| الوضع \| متى يُستخدم \|"` | — |
-| [SRC-792A9A235D-L000040](../ANSWER_QUALITY_BENCHMARK_AR.md#L40) | 40 | `"\|--------\|-------------\|"` | — |
-| [SRC-792A9A235D-L000041](../ANSWER_QUALITY_BENCHMARK_AR.md#L41) | 41 | ``"\| `deterministic_structure` \| إشارات هيكلية (مثل عدم استدعاء البحث، رفض localhost، عدم تسريب أسرار) \|"`` | — |
-| [SRC-792A9A235D-L000042](../ANSWER_QUALITY_BENCHMARK_AR.md#L42) | 42 | ``"\| `fixture_assisted` \| مراجع يطبّق سيناريو `evidence_fixture` (ليس حقنًا تلقائيًا في طلب حي) \|"`` | — |
-| [SRC-792A9A235D-L000043](../ANSWER_QUALITY_BENCHMARK_AR.md#L43) | 43 | ``"\| `human_judgment` \| حكم بشري على الاكتمال/اللغة/جودة عدم اليقين \|"`` | — |

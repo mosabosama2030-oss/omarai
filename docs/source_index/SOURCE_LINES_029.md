@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000035 إلى SRC-70795F4B61-L000057
+- النطاق: SRC-69F3587825-L000026 إلى SRC-70795F4B61-L000048
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".hg\","` | — |
+| [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \".svn\","` | — |
+| [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \".venv\","` | — |
+| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |
+| [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"env\","` | — |
+| [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \"virtualenv\","` | — |
+| [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \"__pycache__\","` | — |
+| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".pytest_cache\","` | — |
+| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".ruff_cache\","` | — |
 | [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".mypy_cache\","` | — |
 | [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \".tox\","` | — |
 | [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \".nox\","` | — |
@@ -888,12 +897,3 @@
 | [SRC-70795F4B61-L000046](../../scripts/compare_answer_quality_runs.py#L46) | 46 | `"    results = run.get(\"results\")"` | — |
 | [SRC-70795F4B61-L000047](../../scripts/compare_answer_quality_runs.py#L47) | 47 | `"    if not isinstance(results, list) or not results:"` | — |
 | [SRC-70795F4B61-L000048](../../scripts/compare_answer_quality_runs.py#L48) | 48 | `"        problems.append(f\"{label}: results must be a non-empty array\")"` | — |
-| [SRC-70795F4B61-L000049](../../scripts/compare_answer_quality_runs.py#L49) | 49 | `"        return problems"` | — |
-| [SRC-70795F4B61-L000050](../../scripts/compare_answer_quality_runs.py#L50) | 50 | `"    seen: set[str] = set()"` | — |
-| [SRC-70795F4B61-L000051](../../scripts/compare_answer_quality_runs.py#L51) | 51 | `"    for index, record in enumerate(results):"` | — |
-| [SRC-70795F4B61-L000052](../../scripts/compare_answer_quality_runs.py#L52) | 52 | `"        if not isinstance(record, dict):"` | — |
-| [SRC-70795F4B61-L000053](../../scripts/compare_answer_quality_runs.py#L53) | 53 | `"            problems.append(f\"{label}: results[{index}] must be an object\")"` | — |
-| [SRC-70795F4B61-L000054](../../scripts/compare_answer_quality_runs.py#L54) | 54 | `"            continue"` | — |
-| [SRC-70795F4B61-L000055](../../scripts/compare_answer_quality_runs.py#L55) | 55 | `"        case_id = record.get(\"case_id\")"` | — |
-| [SRC-70795F4B61-L000056](../../scripts/compare_answer_quality_runs.py#L56) | 56 | `"        if not isinstance(case_id, str) or not case_id.strip():"` | — |
-| [SRC-70795F4B61-L000057](../../scripts/compare_answer_quality_runs.py#L57) | 57 | `"            problems.append(f\"{label}: results[{index}] has no case_id\")"` | — |

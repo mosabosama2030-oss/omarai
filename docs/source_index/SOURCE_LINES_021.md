@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000658 إلى SRC-E599346ABE-L001457
+- النطاق: SRC-E599346ABE-L000649 إلى SRC-E599346ABE-L001448
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000649](../generate_index.py#L649) | 649 | `"        expected_lines_by_file[file] = expected_contents"` | — |
+| [SRC-E599346ABE-L000650](../generate_index.py#L650) | 650 | `"        if len(expected_contents) != item.line_count:"` | — |
+| [SRC-E599346ABE-L000651](../generate_index.py#L651) | 651 | `"            failures.append("` | — |
+| [SRC-E599346ABE-L000652](../generate_index.py#L652) | 652 | `"                f\"{file}: تغير عدد الأسطر بعد إعداد الجرد \""` | — |
+| [SRC-E599346ABE-L000653](../generate_index.py#L653) | 653 | `"                f\"(الجرد {item.line_count}، الحالي {len(expected_contents)})\""` | — |
+| [SRC-E599346ABE-L000654](../generate_index.py#L654) | 654 | `"            )"` | — |
+| [SRC-E599346ABE-L000655](../generate_index.py#L655) | 655 | `""` | — |
+| [SRC-E599346ABE-L000656](../generate_index.py#L656) | 656 | `"    actual_records_by_file: dict[str, dict[int, IndexedLine]] = {"` | — |
+| [SRC-E599346ABE-L000657](../generate_index.py#L657) | 657 | `"        file: {} for file in eligible_files"` | — |
 | [SRC-E599346ABE-L000658](../generate_index.py#L658) | 658 | `"    }"` | — |
 | [SRC-E599346ABE-L000659](../generate_index.py#L659) | 659 | `"    for source_line in source_lines:"` | — |
 | [SRC-E599346ABE-L000660](../generate_index.py#L660) | 660 | `"        if source_line.file not in eligible_files:"` | — |
@@ -807,12 +816,3 @@
 | [SRC-E599346ABE-L001446](../generate_index.py#L1446) | 1446 | `"            line_count = \"بيانات وصفية فقط\""` | — |
 | [SRC-E599346ABE-L001447](../generate_index.py#L1447) | 1447 | `"        else:"` | — |
 | [SRC-E599346ABE-L001448](../generate_index.py#L1448) | 1448 | `"            line_count = str(item.line_count)"` | — |
-| [SRC-E599346ABE-L001449](../generate_index.py#L1449) | 1449 | `"        page_links = assigned_pages.get(item.file, [])"` | — |
-| [SRC-E599346ABE-L001450](../generate_index.py#L1450) | 1450 | `"        if page_links:"` | — |
-| [SRC-E599346ABE-L001451](../generate_index.py#L1451) | 1451 | `"            link_text = \", \".join("` | — |
-| [SRC-E599346ABE-L001452](../generate_index.py#L1452) | 1452 | `"                f\"[{Path(page_path).stem}]({Path(page_path).relative_to('docs').as_posix()})\""` | — |
-| [SRC-E599346ABE-L001453](../generate_index.py#L1453) | 1453 | `"                for page_path in page_links"` | — |
-| [SRC-E599346ABE-L001454](../generate_index.py#L1454) | 1454 | `"            )"` | — |
-| [SRC-E599346ABE-L001455](../generate_index.py#L1455) | 1455 | `"        elif item.line_count == 0:"` | — |
-| [SRC-E599346ABE-L001456](../generate_index.py#L1456) | 1456 | `"            link_text = \"ملف نصي فارغ\""` | — |
-| [SRC-E599346ABE-L001457](../generate_index.py#L1457) | 1457 | `"        elif item.line_count is None:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004361 إلى SRC-1AE03B9EC3-L005160
+- النطاق: SRC-1AE03B9EC3-L004352 إلى SRC-1AE03B9EC3-L005151
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004352](../../agents/web_agent.py#L4352) | 4352 | `"                coverage[\"targets\"] = coverage_targets"` | — |
+| [SRC-1AE03B9EC3-L004353](../../agents/web_agent.py#L4353) | 4353 | `"                coverage[\"target_checks\"] = answer_integrity[\"target_coverage\"]"` | — |
+| [SRC-1AE03B9EC3-L004354](../../agents/web_agent.py#L4354) | 4354 | `"                coverage[\"potentially_missing_target_count\"] = ("` | — |
+| [SRC-1AE03B9EC3-L004355](../../agents/web_agent.py#L4355) | 4355 | `"                    answer_integrity[\"potentially_missing_target_count\"]"` | — |
+| [SRC-1AE03B9EC3-L004356](../../agents/web_agent.py#L4356) | 4356 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L004357](../../agents/web_agent.py#L4357) | 4357 | `"                coverage[\"source_evidence_gap_count\"] = answer_integrity[\"source_evidence_gap_count\"]"` | — |
+| [SRC-1AE03B9EC3-L004358](../../agents/web_agent.py#L4358) | 4358 | `"                coverage[\"lexical_screen_method\"] = ("` | — |
+| [SRC-1AE03B9EC3-L004359](../../agents/web_agent.py#L4359) | 4359 | `"                    \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
+| [SRC-1AE03B9EC3-L004360](../../agents/web_agent.py#L4360) | 4360 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004361](../../agents/web_agent.py#L4361) | 4361 | `"                if ("` | — |
 | [SRC-1AE03B9EC3-L004362](../../agents/web_agent.py#L4362) | 4362 | `"                    result.get(\"kind\") == \"insufficient_evidence\""` | — |
 | [SRC-1AE03B9EC3-L004363](../../agents/web_agent.py#L4363) | 4363 | `"                    or result.get(\"research_quality\") == \"failed\""` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L005149](../../agents/web_agent.py#L5149) | 5149 | `"            report[\"dialogue_context\"] = plan.get(\"dialogue_context\", {})"` | — |
 | [SRC-1AE03B9EC3-L005150](../../agents/web_agent.py#L5150) | 5150 | `"            report[\"task_understanding\"] = {"` | — |
 | [SRC-1AE03B9EC3-L005151](../../agents/web_agent.py#L5151) | 5151 | `"                \"task_spec\": task_spec,"` | — |
-| [SRC-1AE03B9EC3-L005152](../../agents/web_agent.py#L5152) | 5152 | `"                \"query_strategy_matrix\": plan.get(\"query_strategy_matrix\", []),"` | — |
-| [SRC-1AE03B9EC3-L005153](../../agents/web_agent.py#L5153) | 5153 | `"                \"actual_queries\": list(plan.get(\"queries\") or []),"` | — |
-| [SRC-1AE03B9EC3-L005154](../../agents/web_agent.py#L5154) | 5154 | `"                \"actual_query_count\": len(plan.get(\"queries\") or []),"` | — |
-| [SRC-1AE03B9EC3-L005155](../../agents/web_agent.py#L5155) | 5155 | `"                \"max_query_count\": MAX_PLAN_QUERIES,"` | — |
-| [SRC-1AE03B9EC3-L005156](../../agents/web_agent.py#L5156) | 5156 | `"                \"status\": \"deterministic_interpretation_attached\","` | — |
-| [SRC-1AE03B9EC3-L005157](../../agents/web_agent.py#L5157) | 5157 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L005158](../../agents/web_agent.py#L5158) | 5158 | `"        # Final relevance check is intentionally repeated after fusion, before any answer LLM call."` | — |
-| [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"        filtered_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        for source in sources:"` | — |

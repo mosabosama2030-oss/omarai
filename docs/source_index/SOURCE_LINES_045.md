@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D033B34F41-L000065 إلى SRC-F725E90B2A-L000130
+- النطاق: SRC-D033B34F41-L000011 إلى SRC-F725E90B2A-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D033B34F41-L000011](../../tests/test_source_metadata_audit.py#L11) | 11 | `"            \"title\": \"تقديرات سكانية\","` | — |
+| [SRC-D033B34F41-L000012](../../tests/test_source_metadata_audit.py#L12) | 12 | `"            \"snippet\": \"عدد السكان 9.7 مليون\","` | — |
+| [SRC-D033B34F41-L000013](../../tests/test_source_metadata_audit.py#L13) | 13 | `"            \"page_fetched\": False,"` | — |
+| [SRC-D033B34F41-L000014](../../tests/test_source_metadata_audit.py#L14) | 14 | `"        }],"` | — |
+| [SRC-D033B34F41-L000015](../../tests/test_source_metadata_audit.py#L15) | 15 | `"    )"` | — |
+| [SRC-D033B34F41-L000016](../../tests/test_source_metadata_audit.py#L16) | 16 | `""` | — |
+| [SRC-D033B34F41-L000017](../../tests/test_source_metadata_audit.py#L17) | 17 | `"    audit = result[\"source_metadata_audit\"]"` | — |
+| [SRC-D033B34F41-L000018](../../tests/test_source_metadata_audit.py#L18) | 18 | `"    assert audit[\"status\"] == \"metadata_gaps_found\""` | — |
+| [SRC-D033B34F41-L000019](../../tests/test_source_metadata_audit.py#L19) | 19 | `"    assert audit[\"population_claim_context_detected\"] is True"` | — |
+| [SRC-D033B34F41-L000020](../../tests/test_source_metadata_audit.py#L20) | 20 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 1"` | — |
+| [SRC-D033B34F41-L000021](../../tests/test_source_metadata_audit.py#L21) | 21 | `"    assert audit[\"sources_missing_publication_date_count\"] == 1"` | — |
+| [SRC-D033B34F41-L000022](../../tests/test_source_metadata_audit.py#L22) | 22 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 1"` | — |
+| [SRC-D033B34F41-L000023](../../tests/test_source_metadata_audit.py#L23) | 23 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 1"` | — |
+| [SRC-D033B34F41-L000024](../../tests/test_source_metadata_audit.py#L24) | 24 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 1"` | — |
+| [SRC-D033B34F41-L000025](../../tests/test_source_metadata_audit.py#L25) | 25 | `"    assert audit[\"semantic_verification\"] is False"` | — |
+| [SRC-D033B34F41-L000026](../../tests/test_source_metadata_audit.py#L26) | 26 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
+| [SRC-D033B34F41-L000027](../../tests/test_source_metadata_audit.py#L27) | 27 | `""` | — |
+| [SRC-D033B34F41-L000028](../../tests/test_source_metadata_audit.py#L28) | 28 | `""` | — |
+| [SRC-D033B34F41-L000029](../../tests/test_source_metadata_audit.py#L29) | 29 | `"def test_population_source_metadata_presence_does_not_claim_truth_verification():"` | — |
+| [SRC-D033B34F41-L000030](../../tests/test_source_metadata_audit.py#L30) | 30 | `"    result = audit_answer_integrity("` | — |
+| [SRC-D033B34F41-L000031](../../tests/test_source_metadata_audit.py#L31) | 31 | `"        \"ما عدد سكان القاهرة؟\","` | — |
+| [SRC-D033B34F41-L000032](../../tests/test_source_metadata_audit.py#L32) | 32 | `"        \"العدد وفق المصدر [المصدر 1].\","` | — |
+| [SRC-D033B34F41-L000033](../../tests/test_source_metadata_audit.py#L33) | 33 | `"        [{"` | — |
+| [SRC-D033B34F41-L000034](../../tests/test_source_metadata_audit.py#L34) | 34 | `"            \"title\": \"Population report\","` | — |
+| [SRC-D033B34F41-L000035](../../tests/test_source_metadata_audit.py#L35) | 35 | `"            \"publisher\": \"Example Statistics Office\","` | — |
+| [SRC-D033B34F41-L000036](../../tests/test_source_metadata_audit.py#L36) | 36 | `"            \"url\": \"https://example.org/population\","` | — |
+| [SRC-D033B34F41-L000037](../../tests/test_source_metadata_audit.py#L37) | 37 | `"            \"published_at\": \"2025-06-01\","` | — |
+| [SRC-D033B34F41-L000038](../../tests/test_source_metadata_audit.py#L38) | 38 | `"            \"data_reference_period\": \"2025 estimate\","` | — |
+| [SRC-D033B34F41-L000039](../../tests/test_source_metadata_audit.py#L39) | 39 | `"            \"geographic_scope\": \"Cairo Governorate administrative boundary\","` | — |
+| [SRC-D033B34F41-L000040](../../tests/test_source_metadata_audit.py#L40) | 40 | `"            \"snippet\": \"Population estimate for Cairo Governorate.\","` | — |
+| [SRC-D033B34F41-L000041](../../tests/test_source_metadata_audit.py#L41) | 41 | `"            \"page_fetched\": False,"` | — |
+| [SRC-D033B34F41-L000042](../../tests/test_source_metadata_audit.py#L42) | 42 | `"        }],"` | — |
+| [SRC-D033B34F41-L000043](../../tests/test_source_metadata_audit.py#L43) | 43 | `"    )"` | — |
+| [SRC-D033B34F41-L000044](../../tests/test_source_metadata_audit.py#L44) | 44 | `""` | — |
+| [SRC-D033B34F41-L000045](../../tests/test_source_metadata_audit.py#L45) | 45 | `"    audit = result[\"source_metadata_audit\"]"` | — |
+| [SRC-D033B34F41-L000046](../../tests/test_source_metadata_audit.py#L46) | 46 | `"    assert audit[\"status\"] == \"minimum_metadata_present\""` | — |
+| [SRC-D033B34F41-L000047](../../tests/test_source_metadata_audit.py#L47) | 47 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000048](../../tests/test_source_metadata_audit.py#L48) | 48 | `"    assert audit[\"sources_missing_publisher_identity_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000049](../../tests/test_source_metadata_audit.py#L49) | 49 | `"    assert audit[\"sources_missing_publication_date_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000050](../../tests/test_source_metadata_audit.py#L50) | 50 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000051](../../tests/test_source_metadata_audit.py#L51) | 51 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000052](../../tests/test_source_metadata_audit.py#L52) | 52 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000053](../../tests/test_source_metadata_audit.py#L53) | 53 | `"    assert audit[\"semantic_verification\"] is False"` | — |
+| [SRC-D033B34F41-L000054](../../tests/test_source_metadata_audit.py#L54) | 54 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
+| [SRC-D033B34F41-L000055](../../tests/test_source_metadata_audit.py#L55) | 55 | `""` | — |
+| [SRC-D033B34F41-L000056](../../tests/test_source_metadata_audit.py#L56) | 56 | `""` | — |
+| [SRC-D033B34F41-L000057](../../tests/test_source_metadata_audit.py#L57) | 57 | `"def test_zero_sources_are_not_reported_as_metadata_complete():"` | — |
+| [SRC-D033B34F41-L000058](../../tests/test_source_metadata_audit.py#L58) | 58 | `"    result = audit_answer_integrity("` | — |
+| [SRC-D033B34F41-L000059](../../tests/test_source_metadata_audit.py#L59) | 59 | `"        \"ما عدد سكان القاهرة؟\","` | — |
+| [SRC-D033B34F41-L000060](../../tests/test_source_metadata_audit.py#L60) | 60 | `"        \"لا تتوفر لدي مصادر قابلة للمراجعة.\","` | — |
+| [SRC-D033B34F41-L000061](../../tests/test_source_metadata_audit.py#L61) | 61 | `"        [],"` | — |
+| [SRC-D033B34F41-L000062](../../tests/test_source_metadata_audit.py#L62) | 62 | `"    )"` | — |
+| [SRC-D033B34F41-L000063](../../tests/test_source_metadata_audit.py#L63) | 63 | `""` | — |
+| [SRC-D033B34F41-L000064](../../tests/test_source_metadata_audit.py#L64) | 64 | `"    audit = result[\"source_metadata_audit\"]"` | — |
 | [SRC-D033B34F41-L000065](../../tests/test_source_metadata_audit.py#L65) | 65 | `"    assert audit[\"status\"] == \"no_sources_to_audit\""` | — |
 | [SRC-D033B34F41-L000066](../../tests/test_source_metadata_audit.py#L66) | 66 | `"    assert audit[\"source_count_checked\"] == 0"` | — |
 | [SRC-D033B34F41-L000067](../../tests/test_source_metadata_audit.py#L67) | 67 | `"    assert audit[\"semantic_verification\"] is False"` | — |
@@ -798,57 +852,3 @@
 | [SRC-F725E90B2A-L000074](../../tests/test_web_agent.py#L74) | 74 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
 | [SRC-F725E90B2A-L000075](../../tests/test_web_agent.py#L75) | 75 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
 | [SRC-F725E90B2A-L000076](../../tests/test_web_agent.py#L76) | 76 | `"    result = agent.answer("` | — |
-| [SRC-F725E90B2A-L000077](../../tests/test_web_agent.py#L77) | 77 | `"        \"قارن هذه التقنية\","` | — |
-| [SRC-F725E90B2A-L000078](../../tests/test_web_agent.py#L78) | 78 | `"        history=[{\"role\": \"user\", \"content\": \"ما هي التقنية؟\"}],"` | — |
-| [SRC-F725E90B2A-L000079](../../tests/test_web_agent.py#L79) | 79 | `"    )"` | — |
-| [SRC-F725E90B2A-L000080](../../tests/test_web_agent.py#L80) | 80 | `""` | — |
-| [SRC-F725E90B2A-L000081](../../tests/test_web_agent.py#L81) | 81 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-F725E90B2A-L000082](../../tests/test_web_agent.py#L82) | 82 | `"    assert result[\"search_attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L000083](../../tests/test_web_agent.py#L83) | 83 | `"    assert result[\"search_report\"][\"search_attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L000084](../../tests/test_web_agent.py#L84) | 84 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_with_usable_sources\""` | — |
-| [SRC-F725E90B2A-L000085](../../tests/test_web_agent.py#L85) | 85 | `"    assert result[\"search_report\"][\"pipeline_completion_status\"] == \"completed\""` | — |
-| [SRC-F725E90B2A-L000086](../../tests/test_web_agent.py#L86) | 86 | `"    assert result[\"search_report\"][\"completion_stages\"][\"semantic_fact_check\"] == \"not_performed\""` | — |
-| [SRC-F725E90B2A-L000087](../../tests/test_web_agent.py#L87) | 87 | `"    assert result[\"search_report\"][\"research_quality_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000088](../../tests/test_web_agent.py#L88) | 88 | `"        \"process_coverage_not_factual_probability\""` | — |
-| [SRC-F725E90B2A-L000089](../../tests/test_web_agent.py#L89) | 89 | `"    )"` | — |
-| [SRC-F725E90B2A-L000090](../../tests/test_web_agent.py#L90) | 90 | `"    assert result[\"search_report\"][\"claim_audit_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000091](../../tests/test_web_agent.py#L91) | 91 | `"        \"model_assisted_not_independent_fact_check\""` | — |
-| [SRC-F725E90B2A-L000092](../../tests/test_web_agent.py#L92) | 92 | `"    )"` | — |
-| [SRC-F725E90B2A-L000093](../../tests/test_web_agent.py#L93) | 93 | `"    assert result[\"search_report\"][\"research_pipeline\"][\"stages\"][\"semantic_matching\"] == ("` | — |
-| [SRC-F725E90B2A-L000094](../../tests/test_web_agent.py#L94) | 94 | `"        \"not_configured\""` | — |
-| [SRC-F725E90B2A-L000095](../../tests/test_web_agent.py#L95) | 95 | `"    )"` | — |
-| [SRC-F725E90B2A-L000096](../../tests/test_web_agent.py#L96) | 96 | `"    assert result[\"search_report\"][\"research_pipeline\"][\"evidence\"][\"claim_verification\"] == ("` | — |
-| [SRC-F725E90B2A-L000097](../../tests/test_web_agent.py#L97) | 97 | `"        \"delegated_to_existing_validator\""` | — |
-| [SRC-F725E90B2A-L000098](../../tests/test_web_agent.py#L98) | 98 | `"    )"` | — |
-| [SRC-F725E90B2A-L000099](../../tests/test_web_agent.py#L99) | 99 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
-| [SRC-F725E90B2A-L000100](../../tests/test_web_agent.py#L100) | 100 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
-| [SRC-F725E90B2A-L000101](../../tests/test_web_agent.py#L101) | 101 | `"    assert result[\"search_report\"][\"independent_sources_field_semantics\"] == ("` | — |
-| [SRC-F725E90B2A-L000102](../../tests/test_web_agent.py#L102) | 102 | `"        \"legacy_compatibility_alias_for_distinct_registrable_domain_count\""` | — |
-| [SRC-F725E90B2A-L000103](../../tests/test_web_agent.py#L103) | 103 | `"    )"` | — |
-| [SRC-F725E90B2A-L000104](../../tests/test_web_agent.py#L104) | 104 | `"    assert any(\"تعدد النطاقات المسجلة لا يثبت الاستقلال التحريري\" in warning"` | — |
-| [SRC-F725E90B2A-L000105](../../tests/test_web_agent.py#L105) | 105 | `"               for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L000106](../../tests/test_web_agent.py#L106) | 106 | `"    assert result[\"used_language_model\"] is True"` | — |
-| [SRC-F725E90B2A-L000107](../../tests/test_web_agent.py#L107) | 107 | `"    task_understanding = result[\"task_understanding\"]"` | — |
-| [SRC-F725E90B2A-L000108](../../tests/test_web_agent.py#L108) | 108 | `"    assert task_understanding[\"task_spec\"][\"schema\"] == \"omarai.task_spec.v1\""` | — |
-| [SRC-F725E90B2A-L000109](../../tests/test_web_agent.py#L109) | 109 | `"    assert task_understanding[\"task_spec\"][\"task_family\"] == \"compare\""` | — |
-| [SRC-F725E90B2A-L000110](../../tests/test_web_agent.py#L110) | 110 | `"    assert task_understanding[\"task_spec\"][\"classification_is_probability\"] is False"` | — |
-| [SRC-F725E90B2A-L000111](../../tests/test_web_agent.py#L111) | 111 | `"    assert task_understanding[\"tool_execution\"][\"search_outcome\"] == \"attempted_with_usable_sources\""` | — |
-| [SRC-F725E90B2A-L000112](../../tests/test_web_agent.py#L112) | 112 | `"    assert task_understanding[\"tool_execution\"][\"accepted_source_count\"] == 2"` | — |
-| [SRC-F725E90B2A-L000113](../../tests/test_web_agent.py#L113) | 113 | `"    assert task_understanding[\"query_strategy_matrix\"]"` | — |
-| [SRC-F725E90B2A-L000114](../../tests/test_web_agent.py#L114) | 114 | `"    assert task_understanding[\"actual_queries\"] == result[\"search_queries\"]"` | — |
-| [SRC-F725E90B2A-L000115](../../tests/test_web_agent.py#L115) | 115 | `"    assert result[\"search_report\"][\"task_understanding\"][\"task_spec\"][\"schema\"] == \"omarai.task_spec.v1\""` | — |
-| [SRC-F725E90B2A-L000116](../../tests/test_web_agent.py#L116) | 116 | `"    assert result[\"sources\"][0][\"url\"] == \"https://example.com/research\""` | — |
-| [SRC-F725E90B2A-L000117](../../tests/test_web_agent.py#L117) | 117 | `"    assert \"[المصدر 1]\" in result[\"answer\"]"` | — |
-| [SRC-F725E90B2A-L000118](../../tests/test_web_agent.py#L118) | 118 | `"    assert seen[\"question\"] == \"قارن هذه التقنية\""` | — |
-| [SRC-F725E90B2A-L000119](../../tests/test_web_agent.py#L119) | 119 | `"    assert seen[\"history\"] == [{\"role\": \"user\", \"content\": \"ما هي التقنية؟\"}]"` | — |
-| [SRC-F725E90B2A-L000120](../../tests/test_web_agent.py#L120) | 120 | `""` | — |
-| [SRC-F725E90B2A-L000121](../../tests/test_web_agent.py#L121) | 121 | `""` | — |
-| [SRC-F725E90B2A-L000122](../../tests/test_web_agent.py#L122) | 122 | `"def test_agent_returns_search_snippets_if_model_not_configured(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000123](../../tests/test_web_agent.py#L123) | 123 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L000124](../../tests/test_web_agent.py#L124) | 124 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L000125](../../tests/test_web_agent.py#L125) | 125 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000126](../../tests/test_web_agent.py#L126) | 126 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000127](../../tests/test_web_agent.py#L127) | 127 | `"        \"_collect_research\","` | — |
-| [SRC-F725E90B2A-L000128](../../tests/test_web_agent.py#L128) | 128 | `"        lambda plan: ("` | — |
-| [SRC-F725E90B2A-L000129](../../tests/test_web_agent.py#L129) | 129 | `"            [sample_source(0), sample_source(1)],"` | — |
-| [SRC-F725E90B2A-L000130](../../tests/test_web_agent.py#L130) | 130 | `"            [],"` | — |

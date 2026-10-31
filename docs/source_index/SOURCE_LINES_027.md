@@ -4,7 +4,7 @@
 
 - الصفحة: **027**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000207 إلى SRC-0F910493E8-L000431
+- النطاق: SRC-65551FB29F-L000198 إلى SRC-0F910493E8-L000422
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000198](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L198) | 198 | `"\| EVD \| الأدلة والإسناد والصدق \|"` | — |
+| [SRC-65551FB29F-L000199](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L199) | 199 | `"\| AIG \| حوكمة الذكاء الاصطناعي والوكلاء \|"` | — |
+| [SRC-65551FB29F-L000200](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L200) | 200 | `"\| AIE \| تقييم النماذج والجودة \|"` | — |
+| [SRC-65551FB29F-L000201](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L201) | 201 | `"\| TST \| الاختبارات \|"` | — |
+| [SRC-65551FB29F-L000202](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L202) | 202 | `"\| DEV \| تجربة المطور والتطوير الآمن \|"` | — |
+| [SRC-65551FB29F-L000203](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L203) | 203 | `"\| SCM \| سلسلة توريد البرمجيات \|"` | — |
+| [SRC-65551FB29F-L000204](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L204) | 204 | `"\| DPL \| النشر والإصدارات \|"` | — |
+| [SRC-65551FB29F-L000205](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L205) | 205 | `"\| UX \| واجهة المستخدم والوصولية والتدويل \|"` | — |
+| [SRC-65551FB29F-L000206](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L206) | 206 | `"\| FIN \| التكلفة والحصص والاستدامة \|"` | — |
 | [SRC-65551FB29F-L000207](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L207) | 207 | `"\| LEG \| التراخيص والمتطلبات القانونية \|"` | — |
 | [SRC-65551FB29F-L000208](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L208) | 208 | `"\| EXT \| الإضافات والتوافق وقابلية النقل \|"` | — |
 | [SRC-65551FB29F-L000209](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L209) | 209 | `""` | — |
@@ -816,12 +825,3 @@
 | [SRC-0F910493E8-L000420](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L420) | 420 | `"- فرض الصلاحيات والميزانيات عند التنفيذ."` | — |
 | [SRC-0F910493E8-L000421](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L421) | 421 | `"- اختبار حالات الرفض والفشل والتزامن بحسب المسار."` | — |
 | [SRC-0F910493E8-L000422](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L422) | 422 | `""` | — |
-| [SRC-0F910493E8-L000423](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L423) | 423 | `"**بوابة القبول:** نتائج فعلية تثبت السلوك في نطاق الاختبارات؛ وتبقى الحدود غير المختبرة UNKNOWN."` | — |
-| [SRC-0F910493E8-L000424](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L424) | 424 | `""` | — |
-| [SRC-0F910493E8-L000425](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L425) | 425 | `"## P2 — المهارات وسير العمل"` | — |
-| [SRC-0F910493E8-L000426](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L426) | 426 | `""` | — |
-| [SRC-0F910493E8-L000427](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L427) | 427 | `"- استخراج مهارات من وظائف موجودة عند وجود تكرار أو حاجة واضحة."` | — |
-| [SRC-0F910493E8-L000428](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L428) | 428 | `"- تحديد سير العمل للمسارات متعددة الخطوات."` | — |
-| [SRC-0F910493E8-L000429](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L429) | 429 | `"- الحفاظ على المسار المباشر للأسئلة البسيطة."` | — |
-| [SRC-0F910493E8-L000430](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L430) | 430 | `"- إضافة اختبارات لكل مهارة ومسار حرج."` | — |
-| [SRC-0F910493E8-L000431](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L431) | 431 | `"- إعادة تشغيل اختبارات الانحدار."` | — |

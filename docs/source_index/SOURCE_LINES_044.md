@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000099 إلى SRC-D033B34F41-L000064
+- النطاق: SRC-01E35ABC46-L000045 إلى SRC-D033B34F41-L000010
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000045](../../tests/test_research_guardrails.py#L45) | 45 | `"    # \"sources\" is a deep term; ensure isolated ordinary use still works via whole-word"` | — |
+| [SRC-01E35ABC46-L000046](../../tests/test_research_guardrails.py#L46) | 46 | `"    assert detect_depth(\"the river sources of the Nile\") in {\"deep\", \"standard\"}  # may match"` | — |
+| [SRC-01E35ABC46-L000047](../../tests/test_research_guardrails.py#L47) | 47 | `"    assert detect_depth(\"tell me a joke\") == \"standard\""` | — |
+| [SRC-01E35ABC46-L000048](../../tests/test_research_guardrails.py#L48) | 48 | `""` | — |
+| [SRC-01E35ABC46-L000049](../../tests/test_research_guardrails.py#L49) | 49 | `""` | — |
+| [SRC-01E35ABC46-L000050](../../tests/test_research_guardrails.py#L50) | 50 | `"# --- detect_freshness -------------------------------------------------------"` | — |
+| [SRC-01E35ABC46-L000051](../../tests/test_research_guardrails.py#L51) | 51 | `""` | — |
+| [SRC-01E35ABC46-L000052](../../tests/test_research_guardrails.py#L52) | 52 | `"def test_freshness_positive_english():"` | — |
+| [SRC-01E35ABC46-L000053](../../tests/test_research_guardrails.py#L53) | 53 | `"    assert detect_freshness(\"what is happening now\") is True"` | — |
+| [SRC-01E35ABC46-L000054](../../tests/test_research_guardrails.py#L54) | 54 | `"    assert detect_freshness(\"latest news about Egypt\") is True"` | — |
+| [SRC-01E35ABC46-L000055](../../tests/test_research_guardrails.py#L55) | 55 | `"    assert detect_freshness(\"price today of gold\") is True"` | — |
+| [SRC-01E35ABC46-L000056](../../tests/test_research_guardrails.py#L56) | 56 | `"    assert detect_freshness(\"breaking news\") is True"` | — |
+| [SRC-01E35ABC46-L000057](../../tests/test_research_guardrails.py#L57) | 57 | `""` | — |
+| [SRC-01E35ABC46-L000058](../../tests/test_research_guardrails.py#L58) | 58 | `""` | — |
+| [SRC-01E35ABC46-L000059](../../tests/test_research_guardrails.py#L59) | 59 | `"def test_freshness_positive_arabic():"` | — |
+| [SRC-01E35ABC46-L000060](../../tests/test_research_guardrails.py#L60) | 60 | `"    assert detect_freshness(\"ما هي آخر الأخبار عن الذهب\") is True"` | — |
+| [SRC-01E35ABC46-L000061](../../tests/test_research_guardrails.py#L61) | 61 | `"    assert detect_freshness(\"سعر اليوم للدولار\") is True"` | — |
+| [SRC-01E35ABC46-L000062](../../tests/test_research_guardrails.py#L62) | 62 | `"    assert detect_freshness(\"مستجدات السوق حاليا\") is True"` | — |
+| [SRC-01E35ABC46-L000063](../../tests/test_research_guardrails.py#L63) | 63 | `""` | — |
+| [SRC-01E35ABC46-L000064](../../tests/test_research_guardrails.py#L64) | 64 | `""` | — |
+| [SRC-01E35ABC46-L000065](../../tests/test_research_guardrails.py#L65) | 65 | `"def test_freshness_negative_know_and_snowden():"` | — |
+| [SRC-01E35ABC46-L000066](../../tests/test_research_guardrails.py#L66) | 66 | `"    assert detect_freshness(\"I know about cars\") is False"` | — |
+| [SRC-01E35ABC46-L000067](../../tests/test_research_guardrails.py#L67) | 67 | `"    assert detect_freshness(\"Snowden revelations summary\") is False"` | — |
+| [SRC-01E35ABC46-L000068](../../tests/test_research_guardrails.py#L68) | 68 | `"    assert detect_freshness(\"knowledge graph basics\") is False"` | — |
+| [SRC-01E35ABC46-L000069](../../tests/test_research_guardrails.py#L69) | 69 | `"    assert detect_freshness(\"ما عاصمة فرنسا\") is False"` | — |
+| [SRC-01E35ABC46-L000070](../../tests/test_research_guardrails.py#L70) | 70 | `""` | — |
+| [SRC-01E35ABC46-L000071](../../tests/test_research_guardrails.py#L71) | 71 | `""` | — |
+| [SRC-01E35ABC46-L000072](../../tests/test_research_guardrails.py#L72) | 72 | `"# --- relevance gate ---------------------------------------------------------"` | — |
+| [SRC-01E35ABC46-L000073](../../tests/test_research_guardrails.py#L73) | 73 | `""` | — |
+| [SRC-01E35ABC46-L000074](../../tests/test_research_guardrails.py#L74) | 74 | `"def test_relevance_keeps_matching_source():"` | — |
+| [SRC-01E35ABC46-L000075](../../tests/test_research_guardrails.py#L75) | 75 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000076](../../tests/test_research_guardrails.py#L76) | 76 | `"        \"title\": \"أسعار السيارات الكهربائية في مصر 2026\","` | — |
+| [SRC-01E35ABC46-L000077](../../tests/test_research_guardrails.py#L77) | 77 | `"        \"url\": \"https://example.com/ev-egypt\","` | — |
+| [SRC-01E35ABC46-L000078](../../tests/test_research_guardrails.py#L78) | 78 | `"        \"snippet\": \"ارتفعت حصة السيارات الكهربائية في السوق المصري هذا العام.\","` | — |
+| [SRC-01E35ABC46-L000079](../../tests/test_research_guardrails.py#L79) | 79 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-01E35ABC46-L000080](../../tests/test_research_guardrails.py#L80) | 80 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000081](../../tests/test_research_guardrails.py#L81) | 81 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000082](../../tests/test_research_guardrails.py#L82) | 82 | `"    }"` | — |
+| [SRC-01E35ABC46-L000083](../../tests/test_research_guardrails.py#L83) | 83 | `"    rel = source_relevance_score(src, \"أسعار السيارات الكهربائية في مصر\")"` | — |
+| [SRC-01E35ABC46-L000084](../../tests/test_research_guardrails.py#L84) | 84 | `"    assert rel[\"accepted\"] is True"` | — |
+| [SRC-01E35ABC46-L000085](../../tests/test_research_guardrails.py#L85) | 85 | `"    assert rel[\"score\"] >= 18"` | — |
+| [SRC-01E35ABC46-L000086](../../tests/test_research_guardrails.py#L86) | 86 | `""` | — |
+| [SRC-01E35ABC46-L000087](../../tests/test_research_guardrails.py#L87) | 87 | `"    # English-English match"` | — |
+| [SRC-01E35ABC46-L000088](../../tests/test_research_guardrails.py#L88) | 88 | `"    src_en = {"` | — |
+| [SRC-01E35ABC46-L000089](../../tests/test_research_guardrails.py#L89) | 89 | `"        \"title\": \"Electric vehicles in Egypt 2026\","` | — |
+| [SRC-01E35ABC46-L000090](../../tests/test_research_guardrails.py#L90) | 90 | `"        \"url\": \"https://example.com/ev-egypt-en\","` | — |
+| [SRC-01E35ABC46-L000091](../../tests/test_research_guardrails.py#L91) | 91 | `"        \"snippet\": \"Market share of electric cars in Egypt rose this year.\","` | — |
+| [SRC-01E35ABC46-L000092](../../tests/test_research_guardrails.py#L92) | 92 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-01E35ABC46-L000093](../../tests/test_research_guardrails.py#L93) | 93 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000094](../../tests/test_research_guardrails.py#L94) | 94 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000095](../../tests/test_research_guardrails.py#L95) | 95 | `"    }"` | — |
+| [SRC-01E35ABC46-L000096](../../tests/test_research_guardrails.py#L96) | 96 | `"    rel_en = source_relevance_score(src_en, \"electric vehicles Egypt market share\")"` | — |
+| [SRC-01E35ABC46-L000097](../../tests/test_research_guardrails.py#L97) | 97 | `"    assert rel_en[\"accepted\"] is True"` | — |
+| [SRC-01E35ABC46-L000098](../../tests/test_research_guardrails.py#L98) | 98 | `""` | — |
 | [SRC-01E35ABC46-L000099](../../tests/test_research_guardrails.py#L99) | 99 | `""` | — |
 | [SRC-01E35ABC46-L000100](../../tests/test_research_guardrails.py#L100) | 100 | `"def test_relevance_rejects_unrelated():"` | — |
 | [SRC-01E35ABC46-L000101](../../tests/test_research_guardrails.py#L101) | 101 | `"    src = {"` | — |
@@ -789,57 +843,3 @@
 | [SRC-D033B34F41-L000008](../../tests/test_source_metadata_audit.py#L8) | 8 | `"        \"ما عدد سكان القاهرة؟\","` | — |
 | [SRC-D033B34F41-L000009](../../tests/test_source_metadata_audit.py#L9) | 9 | `"        \"حسب التقديرات، العدد 9.7 مليون.\","` | — |
 | [SRC-D033B34F41-L000010](../../tests/test_source_metadata_audit.py#L10) | 10 | `"        [{"` | — |
-| [SRC-D033B34F41-L000011](../../tests/test_source_metadata_audit.py#L11) | 11 | `"            \"title\": \"تقديرات سكانية\","` | — |
-| [SRC-D033B34F41-L000012](../../tests/test_source_metadata_audit.py#L12) | 12 | `"            \"snippet\": \"عدد السكان 9.7 مليون\","` | — |
-| [SRC-D033B34F41-L000013](../../tests/test_source_metadata_audit.py#L13) | 13 | `"            \"page_fetched\": False,"` | — |
-| [SRC-D033B34F41-L000014](../../tests/test_source_metadata_audit.py#L14) | 14 | `"        }],"` | — |
-| [SRC-D033B34F41-L000015](../../tests/test_source_metadata_audit.py#L15) | 15 | `"    )"` | — |
-| [SRC-D033B34F41-L000016](../../tests/test_source_metadata_audit.py#L16) | 16 | `""` | — |
-| [SRC-D033B34F41-L000017](../../tests/test_source_metadata_audit.py#L17) | 17 | `"    audit = result[\"source_metadata_audit\"]"` | — |
-| [SRC-D033B34F41-L000018](../../tests/test_source_metadata_audit.py#L18) | 18 | `"    assert audit[\"status\"] == \"metadata_gaps_found\""` | — |
-| [SRC-D033B34F41-L000019](../../tests/test_source_metadata_audit.py#L19) | 19 | `"    assert audit[\"population_claim_context_detected\"] is True"` | — |
-| [SRC-D033B34F41-L000020](../../tests/test_source_metadata_audit.py#L20) | 20 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000021](../../tests/test_source_metadata_audit.py#L21) | 21 | `"    assert audit[\"sources_missing_publication_date_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000022](../../tests/test_source_metadata_audit.py#L22) | 22 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000023](../../tests/test_source_metadata_audit.py#L23) | 23 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000024](../../tests/test_source_metadata_audit.py#L24) | 24 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000025](../../tests/test_source_metadata_audit.py#L25) | 25 | `"    assert audit[\"semantic_verification\"] is False"` | — |
-| [SRC-D033B34F41-L000026](../../tests/test_source_metadata_audit.py#L26) | 26 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
-| [SRC-D033B34F41-L000027](../../tests/test_source_metadata_audit.py#L27) | 27 | `""` | — |
-| [SRC-D033B34F41-L000028](../../tests/test_source_metadata_audit.py#L28) | 28 | `""` | — |
-| [SRC-D033B34F41-L000029](../../tests/test_source_metadata_audit.py#L29) | 29 | `"def test_population_source_metadata_presence_does_not_claim_truth_verification():"` | — |
-| [SRC-D033B34F41-L000030](../../tests/test_source_metadata_audit.py#L30) | 30 | `"    result = audit_answer_integrity("` | — |
-| [SRC-D033B34F41-L000031](../../tests/test_source_metadata_audit.py#L31) | 31 | `"        \"ما عدد سكان القاهرة؟\","` | — |
-| [SRC-D033B34F41-L000032](../../tests/test_source_metadata_audit.py#L32) | 32 | `"        \"العدد وفق المصدر [المصدر 1].\","` | — |
-| [SRC-D033B34F41-L000033](../../tests/test_source_metadata_audit.py#L33) | 33 | `"        [{"` | — |
-| [SRC-D033B34F41-L000034](../../tests/test_source_metadata_audit.py#L34) | 34 | `"            \"title\": \"Population report\","` | — |
-| [SRC-D033B34F41-L000035](../../tests/test_source_metadata_audit.py#L35) | 35 | `"            \"publisher\": \"Example Statistics Office\","` | — |
-| [SRC-D033B34F41-L000036](../../tests/test_source_metadata_audit.py#L36) | 36 | `"            \"url\": \"https://example.org/population\","` | — |
-| [SRC-D033B34F41-L000037](../../tests/test_source_metadata_audit.py#L37) | 37 | `"            \"published_at\": \"2025-06-01\","` | — |
-| [SRC-D033B34F41-L000038](../../tests/test_source_metadata_audit.py#L38) | 38 | `"            \"data_reference_period\": \"2025 estimate\","` | — |
-| [SRC-D033B34F41-L000039](../../tests/test_source_metadata_audit.py#L39) | 39 | `"            \"geographic_scope\": \"Cairo Governorate administrative boundary\","` | — |
-| [SRC-D033B34F41-L000040](../../tests/test_source_metadata_audit.py#L40) | 40 | `"            \"snippet\": \"Population estimate for Cairo Governorate.\","` | — |
-| [SRC-D033B34F41-L000041](../../tests/test_source_metadata_audit.py#L41) | 41 | `"            \"page_fetched\": False,"` | — |
-| [SRC-D033B34F41-L000042](../../tests/test_source_metadata_audit.py#L42) | 42 | `"        }],"` | — |
-| [SRC-D033B34F41-L000043](../../tests/test_source_metadata_audit.py#L43) | 43 | `"    )"` | — |
-| [SRC-D033B34F41-L000044](../../tests/test_source_metadata_audit.py#L44) | 44 | `""` | — |
-| [SRC-D033B34F41-L000045](../../tests/test_source_metadata_audit.py#L45) | 45 | `"    audit = result[\"source_metadata_audit\"]"` | — |
-| [SRC-D033B34F41-L000046](../../tests/test_source_metadata_audit.py#L46) | 46 | `"    assert audit[\"status\"] == \"minimum_metadata_present\""` | — |
-| [SRC-D033B34F41-L000047](../../tests/test_source_metadata_audit.py#L47) | 47 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000048](../../tests/test_source_metadata_audit.py#L48) | 48 | `"    assert audit[\"sources_missing_publisher_identity_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000049](../../tests/test_source_metadata_audit.py#L49) | 49 | `"    assert audit[\"sources_missing_publication_date_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000050](../../tests/test_source_metadata_audit.py#L50) | 50 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000051](../../tests/test_source_metadata_audit.py#L51) | 51 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000052](../../tests/test_source_metadata_audit.py#L52) | 52 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000053](../../tests/test_source_metadata_audit.py#L53) | 53 | `"    assert audit[\"semantic_verification\"] is False"` | — |
-| [SRC-D033B34F41-L000054](../../tests/test_source_metadata_audit.py#L54) | 54 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
-| [SRC-D033B34F41-L000055](../../tests/test_source_metadata_audit.py#L55) | 55 | `""` | — |
-| [SRC-D033B34F41-L000056](../../tests/test_source_metadata_audit.py#L56) | 56 | `""` | — |
-| [SRC-D033B34F41-L000057](../../tests/test_source_metadata_audit.py#L57) | 57 | `"def test_zero_sources_are_not_reported_as_metadata_complete():"` | — |
-| [SRC-D033B34F41-L000058](../../tests/test_source_metadata_audit.py#L58) | 58 | `"    result = audit_answer_integrity("` | — |
-| [SRC-D033B34F41-L000059](../../tests/test_source_metadata_audit.py#L59) | 59 | `"        \"ما عدد سكان القاهرة؟\","` | — |
-| [SRC-D033B34F41-L000060](../../tests/test_source_metadata_audit.py#L60) | 60 | `"        \"لا تتوفر لدي مصادر قابلة للمراجعة.\","` | — |
-| [SRC-D033B34F41-L000061](../../tests/test_source_metadata_audit.py#L61) | 61 | `"        [],"` | — |
-| [SRC-D033B34F41-L000062](../../tests/test_source_metadata_audit.py#L62) | 62 | `"    )"` | — |
-| [SRC-D033B34F41-L000063](../../tests/test_source_metadata_audit.py#L63) | 63 | `""` | — |
-| [SRC-D033B34F41-L000064](../../tests/test_source_metadata_audit.py#L64) | 64 | `"    audit = result[\"source_metadata_audit\"]"` | — |

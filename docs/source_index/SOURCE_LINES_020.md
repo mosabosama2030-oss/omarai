@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D57B0BB030-L000031 إلى SRC-E599346ABE-L000657
+- النطاق: SRC-D57B0BB030-L000022 إلى SRC-E599346ABE-L000648
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D57B0BB030-L000022](../DEPLOY_RENDER_AR.md#L22) | 22 | ``"7. افتح الواجهة، وأدخل `OMARAI_ACCESS_TOKEN` في خانة رمز الوصول. اضغط «اختبار حي للإنترنت والنموذج» وتحقق من كل حالة."`` | — |
+| [SRC-D57B0BB030-L000023](../DEPLOY_RENDER_AR.md#L23) | 23 | `"8. لا تعتبر النشر مقبولًا حتى ينجح سؤال عربي فعلي من الواجهة وتظهر مصادر قابلة للفتح."` | — |
+| [SRC-D57B0BB030-L000024](../DEPLOY_RENDER_AR.md#L24) | 24 | `""` | — |
+| [SRC-D57B0BB030-L000025](../DEPLOY_RENDER_AR.md#L25) | 25 | `"## ربط النسخة المنشورة بالمصدر"` | — |
+| [SRC-D57B0BB030-L000026](../DEPLOY_RENDER_AR.md#L26) | 26 | `""` | — |
+| [SRC-D57B0BB030-L000027](../DEPLOY_RENDER_AR.md#L27) | 27 | ``"يعرض Omarai في `/api/health` `build.sha` و`build.sha_source`. يفضّل التطبيق SHA المخبوز داخل الصورة؛ وإذا لم يوجد، يتحقق من متغير Render الرسمي `RENDER_GIT_COMMIT`. بعد النشر يجب أن يطابق SHA الالتزام المقصود. شغّل hosted smoke بعد ضبط أسراره؛ سيقارن الخدمة بالـSHA الموجود في الفرع الذي شُغّل منه الاختبار، ولذلك يفشل بأمان إذا كانت الخدمة لم تتحدث بعد."`` | — |
+| [SRC-D57B0BB030-L000028](../DEPLOY_RENDER_AR.md#L28) | 28 | `""` | — |
+| [SRC-D57B0BB030-L000029](../DEPLOY_RENDER_AR.md#L29) | 29 | `"## توليد رمز الوصول"` | — |
+| [SRC-D57B0BB030-L000030](../DEPLOY_RENDER_AR.md#L30) | 30 | `""` | — |
 | [SRC-D57B0BB030-L000031](../DEPLOY_RENDER_AR.md#L31) | 31 | `"ولّد رمزًا مستقلًا قويًا على جهازك، باستخدام Python:"` | — |
 | [SRC-D57B0BB030-L000032](../DEPLOY_RENDER_AR.md#L32) | 32 | `""` | — |
 | [SRC-D57B0BB030-L000033](../DEPLOY_RENDER_AR.md#L33) | 33 | ````"```bash"```` | — |
@@ -825,12 +834,3 @@
 | [SRC-E599346ABE-L000646](../generate_index.py#L646) | 646 | `"            expected_lines_by_file[file] = []"` | — |
 | [SRC-E599346ABE-L000647](../generate_index.py#L647) | 647 | `"            continue"` | — |
 | [SRC-E599346ABE-L000648](../generate_index.py#L648) | 648 | `"        expected_contents = source.splitlines()"` | — |
-| [SRC-E599346ABE-L000649](../generate_index.py#L649) | 649 | `"        expected_lines_by_file[file] = expected_contents"` | — |
-| [SRC-E599346ABE-L000650](../generate_index.py#L650) | 650 | `"        if len(expected_contents) != item.line_count:"` | — |
-| [SRC-E599346ABE-L000651](../generate_index.py#L651) | 651 | `"            failures.append("` | — |
-| [SRC-E599346ABE-L000652](../generate_index.py#L652) | 652 | `"                f\"{file}: تغير عدد الأسطر بعد إعداد الجرد \""` | — |
-| [SRC-E599346ABE-L000653](../generate_index.py#L653) | 653 | `"                f\"(الجرد {item.line_count}، الحالي {len(expected_contents)})\""` | — |
-| [SRC-E599346ABE-L000654](../generate_index.py#L654) | 654 | `"            )"` | — |
-| [SRC-E599346ABE-L000655](../generate_index.py#L655) | 655 | `""` | — |
-| [SRC-E599346ABE-L000656](../generate_index.py#L656) | 656 | `"    actual_records_by_file: dict[str, dict[int, IndexedLine]] = {"` | — |
-| [SRC-E599346ABE-L000657](../generate_index.py#L657) | 657 | `"        file: {} for file in eligible_files"` | — |

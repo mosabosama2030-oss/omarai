@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4CCB1F172B-L000144 إلى SRC-1C77C97630-L000023
+- النطاق: SRC-4CCB1F172B-L000090 إلى SRC-B0DE4359ED-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4CCB1F172B-L000090](../../tests/test_answer_quality_corpus.py#L90) | 90 | `"    assert data.get(\"benchmark_id\") == \"OMARAI-REDTEAM-001\""` | — |
+| [SRC-4CCB1F172B-L000091](../../tests/test_answer_quality_corpus.py#L91) | 91 | `"    assert isinstance(data.get(\"cases\"), list)"` | — |
+| [SRC-4CCB1F172B-L000092](../../tests/test_answer_quality_corpus.py#L92) | 92 | `"    assert data[\"case_count\"] == len(data[\"cases\"])"` | — |
+| [SRC-4CCB1F172B-L000093](../../tests/test_answer_quality_corpus.py#L93) | 93 | `""` | — |
+| [SRC-4CCB1F172B-L000094](../../tests/test_answer_quality_corpus.py#L94) | 94 | `""` | — |
+| [SRC-4CCB1F172B-L000095](../../tests/test_answer_quality_corpus.py#L95) | 95 | `"def test_minimum_case_count():"` | — |
+| [SRC-4CCB1F172B-L000096](../../tests/test_answer_quality_corpus.py#L96) | 96 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000097](../../tests/test_answer_quality_corpus.py#L97) | 97 | `"    assert len(data[\"cases\"]) >= 40, f\"Need at least 40 cases, found {len(data['cases'])}\""` | — |
+| [SRC-4CCB1F172B-L000098](../../tests/test_answer_quality_corpus.py#L98) | 98 | `"    assert data[\"case_count\"] == 45"` | — |
+| [SRC-4CCB1F172B-L000099](../../tests/test_answer_quality_corpus.py#L99) | 99 | `""` | — |
+| [SRC-4CCB1F172B-L000100](../../tests/test_answer_quality_corpus.py#L100) | 100 | `""` | — |
+| [SRC-4CCB1F172B-L000101](../../tests/test_answer_quality_corpus.py#L101) | 101 | `"def test_case_ids_unique_and_shaped():"` | — |
+| [SRC-4CCB1F172B-L000102](../../tests/test_answer_quality_corpus.py#L102) | 102 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000103](../../tests/test_answer_quality_corpus.py#L103) | 103 | `"    ids = [c[\"case_id\"] for c in data[\"cases\"]]"` | — |
+| [SRC-4CCB1F172B-L000104](../../tests/test_answer_quality_corpus.py#L104) | 104 | `"    assert len(ids) == len(set(ids)), \"Duplicate case_id values found\""` | — |
+| [SRC-4CCB1F172B-L000105](../../tests/test_answer_quality_corpus.py#L105) | 105 | `"    for case_id in ids:"` | — |
+| [SRC-4CCB1F172B-L000106](../../tests/test_answer_quality_corpus.py#L106) | 106 | `"        assert CASE_ID_RE.match(case_id), f\"Bad case_id shape: {case_id}\""` | — |
+| [SRC-4CCB1F172B-L000107](../../tests/test_answer_quality_corpus.py#L107) | 107 | `"    assert set(ids) == {f\"AQ-{i:03d}\" for i in range(1, 46)}"` | — |
+| [SRC-4CCB1F172B-L000108](../../tests/test_answer_quality_corpus.py#L108) | 108 | `""` | — |
+| [SRC-4CCB1F172B-L000109](../../tests/test_answer_quality_corpus.py#L109) | 109 | `""` | — |
+| [SRC-4CCB1F172B-L000110](../../tests/test_answer_quality_corpus.py#L110) | 110 | `"def test_required_fields_and_types():"` | — |
+| [SRC-4CCB1F172B-L000111](../../tests/test_answer_quality_corpus.py#L111) | 111 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000112](../../tests/test_answer_quality_corpus.py#L112) | 112 | `"    for case in data[\"cases\"]:"` | — |
+| [SRC-4CCB1F172B-L000113](../../tests/test_answer_quality_corpus.py#L113) | 113 | `"        missing = REQUIRED_CASE_FIELDS - set(case)"` | — |
+| [SRC-4CCB1F172B-L000114](../../tests/test_answer_quality_corpus.py#L114) | 114 | `"        assert not missing, f\"{case.get('case_id')}: missing {missing}\""` | — |
+| [SRC-4CCB1F172B-L000115](../../tests/test_answer_quality_corpus.py#L115) | 115 | `"        assert isinstance(case[\"case_id\"], str) and case[\"case_id\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000116](../../tests/test_answer_quality_corpus.py#L116) | 116 | `"        assert isinstance(case[\"category\"], str) and case[\"category\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000117](../../tests/test_answer_quality_corpus.py#L117) | 117 | `"        assert isinstance(case[\"language\"], str) and case[\"language\"].strip()"` | — |
+| [SRC-4CCB1F172B-L000118](../../tests/test_answer_quality_corpus.py#L118) | 118 | `"        assert isinstance(case[\"question\"], str) and len(case[\"question\"].strip()) >= 2"` | — |
+| [SRC-4CCB1F172B-L000119](../../tests/test_answer_quality_corpus.py#L119) | 119 | `"        assert case[\"expected_strategy\"] in ALLOWED_STRATEGIES"` | — |
+| [SRC-4CCB1F172B-L000120](../../tests/test_answer_quality_corpus.py#L120) | 120 | `"        assert case[\"evaluation_mode\"] in ALLOWED_EVAL_MODES"` | — |
+| [SRC-4CCB1F172B-L000121](../../tests/test_answer_quality_corpus.py#L121) | 121 | `"        assert isinstance(case[\"required_behaviors\"], list) and case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000122](../../tests/test_answer_quality_corpus.py#L122) | 122 | `"        assert isinstance(case[\"forbidden_behaviors\"], list) and case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000123](../../tests/test_answer_quality_corpus.py#L123) | 123 | `"        assert isinstance(case[\"failure_conditions\"], list) and case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000124](../../tests/test_answer_quality_corpus.py#L124) | 124 | `"        assert isinstance(case[\"evidence_fixture\"], dict)"` | — |
+| [SRC-4CCB1F172B-L000125](../../tests/test_answer_quality_corpus.py#L125) | 125 | `"        for item in ("` | — |
+| [SRC-4CCB1F172B-L000126](../../tests/test_answer_quality_corpus.py#L126) | 126 | `"            case[\"required_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000127](../../tests/test_answer_quality_corpus.py#L127) | 127 | `"            + case[\"forbidden_behaviors\"]"` | — |
+| [SRC-4CCB1F172B-L000128](../../tests/test_answer_quality_corpus.py#L128) | 128 | `"            + case[\"failure_conditions\"]"` | — |
+| [SRC-4CCB1F172B-L000129](../../tests/test_answer_quality_corpus.py#L129) | 129 | `"        ):"` | — |
+| [SRC-4CCB1F172B-L000130](../../tests/test_answer_quality_corpus.py#L130) | 130 | `"            assert isinstance(item, str) and item.strip(), ("` | — |
+| [SRC-4CCB1F172B-L000131](../../tests/test_answer_quality_corpus.py#L131) | 131 | `"                f\"{case['case_id']}: empty behavior/condition\""` | — |
+| [SRC-4CCB1F172B-L000132](../../tests/test_answer_quality_corpus.py#L132) | 132 | `"            )"` | — |
+| [SRC-4CCB1F172B-L000133](../../tests/test_answer_quality_corpus.py#L133) | 133 | `""` | — |
+| [SRC-4CCB1F172B-L000134](../../tests/test_answer_quality_corpus.py#L134) | 134 | `""` | — |
+| [SRC-4CCB1F172B-L000135](../../tests/test_answer_quality_corpus.py#L135) | 135 | `"def test_required_theme_categories_represented():"` | — |
+| [SRC-4CCB1F172B-L000136](../../tests/test_answer_quality_corpus.py#L136) | 136 | `"    data = _load_corpus()"` | — |
+| [SRC-4CCB1F172B-L000137](../../tests/test_answer_quality_corpus.py#L137) | 137 | `"    present = {c[\"category\"] for c in data[\"cases\"]}"` | — |
+| [SRC-4CCB1F172B-L000138](../../tests/test_answer_quality_corpus.py#L138) | 138 | `"    missing = REQUIRED_THEME_CATEGORIES - present"` | — |
+| [SRC-4CCB1F172B-L000139](../../tests/test_answer_quality_corpus.py#L139) | 139 | `"    assert not missing, f\"Missing required categories: {sorted(missing)}\""` | — |
+| [SRC-4CCB1F172B-L000140](../../tests/test_answer_quality_corpus.py#L140) | 140 | `""` | — |
+| [SRC-4CCB1F172B-L000141](../../tests/test_answer_quality_corpus.py#L141) | 141 | `""` | — |
+| [SRC-4CCB1F172B-L000142](../../tests/test_answer_quality_corpus.py#L142) | 142 | `"def test_no_empty_or_exact_duplicate_questions():"` | — |
+| [SRC-4CCB1F172B-L000143](../../tests/test_answer_quality_corpus.py#L143) | 143 | `"    data = _load_corpus()"` | — |
 | [SRC-4CCB1F172B-L000144](../../tests/test_answer_quality_corpus.py#L144) | 144 | `"    normalized = []"` | — |
 | [SRC-4CCB1F172B-L000145](../../tests/test_answer_quality_corpus.py#L145) | 145 | `"    for case in data[\"cases\"]:"` | — |
 | [SRC-4CCB1F172B-L000146](../../tests/test_answer_quality_corpus.py#L146) | 146 | `"        q = \" \".join(case[\"question\"].casefold().split())"` | — |
@@ -798,66 +852,3 @@
 | [SRC-B0DE4359ED-L000001](../../tests/test_answer_quality_unknown_tool_status.py#L1) | 1 | `"from __future__ import annotations"` | — |
 | [SRC-B0DE4359ED-L000002](../../tests/test_answer_quality_unknown_tool_status.py#L2) | 2 | `""` | — |
 | [SRC-B0DE4359ED-L000003](../../tests/test_answer_quality_unknown_tool_status.py#L3) | 3 | `"import importlib.util"` | — |
-| [SRC-B0DE4359ED-L000004](../../tests/test_answer_quality_unknown_tool_status.py#L4) | 4 | `"from pathlib import Path"` | — |
-| [SRC-B0DE4359ED-L000005](../../tests/test_answer_quality_unknown_tool_status.py#L5) | 5 | `""` | — |
-| [SRC-B0DE4359ED-L000006](../../tests/test_answer_quality_unknown_tool_status.py#L6) | 6 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-B0DE4359ED-L000007](../../tests/test_answer_quality_unknown_tool_status.py#L7) | 7 | `"SCRIPT = ROOT / \"scripts\" / \"run_answer_quality_benchmark.py\""` | — |
-| [SRC-B0DE4359ED-L000008](../../tests/test_answer_quality_unknown_tool_status.py#L8) | 8 | `""` | — |
-| [SRC-B0DE4359ED-L000009](../../tests/test_answer_quality_unknown_tool_status.py#L9) | 9 | `""` | — |
-| [SRC-B0DE4359ED-L000010](../../tests/test_answer_quality_unknown_tool_status.py#L10) | 10 | `"def test_unknown_required_tool_status_is_not_complete():"` | — |
-| [SRC-B0DE4359ED-L000011](../../tests/test_answer_quality_unknown_tool_status.py#L11) | 11 | `"    spec = importlib.util.spec_from_file_location(\"answer_quality_runner_status_test\", SCRIPT)"` | — |
-| [SRC-B0DE4359ED-L000012](../../tests/test_answer_quality_unknown_tool_status.py#L12) | 12 | `"    assert spec and spec.loader"` | — |
-| [SRC-B0DE4359ED-L000013](../../tests/test_answer_quality_unknown_tool_status.py#L13) | 13 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-B0DE4359ED-L000014](../../tests/test_answer_quality_unknown_tool_status.py#L14) | 14 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-B0DE4359ED-L000015](../../tests/test_answer_quality_unknown_tool_status.py#L15) | 15 | `"    metrics = module._response_metrics("` | — |
-| [SRC-B0DE4359ED-L000016](../../tests/test_answer_quality_unknown_tool_status.py#L16) | 16 | `"        {"` | — |
-| [SRC-B0DE4359ED-L000017](../../tests/test_answer_quality_unknown_tool_status.py#L17) | 17 | `"            \"task_understanding\": {"` | — |
-| [SRC-B0DE4359ED-L000018](../../tests/test_answer_quality_unknown_tool_status.py#L18) | 18 | `"                \"tool_execution\": {"` | — |
-| [SRC-B0DE4359ED-L000019](../../tests/test_answer_quality_unknown_tool_status.py#L19) | 19 | `"                    \"required_tools\": [\"web_search\"],"` | — |
-| [SRC-B0DE4359ED-L000020](../../tests/test_answer_quality_unknown_tool_status.py#L20) | 20 | `"                    \"tool_status_matrix\": [{"` | — |
-| [SRC-B0DE4359ED-L000021](../../tests/test_answer_quality_unknown_tool_status.py#L21) | 21 | `"                        \"tool\": \"web_search\","` | — |
-| [SRC-B0DE4359ED-L000022](../../tests/test_answer_quality_unknown_tool_status.py#L22) | 22 | `"                        \"required_by_task_spec\": True,"` | — |
-| [SRC-B0DE4359ED-L000023](../../tests/test_answer_quality_unknown_tool_status.py#L23) | 23 | `"                        \"status\": \"completed_maybe\","` | — |
-| [SRC-B0DE4359ED-L000024](../../tests/test_answer_quality_unknown_tool_status.py#L24) | 24 | `"                    }],"` | — |
-| [SRC-B0DE4359ED-L000025](../../tests/test_answer_quality_unknown_tool_status.py#L25) | 25 | `"                },"` | — |
-| [SRC-B0DE4359ED-L000026](../../tests/test_answer_quality_unknown_tool_status.py#L26) | 26 | `"            },"` | — |
-| [SRC-B0DE4359ED-L000027](../../tests/test_answer_quality_unknown_tool_status.py#L27) | 27 | `"            \"search_report\": {\"search_outcome\": \"attempted_with_usable_sources\"},"` | — |
-| [SRC-B0DE4359ED-L000028](../../tests/test_answer_quality_unknown_tool_status.py#L28) | 28 | `"            \"sources\": [{\"url\": \"https://example.org\"}],"` | — |
-| [SRC-B0DE4359ED-L000029](../../tests/test_answer_quality_unknown_tool_status.py#L29) | 29 | `"        },"` | — |
-| [SRC-B0DE4359ED-L000030](../../tests/test_answer_quality_unknown_tool_status.py#L30) | 30 | `"        expected_strategy=\"web_search\","` | — |
-| [SRC-B0DE4359ED-L000031](../../tests/test_answer_quality_unknown_tool_status.py#L31) | 31 | `"        transport_ok=True,"` | — |
-| [SRC-B0DE4359ED-L000032](../../tests/test_answer_quality_unknown_tool_status.py#L32) | 32 | `"    )"` | — |
-| [SRC-B0DE4359ED-L000033](../../tests/test_answer_quality_unknown_tool_status.py#L33) | 33 | `"    assert metrics[\"required_tool_statuses\"][0][\"status_valid\"] is False"` | — |
-| [SRC-B0DE4359ED-L000034](../../tests/test_answer_quality_unknown_tool_status.py#L34) | 34 | `"    assert metrics[\"required_tool_matrix_complete\"] is False"` | — |
-## اختبارات
-
-### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
-| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
-| [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
-| [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
-| [SRC-1C77C97630-L000008](../../tests/test_answer_validation.py#L8) | 8 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-1C77C97630-L000009](../../tests/test_answer_validation.py#L9) | 9 | `""` | — |
-| [SRC-1C77C97630-L000010](../../tests/test_answer_validation.py#L10) | 10 | `""` | — |
-| [SRC-1C77C97630-L000011](../../tests/test_answer_validation.py#L11) | 11 | `"def test_numeric_screen_accepts_arabic_digits_and_thousands_formatting():"` | — |
-| [SRC-1C77C97630-L000012](../../tests/test_answer_validation.py#L12) | 12 | `"    result = audit_answer_integrity("` | — |
-| [SRC-1C77C97630-L000013](../../tests/test_answer_validation.py#L13) | 13 | `"        \"ما السعر المذكور في 2025؟\","` | — |
-| [SRC-1C77C97630-L000014](../../tests/test_answer_validation.py#L14) | 14 | `"        \"السعر ١٠٠٬٠٠٠ جنيه في 2025 [المصدر 1].\","` | — |
-| [SRC-1C77C97630-L000015](../../tests/test_answer_validation.py#L15) | 15 | `"        [{"` | — |
-| [SRC-1C77C97630-L000016](../../tests/test_answer_validation.py#L16) | 16 | `"            \"title\": \"تفاصيل السعر\","` | — |
-| [SRC-1C77C97630-L000017](../../tests/test_answer_validation.py#L17) | 17 | `"            \"snippet\": \"السعر 100,000 جنيه\","` | — |
-| [SRC-1C77C97630-L000018](../../tests/test_answer_validation.py#L18) | 18 | `"            \"page_text\": \"السعر 100,000 جنيه\","` | — |
-| [SRC-1C77C97630-L000019](../../tests/test_answer_validation.py#L19) | 19 | `"            \"page_fetched\": True,"` | — |
-| [SRC-1C77C97630-L000020](../../tests/test_answer_validation.py#L20) | 20 | `"            \"published_at\": \"\","` | — |
-| [SRC-1C77C97630-L000021](../../tests/test_answer_validation.py#L21) | 21 | `"        }],"` | — |
-| [SRC-1C77C97630-L000022](../../tests/test_answer_validation.py#L22) | 22 | `"        [\"السعر\"],"` | — |
-| [SRC-1C77C97630-L000023](../../tests/test_answer_validation.py#L23) | 23 | `"    )"` | — |

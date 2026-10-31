@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002761 إلى SRC-1AE03B9EC3-L003560
+- النطاق: SRC-1AE03B9EC3-L002752 إلى SRC-1AE03B9EC3-L003551
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002752](../../agents/web_agent.py#L2752) | 2752 | `"                        source[\"page_fetch_status\"] = ("` | — |
+| [SRC-1AE03B9EC3-L002753](../../agents/web_agent.py#L2753) | 2753 | `"                            observed_status"` | — |
+| [SRC-1AE03B9EC3-L002754](../../agents/web_agent.py#L2754) | 2754 | `"                            if observed_status in {\"content_extracted\", \"partial_extraction\"}"` | — |
+| [SRC-1AE03B9EC3-L002755](../../agents/web_agent.py#L2755) | 2755 | `"                            else \"partial_extraction\""` | — |
+| [SRC-1AE03B9EC3-L002756](../../agents/web_agent.py#L2756) | 2756 | `"                            if len(page_text) >= MAX_PAGE_TEXT_CHARS"` | — |
+| [SRC-1AE03B9EC3-L002757](../../agents/web_agent.py#L2757) | 2757 | `"                            else \"content_extracted\""` | — |
+| [SRC-1AE03B9EC3-L002758](../../agents/web_agent.py#L2758) | 2758 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L002759](../../agents/web_agent.py#L2759) | 2759 | `"                        if error_class:"` | — |
+| [SRC-1AE03B9EC3-L002760](../../agents/web_agent.py#L2760) | 2760 | `"                            source[\"page_fetch_error_class\"] = str(error_class)[:80]"` | — |
 | [SRC-1AE03B9EC3-L002761](../../agents/web_agent.py#L2761) | 2761 | `"                        else:"` | — |
 | [SRC-1AE03B9EC3-L002762](../../agents/web_agent.py#L2762) | 2762 | `"                            source.pop(\"page_fetch_error_class\", None)"` | — |
 | [SRC-1AE03B9EC3-L002763](../../agents/web_agent.py#L2763) | 2763 | `"                        fetched_count += 1"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L003549](../../agents/web_agent.py#L3549) | 3549 | `"            ))[:MAX_PLAN_QUERIES]"` | — |
 | [SRC-1AE03B9EC3-L003550](../../agents/web_agent.py#L3550) | 3550 | `"        return plan"` | — |
 | [SRC-1AE03B9EC3-L003551](../../agents/web_agent.py#L3551) | 3551 | `""` | — |
-| [SRC-1AE03B9EC3-L003552](../../agents/web_agent.py#L3552) | 3552 | `"    def _generate("` | — |
-| [SRC-1AE03B9EC3-L003553](../../agents/web_agent.py#L3553) | 3553 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003554](../../agents/web_agent.py#L3554) | 3554 | `"        question: str,"` | — |
-| [SRC-1AE03B9EC3-L003555](../../agents/web_agent.py#L3555) | 3555 | `"        history: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003556](../../agents/web_agent.py#L3556) | 3556 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L003557](../../agents/web_agent.py#L3557) | 3557 | `"        search_warning: str \| None,"` | — |
-| [SRC-1AE03B9EC3-L003558](../../agents/web_agent.py#L3558) | 3558 | `"        research_plan: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003559](../../agents/web_agent.py#L3559) | 3559 | `"        search_report: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003560](../../agents/web_agent.py#L3560) | 3560 | `"    ) -> str:"` | — |
