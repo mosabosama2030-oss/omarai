@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **121**
 - ملفات Python المحللة: **75**
-- تعريفات Python المفهرسة: **1534**
+- تعريفات Python المفهرسة: **1535**
 - تعريفات Python موثقة بوجود Docstring: **257**
-- تعريفات Python بلا Docstring: **968**
+- تعريفات Python بلا Docstring: **969**
 - تعريفات لا ينطبق عليها Docstring: **309**
-- الرموز الساكنة الإضافية: **1884**
-- الأسطر النصية المفهرسة حرفيًا: **40640**
+- الرموز الساكنة الإضافية: **1885**
+- الأسطر النصية المفهرسة حرفيًا: **40672**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -96,7 +96,7 @@
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 24754 | 531 | جرد الملف + AST Python |
-| FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 12898 | 294 | جرد الملف + AST Python |
+| FILE-A8360B1B03 | ملفات أخرى | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L1) | Python | 13716 | 322 | جرد الملف + AST Python |
 | FILE-4FFD5AFC54 | ملفات أخرى | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L1) | Python | 29961 | 720 | جرد الملف + AST Python |
 | FILE-03FF422A16 | ملفات أخرى | [scripts/score_answer_quality_reviews.py](../scripts/score_answer_quality_reviews.py#L1) | Python | 10934 | 245 | جرد الملف + AST Python |
 | FILE-547CAF1FE3 | ملفات أخرى | [scripts/sqlite_backup_restore.py](../scripts/sqlite_backup_restore.py#L1) | Python | 6253 | 152 | جرد الملف + AST Python |
@@ -124,7 +124,7 @@
 | FILE-FA4E1423C3 | اختبارات | [tests/test_generate_index.py](../tests/test_generate_index.py#L1) | Python | 21144 | 475 | جرد الملف + AST Python |
 | FILE-829A979985 | اختبارات | [tests/test_generation_acceptance_matrix.py](../tests/test_generation_acceptance_matrix.py#L1) | Python | 23466 | 616 | جرد الملف + AST Python |
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 10761 | 289 | جرد الملف + AST Python |
-| FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7102 | 192 | جرد الملف + AST Python |
+| FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 7323 | 196 | جرد الملف + AST Python |
 | FILE-1BB2FDD5B7 | اختبارات | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L1) | Python | 4248 | 109 | جرد الملف + AST Python |
 | FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 12406 | 282 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10393 | 243 | جرد الملف + AST Python |
@@ -778,14 +778,15 @@
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L316) | دالة | compare_runs | لا توجد Docstring. | ناقص | 316 | [SRC-70795F4B61-L000316](../scripts/compare_answer_quality_runs.py#L316) |
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L498) | دالة | main | لا توجد Docstring. | ناقص | 498 | [SRC-70795F4B61-L000498](../scripts/compare_answer_quality_runs.py#L498) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L17) | متغير/ثابت Python | LIVE_TEST_QUESTION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-A8360B1B03-L000017](../scripts/hosted_smoke_test.py#L17) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | SmokeError | A live acceptance check failed. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L24) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 24 | [SRC-A8360B1B03-L000024](../scripts/hosted_smoke_test.py#L24) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L28) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 28 | [SRC-A8360B1B03-L000028](../scripts/hosted_smoke_test.py#L28) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L38) | دالة | _SameOriginRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 38 | [SRC-A8360B1B03-L000038](../scripts/hosted_smoke_test.py#L38) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L53) | دالة | normalize_origin | لا توجد Docstring. | ناقص | 53 | [SRC-A8360B1B03-L000053](../scripts/hosted_smoke_test.py#L53) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L77) | دالة | request_json | لا توجد Docstring. | ناقص | 77 | [SRC-A8360B1B03-L000077](../scripts/hosted_smoke_test.py#L77) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L104) | دالة | run_smoke | لا توجد Docstring. | ناقص | 104 | [SRC-A8360B1B03-L000104](../scripts/hosted_smoke_test.py#L104) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L250) | دالة | main | لا توجد Docstring. | ناقص | 250 | [SRC-A8360B1B03-L000250](../scripts/hosted_smoke_test.py#L250) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L20) | كلاس | SmokeError | A live acceptance check failed, optionally carrying a safe partial report. | موثق | 20 | [SRC-A8360B1B03-L000020](../scripts/hosted_smoke_test.py#L20) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L23) | دالة | SmokeError.__init__ | لا توجد Docstring. | ناقص | 23 | [SRC-A8360B1B03-L000023](../scripts/hosted_smoke_test.py#L23) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L28) | كلاس | _SameOriginRedirectHandler | Never forward a bearer token to a different origin during an HTTP redirect. | موثق | 28 | [SRC-A8360B1B03-L000028](../scripts/hosted_smoke_test.py#L28) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L32) | دالة | _SameOriginRedirectHandler._origin | لا توجد Docstring. | ناقص | 32 | [SRC-A8360B1B03-L000032](../scripts/hosted_smoke_test.py#L32) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L42) | دالة | _SameOriginRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 42 | [SRC-A8360B1B03-L000042](../scripts/hosted_smoke_test.py#L42) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L57) | دالة | normalize_origin | لا توجد Docstring. | ناقص | 57 | [SRC-A8360B1B03-L000057](../scripts/hosted_smoke_test.py#L57) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L81) | دالة | request_json | لا توجد Docstring. | ناقص | 81 | [SRC-A8360B1B03-L000081](../scripts/hosted_smoke_test.py#L81) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L108) | دالة | run_smoke | لا توجد Docstring. | ناقص | 108 | [SRC-A8360B1B03-L000108](../scripts/hosted_smoke_test.py#L108) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L272) | دالة | main | لا توجد Docstring. | ناقص | 272 | [SRC-A8360B1B03-L000272](../scripts/hosted_smoke_test.py#L272) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L39) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 39 | [SRC-4FFD5AFC54-L000039](../scripts/run_answer_quality_benchmark.py#L39) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L40) | متغير/ثابت Python | DEFAULT_CORPUS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 40 | [SRC-4FFD5AFC54-L000040](../scripts/run_answer_quality_benchmark.py#L40) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L41) | متغير/ثابت Python | MAX_RESPONSE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 41 | [SRC-4FFD5AFC54-L000041](../scripts/run_answer_quality_benchmark.py#L41) |
@@ -1177,8 +1178,8 @@
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L156) | دالة | test_smoke_refuses_missing_or_short_access_token | لا توجد Docstring. | ناقص | 156 | [SRC-1A176AD4F0-L000156](../tests/test_hosted_smoke.py#L156) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L161) | دالة | test_smoke_fails_when_agent_returns_no_live_source | لا توجد Docstring. | ناقص | 161 | [SRC-1A176AD4F0-L000161](../tests/test_hosted_smoke.py#L161) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L164) | دالة | test_smoke_fails_when_agent_returns_no_live_source.without_sources | لا توجد Docstring. | ناقص | 164 | [SRC-1A176AD4F0-L000164](../tests/test_hosted_smoke.py#L164) |
-| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L177) | دالة | test_smoke_rejects_invalid_expected_source_sha | لا توجد Docstring. | ناقص | 177 | [SRC-1A176AD4F0-L000177](../tests/test_hosted_smoke.py#L177) |
-| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L184) | دالة | test_smoke_rejects_deployed_build_sha_mismatch | لا توجد Docstring. | ناقص | 184 | [SRC-1A176AD4F0-L000184](../tests/test_hosted_smoke.py#L184) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L181) | دالة | test_smoke_rejects_invalid_expected_source_sha | لا توجد Docstring. | ناقص | 181 | [SRC-1A176AD4F0-L000181](../tests/test_hosted_smoke.py#L181) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L188) | دالة | test_smoke_rejects_deployed_build_sha_mismatch | لا توجد Docstring. | ناقص | 188 | [SRC-1A176AD4F0-L000188](../tests/test_hosted_smoke.py#L188) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L7) | دالة | test_hosted_smoke_returns_exact_question_answer_and_sources | لا توجد Docstring. | ناقص | 7 | [SRC-1BB2FDD5B7-L000007](../tests/test_hosted_smoke_transcript.py#L7) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L10) | دالة | test_hosted_smoke_returns_exact_question_answer_and_sources.fake_request_json | لا توجد Docstring. | ناقص | 10 | [SRC-1BB2FDD5B7-L000010](../tests/test_hosted_smoke_transcript.py#L10) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L69) | دالة | test_hosted_smoke_allows_no_token_only_for_loopback_dev | لا توجد Docstring. | ناقص | 69 | [SRC-1BB2FDD5B7-L000069](../tests/test_hosted_smoke_transcript.py#L69) |
@@ -2954,10 +2955,10 @@
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L395) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED_OR_INCOMPLETE_RECONCILIATION | 395 | [SRC-70795F4B61-L000395](../scripts/compare_answer_quality_runs.py#L395) |
 | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L492) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES | 492 | [SRC-70795F4B61-L000492](../scripts/compare_answer_quality_runs.py#L492) |
 | [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LIVE_TEST_QUESTION | 17 | [SRC-A8360B1B03-L000017](../scripts/hosted_smoke_test.py#L17) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L120) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 120 | [SRC-A8360B1B03-L000120](../scripts/hosted_smoke_test.py#L120) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L138) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 138 | [SRC-A8360B1B03-L000138](../scripts/hosted_smoke_test.py#L138) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L252) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 252 | [SRC-A8360B1B03-L000252](../scripts/hosted_smoke_test.py#L252) |
-| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L256) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXPECTED_BUILD_SHA | 256 | [SRC-A8360B1B03-L000256](../scripts/hosted_smoke_test.py#L256) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L124) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 124 | [SRC-A8360B1B03-L000124](../scripts/hosted_smoke_test.py#L124) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 151 | [SRC-A8360B1B03-L000151](../scripts/hosted_smoke_test.py#L151) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L274) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 274 | [SRC-A8360B1B03-L000274](../scripts/hosted_smoke_test.py#L274) |
+| [scripts/hosted_smoke_test.py](../scripts/hosted_smoke_test.py#L278) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXPECTED_BUILD_SHA | 278 | [SRC-A8360B1B03-L000278](../scripts/hosted_smoke_test.py#L278) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 11 | [SRC-4FFD5AFC54-L000011](../scripts/run_answer_quality_benchmark.py#L11) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_CORPUS | 40 | [SRC-4FFD5AFC54-L000040](../scripts/run_answer_quality_benchmark.py#L40) |
 | [scripts/run_answer_quality_benchmark.py](../scripts/run_answer_quality_benchmark.py#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RESPONSE_BYTES | 41 | [SRC-4FFD5AFC54-L000041](../scripts/run_answer_quality_benchmark.py#L41) |
@@ -3154,6 +3155,7 @@
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L40) | مسار API/واجهة محتمل | /api/diagnostics | 40 | [SRC-1A176AD4F0-L000040](../tests/test_hosted_smoke.py#L40) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L52) | مسار API/واجهة محتمل | /api/agent | 52 | [SRC-1A176AD4F0-L000052](../tests/test_hosted_smoke.py#L52) |
 | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L157) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 157 | [SRC-1A176AD4F0-L000157](../tests/test_hosted_smoke.py#L157) |
+| [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L176) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LIVE_TEST_QUESTION | 176 | [SRC-1A176AD4F0-L000176](../tests/test_hosted_smoke.py#L176) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L12) | مسار API/واجهة محتمل | /api/health | 12 | [SRC-1BB2FDD5B7-L000012](../tests/test_hosted_smoke_transcript.py#L12) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L14) | مسار API/واجهة محتمل | /api/agent | 14 | [SRC-1BB2FDD5B7-L000014](../tests/test_hosted_smoke_transcript.py#L14) |
 | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L16) | مسار API/واجهة محتمل | /api/diagnostics | 16 | [SRC-1BB2FDD5B7-L000016](../tests/test_hosted_smoke_transcript.py#L16) |
