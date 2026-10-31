@@ -99,8 +99,10 @@ def test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies(mo
 
     class FakeResponse:
         status_code = 200
-        headers = {"content-length": "1"}
-        request = httpx.Request("GET", "https://provider.example/search")
+
+        def __init__(self):
+            self.headers = {"content-length": "1"}
+            self.request = httpx.Request("GET", "https://provider.example/search")
 
         def __enter__(self):
             return self
@@ -158,8 +160,10 @@ def test_bounded_provider_transport_returns_buffered_response(monkeypatch):
 
     class FakeResponse:
         status_code = 200
-        headers = {"content-type": "application/json"}
-        request = httpx.Request("POST", "https://provider.example/search")
+
+        def __init__(self):
+            self.headers = {"content-type": "application/json"}
+            self.request = httpx.Request("POST", "https://provider.example/search")
 
         def __enter__(self):
             return self
