@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000257 إلى SRC-686F71AA50-L000344
+- النطاق: SRC-8D00DCEC0D-L000257 إلى SRC-686F71AA50-L000267
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -290,11 +290,88 @@
 | [SRC-8D00DCEC0D-L000528](../../agents/sales_domain.py#L528) | 528 | `"        }"` | — |
 | [SRC-8D00DCEC0D-L000529](../../agents/sales_domain.py#L529) | 529 | `""` | — |
 | [SRC-8D00DCEC0D-L000530](../../agents/sales_domain.py#L530) | 530 | `""` | — |
-| [SRC-8D00DCEC0D-L000531](../../agents/sales_domain.py#L531) | 531 | `"def to_json_dict(value: ProductProfile \| MarketProfile \| DemandEvidence \| DemandSignal \| LeadQualification) -> dict[str, object]:"` | — |
-| [SRC-8D00DCEC0D-L000532](../../agents/sales_domain.py#L532) | 532 | `"    \"\"\"Serialize a supported domain object without silently dropping evidence fields.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000533](../../agents/sales_domain.py#L533) | 533 | `"    if not hasattr(value, \"to_dict\"):"` | — |
-| [SRC-8D00DCEC0D-L000534](../../agents/sales_domain.py#L534) | 534 | `"        raise TypeError(\"unsupported sales domain object\")"` | — |
-| [SRC-8D00DCEC0D-L000535](../../agents/sales_domain.py#L535) | 535 | `"    return value.to_dict()"` | — |
+| [SRC-8D00DCEC0D-L000531](../../agents/sales_domain.py#L531) | 531 | `""` | — |
+| [SRC-8D00DCEC0D-L000532](../../agents/sales_domain.py#L532) | 532 | `"MAX_BUYER_QUERY_COUNT = 8"` | — |
+| [SRC-8D00DCEC0D-L000533](../../agents/sales_domain.py#L533) | 533 | `""` | — |
+| [SRC-8D00DCEC0D-L000534](../../agents/sales_domain.py#L534) | 534 | `""` | — |
+| [SRC-8D00DCEC0D-L000535](../../agents/sales_domain.py#L535) | 535 | `"def build_buyer_queries("` | — |
+| [SRC-8D00DCEC0D-L000536](../../agents/sales_domain.py#L536) | 536 | `"    product: ProductProfile,"` | — |
+| [SRC-8D00DCEC0D-L000537](../../agents/sales_domain.py#L537) | 537 | `"    market: MarketProfile \| None = None,"` | — |
+| [SRC-8D00DCEC0D-L000538](../../agents/sales_domain.py#L538) | 538 | `"    *,"` | — |
+| [SRC-8D00DCEC0D-L000539](../../agents/sales_domain.py#L539) | 539 | `"    locale: str = \"auto\","` | — |
+| [SRC-8D00DCEC0D-L000540](../../agents/sales_domain.py#L540) | 540 | `"    existing_queries: Iterable[str] = (),"` | — |
+| [SRC-8D00DCEC0D-L000541](../../agents/sales_domain.py#L541) | 541 | `"    limit: int = MAX_BUYER_QUERY_COUNT,"` | — |
+| [SRC-8D00DCEC0D-L000542](../../agents/sales_domain.py#L542) | 542 | `") -> list[str]:"` | — |
+| [SRC-8D00DCEC0D-L000543](../../agents/sales_domain.py#L543) | 543 | `"    \"\"\"Build bounded, product-anchored buyer queries without sector-specific defaults."` | — |
+| [SRC-8D00DCEC0D-L000544](../../agents/sales_domain.py#L544) | 544 | `""` | — |
+| [SRC-8D00DCEC0D-L000545](../../agents/sales_domain.py#L545) | 545 | `"    Product-specific terms come only from ProductProfile. The default intent"` | — |
+| [SRC-8D00DCEC0D-L000546](../../agents/sales_domain.py#L546) | 546 | `"    vocabulary is sector-neutral; category-specific expansions must be supplied"` | — |
+| [SRC-8D00DCEC0D-L000547](../../agents/sales_domain.py#L547) | 547 | `"    by an explicit taxonomy/policy rather than silently defaulting to real estate."` | — |
+| [SRC-8D00DCEC0D-L000548](../../agents/sales_domain.py#L548) | 548 | `"    \"\"\""` | — |
+| [SRC-8D00DCEC0D-L000549](../../agents/sales_domain.py#L549) | 549 | `"    if not isinstance(product, ProductProfile):"` | — |
+| [SRC-8D00DCEC0D-L000550](../../agents/sales_domain.py#L550) | 550 | `"        raise TypeError(\"product must be a ProductProfile instance\")"` | — |
+| [SRC-8D00DCEC0D-L000551](../../agents/sales_domain.py#L551) | 551 | `"    if market is not None and not isinstance(market, MarketProfile):"` | — |
+| [SRC-8D00DCEC0D-L000552](../../agents/sales_domain.py#L552) | 552 | `"        raise TypeError(\"market must be a MarketProfile instance\")"` | — |
+| [SRC-8D00DCEC0D-L000553](../../agents/sales_domain.py#L553) | 553 | `"    if locale not in {\"auto\", \"ar\", \"en\", \"mixed\"}:"` | — |
+| [SRC-8D00DCEC0D-L000554](../../agents/sales_domain.py#L554) | 554 | `"        raise ValueError(\"locale must be auto, ar, en, or mixed\")"` | — |
+| [SRC-8D00DCEC0D-L000555](../../agents/sales_domain.py#L555) | 555 | `"    if not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= MAX_BUYER_QUERY_COUNT:"` | — |
+| [SRC-8D00DCEC0D-L000556](../../agents/sales_domain.py#L556) | 556 | `"        raise ValueError(f\"limit must be between 1 and {MAX_BUYER_QUERY_COUNT}\")"` | — |
+| [SRC-8D00DCEC0D-L000557](../../agents/sales_domain.py#L557) | 557 | `""` | — |
+| [SRC-8D00DCEC0D-L000558](../../agents/sales_domain.py#L558) | 558 | `"    if locale == \"auto\":"` | — |
+| [SRC-8D00DCEC0D-L000559](../../agents/sales_domain.py#L559) | 559 | `"        locale = \"ar\" if re.search(r\"[\\\\u0600-\\\\u06FF]\", product.name) else \"en\""` | — |
+| [SRC-8D00DCEC0D-L000560](../../agents/sales_domain.py#L560) | 560 | `""` | — |
+| [SRC-8D00DCEC0D-L000561](../../agents/sales_domain.py#L561) | 561 | `"    location_suffix = \" \".join(market.locations) if market else \"\""` | — |
+| [SRC-8D00DCEC0D-L000562](../../agents/sales_domain.py#L562) | 562 | `"    product_terms = (product.name, *product.aliases)"` | — |
+| [SRC-8D00DCEC0D-L000563](../../agents/sales_domain.py#L563) | 563 | `"    candidates: list[str] = []"` | — |
+| [SRC-8D00DCEC0D-L000564](../../agents/sales_domain.py#L564) | 564 | `""` | — |
+| [SRC-8D00DCEC0D-L000565](../../agents/sales_domain.py#L565) | 565 | `"    for term in product_terms:"` | — |
+| [SRC-8D00DCEC0D-L000566](../../agents/sales_domain.py#L566) | 566 | `"        subject = \" \".join(part for part in (term, location_suffix) if part).strip()"` | — |
+| [SRC-8D00DCEC0D-L000567](../../agents/sales_domain.py#L567) | 567 | `"        if locale in {\"ar\", \"mixed\"}:"` | — |
+| [SRC-8D00DCEC0D-L000568](../../agents/sales_domain.py#L568) | 568 | `"            candidates.extend("` | — |
+| [SRC-8D00DCEC0D-L000569](../../agents/sales_domain.py#L569) | 569 | `"                ("` | — |
+| [SRC-8D00DCEC0D-L000570](../../agents/sales_domain.py#L570) | 570 | `"                    f'\"مطلوب شراء\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000571](../../agents/sales_domain.py#L571) | 571 | `"                    f'\"عايز اشتري\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000572](../../agents/sales_domain.py#L572) | 572 | `"                    f'\"أريد شراء\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000573](../../agents/sales_domain.py#L573) | 573 | `"                    f'\"بدور على\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000574](../../agents/sales_domain.py#L574) | 574 | `"                    f'\"طلب عرض سعر\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000575](../../agents/sales_domain.py#L575) | 575 | `"                    f'site:facebook.com/groups \"{subject}\" (\"مطلوب\" OR \"عايز اشتري\" OR \"بدور على\")',"` | — |
+| [SRC-8D00DCEC0D-L000576](../../agents/sales_domain.py#L576) | 576 | `"                )"` | — |
+| [SRC-8D00DCEC0D-L000577](../../agents/sales_domain.py#L577) | 577 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000578](../../agents/sales_domain.py#L578) | 578 | `"        if locale in {\"en\", \"mixed\"}:"` | — |
+| [SRC-8D00DCEC0D-L000579](../../agents/sales_domain.py#L579) | 579 | `"            candidates.extend("` | — |
+| [SRC-8D00DCEC0D-L000580](../../agents/sales_domain.py#L580) | 580 | `"                ("` | — |
+| [SRC-8D00DCEC0D-L000581](../../agents/sales_domain.py#L581) | 581 | `"                    f'\"looking to buy\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000582](../../agents/sales_domain.py#L582) | 582 | `"                    f'\"want to purchase\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000583](../../agents/sales_domain.py#L583) | 583 | `"                    f'\"request for quotation\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000584](../../agents/sales_domain.py#L584) | 584 | `"                    f'site:linkedin.com/posts \"{subject}\" (\"looking to buy\" OR \"purchase\")',"` | — |
+| [SRC-8D00DCEC0D-L000585](../../agents/sales_domain.py#L585) | 585 | `"                )"` | — |
+| [SRC-8D00DCEC0D-L000586](../../agents/sales_domain.py#L586) | 586 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000587](../../agents/sales_domain.py#L587) | 587 | `""` | — |
+| [SRC-8D00DCEC0D-L000588](../../agents/sales_domain.py#L588) | 588 | `"    # Planner alternatives are supplementary only. Retain one only when it"` | — |
+| [SRC-8D00DCEC0D-L000589](../../agents/sales_domain.py#L589) | 589 | `"    # explicitly mentions a configured product name/alias; do not import an"` | — |
+| [SRC-8D00DCEC0D-L000590](../../agents/sales_domain.py#L590) | 590 | `"    # unrelated sector or generic listing query into this product's search."` | — |
+| [SRC-8D00DCEC0D-L000591](../../agents/sales_domain.py#L591) | 591 | `"    for query in existing_queries:"` | — |
+| [SRC-8D00DCEC0D-L000592](../../agents/sales_domain.py#L592) | 592 | `"        if isinstance(query, str) and product.matching_terms(query):"` | — |
+| [SRC-8D00DCEC0D-L000593](../../agents/sales_domain.py#L593) | 593 | `"            candidates.append(query)"` | — |
+| [SRC-8D00DCEC0D-L000594](../../agents/sales_domain.py#L594) | 594 | `""` | — |
+| [SRC-8D00DCEC0D-L000595](../../agents/sales_domain.py#L595) | 595 | `"    result: list[str] = []"` | — |
+| [SRC-8D00DCEC0D-L000596](../../agents/sales_domain.py#L596) | 596 | `"    seen: set[str] = set()"` | — |
+| [SRC-8D00DCEC0D-L000597](../../agents/sales_domain.py#L597) | 597 | `"    for query in candidates:"` | — |
+| [SRC-8D00DCEC0D-L000598](../../agents/sales_domain.py#L598) | 598 | `"        cleaned = _SPACE.sub(\" \", query).strip()[:500]"` | — |
+| [SRC-8D00DCEC0D-L000599](../../agents/sales_domain.py#L599) | 599 | `"        key = normalize_text(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000600](../../agents/sales_domain.py#L600) | 600 | `"        if cleaned and key and key not in seen:"` | — |
+| [SRC-8D00DCEC0D-L000601](../../agents/sales_domain.py#L601) | 601 | `"            result.append(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000602](../../agents/sales_domain.py#L602) | 602 | `"            seen.add(key)"` | — |
+| [SRC-8D00DCEC0D-L000603](../../agents/sales_domain.py#L603) | 603 | `"        if len(result) >= limit:"` | — |
+| [SRC-8D00DCEC0D-L000604](../../agents/sales_domain.py#L604) | 604 | `"            break"` | — |
+| [SRC-8D00DCEC0D-L000605](../../agents/sales_domain.py#L605) | 605 | `"    return result"` | — |
+| [SRC-8D00DCEC0D-L000606](../../agents/sales_domain.py#L606) | 606 | `""` | — |
+| [SRC-8D00DCEC0D-L000607](../../agents/sales_domain.py#L607) | 607 | `""` | — |
+| [SRC-8D00DCEC0D-L000608](../../agents/sales_domain.py#L608) | 608 | `"def to_json_dict(value: ProductProfile \| MarketProfile \| DemandEvidence \| DemandSignal \| LeadQualification) -> dict[str, object]:"` | — |
+| [SRC-8D00DCEC0D-L000609](../../agents/sales_domain.py#L609) | 609 | `"    \"\"\"Serialize a supported domain object without silently dropping evidence fields.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000610](../../agents/sales_domain.py#L610) | 610 | `"    if not hasattr(value, \"to_dict\"):"` | — |
+| [SRC-8D00DCEC0D-L000611](../../agents/sales_domain.py#L611) | 611 | `"        raise TypeError(\"unsupported sales domain object\")"` | — |
+| [SRC-8D00DCEC0D-L000612](../../agents/sales_domain.py#L612) | 612 | `"    return value.to_dict()"` | — |
 ## الوكيل والمنطق
 
 ### FILE-6E58A660BC — [agents/search_connectors.py](../../agents/search_connectors.py#L1)
@@ -757,80 +834,3 @@
 | [SRC-686F71AA50-L000265](../../agents/task_understanding.py#L265) | 265 | `"}"` | — |
 | [SRC-686F71AA50-L000266](../../agents/task_understanding.py#L266) | 266 | `""` | — |
 | [SRC-686F71AA50-L000267](../../agents/task_understanding.py#L267) | 267 | `"_FRESHNESS_CUES = _PATTERNS[\"current_information\"]"` | — |
-| [SRC-686F71AA50-L000268](../../agents/task_understanding.py#L268) | 268 | `"_SOCIAL_CUES = _PATTERNS[\"social_opinions\"]"` | — |
-| [SRC-686F71AA50-L000269](../../agents/task_understanding.py#L269) | 269 | `"_LOCATION_CUES = ("` | — |
-| [SRC-686F71AA50-L000270](../../agents/task_understanding.py#L270) | 270 | `"    \"في مصر\", \"داخل مصر\", \"بالقاهرة\", \"في القاهره\", \"بالاسكندريه\", \"في السعودية\","` | — |
-| [SRC-686F71AA50-L000271](../../agents/task_understanding.py#L271) | 271 | `"    \"في الامارات\", \"in egypt\", \"within egypt\", \"in cairo\", \"in saudi arabia\","` | — |
-| [SRC-686F71AA50-L000272](../../agents/task_understanding.py#L272) | 272 | `"    \"in the uae\", \"in the united states\", \"in the uk\","` | — |
-| [SRC-686F71AA50-L000273](../../agents/task_understanding.py#L273) | 273 | `")"` | — |
-| [SRC-686F71AA50-L000274](../../agents/task_understanding.py#L274) | 274 | `"_OFFICIAL_WORDS = (\"وزارة\", \"هيئة حكومية\", \"جهة حكومية\", \"مصلحة حكومية\", \"ministry\", \"government agency\")"` | — |
-| [SRC-686F71AA50-L000275](../../agents/task_understanding.py#L275) | 275 | `"_YEAR_RE = re.compile(r\"(?<!\\d)(?:19\\d{2}\|20\\d{2})(?!\\d)\")"` | — |
-| [SRC-686F71AA50-L000276](../../agents/task_understanding.py#L276) | 276 | `"_DATE_RE = re.compile(r\"(?<!\\d)(?:\\d{4}-\\d{2}-\\d{2}\|\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4})(?!\\d)\")"` | — |
-| [SRC-686F71AA50-L000277](../../agents/task_understanding.py#L277) | 277 | `"_URL_RE = re.compile(r\"https?://[^\\s<>]+\", re.IGNORECASE)"` | — |
-| [SRC-686F71AA50-L000278](../../agents/task_understanding.py#L278) | 278 | `"_BUDGET_RE = re.compile("` | — |
-| [SRC-686F71AA50-L000279](../../agents/task_understanding.py#L279) | 279 | `"    r\"(?:ميزاني(?:ة\|تي)(?:\\s+(?:(?:أقل\|اقل)\\s+من\|بحد\\s+اقصى\|في\\s+حدود))?\""` | — |
-| [SRC-686F71AA50-L000280](../../agents/task_understanding.py#L280) | 280 | `"    r\"\|بحد\\s+اقصى\|(?:أقل\|اقل)\\s+من\|في\\s+حدود\|budget(?:\\s+of)?\|under\|below\|up\\s+to)\""` | — |
-| [SRC-686F71AA50-L000281](../../agents/task_understanding.py#L281) | 281 | `"    r\"\\s*[:：]?\\s*(?:egp\|usd\|eur\|جنيه\|دولار\|ريال)?\\s*[\\d,.\\u0660-\\u0669]+\""` | — |
-| [SRC-686F71AA50-L000282](../../agents/task_understanding.py#L282) | 282 | `"    r\"(?:\\s*(?:الف\|ألف\|مليون\|thousand\|million\|k))?\","` | — |
-| [SRC-686F71AA50-L000283](../../agents/task_understanding.py#L283) | 283 | `"    re.IGNORECASE,"` | — |
-| [SRC-686F71AA50-L000284](../../agents/task_understanding.py#L284) | 284 | `")"` | — |
-| [SRC-686F71AA50-L000285](../../agents/task_understanding.py#L285) | 285 | `"_FOLLOWUP_CUES = ("` | — |
-| [SRC-686F71AA50-L000286](../../agents/task_understanding.py#L286) | 286 | `"    \"سعرها\", \"سعره\", \"قارنهم\", \"بينهم\", \"ما رايك فيها\", \"هل هي كويسه\","` | — |
-| [SRC-686F71AA50-L000287](../../agents/task_understanding.py#L287) | 287 | `"    \"what about it\", \"compare them\", \"is it good\", \"should i buy it\","` | — |
-| [SRC-686F71AA50-L000288](../../agents/task_understanding.py#L288) | 288 | `"    \"its price\", \"the warranty\","` | — |
-| [SRC-686F71AA50-L000289](../../agents/task_understanding.py#L289) | 289 | `")"` | — |
-| [SRC-686F71AA50-L000290](../../agents/task_understanding.py#L290) | 290 | `"_QUERY_STOP = re.compile("` | — |
-| [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"    r\"\\b(?:من حيث\|in terms of\|taking into account\|with respect to)\\b.*$\","` | — |
-| [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"    re.IGNORECASE,"` | — |
-| [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `")"` | — |
-| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `""` | — |
-| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `""` | — |
-| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"def normalize_text(value: Any) -> str:"` | — |
-| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"    \"\"\"Normalize orthographic variation for matching; preserve the original elsewhere.\"\"\""` | — |
-| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"    if not isinstance(value, str):"` | — |
-| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"        return \"\""` | — |
-| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"    text = unicodedata.normalize(\"NFKC\", value).casefold()"` | — |
-| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"    text = _ARABIC_DIACRITICS.sub(\"\", text)"` | — |
-| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"    text = text.replace(\"ـ\", \"\").translate(str.maketrans({"` | — |
-| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"        \"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ٱ\": \"ا\", \"ى\": \"ي\", \"ة\": \"ه\","` | — |
-| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"    }))"` | — |
-| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"    return _SPACE.sub(\" \", _PUNCTUATION.sub(\" \", text)).strip()"` | — |
-| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `""` | — |
-| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `""` | — |
-| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:"` | — |
-| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"    \"\"\"Match phrases on token boundaries with conservative Arabic clitic handling."` | — |
-| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `""` | — |
-| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    The matcher never accepts arbitrary substrings: variants are formed only by"` | — |
-| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    removing a short, explicit list of common prefixes/suffixes. This avoids"` | — |
-| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"    collisions such as treating \"الإنذار\" as \"الآن\"."` | — |
-| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    \"\"\""` | — |
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    matched: list[str] = []"` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\", \"ين\", \"ات\", \"ون\")"` | — |
-| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    english_suffixes = (\"ing\", \"ed\", \"es\", \"s\")"` | — |
-| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    cache: dict[str, set[str]] = {}"` | — |
-| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `""` | — |
-| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    def token_forms(raw_token: str) -> set[str]:"` | — |
-| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"        original = normalize_text(raw_token)"` | — |
-| [SRC-686F71AA50-L000324](../../agents/task_understanding.py#L324) | 324 | `"        if original in cache:"` | — |
-| [SRC-686F71AA50-L000325](../../agents/task_understanding.py#L325) | 325 | `"            return cache[original]"` | — |
-| [SRC-686F71AA50-L000326](../../agents/task_understanding.py#L326) | 326 | `"        forms = {original} if original else set()"` | — |
-| [SRC-686F71AA50-L000327](../../agents/task_understanding.py#L327) | 327 | `"        queue = list(forms)"` | — |
-| [SRC-686F71AA50-L000328](../../agents/task_understanding.py#L328) | 328 | `"        while queue:"` | — |
-| [SRC-686F71AA50-L000329](../../agents/task_understanding.py#L329) | 329 | `"            current = queue.pop()"` | — |
-| [SRC-686F71AA50-L000330](../../agents/task_understanding.py#L330) | 330 | `"            for prefix in prefixes:"` | — |
-| [SRC-686F71AA50-L000331](../../agents/task_understanding.py#L331) | 331 | `"                if current.startswith(prefix) and len(current) - len(prefix) >= 3:"` | — |
-| [SRC-686F71AA50-L000332](../../agents/task_understanding.py#L332) | 332 | `"                    candidate = current[len(prefix):]"` | — |
-| [SRC-686F71AA50-L000333](../../agents/task_understanding.py#L333) | 333 | `"                    if candidate not in forms:"` | — |
-| [SRC-686F71AA50-L000334](../../agents/task_understanding.py#L334) | 334 | `"                        forms.add(candidate)"` | — |
-| [SRC-686F71AA50-L000335](../../agents/task_understanding.py#L335) | 335 | `"                        queue.append(candidate)"` | — |
-| [SRC-686F71AA50-L000336](../../agents/task_understanding.py#L336) | 336 | `"            for suffix in suffixes:"` | — |
-| [SRC-686F71AA50-L000337](../../agents/task_understanding.py#L337) | 337 | `"                if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |
-| [SRC-686F71AA50-L000338](../../agents/task_understanding.py#L338) | 338 | `"                    candidate = current[:-len(suffix)]"` | — |
-| [SRC-686F71AA50-L000339](../../agents/task_understanding.py#L339) | 339 | `"                    if candidate not in forms:"` | — |
-| [SRC-686F71AA50-L000340](../../agents/task_understanding.py#L340) | 340 | `"                        forms.add(candidate)"` | — |
-| [SRC-686F71AA50-L000341](../../agents/task_understanding.py#L341) | 341 | `"                        queue.append(candidate)"` | — |
-| [SRC-686F71AA50-L000342](../../agents/task_understanding.py#L342) | 342 | `"            if current.isascii() and len(current) >= 5:"` | — |
-| [SRC-686F71AA50-L000343](../../agents/task_understanding.py#L343) | 343 | `"                for suffix in english_suffixes:"` | — |
-| [SRC-686F71AA50-L000344](../../agents/task_understanding.py#L344) | 344 | `"                    if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |

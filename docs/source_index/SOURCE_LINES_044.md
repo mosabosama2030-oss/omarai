@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000227 إلى SRC-2822F30DAD-L000325
+- النطاق: SRC-01E35ABC46-L000150 إلى SRC-2822F30DAD-L000248
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,83 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000150](../../tests/test_research_guardrails.py#L150) | 150 | `"    assert any(d[\"reason\"] == \"duplicate_title_domain\" for d in diag)"` | — |
+| [SRC-01E35ABC46-L000151](../../tests/test_research_guardrails.py#L151) | 151 | `""` | — |
+| [SRC-01E35ABC46-L000152](../../tests/test_research_guardrails.py#L152) | 152 | `""` | — |
+| [SRC-01E35ABC46-L000153](../../tests/test_research_guardrails.py#L153) | 153 | `"def test_filter_empty_and_failed_extract():"` | — |
+| [SRC-01E35ABC46-L000154](../../tests/test_research_guardrails.py#L154) | 154 | `"    kept, diag = filter_relevant_sources([], \"anything\")"` | — |
+| [SRC-01E35ABC46-L000155](../../tests/test_research_guardrails.py#L155) | 155 | `"    assert kept == []"` | — |
+| [SRC-01E35ABC46-L000156](../../tests/test_research_guardrails.py#L156) | 156 | `"    assert diag == []"` | — |
+| [SRC-01E35ABC46-L000157](../../tests/test_research_guardrails.py#L157) | 157 | `"    src = {"` | — |
+| [SRC-01E35ABC46-L000158](../../tests/test_research_guardrails.py#L158) | 158 | `"        \"title\": \"\","` | — |
+| [SRC-01E35ABC46-L000159](../../tests/test_research_guardrails.py#L159) | 159 | `"        \"url\": \"https://example.com/x\","` | — |
+| [SRC-01E35ABC46-L000160](../../tests/test_research_guardrails.py#L160) | 160 | `"        \"snippet\": \"\","` | — |
+| [SRC-01E35ABC46-L000161](../../tests/test_research_guardrails.py#L161) | 161 | `"        \"page_text\": \"\","` | — |
+| [SRC-01E35ABC46-L000162](../../tests/test_research_guardrails.py#L162) | 162 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-01E35ABC46-L000163](../../tests/test_research_guardrails.py#L163) | 163 | `"        \"source_class\": \"general\","` | — |
+| [SRC-01E35ABC46-L000164](../../tests/test_research_guardrails.py#L164) | 164 | `"        \"providers\": [\"ddg\"],"` | — |
+| [SRC-01E35ABC46-L000165](../../tests/test_research_guardrails.py#L165) | 165 | `"    }"` | — |
+| [SRC-01E35ABC46-L000166](../../tests/test_research_guardrails.py#L166) | 166 | `"    _kept2, diag2 = filter_relevant_sources([src], \"unrelated pasta recipes\")"` | — |
+| [SRC-01E35ABC46-L000167](../../tests/test_research_guardrails.py#L167) | 167 | `"    # May reject for low overlap"` | — |
+| [SRC-01E35ABC46-L000168](../../tests/test_research_guardrails.py#L168) | 168 | `"    assert isinstance(diag2, list)"` | — |
+| [SRC-01E35ABC46-L000169](../../tests/test_research_guardrails.py#L169) | 169 | `""` | — |
+| [SRC-01E35ABC46-L000170](../../tests/test_research_guardrails.py#L170) | 170 | `""` | — |
+| [SRC-01E35ABC46-L000171](../../tests/test_research_guardrails.py#L171) | 171 | `"# --- evidence status --------------------------------------------------------"` | — |
+| [SRC-01E35ABC46-L000172](../../tests/test_research_guardrails.py#L172) | 172 | `""` | — |
+| [SRC-01E35ABC46-L000173](../../tests/test_research_guardrails.py#L173) | 173 | `"def test_evidence_adequate():"` | — |
+| [SRC-01E35ABC46-L000174](../../tests/test_research_guardrails.py#L174) | 174 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000175](../../tests/test_research_guardrails.py#L175) | 175 | `"        {\"url\": f\"https://a{i}.example/p\", \"domain\": f\"a{i}.example\","` | — |
+| [SRC-01E35ABC46-L000176](../../tests/test_research_guardrails.py#L176) | 176 | `"         \"snippet\": \"content\", \"page_fetched\": True, \"source_class\": \"general\"}"` | — |
+| [SRC-01E35ABC46-L000177](../../tests/test_research_guardrails.py#L177) | 177 | `"        for i in range(4)"` | — |
+| [SRC-01E35ABC46-L000178](../../tests/test_research_guardrails.py#L178) | 178 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000179](../../tests/test_research_guardrails.py#L179) | 179 | `"    sources[0][\"source_class\"] = \"government\""` | — |
+| [SRC-01E35ABC46-L000180](../../tests/test_research_guardrails.py#L180) | 180 | `"    decision = decide_evidence_status(sources, pages_read=2)"` | — |
+| [SRC-01E35ABC46-L000181](../../tests/test_research_guardrails.py#L181) | 181 | `"    assert decision[\"evidence_status\"] == \"adequate\""` | — |
+| [SRC-01E35ABC46-L000182](../../tests/test_research_guardrails.py#L182) | 182 | `"    assert decision[\"should_abstain\"] is False"` | — |
+| [SRC-01E35ABC46-L000183](../../tests/test_research_guardrails.py#L183) | 183 | `""` | — |
+| [SRC-01E35ABC46-L000184](../../tests/test_research_guardrails.py#L184) | 184 | `""` | — |
+| [SRC-01E35ABC46-L000185](../../tests/test_research_guardrails.py#L185) | 185 | `"def test_evidence_insufficient_empty():"` | — |
+| [SRC-01E35ABC46-L000186](../../tests/test_research_guardrails.py#L186) | 186 | `"    decision = decide_evidence_status([], search_attempted=True)"` | — |
+| [SRC-01E35ABC46-L000187](../../tests/test_research_guardrails.py#L187) | 187 | `"    assert decision[\"evidence_status\"] == \"insufficient\""` | — |
+| [SRC-01E35ABC46-L000188](../../tests/test_research_guardrails.py#L188) | 188 | `"    assert decision[\"should_abstain\"] is True"` | — |
+| [SRC-01E35ABC46-L000189](../../tests/test_research_guardrails.py#L189) | 189 | `""` | — |
+| [SRC-01E35ABC46-L000190](../../tests/test_research_guardrails.py#L190) | 190 | `""` | — |
+| [SRC-01E35ABC46-L000191](../../tests/test_research_guardrails.py#L191) | 191 | `"def test_evidence_failed_provider():"` | — |
+| [SRC-01E35ABC46-L000192](../../tests/test_research_guardrails.py#L192) | 192 | `"    decision = decide_evidence_status([], provider_failures=2, search_attempted=True)"` | — |
+| [SRC-01E35ABC46-L000193](../../tests/test_research_guardrails.py#L193) | 193 | `"    assert decision[\"evidence_status\"] == \"failed\""` | — |
+| [SRC-01E35ABC46-L000194](../../tests/test_research_guardrails.py#L194) | 194 | `"    assert decision[\"should_abstain\"] is True"` | — |
+| [SRC-01E35ABC46-L000195](../../tests/test_research_guardrails.py#L195) | 195 | `""` | — |
+| [SRC-01E35ABC46-L000196](../../tests/test_research_guardrails.py#L196) | 196 | `""` | — |
+| [SRC-01E35ABC46-L000197](../../tests/test_research_guardrails.py#L197) | 197 | `"def test_evidence_partial_single_source():"` | — |
+| [SRC-01E35ABC46-L000198](../../tests/test_research_guardrails.py#L198) | 198 | `"    sources = ["` | — |
+| [SRC-01E35ABC46-L000199](../../tests/test_research_guardrails.py#L199) | 199 | `"        {\"url\": \"https://a.example/p\", \"domain\": \"a.example\","` | — |
+| [SRC-01E35ABC46-L000200](../../tests/test_research_guardrails.py#L200) | 200 | `"         \"snippet\": \"some text\", \"page_fetched\": True, \"source_class\": \"general\"}"` | — |
+| [SRC-01E35ABC46-L000201](../../tests/test_research_guardrails.py#L201) | 201 | `"    ]"` | — |
+| [SRC-01E35ABC46-L000202](../../tests/test_research_guardrails.py#L202) | 202 | `"    decision = decide_evidence_status(sources, pages_read=1)"` | — |
+| [SRC-01E35ABC46-L000203](../../tests/test_research_guardrails.py#L203) | 203 | `"    assert decision[\"evidence_status\"] == \"partial\""` | — |
+| [SRC-01E35ABC46-L000204](../../tests/test_research_guardrails.py#L204) | 204 | `"    assert decision[\"should_abstain\"] is False"` | — |
+| [SRC-01E35ABC46-L000205](../../tests/test_research_guardrails.py#L205) | 205 | `""` | — |
+| [SRC-01E35ABC46-L000206](../../tests/test_research_guardrails.py#L206) | 206 | `""` | — |
+| [SRC-01E35ABC46-L000207](../../tests/test_research_guardrails.py#L207) | 207 | `""` | — |
+| [SRC-01E35ABC46-L000208](../../tests/test_research_guardrails.py#L208) | 208 | `"# --- task-specific evidence guardrails ---------------------------------------"` | — |
+| [SRC-01E35ABC46-L000209](../../tests/test_research_guardrails.py#L209) | 209 | `""` | — |
+| [SRC-01E35ABC46-L000210](../../tests/test_research_guardrails.py#L210) | 210 | `"_GUARDRAIL_NOW = datetime(2026, 10, 28, 12, 0, tzinfo=UTC)"` | — |
+| [SRC-01E35ABC46-L000211](../../tests/test_research_guardrails.py#L211) | 211 | `""` | — |
+| [SRC-01E35ABC46-L000212](../../tests/test_research_guardrails.py#L212) | 212 | `""` | — |
+| [SRC-01E35ABC46-L000213](../../tests/test_research_guardrails.py#L213) | 213 | `"def _guardrail_source("` | — |
+| [SRC-01E35ABC46-L000214](../../tests/test_research_guardrails.py#L214) | 214 | `"    url: str,"` | — |
+| [SRC-01E35ABC46-L000215](../../tests/test_research_guardrails.py#L215) | 215 | `"    *,"` | — |
+| [SRC-01E35ABC46-L000216](../../tests/test_research_guardrails.py#L216) | 216 | `"    title: str = \"معلومات عن وزارة الاتصالات\","` | — |
+| [SRC-01E35ABC46-L000217](../../tests/test_research_guardrails.py#L217) | 217 | `"    snippet: str = \"معلومات عن وزارة الاتصالات وتكنولوجيا المعلومات في مصر\","` | — |
+| [SRC-01E35ABC46-L000218](../../tests/test_research_guardrails.py#L218) | 218 | `"    published_at: str = \"2026-10-27T10:00:00Z\","` | — |
+| [SRC-01E35ABC46-L000219](../../tests/test_research_guardrails.py#L219) | 219 | `"    page_fetched: bool = True,"` | — |
+| [SRC-01E35ABC46-L000220](../../tests/test_research_guardrails.py#L220) | 220 | `"    page_text: str = \"نص مقروء من الصفحة عن وزارة الاتصالات\","` | — |
+| [SRC-01E35ABC46-L000221](../../tests/test_research_guardrails.py#L221) | 221 | `") -> dict:"` | — |
+| [SRC-01E35ABC46-L000222](../../tests/test_research_guardrails.py#L222) | 222 | `"    return {"` | — |
+| [SRC-01E35ABC46-L000223](../../tests/test_research_guardrails.py#L223) | 223 | `"        \"title\": title,"` | — |
+| [SRC-01E35ABC46-L000224](../../tests/test_research_guardrails.py#L224) | 224 | `"        \"url\": url,"` | — |
+| [SRC-01E35ABC46-L000225](../../tests/test_research_guardrails.py#L225) | 225 | `"        \"snippet\": snippet,"` | — |
+| [SRC-01E35ABC46-L000226](../../tests/test_research_guardrails.py#L226) | 226 | `"        \"published_at\": published_at,"` | — |
 | [SRC-01E35ABC46-L000227](../../tests/test_research_guardrails.py#L227) | 227 | `"        \"page_fetched\": page_fetched,"` | — |
 | [SRC-01E35ABC46-L000228](../../tests/test_research_guardrails.py#L228) | 228 | `"        \"page_text\": page_text,"` | — |
 | [SRC-01E35ABC46-L000229](../../tests/test_research_guardrails.py#L229) | 229 | `"    }"` | — |
@@ -757,80 +834,3 @@
 | [SRC-2822F30DAD-L000246](../../tests/test_sales_domain.py#L246) | 246 | `""` | — |
 | [SRC-2822F30DAD-L000247](../../tests/test_sales_domain.py#L247) | 247 | `""` | — |
 | [SRC-2822F30DAD-L000248](../../tests/test_sales_domain.py#L248) | 248 | `"def test_assessed_product_fit_requires_a_rationale():"` | — |
-| [SRC-2822F30DAD-L000249](../../tests/test_sales_domain.py#L249) | 249 | `"    with pytest.raises(ValueError, match=\"requires a rationale\"):"` | — |
-| [SRC-2822F30DAD-L000250](../../tests/test_sales_domain.py#L250) | 250 | `"        DemandSignal("` | — |
-| [SRC-2822F30DAD-L000251](../../tests/test_sales_domain.py#L251) | 251 | `"            signal_id=\"signal-fit\","` | — |
-| [SRC-2822F30DAD-L000252](../../tests/test_sales_domain.py#L252) | 252 | `"            signal_type=DemandSignalType.STATED_NEED,"` | — |
-| [SRC-2822F30DAD-L000253](../../tests/test_sales_domain.py#L253) | 253 | `"            evidence=page_evidence(),"` | — |
-| [SRC-2822F30DAD-L000254](../../tests/test_sales_domain.py#L254) | 254 | `"            product_fit=ProductFit.FIT,"` | — |
-| [SRC-2822F30DAD-L000255](../../tests/test_sales_domain.py#L255) | 255 | `"        )"` | — |
-| [SRC-2822F30DAD-L000256](../../tests/test_sales_domain.py#L256) | 256 | `""` | — |
-| [SRC-2822F30DAD-L000257](../../tests/test_sales_domain.py#L257) | 257 | `"    signal = DemandSignal("` | — |
-| [SRC-2822F30DAD-L000258](../../tests/test_sales_domain.py#L258) | 258 | `"        signal_id=\"signal-fit\","` | — |
-| [SRC-2822F30DAD-L000259](../../tests/test_sales_domain.py#L259) | 259 | `"        signal_type=DemandSignalType.STATED_NEED,"` | — |
-| [SRC-2822F30DAD-L000260](../../tests/test_sales_domain.py#L260) | 260 | `"        evidence=page_evidence(),"` | — |
-| [SRC-2822F30DAD-L000261](../../tests/test_sales_domain.py#L261) | 261 | `"        product_fit=ProductFit.FIT,"` | — |
-| [SRC-2822F30DAD-L000262](../../tests/test_sales_domain.py#L262) | 262 | `"        product_fit_reason=\"The requested specification matches the product profile.\","` | — |
-| [SRC-2822F30DAD-L000263](../../tests/test_sales_domain.py#L263) | 263 | `"    )"` | — |
-| [SRC-2822F30DAD-L000264](../../tests/test_sales_domain.py#L264) | 264 | `"    assert signal.product_fit == ProductFit.FIT"` | — |
-| [SRC-2822F30DAD-L000265](../../tests/test_sales_domain.py#L265) | 265 | `""` | — |
-| [SRC-2822F30DAD-L000266](../../tests/test_sales_domain.py#L266) | 266 | `""` | — |
-| [SRC-2822F30DAD-L000267](../../tests/test_sales_domain.py#L267) | 267 | `"def test_unassessed_product_fit_must_not_have_a_rationale():"` | — |
-| [SRC-2822F30DAD-L000268](../../tests/test_sales_domain.py#L268) | 268 | `"    with pytest.raises(ValueError, match=\"must not have a fit rationale\"):"` | — |
-| [SRC-2822F30DAD-L000269](../../tests/test_sales_domain.py#L269) | 269 | `"        DemandSignal("` | — |
-| [SRC-2822F30DAD-L000270](../../tests/test_sales_domain.py#L270) | 270 | `"            signal_id=\"signal-unassessed\","` | — |
-| [SRC-2822F30DAD-L000271](../../tests/test_sales_domain.py#L271) | 271 | `"            signal_type=DemandSignalType.INDIRECT_INDICATOR,"` | — |
-| [SRC-2822F30DAD-L000272](../../tests/test_sales_domain.py#L272) | 272 | `"            evidence=page_evidence(),"` | — |
-| [SRC-2822F30DAD-L000273](../../tests/test_sales_domain.py#L273) | 273 | `"            product_fit_reason=\"No assessment has been made.\","` | — |
-| [SRC-2822F30DAD-L000274](../../tests/test_sales_domain.py#L274) | 274 | `"        )"` | — |
-| [SRC-2822F30DAD-L000275](../../tests/test_sales_domain.py#L275) | 275 | `""` | — |
-| [SRC-2822F30DAD-L000276](../../tests/test_sales_domain.py#L276) | 276 | `""` | — |
-| [SRC-2822F30DAD-L000277](../../tests/test_sales_domain.py#L277) | 277 | `"def test_icp_match_only_remains_distinct_from_direct_purchase():"` | — |
-| [SRC-2822F30DAD-L000278](../../tests/test_sales_domain.py#L278) | 278 | `"    signal = DemandSignal("` | — |
-| [SRC-2822F30DAD-L000279](../../tests/test_sales_domain.py#L279) | 279 | `"        signal_id=\"signal-icp\","` | — |
-| [SRC-2822F30DAD-L000280](../../tests/test_sales_domain.py#L280) | 280 | `"        signal_type=DemandSignalType.ICP_MATCH_ONLY,"` | — |
-| [SRC-2822F30DAD-L000281](../../tests/test_sales_domain.py#L281) | 281 | `"        evidence=page_evidence("` | — |
-| [SRC-2822F30DAD-L000282](../../tests/test_sales_domain.py#L282) | 282 | `"            excerpt=\"A business in the target industry operates in Cairo.\","` | — |
-| [SRC-2822F30DAD-L000283](../../tests/test_sales_domain.py#L283) | 283 | `"            content_basis=EvidenceBasis.TITLE,"` | — |
-| [SRC-2822F30DAD-L000284](../../tests/test_sales_domain.py#L284) | 284 | `"            page_read=False,"` | — |
-| [SRC-2822F30DAD-L000285](../../tests/test_sales_domain.py#L285) | 285 | `"        ),"` | — |
-| [SRC-2822F30DAD-L000286](../../tests/test_sales_domain.py#L286) | 286 | `"    )"` | — |
-| [SRC-2822F30DAD-L000287](../../tests/test_sales_domain.py#L287) | 287 | `""` | — |
-| [SRC-2822F30DAD-L000288](../../tests/test_sales_domain.py#L288) | 288 | `"    assert signal.signal_type == DemandSignalType.ICP_MATCH_ONLY"` | — |
-| [SRC-2822F30DAD-L000289](../../tests/test_sales_domain.py#L289) | 289 | `"    assert signal.signal_type != DemandSignalType.DIRECT_PURCHASE_REQUEST"` | — |
-| [SRC-2822F30DAD-L000290](../../tests/test_sales_domain.py#L290) | 290 | `""` | — |
-| [SRC-2822F30DAD-L000291](../../tests/test_sales_domain.py#L291) | 291 | `""` | — |
-| [SRC-2822F30DAD-L000292](../../tests/test_sales_domain.py#L292) | 292 | `"def test_lead_qualification_exposes_independent_dimensions_without_probability():"` | — |
-| [SRC-2822F30DAD-L000293](../../tests/test_sales_domain.py#L293) | 293 | `"    assessment = LeadQualification("` | — |
-| [SRC-2822F30DAD-L000294](../../tests/test_sales_domain.py#L294) | 294 | `"        signal_id=\"signal-1\","` | — |
-| [SRC-2822F30DAD-L000295](../../tests/test_sales_domain.py#L295) | 295 | `"        product_fit=ProductFit.FIT,"` | — |
-| [SRC-2822F30DAD-L000296](../../tests/test_sales_domain.py#L296) | 296 | `"        source_quality=SourceQuality.PRIMARY_SOURCE,"` | — |
-| [SRC-2822F30DAD-L000297](../../tests/test_sales_domain.py#L297) | 297 | `"        freshness=FreshnessStatus.CURRENT,"` | — |
-| [SRC-2822F30DAD-L000298](../../tests/test_sales_domain.py#L298) | 298 | `"        identity_status=IdentityStatus.UNVERIFIED,"` | — |
-| [SRC-2822F30DAD-L000299](../../tests/test_sales_domain.py#L299) | 299 | `"        contactability=ContactabilityStatus.NOT_ASSESSED,"` | — |
-| [SRC-2822F30DAD-L000300](../../tests/test_sales_domain.py#L300) | 300 | `"        missing_information=(\"buyer identity\", \"public contact channel\"),"` | — |
-| [SRC-2822F30DAD-L000301](../../tests/test_sales_domain.py#L301) | 301 | `"    )"` | — |
-| [SRC-2822F30DAD-L000302](../../tests/test_sales_domain.py#L302) | 302 | `""` | — |
-| [SRC-2822F30DAD-L000303](../../tests/test_sales_domain.py#L303) | 303 | `"    result = assessment.to_dict()"` | — |
-| [SRC-2822F30DAD-L000304](../../tests/test_sales_domain.py#L304) | 304 | `"    assert result[\"product_fit\"] == \"fit\""` | — |
-| [SRC-2822F30DAD-L000305](../../tests/test_sales_domain.py#L305) | 305 | `"    assert result[\"source_quality\"] == \"primary_source\""` | — |
-| [SRC-2822F30DAD-L000306](../../tests/test_sales_domain.py#L306) | 306 | `"    assert result[\"freshness\"] == \"current\""` | — |
-| [SRC-2822F30DAD-L000307](../../tests/test_sales_domain.py#L307) | 307 | `"    assert result[\"identity_status\"] == \"unverified\""` | — |
-| [SRC-2822F30DAD-L000308](../../tests/test_sales_domain.py#L308) | 308 | `"    assert result[\"missing_information\"] == [\"buyer identity\", \"public contact channel\"]"` | — |
-| [SRC-2822F30DAD-L000309](../../tests/test_sales_domain.py#L309) | 309 | `"    assert \"purchase_probability\" not in result"` | — |
-| [SRC-2822F30DAD-L000310](../../tests/test_sales_domain.py#L310) | 310 | `"    assert \"confidence\" not in result"` | — |
-| [SRC-2822F30DAD-L000311](../../tests/test_sales_domain.py#L311) | 311 | `""` | — |
-| [SRC-2822F30DAD-L000312](../../tests/test_sales_domain.py#L312) | 312 | `""` | — |
-| [SRC-2822F30DAD-L000313](../../tests/test_sales_domain.py#L313) | 313 | `"def test_to_json_dict_preserves_all_evidence_provenance_fields():"` | — |
-| [SRC-2822F30DAD-L000314](../../tests/test_sales_domain.py#L314) | 314 | `"    evidence = page_evidence(event_date=\"2026-10-18\")"` | — |
-| [SRC-2822F30DAD-L000315](../../tests/test_sales_domain.py#L315) | 315 | `"    serialized = to_json_dict(evidence)"` | — |
-| [SRC-2822F30DAD-L000316](../../tests/test_sales_domain.py#L316) | 316 | `""` | — |
-| [SRC-2822F30DAD-L000317](../../tests/test_sales_domain.py#L317) | 317 | `"    assert serialized[\"source_url\"] == \"https://example.org/public-post/1\""` | — |
-| [SRC-2822F30DAD-L000318](../../tests/test_sales_domain.py#L318) | 318 | `"    assert serialized[\"content_basis\"] == \"page_text\""` | — |
-| [SRC-2822F30DAD-L000319](../../tests/test_sales_domain.py#L319) | 319 | `"    assert serialized[\"publication_date\"] == \"2026-10-20\""` | — |
-| [SRC-2822F30DAD-L000320](../../tests/test_sales_domain.py#L320) | 320 | `"    assert serialized[\"event_date\"] == \"2026-10-18\""` | — |
-| [SRC-2822F30DAD-L000321](../../tests/test_sales_domain.py#L321) | 321 | `"    assert serialized[\"observed_at\"] == \"2026-10-31T08:00:00Z\""` | — |
-| [SRC-2822F30DAD-L000322](../../tests/test_sales_domain.py#L322) | 322 | `"    assert serialized[\"page_read\"] is True"` | — |
-| [SRC-2822F30DAD-L000323](../../tests/test_sales_domain.py#L323) | 323 | `""` | — |
-| [SRC-2822F30DAD-L000324](../../tests/test_sales_domain.py#L324) | 324 | `""` | — |
-| [SRC-2822F30DAD-L000325](../../tests/test_sales_domain.py#L325) | 325 | `"def test_domain_models_reject_invalid_sequence_types():"` | — |

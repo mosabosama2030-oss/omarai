@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **120**
 - ملفات Python المحللة: **74**
-- تعريفات Python المفهرسة: **1657**
-- تعريفات Python موثقة بوجود Docstring: **267**
+- تعريفات Python المفهرسة: **1659**
+- تعريفات Python موثقة بوجود Docstring: **268**
 - تعريفات Python بلا Docstring: **1002**
-- تعريفات لا ينطبق عليها Docstring: **388**
-- الرموز الساكنة الإضافية: **1898**
-- الأسطر النصية المفهرسة حرفيًا: **40655**
+- تعريفات لا ينطبق عليها Docstring: **389**
+- الرموز الساكنة الإضافية: **1899**
+- الأسطر النصية المفهرسة حرفيًا: **40732**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -49,7 +49,7 @@
 | FILE-1E32639872 | الوكيل والمنطق | [agents/research_completion.py](../agents/research_completion.py#L1) | Python | 13446 | 326 | جرد الملف + AST Python |
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
-| FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 19217 | 535 | جرد الملف + AST Python |
+| FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 22373 | 612 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
@@ -484,7 +484,9 @@
 | [agents/sales_domain.py](../agents/sales_domain.py#L493) | متغير/ثابت Python | LeadQualification.missing_information | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 493 | [SRC-8D00DCEC0D-L000493](../agents/sales_domain.py#L493) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L495) | دالة | LeadQualification.__post_init__ | لا توجد Docstring. | ناقص | 495 | [SRC-8D00DCEC0D-L000495](../agents/sales_domain.py#L495) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L519) | دالة | LeadQualification.to_dict | لا توجد Docstring. | ناقص | 519 | [SRC-8D00DCEC0D-L000519](../agents/sales_domain.py#L519) |
-| [agents/sales_domain.py](../agents/sales_domain.py#L531) | دالة | to_json_dict | Serialize a supported domain object without silently dropping evidence fields. | موثق | 531 | [SRC-8D00DCEC0D-L000531](../agents/sales_domain.py#L531) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L532) | متغير/ثابت Python | MAX_BUYER_QUERY_COUNT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 532 | [SRC-8D00DCEC0D-L000532](../agents/sales_domain.py#L532) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L535) | دالة | build_buyer_queries | Build bounded, product-anchored buyer queries without sector-specific defaults. | موثق | 535 | [SRC-8D00DCEC0D-L000535](../agents/sales_domain.py#L535) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L608) | دالة | to_json_dict | Serialize a supported domain object without silently dropping evidence fields. | موثق | 608 | [SRC-8D00DCEC0D-L000608](../agents/sales_domain.py#L608) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
@@ -1996,6 +1998,7 @@
 | [agents/sales_domain.py](../agents/sales_domain.py#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_CHANNEL_AVAILABLE | 84 | [SRC-8D00DCEC0D-L000084](../agents/sales_domain.py#L84) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L85) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_FOUND | 85 | [SRC-8D00DCEC0D-L000085](../agents/sales_domain.py#L85) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_ASSESSED | 86 | [SRC-8D00DCEC0D-L000086](../agents/sales_domain.py#L86) |
+| [agents/sales_domain.py](../agents/sales_domain.py#L532) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_BUYER_QUERY_COUNT | 532 | [SRC-8D00DCEC0D-L000532](../agents/sales_domain.py#L532) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
