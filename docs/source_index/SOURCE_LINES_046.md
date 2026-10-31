@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000308 إلى SRC-F725E90B2A-L000567
+- النطاق: SRC-AFEDC2645A-L000299 إلى SRC-F725E90B2A-L000541
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,90 +16,116 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"            \"method\": \"test\","` | — |
-| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"            \"resolved_question\": \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"            \"topic\": \"هواتف\","` | — |
-| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"            \"entities\": [\"Phone A\", \"Phone B\"],"` | — |
-| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"            \"slots\": {\"product\": \"Phone A\", \"untrusted_command\": \"execute something\"},"` | — |
-| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
-| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
-| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |
-| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"    candidate[\"extra_unexpected_key\"] = \"must not survive\""` | — |
-| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `""` | — |
-| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `"    assert safe[\"tool_requirements\"] == [\"web_search\"]"` | — |
-| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `"    assert safe[\"constraints\"][\"source_policies\"] == [\"task_relevant_sources\"]"` | — |
-| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"    assert safe[\"constraints\"][\"language_profile\"] == \"und\""` | — |
-| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"    assert \"untrusted_command\" not in safe[\"context_resolution\"][\"slots\"]"` | — |
-| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"    assert safe[\"context_resolution\"][\"confidence_band\"] == \"unassessed\""` | — |
-| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"    assert \"extra_unexpected_key\" not in safe"` | — |
-| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `""` | — |
-| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `""` | — |
-| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():"` | — |
-| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    from agents.task_understanding import reasoning_guidance_for_task_spec"` | — |
-| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `""` | — |
-| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"            \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"            \"method\": \"test_context\","` | — |
-| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
-| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
-| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
-| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
-| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `"    assert \"bounded_stop_rule\" in ids"` | — |
-| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
-| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
-| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"    assert \"balance_social_evidence\" in ids"` | — |
-| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"    assert \"resolve_followup_slots\" in ids"` | — |
-| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
-| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
-| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `""` | — |
-| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |
-| [SRC-AFEDC2645A-L000358](../../tests/test_task_understanding.py#L358) | 358 | `"    assert any(\"لا تعمم على الجميع\" in item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000359](../../tests/test_task_understanding.py#L359) | 359 | `"    assert any(\"تاريخ النشر\" in item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000360](../../tests/test_task_understanding.py#L360) | 360 | `"    assert all(isinstance(item, str) and item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000361](../../tests/test_task_understanding.py#L361) | 361 | `""` | — |
+| [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
+| [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
+| [SRC-AFEDC2645A-L000302](../../tests/test_task_understanding.py#L302) | 302 | `""` | — |
+| [SRC-AFEDC2645A-L000303](../../tests/test_task_understanding.py#L303) | 303 | `""` | — |
+| [SRC-AFEDC2645A-L000304](../../tests/test_task_understanding.py#L304) | 304 | `"def test_output_audience_and_delivery_preferences_are_distinct_fields():"` | — |
+| [SRC-AFEDC2645A-L000305](../../tests/test_task_understanding.py#L305) | 305 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000306](../../tests/test_task_understanding.py#L306) | 306 | `"        \"اشرح الموضوع ببساطة مع مصادر وروابط مباشرة وبصيغة JSON\","` | — |
+| [SRC-AFEDC2645A-L000307](../../tests/test_task_understanding.py#L307) | 307 | `"        mode=\"auto\","` | — |
+| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"    preferences = spec[\"output_preferences\"]"` | — |
+| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"    assert preferences[\"beginner_friendly_requested\"] is True"` | — |
+| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"    assert preferences[\"citations_requested\"] is True"` | — |
+| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"    assert preferences[\"links_requested\"] is True"` | — |
+| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `"    assert preferences[\"json_requested\"] is True"` | — |
+| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `""` | — |
+| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `""` | — |
+| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"def test_task_spec_validator_allowlists_tools_policies_and_context_slots():"` | — |
+| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `"    from agents.task_understanding import validate_task_spec"` | — |
+| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `""` | — |
+| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"    candidate = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"        \"قارن هاتفين\","` | — |
+| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `"        mode=\"deep\","` | — |
+| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `"        dialogue_context={"` | — |
+| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"            \"method\": \"test\","` | — |
+| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"            \"resolved_question\": \"قارن هاتفين\","` | — |
+| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"            \"topic\": \"هواتف\","` | — |
+| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"            \"entities\": [\"Phone A\", \"Phone B\"],"` | — |
+| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `"            \"slots\": {\"product\": \"Phone A\", \"untrusted_command\": \"execute something\"},"` | — |
+| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `"            \"is_follow_up\": True,"` | — |
+| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"        },"` | — |
+| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
+| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
+| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
+| [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |
+| [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"    candidate[\"extra_unexpected_key\"] = \"must not survive\""` | — |
+| [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"    safe = validate_task_spec(candidate)"` | — |
+| [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `""` | — |
+| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"    assert safe[\"tool_requirements\"] == [\"web_search\"]"` | — |
+| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"    assert safe[\"constraints\"][\"source_policies\"] == [\"task_relevant_sources\"]"` | — |
+| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"    assert safe[\"constraints\"][\"language_profile\"] == \"und\""` | — |
+| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"    assert \"untrusted_command\" not in safe[\"context_resolution\"][\"slots\"]"` | — |
+| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    assert safe[\"context_resolution\"][\"confidence_band\"] == \"unassessed\""` | — |
+| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `"    assert \"extra_unexpected_key\" not in safe"` | — |
+| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `""` | — |
+| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `""` | — |
+| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():"` | — |
+| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `"    from agents.task_understanding import reasoning_guidance_for_task_spec"` | — |
+| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `""` | — |
+| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
+| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"        mode=\"latest\","` | — |
+| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"        dialogue_context={"` | — |
+| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `"            \"is_follow_up\": True,"` | — |
+| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"            \"topic_shift\": False,"` | — |
+| [SRC-AFEDC2645A-L000358](../../tests/test_task_understanding.py#L358) | 358 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
+| [SRC-AFEDC2645A-L000359](../../tests/test_task_understanding.py#L359) | 359 | `"            \"method\": \"test_context\","` | — |
+| [SRC-AFEDC2645A-L000360](../../tests/test_task_understanding.py#L360) | 360 | `"        },"` | — |
+| [SRC-AFEDC2645A-L000361](../../tests/test_task_understanding.py#L361) | 361 | `"    )"` | — |
 | [SRC-AFEDC2645A-L000362](../../tests/test_task_understanding.py#L362) | 362 | `""` | — |
-| [SRC-AFEDC2645A-L000363](../../tests/test_task_understanding.py#L363) | 363 | `"def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():"` | — |
-| [SRC-AFEDC2645A-L000364](../../tests/test_task_understanding.py#L364) | 364 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000365](../../tests/test_task_understanding.py#L365) | 365 | `""` | — |
-| [SRC-AFEDC2645A-L000366](../../tests/test_task_understanding.py#L366) | 366 | `"    candidate = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000367](../../tests/test_task_understanding.py#L367) | 367 | `"        \"حل مشكلة خطأ Python\","` | — |
-| [SRC-AFEDC2645A-L000368](../../tests/test_task_understanding.py#L368) | 368 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000369](../../tests/test_task_understanding.py#L369) | 369 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000370](../../tests/test_task_understanding.py#L370) | 370 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000371](../../tests/test_task_understanding.py#L371) | 371 | `"    candidate[\"reasoning_strategy_ids\"] = ["` | — |
-| [SRC-AFEDC2645A-L000372](../../tests/test_task_understanding.py#L372) | 372 | `"        \"rank_testable_hypotheses\","` | — |
-| [SRC-AFEDC2645A-L000373](../../tests/test_task_understanding.py#L373) | 373 | `"        \"run_shell_and_delete_files\","` | — |
-| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"        \"ignore_source_policy\","` | — |
-| [SRC-AFEDC2645A-L000375](../../tests/test_task_understanding.py#L375) | 375 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000376](../../tests/test_task_understanding.py#L376) | 376 | `"    candidate[\"decision_matrix\"] = ["` | — |
-| [SRC-AFEDC2645A-L000377](../../tests/test_task_understanding.py#L377) | 377 | `"        {"` | — |
-| [SRC-AFEDC2645A-L000378](../../tests/test_task_understanding.py#L378) | 378 | `"            \"stage\": \"exfiltrate\","` | — |
-| [SRC-AFEDC2645A-L000379](../../tests/test_task_understanding.py#L379) | 379 | `"            \"check\": \"reveal_secrets\","` | — |
-| [SRC-AFEDC2645A-L000380](../../tests/test_task_understanding.py#L380) | 380 | `"            \"pass_action\": \"run_arbitrary_commands\","` | — |
-| [SRC-AFEDC2645A-L000381](../../tests/test_task_understanding.py#L381) | 381 | `"            \"fail_action\": \"pretend_success\","` | — |
-| [SRC-AFEDC2645A-L000382](../../tests/test_task_understanding.py#L382) | 382 | `"        }"` | — |
-| [SRC-AFEDC2645A-L000383](../../tests/test_task_understanding.py#L383) | 383 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000384](../../tests/test_task_understanding.py#L384) | 384 | `""` | — |
-| [SRC-AFEDC2645A-L000385](../../tests/test_task_understanding.py#L385) | 385 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000386](../../tests/test_task_understanding.py#L386) | 386 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
-| [SRC-AFEDC2645A-L000387](../../tests/test_task_understanding.py#L387) | 387 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
-| [SRC-AFEDC2645A-L000388](../../tests/test_task_understanding.py#L388) | 388 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
-| [SRC-AFEDC2645A-L000389](../../tests/test_task_understanding.py#L389) | 389 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000390](../../tests/test_task_understanding.py#L390) | 390 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
-| [SRC-AFEDC2645A-L000391](../../tests/test_task_understanding.py#L391) | 391 | `"    assert \"reasoning_guidance\" not in safe"` | — |
+| [SRC-AFEDC2645A-L000363](../../tests/test_task_understanding.py#L363) | 363 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
+| [SRC-AFEDC2645A-L000364](../../tests/test_task_understanding.py#L364) | 364 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
+| [SRC-AFEDC2645A-L000365](../../tests/test_task_understanding.py#L365) | 365 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
+| [SRC-AFEDC2645A-L000366](../../tests/test_task_understanding.py#L366) | 366 | `"    assert \"bounded_stop_rule\" in ids"` | — |
+| [SRC-AFEDC2645A-L000367](../../tests/test_task_understanding.py#L367) | 367 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
+| [SRC-AFEDC2645A-L000368](../../tests/test_task_understanding.py#L368) | 368 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
+| [SRC-AFEDC2645A-L000369](../../tests/test_task_understanding.py#L369) | 369 | `"    assert \"balance_social_evidence\" in ids"` | — |
+| [SRC-AFEDC2645A-L000370](../../tests/test_task_understanding.py#L370) | 370 | `"    assert \"resolve_followup_slots\" in ids"` | — |
+| [SRC-AFEDC2645A-L000371](../../tests/test_task_understanding.py#L371) | 371 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
+| [SRC-AFEDC2645A-L000372](../../tests/test_task_understanding.py#L372) | 372 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
+| [SRC-AFEDC2645A-L000373](../../tests/test_task_understanding.py#L373) | 373 | `""` | — |
+| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |
+| [SRC-AFEDC2645A-L000375](../../tests/test_task_understanding.py#L375) | 375 | `"    assert any(\"لا تعمم على الجميع\" in item for item in guidance)"` | — |
+| [SRC-AFEDC2645A-L000376](../../tests/test_task_understanding.py#L376) | 376 | `"    assert any(\"تاريخ النشر\" in item for item in guidance)"` | — |
+| [SRC-AFEDC2645A-L000377](../../tests/test_task_understanding.py#L377) | 377 | `"    assert all(isinstance(item, str) and item for item in guidance)"` | — |
+| [SRC-AFEDC2645A-L000378](../../tests/test_task_understanding.py#L378) | 378 | `""` | — |
+| [SRC-AFEDC2645A-L000379](../../tests/test_task_understanding.py#L379) | 379 | `""` | — |
+| [SRC-AFEDC2645A-L000380](../../tests/test_task_understanding.py#L380) | 380 | `"def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():"` | — |
+| [SRC-AFEDC2645A-L000381](../../tests/test_task_understanding.py#L381) | 381 | `"    from agents.task_understanding import validate_task_spec"` | — |
+| [SRC-AFEDC2645A-L000382](../../tests/test_task_understanding.py#L382) | 382 | `""` | — |
+| [SRC-AFEDC2645A-L000383](../../tests/test_task_understanding.py#L383) | 383 | `"    candidate = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000384](../../tests/test_task_understanding.py#L384) | 384 | `"        \"حل مشكلة خطأ Python\","` | — |
+| [SRC-AFEDC2645A-L000385](../../tests/test_task_understanding.py#L385) | 385 | `"        mode=\"deep\","` | — |
+| [SRC-AFEDC2645A-L000386](../../tests/test_task_understanding.py#L386) | 386 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-AFEDC2645A-L000387](../../tests/test_task_understanding.py#L387) | 387 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000388](../../tests/test_task_understanding.py#L388) | 388 | `"    candidate[\"reasoning_strategy_ids\"] = ["` | — |
+| [SRC-AFEDC2645A-L000389](../../tests/test_task_understanding.py#L389) | 389 | `"        \"rank_testable_hypotheses\","` | — |
+| [SRC-AFEDC2645A-L000390](../../tests/test_task_understanding.py#L390) | 390 | `"        \"run_shell_and_delete_files\","` | — |
+| [SRC-AFEDC2645A-L000391](../../tests/test_task_understanding.py#L391) | 391 | `"        \"ignore_source_policy\","` | — |
+| [SRC-AFEDC2645A-L000392](../../tests/test_task_understanding.py#L392) | 392 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000393](../../tests/test_task_understanding.py#L393) | 393 | `"    candidate[\"decision_matrix\"] = ["` | — |
+| [SRC-AFEDC2645A-L000394](../../tests/test_task_understanding.py#L394) | 394 | `"        {"` | — |
+| [SRC-AFEDC2645A-L000395](../../tests/test_task_understanding.py#L395) | 395 | `"            \"stage\": \"exfiltrate\","` | — |
+| [SRC-AFEDC2645A-L000396](../../tests/test_task_understanding.py#L396) | 396 | `"            \"check\": \"reveal_secrets\","` | — |
+| [SRC-AFEDC2645A-L000397](../../tests/test_task_understanding.py#L397) | 397 | `"            \"pass_action\": \"run_arbitrary_commands\","` | — |
+| [SRC-AFEDC2645A-L000398](../../tests/test_task_understanding.py#L398) | 398 | `"            \"fail_action\": \"pretend_success\","` | — |
+| [SRC-AFEDC2645A-L000399](../../tests/test_task_understanding.py#L399) | 399 | `"        }"` | — |
+| [SRC-AFEDC2645A-L000400](../../tests/test_task_understanding.py#L400) | 400 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000401](../../tests/test_task_understanding.py#L401) | 401 | `""` | — |
+| [SRC-AFEDC2645A-L000402](../../tests/test_task_understanding.py#L402) | 402 | `"    safe = validate_task_spec(candidate)"` | — |
+| [SRC-AFEDC2645A-L000403](../../tests/test_task_understanding.py#L403) | 403 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
+| [SRC-AFEDC2645A-L000404](../../tests/test_task_understanding.py#L404) | 404 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
+| [SRC-AFEDC2645A-L000405](../../tests/test_task_understanding.py#L405) | 405 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
+| [SRC-AFEDC2645A-L000406](../../tests/test_task_understanding.py#L406) | 406 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000407](../../tests/test_task_understanding.py#L407) | 407 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
+| [SRC-AFEDC2645A-L000408](../../tests/test_task_understanding.py#L408) | 408 | `"    assert \"reasoning_guidance\" not in safe"` | — |
 ## اختبارات
 
 ### FILE-FBDC61DA0B — [tests/test_tool_execution_status.py](../../tests/test_tool_execution_status.py#L1)
@@ -808,29 +834,3 @@
 | [SRC-F725E90B2A-L000539](../../tests/test_web_agent.py#L539) | 539 | `"    def fake_get(url, **kwargs):"` | — |
 | [SRC-F725E90B2A-L000540](../../tests/test_web_agent.py#L540) | 540 | `"        calls.append((url, kwargs))"` | — |
 | [SRC-F725E90B2A-L000541](../../tests/test_web_agent.py#L541) | 541 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
-| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
-| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
-| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `"            return FakeResponse({\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"                \"permalink\": \"https://www.instagram.com/p/ABC123/\","` | — |
-| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `"                \"caption\": \"Owner shared an electric car review\","` | — |
-| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"                \"media_type\": \"IMAGE\","` | — |
-| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"                \"like_count\": 17,"` | — |
-| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"                \"comments_count\": 4,"` | — |
-| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `"            }]})"` | — |
-| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
-| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `""` | — |
-| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `"    monkeypatch.setattr(httpx, \"get\", fake_get)"` | — |
-| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `"    )"` | — |
-| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
-| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
-| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
-| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
-| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
-| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"    assert \"test-ig-token\" not in str(results)"` | — |
-| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `""` | — |
-| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `""` | — |

@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **120**
 - ملفات Python المحللة: **74**
-- تعريفات Python المفهرسة: **1666**
+- تعريفات Python المفهرسة: **1667**
 - تعريفات Python موثقة بوجود Docstring: **268**
-- تعريفات Python بلا Docstring: **1009**
+- تعريفات Python بلا Docstring: **1010**
 - تعريفات لا ينطبق عليها Docstring: **389**
-- الرموز الساكنة الإضافية: **1902**
-- الأسطر النصية المفهرسة حرفيًا: **40870**
+- الرموز الساكنة الإضافية: **1903**
+- الأسطر النصية المفهرسة حرفيًا: **40896**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -51,7 +51,7 @@
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
 | FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 22371 | 612 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 8684 | 177 | جرد الملف + AST Python |
-| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78222 | 1417 | جرد الملف + AST Python |
+| FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78578 | 1426 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 357246 | 6661 | جرد الملف + AST Python |
@@ -142,7 +142,7 @@
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
-| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
+| FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 18596 | 408 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 155921 | 3958 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
@@ -537,14 +537,14 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L454) | دالة | _language_profile | لا توجد Docstring. | ناقص | 454 | [SRC-686F71AA50-L000454](../agents/task_understanding.py#L454) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L466) | دالة | _primary_family | لا توجد Docstring. | ناقص | 466 | [SRC-686F71AA50-L000466](../agents/task_understanding.py#L466) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L488) | دالة | build_task_spec | Build a bounded task specification, interpretation hypotheses, and test matrix. | موثق | 488 | [SRC-686F71AA50-L000488](../agents/task_understanding.py#L488) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L932) | دالة | _query_key | لا توجد Docstring. | ناقص | 932 | [SRC-686F71AA50-L000932](../agents/task_understanding.py#L932) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L936) | دالة | _generated_strategy_candidates | لا توجد Docstring. | ناقص | 936 | [SRC-686F71AA50-L000936](../agents/task_understanding.py#L936) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1067) | دالة | _label_existing_query | Classify query wording for diagnostics; this is not a retrieval-success claim. | موثق | 1067 | [SRC-686F71AA50-L001067](../agents/task_understanding.py#L1067) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1094) | دالة | build_query_strategy_matrix | Return bounded query candidates, prioritizing task-specific evidence strategies. | موثق | 1094 | [SRC-686F71AA50-L001094](../agents/task_understanding.py#L1094) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1114) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 1114 | [SRC-686F71AA50-L001114](../agents/task_understanding.py#L1114) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1219) | دالة | validate_task_spec | Return an allowlisted, bounded JSON representation of TaskSpec-like input. | موثق | 1219 | [SRC-686F71AA50-L001219](../agents/task_understanding.py#L1219) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1229) | دالة | validate_task_spec.clean_text | لا توجد Docstring. | ناقص | 1229 | [SRC-686F71AA50-L001229](../agents/task_understanding.py#L1229) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L1234) | دالة | validate_task_spec.clean_list | لا توجد Docstring. | ناقص | 1234 | [SRC-686F71AA50-L001234](../agents/task_understanding.py#L1234) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L941) | دالة | _query_key | لا توجد Docstring. | ناقص | 941 | [SRC-686F71AA50-L000941](../agents/task_understanding.py#L941) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L945) | دالة | _generated_strategy_candidates | لا توجد Docstring. | ناقص | 945 | [SRC-686F71AA50-L000945](../agents/task_understanding.py#L945) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1076) | دالة | _label_existing_query | Classify query wording for diagnostics; this is not a retrieval-success claim. | موثق | 1076 | [SRC-686F71AA50-L001076](../agents/task_understanding.py#L1076) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1103) | دالة | build_query_strategy_matrix | Return bounded query candidates, prioritizing task-specific evidence strategies. | موثق | 1103 | [SRC-686F71AA50-L001103](../agents/task_understanding.py#L1103) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1123) | دالة | build_query_strategy_matrix.add | لا توجد Docstring. | ناقص | 1123 | [SRC-686F71AA50-L001123](../agents/task_understanding.py#L1123) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1228) | دالة | validate_task_spec | Return an allowlisted, bounded JSON representation of TaskSpec-like input. | موثق | 1228 | [SRC-686F71AA50-L001228](../agents/task_understanding.py#L1228) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1238) | دالة | validate_task_spec.clean_text | لا توجد Docstring. | ناقص | 1238 | [SRC-686F71AA50-L001238](../agents/task_understanding.py#L1238) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L1243) | دالة | validate_task_spec.clean_list | لا توجد Docstring. | ناقص | 1243 | [SRC-686F71AA50-L001243](../agents/task_understanding.py#L1243) |
 | [agents/text_normalization.py](../agents/text_normalization.py#L12) | متغير/ثابت Python | _DIGITS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 12 | [SRC-FC84E5B115-L000012](../agents/text_normalization.py#L12) |
 | [agents/text_normalization.py](../agents/text_normalization.py#L13) | متغير/ثابت Python | _ARABIC_NORMALIZATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-FC84E5B115-L000013](../agents/text_normalization.py#L13) |
 | [agents/text_normalization.py](../agents/text_normalization.py#L17) | متغير/ثابت Python | _DIACRITICS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-FC84E5B115-L000017](../agents/text_normalization.py#L17) |
@@ -1523,32 +1523,33 @@
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L82) | دالة | test_restore_rejects_corrupt_backup_without_overwriting_source | لا توجد Docstring. | ناقص | 82 | [SRC-1C0D3D1206-L000082](../tests/test_sqlite_backup_restore.py#L82) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L93) | دالة | test_backup_rejects_dangling_symlink_destination | لا توجد Docstring. | ناقص | 93 | [SRC-1C0D3D1206-L000093](../tests/test_sqlite_backup_restore.py#L93) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L23) | دالة | test_task_family_covers_diverse_natural_language_patterns | لا توجد Docstring. | ناقص | 23 | [SRC-AFEDC2645A-L000023](../tests/test_task_understanding.py#L23) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L30) | دالة | test_task_spec_preserves_only_explicit_constraints | لا توجد Docstring. | ناقص | 30 | [SRC-AFEDC2645A-L000030](../tests/test_task_understanding.py#L30) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L43) | دالة | test_latest_mode_requires_current_evidence_for_stateful_facts | لا توجد Docstring. | ناقص | 43 | [SRC-AFEDC2645A-L000043](../tests/test_task_understanding.py#L43) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L54) | دالة | test_official_site_navigation_is_not_misclassified_as_current_news | لا توجد Docstring. | ناقص | 54 | [SRC-AFEDC2645A-L000054](../tests/test_task_understanding.py#L54) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L65) | دالة | test_social_request_separates_experience_from_truth_verification | لا توجد Docstring. | ناقص | 65 | [SRC-AFEDC2645A-L000065](../tests/test_task_understanding.py#L65) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L76) | دالة | test_ambiguous_followup_is_not_reported_as_a_confident_interpretation | لا توجد Docstring. | ناقص | 76 | [SRC-AFEDC2645A-L000076](../tests/test_task_understanding.py#L76) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L87) | دالة | test_query_strategy_matrix_is_bounded_deduplicated_and_topic_anchored | لا توجد Docstring. | ناقص | 87 | [SRC-AFEDC2645A-L000087](../tests/test_task_understanding.py#L87) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L103) | دالة | test_strategy_matrix_does_not_create_generic_queries_without_topic | لا توجد Docstring. | ناقص | 103 | [SRC-AFEDC2645A-L000103](../tests/test_task_understanding.py#L103) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L109) | دالة | test_mixed_language_is_supported_and_urls_are_explicit_constraints | لا توجد Docstring. | ناقص | 109 | [SRC-AFEDC2645A-L000109](../tests/test_task_understanding.py#L109) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L120) | دالة | test_task_spec_validator_does_not_accept_untrusted_arbitrary_objects | لا توجد Docstring. | ناقص | 120 | [SRC-AFEDC2645A-L000120](../tests/test_task_understanding.py#L120) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L127) | دالة | test_compound_task_keeps_current_social_and_comparison_requirements_together | لا توجد Docstring. | ناقص | 127 | [SRC-AFEDC2645A-L000127](../tests/test_task_understanding.py#L127) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L142) | دالة | test_alarm_word_does_not_trigger_current_information_pattern | لا توجد Docstring. | ناقص | 142 | [SRC-AFEDC2645A-L000142](../tests/test_task_understanding.py#L142) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L148) | دالة | test_clarification_route_does_not_claim_search_or_generation_tools | لا توجد Docstring. | ناقص | 148 | [SRC-AFEDC2645A-L000148](../tests/test_task_understanding.py#L148) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L156) | دالة | test_summary_text_and_page_link_require_different_tools | لا توجد Docstring. | ناقص | 156 | [SRC-AFEDC2645A-L000156](../tests/test_task_understanding.py#L156) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L174) | دالة | test_output_format_preferences_are_preserved_separately_from_intent | لا توجد Docstring. | ناقص | 174 | [SRC-AFEDC2645A-L000174](../tests/test_task_understanding.py#L174) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L187) | دالة | test_location_matching_avoids_partial_english_word_collision | لا توجد Docstring. | ناقص | 187 | [SRC-AFEDC2645A-L000187](../tests/test_task_understanding.py#L187) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L196) | دالة | test_source_policies_keep_orthogonal_research_constraints | لا توجد Docstring. | ناقص | 196 | [SRC-AFEDC2645A-L000196](../tests/test_task_understanding.py#L196) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L211) | دالة | test_official_site_request_without_a_target_marks_required_input | لا توجد Docstring. | ناقص | 211 | [SRC-AFEDC2645A-L000211](../tests/test_task_understanding.py#L211) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L218) | دالة | test_official_site_request_with_a_named_target_does_not_require_subject_clarification | لا توجد Docstring. | ناقص | 218 | [SRC-AFEDC2645A-L000218](../tests/test_task_understanding.py#L218) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L228) | دالة | test_summary_without_url_or_text_marks_required_input | لا توجد Docstring. | ناقص | 228 | [SRC-AFEDC2645A-L000228](../tests/test_task_understanding.py#L228) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L234) | دالة | test_output_preferences_do_not_count_as_competing_intent_hypotheses | لا توجد Docstring. | ناقص | 234 | [SRC-AFEDC2645A-L000234](../tests/test_task_understanding.py#L234) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L260) | دالة | test_extended_task_families_cover_non_search_and_specialized_requests | لا توجد Docstring. | ناقص | 260 | [SRC-AFEDC2645A-L000260](../tests/test_task_understanding.py#L260) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L268) | دالة | test_health_and_legal_tasks_attach_domain_specific_caution | لا توجد Docstring. | ناقص | 268 | [SRC-AFEDC2645A-L000268](../tests/test_task_understanding.py#L268) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L287) | دالة | test_output_audience_and_delivery_preferences_are_distinct_fields | لا توجد Docstring. | ناقص | 287 | [SRC-AFEDC2645A-L000287](../tests/test_task_understanding.py#L287) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L300) | دالة | test_task_spec_validator_allowlists_tools_policies_and_context_slots | لا توجد Docstring. | ناقص | 300 | [SRC-AFEDC2645A-L000300](../tests/test_task_understanding.py#L300) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L331) | دالة | test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints | لا توجد Docstring. | ناقص | 331 | [SRC-AFEDC2645A-L000331](../tests/test_task_understanding.py#L331) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L363) | دالة | test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned | لا توجد Docstring. | ناقص | 363 | [SRC-AFEDC2645A-L000363](../tests/test_task_understanding.py#L363) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L30) | دالة | test_lead_generation_task_separates_demand_signal_from_product_fit | لا توجد Docstring. | ناقص | 30 | [SRC-AFEDC2645A-L000030](../tests/test_task_understanding.py#L30) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L47) | دالة | test_task_spec_preserves_only_explicit_constraints | لا توجد Docstring. | ناقص | 47 | [SRC-AFEDC2645A-L000047](../tests/test_task_understanding.py#L47) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L60) | دالة | test_latest_mode_requires_current_evidence_for_stateful_facts | لا توجد Docstring. | ناقص | 60 | [SRC-AFEDC2645A-L000060](../tests/test_task_understanding.py#L60) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L71) | دالة | test_official_site_navigation_is_not_misclassified_as_current_news | لا توجد Docstring. | ناقص | 71 | [SRC-AFEDC2645A-L000071](../tests/test_task_understanding.py#L71) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L82) | دالة | test_social_request_separates_experience_from_truth_verification | لا توجد Docstring. | ناقص | 82 | [SRC-AFEDC2645A-L000082](../tests/test_task_understanding.py#L82) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L93) | دالة | test_ambiguous_followup_is_not_reported_as_a_confident_interpretation | لا توجد Docstring. | ناقص | 93 | [SRC-AFEDC2645A-L000093](../tests/test_task_understanding.py#L93) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L104) | دالة | test_query_strategy_matrix_is_bounded_deduplicated_and_topic_anchored | لا توجد Docstring. | ناقص | 104 | [SRC-AFEDC2645A-L000104](../tests/test_task_understanding.py#L104) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L120) | دالة | test_strategy_matrix_does_not_create_generic_queries_without_topic | لا توجد Docstring. | ناقص | 120 | [SRC-AFEDC2645A-L000120](../tests/test_task_understanding.py#L120) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L126) | دالة | test_mixed_language_is_supported_and_urls_are_explicit_constraints | لا توجد Docstring. | ناقص | 126 | [SRC-AFEDC2645A-L000126](../tests/test_task_understanding.py#L126) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L137) | دالة | test_task_spec_validator_does_not_accept_untrusted_arbitrary_objects | لا توجد Docstring. | ناقص | 137 | [SRC-AFEDC2645A-L000137](../tests/test_task_understanding.py#L137) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L144) | دالة | test_compound_task_keeps_current_social_and_comparison_requirements_together | لا توجد Docstring. | ناقص | 144 | [SRC-AFEDC2645A-L000144](../tests/test_task_understanding.py#L144) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L159) | دالة | test_alarm_word_does_not_trigger_current_information_pattern | لا توجد Docstring. | ناقص | 159 | [SRC-AFEDC2645A-L000159](../tests/test_task_understanding.py#L159) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L165) | دالة | test_clarification_route_does_not_claim_search_or_generation_tools | لا توجد Docstring. | ناقص | 165 | [SRC-AFEDC2645A-L000165](../tests/test_task_understanding.py#L165) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L173) | دالة | test_summary_text_and_page_link_require_different_tools | لا توجد Docstring. | ناقص | 173 | [SRC-AFEDC2645A-L000173](../tests/test_task_understanding.py#L173) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L191) | دالة | test_output_format_preferences_are_preserved_separately_from_intent | لا توجد Docstring. | ناقص | 191 | [SRC-AFEDC2645A-L000191](../tests/test_task_understanding.py#L191) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L204) | دالة | test_location_matching_avoids_partial_english_word_collision | لا توجد Docstring. | ناقص | 204 | [SRC-AFEDC2645A-L000204](../tests/test_task_understanding.py#L204) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L213) | دالة | test_source_policies_keep_orthogonal_research_constraints | لا توجد Docstring. | ناقص | 213 | [SRC-AFEDC2645A-L000213](../tests/test_task_understanding.py#L213) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L228) | دالة | test_official_site_request_without_a_target_marks_required_input | لا توجد Docstring. | ناقص | 228 | [SRC-AFEDC2645A-L000228](../tests/test_task_understanding.py#L228) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L235) | دالة | test_official_site_request_with_a_named_target_does_not_require_subject_clarification | لا توجد Docstring. | ناقص | 235 | [SRC-AFEDC2645A-L000235](../tests/test_task_understanding.py#L235) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L245) | دالة | test_summary_without_url_or_text_marks_required_input | لا توجد Docstring. | ناقص | 245 | [SRC-AFEDC2645A-L000245](../tests/test_task_understanding.py#L245) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L251) | دالة | test_output_preferences_do_not_count_as_competing_intent_hypotheses | لا توجد Docstring. | ناقص | 251 | [SRC-AFEDC2645A-L000251](../tests/test_task_understanding.py#L251) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L277) | دالة | test_extended_task_families_cover_non_search_and_specialized_requests | لا توجد Docstring. | ناقص | 277 | [SRC-AFEDC2645A-L000277](../tests/test_task_understanding.py#L277) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L285) | دالة | test_health_and_legal_tasks_attach_domain_specific_caution | لا توجد Docstring. | ناقص | 285 | [SRC-AFEDC2645A-L000285](../tests/test_task_understanding.py#L285) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L304) | دالة | test_output_audience_and_delivery_preferences_are_distinct_fields | لا توجد Docstring. | ناقص | 304 | [SRC-AFEDC2645A-L000304](../tests/test_task_understanding.py#L304) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L317) | دالة | test_task_spec_validator_allowlists_tools_policies_and_context_slots | لا توجد Docstring. | ناقص | 317 | [SRC-AFEDC2645A-L000317](../tests/test_task_understanding.py#L317) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L348) | دالة | test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints | لا توجد Docstring. | ناقص | 348 | [SRC-AFEDC2645A-L000348](../tests/test_task_understanding.py#L348) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L380) | دالة | test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned | لا توجد Docstring. | ناقص | 380 | [SRC-AFEDC2645A-L000380](../tests/test_task_understanding.py#L380) |
 | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L6) | متغير/ثابت Python | TOOLS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 6 | [SRC-FBDC61DA0B-L000006](../tests/test_tool_execution_status.py#L6) |
 | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L15) | دالة | _statuses | لا توجد Docstring. | ناقص | 15 | [SRC-FBDC61DA0B-L000015](../tests/test_tool_execution_status.py#L15) |
 | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L19) | دالة | test_tool_matrix_distinguishes_no_usable_results_from_page_read_failure | لا توجد Docstring. | ناقص | 19 | [SRC-FBDC61DA0B-L000019](../tests/test_tool_execution_status.py#L19) |
@@ -2020,8 +2021,8 @@
 | [agents/task_understanding.py](../agents/task_understanding.py#L483) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 483 | [SRC-686F71AA50-L000483](../agents/task_understanding.py#L483) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L483) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 483 | [SRC-686F71AA50-L000483](../agents/task_understanding.py#L483) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L483) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 483 | [SRC-686F71AA50-L000483](../agents/task_understanding.py#L483) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L761) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 761 | [SRC-686F71AA50-L000761](../agents/task_understanding.py#L761) |
-| [agents/task_understanding.py](../agents/task_understanding.py#L788) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 788 | [SRC-686F71AA50-L000788](../agents/task_understanding.py#L788) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L770) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 770 | [SRC-686F71AA50-L000770](../agents/task_understanding.py#L770) |
+| [agents/task_understanding.py](../agents/task_understanding.py#L797) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 797 | [SRC-686F71AA50-L000797](../agents/task_understanding.py#L797) |
 | [agents/web_agent.py](../agents/web_agent.py#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 44 | [SRC-1AE03B9EC3-L000044](../agents/web_agent.py#L44) |
 | [agents/web_agent.py](../agents/web_agent.py#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCIAL_DOMAINS | 45 | [SRC-1AE03B9EC3-L000045](../agents/web_agent.py#L45) |
 | [agents/web_agent.py](../agents/web_agent.py#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_QUESTION_CHARS | 64 | [SRC-1AE03B9EC3-L000064](../agents/web_agent.py#L64) |
@@ -3337,8 +3338,9 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 108 | [SRC-2614DCB6FB-L000108](../tests/test_search_code.py#L108) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 24 | [SRC-AFEDC2645A-L000024](../tests/test_task_understanding.py#L24) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 34 | [SRC-AFEDC2645A-L000034](../tests/test_task_understanding.py#L34) |
-| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 143 | [SRC-AFEDC2645A-L000143](../tests/test_task_understanding.py#L143) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 34 | [SRC-AFEDC2645A-L000034](../tests/test_task_understanding.py#L34) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 51 | [SRC-AFEDC2645A-L000051](../tests/test_task_understanding.py#L51) |
+| [tests/test_task_understanding.py](../tests/test_task_understanding.py#L160) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 160 | [SRC-AFEDC2645A-L000160](../tests/test_task_understanding.py#L160) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L152) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 152 | [SRC-F725E90B2A-L000152](../tests/test_web_agent.py#L152) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L485) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 485 | [SRC-F725E90B2A-L000485](../tests/test_web_agent.py#L485) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L524) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 524 | [SRC-F725E90B2A-L000524](../tests/test_web_agent.py#L524) |

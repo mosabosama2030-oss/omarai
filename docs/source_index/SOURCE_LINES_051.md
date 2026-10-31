@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003768 إلى SRC-DE7EABE998-L000466
+- النطاق: SRC-F725E90B2A-L003742 إلى SRC-DE7EABE998-L000440
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003742](../../tests/test_web_agent.py#L3742) | 3742 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L003743](../../tests/test_web_agent.py#L3743) | 3743 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
+| [SRC-F725E90B2A-L003744](../../tests/test_web_agent.py#L3744) | 3744 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003745](../../tests/test_web_agent.py#L3745) | 3745 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003746](../../tests/test_web_agent.py#L3746) | 3746 | `"        \"_generate\","` | — |
+| [SRC-F725E90B2A-L003747](../../tests/test_web_agent.py#L3747) | 3747 | `"        lambda *args, **kwargs: ("` | — |
+| [SRC-F725E90B2A-L003748](../../tests/test_web_agent.py#L3748) | 3748 | `"            \"السعر مناسب [المصدر 1]. الخصوصية جيدة [المصدر 2]. \""` | — |
+| [SRC-F725E90B2A-L003749](../../tests/test_web_agent.py#L3749) | 3749 | `"            \"الاعتمادية مناسبة [المصدر 1].\""` | — |
+| [SRC-F725E90B2A-L003750](../../tests/test_web_agent.py#L3750) | 3750 | `"        ),"` | — |
+| [SRC-F725E90B2A-L003751](../../tests/test_web_agent.py#L3751) | 3751 | `"    )"` | — |
+| [SRC-F725E90B2A-L003752](../../tests/test_web_agent.py#L3752) | 3752 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003753](../../tests/test_web_agent.py#L3753) | 3753 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003754](../../tests/test_web_agent.py#L3754) | 3754 | `"        \"_review_answer\","` | — |
+| [SRC-F725E90B2A-L003755](../../tests/test_web_agent.py#L3755) | 3755 | `"        lambda _question, answer, _sources: answer,"` | — |
+| [SRC-F725E90B2A-L003756](../../tests/test_web_agent.py#L3756) | 3756 | `"    )"` | — |
+| [SRC-F725E90B2A-L003757](../../tests/test_web_agent.py#L3757) | 3757 | `""` | — |
+| [SRC-F725E90B2A-L003758](../../tests/test_web_agent.py#L3758) | 3758 | `"    result = agent.answer(question, mode=\"social\")"` | — |
+| [SRC-F725E90B2A-L003759](../../tests/test_web_agent.py#L3759) | 3759 | `"    report = result[\"search_report\"]"` | — |
+| [SRC-F725E90B2A-L003760](../../tests/test_web_agent.py#L3760) | 3760 | `"    repair_guardrails = report[\"source_guardrails\"][\"criterion_gap_repair\"]"` | — |
+| [SRC-F725E90B2A-L003761](../../tests/test_web_agent.py#L3761) | 3761 | `""` | — |
+| [SRC-F725E90B2A-L003762](../../tests/test_web_agent.py#L3762) | 3762 | `"    assert len(collect_calls) >= 2"` | — |
+| [SRC-F725E90B2A-L003763](../../tests/test_web_agent.py#L3763) | 3763 | `"    assert repair_guardrails[\"rejected_sources\"] >= 1"` | — |
+| [SRC-F725E90B2A-L003764](../../tests/test_web_agent.py#L3764) | 3764 | `"    assert repair_guardrails[\"rejection_counts\"][\"not_a_social_platform_source\"] >= 1"` | — |
+| [SRC-F725E90B2A-L003765](../../tests/test_web_agent.py#L3765) | 3765 | `"    assert all(\"reddit.com\" in source[\"url\"] for source in result[\"sources\"])"` | — |
+| [SRC-F725E90B2A-L003766](../../tests/test_web_agent.py#L3766) | 3766 | `"    assert \"https://example.com/unrelated-repair\" not in {"` | — |
+| [SRC-F725E90B2A-L003767](../../tests/test_web_agent.py#L3767) | 3767 | `"        source[\"url\"] for source in result[\"sources\"]"` | — |
 | [SRC-F725E90B2A-L003768](../../tests/test_web_agent.py#L3768) | 3768 | `"    }"` | — |
 | [SRC-F725E90B2A-L003769](../../tests/test_web_agent.py#L3769) | 3769 | `""` | — |
 | [SRC-F725E90B2A-L003770](../../tests/test_web_agent.py#L3770) | 3770 | `"def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):"` | — |
@@ -808,29 +834,3 @@
 | [SRC-DE7EABE998-L000438](../../web/agent.html#L438) | 438 | `"}"` | — |
 | [SRC-DE7EABE998-L000439](../../web/agent.html#L439) | 439 | `"async function runDiagnostics(){"` | — |
 | [SRC-DE7EABE998-L000440](../../web/agent.html#L440) | 440 | `" const button=$(\"runDiagnostics\"),output=$(\"diagnosticsResult\");if(button.disabled)return;"` | — |
-| [SRC-DE7EABE998-L000441](../../web/agent.html#L441) | 441 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
-| [SRC-DE7EABE998-L000442](../../web/agent.html#L442) | 442 | `" try{"` | — |
-| [SRC-DE7EABE998-L000443](../../web/agent.html#L443) | 443 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
-| [SRC-DE7EABE998-L000444](../../web/agent.html#L444) | 444 | `"  const data=await response.json();if(!response.ok)throw Error(data.error\|\|\"فشل طلب الاختبار\");"` | — |
-| [SRC-DE7EABE998-L000445](../../web/agent.html#L445) | 445 | `"  const labels={passed:\"نجح فعليًا\",degraded:\"جزئي أو بلا نتائج كافية\",failed:\"فشل\",skipped:\"لم يُختبر\",not_configured:\"غير مضبوط\"};"` | — |
-| [SRC-DE7EABE998-L000446](../../web/agent.html#L446) | 446 | `"  const lines=[\"النتيجة: \"+(labels[data.overall_status]\|\|data.overall_status)];"` | — |
-| [SRC-DE7EABE998-L000447](../../web/agent.html#L447) | 447 | `"  for(const [key,label] of [[\"web_search\",\"بحث الإنترنت\"],[\"language_model\",\"النموذج اللغوي\"],[\"social_search\",\"المصادر الاجتماعية\"]]){"` | — |
-| [SRC-DE7EABE998-L000448](../../web/agent.html#L448) | 448 | `"   const item=(data.checks\|\|{})[key];if(!item)continue;"` | — |
-| [SRC-DE7EABE998-L000449](../../web/agent.html#L449) | 449 | `"   lines.push(label+\": \"+(labels[item.status]\|\|item.status)+(item.result_count!==undefined?\" · \"+item.result_count+\" نتيجة\":\"\"));"` | — |
-| [SRC-DE7EABE998-L000450](../../web/agent.html#L450) | 450 | `"   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push(\"المصادر التي أعادت نتائج: \"+Object.entries(item.provider_counts).map(([p,n])=>p+\" (\"+n+\")\").join(\"، \"));"` | — |
-| [SRC-DE7EABE998-L000451](../../web/agent.html#L451) | 451 | `"   if(item.note)lines.push(item.note);"` | — |
-| [SRC-DE7EABE998-L000452](../../web/agent.html#L452) | 452 | `"   if(item.warnings&&item.warnings.length)lines.push(item.warnings.join(\"؛ \"));"` | — |
-| [SRC-DE7EABE998-L000453](../../web/agent.html#L453) | 453 | `"  }"` | — |
-| [SRC-DE7EABE998-L000454](../../web/agent.html#L454) | 454 | `"  if(data.model_usage&&data.model_usage.length)lines.push(\"النموذج المستخدم: \"+data.model_usage.map(x=>x.used_model).join(\"، \"));"` | — |
-| [SRC-DE7EABE998-L000455](../../web/agent.html#L455) | 455 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
-| [SRC-DE7EABE998-L000456](../../web/agent.html#L456) | 456 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |
-| [SRC-DE7EABE998-L000457](../../web/agent.html#L457) | 457 | `" }catch(e){output.textContent=\"تعذّر الاختبار الحي: \"+(e&&e.message?e.message:\"خطأ غير معروف\");setStatus(\"فشل الاختبار الحي\",\"bad\");}"` | — |
-| [SRC-DE7EABE998-L000458](../../web/agent.html#L458) | 458 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
-| [SRC-DE7EABE998-L000459](../../web/agent.html#L459) | 459 | `"}"` | — |
-| [SRC-DE7EABE998-L000460](../../web/agent.html#L460) | 460 | `"async function checkHealth(){"` | — |
-| [SRC-DE7EABE998-L000461](../../web/agent.html#L461) | 461 | `" try{"` | — |
-| [SRC-DE7EABE998-L000462](../../web/agent.html#L462) | 462 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
-| [SRC-DE7EABE998-L000463](../../web/agent.html#L463) | 463 | `"  const configured=[];"` | — |
-| [SRC-DE7EABE998-L000464](../../web/agent.html#L464) | 464 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
-| [SRC-DE7EABE998-L000465](../../web/agent.html#L465) | 465 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
-| [SRC-DE7EABE998-L000466](../../web/agent.html#L466) | 466 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |

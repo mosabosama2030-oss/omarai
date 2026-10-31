@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003299 إلى SRC-1AE03B9EC3-L004098
+- النطاق: SRC-1AE03B9EC3-L003290 إلى SRC-1AE03B9EC3-L004089
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003290](../../agents/web_agent.py#L3290) | 3290 | `"                ))"` | — |
+| [SRC-1AE03B9EC3-L003291](../../agents/web_agent.py#L3291) | 3291 | `"                return answer.strip()"` | — |
+| [SRC-1AE03B9EC3-L003292](../../agents/web_agent.py#L3292) | 3292 | `"            except urllib.error.HTTPError as exc:"` | — |
+| [SRC-1AE03B9EC3-L003293](../../agents/web_agent.py#L3293) | 3293 | `"                # Never echo provider response bodies: they may contain private diagnostics."` | — |
+| [SRC-1AE03B9EC3-L003294](../../agents/web_agent.py#L3294) | 3294 | `"                self._record_generation_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L003295](../../agents/web_agent.py#L3295) | 3295 | `"                    requested_model, candidate_model, \"provider_http_error\","` | — |
+| [SRC-1AE03B9EC3-L003296](../../agents/web_agent.py#L3296) | 3296 | `"                    error_class=\"HTTPError\", request_started=True,"` | — |
+| [SRC-1AE03B9EC3-L003297](../../agents/web_agent.py#L3297) | 3297 | `"                    remote_response_received=True,"` | — |
+| [SRC-1AE03B9EC3-L003298](../../agents/web_agent.py#L3298) | 3298 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003299](../../agents/web_agent.py#L3299) | 3299 | `"                last_error = RuntimeError("` | — |
 | [SRC-1AE03B9EC3-L003300](../../agents/web_agent.py#L3300) | 3300 | `"                    f\"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد.\""` | — |
 | [SRC-1AE03B9EC3-L003301](../../agents/web_agent.py#L3301) | 3301 | `"                )"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L004087](../../agents/web_agent.py#L4087) | 4087 | `"        with self._provider_diagnostics_lock:"` | — |
 | [SRC-1AE03B9EC3-L004088](../../agents/web_agent.py#L4088) | 4088 | `"            self._provider_diagnostics = []"` | — |
 | [SRC-1AE03B9EC3-L004089](../../agents/web_agent.py#L4089) | 4089 | `"        self.model_usage = []"` | — |
-| [SRC-1AE03B9EC3-L004090](../../agents/web_agent.py#L4090) | 4090 | `"        report: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L004091](../../agents/web_agent.py#L4091) | 4091 | `"            \"timestamp_utc\": datetime.now(UTC).isoformat(timespec=\"seconds\"),"` | — |
-| [SRC-1AE03B9EC3-L004092](../../agents/web_agent.py#L4092) | 4092 | `"            \"checks\": {},"` | — |
-| [SRC-1AE03B9EC3-L004093](../../agents/web_agent.py#L4093) | 4093 | `"            \"configuration\": self.status(),"` | — |
-| [SRC-1AE03B9EC3-L004094](../../agents/web_agent.py#L4094) | 4094 | `"            \"model_usage\": [],"` | — |
-| [SRC-1AE03B9EC3-L004095](../../agents/web_agent.py#L4095) | 4095 | `"            \"warnings\": [],"` | — |
-| [SRC-1AE03B9EC3-L004096](../../agents/web_agent.py#L4096) | 4096 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L004097](../../agents/web_agent.py#L4097) | 4097 | `""` | — |
-| [SRC-1AE03B9EC3-L004098](../../agents/web_agent.py#L4098) | 4098 | `"        # Use several ordinary probes: an empty response to one test phrase is"` | — |

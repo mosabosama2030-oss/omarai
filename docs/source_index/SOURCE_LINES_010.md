@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000099 إلى SRC-1AE03B9EC3-L000898
+- النطاق: SRC-1AE03B9EC3-L000090 إلى SRC-1AE03B9EC3-L000889
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000090](../../agents/web_agent.py#L90) | 90 | `"    \"ؤ\": \"و\", \"ئ\": \"ي\", \"ة\": \"ه\", \"ـ\": \"\","` | — |
+| [SRC-1AE03B9EC3-L000091](../../agents/web_agent.py#L91) | 91 | `"})"` | — |
+| [SRC-1AE03B9EC3-L000092](../../agents/web_agent.py#L92) | 92 | `"_ARABIC_DIACRITICS_RE = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
+| [SRC-1AE03B9EC3-L000093](../../agents/web_agent.py#L93) | 93 | `"_SEARCH_STOPWORDS = frozenset({"` | — |
+| [SRC-1AE03B9EC3-L000094](../../agents/web_agent.py#L94) | 94 | `"    \"ما\", \"ماذا\", \"من\", \"في\", \"على\", \"عن\", \"الى\", \"إلى\", \"و\", \"او\", \"أو\","` | — |
+| [SRC-1AE03B9EC3-L000095](../../agents/web_agent.py#L95) | 95 | `"    \"هل\", \"هو\", \"هي\", \"هذا\", \"هذه\", \"ذلك\", \"تلك\", \"التي\", \"الذي\", \"مع\","` | — |
+| [SRC-1AE03B9EC3-L000096](../../agents/web_agent.py#L96) | 96 | `"    \"بين\", \"كيف\", \"لماذا\", \"كم\", \"كان\", \"كانت\", \"يكون\", \"تكون\", \"لي\","` | — |
+| [SRC-1AE03B9EC3-L000097](../../agents/web_agent.py#L97) | 97 | `"    \"the\", \"a\", \"an\", \"and\", \"or\", \"in\", \"on\", \"of\", \"to\", \"for\", \"with\","` | — |
+| [SRC-1AE03B9EC3-L000098](../../agents/web_agent.py#L98) | 98 | `"    \"is\", \"are\", \"was\", \"were\", \"what\", \"which\", \"who\", \"how\", \"why\", \"when\","` | — |
 | [SRC-1AE03B9EC3-L000099](../../agents/web_agent.py#L99) | 99 | `"    \"where\", \"compare\", \"comparison\", \"please\", \"show\", \"find\", \"latest\","` | — |
 | [SRC-1AE03B9EC3-L000100](../../agents/web_agent.py#L100) | 100 | `"    \"news\", \"official\", \"sources\", \"source\", \"reports\", \"report\", \"analysis\","` | — |
 | [SRC-1AE03B9EC3-L000101](../../agents/web_agent.py#L101) | 101 | `"    \"site\", \"com\", \"org\", \"net\", \"www\","` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L000887](../../agents/web_agent.py#L887) | 887 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L000888](../../agents/web_agent.py#L888) | 888 | `"            ),"` | — |
 | [SRC-1AE03B9EC3-L000889](../../agents/web_agent.py#L889) | 889 | `"            ("` | — |
-| [SRC-1AE03B9EC3-L000890](../../agents/web_agent.py#L890) | 890 | `"                \"stated_need\","` | — |
-| [SRC-1AE03B9EC3-L000891](../../agents/web_agent.py#L891) | 891 | `"                ("` | — |
-| [SRC-1AE03B9EC3-L000892](../../agents/web_agent.py#L892) | 892 | `"                    \"بدور على\", \"ابحث عن\", \"أبحث عن\", \"محتاج\", \"محتاجين\","` | — |
-| [SRC-1AE03B9EC3-L000893](../../agents/web_agent.py#L893) | 893 | `"                    \"looking for\", \"in need of\", \"need a supplier\","` | — |
-| [SRC-1AE03B9EC3-L000894](../../agents/web_agent.py#L894) | 894 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L000895](../../agents/web_agent.py#L895) | 895 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L000896](../../agents/web_agent.py#L896) | 896 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L000897](../../agents/web_agent.py#L897) | 897 | `"        negations = ("` | — |
-| [SRC-1AE03B9EC3-L000898](../../agents/web_agent.py#L898) | 898 | `"            \"not looking to buy\", \"not interested in buying\","` | — |

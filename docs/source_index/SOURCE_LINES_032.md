@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000631 إلى SRC-90FAA34ADE-L000313
+- النطاق: SRC-4FFD5AFC54-L000622 إلى SRC-90FAA34ADE-L000304
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000622](../../scripts/run_answer_quality_benchmark.py#L622) | 622 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
+| [SRC-4FFD5AFC54-L000623](../../scripts/run_answer_quality_benchmark.py#L623) | 623 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000624](../../scripts/run_answer_quality_benchmark.py#L624) | 624 | `"            \"used_language_model\": ("` | — |
+| [SRC-4FFD5AFC54-L000625](../../scripts/run_answer_quality_benchmark.py#L625) | 625 | `"                safe_payload.get(\"used_language_model\")"` | — |
+| [SRC-4FFD5AFC54-L000626](../../scripts/run_answer_quality_benchmark.py#L626) | 626 | `"                if isinstance(safe_payload, dict)"` | — |
+| [SRC-4FFD5AFC54-L000627](../../scripts/run_answer_quality_benchmark.py#L627) | 627 | `"                else None"` | — |
+| [SRC-4FFD5AFC54-L000628](../../scripts/run_answer_quality_benchmark.py#L628) | 628 | `"            ),"` | — |
+| [SRC-4FFD5AFC54-L000629](../../scripts/run_answer_quality_benchmark.py#L629) | 629 | `"            \"sources\": ("` | — |
+| [SRC-4FFD5AFC54-L000630](../../scripts/run_answer_quality_benchmark.py#L630) | 630 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
 | [SRC-4FFD5AFC54-L000631](../../scripts/run_answer_quality_benchmark.py#L631) | 631 | `"            ),"` | — |
 | [SRC-4FFD5AFC54-L000632](../../scripts/run_answer_quality_benchmark.py#L632) | 632 | `"            \"status\": \"NOT_TESTED\","` | — |
 | [SRC-4FFD5AFC54-L000633](../../scripts/run_answer_quality_benchmark.py#L633) | 633 | `"            \"transport_ok\": transport_ok,"` | — |
@@ -834,12 +843,3 @@
 | [SRC-90FAA34ADE-L000302](../../tests/fixtures/answer_quality_cases.json#L302) | 302 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000303](../../tests/fixtures/answer_quality_cases.json#L303) | 303 | `"        \"Confident yes/no without identified subject\""` | — |
 | [SRC-90FAA34ADE-L000304](../../tests/fixtures/answer_quality_cases.json#L304) | 304 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000305](../../tests/fixtures/answer_quality_cases.json#L305) | 305 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000306](../../tests/fixtures/answer_quality_cases.json#L306) | 306 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000307](../../tests/fixtures/answer_quality_cases.json#L307) | 307 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000308](../../tests/fixtures/answer_quality_cases.json#L308) | 308 | `"      \"case_id\": \"AQ-013\","` | — |
-| [SRC-90FAA34ADE-L000309](../../tests/fixtures/answer_quality_cases.json#L309) | 309 | `"      \"category\": \"spelling_variation\","` | — |
-| [SRC-90FAA34ADE-L000310](../../tests/fixtures/answer_quality_cases.json#L310) | 310 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000311](../../tests/fixtures/answer_quality_cases.json#L311) | 311 | `"      \"question\": \"فين المطار في القاهره الجديده تقريبا؟\","` | — |
-| [SRC-90FAA34ADE-L000312](../../tests/fixtures/answer_quality_cases.json#L312) | 312 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000313](../../tests/fixtures/answer_quality_cases.json#L313) | 313 | `"      \"required_behaviors\": ["` | — |

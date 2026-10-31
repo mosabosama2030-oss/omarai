@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005699 إلى SRC-1AE03B9EC3-L006498
+- النطاق: SRC-1AE03B9EC3-L005690 إلى SRC-1AE03B9EC3-L006489
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005690](../../agents/web_agent.py#L5690) | 5690 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L005691](../../agents/web_agent.py#L5691) | 5691 | `"        raw_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
+| [SRC-1AE03B9EC3-L005692](../../agents/web_agent.py#L5692) | 5692 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L005693](../../agents/web_agent.py#L5693) | 5693 | `"            queries_attempted = ("` | — |
+| [SRC-1AE03B9EC3-L005694](../../agents/web_agent.py#L5694) | 5694 | `"                None if raw_attempt_count is None"` | — |
+| [SRC-1AE03B9EC3-L005695](../../agents/web_agent.py#L5695) | 5695 | `"                else max(0, int(raw_attempt_count or 0))"` | — |
+| [SRC-1AE03B9EC3-L005696](../../agents/web_agent.py#L5696) | 5696 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L005697](../../agents/web_agent.py#L5697) | 5697 | `"        except (TypeError, ValueError):"` | — |
+| [SRC-1AE03B9EC3-L005698](../../agents/web_agent.py#L5698) | 5698 | `"            queries_attempted = None"` | — |
 | [SRC-1AE03B9EC3-L005699](../../agents/web_agent.py#L5699) | 5699 | `"        if queries_attempted is not None:"` | — |
 | [SRC-1AE03B9EC3-L005700](../../agents/web_agent.py#L5700) | 5700 | `"            search_attempted = ("` | — |
 | [SRC-1AE03B9EC3-L005701](../../agents/web_agent.py#L5701) | 5701 | `"                queries_attempted > 0"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L006487](../../agents/web_agent.py#L6487) | 6487 | `"            + ([llm_warning] if llm_warning else [])"` | — |
 | [SRC-1AE03B9EC3-L006488](../../agents/web_agent.py#L6488) | 6488 | `"            + ([review_warning] if review_warning else [])"` | — |
 | [SRC-1AE03B9EC3-L006489](../../agents/web_agent.py#L6489) | 6489 | `"            + ([coverage_repair_warning] if coverage_repair_warning else [])"` | — |
-| [SRC-1AE03B9EC3-L006490](../../agents/web_agent.py#L6490) | 6490 | `"            + citation_warnings"` | — |
-| [SRC-1AE03B9EC3-L006491](../../agents/web_agent.py#L6491) | 6491 | `"            + ([uncited_answer_warning] if uncited_answer_warning else [])"` | — |
-| [SRC-1AE03B9EC3-L006492](../../agents/web_agent.py#L6492) | 6492 | `"        ))"` | — |
-| [SRC-1AE03B9EC3-L006493](../../agents/web_agent.py#L6493) | 6493 | `"        report[\"model_calls\"] = list(self.model_usage)"` | — |
-| [SRC-1AE03B9EC3-L006494](../../agents/web_agent.py#L6494) | 6494 | `"        report[\"openrouter_web_search_enabled\"] = self.openrouter_web_search_enabled"` | — |
-| [SRC-1AE03B9EC3-L006495](../../agents/web_agent.py#L6495) | 6495 | `"        report[\"openrouter_web_search_results\"] = len(self.server_search_sources)"` | — |
-| [SRC-1AE03B9EC3-L006496](../../agents/web_agent.py#L6496) | 6496 | `"        if generation_budget_exhausted or review_budget_exhausted:"` | — |
-| [SRC-1AE03B9EC3-L006497](../../agents/web_agent.py#L6497) | 6497 | `"            final_answer_status = \"budget_exhausted_with_source_fallback\""` | — |
-| [SRC-1AE03B9EC3-L006498](../../agents/web_agent.py#L6498) | 6498 | `"        elif llm_warning:"` | — |

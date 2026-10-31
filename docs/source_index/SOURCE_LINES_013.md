@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002499 إلى SRC-1AE03B9EC3-L003298
+- النطاق: SRC-1AE03B9EC3-L002490 إلى SRC-1AE03B9EC3-L003289
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002490](../../agents/web_agent.py#L2490) | 2490 | `"                futures = {pool.submit(self._search_web, query): query for query in queries}"` | — |
+| [SRC-1AE03B9EC3-L002491](../../agents/web_agent.py#L2491) | 2491 | `"                for future in as_completed(futures):"` | — |
+| [SRC-1AE03B9EC3-L002492](../../agents/web_agent.py#L2492) | 2492 | `"                    query = futures[future]"` | — |
+| [SRC-1AE03B9EC3-L002493](../../agents/web_agent.py#L2493) | 2493 | `"                    search_started_queries += 1"` | — |
+| [SRC-1AE03B9EC3-L002494](../../agents/web_agent.py#L2494) | 2494 | `"                    try:"` | — |
+| [SRC-1AE03B9EC3-L002495](../../agents/web_agent.py#L2495) | 2495 | `"                        results = future.result()"` | — |
+| [SRC-1AE03B9EC3-L002496](../../agents/web_agent.py#L2496) | 2496 | `"                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L002497](../../agents/web_agent.py#L2497) | 2497 | `"                        warnings.append(f\"تعذر بحث الاستعلام «{query[:70]}»: {exc}\")"` | — |
+| [SRC-1AE03B9EC3-L002498](../../agents/web_agent.py#L2498) | 2498 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |
 | [SRC-1AE03B9EC3-L002499](../../agents/web_agent.py#L2499) | 2499 | `"                        continue"` | — |
 | [SRC-1AE03B9EC3-L002500](../../agents/web_agent.py#L2500) | 2500 | `"                    query_counts.append({\"query\": query, \"results\": len(results)})"` | — |
 | [SRC-1AE03B9EC3-L002501](../../agents/web_agent.py#L2501) | 2501 | `"                    grouped: dict[str, list[dict[str, Any]]] = {}"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L003287](../../agents/web_agent.py#L3287) | 3287 | `"                    requested_model, candidate_model,"` | — |
 | [SRC-1AE03B9EC3-L003288](../../agents/web_agent.py#L3288) | 3288 | `"                    data, self.base_url,"` | — |
 | [SRC-1AE03B9EC3-L003289](../../agents/web_agent.py#L3289) | 3289 | `"                    # Keep this to allowlisted usage counters, never raw provider data."` | — |
-| [SRC-1AE03B9EC3-L003290](../../agents/web_agent.py#L3290) | 3290 | `"                ))"` | — |
-| [SRC-1AE03B9EC3-L003291](../../agents/web_agent.py#L3291) | 3291 | `"                return answer.strip()"` | — |
-| [SRC-1AE03B9EC3-L003292](../../agents/web_agent.py#L3292) | 3292 | `"            except urllib.error.HTTPError as exc:"` | — |
-| [SRC-1AE03B9EC3-L003293](../../agents/web_agent.py#L3293) | 3293 | `"                # Never echo provider response bodies: they may contain private diagnostics."` | — |
-| [SRC-1AE03B9EC3-L003294](../../agents/web_agent.py#L3294) | 3294 | `"                self._record_generation_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L003295](../../agents/web_agent.py#L3295) | 3295 | `"                    requested_model, candidate_model, \"provider_http_error\","` | — |
-| [SRC-1AE03B9EC3-L003296](../../agents/web_agent.py#L3296) | 3296 | `"                    error_class=\"HTTPError\", request_started=True,"` | — |
-| [SRC-1AE03B9EC3-L003297](../../agents/web_agent.py#L3297) | 3297 | `"                    remote_response_received=True,"` | — |
-| [SRC-1AE03B9EC3-L003298](../../agents/web_agent.py#L3298) | 3298 | `"                )"` | — |

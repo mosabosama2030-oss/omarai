@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **052**
-- سجلات الأسطر: **70**
-- النطاق: SRC-DE7EABE998-L000467 إلى SRC-A16FA6D4B5-L000046
+- سجلات الأسطر: **96**
+- النطاق: SRC-DE7EABE998-L000441 إلى SRC-A16FA6D4B5-L000046
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,32 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DE7EABE998-L000441](../../web/agent.html#L441) | 441 | `" button.disabled=true;button.textContent=\"جارٍ الاختبار الحقيقي…\";output.textContent=\"يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.\";"` | — |
+| [SRC-DE7EABE998-L000442](../../web/agent.html#L442) | 442 | `" try{"` | — |
+| [SRC-DE7EABE998-L000443](../../web/agent.html#L443) | 443 | `"  const response=await fetch(\"/api/diagnostics\",{method:\"POST\",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$(\"diagSocial\").checked})});"` | — |
+| [SRC-DE7EABE998-L000444](../../web/agent.html#L444) | 444 | `"  const data=await response.json();if(!response.ok)throw Error(data.error\|\|\"فشل طلب الاختبار\");"` | — |
+| [SRC-DE7EABE998-L000445](../../web/agent.html#L445) | 445 | `"  const labels={passed:\"نجح فعليًا\",degraded:\"جزئي أو بلا نتائج كافية\",failed:\"فشل\",skipped:\"لم يُختبر\",not_configured:\"غير مضبوط\"};"` | — |
+| [SRC-DE7EABE998-L000446](../../web/agent.html#L446) | 446 | `"  const lines=[\"النتيجة: \"+(labels[data.overall_status]\|\|data.overall_status)];"` | — |
+| [SRC-DE7EABE998-L000447](../../web/agent.html#L447) | 447 | `"  for(const [key,label] of [[\"web_search\",\"بحث الإنترنت\"],[\"language_model\",\"النموذج اللغوي\"],[\"social_search\",\"المصادر الاجتماعية\"]]){"` | — |
+| [SRC-DE7EABE998-L000448](../../web/agent.html#L448) | 448 | `"   const item=(data.checks\|\|{})[key];if(!item)continue;"` | — |
+| [SRC-DE7EABE998-L000449](../../web/agent.html#L449) | 449 | `"   lines.push(label+\": \"+(labels[item.status]\|\|item.status)+(item.result_count!==undefined?\" · \"+item.result_count+\" نتيجة\":\"\"));"` | — |
+| [SRC-DE7EABE998-L000450](../../web/agent.html#L450) | 450 | `"   if(item.provider_counts&&Object.keys(item.provider_counts).length)lines.push(\"المصادر التي أعادت نتائج: \"+Object.entries(item.provider_counts).map(([p,n])=>p+\" (\"+n+\")\").join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000451](../../web/agent.html#L451) | 451 | `"   if(item.note)lines.push(item.note);"` | — |
+| [SRC-DE7EABE998-L000452](../../web/agent.html#L452) | 452 | `"   if(item.warnings&&item.warnings.length)lines.push(item.warnings.join(\"؛ \"));"` | — |
+| [SRC-DE7EABE998-L000453](../../web/agent.html#L453) | 453 | `"  }"` | — |
+| [SRC-DE7EABE998-L000454](../../web/agent.html#L454) | 454 | `"  if(data.model_usage&&data.model_usage.length)lines.push(\"النموذج المستخدم: \"+data.model_usage.map(x=>x.used_model).join(\"، \"));"` | — |
+| [SRC-DE7EABE998-L000455](../../web/agent.html#L455) | 455 | `"  if(data.elapsed_ms!==undefined)lines.push(\"مدة الاختبار: \"+(data.elapsed_ms/1000).toFixed(1)+\" ثانية\");"` | — |
+| [SRC-DE7EABE998-L000456](../../web/agent.html#L456) | 456 | `"  output.textContent=lines.join(\"\\n\");setStatus(data.overall_status===\"passed\"?\"نجح الاختبار الحي\":data.overall_status===\"failed\"?\"فشل الاختبار الحي\":\"نتيجة الاختبار جزئية\",data.overall_status===\"passed\"?\"ok\":data.overall_status===\"failed\"?\"bad\":\"warn\");"` | — |
+| [SRC-DE7EABE998-L000457](../../web/agent.html#L457) | 457 | `" }catch(e){output.textContent=\"تعذّر الاختبار الحي: \"+(e&&e.message?e.message:\"خطأ غير معروف\");setStatus(\"فشل الاختبار الحي\",\"bad\");}"` | — |
+| [SRC-DE7EABE998-L000458](../../web/agent.html#L458) | 458 | `" finally{button.disabled=false;button.textContent=\"إعادة الاختبار الحي\";}"` | — |
+| [SRC-DE7EABE998-L000459](../../web/agent.html#L459) | 459 | `"}"` | — |
+| [SRC-DE7EABE998-L000460](../../web/agent.html#L460) | 460 | `"async function checkHealth(){"` | — |
+| [SRC-DE7EABE998-L000461](../../web/agent.html#L461) | 461 | `" try{"` | — |
+| [SRC-DE7EABE998-L000462](../../web/agent.html#L462) | 462 | `"  const r=await fetch(\"/api/health\");const d=await r.json();const a=d.agent\|\|{};"` | — |
+| [SRC-DE7EABE998-L000463](../../web/agent.html#L463) | 463 | `"  const configured=[];"` | — |
+| [SRC-DE7EABE998-L000464](../../web/agent.html#L464) | 464 | `"  if(a.brave_search_api_configured)configured.push(\"Brave API\");"` | — |
+| [SRC-DE7EABE998-L000465](../../web/agent.html#L465) | 465 | `"  if(a.tavily_search_api_configured)configured.push(\"Tavily API\");"` | — |
+| [SRC-DE7EABE998-L000466](../../web/agent.html#L466) | 466 | `"  if(a.reddit_oauth_configured)configured.push(\"Reddit OAuth\");"` | — |
 | [SRC-DE7EABE998-L000467](../../web/agent.html#L467) | 467 | `"  if(a.facebook_pages_api_configured)configured.push(\"Facebook Pages\");"` | — |
 | [SRC-DE7EABE998-L000468](../../web/agent.html#L468) | 468 | `"  if(a.instagram_graph_api_configured)configured.push(\"Instagram Graph\");"` | — |
 | [SRC-DE7EABE998-L000469](../../web/agent.html#L469) | 469 | `"  if(a.x_api_configured)configured.push(\"X API\");"` | — |

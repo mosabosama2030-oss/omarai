@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001699 إلى SRC-1AE03B9EC3-L002498
+- النطاق: SRC-1AE03B9EC3-L001690 إلى SRC-1AE03B9EC3-L002489
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001690](../../agents/web_agent.py#L1690) | 1690 | `"            if len(rows) >= MAX_PROVIDER_RESULTS:"` | — |
+| [SRC-1AE03B9EC3-L001691](../../agents/web_agent.py#L1691) | 1691 | `"                break"` | — |
+| [SRC-1AE03B9EC3-L001692](../../agents/web_agent.py#L1692) | 1692 | `"        return rows"` | — |
+| [SRC-1AE03B9EC3-L001693](../../agents/web_agent.py#L1693) | 1693 | `""` | — |
+| [SRC-1AE03B9EC3-L001694](../../agents/web_agent.py#L1694) | 1694 | `"    def _search_tavily(self, query: str) -> list[dict[str, Any]]:"` | — |
+| [SRC-1AE03B9EC3-L001695](../../agents/web_agent.py#L1695) | 1695 | `"        \"\"\"Use Tavily's official search API for structured, extractable live web results.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001696](../../agents/web_agent.py#L1696) | 1696 | `"        api_key = os.getenv(\"TAVILY_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L001697](../../agents/web_agent.py#L1697) | 1697 | `"        if not api_key:"` | — |
+| [SRC-1AE03B9EC3-L001698](../../agents/web_agent.py#L1698) | 1698 | `"            return []"` | — |
 | [SRC-1AE03B9EC3-L001699](../../agents/web_agent.py#L1699) | 1699 | `"        try:"` | — |
 | [SRC-1AE03B9EC3-L001700](../../agents/web_agent.py#L1700) | 1700 | `"            import httpx"` | — |
 | [SRC-1AE03B9EC3-L001701](../../agents/web_agent.py#L1701) | 1701 | `"        except ImportError as exc:"` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L002487](../../agents/web_agent.py#L2487) | 2487 | `""` | — |
 | [SRC-1AE03B9EC3-L002488](../../agents/web_agent.py#L2488) | 2488 | `"        if queries:"` | — |
 | [SRC-1AE03B9EC3-L002489](../../agents/web_agent.py#L2489) | 2489 | `"            with ThreadPoolExecutor(max_workers=min(MAX_RESEARCH_WORKERS, len(queries))) as pool:"` | — |
-| [SRC-1AE03B9EC3-L002490](../../agents/web_agent.py#L2490) | 2490 | `"                futures = {pool.submit(self._search_web, query): query for query in queries}"` | — |
-| [SRC-1AE03B9EC3-L002491](../../agents/web_agent.py#L2491) | 2491 | `"                for future in as_completed(futures):"` | — |
-| [SRC-1AE03B9EC3-L002492](../../agents/web_agent.py#L2492) | 2492 | `"                    query = futures[future]"` | — |
-| [SRC-1AE03B9EC3-L002493](../../agents/web_agent.py#L2493) | 2493 | `"                    search_started_queries += 1"` | — |
-| [SRC-1AE03B9EC3-L002494](../../agents/web_agent.py#L2494) | 2494 | `"                    try:"` | — |
-| [SRC-1AE03B9EC3-L002495](../../agents/web_agent.py#L2495) | 2495 | `"                        results = future.result()"` | — |
-| [SRC-1AE03B9EC3-L002496](../../agents/web_agent.py#L2496) | 2496 | `"                    except (RequestBudgetExceeded, RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L002497](../../agents/web_agent.py#L2497) | 2497 | `"                        warnings.append(f\"تعذر بحث الاستعلام «{query[:70]}»: {exc}\")"` | — |
-| [SRC-1AE03B9EC3-L002498](../../agents/web_agent.py#L2498) | 2498 | `"                        query_counts.append({\"query\": query, \"results\": 0})"` | — |

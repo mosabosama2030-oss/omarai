@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004099 إلى SRC-1AE03B9EC3-L004898
+- النطاق: SRC-1AE03B9EC3-L004090 إلى SRC-1AE03B9EC3-L004889
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004090](../../agents/web_agent.py#L4090) | 4090 | `"        report: dict[str, Any] = {"` | — |
+| [SRC-1AE03B9EC3-L004091](../../agents/web_agent.py#L4091) | 4091 | `"            \"timestamp_utc\": datetime.now(UTC).isoformat(timespec=\"seconds\"),"` | — |
+| [SRC-1AE03B9EC3-L004092](../../agents/web_agent.py#L4092) | 4092 | `"            \"checks\": {},"` | — |
+| [SRC-1AE03B9EC3-L004093](../../agents/web_agent.py#L4093) | 4093 | `"            \"configuration\": self.status(),"` | — |
+| [SRC-1AE03B9EC3-L004094](../../agents/web_agent.py#L4094) | 4094 | `"            \"model_usage\": [],"` | — |
+| [SRC-1AE03B9EC3-L004095](../../agents/web_agent.py#L4095) | 4095 | `"            \"warnings\": [],"` | — |
+| [SRC-1AE03B9EC3-L004096](../../agents/web_agent.py#L4096) | 4096 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L004097](../../agents/web_agent.py#L4097) | 4097 | `""` | — |
+| [SRC-1AE03B9EC3-L004098](../../agents/web_agent.py#L4098) | 4098 | `"        # Use several ordinary probes: an empty response to one test phrase is"` | — |
 | [SRC-1AE03B9EC3-L004099](../../agents/web_agent.py#L4099) | 4099 | `"        # not enough to claim the search connectors are offline."` | — |
 | [SRC-1AE03B9EC3-L004100](../../agents/web_agent.py#L4100) | 4100 | `"        probe_queries = ("` | — |
 | [SRC-1AE03B9EC3-L004101](../../agents/web_agent.py#L4101) | 4101 | `"            \"OpenAI official website\","` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L004887](../../agents/web_agent.py#L4887) | 4887 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L004888](../../agents/web_agent.py#L4888) | 4888 | `"                if not explicit_deep:"` | — |
 | [SRC-1AE03B9EC3-L004889](../../agents/web_agent.py#L4889) | 4889 | `"                    # The planner may overclassify short lookups as deep research. Preserve"` | — |
-| [SRC-1AE03B9EC3-L004890](../../agents/web_agent.py#L4890) | 4890 | `"                    # the user's actual intent first and cap routine searches to three queries."` | — |
-| [SRC-1AE03B9EC3-L004891](../../agents/web_agent.py#L4891) | 4891 | `"                    fallback_plan_queries = ("` | — |
-| [SRC-1AE03B9EC3-L004892](../../agents/web_agent.py#L4892) | 4892 | `"                        fallback_plan(working_question, clean_history).get(\"queries\") or []"` | — |
-| [SRC-1AE03B9EC3-L004893](../../agents/web_agent.py#L4893) | 4893 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L004894](../../agents/web_agent.py#L4894) | 4894 | `"                    fallback_queries = ["` | — |
-| [SRC-1AE03B9EC3-L004895](../../agents/web_agent.py#L4895) | 4895 | `"                        compact_search_query(query)"` | — |
-| [SRC-1AE03B9EC3-L004896](../../agents/web_agent.py#L4896) | 4896 | `"                        for query in fallback_plan_queries"` | — |
-| [SRC-1AE03B9EC3-L004897](../../agents/web_agent.py#L4897) | 4897 | `"                        if isinstance(query, str)"` | — |
-| [SRC-1AE03B9EC3-L004898](../../agents/web_agent.py#L4898) | 4898 | `"                    ]"` | — |

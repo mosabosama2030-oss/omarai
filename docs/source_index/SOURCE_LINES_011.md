@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000899 إلى SRC-1AE03B9EC3-L001698
+- النطاق: SRC-1AE03B9EC3-L000890 إلى SRC-1AE03B9EC3-L001689
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000890](../../agents/web_agent.py#L890) | 890 | `"                \"stated_need\","` | — |
+| [SRC-1AE03B9EC3-L000891](../../agents/web_agent.py#L891) | 891 | `"                ("` | — |
+| [SRC-1AE03B9EC3-L000892](../../agents/web_agent.py#L892) | 892 | `"                    \"بدور على\", \"ابحث عن\", \"أبحث عن\", \"محتاج\", \"محتاجين\","` | — |
+| [SRC-1AE03B9EC3-L000893](../../agents/web_agent.py#L893) | 893 | `"                    \"looking for\", \"in need of\", \"need a supplier\","` | — |
+| [SRC-1AE03B9EC3-L000894](../../agents/web_agent.py#L894) | 894 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L000895](../../agents/web_agent.py#L895) | 895 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L000896](../../agents/web_agent.py#L896) | 896 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000897](../../agents/web_agent.py#L897) | 897 | `"        negations = ("` | — |
+| [SRC-1AE03B9EC3-L000898](../../agents/web_agent.py#L898) | 898 | `"            \"not looking to buy\", \"not interested in buying\","` | — |
 | [SRC-1AE03B9EC3-L000899](../../agents/web_agent.py#L899) | 899 | `"            \"not interested in purchasing\", \"no longer looking to buy\","` | — |
 | [SRC-1AE03B9EC3-L000900](../../agents/web_agent.py#L900) | 900 | `"            \"do not want to buy\", \"don't want to buy\","` | — |
 | [SRC-1AE03B9EC3-L000901](../../agents/web_agent.py#L901) | 901 | `"            \"مش بدور على\", \"مش عايز اشتري\", \"مش عاوز اشتري\","` | — |
@@ -807,12 +816,3 @@
 | [SRC-1AE03B9EC3-L001687](../../agents/web_agent.py#L1687) | 1687 | `"                \"search_query\": query,"` | — |
 | [SRC-1AE03B9EC3-L001688](../../agents/web_agent.py#L1688) | 1688 | `"                \"published_at\": _clean_text(item.get(\"page_age\", \"\") or item.get(\"published_at\", \"\"), 100),"` | — |
 | [SRC-1AE03B9EC3-L001689](../../agents/web_agent.py#L1689) | 1689 | `"            })"` | — |
-| [SRC-1AE03B9EC3-L001690](../../agents/web_agent.py#L1690) | 1690 | `"            if len(rows) >= MAX_PROVIDER_RESULTS:"` | — |
-| [SRC-1AE03B9EC3-L001691](../../agents/web_agent.py#L1691) | 1691 | `"                break"` | — |
-| [SRC-1AE03B9EC3-L001692](../../agents/web_agent.py#L1692) | 1692 | `"        return rows"` | — |
-| [SRC-1AE03B9EC3-L001693](../../agents/web_agent.py#L1693) | 1693 | `""` | — |
-| [SRC-1AE03B9EC3-L001694](../../agents/web_agent.py#L1694) | 1694 | `"    def _search_tavily(self, query: str) -> list[dict[str, Any]]:"` | — |
-| [SRC-1AE03B9EC3-L001695](../../agents/web_agent.py#L1695) | 1695 | `"        \"\"\"Use Tavily's official search API for structured, extractable live web results.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001696](../../agents/web_agent.py#L1696) | 1696 | `"        api_key = os.getenv(\"TAVILY_API_KEY\", \"\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001697](../../agents/web_agent.py#L1697) | 1697 | `"        if not api_key:"` | — |
-| [SRC-1AE03B9EC3-L001698](../../agents/web_agent.py#L1698) | 1698 | `"            return []"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001114 إلى SRC-6A7519AC10-L000127
+- النطاق: SRC-90FAA34ADE-L001105 إلى SRC-6A7519AC10-L000118
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001105](../../tests/fixtures/answer_quality_cases.json#L1105) | 1105 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L001106](../../tests/fixtures/answer_quality_cases.json#L1106) | 1106 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L001107](../../tests/fixtures/answer_quality_cases.json#L1107) | 1107 | `"          {"` | — |
+| [SRC-90FAA34ADE-L001108](../../tests/fixtures/answer_quality_cases.json#L1108) | 1108 | `"            \"title\": \"Questionable result\","` | — |
+| [SRC-90FAA34ADE-L001109](../../tests/fixtures/answer_quality_cases.json#L1109) | 1109 | `"            \"url\": \"javascript:alert(1)\","` | — |
+| [SRC-90FAA34ADE-L001110](../../tests/fixtures/answer_quality_cases.json#L1110) | 1110 | `"            \"snippet\": \"Trust me, this is official.\","` | — |
+| [SRC-90FAA34ADE-L001111](../../tests/fixtures/answer_quality_cases.json#L1111) | 1111 | `"            \"domain\": \"unknown\","` | — |
+| [SRC-90FAA34ADE-L001112](../../tests/fixtures/answer_quality_cases.json#L1112) | 1112 | `"            \"provider\": \"fixture_search\""` | — |
+| [SRC-90FAA34ADE-L001113](../../tests/fixtures/answer_quality_cases.json#L1113) | 1113 | `"          }"` | — |
 | [SRC-90FAA34ADE-L001114](../../tests/fixtures/answer_quality_cases.json#L1114) | 1114 | `"        ]"` | — |
 | [SRC-90FAA34ADE-L001115](../../tests/fixtures/answer_quality_cases.json#L1115) | 1115 | `"      },"` | — |
 | [SRC-90FAA34ADE-L001116](../../tests/fixtures/answer_quality_cases.json#L1116) | 1116 | `"      \"failure_conditions\": ["` | — |
@@ -843,12 +852,3 @@
 | [SRC-6A7519AC10-L000116](../../tests/test_answer_quality_comparison.py#L116) | 116 | `"def test_comparison_measures_latency_tools_cost_and_human_reviewed_quality():"` | — |
 | [SRC-6A7519AC10-L000117](../../tests/test_answer_quality_comparison.py#L117) | 117 | `"    mod = load_module()"` | — |
 | [SRC-6A7519AC10-L000118](../../tests/test_answer_quality_comparison.py#L118) | 118 | `"    baseline = _full_run(build_sha=\"a\" * 40, candidate=False)"` | — |
-| [SRC-6A7519AC10-L000119](../../tests/test_answer_quality_comparison.py#L119) | 119 | `"    candidate = _full_run(build_sha=\"b\" * 40, candidate=True)"` | — |
-| [SRC-6A7519AC10-L000120](../../tests/test_answer_quality_comparison.py#L120) | 120 | `"    corpus = mod.load_json_object(CORPUS_PATH)"` | — |
-| [SRC-6A7519AC10-L000121](../../tests/test_answer_quality_comparison.py#L121) | 121 | `"    result = mod.compare_runs("` | — |
-| [SRC-6A7519AC10-L000122](../../tests/test_answer_quality_comparison.py#L122) | 122 | `"        baseline,"` | — |
-| [SRC-6A7519AC10-L000123](../../tests/test_answer_quality_comparison.py#L123) | 123 | `"        candidate,"` | — |
-| [SRC-6A7519AC10-L000124](../../tests/test_answer_quality_comparison.py#L124) | 124 | `"        corpus=corpus,"` | — |
-| [SRC-6A7519AC10-L000125](../../tests/test_answer_quality_comparison.py#L125) | 125 | `"        baseline_reviews=_reviews(correct=2, supported_citations=1),"` | — |
-| [SRC-6A7519AC10-L000126](../../tests/test_answer_quality_comparison.py#L126) | 126 | `"        candidate_reviews=_reviews(correct=3, supported_citations=2),"` | — |
-| [SRC-6A7519AC10-L000127](../../tests/test_answer_quality_comparison.py#L127) | 127 | `"    )"` | — |
