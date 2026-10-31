@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000121 إلى SRC-AFEDC2645A-L000336
+- النطاق: SRC-96F6863E3C-L000120 إلى SRC-AFEDC2645A-L000252
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000120](../../tests/test_research_pipeline.py#L120) | 120 | `""` | — |
 | [SRC-96F6863E3C-L000121](../../tests/test_research_pipeline.py#L121) | 121 | `"def test_pipeline_preserves_planner_depth_and_freshness_metadata():"` | — |
 | [SRC-96F6863E3C-L000122](../../tests/test_research_pipeline.py#L122) | 122 | `"    result = build_research_pipeline("` | — |
 | [SRC-96F6863E3C-L000123](../../tests/test_research_pipeline.py#L123) | 123 | `"        \"قارن السيارات الكهربائية في مصر من حيث السعر والبطارية\","` | — |
@@ -518,6 +519,98 @@
 | [SRC-1C0D3D1206-L000105](../../tests/test_sqlite_backup_restore.py#L105) | 105 | `""` | — |
 ## اختبارات
 
+### FILE-3A58E86240 — [tests/test_ssrf_address_policy.py](../../tests/test_ssrf_address_policy.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-3A58E86240-L000001](../../tests/test_ssrf_address_policy.py#L1) | 1 | `"\"\"\"Regression tests for outbound SSRF address policy.\"\"\""` | — |
+| [SRC-3A58E86240-L000002](../../tests/test_ssrf_address_policy.py#L2) | 2 | `""` | — |
+| [SRC-3A58E86240-L000003](../../tests/test_ssrf_address_policy.py#L3) | 3 | `"import socket"` | — |
+| [SRC-3A58E86240-L000004](../../tests/test_ssrf_address_policy.py#L4) | 4 | `""` | — |
+| [SRC-3A58E86240-L000005](../../tests/test_ssrf_address_policy.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-3A58E86240-L000006](../../tests/test_ssrf_address_policy.py#L6) | 6 | `""` | — |
+| [SRC-3A58E86240-L000007](../../tests/test_ssrf_address_policy.py#L7) | 7 | `"from agents.web_agent import _public_http_url, _public_ip_literals"` | — |
+| [SRC-3A58E86240-L000008](../../tests/test_ssrf_address_policy.py#L8) | 8 | `""` | — |
+| [SRC-3A58E86240-L000009](../../tests/test_ssrf_address_policy.py#L9) | 9 | `""` | — |
+| [SRC-3A58E86240-L000010](../../tests/test_ssrf_address_policy.py#L10) | 10 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3A58E86240-L000011](../../tests/test_ssrf_address_policy.py#L11) | 11 | `"    \"url\","` | — |
+| [SRC-3A58E86240-L000012](../../tests/test_ssrf_address_policy.py#L12) | 12 | `"    ["` | — |
+| [SRC-3A58E86240-L000013](../../tests/test_ssrf_address_policy.py#L13) | 13 | `"        \"http://127.0.0.1/admin\","` | — |
+| [SRC-3A58E86240-L000014](../../tests/test_ssrf_address_policy.py#L14) | 14 | `"        \"http://10.1.2.3/private\","` | — |
+| [SRC-3A58E86240-L000015](../../tests/test_ssrf_address_policy.py#L15) | 15 | `"        \"http://172.16.0.1/private\","` | — |
+| [SRC-3A58E86240-L000016](../../tests/test_ssrf_address_policy.py#L16) | 16 | `"        \"http://192.168.1.2/private\","` | — |
+| [SRC-3A58E86240-L000017](../../tests/test_ssrf_address_policy.py#L17) | 17 | `"        \"http://169.254.169.254/latest/meta-data/\","` | — |
+| [SRC-3A58E86240-L000018](../../tests/test_ssrf_address_policy.py#L18) | 18 | `"        \"http://100.64.0.1/private\","` | — |
+| [SRC-3A58E86240-L000019](../../tests/test_ssrf_address_policy.py#L19) | 19 | `"        \"http://0.0.0.0/\","` | — |
+| [SRC-3A58E86240-L000020](../../tests/test_ssrf_address_policy.py#L20) | 20 | `"        \"http://[::1]/admin\","` | — |
+| [SRC-3A58E86240-L000021](../../tests/test_ssrf_address_policy.py#L21) | 21 | `"        \"http://[fc00::1]/private\","` | — |
+| [SRC-3A58E86240-L000022](../../tests/test_ssrf_address_policy.py#L22) | 22 | `"        \"http://[fe80::1]/private\","` | — |
+| [SRC-3A58E86240-L000023](../../tests/test_ssrf_address_policy.py#L23) | 23 | `"        \"http://[::ffff:192.168.1.1]/private\","` | — |
+| [SRC-3A58E86240-L000024](../../tests/test_ssrf_address_policy.py#L24) | 24 | `"        \"http://[2001:db8::1]/documentation\","` | — |
+| [SRC-3A58E86240-L000025](../../tests/test_ssrf_address_policy.py#L25) | 25 | `"    ],"` | — |
+| [SRC-3A58E86240-L000026](../../tests/test_ssrf_address_policy.py#L26) | 26 | `")"` | — |
+| [SRC-3A58E86240-L000027](../../tests/test_ssrf_address_policy.py#L27) | 27 | `"def test_outbound_url_filter_rejects_non_global_ip_literals(url):"` | — |
+| [SRC-3A58E86240-L000028](../../tests/test_ssrf_address_policy.py#L28) | 28 | `"    assert _public_http_url(url) is None"` | — |
+| [SRC-3A58E86240-L000029](../../tests/test_ssrf_address_policy.py#L29) | 29 | `""` | — |
+| [SRC-3A58E86240-L000030](../../tests/test_ssrf_address_policy.py#L30) | 30 | `""` | — |
+| [SRC-3A58E86240-L000031](../../tests/test_ssrf_address_policy.py#L31) | 31 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3A58E86240-L000032](../../tests/test_ssrf_address_policy.py#L32) | 32 | `"    \"host\","` | — |
+| [SRC-3A58E86240-L000033](../../tests/test_ssrf_address_policy.py#L33) | 33 | `"    [\"localhost\", \"printer.local\", \"api.internal\", \"service.localhost\"],"` | — |
+| [SRC-3A58E86240-L000034](../../tests/test_ssrf_address_policy.py#L34) | 34 | `")"` | — |
+| [SRC-3A58E86240-L000035](../../tests/test_ssrf_address_policy.py#L35) | 35 | `"def test_outbound_url_filter_rejects_local_hostnames(host):"` | — |
+| [SRC-3A58E86240-L000036](../../tests/test_ssrf_address_policy.py#L36) | 36 | `"    assert _public_http_url(f\"https://{host}/\") is None"` | — |
+| [SRC-3A58E86240-L000037](../../tests/test_ssrf_address_policy.py#L37) | 37 | `""` | — |
+| [SRC-3A58E86240-L000038](../../tests/test_ssrf_address_policy.py#L38) | 38 | `""` | — |
+| [SRC-3A58E86240-L000039](../../tests/test_ssrf_address_policy.py#L39) | 39 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3A58E86240-L000040](../../tests/test_ssrf_address_policy.py#L40) | 40 | `"    \"resolved_ip\","` | — |
+| [SRC-3A58E86240-L000041](../../tests/test_ssrf_address_policy.py#L41) | 41 | `"    ["` | — |
+| [SRC-3A58E86240-L000042](../../tests/test_ssrf_address_policy.py#L42) | 42 | `"        \"127.0.0.1\","` | — |
+| [SRC-3A58E86240-L000043](../../tests/test_ssrf_address_policy.py#L43) | 43 | `"        \"10.0.0.10\","` | — |
+| [SRC-3A58E86240-L000044](../../tests/test_ssrf_address_policy.py#L44) | 44 | `"        \"172.20.0.10\","` | — |
+| [SRC-3A58E86240-L000045](../../tests/test_ssrf_address_policy.py#L45) | 45 | `"        \"192.168.10.10\","` | — |
+| [SRC-3A58E86240-L000046](../../tests/test_ssrf_address_policy.py#L46) | 46 | `"        \"169.254.169.254\","` | — |
+| [SRC-3A58E86240-L000047](../../tests/test_ssrf_address_policy.py#L47) | 47 | `"        \"100.64.0.10\","` | — |
+| [SRC-3A58E86240-L000048](../../tests/test_ssrf_address_policy.py#L48) | 48 | `"        \"::1\","` | — |
+| [SRC-3A58E86240-L000049](../../tests/test_ssrf_address_policy.py#L49) | 49 | `"        \"fc00::10\","` | — |
+| [SRC-3A58E86240-L000050](../../tests/test_ssrf_address_policy.py#L50) | 50 | `"        \"fe80::10\","` | — |
+| [SRC-3A58E86240-L000051](../../tests/test_ssrf_address_policy.py#L51) | 51 | `"        \"::ffff:192.168.10.10\","` | — |
+| [SRC-3A58E86240-L000052](../../tests/test_ssrf_address_policy.py#L52) | 52 | `"    ],"` | — |
+| [SRC-3A58E86240-L000053](../../tests/test_ssrf_address_policy.py#L53) | 53 | `")"` | — |
+| [SRC-3A58E86240-L000054](../../tests/test_ssrf_address_policy.py#L54) | 54 | `"def test_dns_resolution_rejects_any_non_global_address(monkeypatch, resolved_ip):"` | — |
+| [SRC-3A58E86240-L000055](../../tests/test_ssrf_address_policy.py#L55) | 55 | `"    family = socket.AF_INET6 if \":\" in resolved_ip else socket.AF_INET"` | — |
+| [SRC-3A58E86240-L000056](../../tests/test_ssrf_address_policy.py#L56) | 56 | `"    sockaddr = ("` | — |
+| [SRC-3A58E86240-L000057](../../tests/test_ssrf_address_policy.py#L57) | 57 | `"        (resolved_ip, 0, 0, 0)"` | — |
+| [SRC-3A58E86240-L000058](../../tests/test_ssrf_address_policy.py#L58) | 58 | `"        if family == socket.AF_INET6"` | — |
+| [SRC-3A58E86240-L000059](../../tests/test_ssrf_address_policy.py#L59) | 59 | `"        else (resolved_ip, 0)"` | — |
+| [SRC-3A58E86240-L000060](../../tests/test_ssrf_address_policy.py#L60) | 60 | `"    )"` | — |
+| [SRC-3A58E86240-L000061](../../tests/test_ssrf_address_policy.py#L61) | 61 | `"    monkeypatch.setattr("` | — |
+| [SRC-3A58E86240-L000062](../../tests/test_ssrf_address_policy.py#L62) | 62 | `"        socket,"` | — |
+| [SRC-3A58E86240-L000063](../../tests/test_ssrf_address_policy.py#L63) | 63 | `"        \"getaddrinfo\","` | — |
+| [SRC-3A58E86240-L000064](../../tests/test_ssrf_address_policy.py#L64) | 64 | `"        lambda *_args, **_kwargs: [(family, socket.SOCK_STREAM, 6, \"\", sockaddr)],"` | — |
+| [SRC-3A58E86240-L000065](../../tests/test_ssrf_address_policy.py#L65) | 65 | `"    )"` | — |
+| [SRC-3A58E86240-L000066](../../tests/test_ssrf_address_policy.py#L66) | 66 | `"    assert _public_ip_literals(\"customer-controlled.example\") is None"` | — |
+| [SRC-3A58E86240-L000067](../../tests/test_ssrf_address_policy.py#L67) | 67 | `""` | — |
+| [SRC-3A58E86240-L000068](../../tests/test_ssrf_address_policy.py#L68) | 68 | `""` | — |
+| [SRC-3A58E86240-L000069](../../tests/test_ssrf_address_policy.py#L69) | 69 | `"def test_dns_resolution_rejects_mixed_public_and_private_addresses(monkeypatch):"` | — |
+| [SRC-3A58E86240-L000070](../../tests/test_ssrf_address_policy.py#L70) | 70 | `"    public = (socket.AF_INET, socket.SOCK_STREAM, 6, \"\", (\"93.184.216.34\", 0))"` | — |
+| [SRC-3A58E86240-L000071](../../tests/test_ssrf_address_policy.py#L71) | 71 | `"    private = (socket.AF_INET, socket.SOCK_STREAM, 6, \"\", (\"192.168.1.10\", 0))"` | — |
+| [SRC-3A58E86240-L000072](../../tests/test_ssrf_address_policy.py#L72) | 72 | `"    monkeypatch.setattr("` | — |
+| [SRC-3A58E86240-L000073](../../tests/test_ssrf_address_policy.py#L73) | 73 | `"        socket, \"getaddrinfo\", lambda *_args, **_kwargs: [public, private]"` | — |
+| [SRC-3A58E86240-L000074](../../tests/test_ssrf_address_policy.py#L74) | 74 | `"    )"` | — |
+| [SRC-3A58E86240-L000075](../../tests/test_ssrf_address_policy.py#L75) | 75 | `"    assert _public_ip_literals(\"mixed.example\") is None"` | — |
+| [SRC-3A58E86240-L000076](../../tests/test_ssrf_address_policy.py#L76) | 76 | `""` | — |
+| [SRC-3A58E86240-L000077](../../tests/test_ssrf_address_policy.py#L77) | 77 | `""` | — |
+| [SRC-3A58E86240-L000078](../../tests/test_ssrf_address_policy.py#L78) | 78 | `"def test_dns_resolution_keeps_only_verified_global_addresses(monkeypatch):"` | — |
+| [SRC-3A58E86240-L000079](../../tests/test_ssrf_address_policy.py#L79) | 79 | `"    public = (socket.AF_INET, socket.SOCK_STREAM, 6, \"\", (\"93.184.216.34\", 0))"` | — |
+| [SRC-3A58E86240-L000080](../../tests/test_ssrf_address_policy.py#L80) | 80 | `"    monkeypatch.setattr("` | — |
+| [SRC-3A58E86240-L000081](../../tests/test_ssrf_address_policy.py#L81) | 81 | `"        socket, \"getaddrinfo\", lambda *_args, **_kwargs: [public, public]"` | — |
+| [SRC-3A58E86240-L000082](../../tests/test_ssrf_address_policy.py#L82) | 82 | `"    )"` | — |
+| [SRC-3A58E86240-L000083](../../tests/test_ssrf_address_policy.py#L83) | 83 | `"    assert _public_ip_literals(\"public.example\") == [\"93.184.216.34\"]"` | — |
+## اختبارات
+
 ### FILE-AFEDC2645A — [tests/test_task_understanding.py](../../tests/test_task_understanding.py#L1)
 
 - النوع: **Python**
@@ -777,87 +870,3 @@
 | [SRC-AFEDC2645A-L000250](../../tests/test_task_understanding.py#L250) | 250 | `"        (\"اكتب بريد إلكتروني للعميل بنبرة مهنية\", \"writing_or_editing\"),"` | — |
 | [SRC-AFEDC2645A-L000251](../../tests/test_task_understanding.py#L251) | 251 | `"        (\"احسب 17 بالمئة من 500\", \"calculation\"),"` | — |
 | [SRC-AFEDC2645A-L000252](../../tests/test_task_understanding.py#L252) | 252 | `"        (\"حلل البيانات في ملف CSV وحدد القيم الناقصة\", \"data_analysis\"),"` | — |
-| [SRC-AFEDC2645A-L000253](../../tests/test_task_understanding.py#L253) | 253 | `"        (\"راجع كود Python الذي يعرض stack trace\", \"coding_or_technical_design\"),"` | — |
-| [SRC-AFEDC2645A-L000254](../../tests/test_task_understanding.py#L254) | 254 | `"        (\"ضع خطة عمل لافتتاح متجر خلال شهر\", \"planning\"),"` | — |
-| [SRC-AFEDC2645A-L000255](../../tests/test_task_understanding.py#L255) | 255 | `"        (\"ما أعراض الإنفلونزا؟\", \"medical_information\"),"` | — |
-| [SRC-AFEDC2645A-L000256](../../tests/test_task_understanding.py#L256) | 256 | `"        (\"ما شروط العقد وفق القانون المصري؟\", \"legal_information\"),"` | — |
-| [SRC-AFEDC2645A-L000257](../../tests/test_task_understanding.py#L257) | 257 | `"        (\"اكتب قصة قصيرة عن رحلة خيالية\", \"creative_generation\"),"` | — |
-| [SRC-AFEDC2645A-L000258](../../tests/test_task_understanding.py#L258) | 258 | `"    ],"` | — |
-| [SRC-AFEDC2645A-L000259](../../tests/test_task_understanding.py#L259) | 259 | `")"` | — |
-| [SRC-AFEDC2645A-L000260](../../tests/test_task_understanding.py#L260) | 260 | `"def test_extended_task_families_cover_non_search_and_specialized_requests(question, family):"` | — |
-| [SRC-AFEDC2645A-L000261](../../tests/test_task_understanding.py#L261) | 261 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000262](../../tests/test_task_understanding.py#L262) | 262 | `"    assert spec[\"task_family\"] == family"` | — |
-| [SRC-AFEDC2645A-L000263](../../tests/test_task_understanding.py#L263) | 263 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
-| [SRC-AFEDC2645A-L000264](../../tests/test_task_understanding.py#L264) | 264 | `"    assert spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000265](../../tests/test_task_understanding.py#L265) | 265 | `"    assert spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000266](../../tests/test_task_understanding.py#L266) | 266 | `""` | — |
-| [SRC-AFEDC2645A-L000267](../../tests/test_task_understanding.py#L267) | 267 | `""` | — |
-| [SRC-AFEDC2645A-L000268](../../tests/test_task_understanding.py#L268) | 268 | `"def test_health_and_legal_tasks_attach_domain_specific_caution():"` | — |
-| [SRC-AFEDC2645A-L000269](../../tests/test_task_understanding.py#L269) | 269 | `"    health = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000270](../../tests/test_task_understanding.py#L270) | 270 | `"        \"ما أعراض الإنفلونزا اليوم؟\","` | — |
-| [SRC-AFEDC2645A-L000271](../../tests/test_task_understanding.py#L271) | 271 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000272](../../tests/test_task_understanding.py#L272) | 272 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000273](../../tests/test_task_understanding.py#L273) | 273 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000274](../../tests/test_task_understanding.py#L274) | 274 | `"    assert \"authoritative_health_content\" in health[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000275](../../tests/test_task_understanding.py#L275) | 275 | `"    assert \"distinguish_general_health_information_from_personal_diagnosis\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000276](../../tests/test_task_understanding.py#L276) | 276 | `"    assert \"page_text_successfully_read\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000277](../../tests/test_task_understanding.py#L277) | 277 | `""` | — |
-| [SRC-AFEDC2645A-L000278](../../tests/test_task_understanding.py#L278) | 278 | `"    legal = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000279](../../tests/test_task_understanding.py#L279) | 279 | `"        \"ما نص القانون الحالي المنظم للإيجار في مصر؟\","` | — |
-| [SRC-AFEDC2645A-L000280](../../tests/test_task_understanding.py#L280) | 280 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000281](../../tests/test_task_understanding.py#L281) | 281 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000282](../../tests/test_task_understanding.py#L282) | 282 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000283](../../tests/test_task_understanding.py#L283) | 283 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000284](../../tests/test_task_understanding.py#L284) | 284 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000285](../../tests/test_task_understanding.py#L285) | 285 | `""` | — |
-| [SRC-AFEDC2645A-L000286](../../tests/test_task_understanding.py#L286) | 286 | `""` | — |
-| [SRC-AFEDC2645A-L000287](../../tests/test_task_understanding.py#L287) | 287 | `"def test_output_audience_and_delivery_preferences_are_distinct_fields():"` | — |
-| [SRC-AFEDC2645A-L000288](../../tests/test_task_understanding.py#L288) | 288 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000289](../../tests/test_task_understanding.py#L289) | 289 | `"        \"اشرح الموضوع ببساطة مع مصادر وروابط مباشرة وبصيغة JSON\","` | — |
-| [SRC-AFEDC2645A-L000290](../../tests/test_task_understanding.py#L290) | 290 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000291](../../tests/test_task_understanding.py#L291) | 291 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000292](../../tests/test_task_understanding.py#L292) | 292 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000293](../../tests/test_task_understanding.py#L293) | 293 | `"    preferences = spec[\"output_preferences\"]"` | — |
-| [SRC-AFEDC2645A-L000294](../../tests/test_task_understanding.py#L294) | 294 | `"    assert preferences[\"beginner_friendly_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000295](../../tests/test_task_understanding.py#L295) | 295 | `"    assert preferences[\"citations_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000296](../../tests/test_task_understanding.py#L296) | 296 | `"    assert preferences[\"links_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000297](../../tests/test_task_understanding.py#L297) | 297 | `"    assert preferences[\"json_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000298](../../tests/test_task_understanding.py#L298) | 298 | `""` | — |
-| [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `""` | — |
-| [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"def test_task_spec_validator_allowlists_tools_policies_and_context_slots():"` | — |
-| [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000302](../../tests/test_task_understanding.py#L302) | 302 | `""` | — |
-| [SRC-AFEDC2645A-L000303](../../tests/test_task_understanding.py#L303) | 303 | `"    candidate = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000304](../../tests/test_task_understanding.py#L304) | 304 | `"        \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000305](../../tests/test_task_understanding.py#L305) | 305 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000306](../../tests/test_task_understanding.py#L306) | 306 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000307](../../tests/test_task_understanding.py#L307) | 307 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"            \"method\": \"test\","` | — |
-| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"            \"resolved_question\": \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"            \"topic\": \"هواتف\","` | — |
-| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"            \"entities\": [\"Phone A\", \"Phone B\"],"` | — |
-| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"            \"slots\": {\"product\": \"Phone A\", \"untrusted_command\": \"execute something\"},"` | — |
-| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
-| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
-| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |
-| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"    candidate[\"extra_unexpected_key\"] = \"must not survive\""` | — |
-| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `""` | — |
-| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `"    assert safe[\"tool_requirements\"] == [\"web_search\"]"` | — |
-| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `"    assert safe[\"constraints\"][\"source_policies\"] == [\"task_relevant_sources\"]"` | — |
-| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"    assert safe[\"constraints\"][\"language_profile\"] == \"und\""` | — |
-| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"    assert \"untrusted_command\" not in safe[\"context_resolution\"][\"slots\"]"` | — |
-| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"    assert safe[\"context_resolution\"][\"confidence_band\"] == \"unassessed\""` | — |
-| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"    assert \"extra_unexpected_key\" not in safe"` | — |
-| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `""` | — |
-| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `""` | — |
-| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():"` | — |
-| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    from agents.task_understanding import reasoning_guidance_for_task_spec"` | — |
-| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `""` | — |
-| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"        mode=\"latest\","` | — |

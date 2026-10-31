@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **120**
-- ملفات Python المحللة: **74**
-- تعريفات Python المفهرسة: **1534**
+- ملفات المستودع في الجرد: **121**
+- ملفات Python المحللة: **75**
+- تعريفات Python المفهرسة: **1539**
 - تعريفات Python موثقة بوجود Docstring: **259**
-- تعريفات Python بلا Docstring: **969**
+- تعريفات Python بلا Docstring: **974**
 - تعريفات لا ينطبق عليها Docstring: **306**
-- الرموز الساكنة الإضافية: **1884**
-- الأسطر النصية المفهرسة حرفيًا: **40777**
+- الرموز الساكنة الإضافية: **1887**
+- الأسطر النصية المفهرسة حرفيًا: **40861**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -112,7 +112,7 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 40680 | 1111 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 40739 | 1112 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
@@ -142,6 +142,7 @@
 | FILE-CDCF4DCBEA | اختبارات | [tests/test_self_acceptance.py](../tests/test_self_acceptance.py#L1) | Python | 1870 | 45 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
+| FILE-3A58E86240 | اختبارات | [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L1) | Python | 2522 | 83 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 17793 | 391 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 153471 | 3899 | جرد الملف + AST Python |
@@ -1009,8 +1010,8 @@
 | [tests/test_api.py](../tests/test_api.py#L932) | دالة | test_csp_hashes_match_all_first_party_inline_content_and_attributes | لا توجد Docstring. | ناقص | 932 | [SRC-3451CC474D-L000932](../tests/test_api.py#L932) |
 | [tests/test_api.py](../tests/test_api.py#L970) | دالة | test_dashboard_uses_delegated_status_action_not_inline_onclick | لا توجد Docstring. | ناقص | 970 | [SRC-3451CC474D-L000970](../tests/test_api.py#L970) |
 | [tests/test_api.py](../tests/test_api.py#L978) | دالة | test_loopback_test_mode_allows_tokenless_local_api_but_not_remote_or_public_clients | لا توجد Docstring. | ناقص | 978 | [SRC-3451CC474D-L000978](../tests/test_api.py#L978) |
-| [tests/test_api.py](../tests/test_api.py#L1003) | دالة | test_api_rejects_cross_company_list_write_update_and_export | لا توجد Docstring. | ناقص | 1003 | [SRC-3451CC474D-L001003](../tests/test_api.py#L1003) |
-| [tests/test_api.py](../tests/test_api.py#L1080) | دالة | test_api_tenant_id_header_requires_verified_membership | لا توجد Docstring. | ناقص | 1080 | [SRC-3451CC474D-L001080](../tests/test_api.py#L1080) |
+| [tests/test_api.py](../tests/test_api.py#L1004) | دالة | test_api_rejects_cross_company_list_write_update_and_export | لا توجد Docstring. | ناقص | 1004 | [SRC-3451CC474D-L001004](../tests/test_api.py#L1004) |
+| [tests/test_api.py](../tests/test_api.py#L1081) | دالة | test_api_tenant_id_header_requires_verified_membership | لا توجد Docstring. | ناقص | 1081 | [SRC-3451CC474D-L001081](../tests/test_api.py#L1081) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L13) | دالة | test_extract_aspects_from_min_hayth | لا توجد Docstring. | ناقص | 13 | [SRC-6CBA87B20C-L000013](../tests/test_aspect_planning.py#L13) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L25) | دالة | test_extract_aspects_from_multi_question_marks | لا توجد Docstring. | ناقص | 25 | [SRC-6CBA87B20C-L000025](../tests/test_aspect_planning.py#L25) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L31) | دالة | test_build_aspect_queries_prioritizes_topic | لا توجد Docstring. | ناقص | 31 | [SRC-6CBA87B20C-L000031](../tests/test_aspect_planning.py#L31) |
@@ -1394,6 +1395,11 @@
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L74) | دالة | test_backup_rejects_same_source_and_destination | لا توجد Docstring. | ناقص | 74 | [SRC-1C0D3D1206-L000074](../tests/test_sqlite_backup_restore.py#L74) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L82) | دالة | test_restore_rejects_corrupt_backup_without_overwriting_source | لا توجد Docstring. | ناقص | 82 | [SRC-1C0D3D1206-L000082](../tests/test_sqlite_backup_restore.py#L82) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L93) | دالة | test_backup_rejects_dangling_symlink_destination | لا توجد Docstring. | ناقص | 93 | [SRC-1C0D3D1206-L000093](../tests/test_sqlite_backup_restore.py#L93) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L27) | دالة | test_outbound_url_filter_rejects_non_global_ip_literals | لا توجد Docstring. | ناقص | 27 | [SRC-3A58E86240-L000027](../tests/test_ssrf_address_policy.py#L27) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L35) | دالة | test_outbound_url_filter_rejects_local_hostnames | لا توجد Docstring. | ناقص | 35 | [SRC-3A58E86240-L000035](../tests/test_ssrf_address_policy.py#L35) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L54) | دالة | test_dns_resolution_rejects_any_non_global_address | لا توجد Docstring. | ناقص | 54 | [SRC-3A58E86240-L000054](../tests/test_ssrf_address_policy.py#L54) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L69) | دالة | test_dns_resolution_rejects_mixed_public_and_private_addresses | لا توجد Docstring. | ناقص | 69 | [SRC-3A58E86240-L000069](../tests/test_ssrf_address_policy.py#L69) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L78) | دالة | test_dns_resolution_keeps_only_verified_global_addresses | لا توجد Docstring. | ناقص | 78 | [SRC-3A58E86240-L000078](../tests/test_ssrf_address_policy.py#L78) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L23) | دالة | test_task_family_covers_diverse_natural_language_patterns | لا توجد Docstring. | ناقص | 23 | [SRC-AFEDC2645A-L000023](../tests/test_task_understanding.py#L23) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L30) | دالة | test_task_spec_preserves_only_explicit_constraints | لا توجد Docstring. | ناقص | 30 | [SRC-AFEDC2645A-L000030](../tests/test_task_understanding.py#L30) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L43) | دالة | test_latest_mode_requires_current_evidence_for_stateful_facts | لا توجد Docstring. | ناقص | 43 | [SRC-AFEDC2645A-L000043](../tests/test_task_understanding.py#L43) |
@@ -3189,6 +3195,9 @@
 | [tests/test_search_code.py](../tests/test_search_code.py#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_SPEC | 9 | [SRC-2614DCB6FB-L000009](../tests/test_search_code.py#L9) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GITHUB_REF | 107 | [SRC-2614DCB6FB-L000107](../tests/test_search_code.py#L107) |
 | [tests/test_search_code.py](../tests/test_search_code.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 108 | [SRC-2614DCB6FB-L000108](../tests/test_search_code.py#L108) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 55 | [SRC-3A58E86240-L000055](../tests/test_ssrf_address_policy.py#L55) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L55) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 55 | [SRC-3A58E86240-L000055](../tests/test_ssrf_address_policy.py#L55) |
+| [tests/test_ssrf_address_policy.py](../tests/test_ssrf_address_policy.py#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 64 | [SRC-3A58E86240-L000064](../tests/test_ssrf_address_policy.py#L64) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 24 | [SRC-AFEDC2645A-L000024](../tests/test_task_understanding.py#L24) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 34 | [SRC-AFEDC2645A-L000034](../tests/test_task_understanding.py#L34) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 143 | [SRC-AFEDC2645A-L000143](../tests/test_task_understanding.py#L143) |
