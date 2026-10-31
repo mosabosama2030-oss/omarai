@@ -180,7 +180,6 @@ def test_public_url_filter_accepts_basic_https_url():
 
 
 def test_search_web_parses_duckduckgo_and_bing_without_ddgs(monkeypatch):
-    import httpx
 
     html = """
     <html><body>
@@ -248,7 +247,6 @@ def test_model_planner_preserves_social_intent_and_adds_targeted_query(monkeypat
 
 
 def test_direct_social_search_reads_public_reddit_and_bluesky_results(monkeypatch):
-    import httpx
 
     reddit_xml = """<rss><channel><item>
       <title>تجربة سيارة كهربائية</title>
@@ -486,7 +484,6 @@ def test_user_supplied_url_is_prioritized_and_page_content_is_extracted(monkeypa
 
 
 def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("X_BEARER_TOKEN", "test-token")
 
@@ -528,7 +525,6 @@ def test_official_x_search_is_used_only_with_explicit_bearer_token(monkeypatch):
 
 
 def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("INSTAGRAM_USER_ID", "ig-user-123")
     monkeypatch.setenv("INSTAGRAM_ACCESS_TOKEN", "test-ig-token")
@@ -588,7 +584,6 @@ def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):
 
 
 def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("FACEBOOK_PAGE_ACCESS_TOKEN", "test-page-token")
     monkeypatch.setenv("FACEBOOK_PAGE_IDS", "page-1,page-2")
@@ -628,7 +623,6 @@ def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):
 
 
 def test_reddit_oauth_api_is_preferred_when_credentials_are_configured(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("REDDIT_CLIENT_ID", "client-test")
     monkeypatch.setenv("REDDIT_CLIENT_SECRET", "secret-test")
@@ -1560,7 +1554,6 @@ def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):
 
 
 def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):
-    import httpx
 
     rss = """<rss><channel>
     <item>
@@ -1607,7 +1600,6 @@ def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeyp
 
 
 def test_google_news_preserves_publisher_identity(monkeypatch):
-    import httpx
 
     rss = """<rss><channel><item>
       <title>مصر الرقمية: تحديث جديد للخدمات</title>
@@ -2409,7 +2401,6 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
 
 
 def test_deepseek_search_adapter_normalizes_results_without_exposing_api_key(monkeypatch):
-    import httpx
 
     monkeypatch.setenv("DEEPSEEK_SEARCH_API_KEY", "test-secret-key-that-must-not-appear")
     agent = WebAgent()
@@ -2813,7 +2804,6 @@ def test_frontend_exposes_structured_page_fetch_statuses():
 def test_search_providers_do_not_follow_redirects_automatically(
     monkeypatch, method_name
 ):
-    import httpx
 
     agent = WebAgent()
     observed = []
