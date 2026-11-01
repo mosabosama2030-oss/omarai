@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000152 إلى SRC-B106ADC5EF-L000064
+- النطاق: SRC-EA6EC52573-L000148 إلى SRC-B106ADC5EF-L000060
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000148](../../tests/test_intent_router.py#L148) | 148 | `""` | — |
+| [SRC-EA6EC52573-L000149](../../tests/test_intent_router.py#L149) | 149 | `"@pytest.mark.parametrize(\"question\", [\"فين؟\", \"هل فيه ضمان؟\", \"كام سعرها؟\"])"` | — |
+| [SRC-EA6EC52573-L000150](../../tests/test_intent_router.py#L150) | 150 | `"def test_missing_referent_still_clarifies_in_explicit_search_mode(question: str) -> None:"` | — |
+| [SRC-EA6EC52573-L000151](../../tests/test_intent_router.py#L151) | 151 | `"    decision = route_intent(question, history=None, mode=\"deep\")"` | — |
 | [SRC-EA6EC52573-L000152](../../tests/test_intent_router.py#L152) | 152 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
 | [SRC-EA6EC52573-L000153](../../tests/test_intent_router.py#L153) | 153 | `"    assert decision[\"needs_clarification\"] is True"` | — |
 | [SRC-EA6EC52573-L000154](../../tests/test_intent_router.py#L154) | 154 | `""` | — |
@@ -848,7 +852,3 @@
 | [SRC-B106ADC5EF-L000058](../../tests/test_proxy_origin.py#L58) | 58 | `"    assert call(port, \"POST\", headers) == 200"` | — |
 | [SRC-B106ADC5EF-L000059](../../tests/test_proxy_origin.py#L59) | 59 | `"    assert call(port, \"OPTIONS\", {k: v for k, v in headers.items() if k != \"Authorization\"}) == 204"` | — |
 | [SRC-B106ADC5EF-L000060](../../tests/test_proxy_origin.py#L60) | 60 | `""` | — |
-| [SRC-B106ADC5EF-L000061](../../tests/test_proxy_origin.py#L61) | 61 | `"@pytest.mark.parametrize(\"shape\", ALLOWED_SHAPES)"` | — |
-| [SRC-B106ADC5EF-L000062](../../tests/test_proxy_origin.py#L62) | 62 | `"def test_a_foreign_site_is_still_refused(port, shape):"` | — |
-| [SRC-B106ADC5EF-L000063](../../tests/test_proxy_origin.py#L63) | 63 | `"    headers = {**ALLOWED_SHAPES[shape], \"Origin\": \"https://evil.example\"}"` | — |
-| [SRC-B106ADC5EF-L000064](../../tests/test_proxy_origin.py#L64) | 64 | `"    assert call(port, \"POST\", headers) == 403"` | — |

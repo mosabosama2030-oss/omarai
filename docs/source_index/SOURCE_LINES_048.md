@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000242 إلى SRC-F725E90B2A-L000485
+- النطاق: SRC-AFEDC2645A-L000238 إلى SRC-F725E90B2A-L000481
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    assert \"official_destination_target_entity\" not in spec[\"missing_required_inputs\"]"` | — |
+| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert spec[\"constraints\"][\"official_destination_required\"] is True"` | — |
 | [SRC-AFEDC2645A-L000242](../../tests/test_task_understanding.py#L242) | 242 | `""` | — |
 | [SRC-AFEDC2645A-L000243](../../tests/test_task_understanding.py#L243) | 243 | `""` | — |
 | [SRC-AFEDC2645A-L000244](../../tests/test_task_understanding.py#L244) | 244 | `"def test_summary_without_url_or_text_marks_required_input():"` | — |
@@ -830,7 +834,3 @@
 | [SRC-F725E90B2A-L000479](../../tests/test_web_agent.py#L479) | 479 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: [])"` | — |
 | [SRC-F725E90B2A-L000480](../../tests/test_web_agent.py#L480) | 480 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L000481](../../tests/test_web_agent.py#L481) | 481 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L000482](../../tests/test_web_agent.py#L482) | 482 | `"        \"_fetch_page\","` | — |
-| [SRC-F725E90B2A-L000483](../../tests/test_web_agent.py#L483) | 483 | `"        lambda url: (\"User page title\", \"Full public page text supplied for analysis\"),"` | — |
-| [SRC-F725E90B2A-L000484](../../tests/test_web_agent.py#L484) | 484 | `"    )"` | — |
-| [SRC-F725E90B2A-L000485](../../tests/test_web_agent.py#L485) | 485 | `"    sources, warnings, report = agent._collect_research({"` | — |

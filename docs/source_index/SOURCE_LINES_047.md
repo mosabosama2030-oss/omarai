@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-888168CDEB-L000081 إلى SRC-AFEDC2645A-L000241
+- النطاق: SRC-888168CDEB-L000077 إلى SRC-AFEDC2645A-L000237
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-888168CDEB-L000077](../../tests/test_search_connector_boundaries.py#L77) | 77 | `"    with pytest.raises(ValueError, match=\"size limit\"):"` | — |
+| [SRC-888168CDEB-L000078](../../tests/test_search_connector_boundaries.py#L78) | 78 | `"        search_connectors._http_get_text(\"https://export.arxiv.org/api/query\")"` | — |
+| [SRC-888168CDEB-L000079](../../tests/test_search_connector_boundaries.py#L79) | 79 | `""` | — |
+| [SRC-888168CDEB-L000080](../../tests/test_search_connector_boundaries.py#L80) | 80 | `""` | — |
 | [SRC-888168CDEB-L000081](../../tests/test_search_connector_boundaries.py#L81) | 81 | `"@pytest.mark.parametrize("` | — |
 | [SRC-888168CDEB-L000082](../../tests/test_search_connector_boundaries.py#L82) | 82 | `"    \"url\","` | — |
 | [SRC-888168CDEB-L000083](../../tests/test_search_connector_boundaries.py#L83) | 83 | `"    ["` | — |
@@ -848,7 +852,3 @@
 | [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"    spec = build_task_spec("` | — |
 | [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"        \"هات الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
 | [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    assert \"official_destination_target_entity\" not in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert spec[\"constraints\"][\"official_destination_required\"] is True"` | — |

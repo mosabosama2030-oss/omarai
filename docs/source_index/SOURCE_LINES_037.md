@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000091 إلى SRC-3451CC474D-L000107
+- النطاق: SRC-B3062EB677-L000087 إلى SRC-3451CC474D-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000087](../../tests/test_answer_quality_runner.py#L87) | 87 | `"        ]"` | — |
+| [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
+| [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
+| [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |
 | [SRC-B3062EB677-L000091](../../tests/test_answer_quality_runner.py#L91) | 91 | `""` | — |
 | [SRC-B3062EB677-L000092](../../tests/test_answer_quality_runner.py#L92) | 92 | `"def test_redact_secrets_strips_token_value(monkeypatch):"` | — |
 | [SRC-B3062EB677-L000093](../../tests/test_answer_quality_runner.py#L93) | 93 | `"    mod = _load_runner()"` | — |
@@ -839,7 +843,3 @@
 | [SRC-3451CC474D-L000101](../../tests/test_api.py#L101) | 101 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000102](../../tests/test_api.py#L102) | 102 | `"    assert changed[\"lead\"][\"status\"] == \"qualified\""` | — |
 | [SRC-3451CC474D-L000103](../../tests/test_api.py#L103) | 103 | `""` | — |
-| [SRC-3451CC474D-L000104](../../tests/test_api.py#L104) | 104 | `"    status, stats = request_json("` | — |
-| [SRC-3451CC474D-L000105](../../tests/test_api.py#L105) | 105 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"كام عميل عندي؟\"}"` | — |
-| [SRC-3451CC474D-L000106](../../tests/test_api.py#L106) | 106 | `"    )"` | — |
-| [SRC-3451CC474D-L000107](../../tests/test_api.py#L107) | 107 | `"    assert status == 200"` | — |

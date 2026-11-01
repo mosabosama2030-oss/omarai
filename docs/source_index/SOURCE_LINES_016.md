@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004374 إلى SRC-1AE03B9EC3-L005173
+- النطاق: SRC-1AE03B9EC3-L004370 إلى SRC-1AE03B9EC3-L005169
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004370](../../agents/web_agent.py#L4370) | 4370 | `"    def diagnostics("` | — |
+| [SRC-1AE03B9EC3-L004371](../../agents/web_agent.py#L4371) | 4371 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L004372](../../agents/web_agent.py#L4372) | 4372 | `"        test_model: bool = True,"` | — |
+| [SRC-1AE03B9EC3-L004373](../../agents/web_agent.py#L4373) | 4373 | `"        test_social: bool = False,"` | — |
 | [SRC-1AE03B9EC3-L004374](../../agents/web_agent.py#L4374) | 4374 | `"    ) -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L004375](../../agents/web_agent.py#L4375) | 4375 | `"        \"\"\"Run explicit live checks without exposing credentials or retaining returned content.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L004376](../../agents/web_agent.py#L4376) | 4376 | `"        import time"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L005167](../../agents/web_agent.py#L5167) | 5167 | `"            plan[\"social_focus\"] = True"` | — |
 | [SRC-1AE03B9EC3-L005168](../../agents/web_agent.py#L5168) | 5168 | `"            if not plan.get(\"platforms\"):"` | — |
 | [SRC-1AE03B9EC3-L005169](../../agents/web_agent.py#L5169) | 5169 | `"                plan[\"platforms\"] = [\"reddit\", \"bluesky\", \"youtube\"]"` | — |
-| [SRC-1AE03B9EC3-L005170](../../agents/web_agent.py#L5170) | 5170 | `""` | — |
-| [SRC-1AE03B9EC3-L005171](../../agents/web_agent.py#L5171) | 5171 | `"        if plan.get(\"queries\"):"` | — |
-| [SRC-1AE03B9EC3-L005172](../../agents/web_agent.py#L5172) | 5172 | `"            if clean_mode == \"auto\" and intent_route == \"WEB_DEEP\":"` | — |
-| [SRC-1AE03B9EC3-L005173](../../agents/web_agent.py#L5173) | 5173 | `"                plan[\"depth\"] = \"deep\""` | — |

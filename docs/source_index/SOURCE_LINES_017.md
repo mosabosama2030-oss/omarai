@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005174 إلى SRC-1AE03B9EC3-L005973
+- النطاق: SRC-1AE03B9EC3-L005170 إلى SRC-1AE03B9EC3-L005969
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005170](../../agents/web_agent.py#L5170) | 5170 | `""` | — |
+| [SRC-1AE03B9EC3-L005171](../../agents/web_agent.py#L5171) | 5171 | `"        if plan.get(\"queries\"):"` | — |
+| [SRC-1AE03B9EC3-L005172](../../agents/web_agent.py#L5172) | 5172 | `"            if clean_mode == \"auto\" and intent_route == \"WEB_DEEP\":"` | — |
+| [SRC-1AE03B9EC3-L005173](../../agents/web_agent.py#L5173) | 5173 | `"                plan[\"depth\"] = \"deep\""` | — |
 | [SRC-1AE03B9EC3-L005174](../../agents/web_agent.py#L5174) | 5174 | `"            if clean_mode == \"auto\":"` | — |
 | [SRC-1AE03B9EC3-L005175](../../agents/web_agent.py#L5175) | 5175 | `"                normalized_question = _normalize_search_query(working_question).casefold()"` | — |
 | [SRC-1AE03B9EC3-L005176](../../agents/web_agent.py#L5176) | 5176 | `"                deep_terms = ("` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L005967](../../agents/web_agent.py#L5967) | 5967 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L005968](../../agents/web_agent.py#L5968) | 5968 | `"        report[\"evidence_signals\"] = evidence_signal_report("` | — |
 | [SRC-1AE03B9EC3-L005969](../../agents/web_agent.py#L5969) | 5969 | `"            sources, plan.get(\"freshness\", \"any\")"` | — |
-| [SRC-1AE03B9EC3-L005970](../../agents/web_agent.py#L5970) | 5970 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L005971](../../agents/web_agent.py#L5971) | 5971 | `"        needs_corroboration = ("` | — |
-| [SRC-1AE03B9EC3-L005972](../../agents/web_agent.py#L5972) | 5972 | `"            len(sources) < 2 or len(independent_domains) < 2"` | — |
-| [SRC-1AE03B9EC3-L005973](../../agents/web_agent.py#L5973) | 5973 | `"        )"` | — |

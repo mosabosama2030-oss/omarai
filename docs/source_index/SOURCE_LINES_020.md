@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000532 إلى SRC-26428BDA96-L000065
+- النطاق: SRC-EEF2E6447C-L000528 إلى SRC-26428BDA96-L000061
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000528](../../api/omarai.py#L528) | 528 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
+| [SRC-EEF2E6447C-L000529](../../api/omarai.py#L529) | 529 | `"            q = parse_qs(parsed.query)"` | — |
+| [SRC-EEF2E6447C-L000530](../../api/omarai.py#L530) | 530 | `"            try:"` | — |
+| [SRC-EEF2E6447C-L000531](../../api/omarai.py#L531) | 531 | `"                limit = max(1, min(int(q.get(\"limit\", [\"100\"])[0]), 500))"` | — |
 | [SRC-EEF2E6447C-L000532](../../api/omarai.py#L532) | 532 | `"                leads = self.store.list(q.get(\"status\", [None])[0], limit)"` | — |
 | [SRC-EEF2E6447C-L000533](../../api/omarai.py#L533) | 533 | `"            except (ValueError, TypeError):"` | — |
 | [SRC-EEF2E6447C-L000534](../../api/omarai.py#L534) | 534 | `"                return self.respond(400, {\"error\": \"invalid status or limit\"})"` | — |
@@ -875,7 +879,3 @@
 | [SRC-26428BDA96-L000059](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L59) | 59 | `"\| Python 3.12 — Ruff \| PASS \| اجتاز فحص الصياغة/النمط المحدد \|"` | — |
 | [SRC-26428BDA96-L000060](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L60) | 60 | `"\| Python 3.12 — pytest \| PASS \| اجتازت مجموعة الاختبارات الحالية على بيئة CI \|"` | — |
 | [SRC-26428BDA96-L000061](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L61) | 61 | `"\| Docker build \| PASS \| أمكن بناء الصورة على CI \|"` | — |
-| [SRC-26428BDA96-L000062](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L62) | 62 | `"\| Smoke test للحاوية \| PASS \| استجابت health، ورُفضت طلبات غير مصادق عليها، وقُبلت طلبات مصادق عليها المحددة في السكربت \|"` | — |
-| [SRC-26428BDA96-L000063](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L63) | 63 | `""` | — |
-| [SRC-26428BDA96-L000064](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L64) | 64 | `"روابط تشغيل CI: [Python 3.11](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864363)، [Python 3.12](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864528)، [Docker + protected API smoke test](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864488)."` | — |
-| [SRC-26428BDA96-L000065](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) | 65 | `""` | — |

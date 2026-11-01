@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001286 إلى SRC-F725E90B2A-L002085
+- النطاق: SRC-F725E90B2A-L001282 إلى SRC-F725E90B2A-L002081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001282](../../tests/test_web_agent.py#L1282) | 1282 | `"        agent, \"_generate\","` | — |
+| [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"        lambda *args, **kwargs: pytest.fail("` | — |
+| [SRC-F725E90B2A-L001284](../../tests/test_web_agent.py#L1284) | 1284 | `"            \"LLM must not answer when both sources belong to one registrable domain\""` | — |
+| [SRC-F725E90B2A-L001285](../../tests/test_web_agent.py#L1285) | 1285 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001286](../../tests/test_web_agent.py#L1286) | 1286 | `"    )"` | — |
 | [SRC-F725E90B2A-L001287](../../tests/test_web_agent.py#L1287) | 1287 | `""` | — |
 | [SRC-F725E90B2A-L001288](../../tests/test_web_agent.py#L1288) | 1288 | `"    result = agent.answer(\"قارن هذه التقنية\")"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002079](../../tests/test_web_agent.py#L2079) | 2079 | `"            return self"` | — |
 | [SRC-F725E90B2A-L002080](../../tests/test_web_agent.py#L2080) | 2080 | `""` | — |
 | [SRC-F725E90B2A-L002081](../../tests/test_web_agent.py#L2081) | 2081 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |
-| [SRC-F725E90B2A-L002082](../../tests/test_web_agent.py#L2082) | 2082 | `"            return False"` | — |
-| [SRC-F725E90B2A-L002083](../../tests/test_web_agent.py#L2083) | 2083 | `""` | — |
-| [SRC-F725E90B2A-L002084](../../tests/test_web_agent.py#L2084) | 2084 | `"        def read(self, limit):"` | — |
-| [SRC-F725E90B2A-L002085](../../tests/test_web_agent.py#L2085) | 2085 | `"            return self.body"` | — |

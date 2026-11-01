@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000374 إلى SRC-1AE03B9EC3-L001173
+- النطاق: SRC-1AE03B9EC3-L000370 إلى SRC-1AE03B9EC3-L001169
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000370](../../agents/web_agent.py#L370) | 370 | `"                and ("` | — |
+| [SRC-1AE03B9EC3-L000371](../../agents/web_agent.py#L371) | 371 | `"                    arabic in expanded_evidence"` | — |
+| [SRC-1AE03B9EC3-L000372](../../agents/web_agent.py#L372) | 372 | `"                    or (arabic.startswith(\"ال\") and arabic[2:] in expanded_evidence)"` | — |
+| [SRC-1AE03B9EC3-L000373](../../agents/web_agent.py#L373) | 373 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L000374](../../agents/web_agent.py#L374) | 374 | `"                for arabic, aliases in _NORMALIZED_SEARCH_SYNONYMS.items()"` | — |
 | [SRC-1AE03B9EC3-L000375](../../agents/web_agent.py#L375) | 375 | `"            ):"` | — |
 | [SRC-1AE03B9EC3-L000376](../../agents/web_agent.py#L376) | 376 | `"                return True"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L001167](../../agents/web_agent.py#L1167) | 1167 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L001168](../../agents/web_agent.py#L1168) | 1168 | `"    def _is_listing_discovery(question: str) -> bool:"` | — |
 | [SRC-1AE03B9EC3-L001169](../../agents/web_agent.py#L1169) | 1169 | `"        \"\"\"Recognize property/job/product discovery where candidates are useful with caveats.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001170](../../agents/web_agent.py#L1170) | 1170 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001171](../../agents/web_agent.py#L1171) | 1171 | `"        entities = ("` | — |
-| [SRC-1AE03B9EC3-L001172](../../agents/web_agent.py#L1172) | 1172 | `"            \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\", \"وحده سكنيه\","` | — |
-| [SRC-1AE03B9EC3-L001173](../../agents/web_agent.py#L1173) | 1173 | `"            \"وحدات سكنيه\", \"apartment\", \"apartments\", \"flat\", \"property listing\","` | — |

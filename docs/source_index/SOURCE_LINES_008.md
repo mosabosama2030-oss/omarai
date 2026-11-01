@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000141 إلى SRC-686F71AA50-L000551
+- النطاق: SRC-086D574B4E-L000137 إلى SRC-686F71AA50-L000547
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000137](../../agents/semantic_claim_verifier.py#L137) | 137 | `"            )[:160],"` | — |
+| [SRC-086D574B4E-L000138](../../agents/semantic_claim_verifier.py#L138) | 138 | `"            \"published_at\": str("` | — |
+| [SRC-086D574B4E-L000139](../../agents/semantic_claim_verifier.py#L139) | 139 | `"                source.get(\"published_at\") or source.get(\"published_date\")"` | — |
+| [SRC-086D574B4E-L000140](../../agents/semantic_claim_verifier.py#L140) | 140 | `"                or source.get(\"publication_date\") or \"\""` | — |
 | [SRC-086D574B4E-L000141](../../agents/semantic_claim_verifier.py#L141) | 141 | `"            )[:80],"` | — |
 | [SRC-086D574B4E-L000142](../../agents/semantic_claim_verifier.py#L142) | 142 | `"            \"evidence_basis\": basis,"` | — |
 | [SRC-086D574B4E-L000143](../../agents/semantic_claim_verifier.py#L143) | 143 | `"            \"readable_evidence\": evidence,"` | — |
@@ -821,7 +825,3 @@
 | [SRC-686F71AA50-L000545](../../agents/task_understanding.py#L545) | 545 | `"            \"heuristic_classification_is_not_identity_or_truth_verification\","` | — |
 | [SRC-686F71AA50-L000546](../../agents/task_understanding.py#L546) | 546 | `"        ]"` | — |
 | [SRC-686F71AA50-L000547](../../agents/task_understanding.py#L547) | 547 | `"        query_strategies = [\"topic_platform\", \"personal_experience\", \"discussion\", \"commercial_exclusion\"]"` | — |
-| [SRC-686F71AA50-L000548](../../agents/task_understanding.py#L548) | 548 | `"    elif family == \"summarize\":"` | — |
-| [SRC-686F71AA50-L000549](../../agents/task_understanding.py#L549) | 549 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000550](../../agents/task_understanding.py#L550) | 550 | `"            \"read_the_requested_text_or_page\","` | — |
-| [SRC-686F71AA50-L000551](../../agents/task_understanding.py#L551) | 551 | `"            \"do_not_summarize_unread_content_from_title_only\","` | — |

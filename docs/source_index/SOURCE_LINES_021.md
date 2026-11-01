@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-26428BDA96-L000066 إلى SRC-E599346ABE-L000286
+- النطاق: SRC-26428BDA96-L000062 إلى SRC-E599346ABE-L000282
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-26428BDA96-L000062](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L62) | 62 | `"\| Smoke test للحاوية \| PASS \| استجابت health، ورُفضت طلبات غير مصادق عليها، وقُبلت طلبات مصادق عليها المحددة في السكربت \|"` | — |
+| [SRC-26428BDA96-L000063](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L63) | 63 | `""` | — |
+| [SRC-26428BDA96-L000064](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L64) | 64 | `"روابط تشغيل CI: [Python 3.11](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864363)، [Python 3.12](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864528)، [Docker + protected API smoke test](https://github.com/mosabosama2030-oss/omarai/actions/runs/39184807152/job/117844864488)."` | — |
+| [SRC-26428BDA96-L000065](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L65) | 65 | `""` | — |
 | [SRC-26428BDA96-L000066](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L66) | 66 | `"**حدود التحقق:** لم أشغّل الاختبارات محليًا داخل بيئة مستنسخة في هذه الجولة؛ استند تأكيد نجاح الاختبارات إلى نتائج CI الفعلية أعلاه. لم أنفذ اختبار اختراق حيًا، أو اختبار حمل، أو استدعاءً فعليًا بمفاتيح المستخدم لمزودي البحث/النماذج، أو اختبارًا على نشر Render الفعلي. لا تتضمن هذه النتيجة ادعاء بأن تلك الاختبارات حدثت."` | — |
 | [SRC-26428BDA96-L000067](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L67) | 67 | `""` | — |
 | [SRC-26428BDA96-L000068](../archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L68) | 68 | `"## 3. معنى الحالات المستخدمة"` | — |
@@ -866,7 +870,3 @@
 | [SRC-E599346ABE-L000280](../generate_index.py#L280) | 280 | `"        if self.function_depth == 0:"` | — |
 | [SRC-E599346ABE-L000281](../generate_index.py#L281) | 281 | `"            for target in node.targets:"` | — |
 | [SRC-E599346ABE-L000282](../generate_index.py#L282) | 282 | `"                self._record_assignment_target(target, node.lineno)"` | — |
-| [SRC-E599346ABE-L000283](../generate_index.py#L283) | 283 | `"        self.generic_visit(node)"` | — |
-| [SRC-E599346ABE-L000284](../generate_index.py#L284) | 284 | `""` | — |
-| [SRC-E599346ABE-L000285](../generate_index.py#L285) | 285 | `"    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:"` | — |
-| [SRC-E599346ABE-L000286](../generate_index.py#L286) | 286 | `"        \"\"\"Index annotated module/class assignments without counting local variables.\"\"\""` | — |

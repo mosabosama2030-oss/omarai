@@ -4,7 +4,7 @@
 
 - الصفحة: **026**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000285 إلى SRC-E1EAC11EFE-L000049
+- النطاق: SRC-D17CE3D12F-L000281 إلى SRC-E1EAC11EFE-L000045
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000281](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L281) | 281 | `""` | — |
+| [SRC-D17CE3D12F-L000282](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L282) | 282 | `"1. MUST أن يكون لكل تغيير مؤثر feedback سريع من الاختبارات والفحوص قبل الدمج."` | — |
+| [SRC-D17CE3D12F-L000283](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L283) | 283 | `"2. SHOULD استخدام CI متكرر وقابل لإعادة التشغيل؛ وألا يتطلب النجاح خطوات محلية غير موثقة."` | — |
+| [SRC-D17CE3D12F-L000284](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L284) | 284 | `"3. MUST فصل الاختبارات السريعة عن اختبارات التكامل والحمل والأمن التي تحتاج بيئة مختلفة، مع بيان ما تم تشغيله فعلًا."` | — |
 | [SRC-D17CE3D12F-L000285](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L285) | 285 | `"4. MUST مراجعة التغيير النهائي والملفات والأذونات والفروق، وعدم الاعتماد على تقرير الوكيل وحده."` | — |
 | [SRC-D17CE3D12F-L000286](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L286) | 286 | `"5. SHOULD بناء artifact مرة واحدة ثم ترقيته بين البيئات بدل إعادة البناء بطريقة قد تنتج artifact مختلفًا لكل بيئة."` | — |
 | [SRC-D17CE3D12F-L000287](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L287) | 287 | `"6. SHOULD استخدام canary أو progressive rollout أو blue/green عند دعم البنية وحجم الخطر لذلك، وليس شرطًا على استضافة لا تدعمه."` | — |
@@ -821,7 +825,3 @@
 | [SRC-E1EAC11EFE-L000043](../OMARAI_HANDOFF_CHECKLIST_AR.md#L43) | 43 | `"\| البوابة \| معيار القبول \| الحالة قبل تنفيذها \|"` | — |
 | [SRC-E1EAC11EFE-L000044](../OMARAI_HANDOFF_CHECKLIST_AR.md#L44) | 44 | `"\|---\|---\|---\|"` | — |
 | [SRC-E1EAC11EFE-L000045](../OMARAI_HANDOFF_CHECKLIST_AR.md#L45) | 45 | `"\| B1 — منطق البحث والميزانية \| اختبارات الانحدار الجديدة وكل مجموعة CI خضراء على SHA واحد؛ الاحتفاظ بالنتائج الجزئية عند نفاد الميزانية \| **FIXED_AND_TESTED آليًا**: CI ناجح على رأس PR #95 [#40467019476](https://github.com/mosabosama2030-oss/omarai/actions/runs/40467019476) وعلى SHA الدمج [#40469019954](https://github.com/mosabosama2030-oss/omarai/actions/runs/40469019954). قبول البحث الحي ما زال فاشلًا بسبب خطأ رمز الوصول المستضاف \|"` | — |
-| [SRC-E1EAC11EFE-L000046](../OMARAI_HANDOFF_CHECKLIST_AR.md#L46) | 46 | `"\| B2 — أمان البحث \| استمرار التحقق من URL وDNS وSSRF، منع التحويلات غير المفحوصة، وعدم تجاوز تحديات anti-bot \| يجب ألا يتراجع بسبب الإصلاح \|"` | — |
-| [SRC-E1EAC11EFE-L000047](../OMARAI_HANDOFF_CHECKLIST_AR.md#L47) | 47 | ``"\| B3 — هوية البناء \| `/api/health` يعيد SHA مطابقًا تمامًا لالتزام الإصدار الذي اختاره المدير \| **NOT_CONFIRMED**: `/api/health` يرد `ok=true` لكن `build.sha=unknown` و`sha_status=unknown`؛ يلزم إصدار يتضمن SHA قابلًا للتحقق \|"`` | — |
-| [SRC-E1EAC11EFE-L000048](../OMARAI_HANDOFF_CHECKLIST_AR.md#L48) | 48 | `"\| B4 — قبول البحث الحي \| حفظ استجابة منفصلة لسؤال بسيط، وموقع رسمي في latest، وبحث معمّق، وسؤال حديث؛ وتسجيل الاستعلامات والموفرين والصفحات المقروءة والأخطاء \| **FAILED / PARTIAL**: اختبار واحد فقط «ما عاصمة مصر؟» في وضع deep أظهر رسالة خطأ رمز الوصول؛ لم تكتمل الإجابة، ولم تُنفذ بقية السيناريوهات \|"` | — |
-| [SRC-E1EAC11EFE-L000049](../OMARAI_HANDOFF_CHECKLIST_AR.md#L49) | 49 | `"\| B5 — قبول الإجابات \| الروابط تفتح، النص الكامل يُقرأ عند الإمكان، الإجابة ترتبط بالأدلة؛ يصرّح النظام بعدم كفاية الأدلة بدل اختلاقها \| يتطلب فحصًا يدويًا لعينة حية \|"` | — |

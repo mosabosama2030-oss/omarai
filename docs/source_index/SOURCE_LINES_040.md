@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000145 إلى SRC-FA4E1423C3-L000129
+- النطاق: SRC-29A9CD43D1-L000141 إلى SRC-FA4E1423C3-L000125
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    })"` | — |
+| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `""` | — |
+| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
+| [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    result = agent.answer(question, history=history)"` | — |
 | [SRC-29A9CD43D1-L000145](../../tests/test_dialogue_context_pipeline.py#L145) | 145 | `""` | — |
 | [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert result[\"intent_route\"] == \"WEB_SIMPLE\""` | — |
 | [SRC-29A9CD43D1-L000147](../../tests/test_dialogue_context_pipeline.py#L147) | 147 | `"    assert result[\"question\"] == question  # Preserve the visible user utterance."` | — |
@@ -848,7 +852,3 @@
 | [SRC-FA4E1423C3-L000123](../../tests/test_generate_index.py#L123) | 123 | `"    assert (\"دالة JavaScript/TypeScript\", \"sendMessage\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000124](../../tests/test_generate_index.py#L124) | 124 | `"    assert (\"كلاس JavaScript/TypeScript\", \"AgentCore\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000125](../../tests/test_generate_index.py#L125) | 125 | `"    assert (\"دالة JavaScript/TypeScript\", \"fetchAnswer\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000126](../../tests/test_generate_index.py#L126) | 126 | `"    assert (\"متغير JavaScript/TypeScript\", \"ACCESS_TOKEN\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000127](../../tests/test_generate_index.py#L127) | 127 | `"    assert (\"محدد class في CSS\", \"chat-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000128](../../tests/test_generate_index.py#L128) | 128 | `"    assert (\"محدد id في CSS\", \"answer-panel\") in names_by_kind"` | — |
-| [SRC-FA4E1423C3-L000129](../../tests/test_generate_index.py#L129) | 129 | `"    assert (\"متغير CSS مخصص\", \"accent-color\") in names_by_kind"` | — |

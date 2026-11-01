@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000152 إلى SRC-086D574B4E-L000140
+- النطاق: SRC-8D00DCEC0D-L000148 إلى SRC-086D574B4E-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000148](../../agents/sales_domain.py#L148) | 148 | `""` | — |
+| [SRC-8D00DCEC0D-L000149](../../agents/sales_domain.py#L149) | 149 | `""` | — |
+| [SRC-8D00DCEC0D-L000150](../../agents/sales_domain.py#L150) | 150 | `"def _enum_value(enum_type: type[Enum], value: Enum \| str, *, field_name: str) -> Enum:"` | — |
+| [SRC-8D00DCEC0D-L000151](../../agents/sales_domain.py#L151) | 151 | `"    try:"` | — |
 | [SRC-8D00DCEC0D-L000152](../../agents/sales_domain.py#L152) | 152 | `"        return value if isinstance(value, enum_type) else enum_type(value)"` | — |
 | [SRC-8D00DCEC0D-L000153](../../agents/sales_domain.py#L153) | 153 | `"    except (TypeError, ValueError) as exc:"` | — |
 | [SRC-8D00DCEC0D-L000154](../../agents/sales_domain.py#L154) | 154 | `"        allowed = \", \".join(item.value for item in enum_type)"` | — |
@@ -830,7 +834,3 @@
 | [SRC-086D574B4E-L000134](../../agents/semantic_claim_verifier.py#L134) | 134 | `"            \"publisher\": str("` | — |
 | [SRC-086D574B4E-L000135](../../agents/semantic_claim_verifier.py#L135) | 135 | `"                source.get(\"publisher\") or source.get(\"source_name\")"` | — |
 | [SRC-086D574B4E-L000136](../../agents/semantic_claim_verifier.py#L136) | 136 | `"                or source.get(\"domain\") or \"\""` | — |
-| [SRC-086D574B4E-L000137](../../agents/semantic_claim_verifier.py#L137) | 137 | `"            )[:160],"` | — |
-| [SRC-086D574B4E-L000138](../../agents/semantic_claim_verifier.py#L138) | 138 | `"            \"published_at\": str("` | — |
-| [SRC-086D574B4E-L000139](../../agents/semantic_claim_verifier.py#L139) | 139 | `"                source.get(\"published_at\") or source.get(\"published_date\")"` | — |
-| [SRC-086D574B4E-L000140](../../agents/semantic_claim_verifier.py#L140) | 140 | `"                or source.get(\"publication_date\") or \"\""` | — |

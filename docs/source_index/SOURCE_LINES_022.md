@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000287 إلى SRC-E599346ABE-L001086
+- النطاق: SRC-E599346ABE-L000283 إلى SRC-E599346ABE-L001082
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000283](../generate_index.py#L283) | 283 | `"        self.generic_visit(node)"` | — |
+| [SRC-E599346ABE-L000284](../generate_index.py#L284) | 284 | `""` | — |
+| [SRC-E599346ABE-L000285](../generate_index.py#L285) | 285 | `"    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:"` | — |
+| [SRC-E599346ABE-L000286](../generate_index.py#L286) | 286 | `"        \"\"\"Index annotated module/class assignments without counting local variables.\"\"\""` | — |
 | [SRC-E599346ABE-L000287](../generate_index.py#L287) | 287 | `"        if self.function_depth == 0:"` | — |
 | [SRC-E599346ABE-L000288](../generate_index.py#L288) | 288 | `"            self._record_assignment_target(node.target, node.lineno)"` | — |
 | [SRC-E599346ABE-L000289](../generate_index.py#L289) | 289 | `"        self.generic_visit(node)"` | — |
@@ -812,7 +816,3 @@
 | [SRC-E599346ABE-L001080](../generate_index.py#L1080) | 1080 | `""` | — |
 | [SRC-E599346ABE-L001081](../generate_index.py#L1081) | 1081 | `"def _append_comment_text("` | — |
 | [SRC-E599346ABE-L001082](../generate_index.py#L1082) | 1082 | `"    comments: dict[int, list[str]],"` | — |
-| [SRC-E599346ABE-L001083](../generate_index.py#L1083) | 1083 | `"    starting_line: int,"` | — |
-| [SRC-E599346ABE-L001084](../generate_index.py#L1084) | 1084 | `"    text: str,"` | — |
-| [SRC-E599346ABE-L001085](../generate_index.py#L1085) | 1085 | `") -> None:"` | — |
-| [SRC-E599346ABE-L001086](../generate_index.py#L1086) | 1086 | `"    \"\"\"Map comment text fragments onto original 1-based source lines.\"\"\""` | — |

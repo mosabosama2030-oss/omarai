@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000009 إلى SRC-B3062EB677-L000090
+- النطاق: SRC-6A7519AC10-L000005 إلى SRC-B3062EB677-L000086
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000005](../../tests/test_answer_quality_comparison.py#L5) | 5 | `"from pathlib import Path"` | — |
+| [SRC-6A7519AC10-L000006](../../tests/test_answer_quality_comparison.py#L6) | 6 | `""` | — |
+| [SRC-6A7519AC10-L000007](../../tests/test_answer_quality_comparison.py#L7) | 7 | `"import pytest"` | — |
+| [SRC-6A7519AC10-L000008](../../tests/test_answer_quality_comparison.py#L8) | 8 | `""` | — |
 | [SRC-6A7519AC10-L000009](../../tests/test_answer_quality_comparison.py#L9) | 9 | `"ROOT = Path(__file__).resolve().parents[1]"` | — |
 | [SRC-6A7519AC10-L000010](../../tests/test_answer_quality_comparison.py#L10) | 10 | `"SCRIPT = ROOT / \"scripts\" / \"compare_answer_quality_runs.py\""` | — |
 | [SRC-6A7519AC10-L000011](../../tests/test_answer_quality_comparison.py#L11) | 11 | `"CORPUS_PATH = ROOT / \"tests\" / \"fixtures\" / \"answer_quality_cases.json\""` | — |
@@ -848,7 +852,3 @@
 | [SRC-B3062EB677-L000084](../../tests/test_answer_quality_runner.py#L84) | 84 | `"            \"AQ-999\","` | — |
 | [SRC-B3062EB677-L000085](../../tests/test_answer_quality_runner.py#L85) | 85 | `"            \"--base-url\","` | — |
 | [SRC-B3062EB677-L000086](../../tests/test_answer_quality_runner.py#L86) | 86 | `"            \"http://127.0.0.1:9\","` | — |
-| [SRC-B3062EB677-L000087](../../tests/test_answer_quality_runner.py#L87) | 87 | `"        ]"` | — |
-| [SRC-B3062EB677-L000088](../../tests/test_answer_quality_runner.py#L88) | 88 | `"    )"` | — |
-| [SRC-B3062EB677-L000089](../../tests/test_answer_quality_runner.py#L89) | 89 | `"    assert rc == 2"` | — |
-| [SRC-B3062EB677-L000090](../../tests/test_answer_quality_runner.py#L90) | 90 | `""` | — |

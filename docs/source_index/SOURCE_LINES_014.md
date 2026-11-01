@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002774 إلى SRC-1AE03B9EC3-L003573
+- النطاق: SRC-1AE03B9EC3-L002770 إلى SRC-1AE03B9EC3-L003569
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002770](../../agents/web_agent.py#L2770) | 2770 | `"                compacted = compact_search_query(candidate)"` | — |
+| [SRC-1AE03B9EC3-L002771](../../agents/web_agent.py#L2771) | 2771 | `"                key = compacted.casefold()"` | — |
+| [SRC-1AE03B9EC3-L002772](../../agents/web_agent.py#L2772) | 2772 | `"                if compacted and key not in seen_expansions:"` | — |
+| [SRC-1AE03B9EC3-L002773](../../agents/web_agent.py#L2773) | 2773 | `"                    expansion_queries.append(compacted)"` | — |
 | [SRC-1AE03B9EC3-L002774](../../agents/web_agent.py#L2774) | 2774 | `"                    seen_expansions.add(key)"` | — |
 | [SRC-1AE03B9EC3-L002775](../../agents/web_agent.py#L2775) | 2775 | `"                if len(expansion_queries) >= remaining_slots:"` | — |
 | [SRC-1AE03B9EC3-L002776](../../agents/web_agent.py#L2776) | 2776 | `"                    break"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L003567](../../agents/web_agent.py#L3567) | 3567 | `"                    \"أنت محلل سياق حواري لـ Omarai، ولست مجيبًا أو محرك بحث. حلل آخر رسالة \""` | — |
 | [SRC-1AE03B9EC3-L003568](../../agents/web_agent.py#L3568) | 3568 | `"                    \"للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. اكتب resolved_question \""` | — |
 | [SRC-1AE03B9EC3-L003569](../../agents/web_agent.py#L3569) | 3569 | `"                    \"بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية \""` | — |
-| [SRC-1AE03B9EC3-L003570](../../agents/web_agent.py#L3570) | 3570 | `"                    \"والفصحى والإنجليزية والأخطاء المعتادة. ميّز بين استمرار الموضوع وتغيير الموضوع، \""` | — |
-| [SRC-1AE03B9EC3-L003571](../../agents/web_agent.py#L3571) | 3571 | `"                    \"واستعد الكيان والقيود والجانب المطلوب والبلد والنسخة والفترة الزمنية عند وجودها. \""` | — |
-| [SRC-1AE03B9EC3-L003572](../../agents/web_agent.py#L3572) | 3572 | `"                    \"لا تنقل موضوعًا سابقًا إلى سؤال مستقل. إذا كان للضمير أكثر من مرجع معقول ويغيّر \""` | — |
-| [SRC-1AE03B9EC3-L003573](../../agents/web_agent.py#L3573) | 3573 | `"                    \"ذلك الإجابة، اجعل needs_clarification=true واكتب سؤال توضيح قصيرًا بلغة المستخدم. \""` | — |

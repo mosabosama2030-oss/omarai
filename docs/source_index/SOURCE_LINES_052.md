@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002886 إلى SRC-F725E90B2A-L003685
+- النطاق: SRC-F725E90B2A-L002882 إلى SRC-F725E90B2A-L003681
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002882](../../tests/test_web_agent.py#L2882) | 2882 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-F725E90B2A-L002883](../../tests/test_web_agent.py#L2883) | 2883 | `"            return False"` | — |
+| [SRC-F725E90B2A-L002884](../../tests/test_web_agent.py#L2884) | 2884 | `""` | — |
+| [SRC-F725E90B2A-L002885](../../tests/test_web_agent.py#L2885) | 2885 | `"        stream = fake_stream"` | — |
 | [SRC-F725E90B2A-L002886](../../tests/test_web_agent.py#L2886) | 2886 | `""` | — |
 | [SRC-F725E90B2A-L002887](../../tests/test_web_agent.py#L2887) | 2887 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
 | [SRC-F725E90B2A-L002888](../../tests/test_web_agent.py#L2888) | 2888 | `""` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L003679](../../tests/test_web_agent.py#L3679) | 3679 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
 | [SRC-F725E90B2A-L003680](../../tests/test_web_agent.py#L3680) | 3680 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
 | [SRC-F725E90B2A-L003681](../../tests/test_web_agent.py#L3681) | 3681 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L003682](../../tests/test_web_agent.py#L3682) | 3682 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L003683](../../tests/test_web_agent.py#L3683) | 3683 | `"        \"_generate\","` | — |
-| [SRC-F725E90B2A-L003684](../../tests/test_web_agent.py#L3684) | 3684 | `"        lambda *args, **kwargs: pytest.fail(\"Stale pages must not be passed to generation\"),"` | — |
-| [SRC-F725E90B2A-L003685](../../tests/test_web_agent.py#L3685) | 3685 | `"    )"` | — |

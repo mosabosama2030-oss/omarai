@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000014 إلى SRC-888168CDEB-L000080
+- النطاق: SRC-96F6863E3C-L000010 إلى SRC-888168CDEB-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000010](../../tests/test_research_pipeline.py#L10) | 10 | `"            \"title\": \"أسعار السيارات الكهربائية في مصر\","` | — |
+| [SRC-96F6863E3C-L000011](../../tests/test_research_pipeline.py#L11) | 11 | `"            \"url\": \"https://example.com/ev-prices\","` | — |
+| [SRC-96F6863E3C-L000012](../../tests/test_research_pipeline.py#L12) | 12 | `"            \"snippet\": \"تفاصيل أسعار السيارات الكهربائية في مصر\","` | — |
+| [SRC-96F6863E3C-L000013](../../tests/test_research_pipeline.py#L13) | 13 | `"            \"provider\": \"fixture\","` | — |
 | [SRC-96F6863E3C-L000014](../../tests/test_research_pipeline.py#L14) | 14 | `"        }"` | — |
 | [SRC-96F6863E3C-L000015](../../tests/test_research_pipeline.py#L15) | 15 | `"    ]"` | — |
 | [SRC-96F6863E3C-L000016](../../tests/test_research_pipeline.py#L16) | 16 | `""` | — |
@@ -839,7 +843,3 @@
 | [SRC-888168CDEB-L000074](../../tests/test_search_connector_boundaries.py#L74) | 74 | `"        \"build_opener\","` | — |
 | [SRC-888168CDEB-L000075](../../tests/test_search_connector_boundaries.py#L75) | 75 | `"        lambda handler_class: opener,"` | — |
 | [SRC-888168CDEB-L000076](../../tests/test_search_connector_boundaries.py#L76) | 76 | `"    )"` | — |
-| [SRC-888168CDEB-L000077](../../tests/test_search_connector_boundaries.py#L77) | 77 | `"    with pytest.raises(ValueError, match=\"size limit\"):"` | — |
-| [SRC-888168CDEB-L000078](../../tests/test_search_connector_boundaries.py#L78) | 78 | `"        search_connectors._http_get_text(\"https://export.arxiv.org/api/query\")"` | — |
-| [SRC-888168CDEB-L000079](../../tests/test_search_connector_boundaries.py#L79) | 79 | `""` | — |
-| [SRC-888168CDEB-L000080](../../tests/test_search_connector_boundaries.py#L80) | 80 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006774 إلى SRC-EEF2E6447C-L000531
+- النطاق: SRC-1AE03B9EC3-L006770 إلى SRC-EEF2E6447C-L000527
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006770](../../agents/web_agent.py#L6770) | 6770 | `"            and review_status == \"model_claim_audit_completed\""` | — |
+| [SRC-1AE03B9EC3-L006771](../../agents/web_agent.py#L6771) | 6771 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L006772](../../agents/web_agent.py#L6772) | 6772 | `"            research_quality = \"excellent\""` | — |
+| [SRC-1AE03B9EC3-L006773](../../agents/web_agent.py#L6773) | 6773 | `"        elif ("` | — |
 | [SRC-1AE03B9EC3-L006774](../../agents/web_agent.py#L6774) | 6774 | `"            len(sources) >= 2 and len(distinct_domains) >= 2"` | — |
 | [SRC-1AE03B9EC3-L006775](../../agents/web_agent.py#L6775) | 6775 | `"            and (len(distinct_providers) >= 2 or fetched_pages >= 1)"` | — |
 | [SRC-1AE03B9EC3-L006776](../../agents/web_agent.py#L6776) | 6776 | `"            and review_status == \"model_claim_audit_completed\""` | — |
@@ -830,7 +834,3 @@
 | [SRC-EEF2E6447C-L000525](../../api/omarai.py#L525) | 525 | `"            if not self._rate_limit_ok():"` | — |
 | [SRC-EEF2E6447C-L000526](../../api/omarai.py#L526) | 526 | `"                return self.respond(429, {\"error\": \"تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة.\"})"` | — |
 | [SRC-EEF2E6447C-L000527](../../api/omarai.py#L527) | 527 | `"            if not self._authorized():"` | — |
-| [SRC-EEF2E6447C-L000528](../../api/omarai.py#L528) | 528 | `"                return self.respond(401, {\"error\": \"يلزم رمز الوصول الخاص بالتطبيق.\"})"` | — |
-| [SRC-EEF2E6447C-L000529](../../api/omarai.py#L529) | 529 | `"            q = parse_qs(parsed.query)"` | — |
-| [SRC-EEF2E6447C-L000530](../../api/omarai.py#L530) | 530 | `"            try:"` | — |
-| [SRC-EEF2E6447C-L000531](../../api/omarai.py#L531) | 531 | `"                limit = max(1, min(int(q.get(\"limit\", [\"100\"])[0]), 500))"` | — |

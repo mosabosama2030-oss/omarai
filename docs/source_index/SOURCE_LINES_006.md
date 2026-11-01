@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000266 إلى SRC-8D00DCEC0D-L000151
+- النطاق: SRC-1E32639872-L000262 إلى SRC-8D00DCEC0D-L000147
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1E32639872-L000262](../../agents/research_completion.py#L262) | 262 | `"            status = \"search_failed_or_incomplete\""` | — |
+| [SRC-1E32639872-L000263](../../agents/research_completion.py#L263) | 263 | `"        elif zero_results:"` | — |
+| [SRC-1E32639872-L000264](../../agents/research_completion.py#L264) | 264 | `"            status = \"no_results_returned\""` | — |
+| [SRC-1E32639872-L000265](../../agents/research_completion.py#L265) | 265 | `"        elif attempted is False:"` | — |
 | [SRC-1E32639872-L000266](../../agents/research_completion.py#L266) | 266 | `"            status = \"search_not_attempted\""` | — |
 | [SRC-1E32639872-L000267](../../agents/research_completion.py#L267) | 267 | `"        else:"` | — |
 | [SRC-1E32639872-L000268](../../agents/research_completion.py#L268) | 268 | `"            status = \"insufficient_evidence\""` | — |
@@ -839,7 +843,3 @@
 | [SRC-8D00DCEC0D-L000145](../../agents/sales_domain.py#L145) | 145 | `"    if not path:"` | — |
 | [SRC-8D00DCEC0D-L000146](../../agents/sales_domain.py#L146) | 146 | `"        raise ValueError(f\"{field_name} must contain at least one segment\")"` | — |
 | [SRC-8D00DCEC0D-L000147](../../agents/sales_domain.py#L147) | 147 | `"    return path"` | — |
-| [SRC-8D00DCEC0D-L000148](../../agents/sales_domain.py#L148) | 148 | `""` | — |
-| [SRC-8D00DCEC0D-L000149](../../agents/sales_domain.py#L149) | 149 | `""` | — |
-| [SRC-8D00DCEC0D-L000150](../../agents/sales_domain.py#L150) | 150 | `"def _enum_value(enum_type: type[Enum], value: Enum \| str, *, field_name: str) -> Enum:"` | — |
-| [SRC-8D00DCEC0D-L000151](../../agents/sales_domain.py#L151) | 151 | `"    try:"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000108 إلى SRC-3451CC474D-L000907
+- النطاق: SRC-3451CC474D-L000104 إلى SRC-3451CC474D-L000903
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000104](../../tests/test_api.py#L104) | 104 | `"    status, stats = request_json("` | — |
+| [SRC-3451CC474D-L000105](../../tests/test_api.py#L105) | 105 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"كام عميل عندي؟\"}"` | — |
+| [SRC-3451CC474D-L000106](../../tests/test_api.py#L106) | 106 | `"    )"` | — |
+| [SRC-3451CC474D-L000107](../../tests/test_api.py#L107) | 107 | `"    assert status == 200"` | — |
 | [SRC-3451CC474D-L000108](../../tests/test_api.py#L108) | 108 | `"    assert stats[\"kind\"] == \"local_statistics\""` | — |
 | [SRC-3451CC474D-L000109](../../tests/test_api.py#L109) | 109 | `"    assert \"1 إشارة\" in stats[\"answer\"]"` | — |
 | [SRC-3451CC474D-L000110](../../tests/test_api.py#L110) | 110 | `""` | — |
@@ -812,7 +816,3 @@
 | [SRC-3451CC474D-L000901](../../tests/test_api.py#L901) | 901 | `"            \"kind\": \"web_fallback\","` | — |
 | [SRC-3451CC474D-L000902](../../tests/test_api.py#L902) | 902 | `"        }"` | — |
 | [SRC-3451CC474D-L000903](../../tests/test_api.py#L903) | 903 | `""` | — |
-| [SRC-3451CC474D-L000904](../../tests/test_api.py#L904) | 904 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
-| [SRC-3451CC474D-L000905](../../tests/test_api.py#L905) | 905 | `""` | — |
-| [SRC-3451CC474D-L000906](../../tests/test_api.py#L906) | 906 | `"    status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000907](../../tests/test_api.py#L907) | 907 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |

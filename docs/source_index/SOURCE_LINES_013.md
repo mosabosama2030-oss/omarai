@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001974 إلى SRC-1AE03B9EC3-L002773
+- النطاق: SRC-1AE03B9EC3-L001970 إلى SRC-1AE03B9EC3-L002769
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001970](../../agents/web_agent.py#L1970) | 1970 | `"            },"` | — |
+| [SRC-1AE03B9EC3-L001971](../../agents/web_agent.py#L1971) | 1971 | `"            timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L001972](../../agents/web_agent.py#L1972) | 1972 | `"            # Refuse automatic redirects from public search endpoints; never fetch an"` | — |
+| [SRC-1AE03B9EC3-L001973](../../agents/web_agent.py#L1973) | 1973 | `"            # unchecked redirect target as part of a provider search request."` | — |
 | [SRC-1AE03B9EC3-L001974](../../agents/web_agent.py#L1974) | 1974 | `"            follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L001975](../../agents/web_agent.py#L1975) | 1975 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001976](../../agents/web_agent.py#L1976) | 1976 | `"        if response.status_code != 200:"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L002767](../../agents/web_agent.py#L2767) | 2767 | `"            expansion_queries = []"` | — |
 | [SRC-1AE03B9EC3-L002768](../../agents/web_agent.py#L2768) | 2768 | `"            seen_expansions = set(existing)"` | — |
 | [SRC-1AE03B9EC3-L002769](../../agents/web_agent.py#L2769) | 2769 | `"            for candidate in candidates:"` | — |
-| [SRC-1AE03B9EC3-L002770](../../agents/web_agent.py#L2770) | 2770 | `"                compacted = compact_search_query(candidate)"` | — |
-| [SRC-1AE03B9EC3-L002771](../../agents/web_agent.py#L2771) | 2771 | `"                key = compacted.casefold()"` | — |
-| [SRC-1AE03B9EC3-L002772](../../agents/web_agent.py#L2772) | 2772 | `"                if compacted and key not in seen_expansions:"` | — |
-| [SRC-1AE03B9EC3-L002773](../../agents/web_agent.py#L2773) | 2773 | `"                    expansion_queries.append(compacted)"` | — |

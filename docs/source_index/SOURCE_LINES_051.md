@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002086 إلى SRC-F725E90B2A-L002885
+- النطاق: SRC-F725E90B2A-L002082 إلى SRC-F725E90B2A-L002881
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002082](../../tests/test_web_agent.py#L2082) | 2082 | `"            return False"` | — |
+| [SRC-F725E90B2A-L002083](../../tests/test_web_agent.py#L2083) | 2083 | `""` | — |
+| [SRC-F725E90B2A-L002084](../../tests/test_web_agent.py#L2084) | 2084 | `"        def read(self, limit):"` | — |
+| [SRC-F725E90B2A-L002085](../../tests/test_web_agent.py#L2085) | 2085 | `"            return self.body"` | — |
 | [SRC-F725E90B2A-L002086](../../tests/test_web_agent.py#L2086) | 2086 | `""` | — |
 | [SRC-F725E90B2A-L002087](../../tests/test_web_agent.py#L2087) | 2087 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-F725E90B2A-L002088](../../tests/test_web_agent.py#L2088) | 2088 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L002879](../../tests/test_web_agent.py#L2879) | 2879 | `"        def __enter__(self):"` | — |
 | [SRC-F725E90B2A-L002880](../../tests/test_web_agent.py#L2880) | 2880 | `"            return self"` | — |
 | [SRC-F725E90B2A-L002881](../../tests/test_web_agent.py#L2881) | 2881 | `""` | — |
-| [SRC-F725E90B2A-L002882](../../tests/test_web_agent.py#L2882) | 2882 | `"        def __exit__(self, *_args):"` | — |
-| [SRC-F725E90B2A-L002883](../../tests/test_web_agent.py#L2883) | 2883 | `"            return False"` | — |
-| [SRC-F725E90B2A-L002884](../../tests/test_web_agent.py#L2884) | 2884 | `""` | — |
-| [SRC-F725E90B2A-L002885](../../tests/test_web_agent.py#L2885) | 2885 | `"        stream = fake_stream"` | — |

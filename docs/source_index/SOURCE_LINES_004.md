@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000022 إلى SRC-59CF4B7DE8-L000371
+- النطاق: SRC-C9CF9B54F8-L000018 إلى SRC-59CF4B7DE8-L000367
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000018](../../agents/omarai.py#L18) | 18 | `"    \"next_step\": (20, (\"ممكن معاينة\", \"عايز اعاين\", \"عاوز اعاين\", \"ابعت التفاصيل\", \"ابعت اللوكيشن\", \"ميعاد للمعاينة\")),"` | — |
+| [SRC-C9CF9B54F8-L000019](../../agents/omarai.py#L19) | 19 | `"    \"budget\": (15, (\"السعر كام\", \"مقدم كام\", \"ميزانيتي\", \"معايا مقدم\", \"تقسيط\", \"على اقساط\", \"في حدود\")),"` | — |
+| [SRC-C9CF9B54F8-L000020](../../agents/omarai.py#L20) | 20 | `"    \"explore\": (10, (\"بدور على\", \"فيه شقق\", \"ايه المتاح\", \"عايز اعرف الاسعار\")),"` | — |
+| [SRC-C9CF9B54F8-L000021](../../agents/omarai.py#L21) | 21 | `"}"` | — |
 | [SRC-C9CF9B54F8-L000022](../../agents/omarai.py#L22) | 22 | `"NOT_BUYER = (\"مش عايز اشتري\", \"مش عاوز اشتري\", \"عايز ابيع\", \"عاوز ابيع\", \"عندي شقة للبيع\", \"انا وسيط\", \"انا سمسار\", \"عايز ايجار\", \"للايجار\")"` | — |
 | [SRC-C9CF9B54F8-L000023](../../agents/omarai.py#L23) | 23 | `""` | — |
 | [SRC-C9CF9B54F8-L000024](../../agents/omarai.py#L24) | 24 | `"def normalize(text: str) -> str:"` | — |
@@ -839,7 +843,3 @@
 | [SRC-59CF4B7DE8-L000365](../../agents/research.py#L365) | 365 | `"    plan: dict[str, Any],"` | — |
 | [SRC-59CF4B7DE8-L000366](../../agents/research.py#L366) | 366 | `"    question: str,"` | — |
 | [SRC-59CF4B7DE8-L000367](../../agents/research.py#L367) | 367 | `"    *,"` | — |
-| [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    intent_route: str = \"deterministic_fallback\","` | — |
-| [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `"    mode: str = \"auto\","` | — |
-| [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `"    \"\"\"Attach deterministic task interpretation and a bounded strategy matrix.\"\"\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005974 إلى SRC-1AE03B9EC3-L006773
+- النطاق: SRC-1AE03B9EC3-L005970 إلى SRC-1AE03B9EC3-L006769
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005970](../../agents/web_agent.py#L5970) | 5970 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L005971](../../agents/web_agent.py#L5971) | 5971 | `"        needs_corroboration = ("` | — |
+| [SRC-1AE03B9EC3-L005972](../../agents/web_agent.py#L5972) | 5972 | `"            len(sources) < 2 or len(independent_domains) < 2"` | — |
+| [SRC-1AE03B9EC3-L005973](../../agents/web_agent.py#L5973) | 5973 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L005974](../../agents/web_agent.py#L5974) | 5974 | `"        report[\"evidence_repair\"] = evidence_repair"` | — |
 | [SRC-1AE03B9EC3-L005975](../../agents/web_agent.py#L5975) | 5975 | `"        baseline_diagnostic_ids = {id(item) for item in research_diagnostic_baseline}"` | — |
 | [SRC-1AE03B9EC3-L005976](../../agents/web_agent.py#L5976) | 5976 | `"        with self._provider_diagnostics_lock:"` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L006767](../../agents/web_agent.py#L6767) | 6767 | `"        elif ("` | — |
 | [SRC-1AE03B9EC3-L006768](../../agents/web_agent.py#L6768) | 6768 | `"            len(sources) >= 4 and len(distinct_domains) >= 3"` | — |
 | [SRC-1AE03B9EC3-L006769](../../agents/web_agent.py#L6769) | 6769 | `"            and len(distinct_providers) >= 2 and fetched_pages >= 1"` | — |
-| [SRC-1AE03B9EC3-L006770](../../agents/web_agent.py#L6770) | 6770 | `"            and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006771](../../agents/web_agent.py#L6771) | 6771 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L006772](../../agents/web_agent.py#L6772) | 6772 | `"            research_quality = \"excellent\""` | — |
-| [SRC-1AE03B9EC3-L006773](../../agents/web_agent.py#L6773) | 6773 | `"        elif ("` | — |

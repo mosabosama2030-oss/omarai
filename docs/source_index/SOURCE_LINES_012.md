@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001174 إلى SRC-1AE03B9EC3-L001973
+- النطاق: SRC-1AE03B9EC3-L001170 إلى SRC-1AE03B9EC3-L001969
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001170](../../agents/web_agent.py#L1170) | 1170 | `"        value = _normalize_search_query(question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001171](../../agents/web_agent.py#L1171) | 1171 | `"        entities = ("` | — |
+| [SRC-1AE03B9EC3-L001172](../../agents/web_agent.py#L1172) | 1172 | `"            \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\", \"وحده سكنيه\","` | — |
+| [SRC-1AE03B9EC3-L001173](../../agents/web_agent.py#L1173) | 1173 | `"            \"وحدات سكنيه\", \"apartment\", \"apartments\", \"flat\", \"property listing\","` | — |
 | [SRC-1AE03B9EC3-L001174](../../agents/web_agent.py#L1174) | 1174 | `"            \"real estate\", \"house\", \"villa\", \"job opening\", \"وظيفه\", \"وظائف\","` | — |
 | [SRC-1AE03B9EC3-L001175](../../agents/web_agent.py#L1175) | 1175 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001176](../../agents/web_agent.py#L1176) | 1176 | `"        actions = ("` | — |
@@ -812,7 +816,3 @@
 | [SRC-1AE03B9EC3-L001967](../../agents/web_agent.py#L1967) | 1967 | `"            headers={"` | — |
 | [SRC-1AE03B9EC3-L001968](../../agents/web_agent.py#L1968) | 1968 | `"                \"User-Agent\": \"OmaraiResearchBot/1.2\","` | — |
 | [SRC-1AE03B9EC3-L001969](../../agents/web_agent.py#L1969) | 1969 | `"                \"Accept-Language\": \"ar,en;q=0.9\","` | — |
-| [SRC-1AE03B9EC3-L001970](../../agents/web_agent.py#L1970) | 1970 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001971](../../agents/web_agent.py#L1971) | 1971 | `"            timeout=self._effective_timeout(9.0),"` | — |
-| [SRC-1AE03B9EC3-L001972](../../agents/web_agent.py#L1972) | 1972 | `"            # Refuse automatic redirects from public search endpoints; never fetch an"` | — |
-| [SRC-1AE03B9EC3-L001973](../../agents/web_agent.py#L1973) | 1973 | `"            # unchecked redirect target as part of a provider search request."` | — |

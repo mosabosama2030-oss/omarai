@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000908 إلى SRC-29A9CD43D1-L000144
+- النطاق: SRC-3451CC474D-L000904 إلى SRC-29A9CD43D1-L000140
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000904](../../tests/test_api.py#L904) | 904 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
+| [SRC-3451CC474D-L000905](../../tests/test_api.py#L905) | 905 | `""` | — |
+| [SRC-3451CC474D-L000906](../../tests/test_api.py#L906) | 906 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000907](../../tests/test_api.py#L907) | 907 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
 | [SRC-3451CC474D-L000908](../../tests/test_api.py#L908) | 908 | `"    )"` | — |
 | [SRC-3451CC474D-L000909](../../tests/test_api.py#L909) | 909 | `"    assert status == 500"` | — |
 | [SRC-3451CC474D-L000910](../../tests/test_api.py#L910) | 910 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
@@ -866,7 +870,3 @@
 | [SRC-29A9CD43D1-L000138](../../tests/test_dialogue_context_pipeline.py#L138) | 138 | `"        \"withhold_answer\": False,"` | — |
 | [SRC-29A9CD43D1-L000139](../../tests/test_dialogue_context_pipeline.py#L139) | 139 | `"        \"semantic_verification\": \"model_assessed_source_support\","` | — |
 | [SRC-29A9CD43D1-L000140](../../tests/test_dialogue_context_pipeline.py#L140) | 140 | `"        \"fact_correctness\": \"not_verified\","` | — |
-| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    })"` | — |
-| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `""` | — |
-| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
-| [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    result = agent.answer(question, history=history)"` | — |

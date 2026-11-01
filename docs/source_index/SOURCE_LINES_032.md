@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000473 إلى SRC-4FFD5AFC54-L000511
+- النطاق: SRC-70795F4B61-L000469 إلى SRC-4FFD5AFC54-L000507
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000469](../../scripts/compare_answer_quality_runs.py#L469) | 469 | `"        comparison[\"acceptance_blockers\"].append(\"human_review_files_missing\")"` | — |
+| [SRC-70795F4B61-L000470](../../scripts/compare_answer_quality_runs.py#L470) | 470 | `"    elif baseline_reviews is None or candidate_reviews is None or corpus is None:"` | — |
+| [SRC-70795F4B61-L000471](../../scripts/compare_answer_quality_runs.py#L471) | 471 | `"        comparison[\"acceptance_blockers\"].append(\"both_review_files_and_corpus_are_required\")"` | — |
+| [SRC-70795F4B61-L000472](../../scripts/compare_answer_quality_runs.py#L472) | 472 | `"    else:"` | — |
 | [SRC-70795F4B61-L000473](../../scripts/compare_answer_quality_runs.py#L473) | 473 | `"        corpus_ids = {"` | — |
 | [SRC-70795F4B61-L000474](../../scripts/compare_answer_quality_runs.py#L474) | 474 | `"            case.get(\"case_id\")"` | — |
 | [SRC-70795F4B61-L000475](../../scripts/compare_answer_quality_runs.py#L475) | 475 | `"            for case in corpus.get(\"cases\", [])"` | — |
@@ -830,7 +834,3 @@
 | [SRC-4FFD5AFC54-L000505](../../scripts/run_answer_quality_benchmark.py#L505) | 505 | `"        return 1"` | — |
 | [SRC-4FFD5AFC54-L000506](../../scripts/run_answer_quality_benchmark.py#L506) | 506 | `"    cases = data[\"cases\"]"` | — |
 | [SRC-4FFD5AFC54-L000507](../../scripts/run_answer_quality_benchmark.py#L507) | 507 | `"    cats = sorted({c[\"category\"] for c in cases})"` | — |
-| [SRC-4FFD5AFC54-L000508](../../scripts/run_answer_quality_benchmark.py#L508) | 508 | `"    langs = sorted({c[\"language\"] for c in cases})"` | — |
-| [SRC-4FFD5AFC54-L000509](../../scripts/run_answer_quality_benchmark.py#L509) | 509 | `"    print(\"VALIDATE OK\")"` | — |
-| [SRC-4FFD5AFC54-L000510](../../scripts/run_answer_quality_benchmark.py#L510) | 510 | `"    print(f\"benchmark_id={data.get('benchmark_id')} version={data.get('version')}\")"` | — |
-| [SRC-4FFD5AFC54-L000511](../../scripts/run_answer_quality_benchmark.py#L511) | 511 | `"    print(f\"cases={len(cases)} categories={len(cats)} languages={langs}\")"` | — |

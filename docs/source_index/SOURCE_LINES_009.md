@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000552 إلى SRC-686F71AA50-L001351
+- النطاق: SRC-686F71AA50-L000548 إلى SRC-686F71AA50-L001347
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000548](../../agents/task_understanding.py#L548) | 548 | `"    elif family == \"summarize\":"` | — |
+| [SRC-686F71AA50-L000549](../../agents/task_understanding.py#L549) | 549 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000550](../../agents/task_understanding.py#L550) | 550 | `"            \"read_the_requested_text_or_page\","` | — |
+| [SRC-686F71AA50-L000551](../../agents/task_understanding.py#L551) | 551 | `"            \"do_not_summarize_unread_content_from_title_only\","` | — |
 | [SRC-686F71AA50-L000552](../../agents/task_understanding.py#L552) | 552 | `"            \"preserve_source_scope_and_important_qualifiers\","` | — |
 | [SRC-686F71AA50-L000553](../../agents/task_understanding.py#L553) | 553 | `"        ]"` | — |
 | [SRC-686F71AA50-L000554](../../agents/task_understanding.py#L554) | 554 | `"        query_strategies = [\"exact_url_or_supplied_text\", \"page_read\", \"scope_preserving_summary\"]"` | — |
@@ -812,7 +816,3 @@
 | [SRC-686F71AA50-L001345](../../agents/task_understanding.py#L1345) | 1345 | `"                \"selected\": item.get(\"selected\") is True,"` | — |
 | [SRC-686F71AA50-L001346](../../agents/task_understanding.py#L1346) | 1346 | `"            })"` | — |
 | [SRC-686F71AA50-L001347](../../agents/task_understanding.py#L1347) | 1347 | `""` | — |
-| [SRC-686F71AA50-L001348](../../agents/task_understanding.py#L1348) | 1348 | `"    allowed_families = {"` | — |
-| [SRC-686F71AA50-L001349](../../agents/task_understanding.py#L1349) | 1349 | `"        name for name in _PATTERNS if not name.startswith(\"output_\")"` | — |
-| [SRC-686F71AA50-L001350](../../agents/task_understanding.py#L1350) | 1350 | `"    } \| {\"general_question\", \"ambiguous_or_incomplete\", \"web_research\"}"` | — |
-| [SRC-686F71AA50-L001351](../../agents/task_understanding.py#L1351) | 1351 | `"    raw_family = clean_text(value.get(\"task_family\"), 80)"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000995 إلى SRC-6A7519AC10-L000008
+- النطاق: SRC-90FAA34ADE-L000991 إلى SRC-6A7519AC10-L000004
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000991](../../tests/fixtures/answer_quality_cases.json#L991) | 991 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000992](../../tests/fixtures/answer_quality_cases.json#L992) | 992 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000993](../../tests/fixtures/answer_quality_cases.json#L993) | 993 | `"        \"Presents 2021 rules as current without qualification\","` | — |
+| [SRC-90FAA34ADE-L000994](../../tests/fixtures/answer_quality_cases.json#L994) | 994 | `"        \"Invents a newer official source\""` | — |
 | [SRC-90FAA34ADE-L000995](../../tests/fixtures/answer_quality_cases.json#L995) | 995 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000996](../../tests/fixtures/answer_quality_cases.json#L996) | 996 | `"      \"evidence_fixture\": {"` | — |
 | [SRC-90FAA34ADE-L000997](../../tests/fixtures/answer_quality_cases.json#L997) | 997 | `"        \"type\": \"controlled_search\","` | — |
@@ -848,7 +852,3 @@
 | [SRC-6A7519AC10-L000002](../../tests/test_answer_quality_comparison.py#L2) | 2 | `""` | — |
 | [SRC-6A7519AC10-L000003](../../tests/test_answer_quality_comparison.py#L3) | 3 | `"import importlib.util"` | — |
 | [SRC-6A7519AC10-L000004](../../tests/test_answer_quality_comparison.py#L4) | 4 | `"import json"` | — |
-| [SRC-6A7519AC10-L000005](../../tests/test_answer_quality_comparison.py#L5) | 5 | `"from pathlib import Path"` | — |
-| [SRC-6A7519AC10-L000006](../../tests/test_answer_quality_comparison.py#L6) | 6 | `""` | — |
-| [SRC-6A7519AC10-L000007](../../tests/test_answer_quality_comparison.py#L7) | 7 | `"import pytest"` | — |
-| [SRC-6A7519AC10-L000008](../../tests/test_answer_quality_comparison.py#L8) | 8 | `""` | — |

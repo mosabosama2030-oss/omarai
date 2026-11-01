@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001352 إلى SRC-1AE03B9EC3-L000373
+- النطاق: SRC-686F71AA50-L001348 إلى SRC-1AE03B9EC3-L000369
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001348](../../agents/task_understanding.py#L1348) | 1348 | `"    allowed_families = {"` | — |
+| [SRC-686F71AA50-L001349](../../agents/task_understanding.py#L1349) | 1349 | `"        name for name in _PATTERNS if not name.startswith(\"output_\")"` | — |
+| [SRC-686F71AA50-L001350](../../agents/task_understanding.py#L1350) | 1350 | `"    } \| {\"general_question\", \"ambiguous_or_incomplete\", \"web_research\"}"` | — |
+| [SRC-686F71AA50-L001351](../../agents/task_understanding.py#L1351) | 1351 | `"    raw_family = clean_text(value.get(\"task_family\"), 80)"` | — |
 | [SRC-686F71AA50-L001352](../../agents/task_understanding.py#L1352) | 1352 | `"    raw_mode = clean_text(value.get(\"mode\"), 20)"` | — |
 | [SRC-686F71AA50-L001353](../../agents/task_understanding.py#L1353) | 1353 | `"    raw_route = clean_text(value.get(\"intent_route\"), 40)"` | — |
 | [SRC-686F71AA50-L001354](../../agents/task_understanding.py#L1354) | 1354 | `"    allowed_routes = {"` | — |
@@ -839,7 +843,3 @@
 | [SRC-1AE03B9EC3-L000367](../../agents/web_agent.py#L367) | 367 | `"            # storage, but evidence matching must work in both language directions."` | — |
 | [SRC-1AE03B9EC3-L000368](../../agents/web_agent.py#L368) | 368 | `"            if any("` | — |
 | [SRC-1AE03B9EC3-L000369](../../agents/web_agent.py#L369) | 369 | `"                form in aliases"` | — |
-| [SRC-1AE03B9EC3-L000370](../../agents/web_agent.py#L370) | 370 | `"                and ("` | — |
-| [SRC-1AE03B9EC3-L000371](../../agents/web_agent.py#L371) | 371 | `"                    arabic in expanded_evidence"` | — |
-| [SRC-1AE03B9EC3-L000372](../../agents/web_agent.py#L372) | 372 | `"                    or (arabic.startswith(\"ال\") and arabic[2:] in expanded_evidence)"` | — |
-| [SRC-1AE03B9EC3-L000373](../../agents/web_agent.py#L373) | 373 | `"                )"` | — |

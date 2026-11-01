@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000486 إلى SRC-F725E90B2A-L001285
+- النطاق: SRC-F725E90B2A-L000482 إلى SRC-F725E90B2A-L001281
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000482](../../tests/test_web_agent.py#L482) | 482 | `"        \"_fetch_page\","` | — |
+| [SRC-F725E90B2A-L000483](../../tests/test_web_agent.py#L483) | 483 | `"        lambda url: (\"User page title\", \"Full public page text supplied for analysis\"),"` | — |
+| [SRC-F725E90B2A-L000484](../../tests/test_web_agent.py#L484) | 484 | `"    )"` | — |
+| [SRC-F725E90B2A-L000485](../../tests/test_web_agent.py#L485) | 485 | `"    sources, warnings, report = agent._collect_research({"` | — |
 | [SRC-F725E90B2A-L000486](../../tests/test_web_agent.py#L486) | 486 | `"        \"queries\": [\"لخص هذه الصفحة\"],"` | — |
 | [SRC-F725E90B2A-L000487](../../tests/test_web_agent.py#L487) | 487 | `"        \"direct_urls\": [\"https://example.com/article\"],"` | — |
 | [SRC-F725E90B2A-L000488](../../tests/test_web_agent.py#L488) | 488 | `"        \"social_focus\": False,"` | — |
@@ -812,7 +816,3 @@
 | [SRC-F725E90B2A-L001279](../../tests/test_web_agent.py#L1279) | 1279 | `"        ),"` | — |
 | [SRC-F725E90B2A-L001280](../../tests/test_web_agent.py#L1280) | 1280 | `"    )"` | — |
 | [SRC-F725E90B2A-L001281](../../tests/test_web_agent.py#L1281) | 1281 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001282](../../tests/test_web_agent.py#L1282) | 1282 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"        lambda *args, **kwargs: pytest.fail("` | — |
-| [SRC-F725E90B2A-L001284](../../tests/test_web_agent.py#L1284) | 1284 | `"            \"LLM must not answer when both sources belong to one registrable domain\""` | — |
-| [SRC-F725E90B2A-L001285](../../tests/test_web_agent.py#L1285) | 1285 | `"        ),"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000130 إلى SRC-829A979985-L000454
+- النطاق: SRC-FA4E1423C3-L000126 إلى SRC-829A979985-L000450
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000126](../../tests/test_generate_index.py#L126) | 126 | `"    assert (\"متغير JavaScript/TypeScript\", \"ACCESS_TOKEN\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000127](../../tests/test_generate_index.py#L127) | 127 | `"    assert (\"محدد class في CSS\", \"chat-panel\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000128](../../tests/test_generate_index.py#L128) | 128 | `"    assert (\"محدد id في CSS\", \"answer-panel\") in names_by_kind"` | — |
+| [SRC-FA4E1423C3-L000129](../../tests/test_generate_index.py#L129) | 129 | `"    assert (\"متغير CSS مخصص\", \"accent-color\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000130](../../tests/test_generate_index.py#L130) | 130 | `"    assert (\"عنوان Markdown (H1)\", \"User Guide\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000131](../../tests/test_generate_index.py#L131) | 131 | `"    assert (\"عنوان Markdown (H2)\", \"Troubleshooting\") in names_by_kind"` | — |
 | [SRC-FA4E1423C3-L000132](../../tests/test_generate_index.py#L132) | 132 | `"    assert (\"مفتاح إعداد YAML\", \"OMARAI_ENABLED\") in names_by_kind"` | — |
@@ -821,7 +825,3 @@
 | [SRC-829A979985-L000448](../../tests/test_generation_acceptance_matrix.py#L448) | 448 | `"    result = agent.answer(question)"` | — |
 | [SRC-829A979985-L000449](../../tests/test_generation_acceptance_matrix.py#L449) | 449 | `""` | — |
 | [SRC-829A979985-L000450](../../tests/test_generation_acceptance_matrix.py#L450) | 450 | `"    assert result[\"search_attempted\"] is True"` | — |
-| [SRC-829A979985-L000451](../../tests/test_generation_acceptance_matrix.py#L451) | 451 | `"    assert result[\"used_web_search\"] is False"` | — |
-| [SRC-829A979985-L000452](../../tests/test_generation_acceptance_matrix.py#L452) | 452 | `"    assert result[\"search_report\"][\"search_outcome\"] == \"attempted_no_usable_sources\""` | — |
-| [SRC-829A979985-L000453](../../tests/test_generation_acceptance_matrix.py#L453) | 453 | `"    assert result[\"final_answer_status\"] == \"insufficient_evidence_no_generation\""` | — |
-| [SRC-829A979985-L000454](../../tests/test_generation_acceptance_matrix.py#L454) | 454 | `"    assert result[\"used_language_model\"] is False"` | — |

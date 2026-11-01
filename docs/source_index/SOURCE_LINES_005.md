@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000372 إلى SRC-1E32639872-L000265
+- النطاق: SRC-59CF4B7DE8-L000368 إلى SRC-1E32639872-L000261
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    intent_route: str = \"deterministic_fallback\","` | — |
+| [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `"    mode: str = \"auto\","` | — |
+| [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `") -> dict[str, Any]:"` | — |
+| [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `"    \"\"\"Attach deterministic task interpretation and a bounded strategy matrix.\"\"\""` | — |
 | [SRC-59CF4B7DE8-L000372](../../agents/research.py#L372) | 372 | `"    result = dict(plan)"` | — |
 | [SRC-59CF4B7DE8-L000373](../../agents/research.py#L373) | 373 | `"    from agents.research_pipeline import build_research_pipeline"` | — |
 | [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `""` | — |
@@ -821,7 +825,3 @@
 | [SRC-1E32639872-L000259](../../agents/research_completion.py#L259) | 259 | `"        elif str(report.get(\"search_outcome\") or \"\") in _RESEARCH_ERRORS or ("` | — |
 | [SRC-1E32639872-L000260](../../agents/research_completion.py#L260) | 260 | `"            connector_errors and not connector_ok"` | — |
 | [SRC-1E32639872-L000261](../../agents/research_completion.py#L261) | 261 | `"        ):"` | — |
-| [SRC-1E32639872-L000262](../../agents/research_completion.py#L262) | 262 | `"            status = \"search_failed_or_incomplete\""` | — |
-| [SRC-1E32639872-L000263](../../agents/research_completion.py#L263) | 263 | `"        elif zero_results:"` | — |
-| [SRC-1E32639872-L000264](../../agents/research_completion.py#L264) | 264 | `"            status = \"no_results_returned\""` | — |
-| [SRC-1E32639872-L000265](../../agents/research_completion.py#L265) | 265 | `"        elif attempted is False:"` | — |

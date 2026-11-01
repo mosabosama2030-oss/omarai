@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000512 إلى SRC-90FAA34ADE-L000194
+- النطاق: SRC-4FFD5AFC54-L000508 إلى SRC-90FAA34ADE-L000190
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000508](../../scripts/run_answer_quality_benchmark.py#L508) | 508 | `"    langs = sorted({c[\"language\"] for c in cases})"` | — |
+| [SRC-4FFD5AFC54-L000509](../../scripts/run_answer_quality_benchmark.py#L509) | 509 | `"    print(\"VALIDATE OK\")"` | — |
+| [SRC-4FFD5AFC54-L000510](../../scripts/run_answer_quality_benchmark.py#L510) | 510 | `"    print(f\"benchmark_id={data.get('benchmark_id')} version={data.get('version')}\")"` | — |
+| [SRC-4FFD5AFC54-L000511](../../scripts/run_answer_quality_benchmark.py#L511) | 511 | `"    print(f\"cases={len(cases)} categories={len(cats)} languages={langs}\")"` | — |
 | [SRC-4FFD5AFC54-L000512](../../scripts/run_answer_quality_benchmark.py#L512) | 512 | `"    if summary:"` | — |
 | [SRC-4FFD5AFC54-L000513](../../scripts/run_answer_quality_benchmark.py#L513) | 513 | `"        from collections import Counter"` | — |
 | [SRC-4FFD5AFC54-L000514](../../scripts/run_answer_quality_benchmark.py#L514) | 514 | `""` | — |
@@ -839,7 +843,3 @@
 | [SRC-90FAA34ADE-L000188](../../tests/fixtures/answer_quality_cases.json#L188) | 188 | `"      \"failure_conditions\": ["` | — |
 | [SRC-90FAA34ADE-L000189](../../tests/fixtures/answer_quality_cases.json#L189) | 189 | `"        \"Numeric price asserted with zero sources\","` | — |
 | [SRC-90FAA34ADE-L000190](../../tests/fixtures/answer_quality_cases.json#L190) | 190 | `"        \"evidence_status insufficient but answer is assertive\""` | — |
-| [SRC-90FAA34ADE-L000191](../../tests/fixtures/answer_quality_cases.json#L191) | 191 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000192](../../tests/fixtures/answer_quality_cases.json#L192) | 192 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
-| [SRC-90FAA34ADE-L000193](../../tests/fixtures/answer_quality_cases.json#L193) | 193 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000194](../../tests/fixtures/answer_quality_cases.json#L194) | 194 | `"    {"` | — |
