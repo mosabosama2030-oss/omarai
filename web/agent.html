@@ -438,9 +438,10 @@ async function ask(value){
 }
 async function runDiagnostics(){
  const button=$("runDiagnostics"),output=$("diagnosticsResult");if(button.disabled)return;
- button.disabled=true;button.textContent="جارٍ الاختبار الحقيقي…";output.textContent="يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.";
+ if(!window.confirm("سيجري هذا الاختبار اتصالات فعلية بمحركات البحث والنموذج، وقد يستهلك حصص الموفّرين أو يترتب عليه رسوم. هل توافق على تنفيذ هذه الاتصالات الآن؟"))return;
+ button.disabled=true;button.textContent="جارٍ الاختبار الحقيقي…";output.textContent="تُرسل الآن طلبات فعلية إلى موفّري البحث والنموذج بعد موافقتك.";
  try{
-  const response=await fetch("/api/diagnostics",{method:"POST",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$("diagSocial").checked})});
+  const response=await fetch("/api/diagnostics",{method:"POST",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$("diagSocial").checked,allow_provider_usage:true})});
   const data=await response.json();if(!response.ok)throw Error(data.error||"فشل طلب الاختبار");
   const labels={passed:"نجح فعليًا",degraded:"جزئي أو بلا نتائج كافية",failed:"فشل",skipped:"لم يُختبر",not_configured:"غير مضبوط"};
   const lines=["النتيجة: "+(labels[data.overall_status]||data.overall_status)];
