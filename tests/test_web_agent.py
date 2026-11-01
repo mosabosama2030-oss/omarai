@@ -4357,6 +4357,9 @@ def test_answer_is_withheld_when_semantic_claim_support_is_not_established(monke
     agent = WebAgent()
     agent.api_key = "test-key"
     source = sample_source(0)
+    source["providers"] = ["user_supplied_url"]
+    source["page_fetched"] = True
+    source["page_text"] = "النص الكامل المستخرج من الصفحة التي قدمها المستخدم."
     plan = {
         "queries": ["لخص الصفحة"],
         "direct_urls": ["https://example.com/research"],

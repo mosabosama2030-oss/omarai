@@ -6644,6 +6644,12 @@ class WebAgent:
         citation_validation = self._citation_validation_metadata(
             answer, max_citable_sources, citation_warnings, review_status
         )
+        # Run deterministic numeric/provenance checks before asking the semantic reviewer.
+        # Recompute below after a source-only fallback so public diagnostics describe the final text.
+        answer_integrity = audit_answer_integrity(
+            working_question, answer, sources, coverage_targets,
+            plan.get("requirement_queries")
+        )
         semantic_claim_verification: dict[str, Any] = {
             "status": "not_run_review_unavailable",
             "withhold_answer": False,
