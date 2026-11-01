@@ -210,3 +210,38 @@ def test_web_agent_fails_closed_when_verifier_call_fails(monkeypatch):
     assert result["status"] == "not_verifiable"
     assert result["reason"] == "verifier_call_failed"
     assert result["withhold_answer"] is True
+
+
+def test_ninth_citation_reference_is_not_silently_truncated():
+    sources = [
+        source(url=f"https://example.org/source-{index}")
+        for index in range(1, 10)
+    ]
+    citations = " ".join(f"[source {index}]" for index in range(1, 10))
+    request = prepared(answer=f"The claim cites many sources {citations}.", sources=sources)
+    assert request["status"] == "not_verifiable"
+    assert request["reason"] == "citation_reference_list_truncated"
+
+
+def test_request_completion_can_disable_fallback_for_verifier_calls(monkeypatch):
+    import json
+    import urllib.error
+
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    agent.fallback_model = "fallback/model"
+    called = []
+
+    def unavailable(request, timeout):
+        payload = json.loads(request.data.decode("utf-8"))
+        called.append(payload["model"])
+        raise urllib.error.URLError("network unavailable")
+
+    monkeypatch.setattr("agents.web_agent._open_model_request", unavailable)
+    with pytest.raises(RuntimeError):
+        agent._request_completion(
+            [{"role": "user", "content": "test"}],
+            model="verifier/model",
+            allow_fallback=False,
+        )
+    assert called == ["verifier/model"]

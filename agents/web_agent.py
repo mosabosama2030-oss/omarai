@@ -3533,8 +3533,12 @@ class WebAgent:
                     error_class=type(exc).__name__, request_started=True,
                     remote_response_received=None,
                 )
+                fallback_note = (
+                    "جرت محاولة استخدام النموذج الاحتياطي."
+                    if allow_fallback else "لم يُستخدم نموذج احتياطي."
+                )
                 last_error = RuntimeError(
-                    "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
+                    "تعذر الاتصال بخدمة نموذج اللغة؛ " + fallback_note
                 )
             except (KeyError, IndexError, TypeError, ValueError) as exc:
                 self._record_generation_diagnostic(
