@@ -558,7 +558,7 @@ def _fallback_lead_answer(sources: list[dict[str, Any]]) -> str:
     return "\n\n".join(lines)
 
 
-class PageFetchResult(tuple):class PageFetchResult(tuple):
+class PageFetchResult(tuple):
     """Two-item tuple compatible with legacy callers, with structured extraction status."""
 
     def __new__(
