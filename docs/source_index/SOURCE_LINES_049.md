@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000586 إلى SRC-F725E90B2A-L001385
+- النطاق: SRC-F725E90B2A-L000580 إلى SRC-F725E90B2A-L001379
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000580](../../tests/test_web_agent.py#L580) | 580 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
+| [SRC-F725E90B2A-L000581](../../tests/test_web_agent.py#L581) | 581 | `"    )"` | — |
+| [SRC-F725E90B2A-L000582](../../tests/test_web_agent.py#L582) | 582 | `"    assert warnings == []"` | — |
+| [SRC-F725E90B2A-L000583](../../tests/test_web_agent.py#L583) | 583 | `"    assert len(results) == 1"` | — |
+| [SRC-F725E90B2A-L000584](../../tests/test_web_agent.py#L584) | 584 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
+| [SRC-F725E90B2A-L000585](../../tests/test_web_agent.py#L585) | 585 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
 | [SRC-F725E90B2A-L000586](../../tests/test_web_agent.py#L586) | 586 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
 | [SRC-F725E90B2A-L000587](../../tests/test_web_agent.py#L587) | 587 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
 | [SRC-F725E90B2A-L000588](../../tests/test_web_agent.py#L588) | 588 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L001377](../../tests/test_web_agent.py#L1377) | 1377 | `"    calls = []"` | — |
 | [SRC-F725E90B2A-L001378](../../tests/test_web_agent.py#L1378) | 1378 | `""` | — |
 | [SRC-F725E90B2A-L001379](../../tests/test_web_agent.py#L1379) | 1379 | `"    def collect_only_one_source(research_plan):"` | — |
-| [SRC-F725E90B2A-L001380](../../tests/test_web_agent.py#L1380) | 1380 | `"        calls.append(dict(research_plan))"` | — |
-| [SRC-F725E90B2A-L001381](../../tests/test_web_agent.py#L1381) | 1381 | `"        return [sample_source(0)], [], {"` | — |
-| [SRC-F725E90B2A-L001382](../../tests/test_web_agent.py#L1382) | 1382 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-F725E90B2A-L001383](../../tests/test_web_agent.py#L1383) | 1383 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-F725E90B2A-L001384](../../tests/test_web_agent.py#L1384) | 1384 | `"            \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 1}],"` | — |
-| [SRC-F725E90B2A-L001385](../../tests/test_web_agent.py#L1385) | 1385 | `"            \"unique_sources\": 1,"` | — |

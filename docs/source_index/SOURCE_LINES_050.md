@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001386 إلى SRC-F725E90B2A-L002185
+- النطاق: SRC-F725E90B2A-L001380 إلى SRC-F725E90B2A-L002179
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001380](../../tests/test_web_agent.py#L1380) | 1380 | `"        calls.append(dict(research_plan))"` | — |
+| [SRC-F725E90B2A-L001381](../../tests/test_web_agent.py#L1381) | 1381 | `"        return [sample_source(0)], [], {"` | — |
+| [SRC-F725E90B2A-L001382](../../tests/test_web_agent.py#L1382) | 1382 | `"            \"queries_planned\": 1,"` | — |
+| [SRC-F725E90B2A-L001383](../../tests/test_web_agent.py#L1383) | 1383 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001384](../../tests/test_web_agent.py#L1384) | 1384 | `"            \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 1}],"` | — |
+| [SRC-F725E90B2A-L001385](../../tests/test_web_agent.py#L1385) | 1385 | `"            \"unique_sources\": 1,"` | — |
 | [SRC-F725E90B2A-L001386](../../tests/test_web_agent.py#L1386) | 1386 | `"            \"pages_fetched\": 1,"` | — |
 | [SRC-F725E90B2A-L001387](../../tests/test_web_agent.py#L1387) | 1387 | `"            \"providers_used\": [\"test_provider\"],"` | — |
 | [SRC-F725E90B2A-L001388](../../tests/test_web_agent.py#L1388) | 1388 | `"            \"platform_counts\": {\"web\": 1},"` | — |
@@ -810,9 +816,3 @@
 | [SRC-F725E90B2A-L002177](../../tests/test_web_agent.py#L2177) | 2177 | `"        \"freshness\": \"current\","` | — |
 | [SRC-F725E90B2A-L002178](../../tests/test_web_agent.py#L2178) | 2178 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L002179](../../tests/test_web_agent.py#L2179) | 2179 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L002180](../../tests/test_web_agent.py#L2180) | 2180 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002181](../../tests/test_web_agent.py#L2181) | 2181 | `"    }"` | — |
-| [SRC-F725E90B2A-L002182](../../tests/test_web_agent.py#L2182) | 2182 | `""` | — |
-| [SRC-F725E90B2A-L002183](../../tests/test_web_agent.py#L2183) | 2183 | `"    def fail_before_attempt(research_plan):"` | — |
-| [SRC-F725E90B2A-L002184](../../tests/test_web_agent.py#L2184) | 2184 | `"        raise RuntimeError(\"simulated scheduler failure\")"` | — |
-| [SRC-F725E90B2A-L002185](../../tests/test_web_agent.py#L2185) | 2185 | `""` | — |
