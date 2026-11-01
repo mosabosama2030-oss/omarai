@@ -26,7 +26,7 @@ AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
 BROWSER_SESSION_COOKIE_MAX_AGE = 8 * 60 * 60
-BROWSER_SESSION_TOKEN_RE = re.compile(r"^[A-Za-z0-9._~-]{32,512}$")
+BROWSER_SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_-]{32,128}$")
 
 
 def _csp_hash_source(value: str) -> str:
@@ -319,7 +319,7 @@ class Handler(BaseHTTPRequestHandler):
         return "omarai_session"
 
     def _session_cookie_header(self, token: str) -> str:
-        if not BROWSER_SESSION_TOKEN_RE.fullmatch(token):
+        if not BROWSER_SESSION_ID_RE.fullmatch(token):
             raise ValueError("browser access token has an unsupported format")
         parts = [
             f"{self._session_cookie_name()}={token}",
@@ -358,6 +358,7 @@ class Handler(BaseHTTPRequestHandler):
         """
         self._authenticated_principal = None
         self._cookie_authenticated = False
+        self._browser_session_id = ""
         supplied = self.headers.get("Authorization", "")
         if supplied.startswith("Bearer "):
             token = supplied[7:].strip()
@@ -372,9 +373,14 @@ class Handler(BaseHTTPRequestHandler):
         morsel = cookie.get(self._session_cookie_name())
         if morsel is not None:
             token = morsel.value
-            if BROWSER_SESSION_TOKEN_RE.fullmatch(token):
-                self._authenticated_principal = self._principal_for_access_token(token)
+            if BROWSER_SESSION_ID_RE.fullmatch(token):
+                self._authenticated_principal = self.store.resolve_web_session(
+                    token,
+                    shared_token=os.getenv("OMARAI_ACCESS_TOKEN", "").strip(),
+                )
                 self._cookie_authenticated = bool(self._authenticated_principal)
+                if self._cookie_authenticated:
+                    self._browser_session_id = token
                 return self._cookie_authenticated
 
         if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1":
@@ -655,22 +661,27 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(400, {"error": "request body must be a JSON object"})
             if path == "/api/session":
                 token = data.get("access_token", "")
-                if (
-                    not isinstance(token, str)
-                    or not BROWSER_SESSION_TOKEN_RE.fullmatch(token)
-                ):
+                if not isinstance(token, str) or len(token.strip()) < 32:
                     return self.respond(401, {"error": "رمز الوصول غير صالح."})
-                principal = self._principal_for_access_token(token)
-                if not principal:
+                session = self.store.create_web_session(
+                    token.strip(),
+                    shared_token=os.getenv("OMARAI_ACCESS_TOKEN", "").strip(),
+                    max_age_seconds=BROWSER_SESSION_COOKIE_MAX_AGE,
+                )
+                if not session:
                     return self.respond(401, {"error": "رمز الوصول غير صحيح أو منتهي الصلاحية."})
+                session_id, principal = session
                 self._authenticated_principal = principal
                 return self.respond(
                     200,
                     {"authenticated": True, "role": principal["role"]},
-                    extra_headers=[("Set-Cookie", self._session_cookie_header(token))],
+                    extra_headers=[("Set-Cookie", self._session_cookie_header(session_id))],
                 )
 
             if path == "/api/session/logout":
+                session_id = getattr(self, "_browser_session_id", "")
+                if session_id:
+                    self.store.revoke_web_session(session_id)
                 return self.respond(
                     200,
                     {"logged_out": True},
