@@ -897,7 +897,7 @@ class WebAgent:
             "fallback_model": fallback_model,
             "model_selection_mode": "role_specific_with_configured_provider_failover",
             "external_model_privacy_notice": (
-                "Prompts and selected page excerpts are sent to the primary configured model provider. "
+                "Prompts and selected page excerpts are sent to the configured external model provider. "
                 "After a failed attempt, they may also be sent to other configured fallback providers. "
                 "Do not submit secrets or personal/confidential customer data. The default free NVIDIA "
                 "Nemotron endpoint states that sessions may be logged for security and product improvement."
