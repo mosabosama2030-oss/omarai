@@ -164,14 +164,31 @@ def build_claim_evidence_ledger(
     lexical_signals = weak_signals = 0
 
     for number, segment in enumerate(segments, 1):
-        all_indexes = list(dict.fromkeys(
-            int(match.group(1)) for match in _CITATION.finditer(segment)
+        raw_indexes = list(dict.fromkeys(
+            match.group(1) for match in _CITATION.finditer(segment)
         ))
-        citation_references_truncated = len(all_indexes) > 8
-        indexes = all_indexes[:8]
+        citation_references_truncated = len(raw_indexes) > 8
+        indexes: list[int] = []
         refs: list[dict[str, Any]] = []
         has_readable = False
-        for index in indexes:
+        invalid_source_index = False
+        for raw_index in raw_indexes[:8]:
+            # Citation markers are untrusted model output. Normalize Unicode decimal
+            # digits and bound the numeric representation before calling int().
+            normalized_index = "".join(
+                str(unicodedata.decimal(character)) for character in raw_index
+            ).lstrip("0") or "0"
+            if len(normalized_index) > 3:
+                invalid_refs += 1
+                invalid_source_index = True
+                refs.append({
+                    "source_index": None,
+                    "reference_status": "invalid_or_oversized_source_index",
+                    "title": "", "url": "", "evidence_basis": "unavailable",
+                })
+                continue
+            index = int(normalized_index)
+            indexes.append(index)
             if index < 1 or index > len(safe_sources):
                 invalid_refs += 1
                 refs.append({
@@ -198,15 +215,17 @@ def build_claim_evidence_ledger(
                 "metadata_audit": audit_source_metadata(source, claim_text=f"{question_context} {segment}"),
             })
 
-        cited += bool(indexes)
-        uncited += not bool(indexes)
-        readable_cited += bool(indexes) and has_readable
+        cited += bool(raw_indexes)
+        uncited += not bool(raw_indexes)
+        readable_cited += bool(raw_indexes) and has_readable
         alignment = alignment_by_sentence.get(number, {})
         lexical_status = str(alignment.get("status") or "not_assessed_no_citation_alignment")
         lexical_signals += lexical_status == "lexical_overlap_signal_found"
         weak_signals += lexical_status == "weak_lexical_overlap"
         if any(ref["reference_status"] == "index_out_of_citable_range" for ref in refs):
             status = "citation_index_out_of_range"
+        elif invalid_source_index:
+            status = "citation_index_invalid_or_too_large"
         elif citation_references_truncated:
             status = "citation_reference_list_truncated"
         elif indexes and not has_readable:
