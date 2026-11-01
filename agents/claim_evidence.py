@@ -172,6 +172,7 @@ def build_claim_evidence_ledger(
         refs: list[dict[str, Any]] = []
         has_readable = False
         invalid_source_index = False
+        seen_indexes: set[int] = set()
         for raw_index in raw_indexes[:8]:
             # Citation markers are untrusted model output. Normalize Unicode decimal
             # digits and bound the numeric representation before calling int().
@@ -188,6 +189,9 @@ def build_claim_evidence_ledger(
                 })
                 continue
             index = int(normalized_index)
+            if index in seen_indexes:
+                continue
+            seen_indexes.add(index)
             indexes.append(index)
             if index < 1 or index > len(safe_sources):
                 invalid_refs += 1
