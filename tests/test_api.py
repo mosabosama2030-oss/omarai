@@ -1183,19 +1183,19 @@ def test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cook
     [
         (
             "POST /api/analyze HTTP/1.1",
-            b"Transfer-Encoding: chunked\\r\\nContent-Length: 4\\r\\n",
-            b"0\\r\\n\\r\\n",
+            b"Transfer-Encoding: chunked\r\nContent-Length: 4\r\n",
+            b"0\r\n\r\n",
             b"Transfer-Encoding",
         ),
         (
             "POST /api/analyze HTTP/1.1",
-            b"Content-Length: 4\\r\\nContent-Length: 5\\r\\n",
+            b"Content-Length: 4\r\nContent-Length: 5\r\n",
             b"test",
             b"Content-Length",
         ),
         (
             "GET /api/health HTTP/1.1",
-            b"Content-Length: 4\\r\\n",
+            b"Content-Length: 4\r\n",
             b"test",
             b"Content-Length",
         ),
@@ -1211,10 +1211,10 @@ def test_api_rejects_ambiguous_or_unsupported_http_request_framing(
         client.settimeout(2)
         request = (
             request_line.encode("ascii")
-            + b"\\r\\nHost: localhost\\r\\n"
-            + b"Content-Type: application/json\\r\\n"
+            + b"\r\nHost: localhost\r\n"
+            + b"Content-Type: application/json\r\n"
             + framing_headers
-            + b"Connection: close\\r\\n\\r\\n"
+            + b"Connection: close\r\n\r\n"
             + body
         )
         client.sendall(request)
@@ -1236,11 +1236,11 @@ def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):
     ) as client:
         client.settimeout(2)
         client.sendall(
-            b"POST /api/analyze HTTP/1.1\\r\\n"
-            b"Host: localhost\\r\\n"
-            b"Content-Type: application/json\\r\\n"
-            b"Content-Length: 200001\\r\\n"
-            b"\\r\\n"
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 200001\r\n"
+            b"\r\n"
         )
         response = b""
         while True:
