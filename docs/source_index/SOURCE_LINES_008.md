@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000210 إلى SRC-686F71AA50-L001009
+- النطاق: SRC-686F71AA50-L000229 إلى SRC-686F71AA50-L001028
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,25 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    \"planning\": ("` | — |
-| [SRC-686F71AA50-L000211](../../agents/task_understanding.py#L211) | 211 | `"        \"ضع خطة\", \"خطة عمل\", \"خطة زمنية\", \"جدول زمني\", \"خطوات تنفيذ\","` | — |
-| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"        \"نظم لي\", \"رتب لي\", \"plan\", \"planning\", \"roadmap\", \"itinerary\","` | — |
-| [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"        \"project schedule\", \"timeline\", \"project plan\","` | — |
-| [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    ),"` | — |
-| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    \"creative_generation\": ("` | — |
-| [SRC-686F71AA50-L000216](../../agents/task_understanding.py#L216) | 216 | `"        \"اكتب قصة\", \"قصة قصيرة\", \"قصيدة\", \"سيناريو\", \"اقترح افكار\","` | — |
-| [SRC-686F71AA50-L000217](../../agents/task_understanding.py#L217) | 217 | `"        \"اقترح أفكار\", \"عصف ذهني\", \"brainstorm\", \"creative writing\","` | — |
-| [SRC-686F71AA50-L000218](../../agents/task_understanding.py#L218) | 218 | `"        \"write a story\", \"poem\", \"generate ideas\","` | — |
-| [SRC-686F71AA50-L000219](../../agents/task_understanding.py#L219) | 219 | `"    ),"` | — |
-| [SRC-686F71AA50-L000220](../../agents/task_understanding.py#L220) | 220 | `"    \"explain_or_define\": ("` | — |
-| [SRC-686F71AA50-L000221](../../agents/task_understanding.py#L221) | 221 | `"        \"ما معنى\", \"يعني ايه\", \"ما هو\", \"ما هي\", \"اشرح\", \"وضح مفهوم\","` | — |
-| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"        \"what is\", \"what does\", \"explain\", \"define\","` | — |
-| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"    ),"` | — |
-| [SRC-686F71AA50-L000224](../../agents/task_understanding.py#L224) | 224 | `"    \"general_research\": ("` | — |
-| [SRC-686F71AA50-L000225](../../agents/task_understanding.py#L225) | 225 | `"        \"بحث عميق\", \"بحث شامل\", \"بحث معمق\", \"تحقق من\", \"مصادر موثوقه\","` | — |
-| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"        \"اذكر المصادر\", \"مع مصادر\", \"بالمصادر\", \"deep research\", \"research\","` | — |
-| [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `"        \"verify\", \"fact check\", \"with sources\", \"cite sources\","` | — |
-| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"    ),"` | — |
 | [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"    \"output_concise\": ("` | — |
 | [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"        \"باختصار\", \"بإيجاز\", \"مختصر\", \"من غير إطالة\", \"بدون إطالة\","` | — |
 | [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"        \"briefly\", \"in brief\", \"concise\", \"short answer\", \"keep it short\","` | — |
@@ -816,3 +797,22 @@
 | [SRC-686F71AA50-L001007](../../agents/task_understanding.py#L1007) | 1007 | `"            (f\"{topic} مصدر صحي رسمي إرشادات\", \"authoritative_health_source\", \"prefer current public health guidance, not a personal diagnosis\"),"` | — |
 | [SRC-686F71AA50-L001008](../../agents/task_understanding.py#L1008) | 1008 | `"            (f\"{topic} clinical guidance evidence limitations\", \"clinical_evidence_context\", \"look for evidence quality and documented limitations\"),"` | — |
 | [SRC-686F71AA50-L001009](../../agents/task_understanding.py#L1009) | 1009 | `"        ])"` | — |
+| [SRC-686F71AA50-L001010](../../agents/task_understanding.py#L1010) | 1010 | `"    if family == \"legal_information\" and ("` | — |
+| [SRC-686F71AA50-L001011](../../agents/task_understanding.py#L1011) | 1011 | `"        spec.get(\"mode\") in {\"deep\", \"latest\"} or spec.get(\"intent_route\") == \"WEB_DEEP\""` | — |
+| [SRC-686F71AA50-L001012](../../agents/task_understanding.py#L1012) | 1012 | `"    ):"` | — |
+| [SRC-686F71AA50-L001013](../../agents/task_understanding.py#L1013) | 1013 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001014](../../agents/task_understanding.py#L1014) | 1014 | `"            (f\"{topic} نص قانوني رسمي التشريع\", \"official_legal_text\", \"seek primary law or regulator text and verify jurisdiction\"),"` | — |
+| [SRC-686F71AA50-L001015](../../agents/task_understanding.py#L1015) | 1015 | `"            (f\"{topic} jurisdiction effective date legal interpretation\", \"jurisdiction_and_effective_date\", \"keep jurisdiction and effective date visible\"),"` | — |
+| [SRC-686F71AA50-L001016](../../agents/task_understanding.py#L1016) | 1016 | `"        ])"` | — |
+| [SRC-686F71AA50-L001017](../../agents/task_understanding.py#L1017) | 1017 | `"    if family == \"coding_or_technical_design\" and ("` | — |
+| [SRC-686F71AA50-L001018](../../agents/task_understanding.py#L1018) | 1018 | `"        spec.get(\"mode\") in {\"deep\", \"latest\"} or spec.get(\"intent_route\") == \"WEB_DEEP\""` | — |
+| [SRC-686F71AA50-L001019](../../agents/task_understanding.py#L1019) | 1019 | `"    ):"` | — |
+| [SRC-686F71AA50-L001020](../../agents/task_understanding.py#L1020) | 1020 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001021](../../agents/task_understanding.py#L1021) | 1021 | `"            (f\"{topic} official documentation\", \"official_technical_docs\", \"prefer the language/runtime's authoritative documentation\"),"` | — |
+| [SRC-686F71AA50-L001022](../../agents/task_understanding.py#L1022) | 1022 | `"            (f\"{topic} exact error regression test\", \"error_and_regression_test\", \"look for a reproducible error and a testable fix\"),"` | — |
+| [SRC-686F71AA50-L001023](../../agents/task_understanding.py#L1023) | 1023 | `"        ])"` | — |
+| [SRC-686F71AA50-L001024](../../agents/task_understanding.py#L1024) | 1024 | `"    if family == \"planning\" and ("` | — |
+| [SRC-686F71AA50-L001025](../../agents/task_understanding.py#L1025) | 1025 | `"        spec.get(\"mode\") in {\"deep\", \"latest\"} or spec.get(\"intent_route\") == \"WEB_DEEP\""` | — |
+| [SRC-686F71AA50-L001026](../../agents/task_understanding.py#L1026) | 1026 | `"    ):"` | — |
+| [SRC-686F71AA50-L001027](../../agents/task_understanding.py#L1027) | 1027 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001028](../../agents/task_understanding.py#L1028) | 1028 | `"            (f\"{topic} risks dependencies feasibility\", \"feasibility_and_dependencies\", \"test assumptions, dependencies, and likely blockers\"),"` | — |

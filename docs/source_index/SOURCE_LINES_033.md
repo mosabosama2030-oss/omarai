@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000031 إلى SRC-90FAA34ADE-L000830
+- النطاق: SRC-90FAA34ADE-L000050 إلى SRC-90FAA34ADE-L000849
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,25 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-90FAA34ADE-L000031](../../tests/fixtures/answer_quality_cases.json#L31) | 31 | `"        \"Fabricates a web search report\","` | — |
-| [SRC-90FAA34ADE-L000032](../../tests/fixtures/answer_quality_cases.json#L32) | 32 | `"        \"Returns source links for a pure greeting\","` | — |
-| [SRC-90FAA34ADE-L000033](../../tests/fixtures/answer_quality_cases.json#L33) | 33 | `"        \"Answers in English only when the user wrote Egyptian Arabic\""` | — |
-| [SRC-90FAA34ADE-L000034](../../tests/fixtures/answer_quality_cases.json#L34) | 34 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000035](../../tests/fixtures/answer_quality_cases.json#L35) | 35 | `"      \"evidence_fixture\": {"` | — |
-| [SRC-90FAA34ADE-L000036](../../tests/fixtures/answer_quality_cases.json#L36) | 36 | `"        \"type\": \"none\","` | — |
-| [SRC-90FAA34ADE-L000037](../../tests/fixtures/answer_quality_cases.json#L37) | 37 | `"        \"notes\": \"No retrieval required\""` | — |
-| [SRC-90FAA34ADE-L000038](../../tests/fixtures/answer_quality_cases.json#L38) | 38 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000039](../../tests/fixtures/answer_quality_cases.json#L39) | 39 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000040](../../tests/fixtures/answer_quality_cases.json#L40) | 40 | `"        \"used_web_search is true\","` | — |
-| [SRC-90FAA34ADE-L000041](../../tests/fixtures/answer_quality_cases.json#L41) | 41 | `"        \"Answer contains fabricated source URLs\""` | — |
-| [SRC-90FAA34ADE-L000042](../../tests/fixtures/answer_quality_cases.json#L42) | 42 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000043](../../tests/fixtures/answer_quality_cases.json#L43) | 43 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
-| [SRC-90FAA34ADE-L000044](../../tests/fixtures/answer_quality_cases.json#L44) | 44 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000045](../../tests/fixtures/answer_quality_cases.json#L45) | 45 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000046](../../tests/fixtures/answer_quality_cases.json#L46) | 46 | `"      \"case_id\": \"AQ-002\","` | — |
-| [SRC-90FAA34ADE-L000047](../../tests/fixtures/answer_quality_cases.json#L47) | 47 | `"      \"category\": \"simple_conversational\","` | — |
-| [SRC-90FAA34ADE-L000048](../../tests/fixtures/answer_quality_cases.json#L48) | 48 | `"      \"language\": \"en\","` | — |
-| [SRC-90FAA34ADE-L000049](../../tests/fixtures/answer_quality_cases.json#L49) | 49 | `"      \"question\": \"Thanks, that helps.\","` | — |
 | [SRC-90FAA34ADE-L000050](../../tests/fixtures/answer_quality_cases.json#L50) | 50 | `"      \"expected_strategy\": \"model_no_search\","` | — |
 | [SRC-90FAA34ADE-L000051](../../tests/fixtures/answer_quality_cases.json#L51) | 51 | `"      \"required_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000052](../../tests/fixtures/answer_quality_cases.json#L52) | 52 | `"        \"Brief acknowledgment\","` | — |
@@ -816,3 +797,22 @@
 | [SRC-90FAA34ADE-L000828](../../tests/fixtures/answer_quality_cases.json#L828) | 828 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000829](../../tests/fixtures/answer_quality_cases.json#L829) | 829 | `"    {"` | — |
 | [SRC-90FAA34ADE-L000830](../../tests/fixtures/answer_quality_cases.json#L830) | 830 | `"      \"case_id\": \"AQ-029\","` | — |
+| [SRC-90FAA34ADE-L000831](../../tests/fixtures/answer_quality_cases.json#L831) | 831 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000832](../../tests/fixtures/answer_quality_cases.json#L832) | 832 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000833](../../tests/fixtures/answer_quality_cases.json#L833) | 833 | `"      \"question\": \"لقيت إعلان شقة في التجمع على صفحة عامة. اكتب لي ملخص lead أولي، من غير ما تعتبر الإعلان متحقق أو المعلن عميل جاهز.\","` | — |
+| [SRC-90FAA34ADE-L000834](../../tests/fixtures/answer_quality_cases.json#L834) | 834 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000835](../../tests/fixtures/answer_quality_cases.json#L835) | 835 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000836](../../tests/fixtures/answer_quality_cases.json#L836) | 836 | `"        \"يسميها فرصة أولية أو lead غير متحقق\","` | — |
+| [SRC-90FAA34ADE-L000837](../../tests/fixtures/answer_quality_cases.json#L837) | 837 | `"        \"يفصل البيانات المنقولة من الإعلان عن البيانات التي تم التحقق منها\","` | — |
+| [SRC-90FAA34ADE-L000838](../../tests/fixtures/answer_quality_cases.json#L838) | 838 | `"        \"يقترح خطوات تحقق عملية مثل تأكيد الملكية والتواصل المصرح به\""` | — |
+| [SRC-90FAA34ADE-L000839](../../tests/fixtures/answer_quality_cases.json#L839) | 839 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000840](../../tests/fixtures/answer_quality_cases.json#L840) | 840 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000841](../../tests/fixtures/answer_quality_cases.json#L841) | 841 | `"        \"يؤكد الملكية أو توافر الشقة من الإعلان وحده\","` | — |
+| [SRC-90FAA34ADE-L000842](../../tests/fixtures/answer_quality_cases.json#L842) | 842 | `"        \"يصف المعلن بأنه مشتري أو عميل مؤهل دون دليل\""` | — |
+| [SRC-90FAA34ADE-L000843](../../tests/fixtures/answer_quality_cases.json#L843) | 843 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000844](../../tests/fixtures/answer_quality_cases.json#L844) | 844 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000845](../../tests/fixtures/answer_quality_cases.json#L845) | 845 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000846](../../tests/fixtures/answer_quality_cases.json#L846) | 846 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000847](../../tests/fixtures/answer_quality_cases.json#L847) | 847 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000848](../../tests/fixtures/answer_quality_cases.json#L848) | 848 | `"            \"title\": \"Apartment listing\","` | — |
+| [SRC-90FAA34ADE-L000849](../../tests/fixtures/answer_quality_cases.json#L849) | 849 | `"            \"url\": \"https://listings.example.test/unit-55\","` | — |

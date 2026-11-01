@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003232 إلى SRC-1AE03B9EC3-L004031
+- النطاق: SRC-1AE03B9EC3-L003251 إلى SRC-1AE03B9EC3-L004050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,25 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1AE03B9EC3-L003232](../../agents/web_agent.py#L3232) | 3232 | `"                    except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-1AE03B9EC3-L003233](../../agents/web_agent.py#L3233) | 3233 | `"                        continue"` | — |
-| [SRC-1AE03B9EC3-L003234](../../agents/web_agent.py#L3234) | 3234 | `"            rejection_counts_observed = ("` | — |
-| [SRC-1AE03B9EC3-L003235](../../agents/web_agent.py#L3235) | 3235 | `"                rejection_counts_seen"` | — |
-| [SRC-1AE03B9EC3-L003236](../../agents/web_agent.py#L3236) | 3236 | `"                and rejection_counts_complete"` | — |
-| [SRC-1AE03B9EC3-L003237](../../agents/web_agent.py#L3237) | 3237 | `"                and sum(rejection_count_totals.values()) == rejected_count"` | — |
-| [SRC-1AE03B9EC3-L003238](../../agents/web_agent.py#L3238) | 3238 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003239](../../agents/web_agent.py#L3239) | 3239 | `"            candidate_rejection_observed = \"filtered_all\" in statuses or rejected_count > 0"` | — |
-| [SRC-1AE03B9EC3-L003240](../../agents/web_agent.py#L3240) | 3240 | `"            connectors.append({"` | — |
-| [SRC-1AE03B9EC3-L003241](../../agents/web_agent.py#L3241) | 3241 | `"                \"name\": name, \"in_codebase\": name in config or bool(attempts),"` | — |
-| [SRC-1AE03B9EC3-L003242](../../agents/web_agent.py#L3242) | 3242 | `"                \"implementation_status\": implementation_status,"` | — |
-| [SRC-1AE03B9EC3-L003243](../../agents/web_agent.py#L3243) | 3243 | `"                \"configured\": bool(ready), \"configuration_status\": config_status,"` | — |
-| [SRC-1AE03B9EC3-L003244](../../agents/web_agent.py#L3244) | 3244 | `"                \"attempted\": attempted, \"available_for_this_request\": available,"` | — |
-| [SRC-1AE03B9EC3-L003245](../../agents/web_agent.py#L3245) | 3245 | `"                \"verified_for_this_request\": verified, \"failure_observed\": failure_observed,"` | — |
-| [SRC-1AE03B9EC3-L003246](../../agents/web_agent.py#L3246) | 3246 | `"                \"candidate_rejection_observed\": candidate_rejection_observed,"` | — |
-| [SRC-1AE03B9EC3-L003247](../../agents/web_agent.py#L3247) | 3247 | `"                \"status\": status, \"observed_statuses\": list(dict.fromkeys(statuses))[:6],"` | — |
-| [SRC-1AE03B9EC3-L003248](../../agents/web_agent.py#L3248) | 3248 | `"                \"result_count\": result_count, \"accepted_count\": accepted_count,"` | — |
-| [SRC-1AE03B9EC3-L003249](../../agents/web_agent.py#L3249) | 3249 | `"                \"useful_result_count\": useful.get(name, 0),"` | — |
-| [SRC-1AE03B9EC3-L003250](../../agents/web_agent.py#L3250) | 3250 | `"                \"rejected_count\": rejected_count,"` | — |
 | [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"                \"rejection_counts_observed\": rejection_counts_observed,"` | — |
 | [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `"                \"rejection_counts\": rejection_count_totals if rejection_counts_observed else None,"` | — |
 | [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"                \"queries\": queries, \"errors\": errors,"` | — |
@@ -816,3 +797,22 @@
 | [SRC-1AE03B9EC3-L004029](../../agents/web_agent.py#L4029) | 4029 | `"            max_tokens=2200 if plan.get(\"depth\") == \"deep\" else 1500,"` | — |
 | [SRC-1AE03B9EC3-L004030](../../agents/web_agent.py#L4030) | 4030 | `"            temperature=0.15,"` | — |
 | [SRC-1AE03B9EC3-L004031](../../agents/web_agent.py#L4031) | 4031 | `"            timeout=self._effective_timeout(min(self.timeout, 28)),"` | — |
+| [SRC-1AE03B9EC3-L004032](../../agents/web_agent.py#L4032) | 4032 | `"            model=self.answer_model,"` | — |
+| [SRC-1AE03B9EC3-L004033](../../agents/web_agent.py#L4033) | 4033 | `"            enable_web_search=self.openrouter_web_search_enabled,"` | — |
+| [SRC-1AE03B9EC3-L004034](../../agents/web_agent.py#L4034) | 4034 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004035](../../agents/web_agent.py#L4035) | 4035 | `"        if len(answer) > 24_000:"` | — |
+| [SRC-1AE03B9EC3-L004036](../../agents/web_agent.py#L4036) | 4036 | `"            raise RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L004037](../../agents/web_agent.py#L4037) | 4037 | `"                \"إجابة النموذج تجاوزت حد طول النص؛ لم تُعرض باعتبارها إجابة مكتملة.\""` | — |
+| [SRC-1AE03B9EC3-L004038](../../agents/web_agent.py#L4038) | 4038 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004039](../../agents/web_agent.py#L4039) | 4039 | `"        return answer"` | — |
+| [SRC-1AE03B9EC3-L004040](../../agents/web_agent.py#L4040) | 4040 | `""` | — |
+| [SRC-1AE03B9EC3-L004041](../../agents/web_agent.py#L4041) | 4041 | `"    def _repair_answer_coverage("` | — |
+| [SRC-1AE03B9EC3-L004042](../../agents/web_agent.py#L4042) | 4042 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L004043](../../agents/web_agent.py#L4043) | 4043 | `"        question: str,"` | — |
+| [SRC-1AE03B9EC3-L004044](../../agents/web_agent.py#L4044) | 4044 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L004045](../../agents/web_agent.py#L4045) | 4045 | `"        sources: list[dict[str, Any]],"` | — |
+| [SRC-1AE03B9EC3-L004046](../../agents/web_agent.py#L4046) | 4046 | `"        missing_targets: list[str],"` | — |
+| [SRC-1AE03B9EC3-L004047](../../agents/web_agent.py#L4047) | 4047 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L004048](../../agents/web_agent.py#L4048) | 4048 | `"        \"\"\"Make one bounded, evidence-constrained pass at addressing possibly missing targets.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L004049](../../agents/web_agent.py#L4049) | 4049 | `"        if not missing_targets:"` | — |
+| [SRC-1AE03B9EC3-L004050](../../agents/web_agent.py#L4050) | 4050 | `"            return answer"` | — |

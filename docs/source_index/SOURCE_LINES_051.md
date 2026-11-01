@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003151 إلى SRC-F725E90B2A-L003950
+- النطاق: SRC-F725E90B2A-L003170 إلى SRC-F725E90B2A-L003969
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,25 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L003151](../../tests/test_web_agent.py#L3151) | 3151 | `"        # Current-news questions normally add Google News RSS; keep this unit test deterministic."` | — |
-| [SRC-F725E90B2A-L003152](../../tests/test_web_agent.py#L3152) | 3152 | `"        monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
-| [SRC-F725E90B2A-L003153](../../tests/test_web_agent.py#L3153) | 3153 | `"        results = agent._search_web(query)"` | — |
-| [SRC-F725E90B2A-L003154](../../tests/test_web_agent.py#L3154) | 3154 | `"        assert results, f\"Search candidates were all filtered for case {index}\""` | — |
-| [SRC-F725E90B2A-L003155](../../tests/test_web_agent.py#L3155) | 3155 | `"        diagnostic = next("` | — |
-| [SRC-F725E90B2A-L003156](../../tests/test_web_agent.py#L3156) | 3156 | `"            item for item in agent._provider_diagnostics if item.get(\"provider\") == \"duckduckgo_html\""` | — |
-| [SRC-F725E90B2A-L003157](../../tests/test_web_agent.py#L3157) | 3157 | `"        )"` | — |
-| [SRC-F725E90B2A-L003158](../../tests/test_web_agent.py#L3158) | 3158 | `"        assert diagnostic[\"accepted_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L003159](../../tests/test_web_agent.py#L3159) | 3159 | `"        assert diagnostic[\"result_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L003160](../../tests/test_web_agent.py#L3160) | 3160 | `""` | — |
-| [SRC-F725E90B2A-L003161](../../tests/test_web_agent.py#L3161) | 3161 | `""` | — |
-| [SRC-F725E90B2A-L003162](../../tests/test_web_agent.py#L3162) | 3162 | `"def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003163](../../tests/test_web_agent.py#L3163) | 3163 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L003164](../../tests/test_web_agent.py#L3164) | 3164 | `""` | — |
-| [SRC-F725E90B2A-L003165](../../tests/test_web_agent.py#L3165) | 3165 | `"    def http_202(_query):"` | — |
-| [SRC-F725E90B2A-L003166](../../tests/test_web_agent.py#L3166) | 3166 | `"        raise RuntimeError(\"HTTP 202\")"` | — |
-| [SRC-F725E90B2A-L003167](../../tests/test_web_agent.py#L3167) | 3167 | `""` | — |
-| [SRC-F725E90B2A-L003168](../../tests/test_web_agent.py#L3168) | 3168 | `"    def http_429(_query):"` | — |
-| [SRC-F725E90B2A-L003169](../../tests/test_web_agent.py#L3169) | 3169 | `"        raise RuntimeError(\"HTTP 429\")"` | — |
 | [SRC-F725E90B2A-L003170](../../tests/test_web_agent.py#L3170) | 3170 | `""` | — |
 | [SRC-F725E90B2A-L003171](../../tests/test_web_agent.py#L3171) | 3171 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", http_202)"` | — |
 | [SRC-F725E90B2A-L003172](../../tests/test_web_agent.py#L3172) | 3172 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", http_429)"` | — |
@@ -816,3 +797,22 @@
 | [SRC-F725E90B2A-L003948](../../tests/test_web_agent.py#L3948) | 3948 | `"        [sample_source(0)],"` | — |
 | [SRC-F725E90B2A-L003949](../../tests/test_web_agent.py#L3949) | 3949 | `"        None,"` | — |
 | [SRC-F725E90B2A-L003950](../../tests/test_web_agent.py#L3950) | 3950 | `"        research_plan=plan,"` | — |
+| [SRC-F725E90B2A-L003951](../../tests/test_web_agent.py#L3951) | 3951 | `"        search_report={"` | — |
+| [SRC-F725E90B2A-L003952](../../tests/test_web_agent.py#L3952) | 3952 | `"            \"queries_planned\": len(plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L003953](../../tests/test_web_agent.py#L3953) | 3953 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-F725E90B2A-L003954](../../tests/test_web_agent.py#L3954) | 3954 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-F725E90B2A-L003955](../../tests/test_web_agent.py#L3955) | 3955 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L003956](../../tests/test_web_agent.py#L3956) | 3956 | `"        },"` | — |
+| [SRC-F725E90B2A-L003957](../../tests/test_web_agent.py#L3957) | 3957 | `"    )"` | — |
+| [SRC-F725E90B2A-L003958](../../tests/test_web_agent.py#L3958) | 3958 | `""` | — |
+| [SRC-F725E90B2A-L003959](../../tests/test_web_agent.py#L3959) | 3959 | `"    prompt = \"\\n\".join("` | — |
+| [SRC-F725E90B2A-L003960](../../tests/test_web_agent.py#L3960) | 3960 | `"        message.get(\"content\", \"\")"` | — |
+| [SRC-F725E90B2A-L003961](../../tests/test_web_agent.py#L3961) | 3961 | `"        for message in captured[\"messages\"]"` | — |
+| [SRC-F725E90B2A-L003962](../../tests/test_web_agent.py#L3962) | 3962 | `"        if isinstance(message, dict)"` | — |
+| [SRC-F725E90B2A-L003963](../../tests/test_web_agent.py#L3963) | 3963 | `"    )"` | — |
+| [SRC-F725E90B2A-L003964](../../tests/test_web_agent.py#L3964) | 3964 | `"    assert answer == \"إجابة اختبارية مرتبطة بالأدلة.\""` | — |
+| [SRC-F725E90B2A-L003965](../../tests/test_web_agent.py#L3965) | 3965 | `"    assert \"task_planning_context\" in prompt"` | — |
+| [SRC-F725E90B2A-L003966](../../tests/test_web_agent.py#L3966) | 3966 | `"    assert \"explicit_aspects\" in prompt"` | — |
+| [SRC-F725E90B2A-L003967](../../tests/test_web_agent.py#L3967) | 3967 | `"    assert \"output_preferences\" in prompt"` | — |
+| [SRC-F725E90B2A-L003968](../../tests/test_web_agent.py#L3968) | 3968 | `"    assert \"beginner_friendly_requested\" in prompt"` | — |
+| [SRC-F725E90B2A-L003969](../../tests/test_web_agent.py#L3969) | 3969 | `"    assert \"reasoning_guidance\" in prompt"` | — |

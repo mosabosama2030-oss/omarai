@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000348 إلى SRC-90FAA34ADE-L000030
+- النطاق: SRC-4FFD5AFC54-L000367 إلى SRC-90FAA34ADE-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,25 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-4FFD5AFC54-L000348](../../scripts/run_answer_quality_benchmark.py#L348) | 348 | `"    \"evaluation_mode\","` | — |
-| [SRC-4FFD5AFC54-L000349](../../scripts/run_answer_quality_benchmark.py#L349) | 349 | `"}"` | — |
-| [SRC-4FFD5AFC54-L000350](../../scripts/run_answer_quality_benchmark.py#L350) | 350 | `"ALLOWED_STRATEGIES = {\"local\", \"model_no_search\", \"web_search\", \"clarify\"}"` | — |
-| [SRC-4FFD5AFC54-L000351](../../scripts/run_answer_quality_benchmark.py#L351) | 351 | `"ALLOWED_EVAL_MODES = {\"deterministic_structure\", \"fixture_assisted\", \"human_judgment\"}"` | — |
-| [SRC-4FFD5AFC54-L000352](../../scripts/run_answer_quality_benchmark.py#L352) | 352 | `""` | — |
-| [SRC-4FFD5AFC54-L000353](../../scripts/run_answer_quality_benchmark.py#L353) | 353 | `""` | — |
-| [SRC-4FFD5AFC54-L000354](../../scripts/run_answer_quality_benchmark.py#L354) | 354 | `"def _utc_now() -> str:"` | — |
-| [SRC-4FFD5AFC54-L000355](../../scripts/run_answer_quality_benchmark.py#L355) | 355 | `"    return datetime.now(UTC).isoformat(timespec=\"seconds\")"` | — |
-| [SRC-4FFD5AFC54-L000356](../../scripts/run_answer_quality_benchmark.py#L356) | 356 | `""` | — |
-| [SRC-4FFD5AFC54-L000357](../../scripts/run_answer_quality_benchmark.py#L357) | 357 | `""` | — |
-| [SRC-4FFD5AFC54-L000358](../../scripts/run_answer_quality_benchmark.py#L358) | 358 | `"def load_corpus(path: Path) -> dict:"` | — |
-| [SRC-4FFD5AFC54-L000359](../../scripts/run_answer_quality_benchmark.py#L359) | 359 | `"    if not path.is_file():"` | — |
-| [SRC-4FFD5AFC54-L000360](../../scripts/run_answer_quality_benchmark.py#L360) | 360 | `"        raise FileNotFoundError(f\"Corpus not found: {path}\")"` | — |
-| [SRC-4FFD5AFC54-L000361](../../scripts/run_answer_quality_benchmark.py#L361) | 361 | `"    data = json.loads(path.read_text(encoding=\"utf-8\"))"` | — |
-| [SRC-4FFD5AFC54-L000362](../../scripts/run_answer_quality_benchmark.py#L362) | 362 | `"    if not isinstance(data, dict) or not isinstance(data.get(\"cases\"), list):"` | — |
-| [SRC-4FFD5AFC54-L000363](../../scripts/run_answer_quality_benchmark.py#L363) | 363 | `"        raise TypeError(\"Corpus root must be an object with a cases array\")"` | — |
-| [SRC-4FFD5AFC54-L000364](../../scripts/run_answer_quality_benchmark.py#L364) | 364 | `"    if data.get(\"parts\"):"` | — |
-| [SRC-4FFD5AFC54-L000365](../../scripts/run_answer_quality_benchmark.py#L365) | 365 | `"        raise ValueError(\"Incomplete shard index is not accepted; use merged cases[] corpus\")"` | — |
-| [SRC-4FFD5AFC54-L000366](../../scripts/run_answer_quality_benchmark.py#L366) | 366 | `"    return data"` | — |
 | [SRC-4FFD5AFC54-L000367](../../scripts/run_answer_quality_benchmark.py#L367) | 367 | `""` | — |
 | [SRC-4FFD5AFC54-L000368](../../scripts/run_answer_quality_benchmark.py#L368) | 368 | `""` | — |
 | [SRC-4FFD5AFC54-L000369](../../scripts/run_answer_quality_benchmark.py#L369) | 369 | `"def validate_corpus(data: dict) -> list[str]:"` | — |
@@ -843,3 +824,22 @@
 | [SRC-90FAA34ADE-L000028](../../tests/fixtures/answer_quality_cases.json#L28) | 28 | `"        \"Does not claim to have searched the web\""` | — |
 | [SRC-90FAA34ADE-L000029](../../tests/fixtures/answer_quality_cases.json#L29) | 29 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000030](../../tests/fixtures/answer_quality_cases.json#L30) | 30 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000031](../../tests/fixtures/answer_quality_cases.json#L31) | 31 | `"        \"Fabricates a web search report\","` | — |
+| [SRC-90FAA34ADE-L000032](../../tests/fixtures/answer_quality_cases.json#L32) | 32 | `"        \"Returns source links for a pure greeting\","` | — |
+| [SRC-90FAA34ADE-L000033](../../tests/fixtures/answer_quality_cases.json#L33) | 33 | `"        \"Answers in English only when the user wrote Egyptian Arabic\""` | — |
+| [SRC-90FAA34ADE-L000034](../../tests/fixtures/answer_quality_cases.json#L34) | 34 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000035](../../tests/fixtures/answer_quality_cases.json#L35) | 35 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000036](../../tests/fixtures/answer_quality_cases.json#L36) | 36 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L000037](../../tests/fixtures/answer_quality_cases.json#L37) | 37 | `"        \"notes\": \"No retrieval required\""` | — |
+| [SRC-90FAA34ADE-L000038](../../tests/fixtures/answer_quality_cases.json#L38) | 38 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000039](../../tests/fixtures/answer_quality_cases.json#L39) | 39 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000040](../../tests/fixtures/answer_quality_cases.json#L40) | 40 | `"        \"used_web_search is true\","` | — |
+| [SRC-90FAA34ADE-L000041](../../tests/fixtures/answer_quality_cases.json#L41) | 41 | `"        \"Answer contains fabricated source URLs\""` | — |
+| [SRC-90FAA34ADE-L000042](../../tests/fixtures/answer_quality_cases.json#L42) | 42 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000043](../../tests/fixtures/answer_quality_cases.json#L43) | 43 | `"      \"evaluation_mode\": \"deterministic_structure\""` | — |
+| [SRC-90FAA34ADE-L000044](../../tests/fixtures/answer_quality_cases.json#L44) | 44 | `"    },"` | — |
+| [SRC-90FAA34ADE-L000045](../../tests/fixtures/answer_quality_cases.json#L45) | 45 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000046](../../tests/fixtures/answer_quality_cases.json#L46) | 46 | `"      \"case_id\": \"AQ-002\","` | — |
+| [SRC-90FAA34ADE-L000047](../../tests/fixtures/answer_quality_cases.json#L47) | 47 | `"      \"category\": \"simple_conversational\","` | — |
+| [SRC-90FAA34ADE-L000048](../../tests/fixtures/answer_quality_cases.json#L48) | 48 | `"      \"language\": \"en\","` | — |
+| [SRC-90FAA34ADE-L000049](../../tests/fixtures/answer_quality_cases.json#L49) | 49 | `"      \"question\": \"Thanks, that helps.\","` | — |
