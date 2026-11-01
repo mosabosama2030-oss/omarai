@@ -67,9 +67,10 @@ def build_semantic_verification_request(
     sources: list[dict[str, Any]] | None,
 ) -> dict[str, Any]:
     """Build a bounded, injection-aware request with exact cited-source indexes."""
-    safe_sources = [
-        item for item in (sources or []) if isinstance(item, dict)
-    ][:MAX_VERIFICATION_SOURCES]
+    candidate_sources = (sources or [])[:MAX_VERIFICATION_SOURCES]
+    if any(not isinstance(item, dict) for item in candidate_sources):
+        return _not_verifiable("invalid_source_manifest")
+    safe_sources = list(candidate_sources)
     ledger = build_claim_evidence_ledger(
         str(answer or ""),
         safe_sources,
