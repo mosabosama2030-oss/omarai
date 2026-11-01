@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000170 إلى SRC-AC9D8384E8-L000109
+- النطاق: SRC-96F6863E3C-L000108 إلى SRC-AC9D8384E8-L000047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,68 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000108](../../tests/test_research_pipeline.py#L108) | 108 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
+| [SRC-96F6863E3C-L000109](../../tests/test_research_pipeline.py#L109) | 109 | `"        {\"queries\": [\"الهاتف\"]},"` | — |
+| [SRC-96F6863E3C-L000110](../../tests/test_research_pipeline.py#L110) | 110 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-96F6863E3C-L000111](../../tests/test_research_pipeline.py#L111) | 111 | `"        sources=[{\"title\": \"سعر الهاتف\", \"url\": \"https://example.com\"}],"` | — |
+| [SRC-96F6863E3C-L000112](../../tests/test_research_pipeline.py#L112) | 112 | `"        semantic_matcher=lambda _aspect, _source: (_ for _ in ()).throw(RuntimeError(\"model timeout\")),"` | — |
+| [SRC-96F6863E3C-L000113](../../tests/test_research_pipeline.py#L113) | 113 | `"    )"` | — |
+| [SRC-96F6863E3C-L000114](../../tests/test_research_pipeline.py#L114) | 114 | `""` | — |
+| [SRC-96F6863E3C-L000115](../../tests/test_research_pipeline.py#L115) | 115 | `"    assert result[\"stages\"][\"semantic_matching\"] == \"degraded\""` | — |
+| [SRC-96F6863E3C-L000116](../../tests/test_research_pipeline.py#L116) | 116 | `"    assert result[\"evidence\"][\"semantic_matching\"][\"errors\"] == len(result[\"aspects\"])"` | — |
+| [SRC-96F6863E3C-L000117](../../tests/test_research_pipeline.py#L117) | 117 | `"    assert result[\"evidence\"][\"lexical_ledger\"][\"aspects\"] == result[\"aspects\"]"` | — |
+| [SRC-96F6863E3C-L000118](../../tests/test_research_pipeline.py#L118) | 118 | `""` | — |
+| [SRC-96F6863E3C-L000119](../../tests/test_research_pipeline.py#L119) | 119 | `""` | — |
+| [SRC-96F6863E3C-L000120](../../tests/test_research_pipeline.py#L120) | 120 | `""` | — |
+| [SRC-96F6863E3C-L000121](../../tests/test_research_pipeline.py#L121) | 121 | `"def test_pipeline_preserves_planner_depth_and_freshness_metadata():"` | — |
+| [SRC-96F6863E3C-L000122](../../tests/test_research_pipeline.py#L122) | 122 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000123](../../tests/test_research_pipeline.py#L123) | 123 | `"        \"قارن السيارات الكهربائية في مصر من حيث السعر والبطارية\","` | — |
+| [SRC-96F6863E3C-L000124](../../tests/test_research_pipeline.py#L124) | 124 | `"        {"` | — |
+| [SRC-96F6863E3C-L000125](../../tests/test_research_pipeline.py#L125) | 125 | `"            \"queries\": [\"السيارات الكهربائية في مصر\"],"` | — |
+| [SRC-96F6863E3C-L000126](../../tests/test_research_pipeline.py#L126) | 126 | `"            \"depth\": \"deep\","` | — |
+| [SRC-96F6863E3C-L000127](../../tests/test_research_pipeline.py#L127) | 127 | `"            \"freshness\": \"current\","` | — |
+| [SRC-96F6863E3C-L000128](../../tests/test_research_pipeline.py#L128) | 128 | `"        },"` | — |
+| [SRC-96F6863E3C-L000129](../../tests/test_research_pipeline.py#L129) | 129 | `"        mode=\"deep\","` | — |
+| [SRC-96F6863E3C-L000130](../../tests/test_research_pipeline.py#L130) | 130 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-96F6863E3C-L000131](../../tests/test_research_pipeline.py#L131) | 131 | `"    )"` | — |
+| [SRC-96F6863E3C-L000132](../../tests/test_research_pipeline.py#L132) | 132 | `""` | — |
+| [SRC-96F6863E3C-L000133](../../tests/test_research_pipeline.py#L133) | 133 | `"    assert result[\"task_spec\"][\"planner_depth\"] == \"deep\""` | — |
+| [SRC-96F6863E3C-L000134](../../tests/test_research_pipeline.py#L134) | 134 | `"    assert result[\"task_spec\"][\"planner_freshness\"] == \"current\""` | — |
+| [SRC-96F6863E3C-L000135](../../tests/test_research_pipeline.py#L135) | 135 | `""` | — |
+| [SRC-96F6863E3C-L000136](../../tests/test_research_pipeline.py#L136) | 136 | `""` | — |
+| [SRC-96F6863E3C-L000137](../../tests/test_research_pipeline.py#L137) | 137 | `"def test_pipeline_blocks_official_site_search_when_target_entity_is_missing():"` | — |
+| [SRC-96F6863E3C-L000138](../../tests/test_research_pipeline.py#L138) | 138 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000139](../../tests/test_research_pipeline.py#L139) | 139 | `"        \"هات الموقع الرسمي\","` | — |
+| [SRC-96F6863E3C-L000140](../../tests/test_research_pipeline.py#L140) | 140 | `"        {\"queries\": [\"الموقع الرسمي\"]},"` | — |
+| [SRC-96F6863E3C-L000141](../../tests/test_research_pipeline.py#L141) | 141 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-96F6863E3C-L000142](../../tests/test_research_pipeline.py#L142) | 142 | `"    )"` | — |
+| [SRC-96F6863E3C-L000143](../../tests/test_research_pipeline.py#L143) | 143 | `""` | — |
+| [SRC-96F6863E3C-L000144](../../tests/test_research_pipeline.py#L144) | 144 | `"    assert result[\"task_spec\"][\"requires_clarification\"] is True"` | — |
+| [SRC-96F6863E3C-L000145](../../tests/test_research_pipeline.py#L145) | 145 | `"    assert result[\"intent\"][\"needs_clarification\"] is True"` | — |
+| [SRC-96F6863E3C-L000146](../../tests/test_research_pipeline.py#L146) | 146 | `"    assert result[\"queries\"] == []"` | — |
+| [SRC-96F6863E3C-L000147](../../tests/test_research_pipeline.py#L147) | 147 | `"    assert result[\"stages\"][\"query_planning\"] == \"blocked_pending_clarification\""` | — |
+| [SRC-96F6863E3C-L000148](../../tests/test_research_pipeline.py#L148) | 148 | `""` | — |
+| [SRC-96F6863E3C-L000149](../../tests/test_research_pipeline.py#L149) | 149 | `"def test_pipeline_marks_upstream_dialogue_context_resolution_as_completed():"` | — |
+| [SRC-96F6863E3C-L000150](../../tests/test_research_pipeline.py#L150) | 150 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000151](../../tests/test_research_pipeline.py#L151) | 151 | `"        \"والضمان؟\","` | — |
+| [SRC-96F6863E3C-L000152](../../tests/test_research_pipeline.py#L152) | 152 | `"        {\"queries\": [\"iPhone 17 warranty Egypt\"]},"` | — |
+| [SRC-96F6863E3C-L000153](../../tests/test_research_pipeline.py#L153) | 153 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-96F6863E3C-L000154](../../tests/test_research_pipeline.py#L154) | 154 | `"        dialogue_context={"` | — |
+| [SRC-96F6863E3C-L000155](../../tests/test_research_pipeline.py#L155) | 155 | `"            \"method\": \"llm_semantic_context\","` | — |
+| [SRC-96F6863E3C-L000156](../../tests/test_research_pipeline.py#L156) | 156 | `"            \"resolved_question\": \"ما ضمان iPhone 17 في مصر؟\","` | — |
+| [SRC-96F6863E3C-L000157](../../tests/test_research_pipeline.py#L157) | 157 | `"            \"topic\": \"iPhone 17\","` | — |
+| [SRC-96F6863E3C-L000158](../../tests/test_research_pipeline.py#L158) | 158 | `"            \"is_follow_up\": True,"` | — |
+| [SRC-96F6863E3C-L000159](../../tests/test_research_pipeline.py#L159) | 159 | `"            \"topic_shift\": False,"` | — |
+| [SRC-96F6863E3C-L000160](../../tests/test_research_pipeline.py#L160) | 160 | `"        },"` | — |
+| [SRC-96F6863E3C-L000161](../../tests/test_research_pipeline.py#L161) | 161 | `"    )"` | — |
+| [SRC-96F6863E3C-L000162](../../tests/test_research_pipeline.py#L162) | 162 | `""` | — |
+| [SRC-96F6863E3C-L000163](../../tests/test_research_pipeline.py#L163) | 163 | `"    assert result[\"contextual_question\"] == \"ما ضمان iPhone 17 في مصر؟\""` | — |
+| [SRC-96F6863E3C-L000164](../../tests/test_research_pipeline.py#L164) | 164 | `"    assert result[\"task_spec\"][\"context_resolution\"][\"resolved_question\"] == ("` | — |
+| [SRC-96F6863E3C-L000165](../../tests/test_research_pipeline.py#L165) | 165 | `"        \"ما ضمان iPhone 17 في مصر؟\""` | — |
+| [SRC-96F6863E3C-L000166](../../tests/test_research_pipeline.py#L166) | 166 | `"    )"` | — |
+| [SRC-96F6863E3C-L000167](../../tests/test_research_pipeline.py#L167) | 167 | `"    assert result[\"stages\"][\"context_resolution\"] == \"completed\""` | — |
+| [SRC-96F6863E3C-L000168](../../tests/test_research_pipeline.py#L168) | 168 | `"    assert result[\"intent\"][\"context_available\"] is True"` | — |
+| [SRC-96F6863E3C-L000169](../../tests/test_research_pipeline.py#L169) | 169 | `"    assert result[\"query_strategy_matrix\"]"` | — |
 | [SRC-96F6863E3C-L000170](../../tests/test_research_pipeline.py#L170) | 170 | `"    assert all(\"iPhone 17\" in item[\"query\"] for item in result[\"query_strategy_matrix\"])"` | — |
 | [SRC-96F6863E3C-L000171](../../tests/test_research_pipeline.py#L171) | 171 | `""` | — |
 | [SRC-96F6863E3C-L000172](../../tests/test_research_pipeline.py#L172) | 172 | `"def test_pipeline_does_not_reuse_resolved_question_after_explicit_topic_shift():"` | — |
@@ -752,103 +814,41 @@
 | [SRC-AC9D8384E8-L000007](../../tests/test_semantic_claim_verifier.py#L7) | 7 | `"from agents.semantic_claim_verifier import ("` | — |
 | [SRC-AC9D8384E8-L000008](../../tests/test_semantic_claim_verifier.py#L8) | 8 | `"    build_semantic_verification_request,"` | — |
 | [SRC-AC9D8384E8-L000009](../../tests/test_semantic_claim_verifier.py#L9) | 9 | `"    parse_semantic_verification_response,"` | — |
-| [SRC-AC9D8384E8-L000010](../../tests/test_semantic_claim_verifier.py#L10) | 10 | `")"` | — |
-| [SRC-AC9D8384E8-L000011](../../tests/test_semantic_claim_verifier.py#L11) | 11 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-AC9D8384E8-L000012](../../tests/test_semantic_claim_verifier.py#L12) | 12 | `""` | — |
+| [SRC-AC9D8384E8-L000010](../../tests/test_semantic_claim_verifier.py#L10) | 10 | `"    deterministic_claim_screen,"` | — |
+| [SRC-AC9D8384E8-L000011](../../tests/test_semantic_claim_verifier.py#L11) | 11 | `")"` | — |
+| [SRC-AC9D8384E8-L000012](../../tests/test_semantic_claim_verifier.py#L12) | 12 | `"from agents.web_agent import WebAgent"` | — |
 | [SRC-AC9D8384E8-L000013](../../tests/test_semantic_claim_verifier.py#L13) | 13 | `""` | — |
-| [SRC-AC9D8384E8-L000014](../../tests/test_semantic_claim_verifier.py#L14) | 14 | `"def source(**overrides):"` | — |
-| [SRC-AC9D8384E8-L000015](../../tests/test_semantic_claim_verifier.py#L15) | 15 | `"    value = {"` | — |
-| [SRC-AC9D8384E8-L000016](../../tests/test_semantic_claim_verifier.py#L16) | 16 | `"        \"title\": \"Official report\","` | — |
-| [SRC-AC9D8384E8-L000017](../../tests/test_semantic_claim_verifier.py#L17) | 17 | `"        \"url\": \"https://example.org/report\","` | — |
-| [SRC-AC9D8384E8-L000018](../../tests/test_semantic_claim_verifier.py#L18) | 18 | `"        \"publisher\": \"Example Office\","` | — |
-| [SRC-AC9D8384E8-L000019](../../tests/test_semantic_claim_verifier.py#L19) | 19 | `"        \"published_at\": \"2026-10-30\","` | — |
-| [SRC-AC9D8384E8-L000020](../../tests/test_semantic_claim_verifier.py#L20) | 20 | `"        \"page_fetched\": True,"` | — |
-| [SRC-AC9D8384E8-L000021](../../tests/test_semantic_claim_verifier.py#L21) | 21 | `"        \"page_text\": \"The report states that the system serves 12 facilities.\","` | — |
-| [SRC-AC9D8384E8-L000022](../../tests/test_semantic_claim_verifier.py#L22) | 22 | `"        \"snippet\": \"The system serves 12 facilities.\","` | — |
-| [SRC-AC9D8384E8-L000023](../../tests/test_semantic_claim_verifier.py#L23) | 23 | `"    }"` | — |
-| [SRC-AC9D8384E8-L000024](../../tests/test_semantic_claim_verifier.py#L24) | 24 | `"    value.update(overrides)"` | — |
-| [SRC-AC9D8384E8-L000025](../../tests/test_semantic_claim_verifier.py#L25) | 25 | `"    return value"` | — |
-| [SRC-AC9D8384E8-L000026](../../tests/test_semantic_claim_verifier.py#L26) | 26 | `""` | — |
+| [SRC-AC9D8384E8-L000014](../../tests/test_semantic_claim_verifier.py#L14) | 14 | `""` | — |
+| [SRC-AC9D8384E8-L000015](../../tests/test_semantic_claim_verifier.py#L15) | 15 | `"def source(**overrides):"` | — |
+| [SRC-AC9D8384E8-L000016](../../tests/test_semantic_claim_verifier.py#L16) | 16 | `"    value = {"` | — |
+| [SRC-AC9D8384E8-L000017](../../tests/test_semantic_claim_verifier.py#L17) | 17 | `"        \"title\": \"Official report\","` | — |
+| [SRC-AC9D8384E8-L000018](../../tests/test_semantic_claim_verifier.py#L18) | 18 | `"        \"url\": \"https://example.org/report\","` | — |
+| [SRC-AC9D8384E8-L000019](../../tests/test_semantic_claim_verifier.py#L19) | 19 | `"        \"publisher\": \"Example Office\","` | — |
+| [SRC-AC9D8384E8-L000020](../../tests/test_semantic_claim_verifier.py#L20) | 20 | `"        \"published_at\": \"2026-10-30\","` | — |
+| [SRC-AC9D8384E8-L000021](../../tests/test_semantic_claim_verifier.py#L21) | 21 | `"        \"page_fetched\": True,"` | — |
+| [SRC-AC9D8384E8-L000022](../../tests/test_semantic_claim_verifier.py#L22) | 22 | `"        \"page_text\": \"The report states that the system serves 12 facilities.\","` | — |
+| [SRC-AC9D8384E8-L000023](../../tests/test_semantic_claim_verifier.py#L23) | 23 | `"        \"snippet\": \"The system serves 12 facilities.\","` | — |
+| [SRC-AC9D8384E8-L000024](../../tests/test_semantic_claim_verifier.py#L24) | 24 | `"    }"` | — |
+| [SRC-AC9D8384E8-L000025](../../tests/test_semantic_claim_verifier.py#L25) | 25 | `"    value.update(overrides)"` | — |
+| [SRC-AC9D8384E8-L000026](../../tests/test_semantic_claim_verifier.py#L26) | 26 | `"    return value"` | — |
 | [SRC-AC9D8384E8-L000027](../../tests/test_semantic_claim_verifier.py#L27) | 27 | `""` | — |
-| [SRC-AC9D8384E8-L000028](../../tests/test_semantic_claim_verifier.py#L28) | 28 | `"def response(rows):"` | — |
-| [SRC-AC9D8384E8-L000029](../../tests/test_semantic_claim_verifier.py#L29) | 29 | `"    return json.dumps({\"claims\": rows}, ensure_ascii=False)"` | — |
-| [SRC-AC9D8384E8-L000030](../../tests/test_semantic_claim_verifier.py#L30) | 30 | `""` | — |
+| [SRC-AC9D8384E8-L000028](../../tests/test_semantic_claim_verifier.py#L28) | 28 | `""` | — |
+| [SRC-AC9D8384E8-L000029](../../tests/test_semantic_claim_verifier.py#L29) | 29 | `"def response(rows):"` | — |
+| [SRC-AC9D8384E8-L000030](../../tests/test_semantic_claim_verifier.py#L30) | 30 | `"    return json.dumps({\"claims\": rows}, ensure_ascii=False)"` | — |
 | [SRC-AC9D8384E8-L000031](../../tests/test_semantic_claim_verifier.py#L31) | 31 | `""` | — |
-| [SRC-AC9D8384E8-L000032](../../tests/test_semantic_claim_verifier.py#L32) | 32 | `"def row(segment_id=\"S001\", assessment=\"supported\", supporting=None, contradicting=None):"` | — |
-| [SRC-AC9D8384E8-L000033](../../tests/test_semantic_claim_verifier.py#L33) | 33 | `"    return {"` | — |
-| [SRC-AC9D8384E8-L000034](../../tests/test_semantic_claim_verifier.py#L34) | 34 | `"        \"segment_id\": segment_id,"` | — |
-| [SRC-AC9D8384E8-L000035](../../tests/test_semantic_claim_verifier.py#L35) | 35 | `"        \"assessment\": assessment,"` | — |
-| [SRC-AC9D8384E8-L000036](../../tests/test_semantic_claim_verifier.py#L36) | 36 | `"        \"supporting_source_indexes\": [1] if supporting is None and assessment == \"supported\" else (supporting or []),"` | — |
-| [SRC-AC9D8384E8-L000037](../../tests/test_semantic_claim_verifier.py#L37) | 37 | `"        \"contradicting_source_indexes\": contradicting or [],"` | — |
-| [SRC-AC9D8384E8-L000038](../../tests/test_semantic_claim_verifier.py#L38) | 38 | `"    }"` | — |
-| [SRC-AC9D8384E8-L000039](../../tests/test_semantic_claim_verifier.py#L39) | 39 | `""` | — |
+| [SRC-AC9D8384E8-L000032](../../tests/test_semantic_claim_verifier.py#L32) | 32 | `""` | — |
+| [SRC-AC9D8384E8-L000033](../../tests/test_semantic_claim_verifier.py#L33) | 33 | `"def row(segment_id=\"S001\", assessment=\"supported\", supporting=None, contradicting=None):"` | — |
+| [SRC-AC9D8384E8-L000034](../../tests/test_semantic_claim_verifier.py#L34) | 34 | `"    return {"` | — |
+| [SRC-AC9D8384E8-L000035](../../tests/test_semantic_claim_verifier.py#L35) | 35 | `"        \"segment_id\": segment_id,"` | — |
+| [SRC-AC9D8384E8-L000036](../../tests/test_semantic_claim_verifier.py#L36) | 36 | `"        \"assessment\": assessment,"` | — |
+| [SRC-AC9D8384E8-L000037](../../tests/test_semantic_claim_verifier.py#L37) | 37 | `"        \"supporting_source_indexes\": [1] if supporting is None and assessment == \"supported\" else (supporting or []),"` | — |
+| [SRC-AC9D8384E8-L000038](../../tests/test_semantic_claim_verifier.py#L38) | 38 | `"        \"contradicting_source_indexes\": contradicting or [],"` | — |
+| [SRC-AC9D8384E8-L000039](../../tests/test_semantic_claim_verifier.py#L39) | 39 | `"    }"` | — |
 | [SRC-AC9D8384E8-L000040](../../tests/test_semantic_claim_verifier.py#L40) | 40 | `""` | — |
-| [SRC-AC9D8384E8-L000041](../../tests/test_semantic_claim_verifier.py#L41) | 41 | `"def prepared(answer=\"The system serves 12 facilities [source 1].\", sources=None):"` | — |
-| [SRC-AC9D8384E8-L000042](../../tests/test_semantic_claim_verifier.py#L42) | 42 | `"    return build_semantic_verification_request("` | — |
-| [SRC-AC9D8384E8-L000043](../../tests/test_semantic_claim_verifier.py#L43) | 43 | `"        \"How many facilities does the system serve?\","` | — |
-| [SRC-AC9D8384E8-L000044](../../tests/test_semantic_claim_verifier.py#L44) | 44 | `"        answer,"` | — |
-| [SRC-AC9D8384E8-L000045](../../tests/test_semantic_claim_verifier.py#L45) | 45 | `"        sources if sources is not None else [source()],"` | — |
-| [SRC-AC9D8384E8-L000046](../../tests/test_semantic_claim_verifier.py#L46) | 46 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000047](../../tests/test_semantic_claim_verifier.py#L47) | 47 | `""` | — |
-| [SRC-AC9D8384E8-L000048](../../tests/test_semantic_claim_verifier.py#L48) | 48 | `""` | — |
-| [SRC-AC9D8384E8-L000049](../../tests/test_semantic_claim_verifier.py#L49) | 49 | `"def test_semantic_assessment_accepts_direct_support_from_exact_cited_source():"` | — |
-| [SRC-AC9D8384E8-L000050](../../tests/test_semantic_claim_verifier.py#L50) | 50 | `"    request = prepared()"` | — |
-| [SRC-AC9D8384E8-L000051](../../tests/test_semantic_claim_verifier.py#L51) | 51 | `"    result = parse_semantic_verification_response("` | — |
-| [SRC-AC9D8384E8-L000052](../../tests/test_semantic_claim_verifier.py#L52) | 52 | `"        response([row()]), request"` | — |
-| [SRC-AC9D8384E8-L000053](../../tests/test_semantic_claim_verifier.py#L53) | 53 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000054](../../tests/test_semantic_claim_verifier.py#L54) | 54 | `"    assert result[\"status\"] == \"completed_all_claims_supported\""` | — |
-| [SRC-AC9D8384E8-L000055](../../tests/test_semantic_claim_verifier.py#L55) | 55 | `"    assert result[\"withhold_answer\"] is False"` | — |
-| [SRC-AC9D8384E8-L000056](../../tests/test_semantic_claim_verifier.py#L56) | 56 | `"    assert result[\"factual_supported_count\"] == 1"` | — |
-| [SRC-AC9D8384E8-L000057](../../tests/test_semantic_claim_verifier.py#L57) | 57 | `"    assert result[\"fact_correctness\"] == \"not_verified\""` | — |
-| [SRC-AC9D8384E8-L000058](../../tests/test_semantic_claim_verifier.py#L58) | 58 | `""` | — |
-| [SRC-AC9D8384E8-L000059](../../tests/test_semantic_claim_verifier.py#L59) | 59 | `""` | — |
-| [SRC-AC9D8384E8-L000060](../../tests/test_semantic_claim_verifier.py#L60) | 60 | `"def test_support_from_uncited_source_is_rejected_even_when_source_is_readable():"` | — |
-| [SRC-AC9D8384E8-L000061](../../tests/test_semantic_claim_verifier.py#L61) | 61 | `"    request = prepared("` | — |
-| [SRC-AC9D8384E8-L000062](../../tests/test_semantic_claim_verifier.py#L62) | 62 | `"        answer=\"The system serves 12 facilities [source 2].\","` | — |
-| [SRC-AC9D8384E8-L000063](../../tests/test_semantic_claim_verifier.py#L63) | 63 | `"        sources=[source(), source(url=\"https://example.net/report\")],"` | — |
-| [SRC-AC9D8384E8-L000064](../../tests/test_semantic_claim_verifier.py#L64) | 64 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000065](../../tests/test_semantic_claim_verifier.py#L65) | 65 | `"    result = parse_semantic_verification_response(response([row()]), request)"` | — |
-| [SRC-AC9D8384E8-L000066](../../tests/test_semantic_claim_verifier.py#L66) | 66 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
-| [SRC-AC9D8384E8-L000067](../../tests/test_semantic_claim_verifier.py#L67) | 67 | `"    assert result[\"reason\"] == \"support_must_use_same_segment_citations\""` | — |
-| [SRC-AC9D8384E8-L000068](../../tests/test_semantic_claim_verifier.py#L68) | 68 | `"    assert result[\"withhold_answer\"] is True"` | — |
-| [SRC-AC9D8384E8-L000069](../../tests/test_semantic_claim_verifier.py#L69) | 69 | `""` | — |
-| [SRC-AC9D8384E8-L000070](../../tests/test_semantic_claim_verifier.py#L70) | 70 | `""` | — |
-| [SRC-AC9D8384E8-L000071](../../tests/test_semantic_claim_verifier.py#L71) | 71 | `"def test_insufficient_evidence_fails_closed():"` | — |
-| [SRC-AC9D8384E8-L000072](../../tests/test_semantic_claim_verifier.py#L72) | 72 | `"    request = prepared()"` | — |
-| [SRC-AC9D8384E8-L000073](../../tests/test_semantic_claim_verifier.py#L73) | 73 | `"    result = parse_semantic_verification_response("` | — |
-| [SRC-AC9D8384E8-L000074](../../tests/test_semantic_claim_verifier.py#L74) | 74 | `"        response([row(assessment=\"insufficient\")]), request"` | — |
-| [SRC-AC9D8384E8-L000075](../../tests/test_semantic_claim_verifier.py#L75) | 75 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000076](../../tests/test_semantic_claim_verifier.py#L76) | 76 | `"    assert result[\"status\"] == \"unsupported_claims_detected\""` | — |
-| [SRC-AC9D8384E8-L000077](../../tests/test_semantic_claim_verifier.py#L77) | 77 | `"    assert result[\"unsupported_segment_ids\"] == [\"S001\"]"` | — |
-| [SRC-AC9D8384E8-L000078](../../tests/test_semantic_claim_verifier.py#L78) | 78 | `"    assert result[\"withhold_answer\"] is True"` | — |
-| [SRC-AC9D8384E8-L000079](../../tests/test_semantic_claim_verifier.py#L79) | 79 | `""` | — |
-| [SRC-AC9D8384E8-L000080](../../tests/test_semantic_claim_verifier.py#L80) | 80 | `""` | — |
-| [SRC-AC9D8384E8-L000081](../../tests/test_semantic_claim_verifier.py#L81) | 81 | `"def test_conflicting_sources_are_not_silently_promoted_to_supported():"` | — |
-| [SRC-AC9D8384E8-L000082](../../tests/test_semantic_claim_verifier.py#L82) | 82 | `"    request = prepared("` | — |
-| [SRC-AC9D8384E8-L000083](../../tests/test_semantic_claim_verifier.py#L83) | 83 | `"        sources=["` | — |
-| [SRC-AC9D8384E8-L000084](../../tests/test_semantic_claim_verifier.py#L84) | 84 | `"            source(),"` | — |
-| [SRC-AC9D8384E8-L000085](../../tests/test_semantic_claim_verifier.py#L85) | 85 | `"            source("` | — |
-| [SRC-AC9D8384E8-L000086](../../tests/test_semantic_claim_verifier.py#L86) | 86 | `"                url=\"https://example.net/report\","` | — |
-| [SRC-AC9D8384E8-L000087](../../tests/test_semantic_claim_verifier.py#L87) | 87 | `"                page_text=\"The system serves 8 facilities.\","` | — |
-| [SRC-AC9D8384E8-L000088](../../tests/test_semantic_claim_verifier.py#L88) | 88 | `"                snippet=\"The system serves 8 facilities.\","` | — |
-| [SRC-AC9D8384E8-L000089](../../tests/test_semantic_claim_verifier.py#L89) | 89 | `"            ),"` | — |
-| [SRC-AC9D8384E8-L000090](../../tests/test_semantic_claim_verifier.py#L90) | 90 | `"        ]"` | — |
-| [SRC-AC9D8384E8-L000091](../../tests/test_semantic_claim_verifier.py#L91) | 91 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000092](../../tests/test_semantic_claim_verifier.py#L92) | 92 | `"    result = parse_semantic_verification_response("` | — |
-| [SRC-AC9D8384E8-L000093](../../tests/test_semantic_claim_verifier.py#L93) | 93 | `"        response([row(assessment=\"conflicted\", supporting=[1], contradicting=[2])]),"` | — |
-| [SRC-AC9D8384E8-L000094](../../tests/test_semantic_claim_verifier.py#L94) | 94 | `"        request,"` | — |
-| [SRC-AC9D8384E8-L000095](../../tests/test_semantic_claim_verifier.py#L95) | 95 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000096](../../tests/test_semantic_claim_verifier.py#L96) | 96 | `"    assert result[\"status\"] == \"unsupported_claims_detected\""` | — |
-| [SRC-AC9D8384E8-L000097](../../tests/test_semantic_claim_verifier.py#L97) | 97 | `"    assert result[\"conflicted_segment_ids\"] == [\"S001\"]"` | — |
-| [SRC-AC9D8384E8-L000098](../../tests/test_semantic_claim_verifier.py#L98) | 98 | `"    assert result[\"withhold_answer\"] is True"` | — |
-| [SRC-AC9D8384E8-L000099](../../tests/test_semantic_claim_verifier.py#L99) | 99 | `""` | — |
-| [SRC-AC9D8384E8-L000100](../../tests/test_semantic_claim_verifier.py#L100) | 100 | `""` | — |
-| [SRC-AC9D8384E8-L000101](../../tests/test_semantic_claim_verifier.py#L101) | 101 | `"def test_contradiction_requires_readable_supplied_source():"` | — |
-| [SRC-AC9D8384E8-L000102](../../tests/test_semantic_claim_verifier.py#L102) | 102 | `"    request = prepared()"` | — |
-| [SRC-AC9D8384E8-L000103](../../tests/test_semantic_claim_verifier.py#L103) | 103 | `"    result = parse_semantic_verification_response("` | — |
-| [SRC-AC9D8384E8-L000104](../../tests/test_semantic_claim_verifier.py#L104) | 104 | `"        response([row(assessment=\"contradicted\", supporting=[], contradicting=[2])]),"` | — |
-| [SRC-AC9D8384E8-L000105](../../tests/test_semantic_claim_verifier.py#L105) | 105 | `"        request,"` | — |
-| [SRC-AC9D8384E8-L000106](../../tests/test_semantic_claim_verifier.py#L106) | 106 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000107](../../tests/test_semantic_claim_verifier.py#L107) | 107 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
-| [SRC-AC9D8384E8-L000108](../../tests/test_semantic_claim_verifier.py#L108) | 108 | `"    assert result[\"reason\"] == \"source_index_out_of_range\""` | — |
-| [SRC-AC9D8384E8-L000109](../../tests/test_semantic_claim_verifier.py#L109) | 109 | `""` | — |
+| [SRC-AC9D8384E8-L000041](../../tests/test_semantic_claim_verifier.py#L41) | 41 | `""` | — |
+| [SRC-AC9D8384E8-L000042](../../tests/test_semantic_claim_verifier.py#L42) | 42 | `"def prepared(answer=\"The system serves 12 facilities [source 1].\", sources=None):"` | — |
+| [SRC-AC9D8384E8-L000043](../../tests/test_semantic_claim_verifier.py#L43) | 43 | `"    return build_semantic_verification_request("` | — |
+| [SRC-AC9D8384E8-L000044](../../tests/test_semantic_claim_verifier.py#L44) | 44 | `"        \"How many facilities does the system serve?\","` | — |
+| [SRC-AC9D8384E8-L000045](../../tests/test_semantic_claim_verifier.py#L45) | 45 | `"        answer,"` | — |
+| [SRC-AC9D8384E8-L000046](../../tests/test_semantic_claim_verifier.py#L46) | 46 | `"        sources if sources is not None else [source()],"` | — |
+| [SRC-AC9D8384E8-L000047](../../tests/test_semantic_claim_verifier.py#L47) | 47 | `"    )"` | — |
