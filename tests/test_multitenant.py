@@ -368,3 +368,30 @@ def test_browser_session_invalidates_when_shared_access_token_rotates(tmp_path):
     assert store.resolve_web_session(session_id, shared_token=original) is not None
     assert store.resolve_web_session(session_id, shared_token=replacement) is None
 
+def test_new_browser_session_prunes_expired_and_revoked_session_rows(tmp_path):
+    store = LeadStore(tmp_path / "session-cleanup.sqlite3")
+    token = "session-cleanup-test-token-123456789012345"
+    expired_session, _ = store.create_web_session(token, shared_token=token)
+    revoked_session, _ = store.create_web_session(token, shared_token=token)
+    assert store.revoke_web_session(revoked_session)
+
+    expired_hash = store._token_hash(expired_session)
+    revoked_hash = store._token_hash(revoked_session)
+    with store.connect() as db:
+        db.execute(
+            "UPDATE web_sessions SET expires_at=? WHERE session_hash=?",
+            ("2000-01-01T00:00:00Z", expired_hash),
+        )
+
+    active_session, _ = store.create_web_session(token, shared_token=token)
+    active_hash = store._token_hash(active_session)
+    with store.connect() as db:
+        retained_hashes = {
+            row["session_hash"]
+            for row in db.execute("SELECT session_hash FROM web_sessions")
+        }
+
+    assert expired_hash not in retained_hashes
+    assert revoked_hash not in retained_hashes
+    assert active_hash in retained_hashes
+
