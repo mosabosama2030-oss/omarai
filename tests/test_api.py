@@ -1049,6 +1049,8 @@ def test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts(loca
     assert "Max-Age=28800" in set_cookie
     assert "Domain=" not in set_cookie
     cookie = set_cookie.split(";", 1)[0]
+    assert token not in cookie
+    assert len(cookie.split("=", 1)[1]) >= 32
 
     status, session = request_json(
         local_api, "/api/session", headers={"Cookie": cookie}

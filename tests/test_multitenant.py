@@ -298,3 +298,73 @@ def test_store_connections_are_closed_after_success_and_rollback(tmp_path, monke
             "SELECT 1 FROM tenants WHERE id=?",
             ("tenant_rollback_test",),
         ).fetchone() is None
+
+def test_browser_sessions_are_opaque_expiring_and_bound_to_api_token(tmp_path):
+    store = LeadStore(tmp_path / "browser-session.sqlite3")
+    tenant_id = store.create_tenant("Session Company", "session-company")
+    user_id = store.create_user("session@example.test", "Session User")
+    store.add_membership(tenant_id, user_id, "sales_agent")
+    api_token = "session-api-token-" + "S" * 40
+    store.create_api_token(api_token, tenant_id, user_id, label="browser")
+    created = store.create_web_session(api_token)
+    assert created is not None
+    session_id, principal = created
+
+    assert session_id != api_token
+    assert principal == {
+        "tenant_id": tenant_id,
+        "user_id": user_id,
+        "role": "sales_agent",
+    }
+    assert store.resolve_web_session(session_id) == principal
+
+    with store.connect() as db:
+        stored = db.execute(
+            "SELECT session_hash, credential_hash FROM web_sessions"
+        ).fetchone()
+    assert stored["session_hash"] == store._token_hash(session_id)
+    assert stored["credential_hash"] == store._token_hash(api_token)
+    assert session_id not in stored["session_hash"]
+    assert api_token not in stored["credential_hash"]
+
+    assert store.revoke_api_token(
+        api_token, tenant_id=tenant_id, user_id=user_id
+    ) is True
+    assert store.resolve_web_session(session_id) is None
+
+
+def test_browser_session_expiry_and_explicit_logout_are_enforced(tmp_path):
+    store = LeadStore(tmp_path / "browser-session-expiry.sqlite3")
+    shared_token = "shared-browser-session-token-" + "X" * 32
+    session = store.create_web_session(shared_token, shared_token=shared_token)
+    assert session is not None
+    session_id, principal = session
+    assert principal["role"] == "owner"
+    assert store.resolve_web_session(session_id, shared_token=shared_token) == principal
+
+    with store.connect() as db:
+        db.execute(
+            "UPDATE web_sessions SET expires_at=? WHERE session_hash=?",
+            ("2000-01-01T00:00:00Z", store._token_hash(session_id)),
+        )
+    assert store.resolve_web_session(session_id, shared_token=shared_token) is None
+
+    fresh = store.create_web_session(shared_token, shared_token=shared_token)
+    assert fresh is not None
+    fresh_id, fresh_principal = fresh
+    assert store.revoke_web_session(fresh_id) is True
+    assert store.resolve_web_session(fresh_id, shared_token=shared_token) is None
+    assert fresh_principal["role"] == "owner"
+
+
+def test_browser_session_invalidates_when_shared_access_token_rotates(tmp_path):
+    store = LeadStore(tmp_path / "browser-session-rotation.sqlite3")
+    original = "original-shared-token-" + "O" * 32
+    replacement = "replacement-shared-token-" + "R" * 32
+    session = store.create_web_session(original, shared_token=original)
+    assert session is not None
+    session_id, _principal = session
+
+    assert store.resolve_web_session(session_id, shared_token=original) is not None
+    assert store.resolve_web_session(session_id, shared_token=replacement) is None
+
