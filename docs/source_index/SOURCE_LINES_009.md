@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001040 إلى SRC-1AE03B9EC3-L000061
+- النطاق: SRC-686F71AA50-L001010 إلى SRC-1AE03B9EC3-L000031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001010](../../agents/task_understanding.py#L1010) | 1010 | `"    if family == \"legal_information\" and ("` | — |
+| [SRC-686F71AA50-L001011](../../agents/task_understanding.py#L1011) | 1011 | `"        spec.get(\"mode\") in {\"deep\", \"latest\"} or spec.get(\"intent_route\") == \"WEB_DEEP\""` | — |
+| [SRC-686F71AA50-L001012](../../agents/task_understanding.py#L1012) | 1012 | `"    ):"` | — |
+| [SRC-686F71AA50-L001013](../../agents/task_understanding.py#L1013) | 1013 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001014](../../agents/task_understanding.py#L1014) | 1014 | `"            (f\"{topic} نص قانوني رسمي التشريع\", \"official_legal_text\", \"seek primary law or regulator text and verify jurisdiction\"),"` | — |
+| [SRC-686F71AA50-L001015](../../agents/task_understanding.py#L1015) | 1015 | `"            (f\"{topic} jurisdiction effective date legal interpretation\", \"jurisdiction_and_effective_date\", \"keep jurisdiction and effective date visible\"),"` | — |
+| [SRC-686F71AA50-L001016](../../agents/task_understanding.py#L1016) | 1016 | `"        ])"` | — |
+| [SRC-686F71AA50-L001017](../../agents/task_understanding.py#L1017) | 1017 | `"    if family == \"coding_or_technical_design\" and ("` | — |
+| [SRC-686F71AA50-L001018](../../agents/task_understanding.py#L1018) | 1018 | `"        spec.get(\"mode\") in {\"deep\", \"latest\"} or spec.get(\"intent_route\") == \"WEB_DEEP\""` | — |
+| [SRC-686F71AA50-L001019](../../agents/task_understanding.py#L1019) | 1019 | `"    ):"` | — |
+| [SRC-686F71AA50-L001020](../../agents/task_understanding.py#L1020) | 1020 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001021](../../agents/task_understanding.py#L1021) | 1021 | `"            (f\"{topic} official documentation\", \"official_technical_docs\", \"prefer the language/runtime's authoritative documentation\"),"` | — |
+| [SRC-686F71AA50-L001022](../../agents/task_understanding.py#L1022) | 1022 | `"            (f\"{topic} exact error regression test\", \"error_and_regression_test\", \"look for a reproducible error and a testable fix\"),"` | — |
+| [SRC-686F71AA50-L001023](../../agents/task_understanding.py#L1023) | 1023 | `"        ])"` | — |
+| [SRC-686F71AA50-L001024](../../agents/task_understanding.py#L1024) | 1024 | `"    if family == \"planning\" and ("` | — |
+| [SRC-686F71AA50-L001025](../../agents/task_understanding.py#L1025) | 1025 | `"        spec.get(\"mode\") in {\"deep\", \"latest\"} or spec.get(\"intent_route\") == \"WEB_DEEP\""` | — |
+| [SRC-686F71AA50-L001026](../../agents/task_understanding.py#L1026) | 1026 | `"    ):"` | — |
+| [SRC-686F71AA50-L001027](../../agents/task_understanding.py#L1027) | 1027 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001028](../../agents/task_understanding.py#L1028) | 1028 | `"            (f\"{topic} risks dependencies feasibility\", \"feasibility_and_dependencies\", \"test assumptions, dependencies, and likely blockers\"),"` | — |
+| [SRC-686F71AA50-L001029](../../agents/task_understanding.py#L1029) | 1029 | `"            (f\"{topic} alternative plan fallback\", \"alternatives_and_fallback\", \"seek alternatives and fallback approaches\"),"` | — |
+| [SRC-686F71AA50-L001030](../../agents/task_understanding.py#L1030) | 1030 | `"        ])"` | — |
+| [SRC-686F71AA50-L001031](../../agents/task_understanding.py#L1031) | 1031 | `"    normalized_topic = normalize_text(topic)"` | — |
+| [SRC-686F71AA50-L001032](../../agents/task_understanding.py#L1032) | 1032 | `"    property_topic = any("` | — |
+| [SRC-686F71AA50-L001033](../../agents/task_understanding.py#L1033) | 1033 | `"        cue in normalized_topic"` | — |
+| [SRC-686F71AA50-L001034](../../agents/task_understanding.py#L1034) | 1034 | `"        for cue in (\"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"عقاري\", \"real estate\", \"apartment\", \"property\")"` | — |
+| [SRC-686F71AA50-L001035](../../agents/task_understanding.py#L1035) | 1035 | `"    )"` | — |
+| [SRC-686F71AA50-L001036](../../agents/task_understanding.py#L1036) | 1036 | `"    if family == \"find_or_discover\" and property_topic:"` | — |
+| [SRC-686F71AA50-L001037](../../agents/task_understanding.py#L1037) | 1037 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001038](../../agents/task_understanding.py#L1038) | 1038 | `"            (f\"{topic} إعلانات عقارية\", \"property_listings\", \"discover relevant listings without treating ads as independent price evidence\"),"` | — |
+| [SRC-686F71AA50-L001039](../../agents/task_understanding.py#L1039) | 1039 | `"            (f\"{topic} متوسط أسعار السوق للمتر\", \"property_market_price_per_meter\", \"compare asking prices against market-level context\"),"` | — |
 | [SRC-686F71AA50-L001040](../../agents/task_understanding.py#L1040) | 1040 | `"            (f\"{topic} أسعار البيع الفعلية والتقييم العقاري\", \"property_transaction_price_check\", \"distinguish asking prices from completed transaction prices\"),"` | — |
 | [SRC-686F71AA50-L001041](../../agents/task_understanding.py#L1041) | 1041 | `"        ])"` | — |
 | [SRC-686F71AA50-L001042](../../agents/task_understanding.py#L1042) | 1042 | `"    if ("` | — |
@@ -813,33 +843,3 @@
 | [SRC-1AE03B9EC3-L000029](../../agents/web_agent.py#L29) | 29 | `"    fallback_dialogue_context,"` | — |
 | [SRC-1AE03B9EC3-L000030](../../agents/web_agent.py#L30) | 30 | `"    might_be_context_dependent,"` | — |
 | [SRC-1AE03B9EC3-L000031](../../agents/web_agent.py#L31) | 31 | `"    validate_dialogue_context,"` | — |
-| [SRC-1AE03B9EC3-L000032](../../agents/web_agent.py#L32) | 32 | `")"` | — |
-| [SRC-1AE03B9EC3-L000033](../../agents/web_agent.py#L33) | 33 | `"from agents.answer_validation import audit_answer_integrity"` | — |
-| [SRC-1AE03B9EC3-L000034](../../agents/web_agent.py#L34) | 34 | `"from agents.requirement_evidence import build_requirement_evidence_ledger"` | — |
-| [SRC-1AE03B9EC3-L000035](../../agents/web_agent.py#L35) | 35 | `"from agents.claim_evidence import build_claim_evidence_ledger"` | — |
-| [SRC-1AE03B9EC3-L000036](../../agents/web_agent.py#L36) | 36 | `"from agents.request_budget import RequestBudget, RequestBudgetExceeded"` | — |
-| [SRC-1AE03B9EC3-L000037](../../agents/web_agent.py#L37) | 37 | `"from agents.aspect_planning import ("` | — |
-| [SRC-1AE03B9EC3-L000038](../../agents/web_agent.py#L38) | 38 | `"    arabic_aspect_diagnostics,"` | — |
-| [SRC-1AE03B9EC3-L000039](../../agents/web_agent.py#L39) | 39 | `"    build_evidence_ledger,"` | — |
-| [SRC-1AE03B9EC3-L000040](../../agents/web_agent.py#L40) | 40 | `"    extract_aspects,"` | — |
-| [SRC-1AE03B9EC3-L000041](../../agents/web_agent.py#L41) | 41 | `"    repair_queries_for_missing_aspects,"` | — |
-| [SRC-1AE03B9EC3-L000042](../../agents/web_agent.py#L42) | 42 | `")"` | — |
-| [SRC-1AE03B9EC3-L000043](../../agents/web_agent.py#L43) | 43 | `"from agents.search_connectors import search_arxiv, search_crossref, search_openalex"` | — |
-| [SRC-1AE03B9EC3-L000044](../../agents/web_agent.py#L44) | 44 | `"from agents.research import ("` | — |
-| [SRC-1AE03B9EC3-L000045](../../agents/web_agent.py#L45) | 45 | `"    MAX_PLAN_QUERIES,"` | — |
-| [SRC-1AE03B9EC3-L000046](../../agents/web_agent.py#L46) | 46 | `"    SOCIAL_DOMAINS,"` | — |
-| [SRC-1AE03B9EC3-L000047](../../agents/web_agent.py#L47) | 47 | `"    compact_search_query,"` | — |
-| [SRC-1AE03B9EC3-L000048](../../agents/web_agent.py#L48) | 48 | `"    evidence_signal_report,"` | — |
-| [SRC-1AE03B9EC3-L000049](../../agents/web_agent.py#L49) | 49 | `"    fallback_plan,"` | — |
-| [SRC-1AE03B9EC3-L000050](../../agents/web_agent.py#L50) | 50 | `"    fuse_ranked_results,"` | — |
-| [SRC-1AE03B9EC3-L000051](../../agents/web_agent.py#L51) | 51 | `"    registrable_domain,"` | — |
-| [SRC-1AE03B9EC3-L000052](../../agents/web_agent.py#L52) | 52 | `"    extract_question_coverage_targets,"` | — |
-| [SRC-1AE03B9EC3-L000053](../../agents/web_agent.py#L53) | 53 | `"    validate_plan,"` | — |
-| [SRC-1AE03B9EC3-L000054](../../agents/web_agent.py#L54) | 54 | `")"` | — |
-| [SRC-1AE03B9EC3-L000055](../../agents/web_agent.py#L55) | 55 | `"from agents.research_guardrails import apply_source_guardrails"` | — |
-| [SRC-1AE03B9EC3-L000056](../../agents/web_agent.py#L56) | 56 | `"from agents.research_completion import build_research_completion"` | — |
-| [SRC-1AE03B9EC3-L000057](../../agents/web_agent.py#L57) | 57 | `"from agents.tool_execution_status import build_tool_execution_matrix"` | — |
-| [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `"from agents.task_understanding import ("` | — |
-| [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `"    reasoning_guidance_for_task_spec,"` | — |
-| [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `"    validate_task_spec,"` | — |
-| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `")"` | — |

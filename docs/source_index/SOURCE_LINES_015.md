@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004062 إلى SRC-1AE03B9EC3-L004861
+- النطاق: SRC-1AE03B9EC3-L004032 إلى SRC-1AE03B9EC3-L004831
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004032](../../agents/web_agent.py#L4032) | 4032 | `"            model=self.answer_model,"` | — |
+| [SRC-1AE03B9EC3-L004033](../../agents/web_agent.py#L4033) | 4033 | `"            enable_web_search=self.openrouter_web_search_enabled,"` | — |
+| [SRC-1AE03B9EC3-L004034](../../agents/web_agent.py#L4034) | 4034 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L004035](../../agents/web_agent.py#L4035) | 4035 | `"        if len(answer) > 24_000:"` | — |
+| [SRC-1AE03B9EC3-L004036](../../agents/web_agent.py#L4036) | 4036 | `"            raise RuntimeError("` | — |
+| [SRC-1AE03B9EC3-L004037](../../agents/web_agent.py#L4037) | 4037 | `"                \"إجابة النموذج تجاوزت حد طول النص؛ لم تُعرض باعتبارها إجابة مكتملة.\""` | — |
+| [SRC-1AE03B9EC3-L004038](../../agents/web_agent.py#L4038) | 4038 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004039](../../agents/web_agent.py#L4039) | 4039 | `"        return answer"` | — |
+| [SRC-1AE03B9EC3-L004040](../../agents/web_agent.py#L4040) | 4040 | `""` | — |
+| [SRC-1AE03B9EC3-L004041](../../agents/web_agent.py#L4041) | 4041 | `"    def _repair_answer_coverage("` | — |
+| [SRC-1AE03B9EC3-L004042](../../agents/web_agent.py#L4042) | 4042 | `"        self,"` | — |
+| [SRC-1AE03B9EC3-L004043](../../agents/web_agent.py#L4043) | 4043 | `"        question: str,"` | — |
+| [SRC-1AE03B9EC3-L004044](../../agents/web_agent.py#L4044) | 4044 | `"        answer: str,"` | — |
+| [SRC-1AE03B9EC3-L004045](../../agents/web_agent.py#L4045) | 4045 | `"        sources: list[dict[str, Any]],"` | — |
+| [SRC-1AE03B9EC3-L004046](../../agents/web_agent.py#L4046) | 4046 | `"        missing_targets: list[str],"` | — |
+| [SRC-1AE03B9EC3-L004047](../../agents/web_agent.py#L4047) | 4047 | `"    ) -> str:"` | — |
+| [SRC-1AE03B9EC3-L004048](../../agents/web_agent.py#L4048) | 4048 | `"        \"\"\"Make one bounded, evidence-constrained pass at addressing possibly missing targets.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L004049](../../agents/web_agent.py#L4049) | 4049 | `"        if not missing_targets:"` | — |
+| [SRC-1AE03B9EC3-L004050](../../agents/web_agent.py#L4050) | 4050 | `"            return answer"` | — |
+| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"        source_blocks: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"            evidence = page_text or snippet or \"لا يتوفر نص قابل للقراءة.\""` | — |
+| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"            evidence_kind = \"نص صفحة مستخرج\" if bool(source.get(\"page_fetched\")) and page_text else \"مقتطف بحث\""` | — |
+| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"            source_blocks.append("` | — |
+| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                f\"الرابط: {source.get('url', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                f\"نوع الدليل المتاح: {evidence_kind}\\n\""` | — |
+| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                f\"النص: {_clean_text(evidence, 1800)}\""` | — |
 | [SRC-1AE03B9EC3-L004062](../../agents/web_agent.py#L4062) | 4062 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004063](../../agents/web_agent.py#L4063) | 4063 | `"        messages = ["` | — |
 | [SRC-1AE03B9EC3-L004064](../../agents/web_agent.py#L4064) | 4064 | `"            {"` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L004829](../../agents/web_agent.py#L4829) | 4829 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L004830](../../agents/web_agent.py#L4830) | 4830 | `"            result[\"task_understanding\"] = task_summary"` | — |
 | [SRC-1AE03B9EC3-L004831](../../agents/web_agent.py#L4831) | 4831 | `"            if isinstance(result.get(\"research_plan\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004832](../../agents/web_agent.py#L4832) | 4832 | `"                result[\"research_plan\"][\"task_spec\"] = task_spec"` | — |
-| [SRC-1AE03B9EC3-L004833](../../agents/web_agent.py#L4833) | 4833 | `"                result[\"research_plan\"][\"query_strategy_matrix\"] = query_matrix"` | — |
-| [SRC-1AE03B9EC3-L004834](../../agents/web_agent.py#L4834) | 4834 | `"            if isinstance(result.get(\"search_report\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004835](../../agents/web_agent.py#L4835) | 4835 | `"                result[\"search_report\"][\"task_understanding\"] = task_summary"` | — |
-| [SRC-1AE03B9EC3-L004836](../../agents/web_agent.py#L4836) | 4836 | `"        except (AttributeError, KeyError, TypeError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L004837](../../agents/web_agent.py#L4837) | 4837 | `"            result[\"task_understanding\"] = {"` | — |
-| [SRC-1AE03B9EC3-L004838](../../agents/web_agent.py#L4838) | 4838 | `"                \"status\": \"not_run\","` | — |
-| [SRC-1AE03B9EC3-L004839](../../agents/web_agent.py#L4839) | 4839 | `"                \"error_class\": type(exc).__name__,"` | — |
-| [SRC-1AE03B9EC3-L004840](../../agents/web_agent.py#L4840) | 4840 | `"                \"claim\": \"task interpretation diagnostics unavailable; answer was not independently verified\","` | — |
-| [SRC-1AE03B9EC3-L004841](../../agents/web_agent.py#L4841) | 4841 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L004842](../../agents/web_agent.py#L4842) | 4842 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L004843](../../agents/web_agent.py#L4843) | 4843 | `"            completion = build_research_completion(result)"` | — |
-| [SRC-1AE03B9EC3-L004844](../../agents/web_agent.py#L4844) | 4844 | `"            result[\"research_completion\"] = completion"` | — |
-| [SRC-1AE03B9EC3-L004845](../../agents/web_agent.py#L4845) | 4845 | `"            # Keep the public terminal state aligned with evidence warnings discovered"` | — |
-| [SRC-1AE03B9EC3-L004846](../../agents/web_agent.py#L4846) | 4846 | `"            # by the final completion audit, including early/fallback result builders."` | — |
-| [SRC-1AE03B9EC3-L004847](../../agents/web_agent.py#L4847) | 4847 | `"            completion_phases = completion.get(\"phases\")"` | — |
-| [SRC-1AE03B9EC3-L004848](../../agents/web_agent.py#L4848) | 4848 | `"            completion_phases = ("` | — |
-| [SRC-1AE03B9EC3-L004849](../../agents/web_agent.py#L4849) | 4849 | `"                completion_phases if isinstance(completion_phases, dict) else {}"` | — |
-| [SRC-1AE03B9EC3-L004850](../../agents/web_agent.py#L4850) | 4850 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004851](../../agents/web_agent.py#L4851) | 4851 | `"            if ("` | — |
-| [SRC-1AE03B9EC3-L004852](../../agents/web_agent.py#L4852) | 4852 | `"                completion_phases.get(\"citation_support_screen\") == \"warning_signals_detected\""` | — |
-| [SRC-1AE03B9EC3-L004853](../../agents/web_agent.py#L4853) | 4853 | `"                or completion.get(\"status\") == \"answer_generated_without_valid_citation_markers\""` | — |
-| [SRC-1AE03B9EC3-L004854](../../agents/web_agent.py#L4854) | 4854 | `"            ):"` | — |
-| [SRC-1AE03B9EC3-L004855](../../agents/web_agent.py#L4855) | 4855 | `"                result[\"pipeline_completion_status\"] = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L004856](../../agents/web_agent.py#L4856) | 4856 | `"            if isinstance(result.get(\"search_report\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004857](../../agents/web_agent.py#L4857) | 4857 | `"                result[\"search_report\"][\"research_completion\"] = completion"` | — |
-| [SRC-1AE03B9EC3-L004858](../../agents/web_agent.py#L4858) | 4858 | `"                if result.get(\"pipeline_completion_status\") == \"partial\":"` | — |
-| [SRC-1AE03B9EC3-L004859](../../agents/web_agent.py#L4859) | 4859 | `"                    result[\"search_report\"][\"pipeline_completion_status\"] = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L004860](../../agents/web_agent.py#L4860) | 4860 | `"        except Exception:"` | — |
-| [SRC-1AE03B9EC3-L004861](../../agents/web_agent.py#L4861) | 4861 | `"            # Diagnostics must never replace a valid answer with an internal error."` | — |

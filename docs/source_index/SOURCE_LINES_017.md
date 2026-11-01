@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005662 إلى SRC-1AE03B9EC3-L006461
+- النطاق: SRC-1AE03B9EC3-L005632 إلى SRC-1AE03B9EC3-L006431
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005632](../../agents/web_agent.py#L5632) | 5632 | `"                    repair_query = compact_search_query("` | — |
+| [SRC-1AE03B9EC3-L005633](../../agents/web_agent.py#L5633) | 5633 | `"                        f\"{base_query} independent corroborating evidence\""` | — |
+| [SRC-1AE03B9EC3-L005634](../../agents/web_agent.py#L5634) | 5634 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L005635](../../agents/web_agent.py#L5635) | 5635 | `"                if repair_query and _relevance_query_tokens(repair_query) and ("` | — |
+| [SRC-1AE03B9EC3-L005636](../../agents/web_agent.py#L5636) | 5636 | `"                    _normalize_search_query(repair_query).casefold() not in known_queries"` | — |
+| [SRC-1AE03B9EC3-L005637](../../agents/web_agent.py#L5637) | 5637 | `"                ):"` | — |
+| [SRC-1AE03B9EC3-L005638](../../agents/web_agent.py#L5638) | 5638 | `"                    initial_source_count = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L005639](../../agents/web_agent.py#L5639) | 5639 | `"                    initial_domain_count = len(independent_domains)"` | — |
+| [SRC-1AE03B9EC3-L005640](../../agents/web_agent.py#L5640) | 5640 | `"                    evidence_repair[\"attempted\"] = True"` | — |
+| [SRC-1AE03B9EC3-L005641](../../agents/web_agent.py#L5641) | 5641 | `"                    evidence_repair[\"reason\"] = \"thin_or_unrelated_initial_evidence\""` | — |
+| [SRC-1AE03B9EC3-L005642](../../agents/web_agent.py#L5642) | 5642 | `"                    evidence_repair[\"query\"] = repair_query"` | — |
+| [SRC-1AE03B9EC3-L005643](../../agents/web_agent.py#L5643) | 5643 | `"                    repair_plan = dict(plan)"` | — |
+| [SRC-1AE03B9EC3-L005644](../../agents/web_agent.py#L5644) | 5644 | `"                    repair_plan.update({"` | — |
+| [SRC-1AE03B9EC3-L005645](../../agents/web_agent.py#L5645) | 5645 | `"                        \"queries\": [repair_query],"` | — |
+| [SRC-1AE03B9EC3-L005646](../../agents/web_agent.py#L5646) | 5646 | `"                        \"depth\": \"standard\","` | — |
+| [SRC-1AE03B9EC3-L005647](../../agents/web_agent.py#L5647) | 5647 | `"                        \"social_focus\": False,"` | — |
+| [SRC-1AE03B9EC3-L005648](../../agents/web_agent.py#L5648) | 5648 | `"                        \"platforms\": [],"` | — |
+| [SRC-1AE03B9EC3-L005649](../../agents/web_agent.py#L5649) | 5649 | `"                        \"direct_urls\": [],"` | — |
+| [SRC-1AE03B9EC3-L005650](../../agents/web_agent.py#L5650) | 5650 | `"                    })"` | — |
+| [SRC-1AE03B9EC3-L005651](../../agents/web_agent.py#L5651) | 5651 | `"                    try:"` | — |
+| [SRC-1AE03B9EC3-L005652](../../agents/web_agent.py#L5652) | 5652 | `"                        repair_sources, repair_warnings, repair_report = self._collect_research("` | — |
+| [SRC-1AE03B9EC3-L005653](../../agents/web_agent.py#L5653) | 5653 | `"                            repair_plan"` | — |
+| [SRC-1AE03B9EC3-L005654](../../agents/web_agent.py#L5654) | 5654 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L005655](../../agents/web_agent.py#L5655) | 5655 | `"                    except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L005656](../../agents/web_agent.py#L5656) | 5656 | `"                        repair_sources = []"` | — |
+| [SRC-1AE03B9EC3-L005657](../../agents/web_agent.py#L5657) | 5657 | `"                        repair_warnings = []"` | — |
+| [SRC-1AE03B9EC3-L005658](../../agents/web_agent.py#L5658) | 5658 | `"                        repair_report = {"` | — |
+| [SRC-1AE03B9EC3-L005659](../../agents/web_agent.py#L5659) | 5659 | `"                            \"queries_planned\": 1,"` | — |
+| [SRC-1AE03B9EC3-L005660](../../agents/web_agent.py#L5660) | 5660 | `"                            \"queries_attempted\": None,"` | — |
+| [SRC-1AE03B9EC3-L005661](../../agents/web_agent.py#L5661) | 5661 | `"                            \"queries_attempted_known\": False,"` | — |
 | [SRC-1AE03B9EC3-L005662](../../agents/web_agent.py#L5662) | 5662 | `"                            \"search_attempted\": None,"` | — |
 | [SRC-1AE03B9EC3-L005663](../../agents/web_agent.py#L5663) | 5663 | `"                            \"search_outcome\": \"unknown_after_research_error\","` | — |
 | [SRC-1AE03B9EC3-L005664](../../agents/web_agent.py#L5664) | 5664 | `"                            \"usable_sources_after_filtering\": None,"` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L006429](../../agents/web_agent.py#L6429) | 6429 | `"                                    working_question, revised_draft, sources[:MAX_LLM_CITED_SOURCES]"` | — |
 | [SRC-1AE03B9EC3-L006430](../../agents/web_agent.py#L6430) | 6430 | `"                                )"` | — |
 | [SRC-1AE03B9EC3-L006431](../../agents/web_agent.py#L6431) | 6431 | `"                                answer = revised_answer"` | — |
-| [SRC-1AE03B9EC3-L006432](../../agents/web_agent.py#L6432) | 6432 | `"                                review_status = \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006433](../../agents/web_agent.py#L6433) | 6433 | `"                                criterion_gap_research[\"status\"] = \"evidence_added_and_answer_regenerated\""` | — |
-| [SRC-1AE03B9EC3-L006434](../../agents/web_agent.py#L6434) | 6434 | `"                            except (RuntimeError, AgentDependencyError, RequestBudgetExceeded) as exc:"` | — |
-| [SRC-1AE03B9EC3-L006435](../../agents/web_agent.py#L6435) | 6435 | `"                                criterion_gap_research[\"status\"] = \"evidence_added_but_regeneration_unavailable\""` | — |
-| [SRC-1AE03B9EC3-L006436](../../agents/web_agent.py#L6436) | 6436 | `"                                criterion_gap_research[\"regeneration_error_class\"] = type(exc).__name__"` | — |
-| [SRC-1AE03B9EC3-L006437](../../agents/web_agent.py#L6437) | 6437 | `"                                coverage_repair_warning = ("` | — |
-| [SRC-1AE03B9EC3-L006438](../../agents/web_agent.py#L6438) | 6438 | `"                                    \"وصلت أدلة إضافية لمحور مطلوب، لكن تعذرت إعادة توليد الإجابة \""` | — |
-| [SRC-1AE03B9EC3-L006439](../../agents/web_agent.py#L6439) | 6439 | `"                                    \"وتدقيقها ضمن الميزانية؛ راجع هذا المحور قبل اعتماد الإجابة.\""` | — |
-| [SRC-1AE03B9EC3-L006440](../../agents/web_agent.py#L6440) | 6440 | `"                                )"` | — |
-| [SRC-1AE03B9EC3-L006441](../../agents/web_agent.py#L6441) | 6441 | `"                        elif criterion_gap_research.get(\"status\") != \"search_failed\":"` | — |
-| [SRC-1AE03B9EC3-L006442](../../agents/web_agent.py#L6442) | 6442 | `"                            criterion_gap_research[\"status\"] = \"search_completed_no_new_criterion_evidence\""` | — |
-| [SRC-1AE03B9EC3-L006443](../../agents/web_agent.py#L6443) | 6443 | `"                            coverage_repair_warning = ("` | — |
-| [SRC-1AE03B9EC3-L006444](../../agents/web_agent.py#L6444) | 6444 | `"                                \"أُجري بحث إضافي لمحاور ناقصة، لكنه لم يضف نص مصدر يمكن تمييزه \""` | — |
-| [SRC-1AE03B9EC3-L006445](../../agents/web_agent.py#L6445) | 6445 | `"                                \"كدليل جديد؛ ستظل هذه المحاور غير محسومة.\""` | — |
-| [SRC-1AE03B9EC3-L006446](../../agents/web_agent.py#L6446) | 6446 | `"                            )"` | — |
-| [SRC-1AE03B9EC3-L006447](../../agents/web_agent.py#L6447) | 6447 | `"                        criterion_gap_research[\"source_count_after\"] = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L006448](../../agents/web_agent.py#L6448) | 6448 | `"                        report[\"criterion_gap_research\"] = dict(criterion_gap_research)"` | — |
-| [SRC-1AE03B9EC3-L006449](../../agents/web_agent.py#L6449) | 6449 | `""` | — |
-| [SRC-1AE03B9EC3-L006450](../../agents/web_agent.py#L6450) | 6450 | `"        report[\"criterion_gap_research\"] = dict(criterion_gap_research)"` | — |
-| [SRC-1AE03B9EC3-L006451](../../agents/web_agent.py#L6451) | 6451 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L006452](../../agents/web_agent.py#L6452) | 6452 | `"            coverage_targets"` | — |
-| [SRC-1AE03B9EC3-L006453](../../agents/web_agent.py#L6453) | 6453 | `"            and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L006454](../../agents/web_agent.py#L6454) | 6454 | `"            and sources"` | — |
-| [SRC-1AE03B9EC3-L006455](../../agents/web_agent.py#L6455) | 6455 | `"            and self.api_key"` | — |
-| [SRC-1AE03B9EC3-L006456](../../agents/web_agent.py#L6456) | 6456 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L006457](../../agents/web_agent.py#L6457) | 6457 | `"            initial_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get(\"requirement_queries\"))"` | — |
-| [SRC-1AE03B9EC3-L006458](../../agents/web_agent.py#L6458) | 6458 | `"            missing_targets = ["` | — |
-| [SRC-1AE03B9EC3-L006459](../../agents/web_agent.py#L6459) | 6459 | `"                item[\"target\"] for item in initial_integrity[\"target_coverage\"]"` | — |
-| [SRC-1AE03B9EC3-L006460](../../agents/web_agent.py#L6460) | 6460 | `"                if item[\"status\"] == \"possibly_missing\""` | — |
-| [SRC-1AE03B9EC3-L006461](../../agents/web_agent.py#L6461) | 6461 | `"            ]"` | — |

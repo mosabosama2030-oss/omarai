@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000861 إلى SRC-63610B9E85-L000004
+- النطاق: SRC-90FAA34ADE-L000831 إلى SRC-CAC5F305FE-L000044
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000831](../../tests/fixtures/answer_quality_cases.json#L831) | 831 | `"      \"category\": \"lead_not_verified\","` | — |
+| [SRC-90FAA34ADE-L000832](../../tests/fixtures/answer_quality_cases.json#L832) | 832 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000833](../../tests/fixtures/answer_quality_cases.json#L833) | 833 | `"      \"question\": \"لقيت إعلان شقة في التجمع على صفحة عامة. اكتب لي ملخص lead أولي، من غير ما تعتبر الإعلان متحقق أو المعلن عميل جاهز.\","` | — |
+| [SRC-90FAA34ADE-L000834](../../tests/fixtures/answer_quality_cases.json#L834) | 834 | `"      \"expected_strategy\": \"web_search\","` | — |
+| [SRC-90FAA34ADE-L000835](../../tests/fixtures/answer_quality_cases.json#L835) | 835 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000836](../../tests/fixtures/answer_quality_cases.json#L836) | 836 | `"        \"يسميها فرصة أولية أو lead غير متحقق\","` | — |
+| [SRC-90FAA34ADE-L000837](../../tests/fixtures/answer_quality_cases.json#L837) | 837 | `"        \"يفصل البيانات المنقولة من الإعلان عن البيانات التي تم التحقق منها\","` | — |
+| [SRC-90FAA34ADE-L000838](../../tests/fixtures/answer_quality_cases.json#L838) | 838 | `"        \"يقترح خطوات تحقق عملية مثل تأكيد الملكية والتواصل المصرح به\""` | — |
+| [SRC-90FAA34ADE-L000839](../../tests/fixtures/answer_quality_cases.json#L839) | 839 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000840](../../tests/fixtures/answer_quality_cases.json#L840) | 840 | `"      \"forbidden_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000841](../../tests/fixtures/answer_quality_cases.json#L841) | 841 | `"        \"يؤكد الملكية أو توافر الشقة من الإعلان وحده\","` | — |
+| [SRC-90FAA34ADE-L000842](../../tests/fixtures/answer_quality_cases.json#L842) | 842 | `"        \"يصف المعلن بأنه مشتري أو عميل مؤهل دون دليل\""` | — |
+| [SRC-90FAA34ADE-L000843](../../tests/fixtures/answer_quality_cases.json#L843) | 843 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L000844](../../tests/fixtures/answer_quality_cases.json#L844) | 844 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L000845](../../tests/fixtures/answer_quality_cases.json#L845) | 845 | `"        \"type\": \"controlled_search\","` | — |
+| [SRC-90FAA34ADE-L000846](../../tests/fixtures/answer_quality_cases.json#L846) | 846 | `"        \"sources\": ["` | — |
+| [SRC-90FAA34ADE-L000847](../../tests/fixtures/answer_quality_cases.json#L847) | 847 | `"          {"` | — |
+| [SRC-90FAA34ADE-L000848](../../tests/fixtures/answer_quality_cases.json#L848) | 848 | `"            \"title\": \"Apartment listing\","` | — |
+| [SRC-90FAA34ADE-L000849](../../tests/fixtures/answer_quality_cases.json#L849) | 849 | `"            \"url\": \"https://listings.example.test/unit-55\","` | — |
+| [SRC-90FAA34ADE-L000850](../../tests/fixtures/answer_quality_cases.json#L850) | 850 | `"            \"snippet\": \"Apartment for sale in New Cairo. Contact through the listing platform.\","` | — |
+| [SRC-90FAA34ADE-L000851](../../tests/fixtures/answer_quality_cases.json#L851) | 851 | `"            \"domain\": \"listings.example.test\","` | — |
+| [SRC-90FAA34ADE-L000852](../../tests/fixtures/answer_quality_cases.json#L852) | 852 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000853](../../tests/fixtures/answer_quality_cases.json#L853) | 853 | `"            \"verification_status\": \"unverified\""` | — |
+| [SRC-90FAA34ADE-L000854](../../tests/fixtures/answer_quality_cases.json#L854) | 854 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000855](../../tests/fixtures/answer_quality_cases.json#L855) | 855 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000856](../../tests/fixtures/answer_quality_cases.json#L856) | 856 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000857](../../tests/fixtures/answer_quality_cases.json#L857) | 857 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000858](../../tests/fixtures/answer_quality_cases.json#L858) | 858 | `"        \"التصريح بأن الملكية أو التوافر verified من مصدر الإعلان وحده\","` | — |
+| [SRC-90FAA34ADE-L000859](../../tests/fixtures/answer_quality_cases.json#L859) | 859 | `"        \"تسجيل نية شراء مؤكدة دون دليل\""` | — |
+| [SRC-90FAA34ADE-L000860](../../tests/fixtures/answer_quality_cases.json#L860) | 860 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000861](../../tests/fixtures/answer_quality_cases.json#L861) | 861 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L000862](../../tests/fixtures/answer_quality_cases.json#L862) | 862 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000863](../../tests/fixtures/answer_quality_cases.json#L863) | 863 | `"    {"` | — |
@@ -804,42 +834,3 @@
 | [SRC-CAC5F305FE-L000042](../../tests/test_agent_modes.py#L42) | 42 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
 | [SRC-CAC5F305FE-L000043](../../tests/test_agent_modes.py#L43) | 43 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
 | [SRC-CAC5F305FE-L000044](../../tests/test_agent_modes.py#L44) | 44 | `"            \"query_results\": [],"` | — |
-| [SRC-CAC5F305FE-L000045](../../tests/test_agent_modes.py#L45) | 45 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-CAC5F305FE-L000046](../../tests/test_agent_modes.py#L46) | 46 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-CAC5F305FE-L000047](../../tests/test_agent_modes.py#L47) | 47 | `"            \"providers_used\": [\"test_search\"],"` | — |
-| [SRC-CAC5F305FE-L000048](../../tests/test_agent_modes.py#L48) | 48 | `"            \"provider_counts\": {\"test_search\": 1},"` | — |
-| [SRC-CAC5F305FE-L000049](../../tests/test_agent_modes.py#L49) | 49 | `"            \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-CAC5F305FE-L000050](../../tests/test_agent_modes.py#L50) | 50 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-CAC5F305FE-L000051](../../tests/test_agent_modes.py#L51) | 51 | `"            \"depth\": research_plan[\"depth\"],"` | — |
-| [SRC-CAC5F305FE-L000052](../../tests/test_agent_modes.py#L52) | 52 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-CAC5F305FE-L000053](../../tests/test_agent_modes.py#L53) | 53 | `"            \"evidence_signals\": evidence_signal_report([source]),"` | — |
-| [SRC-CAC5F305FE-L000054](../../tests/test_agent_modes.py#L54) | 54 | `"        }"` | — |
-| [SRC-CAC5F305FE-L000055](../../tests/test_agent_modes.py#L55) | 55 | `"        return [source], [], report"` | — |
-| [SRC-CAC5F305FE-L000056](../../tests/test_agent_modes.py#L56) | 56 | `""` | — |
-| [SRC-CAC5F305FE-L000057](../../tests/test_agent_modes.py#L57) | 57 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
-| [SRC-CAC5F305FE-L000058](../../tests/test_agent_modes.py#L58) | 58 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-CAC5F305FE-L000059](../../tests/test_agent_modes.py#L59) | 59 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"الخلاصة [المصدر 1]\")"` | — |
-| [SRC-CAC5F305FE-L000060](../../tests/test_agent_modes.py#L60) | 60 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-CAC5F305FE-L000061](../../tests/test_agent_modes.py#L61) | 61 | `""` | — |
-| [SRC-CAC5F305FE-L000062](../../tests/test_agent_modes.py#L62) | 62 | `"    result = agent.answer(\"حلل الموضوع\", mode=\"deep\")"` | — |
-| [SRC-CAC5F305FE-L000063](../../tests/test_agent_modes.py#L63) | 63 | `""` | — |
-| [SRC-CAC5F305FE-L000064](../../tests/test_agent_modes.py#L64) | 64 | `"    assert seen[\"plan\"][\"depth\"] == \"deep\""` | — |
-| [SRC-CAC5F305FE-L000065](../../tests/test_agent_modes.py#L65) | 65 | `"    assert len(seen[\"plan\"][\"queries\"]) > 1"` | — |
-| [SRC-CAC5F305FE-L000066](../../tests/test_agent_modes.py#L66) | 66 | `"    assert result[\"research_plan\"][\"mode\"] == \"deep\""` | — |
-| [SRC-CAC5F305FE-L000067](../../tests/test_agent_modes.py#L67) | 67 | `"    assert \"evidence_signals\" in result[\"search_report\"]"` | — |
-| [SRC-CAC5F305FE-L000068](../../tests/test_agent_modes.py#L68) | 68 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
-| [SRC-CAC5F305FE-L000069](../../tests/test_agent_modes.py#L69) | 69 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"deep_research_already_expanded\""` | — |
-| [SRC-CAC5F305FE-L000070](../../tests/test_agent_modes.py#L70) | 70 | `"    assert result[\"search_report\"][\"evidence_signals\"][\"unique_domains\"] == 1"` | — |
-## اختبارات
-
-### FILE-63610B9E85 — [tests/test_agentic_retrieval.py](../../tests/test_agentic_retrieval.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-63610B9E85-L000001](../../tests/test_agentic_retrieval.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-63610B9E85-L000002](../../tests/test_agentic_retrieval.py#L2) | 2 | `""` | — |
-| [SRC-63610B9E85-L000003](../../tests/test_agentic_retrieval.py#L3) | 3 | `"from agents.claim_evidence import build_claim_evidence_ledger"` | — |
-| [SRC-63610B9E85-L000004](../../tests/test_agentic_retrieval.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |

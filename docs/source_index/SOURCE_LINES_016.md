@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004862 إلى SRC-1AE03B9EC3-L005661
+- النطاق: SRC-1AE03B9EC3-L004832 إلى SRC-1AE03B9EC3-L005631
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004832](../../agents/web_agent.py#L4832) | 4832 | `"                result[\"research_plan\"][\"task_spec\"] = task_spec"` | — |
+| [SRC-1AE03B9EC3-L004833](../../agents/web_agent.py#L4833) | 4833 | `"                result[\"research_plan\"][\"query_strategy_matrix\"] = query_matrix"` | — |
+| [SRC-1AE03B9EC3-L004834](../../agents/web_agent.py#L4834) | 4834 | `"            if isinstance(result.get(\"search_report\"), dict):"` | — |
+| [SRC-1AE03B9EC3-L004835](../../agents/web_agent.py#L4835) | 4835 | `"                result[\"search_report\"][\"task_understanding\"] = task_summary"` | — |
+| [SRC-1AE03B9EC3-L004836](../../agents/web_agent.py#L4836) | 4836 | `"        except (AttributeError, KeyError, TypeError, ValueError) as exc:"` | — |
+| [SRC-1AE03B9EC3-L004837](../../agents/web_agent.py#L4837) | 4837 | `"            result[\"task_understanding\"] = {"` | — |
+| [SRC-1AE03B9EC3-L004838](../../agents/web_agent.py#L4838) | 4838 | `"                \"status\": \"not_run\","` | — |
+| [SRC-1AE03B9EC3-L004839](../../agents/web_agent.py#L4839) | 4839 | `"                \"error_class\": type(exc).__name__,"` | — |
+| [SRC-1AE03B9EC3-L004840](../../agents/web_agent.py#L4840) | 4840 | `"                \"claim\": \"task interpretation diagnostics unavailable; answer was not independently verified\","` | — |
+| [SRC-1AE03B9EC3-L004841](../../agents/web_agent.py#L4841) | 4841 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L004842](../../agents/web_agent.py#L4842) | 4842 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L004843](../../agents/web_agent.py#L4843) | 4843 | `"            completion = build_research_completion(result)"` | — |
+| [SRC-1AE03B9EC3-L004844](../../agents/web_agent.py#L4844) | 4844 | `"            result[\"research_completion\"] = completion"` | — |
+| [SRC-1AE03B9EC3-L004845](../../agents/web_agent.py#L4845) | 4845 | `"            # Keep the public terminal state aligned with evidence warnings discovered"` | — |
+| [SRC-1AE03B9EC3-L004846](../../agents/web_agent.py#L4846) | 4846 | `"            # by the final completion audit, including early/fallback result builders."` | — |
+| [SRC-1AE03B9EC3-L004847](../../agents/web_agent.py#L4847) | 4847 | `"            completion_phases = completion.get(\"phases\")"` | — |
+| [SRC-1AE03B9EC3-L004848](../../agents/web_agent.py#L4848) | 4848 | `"            completion_phases = ("` | — |
+| [SRC-1AE03B9EC3-L004849](../../agents/web_agent.py#L4849) | 4849 | `"                completion_phases if isinstance(completion_phases, dict) else {}"` | — |
+| [SRC-1AE03B9EC3-L004850](../../agents/web_agent.py#L4850) | 4850 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L004851](../../agents/web_agent.py#L4851) | 4851 | `"            if ("` | — |
+| [SRC-1AE03B9EC3-L004852](../../agents/web_agent.py#L4852) | 4852 | `"                completion_phases.get(\"citation_support_screen\") == \"warning_signals_detected\""` | — |
+| [SRC-1AE03B9EC3-L004853](../../agents/web_agent.py#L4853) | 4853 | `"                or completion.get(\"status\") == \"answer_generated_without_valid_citation_markers\""` | — |
+| [SRC-1AE03B9EC3-L004854](../../agents/web_agent.py#L4854) | 4854 | `"            ):"` | — |
+| [SRC-1AE03B9EC3-L004855](../../agents/web_agent.py#L4855) | 4855 | `"                result[\"pipeline_completion_status\"] = \"partial\""` | — |
+| [SRC-1AE03B9EC3-L004856](../../agents/web_agent.py#L4856) | 4856 | `"            if isinstance(result.get(\"search_report\"), dict):"` | — |
+| [SRC-1AE03B9EC3-L004857](../../agents/web_agent.py#L4857) | 4857 | `"                result[\"search_report\"][\"research_completion\"] = completion"` | — |
+| [SRC-1AE03B9EC3-L004858](../../agents/web_agent.py#L4858) | 4858 | `"                if result.get(\"pipeline_completion_status\") == \"partial\":"` | — |
+| [SRC-1AE03B9EC3-L004859](../../agents/web_agent.py#L4859) | 4859 | `"                    result[\"search_report\"][\"pipeline_completion_status\"] = \"partial\""` | — |
+| [SRC-1AE03B9EC3-L004860](../../agents/web_agent.py#L4860) | 4860 | `"        except Exception:"` | — |
+| [SRC-1AE03B9EC3-L004861](../../agents/web_agent.py#L4861) | 4861 | `"            # Diagnostics must never replace a valid answer with an internal error."` | — |
 | [SRC-1AE03B9EC3-L004862](../../agents/web_agent.py#L4862) | 4862 | `"            result[\"research_completion\"] = {"` | — |
 | [SRC-1AE03B9EC3-L004863](../../agents/web_agent.py#L4863) | 4863 | `"                \"status\": \"diagnostics_not_computed\","` | — |
 | [SRC-1AE03B9EC3-L004864](../../agents/web_agent.py#L4864) | 4864 | `"                \"semantic_verification\": \"not_performed\","` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L005629](../../agents/web_agent.py#L5629) | 5629 | `"                    for item in original_queries"` | — |
 | [SRC-1AE03B9EC3-L005630](../../agents/web_agent.py#L5630) | 5630 | `"                }"` | — |
 | [SRC-1AE03B9EC3-L005631](../../agents/web_agent.py#L5631) | 5631 | `"                if repair_query and _normalize_search_query(repair_query).casefold() in known_queries:"` | — |
-| [SRC-1AE03B9EC3-L005632](../../agents/web_agent.py#L5632) | 5632 | `"                    repair_query = compact_search_query("` | — |
-| [SRC-1AE03B9EC3-L005633](../../agents/web_agent.py#L5633) | 5633 | `"                        f\"{base_query} independent corroborating evidence\""` | — |
-| [SRC-1AE03B9EC3-L005634](../../agents/web_agent.py#L5634) | 5634 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L005635](../../agents/web_agent.py#L5635) | 5635 | `"                if repair_query and _relevance_query_tokens(repair_query) and ("` | — |
-| [SRC-1AE03B9EC3-L005636](../../agents/web_agent.py#L5636) | 5636 | `"                    _normalize_search_query(repair_query).casefold() not in known_queries"` | — |
-| [SRC-1AE03B9EC3-L005637](../../agents/web_agent.py#L5637) | 5637 | `"                ):"` | — |
-| [SRC-1AE03B9EC3-L005638](../../agents/web_agent.py#L5638) | 5638 | `"                    initial_source_count = len(sources)"` | — |
-| [SRC-1AE03B9EC3-L005639](../../agents/web_agent.py#L5639) | 5639 | `"                    initial_domain_count = len(independent_domains)"` | — |
-| [SRC-1AE03B9EC3-L005640](../../agents/web_agent.py#L5640) | 5640 | `"                    evidence_repair[\"attempted\"] = True"` | — |
-| [SRC-1AE03B9EC3-L005641](../../agents/web_agent.py#L5641) | 5641 | `"                    evidence_repair[\"reason\"] = \"thin_or_unrelated_initial_evidence\""` | — |
-| [SRC-1AE03B9EC3-L005642](../../agents/web_agent.py#L5642) | 5642 | `"                    evidence_repair[\"query\"] = repair_query"` | — |
-| [SRC-1AE03B9EC3-L005643](../../agents/web_agent.py#L5643) | 5643 | `"                    repair_plan = dict(plan)"` | — |
-| [SRC-1AE03B9EC3-L005644](../../agents/web_agent.py#L5644) | 5644 | `"                    repair_plan.update({"` | — |
-| [SRC-1AE03B9EC3-L005645](../../agents/web_agent.py#L5645) | 5645 | `"                        \"queries\": [repair_query],"` | — |
-| [SRC-1AE03B9EC3-L005646](../../agents/web_agent.py#L5646) | 5646 | `"                        \"depth\": \"standard\","` | — |
-| [SRC-1AE03B9EC3-L005647](../../agents/web_agent.py#L5647) | 5647 | `"                        \"social_focus\": False,"` | — |
-| [SRC-1AE03B9EC3-L005648](../../agents/web_agent.py#L5648) | 5648 | `"                        \"platforms\": [],"` | — |
-| [SRC-1AE03B9EC3-L005649](../../agents/web_agent.py#L5649) | 5649 | `"                        \"direct_urls\": [],"` | — |
-| [SRC-1AE03B9EC3-L005650](../../agents/web_agent.py#L5650) | 5650 | `"                    })"` | — |
-| [SRC-1AE03B9EC3-L005651](../../agents/web_agent.py#L5651) | 5651 | `"                    try:"` | — |
-| [SRC-1AE03B9EC3-L005652](../../agents/web_agent.py#L5652) | 5652 | `"                        repair_sources, repair_warnings, repair_report = self._collect_research("` | — |
-| [SRC-1AE03B9EC3-L005653](../../agents/web_agent.py#L5653) | 5653 | `"                            repair_plan"` | — |
-| [SRC-1AE03B9EC3-L005654](../../agents/web_agent.py#L5654) | 5654 | `"                        )"` | — |
-| [SRC-1AE03B9EC3-L005655](../../agents/web_agent.py#L5655) | 5655 | `"                    except (RuntimeError, AgentDependencyError, ValueError) as exc:"` | — |
-| [SRC-1AE03B9EC3-L005656](../../agents/web_agent.py#L5656) | 5656 | `"                        repair_sources = []"` | — |
-| [SRC-1AE03B9EC3-L005657](../../agents/web_agent.py#L5657) | 5657 | `"                        repair_warnings = []"` | — |
-| [SRC-1AE03B9EC3-L005658](../../agents/web_agent.py#L5658) | 5658 | `"                        repair_report = {"` | — |
-| [SRC-1AE03B9EC3-L005659](../../agents/web_agent.py#L5659) | 5659 | `"                            \"queries_planned\": 1,"` | — |
-| [SRC-1AE03B9EC3-L005660](../../agents/web_agent.py#L5660) | 5660 | `"                            \"queries_attempted\": None,"` | — |
-| [SRC-1AE03B9EC3-L005661](../../agents/web_agent.py#L5661) | 5661 | `"                            \"queries_attempted_known\": False,"` | — |

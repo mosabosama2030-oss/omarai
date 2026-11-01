@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001581 إلى SRC-F725E90B2A-L002380
+- النطاق: SRC-F725E90B2A-L001551 إلى SRC-F725E90B2A-L002350
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001551](../../tests/test_web_agent.py#L1551) | 1551 | `"    assert result[\"kind\"] == \"web_research\""` | — |
+| [SRC-F725E90B2A-L001552](../../tests/test_web_agent.py#L1552) | 1552 | `"    assert len(result[\"sources\"]) == 1"` | — |
+| [SRC-F725E90B2A-L001553](../../tests/test_web_agent.py#L1553) | 1553 | `"    assert result[\"sources\"][0][\"url\"] == \"https://digital.gov.eg/\""` | — |
+| [SRC-F725E90B2A-L001554](../../tests/test_web_agent.py#L1554) | 1554 | `"    assert any(\"نتيجة مرشحة\" in warning for warning in result[\"warnings\"])"` | — |
+| [SRC-F725E90B2A-L001555](../../tests/test_web_agent.py#L1555) | 1555 | `""` | — |
+| [SRC-F725E90B2A-L001556](../../tests/test_web_agent.py#L1556) | 1556 | `""` | — |
+| [SRC-F725E90B2A-L001557](../../tests/test_web_agent.py#L1557) | 1557 | `"def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L001558](../../tests/test_web_agent.py#L1558) | 1558 | `""` | — |
+| [SRC-F725E90B2A-L001559](../../tests/test_web_agent.py#L1559) | 1559 | `"    rss = \"\"\"<rss><channel>"` | — |
+| [SRC-F725E90B2A-L001560](../../tests/test_web_agent.py#L1560) | 1560 | `"    <item>"` | — |
+| [SRC-F725E90B2A-L001561](../../tests/test_web_agent.py#L1561) | 1561 | `"      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>"` | — |
+| [SRC-F725E90B2A-L001562](../../tests/test_web_agent.py#L1562) | 1562 | `"      <link>https://news.google.com/rss/articles/relevant</link>"` | — |
+| [SRC-F725E90B2A-L001563](../../tests/test_web_agent.py#L1563) | 1563 | `"      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>"` | — |
+| [SRC-F725E90B2A-L001564](../../tests/test_web_agent.py#L1564) | 1564 | `"      <source url=\"https://www.ibm.com/\">IBM</source>"` | — |
+| [SRC-F725E90B2A-L001565](../../tests/test_web_agent.py#L1565) | 1565 | `"      <pubDate>Tue, 27 Oct 2026 10:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L001566](../../tests/test_web_agent.py#L1566) | 1566 | `"    </item>"` | — |
+| [SRC-F725E90B2A-L001567](../../tests/test_web_agent.py#L1567) | 1567 | `"    <item>"` | — |
+| [SRC-F725E90B2A-L001568](../../tests/test_web_agent.py#L1568) | 1568 | `"      <title>نتائج بطولة كرة القدم اليوم</title>"` | — |
+| [SRC-F725E90B2A-L001569](../../tests/test_web_agent.py#L1569) | 1569 | `"      <link>https://news.google.com/rss/articles/irrelevant</link>"` | — |
+| [SRC-F725E90B2A-L001570](../../tests/test_web_agent.py#L1570) | 1570 | `"      <description>تقرير عن الدوري ونتائج المباراة</description>"` | — |
+| [SRC-F725E90B2A-L001571](../../tests/test_web_agent.py#L1571) | 1571 | `"      <source url=\"https://example.org/\">Example News</source>"` | — |
+| [SRC-F725E90B2A-L001572](../../tests/test_web_agent.py#L1572) | 1572 | `"      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L001573](../../tests/test_web_agent.py#L1573) | 1573 | `"    </item>"` | — |
+| [SRC-F725E90B2A-L001574](../../tests/test_web_agent.py#L1574) | 1574 | `"    </channel></rss>\"\"\""` | — |
+| [SRC-F725E90B2A-L001575](../../tests/test_web_agent.py#L1575) | 1575 | `""` | — |
+| [SRC-F725E90B2A-L001576](../../tests/test_web_agent.py#L1576) | 1576 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L001577](../../tests/test_web_agent.py#L1577) | 1577 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L001578](../../tests/test_web_agent.py#L1578) | 1578 | `"        content = rss.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L001579](../../tests/test_web_agent.py#L1579) | 1579 | `""` | — |
+| [SRC-F725E90B2A-L001580](../../tests/test_web_agent.py#L1580) | 1580 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001581](../../tests/test_web_agent.py#L1581) | 1581 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001582](../../tests/test_web_agent.py#L1582) | 1582 | `"        \"agents.web_agent._bounded_http_request\","` | — |
 | [SRC-F725E90B2A-L001583](../../tests/test_web_agent.py#L1583) | 1583 | `"        lambda method, url, **kwargs: FakeResponse(),"` | — |
@@ -786,33 +816,3 @@
 | [SRC-F725E90B2A-L002348](../../tests/test_web_agent.py#L2348) | 2348 | `""` | — |
 | [SRC-F725E90B2A-L002349](../../tests/test_web_agent.py#L2349) | 2349 | `""` | — |
 | [SRC-F725E90B2A-L002350](../../tests/test_web_agent.py#L2350) | 2350 | `"def test_vehicle_request_rejects_property_buyer_signal():"` | — |
-| [SRC-F725E90B2A-L002351](../../tests/test_web_agent.py#L2351) | 2351 | `"    source = {"` | — |
-| [SRC-F725E90B2A-L002352](../../tests/test_web_agent.py#L2352) | 2352 | `"        \"title\": \"Looking to buy an apartment\","` | — |
-| [SRC-F725E90B2A-L002353](../../tests/test_web_agent.py#L2353) | 2353 | `"        \"snippet\": \"Looking to buy an apartment in Cairo.\","` | — |
-| [SRC-F725E90B2A-L002354](../../tests/test_web_agent.py#L2354) | 2354 | `"        \"page_text\": \"I want to buy an apartment this year.\","` | — |
-| [SRC-F725E90B2A-L002355](../../tests/test_web_agent.py#L2355) | 2355 | `"    }"` | — |
-| [SRC-F725E90B2A-L002356](../../tests/test_web_agent.py#L2356) | 2356 | `"    assert WebAgent._lead_intent_evidence(source, \"ابحث عن مشترين لسيارة كهربائية\") is None"` | — |
-| [SRC-F725E90B2A-L002357](../../tests/test_web_agent.py#L2357) | 2357 | `""` | — |
-| [SRC-F725E90B2A-L002358](../../tests/test_web_agent.py#L2358) | 2358 | `""` | — |
-| [SRC-F725E90B2A-L002359](../../tests/test_web_agent.py#L2359) | 2359 | `"def test_property_request_rejects_vehicle_buyer_signal():"` | — |
-| [SRC-F725E90B2A-L002360](../../tests/test_web_agent.py#L2360) | 2360 | `"    source = {"` | — |
-| [SRC-F725E90B2A-L002361](../../tests/test_web_agent.py#L2361) | 2361 | `"        \"title\": \"Looking to buy a used car\","` | — |
-| [SRC-F725E90B2A-L002362](../../tests/test_web_agent.py#L2362) | 2362 | `"        \"snippet\": \"Looking to buy a used car in Cairo.\","` | — |
-| [SRC-F725E90B2A-L002363](../../tests/test_web_agent.py#L2363) | 2363 | `"        \"page_text\": \"I want to buy a used car this year.\","` | — |
-| [SRC-F725E90B2A-L002364](../../tests/test_web_agent.py#L2364) | 2364 | `"    }"` | — |
-| [SRC-F725E90B2A-L002365](../../tests/test_web_agent.py#L2365) | 2365 | `"    assert WebAgent._lead_intent_evidence(source, \"ابحث عن مشترين لشقة في القاهرة\") is None"` | — |
-| [SRC-F725E90B2A-L002366](../../tests/test_web_agent.py#L2366) | 2366 | `""` | — |
-| [SRC-F725E90B2A-L002367](../../tests/test_web_agent.py#L2367) | 2367 | `""` | — |
-| [SRC-F725E90B2A-L002368](../../tests/test_web_agent.py#L2368) | 2368 | `"def test_arabic_typo_repair_keeps_product_topic_not_instruction_text():"` | — |
-| [SRC-F725E90B2A-L002369](../../tests/test_web_agent.py#L2369) | 2369 | `"    queries = WebAgent._lead_generation_queries("` | — |
-| [SRC-F725E90B2A-L002370](../../tests/test_web_agent.py#L2370) | 2370 | `"        \"ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس\""` | — |
-| [SRC-F725E90B2A-L002371](../../tests/test_web_agent.py#L2371) | 2371 | `"    )"` | — |
-| [SRC-F725E90B2A-L002372](../../tests/test_web_agent.py#L2372) | 2372 | `"    assert queries"` | — |
-| [SRC-F725E90B2A-L002373](../../tests/test_web_agent.py#L2373) | 2373 | `"    assert any(\"شقه في التجمع الخامس\" in query for query in queries)"` | — |
-| [SRC-F725E90B2A-L002374](../../tests/test_web_agent.py#L2374) | 2374 | `"    assert all(\"عملاش\" not in query for query in queries)"` | — |
-| [SRC-F725E90B2A-L002375](../../tests/test_web_agent.py#L2375) | 2375 | `""` | — |
-| [SRC-F725E90B2A-L002376](../../tests/test_web_agent.py#L2376) | 2376 | `""` | — |
-| [SRC-F725E90B2A-L002377](../../tests/test_web_agent.py#L2377) | 2377 | `"def test_lead_fallback_only_shows_sources_with_qualified_public_demand():"` | — |
-| [SRC-F725E90B2A-L002378](../../tests/test_web_agent.py#L2378) | 2378 | `"    qualified = {"` | — |
-| [SRC-F725E90B2A-L002379](../../tests/test_web_agent.py#L2379) | 2379 | `"        \"lead_qualification\": \"public_demand_signal\","` | — |
-| [SRC-F725E90B2A-L002380](../../tests/test_web_agent.py#L2380) | 2380 | `"        \"lead_intent_evidence\": {\"phrase\": \"طلب عرض سعر\", \"signal_type\": \"request_for_quotation\"},"` | — |

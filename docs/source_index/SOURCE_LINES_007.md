@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000251 إلى SRC-686F71AA50-L000239
+- النطاق: SRC-8D00DCEC0D-L000221 إلى SRC-686F71AA50-L000209
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000221](../../agents/sales_domain.py#L221) | 221 | `"            \"origin\","` | — |
+| [SRC-8D00DCEC0D-L000222](../../agents/sales_domain.py#L222) | 222 | `"            _enum_value(FactOrigin, self.origin, field_name=\"origin\"),"` | — |
+| [SRC-8D00DCEC0D-L000223](../../agents/sales_domain.py#L223) | 223 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000224](../../agents/sales_domain.py#L224) | 224 | `"        if self.evidence_id is not None:"` | — |
+| [SRC-8D00DCEC0D-L000225](../../agents/sales_domain.py#L225) | 225 | `"            object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000226](../../agents/sales_domain.py#L226) | 226 | `"                self,"` | — |
+| [SRC-8D00DCEC0D-L000227](../../agents/sales_domain.py#L227) | 227 | `"                \"evidence_id\","` | — |
+| [SRC-8D00DCEC0D-L000228](../../agents/sales_domain.py#L228) | 228 | `"                _clean_text(self.evidence_id, field_name=\"evidence_id\", maximum=160),"` | — |
+| [SRC-8D00DCEC0D-L000229](../../agents/sales_domain.py#L229) | 229 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000230](../../agents/sales_domain.py#L230) | 230 | `"        if self.origin == FactOrigin.SOURCE_VERIFIED and not self.evidence_id:"` | — |
+| [SRC-8D00DCEC0D-L000231](../../agents/sales_domain.py#L231) | 231 | `"            raise ValueError(\"source_verified product facts require evidence_id\")"` | — |
+| [SRC-8D00DCEC0D-L000232](../../agents/sales_domain.py#L232) | 232 | `""` | — |
+| [SRC-8D00DCEC0D-L000233](../../agents/sales_domain.py#L233) | 233 | `"    def to_dict(self) -> dict[str, str \| None]:"` | — |
+| [SRC-8D00DCEC0D-L000234](../../agents/sales_domain.py#L234) | 234 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000235](../../agents/sales_domain.py#L235) | 235 | `"            \"field\": self.field,"` | — |
+| [SRC-8D00DCEC0D-L000236](../../agents/sales_domain.py#L236) | 236 | `"            \"value\": self.value,"` | — |
+| [SRC-8D00DCEC0D-L000237](../../agents/sales_domain.py#L237) | 237 | `"            \"origin\": self.origin.value,"` | — |
+| [SRC-8D00DCEC0D-L000238](../../agents/sales_domain.py#L238) | 238 | `"            \"evidence_id\": self.evidence_id,"` | — |
+| [SRC-8D00DCEC0D-L000239](../../agents/sales_domain.py#L239) | 239 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000240](../../agents/sales_domain.py#L240) | 240 | `""` | — |
+| [SRC-8D00DCEC0D-L000241](../../agents/sales_domain.py#L241) | 241 | `""` | — |
+| [SRC-8D00DCEC0D-L000242](../../agents/sales_domain.py#L242) | 242 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000243](../../agents/sales_domain.py#L243) | 243 | `"class ProductProfile:"` | — |
+| [SRC-8D00DCEC0D-L000244](../../agents/sales_domain.py#L244) | 244 | `"    \"\"\"Explicit product/service facts supplied by a user or supported by sources.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000245](../../agents/sales_domain.py#L245) | 245 | `""` | — |
+| [SRC-8D00DCEC0D-L000246](../../agents/sales_domain.py#L246) | 246 | `"    name: str"` | — |
+| [SRC-8D00DCEC0D-L000247](../../agents/sales_domain.py#L247) | 247 | `"    aliases: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000248](../../agents/sales_domain.py#L248) | 248 | `"    category_path: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000249](../../agents/sales_domain.py#L249) | 249 | `"    use_cases: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000250](../../agents/sales_domain.py#L250) | 250 | `"    problems_solved: tuple[str, ...] = ()"` | — |
 | [SRC-8D00DCEC0D-L000251](../../agents/sales_domain.py#L251) | 251 | `"    facts: tuple[ProductFact, ...] = ()"` | — |
 | [SRC-8D00DCEC0D-L000252](../../agents/sales_domain.py#L252) | 252 | `""` | — |
 | [SRC-8D00DCEC0D-L000253](../../agents/sales_domain.py#L253) | 253 | `"    def __post_init__(self) -> None:"` | — |
@@ -804,33 +834,3 @@
 | [SRC-686F71AA50-L000207](../../agents/task_understanding.py#L207) | 207 | `"        \"صحح لغويا\", \"راجع النص\", \"حسن الصياغة\", \"draft\", \"write\", \"rewrite\","` | — |
 | [SRC-686F71AA50-L000208](../../agents/task_understanding.py#L208) | 208 | `"        \"proofread\", \"edit this\", \"polish this\", \"compose an email\","` | — |
 | [SRC-686F71AA50-L000209](../../agents/task_understanding.py#L209) | 209 | `"    ),"` | — |
-| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    \"planning\": ("` | — |
-| [SRC-686F71AA50-L000211](../../agents/task_understanding.py#L211) | 211 | `"        \"ضع خطة\", \"خطة عمل\", \"خطة زمنية\", \"جدول زمني\", \"خطوات تنفيذ\","` | — |
-| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"        \"نظم لي\", \"رتب لي\", \"plan\", \"planning\", \"roadmap\", \"itinerary\","` | — |
-| [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"        \"project schedule\", \"timeline\", \"project plan\","` | — |
-| [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    ),"` | — |
-| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    \"creative_generation\": ("` | — |
-| [SRC-686F71AA50-L000216](../../agents/task_understanding.py#L216) | 216 | `"        \"اكتب قصة\", \"قصة قصيرة\", \"قصيدة\", \"سيناريو\", \"اقترح افكار\","` | — |
-| [SRC-686F71AA50-L000217](../../agents/task_understanding.py#L217) | 217 | `"        \"اقترح أفكار\", \"عصف ذهني\", \"brainstorm\", \"creative writing\","` | — |
-| [SRC-686F71AA50-L000218](../../agents/task_understanding.py#L218) | 218 | `"        \"write a story\", \"poem\", \"generate ideas\","` | — |
-| [SRC-686F71AA50-L000219](../../agents/task_understanding.py#L219) | 219 | `"    ),"` | — |
-| [SRC-686F71AA50-L000220](../../agents/task_understanding.py#L220) | 220 | `"    \"explain_or_define\": ("` | — |
-| [SRC-686F71AA50-L000221](../../agents/task_understanding.py#L221) | 221 | `"        \"ما معنى\", \"يعني ايه\", \"ما هو\", \"ما هي\", \"اشرح\", \"وضح مفهوم\","` | — |
-| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"        \"what is\", \"what does\", \"explain\", \"define\","` | — |
-| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"    ),"` | — |
-| [SRC-686F71AA50-L000224](../../agents/task_understanding.py#L224) | 224 | `"    \"general_research\": ("` | — |
-| [SRC-686F71AA50-L000225](../../agents/task_understanding.py#L225) | 225 | `"        \"بحث عميق\", \"بحث شامل\", \"بحث معمق\", \"تحقق من\", \"مصادر موثوقه\","` | — |
-| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"        \"اذكر المصادر\", \"مع مصادر\", \"بالمصادر\", \"deep research\", \"research\","` | — |
-| [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `"        \"verify\", \"fact check\", \"with sources\", \"cite sources\","` | — |
-| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"    ),"` | — |
-| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"    \"output_concise\": ("` | — |
-| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"        \"باختصار\", \"بإيجاز\", \"مختصر\", \"من غير إطالة\", \"بدون إطالة\","` | — |
-| [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"        \"briefly\", \"in brief\", \"concise\", \"short answer\", \"keep it short\","` | — |
-| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"    ),"` | — |
-| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"    \"output_detailed\": ("` | — |
-| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"        \"بالتفصيل\", \"شرح وافي\", \"اشرح بالتفصيل\", \"خطوة بخطوة\","` | — |
-| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"        \"in detail\", \"step by step\", \"comprehensive explanation\", \"walkthrough\","` | — |
-| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"    ),"` | — |
-| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"    \"output_examples\": ("` | — |
-| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"        \"مع مثال\", \"امثلة\", \"مثال عملي\", \"بأمثلة\", \"for example\","` | — |
-| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"        \"give examples\", \"practical example\", \"worked example\","` | — |

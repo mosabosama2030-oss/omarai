@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003262 إلى SRC-1AE03B9EC3-L004061
+- النطاق: SRC-1AE03B9EC3-L003232 إلى SRC-1AE03B9EC3-L004031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003232](../../agents/web_agent.py#L3232) | 3232 | `"                    except (TypeError, ValueError, OverflowError):"` | — |
+| [SRC-1AE03B9EC3-L003233](../../agents/web_agent.py#L3233) | 3233 | `"                        continue"` | — |
+| [SRC-1AE03B9EC3-L003234](../../agents/web_agent.py#L3234) | 3234 | `"            rejection_counts_observed = ("` | — |
+| [SRC-1AE03B9EC3-L003235](../../agents/web_agent.py#L3235) | 3235 | `"                rejection_counts_seen"` | — |
+| [SRC-1AE03B9EC3-L003236](../../agents/web_agent.py#L3236) | 3236 | `"                and rejection_counts_complete"` | — |
+| [SRC-1AE03B9EC3-L003237](../../agents/web_agent.py#L3237) | 3237 | `"                and sum(rejection_count_totals.values()) == rejected_count"` | — |
+| [SRC-1AE03B9EC3-L003238](../../agents/web_agent.py#L3238) | 3238 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003239](../../agents/web_agent.py#L3239) | 3239 | `"            candidate_rejection_observed = \"filtered_all\" in statuses or rejected_count > 0"` | — |
+| [SRC-1AE03B9EC3-L003240](../../agents/web_agent.py#L3240) | 3240 | `"            connectors.append({"` | — |
+| [SRC-1AE03B9EC3-L003241](../../agents/web_agent.py#L3241) | 3241 | `"                \"name\": name, \"in_codebase\": name in config or bool(attempts),"` | — |
+| [SRC-1AE03B9EC3-L003242](../../agents/web_agent.py#L3242) | 3242 | `"                \"implementation_status\": implementation_status,"` | — |
+| [SRC-1AE03B9EC3-L003243](../../agents/web_agent.py#L3243) | 3243 | `"                \"configured\": bool(ready), \"configuration_status\": config_status,"` | — |
+| [SRC-1AE03B9EC3-L003244](../../agents/web_agent.py#L3244) | 3244 | `"                \"attempted\": attempted, \"available_for_this_request\": available,"` | — |
+| [SRC-1AE03B9EC3-L003245](../../agents/web_agent.py#L3245) | 3245 | `"                \"verified_for_this_request\": verified, \"failure_observed\": failure_observed,"` | — |
+| [SRC-1AE03B9EC3-L003246](../../agents/web_agent.py#L3246) | 3246 | `"                \"candidate_rejection_observed\": candidate_rejection_observed,"` | — |
+| [SRC-1AE03B9EC3-L003247](../../agents/web_agent.py#L3247) | 3247 | `"                \"status\": status, \"observed_statuses\": list(dict.fromkeys(statuses))[:6],"` | — |
+| [SRC-1AE03B9EC3-L003248](../../agents/web_agent.py#L3248) | 3248 | `"                \"result_count\": result_count, \"accepted_count\": accepted_count,"` | — |
+| [SRC-1AE03B9EC3-L003249](../../agents/web_agent.py#L3249) | 3249 | `"                \"useful_result_count\": useful.get(name, 0),"` | — |
+| [SRC-1AE03B9EC3-L003250](../../agents/web_agent.py#L3250) | 3250 | `"                \"rejected_count\": rejected_count,"` | — |
+| [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"                \"rejection_counts_observed\": rejection_counts_observed,"` | — |
+| [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `"                \"rejection_counts\": rejection_count_totals if rejection_counts_observed else None,"` | — |
+| [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"                \"queries\": queries, \"errors\": errors,"` | — |
+| [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"            \"scope\": \"this_request_only\","` | — |
+| [SRC-1AE03B9EC3-L003257](../../agents/web_agent.py#L3257) | 3257 | `"            \"semantics\": \"result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.\","` | — |
+| [SRC-1AE03B9EC3-L003258](../../agents/web_agent.py#L3258) | 3258 | `"            \"attempted_count\": sum(bool(item[\"attempted\"]) for item in connectors),"` | — |
+| [SRC-1AE03B9EC3-L003259](../../agents/web_agent.py#L3259) | 3259 | `"            \"failed_count\": sum(item[\"status\"] in {\"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\", \"rate_limited\"} for item in connectors),"` | — |
+| [SRC-1AE03B9EC3-L003260](../../agents/web_agent.py#L3260) | 3260 | `"            \"connectors\": connectors[:24],"` | — |
+| [SRC-1AE03B9EC3-L003261](../../agents/web_agent.py#L3261) | 3261 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L003262](../../agents/web_agent.py#L3262) | 3262 | `""` | — |
 | [SRC-1AE03B9EC3-L003263](../../agents/web_agent.py#L3263) | 3263 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L003264](../../agents/web_agent.py#L3264) | 3264 | `"    def _sanitize_history(history: Any) -> list[dict[str, str]]:"` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L004029](../../agents/web_agent.py#L4029) | 4029 | `"            max_tokens=2200 if plan.get(\"depth\") == \"deep\" else 1500,"` | — |
 | [SRC-1AE03B9EC3-L004030](../../agents/web_agent.py#L4030) | 4030 | `"            temperature=0.15,"` | — |
 | [SRC-1AE03B9EC3-L004031](../../agents/web_agent.py#L4031) | 4031 | `"            timeout=self._effective_timeout(min(self.timeout, 28)),"` | — |
-| [SRC-1AE03B9EC3-L004032](../../agents/web_agent.py#L4032) | 4032 | `"            model=self.answer_model,"` | — |
-| [SRC-1AE03B9EC3-L004033](../../agents/web_agent.py#L4033) | 4033 | `"            enable_web_search=self.openrouter_web_search_enabled,"` | — |
-| [SRC-1AE03B9EC3-L004034](../../agents/web_agent.py#L4034) | 4034 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004035](../../agents/web_agent.py#L4035) | 4035 | `"        if len(answer) > 24_000:"` | — |
-| [SRC-1AE03B9EC3-L004036](../../agents/web_agent.py#L4036) | 4036 | `"            raise RuntimeError("` | — |
-| [SRC-1AE03B9EC3-L004037](../../agents/web_agent.py#L4037) | 4037 | `"                \"إجابة النموذج تجاوزت حد طول النص؛ لم تُعرض باعتبارها إجابة مكتملة.\""` | — |
-| [SRC-1AE03B9EC3-L004038](../../agents/web_agent.py#L4038) | 4038 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004039](../../agents/web_agent.py#L4039) | 4039 | `"        return answer"` | — |
-| [SRC-1AE03B9EC3-L004040](../../agents/web_agent.py#L4040) | 4040 | `""` | — |
-| [SRC-1AE03B9EC3-L004041](../../agents/web_agent.py#L4041) | 4041 | `"    def _repair_answer_coverage("` | — |
-| [SRC-1AE03B9EC3-L004042](../../agents/web_agent.py#L4042) | 4042 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L004043](../../agents/web_agent.py#L4043) | 4043 | `"        question: str,"` | — |
-| [SRC-1AE03B9EC3-L004044](../../agents/web_agent.py#L4044) | 4044 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L004045](../../agents/web_agent.py#L4045) | 4045 | `"        sources: list[dict[str, Any]],"` | — |
-| [SRC-1AE03B9EC3-L004046](../../agents/web_agent.py#L4046) | 4046 | `"        missing_targets: list[str],"` | — |
-| [SRC-1AE03B9EC3-L004047](../../agents/web_agent.py#L4047) | 4047 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L004048](../../agents/web_agent.py#L4048) | 4048 | `"        \"\"\"Make one bounded, evidence-constrained pass at addressing possibly missing targets.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L004049](../../agents/web_agent.py#L4049) | 4049 | `"        if not missing_targets:"` | — |
-| [SRC-1AE03B9EC3-L004050](../../agents/web_agent.py#L4050) | 4050 | `"            return answer"` | — |
-| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
-| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
-| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"            evidence = page_text or snippet or \"لا يتوفر نص قابل للقراءة.\""` | — |
-| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"            evidence_kind = \"نص صفحة مستخرج\" if bool(source.get(\"page_fetched\")) and page_text else \"مقتطف بحث\""` | — |
-| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"            source_blocks.append("` | — |
-| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                f\"الرابط: {source.get('url', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                f\"نوع الدليل المتاح: {evidence_kind}\\n\""` | — |
-| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                f\"النص: {_clean_text(evidence, 1800)}\""` | — |

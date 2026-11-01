@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000062 إلى SRC-1AE03B9EC3-L000861
+- النطاق: SRC-1AE03B9EC3-L000032 إلى SRC-1AE03B9EC3-L000831
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000032](../../agents/web_agent.py#L32) | 32 | `")"` | — |
+| [SRC-1AE03B9EC3-L000033](../../agents/web_agent.py#L33) | 33 | `"from agents.answer_validation import audit_answer_integrity"` | — |
+| [SRC-1AE03B9EC3-L000034](../../agents/web_agent.py#L34) | 34 | `"from agents.requirement_evidence import build_requirement_evidence_ledger"` | — |
+| [SRC-1AE03B9EC3-L000035](../../agents/web_agent.py#L35) | 35 | `"from agents.claim_evidence import build_claim_evidence_ledger"` | — |
+| [SRC-1AE03B9EC3-L000036](../../agents/web_agent.py#L36) | 36 | `"from agents.request_budget import RequestBudget, RequestBudgetExceeded"` | — |
+| [SRC-1AE03B9EC3-L000037](../../agents/web_agent.py#L37) | 37 | `"from agents.aspect_planning import ("` | — |
+| [SRC-1AE03B9EC3-L000038](../../agents/web_agent.py#L38) | 38 | `"    arabic_aspect_diagnostics,"` | — |
+| [SRC-1AE03B9EC3-L000039](../../agents/web_agent.py#L39) | 39 | `"    build_evidence_ledger,"` | — |
+| [SRC-1AE03B9EC3-L000040](../../agents/web_agent.py#L40) | 40 | `"    extract_aspects,"` | — |
+| [SRC-1AE03B9EC3-L000041](../../agents/web_agent.py#L41) | 41 | `"    repair_queries_for_missing_aspects,"` | — |
+| [SRC-1AE03B9EC3-L000042](../../agents/web_agent.py#L42) | 42 | `")"` | — |
+| [SRC-1AE03B9EC3-L000043](../../agents/web_agent.py#L43) | 43 | `"from agents.search_connectors import search_arxiv, search_crossref, search_openalex"` | — |
+| [SRC-1AE03B9EC3-L000044](../../agents/web_agent.py#L44) | 44 | `"from agents.research import ("` | — |
+| [SRC-1AE03B9EC3-L000045](../../agents/web_agent.py#L45) | 45 | `"    MAX_PLAN_QUERIES,"` | — |
+| [SRC-1AE03B9EC3-L000046](../../agents/web_agent.py#L46) | 46 | `"    SOCIAL_DOMAINS,"` | — |
+| [SRC-1AE03B9EC3-L000047](../../agents/web_agent.py#L47) | 47 | `"    compact_search_query,"` | — |
+| [SRC-1AE03B9EC3-L000048](../../agents/web_agent.py#L48) | 48 | `"    evidence_signal_report,"` | — |
+| [SRC-1AE03B9EC3-L000049](../../agents/web_agent.py#L49) | 49 | `"    fallback_plan,"` | — |
+| [SRC-1AE03B9EC3-L000050](../../agents/web_agent.py#L50) | 50 | `"    fuse_ranked_results,"` | — |
+| [SRC-1AE03B9EC3-L000051](../../agents/web_agent.py#L51) | 51 | `"    registrable_domain,"` | — |
+| [SRC-1AE03B9EC3-L000052](../../agents/web_agent.py#L52) | 52 | `"    extract_question_coverage_targets,"` | — |
+| [SRC-1AE03B9EC3-L000053](../../agents/web_agent.py#L53) | 53 | `"    validate_plan,"` | — |
+| [SRC-1AE03B9EC3-L000054](../../agents/web_agent.py#L54) | 54 | `")"` | — |
+| [SRC-1AE03B9EC3-L000055](../../agents/web_agent.py#L55) | 55 | `"from agents.research_guardrails import apply_source_guardrails"` | — |
+| [SRC-1AE03B9EC3-L000056](../../agents/web_agent.py#L56) | 56 | `"from agents.research_completion import build_research_completion"` | — |
+| [SRC-1AE03B9EC3-L000057](../../agents/web_agent.py#L57) | 57 | `"from agents.tool_execution_status import build_tool_execution_matrix"` | — |
+| [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `"from agents.task_understanding import ("` | — |
+| [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `"    reasoning_guidance_for_task_spec,"` | — |
+| [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `"    validate_task_spec,"` | — |
+| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `")"` | — |
 | [SRC-1AE03B9EC3-L000062](../../agents/web_agent.py#L62) | 62 | `"from agents.task_understanding import build_query_strategy_matrix, build_task_spec"` | — |
 | [SRC-1AE03B9EC3-L000063](../../agents/web_agent.py#L63) | 63 | `"from agents.research_pipeline import build_research_pipeline, evaluate_research_evidence"` | — |
 | [SRC-1AE03B9EC3-L000064](../../agents/web_agent.py#L64) | 64 | `""` | — |
@@ -786,33 +816,3 @@
 | [SRC-1AE03B9EC3-L000829](../../agents/web_agent.py#L829) | 829 | `"            safe = re.sub("` | — |
 | [SRC-1AE03B9EC3-L000830](../../agents/web_agent.py#L830) | 830 | `"                r\"(?i)\\b(api[_-]?key\|access[_-]?token\|refresh[_-]?token\|token\|secret\|password)\\s*[:=]\\s*[^\\s,;]+\","` | — |
 | [SRC-1AE03B9EC3-L000831](../../agents/web_agent.py#L831) | 831 | `"                r\"\\1=[REDACTED]\","` | — |
-| [SRC-1AE03B9EC3-L000832](../../agents/web_agent.py#L832) | 832 | `"                safe,"` | — |
-| [SRC-1AE03B9EC3-L000833](../../agents/web_agent.py#L833) | 833 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L000834](../../agents/web_agent.py#L834) | 834 | `"            safe = re.sub("` | — |
-| [SRC-1AE03B9EC3-L000835](../../agents/web_agent.py#L835) | 835 | `"                r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\s]+\","` | — |
-| [SRC-1AE03B9EC3-L000836](../../agents/web_agent.py#L836) | 836 | `"                r\"\\1[REDACTED]\","` | — |
-| [SRC-1AE03B9EC3-L000837](../../agents/web_agent.py#L837) | 837 | `"                safe,"` | — |
-| [SRC-1AE03B9EC3-L000838](../../agents/web_agent.py#L838) | 838 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L000839](../../agents/web_agent.py#L839) | 839 | `"            return safe[:limit]"` | — |
-| [SRC-1AE03B9EC3-L000840](../../agents/web_agent.py#L840) | 840 | `""` | — |
-| [SRC-1AE03B9EC3-L000841](../../agents/web_agent.py#L841) | 841 | `"        record = {"` | — |
-| [SRC-1AE03B9EC3-L000842](../../agents/web_agent.py#L842) | 842 | `"            \"provider\": provider,"` | — |
-| [SRC-1AE03B9EC3-L000843](../../agents/web_agent.py#L843) | 843 | `"            \"query\": redact(query, 220),"` | — |
-| [SRC-1AE03B9EC3-L000844](../../agents/web_agent.py#L844) | 844 | `"            \"status\": status,"` | — |
-| [SRC-1AE03B9EC3-L000845](../../agents/web_agent.py#L845) | 845 | `"            \"result_count\": int(result_count),"` | — |
-| [SRC-1AE03B9EC3-L000846](../../agents/web_agent.py#L846) | 846 | `"            \"accepted_count\": int(result_count if accepted_count is None else accepted_count),"` | — |
-| [SRC-1AE03B9EC3-L000847](../../agents/web_agent.py#L847) | 847 | `"            \"rejected_count\": int(rejected_count),"` | — |
-| [SRC-1AE03B9EC3-L000848](../../agents/web_agent.py#L848) | 848 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L000849](../../agents/web_agent.py#L849) | 849 | `"        if isinstance(rejection_counts, dict):"` | — |
-| [SRC-1AE03B9EC3-L000850](../../agents/web_agent.py#L850) | 850 | `"            safe_counts: dict[str, int] = {}"` | — |
-| [SRC-1AE03B9EC3-L000851](../../agents/web_agent.py#L851) | 851 | `"            for reason in _PROVIDER_REJECTION_REASONS:"` | — |
-| [SRC-1AE03B9EC3-L000852](../../agents/web_agent.py#L852) | 852 | `"                try:"` | — |
-| [SRC-1AE03B9EC3-L000853](../../agents/web_agent.py#L853) | 853 | `"                    safe_counts[reason] = max(0, int(rejection_counts.get(reason, 0) or 0))"` | — |
-| [SRC-1AE03B9EC3-L000854](../../agents/web_agent.py#L854) | 854 | `"                except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-1AE03B9EC3-L000855](../../agents/web_agent.py#L855) | 855 | `"                    safe_counts[reason] = 0"` | — |
-| [SRC-1AE03B9EC3-L000856](../../agents/web_agent.py#L856) | 856 | `"            record[\"rejection_counts\"] = safe_counts"` | — |
-| [SRC-1AE03B9EC3-L000857](../../agents/web_agent.py#L857) | 857 | `"        if error:"` | — |
-| [SRC-1AE03B9EC3-L000858](../../agents/web_agent.py#L858) | 858 | `"            record[\"error\"] = redact(error, 180)"` | — |
-| [SRC-1AE03B9EC3-L000859](../../agents/web_agent.py#L859) | 859 | `"        with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L000860](../../agents/web_agent.py#L860) | 860 | `"            self._provider_diagnostics.append(record)"` | — |
-| [SRC-1AE03B9EC3-L000861](../../agents/web_agent.py#L861) | 861 | `"            # Bound memory when the instance serves many user requests."` | — |

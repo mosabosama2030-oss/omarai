@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000051 إلى SRC-59CF4B7DE8-L000400
+- النطاق: SRC-C9CF9B54F8-L000021 إلى SRC-59CF4B7DE8-L000370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000021](../../agents/omarai.py#L21) | 21 | `"}"` | — |
+| [SRC-C9CF9B54F8-L000022](../../agents/omarai.py#L22) | 22 | `"NOT_BUYER = (\"مش عايز اشتري\", \"مش عاوز اشتري\", \"عايز ابيع\", \"عاوز ابيع\", \"عندي شقة للبيع\", \"انا وسيط\", \"انا سمسار\", \"عايز ايجار\", \"للايجار\")"` | — |
+| [SRC-C9CF9B54F8-L000023](../../agents/omarai.py#L23) | 23 | `""` | — |
+| [SRC-C9CF9B54F8-L000024](../../agents/omarai.py#L24) | 24 | `"def normalize(text: str) -> str:"` | — |
+| [SRC-C9CF9B54F8-L000025](../../agents/omarai.py#L25) | 25 | `"    value = unicodedata.normalize(\"NFKC\", str(text)).translate(_TRANSLATION)"` | — |
+| [SRC-C9CF9B54F8-L000026](../../agents/omarai.py#L26) | 26 | `"    value = \"\".join(c for c in value if not unicodedata.category(c).startswith(\"M\"))"` | — |
+| [SRC-C9CF9B54F8-L000027](../../agents/omarai.py#L27) | 27 | `"    return re.sub(r\"\\s+\", \" \", re.sub(r\"[^\\w\\s]\", \" \", value.casefold())).strip()"` | — |
+| [SRC-C9CF9B54F8-L000028](../../agents/omarai.py#L28) | 28 | `""` | — |
+| [SRC-C9CF9B54F8-L000029](../../agents/omarai.py#L29) | 29 | `"def now_utc() -> str:"` | — |
+| [SRC-C9CF9B54F8-L000030](../../agents/omarai.py#L30) | 30 | `"    return datetime.now(UTC).isoformat(timespec=\"seconds\").replace(\"+00:00\", \"Z\")"` | — |
+| [SRC-C9CF9B54F8-L000031](../../agents/omarai.py#L31) | 31 | `""` | — |
+| [SRC-C9CF9B54F8-L000032](../../agents/omarai.py#L32) | 32 | `"def _csv_safe_cell(value: object) -> str:"` | — |
+| [SRC-C9CF9B54F8-L000033](../../agents/omarai.py#L33) | 33 | `"    \"\"\"Prefix spreadsheet formulas even when hidden whitespace/control chars precede them.\"\"\""` | — |
+| [SRC-C9CF9B54F8-L000034](../../agents/omarai.py#L34) | 34 | `"    text = \"\" if value is None else str(value)"` | — |
+| [SRC-C9CF9B54F8-L000035](../../agents/omarai.py#L35) | 35 | `"    if not text:"` | — |
+| [SRC-C9CF9B54F8-L000036](../../agents/omarai.py#L36) | 36 | `"        return text"` | — |
+| [SRC-C9CF9B54F8-L000037](../../agents/omarai.py#L37) | 37 | `"    index = 0"` | — |
+| [SRC-C9CF9B54F8-L000038](../../agents/omarai.py#L38) | 38 | `"    while index < len(text) and ("` | — |
+| [SRC-C9CF9B54F8-L000039](../../agents/omarai.py#L39) | 39 | `"        text[index].isspace()"` | — |
+| [SRC-C9CF9B54F8-L000040](../../agents/omarai.py#L40) | 40 | `"        or unicodedata.category(text[index]) in {\"Cc\", \"Cf\"}"` | — |
+| [SRC-C9CF9B54F8-L000041](../../agents/omarai.py#L41) | 41 | `"    ):"` | — |
+| [SRC-C9CF9B54F8-L000042](../../agents/omarai.py#L42) | 42 | `"        index += 1"` | — |
+| [SRC-C9CF9B54F8-L000043](../../agents/omarai.py#L43) | 43 | `"    first_non_format = text[index:index + 1]"` | — |
+| [SRC-C9CF9B54F8-L000044](../../agents/omarai.py#L44) | 44 | `"    formula_prefixes = {\"=\", \"+\", \"-\", \"@\", \"＝\", \"＋\", \"－\", \"＠\"}"` | — |
+| [SRC-C9CF9B54F8-L000045](../../agents/omarai.py#L45) | 45 | `"    if text[0] in \"\\t\\r\\n\" or first_non_format in formula_prefixes:"` | — |
+| [SRC-C9CF9B54F8-L000046](../../agents/omarai.py#L46) | 46 | `"        # OWASP notes that a tab inside the quoted CSV field is more resilient"` | — |
+| [SRC-C9CF9B54F8-L000047](../../agents/omarai.py#L47) | 47 | `"        # in Excel than an apostrophe, although no CSV mitigation is universal."` | — |
+| [SRC-C9CF9B54F8-L000048](../../agents/omarai.py#L48) | 48 | `"        return \"\\t\" + text"` | — |
+| [SRC-C9CF9B54F8-L000049](../../agents/omarai.py#L49) | 49 | `"    return text"` | — |
+| [SRC-C9CF9B54F8-L000050](../../agents/omarai.py#L50) | 50 | `""` | — |
 | [SRC-C9CF9B54F8-L000051](../../agents/omarai.py#L51) | 51 | `"def analyze(text: str, product_terms=(), location_terms=()) -> dict:"` | — |
 | [SRC-C9CF9B54F8-L000052](../../agents/omarai.py#L52) | 52 | `"    if not isinstance(text, str) or not text.strip():"` | — |
 | [SRC-C9CF9B54F8-L000053](../../agents/omarai.py#L53) | 53 | `"        raise ValueError(\"text must not be empty\")"` | — |
@@ -813,33 +843,3 @@
 | [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    intent_route: str = \"deterministic_fallback\","` | — |
 | [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `"    mode: str = \"auto\","` | — |
 | [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `"    \"\"\"Attach deterministic task interpretation and a bounded strategy matrix.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000372](../../agents/research.py#L372) | 372 | `"    result = dict(plan)"` | — |
-| [SRC-59CF4B7DE8-L000373](../../agents/research.py#L373) | 373 | `"    from agents.research_pipeline import build_research_pipeline"` | — |
-| [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `""` | — |
-| [SRC-59CF4B7DE8-L000375](../../agents/research.py#L375) | 375 | `"    pipeline = build_research_pipeline("` | — |
-| [SRC-59CF4B7DE8-L000376](../../agents/research.py#L376) | 376 | `"        question,"` | — |
-| [SRC-59CF4B7DE8-L000377](../../agents/research.py#L377) | 377 | `"        result,"` | — |
-| [SRC-59CF4B7DE8-L000378](../../agents/research.py#L378) | 378 | `"        mode=mode,"` | — |
-| [SRC-59CF4B7DE8-L000379](../../agents/research.py#L379) | 379 | `"        intent_route=intent_route,"` | — |
-| [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"        compact_fn=compact_search_query,"` | — |
-| [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"    # Planning remains declarative here; the request runner enforces its own"` | — |
-| [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"    # selected-mode and budget limits before executing the bounded query matrix."` | — |
-| [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"    result[\"task_spec\"] = pipeline[\"task_spec\"]"` | — |
-| [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"    result[\"query_strategy_matrix\"] = pipeline[\"query_strategy_matrix\"]"` | — |
-| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    result[\"research_pipeline\"] = {"` | — |
-| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"        \"aspects\": pipeline[\"aspects\"],"` | — |
-| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"        \"stages\": pipeline[\"stages\"],"` | — |
-| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    return result"` | — |
-| [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `""` | — |
-| [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `""` | — |
-| [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `"def fallback_plan("` | — |
-| [SRC-59CF4B7DE8-L000394](../../agents/research.py#L394) | 394 | `"    question: str, history: list[dict[str, str]] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000396](../../agents/research.py#L396) | 396 | `"    \"\"\"Build a small but varied plan when no model planner is configured or parsing fails.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000398](../../agents/research.py#L398) | 398 | `"    direct_urls = extract_urls(question)"` | — |
-| [SRC-59CF4B7DE8-L000399](../../agents/research.py#L399) | 399 | `"    base = compact_search_query(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000400](../../agents/research.py#L400) | 400 | `"    coverage_targets = extract_question_coverage_targets(question)"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000305 إلى SRC-3451CC474D-L000773
+- النطاق: SRC-1C77C97630-L000275 إلى SRC-3451CC474D-L000743
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,36 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000275](../../tests/test_answer_validation.py#L275) | 275 | `"            },"` | — |
+| [SRC-1C77C97630-L000276](../../tests/test_answer_validation.py#L276) | 276 | `"        ],"` | — |
+| [SRC-1C77C97630-L000277](../../tests/test_answer_validation.py#L277) | 277 | `"    )"` | — |
+| [SRC-1C77C97630-L000278](../../tests/test_answer_validation.py#L278) | 278 | `""` | — |
+| [SRC-1C77C97630-L000279](../../tests/test_answer_validation.py#L279) | 279 | `"    price = next("` | — |
+| [SRC-1C77C97630-L000280](../../tests/test_answer_validation.py#L280) | 280 | `"        item for item in result[\"potential_value_discrepancies\"]"` | — |
+| [SRC-1C77C97630-L000281](../../tests/test_answer_validation.py#L281) | 281 | `"        if item[\"dimension\"] == \"price_or_cost\""` | — |
+| [SRC-1C77C97630-L000282](../../tests/test_answer_validation.py#L282) | 282 | `"    )"` | — |
+| [SRC-1C77C97630-L000283](../../tests/test_answer_validation.py#L283) | 283 | `"    assert {item[\"value\"] for item in price[\"values\"]} == {\"100000\", \"120000\"}"` | — |
+| [SRC-1C77C97630-L000284](../../tests/test_answer_validation.py#L284) | 284 | `"    assert price[\"status\"] == \"potential_variation_or_conflict_requires_entity_review\""` | — |
+| [SRC-1C77C97630-L000285](../../tests/test_answer_validation.py#L285) | 285 | `"    assert \"contradiction\" not in price[\"status\"]"` | — |
+| [SRC-1C77C97630-L000286](../../tests/test_answer_validation.py#L286) | 286 | `"    assert result[\"independent_fact_check\"] is False"` | — |
+| [SRC-1C77C97630-L000287](../../tests/test_answer_validation.py#L287) | 287 | `""` | — |
+| [SRC-1C77C97630-L000288](../../tests/test_answer_validation.py#L288) | 288 | `""` | — |
+| [SRC-1C77C97630-L000289](../../tests/test_answer_validation.py#L289) | 289 | `"def test_date_in_answer_missing_from_its_cited_source_is_flagged():"` | — |
+| [SRC-1C77C97630-L000290](../../tests/test_answer_validation.py#L290) | 290 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000291](../../tests/test_answer_validation.py#L291) | 291 | `"        \"ما تاريخ التقرير؟\","` | — |
+| [SRC-1C77C97630-L000292](../../tests/test_answer_validation.py#L292) | 292 | `"        \"صدر التقرير في 2026 [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000293](../../tests/test_answer_validation.py#L293) | 293 | `"        [{"` | — |
+| [SRC-1C77C97630-L000294](../../tests/test_answer_validation.py#L294) | 294 | `"            \"title\": \"تقرير سابق\","` | — |
+| [SRC-1C77C97630-L000295](../../tests/test_answer_validation.py#L295) | 295 | `"            \"snippet\": \"تقرير منشور في 2024.\","` | — |
+| [SRC-1C77C97630-L000296](../../tests/test_answer_validation.py#L296) | 296 | `"            \"published_at\": \"2024\","` | — |
+| [SRC-1C77C97630-L000297](../../tests/test_answer_validation.py#L297) | 297 | `"            \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000298](../../tests/test_answer_validation.py#L298) | 298 | `"        }],"` | — |
+| [SRC-1C77C97630-L000299](../../tests/test_answer_validation.py#L299) | 299 | `"    )"` | — |
+| [SRC-1C77C97630-L000300](../../tests/test_answer_validation.py#L300) | 300 | `""` | — |
+| [SRC-1C77C97630-L000301](../../tests/test_answer_validation.py#L301) | 301 | `"    numeric_check = result[\"citation_numeric_support\"][0]"` | — |
+| [SRC-1C77C97630-L000302](../../tests/test_answer_validation.py#L302) | 302 | `"    assert numeric_check[\"potentially_unsupported_numeric_literals\"] == [\"2026\"]"` | — |
+| [SRC-1C77C97630-L000303](../../tests/test_answer_validation.py#L303) | 303 | `"    assert numeric_check[\"status\"] == \"potentially_unsupported_numeric_literals_for_cited_sources\""` | — |
+| [SRC-1C77C97630-L000304](../../tests/test_answer_validation.py#L304) | 304 | `""` | — |
 | [SRC-1C77C97630-L000305](../../tests/test_answer_validation.py#L305) | 305 | `""` | — |
 | [SRC-1C77C97630-L000306](../../tests/test_answer_validation.py#L306) | 306 | `"def test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies():"` | — |
 | [SRC-1C77C97630-L000307](../../tests/test_answer_validation.py#L307) | 307 | `"    html_path = Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
@@ -795,33 +825,3 @@
 | [SRC-3451CC474D-L000741](../../tests/test_api.py#L741) | 741 | `"                break"` | — |
 | [SRC-3451CC474D-L000742](../../tests/test_api.py#L742) | 742 | `"            if not chunk:"` | — |
 | [SRC-3451CC474D-L000743](../../tests/test_api.py#L743) | 743 | `"                break"` | — |
-| [SRC-3451CC474D-L000744](../../tests/test_api.py#L744) | 744 | `"            response.extend(chunk)"` | — |
-| [SRC-3451CC474D-L000745](../../tests/test_api.py#L745) | 745 | `"        elapsed = time.monotonic() - started"` | — |
-| [SRC-3451CC474D-L000746](../../tests/test_api.py#L746) | 746 | `""` | — |
-| [SRC-3451CC474D-L000747](../../tests/test_api.py#L747) | 747 | `"    assert elapsed < 0.8"` | — |
-| [SRC-3451CC474D-L000748](../../tests/test_api.py#L748) | 748 | `"    # The timed-out request never reached application dispatch; the handler closes silently."` | — |
-| [SRC-3451CC474D-L000749](../../tests/test_api.py#L749) | 749 | `"    assert response == b\"\""` | — |
-| [SRC-3451CC474D-L000750](../../tests/test_api.py#L750) | 750 | `""` | — |
-| [SRC-3451CC474D-L000751](../../tests/test_api.py#L751) | 751 | `"def test_public_preflight_does_not_trust_spoofed_forwarded_host(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000752](../../tests/test_api.py#L752) | 752 | `"    \"\"\"A client-controlled X-Forwarded-Host must not grant an origin CORS access.\"\"\""` | — |
-| [SRC-3451CC474D-L000753](../../tests/test_api.py#L753) | 753 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L000754](../../tests/test_api.py#L754) | 754 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
-| [SRC-3451CC474D-L000755](../../tests/test_api.py#L755) | 755 | `""` | — |
-| [SRC-3451CC474D-L000756](../../tests/test_api.py#L756) | 756 | `"    request = Request("` | — |
-| [SRC-3451CC474D-L000757](../../tests/test_api.py#L757) | 757 | `"        local_api + \"/api/agent\","` | — |
-| [SRC-3451CC474D-L000758](../../tests/test_api.py#L758) | 758 | `"        method=\"OPTIONS\","` | — |
-| [SRC-3451CC474D-L000759](../../tests/test_api.py#L759) | 759 | `"        headers={"` | — |
-| [SRC-3451CC474D-L000760](../../tests/test_api.py#L760) | 760 | `"            \"Origin\": \"https://attacker.example\","` | — |
-| [SRC-3451CC474D-L000761](../../tests/test_api.py#L761) | 761 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
-| [SRC-3451CC474D-L000762](../../tests/test_api.py#L762) | 762 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
-| [SRC-3451CC474D-L000763](../../tests/test_api.py#L763) | 763 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
-| [SRC-3451CC474D-L000764](../../tests/test_api.py#L764) | 764 | `"            \"Access-Control-Request-Headers\": \"authorization,content-type\","` | — |
-| [SRC-3451CC474D-L000765](../../tests/test_api.py#L765) | 765 | `"        },"` | — |
-| [SRC-3451CC474D-L000766](../../tests/test_api.py#L766) | 766 | `"    )"` | — |
-| [SRC-3451CC474D-L000767](../../tests/test_api.py#L767) | 767 | `"    with pytest.raises(HTTPError) as error:"` | — |
-| [SRC-3451CC474D-L000768](../../tests/test_api.py#L768) | 768 | `"        urlopen(request, timeout=3)"` | — |
-| [SRC-3451CC474D-L000769](../../tests/test_api.py#L769) | 769 | `"    assert error.value.code == 403"` | — |
-| [SRC-3451CC474D-L000770](../../tests/test_api.py#L770) | 770 | `""` | — |
-| [SRC-3451CC474D-L000771](../../tests/test_api.py#L771) | 771 | `""` | — |
-| [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L000773](../../tests/test_api.py#L773) | 773 | `"    \"\"\"Same-service public UI remains compatible when the request Host is trusted.\"\"\""` | — |

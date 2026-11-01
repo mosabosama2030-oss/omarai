@@ -14,8 +14,8 @@
 - تعريفات Python موثقة بوجود Docstring: **278**
 - تعريفات Python بلا Docstring: **1092**
 - تعريفات لا ينطبق عليها Docstring: **391**
-- الرموز الساكنة الإضافية: **1916**
-- الأسطر النصية المفهرسة حرفيًا: **41837**
+- الرموز الساكنة الإضافية: **1915**
+- الأسطر النصية المفهرسة حرفيًا: **41867**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -32,7 +32,7 @@
 | FILE-A3046DA0D1 | ملفات أخرى | [.env.example](../.env.example#L1) | EXAMPLE | 1386 | 30 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-18813C8694 | وثائق ونصوص | [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md#L1) | Markdown | 1913 | 33 | جرد الملف + عناوين Markdown |
 | FILE-9F6E30987B | CI وأتمتة | [.github/workflows/hosted-smoke.yml](../.github/workflows/hosted-smoke.yml#L1) | YAML | 1661 | 47 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 6517 | 157 | جرد الملف + مفاتيح إعداد ساكنة |
+| FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 7492 | 187 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4970 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 11884 | 80 | جرد الملف + عناوين Markdown |
@@ -1995,10 +1995,9 @@
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GITHUB_SHA | 75 | [SRC-1DB27D9318-L000075](../.github/workflows/tests.yml#L75) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L88) | مفتاح إعداد YAML | container-build | 88 | [SRC-1DB27D9318-L000088](../.github/workflows/tests.yml#L88) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 94 | [SRC-1DB27D9318-L000094](../.github/workflows/tests.yml#L94) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 101 | [SRC-1DB27D9318-L000101](../.github/workflows/tests.yml#L101) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 102 | [SRC-1DB27D9318-L000102](../.github/workflows/tests.yml#L102) |
-| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L103) | مفتاح إعداد YAML | omarai | 103 | [SRC-1DB27D9318-L000103](../.github/workflows/tests.yml#L103) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L101) | مفتاح إعداد YAML | omarai | 101 | [SRC-1DB27D9318-L000101](../.github/workflows/tests.yml#L101) |
 | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L132) | مفتاح إعداد YAML | http | 132 | [SRC-1DB27D9318-L000132](../.github/workflows/tests.yml#L132) |
+| [.github/workflows/tests.yml](../.github/workflows/tests.yml#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 143 | [SRC-1DB27D9318-L000143](../.github/workflows/tests.yml#L143) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | مفتاح إعداد YAML | name | 1 | [SRC-84F7DE82AF-L000001](../.github/workflows/update_index.yml#L1) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L2) | مفتاح إعداد YAML | on | 2 | [SRC-84F7DE82AF-L000002](../.github/workflows/update_index.yml#L2) |
 | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L4) | مفتاح إعداد YAML | push | 4 | [SRC-84F7DE82AF-L000004](../.github/workflows/update_index.yml#L4) |
