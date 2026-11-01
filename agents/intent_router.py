@@ -119,7 +119,13 @@ def _is_lead_generation_request(question: str) -> bool:
     route requires a prospect/customer target plus an action to find one.
     """
     normalized = _normalize(question)
-    arabic_actions = ("ابحث عن", "دور على", "دورلي على", "اعثر على", "هاتلي", "هات")
+    # Repair only two observed task-specific typing variants; avoid broad spell correction.
+    normalized = re.sub(r"(?<!\w)عملاش(?!\w)", "عملاء", normalized)
+    normalized = re.sub(r"(?<!\w)شرا(?!\w)", "شراء", normalized)
+    arabic_actions = (
+        "ابحث عن", "ابحث لي عن", "ابحثلي عن", "بحث عن",
+        "دور على", "دورلي على", "دور لي على", "اعثر على", "هاتلي", "هات",
+    )
     arabic_targets = ("عميل", "عملاء", "مشتري", "مشتر", "مشترين", "عملاء محتملين")
     english_patterns = (
         r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
