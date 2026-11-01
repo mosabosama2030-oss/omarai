@@ -2,7 +2,7 @@ name: Update Omarai complete source and symbol indexes
 
 on:
   push:
-    branches: ["main", "feat/**", "fix/**", "feature/**"]
+    branches: ["main"]
     paths-ignore:
       - "docs/MASTER_INDEX.md"
       - "docs/SOURCE_LINES_INDEX.md"
@@ -14,7 +14,7 @@ permissions:
   contents: write
   pull-requests: write
 
-# Serialize updates separately per branch. Generated-index-only commits are ignored above.
+# Publish generated indexes on main only. PR CI regenerates and validates indexes in isolated checkouts.
 concurrency:
   group: omarai-living-index-${{ github.ref }}
   cancel-in-progress: false
