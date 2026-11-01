@@ -486,6 +486,14 @@ class LeadStore:
             datetime.now(UTC) + timedelta(seconds=max_age_seconds)
         ).isoformat(timespec="seconds").replace("+00:00", "Z")
         with self.connect() as db:
+            # Browser sessions are short-lived credentials, not an audit log.
+            # Prune expired and revoked rows opportunistically before inserting
+            # a new session so abandoned rows cannot grow without bound.
+            db.execute(
+                """DELETE FROM web_sessions
+                   WHERE revoked_at IS NOT NULL OR expires_at <= ?""",
+                (created_at,),
+            )
             db.execute(
                 """INSERT INTO web_sessions
                    (session_hash, credential_hash, is_shared_token, tenant_id,
