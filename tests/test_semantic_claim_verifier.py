@@ -305,6 +305,19 @@ def test_extremely_large_citation_index_fails_closed_without_integer_conversion(
     assert request["reason"] == "invalid_citation_reference"
 
 
+def test_invalid_source_record_cannot_shift_citation_indexes():
+    answer = "The system serves 12 facilities [source 2]."
+    sources = [
+        source(page_text="An unrelated administrative update.", snippet="An unrelated administrative update."),
+        None,
+        source(url="https://example.net/report"),
+    ]
+    request = prepared(answer=answer, sources=sources)
+
+    assert request["status"] == "not_verifiable"
+    assert request["reason"] == "invalid_source_manifest"
+
+
 def test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual():
     request = prepared(answer="The capital of Egypt is Cairo.")
     result = parse_semantic_verification_response(
