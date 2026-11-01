@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000458 إلى SRC-F725E90B2A-L001257
+- النطاق: SRC-F725E90B2A-L000457 إلى SRC-F725E90B2A-L001256
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000457](../../tests/test_web_agent.py#L457) | 457 | `"        \"صحيح [المصدر 1] وخاطئ [المصدر 9].\", 1"` | — |
 | [SRC-F725E90B2A-L000458](../../tests/test_web_agent.py#L458) | 458 | `"    )"` | — |
 | [SRC-F725E90B2A-L000459](../../tests/test_web_agent.py#L459) | 459 | `"    metadata = WebAgent._citation_validation_metadata("` | — |
 | [SRC-F725E90B2A-L000460](../../tests/test_web_agent.py#L460) | 460 | `"        cleaned, 1, warnings, \"not_run\""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L001254](../../tests/test_web_agent.py#L1254) | 1254 | `"    first = sample_source(0)"` | — |
 | [SRC-F725E90B2A-L001255](../../tests/test_web_agent.py#L1255) | 1255 | `"    first[\"url\"] = \"https://news.example.com/research\""` | — |
 | [SRC-F725E90B2A-L001256](../../tests/test_web_agent.py#L1256) | 1256 | `"    first[\"domain\"] = \"news.example.com\""` | — |
-| [SRC-F725E90B2A-L001257](../../tests/test_web_agent.py#L1257) | 1257 | `"    second = sample_source(1)"` | — |

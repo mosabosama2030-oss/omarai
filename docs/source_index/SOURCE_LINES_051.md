@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002058 إلى SRC-F725E90B2A-L002857
+- النطاق: SRC-F725E90B2A-L002057 إلى SRC-F725E90B2A-L002856
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002057](../../tests/test_web_agent.py#L2057) | 2057 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
 | [SRC-F725E90B2A-L002058](../../tests/test_web_agent.py#L2058) | 2058 | `"    assert result[\"search_report\"][\"editorial_independence_status\"] == \"not_assessed\""` | — |
 | [SRC-F725E90B2A-L002059](../../tests/test_web_agent.py#L2059) | 2059 | `""` | — |
 | [SRC-F725E90B2A-L002060](../../tests/test_web_agent.py#L2060) | 2060 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002854](../../tests/test_web_agent.py#L2854) | 2854 | `""` | — |
 | [SRC-F725E90B2A-L002855](../../tests/test_web_agent.py#L2855) | 2855 | `"    def resolve_public_ip(host):"` | — |
 | [SRC-F725E90B2A-L002856](../../tests/test_web_agent.py#L2856) | 2856 | `"        resolved_hosts.append(host)"` | — |
-| [SRC-F725E90B2A-L002857](../../tests/test_web_agent.py#L2857) | 2857 | `"        if host == \"first.example\":"` | — |

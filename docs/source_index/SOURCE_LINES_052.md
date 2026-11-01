@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002858 إلى SRC-F725E90B2A-L003657
+- النطاق: SRC-F725E90B2A-L002857 إلى SRC-F725E90B2A-L003656
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002857](../../tests/test_web_agent.py#L2857) | 2857 | `"        if host == \"first.example\":"` | — |
 | [SRC-F725E90B2A-L002858](../../tests/test_web_agent.py#L2858) | 2858 | `"            return [\"93.184.216.34\"]"` | — |
 | [SRC-F725E90B2A-L002859](../../tests/test_web_agent.py#L2859) | 2859 | `"        # Model a redirect destination that resolves to no verified public IP."` | — |
 | [SRC-F725E90B2A-L002860](../../tests/test_web_agent.py#L2860) | 2860 | `"        return None"` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L003654](../../tests/test_web_agent.py#L3654) | 3654 | `"    def collect(research_plan):"` | — |
 | [SRC-F725E90B2A-L003655](../../tests/test_web_agent.py#L3655) | 3655 | `"        collection_calls.append(dict(research_plan))"` | — |
 | [SRC-F725E90B2A-L003656](../../tests/test_web_agent.py#L3656) | 3656 | `"        old_page = sample_source(0)"` | — |
-| [SRC-F725E90B2A-L003657](../../tests/test_web_agent.py#L3657) | 3657 | `"        old_page.update({"` | — |

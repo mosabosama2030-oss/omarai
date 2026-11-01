@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000893 إلى SRC-29A9CD43D1-L000129
+- النطاق: SRC-3451CC474D-L000892 إلى SRC-29A9CD43D1-L000128
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000892](../../tests/test_api.py#L892) | 892 | `"                \"search_attempted\": False,"` | — |
 | [SRC-3451CC474D-L000893](../../tests/test_api.py#L893) | 893 | `"                \"search_outcome\": \"not_attempted\","` | — |
 | [SRC-3451CC474D-L000894](../../tests/test_api.py#L894) | 894 | `"            },"` | — |
 | [SRC-3451CC474D-L000895](../../tests/test_api.py#L895) | 895 | `"            \"sources\": [],"` | — |
@@ -869,4 +870,3 @@
 | [SRC-29A9CD43D1-L000126](../../tests/test_dialogue_context_pipeline.py#L126) | 126 | `"        return \"لم أؤكد شروط الضمان من النصوص المتاحة؛ راجع الشروط الرسمية [المصدر 1].\""` | — |
 | [SRC-29A9CD43D1-L000127](../../tests/test_dialogue_context_pipeline.py#L127) | 127 | `""` | — |
 | [SRC-29A9CD43D1-L000128](../../tests/test_dialogue_context_pipeline.py#L128) | 128 | `"    def review(resolved_question, answer, sources):"` | — |
-| [SRC-29A9CD43D1-L000129](../../tests/test_dialogue_context_pipeline.py#L129) | 129 | `"        seen[\"reviewed_question\"] = resolved_question"` | — |

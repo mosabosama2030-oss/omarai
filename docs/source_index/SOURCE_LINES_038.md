@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000093 إلى SRC-3451CC474D-L000892
+- النطاق: SRC-3451CC474D-L000092 إلى SRC-3451CC474D-L000891
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000092](../../tests/test_api.py#L92) | 92 | `"    assert listing[\"count\"] == 1"` | — |
 | [SRC-3451CC474D-L000093](../../tests/test_api.py#L93) | 93 | `"    lead_id = listing[\"leads\"][0][\"id\"]"` | — |
 | [SRC-3451CC474D-L000094](../../tests/test_api.py#L94) | 94 | `""` | — |
 | [SRC-3451CC474D-L000095](../../tests/test_api.py#L95) | 95 | `"    status, changed = request_json("` | — |
@@ -815,4 +816,3 @@
 | [SRC-3451CC474D-L000889](../../tests/test_api.py#L889) | 889 | `"            \"search_query\": question,"` | — |
 | [SRC-3451CC474D-L000890](../../tests/test_api.py#L890) | 890 | `"            \"search_queries\": [],"` | — |
 | [SRC-3451CC474D-L000891](../../tests/test_api.py#L891) | 891 | `"            \"search_report\": {"` | — |
-| [SRC-3451CC474D-L000892](../../tests/test_api.py#L892) | 892 | `"                \"search_attempted\": False,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001258 إلى SRC-F725E90B2A-L002057
+- النطاق: SRC-F725E90B2A-L001257 إلى SRC-F725E90B2A-L002056
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001257](../../tests/test_web_agent.py#L1257) | 1257 | `"    second = sample_source(1)"` | — |
 | [SRC-F725E90B2A-L001258](../../tests/test_web_agent.py#L1258) | 1258 | `"    second[\"url\"] = \"https://offers.example.com/research\""` | — |
 | [SRC-F725E90B2A-L001259](../../tests/test_web_agent.py#L1259) | 1259 | `"    second[\"domain\"] = \"offers.example.com\""` | — |
 | [SRC-F725E90B2A-L001260](../../tests/test_web_agent.py#L1260) | 1260 | `""` | — |
@@ -815,4 +816,3 @@
 | [SRC-F725E90B2A-L002054](../../tests/test_web_agent.py#L2054) | 2054 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
 | [SRC-F725E90B2A-L002055](../../tests/test_web_agent.py#L2055) | 2055 | `"    assert result[\"search_report\"][\"unique_sources\"] == 3"` | — |
 | [SRC-F725E90B2A-L002056](../../tests/test_web_agent.py#L2056) | 2056 | `"    assert result[\"search_report\"][\"distinct_registrable_domains\"] == 2"` | — |
-| [SRC-F725E90B2A-L002057](../../tests/test_web_agent.py#L2057) | 2057 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
