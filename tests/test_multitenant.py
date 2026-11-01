@@ -281,14 +281,13 @@ def test_store_connections_are_closed_after_success_and_rollback(tmp_path, monke
     with pytest.raises(sqlite3.ProgrammingError, match="closed"):
         opened[0].execute("SELECT 1")
 
-    with pytest.raises(RuntimeError, match="force rollback"):
-        with store.connect() as db:
-            db.execute(
-                "INSERT INTO tenants (id, name, slug, active, created_at) "
-                "VALUES (?, ?, ?, 1, ?)",
-                ("tenant_rollback_test", "Rollback", "rollback-test", "2026-11-01T00:00:00Z"),
-            )
-            raise RuntimeError("force rollback")
+    with pytest.raises(RuntimeError, match="force rollback"), store.connect() as db:
+        db.execute(
+            "INSERT INTO tenants (id, name, slug, active, created_at) "
+            "VALUES (?, ?, ?, 1, ?)",
+            ("tenant_rollback_test", "Rollback", "rollback-test", "2026-11-01T00:00:00Z"),
+        )
+        raise RuntimeError("force rollback")
 
     assert len(opened) == 2
     with pytest.raises(sqlite3.ProgrammingError, match="closed"):

@@ -8,9 +8,9 @@ import re
 import sqlite3
 import unicodedata
 from contextlib import contextmanager
+from collections.abc import Iterator
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Iterator
 import uuid
 from urllib.parse import urlparse
 
