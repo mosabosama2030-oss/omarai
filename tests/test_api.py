@@ -1164,3 +1164,17 @@ def test_expired_browser_session_can_logout_and_clear_cookie(local_api, monkeypa
     )
     assert status == 401
 
+def test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cookie(
+    local_api, monkeypatch
+):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    status, error = request_json(
+        local_api,
+        "/api/session/logout",
+        method="POST",
+        payload={},
+        headers={"Origin": "https://attacker.example"},
+    )
+    assert status == 403
+    assert "same-origin" in error["error"]
+

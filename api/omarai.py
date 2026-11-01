@@ -637,7 +637,13 @@ class Handler(BaseHTTPRequestHandler):
             if path.startswith("/api/") and not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
             session_login = path == "/api/session"
-            if path.startswith("/api/") and not session_login and not self._authorized():
+            session_logout = path == "/api/session/logout"
+            if session_logout:
+                # Logout is idempotent: an expired/revoked session must still be
+                # able to clear the browser cookie. Resolve it opportunistically
+                # so a live session is revoked, but do not require it to be valid.
+                self._authorized()
+            elif path.startswith("/api/") and not session_login and not self._authorized():
                 return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
 
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
@@ -646,6 +652,12 @@ class Handler(BaseHTTPRequestHandler):
             origin = self.headers.get("Origin")
             if session_login and (not origin or not self._origin_allowed(origin)):
                 return self.respond(403, {"error": "browser session login requires a trusted same-origin request"})
+            if (
+                session_logout
+                and os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1"
+                and (not origin or not self._origin_allowed(origin))
+            ):
+                return self.respond(403, {"error": "browser session logout requires a trusted same-origin request"})
             if origin and not self._origin_allowed(origin):
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
             if getattr(self, "_cookie_authenticated", False) and (
