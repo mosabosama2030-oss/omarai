@@ -282,3 +282,14 @@ def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> N
 
     assert "Lenovo ThinkPad E14" in resolved
     assert "أقدر أشتريه منين" in resolved
+
+def test_no_duplicate_followup_leadin_symbols():
+    """Follow-up normalization symbols must have one authoritative definition."""
+    import inspect
+    import agents.intent_router as intent_router
+
+    module_source = inspect.getsource(intent_router)
+    assert module_source.count("_FOLLOWUP_LEAD_IN_RE = re.compile") == 1
+    assert module_source.count("_FOLLOWUP_ASPECT_FRAGMENTS = frozenset") == 1
+    assert module_source.count("def _strip_followup_leadin") == 1
+
