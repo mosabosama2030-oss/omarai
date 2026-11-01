@@ -560,6 +560,12 @@ def test_search_extraction_generation_and_task_review_remain_distinct(monkeypatc
     )
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: final_draft)
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+    monkeypatch.setattr(agent, "_verify_semantic_claims", lambda *args, **kwargs: {
+        "status": "completed_all_claims_supported",
+        "withhold_answer": False,
+        "semantic_verification": "model_assessed_source_support",
+        "fact_correctness": "not_verified",
+    })
     monkeypatch.setattr(
         agent,
         "_repair_answer_coverage",
