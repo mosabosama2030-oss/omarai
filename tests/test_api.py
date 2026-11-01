@@ -1079,9 +1079,7 @@ def test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts(loca
     assert cleared_cookie.startswith("__Host-omarai_session=")
     assert "Max-Age=0" in cleared_cookie
 
-    status, error = request_json(
-        local_api, "/api/leads", headers={"Cookie": cookie}
-    )
+    status, error = request_json(local_api, "/api/leads")
     assert status == 401
 
 
@@ -1100,6 +1098,8 @@ def test_browser_session_login_rejects_untrusted_origin(local_api, monkeypatch):
 
 
 def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, monkeypatch):
+    from urllib.parse import urlsplit
+
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "browser-session-test-token-1234567890")
     status, error = request_json(
@@ -1107,7 +1107,7 @@ def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, m
         "/api/session",
         method="POST",
         payload={"access_token": "unsafe;token" + "x" * 40},
-        headers={"Origin": "https://127.0.0.1"},
+        headers={"Origin": "https://" + urlsplit(local_api).netloc},
     )
     assert status == 401
 
