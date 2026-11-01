@@ -575,11 +575,20 @@ def build_task_spec(
         query_strategies = ["goal_exact_match", "official_guide", "stepwise_method"]
     elif family == "lead_generation":
         evidence_requirements = [
-            "public_buyer_intent_signal",
+            "classify_public_demand_signal_by_type",
+            "distinguish_direct_purchase_from_rfq_and_stated_need",
+            "keep_product_fit_unassessed_until_separately_supported",
+            "do_not_treat_product_mention_or_icp_match_as_demand",
             "do_not_treat_listing_or_ad_as_a_buyer",
             "identity_not_verified_without_separate_evidence",
         ]
-        query_strategies = ["buyer_intent_phrase", "public_discussion", "recent_signal"]
+        query_strategies = [
+            "product_anchored_direct_purchase",
+            "product_anchored_rfq",
+            "product_anchored_stated_need",
+            "public_discussion",
+            "recent_signal",
+        ]
     elif family == "recommendation":
         evidence_requirements = [
             "preserve_budget_location_and_use_case_if_explicit",

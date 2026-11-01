@@ -30,6 +30,8 @@ def test_deterministic_intent_routes(question: str, expected: str) -> None:
     ("question", "expected"),
     [
         ("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر", "LEAD_GENERATION"),
+        ("ابحث عن عميل يطلب او يريد شقة في التجمع الخامس", "LEAD_GENERATION"),
+        ("ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس", "LEAD_GENERATION"),
         ("ابحث عن شقق للبيع في العاصمة الإدارية", "WEB_SIMPLE"),
         ("Find buyers looking to buy apartments in New Capital", "LEAD_GENERATION"),
         ("لخص الصفحة https://example.com/article", "WEB_SIMPLE"),

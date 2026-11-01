@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000294 إلى SRC-686F71AA50-L000050
+- النطاق: SRC-1E32639872-L000295 إلى SRC-8D00DCEC0D-L000250
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,7 +16,6 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1E32639872-L000294](../../agents/research_completion.py#L294) | 294 | `"            \"unique_normalized_url_count\": len(unique_urls),"` | — |
 | [SRC-1E32639872-L000295](../../agents/research_completion.py#L295) | 295 | `"            \"duplicate_normalized_url_count\": max(0, len(url_keys) - len(unique_urls)),"` | — |
 | [SRC-1E32639872-L000296](../../agents/research_completion.py#L296) | 296 | `"            \"distinct_registrable_domain_count\": len(domains),"` | — |
 | [SRC-1E32639872-L000297](../../agents/research_completion.py#L297) | 297 | `"            \"pages_fetched_flag_count\": fetched,"` | — |
@@ -587,268 +586,260 @@
 | [SRC-60066C6786-L000217](../../agents/research_pipeline.py#L217) | 217 | `"    }"` | — |
 ## الوكيل والمنطق
 
-### FILE-6E58A660BC — [agents/search_connectors.py](../../agents/search_connectors.py#L1)
+### FILE-8D00DCEC0D — [agents/sales_domain.py](../../agents/sales_domain.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-6E58A660BC-L000001](../../agents/search_connectors.py#L1) | 1 | `"\"\"\"Free academic search connectors for Omarai (M1).\"\"\""` | — |
-| [SRC-6E58A660BC-L000002](../../agents/search_connectors.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6E58A660BC-L000003](../../agents/search_connectors.py#L3) | 3 | `""` | — |
-| [SRC-6E58A660BC-L000004](../../agents/search_connectors.py#L4) | 4 | `"import json"` | — |
-| [SRC-6E58A660BC-L000005](../../agents/search_connectors.py#L5) | 5 | `"import os"` | — |
-| [SRC-6E58A660BC-L000006](../../agents/search_connectors.py#L6) | 6 | `"import re"` | — |
-| [SRC-6E58A660BC-L000007](../../agents/search_connectors.py#L7) | 7 | `"import urllib.error"` | — |
-| [SRC-6E58A660BC-L000008](../../agents/search_connectors.py#L8) | 8 | `"import urllib.parse"` | — |
-| [SRC-6E58A660BC-L000009](../../agents/search_connectors.py#L9) | 9 | `"import urllib.request"` | — |
-| [SRC-6E58A660BC-L000010](../../agents/search_connectors.py#L10) | 10 | `"from collections.abc import Callable"` | — |
-| [SRC-6E58A660BC-L000011](../../agents/search_connectors.py#L11) | 11 | `"from typing import Any"` | — |
-| [SRC-6E58A660BC-L000012](../../agents/search_connectors.py#L12) | 12 | `""` | — |
-| [SRC-6E58A660BC-L000013](../../agents/search_connectors.py#L13) | 13 | `"MAX_CONNECTOR_RESULTS = 6"` | — |
-| [SRC-6E58A660BC-L000014](../../agents/search_connectors.py#L14) | 14 | `"MAX_CONNECTOR_RESPONSE_BYTES = 2_000_000"` | — |
-| [SRC-6E58A660BC-L000015](../../agents/search_connectors.py#L15) | 15 | `"DEFAULT_TIMEOUT_SECONDS = 5"` | — |
-| [SRC-6E58A660BC-L000016](../../agents/search_connectors.py#L16) | 16 | `"USER_AGENT = \"OmaraiResearchBot/1.0 (mailto:ops@example.com)\""` | — |
-| [SRC-6E58A660BC-L000017](../../agents/search_connectors.py#L17) | 17 | `"ConnectorFn = Callable[[str, int], list[dict[str, Any]]]"` | — |
-| [SRC-6E58A660BC-L000018](../../agents/search_connectors.py#L18) | 18 | `""` | — |
-| [SRC-6E58A660BC-L000019](../../agents/search_connectors.py#L19) | 19 | `""` | — |
-| [SRC-6E58A660BC-L000020](../../agents/search_connectors.py#L20) | 20 | `"def _clean_text(value: Any, limit: int = 1600) -> str:"` | — |
-| [SRC-6E58A660BC-L000021](../../agents/search_connectors.py#L21) | 21 | `"    if not isinstance(value, str):"` | — |
-| [SRC-6E58A660BC-L000022](../../agents/search_connectors.py#L22) | 22 | `"        return \"\""` | — |
-| [SRC-6E58A660BC-L000023](../../agents/search_connectors.py#L23) | 23 | `"    return re.sub(r\"\\s+\", \" \", value).strip()[:limit]"` | — |
-| [SRC-6E58A660BC-L000024](../../agents/search_connectors.py#L24) | 24 | `""` | — |
-| [SRC-6E58A660BC-L000025](../../agents/search_connectors.py#L25) | 25 | `""` | — |
-| [SRC-6E58A660BC-L000026](../../agents/search_connectors.py#L26) | 26 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
-| [SRC-6E58A660BC-L000027](../../agents/search_connectors.py#L27) | 27 | `"    \"\"\"Fail closed on redirects from fixed academic-provider endpoints.\"\"\""` | — |
-| [SRC-6E58A660BC-L000028](../../agents/search_connectors.py#L28) | 28 | `""` | — |
-| [SRC-6E58A660BC-L000029](../../agents/search_connectors.py#L29) | 29 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
-| [SRC-6E58A660BC-L000030](../../agents/search_connectors.py#L30) | 30 | `"        return None"` | — |
-| [SRC-6E58A660BC-L000031](../../agents/search_connectors.py#L31) | 31 | `""` | — |
-| [SRC-6E58A660BC-L000032](../../agents/search_connectors.py#L32) | 32 | `""` | — |
-| [SRC-6E58A660BC-L000033](../../agents/search_connectors.py#L33) | 33 | `"def _open_provider_request(request: urllib.request.Request, timeout: int):"` | — |
-| [SRC-6E58A660BC-L000034](../../agents/search_connectors.py#L34) | 34 | `"    \"\"\"Open a provider request without following an unchecked redirect.\"\"\""` | — |
-| [SRC-6E58A660BC-L000035](../../agents/search_connectors.py#L35) | 35 | `"    opener = urllib.request.build_opener(_NoRedirectHandler)"` | — |
-| [SRC-6E58A660BC-L000036](../../agents/search_connectors.py#L36) | 36 | `"    return opener.open(request, timeout=timeout)"` | — |
-| [SRC-6E58A660BC-L000037](../../agents/search_connectors.py#L37) | 37 | `""` | — |
-| [SRC-6E58A660BC-L000038](../../agents/search_connectors.py#L38) | 38 | `""` | — |
-| [SRC-6E58A660BC-L000039](../../agents/search_connectors.py#L39) | 39 | `"def _read_bounded(response) -> bytes:"` | — |
-| [SRC-6E58A660BC-L000040](../../agents/search_connectors.py#L40) | 40 | `"    \"\"\"Read at most the configured response ceiling plus one sentinel byte.\"\"\""` | — |
-| [SRC-6E58A660BC-L000041](../../agents/search_connectors.py#L41) | 41 | `"    body = response.read(MAX_CONNECTOR_RESPONSE_BYTES + 1)"` | — |
-| [SRC-6E58A660BC-L000042](../../agents/search_connectors.py#L42) | 42 | `"    if len(body) > MAX_CONNECTOR_RESPONSE_BYTES:"` | — |
-| [SRC-6E58A660BC-L000043](../../agents/search_connectors.py#L43) | 43 | `"        raise ValueError(\"academic connector response exceeds the configured size limit\")"` | — |
-| [SRC-6E58A660BC-L000044](../../agents/search_connectors.py#L44) | 44 | `"    return body"` | — |
-| [SRC-6E58A660BC-L000045](../../agents/search_connectors.py#L45) | 45 | `""` | — |
-| [SRC-6E58A660BC-L000046](../../agents/search_connectors.py#L46) | 46 | `""` | — |
-| [SRC-6E58A660BC-L000047](../../agents/search_connectors.py#L47) | 47 | `"def _http_get_json(url: str, headers: dict[str, str] \| None = None, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> Any:"` | — |
-| [SRC-6E58A660BC-L000048](../../agents/search_connectors.py#L48) | 48 | `"    req_headers = {\"User-Agent\": USER_AGENT, \"Accept\": \"application/json\"}"` | — |
-| [SRC-6E58A660BC-L000049](../../agents/search_connectors.py#L49) | 49 | `"    if headers:"` | — |
-| [SRC-6E58A660BC-L000050](../../agents/search_connectors.py#L50) | 50 | `"        req_headers.update(headers)"` | — |
-| [SRC-6E58A660BC-L000051](../../agents/search_connectors.py#L51) | 51 | `"    request = urllib.request.Request(url, headers=req_headers, method=\"GET\")"` | — |
-| [SRC-6E58A660BC-L000052](../../agents/search_connectors.py#L52) | 52 | `"    with _open_provider_request(request, timeout=timeout) as response:"` | — |
-| [SRC-6E58A660BC-L000053](../../agents/search_connectors.py#L53) | 53 | `"        return json.loads(_read_bounded(response).decode(\"utf-8\", errors=\"replace\"))"` | — |
-| [SRC-6E58A660BC-L000054](../../agents/search_connectors.py#L54) | 54 | `""` | — |
-| [SRC-6E58A660BC-L000055](../../agents/search_connectors.py#L55) | 55 | `""` | — |
-| [SRC-6E58A660BC-L000056](../../agents/search_connectors.py#L56) | 56 | `"def _http_get_text(url: str, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> str:"` | — |
-| [SRC-6E58A660BC-L000057](../../agents/search_connectors.py#L57) | 57 | `"    request = urllib.request.Request(url, headers={\"User-Agent\": USER_AGENT}, method=\"GET\")"` | — |
-| [SRC-6E58A660BC-L000058](../../agents/search_connectors.py#L58) | 58 | `"    with _open_provider_request(request, timeout=timeout) as response:"` | — |
-| [SRC-6E58A660BC-L000059](../../agents/search_connectors.py#L59) | 59 | `"        return _read_bounded(response).decode(\"utf-8\", errors=\"replace\")"` | — |
-| [SRC-6E58A660BC-L000060](../../agents/search_connectors.py#L60) | 60 | `""` | — |
-| [SRC-6E58A660BC-L000061](../../agents/search_connectors.py#L61) | 61 | `""` | — |
-| [SRC-6E58A660BC-L000062](../../agents/search_connectors.py#L62) | 62 | `"def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, query: str, published_at: str = \"\", source_class: str = \"web\") -> dict[str, Any]:"` | — |
-| [SRC-6E58A660BC-L000063](../../agents/search_connectors.py#L63) | 63 | `"    return {"` | — |
-| [SRC-6E58A660BC-L000064](../../agents/search_connectors.py#L64) | 64 | `"        \"title\": _clean_text(title, 300),"` | — |
-| [SRC-6E58A660BC-L000065](../../agents/search_connectors.py#L65) | 65 | `"        \"url\": (url or \"\").strip(),"` | — |
-| [SRC-6E58A660BC-L000066](../../agents/search_connectors.py#L66) | 66 | `"        \"snippet\": _clean_text(snippet, 1600),"` | — |
-| [SRC-6E58A660BC-L000067](../../agents/search_connectors.py#L67) | 67 | `"        \"page_fetched\": False,"` | — |
-| [SRC-6E58A660BC-L000068](../../agents/search_connectors.py#L68) | 68 | `"        \"provider\": provider,"` | — |
-| [SRC-6E58A660BC-L000069](../../agents/search_connectors.py#L69) | 69 | `"        \"provider_rank\": rank,"` | — |
-| [SRC-6E58A660BC-L000070](../../agents/search_connectors.py#L70) | 70 | `"        \"search_query\": query,"` | — |
-| [SRC-6E58A660BC-L000071](../../agents/search_connectors.py#L71) | 71 | `"        \"published_at\": published_at or \"\","` | — |
-| [SRC-6E58A660BC-L000072](../../agents/search_connectors.py#L72) | 72 | `"        \"source_class\": source_class,"` | — |
-| [SRC-6E58A660BC-L000073](../../agents/search_connectors.py#L73) | 73 | `"    }"` | — |
-| [SRC-6E58A660BC-L000074](../../agents/search_connectors.py#L74) | 74 | `""` | — |
-| [SRC-6E58A660BC-L000075](../../agents/search_connectors.py#L75) | 75 | `""` | — |
-| [SRC-6E58A660BC-L000076](../../agents/search_connectors.py#L76) | 76 | `"def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000077](../../agents/search_connectors.py#L77) | 77 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000078](../../agents/search_connectors.py#L78) | 78 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000079](../../agents/search_connectors.py#L79) | 79 | `"    params = urllib.parse.urlencode({\"search\": query.strip()[:240], \"per_page\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"OPENALEX_MAILTO\", \"ops@example.com\")})"` | — |
-| [SRC-6E58A660BC-L000080](../../agents/search_connectors.py#L80) | 80 | `"    data = _http_get_json(f\"https://api.openalex.org/works?{params}\")"` | — |
-| [SRC-6E58A660BC-L000081](../../agents/search_connectors.py#L81) | 81 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000082](../../agents/search_connectors.py#L82) | 82 | `"    for item in data.get(\"results\", [])[:limit]:"` | — |
-| [SRC-6E58A660BC-L000083](../../agents/search_connectors.py#L83) | 83 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-6E58A660BC-L000084](../../agents/search_connectors.py#L84) | 84 | `"            continue"` | — |
-| [SRC-6E58A660BC-L000085](../../agents/search_connectors.py#L85) | 85 | `"        title = item.get(\"display_name\") or \"\""` | — |
-| [SRC-6E58A660BC-L000086](../../agents/search_connectors.py#L86) | 86 | `"        url = \"\""` | — |
-| [SRC-6E58A660BC-L000087](../../agents/search_connectors.py#L87) | 87 | `"        primary = item.get(\"primary_location\") or {}"` | — |
-| [SRC-6E58A660BC-L000088](../../agents/search_connectors.py#L88) | 88 | `"        if isinstance(primary, dict) and primary.get(\"landing_page_url\"):"` | — |
-| [SRC-6E58A660BC-L000089](../../agents/search_connectors.py#L89) | 89 | `"            url = str(primary.get(\"landing_page_url\"))"` | — |
-| [SRC-6E58A660BC-L000090](../../agents/search_connectors.py#L90) | 90 | `"        elif item.get(\"id\"):"` | — |
-| [SRC-6E58A660BC-L000091](../../agents/search_connectors.py#L91) | 91 | `"            url = str(item.get(\"id\"))"` | — |
-| [SRC-6E58A660BC-L000092](../../agents/search_connectors.py#L92) | 92 | `"        concepts = \", \".join(str(c.get(\"display_name\", \"\")) for c in (item.get(\"concepts\") or [])[:5] if isinstance(c, dict))"` | — |
-| [SRC-6E58A660BC-L000093](../../agents/search_connectors.py#L93) | 93 | `"        snippet = f\"{title}. {concepts}\".strip(\". \")"` | — |
-| [SRC-6E58A660BC-L000094](../../agents/search_connectors.py#L94) | 94 | `"        if title and url:"` | — |
-| [SRC-6E58A660BC-L000095](../../agents/search_connectors.py#L95) | 95 | `"            rows.append(_result(title=title, url=url, snippet=snippet or title, provider=\"openalex\", rank=len(rows) + 1, query=query, published_at=str(item.get(\"publication_date\") or \"\"), source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000096](../../agents/search_connectors.py#L96) | 96 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000097](../../agents/search_connectors.py#L97) | 97 | `""` | — |
-| [SRC-6E58A660BC-L000098](../../agents/search_connectors.py#L98) | 98 | `""` | — |
-| [SRC-6E58A660BC-L000099](../../agents/search_connectors.py#L99) | 99 | `"def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000100](../../agents/search_connectors.py#L100) | 100 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000101](../../agents/search_connectors.py#L101) | 101 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000102](../../agents/search_connectors.py#L102) | 102 | `"    params = urllib.parse.urlencode({\"search_query\": f\"all:{query.strip()[:200]}\", \"start\": 0, \"max_results\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})"` | — |
-| [SRC-6E58A660BC-L000103](../../agents/search_connectors.py#L103) | 103 | `"    xml_text = _http_get_text(f\"https://export.arxiv.org/api/query?{params}\")"` | — |
-| [SRC-6E58A660BC-L000104](../../agents/search_connectors.py#L104) | 104 | `"    entries = re.findall(r\"<entry>(.*?)</entry>\", xml_text, flags=re.DOTALL)"` | — |
-| [SRC-6E58A660BC-L000105](../../agents/search_connectors.py#L105) | 105 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000106](../../agents/search_connectors.py#L106) | 106 | `"    for entry in entries[:limit]:"` | — |
-| [SRC-6E58A660BC-L000107](../../agents/search_connectors.py#L107) | 107 | `"        title_m = re.search(r\"<title>(.*?)</title>\", entry, re.DOTALL)"` | — |
-| [SRC-6E58A660BC-L000108](../../agents/search_connectors.py#L108) | 108 | `"        link_m = re.search(r\"<id>(https?://arxiv\\.org/abs/[^<]+)</id>\", entry)"` | — |
-| [SRC-6E58A660BC-L000109](../../agents/search_connectors.py#L109) | 109 | `"        summary_m = re.search(r\"<summary>(.*?)</summary>\", entry, re.DOTALL)"` | — |
-| [SRC-6E58A660BC-L000110](../../agents/search_connectors.py#L110) | 110 | `"        published_m = re.search(r\"<published>([^<]+)</published>\", entry)"` | — |
-| [SRC-6E58A660BC-L000111](../../agents/search_connectors.py#L111) | 111 | `"        title = _clean_text(title_m.group(1) if title_m else \"\")"` | — |
-| [SRC-6E58A660BC-L000112](../../agents/search_connectors.py#L112) | 112 | `"        link = link_m.group(1) if link_m else \"\""` | — |
-| [SRC-6E58A660BC-L000113](../../agents/search_connectors.py#L113) | 113 | `"        summary = _clean_text(summary_m.group(1) if summary_m else \"\", 1600)"` | — |
-| [SRC-6E58A660BC-L000114](../../agents/search_connectors.py#L114) | 114 | `"        published = published_m.group(1) if published_m else \"\""` | — |
-| [SRC-6E58A660BC-L000115](../../agents/search_connectors.py#L115) | 115 | `"        if title and link:"` | — |
-| [SRC-6E58A660BC-L000116](../../agents/search_connectors.py#L116) | 116 | `"            rows.append(_result(title=title, url=link, snippet=summary or title, provider=\"arxiv\", rank=len(rows) + 1, query=query, published_at=published, source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000117](../../agents/search_connectors.py#L117) | 117 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000118](../../agents/search_connectors.py#L118) | 118 | `""` | — |
-| [SRC-6E58A660BC-L000119](../../agents/search_connectors.py#L119) | 119 | `""` | — |
-| [SRC-6E58A660BC-L000120](../../agents/search_connectors.py#L120) | 120 | `"def search_crossref(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000121](../../agents/search_connectors.py#L121) | 121 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000122](../../agents/search_connectors.py#L122) | 122 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000123](../../agents/search_connectors.py#L123) | 123 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"rows\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"CROSSREF_MAILTO\", \"ops@example.com\")})"` | — |
-| [SRC-6E58A660BC-L000124](../../agents/search_connectors.py#L124) | 124 | `"    data = _http_get_json(f\"https://api.crossref.org/works?{params}\", headers={\"User-Agent\": USER_AGENT})"` | — |
-| [SRC-6E58A660BC-L000125](../../agents/search_connectors.py#L125) | 125 | `"    items = ((data.get(\"message\") or {}).get(\"items\") or [])[:limit]"` | — |
-| [SRC-6E58A660BC-L000126](../../agents/search_connectors.py#L126) | 126 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000127](../../agents/search_connectors.py#L127) | 127 | `"    for item in items:"` | — |
-| [SRC-6E58A660BC-L000128](../../agents/search_connectors.py#L128) | 128 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-6E58A660BC-L000129](../../agents/search_connectors.py#L129) | 129 | `"            continue"` | — |
-| [SRC-6E58A660BC-L000130](../../agents/search_connectors.py#L130) | 130 | `"        title_list = item.get(\"title\") or []"` | — |
-| [SRC-6E58A660BC-L000131](../../agents/search_connectors.py#L131) | 131 | `"        title = title_list[0] if isinstance(title_list, list) and title_list else \"\""` | — |
-| [SRC-6E58A660BC-L000132](../../agents/search_connectors.py#L132) | 132 | `"        url = str(item.get(\"URL\") or \"\")"` | — |
-| [SRC-6E58A660BC-L000133](../../agents/search_connectors.py#L133) | 133 | `"        container_list = item.get(\"container-title\") or []"` | — |
-| [SRC-6E58A660BC-L000134](../../agents/search_connectors.py#L134) | 134 | `"        container = container_list[0] if isinstance(container_list, list) and container_list else \"\""` | — |
-| [SRC-6E58A660BC-L000135](../../agents/search_connectors.py#L135) | 135 | `"        year = \"\""` | — |
-| [SRC-6E58A660BC-L000136](../../agents/search_connectors.py#L136) | 136 | `"        issued = item.get(\"issued\") or {}"` | — |
-| [SRC-6E58A660BC-L000137](../../agents/search_connectors.py#L137) | 137 | `"        if isinstance(issued, dict) and issued.get(\"date-parts\"):"` | — |
-| [SRC-6E58A660BC-L000138](../../agents/search_connectors.py#L138) | 138 | `"            try:"` | — |
-| [SRC-6E58A660BC-L000139](../../agents/search_connectors.py#L139) | 139 | `"                year = str(issued[\"date-parts\"][0][0])"` | — |
-| [SRC-6E58A660BC-L000140](../../agents/search_connectors.py#L140) | 140 | `"            except (IndexError, TypeError, KeyError):"` | — |
-| [SRC-6E58A660BC-L000141](../../agents/search_connectors.py#L141) | 141 | `"                year = \"\""` | — |
-| [SRC-6E58A660BC-L000142](../../agents/search_connectors.py#L142) | 142 | `"        snippet = _clean_text(f\"{title}. {container} {year}\".strip())"` | — |
-| [SRC-6E58A660BC-L000143](../../agents/search_connectors.py#L143) | 143 | `"        if title and url:"` | — |
-| [SRC-6E58A660BC-L000144](../../agents/search_connectors.py#L144) | 144 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"crossref\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000145](../../agents/search_connectors.py#L145) | 145 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000146](../../agents/search_connectors.py#L146) | 146 | `""` | — |
-| [SRC-6E58A660BC-L000147](../../agents/search_connectors.py#L147) | 147 | `""` | — |
-| [SRC-6E58A660BC-L000148](../../agents/search_connectors.py#L148) | 148 | `"def search_semantic_scholar(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000149](../../agents/search_connectors.py#L149) | 149 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000150](../../agents/search_connectors.py#L150) | 150 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000151](../../agents/search_connectors.py#L151) | 151 | `"    key = os.getenv(\"SEMANTIC_SCHOLAR_API_KEY\", \"\").strip()"` | — |
-| [SRC-6E58A660BC-L000152](../../agents/search_connectors.py#L152) | 152 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"limit\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"fields\": \"title,url,abstract,year,externalIds\"})"` | — |
-| [SRC-6E58A660BC-L000153](../../agents/search_connectors.py#L153) | 153 | `"    headers = {\"User-Agent\": USER_AGENT}"` | — |
-| [SRC-6E58A660BC-L000154](../../agents/search_connectors.py#L154) | 154 | `"    if key:"` | — |
-| [SRC-6E58A660BC-L000155](../../agents/search_connectors.py#L155) | 155 | `"        headers[\"x-api-key\"] = key"` | — |
-| [SRC-6E58A660BC-L000156](../../agents/search_connectors.py#L156) | 156 | `"    data = _http_get_json(f\"https://api.semanticscholar.org/graph/v1/paper/search?{params}\", headers=headers)"` | — |
-| [SRC-6E58A660BC-L000157](../../agents/search_connectors.py#L157) | 157 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000158](../../agents/search_connectors.py#L158) | 158 | `"    for item in (data.get(\"data\") or [])[:limit]:"` | — |
-| [SRC-6E58A660BC-L000159](../../agents/search_connectors.py#L159) | 159 | `"        if not isinstance(item, dict):"` | — |
-| [SRC-6E58A660BC-L000160](../../agents/search_connectors.py#L160) | 160 | `"            continue"` | — |
-| [SRC-6E58A660BC-L000161](../../agents/search_connectors.py#L161) | 161 | `"        title = item.get(\"title\") or \"\""` | — |
-| [SRC-6E58A660BC-L000162](../../agents/search_connectors.py#L162) | 162 | `"        url = item.get(\"url\") or \"\""` | — |
-| [SRC-6E58A660BC-L000163](../../agents/search_connectors.py#L163) | 163 | `"        if not url and isinstance(item.get(\"externalIds\"), dict):"` | — |
-| [SRC-6E58A660BC-L000164](../../agents/search_connectors.py#L164) | 164 | `"            doi = item[\"externalIds\"].get(\"DOI\")"` | — |
-| [SRC-6E58A660BC-L000165](../../agents/search_connectors.py#L165) | 165 | `"            if doi:"` | — |
-| [SRC-6E58A660BC-L000166](../../agents/search_connectors.py#L166) | 166 | `"                url = f\"https://doi.org/{doi}\""` | — |
-| [SRC-6E58A660BC-L000167](../../agents/search_connectors.py#L167) | 167 | `"        snippet = item.get(\"abstract\") or title"` | — |
-| [SRC-6E58A660BC-L000168](../../agents/search_connectors.py#L168) | 168 | `"        year = str(item.get(\"year\") or \"\")"` | — |
-| [SRC-6E58A660BC-L000169](../../agents/search_connectors.py#L169) | 169 | `"        if title and url:"` | — |
-| [SRC-6E58A660BC-L000170](../../agents/search_connectors.py#L170) | 170 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"semantic_scholar\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
-| [SRC-6E58A660BC-L000171](../../agents/search_connectors.py#L171) | 171 | `"    return rows"` | — |
-| [SRC-6E58A660BC-L000172](../../agents/search_connectors.py#L172) | 172 | `""` | — |
-| [SRC-6E58A660BC-L000173](../../agents/search_connectors.py#L173) | 173 | `""` | — |
-| [SRC-6E58A660BC-L000174](../../agents/search_connectors.py#L174) | 174 | `"CONNECTOR_REGISTRY: dict[str, dict[str, Any]] = {"` | — |
-| [SRC-6E58A660BC-L000175](../../agents/search_connectors.py#L175) | 175 | `"    \"openalex\": {\"fn\": search_openalex, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000176](../../agents/search_connectors.py#L176) | 176 | `"    \"arxiv\": {\"fn\": search_arxiv, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000177](../../agents/search_connectors.py#L177) | 177 | `"    \"crossref\": {\"fn\": search_crossref, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000178](../../agents/search_connectors.py#L178) | 178 | `"    \"semantic_scholar\": {\"fn\": search_semantic_scholar, \"source_class\": \"academic\", \"requires_key\": False},"` | — |
-| [SRC-6E58A660BC-L000179](../../agents/search_connectors.py#L179) | 179 | `"}"` | — |
-| [SRC-6E58A660BC-L000180](../../agents/search_connectors.py#L180) | 180 | `""` | — |
-| [SRC-6E58A660BC-L000181](../../agents/search_connectors.py#L181) | 181 | `""` | — |
-| [SRC-6E58A660BC-L000182](../../agents/search_connectors.py#L182) | 182 | `"def run_connector(name: str, query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000183](../../agents/search_connectors.py#L183) | 183 | `"    meta = CONNECTOR_REGISTRY.get(name)"` | — |
-| [SRC-6E58A660BC-L000184](../../agents/search_connectors.py#L184) | 184 | `"    if not meta or meta.get(\"fn\") is None:"` | — |
-| [SRC-6E58A660BC-L000185](../../agents/search_connectors.py#L185) | 185 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000186](../../agents/search_connectors.py#L186) | 186 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000187](../../agents/search_connectors.py#L187) | 187 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000188](../../agents/search_connectors.py#L188) | 188 | `"    try:"` | — |
-| [SRC-6E58A660BC-L000189](../../agents/search_connectors.py#L189) | 189 | `"        rows = meta[\"fn\"](query, limit=limit) or []"` | — |
-| [SRC-6E58A660BC-L000190](../../agents/search_connectors.py#L190) | 190 | `"        return [row for row in rows if isinstance(row, dict) and row.get(\"url\") and row.get(\"title\")]"` | — |
-| [SRC-6E58A660BC-L000191](../../agents/search_connectors.py#L191) | 191 | `"    except (TimeoutError, urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TypeError, json.JSONDecodeError, OSError):"` | — |
-| [SRC-6E58A660BC-L000192](../../agents/search_connectors.py#L192) | 192 | `"        return []"` | — |
-| [SRC-6E58A660BC-L000193](../../agents/search_connectors.py#L193) | 193 | `""` | — |
-| [SRC-6E58A660BC-L000194](../../agents/search_connectors.py#L194) | 194 | `""` | — |
-| [SRC-6E58A660BC-L000195](../../agents/search_connectors.py#L195) | 195 | `"def run_free_academic_connectors(query: str, limit_per: int = 4) -> list[dict[str, Any]]:"` | — |
-| [SRC-6E58A660BC-L000196](../../agents/search_connectors.py#L196) | 196 | `"    combined: list[dict[str, Any]] = []"` | — |
-| [SRC-6E58A660BC-L000197](../../agents/search_connectors.py#L197) | 197 | `"    for name in (\"openalex\", \"arxiv\", \"crossref\"):"` | — |
-| [SRC-6E58A660BC-L000198](../../agents/search_connectors.py#L198) | 198 | `"        combined.extend(run_connector(name, query, limit=limit_per))"` | — |
-| [SRC-6E58A660BC-L000199](../../agents/search_connectors.py#L199) | 199 | `"    return combined"` | — |
-## الوكيل والمنطق
-
-### FILE-686F71AA50 — [agents/task_understanding.py](../../agents/task_understanding.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-686F71AA50-L000001](../../agents/task_understanding.py#L1) | 1 | `"\"\"\"Deterministic, auditable natural-language task interpretation for Omarai."` | — |
-| [SRC-686F71AA50-L000002](../../agents/task_understanding.py#L2) | 2 | `""` | — |
-| [SRC-686F71AA50-L000003](../../agents/task_understanding.py#L3) | 3 | `"This module produces a bounded TaskSpec and a query-strategy matrix. It does not"` | — |
-| [SRC-686F71AA50-L000004](../../agents/task_understanding.py#L4) | 4 | `"claim semantic certainty, generate facts, or execute tools. Signals and hypotheses"` | — |
-| [SRC-686F71AA50-L000005](../../agents/task_understanding.py#L5) | 5 | `"are diagnostics, never probabilities. Search plans remain subject to budgets,"` | — |
-| [SRC-686F71AA50-L000006](../../agents/task_understanding.py#L6) | 6 | `"source guardrails, and the final evidence checks."` | — |
-| [SRC-686F71AA50-L000007](../../agents/task_understanding.py#L7) | 7 | `"\"\"\""` | — |
-| [SRC-686F71AA50-L000008](../../agents/task_understanding.py#L8) | 8 | `"from __future__ import annotations"` | — |
-| [SRC-686F71AA50-L000009](../../agents/task_understanding.py#L9) | 9 | `""` | — |
-| [SRC-686F71AA50-L000010](../../agents/task_understanding.py#L10) | 10 | `"import re"` | — |
-| [SRC-686F71AA50-L000011](../../agents/task_understanding.py#L11) | 11 | `"import unicodedata"` | — |
-| [SRC-686F71AA50-L000012](../../agents/task_understanding.py#L12) | 12 | `"from typing import Any"` | — |
-| [SRC-686F71AA50-L000013](../../agents/task_understanding.py#L13) | 13 | `""` | — |
-| [SRC-686F71AA50-L000014](../../agents/task_understanding.py#L14) | 14 | `"MAX_TASK_CHARS = 4000"` | — |
-| [SRC-686F71AA50-L000015](../../agents/task_understanding.py#L15) | 15 | `"MAX_TASK_ASPECTS = 8"` | — |
-| [SRC-686F71AA50-L000016](../../agents/task_understanding.py#L16) | 16 | `"MAX_STRATEGY_QUERIES = 8"` | — |
-| [SRC-686F71AA50-L000017](../../agents/task_understanding.py#L17) | 17 | `"SUPPORTED_MODES = frozenset({\"auto\", \"deep\", \"latest\", \"social\"})"` | — |
-| [SRC-686F71AA50-L000018](../../agents/task_understanding.py#L18) | 18 | `""` | — |
-| [SRC-686F71AA50-L000019](../../agents/task_understanding.py#L19) | 19 | `"# Closed, code-owned playbooks. The model receives concise task guidance derived"` | — |
-| [SRC-686F71AA50-L000020](../../agents/task_understanding.py#L20) | 20 | `"# from these IDs; arbitrary planner/source text cannot add executable instructions."` | — |
-| [SRC-686F71AA50-L000021](../../agents/task_understanding.py#L21) | 21 | `"_REASONING_GUIDANCE = {"` | — |
-| [SRC-686F71AA50-L000022](../../agents/task_understanding.py#L22) | 22 | `"    \"preserve_goal_and_constraints\": \"حافظ على مقصد المستخدم والكيانات والبلد والسنة والميزانية والتواريخ والصيغة التي ذكرها صراحة؛ لا تخترع قيودًا مفقودة.\","` | — |
-| [SRC-686F71AA50-L000023](../../agents/task_understanding.py#L23) | 23 | `"    \"separate_facts_inferences_hypotheses\": \"افصل ما يقوله المصدر مباشرة عن الاستنتاج والفرضية والمعلومة المجهولة؛ لا ترفع الفرضية إلى حقيقة دون دليل.\","` | — |
-| [SRC-686F71AA50-L000024](../../agents/task_understanding.py#L24) | 24 | `"    \"ground_material_claims\": \"اربط كل ادعاء واقعي جوهري بدليل مناسب من المصدر؛ الاستشهاد أو تشابه الكلمات وحده لا يثبت صحة الادعاء.\","` | — |
-| [SRC-686F71AA50-L000025](../../agents/task_understanding.py#L25) | 25 | `"    \"bounded_stop_rule\": \"استخدم المحاولات والوقت المسموحين فقط؛ عند نقص الدليل، أجب جزئيًا أو امتنع بوضوح بدل التخمين.\","` | — |
-| [SRC-686F71AA50-L000026](../../agents/task_understanding.py#L26) | 26 | `"    \"clarify_required_input\": \"إذا غاب مدخل إلزامي يغيّر معنى المهمة، اطلبه قبل تشغيل أداة أو اختراع هدف.\","` | — |
-| [SRC-686F71AA50-L000027](../../agents/task_understanding.py#L27) | 27 | `"    \"resolve_followup_slots\": \"في المتابعة، احتفظ فقط بالسياق الذي له مرجع واضح، وطبّق التغييرات التي ذكرها المستخدم، ولا ترث موضوعًا قديمًا بعد تغيير الموضوع.\","` | — |
-| [SRC-686F71AA50-L000028](../../agents/task_understanding.py#L28) | 28 | `"    \"verify_official_destination\": \"طابق اسم الجهة والبلد أولًا؛ فضّل نطاق الجهة أو رابطًا صادرًا عن بوابة رسمية موثوقة، ولا تعتبر امتداد النطاق وحده إثباتًا للملكية.\","` | — |
-| [SRC-686F71AA50-L000029](../../agents/task_understanding.py#L29) | 29 | `"    \"separate_event_and_publication_dates\": \"ميّز تاريخ وقوع الحدث عن تاريخ النشر وآخر تحديث وتاريخ الوصول؛ لا تستخدم خبرًا قديمًا لإثبات حالة متغيرة الآن.\","` | — |
-| [SRC-686F71AA50-L000030](../../agents/task_understanding.py#L30) | 30 | `"    \"reject_stale_current_claims\": \"للمعلومة الحالية، افحص حداثة المصدر وقابلية قراءة الصفحة وارتباطها بالحالة الحالية؛ اعرض عدم التأكد إذا غاب دليل حديث مؤهل.\","` | — |
-| [SRC-686F71AA50-L000031](../../agents/task_understanding.py#L31) | 31 | `"    \"decompose_explicit_criteria\": \"قسّم المقارنة إلى كل معيار صريح، وابحث عن دليل لكل معيار، وسجّل المحاور التي لا تزال بلا دليل بدل إسقاطها.\","` | — |
-| [SRC-686F71AA50-L000032](../../agents/task_understanding.py#L32) | 32 | `"    \"normalize_comparison_conditions\": \"قبل المقارنة، وحّد العملة والوحدات والفترة وظروف الاستخدام؛ لا تقارن قيمًا غير قابلة للمقارنة دون شرح الفرق.\","` | — |
-| [SRC-686F71AA50-L000033](../../agents/task_understanding.py#L33) | 33 | `"    \"separate_specs_and_experiences\": \"افصل المواصفات الرسمية عن الاختبارات الصحفية وتجارب الأفراد والإعلانات؛ لكل نوع منها ما يستطيع إثباته وحدوده.\","` | — |
-| [SRC-686F71AA50-L000034](../../agents/task_understanding.py#L34) | 34 | `"    \"balance_social_evidence\": \"ميّز التجربة الشخصية المحتملة عن السؤال والترويج والمحتوى الصحفي؛ اعرض عينة المنشورات وتواريخها والاختلافات ولا تعمم على الجميع.\","` | — |
-| [SRC-686F71AA50-L000035](../../agents/task_understanding.py#L35) | 35 | `"    \"record_observed_symptoms\": \"احفظ رسالة الخطأ والبيئة والإصدار والخطوات التي يمكن تكرارها؛ ميّز الملاحظة المرصودة عن تفسير السبب.\","` | — |
-| [SRC-686F71AA50-L000036](../../agents/task_understanding.py#L36) | 36 | `"    \"rank_testable_hypotheses\": \"أنشئ عدة فرضيات للسبب، ورتّبها وفق الأدلة المتاحة وقابلية الاختبار، ولا تدّعِ إثبات السبب قبل تجربة تفصل بين الفرضيات.\","` | — |
-| [SRC-686F71AA50-L000037](../../agents/task_understanding.py#L37) | 37 | `"    \"verify_primary_technical_docs\": \"تحقق من دليل المنتج أو مرجع الواجهة أو سجل التغيير الأصلي، واستخدم اختبارًا يعيد إنتاج المشكلة للتحقق من الإصلاح.\","` | — |
-| [SRC-686F71AA50-L000038](../../agents/task_understanding.py#L38) | 38 | `"    \"prefer_low_risk_steps\": \"ابدأ بخطوات تشخيص قابلة للعكس ومنخفضة المخاطر، واذكر شروط التوقف؛ لا تقترح إجراءً خطيرًا لمجرد أنه احتمال.\","` | — |
-| [SRC-686F71AA50-L000039](../../agents/task_understanding.py#L39) | 39 | `"    \"ordered_safe_procedure\": \"اذكر المتطلبات المسبقة والتحذيرات ثم الخطوات بالترتيب، وأضف طريقة للتحقق من النتيجة ولا تساوِ بين إكمال الخطوات ونجاحها.\","` | — |
-| [SRC-686F71AA50-L000040](../../agents/task_understanding.py#L40) | 40 | `"    \"check_health_scope_and_urgency\": \"افصل التثقيف الصحي العام عن التشخيص الشخصي، وقدّم مصادر صحية موثوقة وحدود المعلومات، ووجّه الحالات الطارئة إلى الرعاية المناسبة.\","` | — |
-| [SRC-686F71AA50-L000041](../../agents/task_understanding.py#L41) | 41 | `"    \"check_legal_jurisdiction_and_effective_date\": \"حدّد الدولة أو الاختصاص القانوني وتاريخ النفاذ، وقدّم النص الأصلي الرسمي عند توفره، ولا تعرض المعلومات العامة بوصفها استشارة قانونية خاصة.\","` | — |
-| [SRC-686F71AA50-L000042](../../agents/task_understanding.py#L42) | 42 | `"    \"validate_data_before_interpreting\": \"تحقق من تعريف المقياس ووحدة التحليل والفترة والبيانات الناقصة والتكرارات والقيم الشاذة قبل تفسير النتائج؛ الارتباط لا يثبت السببية.\","` | — |
-| [SRC-686F71AA50-L000043](../../agents/task_understanding.py#L43) | 43 | `"    \"validate_units_and_arithmetic\": \"تحقق من الوحدات والمدخلات والافتراضات، واعرض المعادلة أو خطوات الحساب القابلة للفحص، وأجرِ تحققًا حسابيًا مستقلًا عندما يلزم.\","` | — |
-| [SRC-686F71AA50-L000044](../../agents/task_understanding.py#L44) | 44 | `"    \"preserve_translation_meaning\": \"حافظ على المعنى والنبرة والأسماء والمصطلحات وصيغة الهدف؛ أظهر الالتباس الحقيقي بدل اختراع معنى للنص.\","` | — |
-| [SRC-686F71AA50-L000045](../../agents/task_understanding.py#L45) | 45 | `"    \"preserve_user_facts_in_writing\": \"التزم بالجمهور والنبرة والشكل المطلوب، ولا تضف حقائق غير مقدمة أو موثقة، وافصل إعادة الصياغة عن التحقق الواقعي.\","` | — |
-| [SRC-686F71AA50-L000046](../../agents/task_understanding.py#L46) | 46 | `"    \"plan_dependencies_and_fallbacks\": \"رتّب العمل حسب التبعيات والموارد والموعد والمخاطر، وبيّن الافتراضات والبدائل، ولا تصف خطوة مقترحة بأنها نُفذت.\","` | — |
-| [SRC-686F71AA50-L000047](../../agents/task_understanding.py#L47) | 47 | `"    \"compare_recommendation_tradeoffs\": \"وازن البدائل وفق احتياج المستخدم وقيوده، وبيّن المفاضلات والمعلومات الناقصة، ولا تعلن فائزًا عامًا دون أساس مقارنة واضح.\","` | — |
-| [SRC-686F71AA50-L000048](../../agents/task_understanding.py#L48) | 48 | `"    \"summarize_only_available_content\": \"لخّص النص المقدم أو الصفحة التي قُرئت فعلًا فقط؛ لا تستنتج محتوى غير مقروء من عنوان أو رابط.\","` | — |
-| [SRC-686F71AA50-L000049](../../agents/task_understanding.py#L49) | 49 | `"    \"qualify_buyer_intent\": \"ميّز إشارة نية شراء صريحة عن إعلان بيع أو صفحة تجارية؛ لا تعتبر الإعلان عميلًا ولا تزعم التحقق من الهوية.\","` | — |
-| [SRC-686F71AA50-L000050](../../agents/task_understanding.py#L50) | 50 | `"    \"prefer_lowest_sufficient_tool\": \"اختر أقل مسار أدوات كافٍ للمهمة؛ لا تبحث في الويب عندما تكفي المادة المقدمة أو الحساب المحلي، ولا تشغّل أداة غير مهيأة أو غير مسموح بها.\","` | — |
+| [SRC-8D00DCEC0D-L000001](../../agents/sales_domain.py#L1) | 1 | `"\"\"\"Provider-independent domain contracts for Omarai sales intelligence."` | — |
+| [SRC-8D00DCEC0D-L000002](../../agents/sales_domain.py#L2) | 2 | `""` | — |
+| [SRC-8D00DCEC0D-L000003](../../agents/sales_domain.py#L3) | 3 | `"These models describe evidence and assessments; they do not discover buyers,"` | — |
+| [SRC-8D00DCEC0D-L000004](../../agents/sales_domain.py#L4) | 4 | `"infer identity, calculate purchase probability, or execute external actions."` | — |
+| [SRC-8D00DCEC0D-L000005](../../agents/sales_domain.py#L5) | 5 | `"Storage and API integration are deliberately kept separate from this module."` | — |
+| [SRC-8D00DCEC0D-L000006](../../agents/sales_domain.py#L6) | 6 | `"\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000007](../../agents/sales_domain.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-8D00DCEC0D-L000008](../../agents/sales_domain.py#L8) | 8 | `""` | — |
+| [SRC-8D00DCEC0D-L000009](../../agents/sales_domain.py#L9) | 9 | `"import re"` | — |
+| [SRC-8D00DCEC0D-L000010](../../agents/sales_domain.py#L10) | 10 | `"import unicodedata"` | — |
+| [SRC-8D00DCEC0D-L000011](../../agents/sales_domain.py#L11) | 11 | `"from dataclasses import dataclass"` | — |
+| [SRC-8D00DCEC0D-L000012](../../agents/sales_domain.py#L12) | 12 | `"from collections.abc import Iterable"` | — |
+| [SRC-8D00DCEC0D-L000013](../../agents/sales_domain.py#L13) | 13 | `"from datetime import date, datetime"` | — |
+| [SRC-8D00DCEC0D-L000014](../../agents/sales_domain.py#L14) | 14 | `"from enum import Enum"` | — |
+| [SRC-8D00DCEC0D-L000015](../../agents/sales_domain.py#L15) | 15 | `"from urllib.parse import urlsplit"` | — |
+| [SRC-8D00DCEC0D-L000016](../../agents/sales_domain.py#L16) | 16 | `""` | — |
+| [SRC-8D00DCEC0D-L000017](../../agents/sales_domain.py#L17) | 17 | `""` | — |
+| [SRC-8D00DCEC0D-L000018](../../agents/sales_domain.py#L18) | 18 | `"MAX_NAME_LENGTH = 240"` | — |
+| [SRC-8D00DCEC0D-L000019](../../agents/sales_domain.py#L19) | 19 | `"MAX_TEXT_LENGTH = 2_000"` | — |
+| [SRC-8D00DCEC0D-L000020](../../agents/sales_domain.py#L20) | 20 | `"MAX_TERM_COUNT = 64"` | — |
+| [SRC-8D00DCEC0D-L000021](../../agents/sales_domain.py#L21) | 21 | `"_MAX_CATEGORY_DEPTH = 8"` | — |
+| [SRC-8D00DCEC0D-L000022](../../agents/sales_domain.py#L22) | 22 | `""` | — |
+| [SRC-8D00DCEC0D-L000023](../../agents/sales_domain.py#L23) | 23 | `"_ARABIC_MARKS = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
+| [SRC-8D00DCEC0D-L000024](../../agents/sales_domain.py#L24) | 24 | `"_PUNCTUATION = re.compile(r\"[\\s\\t\\r\\n.,،؛;:!?؟()\\[\\]{}<>\\\"'«»]+\")"` | — |
+| [SRC-8D00DCEC0D-L000025](../../agents/sales_domain.py#L25) | 25 | `"_SPACE = re.compile(r\"\\s+\")"` | — |
+| [SRC-8D00DCEC0D-L000026](../../agents/sales_domain.py#L26) | 26 | `""` | — |
+| [SRC-8D00DCEC0D-L000027](../../agents/sales_domain.py#L27) | 27 | `""` | — |
+| [SRC-8D00DCEC0D-L000028](../../agents/sales_domain.py#L28) | 28 | `"class FactOrigin(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000029](../../agents/sales_domain.py#L29) | 29 | `"    USER_PROVIDED = \"user_provided\""` | — |
+| [SRC-8D00DCEC0D-L000030](../../agents/sales_domain.py#L30) | 30 | `"    SOURCE_VERIFIED = \"source_verified\""` | — |
+| [SRC-8D00DCEC0D-L000031](../../agents/sales_domain.py#L31) | 31 | `"    INFERRED = \"inferred\""` | — |
+| [SRC-8D00DCEC0D-L000032](../../agents/sales_domain.py#L32) | 32 | `"    UNKNOWN = \"unknown\""` | — |
+| [SRC-8D00DCEC0D-L000033](../../agents/sales_domain.py#L33) | 33 | `""` | — |
+| [SRC-8D00DCEC0D-L000034](../../agents/sales_domain.py#L34) | 34 | `""` | — |
+| [SRC-8D00DCEC0D-L000035](../../agents/sales_domain.py#L35) | 35 | `"class DemandSignalType(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000036](../../agents/sales_domain.py#L36) | 36 | `"    DIRECT_PURCHASE_REQUEST = \"direct_purchase_request\""` | — |
+| [SRC-8D00DCEC0D-L000037](../../agents/sales_domain.py#L37) | 37 | `"    REQUEST_FOR_QUOTATION = \"request_for_quotation\""` | — |
+| [SRC-8D00DCEC0D-L000038](../../agents/sales_domain.py#L38) | 38 | `"    TENDER_OR_PROCUREMENT = \"tender_or_procurement\""` | — |
+| [SRC-8D00DCEC0D-L000039](../../agents/sales_domain.py#L39) | 39 | `"    STATED_NEED = \"stated_need\""` | — |
+| [SRC-8D00DCEC0D-L000040](../../agents/sales_domain.py#L40) | 40 | `"    INDIRECT_INDICATOR = \"indirect_indicator\""` | — |
+| [SRC-8D00DCEC0D-L000041](../../agents/sales_domain.py#L41) | 41 | `"    ICP_MATCH_ONLY = \"icp_match_only\""` | — |
+| [SRC-8D00DCEC0D-L000042](../../agents/sales_domain.py#L42) | 42 | `"    NEGATED = \"negated\""` | — |
+| [SRC-8D00DCEC0D-L000043](../../agents/sales_domain.py#L43) | 43 | `"    CANCELLED = \"cancelled\""` | — |
+| [SRC-8D00DCEC0D-L000044](../../agents/sales_domain.py#L44) | 44 | `"    EXPIRED = \"expired\""` | — |
+| [SRC-8D00DCEC0D-L000045](../../agents/sales_domain.py#L45) | 45 | `"    CONFLICTING = \"conflicting\""` | — |
+| [SRC-8D00DCEC0D-L000046](../../agents/sales_domain.py#L46) | 46 | `"    UNKNOWN = \"unknown\""` | — |
+| [SRC-8D00DCEC0D-L000047](../../agents/sales_domain.py#L47) | 47 | `""` | — |
+| [SRC-8D00DCEC0D-L000048](../../agents/sales_domain.py#L48) | 48 | `""` | — |
+| [SRC-8D00DCEC0D-L000049](../../agents/sales_domain.py#L49) | 49 | `"class ProductFit(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000050](../../agents/sales_domain.py#L50) | 50 | `"    FIT = \"fit\""` | — |
+| [SRC-8D00DCEC0D-L000051](../../agents/sales_domain.py#L51) | 51 | `"    NO_FIT = \"no_fit\""` | — |
+| [SRC-8D00DCEC0D-L000052](../../agents/sales_domain.py#L52) | 52 | `"    UNASSESSED = \"unassessed\""` | — |
+| [SRC-8D00DCEC0D-L000053](../../agents/sales_domain.py#L53) | 53 | `""` | — |
+| [SRC-8D00DCEC0D-L000054](../../agents/sales_domain.py#L54) | 54 | `""` | — |
+| [SRC-8D00DCEC0D-L000055](../../agents/sales_domain.py#L55) | 55 | `"class EvidenceBasis(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000056](../../agents/sales_domain.py#L56) | 56 | `"    PAGE_TEXT = \"page_text\""` | — |
+| [SRC-8D00DCEC0D-L000057](../../agents/sales_domain.py#L57) | 57 | `"    TITLE = \"title\""` | — |
+| [SRC-8D00DCEC0D-L000058](../../agents/sales_domain.py#L58) | 58 | `"    SEARCH_SNIPPET = \"search_snippet\""` | — |
+| [SRC-8D00DCEC0D-L000059](../../agents/sales_domain.py#L59) | 59 | `"    OFFICIAL_DOCUMENT = \"official_document\""` | — |
+| [SRC-8D00DCEC0D-L000060](../../agents/sales_domain.py#L60) | 60 | `"    USER_PROVIDED = \"user_provided\""` | — |
+| [SRC-8D00DCEC0D-L000061](../../agents/sales_domain.py#L61) | 61 | `""` | — |
+| [SRC-8D00DCEC0D-L000062](../../agents/sales_domain.py#L62) | 62 | `""` | — |
+| [SRC-8D00DCEC0D-L000063](../../agents/sales_domain.py#L63) | 63 | `"class IdentityStatus(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000064](../../agents/sales_domain.py#L64) | 64 | `"    VERIFIED = \"verified\""` | — |
+| [SRC-8D00DCEC0D-L000065](../../agents/sales_domain.py#L65) | 65 | `"    UNVERIFIED = \"unverified\""` | — |
+| [SRC-8D00DCEC0D-L000066](../../agents/sales_domain.py#L66) | 66 | `"    UNKNOWN = \"unknown\""` | — |
+| [SRC-8D00DCEC0D-L000067](../../agents/sales_domain.py#L67) | 67 | `""` | — |
+| [SRC-8D00DCEC0D-L000068](../../agents/sales_domain.py#L68) | 68 | `""` | — |
+| [SRC-8D00DCEC0D-L000069](../../agents/sales_domain.py#L69) | 69 | `"class SourceQuality(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000070](../../agents/sales_domain.py#L70) | 70 | `"    PRIMARY_SOURCE = \"primary_source\""` | — |
+| [SRC-8D00DCEC0D-L000071](../../agents/sales_domain.py#L71) | 71 | `"    SECONDARY_SOURCE = \"secondary_source\""` | — |
+| [SRC-8D00DCEC0D-L000072](../../agents/sales_domain.py#L72) | 72 | `"    SNIPPET_ONLY = \"snippet_only\""` | — |
+| [SRC-8D00DCEC0D-L000073](../../agents/sales_domain.py#L73) | 73 | `"    PAGE_UNREAD = \"page_unread\""` | — |
+| [SRC-8D00DCEC0D-L000074](../../agents/sales_domain.py#L74) | 74 | `"    UNKNOWN = \"unknown\""` | — |
+| [SRC-8D00DCEC0D-L000075](../../agents/sales_domain.py#L75) | 75 | `""` | — |
+| [SRC-8D00DCEC0D-L000076](../../agents/sales_domain.py#L76) | 76 | `""` | — |
+| [SRC-8D00DCEC0D-L000077](../../agents/sales_domain.py#L77) | 77 | `"class FreshnessStatus(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000078](../../agents/sales_domain.py#L78) | 78 | `"    CURRENT = \"current\""` | — |
+| [SRC-8D00DCEC0D-L000079](../../agents/sales_domain.py#L79) | 79 | `"    STALE = \"stale\""` | — |
+| [SRC-8D00DCEC0D-L000080](../../agents/sales_domain.py#L80) | 80 | `"    UNKNOWN = \"unknown\""` | — |
+| [SRC-8D00DCEC0D-L000081](../../agents/sales_domain.py#L81) | 81 | `""` | — |
+| [SRC-8D00DCEC0D-L000082](../../agents/sales_domain.py#L82) | 82 | `""` | — |
+| [SRC-8D00DCEC0D-L000083](../../agents/sales_domain.py#L83) | 83 | `"class ContactabilityStatus(str, Enum):"` | — |
+| [SRC-8D00DCEC0D-L000084](../../agents/sales_domain.py#L84) | 84 | `"    PUBLIC_CHANNEL_AVAILABLE = \"public_channel_available\""` | — |
+| [SRC-8D00DCEC0D-L000085](../../agents/sales_domain.py#L85) | 85 | `"    NOT_FOUND = \"not_found\""` | — |
+| [SRC-8D00DCEC0D-L000086](../../agents/sales_domain.py#L86) | 86 | `"    NOT_ASSESSED = \"not_assessed\""` | — |
+| [SRC-8D00DCEC0D-L000087](../../agents/sales_domain.py#L87) | 87 | `""` | — |
+| [SRC-8D00DCEC0D-L000088](../../agents/sales_domain.py#L88) | 88 | `""` | — |
+| [SRC-8D00DCEC0D-L000089](../../agents/sales_domain.py#L89) | 89 | `"def normalize_text(value: str) -> str:"` | — |
+| [SRC-8D00DCEC0D-L000090](../../agents/sales_domain.py#L90) | 90 | `"    \"\"\"Normalize Arabic/Latin text for deterministic matching, not for display.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000091](../../agents/sales_domain.py#L91) | 91 | `"    if not isinstance(value, str):"` | — |
+| [SRC-8D00DCEC0D-L000092](../../agents/sales_domain.py#L92) | 92 | `"        return \"\""` | — |
+| [SRC-8D00DCEC0D-L000093](../../agents/sales_domain.py#L93) | 93 | `"    text = unicodedata.normalize(\"NFKC\", value).casefold()"` | — |
+| [SRC-8D00DCEC0D-L000094](../../agents/sales_domain.py#L94) | 94 | `"    text = _ARABIC_MARKS.sub(\"\", text)"` | — |
+| [SRC-8D00DCEC0D-L000095](../../agents/sales_domain.py#L95) | 95 | `"    text = text.replace(\"ـ\", \"\").translate("` | — |
+| [SRC-8D00DCEC0D-L000096](../../agents/sales_domain.py#L96) | 96 | `"        str.maketrans("` | — |
+| [SRC-8D00DCEC0D-L000097](../../agents/sales_domain.py#L97) | 97 | `"            {"` | — |
+| [SRC-8D00DCEC0D-L000098](../../agents/sales_domain.py#L98) | 98 | `"                \"أ\": \"ا\","` | — |
+| [SRC-8D00DCEC0D-L000099](../../agents/sales_domain.py#L99) | 99 | `"                \"إ\": \"ا\","` | — |
+| [SRC-8D00DCEC0D-L000100](../../agents/sales_domain.py#L100) | 100 | `"                \"آ\": \"ا\","` | — |
+| [SRC-8D00DCEC0D-L000101](../../agents/sales_domain.py#L101) | 101 | `"                \"ٱ\": \"ا\","` | — |
+| [SRC-8D00DCEC0D-L000102](../../agents/sales_domain.py#L102) | 102 | `"                \"ى\": \"ي\","` | — |
+| [SRC-8D00DCEC0D-L000103](../../agents/sales_domain.py#L103) | 103 | `"                \"ة\": \"ه\","` | — |
+| [SRC-8D00DCEC0D-L000104](../../agents/sales_domain.py#L104) | 104 | `"            }"` | — |
+| [SRC-8D00DCEC0D-L000105](../../agents/sales_domain.py#L105) | 105 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000106](../../agents/sales_domain.py#L106) | 106 | `"    )"` | — |
+| [SRC-8D00DCEC0D-L000107](../../agents/sales_domain.py#L107) | 107 | `"    text = _PUNCTUATION.sub(\" \", text)"` | — |
+| [SRC-8D00DCEC0D-L000108](../../agents/sales_domain.py#L108) | 108 | `"    return _SPACE.sub(\" \", text).strip()"` | — |
+| [SRC-8D00DCEC0D-L000109](../../agents/sales_domain.py#L109) | 109 | `""` | — |
+| [SRC-8D00DCEC0D-L000110](../../agents/sales_domain.py#L110) | 110 | `""` | — |
+| [SRC-8D00DCEC0D-L000111](../../agents/sales_domain.py#L111) | 111 | `"def _clean_text(value: str, *, field_name: str, maximum: int = MAX_TEXT_LENGTH) -> str:"` | — |
+| [SRC-8D00DCEC0D-L000112](../../agents/sales_domain.py#L112) | 112 | `"    if not isinstance(value, str):"` | — |
+| [SRC-8D00DCEC0D-L000113](../../agents/sales_domain.py#L113) | 113 | `"        raise TypeError(f\"{field_name} must be a string\")"` | — |
+| [SRC-8D00DCEC0D-L000114](../../agents/sales_domain.py#L114) | 114 | `"    cleaned = value.strip()"` | — |
+| [SRC-8D00DCEC0D-L000115](../../agents/sales_domain.py#L115) | 115 | `"    if not cleaned:"` | — |
+| [SRC-8D00DCEC0D-L000116](../../agents/sales_domain.py#L116) | 116 | `"        raise ValueError(f\"{field_name} is required\")"` | — |
+| [SRC-8D00DCEC0D-L000117](../../agents/sales_domain.py#L117) | 117 | `"    if len(cleaned) > maximum:"` | — |
+| [SRC-8D00DCEC0D-L000118](../../agents/sales_domain.py#L118) | 118 | `"        raise ValueError(f\"{field_name} exceeds {maximum} characters\")"` | — |
+| [SRC-8D00DCEC0D-L000119](../../agents/sales_domain.py#L119) | 119 | `"    return cleaned"` | — |
+| [SRC-8D00DCEC0D-L000120](../../agents/sales_domain.py#L120) | 120 | `""` | — |
+| [SRC-8D00DCEC0D-L000121](../../agents/sales_domain.py#L121) | 121 | `""` | — |
+| [SRC-8D00DCEC0D-L000122](../../agents/sales_domain.py#L122) | 122 | `"def _clean_terms("` | — |
+| [SRC-8D00DCEC0D-L000123](../../agents/sales_domain.py#L123) | 123 | `"    values: Iterable[str],"` | — |
+| [SRC-8D00DCEC0D-L000124](../../agents/sales_domain.py#L124) | 124 | `"    *,"` | — |
+| [SRC-8D00DCEC0D-L000125](../../agents/sales_domain.py#L125) | 125 | `"    field_name: str,"` | — |
+| [SRC-8D00DCEC0D-L000126](../../agents/sales_domain.py#L126) | 126 | `"    maximum_count: int = MAX_TERM_COUNT,"` | — |
+| [SRC-8D00DCEC0D-L000127](../../agents/sales_domain.py#L127) | 127 | `") -> tuple[str, ...]:"` | — |
+| [SRC-8D00DCEC0D-L000128](../../agents/sales_domain.py#L128) | 128 | `"    if isinstance(values, (str, bytes)):"` | — |
+| [SRC-8D00DCEC0D-L000129](../../agents/sales_domain.py#L129) | 129 | `"        raise TypeError(f\"{field_name} must be an iterable of strings, not a string\")"` | — |
+| [SRC-8D00DCEC0D-L000130](../../agents/sales_domain.py#L130) | 130 | `"    cleaned: list[str] = []"` | — |
+| [SRC-8D00DCEC0D-L000131](../../agents/sales_domain.py#L131) | 131 | `"    seen: set[str] = set()"` | — |
+| [SRC-8D00DCEC0D-L000132](../../agents/sales_domain.py#L132) | 132 | `"    for value in values:"` | — |
+| [SRC-8D00DCEC0D-L000133](../../agents/sales_domain.py#L133) | 133 | `"        term = _clean_text(value, field_name=field_name, maximum=MAX_NAME_LENGTH)"` | — |
+| [SRC-8D00DCEC0D-L000134](../../agents/sales_domain.py#L134) | 134 | `"        key = normalize_text(term)"` | — |
+| [SRC-8D00DCEC0D-L000135](../../agents/sales_domain.py#L135) | 135 | `"        if key and key not in seen:"` | — |
+| [SRC-8D00DCEC0D-L000136](../../agents/sales_domain.py#L136) | 136 | `"            cleaned.append(term)"` | — |
+| [SRC-8D00DCEC0D-L000137](../../agents/sales_domain.py#L137) | 137 | `"            seen.add(key)"` | — |
+| [SRC-8D00DCEC0D-L000138](../../agents/sales_domain.py#L138) | 138 | `"        if len(cleaned) > maximum_count:"` | — |
+| [SRC-8D00DCEC0D-L000139](../../agents/sales_domain.py#L139) | 139 | `"            raise ValueError(f\"{field_name} exceeds {maximum_count} items\")"` | — |
+| [SRC-8D00DCEC0D-L000140](../../agents/sales_domain.py#L140) | 140 | `"    return tuple(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000141](../../agents/sales_domain.py#L141) | 141 | `""` | — |
+| [SRC-8D00DCEC0D-L000142](../../agents/sales_domain.py#L142) | 142 | `""` | — |
+| [SRC-8D00DCEC0D-L000143](../../agents/sales_domain.py#L143) | 143 | `"def _clean_path(values: Iterable[str], *, field_name: str) -> tuple[str, ...]:"` | — |
+| [SRC-8D00DCEC0D-L000144](../../agents/sales_domain.py#L144) | 144 | `"    path = _clean_terms(values, field_name=field_name, maximum_count=_MAX_CATEGORY_DEPTH)"` | — |
+| [SRC-8D00DCEC0D-L000145](../../agents/sales_domain.py#L145) | 145 | `"    if not path:"` | — |
+| [SRC-8D00DCEC0D-L000146](../../agents/sales_domain.py#L146) | 146 | `"        raise ValueError(f\"{field_name} must contain at least one segment\")"` | — |
+| [SRC-8D00DCEC0D-L000147](../../agents/sales_domain.py#L147) | 147 | `"    return path"` | — |
+| [SRC-8D00DCEC0D-L000148](../../agents/sales_domain.py#L148) | 148 | `""` | — |
+| [SRC-8D00DCEC0D-L000149](../../agents/sales_domain.py#L149) | 149 | `""` | — |
+| [SRC-8D00DCEC0D-L000150](../../agents/sales_domain.py#L150) | 150 | `"def _enum_value(enum_type: type[Enum], value: Enum \| str, *, field_name: str) -> Enum:"` | — |
+| [SRC-8D00DCEC0D-L000151](../../agents/sales_domain.py#L151) | 151 | `"    try:"` | — |
+| [SRC-8D00DCEC0D-L000152](../../agents/sales_domain.py#L152) | 152 | `"        return value if isinstance(value, enum_type) else enum_type(value)"` | — |
+| [SRC-8D00DCEC0D-L000153](../../agents/sales_domain.py#L153) | 153 | `"    except (TypeError, ValueError) as exc:"` | — |
+| [SRC-8D00DCEC0D-L000154](../../agents/sales_domain.py#L154) | 154 | `"        allowed = \", \".join(item.value for item in enum_type)"` | — |
+| [SRC-8D00DCEC0D-L000155](../../agents/sales_domain.py#L155) | 155 | `"        raise ValueError(f\"{field_name} must be one of: {allowed}\") from exc"` | — |
+| [SRC-8D00DCEC0D-L000156](../../agents/sales_domain.py#L156) | 156 | `""` | — |
+| [SRC-8D00DCEC0D-L000157](../../agents/sales_domain.py#L157) | 157 | `""` | — |
+| [SRC-8D00DCEC0D-L000158](../../agents/sales_domain.py#L158) | 158 | `"def _validate_optional_date(value: str \| None, *, field_name: str) -> str \| None:"` | — |
+| [SRC-8D00DCEC0D-L000159](../../agents/sales_domain.py#L159) | 159 | `"    if value is None:"` | — |
+| [SRC-8D00DCEC0D-L000160](../../agents/sales_domain.py#L160) | 160 | `"        return None"` | — |
+| [SRC-8D00DCEC0D-L000161](../../agents/sales_domain.py#L161) | 161 | `"    cleaned = _clean_text(value, field_name=field_name, maximum=32)"` | — |
+| [SRC-8D00DCEC0D-L000162](../../agents/sales_domain.py#L162) | 162 | `"    try:"` | — |
+| [SRC-8D00DCEC0D-L000163](../../agents/sales_domain.py#L163) | 163 | `"        parsed = date.fromisoformat(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000164](../../agents/sales_domain.py#L164) | 164 | `"    except ValueError as exc:"` | — |
+| [SRC-8D00DCEC0D-L000165](../../agents/sales_domain.py#L165) | 165 | `"        raise ValueError(f\"{field_name} must be an ISO date (YYYY-MM-DD)\") from exc"` | — |
+| [SRC-8D00DCEC0D-L000166](../../agents/sales_domain.py#L166) | 166 | `"    if parsed.isoformat() != cleaned:"` | — |
+| [SRC-8D00DCEC0D-L000167](../../agents/sales_domain.py#L167) | 167 | `"        raise ValueError(f\"{field_name} must use YYYY-MM-DD\")"` | — |
+| [SRC-8D00DCEC0D-L000168](../../agents/sales_domain.py#L168) | 168 | `"    return cleaned"` | — |
+| [SRC-8D00DCEC0D-L000169](../../agents/sales_domain.py#L169) | 169 | `""` | — |
+| [SRC-8D00DCEC0D-L000170](../../agents/sales_domain.py#L170) | 170 | `""` | — |
+| [SRC-8D00DCEC0D-L000171](../../agents/sales_domain.py#L171) | 171 | `"def _validate_optional_datetime(value: str \| None, *, field_name: str) -> str \| None:"` | — |
+| [SRC-8D00DCEC0D-L000172](../../agents/sales_domain.py#L172) | 172 | `"    if value is None:"` | — |
+| [SRC-8D00DCEC0D-L000173](../../agents/sales_domain.py#L173) | 173 | `"        return None"` | — |
+| [SRC-8D00DCEC0D-L000174](../../agents/sales_domain.py#L174) | 174 | `"    cleaned = _clean_text(value, field_name=field_name, maximum=64)"` | — |
+| [SRC-8D00DCEC0D-L000175](../../agents/sales_domain.py#L175) | 175 | `"    try:"` | — |
+| [SRC-8D00DCEC0D-L000176](../../agents/sales_domain.py#L176) | 176 | `"        parsed = datetime.fromisoformat(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000177](../../agents/sales_domain.py#L177) | 177 | `"    except ValueError as exc:"` | — |
+| [SRC-8D00DCEC0D-L000178](../../agents/sales_domain.py#L178) | 178 | `"        raise ValueError(f\"{field_name} must be an ISO-8601 datetime\") from exc"` | — |
+| [SRC-8D00DCEC0D-L000179](../../agents/sales_domain.py#L179) | 179 | `"    if parsed.tzinfo is None:"` | — |
+| [SRC-8D00DCEC0D-L000180](../../agents/sales_domain.py#L180) | 180 | `"        raise ValueError(f\"{field_name} must include a timezone offset\")"` | — |
+| [SRC-8D00DCEC0D-L000181](../../agents/sales_domain.py#L181) | 181 | `"    return cleaned"` | — |
+| [SRC-8D00DCEC0D-L000182](../../agents/sales_domain.py#L182) | 182 | `""` | — |
+| [SRC-8D00DCEC0D-L000183](../../agents/sales_domain.py#L183) | 183 | `""` | — |
+| [SRC-8D00DCEC0D-L000184](../../agents/sales_domain.py#L184) | 184 | `"def _validate_http_url(value: str) -> str:"` | — |
+| [SRC-8D00DCEC0D-L000185](../../agents/sales_domain.py#L185) | 185 | `"    cleaned = _clean_text(value, field_name=\"source_url\", maximum=2_048)"` | — |
+| [SRC-8D00DCEC0D-L000186](../../agents/sales_domain.py#L186) | 186 | `"    parsed = urlsplit(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000187](../../agents/sales_domain.py#L187) | 187 | `"    if parsed.scheme not in {\"http\", \"https\"} or not parsed.hostname:"` | — |
+| [SRC-8D00DCEC0D-L000188](../../agents/sales_domain.py#L188) | 188 | `"        raise ValueError(\"source_url must be an absolute HTTP(S) URL\")"` | — |
+| [SRC-8D00DCEC0D-L000189](../../agents/sales_domain.py#L189) | 189 | `"    if parsed.username or parsed.password:"` | — |
+| [SRC-8D00DCEC0D-L000190](../../agents/sales_domain.py#L190) | 190 | `"        raise ValueError(\"source_url must not contain embedded credentials\")"` | — |
+| [SRC-8D00DCEC0D-L000191](../../agents/sales_domain.py#L191) | 191 | `"    return cleaned"` | — |
+| [SRC-8D00DCEC0D-L000192](../../agents/sales_domain.py#L192) | 192 | `""` | — |
+| [SRC-8D00DCEC0D-L000193](../../agents/sales_domain.py#L193) | 193 | `""` | — |
+| [SRC-8D00DCEC0D-L000194](../../agents/sales_domain.py#L194) | 194 | `"def _contains_phrase(text: str, phrase: str) -> bool:"` | — |
+| [SRC-8D00DCEC0D-L000195](../../agents/sales_domain.py#L195) | 195 | `"    normalized_text = normalize_text(text)"` | — |
+| [SRC-8D00DCEC0D-L000196](../../agents/sales_domain.py#L196) | 196 | `"    normalized_phrase = normalize_text(phrase)"` | — |
+| [SRC-8D00DCEC0D-L000197](../../agents/sales_domain.py#L197) | 197 | `"    if not normalized_text or not normalized_phrase:"` | — |
+| [SRC-8D00DCEC0D-L000198](../../agents/sales_domain.py#L198) | 198 | `"        return False"` | — |
+| [SRC-8D00DCEC0D-L000199](../../agents/sales_domain.py#L199) | 199 | `"    # Unicode-aware word boundaries prevent e.g. \"car\" matching \"cart\"."` | — |
+| [SRC-8D00DCEC0D-L000200](../../agents/sales_domain.py#L200) | 200 | `"    return re.search("` | — |
+| [SRC-8D00DCEC0D-L000201](../../agents/sales_domain.py#L201) | 201 | `"        rf\"(?<!\\w){re.escape(normalized_phrase)}(?!\\w)\","` | — |
+| [SRC-8D00DCEC0D-L000202](../../agents/sales_domain.py#L202) | 202 | `"        normalized_text,"` | — |
+| [SRC-8D00DCEC0D-L000203](../../agents/sales_domain.py#L203) | 203 | `"        flags=re.UNICODE,"` | — |
+| [SRC-8D00DCEC0D-L000204](../../agents/sales_domain.py#L204) | 204 | `"    ) is not None"` | — |
+| [SRC-8D00DCEC0D-L000205](../../agents/sales_domain.py#L205) | 205 | `""` | — |
+| [SRC-8D00DCEC0D-L000206](../../agents/sales_domain.py#L206) | 206 | `""` | — |
+| [SRC-8D00DCEC0D-L000207](../../agents/sales_domain.py#L207) | 207 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000208](../../agents/sales_domain.py#L208) | 208 | `"class ProductFact:"` | — |
+| [SRC-8D00DCEC0D-L000209](../../agents/sales_domain.py#L209) | 209 | `"    \"\"\"One product attribute with an explicit origin and optional evidence pointer.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000210](../../agents/sales_domain.py#L210) | 210 | `""` | — |
+| [SRC-8D00DCEC0D-L000211](../../agents/sales_domain.py#L211) | 211 | `"    field: str"` | — |
+| [SRC-8D00DCEC0D-L000212](../../agents/sales_domain.py#L212) | 212 | `"    value: str"` | — |
+| [SRC-8D00DCEC0D-L000213](../../agents/sales_domain.py#L213) | 213 | `"    origin: FactOrigin = FactOrigin.USER_PROVIDED"` | — |
+| [SRC-8D00DCEC0D-L000214](../../agents/sales_domain.py#L214) | 214 | `"    evidence_id: str \| None = None"` | — |
+| [SRC-8D00DCEC0D-L000215](../../agents/sales_domain.py#L215) | 215 | `""` | — |
+| [SRC-8D00DCEC0D-L000216](../../agents/sales_domain.py#L216) | 216 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000217](../../agents/sales_domain.py#L217) | 217 | `"        object.__setattr__(self, \"field\", _clean_text(self.field, field_name=\"field\", maximum=80))"` | — |
+| [SRC-8D00DCEC0D-L000218](../../agents/sales_domain.py#L218) | 218 | `"        object.__setattr__(self, \"value\", _clean_text(self.value, field_name=\"value\"))"` | — |
+| [SRC-8D00DCEC0D-L000219](../../agents/sales_domain.py#L219) | 219 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000220](../../agents/sales_domain.py#L220) | 220 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000221](../../agents/sales_domain.py#L221) | 221 | `"            \"origin\","` | — |
+| [SRC-8D00DCEC0D-L000222](../../agents/sales_domain.py#L222) | 222 | `"            _enum_value(FactOrigin, self.origin, field_name=\"origin\"),"` | — |
+| [SRC-8D00DCEC0D-L000223](../../agents/sales_domain.py#L223) | 223 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000224](../../agents/sales_domain.py#L224) | 224 | `"        if self.evidence_id is not None:"` | — |
+| [SRC-8D00DCEC0D-L000225](../../agents/sales_domain.py#L225) | 225 | `"            object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000226](../../agents/sales_domain.py#L226) | 226 | `"                self,"` | — |
+| [SRC-8D00DCEC0D-L000227](../../agents/sales_domain.py#L227) | 227 | `"                \"evidence_id\","` | — |
+| [SRC-8D00DCEC0D-L000228](../../agents/sales_domain.py#L228) | 228 | `"                _clean_text(self.evidence_id, field_name=\"evidence_id\", maximum=160),"` | — |
+| [SRC-8D00DCEC0D-L000229](../../agents/sales_domain.py#L229) | 229 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000230](../../agents/sales_domain.py#L230) | 230 | `"        if self.origin == FactOrigin.SOURCE_VERIFIED and not self.evidence_id:"` | — |
+| [SRC-8D00DCEC0D-L000231](../../agents/sales_domain.py#L231) | 231 | `"            raise ValueError(\"source_verified product facts require evidence_id\")"` | — |
+| [SRC-8D00DCEC0D-L000232](../../agents/sales_domain.py#L232) | 232 | `""` | — |
+| [SRC-8D00DCEC0D-L000233](../../agents/sales_domain.py#L233) | 233 | `"    def to_dict(self) -> dict[str, str \| None]:"` | — |
+| [SRC-8D00DCEC0D-L000234](../../agents/sales_domain.py#L234) | 234 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000235](../../agents/sales_domain.py#L235) | 235 | `"            \"field\": self.field,"` | — |
+| [SRC-8D00DCEC0D-L000236](../../agents/sales_domain.py#L236) | 236 | `"            \"value\": self.value,"` | — |
+| [SRC-8D00DCEC0D-L000237](../../agents/sales_domain.py#L237) | 237 | `"            \"origin\": self.origin.value,"` | — |
+| [SRC-8D00DCEC0D-L000238](../../agents/sales_domain.py#L238) | 238 | `"            \"evidence_id\": self.evidence_id,"` | — |
+| [SRC-8D00DCEC0D-L000239](../../agents/sales_domain.py#L239) | 239 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000240](../../agents/sales_domain.py#L240) | 240 | `""` | — |
+| [SRC-8D00DCEC0D-L000241](../../agents/sales_domain.py#L241) | 241 | `""` | — |
+| [SRC-8D00DCEC0D-L000242](../../agents/sales_domain.py#L242) | 242 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000243](../../agents/sales_domain.py#L243) | 243 | `"class ProductProfile:"` | — |
+| [SRC-8D00DCEC0D-L000244](../../agents/sales_domain.py#L244) | 244 | `"    \"\"\"Explicit product/service facts supplied by a user or supported by sources.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000245](../../agents/sales_domain.py#L245) | 245 | `""` | — |
+| [SRC-8D00DCEC0D-L000246](../../agents/sales_domain.py#L246) | 246 | `"    name: str"` | — |
+| [SRC-8D00DCEC0D-L000247](../../agents/sales_domain.py#L247) | 247 | `"    aliases: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000248](../../agents/sales_domain.py#L248) | 248 | `"    category_path: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000249](../../agents/sales_domain.py#L249) | 249 | `"    use_cases: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000250](../../agents/sales_domain.py#L250) | 250 | `"    problems_solved: tuple[str, ...] = ()"` | — |
