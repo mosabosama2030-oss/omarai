@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000341 إلى SRC-90FAA34ADE-L000023
+- النطاق: SRC-4FFD5AFC54-L000302 إلى SRC-547CAF1FE3-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,45 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000302](../../scripts/run_answer_quality_benchmark.py#L302) | 302 | `"    except ValueError:"` | — |
+| [SRC-4FFD5AFC54-L000303](../../scripts/run_answer_quality_benchmark.py#L303) | 303 | `"        pass"` | — |
+| [SRC-4FFD5AFC54-L000304](../../scripts/run_answer_quality_benchmark.py#L304) | 304 | `""` | — |
+| [SRC-4FFD5AFC54-L000305](../../scripts/run_answer_quality_benchmark.py#L305) | 305 | `"    if scheme == \"http\" and not loopback:"` | — |
+| [SRC-4FFD5AFC54-L000306](../../scripts/run_answer_quality_benchmark.py#L306) | 306 | `"        raise ValueError(\"Plain HTTP is allowed only for localhost or a loopback IP.\")"` | — |
+| [SRC-4FFD5AFC54-L000307](../../scripts/run_answer_quality_benchmark.py#L307) | 307 | `""` | — |
+| [SRC-4FFD5AFC54-L000308](../../scripts/run_answer_quality_benchmark.py#L308) | 308 | `"    if (scheme == \"https\" and port == 443) or (scheme == \"http\" and port == 80):"` | — |
+| [SRC-4FFD5AFC54-L000309](../../scripts/run_answer_quality_benchmark.py#L309) | 309 | `"        port = None"` | — |
+| [SRC-4FFD5AFC54-L000310](../../scripts/run_answer_quality_benchmark.py#L310) | 310 | `"    host_for_origin = f\"[{host}]\" if \":\" in host else host"` | — |
+| [SRC-4FFD5AFC54-L000311](../../scripts/run_answer_quality_benchmark.py#L311) | 311 | `"    origin = f\"{scheme}://{host_for_origin}\" + (f\":{port}\" if port is not None else \"\")"` | — |
+| [SRC-4FFD5AFC54-L000312](../../scripts/run_answer_quality_benchmark.py#L312) | 312 | `""` | — |
+| [SRC-4FFD5AFC54-L000313](../../scripts/run_answer_quality_benchmark.py#L313) | 313 | `"    if token_present and not loopback:"` | — |
+| [SRC-4FFD5AFC54-L000314](../../scripts/run_answer_quality_benchmark.py#L314) | 314 | `"        allowed = os.getenv(\"OMARAI_BENCHMARK_ALLOWED_ORIGIN\", \"\").strip()"` | — |
+| [SRC-4FFD5AFC54-L000315](../../scripts/run_answer_quality_benchmark.py#L315) | 315 | `"        if not allowed:"` | — |
+| [SRC-4FFD5AFC54-L000316](../../scripts/run_answer_quality_benchmark.py#L316) | 316 | `"            raise ValueError("` | — |
+| [SRC-4FFD5AFC54-L000317](../../scripts/run_answer_quality_benchmark.py#L317) | 317 | `"                \"A bearer token requires OMARAI_BENCHMARK_ALLOWED_ORIGIN to match \""` | — |
+| [SRC-4FFD5AFC54-L000318](../../scripts/run_answer_quality_benchmark.py#L318) | 318 | `"                \"the exact HTTPS deployment origin.\""` | — |
+| [SRC-4FFD5AFC54-L000319](../../scripts/run_answer_quality_benchmark.py#L319) | 319 | `"            )"` | — |
+| [SRC-4FFD5AFC54-L000320](../../scripts/run_answer_quality_benchmark.py#L320) | 320 | `"        allowed_origin = validate_base_url(allowed, token_present=False)"` | — |
+| [SRC-4FFD5AFC54-L000321](../../scripts/run_answer_quality_benchmark.py#L321) | 321 | `"        if allowed_origin != origin:"` | — |
+| [SRC-4FFD5AFC54-L000322](../../scripts/run_answer_quality_benchmark.py#L322) | 322 | `"            raise ValueError("` | — |
+| [SRC-4FFD5AFC54-L000323](../../scripts/run_answer_quality_benchmark.py#L323) | 323 | `"                \"Refusing to send the bearer token: base URL does not match \""` | — |
+| [SRC-4FFD5AFC54-L000324](../../scripts/run_answer_quality_benchmark.py#L324) | 324 | `"                \"OMARAI_BENCHMARK_ALLOWED_ORIGIN.\""` | — |
+| [SRC-4FFD5AFC54-L000325](../../scripts/run_answer_quality_benchmark.py#L325) | 325 | `"            )"` | — |
+| [SRC-4FFD5AFC54-L000326](../../scripts/run_answer_quality_benchmark.py#L326) | 326 | `"    return origin"` | — |
+| [SRC-4FFD5AFC54-L000327](../../scripts/run_answer_quality_benchmark.py#L327) | 327 | `""` | — |
+| [SRC-4FFD5AFC54-L000328](../../scripts/run_answer_quality_benchmark.py#L328) | 328 | `""` | — |
+| [SRC-4FFD5AFC54-L000329](../../scripts/run_answer_quality_benchmark.py#L329) | 329 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
+| [SRC-4FFD5AFC54-L000330](../../scripts/run_answer_quality_benchmark.py#L330) | 330 | `"    \"\"\"Do not follow redirects; the bearer token must never move to another origin.\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000331](../../scripts/run_answer_quality_benchmark.py#L331) | 331 | `""` | — |
+| [SRC-4FFD5AFC54-L000332](../../scripts/run_answer_quality_benchmark.py#L332) | 332 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
+| [SRC-4FFD5AFC54-L000333](../../scripts/run_answer_quality_benchmark.py#L333) | 333 | `"        return None"` | — |
+| [SRC-4FFD5AFC54-L000334](../../scripts/run_answer_quality_benchmark.py#L334) | 334 | `""` | — |
+| [SRC-4FFD5AFC54-L000335](../../scripts/run_answer_quality_benchmark.py#L335) | 335 | `""` | — |
+| [SRC-4FFD5AFC54-L000336](../../scripts/run_answer_quality_benchmark.py#L336) | 336 | `"_NO_REDIRECT_OPENER = urllib.request.build_opener(_NoRedirectHandler())"` | — |
+| [SRC-4FFD5AFC54-L000337](../../scripts/run_answer_quality_benchmark.py#L337) | 337 | `""` | — |
+| [SRC-4FFD5AFC54-L000338](../../scripts/run_answer_quality_benchmark.py#L338) | 338 | `"REQUIRED_FIELDS = {"` | — |
+| [SRC-4FFD5AFC54-L000339](../../scripts/run_answer_quality_benchmark.py#L339) | 339 | `"    \"case_id\","` | — |
+| [SRC-4FFD5AFC54-L000340](../../scripts/run_answer_quality_benchmark.py#L340) | 340 | `"    \"category\","` | — |
 | [SRC-4FFD5AFC54-L000341](../../scripts/run_answer_quality_benchmark.py#L341) | 341 | `"    \"language\","` | — |
 | [SRC-4FFD5AFC54-L000342](../../scripts/run_answer_quality_benchmark.py#L342) | 342 | `"    \"question\","` | — |
 | [SRC-4FFD5AFC54-L000343](../../scripts/run_answer_quality_benchmark.py#L343) | 343 | `"    \"expected_strategy\","` | — |
@@ -795,51 +834,3 @@
 | [SRC-547CAF1FE3-L000134](../../scripts/sqlite_backup_restore.py#L134) | 134 | `"        else:"` | — |
 | [SRC-547CAF1FE3-L000135](../../scripts/sqlite_backup_restore.py#L135) | 135 | `"            result = restore_database(args.source, args.destination)"` | — |
 | [SRC-547CAF1FE3-L000136](../../scripts/sqlite_backup_restore.py#L136) | 136 | `"    except (BackupError, FileExistsError, OSError, sqlite3.Error, ValueError) as exc:"` | — |
-| [SRC-547CAF1FE3-L000137](../../scripts/sqlite_backup_restore.py#L137) | 137 | `"        print("` | — |
-| [SRC-547CAF1FE3-L000138](../../scripts/sqlite_backup_restore.py#L138) | 138 | `"            json.dumps("` | — |
-| [SRC-547CAF1FE3-L000139](../../scripts/sqlite_backup_restore.py#L139) | 139 | `"                {\"result\": \"failed\", \"error\": str(exc)},"` | — |
-| [SRC-547CAF1FE3-L000140](../../scripts/sqlite_backup_restore.py#L140) | 140 | `"                ensure_ascii=False,"` | — |
-| [SRC-547CAF1FE3-L000141](../../scripts/sqlite_backup_restore.py#L141) | 141 | `"                indent=2,"` | — |
-| [SRC-547CAF1FE3-L000142](../../scripts/sqlite_backup_restore.py#L142) | 142 | `"            ),"` | — |
-| [SRC-547CAF1FE3-L000143](../../scripts/sqlite_backup_restore.py#L143) | 143 | `"            file=sys.stderr,"` | — |
-| [SRC-547CAF1FE3-L000144](../../scripts/sqlite_backup_restore.py#L144) | 144 | `"        )"` | — |
-| [SRC-547CAF1FE3-L000145](../../scripts/sqlite_backup_restore.py#L145) | 145 | `"        return 1"` | — |
-| [SRC-547CAF1FE3-L000146](../../scripts/sqlite_backup_restore.py#L146) | 146 | `""` | — |
-| [SRC-547CAF1FE3-L000147](../../scripts/sqlite_backup_restore.py#L147) | 147 | `"    print(json.dumps(result, ensure_ascii=False, indent=2))"` | — |
-| [SRC-547CAF1FE3-L000148](../../scripts/sqlite_backup_restore.py#L148) | 148 | `"    return 0"` | — |
-| [SRC-547CAF1FE3-L000149](../../scripts/sqlite_backup_restore.py#L149) | 149 | `""` | — |
-| [SRC-547CAF1FE3-L000150](../../scripts/sqlite_backup_restore.py#L150) | 150 | `""` | — |
-| [SRC-547CAF1FE3-L000151](../../scripts/sqlite_backup_restore.py#L151) | 151 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-547CAF1FE3-L000152](../../scripts/sqlite_backup_restore.py#L152) | 152 | `"    sys.exit(main())"` | — |
-## اختبارات
-
-### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
-
-- النوع: **JSON**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-90FAA34ADE-L000001](../../tests/fixtures/answer_quality_cases.json#L1) | 1 | `"{"` | — |
-| [SRC-90FAA34ADE-L000002](../../tests/fixtures/answer_quality_cases.json#L2) | 2 | `"  \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
-| [SRC-90FAA34ADE-L000003](../../tests/fixtures/answer_quality_cases.json#L3) | 3 | `"  \"version\": \"1.0.0\","` | — |
-| [SRC-90FAA34ADE-L000004](../../tests/fixtures/answer_quality_cases.json#L4) | 4 | `"  \"base_commit_reference\": \"ac05f4777f140694b285c5364e6c3875fdecdae6\","` | — |
-| [SRC-90FAA34ADE-L000005](../../tests/fixtures/answer_quality_cases.json#L5) | 5 | `"  \"description\": \"Offline adversarial corpus for Omarai answer quality, strategy selection, evidence fidelity, uncertainty, and safety. Structural validation does not grade Omarai's actual answers.\","` | — |
-| [SRC-90FAA34ADE-L000006](../../tests/fixtures/answer_quality_cases.json#L6) | 6 | `"  \"allowed_strategies\": ["` | — |
-| [SRC-90FAA34ADE-L000007](../../tests/fixtures/answer_quality_cases.json#L7) | 7 | `"    \"local\","` | — |
-| [SRC-90FAA34ADE-L000008](../../tests/fixtures/answer_quality_cases.json#L8) | 8 | `"    \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000009](../../tests/fixtures/answer_quality_cases.json#L9) | 9 | `"    \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000010](../../tests/fixtures/answer_quality_cases.json#L10) | 10 | `"    \"clarify\""` | — |
-| [SRC-90FAA34ADE-L000011](../../tests/fixtures/answer_quality_cases.json#L11) | 11 | `"  ],"` | — |
-| [SRC-90FAA34ADE-L000012](../../tests/fixtures/answer_quality_cases.json#L12) | 12 | `"  \"allowed_evaluation_modes\": ["` | — |
-| [SRC-90FAA34ADE-L000013](../../tests/fixtures/answer_quality_cases.json#L13) | 13 | `"    \"deterministic_structure\","` | — |
-| [SRC-90FAA34ADE-L000014](../../tests/fixtures/answer_quality_cases.json#L14) | 14 | `"    \"fixture_assisted\","` | — |
-| [SRC-90FAA34ADE-L000015](../../tests/fixtures/answer_quality_cases.json#L15) | 15 | `"    \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000016](../../tests/fixtures/answer_quality_cases.json#L16) | 16 | `"  ],"` | — |
-| [SRC-90FAA34ADE-L000017](../../tests/fixtures/answer_quality_cases.json#L17) | 17 | `"  \"case_count\": 45,"` | — |
-| [SRC-90FAA34ADE-L000018](../../tests/fixtures/answer_quality_cases.json#L18) | 18 | `"  \"cases\": ["` | — |
-| [SRC-90FAA34ADE-L000019](../../tests/fixtures/answer_quality_cases.json#L19) | 19 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000020](../../tests/fixtures/answer_quality_cases.json#L20) | 20 | `"      \"case_id\": \"AQ-001\","` | — |
-| [SRC-90FAA34ADE-L000021](../../tests/fixtures/answer_quality_cases.json#L21) | 21 | `"      \"category\": \"simple_conversational\","` | — |
-| [SRC-90FAA34ADE-L000022](../../tests/fixtures/answer_quality_cases.json#L22) | 22 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000023](../../tests/fixtures/answer_quality_cases.json#L23) | 23 | `"      \"question\": \"ازيك؟ عامل ايه النهاردة؟\","` | — |
