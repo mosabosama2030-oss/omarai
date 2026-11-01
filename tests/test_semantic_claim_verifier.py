@@ -266,7 +266,7 @@ def test_population_claim_without_reference_period_or_geography_fails_closed():
         geographic_scope="",
     )
     request = prepared(
-        answer="Cairo has 9.7 million residents [source 1].",
+        answer="Cairo population is 9.7 million [source 1].",
         sources=[source_without_scope],
     )
     result = deterministic_claim_screen(request)
@@ -283,7 +283,7 @@ def test_deterministic_screen_passes_population_claim_with_period_and_scope():
         data_reference_period="2025 estimate",
     )
     request = prepared(
-        answer="Cairo has 9.7 million residents [source 1].",
+        answer="Cairo population is 9.7 million [source 1].",
         sources=[source_with_scope],
     )
     result = deterministic_claim_screen(request)
