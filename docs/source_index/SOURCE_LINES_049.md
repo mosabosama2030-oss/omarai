@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000600 إلى SRC-F725E90B2A-L001399
+- النطاق: SRC-F725E90B2A-L000586 إلى SRC-F725E90B2A-L001385
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000586](../../tests/test_web_agent.py#L586) | 586 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
+| [SRC-F725E90B2A-L000587](../../tests/test_web_agent.py#L587) | 587 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
+| [SRC-F725E90B2A-L000588](../../tests/test_web_agent.py#L588) | 588 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
+| [SRC-F725E90B2A-L000589](../../tests/test_web_agent.py#L589) | 589 | `"    assert \"test-ig-token\" not in str(results)"` | — |
+| [SRC-F725E90B2A-L000590](../../tests/test_web_agent.py#L590) | 590 | `""` | — |
+| [SRC-F725E90B2A-L000591](../../tests/test_web_agent.py#L591) | 591 | `""` | — |
+| [SRC-F725E90B2A-L000592](../../tests/test_web_agent.py#L592) | 592 | `"def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000593](../../tests/test_web_agent.py#L593) | 593 | `"    monkeypatch.delenv(\"INSTAGRAM_USER_ID\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000594](../../tests/test_web_agent.py#L594) | 594 | `"    monkeypatch.delenv(\"INSTAGRAM_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-F725E90B2A-L000595](../../tests/test_web_agent.py#L595) | 595 | `"    results, warnings = WebAgent()._search_social("` | — |
+| [SRC-F725E90B2A-L000596](../../tests/test_web_agent.py#L596) | 596 | `"        \"تجارب عامة على Instagram\", [\"instagram\"]"` | — |
+| [SRC-F725E90B2A-L000597](../../tests/test_web_agent.py#L597) | 597 | `"    )"` | — |
+| [SRC-F725E90B2A-L000598](../../tests/test_web_agent.py#L598) | 598 | `"    assert results == []"` | — |
+| [SRC-F725E90B2A-L000599](../../tests/test_web_agent.py#L599) | 599 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
 | [SRC-F725E90B2A-L000600](../../tests/test_web_agent.py#L600) | 600 | `""` | — |
 | [SRC-F725E90B2A-L000601](../../tests/test_web_agent.py#L601) | 601 | `""` | — |
 | [SRC-F725E90B2A-L000602](../../tests/test_web_agent.py#L602) | 602 | `"def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):"` | — |
@@ -802,17 +816,3 @@
 | [SRC-F725E90B2A-L001383](../../tests/test_web_agent.py#L1383) | 1383 | `"            \"queries_attempted\": 1,"` | — |
 | [SRC-F725E90B2A-L001384](../../tests/test_web_agent.py#L1384) | 1384 | `"            \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 1}],"` | — |
 | [SRC-F725E90B2A-L001385](../../tests/test_web_agent.py#L1385) | 1385 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-F725E90B2A-L001386](../../tests/test_web_agent.py#L1386) | 1386 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-F725E90B2A-L001387](../../tests/test_web_agent.py#L1387) | 1387 | `"            \"providers_used\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001388](../../tests/test_web_agent.py#L1388) | 1388 | `"            \"platform_counts\": {\"web\": 1},"` | — |
-| [SRC-F725E90B2A-L001389](../../tests/test_web_agent.py#L1389) | 1389 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-F725E90B2A-L001390](../../tests/test_web_agent.py#L1390) | 1390 | `"            \"depth\": research_plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-F725E90B2A-L001391](../../tests/test_web_agent.py#L1391) | 1391 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001392](../../tests/test_web_agent.py#L1392) | 1392 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-F725E90B2A-L001393](../../tests/test_web_agent.py#L1393) | 1393 | `"        }"` | — |
-| [SRC-F725E90B2A-L001394](../../tests/test_web_agent.py#L1394) | 1394 | `""` | — |
-| [SRC-F725E90B2A-L001395](../../tests/test_web_agent.py#L1395) | 1395 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect_only_one_source)"` | — |
-| [SRC-F725E90B2A-L001396](../../tests/test_web_agent.py#L1396) | 1396 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L001397](../../tests/test_web_agent.py#L1397) | 1397 | `"        agent, \"_generate\","` | — |
-| [SRC-F725E90B2A-L001398](../../tests/test_web_agent.py#L1398) | 1398 | `"        lambda *args, **kwargs: pytest.fail(\"LLM must not answer without two independent domains\"),"` | — |
-| [SRC-F725E90B2A-L001399](../../tests/test_web_agent.py#L1399) | 1399 | `"    )"` | — |

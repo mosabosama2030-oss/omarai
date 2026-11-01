@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000108 إلى SRC-AC9D8384E8-L000047
+- النطاق: SRC-96F6863E3C-L000094 إلى SRC-AC9D8384E8-L000033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000094](../../tests/test_research_pipeline.py#L94) | 94 | `""` | — |
+| [SRC-96F6863E3C-L000095](../../tests/test_research_pipeline.py#L95) | 95 | `""` | — |
+| [SRC-96F6863E3C-L000096](../../tests/test_research_pipeline.py#L96) | 96 | `"def test_fallback_plan_exposes_same_unified_pipeline_contract():"` | — |
+| [SRC-96F6863E3C-L000097](../../tests/test_research_pipeline.py#L97) | 97 | `"    from agents.research import fallback_plan"` | — |
+| [SRC-96F6863E3C-L000098](../../tests/test_research_pipeline.py#L98) | 98 | `""` | — |
+| [SRC-96F6863E3C-L000099](../../tests/test_research_pipeline.py#L99) | 99 | `"    plan = fallback_plan(\"حلل السيارات الكهربائية في مصر من حيث السعر والضمان\")"` | — |
+| [SRC-96F6863E3C-L000100](../../tests/test_research_pipeline.py#L100) | 100 | `""` | — |
+| [SRC-96F6863E3C-L000101](../../tests/test_research_pipeline.py#L101) | 101 | `"    assert plan[\"research_pipeline\"][\"aspects\"]"` | — |
+| [SRC-96F6863E3C-L000102](../../tests/test_research_pipeline.py#L102) | 102 | `"    assert plan[\"research_pipeline\"][\"stages\"][\"query_planning\"] == \"completed\""` | — |
+| [SRC-96F6863E3C-L000103](../../tests/test_research_pipeline.py#L103) | 103 | `"    assert plan[\"query_strategy_matrix\"]"` | — |
+| [SRC-96F6863E3C-L000104](../../tests/test_research_pipeline.py#L104) | 104 | `""` | — |
+| [SRC-96F6863E3C-L000105](../../tests/test_research_pipeline.py#L105) | 105 | `""` | — |
+| [SRC-96F6863E3C-L000106](../../tests/test_research_pipeline.py#L106) | 106 | `"def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():"` | — |
+| [SRC-96F6863E3C-L000107](../../tests/test_research_pipeline.py#L107) | 107 | `"    result = build_research_pipeline("` | — |
 | [SRC-96F6863E3C-L000108](../../tests/test_research_pipeline.py#L108) | 108 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
 | [SRC-96F6863E3C-L000109](../../tests/test_research_pipeline.py#L109) | 109 | `"        {\"queries\": [\"الهاتف\"]},"` | — |
 | [SRC-96F6863E3C-L000110](../../tests/test_research_pipeline.py#L110) | 110 | `"        intent_route=\"WEB_DEEP\","` | — |
@@ -838,17 +852,3 @@
 | [SRC-AC9D8384E8-L000031](../../tests/test_semantic_claim_verifier.py#L31) | 31 | `""` | — |
 | [SRC-AC9D8384E8-L000032](../../tests/test_semantic_claim_verifier.py#L32) | 32 | `""` | — |
 | [SRC-AC9D8384E8-L000033](../../tests/test_semantic_claim_verifier.py#L33) | 33 | `"def row(segment_id=\"S001\", assessment=\"supported\", supporting=None, contradicting=None):"` | — |
-| [SRC-AC9D8384E8-L000034](../../tests/test_semantic_claim_verifier.py#L34) | 34 | `"    return {"` | — |
-| [SRC-AC9D8384E8-L000035](../../tests/test_semantic_claim_verifier.py#L35) | 35 | `"        \"segment_id\": segment_id,"` | — |
-| [SRC-AC9D8384E8-L000036](../../tests/test_semantic_claim_verifier.py#L36) | 36 | `"        \"assessment\": assessment,"` | — |
-| [SRC-AC9D8384E8-L000037](../../tests/test_semantic_claim_verifier.py#L37) | 37 | `"        \"supporting_source_indexes\": [1] if supporting is None and assessment == \"supported\" else (supporting or []),"` | — |
-| [SRC-AC9D8384E8-L000038](../../tests/test_semantic_claim_verifier.py#L38) | 38 | `"        \"contradicting_source_indexes\": contradicting or [],"` | — |
-| [SRC-AC9D8384E8-L000039](../../tests/test_semantic_claim_verifier.py#L39) | 39 | `"    }"` | — |
-| [SRC-AC9D8384E8-L000040](../../tests/test_semantic_claim_verifier.py#L40) | 40 | `""` | — |
-| [SRC-AC9D8384E8-L000041](../../tests/test_semantic_claim_verifier.py#L41) | 41 | `""` | — |
-| [SRC-AC9D8384E8-L000042](../../tests/test_semantic_claim_verifier.py#L42) | 42 | `"def prepared(answer=\"The system serves 12 facilities [source 1].\", sources=None):"` | — |
-| [SRC-AC9D8384E8-L000043](../../tests/test_semantic_claim_verifier.py#L43) | 43 | `"    return build_semantic_verification_request("` | — |
-| [SRC-AC9D8384E8-L000044](../../tests/test_semantic_claim_verifier.py#L44) | 44 | `"        \"How many facilities does the system serve?\","` | — |
-| [SRC-AC9D8384E8-L000045](../../tests/test_semantic_claim_verifier.py#L45) | 45 | `"        answer,"` | — |
-| [SRC-AC9D8384E8-L000046](../../tests/test_semantic_claim_verifier.py#L46) | 46 | `"        sources if sources is not None else [source()],"` | — |
-| [SRC-AC9D8384E8-L000047](../../tests/test_semantic_claim_verifier.py#L47) | 47 | `"    )"` | — |

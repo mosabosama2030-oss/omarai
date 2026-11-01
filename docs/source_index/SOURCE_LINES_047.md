@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000048 إلى SRC-AFEDC2645A-L000355
+- النطاق: SRC-AC9D8384E8-L000034 إلى SRC-AFEDC2645A-L000341
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AC9D8384E8-L000034](../../tests/test_semantic_claim_verifier.py#L34) | 34 | `"    return {"` | — |
+| [SRC-AC9D8384E8-L000035](../../tests/test_semantic_claim_verifier.py#L35) | 35 | `"        \"segment_id\": segment_id,"` | — |
+| [SRC-AC9D8384E8-L000036](../../tests/test_semantic_claim_verifier.py#L36) | 36 | `"        \"assessment\": assessment,"` | — |
+| [SRC-AC9D8384E8-L000037](../../tests/test_semantic_claim_verifier.py#L37) | 37 | `"        \"supporting_source_indexes\": [1] if supporting is None and assessment == \"supported\" else (supporting or []),"` | — |
+| [SRC-AC9D8384E8-L000038](../../tests/test_semantic_claim_verifier.py#L38) | 38 | `"        \"contradicting_source_indexes\": contradicting or [],"` | — |
+| [SRC-AC9D8384E8-L000039](../../tests/test_semantic_claim_verifier.py#L39) | 39 | `"    }"` | — |
+| [SRC-AC9D8384E8-L000040](../../tests/test_semantic_claim_verifier.py#L40) | 40 | `""` | — |
+| [SRC-AC9D8384E8-L000041](../../tests/test_semantic_claim_verifier.py#L41) | 41 | `""` | — |
+| [SRC-AC9D8384E8-L000042](../../tests/test_semantic_claim_verifier.py#L42) | 42 | `"def prepared(answer=\"The system serves 12 facilities [source 1].\", sources=None):"` | — |
+| [SRC-AC9D8384E8-L000043](../../tests/test_semantic_claim_verifier.py#L43) | 43 | `"    return build_semantic_verification_request("` | — |
+| [SRC-AC9D8384E8-L000044](../../tests/test_semantic_claim_verifier.py#L44) | 44 | `"        \"How many facilities does the system serve?\","` | — |
+| [SRC-AC9D8384E8-L000045](../../tests/test_semantic_claim_verifier.py#L45) | 45 | `"        answer,"` | — |
+| [SRC-AC9D8384E8-L000046](../../tests/test_semantic_claim_verifier.py#L46) | 46 | `"        sources if sources is not None else [source()],"` | — |
+| [SRC-AC9D8384E8-L000047](../../tests/test_semantic_claim_verifier.py#L47) | 47 | `"    )"` | — |
 | [SRC-AC9D8384E8-L000048](../../tests/test_semantic_claim_verifier.py#L48) | 48 | `""` | — |
 | [SRC-AC9D8384E8-L000049](../../tests/test_semantic_claim_verifier.py#L49) | 49 | `""` | — |
 | [SRC-AC9D8384E8-L000050](../../tests/test_semantic_claim_verifier.py#L50) | 50 | `"def test_semantic_assessment_accepts_direct_support_from_exact_cited_source():"` | — |
@@ -237,7 +251,7 @@
 | [SRC-AC9D8384E8-L000266](../../tests/test_semantic_claim_verifier.py#L266) | 266 | `"        geographic_scope=\"\","` | — |
 | [SRC-AC9D8384E8-L000267](../../tests/test_semantic_claim_verifier.py#L267) | 267 | `"    )"` | — |
 | [SRC-AC9D8384E8-L000268](../../tests/test_semantic_claim_verifier.py#L268) | 268 | `"    request = prepared("` | — |
-| [SRC-AC9D8384E8-L000269](../../tests/test_semantic_claim_verifier.py#L269) | 269 | `"        answer=\"Cairo has 9.7 million residents [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000269](../../tests/test_semantic_claim_verifier.py#L269) | 269 | `"        answer=\"Cairo population is 9.7 million [source 1].\","` | — |
 | [SRC-AC9D8384E8-L000270](../../tests/test_semantic_claim_verifier.py#L270) | 270 | `"        sources=[source_without_scope],"` | — |
 | [SRC-AC9D8384E8-L000271](../../tests/test_semantic_claim_verifier.py#L271) | 271 | `"    )"` | — |
 | [SRC-AC9D8384E8-L000272](../../tests/test_semantic_claim_verifier.py#L272) | 272 | `"    result = deterministic_claim_screen(request)"` | — |
@@ -254,7 +268,7 @@
 | [SRC-AC9D8384E8-L000283](../../tests/test_semantic_claim_verifier.py#L283) | 283 | `"        data_reference_period=\"2025 estimate\","` | — |
 | [SRC-AC9D8384E8-L000284](../../tests/test_semantic_claim_verifier.py#L284) | 284 | `"    )"` | — |
 | [SRC-AC9D8384E8-L000285](../../tests/test_semantic_claim_verifier.py#L285) | 285 | `"    request = prepared("` | — |
-| [SRC-AC9D8384E8-L000286](../../tests/test_semantic_claim_verifier.py#L286) | 286 | `"        answer=\"Cairo has 9.7 million residents [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000286](../../tests/test_semantic_claim_verifier.py#L286) | 286 | `"        answer=\"Cairo population is 9.7 million [source 1].\","` | — |
 | [SRC-AC9D8384E8-L000287](../../tests/test_semantic_claim_verifier.py#L287) | 287 | `"        sources=[source_with_scope],"` | — |
 | [SRC-AC9D8384E8-L000288](../../tests/test_semantic_claim_verifier.py#L288) | 288 | `"    )"` | — |
 | [SRC-AC9D8384E8-L000289](../../tests/test_semantic_claim_verifier.py#L289) | 289 | `"    result = deterministic_claim_screen(request)"` | — |
@@ -829,17 +843,3 @@
 | [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"    assert safe[\"tool_requirements\"] == [\"web_search\"]"` | — |
 | [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"    assert safe[\"constraints\"][\"source_policies\"] == [\"task_relevant_sources\"]"` | — |
 | [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"    assert safe[\"constraints\"][\"language_profile\"] == \"und\""` | — |
-| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"    assert \"untrusted_command\" not in safe[\"context_resolution\"][\"slots\"]"` | — |
-| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"    assert safe[\"context_resolution\"][\"confidence_band\"] == \"unassessed\""` | — |
-| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    assert \"extra_unexpected_key\" not in safe"` | — |
-| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
-| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `""` | — |
-| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():"` | — |
-| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    from agents.task_understanding import reasoning_guidance_for_task_spec"` | — |
-| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `""` | — |
-| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"            \"is_follow_up\": True,"` | — |

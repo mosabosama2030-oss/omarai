@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000091 إلى SRC-96F6863E3C-L000107
+- النطاق: SRC-AFFCF23BD4-L000077 إلى SRC-96F6863E3C-L000093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,20 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000077](../../tests/test_research_completion.py#L77) | 77 | `"    assert result[\"status\"] == \"source_snippets_only_generation_not_completed\""` | — |
+| [SRC-AFFCF23BD4-L000078](../../tests/test_research_completion.py#L78) | 78 | `"    assert result[\"phases\"][\"page_reading\"] == \"no_final_source_page_read\""` | — |
+| [SRC-AFFCF23BD4-L000079](../../tests/test_research_completion.py#L79) | 79 | `"    assert result[\"counters\"][\"pages_read_with_text_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000080](../../tests/test_research_completion.py#L80) | 80 | `""` | — |
+| [SRC-AFFCF23BD4-L000081](../../tests/test_research_completion.py#L81) | 81 | `""` | — |
+| [SRC-AFFCF23BD4-L000082](../../tests/test_research_completion.py#L82) | 82 | `"def test_answer_with_valid_citation_indices_still_discloses_semantic_gap() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000083](../../tests/test_research_completion.py#L83) | 83 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000084](../../tests/test_research_completion.py#L84) | 84 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000085](../../tests/test_research_completion.py#L85) | 85 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000086](../../tests/test_research_completion.py#L86) | 86 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000087](../../tests/test_research_completion.py#L87) | 87 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000088](../../tests/test_research_completion.py#L88) | 88 | `"        \"citation_validation\": {\"status\": \"index_range_check_passed\", \"valid_citation_count\": 2},"` | — |
+| [SRC-AFFCF23BD4-L000089](../../tests/test_research_completion.py#L89) | 89 | `"        \"claim_evidence_ledger\": _VALID_CLAIM_LEDGER,"` | — |
+| [SRC-AFFCF23BD4-L000090](../../tests/test_research_completion.py#L90) | 90 | `"        \"sources\": ["` | — |
 | [SRC-AFFCF23BD4-L000091](../../tests/test_research_completion.py#L91) | 91 | `"            {\"url\": \"https://example.com/a\", \"snippet\": \"text\", \"page_fetched\": True, \"page_text\": \"read\"}"` | — |
 | [SRC-AFFCF23BD4-L000092](../../tests/test_research_completion.py#L92) | 92 | `"        ],"` | — |
 | [SRC-AFFCF23BD4-L000093](../../tests/test_research_completion.py#L93) | 93 | `"        \"search_report\": {"` | — |
@@ -820,17 +834,3 @@
 | [SRC-96F6863E3C-L000091](../../tests/test_research_pipeline.py#L91) | 91 | `"        assert all(0.0 <= item[\"score\"] <= 1.0 for item in candidates)"` | — |
 | [SRC-96F6863E3C-L000092](../../tests/test_research_pipeline.py#L92) | 92 | `"    # A semantic relevance score never promotes an aspect into the lexical evidence ledger."` | — |
 | [SRC-96F6863E3C-L000093](../../tests/test_research_pipeline.py#L93) | 93 | `"    assert result[\"evidence\"][\"lexical_ledger\"][\"covered\"] != result[\"aspects\"]"` | — |
-| [SRC-96F6863E3C-L000094](../../tests/test_research_pipeline.py#L94) | 94 | `""` | — |
-| [SRC-96F6863E3C-L000095](../../tests/test_research_pipeline.py#L95) | 95 | `""` | — |
-| [SRC-96F6863E3C-L000096](../../tests/test_research_pipeline.py#L96) | 96 | `"def test_fallback_plan_exposes_same_unified_pipeline_contract():"` | — |
-| [SRC-96F6863E3C-L000097](../../tests/test_research_pipeline.py#L97) | 97 | `"    from agents.research import fallback_plan"` | — |
-| [SRC-96F6863E3C-L000098](../../tests/test_research_pipeline.py#L98) | 98 | `""` | — |
-| [SRC-96F6863E3C-L000099](../../tests/test_research_pipeline.py#L99) | 99 | `"    plan = fallback_plan(\"حلل السيارات الكهربائية في مصر من حيث السعر والضمان\")"` | — |
-| [SRC-96F6863E3C-L000100](../../tests/test_research_pipeline.py#L100) | 100 | `""` | — |
-| [SRC-96F6863E3C-L000101](../../tests/test_research_pipeline.py#L101) | 101 | `"    assert plan[\"research_pipeline\"][\"aspects\"]"` | — |
-| [SRC-96F6863E3C-L000102](../../tests/test_research_pipeline.py#L102) | 102 | `"    assert plan[\"research_pipeline\"][\"stages\"][\"query_planning\"] == \"completed\""` | — |
-| [SRC-96F6863E3C-L000103](../../tests/test_research_pipeline.py#L103) | 103 | `"    assert plan[\"query_strategy_matrix\"]"` | — |
-| [SRC-96F6863E3C-L000104](../../tests/test_research_pipeline.py#L104) | 104 | `""` | — |
-| [SRC-96F6863E3C-L000105](../../tests/test_research_pipeline.py#L105) | 105 | `""` | — |
-| [SRC-96F6863E3C-L000106](../../tests/test_research_pipeline.py#L106) | 106 | `"def test_semantic_matcher_failure_is_degraded_without_aborting_pipeline():"` | — |
-| [SRC-96F6863E3C-L000107](../../tests/test_research_pipeline.py#L107) | 107 | `"    result = build_research_pipeline("` | — |
