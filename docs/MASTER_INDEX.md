@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **121**
 - ملفات Python المحللة: **75**
-- تعريفات Python المفهرسة: **1773**
+- تعريفات Python المفهرسة: **1774**
 - تعريفات Python موثقة بوجود Docstring: **278**
-- تعريفات Python بلا Docstring: **1104**
+- تعريفات Python بلا Docstring: **1105**
 - تعريفات لا ينطبق عليها Docstring: **391**
 - الرموز الساكنة الإضافية: **1932**
-- الأسطر النصية المفهرسة حرفيًا: **41942**
+- الأسطر النصية المفهرسة حرفيًا: **42008**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -145,7 +145,7 @@
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 18595 | 407 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 172422 | 4404 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 175201 | 4470 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 69573 | 490 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 16544 | 46 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -1922,6 +1922,7 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L4370) | دالة | test_model_provider_rejects_remote_http_before_sending_bearer_key | لا توجد Docstring. | ناقص | 4370 | [SRC-F725E90B2A-L004370](../tests/test_web_agent.py#L4370) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L4377) | دالة | test_model_provider_rejects_remote_http_before_sending_bearer_key.unexpected_request | لا توجد Docstring. | ناقص | 4377 | [SRC-F725E90B2A-L004377](../tests/test_web_agent.py#L4377) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L4391) | دالة | test_health_status_redacts_model_provider_userinfo_path_and_query | لا توجد Docstring. | ناقص | 4391 | [SRC-F725E90B2A-L004391](../tests/test_web_agent.py#L4391) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4407) | دالة | test_lead_generation_falls_back_to_qualified_demand_when_model_is_rate_limited | لا توجد Docstring. | ناقص | 4407 | [SRC-F725E90B2A-L004407](../tests/test_web_agent.py#L4407) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L10) | دالة | _academic_result | لا توجد Docstring. | ناقص | 10 | [SRC-8C13B81AB4-L000010](../tests/test_web_agent_nlu_integration.py#L10) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L29) | دالة | test_sparse_academic_search_uses_budgeted_safe_connectors | لا توجد Docstring. | ناقص | 29 | [SRC-8C13B81AB4-L000029](../tests/test_web_agent_nlu_integration.py#L29) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L49) | دالة | test_academic_connectors_are_not_called_for_ordinary_sparse_queries | لا توجد Docstring. | ناقص | 49 | [SRC-8C13B81AB4-L000049](../tests/test_web_agent_nlu_integration.py#L49) |
