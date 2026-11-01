@@ -11,6 +11,7 @@ from collections.abc import Callable
 from typing import Any
 
 MAX_CONNECTOR_RESULTS = 6
+MAX_CONNECTOR_RESPONSE_BYTES = 2_000_000
 DEFAULT_TIMEOUT_SECONDS = 5
 USER_AGENT = "OmaraiResearchBot/1.0 (mailto:ops@example.com)"
 ConnectorFn = Callable[[str, int], list[dict[str, Any]]]
@@ -22,19 +23,40 @@ def _clean_text(value: Any, limit: int = 1600) -> str:
     return re.sub(r"\s+", " ", value).strip()[:limit]
 
 
+class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Fail closed on redirects from fixed academic-provider endpoints."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def _open_provider_request(request: urllib.request.Request, timeout: int):
+    """Open a provider request without following an unchecked redirect."""
+    opener = urllib.request.build_opener(_NoRedirectHandler)
+    return opener.open(request, timeout=timeout)
+
+
+def _read_bounded(response) -> bytes:
+    """Read at most the configured response ceiling plus one sentinel byte."""
+    body = response.read(MAX_CONNECTOR_RESPONSE_BYTES + 1)
+    if len(body) > MAX_CONNECTOR_RESPONSE_BYTES:
+        raise ValueError("academic connector response exceeds the configured size limit")
+    return body
+
+
 def _http_get_json(url: str, headers: dict[str, str] | None = None, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> Any:
     req_headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
     if headers:
         req_headers.update(headers)
     request = urllib.request.Request(url, headers=req_headers, method="GET")
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return json.loads(response.read().decode("utf-8", errors="replace"))
+    with _open_provider_request(request, timeout=timeout) as response:
+        return json.loads(_read_bounded(response).decode("utf-8", errors="replace"))
 
 
 def _http_get_text(url: str, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="GET")
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return response.read().decode("utf-8", errors="replace")
+    with _open_provider_request(request, timeout=timeout) as response:
+        return _read_bounded(response).decode("utf-8", errors="replace")
 
 
 def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, query: str, published_at: str = "", source_class: str = "web") -> dict[str, Any]:

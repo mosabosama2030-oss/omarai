@@ -15,6 +15,7 @@ import os
 import re
 import socket
 import threading
+import time
 import unicodedata
 import urllib.error
 import urllib.parse
@@ -65,6 +66,63 @@ MAX_HISTORY_ITEMS = 8
 MAX_HISTORY_CHARS = 4000
 MAX_SEARCH_RESULTS = 18
 MAX_PROVIDER_RESULTS = 6
+MAX_PROVIDER_RESPONSE_BYTES = 2_000_000
+
+def _bounded_http_request(method: str, url: str, **kwargs):
+    """Perform one no-redirect provider request with a strict decoded-body byte cap."""
+    import httpx
+
+    timeout = kwargs.pop("timeout", 9.0)
+    total_timeout = kwargs.pop("total_timeout", timeout)
+    try:
+        total_timeout = float(total_timeout)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("total_timeout must be a positive number") from exc
+    if not math.isfinite(total_timeout) or total_timeout <= 0:
+        raise ValueError("total_timeout must be a positive number")
+    deadline = time.monotonic() + total_timeout
+    # Redirects are never followed for search/social APIs, including credentialed calls.
+    kwargs.pop("follow_redirects", None)
+    with httpx.Client(
+        timeout=timeout,
+        follow_redirects=False,
+        trust_env=False,
+    ) as client, client.stream(method, url, **kwargs) as response:
+        declared_length = response.headers.get("content-length")
+        if declared_length:
+            try:
+                declared_bytes = int(declared_length)
+            except (TypeError, ValueError):
+                declared_bytes = None
+            if (
+                declared_bytes is not None
+                and declared_bytes > MAX_PROVIDER_RESPONSE_BYTES
+            ):
+                raise ValueError(
+                    "search provider response exceeds the configured size limit"
+                )
+        body = bytearray()
+        chunks = iter(response.iter_bytes())
+        while True:
+            # timeout limits idle waits; this deadline also limits a slow trickle
+            # where each chunk arrives just before the per-read timeout.
+            if time.monotonic() >= deadline:
+                raise TimeoutError("search provider exceeded the total request deadline")
+            try:
+                chunk = next(chunks)
+            except StopIteration:
+                break
+            if len(body) + len(chunk) > MAX_PROVIDER_RESPONSE_BYTES:
+                raise ValueError(
+                    "search provider response exceeds the configured size limit"
+                )
+            body.extend(chunk)
+        return httpx.Response(
+            status_code=response.status_code,
+            headers=response.headers,
+            content=bytes(body),
+            request=response.request,
+        )
 MAX_FETCHED_PAGES = 8
 MAX_LLM_CITED_SOURCES = 12
 MAX_RESEARCH_WORKERS = 8
@@ -82,7 +140,6 @@ _PROVIDER_REJECTION_REASONS = (
     "blocked_domain",
     "relevance_below_threshold",
 )
-
 
 _ARABIC_SEARCH_TRANSLATION = str.maketrans({
     "أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا", "ى": "ي",
@@ -183,20 +240,17 @@ _BLOCKED_SOURCE_DOMAINS = frozenset({
     "translate.google.com", "translate.googleusercontent.com",
 })
 
-
 def _normalize_search_query(value: str) -> str:
     """Normalize Arabic letters/diacritics while preserving search operators and dates."""
     value = unicodedata.normalize("NFKC", value or "")
     value = _ARABIC_DIACRITICS_RE.sub("", value).translate(_ARABIC_SEARCH_TRANSLATION)
     return re.sub(r"\s+", " ", value).strip()
 
-
 # Normalize stop words too: otherwise Arabic letter normalization (e.g. ة→ه, أ→ا)
 # can leave request-format wording in the token set and distort relevance scores.
 _NORMALIZED_SEARCH_STOPWORDS = frozenset(
     _normalize_search_query(word).casefold() for word in _SEARCH_STOPWORDS
 )
-
 
 # Normalize synonym keys and values by the same rules as search text. This avoids
 # Arabic ta-marbuta/alif variants silently disabling Arabic-to-English matching.
@@ -206,7 +260,6 @@ for _synonym_key, _synonym_values in _SEARCH_SYNONYMS.items():
     _NORMALIZED_SEARCH_SYNONYMS.setdefault(_normalized_key, set()).update(
         _normalize_search_query(value).casefold() for value in _synonym_values
     )
-
 
 def _search_tokens(value: str) -> set[str]:
     """Tokenize Arabic/English text and expand a small bilingual vocabulary."""
@@ -231,7 +284,6 @@ def _search_tokens(value: str) -> set[str]:
         result.update(forms)
     return result
 
-
 def _relevance_query_tokens(query: str) -> set[str]:
     """Return topic concepts after removing answer-format and query-expansion wording."""
     query = compact_search_query(query)
@@ -255,7 +307,6 @@ def _relevance_query_tokens(query: str) -> set[str]:
             and len(token) >= 2
         )
     }
-
 
 def _arabic_query_token_forms(token: str) -> set[str]:
     """Return conservative Arabic clitic/article variants for matching search evidence.
@@ -285,11 +336,9 @@ def _arabic_query_token_forms(token: str) -> set[str]:
             break
     return forms
 
-
 def _minimum_relevance_ratio(_query: str) -> float:
     """Keep the established 20% relevance floor after query normalization and token cleanup."""
     return 0.20
-
 
 def _relevance_ratio(query: str, evidence: str) -> float:
     """Fraction of meaningful query concepts present in a candidate's title/snippet."""
@@ -336,16 +385,69 @@ def _blocked_source_url(url: str) -> bool:
     except (TypeError, ValueError):
         return True
 
-
 class AgentDependencyError(RuntimeError):
     """A required optional runtime dependency is unavailable."""
 
+class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Fail closed on provider redirects so bearer credentials stay on the configured origin."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+def _open_model_request(request: urllib.request.Request, timeout: float):
+    """Open one model-provider request without following any HTTP redirect."""
+    opener = urllib.request.build_opener(_NoRedirectHandler)
+    return opener.open(request, timeout=timeout)
+
+
+def _is_safe_model_base_url(value: str) -> bool:
+    """Require HTTPS for remote model providers; permit HTTP only on loopback."""
+    if not isinstance(value, str) or not value or any(ord(char) < 32 for char in value):
+        return False
+    try:
+        parsed = urllib.parse.urlsplit(value)
+        hostname = parsed.hostname
+        _ = parsed.port
+    except ValueError:
+        return False
+    if (
+        not hostname
+        or parsed.username is not None
+        or parsed.password is not None
+        or parsed.query
+        or parsed.fragment
+    ):
+        return False
+    if parsed.scheme == "https":
+        return True
+    if parsed.scheme != "http":
+        return False
+    if hostname.casefold() == "localhost":
+        return True
+    try:
+        return ipaddress.ip_address(hostname).is_loopback
+    except ValueError:
+        return False
+
+
+def _safe_model_provider_label(value: str) -> str:
+    """Expose only scheme/host/port in health output; never URL credentials or paths."""
+    try:
+        parsed = urllib.parse.urlsplit(value)
+        hostname = parsed.hostname
+        if not parsed.scheme or not hostname:
+            return "invalid_provider_url"
+        port = parsed.port
+    except (TypeError, ValueError):
+        return "invalid_provider_url"
+    display_host = f"[{hostname}]" if ":" in hostname else hostname
+    display_port = f":{port}" if port is not None else ""
+    return f"{parsed.scheme}://{display_host}{display_port}"
 
 def _clean_text(value: Any, limit: int) -> str:
     if not isinstance(value, str):
         return ""
     return " ".join(value.replace("\x00", " ").split())[:limit]
-
 
 def _public_http_url(value: Any) -> str | None:
     """Lexically validate an HTTP URL before using it as a search source."""
@@ -372,7 +474,6 @@ def _public_http_url(value: Any) -> str | None:
         return urllib.parse.urlunparse(parsed._replace(fragment=""))
     except (ValueError, TypeError):
         return None
-
 
 def _public_ip_literals(host: str) -> list[str] | None:
     """Resolve host and return its public addresses.
@@ -403,11 +504,9 @@ def _public_ip_literals(host: str) -> list[str] | None:
             literals.append(literal)
     return literals or None
 
-
 def _host_resolves_publicly(host: str) -> bool:
     """Reject local/private destinations before fetching a third-party page."""
     return _public_ip_literals(host) is not None
-
 
 def _pinned_connect_url(logical_url: str, ip: str) -> str | None:
     """Rewrite a validated public URL so the connection target is a checked IP."""
@@ -417,7 +516,6 @@ def _pinned_connect_url(logical_url: str, ip: str) -> str | None:
     literal = f"[{ip}]" if ":" in ip else ip
     netloc = literal if parsed.port is None else f"{literal}:{parsed.port}"
     return urllib.parse.urlunparse(parsed._replace(netloc=netloc))
-
 
 def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:
     lines = [reason]
@@ -430,7 +528,6 @@ def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:
     if not usable:
         lines.append("لم أتمكن من استخراج مقتطفات كافية من نتائج الويب.")
     return "\n\n".join(lines)
-
 
 class PageFetchResult(tuple):
     """Two-item tuple compatible with legacy callers, with structured extraction status."""
@@ -446,7 +543,6 @@ class PageFetchResult(tuple):
         value.status = status
         value.error_class = error_class
         return value
-
 
 def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]:
     """Withhold a final answer if any explicit axis lacks a text candidate.
@@ -520,7 +616,6 @@ def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]
         )
     return result
 
-
 class WebAgent:
     """Search, inspect, and synthesize web evidence for open-ended questions."""
 
@@ -560,7 +655,7 @@ class WebAgent:
         self._deepseek_search_requests_reserved = 0
         self.openrouter_web_search_enabled = (
             os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
-            and "openrouter.ai" in self.base_url.lower()
+            and (urllib.parse.urlsplit(self.base_url).hostname or "").lower().rstrip(".") == "openrouter.ai"
         )
         self.timeout = max(
             5, min(int(os.getenv("OMARAI_LLM_TIMEOUT", str(LLM_TIMEOUT_SECONDS))), 60)
@@ -604,9 +699,11 @@ class WebAgent:
                 os.getenv("OMARAI_LLM_API_KEY", "").strip()
                 or os.getenv("OPENROUTER_API_KEY", "").strip()
             ),
-            "language_model_provider": os.getenv(
-                "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
-            ).strip().rstrip("/"),
+            "language_model_provider": _safe_model_provider_label(
+                os.getenv("OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1")
+                .strip()
+                .rstrip("/")
+            ),
             "default_model": answer_model,
             "planner_model": planner_model,
             "answer_model": answer_model,
@@ -780,7 +877,6 @@ class WebAgent:
         if enhanced_targets:
             return enhanced_targets[:8]
         return extract_question_coverage_targets(question)
-
 
     @staticmethod
     def _is_current_search_status_question(question: str) -> bool:
@@ -1268,10 +1364,10 @@ class WebAgent:
         }
 
     def _search_duckduckgo_html(self, query: str) -> list[dict[str, Any]]:
-        import httpx
+
         from bs4 import BeautifulSoup
 
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://html.duckduckgo.com/html/",
             params={"q": query},
             headers={
@@ -1320,9 +1416,7 @@ class WebAgent:
     def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:
         import xml.etree.ElementTree as ET
 
-        import httpx
-
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://www.bing.com/search",
             params={"format": "rss", "q": query},
             headers={
@@ -1369,9 +1463,8 @@ class WebAgent:
         api_key = os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip()
         if not api_key:
             return []
-        import httpx
 
-        response = httpx.post(
+        response = _bounded_http_request("POST", 
             "https://api.deepseek.com/v1/tools/search",
             headers={
                 "Authorization": "Bearer " + api_key,
@@ -1620,11 +1713,13 @@ class WebAgent:
         if not api_key:
             return []
         try:
-            import httpx
+            from importlib.util import find_spec
+            if find_spec("httpx") is None:
+                raise AgentDependencyError("حزمة httpx غير مثبتة.")
         except ImportError as exc:
             raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
         is_arabic = bool(re.search(r"[\u0600-\u06FF]", query))
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://api.search.brave.com/res/v1/web/search",
             params={
                 "q": query[:600],
@@ -1672,12 +1767,14 @@ class WebAgent:
         if not api_key:
             return []
         try:
-            import httpx
+            from importlib.util import find_spec
+            if find_spec("httpx") is None:
+                raise AgentDependencyError("حزمة httpx غير مثبتة.")
         except ImportError as exc:
             raise AgentDependencyError("حزمة httpx غير مثبتة.") from exc
         from agents.research import detect_depth, detect_freshness
 
-        response = httpx.post(
+        response = _bounded_http_request("POST", 
             "https://api.tavily.com/search",
             json={
                 "api_key": api_key,
@@ -1723,9 +1820,7 @@ class WebAgent:
         """Read the public Google News RSS search feed for freshness-sensitive queries."""
         import xml.etree.ElementTree as ET
 
-        import httpx
-
-        response = httpx.get(
+        response = _bounded_http_request("GET", 
             "https://news.google.com/rss/search",
             params={"q": query, "hl": "ar", "gl": "EG", "ceid": "EG:ar"},
             headers={
@@ -1822,7 +1917,7 @@ class WebAgent:
         if "reddit" in platforms and reddit_client_id and reddit_client_secret:
             try:
                 self._reserve_search_call()
-                token_response = httpx.post(
+                token_response = _bounded_http_request("POST", 
                     "https://www.reddit.com/api/v1/access_token",
                     data={"grant_type": "client_credentials"},
                     auth=(reddit_client_id, reddit_client_secret),
@@ -1834,7 +1929,7 @@ class WebAgent:
                     access_token = token_response.json().get("access_token", "")
                     if access_token:
                         self._reserve_search_call()
-                        search_response = httpx.get(
+                        search_response = _bounded_http_request("GET", 
                             "https://oauth.reddit.com/search",
                             params={
                                 "q": query,
@@ -1901,7 +1996,7 @@ class WebAgent:
         ):
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://www.reddit.com/search.rss",
                     params={"q": query, "sort": "relevance", "t": "all", "limit": "8"},
                     headers=headers,
@@ -1947,7 +2042,7 @@ class WebAgent:
         if "bluesky" in platforms:
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
                     params={"q": query, "limit": 10},
                     headers=headers,
@@ -2004,7 +2099,7 @@ class WebAgent:
                 for page_id in page_ids:
                     try:
                         self._reserve_search_call()
-                        response = httpx.get(
+                        response = _bounded_http_request("GET", 
                             f"https://graph.facebook.com/{graph_version}/{page_id}/posts",
                             params={
                                 "fields": (
@@ -2097,7 +2192,7 @@ class WebAgent:
                 for hashtag in list(dict.fromkeys(hashtags))[:1]:
                     try:
                         self._reserve_search_call()
-                        search_response = httpx.get(
+                        search_response = _bounded_http_request("GET", 
                             f"https://graph.facebook.com/{graph_version}/ig_hashtag_search",
                             params={
                                 "user_id": ig_user_id,
@@ -2122,7 +2217,7 @@ class WebAgent:
                         if not hashtag_id:
                             continue
                         self._reserve_search_call()
-                        media_response = httpx.get(
+                        media_response = _bounded_http_request("GET", 
                             f"https://graph.facebook.com/{graph_version}/{hashtag_id}/recent_media",
                             params={
                                 "user_id": ig_user_id,
@@ -2177,7 +2272,7 @@ class WebAgent:
         if "x" in platforms and os.getenv("X_BEARER_TOKEN", "").strip():
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://api.x.com/2/tweets/search/recent",
                     params={
                         "query": query + " -is:retweet",
@@ -2229,7 +2324,7 @@ class WebAgent:
         if "youtube" in platforms and os.getenv("YOUTUBE_API_KEY", "").strip():
             try:
                 self._reserve_search_call()
-                response = httpx.get(
+                response = _bounded_http_request("GET", 
                     "https://www.googleapis.com/youtube/v3/search",
                     params={
                         "part": "snippet",
@@ -3109,6 +3204,19 @@ class WebAgent:
             )
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
 
+        if not _is_safe_model_base_url(self.base_url):
+            self._record_generation_diagnostic(
+                requested_model=requested_model,
+                attempted_model=requested_model,
+                status="unsafe_provider_url",
+                error_class="UnsafeProviderURL",
+                request_started=False,
+                remote_response_received=False,
+            )
+            raise RuntimeError(
+                "عنوان مزود النموذج يجب أن يستخدم HTTPS؛ HTTP مسموح فقط على loopback المحلي."
+            )
+
         model_candidates = [requested_model]
         if self.fallback_model and self.fallback_model not in model_candidates:
             model_candidates.append(self.fallback_model)
@@ -3173,7 +3281,7 @@ class WebAgent:
                 method="POST",
             )
             try:
-                with urllib.request.urlopen(request, timeout=request_timeout) as response:
+                with _open_model_request(request, timeout=request_timeout) as response:
                     data = json.loads(response.read(2_000_000).decode("utf-8"))
                 choice = data["choices"][0]
                 if not isinstance(choice, dict):
@@ -6580,7 +6688,6 @@ class WebAgent:
             "intent_route_reason": intent_reason,
         }
 
-
 def _normalized_provider_usage(
     usage: Any, *, provider_base_url: str = ""
 ) -> dict[str, int | float] | None:
@@ -6613,7 +6720,6 @@ def _normalized_provider_usage(
                 normalized["cost_usd"] = number
                 break
     return normalized or None
-
 
 def _model_usage_record(
     requested_model: str,
