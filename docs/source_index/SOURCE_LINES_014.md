@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003262 إلى SRC-1AE03B9EC3-L004061
+- النطاق: SRC-1AE03B9EC3-L003251 إلى SRC-1AE03B9EC3-L004050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"                \"rejection_counts_observed\": rejection_counts_observed,"` | — |
+| [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `"                \"rejection_counts\": rejection_count_totals if rejection_counts_observed else None,"` | — |
+| [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"                \"queries\": queries, \"errors\": errors,"` | — |
+| [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        return {"` | — |
+| [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"            \"scope\": \"this_request_only\","` | — |
+| [SRC-1AE03B9EC3-L003257](../../agents/web_agent.py#L3257) | 3257 | `"            \"semantics\": \"result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.\","` | — |
+| [SRC-1AE03B9EC3-L003258](../../agents/web_agent.py#L3258) | 3258 | `"            \"attempted_count\": sum(bool(item[\"attempted\"]) for item in connectors),"` | — |
+| [SRC-1AE03B9EC3-L003259](../../agents/web_agent.py#L3259) | 3259 | `"            \"failed_count\": sum(item[\"status\"] in {\"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\", \"rate_limited\"} for item in connectors),"` | — |
+| [SRC-1AE03B9EC3-L003260](../../agents/web_agent.py#L3260) | 3260 | `"            \"connectors\": connectors[:24],"` | — |
+| [SRC-1AE03B9EC3-L003261](../../agents/web_agent.py#L3261) | 3261 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L003262](../../agents/web_agent.py#L3262) | 3262 | `""` | — |
 | [SRC-1AE03B9EC3-L003263](../../agents/web_agent.py#L3263) | 3263 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L003264](../../agents/web_agent.py#L3264) | 3264 | `"    def _sanitize_history(history: Any) -> list[dict[str, str]]:"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L004048](../../agents/web_agent.py#L4048) | 4048 | `"        \"\"\"Make one bounded, evidence-constrained pass at addressing possibly missing targets.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L004049](../../agents/web_agent.py#L4049) | 4049 | `"        if not missing_targets:"` | — |
 | [SRC-1AE03B9EC3-L004050](../../agents/web_agent.py#L4050) | 4050 | `"            return answer"` | — |
-| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"        source_blocks: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
-| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
-| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
-| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"            evidence = page_text or snippet or \"لا يتوفر نص قابل للقراءة.\""` | — |
-| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"            evidence_kind = \"نص صفحة مستخرج\" if bool(source.get(\"page_fetched\")) and page_text else \"مقتطف بحث\""` | — |
-| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"            source_blocks.append("` | — |
-| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                f\"الرابط: {source.get('url', '')}\\n\""` | — |
-| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                f\"نوع الدليل المتاح: {evidence_kind}\\n\""` | — |
-| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                f\"النص: {_clean_text(evidence, 1800)}\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004062 إلى SRC-1AE03B9EC3-L004861
+- النطاق: SRC-1AE03B9EC3-L004051 إلى SRC-1AE03B9EC3-L004850
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004051](../../agents/web_agent.py#L4051) | 4051 | `"        source_blocks: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L004052](../../agents/web_agent.py#L4052) | 4052 | `"        for index, source in enumerate(sources[:MAX_LLM_CITED_SOURCES], 1):"` | — |
+| [SRC-1AE03B9EC3-L004053](../../agents/web_agent.py#L4053) | 4053 | `"            page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L004054](../../agents/web_agent.py#L4054) | 4054 | `"            snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L004055](../../agents/web_agent.py#L4055) | 4055 | `"            evidence = page_text or snippet or \"لا يتوفر نص قابل للقراءة.\""` | — |
+| [SRC-1AE03B9EC3-L004056](../../agents/web_agent.py#L4056) | 4056 | `"            evidence_kind = \"نص صفحة مستخرج\" if bool(source.get(\"page_fetched\")) and page_text else \"مقتطف بحث\""` | — |
+| [SRC-1AE03B9EC3-L004057](../../agents/web_agent.py#L4057) | 4057 | `"            source_blocks.append("` | — |
+| [SRC-1AE03B9EC3-L004058](../../agents/web_agent.py#L4058) | 4058 | `"                f\"[المصدر {index}] {source.get('title', 'نتيجة ويب')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L004059](../../agents/web_agent.py#L4059) | 4059 | `"                f\"الرابط: {source.get('url', '')}\\n\""` | — |
+| [SRC-1AE03B9EC3-L004060](../../agents/web_agent.py#L4060) | 4060 | `"                f\"نوع الدليل المتاح: {evidence_kind}\\n\""` | — |
+| [SRC-1AE03B9EC3-L004061](../../agents/web_agent.py#L4061) | 4061 | `"                f\"النص: {_clean_text(evidence, 1800)}\""` | — |
 | [SRC-1AE03B9EC3-L004062](../../agents/web_agent.py#L4062) | 4062 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L004063](../../agents/web_agent.py#L4063) | 4063 | `"        messages = ["` | — |
 | [SRC-1AE03B9EC3-L004064](../../agents/web_agent.py#L4064) | 4064 | `"            {"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L004848](../../agents/web_agent.py#L4848) | 4848 | `"            completion_phases = ("` | — |
 | [SRC-1AE03B9EC3-L004849](../../agents/web_agent.py#L4849) | 4849 | `"                completion_phases if isinstance(completion_phases, dict) else {}"` | — |
 | [SRC-1AE03B9EC3-L004850](../../agents/web_agent.py#L4850) | 4850 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L004851](../../agents/web_agent.py#L4851) | 4851 | `"            if ("` | — |
-| [SRC-1AE03B9EC3-L004852](../../agents/web_agent.py#L4852) | 4852 | `"                completion_phases.get(\"citation_support_screen\") == \"warning_signals_detected\""` | — |
-| [SRC-1AE03B9EC3-L004853](../../agents/web_agent.py#L4853) | 4853 | `"                or completion.get(\"status\") == \"answer_generated_without_valid_citation_markers\""` | — |
-| [SRC-1AE03B9EC3-L004854](../../agents/web_agent.py#L4854) | 4854 | `"            ):"` | — |
-| [SRC-1AE03B9EC3-L004855](../../agents/web_agent.py#L4855) | 4855 | `"                result[\"pipeline_completion_status\"] = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L004856](../../agents/web_agent.py#L4856) | 4856 | `"            if isinstance(result.get(\"search_report\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L004857](../../agents/web_agent.py#L4857) | 4857 | `"                result[\"search_report\"][\"research_completion\"] = completion"` | — |
-| [SRC-1AE03B9EC3-L004858](../../agents/web_agent.py#L4858) | 4858 | `"                if result.get(\"pipeline_completion_status\") == \"partial\":"` | — |
-| [SRC-1AE03B9EC3-L004859](../../agents/web_agent.py#L4859) | 4859 | `"                    result[\"search_report\"][\"pipeline_completion_status\"] = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L004860](../../agents/web_agent.py#L4860) | 4860 | `"        except Exception:"` | — |
-| [SRC-1AE03B9EC3-L004861](../../agents/web_agent.py#L4861) | 4861 | `"            # Diagnostics must never replace a valid answer with an internal error."` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002462 إلى SRC-1AE03B9EC3-L003261
+- النطاق: SRC-1AE03B9EC3-L002451 إلى SRC-1AE03B9EC3-L003250
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002451](../../agents/web_agent.py#L2451) | 2451 | `"                    \"https://www.googleapis.com/youtube/v3/search\","` | — |
+| [SRC-1AE03B9EC3-L002452](../../agents/web_agent.py#L2452) | 2452 | `"                    params={"` | — |
+| [SRC-1AE03B9EC3-L002453](../../agents/web_agent.py#L2453) | 2453 | `"                        \"part\": \"snippet\","` | — |
+| [SRC-1AE03B9EC3-L002454](../../agents/web_agent.py#L2454) | 2454 | `"                        \"q\": query,"` | — |
+| [SRC-1AE03B9EC3-L002455](../../agents/web_agent.py#L2455) | 2455 | `"                        \"type\": \"video\","` | — |
+| [SRC-1AE03B9EC3-L002456](../../agents/web_agent.py#L2456) | 2456 | `"                        \"maxResults\": 8,"` | — |
+| [SRC-1AE03B9EC3-L002457](../../agents/web_agent.py#L2457) | 2457 | `"                        \"key\": os.getenv(\"YOUTUBE_API_KEY\", \"\").strip(),"` | — |
+| [SRC-1AE03B9EC3-L002458](../../agents/web_agent.py#L2458) | 2458 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002459](../../agents/web_agent.py#L2459) | 2459 | `"                    headers=headers,"` | — |
+| [SRC-1AE03B9EC3-L002460](../../agents/web_agent.py#L2460) | 2460 | `"                    timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L002461](../../agents/web_agent.py#L2461) | 2461 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L002462](../../agents/web_agent.py#L2462) | 2462 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002463](../../agents/web_agent.py#L2463) | 2463 | `"                if response.status_code == 200:"` | — |
 | [SRC-1AE03B9EC3-L002464](../../agents/web_agent.py#L2464) | 2464 | `"                    data = response.json()"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L003248](../../agents/web_agent.py#L3248) | 3248 | `"                \"result_count\": result_count, \"accepted_count\": accepted_count,"` | — |
 | [SRC-1AE03B9EC3-L003249](../../agents/web_agent.py#L3249) | 3249 | `"                \"useful_result_count\": useful.get(name, 0),"` | — |
 | [SRC-1AE03B9EC3-L003250](../../agents/web_agent.py#L3250) | 3250 | `"                \"rejected_count\": rejected_count,"` | — |
-| [SRC-1AE03B9EC3-L003251](../../agents/web_agent.py#L3251) | 3251 | `"                \"rejection_counts_observed\": rejection_counts_observed,"` | — |
-| [SRC-1AE03B9EC3-L003252](../../agents/web_agent.py#L3252) | 3252 | `"                \"rejection_counts\": rejection_count_totals if rejection_counts_observed else None,"` | — |
-| [SRC-1AE03B9EC3-L003253](../../agents/web_agent.py#L3253) | 3253 | `"                \"queries\": queries, \"errors\": errors,"` | — |
-| [SRC-1AE03B9EC3-L003254](../../agents/web_agent.py#L3254) | 3254 | `"            })"` | — |
-| [SRC-1AE03B9EC3-L003255](../../agents/web_agent.py#L3255) | 3255 | `"        return {"` | — |
-| [SRC-1AE03B9EC3-L003256](../../agents/web_agent.py#L3256) | 3256 | `"            \"scope\": \"this_request_only\","` | — |
-| [SRC-1AE03B9EC3-L003257](../../agents/web_agent.py#L3257) | 3257 | `"            \"semantics\": \"result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.\","` | — |
-| [SRC-1AE03B9EC3-L003258](../../agents/web_agent.py#L3258) | 3258 | `"            \"attempted_count\": sum(bool(item[\"attempted\"]) for item in connectors),"` | — |
-| [SRC-1AE03B9EC3-L003259](../../agents/web_agent.py#L3259) | 3259 | `"            \"failed_count\": sum(item[\"status\"] in {\"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\", \"rate_limited\"} for item in connectors),"` | — |
-| [SRC-1AE03B9EC3-L003260](../../agents/web_agent.py#L3260) | 3260 | `"            \"connectors\": connectors[:24],"` | — |
-| [SRC-1AE03B9EC3-L003261](../../agents/web_agent.py#L3261) | 3261 | `"        }"` | — |

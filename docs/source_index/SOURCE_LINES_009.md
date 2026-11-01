@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001040 إلى SRC-1AE03B9EC3-L000061
+- النطاق: SRC-686F71AA50-L001029 إلى SRC-1AE03B9EC3-L000050
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001029](../../agents/task_understanding.py#L1029) | 1029 | `"            (f\"{topic} alternative plan fallback\", \"alternatives_and_fallback\", \"seek alternatives and fallback approaches\"),"` | — |
+| [SRC-686F71AA50-L001030](../../agents/task_understanding.py#L1030) | 1030 | `"        ])"` | — |
+| [SRC-686F71AA50-L001031](../../agents/task_understanding.py#L1031) | 1031 | `"    normalized_topic = normalize_text(topic)"` | — |
+| [SRC-686F71AA50-L001032](../../agents/task_understanding.py#L1032) | 1032 | `"    property_topic = any("` | — |
+| [SRC-686F71AA50-L001033](../../agents/task_understanding.py#L1033) | 1033 | `"        cue in normalized_topic"` | — |
+| [SRC-686F71AA50-L001034](../../agents/task_understanding.py#L1034) | 1034 | `"        for cue in (\"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"عقاري\", \"real estate\", \"apartment\", \"property\")"` | — |
+| [SRC-686F71AA50-L001035](../../agents/task_understanding.py#L1035) | 1035 | `"    )"` | — |
+| [SRC-686F71AA50-L001036](../../agents/task_understanding.py#L1036) | 1036 | `"    if family == \"find_or_discover\" and property_topic:"` | — |
+| [SRC-686F71AA50-L001037](../../agents/task_understanding.py#L1037) | 1037 | `"        candidates.extend(["` | — |
+| [SRC-686F71AA50-L001038](../../agents/task_understanding.py#L1038) | 1038 | `"            (f\"{topic} إعلانات عقارية\", \"property_listings\", \"discover relevant listings without treating ads as independent price evidence\"),"` | — |
+| [SRC-686F71AA50-L001039](../../agents/task_understanding.py#L1039) | 1039 | `"            (f\"{topic} متوسط أسعار السوق للمتر\", \"property_market_price_per_meter\", \"compare asking prices against market-level context\"),"` | — |
 | [SRC-686F71AA50-L001040](../../agents/task_understanding.py#L1040) | 1040 | `"            (f\"{topic} أسعار البيع الفعلية والتقييم العقاري\", \"property_transaction_price_check\", \"distinguish asking prices from completed transaction prices\"),"` | — |
 | [SRC-686F71AA50-L001041](../../agents/task_understanding.py#L1041) | 1041 | `"        ])"` | — |
 | [SRC-686F71AA50-L001042](../../agents/task_understanding.py#L1042) | 1042 | `"    if ("` | — |
@@ -832,14 +843,3 @@
 | [SRC-1AE03B9EC3-L000048](../../agents/web_agent.py#L48) | 48 | `"    evidence_signal_report,"` | — |
 | [SRC-1AE03B9EC3-L000049](../../agents/web_agent.py#L49) | 49 | `"    fallback_plan,"` | — |
 | [SRC-1AE03B9EC3-L000050](../../agents/web_agent.py#L50) | 50 | `"    fuse_ranked_results,"` | — |
-| [SRC-1AE03B9EC3-L000051](../../agents/web_agent.py#L51) | 51 | `"    registrable_domain,"` | — |
-| [SRC-1AE03B9EC3-L000052](../../agents/web_agent.py#L52) | 52 | `"    extract_question_coverage_targets,"` | — |
-| [SRC-1AE03B9EC3-L000053](../../agents/web_agent.py#L53) | 53 | `"    validate_plan,"` | — |
-| [SRC-1AE03B9EC3-L000054](../../agents/web_agent.py#L54) | 54 | `")"` | — |
-| [SRC-1AE03B9EC3-L000055](../../agents/web_agent.py#L55) | 55 | `"from agents.research_guardrails import apply_source_guardrails"` | — |
-| [SRC-1AE03B9EC3-L000056](../../agents/web_agent.py#L56) | 56 | `"from agents.research_completion import build_research_completion"` | — |
-| [SRC-1AE03B9EC3-L000057](../../agents/web_agent.py#L57) | 57 | `"from agents.tool_execution_status import build_tool_execution_matrix"` | — |
-| [SRC-1AE03B9EC3-L000058](../../agents/web_agent.py#L58) | 58 | `"from agents.task_understanding import ("` | — |
-| [SRC-1AE03B9EC3-L000059](../../agents/web_agent.py#L59) | 59 | `"    reasoning_guidance_for_task_spec,"` | — |
-| [SRC-1AE03B9EC3-L000060](../../agents/web_agent.py#L60) | 60 | `"    validate_task_spec,"` | — |
-| [SRC-1AE03B9EC3-L000061](../../agents/web_agent.py#L61) | 61 | `")"` | — |

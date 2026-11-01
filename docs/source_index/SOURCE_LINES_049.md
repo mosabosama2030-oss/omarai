@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001581 إلى SRC-F725E90B2A-L002380
+- النطاق: SRC-F725E90B2A-L001570 إلى SRC-F725E90B2A-L002369
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001570](../../tests/test_web_agent.py#L1570) | 1570 | `"      <description>تقرير عن الدوري ونتائج المباراة</description>"` | — |
+| [SRC-F725E90B2A-L001571](../../tests/test_web_agent.py#L1571) | 1571 | `"      <source url=\"https://example.org/\">Example News</source>"` | — |
+| [SRC-F725E90B2A-L001572](../../tests/test_web_agent.py#L1572) | 1572 | `"      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L001573](../../tests/test_web_agent.py#L1573) | 1573 | `"    </item>"` | — |
+| [SRC-F725E90B2A-L001574](../../tests/test_web_agent.py#L1574) | 1574 | `"    </channel></rss>\"\"\""` | — |
+| [SRC-F725E90B2A-L001575](../../tests/test_web_agent.py#L1575) | 1575 | `""` | — |
+| [SRC-F725E90B2A-L001576](../../tests/test_web_agent.py#L1576) | 1576 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L001577](../../tests/test_web_agent.py#L1577) | 1577 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L001578](../../tests/test_web_agent.py#L1578) | 1578 | `"        content = rss.encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L001579](../../tests/test_web_agent.py#L1579) | 1579 | `""` | — |
+| [SRC-F725E90B2A-L001580](../../tests/test_web_agent.py#L1580) | 1580 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001581](../../tests/test_web_agent.py#L1581) | 1581 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001582](../../tests/test_web_agent.py#L1582) | 1582 | `"        \"agents.web_agent._bounded_http_request\","` | — |
 | [SRC-F725E90B2A-L001583](../../tests/test_web_agent.py#L1583) | 1583 | `"        lambda method, url, **kwargs: FakeResponse(),"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L002367](../../tests/test_web_agent.py#L2367) | 2367 | `""` | — |
 | [SRC-F725E90B2A-L002368](../../tests/test_web_agent.py#L2368) | 2368 | `"def test_arabic_typo_repair_keeps_product_topic_not_instruction_text():"` | — |
 | [SRC-F725E90B2A-L002369](../../tests/test_web_agent.py#L2369) | 2369 | `"    queries = WebAgent._lead_generation_queries("` | — |
-| [SRC-F725E90B2A-L002370](../../tests/test_web_agent.py#L2370) | 2370 | `"        \"ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس\""` | — |
-| [SRC-F725E90B2A-L002371](../../tests/test_web_agent.py#L2371) | 2371 | `"    )"` | — |
-| [SRC-F725E90B2A-L002372](../../tests/test_web_agent.py#L2372) | 2372 | `"    assert queries"` | — |
-| [SRC-F725E90B2A-L002373](../../tests/test_web_agent.py#L2373) | 2373 | `"    assert any(\"شقه في التجمع الخامس\" in query for query in queries)"` | — |
-| [SRC-F725E90B2A-L002374](../../tests/test_web_agent.py#L2374) | 2374 | `"    assert all(\"عملاش\" not in query for query in queries)"` | — |
-| [SRC-F725E90B2A-L002375](../../tests/test_web_agent.py#L2375) | 2375 | `""` | — |
-| [SRC-F725E90B2A-L002376](../../tests/test_web_agent.py#L2376) | 2376 | `""` | — |
-| [SRC-F725E90B2A-L002377](../../tests/test_web_agent.py#L2377) | 2377 | `"def test_lead_fallback_only_shows_sources_with_qualified_public_demand():"` | — |
-| [SRC-F725E90B2A-L002378](../../tests/test_web_agent.py#L2378) | 2378 | `"    qualified = {"` | — |
-| [SRC-F725E90B2A-L002379](../../tests/test_web_agent.py#L2379) | 2379 | `"        \"lead_qualification\": \"public_demand_signal\","` | — |
-| [SRC-F725E90B2A-L002380](../../tests/test_web_agent.py#L2380) | 2380 | `"        \"lead_intent_evidence\": {\"phrase\": \"طلب عرض سعر\", \"signal_type\": \"request_for_quotation\"},"` | — |

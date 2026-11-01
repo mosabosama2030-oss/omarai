@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000862 إلى SRC-1AE03B9EC3-L001661
+- النطاق: SRC-1AE03B9EC3-L000851 إلى SRC-1AE03B9EC3-L001650
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000851](../../agents/web_agent.py#L851) | 851 | `"            for reason in _PROVIDER_REJECTION_REASONS:"` | — |
+| [SRC-1AE03B9EC3-L000852](../../agents/web_agent.py#L852) | 852 | `"                try:"` | — |
+| [SRC-1AE03B9EC3-L000853](../../agents/web_agent.py#L853) | 853 | `"                    safe_counts[reason] = max(0, int(rejection_counts.get(reason, 0) or 0))"` | — |
+| [SRC-1AE03B9EC3-L000854](../../agents/web_agent.py#L854) | 854 | `"                except (TypeError, ValueError, OverflowError):"` | — |
+| [SRC-1AE03B9EC3-L000855](../../agents/web_agent.py#L855) | 855 | `"                    safe_counts[reason] = 0"` | — |
+| [SRC-1AE03B9EC3-L000856](../../agents/web_agent.py#L856) | 856 | `"            record[\"rejection_counts\"] = safe_counts"` | — |
+| [SRC-1AE03B9EC3-L000857](../../agents/web_agent.py#L857) | 857 | `"        if error:"` | — |
+| [SRC-1AE03B9EC3-L000858](../../agents/web_agent.py#L858) | 858 | `"            record[\"error\"] = redact(error, 180)"` | — |
+| [SRC-1AE03B9EC3-L000859](../../agents/web_agent.py#L859) | 859 | `"        with self._provider_diagnostics_lock:"` | — |
+| [SRC-1AE03B9EC3-L000860](../../agents/web_agent.py#L860) | 860 | `"            self._provider_diagnostics.append(record)"` | — |
+| [SRC-1AE03B9EC3-L000861](../../agents/web_agent.py#L861) | 861 | `"            # Bound memory when the instance serves many user requests."` | — |
 | [SRC-1AE03B9EC3-L000862](../../agents/web_agent.py#L862) | 862 | `"            self._provider_diagnostics = self._provider_diagnostics[-160:]"` | — |
 | [SRC-1AE03B9EC3-L000863](../../agents/web_agent.py#L863) | 863 | `""` | — |
 | [SRC-1AE03B9EC3-L000864](../../agents/web_agent.py#L864) | 864 | `"    @staticmethod"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L001648](../../agents/web_agent.py#L1648) | 1648 | `"        try:"` | — |
 | [SRC-1AE03B9EC3-L001649](../../agents/web_agent.py#L1649) | 1649 | `"            configured_budget = int("` | — |
 | [SRC-1AE03B9EC3-L001650](../../agents/web_agent.py#L1650) | 1650 | `"                os.getenv(\"OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET\", \"1\").strip()"` | — |
-| [SRC-1AE03B9EC3-L001651](../../agents/web_agent.py#L1651) | 1651 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001652](../../agents/web_agent.py#L1652) | 1652 | `"        except ValueError:"` | — |
-| [SRC-1AE03B9EC3-L001653](../../agents/web_agent.py#L1653) | 1653 | `"            configured_budget = 1"` | — |
-| [SRC-1AE03B9EC3-L001654](../../agents/web_agent.py#L1654) | 1654 | `"        budget = max(0, min(configured_budget, 3))"` | — |
-| [SRC-1AE03B9EC3-L001655](../../agents/web_agent.py#L1655) | 1655 | `"        with self._deepseek_budget_lock:"` | — |
-| [SRC-1AE03B9EC3-L001656](../../agents/web_agent.py#L1656) | 1656 | `"            if self._deepseek_search_requests_reserved >= budget:"` | — |
-| [SRC-1AE03B9EC3-L001657](../../agents/web_agent.py#L1657) | 1657 | `"                return False"` | — |
-| [SRC-1AE03B9EC3-L001658](../../agents/web_agent.py#L1658) | 1658 | `"            self._deepseek_search_requests_reserved += 1"` | — |
-| [SRC-1AE03B9EC3-L001659](../../agents/web_agent.py#L1659) | 1659 | `"            return True"` | — |
-| [SRC-1AE03B9EC3-L001660](../../agents/web_agent.py#L1660) | 1660 | `""` | — |
-| [SRC-1AE03B9EC3-L001661](../../agents/web_agent.py#L1661) | 1661 | `"    def _search_web(self, query: str) -> list[dict[str, Any]]:"` | — |

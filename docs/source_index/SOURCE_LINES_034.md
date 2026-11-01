@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000861 إلى SRC-63610B9E85-L000004
+- النطاق: SRC-90FAA34ADE-L000850 إلى SRC-CAC5F305FE-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000850](../../tests/fixtures/answer_quality_cases.json#L850) | 850 | `"            \"snippet\": \"Apartment for sale in New Cairo. Contact through the listing platform.\","` | — |
+| [SRC-90FAA34ADE-L000851](../../tests/fixtures/answer_quality_cases.json#L851) | 851 | `"            \"domain\": \"listings.example.test\","` | — |
+| [SRC-90FAA34ADE-L000852](../../tests/fixtures/answer_quality_cases.json#L852) | 852 | `"            \"provider\": \"fixture_search\","` | — |
+| [SRC-90FAA34ADE-L000853](../../tests/fixtures/answer_quality_cases.json#L853) | 853 | `"            \"verification_status\": \"unverified\""` | — |
+| [SRC-90FAA34ADE-L000854](../../tests/fixtures/answer_quality_cases.json#L854) | 854 | `"          }"` | — |
+| [SRC-90FAA34ADE-L000855](../../tests/fixtures/answer_quality_cases.json#L855) | 855 | `"        ]"` | — |
+| [SRC-90FAA34ADE-L000856](../../tests/fixtures/answer_quality_cases.json#L856) | 856 | `"      },"` | — |
+| [SRC-90FAA34ADE-L000857](../../tests/fixtures/answer_quality_cases.json#L857) | 857 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L000858](../../tests/fixtures/answer_quality_cases.json#L858) | 858 | `"        \"التصريح بأن الملكية أو التوافر verified من مصدر الإعلان وحده\","` | — |
+| [SRC-90FAA34ADE-L000859](../../tests/fixtures/answer_quality_cases.json#L859) | 859 | `"        \"تسجيل نية شراء مؤكدة دون دليل\""` | — |
+| [SRC-90FAA34ADE-L000860](../../tests/fixtures/answer_quality_cases.json#L860) | 860 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000861](../../tests/fixtures/answer_quality_cases.json#L861) | 861 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
 | [SRC-90FAA34ADE-L000862](../../tests/fixtures/answer_quality_cases.json#L862) | 862 | `"    },"` | — |
 | [SRC-90FAA34ADE-L000863](../../tests/fixtures/answer_quality_cases.json#L863) | 863 | `"    {"` | — |
@@ -823,23 +834,3 @@
 | [SRC-CAC5F305FE-L000061](../../tests/test_agent_modes.py#L61) | 61 | `""` | — |
 | [SRC-CAC5F305FE-L000062](../../tests/test_agent_modes.py#L62) | 62 | `"    result = agent.answer(\"حلل الموضوع\", mode=\"deep\")"` | — |
 | [SRC-CAC5F305FE-L000063](../../tests/test_agent_modes.py#L63) | 63 | `""` | — |
-| [SRC-CAC5F305FE-L000064](../../tests/test_agent_modes.py#L64) | 64 | `"    assert seen[\"plan\"][\"depth\"] == \"deep\""` | — |
-| [SRC-CAC5F305FE-L000065](../../tests/test_agent_modes.py#L65) | 65 | `"    assert len(seen[\"plan\"][\"queries\"]) > 1"` | — |
-| [SRC-CAC5F305FE-L000066](../../tests/test_agent_modes.py#L66) | 66 | `"    assert result[\"research_plan\"][\"mode\"] == \"deep\""` | — |
-| [SRC-CAC5F305FE-L000067](../../tests/test_agent_modes.py#L67) | 67 | `"    assert \"evidence_signals\" in result[\"search_report\"]"` | — |
-| [SRC-CAC5F305FE-L000068](../../tests/test_agent_modes.py#L68) | 68 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"attempted\"] is False"` | — |
-| [SRC-CAC5F305FE-L000069](../../tests/test_agent_modes.py#L69) | 69 | `"    assert result[\"search_report\"][\"evidence_repair\"][\"reason\"] == \"deep_research_already_expanded\""` | — |
-| [SRC-CAC5F305FE-L000070](../../tests/test_agent_modes.py#L70) | 70 | `"    assert result[\"search_report\"][\"evidence_signals\"][\"unique_domains\"] == 1"` | — |
-## اختبارات
-
-### FILE-63610B9E85 — [tests/test_agentic_retrieval.py](../../tests/test_agentic_retrieval.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-63610B9E85-L000001](../../tests/test_agentic_retrieval.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-63610B9E85-L000002](../../tests/test_agentic_retrieval.py#L2) | 2 | `""` | — |
-| [SRC-63610B9E85-L000003](../../tests/test_agentic_retrieval.py#L3) | 3 | `"from agents.claim_evidence import build_claim_evidence_ledger"` | — |
-| [SRC-63610B9E85-L000004](../../tests/test_agentic_retrieval.py#L4) | 4 | `"from agents.web_agent import WebAgent"` | — |
