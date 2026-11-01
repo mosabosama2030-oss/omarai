@@ -22,6 +22,10 @@ from api.omarai import Handler
 def local_api(tmp_path):
     """Run the real handler on an ephemeral loopback port with an isolated database."""
     previous_store = Handler.store
+    previous_request_times = Handler._request_times
+    previous_rate_cleanup = Handler._rate_last_cleanup
+    Handler._request_times = defaultdict(deque)
+    Handler._rate_last_cleanup = 0.0
     Handler.store = LeadStore(tmp_path / "api-test.sqlite3")
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
@@ -33,6 +37,8 @@ def local_api(tmp_path):
         server.server_close()
         thread.join(timeout=3)
         Handler.store = previous_store
+        Handler._request_times = previous_request_times
+        Handler._rate_last_cleanup = previous_rate_cleanup
 
 
 def request_json(base, path, method="GET", payload=None, headers=None):

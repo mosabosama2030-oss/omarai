@@ -915,7 +915,7 @@ class WebAgent:
             "deepseek_search_api_configured": bool(
                 os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip()
             ),
-            "tavily_search_api_configured": bool(os.getenv("TAVILY_SEARCH_API_KEY", "").strip()),
+            "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
             "openrouter_web_search_enabled": (
                 os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
                 and (urllib.parse.urlsplit(primary_base_url).hostname or "").lower().rstrip(".")

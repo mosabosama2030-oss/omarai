@@ -4,12 +4,15 @@ from pathlib import Path
 DASHBOARD = Path(__file__).resolve().parents[1] / "web" / "dashboard.html"
 
 
-def test_hosted_lead_dashboard_can_send_the_private_access_token():
+def test_hosted_lead_dashboard_exchanges_access_token_for_http_only_session():
     html = DASHBOARD.read_text(encoding="utf-8")
-    assert 'const ACCESS_TOKEN_STORAGE_KEY="omarai_access_token"' in html
-    assert 'headers.Authorization="Bearer "+token' in html
+    assert 'fetch("/api/session"' in html
+    assert 'JSON.stringify({access_token:token})' in html
+    assert 'credentials:"same-origin"' in html
+    assert 'headers.Authorization="Bearer "+token' not in html
+    assert 'localStorage' not in html
+    assert 'sessionStorage' not in html
     assert '$("saveAccessToken").onclick' in html
-
 
 def test_saved_lead_source_links_reject_non_http_schemes():
     html = DASHBOARD.read_text(encoding="utf-8")
