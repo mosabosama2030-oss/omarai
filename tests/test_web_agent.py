@@ -908,9 +908,75 @@ def test_completion_falls_back_for_malformed_choice(monkeypatch):
     assert called == ["broken/primary", "fallback/model"]
 
 
+def test_model_provider_failover_uses_gemini_after_primary_failure(monkeypatch):
+    import json
+    import urllib.error
+
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter-key")
+    monkeypatch.setenv("GEMINI_API_KEY", "test-gemini-key")
+    monkeypatch.delenv("MISTRAL_API_KEY", raising=False)
+    for key in ("OMARAI_LLM_API_KEY", "OMARAI_LLM_BASE_URL", "OMARAI_LLM_MODEL", "OMARAI_ANSWER_MODEL", "OMARAI_PLANNER_MODEL", "OMARAI_GEMINI_MODEL", "OMARAI_LLM_FALLBACK_MODEL"):
+        monkeypatch.delenv(key, raising=False)
+    agent = WebAgent()
+    calls = []
+
+    class FakeResponse:
+        def __enter__(self): return self
+        def __exit__(self, exc_type, exc, traceback): return False
+        def read(self, limit):
+            return json.dumps({"choices":[{"message":{"content":"إجابة Gemini مكتملة"},"finish_reason":"stop"}]}).encode("utf-8")
+
+    def fake_open(request, timeout):
+        calls.append((request.full_url, json.loads(request.data.decode("utf-8"))["model"], request.get_header("Authorization")))
+        if "openrouter.ai" in request.full_url:
+            raise urllib.error.HTTPError(request.full_url,503,"temporary",hdrs=None,fp=None)
+        return FakeResponse()
+
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_open)
+    answer=agent._request_completion([{"role":"user","content":"اختبار"}],model=agent.answer_model)
+    assert answer == "إجابة Gemini مكتملة"
+    assert [x[1] for x in calls] == ["google/gemma-4-31b-it:free","openrouter/free","gemini-3.8-flash"]
+    assert calls[-1][0] == "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    assert calls[-1][2] == "Bearer test-gemini-key"
+    assert agent.model_usage[-1]["used_model"] == "gemini-3.8-flash"
+
+
+def test_model_provider_failover_reaches_mistral_after_gemini_failure(monkeypatch):
+    import json
+    import urllib.error
+
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-openrouter-key")
+    monkeypatch.setenv("GEMINI_API_KEY", "test-gemini-key")
+    monkeypatch.setenv("MISTRAL_API_KEY", "test-mistral-key")
+    for key in ("OMARAI_LLM_API_KEY", "OMARAI_LLM_BASE_URL", "OMARAI_LLM_MODEL", "OMARAI_ANSWER_MODEL", "OMARAI_PLANNER_MODEL", "OMARAI_GEMINI_MODEL", "OMARAI_MISTRAL_MODEL", "OMARAI_LLM_FALLBACK_MODEL"):
+        monkeypatch.delenv(key, raising=False)
+    agent = WebAgent()
+    calls = []
+
+    class FakeResponse:
+        def __enter__(self): return self
+        def __exit__(self, exc_type, exc, traceback): return False
+        def read(self, limit):
+            return json.dumps({"choices":[{"message":{"content":"إجابة Mistral مكتملة"},"finish_reason":"stop"}]}).encode("utf-8")
+
+    def fake_open(request, timeout):
+        calls.append((request.full_url, json.loads(request.data.decode("utf-8"))["model"], request.get_header("Authorization")))
+        if "mistral.ai" not in request.full_url:
+            raise urllib.error.HTTPError(request.full_url,503,"temporary",hdrs=None,fp=None)
+        return FakeResponse()
+
+    monkeypatch.setattr("agents.web_agent._open_model_request", fake_open)
+    answer=agent._request_completion([{"role":"user","content":"اختبار"}],model=agent.answer_model)
+    assert answer == "إجابة Mistral مكتملة"
+    assert [x[1] for x in calls] == ["google/gemma-4-31b-it:free","openrouter/free","gemini-3.8-flash","mistral-small-latest"]
+    assert calls[-1][0] == "https://api.mistral.ai/v1/chat/completions"
+    assert calls[-1][2] == "Bearer test-mistral-key"
+    assert agent.model_usage[-1]["used_model"] == "mistral-small-latest"
+
+
 def test_health_status_reports_models_without_credentials(monkeypatch):
-    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
-    monkeypatch.delenv("OMARAI_LLM_API_KEY", raising=False)
+    for key in ("OPENROUTER_API_KEY","OMARAI_LLM_API_KEY","GEMINI_API_KEY","MISTRAL_API_KEY","OMARAI_GEMINI_MODEL","OMARAI_MISTRAL_MODEL"):
+        monkeypatch.delenv(key, raising=False)
     status = WebAgent.status()
     assert status["planner_model"] == "nvidia/nemotron-3-ultra-550b-a55b:free"
     assert status["answer_model"] == "google/gemma-4-31b-it:free"
