@@ -76,6 +76,18 @@ def build_semantic_verification_request(
 
     source_rows: list[dict[str, Any]] = []
     readable_indexes: set[int] = set()
+    metadata_by_index: dict[int, dict[str, Any]] = {}
+    for segment in segments:
+        if not isinstance(segment, dict):
+            continue
+        for reference in segment.get("sources") or []:
+            if not isinstance(reference, dict):
+                continue
+            metadata_audit = reference.get("metadata_audit")
+            if isinstance(metadata_audit, dict):
+                metadata_by_index.setdefault(
+                    int(reference.get("source_index") or 0), metadata_audit
+                )
     for index, source in enumerate(safe_sources, 1):
         page_text = str(source.get("page_text") or "")
         snippet = str(source.get("snippet") or "")
@@ -104,6 +116,7 @@ def build_semantic_verification_request(
             )[:80],
             "evidence_basis": basis,
             "readable_evidence": evidence,
+            "metadata_audit": metadata_by_index.get(index, {}),
         })
 
     claim_rows: list[dict[str, Any]] = []
@@ -113,6 +126,14 @@ def build_semantic_verification_request(
             "text": str(segment.get("text") or "")[:1200],
             "citation_indexes": list(segment.get("citation_indexes") or []),
             "citation_status": str(segment.get("citation_status") or ""),
+            "source_metadata_audits": [
+                {
+                    "source_index": int(reference.get("source_index") or 0),
+                    "audit": reference.get("metadata_audit") or {},
+                }
+                for reference in segment.get("sources") or []
+                if isinstance(reference, dict)
+            ],
         })
 
     payload = {
@@ -164,6 +185,39 @@ def build_semantic_verification_request(
     }
 
 
+def deterministic_claim_screen(
+    prepared: dict[str, Any],
+    answer_integrity: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Apply conservative numeric and claim-specific provenance gates before model review."""
+    if prepared.get("status") != "ready":
+        return _not_verifiable(str(prepared.get("reason") or "request_not_ready"), prepared.get("ledger"))
+    integrity = answer_integrity if isinstance(answer_integrity, dict) else {}
+    unsupported_numeric = int(
+        integrity.get("potentially_unsupported_numeric_by_citation_count") or 0
+    )
+    if unsupported_numeric:
+        return _not_verifiable("deterministic_cited_numeric_support_failed", prepared.get("ledger"))
+    for claim in prepared.get("ledger", {}).get("segments", []):
+        if not isinstance(claim, dict):
+            return _not_verifiable("invalid_claim_segment", prepared.get("ledger"))
+        for reference in claim.get("sources") or []:
+            if not isinstance(reference, dict):
+                return _not_verifiable("invalid_claim_source_reference", prepared.get("ledger"))
+            metadata = reference.get("metadata_audit")
+            if not isinstance(metadata, dict):
+                return _not_verifiable("source_metadata_audit_missing", prepared.get("ledger"))
+            missing = set(metadata.get("required_fields_missing") or [])
+            if "valid_http_source_url" in missing or "readable_source_evidence" in missing:
+                return _not_verifiable("deterministic_source_provenance_failed", prepared.get("ledger"))
+            if metadata.get("population_scope_required") is True and (
+                "data_reference_period_for_population_claim" in missing
+                or "geographic_scope_for_population_claim" in missing
+            ):
+                return _not_verifiable("population_scope_metadata_incomplete", prepared.get("ledger"))
+    return {"status": "passed", "reason": None}
+
+
 def parse_semantic_verification_response(
     raw_response: str,
     prepared: dict[str, Any],
@@ -171,6 +225,9 @@ def parse_semantic_verification_response(
     """Parse and validate a strict one-row-per-claim assessment; fail closed."""
     if prepared.get("status") != "ready":
         return _not_verifiable(str(prepared.get("reason") or "request_not_ready"))
+    deterministic = deterministic_claim_screen(prepared)
+    if deterministic.get("status") != "passed":
+        return deterministic
     ledger = prepared.get("ledger")
     if not isinstance(ledger, dict):
         return _not_verifiable("claim_ledger_unavailable")

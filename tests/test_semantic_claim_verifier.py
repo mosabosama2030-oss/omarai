@@ -7,6 +7,7 @@ import pytest
 from agents.semantic_claim_verifier import (
     build_semantic_verification_request,
     parse_semantic_verification_response,
+    deterministic_claim_screen,
 )
 from agents.web_agent import WebAgent
 
@@ -245,3 +246,53 @@ def test_request_completion_can_disable_fallback_for_verifier_calls(monkeypatch)
             allow_fallback=False,
         )
     assert called == ["verifier/model"]
+
+
+def test_deterministic_numeric_support_failure_blocks_model_verification():
+    request = prepared()
+    result = deterministic_claim_screen(
+        request,
+        {"potentially_unsupported_numeric_by_citation_count": 1},
+    )
+    assert result["status"] == "not_verifiable"
+    assert result["reason"] == "deterministic_cited_numeric_support_failed"
+    assert result["withhold_answer"] is True
+
+
+def test_population_claim_without_reference_period_or_geography_fails_closed():
+    source_without_scope = source(
+        page_text="Cairo population is 9.7 million.",
+        snippet="Cairo population is 9.7 million.",
+        geographic_scope="",
+    )
+    request = prepared(
+        answer="Cairo has 9.7 million residents [source 1].",
+        sources=[source_without_scope],
+    )
+    result = deterministic_claim_screen(request)
+    assert result["status"] == "not_verifiable"
+    assert result["reason"] == "population_scope_metadata_incomplete"
+    assert result["withhold_answer"] is True
+
+
+def test_deterministic_screen_passes_population_claim_with_period_and_scope():
+    source_with_scope = source(
+        page_text="Cairo population is 9.7 million for 2025.",
+        snippet="Cairo population is 9.7 million for 2025.",
+        geographic_scope="Cairo Governorate administrative boundaries",
+        data_reference_period="2025 estimate",
+    )
+    request = prepared(
+        answer="Cairo has 9.7 million residents [source 1].",
+        sources=[source_with_scope],
+    )
+    result = deterministic_claim_screen(request)
+    assert result["status"] == "passed"
+
+
+def test_deterministic_screen_rejects_a_missing_or_unreadable_source_url():
+    bad_source = source(url="relative/path", page_fetched=False, page_text="", snippet="")
+    request = prepared(sources=[bad_source])
+    result = deterministic_claim_screen(request)
+    assert result["status"] == "not_verifiable"
+    assert result["reason"] == "deterministic_source_provenance_failed"

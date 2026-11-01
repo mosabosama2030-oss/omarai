@@ -36,6 +36,7 @@ from agents.claim_evidence import build_claim_evidence_ledger
 from agents.semantic_claim_verifier import (
     build_semantic_verification_request,
     parse_semantic_verification_response,
+    deterministic_claim_screen,
 )
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.aspect_planning import (
@@ -4154,6 +4155,7 @@ class WebAgent:
         question: str,
         answer: str,
         sources: list[dict[str, Any]],
+        answer_integrity: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         """Assess claim support with one bounded call to a distinct model; fail closed."""
         model = str(getattr(self, "verifier_model", "") or "").strip()
@@ -4180,6 +4182,9 @@ class WebAgent:
             prepared["semantic_verification"] = "not_completed"
             prepared["fact_correctness"] = "not_verified"
             return prepared
+        deterministic = deterministic_claim_screen(prepared, answer_integrity)
+        if deterministic.get("status") != "passed":
+            return deterministic
         try:
             raw = self._request_completion(
                 prepared["messages"],
@@ -6657,7 +6662,7 @@ class WebAgent:
                 }
             else:
                 semantic_claim_verification = self._verify_semantic_claims(
-                    working_question, answer, sources
+                    working_question, answer, sources, answer_integrity
                 )
             if semantic_claim_verification.get("status") not in {
                 "completed_all_claims_supported",
