@@ -282,6 +282,40 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             self._request_header_deadline = None
 
+    def parse_request(self):
+        """Reject ambiguous HTTP message framing before dispatching any handler."""
+        if not super().parse_request():
+            return False
+
+        transfer_encodings = self.headers.get_all("Transfer-Encoding", [])
+        if transfer_encodings:
+            # This API does not implement chunked request decoding. Never let a
+            # proxy/backend disagree about where the request body ends.
+            self.close_connection = True
+            self.send_error(400, "Transfer-Encoding is not supported")
+            return False
+
+        content_lengths = self.headers.get_all("Content-Length", [])
+        if len(content_lengths) > 1:
+            self.close_connection = True
+            self.send_error(400, "Multiple Content-Length headers are not supported")
+            return False
+
+        if content_lengths:
+            raw_size = content_lengths[0].strip()
+            if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():
+                self.close_connection = True
+                self.send_error(400, "valid Content-Length is required")
+                return False
+            if self.command != "POST" and raw_size.lstrip("0"):
+                # GET/HEAD/other methods are not allowed to leave unread bytes
+                # on a persistent connection.
+                self.close_connection = True
+                self.send_error(400, "Request body is not supported for this method")
+                return False
+
+        return True
+
     store = _lead_store_from_environment()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
