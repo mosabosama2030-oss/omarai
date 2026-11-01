@@ -524,6 +524,8 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(400, {"error": "request body is required"})
             return None
         if size > MAX_REQUEST_BODY_BYTES:
+            # The declared body remains unread; do not reuse this connection.
+            self.close_connection = True
             self.respond(413, {"error": "request too large"})
             return None
 

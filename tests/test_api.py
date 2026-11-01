@@ -1229,3 +1229,26 @@ def test_api_rejects_ambiguous_or_unsupported_http_request_framing(
     assert error_marker in response
     assert b"200 OK" not in response
 
+def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):
+    host_port = local_api.rsplit(":", 1)
+    with socket.create_connection(
+        (host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2
+    ) as client:
+        client.settimeout(2)
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\\r\\n"
+            b"Host: localhost\\r\\n"
+            b"Content-Type: application/json\\r\\n"
+            b"Content-Length: 200001\\r\\n"
+            b"\\r\\n"
+        )
+        response = b""
+        while True:
+            chunk = client.recv(4096)
+            if not chunk:
+                break
+            response += chunk
+
+    assert response.startswith(b"HTTP/1.0 413")
+    assert b"request too large" in response
+
