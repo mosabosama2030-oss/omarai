@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **123**
 - ملفات Python المحللة: **77**
-- تعريفات Python المفهرسة: **1805**
-- تعريفات Python موثقة بوجود Docstring: **283**
+- تعريفات Python المفهرسة: **1807**
+- تعريفات Python موثقة بوجود Docstring: **284**
 - تعريفات Python بلا Docstring: **1124**
-- تعريفات لا ينطبق عليها Docstring: **398**
+- تعريفات لا ينطبق عليها Docstring: **399**
 - الرموز الساكنة الإضافية: **1922**
-- الأسطر النصية المفهرسة حرفيًا: **42958**
+- الأسطر النصية المفهرسة حرفيًا: **43014**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -39,7 +39,7 @@
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25285 | 521 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
-| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 11108 | 263 | جرد الملف + AST Python |
+| FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 12039 | 282 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 25678 | 565 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 9774 | 160 | جرد الملف + AST Python |
@@ -51,7 +51,7 @@
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
 | FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 22371 | 612 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 9565 | 199 | جرد الملف + AST Python |
-| FILE-086D574B4E | الوكيل والمنطق | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L1) | Python | 16711 | 352 | جرد الملف + AST Python |
+| FILE-086D574B4E | الوكيل والمنطق | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L1) | Python | 18668 | 389 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78578 | 1426 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
@@ -516,10 +516,12 @@
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L16) | متغير/ثابت Python | MAX_EVIDENCE_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-086D574B4E-L000016](../agents/semantic_claim_verifier.py#L16) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L17) | متغير/ثابت Python | _ACCEPTED_ASSESSMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-086D574B4E-L000017](../agents/semantic_claim_verifier.py#L17) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L20) | متغير/ثابت Python | _PASS_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-086D574B4E-L000020](../agents/semantic_claim_verifier.py#L20) |
-| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L25) | دالة | _not_verifiable | لا توجد Docstring. | ناقص | 25 | [SRC-086D574B4E-L000025](../agents/semantic_claim_verifier.py#L25) |
-| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L42) | دالة | build_semantic_verification_request | Build a bounded, injection-aware request with exact cited-source indexes. | موثق | 42 | [SRC-086D574B4E-L000042](../agents/semantic_claim_verifier.py#L42) |
-| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L188) | دالة | deterministic_claim_screen | Apply conservative numeric and claim-specific provenance gates before model review. | موثق | 188 | [SRC-086D574B4E-L000188](../agents/semantic_claim_verifier.py#L188) |
-| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L221) | دالة | parse_semantic_verification_response | Parse and validate a strict one-row-per-claim assessment; fail closed. | موثق | 221 | [SRC-086D574B4E-L000221](../agents/semantic_claim_verifier.py#L221) |
+| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L24) | متغير/ثابت Python | _SAFE_NON_FACTUAL_HEADINGS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-086D574B4E-L000024](../agents/semantic_claim_verifier.py#L24) |
+| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L34) | دالة | _is_safe_non_factual_heading | Allow only a closed set of structural headings to bypass factual support. | موثق | 34 | [SRC-086D574B4E-L000034](../agents/semantic_claim_verifier.py#L34) |
+| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L47) | دالة | _not_verifiable | لا توجد Docstring. | ناقص | 47 | [SRC-086D574B4E-L000047](../agents/semantic_claim_verifier.py#L47) |
+| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L64) | دالة | build_semantic_verification_request | Build a bounded, injection-aware request with exact cited-source indexes. | موثق | 64 | [SRC-086D574B4E-L000064](../agents/semantic_claim_verifier.py#L64) |
+| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L219) | دالة | deterministic_claim_screen | Apply conservative numeric and claim-specific provenance gates before model review. | موثق | 219 | [SRC-086D574B4E-L000219](../agents/semantic_claim_verifier.py#L219) |
+| [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L252) | دالة | parse_semantic_verification_response | Parse and validate a strict one-row-per-claim assessment; fail closed. | موثق | 252 | [SRC-086D574B4E-L000252](../agents/semantic_claim_verifier.py#L252) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L14) | متغير/ثابت Python | MAX_TASK_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-686F71AA50-L000014](../agents/task_understanding.py#L14) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L15) | متغير/ثابت Python | MAX_TASK_ASPECTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-686F71AA50-L000015](../agents/task_understanding.py#L15) |
 | [agents/task_understanding.py](../agents/task_understanding.py#L16) | متغير/ثابت Python | MAX_STRATEGY_QUERIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-686F71AA50-L000016](../agents/task_understanding.py#L16) |

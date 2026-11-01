@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000285 إلى SRC-8D00DCEC0D-L000170
+- النطاق: SRC-1E32639872-L000266 إلى SRC-8D00DCEC0D-L000151
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1E32639872-L000266](../../agents/research_completion.py#L266) | 266 | `"            status = \"search_not_attempted\""` | — |
+| [SRC-1E32639872-L000267](../../agents/research_completion.py#L267) | 267 | `"        else:"` | — |
+| [SRC-1E32639872-L000268](../../agents/research_completion.py#L268) | 268 | `"            status = \"insufficient_evidence\""` | — |
+| [SRC-1E32639872-L000269](../../agents/research_completion.py#L269) | 269 | `"    elif not model_used:"` | — |
+| [SRC-1E32639872-L000270](../../agents/research_completion.py#L270) | 270 | `"        status = ("` | — |
+| [SRC-1E32639872-L000271](../../agents/research_completion.py#L271) | 271 | `"            \"source_snippets_only_generation_not_completed\""` | — |
+| [SRC-1E32639872-L000272](../../agents/research_completion.py#L272) | 272 | `"            if read == 0 else \"evidence_collected_generation_not_completed\""` | — |
+| [SRC-1E32639872-L000273](../../agents/research_completion.py#L273) | 273 | `"        )"` | — |
+| [SRC-1E32639872-L000274](../../agents/research_completion.py#L274) | 274 | `"    elif generation_failed:"` | — |
+| [SRC-1E32639872-L000275](../../agents/research_completion.py#L275) | 275 | `"        status = \"answer_generation_or_review_failed\""` | — |
+| [SRC-1E32639872-L000276](../../agents/research_completion.py#L276) | 276 | `"    elif gap_count or citation_support_warning_count or fulfillment in {"` | — |
+| [SRC-1E32639872-L000277](../../agents/research_completion.py#L277) | 277 | `"        \"possible_gap_detected\", \"source_evidence_gap_unresolved\","` | — |
+| [SRC-1E32639872-L000278](../../agents/research_completion.py#L278) | 278 | `"        \"not_assessed_insufficient_evidence\","` | — |
+| [SRC-1E32639872-L000279](../../agents/research_completion.py#L279) | 279 | `"    }:"` | — |
+| [SRC-1E32639872-L000280](../../agents/research_completion.py#L280) | 280 | `"        status = \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-1E32639872-L000281](../../agents/research_completion.py#L281) | 281 | `"    elif citation_count:"` | — |
+| [SRC-1E32639872-L000282](../../agents/research_completion.py#L282) | 282 | `"        status = \"answer_generated_citations_range_checked_semantic_support_unverified\""` | — |
+| [SRC-1E32639872-L000283](../../agents/research_completion.py#L283) | 283 | `"    else:"` | — |
+| [SRC-1E32639872-L000284](../../agents/research_completion.py#L284) | 284 | `"        status = \"answer_generated_without_valid_citation_markers\""` | — |
 | [SRC-1E32639872-L000285](../../agents/research_completion.py#L285) | 285 | `""` | — |
 | [SRC-1E32639872-L000286](../../agents/research_completion.py#L286) | 286 | `"    if attempted is False:"` | — |
 | [SRC-1E32639872-L000287](../../agents/research_completion.py#L287) | 287 | `"        search_phase = \"not_attempted\""` | — |
@@ -824,22 +843,3 @@
 | [SRC-8D00DCEC0D-L000149](../../agents/sales_domain.py#L149) | 149 | `""` | — |
 | [SRC-8D00DCEC0D-L000150](../../agents/sales_domain.py#L150) | 150 | `"def _enum_value(enum_type: type[Enum], value: Enum \| str, *, field_name: str) -> Enum:"` | — |
 | [SRC-8D00DCEC0D-L000151](../../agents/sales_domain.py#L151) | 151 | `"    try:"` | — |
-| [SRC-8D00DCEC0D-L000152](../../agents/sales_domain.py#L152) | 152 | `"        return value if isinstance(value, enum_type) else enum_type(value)"` | — |
-| [SRC-8D00DCEC0D-L000153](../../agents/sales_domain.py#L153) | 153 | `"    except (TypeError, ValueError) as exc:"` | — |
-| [SRC-8D00DCEC0D-L000154](../../agents/sales_domain.py#L154) | 154 | `"        allowed = \", \".join(item.value for item in enum_type)"` | — |
-| [SRC-8D00DCEC0D-L000155](../../agents/sales_domain.py#L155) | 155 | `"        raise ValueError(f\"{field_name} must be one of: {allowed}\") from exc"` | — |
-| [SRC-8D00DCEC0D-L000156](../../agents/sales_domain.py#L156) | 156 | `""` | — |
-| [SRC-8D00DCEC0D-L000157](../../agents/sales_domain.py#L157) | 157 | `""` | — |
-| [SRC-8D00DCEC0D-L000158](../../agents/sales_domain.py#L158) | 158 | `"def _validate_optional_date(value: str \| None, *, field_name: str) -> str \| None:"` | — |
-| [SRC-8D00DCEC0D-L000159](../../agents/sales_domain.py#L159) | 159 | `"    if value is None:"` | — |
-| [SRC-8D00DCEC0D-L000160](../../agents/sales_domain.py#L160) | 160 | `"        return None"` | — |
-| [SRC-8D00DCEC0D-L000161](../../agents/sales_domain.py#L161) | 161 | `"    cleaned = _clean_text(value, field_name=field_name, maximum=32)"` | — |
-| [SRC-8D00DCEC0D-L000162](../../agents/sales_domain.py#L162) | 162 | `"    try:"` | — |
-| [SRC-8D00DCEC0D-L000163](../../agents/sales_domain.py#L163) | 163 | `"        parsed = date.fromisoformat(cleaned)"` | — |
-| [SRC-8D00DCEC0D-L000164](../../agents/sales_domain.py#L164) | 164 | `"    except ValueError as exc:"` | — |
-| [SRC-8D00DCEC0D-L000165](../../agents/sales_domain.py#L165) | 165 | `"        raise ValueError(f\"{field_name} must be an ISO date (YYYY-MM-DD)\") from exc"` | — |
-| [SRC-8D00DCEC0D-L000166](../../agents/sales_domain.py#L166) | 166 | `"    if parsed.isoformat() != cleaned:"` | — |
-| [SRC-8D00DCEC0D-L000167](../../agents/sales_domain.py#L167) | 167 | `"        raise ValueError(f\"{field_name} must use YYYY-MM-DD\")"` | — |
-| [SRC-8D00DCEC0D-L000168](../../agents/sales_domain.py#L168) | 168 | `"    return cleaned"` | — |
-| [SRC-8D00DCEC0D-L000169](../../agents/sales_domain.py#L169) | 169 | `""` | — |
-| [SRC-8D00DCEC0D-L000170](../../agents/sales_domain.py#L170) | 170 | `""` | — |
