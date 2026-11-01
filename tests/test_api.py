@@ -1102,7 +1102,7 @@ def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, m
 
     monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
     monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "browser-session-test-token-1234567890")
-    status, error = request_json(
+    status, _error = request_json(
         local_api,
         "/api/session",
         method="POST",
