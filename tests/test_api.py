@@ -1178,3 +1178,54 @@ def test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cook
     assert status == 403
     assert "same-origin" in error["error"]
 
+@pytest.mark.parametrize(
+    ("request_line", "framing_headers", "body", "error_marker"),
+    [
+        (
+            "POST /api/analyze HTTP/1.1",
+            b"Transfer-Encoding: chunked\\r\\nContent-Length: 4\\r\\n",
+            b"0\\r\\n\\r\\n",
+            b"Transfer-Encoding",
+        ),
+        (
+            "POST /api/analyze HTTP/1.1",
+            b"Content-Length: 4\\r\\nContent-Length: 5\\r\\n",
+            b"test",
+            b"Content-Length",
+        ),
+        (
+            "GET /api/health HTTP/1.1",
+            b"Content-Length: 4\\r\\n",
+            b"test",
+            b"Content-Length",
+        ),
+    ],
+)
+def test_api_rejects_ambiguous_or_unsupported_http_request_framing(
+    local_api, request_line, framing_headers, body, error_marker
+):
+    host_port = local_api.rsplit(":", 1)
+    with socket.create_connection(
+        (host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2
+    ) as client:
+        client.settimeout(2)
+        request = (
+            request_line.encode("ascii")
+            + b"\\r\\nHost: localhost\\r\\n"
+            + b"Content-Type: application/json\\r\\n"
+            + framing_headers
+            + b"Connection: close\\r\\n\\r\\n"
+            + body
+        )
+        client.sendall(request)
+        response = b""
+        while True:
+            chunk = client.recv(4096)
+            if not chunk:
+                break
+            response += chunk
+
+    assert response.startswith(b"HTTP/1.0 400")
+    assert error_marker in response
+    assert b"200 OK" not in response
+
