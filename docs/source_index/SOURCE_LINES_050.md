@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001282 إلى SRC-F725E90B2A-L002081
+- النطاق: SRC-F725E90B2A-L001269 إلى SRC-F725E90B2A-L002068
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001269](../../tests/test_web_agent.py#L1269) | 1269 | `"                \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L001270](../../tests/test_web_agent.py#L1270) | 1270 | `"                \"query_results\": [{\"query\": \"قارن هذه التقنية\", \"results\": 2}],"` | — |
+| [SRC-F725E90B2A-L001271](../../tests/test_web_agent.py#L1271) | 1271 | `"                \"unique_sources\": 2,"` | — |
+| [SRC-F725E90B2A-L001272](../../tests/test_web_agent.py#L1272) | 1272 | `"                \"pages_fetched\": 2,"` | — |
+| [SRC-F725E90B2A-L001273](../../tests/test_web_agent.py#L1273) | 1273 | `"                \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001274](../../tests/test_web_agent.py#L1274) | 1274 | `"                \"platform_counts\": {\"web\": 2},"` | — |
+| [SRC-F725E90B2A-L001275](../../tests/test_web_agent.py#L1275) | 1275 | `"                \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L001276](../../tests/test_web_agent.py#L1276) | 1276 | `"                \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L001277](../../tests/test_web_agent.py#L1277) | 1277 | `"                \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L001278](../../tests/test_web_agent.py#L1278) | 1278 | `"            },"` | — |
+| [SRC-F725E90B2A-L001279](../../tests/test_web_agent.py#L1279) | 1279 | `"        ),"` | — |
+| [SRC-F725E90B2A-L001280](../../tests/test_web_agent.py#L1280) | 1280 | `"    )"` | — |
+| [SRC-F725E90B2A-L001281](../../tests/test_web_agent.py#L1281) | 1281 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001282](../../tests/test_web_agent.py#L1282) | 1282 | `"        agent, \"_generate\","` | — |
 | [SRC-F725E90B2A-L001283](../../tests/test_web_agent.py#L1283) | 1283 | `"        lambda *args, **kwargs: pytest.fail("` | — |
 | [SRC-F725E90B2A-L001284](../../tests/test_web_agent.py#L1284) | 1284 | `"            \"LLM must not answer when both sources belong to one registrable domain\""` | — |
@@ -803,16 +816,3 @@
 | [SRC-F725E90B2A-L002066](../../tests/test_web_agent.py#L2066) | 2066 | `"    agent.fallback_model = \"fallback/model\""` | — |
 | [SRC-F725E90B2A-L002067](../../tests/test_web_agent.py#L2067) | 2067 | `"    called = []"` | — |
 | [SRC-F725E90B2A-L002068](../../tests/test_web_agent.py#L2068) | 2068 | `""` | — |
-| [SRC-F725E90B2A-L002069](../../tests/test_web_agent.py#L2069) | 2069 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L002070](../../tests/test_web_agent.py#L2070) | 2070 | `"        def __init__(self, content, finish_reason):"` | — |
-| [SRC-F725E90B2A-L002071](../../tests/test_web_agent.py#L2071) | 2071 | `"            self.body = json.dumps({"` | — |
-| [SRC-F725E90B2A-L002072](../../tests/test_web_agent.py#L2072) | 2072 | `"                \"choices\": [{"` | — |
-| [SRC-F725E90B2A-L002073](../../tests/test_web_agent.py#L2073) | 2073 | `"                    \"message\": {\"content\": content},"` | — |
-| [SRC-F725E90B2A-L002074](../../tests/test_web_agent.py#L2074) | 2074 | `"                    \"finish_reason\": finish_reason,"` | — |
-| [SRC-F725E90B2A-L002075](../../tests/test_web_agent.py#L2075) | 2075 | `"                }]"` | — |
-| [SRC-F725E90B2A-L002076](../../tests/test_web_agent.py#L2076) | 2076 | `"            }).encode(\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L002077](../../tests/test_web_agent.py#L2077) | 2077 | `""` | — |
-| [SRC-F725E90B2A-L002078](../../tests/test_web_agent.py#L2078) | 2078 | `"        def __enter__(self):"` | — |
-| [SRC-F725E90B2A-L002079](../../tests/test_web_agent.py#L2079) | 2079 | `"            return self"` | — |
-| [SRC-F725E90B2A-L002080](../../tests/test_web_agent.py#L2080) | 2080 | `""` | — |
-| [SRC-F725E90B2A-L002081](../../tests/test_web_agent.py#L2081) | 2081 | `"        def __exit__(self, exc_type, exc, traceback):"` | — |

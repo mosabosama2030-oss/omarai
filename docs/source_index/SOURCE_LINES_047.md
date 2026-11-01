@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-888168CDEB-L000077 إلى SRC-AFEDC2645A-L000237
+- النطاق: SRC-888168CDEB-L000077 إلى SRC-AFEDC2645A-L000224
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -383,17 +383,30 @@
 | [SRC-AC9D8384E8-L000305](../../tests/test_semantic_claim_verifier.py#L305) | 305 | `"    assert request[\"reason\"] == \"invalid_citation_reference\""` | — |
 | [SRC-AC9D8384E8-L000306](../../tests/test_semantic_claim_verifier.py#L306) | 306 | `""` | — |
 | [SRC-AC9D8384E8-L000307](../../tests/test_semantic_claim_verifier.py#L307) | 307 | `""` | — |
-| [SRC-AC9D8384E8-L000308](../../tests/test_semantic_claim_verifier.py#L308) | 308 | `"def test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual():"` | — |
-| [SRC-AC9D8384E8-L000309](../../tests/test_semantic_claim_verifier.py#L309) | 309 | `"    request = prepared(answer=\"The capital of Egypt is Cairo.\")"` | — |
-| [SRC-AC9D8384E8-L000310](../../tests/test_semantic_claim_verifier.py#L310) | 310 | `"    result = parse_semantic_verification_response("` | — |
-| [SRC-AC9D8384E8-L000311](../../tests/test_semantic_claim_verifier.py#L311) | 311 | `"        response([row(assessment=\"non_factual\", supporting=[], contradicting=[])]),"` | — |
-| [SRC-AC9D8384E8-L000312](../../tests/test_semantic_claim_verifier.py#L312) | 312 | `"        request,"` | — |
-| [SRC-AC9D8384E8-L000313](../../tests/test_semantic_claim_verifier.py#L313) | 313 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000314](../../tests/test_semantic_claim_verifier.py#L314) | 314 | `""` | — |
-| [SRC-AC9D8384E8-L000315](../../tests/test_semantic_claim_verifier.py#L315) | 315 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
-| [SRC-AC9D8384E8-L000316](../../tests/test_semantic_claim_verifier.py#L316) | 316 | `"    assert result[\"reason\"] == \"non_factual_label_not_deterministically_safe\""` | — |
-| [SRC-AC9D8384E8-L000317](../../tests/test_semantic_claim_verifier.py#L317) | 317 | `"    assert result[\"withhold_answer\"] is True"` | — |
-| [SRC-AC9D8384E8-L000318](../../tests/test_semantic_claim_verifier.py#L318) | 318 | `""` | — |
+| [SRC-AC9D8384E8-L000308](../../tests/test_semantic_claim_verifier.py#L308) | 308 | `"def test_invalid_source_record_cannot_shift_citation_indexes():"` | — |
+| [SRC-AC9D8384E8-L000309](../../tests/test_semantic_claim_verifier.py#L309) | 309 | `"    answer = \"The system serves 12 facilities [source 2].\""` | — |
+| [SRC-AC9D8384E8-L000310](../../tests/test_semantic_claim_verifier.py#L310) | 310 | `"    sources = ["` | — |
+| [SRC-AC9D8384E8-L000311](../../tests/test_semantic_claim_verifier.py#L311) | 311 | `"        source(page_text=\"An unrelated administrative update.\", snippet=\"An unrelated administrative update.\"),"` | — |
+| [SRC-AC9D8384E8-L000312](../../tests/test_semantic_claim_verifier.py#L312) | 312 | `"        None,"` | — |
+| [SRC-AC9D8384E8-L000313](../../tests/test_semantic_claim_verifier.py#L313) | 313 | `"        source(url=\"https://example.net/report\"),"` | — |
+| [SRC-AC9D8384E8-L000314](../../tests/test_semantic_claim_verifier.py#L314) | 314 | `"    ]"` | — |
+| [SRC-AC9D8384E8-L000315](../../tests/test_semantic_claim_verifier.py#L315) | 315 | `"    request = prepared(answer=answer, sources=sources)"` | — |
+| [SRC-AC9D8384E8-L000316](../../tests/test_semantic_claim_verifier.py#L316) | 316 | `""` | — |
+| [SRC-AC9D8384E8-L000317](../../tests/test_semantic_claim_verifier.py#L317) | 317 | `"    assert request[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000318](../../tests/test_semantic_claim_verifier.py#L318) | 318 | `"    assert request[\"reason\"] == \"invalid_source_manifest\""` | — |
+| [SRC-AC9D8384E8-L000319](../../tests/test_semantic_claim_verifier.py#L319) | 319 | `""` | — |
+| [SRC-AC9D8384E8-L000320](../../tests/test_semantic_claim_verifier.py#L320) | 320 | `""` | — |
+| [SRC-AC9D8384E8-L000321](../../tests/test_semantic_claim_verifier.py#L321) | 321 | `"def test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual():"` | — |
+| [SRC-AC9D8384E8-L000322](../../tests/test_semantic_claim_verifier.py#L322) | 322 | `"    request = prepared(answer=\"The capital of Egypt is Cairo.\")"` | — |
+| [SRC-AC9D8384E8-L000323](../../tests/test_semantic_claim_verifier.py#L323) | 323 | `"    result = parse_semantic_verification_response("` | — |
+| [SRC-AC9D8384E8-L000324](../../tests/test_semantic_claim_verifier.py#L324) | 324 | `"        response([row(assessment=\"non_factual\", supporting=[], contradicting=[])]),"` | — |
+| [SRC-AC9D8384E8-L000325](../../tests/test_semantic_claim_verifier.py#L325) | 325 | `"        request,"` | — |
+| [SRC-AC9D8384E8-L000326](../../tests/test_semantic_claim_verifier.py#L326) | 326 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000327](../../tests/test_semantic_claim_verifier.py#L327) | 327 | `""` | — |
+| [SRC-AC9D8384E8-L000328](../../tests/test_semantic_claim_verifier.py#L328) | 328 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000329](../../tests/test_semantic_claim_verifier.py#L329) | 329 | `"    assert result[\"reason\"] == \"non_factual_label_not_deterministically_safe\""` | — |
+| [SRC-AC9D8384E8-L000330](../../tests/test_semantic_claim_verifier.py#L330) | 330 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000331](../../tests/test_semantic_claim_verifier.py#L331) | 331 | `""` | — |
 ## اختبارات
 
 ### FILE-D033B34F41 — [tests/test_source_metadata_audit.py](../../tests/test_source_metadata_audit.py#L1)
@@ -839,16 +852,3 @@
 | [SRC-AFEDC2645A-L000222](../../tests/test_task_understanding.py#L222) | 222 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
 | [SRC-AFEDC2645A-L000223](../../tests/test_task_understanding.py#L223) | 223 | `"    assert \"publication_or_update_date\" in spec[\"evidence_requirements\"]"` | — |
 | [SRC-AFEDC2645A-L000224](../../tests/test_task_understanding.py#L224) | 224 | `"    assert \"heuristic_classification_is_not_identity_or_truth_verification\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000225](../../tests/test_task_understanding.py#L225) | 225 | `""` | — |
-| [SRC-AFEDC2645A-L000226](../../tests/test_task_understanding.py#L226) | 226 | `""` | — |
-| [SRC-AFEDC2645A-L000227](../../tests/test_task_understanding.py#L227) | 227 | `"def test_official_site_request_without_a_target_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000228](../../tests/test_task_understanding.py#L228) | 228 | `"    spec = build_task_spec(\"هات الموقع الرسمي\", mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
-| [SRC-AFEDC2645A-L000229](../../tests/test_task_understanding.py#L229) | 229 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
-| [SRC-AFEDC2645A-L000230](../../tests/test_task_understanding.py#L230) | 230 | `"    assert \"official_destination_target_entity\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `""` | — |
-| [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `""` | — |
-| [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"def test_official_site_request_with_a_named_target_does_not_require_subject_clarification():"` | — |
-| [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"        \"هات الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
-| [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"        mode=\"auto\","` | — |

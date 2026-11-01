@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **123**
 - ملفات Python المحللة: **77**
-- تعريفات Python المفهرسة: **1807**
+- تعريفات Python المفهرسة: **1808**
 - تعريفات Python موثقة بوجود Docstring: **284**
-- تعريفات Python بلا Docstring: **1124**
+- تعريفات Python بلا Docstring: **1125**
 - تعريفات لا ينطبق عليها Docstring: **399**
 - الرموز الساكنة الإضافية: **1922**
-- الأسطر النصية المفهرسة حرفيًا: **43018**
+- الأسطر النصية المفهرسة حرفيًا: **43031**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -142,7 +142,7 @@
 | FILE-2822F30DAD | اختبارات | [tests/test_sales_domain.py](../tests/test_sales_domain.py#L1) | Python | 13339 | 388 | جرد الملف + AST Python |
 | FILE-2614DCB6FB | اختبارات | [tests/test_search_code.py](../tests/test_search_code.py#L1) | Python | 4919 | 133 | جرد الملف + AST Python |
 | FILE-888168CDEB | اختبارات | [tests/test_search_connector_boundaries.py](../tests/test_search_connector_boundaries.py#L1) | Python | 3783 | 127 | جرد الملف + AST Python |
-| FILE-AC9D8384E8 | اختبارات | [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L1) | Python | 11602 | 318 | جرد الملف + AST Python |
+| FILE-AC9D8384E8 | اختبارات | [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L1) | Python | 12088 | 331 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 18595 | 407 | جرد الملف + AST Python |
@@ -1622,7 +1622,8 @@
 | [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L278) | دالة | test_deterministic_screen_passes_population_claim_with_period_and_scope | لا توجد Docstring. | ناقص | 278 | [SRC-AC9D8384E8-L000278](../tests/test_semantic_claim_verifier.py#L278) |
 | [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L293) | دالة | test_deterministic_screen_rejects_a_missing_or_unreadable_source_url | لا توجد Docstring. | ناقص | 293 | [SRC-AC9D8384E8-L000293](../tests/test_semantic_claim_verifier.py#L293) |
 | [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L300) | دالة | test_extremely_large_citation_index_fails_closed_without_integer_conversion | لا توجد Docstring. | ناقص | 300 | [SRC-AC9D8384E8-L000300](../tests/test_semantic_claim_verifier.py#L300) |
-| [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L308) | دالة | test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual | لا توجد Docstring. | ناقص | 308 | [SRC-AC9D8384E8-L000308](../tests/test_semantic_claim_verifier.py#L308) |
+| [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L308) | دالة | test_invalid_source_record_cannot_shift_citation_indexes | لا توجد Docstring. | ناقص | 308 | [SRC-AC9D8384E8-L000308](../tests/test_semantic_claim_verifier.py#L308) |
+| [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L321) | دالة | test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual | لا توجد Docstring. | ناقص | 321 | [SRC-AC9D8384E8-L000321](../tests/test_semantic_claim_verifier.py#L321) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L6) | دالة | test_population_question_reports_missing_url_publication_date_period_and_scope | لا توجد Docstring. | ناقص | 6 | [SRC-D033B34F41-L000006](../tests/test_source_metadata_audit.py#L6) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L29) | دالة | test_population_source_metadata_presence_does_not_claim_truth_verification | لا توجد Docstring. | ناقص | 29 | [SRC-D033B34F41-L000029](../tests/test_source_metadata_audit.py#L29) |
 | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L57) | دالة | test_zero_sources_are_not_reported_as_metadata_complete | لا توجد Docstring. | ناقص | 57 | [SRC-D033B34F41-L000057](../tests/test_source_metadata_audit.py#L57) |
