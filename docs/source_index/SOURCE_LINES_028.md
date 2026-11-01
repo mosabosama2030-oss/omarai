@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B9C3015420-L000202 إلى SRC-0F910493E8-L000188
+- النطاق: SRC-B9C3015420-L000198 إلى SRC-0F910493E8-L000184
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B9C3015420-L000198](../OMARAI_REQUIREMENTS_REGISTER.md#L198) | 198 | `"\| FIN-002 — قياس تكلفة/استهلاك الطلب \| PARTIAL \| تسجل القياسات زمن الطلب واستخدام الرموز/التكلفة التي يصرح بها موفر النموذج. يمكن إكمال تكلفة الطلب فقط بملف مصالحة خارجي موثوق يغطي جميع الحالات ويعلن USD وcomplete_request ومصدرًا موثقًا؛ في غياب ذلك تبقى التكلفة الكاملة UNKNOWN/null ولا يعامل المجهول كصفر. \|"` | — |
+| [SRC-B9C3015420-L000199](../OMARAI_REQUIREMENTS_REGISTER.md#L199) | 199 | `""` | — |
+| [SRC-B9C3015420-L000200](../OMARAI_REQUIREMENTS_REGISTER.md#L200) | 200 | `"**مرجع المصدر السابق للقياس:** ef69ca5f8dbcdf01d798e254f737aa51776b4bb1. هذا SHA يحدد الشفرة السابقة فقط؛ لا توجد نتيجة تشغيل قديمة مرتبطة به ضمن الأدلة المتاحة، وبالتالي لا يمثل قياس baseline."` | — |
+| [SRC-B9C3015420-L000201](../OMARAI_REQUIREMENTS_REGISTER.md#L201) | 201 | `""` | — |
 | [SRC-B9C3015420-L000202](../OMARAI_REQUIREMENTS_REGISTER.md#L202) | 202 | `""` | — |
 | [SRC-B9C3015420-L000203](../OMARAI_REQUIREMENTS_REGISTER.md#L203) | 203 | `""` | — |
 | [SRC-B9C3015420-L000204](../OMARAI_REQUIREMENTS_REGISTER.md#L204) | 204 | `"---"` | — |
@@ -830,7 +834,3 @@
 | [SRC-0F910493E8-L000182](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L182) | 182 | `"مسؤول عن:"` | — |
 | [SRC-0F910493E8-L000183](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L183) | 183 | `"- استقبال الطلبات."` | — |
 | [SRC-0F910493E8-L000184](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L184) | 184 | `"- تنفيذ التوجيه والخطة."` | — |
-| [SRC-0F910493E8-L000185](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L185) | 185 | `"- إنشاء سياق مهمة مستقل."` | — |
-| [SRC-0F910493E8-L000186](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L186) | 186 | `"- تطبيق السياسات والميزانيات."` | — |
-| [SRC-0F910493E8-L000187](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L187) | 187 | `"- استدعاء المهارات والأدوات المعتمدة."` | — |
-| [SRC-0F910493E8-L000188](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L188) | 188 | `"- إدارة الأدلة والنتائج."` | — |
