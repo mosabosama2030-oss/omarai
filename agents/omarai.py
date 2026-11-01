@@ -3,13 +3,15 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import hmac
 import json
 import re
+import secrets
 import sqlite3
 import unicodedata
 from contextlib import contextmanager
 from collections.abc import Iterator
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 import uuid
 from urllib.parse import urlparse
@@ -174,6 +176,24 @@ class LeadStore:
                 FOREIGN KEY (tenant_id, user_id)
                     REFERENCES tenant_memberships(tenant_id, user_id)
             )"""
+        )
+        db.execute(
+            """CREATE TABLE IF NOT EXISTS web_sessions (
+                session_hash TEXT PRIMARY KEY,
+                credential_hash TEXT NOT NULL,
+                is_shared_token INTEGER NOT NULL DEFAULT 0,
+                tenant_id TEXT NOT NULL,
+                user_id TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                expires_at TEXT NOT NULL,
+                revoked_at TEXT,
+                FOREIGN KEY (tenant_id, user_id)
+                    REFERENCES tenant_memberships(tenant_id, user_id)
+            )"""
+        )
+        db.execute(
+            "CREATE INDEX IF NOT EXISTS idx_web_sessions_expiry "
+            "ON web_sessions(expires_at, revoked_at)"
         )
 
         now = now_utc()
@@ -437,6 +457,122 @@ class LeadStore:
                 (self._token_hash(token.strip()), now_utc()),
             ).fetchone()
         return dict(row) if row else None
+
+    def create_web_session(
+        self,
+        access_token: str,
+        *,
+        shared_token: str = "",
+        max_age_seconds: int = 8 * 60 * 60,
+    ) -> tuple[str, dict] | None:
+        """Exchange a valid API credential for a short-lived opaque browser session."""
+        if not isinstance(access_token, str) or len(access_token.strip()) < 32:
+            return None
+        token = access_token.strip()
+        is_shared = bool(shared_token and hmac.compare_digest(token, shared_token))
+        principal = self.default_principal() if is_shared else self.resolve_api_token(token)
+        if not principal:
+            return None
+        if (
+            not isinstance(max_age_seconds, int)
+            or isinstance(max_age_seconds, bool)
+            or not 60 <= max_age_seconds <= 24 * 60 * 60
+        ):
+            raise ValueError("browser session lifetime must be between 60 seconds and 24 hours")
+
+        session_id = secrets.token_urlsafe(32)
+        created_at = now_utc()
+        expires_at = (
+            datetime.now(UTC) + timedelta(seconds=max_age_seconds)
+        ).isoformat(timespec="seconds").replace("+00:00", "Z")
+        with self.connect() as db:
+            db.execute(
+                """INSERT INTO web_sessions
+                   (session_hash, credential_hash, is_shared_token, tenant_id,
+                    user_id, created_at, expires_at, revoked_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, NULL)""",
+                (
+                    self._token_hash(session_id),
+                    self._token_hash(token),
+                    1 if is_shared else 0,
+                    principal["tenant_id"],
+                    principal["user_id"],
+                    created_at,
+                    expires_at,
+                ),
+            )
+        return session_id, principal
+
+    def resolve_web_session(
+        self,
+        session_id: str,
+        *,
+        shared_token: str = "",
+    ) -> dict | None:
+        """Resolve an opaque browser session and re-check its backing credential."""
+        if not isinstance(session_id, str) or not re.fullmatch(
+            r"[A-Za-z0-9_-]{32,128}", session_id
+        ):
+            return None
+        with self.connect() as db:
+            session = db.execute(
+                """SELECT credential_hash, is_shared_token, tenant_id, user_id
+                   FROM web_sessions
+                   WHERE session_hash=? AND revoked_at IS NULL AND expires_at > ?""",
+                (self._token_hash(session_id), now_utc()),
+            ).fetchone()
+            if not session:
+                return None
+            if session["is_shared_token"]:
+                if (
+                    not shared_token
+                    or not hmac.compare_digest(
+                        session["credential_hash"], self._token_hash(shared_token)
+                    )
+                ):
+                    return None
+                principal = db.execute(
+                    """SELECT m.tenant_id, m.user_id, m.role
+                       FROM tenant_memberships m
+                       JOIN tenants t ON t.id=m.tenant_id AND t.active=1
+                       JOIN users u ON u.id=m.user_id AND u.active=1
+                       WHERE m.tenant_id=? AND m.user_id=? AND m.active=1""",
+                    (session["tenant_id"], session["user_id"]),
+                ).fetchone()
+                return dict(principal) if principal else None
+
+            principal = db.execute(
+                """SELECT m.tenant_id, m.user_id, m.role
+                   FROM api_tokens a
+                   JOIN tenant_memberships m
+                     ON m.tenant_id=a.tenant_id AND m.user_id=a.user_id
+                   JOIN tenants t ON t.id=m.tenant_id AND t.active=1
+                   JOIN users u ON u.id=m.user_id AND u.active=1
+                   WHERE a.token_hash=? AND a.tenant_id=? AND a.user_id=?
+                     AND a.active=1 AND m.active=1
+                     AND (a.expires_at IS NULL OR a.expires_at > ?)""",
+                (
+                    session["credential_hash"],
+                    session["tenant_id"],
+                    session["user_id"],
+                    now_utc(),
+                ),
+            ).fetchone()
+        return dict(principal) if principal else None
+
+    def revoke_web_session(self, session_id: str) -> bool:
+        """Revoke one opaque browser session without revoking its backing API token."""
+        if not isinstance(session_id, str) or not re.fullmatch(
+            r"[A-Za-z0-9_-]{32,128}", session_id
+        ):
+            return False
+        with self.connect() as db:
+            cursor = db.execute(
+                """UPDATE web_sessions SET revoked_at=?
+                   WHERE session_hash=? AND revoked_at IS NULL""",
+                (now_utc(), self._token_hash(session_id)),
+            )
+        return cursor.rowcount == 1
 
     def revoke_api_token(
         self,
