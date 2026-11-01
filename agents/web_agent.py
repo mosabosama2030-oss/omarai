@@ -33,6 +33,11 @@ from agents.dialogue_state import (
 from agents.answer_validation import audit_answer_integrity
 from agents.requirement_evidence import build_requirement_evidence_ledger
 from agents.claim_evidence import build_claim_evidence_ledger
+from agents.semantic_claim_verifier import (
+    build_semantic_verification_request,
+    parse_semantic_verification_response,
+    deterministic_claim_screen,
+)
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.aspect_planning import (
     arabic_aspect_diagnostics,
@@ -669,6 +674,9 @@ class WebAgent:
         self.review_model = os.getenv(
             "OMARAI_REVIEW_MODEL", self.answer_model
         ).strip()
+        self.verifier_model = os.getenv(
+            "OMARAI_VERIFIER_MODEL", "nvidia/nemotron-3-ultra-550b-a55b:free"
+        ).strip()
         self.fallback_model = os.getenv(
             "OMARAI_LLM_FALLBACK_MODEL", "openrouter/free"
         ).strip()
@@ -719,6 +727,9 @@ class WebAgent:
             or "nvidia/nemotron-3-ultra-550b-a55b:free"
         )
         review_model = os.getenv("OMARAI_REVIEW_MODEL", "").strip() or answer_model
+        verifier_model = os.getenv(
+            "OMARAI_VERIFIER_MODEL", "nvidia/nemotron-3-ultra-550b-a55b:free"
+        ).strip()
         fallback_model = (
             os.getenv("OMARAI_LLM_FALLBACK_MODEL", "").strip() or "openrouter/free"
         )
@@ -737,6 +748,13 @@ class WebAgent:
             "planner_model": planner_model,
             "answer_model": answer_model,
             "review_model": review_model,
+            "semantic_verifier_model": verifier_model,
+            "semantic_verifier_distinct_from_answer_model": bool(
+                verifier_model and verifier_model.casefold() != answer_model.casefold()
+            ),
+            "semantic_verifier_scope": (
+                "distinct_model_id_same_configured_provider_not_ground_truth"
+            ),
             "fallback_model": fallback_model,
             "model_selection_mode": "role_specific_with_fallback",
             "external_model_privacy_notice": (
@@ -3313,6 +3331,7 @@ class WebAgent:
         timeout: int | None = None,
         model: str | None = None,
         enable_web_search: bool = False,
+        allow_fallback: bool = True,
     ) -> str:
         """Call an OpenAI-compatible API with bounded fallback and optional live server search."""
         requested_model = (model or self.answer_model).strip()
@@ -3341,7 +3360,11 @@ class WebAgent:
             )
 
         model_candidates = [requested_model]
-        if self.fallback_model and self.fallback_model not in model_candidates:
+        if (
+            allow_fallback
+            and self.fallback_model
+            and self.fallback_model not in model_candidates
+        ):
             model_candidates.append(self.fallback_model)
 
         last_error: RuntimeError | None = None
@@ -3511,8 +3534,12 @@ class WebAgent:
                     error_class=type(exc).__name__, request_started=True,
                     remote_response_received=None,
                 )
+                fallback_note = (
+                    "جرت محاولة استخدام النموذج الاحتياطي."
+                    if allow_fallback else "لم يُستخدم نموذج احتياطي."
+                )
                 last_error = RuntimeError(
-                    "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
+                    "تعذر الاتصال بخدمة نموذج اللغة؛ " + fallback_note
                 )
             except (KeyError, IndexError, TypeError, ValueError) as exc:
                 self._record_generation_diagnostic(
@@ -4121,6 +4148,68 @@ class WebAgent:
         ):
             raise RuntimeError("تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.")
         return repaired.group(1).strip()
+
+
+    def _verify_semantic_claims(
+        self,
+        question: str,
+        answer: str,
+        sources: list[dict[str, Any]],
+        answer_integrity: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Assess claim support with one bounded call to a distinct model; fail closed."""
+        model = str(getattr(self, "verifier_model", "") or "").strip()
+        answer_model = str(getattr(self, "answer_model", "") or "").strip()
+        if not model:
+            return {
+                "status": "verifier_not_configured",
+                "withhold_answer": True,
+                "reason": "OMARAI_VERIFIER_MODEL is empty",
+                "semantic_verification": "not_completed",
+                "fact_correctness": "not_verified",
+            }
+        if model.casefold() == answer_model.casefold():
+            return {
+                "status": "verifier_not_independent",
+                "withhold_answer": True,
+                "reason": "verifier_model_matches_answer_model",
+                "semantic_verification": "not_completed",
+                "fact_correctness": "not_verified",
+            }
+        prepared = build_semantic_verification_request(question, answer, sources)
+        if prepared.get("status") != "ready":
+            prepared["withhold_answer"] = True
+            prepared["semantic_verification"] = "not_completed"
+            prepared["fact_correctness"] = "not_verified"
+            return prepared
+        deterministic = deterministic_claim_screen(prepared, answer_integrity)
+        if deterministic.get("status") != "passed":
+            return deterministic
+        try:
+            raw = self._request_completion(
+                prepared["messages"],
+                max_tokens=1800,
+                temperature=0.0,
+                timeout=self._effective_timeout(min(self.timeout, 15)),
+                model=model,
+                enable_web_search=False,
+                allow_fallback=False,
+            )
+        except Exception as exc:
+            return {
+                "status": "not_verifiable",
+                "withhold_answer": True,
+                "reason": "verifier_call_failed",
+                "error_class": type(exc).__name__,
+                "semantic_verification": "not_completed",
+                "fact_correctness": "not_verified",
+            }
+        result = parse_semantic_verification_response(raw, prepared)
+        result["verifier_model"] = model
+        result["answer_model"] = answer_model
+        result["independence_scope"] = "distinct_model_id_same_provider"
+        result["provider_independent"] = False
+        return result
 
     def _review_answer(
         self,
@@ -6555,6 +6644,58 @@ class WebAgent:
         citation_validation = self._citation_validation_metadata(
             answer, max_citable_sources, citation_warnings, review_status
         )
+        # Run deterministic numeric/provenance checks before asking the semantic reviewer.
+        # Recompute below after a source-only fallback so public diagnostics describe the final text.
+        answer_integrity = audit_answer_integrity(
+            working_question, answer, sources, coverage_targets,
+            plan.get("requirement_queries")
+        )
+        semantic_claim_verification: dict[str, Any] = {
+            "status": "not_run_review_unavailable",
+            "withhold_answer": False,
+            "semantic_verification": "not_performed",
+            "fact_correctness": "not_verified",
+        }
+        semantic_answer_withheld = False
+        if used_llm and sources and review_status == "model_claim_audit_completed":
+            if citation_warnings:
+                semantic_claim_verification = {
+                    "status": "not_verifiable",
+                    "withhold_answer": True,
+                    "reason": "invalid_citation_references_were_removed",
+                    "semantic_verification": "not_completed",
+                    "fact_correctness": "not_verified",
+                }
+            else:
+                semantic_claim_verification = self._verify_semantic_claims(
+                    working_question, answer, sources, answer_integrity
+                )
+            if semantic_claim_verification.get("status") not in {
+                "completed_all_claims_supported",
+                "completed_no_factual_claims",
+            }:
+                semantic_answer_withheld = True
+                semantic_warning = (
+                    "حُجبت صياغة النموذج لأن مراجع دعم الادعاءات لم يستطع إثبات دعم "
+                    "كل ادعاء واقعي بمصدره المحدد دون تعارض. المقتطفات أدناه مواد مصدرية "
+                    "للمراجعة وليست إجابة متحققة."
+                )
+                answer = (
+                    _fallback_lead_answer(lead_evidence_sources)
+                    if lead_request and lead_evidence_sources
+                    else _fallback_answer(sources, semantic_warning)
+                )
+                answer, fallback_citation_warnings = self._remove_invalid_citations(
+                    answer, max_citable_sources
+                )
+                citation_warnings = list(dict.fromkeys(
+                    citation_warnings + fallback_citation_warnings
+                ))
+                citation_validation = self._citation_validation_metadata(
+                    answer, max_citable_sources, citation_warnings, review_status
+                )
+        report["semantic_claim_verification"] = semantic_claim_verification
+        report["answer_was_withheld"] = semantic_answer_withheld
         report["unique_sources"] = len(sources)
         report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
         report["second_pass_review"] = review_status
@@ -6576,6 +6717,9 @@ class WebAgent:
         report["coverage_repair_status"] = coverage_repair_status
         report["coverage_repair_warning"] = coverage_repair_warning
         answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get("requirement_queries"))
+        if semantic_answer_withheld:
+            answer_coverage["status"] = "semantic_support_unverified_answer_withheld"
+            answer_coverage["semantic_verification_status"] = semantic_claim_verification.get("status")
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
         answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
@@ -6594,7 +6738,10 @@ class WebAgent:
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
+        if semantic_answer_withheld:
+            task_fulfillment_status = "not_assessed_insufficient_evidence"
         answer_coverage["task_fulfillment_status"] = task_fulfillment_status
+        answer_coverage["semantic_verification_status"] = semantic_claim_verification.get("status")
         report["task_fulfillment_status"] = task_fulfillment_status
         report["answer_integrity"] = answer_integrity
         report["requirement_evidence"] = answer_integrity.get("requirement_evidence", [])
@@ -6615,7 +6762,9 @@ class WebAgent:
         }
         distinct_domains.discard("")
         fetched_pages = sum(bool(source.get("page_fetched")) for source in sources)
-        if (
+        if semantic_answer_withheld:
+            research_quality = "partial"
+        elif (
             len(sources) >= 4 and len(distinct_domains) >= 3
             and len(distinct_providers) >= 2 and fetched_pages >= 1
             and review_status == "model_claim_audit_completed"
@@ -6650,7 +6799,10 @@ class WebAgent:
                 "اكتمال مراجعة النموذج لا يثبت دعم كل ادعاء."
             )
         elif citation_validation["valid_citation_count"] > 0:
-            answer_evidence_status = "citation_indices_validated_only"
+            answer_evidence_status = (
+                "semantic_support_unverified_answer_withheld"
+                if semantic_answer_withheld else "citation_indices_validated_only"
+            )
             uncited_answer_warning = None
         else:
             answer_evidence_status = "not_assessed"
@@ -6683,13 +6835,16 @@ class WebAgent:
         )
         report["editorial_independence_status"] = "not_assessed"
         report["claim_audit_semantics"] = (
-            "model_assisted_not_independent_fact_check"
-            if review_status == "model_claim_audit_completed"
+            "distinct_model_assessed_source_support_not_ground_truth"
+            if semantic_claim_verification.get("status") in {
+                "completed_all_claims_supported", "completed_no_factual_claims"
+            }
             else "not_verified"
         )
         report["insufficient_evidence"] = bool(
             report.get("search_outcome") in _RESEARCH_ERROR_OUTCOMES
             or not sources
+            or semantic_answer_withheld
             or answer_integrity["source_evidence_gap_count"] > 0
             or (
                 bool(coverage_targets)
@@ -6707,11 +6862,16 @@ class WebAgent:
             + ([coverage_repair_warning] if coverage_repair_warning else [])
             + citation_warnings
             + ([uncited_answer_warning] if uncited_answer_warning else [])
+            + ([
+                "حُجبت الإجابة المولدة لعدم اكتمال التحقق الدلالي المستقل عن نموذج الصياغة."
+            ] if semantic_answer_withheld else [])
         ))
         report["model_calls"] = list(self.model_usage)
         report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
         report["openrouter_web_search_results"] = len(self.server_search_sources)
-        if generation_budget_exhausted or review_budget_exhausted:
+        if semantic_answer_withheld:
+            final_answer_status = "semantic_verification_failed_with_source_fallback"
+        elif generation_budget_exhausted or review_budget_exhausted:
             final_answer_status = "budget_exhausted_with_source_fallback"
         elif llm_warning:
             final_answer_status = (
@@ -6747,6 +6907,7 @@ class WebAgent:
             or answer_integrity["potentially_missing_target_count"] > 0
             or answer_integrity["source_evidence_gap_count"] > 0
             or citation_validation["valid_citation_count"] == 0
+            or semantic_answer_withheld
         ):
             pipeline_completion_status = "partial"
         else:
@@ -6759,7 +6920,10 @@ class WebAgent:
             "claim_review": review_status,
             "valid_citations": citation_validation["valid_citation_count"],
             "semantic_fact_check": "not_performed",
+            "semantic_claim_support_assessment": semantic_claim_verification.get("status", "not_performed"),
         }
+        if semantic_answer_withheld:
+            pipeline_completion_status = "partial"
         report["pipeline_completion_status"] = pipeline_completion_status
         report["completion_stages"] = completion_stages
         report["pipeline_completion_semantics"] = (

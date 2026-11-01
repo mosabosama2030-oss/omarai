@@ -277,7 +277,11 @@ def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, mon
         local_api,
         "/api/diagnostics",
         method="POST",
-        payload={"test_model": True, "test_social": False},
+        payload={
+            "test_model": True,
+            "test_social": False,
+            "allow_provider_usage": True,
+        },
     )
     assert status == 200
     assert report["overall_status"] == "passed"
@@ -286,12 +290,48 @@ def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, mon
     assert "secret" not in str(report)
 
 
+def test_live_diagnostics_requires_explicit_provider_usage_opt_in(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    def unexpected_diagnostics(*_args, **_kwargs):
+        pytest.fail("diagnostics must not contact providers without explicit opt-in")
+
+    monkeypatch.setattr(WebAgent, "diagnostics", unexpected_diagnostics)
+    status, error = request_json(
+        local_api,
+        "/api/diagnostics",
+        method="POST",
+        payload={"test_model": True, "test_social": False},
+    )
+    assert status == 403
+    assert "allow_provider_usage=true" in error["error"]
+
+
+def test_diagnostics_endpoint_rejects_non_boolean_provider_usage_opt_in(local_api):
+    status, error = request_json(
+        local_api,
+        "/api/diagnostics",
+        method="POST",
+        payload={
+            "test_model": True,
+            "test_social": False,
+            "allow_provider_usage": "true",
+        },
+    )
+    assert status == 400
+    assert "booleans" in error["error"]
+
+
 def test_diagnostics_endpoint_requires_boolean_options(local_api):
     status, error = request_json(
         local_api,
         "/api/diagnostics",
         method="POST",
-        payload={"test_model": "yes", "test_social": False},
+        payload={
+            "test_model": "yes",
+            "test_social": False,
+            "allow_provider_usage": True,
+        },
     )
     assert status == 400
     assert "booleans" in error["error"]

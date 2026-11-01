@@ -92,6 +92,17 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Build production container
         run: docker build --build-arg PUBLIC_OMARAI_BUILD_SHA="${GITHUB_SHA}" --tag omarai:ci .
+      - name: Verify public container refuses startup without credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          if docker run --rm omarai:ci >/tmp/omarai-public-guard.log 2>&1; then
+            echo "A public container must refuse startup without an explicit deployment flag and access token."
+            exit 1
+          fi
+          grep -F "Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and" /tmp/omarai-public-guard.log
+          grep -F "private OMARAI_ACCESS_TOKEN of at least 32 characters" /tmp/omarai-public-guard.log
+
       - name: Start container and smoke-test protected API
         shell: bash
         run: |

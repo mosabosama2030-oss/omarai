@@ -561,10 +561,31 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/api/diagnostics":
                 test_model = data.get("test_model", True)
                 test_social = data.get("test_social", False)
-                if not isinstance(test_model, bool) or not isinstance(test_social, bool):
+                allow_provider_usage = data.get("allow_provider_usage", False)
+                if (
+                    not isinstance(test_model, bool)
+                    or not isinstance(test_social, bool)
+                    or not isinstance(allow_provider_usage, bool)
+                ):
                     return self.respond(
                         400,
-                        {"error": "test_model and test_social must be booleans"},
+                        {
+                            "error": (
+                                "test_model, test_social, and allow_provider_usage "
+                                "must be booleans"
+                            )
+                        },
+                    )
+                if allow_provider_usage is not True:
+                    return self.respond(
+                        403,
+                        {
+                            "error": (
+                                "live diagnostics perform outbound provider requests and may "
+                                "consume quota or incur charges; set allow_provider_usage=true "
+                                "only after explicit confirmation"
+                            )
+                        },
                     )
                 return self._run_bounded_agent_operation(
                     lambda: WebAgent().diagnostics(

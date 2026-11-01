@@ -133,6 +133,12 @@ def test_semantic_context_probe_routes_natural_followup_to_search_and_answer(
     monkeypatch.setattr(agent, "_source_matches_query", lambda _query, _source: True)
     monkeypatch.setattr(agent, "_generate", generate)
     monkeypatch.setattr(agent, "_review_answer", review)
+    monkeypatch.setattr(agent, "_verify_semantic_claims", lambda *args, **kwargs: {
+        "status": "completed_all_claims_supported",
+        "withhold_answer": False,
+        "semantic_verification": "model_assessed_source_support",
+        "fact_correctness": "not_verified",
+    })
 
     question = "وطب الضمان الدولي بيسري في مصر؟"
     result = agent.answer(question, history=history)
