@@ -296,3 +296,23 @@ def test_deterministic_screen_rejects_a_missing_or_unreadable_source_url():
     result = deterministic_claim_screen(request)
     assert result["status"] == "not_verifiable"
     assert result["reason"] == "deterministic_source_provenance_failed"
+
+def test_extremely_large_citation_index_fails_closed_without_integer_conversion():
+    answer = "The system is reliable [source " + ("9" * 5000) + "]."
+    request = prepared(answer=answer)
+
+    assert request["status"] == "not_verifiable"
+    assert request["reason"] == "invalid_citation_reference"
+
+
+def test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual():
+    request = prepared(answer="The capital of Egypt is Cairo.")
+    result = parse_semantic_verification_response(
+        response([row(assessment="non_factual", supporting=[], contradicting=[])]),
+        request,
+    )
+
+    assert result["status"] == "not_verifiable"
+    assert result["reason"] == "non_factual_label_not_deterministically_safe"
+    assert result["withhold_answer"] is True
+
