@@ -12,6 +12,7 @@ import threading
 import time
 from collections import defaultdict, deque
 from functools import lru_cache
+from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import ClassVar
@@ -24,6 +25,8 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
+BROWSER_SESSION_COOKIE_MAX_AGE = 8 * 60 * 60
+BROWSER_SESSION_TOKEN_RE = re.compile(r"^[A-Za-z0-9._~-]{32,512}$")
 
 
 def _csp_hash_source(value: str) -> str:
@@ -309,22 +312,70 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             cls._agent_semaphore.release()
 
-    def _authorized(self):
-        """Resolve the request identity from a verified token or loopback dev mode.
+    def _session_cookie_name(self):
+        """Use the __Host- prefix on HTTPS public deployments."""
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            return "__Host-omarai_session"
+        return "omarai_session"
 
-        Request-body tenant IDs are never used to establish tenant context.
-        Public deployments always require a valid bearer credential.
+    def _session_cookie_header(self, token: str) -> str:
+        if not BROWSER_SESSION_TOKEN_RE.fullmatch(token):
+            raise ValueError("browser access token has an unsupported format")
+        parts = [
+            f"{self._session_cookie_name()}={token}",
+            "Path=/",
+            "HttpOnly",
+            "SameSite=Strict",
+            f"Max-Age={BROWSER_SESSION_COOKIE_MAX_AGE}",
+        ]
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            parts.insert(2, "Secure")
+        return "; ".join(parts)
+
+    def _clear_session_cookie_header(self) -> str:
+        parts = [
+            f"{self._session_cookie_name()}=",
+            "Path=/",
+            "HttpOnly",
+            "SameSite=Strict",
+            "Max-Age=0",
+        ]
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            parts.insert(2, "Secure")
+        return "; ".join(parts)
+
+    def _principal_for_access_token(self, token: str):
+        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
+        if expected and hmac.compare_digest(token, expected):
+            return self.store.default_principal()
+        return self.store.resolve_api_token(token)
+
+    def _authorized(self):
+        """Resolve a verified bearer token or HttpOnly browser cookie.
+
+        Browser cookies are accepted only with same-origin POST requests. Request-body
+        tenant IDs are never used to establish tenant context.
         """
         self._authenticated_principal = None
+        self._cookie_authenticated = False
         supplied = self.headers.get("Authorization", "")
-        expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
         if supplied.startswith("Bearer "):
             token = supplied[7:].strip()
-            if expected and hmac.compare_digest(token, expected):
-                self._authenticated_principal = self.store.default_principal()
-            else:
-                self._authenticated_principal = self.store.resolve_api_token(token)
+            self._authenticated_principal = self._principal_for_access_token(token)
             return bool(self._authenticated_principal)
+
+        cookie = SimpleCookie()
+        try:
+            cookie.load(self.headers.get("Cookie", ""))
+        except Exception:
+            cookie = SimpleCookie()
+        morsel = cookie.get(self._session_cookie_name())
+        if morsel is not None:
+            token = morsel.value
+            if BROWSER_SESSION_TOKEN_RE.fullmatch(token):
+                self._authenticated_principal = self._principal_for_access_token(token)
+                self._cookie_authenticated = bool(self._authenticated_principal)
+                return self._cookie_authenticated
 
         if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1":
             try:
@@ -498,7 +549,13 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Security-Policy", _content_security_policy())
         super().end_headers()
 
-    def respond(self, status, payload, content_type="application/json; charset=utf-8"):
+    def respond(
+        self,
+        status,
+        payload,
+        content_type="application/json; charset=utf-8",
+        extra_headers: list[tuple[str, str]] | None = None,
+    ):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(status)
         self.send_header("Content-Type", content_type)
@@ -508,6 +565,8 @@ class Handler(BaseHTTPRequestHandler):
         if origin and self._origin_allowed(origin):
             self.send_header("Access-Control-Allow-Origin", origin)
             self.send_header("Vary", "Origin")
+        for name, value in extra_headers or []:
+            self.send_header(name, value)
         self.end_headers()
         self.wfile.write(body)
 
@@ -538,6 +597,18 @@ class Handler(BaseHTTPRequestHandler):
                     },
                 },
             )
+        if parsed.path == "/api/session":
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "لا توجد جلسة صالحة؛ سجّل الدخول مجددًا."})
+            return self.respond(
+                200,
+                {
+                    "authenticated": True,
+                    "role": self._authenticated_principal["role"],
+                },
+            )
         if parsed.path == "/api/leads":
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
@@ -559,15 +630,22 @@ class Handler(BaseHTTPRequestHandler):
             path = urlparse(self.path).path
             if path.startswith("/api/") and not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
-            if path.startswith("/api/") and not self._authorized():
+            session_login = path == "/api/session"
+            if path.startswith("/api/") and not session_login and not self._authorized():
                 return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
 
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
             if content_type != "application/json":
                 return self.respond(415, {"error": "Content-Type must be application/json"})
             origin = self.headers.get("Origin")
+            if session_login and (not origin or not self._origin_allowed(origin)):
+                return self.respond(403, {"error": "browser session login requires a trusted same-origin request"})
             if origin and not self._origin_allowed(origin):
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
+            if getattr(self, "_cookie_authenticated", False) and (
+                not origin or not self._origin_allowed(origin)
+            ):
+                return self.respond(403, {"error": "cookie-authenticated requests require a trusted Origin"})
 
             raw_body = self._read_request_body()
             if raw_body is None:
@@ -575,6 +653,30 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(raw_body)
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
+            if path == "/api/session":
+                token = data.get("access_token", "")
+                if (
+                    not isinstance(token, str)
+                    or not BROWSER_SESSION_TOKEN_RE.fullmatch(token)
+                ):
+                    return self.respond(401, {"error": "رمز الوصول غير صالح."})
+                principal = self._principal_for_access_token(token)
+                if not principal:
+                    return self.respond(401, {"error": "رمز الوصول غير صحيح أو منتهي الصلاحية."})
+                self._authenticated_principal = principal
+                return self.respond(
+                    200,
+                    {"authenticated": True, "role": principal["role"]},
+                    extra_headers=[("Set-Cookie", self._session_cookie_header(token))],
+                )
+
+            if path == "/api/session/logout":
+                return self.respond(
+                    200,
+                    {"logged_out": True},
+                    extra_headers=[("Set-Cookie", self._clear_session_cookie_header())],
+                )
+
             if path == "/api/tokens/revoke":
                 supplied = self.headers.get("Authorization", "")
                 token = supplied[7:].strip() if supplied.startswith("Bearer ") else ""

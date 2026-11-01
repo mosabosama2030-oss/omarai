@@ -23,3 +23,12 @@ def test_lead_status_handler_accepts_sha256_hex_lead_ids():
     assert 'if(!/^[a-f0-9]{24}$/.test(id||""))return;' in html
     assert 'data-lead-id="' in html
 
+def test_browser_pages_never_store_access_tokens_in_web_storage():
+    root = Path(__file__).resolve().parents[1] / "web"
+    for name in ("agent.html", "dashboard.html"):
+        html = (root / name).read_text(encoding="utf-8")
+        assert "localStorage" not in html
+        assert "sessionStorage" not in html
+        assert "/api/session" in html
+        assert "credentials:\"same-origin\"" in html
+

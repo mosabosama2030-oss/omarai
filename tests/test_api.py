@@ -48,6 +48,19 @@ def request_json(base, path, method="GET", payload=None, headers=None):
         return error.code, json.loads(error.read().decode("utf-8"))
 
 
+def request_json_with_headers(base, path, method="GET", payload=None, headers=None):
+    body = None if payload is None else json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    request_headers = dict(headers or {})
+    if body is not None and "Content-Type" not in request_headers:
+        request_headers["Content-Type"] = "application/json"
+    request = Request(base + path, data=body, method=method, headers=request_headers)
+    try:
+        with urlopen(request, timeout=3) as response:
+            return response.status, json.loads(response.read().decode("utf-8")), response.headers
+    except HTTPError as error:
+        return error.code, json.loads(error.read().decode("utf-8")), error.headers
+
+
 def test_api_health_analyze_save_duplicate_list_and_status(local_api):
     status, health = request_json(local_api, "/api/health")
     assert status == 200
@@ -1002,3 +1015,99 @@ def test_dashboard_uses_delegated_status_action_not_inline_onclick():
     assert 'data-action="save-status"' in dashboard
     assert 'onclick="saveStatus' not in dashboard
     assert """data-lead-id="'+esc(l.id)+'">""" in dashboard
+
+def test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts(local_api, monkeypatch):
+    from urllib.parse import urlsplit
+
+    token = "browser-session-test-token-1234567890"
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", token)
+    origin = "https://" + urlsplit(local_api).netloc
+
+    status, payload, headers = request_json_with_headers(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": token},
+        headers={"Origin": origin},
+    )
+    assert status == 200
+    assert payload == {"authenticated": True, "role": "owner"}
+    assert token not in json.dumps(payload)
+    set_cookie = headers.get("Set-Cookie", "")
+    assert set_cookie.startswith("__Host-omarai_session=")
+    assert "Path=/" in set_cookie
+    assert "Secure" in set_cookie
+    assert "HttpOnly" in set_cookie
+    assert "SameSite=Strict" in set_cookie
+    assert "Max-Age=28800" in set_cookie
+    assert "Domain=" not in set_cookie
+    cookie = set_cookie.split(";", 1)[0]
+
+    status, session = request_json(
+        local_api, "/api/session", headers={"Cookie": cookie}
+    )
+    assert status == 200
+    assert session == {"authenticated": True, "role": "owner"}
+
+    status, listing = request_json(
+        local_api, "/api/leads", headers={"Cookie": cookie}
+    )
+    assert status == 200
+    assert listing["count"] == 0
+
+    status, error = request_json(
+        local_api,
+        "/api/ask",
+        method="POST",
+        payload={"question": "كم عميل؟"},
+        headers={"Cookie": cookie, "Origin": "https://attacker.example"},
+    )
+    assert status == 403
+    assert "Origin" in error["error"] or "cross-origin" in error["error"]
+
+    status, logged_out, logout_headers = request_json_with_headers(
+        local_api,
+        "/api/session/logout",
+        method="POST",
+        payload={},
+        headers={"Cookie": cookie, "Origin": origin},
+    )
+    assert status == 200
+    assert logged_out["logged_out"] is True
+    cleared_cookie = logout_headers.get("Set-Cookie", "")
+    assert cleared_cookie.startswith("__Host-omarai_session=")
+    assert "Max-Age=0" in cleared_cookie
+
+    status, error = request_json(
+        local_api, "/api/leads", headers={"Cookie": cookie}
+    )
+    assert status == 401
+
+
+def test_browser_session_login_rejects_untrusted_origin(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "browser-session-test-token-1234567890")
+    status, error = request_json(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": "browser-session-test-token-1234567890"},
+        headers={"Origin": "https://attacker.example"},
+    )
+    assert status == 403
+    assert "same-origin" in error["error"]
+
+
+def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "browser-session-test-token-1234567890")
+    status, error = request_json(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": "unsafe;token" + "x" * 40},
+        headers={"Origin": "https://127.0.0.1"},
+    )
+    assert status == 401
+
