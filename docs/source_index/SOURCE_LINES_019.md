@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006770 إلى SRC-EEF2E6447C-L000527
+- النطاق: SRC-1AE03B9EC3-L006759 إلى SRC-EEF2E6447C-L000516
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006759](../../agents/web_agent.py#L6759) | 6759 | `"                or \"\""` | — |
+| [SRC-1AE03B9EC3-L006760](../../agents/web_agent.py#L6760) | 6760 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006761](../../agents/web_agent.py#L6761) | 6761 | `"            for source in sources"` | — |
+| [SRC-1AE03B9EC3-L006762](../../agents/web_agent.py#L6762) | 6762 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L006763](../../agents/web_agent.py#L6763) | 6763 | `"        distinct_domains.discard(\"\")"` | — |
+| [SRC-1AE03B9EC3-L006764](../../agents/web_agent.py#L6764) | 6764 | `"        fetched_pages = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
+| [SRC-1AE03B9EC3-L006765](../../agents/web_agent.py#L6765) | 6765 | `"        if semantic_answer_withheld:"` | — |
+| [SRC-1AE03B9EC3-L006766](../../agents/web_agent.py#L6766) | 6766 | `"            research_quality = \"partial\""` | — |
+| [SRC-1AE03B9EC3-L006767](../../agents/web_agent.py#L6767) | 6767 | `"        elif ("` | — |
+| [SRC-1AE03B9EC3-L006768](../../agents/web_agent.py#L6768) | 6768 | `"            len(sources) >= 4 and len(distinct_domains) >= 3"` | — |
+| [SRC-1AE03B9EC3-L006769](../../agents/web_agent.py#L6769) | 6769 | `"            and len(distinct_providers) >= 2 and fetched_pages >= 1"` | — |
 | [SRC-1AE03B9EC3-L006770](../../agents/web_agent.py#L6770) | 6770 | `"            and review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L006771](../../agents/web_agent.py#L6771) | 6771 | `"        ):"` | — |
 | [SRC-1AE03B9EC3-L006772](../../agents/web_agent.py#L6772) | 6772 | `"            research_quality = \"excellent\""` | — |
@@ -823,14 +834,3 @@
 | [SRC-EEF2E6447C-L000514](../../api/omarai.py#L514) | 514 | `"                    \"agent\": WebAgent.status(),"` | — |
 | [SRC-EEF2E6447C-L000515](../../api/omarai.py#L515) | 515 | `"                    \"build\": {"` | — |
 | [SRC-EEF2E6447C-L000516](../../api/omarai.py#L516) | 516 | `"                        \"sha\": _build_identity()[0],"` | — |
-| [SRC-EEF2E6447C-L000517](../../api/omarai.py#L517) | 517 | `"                        \"sha_status\": ("` | — |
-| [SRC-EEF2E6447C-L000518](../../api/omarai.py#L518) | 518 | `"                            \"available\" if _build_identity()[0] != \"unknown\" else \"unknown\""` | — |
-| [SRC-EEF2E6447C-L000519](../../api/omarai.py#L519) | 519 | `"                        ),"` | — |
-| [SRC-EEF2E6447C-L000520](../../api/omarai.py#L520) | 520 | `"                        \"sha_source\": _build_identity()[1],"` | — |
-| [SRC-EEF2E6447C-L000521](../../api/omarai.py#L521) | 521 | `"                    },"` | — |
-| [SRC-EEF2E6447C-L000522](../../api/omarai.py#L522) | 522 | `"                },"` | — |
-| [SRC-EEF2E6447C-L000523](../../api/omarai.py#L523) | 523 | `"            )"` | — |
-| [SRC-EEF2E6447C-L000524](../../api/omarai.py#L524) | 524 | `"        if parsed.path == \"/api/leads\":"` | — |
-| [SRC-EEF2E6447C-L000525](../../api/omarai.py#L525) | 525 | `"            if not self._rate_limit_ok():"` | — |
-| [SRC-EEF2E6447C-L000526](../../api/omarai.py#L526) | 526 | `"                return self.respond(429, {\"error\": \"تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة.\"})"` | — |
-| [SRC-EEF2E6447C-L000527](../../api/omarai.py#L527) | 527 | `"            if not self._authorized():"` | — |

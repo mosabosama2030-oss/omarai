@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004370 إلى SRC-1AE03B9EC3-L005169
+- النطاق: SRC-1AE03B9EC3-L004359 إلى SRC-1AE03B9EC3-L005158
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004359](../../agents/web_agent.py#L4359) | 4359 | `"            \"status\": status,"` | — |
+| [SRC-1AE03B9EC3-L004360](../../agents/web_agent.py#L4360) | 4360 | `"            \"valid_citation_count\": citation_count,"` | — |
+| [SRC-1AE03B9EC3-L004361](../../agents/web_agent.py#L4361) | 4361 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |
+| [SRC-1AE03B9EC3-L004362](../../agents/web_agent.py#L4362) | 4362 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
+| [SRC-1AE03B9EC3-L004363](../../agents/web_agent.py#L4363) | 4363 | `"            \"claim_support\": ("` | — |
+| [SRC-1AE03B9EC3-L004364](../../agents/web_agent.py#L4364) | 4364 | `"                \"model_review_not_independent_fact_check\""` | — |
+| [SRC-1AE03B9EC3-L004365](../../agents/web_agent.py#L4365) | 4365 | `"                if review_status == \"model_claim_audit_completed\""` | — |
+| [SRC-1AE03B9EC3-L004366](../../agents/web_agent.py#L4366) | 4366 | `"                else \"not_verified\""` | — |
+| [SRC-1AE03B9EC3-L004367](../../agents/web_agent.py#L4367) | 4367 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L004368](../../agents/web_agent.py#L4368) | 4368 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L004369](../../agents/web_agent.py#L4369) | 4369 | `""` | — |
 | [SRC-1AE03B9EC3-L004370](../../agents/web_agent.py#L4370) | 4370 | `"    def diagnostics("` | — |
 | [SRC-1AE03B9EC3-L004371](../../agents/web_agent.py#L4371) | 4371 | `"        self,"` | — |
 | [SRC-1AE03B9EC3-L004372](../../agents/web_agent.py#L4372) | 4372 | `"        test_model: bool = True,"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L005156](../../agents/web_agent.py#L5156) | 5156 | `"                and _relevance_query_tokens(compacted_query)"` | — |
 | [SRC-1AE03B9EC3-L005157](../../agents/web_agent.py#L5157) | 5157 | `"                and compacted_query not in normalized_plan_queries"` | — |
 | [SRC-1AE03B9EC3-L005158](../../agents/web_agent.py#L5158) | 5158 | `"            ):"` | — |
-| [SRC-1AE03B9EC3-L005159](../../agents/web_agent.py#L5159) | 5159 | `"                normalized_plan_queries.append(compacted_query)"` | — |
-| [SRC-1AE03B9EC3-L005160](../../agents/web_agent.py#L5160) | 5160 | `"        plan[\"queries\"] = normalized_plan_queries[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-1AE03B9EC3-L005161](../../agents/web_agent.py#L5161) | 5161 | `"        # Preserve the requested mode in diagnostics even when no usable query exists."` | — |
-| [SRC-1AE03B9EC3-L005162](../../agents/web_agent.py#L5162) | 5162 | `"        if clean_mode == \"deep\":"` | — |
-| [SRC-1AE03B9EC3-L005163](../../agents/web_agent.py#L5163) | 5163 | `"            plan[\"depth\"] = \"deep\""` | — |
-| [SRC-1AE03B9EC3-L005164](../../agents/web_agent.py#L5164) | 5164 | `"        elif clean_mode == \"latest\":"` | — |
-| [SRC-1AE03B9EC3-L005165](../../agents/web_agent.py#L5165) | 5165 | `"            plan[\"freshness\"] = \"current\""` | — |
-| [SRC-1AE03B9EC3-L005166](../../agents/web_agent.py#L5166) | 5166 | `"        elif clean_mode == \"social\":"` | — |
-| [SRC-1AE03B9EC3-L005167](../../agents/web_agent.py#L5167) | 5167 | `"            plan[\"social_focus\"] = True"` | — |
-| [SRC-1AE03B9EC3-L005168](../../agents/web_agent.py#L5168) | 5168 | `"            if not plan.get(\"platforms\"):"` | — |
-| [SRC-1AE03B9EC3-L005169](../../agents/web_agent.py#L5169) | 5169 | `"                plan[\"platforms\"] = [\"reddit\", \"bluesky\", \"youtube\"]"` | — |

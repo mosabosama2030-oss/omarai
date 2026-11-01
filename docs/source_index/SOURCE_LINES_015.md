@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003570 إلى SRC-1AE03B9EC3-L004369
+- النطاق: SRC-1AE03B9EC3-L003559 إلى SRC-1AE03B9EC3-L004358
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003559](../../agents/web_agent.py#L3559) | 3559 | `"        \"\"\"Use the configured language model to resolve dialogue meaning, never to search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L003560](../../agents/web_agent.py#L3560) | 3560 | `"        fallback = fallback_dialogue_context(question, history)"` | — |
+| [SRC-1AE03B9EC3-L003561](../../agents/web_agent.py#L3561) | 3561 | `"        if not self.api_key or not history:"` | — |
+| [SRC-1AE03B9EC3-L003562](../../agents/web_agent.py#L3562) | 3562 | `"            return fallback"` | — |
+| [SRC-1AE03B9EC3-L003563](../../agents/web_agent.py#L3563) | 3563 | `"        messages = ["` | — |
+| [SRC-1AE03B9EC3-L003564](../../agents/web_agent.py#L3564) | 3564 | `"            {"` | — |
+| [SRC-1AE03B9EC3-L003565](../../agents/web_agent.py#L3565) | 3565 | `"                \"role\": \"system\","` | — |
+| [SRC-1AE03B9EC3-L003566](../../agents/web_agent.py#L3566) | 3566 | `"                \"content\": ("` | — |
+| [SRC-1AE03B9EC3-L003567](../../agents/web_agent.py#L3567) | 3567 | `"                    \"أنت محلل سياق حواري لـ Omarai، ولست مجيبًا أو محرك بحث. حلل آخر رسالة \""` | — |
+| [SRC-1AE03B9EC3-L003568](../../agents/web_agent.py#L3568) | 3568 | `"                    \"للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. اكتب resolved_question \""` | — |
+| [SRC-1AE03B9EC3-L003569](../../agents/web_agent.py#L3569) | 3569 | `"                    \"بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية \""` | — |
 | [SRC-1AE03B9EC3-L003570](../../agents/web_agent.py#L3570) | 3570 | `"                    \"والفصحى والإنجليزية والأخطاء المعتادة. ميّز بين استمرار الموضوع وتغيير الموضوع، \""` | — |
 | [SRC-1AE03B9EC3-L003571](../../agents/web_agent.py#L3571) | 3571 | `"                    \"واستعد الكيان والقيود والجانب المطلوب والبلد والنسخة والفترة الزمنية عند وجودها. \""` | — |
 | [SRC-1AE03B9EC3-L003572](../../agents/web_agent.py#L3572) | 3572 | `"                    \"لا تنقل موضوعًا سابقًا إلى سؤال مستقل. إذا كان للضمير أكثر من مرجع معقول ويغيّر \""` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L004356](../../agents/web_agent.py#L4356) | 4356 | `"            status = \"no_citation_markers_present\""` | — |
 | [SRC-1AE03B9EC3-L004357](../../agents/web_agent.py#L4357) | 4357 | `"        return {"` | — |
 | [SRC-1AE03B9EC3-L004358](../../agents/web_agent.py#L4358) | 4358 | `"            \"method\": \"numeric_source_index_range_only\","` | — |
-| [SRC-1AE03B9EC3-L004359](../../agents/web_agent.py#L4359) | 4359 | `"            \"status\": status,"` | — |
-| [SRC-1AE03B9EC3-L004360](../../agents/web_agent.py#L4360) | 4360 | `"            \"valid_citation_count\": citation_count,"` | — |
-| [SRC-1AE03B9EC3-L004361](../../agents/web_agent.py#L4361) | 4361 | `"            \"invalid_references_removed\": len(citation_warnings),"` | — |
-| [SRC-1AE03B9EC3-L004362](../../agents/web_agent.py#L4362) | 4362 | `"            \"max_citable_source_index\": max_citable_source_index,"` | — |
-| [SRC-1AE03B9EC3-L004363](../../agents/web_agent.py#L4363) | 4363 | `"            \"claim_support\": ("` | — |
-| [SRC-1AE03B9EC3-L004364](../../agents/web_agent.py#L4364) | 4364 | `"                \"model_review_not_independent_fact_check\""` | — |
-| [SRC-1AE03B9EC3-L004365](../../agents/web_agent.py#L4365) | 4365 | `"                if review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L004366](../../agents/web_agent.py#L4366) | 4366 | `"                else \"not_verified\""` | — |
-| [SRC-1AE03B9EC3-L004367](../../agents/web_agent.py#L4367) | 4367 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L004368](../../agents/web_agent.py#L4368) | 4368 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L004369](../../agents/web_agent.py#L4369) | 4369 | `""` | — |

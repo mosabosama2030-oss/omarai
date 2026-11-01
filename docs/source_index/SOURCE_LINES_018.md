@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005970 إلى SRC-1AE03B9EC3-L006769
+- النطاق: SRC-1AE03B9EC3-L005959 إلى SRC-1AE03B9EC3-L006758
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005959](../../agents/web_agent.py#L5959) | 5959 | `"            for provider in report[\"providers_used\"]"` | — |
+| [SRC-1AE03B9EC3-L005960](../../agents/web_agent.py#L5960) | 5960 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L005961](../../agents/web_agent.py#L5961) | 5961 | `"        report[\"platform_counts\"] = {"` | — |
+| [SRC-1AE03B9EC3-L005962](../../agents/web_agent.py#L5962) | 5962 | `"            str(source.get(\"platform\", \"web\")): sum("` | — |
+| [SRC-1AE03B9EC3-L005963](../../agents/web_agent.py#L5963) | 5963 | `"                str(other.get(\"platform\", \"web\")) == str(source.get(\"platform\", \"web\"))"` | — |
+| [SRC-1AE03B9EC3-L005964](../../agents/web_agent.py#L5964) | 5964 | `"                for other in sources"` | — |
+| [SRC-1AE03B9EC3-L005965](../../agents/web_agent.py#L5965) | 5965 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L005966](../../agents/web_agent.py#L5966) | 5966 | `"            for source in sources"` | — |
+| [SRC-1AE03B9EC3-L005967](../../agents/web_agent.py#L5967) | 5967 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L005968](../../agents/web_agent.py#L5968) | 5968 | `"        report[\"evidence_signals\"] = evidence_signal_report("` | — |
+| [SRC-1AE03B9EC3-L005969](../../agents/web_agent.py#L5969) | 5969 | `"            sources, plan.get(\"freshness\", \"any\")"` | — |
 | [SRC-1AE03B9EC3-L005970](../../agents/web_agent.py#L5970) | 5970 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L005971](../../agents/web_agent.py#L5971) | 5971 | `"        needs_corroboration = ("` | — |
 | [SRC-1AE03B9EC3-L005972](../../agents/web_agent.py#L5972) | 5972 | `"            len(sources) < 2 or len(independent_domains) < 2"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L006756](../../agents/web_agent.py#L6756) | 6756 | `"            registrable_domain("` | — |
 | [SRC-1AE03B9EC3-L006757](../../agents/web_agent.py#L6757) | 6757 | `"                source.get(\"domain\")"` | — |
 | [SRC-1AE03B9EC3-L006758](../../agents/web_agent.py#L6758) | 6758 | `"                or urllib.parse.urlparse(source.get(\"url\", \"\")).hostname"` | — |
-| [SRC-1AE03B9EC3-L006759](../../agents/web_agent.py#L6759) | 6759 | `"                or \"\""` | — |
-| [SRC-1AE03B9EC3-L006760](../../agents/web_agent.py#L6760) | 6760 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L006761](../../agents/web_agent.py#L6761) | 6761 | `"            for source in sources"` | — |
-| [SRC-1AE03B9EC3-L006762](../../agents/web_agent.py#L6762) | 6762 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L006763](../../agents/web_agent.py#L6763) | 6763 | `"        distinct_domains.discard(\"\")"` | — |
-| [SRC-1AE03B9EC3-L006764](../../agents/web_agent.py#L6764) | 6764 | `"        fetched_pages = sum(bool(source.get(\"page_fetched\")) for source in sources)"` | — |
-| [SRC-1AE03B9EC3-L006765](../../agents/web_agent.py#L6765) | 6765 | `"        if semantic_answer_withheld:"` | — |
-| [SRC-1AE03B9EC3-L006766](../../agents/web_agent.py#L6766) | 6766 | `"            research_quality = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L006767](../../agents/web_agent.py#L6767) | 6767 | `"        elif ("` | — |
-| [SRC-1AE03B9EC3-L006768](../../agents/web_agent.py#L6768) | 6768 | `"            len(sources) >= 4 and len(distinct_domains) >= 3"` | — |
-| [SRC-1AE03B9EC3-L006769](../../agents/web_agent.py#L6769) | 6769 | `"            and len(distinct_providers) >= 2 and fetched_pages >= 1"` | — |

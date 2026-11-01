@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000148 إلى SRC-086D574B4E-L000136
+- النطاق: SRC-8D00DCEC0D-L000138 إلى SRC-086D574B4E-L000126
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000138](../../agents/sales_domain.py#L138) | 138 | `"        if len(cleaned) > maximum_count:"` | — |
+| [SRC-8D00DCEC0D-L000139](../../agents/sales_domain.py#L139) | 139 | `"            raise ValueError(f\"{field_name} exceeds {maximum_count} items\")"` | — |
+| [SRC-8D00DCEC0D-L000140](../../agents/sales_domain.py#L140) | 140 | `"    return tuple(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000141](../../agents/sales_domain.py#L141) | 141 | `""` | — |
+| [SRC-8D00DCEC0D-L000142](../../agents/sales_domain.py#L142) | 142 | `""` | — |
+| [SRC-8D00DCEC0D-L000143](../../agents/sales_domain.py#L143) | 143 | `"def _clean_path(values: Iterable[str], *, field_name: str) -> tuple[str, ...]:"` | — |
+| [SRC-8D00DCEC0D-L000144](../../agents/sales_domain.py#L144) | 144 | `"    path = _clean_terms(values, field_name=field_name, maximum_count=_MAX_CATEGORY_DEPTH)"` | — |
+| [SRC-8D00DCEC0D-L000145](../../agents/sales_domain.py#L145) | 145 | `"    if not path:"` | — |
+| [SRC-8D00DCEC0D-L000146](../../agents/sales_domain.py#L146) | 146 | `"        raise ValueError(f\"{field_name} must contain at least one segment\")"` | — |
+| [SRC-8D00DCEC0D-L000147](../../agents/sales_domain.py#L147) | 147 | `"    return path"` | — |
 | [SRC-8D00DCEC0D-L000148](../../agents/sales_domain.py#L148) | 148 | `""` | — |
 | [SRC-8D00DCEC0D-L000149](../../agents/sales_domain.py#L149) | 149 | `""` | — |
 | [SRC-8D00DCEC0D-L000150](../../agents/sales_domain.py#L150) | 150 | `"def _enum_value(enum_type: type[Enum], value: Enum \| str, *, field_name: str) -> Enum:"` | — |
@@ -767,70 +777,60 @@
 | [SRC-086D574B4E-L000067](../../agents/semantic_claim_verifier.py#L67) | 67 | `"    sources: list[dict[str, Any]] \| None,"` | — |
 | [SRC-086D574B4E-L000068](../../agents/semantic_claim_verifier.py#L68) | 68 | `") -> dict[str, Any]:"` | — |
 | [SRC-086D574B4E-L000069](../../agents/semantic_claim_verifier.py#L69) | 69 | `"    \"\"\"Build a bounded, injection-aware request with exact cited-source indexes.\"\"\""` | — |
-| [SRC-086D574B4E-L000070](../../agents/semantic_claim_verifier.py#L70) | 70 | `"    safe_sources = ["` | — |
-| [SRC-086D574B4E-L000071](../../agents/semantic_claim_verifier.py#L71) | 71 | `"        item for item in (sources or []) if isinstance(item, dict)"` | — |
-| [SRC-086D574B4E-L000072](../../agents/semantic_claim_verifier.py#L72) | 72 | `"    ][:MAX_VERIFICATION_SOURCES]"` | — |
-| [SRC-086D574B4E-L000073](../../agents/semantic_claim_verifier.py#L73) | 73 | `"    ledger = build_claim_evidence_ledger("` | — |
-| [SRC-086D574B4E-L000074](../../agents/semantic_claim_verifier.py#L74) | 74 | `"        str(answer or \"\"),"` | — |
-| [SRC-086D574B4E-L000075](../../agents/semantic_claim_verifier.py#L75) | 75 | `"        safe_sources,"` | — |
-| [SRC-086D574B4E-L000076](../../agents/semantic_claim_verifier.py#L76) | 76 | `"        max_segments=MAX_VERIFICATION_CLAIMS,"` | — |
-| [SRC-086D574B4E-L000077](../../agents/semantic_claim_verifier.py#L77) | 77 | `"        max_citable_sources=MAX_VERIFICATION_SOURCES,"` | — |
-| [SRC-086D574B4E-L000078](../../agents/semantic_claim_verifier.py#L78) | 78 | `"        question_context=str(question or \"\")[:2000],"` | — |
-| [SRC-086D574B4E-L000079](../../agents/semantic_claim_verifier.py#L79) | 79 | `"    )"` | — |
-| [SRC-086D574B4E-L000080](../../agents/semantic_claim_verifier.py#L80) | 80 | `"    if ledger.get(\"status\") != \"built\":"` | — |
-| [SRC-086D574B4E-L000081](../../agents/semantic_claim_verifier.py#L81) | 81 | `"        return _not_verifiable(\"claim_ledger_unavailable\", ledger)"` | — |
-| [SRC-086D574B4E-L000082](../../agents/semantic_claim_verifier.py#L82) | 82 | `"    if ledger.get(\"truncated\") is True:"` | — |
-| [SRC-086D574B4E-L000083](../../agents/semantic_claim_verifier.py#L83) | 83 | `"        return _not_verifiable(\"claim_ledger_truncated\", ledger)"` | — |
-| [SRC-086D574B4E-L000084](../../agents/semantic_claim_verifier.py#L84) | 84 | `"    summary = ledger.get(\"summary\")"` | — |
-| [SRC-086D574B4E-L000085](../../agents/semantic_claim_verifier.py#L85) | 85 | `"    if isinstance(summary, dict) and int("` | — |
-| [SRC-086D574B4E-L000086](../../agents/semantic_claim_verifier.py#L86) | 86 | `"        summary.get(\"truncated_citation_reference_list_count\") or 0"` | — |
-| [SRC-086D574B4E-L000087](../../agents/semantic_claim_verifier.py#L87) | 87 | `"    ) > 0:"` | — |
-| [SRC-086D574B4E-L000088](../../agents/semantic_claim_verifier.py#L88) | 88 | `"        return _not_verifiable(\"citation_reference_list_truncated\", ledger)"` | — |
-| [SRC-086D574B4E-L000089](../../agents/semantic_claim_verifier.py#L89) | 89 | `"    segments = ledger.get(\"segments\")"` | — |
-| [SRC-086D574B4E-L000090](../../agents/semantic_claim_verifier.py#L90) | 90 | `"    if not isinstance(segments, list) or not segments:"` | — |
-| [SRC-086D574B4E-L000091](../../agents/semantic_claim_verifier.py#L91) | 91 | `"        return _not_verifiable(\"no_claim_segments\", ledger)"` | — |
-| [SRC-086D574B4E-L000092](../../agents/semantic_claim_verifier.py#L92) | 92 | `"    if any("` | — |
-| [SRC-086D574B4E-L000093](../../agents/semantic_claim_verifier.py#L93) | 93 | `"        not isinstance(row, dict)"` | — |
-| [SRC-086D574B4E-L000094](../../agents/semantic_claim_verifier.py#L94) | 94 | `"        or row.get(\"citation_status\") in {"` | — |
-| [SRC-086D574B4E-L000095](../../agents/semantic_claim_verifier.py#L95) | 95 | `"            \"citation_index_out_of_range\","` | — |
-| [SRC-086D574B4E-L000096](../../agents/semantic_claim_verifier.py#L96) | 96 | `"            \"citation_index_invalid_or_too_large\","` | — |
-| [SRC-086D574B4E-L000097](../../agents/semantic_claim_verifier.py#L97) | 97 | `"        }"` | — |
-| [SRC-086D574B4E-L000098](../../agents/semantic_claim_verifier.py#L98) | 98 | `"        for row in segments"` | — |
-| [SRC-086D574B4E-L000099](../../agents/semantic_claim_verifier.py#L99) | 99 | `"    ):"` | — |
-| [SRC-086D574B4E-L000100](../../agents/semantic_claim_verifier.py#L100) | 100 | `"        return _not_verifiable(\"invalid_citation_reference\", ledger)"` | — |
-| [SRC-086D574B4E-L000101](../../agents/semantic_claim_verifier.py#L101) | 101 | `""` | — |
-| [SRC-086D574B4E-L000102](../../agents/semantic_claim_verifier.py#L102) | 102 | `"    source_rows: list[dict[str, Any]] = []"` | — |
-| [SRC-086D574B4E-L000103](../../agents/semantic_claim_verifier.py#L103) | 103 | `"    readable_indexes: set[int] = set()"` | — |
-| [SRC-086D574B4E-L000104](../../agents/semantic_claim_verifier.py#L104) | 104 | `"    metadata_by_index: dict[int, dict[str, Any]] = {}"` | — |
-| [SRC-086D574B4E-L000105](../../agents/semantic_claim_verifier.py#L105) | 105 | `"    for segment in segments:"` | — |
-| [SRC-086D574B4E-L000106](../../agents/semantic_claim_verifier.py#L106) | 106 | `"        if not isinstance(segment, dict):"` | — |
-| [SRC-086D574B4E-L000107](../../agents/semantic_claim_verifier.py#L107) | 107 | `"            continue"` | — |
-| [SRC-086D574B4E-L000108](../../agents/semantic_claim_verifier.py#L108) | 108 | `"        for reference in segment.get(\"sources\") or []:"` | — |
-| [SRC-086D574B4E-L000109](../../agents/semantic_claim_verifier.py#L109) | 109 | `"            if not isinstance(reference, dict):"` | — |
-| [SRC-086D574B4E-L000110](../../agents/semantic_claim_verifier.py#L110) | 110 | `"                continue"` | — |
-| [SRC-086D574B4E-L000111](../../agents/semantic_claim_verifier.py#L111) | 111 | `"            metadata_audit = reference.get(\"metadata_audit\")"` | — |
-| [SRC-086D574B4E-L000112](../../agents/semantic_claim_verifier.py#L112) | 112 | `"            if isinstance(metadata_audit, dict):"` | — |
-| [SRC-086D574B4E-L000113](../../agents/semantic_claim_verifier.py#L113) | 113 | `"                metadata_by_index.setdefault("` | — |
-| [SRC-086D574B4E-L000114](../../agents/semantic_claim_verifier.py#L114) | 114 | `"                    int(reference.get(\"source_index\") or 0), metadata_audit"` | — |
-| [SRC-086D574B4E-L000115](../../agents/semantic_claim_verifier.py#L115) | 115 | `"                )"` | — |
-| [SRC-086D574B4E-L000116](../../agents/semantic_claim_verifier.py#L116) | 116 | `"    for index, source in enumerate(safe_sources, 1):"` | — |
-| [SRC-086D574B4E-L000117](../../agents/semantic_claim_verifier.py#L117) | 117 | `"        page_text = str(source.get(\"page_text\") or \"\")"` | — |
-| [SRC-086D574B4E-L000118](../../agents/semantic_claim_verifier.py#L118) | 118 | `"        snippet = str(source.get(\"snippet\") or \"\")"` | — |
-| [SRC-086D574B4E-L000119](../../agents/semantic_claim_verifier.py#L119) | 119 | `"        if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |
-| [SRC-086D574B4E-L000120](../../agents/semantic_claim_verifier.py#L120) | 120 | `"            evidence = page_text.strip()[:MAX_EVIDENCE_CHARS]"` | — |
-| [SRC-086D574B4E-L000121](../../agents/semantic_claim_verifier.py#L121) | 121 | `"            basis = \"extracted_page_text\""` | — |
-| [SRC-086D574B4E-L000122](../../agents/semantic_claim_verifier.py#L122) | 122 | `"        elif snippet.strip():"` | — |
-| [SRC-086D574B4E-L000123](../../agents/semantic_claim_verifier.py#L123) | 123 | `"            evidence = snippet.strip()[:MAX_EVIDENCE_CHARS]"` | — |
-| [SRC-086D574B4E-L000124](../../agents/semantic_claim_verifier.py#L124) | 124 | `"            basis = \"search_snippet\""` | — |
-| [SRC-086D574B4E-L000125](../../agents/semantic_claim_verifier.py#L125) | 125 | `"        else:"` | — |
-| [SRC-086D574B4E-L000126](../../agents/semantic_claim_verifier.py#L126) | 126 | `"            evidence = \"\""` | — |
-| [SRC-086D574B4E-L000127](../../agents/semantic_claim_verifier.py#L127) | 127 | `"            basis = \"no_readable_evidence\""` | — |
-| [SRC-086D574B4E-L000128](../../agents/semantic_claim_verifier.py#L128) | 128 | `"        if evidence:"` | — |
-| [SRC-086D574B4E-L000129](../../agents/semantic_claim_verifier.py#L129) | 129 | `"            readable_indexes.add(index)"` | — |
-| [SRC-086D574B4E-L000130](../../agents/semantic_claim_verifier.py#L130) | 130 | `"        source_rows.append({"` | — |
-| [SRC-086D574B4E-L000131](../../agents/semantic_claim_verifier.py#L131) | 131 | `"            \"source_index\": index,"` | — |
-| [SRC-086D574B4E-L000132](../../agents/semantic_claim_verifier.py#L132) | 132 | `"            \"title\": str(source.get(\"title\") or \"\")[:240],"` | — |
-| [SRC-086D574B4E-L000133](../../agents/semantic_claim_verifier.py#L133) | 133 | `"            \"url\": str(source.get(\"url\") or \"\")[:2048],"` | — |
-| [SRC-086D574B4E-L000134](../../agents/semantic_claim_verifier.py#L134) | 134 | `"            \"publisher\": str("` | — |
-| [SRC-086D574B4E-L000135](../../agents/semantic_claim_verifier.py#L135) | 135 | `"                source.get(\"publisher\") or source.get(\"source_name\")"` | — |
-| [SRC-086D574B4E-L000136](../../agents/semantic_claim_verifier.py#L136) | 136 | `"                or source.get(\"domain\") or \"\""` | — |
+| [SRC-086D574B4E-L000070](../../agents/semantic_claim_verifier.py#L70) | 70 | `"    candidate_sources = (sources or [])[:MAX_VERIFICATION_SOURCES]"` | — |
+| [SRC-086D574B4E-L000071](../../agents/semantic_claim_verifier.py#L71) | 71 | `"    if any(not isinstance(item, dict) for item in candidate_sources):"` | — |
+| [SRC-086D574B4E-L000072](../../agents/semantic_claim_verifier.py#L72) | 72 | `"        return _not_verifiable(\"invalid_source_manifest\")"` | — |
+| [SRC-086D574B4E-L000073](../../agents/semantic_claim_verifier.py#L73) | 73 | `"    safe_sources = list(candidate_sources)"` | — |
+| [SRC-086D574B4E-L000074](../../agents/semantic_claim_verifier.py#L74) | 74 | `"    ledger = build_claim_evidence_ledger("` | — |
+| [SRC-086D574B4E-L000075](../../agents/semantic_claim_verifier.py#L75) | 75 | `"        str(answer or \"\"),"` | — |
+| [SRC-086D574B4E-L000076](../../agents/semantic_claim_verifier.py#L76) | 76 | `"        safe_sources,"` | — |
+| [SRC-086D574B4E-L000077](../../agents/semantic_claim_verifier.py#L77) | 77 | `"        max_segments=MAX_VERIFICATION_CLAIMS,"` | — |
+| [SRC-086D574B4E-L000078](../../agents/semantic_claim_verifier.py#L78) | 78 | `"        max_citable_sources=MAX_VERIFICATION_SOURCES,"` | — |
+| [SRC-086D574B4E-L000079](../../agents/semantic_claim_verifier.py#L79) | 79 | `"        question_context=str(question or \"\")[:2000],"` | — |
+| [SRC-086D574B4E-L000080](../../agents/semantic_claim_verifier.py#L80) | 80 | `"    )"` | — |
+| [SRC-086D574B4E-L000081](../../agents/semantic_claim_verifier.py#L81) | 81 | `"    if ledger.get(\"status\") != \"built\":"` | — |
+| [SRC-086D574B4E-L000082](../../agents/semantic_claim_verifier.py#L82) | 82 | `"        return _not_verifiable(\"claim_ledger_unavailable\", ledger)"` | — |
+| [SRC-086D574B4E-L000083](../../agents/semantic_claim_verifier.py#L83) | 83 | `"    if ledger.get(\"truncated\") is True:"` | — |
+| [SRC-086D574B4E-L000084](../../agents/semantic_claim_verifier.py#L84) | 84 | `"        return _not_verifiable(\"claim_ledger_truncated\", ledger)"` | — |
+| [SRC-086D574B4E-L000085](../../agents/semantic_claim_verifier.py#L85) | 85 | `"    summary = ledger.get(\"summary\")"` | — |
+| [SRC-086D574B4E-L000086](../../agents/semantic_claim_verifier.py#L86) | 86 | `"    if isinstance(summary, dict) and int("` | — |
+| [SRC-086D574B4E-L000087](../../agents/semantic_claim_verifier.py#L87) | 87 | `"        summary.get(\"truncated_citation_reference_list_count\") or 0"` | — |
+| [SRC-086D574B4E-L000088](../../agents/semantic_claim_verifier.py#L88) | 88 | `"    ) > 0:"` | — |
+| [SRC-086D574B4E-L000089](../../agents/semantic_claim_verifier.py#L89) | 89 | `"        return _not_verifiable(\"citation_reference_list_truncated\", ledger)"` | — |
+| [SRC-086D574B4E-L000090](../../agents/semantic_claim_verifier.py#L90) | 90 | `"    segments = ledger.get(\"segments\")"` | — |
+| [SRC-086D574B4E-L000091](../../agents/semantic_claim_verifier.py#L91) | 91 | `"    if not isinstance(segments, list) or not segments:"` | — |
+| [SRC-086D574B4E-L000092](../../agents/semantic_claim_verifier.py#L92) | 92 | `"        return _not_verifiable(\"no_claim_segments\", ledger)"` | — |
+| [SRC-086D574B4E-L000093](../../agents/semantic_claim_verifier.py#L93) | 93 | `"    if any("` | — |
+| [SRC-086D574B4E-L000094](../../agents/semantic_claim_verifier.py#L94) | 94 | `"        not isinstance(row, dict)"` | — |
+| [SRC-086D574B4E-L000095](../../agents/semantic_claim_verifier.py#L95) | 95 | `"        or row.get(\"citation_status\") in {"` | — |
+| [SRC-086D574B4E-L000096](../../agents/semantic_claim_verifier.py#L96) | 96 | `"            \"citation_index_out_of_range\","` | — |
+| [SRC-086D574B4E-L000097](../../agents/semantic_claim_verifier.py#L97) | 97 | `"            \"citation_index_invalid_or_too_large\","` | — |
+| [SRC-086D574B4E-L000098](../../agents/semantic_claim_verifier.py#L98) | 98 | `"        }"` | — |
+| [SRC-086D574B4E-L000099](../../agents/semantic_claim_verifier.py#L99) | 99 | `"        for row in segments"` | — |
+| [SRC-086D574B4E-L000100](../../agents/semantic_claim_verifier.py#L100) | 100 | `"    ):"` | — |
+| [SRC-086D574B4E-L000101](../../agents/semantic_claim_verifier.py#L101) | 101 | `"        return _not_verifiable(\"invalid_citation_reference\", ledger)"` | — |
+| [SRC-086D574B4E-L000102](../../agents/semantic_claim_verifier.py#L102) | 102 | `""` | — |
+| [SRC-086D574B4E-L000103](../../agents/semantic_claim_verifier.py#L103) | 103 | `"    source_rows: list[dict[str, Any]] = []"` | — |
+| [SRC-086D574B4E-L000104](../../agents/semantic_claim_verifier.py#L104) | 104 | `"    readable_indexes: set[int] = set()"` | — |
+| [SRC-086D574B4E-L000105](../../agents/semantic_claim_verifier.py#L105) | 105 | `"    metadata_by_index: dict[int, dict[str, Any]] = {}"` | — |
+| [SRC-086D574B4E-L000106](../../agents/semantic_claim_verifier.py#L106) | 106 | `"    for segment in segments:"` | — |
+| [SRC-086D574B4E-L000107](../../agents/semantic_claim_verifier.py#L107) | 107 | `"        if not isinstance(segment, dict):"` | — |
+| [SRC-086D574B4E-L000108](../../agents/semantic_claim_verifier.py#L108) | 108 | `"            continue"` | — |
+| [SRC-086D574B4E-L000109](../../agents/semantic_claim_verifier.py#L109) | 109 | `"        for reference in segment.get(\"sources\") or []:"` | — |
+| [SRC-086D574B4E-L000110](../../agents/semantic_claim_verifier.py#L110) | 110 | `"            if not isinstance(reference, dict):"` | — |
+| [SRC-086D574B4E-L000111](../../agents/semantic_claim_verifier.py#L111) | 111 | `"                continue"` | — |
+| [SRC-086D574B4E-L000112](../../agents/semantic_claim_verifier.py#L112) | 112 | `"            metadata_audit = reference.get(\"metadata_audit\")"` | — |
+| [SRC-086D574B4E-L000113](../../agents/semantic_claim_verifier.py#L113) | 113 | `"            if isinstance(metadata_audit, dict):"` | — |
+| [SRC-086D574B4E-L000114](../../agents/semantic_claim_verifier.py#L114) | 114 | `"                metadata_by_index.setdefault("` | — |
+| [SRC-086D574B4E-L000115](../../agents/semantic_claim_verifier.py#L115) | 115 | `"                    int(reference.get(\"source_index\") or 0), metadata_audit"` | — |
+| [SRC-086D574B4E-L000116](../../agents/semantic_claim_verifier.py#L116) | 116 | `"                )"` | — |
+| [SRC-086D574B4E-L000117](../../agents/semantic_claim_verifier.py#L117) | 117 | `"    for index, source in enumerate(safe_sources, 1):"` | — |
+| [SRC-086D574B4E-L000118](../../agents/semantic_claim_verifier.py#L118) | 118 | `"        page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-086D574B4E-L000119](../../agents/semantic_claim_verifier.py#L119) | 119 | `"        snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-086D574B4E-L000120](../../agents/semantic_claim_verifier.py#L120) | 120 | `"        if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |
+| [SRC-086D574B4E-L000121](../../agents/semantic_claim_verifier.py#L121) | 121 | `"            evidence = page_text.strip()[:MAX_EVIDENCE_CHARS]"` | — |
+| [SRC-086D574B4E-L000122](../../agents/semantic_claim_verifier.py#L122) | 122 | `"            basis = \"extracted_page_text\""` | — |
+| [SRC-086D574B4E-L000123](../../agents/semantic_claim_verifier.py#L123) | 123 | `"        elif snippet.strip():"` | — |
+| [SRC-086D574B4E-L000124](../../agents/semantic_claim_verifier.py#L124) | 124 | `"            evidence = snippet.strip()[:MAX_EVIDENCE_CHARS]"` | — |
+| [SRC-086D574B4E-L000125](../../agents/semantic_claim_verifier.py#L125) | 125 | `"            basis = \"search_snippet\""` | — |
+| [SRC-086D574B4E-L000126](../../agents/semantic_claim_verifier.py#L126) | 126 | `"        else:"` | — |

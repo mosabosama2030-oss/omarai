@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000368 إلى SRC-1E32639872-L000261
+- النطاق: SRC-59CF4B7DE8-L000358 إلى SRC-1E32639872-L000251
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,16 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000358](../../agents/research.py#L358) | 358 | `"        (\"bluesky\", (\"bluesky\", \"بلو سكاي\")),"` | — |
+| [SRC-59CF4B7DE8-L000359](../../agents/research.py#L359) | 359 | `"    )"` | — |
+| [SRC-59CF4B7DE8-L000360](../../agents/research.py#L360) | 360 | `"    low = text.casefold()"` | — |
+| [SRC-59CF4B7DE8-L000361](../../agents/research.py#L361) | 361 | `"    return [name for name, aliases in rules if any(alias.casefold() in low for alias in aliases)]"` | — |
+| [SRC-59CF4B7DE8-L000362](../../agents/research.py#L362) | 362 | `""` | — |
+| [SRC-59CF4B7DE8-L000363](../../agents/research.py#L363) | 363 | `""` | — |
+| [SRC-59CF4B7DE8-L000364](../../agents/research.py#L364) | 364 | `"def _attach_task_understanding("` | — |
+| [SRC-59CF4B7DE8-L000365](../../agents/research.py#L365) | 365 | `"    plan: dict[str, Any],"` | — |
+| [SRC-59CF4B7DE8-L000366](../../agents/research.py#L366) | 366 | `"    question: str,"` | — |
+| [SRC-59CF4B7DE8-L000367](../../agents/research.py#L367) | 367 | `"    *,"` | — |
 | [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    intent_route: str = \"deterministic_fallback\","` | — |
 | [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `"    mode: str = \"auto\","` | — |
 | [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `") -> dict[str, Any]:"` | — |
@@ -815,13 +825,3 @@
 | [SRC-1E32639872-L000249](../../agents/research_completion.py#L249) | 249 | `"        token in final_status for token in (\"failed\", \"unavailable\", \"budget_exhausted\")"` | — |
 | [SRC-1E32639872-L000250](../../agents/research_completion.py#L250) | 250 | `"    )"` | — |
 | [SRC-1E32639872-L000251](../../agents/research_completion.py#L251) | 251 | `""` | — |
-| [SRC-1E32639872-L000252](../../agents/research_completion.py#L252) | 252 | `"    if exhausted:"` | — |
-| [SRC-1E32639872-L000253](../../agents/research_completion.py#L253) | 253 | `"        status = \"execution_stopped_budget\""` | — |
-| [SRC-1E32639872-L000254](../../agents/research_completion.py#L254) | 254 | `"    elif bool(report.get(\"answer_was_withheld\")) or semantic.get(\"withhold_answer\") is True:"` | — |
-| [SRC-1E32639872-L000255](../../agents/research_completion.py#L255) | 255 | `"        status = \"answer_withheld_semantic_support_unverified\""` | — |
-| [SRC-1E32639872-L000256](../../agents/research_completion.py#L256) | 256 | `"    elif not sources:"` | — |
-| [SRC-1E32639872-L000257](../../agents/research_completion.py#L257) | 257 | `"        if rejected:"` | — |
-| [SRC-1E32639872-L000258](../../agents/research_completion.py#L258) | 258 | `"            status = \"no_eligible_sources_after_filtering\""` | — |
-| [SRC-1E32639872-L000259](../../agents/research_completion.py#L259) | 259 | `"        elif str(report.get(\"search_outcome\") or \"\") in _RESEARCH_ERRORS or ("` | — |
-| [SRC-1E32639872-L000260](../../agents/research_completion.py#L260) | 260 | `"            connector_errors and not connector_ok"` | — |
-| [SRC-1E32639872-L000261](../../agents/research_completion.py#L261) | 261 | `"        ):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002770 إلى SRC-1AE03B9EC3-L003569
+- النطاق: SRC-1AE03B9EC3-L002759 إلى SRC-1AE03B9EC3-L003558
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002759](../../agents/web_agent.py#L2759) | 2759 | `"            candidates = list(aspect_queries)"` | — |
+| [SRC-1AE03B9EC3-L002760](../../agents/web_agent.py#L2760) | 2760 | `"            if needs_expansion:"` | — |
+| [SRC-1AE03B9EC3-L002761](../../agents/web_agent.py#L2761) | 2761 | `"                candidates.extend(["` | — |
+| [SRC-1AE03B9EC3-L002762](../../agents/web_agent.py#L2762) | 2762 | `"                    f\"{base_query} official sources data reports\","` | — |
+| [SRC-1AE03B9EC3-L002763](../../agents/web_agent.py#L2763) | 2763 | `"                    f\"{base_query} limitations risks criticism alternatives\","` | — |
+| [SRC-1AE03B9EC3-L002764](../../agents/web_agent.py#L2764) | 2764 | `"                    f\"{base_query} recent developments case studies analysis\","` | — |
+| [SRC-1AE03B9EC3-L002765](../../agents/web_agent.py#L2765) | 2765 | `"                ])"` | — |
+| [SRC-1AE03B9EC3-L002766](../../agents/web_agent.py#L2766) | 2766 | `"            existing = {item.casefold() for item in queries}"` | — |
+| [SRC-1AE03B9EC3-L002767](../../agents/web_agent.py#L2767) | 2767 | `"            expansion_queries = []"` | — |
+| [SRC-1AE03B9EC3-L002768](../../agents/web_agent.py#L2768) | 2768 | `"            seen_expansions = set(existing)"` | — |
+| [SRC-1AE03B9EC3-L002769](../../agents/web_agent.py#L2769) | 2769 | `"            for candidate in candidates:"` | — |
 | [SRC-1AE03B9EC3-L002770](../../agents/web_agent.py#L2770) | 2770 | `"                compacted = compact_search_query(candidate)"` | — |
 | [SRC-1AE03B9EC3-L002771](../../agents/web_agent.py#L2771) | 2771 | `"                key = compacted.casefold()"` | — |
 | [SRC-1AE03B9EC3-L002772](../../agents/web_agent.py#L2772) | 2772 | `"                if compacted and key not in seen_expansions:"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L003556](../../agents/web_agent.py#L3556) | 3556 | `"    def _resolve_dialogue_context("` | — |
 | [SRC-1AE03B9EC3-L003557](../../agents/web_agent.py#L3557) | 3557 | `"        self, question: str, history: list[dict[str, str]]"` | — |
 | [SRC-1AE03B9EC3-L003558](../../agents/web_agent.py#L3558) | 3558 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003559](../../agents/web_agent.py#L3559) | 3559 | `"        \"\"\"Use the configured language model to resolve dialogue meaning, never to search.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003560](../../agents/web_agent.py#L3560) | 3560 | `"        fallback = fallback_dialogue_context(question, history)"` | — |
-| [SRC-1AE03B9EC3-L003561](../../agents/web_agent.py#L3561) | 3561 | `"        if not self.api_key or not history:"` | — |
-| [SRC-1AE03B9EC3-L003562](../../agents/web_agent.py#L3562) | 3562 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003563](../../agents/web_agent.py#L3563) | 3563 | `"        messages = ["` | — |
-| [SRC-1AE03B9EC3-L003564](../../agents/web_agent.py#L3564) | 3564 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003565](../../agents/web_agent.py#L3565) | 3565 | `"                \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003566](../../agents/web_agent.py#L3566) | 3566 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003567](../../agents/web_agent.py#L3567) | 3567 | `"                    \"أنت محلل سياق حواري لـ Omarai، ولست مجيبًا أو محرك بحث. حلل آخر رسالة \""` | — |
-| [SRC-1AE03B9EC3-L003568](../../agents/web_agent.py#L3568) | 3568 | `"                    \"للمستخدم في ضوء سجل الحوار فقط، وأخرج JSON صحيحًا فقط. اكتب resolved_question \""` | — |
-| [SRC-1AE03B9EC3-L003569](../../agents/web_agent.py#L3569) | 3569 | `"                    \"بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية \""` | — |
