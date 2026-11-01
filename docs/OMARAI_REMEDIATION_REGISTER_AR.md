@@ -10,7 +10,7 @@
 - **ملاحظة تشغيل:** سجل الجلسات منتهي الصلاحية لا يُستخدم للمصادقة؛ تنظيف السجلات القديمة تلقائيًا لا يزال تحسين صيانة مطلوبًا. لا تعتبر هذه الحزمة قبولًا حيًا للاستضافة أو اختبار حمل.
 
 التقرير التفصيلي: [OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md](OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md).
-- **التحقق النهائي لفرع الإصلاح — FIXED_AND_TESTED على SHA `8143040a8e7bff38d4fc2bdcf4219ab159c822fc`:** CI PR/push [41334983150](https://github.com/mosabosama2030-oss/omarai/actions/runs/41334983150) ناجح؛ Ruff `All checks passed`؛ Python 3.11: `816 passed in 33.05s`؛ Python 3.12: `816 passed in 37.27s`؛ container-build ناجح، ويتضمن Docker build ورفض startup العام دون إعدادات الاعتماد ثم protected API smoke. هذا يثبت الكود على الفرع فقط؛ لا دمج أو نشر، ولا hosted acceptance أو live model calls أو load/backup-restore tests.
+- **التحقق النهائي لفرع الإصلاح — FIXED_AND_TESTED على SHA `ef3545dadefa5968f36dacaf89968f86b1753954`:** CI PR/push [41335297453](https://github.com/mosabosama2030-oss/omarai/actions/runs/41335297453) ناجح؛ Ruff `All checks passed`؛ Python 3.11: `816 passed in 35.56s`؛ Python 3.12: `816 passed in 33.72s`؛ container-build ناجح، ويتضمن Docker build ورفض startup العام دون إعدادات الاعتماد ثم protected API smoke. هذا يثبت الكود على الفرع فقط؛ لا دمج أو نشر، ولا hosted acceptance أو live model calls أو load/backup-restore tests.
 
 
 ---
