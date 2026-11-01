@@ -8,6 +8,7 @@ from agents.research import compact_search_query
 from agents.request_budget import RequestBudgetExceeded
 from agents.web_agent import (
     WebAgent,
+    _fallback_lead_answer,
     _minimum_relevance_ratio,
     _normalize_search_query,
     _public_http_url,
