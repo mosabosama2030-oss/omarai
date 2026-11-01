@@ -1119,3 +1119,48 @@ def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, m
     )
     assert status == 401
 
+def test_expired_browser_session_can_logout_and_clear_cookie(local_api, monkeypatch):
+    from urllib.parse import urlsplit
+    from api.omarai import Handler
+
+    token = "expired-browser-session-token-123456"
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", token)
+    origin = "https://" + urlsplit(local_api).netloc
+
+    status, _payload, headers = request_json_with_headers(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": token},
+        headers={"Origin": origin},
+    )
+    assert status == 200
+    cookie = headers.get("Set-Cookie", "").split(";", 1)[0]
+    session_id = cookie.split("=", 1)[1]
+
+    with Handler.store.connect() as db:
+        db.execute(
+            "UPDATE web_sessions SET expires_at=? WHERE session_hash=?",
+            ("2000-01-01T00:00:00Z", Handler.store._token_hash(session_id)),
+        )
+
+    status, payload, logout_headers = request_json_with_headers(
+        local_api,
+        "/api/session/logout",
+        method="POST",
+        payload={},
+        headers={"Cookie": cookie, "Origin": origin},
+    )
+
+    assert status == 200
+    assert payload == {"logged_out": True}
+    cleared_cookie = logout_headers.get("Set-Cookie", "")
+    assert cleared_cookie.startswith("__Host-omarai_session=")
+    assert "Max-Age=0" in cleared_cookie
+
+    status, _error = request_json(
+        local_api, "/api/session", headers={"Cookie": cookie}
+    )
+    assert status == 401
+
