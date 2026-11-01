@@ -17,3 +17,9 @@ def test_saved_lead_source_links_reject_non_http_schemes():
     assert '["http:","https:"]' in html
     assert "const sourceUrl=safeSourceUrl(l.source_url)" in html
     assert "const sourceLink=sourceUrl?" in html
+
+def test_lead_status_handler_accepts_sha256_hex_lead_ids():
+    html = DASHBOARD.read_text(encoding="utf-8")
+    assert 'if(!/^[a-f0-9]{24}$/.test(id||""))return;' in html
+    assert 'data-lead-id="\'+esc(l.id)+'"' in html
+
