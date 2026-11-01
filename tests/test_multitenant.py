@@ -263,3 +263,39 @@ def test_api_token_revocation_is_scoped_to_the_owning_user_and_tenant(tmp_path):
     assert store.revoke_api_token(
         token, tenant_id=tenant_id, user_id=user_id
     ) is False
+
+def test_store_connections_are_closed_after_success_and_rollback(tmp_path, monkeypatch):
+    store = LeadStore(tmp_path / "connection-lifecycle.sqlite3")
+    real_connect = sqlite3.connect
+    opened = []
+
+    def tracked_connect(*args, **kwargs):
+        connection = real_connect(*args, **kwargs)
+        opened.append(connection)
+        return connection
+
+    monkeypatch.setattr(sqlite3, "connect", tracked_connect)
+
+    assert store.list(tenant_id=DEFAULT_TENANT_ID) == []
+    assert len(opened) == 1
+    with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+        opened[0].execute("SELECT 1")
+
+    with pytest.raises(RuntimeError, match="force rollback"):
+        with store.connect() as db:
+            db.execute(
+                "INSERT INTO tenants (id, name, slug, active, created_at) "
+                "VALUES (?, ?, ?, 1, ?)",
+                ("tenant_rollback_test", "Rollback", "rollback-test", "2026-11-01T00:00:00Z"),
+            )
+            raise RuntimeError("force rollback")
+
+    assert len(opened) == 2
+    with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+        opened[1].execute("SELECT 1")
+
+    with store.connect() as db:
+        assert db.execute(
+            "SELECT 1 FROM tenants WHERE id=?",
+            ("tenant_rollback_test",),
+        ).fetchone() is None

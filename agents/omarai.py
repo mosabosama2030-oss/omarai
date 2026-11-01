@@ -7,8 +7,10 @@ import json
 import re
 import sqlite3
 import unicodedata
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Iterator
 import uuid
 from urllib.parse import urlparse
 
@@ -95,11 +97,21 @@ class LeadStore:
         with self.connect() as db:
             self._initialize_schema(db)
 
-    def connect(self):
+    @contextmanager
+    def connect(self) -> Iterator[sqlite3.Connection]:
+        """Yield one transaction-scoped connection and always close it.
+
+        sqlite3.Connection's built-in context manager commits or rolls back;
+        it does not close the connection. This wrapper provides both guarantees.
+        """
         db = sqlite3.connect(self.path, timeout=10)
-        db.row_factory = sqlite3.Row
-        db.execute("PRAGMA foreign_keys = ON")
-        return db
+        try:
+            db.row_factory = sqlite3.Row
+            db.execute("PRAGMA foreign_keys = ON")
+            with db:
+                yield db
+        finally:
+            db.close()
 
     @staticmethod
     def _create_leads_table(db):
