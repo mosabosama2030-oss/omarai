@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001362 إلى SRC-F725E90B2A-L002161
+- النطاق: SRC-F725E90B2A-L001342 إلى SRC-F725E90B2A-L002141
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `"    )"` | — |
+| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `""` | — |
+| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    result = agent.answer(question)"` | — |
+| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `""` | — |
+| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `"    assert len(calls) == 2"` | — |
+| [SRC-F725E90B2A-L001348](../../tests/test_web_agent.py#L1348) | 1348 | `"    assert question not in matched_queries"` | — |
+| [SRC-F725E90B2A-L001349](../../tests/test_web_agent.py#L1349) | 1349 | `"    assert compact_search_query(question) in matched_queries"` | — |
+| [SRC-F725E90B2A-L001350](../../tests/test_web_agent.py#L1350) | 1350 | `"    assert len(calls[1][\"queries\"]) == 1"` | — |
+| [SRC-F725E90B2A-L001351](../../tests/test_web_agent.py#L1351) | 1351 | `"    assert calls[1][\"depth\"] == \"standard\""` | — |
+| [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `"    assert calls[1][\"social_focus\"] is False"` | — |
+| [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `"    assert calls[1][\"direct_urls\"] == []"` | — |
+| [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    repair = result[\"search_report\"][\"evidence_repair\"]"` | — |
+| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    assert repair[\"attempted\"] is True"` | — |
+| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"    assert repair[\"attempted_query_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"    assert repair[\"new_sources_added\"] == 1"` | — |
+| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"    assert repair[\"recovered\"] is True"` | — |
+| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `"    assert repair[\"reason\"] == \"evidence_gate_recovered\""` | — |
+| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    assert repair[\"query\"] in result[\"search_queries\"]"` | — |
+| [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
 | [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
 | [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `""` | — |
 | [SRC-F725E90B2A-L001364](../../tests/test_web_agent.py#L1364) | 1364 | `""` | — |
@@ -796,23 +816,3 @@
 | [SRC-F725E90B2A-L002139](../../tests/test_web_agent.py#L2139) | 2139 | `"        \"depth\": \"deep\","` | — |
 | [SRC-F725E90B2A-L002140](../../tests/test_web_agent.py#L2140) | 2140 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L002141](../../tests/test_web_agent.py#L2141) | 2141 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L002142](../../tests/test_web_agent.py#L2142) | 2142 | `"    }"` | — |
-| [SRC-F725E90B2A-L002143](../../tests/test_web_agent.py#L2143) | 2143 | `""` | — |
-| [SRC-F725E90B2A-L002144](../../tests/test_web_agent.py#L2144) | 2144 | `"    def failed_after_provider_result(research_plan):"` | — |
-| [SRC-F725E90B2A-L002145](../../tests/test_web_agent.py#L2145) | 2145 | `"        # A completed provider result-processing state confirms that a search"` | — |
-| [SRC-F725E90B2A-L002146](../../tests/test_web_agent.py#L2146) | 2146 | `"        # connector returned; the collector then fails during downstream processing."` | — |
-| [SRC-F725E90B2A-L002147](../../tests/test_web_agent.py#L2147) | 2147 | `"        agent._record_provider_diagnostic("` | — |
-| [SRC-F725E90B2A-L002148](../../tests/test_web_agent.py#L2148) | 2148 | `"            \"duckduckgo_html\","` | — |
-| [SRC-F725E90B2A-L002149](../../tests/test_web_agent.py#L2149) | 2149 | `"            research_plan[\"queries\"][0],"` | — |
-| [SRC-F725E90B2A-L002150](../../tests/test_web_agent.py#L2150) | 2150 | `"            \"ok\","` | — |
-| [SRC-F725E90B2A-L002151](../../tests/test_web_agent.py#L2151) | 2151 | `"            result_count=1,"` | — |
-| [SRC-F725E90B2A-L002152](../../tests/test_web_agent.py#L2152) | 2152 | `"        )"` | — |
-| [SRC-F725E90B2A-L002153](../../tests/test_web_agent.py#L2153) | 2153 | `"        raise RuntimeError(\"simulated post-search pipeline failure\")"` | — |
-| [SRC-F725E90B2A-L002154](../../tests/test_web_agent.py#L2154) | 2154 | `""` | — |
-| [SRC-F725E90B2A-L002155](../../tests/test_web_agent.py#L2155) | 2155 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L002156](../../tests/test_web_agent.py#L2156) | 2156 | `"    monkeypatch.setattr(agent, \"_collect_research\", failed_after_provider_result)"` | — |
-| [SRC-F725E90B2A-L002157](../../tests/test_web_agent.py#L2157) | 2157 | `""` | — |
-| [SRC-F725E90B2A-L002158](../../tests/test_web_agent.py#L2158) | 2158 | `"    result = agent.answer(\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\")"` | — |
-| [SRC-F725E90B2A-L002159](../../tests/test_web_agent.py#L2159) | 2159 | `""` | — |
-| [SRC-F725E90B2A-L002160](../../tests/test_web_agent.py#L2160) | 2160 | `"    report = result[\"search_report\"]"` | — |
-| [SRC-F725E90B2A-L002161](../../tests/test_web_agent.py#L2161) | 2161 | `"    assert result[\"search_attempted\"] is True"` | — |

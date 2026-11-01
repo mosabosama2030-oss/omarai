@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000010 إلى SRC-AFEDC2645A-L000317
+- النطاق: SRC-AC9D8384E8-L000010 إلى SRC-AFEDC2645A-L000297
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -305,6 +305,26 @@
 | [SRC-AC9D8384E8-L000296](../../tests/test_semantic_claim_verifier.py#L296) | 296 | `"    result = deterministic_claim_screen(request)"` | — |
 | [SRC-AC9D8384E8-L000297](../../tests/test_semantic_claim_verifier.py#L297) | 297 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
 | [SRC-AC9D8384E8-L000298](../../tests/test_semantic_claim_verifier.py#L298) | 298 | `"    assert result[\"reason\"] == \"deterministic_source_provenance_failed\""` | — |
+| [SRC-AC9D8384E8-L000299](../../tests/test_semantic_claim_verifier.py#L299) | 299 | `""` | — |
+| [SRC-AC9D8384E8-L000300](../../tests/test_semantic_claim_verifier.py#L300) | 300 | `"def test_extremely_large_citation_index_fails_closed_without_integer_conversion():"` | — |
+| [SRC-AC9D8384E8-L000301](../../tests/test_semantic_claim_verifier.py#L301) | 301 | `"    answer = \"The system is reliable [source \" + (\"9\" * 5000) + \"].\""` | — |
+| [SRC-AC9D8384E8-L000302](../../tests/test_semantic_claim_verifier.py#L302) | 302 | `"    request = prepared(answer=answer)"` | — |
+| [SRC-AC9D8384E8-L000303](../../tests/test_semantic_claim_verifier.py#L303) | 303 | `""` | — |
+| [SRC-AC9D8384E8-L000304](../../tests/test_semantic_claim_verifier.py#L304) | 304 | `"    assert request[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000305](../../tests/test_semantic_claim_verifier.py#L305) | 305 | `"    assert request[\"reason\"] == \"invalid_citation_reference\""` | — |
+| [SRC-AC9D8384E8-L000306](../../tests/test_semantic_claim_verifier.py#L306) | 306 | `""` | — |
+| [SRC-AC9D8384E8-L000307](../../tests/test_semantic_claim_verifier.py#L307) | 307 | `""` | — |
+| [SRC-AC9D8384E8-L000308](../../tests/test_semantic_claim_verifier.py#L308) | 308 | `"def test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual():"` | — |
+| [SRC-AC9D8384E8-L000309](../../tests/test_semantic_claim_verifier.py#L309) | 309 | `"    request = prepared(answer=\"The capital of Egypt is Cairo.\")"` | — |
+| [SRC-AC9D8384E8-L000310](../../tests/test_semantic_claim_verifier.py#L310) | 310 | `"    result = parse_semantic_verification_response("` | — |
+| [SRC-AC9D8384E8-L000311](../../tests/test_semantic_claim_verifier.py#L311) | 311 | `"        response([row(assessment=\"non_factual\", supporting=[], contradicting=[])]),"` | — |
+| [SRC-AC9D8384E8-L000312](../../tests/test_semantic_claim_verifier.py#L312) | 312 | `"        request,"` | — |
+| [SRC-AC9D8384E8-L000313](../../tests/test_semantic_claim_verifier.py#L313) | 313 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000314](../../tests/test_semantic_claim_verifier.py#L314) | 314 | `""` | — |
+| [SRC-AC9D8384E8-L000315](../../tests/test_semantic_claim_verifier.py#L315) | 315 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000316](../../tests/test_semantic_claim_verifier.py#L316) | 316 | `"    assert result[\"reason\"] == \"non_factual_label_not_deterministically_safe\""` | — |
+| [SRC-AC9D8384E8-L000317](../../tests/test_semantic_claim_verifier.py#L317) | 317 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000318](../../tests/test_semantic_claim_verifier.py#L318) | 318 | `""` | — |
 ## اختبارات
 
 ### FILE-D033B34F41 — [tests/test_source_metadata_audit.py](../../tests/test_source_metadata_audit.py#L1)
@@ -823,23 +843,3 @@
 | [SRC-AFEDC2645A-L000295](../../tests/test_task_understanding.py#L295) | 295 | `"        \"ما نص القانون الحالي المنظم للإيجار في مصر؟\","` | — |
 | [SRC-AFEDC2645A-L000296](../../tests/test_task_understanding.py#L296) | 296 | `"        mode=\"latest\","` | — |
 | [SRC-AFEDC2645A-L000297](../../tests/test_task_understanding.py#L297) | 297 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000298](../../tests/test_task_understanding.py#L298) | 298 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `""` | — |
-| [SRC-AFEDC2645A-L000302](../../tests/test_task_understanding.py#L302) | 302 | `""` | — |
-| [SRC-AFEDC2645A-L000303](../../tests/test_task_understanding.py#L303) | 303 | `"def test_output_audience_and_delivery_preferences_are_distinct_fields():"` | — |
-| [SRC-AFEDC2645A-L000304](../../tests/test_task_understanding.py#L304) | 304 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000305](../../tests/test_task_understanding.py#L305) | 305 | `"        \"اشرح الموضوع ببساطة مع مصادر وروابط مباشرة وبصيغة JSON\","` | — |
-| [SRC-AFEDC2645A-L000306](../../tests/test_task_understanding.py#L306) | 306 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000307](../../tests/test_task_understanding.py#L307) | 307 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"    preferences = spec[\"output_preferences\"]"` | — |
-| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"    assert preferences[\"beginner_friendly_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"    assert preferences[\"citations_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"    assert preferences[\"links_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"    assert preferences[\"json_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `""` | — |
-| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `""` | — |
-| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"def test_task_spec_validator_allowlists_tools_policies_and_context_slots():"` | — |
-| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    from agents.task_understanding import validate_task_spec"` | — |

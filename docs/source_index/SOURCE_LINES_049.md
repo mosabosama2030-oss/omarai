@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000562 إلى SRC-F725E90B2A-L001361
+- النطاق: SRC-F725E90B2A-L000542 إلى SRC-F725E90B2A-L001341
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000542](../../tests/test_web_agent.py#L542) | 542 | `""` | — |
+| [SRC-F725E90B2A-L000543](../../tests/test_web_agent.py#L543) | 543 | `"def test_instagram_graph_api_returns_only_public_hashtag_media(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000544](../../tests/test_web_agent.py#L544) | 544 | `""` | — |
+| [SRC-F725E90B2A-L000545](../../tests/test_web_agent.py#L545) | 545 | `"    monkeypatch.setenv(\"INSTAGRAM_USER_ID\", \"ig-user-123\")"` | — |
+| [SRC-F725E90B2A-L000546](../../tests/test_web_agent.py#L546) | 546 | `"    monkeypatch.setenv(\"INSTAGRAM_ACCESS_TOKEN\", \"test-ig-token\")"` | — |
+| [SRC-F725E90B2A-L000547](../../tests/test_web_agent.py#L547) | 547 | `"    monkeypatch.setenv(\"META_GRAPH_VERSION\", \"v25.0\")"` | — |
+| [SRC-F725E90B2A-L000548](../../tests/test_web_agent.py#L548) | 548 | `""` | — |
+| [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"    class FakeResponse:"` | — |
+| [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"        status_code = 200"` | — |
+| [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `""` | — |
+| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"        def __init__(self, payload):"` | — |
+| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"            self.payload = payload"` | — |
+| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `""` | — |
+| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"        def json(self):"` | — |
+| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"            return self.payload"` | — |
+| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `""` | — |
+| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    calls = []"` | — |
+| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `""` | — |
+| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `"    def fake_get(url, **kwargs):"` | — |
+| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"        calls.append((url, kwargs))"` | — |
 | [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
 | [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
 | [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
@@ -796,23 +816,3 @@
 | [SRC-F725E90B2A-L001339](../../tests/test_web_agent.py#L1339) | 1339 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001340](../../tests/test_web_agent.py#L1340) | 1340 | `"        agent, \"_generate\","` | — |
 | [SRC-F725E90B2A-L001341](../../tests/test_web_agent.py#L1341) | 1341 | `"        lambda *args, **kwargs: \"توجد إشارتان من نطاقين مستقلين [المصدر 1] [المصدر 2].\","` | — |
-| [SRC-F725E90B2A-L001342](../../tests/test_web_agent.py#L1342) | 1342 | `"    )"` | — |
-| [SRC-F725E90B2A-L001343](../../tests/test_web_agent.py#L1343) | 1343 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-F725E90B2A-L001344](../../tests/test_web_agent.py#L1344) | 1344 | `""` | — |
-| [SRC-F725E90B2A-L001345](../../tests/test_web_agent.py#L1345) | 1345 | `"    result = agent.answer(question)"` | — |
-| [SRC-F725E90B2A-L001346](../../tests/test_web_agent.py#L1346) | 1346 | `""` | — |
-| [SRC-F725E90B2A-L001347](../../tests/test_web_agent.py#L1347) | 1347 | `"    assert len(calls) == 2"` | — |
-| [SRC-F725E90B2A-L001348](../../tests/test_web_agent.py#L1348) | 1348 | `"    assert question not in matched_queries"` | — |
-| [SRC-F725E90B2A-L001349](../../tests/test_web_agent.py#L1349) | 1349 | `"    assert compact_search_query(question) in matched_queries"` | — |
-| [SRC-F725E90B2A-L001350](../../tests/test_web_agent.py#L1350) | 1350 | `"    assert len(calls[1][\"queries\"]) == 1"` | — |
-| [SRC-F725E90B2A-L001351](../../tests/test_web_agent.py#L1351) | 1351 | `"    assert calls[1][\"depth\"] == \"standard\""` | — |
-| [SRC-F725E90B2A-L001352](../../tests/test_web_agent.py#L1352) | 1352 | `"    assert calls[1][\"social_focus\"] is False"` | — |
-| [SRC-F725E90B2A-L001353](../../tests/test_web_agent.py#L1353) | 1353 | `"    assert calls[1][\"direct_urls\"] == []"` | — |
-| [SRC-F725E90B2A-L001354](../../tests/test_web_agent.py#L1354) | 1354 | `"    repair = result[\"search_report\"][\"evidence_repair\"]"` | — |
-| [SRC-F725E90B2A-L001355](../../tests/test_web_agent.py#L1355) | 1355 | `"    assert repair[\"attempted\"] is True"` | — |
-| [SRC-F725E90B2A-L001356](../../tests/test_web_agent.py#L1356) | 1356 | `"    assert repair[\"attempted_query_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L001357](../../tests/test_web_agent.py#L1357) | 1357 | `"    assert repair[\"new_sources_added\"] == 1"` | — |
-| [SRC-F725E90B2A-L001358](../../tests/test_web_agent.py#L1358) | 1358 | `"    assert repair[\"recovered\"] is True"` | — |
-| [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `"    assert repair[\"reason\"] == \"evidence_gate_recovered\""` | — |
-| [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    assert repair[\"query\"] in result[\"search_queries\"]"` | — |
-| [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
