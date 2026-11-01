@@ -39,7 +39,7 @@ def mock_semantic_verifier_for_web_agent_unit_tests(monkeypatch):
     monkeypatch.setattr(
         WebAgent,
         "_verify_semantic_claims",
-        lambda self, question, answer, sources: {
+        lambda self, question, answer, sources, answer_integrity=None: {
             "status": "completed_all_claims_supported",
             "withhold_answer": False,
             "semantic_verification": "model_assessed_source_support",
