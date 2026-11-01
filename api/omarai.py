@@ -622,7 +622,8 @@ class Handler(BaseHTTPRequestHandler):
                         {
                             "error": (
                                 "live diagnostics perform outbound search and may consume "
-                                "provider quota or incur charges; explicit owner approval is required"
+                                "provider quota or incur charges; set allow_provider_usage=true "
+                                "only after explicit owner approval"
                             )
                         },
                     )
