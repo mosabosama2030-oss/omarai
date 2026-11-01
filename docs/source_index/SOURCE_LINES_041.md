@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FA4E1423C3-L000192 إلى SRC-829A979985-L000516
+- النطاق: SRC-FA4E1423C3-L000186 إلى SRC-829A979985-L000510
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FA4E1423C3-L000186](../../tests/test_generate_index.py#L186) | 186 | `"    assert [symbol.name for symbol in symbols] == [\"application_entry\"]"` | — |
+| [SRC-FA4E1423C3-L000187](../../tests/test_generate_index.py#L187) | 187 | `"    inventory_paths = {item.file for item in INDEXER.build_file_inventory(tmp_path)}"` | — |
+| [SRC-FA4E1423C3-L000188](../../tests/test_generate_index.py#L188) | 188 | `"    assert not any(\".egg-info/\" in path for path in inventory_paths)"` | — |
+| [SRC-FA4E1423C3-L000189](../../tests/test_generate_index.py#L189) | 189 | `"    assert not any(\".dist-info/\" in path for path in inventory_paths)"` | — |
+| [SRC-FA4E1423C3-L000190](../../tests/test_generate_index.py#L190) | 190 | `""` | — |
+| [SRC-FA4E1423C3-L000191](../../tests/test_generate_index.py#L191) | 191 | `""` | — |
 | [SRC-FA4E1423C3-L000192](../../tests/test_generate_index.py#L192) | 192 | `"def test_syntax_error_does_not_overwrite_the_previous_index("` | — |
 | [SRC-FA4E1423C3-L000193](../../tests/test_generate_index.py#L193) | 193 | `"    tmp_path: Path,"` | — |
 | [SRC-FA4E1423C3-L000194](../../tests/test_generate_index.py#L194) | 194 | `"    capsys,"` | — |
@@ -819,9 +825,3 @@
 | [SRC-829A979985-L000508](../../tests/test_generation_acceptance_matrix.py#L508) | 508 | `"            page_fetched=True,"` | — |
 | [SRC-829A979985-L000509](../../tests/test_generation_acceptance_matrix.py#L509) | 509 | `"            page_text=\"السعر الإجمالي 100000 جنيه والمساحة 100 متر.\","` | — |
 | [SRC-829A979985-L000510](../../tests/test_generation_acceptance_matrix.py#L510) | 510 | `"            provider=\"duckduckgo_html\","` | — |
-| [SRC-829A979985-L000511](../../tests/test_generation_acceptance_matrix.py#L511) | 511 | `"        ),"` | — |
-| [SRC-829A979985-L000512](../../tests/test_generation_acceptance_matrix.py#L512) | 512 | `"        source("` | — |
-| [SRC-829A979985-L000513](../../tests/test_generation_acceptance_matrix.py#L513) | 513 | `"            \"https://two.example/product\","` | — |
-| [SRC-829A979985-L000514](../../tests/test_generation_acceptance_matrix.py#L514) | 514 | `"            \"two.example\","` | — |
-| [SRC-829A979985-L000515](../../tests/test_generation_acceptance_matrix.py#L515) | 515 | `"            page_fetched=False,"` | — |
-| [SRC-829A979985-L000516](../../tests/test_generation_acceptance_matrix.py#L516) | 516 | `"            snippet=\"إعلان يذكر سعرًا دون بيان المساحة.\","` | — |

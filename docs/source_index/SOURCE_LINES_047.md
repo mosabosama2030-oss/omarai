@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000028 إلى SRC-AFEDC2645A-L000335
+- النطاق: SRC-AC9D8384E8-L000010 إلى SRC-AFEDC2645A-L000317
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AC9D8384E8-L000010](../../tests/test_semantic_claim_verifier.py#L10) | 10 | `"    deterministic_claim_screen,"` | — |
+| [SRC-AC9D8384E8-L000011](../../tests/test_semantic_claim_verifier.py#L11) | 11 | `")"` | — |
+| [SRC-AC9D8384E8-L000012](../../tests/test_semantic_claim_verifier.py#L12) | 12 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-AC9D8384E8-L000013](../../tests/test_semantic_claim_verifier.py#L13) | 13 | `""` | — |
+| [SRC-AC9D8384E8-L000014](../../tests/test_semantic_claim_verifier.py#L14) | 14 | `""` | — |
+| [SRC-AC9D8384E8-L000015](../../tests/test_semantic_claim_verifier.py#L15) | 15 | `"def source(**overrides):"` | — |
+| [SRC-AC9D8384E8-L000016](../../tests/test_semantic_claim_verifier.py#L16) | 16 | `"    value = {"` | — |
+| [SRC-AC9D8384E8-L000017](../../tests/test_semantic_claim_verifier.py#L17) | 17 | `"        \"title\": \"Official report\","` | — |
+| [SRC-AC9D8384E8-L000018](../../tests/test_semantic_claim_verifier.py#L18) | 18 | `"        \"url\": \"https://example.org/report\","` | — |
+| [SRC-AC9D8384E8-L000019](../../tests/test_semantic_claim_verifier.py#L19) | 19 | `"        \"publisher\": \"Example Office\","` | — |
+| [SRC-AC9D8384E8-L000020](../../tests/test_semantic_claim_verifier.py#L20) | 20 | `"        \"published_at\": \"2026-10-30\","` | — |
+| [SRC-AC9D8384E8-L000021](../../tests/test_semantic_claim_verifier.py#L21) | 21 | `"        \"page_fetched\": True,"` | — |
+| [SRC-AC9D8384E8-L000022](../../tests/test_semantic_claim_verifier.py#L22) | 22 | `"        \"page_text\": \"The report states that the system serves 12 facilities.\","` | — |
+| [SRC-AC9D8384E8-L000023](../../tests/test_semantic_claim_verifier.py#L23) | 23 | `"        \"snippet\": \"The system serves 12 facilities.\","` | — |
+| [SRC-AC9D8384E8-L000024](../../tests/test_semantic_claim_verifier.py#L24) | 24 | `"    }"` | — |
+| [SRC-AC9D8384E8-L000025](../../tests/test_semantic_claim_verifier.py#L25) | 25 | `"    value.update(overrides)"` | — |
+| [SRC-AC9D8384E8-L000026](../../tests/test_semantic_claim_verifier.py#L26) | 26 | `"    return value"` | — |
+| [SRC-AC9D8384E8-L000027](../../tests/test_semantic_claim_verifier.py#L27) | 27 | `""` | — |
 | [SRC-AC9D8384E8-L000028](../../tests/test_semantic_claim_verifier.py#L28) | 28 | `""` | — |
 | [SRC-AC9D8384E8-L000029](../../tests/test_semantic_claim_verifier.py#L29) | 29 | `"def response(rows):"` | — |
 | [SRC-AC9D8384E8-L000030](../../tests/test_semantic_claim_verifier.py#L30) | 30 | `"    return json.dumps({\"claims\": rows}, ensure_ascii=False)"` | — |
@@ -825,21 +843,3 @@
 | [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `""` | — |
 | [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"def test_task_spec_validator_allowlists_tools_policies_and_context_slots():"` | — |
 | [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `""` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"        \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `"            \"method\": \"test\","` | — |
-| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"            \"resolved_question\": \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"            \"topic\": \"هواتف\","` | — |
-| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"            \"entities\": [\"Phone A\", \"Phone B\"],"` | — |
-| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"            \"slots\": {\"product\": \"Phone A\", \"untrusted_command\": \"execute something\"},"` | — |
-| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
-| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
-| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
-| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |

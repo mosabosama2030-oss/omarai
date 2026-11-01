@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000071 إلى SRC-96F6863E3C-L000087
+- النطاق: SRC-AFFCF23BD4-L000053 إلى SRC-96F6863E3C-L000069
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000053](../../tests/test_research_completion.py#L53) | 53 | `"        \"kind\": \"insufficient_evidence\","` | — |
+| [SRC-AFFCF23BD4-L000054](../../tests/test_research_completion.py#L54) | 54 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000055](../../tests/test_research_completion.py#L55) | 55 | `"        \"sources\": [],"` | — |
+| [SRC-AFFCF23BD4-L000056](../../tests/test_research_completion.py#L56) | 56 | `"        \"search_report\": {"` | — |
+| [SRC-AFFCF23BD4-L000057](../../tests/test_research_completion.py#L57) | 57 | `"            \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000058](../../tests/test_research_completion.py#L58) | 58 | `"            \"source_guardrails\": {"` | — |
+| [SRC-AFFCF23BD4-L000059](../../tests/test_research_completion.py#L59) | 59 | `"                \"final\": {\"rejection_counts\": {\"stale\": 2, \"date_unavailable\": 1}},"` | — |
+| [SRC-AFFCF23BD4-L000060](../../tests/test_research_completion.py#L60) | 60 | `"            },"` | — |
+| [SRC-AFFCF23BD4-L000061](../../tests/test_research_completion.py#L61) | 61 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000062](../../tests/test_research_completion.py#L62) | 62 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000063](../../tests/test_research_completion.py#L63) | 63 | `"    assert result[\"status\"] == \"no_eligible_sources_after_filtering\""` | — |
+| [SRC-AFFCF23BD4-L000064](../../tests/test_research_completion.py#L64) | 64 | `"    assert result[\"counters\"][\"guardrail_rejected_candidate_count\"] == 3"` | — |
+| [SRC-AFFCF23BD4-L000065](../../tests/test_research_completion.py#L65) | 65 | `""` | — |
+| [SRC-AFFCF23BD4-L000066](../../tests/test_research_completion.py#L66) | 66 | `""` | — |
+| [SRC-AFFCF23BD4-L000067](../../tests/test_research_completion.py#L67) | 67 | `"def test_snippet_only_results_do_not_claim_pages_were_read() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000068](../../tests/test_research_completion.py#L68) | 68 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000069](../../tests/test_research_completion.py#L69) | 69 | `"        \"kind\": \"web_fallback\","` | — |
+| [SRC-AFFCF23BD4-L000070](../../tests/test_research_completion.py#L70) | 70 | `"        \"search_attempted\": True,"` | — |
 | [SRC-AFFCF23BD4-L000071](../../tests/test_research_completion.py#L71) | 71 | `"        \"used_language_model\": False,"` | — |
 | [SRC-AFFCF23BD4-L000072](../../tests/test_research_completion.py#L72) | 72 | `"        \"sources\": ["` | — |
 | [SRC-AFFCF23BD4-L000073](../../tests/test_research_completion.py#L73) | 73 | `"            {\"url\": \"https://example.com/a\", \"snippet\": \"Search snippet\", \"page_fetched\": False}"` | — |
@@ -816,21 +834,3 @@
 | [SRC-96F6863E3C-L000067](../../tests/test_research_pipeline.py#L67) | 67 | `""` | — |
 | [SRC-96F6863E3C-L000068](../../tests/test_research_pipeline.py#L68) | 68 | `""` | — |
 | [SRC-96F6863E3C-L000069](../../tests/test_research_pipeline.py#L69) | 69 | `""` | — |
-| [SRC-96F6863E3C-L000070](../../tests/test_research_pipeline.py#L70) | 70 | `"def test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores():"` | — |
-| [SRC-96F6863E3C-L000071](../../tests/test_research_pipeline.py#L71) | 71 | `"    calls = []"` | — |
-| [SRC-96F6863E3C-L000072](../../tests/test_research_pipeline.py#L72) | 72 | `""` | — |
-| [SRC-96F6863E3C-L000073](../../tests/test_research_pipeline.py#L73) | 73 | `"    def matcher(aspect, source):"` | — |
-| [SRC-96F6863E3C-L000074](../../tests/test_research_pipeline.py#L74) | 74 | `"        calls.append((aspect, source.get(\"url\")))"` | — |
-| [SRC-96F6863E3C-L000075](../../tests/test_research_pipeline.py#L75) | 75 | `"        return 0.9 if source.get(\"url\", \"\").endswith(\"/relevant\") else float(\"nan\")"` | — |
-| [SRC-96F6863E3C-L000076](../../tests/test_research_pipeline.py#L76) | 76 | `""` | — |
-| [SRC-96F6863E3C-L000077](../../tests/test_research_pipeline.py#L77) | 77 | `"    result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000078](../../tests/test_research_pipeline.py#L78) | 78 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
-| [SRC-96F6863E3C-L000079](../../tests/test_research_pipeline.py#L79) | 79 | `"        {\"queries\": [\"الهاتف\"]},"` | — |
-| [SRC-96F6863E3C-L000080](../../tests/test_research_pipeline.py#L80) | 80 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-96F6863E3C-L000081](../../tests/test_research_pipeline.py#L81) | 81 | `"        sources=["` | — |
-| [SRC-96F6863E3C-L000082](../../tests/test_research_pipeline.py#L82) | 82 | `"            {\"title\": \"سعر الهاتف\", \"url\": \"https://example.com/relevant\", \"snippet\": \"السعر\"},"` | — |
-| [SRC-96F6863E3C-L000083](../../tests/test_research_pipeline.py#L83) | 83 | `"            {\"title\": \"صفحة أخرى\", \"url\": \"https://example.com/other\", \"snippet\": \"عام\"},"` | — |
-| [SRC-96F6863E3C-L000084](../../tests/test_research_pipeline.py#L84) | 84 | `"        ],"` | — |
-| [SRC-96F6863E3C-L000085](../../tests/test_research_pipeline.py#L85) | 85 | `"        semantic_matcher=matcher,"` | — |
-| [SRC-96F6863E3C-L000086](../../tests/test_research_pipeline.py#L86) | 86 | `"    )"` | — |
-| [SRC-96F6863E3C-L000087](../../tests/test_research_pipeline.py#L87) | 87 | `""` | — |

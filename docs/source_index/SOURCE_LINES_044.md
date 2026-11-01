@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0DE98F65-L000053 إلى SRC-AFFCF23BD4-L000070
+- النطاق: SRC-3D0DE98F65-L000035 إلى SRC-AFFCF23BD4-L000052
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0DE98F65-L000035](../../tests/test_question_requirement_loop.py#L35) | 35 | `"        \"social_focus\": False,"` | — |
+| [SRC-3D0DE98F65-L000036](../../tests/test_question_requirement_loop.py#L36) | 36 | `"        \"freshness\": \"any\","` | — |
+| [SRC-3D0DE98F65-L000037](../../tests/test_question_requirement_loop.py#L37) | 37 | `"        \"depth\": \"deep\","` | — |
+| [SRC-3D0DE98F65-L000038](../../tests/test_question_requirement_loop.py#L38) | 38 | `"        \"platforms\": [],"` | — |
+| [SRC-3D0DE98F65-L000039](../../tests/test_question_requirement_loop.py#L39) | 39 | `"    }"` | — |
+| [SRC-3D0DE98F65-L000040](../../tests/test_question_requirement_loop.py#L40) | 40 | `""` | — |
+| [SRC-3D0DE98F65-L000041](../../tests/test_question_requirement_loop.py#L41) | 41 | `"    validated = validate_plan(candidate, QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000042](../../tests/test_question_requirement_loop.py#L42) | 42 | `""` | — |
+| [SRC-3D0DE98F65-L000043](../../tests/test_question_requirement_loop.py#L43) | 43 | `"    assert validated[\"coverage_targets\"] == fallback[\"coverage_targets\"]"` | — |
+| [SRC-3D0DE98F65-L000044](../../tests/test_question_requirement_loop.py#L44) | 44 | `"    assert validated[\"requirement_queries\"] == fallback[\"requirement_queries\"]"` | — |
+| [SRC-3D0DE98F65-L000045](../../tests/test_question_requirement_loop.py#L45) | 45 | `"    assert all(item[\"query\"] in validated[\"queries\"] for item in fallback[\"requirement_queries\"])"` | — |
+| [SRC-3D0DE98F65-L000046](../../tests/test_question_requirement_loop.py#L46) | 46 | `"    assert len(validated[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
+| [SRC-3D0DE98F65-L000047](../../tests/test_question_requirement_loop.py#L47) | 47 | `""` | — |
+| [SRC-3D0DE98F65-L000048](../../tests/test_question_requirement_loop.py#L48) | 48 | `""` | — |
+| [SRC-3D0DE98F65-L000049](../../tests/test_question_requirement_loop.py#L49) | 49 | `"def test_model_planner_cannot_replace_every_criterion_with_one_generic_query(monkeypatch) -> None:"` | — |
+| [SRC-3D0DE98F65-L000050](../../tests/test_question_requirement_loop.py#L50) | 50 | `"    agent = WebAgent()"` | — |
+| [SRC-3D0DE98F65-L000051](../../tests/test_question_requirement_loop.py#L51) | 51 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-3D0DE98F65-L000052](../../tests/test_question_requirement_loop.py#L52) | 52 | `"    monkeypatch.setattr("` | — |
 | [SRC-3D0DE98F65-L000053](../../tests/test_question_requirement_loop.py#L53) | 53 | `"        agent,"` | — |
 | [SRC-3D0DE98F65-L000054](../../tests/test_question_requirement_loop.py#L54) | 54 | `"        \"_request_completion\","` | — |
 | [SRC-3D0DE98F65-L000055](../../tests/test_question_requirement_loop.py#L55) | 55 | `"        lambda *args, **kwargs: json.dumps("` | — |
@@ -834,21 +852,3 @@
 | [SRC-AFFCF23BD4-L000050](../../tests/test_research_completion.py#L50) | 50 | `""` | — |
 | [SRC-AFFCF23BD4-L000051](../../tests/test_research_completion.py#L51) | 51 | `"def test_all_rejected_sources_are_not_mislabeled_as_no_results() -> None:"` | — |
 | [SRC-AFFCF23BD4-L000052](../../tests/test_research_completion.py#L52) | 52 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000053](../../tests/test_research_completion.py#L53) | 53 | `"        \"kind\": \"insufficient_evidence\","` | — |
-| [SRC-AFFCF23BD4-L000054](../../tests/test_research_completion.py#L54) | 54 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000055](../../tests/test_research_completion.py#L55) | 55 | `"        \"sources\": [],"` | — |
-| [SRC-AFFCF23BD4-L000056](../../tests/test_research_completion.py#L56) | 56 | `"        \"search_report\": {"` | — |
-| [SRC-AFFCF23BD4-L000057](../../tests/test_research_completion.py#L57) | 57 | `"            \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000058](../../tests/test_research_completion.py#L58) | 58 | `"            \"source_guardrails\": {"` | — |
-| [SRC-AFFCF23BD4-L000059](../../tests/test_research_completion.py#L59) | 59 | `"                \"final\": {\"rejection_counts\": {\"stale\": 2, \"date_unavailable\": 1}},"` | — |
-| [SRC-AFFCF23BD4-L000060](../../tests/test_research_completion.py#L60) | 60 | `"            },"` | — |
-| [SRC-AFFCF23BD4-L000061](../../tests/test_research_completion.py#L61) | 61 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000062](../../tests/test_research_completion.py#L62) | 62 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000063](../../tests/test_research_completion.py#L63) | 63 | `"    assert result[\"status\"] == \"no_eligible_sources_after_filtering\""` | — |
-| [SRC-AFFCF23BD4-L000064](../../tests/test_research_completion.py#L64) | 64 | `"    assert result[\"counters\"][\"guardrail_rejected_candidate_count\"] == 3"` | — |
-| [SRC-AFFCF23BD4-L000065](../../tests/test_research_completion.py#L65) | 65 | `""` | — |
-| [SRC-AFFCF23BD4-L000066](../../tests/test_research_completion.py#L66) | 66 | `""` | — |
-| [SRC-AFFCF23BD4-L000067](../../tests/test_research_completion.py#L67) | 67 | `"def test_snippet_only_results_do_not_claim_pages_were_read() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000068](../../tests/test_research_completion.py#L68) | 68 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000069](../../tests/test_research_completion.py#L69) | 69 | `"        \"kind\": \"web_fallback\","` | — |
-| [SRC-AFFCF23BD4-L000070](../../tests/test_research_completion.py#L70) | 70 | `"        \"search_attempted\": True,"` | — |

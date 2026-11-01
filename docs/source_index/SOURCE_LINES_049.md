@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000580 إلى SRC-F725E90B2A-L001379
+- النطاق: SRC-F725E90B2A-L000562 إلى SRC-F725E90B2A-L001361
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
+| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
+| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
+| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"            return FakeResponse({\"data\": [{"` | — |
+| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"                \"permalink\": \"https://www.instagram.com/p/ABC123/\","` | — |
+| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"                \"caption\": \"Owner shared an electric car review\","` | — |
+| [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"                \"media_type\": \"IMAGE\","` | — |
+| [SRC-F725E90B2A-L000569](../../tests/test_web_agent.py#L569) | 569 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
+| [SRC-F725E90B2A-L000570](../../tests/test_web_agent.py#L570) | 570 | `"                \"like_count\": 17,"` | — |
+| [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `"                \"comments_count\": 4,"` | — |
+| [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"            }]})"` | — |
+| [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
+| [SRC-F725E90B2A-L000574](../../tests/test_web_agent.py#L574) | 574 | `""` | — |
+| [SRC-F725E90B2A-L000575](../../tests/test_web_agent.py#L575) | 575 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `"        \"agents.web_agent._bounded_http_request\","` | — |
+| [SRC-F725E90B2A-L000577](../../tests/test_web_agent.py#L577) | 577 | `"        lambda method, url, **kwargs: fake_get(url, **kwargs),"` | — |
+| [SRC-F725E90B2A-L000578](../../tests/test_web_agent.py#L578) | 578 | `"    )"` | — |
+| [SRC-F725E90B2A-L000579](../../tests/test_web_agent.py#L579) | 579 | `"    results, warnings = WebAgent()._search_social("` | — |
 | [SRC-F725E90B2A-L000580](../../tests/test_web_agent.py#L580) | 580 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
 | [SRC-F725E90B2A-L000581](../../tests/test_web_agent.py#L581) | 581 | `"    )"` | — |
 | [SRC-F725E90B2A-L000582](../../tests/test_web_agent.py#L582) | 582 | `"    assert warnings == []"` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L001359](../../tests/test_web_agent.py#L1359) | 1359 | `"    assert repair[\"reason\"] == \"evidence_gate_recovered\""` | — |
 | [SRC-F725E90B2A-L001360](../../tests/test_web_agent.py#L1360) | 1360 | `"    assert repair[\"query\"] in result[\"search_queries\"]"` | — |
 | [SRC-F725E90B2A-L001361](../../tests/test_web_agent.py#L1361) | 1361 | `"    assert result[\"kind\"] in {\"web_research\", \"web_fallback\"}"` | — |
-| [SRC-F725E90B2A-L001362](../../tests/test_web_agent.py#L1362) | 1362 | `"    assert result[\"search_report\"][\"independent_sources\"] == 2"` | — |
-| [SRC-F725E90B2A-L001363](../../tests/test_web_agent.py#L1363) | 1363 | `""` | — |
-| [SRC-F725E90B2A-L001364](../../tests/test_web_agent.py#L1364) | 1364 | `""` | — |
-| [SRC-F725E90B2A-L001365](../../tests/test_web_agent.py#L1365) | 1365 | `"def test_insufficient_evidence_returns_explicit_refusal_without_calling_llm(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001366](../../tests/test_web_agent.py#L1366) | 1366 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L001367](../../tests/test_web_agent.py#L1367) | 1367 | `"    plan = {"` | — |
-| [SRC-F725E90B2A-L001368](../../tests/test_web_agent.py#L1368) | 1368 | `"        \"queries\": [\"معلومات عن هذه التقنية\"],"` | — |
-| [SRC-F725E90B2A-L001369](../../tests/test_web_agent.py#L1369) | 1369 | `"        \"direct_urls\": [],"` | — |
-| [SRC-F725E90B2A-L001370](../../tests/test_web_agent.py#L1370) | 1370 | `"        \"social_focus\": False,"` | — |
-| [SRC-F725E90B2A-L001371](../../tests/test_web_agent.py#L1371) | 1371 | `"        \"freshness\": \"any\","` | — |
-| [SRC-F725E90B2A-L001372](../../tests/test_web_agent.py#L1372) | 1372 | `"        \"depth\": \"standard\","` | — |
-| [SRC-F725E90B2A-L001373](../../tests/test_web_agent.py#L1373) | 1373 | `"        \"platforms\": [],"` | — |
-| [SRC-F725E90B2A-L001374](../../tests/test_web_agent.py#L1374) | 1374 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-F725E90B2A-L001375](../../tests/test_web_agent.py#L1375) | 1375 | `"    }"` | — |
-| [SRC-F725E90B2A-L001376](../../tests/test_web_agent.py#L1376) | 1376 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda question, history: dict(plan))"` | — |
-| [SRC-F725E90B2A-L001377](../../tests/test_web_agent.py#L1377) | 1377 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L001378](../../tests/test_web_agent.py#L1378) | 1378 | `""` | — |
-| [SRC-F725E90B2A-L001379](../../tests/test_web_agent.py#L1379) | 1379 | `"    def collect_only_one_source(research_plan):"` | — |

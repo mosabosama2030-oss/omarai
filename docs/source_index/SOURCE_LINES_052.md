@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002980 إلى SRC-F725E90B2A-L003779
+- النطاق: SRC-F725E90B2A-L002962 إلى SRC-F725E90B2A-L003761
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002962](../../tests/test_web_agent.py#L2962) | 2962 | `""` | — |
+| [SRC-F725E90B2A-L002963](../../tests/test_web_agent.py#L2963) | 2963 | `""` | — |
+| [SRC-F725E90B2A-L002964](../../tests/test_web_agent.py#L2964) | 2964 | `"@pytest.mark.parametrize(\"mode\", [\"deep\", \"latest\", \"social\"])"` | — |
+| [SRC-F725E90B2A-L002965](../../tests/test_web_agent.py#L2965) | 2965 | `"def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):"` | — |
+| [SRC-F725E90B2A-L002966](../../tests/test_web_agent.py#L2966) | 2966 | `"    \"\"\"A missing planner model must not erase a mode explicitly selected by the user.\"\"\""` | — |
+| [SRC-F725E90B2A-L002967](../../tests/test_web_agent.py#L2967) | 2967 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002968](../../tests/test_web_agent.py#L2968) | 2968 | `"    agent.api_key = \"\""` | — |
+| [SRC-F725E90B2A-L002969](../../tests/test_web_agent.py#L2969) | 2969 | `"    seen = {}"` | — |
+| [SRC-F725E90B2A-L002970](../../tests/test_web_agent.py#L2970) | 2970 | `""` | — |
+| [SRC-F725E90B2A-L002971](../../tests/test_web_agent.py#L2971) | 2971 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L002972](../../tests/test_web_agent.py#L2972) | 2972 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
+| [SRC-F725E90B2A-L002973](../../tests/test_web_agent.py#L2973) | 2973 | `"        sources = [sample_source(0), sample_source(1)]"` | — |
+| [SRC-F725E90B2A-L002974](../../tests/test_web_agent.py#L2974) | 2974 | `"        return sources, [], {"` | — |
+| [SRC-F725E90B2A-L002975](../../tests/test_web_agent.py#L2975) | 2975 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L002976](../../tests/test_web_agent.py#L2976) | 2976 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L002977](../../tests/test_web_agent.py#L2977) | 2977 | `"            \"query_results\": ["` | — |
+| [SRC-F725E90B2A-L002978](../../tests/test_web_agent.py#L2978) | 2978 | `"                {\"query\": query, \"results\": 1}"` | — |
+| [SRC-F725E90B2A-L002979](../../tests/test_web_agent.py#L2979) | 2979 | `"                for query in research_plan[\"queries\"]"` | — |
 | [SRC-F725E90B2A-L002980](../../tests/test_web_agent.py#L2980) | 2980 | `"            ],"` | — |
 | [SRC-F725E90B2A-L002981](../../tests/test_web_agent.py#L2981) | 2981 | `"            \"unique_sources\": len(sources),"` | — |
 | [SRC-F725E90B2A-L002982](../../tests/test_web_agent.py#L2982) | 2982 | `"            \"pages_fetched\": len(sources),"` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L003759](../../tests/test_web_agent.py#L3759) | 3759 | `"    assert result[\"search_report\"][\"usable_sources_after_filtering\"] == 0"` | — |
 | [SRC-F725E90B2A-L003760](../../tests/test_web_agent.py#L3760) | 3760 | `""` | — |
 | [SRC-F725E90B2A-L003761](../../tests/test_web_agent.py#L3761) | 3761 | `"def test_criterion_gap_repair_cannot_reintroduce_non_social_source(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003762](../../tests/test_web_agent.py#L3762) | 3762 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L003763](../../tests/test_web_agent.py#L3763) | 3763 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-F725E90B2A-L003764](../../tests/test_web_agent.py#L3764) | 3764 | `"    question = ("` | — |
-| [SRC-F725E90B2A-L003765](../../tests/test_web_agent.py#L3765) | 3765 | `"        \"قارن بين خدمتين من حيث السعر والخصوصية والاعتمادية \""` | — |
-| [SRC-F725E90B2A-L003766](../../tests/test_web_agent.py#L3766) | 3766 | `"        \"واعرض آراء وتجارب المستخدمين\""` | — |
-| [SRC-F725E90B2A-L003767](../../tests/test_web_agent.py#L3767) | 3767 | `"    )"` | — |
-| [SRC-F725E90B2A-L003768](../../tests/test_web_agent.py#L3768) | 3768 | `"    initial_sources = ["` | — |
-| [SRC-F725E90B2A-L003769](../../tests/test_web_agent.py#L3769) | 3769 | `"        {"` | — |
-| [SRC-F725E90B2A-L003770](../../tests/test_web_agent.py#L3770) | 3770 | `"            **sample_source(0),"` | — |
-| [SRC-F725E90B2A-L003771](../../tests/test_web_agent.py#L3771) | 3771 | `"            \"url\": \"https://www.reddit.com/r/example/comments/1\","` | — |
-| [SRC-F725E90B2A-L003772](../../tests/test_web_agent.py#L3772) | 3772 | `"            \"domain\": \"reddit.com\","` | — |
-| [SRC-F725E90B2A-L003773](../../tests/test_web_agent.py#L3773) | 3773 | `"            \"title\": \"مناقشة تجارب المستخدمين للخدمتين\","` | — |
-| [SRC-F725E90B2A-L003774](../../tests/test_web_agent.py#L3774) | 3774 | `"            \"snippet\": \"تجارب وآراء مستخدمين حول الخدمتين\","` | — |
-| [SRC-F725E90B2A-L003775](../../tests/test_web_agent.py#L3775) | 3775 | `"            \"page_text\": \"تجارب وآراء مستخدمين حول الخدمتين\","` | — |
-| [SRC-F725E90B2A-L003776](../../tests/test_web_agent.py#L3776) | 3776 | `"            \"platform\": \"reddit\","` | — |
-| [SRC-F725E90B2A-L003777](../../tests/test_web_agent.py#L3777) | 3777 | `"            \"providers\": [\"reddit\"],"` | — |
-| [SRC-F725E90B2A-L003778](../../tests/test_web_agent.py#L3778) | 3778 | `"        },"` | — |
-| [SRC-F725E90B2A-L003779](../../tests/test_web_agent.py#L3779) | 3779 | `"        {"` | — |

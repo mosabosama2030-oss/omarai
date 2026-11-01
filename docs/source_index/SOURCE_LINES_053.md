@@ -4,7 +4,7 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003780 إلى SRC-DE7EABE998-L000016
+- النطاق: SRC-F725E90B2A-L003762 إلى SRC-8C13B81AB4-L000141
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003762](../../tests/test_web_agent.py#L3762) | 3762 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003763](../../tests/test_web_agent.py#L3763) | 3763 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L003764](../../tests/test_web_agent.py#L3764) | 3764 | `"    question = ("` | — |
+| [SRC-F725E90B2A-L003765](../../tests/test_web_agent.py#L3765) | 3765 | `"        \"قارن بين خدمتين من حيث السعر والخصوصية والاعتمادية \""` | — |
+| [SRC-F725E90B2A-L003766](../../tests/test_web_agent.py#L3766) | 3766 | `"        \"واعرض آراء وتجارب المستخدمين\""` | — |
+| [SRC-F725E90B2A-L003767](../../tests/test_web_agent.py#L3767) | 3767 | `"    )"` | — |
+| [SRC-F725E90B2A-L003768](../../tests/test_web_agent.py#L3768) | 3768 | `"    initial_sources = ["` | — |
+| [SRC-F725E90B2A-L003769](../../tests/test_web_agent.py#L3769) | 3769 | `"        {"` | — |
+| [SRC-F725E90B2A-L003770](../../tests/test_web_agent.py#L3770) | 3770 | `"            **sample_source(0),"` | — |
+| [SRC-F725E90B2A-L003771](../../tests/test_web_agent.py#L3771) | 3771 | `"            \"url\": \"https://www.reddit.com/r/example/comments/1\","` | — |
+| [SRC-F725E90B2A-L003772](../../tests/test_web_agent.py#L3772) | 3772 | `"            \"domain\": \"reddit.com\","` | — |
+| [SRC-F725E90B2A-L003773](../../tests/test_web_agent.py#L3773) | 3773 | `"            \"title\": \"مناقشة تجارب المستخدمين للخدمتين\","` | — |
+| [SRC-F725E90B2A-L003774](../../tests/test_web_agent.py#L3774) | 3774 | `"            \"snippet\": \"تجارب وآراء مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003775](../../tests/test_web_agent.py#L3775) | 3775 | `"            \"page_text\": \"تجارب وآراء مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003776](../../tests/test_web_agent.py#L3776) | 3776 | `"            \"platform\": \"reddit\","` | — |
+| [SRC-F725E90B2A-L003777](../../tests/test_web_agent.py#L3777) | 3777 | `"            \"providers\": [\"reddit\"],"` | — |
+| [SRC-F725E90B2A-L003778](../../tests/test_web_agent.py#L3778) | 3778 | `"        },"` | — |
+| [SRC-F725E90B2A-L003779](../../tests/test_web_agent.py#L3779) | 3779 | `"        {"` | — |
 | [SRC-F725E90B2A-L003780](../../tests/test_web_agent.py#L3780) | 3780 | `"            **sample_source(1),"` | — |
 | [SRC-F725E90B2A-L003781](../../tests/test_web_agent.py#L3781) | 3781 | `"            \"url\": \"https://www.reddit.com/r/example/comments/2\","` | — |
 | [SRC-F725E90B2A-L003782](../../tests/test_web_agent.py#L3782) | 3782 | `"            \"domain\": \"reddit.com\","` | — |
@@ -807,30 +825,3 @@
 | [SRC-8C13B81AB4-L000139](../../tests/test_web_agent_nlu_integration.py#L139) | 139 | `"    assert result[\"answer_was_withheld\"] is False"` | — |
 | [SRC-8C13B81AB4-L000140](../../tests/test_web_agent_nlu_integration.py#L140) | 140 | `"    assert result[\"answer_completeness_status\"] == ("` | — |
 | [SRC-8C13B81AB4-L000141](../../tests/test_web_agent_nlu_integration.py#L141) | 141 | `"        \"no_lexical_gaps_detected_semantic_completeness_not_proven\""` | — |
-| [SRC-8C13B81AB4-L000142](../../tests/test_web_agent_nlu_integration.py#L142) | 142 | `"    )"` | — |
-| [SRC-8C13B81AB4-L000143](../../tests/test_web_agent_nlu_integration.py#L143) | 143 | `"    assert result[\"aspect_coverage_is_not_truth_score\"] is True"` | — |
-## واجهة الويب
-
-### FILE-DE7EABE998 — [web/agent.html](../../web/agent.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-DE7EABE998-L000001](../../web/agent.html#L1) | 1 | `"<!doctype html>"` | — |
-| [SRC-DE7EABE998-L000002](../../web/agent.html#L2) | 2 | `"<html lang=\"ar\" dir=\"rtl\">"` | — |
-| [SRC-DE7EABE998-L000003](../../web/agent.html#L3) | 3 | `"<head>"` | — |
-| [SRC-DE7EABE998-L000004](../../web/agent.html#L4) | 4 | `"<meta charset=\"utf-8\">"` | — |
-| [SRC-DE7EABE998-L000005](../../web/agent.html#L5) | 5 | `"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">"` | — |
-| [SRC-DE7EABE998-L000006](../../web/agent.html#L6) | 6 | `"<meta name=\"theme-color\" content=\"#0a1220\">"` | — |
-| [SRC-DE7EABE998-L000007](../../web/agent.html#L7) | 7 | `"<title>Omarai \| وكيل البحث والتحليل</title>"` | — |
-| [SRC-DE7EABE998-L000008](../../web/agent.html#L8) | 8 | `"<style>"` | — |
-| [SRC-DE7EABE998-L000009](../../web/agent.html#L9) | 9 | `":root{color-scheme:dark;--bg:#0a1220;--panel:#101b2c;--panel2:#132238;--line:#263b55;--text:#f0f5fc;--muted:#9cabc0;--teal:#65e5d0;--blue:#9bbcff;--green:#84e0a9;--amber:#ffd28a;--red:#ff929e;--radius:20px}"` | — |
-| [SRC-DE7EABE998-L000010](../../web/agent.html#L10) | 10 | `"*{box-sizing:border-box}"` | — |
-| [SRC-DE7EABE998-L000011](../../web/agent.html#L11) | 11 | `"body{margin:0;background:radial-gradient(ellipse at 92% -10%,#173755 0,transparent 38%),radial-gradient(ellipse at 5% 40%,#10273a 0,transparent 32%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,\"Segoe UI\",sans-serif;min-height:100vh}"` | — |
-| [SRC-DE7EABE998-L000012](../../web/agent.html#L12) | 12 | `"button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,textarea:focus-visible{outline:2px solid var(--teal);outline-offset:2px}"` | — |
-| [SRC-DE7EABE998-L000013](../../web/agent.html#L13) | 13 | `".shell{max-width:1240px;margin:auto;padding:18px;min-height:100vh;display:flex;flex-direction:column}"` | — |
-| [SRC-DE7EABE998-L000014](../../web/agent.html#L14) | 14 | `".topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 2px 18px;border-bottom:1px solid #26384b}"` | — |
-| [SRC-DE7EABE998-L000015](../../web/agent.html#L15) | 15 | `".brand{display:flex;align-items:center;gap:11px;min-width:0}.logo{height:45px;width:45px;border-radius:15px;display:grid;place-items:center;color:#07131e;background:linear-gradient(135deg,#73f0d8,#9bbcff);font-weight:950;font-size:25px;box-shadow:0 8px 30px #67e8df22}"` | — |
-| [SRC-DE7EABE998-L000016](../../web/agent.html#L16) | 16 | `".brand h1{font-size:21px;letter-spacing:.2px;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:11px}"` | — |

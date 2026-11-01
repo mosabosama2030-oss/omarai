@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-96F6863E3C-L000088 إلى SRC-AC9D8384E8-L000027
+- النطاق: SRC-96F6863E3C-L000070 إلى SRC-AC9D8384E8-L000009
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-96F6863E3C-L000070](../../tests/test_research_pipeline.py#L70) | 70 | `"def test_optional_semantic_matcher_only_ranks_candidates_and_rejects_bad_scores():"` | — |
+| [SRC-96F6863E3C-L000071](../../tests/test_research_pipeline.py#L71) | 71 | `"    calls = []"` | — |
+| [SRC-96F6863E3C-L000072](../../tests/test_research_pipeline.py#L72) | 72 | `""` | — |
+| [SRC-96F6863E3C-L000073](../../tests/test_research_pipeline.py#L73) | 73 | `"    def matcher(aspect, source):"` | — |
+| [SRC-96F6863E3C-L000074](../../tests/test_research_pipeline.py#L74) | 74 | `"        calls.append((aspect, source.get(\"url\")))"` | — |
+| [SRC-96F6863E3C-L000075](../../tests/test_research_pipeline.py#L75) | 75 | `"        return 0.9 if source.get(\"url\", \"\").endswith(\"/relevant\") else float(\"nan\")"` | — |
+| [SRC-96F6863E3C-L000076](../../tests/test_research_pipeline.py#L76) | 76 | `""` | — |
+| [SRC-96F6863E3C-L000077](../../tests/test_research_pipeline.py#L77) | 77 | `"    result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000078](../../tests/test_research_pipeline.py#L78) | 78 | `"        \"ما سعر الهاتف ومدة الضمان؟\","` | — |
+| [SRC-96F6863E3C-L000079](../../tests/test_research_pipeline.py#L79) | 79 | `"        {\"queries\": [\"الهاتف\"]},"` | — |
+| [SRC-96F6863E3C-L000080](../../tests/test_research_pipeline.py#L80) | 80 | `"        intent_route=\"WEB_DEEP\","` | — |
+| [SRC-96F6863E3C-L000081](../../tests/test_research_pipeline.py#L81) | 81 | `"        sources=["` | — |
+| [SRC-96F6863E3C-L000082](../../tests/test_research_pipeline.py#L82) | 82 | `"            {\"title\": \"سعر الهاتف\", \"url\": \"https://example.com/relevant\", \"snippet\": \"السعر\"},"` | — |
+| [SRC-96F6863E3C-L000083](../../tests/test_research_pipeline.py#L83) | 83 | `"            {\"title\": \"صفحة أخرى\", \"url\": \"https://example.com/other\", \"snippet\": \"عام\"},"` | — |
+| [SRC-96F6863E3C-L000084](../../tests/test_research_pipeline.py#L84) | 84 | `"        ],"` | — |
+| [SRC-96F6863E3C-L000085](../../tests/test_research_pipeline.py#L85) | 85 | `"        semantic_matcher=matcher,"` | — |
+| [SRC-96F6863E3C-L000086](../../tests/test_research_pipeline.py#L86) | 86 | `"    )"` | — |
+| [SRC-96F6863E3C-L000087](../../tests/test_research_pipeline.py#L87) | 87 | `""` | — |
 | [SRC-96F6863E3C-L000088](../../tests/test_research_pipeline.py#L88) | 88 | `"    assert result[\"evidence\"][\"semantic_matching\"][\"status\"] == \"evaluated\""` | — |
 | [SRC-96F6863E3C-L000089](../../tests/test_research_pipeline.py#L89) | 89 | `"    assert len(calls) == len(result[\"aspects\"]) * 2"` | — |
 | [SRC-96F6863E3C-L000090](../../tests/test_research_pipeline.py#L90) | 90 | `"    for candidates in result[\"evidence\"][\"semantic_matching\"][\"candidates\"].values():"` | — |
@@ -834,21 +852,3 @@
 | [SRC-AC9D8384E8-L000007](../../tests/test_semantic_claim_verifier.py#L7) | 7 | `"from agents.semantic_claim_verifier import ("` | — |
 | [SRC-AC9D8384E8-L000008](../../tests/test_semantic_claim_verifier.py#L8) | 8 | `"    build_semantic_verification_request,"` | — |
 | [SRC-AC9D8384E8-L000009](../../tests/test_semantic_claim_verifier.py#L9) | 9 | `"    parse_semantic_verification_response,"` | — |
-| [SRC-AC9D8384E8-L000010](../../tests/test_semantic_claim_verifier.py#L10) | 10 | `"    deterministic_claim_screen,"` | — |
-| [SRC-AC9D8384E8-L000011](../../tests/test_semantic_claim_verifier.py#L11) | 11 | `")"` | — |
-| [SRC-AC9D8384E8-L000012](../../tests/test_semantic_claim_verifier.py#L12) | 12 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-AC9D8384E8-L000013](../../tests/test_semantic_claim_verifier.py#L13) | 13 | `""` | — |
-| [SRC-AC9D8384E8-L000014](../../tests/test_semantic_claim_verifier.py#L14) | 14 | `""` | — |
-| [SRC-AC9D8384E8-L000015](../../tests/test_semantic_claim_verifier.py#L15) | 15 | `"def source(**overrides):"` | — |
-| [SRC-AC9D8384E8-L000016](../../tests/test_semantic_claim_verifier.py#L16) | 16 | `"    value = {"` | — |
-| [SRC-AC9D8384E8-L000017](../../tests/test_semantic_claim_verifier.py#L17) | 17 | `"        \"title\": \"Official report\","` | — |
-| [SRC-AC9D8384E8-L000018](../../tests/test_semantic_claim_verifier.py#L18) | 18 | `"        \"url\": \"https://example.org/report\","` | — |
-| [SRC-AC9D8384E8-L000019](../../tests/test_semantic_claim_verifier.py#L19) | 19 | `"        \"publisher\": \"Example Office\","` | — |
-| [SRC-AC9D8384E8-L000020](../../tests/test_semantic_claim_verifier.py#L20) | 20 | `"        \"published_at\": \"2026-10-30\","` | — |
-| [SRC-AC9D8384E8-L000021](../../tests/test_semantic_claim_verifier.py#L21) | 21 | `"        \"page_fetched\": True,"` | — |
-| [SRC-AC9D8384E8-L000022](../../tests/test_semantic_claim_verifier.py#L22) | 22 | `"        \"page_text\": \"The report states that the system serves 12 facilities.\","` | — |
-| [SRC-AC9D8384E8-L000023](../../tests/test_semantic_claim_verifier.py#L23) | 23 | `"        \"snippet\": \"The system serves 12 facilities.\","` | — |
-| [SRC-AC9D8384E8-L000024](../../tests/test_semantic_claim_verifier.py#L24) | 24 | `"    }"` | — |
-| [SRC-AC9D8384E8-L000025](../../tests/test_semantic_claim_verifier.py#L25) | 25 | `"    value.update(overrides)"` | — |
-| [SRC-AC9D8384E8-L000026](../../tests/test_semantic_claim_verifier.py#L26) | 26 | `"    return value"` | — |
-| [SRC-AC9D8384E8-L000027](../../tests/test_semantic_claim_verifier.py#L27) | 27 | `""` | — |

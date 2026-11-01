@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002180 إلى SRC-F725E90B2A-L002979
+- النطاق: SRC-F725E90B2A-L002162 إلى SRC-F725E90B2A-L002961
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002162](../../tests/test_web_agent.py#L2162) | 2162 | `"    assert report[\"search_attempted\"] is True"` | — |
+| [SRC-F725E90B2A-L002163](../../tests/test_web_agent.py#L2163) | 2163 | `"    assert report[\"search_outcome\"] == \"attempted_research_error\""` | — |
+| [SRC-F725E90B2A-L002164](../../tests/test_web_agent.py#L2164) | 2164 | `"    assert report[\"queries_attempted\"] is None"` | — |
+| [SRC-F725E90B2A-L002165](../../tests/test_web_agent.py#L2165) | 2165 | `"    assert report[\"queries_attempted_known\"] is False"` | — |
+| [SRC-F725E90B2A-L002166](../../tests/test_web_agent.py#L2166) | 2166 | `"    assert report[\"usable_sources_after_filtering\"] is None"` | — |
+| [SRC-F725E90B2A-L002167](../../tests/test_web_agent.py#L2167) | 2167 | `"    assert report[\"unique_sources\"] is None"` | — |
+| [SRC-F725E90B2A-L002168](../../tests/test_web_agent.py#L2168) | 2168 | `"    assert report[\"pages_fetched\"] is None"` | — |
+| [SRC-F725E90B2A-L002169](../../tests/test_web_agent.py#L2169) | 2169 | `""` | — |
+| [SRC-F725E90B2A-L002170](../../tests/test_web_agent.py#L2170) | 2170 | `""` | — |
+| [SRC-F725E90B2A-L002171](../../tests/test_web_agent.py#L2171) | 2171 | `"def test_research_error_without_provider_diagnostics_is_reported_as_unknown(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L002172](../../tests/test_web_agent.py#L2172) | 2172 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L002173](../../tests/test_web_agent.py#L2173) | 2173 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L002174](../../tests/test_web_agent.py#L2174) | 2174 | `"        \"queries\": [\"ابحث عن أحدث أخبار الطاقة المتجددة اليوم\"],"` | — |
+| [SRC-F725E90B2A-L002175](../../tests/test_web_agent.py#L2175) | 2175 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L002176](../../tests/test_web_agent.py#L2176) | 2176 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L002177](../../tests/test_web_agent.py#L2177) | 2177 | `"        \"freshness\": \"current\","` | — |
+| [SRC-F725E90B2A-L002178](../../tests/test_web_agent.py#L2178) | 2178 | `"        \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L002179](../../tests/test_web_agent.py#L2179) | 2179 | `"        \"platforms\": [],"` | — |
 | [SRC-F725E90B2A-L002180](../../tests/test_web_agent.py#L2180) | 2180 | `"        \"planning_method\": \"test\","` | — |
 | [SRC-F725E90B2A-L002181](../../tests/test_web_agent.py#L2181) | 2181 | `"    }"` | — |
 | [SRC-F725E90B2A-L002182](../../tests/test_web_agent.py#L2182) | 2182 | `""` | — |
@@ -798,21 +816,3 @@
 | [SRC-F725E90B2A-L002959](../../tests/test_web_agent.py#L2959) | 2959 | `"    assert len(observed) == 1"` | — |
 | [SRC-F725E90B2A-L002960](../../tests/test_web_agent.py#L2960) | 2960 | `"    assert observed[0][1] is False"` | — |
 | [SRC-F725E90B2A-L002961](../../tests/test_web_agent.py#L2961) | 2961 | `""` | — |
-| [SRC-F725E90B2A-L002962](../../tests/test_web_agent.py#L2962) | 2962 | `""` | — |
-| [SRC-F725E90B2A-L002963](../../tests/test_web_agent.py#L2963) | 2963 | `""` | — |
-| [SRC-F725E90B2A-L002964](../../tests/test_web_agent.py#L2964) | 2964 | `"@pytest.mark.parametrize(\"mode\", [\"deep\", \"latest\", \"social\"])"` | — |
-| [SRC-F725E90B2A-L002965](../../tests/test_web_agent.py#L2965) | 2965 | `"def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):"` | — |
-| [SRC-F725E90B2A-L002966](../../tests/test_web_agent.py#L2966) | 2966 | `"    \"\"\"A missing planner model must not erase a mode explicitly selected by the user.\"\"\""` | — |
-| [SRC-F725E90B2A-L002967](../../tests/test_web_agent.py#L2967) | 2967 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L002968](../../tests/test_web_agent.py#L2968) | 2968 | `"    agent.api_key = \"\""` | — |
-| [SRC-F725E90B2A-L002969](../../tests/test_web_agent.py#L2969) | 2969 | `"    seen = {}"` | — |
-| [SRC-F725E90B2A-L002970](../../tests/test_web_agent.py#L2970) | 2970 | `""` | — |
-| [SRC-F725E90B2A-L002971](../../tests/test_web_agent.py#L2971) | 2971 | `"    def collect(research_plan):"` | — |
-| [SRC-F725E90B2A-L002972](../../tests/test_web_agent.py#L2972) | 2972 | `"        seen[\"plan\"] = dict(research_plan)"` | — |
-| [SRC-F725E90B2A-L002973](../../tests/test_web_agent.py#L2973) | 2973 | `"        sources = [sample_source(0), sample_source(1)]"` | — |
-| [SRC-F725E90B2A-L002974](../../tests/test_web_agent.py#L2974) | 2974 | `"        return sources, [], {"` | — |
-| [SRC-F725E90B2A-L002975](../../tests/test_web_agent.py#L2975) | 2975 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002976](../../tests/test_web_agent.py#L2976) | 2976 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
-| [SRC-F725E90B2A-L002977](../../tests/test_web_agent.py#L2977) | 2977 | `"            \"query_results\": ["` | — |
-| [SRC-F725E90B2A-L002978](../../tests/test_web_agent.py#L2978) | 2978 | `"                {\"query\": query, \"results\": 1}"` | — |
-| [SRC-F725E90B2A-L002979](../../tests/test_web_agent.py#L2979) | 2979 | `"                for query in research_plan[\"queries\"]"` | — |
