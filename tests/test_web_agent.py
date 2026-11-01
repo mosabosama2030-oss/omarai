@@ -4402,3 +4402,69 @@ def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatc
     assert "health-password" not in provider
     assert "health-secret" not in provider
     assert "/api/v1" not in provider
+
+
+def test_lead_generation_falls_back_to_qualified_demand_when_model_is_rate_limited(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    question = "ابحث عن عميل يريد شراء نظام إنذار حريق صناعي في مصر"
+
+    qualified = sample_source(0)
+    qualified.update({
+        "title": "طلب شراء نظام إنذار حريق صناعي",
+        "snippet": "نرغب في شراء نظام إنذار حريق للمصنع.",
+        "page_text": "نرغب في شراء نظام إنذار حريق صناعي للمصنع خلال هذا الربع.",
+        "queries": [question],
+    })
+    related = sample_source(1)
+    related.update({
+        "title": "معلومات عامة عن أنظمة إنذار الحريق",
+        "snippet": "شرح لأنواع أنظمة الإنذار واستخداماتها.",
+        "page_text": "تشرح الصفحة أنواع أنظمة إنذار الحريق دون طلب شراء أو عرض سعر.",
+        "queries": [question],
+    })
+    plan = {
+        "queries": [question],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+    report = {
+        "queries_planned": 1,
+        "queries_attempted": 1,
+        "queries_attempted_known": True,
+        "query_results": [{"query": question, "results": 2}],
+        "search_attempted": True,
+        "search_outcome": "attempted_with_usable_sources",
+        "unique_sources": 2,
+        "pages_fetched": 2,
+        "providers_used": ["test_provider"],
+        "provider_counts": {"test_provider": 2},
+        "platform_counts": {"web": 2},
+        "social_direct_results": 0,
+        "evidence_signals": {},
+        "depth": "standard",
+        "planning_method": "test",
+    }
+    monkeypatch.setattr(agent, "_plan_search", lambda q, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", lambda p: (
+        [qualified, related], [], dict(report)
+    ))
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, source: True)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError("HTTP 429 Too Many Requests")),
+    )
+
+    result = agent.answer(question)
+
+    assert result["search_report"]["lead_generation"]["candidate_signal_count"] == 1
+    assert result["search_report"]["lead_generation"]["identity_verified"] is False
+    assert "https://example.com/research" in result["answer"]
+    assert "https://example.net/research" not in result["answer"]
+    assert "إشارة طلب علنية مرشحة" in result["answer"]
+    assert "HTTP 429" not in result["answer"]
