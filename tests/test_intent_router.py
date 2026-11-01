@@ -286,7 +286,7 @@ def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> N
 def test_no_duplicate_followup_leadin_symbols():
     """Follow-up normalization symbols must have one authoritative definition."""
     import inspect
-    import agents.intent_router as intent_router
+    from agents import intent_router
 
     module_source = inspect.getsource(intent_router)
     assert module_source.count("_FOLLOWUP_LEAD_IN_RE = re.compile") == 1
