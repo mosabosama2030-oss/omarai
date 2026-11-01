@@ -311,7 +311,7 @@ class Handler(BaseHTTPRequestHandler):
                 # GET/HEAD/other methods are not allowed to leave unread bytes
                 # on a persistent connection.
                 self.close_connection = True
-                self.send_error(400, "Request body is not supported for this method")
+                self.send_error(400, "Content-Length body is not supported for this method")
                 return False
 
         return True
