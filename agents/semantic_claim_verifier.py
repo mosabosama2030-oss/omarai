@@ -21,6 +21,28 @@ _PASS_STATUSES = frozenset({
     "completed_all_claims_supported", "completed_no_factual_claims",
 })
 
+_SAFE_NON_FACTUAL_HEADINGS = frozenset({
+    "تفصيل المقارنة", "المقارنة", "الخلاصة", "الملخص", "ملخص",
+    "مقدمة", "النتائج", "التوصيات", "المصادر", "المراجع", "المنهجية",
+    "المزايا", "العيوب", "المخاطر",
+    "summary", "overview", "introduction", "comparison", "results",
+    "recommendations", "sources", "references", "methodology", "pros",
+    "cons", "limitations", "risks", "conclusion",
+})
+
+
+def _is_safe_non_factual_heading(text: Any) -> bool:
+    """Allow only a closed set of structural headings to bypass factual support."""
+    heading = str(text or "").strip()
+    while heading.startswith("#"):
+        heading = heading[1:].lstrip()
+    for prefix in ("- ", "* ", "• "):
+        if heading.startswith(prefix):
+            heading = heading[len(prefix):].strip()
+            break
+    heading = " ".join(heading.rstrip(":：").split())
+    return heading.casefold() in _SAFE_NON_FACTUAL_HEADINGS
+
 
 def _not_verifiable(reason: str, ledger: dict[str, Any] | None = None) -> dict[str, Any]:
     result: dict[str, Any] = {
@@ -69,7 +91,10 @@ def build_semantic_verification_request(
         return _not_verifiable("no_claim_segments", ledger)
     if any(
         not isinstance(row, dict)
-        or row.get("citation_status") == "citation_index_out_of_range"
+        or row.get("citation_status") in {
+            "citation_index_out_of_range",
+            "citation_index_invalid_or_too_large",
+        }
         for row in segments
     ):
         return _not_verifiable("invalid_citation_reference", ledger)
@@ -157,8 +182,14 @@ def build_semantic_verification_request(
         "a matching title, or a number appearing elsewhere is insufficient. "
         "A contradiction may be reported only when a supplied readable source gives "
         "evidence against the same entity, period, scope, and unit. Distinguish a real "
-        "conflict from different scopes or dates. Mark only headings, transitions, "
-        "or purely structural text as non_factual; factual, numeric, comparative, "
+        "conflict from different scopes or dates. Mark a segment non_factual only "
+        "when its entire text is a known structural heading from this closed set: "
+        "تفصيل المقارنة, المقارنة, الخلاصة, الملخص, ملخص, مقدمة, النتائج, التوصيات, "
+        "المصادر, المراجع, المنهجية, المزايا, العيوب, المخاطر, Summary, Overview, "
+        "Introduction, Comparison, Results, Recommendations, Sources, References, "
+        "Methodology, Pros, Cons, Limitations, Risks, Conclusion. All other text, "
+        "including uncited statements, must be assessed as factual; if no exact cited "
+        "source supports a factual claim, mark it insufficient. Factual, numeric, comparative, "
         "identity, date, and causal statements are factual. Uncited factual claims "
         "cannot be supported. Return JSON only, with exactly this shape and no extra "
         "keys: {\"claims\":[{\"segment_id\":\"S001\",\"assessment\":"
@@ -307,6 +338,12 @@ def parse_semantic_verification_response(
             return _not_verifiable("insufficient_assessment_has_evidence_indexes", ledger)
         if assessment == "non_factual" and (citations_present or has_support or has_contradiction):
             return _not_verifiable("non_factual_assessment_has_citations", ledger)
+        if assessment == "non_factual" and not _is_safe_non_factual_heading(
+            segment.get("text")
+        ):
+            return _not_verifiable(
+                "non_factual_label_not_deterministically_safe", ledger
+            )
 
         if assessment == "supported":
             factual_supported_count += 1
