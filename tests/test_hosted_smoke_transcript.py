@@ -58,7 +58,12 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
     assert transcript["answer"] == "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق. [المصدر 1]"
     assert transcript["sources"][0]["url"] == "https://example.test/fire-alarm-tender"
     assert transcript["pipeline_completion_status"] == "completed"
-    agent_call = next(call for call in calls if call[0].endswith("/api/agent") and call[2])
+    agent_call = next(
+        call for call in calls
+        if call[0].endswith("/api/agent")
+        and isinstance(call[2], dict)
+        and call[2].get("execution_profile") == "hosted_smoke"
+    )
     assert agent_call[2]["execution_profile"] == "hosted_smoke"
     assert agent_call[2]["allow_provider_usage"] is True
     assert report["request_budget"]["limits"]["search_queries"] == 2
