@@ -233,7 +233,6 @@ def _run_no_cost_preflight(
         auth_ok, _ = probe(
             "unauthenticated_agent",
             "/api/agent",
-            method="POST",
             payload={"question": ""},
             expected_status=401,
         )
