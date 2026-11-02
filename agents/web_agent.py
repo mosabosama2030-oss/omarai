@@ -4796,13 +4796,22 @@ class WebAgent:
         return report
 
     def answer(
-        self, question: str, history: Any = None, mode: str = "auto"
+        self,
+        question: str,
+        history: Any = None,
+        mode: str = "auto",
+        *,
+        request_budget_limits: dict[str, int] | None = None,
+        request_timeout_seconds: int | None = None,
     ) -> dict[str, Any]:
         """Run one answer with an isolated, observable resource budget."""
         previous_budget = getattr(self, "_request_budget", None)
         self.generation_diagnostics = []
         self._generation_attempt_sequence = 0
-        budget = RequestBudget.from_environment()
+        budget = RequestBudget.from_environment(
+            limits_override=request_budget_limits,
+            timeout_seconds_override=request_timeout_seconds,
+        )
         self._request_budget = budget
         try:
             result = self._answer_with_budget(question, history, mode)

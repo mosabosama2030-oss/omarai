@@ -811,6 +811,37 @@ class Handler(BaseHTTPRequestHandler):
                     return self.respond(400, {"error": "question must be a non-empty string"})
                 agent = WebAgent()
                 history = data.get("history", [])
+                execution_profile = data.get("execution_profile")
+                if execution_profile is not None:
+                    if execution_profile != "hosted_smoke":
+                        return self.respond(400, {"error": "unsupported execution_profile"})
+                    if data.get("allow_provider_usage") is not True:
+                        return self.respond(
+                            403,
+                            {"error": "hosted_smoke requires explicit provider-usage approval"},
+                        )
+                    if self._authenticated_principal.get("role") != "owner":
+                        return self.respond(
+                            403,
+                            {"error": "hosted_smoke execution profile is restricted to workspace owners"},
+                        )
+                    # Fixed owner-only ceilings: 2 queries, 8 provider calls,
+                    # 3 model calls, 2 page fetches, and no external tool calls.
+                    return self._run_bounded_agent_operation(
+                        lambda: agent.answer(
+                            question,
+                            history,
+                            data.get("mode", "auto"),
+                            request_budget_limits={
+                                "search_queries": 2,
+                                "search_calls": 8,
+                                "model_calls": 3,
+                                "page_fetches": 2,
+                                "tool_calls": 0,
+                            },
+                            request_timeout_seconds=60,
+                        )
+                    )
                 if "mode" not in data:
                     return self._run_bounded_agent_operation(
                         lambda: agent.answer(question, history)

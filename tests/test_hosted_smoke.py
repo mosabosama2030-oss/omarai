@@ -38,25 +38,29 @@ class Handler(BaseHTTPRequestHandler):
             return
         length = int(self.headers.get("Content-Length", "0"))
         self.rfile.read(length)
-        if self.path == "/api/diagnostics":
+        if self.path == "/api/agent":
             self.respond(200, {
-                "overall_status": "passed",
-                "checks": {
-                    "web_search": {
-                        "status": "passed", "result_count": 2,
-                        "provider_counts": {"bing_rss": 1, "duckduckgo_html": 1},
-                    },
-                    "language_model": {"status": "passed", "response_received": True},
-                    "social_search": {"status": "skipped"},
-                },
-            })
-        elif self.path == "/api/agent":
-            self.respond(200, {
-                "answer": "القاهرة هي عاصمة مصر. [المصدر 1]",
+                "answer": "تم فحص المصادر المنشورة ولم يظهر طلب شراء مؤكد. [المصدر 1]",
                 "used_web_search": True,
                 "used_language_model": True,
+                "answer_evidence_status": "citation_indices_validated_only",
                 "sources": [{"title": "مصدر اختبار", "url": "https://example.com/source"}],
-                "search_report": {"providers_used": ["bing_rss"], "pages_fetched": 1},
+                "search_report": {
+                    "search_outcome": "attempted_with_usable_sources",
+                    "pipeline_completion_status": "completed",
+                    "providers_used": ["bing_rss"],
+                    "pages_fetched": 1,
+                },
+                "request_budget": {
+                    "limits": {
+                        "search_queries": 2, "search_calls": 8, "model_calls": 3,
+                        "page_fetches": 2, "tool_calls": 0,
+                    },
+                    "counts": {
+                        "search_queries": 1, "search_calls": 2, "model_calls": 2,
+                        "page_fetches": 1, "tool_calls": 0,
+                    },
+                },
             })
         else:
             self.respond(404, {"error": "not found"})
@@ -95,15 +99,16 @@ def test_normalize_origin_allows_plain_http_only_for_local_test():
         normalize_origin("http://example.com", allow_http=True)
 
 
-def test_smoke_checks_health_auth_live_diagnostics_and_agent(hosted_server):
+def test_smoke_checks_health_auth_bounded_agent_and_acceptance_gates(hosted_server):
     result = run_smoke(
         hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5
     )
     assert result["result"] == "passed"
     assert result["checks"]["health"] == "passed"
     assert result["checks"]["authentication"] == "passed"
-    assert result["checks"]["live_search"]["result_count"] == 2
+    assert result["checks"]["live_search"]["source_count"] == 1
     assert result["checks"]["agent_request"]["source_count"] == 1
+    assert result["request_budget"]["limits"]["search_calls"] == 8
 
 
 def test_smoke_never_forwards_bearer_to_cross_origin_redirect():
@@ -154,6 +159,41 @@ def test_smoke_never_forwards_bearer_to_cross_origin_redirect():
         destination.server_close()
         source_thread.join(timeout=2)
         destination_thread.join(timeout=2)
+
+
+
+
+def test_request_json_records_safe_http_error_metadata_without_body():
+    class ForbiddenHandler(BaseHTTPRequestHandler):
+        def log_message(self, format: str, *args: object) -> None:
+            return
+
+        def do_GET(self):
+            body = b'{"error":"edge denied","secret":"must-not-be-recorded"}'
+            self.send_response_only(403)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("X-Request-ID", "req_12345")
+            self.send_header("Server", "edge-gateway")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), ForbiddenHandler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        status, payload = hosted_smoke_test.request_json(
+            f"http://127.0.0.1:{server.server_port}/api/health", timeout=3
+        )
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=2)
+
+    assert status == 403
+    assert payload["_http_diagnostics"]["request_id"] == "req_12345"
+    assert payload["_http_diagnostics"]["server"] == "edge-gateway"
+    assert "secret" not in str(payload["_http_diagnostics"])
 
 
 def test_smoke_refuses_missing_or_short_access_token(hosted_server):
@@ -218,9 +258,11 @@ def test_smoke_requires_explicit_provider_usage_approval_before_network(monkeypa
     assert calls == []
 
 
-def test_hosted_smoke_workflow_is_manual_and_cost_gated():
+def test_hosted_smoke_workflow_is_manual_cost_gated_and_scopes_secrets():
     workflow = Path(".github/workflows/hosted-smoke.yml").read_text(encoding="utf-8")
     assert "schedule:" not in workflow
     assert "allow_provider_usage:" in workflow
     assert "default: false" in workflow
     assert "--allow-provider-usage" in workflow
+    assert "    env:\n      OMARAI_ACCESS_TOKEN:" not in workflow
+    assert workflow.count("OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}") == 2

@@ -101,6 +101,47 @@ def test_social_provider_reserves_budget_before_network_io(monkeypatch):
         agent._search_social("budget test", ["reddit"])
 
 
+def test_explicit_request_limits_override_environment_and_remain_bounded(monkeypatch):
+    monkeypatch.setenv("OMARAI_REQUEST_MAX_SEARCH_CALLS", "32")
+    budget = RequestBudget.from_environment(
+        timeout_seconds_override=60,
+        limits_override={
+            "search_queries": 2,
+            "search_calls": 8,
+            "model_calls": 3,
+            "page_fetches": 2,
+            "tool_calls": 0,
+        },
+    )
+    snapshot = budget.snapshot()
+    assert snapshot["timeout_seconds"] == 60
+    assert snapshot["limits"] == {
+        "search_queries": 2,
+        "search_calls": 8,
+        "model_calls": 3,
+        "page_fetches": 2,
+        "tool_calls": 0,
+    }
+
+
+@pytest.mark.parametrize(
+    ("limits", "timeout"),
+    [
+        ({"search_calls": 41}, None),
+        ({"search_queries": 0}, None),
+        ({"unknown": 1}, None),
+        ({"model_calls": True}, None),
+        (None, 121),
+    ],
+)
+def test_explicit_request_budget_overrides_reject_invalid_or_expansive_values(limits, timeout):
+    with pytest.raises(ValueError):
+        RequestBudget.from_environment(
+            limits_override=limits,
+            timeout_seconds_override=timeout,
+        )
+
+
 @pytest.mark.parametrize(
     ("resource", "limit"),
     [

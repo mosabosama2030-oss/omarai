@@ -273,6 +273,68 @@ def test_web_agent_endpoint_uses_agent_result(local_api, monkeypatch):
 
 
 
+def test_hosted_smoke_profile_passes_fixed_resource_limits_to_owner_agent(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    observed = {}
+
+    def fake_answer(
+        self, question, history=None, mode="auto", *,
+        request_budget_limits=None, request_timeout_seconds=None,
+    ):
+        observed.update({
+            "question": question,
+            "mode": mode,
+            "limits": request_budget_limits,
+            "timeout": request_timeout_seconds,
+        })
+        return {"answer": "bounded"}
+
+    monkeypatch.setattr(WebAgent, "answer", fake_answer)
+    status, response = request_json(
+        local_api,
+        "/api/agent",
+        method="POST",
+        payload={
+            "question": "hosted smoke test",
+            "mode": "auto",
+            "execution_profile": "hosted_smoke",
+            "allow_provider_usage": True,
+        },
+    )
+    assert status == 200
+    assert response["answer"] == "bounded"
+    assert observed["limits"] == {
+        "search_queries": 2,
+        "search_calls": 8,
+        "model_calls": 3,
+        "page_fetches": 2,
+        "tool_calls": 0,
+    }
+    assert observed["timeout"] == 60
+
+
+def test_hosted_smoke_profile_requires_explicit_provider_approval(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    monkeypatch.setattr(
+        WebAgent, "answer",
+        lambda *_args, **_kwargs: pytest.fail("unapproved hosted smoke must not execute"),
+    )
+    status, response = request_json(
+        local_api,
+        "/api/agent",
+        method="POST",
+        payload={
+            "question": "hosted smoke test",
+            "execution_profile": "hosted_smoke",
+            "allow_provider_usage": False,
+        },
+    )
+    assert status == 403
+    assert "explicit provider-usage approval" in response["error"]
+
+
 def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, monkeypatch):
     from api.omarai import WebAgent
 

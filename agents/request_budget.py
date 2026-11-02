@@ -61,7 +61,12 @@ class RequestBudget:
         self._lock = threading.Lock()
 
     @classmethod
-    def from_environment(cls) -> RequestBudget:
+    def from_environment(
+        cls,
+        *,
+        limits_override: Mapping[str, int] | None = None,
+        timeout_seconds_override: int | None = None,
+    ) -> RequestBudget:
         timeout = _bounded_env_int(
             "OMARAI_REQUEST_BUDGET_SECONDS",
             DEFAULT_TIMEOUT_SECONDS,
@@ -77,6 +82,29 @@ class RequestBudget:
             )
             for key, defaults in RESOURCE_LIMITS.items()
         }
+        if timeout_seconds_override is not None:
+            if (
+                isinstance(timeout_seconds_override, bool)
+                or not isinstance(timeout_seconds_override, int)
+                or not 10 <= timeout_seconds_override <= MAX_TIMEOUT_SECONDS
+            ):
+                raise ValueError("request budget timeout override is outside the allowed range")
+            timeout = timeout_seconds_override
+        if limits_override is not None:
+            if not isinstance(limits_override, Mapping):
+                raise ValueError("request budget limits override must be a mapping")
+            for key, value in limits_override.items():
+                if key not in RESOURCE_LIMITS:
+                    raise ValueError(f"unknown request budget resource: {key}")
+                minimum = 0 if key == "tool_calls" else 1
+                maximum = RESOURCE_LIMITS[key][1]
+                if (
+                    isinstance(value, bool)
+                    or not isinstance(value, int)
+                    or not minimum <= value <= maximum
+                ):
+                    raise ValueError(f"request budget override for {key} is outside the allowed range")
+                limits[key] = value
         return cls(timeout_seconds=timeout, limits=limits)
 
     def remaining_seconds(self) -> float:

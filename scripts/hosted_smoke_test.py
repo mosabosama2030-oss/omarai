@@ -83,6 +83,38 @@ def normalize_origin(value: str, allow_http: bool = False) -> str:
     return f"{parsed.scheme}://{host}"
 
 
+def _safe_response_metadata(headers: Any, body_size: int) -> dict[str, Any]:
+    """Keep only non-secret response metadata useful for diagnosing edge rejections."""
+    headers = headers or {}
+    request_id = headers.get("X-Request-ID") or headers.get("CF-Ray")
+    server = headers.get("Server")
+    content_type = headers.get("Content-Type")
+    safe_id = (
+        request_id.strip()[:128]
+        if isinstance(request_id, str)
+        and re.fullmatch(r"[A-Za-z0-9._:-]{1,128}", request_id.strip())
+        else None
+    )
+    safe_server = (
+        server.strip()[:80]
+        if isinstance(server, str)
+        and re.fullmatch(r"[A-Za-z0-9._-]{1,80}", server.strip())
+        else None
+    )
+    safe_content_type = (
+        content_type.split(";", 1)[0].strip().lower()[:80]
+        if isinstance(content_type, str)
+        and re.fullmatch(r"[A-Za-z0-9.+-]+/[A-Za-z0-9.+-]+(?:;.*)?", content_type.strip())
+        else None
+    )
+    return {
+        "request_id": safe_id,
+        "server": safe_server,
+        "content_type": safe_content_type,
+        "body_bytes": max(0, int(body_size)),
+    }
+
+
 def request_json(url: str, *, token: str = "", payload: dict[str, Any] | None = None,
                  timeout: float = 90) -> tuple[int, dict[str, Any] | None]:
     headers = {"Accept": "application/json"}
@@ -93,20 +125,32 @@ def request_json(url: str, *, token: str = "", payload: dict[str, Any] | None = 
     if token:
         headers["Authorization"] = "Bearer " + token
     request = urllib.request.Request(url, data=data, headers=headers)
+    response_metadata: dict[str, Any] | None = None
     try:
         opener = urllib.request.build_opener(_SameOriginRedirectHandler())
         with opener.open(request, timeout=timeout) as response:
             status, body = response.status, response.read(1_000_000)
+            response_headers = response.headers
     except urllib.error.HTTPError as exc:
         status = exc.code
         body = exc.read(100_000)
+        response_headers = exc.headers
+        response_metadata = _safe_response_metadata(response_headers, len(body))
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
         path = urllib.parse.urlsplit(url).path
-        raise SmokeError(f"Network request failed at {path}; check the service and network.") from exc
+        raise SmokeError(
+            f"Network request failed at {path} ({type(exc).__name__}); check the service and network."
+        ) from exc
     try:
         result = json.loads(body.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError):
         result = None
+    if status >= 400:
+        if not isinstance(result, dict):
+            result = {}
+        result["_http_diagnostics"] = response_metadata or _safe_response_metadata(
+            response_headers, len(body)
+        )
     return status, result if isinstance(result, dict) else None
 
 
@@ -135,7 +179,8 @@ def run_smoke(
 
     if not allow_provider_usage:
         raise SmokeError(
-            "This acceptance test performs live search and one model completion that may consume provider quota or incur charges. "
+            "This acceptance test performs one owner-only agent request capped at 2 search queries, "
+            "8 provider calls, 3 model calls, and 2 page fetches; provider quota or charges may be consumed. "
             "Pass --allow-provider-usage only after explicit human approval."
         )
 
@@ -150,6 +195,11 @@ def run_smoke(
     }
     status, health = request_json(f"{origin}/api/health", timeout=min(timeout, 20))
     if status != 200 or not health or health.get("ok") is not True:
+        if isinstance(health, dict) and isinstance(health.get("_http_diagnostics"), dict):
+            partial_report["last_http_error"] = {
+                "path": "/api/health",
+                **health["_http_diagnostics"],
+            }
         raise SmokeError(f"Health check failed (HTTP {status}).", partial_report)
     checks["health"] = "passed"
 
@@ -189,29 +239,23 @@ def run_smoke(
     else:
         checks["authentication"] = "local_loopback_dev_bypass"
 
-    # These are real network/provider calls and may incur model/search usage.
-    status, diagnostics = request_json(
-        f"{origin}/api/diagnostics", token=token,
-        payload={"test_model": False, "test_social": False, "allow_provider_usage": True}, timeout=timeout,
-    )
-    if status != 200 or not diagnostics:
-        raise SmokeError(f"Authenticated diagnostics failed (HTTP {status}).", partial_report)
-    parts = diagnostics.get("checks", {})
-    web = parts.get("web_search", {}) if isinstance(parts, dict) else {}
-    if not isinstance(web, dict) or web.get("status") != "passed":
-        raise SmokeError("The real web-search connectivity test did not pass.", partial_report)
-    checks["live_search"] = {
-        "status": "passed", "result_count": web.get("result_count", 0),
-        "provider_counts": web.get("provider_counts", {}),
-    }
+    # One authenticated agent request performs the bounded live search and model work.
     status, answer = request_json(
         f"{origin}/api/agent", token=token, timeout=timeout,
         payload={
             "question": LIVE_TEST_QUESTION,
-            "history": [], "mode": "auto",
+            "history": [],
+            "mode": "auto",
+            "execution_profile": "hosted_smoke",
+            "allow_provider_usage": True,
         },
     )
     if status != 200 or not answer:
+        if isinstance(answer, dict) and isinstance(answer.get("_http_diagnostics"), dict):
+            partial_report["last_http_error"] = {
+                "path": "/api/agent",
+                **answer["_http_diagnostics"],
+            }
         raise SmokeError(f"Authenticated agent request failed (HTTP {status}).", partial_report)
     sources = answer.get("sources")
     usable = [
@@ -222,6 +266,7 @@ def run_smoke(
     ] if isinstance(sources, list) else []
     search_report = answer.get("search_report")
     answer_text = str(answer.get("answer", "")).strip()
+    request_budget = answer.get("request_budget")
     source_records = [
         {
             "title": str(item.get("title") or "")[:300],
@@ -244,8 +289,11 @@ def run_smoke(
             if isinstance(search_report, dict) else None
         ),
         "answer_evidence_status": answer.get("answer_evidence_status"),
+        "request_budget": request_budget,
     }
     partial_report["transcript"] = [transcript]
+    if not answer_text:
+        raise SmokeError("Agent request returned an empty answer.", partial_report)
     if answer.get("used_web_search") is not True or not usable:
         raise SmokeError(
             "Agent request did not return a live web search with usable source URLs.",
@@ -256,32 +304,67 @@ def run_smoke(
             "Agent request did not confirm that a language model was used.",
             partial_report,
         )
+    if not isinstance(search_report, dict):
+        raise SmokeError("Agent request omitted its structured search report.", partial_report)
+    if search_report.get("search_outcome") != "attempted_with_usable_sources":
+        raise SmokeError("Agent search outcome was not completed with usable sources.", partial_report)
+    if search_report.get("pipeline_completion_status") != "completed":
+        raise SmokeError("Agent research pipeline did not complete successfully.", partial_report)
+    if answer.get("answer_evidence_status") != "citation_indices_validated_only":
+        raise SmokeError("Agent answer did not pass citation-index validation.", partial_report)
+    if not isinstance(request_budget, dict):
+        raise SmokeError("Agent request omitted its resource-budget report.", partial_report)
+    budget_limits = request_budget.get("limits")
+    budget_counts = request_budget.get("counts")
+    expected_budget_limits = {
+        "search_queries": 2,
+        "search_calls": 8,
+        "model_calls": 3,
+        "page_fetches": 2,
+        "tool_calls": 0,
+    }
+    if not isinstance(budget_limits, dict) or not isinstance(budget_counts, dict):
+        raise SmokeError("Agent request budget report is incomplete.", partial_report)
+    for resource, maximum in expected_budget_limits.items():
+        limit = budget_limits.get(resource)
+        count = budget_counts.get(resource)
+        if (
+            isinstance(limit, bool) or not isinstance(limit, int)
+            or limit > maximum or limit < 0
+            or isinstance(count, bool) or not isinstance(count, int)
+            or count < 0 or count > limit
+        ):
+            raise SmokeError(f"Agent request exceeded or misreported its {resource} budget.", partial_report)
+    checks["live_search"] = {
+        "status": "passed",
+        "search_outcome": search_report.get("search_outcome"),
+        "source_count": len(usable),
+        "providers_reported": search_report.get("providers_used", []),
+    }
     checks["language_model"] = {
         "status": "passed",
-        "response_received": bool(answer_text),
+        "response_received": True,
         "verified_by": "agent_request",
     }
     checks["agent_request"] = {
-        "status": "passed", "source_count": len(usable),
-        "direct_pages_read": search_report.get("pages_fetched") if isinstance(search_report, dict) else None,
-        "providers_reported": search_report.get("providers_used", []) if isinstance(search_report, dict) else [],
-        "answer_received": bool(answer_text),
-        "pipeline_completion_status": (
-            search_report.get("pipeline_completion_status") if isinstance(search_report, dict) else None
-        ),
+        "status": "passed",
+        "source_count": len(usable),
+        "direct_pages_read": search_report.get("pages_fetched"),
+        "providers_reported": search_report.get("providers_used", []),
+        "answer_received": True,
+        "pipeline_completion_status": search_report.get("pipeline_completion_status"),
         "answer_evidence_status": answer.get("answer_evidence_status"),
+        "request_budget": request_budget,
     }
     partial_report.update({
         "result": "passed",
         "checks": checks,
-        "connector_check": (
-            diagnostics.get("checks", {}).get("web_search", {})
-            if isinstance(diagnostics.get("checks"), dict) else {}
+        "request_budget": request_budget,
+        "note": (
+            "One owner-authorized agent request was executed under a fixed per-request budget "
+            "(2 search queries, 8 provider calls, 3 model calls, 2 page fetches, 0 tool calls). "
+            "This confirms the request path at test time, not continuous uptime or factual correctness."
         ),
-        "provider_diagnostics": diagnostics.get("provider_diagnostics", []),
-        "connector_configuration": diagnostics.get("configuration", {}),
-        "diagnostic_warnings": diagnostics.get("warnings", []),
-        "note": "Transcript contains the exact fixed test question, answer, and returned source metadata. This proves the request path worked at test time, not continuous uptime. One model completion is made by the agent request; provider usage may incur charges.",
     })
     return partial_report
 
@@ -305,7 +388,7 @@ def main() -> int:
     parser.add_argument(
         "--allow-provider-usage",
         action="store_true",
-        help="Explicitly authorize one live search and one model completion that may consume provider quota or incur charges.",
+        help="Explicitly authorize one hosted-smoke agent request with fixed per-request search/model/page limits; provider quota or charges may be consumed.",
     )
     parser.add_argument(
         "--output",
