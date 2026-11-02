@@ -529,3 +529,20 @@ def test_hosted_smoke_budget_caps_match_server_enforced_profile():
     from agents.request_budget import HOSTED_SMOKE_BUDGET_LIMITS
 
     assert hosted_smoke_test.HOSTED_SMOKE_BUDGET_MAX == HOSTED_SMOKE_BUDGET_LIMITS
+
+
+def test_hosted_smoke_requires_successful_no_cost_preflight_before_live_usage():
+    workflow = Path(".github/workflows/hosted-smoke.yml").read_text(encoding="utf-8")
+    preflight_step = workflow.split("- name: Run no-cost hosted preflight", 1)[1].split(
+        "- name: Run live hosted acceptance", 1
+    )[0]
+    live_step = workflow.split("- name: Run live hosted acceptance", 1)[1].split(
+        "- name: Upload hosted question-and-answer transcript", 1
+    )[0]
+
+    assert "id: preflight" in preflight_step
+    assert "if:" not in preflight_step
+    assert '--expected-sha "$(git rev-parse HEAD)"' in preflight_step
+    assert "steps.preflight.outcome == 'success'" in live_step
+    assert "allow_provider_usage == true" in live_step
+    assert "OMARAI_ACCESS_TOKEN" not in preflight_step
