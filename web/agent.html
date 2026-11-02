@@ -70,8 +70,9 @@ button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,te
       <h3>الوصول الآمن إلى النسخة المستضافة</h3>
       <label for="accessToken" style="display:block;font-size:11px;color:#b9c9dc;margin:9px 0">رمز الوصول الخاص بالتطبيق</label>
       <input id="accessToken" type="password" autocomplete="off" spellcheck="false" placeholder="أدخل رمز الاستضافة الذي أنشأته" style="width:100%;padding:11px;border:1px solid #314861;border-radius:11px;background:#07111e;color:var(--text);font-size:12px">
-      <button id="saveAccessToken" type="button" class="ghost checkbutton">حفظ الرمز على هذا الجهاز</button>
-      <p style="font-size:10px;color:var(--muted);line-height:1.8;margin-top:7px">لا تضع مفتاح OpenRouter هنا. هذا رمز منفصل لحماية تطبيقك المستضاف، ويُحفظ محليًا في متصفحك فقط.</p>
+      <button id="saveAccessToken" type="button" class="ghost checkbutton">تسجيل الدخول</button>
+      <button id="logoutSession" type="button" class="ghost checkbutton">تسجيل الخروج</button>
+      <p id="authStatus" style="font-size:10px;color:var(--muted);line-height:1.8;margin-top:7px" aria-live="polite">لا يُحفظ رمز الوصول في تخزين JavaScript؛ بعد الدخول يستخدم المتصفح ملف ارتباط HttpOnly محدود المدة.</p>
     </div>
     <div class="sideblock">
       <h3>حالة الاتصال الفعلية</h3>
@@ -98,8 +99,7 @@ button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,te
 
 <script>
 const $=id=>document.getElementById(id);
-const ACCESS_TOKEN_STORAGE_KEY="omarai_access_token";
-function apiHeaders(){const headers={"Content-Type":"application/json"};const token=($("accessToken")?.value||localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)||"").trim();if(token)headers.Authorization="Bearer "+token;return headers;}
+function apiHeaders(){return {"Content-Type":"application/json"};}
 const history=[];
 let busy=false;
 let activeMode="deep";
@@ -401,7 +401,7 @@ async function ask(value){
  pending.innerHTML='<div class="who">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class="bubble"><div class="pending"><span class="spinner"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';
  $("messages").appendChild(pending);pending.scrollIntoView({behavior:"smooth",block:"end"});
  try{
-  const response=await fetch("/api/agent",{method:"POST",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});
+  const response=await fetch("/api/agent",{method:"POST",credentials:"same-origin",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});
   const data=await response.json().catch(()=>({}));
   pending.remove();
   if(!response.ok){
@@ -438,9 +438,10 @@ async function ask(value){
 }
 async function runDiagnostics(){
  const button=$("runDiagnostics"),output=$("diagnosticsResult");if(button.disabled)return;
- button.disabled=true;button.textContent="جارٍ الاختبار الحقيقي…";output.textContent="يُرسل الآن طلب فعلي إلى محركات البحث، وقد يستغرق بضع ثوانٍ.";
+ if(!window.confirm("سيجري هذا الاختبار اتصالات فعلية بمحركات البحث والنموذج، وقد يستهلك حصص الموفّرين أو يترتب عليه رسوم. هل توافق على تنفيذ هذه الاتصالات الآن؟"))return;
+ button.disabled=true;button.textContent="جارٍ الاختبار الحقيقي…";output.textContent="تُرسل الآن طلبات فعلية إلى موفّري البحث والنموذج بعد موافقتك.";
  try{
-  const response=await fetch("/api/diagnostics",{method:"POST",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$("diagSocial").checked})});
+  const response=await fetch("/api/diagnostics",{method:"POST",credentials:"same-origin",headers:apiHeaders(),body:JSON.stringify({test_model:true,test_social:$("diagSocial").checked,allow_provider_usage:true})});
   const data=await response.json();if(!response.ok)throw Error(data.error||"فشل طلب الاختبار");
   const labels={passed:"نجح فعليًا",degraded:"جزئي أو بلا نتائج كافية",failed:"فشل",skipped:"لم يُختبر",not_configured:"غير مضبوط"};
   const lines=["النتيجة: "+(labels[data.overall_status]||data.overall_status)];
@@ -482,9 +483,39 @@ $("send").addEventListener("click",()=>ask());
 $("question").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();ask();}});
 $("clear").addEventListener("click",()=>{history.length=0;$("messages").innerHTML='<div class="welcome" id="welcome"><div class="welcome-icon">⌕</div><h3>محادثة جديدة</h3><p>اكتب سؤالك واختر نمط البحث المناسب. المصادر والتغطية سيظهران أسفل الإجابة.</p></div>';$("question").focus();});
 document.querySelectorAll(".suggestions button").forEach(b=>b.addEventListener("click",()=>ask(b.textContent)));
-$("saveAccessToken").addEventListener("click",()=>{const token=$("accessToken").value.trim();if(token)localStorage.setItem(ACCESS_TOKEN_STORAGE_KEY,token);else localStorage.removeItem(ACCESS_TOKEN_STORAGE_KEY);$("saveAccessToken").textContent=token?"تم حفظ الرمز على هذا الجهاز":"تم مسح الرمز المحفوظ";});
-$("accessToken").value=localStorage.getItem(ACCESS_TOKEN_STORAGE_KEY)||"";
-$("runDiagnostics").addEventListener("click",runDiagnostics);checkHealth();
+async function loginBrowserSession(){
+  const token=$("accessToken").value.trim();
+  if(!token){$("authStatus").textContent="أدخل رمز الوصول أولًا.";return;}
+  try{
+    const response=await fetch("/api/session",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({access_token:token})});
+    const data=await response.json();
+    if(!response.ok)throw new Error(data.error||"تعذر تسجيل الدخول.");
+    $("accessToken").value="";
+    $("authStatus").textContent="تم تسجيل الدخول بجلسة HttpOnly تنتهي خلال 8 ساعات أو عند انتهاء/إبطال الرمز.";
+    $("saveAccessToken").textContent="متصل";
+  }catch(error){$("authStatus").textContent=error.message;}
+}
+async function logoutBrowserSession(){
+  try{
+    const response=await fetch("/api/session/logout",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:"{}"});
+    const data=await response.json();
+    if(!response.ok)throw new Error(data.error||"تعذر تسجيل الخروج.");
+    $("authStatus").textContent="تم تسجيل الخروج.";
+    $("saveAccessToken").textContent="تسجيل الدخول";
+  }catch(error){$("authStatus").textContent=error.message;}
+}
+async function checkBrowserSession(){
+  try{
+    const response=await fetch("/api/session",{credentials:"same-origin"});
+    const data=await response.json();
+    if(!response.ok)throw new Error(data.error||"لا توجد جلسة نشطة.");
+    $("authStatus").textContent="جلسة نشطة بدور: "+data.role;
+    $("saveAccessToken").textContent="متصل";
+  }catch(_error){$("authStatus").textContent="أدخل رمز الوصول لبدء جلسة آمنة.";}
+}
+$("saveAccessToken").addEventListener("click",loginBrowserSession);
+$("logoutSession").addEventListener("click",logoutBrowserSession);
+$("runDiagnostics").addEventListener("click",runDiagnostics);checkHealth();checkBrowserSession();
 </script>
 </body>
 </html>

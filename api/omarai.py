@@ -12,6 +12,7 @@ import threading
 import time
 from collections import defaultdict, deque
 from functools import lru_cache
+from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import ClassVar
@@ -24,6 +25,8 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
 MAX_REQUEST_BODY_BYTES = 200_000
+BROWSER_SESSION_COOKIE_MAX_AGE = 8 * 60 * 60
+BROWSER_SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_-]{32,128}$")
 
 
 def _csp_hash_source(value: str) -> str:
@@ -279,6 +282,40 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             self._request_header_deadline = None
 
+    def parse_request(self):
+        """Reject ambiguous HTTP message framing before dispatching any handler."""
+        if not super().parse_request():
+            return False
+
+        transfer_encodings = self.headers.get_all("Transfer-Encoding", [])
+        if transfer_encodings:
+            # This API does not implement chunked request decoding. Never let a
+            # proxy/backend disagree about where the request body ends.
+            self.close_connection = True
+            self.send_error(400, "Transfer-Encoding is not supported")
+            return False
+
+        content_lengths = self.headers.get_all("Content-Length", [])
+        if len(content_lengths) > 1:
+            self.close_connection = True
+            self.send_error(400, "Multiple Content-Length headers are not supported")
+            return False
+
+        if content_lengths:
+            raw_size = content_lengths[0].strip()
+            if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():
+                self.close_connection = True
+                self.send_error(400, "valid Content-Length is required")
+                return False
+            if self.command != "POST" and raw_size.lstrip("0"):
+                # GET/HEAD/other methods are not allowed to leave unread bytes
+                # on a persistent connection.
+                self.close_connection = True
+                self.send_error(400, "Content-Length body is not supported for this method")
+                return False
+
+        return True
+
     store = _lead_store_from_environment()
     _rate_lock = threading.Lock()
     _request_times: ClassVar[dict[str, deque[float]]] = defaultdict(deque)
@@ -309,14 +346,85 @@ class Handler(BaseHTTPRequestHandler):
         finally:
             cls._agent_semaphore.release()
 
-    def _authorized(self):
+    def _session_cookie_name(self):
+        """Use the __Host- prefix on HTTPS public deployments."""
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            return "__Host-omarai_session"
+        return "omarai_session"
+
+    def _session_cookie_header(self, token: str) -> str:
+        if not BROWSER_SESSION_ID_RE.fullmatch(token):
+            raise ValueError("browser access token has an unsupported format")
+        parts = [
+            f"{self._session_cookie_name()}={token}",
+            "Path=/",
+            "HttpOnly",
+            "SameSite=Strict",
+            f"Max-Age={BROWSER_SESSION_COOKIE_MAX_AGE}",
+        ]
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            parts.insert(2, "Secure")
+        return "; ".join(parts)
+
+    def _clear_session_cookie_header(self) -> str:
+        parts = [
+            f"{self._session_cookie_name()}=",
+            "Path=/",
+            "HttpOnly",
+            "SameSite=Strict",
+            "Max-Age=0",
+        ]
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1":
+            parts.insert(2, "Secure")
+        return "; ".join(parts)
+
+    def _principal_for_access_token(self, token: str):
         expected = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
-        if not expected:
-            return os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
+        if expected and hmac.compare_digest(token, expected):
+            return self.store.default_principal()
+        return self.store.resolve_api_token(token)
+
+    def _authorized(self):
+        """Resolve a verified bearer token or HttpOnly browser cookie.
+
+        Browser cookies are accepted only with same-origin POST requests. Request-body
+        tenant IDs are never used to establish tenant context.
+        """
+        self._authenticated_principal = None
+        self._cookie_authenticated = False
+        self._browser_session_id = ""
         supplied = self.headers.get("Authorization", "")
-        if not supplied.startswith("Bearer "):
-            return False
-        return hmac.compare_digest(supplied[7:].strip(), expected)
+        if supplied.startswith("Bearer "):
+            token = supplied[7:].strip()
+            self._authenticated_principal = self._principal_for_access_token(token)
+            return bool(self._authenticated_principal)
+
+        cookie = SimpleCookie()
+        try:
+            cookie.load(self.headers.get("Cookie", ""))
+        except Exception:
+            cookie = SimpleCookie()
+        morsel = cookie.get(self._session_cookie_name())
+        if morsel is not None:
+            token = morsel.value
+            if BROWSER_SESSION_ID_RE.fullmatch(token):
+                self._authenticated_principal = self.store.resolve_web_session(
+                    token,
+                    shared_token=os.getenv("OMARAI_ACCESS_TOKEN", "").strip(),
+                )
+                self._cookie_authenticated = bool(self._authenticated_principal)
+                if self._cookie_authenticated:
+                    self._browser_session_id = token
+                return self._cookie_authenticated
+
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1":
+            try:
+                if ipaddress.ip_address(self.client_address[0]).is_loopback:
+                    self._authenticated_principal = self.store.default_principal()
+                    return bool(self._authenticated_principal)
+            except ValueError:
+                pass
+        return False
 
     def _allowed_origins(self):
         """Return configured browser origins plus this service’s own origin.
@@ -416,6 +524,8 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(400, {"error": "request body is required"})
             return None
         if size > MAX_REQUEST_BODY_BYTES:
+            # The declared body remains unread; do not reuse this connection.
+            self.close_connection = True
             self.respond(413, {"error": "request too large"})
             return None
 
@@ -481,7 +591,13 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Security-Policy", _content_security_policy())
         super().end_headers()
 
-    def respond(self, status, payload, content_type="application/json; charset=utf-8"):
+    def respond(
+        self,
+        status,
+        payload,
+        content_type="application/json; charset=utf-8",
+        extra_headers: list[tuple[str, str]] | None = None,
+    ):
         body = payload.encode() if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(status)
         self.send_header("Content-Type", content_type)
@@ -491,6 +607,8 @@ class Handler(BaseHTTPRequestHandler):
         if origin and self._origin_allowed(origin):
             self.send_header("Access-Control-Allow-Origin", origin)
             self.send_header("Vary", "Origin")
+        for name, value in extra_headers or []:
+            self.send_header(name, value)
         self.end_headers()
         self.wfile.write(body)
 
@@ -521,6 +639,18 @@ class Handler(BaseHTTPRequestHandler):
                     },
                 },
             )
+        if parsed.path == "/api/session":
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "لا توجد جلسة صالحة؛ سجّل الدخول مجددًا."})
+            return self.respond(
+                200,
+                {
+                    "authenticated": True,
+                    "role": self._authenticated_principal["role"],
+                },
+            )
         if parsed.path == "/api/leads":
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
@@ -529,7 +659,7 @@ class Handler(BaseHTTPRequestHandler):
             q = parse_qs(parsed.query)
             try:
                 limit = max(1, min(int(q.get("limit", ["100"])[0]), 500))
-                leads = self.store.list(q.get("status", [None])[0], limit)
+                leads = self.store.list(q.get("status", [None])[0], limit, tenant_id=self._authenticated_principal["tenant_id"])
             except (ValueError, TypeError):
                 return self.respond(400, {"error": "invalid status or limit"})
             return self.respond(200, {"leads": leads, "count": len(leads)})
@@ -542,15 +672,34 @@ class Handler(BaseHTTPRequestHandler):
             path = urlparse(self.path).path
             if path.startswith("/api/") and not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
-            if path.startswith("/api/") and not self._authorized():
+            session_login = path == "/api/session"
+            session_logout = path == "/api/session/logout"
+            if session_logout:
+                # Logout is idempotent: an expired/revoked session must still be
+                # able to clear the browser cookie. Resolve it opportunistically
+                # so a live session is revoked, but do not require it to be valid.
+                self._authorized()
+            elif path.startswith("/api/") and not session_login and not self._authorized():
                 return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
 
             content_type = self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower()
             if content_type != "application/json":
                 return self.respond(415, {"error": "Content-Type must be application/json"})
             origin = self.headers.get("Origin")
+            if session_login and (not origin or not self._origin_allowed(origin)):
+                return self.respond(403, {"error": "browser session login requires a trusted same-origin request"})
+            if (
+                session_logout
+                and os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() == "1"
+                and (not origin or not self._origin_allowed(origin))
+            ):
+                return self.respond(403, {"error": "browser session logout requires a trusted same-origin request"})
             if origin and not self._origin_allowed(origin):
                 return self.respond(403, {"error": "cross-origin requests are not allowed"})
+            if getattr(self, "_cookie_authenticated", False) and (
+                not origin or not self._origin_allowed(origin)
+            ):
+                return self.respond(403, {"error": "cookie-authenticated requests require a trusted Origin"})
 
             raw_body = self._read_request_body()
             if raw_body is None:
@@ -558,13 +707,91 @@ class Handler(BaseHTTPRequestHandler):
             data = json.loads(raw_body)
             if not isinstance(data, dict):
                 return self.respond(400, {"error": "request body must be a JSON object"})
+            if path == "/api/session":
+                token = data.get("access_token", "")
+                if not isinstance(token, str) or len(token.strip()) < 32:
+                    return self.respond(401, {"error": "رمز الوصول غير صالح."})
+                session = self.store.create_web_session(
+                    token.strip(),
+                    shared_token=os.getenv("OMARAI_ACCESS_TOKEN", "").strip(),
+                    max_age_seconds=BROWSER_SESSION_COOKIE_MAX_AGE,
+                )
+                if not session:
+                    return self.respond(401, {"error": "رمز الوصول غير صحيح أو منتهي الصلاحية."})
+                session_id, principal = session
+                self._authenticated_principal = principal
+                return self.respond(
+                    200,
+                    {"authenticated": True, "role": principal["role"]},
+                    extra_headers=[("Set-Cookie", self._session_cookie_header(session_id))],
+                )
+
+            if path == "/api/session/logout":
+                session_id = getattr(self, "_browser_session_id", "")
+                if session_id:
+                    self.store.revoke_web_session(session_id)
+                return self.respond(
+                    200,
+                    {"logged_out": True},
+                    extra_headers=[("Set-Cookie", self._clear_session_cookie_header())],
+                )
+
+            if path == "/api/tokens/revoke":
+                supplied = self.headers.get("Authorization", "")
+                token = supplied[7:].strip() if supplied.startswith("Bearer ") else ""
+                shared_token = os.getenv("OMARAI_ACCESS_TOKEN", "").strip()
+                if shared_token and hmac.compare_digest(token, shared_token):
+                    return self.respond(
+                        409,
+                        {
+                            "error": (
+                                "shared application token must be rotated by the operator "
+                                "through the deployment configuration"
+                            )
+                        },
+                    )
+                revoked = self.store.revoke_api_token(
+                    token,
+                    tenant_id=self._authenticated_principal["tenant_id"],
+                    user_id=self._authenticated_principal["user_id"],
+                )
+                if not revoked:
+                    return self.respond(404, {"error": "token not found"})
+                return self.respond(200, {"revoked": True})
+
             if path == "/api/diagnostics":
-                test_model = data.get("test_model", True)
+                test_model = data.get("test_model", False)
                 test_social = data.get("test_social", False)
-                if not isinstance(test_model, bool) or not isinstance(test_social, bool):
+                allow_provider_usage = data.get("allow_provider_usage", False)
+                if (
+                    not isinstance(test_model, bool)
+                    or not isinstance(test_social, bool)
+                    or not isinstance(allow_provider_usage, bool)
+                ):
                     return self.respond(
                         400,
-                        {"error": "test_model and test_social must be booleans"},
+                        {
+                            "error": (
+                                "test_model, test_social, and allow_provider_usage "
+                                "must be booleans"
+                            )
+                        },
+                    )
+                if not allow_provider_usage:
+                    return self.respond(
+                        403,
+                        {
+                            "error": (
+                                "live diagnostics perform outbound search and may consume "
+                                "provider quota or incur charges; set allow_provider_usage=true "
+                                "only after explicit owner approval"
+                            )
+                        },
+                    )
+                if self._authenticated_principal.get("role") != "owner":
+                    return self.respond(
+                        403,
+                        {"error": "فحص الموصلات الحي واستهلاك الحصص متاح لمالك مساحة العمل فقط."},
                     )
                 return self._run_bounded_agent_operation(
                     lambda: WebAgent().diagnostics(
@@ -574,6 +801,11 @@ class Handler(BaseHTTPRequestHandler):
                 )
 
             if path == "/api/agent":
+                if self._authenticated_principal.get("role") == "viewer":
+                    return self.respond(
+                        403,
+                        {"error": "عضوية viewer لا تملك صلاحية تشغيل البحث أو النموذج."},
+                    )
                 question = data.get("question", "")
                 if not isinstance(question, str) or not question.strip():
                     return self.respond(400, {"error": "question must be a non-empty string"})
@@ -593,7 +825,7 @@ class Handler(BaseHTTPRequestHandler):
                     return self.respond(400, {"error": "question must be a non-empty string"})
                 if len(question) > 1000:
                     return self.respond(400, {"error": "question must be at most 1000 characters"})
-                return self.respond(200, answer_question(question, self.store))
+                return self.respond(200, answer_question(question, self.store, tenant_id=self._authenticated_principal["tenant_id"]))
             if path == "/api/analyze":
                 return self.respond(
                     200,
@@ -604,6 +836,8 @@ class Handler(BaseHTTPRequestHandler):
                     ),
                 )
             if path == "/api/leads":
+                if self._authenticated_principal["role"] == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
                 lead, created = self.store.add(
                     data.get("text", ""),
                     data.get("source_url", ""),
@@ -612,11 +846,14 @@ class Handler(BaseHTTPRequestHandler):
                     data.get("note", ""),
                     data.get("product_terms", []),
                     data.get("location_terms", []),
+                    tenant_id=self._authenticated_principal["tenant_id"],
                 )
                 return self.respond(201 if created else 200, {"lead": lead, "created": created})
             route = path.split("/")
             if len(route) == 5 and route[1:3] == ["api", "leads"] and route[4] == "status":
-                lead = self.store.update_status(route[3], data.get("status", "new"))
+                if self._authenticated_principal["role"] == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
+                lead = self.store.update_status(route[3], data.get("status", "new"), tenant_id=self._authenticated_principal["tenant_id"])
                 return self.respond(200, {"lead": lead}) if lead else self.respond(404, {"error": "lead not found"})
             return self.respond(404, {"error": "not found"})
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
@@ -641,10 +878,10 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
-def answer_question(question, store):
+def answer_question(question, store, *, tenant_id=None):
     """Answer common operational questions from local records using explicit rules."""
     normalized = normalize(question)
-    leads = store.list(limit=500)
+    leads = store.list(limit=500, tenant_id=tenant_id)
     active = [lead for lead in leads if lead["status"] not in {"rejected", "converted"}]
     if any(term in normalized for term in ("افضل عميل", "احسن عميل", "افضل اشارة", "احسن اشارة", "اشارة اراجعها", "مين افضل", "مين اتابع", "اتابع مين", "اهم عميل")):
         if not active:

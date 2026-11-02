@@ -33,6 +33,21 @@ def sample_source(index=0):
     }
 
 
+@pytest.fixture(autouse=True)
+def mock_semantic_verifier_for_web_agent_unit_tests(monkeypatch):
+    """Never make real model/provider calls from unit tests."""
+    monkeypatch.setattr(
+        WebAgent,
+        "_verify_semantic_claims",
+        lambda self, question, answer, sources, answer_integrity=None: {
+            "status": "completed_all_claims_supported",
+            "withhold_answer": False,
+            "semantic_verification": "model_assessed_source_support",
+            "fact_correctness": "not_verified",
+        },
+    )
+
+
 def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
     agent = WebAgent()
     agent.api_key = "test-key"
@@ -89,7 +104,7 @@ def test_agent_synthesizes_with_sources_without_live_network(monkeypatch):
         "process_coverage_not_factual_probability"
     )
     assert result["search_report"]["claim_audit_semantics"] == (
-        "model_assisted_not_independent_fact_check"
+        "distinct_model_assessed_source_support_not_ground_truth"
     )
     assert result["search_report"]["research_pipeline"]["stages"]["semantic_matching"] == (
         "not_configured"
@@ -4336,3 +4351,70 @@ def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatc
     assert "health-password" not in provider
     assert "health-secret" not in provider
     assert "/api/v1" not in provider
+
+
+def test_answer_is_withheld_when_semantic_claim_support_is_not_established(monkeypatch):
+    agent = WebAgent()
+    agent.api_key = "test-key"
+    source = sample_source(0)
+    source["providers"] = ["user_supplied_url"]
+    source["page_fetched"] = True
+    source["page_text"] = "النص الكامل المستخرج من الصفحة التي قدمها المستخدم."
+    plan = {
+        "queries": ["لخص الصفحة"],
+        "direct_urls": ["https://example.com/research"],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "test",
+    }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda question, history: dict(plan))
+    monkeypatch.setattr(
+        agent,
+        "_collect_research",
+        lambda research_plan: (
+            [source], [], {
+                "queries_planned": 1,
+                "queries_attempted": 1,
+                "query_results": [],
+                "unique_sources": 1,
+                "pages_fetched": 1,
+                "providers_used": ["test_provider"],
+                "platform_counts": {"web": 1},
+                "social_direct_results": 0,
+                "depth": "standard",
+                "planning_method": "test",
+            },
+        ),
+    )
+    monkeypatch.setattr(agent, "_source_matches_query", lambda query, item: True)
+    monkeypatch.setattr(
+        agent, "_generate",
+        lambda *args, **kwargs: "ادعاء واقعي غير مدعوم بما يكفي [المصدر 1].",
+    )
+    monkeypatch.setattr(
+        agent, "_review_answer",
+        lambda question, answer, sources: answer,
+    )
+    monkeypatch.setattr(
+        agent, "_verify_semantic_claims",
+        lambda *args, **kwargs: {
+            "status": "unsupported_claims_detected",
+            "withhold_answer": True,
+            "reason": "one_or_more_claims_lack_unconflicted_cited_support",
+        },
+    )
+
+    result = agent.answer("لخص الصفحة https://example.com/research")
+
+    assert result["final_answer_status"] == "semantic_verification_failed_with_source_fallback"
+    assert result["search_report"]["answer_was_withheld"] is True
+    assert result["search_report"]["semantic_claim_verification"]["status"] == (
+        "unsupported_claims_detected"
+    )
+    assert "ادعاء واقعي غير مدعوم" not in result["answer"]
+    assert "المقتطفات أدناه مواد مصدرية" in result["answer"]
+    assert result["search_report"]["pipeline_completion_status"] == "partial"
+    assert result["citation_validation"]["valid_citation_count"] == 0

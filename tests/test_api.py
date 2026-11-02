@@ -22,6 +22,10 @@ from api.omarai import Handler
 def local_api(tmp_path):
     """Run the real handler on an ephemeral loopback port with an isolated database."""
     previous_store = Handler.store
+    previous_request_times = Handler._request_times
+    previous_rate_cleanup = Handler._rate_last_cleanup
+    Handler._request_times = defaultdict(deque)
+    Handler._rate_last_cleanup = 0.0
     Handler.store = LeadStore(tmp_path / "api-test.sqlite3")
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
@@ -33,6 +37,8 @@ def local_api(tmp_path):
         server.server_close()
         thread.join(timeout=3)
         Handler.store = previous_store
+        Handler._request_times = previous_request_times
+        Handler._rate_last_cleanup = previous_rate_cleanup
 
 
 def request_json(base, path, method="GET", payload=None, headers=None):
@@ -46,6 +52,19 @@ def request_json(base, path, method="GET", payload=None, headers=None):
             return response.status, json.loads(response.read().decode("utf-8"))
     except HTTPError as error:
         return error.code, json.loads(error.read().decode("utf-8"))
+
+
+def request_json_with_headers(base, path, method="GET", payload=None, headers=None):
+    body = None if payload is None else json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    request_headers = dict(headers or {})
+    if body is not None and "Content-Type" not in request_headers:
+        request_headers["Content-Type"] = "application/json"
+    request = Request(base + path, data=body, method=method, headers=request_headers)
+    try:
+        with urlopen(request, timeout=3) as response:
+            return response.status, json.loads(response.read().decode("utf-8")), response.headers
+    except HTTPError as error:
+        return error.code, json.loads(error.read().decode("utf-8")), error.headers
 
 
 def test_api_health_analyze_save_duplicate_list_and_status(local_api):
@@ -277,7 +296,11 @@ def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, mon
         local_api,
         "/api/diagnostics",
         method="POST",
-        payload={"test_model": True, "test_social": False},
+        payload={
+            "test_model": True,
+            "test_social": False,
+            "allow_provider_usage": True,
+        },
     )
     assert status == 200
     assert report["overall_status"] == "passed"
@@ -286,12 +309,48 @@ def test_live_diagnostics_endpoint_returns_report_without_secrets(local_api, mon
     assert "secret" not in str(report)
 
 
+def test_live_diagnostics_requires_explicit_provider_usage_opt_in(local_api, monkeypatch):
+    from api.omarai import WebAgent
+
+    def unexpected_diagnostics(*_args, **_kwargs):
+        pytest.fail("diagnostics must not contact providers without explicit opt-in")
+
+    monkeypatch.setattr(WebAgent, "diagnostics", unexpected_diagnostics)
+    status, error = request_json(
+        local_api,
+        "/api/diagnostics",
+        method="POST",
+        payload={"test_model": True, "test_social": False},
+    )
+    assert status == 403
+    assert "allow_provider_usage=true" in error["error"]
+
+
+def test_diagnostics_endpoint_rejects_non_boolean_provider_usage_opt_in(local_api):
+    status, error = request_json(
+        local_api,
+        "/api/diagnostics",
+        method="POST",
+        payload={
+            "test_model": True,
+            "test_social": False,
+            "allow_provider_usage": "true",
+        },
+    )
+    assert status == 400
+    assert "booleans" in error["error"]
+
+
 def test_diagnostics_endpoint_requires_boolean_options(local_api):
     status, error = request_json(
         local_api,
         "/api/diagnostics",
         method="POST",
-        payload={"test_model": "yes", "test_social": False},
+        payload={
+            "test_model": "yes",
+            "test_social": False,
+            "allow_provider_usage": True,
+        },
     )
     assert status == 400
     assert "booleans" in error["error"]
@@ -962,3 +1021,234 @@ def test_dashboard_uses_delegated_status_action_not_inline_onclick():
     assert 'data-action="save-status"' in dashboard
     assert 'onclick="saveStatus' not in dashboard
     assert """data-lead-id="'+esc(l.id)+'">""" in dashboard
+
+def test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts(local_api, monkeypatch):
+    from urllib.parse import urlsplit
+
+    token = "browser-session-test-token-1234567890"
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", token)
+    origin = "https://" + urlsplit(local_api).netloc
+
+    status, payload, headers = request_json_with_headers(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": token},
+        headers={"Origin": origin},
+    )
+    assert status == 200
+    assert payload == {"authenticated": True, "role": "owner"}
+    assert token not in json.dumps(payload)
+    set_cookie = headers.get("Set-Cookie", "")
+    assert set_cookie.startswith("__Host-omarai_session=")
+    assert "Path=/" in set_cookie
+    assert "Secure" in set_cookie
+    assert "HttpOnly" in set_cookie
+    assert "SameSite=Strict" in set_cookie
+    assert "Max-Age=28800" in set_cookie
+    assert "Domain=" not in set_cookie
+    cookie = set_cookie.split(";", 1)[0]
+    assert token not in cookie
+    assert len(cookie.split("=", 1)[1]) >= 32
+
+    status, session = request_json(
+        local_api, "/api/session", headers={"Cookie": cookie}
+    )
+    assert status == 200
+    assert session == {"authenticated": True, "role": "owner"}
+
+    status, listing = request_json(
+        local_api, "/api/leads", headers={"Cookie": cookie}
+    )
+    assert status == 200
+    assert listing["count"] == 0
+
+    status, error = request_json(
+        local_api,
+        "/api/ask",
+        method="POST",
+        payload={"question": "كم عميل؟"},
+        headers={"Cookie": cookie, "Origin": "https://attacker.example"},
+    )
+    assert status == 403
+    assert "Origin" in error["error"] or "cross-origin" in error["error"]
+
+    status, logged_out, logout_headers = request_json_with_headers(
+        local_api,
+        "/api/session/logout",
+        method="POST",
+        payload={},
+        headers={"Cookie": cookie, "Origin": origin},
+    )
+    assert status == 200
+    assert logged_out["logged_out"] is True
+    cleared_cookie = logout_headers.get("Set-Cookie", "")
+    assert cleared_cookie.startswith("__Host-omarai_session=")
+    assert "Max-Age=0" in cleared_cookie
+
+    status, error = request_json(local_api, "/api/leads")
+    assert status == 401
+
+
+def test_browser_session_login_rejects_untrusted_origin(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "browser-session-test-token-1234567890")
+    status, error = request_json(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": "browser-session-test-token-1234567890"},
+        headers={"Origin": "https://attacker.example"},
+    )
+    assert status == 403
+    assert "same-origin" in error["error"]
+
+
+def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, monkeypatch):
+    from urllib.parse import urlsplit
+
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", "browser-session-test-token-1234567890")
+    status, _error = request_json(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": "unsafe;token" + "x" * 40},
+        headers={"Origin": "https://" + urlsplit(local_api).netloc},
+    )
+    assert status == 401
+
+def test_expired_browser_session_can_logout_and_clear_cookie(local_api, monkeypatch):
+    from urllib.parse import urlsplit
+    from api.omarai import Handler
+
+    token = "expired-browser-session-token-123456"
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    monkeypatch.setenv("OMARAI_ACCESS_TOKEN", token)
+    origin = "https://" + urlsplit(local_api).netloc
+
+    status, _payload, headers = request_json_with_headers(
+        local_api,
+        "/api/session",
+        method="POST",
+        payload={"access_token": token},
+        headers={"Origin": origin},
+    )
+    assert status == 200
+    cookie = headers.get("Set-Cookie", "").split(";", 1)[0]
+    session_id = cookie.split("=", 1)[1]
+
+    with Handler.store.connect() as db:
+        db.execute(
+            "UPDATE web_sessions SET expires_at=? WHERE session_hash=?",
+            ("2000-01-01T00:00:00Z", Handler.store._token_hash(session_id)),
+        )
+
+    status, payload, logout_headers = request_json_with_headers(
+        local_api,
+        "/api/session/logout",
+        method="POST",
+        payload={},
+        headers={"Cookie": cookie, "Origin": origin},
+    )
+
+    assert status == 200
+    assert payload == {"logged_out": True}
+    cleared_cookie = logout_headers.get("Set-Cookie", "")
+    assert cleared_cookie.startswith("__Host-omarai_session=")
+    assert "Max-Age=0" in cleared_cookie
+
+    status, _error = request_json(
+        local_api, "/api/session", headers={"Cookie": cookie}
+    )
+    assert status == 401
+
+def test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cookie(
+    local_api, monkeypatch
+):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    status, error = request_json(
+        local_api,
+        "/api/session/logout",
+        method="POST",
+        payload={},
+        headers={"Origin": "https://attacker.example"},
+    )
+    assert status == 403
+    assert "same-origin" in error["error"]
+
+@pytest.mark.parametrize(
+    ("request_line", "framing_headers", "body", "error_marker"),
+    [
+        (
+            "POST /api/analyze HTTP/1.1",
+            b"Transfer-Encoding: chunked\r\nContent-Length: 4\r\n",
+            b"0\r\n\r\n",
+            b"Transfer-Encoding",
+        ),
+        (
+            "POST /api/analyze HTTP/1.1",
+            b"Content-Length: 4\r\nContent-Length: 5\r\n",
+            b"test",
+            b"Content-Length",
+        ),
+        (
+            "GET /api/health HTTP/1.1",
+            b"Content-Length: 4\r\n",
+            b"test",
+            b"Content-Length",
+        ),
+    ],
+)
+def test_api_rejects_ambiguous_or_unsupported_http_request_framing(
+    local_api, request_line, framing_headers, body, error_marker
+):
+    host_port = local_api.rsplit(":", 1)
+    with socket.create_connection(
+        (host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2
+    ) as client:
+        client.settimeout(2)
+        request = (
+            request_line.encode("ascii")
+            + b"\r\nHost: localhost\r\n"
+            + b"Content-Type: application/json\r\n"
+            + framing_headers
+            + b"Connection: close\r\n\r\n"
+            + body
+        )
+        client.sendall(request)
+        response = b""
+        while True:
+            chunk = client.recv(4096)
+            if not chunk:
+                break
+            response += chunk
+
+    assert response.startswith(b"HTTP/1.0 400")
+    assert error_marker in response
+    assert b"200 OK" not in response
+
+def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):
+    host_port = local_api.rsplit(":", 1)
+    with socket.create_connection(
+        (host_port[0].removeprefix("http://"), int(host_port[1])), timeout=2
+    ) as client:
+        client.settimeout(2)
+        client.sendall(
+            b"POST /api/analyze HTTP/1.1\r\n"
+            b"Host: localhost\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 200001\r\n"
+            b"\r\n"
+        )
+        response = b""
+        while True:
+            chunk = client.recv(4096)
+            if not chunk:
+                break
+            response += chunk
+
+    assert response.startswith(b"HTTP/1.0 413")
+    assert b"request too large" in response
+

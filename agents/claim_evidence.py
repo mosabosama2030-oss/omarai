@@ -141,9 +141,9 @@ def build_claim_evidence_ledger(
 ) -> dict[str, Any]:
     """Return bounded sentence candidates with validated source-index traceability."""
     safe_answer = str(answer or "")[:24000]
-    safe_sources = [
-        source for source in (sources or []) if isinstance(source, dict)
-    ][:max(0, min(int(max_citable_sources), 40))]
+    # Preserve positional indexes from the caller's source list. Filtering malformed
+    # rows here would silently shift every later [source N] reference.
+    safe_sources = list(sources or [])[:max(0, min(int(max_citable_sources), 40))]
     segments = [
         part.strip()
         for part in _SENTENCE_SPLIT.split(safe_answer)
@@ -164,10 +164,35 @@ def build_claim_evidence_ledger(
     lexical_signals = weak_signals = 0
 
     for number, segment in enumerate(segments, 1):
-        indexes = list(dict.fromkeys(int(m.group(1)) for m in _CITATION.finditer(segment)))[:8]
+        raw_indexes = list(dict.fromkeys(
+            match.group(1) for match in _CITATION.finditer(segment)
+        ))
+        citation_references_truncated = len(raw_indexes) > 8
+        indexes: list[int] = []
         refs: list[dict[str, Any]] = []
         has_readable = False
-        for index in indexes:
+        invalid_source_index = False
+        seen_indexes: set[int] = set()
+        for raw_index in raw_indexes[:8]:
+            # Citation markers are untrusted model output. Normalize Unicode decimal
+            # digits and bound the numeric representation before calling int().
+            normalized_index = "".join(
+                str(unicodedata.decimal(character)) for character in raw_index
+            ).lstrip("0") or "0"
+            if len(normalized_index) > 3:
+                invalid_refs += 1
+                invalid_source_index = True
+                refs.append({
+                    "source_index": None,
+                    "reference_status": "invalid_or_oversized_source_index",
+                    "title": "", "url": "", "evidence_basis": "unavailable",
+                })
+                continue
+            index = int(normalized_index)
+            if index in seen_indexes:
+                continue
+            seen_indexes.add(index)
+            indexes.append(index)
             if index < 1 or index > len(safe_sources):
                 invalid_refs += 1
                 refs.append({
@@ -176,6 +201,14 @@ def build_claim_evidence_ledger(
                 })
                 continue
             source = safe_sources[index - 1]
+            if not isinstance(source, dict):
+                invalid_refs += 1
+                refs.append({
+                    "source_index": index,
+                    "reference_status": "source_record_unavailable",
+                    "title": "", "url": "", "evidence_basis": "unavailable",
+                })
+                continue
             basis = _evidence_basis(source)
             valid_refs += 1
             # Titles are useful metadata, but not readable source text for checking entailment.
@@ -194,15 +227,21 @@ def build_claim_evidence_ledger(
                 "metadata_audit": audit_source_metadata(source, claim_text=f"{question_context} {segment}"),
             })
 
-        cited += bool(indexes)
-        uncited += not bool(indexes)
-        readable_cited += bool(indexes) and has_readable
+        cited += bool(raw_indexes)
+        uncited += not bool(raw_indexes)
+        readable_cited += bool(raw_indexes) and has_readable
         alignment = alignment_by_sentence.get(number, {})
         lexical_status = str(alignment.get("status") or "not_assessed_no_citation_alignment")
         lexical_signals += lexical_status == "lexical_overlap_signal_found"
         weak_signals += lexical_status == "weak_lexical_overlap"
         if any(ref["reference_status"] == "index_out_of_citable_range" for ref in refs):
             status = "citation_index_out_of_range"
+        elif any(ref["reference_status"] == "source_record_unavailable" for ref in refs):
+            status = "citation_source_record_unavailable"
+        elif invalid_source_index:
+            status = "citation_index_invalid_or_too_large"
+        elif citation_references_truncated:
+            status = "citation_reference_list_truncated"
         elif indexes and not has_readable:
             status = "valid_index_without_readable_evidence"
         elif indexes:
@@ -217,6 +256,7 @@ def build_claim_evidence_ledger(
             "text": segment[:1200],
             "citation_indexes": indexes,
             "citation_status": status,
+            "citation_references_truncated": citation_references_truncated,
             "lexical_audit_status": lexical_status,
             "sources": refs,
         })
@@ -238,6 +278,9 @@ def build_claim_evidence_ledger(
             "segments_without_citation_markers": uncited,
             "valid_source_reference_count": valid_refs,
             "out_of_range_reference_count": invalid_refs,
+            "truncated_citation_reference_list_count": sum(
+                row["citation_references_truncated"] for row in rows
+            ),
             "cited_segments_with_readable_source_evidence": readable_cited,
             "citation_lexical_signal_count": lexical_signals,
             "weak_citation_lexical_signal_count": weak_signals,

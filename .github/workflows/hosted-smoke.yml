@@ -2,6 +2,12 @@ name: Omarai hosted acceptance smoke
 
 on:
   workflow_dispatch:
+    inputs:
+      allow_provider_usage:
+        description: "Approve one live search and one model completion; provider quota or charges may be consumed."
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -17,7 +23,17 @@ jobs:
     env:
       OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}
       OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}
+      ALLOW_PROVIDER_USAGE: ${{ inputs.allow_provider_usage }}
     steps:
+      - name: Require explicit approval for live provider usage
+        shell: bash
+        run: |
+          if [[ "${ALLOW_PROVIDER_USAGE}" != "true" ]]; then
+            echo "::error::Live search/model usage was not approved. Re-run manually and enable allow_provider_usage only after human approval."
+            exit 1
+          fi
+          echo "One live provider-usage run was explicitly approved."
+
       - name: Verify hosted target and access-token secrets are available
         shell: bash
         run: |
@@ -44,4 +60,13 @@ jobs:
           python-version: "3.12"
 
       - name: Run live hosted acceptance test
-        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --expected-sha "$(git rev-parse HEAD)" --timeout 180
+        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --expected-sha "$(git rev-parse HEAD)" --timeout 180 --allow-provider-usage --output artifacts/hosted-smoke-report.json
+
+      - name: Upload hosted question-and-answer transcript
+        if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: omarai-hosted-acceptance-transcript
+          path: artifacts/hosted-smoke-report.json
+          if-no-files-found: ignore
+          retention-days: 14

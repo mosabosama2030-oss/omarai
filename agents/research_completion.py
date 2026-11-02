@@ -10,6 +10,9 @@ _RESEARCH_KINDS = frozenset({
     "web_research", "web_fallback", "insufficient_evidence",
     "lead_discovery_no_qualified_candidates",
 })
+_CLAIM_LEDGER_KINDS = frozenset({
+    "web_research", "web_fallback", "insufficient_evidence",
+})
 _RESEARCH_ERRORS = frozenset({
     "attempted_research_error", "unknown_after_research_error",
     "unknown_after_budget_exhaustion",
@@ -163,6 +166,56 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     model_used = result.get("used_language_model") is True
     final_status = str(result.get("final_answer_status") or "")
     integrity = _dict(result.get("answer_integrity"))
+    semantic = _dict(
+        result.get("semantic_claim_verification")
+        or report.get("semantic_claim_verification")
+    )
+    semantic_status = str(semantic.get("status") or "").strip().lower()
+    semantic_passed = semantic_status in {
+        "completed_all_claims_supported", "completed_no_factual_claims"
+    }
+    semantic_phase = (
+        "model_assessed_source_support_not_fact_truth"
+        if semantic_passed else semantic_status or "not_performed"
+    )
+    claim_ledger = _dict(
+        result.get("claim_evidence_ledger") or report.get("claim_evidence_ledger")
+    )
+    claim_ledger_summary = _dict(claim_ledger.get("summary"))
+    citation_validation = _dict(
+        result.get("citation_validation")
+        or result.get("citation_check")
+        or report.get("citation_validation")
+    )
+    invalid_citation_references_removed = _int(
+        citation_validation.get("invalid_references_removed")
+    ) or 0
+    claim_ledger_status = str(claim_ledger.get("status") or "").strip().lower()
+    claim_ledger_reference_count_valid = (
+        _int(claim_ledger_summary.get("out_of_range_reference_count")) is not None
+    )
+    claim_ledger_build_failure_count = int(
+        kind in _CLAIM_LEDGER_KINDS
+        and (
+            claim_ledger_status != "built"
+            or not claim_ledger_reference_count_valid
+        )
+    )
+    out_of_range_citation_reference_count = _int(
+        claim_ledger_summary.get("out_of_range_reference_count")
+    ) or 0
+    truncated_citation_reference_list_count = _int(
+        claim_ledger_summary.get("truncated_citation_reference_list_count")
+    ) or 0
+    claim_ledger_truncated_count = int(
+        claim_ledger_status == "built" and claim_ledger.get("truncated") is True
+    )
+    semantic_verification_failure_count = int(
+        semantic_status not in {
+            "", "not_performed", "not_run_review_unavailable",
+            "completed_all_claims_supported", "completed_no_factual_claims",
+        }
+    )
     gap_count = sum(
         _int(integrity.get(key)) or 0
         for key in ("potentially_missing_target_count", "source_evidence_gap_count")
@@ -181,11 +234,16 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     citation_support_warning_count = (
         max(unsupported_numeric_count, unsupported_numeric_by_citation_count)
         + weak_citation_alignment_count
+        + max(out_of_range_citation_reference_count, invalid_citation_references_removed)
+        + truncated_citation_reference_list_count
+        + claim_ledger_truncated_count
+        + claim_ledger_build_failure_count
+        + semantic_verification_failure_count
     )
     fulfillment = str(
         result.get("task_fulfillment_status") or report.get("task_fulfillment_status") or ""
     )
-    citations = _dict(result.get("citation_validation") or result.get("citation_check"))
+    citations = citation_validation
     citation_count = _int(citations.get("valid_citation_count")) or 0
     generation_failed = any(
         token in final_status for token in ("failed", "unavailable", "budget_exhausted")
@@ -193,6 +251,8 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
 
     if exhausted:
         status = "execution_stopped_budget"
+    elif bool(report.get("answer_was_withheld")) or semantic.get("withhold_answer") is True:
+        status = "answer_withheld_semantic_support_unverified"
     elif not sources:
         if rejected:
             status = "no_eligible_sources_after_filtering"
@@ -245,7 +305,9 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
     else:
         read_phase = "no_final_source_page_read"
 
-    if kind == "insufficient_evidence" or not sources:
+    if bool(report.get("answer_was_withheld")) or semantic.get("withhold_answer") is True:
+        generation_phase = "generated_then_withheld_by_semantic_gate"
+    elif kind == "insufficient_evidence" or not sources:
         generation_phase = "not_attempted_or_withheld"
     elif model_used and not generation_failed:
         generation_phase = "answer_generated"
@@ -278,7 +340,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
                 ))
                 else "not_assessed"
             ),
-            "semantic_verification": "not_performed",
+            "semantic_verification": semantic_phase,
         },
         "counters": {
             "queries_planned": _int(report.get("queries_planned")),
@@ -306,6 +368,14 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "potentially_unsupported_numeric_by_citation_count": unsupported_numeric_by_citation_count,
             "weak_citation_alignment_count": weak_citation_alignment_count,
             "citation_support_warning_count": citation_support_warning_count,
+            "out_of_range_citation_reference_count": out_of_range_citation_reference_count,
+            "invalid_citation_references_removed_count": invalid_citation_references_removed,
+            "truncated_citation_reference_list_count": truncated_citation_reference_list_count,
+            "claim_ledger_truncated_count": claim_ledger_truncated_count,
+            "claim_ledger_status": claim_ledger_status or "missing",
+            "claim_ledger_reference_count_valid": claim_ledger_reference_count_valid,
+            "claim_ledger_build_failure_count": claim_ledger_build_failure_count,
+            "semantic_verification_failure_count": semantic_verification_failure_count,
         },
         "counter_consistency": {
             "status": "mismatch_detected" if counter_issues else (
@@ -318,7 +388,7 @@ def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:
             "recomputed_pages_fetched_flag_count": fetched,
             "issues": counter_issues,
         },
-        "semantic_verification": "not_performed",
+        "semantic_verification": semantic_phase,
         "warning": (
             "Readable pages and valid citation indexes do not prove semantic support "
             "for each claim in the answer."

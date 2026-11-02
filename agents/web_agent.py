@@ -33,6 +33,11 @@ from agents.dialogue_state import (
 from agents.answer_validation import audit_answer_integrity
 from agents.requirement_evidence import build_requirement_evidence_ledger
 from agents.claim_evidence import build_claim_evidence_ledger
+from agents.semantic_claim_verifier import (
+    build_semantic_verification_request,
+    parse_semantic_verification_response,
+    deterministic_claim_screen,
+)
 from agents.request_budget import RequestBudget, RequestBudgetExceeded
 from agents.aspect_planning import (
     arabic_aspect_diagnostics,
@@ -175,6 +180,11 @@ _GENERIC_QUERY_MODIFIER_TOKENS = frozenset({
     "study", "studies", "analysis", "latest", "news", "update", "updates",
     "announcement", "announcements", "comprehensive", "research", "statistic",
     "statistics", "trend", "trends",
+    # Navigation/format words are request modifiers, not topical evidence.
+    "website", "websites", "site", "sites", "homepage", "homepages", "portal", "portals",
+    "link", "links", "url", "urls", "direct", "officially",
+    "موقع", "الموقع", "مواقع", "رابط", "الرابط", "رابطه", "الرابطه",
+    "مباشر", "مباشره", "المباشر", "المباشره", "رسمي", "الرسمي", "رسميه", "الرسميه",
 })
 _SEARCH_SYNONYMS = {
     "استراليا": {"australia"}, "عاصمة": {"capital"}, "مصر": {"egypt"},
@@ -373,9 +383,9 @@ def _relevance_ratio(query: str, evidence: str) -> float:
 
     matched = sum(1 for token in query_tokens if concept_found(token))
     ratio = matched / len(query_tokens)
-    # On longer questions, two matching topic concepts are required; request wording
-    # should not silently raise that floor to three or four concepts.
-    if len(query_tokens) >= 4 and matched < 2:
+    # A multi-concept query must match at least two topic concepts. One generic
+    # or incidental word is not enough to make a candidate relevant.
+    if len(query_tokens) >= 3 and matched < 2:
         return 0.0
     return ratio
 
@@ -649,29 +659,91 @@ class WebAgent:
     """Search, inspect, and synthesize web evidence for open-ended questions."""
 
     def __init__(self) -> None:
-        self.api_key = (
+        generic_api_key = (
             os.getenv("OMARAI_LLM_API_KEY", "").strip()
             or os.getenv("OPENROUTER_API_KEY", "").strip()
         )
-        self.base_url = os.getenv(
+        gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        mistral_api_key = os.getenv("MISTRAL_API_KEY", "").strip()
+        configured_base_url = os.getenv(
             "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
         ).strip().rstrip("/")
-        # Pin explicit role models for more consistent behaviour than a random free router.
-        # OMARAI_LLM_MODEL remains a global override for users who want one model everywhere.
         global_model = os.getenv("OMARAI_LLM_MODEL", "").strip()
+
+        if generic_api_key:
+            host = (urllib.parse.urlsplit(configured_base_url).hostname or "").lower().rstrip(".")
+            primary_provider = "openrouter" if host == "openrouter.ai" else "custom"
+            primary_api_key, primary_base_url = generic_api_key, configured_base_url
+            default_answer_model = "google/gemma-4-31b-it:free"
+        elif gemini_api_key:
+            primary_provider, primary_api_key = "gemini", gemini_api_key
+            primary_base_url = "https://generativelanguage.googleapis.com/v1beta/openai"
+            default_answer_model = (
+                os.getenv("OMARAI_GEMINI_MODEL", "").strip() or "gemini-3.1-flash-lite"
+            )
+        elif mistral_api_key:
+            primary_provider, primary_api_key = "mistral", mistral_api_key
+            primary_base_url = "https://api.mistral.ai/v1"
+            default_answer_model = (
+                os.getenv("OMARAI_MISTRAL_MODEL", "").strip() or "mistral-small-latest"
+            )
+        else:
+            primary_provider, primary_api_key = "openrouter", ""
+            primary_base_url = configured_base_url
+            default_answer_model = "google/gemma-4-31b-it:free"
+
+        self.primary_provider = primary_provider
+        self.api_key, self.base_url = primary_api_key, primary_base_url
         self.answer_model = os.getenv(
-            "OMARAI_ANSWER_MODEL", global_model or "google/gemma-4-31b-it:free"
+            "OMARAI_ANSWER_MODEL", global_model or default_answer_model
         ).strip()
+        planner_default = (
+            "nvidia/nemotron-3-ultra-550b-a55b:free"
+            if primary_provider in {"openrouter", "custom"}
+            else self.answer_model
+        )
         self.planner_model = os.getenv(
-            "OMARAI_PLANNER_MODEL",
-            global_model or "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "OMARAI_PLANNER_MODEL", global_model or planner_default
         ).strip()
-        self.review_model = os.getenv(
-            "OMARAI_REVIEW_MODEL", self.answer_model
+        self.review_model = os.getenv("OMARAI_REVIEW_MODEL", self.answer_model).strip()
+        verifier_default = (
+            "nvidia/nemotron-3-ultra-550b-a55b:free"
+            if primary_provider in {"openrouter", "custom"}
+            else self.answer_model
+        )
+        self.verifier_model = os.getenv(
+            "OMARAI_VERIFIER_MODEL", verifier_default
         ).strip()
+        fallback_default = "openrouter/free" if primary_provider == "openrouter" else ""
         self.fallback_model = os.getenv(
-            "OMARAI_LLM_FALLBACK_MODEL", "openrouter/free"
+            "OMARAI_LLM_FALLBACK_MODEL", fallback_default
         ).strip()
+
+        self.model_providers: list[dict[str, str]] = []
+        if primary_api_key:
+            self.model_providers.append({
+                "name": primary_provider,
+                "api_key": primary_api_key,
+                "base_url": primary_base_url,
+                "model": self.answer_model,
+            })
+        if gemini_api_key and primary_provider != "gemini":
+            self.model_providers.append({
+                "name": "gemini",
+                "api_key": gemini_api_key,
+                "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+                "model": os.getenv("OMARAI_GEMINI_MODEL", "").strip()
+                or "gemini-3.1-flash-lite",
+            })
+        if mistral_api_key and primary_provider != "mistral":
+            self.model_providers.append({
+                "name": "mistral",
+                "api_key": mistral_api_key,
+                "base_url": "https://api.mistral.ai/v1",
+                "model": os.getenv("OMARAI_MISTRAL_MODEL", "").strip()
+                or "mistral-small-latest",
+            })
+
         self.model = self.answer_model  # Backwards-compatible alias.
         self.model_usage: list[dict[str, Any]] = []
         # Per-answer, bounded diagnostics contain only model identifiers and status metadata.
@@ -684,7 +756,8 @@ class WebAgent:
         self._deepseek_search_requests_reserved = 0
         self.openrouter_web_search_enabled = (
             os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
-            and (urllib.parse.urlsplit(self.base_url).hostname or "").lower().rstrip(".") == "openrouter.ai"
+            and (urllib.parse.urlsplit(self.base_url).hostname or "").lower().rstrip(".")
+            == "openrouter.ai"
         )
         self.timeout = max(
             5, min(int(os.getenv("OMARAI_LLM_TIMEOUT", str(LLM_TIMEOUT_SECONDS))), 60)
@@ -707,40 +780,125 @@ class WebAgent:
         except ImportError:
             search_ready = False
 
+        generic_api_key = (
+            os.getenv("OMARAI_LLM_API_KEY", "").strip()
+            or os.getenv("OPENROUTER_API_KEY", "").strip()
+        )
+        gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip()
+        mistral_api_key = os.getenv("MISTRAL_API_KEY", "").strip()
+        configured_base_url = os.getenv(
+            "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
+        ).strip().rstrip("/")
         global_model = os.getenv("OMARAI_LLM_MODEL", "").strip()
+
+        if generic_api_key:
+            host = (urllib.parse.urlsplit(configured_base_url).hostname or "").lower().rstrip(".")
+            primary_provider = "openrouter" if host == "openrouter.ai" else "custom"
+            primary_base_url = configured_base_url
+            default_answer_model = "google/gemma-4-31b-it:free"
+        elif gemini_api_key:
+            primary_provider = "gemini"
+            primary_base_url = "https://generativelanguage.googleapis.com/v1beta/openai"
+            default_answer_model = (
+                os.getenv("OMARAI_GEMINI_MODEL", "").strip() or "gemini-3.1-flash-lite"
+            )
+        elif mistral_api_key:
+            primary_provider = "mistral"
+            primary_base_url = "https://api.mistral.ai/v1"
+            default_answer_model = (
+                os.getenv("OMARAI_MISTRAL_MODEL", "").strip() or "mistral-small-latest"
+            )
+        else:
+            primary_provider = "openrouter"
+            primary_base_url = configured_base_url
+            default_answer_model = "google/gemma-4-31b-it:free"
+
         answer_model = (
             os.getenv("OMARAI_ANSWER_MODEL", "").strip()
             or global_model
-            or "google/gemma-4-31b-it:free"
+            or default_answer_model
+        )
+        planner_default = (
+            "nvidia/nemotron-3-ultra-550b-a55b:free"
+            if primary_provider in {"openrouter", "custom"}
+            else answer_model
         )
         planner_model = (
             os.getenv("OMARAI_PLANNER_MODEL", "").strip()
             or global_model
-            or "nvidia/nemotron-3-ultra-550b-a55b:free"
+            or planner_default
         )
         review_model = os.getenv("OMARAI_REVIEW_MODEL", "").strip() or answer_model
-        fallback_model = (
-            os.getenv("OMARAI_LLM_FALLBACK_MODEL", "").strip() or "openrouter/free"
+        verifier_default = (
+            "nvidia/nemotron-3-ultra-550b-a55b:free"
+            if primary_provider in {"openrouter", "custom"}
+            else answer_model
         )
+        verifier_model = (
+            os.getenv("OMARAI_VERIFIER_MODEL", "").strip() or verifier_default
+        )
+        fallback_default = "openrouter/free" if primary_provider == "openrouter" else ""
+        fallback_model = (
+            os.getenv("OMARAI_LLM_FALLBACK_MODEL", "").strip() or fallback_default
+        )
+
+        provider_status: list[dict[str, Any]] = []
+        if generic_api_key:
+            provider_status.append({
+                "name": primary_provider,
+                "configured": True,
+                "model": answer_model,
+            })
+        if gemini_api_key and primary_provider != "gemini":
+            provider_status.append({
+                "name": "gemini",
+                "configured": True,
+                "model": os.getenv("OMARAI_GEMINI_MODEL", "").strip()
+                or "gemini-3.1-flash-lite",
+            })
+        elif gemini_api_key:
+            provider_status.append({
+                "name": "gemini",
+                "configured": True,
+                "model": answer_model,
+            })
+        if mistral_api_key and primary_provider != "mistral":
+            provider_status.append({
+                "name": "mistral",
+                "configured": True,
+                "model": os.getenv("OMARAI_MISTRAL_MODEL", "").strip()
+                or "mistral-small-latest",
+            })
+        elif mistral_api_key:
+            provider_status.append({
+                "name": "mistral",
+                "configured": True,
+                "model": answer_model,
+            })
+
         return {
             "web_search_ready": search_ready,
             "language_model_configured": bool(
-                os.getenv("OMARAI_LLM_API_KEY", "").strip()
-                or os.getenv("OPENROUTER_API_KEY", "").strip()
+                generic_api_key or gemini_api_key or mistral_api_key
             ),
-            "language_model_provider": _safe_model_provider_label(
-                os.getenv("OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1")
-                .strip()
-                .rstrip("/")
-            ),
+            "language_model_provider": _safe_model_provider_label(primary_base_url),
+            "model_providers": provider_status,
             "default_model": answer_model,
             "planner_model": planner_model,
             "answer_model": answer_model,
             "review_model": review_model,
+            "semantic_verifier_model": verifier_model,
+            "semantic_verifier_distinct_from_answer_model": bool(
+                verifier_model and verifier_model.casefold() != answer_model.casefold()
+            ),
+            "semantic_verifier_scope": (
+                "distinct_model_id_same_configured_provider_not_ground_truth"
+            ),
             "fallback_model": fallback_model,
-            "model_selection_mode": "role_specific_with_fallback",
+            "model_selection_mode": "role_specific_with_configured_provider_failover",
             "external_model_privacy_notice": (
                 "Prompts and selected page excerpts are sent to the configured external model provider. "
+                "After a failed attempt, they may also be sent to other configured fallback providers. "
                 "Do not submit secrets or personal/confidential customer data. The default free NVIDIA "
                 "Nemotron endpoint states that sessions may be logged for security and product improvement."
             ),
@@ -760,9 +918,8 @@ class WebAgent:
             "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
             "openrouter_web_search_enabled": (
                 os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
-                and "openrouter.ai" in os.getenv(
-                    "OMARAI_LLM_BASE_URL", "https://openrouter.ai/api/v1"
-                ).lower()
+                and (urllib.parse.urlsplit(primary_base_url).hostname or "").lower().rstrip(".")
+                == "openrouter.ai"
             ),
             "public_social_sources": [
                 "Reddit public RSS and optional authorized Reddit OAuth search",
@@ -3282,6 +3439,7 @@ class WebAgent:
         error_class: str | None = None,
         request_started: bool = True,
         remote_response_received: bool | None = None,
+        http_status_code: int | None = None,
     ) -> None:
         """Store bounded metadata for each model attempt; never retain prompts or output."""
         self._generation_attempt_sequence = getattr(self, "_generation_attempt_sequence", 0) + 1
@@ -3302,6 +3460,12 @@ class WebAgent:
             record["finish_reason"] = finish_reason.strip()[:48]
         if isinstance(error_class, str) and error_class:
             record["error_class"] = error_class[:80]
+        if (
+            isinstance(http_status_code, int)
+            and not isinstance(http_status_code, bool)
+            and 100 <= http_status_code <= 599
+        ):
+            record["http_status_code"] = http_status_code
         self.generation_diagnostics.append(record)
         self.generation_diagnostics = self.generation_diagnostics[-12:]
 
@@ -3313,10 +3477,23 @@ class WebAgent:
         timeout: int | None = None,
         model: str | None = None,
         enable_web_search: bool = False,
+        allow_fallback: bool = True,
     ) -> str:
-        """Call an OpenAI-compatible API with bounded fallback and optional live server search."""
+        """Call configured OpenAI-compatible providers with bounded failover."""
         requested_model = (model or self.answer_model).strip()
-        if not self.api_key:
+        provider_configs = list(getattr(self, "model_providers", []) or [])
+        if not provider_configs and getattr(self, "api_key", ""):
+            host = (
+                urllib.parse.urlsplit(getattr(self, "base_url", "")).hostname or ""
+            ).lower().rstrip(".")
+            provider_configs = [{
+                "name": "openrouter" if host == "openrouter.ai" else "custom",
+                "api_key": self.api_key,
+                "base_url": self.base_url,
+                "model": requested_model,
+            }]
+
+        if not provider_configs:
             self._record_generation_diagnostic(
                 requested_model=requested_model,
                 attempted_model=requested_model,
@@ -3327,37 +3504,59 @@ class WebAgent:
             )
             raise RuntimeError("لم يتم ضبط مفتاح نموذج اللغة.")
 
-        if not _is_safe_model_base_url(self.base_url):
-            self._record_generation_diagnostic(
-                requested_model=requested_model,
-                attempted_model=requested_model,
-                status="unsafe_provider_url",
-                error_class="UnsafeProviderURL",
-                request_started=False,
-                remote_response_received=False,
-            )
-            raise RuntimeError(
-                "عنوان مزود النموذج يجب أن يستخدم HTTPS؛ HTTP مسموح فقط على loopback المحلي."
-            )
+        if not allow_fallback:
+            # Semantic claim verification must not silently move its prompt to a
+            # different provider or model after a failure.
+            provider_configs = provider_configs[:1]
 
-        model_candidates = [requested_model]
-        if self.fallback_model and self.fallback_model not in model_candidates:
-            model_candidates.append(self.fallback_model)
+        provider_attempts: list[tuple[str, str, str, str]] = []
+        for index, provider in enumerate(provider_configs):
+            provider_name = provider.get("name", "custom")
+            active_api_key = provider.get("api_key", "")
+            active_base_url = provider.get("base_url", "")
+            if not active_api_key or not active_base_url:
+                continue
+            candidates = [requested_model]
+            if index == 0 and allow_fallback and self.fallback_model:
+                if self.fallback_model not in candidates:
+                    candidates.append(self.fallback_model)
+            elif index > 0:
+                candidates = [provider.get("model", "")]
+            for candidate_model in candidates:
+                if candidate_model:
+                    provider_attempts.append(
+                        (provider_name, active_api_key, active_base_url, candidate_model)
+                    )
 
         last_error: RuntimeError | None = None
-        for candidate_model in model_candidates:
+        for provider_name, active_api_key, active_base_url, candidate_model in provider_attempts:
+            if not _is_safe_model_base_url(active_base_url):
+                self._record_generation_diagnostic(
+                    requested_model=requested_model,
+                    attempted_model=candidate_model,
+                    status="unsafe_provider_url",
+                    error_class="UnsafeProviderURL",
+                    request_started=False,
+                    remote_response_received=False,
+                )
+                last_error = RuntimeError(
+                    "عنوان مزود النموذج يجب أن يستخدم HTTPS؛ HTTP مسموح فقط على loopback المحلي."
+                )
+                continue
+
             budget = getattr(self, "_request_budget", None)
-            use_web_search = enable_web_search and self.openrouter_web_search_enabled
+            use_web_search = (
+                enable_web_search
+                and provider_name == "openrouter"
+                and self.openrouter_web_search_enabled
+            )
             if budget is not None:
                 try:
                     budget.reserve("model_calls")
                     request_timeout = budget.timeout_for(timeout or self.timeout)
                     if use_web_search and budget.remaining_units("tool_calls") < 3:
-                        # The model may still answer, but the optional server-side search
-                        # tool is disabled when its separate budget is unavailable.
                         use_web_search = False
                     elif use_web_search:
-                        # Reserve the maximum server-side tool calls offered by this request.
                         budget.reserve("tool_calls", amount=3)
                 except RequestBudgetExceeded as exc:
                     self._record_generation_diagnostic(
@@ -3371,6 +3570,7 @@ class WebAgent:
                     raise
             else:
                 request_timeout = timeout or self.timeout
+
             request_payload: dict[str, Any] = {
                 "model": candidate_model,
                 "messages": messages,
@@ -3378,8 +3578,7 @@ class WebAgent:
                 "max_tokens": max(100, min(int(max_tokens), 3000)),
             }
             if use_web_search:
-                # OpenRouter executes these searches server-side and returns URL citations.
-                # This is opt-in because provider search incurs usage charges.
+                # This OpenRouter tool is opt-in because provider-side search may incur charges.
                 request_payload["tools"] = [{
                     "type": "openrouter:web_search",
                     "parameters": {
@@ -3391,12 +3590,13 @@ class WebAgent:
                     },
                 }]
                 request_payload["max_tool_calls"] = 5
+
             payload = json.dumps(request_payload, ensure_ascii=False).encode("utf-8")
             request = urllib.request.Request(
-                self.base_url + "/chat/completions",
+                active_base_url + "/chat/completions",
                 data=payload,
                 headers={
-                    "Authorization": "Bearer " + self.api_key,
+                    "Authorization": "Bearer " + active_api_key,
                     "Content-Type": "application/json",
                     "HTTP-Referer": "https://github.com/mosabosama2030-oss/omarai",
                     "X-Title": "Omarai Web Agent",
@@ -3415,9 +3615,6 @@ class WebAgent:
                     if isinstance(finish_reason, str)
                     else ""
                 )
-                # This application consumes a final text completion from an
-                # OpenAI-compatible /chat/completions endpoint. Fail closed when the
-                # provider does not explicitly report the standardized "stop" reason.
                 if normalized_finish_reason != "stop":
                     if normalized_finish_reason in {"length", "max_tokens"}:
                         diagnostic_status = "truncated"
@@ -3446,22 +3643,29 @@ class WebAgent:
                         remote_response_received=True,
                     )
                     continue
+
                 message = choice["message"]
                 answer = message["content"]
                 if use_web_search:
                     for annotation in message.get("annotations", []):
-                        if not isinstance(annotation, dict) or annotation.get("type") != "url_citation":
+                        if (
+                            not isinstance(annotation, dict)
+                            or annotation.get("type") != "url_citation"
+                        ):
                             continue
                         citation = annotation.get("url_citation", annotation)
                         if not isinstance(citation, dict):
                             continue
                         url = _public_http_url(citation.get("url", ""))
-                        if not url or any(item.get("url") == url for item in self.server_search_sources):
+                        if not url or any(
+                            item.get("url") == url for item in self.server_search_sources
+                        ):
                             continue
                         parsed_url = urllib.parse.urlparse(url)
                         excerpt = _clean_text(citation.get("content", ""), 1800)
                         self.server_search_sources.append({
-                            "title": _clean_text(citation.get("title", ""), 300) or parsed_url.netloc,
+                            "title": _clean_text(citation.get("title", ""), 300)
+                            or parsed_url.netloc,
                             "url": url,
                             "snippet": excerpt,
                             "page_text": excerpt,
@@ -3477,10 +3681,13 @@ class WebAgent:
                         })
                 if isinstance(answer, list):
                     answer = "".join(
-                        item.get("text", "") for item in answer if isinstance(item, dict)
+                        item.get("text", "")
+                        for item in answer
+                        if isinstance(item, dict)
                     )
                 if not isinstance(answer, str) or not answer.strip():
                     raise ValueError("empty model response")
+
                 self._record_generation_diagnostic(
                     requested_model=requested_model,
                     attempted_model=candidate_model,
@@ -3489,39 +3696,66 @@ class WebAgent:
                     request_started=True,
                     remote_response_received=True,
                 )
-                self.model_usage.append(_model_usage_record(
-                    requested_model, candidate_model,
-                    data, self.base_url,
-                    # Keep this to allowlisted usage counters, never raw provider data.
-                ))
+                self.model_usage.append(
+                    _model_usage_record(
+                        requested_model,
+                        candidate_model,
+                        data,
+                        active_base_url,
+                    )
+                )
                 return answer.strip()
             except urllib.error.HTTPError as exc:
-                # Never echo provider response bodies: they may contain private diagnostics.
+                status = (
+                    "rate_limited" if exc.code == 429
+                    else "unauthorized" if exc.code in {401, 403}
+                    else "provider_http_error"
+                )
                 self._record_generation_diagnostic(
-                    requested_model, candidate_model, "provider_http_error",
-                    error_class="HTTPError", request_started=True,
+                    requested_model,
+                    candidate_model,
+                    status,
+                    error_class="HTTPError",
+                    request_started=True,
                     remote_response_received=True,
+                    http_status_code=exc.code,
                 )
                 last_error = RuntimeError(
                     f"خدمة نموذج اللغة رفضت الطلب (HTTP {exc.code}) على النموذج المحدد."
                 )
             except (urllib.error.URLError, TimeoutError, OSError) as exc:
                 self._record_generation_diagnostic(
-                    requested_model, candidate_model, "connection_error",
-                    error_class=type(exc).__name__, request_started=True,
+                    requested_model,
+                    candidate_model,
+                    "connection_error",
+                    error_class=type(exc).__name__,
+                    request_started=True,
                     remote_response_received=None,
                 )
+                fallback_note = (
+                    "جرت محاولة استخدام النموذج الاحتياطي."
+                    if allow_fallback
+                    else "لم يُستخدم نموذج احتياطي."
+                )
                 last_error = RuntimeError(
-                    "تعذر الاتصال بخدمة نموذج اللغة؛ جرت محاولة استخدام النموذج الاحتياطي."
+                    "تعذر الاتصال بخدمة نموذج اللغة؛ " + fallback_note
                 )
             except (KeyError, IndexError, TypeError, ValueError) as exc:
                 self._record_generation_diagnostic(
-                    requested_model, candidate_model, "invalid_response",
-                    error_class=type(exc).__name__, request_started=True,
+                    requested_model,
+                    candidate_model,
+                    "invalid_response",
+                    error_class=type(exc).__name__,
+                    request_started=True,
                     remote_response_received=True,
                 )
+                fallback_note = (
+                    "جرت محاولة استخدام النموذج الاحتياطي."
+                    if allow_fallback
+                    else "لم يُستخدم نموذج احتياطي."
+                )
                 last_error = RuntimeError(
-                    "خدمة نموذج اللغة أعادت استجابة غير صالحة؛ جرت محاولة استخدام النموذج الاحتياطي."
+                    "خدمة نموذج اللغة أعادت استجابة غير صالحة؛ " + fallback_note
                 )
 
         raise last_error or RuntimeError("تعذر توليد إجابة من النموذج اللغوي.")
@@ -4121,6 +4355,68 @@ class WebAgent:
         ):
             raise RuntimeError("تعذر استخراج إصلاح تغطية آمن ومحدود؛ لم تُقبل مخرجات الإصلاح.")
         return repaired.group(1).strip()
+
+
+    def _verify_semantic_claims(
+        self,
+        question: str,
+        answer: str,
+        sources: list[dict[str, Any]],
+        answer_integrity: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Assess claim support with one bounded call to a distinct model; fail closed."""
+        model = str(getattr(self, "verifier_model", "") or "").strip()
+        answer_model = str(getattr(self, "answer_model", "") or "").strip()
+        if not model:
+            return {
+                "status": "verifier_not_configured",
+                "withhold_answer": True,
+                "reason": "OMARAI_VERIFIER_MODEL is empty",
+                "semantic_verification": "not_completed",
+                "fact_correctness": "not_verified",
+            }
+        if model.casefold() == answer_model.casefold():
+            return {
+                "status": "verifier_not_independent",
+                "withhold_answer": True,
+                "reason": "verifier_model_matches_answer_model",
+                "semantic_verification": "not_completed",
+                "fact_correctness": "not_verified",
+            }
+        prepared = build_semantic_verification_request(question, answer, sources)
+        if prepared.get("status") != "ready":
+            prepared["withhold_answer"] = True
+            prepared["semantic_verification"] = "not_completed"
+            prepared["fact_correctness"] = "not_verified"
+            return prepared
+        deterministic = deterministic_claim_screen(prepared, answer_integrity)
+        if deterministic.get("status") != "passed":
+            return deterministic
+        try:
+            raw = self._request_completion(
+                prepared["messages"],
+                max_tokens=1800,
+                temperature=0.0,
+                timeout=self._effective_timeout(min(self.timeout, 15)),
+                model=model,
+                enable_web_search=False,
+                allow_fallback=False,
+            )
+        except Exception as exc:
+            return {
+                "status": "not_verifiable",
+                "withhold_answer": True,
+                "reason": "verifier_call_failed",
+                "error_class": type(exc).__name__,
+                "semantic_verification": "not_completed",
+                "fact_correctness": "not_verified",
+            }
+        result = parse_semantic_verification_response(raw, prepared)
+        result["verifier_model"] = model
+        result["answer_model"] = answer_model
+        result["independence_scope"] = "distinct_model_id_same_provider"
+        result["provider_independent"] = False
+        return result
 
     def _review_answer(
         self,
@@ -6555,6 +6851,58 @@ class WebAgent:
         citation_validation = self._citation_validation_metadata(
             answer, max_citable_sources, citation_warnings, review_status
         )
+        # Run deterministic numeric/provenance checks before asking the semantic reviewer.
+        # Recompute below after a source-only fallback so public diagnostics describe the final text.
+        answer_integrity = audit_answer_integrity(
+            working_question, answer, sources, coverage_targets,
+            plan.get("requirement_queries")
+        )
+        semantic_claim_verification: dict[str, Any] = {
+            "status": "not_run_review_unavailable",
+            "withhold_answer": False,
+            "semantic_verification": "not_performed",
+            "fact_correctness": "not_verified",
+        }
+        semantic_answer_withheld = False
+        if used_llm and sources and review_status == "model_claim_audit_completed":
+            if citation_warnings:
+                semantic_claim_verification = {
+                    "status": "not_verifiable",
+                    "withhold_answer": True,
+                    "reason": "invalid_citation_references_were_removed",
+                    "semantic_verification": "not_completed",
+                    "fact_correctness": "not_verified",
+                }
+            else:
+                semantic_claim_verification = self._verify_semantic_claims(
+                    working_question, answer, sources, answer_integrity
+                )
+            if semantic_claim_verification.get("status") not in {
+                "completed_all_claims_supported",
+                "completed_no_factual_claims",
+            }:
+                semantic_answer_withheld = True
+                semantic_warning = (
+                    "حُجبت صياغة النموذج لأن مراجع دعم الادعاءات لم يستطع إثبات دعم "
+                    "كل ادعاء واقعي بمصدره المحدد دون تعارض. المقتطفات أدناه مواد مصدرية "
+                    "للمراجعة وليست إجابة متحققة."
+                )
+                answer = (
+                    _fallback_lead_answer(lead_evidence_sources)
+                    if lead_request and lead_evidence_sources
+                    else _fallback_answer(sources, semantic_warning)
+                )
+                answer, fallback_citation_warnings = self._remove_invalid_citations(
+                    answer, max_citable_sources
+                )
+                citation_warnings = list(dict.fromkeys(
+                    citation_warnings + fallback_citation_warnings
+                ))
+                citation_validation = self._citation_validation_metadata(
+                    answer, max_citable_sources, citation_warnings, review_status
+                )
+        report["semantic_claim_verification"] = semantic_claim_verification
+        report["answer_was_withheld"] = semantic_answer_withheld
         report["unique_sources"] = len(sources)
         report["pages_fetched"] = sum(bool(source.get("page_fetched")) for source in sources)
         report["second_pass_review"] = review_status
@@ -6576,6 +6924,9 @@ class WebAgent:
         report["coverage_repair_status"] = coverage_repair_status
         report["coverage_repair_warning"] = coverage_repair_warning
         answer_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get("requirement_queries"))
+        if semantic_answer_withheld:
+            answer_coverage["status"] = "semantic_support_unverified_answer_withheld"
+            answer_coverage["semantic_verification_status"] = semantic_claim_verification.get("status")
         answer_coverage["target_checks"] = answer_integrity["target_coverage"]
         answer_coverage["potentially_missing_target_count"] = answer_integrity["potentially_missing_target_count"]
         answer_coverage["source_evidence_gap_count"] = answer_integrity["source_evidence_gap_count"]
@@ -6594,7 +6945,10 @@ class WebAgent:
             else "lexical_signals_found_not_semantically_verified" if coverage_targets
             else "not_machine_assessed_no_explicit_targets_detected"
         )
+        if semantic_answer_withheld:
+            task_fulfillment_status = "not_assessed_insufficient_evidence"
         answer_coverage["task_fulfillment_status"] = task_fulfillment_status
+        answer_coverage["semantic_verification_status"] = semantic_claim_verification.get("status")
         report["task_fulfillment_status"] = task_fulfillment_status
         report["answer_integrity"] = answer_integrity
         report["requirement_evidence"] = answer_integrity.get("requirement_evidence", [])
@@ -6615,7 +6969,9 @@ class WebAgent:
         }
         distinct_domains.discard("")
         fetched_pages = sum(bool(source.get("page_fetched")) for source in sources)
-        if (
+        if semantic_answer_withheld:
+            research_quality = "partial"
+        elif (
             len(sources) >= 4 and len(distinct_domains) >= 3
             and len(distinct_providers) >= 2 and fetched_pages >= 1
             and review_status == "model_claim_audit_completed"
@@ -6650,7 +7006,10 @@ class WebAgent:
                 "اكتمال مراجعة النموذج لا يثبت دعم كل ادعاء."
             )
         elif citation_validation["valid_citation_count"] > 0:
-            answer_evidence_status = "citation_indices_validated_only"
+            answer_evidence_status = (
+                "semantic_support_unverified_answer_withheld"
+                if semantic_answer_withheld else "citation_indices_validated_only"
+            )
             uncited_answer_warning = None
         else:
             answer_evidence_status = "not_assessed"
@@ -6683,13 +7042,16 @@ class WebAgent:
         )
         report["editorial_independence_status"] = "not_assessed"
         report["claim_audit_semantics"] = (
-            "model_assisted_not_independent_fact_check"
-            if review_status == "model_claim_audit_completed"
+            "distinct_model_assessed_source_support_not_ground_truth"
+            if semantic_claim_verification.get("status") in {
+                "completed_all_claims_supported", "completed_no_factual_claims"
+            }
             else "not_verified"
         )
         report["insufficient_evidence"] = bool(
             report.get("search_outcome") in _RESEARCH_ERROR_OUTCOMES
             or not sources
+            or semantic_answer_withheld
             or answer_integrity["source_evidence_gap_count"] > 0
             or (
                 bool(coverage_targets)
@@ -6707,11 +7069,16 @@ class WebAgent:
             + ([coverage_repair_warning] if coverage_repair_warning else [])
             + citation_warnings
             + ([uncited_answer_warning] if uncited_answer_warning else [])
+            + ([
+                "حُجبت الإجابة المولدة لعدم اكتمال التحقق الدلالي المستقل عن نموذج الصياغة."
+            ] if semantic_answer_withheld else [])
         ))
         report["model_calls"] = list(self.model_usage)
         report["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
         report["openrouter_web_search_results"] = len(self.server_search_sources)
-        if generation_budget_exhausted or review_budget_exhausted:
+        if semantic_answer_withheld:
+            final_answer_status = "semantic_verification_failed_with_source_fallback"
+        elif generation_budget_exhausted or review_budget_exhausted:
             final_answer_status = "budget_exhausted_with_source_fallback"
         elif llm_warning:
             final_answer_status = (
@@ -6747,6 +7114,7 @@ class WebAgent:
             or answer_integrity["potentially_missing_target_count"] > 0
             or answer_integrity["source_evidence_gap_count"] > 0
             or citation_validation["valid_citation_count"] == 0
+            or semantic_answer_withheld
         ):
             pipeline_completion_status = "partial"
         else:
@@ -6759,7 +7127,10 @@ class WebAgent:
             "claim_review": review_status,
             "valid_citations": citation_validation["valid_citation_count"],
             "semantic_fact_check": "not_performed",
+            "semantic_claim_support_assessment": semantic_claim_verification.get("status", "not_performed"),
         }
+        if semantic_answer_withheld:
+            pipeline_completion_status = "partial"
         report["pipeline_completion_status"] = pipeline_completion_status
         report["completion_stages"] = completion_stages
         report["pipeline_completion_semantics"] = (

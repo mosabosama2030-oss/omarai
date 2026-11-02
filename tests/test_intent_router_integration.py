@@ -156,6 +156,12 @@ def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch)
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "مقارنة أولية [المصدر 1].")
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
     monkeypatch.setattr(agent, "_repair_answer_coverage", lambda _q, answer, _s, _m: answer)
+    monkeypatch.setattr(agent, "_verify_semantic_claims", lambda *args, **kwargs: {
+        "status": "completed_all_claims_supported",
+        "withhold_answer": False,
+        "semantic_verification": "model_assessed_source_support",
+        "fact_correctness": "not_verified",
+    })
 
     result = agent.answer(
         "قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية والكاميرا",
