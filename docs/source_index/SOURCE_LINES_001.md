@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000320
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000277
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -42,30 +42,37 @@
 | [SRC-A3046DA0D1-L000004](../../.env.example#L4) | 4 | `"OMARAI_ACCESS_TOKEN=replace-with-a-random-secret-at-least-32-characters"` | — |
 | [SRC-A3046DA0D1-L000005](../../.env.example#L5) | 5 | `"OPENROUTER_API_KEY=replace-with-your-own-provider-key"` | — |
 | [SRC-A3046DA0D1-L000006](../../.env.example#L6) | 6 | `""` | — |
-| [SRC-A3046DA0D1-L000007](../../.env.example#L7) | 7 | `"# Optional: pin stable/paid models after checking current availability and price."` | — |
-| [SRC-A3046DA0D1-L000008](../../.env.example#L8) | 8 | `"# OMARAI_PLANNER_MODEL=provider/model-id"` | — |
-| [SRC-A3046DA0D1-L000009](../../.env.example#L9) | 9 | `"# OMARAI_ANSWER_MODEL=provider/model-id"` | — |
-| [SRC-A3046DA0D1-L000010](../../.env.example#L10) | 10 | `"# OMARAI_REVIEW_MODEL=provider/model-id"` | — |
-| [SRC-A3046DA0D1-L000011](../../.env.example#L11) | 11 | `"# OMARAI_LLM_FALLBACK_MODEL=openrouter/free"` | — |
-| [SRC-A3046DA0D1-L000012](../../.env.example#L12) | 12 | `""` | — |
-| [SRC-A3046DA0D1-L000013](../../.env.example#L13) | 13 | `"# Optional OpenRouter live web-search server tool; uses provider search and may incur charges."` | — |
-| [SRC-A3046DA0D1-L000014](../../.env.example#L14) | 14 | `"# OMARAI_OPENROUTER_WEB_SEARCH=1"` | — |
-| [SRC-A3046DA0D1-L000015](../../.env.example#L15) | 15 | `""` | — |
-| [SRC-A3046DA0D1-L000016](../../.env.example#L16) | 16 | `"# Optional live search APIs; may require separate accounts/credits."` | — |
-| [SRC-A3046DA0D1-L000017](../../.env.example#L17) | 17 | `"# BRAVE_SEARCH_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000018](../../.env.example#L18) | 18 | `"# TAVILY_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000007](../../.env.example#L7) | 7 | `"# Optional fallback providers. Failover is attempted only after a primary request fails."` | — |
+| [SRC-A3046DA0D1-L000008](../../.env.example#L8) | 8 | `"GEMINI_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000009](../../.env.example#L9) | 9 | `"MISTRAL_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000010](../../.env.example#L10) | 10 | `"# Current documented defaults; override only with verified model IDs."` | — |
+| [SRC-A3046DA0D1-L000011](../../.env.example#L11) | 11 | `"# OMARAI_GEMINI_MODEL=gemini-3.1-flash-lite"` | — |
+| [SRC-A3046DA0D1-L000012](../../.env.example#L12) | 12 | `"# OMARAI_MISTRAL_MODEL=mistral-small-latest"` | — |
+| [SRC-A3046DA0D1-L000013](../../.env.example#L13) | 13 | `""` | — |
+| [SRC-A3046DA0D1-L000014](../../.env.example#L14) | 14 | `"# Optional: pin stable/paid models after checking current availability and price."` | — |
+| [SRC-A3046DA0D1-L000015](../../.env.example#L15) | 15 | `"# OMARAI_PLANNER_MODEL=provider/model-id"` | — |
+| [SRC-A3046DA0D1-L000016](../../.env.example#L16) | 16 | `"# OMARAI_ANSWER_MODEL=provider/model-id"` | — |
+| [SRC-A3046DA0D1-L000017](../../.env.example#L17) | 17 | `"# OMARAI_REVIEW_MODEL=provider/model-id"` | — |
+| [SRC-A3046DA0D1-L000018](../../.env.example#L18) | 18 | `"# OMARAI_LLM_FALLBACK_MODEL=openrouter/free"` | — |
 | [SRC-A3046DA0D1-L000019](../../.env.example#L19) | 19 | `""` | — |
-| [SRC-A3046DA0D1-L000020](../../.env.example#L20) | 20 | `""` | — |
-| [SRC-A3046DA0D1-L000021](../../.env.example#L21) | 21 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
-| [SRC-A3046DA0D1-L000022](../../.env.example#L22) | 22 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
-| [SRC-A3046DA0D1-L000023](../../.env.example#L23) | 23 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
-| [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `""` | — |
-| [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
-| [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
-| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
-| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
-| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
+| [SRC-A3046DA0D1-L000020](../../.env.example#L20) | 20 | `"# Optional OpenRouter live web-search server tool; uses provider search and may incur charges."` | — |
+| [SRC-A3046DA0D1-L000021](../../.env.example#L21) | 21 | `"# OMARAI_OPENROUTER_WEB_SEARCH=1"` | — |
+| [SRC-A3046DA0D1-L000022](../../.env.example#L22) | 22 | `""` | — |
+| [SRC-A3046DA0D1-L000023](../../.env.example#L23) | 23 | `"# Optional live search APIs; may require separate accounts/credits."` | — |
+| [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `"# BRAVE_SEARCH_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# TAVILY_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `""` | — |
+| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `""` | — |
+| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
+| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
+| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
+| [SRC-A3046DA0D1-L000031](../../.env.example#L31) | 31 | `""` | — |
+| [SRC-A3046DA0D1-L000032](../../.env.example#L32) | 32 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
+| [SRC-A3046DA0D1-L000033](../../.env.example#L33) | 33 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
+| [SRC-A3046DA0D1-L000034](../../.env.example#L34) | 34 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
+| [SRC-A3046DA0D1-L000035](../../.env.example#L35) | 35 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000036](../../.env.example#L36) | 36 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
+| [SRC-A3046DA0D1-L000037](../../.env.example#L37) | 37 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
 ## وثائق ونصوص
 
 ### FILE-18813C8694 — [.github/PULL_REQUEST_TEMPLATE.md](../../.github/PULL_REQUEST_TEMPLATE.md#L1)
@@ -121,49 +128,74 @@
 | [SRC-9F6E30987B-L000002](../../.github/workflows/hosted-smoke.yml#L2) | 2 | `""` | — |
 | [SRC-9F6E30987B-L000003](../../.github/workflows/hosted-smoke.yml#L3) | 3 | `"on:"` | — |
 | [SRC-9F6E30987B-L000004](../../.github/workflows/hosted-smoke.yml#L4) | 4 | `"  workflow_dispatch:"` | — |
-| [SRC-9F6E30987B-L000005](../../.github/workflows/hosted-smoke.yml#L5) | 5 | `""` | — |
-| [SRC-9F6E30987B-L000006](../../.github/workflows/hosted-smoke.yml#L6) | 6 | `"permissions:"` | — |
-| [SRC-9F6E30987B-L000007](../../.github/workflows/hosted-smoke.yml#L7) | 7 | `"  contents: read"` | — |
-| [SRC-9F6E30987B-L000008](../../.github/workflows/hosted-smoke.yml#L8) | 8 | `""` | — |
-| [SRC-9F6E30987B-L000009](../../.github/workflows/hosted-smoke.yml#L9) | 9 | `"concurrency:"` | — |
-| [SRC-9F6E30987B-L000010](../../.github/workflows/hosted-smoke.yml#L10) | 10 | `"  group: omarai-hosted-smoke"` | — |
-| [SRC-9F6E30987B-L000011](../../.github/workflows/hosted-smoke.yml#L11) | 11 | `"  cancel-in-progress: false"` | — |
-| [SRC-9F6E30987B-L000012](../../.github/workflows/hosted-smoke.yml#L12) | 12 | `""` | — |
-| [SRC-9F6E30987B-L000013](../../.github/workflows/hosted-smoke.yml#L13) | 13 | `"jobs:"` | — |
-| [SRC-9F6E30987B-L000014](../../.github/workflows/hosted-smoke.yml#L14) | 14 | `"  hosted-smoke:"` | — |
-| [SRC-9F6E30987B-L000015](../../.github/workflows/hosted-smoke.yml#L15) | 15 | `"    runs-on: ubuntu-latest"` | — |
-| [SRC-9F6E30987B-L000016](../../.github/workflows/hosted-smoke.yml#L16) | 16 | `"    timeout-minutes: 8"` | — |
-| [SRC-9F6E30987B-L000017](../../.github/workflows/hosted-smoke.yml#L17) | 17 | `"    env:"` | — |
-| [SRC-9F6E30987B-L000018](../../.github/workflows/hosted-smoke.yml#L18) | 18 | `"      OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}"` | — |
-| [SRC-9F6E30987B-L000019](../../.github/workflows/hosted-smoke.yml#L19) | 19 | `"      OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}"` | — |
-| [SRC-9F6E30987B-L000020](../../.github/workflows/hosted-smoke.yml#L20) | 20 | `"    steps:"` | — |
-| [SRC-9F6E30987B-L000021](../../.github/workflows/hosted-smoke.yml#L21) | 21 | `"      - name: Verify hosted target and access-token secrets are available"` | — |
-| [SRC-9F6E30987B-L000022](../../.github/workflows/hosted-smoke.yml#L22) | 22 | `"        shell: bash"` | — |
-| [SRC-9F6E30987B-L000023](../../.github/workflows/hosted-smoke.yml#L23) | 23 | `"        run: \|"` | — |
-| [SRC-9F6E30987B-L000024](../../.github/workflows/hosted-smoke.yml#L24) | 24 | `"          if [[ -z \"${OMARAI_ACCESS_TOKEN}\" \|\| ${#OMARAI_ACCESS_TOKEN} -lt 32 ]]; then"` | — |
-| [SRC-9F6E30987B-L000025](../../.github/workflows/hosted-smoke.yml#L25) | 25 | `"            echo \"::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short.\""` | — |
-| [SRC-9F6E30987B-L000026](../../.github/workflows/hosted-smoke.yml#L26) | 26 | `"            exit 1"` | — |
-| [SRC-9F6E30987B-L000027](../../.github/workflows/hosted-smoke.yml#L27) | 27 | `"          fi"` | — |
-| [SRC-9F6E30987B-L000028](../../.github/workflows/hosted-smoke.yml#L28) | 28 | `"          if [[ -z \"${OMARAI_BASE_URL}\" ]]; then"` | — |
-| [SRC-9F6E30987B-L000029](../../.github/workflows/hosted-smoke.yml#L29) | 29 | `"            echo \"::error::GitHub Actions secret OMARAI_BASE_URL is missing.\""` | — |
-| [SRC-9F6E30987B-L000030](../../.github/workflows/hosted-smoke.yml#L30) | 30 | `"            exit 1"` | — |
-| [SRC-9F6E30987B-L000031](../../.github/workflows/hosted-smoke.yml#L31) | 31 | `"          fi"` | — |
-| [SRC-9F6E30987B-L000032](../../.github/workflows/hosted-smoke.yml#L32) | 32 | `"          if [[ \"${OMARAI_BASE_URL}\" != https://* \|\| \"${OMARAI_BASE_URL}\" == *\\?* \|\| \"${OMARAI_BASE_URL}\" == *\\#* ]]; then"` | — |
-| [SRC-9F6E30987B-L000033](../../.github/workflows/hosted-smoke.yml#L33) | 33 | `"            echo \"::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment.\""` | — |
-| [SRC-9F6E30987B-L000034](../../.github/workflows/hosted-smoke.yml#L34) | 34 | `"            exit 1"` | — |
-| [SRC-9F6E30987B-L000035](../../.github/workflows/hosted-smoke.yml#L35) | 35 | `"          fi"` | — |
-| [SRC-9F6E30987B-L000036](../../.github/workflows/hosted-smoke.yml#L36) | 36 | `"          echo \"Hosted target and access-token secrets are present; values not printed.\""` | — |
-| [SRC-9F6E30987B-L000037](../../.github/workflows/hosted-smoke.yml#L37) | 37 | `""` | — |
-| [SRC-9F6E30987B-L000038](../../.github/workflows/hosted-smoke.yml#L38) | 38 | `"      - name: Check out repository"` | — |
-| [SRC-9F6E30987B-L000039](../../.github/workflows/hosted-smoke.yml#L39) | 39 | `"        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
-| [SRC-9F6E30987B-L000040](../../.github/workflows/hosted-smoke.yml#L40) | 40 | `""` | — |
-| [SRC-9F6E30987B-L000041](../../.github/workflows/hosted-smoke.yml#L41) | 41 | `"      - name: Set up Python"` | — |
-| [SRC-9F6E30987B-L000042](../../.github/workflows/hosted-smoke.yml#L42) | 42 | `"        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
-| [SRC-9F6E30987B-L000043](../../.github/workflows/hosted-smoke.yml#L43) | 43 | `"        with:"` | — |
-| [SRC-9F6E30987B-L000044](../../.github/workflows/hosted-smoke.yml#L44) | 44 | `"          python-version: \"3.12\""` | — |
-| [SRC-9F6E30987B-L000045](../../.github/workflows/hosted-smoke.yml#L45) | 45 | `""` | — |
-| [SRC-9F6E30987B-L000046](../../.github/workflows/hosted-smoke.yml#L46) | 46 | `"      - name: Run live hosted acceptance test"` | — |
-| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        run: python scripts/hosted_smoke_test.py --base-url \"$OMARAI_BASE_URL\" --expected-sha \"$(git rev-parse HEAD)\" --timeout 180"` | — |
+| [SRC-9F6E30987B-L000005](../../.github/workflows/hosted-smoke.yml#L5) | 5 | `"    inputs:"` | — |
+| [SRC-9F6E30987B-L000006](../../.github/workflows/hosted-smoke.yml#L6) | 6 | `"      allow_provider_usage:"` | — |
+| [SRC-9F6E30987B-L000007](../../.github/workflows/hosted-smoke.yml#L7) | 7 | `"        description: \"Approve one live search and one model completion; provider quota or charges may be consumed.\""` | — |
+| [SRC-9F6E30987B-L000008](../../.github/workflows/hosted-smoke.yml#L8) | 8 | `"        required: true"` | — |
+| [SRC-9F6E30987B-L000009](../../.github/workflows/hosted-smoke.yml#L9) | 9 | `"        type: boolean"` | — |
+| [SRC-9F6E30987B-L000010](../../.github/workflows/hosted-smoke.yml#L10) | 10 | `"        default: false"` | — |
+| [SRC-9F6E30987B-L000011](../../.github/workflows/hosted-smoke.yml#L11) | 11 | `""` | — |
+| [SRC-9F6E30987B-L000012](../../.github/workflows/hosted-smoke.yml#L12) | 12 | `"permissions:"` | — |
+| [SRC-9F6E30987B-L000013](../../.github/workflows/hosted-smoke.yml#L13) | 13 | `"  contents: read"` | — |
+| [SRC-9F6E30987B-L000014](../../.github/workflows/hosted-smoke.yml#L14) | 14 | `""` | — |
+| [SRC-9F6E30987B-L000015](../../.github/workflows/hosted-smoke.yml#L15) | 15 | `"concurrency:"` | — |
+| [SRC-9F6E30987B-L000016](../../.github/workflows/hosted-smoke.yml#L16) | 16 | `"  group: omarai-hosted-smoke"` | — |
+| [SRC-9F6E30987B-L000017](../../.github/workflows/hosted-smoke.yml#L17) | 17 | `"  cancel-in-progress: false"` | — |
+| [SRC-9F6E30987B-L000018](../../.github/workflows/hosted-smoke.yml#L18) | 18 | `""` | — |
+| [SRC-9F6E30987B-L000019](../../.github/workflows/hosted-smoke.yml#L19) | 19 | `"jobs:"` | — |
+| [SRC-9F6E30987B-L000020](../../.github/workflows/hosted-smoke.yml#L20) | 20 | `"  hosted-smoke:"` | — |
+| [SRC-9F6E30987B-L000021](../../.github/workflows/hosted-smoke.yml#L21) | 21 | `"    runs-on: ubuntu-latest"` | — |
+| [SRC-9F6E30987B-L000022](../../.github/workflows/hosted-smoke.yml#L22) | 22 | `"    timeout-minutes: 8"` | — |
+| [SRC-9F6E30987B-L000023](../../.github/workflows/hosted-smoke.yml#L23) | 23 | `"    env:"` | — |
+| [SRC-9F6E30987B-L000024](../../.github/workflows/hosted-smoke.yml#L24) | 24 | `"      OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}"` | — |
+| [SRC-9F6E30987B-L000025](../../.github/workflows/hosted-smoke.yml#L25) | 25 | `"      OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}"` | — |
+| [SRC-9F6E30987B-L000026](../../.github/workflows/hosted-smoke.yml#L26) | 26 | `"      ALLOW_PROVIDER_USAGE: ${{ inputs.allow_provider_usage }}"` | — |
+| [SRC-9F6E30987B-L000027](../../.github/workflows/hosted-smoke.yml#L27) | 27 | `"    steps:"` | — |
+| [SRC-9F6E30987B-L000028](../../.github/workflows/hosted-smoke.yml#L28) | 28 | `"      - name: Require explicit approval for live provider usage"` | — |
+| [SRC-9F6E30987B-L000029](../../.github/workflows/hosted-smoke.yml#L29) | 29 | `"        shell: bash"` | — |
+| [SRC-9F6E30987B-L000030](../../.github/workflows/hosted-smoke.yml#L30) | 30 | `"        run: \|"` | — |
+| [SRC-9F6E30987B-L000031](../../.github/workflows/hosted-smoke.yml#L31) | 31 | `"          if [[ \"${ALLOW_PROVIDER_USAGE}\" != \"true\" ]]; then"` | — |
+| [SRC-9F6E30987B-L000032](../../.github/workflows/hosted-smoke.yml#L32) | 32 | `"            echo \"::error::Live search/model usage was not approved. Re-run manually and enable allow_provider_usage only after human approval.\""` | — |
+| [SRC-9F6E30987B-L000033](../../.github/workflows/hosted-smoke.yml#L33) | 33 | `"            exit 1"` | — |
+| [SRC-9F6E30987B-L000034](../../.github/workflows/hosted-smoke.yml#L34) | 34 | `"          fi"` | — |
+| [SRC-9F6E30987B-L000035](../../.github/workflows/hosted-smoke.yml#L35) | 35 | `"          echo \"One live provider-usage run was explicitly approved.\""` | — |
+| [SRC-9F6E30987B-L000036](../../.github/workflows/hosted-smoke.yml#L36) | 36 | `""` | — |
+| [SRC-9F6E30987B-L000037](../../.github/workflows/hosted-smoke.yml#L37) | 37 | `"      - name: Verify hosted target and access-token secrets are available"` | — |
+| [SRC-9F6E30987B-L000038](../../.github/workflows/hosted-smoke.yml#L38) | 38 | `"        shell: bash"` | — |
+| [SRC-9F6E30987B-L000039](../../.github/workflows/hosted-smoke.yml#L39) | 39 | `"        run: \|"` | — |
+| [SRC-9F6E30987B-L000040](../../.github/workflows/hosted-smoke.yml#L40) | 40 | `"          if [[ -z \"${OMARAI_ACCESS_TOKEN}\" \|\| ${#OMARAI_ACCESS_TOKEN} -lt 32 ]]; then"` | — |
+| [SRC-9F6E30987B-L000041](../../.github/workflows/hosted-smoke.yml#L41) | 41 | `"            echo \"::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short.\""` | — |
+| [SRC-9F6E30987B-L000042](../../.github/workflows/hosted-smoke.yml#L42) | 42 | `"            exit 1"` | — |
+| [SRC-9F6E30987B-L000043](../../.github/workflows/hosted-smoke.yml#L43) | 43 | `"          fi"` | — |
+| [SRC-9F6E30987B-L000044](../../.github/workflows/hosted-smoke.yml#L44) | 44 | `"          if [[ -z \"${OMARAI_BASE_URL}\" ]]; then"` | — |
+| [SRC-9F6E30987B-L000045](../../.github/workflows/hosted-smoke.yml#L45) | 45 | `"            echo \"::error::GitHub Actions secret OMARAI_BASE_URL is missing.\""` | — |
+| [SRC-9F6E30987B-L000046](../../.github/workflows/hosted-smoke.yml#L46) | 46 | `"            exit 1"` | — |
+| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"          fi"` | — |
+| [SRC-9F6E30987B-L000048](../../.github/workflows/hosted-smoke.yml#L48) | 48 | `"          if [[ \"${OMARAI_BASE_URL}\" != https://* \|\| \"${OMARAI_BASE_URL}\" == *\\?* \|\| \"${OMARAI_BASE_URL}\" == *\\#* ]]; then"` | — |
+| [SRC-9F6E30987B-L000049](../../.github/workflows/hosted-smoke.yml#L49) | 49 | `"            echo \"::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment.\""` | — |
+| [SRC-9F6E30987B-L000050](../../.github/workflows/hosted-smoke.yml#L50) | 50 | `"            exit 1"` | — |
+| [SRC-9F6E30987B-L000051](../../.github/workflows/hosted-smoke.yml#L51) | 51 | `"          fi"` | — |
+| [SRC-9F6E30987B-L000052](../../.github/workflows/hosted-smoke.yml#L52) | 52 | `"          echo \"Hosted target and access-token secrets are present; values not printed.\""` | — |
+| [SRC-9F6E30987B-L000053](../../.github/workflows/hosted-smoke.yml#L53) | 53 | `""` | — |
+| [SRC-9F6E30987B-L000054](../../.github/workflows/hosted-smoke.yml#L54) | 54 | `"      - name: Check out repository"` | — |
+| [SRC-9F6E30987B-L000055](../../.github/workflows/hosted-smoke.yml#L55) | 55 | `"        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
+| [SRC-9F6E30987B-L000056](../../.github/workflows/hosted-smoke.yml#L56) | 56 | `""` | — |
+| [SRC-9F6E30987B-L000057](../../.github/workflows/hosted-smoke.yml#L57) | 57 | `"      - name: Set up Python"` | — |
+| [SRC-9F6E30987B-L000058](../../.github/workflows/hosted-smoke.yml#L58) | 58 | `"        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0"` | — |
+| [SRC-9F6E30987B-L000059](../../.github/workflows/hosted-smoke.yml#L59) | 59 | `"        with:"` | — |
+| [SRC-9F6E30987B-L000060](../../.github/workflows/hosted-smoke.yml#L60) | 60 | `"          python-version: \"3.12\""` | — |
+| [SRC-9F6E30987B-L000061](../../.github/workflows/hosted-smoke.yml#L61) | 61 | `""` | — |
+| [SRC-9F6E30987B-L000062](../../.github/workflows/hosted-smoke.yml#L62) | 62 | `"      - name: Run live hosted acceptance test"` | — |
+| [SRC-9F6E30987B-L000063](../../.github/workflows/hosted-smoke.yml#L63) | 63 | `"        run: python scripts/hosted_smoke_test.py --base-url \"$OMARAI_BASE_URL\" --expected-sha \"$(git rev-parse HEAD)\" --timeout 180 --allow-provider-usage --output artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000064](../../.github/workflows/hosted-smoke.yml#L64) | 64 | `""` | — |
+| [SRC-9F6E30987B-L000065](../../.github/workflows/hosted-smoke.yml#L65) | 65 | `"      - name: Upload hosted question-and-answer transcript"` | — |
+| [SRC-9F6E30987B-L000066](../../.github/workflows/hosted-smoke.yml#L66) | 66 | `"        if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''"` | — |
+| [SRC-9F6E30987B-L000067](../../.github/workflows/hosted-smoke.yml#L67) | 67 | `"        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2"` | — |
+| [SRC-9F6E30987B-L000068](../../.github/workflows/hosted-smoke.yml#L68) | 68 | `"        with:"` | — |
+| [SRC-9F6E30987B-L000069](../../.github/workflows/hosted-smoke.yml#L69) | 69 | `"          name: omarai-hosted-acceptance-transcript"` | — |
+| [SRC-9F6E30987B-L000070](../../.github/workflows/hosted-smoke.yml#L70) | 70 | `"          path: artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000071](../../.github/workflows/hosted-smoke.yml#L71) | 71 | `"          if-no-files-found: ignore"` | — |
+| [SRC-9F6E30987B-L000072](../../.github/workflows/hosted-smoke.yml#L72) | 72 | `"          retention-days: 14"` | — |
 ## CI وأتمتة
 
 ### FILE-1DB27D9318 — [.github/workflows/tests.yml](../../.github/workflows/tests.yml#L1)
@@ -267,69 +299,80 @@
 | [SRC-1DB27D9318-L000092](../../.github/workflows/tests.yml#L92) | 92 | `"      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1"` | — |
 | [SRC-1DB27D9318-L000093](../../.github/workflows/tests.yml#L93) | 93 | `"      - name: Build production container"` | — |
 | [SRC-1DB27D9318-L000094](../../.github/workflows/tests.yml#L94) | 94 | `"        run: docker build --build-arg PUBLIC_OMARAI_BUILD_SHA=\"${GITHUB_SHA}\" --tag omarai:ci ."` | — |
-| [SRC-1DB27D9318-L000095](../../.github/workflows/tests.yml#L95) | 95 | `"      - name: Start container and smoke-test protected API"` | — |
+| [SRC-1DB27D9318-L000095](../../.github/workflows/tests.yml#L95) | 95 | `"      - name: Verify public container refuses startup without credentials"` | — |
 | [SRC-1DB27D9318-L000096](../../.github/workflows/tests.yml#L96) | 96 | `"        shell: bash"` | — |
 | [SRC-1DB27D9318-L000097](../../.github/workflows/tests.yml#L97) | 97 | `"        run: \|"` | — |
 | [SRC-1DB27D9318-L000098](../../.github/workflows/tests.yml#L98) | 98 | `"          set -euo pipefail"` | — |
-| [SRC-1DB27D9318-L000099](../../.github/workflows/tests.yml#L99) | 99 | `"          docker run --detach --rm --name omarai-ci \\"` | — |
-| [SRC-1DB27D9318-L000100](../../.github/workflows/tests.yml#L100) | 100 | `"            --publish 127.0.0.1:18765:8000 \\"` | — |
-| [SRC-1DB27D9318-L000101](../../.github/workflows/tests.yml#L101) | 101 | `"            --env OMARAI_PUBLIC_DEPLOYMENT=1 \\"` | — |
-| [SRC-1DB27D9318-L000102](../../.github/workflows/tests.yml#L102) | 102 | `"            --env OMARAI_ACCESS_TOKEN=ci-only-test-token-not-for-production-123456 \\"` | — |
-| [SRC-1DB27D9318-L000103](../../.github/workflows/tests.yml#L103) | 103 | `"            omarai:ci"` | — |
-| [SRC-1DB27D9318-L000104](../../.github/workflows/tests.yml#L104) | 104 | `"          cleanup() { docker stop omarai-ci >/dev/null 2>&1 \|\| true; }"` | — |
-| [SRC-1DB27D9318-L000105](../../.github/workflows/tests.yml#L105) | 105 | `"          trap cleanup EXIT"` | — |
-| [SRC-1DB27D9318-L000106](../../.github/workflows/tests.yml#L106) | 106 | `""` | — |
-| [SRC-1DB27D9318-L000107](../../.github/workflows/tests.yml#L107) | 107 | `"          healthy=false"` | — |
-| [SRC-1DB27D9318-L000108](../../.github/workflows/tests.yml#L108) | 108 | `"          for _ in $(seq 1 30); do"` | — |
-| [SRC-1DB27D9318-L000109](../../.github/workflows/tests.yml#L109) | 109 | `"            if curl --silent --fail http://127.0.0.1:18765/api/health \\"` | — |
-| [SRC-1DB27D9318-L000110](../../.github/workflows/tests.yml#L110) | 110 | `"              --output /tmp/omarai-health.json; then"` | — |
-| [SRC-1DB27D9318-L000111](../../.github/workflows/tests.yml#L111) | 111 | `"              healthy=true"` | — |
-| [SRC-1DB27D9318-L000112](../../.github/workflows/tests.yml#L112) | 112 | `"              break"` | — |
-| [SRC-1DB27D9318-L000113](../../.github/workflows/tests.yml#L113) | 113 | `"            fi"` | — |
-| [SRC-1DB27D9318-L000114](../../.github/workflows/tests.yml#L114) | 114 | `"            sleep 1"` | — |
-| [SRC-1DB27D9318-L000115](../../.github/workflows/tests.yml#L115) | 115 | `"          done"` | — |
-| [SRC-1DB27D9318-L000116](../../.github/workflows/tests.yml#L116) | 116 | `"          if [[ \"$healthy\" != \"true\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000117](../../.github/workflows/tests.yml#L117) | 117 | `"            docker logs omarai-ci"` | — |
-| [SRC-1DB27D9318-L000118](../../.github/workflows/tests.yml#L118) | 118 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000119](../../.github/workflows/tests.yml#L119) | 119 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000120](../../.github/workflows/tests.yml#L120) | 120 | `"          python -c 'import json, os; d=json.load(open(\"/tmp/omarai-health.json\", encoding=\"utf-8\")); assert d[\"ok\"] is True; assert d[\"build\"][\"sha\"] == os.environ[\"GITHUB_SHA\"].lower()'"` | — |
-| [SRC-1DB27D9318-L000121](../../.github/workflows/tests.yml#L121) | 121 | `""` | — |
-| [SRC-1DB27D9318-L000122](../../.github/workflows/tests.yml#L122) | 122 | `"          status=\"$(curl --silent --output /tmp/omarai-unauth.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000123](../../.github/workflows/tests.yml#L123) | 123 | `"            --header \"Content-Type: application/json\" \\"` | — |
-| [SRC-1DB27D9318-L000124](../../.github/workflows/tests.yml#L124) | 124 | `"            --data '{\"question\":\"smoke\"}' http://127.0.0.1:18765/api/agent)\""` | — |
-| [SRC-1DB27D9318-L000125](../../.github/workflows/tests.yml#L125) | 125 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000126](../../.github/workflows/tests.yml#L126) | 126 | `"            cat /tmp/omarai-unauth.json"` | — |
-| [SRC-1DB27D9318-L000127](../../.github/workflows/tests.yml#L127) | 127 | `"            echo \"Unauthenticated /api/agent should return HTTP 401, got $status.\""` | — |
-| [SRC-1DB27D9318-L000128](../../.github/workflows/tests.yml#L128) | 128 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000129](../../.github/workflows/tests.yml#L129) | 129 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000130](../../.github/workflows/tests.yml#L130) | 130 | `""` | — |
-| [SRC-1DB27D9318-L000131](../../.github/workflows/tests.yml#L131) | 131 | `"          status=\"$(curl --silent --output /tmp/omarai-leads.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000132](../../.github/workflows/tests.yml#L132) | 132 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
-| [SRC-1DB27D9318-L000133](../../.github/workflows/tests.yml#L133) | 133 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000134](../../.github/workflows/tests.yml#L134) | 134 | `"            cat /tmp/omarai-leads.json"` | — |
-| [SRC-1DB27D9318-L000135](../../.github/workflows/tests.yml#L135) | 135 | `"            echo \"Unauthenticated /api/leads should return HTTP 401, got $status.\""` | — |
-| [SRC-1DB27D9318-L000136](../../.github/workflows/tests.yml#L136) | 136 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000137](../../.github/workflows/tests.yml#L137) | 137 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000138](../../.github/workflows/tests.yml#L138) | 138 | `""` | — |
-| [SRC-1DB27D9318-L000139](../../.github/workflows/tests.yml#L139) | 139 | `"          status=\"$(curl --silent --output /tmp/omarai-leads-auth.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000140](../../.github/workflows/tests.yml#L140) | 140 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
-| [SRC-1DB27D9318-L000141](../../.github/workflows/tests.yml#L141) | 141 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
-| [SRC-1DB27D9318-L000142](../../.github/workflows/tests.yml#L142) | 142 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000143](../../.github/workflows/tests.yml#L143) | 143 | `"            cat /tmp/omarai-leads-auth.json"` | — |
-| [SRC-1DB27D9318-L000144](../../.github/workflows/tests.yml#L144) | 144 | `"            echo \"Authenticated /api/leads should return HTTP 200, got $status.\""` | — |
-| [SRC-1DB27D9318-L000145](../../.github/workflows/tests.yml#L145) | 145 | `"            exit 1"` | — |
-| [SRC-1DB27D9318-L000146](../../.github/workflows/tests.yml#L146) | 146 | `"          fi"` | — |
-| [SRC-1DB27D9318-L000147](../../.github/workflows/tests.yml#L147) | 147 | `""` | — |
-| [SRC-1DB27D9318-L000148](../../.github/workflows/tests.yml#L148) | 148 | `"          status=\"$(curl --silent --output /tmp/omarai-analysis.json --write-out \"%{http_code}\" \\"` | — |
-| [SRC-1DB27D9318-L000149](../../.github/workflows/tests.yml#L149) | 149 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
-| [SRC-1DB27D9318-L000150](../../.github/workflows/tests.yml#L150) | 150 | `"            --header \"Content-Type: application/json\" \\"` | — |
-| [SRC-1DB27D9318-L000151](../../.github/workflows/tests.yml#L151) | 151 | `"            --data '{\"text\":\"بدور على شقة\",\"product_terms\":[\"شقة\"]}' \\"` | — |
-| [SRC-1DB27D9318-L000152](../../.github/workflows/tests.yml#L152) | 152 | `"            http://127.0.0.1:18765/api/analyze)\""` | — |
+| [SRC-1DB27D9318-L000099](../../.github/workflows/tests.yml#L99) | 99 | `"          if docker run --rm omarai:ci >/tmp/omarai-public-guard.log 2>&1; then"` | — |
+| [SRC-1DB27D9318-L000100](../../.github/workflows/tests.yml#L100) | 100 | `"            echo \"A public container must refuse startup without an explicit deployment flag and access token.\""` | — |
+| [SRC-1DB27D9318-L000101](../../.github/workflows/tests.yml#L101) | 101 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000102](../../.github/workflows/tests.yml#L102) | 102 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000103](../../.github/workflows/tests.yml#L103) | 103 | `"          grep -F \"Public binding requires OMARAI_PUBLIC_DEPLOYMENT=1 and\" /tmp/omarai-public-guard.log"` | — |
+| [SRC-1DB27D9318-L000104](../../.github/workflows/tests.yml#L104) | 104 | `"          grep -F \"private OMARAI_ACCESS_TOKEN of at least 32 characters\" /tmp/omarai-public-guard.log"` | — |
+| [SRC-1DB27D9318-L000105](../../.github/workflows/tests.yml#L105) | 105 | `""` | — |
+| [SRC-1DB27D9318-L000106](../../.github/workflows/tests.yml#L106) | 106 | `"      - name: Start container and smoke-test protected API"` | — |
+| [SRC-1DB27D9318-L000107](../../.github/workflows/tests.yml#L107) | 107 | `"        shell: bash"` | — |
+| [SRC-1DB27D9318-L000108](../../.github/workflows/tests.yml#L108) | 108 | `"        run: \|"` | — |
+| [SRC-1DB27D9318-L000109](../../.github/workflows/tests.yml#L109) | 109 | `"          set -euo pipefail"` | — |
+| [SRC-1DB27D9318-L000110](../../.github/workflows/tests.yml#L110) | 110 | `"          docker run --detach --rm --name omarai-ci \\"` | — |
+| [SRC-1DB27D9318-L000111](../../.github/workflows/tests.yml#L111) | 111 | `"            --publish 127.0.0.1:18765:8000 \\"` | — |
+| [SRC-1DB27D9318-L000112](../../.github/workflows/tests.yml#L112) | 112 | `"            --env OMARAI_PUBLIC_DEPLOYMENT=1 \\"` | — |
+| [SRC-1DB27D9318-L000113](../../.github/workflows/tests.yml#L113) | 113 | `"            --env OMARAI_ACCESS_TOKEN=ci-only-test-token-not-for-production-123456 \\"` | — |
+| [SRC-1DB27D9318-L000114](../../.github/workflows/tests.yml#L114) | 114 | `"            omarai:ci"` | — |
+| [SRC-1DB27D9318-L000115](../../.github/workflows/tests.yml#L115) | 115 | `"          cleanup() { docker stop omarai-ci >/dev/null 2>&1 \|\| true; }"` | — |
+| [SRC-1DB27D9318-L000116](../../.github/workflows/tests.yml#L116) | 116 | `"          trap cleanup EXIT"` | — |
+| [SRC-1DB27D9318-L000117](../../.github/workflows/tests.yml#L117) | 117 | `""` | — |
+| [SRC-1DB27D9318-L000118](../../.github/workflows/tests.yml#L118) | 118 | `"          healthy=false"` | — |
+| [SRC-1DB27D9318-L000119](../../.github/workflows/tests.yml#L119) | 119 | `"          for _ in $(seq 1 30); do"` | — |
+| [SRC-1DB27D9318-L000120](../../.github/workflows/tests.yml#L120) | 120 | `"            if curl --silent --fail http://127.0.0.1:18765/api/health \\"` | — |
+| [SRC-1DB27D9318-L000121](../../.github/workflows/tests.yml#L121) | 121 | `"              --output /tmp/omarai-health.json; then"` | — |
+| [SRC-1DB27D9318-L000122](../../.github/workflows/tests.yml#L122) | 122 | `"              healthy=true"` | — |
+| [SRC-1DB27D9318-L000123](../../.github/workflows/tests.yml#L123) | 123 | `"              break"` | — |
+| [SRC-1DB27D9318-L000124](../../.github/workflows/tests.yml#L124) | 124 | `"            fi"` | — |
+| [SRC-1DB27D9318-L000125](../../.github/workflows/tests.yml#L125) | 125 | `"            sleep 1"` | — |
+| [SRC-1DB27D9318-L000126](../../.github/workflows/tests.yml#L126) | 126 | `"          done"` | — |
+| [SRC-1DB27D9318-L000127](../../.github/workflows/tests.yml#L127) | 127 | `"          if [[ \"$healthy\" != \"true\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000128](../../.github/workflows/tests.yml#L128) | 128 | `"            docker logs omarai-ci"` | — |
+| [SRC-1DB27D9318-L000129](../../.github/workflows/tests.yml#L129) | 129 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000130](../../.github/workflows/tests.yml#L130) | 130 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000131](../../.github/workflows/tests.yml#L131) | 131 | `"          python -c 'import json, os; d=json.load(open(\"/tmp/omarai-health.json\", encoding=\"utf-8\")); assert d[\"ok\"] is True; assert d[\"build\"][\"sha\"] == os.environ[\"GITHUB_SHA\"].lower()'"` | — |
+| [SRC-1DB27D9318-L000132](../../.github/workflows/tests.yml#L132) | 132 | `""` | — |
+| [SRC-1DB27D9318-L000133](../../.github/workflows/tests.yml#L133) | 133 | `"          status=\"$(curl --silent --output /tmp/omarai-unauth.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000134](../../.github/workflows/tests.yml#L134) | 134 | `"            --header \"Content-Type: application/json\" \\"` | — |
+| [SRC-1DB27D9318-L000135](../../.github/workflows/tests.yml#L135) | 135 | `"            --data '{\"question\":\"smoke\"}' http://127.0.0.1:18765/api/agent)\""` | — |
+| [SRC-1DB27D9318-L000136](../../.github/workflows/tests.yml#L136) | 136 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000137](../../.github/workflows/tests.yml#L137) | 137 | `"            cat /tmp/omarai-unauth.json"` | — |
+| [SRC-1DB27D9318-L000138](../../.github/workflows/tests.yml#L138) | 138 | `"            echo \"Unauthenticated /api/agent should return HTTP 401, got $status.\""` | — |
+| [SRC-1DB27D9318-L000139](../../.github/workflows/tests.yml#L139) | 139 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000140](../../.github/workflows/tests.yml#L140) | 140 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000141](../../.github/workflows/tests.yml#L141) | 141 | `""` | — |
+| [SRC-1DB27D9318-L000142](../../.github/workflows/tests.yml#L142) | 142 | `"          status=\"$(curl --silent --output /tmp/omarai-leads.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000143](../../.github/workflows/tests.yml#L143) | 143 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
+| [SRC-1DB27D9318-L000144](../../.github/workflows/tests.yml#L144) | 144 | `"          if [[ \"$status\" != \"401\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000145](../../.github/workflows/tests.yml#L145) | 145 | `"            cat /tmp/omarai-leads.json"` | — |
+| [SRC-1DB27D9318-L000146](../../.github/workflows/tests.yml#L146) | 146 | `"            echo \"Unauthenticated /api/leads should return HTTP 401, got $status.\""` | — |
+| [SRC-1DB27D9318-L000147](../../.github/workflows/tests.yml#L147) | 147 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000148](../../.github/workflows/tests.yml#L148) | 148 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000149](../../.github/workflows/tests.yml#L149) | 149 | `""` | — |
+| [SRC-1DB27D9318-L000150](../../.github/workflows/tests.yml#L150) | 150 | `"          status=\"$(curl --silent --output /tmp/omarai-leads-auth.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000151](../../.github/workflows/tests.yml#L151) | 151 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
+| [SRC-1DB27D9318-L000152](../../.github/workflows/tests.yml#L152) | 152 | `"            http://127.0.0.1:18765/api/leads)\""` | — |
 | [SRC-1DB27D9318-L000153](../../.github/workflows/tests.yml#L153) | 153 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
-| [SRC-1DB27D9318-L000154](../../.github/workflows/tests.yml#L154) | 154 | `"            cat /tmp/omarai-analysis.json"` | — |
-| [SRC-1DB27D9318-L000155](../../.github/workflows/tests.yml#L155) | 155 | `"            echo \"Authenticated /api/analyze should return HTTP 200, got $status.\""` | — |
+| [SRC-1DB27D9318-L000154](../../.github/workflows/tests.yml#L154) | 154 | `"            cat /tmp/omarai-leads-auth.json"` | — |
+| [SRC-1DB27D9318-L000155](../../.github/workflows/tests.yml#L155) | 155 | `"            echo \"Authenticated /api/leads should return HTTP 200, got $status.\""` | — |
 | [SRC-1DB27D9318-L000156](../../.github/workflows/tests.yml#L156) | 156 | `"            exit 1"` | — |
 | [SRC-1DB27D9318-L000157](../../.github/workflows/tests.yml#L157) | 157 | `"          fi"` | — |
+| [SRC-1DB27D9318-L000158](../../.github/workflows/tests.yml#L158) | 158 | `""` | — |
+| [SRC-1DB27D9318-L000159](../../.github/workflows/tests.yml#L159) | 159 | `"          status=\"$(curl --silent --output /tmp/omarai-analysis.json --write-out \"%{http_code}\" \\"` | — |
+| [SRC-1DB27D9318-L000160](../../.github/workflows/tests.yml#L160) | 160 | `"            --header \"Authorization: Bearer ci-only-test-token-not-for-production-123456\" \\"` | — |
+| [SRC-1DB27D9318-L000161](../../.github/workflows/tests.yml#L161) | 161 | `"            --header \"Content-Type: application/json\" \\"` | — |
+| [SRC-1DB27D9318-L000162](../../.github/workflows/tests.yml#L162) | 162 | `"            --data '{\"text\":\"بدور على شقة\",\"product_terms\":[\"شقة\"]}' \\"` | — |
+| [SRC-1DB27D9318-L000163](../../.github/workflows/tests.yml#L163) | 163 | `"            http://127.0.0.1:18765/api/analyze)\""` | — |
+| [SRC-1DB27D9318-L000164](../../.github/workflows/tests.yml#L164) | 164 | `"          if [[ \"$status\" != \"200\" ]]; then"` | — |
+| [SRC-1DB27D9318-L000165](../../.github/workflows/tests.yml#L165) | 165 | `"            cat /tmp/omarai-analysis.json"` | — |
+| [SRC-1DB27D9318-L000166](../../.github/workflows/tests.yml#L166) | 166 | `"            echo \"Authenticated /api/analyze should return HTTP 200, got $status.\""` | — |
+| [SRC-1DB27D9318-L000167](../../.github/workflows/tests.yml#L167) | 167 | `"            exit 1"` | — |
+| [SRC-1DB27D9318-L000168](../../.github/workflows/tests.yml#L168) | 168 | `"          fi"` | — |
 ## CI وأتمتة
 
 ### FILE-84F7DE82AF — [.github/workflows/update_index.yml](../../.github/workflows/update_index.yml#L1)
@@ -343,7 +386,7 @@
 | [SRC-84F7DE82AF-L000002](../../.github/workflows/update_index.yml#L2) | 2 | `""` | — |
 | [SRC-84F7DE82AF-L000003](../../.github/workflows/update_index.yml#L3) | 3 | `"on:"` | — |
 | [SRC-84F7DE82AF-L000004](../../.github/workflows/update_index.yml#L4) | 4 | `"  push:"` | — |
-| [SRC-84F7DE82AF-L000005](../../.github/workflows/update_index.yml#L5) | 5 | `"    branches: [\"main\", \"feat/**\", \"fix/**\", \"feature/**\"]"` | — |
+| [SRC-84F7DE82AF-L000005](../../.github/workflows/update_index.yml#L5) | 5 | `"    branches: [\"main\"]"` | — |
 | [SRC-84F7DE82AF-L000006](../../.github/workflows/update_index.yml#L6) | 6 | `"    paths-ignore:"` | — |
 | [SRC-84F7DE82AF-L000007](../../.github/workflows/update_index.yml#L7) | 7 | `"      - \"docs/MASTER_INDEX.md\""` | — |
 | [SRC-84F7DE82AF-L000008](../../.github/workflows/update_index.yml#L8) | 8 | `"      - \"docs/SOURCE_LINES_INDEX.md\""` | — |
@@ -355,7 +398,7 @@
 | [SRC-84F7DE82AF-L000014](../../.github/workflows/update_index.yml#L14) | 14 | `"  contents: write"` | — |
 | [SRC-84F7DE82AF-L000015](../../.github/workflows/update_index.yml#L15) | 15 | `"  pull-requests: write"` | — |
 | [SRC-84F7DE82AF-L000016](../../.github/workflows/update_index.yml#L16) | 16 | `""` | — |
-| [SRC-84F7DE82AF-L000017](../../.github/workflows/update_index.yml#L17) | 17 | `"# Serialize updates separately per branch. Generated-index-only commits are ignored above."` | — |
+| [SRC-84F7DE82AF-L000017](../../.github/workflows/update_index.yml#L17) | 17 | `"# Publish generated indexes on main only. PR CI regenerates and validates indexes in isolated checkouts."` | — |
 | [SRC-84F7DE82AF-L000018](../../.github/workflows/update_index.yml#L18) | 18 | `"concurrency:"` | — |
 | [SRC-84F7DE82AF-L000019](../../.github/workflows/update_index.yml#L19) | 19 | `"  group: omarai-living-index-${{ github.ref }}"` | — |
 | [SRC-84F7DE82AF-L000020](../../.github/workflows/update_index.yml#L20) | 20 | `"  cancel-in-progress: false"` | — |
@@ -854,46 +897,3 @@
 | [SRC-138992B1FC-L000275](../../agents/answer_validation.py#L275) | 275 | `"            int(match.group(1))"` | — |
 | [SRC-138992B1FC-L000276](../../agents/answer_validation.py#L276) | 276 | `"            for match in _CITATION.finditer(sentence)"` | — |
 | [SRC-138992B1FC-L000277](../../agents/answer_validation.py#L277) | 277 | `"        ]"` | — |
-| [SRC-138992B1FC-L000278](../../agents/answer_validation.py#L278) | 278 | `"        if not cited_indices:"` | — |
-| [SRC-138992B1FC-L000279](../../agents/answer_validation.py#L279) | 279 | `"            continue"` | — |
-| [SRC-138992B1FC-L000280](../../agents/answer_validation.py#L280) | 280 | `"        claim_tokens = list(dict.fromkeys(_tokens(_CITATION.sub(\" \", sentence), drop_stopwords=True)))"` | — |
-| [SRC-138992B1FC-L000281](../../agents/answer_validation.py#L281) | 281 | `"        cited_checks: list[dict[str, Any]] = []"` | — |
-| [SRC-138992B1FC-L000282](../../agents/answer_validation.py#L282) | 282 | `"        for source_index in list(dict.fromkeys(cited_indices))[:8]:"` | — |
-| [SRC-138992B1FC-L000283](../../agents/answer_validation.py#L283) | 283 | `"            if source_index < 1 or source_index > len(source_token_sets):"` | — |
-| [SRC-138992B1FC-L000284](../../agents/answer_validation.py#L284) | 284 | `"                cited_checks.append({"` | — |
-| [SRC-138992B1FC-L000285](../../agents/answer_validation.py#L285) | 285 | `"                    \"source_index\": source_index,"` | — |
-| [SRC-138992B1FC-L000286](../../agents/answer_validation.py#L286) | 286 | `"                    \"status\": \"source_index_out_of_scope\","` | — |
-| [SRC-138992B1FC-L000287](../../agents/answer_validation.py#L287) | 287 | `"                    \"evidence_basis\": \"unavailable\","` | — |
-| [SRC-138992B1FC-L000288](../../agents/answer_validation.py#L288) | 288 | `"                    \"matched_terms\": [],"` | — |
-| [SRC-138992B1FC-L000289](../../agents/answer_validation.py#L289) | 289 | `"                    \"overlap_ratio\": 0.0,"` | — |
-| [SRC-138992B1FC-L000290](../../agents/answer_validation.py#L290) | 290 | `"                })"` | — |
-| [SRC-138992B1FC-L000291](../../agents/answer_validation.py#L291) | 291 | `"                continue"` | — |
-| [SRC-138992B1FC-L000292](../../agents/answer_validation.py#L292) | 292 | `"            available_tokens = source_token_sets[source_index - 1]"` | — |
-| [SRC-138992B1FC-L000293](../../agents/answer_validation.py#L293) | 293 | `"            overlap = [token for token in claim_tokens if token in available_tokens]"` | — |
-| [SRC-138992B1FC-L000294](../../agents/answer_validation.py#L294) | 294 | `"            ratio = len(overlap) / len(claim_tokens) if claim_tokens else 0.0"` | — |
-| [SRC-138992B1FC-L000295](../../agents/answer_validation.py#L295) | 295 | `"            # A lexical match is only a weak proxy for relevance, not entailment."` | — |
-| [SRC-138992B1FC-L000296](../../agents/answer_validation.py#L296) | 296 | `"            # Require both relative coverage and at least two content-token matches."` | — |
-| [SRC-138992B1FC-L000297](../../agents/answer_validation.py#L297) | 297 | `"            enough_overlap = len(overlap) >= 2 and ratio >= 0.5"` | — |
-| [SRC-138992B1FC-L000298](../../agents/answer_validation.py#L298) | 298 | `"            cited_checks.append({"` | — |
-| [SRC-138992B1FC-L000299](../../agents/answer_validation.py#L299) | 299 | `"                \"source_index\": source_index,"` | — |
-| [SRC-138992B1FC-L000300](../../agents/answer_validation.py#L300) | 300 | `"                \"status\": \"lexical_overlap_signal_found\" if enough_overlap else \"weak_lexical_overlap\","` | — |
-| [SRC-138992B1FC-L000301](../../agents/answer_validation.py#L301) | 301 | `"                \"evidence_basis\": source_bases[source_index - 1],"` | — |
-| [SRC-138992B1FC-L000302](../../agents/answer_validation.py#L302) | 302 | `"                \"matched_terms\": overlap[:8],"` | — |
-| [SRC-138992B1FC-L000303](../../agents/answer_validation.py#L303) | 303 | `"                \"overlap_ratio\": round(ratio, 3),"` | — |
-| [SRC-138992B1FC-L000304](../../agents/answer_validation.py#L304) | 304 | `"            })"` | — |
-| [SRC-138992B1FC-L000305](../../agents/answer_validation.py#L305) | 305 | `"        sentence_status = ("` | — |
-| [SRC-138992B1FC-L000306](../../agents/answer_validation.py#L306) | 306 | `"            \"lexical_overlap_signal_found\""` | — |
-| [SRC-138992B1FC-L000307](../../agents/answer_validation.py#L307) | 307 | `"            if any(item[\"status\"] == \"lexical_overlap_signal_found\" for item in cited_checks)"` | — |
-| [SRC-138992B1FC-L000308](../../agents/answer_validation.py#L308) | 308 | `"            else \"weak_lexical_overlap\""` | — |
-| [SRC-138992B1FC-L000309](../../agents/answer_validation.py#L309) | 309 | `"        )"` | — |
-| [SRC-138992B1FC-L000310](../../agents/answer_validation.py#L310) | 310 | `"        citation_alignment.append({"` | — |
-| [SRC-138992B1FC-L000311](../../agents/answer_validation.py#L311) | 311 | `"            \"sentence_number\": sentence_number,"` | — |
-| [SRC-138992B1FC-L000312](../../agents/answer_validation.py#L312) | 312 | `"            \"status\": sentence_status,"` | — |
-| [SRC-138992B1FC-L000313](../../agents/answer_validation.py#L313) | 313 | `"            \"claim_terms_checked\": claim_tokens[:16],"` | — |
-| [SRC-138992B1FC-L000314](../../agents/answer_validation.py#L314) | 314 | `"            \"citations\": cited_checks,"` | — |
-| [SRC-138992B1FC-L000315](../../agents/answer_validation.py#L315) | 315 | `"        })"` | — |
-| [SRC-138992B1FC-L000316](../../agents/answer_validation.py#L316) | 316 | `""` | — |
-| [SRC-138992B1FC-L000317](../../agents/answer_validation.py#L317) | 317 | `""` | — |
-| [SRC-138992B1FC-L000318](../../agents/answer_validation.py#L318) | 318 | `"    # Check numeric literals against the exact source indices cited in each sentence."` | — |
-| [SRC-138992B1FC-L000319](../../agents/answer_validation.py#L319) | 319 | `"    # Values found in some unrelated source do not count as support for this citation."` | — |
-| [SRC-138992B1FC-L000320](../../agents/answer_validation.py#L320) | 320 | `"    source_numbers_by_index = {"` | — |
