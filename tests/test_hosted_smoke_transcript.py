@@ -55,7 +55,7 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
 
     transcript = report["transcript"][0]
     assert transcript["question"] == hosted_smoke_test.LIVE_TEST_QUESTION
-    assert transcript["answer"] == "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق."
+    assert transcript["answer"] == "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق. [المصدر 1]"
     assert transcript["sources"][0]["url"] == "https://example.test/fire-alarm-tender"
     assert transcript["pipeline_completion_status"] == "completed"
     agent_call = next(call for call in calls if call[0].endswith("/api/agent") and call[2])
@@ -223,7 +223,7 @@ def test_hosted_smoke_allows_no_token_only_for_loopback_dev(monkeypatch):
         allow_provider_usage=True,
     )
     assert report["auth_mode"] == "local_loopback_dev_bypass"
-    assert report["transcript"][0]["answer"] == "لا توجد إشارة شراء مؤكدة في المصادر التي تم فحصها."
+    assert report["transcript"][0]["answer"] == "لا توجد إشارة شراء مؤكدة في المصادر التي تم فحصها. [المصدر 1]"
 
 
 def test_hosted_smoke_rejects_no_token_for_remote_host():
