@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000328 إلى SRC-086D574B4E-L000316
+- النطاق: SRC-8D00DCEC0D-L000310 إلى SRC-086D574B4E-L000298
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000310](../../agents/sales_domain.py#L310) | 310 | `"    def to_dict(self) -> dict[str, list[str]]:"` | — |
+| [SRC-8D00DCEC0D-L000311](../../agents/sales_domain.py#L311) | 311 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000312](../../agents/sales_domain.py#L312) | 312 | `"            name: list(getattr(self, name))"` | — |
+| [SRC-8D00DCEC0D-L000313](../../agents/sales_domain.py#L313) | 313 | `"            for name in (\"locations\", \"industries\", \"customer_types\", \"decision_roles\", \"exclusions\")"` | — |
+| [SRC-8D00DCEC0D-L000314](../../agents/sales_domain.py#L314) | 314 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000315](../../agents/sales_domain.py#L315) | 315 | `""` | — |
+| [SRC-8D00DCEC0D-L000316](../../agents/sales_domain.py#L316) | 316 | `""` | — |
+| [SRC-8D00DCEC0D-L000317](../../agents/sales_domain.py#L317) | 317 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000318](../../agents/sales_domain.py#L318) | 318 | `"class TaxonomyCategory:"` | — |
+| [SRC-8D00DCEC0D-L000319](../../agents/sales_domain.py#L319) | 319 | `"    \"\"\"A caller-defined taxonomy node; no sector is hard-coded in the matcher.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000320](../../agents/sales_domain.py#L320) | 320 | `""` | — |
+| [SRC-8D00DCEC0D-L000321](../../agents/sales_domain.py#L321) | 321 | `"    path: tuple[str, ...]"` | — |
+| [SRC-8D00DCEC0D-L000322](../../agents/sales_domain.py#L322) | 322 | `"    aliases: tuple[str, ...]"` | — |
+| [SRC-8D00DCEC0D-L000323](../../agents/sales_domain.py#L323) | 323 | `""` | — |
+| [SRC-8D00DCEC0D-L000324](../../agents/sales_domain.py#L324) | 324 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000325](../../agents/sales_domain.py#L325) | 325 | `"        object.__setattr__(self, \"path\", _clean_path(self.path, field_name=\"path\"))"` | — |
+| [SRC-8D00DCEC0D-L000326](../../agents/sales_domain.py#L326) | 326 | `"        object.__setattr__(self, \"aliases\", _clean_terms(self.aliases, field_name=\"aliases\"))"` | — |
+| [SRC-8D00DCEC0D-L000327](../../agents/sales_domain.py#L327) | 327 | `"        if not self.aliases:"` | — |
 | [SRC-8D00DCEC0D-L000328](../../agents/sales_domain.py#L328) | 328 | `"            raise ValueError(\"taxonomy category requires at least one alias\")"` | — |
 | [SRC-8D00DCEC0D-L000329](../../agents/sales_domain.py#L329) | 329 | `""` | — |
 | [SRC-8D00DCEC0D-L000330](../../agents/sales_domain.py#L330) | 330 | `""` | — |
@@ -816,21 +834,3 @@
 | [SRC-086D574B4E-L000296](../../agents/semantic_claim_verifier.py#L296) | 296 | `""` | — |
 | [SRC-086D574B4E-L000297](../../agents/semantic_claim_verifier.py#L297) | 297 | `"    for row in rows:"` | — |
 | [SRC-086D574B4E-L000298](../../agents/semantic_claim_verifier.py#L298) | 298 | `"        if not isinstance(row, dict) or set(row) != {"` | — |
-| [SRC-086D574B4E-L000299](../../agents/semantic_claim_verifier.py#L299) | 299 | `"            \"segment_id\", \"assessment\", \"supporting_source_indexes\","` | — |
-| [SRC-086D574B4E-L000300](../../agents/semantic_claim_verifier.py#L300) | 300 | `"            \"contradicting_source_indexes\","` | — |
-| [SRC-086D574B4E-L000301](../../agents/semantic_claim_verifier.py#L301) | 301 | `"        }:"` | — |
-| [SRC-086D574B4E-L000302](../../agents/semantic_claim_verifier.py#L302) | 302 | `"            return _not_verifiable(\"invalid_claim_row_schema\", ledger)"` | — |
-| [SRC-086D574B4E-L000303](../../agents/semantic_claim_verifier.py#L303) | 303 | `"        segment_id = row.get(\"segment_id\")"` | — |
-| [SRC-086D574B4E-L000304](../../agents/semantic_claim_verifier.py#L304) | 304 | `"        assessment = row.get(\"assessment\")"` | — |
-| [SRC-086D574B4E-L000305](../../agents/semantic_claim_verifier.py#L305) | 305 | `"        if not isinstance(segment_id, str) or segment_id not in expected_by_id or segment_id in seen:"` | — |
-| [SRC-086D574B4E-L000306](../../agents/semantic_claim_verifier.py#L306) | 306 | `"            return _not_verifiable(\"unknown_or_duplicate_segment_id\", ledger)"` | — |
-| [SRC-086D574B4E-L000307](../../agents/semantic_claim_verifier.py#L307) | 307 | `"        if not isinstance(assessment, str) or assessment not in _ACCEPTED_ASSESSMENTS:"` | — |
-| [SRC-086D574B4E-L000308](../../agents/semantic_claim_verifier.py#L308) | 308 | `"            return _not_verifiable(\"unknown_assessment_label\", ledger)"` | — |
-| [SRC-086D574B4E-L000309](../../agents/semantic_claim_verifier.py#L309) | 309 | `"        seen.add(segment_id)"` | — |
-| [SRC-086D574B4E-L000310](../../agents/semantic_claim_verifier.py#L310) | 310 | `"        supporting = row.get(\"supporting_source_indexes\")"` | — |
-| [SRC-086D574B4E-L000311](../../agents/semantic_claim_verifier.py#L311) | 311 | `"        contradicting = row.get(\"contradicting_source_indexes\")"` | — |
-| [SRC-086D574B4E-L000312](../../agents/semantic_claim_verifier.py#L312) | 312 | `"        if not isinstance(supporting, list) or not isinstance(contradicting, list):"` | — |
-| [SRC-086D574B4E-L000313](../../agents/semantic_claim_verifier.py#L313) | 313 | `"            return _not_verifiable(\"source_indexes_must_be_lists\", ledger)"` | — |
-| [SRC-086D574B4E-L000314](../../agents/semantic_claim_verifier.py#L314) | 314 | `"        if len(supporting) > 8 or len(contradicting) > 8:"` | — |
-| [SRC-086D574B4E-L000315](../../agents/semantic_claim_verifier.py#L315) | 315 | `"            return _not_verifiable(\"source_index_list_too_large\", ledger)"` | — |
-| [SRC-086D574B4E-L000316](../../agents/semantic_claim_verifier.py#L316) | 316 | `"        if any(isinstance(value, bool) or not isinstance(value, int) for value in supporting + contradicting):"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000204 إلى SRC-E599346ABE-L000003
+- النطاق: SRC-792A9A235D-L000175 إلى SRC-51D44BE378-L000081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000175](../ANSWER_QUALITY_BENCHMARK_AR.md#L175) | 175 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url http://127.0.0.1:8765 --limit 45 --build-sha \"$(git rev-parse HEAD)\" --out artifacts/answer-quality-candidate.json --request-costs artifacts/request-costs-candidate.json"` | — |
+| [SRC-792A9A235D-L000176](../ANSWER_QUALITY_BENCHMARK_AR.md#L176) | 176 | `""` | — |
+| [SRC-792A9A235D-L000177](../ANSWER_QUALITY_BENCHMARK_AR.md#L177) | 177 | `"    # للنسخة المستضافة: مرّر SHA الذي تؤكده /api/health من البناء الجاري لا SHA المفترض"` | — |
+| [SRC-792A9A235D-L000178](../ANSWER_QUALITY_BENCHMARK_AR.md#L178) | 178 | `"    # لا تشغّل هذا الأمر قبل الموافقة على استخدام مزود البحث/النموذج واحتمال التكلفة."` | — |
+| [SRC-792A9A235D-L000179](../ANSWER_QUALITY_BENCHMARK_AR.md#L179) | 179 | `"    python scripts/run_answer_quality_benchmark.py --mode live --base-url https://YOUR-APP-ORIGIN --limit 45 --build-sha FULL_40_CHAR_DEPLOYED_SHA --out artifacts/answer-quality-candidate.json --request-costs artifacts/request-costs-candidate.json"` | — |
+| [SRC-792A9A235D-L000180](../ANSWER_QUALITY_BENCHMARK_AR.md#L180) | 180 | `""` | — |
+| [SRC-792A9A235D-L000181](../ANSWER_QUALITY_BENCHMARK_AR.md#L181) | 181 | `"    # قارِن ملفي تشغيل وملفي مراجعة بشرية بنفس الحالات"` | — |
+| [SRC-792A9A235D-L000182](../ANSWER_QUALITY_BENCHMARK_AR.md#L182) | 182 | `"    python scripts/compare_answer_quality_runs.py --baseline-run artifacts/answer-quality-baseline.json --candidate-run artifacts/answer-quality-candidate.json --baseline-reviews artifacts/reviews-baseline.json --candidate-reviews artifacts/reviews-candidate.json --out artifacts/answer-quality-comparison.json"` | — |
+| [SRC-792A9A235D-L000183](../ANSWER_QUALITY_BENCHMARK_AR.md#L183) | 183 | `""` | — |
+| [SRC-792A9A235D-L000184](../ANSWER_QUALITY_BENCHMARK_AR.md#L184) | 184 | `"**حدود مهمة:** لا يحقن المشغّل fixtures في الخدمة الحية ولا يحوّل الإجابة إلى PASS آلي. المراجعة البشرية الحالية هي مصدر قياس صحة الحقائق ودعم الاستشهادات؛ أداة المقارنة لا تستنتج تحسن الجودة من لغة الإجابة أو طولها. ولأن ملفات التشغيل والمراجعة السابقة لم تكن متاحة عند بدء هذا العمل، يبقى **القبول التجريبي قبل/بعد NOT_RUN** حتى تُجمع هذه الملفات وتُراجع."` | — |
+| [SRC-792A9A235D-L000185](../ANSWER_QUALITY_BENCHMARK_AR.md#L185) | 185 | `""` | — |
+| [SRC-792A9A235D-L000186](../ANSWER_QUALITY_BENCHMARK_AR.md#L186) | 186 | `""` | — |
+| [SRC-792A9A235D-L000187](../ANSWER_QUALITY_BENCHMARK_AR.md#L187) | 187 | `"### مخطط ملف مصالحة تكلفة الطلب الكاملة"` | — |
+| [SRC-792A9A235D-L000188](../ANSWER_QUALITY_BENCHMARK_AR.md#L188) | 188 | `""` | — |
+| [SRC-792A9A235D-L000189](../ANSWER_QUALITY_BENCHMARK_AR.md#L189) | 189 | `"ملف request-costs لا يُنشأ من توقعات الأداة. املأه من بيانات تكلفة/usage موثوقة تتبع كل طلب كاملًا (بما فيها الموصلات المدفوعة عند استخدامها):"` | — |
+| [SRC-792A9A235D-L000190](../ANSWER_QUALITY_BENCHMARK_AR.md#L190) | 190 | `""` | — |
+| [SRC-792A9A235D-L000191](../ANSWER_QUALITY_BENCHMARK_AR.md#L191) | 191 | `"    schema_version: \"1.0\""` | — |
+| [SRC-792A9A235D-L000192](../ANSWER_QUALITY_BENCHMARK_AR.md#L192) | 192 | `"    currency: \"USD\""` | — |
+| [SRC-792A9A235D-L000193](../ANSWER_QUALITY_BENCHMARK_AR.md#L193) | 193 | `"    scope: \"complete_request\""` | — |
+| [SRC-792A9A235D-L000194](../ANSWER_QUALITY_BENCHMARK_AR.md#L194) | 194 | `"    source: \"مرجع تقرير فوترة/usage موثوق ومراجع\""` | — |
+| [SRC-792A9A235D-L000195](../ANSWER_QUALITY_BENCHMARK_AR.md#L195) | 195 | `"    costs:"` | — |
+| [SRC-792A9A235D-L000196](../ANSWER_QUALITY_BENCHMARK_AR.md#L196) | 196 | `"      - case_id: \"AQ-001\""` | — |
+| [SRC-792A9A235D-L000197](../ANSWER_QUALITY_BENCHMARK_AR.md#L197) | 197 | `"        cost_usd: <رقم حقيقي غير سالب من المصدر>"` | — |
+| [SRC-792A9A235D-L000198](../ANSWER_QUALITY_BENCHMARK_AR.md#L198) | 198 | `""` | — |
+| [SRC-792A9A235D-L000199](../ANSWER_QUALITY_BENCHMARK_AR.md#L199) | 199 | `"المثال أعلاه مخطط وصفي لا يصلح كملف إدخال حرفيًا حتى تستبدل عنصر التكلفة بالقيمة الموثقة وتضيف كل الحالات المطلوب مقارنتها. عند غياب هذه البيانات تبقى تكلفة الطلب مجهولة، ويمنع comparator إظهار القبول الكامل."` | — |
+| [SRC-792A9A235D-L000200](../ANSWER_QUALITY_BENCHMARK_AR.md#L200) | 200 | `""` | — |
+| [SRC-792A9A235D-L000201](../ANSWER_QUALITY_BENCHMARK_AR.md#L201) | 201 | `""` | — |
+| [SRC-792A9A235D-L000202](../ANSWER_QUALITY_BENCHMARK_AR.md#L202) | 202 | `"---"` | — |
+| [SRC-792A9A235D-L000203](../ANSWER_QUALITY_BENCHMARK_AR.md#L203) | 203 | `""` | — |
 | [SRC-792A9A235D-L000204](../ANSWER_QUALITY_BENCHMARK_AR.md#L204) | 204 | `"## أحدث نتيجة تحقق آلي — 29 أكتوبر 2026"` | — |
 | [SRC-792A9A235D-L000205](../ANSWER_QUALITY_BENCHMARK_AR.md#L205) | 205 | `""` | — |
 | [SRC-792A9A235D-L000206](../ANSWER_QUALITY_BENCHMARK_AR.md#L206) | 206 | ``"- **الشفرة والاختبارات:** التغيير البرمجي المثبت هو SHA `449912938fc0067301e0541552199a8e67ecc46b`. نجح [GitHub Actions #40901777951](https://github.com/mosabosama2030-oss/omarai/actions/runs/40901777951): Python 3.11 = **607 passed in 26.10s**، وPython 3.12 = **607 passed in 27.96s**، وRuff، والتحقق من الفهارس، وبناء الحاوية واختبار API المحمي."`` | — |
@@ -850,41 +879,3 @@
 | [SRC-51D44BE378-L000079](../DEPLOY_SNAPDEPLOY_AR.md#L79) | 79 | `"4. أرسل سؤالًا عامًا بالعربية، مثل: «ما عاصمة مصر؟ اذكر مصادر قابلة للفتح». تأكد من ظهور إجابة ومصادر حقيقية، وافتح مصدرًا واحدًا على الأقل."` | — |
 | [SRC-51D44BE378-L000080](../DEPLOY_SNAPDEPLOY_AR.md#L80) | 80 | `"5. جرّب الطلب برمز غير صحيح وتأكد من رفض الوصول. لا تختبر ببيانات شخصية أو بيانات عملاء."` | — |
 | [SRC-51D44BE378-L000081](../DEPLOY_SNAPDEPLOY_AR.md#L81) | 81 | `"6. لا تعتبر النشر مقبولًا إذا نجحت الصفحة فقط وفشل تشخيص البحث أو النموذج."` | — |
-| [SRC-51D44BE378-L000082](../DEPLOY_SNAPDEPLOY_AR.md#L82) | 82 | `""` | — |
-| [SRC-51D44BE378-L000083](../DEPLOY_SNAPDEPLOY_AR.md#L83) | 83 | `"## 5. اختبار القبول الآلي الاختياري"` | — |
-| [SRC-51D44BE378-L000084](../DEPLOY_SNAPDEPLOY_AR.md#L84) | 84 | `""` | — |
-| [SRC-51D44BE378-L000085](../DEPLOY_SNAPDEPLOY_AR.md#L85) | 85 | `"المستودع يحتوي على workflow يدوي باسم **Omarai hosted acceptance smoke** في GitHub Actions. بعد أن تكون الخدمة قد استيقظت وتعمل:"` | — |
-| [SRC-51D44BE378-L000086](../DEPLOY_SNAPDEPLOY_AR.md#L86) | 86 | `""` | — |
-| [SRC-51D44BE378-L000087](../DEPLOY_SNAPDEPLOY_AR.md#L87) | 87 | `"1. افتح إعدادات المستودع في GitHub ثم **Settings → Secrets and variables → Actions**."` | — |
-| [SRC-51D44BE378-L000088](../DEPLOY_SNAPDEPLOY_AR.md#L88) | 88 | ``"2. أضف Secret باسم `OMARAI_ACCESS_TOKEN`، والقيمة مطابقة تمامًا لرمز التطبيق في SnapDeploy."`` | — |
-| [SRC-51D44BE378-L000089](../DEPLOY_SNAPDEPLOY_AR.md#L89) | 89 | ``"3. أضف Secret باسم `OMARAI_BASE_URL`، والقيمة هي أصل HTTPS فقط، مثل `https://your-service.containers.snapdeploy.app`؛ لا تضف `/api` ولا الرمز إلى الرابط."`` | — |
-| [SRC-51D44BE378-L000090](../DEPLOY_SNAPDEPLOY_AR.md#L90) | 90 | `"4. افتح **Actions → Omarai hosted acceptance smoke → Run workflow**."` | — |
-| [SRC-51D44BE378-L000091](../DEPLOY_SNAPDEPLOY_AR.md#L91) | 91 | `"5. راجع نتيجة الفحص. الاختبار يتصل فعليًا بالبحث والنموذج ويمكن أن يستهلك حصة المزود. لا تشغله حتى تكون موافقًا على هذا الاستخدام. خدمات SnapDeploy النائمة قد لا تستيقظ عبر طلبات CI؛ افتح الرابط يدويًا أولًا وانتظر اكتمال الاستيقاظ."` | — |
-| [SRC-51D44BE378-L000092](../DEPLOY_SNAPDEPLOY_AR.md#L92) | 92 | `""` | — |
-| [SRC-51D44BE378-L000093](../DEPLOY_SNAPDEPLOY_AR.md#L93) | 93 | `"لا تنشر سجلًا يحتوي على أسرار. احذف أو احجب أي رموز من السجلات قبل مشاركتها."` | — |
-| [SRC-51D44BE378-L000094](../DEPLOY_SNAPDEPLOY_AR.md#L94) | 94 | `""` | — |
-| [SRC-51D44BE378-L000095](../DEPLOY_SNAPDEPLOY_AR.md#L95) | 95 | `"## القيود الحالية التي لا يحلها النشر"` | — |
-| [SRC-51D44BE378-L000096](../DEPLOY_SNAPDEPLOY_AR.md#L96) | 96 | `""` | — |
-| [SRC-51D44BE378-L000097](../DEPLOY_SNAPDEPLOY_AR.md#L97) | 97 | `"- Omarai يرسل سؤال المستخدم والسياق المختار ومقتطفات المصادر إلى مزود النموذج الخارجي عند استخدام التوليد؛ لا تُدخل كلمات مرور أو بيانات سرية."` | — |
-| [SRC-51D44BE378-L000098](../DEPLOY_SNAPDEPLOY_AR.md#L98) | 98 | `"- البحث العام قد يتعطل أو يتعرض للتحديد والحجب؛ لا يوجد ضمان أن كل سؤال سينجح أو أن كل منصة اجتماعية ستكون قابلة للبحث."` | — |
-| [SRC-51D44BE378-L000099](../DEPLOY_SNAPDEPLOY_AR.md#L99) | 99 | ``"- قاعدة العملاء SQLite موجودة محليًا، لكن نظام الملفات المجاني مؤقت. لا تعتمد على `/leads` لحفظ بيانات دائمة؛ قد تضيع البيانات بعد السكون أو إعادة التشغيل أو النشر."`` | — |
-| [SRC-51D44BE378-L000100](../DEPLOY_SNAPDEPLOY_AR.md#L100) | 100 | `"- رمز التطبيق مشترك وليس نظام مستخدمين متعددين. لا توزعه على أشخاص لا تثق بهم."` | — |
-| [SRC-51D44BE378-L000101](../DEPLOY_SNAPDEPLOY_AR.md#L101) | 101 | `"- لا تعني نتيجة Smoke Test ضمان تشغيل دائم أو تدقيق أمني كامل."` | — |
-| [SRC-51D44BE378-L000102](../DEPLOY_SNAPDEPLOY_AR.md#L102) | 102 | `""` | — |
-| [SRC-51D44BE378-L000103](../DEPLOY_SNAPDEPLOY_AR.md#L103) | 103 | `"## روابط مرجعية"` | — |
-| [SRC-51D44BE378-L000104](../DEPLOY_SNAPDEPLOY_AR.md#L104) | 104 | `""` | — |
-| [SRC-51D44BE378-L000105](../DEPLOY_SNAPDEPLOY_AR.md#L105) | 105 | `"- [SnapDeploy — النشر من GitHub](https://snapdeploy.dev/docs/github)"` | — |
-| [SRC-51D44BE378-L000106](../DEPLOY_SNAPDEPLOY_AR.md#L106) | 106 | `"- [SnapDeploy — متغيرات البيئة والأسرار](https://snapdeploy.dev/docs/environment-variables)"` | — |
-| [SRC-51D44BE378-L000107](../DEPLOY_SNAPDEPLOY_AR.md#L107) | 107 | `"- [SnapDeploy — الخطة المجانية والحدود](https://snapdeploy.dev/docs/free-tier)"` | — |
-## وثائق وفهرسة
-
-### FILE-E599346ABE — [docs/generate_index.py](../generate_index.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-E599346ABE-L000001](../generate_index.py#L1) | 1 | `"\"\"\"Generate Omarai's deterministic repository-wide file and source-symbol index.\"\"\""` | — |
-| [SRC-E599346ABE-L000002](../generate_index.py#L2) | 2 | `""` | — |
-| [SRC-E599346ABE-L000003](../generate_index.py#L3) | 3 | `"from __future__ import annotations"` | — |

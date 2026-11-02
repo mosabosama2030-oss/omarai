@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000317 إلى SRC-686F71AA50-L000726
+- النطاق: SRC-086D574B4E-L000299 إلى SRC-686F71AA50-L000708
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000299](../../agents/semantic_claim_verifier.py#L299) | 299 | `"            \"segment_id\", \"assessment\", \"supporting_source_indexes\","` | — |
+| [SRC-086D574B4E-L000300](../../agents/semantic_claim_verifier.py#L300) | 300 | `"            \"contradicting_source_indexes\","` | — |
+| [SRC-086D574B4E-L000301](../../agents/semantic_claim_verifier.py#L301) | 301 | `"        }:"` | — |
+| [SRC-086D574B4E-L000302](../../agents/semantic_claim_verifier.py#L302) | 302 | `"            return _not_verifiable(\"invalid_claim_row_schema\", ledger)"` | — |
+| [SRC-086D574B4E-L000303](../../agents/semantic_claim_verifier.py#L303) | 303 | `"        segment_id = row.get(\"segment_id\")"` | — |
+| [SRC-086D574B4E-L000304](../../agents/semantic_claim_verifier.py#L304) | 304 | `"        assessment = row.get(\"assessment\")"` | — |
+| [SRC-086D574B4E-L000305](../../agents/semantic_claim_verifier.py#L305) | 305 | `"        if not isinstance(segment_id, str) or segment_id not in expected_by_id or segment_id in seen:"` | — |
+| [SRC-086D574B4E-L000306](../../agents/semantic_claim_verifier.py#L306) | 306 | `"            return _not_verifiable(\"unknown_or_duplicate_segment_id\", ledger)"` | — |
+| [SRC-086D574B4E-L000307](../../agents/semantic_claim_verifier.py#L307) | 307 | `"        if not isinstance(assessment, str) or assessment not in _ACCEPTED_ASSESSMENTS:"` | — |
+| [SRC-086D574B4E-L000308](../../agents/semantic_claim_verifier.py#L308) | 308 | `"            return _not_verifiable(\"unknown_assessment_label\", ledger)"` | — |
+| [SRC-086D574B4E-L000309](../../agents/semantic_claim_verifier.py#L309) | 309 | `"        seen.add(segment_id)"` | — |
+| [SRC-086D574B4E-L000310](../../agents/semantic_claim_verifier.py#L310) | 310 | `"        supporting = row.get(\"supporting_source_indexes\")"` | — |
+| [SRC-086D574B4E-L000311](../../agents/semantic_claim_verifier.py#L311) | 311 | `"        contradicting = row.get(\"contradicting_source_indexes\")"` | — |
+| [SRC-086D574B4E-L000312](../../agents/semantic_claim_verifier.py#L312) | 312 | `"        if not isinstance(supporting, list) or not isinstance(contradicting, list):"` | — |
+| [SRC-086D574B4E-L000313](../../agents/semantic_claim_verifier.py#L313) | 313 | `"            return _not_verifiable(\"source_indexes_must_be_lists\", ledger)"` | — |
+| [SRC-086D574B4E-L000314](../../agents/semantic_claim_verifier.py#L314) | 314 | `"        if len(supporting) > 8 or len(contradicting) > 8:"` | — |
+| [SRC-086D574B4E-L000315](../../agents/semantic_claim_verifier.py#L315) | 315 | `"            return _not_verifiable(\"source_index_list_too_large\", ledger)"` | — |
+| [SRC-086D574B4E-L000316](../../agents/semantic_claim_verifier.py#L316) | 316 | `"        if any(isinstance(value, bool) or not isinstance(value, int) for value in supporting + contradicting):"` | — |
 | [SRC-086D574B4E-L000317](../../agents/semantic_claim_verifier.py#L317) | 317 | `"            return _not_verifiable(\"source_indexes_must_be_integers\", ledger)"` | — |
 | [SRC-086D574B4E-L000318](../../agents/semantic_claim_verifier.py#L318) | 318 | `"        if len(set(supporting)) != len(supporting) or len(set(contradicting)) != len(contradicting):"` | — |
 | [SRC-086D574B4E-L000319](../../agents/semantic_claim_verifier.py#L319) | 319 | `"            return _not_verifiable(\"duplicate_source_indexes\", ledger)"` | — |
@@ -807,21 +825,3 @@
 | [SRC-686F71AA50-L000706](../../agents/task_understanding.py#L706) | 706 | `"    location = _extract_explicit_locations(raw)"` | — |
 | [SRC-686F71AA50-L000707](../../agents/task_understanding.py#L707) | 707 | `"    years = list(dict.fromkeys(_YEAR_RE.findall(raw)))"` | — |
 | [SRC-686F71AA50-L000708](../../agents/task_understanding.py#L708) | 708 | `"    dates = list(dict.fromkeys(_DATE_RE.findall(raw)))"` | — |
-| [SRC-686F71AA50-L000709](../../agents/task_understanding.py#L709) | 709 | `"    budgets = [m.group(0).strip()[:100] for m in _BUDGET_RE.finditer(raw)]"` | — |
-| [SRC-686F71AA50-L000710](../../agents/task_understanding.py#L710) | 710 | `"    urls = list(dict.fromkeys(_URL_RE.findall(raw)))[:5]"` | — |
-| [SRC-686F71AA50-L000711](../../agents/task_understanding.py#L711) | 711 | `"    inline_summary_text = _has_inline_summary_text(raw)"` | — |
-| [SRC-686F71AA50-L000712](../../agents/task_understanding.py#L712) | 712 | `"    unresolved_followup = any(normalize_text(cue) in normalized for cue in _FOLLOWUP_CUES)"` | — |
-| [SRC-686F71AA50-L000713](../../agents/task_understanding.py#L713) | 713 | `"    missing_required_inputs: list[str] = []"` | — |
-| [SRC-686F71AA50-L000714](../../agents/task_understanding.py#L714) | 714 | `"    if intent_route == \"CLARIFY\":"` | — |
-| [SRC-686F71AA50-L000715](../../agents/task_understanding.py#L715) | 715 | `"        missing_required_inputs.append(\"unresolved_referent_or_incomplete_request\")"` | — |
-| [SRC-686F71AA50-L000716](../../agents/task_understanding.py#L716) | 716 | `"    if official_destination and not _has_official_site_target(raw):"` | — |
-| [SRC-686F71AA50-L000717](../../agents/task_understanding.py#L717) | 717 | `"        missing_required_inputs.append(\"official_destination_target_entity\")"` | — |
-| [SRC-686F71AA50-L000718](../../agents/task_understanding.py#L718) | 718 | `"    if family == \"summarize\" and not urls and not inline_summary_text:"` | — |
-| [SRC-686F71AA50-L000719](../../agents/task_understanding.py#L719) | 719 | `"        missing_required_inputs.append(\"summary_source_url_or_pasted_text\")"` | — |
-| [SRC-686F71AA50-L000720](../../agents/task_understanding.py#L720) | 720 | `"    context = dialogue_context if isinstance(dialogue_context, dict) else {}"` | — |
-| [SRC-686F71AA50-L000721](../../agents/task_understanding.py#L721) | 721 | `"    explicit_aspects = list(dict.fromkeys(aspect_values))[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000722](../../agents/task_understanding.py#L722) | 722 | `""` | — |
-| [SRC-686F71AA50-L000723](../../agents/task_understanding.py#L723) | 723 | `"    # Hypotheses are alternatives considered by the deterministic classifier. Counts"` | — |
-| [SRC-686F71AA50-L000724](../../agents/task_understanding.py#L724) | 724 | `"    # are matched lexical signals, not calibrated confidence or probability."` | — |
-| [SRC-686F71AA50-L000725](../../agents/task_understanding.py#L725) | 725 | `"    hypothesis_rows: list[dict[str, Any]] = []"` | — |
-| [SRC-686F71AA50-L000726](../../agents/task_understanding.py#L726) | 726 | `"    for candidate_family, signals in matches.items():"` | — |

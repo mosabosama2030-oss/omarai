@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-41EDB66D3C-L000285 إلى SRC-0F910493E8-L000564
+- النطاق: SRC-41EDB66D3C-L000256 إلى SRC-0F910493E8-L000535
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-41EDB66D3C-L000256](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L256) | 256 | `""` | — |
+| [SRC-41EDB66D3C-L000257](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L257) | 257 | ``"- `Tenant / Workspace`"`` | — |
+| [SRC-41EDB66D3C-L000258](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L258) | 258 | ``"- `User` و`TenantMembership` و`ApiToken`"`` | — |
+| [SRC-41EDB66D3C-L000259](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L259) | 259 | ``"- `ProductProfile`"`` | — |
+| [SRC-41EDB66D3C-L000260](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L260) | 260 | ``"- `MarketProfile` و`ICPDefinition`"`` | — |
+| [SRC-41EDB66D3C-L000261](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L261) | 261 | ``"- `DiscoveryCampaign` أو `ResearchTask`"`` | — |
+| [SRC-41EDB66D3C-L000262](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L262) | 262 | ``"- `Source` و`SourceSnapshot`"`` | — |
+| [SRC-41EDB66D3C-L000263](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L263) | 263 | ``"- `DemandSignal`"`` | — |
+| [SRC-41EDB66D3C-L000264](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L264) | 264 | ``"- `ProspectEntity` و`ContactChannel`"`` | — |
+| [SRC-41EDB66D3C-L000265](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L265) | 265 | ``"- `Lead` أو `QualifiedOpportunity`"`` | — |
+| [SRC-41EDB66D3C-L000266](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L266) | 266 | ``"- `QualificationAssessment`"`` | — |
+| [SRC-41EDB66D3C-L000267](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L267) | 267 | ``"- `SalesRecommendation` و`SalesActivity`"`` | — |
+| [SRC-41EDB66D3C-L000268](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L268) | 268 | ``"- `AuditEvent` و`UserFeedback`"`` | — |
+| [SRC-41EDB66D3C-L000269](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L269) | 269 | `""` | — |
+| [SRC-41EDB66D3C-L000270](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L270) | 270 | `"لا يلزم تنفيذ هذه الكيانات جميعًا دفعة واحدة. يجب أن يحافظ كل كيان على المصدر والمالك وحالة التحقق والوقت عند انطباقها."` | — |
+| [SRC-41EDB66D3C-L000271](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L271) | 271 | `""` | — |
+| [SRC-41EDB66D3C-L000272](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L272) | 272 | `"### عزل المستأجرين"` | — |
+| [SRC-41EDB66D3C-L000273](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L273) | 273 | `""` | — |
+| [SRC-41EDB66D3C-L000274](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L274) | 274 | `"قبل استخدام Omarai لحفظ بيانات عملاء شركات متعددة أو فتحه كخدمة تجارية:"` | — |
+| [SRC-41EDB66D3C-L000275](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L275) | 275 | `""` | — |
+| [SRC-41EDB66D3C-L000276](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L276) | 276 | ``"- يحدد الخادم هوية المستخدم والمستأجر من جلسة/رمز موثوق وعضوية فعالة؛ لا يثق في `tenant_id` من body أو query."`` | — |
+| [SRC-41EDB66D3C-L000277](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L277) | 277 | `"- كل قراءة أو تعديل أو حذف أو استيراد أو تصدير يفرض نطاق المستأجر في طبقة التخزين/الاستعلام."` | — |
+| [SRC-41EDB66D3C-L000278](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L278) | 278 | `"- مفاتيح التفرّد وإزالة التكرار تكون ضمن المستأجر حيث تتضمن البيانات ملكية العميل."` | — |
+| [SRC-41EDB66D3C-L000279](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L279) | 279 | `"- تختبر حالات الوصول الأفقي والرأسي وتزوير المعرفات وترحيل البيانات القديمة."` | — |
+| [SRC-41EDB66D3C-L000280](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L280) | 280 | `"- تُسجل عمليات الإدارة الحساسة، وتُحفظ البيانات وتُحذف وفق سياسة معلومة."` | — |
+| [SRC-41EDB66D3C-L000281](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L281) | 281 | `""` | — |
+| [SRC-41EDB66D3C-L000282](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L282) | 282 | ``"**حالة المستودع بعد دمج PR #145 في 2 نوفمبر 2026:** أُغلق PR #137 دون دمج بعد نقل نطاقه إلى PR #145 التجميعي. دمج المدير البشري PR #145 في `main`، وأصبح نموذج tenant/user/membership/token/session وعزل tenant-scoped لعمليات leads جزءًا من خط الأساس. نجح CI الخاص بـ#145 على SHA `a0230e8e292241e8a36eb85b1fc82f9af5b96a1f` قبل الدمج. التشغيل الأولي المستهدف شركة واحدة؛ ولا يعني وجود نواة العزل اكتمال SaaS أو provisioning أو قبول الاستضافة. يجب أن تشمل أي جداول تجارية مستقبلية العزل نفسه، لا جدول العملاء الحالي فقط."`` | — |
+| [SRC-41EDB66D3C-L000283](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L283) | 283 | `""` | — |
+| [SRC-41EDB66D3C-L000284](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L284) | 284 | `"---"` | — |
 | [SRC-41EDB66D3C-L000285](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L285) | 285 | `""` | — |
 | [SRC-41EDB66D3C-L000286](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L286) | 286 | `"## 11. حدود الأمان والامتثال التجاري"` | — |
 | [SRC-41EDB66D3C-L000287](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L287) | 287 | `""` | — |
@@ -796,32 +825,3 @@
 | [SRC-0F910493E8-L000533](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L533) | 533 | `"أي تغيير في الاتجاه المعماري يسجل كقرار ADR مع المشكلة والبدائل والأدلة والمخاطر وخطة الاختبار والتراجع، ويحتاج إلى اعتماد المدير البشري إذا كان يغير المبادئ أو مستوى الاستقلالية أو الصلاحيات."` | — |
 | [SRC-0F910493E8-L000534](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L534) | 534 | `""` | — |
 | [SRC-0F910493E8-L000535](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L535) | 535 | `"# 17. خط الأساس الحاكم للأمن السيبراني وضمانات الثقة"` | — |
-| [SRC-0F910493E8-L000536](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L536) | 536 | `""` | — |
-| [SRC-0F910493E8-L000537](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L537) | 537 | `"## 17.1 هدف الأمن وحدود الادعاء"` | — |
-| [SRC-0F910493E8-L000538](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L538) | 538 | `""` | — |
-| [SRC-0F910493E8-L000539](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L539) | 539 | `"**[PROPOSED]** يُصمَّم Omarai وفق دفاع متعدد الطبقات (Defense in Depth)، وأقل صلاحية (Least Privilege)، ومنع افتراضي (Deny by Default)، والتحقق المستمر من الهوية والصلاحية (Zero Trust)، وبناء آمن وصيانة قابلة للتدقيق. المقصود هو الوصول إلى **أعلى مستوى عملي قابل للإثبات ضمن الموارد والبيئة ونموذج التهديد**، وليس الادعاء بأن أي نظام «آمن 100%» أو «غير قابل للاختراق»."` | — |
-| [SRC-0F910493E8-L000540](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L540) | 540 | `""` | — |
-| [SRC-0F910493E8-L000541](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L541) | 541 | `"لا توجد قائمة ضوابط تضمن الأمان المطلق. لكل قدرة مخاطر متبقية، ولكل حاجز حدود، وقد تفشل مكتبة أو منصة استضافة أو مزود خارجي. لذلك لا يُعلن مستوى أمان أو امتثال أو شهادة إلا بوجود تقييم محدد النطاق وأدلة مناسبة. وجود سياسة في هذه الوثيقة لا يعني تطبيقها، ووجود اختبار واحد لا يثبت الحماية الشاملة."` | — |
-| [SRC-0F910493E8-L000542](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L542) | 542 | `""` | — |
-| [SRC-0F910493E8-L000543](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L543) | 543 | `"هذه المواصفات تُكيَّف مع حجم Omarai وواقع الاستضافة، لكنها لا تسمح بتجاوز ضوابط الأساس التي تحمي الأسرار والصلاحيات والبيانات والاتصال بالشبكة. إذا كانت بيئة التشغيل لا تستطيع توفير عزل أو مصادقة أو حد شبكة مطلوبًا، فالحل هو تقليل القدرة أو تعطيلها أو عدم نشرها، لا اعتبار القيد غير موجود."` | — |
-| [SRC-0F910493E8-L000544](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L544) | 544 | `""` | — |
-| [SRC-0F910493E8-L000545](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L545) | 545 | `"## 17.2 أطر مرجعية ومبدأ عدم الادعاء بالامتثال"` | — |
-| [SRC-0F910493E8-L000546](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L546) | 546 | `""` | — |
-| [SRC-0F910493E8-L000547](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L547) | 547 | `"تُستخدم الأطر التالية كمراجع تصميم وتقييم بحسب الصلة:"` | — |
-| [SRC-0F910493E8-L000548](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L548) | 548 | `"- NIST Cybersecurity Framework (CSF) 2.0: الحوكمة، والتعرّف، والحماية، والكشف، والاستجابة، والتعافي."` | — |
-| [SRC-0F910493E8-L000549](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L549) | 549 | `"- NIST SP 800-207: مبادئ Zero Trust؛ لا تُمنح الثقة لمجرد موقع المكوّن داخل شبكة أو ملكيته."` | — |
-| [SRC-0F910493E8-L000550](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L550) | 550 | `"- NIST AI RMF وNIST AI 600-1: تحديد مخاطر الذكاء الاصطناعي التوليدي ومتابعتها عبر دورة الحياة."` | — |
-| [SRC-0F910493E8-L000551](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L551) | 551 | `"- NIST SP 800-218 SSDF: ممارسات تطوير البرمجيات الآمن. نسخة SP 800-218 Rev. 1 المنشورة كمسودة لا تُعامل كإصدار نهائي."` | — |
-| [SRC-0F910493E8-L000552](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L552) | 552 | `"- OWASP Top 10 for Agentic Applications 2026، وOWASP API Security، ومراجع OWASP الخاصة بأمن تطبيقات الويب والذكاء الاصطناعي حيث تنطبق."` | — |
-| [SRC-0F910493E8-L000553](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L553) | 553 | `"  "` | — |
-| [SRC-0F910493E8-L000554](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L554) | 554 | `"هذه المراجع نقاط انطلاق للمراجعة، وليست شهادة بأن Omarai متوافق معها. يجب تدوين المرجع والإصدار وتاريخ المراجعة عند تحويل أي منه إلى اختبار أو مطلب محدد، وعدم نقل ضوابط لا تلائم النطاق بلا مبرر."` | — |
-| [SRC-0F910493E8-L000555](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L555) | 555 | `""` | — |
-| [SRC-0F910493E8-L000556](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L556) | 556 | `"روابط المراجع:"` | — |
-| [SRC-0F910493E8-L000557](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L557) | 557 | `"- NIST CSF 2.0: https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20"` | — |
-| [SRC-0F910493E8-L000558](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L558) | 558 | `"- NIST Zero Trust / SP 800-207: https://www.nist.gov/publications/zero-trust-architecture"` | — |
-| [SRC-0F910493E8-L000559](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L559) | 559 | `"- NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework"` | — |
-| [SRC-0F910493E8-L000560](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L560) | 560 | `"- NIST Generative AI Profile: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"` | — |
-| [SRC-0F910493E8-L000561](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L561) | 561 | `"- NIST SSDF: https://csrc.nist.gov/pubs/sp/800/218/final"` | — |
-| [SRC-0F910493E8-L000562](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L562) | 562 | `"- NIST SSDF publications, including status of revisions: https://csrc.nist.gov/projects/ssdf/publications"` | — |
-| [SRC-0F910493E8-L000563](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L563) | 563 | `"- OWASP Top 10 for Agentic Applications 2026: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"` | — |
-| [SRC-0F910493E8-L000564](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L564) | 564 | `"- OWASP API Security: https://owasp.org/API-Security/"` | — |
