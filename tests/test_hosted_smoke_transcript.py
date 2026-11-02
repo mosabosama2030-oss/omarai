@@ -38,7 +38,7 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
                 "answer": "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق.",
                 "used_web_search": True,
                 "used_language_model": True,
-                "answer_evidence_status": "sources_present",
+                "answer_evidence_status": "citation_indices_validated_only",
                 "sources": [
                     {
                         "title": "Fire alarm tender notice",
@@ -48,10 +48,14 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
                         "published_at": "",
                     }
                 ],
+                "request_budget": {"profile": "hosted_smoke", "timeout_seconds": 75, "budget_exhausted": False, "deadline_exceeded": False, "limits": {"search_queries": 3, "search_calls": 12, "model_calls": 6, "page_fetches": 4, "tool_calls": 0}, "counts": {"search_queries": 2, "search_calls": 4, "model_calls": 4, "page_fetches": 1, "tool_calls": 0}},
                 "search_report": {
                     "pages_fetched": 1,
                     "providers_used": ["bing_rss"],
                     "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "completed_all_claims_supported"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
                 },
             }
         raise AssertionError(f"unexpected request: {url}")
@@ -67,34 +71,32 @@ def test_hosted_smoke_returns_exact_question_answer_and_sources(monkeypatch):
     assert transcript["answer"] == "وجدت إشارة منشورة تطلب عرض سعر لنظام إنذار الحريق."
     assert transcript["sources"][0]["url"] == "https://example.test/fire-alarm-tender"
     assert transcript["pipeline_completion_status"] == "completed"
-    assert report["provider_diagnostics"][0]["provider"] == "bing_rss"
-    assert report["connector_configuration"]["brave_search_api_configured"] is False
-    assert report["connector_check"]["provider_counts"] == {"bing_rss": 2}
-    diagnostics_call = next(call for call in calls if call[0].endswith("/api/diagnostics"))
-    assert diagnostics_call[2]["test_model"] is False
+    assert transcript["request_budget"]["profile"] == "hosted_smoke"
+    assert report["checks"]["request_budget"]["limits"]["search_calls"] <= 12
+    assert report["checks"]["search"]["providers_reported"] == ["bing_rss"]
     assert all("T" * 40 not in str(item) for item in report.values())
-    assert len(calls) == 4
+    assert len(calls) == 3
+    assert not any(call[0].endswith("/api/diagnostics") for call in calls)
 
 
 def test_hosted_smoke_allows_no_token_only_for_loopback_dev(monkeypatch):
     def fake_request_json(url, *, token="", payload=None, timeout=90):
         if url.endswith("/api/health"):
             return 200, {"ok": True, "build": {"sha": "unknown"}}
-        if url.endswith("/api/diagnostics"):
-            return 200, {
-                "checks": {
-                    "web_search": {"status": "passed", "result_count": 1},
-                    "language_model": {"status": "passed"},
-                },
-                "provider_diagnostics": [],
-                "warnings": [],
-            }
         if url.endswith("/api/agent"):
             return 200, {
                 "answer": "لا توجد إشارة شراء مؤكدة في المصادر التي تم فحصها.",
                 "used_web_search": True,
                 "used_language_model": True,
+                "answer_evidence_status": "citation_indices_validated_only",
                 "sources": [{"url": "https://example.test/egypt"}],
+                "request_budget": {"profile": "hosted_smoke", "timeout_seconds": 75, "budget_exhausted": False, "deadline_exceeded": False, "limits": {"search_queries": 3, "search_calls": 12, "model_calls": 6, "page_fetches": 4, "tool_calls": 0}, "counts": {"search_queries": 1, "search_calls": 2, "model_calls": 3, "page_fetches": 1, "tool_calls": 0}},
+                "search_report": {
+                    "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "completed_no_factual_claims"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
             }
         raise AssertionError(url)
 

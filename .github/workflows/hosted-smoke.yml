@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       allow_provider_usage:
-        description: "Approve one live search and one model completion; provider quota or charges may be consumed."
+        description: "Approve one live agent operation under fixed server-side ceilings: up to 3 search queries, 12 provider requests, 6 model calls, 4 page fetches, and no external tool calls. Quota or charges may be consumed."
         required: true
         type: boolean
         default: false
@@ -20,37 +20,7 @@ jobs:
   hosted-smoke:
     runs-on: ubuntu-latest
     timeout-minutes: 8
-    env:
-      OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}
-      OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}
-      ALLOW_PROVIDER_USAGE: ${{ inputs.allow_provider_usage }}
     steps:
-      - name: Require explicit approval for live provider usage
-        shell: bash
-        run: |
-          if [[ "${ALLOW_PROVIDER_USAGE}" != "true" ]]; then
-            echo "::error::Live search/model usage was not approved. Re-run manually and enable allow_provider_usage only after human approval."
-            exit 1
-          fi
-          echo "One live provider-usage run was explicitly approved."
-
-      - name: Verify hosted target and access-token secrets are available
-        shell: bash
-        run: |
-          if [[ -z "${OMARAI_ACCESS_TOKEN}" || ${#OMARAI_ACCESS_TOKEN} -lt 32 ]]; then
-            echo "::error::GitHub Actions secret OMARAI_ACCESS_TOKEN is missing or too short."
-            exit 1
-          fi
-          if [[ -z "${OMARAI_BASE_URL}" ]]; then
-            echo "::error::GitHub Actions secret OMARAI_BASE_URL is missing."
-            exit 1
-          fi
-          if [[ "${OMARAI_BASE_URL}" != https://* || "${OMARAI_BASE_URL}" == *\?* || "${OMARAI_BASE_URL}" == *\#* ]]; then
-            echo "::error::OMARAI_BASE_URL must be an HTTPS origin without a path, query, or fragment."
-            exit 1
-          fi
-          echo "Hosted target and access-token secrets are present; values not printed."
-
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
@@ -59,8 +29,34 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run live hosted acceptance test
-        run: python scripts/hosted_smoke_test.py --base-url "$OMARAI_BASE_URL" --expected-sha "$(git rev-parse HEAD)" --timeout 180 --allow-provider-usage --output artifacts/hosted-smoke-report.json
+      - name: Run no-cost hosted preflight
+        if: ${{ inputs.allow_provider_usage == false }}
+        shell: bash
+        env:
+          OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}
+        run: |
+          set -euo pipefail
+          python scripts/hosted_smoke_test.py \
+            --base-url "$OMARAI_BASE_URL" \
+            --timeout 180 \
+            --preflight-only \
+            --output artifacts/hosted-smoke-report.json
+
+      - name: Run live hosted acceptance
+        if: ${{ inputs.allow_provider_usage == true }}
+        shell: bash
+        env:
+          OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}
+          # The bearer token is available only to the explicitly approved live step.
+          OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          python scripts/hosted_smoke_test.py \
+            --base-url "$OMARAI_BASE_URL" \
+            --expected-sha "$(git rev-parse HEAD)" \
+            --timeout 180 \
+            --allow-provider-usage \
+            --output artifacts/hosted-smoke-report.json
 
       - name: Upload hosted question-and-answer transcript
         if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''

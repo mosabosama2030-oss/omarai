@@ -144,3 +144,48 @@ def test_disabled_resource_never_starts_work(resource):
     assert snapshot["limits"][resource] == 0
     assert resource in snapshot["disabled_resources"]
     assert resource in snapshot["exhausted_reasons"]
+
+
+def test_hosted_smoke_budget_profile_applies_strict_per_request_caps(monkeypatch):
+    from agents.request_budget import HOSTED_SMOKE_BUDGET_LIMITS
+
+    monkeypatch.setenv("OMARAI_REQUEST_BUDGET_SECONDS", "110")
+    monkeypatch.setenv("OMARAI_REQUEST_MAX_SEARCH_CALLS", "2")
+    monkeypatch.setenv("OMARAI_REQUEST_MAX_MODEL_CALLS", "10")
+
+    snapshot = RequestBudget.from_environment(profile="hosted_smoke").snapshot()
+
+    assert snapshot["profile"] == "hosted_smoke"
+    assert snapshot["timeout_seconds"] == 75
+    assert snapshot["limits"] == {
+        **HOSTED_SMOKE_BUDGET_LIMITS,
+        "search_calls": 2,
+        "model_calls": min(10, HOSTED_SMOKE_BUDGET_LIMITS["model_calls"]),
+    }
+    assert snapshot["limits"]["search_queries"] <= 3
+    assert snapshot["limits"]["search_calls"] <= 12
+    assert snapshot["limits"]["model_calls"] <= 6
+    assert snapshot["limits"]["page_fetches"] <= 4
+    assert snapshot["limits"]["tool_calls"] == 0
+
+
+def test_request_budget_rejects_unknown_profile():
+    with pytest.raises(ValueError, match="unknown request-budget profile"):
+        RequestBudget.from_environment(profile="untrusted")
+
+
+def test_web_agent_answer_uses_the_selected_budget_profile(monkeypatch):
+    from agents.web_agent import WebAgent
+
+    agent = WebAgent()
+    monkeypatch.setattr(
+        agent,
+        "_answer_with_budget",
+        lambda question, history, mode: {"answer": "test", "kind": "test"},
+    )
+
+    result = agent.answer("budget profile test", budget_profile="hosted_smoke")
+
+    assert result["request_budget"]["profile"] == "hosted_smoke"
+    assert result["request_budget"]["limits"]["search_calls"] <= 12
+    assert result["request_budget"]["limits"]["model_calls"] <= 6

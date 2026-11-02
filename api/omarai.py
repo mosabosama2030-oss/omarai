@@ -809,14 +809,24 @@ class Handler(BaseHTTPRequestHandler):
                 question = data.get("question", "")
                 if not isinstance(question, str) or not question.strip():
                     return self.respond(400, {"error": "question must be a non-empty string"})
+                request_profile = data.get("request_profile", "default")
+                if not isinstance(request_profile, str) or request_profile not in {
+                    "default", "hosted_smoke"
+                }:
+                    return self.respond(400, {"error": "request_profile must be default or hosted_smoke"})
                 agent = WebAgent()
                 history = data.get("history", [])
                 if "mode" not in data:
                     return self._run_bounded_agent_operation(
-                        lambda: agent.answer(question, history)
+                        lambda: agent.answer(
+                            question, history, budget_profile=request_profile
+                        )
                     )
                 return self._run_bounded_agent_operation(
-                    lambda: agent.answer(question, history, data.get("mode"))
+                    lambda: agent.answer(
+                        question, history, data.get("mode"),
+                        budget_profile=request_profile,
+                    )
                 )
 
             if path == "/api/ask":

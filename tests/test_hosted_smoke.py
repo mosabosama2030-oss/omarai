@@ -56,7 +56,15 @@ class Handler(BaseHTTPRequestHandler):
                 "used_web_search": True,
                 "used_language_model": True,
                 "sources": [{"title": "مصدر اختبار", "url": "https://example.com/source"}],
-                "search_report": {"providers_used": ["bing_rss"], "pages_fetched": 1},
+                "answer_evidence_status": "citation_indices_validated_only",
+                "request_budget": {"profile": "hosted_smoke", "timeout_seconds": 75, "budget_exhausted": False, "deadline_exceeded": False, "limits": {"search_queries": 3, "search_calls": 12, "model_calls": 6, "page_fetches": 4, "tool_calls": 0}, "counts": {"search_queries": 2, "search_calls": 4, "model_calls": 4, "page_fetches": 1, "tool_calls": 0}},
+                "search_report": {
+                    "providers_used": ["bing_rss"], "pages_fetched": 1,
+                    "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "completed_all_claims_supported"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
             })
         else:
             self.respond(404, {"error": "not found"})
@@ -95,15 +103,16 @@ def test_normalize_origin_allows_plain_http_only_for_local_test():
         normalize_origin("http://example.com", allow_http=True)
 
 
-def test_smoke_checks_health_auth_live_diagnostics_and_agent(hosted_server):
+def test_smoke_checks_health_auth_and_single_agent_search(hosted_server):
     result = run_smoke(
         hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5
     )
     assert result["result"] == "passed"
     assert result["checks"]["health"] == "passed"
     assert result["checks"]["authentication"] == "passed"
-    assert result["checks"]["live_search"]["result_count"] == 2
+    assert result["checks"]["search"]["providers_reported"] == ["bing_rss"]
     assert result["checks"]["agent_request"]["source_count"] == 1
+    assert result["checks"]["agent_request"]["pipeline_completion_status"] == "completed"
 
 
 def test_smoke_never_forwards_bearer_to_cross_origin_redirect():
@@ -200,22 +209,312 @@ def test_smoke_rejects_deployed_build_sha_mismatch(hosted_server):
         )
 
 
-def test_smoke_requires_explicit_provider_usage_approval_before_network(monkeypatch):
+
+def test_http_403_report_contains_only_safe_response_metadata():
+    class ForbiddenHandler(BaseHTTPRequestHandler):
+        def log_message(self, format: str, *args: object) -> None:
+            return
+
+        def do_GET(self) -> None:
+            body = b"<html>blocked</html>"
+            self.send_response(403)
+            self.send_header("Content-Type", "text/html")
+            self.send_header("X-Request-ID", "request-123")
+            self.send_header("CF-Ray", "ray-456")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), ForbiddenHandler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        status, payload = hosted_smoke_test.request_json(
+            f"http://127.0.0.1:{server.server_port}/api/health",
+            token=TOKEN,
+            timeout=3,
+        )
+        assert status == 403
+        assert payload["_smoke_http"]["status"] == 403
+        assert payload["_smoke_http"]["request_id"] == "request-123"
+        assert payload["_smoke_http"]["cf_ray"] == "ray-456"
+        assert payload["_smoke_http"]["body_bytes_sampled"] == len(b"<html>blocked</html>")
+        assert "body_sha256" in payload["_smoke_http"]
+        assert "blocked" not in str(payload)
+        assert TOKEN not in str(payload)
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=2)
+
+
+
+def test_health_403_metadata_is_preserved_in_failure_report(monkeypatch):
+    metadata = {
+        "status": 403,
+        "content_type": "text/html",
+        "server": "edge-gateway",
+        "request_id": "request-403",
+        "correlation_id": "",
+        "cf_ray": "ray-403",
+        "via": "",
+        "body_bytes_sampled": 19,
+        "body_sha256": "a" * 64,
+    }
+
+    def forbidden_health(url: str, **kwargs):
+        return 403, {"_smoke_http": metadata}
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", forbidden_health)
+    with pytest.raises(SmokeError, match="Health check failed") as failure:
+        run_smoke("https://omarai.example.test", TOKEN, allow_provider_usage=False)
+    assert failure.value.report["http_response"] == metadata
+    assert "blocked" not in str(failure.value.report)
+
+
+
+def test_hosted_preflight_allows_remote_no_token_and_still_checks_auth_rejection(monkeypatch):
     calls = []
 
-    def unexpected_request(*args, **kwargs):
-        calls.append((args, kwargs))
-        raise AssertionError("network must not be called without explicit approval")
+    def fake_request(url: str, *, token="", payload=None, timeout=90):
+        path = urlsplit(url).path
+        calls.append((path, token))
+        if path == "/api/health":
+            return 200, {"ok": True}
+        if path == "/api/agent" and not token:
+            assert payload == {"question": ""}
+            return 401, None
+        raise AssertionError("preflight must not call authenticated agent/search/model paths")
 
-    monkeypatch.setattr(hosted_smoke_test, "request_json", unexpected_request)
-    with pytest.raises(SmokeError, match="explicit human approval"):
-        run_smoke(
-            "https://omarai.example.test",
-            TOKEN,
-            allow_provider_usage=False,
-            expected_sha="a" * 40,
-        )
-    assert calls == []
+    monkeypatch.setattr(hosted_smoke_test, "request_json", fake_request)
+    result = run_smoke(
+        "https://omarai.example.test",
+        "",
+        preflight_only=True,
+        allow_provider_usage=False,
+    )
+    assert result["result"] == "preflight_passed"
+    assert result["auth_mode"] == "preflight_no_token"
+    assert result["checks"]["authentication"] == "passed"
+    assert calls == [("/api/health", ""), ("/api/agent", "")]
+
+
+
+
+def test_preflight_fails_closed_if_unauthenticated_agent_probe_reaches_validation(monkeypatch):
+    calls = []
+
+    def auth_bypass(url: str, *, token="", payload=None, timeout=90):
+        path = urlsplit(url).path
+        calls.append((path, token, payload))
+        if path == "/api/health":
+            return 200, {"ok": True}
+        if path == "/api/agent" and not token:
+            assert payload == {"question": ""}
+            # The API reached question validation, so its auth gate did not reject first.
+            return 400, {"error": "question must be a non-empty string"}
+        raise AssertionError("no authenticated agent request is allowed in preflight")
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", auth_bypass)
+    with pytest.raises(SmokeError, match="should return 401"):
+        run_smoke("https://omarai.example.test", "", preflight_only=True)
+    assert calls == [("/api/health", "", None), ("/api/agent", "", {"question": ""})]
+
+
+
+def test_smoke_preflight_runs_without_provider_usage_or_model_calls(hosted_server):
+    result = run_smoke(
+        hosted_server, TOKEN, allow_http=True, preflight_only=True, allow_provider_usage=False, timeout=5
+    )
+    assert result["result"] == "preflight_passed"
+    assert result["checks"]["health"] == "passed"
+    assert result["checks"]["authentication"] == "passed"
+    assert result["checks"]["provider_usage"]["status"] == "skipped_not_approved"
+    assert result["transcript"] == []
+
+
+def test_smoke_requires_provider_approval_after_no_cost_preflight(monkeypatch):
+    calls = []
+
+    def fake_request(url, *, token="", payload=None, timeout=90):
+        calls.append((urlsplit(url).path, token, payload))
+        if url.endswith("/api/health"):
+            return 200, {"ok": True}
+        if url.endswith("/api/agent") and not token:
+            assert payload == {"question": ""}
+            return 401, None
+        raise AssertionError("provider-dependent request must not run without approval")
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", fake_request)
+    with pytest.raises(SmokeError, match="explicit human approval") as failure:
+        run_smoke("https://omarai.example.test", TOKEN, allow_provider_usage=False)
+    assert calls == [("/api/health", "", None), ("/api/agent", "", {"question": ""})]
+    assert failure.value.report["checks"]["authentication"] == "passed"
+    assert failure.value.report["checks"]["provider_usage"]["status"] == "blocked_not_approved"
+
+
+def test_smoke_rejects_empty_agent_answer(hosted_server, monkeypatch):
+    original = hosted_smoke_test.request_json
+
+    def empty_answer(url: str, **kwargs):
+        if urlsplit(url).path == "/api/agent" and kwargs.get("token") == TOKEN:
+            return 200, {
+                "answer": "  ", "used_web_search": True, "used_language_model": True,
+                "answer_evidence_status": "citation_indices_validated_only",
+                "sources": [{"url": "https://example.com/source"}],
+                "search_report": {
+                    "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "completed_all_claims_supported"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
+            }
+        return original(url, **kwargs)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", empty_answer)
+    with pytest.raises(SmokeError, match="empty or whitespace-only answer"):
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
+
+
+
+def test_smoke_rejects_non_string_agent_answer(hosted_server, monkeypatch):
+    original = hosted_smoke_test.request_json
+
+    def non_string_answer(url: str, **kwargs):
+        if urlsplit(url).path == "/api/agent" and kwargs.get("token") == TOKEN:
+            return 200, {
+                "answer": None, "used_web_search": True, "used_language_model": True,
+                "answer_evidence_status": "citation_indices_validated_only",
+                "sources": [{"url": "https://example.com/source"}],
+                "search_report": {
+                    "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "completed_all_claims_supported"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
+            }
+        return original(url, **kwargs)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", non_string_answer)
+    with pytest.raises(SmokeError, match="empty or whitespace-only answer"):
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
+
+
+def test_smoke_rejects_partial_pipeline_even_with_sources(hosted_server, monkeypatch):
+    original = hosted_smoke_test.request_json
+
+    def partial_pipeline(url: str, **kwargs):
+        if urlsplit(url).path == "/api/agent" and kwargs.get("token") == TOKEN:
+            return 200, {
+                "answer": "إجابة جزئية [المصدر 1]", "used_web_search": True,
+                "used_language_model": True,
+                "answer_evidence_status": "citation_indices_validated_only",
+                "sources": [{"url": "https://example.com/source"}],
+                "request_budget": {"profile": "hosted_smoke", "timeout_seconds": 75, "budget_exhausted": False, "deadline_exceeded": False, "limits": {"search_queries": 3, "search_calls": 12, "model_calls": 6, "page_fetches": 4, "tool_calls": 0}, "counts": {"search_queries": 2, "search_calls": 4, "model_calls": 4, "page_fetches": 1, "tool_calls": 0}},
+                "search_report": {
+                    "pipeline_completion_status": "partial",
+                    "semantic_claim_verification": {"status": "completed_all_claims_supported"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
+            }
+        return original(url, **kwargs)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", partial_pipeline)
+    with pytest.raises(SmokeError, match="pipeline did not complete"):
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
+
+
+def test_smoke_rejects_unvalidated_answer_evidence(hosted_server, monkeypatch):
+    original = hosted_smoke_test.request_json
+
+    def invalid_evidence(url: str, **kwargs):
+        if urlsplit(url).path == "/api/agent" and kwargs.get("token") == TOKEN:
+            return 200, {
+                "answer": "إجابة بلا إحالات صالحة", "used_web_search": True,
+                "used_language_model": True, "answer_evidence_status": "not_assessed",
+                "sources": [{"url": "https://example.com/source"}],
+                "request_budget": {"profile": "hosted_smoke", "timeout_seconds": 75, "budget_exhausted": False, "deadline_exceeded": False, "limits": {"search_queries": 3, "search_calls": 12, "model_calls": 6, "page_fetches": 4, "tool_calls": 0}, "counts": {"search_queries": 2, "search_calls": 4, "model_calls": 4, "page_fetches": 1, "tool_calls": 0}},
+                "search_report": {
+                    "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "completed_all_claims_supported"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
+            }
+        return original(url, **kwargs)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", invalid_evidence)
+    with pytest.raises(SmokeError, match="evidence status"):
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
+
+
+
+
+def test_smoke_rejects_missing_or_exceeded_server_budget_profile(hosted_server, monkeypatch):
+    original = hosted_smoke_test.request_json
+
+    def unbounded_budget(url: str, **kwargs):
+        if urlsplit(url).path == "/api/agent" and kwargs.get("token") == TOKEN:
+            status, payload = original(url, **kwargs)
+            payload["request_budget"] = {
+                "profile": "default",
+                "budget_exhausted": False,
+                "deadline_exceeded": False,
+                "limits": {"search_queries": 8, "search_calls": 32, "model_calls": 8, "page_fetches": 8, "tool_calls": 3},
+                "counts": {"search_queries": 1, "search_calls": 2, "model_calls": 2, "page_fetches": 1, "tool_calls": 0},
+            }
+            return status, payload
+        return original(url, **kwargs)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", unbounded_budget)
+    with pytest.raises(SmokeError, match="hosted_smoke request budget"):
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
+
+
+
+def test_smoke_rejects_pipeline_complete_without_semantic_claim_support(hosted_server, monkeypatch):
+    original = hosted_smoke_test.request_json
+
+    def unverified_claims(url: str, **kwargs):
+        if urlsplit(url).path == "/api/agent" and kwargs.get("token") == TOKEN:
+            return 200, {
+                "answer": "ادعاء غير متحقق [المصدر 1]", "used_web_search": True,
+                "used_language_model": True,
+                "answer_evidence_status": "citation_indices_validated_only",
+                "sources": [{"url": "https://example.com/source"}],
+                "request_budget": {"profile": "hosted_smoke", "timeout_seconds": 75, "budget_exhausted": False, "deadline_exceeded": False, "limits": {"search_queries": 3, "search_calls": 12, "model_calls": 6, "page_fetches": 4, "tool_calls": 0}, "counts": {"search_queries": 2, "search_calls": 4, "model_calls": 4, "page_fetches": 1, "tool_calls": 0}},
+                "search_report": {
+                    "pipeline_completion_status": "completed",
+                    "semantic_claim_verification": {"status": "not_performed"},
+                    "insufficient_evidence": False,
+                    "claim_audit_semantics": "distinct_model_assessed_source_support_not_ground_truth",
+                },
+            }
+        return original(url, **kwargs)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", unverified_claims)
+    with pytest.raises(SmokeError, match="semantic claim-support review"):
+        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)
+
+
+def test_hosted_smoke_workflow_scopes_secrets_to_the_execution_step():
+    workflow = Path(".github/workflows/hosted-smoke.yml").read_text(encoding="utf-8")
+    job = workflow.split("jobs:", 1)[1].split("steps:", 1)[0]
+    assert "OMARAI_ACCESS_TOKEN" not in job
+    assert "OMARAI_BASE_URL" not in job
+    assert "OMARAI_ACCESS_TOKEN:" in workflow
+    assert "OMARAI_BASE_URL:" in workflow
+    preflight_step = workflow.split("- name: Run no-cost hosted preflight", 1)[1].split(
+        "- name: Run live hosted acceptance", 1
+    )[0]
+    live_step = workflow.split("- name: Run live hosted acceptance", 1)[1].split(
+        "- name: Upload hosted question-and-answer transcript", 1
+    )[0]
+    assert "OMARAI_ACCESS_TOKEN" not in preflight_step
+    assert "OMARAI_ACCESS_TOKEN:" in live_step
+    assert "preflight-only" in workflow
+    assert "default: false" in workflow
 
 
 def test_hosted_smoke_workflow_is_manual_and_cost_gated():
@@ -224,3 +523,9 @@ def test_hosted_smoke_workflow_is_manual_and_cost_gated():
     assert "allow_provider_usage:" in workflow
     assert "default: false" in workflow
     assert "--allow-provider-usage" in workflow
+
+
+def test_hosted_smoke_budget_caps_match_server_enforced_profile():
+    from agents.request_budget import HOSTED_SMOKE_BUDGET_LIMITS
+
+    assert hosted_smoke_test.HOSTED_SMOKE_BUDGET_MAX == HOSTED_SMOKE_BUDGET_LIMITS
