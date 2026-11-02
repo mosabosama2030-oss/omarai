@@ -134,6 +134,149 @@ def request_json(url: str, *, token: str = "", payload: dict[str, Any] | None = 
     return status, result if isinstance(result, dict) else None
 
 
+
+def _safe_http_metadata(payload: dict[str, Any] | None) -> dict[str, Any] | None:
+    """Return allowlisted response metadata only; never persist an HTTP response body."""
+    if not isinstance(payload, dict):
+        return None
+    metadata = payload.get("_smoke_http")
+    return metadata if isinstance(metadata, dict) else None
+
+
+def _run_no_cost_preflight(
+    origin: str,
+    *,
+    timeout: float,
+    expected_sha: str | None,
+    loopback_dev_bypass: bool,
+    report: dict[str, Any],
+    checks: dict[str, Any],
+) -> dict[str, Any]:
+    """Probe independent public routes so an edge block does not hide later diagnostics."""
+    diagnostics: dict[str, Any] = {}
+    http_responses: dict[str, dict[str, Any]] = {}
+
+    def probe(
+        name: str,
+        path: str,
+        *,
+        payload: dict[str, Any] | None = None,
+        expected_status: int,
+        validate_health: bool = False,
+    ) -> tuple[bool, dict[str, Any] | None]:
+        try:
+            status, response = request_json(
+                f"{origin}{path}",
+                payload=payload,
+                timeout=min(timeout, 20),
+            )
+        except SmokeError as exc:
+            diagnostics[name] = {
+                "status": "network_error",
+                "expected_http_status": expected_status,
+                "error": str(exc),
+            }
+            return False, None
+
+        metadata = _safe_http_metadata(response)
+        passed = status == expected_status
+        if validate_health:
+            passed = passed and isinstance(response, dict) and response.get("ok") is True
+        item: dict[str, Any] = {
+            "status": "passed" if passed else "failed",
+            "http_status": status,
+            "expected_http_status": expected_status,
+        }
+        if validate_health:
+            item["health_ok"] = bool(isinstance(response, dict) and response.get("ok") is True)
+        if metadata is not None:
+            http_responses[name] = metadata
+            item["http_response"] = metadata
+        diagnostics[name] = item
+        return passed, response
+
+    homepage_ok, _ = probe(
+        "homepage", "/", expected_status=200
+    )
+    health_ok, health = probe(
+        "health", "/api/health", expected_status=200, validate_health=True
+    )
+
+    build_ok = True
+    if expected_sha is not None:
+        build = health.get("build") if isinstance(health, dict) else None
+        reported_sha = build.get("sha") if isinstance(build, dict) else None
+        expected = expected_sha.strip().lower()
+        build_ok = isinstance(reported_sha, str) and reported_sha.lower() == expected
+        checks["build_identity"] = {
+            "status": "passed" if build_ok else "failed",
+            "expected_sha": expected,
+            "reported_sha": reported_sha.lower() if isinstance(reported_sha, str) else "unknown",
+        }
+    else:
+        checks["build_identity"] = {
+            "status": "not_checked",
+            "reported_sha": (
+                health.get("build", {}).get("sha")
+                if isinstance(health, dict) and isinstance(health.get("build"), dict)
+                else "unknown"
+            ),
+        }
+
+    if loopback_dev_bypass:
+        auth_ok = True
+        checks["authentication"] = "local_loopback_dev_bypass"
+        diagnostics["unauthenticated_agent"] = {
+            "status": "skipped_local_development_bypass"
+        }
+    else:
+        auth_ok, _ = probe(
+            "unauthenticated_agent",
+            "/api/agent",
+            payload={"question": ""},
+            expected_status=401,
+        )
+        checks["authentication"] = "passed" if auth_ok else "failed"
+
+    checks["homepage"] = "passed" if homepage_ok else "failed"
+    checks["health"] = "passed" if health_ok else "failed"
+    checks["provider_usage"] = {"status": "skipped_not_approved"}
+    report["endpoint_diagnostics"] = diagnostics
+    report["http_responses"] = http_responses
+    if http_responses:
+        # Retain the legacy single-response field while exposing every failed endpoint.
+        report["http_response"] = next(iter(http_responses.values()))
+
+    failed = [
+        name for name, item in diagnostics.items()
+        if item.get("status") not in {"passed", "skipped_local_development_bypass"}
+    ]
+    if failed or not (homepage_ok and health_ok and auth_ok and build_ok):
+        report.update({
+            "result": "failed",
+            "note": (
+                "No-cost preflight completed all independent route probes. Inspect "
+                "endpoint_diagnostics and http_responses to distinguish host-level, "
+                "health-route, and authentication-route failures. No search provider "
+                "or language model was called."
+            ),
+        })
+        raise SmokeError(
+            "No-cost hosted preflight failed; inspect per-endpoint HTTP diagnostics.",
+            report,
+        )
+
+    report.update({
+        "result": "preflight_passed",
+        "note": (
+            "No-cost preflight passed: homepage and health are reachable, and the "
+            "unauthenticated agent route rejects access with HTTP 401. No search "
+            "provider or language model was called."
+        ),
+    })
+    return report
+
+
 def run_smoke(
     origin: str,
     token: str,
@@ -176,6 +319,16 @@ def run_smoke(
         "checks": checks,
         "transcript": [],
     }
+    if preflight_only:
+        return _run_no_cost_preflight(
+            origin,
+            timeout=timeout,
+            expected_sha=expected_sha,
+            loopback_dev_bypass=local_dev_no_token and loopback_host,
+            report=partial_report,
+            checks=checks,
+        )
+
     status, health = request_json(f"{origin}/api/health", timeout=min(timeout, 20))
     if status != 200 or not health or health.get("ok") is not True:
         if isinstance(health, dict) and isinstance(health.get("_smoke_http"), dict):
@@ -205,7 +358,7 @@ def run_smoke(
             "reported_sha": reported_sha if isinstance(reported_sha, str) else "unknown",
         }
 
-    if token.strip() or (preflight_only and not local_dev_no_token):
+    if token.strip():
         status, auth_response = request_json(
             f"{origin}/api/agent", payload={"question": ""},
             timeout=min(timeout, 20),
@@ -220,18 +373,6 @@ def run_smoke(
         checks["authentication"] = "passed"
     else:
         checks["authentication"] = "local_loopback_dev_bypass"
-
-    if preflight_only:
-        checks["provider_usage"] = {"status": "skipped_not_approved"}
-        partial_report.update({
-            "result": "preflight_passed",
-            "checks": checks,
-            "note": (
-                "No-cost preflight only: health, build identity (when requested), and authentication "
-                "were checked. No search provider or language model was called."
-            ),
-        })
-        return partial_report
 
     if not allow_provider_usage:
         checks["provider_usage"] = {"status": "blocked_not_approved"}
