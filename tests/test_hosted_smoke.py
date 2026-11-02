@@ -333,6 +333,28 @@ def test_preflight_fails_closed_if_unauthenticated_agent_probe_reaches_validatio
 
 
 
+
+def test_no_cost_preflight_rejects_a_mismatched_expected_build_sha(monkeypatch):
+    def request_with_wrong_sha(url: str, *, token="", payload=None, timeout=90):
+        path = urlsplit(url).path
+        if path == "/":
+            return 200, None
+        if path == "/api/health":
+            return 200, {"ok": True, "build": {"sha": "b" * 40}}
+        if path == "/api/agent":
+            assert payload == {"question": ""}
+            return 401, None
+        raise AssertionError(path)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", request_with_wrong_sha)
+    with pytest.raises(SmokeError, match="per-endpoint HTTP diagnostics") as failure:
+        run_smoke(
+            "https://omarai.example.test", "",
+            expected_sha="a" * 40, preflight_only=True,
+        )
+    assert failure.value.report["checks"]["build_identity"]["status"] == "failed"
+
+
 def test_no_cost_preflight_collects_all_endpoint_failures_without_request_bodies(monkeypatch):
     calls = []
     body_digest = "b" * 64
