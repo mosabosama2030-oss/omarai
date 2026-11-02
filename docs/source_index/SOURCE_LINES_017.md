@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004550 إلى SRC-1AE03B9EC3-L005349
+- النطاق: SRC-1AE03B9EC3-L004549 إلى SRC-1AE03B9EC3-L005348
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004549](../../agents/web_agent.py#L4549) | 4549 | `"        source_count: int,"` | — |
 | [SRC-1AE03B9EC3-L004550](../../agents/web_agent.py#L4550) | 4550 | `"        citation_warnings: list[str],"` | — |
 | [SRC-1AE03B9EC3-L004551](../../agents/web_agent.py#L4551) | 4551 | `"        review_status: str,"` | — |
 | [SRC-1AE03B9EC3-L004552](../../agents/web_agent.py#L4552) | 4552 | `"    ) -> dict[str, Any]:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005346](../../agents/web_agent.py#L5346) | 5346 | `"                else dialogue_context.get(\"resolved_question\") or working_question"` | — |
 | [SRC-1AE03B9EC3-L005347](../../agents/web_agent.py#L5347) | 5347 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L005348](../../agents/web_agent.py#L5348) | 5348 | `"        plan[\"mode\"] = clean_mode"` | — |
-| [SRC-1AE03B9EC3-L005349](../../agents/web_agent.py#L5349) | 5349 | `"        plan[\"intent_route\"] = intent_route"` | — |

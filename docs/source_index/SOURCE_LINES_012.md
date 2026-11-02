@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000550 إلى SRC-1AE03B9EC3-L001349
+- النطاق: SRC-1AE03B9EC3-L000549 إلى SRC-1AE03B9EC3-L001348
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000549](../../agents/web_agent.py#L549) | 549 | `"        and isinstance(source.get(\"url\"), str)"` | — |
 | [SRC-1AE03B9EC3-L000550](../../agents/web_agent.py#L550) | 550 | `"        and source.get(\"url\")"` | — |
 | [SRC-1AE03B9EC3-L000551](../../agents/web_agent.py#L551) | 551 | `"    ]"` | — |
 | [SRC-1AE03B9EC3-L000552](../../agents/web_agent.py#L552) | 552 | `"    lines = ["` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001346](../../agents/web_agent.py#L1346) | 1346 | `"        return any(term in value for term in dynamic_terms) or bool("` | — |
 | [SRC-1AE03B9EC3-L001347](../../agents/web_agent.py#L1347) | 1347 | `"            re.search(r\"https?://\", question, flags=re.IGNORECASE)"` | — |
 | [SRC-1AE03B9EC3-L001348](../../agents/web_agent.py#L1348) | 1348 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001349](../../agents/web_agent.py#L1349) | 1349 | `""` | — |

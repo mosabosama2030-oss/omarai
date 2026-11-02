@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000039 إلى SRC-59CF4B7DE8-L000548
+- النطاق: SRC-FDEEAFDFCA-L000038 إلى SRC-59CF4B7DE8-L000547
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000038](../../agents/request_budget.py#L38) | 38 | `"    return max(minimum, min(value, maximum))"` | — |
 | [SRC-FDEEAFDFCA-L000039](../../agents/request_budget.py#L39) | 39 | `""` | — |
 | [SRC-FDEEAFDFCA-L000040](../../agents/request_budget.py#L40) | 40 | `""` | — |
 | [SRC-FDEEAFDFCA-L000041](../../agents/request_budget.py#L41) | 41 | `"class RequestBudget:"` | — |
@@ -833,4 +834,3 @@
 | [SRC-59CF4B7DE8-L000545](../../agents/research.py#L545) | 545 | `"        \"reddit.com\": \"reddit\", \"old.reddit.com\": \"reddit\","` | — |
 | [SRC-59CF4B7DE8-L000546](../../agents/research.py#L546) | 546 | `"        \"youtube.com\": \"youtube\", \"youtu.be\": \"youtube\","` | — |
 | [SRC-59CF4B7DE8-L000547](../../agents/research.py#L547) | 547 | `"        \"facebook.com\": \"facebook\", \"instagram.com\": \"instagram\","` | — |
-| [SRC-59CF4B7DE8-L000548](../../agents/research.py#L548) | 548 | `"        \"x.com\": \"x\", \"twitter.com\": \"x\", \"tiktok.com\": \"tiktok\","` | — |

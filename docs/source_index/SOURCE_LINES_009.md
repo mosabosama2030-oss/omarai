@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000318 إلى SRC-686F71AA50-L000727
+- النطاق: SRC-086D574B4E-L000317 إلى SRC-686F71AA50-L000726
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000317](../../agents/semantic_claim_verifier.py#L317) | 317 | `"            return _not_verifiable(\"source_indexes_must_be_integers\", ledger)"` | — |
 | [SRC-086D574B4E-L000318](../../agents/semantic_claim_verifier.py#L318) | 318 | `"        if len(set(supporting)) != len(supporting) or len(set(contradicting)) != len(contradicting):"` | — |
 | [SRC-086D574B4E-L000319](../../agents/semantic_claim_verifier.py#L319) | 319 | `"            return _not_verifiable(\"duplicate_source_indexes\", ledger)"` | — |
 | [SRC-086D574B4E-L000320](../../agents/semantic_claim_verifier.py#L320) | 320 | `"        if not set(supporting + contradicting).issubset(allowed_sources):"` | — |
@@ -824,4 +825,3 @@
 | [SRC-686F71AA50-L000724](../../agents/task_understanding.py#L724) | 724 | `"    # are matched lexical signals, not calibrated confidence or probability."` | — |
 | [SRC-686F71AA50-L000725](../../agents/task_understanding.py#L725) | 725 | `"    hypothesis_rows: list[dict[str, Any]] = []"` | — |
 | [SRC-686F71AA50-L000726](../../agents/task_understanding.py#L726) | 726 | `"    for candidate_family, signals in matches.items():"` | — |
-| [SRC-686F71AA50-L000727](../../agents/task_understanding.py#L727) | 727 | `"        if signals:"` | — |

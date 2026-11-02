@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006950 إلى SRC-EEF2E6447C-L000500
+- النطاق: SRC-1AE03B9EC3-L006949 إلى SRC-EEF2E6447C-L000499
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006949](../../agents/web_agent.py#L6949) | 6949 | `"            task_fulfillment_status = \"not_assessed_insufficient_evidence\""` | — |
 | [SRC-1AE03B9EC3-L006950](../../agents/web_agent.py#L6950) | 6950 | `"        answer_coverage[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
 | [SRC-1AE03B9EC3-L006951](../../agents/web_agent.py#L6951) | 6951 | `"        answer_coverage[\"semantic_verification_status\"] = semantic_claim_verification.get(\"status\")"` | — |
 | [SRC-1AE03B9EC3-L006952](../../agents/web_agent.py#L6952) | 6952 | `"        report[\"task_fulfillment_status\"] = task_fulfillment_status"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000497](../../api/omarai.py#L497) | 497 | `"            if ("` | — |
 | [SRC-EEF2E6447C-L000498](../../api/omarai.py#L498) | 498 | `"                client_ip not in cls._request_times"` | — |
 | [SRC-EEF2E6447C-L000499](../../api/omarai.py#L499) | 499 | `"                and len(cls._request_times) >= max(1, cls.MAX_RATE_LIMIT_CLIENT_BUCKETS) - 1"` | — |
-| [SRC-EEF2E6447C-L000500](../../api/omarai.py#L500) | 500 | `"            ):"` | — |

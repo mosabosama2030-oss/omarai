@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005350 إلى SRC-1AE03B9EC3-L006149
+- النطاق: SRC-1AE03B9EC3-L005349 إلى SRC-1AE03B9EC3-L006148
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005349](../../agents/web_agent.py#L5349) | 5349 | `"        plan[\"intent_route\"] = intent_route"` | — |
 | [SRC-1AE03B9EC3-L005350](../../agents/web_agent.py#L5350) | 5350 | `"        plan[\"intent_route_reason\"] = intent_reason"` | — |
 | [SRC-1AE03B9EC3-L005351](../../agents/web_agent.py#L5351) | 5351 | `"        # Normalize planner output before depth/mode expansion so a raw instruction-only"` | — |
 | [SRC-1AE03B9EC3-L005352](../../agents/web_agent.py#L5352) | 5352 | `"        # prompt cannot seed synthetic generic queries when the topic is empty."` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L006146](../../agents/web_agent.py#L6146) | 6146 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L006147](../../agents/web_agent.py#L6147) | 6147 | `"            for source in sources"` | — |
 | [SRC-1AE03B9EC3-L006148](../../agents/web_agent.py#L6148) | 6148 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L006149](../../agents/web_agent.py#L6149) | 6149 | `"        final_independent_domains.discard(\"\")"` | — |

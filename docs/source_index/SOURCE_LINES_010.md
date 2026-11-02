@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000728 إلى SRC-0799EEEB02-L000060
+- النطاق: SRC-686F71AA50-L000727 إلى SRC-0799EEEB02-L000059
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000727](../../agents/task_understanding.py#L727) | 727 | `"        if signals:"` | — |
 | [SRC-686F71AA50-L000728](../../agents/task_understanding.py#L728) | 728 | `"            hypothesis_rows.append({"` | — |
 | [SRC-686F71AA50-L000729](../../agents/task_understanding.py#L729) | 729 | `"                \"family\": candidate_family,"` | — |
 | [SRC-686F71AA50-L000730](../../agents/task_understanding.py#L730) | 730 | `"                \"matched_signal_count\": len(signals),"` | — |
@@ -833,4 +834,3 @@
 | [SRC-0799EEEB02-L000057](../../agents/tool_execution_status.py#L57) | 57 | `"    \"\"\"Map planned tool requirements to observed outcomes without inferring success.\"\"\""` | — |
 | [SRC-0799EEEB02-L000058](../../agents/tool_execution_status.py#L58) | 58 | `"    spec = task_spec if isinstance(task_spec, dict) else {}"` | — |
 | [SRC-0799EEEB02-L000059](../../agents/tool_execution_status.py#L59) | 59 | `"    output = result if isinstance(result, dict) else {}"` | — |
-| [SRC-0799EEEB02-L000060](../../agents/tool_execution_status.py#L60) | 60 | `"    search_report = report if isinstance(report, dict) else {}"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000329 إلى SRC-086D574B4E-L000317
+- النطاق: SRC-8D00DCEC0D-L000328 إلى SRC-086D574B4E-L000316
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000328](../../agents/sales_domain.py#L328) | 328 | `"            raise ValueError(\"taxonomy category requires at least one alias\")"` | — |
 | [SRC-8D00DCEC0D-L000329](../../agents/sales_domain.py#L329) | 329 | `""` | — |
 | [SRC-8D00DCEC0D-L000330](../../agents/sales_domain.py#L330) | 330 | `""` | — |
 | [SRC-8D00DCEC0D-L000331](../../agents/sales_domain.py#L331) | 331 | `"@dataclass(frozen=True, slots=True)"` | — |
@@ -833,4 +834,3 @@
 | [SRC-086D574B4E-L000314](../../agents/semantic_claim_verifier.py#L314) | 314 | `"        if len(supporting) > 8 or len(contradicting) > 8:"` | — |
 | [SRC-086D574B4E-L000315](../../agents/semantic_claim_verifier.py#L315) | 315 | `"            return _not_verifiable(\"source_index_list_too_large\", ledger)"` | — |
 | [SRC-086D574B4E-L000316](../../agents/semantic_claim_verifier.py#L316) | 316 | `"        if any(isinstance(value, bool) or not isinstance(value, int) for value in supporting + contradicting):"` | — |
-| [SRC-086D574B4E-L000317](../../agents/semantic_claim_verifier.py#L317) | 317 | `"            return _not_verifiable(\"source_indexes_must_be_integers\", ledger)"` | — |

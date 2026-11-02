@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006150 إلى SRC-1AE03B9EC3-L006949
+- النطاق: SRC-1AE03B9EC3-L006149 إلى SRC-1AE03B9EC3-L006948
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006149](../../agents/web_agent.py#L6149) | 6149 | `"        final_independent_domains.discard(\"\")"` | — |
 | [SRC-1AE03B9EC3-L006150](../../agents/web_agent.py#L6150) | 6150 | `"        # All post-filter source metrics describe the sources that remain eligible"` | — |
 | [SRC-1AE03B9EC3-L006151](../../agents/web_agent.py#L6151) | 6151 | `"        # for the answer. Connector-level received/accepted/rejected totals remain"` | — |
 | [SRC-1AE03B9EC3-L006152](../../agents/web_agent.py#L6152) | 6152 | `"        # available in provider diagnostics and are intentionally separate."` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L006946](../../agents/web_agent.py#L6946) | 6946 | `"            else \"not_machine_assessed_no_explicit_targets_detected\""` | — |
 | [SRC-1AE03B9EC3-L006947](../../agents/web_agent.py#L6947) | 6947 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L006948](../../agents/web_agent.py#L6948) | 6948 | `"        if semantic_answer_withheld:"` | — |
-| [SRC-1AE03B9EC3-L006949](../../agents/web_agent.py#L6949) | 6949 | `"            task_fulfillment_status = \"not_assessed_insufficient_evidence\""` | — |

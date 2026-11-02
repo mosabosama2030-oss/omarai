@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000205 إلى SRC-E599346ABE-L000004
+- النطاق: SRC-792A9A235D-L000204 إلى SRC-E599346ABE-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000204](../ANSWER_QUALITY_BENCHMARK_AR.md#L204) | 204 | `"## أحدث نتيجة تحقق آلي — 29 أكتوبر 2026"` | — |
 | [SRC-792A9A235D-L000205](../ANSWER_QUALITY_BENCHMARK_AR.md#L205) | 205 | `""` | — |
 | [SRC-792A9A235D-L000206](../ANSWER_QUALITY_BENCHMARK_AR.md#L206) | 206 | ``"- **الشفرة والاختبارات:** التغيير البرمجي المثبت هو SHA `449912938fc0067301e0541552199a8e67ecc46b`. نجح [GitHub Actions #40901777951](https://github.com/mosabosama2030-oss/omarai/actions/runs/40901777951): Python 3.11 = **607 passed in 26.10s**، وPython 3.12 = **607 passed in 27.96s**، وRuff، والتحقق من الفهارس، وبناء الحاوية واختبار API المحمي."`` | — |
 | [SRC-792A9A235D-L000207](../ANSWER_QUALITY_BENCHMARK_AR.md#L207) | 207 | ``"- **الرأس بعد الاختبارات:** الرأس عند تسجيل هذا التحديث `52673e6354d7b4d5dd008c3d02efda06c94335bc`؛ مقارنة GitHub مع SHA المختبر تحصر التغييرات اللاحقة في ملفات الفهرسة المولّدة فقط، ولا تغيّر الشفرة أو الاختبارات."`` | — |
@@ -887,4 +888,3 @@
 | [SRC-E599346ABE-L000001](../generate_index.py#L1) | 1 | `"\"\"\"Generate Omarai's deterministic repository-wide file and source-symbol index.\"\"\""` | — |
 | [SRC-E599346ABE-L000002](../generate_index.py#L2) | 2 | `""` | — |
 | [SRC-E599346ABE-L000003](../generate_index.py#L3) | 3 | `"from __future__ import annotations"` | — |
-| [SRC-E599346ABE-L000004](../generate_index.py#L4) | 4 | `""` | — |

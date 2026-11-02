@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001350 إلى SRC-1AE03B9EC3-L002149
+- النطاق: SRC-1AE03B9EC3-L001349 إلى SRC-1AE03B9EC3-L002148
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001349](../../agents/web_agent.py#L1349) | 1349 | `""` | — |
 | [SRC-1AE03B9EC3-L001350](../../agents/web_agent.py#L1350) | 1350 | `"    def _local_answer_result(self, question: str, answer: str, kind: str) -> dict[str, Any]:"` | — |
 | [SRC-1AE03B9EC3-L001351](../../agents/web_agent.py#L1351) | 1351 | `"        \"\"\"Build a consistently shaped answer for non-research conversational requests.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001352](../../agents/web_agent.py#L1352) | 1352 | `"        return {"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002146](../../agents/web_agent.py#L2146) | 2146 | `"                (urllib.parse.urlparse(publisher_url).hostname or \"\").lower()"` | — |
 | [SRC-1AE03B9EC3-L002147](../../agents/web_agent.py#L2147) | 2147 | `"                if publisher_url else \"\""` | — |
 | [SRC-1AE03B9EC3-L002148](../../agents/web_agent.py#L2148) | 2148 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002149](../../agents/web_agent.py#L2149) | 2149 | `"            results.append({"` | — |

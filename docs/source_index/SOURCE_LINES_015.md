@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002950 إلى SRC-1AE03B9EC3-L003749
+- النطاق: SRC-1AE03B9EC3-L002949 إلى SRC-1AE03B9EC3-L003748
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002949](../../agents/web_agent.py#L2949) | 2949 | `""` | — |
 | [SRC-1AE03B9EC3-L002950](../../agents/web_agent.py#L2950) | 2950 | `"        # Google News RSS is included concurrently by _search_web for freshness-bearing queries."` | — |
 | [SRC-1AE03B9EC3-L002951](../../agents/web_agent.py#L2951) | 2951 | `""` | — |
 | [SRC-1AE03B9EC3-L002952](../../agents/web_agent.py#L2952) | 2952 | `"        # A social-focused task uses public social endpoints in parallel with indexed"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003746](../../agents/web_agent.py#L3746) | 3746 | `"                    candidate_model,"` | — |
 | [SRC-1AE03B9EC3-L003747](../../agents/web_agent.py#L3747) | 3747 | `"                    \"invalid_response\","` | — |
 | [SRC-1AE03B9EC3-L003748](../../agents/web_agent.py#L3748) | 3748 | `"                    error_class=type(exc).__name__,"` | — |
-| [SRC-1AE03B9EC3-L003749](../../agents/web_agent.py#L3749) | 3749 | `"                    request_started=True,"` | — |

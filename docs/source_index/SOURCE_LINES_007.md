@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000047 إلى SRC-8D00DCEC0D-L000328
+- النطاق: SRC-3AA6165B18-L000046 إلى SRC-8D00DCEC0D-L000327
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000046](../../agents/research_guardrails.py#L46) | 46 | `"    \"today\", \"right now\", \"currently\", \"current hours\","` | — |
 | [SRC-3AA6165B18-L000047](../../agents/research_guardrails.py#L47) | 47 | `")"` | — |
 | [SRC-3AA6165B18-L000048](../../agents/research_guardrails.py#L48) | 48 | `"_PROMOTION_TERMS = ("` | — |
 | [SRC-3AA6165B18-L000049](../../agents/research_guardrails.py#L49) | 49 | `"    \"للبيع\", \"للايجار\", \"للإيجار\", \"تواصل معنا\", \"اتصل الآن\", \"واتساب\","` | — |
@@ -833,4 +834,3 @@
 | [SRC-8D00DCEC0D-L000325](../../agents/sales_domain.py#L325) | 325 | `"        object.__setattr__(self, \"path\", _clean_path(self.path, field_name=\"path\"))"` | — |
 | [SRC-8D00DCEC0D-L000326](../../agents/sales_domain.py#L326) | 326 | `"        object.__setattr__(self, \"aliases\", _clean_terms(self.aliases, field_name=\"aliases\"))"` | — |
 | [SRC-8D00DCEC0D-L000327](../../agents/sales_domain.py#L327) | 327 | `"        if not self.aliases:"` | — |
-| [SRC-8D00DCEC0D-L000328](../../agents/sales_domain.py#L328) | 328 | `"            raise ValueError(\"taxonomy category requires at least one alias\")"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000530 إلى SRC-FDEEAFDFCA-L000038
+- النطاق: SRC-5587371288-L000529 إلى SRC-FDEEAFDFCA-L000037
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000529](../../agents/intent_router.py#L529) | 529 | `"            \"route\": \"WEB_SIMPLE\","` | — |
 | [SRC-5587371288-L000530](../../agents/intent_router.py#L530) | 530 | `"            \"reason\": ("` | — |
 | [SRC-5587371288-L000531](../../agents/intent_router.py#L531) | 531 | `"                \"explicit_evidence_request\""` | — |
 | [SRC-5587371288-L000532](../../agents/intent_router.py#L532) | 532 | `"                if _has_explicit_source_request(question)"` | — |
@@ -833,4 +834,3 @@
 | [SRC-FDEEAFDFCA-L000035](../../agents/request_budget.py#L35) | 35 | `"        value = int(raw) if raw else default"` | — |
 | [SRC-FDEEAFDFCA-L000036](../../agents/request_budget.py#L36) | 36 | `"    except (TypeError, ValueError):"` | — |
 | [SRC-FDEEAFDFCA-L000037](../../agents/request_budget.py#L37) | 37 | `"        value = default"` | — |
-| [SRC-FDEEAFDFCA-L000038](../../agents/request_budget.py#L38) | 38 | `"    return max(minimum, min(value, maximum))"` | — |

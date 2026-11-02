@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000017 إلى SRC-65551FB29F-L000060
+- النطاق: SRC-62CE5126F9-L000016 إلى SRC-65551FB29F-L000059
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000016](../OMARAI_REMEDIATION_REGISTER_AR.md#L16) | 16 | `"- **نطاق الفحص:** عزل tenants، اعتماد المتصفح، دورة حياة SQLite، فهم المتابعات، صلة نتائج البحث، أخطاء HTTP لمزودي النماذج، Gemini/Mistral failover، SSRF، Prompt Injection، حدود الموارد، وGitHub Actions."` | — |
 | [SRC-62CE5126F9-L000017](../OMARAI_REMEDIATION_REGISTER_AR.md#L17) | 17 | `"- **إصلاحات أضيفت إلى حزمة #145:** اتصالات SQLite أصبحت transaction-scoped وتُغلق دائمًا؛ معرفات العملاء ذات 24 خانة hex أصبحت مقبولة في تحديث الحالة؛ أزيلت تعريفات follow-up المكررة؛ تحسن حد صلة الاستعلامات متعددة المفاهيم؛ سُجلت 429/401/403 مع رمز HTTP دون تخزين جسم استجابة المزود؛ أضيف fallback اختياري إلى Gemini وMistral بمعرفات النماذج الرسمية."` | — |
 | [SRC-62CE5126F9-L000018](../OMARAI_REMEDIATION_REGISTER_AR.md#L18) | 18 | ``"- **SEC-BROWSER-SESSION-001 — P0:** أزيل تخزين رمز API في `localStorage` من واجهتي Agent وDashboard. يستبدل الآن جلسة المتصفح الرمز بجلسة عشوائية opaque محفوظة hash في SQLite، بمدة خادم 8 ساعات، وملف ارتباط `HttpOnly; Secure; SameSite=Strict; Path=/` في النشر العام، مع تحقق Origin لطلبات POST. الجلسة مرتبطة ببصمة رمز API؛ إبطال الرمز أو انتهاءه أو تدويره يبطل الجلسة، وتسجيل الخروج يبطل سجل الجلسة نفسه."`` | — |
 | [SRC-62CE5126F9-L000019](../OMARAI_REMEDIATION_REGISTER_AR.md#L19) | 19 | ``"- **MODEL-FAILOVER-001 — P1:** جرى نقل وظيفة Gemini/Mistral من #140 إلى حزمة #145 مع دمجها مع `allow_fallback=False` لمراجع الادعاءات؛ المراجع لا يرسل مطالبة التحقق إلى مزود ثانٍ عند الفشل. لا توجد مكالمة حية أو اختبار مدفوع؛ الاختبارات تستخدم mock."`` | — |
@@ -833,4 +834,3 @@
 | [SRC-65551FB29F-L000057](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L57) | 57 | `"\| 14 \| خبير تقييم المعلومات \| هل الدليل يدعم الادعاء فعلًا؟ \| اختبارات citation/claim support، تعارضات \|"` | — |
 | [SRC-65551FB29F-L000058](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L58) | 58 | `"\| 15 \| مهندس ذكاء اصطناعي/وكلاء \| هل التخطيط والتنفيذ والحدود منضبطة؟ \| حدود الخطوات، tool schemas، traces آمنة \|"` | — |
 | [SRC-65551FB29F-L000059](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L59) | 59 | `"\| 16 \| خبير أمن GenAI \| هل توجد حقن تعليمات أو تسريب أو إساءة أدوات؟ \| red-team tests، سيناريوهات هجوم وإغلاقها \|"` | — |
-| [SRC-65551FB29F-L000060](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L60) | 60 | `"\| 17 \| مهندس تقييم النماذج \| هل تغيير النموذج يحسن الجودة حقًا؟ \| eval suite، مقارنة إصدارات، حدود عينة \|"` | — |

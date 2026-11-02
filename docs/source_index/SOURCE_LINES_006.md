@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000549 إلى SRC-3AA6165B18-L000046
+- النطاق: SRC-59CF4B7DE8-L000548 إلى SRC-3AA6165B18-L000045
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000548](../../agents/research.py#L548) | 548 | `"        \"x.com\": \"x\", \"twitter.com\": \"x\", \"tiktok.com\": \"tiktok\","` | — |
 | [SRC-59CF4B7DE8-L000549](../../agents/research.py#L549) | 549 | `"        \"linkedin.com\": \"linkedin\", \"threads.net\": \"threads\","` | — |
 | [SRC-59CF4B7DE8-L000550](../../agents/research.py#L550) | 550 | `"        \"bsky.app\": \"bluesky\","` | — |
 | [SRC-59CF4B7DE8-L000551](../../agents/research.py#L551) | 551 | `"    }"` | — |
@@ -833,4 +834,3 @@
 | [SRC-3AA6165B18-L000043](../../agents/research_guardrails.py#L43) | 43 | `")"` | — |
 | [SRC-3AA6165B18-L000044](../../agents/research_guardrails.py#L44) | 44 | `"_TODAY_WORDS = ("` | — |
 | [SRC-3AA6165B18-L000045](../../agents/research_guardrails.py#L45) | 45 | `"    \"اليوم\", \"النهارده\", \"النهاردة\", \"دلوقتي\", \"الآن\", \"حاليا\","` | — |
-| [SRC-3AA6165B18-L000046](../../agents/research_guardrails.py#L46) | 46 | `"    \"today\", \"right now\", \"currently\", \"current hours\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002150 إلى SRC-1AE03B9EC3-L002949
+- النطاق: SRC-1AE03B9EC3-L002149 إلى SRC-1AE03B9EC3-L002948
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002149](../../agents/web_agent.py#L2149) | 2149 | `"            results.append({"` | — |
 | [SRC-1AE03B9EC3-L002150](../../agents/web_agent.py#L2150) | 2150 | `"                \"title\": _clean_text(fields.get(\"title\", \"\"), 300),"` | — |
 | [SRC-1AE03B9EC3-L002151](../../agents/web_agent.py#L2151) | 2151 | `"                \"url\": url,"` | — |
 | [SRC-1AE03B9EC3-L002152](../../agents/web_agent.py#L2152) | 2152 | `"                \"snippet\": _clean_text(fields.get(\"description\", \"\"), 1200),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002946](../../agents/web_agent.py#L2946) | 2946 | `"                queries.extend(expansion_queries)"` | — |
 | [SRC-1AE03B9EC3-L002947](../../agents/web_agent.py#L2947) | 2947 | `"        # Report queries actually selected, not planned queries skipped to reserve repair capacity."` | — |
 | [SRC-1AE03B9EC3-L002948](../../agents/web_agent.py#L2948) | 2948 | `"        plan[\"queries\"] = list(dict.fromkeys(queries))"` | — |
-| [SRC-1AE03B9EC3-L002949](../../agents/web_agent.py#L2949) | 2949 | `""` | — |

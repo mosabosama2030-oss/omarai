@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003750 إلى SRC-1AE03B9EC3-L004549
+- النطاق: SRC-1AE03B9EC3-L003749 إلى SRC-1AE03B9EC3-L004548
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003749](../../agents/web_agent.py#L3749) | 3749 | `"                    request_started=True,"` | — |
 | [SRC-1AE03B9EC3-L003750](../../agents/web_agent.py#L3750) | 3750 | `"                    remote_response_received=True,"` | — |
 | [SRC-1AE03B9EC3-L003751](../../agents/web_agent.py#L3751) | 3751 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L003752](../../agents/web_agent.py#L3752) | 3752 | `"                fallback_note = ("` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L004546](../../agents/web_agent.py#L4546) | 4546 | `"    @staticmethod"` | — |
 | [SRC-1AE03B9EC3-L004547](../../agents/web_agent.py#L4547) | 4547 | `"    def _citation_validation_metadata("` | — |
 | [SRC-1AE03B9EC3-L004548](../../agents/web_agent.py#L4548) | 4548 | `"        answer: str,"` | — |
-| [SRC-1AE03B9EC3-L004549](../../agents/web_agent.py#L4549) | 4549 | `"        source_count: int,"` | — |

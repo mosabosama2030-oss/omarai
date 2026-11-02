@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0799EEEB02-L000061 إلى SRC-1AE03B9EC3-L000549
+- النطاق: SRC-0799EEEB02-L000060 إلى SRC-1AE03B9EC3-L000548
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0799EEEB02-L000060](../../agents/tool_execution_status.py#L60) | 60 | `"    search_report = report if isinstance(report, dict) else {}"` | — |
 | [SRC-0799EEEB02-L000061](../../agents/tool_execution_status.py#L61) | 61 | `"    requirements = spec.get(\"tool_requirements\")"` | — |
 | [SRC-0799EEEB02-L000062](../../agents/tool_execution_status.py#L62) | 62 | `"    required = {"` | — |
 | [SRC-0799EEEB02-L000063](../../agents/tool_execution_status.py#L63) | 63 | `"        item for item in requirements"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1AE03B9EC3-L000546](../../agents/web_agent.py#L546) | 546 | `"        source for source in sources"` | — |
 | [SRC-1AE03B9EC3-L000547](../../agents/web_agent.py#L547) | 547 | `"        if isinstance(source, dict)"` | — |
 | [SRC-1AE03B9EC3-L000548](../../agents/web_agent.py#L548) | 548 | `"        and source.get(\"lead_qualification\") == \"public_demand_signal\""` | — |
-| [SRC-1AE03B9EC3-L000549](../../agents/web_agent.py#L549) | 549 | `"        and isinstance(source.get(\"url\"), str)"` | — |

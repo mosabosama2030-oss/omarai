@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000501 إلى SRC-792A9A235D-L000204
+- النطاق: SRC-EEF2E6447C-L000500 إلى SRC-792A9A235D-L000203
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000500](../../api/omarai.py#L500) | 500 | `"            ):"` | — |
 | [SRC-EEF2E6447C-L000501](../../api/omarai.py#L501) | 501 | `"                # Bound attacker-controlled cardinality. Excess identities share a"` | — |
 | [SRC-EEF2E6447C-L000502](../../api/omarai.py#L502) | 502 | `"                # conservative overflow bucket instead of allocating one deque per IP."` | — |
 | [SRC-EEF2E6447C-L000503](../../api/omarai.py#L503) | 503 | `"                client_ip = cls.RATE_LIMIT_OVERFLOW_KEY"` | — |
@@ -860,4 +861,3 @@
 | [SRC-792A9A235D-L000201](../ANSWER_QUALITY_BENCHMARK_AR.md#L201) | 201 | `""` | — |
 | [SRC-792A9A235D-L000202](../ANSWER_QUALITY_BENCHMARK_AR.md#L202) | 202 | `"---"` | — |
 | [SRC-792A9A235D-L000203](../ANSWER_QUALITY_BENCHMARK_AR.md#L203) | 203 | `""` | — |
-| [SRC-792A9A235D-L000204](../ANSWER_QUALITY_BENCHMARK_AR.md#L204) | 204 | `"## أحدث نتيجة تحقق آلي — 29 أكتوبر 2026"` | — |

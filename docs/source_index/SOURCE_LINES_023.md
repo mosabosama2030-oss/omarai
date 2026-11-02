@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E599346ABE-L000005 إلى SRC-E599346ABE-L000804
+- النطاق: SRC-E599346ABE-L000004 إلى SRC-E599346ABE-L000803
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E599346ABE-L000004](../generate_index.py#L4) | 4 | `""` | — |
 | [SRC-E599346ABE-L000005](../generate_index.py#L5) | 5 | `"import argparse"` | — |
 | [SRC-E599346ABE-L000006](../generate_index.py#L6) | 6 | `"import ast"` | — |
 | [SRC-E599346ABE-L000007](../generate_index.py#L7) | 7 | `"import hashlib"` | — |
@@ -815,4 +816,3 @@
 | [SRC-E599346ABE-L000801](../generate_index.py#L801) | 801 | `"def _scan_javascript("` | — |
 | [SRC-E599346ABE-L000802](../generate_index.py#L802) | 802 | `"    source: str,"` | — |
 | [SRC-E599346ABE-L000803](../generate_index.py#L803) | 803 | `"    relative_file: str,"` | — |
-| [SRC-E599346ABE-L000804](../generate_index.py#L804) | 804 | `"    markers: list[IndexedMarker],"` | — |
