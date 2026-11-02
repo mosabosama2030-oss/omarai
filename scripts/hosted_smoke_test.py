@@ -160,7 +160,6 @@ def _run_no_cost_preflight(
         name: str,
         path: str,
         *,
-        method: str = "GET",
         payload: dict[str, Any] | None = None,
         expected_status: int,
         validate_health: bool = False,
@@ -203,6 +202,7 @@ def _run_no_cost_preflight(
         "health", "/api/health", expected_status=200, validate_health=True
     )
 
+    build_ok = True
     if expected_sha is not None:
         build = health.get("build") if isinstance(health, dict) else None
         reported_sha = build.get("sha") if isinstance(build, dict) else None
@@ -252,7 +252,7 @@ def _run_no_cost_preflight(
         name for name, item in diagnostics.items()
         if item.get("status") not in {"passed", "skipped_local_development_bypass"}
     ]
-    if failed or not (homepage_ok and health_ok and auth_ok):
+    if failed or not (homepage_ok and health_ok and auth_ok and build_ok):
         report.update({
             "result": "failed",
             "note": (
