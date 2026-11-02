@@ -27,7 +27,9 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self) -> None:
-        if self.path == "/api/health":
+        if self.path == "/":
+            self.respond(200, {"page": "dashboard"})
+        elif self.path == "/api/health":
             self.respond(200, {"ok": True, "app": "Omarai", "agent": {}})
         else:
             self.respond(404, {"error": "not found"})
@@ -278,9 +280,11 @@ def test_hosted_preflight_allows_remote_no_token_and_still_checks_auth_rejection
 
     def fake_request(url: str, *, token="", payload=None, timeout=90):
         path = urlsplit(url).path
-        calls.append((path, token))
+        calls.append((path, token, payload))
+        if path == "/":
+            return 200, None
         if path == "/api/health":
-            return 200, {"ok": True}
+            return 200, {"ok": True, "build": {"sha": "a" * 40}}
         if path == "/api/agent" and not token:
             assert payload == {"question": ""}
             return 401, None
@@ -296,7 +300,11 @@ def test_hosted_preflight_allows_remote_no_token_and_still_checks_auth_rejection
     assert result["result"] == "preflight_passed"
     assert result["auth_mode"] == "preflight_no_token"
     assert result["checks"]["authentication"] == "passed"
-    assert calls == [("/api/health", ""), ("/api/agent", "")]
+    assert result["checks"]["homepage"] == "passed"
+    assert result["endpoint_diagnostics"]["homepage"]["http_status"] == 200
+    assert result["endpoint_diagnostics"]["health"]["http_status"] == 200
+    assert result["endpoint_diagnostics"]["unauthenticated_agent"]["http_status"] == 401
+    assert calls == [("/", "", None), ("/api/health", "", None), ("/api/agent", "", {"question": ""})]
 
 
 
@@ -307,6 +315,8 @@ def test_preflight_fails_closed_if_unauthenticated_agent_probe_reaches_validatio
     def auth_bypass(url: str, *, token="", payload=None, timeout=90):
         path = urlsplit(url).path
         calls.append((path, token, payload))
+        if path == "/":
+            return 200, None
         if path == "/api/health":
             return 200, {"ok": True}
         if path == "/api/agent" and not token:
@@ -316,9 +326,107 @@ def test_preflight_fails_closed_if_unauthenticated_agent_probe_reaches_validatio
         raise AssertionError("no authenticated agent request is allowed in preflight")
 
     monkeypatch.setattr(hosted_smoke_test, "request_json", auth_bypass)
-    with pytest.raises(SmokeError, match="should return 401"):
+    with pytest.raises(SmokeError, match="per-endpoint HTTP diagnostics") as failure:
         run_smoke("https://omarai.example.test", "", preflight_only=True)
-    assert calls == [("/api/health", "", None), ("/api/agent", "", {"question": ""})]
+    assert calls == [("/", "", None), ("/api/health", "", None), ("/api/agent", "", {"question": ""})]
+    assert failure.value.report["endpoint_diagnostics"]["unauthenticated_agent"]["http_status"] == 400
+
+
+
+
+def test_no_cost_preflight_rejects_a_mismatched_expected_build_sha(monkeypatch):
+    def request_with_wrong_sha(url: str, *, token="", payload=None, timeout=90):
+        path = urlsplit(url).path
+        if path == "/":
+            return 200, None
+        if path == "/api/health":
+            return 200, {"ok": True, "build": {"sha": "b" * 40}}
+        if path == "/api/agent":
+            assert payload == {"question": ""}
+            return 401, None
+        raise AssertionError(path)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", request_with_wrong_sha)
+    with pytest.raises(SmokeError, match="per-endpoint HTTP diagnostics") as failure:
+        run_smoke(
+            "https://omarai.example.test", "",
+            expected_sha="a" * 40, preflight_only=True,
+        )
+    assert failure.value.report["checks"]["build_identity"]["status"] == "failed"
+
+
+def test_no_cost_preflight_collects_all_endpoint_failures_without_request_bodies(monkeypatch):
+    calls = []
+    body_digest = "b" * 64
+    metadata = {
+        "status": 403,
+        "content_type": "application/json",
+        "server": "cloudflare",
+        "request_id": "",
+        "correlation_id": "",
+        "cf_ray": "ray-example-403",
+        "via": "",
+        "body_bytes_sampled": 128,
+        "body_sha256": body_digest,
+    }
+
+    def blocked_request(url: str, *, token="", payload=None, timeout=90):
+        path = urlsplit(url).path
+        calls.append((path, token, payload))
+        if path in {"/", "/api/health"}:
+            return 403, {"_smoke_http": metadata}
+        if path == "/api/agent":
+            assert payload == {"question": ""}
+            return 403, {"_smoke_http": {**metadata, "cf_ray": "ray-example-agent"}}
+        raise AssertionError(f"unexpected preflight request: {path}")
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", blocked_request)
+    with pytest.raises(SmokeError, match="per-endpoint HTTP diagnostics") as failure:
+        run_smoke("https://omarai.example.test", "", preflight_only=True)
+
+    report = failure.value.report
+    assert calls == [
+        ("/", "", None),
+        ("/api/health", "", None),
+        ("/api/agent", "", {"question": ""}),
+    ]
+    assert set(report["http_responses"]) == {
+        "homepage", "health", "unauthenticated_agent"
+    }
+    assert report["endpoint_diagnostics"]["homepage"]["http_status"] == 403
+    assert report["endpoint_diagnostics"]["health"]["http_status"] == 403
+    assert report["endpoint_diagnostics"]["unauthenticated_agent"]["http_status"] == 403
+    assert report["http_responses"]["health"]["cf_ray"] == "ray-example-403"
+    assert "body_sha256" in report["http_responses"]["health"]
+    assert "blocked" not in str(report)
+    assert "b" * 128 not in str(report)
+    assert TOKEN not in str(report)
+
+
+def test_no_cost_preflight_keeps_probing_when_only_health_route_is_blocked(monkeypatch):
+    calls = []
+
+    def request_with_health_block(url: str, *, token="", payload=None, timeout=90):
+        path = urlsplit(url).path
+        calls.append(path)
+        if path == "/":
+            return 200, None
+        if path == "/api/health":
+            return 403, {"_smoke_http": {"status": 403, "cf_ray": "health-ray"}}
+        if path == "/api/agent":
+            return 401, None
+        raise AssertionError(path)
+
+    monkeypatch.setattr(hosted_smoke_test, "request_json", request_with_health_block)
+    with pytest.raises(SmokeError) as failure:
+        run_smoke("https://omarai.example.test", "", preflight_only=True)
+
+    assert calls == ["/", "/api/health", "/api/agent"]
+    diagnostics = failure.value.report["endpoint_diagnostics"]
+    assert diagnostics["homepage"]["status"] == "passed"
+    assert diagnostics["health"]["status"] == "failed"
+    assert diagnostics["unauthenticated_agent"]["status"] == "passed"
+
 
 
 
