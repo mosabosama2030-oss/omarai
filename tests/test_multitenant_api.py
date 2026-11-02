@@ -325,3 +325,69 @@ def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypa
     )
     assert status == 403
     assert "viewer" in result["error"]
+
+
+def test_agent_api_allowlists_and_forwards_the_hosted_smoke_budget_profile(
+    tenant_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Smoke Profile Owner", "smoke-profile-owner")
+    user_id = store.create_user("smoke-profile@example.test", "Smoke Profile Owner")
+    store.add_membership(tenant_id, user_id, "sales_agent")
+    token = "smoke-profile-token-" + "P" * 32
+    store.create_api_token(token, tenant_id, user_id)
+    observed = {}
+
+    def fake_answer(self, question, history=None, mode="auto", *, budget_profile="default"):
+        observed.update({
+            "question": question,
+            "history": history,
+            "mode": mode,
+            "budget_profile": budget_profile,
+        })
+        return {"answer": "test answer"}
+
+    monkeypatch.setattr(WebAgent, "answer", fake_answer)
+    status, result = request_json(
+        base,
+        "/api/agent",
+        method="POST",
+        token=token,
+        payload={
+            "question": "اختبار ميزانية القبول",
+            "mode": "auto",
+            "request_profile": "hosted_smoke",
+        },
+    )
+    assert status == 200
+    assert result["answer"] == "test answer"
+    assert observed == {
+        "question": "اختبار ميزانية القبول",
+        "history": [],
+        "mode": "auto",
+        "budget_profile": "hosted_smoke",
+    }
+
+    status, error = request_json(
+        base,
+        "/api/agent",
+        method="POST",
+        token=token,
+        payload={"question": "اختبار ملف غير مسموح", "request_profile": "unbounded"},
+    )
+    assert status == 400
+    assert "request_profile" in error["error"]
+    assert observed["budget_profile"] == "hosted_smoke"
+
+    status, result = request_json(
+        base,
+        "/api/agent",
+        method="POST",
+        token=token,
+        payload={"question": "اختبار التوافق مع الملف الافتراضي"},
+    )
+    assert status == 200
+    assert result["answer"] == "test answer"
+    assert observed["budget_profile"] == "default"

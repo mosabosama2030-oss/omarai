@@ -28,6 +28,17 @@ RESOURCE_LIMITS = {
     "tool_calls": (3, 3),
 }
 
+# Hard ceilings for the public hosted-acceptance profile. Operator environment
+# limits may lower these values, but can never be raised by a client request.
+HOSTED_SMOKE_BUDGET_LIMITS = {
+    "search_queries": 3,
+    "search_calls": 12,
+    "model_calls": 6,
+    "page_fetches": 4,
+    "tool_calls": 0,
+}
+HOSTED_SMOKE_BUDGET_TIMEOUT_SECONDS = 75
+
 
 def _bounded_env_int(name: str, default: int, minimum: int, maximum: int) -> int:
     raw = os.getenv(name, "").strip()
@@ -46,8 +57,10 @@ class RequestBudget:
         timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
         limits: Mapping[str, int] | None = None,
         clock: Callable[[], float] = time.monotonic,
+        profile: str = "default",
     ) -> None:
         self._clock = clock
+        self.profile = profile
         bounded_timeout = max(10, min(int(timeout_seconds), MAX_TIMEOUT_SECONDS))
         self.started_at = clock()
         self.deadline = self.started_at + bounded_timeout
@@ -61,7 +74,9 @@ class RequestBudget:
         self._lock = threading.Lock()
 
     @classmethod
-    def from_environment(cls) -> RequestBudget:
+    def from_environment(cls, profile: str = "default") -> RequestBudget:
+        if profile not in {"default", "hosted_smoke"}:
+            raise ValueError(f"unknown request-budget profile: {profile}")
         timeout = _bounded_env_int(
             "OMARAI_REQUEST_BUDGET_SECONDS",
             DEFAULT_TIMEOUT_SECONDS,
@@ -77,7 +92,13 @@ class RequestBudget:
             )
             for key, defaults in RESOURCE_LIMITS.items()
         }
-        return cls(timeout_seconds=timeout, limits=limits)
+        if profile == "hosted_smoke":
+            timeout = min(timeout, HOSTED_SMOKE_BUDGET_TIMEOUT_SECONDS)
+            limits = {
+                key: min(limits[key], HOSTED_SMOKE_BUDGET_LIMITS[key])
+                for key in RESOURCE_LIMITS
+            }
+        return cls(timeout_seconds=timeout, limits=limits, profile=profile)
 
     def remaining_seconds(self) -> float:
         return max(0.0, self.deadline - self._clock())
@@ -126,6 +147,7 @@ class RequestBudget:
         remaining = self.remaining_seconds()
         return {
             "policy": "cooperative_per_request_budget",
+            "profile": self.profile,
             "timeout_seconds": round(self.deadline - self.started_at, 3),
             "elapsed_seconds": round(max(0.0, self._clock() - self.started_at), 3),
             "remaining_seconds": round(remaining, 3),

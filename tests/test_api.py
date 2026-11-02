@@ -248,7 +248,7 @@ def test_ask_is_honest_when_database_is_empty(local_api):
 def test_web_agent_endpoint_uses_agent_result(local_api, monkeypatch):
     from api.omarai import WebAgent
 
-    def fake_answer(self, question, history=None):
+    def fake_answer(self, question, history=None, mode="auto", *, budget_profile="default"):
         return {
             "answer": "إجابة اختبار [المصدر 1]",
             "question": question,
@@ -601,7 +601,7 @@ def test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy(local_api, m
     release = threading.Event()
     first_result = {}
 
-    def slow_answer(self, question, history=None, mode="auto"):
+    def slow_answer(self, question, history=None, mode="auto", *, budget_profile="default"):
         entered.set()
         assert release.wait(timeout=2), "test did not release the held research slot"
         return {
@@ -939,7 +939,7 @@ def test_agent_concurrency_slot_released_after_operation_error(local_api, monkey
     monkeypatch.setattr(Handler, "_agent_semaphore", threading.BoundedSemaphore(1))
     state = {"fail": True}
 
-    def answer_with_one_transient_failure(self, question, history=None, mode="auto"):
+    def answer_with_one_transient_failure(self, question, history=None, mode="auto", *, budget_profile="default"):
         if state["fail"]:
             raise RuntimeError("synthetic operation failure")
         return {
