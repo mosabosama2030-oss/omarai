@@ -47,5 +47,7 @@ def test_sales_workspace_uses_http_only_session_and_never_persists_access_token(
     assert "localStorage" not in html
     assert "sessionStorage" not in html
     assert 'api("/api/leads?limit=500")' in html
+    assert 'api("/api/health")' in html
+    assert 'state.activeView==="system"' in html
     assert 'if(canWrite())panel.append(createSignalForm())' in html
     assert 'if(canWrite())' in html
