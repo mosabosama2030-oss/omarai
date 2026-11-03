@@ -194,7 +194,7 @@ const menu=[
  {id:"audit",label:"الأدلة والتدقيق",icon:"⌗",enabled:false},
  {id:"tasks",label:"المهام والتنبيهات",icon:"◴",enabled:false},
  {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false},
- {id:"system",label:"حالات النظام",icon:"◌",enabled:false}
+ {id:"system",label:"حالات النظام",icon:"◌",enabled:true}
 ];
 function make(tag,cls,text){
  const node=document.createElement(tag);
@@ -401,6 +401,52 @@ function renderPipeline(){
  groups.forEach(([name,ids])=>{const col=make("section","pipeline-col");const rows=state.leads.filter(l=>ids.includes(l.status));col.append(make("h3","",name+" · "+rows.length));if(!rows.length)col.append(make("p","subtle","لا توجد سجلات في هذه المجموعة."));rows.forEach(l=>{const item=make("button","pipeline-item",String(l.text||"").slice(0,115));item.type="button";item.addEventListener("click",()=>openDetails(l));col.append(item)});board.append(col)});
  panel.append(board);root.append(panel);
 }
+async function renderSystem(){
+ setPage("حالات النظام","لقطة إعدادات يقرأها الخادم محليًا. لا تنفذ هذه الشاشة اتصالًا تجريبيًا بالموفرات ولا تستهلك حصص البحث.","SYSTEM CONFIGURATION SNAPSHOT");
+ const root=$("viewRoot");root.replaceChildren(emptyState("جارٍ قراءة حالة الخادم","GET /api/health — لا يجري اختبار اتصال خارجي."));
+ try{
+  const data=await api("/api/health");
+  const agent=data.agent||{};const build=data.build||{};
+  root.replaceChildren();
+  const stats=make("div","stats");
+  stats.append(
+   buildStat("استجابة الخادم",data.ok===true?"يستجيب":"غير مؤكدة","استجابة نقطة /api/health","glow-teal"),
+   buildStat("مكتبات البحث",agent.web_search_ready===true?"موجودة":"غير جاهزة","فحص اعتماديات محلية فقط","glow-blue"),
+   buildStat("إعداد النموذج",agent.language_model_configured===true?"مهيأ":"غير مهيأ","لا يثبت إمكانية الاتصال أو نجاح الاستجابة","glow-violet"),
+   buildStat("هوية البناء",build.sha_status==="available"?String(build.sha).slice(0,8):"غير معروفة","حالة SHA كما أعادها الخادم","glow-amber")
+  );
+  root.append(stats);
+  const grid=make("div","content-grid");
+  const models=make("section","glass panel");const mh=make("div","panel-head");const mt=make("div");
+  mt.append(make("h2","","موفر النموذج"));mt.append(make("p","","بيانات إعداد يعرضها الخادم؛ لا تعرض مفاتيح أو أسرار."));
+  mh.append(mt);models.append(mh);
+  models.append(make("p","", "الموفر الأساسي المعلن: "+String(agent.language_model_provider||"غير معلوم")));
+  const providers=Array.isArray(agent.model_providers)?agent.model_providers:[];
+  if(providers.length){
+   const list=make("div","signal-list");
+   providers.forEach(p=>{
+    const row=make("article","signal-card");
+    row.append(make("strong","",String(p.name||"موفر غير مسمى")));
+    row.append(make("span","subtle","النموذج المهيأ: "+String(p.model||"غير محدد")));
+    row.append(tag(p.configured===true?"مهيأ في البيئة":"غير مهيأ",p.configured===true?"teal":"amber"));
+    list.append(row);
+   });
+   models.append(list);
+  }else models.append(emptyState("لا توجد موفرات ظاهرة كإعداد","لم يعرض الخادم موفرًا مهيأ ضمن هذه اللقطة."));
+  const search=make("section","glass panel");const sh=make("div","panel-head");const st=make("div");
+  st.append(make("h2","","إعدادات البحث الاختيارية"),make("p","","القيم أدناه أعلام إعداد فقط، وليست اختبارات تشغيل."));
+  sh.append(st);search.append(sh);
+  const flags=[
+   ["Brave Search API",agent.brave_search_api_configured],
+   ["Tavily Search API",agent.tavily_search_api_configured],
+   ["DeepSeek Search API",agent.deepseek_search_api_configured],
+   ["OpenRouter web search",agent.openrouter_web_search_enabled]
+  ];
+  flags.forEach(([name,value])=>{const row=make("div","signal-actions");row.append(make("span","",name),tag(value===true?"مهيأ/مفعل":"غير مهيأ/معطل",value===true?"teal":"amber"));search.append(row)});
+  search.append(make("p","disclaimer","لا تنفذ هذه الشاشة تشخيصًا مباشرًا ولا تختبر صلاحية مفاتيح الموفرات. التشخيص الحي قد يستهلك حصة أو تكلفة، ويظل منفصلًا ويتطلب موافقة المالك."));
+  grid.append(models,search);root.append(grid);
+ }catch(e){root.replaceChildren(emptyState("تعذرت قراءة الإعدادات",escapeMessage(e.message)))}
+}
 function renderPlaceholder(id){
  const item=menu.find(x=>x.id===id);const title=item?item.label:"وحدة";
  setPage(title,"واجهة الوحدة جزء من تصور Omarai، لكن المستودع عند الرأس الحالي لا يوفّر بعد عقد API موثقًا لهذه الوظيفة. لا نعرض بيانات أو نتائج شكلية على أنها حقيقية.","MODULE NOT ENABLED");
@@ -419,7 +465,7 @@ function renderCurrent(){
  if(state.activeView==="overview")renderOverview();
  else if(state.activeView==="signals")renderSignals();
  else if(state.activeView==="pipeline")renderPipeline();
- 
+ else if(state.activeView==="system")renderSystem();
  else renderPlaceholder(state.activeView);
 }
 function navigate(view){
