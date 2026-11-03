@@ -96,7 +96,7 @@ input::placeholder,textarea::placeholder{color:#7085a2}
 .pipeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .pipeline-col{padding:13px;border:1px solid var(--line);border-radius:15px;background:rgba(9,18,32,.38);min-width:0}
 .pipeline-col h3{font-size:11px;margin:0 0 10px;display:flex;justify-content:space-between;gap:8px}
-.pipeline-item{padding:10px;margin-top:8px;border-radius:11px;background:rgba(21,35,55,.75);border:1px solid rgba(145,174,211,.12);font-size:10px;line-height:1.7;cursor:pointer;overflow-wrap:anywhere}
+.pipeline-item{display:block;width:100%;text-align:right;padding:10px;margin-top:8px;border-radius:11px;background:rgba(21,35,55,.75);border:1px solid rgba(145,174,211,.12);color:#e0eafa;font-size:10px;line-height:1.7;cursor:pointer;overflow-wrap:anywhere}
 .pipeline-item:hover{border-color:rgba(105,230,209,.35)}
 .detail{position:fixed;z-index:20;inset:0;background:rgba(2,8,16,.7);display:none;justify-content:flex-start}
 .detail.open{display:flex}
@@ -396,7 +396,7 @@ function renderPipeline(){
  const root=$("viewRoot");root.replaceChildren();
  const panel=make("section","glass panel");const head=make("div","panel-head");const title=make("div");title.append(make("h2","","حالة كل إشارة"),make("p","","اختر بطاقة لفتح المصدر وتقييم القواعد وتغيير الحالة المسموح بها."));head.append(title,action("صندوق الإشارات ←","ghost",()=>navigate("signals")));panel.append(head);
  const board=make("div","pipeline");const groups=[["نشطة جديدة",["new","needs_review"]],["مؤهلة / متابعة",["qualified","contacted"]],["مغلقة",["converted","rejected"]]];
- groups.forEach(([name,ids])=>{const col=make("section","pipeline-col");const rows=state.leads.filter(l=>ids.includes(l.status));col.append(make("h3","",name+" · "+rows.length));if(!rows.length)col.append(make("p","subtle","لا توجد سجلات في هذه المجموعة."));rows.forEach(l=>{const item=make("div","pipeline-item",String(l.text||"").slice(0,115));item.setAttribute("role","button");item.tabIndex=0;item.addEventListener("click",()=>openDetails(l));item.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openDetails(l)}});col.append(item)});board.append(col)});
+ groups.forEach(([name,ids])=>{const col=make("section","pipeline-col");const rows=state.leads.filter(l=>ids.includes(l.status));col.append(make("h3","",name+" · "+rows.length));if(!rows.length)col.append(make("p","subtle","لا توجد سجلات في هذه المجموعة."));rows.forEach(l=>{const item=make("button","pipeline-item",String(l.text||"").slice(0,115));item.type="button";item.addEventListener("click",()=>openDetails(l));col.append(item)});board.append(col)});
  panel.append(board);root.append(panel);
 }
 function renderPlaceholder(id){
@@ -417,7 +417,7 @@ function renderCurrent(){
  if(state.activeView==="overview")renderOverview();
  else if(state.activeView==="signals")renderSignals();
  else if(state.activeView==="pipeline")renderPipeline();
- else if(state.activeView==="opportunities"){state.activeView="signals";renderNav();renderSignals()}
+ 
  else renderPlaceholder(state.activeView);
 }
 function navigate(view){
