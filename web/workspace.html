@@ -181,6 +181,7 @@ const statuses=[
 const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إشارة متوسطة",early_research:"استكشاف مبكر",unclear:"غير واضحة",not_buyer_signal:"ليست إشارة شراء مباشرة"};
 const menu=[
  {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
+ {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
  {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:false},
  {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:false},
  {id:"run",label:"مراقبة التشغيل",icon:"◷",enabled:false},
@@ -192,7 +193,8 @@ const menu=[
  {id:"sources",label:"المصادر والموصلات",icon:"⌘",enabled:false},
  {id:"audit",label:"الأدلة والتدقيق",icon:"⌗",enabled:false},
  {id:"tasks",label:"المهام والتنبيهات",icon:"◴",enabled:false},
- {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false}
+ {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false},
+ {id:"system",label:"حالات النظام",icon:"◌",enabled:false}
 ];
 function make(tag,cls,text){
  const node=document.createElement(tag);
