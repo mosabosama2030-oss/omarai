@@ -260,7 +260,7 @@ function renderOverview(){
  const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
  const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
  const stats=make("div","stats");
- stats.append(buildStat("إجمالي الإشارات",state.leads.length,"سجلات محفوظة في هذه المساحة","glow-teal"),
+ stats.append(buildStat("الإشارات المحمّلة",state.leads.length,"حتى 500 سجل أعادها الخادم","glow-teal"),
  buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
  buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","glow-amber"),
  buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","glow-violet"));
@@ -290,7 +290,7 @@ function signalCard(lead){
  const text=String(lead.text||"");card.append(make("p","signal-text",text.length>250?text.slice(0,247)+"…":text));
  const meta=make("div","signal-meta");
  meta.append(tag("الدرجة "+String(assessment.score??"—")+"/100"),tag(String(lead.platform||"مصدر غير محدد")));
- const source=safeHttp(lead.source_url);if(source)meta.append(tag("مصدر موثق"));
+ const source=safeHttp(lead.source_url);if(source)meta.append(tag("رابط مرفق — لم تُفحص الصفحة"));
  card.append(meta);
  const actions=make("div","signal-actions");actions.append(make("span","subtle","المعرّف: "+String(lead.id||"").slice(0,8)));
  actions.append(action("التفاصيل","",()=>openDetails(lead)));
@@ -303,7 +303,7 @@ function openDetails(lead){
  body.append(make("h3","","نص الإشارة"),make("p","",lead.text||"لا يوجد نص محفوظ."));
  body.append(make("h3","","المصدر والدليل"));
  const url=safeHttp(lead.source_url);
- if(url){const link=make("a","",url);link.href=url;link.target="_blank";link.rel="noopener noreferrer";body.append(link)}
+ if(url){const link=make("a","",url);link.href=url;link.target="_blank";link.rel="noopener noreferrer";body.append(link);body.append(make("p","disclaimer","وجود الرابط لا يثبت أن الصفحة متاحة أو أن محتواها يطابق نص الإشارة؛ لم تُجرَ قراءة آلية للمصدر في هذه الشاشة."))}
  else body.append(make("p","","لا يوجد رابط HTTP(S) صالح محفوظ لهذا السجل."));
  body.append(make("h3","","التصنيف والتقييم"));
  body.append(make("p","", (labels[a.label]||a.label||"غير مصنف")+" · "+String(a.score??"—")+"/100"));
