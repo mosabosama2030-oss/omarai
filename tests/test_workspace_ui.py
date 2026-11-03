@@ -52,7 +52,8 @@ def test_workspace_routes_preserve_existing_agent_and_lead_pages(tmp_path):
 def test_workspace_contains_sixteen_rtl_modules_and_marks_unimplemented_ones():
     html = WORKSPACE.read_text(encoding="utf-8")
     assert '<html lang="ar" dir="rtl">' in html
-    assert html.count('data-view="') == 16
+    nav = html.split('<nav class="nav" id="nav">', 1)[1].split("</nav>", 1)[0]
+    assert nav.count('data-view="') == 16
     for marker in (
         "ذكاء المنتج والعرض",
         "حملات الاكتشاف",
