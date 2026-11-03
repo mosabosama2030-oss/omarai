@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT / "web" / "workspace.html"
 
 
-def test_workspace_routes_preserve_existing_agent_and_lead_pages(tmp_path, monkeypatch):
+def test_workspace_routes_preserve_existing_agent_and_lead_pages(tmp_path):
     previous_store = Handler.store
     Handler.store = LeadStore(tmp_path / "workspace-route.sqlite3")
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
