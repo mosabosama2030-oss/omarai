@@ -35,3 +35,17 @@ def test_browser_pages_never_store_access_tokens_in_web_storage():
         assert "/api/session" in html
         assert "credentials:\"same-origin\"" in html
 
+
+
+def test_sales_workspace_uses_http_only_session_and_never_persists_access_token():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+
+    assert 'api("/api/session")' in html
+    assert 'credentials:"same-origin"' in html
+    assert 'JSON.stringify({access_token:token})' not in html
+    assert "localStorage" not in html
+    assert "sessionStorage" not in html
+    assert 'api("/api/leads?limit=500")' in html
+    assert 'if(canWrite())panel.append(createSignalForm())' in html
+    assert 'if(canWrite())' in html
