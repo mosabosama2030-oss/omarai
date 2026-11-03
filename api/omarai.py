@@ -24,6 +24,7 @@ from agents.web_agent import WebAgent
 ROOT = Path(__file__).resolve().parents[1] / "web"
 AGENT_DASHBOARD = ROOT / "agent.html"
 LEADS_DASHBOARD = ROOT / "dashboard.html"
+WORKSPACE_DASHBOARD = ROOT / "workspace.html"
 MAX_REQUEST_BODY_BYTES = 200_000
 BROWSER_SESSION_COOKIE_MAX_AGE = 8 * 60 * 60
 BROWSER_SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_-]{32,128}$")
@@ -614,7 +615,11 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
-        if parsed.path in {"/", "/agent"}:
+        if parsed.path in {"/", "/workspace"}:
+            if not WORKSPACE_DASHBOARD.exists():
+                return self.respond(404, {"error": "workspace dashboard missing"})
+            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
+        if parsed.path == "/agent":
             if not AGENT_DASHBOARD.exists():
                 return self.respond(404, {"error": "agent dashboard missing"})
             return self.respond(200, AGENT_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
@@ -990,7 +995,7 @@ def serve(host="127.0.0.1", port=8765):
             )
     server = BoundedThreadingHTTPServer((host, port), Handler)
     print(f"Omarai running at http://{host}:{port} — Ctrl+C to stop")
-    print("Web research agent: /   |   Lead workspace: /leads")
+    print("Workspace: /   |   Web research agent: /agent   |   Lead workspace: /leads")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
