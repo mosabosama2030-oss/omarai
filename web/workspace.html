@@ -54,7 +54,7 @@ a:hover{text-decoration:underline}
 .glass{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(22,35,56,.88),rgba(13,23,40,.87));box-shadow:0 20px 55px rgba(0,0,0,.13);backdrop-filter:blur(18px)}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
 .stat{padding:17px 18px;position:relative;overflow:hidden}
-.stat:after{content:"";position:absolute;width:85px;height:85px;border-radius:50%;background:var(--glow,rgba(105,230,209,.1));left:-23px;top:-29px;filter:blur(8px)}
+.stat:after{content:"";position:absolute;width:85px;height:85px;border-radius:50%;background:var(--glow,rgba(105,230,209,.1));left:-23px;top:-29px;filter:blur(8px)}.stat.glow-teal:after{background:rgba(105,230,209,.13)}.stat.glow-blue:after{background:rgba(121,207,255,.13)}.stat.glow-amber:after{background:rgba(243,199,124,.13)}.stat.glow-violet:after{background:rgba(156,145,255,.14)}
 .stat-label{color:var(--muted);font-size:10px;position:relative;z-index:1}
 .stat-value{font-size:28px;font-weight:900;line-height:1.3;margin:7px 0 3px;position:relative;z-index:1;font-variant-numeric:tabular-nums}
 .stat-note{color:#7f96b3;font-size:9px;position:relative;z-index:1}
@@ -80,7 +80,7 @@ a:hover{text-decoration:underline}
 .mini-bars{display:grid;gap:13px}
 .bar-row{display:grid;grid-template-columns:82px minmax(0,1fr) 26px;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
 .bar-track{height:8px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}
-.bar-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}
+.bar-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}.bar-fill.w-0{width:0%}.bar-fill.w-5{width:5%}.bar-fill.w-10{width:10%}.bar-fill.w-15{width:15%}.bar-fill.w-20{width:20%}.bar-fill.w-25{width:25%}.bar-fill.w-30{width:30%}.bar-fill.w-35{width:35%}.bar-fill.w-40{width:40%}.bar-fill.w-45{width:45%}.bar-fill.w-50{width:50%}.bar-fill.w-55{width:55%}.bar-fill.w-60{width:60%}.bar-fill.w-65{width:65%}.bar-fill.w-70{width:70%}.bar-fill.w-75{width:75%}.bar-fill.w-80{width:80%}.bar-fill.w-85{width:85%}.bar-fill.w-90{width:90%}.bar-fill.w-95{width:95%}.bar-fill.w-100{width:100%}
 .notice{padding:13px;border-radius:14px;border:1px solid rgba(243,199,124,.2);background:rgba(116,79,29,.1);color:#efd7a9;font-size:10px;line-height:1.9}
 .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 15px}
 .field{display:grid;gap:6px;margin:11px 0}
@@ -250,7 +250,7 @@ function setConnection(ok,label,note){
 function canWrite(){return state.role==="owner"||state.role==="editor"}
 function countByStatus(id){return state.leads.filter(x=>x.status===id).length}
 function buildStat(label,value,note,glow){
- const card=make("article","glass stat");card.style.setProperty("--glow",glow||"rgba(105,230,209,.1)");
+ const card=make("article","glass stat "+(glow||"glow-teal"));
  card.append(make("div","stat-label",label),make("div","stat-value",value),make("div","stat-note",note));return card;
 }
 function renderOverview(){
@@ -260,10 +260,10 @@ function renderOverview(){
  const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
  const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
  const stats=make("div","stats");
- stats.append(buildStat("إجمالي الإشارات",state.leads.length,"سجلات محفوظة في هذه المساحة","rgba(105,230,209,.13)"),
- buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","rgba(121,207,255,.13)"),
- buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","rgba(243,199,124,.13)"),
- buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","rgba(156,145,255,.14)"));
+ stats.append(buildStat("إجمالي الإشارات",state.leads.length,"سجلات محفوظة في هذه المساحة","glow-teal"),
+ buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
+ buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","glow-amber"),
+ buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","glow-violet"));
  root.append(stats);
  const grid=make("div","content-grid");
  const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");head.append(make("h2","","أحدث الإشارات"),make("p","","آخر السجلات التي أعادها الخادم"));h.append(head,action("عرض الصندوق ←","ghost",()=>navigate("signals")));recent.append(h);
@@ -274,7 +274,7 @@ function renderOverview(){
  recent.append(list);
  const distribution=make("section","glass panel");const dh=make("div","panel-head");const dtitle=make("div");dtitle.append(make("h2","","توزيع حالات المتابعة"),make("p","","حالات السجل الحالي فقط"));dh.append(dtitle);distribution.append(dh);
  const bars=make("div","mini-bars");const groups=[["جديد","new"],["مراجعة","needs_review"],["مؤهل","qualified"],["تواصل","contacted"],["تحول","converted"],["مرفوض","rejected"]];
- groups.forEach(([label,id])=>{const n=countByStatus(id);const row=make("div","bar-row");row.append(make("span","",label));const track=make("div","bar-track");const fill=make("div","bar-fill");fill.style.width=(state.leads.length?Math.round(n/state.leads.length*100):0)+"%";track.append(fill);row.append(track,make("span","",n));bars.append(row)});
+ groups.forEach(([label,id])=>{const n=countByStatus(id);const row=make("div","bar-row");row.append(make("span","",label));const track=make("div","bar-track");const percent=state.leads.length?Math.max(0,Math.min(100,Math.round((n/state.leads.length*100)/5)*5)):0;const fill=make("div","bar-fill w-"+percent);track.append(fill);row.append(track,make("span","",n));bars.append(row)});
  distribution.append(bars,make("p","disclaimer","ملاحظة: هذا توزيع وصفي لسجلاتك، وليس مؤشرًا على حجم السوق أو اكتمال البحث."));
  grid.append(recent,distribution);root.append(grid);
 }
