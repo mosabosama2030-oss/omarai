@@ -1252,3 +1252,16 @@ def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):
     assert response.startswith(b"HTTP/1.0 413")
     assert b"request too large" in response
 
+
+
+def test_workspace_route_serves_the_arabic_rtl_workspace_shell(local_api):
+    with urlopen(local_api + "/workspace", timeout=3) as response:
+        html = response.read().decode("utf-8")
+        assert response.status == 200
+        assert response.headers.get_content_type() == "text/html"
+
+    assert '<html lang="ar" dir="rtl">' in html
+    assert 'api("/api/session")' in html
+    assert 'api("/api/leads?limit=500")' in html
+    assert "localStorage" not in html
+    assert "sessionStorage" not in html
