@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **131**
+- ملفات المستودع في الجرد: **132**
 - ملفات Python المحللة: **82**
-- تعريفات Python المفهرسة: **1945**
+- تعريفات Python المفهرسة: **1954**
 - تعريفات Python موثقة بوجود Docstring: **295**
-- تعريفات Python بلا Docstring: **1243**
-- تعريفات لا ينطبق عليها Docstring: **407**
-- الرموز الساكنة الإضافية: **2081**
-- الأسطر النصية المفهرسة حرفيًا: **47307**
+- تعريفات Python بلا Docstring: **1251**
+- تعريفات لا ينطبق عليها Docstring: **408**
+- الرموز الساكنة الإضافية: **2365**
+- الأسطر النصية المفهرسة حرفيًا: **48056**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -57,7 +57,7 @@
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 384794 | 7249 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 46678 | 1003 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 47010 | 1008 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
@@ -72,7 +72,7 @@
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 10804 | 107 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
-| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 8001 | 46 | جرد الملف + عناوين Markdown |
+| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 14005 | 73 | جرد الملف + عناوين Markdown |
 | FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 12943 | 136 | جرد الملف + عناوين Markdown |
 | FILE-BA40E88B07 | وثائق وفهرسة | [docs/OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md](OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md#L1) | Markdown | 16148 | 163 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
@@ -83,7 +83,7 @@
 | FILE-9A0DFA994E | وثائق وفهرسة | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L1) | Markdown | 21086 | 146 | جرد الملف + عناوين Markdown |
 | FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 15555 | 118 | جرد الملف + عناوين Markdown |
 | FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 112115 | 504 | جرد الملف + عناوين Markdown |
-| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 73087 | 252 | جرد الملف + عناوين Markdown |
+| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 78029 | 276 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
 | FILE-41EDB66D3C | وثائق وفهرسة | [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L1) | Markdown | 47354 | 520 | جرد الملف + عناوين Markdown |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 77520 | 854 | جرد الملف + عناوين Markdown |
@@ -97,7 +97,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 24149 | 190 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 24660 | 190 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 24754 | 531 | جرد الملف + AST Python |
@@ -116,12 +116,12 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 45534 | 1254 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 46950 | 1288 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 1579 | 37 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 5101 | 119 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12424 | 299 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -157,8 +157,9 @@
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 171948 | 4420 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71360 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17729 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71437 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 49755 | 577 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -723,73 +724,74 @@
 | [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
 | [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
 | [api/omarai.py](../api/omarai.py#L26) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
-| [api/omarai.py](../api/omarai.py#L27) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
-| [api/omarai.py](../api/omarai.py#L28) | متغير/ثابت Python | BROWSER_SESSION_COOKIE_MAX_AGE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
-| [api/omarai.py](../api/omarai.py#L29) | متغير/ثابت Python | BROWSER_SESSION_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
-| [api/omarai.py](../api/omarai.py#L32) | دالة | _csp_hash_source | لا توجد Docstring. | ناقص | 32 | [SRC-EEF2E6447C-L000032](../api/omarai.py#L32) |
-| [api/omarai.py](../api/omarai.py#L38) | دالة | _content_security_policy | Allow only known inline blocks/attributes from the static first-party HTML. | موثق | 38 | [SRC-EEF2E6447C-L000038](../api/omarai.py#L38) |
-| [api/omarai.py](../api/omarai.py#L102) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 102 | [SRC-EEF2E6447C-L000102](../api/omarai.py#L102) |
-| [api/omarai.py](../api/omarai.py#L103) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
-| [api/omarai.py](../api/omarai.py#L104) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
-| [api/omarai.py](../api/omarai.py#L106) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 106 | [SRC-EEF2E6447C-L000106](../api/omarai.py#L106) |
-| [api/omarai.py](../api/omarai.py#L107) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 107 | [SRC-EEF2E6447C-L000107](../api/omarai.py#L107) |
-| [api/omarai.py](../api/omarai.py#L108) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
-| [api/omarai.py](../api/omarai.py#L109) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
-| [api/omarai.py](../api/omarai.py#L113) | دالة | _lead_store_from_environment | Use an operator-configured database path when a persistent volume is available. | موثق | 113 | [SRC-EEF2E6447C-L000113](../api/omarai.py#L113) |
-| [api/omarai.py](../api/omarai.py#L119) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 119 | [SRC-EEF2E6447C-L000119](../api/omarai.py#L119) |
-| [api/omarai.py](../api/omarai.py#L128) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 128 | [SRC-EEF2E6447C-L000128](../api/omarai.py#L128) |
-| [api/omarai.py](../api/omarai.py#L133) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 133 | [SRC-EEF2E6447C-L000133](../api/omarai.py#L133) |
-| [api/omarai.py](../api/omarai.py#L184) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 184 | [SRC-EEF2E6447C-L000184](../api/omarai.py#L184) |
-| [api/omarai.py](../api/omarai.py#L197) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 197 | [SRC-EEF2E6447C-L000197](../api/omarai.py#L197) |
-| [api/omarai.py](../api/omarai.py#L202) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 202 | [SRC-EEF2E6447C-L000202](../api/omarai.py#L202) |
-| [api/omarai.py](../api/omarai.py#L211) | متغير/ثابت Python | DEFAULT_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 211 | [SRC-EEF2E6447C-L000211](../api/omarai.py#L211) |
-| [api/omarai.py](../api/omarai.py#L212) | متغير/ثابت Python | MAX_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 212 | [SRC-EEF2E6447C-L000212](../api/omarai.py#L212) |
-| [api/omarai.py](../api/omarai.py#L215) | دالة | _configured_http_connection_limit | Return the bounded number of live HTTP handler threads for this process. | موثق | 215 | [SRC-EEF2E6447C-L000215](../api/omarai.py#L215) |
-| [api/omarai.py](../api/omarai.py#L224) | متغير/ثابت Python | BUILD_SHA_FILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 224 | [SRC-EEF2E6447C-L000224](../api/omarai.py#L224) |
-| [api/omarai.py](../api/omarai.py#L225) | متغير/ثابت Python | _PLATFORM_BUILD_SHA_ENVIRONMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
-| [api/omarai.py](../api/omarai.py#L231) | دالة | _valid_build_sha | لا توجد Docstring. | ناقص | 231 | [SRC-EEF2E6447C-L000231](../api/omarai.py#L231) |
-| [api/omarai.py](../api/omarai.py#L236) | دالة | _build_identity | Prefer immutable image metadata, then documented hosting-provided Git SHAs. | موثق | 236 | [SRC-EEF2E6447C-L000236](../api/omarai.py#L236) |
-| [api/omarai.py](../api/omarai.py#L252) | دالة | _build_sha | Return a validated source SHA, or 'unknown' when no trusted build evidence exists. | موثق | 252 | [SRC-EEF2E6447C-L000252](../api/omarai.py#L252) |
-| [api/omarai.py](../api/omarai.py#L257) | كلاس | Handler | لا توجد Docstring. | ناقص | 257 | [SRC-EEF2E6447C-L000257](../api/omarai.py#L257) |
-| [api/omarai.py](../api/omarai.py#L258) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 258 | [SRC-EEF2E6447C-L000258](../api/omarai.py#L258) |
-| [api/omarai.py](../api/omarai.py#L267) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 267 | [SRC-EEF2E6447C-L000267](../api/omarai.py#L267) |
-| [api/omarai.py](../api/omarai.py#L285) | دالة | Handler.parse_request | Reject ambiguous HTTP message framing before dispatching any handler. | موثق | 285 | [SRC-EEF2E6447C-L000285](../api/omarai.py#L285) |
-| [api/omarai.py](../api/omarai.py#L319) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 319 | [SRC-EEF2E6447C-L000319](../api/omarai.py#L319) |
-| [api/omarai.py](../api/omarai.py#L320) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 320 | [SRC-EEF2E6447C-L000320](../api/omarai.py#L320) |
-| [api/omarai.py](../api/omarai.py#L321) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 321 | [SRC-EEF2E6447C-L000321](../api/omarai.py#L321) |
-| [api/omarai.py](../api/omarai.py#L322) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 322 | [SRC-EEF2E6447C-L000322](../api/omarai.py#L322) |
-| [api/omarai.py](../api/omarai.py#L323) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 323 | [SRC-EEF2E6447C-L000323](../api/omarai.py#L323) |
-| [api/omarai.py](../api/omarai.py#L324) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 324 | [SRC-EEF2E6447C-L000324](../api/omarai.py#L324) |
-| [api/omarai.py](../api/omarai.py#L325) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 325 | [SRC-EEF2E6447C-L000325](../api/omarai.py#L325) |
-| [api/omarai.py](../api/omarai.py#L327) | متغير/ثابت Python | Handler.MAX_RATE_LIMIT_CLIENT_BUCKETS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 327 | [SRC-EEF2E6447C-L000327](../api/omarai.py#L327) |
-| [api/omarai.py](../api/omarai.py#L328) | متغير/ثابت Python | Handler.RATE_LIMIT_OVERFLOW_KEY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 328 | [SRC-EEF2E6447C-L000328](../api/omarai.py#L328) |
-| [api/omarai.py](../api/omarai.py#L329) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 329 | [SRC-EEF2E6447C-L000329](../api/omarai.py#L329) |
-| [api/omarai.py](../api/omarai.py#L330) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 330 | [SRC-EEF2E6447C-L000330](../api/omarai.py#L330) |
-| [api/omarai.py](../api/omarai.py#L332) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 332 | [SRC-EEF2E6447C-L000332](../api/omarai.py#L332) |
-| [api/omarai.py](../api/omarai.py#L349) | دالة | Handler._session_cookie_name | Use the __Host- prefix on HTTPS public deployments. | موثق | 349 | [SRC-EEF2E6447C-L000349](../api/omarai.py#L349) |
-| [api/omarai.py](../api/omarai.py#L355) | دالة | Handler._session_cookie_header | لا توجد Docstring. | ناقص | 355 | [SRC-EEF2E6447C-L000355](../api/omarai.py#L355) |
-| [api/omarai.py](../api/omarai.py#L369) | دالة | Handler._clear_session_cookie_header | لا توجد Docstring. | ناقص | 369 | [SRC-EEF2E6447C-L000369](../api/omarai.py#L369) |
-| [api/omarai.py](../api/omarai.py#L381) | دالة | Handler._principal_for_access_token | لا توجد Docstring. | ناقص | 381 | [SRC-EEF2E6447C-L000381](../api/omarai.py#L381) |
-| [api/omarai.py](../api/omarai.py#L387) | دالة | Handler._authorized | Resolve a verified bearer token or HttpOnly browser cookie. | موثق | 387 | [SRC-EEF2E6447C-L000387](../api/omarai.py#L387) |
-| [api/omarai.py](../api/omarai.py#L429) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 429 | [SRC-EEF2E6447C-L000429](../api/omarai.py#L429) |
-| [api/omarai.py](../api/omarai.py#L461) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 461 | [SRC-EEF2E6447C-L000461](../api/omarai.py#L461) |
-| [api/omarai.py](../api/omarai.py#L464) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 464 | [SRC-EEF2E6447C-L000464](../api/omarai.py#L464) |
-| [api/omarai.py](../api/omarai.py#L480) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 480 | [SRC-EEF2E6447C-L000480](../api/omarai.py#L480) |
-| [api/omarai.py](../api/omarai.py#L512) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 512 | [SRC-EEF2E6447C-L000512](../api/omarai.py#L512) |
-| [api/omarai.py](../api/omarai.py#L585) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 585 | [SRC-EEF2E6447C-L000585](../api/omarai.py#L585) |
-| [api/omarai.py](../api/omarai.py#L594) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 594 | [SRC-EEF2E6447C-L000594](../api/omarai.py#L594) |
-| [api/omarai.py](../api/omarai.py#L615) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 615 | [SRC-EEF2E6447C-L000615](../api/omarai.py#L615) |
-| [api/omarai.py](../api/omarai.py#L668) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 668 | [SRC-EEF2E6447C-L000668](../api/omarai.py#L668) |
-| [api/omarai.py](../api/omarai.py#L874) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 874 | [SRC-EEF2E6447C-L000874](../api/omarai.py#L874) |
-| [api/omarai.py](../api/omarai.py#L887) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 887 | [SRC-EEF2E6447C-L000887](../api/omarai.py#L887) |
-| [api/omarai.py](../api/omarai.py#L891) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 891 | [SRC-EEF2E6447C-L000891](../api/omarai.py#L891) |
-| [api/omarai.py](../api/omarai.py#L927) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 927 | [SRC-EEF2E6447C-L000927](../api/omarai.py#L927) |
-| [api/omarai.py](../api/omarai.py#L930) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 930 | [SRC-EEF2E6447C-L000930](../api/omarai.py#L930) |
-| [api/omarai.py](../api/omarai.py#L931) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 931 | [SRC-EEF2E6447C-L000931](../api/omarai.py#L931) |
-| [api/omarai.py](../api/omarai.py#L938) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 938 | [SRC-EEF2E6447C-L000938](../api/omarai.py#L938) |
-| [api/omarai.py](../api/omarai.py#L956) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 956 | [SRC-EEF2E6447C-L000956](../api/omarai.py#L956) |
-| [api/omarai.py](../api/omarai.py#L973) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 973 | [SRC-EEF2E6447C-L000973](../api/omarai.py#L973) |
-| [api/omarai.py](../api/omarai.py#L981) | دالة | serve | لا توجد Docstring. | ناقص | 981 | [SRC-EEF2E6447C-L000981](../api/omarai.py#L981) |
+| [api/omarai.py](../api/omarai.py#L27) | متغير/ثابت Python | WORKSPACE_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
+| [api/omarai.py](../api/omarai.py#L28) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L29) | متغير/ثابت Python | BROWSER_SESSION_COOKIE_MAX_AGE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
+| [api/omarai.py](../api/omarai.py#L30) | متغير/ثابت Python | BROWSER_SESSION_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
+| [api/omarai.py](../api/omarai.py#L33) | دالة | _csp_hash_source | لا توجد Docstring. | ناقص | 33 | [SRC-EEF2E6447C-L000033](../api/omarai.py#L33) |
+| [api/omarai.py](../api/omarai.py#L39) | دالة | _content_security_policy | Allow only known inline blocks/attributes from the static first-party HTML. | موثق | 39 | [SRC-EEF2E6447C-L000039](../api/omarai.py#L39) |
+| [api/omarai.py](../api/omarai.py#L103) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
+| [api/omarai.py](../api/omarai.py#L104) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
+| [api/omarai.py](../api/omarai.py#L105) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 105 | [SRC-EEF2E6447C-L000105](../api/omarai.py#L105) |
+| [api/omarai.py](../api/omarai.py#L107) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 107 | [SRC-EEF2E6447C-L000107](../api/omarai.py#L107) |
+| [api/omarai.py](../api/omarai.py#L108) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
+| [api/omarai.py](../api/omarai.py#L109) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
+| [api/omarai.py](../api/omarai.py#L110) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
+| [api/omarai.py](../api/omarai.py#L114) | دالة | _lead_store_from_environment | Use an operator-configured database path when a persistent volume is available. | موثق | 114 | [SRC-EEF2E6447C-L000114](../api/omarai.py#L114) |
+| [api/omarai.py](../api/omarai.py#L120) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 120 | [SRC-EEF2E6447C-L000120](../api/omarai.py#L120) |
+| [api/omarai.py](../api/omarai.py#L129) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 129 | [SRC-EEF2E6447C-L000129](../api/omarai.py#L129) |
+| [api/omarai.py](../api/omarai.py#L134) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 134 | [SRC-EEF2E6447C-L000134](../api/omarai.py#L134) |
+| [api/omarai.py](../api/omarai.py#L185) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 185 | [SRC-EEF2E6447C-L000185](../api/omarai.py#L185) |
+| [api/omarai.py](../api/omarai.py#L198) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 198 | [SRC-EEF2E6447C-L000198](../api/omarai.py#L198) |
+| [api/omarai.py](../api/omarai.py#L203) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 203 | [SRC-EEF2E6447C-L000203](../api/omarai.py#L203) |
+| [api/omarai.py](../api/omarai.py#L212) | متغير/ثابت Python | DEFAULT_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 212 | [SRC-EEF2E6447C-L000212](../api/omarai.py#L212) |
+| [api/omarai.py](../api/omarai.py#L213) | متغير/ثابت Python | MAX_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 213 | [SRC-EEF2E6447C-L000213](../api/omarai.py#L213) |
+| [api/omarai.py](../api/omarai.py#L216) | دالة | _configured_http_connection_limit | Return the bounded number of live HTTP handler threads for this process. | موثق | 216 | [SRC-EEF2E6447C-L000216](../api/omarai.py#L216) |
+| [api/omarai.py](../api/omarai.py#L225) | متغير/ثابت Python | BUILD_SHA_FILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
+| [api/omarai.py](../api/omarai.py#L226) | متغير/ثابت Python | _PLATFORM_BUILD_SHA_ENVIRONMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 226 | [SRC-EEF2E6447C-L000226](../api/omarai.py#L226) |
+| [api/omarai.py](../api/omarai.py#L232) | دالة | _valid_build_sha | لا توجد Docstring. | ناقص | 232 | [SRC-EEF2E6447C-L000232](../api/omarai.py#L232) |
+| [api/omarai.py](../api/omarai.py#L237) | دالة | _build_identity | Prefer immutable image metadata, then documented hosting-provided Git SHAs. | موثق | 237 | [SRC-EEF2E6447C-L000237](../api/omarai.py#L237) |
+| [api/omarai.py](../api/omarai.py#L253) | دالة | _build_sha | Return a validated source SHA, or 'unknown' when no trusted build evidence exists. | موثق | 253 | [SRC-EEF2E6447C-L000253](../api/omarai.py#L253) |
+| [api/omarai.py](../api/omarai.py#L258) | كلاس | Handler | لا توجد Docstring. | ناقص | 258 | [SRC-EEF2E6447C-L000258](../api/omarai.py#L258) |
+| [api/omarai.py](../api/omarai.py#L259) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 259 | [SRC-EEF2E6447C-L000259](../api/omarai.py#L259) |
+| [api/omarai.py](../api/omarai.py#L268) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 268 | [SRC-EEF2E6447C-L000268](../api/omarai.py#L268) |
+| [api/omarai.py](../api/omarai.py#L286) | دالة | Handler.parse_request | Reject ambiguous HTTP message framing before dispatching any handler. | موثق | 286 | [SRC-EEF2E6447C-L000286](../api/omarai.py#L286) |
+| [api/omarai.py](../api/omarai.py#L320) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 320 | [SRC-EEF2E6447C-L000320](../api/omarai.py#L320) |
+| [api/omarai.py](../api/omarai.py#L321) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 321 | [SRC-EEF2E6447C-L000321](../api/omarai.py#L321) |
+| [api/omarai.py](../api/omarai.py#L322) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 322 | [SRC-EEF2E6447C-L000322](../api/omarai.py#L322) |
+| [api/omarai.py](../api/omarai.py#L323) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 323 | [SRC-EEF2E6447C-L000323](../api/omarai.py#L323) |
+| [api/omarai.py](../api/omarai.py#L324) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 324 | [SRC-EEF2E6447C-L000324](../api/omarai.py#L324) |
+| [api/omarai.py](../api/omarai.py#L325) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 325 | [SRC-EEF2E6447C-L000325](../api/omarai.py#L325) |
+| [api/omarai.py](../api/omarai.py#L326) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 326 | [SRC-EEF2E6447C-L000326](../api/omarai.py#L326) |
+| [api/omarai.py](../api/omarai.py#L328) | متغير/ثابت Python | Handler.MAX_RATE_LIMIT_CLIENT_BUCKETS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 328 | [SRC-EEF2E6447C-L000328](../api/omarai.py#L328) |
+| [api/omarai.py](../api/omarai.py#L329) | متغير/ثابت Python | Handler.RATE_LIMIT_OVERFLOW_KEY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 329 | [SRC-EEF2E6447C-L000329](../api/omarai.py#L329) |
+| [api/omarai.py](../api/omarai.py#L330) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 330 | [SRC-EEF2E6447C-L000330](../api/omarai.py#L330) |
+| [api/omarai.py](../api/omarai.py#L331) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 331 | [SRC-EEF2E6447C-L000331](../api/omarai.py#L331) |
+| [api/omarai.py](../api/omarai.py#L333) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 333 | [SRC-EEF2E6447C-L000333](../api/omarai.py#L333) |
+| [api/omarai.py](../api/omarai.py#L350) | دالة | Handler._session_cookie_name | Use the __Host- prefix on HTTPS public deployments. | موثق | 350 | [SRC-EEF2E6447C-L000350](../api/omarai.py#L350) |
+| [api/omarai.py](../api/omarai.py#L356) | دالة | Handler._session_cookie_header | لا توجد Docstring. | ناقص | 356 | [SRC-EEF2E6447C-L000356](../api/omarai.py#L356) |
+| [api/omarai.py](../api/omarai.py#L370) | دالة | Handler._clear_session_cookie_header | لا توجد Docstring. | ناقص | 370 | [SRC-EEF2E6447C-L000370](../api/omarai.py#L370) |
+| [api/omarai.py](../api/omarai.py#L382) | دالة | Handler._principal_for_access_token | لا توجد Docstring. | ناقص | 382 | [SRC-EEF2E6447C-L000382](../api/omarai.py#L382) |
+| [api/omarai.py](../api/omarai.py#L388) | دالة | Handler._authorized | Resolve a verified bearer token or HttpOnly browser cookie. | موثق | 388 | [SRC-EEF2E6447C-L000388](../api/omarai.py#L388) |
+| [api/omarai.py](../api/omarai.py#L430) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 430 | [SRC-EEF2E6447C-L000430](../api/omarai.py#L430) |
+| [api/omarai.py](../api/omarai.py#L462) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 462 | [SRC-EEF2E6447C-L000462](../api/omarai.py#L462) |
+| [api/omarai.py](../api/omarai.py#L465) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 465 | [SRC-EEF2E6447C-L000465](../api/omarai.py#L465) |
+| [api/omarai.py](../api/omarai.py#L481) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 481 | [SRC-EEF2E6447C-L000481](../api/omarai.py#L481) |
+| [api/omarai.py](../api/omarai.py#L513) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 513 | [SRC-EEF2E6447C-L000513](../api/omarai.py#L513) |
+| [api/omarai.py](../api/omarai.py#L586) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 586 | [SRC-EEF2E6447C-L000586](../api/omarai.py#L586) |
+| [api/omarai.py](../api/omarai.py#L595) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 595 | [SRC-EEF2E6447C-L000595](../api/omarai.py#L595) |
+| [api/omarai.py](../api/omarai.py#L616) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 616 | [SRC-EEF2E6447C-L000616](../api/omarai.py#L616) |
+| [api/omarai.py](../api/omarai.py#L673) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 673 | [SRC-EEF2E6447C-L000673](../api/omarai.py#L673) |
+| [api/omarai.py](../api/omarai.py#L879) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 879 | [SRC-EEF2E6447C-L000879](../api/omarai.py#L879) |
+| [api/omarai.py](../api/omarai.py#L892) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 892 | [SRC-EEF2E6447C-L000892](../api/omarai.py#L892) |
+| [api/omarai.py](../api/omarai.py#L896) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 896 | [SRC-EEF2E6447C-L000896](../api/omarai.py#L896) |
+| [api/omarai.py](../api/omarai.py#L932) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 932 | [SRC-EEF2E6447C-L000932](../api/omarai.py#L932) |
+| [api/omarai.py](../api/omarai.py#L935) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 935 | [SRC-EEF2E6447C-L000935](../api/omarai.py#L935) |
+| [api/omarai.py](../api/omarai.py#L936) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 936 | [SRC-EEF2E6447C-L000936](../api/omarai.py#L936) |
+| [api/omarai.py](../api/omarai.py#L943) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 943 | [SRC-EEF2E6447C-L000943](../api/omarai.py#L943) |
+| [api/omarai.py](../api/omarai.py#L961) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 961 | [SRC-EEF2E6447C-L000961](../api/omarai.py#L961) |
+| [api/omarai.py](../api/omarai.py#L978) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 978 | [SRC-EEF2E6447C-L000978](../api/omarai.py#L978) |
+| [api/omarai.py](../api/omarai.py#L986) | دالة | serve | لا توجد Docstring. | ناقص | 986 | [SRC-EEF2E6447C-L000986](../api/omarai.py#L986) |
 | [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
 | [docs/generate_index.py](generate_index.py#L22) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
@@ -1194,6 +1196,8 @@
 | [tests/test_api.py](../tests/test_api.py#L1167) | دالة | test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cookie | لا توجد Docstring. | ناقص | 1167 | [SRC-3451CC474D-L001167](../tests/test_api.py#L1167) |
 | [tests/test_api.py](../tests/test_api.py#L1204) | دالة | test_api_rejects_ambiguous_or_unsupported_http_request_framing | لا توجد Docstring. | ناقص | 1204 | [SRC-3451CC474D-L001204](../tests/test_api.py#L1204) |
 | [tests/test_api.py](../tests/test_api.py#L1232) | دالة | test_api_closes_connection_when_declared_body_exceeds_limit | لا توجد Docstring. | ناقص | 1232 | [SRC-3451CC474D-L001232](../tests/test_api.py#L1232) |
+| [tests/test_api.py](../tests/test_api.py#L1257) | دالة | test_workspace_route_serves_the_arabic_rtl_workspace_shell | لا توجد Docstring. | ناقص | 1257 | [SRC-3451CC474D-L001257](../tests/test_api.py#L1257) |
+| [tests/test_api.py](../tests/test_api.py#L1269) | دالة | test_workspace_route_does_not_replace_existing_home_agent_or_leads_pages | لا توجد Docstring. | ناقص | 1269 | [SRC-3451CC474D-L001269](../tests/test_api.py#L1269) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L13) | دالة | test_extract_aspects_from_min_hayth | لا توجد Docstring. | ناقص | 13 | [SRC-6CBA87B20C-L000013](../tests/test_aspect_planning.py#L13) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L25) | دالة | test_extract_aspects_from_multi_question_marks | لا توجد Docstring. | ناقص | 25 | [SRC-6CBA87B20C-L000025](../tests/test_aspect_planning.py#L25) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L31) | دالة | test_build_aspect_queries_prioritizes_topic | لا توجد Docstring. | ناقص | 31 | [SRC-6CBA87B20C-L000031](../tests/test_aspect_planning.py#L31) |
@@ -1224,11 +1228,17 @@
 | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L52) | دالة | test_connector_failure_returns_empty.boom | لا توجد Docstring. | ناقص | 52 | [SRC-6BECF5AD00-L000052](../tests/test_connectors_mocked.py#L52) |
 | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L59) | دالة | test_run_free_academic_dedupe_path | لا توجد Docstring. | ناقص | 59 | [SRC-6BECF5AD00-L000059](../tests/test_connectors_mocked.py#L59) |
 | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L60) | دالة | test_run_free_academic_dedupe_path.fake_run | لا توجد Docstring. | ناقص | 60 | [SRC-6BECF5AD00-L000060](../tests/test_connectors_mocked.py#L60) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L4) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 4 | [SRC-3D0A619359-L000004](../tests/test_dashboard_security.py#L4) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L7) | دالة | test_hosted_lead_dashboard_exchanges_access_token_for_http_only_session | لا توجد Docstring. | ناقص | 7 | [SRC-3D0A619359-L000007](../tests/test_dashboard_security.py#L7) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L17) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 17 | [SRC-3D0A619359-L000017](../tests/test_dashboard_security.py#L17) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L24) | دالة | test_lead_status_handler_accepts_sha256_hex_lead_ids | لا توجد Docstring. | ناقص | 24 | [SRC-3D0A619359-L000024](../tests/test_dashboard_security.py#L24) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L29) | دالة | test_browser_pages_never_store_access_tokens_in_web_storage | لا توجد Docstring. | ناقص | 29 | [SRC-3D0A619359-L000029](../tests/test_dashboard_security.py#L29) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L8) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-3D0A619359-L000008](../tests/test_dashboard_security.py#L8) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L11) | دالة | test_hosted_lead_dashboard_exchanges_access_token_for_http_only_session | لا توجد Docstring. | ناقص | 11 | [SRC-3D0A619359-L000011](../tests/test_dashboard_security.py#L11) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L21) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 21 | [SRC-3D0A619359-L000021](../tests/test_dashboard_security.py#L21) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L28) | دالة | test_lead_status_handler_accepts_sha256_hex_lead_ids | لا توجد Docstring. | ناقص | 28 | [SRC-3D0A619359-L000028](../tests/test_dashboard_security.py#L28) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L33) | دالة | test_browser_pages_never_store_access_tokens_in_web_storage | لا توجد Docstring. | ناقص | 33 | [SRC-3D0A619359-L000033](../tests/test_dashboard_security.py#L33) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L44) | دالة | test_sales_workspace_uses_http_only_session_and_never_persists_access_token | لا توجد Docstring. | ناقص | 44 | [SRC-3D0A619359-L000044](../tests/test_dashboard_security.py#L44) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L60) | دالة | test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility | لا توجد Docstring. | ناقص | 60 | [SRC-3D0A619359-L000060](../tests/test_dashboard_security.py#L60) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L74) | دالة | test_workspace_write_controls_match_supported_membership_roles | لا توجد Docstring. | ناقص | 74 | [SRC-3D0A619359-L000074](../tests/test_dashboard_security.py#L74) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L82) | دالة | test_workspace_does_not_clear_local_session_state_when_server_logout_fails | لا توجد Docstring. | ناقص | 82 | [SRC-3D0A619359-L000082](../tests/test_dashboard_security.py#L82) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L95) | دالة | test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes | لا توجد Docstring. | ناقص | 95 | [SRC-3D0A619359-L000095](../tests/test_dashboard_security.py#L95) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L111) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 111 | [SRC-3D0A619359-L000111](../tests/test_dashboard_security.py#L111) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -2392,45 +2402,46 @@
 | [agents/web_agent.py](../agents/web_agent.py#L5313) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 5313 | [SRC-1AE03B9EC3-L005313](../agents/web_agent.py#L5313) |
 | [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
 | [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
-| [api/omarai.py](../api/omarai.py#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
-| [api/omarai.py](../api/omarai.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_COOKIE_MAX_AGE | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
-| [api/omarai.py](../api/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_ID_RE | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
-| [api/omarai.py](../api/omarai.py#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 102 | [SRC-EEF2E6447C-L000102](../api/omarai.py#L102) |
-| [api/omarai.py](../api/omarai.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
-| [api/omarai.py](../api/omarai.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
-| [api/omarai.py](../api/omarai.py#L106) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 106 | [SRC-EEF2E6447C-L000106](../api/omarai.py#L106) |
-| [api/omarai.py](../api/omarai.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 107 | [SRC-EEF2E6447C-L000107](../api/omarai.py#L107) |
-| [api/omarai.py](../api/omarai.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
-| [api/omarai.py](../api/omarai.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
-| [api/omarai.py](../api/omarai.py#L115) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 115 | [SRC-EEF2E6447C-L000115](../api/omarai.py#L115) |
-| [api/omarai.py](../api/omarai.py#L205) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 205 | [SRC-EEF2E6447C-L000205](../api/omarai.py#L205) |
-| [api/omarai.py](../api/omarai.py#L211) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_HTTP_CONNECTION_LIMIT | 211 | [SRC-EEF2E6447C-L000211](../api/omarai.py#L211) |
-| [api/omarai.py](../api/omarai.py#L212) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_HTTP_CONNECTION_LIMIT | 212 | [SRC-EEF2E6447C-L000212](../api/omarai.py#L212) |
-| [api/omarai.py](../api/omarai.py#L218) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 218 | [SRC-EEF2E6447C-L000218](../api/omarai.py#L218) |
-| [api/omarai.py](../api/omarai.py#L224) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 224 | [SRC-EEF2E6447C-L000224](../api/omarai.py#L224) |
-| [api/omarai.py](../api/omarai.py#L224) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 224 | [SRC-EEF2E6447C-L000224](../api/omarai.py#L224) |
-| [api/omarai.py](../api/omarai.py#L226) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 226 | [SRC-EEF2E6447C-L000226](../api/omarai.py#L226) |
-| [api/omarai.py](../api/omarai.py#L227) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 227 | [SRC-EEF2E6447C-L000227](../api/omarai.py#L227) |
-| [api/omarai.py](../api/omarai.py#L323) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 323 | [SRC-EEF2E6447C-L000323](../api/omarai.py#L323) |
-| [api/omarai.py](../api/omarai.py#L324) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 324 | [SRC-EEF2E6447C-L000324](../api/omarai.py#L324) |
-| [api/omarai.py](../api/omarai.py#L325) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 325 | [SRC-EEF2E6447C-L000325](../api/omarai.py#L325) |
-| [api/omarai.py](../api/omarai.py#L327) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 327 | [SRC-EEF2E6447C-L000327](../api/omarai.py#L327) |
-| [api/omarai.py](../api/omarai.py#L328) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 328 | [SRC-EEF2E6447C-L000328](../api/omarai.py#L328) |
-| [api/omarai.py](../api/omarai.py#L329) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 329 | [SRC-EEF2E6447C-L000329](../api/omarai.py#L329) |
-| [api/omarai.py](../api/omarai.py#L351) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 351 | [SRC-EEF2E6447C-L000351](../api/omarai.py#L351) |
-| [api/omarai.py](../api/omarai.py#L382) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 382 | [SRC-EEF2E6447C-L000382](../api/omarai.py#L382) |
-| [api/omarai.py](../api/omarai.py#L432) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 432 | [SRC-EEF2E6447C-L000432](../api/omarai.py#L432) |
-| [api/omarai.py](../api/omarai.py#L467) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 467 | [SRC-EEF2E6447C-L000467](../api/omarai.py#L467) |
-| [api/omarai.py](../api/omarai.py#L621) | مسار API/واجهة محتمل | /leads | 621 | [SRC-EEF2E6447C-L000621](../api/omarai.py#L621) |
-| [api/omarai.py](../api/omarai.py#L625) | مسار API/واجهة محتمل | /api/health | 625 | [SRC-EEF2E6447C-L000625](../api/omarai.py#L625) |
-| [api/omarai.py](../api/omarai.py#L642) | مسار API/واجهة محتمل | /api/session | 642 | [SRC-EEF2E6447C-L000642](../api/omarai.py#L642) |
-| [api/omarai.py](../api/omarai.py#L654) | مسار API/واجهة محتمل | /api/leads | 654 | [SRC-EEF2E6447C-L000654](../api/omarai.py#L654) |
-| [api/omarai.py](../api/omarai.py#L676) | مسار API/واجهة محتمل | /api/session/logout | 676 | [SRC-EEF2E6447C-L000676](../api/omarai.py#L676) |
-| [api/omarai.py](../api/omarai.py#L739) | مسار API/واجهة محتمل | /api/tokens/revoke | 739 | [SRC-EEF2E6447C-L000739](../api/omarai.py#L739) |
-| [api/omarai.py](../api/omarai.py#L762) | مسار API/واجهة محتمل | /api/diagnostics | 762 | [SRC-EEF2E6447C-L000762](../api/omarai.py#L762) |
-| [api/omarai.py](../api/omarai.py#L803) | مسار API/واجهة محتمل | /api/agent | 803 | [SRC-EEF2E6447C-L000803](../api/omarai.py#L803) |
-| [api/omarai.py](../api/omarai.py#L832) | مسار API/واجهة محتمل | /api/ask | 832 | [SRC-EEF2E6447C-L000832](../api/omarai.py#L832) |
-| [api/omarai.py](../api/omarai.py#L839) | مسار API/واجهة محتمل | /api/analyze | 839 | [SRC-EEF2E6447C-L000839](../api/omarai.py#L839) |
+| [api/omarai.py](../api/omarai.py#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WORKSPACE_DASHBOARD | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
+| [api/omarai.py](../api/omarai.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_COOKIE_MAX_AGE | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
+| [api/omarai.py](../api/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_ID_RE | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
+| [api/omarai.py](../api/omarai.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
+| [api/omarai.py](../api/omarai.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
+| [api/omarai.py](../api/omarai.py#L105) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 105 | [SRC-EEF2E6447C-L000105](../api/omarai.py#L105) |
+| [api/omarai.py](../api/omarai.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 107 | [SRC-EEF2E6447C-L000107](../api/omarai.py#L107) |
+| [api/omarai.py](../api/omarai.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
+| [api/omarai.py](../api/omarai.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
+| [api/omarai.py](../api/omarai.py#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
+| [api/omarai.py](../api/omarai.py#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 116 | [SRC-EEF2E6447C-L000116](../api/omarai.py#L116) |
+| [api/omarai.py](../api/omarai.py#L206) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 206 | [SRC-EEF2E6447C-L000206](../api/omarai.py#L206) |
+| [api/omarai.py](../api/omarai.py#L212) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_HTTP_CONNECTION_LIMIT | 212 | [SRC-EEF2E6447C-L000212](../api/omarai.py#L212) |
+| [api/omarai.py](../api/omarai.py#L213) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_HTTP_CONNECTION_LIMIT | 213 | [SRC-EEF2E6447C-L000213](../api/omarai.py#L213) |
+| [api/omarai.py](../api/omarai.py#L219) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 219 | [SRC-EEF2E6447C-L000219](../api/omarai.py#L219) |
+| [api/omarai.py](../api/omarai.py#L225) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
+| [api/omarai.py](../api/omarai.py#L225) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
+| [api/omarai.py](../api/omarai.py#L227) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 227 | [SRC-EEF2E6447C-L000227](../api/omarai.py#L227) |
+| [api/omarai.py](../api/omarai.py#L228) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 228 | [SRC-EEF2E6447C-L000228](../api/omarai.py#L228) |
+| [api/omarai.py](../api/omarai.py#L324) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 324 | [SRC-EEF2E6447C-L000324](../api/omarai.py#L324) |
+| [api/omarai.py](../api/omarai.py#L325) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 325 | [SRC-EEF2E6447C-L000325](../api/omarai.py#L325) |
+| [api/omarai.py](../api/omarai.py#L326) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 326 | [SRC-EEF2E6447C-L000326](../api/omarai.py#L326) |
+| [api/omarai.py](../api/omarai.py#L328) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 328 | [SRC-EEF2E6447C-L000328](../api/omarai.py#L328) |
+| [api/omarai.py](../api/omarai.py#L329) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 329 | [SRC-EEF2E6447C-L000329](../api/omarai.py#L329) |
+| [api/omarai.py](../api/omarai.py#L330) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 330 | [SRC-EEF2E6447C-L000330](../api/omarai.py#L330) |
+| [api/omarai.py](../api/omarai.py#L352) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 352 | [SRC-EEF2E6447C-L000352](../api/omarai.py#L352) |
+| [api/omarai.py](../api/omarai.py#L383) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 383 | [SRC-EEF2E6447C-L000383](../api/omarai.py#L383) |
+| [api/omarai.py](../api/omarai.py#L433) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 433 | [SRC-EEF2E6447C-L000433](../api/omarai.py#L433) |
+| [api/omarai.py](../api/omarai.py#L468) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 468 | [SRC-EEF2E6447C-L000468](../api/omarai.py#L468) |
+| [api/omarai.py](../api/omarai.py#L622) | مسار API/واجهة محتمل | /leads | 622 | [SRC-EEF2E6447C-L000622](../api/omarai.py#L622) |
+| [api/omarai.py](../api/omarai.py#L630) | مسار API/واجهة محتمل | /api/health | 630 | [SRC-EEF2E6447C-L000630](../api/omarai.py#L630) |
+| [api/omarai.py](../api/omarai.py#L647) | مسار API/واجهة محتمل | /api/session | 647 | [SRC-EEF2E6447C-L000647](../api/omarai.py#L647) |
+| [api/omarai.py](../api/omarai.py#L659) | مسار API/واجهة محتمل | /api/leads | 659 | [SRC-EEF2E6447C-L000659](../api/omarai.py#L659) |
+| [api/omarai.py](../api/omarai.py#L681) | مسار API/واجهة محتمل | /api/session/logout | 681 | [SRC-EEF2E6447C-L000681](../api/omarai.py#L681) |
+| [api/omarai.py](../api/omarai.py#L744) | مسار API/واجهة محتمل | /api/tokens/revoke | 744 | [SRC-EEF2E6447C-L000744](../api/omarai.py#L744) |
+| [api/omarai.py](../api/omarai.py#L767) | مسار API/واجهة محتمل | /api/diagnostics | 767 | [SRC-EEF2E6447C-L000767](../api/omarai.py#L767) |
+| [api/omarai.py](../api/omarai.py#L808) | مسار API/واجهة محتمل | /api/agent | 808 | [SRC-EEF2E6447C-L000808](../api/omarai.py#L808) |
+| [api/omarai.py](../api/omarai.py#L837) | مسار API/واجهة محتمل | /api/ask | 837 | [SRC-EEF2E6447C-L000837](../api/omarai.py#L837) |
+| [api/omarai.py](../api/omarai.py#L844) | مسار API/واجهة محتمل | /api/analyze | 844 | [SRC-EEF2E6447C-L000844](../api/omarai.py#L844) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | عنوان Markdown (H1) | تقرير قبول الاستضافة — Omarai | 1 | [SRC-65AAF94960-L000001](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | عنوان Markdown (H2) | الملخص التنفيذي | 6 | [SRC-65AAF94960-L000006](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | عنوان Markdown (H2) | أدلة القبول | 11 | [SRC-65AAF94960-L000011](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) |
@@ -2691,17 +2702,22 @@
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L45) | عنوان Markdown (H2) | حدود الإثبات | 45 | [SRC-6E35221BFA-L000045](GO_LIVE_CHECKLIST_AR.md#L45) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 48 | [SRC-6E35221BFA-L000048](GO_LIVE_CHECKLIST_AR.md#L48) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدود الإثبات | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 3 | [SRC-C8EA754D73-L000003](IMPLEMENTATION_SCOPE.md#L3) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 3 | [SRC-C8EA754D73-L000003](IMPLEMENTATION_SCOPE.md#L3) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 8 | [SRC-C8EA754D73-L000008](IMPLEMENTATION_SCOPE.md#L8) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L10) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 10 | [SRC-C8EA754D73-L000010](IMPLEMENTATION_SCOPE.md#L10) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 17 | [SRC-C8EA754D73-L000017](IMPLEMENTATION_SCOPE.md#L17) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 19 | [SRC-C8EA754D73-L000019](IMPLEMENTATION_SCOPE.md#L19) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L20) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 20 | [SRC-C8EA754D73-L000020](IMPLEMENTATION_SCOPE.md#L20) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L28) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 28 | [SRC-C8EA754D73-L000028](IMPLEMENTATION_SCOPE.md#L28) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L38) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 38 | [SRC-C8EA754D73-L000038](IMPLEMENTATION_SCOPE.md#L38) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 42 | [SRC-C8EA754D73-L000042](IMPLEMENTATION_SCOPE.md#L42) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 43 | [SRC-C8EA754D73-L000043](IMPLEMENTATION_SCOPE.md#L43) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L2) | عنوان Markdown (H2) | إضافة تنفيذية بتاريخ 3 نوفمبر 2026 — مساحة عمل المبيعات العربية | 2 | [SRC-C8EA754D73-L000002](IMPLEMENTATION_SCOPE.md#L2) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 11 | [SRC-C8EA754D73-L000011](IMPLEMENTATION_SCOPE.md#L11) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 15 | [SRC-C8EA754D73-L000015](IMPLEMENTATION_SCOPE.md#L15) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 16 | [SRC-C8EA754D73-L000016](IMPLEMENTATION_SCOPE.md#L16) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_DEPLOYED | 17 | [SRC-C8EA754D73-L000017](IMPLEMENTATION_SCOPE.md#L17) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 22 | [SRC-C8EA754D73-L000022](IMPLEMENTATION_SCOPE.md#L22) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 22 | [SRC-C8EA754D73-L000022](IMPLEMENTATION_SCOPE.md#L22) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 27 | [SRC-C8EA754D73-L000027](IMPLEMENTATION_SCOPE.md#L27) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L29) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 29 | [SRC-C8EA754D73-L000029](IMPLEMENTATION_SCOPE.md#L29) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 38 | [SRC-C8EA754D73-L000038](IMPLEMENTATION_SCOPE.md#L38) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L39) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 39 | [SRC-C8EA754D73-L000039](IMPLEMENTATION_SCOPE.md#L39) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L47) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 47 | [SRC-C8EA754D73-L000047](IMPLEMENTATION_SCOPE.md#L47) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L57) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 57 | [SRC-C8EA754D73-L000057](IMPLEMENTATION_SCOPE.md#L57) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L61) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 61 | [SRC-C8EA754D73-L000061](IMPLEMENTATION_SCOPE.md#L61) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L62) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 62 | [SRC-C8EA754D73-L000062](IMPLEMENTATION_SCOPE.md#L62) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L66) | عنوان Markdown (H2) | اعتماد الاتجاه البصري — 4 نوفمبر 2026 | 66 | [SRC-C8EA754D73-L000066](IMPLEMENTATION_SCOPE.md#L66) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | عنوان Markdown (H1) | خطة تنفيذ RAG الوكيلي وسلامة الأدلة في Omarai | 1 | [SRC-53E640B937-L000001](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) | عنوان Markdown (H2) | تعريف النظام المستهدف | 4 | [SRC-53E640B937-L000004](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) | عنوان Markdown (H2) | سجل البنود وحالتها | 8 | [SRC-53E640B937-L000008](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) |
@@ -3099,6 +3115,9 @@
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L223) | عنوان Markdown (H2) | ملحق تتبع بعد دمج منظومة التقييم — 29 أكتوبر 2026 | 223 | [SRC-B9C3015420-L000223](OMARAI_REQUIREMENTS_REGISTER.md#L223) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L240) | عنوان Markdown (H2) | تحديث حاكم — تحقق حي بعد دمج مجموعة التقييم — 29 أكتوبر 2026 | 240 | [SRC-B9C3015420-L000240](OMARAI_REQUIREMENTS_REGISTER.md#L240) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L249) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 249 | [SRC-B9C3015420-L000249](OMARAI_REQUIREMENTS_REGISTER.md#L249) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L253) | عنوان Markdown (H2) | ملحق متابعة واجهة مساحة العمل — 3 نوفمبر 2026 | 253 | [SRC-B9C3015420-L000253](OMARAI_REQUIREMENTS_REGISTER.md#L253) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L258) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 258 | [SRC-B9C3015420-L000258](OMARAI_REQUIREMENTS_REGISTER.md#L258) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L267) | عنوان Markdown (H2) | ملحق مراجعة اتساق واجهة مساحة العمل — 4 نوفمبر 2026 | 267 | [SRC-B9C3015420-L000267](OMARAI_REQUIREMENTS_REGISTER.md#L267) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات والتتبع والنضج وبوابات الاعتماد | 1 | [SRC-65551FB29F-L000001](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
@@ -3685,11 +3704,15 @@
 | [tests/test_api.py](../tests/test_api.py#L923) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 923 | [SRC-3451CC474D-L000923](../tests/test_api.py#L923) |
 | [tests/test_api.py](../tests/test_api.py#L1035) | مسار API/واجهة محتمل | /api/session | 1035 | [SRC-3451CC474D-L001035](../tests/test_api.py#L1035) |
 | [tests/test_api.py](../tests/test_api.py#L1079) | مسار API/واجهة محتمل | /api/session/logout | 1079 | [SRC-3451CC474D-L001079](../tests/test_api.py#L1079) |
+| [tests/test_api.py](../tests/test_api.py#L1285) | مسار API/واجهة محتمل | /leads | 1285 | [SRC-3451CC474D-L001285](../tests/test_api.py#L1285) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 10 | [SRC-DA61479D59-L000010](../tests/test_connector_summary_counters.py#L10) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 130 | [SRC-DA61479D59-L000130](../tests/test_connector_summary_counters.py#L130) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 131 | [SRC-DA61479D59-L000131](../tests/test_connector_summary_counters.py#L131) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L220) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_KEY | 220 | [SRC-DA61479D59-L000220](../tests/test_connector_summary_counters.py#L220) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L9) | مسار API/واجهة محتمل | /api/session | 9 | [SRC-3D0A619359-L000009](../tests/test_dashboard_security.py#L9) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L13) | مسار API/واجهة محتمل | /api/session | 13 | [SRC-3D0A619359-L000013](../tests/test_dashboard_security.py#L13) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L54) | مسار API/واجهة محتمل | /api/health | 54 | [SRC-3D0A619359-L000054](../tests/test_dashboard_security.py#L54) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 78 | [SRC-3D0A619359-L000078](../tests/test_dashboard_security.py#L78) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 80 | [SRC-3D0A619359-L000080](../tests/test_dashboard_security.py#L80) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 146 | [SRC-29A9CD43D1-L000146](../tests/test_dialogue_context_pipeline.py#L146) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
@@ -4199,6 +4222,277 @@
 | [web/dashboard.html](../web/dashboard.html#L73) | متغير JavaScript/TypeScript | result | 73 | [SRC-A16FA6D4B5-L000073](../web/dashboard.html#L73) |
 | [web/dashboard.html](../web/dashboard.html#L73) | متغير JavaScript/TypeScript | user | 73 | [SRC-A16FA6D4B5-L000073](../web/dashboard.html#L73) |
 | [web/dashboard.html](../web/dashboard.html#L73) | مسار API/واجهة محتمل | /api/ask | 73 | [SRC-A16FA6D4B5-L000073](../web/dashboard.html#L73) |
+| [web/workspace.html](../web/workspace.html#L5) | قيمة سمة HTML (name) | viewport | 5 | [SRC-2C8F288796-L000005](../web/workspace.html#L5) |
+| [web/workspace.html](../web/workspace.html#L6) | قيمة سمة HTML (name) | theme-color | 6 | [SRC-2C8F288796-L000006](../web/workspace.html#L6) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | amber | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | bg | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | coral | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | cyan | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | danger | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | green | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | line | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | muted | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | panel | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | panel-2 | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | radius | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | teal | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | text | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | متغير CSS مخصص | violet | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | محدد id في CSS | edf4ff | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | محدد id في CSS | f3c77c | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | محدد id في CSS | ff8794 | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L9) | محدد id في CSS | ff9c9f | 9 | [SRC-2C8F288796-L000009](../web/workspace.html#L9) |
+| [web/workspace.html](../web/workspace.html#L18) | محدد class في CSS | app | 18 | [SRC-2C8F288796-L000018](../web/workspace.html#L18) |
+| [web/workspace.html](../web/workspace.html#L19) | محدد class في CSS | sidebar | 19 | [SRC-2C8F288796-L000019](../web/workspace.html#L19) |
+| [web/workspace.html](../web/workspace.html#L20) | محدد class في CSS | brand | 20 | [SRC-2C8F288796-L000020](../web/workspace.html#L20) |
+| [web/workspace.html](../web/workspace.html#L21) | محدد class في CSS | logo | 21 | [SRC-2C8F288796-L000021](../web/workspace.html#L21) |
+| [web/workspace.html](../web/workspace.html#L22) | محدد class في CSS | brand-name | 22 | [SRC-2C8F288796-L000022](../web/workspace.html#L22) |
+| [web/workspace.html](../web/workspace.html#L22) | محدد class في CSS | brand-sub | 22 | [SRC-2C8F288796-L000022](../web/workspace.html#L22) |
+| [web/workspace.html](../web/workspace.html#L23) | محدد class في CSS | workspace-label | 23 | [SRC-2C8F288796-L000023](../web/workspace.html#L23) |
+| [web/workspace.html](../web/workspace.html#L24) | محدد class في CSS | nav | 24 | [SRC-2C8F288796-L000024](../web/workspace.html#L24) |
+| [web/workspace.html](../web/workspace.html#L25) | محدد id في CSS | c1d0e4 | 25 | [SRC-2C8F288796-L000025](../web/workspace.html#L25) |
+| [web/workspace.html](../web/workspace.html#L27) | محدد id في CSS | eafffb | 27 | [SRC-2C8F288796-L000027](../web/workspace.html#L27) |
+| [web/workspace.html](../web/workspace.html#L28) | محدد class في CSS | nav-icon | 28 | [SRC-2C8F288796-L000028](../web/workspace.html#L28) |
+| [web/workspace.html](../web/workspace.html#L30) | محدد class في CSS | nav-status | 30 | [SRC-2C8F288796-L000030](../web/workspace.html#L30) |
+| [web/workspace.html](../web/workspace.html#L31) | محدد class في CSS | side-bottom | 31 | [SRC-2C8F288796-L000031](../web/workspace.html#L31) |
+| [web/workspace.html](../web/workspace.html#L32) | محدد class في CSS | connection | 32 | [SRC-2C8F288796-L000032](../web/workspace.html#L32) |
+| [web/workspace.html](../web/workspace.html#L33) | محدد class في CSS | connection-title | 33 | [SRC-2C8F288796-L000033](../web/workspace.html#L33) |
+| [web/workspace.html](../web/workspace.html#L34) | محدد class في CSS | dot | 34 | [SRC-2C8F288796-L000034](../web/workspace.html#L34) |
+| [web/workspace.html](../web/workspace.html#L38) | محدد class في CSS | side-links | 38 | [SRC-2C8F288796-L000038](../web/workspace.html#L38) |
+| [web/workspace.html](../web/workspace.html#L40) | محدد class في CSS | main | 40 | [SRC-2C8F288796-L000040](../web/workspace.html#L40) |
+| [web/workspace.html](../web/workspace.html#L41) | محدد class في CSS | topbar | 41 | [SRC-2C8F288796-L000041](../web/workspace.html#L41) |
+| [web/workspace.html](../web/workspace.html#L42) | محدد class في CSS | breadcrumb | 42 | [SRC-2C8F288796-L000042](../web/workspace.html#L42) |
+| [web/workspace.html](../web/workspace.html#L42) | محدد id في CSS | e4eefb | 42 | [SRC-2C8F288796-L000042](../web/workspace.html#L42) |
+| [web/workspace.html](../web/workspace.html#L43) | محدد class في CSS | top-actions | 43 | [SRC-2C8F288796-L000043](../web/workspace.html#L43) |
+| [web/workspace.html](../web/workspace.html#L44) | محدد class في CSS | role-pill | 44 | [SRC-2C8F288796-L000044](../web/workspace.html#L44) |
+| [web/workspace.html](../web/workspace.html#L44) | محدد class في CSS | status-pill | 44 | [SRC-2C8F288796-L000044](../web/workspace.html#L44) |
+| [web/workspace.html](../web/workspace.html#L44) | محدد id في CSS | bdcbe0 | 44 | [SRC-2C8F288796-L000044](../web/workspace.html#L44) |
+| [web/workspace.html](../web/workspace.html#L45) | محدد class في CSS | button | 45 | [SRC-2C8F288796-L000045](../web/workspace.html#L45) |
+| [web/workspace.html](../web/workspace.html#L45) | محدد id في CSS | dce8f8 | 45 | [SRC-2C8F288796-L000045](../web/workspace.html#L45) |
+| [web/workspace.html](../web/workspace.html#L47) | محدد id في CSS | a4c5ff | 47 | [SRC-2C8F288796-L000047](../web/workspace.html#L47) |
+| [web/workspace.html](../web/workspace.html#L50) | محدد class في CSS | page-head | 50 | [SRC-2C8F288796-L000050](../web/workspace.html#L50) |
+| [web/workspace.html](../web/workspace.html#L51) | محدد class في CSS | eyebrow | 51 | [SRC-2C8F288796-L000051](../web/workspace.html#L51) |
+| [web/workspace.html](../web/workspace.html#L54) | محدد class في CSS | glass | 54 | [SRC-2C8F288796-L000054](../web/workspace.html#L54) |
+| [web/workspace.html](../web/workspace.html#L55) | محدد class في CSS | stats | 55 | [SRC-2C8F288796-L000055](../web/workspace.html#L55) |
+| [web/workspace.html](../web/workspace.html#L56) | محدد class في CSS | stat | 56 | [SRC-2C8F288796-L000056](../web/workspace.html#L56) |
+| [web/workspace.html](../web/workspace.html#L58) | محدد class في CSS | stat-label | 58 | [SRC-2C8F288796-L000058](../web/workspace.html#L58) |
+| [web/workspace.html](../web/workspace.html#L59) | محدد class في CSS | stat-value | 59 | [SRC-2C8F288796-L000059](../web/workspace.html#L59) |
+| [web/workspace.html](../web/workspace.html#L60) | محدد class في CSS | stat-note | 60 | [SRC-2C8F288796-L000060](../web/workspace.html#L60) |
+| [web/workspace.html](../web/workspace.html#L61) | محدد class في CSS | content-grid | 61 | [SRC-2C8F288796-L000061](../web/workspace.html#L61) |
+| [web/workspace.html](../web/workspace.html#L62) | محدد class في CSS | panel | 62 | [SRC-2C8F288796-L000062](../web/workspace.html#L62) |
+| [web/workspace.html](../web/workspace.html#L63) | محدد class في CSS | panel-head | 63 | [SRC-2C8F288796-L000063](../web/workspace.html#L63) |
+| [web/workspace.html](../web/workspace.html#L65) | محدد class في CSS | subtle | 65 | [SRC-2C8F288796-L000065](../web/workspace.html#L65) |
+| [web/workspace.html](../web/workspace.html#L66) | محدد class في CSS | signal-list | 66 | [SRC-2C8F288796-L000066](../web/workspace.html#L66) |
+| [web/workspace.html](../web/workspace.html#L67) | محدد class في CSS | signal-card | 67 | [SRC-2C8F288796-L000067](../web/workspace.html#L67) |
+| [web/workspace.html](../web/workspace.html#L68) | محدد class في CSS | signal-top | 68 | [SRC-2C8F288796-L000068](../web/workspace.html#L68) |
+| [web/workspace.html](../web/workspace.html#L69) | محدد class في CSS | signal-text | 69 | [SRC-2C8F288796-L000069](../web/workspace.html#L69) |
+| [web/workspace.html](../web/workspace.html#L69) | محدد id في CSS | e0eafa | 69 | [SRC-2C8F288796-L000069](../web/workspace.html#L69) |
+| [web/workspace.html](../web/workspace.html#L70) | محدد class في CSS | signal-meta | 70 | [SRC-2C8F288796-L000070](../web/workspace.html#L70) |
+| [web/workspace.html](../web/workspace.html#L71) | محدد class في CSS | tag | 71 | [SRC-2C8F288796-L000071](../web/workspace.html#L71) |
+| [web/workspace.html](../web/workspace.html#L71) | محدد id في CSS | afc0d6 | 71 | [SRC-2C8F288796-L000071](../web/workspace.html#L71) |
+| [web/workspace.html](../web/workspace.html#L72) | محدد id في CSS | a9f6e8 | 72 | [SRC-2C8F288796-L000072](../web/workspace.html#L72) |
+| [web/workspace.html](../web/workspace.html#L73) | محدد id في CSS | f7d99f | 73 | [SRC-2C8F288796-L000073](../web/workspace.html#L73) |
+| [web/workspace.html](../web/workspace.html#L74) | محدد id في CSS | ffb0b6 | 74 | [SRC-2C8F288796-L000074](../web/workspace.html#L74) |
+| [web/workspace.html](../web/workspace.html#L75) | محدد class في CSS | signal-actions | 75 | [SRC-2C8F288796-L000075](../web/workspace.html#L75) |
+| [web/workspace.html](../web/workspace.html#L76) | محدد class في CSS | small-button | 76 | [SRC-2C8F288796-L000076](../web/workspace.html#L76) |
+| [web/workspace.html](../web/workspace.html#L76) | محدد id في CSS | d6e3f4 | 76 | [SRC-2C8F288796-L000076](../web/workspace.html#L76) |
+| [web/workspace.html](../web/workspace.html#L78) | محدد class في CSS | empty | 78 | [SRC-2C8F288796-L000078](../web/workspace.html#L78) |
+| [web/workspace.html](../web/workspace.html#L79) | محدد id في CSS | dce8f7 | 79 | [SRC-2C8F288796-L000079](../web/workspace.html#L79) |
+| [web/workspace.html](../web/workspace.html#L80) | محدد class في CSS | mini-bars | 80 | [SRC-2C8F288796-L000080](../web/workspace.html#L80) |
+| [web/workspace.html](../web/workspace.html#L81) | محدد class في CSS | bar-row | 81 | [SRC-2C8F288796-L000081](../web/workspace.html#L81) |
+| [web/workspace.html](../web/workspace.html#L82) | محدد class في CSS | bar-track | 82 | [SRC-2C8F288796-L000082](../web/workspace.html#L82) |
+| [web/workspace.html](../web/workspace.html#L83) | محدد class في CSS | bar-fill | 83 | [SRC-2C8F288796-L000083](../web/workspace.html#L83) |
+| [web/workspace.html](../web/workspace.html#L84) | محدد class في CSS | notice | 84 | [SRC-2C8F288796-L000084](../web/workspace.html#L84) |
+| [web/workspace.html](../web/workspace.html#L84) | محدد id في CSS | efd7a9 | 84 | [SRC-2C8F288796-L000084](../web/workspace.html#L84) |
+| [web/workspace.html](../web/workspace.html#L85) | محدد class في CSS | toolbar | 85 | [SRC-2C8F288796-L000085](../web/workspace.html#L85) |
+| [web/workspace.html](../web/workspace.html#L86) | محدد class في CSS | field | 86 | [SRC-2C8F288796-L000086](../web/workspace.html#L86) |
+| [web/workspace.html](../web/workspace.html#L87) | محدد id في CSS | c0d0e5 | 87 | [SRC-2C8F288796-L000087](../web/workspace.html#L87) |
+| [web/workspace.html](../web/workspace.html#L91) | محدد class في CSS | form-grid | 91 | [SRC-2C8F288796-L000091](../web/workspace.html#L91) |
+| [web/workspace.html](../web/workspace.html#L92) | محدد class في CSS | form-actions | 92 | [SRC-2C8F288796-L000092](../web/workspace.html#L92) |
+| [web/workspace.html](../web/workspace.html#L93) | محدد class في CSS | analysis-result | 93 | [SRC-2C8F288796-L000093](../web/workspace.html#L93) |
+| [web/workspace.html](../web/workspace.html#L94) | محدد class في CSS | analysis-score | 94 | [SRC-2C8F288796-L000094](../web/workspace.html#L94) |
+| [web/workspace.html](../web/workspace.html#L95) | محدد class في CSS | disclaimer | 95 | [SRC-2C8F288796-L000095](../web/workspace.html#L95) |
+| [web/workspace.html](../web/workspace.html#L95) | محدد id في CSS | b0bdce | 95 | [SRC-2C8F288796-L000095](../web/workspace.html#L95) |
+| [web/workspace.html](../web/workspace.html#L96) | محدد class في CSS | pipeline | 96 | [SRC-2C8F288796-L000096](../web/workspace.html#L96) |
+| [web/workspace.html](../web/workspace.html#L97) | محدد class في CSS | pipeline-col | 97 | [SRC-2C8F288796-L000097](../web/workspace.html#L97) |
+| [web/workspace.html](../web/workspace.html#L99) | محدد class في CSS | pipeline-item | 99 | [SRC-2C8F288796-L000099](../web/workspace.html#L99) |
+| [web/workspace.html](../web/workspace.html#L101) | محدد class في CSS | detail | 101 | [SRC-2C8F288796-L000101](../web/workspace.html#L101) |
+| [web/workspace.html](../web/workspace.html#L103) | محدد class في CSS | detail-panel | 103 | [SRC-2C8F288796-L000103](../web/workspace.html#L103) |
+| [web/workspace.html](../web/workspace.html#L104) | محدد class في CSS | detail-head | 104 | [SRC-2C8F288796-L000104](../web/workspace.html#L104) |
+| [web/workspace.html](../web/workspace.html#L106) | محدد class في CSS | detail-body | 106 | [SRC-2C8F288796-L000106](../web/workspace.html#L106) |
+| [web/workspace.html](../web/workspace.html#L106) | محدد id في CSS | d7e4f4 | 106 | [SRC-2C8F288796-L000106](../web/workspace.html#L106) |
+| [web/workspace.html](../web/workspace.html#L110) | محدد class في CSS | module-placeholder | 110 | [SRC-2C8F288796-L000110](../web/workspace.html#L110) |
+| [web/workspace.html](../web/workspace.html#L113) | محدد class في CSS | module-list | 113 | [SRC-2C8F288796-L000113](../web/workspace.html#L113) |
+| [web/workspace.html](../web/workspace.html#L114) | محدد class في CSS | module-step | 114 | [SRC-2C8F288796-L000114](../web/workspace.html#L114) |
+| [web/workspace.html](../web/workspace.html#L114) | محدد id في CSS | b9cbe0 | 114 | [SRC-2C8F288796-L000114](../web/workspace.html#L114) |
+| [web/workspace.html](../web/workspace.html#L115) | محدد class في CSS | footer | 115 | [SRC-2C8F288796-L000115](../web/workspace.html#L115) |
+| [web/workspace.html](../web/workspace.html#L116) | محدد class في CSS | auth-gate | 116 | [SRC-2C8F288796-L000116](../web/workspace.html#L116) |
+| [web/workspace.html](../web/workspace.html#L118) | محدد class في CSS | auth-card | 118 | [SRC-2C8F288796-L000118](../web/workspace.html#L118) |
+| [web/workspace.html](../web/workspace.html#L121) | محدد class في CSS | auth-error | 121 | [SRC-2C8F288796-L000121](../web/workspace.html#L121) |
+| [web/workspace.html](../web/workspace.html#L122) | محدد class في CSS | mobile-brand | 122 | [SRC-2C8F288796-L000122](../web/workspace.html#L122) |
+| [web/workspace.html](../web/workspace.html#L128) | محدد id في CSS | e7f7ff | 128 | [SRC-2C8F288796-L000128](../web/workspace.html#L128) |
+| [web/workspace.html](../web/workspace.html#L128) | محدد id في CSS | f4cc83 | 128 | [SRC-2C8F288796-L000128](../web/workspace.html#L128) |
+| [web/workspace.html](../web/workspace.html#L128) | محدد id في CSS | ff899b | 128 | [SRC-2C8F288796-L000128](../web/workspace.html#L128) |
+| [web/workspace.html](../web/workspace.html#L128) | محدد id في CSS | ff9caa | 128 | [SRC-2C8F288796-L000128](../web/workspace.html#L128) |
+| [web/workspace.html](../web/workspace.html#L137) | محدد id في CSS | a1b4ff | 137 | [SRC-2C8F288796-L000137](../web/workspace.html#L137) |
+| [web/workspace.html](../web/workspace.html#L189) | قيمة سمة HTML (id) | mainNav | 189 | [SRC-2C8F288796-L000189](../web/workspace.html#L189) |
+| [web/workspace.html](../web/workspace.html#L191) | قيمة سمة HTML (id) | apiDot | 191 | [SRC-2C8F288796-L000191](../web/workspace.html#L191) |
+| [web/workspace.html](../web/workspace.html#L191) | قيمة سمة HTML (id) | apiStatus | 191 | [SRC-2C8F288796-L000191](../web/workspace.html#L191) |
+| [web/workspace.html](../web/workspace.html#L191) | قيمة سمة HTML (id) | apiStatusNote | 191 | [SRC-2C8F288796-L000191](../web/workspace.html#L191) |
+| [web/workspace.html](../web/workspace.html#L192) | قيمة سمة HTML (id) | roleSummary | 192 | [SRC-2C8F288796-L000192](../web/workspace.html#L192) |
+| [web/workspace.html](../web/workspace.html#L193) | مسار API/واجهة محتمل | /leads | 193 | [SRC-2C8F288796-L000193](../web/workspace.html#L193) |
+| [web/workspace.html](../web/workspace.html#L198) | قيمة سمة HTML (id) | crumb | 198 | [SRC-2C8F288796-L000198](../web/workspace.html#L198) |
+| [web/workspace.html](../web/workspace.html#L199) | قيمة سمة HTML (id) | addSignalTop | 199 | [SRC-2C8F288796-L000199](../web/workspace.html#L199) |
+| [web/workspace.html](../web/workspace.html#L199) | قيمة سمة HTML (id) | logoutButton | 199 | [SRC-2C8F288796-L000199](../web/workspace.html#L199) |
+| [web/workspace.html](../web/workspace.html#L199) | قيمة سمة HTML (id) | rolePill | 199 | [SRC-2C8F288796-L000199](../web/workspace.html#L199) |
+| [web/workspace.html](../web/workspace.html#L201) | قيمة سمة HTML (id) | pageDescription | 201 | [SRC-2C8F288796-L000201](../web/workspace.html#L201) |
+| [web/workspace.html](../web/workspace.html#L201) | قيمة سمة HTML (id) | pageEyebrow | 201 | [SRC-2C8F288796-L000201](../web/workspace.html#L201) |
+| [web/workspace.html](../web/workspace.html#L201) | قيمة سمة HTML (id) | pageTitle | 201 | [SRC-2C8F288796-L000201](../web/workspace.html#L201) |
+| [web/workspace.html](../web/workspace.html#L202) | قيمة سمة HTML (id) | viewRoot | 202 | [SRC-2C8F288796-L000202](../web/workspace.html#L202) |
+| [web/workspace.html](../web/workspace.html#L207) | قيمة سمة HTML (id) | detailDrawer | 207 | [SRC-2C8F288796-L000207](../web/workspace.html#L207) |
+| [web/workspace.html](../web/workspace.html#L208) | قيمة سمة HTML (id) | closeDetail | 208 | [SRC-2C8F288796-L000208](../web/workspace.html#L208) |
+| [web/workspace.html](../web/workspace.html#L208) | قيمة سمة HTML (id) | detailBody | 208 | [SRC-2C8F288796-L000208](../web/workspace.html#L208) |
+| [web/workspace.html](../web/workspace.html#L208) | قيمة سمة HTML (id) | detailTitle | 208 | [SRC-2C8F288796-L000208](../web/workspace.html#L208) |
+| [web/workspace.html](../web/workspace.html#L210) | قيمة سمة HTML (id) | authGate | 210 | [SRC-2C8F288796-L000210](../web/workspace.html#L210) |
+| [web/workspace.html](../web/workspace.html#L215) | قيمة سمة HTML (id) | loginForm | 215 | [SRC-2C8F288796-L000215](../web/workspace.html#L215) |
+| [web/workspace.html](../web/workspace.html#L216) | قيمة سمة HTML (id) | accessToken | 216 | [SRC-2C8F288796-L000216](../web/workspace.html#L216) |
+| [web/workspace.html](../web/workspace.html#L217) | قيمة سمة HTML (id) | loginButton | 217 | [SRC-2C8F288796-L000217](../web/workspace.html#L217) |
+| [web/workspace.html](../web/workspace.html#L218) | قيمة سمة HTML (id) | authError | 218 | [SRC-2C8F288796-L000218](../web/workspace.html#L218) |
+| [web/workspace.html](../web/workspace.html#L227) | دالة JavaScript/TypeScript | $ | 227 | [SRC-2C8F288796-L000227](../web/workspace.html#L227) |
+| [web/workspace.html](../web/workspace.html#L228) | متغير JavaScript/TypeScript | state | 228 | [SRC-2C8F288796-L000228](../web/workspace.html#L228) |
+| [web/workspace.html](../web/workspace.html#L229) | متغير JavaScript/TypeScript | statuses | 229 | [SRC-2C8F288796-L000229](../web/workspace.html#L229) |
+| [web/workspace.html](../web/workspace.html#L237) | متغير JavaScript/TypeScript | labels | 237 | [SRC-2C8F288796-L000237](../web/workspace.html#L237) |
+| [web/workspace.html](../web/workspace.html#L238) | متغير JavaScript/TypeScript | menu | 238 | [SRC-2C8F288796-L000238](../web/workspace.html#L238) |
+| [web/workspace.html](../web/workspace.html#L256) | دالة JavaScript/TypeScript | make | 256 | [SRC-2C8F288796-L000256](../web/workspace.html#L256) |
+| [web/workspace.html](../web/workspace.html#L257) | متغير JavaScript/TypeScript | node | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
+| [web/workspace.html](../web/workspace.html#L262) | دالة JavaScript/TypeScript | action | 262 | [SRC-2C8F288796-L000262](../web/workspace.html#L262) |
+| [web/workspace.html](../web/workspace.html#L263) | متغير JavaScript/TypeScript | b | 263 | [SRC-2C8F288796-L000263](../web/workspace.html#L263) |
+| [web/workspace.html](../web/workspace.html#L266) | دالة JavaScript/TypeScript | safeHttp | 266 | [SRC-2C8F288796-L000266](../web/workspace.html#L266) |
+| [web/workspace.html](../web/workspace.html#L267) | متغير JavaScript/TypeScript | u | 267 | [SRC-2C8F288796-L000267](../web/workspace.html#L267) |
+| [web/workspace.html](../web/workspace.html#L269) | دالة JavaScript/TypeScript | escapeMessage | 269 | [SRC-2C8F288796-L000269](../web/workspace.html#L269) |
+| [web/workspace.html](../web/workspace.html#L270) | دالة JavaScript/TypeScript | api | 270 | [SRC-2C8F288796-L000270](../web/workspace.html#L270) |
+| [web/workspace.html](../web/workspace.html#L271) | متغير JavaScript/TypeScript | opts | 271 | [SRC-2C8F288796-L000271](../web/workspace.html#L271) |
+| [web/workspace.html](../web/workspace.html#L272) | متغير JavaScript/TypeScript | headers | 272 | [SRC-2C8F288796-L000272](../web/workspace.html#L272) |
+| [web/workspace.html](../web/workspace.html#L274) | متغير JavaScript/TypeScript | response | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
+| [web/workspace.html](../web/workspace.html#L275) | متغير JavaScript/TypeScript | data | 275 | [SRC-2C8F288796-L000275](../web/workspace.html#L275) |
+| [web/workspace.html](../web/workspace.html#L281) | دالة JavaScript/TypeScript | showAuth | 281 | [SRC-2C8F288796-L000281](../web/workspace.html#L281) |
+| [web/workspace.html](../web/workspace.html#L286) | دالة JavaScript/TypeScript | hideAuth | 286 | [SRC-2C8F288796-L000286](../web/workspace.html#L286) |
+| [web/workspace.html](../web/workspace.html#L287) | دالة JavaScript/TypeScript | statusLabel | 287 | [SRC-2C8F288796-L000287](../web/workspace.html#L287) |
+| [web/workspace.html](../web/workspace.html#L287) | متغير JavaScript/TypeScript | item | 287 | [SRC-2C8F288796-L000287](../web/workspace.html#L287) |
+| [web/workspace.html](../web/workspace.html#L288) | دالة JavaScript/TypeScript | tag | 288 | [SRC-2C8F288796-L000288](../web/workspace.html#L288) |
+| [web/workspace.html](../web/workspace.html#L289) | دالة JavaScript/TypeScript | setPage | 289 | [SRC-2C8F288796-L000289](../web/workspace.html#L289) |
+| [web/workspace.html](../web/workspace.html#L293) | دالة JavaScript/TypeScript | renderNav | 293 | [SRC-2C8F288796-L000293](../web/workspace.html#L293) |
+| [web/workspace.html](../web/workspace.html#L294) | متغير JavaScript/TypeScript | nav | 294 | [SRC-2C8F288796-L000294](../web/workspace.html#L294) |
+| [web/workspace.html](../web/workspace.html#L298) | متغير JavaScript/TypeScript | icon | 298 | [SRC-2C8F288796-L000298](../web/workspace.html#L298) |
+| [web/workspace.html](../web/workspace.html#L298) | متغير JavaScript/TypeScript | name | 298 | [SRC-2C8F288796-L000298](../web/workspace.html#L298) |
+| [web/workspace.html](../web/workspace.html#L306) | دالة JavaScript/TypeScript | setConnection | 306 | [SRC-2C8F288796-L000306](../web/workspace.html#L306) |
+| [web/workspace.html](../web/workspace.html#L309) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 309 | [SRC-2C8F288796-L000309](../web/workspace.html#L309) |
+| [web/workspace.html](../web/workspace.html#L309) | متغير JavaScript/TypeScript | WRITE_ROLES | 309 | [SRC-2C8F288796-L000309](../web/workspace.html#L309) |
+| [web/workspace.html](../web/workspace.html#L310) | دالة JavaScript/TypeScript | canWrite | 310 | [SRC-2C8F288796-L000310](../web/workspace.html#L310) |
+| [web/workspace.html](../web/workspace.html#L311) | دالة JavaScript/TypeScript | countByStatus | 311 | [SRC-2C8F288796-L000311](../web/workspace.html#L311) |
+| [web/workspace.html](../web/workspace.html#L312) | دالة JavaScript/TypeScript | buildStat | 312 | [SRC-2C8F288796-L000312](../web/workspace.html#L312) |
+| [web/workspace.html](../web/workspace.html#L313) | متغير JavaScript/TypeScript | card | 313 | [SRC-2C8F288796-L000313](../web/workspace.html#L313) |
+| [web/workspace.html](../web/workspace.html#L316) | دالة JavaScript/TypeScript | renderOverview | 316 | [SRC-2C8F288796-L000316](../web/workspace.html#L316) |
+| [web/workspace.html](../web/workspace.html#L318) | متغير JavaScript/TypeScript | root | 318 | [SRC-2C8F288796-L000318](../web/workspace.html#L318) |
+| [web/workspace.html](../web/workspace.html#L319) | متغير JavaScript/TypeScript | qualified | 319 | [SRC-2C8F288796-L000319](../web/workspace.html#L319) |
+| [web/workspace.html](../web/workspace.html#L320) | متغير JavaScript/TypeScript | strong | 320 | [SRC-2C8F288796-L000320](../web/workspace.html#L320) |
+| [web/workspace.html](../web/workspace.html#L321) | متغير JavaScript/TypeScript | review | 321 | [SRC-2C8F288796-L000321](../web/workspace.html#L321) |
+| [web/workspace.html](../web/workspace.html#L322) | متغير JavaScript/TypeScript | stats | 322 | [SRC-2C8F288796-L000322](../web/workspace.html#L322) |
+| [web/workspace.html](../web/workspace.html#L328) | متغير JavaScript/TypeScript | grid | 328 | [SRC-2C8F288796-L000328](../web/workspace.html#L328) |
+| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | h | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
+| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | head | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
+| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | recent | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
+| [web/workspace.html](../web/workspace.html#L330) | متغير JavaScript/TypeScript | list | 330 | [SRC-2C8F288796-L000330](../web/workspace.html#L330) |
+| [web/workspace.html](../web/workspace.html#L331) | متغير JavaScript/TypeScript | rows | 331 | [SRC-2C8F288796-L000331](../web/workspace.html#L331) |
+| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | dh | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
+| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | distribution | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
+| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | dtitle | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
+| [web/workspace.html](../web/workspace.html#L336) | متغير JavaScript/TypeScript | bars | 336 | [SRC-2C8F288796-L000336](../web/workspace.html#L336) |
+| [web/workspace.html](../web/workspace.html#L336) | متغير JavaScript/TypeScript | groups | 336 | [SRC-2C8F288796-L000336](../web/workspace.html#L336) |
+| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | fill | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
+| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | n | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
+| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | percent | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
+| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | row | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
+| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | track | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
+| [web/workspace.html](../web/workspace.html#L341) | دالة JavaScript/TypeScript | emptyState | 341 | [SRC-2C8F288796-L000341](../web/workspace.html#L341) |
+| [web/workspace.html](../web/workspace.html#L342) | متغير JavaScript/TypeScript | box | 342 | [SRC-2C8F288796-L000342](../web/workspace.html#L342) |
+| [web/workspace.html](../web/workspace.html#L344) | دالة JavaScript/TypeScript | signalCard | 344 | [SRC-2C8F288796-L000344](../web/workspace.html#L344) |
+| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | left | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
+| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | top | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
+| [web/workspace.html](../web/workspace.html#L347) | متغير JavaScript/TypeScript | assessment | 347 | [SRC-2C8F288796-L000347](../web/workspace.html#L347) |
+| [web/workspace.html](../web/workspace.html#L350) | متغير JavaScript/TypeScript | text | 350 | [SRC-2C8F288796-L000350](../web/workspace.html#L350) |
+| [web/workspace.html](../web/workspace.html#L351) | متغير JavaScript/TypeScript | meta | 351 | [SRC-2C8F288796-L000351](../web/workspace.html#L351) |
+| [web/workspace.html](../web/workspace.html#L353) | متغير JavaScript/TypeScript | source | 353 | [SRC-2C8F288796-L000353](../web/workspace.html#L353) |
+| [web/workspace.html](../web/workspace.html#L355) | متغير JavaScript/TypeScript | actions | 355 | [SRC-2C8F288796-L000355](../web/workspace.html#L355) |
+| [web/workspace.html](../web/workspace.html#L360) | دالة JavaScript/TypeScript | openDetails | 360 | [SRC-2C8F288796-L000360](../web/workspace.html#L360) |
+| [web/workspace.html](../web/workspace.html#L361) | متغير JavaScript/TypeScript | body | 361 | [SRC-2C8F288796-L000361](../web/workspace.html#L361) |
+| [web/workspace.html](../web/workspace.html#L362) | متغير JavaScript/TypeScript | a | 362 | [SRC-2C8F288796-L000362](../web/workspace.html#L362) |
+| [web/workspace.html](../web/workspace.html#L365) | متغير JavaScript/TypeScript | url | 365 | [SRC-2C8F288796-L000365](../web/workspace.html#L365) |
+| [web/workspace.html](../web/workspace.html#L366) | متغير JavaScript/TypeScript | link | 366 | [SRC-2C8F288796-L000366](../web/workspace.html#L366) |
+| [web/workspace.html](../web/workspace.html#L372) | متغير JavaScript/TypeScript | ul | 372 | [SRC-2C8F288796-L000372](../web/workspace.html#L372) |
+| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | select | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
+| [web/workspace.html](../web/workspace.html#L378) | متغير JavaScript/TypeScript | o | 378 | [SRC-2C8F288796-L000378](../web/workspace.html#L378) |
+| [web/workspace.html](../web/workspace.html#L379) | متغير JavaScript/TypeScript | save | 379 | [SRC-2C8F288796-L000379](../web/workspace.html#L379) |
+| [web/workspace.html](../web/workspace.html#L379) | مسار API/واجهة محتمل | /api/leads/ | 379 | [SRC-2C8F288796-L000379](../web/workspace.html#L379) |
+| [web/workspace.html](../web/workspace.html#L384) | دالة JavaScript/TypeScript | closeDetails | 384 | [SRC-2C8F288796-L000384](../web/workspace.html#L384) |
+| [web/workspace.html](../web/workspace.html#L385) | دالة JavaScript/TypeScript | renderSignals | 385 | [SRC-2C8F288796-L000385](../web/workspace.html#L385) |
+| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | panel | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
+| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | ph | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
+| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | ptitle | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
+| [web/workspace.html](../web/workspace.html#L390) | متغير JavaScript/TypeScript | search | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
+| [web/workspace.html](../web/workspace.html#L390) | متغير JavaScript/TypeScript | toolbar | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
+| [web/workspace.html](../web/workspace.html#L392) | متغير JavaScript/TypeScript | all | 392 | [SRC-2C8F288796-L000392](../web/workspace.html#L392) |
+| [web/workspace.html](../web/workspace.html#L392) | متغير JavaScript/TypeScript | filter | 392 | [SRC-2C8F288796-L000392](../web/workspace.html#L392) |
+| [web/workspace.html](../web/workspace.html#L400) | دالة JavaScript/TypeScript | drawSignalRows | 400 | [SRC-2C8F288796-L000400](../web/workspace.html#L400) |
+| [web/workspace.html](../web/workspace.html#L402) | متغير JavaScript/TypeScript | query | 402 | [SRC-2C8F288796-L000402](../web/workspace.html#L402) |
+| [web/workspace.html](../web/workspace.html#L407) | دالة JavaScript/TypeScript | createSignalForm | 407 | [SRC-2C8F288796-L000407](../web/workspace.html#L407) |
+| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | title | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
+| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | wrapper | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
+| [web/workspace.html](../web/workspace.html#L409) | قيمة سمة HTML (id) | newSignalText | 409 | [SRC-2C8F288796-L000409](../web/workspace.html#L409) |
+| [web/workspace.html](../web/workspace.html#L410) | قيمة سمة HTML (id) | newSignalUrl | 410 | [SRC-2C8F288796-L000410](../web/workspace.html#L410) |
+| [web/workspace.html](../web/workspace.html#L412) | قيمة سمة HTML (id) | newSignalPlatform | 412 | [SRC-2C8F288796-L000412](../web/workspace.html#L412) |
+| [web/workspace.html](../web/workspace.html#L412) | متغير JavaScript/TypeScript | platform | 412 | [SRC-2C8F288796-L000412](../web/workspace.html#L412) |
+| [web/workspace.html](../web/workspace.html#L413) | قيمة سمة HTML (id) | newSignalProduct | 413 | [SRC-2C8F288796-L000413](../web/workspace.html#L413) |
+| [web/workspace.html](../web/workspace.html#L413) | متغير JavaScript/TypeScript | product | 413 | [SRC-2C8F288796-L000413](../web/workspace.html#L413) |
+| [web/workspace.html](../web/workspace.html#L414) | قيمة سمة HTML (id) | newSignalLocation | 414 | [SRC-2C8F288796-L000414](../web/workspace.html#L414) |
+| [web/workspace.html](../web/workspace.html#L414) | متغير JavaScript/TypeScript | location | 414 | [SRC-2C8F288796-L000414](../web/workspace.html#L414) |
+| [web/workspace.html](../web/workspace.html#L415) | قيمة سمة HTML (id) | newSignalNote | 415 | [SRC-2C8F288796-L000415](../web/workspace.html#L415) |
+| [web/workspace.html](../web/workspace.html#L415) | متغير JavaScript/TypeScript | note | 415 | [SRC-2C8F288796-L000415](../web/workspace.html#L415) |
+| [web/workspace.html](../web/workspace.html#L416) | متغير JavaScript/TypeScript | fields | 416 | [SRC-2C8F288796-L000416](../web/workspace.html#L416) |
+| [web/workspace.html](../web/workspace.html#L417) | متغير JavaScript/TypeScript | field | 417 | [SRC-2C8F288796-L000417](../web/workspace.html#L417) |
+| [web/workspace.html](../web/workspace.html#L419) | قيمة سمة HTML (id) | analysisResult | 419 | [SRC-2C8F288796-L000419](../web/workspace.html#L419) |
+| [web/workspace.html](../web/workspace.html#L419) | متغير JavaScript/TypeScript | result | 419 | [SRC-2C8F288796-L000419](../web/workspace.html#L419) |
+| [web/workspace.html](../web/workspace.html#L420) | متغير JavaScript/TypeScript | buttons | 420 | [SRC-2C8F288796-L000420](../web/workspace.html#L420) |
+| [web/workspace.html](../web/workspace.html#L421) | متغير JavaScript/TypeScript | analyze | 421 | [SRC-2C8F288796-L000421](../web/workspace.html#L421) |
+| [web/workspace.html](../web/workspace.html#L426) | متغير JavaScript/TypeScript | product_terms | 426 | [SRC-2C8F288796-L000426](../web/workspace.html#L426) |
+| [web/workspace.html](../web/workspace.html#L427) | متغير JavaScript/TypeScript | location_terms | 427 | [SRC-2C8F288796-L000427](../web/workspace.html#L427) |
+| [web/workspace.html](../web/workspace.html#L428) | مسار API/واجهة محتمل | /api/analyze | 428 | [SRC-2C8F288796-L000428](../web/workspace.html#L428) |
+| [web/workspace.html](../web/workspace.html#L446) | مسار API/واجهة محتمل | /api/leads | 446 | [SRC-2C8F288796-L000446](../web/workspace.html#L446) |
+| [web/workspace.html](../web/workspace.html#L454) | دالة JavaScript/TypeScript | renderPipeline | 454 | [SRC-2C8F288796-L000454](../web/workspace.html#L454) |
+| [web/workspace.html](../web/workspace.html#L458) | متغير JavaScript/TypeScript | board | 458 | [SRC-2C8F288796-L000458](../web/workspace.html#L458) |
+| [web/workspace.html](../web/workspace.html#L459) | متغير JavaScript/TypeScript | col | 459 | [SRC-2C8F288796-L000459](../web/workspace.html#L459) |
+| [web/workspace.html](../web/workspace.html#L462) | دالة JavaScript/TypeScript | renderSystem | 462 | [SRC-2C8F288796-L000462](../web/workspace.html#L462) |
+| [web/workspace.html](../web/workspace.html#L466) | مسار API/واجهة محتمل | /api/health | 466 | [SRC-2C8F288796-L000466](../web/workspace.html#L466) |
+| [web/workspace.html](../web/workspace.html#L467) | متغير JavaScript/TypeScript | agent | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
+| [web/workspace.html](../web/workspace.html#L467) | متغير JavaScript/TypeScript | build | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
+| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | mh | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
+| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | models | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
+| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | mt | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
+| [web/workspace.html](../web/workspace.html#L482) | متغير JavaScript/TypeScript | providers | 482 | [SRC-2C8F288796-L000482](../web/workspace.html#L482) |
+| [web/workspace.html](../web/workspace.html#L494) | متغير JavaScript/TypeScript | sh | 494 | [SRC-2C8F288796-L000494](../web/workspace.html#L494) |
+| [web/workspace.html](../web/workspace.html#L494) | متغير JavaScript/TypeScript | st | 494 | [SRC-2C8F288796-L000494](../web/workspace.html#L494) |
+| [web/workspace.html](../web/workspace.html#L497) | متغير JavaScript/TypeScript | flags | 497 | [SRC-2C8F288796-L000497](../web/workspace.html#L497) |
+| [web/workspace.html](../web/workspace.html#L508) | دالة JavaScript/TypeScript | renderPlaceholder | 508 | [SRC-2C8F288796-L000508](../web/workspace.html#L508) |
+| [web/workspace.html](../web/workspace.html#L518) | متغير JavaScript/TypeScript | links | 518 | [SRC-2C8F288796-L000518](../web/workspace.html#L518) |
+| [web/workspace.html](../web/workspace.html#L521) | دالة JavaScript/TypeScript | renderCurrent | 521 | [SRC-2C8F288796-L000521](../web/workspace.html#L521) |
+| [web/workspace.html](../web/workspace.html#L529) | دالة JavaScript/TypeScript | navigate | 529 | [SRC-2C8F288796-L000529](../web/workspace.html#L529) |
+| [web/workspace.html](../web/workspace.html#L532) | دالة JavaScript/TypeScript | loadLeads | 532 | [SRC-2C8F288796-L000532](../web/workspace.html#L532) |
+| [web/workspace.html](../web/workspace.html#L536) | دالة JavaScript/TypeScript | bootstrap | 536 | [SRC-2C8F288796-L000536](../web/workspace.html#L536) |
+| [web/workspace.html](../web/workspace.html#L538) | متغير JavaScript/TypeScript | session | 538 | [SRC-2C8F288796-L000538](../web/workspace.html#L538) |
+| [web/workspace.html](../web/workspace.html#L538) | مسار API/واجهة محتمل | /api/session | 538 | [SRC-2C8F288796-L000538](../web/workspace.html#L538) |
+| [web/workspace.html](../web/workspace.html#L553) | متغير JavaScript/TypeScript | button | 553 | [SRC-2C8F288796-L000553](../web/workspace.html#L553) |
+| [web/workspace.html](../web/workspace.html#L553) | متغير JavaScript/TypeScript | token | 553 | [SRC-2C8F288796-L000553](../web/workspace.html#L553) |
+| [web/workspace.html](../web/workspace.html#L562) | مسار API/واجهة محتمل | /api/session/logout | 562 | [SRC-2C8F288796-L000562](../web/workspace.html#L562) |
 
 ## سجل وسوم المراجعة والإصلاح
 
