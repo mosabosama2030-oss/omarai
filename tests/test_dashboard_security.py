@@ -95,10 +95,10 @@ def test_workspace_does_not_clear_local_session_state_when_server_logout_fails()
 def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
-    match = re.search(r"const menu=\\[(.*?)\\n\\];", html, re.DOTALL)
+    match = re.search(r"const menu=\[(.*?)\n\];", html, re.DOTALL)
     assert match is not None
     entries = re.findall(
-        r'\\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\\}',
+        r'\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\}',
         match.group(1),
     )
     assert len(entries) == 16
