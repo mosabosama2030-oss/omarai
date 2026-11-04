@@ -557,7 +557,12 @@ $("loginForm").addEventListener("submit",async event=>{
  finally{button.disabled=false}
 });
 $("logoutButton").addEventListener("click",async()=>{
- try{await api("/api/session/logout",{method:"POST",body:{}})}catch(_e){}
+ try{
+  await api("/api/session/logout",{method:"POST",body:{}});
+ }catch(e){
+  alert("تعذر تسجيل الخروج من الخادم؛ لم يتم تغيير حالة الجلسة في الواجهة. "+escapeMessage(e.message));
+  return;
+ }
  state.role=null;state.leads=[];state.activeView="overview";showAuth("تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.");setConnection(false,"غير متصل","سجّل الدخول لعرض السجلات.");
 });
 $("addSignalTop").addEventListener("click",()=>navigate("signals"));
