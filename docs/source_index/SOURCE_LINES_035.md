@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000360 إلى SRC-4FFD5AFC54-L000654
+- النطاق: SRC-A8360B1B03-L000315 إلى SRC-4FFD5AFC54-L000609
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000315](../../scripts/hosted_smoke_test.py#L315) | 315 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
+| [SRC-A8360B1B03-L000316](../../scripts/hosted_smoke_test.py#L316) | 316 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000317](../../scripts/hosted_smoke_test.py#L317) | 317 | `"            \"Agent request did not confirm that a language model was used.\","` | — |
+| [SRC-A8360B1B03-L000318](../../scripts/hosted_smoke_test.py#L318) | 318 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000319](../../scripts/hosted_smoke_test.py#L319) | 319 | `"        )"` | — |
+| [SRC-A8360B1B03-L000320](../../scripts/hosted_smoke_test.py#L320) | 320 | `"    request_budget = answer.get(\"request_budget\")"` | — |
+| [SRC-A8360B1B03-L000321](../../scripts/hosted_smoke_test.py#L321) | 321 | `"    if not isinstance(request_budget, dict) or request_budget.get(\"profile\") != \"hosted_smoke\":"` | — |
+| [SRC-A8360B1B03-L000322](../../scripts/hosted_smoke_test.py#L322) | 322 | `"        raise SmokeError(\"Agent response did not confirm the hosted_smoke request budget profile.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000323](../../scripts/hosted_smoke_test.py#L323) | 323 | `"    budget_limits = request_budget.get(\"limits\")"` | — |
+| [SRC-A8360B1B03-L000324](../../scripts/hosted_smoke_test.py#L324) | 324 | `"    budget_counts = request_budget.get(\"counts\")"` | — |
+| [SRC-A8360B1B03-L000325](../../scripts/hosted_smoke_test.py#L325) | 325 | `"    if not isinstance(budget_limits, dict) or not isinstance(budget_counts, dict):"` | — |
+| [SRC-A8360B1B03-L000326](../../scripts/hosted_smoke_test.py#L326) | 326 | `"        raise SmokeError(\"Agent response omitted request-budget limits or counters.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000327](../../scripts/hosted_smoke_test.py#L327) | 327 | `"    for resource, maximum in HOSTED_SMOKE_BUDGET_MAX.items():"` | — |
+| [SRC-A8360B1B03-L000328](../../scripts/hosted_smoke_test.py#L328) | 328 | `"        limit = budget_limits.get(resource)"` | — |
+| [SRC-A8360B1B03-L000329](../../scripts/hosted_smoke_test.py#L329) | 329 | `"        count = budget_counts.get(resource)"` | — |
+| [SRC-A8360B1B03-L000330](../../scripts/hosted_smoke_test.py#L330) | 330 | `"        if ("` | — |
+| [SRC-A8360B1B03-L000331](../../scripts/hosted_smoke_test.py#L331) | 331 | `"            isinstance(limit, bool) or not isinstance(limit, int)"` | — |
+| [SRC-A8360B1B03-L000332](../../scripts/hosted_smoke_test.py#L332) | 332 | `"            or isinstance(count, bool) or not isinstance(count, int)"` | — |
+| [SRC-A8360B1B03-L000333](../../scripts/hosted_smoke_test.py#L333) | 333 | `"            or limit < 0 or limit > maximum"` | — |
+| [SRC-A8360B1B03-L000334](../../scripts/hosted_smoke_test.py#L334) | 334 | `"            or count < 0 or count > limit"` | — |
+| [SRC-A8360B1B03-L000335](../../scripts/hosted_smoke_test.py#L335) | 335 | `"        ):"` | — |
+| [SRC-A8360B1B03-L000336](../../scripts/hosted_smoke_test.py#L336) | 336 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000337](../../scripts/hosted_smoke_test.py#L337) | 337 | `"                f\"Agent hosted_smoke request budget is missing, exceeded, or invalid for {resource}.\","` | — |
+| [SRC-A8360B1B03-L000338](../../scripts/hosted_smoke_test.py#L338) | 338 | `"                partial_report,"` | — |
+| [SRC-A8360B1B03-L000339](../../scripts/hosted_smoke_test.py#L339) | 339 | `"            )"` | — |
+| [SRC-A8360B1B03-L000340](../../scripts/hosted_smoke_test.py#L340) | 340 | `"    if ("` | — |
+| [SRC-A8360B1B03-L000341](../../scripts/hosted_smoke_test.py#L341) | 341 | `"        budget_counts[\"search_queries\"] < 1"` | — |
+| [SRC-A8360B1B03-L000342](../../scripts/hosted_smoke_test.py#L342) | 342 | `"        or budget_counts[\"search_calls\"] < 1"` | — |
+| [SRC-A8360B1B03-L000343](../../scripts/hosted_smoke_test.py#L343) | 343 | `"        or budget_counts[\"model_calls\"] < 1"` | — |
+| [SRC-A8360B1B03-L000344](../../scripts/hosted_smoke_test.py#L344) | 344 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000345](../../scripts/hosted_smoke_test.py#L345) | 345 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000346](../../scripts/hosted_smoke_test.py#L346) | 346 | `"            \"Agent hosted_smoke request budget counters do not prove search and model work occurred.\","` | — |
+| [SRC-A8360B1B03-L000347](../../scripts/hosted_smoke_test.py#L347) | 347 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000348](../../scripts/hosted_smoke_test.py#L348) | 348 | `"        )"` | — |
+| [SRC-A8360B1B03-L000349](../../scripts/hosted_smoke_test.py#L349) | 349 | `"    budget_timeout = request_budget.get(\"timeout_seconds\")"` | — |
+| [SRC-A8360B1B03-L000350](../../scripts/hosted_smoke_test.py#L350) | 350 | `"    if ("` | — |
+| [SRC-A8360B1B03-L000351](../../scripts/hosted_smoke_test.py#L351) | 351 | `"        isinstance(budget_timeout, bool)"` | — |
+| [SRC-A8360B1B03-L000352](../../scripts/hosted_smoke_test.py#L352) | 352 | `"        or not isinstance(budget_timeout, (int, float))"` | — |
+| [SRC-A8360B1B03-L000353](../../scripts/hosted_smoke_test.py#L353) | 353 | `"        or budget_timeout <= 0"` | — |
+| [SRC-A8360B1B03-L000354](../../scripts/hosted_smoke_test.py#L354) | 354 | `"        or budget_timeout > 75"` | — |
+| [SRC-A8360B1B03-L000355](../../scripts/hosted_smoke_test.py#L355) | 355 | `"        or request_budget.get(\"budget_exhausted\") is not False"` | — |
+| [SRC-A8360B1B03-L000356](../../scripts/hosted_smoke_test.py#L356) | 356 | `"        or request_budget.get(\"deadline_exceeded\") is not False"` | — |
+| [SRC-A8360B1B03-L000357](../../scripts/hosted_smoke_test.py#L357) | 357 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000358](../../scripts/hosted_smoke_test.py#L358) | 358 | `"        raise SmokeError(\"Agent hosted_smoke request budget was exhausted or exceeded its timeout ceiling.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000359](../../scripts/hosted_smoke_test.py#L359) | 359 | `"    checks[\"request_budget\"] = {"` | — |
 | [SRC-A8360B1B03-L000360](../../scripts/hosted_smoke_test.py#L360) | 360 | `"        \"status\": \"passed\","` | — |
 | [SRC-A8360B1B03-L000361](../../scripts/hosted_smoke_test.py#L361) | 361 | `"        \"profile\": \"hosted_smoke\","` | — |
 | [SRC-A8360B1B03-L000362](../../scripts/hosted_smoke_test.py#L362) | 362 | `"        \"timeout_seconds\": budget_timeout,"` | — |
@@ -780,48 +825,3 @@
 | [SRC-4FFD5AFC54-L000607](../../scripts/run_answer_quality_benchmark.py#L607) | 607 | `"            \"benchmark_version\": data.get(\"version\"),"` | — |
 | [SRC-4FFD5AFC54-L000608](../../scripts/run_answer_quality_benchmark.py#L608) | 608 | `"            \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
 | [SRC-4FFD5AFC54-L000609](../../scripts/run_answer_quality_benchmark.py#L609) | 609 | `"            \"executed_at_utc\": _utc_now(),"` | — |
-| [SRC-4FFD5AFC54-L000610](../../scripts/run_answer_quality_benchmark.py#L610) | 610 | `"            \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000611](../../scripts/run_answer_quality_benchmark.py#L611) | 611 | `"            \"base_url\": safe_base_url,"` | — |
-| [SRC-4FFD5AFC54-L000612](../../scripts/run_answer_quality_benchmark.py#L612) | 612 | `"            \"http_status\": status_code,"` | — |
-| [SRC-4FFD5AFC54-L000613](../../scripts/run_answer_quality_benchmark.py#L613) | 613 | `"            \"elapsed_ms\": elapsed_ms,"` | — |
-| [SRC-4FFD5AFC54-L000614](../../scripts/run_answer_quality_benchmark.py#L614) | 614 | `"            \"build_sha\": verified_build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000615](../../scripts/run_answer_quality_benchmark.py#L615) | 615 | `"            \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
-| [SRC-4FFD5AFC54-L000616](../../scripts/run_answer_quality_benchmark.py#L616) | 616 | `"            **response_metrics,"` | — |
-| [SRC-4FFD5AFC54-L000617](../../scripts/run_answer_quality_benchmark.py#L617) | 617 | `"            \"prompt\": prompt,"` | — |
-| [SRC-4FFD5AFC54-L000618](../../scripts/run_answer_quality_benchmark.py#L618) | 618 | `"            \"expected_strategy\": case[\"expected_strategy\"],"` | — |
-| [SRC-4FFD5AFC54-L000619](../../scripts/run_answer_quality_benchmark.py#L619) | 619 | `"            \"category\": case[\"category\"],"` | — |
-| [SRC-4FFD5AFC54-L000620](../../scripts/run_answer_quality_benchmark.py#L620) | 620 | `"            \"response\": safe_payload,"` | — |
-| [SRC-4FFD5AFC54-L000621](../../scripts/run_answer_quality_benchmark.py#L621) | 621 | `"            \"used_web_search\": ("` | — |
-| [SRC-4FFD5AFC54-L000622](../../scripts/run_answer_quality_benchmark.py#L622) | 622 | `"                safe_payload.get(\"used_web_search\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000623](../../scripts/run_answer_quality_benchmark.py#L623) | 623 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000624](../../scripts/run_answer_quality_benchmark.py#L624) | 624 | `"            \"used_language_model\": ("` | — |
-| [SRC-4FFD5AFC54-L000625](../../scripts/run_answer_quality_benchmark.py#L625) | 625 | `"                safe_payload.get(\"used_language_model\")"` | — |
-| [SRC-4FFD5AFC54-L000626](../../scripts/run_answer_quality_benchmark.py#L626) | 626 | `"                if isinstance(safe_payload, dict)"` | — |
-| [SRC-4FFD5AFC54-L000627](../../scripts/run_answer_quality_benchmark.py#L627) | 627 | `"                else None"` | — |
-| [SRC-4FFD5AFC54-L000628](../../scripts/run_answer_quality_benchmark.py#L628) | 628 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000629](../../scripts/run_answer_quality_benchmark.py#L629) | 629 | `"            \"sources\": ("` | — |
-| [SRC-4FFD5AFC54-L000630](../../scripts/run_answer_quality_benchmark.py#L630) | 630 | `"                safe_payload.get(\"sources\") if isinstance(safe_payload, dict) else None"` | — |
-| [SRC-4FFD5AFC54-L000631](../../scripts/run_answer_quality_benchmark.py#L631) | 631 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000632](../../scripts/run_answer_quality_benchmark.py#L632) | 632 | `"            \"status\": \"NOT_TESTED\","` | — |
-| [SRC-4FFD5AFC54-L000633](../../scripts/run_answer_quality_benchmark.py#L633) | 633 | `"            \"transport_ok\": transport_ok,"` | — |
-| [SRC-4FFD5AFC54-L000634](../../scripts/run_answer_quality_benchmark.py#L634) | 634 | `"            \"reviewer_notes\": ("` | — |
-| [SRC-4FFD5AFC54-L000635](../../scripts/run_answer_quality_benchmark.py#L635) | 635 | `"                \"Response collected; human/fixture review required for PASS/FAIL.\""` | — |
-| [SRC-4FFD5AFC54-L000636](../../scripts/run_answer_quality_benchmark.py#L636) | 636 | `"                if transport_ok"` | — |
-| [SRC-4FFD5AFC54-L000637](../../scripts/run_answer_quality_benchmark.py#L637) | 637 | `"                else \"Transport or HTTP error; quality not graded.\""` | — |
-| [SRC-4FFD5AFC54-L000638](../../scripts/run_answer_quality_benchmark.py#L638) | 638 | `"            ),"` | — |
-| [SRC-4FFD5AFC54-L000639](../../scripts/run_answer_quality_benchmark.py#L639) | 639 | `"            \"evidence_fixture_injected\": False,"` | — |
-| [SRC-4FFD5AFC54-L000640](../../scripts/run_answer_quality_benchmark.py#L640) | 640 | `"        }"` | — |
-| [SRC-4FFD5AFC54-L000641](../../scripts/run_answer_quality_benchmark.py#L641) | 641 | `"        results.append(record)"` | — |
-| [SRC-4FFD5AFC54-L000642](../../scripts/run_answer_quality_benchmark.py#L642) | 642 | `"        flag = \"OK\" if transport_ok else \"ERR\""` | — |
-| [SRC-4FFD5AFC54-L000643](../../scripts/run_answer_quality_benchmark.py#L643) | 643 | `"        print(f\"[{flag}] {cid} http={status_code}\")"` | — |
-| [SRC-4FFD5AFC54-L000644](../../scripts/run_answer_quality_benchmark.py#L644) | 644 | `"        if delay > 0:"` | — |
-| [SRC-4FFD5AFC54-L000645](../../scripts/run_answer_quality_benchmark.py#L645) | 645 | `"            time.sleep(delay)"` | — |
-| [SRC-4FFD5AFC54-L000646](../../scripts/run_answer_quality_benchmark.py#L646) | 646 | `""` | — |
-| [SRC-4FFD5AFC54-L000647](../../scripts/run_answer_quality_benchmark.py#L647) | 647 | `"    envelope = {"` | — |
-| [SRC-4FFD5AFC54-L000648](../../scripts/run_answer_quality_benchmark.py#L648) | 648 | `"        \"benchmark_id\": data.get(\"benchmark_id\"),"` | — |
-| [SRC-4FFD5AFC54-L000649](../../scripts/run_answer_quality_benchmark.py#L649) | 649 | `"        \"benchmark_version\": data.get(\"version\"),"` | — |
-| [SRC-4FFD5AFC54-L000650](../../scripts/run_answer_quality_benchmark.py#L650) | 650 | `"        \"mode\": \"live_api\","` | — |
-| [SRC-4FFD5AFC54-L000651](../../scripts/run_answer_quality_benchmark.py#L651) | 651 | `"        \"build_sha\": verified_build_sha,"` | — |
-| [SRC-4FFD5AFC54-L000652](../../scripts/run_answer_quality_benchmark.py#L652) | 652 | `"        \"build_sha_verification\": \"confirmed_by_api_health\","` | — |
-| [SRC-4FFD5AFC54-L000653](../../scripts/run_answer_quality_benchmark.py#L653) | 653 | `"        \"expected_build_sha\": expected_build_sha or None,"` | — |
-| [SRC-4FFD5AFC54-L000654](../../scripts/run_answer_quality_benchmark.py#L654) | 654 | `"        \"executed_at_utc\": _utc_now(),"` | — |

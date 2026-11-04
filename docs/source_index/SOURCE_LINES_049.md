@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4405E7912C-L000308 إلى SRC-6BF96689A8-L000079
+- النطاق: SRC-4405E7912C-L000263 إلى SRC-6BF96689A8-L000034
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4405E7912C-L000263](../../tests/test_multitenant_api.py#L263) | 263 | `"    )"` | — |
+| [SRC-4405E7912C-L000264](../../tests/test_multitenant_api.py#L264) | 264 | `"    assert status == 403"` | — |
+| [SRC-4405E7912C-L000265](../../tests/test_multitenant_api.py#L265) | 265 | `"    assert \"مالك مساحة العمل\" in result[\"error\"]"` | — |
+| [SRC-4405E7912C-L000266](../../tests/test_multitenant_api.py#L266) | 266 | `""` | — |
+| [SRC-4405E7912C-L000267](../../tests/test_multitenant_api.py#L267) | 267 | `""` | — |
+| [SRC-4405E7912C-L000268](../../tests/test_multitenant_api.py#L268) | 268 | `"def test_owner_can_run_diagnostics_only_after_explicit_approval("` | — |
+| [SRC-4405E7912C-L000269](../../tests/test_multitenant_api.py#L269) | 269 | `"    tenant_api, monkeypatch"` | — |
+| [SRC-4405E7912C-L000270](../../tests/test_multitenant_api.py#L270) | 270 | `"):"` | — |
+| [SRC-4405E7912C-L000271](../../tests/test_multitenant_api.py#L271) | 271 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-4405E7912C-L000272](../../tests/test_multitenant_api.py#L272) | 272 | `""` | — |
+| [SRC-4405E7912C-L000273](../../tests/test_multitenant_api.py#L273) | 273 | `"    base, store = tenant_api"` | — |
+| [SRC-4405E7912C-L000274](../../tests/test_multitenant_api.py#L274) | 274 | `"    tenant_id = store.create_tenant(\"Approved Diagnostics\", \"approved-diagnostics\")"` | — |
+| [SRC-4405E7912C-L000275](../../tests/test_multitenant_api.py#L275) | 275 | `"    user_id = store.create_user(\"approved-owner@example.test\", \"Owner\")"` | — |
+| [SRC-4405E7912C-L000276](../../tests/test_multitenant_api.py#L276) | 276 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
+| [SRC-4405E7912C-L000277](../../tests/test_multitenant_api.py#L277) | 277 | `"    token = \"approved-diagnostics-token-\" + \"A\" * 32"` | — |
+| [SRC-4405E7912C-L000278](../../tests/test_multitenant_api.py#L278) | 278 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-4405E7912C-L000279](../../tests/test_multitenant_api.py#L279) | 279 | `"    observed = {}"` | — |
+| [SRC-4405E7912C-L000280](../../tests/test_multitenant_api.py#L280) | 280 | `""` | — |
+| [SRC-4405E7912C-L000281](../../tests/test_multitenant_api.py#L281) | 281 | `"    def fake_diagnostics(self, *, test_model, test_social):"` | — |
+| [SRC-4405E7912C-L000282](../../tests/test_multitenant_api.py#L282) | 282 | `"        observed[\"test_model\"] = test_model"` | — |
+| [SRC-4405E7912C-L000283](../../tests/test_multitenant_api.py#L283) | 283 | `"        observed[\"test_social\"] = test_social"` | — |
+| [SRC-4405E7912C-L000284](../../tests/test_multitenant_api.py#L284) | 284 | `"        return {\"overall_status\": \"passed\", \"model_usage\": []}"` | — |
+| [SRC-4405E7912C-L000285](../../tests/test_multitenant_api.py#L285) | 285 | `""` | — |
+| [SRC-4405E7912C-L000286](../../tests/test_multitenant_api.py#L286) | 286 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", fake_diagnostics)"` | — |
+| [SRC-4405E7912C-L000287](../../tests/test_multitenant_api.py#L287) | 287 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000288](../../tests/test_multitenant_api.py#L288) | 288 | `"        base,"` | — |
+| [SRC-4405E7912C-L000289](../../tests/test_multitenant_api.py#L289) | 289 | `"        \"/api/diagnostics\","` | — |
+| [SRC-4405E7912C-L000290](../../tests/test_multitenant_api.py#L290) | 290 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000291](../../tests/test_multitenant_api.py#L291) | 291 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000292](../../tests/test_multitenant_api.py#L292) | 292 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000293](../../tests/test_multitenant_api.py#L293) | 293 | `"            \"test_model\": True,"` | — |
+| [SRC-4405E7912C-L000294](../../tests/test_multitenant_api.py#L294) | 294 | `"            \"test_social\": False,"` | — |
+| [SRC-4405E7912C-L000295](../../tests/test_multitenant_api.py#L295) | 295 | `"            \"allow_provider_usage\": True,"` | — |
+| [SRC-4405E7912C-L000296](../../tests/test_multitenant_api.py#L296) | 296 | `"        },"` | — |
+| [SRC-4405E7912C-L000297](../../tests/test_multitenant_api.py#L297) | 297 | `"    )"` | — |
+| [SRC-4405E7912C-L000298](../../tests/test_multitenant_api.py#L298) | 298 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000299](../../tests/test_multitenant_api.py#L299) | 299 | `"    assert result[\"overall_status\"] == \"passed\""` | — |
+| [SRC-4405E7912C-L000300](../../tests/test_multitenant_api.py#L300) | 300 | `"    assert observed == {\"test_model\": True, \"test_social\": False}"` | — |
+| [SRC-4405E7912C-L000301](../../tests/test_multitenant_api.py#L301) | 301 | `""` | — |
+| [SRC-4405E7912C-L000302](../../tests/test_multitenant_api.py#L302) | 302 | `""` | — |
+| [SRC-4405E7912C-L000303](../../tests/test_multitenant_api.py#L303) | 303 | `""` | — |
+| [SRC-4405E7912C-L000304](../../tests/test_multitenant_api.py#L304) | 304 | `"def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypatch):"` | — |
+| [SRC-4405E7912C-L000305](../../tests/test_multitenant_api.py#L305) | 305 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-4405E7912C-L000306](../../tests/test_multitenant_api.py#L306) | 306 | `""` | — |
+| [SRC-4405E7912C-L000307](../../tests/test_multitenant_api.py#L307) | 307 | `"    base, store = tenant_api"` | — |
 | [SRC-4405E7912C-L000308](../../tests/test_multitenant_api.py#L308) | 308 | `"    monkeypatch.setattr(Handler, \"_rate_limit_ok\", lambda self: True)"` | — |
 | [SRC-4405E7912C-L000309](../../tests/test_multitenant_api.py#L309) | 309 | `"    tenant_id = store.create_tenant(\"Viewer Agent Block\", \"viewer-agent-block\")"` | — |
 | [SRC-4405E7912C-L000310](../../tests/test_multitenant_api.py#L310) | 310 | `"    user_id = store.create_user(\"viewer-agent@example.test\", \"Viewer\")"` | — |
@@ -825,48 +870,3 @@
 | [SRC-6BF96689A8-L000032](../../tests/test_research.py#L32) | 32 | `"        \"social_focus\": True,"` | — |
 | [SRC-6BF96689A8-L000033](../../tests/test_research.py#L33) | 33 | `"        \"freshness\": \"current\","` | — |
 | [SRC-6BF96689A8-L000034](../../tests/test_research.py#L34) | 34 | `"        \"depth\": \"deep\","` | — |
-| [SRC-6BF96689A8-L000035](../../tests/test_research.py#L35) | 35 | `"        \"platforms\": [\"reddit\", \"unknown\"],"` | — |
-| [SRC-6BF96689A8-L000036](../../tests/test_research.py#L36) | 36 | `"    }"` | — |
-| [SRC-6BF96689A8-L000037](../../tests/test_research.py#L37) | 37 | `"    plan = validate_plan(candidate, \"بحث عن منشورات\")"` | — |
-| [SRC-6BF96689A8-L000038](../../tests/test_research.py#L38) | 38 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
-| [SRC-6BF96689A8-L000039](../../tests/test_research.py#L39) | 39 | `"    assert \"unknown\" not in plan[\"platforms\"]"` | — |
-| [SRC-6BF96689A8-L000040](../../tests/test_research.py#L40) | 40 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-6BF96689A8-L000041](../../tests/test_research.py#L41) | 41 | `"    assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-6BF96689A8-L000042](../../tests/test_research.py#L42) | 42 | `""` | — |
-| [SRC-6BF96689A8-L000043](../../tests/test_research.py#L43) | 43 | `""` | — |
-| [SRC-6BF96689A8-L000044](../../tests/test_research.py#L44) | 44 | `"def test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates():"` | — |
-| [SRC-6BF96689A8-L000045](../../tests/test_research.py#L45) | 45 | `"    batches = ["` | — |
-| [SRC-6BF96689A8-L000046](../../tests/test_research.py#L46) | 46 | `"        {"` | — |
-| [SRC-6BF96689A8-L000047](../../tests/test_research.py#L47) | 47 | `"            \"query\": \"cars Egypt\","` | — |
-| [SRC-6BF96689A8-L000048](../../tests/test_research.py#L48) | 48 | `"            \"provider\": \"ddg\","` | — |
-| [SRC-6BF96689A8-L000049](../../tests/test_research.py#L49) | 49 | `"            \"results\": ["` | — |
-| [SRC-6BF96689A8-L000050](../../tests/test_research.py#L50) | 50 | `"                {\"title\": \"A\", \"url\": \"https://www.example.com/a?utm_source=x\", \"snippet\": \"A\"},"` | — |
-| [SRC-6BF96689A8-L000051](../../tests/test_research.py#L51) | 51 | `"                {\"title\": \"B\", \"url\": \"https://example.com/b\", \"snippet\": \"B\"},"` | — |
-| [SRC-6BF96689A8-L000052](../../tests/test_research.py#L52) | 52 | `"            ],"` | — |
-| [SRC-6BF96689A8-L000053](../../tests/test_research.py#L53) | 53 | `"        },"` | — |
-| [SRC-6BF96689A8-L000054](../../tests/test_research.py#L54) | 54 | `"        {"` | — |
-| [SRC-6BF96689A8-L000055](../../tests/test_research.py#L55) | 55 | `"            \"query\": \"electric vehicles Egypt\","` | — |
-| [SRC-6BF96689A8-L000056](../../tests/test_research.py#L56) | 56 | `"            \"provider\": \"bing\","` | — |
-| [SRC-6BF96689A8-L000057](../../tests/test_research.py#L57) | 57 | `"            \"results\": ["` | — |
-| [SRC-6BF96689A8-L000058](../../tests/test_research.py#L58) | 58 | `"                {\"title\": \"A better title\", \"url\": \"https://example.com/a\", \"snippet\": \"Longer evidence snippet\"},"` | — |
-| [SRC-6BF96689A8-L000059](../../tests/test_research.py#L59) | 59 | `"                {\"title\": \"C\", \"url\": \"https://example.com/c\", \"snippet\": \"C\"},"` | — |
-| [SRC-6BF96689A8-L000060](../../tests/test_research.py#L60) | 60 | `"            ],"` | — |
-| [SRC-6BF96689A8-L000061](../../tests/test_research.py#L61) | 61 | `"        },"` | — |
-| [SRC-6BF96689A8-L000062](../../tests/test_research.py#L62) | 62 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000063](../../tests/test_research.py#L63) | 63 | `"    ranked = fuse_ranked_results(batches)"` | — |
-| [SRC-6BF96689A8-L000064](../../tests/test_research.py#L64) | 64 | `"    urls = [source[\"url\"] for source in ranked]"` | — |
-| [SRC-6BF96689A8-L000065](../../tests/test_research.py#L65) | 65 | `"    assert len(urls) == 3"` | — |
-| [SRC-6BF96689A8-L000066](../../tests/test_research.py#L66) | 66 | `"    source_a = next(source for source in ranked if \"example.com/a\" in source[\"url\"])"` | — |
-| [SRC-6BF96689A8-L000067](../../tests/test_research.py#L67) | 67 | `"    assert len(source_a[\"providers\"]) == 2"` | — |
-| [SRC-6BF96689A8-L000068](../../tests/test_research.py#L68) | 68 | `"    assert len(source_a[\"queries\"]) == 2"` | — |
-| [SRC-6BF96689A8-L000069](../../tests/test_research.py#L69) | 69 | `"    assert source_a[\"rank_score\"] > next("` | — |
-| [SRC-6BF96689A8-L000070](../../tests/test_research.py#L70) | 70 | `"        source[\"rank_score\"] for source in ranked if \"example.com/c\" in source[\"url\"]"` | — |
-| [SRC-6BF96689A8-L000071](../../tests/test_research.py#L71) | 71 | `"    )"` | — |
-| [SRC-6BF96689A8-L000072](../../tests/test_research.py#L72) | 72 | `""` | — |
-| [SRC-6BF96689A8-L000073](../../tests/test_research.py#L73) | 73 | `""` | — |
-| [SRC-6BF96689A8-L000074](../../tests/test_research.py#L74) | 74 | `"def test_source_classification_distinguishes_social_and_government():"` | — |
-| [SRC-6BF96689A8-L000075](../../tests/test_research.py#L75) | 75 | `"    from agents.research import classify_source"` | — |
-| [SRC-6BF96689A8-L000076](../../tests/test_research.py#L76) | 76 | `""` | — |
-| [SRC-6BF96689A8-L000077](../../tests/test_research.py#L77) | 77 | `"    assert classify_source(\"https://www.reddit.com/r/example/comments/1\")[\"platform\"] == \"reddit\""` | — |
-| [SRC-6BF96689A8-L000078](../../tests/test_research.py#L78) | 78 | `"    assert classify_source(\"https://example.gov.eg/page\")[\"source_class\"] == \"government\""` | — |
-| [SRC-6BF96689A8-L000079](../../tests/test_research.py#L79) | 79 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **046**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AAA21D04E8-L000352 إلى SRC-EA6EC52573-L000121
+- النطاق: SRC-AAA21D04E8-L000307 إلى SRC-EA6EC52573-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AAA21D04E8-L000307](../../tests/test_generation_capabilities.py#L307) | 307 | `"    answer = agent._request_completion("` | — |
+| [SRC-AAA21D04E8-L000308](../../tests/test_generation_capabilities.py#L308) | 308 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}], model=\"primary/model\""` | — |
+| [SRC-AAA21D04E8-L000309](../../tests/test_generation_capabilities.py#L309) | 309 | `"    )"` | — |
+| [SRC-AAA21D04E8-L000310](../../tests/test_generation_capabilities.py#L310) | 310 | `""` | — |
+| [SRC-AAA21D04E8-L000311](../../tests/test_generation_capabilities.py#L311) | 311 | `"    assert answer == \"إجابة مكتملة من النموذج الاحتياطي\""` | — |
+| [SRC-AAA21D04E8-L000312](../../tests/test_generation_capabilities.py#L312) | 312 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
+| [SRC-AAA21D04E8-L000313](../../tests/test_generation_capabilities.py#L313) | 313 | `"    assert agent.generation_diagnostics[0][\"status\"] == \"rate_limited\""` | — |
+| [SRC-AAA21D04E8-L000314](../../tests/test_generation_capabilities.py#L314) | 314 | `"    assert agent.generation_diagnostics[0][\"http_status_code\"] == 429"` | — |
+| [SRC-AAA21D04E8-L000315](../../tests/test_generation_capabilities.py#L315) | 315 | `"    assert agent.generation_diagnostics[0][\"fallback_used\"] is False"` | — |
+| [SRC-AAA21D04E8-L000316](../../tests/test_generation_capabilities.py#L316) | 316 | `"    assert agent.generation_diagnostics[1][\"status\"] == \"accepted\""` | — |
+| [SRC-AAA21D04E8-L000317](../../tests/test_generation_capabilities.py#L317) | 317 | `"    assert agent.generation_diagnostics[1][\"fallback_used\"] is True"` | — |
+| [SRC-AAA21D04E8-L000318](../../tests/test_generation_capabilities.py#L318) | 318 | `""` | — |
+| [SRC-AAA21D04E8-L000319](../../tests/test_generation_capabilities.py#L319) | 319 | `""` | — |
+| [SRC-AAA21D04E8-L000320](../../tests/test_generation_capabilities.py#L320) | 320 | `"def test_model_http_429_from_all_models_is_bounded_and_redacted(monkeypatch):"` | — |
+| [SRC-AAA21D04E8-L000321](../../tests/test_generation_capabilities.py#L321) | 321 | `"    from urllib.error import HTTPError"` | — |
+| [SRC-AAA21D04E8-L000322](../../tests/test_generation_capabilities.py#L322) | 322 | `""` | — |
+| [SRC-AAA21D04E8-L000323](../../tests/test_generation_capabilities.py#L323) | 323 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000324](../../tests/test_generation_capabilities.py#L324) | 324 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-AAA21D04E8-L000325](../../tests/test_generation_capabilities.py#L325) | 325 | `"    agent.fallback_model = \"backup/model\""` | — |
+| [SRC-AAA21D04E8-L000326](../../tests/test_generation_capabilities.py#L326) | 326 | `"    calls: list[str] = []"` | — |
+| [SRC-AAA21D04E8-L000327](../../tests/test_generation_capabilities.py#L327) | 327 | `""` | — |
+| [SRC-AAA21D04E8-L000328](../../tests/test_generation_capabilities.py#L328) | 328 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-AAA21D04E8-L000329](../../tests/test_generation_capabilities.py#L329) | 329 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
+| [SRC-AAA21D04E8-L000330](../../tests/test_generation_capabilities.py#L330) | 330 | `"        calls.append(model)"` | — |
+| [SRC-AAA21D04E8-L000331](../../tests/test_generation_capabilities.py#L331) | 331 | `"        raise HTTPError(request.full_url, 429, \"private provider detail\", None, None)"` | — |
+| [SRC-AAA21D04E8-L000332](../../tests/test_generation_capabilities.py#L332) | 332 | `""` | — |
+| [SRC-AAA21D04E8-L000333](../../tests/test_generation_capabilities.py#L333) | 333 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
+| [SRC-AAA21D04E8-L000334](../../tests/test_generation_capabilities.py#L334) | 334 | `"    with pytest.raises(RuntimeError, match=\"HTTP 429\"):"` | — |
+| [SRC-AAA21D04E8-L000335](../../tests/test_generation_capabilities.py#L335) | 335 | `"        agent._request_completion("` | — |
+| [SRC-AAA21D04E8-L000336](../../tests/test_generation_capabilities.py#L336) | 336 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}], model=\"primary/model\""` | — |
+| [SRC-AAA21D04E8-L000337](../../tests/test_generation_capabilities.py#L337) | 337 | `"        )"` | — |
+| [SRC-AAA21D04E8-L000338](../../tests/test_generation_capabilities.py#L338) | 338 | `""` | — |
+| [SRC-AAA21D04E8-L000339](../../tests/test_generation_capabilities.py#L339) | 339 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
+| [SRC-AAA21D04E8-L000340](../../tests/test_generation_capabilities.py#L340) | 340 | `"    assert [row[\"status\"] for row in agent.generation_diagnostics] == ["` | — |
+| [SRC-AAA21D04E8-L000341](../../tests/test_generation_capabilities.py#L341) | 341 | `"        \"rate_limited\", \"rate_limited\""` | — |
+| [SRC-AAA21D04E8-L000342](../../tests/test_generation_capabilities.py#L342) | 342 | `"    ]"` | — |
+| [SRC-AAA21D04E8-L000343](../../tests/test_generation_capabilities.py#L343) | 343 | `"    assert [row[\"http_status_code\"] for row in agent.generation_diagnostics] == [429, 429]"` | — |
+| [SRC-AAA21D04E8-L000344](../../tests/test_generation_capabilities.py#L344) | 344 | `"    assert \"private provider detail\" not in repr(agent.generation_diagnostics)"` | — |
+| [SRC-AAA21D04E8-L000345](../../tests/test_generation_capabilities.py#L345) | 345 | `""` | — |
+| [SRC-AAA21D04E8-L000346](../../tests/test_generation_capabilities.py#L346) | 346 | `""` | — |
+| [SRC-AAA21D04E8-L000347](../../tests/test_generation_capabilities.py#L347) | 347 | `"@pytest.mark.parametrize(\"status_code\", [401, 403])"` | — |
+| [SRC-AAA21D04E8-L000348](../../tests/test_generation_capabilities.py#L348) | 348 | `"def test_model_auth_http_errors_are_classified_and_fallback_is_bounded("` | — |
+| [SRC-AAA21D04E8-L000349](../../tests/test_generation_capabilities.py#L349) | 349 | `"    monkeypatch, status_code"` | — |
+| [SRC-AAA21D04E8-L000350](../../tests/test_generation_capabilities.py#L350) | 350 | `"):"` | — |
+| [SRC-AAA21D04E8-L000351](../../tests/test_generation_capabilities.py#L351) | 351 | `"    from urllib.error import HTTPError"` | — |
 | [SRC-AAA21D04E8-L000352](../../tests/test_generation_capabilities.py#L352) | 352 | `""` | — |
 | [SRC-AAA21D04E8-L000353](../../tests/test_generation_capabilities.py#L353) | 353 | `"    agent = WebAgent()"` | — |
 | [SRC-AAA21D04E8-L000354](../../tests/test_generation_capabilities.py#L354) | 354 | `"    agent.api_key = \"test-key\""` | — |
@@ -798,48 +843,3 @@
 | [SRC-EA6EC52573-L000074](../../tests/test_intent_router.py#L74) | 74 | `""` | — |
 | [SRC-EA6EC52573-L000075](../../tests/test_intent_router.py#L75) | 75 | `"def test_comparison_followup_requires_context_before_deep_search() -> None:"` | — |
 | [SRC-EA6EC52573-L000076](../../tests/test_intent_router.py#L76) | 76 | `"    assert route_intent(\"قارنهم\")[\"route\"] == \"CLARIFY\""` | — |
-| [SRC-EA6EC52573-L000077](../../tests/test_intent_router.py#L77) | 77 | `"    history = [{\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26\"}]"` | — |
-| [SRC-EA6EC52573-L000078](../../tests/test_intent_router.py#L78) | 78 | `"    decision = route_intent(\"قارنهم\", history)"` | — |
-| [SRC-EA6EC52573-L000079](../../tests/test_intent_router.py#L79) | 79 | `"    assert decision[\"route\"] == \"WEB_DEEP\""` | — |
-| [SRC-EA6EC52573-L000080](../../tests/test_intent_router.py#L80) | 80 | `"    assert decision[\"context_available\"] is True"` | — |
-| [SRC-EA6EC52573-L000081](../../tests/test_intent_router.py#L81) | 81 | `""` | — |
-| [SRC-EA6EC52573-L000082](../../tests/test_intent_router.py#L82) | 82 | `""` | — |
-| [SRC-EA6EC52573-L000083](../../tests/test_intent_router.py#L83) | 83 | `"def test_ambiguous_followup_does_not_reuse_stale_topic_after_acknowledgment() -> None:"` | — |
-| [SRC-EA6EC52573-L000084](../../tests/test_intent_router.py#L84) | 84 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000085](../../tests/test_intent_router.py#L85) | 85 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000086](../../tests/test_intent_router.py#L86) | 86 | `"        {\"role\": \"assistant\", \"content\": \"سأساعدك في العثور على أسعار حديثة.\"},"` | — |
-| [SRC-EA6EC52573-L000087](../../tests/test_intent_router.py#L87) | 87 | `"        {\"role\": \"user\", \"content\": \"شكرا\"},"` | — |
-| [SRC-EA6EC52573-L000088](../../tests/test_intent_router.py#L88) | 88 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
-| [SRC-EA6EC52573-L000089](../../tests/test_intent_router.py#L89) | 89 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000090](../../tests/test_intent_router.py#L90) | 90 | `"    decision = route_intent(\"كام سعرها؟\", history, requires_web=True)"` | — |
-| [SRC-EA6EC52573-L000091](../../tests/test_intent_router.py#L91) | 91 | `"    assert decision[\"route\"] == \"CLARIFY\""` | — |
-| [SRC-EA6EC52573-L000092](../../tests/test_intent_router.py#L92) | 92 | `"    assert decision[\"context_available\"] is False"` | — |
-| [SRC-EA6EC52573-L000093](../../tests/test_intent_router.py#L93) | 93 | `""` | — |
-| [SRC-EA6EC52573-L000094](../../tests/test_intent_router.py#L94) | 94 | `""` | — |
-| [SRC-EA6EC52573-L000095](../../tests/test_intent_router.py#L95) | 95 | `"def test_explicit_mode_overrides_conversational_shortcuts() -> None:"` | — |
-| [SRC-EA6EC52573-L000096](../../tests/test_intent_router.py#L96) | 96 | `"    assert route_intent(\"ازيك؟\", mode=\"deep\")[\"route\"] == \"WEB_DEEP\""` | — |
-| [SRC-EA6EC52573-L000097](../../tests/test_intent_router.py#L97) | 97 | `"    assert route_intent(\"ما سعر الهاتف؟\", mode=\"latest\")[\"route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-EA6EC52573-L000098](../../tests/test_intent_router.py#L98) | 98 | `""` | — |
-| [SRC-EA6EC52573-L000099](../../tests/test_intent_router.py#L99) | 99 | `""` | — |
-| [SRC-EA6EC52573-L000100](../../tests/test_intent_router.py#L100) | 100 | `"@pytest.mark.parametrize("` | — |
-| [SRC-EA6EC52573-L000101](../../tests/test_intent_router.py#L101) | 101 | `"    (\"question\", \"expected_route\", \"expected_reason\"),"` | — |
-| [SRC-EA6EC52573-L000102](../../tests/test_intent_router.py#L102) | 102 | `"    ["` | — |
-| [SRC-EA6EC52573-L000103](../../tests/test_intent_router.py#L103) | 103 | `"        ("` | — |
-| [SRC-EA6EC52573-L000104](../../tests/test_intent_router.py#L104) | 104 | `"            \"لخص الصفحة https://example.com/article\","` | — |
-| [SRC-EA6EC52573-L000105](../../tests/test_intent_router.py#L105) | 105 | `"            \"WEB_SIMPLE\","` | — |
-| [SRC-EA6EC52573-L000106](../../tests/test_intent_router.py#L106) | 106 | `"            \"summarization_request\","` | — |
-| [SRC-EA6EC52573-L000107](../../tests/test_intent_router.py#L107) | 107 | `"        ),"` | — |
-| [SRC-EA6EC52573-L000108](../../tests/test_intent_router.py#L108) | 108 | `"        ("` | — |
-| [SRC-EA6EC52573-L000109](../../tests/test_intent_router.py#L109) | 109 | `"            \"Summarize this page https://example.com/article\","` | — |
-| [SRC-EA6EC52573-L000110](../../tests/test_intent_router.py#L110) | 110 | `"            \"WEB_SIMPLE\","` | — |
-| [SRC-EA6EC52573-L000111](../../tests/test_intent_router.py#L111) | 111 | `"            \"summarization_request\","` | — |
-| [SRC-EA6EC52573-L000112](../../tests/test_intent_router.py#L112) | 112 | `"        ),"` | — |
-| [SRC-EA6EC52573-L000113](../../tests/test_intent_router.py#L113) | 113 | `"        (\"لخص الصفحة\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
-| [SRC-EA6EC52573-L000114](../../tests/test_intent_router.py#L114) | 114 | `"        (\"لخص لي هذا الرابط\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
-| [SRC-EA6EC52573-L000115](../../tests/test_intent_router.py#L115) | 115 | `"        (\"summarize the page\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
-| [SRC-EA6EC52573-L000116](../../tests/test_intent_router.py#L116) | 116 | `"        (\"تلخيص المقال\", \"CLARIFY\", \"missing_summarization_input\"),"` | — |
-| [SRC-EA6EC52573-L000117](../../tests/test_intent_router.py#L117) | 117 | `"        (\"لخص النص التالي: هذا نص تجريبي\", \"MODEL_ONLY\", \"stable_knowledge_or_conversation\"),"` | — |
-| [SRC-EA6EC52573-L000118](../../tests/test_intent_router.py#L118) | 118 | `"        (\"Summarize this text: the test content is here\", \"MODEL_ONLY\", \"stable_knowledge_or_conversation\"),"` | — |
-| [SRC-EA6EC52573-L000119](../../tests/test_intent_router.py#L119) | 119 | `"    ],"` | — |
-| [SRC-EA6EC52573-L000120](../../tests/test_intent_router.py#L120) | 120 | `")"` | — |
-| [SRC-EA6EC52573-L000121](../../tests/test_intent_router.py#L121) | 121 | `"def test_summarization_routing_respects_page_text_and_missing_input("` | — |

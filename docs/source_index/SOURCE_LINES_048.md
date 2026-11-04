@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D67DCEB693-L000108 إلى SRC-4405E7912C-L000307
+- النطاق: SRC-D67DCEB693-L000063 إلى SRC-4405E7912C-L000262
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D67DCEB693-L000063](../../tests/test_model_provider_failover.py#L63) | 63 | `"        \"openrouter\", \"gemini\", \"mistral\""` | — |
+| [SRC-D67DCEB693-L000064](../../tests/test_model_provider_failover.py#L64) | 64 | `"    ]"` | — |
+| [SRC-D67DCEB693-L000065](../../tests/test_model_provider_failover.py#L65) | 65 | `"    assert \"test-openrouter-secret\" not in repr(status)"` | — |
+| [SRC-D67DCEB693-L000066](../../tests/test_model_provider_failover.py#L66) | 66 | `"    assert \"test-gemini-secret\" not in repr(status)"` | — |
+| [SRC-D67DCEB693-L000067](../../tests/test_model_provider_failover.py#L67) | 67 | `"    assert \"test-mistral-secret\" not in repr(status)"` | — |
+| [SRC-D67DCEB693-L000068](../../tests/test_model_provider_failover.py#L68) | 68 | `""` | — |
+| [SRC-D67DCEB693-L000069](../../tests/test_model_provider_failover.py#L69) | 69 | `""` | — |
+| [SRC-D67DCEB693-L000070](../../tests/test_model_provider_failover.py#L70) | 70 | `"def test_gemini_only_configuration_uses_gemini_models_without_openrouter_fallback(monkeypatch):"` | — |
+| [SRC-D67DCEB693-L000071](../../tests/test_model_provider_failover.py#L71) | 71 | `"    _clear_model_environment(monkeypatch)"` | — |
+| [SRC-D67DCEB693-L000072](../../tests/test_model_provider_failover.py#L72) | 72 | `"    monkeypatch.setenv(\"GEMINI_API_KEY\", \"test-gemini-secret\")"` | — |
+| [SRC-D67DCEB693-L000073](../../tests/test_model_provider_failover.py#L73) | 73 | `""` | — |
+| [SRC-D67DCEB693-L000074](../../tests/test_model_provider_failover.py#L74) | 74 | `"    agent = WebAgent()"` | — |
+| [SRC-D67DCEB693-L000075](../../tests/test_model_provider_failover.py#L75) | 75 | `"    status = WebAgent.status()"` | — |
+| [SRC-D67DCEB693-L000076](../../tests/test_model_provider_failover.py#L76) | 76 | `""` | — |
+| [SRC-D67DCEB693-L000077](../../tests/test_model_provider_failover.py#L77) | 77 | `"    assert agent.primary_provider == \"gemini\""` | — |
+| [SRC-D67DCEB693-L000078](../../tests/test_model_provider_failover.py#L78) | 78 | `"    assert agent.base_url == \"https://generativelanguage.googleapis.com/v1beta/openai\""` | — |
+| [SRC-D67DCEB693-L000079](../../tests/test_model_provider_failover.py#L79) | 79 | `"    assert agent.answer_model == \"gemini-3.1-flash-lite\""` | — |
+| [SRC-D67DCEB693-L000080](../../tests/test_model_provider_failover.py#L80) | 80 | `"    assert agent.planner_model == agent.answer_model"` | — |
+| [SRC-D67DCEB693-L000081](../../tests/test_model_provider_failover.py#L81) | 81 | `"    assert agent.verifier_model == agent.answer_model"` | — |
+| [SRC-D67DCEB693-L000082](../../tests/test_model_provider_failover.py#L82) | 82 | `"    assert agent.fallback_model == \"\""` | — |
+| [SRC-D67DCEB693-L000083](../../tests/test_model_provider_failover.py#L83) | 83 | `"    assert status[\"language_model_configured\"] is True"` | — |
+| [SRC-D67DCEB693-L000084](../../tests/test_model_provider_failover.py#L84) | 84 | `"    assert status[\"semantic_verifier_distinct_from_answer_model\"] is False"` | — |
+| [SRC-D67DCEB693-L000085](../../tests/test_model_provider_failover.py#L85) | 85 | `""` | — |
+| [SRC-D67DCEB693-L000086](../../tests/test_model_provider_failover.py#L86) | 86 | `""` | — |
+| [SRC-D67DCEB693-L000087](../../tests/test_model_provider_failover.py#L87) | 87 | `"def test_model_provider_failover_uses_gemini_after_primary_failure(monkeypatch):"` | — |
+| [SRC-D67DCEB693-L000088](../../tests/test_model_provider_failover.py#L88) | 88 | `"    _clear_model_environment(monkeypatch)"` | — |
+| [SRC-D67DCEB693-L000089](../../tests/test_model_provider_failover.py#L89) | 89 | `"    monkeypatch.setenv(\"OPENROUTER_API_KEY\", \"test-openrouter-key\")"` | — |
+| [SRC-D67DCEB693-L000090](../../tests/test_model_provider_failover.py#L90) | 90 | `"    monkeypatch.setenv(\"GEMINI_API_KEY\", \"test-gemini-key\")"` | — |
+| [SRC-D67DCEB693-L000091](../../tests/test_model_provider_failover.py#L91) | 91 | `"    agent = WebAgent()"` | — |
+| [SRC-D67DCEB693-L000092](../../tests/test_model_provider_failover.py#L92) | 92 | `"    calls = []"` | — |
+| [SRC-D67DCEB693-L000093](../../tests/test_model_provider_failover.py#L93) | 93 | `""` | — |
+| [SRC-D67DCEB693-L000094](../../tests/test_model_provider_failover.py#L94) | 94 | `"    def fake_open(request, timeout):"` | — |
+| [SRC-D67DCEB693-L000095](../../tests/test_model_provider_failover.py#L95) | 95 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
+| [SRC-D67DCEB693-L000096](../../tests/test_model_provider_failover.py#L96) | 96 | `"        calls.append((request.full_url, model, request.get_header(\"Authorization\")))"` | — |
+| [SRC-D67DCEB693-L000097](../../tests/test_model_provider_failover.py#L97) | 97 | `"        if \"openrouter.ai\" in request.full_url:"` | — |
+| [SRC-D67DCEB693-L000098](../../tests/test_model_provider_failover.py#L98) | 98 | `"            raise HTTPError(request.full_url, 503, \"temporary\", None, None)"` | — |
+| [SRC-D67DCEB693-L000099](../../tests/test_model_provider_failover.py#L99) | 99 | `"        return FakeCompletionResponse(\"إجابة Gemini مكتملة\")"` | — |
+| [SRC-D67DCEB693-L000100](../../tests/test_model_provider_failover.py#L100) | 100 | `""` | — |
+| [SRC-D67DCEB693-L000101](../../tests/test_model_provider_failover.py#L101) | 101 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_open)"` | — |
+| [SRC-D67DCEB693-L000102](../../tests/test_model_provider_failover.py#L102) | 102 | `"    answer = agent._request_completion("` | — |
+| [SRC-D67DCEB693-L000103](../../tests/test_model_provider_failover.py#L103) | 103 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}], model=agent.answer_model"` | — |
+| [SRC-D67DCEB693-L000104](../../tests/test_model_provider_failover.py#L104) | 104 | `"    )"` | — |
+| [SRC-D67DCEB693-L000105](../../tests/test_model_provider_failover.py#L105) | 105 | `""` | — |
+| [SRC-D67DCEB693-L000106](../../tests/test_model_provider_failover.py#L106) | 106 | `"    assert answer == \"إجابة Gemini مكتملة\""` | — |
+| [SRC-D67DCEB693-L000107](../../tests/test_model_provider_failover.py#L107) | 107 | `"    assert [call[1] for call in calls] == ["` | — |
 | [SRC-D67DCEB693-L000108](../../tests/test_model_provider_failover.py#L108) | 108 | `"        \"google/gemma-4-31b-it:free\","` | — |
 | [SRC-D67DCEB693-L000109](../../tests/test_model_provider_failover.py#L109) | 109 | `"        \"openrouter/free\","` | — |
 | [SRC-D67DCEB693-L000110](../../tests/test_model_provider_failover.py#L110) | 110 | `"        \"gemini-3.1-flash-lite\","` | — |
@@ -789,48 +834,3 @@
 | [SRC-4405E7912C-L000260](../../tests/test_multitenant_api.py#L260) | 260 | `"            \"test_social\": True,"` | — |
 | [SRC-4405E7912C-L000261](../../tests/test_multitenant_api.py#L261) | 261 | `"            \"allow_provider_usage\": True,"` | — |
 | [SRC-4405E7912C-L000262](../../tests/test_multitenant_api.py#L262) | 262 | `"        },"` | — |
-| [SRC-4405E7912C-L000263](../../tests/test_multitenant_api.py#L263) | 263 | `"    )"` | — |
-| [SRC-4405E7912C-L000264](../../tests/test_multitenant_api.py#L264) | 264 | `"    assert status == 403"` | — |
-| [SRC-4405E7912C-L000265](../../tests/test_multitenant_api.py#L265) | 265 | `"    assert \"مالك مساحة العمل\" in result[\"error\"]"` | — |
-| [SRC-4405E7912C-L000266](../../tests/test_multitenant_api.py#L266) | 266 | `""` | — |
-| [SRC-4405E7912C-L000267](../../tests/test_multitenant_api.py#L267) | 267 | `""` | — |
-| [SRC-4405E7912C-L000268](../../tests/test_multitenant_api.py#L268) | 268 | `"def test_owner_can_run_diagnostics_only_after_explicit_approval("` | — |
-| [SRC-4405E7912C-L000269](../../tests/test_multitenant_api.py#L269) | 269 | `"    tenant_api, monkeypatch"` | — |
-| [SRC-4405E7912C-L000270](../../tests/test_multitenant_api.py#L270) | 270 | `"):"` | — |
-| [SRC-4405E7912C-L000271](../../tests/test_multitenant_api.py#L271) | 271 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-4405E7912C-L000272](../../tests/test_multitenant_api.py#L272) | 272 | `""` | — |
-| [SRC-4405E7912C-L000273](../../tests/test_multitenant_api.py#L273) | 273 | `"    base, store = tenant_api"` | — |
-| [SRC-4405E7912C-L000274](../../tests/test_multitenant_api.py#L274) | 274 | `"    tenant_id = store.create_tenant(\"Approved Diagnostics\", \"approved-diagnostics\")"` | — |
-| [SRC-4405E7912C-L000275](../../tests/test_multitenant_api.py#L275) | 275 | `"    user_id = store.create_user(\"approved-owner@example.test\", \"Owner\")"` | — |
-| [SRC-4405E7912C-L000276](../../tests/test_multitenant_api.py#L276) | 276 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
-| [SRC-4405E7912C-L000277](../../tests/test_multitenant_api.py#L277) | 277 | `"    token = \"approved-diagnostics-token-\" + \"A\" * 32"` | — |
-| [SRC-4405E7912C-L000278](../../tests/test_multitenant_api.py#L278) | 278 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
-| [SRC-4405E7912C-L000279](../../tests/test_multitenant_api.py#L279) | 279 | `"    observed = {}"` | — |
-| [SRC-4405E7912C-L000280](../../tests/test_multitenant_api.py#L280) | 280 | `""` | — |
-| [SRC-4405E7912C-L000281](../../tests/test_multitenant_api.py#L281) | 281 | `"    def fake_diagnostics(self, *, test_model, test_social):"` | — |
-| [SRC-4405E7912C-L000282](../../tests/test_multitenant_api.py#L282) | 282 | `"        observed[\"test_model\"] = test_model"` | — |
-| [SRC-4405E7912C-L000283](../../tests/test_multitenant_api.py#L283) | 283 | `"        observed[\"test_social\"] = test_social"` | — |
-| [SRC-4405E7912C-L000284](../../tests/test_multitenant_api.py#L284) | 284 | `"        return {\"overall_status\": \"passed\", \"model_usage\": []}"` | — |
-| [SRC-4405E7912C-L000285](../../tests/test_multitenant_api.py#L285) | 285 | `""` | — |
-| [SRC-4405E7912C-L000286](../../tests/test_multitenant_api.py#L286) | 286 | `"    monkeypatch.setattr(WebAgent, \"diagnostics\", fake_diagnostics)"` | — |
-| [SRC-4405E7912C-L000287](../../tests/test_multitenant_api.py#L287) | 287 | `"    status, result = request_json("` | — |
-| [SRC-4405E7912C-L000288](../../tests/test_multitenant_api.py#L288) | 288 | `"        base,"` | — |
-| [SRC-4405E7912C-L000289](../../tests/test_multitenant_api.py#L289) | 289 | `"        \"/api/diagnostics\","` | — |
-| [SRC-4405E7912C-L000290](../../tests/test_multitenant_api.py#L290) | 290 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000291](../../tests/test_multitenant_api.py#L291) | 291 | `"        token=token,"` | — |
-| [SRC-4405E7912C-L000292](../../tests/test_multitenant_api.py#L292) | 292 | `"        payload={"` | — |
-| [SRC-4405E7912C-L000293](../../tests/test_multitenant_api.py#L293) | 293 | `"            \"test_model\": True,"` | — |
-| [SRC-4405E7912C-L000294](../../tests/test_multitenant_api.py#L294) | 294 | `"            \"test_social\": False,"` | — |
-| [SRC-4405E7912C-L000295](../../tests/test_multitenant_api.py#L295) | 295 | `"            \"allow_provider_usage\": True,"` | — |
-| [SRC-4405E7912C-L000296](../../tests/test_multitenant_api.py#L296) | 296 | `"        },"` | — |
-| [SRC-4405E7912C-L000297](../../tests/test_multitenant_api.py#L297) | 297 | `"    )"` | — |
-| [SRC-4405E7912C-L000298](../../tests/test_multitenant_api.py#L298) | 298 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000299](../../tests/test_multitenant_api.py#L299) | 299 | `"    assert result[\"overall_status\"] == \"passed\""` | — |
-| [SRC-4405E7912C-L000300](../../tests/test_multitenant_api.py#L300) | 300 | `"    assert observed == {\"test_model\": True, \"test_social\": False}"` | — |
-| [SRC-4405E7912C-L000301](../../tests/test_multitenant_api.py#L301) | 301 | `""` | — |
-| [SRC-4405E7912C-L000302](../../tests/test_multitenant_api.py#L302) | 302 | `""` | — |
-| [SRC-4405E7912C-L000303](../../tests/test_multitenant_api.py#L303) | 303 | `""` | — |
-| [SRC-4405E7912C-L000304](../../tests/test_multitenant_api.py#L304) | 304 | `"def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypatch):"` | — |
-| [SRC-4405E7912C-L000305](../../tests/test_multitenant_api.py#L305) | 305 | `"    from api.omarai import WebAgent"` | — |
-| [SRC-4405E7912C-L000306](../../tests/test_multitenant_api.py#L306) | 306 | `""` | — |
-| [SRC-4405E7912C-L000307](../../tests/test_multitenant_api.py#L307) | 307 | `"    base, store = tenant_api"` | — |

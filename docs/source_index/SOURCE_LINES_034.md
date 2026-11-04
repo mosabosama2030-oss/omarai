@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000091 إلى SRC-A8360B1B03-L000359
+- النطاق: SRC-70795F4B61-L000046 إلى SRC-A8360B1B03-L000314
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000046](../../scripts/compare_answer_quality_runs.py#L46) | 46 | `"    results = run.get(\"results\")"` | — |
+| [SRC-70795F4B61-L000047](../../scripts/compare_answer_quality_runs.py#L47) | 47 | `"    if not isinstance(results, list) or not results:"` | — |
+| [SRC-70795F4B61-L000048](../../scripts/compare_answer_quality_runs.py#L48) | 48 | `"        problems.append(f\"{label}: results must be a non-empty array\")"` | — |
+| [SRC-70795F4B61-L000049](../../scripts/compare_answer_quality_runs.py#L49) | 49 | `"        return problems"` | — |
+| [SRC-70795F4B61-L000050](../../scripts/compare_answer_quality_runs.py#L50) | 50 | `"    seen: set[str] = set()"` | — |
+| [SRC-70795F4B61-L000051](../../scripts/compare_answer_quality_runs.py#L51) | 51 | `"    for index, record in enumerate(results):"` | — |
+| [SRC-70795F4B61-L000052](../../scripts/compare_answer_quality_runs.py#L52) | 52 | `"        if not isinstance(record, dict):"` | — |
+| [SRC-70795F4B61-L000053](../../scripts/compare_answer_quality_runs.py#L53) | 53 | `"            problems.append(f\"{label}: results[{index}] must be an object\")"` | — |
+| [SRC-70795F4B61-L000054](../../scripts/compare_answer_quality_runs.py#L54) | 54 | `"            continue"` | — |
+| [SRC-70795F4B61-L000055](../../scripts/compare_answer_quality_runs.py#L55) | 55 | `"        case_id = record.get(\"case_id\")"` | — |
+| [SRC-70795F4B61-L000056](../../scripts/compare_answer_quality_runs.py#L56) | 56 | `"        if not isinstance(case_id, str) or not case_id.strip():"` | — |
+| [SRC-70795F4B61-L000057](../../scripts/compare_answer_quality_runs.py#L57) | 57 | `"            problems.append(f\"{label}: results[{index}] has no case_id\")"` | — |
+| [SRC-70795F4B61-L000058](../../scripts/compare_answer_quality_runs.py#L58) | 58 | `"            continue"` | — |
+| [SRC-70795F4B61-L000059](../../scripts/compare_answer_quality_runs.py#L59) | 59 | `"        prompt = record.get(\"prompt\")"` | — |
+| [SRC-70795F4B61-L000060](../../scripts/compare_answer_quality_runs.py#L60) | 60 | `"        if not isinstance(prompt, str) or not prompt.strip():"` | — |
+| [SRC-70795F4B61-L000061](../../scripts/compare_answer_quality_runs.py#L61) | 61 | `"            problems.append(f\"{label}/{case_id}: prompt must be a non-empty string\")"` | — |
+| [SRC-70795F4B61-L000062](../../scripts/compare_answer_quality_runs.py#L62) | 62 | `"        if case_id in seen:"` | — |
+| [SRC-70795F4B61-L000063](../../scripts/compare_answer_quality_runs.py#L63) | 63 | `"            problems.append(f\"{label}: duplicate case_id {case_id}\")"` | — |
+| [SRC-70795F4B61-L000064](../../scripts/compare_answer_quality_runs.py#L64) | 64 | `"        seen.add(case_id)"` | — |
+| [SRC-70795F4B61-L000065](../../scripts/compare_answer_quality_runs.py#L65) | 65 | `"        if \"elapsed_ms\" in record and _finite_nonnegative(record[\"elapsed_ms\"]) is None:"` | — |
+| [SRC-70795F4B61-L000066](../../scripts/compare_answer_quality_runs.py#L66) | 66 | `"            problems.append(f\"{label}/{case_id}: elapsed_ms must be finite and non-negative\")"` | — |
+| [SRC-70795F4B61-L000067](../../scripts/compare_answer_quality_runs.py#L67) | 67 | `"    return problems"` | — |
+| [SRC-70795F4B61-L000068](../../scripts/compare_answer_quality_runs.py#L68) | 68 | `""` | — |
+| [SRC-70795F4B61-L000069](../../scripts/compare_answer_quality_runs.py#L69) | 69 | `""` | — |
+| [SRC-70795F4B61-L000070](../../scripts/compare_answer_quality_runs.py#L70) | 70 | `"def _percentile_nearest_rank(values: list[float], percentile: float) -> float \| None:"` | — |
+| [SRC-70795F4B61-L000071](../../scripts/compare_answer_quality_runs.py#L71) | 71 | `"    if not values:"` | — |
+| [SRC-70795F4B61-L000072](../../scripts/compare_answer_quality_runs.py#L72) | 72 | `"        return None"` | — |
+| [SRC-70795F4B61-L000073](../../scripts/compare_answer_quality_runs.py#L73) | 73 | `"    ordered = sorted(values)"` | — |
+| [SRC-70795F4B61-L000074](../../scripts/compare_answer_quality_runs.py#L74) | 74 | `"    index = max(0, math.ceil(percentile * len(ordered)) - 1)"` | — |
+| [SRC-70795F4B61-L000075](../../scripts/compare_answer_quality_runs.py#L75) | 75 | `"    return round(ordered[index], 2)"` | — |
+| [SRC-70795F4B61-L000076](../../scripts/compare_answer_quality_runs.py#L76) | 76 | `""` | — |
+| [SRC-70795F4B61-L000077](../../scripts/compare_answer_quality_runs.py#L77) | 77 | `""` | — |
+| [SRC-70795F4B61-L000078](../../scripts/compare_answer_quality_runs.py#L78) | 78 | `"def _rate(numerator: int, denominator: int) -> dict[str, Any]:"` | — |
+| [SRC-70795F4B61-L000079](../../scripts/compare_answer_quality_runs.py#L79) | 79 | `"    return {"` | — |
+| [SRC-70795F4B61-L000080](../../scripts/compare_answer_quality_runs.py#L80) | 80 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
+| [SRC-70795F4B61-L000081](../../scripts/compare_answer_quality_runs.py#L81) | 81 | `"        \"numerator\": numerator,"` | — |
+| [SRC-70795F4B61-L000082](../../scripts/compare_answer_quality_runs.py#L82) | 82 | `"        \"denominator\": denominator,"` | — |
+| [SRC-70795F4B61-L000083](../../scripts/compare_answer_quality_runs.py#L83) | 83 | `"        \"status\": \"SCORED\" if denominator else \"NOT_SCORABLE_NO_DENOMINATOR\","` | — |
+| [SRC-70795F4B61-L000084](../../scripts/compare_answer_quality_runs.py#L84) | 84 | `"    }"` | — |
+| [SRC-70795F4B61-L000085](../../scripts/compare_answer_quality_runs.py#L85) | 85 | `""` | — |
+| [SRC-70795F4B61-L000086](../../scripts/compare_answer_quality_runs.py#L86) | 86 | `""` | — |
+| [SRC-70795F4B61-L000087](../../scripts/compare_answer_quality_runs.py#L87) | 87 | `"def run_metrics(run: dict[str, Any]) -> dict[str, Any]:"` | — |
+| [SRC-70795F4B61-L000088](../../scripts/compare_answer_quality_runs.py#L88) | 88 | `"    results = run[\"results\"]"` | — |
+| [SRC-70795F4B61-L000089](../../scripts/compare_answer_quality_runs.py#L89) | 89 | `"    transport_ok = [r for r in results if r.get(\"transport_ok\") is True]"` | — |
+| [SRC-70795F4B61-L000090](../../scripts/compare_answer_quality_runs.py#L90) | 90 | `"    elapsed = ["` | — |
 | [SRC-70795F4B61-L000091](../../scripts/compare_answer_quality_runs.py#L91) | 91 | `"        float(value)"` | — |
 | [SRC-70795F4B61-L000092](../../scripts/compare_answer_quality_runs.py#L92) | 92 | `"        for record in results"` | — |
 | [SRC-70795F4B61-L000093](../../scripts/compare_answer_quality_runs.py#L93) | 93 | `"        if (value := _finite_nonnegative(record.get(\"elapsed_ms\"))) is not None"` | — |
@@ -780,48 +825,3 @@
 | [SRC-A8360B1B03-L000312](../../scripts/hosted_smoke_test.py#L312) | 312 | `"            \"Agent request did not return a live web search with usable source URLs.\","` | — |
 | [SRC-A8360B1B03-L000313](../../scripts/hosted_smoke_test.py#L313) | 313 | `"            partial_report,"` | — |
 | [SRC-A8360B1B03-L000314](../../scripts/hosted_smoke_test.py#L314) | 314 | `"        )"` | — |
-| [SRC-A8360B1B03-L000315](../../scripts/hosted_smoke_test.py#L315) | 315 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000316](../../scripts/hosted_smoke_test.py#L316) | 316 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000317](../../scripts/hosted_smoke_test.py#L317) | 317 | `"            \"Agent request did not confirm that a language model was used.\","` | — |
-| [SRC-A8360B1B03-L000318](../../scripts/hosted_smoke_test.py#L318) | 318 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000319](../../scripts/hosted_smoke_test.py#L319) | 319 | `"        )"` | — |
-| [SRC-A8360B1B03-L000320](../../scripts/hosted_smoke_test.py#L320) | 320 | `"    request_budget = answer.get(\"request_budget\")"` | — |
-| [SRC-A8360B1B03-L000321](../../scripts/hosted_smoke_test.py#L321) | 321 | `"    if not isinstance(request_budget, dict) or request_budget.get(\"profile\") != \"hosted_smoke\":"` | — |
-| [SRC-A8360B1B03-L000322](../../scripts/hosted_smoke_test.py#L322) | 322 | `"        raise SmokeError(\"Agent response did not confirm the hosted_smoke request budget profile.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000323](../../scripts/hosted_smoke_test.py#L323) | 323 | `"    budget_limits = request_budget.get(\"limits\")"` | — |
-| [SRC-A8360B1B03-L000324](../../scripts/hosted_smoke_test.py#L324) | 324 | `"    budget_counts = request_budget.get(\"counts\")"` | — |
-| [SRC-A8360B1B03-L000325](../../scripts/hosted_smoke_test.py#L325) | 325 | `"    if not isinstance(budget_limits, dict) or not isinstance(budget_counts, dict):"` | — |
-| [SRC-A8360B1B03-L000326](../../scripts/hosted_smoke_test.py#L326) | 326 | `"        raise SmokeError(\"Agent response omitted request-budget limits or counters.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000327](../../scripts/hosted_smoke_test.py#L327) | 327 | `"    for resource, maximum in HOSTED_SMOKE_BUDGET_MAX.items():"` | — |
-| [SRC-A8360B1B03-L000328](../../scripts/hosted_smoke_test.py#L328) | 328 | `"        limit = budget_limits.get(resource)"` | — |
-| [SRC-A8360B1B03-L000329](../../scripts/hosted_smoke_test.py#L329) | 329 | `"        count = budget_counts.get(resource)"` | — |
-| [SRC-A8360B1B03-L000330](../../scripts/hosted_smoke_test.py#L330) | 330 | `"        if ("` | — |
-| [SRC-A8360B1B03-L000331](../../scripts/hosted_smoke_test.py#L331) | 331 | `"            isinstance(limit, bool) or not isinstance(limit, int)"` | — |
-| [SRC-A8360B1B03-L000332](../../scripts/hosted_smoke_test.py#L332) | 332 | `"            or isinstance(count, bool) or not isinstance(count, int)"` | — |
-| [SRC-A8360B1B03-L000333](../../scripts/hosted_smoke_test.py#L333) | 333 | `"            or limit < 0 or limit > maximum"` | — |
-| [SRC-A8360B1B03-L000334](../../scripts/hosted_smoke_test.py#L334) | 334 | `"            or count < 0 or count > limit"` | — |
-| [SRC-A8360B1B03-L000335](../../scripts/hosted_smoke_test.py#L335) | 335 | `"        ):"` | — |
-| [SRC-A8360B1B03-L000336](../../scripts/hosted_smoke_test.py#L336) | 336 | `"            raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000337](../../scripts/hosted_smoke_test.py#L337) | 337 | `"                f\"Agent hosted_smoke request budget is missing, exceeded, or invalid for {resource}.\","` | — |
-| [SRC-A8360B1B03-L000338](../../scripts/hosted_smoke_test.py#L338) | 338 | `"                partial_report,"` | — |
-| [SRC-A8360B1B03-L000339](../../scripts/hosted_smoke_test.py#L339) | 339 | `"            )"` | — |
-| [SRC-A8360B1B03-L000340](../../scripts/hosted_smoke_test.py#L340) | 340 | `"    if ("` | — |
-| [SRC-A8360B1B03-L000341](../../scripts/hosted_smoke_test.py#L341) | 341 | `"        budget_counts[\"search_queries\"] < 1"` | — |
-| [SRC-A8360B1B03-L000342](../../scripts/hosted_smoke_test.py#L342) | 342 | `"        or budget_counts[\"search_calls\"] < 1"` | — |
-| [SRC-A8360B1B03-L000343](../../scripts/hosted_smoke_test.py#L343) | 343 | `"        or budget_counts[\"model_calls\"] < 1"` | — |
-| [SRC-A8360B1B03-L000344](../../scripts/hosted_smoke_test.py#L344) | 344 | `"    ):"` | — |
-| [SRC-A8360B1B03-L000345](../../scripts/hosted_smoke_test.py#L345) | 345 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000346](../../scripts/hosted_smoke_test.py#L346) | 346 | `"            \"Agent hosted_smoke request budget counters do not prove search and model work occurred.\","` | — |
-| [SRC-A8360B1B03-L000347](../../scripts/hosted_smoke_test.py#L347) | 347 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000348](../../scripts/hosted_smoke_test.py#L348) | 348 | `"        )"` | — |
-| [SRC-A8360B1B03-L000349](../../scripts/hosted_smoke_test.py#L349) | 349 | `"    budget_timeout = request_budget.get(\"timeout_seconds\")"` | — |
-| [SRC-A8360B1B03-L000350](../../scripts/hosted_smoke_test.py#L350) | 350 | `"    if ("` | — |
-| [SRC-A8360B1B03-L000351](../../scripts/hosted_smoke_test.py#L351) | 351 | `"        isinstance(budget_timeout, bool)"` | — |
-| [SRC-A8360B1B03-L000352](../../scripts/hosted_smoke_test.py#L352) | 352 | `"        or not isinstance(budget_timeout, (int, float))"` | — |
-| [SRC-A8360B1B03-L000353](../../scripts/hosted_smoke_test.py#L353) | 353 | `"        or budget_timeout <= 0"` | — |
-| [SRC-A8360B1B03-L000354](../../scripts/hosted_smoke_test.py#L354) | 354 | `"        or budget_timeout > 75"` | — |
-| [SRC-A8360B1B03-L000355](../../scripts/hosted_smoke_test.py#L355) | 355 | `"        or request_budget.get(\"budget_exhausted\") is not False"` | — |
-| [SRC-A8360B1B03-L000356](../../scripts/hosted_smoke_test.py#L356) | 356 | `"        or request_budget.get(\"deadline_exceeded\") is not False"` | — |
-| [SRC-A8360B1B03-L000357](../../scripts/hosted_smoke_test.py#L357) | 357 | `"    ):"` | — |
-| [SRC-A8360B1B03-L000358](../../scripts/hosted_smoke_test.py#L358) | 358 | `"        raise SmokeError(\"Agent hosted_smoke request budget was exhausted or exceeded its timeout ceiling.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000359](../../scripts/hosted_smoke_test.py#L359) | 359 | `"    checks[\"request_budget\"] = {"` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **061**
-- سجلات الأسطر: **56**
-- النطاق: SRC-2C8F288796-L000522 إلى SRC-2C8F288796-L000577
+- سجلات الأسطر: **101**
+- النطاق: SRC-2C8F288796-L000477 إلى SRC-2C8F288796-L000577
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000477](../../web/workspace.html#L477) | 477 | `"  const grid=make(\"div\",\"content-grid\");"` | — |
+| [SRC-2C8F288796-L000478](../../web/workspace.html#L478) | 478 | `"  const models=make(\"section\",\"glass panel\");const mh=make(\"div\",\"panel-head\");const mt=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000479](../../web/workspace.html#L479) | 479 | `"  mt.append(make(\"h2\",\"\",\"موفر النموذج\"));mt.append(make(\"p\",\"\",\"بيانات إعداد يعرضها الخادم؛ لا تعرض مفاتيح أو أسرار.\"));"` | — |
+| [SRC-2C8F288796-L000480](../../web/workspace.html#L480) | 480 | `"  mh.append(mt);models.append(mh);"` | — |
+| [SRC-2C8F288796-L000481](../../web/workspace.html#L481) | 481 | `"  models.append(make(\"p\",\"\", \"الموفر الأساسي المعلن: \"+String(agent.language_model_provider\|\|\"غير معلوم\")));"` | — |
+| [SRC-2C8F288796-L000482](../../web/workspace.html#L482) | 482 | `"  const providers=Array.isArray(agent.model_providers)?agent.model_providers:[];"` | — |
+| [SRC-2C8F288796-L000483](../../web/workspace.html#L483) | 483 | `"  if(providers.length){"` | — |
+| [SRC-2C8F288796-L000484](../../web/workspace.html#L484) | 484 | `"   const list=make(\"div\",\"signal-list\");"` | — |
+| [SRC-2C8F288796-L000485](../../web/workspace.html#L485) | 485 | `"   providers.forEach(p=>{"` | — |
+| [SRC-2C8F288796-L000486](../../web/workspace.html#L486) | 486 | `"    const row=make(\"article\",\"signal-card\");"` | — |
+| [SRC-2C8F288796-L000487](../../web/workspace.html#L487) | 487 | `"    row.append(make(\"strong\",\"\",String(p.name\|\|\"موفر غير مسمى\")));"` | — |
+| [SRC-2C8F288796-L000488](../../web/workspace.html#L488) | 488 | `"    row.append(make(\"span\",\"subtle\",\"النموذج المهيأ: \"+String(p.model\|\|\"غير محدد\")));"` | — |
+| [SRC-2C8F288796-L000489](../../web/workspace.html#L489) | 489 | `"    row.append(tag(p.configured===true?\"مهيأ في البيئة\":\"غير مهيأ\",p.configured===true?\"teal\":\"amber\"));"` | — |
+| [SRC-2C8F288796-L000490](../../web/workspace.html#L490) | 490 | `"    list.append(row);"` | — |
+| [SRC-2C8F288796-L000491](../../web/workspace.html#L491) | 491 | `"   });"` | — |
+| [SRC-2C8F288796-L000492](../../web/workspace.html#L492) | 492 | `"   models.append(list);"` | — |
+| [SRC-2C8F288796-L000493](../../web/workspace.html#L493) | 493 | `"  }else models.append(emptyState(\"لا توجد موفرات ظاهرة كإعداد\",\"لم يعرض الخادم موفرًا مهيأ ضمن هذه اللقطة.\"));"` | — |
+| [SRC-2C8F288796-L000494](../../web/workspace.html#L494) | 494 | `"  const search=make(\"section\",\"glass panel\");const sh=make(\"div\",\"panel-head\");const st=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000495](../../web/workspace.html#L495) | 495 | `"  st.append(make(\"h2\",\"\",\"إعدادات البحث الاختيارية\"),make(\"p\",\"\",\"القيم أدناه أعلام إعداد فقط، وليست اختبارات تشغيل.\"));"` | — |
+| [SRC-2C8F288796-L000496](../../web/workspace.html#L496) | 496 | `"  sh.append(st);search.append(sh);"` | — |
+| [SRC-2C8F288796-L000497](../../web/workspace.html#L497) | 497 | `"  const flags=["` | — |
+| [SRC-2C8F288796-L000498](../../web/workspace.html#L498) | 498 | `"   [\"Brave Search API\",agent.brave_search_api_configured],"` | — |
+| [SRC-2C8F288796-L000499](../../web/workspace.html#L499) | 499 | `"   [\"Tavily Search API\",agent.tavily_search_api_configured],"` | — |
+| [SRC-2C8F288796-L000500](../../web/workspace.html#L500) | 500 | `"   [\"DeepSeek Search API\",agent.deepseek_search_api_configured],"` | — |
+| [SRC-2C8F288796-L000501](../../web/workspace.html#L501) | 501 | `"   [\"OpenRouter web search\",agent.openrouter_web_search_enabled]"` | — |
+| [SRC-2C8F288796-L000502](../../web/workspace.html#L502) | 502 | `"  ];"` | — |
+| [SRC-2C8F288796-L000503](../../web/workspace.html#L503) | 503 | `"  flags.forEach(([name,value])=>{const row=make(\"div\",\"signal-actions\");row.append(make(\"span\",\"\",name),tag(value===true?\"مهيأ/مفعل\":\"غير مهيأ/معطل\",value===true?\"teal\":\"amber\"));search.append(row)});"` | — |
+| [SRC-2C8F288796-L000504](../../web/workspace.html#L504) | 504 | `"  search.append(make(\"p\",\"disclaimer\",\"لا تنفذ هذه الشاشة تشخيصًا مباشرًا ولا تختبر صلاحية مفاتيح الموفرات. التشخيص الحي قد يستهلك حصة أو تكلفة، ويظل منفصلًا ويتطلب موافقة المالك.\"));"` | — |
+| [SRC-2C8F288796-L000505](../../web/workspace.html#L505) | 505 | `"  grid.append(models,search);root.append(grid);"` | — |
+| [SRC-2C8F288796-L000506](../../web/workspace.html#L506) | 506 | `" }catch(e){root.replaceChildren(emptyState(\"تعذرت قراءة الإعدادات\",escapeMessage(e.message)))}"` | — |
+| [SRC-2C8F288796-L000507](../../web/workspace.html#L507) | 507 | `"}"` | — |
+| [SRC-2C8F288796-L000508](../../web/workspace.html#L508) | 508 | `"function renderPlaceholder(id){"` | — |
+| [SRC-2C8F288796-L000509](../../web/workspace.html#L509) | 509 | `" const item=menu.find(x=>x.id===id);const title=item?item.label:\"وحدة\";"` | — |
+| [SRC-2C8F288796-L000510](../../web/workspace.html#L510) | 510 | `" setPage(title,\"واجهة الوحدة جزء من تصور Omarai، لكن المستودع عند الرأس الحالي لا يوفّر بعد عقد API موثقًا لهذه الوظيفة. لا نعرض بيانات أو نتائج شكلية على أنها حقيقية.\",\"MODULE NOT ENABLED\");"` | — |
+| [SRC-2C8F288796-L000511](../../web/workspace.html#L511) | 511 | `" const root=$(\"viewRoot\");root.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000512](../../web/workspace.html#L512) | 512 | `" const card=make(\"section\",\"glass module-placeholder\");"` | — |
+| [SRC-2C8F288796-L000513](../../web/workspace.html#L513) | 513 | `" card.append(tag(\"غير مفعلة في الخادم الحالي\",\"amber\"),make(\"h2\",\"\",title));"` | — |
+| [SRC-2C8F288796-L000514](../../web/workspace.html#L514) | 514 | `" card.append(make(\"p\",\"\",\"هذه الشاشة لا تستدعي موصلًا خارجيًا ولا تحفظ إعدادات وهمية. يلزم بناء نموذج البيانات وواجهة API واختبارات الصلاحيات والعزل قبل تشغيلها.\"));"` | — |
+| [SRC-2C8F288796-L000515](../../web/workspace.html#L515) | 515 | `" const list=make(\"div\",\"module-list\");"` | — |
+| [SRC-2C8F288796-L000516](../../web/workspace.html#L516) | 516 | `" [\"تعريف عقد البيانات والحقول ومصدر كل قيمة.\",\"إنشاء API محمي ومربوط بالمستخدم ومساحة العمل المصادق عليها.\",\"إضافة اختبارات نجاح وفشل وعزل بين المستأجرين.\",\"ربط الواجهة بالبيانات الفعلية ثم اختبارها على بيئة معروفة.\"].forEach(x=>list.append(make(\"div\",\"module-step\",x)));"` | — |
+| [SRC-2C8F288796-L000517](../../web/workspace.html#L517) | 517 | `" card.append(list,make(\"div\",\"form-actions\"));"` | — |
+| [SRC-2C8F288796-L000518](../../web/workspace.html#L518) | 518 | `" const links=card.querySelector(\".form-actions\");links.append(action(\"العودة إلى النظرة العامة\",\"primary\",()=>navigate(\"overview\")),action(\"فتح وكيل البحث الحالي\",\"\",()=>{window.location.href=\"/\"}));"` | — |
+| [SRC-2C8F288796-L000519](../../web/workspace.html#L519) | 519 | `" root.append(card);"` | — |
+| [SRC-2C8F288796-L000520](../../web/workspace.html#L520) | 520 | `"}"` | — |
+| [SRC-2C8F288796-L000521](../../web/workspace.html#L521) | 521 | `"function renderCurrent(){"` | — |
 | [SRC-2C8F288796-L000522](../../web/workspace.html#L522) | 522 | `" renderNav();"` | — |
 | [SRC-2C8F288796-L000523](../../web/workspace.html#L523) | 523 | `" if(state.activeView===\"overview\")renderOverview();"` | — |
 | [SRC-2C8F288796-L000524](../../web/workspace.html#L524) | 524 | `" else if(state.activeView===\"signals\")renderSignals();"` | — |

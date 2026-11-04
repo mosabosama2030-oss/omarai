@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-829A979985-L000174 إلى SRC-AAA21D04E8-L000351
+- النطاق: SRC-829A979985-L000129 إلى SRC-AAA21D04E8-L000306
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-829A979985-L000129](../../tests/test_generation_acceptance_matrix.py#L129) | 129 | `"    agent._request_budget = budget"` | — |
+| [SRC-829A979985-L000130](../../tests/test_generation_acceptance_matrix.py#L130) | 130 | `"    calls: list[str] = []"` | — |
+| [SRC-829A979985-L000131](../../tests/test_generation_acceptance_matrix.py#L131) | 131 | `""` | — |
+| [SRC-829A979985-L000132](../../tests/test_generation_acceptance_matrix.py#L132) | 132 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-829A979985-L000133](../../tests/test_generation_acceptance_matrix.py#L133) | 133 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
+| [SRC-829A979985-L000134](../../tests/test_generation_acceptance_matrix.py#L134) | 134 | `"        calls.append(model)"` | — |
+| [SRC-829A979985-L000135](../../tests/test_generation_acceptance_matrix.py#L135) | 135 | `"        return FakeCompletionResponse(\"محتوى مبتور\", \"length\")"` | — |
+| [SRC-829A979985-L000136](../../tests/test_generation_acceptance_matrix.py#L136) | 136 | `""` | — |
+| [SRC-829A979985-L000137](../../tests/test_generation_acceptance_matrix.py#L137) | 137 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
+| [SRC-829A979985-L000138](../../tests/test_generation_acceptance_matrix.py#L138) | 138 | `""` | — |
+| [SRC-829A979985-L000139](../../tests/test_generation_acceptance_matrix.py#L139) | 139 | `"    with pytest.raises(RequestBudgetExceeded):"` | — |
+| [SRC-829A979985-L000140](../../tests/test_generation_acceptance_matrix.py#L140) | 140 | `"        agent._request_completion("` | — |
+| [SRC-829A979985-L000141](../../tests/test_generation_acceptance_matrix.py#L141) | 141 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-829A979985-L000142](../../tests/test_generation_acceptance_matrix.py#L142) | 142 | `"            model=\"primary/model\","` | — |
+| [SRC-829A979985-L000143](../../tests/test_generation_acceptance_matrix.py#L143) | 143 | `"        )"` | — |
+| [SRC-829A979985-L000144](../../tests/test_generation_acceptance_matrix.py#L144) | 144 | `""` | — |
+| [SRC-829A979985-L000145](../../tests/test_generation_acceptance_matrix.py#L145) | 145 | `"    assert calls == [\"primary/model\"]"` | — |
+| [SRC-829A979985-L000146](../../tests/test_generation_acceptance_matrix.py#L146) | 146 | `"    assert budget.snapshot()[\"counts\"][\"model_calls\"] == 1"` | — |
+| [SRC-829A979985-L000147](../../tests/test_generation_acceptance_matrix.py#L147) | 147 | `"    assert [item[\"status\"] for item in agent.generation_diagnostics] == ["` | — |
+| [SRC-829A979985-L000148](../../tests/test_generation_acceptance_matrix.py#L148) | 148 | `"        \"truncated\","` | — |
+| [SRC-829A979985-L000149](../../tests/test_generation_acceptance_matrix.py#L149) | 149 | `"        \"budget_exhausted\","` | — |
+| [SRC-829A979985-L000150](../../tests/test_generation_acceptance_matrix.py#L150) | 150 | `"    ]"` | — |
+| [SRC-829A979985-L000151](../../tests/test_generation_acceptance_matrix.py#L151) | 151 | `"    assert agent.generation_diagnostics[1][\"request_started\"] is False"` | — |
+| [SRC-829A979985-L000152](../../tests/test_generation_acceptance_matrix.py#L152) | 152 | `"    assert agent.generation_diagnostics[1][\"remote_response_received\"] is False"` | — |
+| [SRC-829A979985-L000153](../../tests/test_generation_acceptance_matrix.py#L153) | 153 | `"    assert agent.model_usage == []"` | — |
+| [SRC-829A979985-L000154](../../tests/test_generation_acceptance_matrix.py#L154) | 154 | `""` | — |
+| [SRC-829A979985-L000155](../../tests/test_generation_acceptance_matrix.py#L155) | 155 | `""` | — |
+| [SRC-829A979985-L000156](../../tests/test_generation_acceptance_matrix.py#L156) | 156 | `"def test_capability_snapshot_separates_configuration_from_live_health(monkeypatch):"` | — |
+| [SRC-829A979985-L000157](../../tests/test_generation_acceptance_matrix.py#L157) | 157 | `"    agent = WebAgent()"` | — |
+| [SRC-829A979985-L000158](../../tests/test_generation_acceptance_matrix.py#L158) | 158 | `"    monkeypatch.setattr("` | — |
+| [SRC-829A979985-L000159](../../tests/test_generation_acceptance_matrix.py#L159) | 159 | `"        agent,"` | — |
+| [SRC-829A979985-L000160](../../tests/test_generation_acceptance_matrix.py#L160) | 160 | `"        \"status\","` | — |
+| [SRC-829A979985-L000161](../../tests/test_generation_acceptance_matrix.py#L161) | 161 | `"        lambda: {"` | — |
+| [SRC-829A979985-L000162](../../tests/test_generation_acceptance_matrix.py#L162) | 162 | `"            \"web_search_ready\": True,"` | — |
+| [SRC-829A979985-L000163](../../tests/test_generation_acceptance_matrix.py#L163) | 163 | `"            \"language_model_configured\": True,"` | — |
+| [SRC-829A979985-L000164](../../tests/test_generation_acceptance_matrix.py#L164) | 164 | `"            \"deepseek_search_api_configured\": True,"` | — |
+| [SRC-829A979985-L000165](../../tests/test_generation_acceptance_matrix.py#L165) | 165 | `"            \"brave_search_api_configured\": True,"` | — |
+| [SRC-829A979985-L000166](../../tests/test_generation_acceptance_matrix.py#L166) | 166 | `"            \"tavily_search_api_configured\": False,"` | — |
+| [SRC-829A979985-L000167](../../tests/test_generation_acceptance_matrix.py#L167) | 167 | `"            \"openrouter_web_search_enabled\": False,"` | — |
+| [SRC-829A979985-L000168](../../tests/test_generation_acceptance_matrix.py#L168) | 168 | `"        },"` | — |
+| [SRC-829A979985-L000169](../../tests/test_generation_acceptance_matrix.py#L169) | 169 | `"    )"` | — |
+| [SRC-829A979985-L000170](../../tests/test_generation_acceptance_matrix.py#L170) | 170 | `""` | — |
+| [SRC-829A979985-L000171](../../tests/test_generation_acceptance_matrix.py#L171) | 171 | `"    snapshot = agent._capability_status_snapshot()"` | — |
+| [SRC-829A979985-L000172](../../tests/test_generation_acceptance_matrix.py#L172) | 172 | `"    providers = {item[\"name\"]: item for item in snapshot[\"web_search\"][\"providers\"]}"` | — |
+| [SRC-829A979985-L000173](../../tests/test_generation_acceptance_matrix.py#L173) | 173 | `""` | — |
 | [SRC-829A979985-L000174](../../tests/test_generation_acceptance_matrix.py#L174) | 174 | `"    assert snapshot[\"web_search\"][\"implemented\"] is True"` | — |
 | [SRC-829A979985-L000175](../../tests/test_generation_acceptance_matrix.py#L175) | 175 | `"    assert snapshot[\"web_search\"][\"local_dependencies_ready\"] is True"` | — |
 | [SRC-829A979985-L000176](../../tests/test_generation_acceptance_matrix.py#L176) | 176 | `"    assert snapshot[\"web_search\"][\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
@@ -780,48 +825,3 @@
 | [SRC-AAA21D04E8-L000304](../../tests/test_generation_capabilities.py#L304) | 304 | `"        return FakeResponse(\"إجابة مكتملة من النموذج الاحتياطي\", \"stop\")"` | — |
 | [SRC-AAA21D04E8-L000305](../../tests/test_generation_capabilities.py#L305) | 305 | `""` | — |
 | [SRC-AAA21D04E8-L000306](../../tests/test_generation_capabilities.py#L306) | 306 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
-| [SRC-AAA21D04E8-L000307](../../tests/test_generation_capabilities.py#L307) | 307 | `"    answer = agent._request_completion("` | — |
-| [SRC-AAA21D04E8-L000308](../../tests/test_generation_capabilities.py#L308) | 308 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}], model=\"primary/model\""` | — |
-| [SRC-AAA21D04E8-L000309](../../tests/test_generation_capabilities.py#L309) | 309 | `"    )"` | — |
-| [SRC-AAA21D04E8-L000310](../../tests/test_generation_capabilities.py#L310) | 310 | `""` | — |
-| [SRC-AAA21D04E8-L000311](../../tests/test_generation_capabilities.py#L311) | 311 | `"    assert answer == \"إجابة مكتملة من النموذج الاحتياطي\""` | — |
-| [SRC-AAA21D04E8-L000312](../../tests/test_generation_capabilities.py#L312) | 312 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
-| [SRC-AAA21D04E8-L000313](../../tests/test_generation_capabilities.py#L313) | 313 | `"    assert agent.generation_diagnostics[0][\"status\"] == \"rate_limited\""` | — |
-| [SRC-AAA21D04E8-L000314](../../tests/test_generation_capabilities.py#L314) | 314 | `"    assert agent.generation_diagnostics[0][\"http_status_code\"] == 429"` | — |
-| [SRC-AAA21D04E8-L000315](../../tests/test_generation_capabilities.py#L315) | 315 | `"    assert agent.generation_diagnostics[0][\"fallback_used\"] is False"` | — |
-| [SRC-AAA21D04E8-L000316](../../tests/test_generation_capabilities.py#L316) | 316 | `"    assert agent.generation_diagnostics[1][\"status\"] == \"accepted\""` | — |
-| [SRC-AAA21D04E8-L000317](../../tests/test_generation_capabilities.py#L317) | 317 | `"    assert agent.generation_diagnostics[1][\"fallback_used\"] is True"` | — |
-| [SRC-AAA21D04E8-L000318](../../tests/test_generation_capabilities.py#L318) | 318 | `""` | — |
-| [SRC-AAA21D04E8-L000319](../../tests/test_generation_capabilities.py#L319) | 319 | `""` | — |
-| [SRC-AAA21D04E8-L000320](../../tests/test_generation_capabilities.py#L320) | 320 | `"def test_model_http_429_from_all_models_is_bounded_and_redacted(monkeypatch):"` | — |
-| [SRC-AAA21D04E8-L000321](../../tests/test_generation_capabilities.py#L321) | 321 | `"    from urllib.error import HTTPError"` | — |
-| [SRC-AAA21D04E8-L000322](../../tests/test_generation_capabilities.py#L322) | 322 | `""` | — |
-| [SRC-AAA21D04E8-L000323](../../tests/test_generation_capabilities.py#L323) | 323 | `"    agent = WebAgent()"` | — |
-| [SRC-AAA21D04E8-L000324](../../tests/test_generation_capabilities.py#L324) | 324 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-AAA21D04E8-L000325](../../tests/test_generation_capabilities.py#L325) | 325 | `"    agent.fallback_model = \"backup/model\""` | — |
-| [SRC-AAA21D04E8-L000326](../../tests/test_generation_capabilities.py#L326) | 326 | `"    calls: list[str] = []"` | — |
-| [SRC-AAA21D04E8-L000327](../../tests/test_generation_capabilities.py#L327) | 327 | `""` | — |
-| [SRC-AAA21D04E8-L000328](../../tests/test_generation_capabilities.py#L328) | 328 | `"    def fake_urlopen(request, timeout):"` | — |
-| [SRC-AAA21D04E8-L000329](../../tests/test_generation_capabilities.py#L329) | 329 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
-| [SRC-AAA21D04E8-L000330](../../tests/test_generation_capabilities.py#L330) | 330 | `"        calls.append(model)"` | — |
-| [SRC-AAA21D04E8-L000331](../../tests/test_generation_capabilities.py#L331) | 331 | `"        raise HTTPError(request.full_url, 429, \"private provider detail\", None, None)"` | — |
-| [SRC-AAA21D04E8-L000332](../../tests/test_generation_capabilities.py#L332) | 332 | `""` | — |
-| [SRC-AAA21D04E8-L000333](../../tests/test_generation_capabilities.py#L333) | 333 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
-| [SRC-AAA21D04E8-L000334](../../tests/test_generation_capabilities.py#L334) | 334 | `"    with pytest.raises(RuntimeError, match=\"HTTP 429\"):"` | — |
-| [SRC-AAA21D04E8-L000335](../../tests/test_generation_capabilities.py#L335) | 335 | `"        agent._request_completion("` | — |
-| [SRC-AAA21D04E8-L000336](../../tests/test_generation_capabilities.py#L336) | 336 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}], model=\"primary/model\""` | — |
-| [SRC-AAA21D04E8-L000337](../../tests/test_generation_capabilities.py#L337) | 337 | `"        )"` | — |
-| [SRC-AAA21D04E8-L000338](../../tests/test_generation_capabilities.py#L338) | 338 | `""` | — |
-| [SRC-AAA21D04E8-L000339](../../tests/test_generation_capabilities.py#L339) | 339 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
-| [SRC-AAA21D04E8-L000340](../../tests/test_generation_capabilities.py#L340) | 340 | `"    assert [row[\"status\"] for row in agent.generation_diagnostics] == ["` | — |
-| [SRC-AAA21D04E8-L000341](../../tests/test_generation_capabilities.py#L341) | 341 | `"        \"rate_limited\", \"rate_limited\""` | — |
-| [SRC-AAA21D04E8-L000342](../../tests/test_generation_capabilities.py#L342) | 342 | `"    ]"` | — |
-| [SRC-AAA21D04E8-L000343](../../tests/test_generation_capabilities.py#L343) | 343 | `"    assert [row[\"http_status_code\"] for row in agent.generation_diagnostics] == [429, 429]"` | — |
-| [SRC-AAA21D04E8-L000344](../../tests/test_generation_capabilities.py#L344) | 344 | `"    assert \"private provider detail\" not in repr(agent.generation_diagnostics)"` | — |
-| [SRC-AAA21D04E8-L000345](../../tests/test_generation_capabilities.py#L345) | 345 | `""` | — |
-| [SRC-AAA21D04E8-L000346](../../tests/test_generation_capabilities.py#L346) | 346 | `""` | — |
-| [SRC-AAA21D04E8-L000347](../../tests/test_generation_capabilities.py#L347) | 347 | `"@pytest.mark.parametrize(\"status_code\", [401, 403])"` | — |
-| [SRC-AAA21D04E8-L000348](../../tests/test_generation_capabilities.py#L348) | 348 | `"def test_model_auth_http_errors_are_classified_and_fallback_is_bounded("` | — |
-| [SRC-AAA21D04E8-L000349](../../tests/test_generation_capabilities.py#L349) | 349 | `"    monkeypatch, status_code"` | — |
-| [SRC-AAA21D04E8-L000350](../../tests/test_generation_capabilities.py#L350) | 350 | `"):"` | — |
-| [SRC-AAA21D04E8-L000351](../../tests/test_generation_capabilities.py#L351) | 351 | `"    from urllib.error import HTTPError"` | — |

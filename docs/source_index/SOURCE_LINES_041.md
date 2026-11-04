@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000251 إلى SRC-3451CC474D-L001050
+- النطاق: SRC-3451CC474D-L000206 إلى SRC-3451CC474D-L001005
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,51 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000206](../../tests/test_api.py#L206) | 206 | `"        assert response.headers.get(\"Access-Control-Allow-Methods\") == \"GET, POST, OPTIONS\""` | — |
+| [SRC-3451CC474D-L000207](../../tests/test_api.py#L207) | 207 | `"        assert response.headers.get(\"Access-Control-Allow-Headers\") == \"Authorization, Content-Type\""` | — |
+| [SRC-3451CC474D-L000208](../../tests/test_api.py#L208) | 208 | `""` | — |
+| [SRC-3451CC474D-L000209](../../tests/test_api.py#L209) | 209 | `"    body = json.dumps({\"question\": \"مين أفضل إشارة أراجعها؟\"}, ensure_ascii=False).encode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L000210](../../tests/test_api.py#L210) | 210 | `"    post = Request("` | — |
+| [SRC-3451CC474D-L000211](../../tests/test_api.py#L211) | 211 | `"        local_api + \"/api/ask\","` | — |
+| [SRC-3451CC474D-L000212](../../tests/test_api.py#L212) | 212 | `"        data=body,"` | — |
+| [SRC-3451CC474D-L000213](../../tests/test_api.py#L213) | 213 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000214](../../tests/test_api.py#L214) | 214 | `"        headers={\"Content-Type\": \"application/json\", \"Origin\": origin},"` | — |
+| [SRC-3451CC474D-L000215](../../tests/test_api.py#L215) | 215 | `"    )"` | — |
+| [SRC-3451CC474D-L000216](../../tests/test_api.py#L216) | 216 | `"    with urlopen(post, timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L000217](../../tests/test_api.py#L217) | 217 | `"        payload = json.loads(response.read().decode(\"utf-8\"))"` | — |
+| [SRC-3451CC474D-L000218](../../tests/test_api.py#L218) | 218 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L000219](../../tests/test_api.py#L219) | 219 | `"        assert response.headers.get(\"Access-Control-Allow-Origin\") == origin"` | — |
+| [SRC-3451CC474D-L000220](../../tests/test_api.py#L220) | 220 | `"        assert payload[\"kind\"] == \"no_data\""` | — |
+| [SRC-3451CC474D-L000221](../../tests/test_api.py#L221) | 221 | `""` | — |
+| [SRC-3451CC474D-L000222](../../tests/test_api.py#L222) | 222 | `""` | — |
+| [SRC-3451CC474D-L000223](../../tests/test_api.py#L223) | 223 | `"def test_preflight_rejects_unconfigured_origin(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000224](../../tests/test_api.py#L224) | 224 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000225](../../tests/test_api.py#L225) | 225 | `"    preflight = Request("` | — |
+| [SRC-3451CC474D-L000226](../../tests/test_api.py#L226) | 226 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000227](../../tests/test_api.py#L227) | 227 | `"        method=\"OPTIONS\","` | — |
+| [SRC-3451CC474D-L000228](../../tests/test_api.py#L228) | 228 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000229](../../tests/test_api.py#L229) | 229 | `"            \"Origin\": \"https://attacker.example\","` | — |
+| [SRC-3451CC474D-L000230](../../tests/test_api.py#L230) | 230 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
+| [SRC-3451CC474D-L000231](../../tests/test_api.py#L231) | 231 | `"        },"` | — |
+| [SRC-3451CC474D-L000232](../../tests/test_api.py#L232) | 232 | `"    )"` | — |
+| [SRC-3451CC474D-L000233](../../tests/test_api.py#L233) | 233 | `"    with pytest.raises(HTTPError) as error:"` | — |
+| [SRC-3451CC474D-L000234](../../tests/test_api.py#L234) | 234 | `"        urlopen(preflight, timeout=3)"` | — |
+| [SRC-3451CC474D-L000235](../../tests/test_api.py#L235) | 235 | `"    assert error.value.code == 403"` | — |
+| [SRC-3451CC474D-L000236](../../tests/test_api.py#L236) | 236 | `""` | — |
+| [SRC-3451CC474D-L000237](../../tests/test_api.py#L237) | 237 | `""` | — |
+| [SRC-3451CC474D-L000238](../../tests/test_api.py#L238) | 238 | `"def test_ask_is_honest_when_database_is_empty(local_api):"` | — |
+| [SRC-3451CC474D-L000239](../../tests/test_api.py#L239) | 239 | `"    status, answer = request_json("` | — |
+| [SRC-3451CC474D-L000240](../../tests/test_api.py#L240) | 240 | `"        local_api, \"/api/ask\", method=\"POST\", payload={\"question\": \"مين أفضل إشارة أراجعها؟\"}"` | — |
+| [SRC-3451CC474D-L000241](../../tests/test_api.py#L241) | 241 | `"    )"` | — |
+| [SRC-3451CC474D-L000242](../../tests/test_api.py#L242) | 242 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000243](../../tests/test_api.py#L243) | 243 | `"    assert answer[\"kind\"] == \"no_data\""` | — |
+| [SRC-3451CC474D-L000244](../../tests/test_api.py#L244) | 244 | `"    assert \"لا توجد إشارة\" in answer[\"answer\"]"` | — |
+| [SRC-3451CC474D-L000245](../../tests/test_api.py#L245) | 245 | `""` | — |
+| [SRC-3451CC474D-L000246](../../tests/test_api.py#L246) | 246 | `""` | — |
+| [SRC-3451CC474D-L000247](../../tests/test_api.py#L247) | 247 | `""` | — |
+| [SRC-3451CC474D-L000248](../../tests/test_api.py#L248) | 248 | `"def test_web_agent_endpoint_uses_agent_result(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000249](../../tests/test_api.py#L249) | 249 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-3451CC474D-L000250](../../tests/test_api.py#L250) | 250 | `""` | — |
 | [SRC-3451CC474D-L000251](../../tests/test_api.py#L251) | 251 | `"    def fake_answer(self, question, history=None, mode=\"auto\", *, budget_profile=\"default\"):"` | — |
 | [SRC-3451CC474D-L000252](../../tests/test_api.py#L252) | 252 | `"        return {"` | — |
 | [SRC-3451CC474D-L000253](../../tests/test_api.py#L253) | 253 | `"            \"answer\": \"إجابة اختبار [المصدر 1]\","` | — |
@@ -771,48 +816,3 @@
 | [SRC-3451CC474D-L001003](../../tests/test_api.py#L1003) | 1003 | `"            style_blocks += 1"` | — |
 | [SRC-3451CC474D-L001004](../../tests/test_api.py#L1004) | 1004 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
 | [SRC-3451CC474D-L001005](../../tests/test_api.py#L1005) | 1005 | `"        for match in re.finditer("` | — |
-| [SRC-3451CC474D-L001006](../../tests/test_api.py#L1006) | 1006 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
-| [SRC-3451CC474D-L001007](../../tests/test_api.py#L1007) | 1007 | `"            document,"` | — |
-| [SRC-3451CC474D-L001008](../../tests/test_api.py#L1008) | 1008 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
-| [SRC-3451CC474D-L001009](../../tests/test_api.py#L1009) | 1009 | `"        ):"` | — |
-| [SRC-3451CC474D-L001010](../../tests/test_api.py#L1010) | 1010 | `"            style_attributes += 1"` | — |
-| [SRC-3451CC474D-L001011](../../tests/test_api.py#L1011) | 1011 | `"            assert api_module._csp_hash_source(match.group(2).strip()) in policy"` | — |
-| [SRC-3451CC474D-L001012](../../tests/test_api.py#L1012) | 1012 | `"    assert script_blocks >= 2"` | — |
-| [SRC-3451CC474D-L001013](../../tests/test_api.py#L1013) | 1013 | `"    assert style_blocks >= 2"` | — |
-| [SRC-3451CC474D-L001014](../../tests/test_api.py#L1014) | 1014 | `"    assert style_attributes >= 10"` | — |
-| [SRC-3451CC474D-L001015](../../tests/test_api.py#L1015) | 1015 | `""` | — |
-| [SRC-3451CC474D-L001016](../../tests/test_api.py#L1016) | 1016 | `""` | — |
-| [SRC-3451CC474D-L001017](../../tests/test_api.py#L1017) | 1017 | `"def test_dashboard_uses_delegated_status_action_not_inline_onclick():"` | — |
-| [SRC-3451CC474D-L001018](../../tests/test_api.py#L1018) | 1018 | `"    dashboard = (Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\").read_text("` | — |
-| [SRC-3451CC474D-L001019](../../tests/test_api.py#L1019) | 1019 | `"        encoding=\"utf-8\""` | — |
-| [SRC-3451CC474D-L001020](../../tests/test_api.py#L1020) | 1020 | `"    )"` | — |
-| [SRC-3451CC474D-L001021](../../tests/test_api.py#L1021) | 1021 | `"    assert 'data-action=\"save-status\"' in dashboard"` | — |
-| [SRC-3451CC474D-L001022](../../tests/test_api.py#L1022) | 1022 | `"    assert 'onclick=\"saveStatus' not in dashboard"` | — |
-| [SRC-3451CC474D-L001023](../../tests/test_api.py#L1023) | 1023 | `"    assert \"\"\"data-lead-id=\"'+esc(l.id)+'\">\"\"\" in dashboard"` | — |
-| [SRC-3451CC474D-L001024](../../tests/test_api.py#L1024) | 1024 | `""` | — |
-| [SRC-3451CC474D-L001025](../../tests/test_api.py#L1025) | 1025 | `"def test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L001026](../../tests/test_api.py#L1026) | 1026 | `"    from urllib.parse import urlsplit"` | — |
-| [SRC-3451CC474D-L001027](../../tests/test_api.py#L1027) | 1027 | `""` | — |
-| [SRC-3451CC474D-L001028](../../tests/test_api.py#L1028) | 1028 | `"    token = \"browser-session-test-token-1234567890\""` | — |
-| [SRC-3451CC474D-L001029](../../tests/test_api.py#L1029) | 1029 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L001030](../../tests/test_api.py#L1030) | 1030 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", token)"` | — |
-| [SRC-3451CC474D-L001031](../../tests/test_api.py#L1031) | 1031 | `"    origin = \"https://\" + urlsplit(local_api).netloc"` | — |
-| [SRC-3451CC474D-L001032](../../tests/test_api.py#L1032) | 1032 | `""` | — |
-| [SRC-3451CC474D-L001033](../../tests/test_api.py#L1033) | 1033 | `"    status, payload, headers = request_json_with_headers("` | — |
-| [SRC-3451CC474D-L001034](../../tests/test_api.py#L1034) | 1034 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001035](../../tests/test_api.py#L1035) | 1035 | `"        \"/api/session\","` | — |
-| [SRC-3451CC474D-L001036](../../tests/test_api.py#L1036) | 1036 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001037](../../tests/test_api.py#L1037) | 1037 | `"        payload={\"access_token\": token},"` | — |
-| [SRC-3451CC474D-L001038](../../tests/test_api.py#L1038) | 1038 | `"        headers={\"Origin\": origin},"` | — |
-| [SRC-3451CC474D-L001039](../../tests/test_api.py#L1039) | 1039 | `"    )"` | — |
-| [SRC-3451CC474D-L001040](../../tests/test_api.py#L1040) | 1040 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L001041](../../tests/test_api.py#L1041) | 1041 | `"    assert payload == {\"authenticated\": True, \"role\": \"owner\"}"` | — |
-| [SRC-3451CC474D-L001042](../../tests/test_api.py#L1042) | 1042 | `"    assert token not in json.dumps(payload)"` | — |
-| [SRC-3451CC474D-L001043](../../tests/test_api.py#L1043) | 1043 | `"    set_cookie = headers.get(\"Set-Cookie\", \"\")"` | — |
-| [SRC-3451CC474D-L001044](../../tests/test_api.py#L1044) | 1044 | `"    assert set_cookie.startswith(\"__Host-omarai_session=\")"` | — |
-| [SRC-3451CC474D-L001045](../../tests/test_api.py#L1045) | 1045 | `"    assert \"Path=/\" in set_cookie"` | — |
-| [SRC-3451CC474D-L001046](../../tests/test_api.py#L1046) | 1046 | `"    assert \"Secure\" in set_cookie"` | — |
-| [SRC-3451CC474D-L001047](../../tests/test_api.py#L1047) | 1047 | `"    assert \"HttpOnly\" in set_cookie"` | — |
-| [SRC-3451CC474D-L001048](../../tests/test_api.py#L1048) | 1048 | `"    assert \"SameSite=Strict\" in set_cookie"` | — |
-| [SRC-3451CC474D-L001049](../../tests/test_api.py#L1049) | 1049 | `"    assert \"Max-Age=28800\" in set_cookie"` | — |
-| [SRC-3451CC474D-L001050](../../tests/test_api.py#L1050) | 1050 | `"    assert \"Domain=\" not in set_cookie"` | — |
