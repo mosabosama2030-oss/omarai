@@ -1265,3 +1265,24 @@ def test_workspace_route_serves_the_arabic_rtl_workspace_shell(local_api):
     assert 'api("/api/leads?limit=500")' in html
     assert "localStorage" not in html
     assert "sessionStorage" not in html
+
+def test_workspace_route_does_not_replace_existing_home_agent_or_leads_pages(local_api):
+    with urlopen(local_api + "/", timeout=3) as response:
+        home = response.read().decode("utf-8")
+        assert response.status == 200
+        assert "وكيل البحث والتحليل" in home
+
+    with urlopen(local_api + "/agent", timeout=3) as response:
+        agent = response.read().decode("utf-8")
+        assert response.status == 200
+        assert agent == home
+
+    with urlopen(local_api + "/workspace", timeout=3) as response:
+        workspace = response.read().decode("utf-8")
+        assert response.status == 200
+        assert '<html lang="ar" dir="rtl">' in workspace
+
+    with urlopen(local_api + "/leads", timeout=3) as response:
+        leads = response.read().decode("utf-8")
+        assert response.status == 200
+        assert "مساعد اكتشاف العملاء" in leads
