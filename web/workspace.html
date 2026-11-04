@@ -305,7 +305,8 @@ function renderNav(){
 function setConnection(ok,label,note){
  $("apiDot").className="dot "+(ok?"ok":"bad");$("apiStatus").textContent=label;$("apiStatusNote").textContent=note||"";
 }
-function canWrite(){return state.role==="owner"||state.role==="editor"}
+const WRITE_ROLES = ["owner","admin","manager","sales_agent"];
+function canWrite(){return WRITE_ROLES.includes(state.role)}
 function countByStatus(id){return state.leads.filter(x=>x.status===id).length}
 function buildStat(label,value,note,glow){
  const card=make("article","glass stat "+(glow||"glow-teal"));
