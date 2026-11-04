@@ -91,3 +91,29 @@ def test_workspace_does_not_clear_local_session_state_when_server_logout_fails()
     assert "catch(_e){}" not in handler
     assert handler.index("await api(\"/api/session/logout\"") < handler.index("state.role=null")
     assert "return" in handler.split("catch(e)", 1)[1].split("state.role=null", 1)[0]
+
+def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    match = re.search(r"const menu=\\[(.*?)\\n\\];", html, re.DOTALL)
+    assert match is not None
+    entries = re.findall(
+        r'\\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\\}',
+        match.group(1),
+    )
+    assert len(entries) == 16
+    roles = {entry_id: (label, enabled == "true") for entry_id, label, enabled in entries}
+    assert "evidence" in roles
+    assert "audit" in roles
+    assert roles["opportunities"][1] is False
+
+
+def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+
+    assert "function safeHttp(value)" in html
+    assert 'u.protocol!=="http:"&&u.protocol!=="https:"' in html
+    assert "u.username||u.password" in html
+    assert "node.textContent=String(text)" in html
+    assert "innerHTML" not in html
