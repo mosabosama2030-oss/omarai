@@ -51,3 +51,18 @@ def test_sales_workspace_uses_http_only_session_and_never_persists_access_token(
     assert 'state.activeView==="system"' in html
     assert 'if(canWrite())panel.append(createSignalForm())' in html
     assert 'if(canWrite())' in html
+
+
+def test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+
+    assert "Approved direction: Neon Command" in html
+    assert "--bg:#070d16" in html
+    assert "rgba(74,216,255,.17)" in html
+    assert "@media(max-width:1100px)" in html
+    assert "@media(max-width:760px)" in html
+    assert "@media(max-width:420px)" in html
+    assert "prefers-reduced-motion:reduce" in html
+    assert "forced-colors:active" in html
+    assert "min-height:42px" in html
