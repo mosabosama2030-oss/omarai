@@ -754,6 +754,7 @@ class WebAgent:
         self._provider_diagnostics_lock = threading.Lock()
         self._deepseek_budget_lock = threading.Lock()
         self._deepseek_search_requests_reserved = 0
+        self._firecrawl_search_requests_reserved = 0
         self.openrouter_web_search_enabled = (
             os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
             and (urllib.parse.urlsplit(self.base_url).hostname or "").lower().rstrip(".")
@@ -910,12 +911,21 @@ class WebAgent:
                 "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
+            "Firecrawl Search API when explicitly enabled with a one-request budget",
             ],
             "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
             "deepseek_search_api_configured": bool(
                 os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip()
             ),
             "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
+            "firecrawl_search_api_configured": bool(os.getenv("FIRECRAWL_API_KEY", "").strip()),
+            "firecrawl_search_enabled": os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() == "1",
+            "firecrawl_search_request_budget": max(0, min(
+                int(os.getenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "0").strip())
+                if os.getenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "0").strip().lstrip("+-").isdigit()
+                else 0,
+                1,
+            )),
             "openrouter_web_search_enabled": (
                 os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
                 and (urllib.parse.urlsplit(primary_base_url).hostname or "").lower().rstrip(".")
@@ -1797,6 +1807,27 @@ class WebAgent:
         """Reset the bounded optional Search API request budget for one operation."""
         with self._deepseek_budget_lock:
             self._deepseek_search_requests_reserved = 0
+            self._firecrawl_search_requests_reserved = 0
+
+    def _reserve_firecrawl_search_request(self) -> bool:
+        """Reserve at most one explicitly budgeted Firecrawl request per operation."""
+        if (
+            os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1"
+            or not os.getenv("FIRECRAWL_API_KEY", "").strip()
+        ):
+            return False
+        try:
+            configured_budget = int(
+                os.getenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "0").strip()
+            )
+        except ValueError:
+            configured_budget = 0
+        budget = max(0, min(configured_budget, 1))
+        with self._deepseek_budget_lock:
+            if self._firecrawl_search_requests_reserved >= budget:
+                return False
+            self._firecrawl_search_requests_reserved += 1
+            return True
 
     def _reserve_deepseek_search_request(self) -> bool:
         """Reserve one paid search request before concurrent queries invoke the provider."""
@@ -1857,6 +1888,26 @@ class WebAgent:
             self._record_provider_diagnostic(
                 "tavily_search_api", search_query, "not_configured",
                 error="TAVILY_API_KEY is not set",
+            )
+        # Firecrawl search can consume paid credits: off by default and capped at
+        # one explicitly budgeted request per answer/diagnostics operation.
+        firecrawl_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
+        if os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1":
+            self._record_provider_diagnostic(
+                "firecrawl_search_api", search_query, "disabled",
+                error="Firecrawl search is disabled by configuration",
+            )
+        elif not firecrawl_key:
+            self._record_provider_diagnostic(
+                "firecrawl_search_api", search_query, "not_configured",
+                error="FIRECRAWL_API_KEY is not set",
+            )
+        elif self._reserve_firecrawl_search_request():
+            adapters.append(("firecrawl_search_api", self._search_firecrawl))
+        else:
+            self._record_provider_diagnostic(
+                "firecrawl_search_api", search_query, "budget_exhausted",
+                error="Firecrawl request budget is zero, invalid, or already used",
             )
         if detect_freshness(search_query):
             adapters.append(("google_news_rss", self._search_news))
@@ -2091,6 +2142,62 @@ class WebAgent:
                 "provider_rank": len(rows) + 1,
                 "search_query": query,
                 "published_at": _clean_text(item.get("published_date", ""), 100),
+            })
+            if len(rows) >= MAX_PROVIDER_RESULTS:
+                break
+        return rows
+
+    def _search_firecrawl(self, query: str) -> list[dict[str, Any]]:
+        """Use Firecrawl v2 web search; caller enforces explicit enablement and budget."""
+        api_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
+        if not api_key:
+            return []
+        response = _bounded_http_request(
+            "POST",
+            "https://api.firecrawl.dev/v2/search",
+            json={
+                "query": query[:500],
+                "sources": [{"type": "web"}],
+                "limit": MAX_PROVIDER_RESULTS,
+                "country": "EG",
+            },
+            headers={
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + api_key,
+                "User-Agent": "OmaraiResearchAgent/1.0",
+            },
+            timeout=self._effective_timeout(8.5),
+            follow_redirects=False,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, dict) or payload.get("success") is False:
+            raise RuntimeError("Firecrawl search returned an unsuccessful response")
+        data = payload.get("data", {})
+        web_results = data.get("web", []) if isinstance(data, dict) else data
+        rows: list[dict[str, Any]] = []
+        for item in web_results if isinstance(web_results, list) else []:
+            if not isinstance(item, dict):
+                continue
+            url = _public_http_url(item.get("url", ""))
+            title = _clean_text(item.get("title", ""), 300)
+            description = _clean_text(
+                item.get("description", "") or item.get("snippet", ""), 1600
+            )
+            if not url or not title or not description:
+                continue
+            rows.append({
+                "title": title,
+                "url": url,
+                "snippet": description,
+                "provider": "firecrawl_search_api",
+                "provider_rank": len(rows) + 1,
+                "search_query": query,
+                "published_at": _clean_text(
+                    item.get("publishedAt", "") or item.get("published_at", ""), 100
+                ),
+                "source_class": "web",
             })
             if len(rows) >= MAX_PROVIDER_RESULTS:
                 break
@@ -4803,6 +4910,7 @@ class WebAgent:
         previous_budget = getattr(self, "_request_budget", None)
         self.generation_diagnostics = []
         self._generation_attempt_sequence = 0
+        self._reset_deepseek_search_budget()
         budget = RequestBudget.from_environment(profile=budget_profile)
         self._request_budget = budget
         try:
