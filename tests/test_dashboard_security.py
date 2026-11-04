@@ -1,5 +1,9 @@
 """Static regression checks for sensitive lead-dashboard browser behavior."""
+import json
+import re
 from pathlib import Path
+
+from agents.omarai import LeadStore
 
 DASHBOARD = Path(__file__).resolve().parents[1] / "web" / "dashboard.html"
 
@@ -71,5 +75,6 @@ def test_workspace_write_controls_match_supported_membership_roles():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
 
-    # These are the server's LeadStore.ALLOWED_ROLES except viewer, which is read-only.
-    assert 'return ["owner","admin","manager","sales_agent"].includes(state.role)' in html
+    match = re.search(r"const WRITE_ROLES = (\\[[^\\]]*\\]);", html)
+    assert match is not None
+    assert set(json.loads(match.group(1))) == set(LeadStore.ALLOWED_ROLES - {"viewer"})
