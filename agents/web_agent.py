@@ -2159,7 +2159,7 @@ class WebAgent:
                 "query": query[:500],
                 "sources": [{"type": "web"}],
                 "limit": MAX_PROVIDER_RESULTS,
-                "country": "EG" if re.search(r"[\\u0600-\\u06FF]", query) else "US",
+                "country": "EG" if re.search(r"[\u0600-\u06FF]", query) else "US",
             },
             headers={
                 "Accept": "application/json",
