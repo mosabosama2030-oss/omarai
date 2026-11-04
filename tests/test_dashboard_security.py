@@ -78,3 +78,16 @@ def test_workspace_write_controls_match_supported_membership_roles():
     match = re.search(r"const WRITE_ROLES = (\[[^\]]*\]);", html)
     assert match is not None
     assert set(json.loads(match.group(1))) == set(LeadStore.ALLOWED_ROLES - {"viewer"})
+
+def test_workspace_does_not_clear_local_session_state_when_server_logout_fails():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    start = html.index('$("logoutButton").addEventListener("click"')
+    end = html.index('$("addSignalTop").addEventListener', start)
+    handler = html[start:end]
+
+    assert "catch(e)" in handler
+    assert "alert(" in handler
+    assert "catch(_e){}" not in handler
+    assert handler.index("await api(\"/api/session/logout\"") < handler.index("state.role=null")
+    assert "return" in handler.split("catch(e)", 1)[1].split("state.role=null", 1)[0]
