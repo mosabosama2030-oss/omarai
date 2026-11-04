@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09111f">
+<title>Omarai | مساحة العمل</title>
+<style>
+:root{color-scheme:dark;--bg:#080f1d;--panel:rgba(18,29,48,.78);--panel-2:rgba(15,25,42,.92);--line:rgba(150,178,214,.16);--text:#edf4ff;--muted:#9aaec8;--teal:#69e6d1;--cyan:#79cfff;--violet:#9c91ff;--coral:#ff9c9f;--amber:#f3c77c;--green:#78dfaa;--danger:#ff8794;--radius:20px}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--bg)}
+body{margin:0;min-height:100vh;color:var(--text);font-family:"Noto Sans Arabic","IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;background:radial-gradient(ellipse at 85% -10%,rgba(48,91,140,.34),transparent 38%),radial-gradient(ellipse at 8% 36%,rgba(31,91,96,.18),transparent 32%),linear-gradient(145deg,#080f1d,#0b1424 58%,#080f1d)}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.app{display:grid;grid-template-columns:258px minmax(0,1fr);min-height:100vh;max-width:1680px;margin:auto}
+.sidebar{position:sticky;top:0;height:100vh;padding:22px 16px;border-left:1px solid var(--line);background:rgba(7,14,25,.72);backdrop-filter:blur(24px);display:flex;flex-direction:column;gap:18px;overflow:auto}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 8px 16px;border-bottom:1px solid var(--line)}
+.logo{width:43px;height:43px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,var(--teal),#7fb7ff 62%,var(--violet));color:#061421;font-weight:950;font-size:24px;box-shadow:0 8px 30px rgba(105,230,209,.19)}
+.brand-name{font-weight:900;font-size:20px;letter-spacing:.2px}.brand-sub{font-size:10px;color:var(--muted);margin-top:3px}
+.workspace-label{font-size:10px;color:#758ba8;font-weight:800;letter-spacing:.08em;padding:0 10px}
+.nav{display:flex;flex-direction:column;gap:5px}
+.nav button{display:flex;align-items:center;gap:11px;width:100%;padding:11px 12px;border:1px solid transparent;border-radius:13px;background:transparent;color:#c1d0e4;text-align:right;font-size:12px;transition:.16s}
+.nav button:hover{background:rgba(135,166,203,.08);border-color:var(--line)}
+.nav button.active{color:#eafffb;background:linear-gradient(100deg,rgba(73,194,181,.17),rgba(105,152,225,.09));border-color:rgba(105,230,209,.22)}
+.nav-icon{width:22px;text-align:center;font-size:15px;color:var(--teal)}
+.nav button.disabled{opacity:.56}
+.nav-status{margin-right:auto;padding:3px 7px;border:1px solid var(--line);border-radius:99px;color:#8297b3;font-size:9px}
+.side-bottom{margin-top:auto;display:grid;gap:10px}
+.connection{padding:13px;border:1px solid var(--line);border-radius:15px;background:rgba(18,31,51,.65)}
+.connection-title{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800}
+.dot{width:8px;height:8px;border-radius:50%;background:#8496ad;box-shadow:0 0 0 4px rgba(132,150,173,.10)}
+.dot.ok{background:var(--green);box-shadow:0 0 0 4px rgba(120,223,170,.10)}
+.dot.bad{background:var(--danger)}
+.connection small{display:block;color:var(--muted);line-height:1.7;margin-top:7px;font-size:10px}
+.side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px}
+.side-links a{font-size:10px;color:#92a8c4}
+.main{min-width:0;padding:24px clamp(14px,3vw,38px) 34px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:2px 0 18px;border-bottom:1px solid var(--line)}
+.breadcrumb{font-size:11px;color:var(--muted)}.breadcrumb strong{color:#e4eefb;font-size:12px}
+.top-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.role-pill,.status-pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:99px;padding:7px 11px;color:#bdcbe0;font-size:10px;background:rgba(19,32,52,.6)}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:10px 14px;color:#dce8f8;background:rgba(22,37,59,.82);font-size:11px;font-weight:800;transition:.16s}
+.button:hover{border-color:rgba(105,230,209,.48);transform:translateY(-1px)}
+.button.primary{background:linear-gradient(105deg,var(--teal),#a4c5ff);color:#071522;border:0}
+.button.ghost{background:transparent}
+.button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:26px 0 19px}
+.eyebrow{color:var(--teal);font-size:10px;font-weight:900;letter-spacing:.1em}
+.page-head h1{font-size:clamp(24px,3vw,34px);line-height:1.35;margin:6px 0 7px;letter-spacing:-.5px}
+.page-head p{max-width:760px;color:var(--muted);font-size:12px;line-height:1.9;margin:0}
+.glass{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(22,35,56,.88),rgba(13,23,40,.87));box-shadow:0 20px 55px rgba(0,0,0,.13);backdrop-filter:blur(18px)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.stat{padding:17px 18px;position:relative;overflow:hidden}
+.stat:after{content:"";position:absolute;width:85px;height:85px;border-radius:50%;background:var(--glow,rgba(105,230,209,.1));left:-23px;top:-29px;filter:blur(8px)}.stat.glow-teal:after{background:rgba(105,230,209,.13)}.stat.glow-blue:after{background:rgba(121,207,255,.13)}.stat.glow-amber:after{background:rgba(243,199,124,.13)}.stat.glow-violet:after{background:rgba(156,145,255,.14)}
+.stat-label{color:var(--muted);font-size:10px;position:relative;z-index:1}
+.stat-value{font-size:28px;font-weight:900;line-height:1.3;margin:7px 0 3px;position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.stat-note{color:#7f96b3;font-size:9px;position:relative;z-index:1}
+.content-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,.8fr);gap:14px}
+.panel{padding:19px;min-width:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.panel-head h2{font-size:14px;margin:0}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.7}
+.subtle{font-size:10px;color:var(--muted)}
+.signal-list{display:grid;gap:9px}
+.signal-card{border:1px solid rgba(145,174,211,.14);border-radius:15px;background:rgba(8,17,31,.56);padding:14px;display:grid;gap:9px}
+.signal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.signal-text{font-size:12px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;color:#e0eafa}
+.signal-meta{display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:9px;color:#afc0d6;background:rgba(23,38,61,.55)}
+.tag.teal{color:#a9f6e8;border-color:rgba(105,230,209,.23);background:rgba(32,112,104,.15)}
+.tag.amber{color:#f7d99f;border-color:rgba(243,199,124,.22);background:rgba(135,93,32,.12)}
+.tag.red{color:#ffb0b6;border-color:rgba(255,135,148,.22);background:rgba(130,40,52,.12)}
+.signal-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.small-button{border:1px solid var(--line);border-radius:10px;background:rgba(20,34,54,.8);color:#d6e3f4;padding:7px 10px;font-size:10px;font-weight:800}
+.small-button:hover{border-color:rgba(105,230,209,.45)}
+.empty{border:1px dashed rgba(145,174,211,.24);border-radius:15px;padding:27px 16px;text-align:center;color:var(--muted);font-size:11px;line-height:1.9}
+.empty strong{display:block;color:#dce8f7;font-size:13px;margin-bottom:6px}
+.mini-bars{display:grid;gap:13px}
+.bar-row{display:grid;grid-template-columns:82px minmax(0,1fr) 26px;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
+.bar-track{height:8px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}
+.bar-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}.bar-fill.w-0{width:0%}.bar-fill.w-5{width:5%}.bar-fill.w-10{width:10%}.bar-fill.w-15{width:15%}.bar-fill.w-20{width:20%}.bar-fill.w-25{width:25%}.bar-fill.w-30{width:30%}.bar-fill.w-35{width:35%}.bar-fill.w-40{width:40%}.bar-fill.w-45{width:45%}.bar-fill.w-50{width:50%}.bar-fill.w-55{width:55%}.bar-fill.w-60{width:60%}.bar-fill.w-65{width:65%}.bar-fill.w-70{width:70%}.bar-fill.w-75{width:75%}.bar-fill.w-80{width:80%}.bar-fill.w-85{width:85%}.bar-fill.w-90{width:90%}.bar-fill.w-95{width:95%}.bar-fill.w-100{width:100%}
+.notice{padding:13px;border-radius:14px;border:1px solid rgba(243,199,124,.2);background:rgba(116,79,29,.1);color:#efd7a9;font-size:10px;line-height:1.9}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 15px}
+.field{display:grid;gap:6px;margin:11px 0}
+.field label{font-size:10px;color:#c0d0e5}
+input,textarea,select{width:100%;border:1px solid rgba(145,174,211,.22);border-radius:11px;background:rgba(7,16,29,.78);color:var(--text);padding:10px 12px;font-size:11px;min-width:0}
+textarea{min-height:104px;resize:vertical;line-height:1.8}
+input::placeholder,textarea::placeholder{color:#7085a2}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.analysis-result{border:1px solid rgba(105,230,209,.2);background:rgba(20,88,82,.12);padding:13px;border-radius:14px;margin-top:12px}
+.analysis-score{font-size:24px;font-weight:900;color:var(--teal)}
+.disclaimer{font-size:9px;color:#b0bdce;line-height:1.8;margin:7px 0 0}
+.pipeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pipeline-col{padding:13px;border:1px solid var(--line);border-radius:15px;background:rgba(9,18,32,.38);min-width:0}
+.pipeline-col h3{font-size:11px;margin:0 0 10px;display:flex;justify-content:space-between;gap:8px}
+.pipeline-item{display:block;width:100%;text-align:right;padding:10px;margin-top:8px;border-radius:11px;background:rgba(21,35,55,.75);border:1px solid rgba(145,174,211,.12);color:#e0eafa;font-size:10px;line-height:1.7;cursor:pointer;overflow-wrap:anywhere}
+.pipeline-item:hover{border-color:rgba(105,230,209,.35)}
+.detail{position:fixed;z-index:20;inset:0;background:rgba(2,8,16,.7);display:none;justify-content:flex-start}
+.detail.open{display:flex}
+.detail-panel{width:min(540px,100%);height:100%;overflow:auto;padding:22px;background:#0b1627;border-left:1px solid var(--line);box-shadow:20px 0 70px rgba(0,0,0,.35)}
+.detail-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.detail-head h2{font-size:16px;margin:0}
+.detail-body{font-size:11px;line-height:1.9;color:#d7e4f4;overflow-wrap:anywhere}
+.detail-body h3{font-size:11px;color:var(--teal);margin:17px 0 7px}
+.detail-body p{white-space:pre-wrap}
+.detail-body a{overflow-wrap:anywhere}
+.module-placeholder{padding:30px;max-width:780px}
+.module-placeholder h2{font-size:18px;margin:8px 0}
+.module-placeholder p{font-size:11px;line-height:2;color:var(--muted);max-width:650px}
+.module-list{display:grid;gap:8px;margin-top:18px}
+.module-step{padding:11px 13px;border-radius:12px;background:rgba(10,20,36,.7);border:1px solid var(--line);font-size:10px;color:#b9cbe0}
+.footer{border-top:1px solid var(--line);margin-top:24px;padding:15px 0 0;color:#748aa6;font-size:9px;line-height:1.9}
+.auth-gate{position:fixed;z-index:50;inset:0;display:none;place-items:center;padding:20px;background:rgba(3,9,17,.88);backdrop-filter:blur(18px)}
+.auth-gate.open{display:grid}
+.auth-card{width:min(430px,100%);padding:26px}
+.auth-card h2{font-size:20px;margin:9px 0}
+.auth-card p{font-size:11px;color:var(--muted);line-height:1.9}
+.auth-error{color:var(--danger);font-size:10px;min-height:18px;margin-top:9px}
+.mobile-brand{display:none}
+@media(max-width:1100px){.app{grid-template-columns:220px minmax(0,1fr)}.sidebar{padding-inline:12px}.content-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.app{display:block}.sidebar{position:relative;top:auto;height:auto;padding:12px 14px;border-left:0;border-bottom:1px solid var(--line);gap:10px}.brand{padding:0 3px 10px}.nav{display:flex;flex-direction:row;overflow:auto;padding-bottom:3px}.nav button{width:auto;min-width:max-content;padding:9px 11px}.nav-status,.workspace-label,.side-bottom,.side-links{display:none}.main{padding:13px 13px 26px}.topbar{padding-bottom:12px}.page-head{align-items:flex-start;flex-direction:column;margin:19px 0 14px}.stats{gap:8px}.stat{padding:13px}.stat-value{font-size:23px}.panel{padding:14px}.form-grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr}.role-pill{display:none}}
+@media(max-width:420px){.stats{grid-template-columns:1fr 1fr}.top-actions{gap:6px}.button{padding:9px 10px}.page-head h1{font-size:24px}.bar-row{grid-template-columns:72px minmax(0,1fr) 22px}}
+
+/* Approved direction: Neon Command — production workspace adaptation */
+:root{--bg:#070d16;--panel:rgba(12,25,38,.88);--panel-2:rgba(9,20,32,.96);--line:rgba(74,216,255,.17);--text:#e7f7ff;--muted:#86a5b8;--teal:#52dfff;--cyan:#71eaff;--violet:#8d9bff;--coral:#ff9caa;--amber:#f4cc83;--green:#78e4b0;--danger:#ff899b;--radius:16px}
+body{background:radial-gradient(ellipse at 50% -20%,rgba(21,54,77,.8),transparent 55%),radial-gradient(ellipse at 100% 25%,rgba(34,39,92,.18),transparent 35%),#070d16}
+.sidebar{background:rgba(5,13,22,.86);border-left-color:rgba(74,216,255,.18);backdrop-filter:blur(26px)}
+.logo{background:linear-gradient(135deg,#52dfff,#8d9bff);box-shadow:0 0 28px rgba(82,223,255,.18)}
+.brand-name{letter-spacing:.04em}
+.nav button{border-radius:10px}
+.nav button.active{background:linear-gradient(100deg,rgba(67,223,255,.13),rgba(91,113,255,.10));border-color:rgba(67,223,255,.28);box-shadow:inset 0 1px rgba(255,255,255,.035)}
+.nav-icon{color:#71eaff}
+.connection,.role-pill,.status-pill,.button,.small-button{border-color:rgba(57,207,255,.18);background:rgba(10,27,40,.78)}
+.button.primary{background:linear-gradient(105deg,#52dfff,#a1b4ff);color:#061421;box-shadow:0 6px 24px rgba(82,223,255,.12)}
+.glass{background:linear-gradient(145deg,rgba(16,35,52,.94),rgba(8,20,32,.92));border-color:rgba(74,216,255,.18);box-shadow:inset 0 1px rgba(255,255,255,.035),0 16px 42px rgba(0,0,0,.32);backdrop-filter:blur(22px)}
+.stat{border-radius:15px;background:linear-gradient(145deg,rgba(16,35,52,.96),rgba(9,21,33,.94))}
+.stat:after{background:rgba(82,223,255,.13)}
+.stat.glow-teal:after{background:rgba(82,223,255,.15)}
+.stat.glow-blue:after{background:rgba(113,234,255,.13)}
+.stat.glow-amber:after{background:rgba(244,204,131,.13)}
+.stat.glow-violet:after{background:rgba(141,155,255,.15)}
+.stat-value{color:#71eaff;text-shadow:0 0 20px rgba(82,223,255,.10)}
+.signal-card,.pipeline-col{background:rgba(5,16,27,.68);border-color:rgba(57,207,255,.14);border-radius:12px}
+.signal-card{box-shadow:inset 0 1px rgba(255,255,255,.025)}
+.tag{border-radius:8px;border-color:rgba(57,207,255,.19);background:rgba(10,29,43,.65)}
+.tag.teal{color:#91f0ff;border-color:rgba(82,223,255,.28);background:rgba(28,113,143,.14)}
+.bar-fill{background:linear-gradient(90deg,#52dfff,#8d9bff);box-shadow:0 0 12px rgba(82,223,255,.2)}
+input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,.2)}
+.analysis-result{border-color:rgba(82,223,255,.22);background:rgba(22,100,124,.13)}
+.pipeline-item{background:rgba(8,23,35,.9);border-color:rgba(57,207,255,.14);border-radius:10px}
+.detail-panel{background:#081522;border-left-color:rgba(57,207,255,.2)}
+.auth-gate{background:rgba(2,8,15,.9)}
+.auth-card{background:linear-gradient(145deg,rgba(16,35,52,.98),rgba(8,20,32,.98));border-color:rgba(74,216,255,.22)}
+@media(max-width:760px){
+ .sidebar{background:rgba(5,13,22,.94);border-bottom-color:rgba(57,207,255,.18)}
+ .nav{scrollbar-width:thin;scrollbar-color:rgba(82,223,255,.28) transparent}
+ .nav button{min-height:42px}
+ .main{padding-inline:12px}
+ .topbar{align-items:flex-start}
+ .top-actions{max-width:100%}
+ .button,.small-button{min-height:40px}
+ .glass{backdrop-filter:blur(16px)}
+}
+@media(max-width:420px){
+ .stat{min-height:100px}
+ .stat-value{font-size:22px}
+ .signal-top{flex-direction:column}
+ .signal-actions{align-items:stretch}
+ .signal-actions .small-button{flex:1}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+@media(forced-colors:active){
+ .glass,.stat,.signal-card,.pipeline-col,.button,.small-button{border:1px solid CanvasText;backdrop-filter:none}
+ .nav button.active{outline:2px solid Highlight}
+}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">O</div><div><div class="brand-name">Omarai</div><div class="brand-sub">ذكاء المبيعات واكتساب العملاء</div></div></div>
+  <div class="workspace-label">مساحة العمل</div>
+  <nav class="nav" id="mainNav" aria-label="التنقل الرئيسي"></nav>
+  <div class="side-bottom">
+    <div class="connection"><div class="connection-title"><span class="dot" id="apiDot"></span><span id="apiStatus">التحقق من الخادم</span></div><small id="apiStatusNote">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>
+    <div class="connection"><div class="connection-title">الهوية والصلاحيات</div><small id="roleSummary">لم يتم التحقق من جلسة المستخدم بعد.</small></div>
+    <div class="side-links"><a href="/">وكيل البحث</a><a href="/leads">مساحة الإشارات القديمة</a></div>
+  </div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div class="breadcrumb">Omarai <span aria-hidden="true">/</span> <strong id="crumb">نظرة عامة</strong></div>
+    <div class="top-actions"><span class="role-pill" id="rolePill">التحقق من الجلسة…</span><button class="button ghost" id="logoutButton" type="button">تسجيل الخروج</button><button class="button primary" id="addSignalTop" type="button">＋ إشارة جديدة</button></div>
+  </header>
+  <section class="page-head"><div><div class="eyebrow" id="pageEyebrow">SALES INTELLIGENCE WORKSPACE</div><h1 id="pageTitle">حوّل إشارات الطلب إلى فرص قابلة للمراجعة</h1><p id="pageDescription">مساحة عمل عربية لإدارة إشارات الطلب والأدلة والمتابعة. الأرقام هنا تُقرأ من سجل Omarai الفعلي، ولا تُعرض بيانات تجريبية على أنها فرص حقيقية.</p></div></section>
+  <div id="viewRoot" aria-live="polite"><div class="glass panel empty"><strong>جارٍ تحميل مساحة العمل</strong>يتم التحقق من الجلسة ثم قراءة بياناتك المصرح بها.</div></div>
+  <footer class="footer">Omarai · تُعرض الإشارات من السجل المرتبط بمساحة العمل المصادق عليها. درجات القواعد ليست احتمالات شراء. البحث الخارجي واستهلاك حصص الموصلات لا يبدأان تلقائيًا من هذه الشاشة.</footer>
+</main>
+</div>
+
+<div class="detail" id="detailDrawer" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <section class="detail-panel"><div class="detail-head"><h2 id="detailTitle">تفاصيل الإشارة</h2><button class="button ghost" id="closeDetail" type="button">إغلاق ✕</button></div><div class="detail-body" id="detailBody"></div></section>
+</div>
+<div class="auth-gate open" id="authGate">
+  <section class="auth-card glass">
+    <div class="eyebrow">OMARAI SECURE WORKSPACE</div>
+    <h2>تسجيل الدخول إلى مساحة العمل</h2>
+    <p>تستخدم هذه الصفحة جلسة الخادم الآمنة HttpOnly. رمز الوصول لا يُحفظ في Local Storage أو Session Storage، ويُمسح من حقل الإدخال بعد نجاح الدخول.</p>
+    <form id="loginForm">
+      <div class="field"><label for="accessToken">رمز الوصول الخاص بالتطبيق</label><input id="accessToken" type="password" autocomplete="current-password" required minlength="32" placeholder="أدخل رمز الوصول"></div>
+      <button class="button primary" type="submit" id="loginButton">تسجيل الدخول</button>
+      <div class="auth-error" id="authError" role="alert"></div>
+    </form>
+    <p>لا تدخل مفاتيح موفر البحث أو كلمات مرور خارجية في هذا الحقل.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const state={role:null,leads:[],activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
+const statuses=[
+ {id:"new",label:"جديد"},
+ {id:"needs_review",label:"يحتاج مراجعة"},
+ {id:"qualified",label:"مؤهل"},
+ {id:"contacted",label:"تم التواصل"},
+ {id:"converted",label:"تحول لعميل"},
+ {id:"rejected",label:"مرفوض"}
+];
+const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إشارة متوسطة",early_research:"استكشاف مبكر",unclear:"غير واضحة",not_buyer_signal:"ليست إشارة شراء مباشرة"};
+const menu=[
+ {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
+ {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
+ {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:false},
+ {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:false},
+ {id:"run",label:"مراقبة التشغيل",icon:"◷",enabled:false},
+ {id:"signals",label:"صندوق إشارات الطلب",icon:"▤",enabled:true},
+ {id:"opportunities",label:"تفاصيل الفرص",icon:"◈",enabled:false},
+ {id:"companies",label:"ملفات الشركات",icon:"▦",enabled:false},
+ {id:"pipeline",label:"مسار التأهيل",icon:"⇢",enabled:true},
+ {id:"market",label:"استخبارات السوق",icon:"◉",enabled:false},
+ {id:"sources",label:"المصادر والموصلات",icon:"⌘",enabled:false},
+ {id:"evidence",label:"مركز الأدلة",icon:"▤",enabled:false},
+ {id:"audit",label:"سجل التدقيق",icon:"⌗",enabled:false},
+ {id:"tasks",label:"المهام والتنبيهات",icon:"◴",enabled:false},
+ {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false},
+ {id:"system",label:"حالات النظام",icon:"◌",enabled:true}
+];
+function make(tag,cls,text){
+ const node=document.createElement(tag);
+ if(cls)node.className=cls;
+ if(text!==undefined&&text!==null)node.textContent=String(text);
+ return node;
+}
+function action(label,cls,handler){
+ const b=make("button","button "+(cls||""),label);
+ b.type="button";b.addEventListener("click",handler);return b;
+}
+function safeHttp(value){
+ try{const u=new URL(String(value||""));if((u.protocol!=="http:"&&u.protocol!=="https:")||!u.hostname||u.username||u.password)return null;return u.href}catch(_e){return null}
+}
+function escapeMessage(message){return String(message||"حدث خطأ غير متوقع").slice(0,500)}
+async function api(path,options){
+ const opts=options||{};
+ const headers={};
+ if(opts.body!==undefined)headers["Content-Type"]="application/json";
+ const response=await fetch(path,{method:opts.method||"GET",credentials:"same-origin",headers:headers,body:opts.body===undefined?undefined:JSON.stringify(opts.body)});
+ let data={};
+ try{data=await response.json()}catch(_e){data={error:"تعذر قراءة استجابة الخادم"}}
+ if(response.status===401){showAuth("انتهت الجلسة أو لم يتم تسجيل الدخول. أدخل رمز الوصول للمتابعة.");throw new Error("يلزم تسجيل الدخول مجددًا.")}
+ if(!response.ok)throw new Error(data.error||("فشل الطلب ("+response.status+")"));
+ return data;
+}
+function showAuth(message){
+ $("authGate").classList.add("open");
+ $("authError").textContent=message||"";
+ $("accessToken").value="";
+}
+function hideAuth(){ $("authGate").classList.remove("open"); $("authError").textContent=""; }
+function statusLabel(id){const item=statuses.find(x=>x.id===id);return item?item.label:id||"غير محدد"}
+function tag(text,cls){return make("span","tag "+(cls||""),text)}
+function setPage(title,description,eyebrow){
+ $("crumb").textContent=title;$("pageTitle").textContent=title;$("pageDescription").textContent=description||"";
+ $("pageEyebrow").textContent=eyebrow||"OMARAI WORKSPACE";
+}
+function renderNav(){
+ const nav=$("mainNav");nav.replaceChildren();
+ menu.forEach(item=>{
+  const b=make("button",state.activeView===item.id?"active":"",null);
+  b.type="button";b.setAttribute("aria-current",state.activeView===item.id?"page":"false");
+  const icon=make("span","nav-icon",item.icon);const name=make("span","",item.label);b.append(icon,name);
+  if(!item.enabled)b.append(make("span","nav-status","قريبًا"));
+  if(item.enabled)b.addEventListener("click",()=>navigate(item.id));
+  else b.addEventListener("click",()=>navigate(item.id));
+  if(!item.enabled)b.classList.add("disabled");
+  nav.append(b);
+ });
+}
+function setConnection(ok,label,note){
+ $("apiDot").className="dot "+(ok?"ok":"bad");$("apiStatus").textContent=label;$("apiStatusNote").textContent=note||"";
+}
+const WRITE_ROLES = ["owner","admin","manager","sales_agent"];
+function canWrite(){return WRITE_ROLES.includes(state.role)}
+function countByStatus(id){return state.leads.filter(x=>x.status===id).length}
+function buildStat(label,value,note,glow){
+ const card=make("article","glass stat "+(glow||"glow-teal"));
+ card.append(make("div","stat-label",label),make("div","stat-value",value),make("div","stat-note",note));return card;
+}
+function renderOverview(){
+ setPage("نظرة عامة","ملخص مبني على سجل الإشارات المحفوظ في مساحة العمل الحالية. لا تُحسب نتائج البحث أو ملفات الشركات غير المتاحة ضمن الأرقام.","SALES INTELLIGENCE · OVERVIEW");
+ const root=$("viewRoot");root.replaceChildren();
+ const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
+ const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
+ const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
+ const stats=make("div","stats");
+ stats.append(buildStat("الإشارات المحمّلة",state.leads.length,"حتى 500 سجل أعادها الخادم","glow-teal"),
+ buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
+ buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","glow-amber"),
+ buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","glow-violet"));
+ root.append(stats);
+ const grid=make("div","content-grid");
+ const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");head.append(make("h2","","أحدث الإشارات"),make("p","","آخر السجلات التي أعادها الخادم"));h.append(head,action("عرض الصندوق ←","ghost",()=>navigate("signals")));recent.append(h);
+ const list=make("div","signal-list");
+ const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||"").localeCompare(String(a.updated_at||""))).slice(0,5);
+ if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بإضافة إشارة من مصدر عام ومسموح، ثم حلّلها واحفظ دليلها."));
+ else rows.forEach(l=>list.append(signalCard(l)));
+ recent.append(list);
+ const distribution=make("section","glass panel");const dh=make("div","panel-head");const dtitle=make("div");dtitle.append(make("h2","","توزيع حالات المتابعة"),make("p","","حالات السجل الحالي فقط"));dh.append(dtitle);distribution.append(dh);
+ const bars=make("div","mini-bars");const groups=[["جديد","new"],["مراجعة","needs_review"],["مؤهل","qualified"],["تواصل","contacted"],["تحول","converted"],["مرفوض","rejected"]];
+ groups.forEach(([label,id])=>{const n=countByStatus(id);const row=make("div","bar-row");row.append(make("span","",label));const track=make("div","bar-track");const percent=state.leads.length?Math.max(0,Math.min(100,Math.round((n/state.leads.length*100)/5)*5)):0;const fill=make("div","bar-fill w-"+percent);track.append(fill);row.append(track,make("span","",n));bars.append(row)});
+ distribution.append(bars,make("p","disclaimer","ملاحظة: هذا توزيع وصفي لسجلاتك، وليس مؤشرًا على حجم السوق أو اكتمال البحث."));
+ grid.append(recent,distribution);root.append(grid);
+}
+function emptyState(title,description){
+ const box=make("div","empty");box.append(make("strong","",title),make("span","",description));return box;
+}
+function signalCard(lead){
+ const card=make("article","signal-card");
+ const top=make("div","signal-top");const left=make("div","signal-meta");
+ const assessment=lead.assessment||{};left.append(tag(labels[assessment.label]||assessment.label||"غير مصنفة",assessment.label==="high_intent"?"teal":""));
+ left.append(tag(statusLabel(lead.status),lead.status==="rejected"?"red":""));
+ top.append(left,make("span","subtle",lead.observed_at||"تاريخ الرصد غير متاح"));card.append(top);
+ const text=String(lead.text||"");card.append(make("p","signal-text",text.length>250?text.slice(0,247)+"…":text));
+ const meta=make("div","signal-meta");
+ meta.append(tag("الدرجة "+String(assessment.score??"—")+"/100"),tag(String(lead.platform||"مصدر غير محدد")));
+ const source=safeHttp(lead.source_url);if(source)meta.append(tag("رابط مرفق — لم تُفحص الصفحة"));
+ card.append(meta);
+ const actions=make("div","signal-actions");actions.append(make("span","subtle","المعرّف: "+String(lead.id||"").slice(0,8)));
+ actions.append(action("التفاصيل","",()=>openDetails(lead)));
+ if(canWrite())actions.append(action("تغيير الحالة","",()=>openDetails(lead)));
+ card.append(actions);return card;
+}
+function openDetails(lead){
+ const body=$("detailBody");body.replaceChildren();
+ const a=lead.assessment||{};
+ body.append(make("h3","","نص الإشارة"),make("p","",lead.text||"لا يوجد نص محفوظ."));
+ body.append(make("h3","","المصدر والدليل"));
+ const url=safeHttp(lead.source_url);
+ if(url){const link=make("a","",url);link.href=url;link.target="_blank";link.rel="noopener noreferrer";body.append(link);body.append(make("p","disclaimer","وجود الرابط لا يثبت أن الصفحة متاحة أو أن محتواها يطابق نص الإشارة؛ لم تُجرَ قراءة آلية للمصدر في هذه الشاشة."))}
+ else body.append(make("p","","لا يوجد رابط HTTP(S) صالح محفوظ لهذا السجل."));
+ body.append(make("h3","","التصنيف والتقييم"));
+ body.append(make("p","", (labels[a.label]||a.label||"غير مصنف")+" · "+String(a.score??"—")+"/100"));
+ if(a.summary)body.append(make("p","",a.summary));
+ if(Array.isArray(a.matched_signals)&&a.matched_signals.length){
+  const ul=make("ul","");a.matched_signals.forEach(s=>ul.append(make("li","",String(s.phrase||"إشارة")+(s.points!==undefined?" · +"+s.points:""))));body.append(ul);
+ }
+ body.append(make("p","disclaimer","درجة القواعد تفسير أولي، وليست احتمالًا إحصائيًا للشراء ولا تثبت نية الكاتب أو استمرار الطلب."));
+ body.append(make("h3","","حالة المتابعة"),make("p","",statusLabel(lead.status)));
+ if(canWrite()){
+  const select=make("select","");select.setAttribute("aria-label","تغيير حالة الإشارة");
+  statuses.forEach(s=>{const o=make("option","",s.label);o.value=s.id;o.selected=s.id===lead.status;select.append(o)});
+  const save=action("حفظ الحالة","primary",async()=>{save.disabled=true;try{await api("/api/leads/"+encodeURIComponent(lead.id)+"/status",{method:"POST",body:{status:select.value}});closeDetails();await loadLeads();renderCurrent()}catch(e){body.append(make("p","auth-error",escapeMessage(e.message)))}finally{save.disabled=false}});
+  body.append(make("h3","","تحديث الحالة"),select,save);
+ }
+ $("detailDrawer").classList.add("open");
+}
+function closeDetails(){$("detailDrawer").classList.remove("open")}
+function renderSignals(){
+ setPage("صندوق إشارات الطلب","راجع النص الأصلي والمصدر والتصنيف. لا تعرض هذه الشاشة شركات أو أشخاصًا غير موجودين في السجل الفعلي.","DEMAND SIGNAL INBOX");
+ const root=$("viewRoot");root.replaceChildren();
+ const panel=make("section","glass panel");const ph=make("div","panel-head");const ptitle=make("div");ptitle.append(make("h2","","الإشارات المحفوظة"),make("p","","بيانات من GET /api/leads، محمية بجلسة المستخدم وعزل مساحة العمل."));ph.append(ptitle,action("تحديث ↻","ghost",async()=>{await loadLeads();renderSignals()}));panel.append(ph);
+ if(canWrite())panel.append(createSignalForm());
+ const toolbar=make("div","toolbar");const search=make("input","");search.type="search";search.placeholder="ابحث داخل نصوص الإشارات…";search.value=state.search;search.setAttribute("aria-label","البحث في الإشارات");
+ search.addEventListener("input",()=>{state.search=search.value;drawSignalRows(list)});
+ const filter=make("select","");filter.setAttribute("aria-label","تصفية حسب الحالة");const all=make("option","","كل الحالات");all.value="all";filter.append(all);
+ statuses.forEach(s=>{const o=make("option","",s.label);o.value=s.id;filter.append(o)});filter.value=state.filter;
+ filter.addEventListener("change",()=>{state.filter=filter.value;drawSignalRows(list)});
+ toolbar.append(search,filter);panel.append(toolbar);
+ const list=make("div","signal-list");drawSignalRows(list);panel.append(list);
+ if(!canWrite())panel.append(make("p","disclaimer","دور المستخدم الحالي للقراءة فقط؛ لا يمكنه إضافة إشارات أو تغيير الحالات."));
+ root.append(panel);
+}
+function drawSignalRows(list){
+ list.replaceChildren();
+ const query=state.search.trim().toLocaleLowerCase();
+ const rows=state.leads.filter(l=>(state.filter==="all"||l.status===state.filter)&&(!query||String(l.text||"").toLocaleLowerCase().includes(query)));
+ if(!rows.length)list.append(emptyState("لا توجد نتائج مطابقة","غيّر مرشح الحالة أو عبارة البحث، أو أضف إشارة جديدة إن كانت صلاحيتك تسمح."));
+ else rows.forEach(l=>list.append(signalCard(l)));
+}
+function createSignalForm(){
+ const wrapper=make("section","signal-card");const head=make("div","panel-head");const title=make("div");title.append(make("h2","","إضافة إشارة جديدة"),make("p","","أدخل نصًا منشورًا ورابطه العام. التحليل محلي ولا يشغّل البحث الخارجي."));head.append(title);wrapper.append(head);
+ const text=make("textarea","");text.id="newSignalText";text.placeholder="انسخ نص الطلب أو الاحتياج المعلن من المصدر المسموح…";text.maxLength=20000;text.required=true;
+ const url=make("input","");url.type="url";url.id="newSignalUrl";url.placeholder="https://رابط-المصدر";url.required=true;
+ const grid=make("div","form-grid");
+ const platform=make("select","");platform.id="newSignalPlatform";["manual","Facebook","Website","OLX","Other"].forEach(value=>{const o=make("option","",value==="manual"?"إدخال يدوي":value);o.value=value;platform.append(o)});
+ const product=make("input","");product.id="newSignalProduct";product.placeholder="مثال: أنظمة إنذار، عقارات";
+ const location=make("input","");location.id="newSignalLocation";location.placeholder="مثال: القاهرة، التجمع الخامس";
+ const note=make("input","");note.id="newSignalNote";note.placeholder="ملاحظاتك (اختياري)";
+ const fields=[["النص",text],["رابط المصدر",url],["المنصة",platform],["مصطلحات المنتج (افصل بفاصلة)",product],["السوق أو المنطقة",location],["ملاحظة",note]];
+ fields.forEach(([label,input])=>{const field=make("div","field");field.append(make("label","",label));field.lastChild.htmlFor=input.id;field.append(input);grid.append(field)});
+ wrapper.append(grid);
+ const result=make("div","");result.id="analysisResult";
+ const buttons=make("div","form-actions");
+ const analyze=action("١. حلّل الإشارة","primary",async()=>{
+  analyze.disabled=true;
+  try{
+   if(!text.value.trim())throw new Error("أدخل نص الإشارة أولًا.");
+   if(!safeHttp(url.value))throw new Error("أدخل رابط مصدر عام صالحًا يبدأ بـ HTTP أو HTTPS.");
+   const product_terms=product.value.split(",").map(x=>x.trim()).filter(Boolean);
+   const location_terms=location.value.split(",").map(x=>x.trim()).filter(Boolean);
+   const data=await api("/api/analyze",{method:"POST",body:{text:text.value,product_terms:product_terms,location_terms:location_terms}});
+   state.analysis={text:text.value,url:url.value,product_terms:product_terms,location_terms:location_terms,assessment:data};
+   result.replaceChildren();
+   const box=make("div","analysis-result");box.append(make("div","analysis-score",String(data.score??"—")+"/100"),make("div","",labels[data.label]||data.label||"غير مصنفة"),make("p","",data.summary||"لا يوجد ملخص."));
+   box.append(make("p","disclaimer","هذه درجة قواعد إرشادية لا تمثل احتمال شراء. راجع النص والمصدر قبل اعتماد الإشارة."));
+   result.append(box);
+  }catch(e){result.replaceChildren(make("p","auth-error",escapeMessage(e.message)))}
+  finally{analyze.disabled=false}
+ });
+ const save=action("٢. احفظ الإشارة","",async()=>{
+  save.disabled=true;
+  try{
+   const item=state.analysis;
+   if(!item||item.text!==text.value||item.url!==url.value)throw new Error("أعد التحليل بعد أي تغيير في النص أو رابط المصدر.");
+   if(!safeHttp(url.value))throw new Error("رابط المصدر غير صالح.");
+   const product_terms=product.value.split(",").map(x=>x.trim()).filter(Boolean);
+   const location_terms=location.value.split(",").map(x=>x.trim()).filter(Boolean);
+   if(JSON.stringify(product_terms)!==JSON.stringify(item.product_terms)||JSON.stringify(location_terms)!==JSON.stringify(item.location_terms))throw new Error("تغيرت مصطلحات المنتج أو المنطقة؛ أعد التحليل.");
+   const response=await api("/api/leads",{method:"POST",body:{text:text.value,source_url:url.value,platform:platform.value,note:note.value,product_terms:product_terms,location_terms:location_terms}});
+   result.replaceChildren(make("p","tag teal",response.created?"تم حفظ الإشارة.":"هذه الإشارة موجودة بالفعل ولم تُكرر."));
+   state.analysis=null;text.value="";url.value="";note.value="";await loadLeads();renderSignals();
+  }catch(e){result.append(make("p","auth-error",escapeMessage(e.message)))}
+  finally{save.disabled=false}
+ });
+ buttons.append(analyze,save);wrapper.append(buttons,result);return wrapper;
+}
+function renderPipeline(){
+ setPage("مسار التأهيل","يعرض المسار الحالات المحفوظة فعليًا، ويمكن تحديث الحالة بعد مراجعة الدليل. لا توجد مراحل CRM غير مدعومة في الخادم.","QUALIFICATION PIPELINE");
+ const root=$("viewRoot");root.replaceChildren();
+ const panel=make("section","glass panel");const head=make("div","panel-head");const title=make("div");title.append(make("h2","","حالة كل إشارة"),make("p","","اختر بطاقة لفتح المصدر وتقييم القواعد وتغيير الحالة المسموح بها."));head.append(title,action("صندوق الإشارات ←","ghost",()=>navigate("signals")));panel.append(head);
+ const board=make("div","pipeline");const groups=[["نشطة جديدة",["new","needs_review"]],["مؤهلة / متابعة",["qualified","contacted"]],["مغلقة",["converted","rejected"]]];
+ groups.forEach(([name,ids])=>{const col=make("section","pipeline-col");const rows=state.leads.filter(l=>ids.includes(l.status));col.append(make("h3","",name+" · "+rows.length));if(!rows.length)col.append(make("p","subtle","لا توجد سجلات في هذه المجموعة."));rows.forEach(l=>{const item=make("button","pipeline-item",String(l.text||"").slice(0,115));item.type="button";item.addEventListener("click",()=>openDetails(l));col.append(item)});board.append(col)});
+ panel.append(board);root.append(panel);
+}
+async function renderSystem(){
+ setPage("حالات النظام","لقطة إعدادات يقرأها الخادم محليًا. لا تنفذ هذه الشاشة اتصالًا تجريبيًا بالموفرات ولا تستهلك حصص البحث.","SYSTEM CONFIGURATION SNAPSHOT");
+ const root=$("viewRoot");root.replaceChildren(emptyState("جارٍ قراءة حالة الخادم","GET /api/health — لا يجري اختبار اتصال خارجي."));
+ try{
+  const data=await api("/api/health");
+  const agent=data.agent||{};const build=data.build||{};
+  root.replaceChildren();
+  const stats=make("div","stats");
+  stats.append(
+   buildStat("استجابة الخادم",data.ok===true?"يستجيب":"غير مؤكدة","استجابة نقطة /api/health","glow-teal"),
+   buildStat("مكتبات البحث",agent.web_search_ready===true?"موجودة":"غير جاهزة","فحص اعتماديات محلية فقط","glow-blue"),
+   buildStat("إعداد النموذج",agent.language_model_configured===true?"مهيأ":"غير مهيأ","لا يثبت إمكانية الاتصال أو نجاح الاستجابة","glow-violet"),
+   buildStat("هوية البناء",build.sha_status==="available"?String(build.sha).slice(0,8):"غير معروفة","حالة SHA كما أعادها الخادم","glow-amber")
+  );
+  root.append(stats);
+  const grid=make("div","content-grid");
+  const models=make("section","glass panel");const mh=make("div","panel-head");const mt=make("div");
+  mt.append(make("h2","","موفر النموذج"));mt.append(make("p","","بيانات إعداد يعرضها الخادم؛ لا تعرض مفاتيح أو أسرار."));
+  mh.append(mt);models.append(mh);
+  models.append(make("p","", "الموفر الأساسي المعلن: "+String(agent.language_model_provider||"غير معلوم")));
+  const providers=Array.isArray(agent.model_providers)?agent.model_providers:[];
+  if(providers.length){
+   const list=make("div","signal-list");
+   providers.forEach(p=>{
+    const row=make("article","signal-card");
+    row.append(make("strong","",String(p.name||"موفر غير مسمى")));
+    row.append(make("span","subtle","النموذج المهيأ: "+String(p.model||"غير محدد")));
+    row.append(tag(p.configured===true?"مهيأ في البيئة":"غير مهيأ",p.configured===true?"teal":"amber"));
+    list.append(row);
+   });
+   models.append(list);
+  }else models.append(emptyState("لا توجد موفرات ظاهرة كإعداد","لم يعرض الخادم موفرًا مهيأ ضمن هذه اللقطة."));
+  const search=make("section","glass panel");const sh=make("div","panel-head");const st=make("div");
+  st.append(make("h2","","إعدادات البحث الاختيارية"),make("p","","القيم أدناه أعلام إعداد فقط، وليست اختبارات تشغيل."));
+  sh.append(st);search.append(sh);
+  const flags=[
+   ["Brave Search API",agent.brave_search_api_configured],
+   ["Tavily Search API",agent.tavily_search_api_configured],
+   ["DeepSeek Search API",agent.deepseek_search_api_configured],
+   ["OpenRouter web search",agent.openrouter_web_search_enabled]
+  ];
+  flags.forEach(([name,value])=>{const row=make("div","signal-actions");row.append(make("span","",name),tag(value===true?"مهيأ/مفعل":"غير مهيأ/معطل",value===true?"teal":"amber"));search.append(row)});
+  search.append(make("p","disclaimer","لا تنفذ هذه الشاشة تشخيصًا مباشرًا ولا تختبر صلاحية مفاتيح الموفرات. التشخيص الحي قد يستهلك حصة أو تكلفة، ويظل منفصلًا ويتطلب موافقة المالك."));
+  grid.append(models,search);root.append(grid);
+ }catch(e){root.replaceChildren(emptyState("تعذرت قراءة الإعدادات",escapeMessage(e.message)))}
+}
+function renderPlaceholder(id){
+ const item=menu.find(x=>x.id===id);const title=item?item.label:"وحدة";
+ setPage(title,"واجهة الوحدة جزء من تصور Omarai، لكن المستودع عند الرأس الحالي لا يوفّر بعد عقد API موثقًا لهذه الوظيفة. لا نعرض بيانات أو نتائج شكلية على أنها حقيقية.","MODULE NOT ENABLED");
+ const root=$("viewRoot");root.replaceChildren();
+ const card=make("section","glass module-placeholder");
+ card.append(tag("غير مفعلة في الخادم الحالي","amber"),make("h2","",title));
+ card.append(make("p","","هذه الشاشة لا تستدعي موصلًا خارجيًا ولا تحفظ إعدادات وهمية. يلزم بناء نموذج البيانات وواجهة API واختبارات الصلاحيات والعزل قبل تشغيلها."));
+ const list=make("div","module-list");
+ ["تعريف عقد البيانات والحقول ومصدر كل قيمة.","إنشاء API محمي ومربوط بالمستخدم ومساحة العمل المصادق عليها.","إضافة اختبارات نجاح وفشل وعزل بين المستأجرين.","ربط الواجهة بالبيانات الفعلية ثم اختبارها على بيئة معروفة."].forEach(x=>list.append(make("div","module-step",x)));
+ card.append(list,make("div","form-actions"));
+ const links=card.querySelector(".form-actions");links.append(action("العودة إلى النظرة العامة","primary",()=>navigate("overview")),action("فتح وكيل البحث الحالي","",()=>{window.location.href="/"}));
+ root.append(card);
+}
+function renderCurrent(){
+ renderNav();
+ if(state.activeView==="overview")renderOverview();
+ else if(state.activeView==="signals")renderSignals();
+ else if(state.activeView==="pipeline")renderPipeline();
+ else if(state.activeView==="system")renderSystem();
+ else renderPlaceholder(state.activeView);
+}
+function navigate(view){
+ state.activeView=view;renderCurrent();
+}
+async function loadLeads(){
+ const data=await api("/api/leads?limit=500");
+ state.leads=Array.isArray(data.leads)?data.leads:[];
+}
+async function bootstrap(){
+ try{
+  const session=await api("/api/session");
+  state.role=session.role||"unknown";
+  $("rolePill").textContent="صلاحية: "+state.role;
+  $("roleSummary").textContent="الدور: "+state.role+(canWrite()?" — إضافة وتحديث السجلات متاح.":" — قراءة فقط.");
+  hideAuth();
+  await loadLeads();
+  setConnection(true,"خادم Omarai متصل","تم تحميل سجل الإشارات. هذا لا يثبت اتصال موفرات البحث الخارجية.");
+  renderCurrent();
+ }catch(e){
+  setConnection(false,"يلزم تسجيل الدخول","لا يتم تحميل أي سجل قبل التحقق من الجلسة.");
+  showAuth(e.message);
+  $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+ }
+}
+$("loginForm").addEventListener("submit",async event=>{
+ event.preventDefault();const token=$("accessToken").value.trim();const button=$("loginButton");button.disabled=true;$("authError").textContent="";
+ try{
+  await api("/api/session",{method:"POST",body:{access_token:token}});
+  $("accessToken").value="";await bootstrap();
+ }catch(e){$("authError").textContent=escapeMessage(e.message)}
+ finally{button.disabled=false}
+});
+$("logoutButton").addEventListener("click",async()=>{
+ try{
+  await api("/api/session/logout",{method:"POST",body:{}});
+ }catch(e){
+  alert("تعذر تسجيل الخروج من الخادم؛ لم يتم تغيير حالة الجلسة في الواجهة. "+escapeMessage(e.message));
+  return;
+ }
+ state.role=null;state.leads=[];state.activeView="overview";showAuth("تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.");setConnection(false,"غير متصل","سجّل الدخول لعرض السجلات.");
+});
+$("addSignalTop").addEventListener("click",()=>navigate("signals"));
+$("closeDetail").addEventListener("click",closeDetails);
+$("detailDrawer").addEventListener("click",e=>{if(e.target===$("detailDrawer"))closeDetails()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails()});
+renderNav();bootstrap();
+})();
+</script>
+</body>
+</html>
