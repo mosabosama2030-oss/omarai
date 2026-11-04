@@ -32,3 +32,11 @@ Design project: https://design.agent-native.com/design/sGSw7-l6baKesddSGTdvl?edi
 
 ## Approval gate
 Human Director selects one direction. Only after selection should the chosen visual direction be refined and implemented against Omarai's existing session/lead API contracts. The other two remain archived proposals. No merge or deployment is authorized by this PR.
+
+## Human Director decision — 4 November 2026
+
+**Selected:** Option 03 — Neon Command. This is the approved visual direction for implementation.
+
+- Implementation and backend connection are tracked in [PR #151](https://github.com/mosabosama2030-oss/omarai/pull/151).
+- Options 01 and 02 remain reference proposals only.
+- This PR contains design previews; it does not implement or deploy the selected interface.
