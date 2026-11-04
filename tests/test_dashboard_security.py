@@ -66,3 +66,10 @@ def test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility
     assert "prefers-reduced-motion:reduce" in html
     assert "forced-colors:active" in html
     assert "min-height:42px" in html
+
+def test_workspace_write_controls_match_supported_membership_roles():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+
+    # These are the server's LeadStore.ALLOWED_ROLES except viewer, which is read-only.
+    assert 'return ["owner","admin","manager","sales_agent"].includes(state.role)' in html
