@@ -911,7 +911,7 @@ class WebAgent:
                 "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
-            "Firecrawl Search API when explicitly enabled with a one-request budget",
+                "Firecrawl Search API when explicitly enabled with a one-request budget",
             ],
             "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
             "deepseek_search_api_configured": bool(
@@ -2159,7 +2159,7 @@ class WebAgent:
                 "query": query[:500],
                 "sources": [{"type": "web"}],
                 "limit": MAX_PROVIDER_RESULTS,
-                "country": "EG",
+                "country": "EG" if re.search(r"[\\u0600-\\u06FF]", query) else "US",
             },
             headers={
                 "Accept": "application/json",
