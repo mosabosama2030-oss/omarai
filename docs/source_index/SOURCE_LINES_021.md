@@ -153,18 +153,18 @@
 | [SRC-EEF2E6447C-L000615](../../api/omarai.py#L615) | 615 | `""` | — |
 | [SRC-EEF2E6447C-L000616](../../api/omarai.py#L616) | 616 | `"    def do_GET(self):"` | — |
 | [SRC-EEF2E6447C-L000617](../../api/omarai.py#L617) | 617 | `"        parsed = urlparse(self.path)"` | — |
-| [SRC-EEF2E6447C-L000618](../../api/omarai.py#L618) | 618 | `"        if parsed.path in {\"/\", \"/agent\"}:"` | — |
+| [SRC-EEF2E6447C-L000618](../../api/omarai.py#L618) | 618 | `"        if parsed.path == \"/agent\":"` | — |
 | [SRC-EEF2E6447C-L000619](../../api/omarai.py#L619) | 619 | `"            if not AGENT_DASHBOARD.exists():"` | — |
 | [SRC-EEF2E6447C-L000620](../../api/omarai.py#L620) | 620 | `"                return self.respond(404, {\"error\": \"agent dashboard missing\"})"` | — |
 | [SRC-EEF2E6447C-L000621](../../api/omarai.py#L621) | 621 | `"            return self.respond(200, AGENT_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
-| [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"        if parsed.path == \"/leads\":"` | — |
-| [SRC-EEF2E6447C-L000623](../../api/omarai.py#L623) | 623 | `"            if not LEADS_DASHBOARD.exists():"` | — |
-| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"                return self.respond(404, {\"error\": \"leads dashboard missing\"})"` | — |
-| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"            return self.respond(200, LEADS_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
-| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `"        if parsed.path == \"/workspace\":"` | — |
-| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"            if not WORKSPACE_DASHBOARD.exists():"` | — |
-| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"                return self.respond(404, {\"error\": \"workspace dashboard missing\"})"` | — |
-| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000622](../../api/omarai.py#L622) | 622 | `"        if parsed.path in {\"/\", \"/workspace\"}:"` | — |
+| [SRC-EEF2E6447C-L000623](../../api/omarai.py#L623) | 623 | `"            if not WORKSPACE_DASHBOARD.exists():"` | — |
+| [SRC-EEF2E6447C-L000624](../../api/omarai.py#L624) | 624 | `"                return self.respond(404, {\"error\": \"workspace dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000625](../../api/omarai.py#L625) | 625 | `"            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
+| [SRC-EEF2E6447C-L000626](../../api/omarai.py#L626) | 626 | `"        if parsed.path == \"/leads\":"` | — |
+| [SRC-EEF2E6447C-L000627](../../api/omarai.py#L627) | 627 | `"            if not LEADS_DASHBOARD.exists():"` | — |
+| [SRC-EEF2E6447C-L000628](../../api/omarai.py#L628) | 628 | `"                return self.respond(404, {\"error\": \"leads dashboard missing\"})"` | — |
+| [SRC-EEF2E6447C-L000629](../../api/omarai.py#L629) | 629 | `"            return self.respond(200, LEADS_DASHBOARD.read_text(encoding=\"utf-8\"), \"text/html; charset=utf-8\")"` | — |
 | [SRC-EEF2E6447C-L000630](../../api/omarai.py#L630) | 630 | `"        if parsed.path == \"/api/health\":"` | — |
 | [SRC-EEF2E6447C-L000631](../../api/omarai.py#L631) | 631 | `"            return self.respond("` | — |
 | [SRC-EEF2E6447C-L000632](../../api/omarai.py#L632) | 632 | `"                200,"` | — |
@@ -464,7 +464,7 @@
 | [SRC-EEF2E6447C-L000926](../../api/omarai.py#L926) | 926 | `"            lead = max(active, key=lambda item: (item[\"assessment\"][\"score\"], item[\"updated_at\"]))"` | — |
 | [SRC-EEF2E6447C-L000927](../../api/omarai.py#L927) | 927 | `"            answer = \"مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة \" + lead[\"id\"][:8] + \". لم يتم إرسال أي رسالة.\""` | — |
 | [SRC-EEF2E6447C-L000928](../../api/omarai.py#L928) | 928 | `"        return {\"answer\": answer, \"kind\": \"message_draft\", \"lead_id\": active[0][\"id\"] if active else None}"` | — |
-| [SRC-EEF2E6447C-L000929](../../api/omarai.py#L929) | 929 | `"    return {\"answer\": \"أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.\", \"kind\": \"help\", \"lead_id\": None}"` | — |
+| [SRC-EEF2E6447C-L000929](../../api/omarai.py#L929) | 929 | `"    return {\"answer\": \"أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من المسار /agent لطرح أسئلة مفتوحة والبحث في الويب.\", \"kind\": \"help\", \"lead_id\": None}"` | — |
 | [SRC-EEF2E6447C-L000930](../../api/omarai.py#L930) | 930 | `""` | — |
 | [SRC-EEF2E6447C-L000931](../../api/omarai.py#L931) | 931 | `""` | — |
 | [SRC-EEF2E6447C-L000932](../../api/omarai.py#L932) | 932 | `"class BoundedThreadingHTTPServer(ThreadingHTTPServer):"` | — |

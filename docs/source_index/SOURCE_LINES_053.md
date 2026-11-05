@@ -4,7 +4,7 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000316 إلى SRC-F725E90B2A-L000034
+- النطاق: SRC-AC9D8384E8-L000234 إلى SRC-FBDC61DA0B-L000101
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,88 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AC9D8384E8-L000234](../../tests/test_semantic_claim_verifier.py#L234) | 234 | `"    called = []"` | — |
+| [SRC-AC9D8384E8-L000235](../../tests/test_semantic_claim_verifier.py#L235) | 235 | `""` | — |
+| [SRC-AC9D8384E8-L000236](../../tests/test_semantic_claim_verifier.py#L236) | 236 | `"    def unavailable(request, timeout):"` | — |
+| [SRC-AC9D8384E8-L000237](../../tests/test_semantic_claim_verifier.py#L237) | 237 | `"        payload = json.loads(request.data.decode(\"utf-8\"))"` | — |
+| [SRC-AC9D8384E8-L000238](../../tests/test_semantic_claim_verifier.py#L238) | 238 | `"        called.append(payload[\"model\"])"` | — |
+| [SRC-AC9D8384E8-L000239](../../tests/test_semantic_claim_verifier.py#L239) | 239 | `"        raise urllib.error.URLError(\"network unavailable\")"` | — |
+| [SRC-AC9D8384E8-L000240](../../tests/test_semantic_claim_verifier.py#L240) | 240 | `""` | — |
+| [SRC-AC9D8384E8-L000241](../../tests/test_semantic_claim_verifier.py#L241) | 241 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", unavailable)"` | — |
+| [SRC-AC9D8384E8-L000242](../../tests/test_semantic_claim_verifier.py#L242) | 242 | `"    with pytest.raises(RuntimeError):"` | — |
+| [SRC-AC9D8384E8-L000243](../../tests/test_semantic_claim_verifier.py#L243) | 243 | `"        agent._request_completion("` | — |
+| [SRC-AC9D8384E8-L000244](../../tests/test_semantic_claim_verifier.py#L244) | 244 | `"            [{\"role\": \"user\", \"content\": \"test\"}],"` | — |
+| [SRC-AC9D8384E8-L000245](../../tests/test_semantic_claim_verifier.py#L245) | 245 | `"            model=\"verifier/model\","` | — |
+| [SRC-AC9D8384E8-L000246](../../tests/test_semantic_claim_verifier.py#L246) | 246 | `"            allow_fallback=False,"` | — |
+| [SRC-AC9D8384E8-L000247](../../tests/test_semantic_claim_verifier.py#L247) | 247 | `"        )"` | — |
+| [SRC-AC9D8384E8-L000248](../../tests/test_semantic_claim_verifier.py#L248) | 248 | `"    assert called == [\"verifier/model\"]"` | — |
+| [SRC-AC9D8384E8-L000249](../../tests/test_semantic_claim_verifier.py#L249) | 249 | `""` | — |
+| [SRC-AC9D8384E8-L000250](../../tests/test_semantic_claim_verifier.py#L250) | 250 | `""` | — |
+| [SRC-AC9D8384E8-L000251](../../tests/test_semantic_claim_verifier.py#L251) | 251 | `"def test_deterministic_numeric_support_failure_blocks_model_verification():"` | — |
+| [SRC-AC9D8384E8-L000252](../../tests/test_semantic_claim_verifier.py#L252) | 252 | `"    request = prepared()"` | — |
+| [SRC-AC9D8384E8-L000253](../../tests/test_semantic_claim_verifier.py#L253) | 253 | `"    result = deterministic_claim_screen("` | — |
+| [SRC-AC9D8384E8-L000254](../../tests/test_semantic_claim_verifier.py#L254) | 254 | `"        request,"` | — |
+| [SRC-AC9D8384E8-L000255](../../tests/test_semantic_claim_verifier.py#L255) | 255 | `"        {\"potentially_unsupported_numeric_by_citation_count\": 1},"` | — |
+| [SRC-AC9D8384E8-L000256](../../tests/test_semantic_claim_verifier.py#L256) | 256 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000257](../../tests/test_semantic_claim_verifier.py#L257) | 257 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000258](../../tests/test_semantic_claim_verifier.py#L258) | 258 | `"    assert result[\"reason\"] == \"deterministic_cited_numeric_support_failed\""` | — |
+| [SRC-AC9D8384E8-L000259](../../tests/test_semantic_claim_verifier.py#L259) | 259 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000260](../../tests/test_semantic_claim_verifier.py#L260) | 260 | `""` | — |
+| [SRC-AC9D8384E8-L000261](../../tests/test_semantic_claim_verifier.py#L261) | 261 | `""` | — |
+| [SRC-AC9D8384E8-L000262](../../tests/test_semantic_claim_verifier.py#L262) | 262 | `"def test_population_claim_without_reference_period_or_geography_fails_closed():"` | — |
+| [SRC-AC9D8384E8-L000263](../../tests/test_semantic_claim_verifier.py#L263) | 263 | `"    source_without_scope = source("` | — |
+| [SRC-AC9D8384E8-L000264](../../tests/test_semantic_claim_verifier.py#L264) | 264 | `"        page_text=\"Cairo population is 9.7 million.\","` | — |
+| [SRC-AC9D8384E8-L000265](../../tests/test_semantic_claim_verifier.py#L265) | 265 | `"        snippet=\"Cairo population is 9.7 million.\","` | — |
+| [SRC-AC9D8384E8-L000266](../../tests/test_semantic_claim_verifier.py#L266) | 266 | `"        geographic_scope=\"\","` | — |
+| [SRC-AC9D8384E8-L000267](../../tests/test_semantic_claim_verifier.py#L267) | 267 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000268](../../tests/test_semantic_claim_verifier.py#L268) | 268 | `"    request = prepared("` | — |
+| [SRC-AC9D8384E8-L000269](../../tests/test_semantic_claim_verifier.py#L269) | 269 | `"        answer=\"Cairo population is 9.7 million [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000270](../../tests/test_semantic_claim_verifier.py#L270) | 270 | `"        sources=[source_without_scope],"` | — |
+| [SRC-AC9D8384E8-L000271](../../tests/test_semantic_claim_verifier.py#L271) | 271 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000272](../../tests/test_semantic_claim_verifier.py#L272) | 272 | `"    result = deterministic_claim_screen(request)"` | — |
+| [SRC-AC9D8384E8-L000273](../../tests/test_semantic_claim_verifier.py#L273) | 273 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000274](../../tests/test_semantic_claim_verifier.py#L274) | 274 | `"    assert result[\"reason\"] == \"population_scope_metadata_incomplete\""` | — |
+| [SRC-AC9D8384E8-L000275](../../tests/test_semantic_claim_verifier.py#L275) | 275 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000276](../../tests/test_semantic_claim_verifier.py#L276) | 276 | `""` | — |
+| [SRC-AC9D8384E8-L000277](../../tests/test_semantic_claim_verifier.py#L277) | 277 | `""` | — |
+| [SRC-AC9D8384E8-L000278](../../tests/test_semantic_claim_verifier.py#L278) | 278 | `"def test_deterministic_screen_passes_population_claim_with_period_and_scope():"` | — |
+| [SRC-AC9D8384E8-L000279](../../tests/test_semantic_claim_verifier.py#L279) | 279 | `"    source_with_scope = source("` | — |
+| [SRC-AC9D8384E8-L000280](../../tests/test_semantic_claim_verifier.py#L280) | 280 | `"        page_text=\"Cairo population is 9.7 million for 2025.\","` | — |
+| [SRC-AC9D8384E8-L000281](../../tests/test_semantic_claim_verifier.py#L281) | 281 | `"        snippet=\"Cairo population is 9.7 million for 2025.\","` | — |
+| [SRC-AC9D8384E8-L000282](../../tests/test_semantic_claim_verifier.py#L282) | 282 | `"        geographic_scope=\"Cairo Governorate administrative boundaries\","` | — |
+| [SRC-AC9D8384E8-L000283](../../tests/test_semantic_claim_verifier.py#L283) | 283 | `"        data_reference_period=\"2025 estimate\","` | — |
+| [SRC-AC9D8384E8-L000284](../../tests/test_semantic_claim_verifier.py#L284) | 284 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000285](../../tests/test_semantic_claim_verifier.py#L285) | 285 | `"    request = prepared("` | — |
+| [SRC-AC9D8384E8-L000286](../../tests/test_semantic_claim_verifier.py#L286) | 286 | `"        answer=\"Cairo population is 9.7 million [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000287](../../tests/test_semantic_claim_verifier.py#L287) | 287 | `"        sources=[source_with_scope],"` | — |
+| [SRC-AC9D8384E8-L000288](../../tests/test_semantic_claim_verifier.py#L288) | 288 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000289](../../tests/test_semantic_claim_verifier.py#L289) | 289 | `"    result = deterministic_claim_screen(request)"` | — |
+| [SRC-AC9D8384E8-L000290](../../tests/test_semantic_claim_verifier.py#L290) | 290 | `"    assert result[\"status\"] == \"passed\""` | — |
+| [SRC-AC9D8384E8-L000291](../../tests/test_semantic_claim_verifier.py#L291) | 291 | `""` | — |
+| [SRC-AC9D8384E8-L000292](../../tests/test_semantic_claim_verifier.py#L292) | 292 | `""` | — |
+| [SRC-AC9D8384E8-L000293](../../tests/test_semantic_claim_verifier.py#L293) | 293 | `"def test_deterministic_screen_rejects_a_missing_or_unreadable_source_url():"` | — |
+| [SRC-AC9D8384E8-L000294](../../tests/test_semantic_claim_verifier.py#L294) | 294 | `"    bad_source = source(url=\"relative/path\", page_fetched=False, page_text=\"\", snippet=\"\")"` | — |
+| [SRC-AC9D8384E8-L000295](../../tests/test_semantic_claim_verifier.py#L295) | 295 | `"    request = prepared(sources=[bad_source])"` | — |
+| [SRC-AC9D8384E8-L000296](../../tests/test_semantic_claim_verifier.py#L296) | 296 | `"    result = deterministic_claim_screen(request)"` | — |
+| [SRC-AC9D8384E8-L000297](../../tests/test_semantic_claim_verifier.py#L297) | 297 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000298](../../tests/test_semantic_claim_verifier.py#L298) | 298 | `"    assert result[\"reason\"] == \"deterministic_source_provenance_failed\""` | — |
+| [SRC-AC9D8384E8-L000299](../../tests/test_semantic_claim_verifier.py#L299) | 299 | `""` | — |
+| [SRC-AC9D8384E8-L000300](../../tests/test_semantic_claim_verifier.py#L300) | 300 | `"def test_extremely_large_citation_index_fails_closed_without_integer_conversion():"` | — |
+| [SRC-AC9D8384E8-L000301](../../tests/test_semantic_claim_verifier.py#L301) | 301 | `"    answer = \"The system is reliable [source \" + (\"9\" * 5000) + \"].\""` | — |
+| [SRC-AC9D8384E8-L000302](../../tests/test_semantic_claim_verifier.py#L302) | 302 | `"    request = prepared(answer=answer)"` | — |
+| [SRC-AC9D8384E8-L000303](../../tests/test_semantic_claim_verifier.py#L303) | 303 | `""` | — |
+| [SRC-AC9D8384E8-L000304](../../tests/test_semantic_claim_verifier.py#L304) | 304 | `"    assert request[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000305](../../tests/test_semantic_claim_verifier.py#L305) | 305 | `"    assert request[\"reason\"] == \"invalid_citation_reference\""` | — |
+| [SRC-AC9D8384E8-L000306](../../tests/test_semantic_claim_verifier.py#L306) | 306 | `""` | — |
+| [SRC-AC9D8384E8-L000307](../../tests/test_semantic_claim_verifier.py#L307) | 307 | `""` | — |
+| [SRC-AC9D8384E8-L000308](../../tests/test_semantic_claim_verifier.py#L308) | 308 | `"def test_invalid_source_record_cannot_shift_citation_indexes():"` | — |
+| [SRC-AC9D8384E8-L000309](../../tests/test_semantic_claim_verifier.py#L309) | 309 | `"    answer = \"The system serves 12 facilities [source 2].\""` | — |
+| [SRC-AC9D8384E8-L000310](../../tests/test_semantic_claim_verifier.py#L310) | 310 | `"    sources = ["` | — |
+| [SRC-AC9D8384E8-L000311](../../tests/test_semantic_claim_verifier.py#L311) | 311 | `"        source(page_text=\"An unrelated administrative update.\", snippet=\"An unrelated administrative update.\"),"` | — |
+| [SRC-AC9D8384E8-L000312](../../tests/test_semantic_claim_verifier.py#L312) | 312 | `"        None,"` | — |
+| [SRC-AC9D8384E8-L000313](../../tests/test_semantic_claim_verifier.py#L313) | 313 | `"        source(url=\"https://example.net/report\"),"` | — |
+| [SRC-AC9D8384E8-L000314](../../tests/test_semantic_claim_verifier.py#L314) | 314 | `"    ]"` | — |
+| [SRC-AC9D8384E8-L000315](../../tests/test_semantic_claim_verifier.py#L315) | 315 | `"    request = prepared(answer=answer, sources=sources)"` | — |
 | [SRC-AC9D8384E8-L000316](../../tests/test_semantic_claim_verifier.py#L316) | 316 | `""` | — |
 | [SRC-AC9D8384E8-L000317](../../tests/test_semantic_claim_verifier.py#L317) | 317 | `"    assert request[\"status\"] == \"not_verifiable\""` | — |
 | [SRC-AC9D8384E8-L000318](../../tests/test_semantic_claim_verifier.py#L318) | 318 | `"    assert request[\"reason\"] == \"invalid_source_manifest\""` | — |
@@ -770,94 +852,3 @@
 | [SRC-FBDC61DA0B-L000099](../../tests/test_tool_execution_status.py#L99) | 99 | `""` | — |
 | [SRC-FBDC61DA0B-L000100](../../tests/test_tool_execution_status.py#L100) | 100 | `"def test_tool_matrix_surfaces_mismatch_between_report_counters_and_final_sources():"` | — |
 | [SRC-FBDC61DA0B-L000101](../../tests/test_tool_execution_status.py#L101) | 101 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000102](../../tests/test_tool_execution_status.py#L102) | 102 | `"        {\"tool_requirements\": [\"web_search\", \"page_fetch\"]},"` | — |
-| [SRC-FBDC61DA0B-L000103](../../tests/test_tool_execution_status.py#L103) | 103 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000104](../../tests/test_tool_execution_status.py#L104) | 104 | `"            \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000105](../../tests/test_tool_execution_status.py#L105) | 105 | `"            \"sources\": ["` | — |
-| [SRC-FBDC61DA0B-L000106](../../tests/test_tool_execution_status.py#L106) | 106 | `"                {\"url\": \"https://example.org/read\", \"page_fetched\": True, \"page_text\": \"text\"}"` | — |
-| [SRC-FBDC61DA0B-L000107](../../tests/test_tool_execution_status.py#L107) | 107 | `"            ],"` | — |
-| [SRC-FBDC61DA0B-L000108](../../tests/test_tool_execution_status.py#L108) | 108 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000109](../../tests/test_tool_execution_status.py#L109) | 109 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000110](../../tests/test_tool_execution_status.py#L110) | 110 | `"            \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000111](../../tests/test_tool_execution_status.py#L111) | 111 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000112](../../tests/test_tool_execution_status.py#L112) | 112 | `"            \"usable_sources_after_filtering\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000113](../../tests/test_tool_execution_status.py#L113) | 113 | `"            \"pages_fetch_attempted\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000114](../../tests/test_tool_execution_status.py#L114) | 114 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000115](../../tests/test_tool_execution_status.py#L115) | 115 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000116](../../tests/test_tool_execution_status.py#L116) | 116 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000117](../../tests/test_tool_execution_status.py#L117) | 117 | `"    by_tool = {row[\"tool\"]: row for row in rows}"` | — |
-| [SRC-FBDC61DA0B-L000118](../../tests/test_tool_execution_status.py#L118) | 118 | `""` | — |
-| [SRC-FBDC61DA0B-L000119](../../tests/test_tool_execution_status.py#L119) | 119 | `"    assert by_tool[\"web_search\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000120](../../tests/test_tool_execution_status.py#L120) | 120 | `"    assert by_tool[\"web_search\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000121](../../tests/test_tool_execution_status.py#L121) | 121 | `"    assert by_tool[\"web_search\"][\"basis\"][\"reported_accepted_source_count\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000122](../../tests/test_tool_execution_status.py#L122) | 122 | `"    assert by_tool[\"web_search\"][\"basis\"][\"accepted_source_count\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000123](../../tests/test_tool_execution_status.py#L123) | 123 | `"    assert by_tool[\"page_fetch\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000124](../../tests/test_tool_execution_status.py#L124) | 124 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000125](../../tests/test_tool_execution_status.py#L125) | 125 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"pages_read_from_returned_sources\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000126](../../tests/test_tool_execution_status.py#L126) | 126 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"reported_pages_fetched\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000127](../../tests/test_tool_execution_status.py#L127) | 127 | `""` | — |
-| [SRC-FBDC61DA0B-L000128](../../tests/test_tool_execution_status.py#L128) | 128 | `""` | — |
-| [SRC-FBDC61DA0B-L000129](../../tests/test_tool_execution_status.py#L129) | 129 | `"def test_social_search_is_only_called_completed_when_connector_attempt_is_observed():"` | — |
-| [SRC-FBDC61DA0B-L000130](../../tests/test_tool_execution_status.py#L130) | 130 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000131](../../tests/test_tool_execution_status.py#L131) | 131 | `"        {\"tool_requirements\": [\"public_social_search_if_configured\"]},"` | — |
-| [SRC-FBDC61DA0B-L000132](../../tests/test_tool_execution_status.py#L132) | 132 | `"        {\"search_attempted\": True, \"sources\": []},"` | — |
-| [SRC-FBDC61DA0B-L000133](../../tests/test_tool_execution_status.py#L133) | 133 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000134](../../tests/test_tool_execution_status.py#L134) | 134 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000135](../../tests/test_tool_execution_status.py#L135) | 135 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000136](../../tests/test_tool_execution_status.py#L136) | 136 | `"            \"connector_summary\": {"` | — |
-| [SRC-FBDC61DA0B-L000137](../../tests/test_tool_execution_status.py#L137) | 137 | `"                \"connectors\": ["` | — |
-| [SRC-FBDC61DA0B-L000138](../../tests/test_tool_execution_status.py#L138) | 138 | `"                    {"` | — |
-| [SRC-FBDC61DA0B-L000139](../../tests/test_tool_execution_status.py#L139) | 139 | `"                        \"name\": \"reddit_public_rss\","` | — |
-| [SRC-FBDC61DA0B-L000140](../../tests/test_tool_execution_status.py#L140) | 140 | `"                        \"configured\": True,"` | — |
-| [SRC-FBDC61DA0B-L000141](../../tests/test_tool_execution_status.py#L141) | 141 | `"                        \"attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000142](../../tests/test_tool_execution_status.py#L142) | 142 | `"                        \"status\": \"no_results\","` | — |
-| [SRC-FBDC61DA0B-L000143](../../tests/test_tool_execution_status.py#L143) | 143 | `"                    }"` | — |
-| [SRC-FBDC61DA0B-L000144](../../tests/test_tool_execution_status.py#L144) | 144 | `"                ]"` | — |
-| [SRC-FBDC61DA0B-L000145](../../tests/test_tool_execution_status.py#L145) | 145 | `"            },"` | — |
-| [SRC-FBDC61DA0B-L000146](../../tests/test_tool_execution_status.py#L146) | 146 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000147](../../tests/test_tool_execution_status.py#L147) | 147 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000148](../../tests/test_tool_execution_status.py#L148) | 148 | `"    social = next(row for row in rows if row[\"tool\"] == \"public_social_search_if_configured\")"` | — |
-| [SRC-FBDC61DA0B-L000149](../../tests/test_tool_execution_status.py#L149) | 149 | `"    assert social[\"status\"] == \"completed_no_usable_results\""` | — |
-## اختبارات
-
-### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-F725E90B2A-L000001](../../tests/test_web_agent.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-F725E90B2A-L000002](../../tests/test_web_agent.py#L2) | 2 | `""` | — |
-| [SRC-F725E90B2A-L000003](../../tests/test_web_agent.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-F725E90B2A-L000004](../../tests/test_web_agent.py#L4) | 4 | `""` | — |
-| [SRC-F725E90B2A-L000005](../../tests/test_web_agent.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-F725E90B2A-L000006](../../tests/test_web_agent.py#L6) | 6 | `""` | — |
-| [SRC-F725E90B2A-L000007](../../tests/test_web_agent.py#L7) | 7 | `"from agents.research import compact_search_query"` | — |
-| [SRC-F725E90B2A-L000008](../../tests/test_web_agent.py#L8) | 8 | `"from agents.request_budget import RequestBudgetExceeded"` | — |
-| [SRC-F725E90B2A-L000009](../../tests/test_web_agent.py#L9) | 9 | `"from agents.web_agent import ("` | — |
-| [SRC-F725E90B2A-L000010](../../tests/test_web_agent.py#L10) | 10 | `"    WebAgent,"` | — |
-| [SRC-F725E90B2A-L000011](../../tests/test_web_agent.py#L11) | 11 | `"    _fallback_lead_answer,"` | — |
-| [SRC-F725E90B2A-L000012](../../tests/test_web_agent.py#L12) | 12 | `"    _minimum_relevance_ratio,"` | — |
-| [SRC-F725E90B2A-L000013](../../tests/test_web_agent.py#L13) | 13 | `"    _normalize_search_query,"` | — |
-| [SRC-F725E90B2A-L000014](../../tests/test_web_agent.py#L14) | 14 | `"    _public_http_url,"` | — |
-| [SRC-F725E90B2A-L000015](../../tests/test_web_agent.py#L15) | 15 | `"    _relevance_query_tokens,"` | — |
-| [SRC-F725E90B2A-L000016](../../tests/test_web_agent.py#L16) | 16 | `"    _relevance_ratio,"` | — |
-| [SRC-F725E90B2A-L000017](../../tests/test_web_agent.py#L17) | 17 | `")"` | — |
-| [SRC-F725E90B2A-L000018](../../tests/test_web_agent.py#L18) | 18 | `""` | — |
-| [SRC-F725E90B2A-L000019](../../tests/test_web_agent.py#L19) | 19 | `""` | — |
-| [SRC-F725E90B2A-L000020](../../tests/test_web_agent.py#L20) | 20 | `"def sample_source(index=0):"` | — |
-| [SRC-F725E90B2A-L000021](../../tests/test_web_agent.py#L21) | 21 | `"    domain = \"example.com\" if index == 0 else \"example.net\""` | — |
-| [SRC-F725E90B2A-L000022](../../tests/test_web_agent.py#L22) | 22 | `"    return {"` | — |
-| [SRC-F725E90B2A-L000023](../../tests/test_web_agent.py#L23) | 23 | `"        \"title\": \"مقالة عن التقنية\","` | — |
-| [SRC-F725E90B2A-L000024](../../tests/test_web_agent.py#L24) | 24 | `"        \"url\": f\"https://{domain}/research\","` | — |
-| [SRC-F725E90B2A-L000025](../../tests/test_web_agent.py#L25) | 25 | `"        \"snippet\": \"يشرح هذا المصدر التقنية وسبب المقارنة.\","` | — |
-| [SRC-F725E90B2A-L000026](../../tests/test_web_agent.py#L26) | 26 | `"        \"page_text\": \"نص مستخرج من الصفحة يشرح التقنية وأسباب المقارنة.\","` | — |
-| [SRC-F725E90B2A-L000027](../../tests/test_web_agent.py#L27) | 27 | `"        \"page_fetched\": True,"` | — |
-| [SRC-F725E90B2A-L000028](../../tests/test_web_agent.py#L28) | 28 | `"        \"providers\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L000029](../../tests/test_web_agent.py#L29) | 29 | `"        \"queries\": [\"قارن هذه التقنية\"],"` | — |
-| [SRC-F725E90B2A-L000030](../../tests/test_web_agent.py#L30) | 30 | `"        \"domain\": domain,"` | — |
-| [SRC-F725E90B2A-L000031](../../tests/test_web_agent.py#L31) | 31 | `"        \"source_class\": \"general\","` | — |
-| [SRC-F725E90B2A-L000032](../../tests/test_web_agent.py#L32) | 32 | `"        \"platform\": \"web\","` | — |
-| [SRC-F725E90B2A-L000033](../../tests/test_web_agent.py#L33) | 33 | `"    }"` | — |
-| [SRC-F725E90B2A-L000034](../../tests/test_web_agent.py#L34) | 34 | `""` | — |

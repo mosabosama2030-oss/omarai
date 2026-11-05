@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B9C3015420-L000251 إلى SRC-41EDB66D3C-L000199
+- النطاق: SRC-B9C3015420-L000238 إلى SRC-41EDB66D3C-L000186
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B9C3015420-L000238](../OMARAI_REQUIREMENTS_REGISTER.md#L238) | 238 | ``"- **CI المؤكد:** SHA الاختبارات `6d5e9071e77645889de4596664c407801f6bc6ad`، [التشغيل #40906010312](https://github.com/mosabosama2030-oss/omarai/actions/runs/40906010312). لم أتحقق من تشغيل CI مستقل على commit الدمج نفسه؛ لذلك لا أسجل هذا الجزء كنجاح CI على رأس main."`` | — |
+| [SRC-B9C3015420-L000239](../OMARAI_REQUIREMENTS_REGISTER.md#L239) | 239 | `"- **الحكم النهائي:** تنفيذ إطار التقييم واختباراته مثبتان ضمن نطاق CI؛ جودة إجابات Omarai قبل/بعد، والقبول المستضاف، والتكلفة الكاملة ما زالت NOT_RUN/UNKNOWN. هذه حالات منفصلة ولا يجوز دمجها في حكم واحد."` | — |
+| [SRC-B9C3015420-L000240](../OMARAI_REQUIREMENTS_REGISTER.md#L240) | 240 | `""` | — |
+| [SRC-B9C3015420-L000241](../OMARAI_REQUIREMENTS_REGISTER.md#L241) | 241 | `"## تحديث حاكم — تحقق حي بعد دمج مجموعة التقييم — 29 أكتوبر 2026"` | — |
+| [SRC-B9C3015420-L000242](../OMARAI_REQUIREMENTS_REGISTER.md#L242) | 242 | `""` | — |
+| [SRC-B9C3015420-L000243](../OMARAI_REQUIREMENTS_REGISTER.md#L243) | 243 | `"هذا التحديث يستبدل أي حالة أقدم تصف PR #125 بأنه مفتوح أو مسودة، ويحدث آخر دليل قراءة فقط للاستضافة."` | — |
+| [SRC-B9C3015420-L000244](../OMARAI_REQUIREMENTS_REGISTER.md#L244) | 244 | `""` | — |
+| [SRC-B9C3015420-L000245](../OMARAI_REQUIREMENTS_REGISTER.md#L245) | 245 | ``"- **حالة الدمج:** PR #125 مدمج في `main` عبر commit `8c332c78c07d20efe89f88043d3df8540110c03a`. رأس PR المختبَر `3aff15df4fc03bc7325adc6e3481ea6f31de8871` وشجرة commit الدمج متطابقتان: `c10c69c6b0f7d2d33a98dfacef119944d9817518`."`` | — |
+| [SRC-B9C3015420-L000246](../OMARAI_REQUIREMENTS_REGISTER.md#L246) | 246 | `"- **CI:** تشغيل [#40906037659](https://github.com/mosabosama2030-oss/omarai/actions/runs/40906037659) ناجح: Ruff، وفحوص الفهرسة، و608 اختبارًا على Python 3.11 و608 على Python 3.12، وبناء الحاوية واختبار API المحمي. هذا دليل آلي ولا يقيس جودة الإجابات الحية."` | — |
+| [SRC-B9C3015420-L000247](../OMARAI_REQUIREMENTS_REGISTER.md#L247) | 247 | ``"- **فحص الاستضافة للقراءة فقط:** `GET /api/health` عاد بـ`ok=true`، لكن `build.sha=unknown` و`sha_status=unknown` و`sha_source=unknown`. ثبتت استجابة الخدمة فقط، ولم تثبت هوية النسخة المنشورة."`` | — |
+| [SRC-B9C3015420-L000248](../OMARAI_REQUIREMENTS_REGISTER.md#L248) | 248 | ``"- **حماية التشغيل:** لم يُرسل أي سؤال إلى `/api/agent`؛ مشغّل التقييم يرفض إرسال حالات benchmark قبل إثبات SHA كامل. لم تُنفذ مكالمات بحث أو نموذج حية أو مدفوعة، ولم تتغير إعدادات الاستضافة أو الأسرار."`` | — |
+| [SRC-B9C3015420-L000249](../OMARAI_REQUIREMENTS_REGISTER.md#L249) | 249 | ``"- **الإجراء المحجوب:** يتطلب إثبات النسخة المنشورة ضبط `PUBLIC_OMARAI_BUILD_SHA` على SHA الكامل الصحيح ثم إعادة البناء/النشر والتحقق من تطابق `/api/health`. هذا تغيير استضافة منفصل يحتاج موافقة المدير البشري."`` | — |
+| [SRC-B9C3015420-L000250](../OMARAI_REQUIREMENTS_REGISTER.md#L250) | 250 | ``"- **الحالة التجريبية:** baseline/candidate على الحالات نفسها والمراجعات البشرية الكاملة = `NOT_RUN`. مقاييس الدقة والاستدعاء والإخلاص ودعم الاستشهادات = `NOT_RUN/UNKNOWN`. التكلفة الكاملة = `UNKNOWN` حتى وجود مصالحة موثوقة لكل حالة."`` | — |
 | [SRC-B9C3015420-L000251](../OMARAI_REQUIREMENTS_REGISTER.md#L251) | 251 | `""` | — |
 | [SRC-B9C3015420-L000252](../OMARAI_REQUIREMENTS_REGISTER.md#L252) | 252 | `"**القرار:** إطار التقييم واختباراته الآلية موجودان، لكن قبول الاستضافة وتحسن الجودة الفعلي غير مثبتين؛ لا توجد نسبة تحسن يمكن إعلانها."` | — |
 | [SRC-B9C3015420-L000253](../OMARAI_REQUIREMENTS_REGISTER.md#L253) | 253 | `""` | — |
@@ -821,16 +834,3 @@
 | [SRC-41EDB66D3C-L000184](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L184) | 184 | `"---"` | — |
 | [SRC-41EDB66D3C-L000185](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L185) | 185 | `""` | — |
 | [SRC-41EDB66D3C-L000186](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L186) | 186 | `"## 7. تخطيط البحث: عامّ ومتخصص دون تحيز قطاعي"` | — |
-| [SRC-41EDB66D3C-L000187](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L187) | 187 | `""` | — |
-| [SRC-41EDB66D3C-L000188](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L188) | 188 | ``"يُشتق البحث من `ProductProfile` و`MarketProfile` ونوع الإشارة المطلوبة، لا من قائمة عبارات ثابتة عامة."`` | — |
-| [SRC-41EDB66D3C-L000189](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L189) | 189 | `""` | — |
-| [SRC-41EDB66D3C-L000190](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L190) | 190 | `"يجب أن يدعم مخطط البحث:"` | — |
-| [SRC-41EDB66D3C-L000191](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L191) | 191 | `""` | — |
-| [SRC-41EDB66D3C-L000192](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L192) | 192 | `"- أسماء المنتج والمرادفات والتهجئات والأسماء التجارية."` | — |
-| [SRC-41EDB66D3C-L000193](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L193) | 193 | `"- المواصفات والمشكلة والاستخدام والبدائل."` | — |
-| [SRC-41EDB66D3C-L000194](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L194) | 194 | `"- صيغ الطلب والشراء وطلب عرض السعر والتوريد والمناقصة."` | — |
-| [SRC-41EDB66D3C-L000195](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L195) | 195 | `"- صيغ الاحتياج والمشكلة والشكوى والتوسع والمشروع."` | — |
-| [SRC-41EDB66D3C-L000196](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L196) | 196 | `"- النفي وصيغ عدم الرغبة والطلب الملغى أو المنتهي."` | — |
-| [SRC-41EDB66D3C-L000197](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L197) | 197 | `"- لغات السوق ولهجاته والمنصات التي تدعمها الموصلات المهيأة فعلًا."` | — |
-| [SRC-41EDB66D3C-L000198](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L198) | 198 | `"- استعلامات مستقلة للبحث عن الطلب، وأخرى للتحقق من هوية الجهة أو المصدر عندما يكون ذلك لازمًا."` | — |
-| [SRC-41EDB66D3C-L000199](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L199) | 199 | `""` | — |

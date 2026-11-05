@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L001006 إلى SRC-6BECF5AD00-L000016
+- النطاق: SRC-3451CC474D-L000927 إلى SRC-DA61479D59-L000239
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,85 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000927](../../tests/test_api.py#L927) | 927 | `"    assert store.path == database_path"` | — |
+| [SRC-3451CC474D-L000928](../../tests/test_api.py#L928) | 928 | `"    assert database_path.is_file()"` | — |
+| [SRC-3451CC474D-L000929](../../tests/test_api.py#L929) | 929 | `""` | — |
+| [SRC-3451CC474D-L000930](../../tests/test_api.py#L930) | 930 | `""` | — |
+| [SRC-3451CC474D-L000931](../../tests/test_api.py#L931) | 931 | `""` | — |
+| [SRC-3451CC474D-L000932](../../tests/test_api.py#L932) | 932 | `"def test_agent_concurrency_slot_released_after_operation_error(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000933](../../tests/test_api.py#L933) | 933 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-3451CC474D-L000934](../../tests/test_api.py#L934) | 934 | `""` | — |
+| [SRC-3451CC474D-L000935](../../tests/test_api.py#L935) | 935 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000936](../../tests/test_api.py#L936) | 936 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000937](../../tests/test_api.py#L937) | 937 | `"    monkeypatch.setattr(Handler, \"_request_times\", defaultdict(deque))"` | — |
+| [SRC-3451CC474D-L000938](../../tests/test_api.py#L938) | 938 | `"    monkeypatch.setattr(Handler, \"_rate_last_cleanup\", 0.0)"` | — |
+| [SRC-3451CC474D-L000939](../../tests/test_api.py#L939) | 939 | `"    monkeypatch.setattr(Handler, \"_agent_semaphore\", threading.BoundedSemaphore(1))"` | — |
+| [SRC-3451CC474D-L000940](../../tests/test_api.py#L940) | 940 | `"    state = {\"fail\": True}"` | — |
+| [SRC-3451CC474D-L000941](../../tests/test_api.py#L941) | 941 | `""` | — |
+| [SRC-3451CC474D-L000942](../../tests/test_api.py#L942) | 942 | `"    def answer_with_one_transient_failure(self, question, history=None, mode=\"auto\", *, budget_profile=\"default\"):"` | — |
+| [SRC-3451CC474D-L000943](../../tests/test_api.py#L943) | 943 | `"        if state[\"fail\"]:"` | — |
+| [SRC-3451CC474D-L000944](../../tests/test_api.py#L944) | 944 | `"            raise RuntimeError(\"synthetic operation failure\")"` | — |
+| [SRC-3451CC474D-L000945](../../tests/test_api.py#L945) | 945 | `"        return {"` | — |
+| [SRC-3451CC474D-L000946](../../tests/test_api.py#L946) | 946 | `"            \"answer\": \"اختبار ناجح\","` | — |
+| [SRC-3451CC474D-L000947](../../tests/test_api.py#L947) | 947 | `"            \"question\": question,"` | — |
+| [SRC-3451CC474D-L000948](../../tests/test_api.py#L948) | 948 | `"            \"search_query\": question,"` | — |
+| [SRC-3451CC474D-L000949](../../tests/test_api.py#L949) | 949 | `"            \"search_queries\": [],"` | — |
+| [SRC-3451CC474D-L000950](../../tests/test_api.py#L950) | 950 | `"            \"search_report\": {"` | — |
+| [SRC-3451CC474D-L000951](../../tests/test_api.py#L951) | 951 | `"                \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000952](../../tests/test_api.py#L952) | 952 | `"                \"search_outcome\": \"not_attempted\","` | — |
+| [SRC-3451CC474D-L000953](../../tests/test_api.py#L953) | 953 | `"            },"` | — |
+| [SRC-3451CC474D-L000954](../../tests/test_api.py#L954) | 954 | `"            \"sources\": [],"` | — |
+| [SRC-3451CC474D-L000955](../../tests/test_api.py#L955) | 955 | `"            \"used_language_model\": False,"` | — |
+| [SRC-3451CC474D-L000956](../../tests/test_api.py#L956) | 956 | `"            \"used_web_search\": False,"` | — |
+| [SRC-3451CC474D-L000957](../../tests/test_api.py#L957) | 957 | `"            \"search_attempted\": False,"` | — |
+| [SRC-3451CC474D-L000958](../../tests/test_api.py#L958) | 958 | `"            \"used_social_search\": False,"` | — |
+| [SRC-3451CC474D-L000959](../../tests/test_api.py#L959) | 959 | `"            \"warnings\": [],"` | — |
+| [SRC-3451CC474D-L000960](../../tests/test_api.py#L960) | 960 | `"            \"kind\": \"web_fallback\","` | — |
+| [SRC-3451CC474D-L000961](../../tests/test_api.py#L961) | 961 | `"        }"` | — |
+| [SRC-3451CC474D-L000962](../../tests/test_api.py#L962) | 962 | `""` | — |
+| [SRC-3451CC474D-L000963](../../tests/test_api.py#L963) | 963 | `"    monkeypatch.setattr(WebAgent, \"answer\", answer_with_one_transient_failure)"` | — |
+| [SRC-3451CC474D-L000964](../../tests/test_api.py#L964) | 964 | `""` | — |
+| [SRC-3451CC474D-L000965](../../tests/test_api.py#L965) | 965 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000966](../../tests/test_api.py#L966) | 966 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الأول\"}"` | — |
+| [SRC-3451CC474D-L000967](../../tests/test_api.py#L967) | 967 | `"    )"` | — |
+| [SRC-3451CC474D-L000968](../../tests/test_api.py#L968) | 968 | `"    assert status == 500"` | — |
+| [SRC-3451CC474D-L000969](../../tests/test_api.py#L969) | 969 | `"    assert payload[\"error\"] == \"internal server error\""` | — |
+| [SRC-3451CC474D-L000970](../../tests/test_api.py#L970) | 970 | `""` | — |
+| [SRC-3451CC474D-L000971](../../tests/test_api.py#L971) | 971 | `"    state[\"fail\"] = False"` | — |
+| [SRC-3451CC474D-L000972](../../tests/test_api.py#L972) | 972 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000973](../../tests/test_api.py#L973) | 973 | `"        local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"الطلب الثاني\"}"` | — |
+| [SRC-3451CC474D-L000974](../../tests/test_api.py#L974) | 974 | `"    )"` | — |
+| [SRC-3451CC474D-L000975](../../tests/test_api.py#L975) | 975 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000976](../../tests/test_api.py#L976) | 976 | `"    assert payload[\"answer\"] == \"اختبار ناجح\""` | — |
+| [SRC-3451CC474D-L000977](../../tests/test_api.py#L977) | 977 | `""` | — |
+| [SRC-3451CC474D-L000978](../../tests/test_api.py#L978) | 978 | `""` | — |
+| [SRC-3451CC474D-L000979](../../tests/test_api.py#L979) | 979 | `"def test_csp_hashes_match_all_first_party_inline_content_and_attributes():"` | — |
+| [SRC-3451CC474D-L000980](../../tests/test_api.py#L980) | 980 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000981](../../tests/test_api.py#L981) | 981 | `""` | — |
+| [SRC-3451CC474D-L000982](../../tests/test_api.py#L982) | 982 | `"    policy = api_module._content_security_policy()"` | — |
+| [SRC-3451CC474D-L000983](../../tests/test_api.py#L983) | 983 | `"    assert \"'unsafe-inline'\" not in policy"` | — |
+| [SRC-3451CC474D-L000984](../../tests/test_api.py#L984) | 984 | `"    script_blocks = 0"` | — |
+| [SRC-3451CC474D-L000985](../../tests/test_api.py#L985) | 985 | `"    style_blocks = 0"` | — |
+| [SRC-3451CC474D-L000986](../../tests/test_api.py#L986) | 986 | `"    style_attributes = 0"` | — |
+| [SRC-3451CC474D-L000987](../../tests/test_api.py#L987) | 987 | `"    for html_path in api_module.ROOT.glob(\"*.html\"):"` | — |
+| [SRC-3451CC474D-L000988](../../tests/test_api.py#L988) | 988 | `"        document = html_path.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3451CC474D-L000989](../../tests/test_api.py#L989) | 989 | `"        for match in re.finditer("` | — |
+| [SRC-3451CC474D-L000990](../../tests/test_api.py#L990) | 990 | `"            r\"<script\\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\\s*>\","` | — |
+| [SRC-3451CC474D-L000991](../../tests/test_api.py#L991) | 991 | `"            document,"` | — |
+| [SRC-3451CC474D-L000992](../../tests/test_api.py#L992) | 992 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-3451CC474D-L000993](../../tests/test_api.py#L993) | 993 | `"        ):"` | — |
+| [SRC-3451CC474D-L000994](../../tests/test_api.py#L994) | 994 | `"            if re.search(r\"\\bsrc\\s*=\", match.group(\"attrs\"), re.IGNORECASE):"` | — |
+| [SRC-3451CC474D-L000995](../../tests/test_api.py#L995) | 995 | `"                continue"` | — |
+| [SRC-3451CC474D-L000996](../../tests/test_api.py#L996) | 996 | `"            script_blocks += 1"` | — |
+| [SRC-3451CC474D-L000997](../../tests/test_api.py#L997) | 997 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
+| [SRC-3451CC474D-L000998](../../tests/test_api.py#L998) | 998 | `"        for match in re.finditer("` | — |
+| [SRC-3451CC474D-L000999](../../tests/test_api.py#L999) | 999 | `"            r\"<style\\b[^>]*>(?P<body>.*?)</style\\s*>\","` | — |
+| [SRC-3451CC474D-L001000](../../tests/test_api.py#L1000) | 1000 | `"            document,"` | — |
+| [SRC-3451CC474D-L001001](../../tests/test_api.py#L1001) | 1001 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
+| [SRC-3451CC474D-L001002](../../tests/test_api.py#L1002) | 1002 | `"        ):"` | — |
+| [SRC-3451CC474D-L001003](../../tests/test_api.py#L1003) | 1003 | `"            style_blocks += 1"` | — |
+| [SRC-3451CC474D-L001004](../../tests/test_api.py#L1004) | 1004 | `"            assert api_module._csp_hash_source(match.group(\"body\")) in policy"` | — |
+| [SRC-3451CC474D-L001005](../../tests/test_api.py#L1005) | 1005 | `"        for match in re.finditer("` | — |
 | [SRC-3451CC474D-L001006](../../tests/test_api.py#L1006) | 1006 | `"            r\"\"\"\\bstyle\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
 | [SRC-3451CC474D-L001007](../../tests/test_api.py#L1007) | 1007 | `"            document,"` | — |
 | [SRC-3451CC474D-L001008](../../tests/test_api.py#L1008) | 1008 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
@@ -279,26 +358,28 @@
 | [SRC-3451CC474D-L001266](../../tests/test_api.py#L1266) | 1266 | `"    assert \"localStorage\" not in html"` | — |
 | [SRC-3451CC474D-L001267](../../tests/test_api.py#L1267) | 1267 | `"    assert \"sessionStorage\" not in html"` | — |
 | [SRC-3451CC474D-L001268](../../tests/test_api.py#L1268) | 1268 | `""` | — |
-| [SRC-3451CC474D-L001269](../../tests/test_api.py#L1269) | 1269 | `"def test_workspace_route_does_not_replace_existing_home_agent_or_leads_pages(local_api):"` | — |
+| [SRC-3451CC474D-L001269](../../tests/test_api.py#L1269) | 1269 | `"def test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads(local_api):"` | — |
 | [SRC-3451CC474D-L001270](../../tests/test_api.py#L1270) | 1270 | `"    with urlopen(local_api + \"/\", timeout=3) as response:"` | — |
 | [SRC-3451CC474D-L001271](../../tests/test_api.py#L1271) | 1271 | `"        home = response.read().decode(\"utf-8\")"` | — |
 | [SRC-3451CC474D-L001272](../../tests/test_api.py#L1272) | 1272 | `"        assert response.status == 200"` | — |
-| [SRC-3451CC474D-L001273](../../tests/test_api.py#L1273) | 1273 | `"        assert \"وكيل البحث والتحليل\" in home"` | — |
-| [SRC-3451CC474D-L001274](../../tests/test_api.py#L1274) | 1274 | `""` | — |
-| [SRC-3451CC474D-L001275](../../tests/test_api.py#L1275) | 1275 | `"    with urlopen(local_api + \"/agent\", timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L001276](../../tests/test_api.py#L1276) | 1276 | `"        agent = response.read().decode(\"utf-8\")"` | — |
-| [SRC-3451CC474D-L001277](../../tests/test_api.py#L1277) | 1277 | `"        assert response.status == 200"` | — |
-| [SRC-3451CC474D-L001278](../../tests/test_api.py#L1278) | 1278 | `"        assert agent == home"` | — |
-| [SRC-3451CC474D-L001279](../../tests/test_api.py#L1279) | 1279 | `""` | — |
-| [SRC-3451CC474D-L001280](../../tests/test_api.py#L1280) | 1280 | `"    with urlopen(local_api + \"/workspace\", timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L001281](../../tests/test_api.py#L1281) | 1281 | `"        workspace = response.read().decode(\"utf-8\")"` | — |
-| [SRC-3451CC474D-L001282](../../tests/test_api.py#L1282) | 1282 | `"        assert response.status == 200"` | — |
-| [SRC-3451CC474D-L001283](../../tests/test_api.py#L1283) | 1283 | `"        assert '<html lang=\"ar\" dir=\"rtl\">' in workspace"` | — |
-| [SRC-3451CC474D-L001284](../../tests/test_api.py#L1284) | 1284 | `""` | — |
-| [SRC-3451CC474D-L001285](../../tests/test_api.py#L1285) | 1285 | `"    with urlopen(local_api + \"/leads\", timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L001286](../../tests/test_api.py#L1286) | 1286 | `"        leads = response.read().decode(\"utf-8\")"` | — |
-| [SRC-3451CC474D-L001287](../../tests/test_api.py#L1287) | 1287 | `"        assert response.status == 200"` | — |
-| [SRC-3451CC474D-L001288](../../tests/test_api.py#L1288) | 1288 | `"        assert \"مساعد اكتشاف العملاء\" in leads"` | — |
+| [SRC-3451CC474D-L001273](../../tests/test_api.py#L1273) | 1273 | `"        assert '<html lang=\"ar\" dir=\"rtl\">' in home"` | — |
+| [SRC-3451CC474D-L001274](../../tests/test_api.py#L1274) | 1274 | `"        assert \"OMARAI SECURE WORKSPACE\" in home"` | — |
+| [SRC-3451CC474D-L001275](../../tests/test_api.py#L1275) | 1275 | `""` | — |
+| [SRC-3451CC474D-L001276](../../tests/test_api.py#L1276) | 1276 | `"    with urlopen(local_api + \"/workspace\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001277](../../tests/test_api.py#L1277) | 1277 | `"        workspace = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001278](../../tests/test_api.py#L1278) | 1278 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001279](../../tests/test_api.py#L1279) | 1279 | `"        assert workspace == home"` | — |
+| [SRC-3451CC474D-L001280](../../tests/test_api.py#L1280) | 1280 | `""` | — |
+| [SRC-3451CC474D-L001281](../../tests/test_api.py#L1281) | 1281 | `"    with urlopen(local_api + \"/agent\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001282](../../tests/test_api.py#L1282) | 1282 | `"        agent = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001283](../../tests/test_api.py#L1283) | 1283 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001284](../../tests/test_api.py#L1284) | 1284 | `"        assert agent != home"` | — |
+| [SRC-3451CC474D-L001285](../../tests/test_api.py#L1285) | 1285 | `"        assert \"وكيل البحث الحي والتحليل متعدد المصادر\" in agent"` | — |
+| [SRC-3451CC474D-L001286](../../tests/test_api.py#L1286) | 1286 | `""` | — |
+| [SRC-3451CC474D-L001287](../../tests/test_api.py#L1287) | 1287 | `"    with urlopen(local_api + \"/leads\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001288](../../tests/test_api.py#L1288) | 1288 | `"        leads = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001289](../../tests/test_api.py#L1289) | 1289 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001290](../../tests/test_api.py#L1290) | 1290 | `"        assert \"مساعد اكتشاف العملاء\" in leads"` | — |
 ## اختبارات
 
 ### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
@@ -762,93 +843,3 @@
 | [SRC-DA61479D59-L000237](../../tests/test_connector_summary_counters.py#L237) | 237 | `"        [{"` | — |
 | [SRC-DA61479D59-L000238](../../tests/test_connector_summary_counters.py#L238) | 238 | `"            \"provider\": \"bing_rss\","` | — |
 | [SRC-DA61479D59-L000239](../../tests/test_connector_summary_counters.py#L239) | 239 | `"            \"query\": \"Arabic question with source instructions\","` | — |
-| [SRC-DA61479D59-L000240](../../tests/test_connector_summary_counters.py#L240) | 240 | `"            \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000241](../../tests/test_connector_summary_counters.py#L241) | 241 | `"            \"result_count\": 6,"` | — |
-| [SRC-DA61479D59-L000242](../../tests/test_connector_summary_counters.py#L242) | 242 | `"            \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000243](../../tests/test_connector_summary_counters.py#L243) | 243 | `"            \"rejected_count\": 6,"` | — |
-| [SRC-DA61479D59-L000244](../../tests/test_connector_summary_counters.py#L244) | 244 | `"            \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000245](../../tests/test_connector_summary_counters.py#L245) | 245 | `"                \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000246](../../tests/test_connector_summary_counters.py#L246) | 246 | `"                \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000247](../../tests/test_connector_summary_counters.py#L247) | 247 | `"                \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000248](../../tests/test_connector_summary_counters.py#L248) | 248 | `"                \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000249](../../tests/test_connector_summary_counters.py#L249) | 249 | `"            },"` | — |
-| [SRC-DA61479D59-L000250](../../tests/test_connector_summary_counters.py#L250) | 250 | `"            \"error\": \"all candidates rejected; invalid_url_or_unsafe_target=2, blocked_domain=1, relevance_below_threshold=3\","` | — |
-| [SRC-DA61479D59-L000251](../../tests/test_connector_summary_counters.py#L251) | 251 | `"        }],"` | — |
-| [SRC-DA61479D59-L000252](../../tests/test_connector_summary_counters.py#L252) | 252 | `"        [],"` | — |
-| [SRC-DA61479D59-L000253](../../tests/test_connector_summary_counters.py#L253) | 253 | `"    )"` | — |
-| [SRC-DA61479D59-L000254](../../tests/test_connector_summary_counters.py#L254) | 254 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000255](../../tests/test_connector_summary_counters.py#L255) | 255 | `"    assert bing[\"attempted\"] is True"` | — |
-| [SRC-DA61479D59-L000256](../../tests/test_connector_summary_counters.py#L256) | 256 | `"    assert bing[\"result_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000257](../../tests/test_connector_summary_counters.py#L257) | 257 | `"    assert bing[\"accepted_count\"] == 0"` | — |
-| [SRC-DA61479D59-L000258](../../tests/test_connector_summary_counters.py#L258) | 258 | `"    assert bing[\"rejected_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000259](../../tests/test_connector_summary_counters.py#L259) | 259 | `"    assert bing[\"rejection_counts_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000260](../../tests/test_connector_summary_counters.py#L260) | 260 | `"    assert bing[\"rejection_counts\"] == {"` | — |
-| [SRC-DA61479D59-L000261](../../tests/test_connector_summary_counters.py#L261) | 261 | `"        \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000262](../../tests/test_connector_summary_counters.py#L262) | 262 | `"        \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000263](../../tests/test_connector_summary_counters.py#L263) | 263 | `"        \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000264](../../tests/test_connector_summary_counters.py#L264) | 264 | `"        \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000265](../../tests/test_connector_summary_counters.py#L265) | 265 | `"    }"` | — |
-| [SRC-DA61479D59-L000266](../../tests/test_connector_summary_counters.py#L266) | 266 | `"    assert sum(bing[\"rejection_counts\"].values()) == bing[\"rejected_count\"]"` | — |
-| [SRC-DA61479D59-L000267](../../tests/test_connector_summary_counters.py#L267) | 267 | `"    assert bing[\"candidate_rejection_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000268](../../tests/test_connector_summary_counters.py#L268) | 268 | `"    assert bing[\"available_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000269](../../tests/test_connector_summary_counters.py#L269) | 269 | `"    assert bing[\"verified_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000270](../../tests/test_connector_summary_counters.py#L270) | 270 | `""` | — |
-| [SRC-DA61479D59-L000271](../../tests/test_connector_summary_counters.py#L271) | 271 | `""` | — |
-| [SRC-DA61479D59-L000272](../../tests/test_connector_summary_counters.py#L272) | 272 | `"def test_connector_summary_does_not_present_partial_legacy_rejection_counts_as_complete():"` | — |
-| [SRC-DA61479D59-L000273](../../tests/test_connector_summary_counters.py#L273) | 273 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000274](../../tests/test_connector_summary_counters.py#L274) | 274 | `"    summary = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000275](../../tests/test_connector_summary_counters.py#L275) | 275 | `"        ["` | — |
-| [SRC-DA61479D59-L000276](../../tests/test_connector_summary_counters.py#L276) | 276 | `"            {"` | — |
-| [SRC-DA61479D59-L000277](../../tests/test_connector_summary_counters.py#L277) | 277 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000278](../../tests/test_connector_summary_counters.py#L278) | 278 | `"                \"query\": \"first query\","` | — |
-| [SRC-DA61479D59-L000279](../../tests/test_connector_summary_counters.py#L279) | 279 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000280](../../tests/test_connector_summary_counters.py#L280) | 280 | `"                \"result_count\": 3,"` | — |
-| [SRC-DA61479D59-L000281](../../tests/test_connector_summary_counters.py#L281) | 281 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000282](../../tests/test_connector_summary_counters.py#L282) | 282 | `"                \"rejected_count\": 3,"` | — |
-| [SRC-DA61479D59-L000283](../../tests/test_connector_summary_counters.py#L283) | 283 | `"            },"` | — |
-| [SRC-DA61479D59-L000284](../../tests/test_connector_summary_counters.py#L284) | 284 | `"            {"` | — |
-| [SRC-DA61479D59-L000285](../../tests/test_connector_summary_counters.py#L285) | 285 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000286](../../tests/test_connector_summary_counters.py#L286) | 286 | `"                \"query\": \"second query\","` | — |
-| [SRC-DA61479D59-L000287](../../tests/test_connector_summary_counters.py#L287) | 287 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000288](../../tests/test_connector_summary_counters.py#L288) | 288 | `"                \"result_count\": 2,"` | — |
-| [SRC-DA61479D59-L000289](../../tests/test_connector_summary_counters.py#L289) | 289 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000290](../../tests/test_connector_summary_counters.py#L290) | 290 | `"                \"rejected_count\": 2,"` | — |
-| [SRC-DA61479D59-L000291](../../tests/test_connector_summary_counters.py#L291) | 291 | `"                \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000292](../../tests/test_connector_summary_counters.py#L292) | 292 | `"                    \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000293](../../tests/test_connector_summary_counters.py#L293) | 293 | `"                    \"invalid_url_or_unsafe_target\": 0,"` | — |
-| [SRC-DA61479D59-L000294](../../tests/test_connector_summary_counters.py#L294) | 294 | `"                    \"blocked_domain\": 0,"` | — |
-| [SRC-DA61479D59-L000295](../../tests/test_connector_summary_counters.py#L295) | 295 | `"                    \"relevance_below_threshold\": 2,"` | — |
-| [SRC-DA61479D59-L000296](../../tests/test_connector_summary_counters.py#L296) | 296 | `"                },"` | — |
-| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |
-| [SRC-DA61479D59-L000298](../../tests/test_connector_summary_counters.py#L298) | 298 | `"        ],"` | — |
-| [SRC-DA61479D59-L000299](../../tests/test_connector_summary_counters.py#L299) | 299 | `"        [],"` | — |
-| [SRC-DA61479D59-L000300](../../tests/test_connector_summary_counters.py#L300) | 300 | `"    )"` | — |
-| [SRC-DA61479D59-L000301](../../tests/test_connector_summary_counters.py#L301) | 301 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000302](../../tests/test_connector_summary_counters.py#L302) | 302 | `"    assert bing[\"rejected_count\"] == 5"` | — |
-| [SRC-DA61479D59-L000303](../../tests/test_connector_summary_counters.py#L303) | 303 | `"    assert bing[\"rejection_counts_observed\"] is False"` | — |
-| [SRC-DA61479D59-L000304](../../tests/test_connector_summary_counters.py#L304) | 304 | `"    assert bing[\"rejection_counts\"] is None"` | — |
-## اختبارات
-
-### FILE-6BECF5AD00 — [tests/test_connectors_mocked.py](../../tests/test_connectors_mocked.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BECF5AD00-L000001](../../tests/test_connectors_mocked.py#L1) | 1 | `"\"\"\"Connector unit tests with mocked HTTP (no live network required).\"\"\""` | — |
-| [SRC-6BECF5AD00-L000002](../../tests/test_connectors_mocked.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6BECF5AD00-L000003](../../tests/test_connectors_mocked.py#L3) | 3 | `""` | — |
-| [SRC-6BECF5AD00-L000004](../../tests/test_connectors_mocked.py#L4) | 4 | `""` | — |
-| [SRC-6BECF5AD00-L000005](../../tests/test_connectors_mocked.py#L5) | 5 | `"import agents.search_connectors as sc"` | — |
-| [SRC-6BECF5AD00-L000006](../../tests/test_connectors_mocked.py#L6) | 6 | `""` | — |
-| [SRC-6BECF5AD00-L000007](../../tests/test_connectors_mocked.py#L7) | 7 | `""` | — |
-| [SRC-6BECF5AD00-L000008](../../tests/test_connectors_mocked.py#L8) | 8 | `"def test_openalex_parses_mocked_payload(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000009](../../tests/test_connectors_mocked.py#L9) | 9 | `"    payload = {"` | — |
-| [SRC-6BECF5AD00-L000010](../../tests/test_connectors_mocked.py#L10) | 10 | `"        \"results\": ["` | — |
-| [SRC-6BECF5AD00-L000011](../../tests/test_connectors_mocked.py#L11) | 11 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000012](../../tests/test_connectors_mocked.py#L12) | 12 | `"                \"display_name\": \"Electric Vehicles in Egypt\","` | — |
-| [SRC-6BECF5AD00-L000013](../../tests/test_connectors_mocked.py#L13) | 13 | `"                \"id\": \"https://openalex.org/W123\","` | — |
-| [SRC-6BECF5AD00-L000014](../../tests/test_connectors_mocked.py#L14) | 14 | `"                \"primary_location\": {\"landing_page_url\": \"https://example.org/paper\"},"` | — |
-| [SRC-6BECF5AD00-L000015](../../tests/test_connectors_mocked.py#L15) | 15 | `"                \"concepts\": [{\"display_name\": \"Battery\"}],"` | — |
-| [SRC-6BECF5AD00-L000016](../../tests/test_connectors_mocked.py#L16) | 16 | `"                \"publication_date\": \"2024-01-01\","` | — |

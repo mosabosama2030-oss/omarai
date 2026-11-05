@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **136**
+- ملفات المستودع في الجرد: **137**
 - ملفات Python المحللة: **82**
 - تعريفات Python المفهرسة: **1954**
 - تعريفات Python موثقة بوجود Docstring: **295**
 - تعريفات Python بلا Docstring: **1251**
 - تعريفات لا ينطبق عليها Docstring: **408**
-- الرموز الساكنة الإضافية: **2646**
-- الأسطر النصية المفهرسة حرفيًا: **48101**
+- الرموز الساكنة الإضافية: **2655**
+- الأسطر النصية المفهرسة حرفيًا: **48183**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -57,7 +57,7 @@
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 384794 | 7249 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 47010 | 1008 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 47000 | 1008 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
@@ -72,7 +72,7 @@
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 10804 | 107 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
-| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 14005 | 73 | جرد الملف + عناوين Markdown |
+| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 15944 | 86 | جرد الملف + عناوين Markdown |
 | FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 12943 | 136 | جرد الملف + عناوين Markdown |
 | FILE-BA40E88B07 | وثائق وفهرسة | [docs/OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md](OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md#L1) | Markdown | 16148 | 163 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
@@ -93,6 +93,7 @@
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15596 | 132 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
 | FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 11339 | 130 | جرد الملف + عناوين Markdown |
+| FILE-002F33CFDC | وثائق وفهرسة | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L1) | Markdown | 3207 | 66 | جرد الملف + عناوين Markdown |
 | FILE-8524B08F5D | وثائق وفهرسة | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | Markdown | 5319 | 47 | جرد الملف + عناوين Markdown |
 | FILE-6B9B9ABE27 | وثائق وفهرسة | [docs/ui-directions/README.md](ui-directions/README.md#L1) | Markdown | 2400 | 42 | جرد الملف + عناوين Markdown |
 | FILE-7EB8FCD215 | وثائق وفهرسة | [docs/ui-directions/variant-01-aurora-glass.html](ui-directions/variant-01-aurora-glass.html#L1) | HTML | 7302 | 1 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -101,7 +102,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 24660 | 190 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 24619 | 190 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 24754 | 531 | جرد الملف + AST Python |
@@ -120,12 +121,12 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 46950 | 1288 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 47064 | 1290 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 5101 | 119 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 5160 | 120 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12424 | 299 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -163,7 +164,7 @@
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71437 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 49755 | 577 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 49760 | 577 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -1201,7 +1202,7 @@
 | [tests/test_api.py](../tests/test_api.py#L1204) | دالة | test_api_rejects_ambiguous_or_unsupported_http_request_framing | لا توجد Docstring. | ناقص | 1204 | [SRC-3451CC474D-L001204](../tests/test_api.py#L1204) |
 | [tests/test_api.py](../tests/test_api.py#L1232) | دالة | test_api_closes_connection_when_declared_body_exceeds_limit | لا توجد Docstring. | ناقص | 1232 | [SRC-3451CC474D-L001232](../tests/test_api.py#L1232) |
 | [tests/test_api.py](../tests/test_api.py#L1257) | دالة | test_workspace_route_serves_the_arabic_rtl_workspace_shell | لا توجد Docstring. | ناقص | 1257 | [SRC-3451CC474D-L001257](../tests/test_api.py#L1257) |
-| [tests/test_api.py](../tests/test_api.py#L1269) | دالة | test_workspace_route_does_not_replace_existing_home_agent_or_leads_pages | لا توجد Docstring. | ناقص | 1269 | [SRC-3451CC474D-L001269](../tests/test_api.py#L1269) |
+| [tests/test_api.py](../tests/test_api.py#L1269) | دالة | test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads | لا توجد Docstring. | ناقص | 1269 | [SRC-3451CC474D-L001269](../tests/test_api.py#L1269) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L13) | دالة | test_extract_aspects_from_min_hayth | لا توجد Docstring. | ناقص | 13 | [SRC-6CBA87B20C-L000013](../tests/test_aspect_planning.py#L13) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L25) | دالة | test_extract_aspects_from_multi_question_marks | لا توجد Docstring. | ناقص | 25 | [SRC-6CBA87B20C-L000025](../tests/test_aspect_planning.py#L25) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L31) | دالة | test_build_aspect_queries_prioritizes_topic | لا توجد Docstring. | ناقص | 31 | [SRC-6CBA87B20C-L000031](../tests/test_aspect_planning.py#L31) |
@@ -1239,10 +1240,10 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L33) | دالة | test_browser_pages_never_store_access_tokens_in_web_storage | لا توجد Docstring. | ناقص | 33 | [SRC-3D0A619359-L000033](../tests/test_dashboard_security.py#L33) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L44) | دالة | test_sales_workspace_uses_http_only_session_and_never_persists_access_token | لا توجد Docstring. | ناقص | 44 | [SRC-3D0A619359-L000044](../tests/test_dashboard_security.py#L44) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L60) | دالة | test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility | لا توجد Docstring. | ناقص | 60 | [SRC-3D0A619359-L000060](../tests/test_dashboard_security.py#L60) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L74) | دالة | test_workspace_write_controls_match_supported_membership_roles | لا توجد Docstring. | ناقص | 74 | [SRC-3D0A619359-L000074](../tests/test_dashboard_security.py#L74) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L82) | دالة | test_workspace_does_not_clear_local_session_state_when_server_logout_fails | لا توجد Docstring. | ناقص | 82 | [SRC-3D0A619359-L000082](../tests/test_dashboard_security.py#L82) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L95) | دالة | test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes | لا توجد Docstring. | ناقص | 95 | [SRC-3D0A619359-L000095](../tests/test_dashboard_security.py#L95) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L111) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 111 | [SRC-3D0A619359-L000111](../tests/test_dashboard_security.py#L111) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L75) | دالة | test_workspace_write_controls_match_supported_membership_roles | لا توجد Docstring. | ناقص | 75 | [SRC-3D0A619359-L000075](../tests/test_dashboard_security.py#L75) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L83) | دالة | test_workspace_does_not_clear_local_session_state_when_server_logout_fails | لا توجد Docstring. | ناقص | 83 | [SRC-3D0A619359-L000083](../tests/test_dashboard_security.py#L83) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L96) | دالة | test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes | لا توجد Docstring. | ناقص | 96 | [SRC-3D0A619359-L000096](../tests/test_dashboard_security.py#L96) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L112) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 112 | [SRC-3D0A619359-L000112](../tests/test_dashboard_security.py#L112) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -2436,7 +2437,7 @@
 | [api/omarai.py](../api/omarai.py#L383) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 383 | [SRC-EEF2E6447C-L000383](../api/omarai.py#L383) |
 | [api/omarai.py](../api/omarai.py#L433) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 433 | [SRC-EEF2E6447C-L000433](../api/omarai.py#L433) |
 | [api/omarai.py](../api/omarai.py#L468) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 468 | [SRC-EEF2E6447C-L000468](../api/omarai.py#L468) |
-| [api/omarai.py](../api/omarai.py#L622) | مسار API/واجهة محتمل | /leads | 622 | [SRC-EEF2E6447C-L000622](../api/omarai.py#L622) |
+| [api/omarai.py](../api/omarai.py#L626) | مسار API/واجهة محتمل | /leads | 626 | [SRC-EEF2E6447C-L000626](../api/omarai.py#L626) |
 | [api/omarai.py](../api/omarai.py#L630) | مسار API/واجهة محتمل | /api/health | 630 | [SRC-EEF2E6447C-L000630](../api/omarai.py#L630) |
 | [api/omarai.py](../api/omarai.py#L647) | مسار API/واجهة محتمل | /api/session | 647 | [SRC-EEF2E6447C-L000647](../api/omarai.py#L647) |
 | [api/omarai.py](../api/omarai.py#L659) | مسار API/واجهة محتمل | /api/leads | 659 | [SRC-EEF2E6447C-L000659](../api/omarai.py#L659) |
@@ -2706,22 +2707,23 @@
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L45) | عنوان Markdown (H2) | حدود الإثبات | 45 | [SRC-6E35221BFA-L000045](GO_LIVE_CHECKLIST_AR.md#L45) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 48 | [SRC-6E35221BFA-L000048](GO_LIVE_CHECKLIST_AR.md#L48) |
 | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدود الإثبات | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L2) | عنوان Markdown (H2) | إضافة تنفيذية بتاريخ 3 نوفمبر 2026 — مساحة عمل المبيعات العربية | 2 | [SRC-C8EA754D73-L000002](IMPLEMENTATION_SCOPE.md#L2) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 11 | [SRC-C8EA754D73-L000011](IMPLEMENTATION_SCOPE.md#L11) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 15 | [SRC-C8EA754D73-L000015](IMPLEMENTATION_SCOPE.md#L15) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 16 | [SRC-C8EA754D73-L000016](IMPLEMENTATION_SCOPE.md#L16) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_DEPLOYED | 17 | [SRC-C8EA754D73-L000017](IMPLEMENTATION_SCOPE.md#L17) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 22 | [SRC-C8EA754D73-L000022](IMPLEMENTATION_SCOPE.md#L22) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 22 | [SRC-C8EA754D73-L000022](IMPLEMENTATION_SCOPE.md#L22) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 27 | [SRC-C8EA754D73-L000027](IMPLEMENTATION_SCOPE.md#L27) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L29) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 29 | [SRC-C8EA754D73-L000029](IMPLEMENTATION_SCOPE.md#L29) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 38 | [SRC-C8EA754D73-L000038](IMPLEMENTATION_SCOPE.md#L38) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L39) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 39 | [SRC-C8EA754D73-L000039](IMPLEMENTATION_SCOPE.md#L39) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L47) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 47 | [SRC-C8EA754D73-L000047](IMPLEMENTATION_SCOPE.md#L47) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L57) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 57 | [SRC-C8EA754D73-L000057](IMPLEMENTATION_SCOPE.md#L57) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L61) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 61 | [SRC-C8EA754D73-L000061](IMPLEMENTATION_SCOPE.md#L61) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L62) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 62 | [SRC-C8EA754D73-L000062](IMPLEMENTATION_SCOPE.md#L62) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L66) | عنوان Markdown (H2) | اعتماد الاتجاه البصري — 4 نوفمبر 2026 | 66 | [SRC-C8EA754D73-L000066](IMPLEMENTATION_SCOPE.md#L66) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L2) | عنوان Markdown (H2) | تحديث تنفيذي بتاريخ 5 نوفمبر 2026 — تفعيل مساحة المبيعات كصفحة البداية | 2 | [SRC-C8EA754D73-L000002](IMPLEMENTATION_SCOPE.md#L2) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 11 | [SRC-C8EA754D73-L000011](IMPLEMENTATION_SCOPE.md#L11) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_DEPLOYED | 12 | [SRC-C8EA754D73-L000012](IMPLEMENTATION_SCOPE.md#L12) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L15) | عنوان Markdown (H2) | إضافة تنفيذية بتاريخ 3 نوفمبر 2026 — مساحة عمل المبيعات العربية | 15 | [SRC-C8EA754D73-L000015](IMPLEMENTATION_SCOPE.md#L15) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 24 | [SRC-C8EA754D73-L000024](IMPLEMENTATION_SCOPE.md#L24) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 28 | [SRC-C8EA754D73-L000028](IMPLEMENTATION_SCOPE.md#L28) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 35 | [SRC-C8EA754D73-L000035](IMPLEMENTATION_SCOPE.md#L35) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 35 | [SRC-C8EA754D73-L000035](IMPLEMENTATION_SCOPE.md#L35) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 40 | [SRC-C8EA754D73-L000040](IMPLEMENTATION_SCOPE.md#L40) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L42) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 42 | [SRC-C8EA754D73-L000042](IMPLEMENTATION_SCOPE.md#L42) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 51 | [SRC-C8EA754D73-L000051](IMPLEMENTATION_SCOPE.md#L51) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L52) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 52 | [SRC-C8EA754D73-L000052](IMPLEMENTATION_SCOPE.md#L52) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L60) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 60 | [SRC-C8EA754D73-L000060](IMPLEMENTATION_SCOPE.md#L60) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L70) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 70 | [SRC-C8EA754D73-L000070](IMPLEMENTATION_SCOPE.md#L70) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 74 | [SRC-C8EA754D73-L000074](IMPLEMENTATION_SCOPE.md#L74) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 75 | [SRC-C8EA754D73-L000075](IMPLEMENTATION_SCOPE.md#L75) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L79) | عنوان Markdown (H2) | اعتماد الاتجاه البصري — 4 نوفمبر 2026 | 79 | [SRC-C8EA754D73-L000079](IMPLEMENTATION_SCOPE.md#L79) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | عنوان Markdown (H1) | خطة تنفيذ RAG الوكيلي وسلامة الأدلة في Omarai | 1 | [SRC-53E640B937-L000001](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) | عنوان Markdown (H2) | تعريف النظام المستهدف | 4 | [SRC-53E640B937-L000004](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) | عنوان Markdown (H2) | سجل البنود وحالتها | 8 | [SRC-53E640B937-L000008](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) |
@@ -3400,6 +3402,14 @@
 | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L104) | عنوان Markdown (H3) | بوابة التوضيح الإلزامي — 2026-10-30 | 104 | [SRC-BBB7222984-L000104](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L104) |
 | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 107 | [SRC-BBB7222984-L000107](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L107) |
 | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L115) | عنوان Markdown (H3) | تدقيق دعم الاستشهادات وحالة الإكمال — 2026-10-30 | 115 | [SRC-BBB7222984-L000115](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L115) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L1) | عنوان Markdown (H1) | Make Omarai Sales Workspace the Default Home — Implementation Plan | 1 | [SRC-002F33CFDC-L000001](superpowers/plans/2026-11-05-default-workspace-home.md#L1) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L10) | عنوان Markdown (H2) | Global Constraints | 10 | [SRC-002F33CFDC-L000010](superpowers/plans/2026-11-05-default-workspace-home.md#L10) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L18) | عنوان Markdown (H2) | Review Focus | 18 | [SRC-002F33CFDC-L000018](superpowers/plans/2026-11-05-default-workspace-home.md#L18) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L27) | عنوان Markdown (H3) | Task 1: Pin the intended route behavior | 27 | [SRC-002F33CFDC-L000027](superpowers/plans/2026-11-05-default-workspace-home.md#L27) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L40) | عنوان Markdown (H3) | Task 2: Route the home page to the approved workspace | 40 | [SRC-002F33CFDC-L000040](superpowers/plans/2026-11-05-default-workspace-home.md#L40) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L51) | عنوان Markdown (H3) | Task 3: Align documentation and handoff | 51 | [SRC-002F33CFDC-L000051](superpowers/plans/2026-11-05-default-workspace-home.md#L51) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 56 | [SRC-002F33CFDC-L000056](superpowers/plans/2026-11-05-default-workspace-home.md#L56) |
+| [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L60) | عنوان Markdown (H3) | Task 4: Verify | 60 | [SRC-002F33CFDC-L000060](superpowers/plans/2026-11-05-default-workspace-home.md#L60) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | عنوان Markdown (H1) | تصميم خط المعالجة الهجين الموحد للبحث والفهم | 1 | [SRC-8524B08F5D-L000001](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) | عنوان Markdown (H2) | الهدف | 5 | [SRC-8524B08F5D-L000005](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) | عنوان Markdown (H2) | الحالة الحالية المثبتة | 8 | [SRC-8524B08F5D-L000008](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) |
@@ -3989,15 +3999,15 @@
 | [tests/test_api.py](../tests/test_api.py#L923) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 923 | [SRC-3451CC474D-L000923](../tests/test_api.py#L923) |
 | [tests/test_api.py](../tests/test_api.py#L1035) | مسار API/واجهة محتمل | /api/session | 1035 | [SRC-3451CC474D-L001035](../tests/test_api.py#L1035) |
 | [tests/test_api.py](../tests/test_api.py#L1079) | مسار API/واجهة محتمل | /api/session/logout | 1079 | [SRC-3451CC474D-L001079](../tests/test_api.py#L1079) |
-| [tests/test_api.py](../tests/test_api.py#L1285) | مسار API/واجهة محتمل | /leads | 1285 | [SRC-3451CC474D-L001285](../tests/test_api.py#L1285) |
+| [tests/test_api.py](../tests/test_api.py#L1287) | مسار API/واجهة محتمل | /leads | 1287 | [SRC-3451CC474D-L001287](../tests/test_api.py#L1287) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 10 | [SRC-DA61479D59-L000010](../tests/test_connector_summary_counters.py#L10) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 130 | [SRC-DA61479D59-L000130](../tests/test_connector_summary_counters.py#L130) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 131 | [SRC-DA61479D59-L000131](../tests/test_connector_summary_counters.py#L131) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L220) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_KEY | 220 | [SRC-DA61479D59-L000220](../tests/test_connector_summary_counters.py#L220) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L13) | مسار API/واجهة محتمل | /api/session | 13 | [SRC-3D0A619359-L000013](../tests/test_dashboard_security.py#L13) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L54) | مسار API/واجهة محتمل | /api/health | 54 | [SRC-3D0A619359-L000054](../tests/test_dashboard_security.py#L54) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 78 | [SRC-3D0A619359-L000078](../tests/test_dashboard_security.py#L78) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 80 | [SRC-3D0A619359-L000080](../tests/test_dashboard_security.py#L80) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 79 | [SRC-3D0A619359-L000079](../tests/test_dashboard_security.py#L79) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 81 | [SRC-3D0A619359-L000081](../tests/test_dashboard_security.py#L81) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 146 | [SRC-29A9CD43D1-L000146](../tests/test_dialogue_context_pipeline.py#L146) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
