@@ -1266,21 +1266,23 @@ def test_workspace_route_serves_the_arabic_rtl_workspace_shell(local_api):
     assert "localStorage" not in html
     assert "sessionStorage" not in html
 
-def test_workspace_route_does_not_replace_existing_home_agent_or_leads_pages(local_api):
+def test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads(local_api):
     with urlopen(local_api + "/", timeout=3) as response:
         home = response.read().decode("utf-8")
         assert response.status == 200
-        assert "وكيل البحث والتحليل" in home
-
-    with urlopen(local_api + "/agent", timeout=3) as response:
-        agent = response.read().decode("utf-8")
-        assert response.status == 200
-        assert agent == home
+        assert '<html lang="ar" dir="rtl">' in home
+        assert "OMARAI SECURE WORKSPACE" in home
 
     with urlopen(local_api + "/workspace", timeout=3) as response:
         workspace = response.read().decode("utf-8")
         assert response.status == 200
-        assert '<html lang="ar" dir="rtl">' in workspace
+        assert workspace == home
+
+    with urlopen(local_api + "/agent", timeout=3) as response:
+        agent = response.read().decode("utf-8")
+        assert response.status == 200
+        assert agent != home
+        assert "وكيل البحث الحي والتحليل متعدد المصادر" in agent
 
     with urlopen(local_api + "/leads", timeout=3) as response:
         leads = response.read().decode("utf-8")
