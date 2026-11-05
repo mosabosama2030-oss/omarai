@@ -70,6 +70,7 @@ def test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility
     assert "prefers-reduced-motion:reduce" in html
     assert "forced-colors:active" in html
     assert "min-height:42px" in html
+    assert 'href="/agent">وكيل البحث</a>' in html
 
 def test_workspace_write_controls_match_supported_membership_roles():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
