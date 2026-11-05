@@ -615,18 +615,18 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
-        if parsed.path in {"/", "/agent"}:
+        if parsed.path == "/agent":
             if not AGENT_DASHBOARD.exists():
                 return self.respond(404, {"error": "agent dashboard missing"})
             return self.respond(200, AGENT_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
+        if parsed.path in {"/", "/workspace"}:
+            if not WORKSPACE_DASHBOARD.exists():
+                return self.respond(404, {"error": "workspace dashboard missing"})
+            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
         if parsed.path == "/leads":
             if not LEADS_DASHBOARD.exists():
                 return self.respond(404, {"error": "leads dashboard missing"})
             return self.respond(200, LEADS_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
-        if parsed.path == "/workspace":
-            if not WORKSPACE_DASHBOARD.exists():
-                return self.respond(404, {"error": "workspace dashboard missing"})
-            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
         if parsed.path == "/api/health":
             return self.respond(
                 200,
@@ -926,7 +926,7 @@ def answer_question(question, store, *, tenant_id=None):
             lead = max(active, key=lambda item: (item["assessment"]["score"], item["updated_at"]))
             answer = "مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة " + lead["id"][:8] + ". لم يتم إرسال أي رسالة."
         return {"answer": answer, "kind": "message_draft", "lead_id": active[0]["id"] if active else None}
-    return {"answer": "أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.", "kind": "help", "lead_id": None}
+    return {"answer": "أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من المسار /agent لطرح أسئلة مفتوحة والبحث في الويب.", "kind": "help", "lead_id": None}
 
 
 class BoundedThreadingHTTPServer(ThreadingHTTPServer):
