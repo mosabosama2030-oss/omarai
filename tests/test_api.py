@@ -19,8 +19,10 @@ from api.omarai import Handler
 
 
 @pytest.fixture
-def local_api(tmp_path):
-    """Run the real handler on an ephemeral loopback port with an isolated database."""
+def local_api(tmp_path, monkeypatch):
+    """Run the real handler on loopback with explicit local-development auth opt-in."""
+    monkeypatch.setenv("OMARAI_ALLOW_LOOPBACK_AUTH", "1")
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
     previous_store = Handler.store
     previous_request_times = Handler._request_times
     previous_rate_cleanup = Handler._rate_last_cleanup
@@ -39,6 +41,15 @@ def local_api(tmp_path):
         Handler.store = previous_store
         Handler._request_times = previous_request_times
         Handler._rate_last_cleanup = previous_rate_cleanup
+
+
+
+
+def test_loopback_auth_requires_explicit_local_opt_in(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_ALLOW_LOOPBACK_AUTH", raising=False)
+    status, error = request_json(local_api, "/api/leads")
+    assert status == 401
+    assert "رمز الوصول" in error["error"]
 
 
 def request_json(base, path, method="GET", payload=None, headers=None):
@@ -72,6 +83,9 @@ def test_api_health_analyze_save_duplicate_list_and_status(local_api):
     assert status == 200
     assert health["app"] == "Omarai"
     assert health["mode"] == "web-research"
+    assert health["storage"]["durability_status"] == "not_guaranteed"
+    assert health["storage"]["persistent_volume_operator_asserted"] is False
+    assert "ephemeral filesystem" in health["storage"]["warning"]
     assert health["agent"]["verification_scope"]["live_network_checks_performed"] is False
     assert health["agent"]["verification_scope"]["live_diagnostics_endpoint"] == "POST /api/diagnostics"
 
