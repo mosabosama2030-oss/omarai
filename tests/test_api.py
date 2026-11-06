@@ -1479,3 +1479,37 @@ def test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in(
 ):
     status, _ = request_json(local_api, "/api/leads", headers=forwarding_header)
     assert status == 401
+
+
+
+def test_lead_store_uses_postgres_database_url_when_configured(monkeypatch):
+    import api.omarai as api_module
+
+    monkeypatch.delenv("OMARAI_DB_PATH", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    database_url = "postgresql://user:secret@example.neon.tech/omarai?sslmode=require"
+    monkeypatch.setenv("OMARAI_DATABASE_URL", database_url)
+    captured = {}
+
+    class Store:
+        def __init__(self, path=None, *, database_url=None):
+            captured["path"] = path
+            captured["database_url"] = database_url
+
+    monkeypatch.setattr(api_module, "LeadStore", Store)
+
+    store = api_module._lead_store_from_environment()
+
+    assert isinstance(store, Store)
+    assert captured == {"path": None, "database_url": database_url}
+
+
+def test_lead_store_rejects_conflicting_postgres_url_and_sqlite_path(monkeypatch, tmp_path):
+    import api.omarai as api_module
+    import pytest
+
+    monkeypatch.setenv("OMARAI_DATABASE_URL", "postgresql://user:secret@example.neon.tech/omarai")
+    monkeypatch.setenv("OMARAI_DB_PATH", str(tmp_path / "omarai.sqlite3"))
+
+    with pytest.raises(ValueError, match="configure either OMARAI_DATABASE_URL"):
+        api_module._lead_store_from_environment()
