@@ -391,3 +391,84 @@ def test_agent_api_allowlists_and_forwards_the_hosted_smoke_budget_profile(
     assert status == 200
     assert result["answer"] == "test answer"
     assert observed["budget_profile"] == "default"
+
+
+def test_product_profile_api_is_authenticated_role_checked_and_tenant_scoped(tenant_api):
+    base, store = tenant_api
+    token_a = "product-profile-a-token-" + "A" * 32
+    token_b = "product-profile-b-token-" + "B" * 32
+    tenant_a = _tenant(store, "Product Company A", "products-a@example.test", token_a)
+    tenant_b = _tenant(store, "Product Company B", "products-b@example.test", token_b)
+
+    payload = {
+        "profile": {
+            "name": "Fire alarm system",
+            "aliases": ["نظام إنذار حريق"],
+            "category_path": ["Safety", "Fire alarm"],
+            "use_cases": ["commercial buildings"],
+            "problems_solved": ["early fire detection"],
+            "facts": [],
+        },
+        "market": {
+            "locations": ["Cairo"],
+            "industries": ["Construction"],
+            "customer_types": ["Contractors"],
+            "decision_roles": ["Procurement manager"],
+            "exclusions": [],
+        },
+        "tenant_id": tenant_b,
+    }
+
+    status, created = request_json(
+        base, "/api/products", method="POST", token=token_a, payload=payload
+    )
+    assert status == 201
+    assert created["product"]["profile"]["name"] == "Fire alarm system"
+
+    status, listing_a = request_json(base, "/api/products", token=token_a)
+    assert status == 200
+    assert [item["id"] for item in listing_a["products"]] == [created["product"]["id"]]
+
+    status, listing_b = request_json(base, "/api/products", token=token_b)
+    assert status == 200
+    assert listing_b["products"] == []
+
+    status, denied_update = request_json(
+        base,
+        "/api/products/" + created["product"]["id"],
+        method="POST",
+        token=token_b,
+        payload=payload,
+    )
+    assert status == 404
+    assert denied_update["error"] == "product profile not found"
+
+
+def test_product_profile_api_rejects_viewer_writes_and_malformed_profiles(tenant_api):
+    base, store = tenant_api
+    tenant_id = store.create_tenant("Read Only Product Company", "readonly-product-company")
+    user_id = store.create_user("readonly-products@example.test", "Read Only User")
+    store.add_membership(tenant_id, user_id, "viewer")
+    viewer_token = "product-viewer-token-" + "V" * 32
+    store.create_api_token(viewer_token, tenant_id, user_id)
+
+    status, denied = request_json(
+        base,
+        "/api/products",
+        method="POST",
+        token=viewer_token,
+        payload={"profile": {"name": "No write"}, "market": {}},
+    )
+    assert status == 403
+
+    owner_token = "product-malformed-token-" + "M" * 32
+    owner_tenant = _tenant(store, "Malformed Product Company", "malformed-products@example.test", owner_token)
+    status, invalid = request_json(
+        base,
+        "/api/products",
+        method="POST",
+        token=owner_token,
+        payload={"profile": {"name": "Product", "facts": "not-a-list"}, "market": {}},
+    )
+    assert status == 400
+    assert "facts" in invalid["error"]
