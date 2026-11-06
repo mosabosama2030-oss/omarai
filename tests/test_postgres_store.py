@@ -10,7 +10,7 @@ import uuid
 
 import pytest
 
-from agents.omarai import LeadStore
+from agents.omarai import LeadStore, _PostgresConnection, _qmark_to_psycopg
 
 
 @pytest.fixture
@@ -128,3 +128,45 @@ def test_postgres_tokens_sessions_and_reusable_workspace_records(postgres_store)
         token, tenant_id=tenant_id, user_id=user_id
     ) is True
     assert postgres_store.resolve_api_token(token) is None
+
+
+def test_postgres_placeholder_translation_skips_quoted_question_marks():
+    sql = "SELECT ?, '?' AS literal, \"?\" AS identifier, ? AS last_value"
+    assert _qmark_to_psycopg(sql) == (
+        "SELECT %s, '?' AS literal, \"?\" AS identifier, %s AS last_value"
+    )
+
+
+def test_postgres_connection_adapter_converts_insert_or_ignore():
+    class FakeConnection:
+        statement = None
+        params = None
+
+        def execute(self, statement, params):
+            self.statement = statement
+            self.params = params
+            return "cursor"
+
+    connection = FakeConnection()
+    adapter = _PostgresConnection(connection)
+
+    result = adapter.execute(
+        "INSERT OR IGNORE INTO leads (id, note) VALUES (?, '?')",
+        ("lead-1",),
+    )
+
+    assert result == "cursor"
+    assert connection.statement == (
+        "INSERT INTO leads (id, note) VALUES (%s, '?') ON CONFLICT DO NOTHING"
+    )
+    assert connection.params == ("lead-1",)
+
+
+def test_postgres_database_url_rejects_unsupported_scheme():
+    with pytest.raises(ValueError, match="PostgreSQL URL scheme"):
+        LeadStore(database_url="mysql://user:pass@example.com/db")
+
+
+def test_postgres_database_url_cannot_be_combined_with_sqlite_path(tmp_path):
+    with pytest.raises(ValueError, match="either database_url or a SQLite path"):
+        LeadStore(tmp_path / "local.sqlite3", database_url="postgresql://user:pass@example.com/db")
