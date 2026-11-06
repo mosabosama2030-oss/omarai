@@ -144,7 +144,9 @@ def test_workspace_indicators_include_responsive_glass_layout_and_semantic_statu
     assert ".indicator-fill.red" in html
     assert "@media(max-width:760px)" in html
     assert "@media(max-width:520px)" in html
-    assert 'role="img"' in html
+    # The indicator is created dynamically; assert the runtime DOM attributes are assigned.
+    assert 'ring.setAttribute("role","img")' in html
+    assert 'ring.setAttribute("aria-label",' in html
 
 
 def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
