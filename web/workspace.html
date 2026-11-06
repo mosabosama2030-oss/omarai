@@ -35,8 +35,10 @@ a:hover{text-decoration:underline}
 .dot.ok{background:var(--green);box-shadow:0 0 0 4px rgba(120,223,170,.10)}
 .dot.bad{background:var(--danger)}
 .connection small{display:block;color:var(--muted);line-height:1.7;margin-top:7px;font-size:10px}
-.side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px}
-.side-links a{font-size:10px;color:#92a8c4}
+.side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px;align-items:center}
+.side-links a,.side-link-button{font-size:10px;color:#92a8c4}
+.side-link-button{border:0;background:transparent;padding:4px;cursor:pointer;font:inherit}
+.side-link-button:hover,.side-links a:hover{color:var(--teal);text-decoration:underline}
 .main{min-width:0;padding:24px clamp(14px,3vw,38px) 34px}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:2px 0 18px;border-bottom:1px solid var(--line)}
 .breadcrumb{font-size:11px;color:var(--muted)}.breadcrumb strong{color:#e4eefb;font-size:12px}
@@ -190,6 +192,21 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
  .nav button.active{outline:2px solid Highlight}
 }
 
+
+/* Simplified workspace: fewer destinations, calmer hierarchy, clearer actions. */
+.page-head{margin-top:20px;margin-bottom:14px}
+.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{padding:14px 16px}
+.stat-value{font-size:25px}
+.content-grid{grid-template-columns:minmax(0,1.5fr) minmax(220px,.7fr);gap:12px}
+.content-grid>.panel:last-child{display:flex;flex-direction:column;gap:10px;align-self:start}
+.content-grid>.panel:last-child .button{width:100%;justify-content:flex-start}
+.nav{gap:4px}
+.nav button{padding:10px 11px}
+@media(max-width:1100px){.content-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:11px 9px}.stat-value{font-size:21px}.side-links{display:flex}.side-link-button{min-height:36px}}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}}
+
 </style>
 </head>
 <body>
@@ -201,7 +218,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
   <div class="side-bottom">
     <div class="connection"><div class="connection-title"><span class="dot" id="apiDot"></span><span id="apiStatus">التحقق من الخادم</span></div><small id="apiStatusNote">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>
     <div class="connection"><div class="connection-title">الهوية والصلاحيات</div><small id="roleSummary">لم يتم التحقق من جلسة المستخدم بعد.</small></div>
-    <div class="side-links"><a href="/agent">وكيل البحث</a><a href="/leads">مساحة الإشارات القديمة</a></div>
+    <div class="side-links"><button class="side-link-button" id="systemNav" type="button">حالة النظام</button><a href="/agent">وكيل البحث</a></div>
   </div>
 </aside>
 <main class="main">
@@ -247,22 +264,11 @@ const statuses=[
 ];
 const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إشارة متوسطة",early_research:"استكشاف مبكر",unclear:"غير واضحة",not_buyer_signal:"ليست إشارة شراء مباشرة"};
 const menu=[
- {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
- {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
- {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:true},
+ {id:"overview",label:"نظرة عامة",icon:"⌂",enabled:true},
+ {id:"offer",label:"ملف المنتج",icon:"◇",enabled:true},
  {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:true},
- {id:"run",label:"مراقبة التشغيل",icon:"◷",enabled:false},
- {id:"signals",label:"صندوق إشارات الطلب",icon:"▤",enabled:true},
- {id:"opportunities",label:"تفاصيل الفرص",icon:"◈",enabled:false},
- {id:"companies",label:"ملفات الشركات",icon:"▦",enabled:false},
- {id:"pipeline",label:"مسار التأهيل",icon:"⇢",enabled:true},
- {id:"market",label:"استخبارات السوق",icon:"◉",enabled:false},
- {id:"sources",label:"المصادر والموصلات",icon:"⌘",enabled:false},
- {id:"evidence",label:"مركز الأدلة",icon:"▤",enabled:false},
- {id:"audit",label:"سجل التدقيق",icon:"⌗",enabled:false},
- {id:"tasks",label:"المهام والتنبيهات",icon:"◴",enabled:false},
- {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false},
- {id:"system",label:"حالات النظام",icon:"◌",enabled:true}
+ {id:"signals",label:"إشارات الطلب",icon:"▤",enabled:true},
+ {id:"pipeline",label:"مسار التأهيل",icon:"⇢",enabled:true}
 ];
 function make(tag,cls,text){
  const node=document.createElement(tag);
@@ -307,10 +313,7 @@ function renderNav(){
   const b=make("button",state.activeView===item.id?"active":"",null);
   b.type="button";b.setAttribute("aria-current",state.activeView===item.id?"page":"false");
   const icon=make("span","nav-icon",item.icon);const name=make("span","",item.label);b.append(icon,name);
-  if(!item.enabled)b.append(make("span","nav-status","قريبًا"));
-  if(item.enabled)b.addEventListener("click",()=>navigate(item.id));
-  else b.addEventListener("click",()=>navigate(item.id));
-  if(!item.enabled)b.classList.add("disabled");
+  b.addEventListener("click",()=>navigate(item.id));
   nav.append(b);
  });
 }
@@ -325,29 +328,33 @@ function buildStat(label,value,note,glow){
  card.append(make("div","stat-label",label),make("div","stat-value",value),make("div","stat-note",note));return card;
 }
 function renderOverview(){
- setPage("نظرة عامة","ملخص مبني على سجل الإشارات المحفوظ في مساحة العمل الحالية. لا تُحسب نتائج البحث أو ملفات الشركات غير المتاحة ضمن الأرقام.","SALES INTELLIGENCE · OVERVIEW");
+ setPage("نظرة عامة","كل ما تحتاجه لمراجعة إشارات الطلب ومتابعتها من مكان واحد.","مساحة العمل");
  const root=$("viewRoot");root.replaceChildren();
  const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
- const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
  const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
  const stats=make("div","stats");
- stats.append(buildStat("الإشارات المحمّلة",state.leads.length,"حتى 500 سجل أعادها الخادم","glow-teal"),
- buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
- buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","glow-amber"),
- buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","glow-violet"));
+ stats.append(
+  buildStat("إجمالي الإشارات",state.leads.length,"السجلات المحفوظة","glow-teal"),
+  buildStat("تحتاج مراجعة",review,"تنتظر قرارك","glow-amber"),
+  buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحوّل","glow-blue")
+ );
  root.append(stats);
  const grid=make("div","content-grid");
- const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");head.append(make("h2","","أحدث الإشارات"),make("p","","آخر السجلات التي أعادها الخادم"));h.append(head,action("عرض الصندوق ←","ghost",()=>navigate("signals")));recent.append(h);
+ const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");
+ head.append(make("h2","","أحدث إشارات الطلب"),make("p","","راجع المصدر وتاريخ الرصد قبل اتخاذ أي خطوة."));
+ h.append(head,action("عرض كل الإشارات ←","ghost",()=>navigate("signals")));recent.append(h);
  const list=make("div","signal-list");
- const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||"").localeCompare(String(a.updated_at||""))).slice(0,5);
- if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بإضافة إشارة من مصدر عام ومسموح، ثم حلّلها واحفظ دليلها."));
+ const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||"").localeCompare(String(a.updated_at||""))).slice(0,4);
+ if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بتعريف منتجك ثم أنشئ حملة اكتشاف، أو أضف إشارة يدويًا."));
  else rows.forEach(l=>list.append(signalCard(l)));
  recent.append(list);
- const distribution=make("section","glass panel");const dh=make("div","panel-head");const dtitle=make("div");dtitle.append(make("h2","","توزيع حالات المتابعة"),make("p","","حالات السجل الحالي فقط"));dh.append(dtitle);distribution.append(dh);
- const bars=make("div","mini-bars");const groups=[["جديد","new"],["مراجعة","needs_review"],["مؤهل","qualified"],["تواصل","contacted"],["تحول","converted"],["مرفوض","rejected"]];
- groups.forEach(([label,id])=>{const n=countByStatus(id);const row=make("div","bar-row");row.append(make("span","",label));const track=make("div","bar-track");const percent=state.leads.length?Math.max(0,Math.min(100,Math.round((n/state.leads.length*100)/5)*5)):0;const fill=make("div","bar-fill w-"+percent);track.append(fill);row.append(track,make("span","",n));bars.append(row)});
- distribution.append(bars,make("p","disclaimer","ملاحظة: هذا توزيع وصفي لسجلاتك، وليس مؤشرًا على حجم السوق أو اكتمال البحث."));
- grid.append(recent,distribution);root.append(grid);
+ const startPanel=make("section","glass panel");const sh=make("div","panel-head");const st=make("div");
+ st.append(make("h2","","ابدأ من هنا"),make("p","","خطوتان بسيطتان للانطلاق."));
+ sh.append(st);startPanel.append(sh);
+ startPanel.append(action("١. إعداد ملف المنتج","primary",()=>navigate("offer")));
+ startPanel.append(action("٢. إنشاء حملة اكتشاف","",()=>navigate("campaign")));
+ startPanel.append(make("p","disclaimer","تظهر الإشارة مع مصدرها وتاريخ رصدها. التصنيف القواعدي إرشادي، وليس احتمالًا للشراء."));
+ grid.append(recent,startPanel);root.append(grid);
 }
 function emptyState(title,description){
  const box=make("div","empty");box.append(make("strong","",title),make("span","",description));return box;
@@ -773,6 +780,7 @@ $("logoutButton").addEventListener("click",async()=>{
 });
 $("addSignalTop").addEventListener("click",()=>navigate("signals"));
 $("closeDetail").addEventListener("click",closeDetails);
+$("systemNav").addEventListener("click",()=>navigate("system"));
 $("detailDrawer").addEventListener("click",e=>{if(e.target===$("detailDrawer"))closeDetails()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails()});
 renderNav();bootstrap();
