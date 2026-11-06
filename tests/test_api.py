@@ -938,6 +938,8 @@ def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp
 def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):
     from api.omarai import _lead_store_from_environment
 
+    monkeypatch.delenv("OMARAI_DATABASE_URL", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
     database_path = tmp_path / "persistent" / "omarai.sqlite3"
     monkeypatch.setenv("OMARAI_DB_PATH", str(database_path))
 
