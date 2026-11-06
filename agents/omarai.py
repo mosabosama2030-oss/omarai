@@ -98,9 +98,14 @@ def _csv_safe_cell(value: object) -> str:
     return text
 
 def _contains_normalized_phrase(body: str, phrase: str) -> bool:
-    """Match a complete normalized phrase, avoiding accidental substring hits."""
+    """Match a normalized phrase while allowing common attached Arabic clitics."""
     normalized_phrase = normalize(phrase)
-    return bool(normalized_phrase) and f" {normalized_phrase} " in f" {body} "
+    if not normalized_phrase:
+        return False
+    # Arabic conjunctions/prepositions are commonly attached to the next word
+    # (e.g. "وممكن معاينة"); allow one such prefix without partial-word matches.
+    pattern = rf"(?<!\\w)(?:[وفبكل])?{re.escape(normalized_phrase)}(?!\\w)"
+    return re.search(pattern, body, flags=re.UNICODE) is not None
 
 
 def analyze(text: str, product_terms=(), location_terms=()) -> dict:
