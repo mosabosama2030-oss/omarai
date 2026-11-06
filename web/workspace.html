@@ -225,7 +225,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const state={role:null,leads:[],activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
+const state={role:null,leads:[],products:[],editingProductId:null,activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
 const statuses=[
  {id:"new",label:"جديد"},
  {id:"needs_review",label:"يحتاج مراجعة"},
@@ -238,7 +238,7 @@ const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إش
 const menu=[
  {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
  {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
- {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:false},
+ {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:true},
  {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:false},
  {id:"run",label:"مراقبة التشغيل",icon:"◷",enabled:false},
  {id:"signals",label:"صندوق إشارات الطلب",icon:"▤",enabled:true},
@@ -451,6 +451,108 @@ function createSignalForm(){
  });
  buttons.append(analyze,save);wrapper.append(buttons,result);return wrapper;
 }
+function splitTerms(value){
+ return String(value||"").split(/[,\\n]/).map(item=>item.trim()).filter(Boolean);
+}
+async function loadProducts(){
+ const data=await api("/api/products?limit=100");
+ state.products=Array.isArray(data.products)?data.products:[];
+}
+async function renderOffer(){
+ setPage("ملف المنتج والعرض","احفظ معلومات المنتج والسوق المستهدف داخل مساحة العمل. هذه البيانات ستُستخدم في مراحل اكتشاف الطلب التالية، ولا يبدأ البحث الخارجي من هذه الشاشة.","PRODUCT & MARKET PROFILE");
+ const root=$("viewRoot");root.replaceChildren(emptyState("جارٍ تحميل ملفات المنتجات","تُقرأ الملفات من الخادم ضمن مساحة العمل الحالية."));
+ try{await loadProducts()}catch(e){
+  root.replaceChildren(emptyState("تعذر تحميل ملفات المنتجات",escapeMessage(e.message)));
+  return;
+ }
+ root.replaceChildren();
+ const editing=state.products.find(item=>item.id===state.editingProductId)||null;
+ const profile=editing?editing.profile:{};
+ const market=editing?editing.market:{};
+ const panel=make("section","glass panel");
+ const head=make("div","panel-head");const title=make("div");
+ title.append(make("h2","",editing?"تعديل ملف المنتج":"إنشاء ملف منتج أو خدمة"));
+ title.append(make("p","","الحقول تعكس معلومات أدخلتها أنت. لا يضيف Omarai مواصفات أو أسعارًا من تلقاء نفسه."));
+ head.append(title);panel.append(head);
+ const grid=make("div","form-grid");
+ const fields=[
+  ["اسم المنتج أو الخدمة","productName",profile.name||""],
+  ["المرادفات والأسماء البديلة","productAliases",(profile.aliases||[]).join(", ")],
+  ["التصنيف أو القطاع (من العام إلى الخاص)","productCategory",(profile.category_path||[]).join(", ")],
+  ["الاستخدامات","productUseCases",(profile.use_cases||[]).join(", ")],
+  ["المشكلات التي يحلها","productProblems",(profile.problems_solved||[]).join(", ")],
+  ["المناطق المستهدفة","marketLocations",(market.locations||[]).join(", ")],
+  ["القطاعات المستهدفة","marketIndustries",(market.industries||[]).join(", ")],
+  ["أنواع العملاء","marketCustomers",(market.customer_types||[]).join(", ")],
+  ["الأدوار صاحبة القرار","marketRoles",(market.decision_roles||[]).join(", ")],
+  ["الاستبعادات","marketExclusions",(market.exclusions||[]).join(", ")]
+ ];
+ fields.forEach(([label,id,value])=>{
+  const field=make("div","field");const caption=make("label","",label);caption.htmlFor=id;
+  const input=make("input","");input.id=id;input.type="text";input.value=value;
+  input.maxLength=2000;input.placeholder="افصل بين العناصر بفاصلة";
+  if(id==="productName"){input.required=true;input.placeholder="مثال: نظام إنذار الحريق";}
+  field.append(caption,input);grid.append(field);
+ });
+ panel.append(grid);
+ const result=make("div","");result.id="productSaveResult";
+ const buttons=make("div","form-actions");
+ const save=action(editing?"حفظ التعديلات":"حفظ ملف المنتج","primary",async()=>{
+  save.disabled=true;result.replaceChildren();
+  try{
+   const name=$("productName").value.trim();
+   if(!name)throw new Error("اسم المنتج أو الخدمة مطلوب.");
+   const payload={
+    profile:{
+     name:name,
+     aliases:splitTerms($("productAliases").value),
+     category_path:splitTerms($("productCategory").value),
+     use_cases:splitTerms($("productUseCases").value),
+     problems_solved:splitTerms($("productProblems").value),
+     facts:editing&&Array.isArray(profile.facts)?profile.facts:[]
+    },
+    market:{
+     locations:splitTerms($("marketLocations").value),
+     industries:splitTerms($("marketIndustries").value),
+     customer_types:splitTerms($("marketCustomers").value),
+     decision_roles:splitTerms($("marketRoles").value),
+     exclusions:splitTerms($("marketExclusions").value)
+    }
+   };
+   const path=editing?"/api/products/"+encodeURIComponent(editing.id):"/api/products";
+   const saved=await api(path,{method:"POST",body:payload});
+   state.editingProductId=null;
+   await loadProducts();
+   renderOffer();
+   const current=$("productSaveResult");
+   if(current)current.append(make("p","tag teal",editing?"تم تحديث ملف المنتج.":"تم حفظ ملف المنتج."));
+  }catch(e){
+   result.replaceChildren(make("p","auth-error",escapeMessage(e.message)));
+  }finally{save.disabled=false}
+ });
+ buttons.append(save);
+ if(editing)buttons.append(action("إلغاء التعديل","ghost",()=>{state.editingProductId=null;renderOffer()}));
+ panel.append(buttons,result);root.append(panel);
+ const listPanel=make("section","glass panel");const listHead=make("div","panel-head");const listTitle=make("div");
+ listTitle.append(make("h2","","ملفات المنتجات المحفوظة"),make("p","","هذه الملفات خاصة بمساحة العمل المصادق عليها."));
+ listHead.append(listTitle,tag(String(state.products.length)+" ملف","teal"));listPanel.append(listHead);
+ const list=make("div","signal-list");
+ if(!state.products.length)list.append(emptyState("لا توجد ملفات منتجات بعد","أنشئ أول ملف منتج أو خدمة من النموذج أعلاه."));
+ state.products.forEach(item=>{
+  const card=make("article","signal-card");const row=make("div","signal-top");
+  row.append(make("strong","",String(item.profile&&item.profile.name||"منتج دون اسم")));
+  row.append(tag("محفوظ","teal"));card.append(row);
+  const aliases=Array.isArray(item.profile&&item.profile.aliases)?item.profile.aliases:[];
+  const locations=Array.isArray(item.market&&item.market.locations)?item.market.locations:[];
+  if(aliases.length)card.append(make("p","subtle","المرادفات: "+aliases.join("، ")));
+  if(locations.length)card.append(make("p","subtle","المناطق: "+locations.join("، ")));
+  const footer=make("div","signal-actions");
+  footer.append(make("span","subtle","آخر تحديث: "+String(item.updated_at||"غير معروف")));
+  footer.append(action("تعديل الملف","",()=>{state.editingProductId=item.id;renderOffer()}));
+  card.append(footer);list.append(card);
+ });
+ listPanel.append(list);root.append(listPanel);
+}
 function renderPipeline(){
  setPage("مسار التأهيل","يعرض المسار الحالات المحفوظة فعليًا، ويمكن تحديث الحالة بعد مراجعة الدليل. لا توجد مراحل CRM غير مدعومة في الخادم.","QUALIFICATION PIPELINE");
  const root=$("viewRoot");root.replaceChildren();
@@ -515,13 +617,14 @@ function renderPlaceholder(id){
  const list=make("div","module-list");
  ["تعريف عقد البيانات والحقول ومصدر كل قيمة.","إنشاء API محمي ومربوط بالمستخدم ومساحة العمل المصادق عليها.","إضافة اختبارات نجاح وفشل وعزل بين المستأجرين.","ربط الواجهة بالبيانات الفعلية ثم اختبارها على بيئة معروفة."].forEach(x=>list.append(make("div","module-step",x)));
  card.append(list,make("div","form-actions"));
- const links=card.querySelector(".form-actions");links.append(action("العودة إلى النظرة العامة","primary",()=>navigate("overview")),action("فتح وكيل البحث الحالي","",()=>{window.location.href="/"}));
+ const links=card.querySelector(".form-actions");links.append(action("العودة إلى النظرة العامة","primary",()=>navigate("overview")),action("فتح وكيل البحث الحالي","",()=>{window.location.href="/agent"}));
  root.append(card);
 }
 function renderCurrent(){
  renderNav();
  if(state.activeView==="overview")renderOverview();
  else if(state.activeView==="signals")renderSignals();
+ else if(state.activeView==="offer")void renderOffer();
  else if(state.activeView==="pipeline")renderPipeline();
  else if(state.activeView==="system")renderSystem();
  else renderPlaceholder(state.activeView);
