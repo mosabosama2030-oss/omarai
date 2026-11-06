@@ -2197,8 +2197,15 @@ class WebAgent:
             "Accept-Language": "ar,en;q=0.9",
         }
 
-        reddit_client_id = os.getenv("REDDIT_CLIENT_ID", "").strip()
-        reddit_client_secret = os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+        optional_providers_enabled = getattr(self, "allow_optional_providers", True)
+        reddit_client_id = (
+            os.getenv("REDDIT_CLIENT_ID", "").strip()
+            if optional_providers_enabled else ""
+        )
+        reddit_client_secret = (
+            os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+            if optional_providers_enabled else ""
+        )
         reddit_user_agent = os.getenv(
             "REDDIT_USER_AGENT",
             "web:omarai-research-agent:v0.3 (public-content research)",
