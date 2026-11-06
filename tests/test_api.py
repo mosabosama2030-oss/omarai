@@ -1441,4 +1441,4 @@ def test_discovery_api_denies_optional_provider_usage_to_non_owner(local_api, mo
         headers=headers,
     )
     assert status == 403
-    assert "owner" in error["error"]
+    assert "مالك مساحة العمل" in error["error"]
