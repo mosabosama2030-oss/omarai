@@ -42,15 +42,15 @@ _PRODUCT_FACT_FIELDS = {"field", "value", "origin", "evidence_id"}
 def _string_list(payload: dict, field: str) -> tuple[str, ...]:
     value = payload.get(field, [])
     if not isinstance(value, list):
-        raise ValueError(f"{field} must be an array of strings")
+        raise TypeError(f"{field} must be an array of strings")
     if any(not isinstance(item, str) for item in value):
-        raise ValueError(f"{field} must contain only strings")
+        raise TypeError(f"{field} must contain only strings")
     return tuple(value)
 
 
 def _product_profile_from_payload(payload: object) -> tuple[ProductProfile, MarketProfile]:
     if not isinstance(payload, dict):
-        raise ValueError("request body must be an object")
+        raise TypeError("request body must be an object")
     unexpected = set(payload) - {"profile", "market", "tenant_id"}
     if unexpected:
         raise ValueError("unsupported request fields: " + ", ".join(sorted(unexpected)))
@@ -58,7 +58,7 @@ def _product_profile_from_payload(payload: object) -> tuple[ProductProfile, Mark
     raw_profile = payload.get("profile")
     raw_market = payload.get("market")
     if not isinstance(raw_profile, dict) or not isinstance(raw_market, dict):
-        raise ValueError("profile and market must be objects")
+        raise TypeError("profile and market must be objects")
     unknown_profile = set(raw_profile) - _PRODUCT_PROFILE_FIELDS
     unknown_market = set(raw_market) - _MARKET_PROFILE_FIELDS
     if unknown_profile:
@@ -68,11 +68,11 @@ def _product_profile_from_payload(payload: object) -> tuple[ProductProfile, Mark
 
     raw_facts = raw_profile.get("facts", [])
     if not isinstance(raw_facts, list):
-        raise ValueError("facts must be an array")
+        raise TypeError("facts must be an array")
     facts = []
     for index, raw_fact in enumerate(raw_facts):
         if not isinstance(raw_fact, dict):
-            raise ValueError(f"facts[{index}] must be an object")
+            raise TypeError(f"facts[{index}] must be an object")
         unknown_fact = set(raw_fact) - _PRODUCT_FACT_FIELDS
         if unknown_fact:
             raise ValueError(
