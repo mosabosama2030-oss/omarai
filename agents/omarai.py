@@ -16,6 +16,8 @@ from pathlib import Path
 import uuid
 from urllib.parse import urlparse
 
+from agents.sales_domain import MarketProfile, ProductProfile
+
 MAX_TEXT = 12000
 DEFAULT_TENANT_ID = "tenant_default"
 DEFAULT_USER_ID = "user_local_admin"
@@ -194,6 +196,21 @@ class LeadStore:
         db.execute(
             "CREATE INDEX IF NOT EXISTS idx_web_sessions_expiry "
             "ON web_sessions(expires_at, revoked_at)"
+        )
+
+        db.execute(
+            """CREATE TABLE IF NOT EXISTS product_profiles (
+                id TEXT PRIMARY KEY,
+                tenant_id TEXT NOT NULL REFERENCES tenants(id),
+                profile_json TEXT NOT NULL,
+                market_json TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            )"""
+        )
+        db.execute(
+            "CREATE INDEX IF NOT EXISTS product_profiles_tenant_updated_idx "
+            "ON product_profiles(tenant_id, updated_at DESC)"
         )
 
         now = now_utc()
@@ -609,6 +626,103 @@ class LeadStore:
                 (self._token_hash(token.strip()), tenant, user_id),
             )
         return cursor.rowcount == 1
+
+    @staticmethod
+    def _product_profile_to_dict(row):
+        item = dict(row)
+        item["profile"] = json.loads(item.pop("profile_json"))
+        item["market"] = json.loads(item.pop("market_json"))
+        return item
+
+    def save_product_profile(
+        self,
+        profile: ProductProfile,
+        market: MarketProfile,
+        *,
+        tenant_id: str,
+        profile_id: str | None = None,
+    ) -> dict | None:
+        """Create or update one validated product profile inside the active tenant."""
+        if not isinstance(profile, ProductProfile):
+            raise TypeError("profile must be a ProductProfile instance")
+        if not isinstance(market, MarketProfile):
+            raise TypeError("market must be a MarketProfile instance")
+        tenant = self._tenant(tenant_id)
+        profile_json = json.dumps(profile.to_dict(), ensure_ascii=False, sort_keys=True)
+        market_json = json.dumps(market.to_dict(), ensure_ascii=False, sort_keys=True)
+        now = now_utc()
+
+        with self.connect() as db:
+            active_tenant = db.execute(
+                "SELECT 1 FROM tenants WHERE id=? AND active=1",
+                (tenant,),
+            ).fetchone()
+            if not active_tenant:
+                raise ValueError("active tenant is required")
+
+            if profile_id is None:
+                identity = "product_" + uuid.uuid4().hex
+                db.execute(
+                    """INSERT INTO product_profiles
+                       (id, tenant_id, profile_json, market_json, created_at, updated_at)
+                       VALUES (?, ?, ?, ?, ?, ?)""",
+                    (identity, tenant, profile_json, market_json, now, now),
+                )
+            else:
+                identity = str(profile_id).strip()
+                if not identity or len(identity) > 128:
+                    raise ValueError("profile_id is invalid")
+                db.execute(
+                    """UPDATE product_profiles
+                       SET profile_json=?, market_json=?, updated_at=?
+                       WHERE id=? AND tenant_id=?""",
+                    (profile_json, market_json, now, identity, tenant),
+                )
+
+            row = db.execute(
+                """SELECT * FROM product_profiles
+                   WHERE id=? AND tenant_id=?""",
+                (identity, tenant),
+            ).fetchone()
+        return self._product_profile_to_dict(row) if row else None
+
+    def get_product_profile(
+        self,
+        profile_id: str,
+        *,
+        tenant_id: str,
+    ) -> dict | None:
+        tenant = self._tenant(tenant_id)
+        identity = str(profile_id or "").strip()
+        if not identity or len(identity) > 128:
+            return None
+        with self.connect() as db:
+            row = db.execute(
+                """SELECT * FROM product_profiles
+                   WHERE id=? AND tenant_id=?""",
+                (identity, tenant),
+            ).fetchone()
+        return self._product_profile_to_dict(row) if row else None
+
+    def list_product_profiles(
+        self,
+        *,
+        tenant_id: str,
+        limit: int = 100,
+    ) -> list[dict]:
+        tenant = self._tenant(tenant_id)
+        if not isinstance(limit, int) or isinstance(limit, bool):
+            raise ValueError("limit must be an integer")
+        bounded_limit = max(1, min(limit, 100))
+        with self.connect() as db:
+            rows = db.execute(
+                """SELECT * FROM product_profiles
+                   WHERE tenant_id=?
+                   ORDER BY updated_at DESC, id DESC
+                   LIMIT ?""",
+                (tenant, bounded_limit),
+            ).fetchall()
+        return [self._product_profile_to_dict(row) for row in rows]
 
     def add(
         self,
