@@ -133,7 +133,7 @@ def _product_market_from_payload(data: dict):
     product_data = data.get("product")
     market_data = data.get("market")
     if not isinstance(product_data, dict) or not isinstance(market_data, dict):
-        raise ValueError("product and market objects are required")
+        raise TypeError("product and market objects are required")
     product = ProductProfile(
         name=product_data.get("name", ""),
         aliases=_profile_terms(product_data.get("aliases"), "aliases"),
