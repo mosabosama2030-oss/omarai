@@ -113,9 +113,17 @@ REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
 
 def _lead_store_from_environment() -> LeadStore:
-    """Use an operator-configured database path when a persistent volume is available."""
+    """Select managed PostgreSQL when configured; otherwise retain local SQLite."""
+    database_url = (
+        os.getenv("OMARAI_DATABASE_URL", "").strip()
+        or os.getenv("DATABASE_URL", "").strip()
+    )
     configured_path = os.getenv("OMARAI_DB_PATH", "").strip()
-    return LeadStore(configured_path or None)
+    if database_url and configured_path:
+        raise ValueError(
+            "configure either OMARAI_DATABASE_URL/DATABASE_URL or OMARAI_DB_PATH, not both"
+        )
+    return LeadStore(configured_path or None, database_url=database_url or None)
 
 
 def _profile_terms(value, field_name: str) -> tuple[str, ...]:
