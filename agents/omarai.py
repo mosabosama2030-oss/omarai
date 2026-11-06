@@ -712,7 +712,7 @@ class LeadStore:
     ) -> list[dict]:
         tenant = self._tenant(tenant_id)
         if not isinstance(limit, int) or isinstance(limit, bool):
-            raise ValueError("limit must be an integer")
+            raise TypeError("limit must be an integer")
         bounded_limit = max(1, min(limit, 100))
         with self.connect() as db:
             rows = db.execute(
