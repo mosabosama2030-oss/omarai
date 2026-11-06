@@ -142,3 +142,5 @@ def test_workspace_product_profile_and_discovery_screens_are_connected_to_protec
     assert "innerHTML" not in html
     assert "Promise.allSettled" in html
     assert "تعذر تحميل بعض البيانات" in html
+    assert "النموذج اللغوي المهيأ حاليًا في Omarai" in html
+    assert "قد يستهلك حصة أو تكلفة" in html
