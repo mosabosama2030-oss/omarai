@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L001309 إلى SRC-3D0A619359-L000081
+- النطاق: SRC-3451CC474D-L001069 إلى SRC-DA61479D59-L000190
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,145 +16,419 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-3451CC474D-L001309](../../tests/test_api.py#L1309) | 1309 | `"            \"search_queries\": buyer_queries,"` | — |
-| [SRC-3451CC474D-L001310](../../tests/test_api.py#L1310) | 1310 | `"            \"search_report\": {"` | — |
-| [SRC-3451CC474D-L001311](../../tests/test_api.py#L1311) | 1311 | `"                \"lead_generation\": {"` | — |
-| [SRC-3451CC474D-L001312](../../tests/test_api.py#L1312) | 1312 | `"                    \"status\": \"candidate_signals_found\","` | — |
-| [SRC-3451CC474D-L001313](../../tests/test_api.py#L1313) | 1313 | `"                    \"candidate_signal_count\": 1,"` | — |
-| [SRC-3451CC474D-L001314](../../tests/test_api.py#L1314) | 1314 | `"                    \"related_results_reviewed\": 2,"` | — |
-| [SRC-3451CC474D-L001315](../../tests/test_api.py#L1315) | 1315 | `"                    \"qualification_rule\": \"public_demand_signal_phrase_by_type\","` | — |
-| [SRC-3451CC474D-L001316](../../tests/test_api.py#L1316) | 1316 | `"                    \"identity_verified\": False,"` | — |
-| [SRC-3451CC474D-L001317](../../tests/test_api.py#L1317) | 1317 | `"                },"` | — |
-| [SRC-3451CC474D-L001318](../../tests/test_api.py#L1318) | 1318 | `"                \"pipeline_completion_status\": \"completed\","` | — |
-| [SRC-3451CC474D-L001319](../../tests/test_api.py#L1319) | 1319 | `"            },"` | — |
-| [SRC-3451CC474D-L001320](../../tests/test_api.py#L1320) | 1320 | `"            \"sources\": ["` | — |
-| [SRC-3451CC474D-L001321](../../tests/test_api.py#L1321) | 1321 | `"                {"` | — |
-| [SRC-3451CC474D-L001322](../../tests/test_api.py#L1322) | 1322 | `"                    \"title\": \"طلب توريد لوحة إنذار\","` | — |
-| [SRC-3451CC474D-L001323](../../tests/test_api.py#L1323) | 1323 | `"                    \"url\": \"https://example.org/public-request/1\","` | — |
-| [SRC-3451CC474D-L001324](../../tests/test_api.py#L1324) | 1324 | `"                    \"snippet\": \"نبحث عن مورد لتوريد لوحة إنذار حريق لمشروع في القاهرة.\","` | — |
-| [SRC-3451CC474D-L001325](../../tests/test_api.py#L1325) | 1325 | `"                    \"platform\": \"web\","` | — |
-| [SRC-3451CC474D-L001326](../../tests/test_api.py#L1326) | 1326 | `"                    \"published_at\": None,"` | — |
-| [SRC-3451CC474D-L001327](../../tests/test_api.py#L1327) | 1327 | `"                    \"page_fetched\": False,"` | — |
-| [SRC-3451CC474D-L001328](../../tests/test_api.py#L1328) | 1328 | `"                    \"lead_qualification\": \"public_demand_signal\","` | — |
-| [SRC-3451CC474D-L001329](../../tests/test_api.py#L1329) | 1329 | `"                    \"lead_intent_evidence\": {"` | — |
-| [SRC-3451CC474D-L001330](../../tests/test_api.py#L1330) | 1330 | `"                        \"phrase\": \"نبحث عن مورد\","` | — |
-| [SRC-3451CC474D-L001331](../../tests/test_api.py#L1331) | 1331 | `"                        \"basis\": \"snippet\","` | — |
-| [SRC-3451CC474D-L001332](../../tests/test_api.py#L1332) | 1332 | `"                        \"signal_type\": \"request_for_quotation\","` | — |
-| [SRC-3451CC474D-L001333](../../tests/test_api.py#L1333) | 1333 | `"                        \"product_fit\": \"unassessed\","` | — |
-| [SRC-3451CC474D-L001334](../../tests/test_api.py#L1334) | 1334 | `"                    },"` | — |
-| [SRC-3451CC474D-L001335](../../tests/test_api.py#L1335) | 1335 | `"                },"` | — |
-| [SRC-3451CC474D-L001336](../../tests/test_api.py#L1336) | 1336 | `"                {"` | — |
-| [SRC-3451CC474D-L001337](../../tests/test_api.py#L1337) | 1337 | `"                    \"title\": \"كتالوج لوحة إنذار\","` | — |
-| [SRC-3451CC474D-L001338](../../tests/test_api.py#L1338) | 1338 | `"                    \"url\": \"https://example.net/catalog\","` | — |
-| [SRC-3451CC474D-L001339](../../tests/test_api.py#L1339) | 1339 | `"                    \"snippet\": \"كتالوج تعريفي بلوحات إنذار الحريق.\","` | — |
-| [SRC-3451CC474D-L001340](../../tests/test_api.py#L1340) | 1340 | `"                    \"platform\": \"web\","` | — |
-| [SRC-3451CC474D-L001341](../../tests/test_api.py#L1341) | 1341 | `"                    \"published_at\": None,"` | — |
-| [SRC-3451CC474D-L001342](../../tests/test_api.py#L1342) | 1342 | `"                    \"page_fetched\": False,"` | — |
-| [SRC-3451CC474D-L001343](../../tests/test_api.py#L1343) | 1343 | `"                    \"lead_qualification\": \"related_result_not_lead\","` | — |
-| [SRC-3451CC474D-L001344](../../tests/test_api.py#L1344) | 1344 | `"                    \"lead_intent_evidence\": None,"` | — |
-| [SRC-3451CC474D-L001345](../../tests/test_api.py#L1345) | 1345 | `"                },"` | — |
-| [SRC-3451CC474D-L001346](../../tests/test_api.py#L1346) | 1346 | `"            ],"` | — |
-| [SRC-3451CC474D-L001347](../../tests/test_api.py#L1347) | 1347 | `"        }"` | — |
-| [SRC-3451CC474D-L001348](../../tests/test_api.py#L1348) | 1348 | `""` | — |
-| [SRC-3451CC474D-L001349](../../tests/test_api.py#L1349) | 1349 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
-| [SRC-3451CC474D-L001350](../../tests/test_api.py#L1350) | 1350 | `"    monkeypatch.setattr(WebAgent, \"answer\", fake_answer)"` | — |
-| [SRC-3451CC474D-L001351](../../tests/test_api.py#L1351) | 1351 | `"    profile_status, profile = request_json("` | — |
-| [SRC-3451CC474D-L001352](../../tests/test_api.py#L1352) | 1352 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001353](../../tests/test_api.py#L1353) | 1353 | `"        \"/api/product-profiles\","` | — |
-| [SRC-3451CC474D-L001354](../../tests/test_api.py#L1354) | 1354 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001355](../../tests/test_api.py#L1355) | 1355 | `"        payload={"` | — |
-| [SRC-3451CC474D-L001356](../../tests/test_api.py#L1356) | 1356 | `"            \"product\": {"` | — |
-| [SRC-3451CC474D-L001357](../../tests/test_api.py#L1357) | 1357 | `"                \"name\": \"لوحة إنذار الحريق\","` | — |
-| [SRC-3451CC474D-L001358](../../tests/test_api.py#L1358) | 1358 | `"                \"aliases\": [\"FACP\"],"` | — |
-| [SRC-3451CC474D-L001359](../../tests/test_api.py#L1359) | 1359 | `"                \"category_path\": [\"السلامة\", \"إنذار الحريق\"],"` | — |
-| [SRC-3451CC474D-L001360](../../tests/test_api.py#L1360) | 1360 | `"                \"use_cases\": [\"حماية المباني\"],"` | — |
-| [SRC-3451CC474D-L001361](../../tests/test_api.py#L1361) | 1361 | `"                \"problems_solved\": [\"اكتشاف الحريق مبكرًا\"],"` | — |
-| [SRC-3451CC474D-L001362](../../tests/test_api.py#L1362) | 1362 | `"            },"` | — |
-| [SRC-3451CC474D-L001363](../../tests/test_api.py#L1363) | 1363 | `"            \"market\": {"` | — |
-| [SRC-3451CC474D-L001364](../../tests/test_api.py#L1364) | 1364 | `"                \"locations\": [\"القاهرة\", \"الجيزة\"],"` | — |
-| [SRC-3451CC474D-L001365](../../tests/test_api.py#L1365) | 1365 | `"                \"industries\": [\"المقاولات\"],"` | — |
-| [SRC-3451CC474D-L001366](../../tests/test_api.py#L1366) | 1366 | `"                \"customer_types\": [\"مقاولون\"],"` | — |
-| [SRC-3451CC474D-L001367](../../tests/test_api.py#L1367) | 1367 | `"                \"decision_roles\": [\"مدير مشتريات\"],"` | — |
-| [SRC-3451CC474D-L001368](../../tests/test_api.py#L1368) | 1368 | `"                \"exclusions\": [],"` | — |
-| [SRC-3451CC474D-L001369](../../tests/test_api.py#L1369) | 1369 | `"            },"` | — |
-| [SRC-3451CC474D-L001370](../../tests/test_api.py#L1370) | 1370 | `"            \"locale\": \"ar\","` | — |
-| [SRC-3451CC474D-L001371](../../tests/test_api.py#L1371) | 1371 | `"        },"` | — |
-| [SRC-3451CC474D-L001372](../../tests/test_api.py#L1372) | 1372 | `"    )"` | — |
-| [SRC-3451CC474D-L001373](../../tests/test_api.py#L1373) | 1373 | `"    assert profile_status == 201"` | — |
-| [SRC-3451CC474D-L001374](../../tests/test_api.py#L1374) | 1374 | `"    assert profile[\"profile\"][\"product\"][\"name\"] == \"لوحة إنذار الحريق\""` | — |
-| [SRC-3451CC474D-L001375](../../tests/test_api.py#L1375) | 1375 | `""` | — |
-| [SRC-3451CC474D-L001376](../../tests/test_api.py#L1376) | 1376 | `"    run_status, run = request_json("` | — |
-| [SRC-3451CC474D-L001377](../../tests/test_api.py#L1377) | 1377 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001378](../../tests/test_api.py#L1378) | 1378 | `"        \"/api/discoveries\","` | — |
-| [SRC-3451CC474D-L001379](../../tests/test_api.py#L1379) | 1379 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001380](../../tests/test_api.py#L1380) | 1380 | `"        payload={\"profile_id\": profile[\"id\"], \"allow_optional_providers\": False},"` | — |
-| [SRC-3451CC474D-L001381](../../tests/test_api.py#L1381) | 1381 | `"    )"` | — |
-| [SRC-3451CC474D-L001382](../../tests/test_api.py#L1382) | 1382 | `"    assert run_status == 201"` | — |
-| [SRC-3451CC474D-L001383](../../tests/test_api.py#L1383) | 1383 | `"    assert run[\"sources\"][0][\"lead_qualification\"] == \"public_demand_signal\""` | — |
-| [SRC-3451CC474D-L001384](../../tests/test_api.py#L1384) | 1384 | `"    assert run[\"sources\"][1][\"lead_qualification\"] == \"related_result_not_lead\""` | — |
-| [SRC-3451CC474D-L001385](../../tests/test_api.py#L1385) | 1385 | `"    assert captured[\"buyer_queries\"]"` | — |
-| [SRC-3451CC474D-L001386](../../tests/test_api.py#L1386) | 1386 | `"    assert all(\"القاهرة\" in query or \"الجيزة\" in query for query in captured[\"buyer_queries\"])"` | — |
-| [SRC-3451CC474D-L001387](../../tests/test_api.py#L1387) | 1387 | `"    assert all(\"لوحة إنذار الحريق\" in query or \"FACP\" in query for query in captured[\"buyer_queries\"])"` | — |
-| [SRC-3451CC474D-L001388](../../tests/test_api.py#L1388) | 1388 | `"    assert captured[\"allow_optional_providers\"] is False"` | — |
-| [SRC-3451CC474D-L001389](../../tests/test_api.py#L1389) | 1389 | `"    assert captured[\"openrouter_web_search_enabled\"] is False"` | — |
-| [SRC-3451CC474D-L001390](../../tests/test_api.py#L1390) | 1390 | `""` | — |
-| [SRC-3451CC474D-L001391](../../tests/test_api.py#L1391) | 1391 | `"    history_status, history = request_json(local_api, \"/api/discoveries\")"` | — |
-| [SRC-3451CC474D-L001392](../../tests/test_api.py#L1392) | 1392 | `"    assert history_status == 200"` | — |
-| [SRC-3451CC474D-L001393](../../tests/test_api.py#L1393) | 1393 | `"    assert history[\"count\"] == 1"` | — |
-| [SRC-3451CC474D-L001394](../../tests/test_api.py#L1394) | 1394 | `"    assert history[\"runs\"][0][\"id\"] == run[\"id\"]"` | — |
-| [SRC-3451CC474D-L001395](../../tests/test_api.py#L1395) | 1395 | `""` | — |
-| [SRC-3451CC474D-L001396](../../tests/test_api.py#L1396) | 1396 | `"    rejected_status, rejected = request_json("` | — |
-| [SRC-3451CC474D-L001397](../../tests/test_api.py#L1397) | 1397 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001398](../../tests/test_api.py#L1398) | 1398 | `"        f\"/api/discoveries/{run['id']}/signals/1/save\","` | — |
-| [SRC-3451CC474D-L001399](../../tests/test_api.py#L1399) | 1399 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001400](../../tests/test_api.py#L1400) | 1400 | `"        payload={},"` | — |
-| [SRC-3451CC474D-L001401](../../tests/test_api.py#L1401) | 1401 | `"    )"` | — |
-| [SRC-3451CC474D-L001402](../../tests/test_api.py#L1402) | 1402 | `"    assert rejected_status == 409"` | — |
-| [SRC-3451CC474D-L001403](../../tests/test_api.py#L1403) | 1403 | `"    assert \"ليست إشارة طلب\" in rejected[\"error\"]"` | — |
-| [SRC-3451CC474D-L001404](../../tests/test_api.py#L1404) | 1404 | `""` | — |
-| [SRC-3451CC474D-L001405](../../tests/test_api.py#L1405) | 1405 | `"    saved_status, saved = request_json("` | — |
-| [SRC-3451CC474D-L001406](../../tests/test_api.py#L1406) | 1406 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001407](../../tests/test_api.py#L1407) | 1407 | `"        f\"/api/discoveries/{run['id']}/signals/0/save\","` | — |
-| [SRC-3451CC474D-L001408](../../tests/test_api.py#L1408) | 1408 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001409](../../tests/test_api.py#L1409) | 1409 | `"        payload={},"` | — |
-| [SRC-3451CC474D-L001410](../../tests/test_api.py#L1410) | 1410 | `"    )"` | — |
-| [SRC-3451CC474D-L001411](../../tests/test_api.py#L1411) | 1411 | `"    assert saved_status == 201"` | — |
-| [SRC-3451CC474D-L001412](../../tests/test_api.py#L1412) | 1412 | `"    assert saved[\"lead\"][\"source_url\"] == \"https://example.org/public-request/1\""` | — |
-| [SRC-3451CC474D-L001413](../../tests/test_api.py#L1413) | 1413 | `"    assert \"نبحث عن مورد\" in saved[\"lead\"][\"note\"]"` | — |
+| [SRC-3451CC474D-L001069](../../tests/test_api.py#L1069) | 1069 | `"    assert \"Domain=\" not in set_cookie"` | — |
+| [SRC-3451CC474D-L001070](../../tests/test_api.py#L1070) | 1070 | `"    cookie = set_cookie.split(\";\", 1)[0]"` | — |
+| [SRC-3451CC474D-L001071](../../tests/test_api.py#L1071) | 1071 | `"    assert token not in cookie"` | — |
+| [SRC-3451CC474D-L001072](../../tests/test_api.py#L1072) | 1072 | `"    assert len(cookie.split(\"=\", 1)[1]) >= 32"` | — |
+| [SRC-3451CC474D-L001073](../../tests/test_api.py#L1073) | 1073 | `""` | — |
+| [SRC-3451CC474D-L001074](../../tests/test_api.py#L1074) | 1074 | `"    status, session = request_json("` | — |
+| [SRC-3451CC474D-L001075](../../tests/test_api.py#L1075) | 1075 | `"        local_api, \"/api/session\", headers={\"Cookie\": cookie}"` | — |
+| [SRC-3451CC474D-L001076](../../tests/test_api.py#L1076) | 1076 | `"    )"` | — |
+| [SRC-3451CC474D-L001077](../../tests/test_api.py#L1077) | 1077 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001078](../../tests/test_api.py#L1078) | 1078 | `"    assert session == {\"authenticated\": True, \"role\": \"owner\"}"` | — |
+| [SRC-3451CC474D-L001079](../../tests/test_api.py#L1079) | 1079 | `""` | — |
+| [SRC-3451CC474D-L001080](../../tests/test_api.py#L1080) | 1080 | `"    status, listing = request_json("` | — |
+| [SRC-3451CC474D-L001081](../../tests/test_api.py#L1081) | 1081 | `"        local_api, \"/api/leads\", headers={\"Cookie\": cookie}"` | — |
+| [SRC-3451CC474D-L001082](../../tests/test_api.py#L1082) | 1082 | `"    )"` | — |
+| [SRC-3451CC474D-L001083](../../tests/test_api.py#L1083) | 1083 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001084](../../tests/test_api.py#L1084) | 1084 | `"    assert listing[\"count\"] == 0"` | — |
+| [SRC-3451CC474D-L001085](../../tests/test_api.py#L1085) | 1085 | `""` | — |
+| [SRC-3451CC474D-L001086](../../tests/test_api.py#L1086) | 1086 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L001087](../../tests/test_api.py#L1087) | 1087 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001088](../../tests/test_api.py#L1088) | 1088 | `"        \"/api/ask\","` | — |
+| [SRC-3451CC474D-L001089](../../tests/test_api.py#L1089) | 1089 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001090](../../tests/test_api.py#L1090) | 1090 | `"        payload={\"question\": \"كم عميل؟\"},"` | — |
+| [SRC-3451CC474D-L001091](../../tests/test_api.py#L1091) | 1091 | `"        headers={\"Cookie\": cookie, \"Origin\": \"https://attacker.example\"},"` | — |
+| [SRC-3451CC474D-L001092](../../tests/test_api.py#L1092) | 1092 | `"    )"` | — |
+| [SRC-3451CC474D-L001093](../../tests/test_api.py#L1093) | 1093 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001094](../../tests/test_api.py#L1094) | 1094 | `"    assert \"Origin\" in error[\"error\"] or \"cross-origin\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L001095](../../tests/test_api.py#L1095) | 1095 | `""` | — |
+| [SRC-3451CC474D-L001096](../../tests/test_api.py#L1096) | 1096 | `"    status, logged_out, logout_headers = request_json_with_headers("` | — |
+| [SRC-3451CC474D-L001097](../../tests/test_api.py#L1097) | 1097 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001098](../../tests/test_api.py#L1098) | 1098 | `"        \"/api/session/logout\","` | — |
+| [SRC-3451CC474D-L001099](../../tests/test_api.py#L1099) | 1099 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001100](../../tests/test_api.py#L1100) | 1100 | `"        payload={},"` | — |
+| [SRC-3451CC474D-L001101](../../tests/test_api.py#L1101) | 1101 | `"        headers={\"Cookie\": cookie, \"Origin\": origin},"` | — |
+| [SRC-3451CC474D-L001102](../../tests/test_api.py#L1102) | 1102 | `"    )"` | — |
+| [SRC-3451CC474D-L001103](../../tests/test_api.py#L1103) | 1103 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001104](../../tests/test_api.py#L1104) | 1104 | `"    assert logged_out[\"logged_out\"] is True"` | — |
+| [SRC-3451CC474D-L001105](../../tests/test_api.py#L1105) | 1105 | `"    cleared_cookie = logout_headers.get(\"Set-Cookie\", \"\")"` | — |
+| [SRC-3451CC474D-L001106](../../tests/test_api.py#L1106) | 1106 | `"    assert cleared_cookie.startswith(\"__Host-omarai_session=\")"` | — |
+| [SRC-3451CC474D-L001107](../../tests/test_api.py#L1107) | 1107 | `"    assert \"Max-Age=0\" in cleared_cookie"` | — |
+| [SRC-3451CC474D-L001108](../../tests/test_api.py#L1108) | 1108 | `""` | — |
+| [SRC-3451CC474D-L001109](../../tests/test_api.py#L1109) | 1109 | `"    status, error = request_json(local_api, \"/api/leads\")"` | — |
+| [SRC-3451CC474D-L001110](../../tests/test_api.py#L1110) | 1110 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L001111](../../tests/test_api.py#L1111) | 1111 | `""` | — |
+| [SRC-3451CC474D-L001112](../../tests/test_api.py#L1112) | 1112 | `""` | — |
+| [SRC-3451CC474D-L001113](../../tests/test_api.py#L1113) | 1113 | `"def test_browser_session_login_rejects_untrusted_origin(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L001114](../../tests/test_api.py#L1114) | 1114 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L001115](../../tests/test_api.py#L1115) | 1115 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"browser-session-test-token-1234567890\")"` | — |
+| [SRC-3451CC474D-L001116](../../tests/test_api.py#L1116) | 1116 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L001117](../../tests/test_api.py#L1117) | 1117 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001118](../../tests/test_api.py#L1118) | 1118 | `"        \"/api/session\","` | — |
+| [SRC-3451CC474D-L001119](../../tests/test_api.py#L1119) | 1119 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001120](../../tests/test_api.py#L1120) | 1120 | `"        payload={\"access_token\": \"browser-session-test-token-1234567890\"},"` | — |
+| [SRC-3451CC474D-L001121](../../tests/test_api.py#L1121) | 1121 | `"        headers={\"Origin\": \"https://attacker.example\"},"` | — |
+| [SRC-3451CC474D-L001122](../../tests/test_api.py#L1122) | 1122 | `"    )"` | — |
+| [SRC-3451CC474D-L001123](../../tests/test_api.py#L1123) | 1123 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001124](../../tests/test_api.py#L1124) | 1124 | `"    assert \"same-origin\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L001125](../../tests/test_api.py#L1125) | 1125 | `""` | — |
+| [SRC-3451CC474D-L001126](../../tests/test_api.py#L1126) | 1126 | `""` | — |
+| [SRC-3451CC474D-L001127](../../tests/test_api.py#L1127) | 1127 | `"def test_browser_session_does_not_accept_unsafe_cookie_token_format(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L001128](../../tests/test_api.py#L1128) | 1128 | `"    from urllib.parse import urlsplit"` | — |
+| [SRC-3451CC474D-L001129](../../tests/test_api.py#L1129) | 1129 | `""` | — |
+| [SRC-3451CC474D-L001130](../../tests/test_api.py#L1130) | 1130 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L001131](../../tests/test_api.py#L1131) | 1131 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", \"browser-session-test-token-1234567890\")"` | — |
+| [SRC-3451CC474D-L001132](../../tests/test_api.py#L1132) | 1132 | `"    status, _error = request_json("` | — |
+| [SRC-3451CC474D-L001133](../../tests/test_api.py#L1133) | 1133 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001134](../../tests/test_api.py#L1134) | 1134 | `"        \"/api/session\","` | — |
+| [SRC-3451CC474D-L001135](../../tests/test_api.py#L1135) | 1135 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001136](../../tests/test_api.py#L1136) | 1136 | `"        payload={\"access_token\": \"unsafe;token\" + \"x\" * 40},"` | — |
+| [SRC-3451CC474D-L001137](../../tests/test_api.py#L1137) | 1137 | `"        headers={\"Origin\": \"https://\" + urlsplit(local_api).netloc},"` | — |
+| [SRC-3451CC474D-L001138](../../tests/test_api.py#L1138) | 1138 | `"    )"` | — |
+| [SRC-3451CC474D-L001139](../../tests/test_api.py#L1139) | 1139 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L001140](../../tests/test_api.py#L1140) | 1140 | `""` | — |
+| [SRC-3451CC474D-L001141](../../tests/test_api.py#L1141) | 1141 | `"def test_expired_browser_session_can_logout_and_clear_cookie(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L001142](../../tests/test_api.py#L1142) | 1142 | `"    from urllib.parse import urlsplit"` | — |
+| [SRC-3451CC474D-L001143](../../tests/test_api.py#L1143) | 1143 | `"    from api.omarai import Handler"` | — |
+| [SRC-3451CC474D-L001144](../../tests/test_api.py#L1144) | 1144 | `""` | — |
+| [SRC-3451CC474D-L001145](../../tests/test_api.py#L1145) | 1145 | `"    token = \"expired-browser-session-token-123456\""` | — |
+| [SRC-3451CC474D-L001146](../../tests/test_api.py#L1146) | 1146 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L001147](../../tests/test_api.py#L1147) | 1147 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", token)"` | — |
+| [SRC-3451CC474D-L001148](../../tests/test_api.py#L1148) | 1148 | `"    origin = \"https://\" + urlsplit(local_api).netloc"` | — |
+| [SRC-3451CC474D-L001149](../../tests/test_api.py#L1149) | 1149 | `""` | — |
+| [SRC-3451CC474D-L001150](../../tests/test_api.py#L1150) | 1150 | `"    status, _payload, headers = request_json_with_headers("` | — |
+| [SRC-3451CC474D-L001151](../../tests/test_api.py#L1151) | 1151 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001152](../../tests/test_api.py#L1152) | 1152 | `"        \"/api/session\","` | — |
+| [SRC-3451CC474D-L001153](../../tests/test_api.py#L1153) | 1153 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001154](../../tests/test_api.py#L1154) | 1154 | `"        payload={\"access_token\": token},"` | — |
+| [SRC-3451CC474D-L001155](../../tests/test_api.py#L1155) | 1155 | `"        headers={\"Origin\": origin},"` | — |
+| [SRC-3451CC474D-L001156](../../tests/test_api.py#L1156) | 1156 | `"    )"` | — |
+| [SRC-3451CC474D-L001157](../../tests/test_api.py#L1157) | 1157 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001158](../../tests/test_api.py#L1158) | 1158 | `"    cookie = headers.get(\"Set-Cookie\", \"\").split(\";\", 1)[0]"` | — |
+| [SRC-3451CC474D-L001159](../../tests/test_api.py#L1159) | 1159 | `"    session_id = cookie.split(\"=\", 1)[1]"` | — |
+| [SRC-3451CC474D-L001160](../../tests/test_api.py#L1160) | 1160 | `""` | — |
+| [SRC-3451CC474D-L001161](../../tests/test_api.py#L1161) | 1161 | `"    with Handler.store.connect() as db:"` | — |
+| [SRC-3451CC474D-L001162](../../tests/test_api.py#L1162) | 1162 | `"        db.execute("` | — |
+| [SRC-3451CC474D-L001163](../../tests/test_api.py#L1163) | 1163 | `"            \"UPDATE web_sessions SET expires_at=? WHERE session_hash=?\","` | — |
+| [SRC-3451CC474D-L001164](../../tests/test_api.py#L1164) | 1164 | `"            (\"2000-01-01T00:00:00Z\", Handler.store._token_hash(session_id)),"` | — |
+| [SRC-3451CC474D-L001165](../../tests/test_api.py#L1165) | 1165 | `"        )"` | — |
+| [SRC-3451CC474D-L001166](../../tests/test_api.py#L1166) | 1166 | `""` | — |
+| [SRC-3451CC474D-L001167](../../tests/test_api.py#L1167) | 1167 | `"    status, payload, logout_headers = request_json_with_headers("` | — |
+| [SRC-3451CC474D-L001168](../../tests/test_api.py#L1168) | 1168 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001169](../../tests/test_api.py#L1169) | 1169 | `"        \"/api/session/logout\","` | — |
+| [SRC-3451CC474D-L001170](../../tests/test_api.py#L1170) | 1170 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001171](../../tests/test_api.py#L1171) | 1171 | `"        payload={},"` | — |
+| [SRC-3451CC474D-L001172](../../tests/test_api.py#L1172) | 1172 | `"        headers={\"Cookie\": cookie, \"Origin\": origin},"` | — |
+| [SRC-3451CC474D-L001173](../../tests/test_api.py#L1173) | 1173 | `"    )"` | — |
+| [SRC-3451CC474D-L001174](../../tests/test_api.py#L1174) | 1174 | `""` | — |
+| [SRC-3451CC474D-L001175](../../tests/test_api.py#L1175) | 1175 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L001176](../../tests/test_api.py#L1176) | 1176 | `"    assert payload == {\"logged_out\": True}"` | — |
+| [SRC-3451CC474D-L001177](../../tests/test_api.py#L1177) | 1177 | `"    cleared_cookie = logout_headers.get(\"Set-Cookie\", \"\")"` | — |
+| [SRC-3451CC474D-L001178](../../tests/test_api.py#L1178) | 1178 | `"    assert cleared_cookie.startswith(\"__Host-omarai_session=\")"` | — |
+| [SRC-3451CC474D-L001179](../../tests/test_api.py#L1179) | 1179 | `"    assert \"Max-Age=0\" in cleared_cookie"` | — |
+| [SRC-3451CC474D-L001180](../../tests/test_api.py#L1180) | 1180 | `""` | — |
+| [SRC-3451CC474D-L001181](../../tests/test_api.py#L1181) | 1181 | `"    status, _error = request_json("` | — |
+| [SRC-3451CC474D-L001182](../../tests/test_api.py#L1182) | 1182 | `"        local_api, \"/api/session\", headers={\"Cookie\": cookie}"` | — |
+| [SRC-3451CC474D-L001183](../../tests/test_api.py#L1183) | 1183 | `"    )"` | — |
+| [SRC-3451CC474D-L001184](../../tests/test_api.py#L1184) | 1184 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L001185](../../tests/test_api.py#L1185) | 1185 | `""` | — |
+| [SRC-3451CC474D-L001186](../../tests/test_api.py#L1186) | 1186 | `"def test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cookie("` | — |
+| [SRC-3451CC474D-L001187](../../tests/test_api.py#L1187) | 1187 | `"    local_api, monkeypatch"` | — |
+| [SRC-3451CC474D-L001188](../../tests/test_api.py#L1188) | 1188 | `"):"` | — |
+| [SRC-3451CC474D-L001189](../../tests/test_api.py#L1189) | 1189 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L001190](../../tests/test_api.py#L1190) | 1190 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L001191](../../tests/test_api.py#L1191) | 1191 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001192](../../tests/test_api.py#L1192) | 1192 | `"        \"/api/session/logout\","` | — |
+| [SRC-3451CC474D-L001193](../../tests/test_api.py#L1193) | 1193 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001194](../../tests/test_api.py#L1194) | 1194 | `"        payload={},"` | — |
+| [SRC-3451CC474D-L001195](../../tests/test_api.py#L1195) | 1195 | `"        headers={\"Origin\": \"https://attacker.example\"},"` | — |
+| [SRC-3451CC474D-L001196](../../tests/test_api.py#L1196) | 1196 | `"    )"` | — |
+| [SRC-3451CC474D-L001197](../../tests/test_api.py#L1197) | 1197 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001198](../../tests/test_api.py#L1198) | 1198 | `"    assert \"same-origin\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L001199](../../tests/test_api.py#L1199) | 1199 | `""` | — |
+| [SRC-3451CC474D-L001200](../../tests/test_api.py#L1200) | 1200 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3451CC474D-L001201](../../tests/test_api.py#L1201) | 1201 | `"    (\"request_line\", \"framing_headers\", \"body\", \"error_marker\"),"` | — |
+| [SRC-3451CC474D-L001202](../../tests/test_api.py#L1202) | 1202 | `"    ["` | — |
+| [SRC-3451CC474D-L001203](../../tests/test_api.py#L1203) | 1203 | `"        ("` | — |
+| [SRC-3451CC474D-L001204](../../tests/test_api.py#L1204) | 1204 | `"            \"POST /api/analyze HTTP/1.1\","` | — |
+| [SRC-3451CC474D-L001205](../../tests/test_api.py#L1205) | 1205 | `"            b\"Transfer-Encoding: chunked\\r\\nContent-Length: 4\\r\\n\","` | — |
+| [SRC-3451CC474D-L001206](../../tests/test_api.py#L1206) | 1206 | `"            b\"0\\r\\n\\r\\n\","` | — |
+| [SRC-3451CC474D-L001207](../../tests/test_api.py#L1207) | 1207 | `"            b\"Transfer-Encoding\","` | — |
+| [SRC-3451CC474D-L001208](../../tests/test_api.py#L1208) | 1208 | `"        ),"` | — |
+| [SRC-3451CC474D-L001209](../../tests/test_api.py#L1209) | 1209 | `"        ("` | — |
+| [SRC-3451CC474D-L001210](../../tests/test_api.py#L1210) | 1210 | `"            \"POST /api/analyze HTTP/1.1\","` | — |
+| [SRC-3451CC474D-L001211](../../tests/test_api.py#L1211) | 1211 | `"            b\"Content-Length: 4\\r\\nContent-Length: 5\\r\\n\","` | — |
+| [SRC-3451CC474D-L001212](../../tests/test_api.py#L1212) | 1212 | `"            b\"test\","` | — |
+| [SRC-3451CC474D-L001213](../../tests/test_api.py#L1213) | 1213 | `"            b\"Content-Length\","` | — |
+| [SRC-3451CC474D-L001214](../../tests/test_api.py#L1214) | 1214 | `"        ),"` | — |
+| [SRC-3451CC474D-L001215](../../tests/test_api.py#L1215) | 1215 | `"        ("` | — |
+| [SRC-3451CC474D-L001216](../../tests/test_api.py#L1216) | 1216 | `"            \"GET /api/health HTTP/1.1\","` | — |
+| [SRC-3451CC474D-L001217](../../tests/test_api.py#L1217) | 1217 | `"            b\"Content-Length: 4\\r\\n\","` | — |
+| [SRC-3451CC474D-L001218](../../tests/test_api.py#L1218) | 1218 | `"            b\"test\","` | — |
+| [SRC-3451CC474D-L001219](../../tests/test_api.py#L1219) | 1219 | `"            b\"Content-Length\","` | — |
+| [SRC-3451CC474D-L001220](../../tests/test_api.py#L1220) | 1220 | `"        ),"` | — |
+| [SRC-3451CC474D-L001221](../../tests/test_api.py#L1221) | 1221 | `"    ],"` | — |
+| [SRC-3451CC474D-L001222](../../tests/test_api.py#L1222) | 1222 | `")"` | — |
+| [SRC-3451CC474D-L001223](../../tests/test_api.py#L1223) | 1223 | `"def test_api_rejects_ambiguous_or_unsupported_http_request_framing("` | — |
+| [SRC-3451CC474D-L001224](../../tests/test_api.py#L1224) | 1224 | `"    local_api, request_line, framing_headers, body, error_marker"` | — |
+| [SRC-3451CC474D-L001225](../../tests/test_api.py#L1225) | 1225 | `"):"` | — |
+| [SRC-3451CC474D-L001226](../../tests/test_api.py#L1226) | 1226 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L001227](../../tests/test_api.py#L1227) | 1227 | `"    with socket.create_connection("` | — |
+| [SRC-3451CC474D-L001228](../../tests/test_api.py#L1228) | 1228 | `"        (host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2"` | — |
+| [SRC-3451CC474D-L001229](../../tests/test_api.py#L1229) | 1229 | `"    ) as client:"` | — |
+| [SRC-3451CC474D-L001230](../../tests/test_api.py#L1230) | 1230 | `"        client.settimeout(2)"` | — |
+| [SRC-3451CC474D-L001231](../../tests/test_api.py#L1231) | 1231 | `"        request = ("` | — |
+| [SRC-3451CC474D-L001232](../../tests/test_api.py#L1232) | 1232 | `"            request_line.encode(\"ascii\")"` | — |
+| [SRC-3451CC474D-L001233](../../tests/test_api.py#L1233) | 1233 | `"            + b\"\\r\\nHost: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L001234](../../tests/test_api.py#L1234) | 1234 | `"            + b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L001235](../../tests/test_api.py#L1235) | 1235 | `"            + framing_headers"` | — |
+| [SRC-3451CC474D-L001236](../../tests/test_api.py#L1236) | 1236 | `"            + b\"Connection: close\\r\\n\\r\\n\""` | — |
+| [SRC-3451CC474D-L001237](../../tests/test_api.py#L1237) | 1237 | `"            + body"` | — |
+| [SRC-3451CC474D-L001238](../../tests/test_api.py#L1238) | 1238 | `"        )"` | — |
+| [SRC-3451CC474D-L001239](../../tests/test_api.py#L1239) | 1239 | `"        client.sendall(request)"` | — |
+| [SRC-3451CC474D-L001240](../../tests/test_api.py#L1240) | 1240 | `"        response = b\"\""` | — |
+| [SRC-3451CC474D-L001241](../../tests/test_api.py#L1241) | 1241 | `"        while True:"` | — |
+| [SRC-3451CC474D-L001242](../../tests/test_api.py#L1242) | 1242 | `"            chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L001243](../../tests/test_api.py#L1243) | 1243 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L001244](../../tests/test_api.py#L1244) | 1244 | `"                break"` | — |
+| [SRC-3451CC474D-L001245](../../tests/test_api.py#L1245) | 1245 | `"            response += chunk"` | — |
+| [SRC-3451CC474D-L001246](../../tests/test_api.py#L1246) | 1246 | `""` | — |
+| [SRC-3451CC474D-L001247](../../tests/test_api.py#L1247) | 1247 | `"    assert response.startswith(b\"HTTP/1.0 400\")"` | — |
+| [SRC-3451CC474D-L001248](../../tests/test_api.py#L1248) | 1248 | `"    assert error_marker in response"` | — |
+| [SRC-3451CC474D-L001249](../../tests/test_api.py#L1249) | 1249 | `"    assert b\"200 OK\" not in response"` | — |
+| [SRC-3451CC474D-L001250](../../tests/test_api.py#L1250) | 1250 | `""` | — |
+| [SRC-3451CC474D-L001251](../../tests/test_api.py#L1251) | 1251 | `"def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):"` | — |
+| [SRC-3451CC474D-L001252](../../tests/test_api.py#L1252) | 1252 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L001253](../../tests/test_api.py#L1253) | 1253 | `"    with socket.create_connection("` | — |
+| [SRC-3451CC474D-L001254](../../tests/test_api.py#L1254) | 1254 | `"        (host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2"` | — |
+| [SRC-3451CC474D-L001255](../../tests/test_api.py#L1255) | 1255 | `"    ) as client:"` | — |
+| [SRC-3451CC474D-L001256](../../tests/test_api.py#L1256) | 1256 | `"        client.settimeout(2)"` | — |
+| [SRC-3451CC474D-L001257](../../tests/test_api.py#L1257) | 1257 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L001258](../../tests/test_api.py#L1258) | 1258 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
+| [SRC-3451CC474D-L001259](../../tests/test_api.py#L1259) | 1259 | `"            b\"Host: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L001260](../../tests/test_api.py#L1260) | 1260 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L001261](../../tests/test_api.py#L1261) | 1261 | `"            b\"Content-Length: 200001\\r\\n\""` | — |
+| [SRC-3451CC474D-L001262](../../tests/test_api.py#L1262) | 1262 | `"            b\"\\r\\n\""` | — |
+| [SRC-3451CC474D-L001263](../../tests/test_api.py#L1263) | 1263 | `"        )"` | — |
+| [SRC-3451CC474D-L001264](../../tests/test_api.py#L1264) | 1264 | `"        response = b\"\""` | — |
+| [SRC-3451CC474D-L001265](../../tests/test_api.py#L1265) | 1265 | `"        while True:"` | — |
+| [SRC-3451CC474D-L001266](../../tests/test_api.py#L1266) | 1266 | `"            chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L001267](../../tests/test_api.py#L1267) | 1267 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L001268](../../tests/test_api.py#L1268) | 1268 | `"                break"` | — |
+| [SRC-3451CC474D-L001269](../../tests/test_api.py#L1269) | 1269 | `"            response += chunk"` | — |
+| [SRC-3451CC474D-L001270](../../tests/test_api.py#L1270) | 1270 | `""` | — |
+| [SRC-3451CC474D-L001271](../../tests/test_api.py#L1271) | 1271 | `"    assert response.startswith(b\"HTTP/1.0 413\")"` | — |
+| [SRC-3451CC474D-L001272](../../tests/test_api.py#L1272) | 1272 | `"    assert b\"request too large\" in response"` | — |
+| [SRC-3451CC474D-L001273](../../tests/test_api.py#L1273) | 1273 | `""` | — |
+| [SRC-3451CC474D-L001274](../../tests/test_api.py#L1274) | 1274 | `""` | — |
+| [SRC-3451CC474D-L001275](../../tests/test_api.py#L1275) | 1275 | `""` | — |
+| [SRC-3451CC474D-L001276](../../tests/test_api.py#L1276) | 1276 | `"def test_workspace_route_serves_the_arabic_rtl_workspace_shell(local_api):"` | — |
+| [SRC-3451CC474D-L001277](../../tests/test_api.py#L1277) | 1277 | `"    with urlopen(local_api + \"/workspace\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001278](../../tests/test_api.py#L1278) | 1278 | `"        html = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001279](../../tests/test_api.py#L1279) | 1279 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001280](../../tests/test_api.py#L1280) | 1280 | `"        assert response.headers.get_content_type() == \"text/html\""` | — |
+| [SRC-3451CC474D-L001281](../../tests/test_api.py#L1281) | 1281 | `""` | — |
+| [SRC-3451CC474D-L001282](../../tests/test_api.py#L1282) | 1282 | `"    assert '<html lang=\"ar\" dir=\"rtl\">' in html"` | — |
+| [SRC-3451CC474D-L001283](../../tests/test_api.py#L1283) | 1283 | `"    assert 'api(\"/api/session\")' in html"` | — |
+| [SRC-3451CC474D-L001284](../../tests/test_api.py#L1284) | 1284 | `"    assert 'api(\"/api/leads?limit=500\")' in html"` | — |
+| [SRC-3451CC474D-L001285](../../tests/test_api.py#L1285) | 1285 | `"    assert \"localStorage\" not in html"` | — |
+| [SRC-3451CC474D-L001286](../../tests/test_api.py#L1286) | 1286 | `"    assert \"sessionStorage\" not in html"` | — |
+| [SRC-3451CC474D-L001287](../../tests/test_api.py#L1287) | 1287 | `""` | — |
+| [SRC-3451CC474D-L001288](../../tests/test_api.py#L1288) | 1288 | `"def test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads(local_api):"` | — |
+| [SRC-3451CC474D-L001289](../../tests/test_api.py#L1289) | 1289 | `"    with urlopen(local_api + \"/\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001290](../../tests/test_api.py#L1290) | 1290 | `"        home = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001291](../../tests/test_api.py#L1291) | 1291 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001292](../../tests/test_api.py#L1292) | 1292 | `"        assert '<html lang=\"ar\" dir=\"rtl\">' in home"` | — |
+| [SRC-3451CC474D-L001293](../../tests/test_api.py#L1293) | 1293 | `"        assert \"OMARAI SECURE WORKSPACE\" in home"` | — |
+| [SRC-3451CC474D-L001294](../../tests/test_api.py#L1294) | 1294 | `""` | — |
+| [SRC-3451CC474D-L001295](../../tests/test_api.py#L1295) | 1295 | `"    with urlopen(local_api + \"/workspace\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001296](../../tests/test_api.py#L1296) | 1296 | `"        workspace = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001297](../../tests/test_api.py#L1297) | 1297 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001298](../../tests/test_api.py#L1298) | 1298 | `"        assert workspace == home"` | — |
+| [SRC-3451CC474D-L001299](../../tests/test_api.py#L1299) | 1299 | `""` | — |
+| [SRC-3451CC474D-L001300](../../tests/test_api.py#L1300) | 1300 | `"    with urlopen(local_api + \"/agent\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001301](../../tests/test_api.py#L1301) | 1301 | `"        agent = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001302](../../tests/test_api.py#L1302) | 1302 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001303](../../tests/test_api.py#L1303) | 1303 | `"        assert agent != home"` | — |
+| [SRC-3451CC474D-L001304](../../tests/test_api.py#L1304) | 1304 | `"        assert \"وكيل البحث الحي والتحليل متعدد المصادر\" in agent"` | — |
+| [SRC-3451CC474D-L001305](../../tests/test_api.py#L1305) | 1305 | `""` | — |
+| [SRC-3451CC474D-L001306](../../tests/test_api.py#L1306) | 1306 | `"    with urlopen(local_api + \"/leads\", timeout=3) as response:"` | — |
+| [SRC-3451CC474D-L001307](../../tests/test_api.py#L1307) | 1307 | `"        leads = response.read().decode(\"utf-8\")"` | — |
+| [SRC-3451CC474D-L001308](../../tests/test_api.py#L1308) | 1308 | `"        assert response.status == 200"` | — |
+| [SRC-3451CC474D-L001309](../../tests/test_api.py#L1309) | 1309 | `"        assert \"مساعد اكتشاف العملاء\" in leads"` | — |
+| [SRC-3451CC474D-L001310](../../tests/test_api.py#L1310) | 1310 | `""` | — |
+| [SRC-3451CC474D-L001311](../../tests/test_api.py#L1311) | 1311 | `""` | — |
+| [SRC-3451CC474D-L001312](../../tests/test_api.py#L1312) | 1312 | `"def test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources("` | — |
+| [SRC-3451CC474D-L001313](../../tests/test_api.py#L1313) | 1313 | `"    local_api, monkeypatch"` | — |
+| [SRC-3451CC474D-L001314](../../tests/test_api.py#L1314) | 1314 | `"):"` | — |
+| [SRC-3451CC474D-L001315](../../tests/test_api.py#L1315) | 1315 | `"    from api.omarai import WebAgent"` | — |
+| [SRC-3451CC474D-L001316](../../tests/test_api.py#L1316) | 1316 | `""` | — |
+| [SRC-3451CC474D-L001317](../../tests/test_api.py#L1317) | 1317 | `"    captured = {}"` | — |
+| [SRC-3451CC474D-L001318](../../tests/test_api.py#L1318) | 1318 | `""` | — |
+| [SRC-3451CC474D-L001319](../../tests/test_api.py#L1319) | 1319 | `"    def fake_answer("` | — |
+| [SRC-3451CC474D-L001320](../../tests/test_api.py#L1320) | 1320 | `"        self, question, history=None, mode=\"auto\", *, budget_profile=\"default\", buyer_queries=None"` | — |
+| [SRC-3451CC474D-L001321](../../tests/test_api.py#L1321) | 1321 | `"    ):"` | — |
+| [SRC-3451CC474D-L001322](../../tests/test_api.py#L1322) | 1322 | `"        captured[\"question\"] = question"` | — |
+| [SRC-3451CC474D-L001323](../../tests/test_api.py#L1323) | 1323 | `"        captured[\"buyer_queries\"] = buyer_queries"` | — |
+| [SRC-3451CC474D-L001324](../../tests/test_api.py#L1324) | 1324 | `"        captured[\"allow_optional_providers\"] = self.allow_optional_providers"` | — |
+| [SRC-3451CC474D-L001325](../../tests/test_api.py#L1325) | 1325 | `"        captured[\"openrouter_web_search_enabled\"] = self.openrouter_web_search_enabled"` | — |
+| [SRC-3451CC474D-L001326](../../tests/test_api.py#L1326) | 1326 | `"        return {"` | — |
+| [SRC-3451CC474D-L001327](../../tests/test_api.py#L1327) | 1327 | `"            \"answer\": \"عُثر على إشارة طلب واحدة.\","` | — |
+| [SRC-3451CC474D-L001328](../../tests/test_api.py#L1328) | 1328 | `"            \"search_queries\": buyer_queries,"` | — |
+| [SRC-3451CC474D-L001329](../../tests/test_api.py#L1329) | 1329 | `"            \"search_report\": {"` | — |
+| [SRC-3451CC474D-L001330](../../tests/test_api.py#L1330) | 1330 | `"                \"lead_generation\": {"` | — |
+| [SRC-3451CC474D-L001331](../../tests/test_api.py#L1331) | 1331 | `"                    \"status\": \"candidate_signals_found\","` | — |
+| [SRC-3451CC474D-L001332](../../tests/test_api.py#L1332) | 1332 | `"                    \"candidate_signal_count\": 1,"` | — |
+| [SRC-3451CC474D-L001333](../../tests/test_api.py#L1333) | 1333 | `"                    \"related_results_reviewed\": 2,"` | — |
+| [SRC-3451CC474D-L001334](../../tests/test_api.py#L1334) | 1334 | `"                    \"qualification_rule\": \"public_demand_signal_phrase_by_type\","` | — |
+| [SRC-3451CC474D-L001335](../../tests/test_api.py#L1335) | 1335 | `"                    \"identity_verified\": False,"` | — |
+| [SRC-3451CC474D-L001336](../../tests/test_api.py#L1336) | 1336 | `"                },"` | — |
+| [SRC-3451CC474D-L001337](../../tests/test_api.py#L1337) | 1337 | `"                \"pipeline_completion_status\": \"completed\","` | — |
+| [SRC-3451CC474D-L001338](../../tests/test_api.py#L1338) | 1338 | `"            },"` | — |
+| [SRC-3451CC474D-L001339](../../tests/test_api.py#L1339) | 1339 | `"            \"sources\": ["` | — |
+| [SRC-3451CC474D-L001340](../../tests/test_api.py#L1340) | 1340 | `"                {"` | — |
+| [SRC-3451CC474D-L001341](../../tests/test_api.py#L1341) | 1341 | `"                    \"title\": \"طلب توريد لوحة إنذار\","` | — |
+| [SRC-3451CC474D-L001342](../../tests/test_api.py#L1342) | 1342 | `"                    \"url\": \"https://example.org/public-request/1\","` | — |
+| [SRC-3451CC474D-L001343](../../tests/test_api.py#L1343) | 1343 | `"                    \"snippet\": \"نبحث عن مورد لتوريد لوحة إنذار حريق لمشروع في القاهرة.\","` | — |
+| [SRC-3451CC474D-L001344](../../tests/test_api.py#L1344) | 1344 | `"                    \"platform\": \"web\","` | — |
+| [SRC-3451CC474D-L001345](../../tests/test_api.py#L1345) | 1345 | `"                    \"published_at\": None,"` | — |
+| [SRC-3451CC474D-L001346](../../tests/test_api.py#L1346) | 1346 | `"                    \"page_fetched\": False,"` | — |
+| [SRC-3451CC474D-L001347](../../tests/test_api.py#L1347) | 1347 | `"                    \"lead_qualification\": \"public_demand_signal\","` | — |
+| [SRC-3451CC474D-L001348](../../tests/test_api.py#L1348) | 1348 | `"                    \"lead_intent_evidence\": {"` | — |
+| [SRC-3451CC474D-L001349](../../tests/test_api.py#L1349) | 1349 | `"                        \"phrase\": \"نبحث عن مورد\","` | — |
+| [SRC-3451CC474D-L001350](../../tests/test_api.py#L1350) | 1350 | `"                        \"basis\": \"snippet\","` | — |
+| [SRC-3451CC474D-L001351](../../tests/test_api.py#L1351) | 1351 | `"                        \"signal_type\": \"request_for_quotation\","` | — |
+| [SRC-3451CC474D-L001352](../../tests/test_api.py#L1352) | 1352 | `"                        \"product_fit\": \"unassessed\","` | — |
+| [SRC-3451CC474D-L001353](../../tests/test_api.py#L1353) | 1353 | `"                    },"` | — |
+| [SRC-3451CC474D-L001354](../../tests/test_api.py#L1354) | 1354 | `"                },"` | — |
+| [SRC-3451CC474D-L001355](../../tests/test_api.py#L1355) | 1355 | `"                {"` | — |
+| [SRC-3451CC474D-L001356](../../tests/test_api.py#L1356) | 1356 | `"                    \"title\": \"كتالوج لوحة إنذار\","` | — |
+| [SRC-3451CC474D-L001357](../../tests/test_api.py#L1357) | 1357 | `"                    \"url\": \"https://example.net/catalog\","` | — |
+| [SRC-3451CC474D-L001358](../../tests/test_api.py#L1358) | 1358 | `"                    \"snippet\": \"كتالوج تعريفي بلوحات إنذار الحريق.\","` | — |
+| [SRC-3451CC474D-L001359](../../tests/test_api.py#L1359) | 1359 | `"                    \"platform\": \"web\","` | — |
+| [SRC-3451CC474D-L001360](../../tests/test_api.py#L1360) | 1360 | `"                    \"published_at\": None,"` | — |
+| [SRC-3451CC474D-L001361](../../tests/test_api.py#L1361) | 1361 | `"                    \"page_fetched\": False,"` | — |
+| [SRC-3451CC474D-L001362](../../tests/test_api.py#L1362) | 1362 | `"                    \"lead_qualification\": \"related_result_not_lead\","` | — |
+| [SRC-3451CC474D-L001363](../../tests/test_api.py#L1363) | 1363 | `"                    \"lead_intent_evidence\": None,"` | — |
+| [SRC-3451CC474D-L001364](../../tests/test_api.py#L1364) | 1364 | `"                },"` | — |
+| [SRC-3451CC474D-L001365](../../tests/test_api.py#L1365) | 1365 | `"            ],"` | — |
+| [SRC-3451CC474D-L001366](../../tests/test_api.py#L1366) | 1366 | `"        }"` | — |
+| [SRC-3451CC474D-L001367](../../tests/test_api.py#L1367) | 1367 | `""` | — |
+| [SRC-3451CC474D-L001368](../../tests/test_api.py#L1368) | 1368 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
+| [SRC-3451CC474D-L001369](../../tests/test_api.py#L1369) | 1369 | `"    monkeypatch.setattr(WebAgent, \"answer\", fake_answer)"` | — |
+| [SRC-3451CC474D-L001370](../../tests/test_api.py#L1370) | 1370 | `"    profile_status, profile = request_json("` | — |
+| [SRC-3451CC474D-L001371](../../tests/test_api.py#L1371) | 1371 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001372](../../tests/test_api.py#L1372) | 1372 | `"        \"/api/product-profiles\","` | — |
+| [SRC-3451CC474D-L001373](../../tests/test_api.py#L1373) | 1373 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001374](../../tests/test_api.py#L1374) | 1374 | `"        payload={"` | — |
+| [SRC-3451CC474D-L001375](../../tests/test_api.py#L1375) | 1375 | `"            \"product\": {"` | — |
+| [SRC-3451CC474D-L001376](../../tests/test_api.py#L1376) | 1376 | `"                \"name\": \"لوحة إنذار الحريق\","` | — |
+| [SRC-3451CC474D-L001377](../../tests/test_api.py#L1377) | 1377 | `"                \"aliases\": [\"FACP\"],"` | — |
+| [SRC-3451CC474D-L001378](../../tests/test_api.py#L1378) | 1378 | `"                \"category_path\": [\"السلامة\", \"إنذار الحريق\"],"` | — |
+| [SRC-3451CC474D-L001379](../../tests/test_api.py#L1379) | 1379 | `"                \"use_cases\": [\"حماية المباني\"],"` | — |
+| [SRC-3451CC474D-L001380](../../tests/test_api.py#L1380) | 1380 | `"                \"problems_solved\": [\"اكتشاف الحريق مبكرًا\"],"` | — |
+| [SRC-3451CC474D-L001381](../../tests/test_api.py#L1381) | 1381 | `"            },"` | — |
+| [SRC-3451CC474D-L001382](../../tests/test_api.py#L1382) | 1382 | `"            \"market\": {"` | — |
+| [SRC-3451CC474D-L001383](../../tests/test_api.py#L1383) | 1383 | `"                \"locations\": [\"القاهرة\", \"الجيزة\"],"` | — |
+| [SRC-3451CC474D-L001384](../../tests/test_api.py#L1384) | 1384 | `"                \"industries\": [\"المقاولات\"],"` | — |
+| [SRC-3451CC474D-L001385](../../tests/test_api.py#L1385) | 1385 | `"                \"customer_types\": [\"مقاولون\"],"` | — |
+| [SRC-3451CC474D-L001386](../../tests/test_api.py#L1386) | 1386 | `"                \"decision_roles\": [\"مدير مشتريات\"],"` | — |
+| [SRC-3451CC474D-L001387](../../tests/test_api.py#L1387) | 1387 | `"                \"exclusions\": [],"` | — |
+| [SRC-3451CC474D-L001388](../../tests/test_api.py#L1388) | 1388 | `"            },"` | — |
+| [SRC-3451CC474D-L001389](../../tests/test_api.py#L1389) | 1389 | `"            \"locale\": \"ar\","` | — |
+| [SRC-3451CC474D-L001390](../../tests/test_api.py#L1390) | 1390 | `"        },"` | — |
+| [SRC-3451CC474D-L001391](../../tests/test_api.py#L1391) | 1391 | `"    )"` | — |
+| [SRC-3451CC474D-L001392](../../tests/test_api.py#L1392) | 1392 | `"    assert profile_status == 201"` | — |
+| [SRC-3451CC474D-L001393](../../tests/test_api.py#L1393) | 1393 | `"    assert profile[\"profile\"][\"product\"][\"name\"] == \"لوحة إنذار الحريق\""` | — |
+| [SRC-3451CC474D-L001394](../../tests/test_api.py#L1394) | 1394 | `""` | — |
+| [SRC-3451CC474D-L001395](../../tests/test_api.py#L1395) | 1395 | `"    run_status, run = request_json("` | — |
+| [SRC-3451CC474D-L001396](../../tests/test_api.py#L1396) | 1396 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001397](../../tests/test_api.py#L1397) | 1397 | `"        \"/api/discoveries\","` | — |
+| [SRC-3451CC474D-L001398](../../tests/test_api.py#L1398) | 1398 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001399](../../tests/test_api.py#L1399) | 1399 | `"        payload={\"profile_id\": profile[\"id\"], \"allow_optional_providers\": False},"` | — |
+| [SRC-3451CC474D-L001400](../../tests/test_api.py#L1400) | 1400 | `"    )"` | — |
+| [SRC-3451CC474D-L001401](../../tests/test_api.py#L1401) | 1401 | `"    assert run_status == 201"` | — |
+| [SRC-3451CC474D-L001402](../../tests/test_api.py#L1402) | 1402 | `"    assert run[\"sources\"][0][\"lead_qualification\"] == \"public_demand_signal\""` | — |
+| [SRC-3451CC474D-L001403](../../tests/test_api.py#L1403) | 1403 | `"    assert run[\"sources\"][1][\"lead_qualification\"] == \"related_result_not_lead\""` | — |
+| [SRC-3451CC474D-L001404](../../tests/test_api.py#L1404) | 1404 | `"    assert captured[\"buyer_queries\"]"` | — |
+| [SRC-3451CC474D-L001405](../../tests/test_api.py#L1405) | 1405 | `"    assert all(\"القاهرة\" in query or \"الجيزة\" in query for query in captured[\"buyer_queries\"])"` | — |
+| [SRC-3451CC474D-L001406](../../tests/test_api.py#L1406) | 1406 | `"    assert all(\"لوحة إنذار الحريق\" in query or \"FACP\" in query for query in captured[\"buyer_queries\"])"` | — |
+| [SRC-3451CC474D-L001407](../../tests/test_api.py#L1407) | 1407 | `"    assert captured[\"allow_optional_providers\"] is False"` | — |
+| [SRC-3451CC474D-L001408](../../tests/test_api.py#L1408) | 1408 | `"    assert captured[\"openrouter_web_search_enabled\"] is False"` | — |
+| [SRC-3451CC474D-L001409](../../tests/test_api.py#L1409) | 1409 | `""` | — |
+| [SRC-3451CC474D-L001410](../../tests/test_api.py#L1410) | 1410 | `"    history_status, history = request_json(local_api, \"/api/discoveries\")"` | — |
+| [SRC-3451CC474D-L001411](../../tests/test_api.py#L1411) | 1411 | `"    assert history_status == 200"` | — |
+| [SRC-3451CC474D-L001412](../../tests/test_api.py#L1412) | 1412 | `"    assert history[\"count\"] == 1"` | — |
+| [SRC-3451CC474D-L001413](../../tests/test_api.py#L1413) | 1413 | `"    assert history[\"runs\"][0][\"id\"] == run[\"id\"]"` | — |
 | [SRC-3451CC474D-L001414](../../tests/test_api.py#L1414) | 1414 | `""` | — |
-| [SRC-3451CC474D-L001415](../../tests/test_api.py#L1415) | 1415 | `""` | — |
-| [SRC-3451CC474D-L001416](../../tests/test_api.py#L1416) | 1416 | `"def test_discovery_api_denies_optional_provider_usage_to_non_owner(local_api, monkeypatch):"` | — |
-| [SRC-3451CC474D-L001417](../../tests/test_api.py#L1417) | 1417 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-3451CC474D-L001418](../../tests/test_api.py#L1418) | 1418 | `"    store = Handler.store"` | — |
-| [SRC-3451CC474D-L001419](../../tests/test_api.py#L1419) | 1419 | `"    tenant = store.create_tenant(\"Sales Team\", \"sales-team\")"` | — |
-| [SRC-3451CC474D-L001420](../../tests/test_api.py#L1420) | 1420 | `"    user = store.create_user(\"sales@example.invalid\", \"Sales Agent\")"` | — |
-| [SRC-3451CC474D-L001421](../../tests/test_api.py#L1421) | 1421 | `"    store.add_membership(tenant, user, \"sales_agent\")"` | — |
-| [SRC-3451CC474D-L001422](../../tests/test_api.py#L1422) | 1422 | `"    token = \"sales-agent-test-token-1234567890\""` | — |
-| [SRC-3451CC474D-L001423](../../tests/test_api.py#L1423) | 1423 | `"    store.create_api_token(token, tenant, user, \"test\")"` | — |
-| [SRC-3451CC474D-L001424](../../tests/test_api.py#L1424) | 1424 | `"    headers = {\"Authorization\": \"Bearer \" + token}"` | — |
-| [SRC-3451CC474D-L001425](../../tests/test_api.py#L1425) | 1425 | `""` | — |
-| [SRC-3451CC474D-L001426](../../tests/test_api.py#L1426) | 1426 | `"    profile_status, profile = request_json("` | — |
-| [SRC-3451CC474D-L001427](../../tests/test_api.py#L1427) | 1427 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001428](../../tests/test_api.py#L1428) | 1428 | `"        \"/api/product-profiles\","` | — |
-| [SRC-3451CC474D-L001429](../../tests/test_api.py#L1429) | 1429 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001430](../../tests/test_api.py#L1430) | 1430 | `"        payload={"` | — |
-| [SRC-3451CC474D-L001431](../../tests/test_api.py#L1431) | 1431 | `"            \"product\": {\"name\": \"FACP\", \"aliases\": [\"لوحة إنذار\"], \"use_cases\": [], \"problems_solved\": []},"` | — |
-| [SRC-3451CC474D-L001432](../../tests/test_api.py#L1432) | 1432 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [], \"customer_types\": [], \"decision_roles\": [], \"exclusions\": []},"` | — |
-| [SRC-3451CC474D-L001433](../../tests/test_api.py#L1433) | 1433 | `"            \"locale\": \"en\","` | — |
-| [SRC-3451CC474D-L001434](../../tests/test_api.py#L1434) | 1434 | `"        },"` | — |
-| [SRC-3451CC474D-L001435](../../tests/test_api.py#L1435) | 1435 | `"        headers=headers,"` | — |
-| [SRC-3451CC474D-L001436](../../tests/test_api.py#L1436) | 1436 | `"    )"` | — |
-| [SRC-3451CC474D-L001437](../../tests/test_api.py#L1437) | 1437 | `"    assert profile_status == 201"` | — |
-| [SRC-3451CC474D-L001438](../../tests/test_api.py#L1438) | 1438 | `""` | — |
-| [SRC-3451CC474D-L001439](../../tests/test_api.py#L1439) | 1439 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L001440](../../tests/test_api.py#L1440) | 1440 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001441](../../tests/test_api.py#L1441) | 1441 | `"        \"/api/discoveries\","` | — |
-| [SRC-3451CC474D-L001442](../../tests/test_api.py#L1442) | 1442 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001443](../../tests/test_api.py#L1443) | 1443 | `"        payload={\"profile_id\": profile[\"id\"], \"allow_optional_providers\": True},"` | — |
-| [SRC-3451CC474D-L001444](../../tests/test_api.py#L1444) | 1444 | `"        headers=headers,"` | — |
-| [SRC-3451CC474D-L001445](../../tests/test_api.py#L1445) | 1445 | `"    )"` | — |
-| [SRC-3451CC474D-L001446](../../tests/test_api.py#L1446) | 1446 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001447](../../tests/test_api.py#L1447) | 1447 | `"    assert \"مالك مساحة العمل\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L001415](../../tests/test_api.py#L1415) | 1415 | `"    rejected_status, rejected = request_json("` | — |
+| [SRC-3451CC474D-L001416](../../tests/test_api.py#L1416) | 1416 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001417](../../tests/test_api.py#L1417) | 1417 | `"        f\"/api/discoveries/{run['id']}/signals/1/save\","` | — |
+| [SRC-3451CC474D-L001418](../../tests/test_api.py#L1418) | 1418 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001419](../../tests/test_api.py#L1419) | 1419 | `"        payload={},"` | — |
+| [SRC-3451CC474D-L001420](../../tests/test_api.py#L1420) | 1420 | `"    )"` | — |
+| [SRC-3451CC474D-L001421](../../tests/test_api.py#L1421) | 1421 | `"    assert rejected_status == 409"` | — |
+| [SRC-3451CC474D-L001422](../../tests/test_api.py#L1422) | 1422 | `"    assert \"ليست إشارة طلب\" in rejected[\"error\"]"` | — |
+| [SRC-3451CC474D-L001423](../../tests/test_api.py#L1423) | 1423 | `""` | — |
+| [SRC-3451CC474D-L001424](../../tests/test_api.py#L1424) | 1424 | `"    saved_status, saved = request_json("` | — |
+| [SRC-3451CC474D-L001425](../../tests/test_api.py#L1425) | 1425 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001426](../../tests/test_api.py#L1426) | 1426 | `"        f\"/api/discoveries/{run['id']}/signals/0/save\","` | — |
+| [SRC-3451CC474D-L001427](../../tests/test_api.py#L1427) | 1427 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001428](../../tests/test_api.py#L1428) | 1428 | `"        payload={},"` | — |
+| [SRC-3451CC474D-L001429](../../tests/test_api.py#L1429) | 1429 | `"    )"` | — |
+| [SRC-3451CC474D-L001430](../../tests/test_api.py#L1430) | 1430 | `"    assert saved_status == 201"` | — |
+| [SRC-3451CC474D-L001431](../../tests/test_api.py#L1431) | 1431 | `"    assert saved[\"lead\"][\"source_url\"] == \"https://example.org/public-request/1\""` | — |
+| [SRC-3451CC474D-L001432](../../tests/test_api.py#L1432) | 1432 | `"    assert \"نبحث عن مورد\" in saved[\"lead\"][\"note\"]"` | — |
+| [SRC-3451CC474D-L001433](../../tests/test_api.py#L1433) | 1433 | `""` | — |
+| [SRC-3451CC474D-L001434](../../tests/test_api.py#L1434) | 1434 | `""` | — |
+| [SRC-3451CC474D-L001435](../../tests/test_api.py#L1435) | 1435 | `"def test_discovery_api_denies_optional_provider_usage_to_non_owner(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L001436](../../tests/test_api.py#L1436) | 1436 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L001437](../../tests/test_api.py#L1437) | 1437 | `"    store = Handler.store"` | — |
+| [SRC-3451CC474D-L001438](../../tests/test_api.py#L1438) | 1438 | `"    tenant = store.create_tenant(\"Sales Team\", \"sales-team\")"` | — |
+| [SRC-3451CC474D-L001439](../../tests/test_api.py#L1439) | 1439 | `"    user = store.create_user(\"sales@example.invalid\", \"Sales Agent\")"` | — |
+| [SRC-3451CC474D-L001440](../../tests/test_api.py#L1440) | 1440 | `"    store.add_membership(tenant, user, \"sales_agent\")"` | — |
+| [SRC-3451CC474D-L001441](../../tests/test_api.py#L1441) | 1441 | `"    token = \"sales-agent-test-token-1234567890\""` | — |
+| [SRC-3451CC474D-L001442](../../tests/test_api.py#L1442) | 1442 | `"    store.create_api_token(token, tenant, user, \"test\")"` | — |
+| [SRC-3451CC474D-L001443](../../tests/test_api.py#L1443) | 1443 | `"    headers = {\"Authorization\": \"Bearer \" + token}"` | — |
+| [SRC-3451CC474D-L001444](../../tests/test_api.py#L1444) | 1444 | `""` | — |
+| [SRC-3451CC474D-L001445](../../tests/test_api.py#L1445) | 1445 | `"    profile_status, profile = request_json("` | — |
+| [SRC-3451CC474D-L001446](../../tests/test_api.py#L1446) | 1446 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001447](../../tests/test_api.py#L1447) | 1447 | `"        \"/api/product-profiles\","` | — |
+| [SRC-3451CC474D-L001448](../../tests/test_api.py#L1448) | 1448 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001449](../../tests/test_api.py#L1449) | 1449 | `"        payload={"` | — |
+| [SRC-3451CC474D-L001450](../../tests/test_api.py#L1450) | 1450 | `"            \"product\": {\"name\": \"FACP\", \"aliases\": [\"لوحة إنذار\"], \"use_cases\": [], \"problems_solved\": []},"` | — |
+| [SRC-3451CC474D-L001451](../../tests/test_api.py#L1451) | 1451 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [], \"customer_types\": [], \"decision_roles\": [], \"exclusions\": []},"` | — |
+| [SRC-3451CC474D-L001452](../../tests/test_api.py#L1452) | 1452 | `"            \"locale\": \"en\","` | — |
+| [SRC-3451CC474D-L001453](../../tests/test_api.py#L1453) | 1453 | `"        },"` | — |
+| [SRC-3451CC474D-L001454](../../tests/test_api.py#L1454) | 1454 | `"        headers=headers,"` | — |
+| [SRC-3451CC474D-L001455](../../tests/test_api.py#L1455) | 1455 | `"    )"` | — |
+| [SRC-3451CC474D-L001456](../../tests/test_api.py#L1456) | 1456 | `"    assert profile_status == 201"` | — |
+| [SRC-3451CC474D-L001457](../../tests/test_api.py#L1457) | 1457 | `""` | — |
+| [SRC-3451CC474D-L001458](../../tests/test_api.py#L1458) | 1458 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L001459](../../tests/test_api.py#L1459) | 1459 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001460](../../tests/test_api.py#L1460) | 1460 | `"        \"/api/discoveries\","` | — |
+| [SRC-3451CC474D-L001461](../../tests/test_api.py#L1461) | 1461 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001462](../../tests/test_api.py#L1462) | 1462 | `"        payload={\"profile_id\": profile[\"id\"], \"allow_optional_providers\": True},"` | — |
+| [SRC-3451CC474D-L001463](../../tests/test_api.py#L1463) | 1463 | `"        headers=headers,"` | — |
+| [SRC-3451CC474D-L001464](../../tests/test_api.py#L1464) | 1464 | `"    )"` | — |
+| [SRC-3451CC474D-L001465](../../tests/test_api.py#L1465) | 1465 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001466](../../tests/test_api.py#L1466) | 1466 | `"    assert \"مالك مساحة العمل\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L001467](../../tests/test_api.py#L1467) | 1467 | `""` | — |
+| [SRC-3451CC474D-L001468](../../tests/test_api.py#L1468) | 1468 | `""` | — |
+| [SRC-3451CC474D-L001469](../../tests/test_api.py#L1469) | 1469 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3451CC474D-L001470](../../tests/test_api.py#L1470) | 1470 | `"    \"forwarding_header\","` | — |
+| [SRC-3451CC474D-L001471](../../tests/test_api.py#L1471) | 1471 | `"    ["` | — |
+| [SRC-3451CC474D-L001472](../../tests/test_api.py#L1472) | 1472 | `"        {\"X-Forwarded-For\": \"203.0.113.9\"},"` | — |
+| [SRC-3451CC474D-L001473](../../tests/test_api.py#L1473) | 1473 | `"        {\"CF-Connecting-IP\": \"203.0.113.9\"},"` | — |
+| [SRC-3451CC474D-L001474](../../tests/test_api.py#L1474) | 1474 | `"        {\"Forwarded\": \"for=203.0.113.9\"},"` | — |
+| [SRC-3451CC474D-L001475](../../tests/test_api.py#L1475) | 1475 | `"    ],"` | — |
+| [SRC-3451CC474D-L001476](../../tests/test_api.py#L1476) | 1476 | `")"` | — |
+| [SRC-3451CC474D-L001477](../../tests/test_api.py#L1477) | 1477 | `"def test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in("` | — |
+| [SRC-3451CC474D-L001478](../../tests/test_api.py#L1478) | 1478 | `"    local_api, forwarding_header"` | — |
+| [SRC-3451CC474D-L001479](../../tests/test_api.py#L1479) | 1479 | `"):"` | — |
+| [SRC-3451CC474D-L001480](../../tests/test_api.py#L1480) | 1480 | `"    status, _ = request_json(local_api, \"/api/leads\", headers=forwarding_header)"` | — |
+| [SRC-3451CC474D-L001481](../../tests/test_api.py#L1481) | 1481 | `"    assert status == 401"` | — |
 ## اختبارات
 
 ### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
@@ -569,295 +843,3 @@
 | [SRC-DA61479D59-L000188](../../tests/test_connector_summary_counters.py#L188) | 188 | `"                \"Renewable energy storage body, with an explicit note that extraction was capped.\","` | — |
 | [SRC-DA61479D59-L000189](../../tests/test_connector_summary_counters.py#L189) | 189 | `"                \"partial_extraction\","` | — |
 | [SRC-DA61479D59-L000190](../../tests/test_connector_summary_counters.py#L190) | 190 | `"            )"` | — |
-| [SRC-DA61479D59-L000191](../../tests/test_connector_summary_counters.py#L191) | 191 | `"        return PageFetchResult(\"\", \"\", \"http_error\", \"HTTPStatus\")"` | — |
-| [SRC-DA61479D59-L000192](../../tests/test_connector_summary_counters.py#L192) | 192 | `""` | — |
-| [SRC-DA61479D59-L000193](../../tests/test_connector_summary_counters.py#L193) | 193 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fetch)"` | — |
-| [SRC-DA61479D59-L000194](../../tests/test_connector_summary_counters.py#L194) | 194 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-DA61479D59-L000195](../../tests/test_connector_summary_counters.py#L195) | 195 | `"        \"queries\": [query],"` | — |
-| [SRC-DA61479D59-L000196](../../tests/test_connector_summary_counters.py#L196) | 196 | `"        \"direct_urls\": [],"` | — |
-| [SRC-DA61479D59-L000197](../../tests/test_connector_summary_counters.py#L197) | 197 | `"        \"social_focus\": False,"` | — |
-| [SRC-DA61479D59-L000198](../../tests/test_connector_summary_counters.py#L198) | 198 | `"        \"freshness\": \"any\","` | — |
-| [SRC-DA61479D59-L000199](../../tests/test_connector_summary_counters.py#L199) | 199 | `"        \"depth\": \"standard\","` | — |
-| [SRC-DA61479D59-L000200](../../tests/test_connector_summary_counters.py#L200) | 200 | `"        \"platforms\": [],"` | — |
-| [SRC-DA61479D59-L000201](../../tests/test_connector_summary_counters.py#L201) | 201 | `"        \"planning_method\": \"unit_test\","` | — |
-| [SRC-DA61479D59-L000202](../../tests/test_connector_summary_counters.py#L202) | 202 | `"    })"` | — |
-| [SRC-DA61479D59-L000203](../../tests/test_connector_summary_counters.py#L203) | 203 | `""` | — |
-| [SRC-DA61479D59-L000204](../../tests/test_connector_summary_counters.py#L204) | 204 | `"    assert warnings"` | — |
-| [SRC-DA61479D59-L000205](../../tests/test_connector_summary_counters.py#L205) | 205 | `"    assert report[\"pages_fetch_attempted\"] == 2"` | — |
-| [SRC-DA61479D59-L000206](../../tests/test_connector_summary_counters.py#L206) | 206 | `"    assert report[\"pages_content_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000207](../../tests/test_connector_summary_counters.py#L207) | 207 | `"    assert report[\"pages_partial_extracted\"] == 1"` | — |
-| [SRC-DA61479D59-L000208](../../tests/test_connector_summary_counters.py#L208) | 208 | `"    assert report[\"pages_extract_failed\"] == 1"` | — |
-| [SRC-DA61479D59-L000209](../../tests/test_connector_summary_counters.py#L209) | 209 | `"    assert report[\"page_fetch_status_counts\"][\"partial_extraction\"] == 1"` | — |
-| [SRC-DA61479D59-L000210](../../tests/test_connector_summary_counters.py#L210) | 210 | `"    assert report[\"page_fetch_status_counts\"][\"http_error\"] == 1"` | — |
-| [SRC-DA61479D59-L000211](../../tests/test_connector_summary_counters.py#L211) | 211 | `"    assert sum(item[\"page_fetch_status\"] == \"partial_extraction\" for item in sources) == 1"` | — |
-| [SRC-DA61479D59-L000212](../../tests/test_connector_summary_counters.py#L212) | 212 | `"    assert sum(item[\"page_fetch_status\"] == \"http_error\" for item in sources) == 1"` | — |
-| [SRC-DA61479D59-L000213](../../tests/test_connector_summary_counters.py#L213) | 213 | `"    assert any(\"HTTPStatus\" in str(item.get(\"page_fetch_error_class\")) for item in sources)"` | — |
-| [SRC-DA61479D59-L000214](../../tests/test_connector_summary_counters.py#L214) | 214 | `""` | — |
-| [SRC-DA61479D59-L000215](../../tests/test_connector_summary_counters.py#L215) | 215 | `""` | — |
-| [SRC-DA61479D59-L000216](../../tests/test_connector_summary_counters.py#L216) | 216 | `"def test_raw_provider_diagnostics_redact_credentials_from_queries_and_errors():"` | — |
-| [SRC-DA61479D59-L000217](../../tests/test_connector_summary_counters.py#L217) | 217 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000218](../../tests/test_connector_summary_counters.py#L218) | 218 | `"    agent._record_provider_diagnostic("` | — |
-| [SRC-DA61479D59-L000219](../../tests/test_connector_summary_counters.py#L219) | 219 | `"        provider=\"test_provider\","` | — |
-| [SRC-DA61479D59-L000220](../../tests/test_connector_summary_counters.py#L220) | 220 | `"        query=\"research API_KEY=query-secret\","` | — |
-| [SRC-DA61479D59-L000221](../../tests/test_connector_summary_counters.py#L221) | 221 | `"        status=\"failed\","` | — |
-| [SRC-DA61479D59-L000222](../../tests/test_connector_summary_counters.py#L222) | 222 | `"        error=("` | — |
-| [SRC-DA61479D59-L000223](../../tests/test_connector_summary_counters.py#L223) | 223 | `"            \"Authorization: Bearer bearer-secret access_token=access-secret; \""` | — |
-| [SRC-DA61479D59-L000224](../../tests/test_connector_summary_counters.py#L224) | 224 | `"            \"URL https://example.test/search?token=url-secret\""` | — |
-| [SRC-DA61479D59-L000225](../../tests/test_connector_summary_counters.py#L225) | 225 | `"        ),"` | — |
-| [SRC-DA61479D59-L000226](../../tests/test_connector_summary_counters.py#L226) | 226 | `"    )"` | — |
-| [SRC-DA61479D59-L000227](../../tests/test_connector_summary_counters.py#L227) | 227 | `""` | — |
-| [SRC-DA61479D59-L000228](../../tests/test_connector_summary_counters.py#L228) | 228 | `"    diagnostic_json = json.dumps(agent._provider_diagnostics, ensure_ascii=False)"` | — |
-| [SRC-DA61479D59-L000229](../../tests/test_connector_summary_counters.py#L229) | 229 | `"    for secret in (\"query-secret\", \"bearer-secret\", \"access-secret\", \"url-secret\"):"` | — |
-| [SRC-DA61479D59-L000230](../../tests/test_connector_summary_counters.py#L230) | 230 | `"        assert secret not in diagnostic_json"` | — |
-| [SRC-DA61479D59-L000231](../../tests/test_connector_summary_counters.py#L231) | 231 | `"    assert \"[REDACTED]\" in diagnostic_json"` | — |
-| [SRC-DA61479D59-L000232](../../tests/test_connector_summary_counters.py#L232) | 232 | `""` | — |
-| [SRC-DA61479D59-L000233](../../tests/test_connector_summary_counters.py#L233) | 233 | `""` | — |
-| [SRC-DA61479D59-L000234](../../tests/test_connector_summary_counters.py#L234) | 234 | `"def test_connector_summary_separates_raw_candidates_from_filtered_results():"` | — |
-| [SRC-DA61479D59-L000235](../../tests/test_connector_summary_counters.py#L235) | 235 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000236](../../tests/test_connector_summary_counters.py#L236) | 236 | `"    summary = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000237](../../tests/test_connector_summary_counters.py#L237) | 237 | `"        [{"` | — |
-| [SRC-DA61479D59-L000238](../../tests/test_connector_summary_counters.py#L238) | 238 | `"            \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000239](../../tests/test_connector_summary_counters.py#L239) | 239 | `"            \"query\": \"Arabic question with source instructions\","` | — |
-| [SRC-DA61479D59-L000240](../../tests/test_connector_summary_counters.py#L240) | 240 | `"            \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000241](../../tests/test_connector_summary_counters.py#L241) | 241 | `"            \"result_count\": 6,"` | — |
-| [SRC-DA61479D59-L000242](../../tests/test_connector_summary_counters.py#L242) | 242 | `"            \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000243](../../tests/test_connector_summary_counters.py#L243) | 243 | `"            \"rejected_count\": 6,"` | — |
-| [SRC-DA61479D59-L000244](../../tests/test_connector_summary_counters.py#L244) | 244 | `"            \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000245](../../tests/test_connector_summary_counters.py#L245) | 245 | `"                \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000246](../../tests/test_connector_summary_counters.py#L246) | 246 | `"                \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000247](../../tests/test_connector_summary_counters.py#L247) | 247 | `"                \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000248](../../tests/test_connector_summary_counters.py#L248) | 248 | `"                \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000249](../../tests/test_connector_summary_counters.py#L249) | 249 | `"            },"` | — |
-| [SRC-DA61479D59-L000250](../../tests/test_connector_summary_counters.py#L250) | 250 | `"            \"error\": \"all candidates rejected; invalid_url_or_unsafe_target=2, blocked_domain=1, relevance_below_threshold=3\","` | — |
-| [SRC-DA61479D59-L000251](../../tests/test_connector_summary_counters.py#L251) | 251 | `"        }],"` | — |
-| [SRC-DA61479D59-L000252](../../tests/test_connector_summary_counters.py#L252) | 252 | `"        [],"` | — |
-| [SRC-DA61479D59-L000253](../../tests/test_connector_summary_counters.py#L253) | 253 | `"    )"` | — |
-| [SRC-DA61479D59-L000254](../../tests/test_connector_summary_counters.py#L254) | 254 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000255](../../tests/test_connector_summary_counters.py#L255) | 255 | `"    assert bing[\"attempted\"] is True"` | — |
-| [SRC-DA61479D59-L000256](../../tests/test_connector_summary_counters.py#L256) | 256 | `"    assert bing[\"result_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000257](../../tests/test_connector_summary_counters.py#L257) | 257 | `"    assert bing[\"accepted_count\"] == 0"` | — |
-| [SRC-DA61479D59-L000258](../../tests/test_connector_summary_counters.py#L258) | 258 | `"    assert bing[\"rejected_count\"] == 6"` | — |
-| [SRC-DA61479D59-L000259](../../tests/test_connector_summary_counters.py#L259) | 259 | `"    assert bing[\"rejection_counts_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000260](../../tests/test_connector_summary_counters.py#L260) | 260 | `"    assert bing[\"rejection_counts\"] == {"` | — |
-| [SRC-DA61479D59-L000261](../../tests/test_connector_summary_counters.py#L261) | 261 | `"        \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000262](../../tests/test_connector_summary_counters.py#L262) | 262 | `"        \"invalid_url_or_unsafe_target\": 2,"` | — |
-| [SRC-DA61479D59-L000263](../../tests/test_connector_summary_counters.py#L263) | 263 | `"        \"blocked_domain\": 1,"` | — |
-| [SRC-DA61479D59-L000264](../../tests/test_connector_summary_counters.py#L264) | 264 | `"        \"relevance_below_threshold\": 3,"` | — |
-| [SRC-DA61479D59-L000265](../../tests/test_connector_summary_counters.py#L265) | 265 | `"    }"` | — |
-| [SRC-DA61479D59-L000266](../../tests/test_connector_summary_counters.py#L266) | 266 | `"    assert sum(bing[\"rejection_counts\"].values()) == bing[\"rejected_count\"]"` | — |
-| [SRC-DA61479D59-L000267](../../tests/test_connector_summary_counters.py#L267) | 267 | `"    assert bing[\"candidate_rejection_observed\"] is True"` | — |
-| [SRC-DA61479D59-L000268](../../tests/test_connector_summary_counters.py#L268) | 268 | `"    assert bing[\"available_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000269](../../tests/test_connector_summary_counters.py#L269) | 269 | `"    assert bing[\"verified_for_this_request\"] is True"` | — |
-| [SRC-DA61479D59-L000270](../../tests/test_connector_summary_counters.py#L270) | 270 | `""` | — |
-| [SRC-DA61479D59-L000271](../../tests/test_connector_summary_counters.py#L271) | 271 | `""` | — |
-| [SRC-DA61479D59-L000272](../../tests/test_connector_summary_counters.py#L272) | 272 | `"def test_connector_summary_does_not_present_partial_legacy_rejection_counts_as_complete():"` | — |
-| [SRC-DA61479D59-L000273](../../tests/test_connector_summary_counters.py#L273) | 273 | `"    agent = WebAgent()"` | — |
-| [SRC-DA61479D59-L000274](../../tests/test_connector_summary_counters.py#L274) | 274 | `"    summary = agent._connector_status_summary("` | — |
-| [SRC-DA61479D59-L000275](../../tests/test_connector_summary_counters.py#L275) | 275 | `"        ["` | — |
-| [SRC-DA61479D59-L000276](../../tests/test_connector_summary_counters.py#L276) | 276 | `"            {"` | — |
-| [SRC-DA61479D59-L000277](../../tests/test_connector_summary_counters.py#L277) | 277 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000278](../../tests/test_connector_summary_counters.py#L278) | 278 | `"                \"query\": \"first query\","` | — |
-| [SRC-DA61479D59-L000279](../../tests/test_connector_summary_counters.py#L279) | 279 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000280](../../tests/test_connector_summary_counters.py#L280) | 280 | `"                \"result_count\": 3,"` | — |
-| [SRC-DA61479D59-L000281](../../tests/test_connector_summary_counters.py#L281) | 281 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000282](../../tests/test_connector_summary_counters.py#L282) | 282 | `"                \"rejected_count\": 3,"` | — |
-| [SRC-DA61479D59-L000283](../../tests/test_connector_summary_counters.py#L283) | 283 | `"            },"` | — |
-| [SRC-DA61479D59-L000284](../../tests/test_connector_summary_counters.py#L284) | 284 | `"            {"` | — |
-| [SRC-DA61479D59-L000285](../../tests/test_connector_summary_counters.py#L285) | 285 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000286](../../tests/test_connector_summary_counters.py#L286) | 286 | `"                \"query\": \"second query\","` | — |
-| [SRC-DA61479D59-L000287](../../tests/test_connector_summary_counters.py#L287) | 287 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000288](../../tests/test_connector_summary_counters.py#L288) | 288 | `"                \"result_count\": 2,"` | — |
-| [SRC-DA61479D59-L000289](../../tests/test_connector_summary_counters.py#L289) | 289 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000290](../../tests/test_connector_summary_counters.py#L290) | 290 | `"                \"rejected_count\": 2,"` | — |
-| [SRC-DA61479D59-L000291](../../tests/test_connector_summary_counters.py#L291) | 291 | `"                \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000292](../../tests/test_connector_summary_counters.py#L292) | 292 | `"                    \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000293](../../tests/test_connector_summary_counters.py#L293) | 293 | `"                    \"invalid_url_or_unsafe_target\": 0,"` | — |
-| [SRC-DA61479D59-L000294](../../tests/test_connector_summary_counters.py#L294) | 294 | `"                    \"blocked_domain\": 0,"` | — |
-| [SRC-DA61479D59-L000295](../../tests/test_connector_summary_counters.py#L295) | 295 | `"                    \"relevance_below_threshold\": 2,"` | — |
-| [SRC-DA61479D59-L000296](../../tests/test_connector_summary_counters.py#L296) | 296 | `"                },"` | — |
-| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |
-| [SRC-DA61479D59-L000298](../../tests/test_connector_summary_counters.py#L298) | 298 | `"        ],"` | — |
-| [SRC-DA61479D59-L000299](../../tests/test_connector_summary_counters.py#L299) | 299 | `"        [],"` | — |
-| [SRC-DA61479D59-L000300](../../tests/test_connector_summary_counters.py#L300) | 300 | `"    )"` | — |
-| [SRC-DA61479D59-L000301](../../tests/test_connector_summary_counters.py#L301) | 301 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000302](../../tests/test_connector_summary_counters.py#L302) | 302 | `"    assert bing[\"rejected_count\"] == 5"` | — |
-| [SRC-DA61479D59-L000303](../../tests/test_connector_summary_counters.py#L303) | 303 | `"    assert bing[\"rejection_counts_observed\"] is False"` | — |
-| [SRC-DA61479D59-L000304](../../tests/test_connector_summary_counters.py#L304) | 304 | `"    assert bing[\"rejection_counts\"] is None"` | — |
-## اختبارات
-
-### FILE-6BECF5AD00 — [tests/test_connectors_mocked.py](../../tests/test_connectors_mocked.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BECF5AD00-L000001](../../tests/test_connectors_mocked.py#L1) | 1 | `"\"\"\"Connector unit tests with mocked HTTP (no live network required).\"\"\""` | — |
-| [SRC-6BECF5AD00-L000002](../../tests/test_connectors_mocked.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6BECF5AD00-L000003](../../tests/test_connectors_mocked.py#L3) | 3 | `""` | — |
-| [SRC-6BECF5AD00-L000004](../../tests/test_connectors_mocked.py#L4) | 4 | `""` | — |
-| [SRC-6BECF5AD00-L000005](../../tests/test_connectors_mocked.py#L5) | 5 | `"import agents.search_connectors as sc"` | — |
-| [SRC-6BECF5AD00-L000006](../../tests/test_connectors_mocked.py#L6) | 6 | `""` | — |
-| [SRC-6BECF5AD00-L000007](../../tests/test_connectors_mocked.py#L7) | 7 | `""` | — |
-| [SRC-6BECF5AD00-L000008](../../tests/test_connectors_mocked.py#L8) | 8 | `"def test_openalex_parses_mocked_payload(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000009](../../tests/test_connectors_mocked.py#L9) | 9 | `"    payload = {"` | — |
-| [SRC-6BECF5AD00-L000010](../../tests/test_connectors_mocked.py#L10) | 10 | `"        \"results\": ["` | — |
-| [SRC-6BECF5AD00-L000011](../../tests/test_connectors_mocked.py#L11) | 11 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000012](../../tests/test_connectors_mocked.py#L12) | 12 | `"                \"display_name\": \"Electric Vehicles in Egypt\","` | — |
-| [SRC-6BECF5AD00-L000013](../../tests/test_connectors_mocked.py#L13) | 13 | `"                \"id\": \"https://openalex.org/W123\","` | — |
-| [SRC-6BECF5AD00-L000014](../../tests/test_connectors_mocked.py#L14) | 14 | `"                \"primary_location\": {\"landing_page_url\": \"https://example.org/paper\"},"` | — |
-| [SRC-6BECF5AD00-L000015](../../tests/test_connectors_mocked.py#L15) | 15 | `"                \"concepts\": [{\"display_name\": \"Battery\"}],"` | — |
-| [SRC-6BECF5AD00-L000016](../../tests/test_connectors_mocked.py#L16) | 16 | `"                \"publication_date\": \"2024-01-01\","` | — |
-| [SRC-6BECF5AD00-L000017](../../tests/test_connectors_mocked.py#L17) | 17 | `"            }"` | — |
-| [SRC-6BECF5AD00-L000018](../../tests/test_connectors_mocked.py#L18) | 18 | `"        ]"` | — |
-| [SRC-6BECF5AD00-L000019](../../tests/test_connectors_mocked.py#L19) | 19 | `"    }"` | — |
-| [SRC-6BECF5AD00-L000020](../../tests/test_connectors_mocked.py#L20) | 20 | `""` | — |
-| [SRC-6BECF5AD00-L000021](../../tests/test_connectors_mocked.py#L21) | 21 | `"    def fake_json(url, headers=None, timeout=12):"` | — |
-| [SRC-6BECF5AD00-L000022](../../tests/test_connectors_mocked.py#L22) | 22 | `"        return payload"` | — |
-| [SRC-6BECF5AD00-L000023](../../tests/test_connectors_mocked.py#L23) | 23 | `""` | — |
-| [SRC-6BECF5AD00-L000024](../../tests/test_connectors_mocked.py#L24) | 24 | `"    monkeypatch.setattr(sc, \"_http_get_json\", fake_json)"` | — |
-| [SRC-6BECF5AD00-L000025](../../tests/test_connectors_mocked.py#L25) | 25 | `"    rows = sc.search_openalex(\"electric vehicles Egypt\", limit=3)"` | — |
-| [SRC-6BECF5AD00-L000026](../../tests/test_connectors_mocked.py#L26) | 26 | `"    assert len(rows) == 1"` | — |
-| [SRC-6BECF5AD00-L000027](../../tests/test_connectors_mocked.py#L27) | 27 | `"    assert rows[0][\"provider\"] == \"openalex\""` | — |
-| [SRC-6BECF5AD00-L000028](../../tests/test_connectors_mocked.py#L28) | 28 | `"    assert rows[0][\"url\"] == \"https://example.org/paper\""` | — |
-| [SRC-6BECF5AD00-L000029](../../tests/test_connectors_mocked.py#L29) | 29 | `"    assert rows[0][\"page_fetched\"] is False"` | — |
-| [SRC-6BECF5AD00-L000030](../../tests/test_connectors_mocked.py#L30) | 30 | `""` | — |
-| [SRC-6BECF5AD00-L000031](../../tests/test_connectors_mocked.py#L31) | 31 | `""` | — |
-| [SRC-6BECF5AD00-L000032](../../tests/test_connectors_mocked.py#L32) | 32 | `"def test_arxiv_parses_atom(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000033](../../tests/test_connectors_mocked.py#L33) | 33 | `"    xml = \"\"\""` | — |
-| [SRC-6BECF5AD00-L000034](../../tests/test_connectors_mocked.py#L34) | 34 | `"    <feed>"` | — |
-| [SRC-6BECF5AD00-L000035](../../tests/test_connectors_mocked.py#L35) | 35 | `"      <entry>"` | — |
-| [SRC-6BECF5AD00-L000036](../../tests/test_connectors_mocked.py#L36) | 36 | `"        <title>Study of EV Batteries</title>"` | — |
-| [SRC-6BECF5AD00-L000037](../../tests/test_connectors_mocked.py#L37) | 37 | `"        <id>http://arxiv.org/abs/2401.00001</id>"` | — |
-| [SRC-6BECF5AD00-L000038](../../tests/test_connectors_mocked.py#L38) | 38 | `"        <summary>Battery degradation analysis.</summary>"` | — |
-| [SRC-6BECF5AD00-L000039](../../tests/test_connectors_mocked.py#L39) | 39 | `"        <published>2024-01-02T00:00:00Z</published>"` | — |
-| [SRC-6BECF5AD00-L000040](../../tests/test_connectors_mocked.py#L40) | 40 | `"      </entry>"` | — |
-| [SRC-6BECF5AD00-L000041](../../tests/test_connectors_mocked.py#L41) | 41 | `"    </feed>"` | — |
-| [SRC-6BECF5AD00-L000042](../../tests/test_connectors_mocked.py#L42) | 42 | `"    \"\"\""` | — |
-| [SRC-6BECF5AD00-L000043](../../tests/test_connectors_mocked.py#L43) | 43 | `""` | — |
-| [SRC-6BECF5AD00-L000044](../../tests/test_connectors_mocked.py#L44) | 44 | `"    monkeypatch.setattr(sc, \"_http_get_text\", lambda url, timeout=12: xml)"` | — |
-| [SRC-6BECF5AD00-L000045](../../tests/test_connectors_mocked.py#L45) | 45 | `"    rows = sc.search_arxiv(\"battery\", limit=2)"` | — |
-| [SRC-6BECF5AD00-L000046](../../tests/test_connectors_mocked.py#L46) | 46 | `"    assert len(rows) == 1"` | — |
-| [SRC-6BECF5AD00-L000047](../../tests/test_connectors_mocked.py#L47) | 47 | `"    assert rows[0][\"provider\"] == \"arxiv\""` | — |
-| [SRC-6BECF5AD00-L000048](../../tests/test_connectors_mocked.py#L48) | 48 | `"    assert \"arxiv.org\" in rows[0][\"url\"]"` | — |
-| [SRC-6BECF5AD00-L000049](../../tests/test_connectors_mocked.py#L49) | 49 | `""` | — |
-| [SRC-6BECF5AD00-L000050](../../tests/test_connectors_mocked.py#L50) | 50 | `""` | — |
-| [SRC-6BECF5AD00-L000051](../../tests/test_connectors_mocked.py#L51) | 51 | `"def test_connector_failure_returns_empty(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000052](../../tests/test_connectors_mocked.py#L52) | 52 | `"    def boom(*args, **kwargs):"` | — |
-| [SRC-6BECF5AD00-L000053](../../tests/test_connectors_mocked.py#L53) | 53 | `"        raise sc.urllib.error.URLError(\"down\")"` | — |
-| [SRC-6BECF5AD00-L000054](../../tests/test_connectors_mocked.py#L54) | 54 | `""` | — |
-| [SRC-6BECF5AD00-L000055](../../tests/test_connectors_mocked.py#L55) | 55 | `"    monkeypatch.setattr(sc, \"_http_get_json\", boom)"` | — |
-| [SRC-6BECF5AD00-L000056](../../tests/test_connectors_mocked.py#L56) | 56 | `"    assert sc.run_connector(\"openalex\", \"query\") == []"` | — |
-| [SRC-6BECF5AD00-L000057](../../tests/test_connectors_mocked.py#L57) | 57 | `""` | — |
-| [SRC-6BECF5AD00-L000058](../../tests/test_connectors_mocked.py#L58) | 58 | `""` | — |
-| [SRC-6BECF5AD00-L000059](../../tests/test_connectors_mocked.py#L59) | 59 | `"def test_run_free_academic_dedupe_path(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000060](../../tests/test_connectors_mocked.py#L60) | 60 | `"    def fake_run(name, query, limit=4):"` | — |
-| [SRC-6BECF5AD00-L000061](../../tests/test_connectors_mocked.py#L61) | 61 | `"        return ["` | — |
-| [SRC-6BECF5AD00-L000062](../../tests/test_connectors_mocked.py#L62) | 62 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000063](../../tests/test_connectors_mocked.py#L63) | 63 | `"                \"title\": f\"{name}-title\","` | — |
-| [SRC-6BECF5AD00-L000064](../../tests/test_connectors_mocked.py#L64) | 64 | `"                \"url\": f\"https://example.com/{name}\","` | — |
-| [SRC-6BECF5AD00-L000065](../../tests/test_connectors_mocked.py#L65) | 65 | `"                \"snippet\": \"x\","` | — |
-| [SRC-6BECF5AD00-L000066](../../tests/test_connectors_mocked.py#L66) | 66 | `"                \"page_fetched\": False,"` | — |
-| [SRC-6BECF5AD00-L000067](../../tests/test_connectors_mocked.py#L67) | 67 | `"                \"provider\": name,"` | — |
-| [SRC-6BECF5AD00-L000068](../../tests/test_connectors_mocked.py#L68) | 68 | `"                \"provider_rank\": 1,"` | — |
-| [SRC-6BECF5AD00-L000069](../../tests/test_connectors_mocked.py#L69) | 69 | `"                \"search_query\": query,"` | — |
-| [SRC-6BECF5AD00-L000070](../../tests/test_connectors_mocked.py#L70) | 70 | `"                \"published_at\": \"\","` | — |
-| [SRC-6BECF5AD00-L000071](../../tests/test_connectors_mocked.py#L71) | 71 | `"                \"source_class\": \"academic\","` | — |
-| [SRC-6BECF5AD00-L000072](../../tests/test_connectors_mocked.py#L72) | 72 | `"            }"` | — |
-| [SRC-6BECF5AD00-L000073](../../tests/test_connectors_mocked.py#L73) | 73 | `"        ]"` | — |
-| [SRC-6BECF5AD00-L000074](../../tests/test_connectors_mocked.py#L74) | 74 | `""` | — |
-| [SRC-6BECF5AD00-L000075](../../tests/test_connectors_mocked.py#L75) | 75 | `"    monkeypatch.setattr(sc, \"run_connector\", fake_run)"` | — |
-| [SRC-6BECF5AD00-L000076](../../tests/test_connectors_mocked.py#L76) | 76 | `"    rows = sc.run_free_academic_connectors(\"ev egypt\", limit_per=1)"` | — |
-| [SRC-6BECF5AD00-L000077](../../tests/test_connectors_mocked.py#L77) | 77 | `"    assert len(rows) == 3"` | — |
-| [SRC-6BECF5AD00-L000078](../../tests/test_connectors_mocked.py#L78) | 78 | `"    providers = {r[\"provider\"] for r in rows}"` | — |
-| [SRC-6BECF5AD00-L000079](../../tests/test_connectors_mocked.py#L79) | 79 | `"    assert providers == {\"openalex\", \"arxiv\", \"crossref\"}"` | — |
-## اختبارات
-
-### FILE-3D0A619359 — [tests/test_dashboard_security.py](../../tests/test_dashboard_security.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-3D0A619359-L000001](../../tests/test_dashboard_security.py#L1) | 1 | `"\"\"\"Static regression checks for sensitive lead-dashboard browser behavior.\"\"\""` | — |
-| [SRC-3D0A619359-L000002](../../tests/test_dashboard_security.py#L2) | 2 | `"import json"` | — |
-| [SRC-3D0A619359-L000003](../../tests/test_dashboard_security.py#L3) | 3 | `"import re"` | — |
-| [SRC-3D0A619359-L000004](../../tests/test_dashboard_security.py#L4) | 4 | `"from pathlib import Path"` | — |
-| [SRC-3D0A619359-L000005](../../tests/test_dashboard_security.py#L5) | 5 | `""` | — |
-| [SRC-3D0A619359-L000006](../../tests/test_dashboard_security.py#L6) | 6 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-3D0A619359-L000007](../../tests/test_dashboard_security.py#L7) | 7 | `""` | — |
-| [SRC-3D0A619359-L000008](../../tests/test_dashboard_security.py#L8) | 8 | `"DASHBOARD = Path(__file__).resolve().parents[1] / \"web\" / \"dashboard.html\""` | — |
-| [SRC-3D0A619359-L000009](../../tests/test_dashboard_security.py#L9) | 9 | `""` | — |
-| [SRC-3D0A619359-L000010](../../tests/test_dashboard_security.py#L10) | 10 | `""` | — |
-| [SRC-3D0A619359-L000011](../../tests/test_dashboard_security.py#L11) | 11 | `"def test_hosted_lead_dashboard_exchanges_access_token_for_http_only_session():"` | — |
-| [SRC-3D0A619359-L000012](../../tests/test_dashboard_security.py#L12) | 12 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000013](../../tests/test_dashboard_security.py#L13) | 13 | `"    assert 'fetch(\"/api/session\"' in html"` | — |
-| [SRC-3D0A619359-L000014](../../tests/test_dashboard_security.py#L14) | 14 | `"    assert 'JSON.stringify({access_token:token})' in html"` | — |
-| [SRC-3D0A619359-L000015](../../tests/test_dashboard_security.py#L15) | 15 | `"    assert 'credentials:\"same-origin\"' in html"` | — |
-| [SRC-3D0A619359-L000016](../../tests/test_dashboard_security.py#L16) | 16 | `"    assert 'headers.Authorization=\"Bearer \"+token' not in html"` | — |
-| [SRC-3D0A619359-L000017](../../tests/test_dashboard_security.py#L17) | 17 | `"    assert 'localStorage' not in html"` | — |
-| [SRC-3D0A619359-L000018](../../tests/test_dashboard_security.py#L18) | 18 | `"    assert 'sessionStorage' not in html"` | — |
-| [SRC-3D0A619359-L000019](../../tests/test_dashboard_security.py#L19) | 19 | `"    assert '$(\"saveAccessToken\").onclick' in html"` | — |
-| [SRC-3D0A619359-L000020](../../tests/test_dashboard_security.py#L20) | 20 | `""` | — |
-| [SRC-3D0A619359-L000021](../../tests/test_dashboard_security.py#L21) | 21 | `"def test_saved_lead_source_links_reject_non_http_schemes():"` | — |
-| [SRC-3D0A619359-L000022](../../tests/test_dashboard_security.py#L22) | 22 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000023](../../tests/test_dashboard_security.py#L23) | 23 | `"    assert \"function safeSourceUrl(value)\" in html"` | — |
-| [SRC-3D0A619359-L000024](../../tests/test_dashboard_security.py#L24) | 24 | `"    assert '[\"http:\",\"https:\"]' in html"` | — |
-| [SRC-3D0A619359-L000025](../../tests/test_dashboard_security.py#L25) | 25 | `"    assert \"const sourceUrl=safeSourceUrl(l.source_url)\" in html"` | — |
-| [SRC-3D0A619359-L000026](../../tests/test_dashboard_security.py#L26) | 26 | `"    assert \"const sourceLink=sourceUrl?\" in html"` | — |
-| [SRC-3D0A619359-L000027](../../tests/test_dashboard_security.py#L27) | 27 | `""` | — |
-| [SRC-3D0A619359-L000028](../../tests/test_dashboard_security.py#L28) | 28 | `"def test_lead_status_handler_accepts_sha256_hex_lead_ids():"` | — |
-| [SRC-3D0A619359-L000029](../../tests/test_dashboard_security.py#L29) | 29 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000030](../../tests/test_dashboard_security.py#L30) | 30 | `"    assert 'if(!/^[a-f0-9]{24}$/.test(id\|\|\"\"))return;' in html"` | — |
-| [SRC-3D0A619359-L000031](../../tests/test_dashboard_security.py#L31) | 31 | `"    assert 'data-lead-id=\"' in html"` | — |
-| [SRC-3D0A619359-L000032](../../tests/test_dashboard_security.py#L32) | 32 | `""` | — |
-| [SRC-3D0A619359-L000033](../../tests/test_dashboard_security.py#L33) | 33 | `"def test_browser_pages_never_store_access_tokens_in_web_storage():"` | — |
-| [SRC-3D0A619359-L000034](../../tests/test_dashboard_security.py#L34) | 34 | `"    root = Path(__file__).resolve().parents[1] / \"web\""` | — |
-| [SRC-3D0A619359-L000035](../../tests/test_dashboard_security.py#L35) | 35 | `"    for name in (\"agent.html\", \"dashboard.html\"):"` | — |
-| [SRC-3D0A619359-L000036](../../tests/test_dashboard_security.py#L36) | 36 | `"        html = (root / name).read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000037](../../tests/test_dashboard_security.py#L37) | 37 | `"        assert \"localStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000038](../../tests/test_dashboard_security.py#L38) | 38 | `"        assert \"sessionStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000039](../../tests/test_dashboard_security.py#L39) | 39 | `"        assert \"/api/session\" in html"` | — |
-| [SRC-3D0A619359-L000040](../../tests/test_dashboard_security.py#L40) | 40 | `"        assert \"credentials:\\\"same-origin\\\"\" in html"` | — |
-| [SRC-3D0A619359-L000041](../../tests/test_dashboard_security.py#L41) | 41 | `""` | — |
-| [SRC-3D0A619359-L000042](../../tests/test_dashboard_security.py#L42) | 42 | `""` | — |
-| [SRC-3D0A619359-L000043](../../tests/test_dashboard_security.py#L43) | 43 | `""` | — |
-| [SRC-3D0A619359-L000044](../../tests/test_dashboard_security.py#L44) | 44 | `"def test_sales_workspace_uses_http_only_session_and_never_persists_access_token():"` | — |
-| [SRC-3D0A619359-L000045](../../tests/test_dashboard_security.py#L45) | 45 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000046](../../tests/test_dashboard_security.py#L46) | 46 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000047](../../tests/test_dashboard_security.py#L47) | 47 | `""` | — |
-| [SRC-3D0A619359-L000048](../../tests/test_dashboard_security.py#L48) | 48 | `"    assert 'api(\"/api/session\")' in html"` | — |
-| [SRC-3D0A619359-L000049](../../tests/test_dashboard_security.py#L49) | 49 | `"    assert 'credentials:\"same-origin\"' in html"` | — |
-| [SRC-3D0A619359-L000050](../../tests/test_dashboard_security.py#L50) | 50 | `"    assert 'JSON.stringify({access_token:token})' not in html"` | — |
-| [SRC-3D0A619359-L000051](../../tests/test_dashboard_security.py#L51) | 51 | `"    assert \"localStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000052](../../tests/test_dashboard_security.py#L52) | 52 | `"    assert \"sessionStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000053](../../tests/test_dashboard_security.py#L53) | 53 | `"    assert 'api(\"/api/leads?limit=500\")' in html"` | — |
-| [SRC-3D0A619359-L000054](../../tests/test_dashboard_security.py#L54) | 54 | `"    assert 'api(\"/api/health\")' in html"` | — |
-| [SRC-3D0A619359-L000055](../../tests/test_dashboard_security.py#L55) | 55 | `"    assert 'state.activeView===\"system\"' in html"` | — |
-| [SRC-3D0A619359-L000056](../../tests/test_dashboard_security.py#L56) | 56 | `"    assert 'if(canWrite())panel.append(createSignalForm())' in html"` | — |
-| [SRC-3D0A619359-L000057](../../tests/test_dashboard_security.py#L57) | 57 | `"    assert 'if(canWrite())' in html"` | — |
-| [SRC-3D0A619359-L000058](../../tests/test_dashboard_security.py#L58) | 58 | `""` | — |
-| [SRC-3D0A619359-L000059](../../tests/test_dashboard_security.py#L59) | 59 | `""` | — |
-| [SRC-3D0A619359-L000060](../../tests/test_dashboard_security.py#L60) | 60 | `"def test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility():"` | — |
-| [SRC-3D0A619359-L000061](../../tests/test_dashboard_security.py#L61) | 61 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000062](../../tests/test_dashboard_security.py#L62) | 62 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000063](../../tests/test_dashboard_security.py#L63) | 63 | `""` | — |
-| [SRC-3D0A619359-L000064](../../tests/test_dashboard_security.py#L64) | 64 | `"    assert \"Approved direction: Neon Command\" in html"` | — |
-| [SRC-3D0A619359-L000065](../../tests/test_dashboard_security.py#L65) | 65 | `"    assert \"--bg:#070d16\" in html"` | — |
-| [SRC-3D0A619359-L000066](../../tests/test_dashboard_security.py#L66) | 66 | `"    assert \"rgba(74,216,255,.17)\" in html"` | — |
-| [SRC-3D0A619359-L000067](../../tests/test_dashboard_security.py#L67) | 67 | `"    assert \"@media(max-width:1100px)\" in html"` | — |
-| [SRC-3D0A619359-L000068](../../tests/test_dashboard_security.py#L68) | 68 | `"    assert \"@media(max-width:760px)\" in html"` | — |
-| [SRC-3D0A619359-L000069](../../tests/test_dashboard_security.py#L69) | 69 | `"    assert \"@media(max-width:420px)\" in html"` | — |
-| [SRC-3D0A619359-L000070](../../tests/test_dashboard_security.py#L70) | 70 | `"    assert \"prefers-reduced-motion:reduce\" in html"` | — |
-| [SRC-3D0A619359-L000071](../../tests/test_dashboard_security.py#L71) | 71 | `"    assert \"forced-colors:active\" in html"` | — |
-| [SRC-3D0A619359-L000072](../../tests/test_dashboard_security.py#L72) | 72 | `"    assert \"min-height:42px\" in html"` | — |
-| [SRC-3D0A619359-L000073](../../tests/test_dashboard_security.py#L73) | 73 | `"    assert 'href=\"/agent\">وكيل البحث</a>' in html"` | — |
-| [SRC-3D0A619359-L000074](../../tests/test_dashboard_security.py#L74) | 74 | `""` | — |
-| [SRC-3D0A619359-L000075](../../tests/test_dashboard_security.py#L75) | 75 | `"def test_workspace_write_controls_match_supported_membership_roles():"` | — |
-| [SRC-3D0A619359-L000076](../../tests/test_dashboard_security.py#L76) | 76 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000077](../../tests/test_dashboard_security.py#L77) | 77 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000078](../../tests/test_dashboard_security.py#L78) | 78 | `""` | — |
-| [SRC-3D0A619359-L000079](../../tests/test_dashboard_security.py#L79) | 79 | `"    match = re.search(r\"const WRITE_ROLES = (\\[[^\\]]*\\]);\", html)"` | — |
-| [SRC-3D0A619359-L000080](../../tests/test_dashboard_security.py#L80) | 80 | `"    assert match is not None"` | — |
-| [SRC-3D0A619359-L000081](../../tests/test_dashboard_security.py#L81) | 81 | `"    assert set(json.loads(match.group(1))) == set(LeadStore.ALLOWED_ROLES - {\"viewer\"})"` | — |

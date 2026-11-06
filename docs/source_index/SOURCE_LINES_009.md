@@ -4,9 +4,71 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6E58A660BC-L000150 إلى SRC-686F71AA50-L000360
+- النطاق: SRC-8D00DCEC0D-L000560 إلى SRC-686F71AA50-L000158
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-8D00DCEC0D — [agents/sales_domain.py](../../agents/sales_domain.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-8D00DCEC0D-L000560](../../agents/sales_domain.py#L560) | 560 | `""` | — |
+| [SRC-8D00DCEC0D-L000561](../../agents/sales_domain.py#L561) | 561 | `"    location_suffix = \" \".join(market.locations) if market else \"\""` | — |
+| [SRC-8D00DCEC0D-L000562](../../agents/sales_domain.py#L562) | 562 | `"    product_terms = (product.name, *product.aliases)"` | — |
+| [SRC-8D00DCEC0D-L000563](../../agents/sales_domain.py#L563) | 563 | `"    candidates: list[str] = []"` | — |
+| [SRC-8D00DCEC0D-L000564](../../agents/sales_domain.py#L564) | 564 | `""` | — |
+| [SRC-8D00DCEC0D-L000565](../../agents/sales_domain.py#L565) | 565 | `"    for term in product_terms:"` | — |
+| [SRC-8D00DCEC0D-L000566](../../agents/sales_domain.py#L566) | 566 | `"        subject = \" \".join(part for part in (term, location_suffix) if part).strip()"` | — |
+| [SRC-8D00DCEC0D-L000567](../../agents/sales_domain.py#L567) | 567 | `"        if locale in {\"ar\", \"mixed\"}:"` | — |
+| [SRC-8D00DCEC0D-L000568](../../agents/sales_domain.py#L568) | 568 | `"            candidates.extend("` | — |
+| [SRC-8D00DCEC0D-L000569](../../agents/sales_domain.py#L569) | 569 | `"                ("` | — |
+| [SRC-8D00DCEC0D-L000570](../../agents/sales_domain.py#L570) | 570 | `"                    f'\"مطلوب شراء\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000571](../../agents/sales_domain.py#L571) | 571 | `"                    f'\"عايز اشتري\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000572](../../agents/sales_domain.py#L572) | 572 | `"                    f'\"أريد شراء\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000573](../../agents/sales_domain.py#L573) | 573 | `"                    f'\"بدور على\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000574](../../agents/sales_domain.py#L574) | 574 | `"                    f'\"طلب عرض سعر\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000575](../../agents/sales_domain.py#L575) | 575 | `"                    f'site:facebook.com/groups \"{subject}\" (\"مطلوب\" OR \"عايز اشتري\" OR \"بدور على\")',"` | — |
+| [SRC-8D00DCEC0D-L000576](../../agents/sales_domain.py#L576) | 576 | `"                )"` | — |
+| [SRC-8D00DCEC0D-L000577](../../agents/sales_domain.py#L577) | 577 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000578](../../agents/sales_domain.py#L578) | 578 | `"        if locale in {\"en\", \"mixed\"}:"` | — |
+| [SRC-8D00DCEC0D-L000579](../../agents/sales_domain.py#L579) | 579 | `"            candidates.extend("` | — |
+| [SRC-8D00DCEC0D-L000580](../../agents/sales_domain.py#L580) | 580 | `"                ("` | — |
+| [SRC-8D00DCEC0D-L000581](../../agents/sales_domain.py#L581) | 581 | `"                    f'\"looking to buy\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000582](../../agents/sales_domain.py#L582) | 582 | `"                    f'\"want to purchase\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000583](../../agents/sales_domain.py#L583) | 583 | `"                    f'\"request for quotation\" \"{subject}\"',"` | — |
+| [SRC-8D00DCEC0D-L000584](../../agents/sales_domain.py#L584) | 584 | `"                    f'site:linkedin.com/posts \"{subject}\" (\"looking to buy\" OR \"purchase\")',"` | — |
+| [SRC-8D00DCEC0D-L000585](../../agents/sales_domain.py#L585) | 585 | `"                )"` | — |
+| [SRC-8D00DCEC0D-L000586](../../agents/sales_domain.py#L586) | 586 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000587](../../agents/sales_domain.py#L587) | 587 | `""` | — |
+| [SRC-8D00DCEC0D-L000588](../../agents/sales_domain.py#L588) | 588 | `"    # Planner alternatives are supplementary only. Retain one only when it"` | — |
+| [SRC-8D00DCEC0D-L000589](../../agents/sales_domain.py#L589) | 589 | `"    # explicitly mentions a configured product name/alias; do not import an"` | — |
+| [SRC-8D00DCEC0D-L000590](../../agents/sales_domain.py#L590) | 590 | `"    # unrelated sector or generic listing query into this product's search."` | — |
+| [SRC-8D00DCEC0D-L000591](../../agents/sales_domain.py#L591) | 591 | `"    for query in existing_queries:"` | — |
+| [SRC-8D00DCEC0D-L000592](../../agents/sales_domain.py#L592) | 592 | `"        if isinstance(query, str) and product.matching_terms(query):"` | — |
+| [SRC-8D00DCEC0D-L000593](../../agents/sales_domain.py#L593) | 593 | `"            candidates.append(query)"` | — |
+| [SRC-8D00DCEC0D-L000594](../../agents/sales_domain.py#L594) | 594 | `""` | — |
+| [SRC-8D00DCEC0D-L000595](../../agents/sales_domain.py#L595) | 595 | `"    result: list[str] = []"` | — |
+| [SRC-8D00DCEC0D-L000596](../../agents/sales_domain.py#L596) | 596 | `"    seen: set[str] = set()"` | — |
+| [SRC-8D00DCEC0D-L000597](../../agents/sales_domain.py#L597) | 597 | `"    for query in candidates:"` | — |
+| [SRC-8D00DCEC0D-L000598](../../agents/sales_domain.py#L598) | 598 | `"        cleaned = _SPACE.sub(\" \", query).strip()[:500]"` | — |
+| [SRC-8D00DCEC0D-L000599](../../agents/sales_domain.py#L599) | 599 | `"        key = normalize_text(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000600](../../agents/sales_domain.py#L600) | 600 | `"        if cleaned and key and key not in seen:"` | — |
+| [SRC-8D00DCEC0D-L000601](../../agents/sales_domain.py#L601) | 601 | `"            result.append(cleaned)"` | — |
+| [SRC-8D00DCEC0D-L000602](../../agents/sales_domain.py#L602) | 602 | `"            seen.add(key)"` | — |
+| [SRC-8D00DCEC0D-L000603](../../agents/sales_domain.py#L603) | 603 | `"        if len(result) >= limit:"` | — |
+| [SRC-8D00DCEC0D-L000604](../../agents/sales_domain.py#L604) | 604 | `"            break"` | — |
+| [SRC-8D00DCEC0D-L000605](../../agents/sales_domain.py#L605) | 605 | `"    return result"` | — |
+| [SRC-8D00DCEC0D-L000606](../../agents/sales_domain.py#L606) | 606 | `""` | — |
+| [SRC-8D00DCEC0D-L000607](../../agents/sales_domain.py#L607) | 607 | `""` | — |
+| [SRC-8D00DCEC0D-L000608](../../agents/sales_domain.py#L608) | 608 | `"def to_json_dict(value: ProductProfile \| MarketProfile \| DemandEvidence \| DemandSignal \| LeadQualification) -> dict[str, object]:"` | — |
+| [SRC-8D00DCEC0D-L000609](../../agents/sales_domain.py#L609) | 609 | `"    \"\"\"Serialize a supported domain object without silently dropping evidence fields.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000610](../../agents/sales_domain.py#L610) | 610 | `"    if not hasattr(value, \"to_dict\"):"` | — |
+| [SRC-8D00DCEC0D-L000611](../../agents/sales_domain.py#L611) | 611 | `"        raise TypeError(\"unsupported sales domain object\")"` | — |
+| [SRC-8D00DCEC0D-L000612](../../agents/sales_domain.py#L612) | 612 | `"    return value.to_dict()"` | — |
 ## الوكيل والمنطق
 
 ### FILE-6E58A660BC — [agents/search_connectors.py](../../agents/search_connectors.py#L1)
@@ -16,6 +78,155 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6E58A660BC-L000001](../../agents/search_connectors.py#L1) | 1 | `"\"\"\"Free academic search connectors for Omarai (M1).\"\"\""` | — |
+| [SRC-6E58A660BC-L000002](../../agents/search_connectors.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-6E58A660BC-L000003](../../agents/search_connectors.py#L3) | 3 | `""` | — |
+| [SRC-6E58A660BC-L000004](../../agents/search_connectors.py#L4) | 4 | `"import json"` | — |
+| [SRC-6E58A660BC-L000005](../../agents/search_connectors.py#L5) | 5 | `"import os"` | — |
+| [SRC-6E58A660BC-L000006](../../agents/search_connectors.py#L6) | 6 | `"import re"` | — |
+| [SRC-6E58A660BC-L000007](../../agents/search_connectors.py#L7) | 7 | `"import urllib.error"` | — |
+| [SRC-6E58A660BC-L000008](../../agents/search_connectors.py#L8) | 8 | `"import urllib.parse"` | — |
+| [SRC-6E58A660BC-L000009](../../agents/search_connectors.py#L9) | 9 | `"import urllib.request"` | — |
+| [SRC-6E58A660BC-L000010](../../agents/search_connectors.py#L10) | 10 | `"from collections.abc import Callable"` | — |
+| [SRC-6E58A660BC-L000011](../../agents/search_connectors.py#L11) | 11 | `"from typing import Any"` | — |
+| [SRC-6E58A660BC-L000012](../../agents/search_connectors.py#L12) | 12 | `""` | — |
+| [SRC-6E58A660BC-L000013](../../agents/search_connectors.py#L13) | 13 | `"MAX_CONNECTOR_RESULTS = 6"` | — |
+| [SRC-6E58A660BC-L000014](../../agents/search_connectors.py#L14) | 14 | `"MAX_CONNECTOR_RESPONSE_BYTES = 2_000_000"` | — |
+| [SRC-6E58A660BC-L000015](../../agents/search_connectors.py#L15) | 15 | `"DEFAULT_TIMEOUT_SECONDS = 5"` | — |
+| [SRC-6E58A660BC-L000016](../../agents/search_connectors.py#L16) | 16 | `"USER_AGENT = \"OmaraiResearchBot/1.0 (mailto:ops@example.com)\""` | — |
+| [SRC-6E58A660BC-L000017](../../agents/search_connectors.py#L17) | 17 | `"ConnectorFn = Callable[[str, int], list[dict[str, Any]]]"` | — |
+| [SRC-6E58A660BC-L000018](../../agents/search_connectors.py#L18) | 18 | `""` | — |
+| [SRC-6E58A660BC-L000019](../../agents/search_connectors.py#L19) | 19 | `""` | — |
+| [SRC-6E58A660BC-L000020](../../agents/search_connectors.py#L20) | 20 | `"def _clean_text(value: Any, limit: int = 1600) -> str:"` | — |
+| [SRC-6E58A660BC-L000021](../../agents/search_connectors.py#L21) | 21 | `"    if not isinstance(value, str):"` | — |
+| [SRC-6E58A660BC-L000022](../../agents/search_connectors.py#L22) | 22 | `"        return \"\""` | — |
+| [SRC-6E58A660BC-L000023](../../agents/search_connectors.py#L23) | 23 | `"    return re.sub(r\"\\s+\", \" \", value).strip()[:limit]"` | — |
+| [SRC-6E58A660BC-L000024](../../agents/search_connectors.py#L24) | 24 | `""` | — |
+| [SRC-6E58A660BC-L000025](../../agents/search_connectors.py#L25) | 25 | `""` | — |
+| [SRC-6E58A660BC-L000026](../../agents/search_connectors.py#L26) | 26 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
+| [SRC-6E58A660BC-L000027](../../agents/search_connectors.py#L27) | 27 | `"    \"\"\"Fail closed on redirects from fixed academic-provider endpoints.\"\"\""` | — |
+| [SRC-6E58A660BC-L000028](../../agents/search_connectors.py#L28) | 28 | `""` | — |
+| [SRC-6E58A660BC-L000029](../../agents/search_connectors.py#L29) | 29 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
+| [SRC-6E58A660BC-L000030](../../agents/search_connectors.py#L30) | 30 | `"        return None"` | — |
+| [SRC-6E58A660BC-L000031](../../agents/search_connectors.py#L31) | 31 | `""` | — |
+| [SRC-6E58A660BC-L000032](../../agents/search_connectors.py#L32) | 32 | `""` | — |
+| [SRC-6E58A660BC-L000033](../../agents/search_connectors.py#L33) | 33 | `"def _open_provider_request(request: urllib.request.Request, timeout: int):"` | — |
+| [SRC-6E58A660BC-L000034](../../agents/search_connectors.py#L34) | 34 | `"    \"\"\"Open a provider request without following an unchecked redirect.\"\"\""` | — |
+| [SRC-6E58A660BC-L000035](../../agents/search_connectors.py#L35) | 35 | `"    opener = urllib.request.build_opener(_NoRedirectHandler)"` | — |
+| [SRC-6E58A660BC-L000036](../../agents/search_connectors.py#L36) | 36 | `"    return opener.open(request, timeout=timeout)"` | — |
+| [SRC-6E58A660BC-L000037](../../agents/search_connectors.py#L37) | 37 | `""` | — |
+| [SRC-6E58A660BC-L000038](../../agents/search_connectors.py#L38) | 38 | `""` | — |
+| [SRC-6E58A660BC-L000039](../../agents/search_connectors.py#L39) | 39 | `"def _read_bounded(response) -> bytes:"` | — |
+| [SRC-6E58A660BC-L000040](../../agents/search_connectors.py#L40) | 40 | `"    \"\"\"Read at most the configured response ceiling plus one sentinel byte.\"\"\""` | — |
+| [SRC-6E58A660BC-L000041](../../agents/search_connectors.py#L41) | 41 | `"    body = response.read(MAX_CONNECTOR_RESPONSE_BYTES + 1)"` | — |
+| [SRC-6E58A660BC-L000042](../../agents/search_connectors.py#L42) | 42 | `"    if len(body) > MAX_CONNECTOR_RESPONSE_BYTES:"` | — |
+| [SRC-6E58A660BC-L000043](../../agents/search_connectors.py#L43) | 43 | `"        raise ValueError(\"academic connector response exceeds the configured size limit\")"` | — |
+| [SRC-6E58A660BC-L000044](../../agents/search_connectors.py#L44) | 44 | `"    return body"` | — |
+| [SRC-6E58A660BC-L000045](../../agents/search_connectors.py#L45) | 45 | `""` | — |
+| [SRC-6E58A660BC-L000046](../../agents/search_connectors.py#L46) | 46 | `""` | — |
+| [SRC-6E58A660BC-L000047](../../agents/search_connectors.py#L47) | 47 | `"def _http_get_json(url: str, headers: dict[str, str] \| None = None, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> Any:"` | — |
+| [SRC-6E58A660BC-L000048](../../agents/search_connectors.py#L48) | 48 | `"    req_headers = {\"User-Agent\": USER_AGENT, \"Accept\": \"application/json\"}"` | — |
+| [SRC-6E58A660BC-L000049](../../agents/search_connectors.py#L49) | 49 | `"    if headers:"` | — |
+| [SRC-6E58A660BC-L000050](../../agents/search_connectors.py#L50) | 50 | `"        req_headers.update(headers)"` | — |
+| [SRC-6E58A660BC-L000051](../../agents/search_connectors.py#L51) | 51 | `"    request = urllib.request.Request(url, headers=req_headers, method=\"GET\")"` | — |
+| [SRC-6E58A660BC-L000052](../../agents/search_connectors.py#L52) | 52 | `"    with _open_provider_request(request, timeout=timeout) as response:"` | — |
+| [SRC-6E58A660BC-L000053](../../agents/search_connectors.py#L53) | 53 | `"        return json.loads(_read_bounded(response).decode(\"utf-8\", errors=\"replace\"))"` | — |
+| [SRC-6E58A660BC-L000054](../../agents/search_connectors.py#L54) | 54 | `""` | — |
+| [SRC-6E58A660BC-L000055](../../agents/search_connectors.py#L55) | 55 | `""` | — |
+| [SRC-6E58A660BC-L000056](../../agents/search_connectors.py#L56) | 56 | `"def _http_get_text(url: str, timeout: int = DEFAULT_TIMEOUT_SECONDS) -> str:"` | — |
+| [SRC-6E58A660BC-L000057](../../agents/search_connectors.py#L57) | 57 | `"    request = urllib.request.Request(url, headers={\"User-Agent\": USER_AGENT}, method=\"GET\")"` | — |
+| [SRC-6E58A660BC-L000058](../../agents/search_connectors.py#L58) | 58 | `"    with _open_provider_request(request, timeout=timeout) as response:"` | — |
+| [SRC-6E58A660BC-L000059](../../agents/search_connectors.py#L59) | 59 | `"        return _read_bounded(response).decode(\"utf-8\", errors=\"replace\")"` | — |
+| [SRC-6E58A660BC-L000060](../../agents/search_connectors.py#L60) | 60 | `""` | — |
+| [SRC-6E58A660BC-L000061](../../agents/search_connectors.py#L61) | 61 | `""` | — |
+| [SRC-6E58A660BC-L000062](../../agents/search_connectors.py#L62) | 62 | `"def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, query: str, published_at: str = \"\", source_class: str = \"web\") -> dict[str, Any]:"` | — |
+| [SRC-6E58A660BC-L000063](../../agents/search_connectors.py#L63) | 63 | `"    return {"` | — |
+| [SRC-6E58A660BC-L000064](../../agents/search_connectors.py#L64) | 64 | `"        \"title\": _clean_text(title, 300),"` | — |
+| [SRC-6E58A660BC-L000065](../../agents/search_connectors.py#L65) | 65 | `"        \"url\": (url or \"\").strip(),"` | — |
+| [SRC-6E58A660BC-L000066](../../agents/search_connectors.py#L66) | 66 | `"        \"snippet\": _clean_text(snippet, 1600),"` | — |
+| [SRC-6E58A660BC-L000067](../../agents/search_connectors.py#L67) | 67 | `"        \"page_fetched\": False,"` | — |
+| [SRC-6E58A660BC-L000068](../../agents/search_connectors.py#L68) | 68 | `"        \"provider\": provider,"` | — |
+| [SRC-6E58A660BC-L000069](../../agents/search_connectors.py#L69) | 69 | `"        \"provider_rank\": rank,"` | — |
+| [SRC-6E58A660BC-L000070](../../agents/search_connectors.py#L70) | 70 | `"        \"search_query\": query,"` | — |
+| [SRC-6E58A660BC-L000071](../../agents/search_connectors.py#L71) | 71 | `"        \"published_at\": published_at or \"\","` | — |
+| [SRC-6E58A660BC-L000072](../../agents/search_connectors.py#L72) | 72 | `"        \"source_class\": source_class,"` | — |
+| [SRC-6E58A660BC-L000073](../../agents/search_connectors.py#L73) | 73 | `"    }"` | — |
+| [SRC-6E58A660BC-L000074](../../agents/search_connectors.py#L74) | 74 | `""` | — |
+| [SRC-6E58A660BC-L000075](../../agents/search_connectors.py#L75) | 75 | `""` | — |
+| [SRC-6E58A660BC-L000076](../../agents/search_connectors.py#L76) | 76 | `"def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000077](../../agents/search_connectors.py#L77) | 77 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000078](../../agents/search_connectors.py#L78) | 78 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000079](../../agents/search_connectors.py#L79) | 79 | `"    params = urllib.parse.urlencode({\"search\": query.strip()[:240], \"per_page\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"OPENALEX_MAILTO\", \"ops@example.com\")})"` | — |
+| [SRC-6E58A660BC-L000080](../../agents/search_connectors.py#L80) | 80 | `"    data = _http_get_json(f\"https://api.openalex.org/works?{params}\")"` | — |
+| [SRC-6E58A660BC-L000081](../../agents/search_connectors.py#L81) | 81 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000082](../../agents/search_connectors.py#L82) | 82 | `"    for item in data.get(\"results\", [])[:limit]:"` | — |
+| [SRC-6E58A660BC-L000083](../../agents/search_connectors.py#L83) | 83 | `"        if not isinstance(item, dict):"` | — |
+| [SRC-6E58A660BC-L000084](../../agents/search_connectors.py#L84) | 84 | `"            continue"` | — |
+| [SRC-6E58A660BC-L000085](../../agents/search_connectors.py#L85) | 85 | `"        title = item.get(\"display_name\") or \"\""` | — |
+| [SRC-6E58A660BC-L000086](../../agents/search_connectors.py#L86) | 86 | `"        url = \"\""` | — |
+| [SRC-6E58A660BC-L000087](../../agents/search_connectors.py#L87) | 87 | `"        primary = item.get(\"primary_location\") or {}"` | — |
+| [SRC-6E58A660BC-L000088](../../agents/search_connectors.py#L88) | 88 | `"        if isinstance(primary, dict) and primary.get(\"landing_page_url\"):"` | — |
+| [SRC-6E58A660BC-L000089](../../agents/search_connectors.py#L89) | 89 | `"            url = str(primary.get(\"landing_page_url\"))"` | — |
+| [SRC-6E58A660BC-L000090](../../agents/search_connectors.py#L90) | 90 | `"        elif item.get(\"id\"):"` | — |
+| [SRC-6E58A660BC-L000091](../../agents/search_connectors.py#L91) | 91 | `"            url = str(item.get(\"id\"))"` | — |
+| [SRC-6E58A660BC-L000092](../../agents/search_connectors.py#L92) | 92 | `"        concepts = \", \".join(str(c.get(\"display_name\", \"\")) for c in (item.get(\"concepts\") or [])[:5] if isinstance(c, dict))"` | — |
+| [SRC-6E58A660BC-L000093](../../agents/search_connectors.py#L93) | 93 | `"        snippet = f\"{title}. {concepts}\".strip(\". \")"` | — |
+| [SRC-6E58A660BC-L000094](../../agents/search_connectors.py#L94) | 94 | `"        if title and url:"` | — |
+| [SRC-6E58A660BC-L000095](../../agents/search_connectors.py#L95) | 95 | `"            rows.append(_result(title=title, url=url, snippet=snippet or title, provider=\"openalex\", rank=len(rows) + 1, query=query, published_at=str(item.get(\"publication_date\") or \"\"), source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000096](../../agents/search_connectors.py#L96) | 96 | `"    return rows"` | — |
+| [SRC-6E58A660BC-L000097](../../agents/search_connectors.py#L97) | 97 | `""` | — |
+| [SRC-6E58A660BC-L000098](../../agents/search_connectors.py#L98) | 98 | `""` | — |
+| [SRC-6E58A660BC-L000099](../../agents/search_connectors.py#L99) | 99 | `"def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000100](../../agents/search_connectors.py#L100) | 100 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000101](../../agents/search_connectors.py#L101) | 101 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000102](../../agents/search_connectors.py#L102) | 102 | `"    params = urllib.parse.urlencode({\"search_query\": f\"all:{query.strip()[:200]}\", \"start\": 0, \"max_results\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})"` | — |
+| [SRC-6E58A660BC-L000103](../../agents/search_connectors.py#L103) | 103 | `"    xml_text = _http_get_text(f\"https://export.arxiv.org/api/query?{params}\")"` | — |
+| [SRC-6E58A660BC-L000104](../../agents/search_connectors.py#L104) | 104 | `"    entries = re.findall(r\"<entry>(.*?)</entry>\", xml_text, flags=re.DOTALL)"` | — |
+| [SRC-6E58A660BC-L000105](../../agents/search_connectors.py#L105) | 105 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000106](../../agents/search_connectors.py#L106) | 106 | `"    for entry in entries[:limit]:"` | — |
+| [SRC-6E58A660BC-L000107](../../agents/search_connectors.py#L107) | 107 | `"        title_m = re.search(r\"<title>(.*?)</title>\", entry, re.DOTALL)"` | — |
+| [SRC-6E58A660BC-L000108](../../agents/search_connectors.py#L108) | 108 | `"        link_m = re.search(r\"<id>(https?://arxiv\\.org/abs/[^<]+)</id>\", entry)"` | — |
+| [SRC-6E58A660BC-L000109](../../agents/search_connectors.py#L109) | 109 | `"        summary_m = re.search(r\"<summary>(.*?)</summary>\", entry, re.DOTALL)"` | — |
+| [SRC-6E58A660BC-L000110](../../agents/search_connectors.py#L110) | 110 | `"        published_m = re.search(r\"<published>([^<]+)</published>\", entry)"` | — |
+| [SRC-6E58A660BC-L000111](../../agents/search_connectors.py#L111) | 111 | `"        title = _clean_text(title_m.group(1) if title_m else \"\")"` | — |
+| [SRC-6E58A660BC-L000112](../../agents/search_connectors.py#L112) | 112 | `"        link = link_m.group(1) if link_m else \"\""` | — |
+| [SRC-6E58A660BC-L000113](../../agents/search_connectors.py#L113) | 113 | `"        summary = _clean_text(summary_m.group(1) if summary_m else \"\", 1600)"` | — |
+| [SRC-6E58A660BC-L000114](../../agents/search_connectors.py#L114) | 114 | `"        published = published_m.group(1) if published_m else \"\""` | — |
+| [SRC-6E58A660BC-L000115](../../agents/search_connectors.py#L115) | 115 | `"        if title and link:"` | — |
+| [SRC-6E58A660BC-L000116](../../agents/search_connectors.py#L116) | 116 | `"            rows.append(_result(title=title, url=link, snippet=summary or title, provider=\"arxiv\", rank=len(rows) + 1, query=query, published_at=published, source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000117](../../agents/search_connectors.py#L117) | 117 | `"    return rows"` | — |
+| [SRC-6E58A660BC-L000118](../../agents/search_connectors.py#L118) | 118 | `""` | — |
+| [SRC-6E58A660BC-L000119](../../agents/search_connectors.py#L119) | 119 | `""` | — |
+| [SRC-6E58A660BC-L000120](../../agents/search_connectors.py#L120) | 120 | `"def search_crossref(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000121](../../agents/search_connectors.py#L121) | 121 | `"    if not isinstance(query, str) or not query.strip():"` | — |
+| [SRC-6E58A660BC-L000122](../../agents/search_connectors.py#L122) | 122 | `"        return []"` | — |
+| [SRC-6E58A660BC-L000123](../../agents/search_connectors.py#L123) | 123 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"rows\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"mailto\": os.getenv(\"CROSSREF_MAILTO\", \"ops@example.com\")})"` | — |
+| [SRC-6E58A660BC-L000124](../../agents/search_connectors.py#L124) | 124 | `"    data = _http_get_json(f\"https://api.crossref.org/works?{params}\", headers={\"User-Agent\": USER_AGENT})"` | — |
+| [SRC-6E58A660BC-L000125](../../agents/search_connectors.py#L125) | 125 | `"    items = ((data.get(\"message\") or {}).get(\"items\") or [])[:limit]"` | — |
+| [SRC-6E58A660BC-L000126](../../agents/search_connectors.py#L126) | 126 | `"    rows: list[dict[str, Any]] = []"` | — |
+| [SRC-6E58A660BC-L000127](../../agents/search_connectors.py#L127) | 127 | `"    for item in items:"` | — |
+| [SRC-6E58A660BC-L000128](../../agents/search_connectors.py#L128) | 128 | `"        if not isinstance(item, dict):"` | — |
+| [SRC-6E58A660BC-L000129](../../agents/search_connectors.py#L129) | 129 | `"            continue"` | — |
+| [SRC-6E58A660BC-L000130](../../agents/search_connectors.py#L130) | 130 | `"        title_list = item.get(\"title\") or []"` | — |
+| [SRC-6E58A660BC-L000131](../../agents/search_connectors.py#L131) | 131 | `"        title = title_list[0] if isinstance(title_list, list) and title_list else \"\""` | — |
+| [SRC-6E58A660BC-L000132](../../agents/search_connectors.py#L132) | 132 | `"        url = str(item.get(\"URL\") or \"\")"` | — |
+| [SRC-6E58A660BC-L000133](../../agents/search_connectors.py#L133) | 133 | `"        container_list = item.get(\"container-title\") or []"` | — |
+| [SRC-6E58A660BC-L000134](../../agents/search_connectors.py#L134) | 134 | `"        container = container_list[0] if isinstance(container_list, list) and container_list else \"\""` | — |
+| [SRC-6E58A660BC-L000135](../../agents/search_connectors.py#L135) | 135 | `"        year = \"\""` | — |
+| [SRC-6E58A660BC-L000136](../../agents/search_connectors.py#L136) | 136 | `"        issued = item.get(\"issued\") or {}"` | — |
+| [SRC-6E58A660BC-L000137](../../agents/search_connectors.py#L137) | 137 | `"        if isinstance(issued, dict) and issued.get(\"date-parts\"):"` | — |
+| [SRC-6E58A660BC-L000138](../../agents/search_connectors.py#L138) | 138 | `"            try:"` | — |
+| [SRC-6E58A660BC-L000139](../../agents/search_connectors.py#L139) | 139 | `"                year = str(issued[\"date-parts\"][0][0])"` | — |
+| [SRC-6E58A660BC-L000140](../../agents/search_connectors.py#L140) | 140 | `"            except (IndexError, TypeError, KeyError):"` | — |
+| [SRC-6E58A660BC-L000141](../../agents/search_connectors.py#L141) | 141 | `"                year = \"\""` | — |
+| [SRC-6E58A660BC-L000142](../../agents/search_connectors.py#L142) | 142 | `"        snippet = _clean_text(f\"{title}. {container} {year}\".strip())"` | — |
+| [SRC-6E58A660BC-L000143](../../agents/search_connectors.py#L143) | 143 | `"        if title and url:"` | — |
+| [SRC-6E58A660BC-L000144](../../agents/search_connectors.py#L144) | 144 | `"            rows.append(_result(title=title, url=url, snippet=snippet, provider=\"crossref\", rank=len(rows) + 1, query=query, published_at=year, source_class=\"academic\"))"` | — |
+| [SRC-6E58A660BC-L000145](../../agents/search_connectors.py#L145) | 145 | `"    return rows"` | — |
+| [SRC-6E58A660BC-L000146](../../agents/search_connectors.py#L146) | 146 | `""` | — |
+| [SRC-6E58A660BC-L000147](../../agents/search_connectors.py#L147) | 147 | `""` | — |
+| [SRC-6E58A660BC-L000148](../../agents/search_connectors.py#L148) | 148 | `"def search_semantic_scholar(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
+| [SRC-6E58A660BC-L000149](../../agents/search_connectors.py#L149) | 149 | `"    if not isinstance(query, str) or not query.strip():"` | — |
 | [SRC-6E58A660BC-L000150](../../agents/search_connectors.py#L150) | 150 | `"        return []"` | — |
 | [SRC-6E58A660BC-L000151](../../agents/search_connectors.py#L151) | 151 | `"    key = os.getenv(\"SEMANTIC_SCHOLAR_API_KEY\", \"\").strip()"` | — |
 | [SRC-6E58A660BC-L000152](../../agents/search_connectors.py#L152) | 152 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"limit\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"fields\": \"title,url,abstract,year,externalIds\"})"` | — |
@@ -632,205 +843,3 @@
 | [SRC-686F71AA50-L000156](../../agents/task_understanding.py#L156) | 156 | `"    ),"` | — |
 | [SRC-686F71AA50-L000157](../../agents/task_understanding.py#L157) | 157 | `"    \"current_information\": ("` | — |
 | [SRC-686F71AA50-L000158](../../agents/task_understanding.py#L158) | 158 | `"        \"اليوم\", \"النهارده\", \"النهاردة\", \"دلوقتي\", \"الان\", \"حاليا\", \"احدث\","` | — |
-| [SRC-686F71AA50-L000159](../../agents/task_understanding.py#L159) | 159 | `"        \"اخر الاخبار\", \"الاسعار الحاليه\", \"المواعيد الحاليه\", \"في الوقت الحالي\","` | — |
-| [SRC-686F71AA50-L000160](../../agents/task_understanding.py#L160) | 160 | `"        \"today\", \"right now\", \"currently\", \"latest\", \"breaking news\", \"current price\","` | — |
-| [SRC-686F71AA50-L000161](../../agents/task_understanding.py#L161) | 161 | `"        \"current hours\", \"this week\", \"this month\","` | — |
-| [SRC-686F71AA50-L000162](../../agents/task_understanding.py#L162) | 162 | `"    ),"` | — |
-| [SRC-686F71AA50-L000163](../../agents/task_understanding.py#L163) | 163 | `"    \"lead_generation\": ("` | — |
-| [SRC-686F71AA50-L000164](../../agents/task_understanding.py#L164) | 164 | `"        \"عميل محتمل\", \"عملاء محتملين\", \"ابحث عن مشترين\", \"ابحث عن عميل\","` | — |
-| [SRC-686F71AA50-L000165](../../agents/task_understanding.py#L165) | 165 | `"        \"دور على عملاء\", \"buyers looking to buy\", \"find prospects\", \"lead generation\","` | — |
-| [SRC-686F71AA50-L000166](../../agents/task_understanding.py#L166) | 166 | `"        \"prospective customers\","` | — |
-| [SRC-686F71AA50-L000167](../../agents/task_understanding.py#L167) | 167 | `"    ),"` | — |
-| [SRC-686F71AA50-L000168](../../agents/task_understanding.py#L168) | 168 | `"    \"recommendation\": ("` | — |
-| [SRC-686F71AA50-L000169](../../agents/task_understanding.py#L169) | 169 | `"        \"رشح\", \"ترشيح\", \"تنصحني\", \"هل اشتري\", \"اختار ايه\", \"افضل خيار\","` | — |
-| [SRC-686F71AA50-L000170](../../agents/task_understanding.py#L170) | 170 | `"        \"recommend\", \"recommendation\", \"should i buy\", \"best option\", \"what should i choose\","` | — |
-| [SRC-686F71AA50-L000171](../../agents/task_understanding.py#L171) | 171 | `"    ),"` | — |
-| [SRC-686F71AA50-L000172](../../agents/task_understanding.py#L172) | 172 | `"    \"find_or_discover\": ("` | — |
-| [SRC-686F71AA50-L000173](../../agents/task_understanding.py#L173) | 173 | `"        \"ابحث عن\", \"دور على\", \"دورلي على\", \"اعثر على\", \"هات رابط\", \"هاتلي\","` | — |
-| [SRC-686F71AA50-L000174](../../agents/task_understanding.py#L174) | 174 | `"        \"فين الاقي\", \"اماكن بيع\", \"ابحث لي عن\", \"find\", \"search for\", \"look up\","` | — |
-| [SRC-686F71AA50-L000175](../../agents/task_understanding.py#L175) | 175 | `"        \"where can i find\", \"list of\","` | — |
-| [SRC-686F71AA50-L000176](../../agents/task_understanding.py#L176) | 176 | `"    ),"` | — |
-| [SRC-686F71AA50-L000177](../../agents/task_understanding.py#L177) | 177 | `"    \"medical_information\": ("` | — |
-| [SRC-686F71AA50-L000178](../../agents/task_understanding.py#L178) | 178 | `"        \"اعراض\", \"أعراض\", \"جرعة\", \"جرعات\", \"دواء\", \"ادوية\", \"علاج\", \"تشخيص\","` | — |
-| [SRC-686F71AA50-L000179](../../agents/task_understanding.py#L179) | 179 | `"        \"medical symptoms\", \"dosage\", \"medicine\", \"medication\", \"treatment\", \"diagnosis\","` | — |
-| [SRC-686F71AA50-L000180](../../agents/task_understanding.py#L180) | 180 | `"    ),"` | — |
-| [SRC-686F71AA50-L000181](../../agents/task_understanding.py#L181) | 181 | `"    \"legal_information\": ("` | — |
-| [SRC-686F71AA50-L000182](../../agents/task_understanding.py#L182) | 182 | `"        \"قانون\", \"قانوني\", \"نص قانوني\", \"عقد\", \"دعوى\", \"لائحة\", \"تشريع\","` | — |
-| [SRC-686F71AA50-L000183](../../agents/task_understanding.py#L183) | 183 | `"        \"legal advice\", \"law\", \"contract\", \"lawsuit\", \"regulation\", \"legislation\","` | — |
-| [SRC-686F71AA50-L000184](../../agents/task_understanding.py#L184) | 184 | `"    ),"` | — |
-| [SRC-686F71AA50-L000185](../../agents/task_understanding.py#L185) | 185 | `"    \"coding_or_technical_design\": ("` | — |
-| [SRC-686F71AA50-L000186](../../agents/task_understanding.py#L186) | 186 | `"        \"اكتب كود\", \"برمج\", \"كود بايثون\", \"اشرح الكود\", \"راجع الكود\","` | — |
-| [SRC-686F71AA50-L000187](../../agents/task_understanding.py#L187) | 187 | `"        \"الكود التالي\", \"تصميم api\", \"اكتب سكربت\", \"code\", \"programming\","` | — |
-| [SRC-686F71AA50-L000188](../../agents/task_understanding.py#L188) | 188 | `"        \"python code\", \"javascript\", \"api design\", \"stack trace\", \"unit test\","` | — |
-| [SRC-686F71AA50-L000189](../../agents/task_understanding.py#L189) | 189 | `"        \"refactor\", \"debug this code\","` | — |
-| [SRC-686F71AA50-L000190](../../agents/task_understanding.py#L190) | 190 | `"    ),"` | — |
-| [SRC-686F71AA50-L000191](../../agents/task_understanding.py#L191) | 191 | `"    \"data_analysis\": ("` | — |
-| [SRC-686F71AA50-L000192](../../agents/task_understanding.py#L192) | 192 | `"        \"حلل البيانات\", \"تحليل البيانات\", \"ملف csv\", \"تحليل جدول\", \"احسب المتوسط\","` | — |
-| [SRC-686F71AA50-L000193](../../agents/task_understanding.py#L193) | 193 | `"        \"data analysis\", \"analyze data\", \"analyse data\", \"dataset\", \"spreadsheet\","` | — |
-| [SRC-686F71AA50-L000194](../../agents/task_understanding.py#L194) | 194 | `"        \"csv file\", \"trend analysis\", \"calculate average\", \"pivot table\","` | — |
-| [SRC-686F71AA50-L000195](../../agents/task_understanding.py#L195) | 195 | `"    ),"` | — |
-| [SRC-686F71AA50-L000196](../../agents/task_understanding.py#L196) | 196 | `"    \"calculation\": ("` | — |
-| [SRC-686F71AA50-L000197](../../agents/task_understanding.py#L197) | 197 | `"        \"احسب\", \"كم يساوي\", \"ما ناتج\", \"حساب النسبة\", \"احسب الفرق\","` | — |
-| [SRC-686F71AA50-L000198](../../agents/task_understanding.py#L198) | 198 | `"        \"calculate\", \"compute\", \"what is the result\", \"percentage calculation\","` | — |
-| [SRC-686F71AA50-L000199](../../agents/task_understanding.py#L199) | 199 | `"        \"how many\", \"how much is\","` | — |
-| [SRC-686F71AA50-L000200](../../agents/task_understanding.py#L200) | 200 | `"    ),"` | — |
-| [SRC-686F71AA50-L000201](../../agents/task_understanding.py#L201) | 201 | `"    \"translation\": ("` | — |
-| [SRC-686F71AA50-L000202](../../agents/task_understanding.py#L202) | 202 | `"        \"ترجم\", \"ترجمة\", \"ترجم إلى\", \"ترجم للانجليزية\", \"ترجم للعربية\","` | — |
-| [SRC-686F71AA50-L000203](../../agents/task_understanding.py#L203) | 203 | `"        \"translate\", \"translation\", \"translate into\", \"localize this\","` | — |
-| [SRC-686F71AA50-L000204](../../agents/task_understanding.py#L204) | 204 | `"    ),"` | — |
-| [SRC-686F71AA50-L000205](../../agents/task_understanding.py#L205) | 205 | `"    \"writing_or_editing\": ("` | — |
-| [SRC-686F71AA50-L000206](../../agents/task_understanding.py#L206) | 206 | `"        \"اكتب\", \"اكتب رسالة\", \"اكتب بريد\", \"اعد صياغة\", \"أعد صياغة\","` | — |
-| [SRC-686F71AA50-L000207](../../agents/task_understanding.py#L207) | 207 | `"        \"صحح لغويا\", \"راجع النص\", \"حسن الصياغة\", \"draft\", \"write\", \"rewrite\","` | — |
-| [SRC-686F71AA50-L000208](../../agents/task_understanding.py#L208) | 208 | `"        \"proofread\", \"edit this\", \"polish this\", \"compose an email\","` | — |
-| [SRC-686F71AA50-L000209](../../agents/task_understanding.py#L209) | 209 | `"    ),"` | — |
-| [SRC-686F71AA50-L000210](../../agents/task_understanding.py#L210) | 210 | `"    \"planning\": ("` | — |
-| [SRC-686F71AA50-L000211](../../agents/task_understanding.py#L211) | 211 | `"        \"ضع خطة\", \"خطة عمل\", \"خطة زمنية\", \"جدول زمني\", \"خطوات تنفيذ\","` | — |
-| [SRC-686F71AA50-L000212](../../agents/task_understanding.py#L212) | 212 | `"        \"نظم لي\", \"رتب لي\", \"plan\", \"planning\", \"roadmap\", \"itinerary\","` | — |
-| [SRC-686F71AA50-L000213](../../agents/task_understanding.py#L213) | 213 | `"        \"project schedule\", \"timeline\", \"project plan\","` | — |
-| [SRC-686F71AA50-L000214](../../agents/task_understanding.py#L214) | 214 | `"    ),"` | — |
-| [SRC-686F71AA50-L000215](../../agents/task_understanding.py#L215) | 215 | `"    \"creative_generation\": ("` | — |
-| [SRC-686F71AA50-L000216](../../agents/task_understanding.py#L216) | 216 | `"        \"اكتب قصة\", \"قصة قصيرة\", \"قصيدة\", \"سيناريو\", \"اقترح افكار\","` | — |
-| [SRC-686F71AA50-L000217](../../agents/task_understanding.py#L217) | 217 | `"        \"اقترح أفكار\", \"عصف ذهني\", \"brainstorm\", \"creative writing\","` | — |
-| [SRC-686F71AA50-L000218](../../agents/task_understanding.py#L218) | 218 | `"        \"write a story\", \"poem\", \"generate ideas\","` | — |
-| [SRC-686F71AA50-L000219](../../agents/task_understanding.py#L219) | 219 | `"    ),"` | — |
-| [SRC-686F71AA50-L000220](../../agents/task_understanding.py#L220) | 220 | `"    \"explain_or_define\": ("` | — |
-| [SRC-686F71AA50-L000221](../../agents/task_understanding.py#L221) | 221 | `"        \"ما معنى\", \"يعني ايه\", \"ما هو\", \"ما هي\", \"اشرح\", \"وضح مفهوم\","` | — |
-| [SRC-686F71AA50-L000222](../../agents/task_understanding.py#L222) | 222 | `"        \"what is\", \"what does\", \"explain\", \"define\","` | — |
-| [SRC-686F71AA50-L000223](../../agents/task_understanding.py#L223) | 223 | `"    ),"` | — |
-| [SRC-686F71AA50-L000224](../../agents/task_understanding.py#L224) | 224 | `"    \"general_research\": ("` | — |
-| [SRC-686F71AA50-L000225](../../agents/task_understanding.py#L225) | 225 | `"        \"بحث عميق\", \"بحث شامل\", \"بحث معمق\", \"تحقق من\", \"مصادر موثوقه\","` | — |
-| [SRC-686F71AA50-L000226](../../agents/task_understanding.py#L226) | 226 | `"        \"اذكر المصادر\", \"مع مصادر\", \"بالمصادر\", \"deep research\", \"research\","` | — |
-| [SRC-686F71AA50-L000227](../../agents/task_understanding.py#L227) | 227 | `"        \"verify\", \"fact check\", \"with sources\", \"cite sources\","` | — |
-| [SRC-686F71AA50-L000228](../../agents/task_understanding.py#L228) | 228 | `"    ),"` | — |
-| [SRC-686F71AA50-L000229](../../agents/task_understanding.py#L229) | 229 | `"    \"output_concise\": ("` | — |
-| [SRC-686F71AA50-L000230](../../agents/task_understanding.py#L230) | 230 | `"        \"باختصار\", \"بإيجاز\", \"مختصر\", \"من غير إطالة\", \"بدون إطالة\","` | — |
-| [SRC-686F71AA50-L000231](../../agents/task_understanding.py#L231) | 231 | `"        \"briefly\", \"in brief\", \"concise\", \"short answer\", \"keep it short\","` | — |
-| [SRC-686F71AA50-L000232](../../agents/task_understanding.py#L232) | 232 | `"    ),"` | — |
-| [SRC-686F71AA50-L000233](../../agents/task_understanding.py#L233) | 233 | `"    \"output_detailed\": ("` | — |
-| [SRC-686F71AA50-L000234](../../agents/task_understanding.py#L234) | 234 | `"        \"بالتفصيل\", \"شرح وافي\", \"اشرح بالتفصيل\", \"خطوة بخطوة\","` | — |
-| [SRC-686F71AA50-L000235](../../agents/task_understanding.py#L235) | 235 | `"        \"in detail\", \"step by step\", \"comprehensive explanation\", \"walkthrough\","` | — |
-| [SRC-686F71AA50-L000236](../../agents/task_understanding.py#L236) | 236 | `"    ),"` | — |
-| [SRC-686F71AA50-L000237](../../agents/task_understanding.py#L237) | 237 | `"    \"output_examples\": ("` | — |
-| [SRC-686F71AA50-L000238](../../agents/task_understanding.py#L238) | 238 | `"        \"مع مثال\", \"امثلة\", \"مثال عملي\", \"بأمثلة\", \"for example\","` | — |
-| [SRC-686F71AA50-L000239](../../agents/task_understanding.py#L239) | 239 | `"        \"give examples\", \"practical example\", \"worked example\","` | — |
-| [SRC-686F71AA50-L000240](../../agents/task_understanding.py#L240) | 240 | `"    ),"` | — |
-| [SRC-686F71AA50-L000241](../../agents/task_understanding.py#L241) | 241 | `"    \"output_table\": ("` | — |
-| [SRC-686F71AA50-L000242](../../agents/task_understanding.py#L242) | 242 | `"        \"في جدول\", \"اعمل جدول\", \"جدول مقارنة\", \"as a table\", \"in a table\","` | — |
-| [SRC-686F71AA50-L000243](../../agents/task_understanding.py#L243) | 243 | `"        \"comparison table\", \"tabulate\","` | — |
-| [SRC-686F71AA50-L000244](../../agents/task_understanding.py#L244) | 244 | `"    ),"` | — |
-| [SRC-686F71AA50-L000245](../../agents/task_understanding.py#L245) | 245 | `"    \"output_bullets\": ("` | — |
-| [SRC-686F71AA50-L000246](../../agents/task_understanding.py#L246) | 246 | `"        \"نقاط\", \"على شكل نقاط\", \"قائمة\", \"bullet points\", \"as a list\","` | — |
-| [SRC-686F71AA50-L000247](../../agents/task_understanding.py#L247) | 247 | `"        \"in bullets\", \"checklist\","` | — |
-| [SRC-686F71AA50-L000248](../../agents/task_understanding.py#L248) | 248 | `"    ),"` | — |
-| [SRC-686F71AA50-L000249](../../agents/task_understanding.py#L249) | 249 | `"    \"output_beginner_friendly\": ("` | — |
-| [SRC-686F71AA50-L000250](../../agents/task_understanding.py#L250) | 250 | `"        \"ببساطة\", \"بشرح بسيط\", \"للمبتدئين\", \"من الصفر\", \"بلغة سهلة\","` | — |
-| [SRC-686F71AA50-L000251](../../agents/task_understanding.py#L251) | 251 | `"        \"simple language\", \"beginner friendly\", \"beginner-friendly\","` | — |
-| [SRC-686F71AA50-L000252](../../agents/task_understanding.py#L252) | 252 | `"        \"explain like i'm five\", \"eli5\","` | — |
-| [SRC-686F71AA50-L000253](../../agents/task_understanding.py#L253) | 253 | `"    ),"` | — |
-| [SRC-686F71AA50-L000254](../../agents/task_understanding.py#L254) | 254 | `"    \"output_citations\": ("` | — |
-| [SRC-686F71AA50-L000255](../../agents/task_understanding.py#L255) | 255 | `"        \"مع مصادر\", \"اذكر المصادر\", \"مصادر موثوقة\", \"روابط مباشرة\","` | — |
-| [SRC-686F71AA50-L000256](../../agents/task_understanding.py#L256) | 256 | `"        \"with sources\", \"cite sources\", \"include references\", \"with citations\","` | — |
-| [SRC-686F71AA50-L000257](../../agents/task_understanding.py#L257) | 257 | `"    ),"` | — |
-| [SRC-686F71AA50-L000258](../../agents/task_understanding.py#L258) | 258 | `"    \"output_links\": ("` | — |
-| [SRC-686F71AA50-L000259](../../agents/task_understanding.py#L259) | 259 | `"        \"رابط مباشر\", \"روابط مباشرة\", \"هات الرابط\", \"لينك\", \"url\","` | — |
-| [SRC-686F71AA50-L000260](../../agents/task_understanding.py#L260) | 260 | `"        \"direct link\", \"direct links\", \"include links\", \"source url\","` | — |
-| [SRC-686F71AA50-L000261](../../agents/task_understanding.py#L261) | 261 | `"    ),"` | — |
-| [SRC-686F71AA50-L000262](../../agents/task_understanding.py#L262) | 262 | `"    \"output_json\": ("` | — |
-| [SRC-686F71AA50-L000263](../../agents/task_understanding.py#L263) | 263 | `"        \"بصيغة json\", \"تنسيق json\", \"return json\", \"output json\", \"as json\","` | — |
-| [SRC-686F71AA50-L000264](../../agents/task_understanding.py#L264) | 264 | `"    ),"` | — |
-| [SRC-686F71AA50-L000265](../../agents/task_understanding.py#L265) | 265 | `"}"` | — |
-| [SRC-686F71AA50-L000266](../../agents/task_understanding.py#L266) | 266 | `""` | — |
-| [SRC-686F71AA50-L000267](../../agents/task_understanding.py#L267) | 267 | `"_FRESHNESS_CUES = _PATTERNS[\"current_information\"]"` | — |
-| [SRC-686F71AA50-L000268](../../agents/task_understanding.py#L268) | 268 | `"_SOCIAL_CUES = _PATTERNS[\"social_opinions\"]"` | — |
-| [SRC-686F71AA50-L000269](../../agents/task_understanding.py#L269) | 269 | `"_LOCATION_CUES = ("` | — |
-| [SRC-686F71AA50-L000270](../../agents/task_understanding.py#L270) | 270 | `"    \"في مصر\", \"داخل مصر\", \"بالقاهرة\", \"في القاهره\", \"بالاسكندريه\", \"في السعودية\","` | — |
-| [SRC-686F71AA50-L000271](../../agents/task_understanding.py#L271) | 271 | `"    \"في الامارات\", \"in egypt\", \"within egypt\", \"in cairo\", \"in saudi arabia\","` | — |
-| [SRC-686F71AA50-L000272](../../agents/task_understanding.py#L272) | 272 | `"    \"in the uae\", \"in the united states\", \"in the uk\","` | — |
-| [SRC-686F71AA50-L000273](../../agents/task_understanding.py#L273) | 273 | `")"` | — |
-| [SRC-686F71AA50-L000274](../../agents/task_understanding.py#L274) | 274 | `"_OFFICIAL_WORDS = (\"وزارة\", \"هيئة حكومية\", \"جهة حكومية\", \"مصلحة حكومية\", \"ministry\", \"government agency\")"` | — |
-| [SRC-686F71AA50-L000275](../../agents/task_understanding.py#L275) | 275 | `"_YEAR_RE = re.compile(r\"(?<!\\d)(?:19\\d{2}\|20\\d{2})(?!\\d)\")"` | — |
-| [SRC-686F71AA50-L000276](../../agents/task_understanding.py#L276) | 276 | `"_DATE_RE = re.compile(r\"(?<!\\d)(?:\\d{4}-\\d{2}-\\d{2}\|\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4})(?!\\d)\")"` | — |
-| [SRC-686F71AA50-L000277](../../agents/task_understanding.py#L277) | 277 | `"_URL_RE = re.compile(r\"https?://[^\\s<>]+\", re.IGNORECASE)"` | — |
-| [SRC-686F71AA50-L000278](../../agents/task_understanding.py#L278) | 278 | `"_BUDGET_RE = re.compile("` | — |
-| [SRC-686F71AA50-L000279](../../agents/task_understanding.py#L279) | 279 | `"    r\"(?:ميزاني(?:ة\|تي)(?:\\s+(?:(?:أقل\|اقل)\\s+من\|بحد\\s+اقصى\|في\\s+حدود))?\""` | — |
-| [SRC-686F71AA50-L000280](../../agents/task_understanding.py#L280) | 280 | `"    r\"\|بحد\\s+اقصى\|(?:أقل\|اقل)\\s+من\|في\\s+حدود\|budget(?:\\s+of)?\|under\|below\|up\\s+to)\""` | — |
-| [SRC-686F71AA50-L000281](../../agents/task_understanding.py#L281) | 281 | `"    r\"\\s*[:：]?\\s*(?:egp\|usd\|eur\|جنيه\|دولار\|ريال)?\\s*[\\d,.\\u0660-\\u0669]+\""` | — |
-| [SRC-686F71AA50-L000282](../../agents/task_understanding.py#L282) | 282 | `"    r\"(?:\\s*(?:الف\|ألف\|مليون\|thousand\|million\|k))?\","` | — |
-| [SRC-686F71AA50-L000283](../../agents/task_understanding.py#L283) | 283 | `"    re.IGNORECASE,"` | — |
-| [SRC-686F71AA50-L000284](../../agents/task_understanding.py#L284) | 284 | `")"` | — |
-| [SRC-686F71AA50-L000285](../../agents/task_understanding.py#L285) | 285 | `"_FOLLOWUP_CUES = ("` | — |
-| [SRC-686F71AA50-L000286](../../agents/task_understanding.py#L286) | 286 | `"    \"سعرها\", \"سعره\", \"قارنهم\", \"بينهم\", \"ما رايك فيها\", \"هل هي كويسه\","` | — |
-| [SRC-686F71AA50-L000287](../../agents/task_understanding.py#L287) | 287 | `"    \"what about it\", \"compare them\", \"is it good\", \"should i buy it\","` | — |
-| [SRC-686F71AA50-L000288](../../agents/task_understanding.py#L288) | 288 | `"    \"its price\", \"the warranty\","` | — |
-| [SRC-686F71AA50-L000289](../../agents/task_understanding.py#L289) | 289 | `")"` | — |
-| [SRC-686F71AA50-L000290](../../agents/task_understanding.py#L290) | 290 | `"_QUERY_STOP = re.compile("` | — |
-| [SRC-686F71AA50-L000291](../../agents/task_understanding.py#L291) | 291 | `"    r\"\\b(?:من حيث\|in terms of\|taking into account\|with respect to)\\b.*$\","` | — |
-| [SRC-686F71AA50-L000292](../../agents/task_understanding.py#L292) | 292 | `"    re.IGNORECASE,"` | — |
-| [SRC-686F71AA50-L000293](../../agents/task_understanding.py#L293) | 293 | `")"` | — |
-| [SRC-686F71AA50-L000294](../../agents/task_understanding.py#L294) | 294 | `""` | — |
-| [SRC-686F71AA50-L000295](../../agents/task_understanding.py#L295) | 295 | `""` | — |
-| [SRC-686F71AA50-L000296](../../agents/task_understanding.py#L296) | 296 | `"def normalize_text(value: Any) -> str:"` | — |
-| [SRC-686F71AA50-L000297](../../agents/task_understanding.py#L297) | 297 | `"    \"\"\"Normalize orthographic variation for matching; preserve the original elsewhere.\"\"\""` | — |
-| [SRC-686F71AA50-L000298](../../agents/task_understanding.py#L298) | 298 | `"    if not isinstance(value, str):"` | — |
-| [SRC-686F71AA50-L000299](../../agents/task_understanding.py#L299) | 299 | `"        return \"\""` | — |
-| [SRC-686F71AA50-L000300](../../agents/task_understanding.py#L300) | 300 | `"    text = unicodedata.normalize(\"NFKC\", value).casefold()"` | — |
-| [SRC-686F71AA50-L000301](../../agents/task_understanding.py#L301) | 301 | `"    text = _ARABIC_DIACRITICS.sub(\"\", text)"` | — |
-| [SRC-686F71AA50-L000302](../../agents/task_understanding.py#L302) | 302 | `"    text = text.replace(\"ـ\", \"\").translate(str.maketrans({"` | — |
-| [SRC-686F71AA50-L000303](../../agents/task_understanding.py#L303) | 303 | `"        \"أ\": \"ا\", \"إ\": \"ا\", \"آ\": \"ا\", \"ٱ\": \"ا\", \"ى\": \"ي\", \"ة\": \"ه\","` | — |
-| [SRC-686F71AA50-L000304](../../agents/task_understanding.py#L304) | 304 | `"    }))"` | — |
-| [SRC-686F71AA50-L000305](../../agents/task_understanding.py#L305) | 305 | `"    return _SPACE.sub(\" \", _PUNCTUATION.sub(\" \", text)).strip()"` | — |
-| [SRC-686F71AA50-L000306](../../agents/task_understanding.py#L306) | 306 | `""` | — |
-| [SRC-686F71AA50-L000307](../../agents/task_understanding.py#L307) | 307 | `""` | — |
-| [SRC-686F71AA50-L000308](../../agents/task_understanding.py#L308) | 308 | `"def _contains(text: str, phrases: tuple[str, ...]) -> list[str]:"` | — |
-| [SRC-686F71AA50-L000309](../../agents/task_understanding.py#L309) | 309 | `"    \"\"\"Match phrases on token boundaries with conservative Arabic clitic handling."` | — |
-| [SRC-686F71AA50-L000310](../../agents/task_understanding.py#L310) | 310 | `""` | — |
-| [SRC-686F71AA50-L000311](../../agents/task_understanding.py#L311) | 311 | `"    The matcher never accepts arbitrary substrings: variants are formed only by"` | — |
-| [SRC-686F71AA50-L000312](../../agents/task_understanding.py#L312) | 312 | `"    removing a short, explicit list of common prefixes/suffixes. This avoids"` | — |
-| [SRC-686F71AA50-L000313](../../agents/task_understanding.py#L313) | 313 | `"    collisions such as treating \"الإنذار\" as \"الآن\"."` | — |
-| [SRC-686F71AA50-L000314](../../agents/task_understanding.py#L314) | 314 | `"    \"\"\""` | — |
-| [SRC-686F71AA50-L000315](../../agents/task_understanding.py#L315) | 315 | `"    tokens = _TOKEN_RE.findall(text)"` | — |
-| [SRC-686F71AA50-L000316](../../agents/task_understanding.py#L316) | 316 | `"    matched: list[str] = []"` | — |
-| [SRC-686F71AA50-L000317](../../agents/task_understanding.py#L317) | 317 | `"    prefixes = (\"وال\", \"بال\", \"فال\", \"كال\", \"لل\", \"ال\", \"و\", \"ف\", \"ب\", \"ل\", \"ك\")"` | — |
-| [SRC-686F71AA50-L000318](../../agents/task_understanding.py#L318) | 318 | `"    suffixes = (\"هما\", \"هم\", \"هن\", \"ها\", \"ه\", \"كم\", \"كن\", \"ك\", \"نا\", \"ني\", \"ين\", \"ات\", \"ون\")"` | — |
-| [SRC-686F71AA50-L000319](../../agents/task_understanding.py#L319) | 319 | `"    english_suffixes = (\"ing\", \"ed\", \"es\", \"s\")"` | — |
-| [SRC-686F71AA50-L000320](../../agents/task_understanding.py#L320) | 320 | `"    cache: dict[str, set[str]] = {}"` | — |
-| [SRC-686F71AA50-L000321](../../agents/task_understanding.py#L321) | 321 | `""` | — |
-| [SRC-686F71AA50-L000322](../../agents/task_understanding.py#L322) | 322 | `"    def token_forms(raw_token: str) -> set[str]:"` | — |
-| [SRC-686F71AA50-L000323](../../agents/task_understanding.py#L323) | 323 | `"        original = normalize_text(raw_token)"` | — |
-| [SRC-686F71AA50-L000324](../../agents/task_understanding.py#L324) | 324 | `"        if original in cache:"` | — |
-| [SRC-686F71AA50-L000325](../../agents/task_understanding.py#L325) | 325 | `"            return cache[original]"` | — |
-| [SRC-686F71AA50-L000326](../../agents/task_understanding.py#L326) | 326 | `"        forms = {original} if original else set()"` | — |
-| [SRC-686F71AA50-L000327](../../agents/task_understanding.py#L327) | 327 | `"        queue = list(forms)"` | — |
-| [SRC-686F71AA50-L000328](../../agents/task_understanding.py#L328) | 328 | `"        while queue:"` | — |
-| [SRC-686F71AA50-L000329](../../agents/task_understanding.py#L329) | 329 | `"            current = queue.pop()"` | — |
-| [SRC-686F71AA50-L000330](../../agents/task_understanding.py#L330) | 330 | `"            for prefix in prefixes:"` | — |
-| [SRC-686F71AA50-L000331](../../agents/task_understanding.py#L331) | 331 | `"                if current.startswith(prefix) and len(current) - len(prefix) >= 3:"` | — |
-| [SRC-686F71AA50-L000332](../../agents/task_understanding.py#L332) | 332 | `"                    candidate = current[len(prefix):]"` | — |
-| [SRC-686F71AA50-L000333](../../agents/task_understanding.py#L333) | 333 | `"                    if candidate not in forms:"` | — |
-| [SRC-686F71AA50-L000334](../../agents/task_understanding.py#L334) | 334 | `"                        forms.add(candidate)"` | — |
-| [SRC-686F71AA50-L000335](../../agents/task_understanding.py#L335) | 335 | `"                        queue.append(candidate)"` | — |
-| [SRC-686F71AA50-L000336](../../agents/task_understanding.py#L336) | 336 | `"            for suffix in suffixes:"` | — |
-| [SRC-686F71AA50-L000337](../../agents/task_understanding.py#L337) | 337 | `"                if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |
-| [SRC-686F71AA50-L000338](../../agents/task_understanding.py#L338) | 338 | `"                    candidate = current[:-len(suffix)]"` | — |
-| [SRC-686F71AA50-L000339](../../agents/task_understanding.py#L339) | 339 | `"                    if candidate not in forms:"` | — |
-| [SRC-686F71AA50-L000340](../../agents/task_understanding.py#L340) | 340 | `"                        forms.add(candidate)"` | — |
-| [SRC-686F71AA50-L000341](../../agents/task_understanding.py#L341) | 341 | `"                        queue.append(candidate)"` | — |
-| [SRC-686F71AA50-L000342](../../agents/task_understanding.py#L342) | 342 | `"            if current.isascii() and len(current) >= 5:"` | — |
-| [SRC-686F71AA50-L000343](../../agents/task_understanding.py#L343) | 343 | `"                for suffix in english_suffixes:"` | — |
-| [SRC-686F71AA50-L000344](../../agents/task_understanding.py#L344) | 344 | `"                    if current.endswith(suffix) and len(current) - len(suffix) >= 3:"` | — |
-| [SRC-686F71AA50-L000345](../../agents/task_understanding.py#L345) | 345 | `"                        candidate = current[:-len(suffix)]"` | — |
-| [SRC-686F71AA50-L000346](../../agents/task_understanding.py#L346) | 346 | `"                        if candidate not in forms:"` | — |
-| [SRC-686F71AA50-L000347](../../agents/task_understanding.py#L347) | 347 | `"                            forms.add(candidate)"` | — |
-| [SRC-686F71AA50-L000348](../../agents/task_understanding.py#L348) | 348 | `"                            queue.append(candidate)"` | — |
-| [SRC-686F71AA50-L000349](../../agents/task_understanding.py#L349) | 349 | `"        cache[original] = forms"` | — |
-| [SRC-686F71AA50-L000350](../../agents/task_understanding.py#L350) | 350 | `"        return forms"` | — |
-| [SRC-686F71AA50-L000351](../../agents/task_understanding.py#L351) | 351 | `""` | — |
-| [SRC-686F71AA50-L000352](../../agents/task_understanding.py#L352) | 352 | `"    token_forms_cache = [token_forms(token) for token in tokens]"` | — |
-| [SRC-686F71AA50-L000353](../../agents/task_understanding.py#L353) | 353 | `"    for phrase in phrases:"` | — |
-| [SRC-686F71AA50-L000354](../../agents/task_understanding.py#L354) | 354 | `"        normalized = normalize_text(phrase)"` | — |
-| [SRC-686F71AA50-L000355](../../agents/task_understanding.py#L355) | 355 | `"        phrase_tokens = _TOKEN_RE.findall(normalized)"` | — |
-| [SRC-686F71AA50-L000356](../../agents/task_understanding.py#L356) | 356 | `"        if not phrase_tokens:"` | — |
-| [SRC-686F71AA50-L000357](../../agents/task_understanding.py#L357) | 357 | `"            continue"` | — |
-| [SRC-686F71AA50-L000358](../../agents/task_understanding.py#L358) | 358 | `"        phrase_forms = [token_forms(token) for token in phrase_tokens]"` | — |
-| [SRC-686F71AA50-L000359](../../agents/task_understanding.py#L359) | 359 | `"        width = len(phrase_tokens)"` | — |
-| [SRC-686F71AA50-L000360](../../agents/task_understanding.py#L360) | 360 | `"        found = any("` | — |

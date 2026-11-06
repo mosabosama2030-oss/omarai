@@ -4,9 +4,257 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000029 إلى SRC-6B9B9ABE27-L000024
+- النطاق: SRC-61B24BEFCC-L000141 إلى SRC-676B69CB6C-L000065
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-61B24BEFCC — [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-61B24BEFCC-L000141](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L141) | 141 | `""` | — |
+| [SRC-61B24BEFCC-L000142](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L142) | 142 | ``"تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
+## وثائق وفهرسة
+
+### FILE-B6BD2CE1A8 — [docs/OPERATIONS_AR.md](../OPERATIONS_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B6BD2CE1A8-L000001](../OPERATIONS_AR.md#L1) | 1 | `"# دليل تشغيل Omarai"` | — |
+| [SRC-B6BD2CE1A8-L000002](../OPERATIONS_AR.md#L2) | 2 | `""` | — |
+| [SRC-B6BD2CE1A8-L000003](../OPERATIONS_AR.md#L3) | 3 | `"## التشغيل"` | — |
+| [SRC-B6BD2CE1A8-L000004](../OPERATIONS_AR.md#L4) | 4 | `"من مجلد المشروع شغّل:"` | — |
+| [SRC-B6BD2CE1A8-L000005](../OPERATIONS_AR.md#L5) | 5 | ````"```bash"```` | — |
+| [SRC-B6BD2CE1A8-L000006](../OPERATIONS_AR.md#L6) | 6 | `"python -m cli.omarai serve"` | — |
+| [SRC-B6BD2CE1A8-L000007](../OPERATIONS_AR.md#L7) | 7 | ````"```"```` | — |
+| [SRC-B6BD2CE1A8-L000008](../OPERATIONS_AR.md#L8) | 8 | ``"ثم افتح `http://127.0.0.1:8765` في المتصفح على الهاتف نفسه. أوقف الخادم بـ Ctrl+C."`` | — |
+| [SRC-B6BD2CE1A8-L000009](../OPERATIONS_AR.md#L9) | 9 | `""` | — |
+| [SRC-B6BD2CE1A8-L000010](../OPERATIONS_AR.md#L10) | 10 | `"## سير العمل"` | — |
+| [SRC-B6BD2CE1A8-L000011](../OPERATIONS_AR.md#L11) | 11 | `""` | — |
+| [SRC-B6BD2CE1A8-L000012](../OPERATIONS_AR.md#L12) | 12 | `"يمكنك كذلك استخدام مربع «اسأل Omarai» لطلب إحصائيات السجل المحلي أو ترشيح إشارة للمراجعة أو تفسير الدرجة أو صياغة مسودة تواصل. الإجابات مبنية على قواعد محلية وسجلات محفوظة فقط؛ لا يوجد نموذج سحابي ولا تُرسل أي رسالة تلقائيًا."` | — |
+| [SRC-B6BD2CE1A8-L000013](../OPERATIONS_AR.md#L13) | 13 | `""` | — |
+| [SRC-B6BD2CE1A8-L000014](../OPERATIONS_AR.md#L14) | 14 | `"1. أدخل نصًا من مصدر عام أو مصدر لديك إذن باستخدامه."` | — |
+| [SRC-B6BD2CE1A8-L000015](../OPERATIONS_AR.md#L15) | 15 | `"2. اضغط «حلّل الإشارة» وافحص العبارات المطابقة وسبب النقاط."` | — |
+| [SRC-B6BD2CE1A8-L000016](../OPERATIONS_AR.md#L16) | 16 | `"3. أضف رابط المصدر الحقيقي قبل الحفظ."` | — |
+| [SRC-B6BD2CE1A8-L000017](../OPERATIONS_AR.md#L17) | 17 | `"4. راجع الإشارات يدويًا وغيّر الحالة إلى مؤهل أو يحتاج مراجعة أو غير ذلك."` | — |
+| [SRC-B6BD2CE1A8-L000018](../OPERATIONS_AR.md#L18) | 18 | `"5. صدّر CSV عند الحاجة واحتفظ بنسخة احتياطية آمنة."` | — |
+| [SRC-B6BD2CE1A8-L000019](../OPERATIONS_AR.md#L19) | 19 | `""` | — |
+| [SRC-B6BD2CE1A8-L000020](../OPERATIONS_AR.md#L20) | 20 | `"## قواعد مهمة"` | — |
+| [SRC-B6BD2CE1A8-L000021](../OPERATIONS_AR.md#L21) | 21 | `"- لا تدخل رسائل خاصة أو بيانات اعتماد أو أرقام هواتف غير لازمة."` | — |
+| [SRC-B6BD2CE1A8-L000022](../OPERATIONS_AR.md#L22) | 22 | `"- لا تعتبر الدرجة احتمالًا للشراء."` | — |
+| [SRC-B6BD2CE1A8-L000023](../OPERATIONS_AR.md#L23) | 23 | `"- لا يتصفح Omarai المنصات تلقائيًا ولا يرسل رسائل."` | — |
+| [SRC-B6BD2CE1A8-L000024](../OPERATIONS_AR.md#L24) | 24 | `"- الخادم مربوط بعنوان loopback افتراضيًا، ويرفض أنواع المحتوى غير JSON والطلبات ذات Origin غير محلي. لا تكشفه للشبكة أو الإنترنت دون مصادقة واختبار أمني."` | — |
+| [SRC-B6BD2CE1A8-L000025](../OPERATIONS_AR.md#L25) | 25 | ``"- قاعدة البيانات الافتراضية: `~/.omarai/omarai.sqlite3`."`` | — |
+## وثائق وفهرسة
+
+### FILE-0B5CA119D2 — [docs/README.md](../README.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-0B5CA119D2-L000001](../README.md#L1) | 1 | `"# دليل وثائق Omarai"` | — |
+| [SRC-0B5CA119D2-L000002](../README.md#L2) | 2 | `""` | — |
+| [SRC-0B5CA119D2-L000003](../README.md#L3) | 3 | `"هذا الملف هو نقطة البداية لاختيار الوثيقة الصحيحة وتجنب تكرار السجلات أو التعارض بينها."` | — |
+| [SRC-0B5CA119D2-L000004](../README.md#L4) | 4 | `""` | — |
+| [SRC-0B5CA119D2-L000005](../README.md#L5) | 5 | `"## ابدأ من هنا"` | — |
+| [SRC-0B5CA119D2-L000006](../README.md#L6) | 6 | `""` | — |
+| [SRC-0B5CA119D2-L000007](../README.md#L7) | 7 | `"\| الهدف \| الوثيقة المعتمدة \| حدود الاستخدام \|"` | — |
+| [SRC-0B5CA119D2-L000008](../README.md#L8) | 8 | `"\|---\|---\|---\|"` | — |
+| [SRC-0B5CA119D2-L000009](../README.md#L9) | 9 | `"\| معرفة اتجاه المنتج والحالة التنفيذية وقرارات التسليم عند تاريخ محدد \| [حالة المشروع والقرارات الحاكمة](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md) \| لقطة مؤرخة؛ أعد فحص SHA وحالة PRs في GitHub قبل اتخاذ قرار جديد. \|"` | — |
+| [SRC-0B5CA119D2-L000010](../README.md#L10) | 10 | `"\| فهم ما يفعله المستودع وطريقة التشغيل \| [README الرئيسي](../README.md) \| وصف الوظيفة الحالية؛ تحقق من الكود عند الحاجة إلى إثبات. \|"` | — |
+| [SRC-0B5CA119D2-L000011](../README.md#L11) | 11 | `"\| معرفة تفاصيل تغييرات التنفيذ وحدودها \| [نطاق التنفيذ](IMPLEMENTATION_SCOPE.md) \| يحتوي لقطات تنفيذ مؤرخة؛ استخدم ملف حالة المشروع للحالة العامة الأحدث ولا تفترض أن كل فقرة تصف main الحالي. \|"` | — |
+| [SRC-0B5CA119D2-L000012](../README.md#L12) | 12 | `"\| معرفة كل عيب وحالته ومعيار إغلاقه \| [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md) \| المصدر الواحد لمعرفات المعالجة والتداخلات الهندسية. \|"` | — |
+| [SRC-0B5CA119D2-L000013](../README.md#L13) | 13 | `"\| فهم أحدث حالة ما بعد PR #76 \| [تقرير التحقق بعد الدمج](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md) \| لقطة بأدلة محددة وحدودها؛ لا يثبت التشغيل الحي. \|"` | — |
+| [SRC-0B5CA119D2-L000014](../README.md#L14) | 14 | `"\| اختيار نوع الاختبار وقراءة حدوده \| [مصفوفة أدلة الاختبار](OMARAI_TEST_EVIDENCE_MATRIX_AR.md) \| النتائج التاريخية تبقى مرتبطة بوقت/SHA التشغيل. \|"` | — |
+| [SRC-0B5CA119D2-L000015](../README.md#L15) | 15 | `"\| إعداد الاستضافة وقبولها \| [قائمة قبول التشغيل](GO_LIVE_CHECKLIST_AR.md) \| لا تعني وجود مضيف أو موافقة على اختبار قد يستهلك رصيدًا. \|"` | — |
+| [SRC-0B5CA119D2-L000016](../README.md#L16) | 16 | `"\| إعداد موصلات البحث \| [دليل الموصلات](RESEARCH_CONNECTORS_AR.md) \| إعداد الموصل لا يثبت أنه متصل حيًا. \|"` | — |
+| [SRC-0B5CA119D2-L000017](../README.md#L17) | 17 | `"\| إعداد موفري النماذج الاحتياطيين \| [Gemini وMistral Failover](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md) \| لا يثبت وجود المفتاح اتصالًا حيًا أو صلاحية النموذج. \|"` | — |
+| [SRC-0B5CA119D2-L000018](../README.md#L18) | 18 | `"\| مراجعة المعمارية والأمن \| [تدقيق المعمارية والأمن](OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md) \| تقرير مرتبط بـSHA وفرع مراجعة؛ لا يثبت القبول الحي. \|"` | — |
+| [SRC-0B5CA119D2-L000019](../README.md#L19) | 19 | `"\| معمارية مجال ذكاء المبيعات \| [معمارية ذكاء المبيعات واكتساب العملاء](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md) \| وثيقة هدف المنتج ومجال الأعمال؛ لا تثبت تنفيذ الوظائف المقترحة. \|"` | — |
+| [SRC-0B5CA119D2-L000020](../README.md#L20) | 20 | `"\| تشغيل وصيانة النسخة \| [دليل العمليات](OPERATIONS_AR.md) \| الإجراءات اليومية والقيود التشغيلية. \|"` | — |
+| [SRC-0B5CA119D2-L000021](../README.md#L21) | 21 | `""` | — |
+| [SRC-0B5CA119D2-L000022](../README.md#L22) | 22 | `"## معمارية ومتطلبات التأسيس"` | — |
+| [SRC-0B5CA119D2-L000023](../README.md#L23) | 23 | `""` | — |
+| [SRC-0B5CA119D2-L000024](../README.md#L24) | 24 | `"- [الدستور الهندسي التأسيسي](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md): متطلبات ومبادئ؛ ليس إثبات تنفيذ."` | — |
+| [SRC-0B5CA119D2-L000025](../README.md#L25) | 25 | `"- [خط الأساس الهندسي الموسع](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md): ضوابط المنصة عبر الاعتمادية والأمن والخصوصية والتشغيل."` | — |
+| [SRC-0B5CA119D2-L000026](../README.md#L26) | 26 | `"- [نموذج تتبع المتطلبات والنضج](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md): معرّفات المتطلبات وأدلة التحقق وبوابات الإطلاق."` | — |
+| [SRC-0B5CA119D2-L000027](../README.md#L27) | 27 | `"- [سجل المتطلبات الأولي](OMARAI_REQUIREMENTS_REGISTER.md): سجل متطلبات؛ أعمدة الحالة التاريخية تُقرأ مع سجل المعالجة الحالي ولا تستبدله."` | — |
+| [SRC-0B5CA119D2-L000028](../README.md#L28) | 28 | `"- [معمارية ذكاء المبيعات واكتساب العملاء](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md): المرجع الخاص بهوية المنتج ومجال المبيعات وإشارات الطلب وتأهيل الفرص؛ يصف الهدف ولا يثبت التنفيذ."` | — |
+| [SRC-0B5CA119D2-L000029](../README.md#L29) | 29 | `"- [معمارية المهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md): عقد معماري تكميلي؛ لا ينفذ المقترحات تلقائيًا."` | — |
+| [SRC-0B5CA119D2-L000030](../README.md#L30) | 30 | `"- [سجل الاستثناءات](OMARAI_EXCEPTIONS_REGISTER_AR.md): لا يصبح المقترح استثناءً معتمدًا دون موافقة بشرية صريحة."` | — |
+| [SRC-0B5CA119D2-L000031](../README.md#L31) | 31 | `""` | — |
+| [SRC-0B5CA119D2-L000032](../README.md#L32) | 32 | `"## أدوات وفهرسة المستودع"` | — |
+| [SRC-0B5CA119D2-L000033](../README.md#L33) | 33 | `""` | — |
+| [SRC-0B5CA119D2-L000034](../README.md#L34) | 34 | `"- [MASTER INDEX](MASTER_INDEX.md): جرد الملفات والرموز وعلامات المراجعة."` | — |
+| [SRC-0B5CA119D2-L000035](../README.md#L35) | 35 | `"- [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md): فهرس الأسطر والروابط الدقيقة."` | — |
+| [SRC-0B5CA119D2-L000036](../README.md#L36) | 36 | `"- [INDEX COVERAGE AUDIT](INDEX_COVERAGE_AUDIT.md): نطاق التغطية والاستثناءات."` | — |
+| [SRC-0B5CA119D2-L000037](../README.md#L37) | 37 | `"- [البحث المحلي في الشفرة](search_code.py): بحث نصي/regex بلا API."` | — |
+| [SRC-0B5CA119D2-L000038](../README.md#L38) | 38 | `"- [مولد الفهرس](generate_index.py): المصدر الوحيد لمخرجات الفهرسة المولدة."` | — |
+| [SRC-0B5CA119D2-L000039](../README.md#L39) | 39 | `""` | — |
+| [SRC-0B5CA119D2-L000040](../README.md#L40) | 40 | `"لا تعدّل مخرجات الفهرس يدويًا. بعد أي تغيير مؤهل شغّل:"` | — |
+| [SRC-0B5CA119D2-L000041](../README.md#L41) | 41 | `""` | — |
+| [SRC-0B5CA119D2-L000042](../README.md#L42) | 42 | ````"```bash"```` | — |
+| [SRC-0B5CA119D2-L000043](../README.md#L43) | 43 | `"python docs/generate_index.py"` | — |
+| [SRC-0B5CA119D2-L000044](../README.md#L44) | 44 | `"python docs/generate_index.py --check"` | — |
+| [SRC-0B5CA119D2-L000045](../README.md#L45) | 45 | ````"```"```` | — |
+| [SRC-0B5CA119D2-L000046](../README.md#L46) | 46 | `""` | — |
+| [SRC-0B5CA119D2-L000047](../README.md#L47) | 47 | `"## سياسة تنظيم الوثائق"` | — |
+| [SRC-0B5CA119D2-L000048](../README.md#L48) | 48 | `""` | — |
+| [SRC-0B5CA119D2-L000049](../README.md#L49) | 49 | `"1. لكل موضوع حيّ وثيقة مرجعية واحدة؛ عدّلها بدل إنشاء ملف حالة موازٍ."` | — |
+| [SRC-0B5CA119D2-L000050](../README.md#L50) | 50 | `"2. احتفظ بلقطات التدقيق التاريخية في [الأرشيف](archive/README.md) مع SHA والتاريخ وحدودها."` | — |
+| [SRC-0B5CA119D2-L000051](../README.md#L51) | 51 | `"3. لا تثبّت حالة PR مفتوحة داخل وثيقة دائمة؛ اقرأ الحالة المباشرة من GitHub."` | — |
+| [SRC-0B5CA119D2-L000052](../README.md#L52) | 52 | ``"4. لا تعلن `VERIFIED` أو `FIXED_AND_TESTED` دون دليل مرتبط بنسخة واختبار. استخدم `NOT_RUN` و`UNKNOWN` عندما ينقص الدليل."`` | — |
+| [SRC-0B5CA119D2-L000053](../README.md#L53) | 53 | `"5. لا تحذف إعدادًا أو موصلًا لمجرد أنه لم يستخدم في تشغيل واحد؛ تحقّق من مراجع README والاختبارات وملفات النشر أولًا."` | — |
+## وثائق وفهرسة
+
+### FILE-D911B73392 — [docs/RESEARCH_CONNECTORS_AR.md](../RESEARCH_CONNECTORS_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D911B73392-L000001](../RESEARCH_CONNECTORS_AR.md#L1) | 1 | `"# دليل البحث المتقدم والموصلات الاجتماعية — Omarai"` | — |
+| [SRC-D911B73392-L000002](../RESEARCH_CONNECTORS_AR.md#L2) | 2 | `""` | — |
+| [SRC-D911B73392-L000003](../RESEARCH_CONNECTORS_AR.md#L3) | 3 | `"هذا الدليل يشرح ما يستطيع Omarai الوصول إليه فعلًا، وما يحتاج إلى مفاتيح وصلاحيات، وكيفية إعدادها من Termux. لا توجد طريقة شرعية أو تقنية مضمونة للوصول إلى كل منشورات كل منصة: بعض البيانات تتطلب مراجعة تطبيق وصلاحيات، وبعضها لا يظهر إلا في البحث المفهرس."` | — |
+| [SRC-D911B73392-L000004](../RESEARCH_CONNECTORS_AR.md#L4) | 4 | `""` | — |
+| [SRC-D911B73392-L000005](../RESEARCH_CONNECTORS_AR.md#L5) | 5 | `"## 1. كيف يجري Omarai البحث؟"` | — |
+| [SRC-D911B73392-L000006](../RESEARCH_CONNECTORS_AR.md#L6) | 6 | `""` | — |
+| [SRC-D911B73392-L000007](../RESEARCH_CONNECTORS_AR.md#L7) | 7 | `"1. يفهم السؤال ويخطط حتى ثمانية استعلامات بحث، باستخدام النموذج اللغوي إذا كان مفتاحه مضبوطًا؛ وإلا يستخدم خطة احتياطية محددة."` | — |
+| [SRC-D911B73392-L000008](../RESEARCH_CONNECTORS_AR.md#L8) | 8 | `"2. يبحث في DuckDuckGo HTML وBing RSS لكل استعلام، ويمكنه إضافة واجهتي البحث الرسميتين Brave Search وTavily عند ضبط مفاتيحهما، ويستخدم موجز Google News للأسئلة الحديثة."` | — |
+| [SRC-D911B73392-L000009](../RESEARCH_CONNECTORS_AR.md#L9) | 9 | `"3. إذا كان السؤال اجتماعيًا، يجرّب المصادر العامة المتاحة والموصلات الرسمية التي أُعدّت بياناتها."` | — |
+| [SRC-D911B73392-L000010](../RESEARCH_CONNECTORS_AR.md#L10) | 10 | `"4. يزيل النتائج المكررة ويجمع تكرار ظهور المصدر عبر الاستعلامات ومحركات البحث مع الاحتفاظ باسم الموفر والاستعلام ورابط المصدر."` | — |
+| [SRC-D911B73392-L000011](../RESEARCH_CONNECTORS_AR.md#L11) | 11 | `"5. يحاول قراءة النص من أفضل ثماني صفحات عامة على الأكثر، ضمن حدود زمنية وحجمية، مع اتباع عدد محدود من التحويلات العامة بشرط التحقق من كل وجهة قبل الاتصال بها."` | — |
+| [SRC-D911B73392-L000012](../RESEARCH_CONNECTORS_AR.md#L12) | 12 | `"6. ينتج إجابة بلغة السؤال مع روابط قابلة للمراجعة وتقرير يوضح ما جرى فعليًا: عدد الاستعلامات، المصادر والنطاقات الفريدة، الصفحات المقروءة، تنوع المحركات، نوع المصادر، وتغطية تواريخ النشر والتحذيرات. يحتوي على أوضاع تلقائي/معمّق/الأحدث/آراء الناس. مؤشرات التغطية تقيس اتساع البحث وقابلية مراجعة الدليل، ولا تعني نسبة صحة الإجابة."` | — |
+| [SRC-D911B73392-L000013](../RESEARCH_CONNECTORS_AR.md#L13) | 13 | `"7. في البحث العميق، يمرر المسودة على مراجعة ثانية للاتساق مع المصادر. هذه مراجعة من النموذج/الموفر نفسه وليست تحققًا مستقلًا من الحقيقة."` | — |
+| [SRC-D911B73392-L000014](../RESEARCH_CONNECTORS_AR.md#L14) | 14 | `""` | — |
+| [SRC-D911B73392-L000015](../RESEARCH_CONNECTORS_AR.md#L15) | 15 | `"لا ينبغي تفسير اتفاق نتيجتين بحثيتين على أنه تصديق مستقل، ولا اعتبار عينة من التعليقات ممثلة لكل المستخدمين."` | — |
+| [SRC-D911B73392-L000016](../RESEARCH_CONNECTORS_AR.md#L16) | 16 | `""` | — |
+| [SRC-D911B73392-L000017](../RESEARCH_CONNECTORS_AR.md#L17) | 17 | `"## 2.1 واجهات بحث ويب اختيارية"` | — |
+| [SRC-D911B73392-L000018](../RESEARCH_CONNECTORS_AR.md#L18) | 18 | `""` | — |
+| [SRC-D911B73392-L000019](../RESEARCH_CONNECTORS_AR.md#L19) | 19 | `"يمكنك إضافة فهرسين مباشرين للبحث بدل الاعتماد على استخراج صفحات نتائج محركات البحث فقط. قد يحتاج كل مزود إلى حساب أو خطة أو حصّة استخدام؛ لا تفترض أن الخدمة مجانية أو أن المفتاح صالح قبل الاختبار الحي."` | — |
+| [SRC-D911B73392-L000020](../RESEARCH_CONNECTORS_AR.md#L20) | 20 | `""` | — |
+| [SRC-D911B73392-L000021](../RESEARCH_CONNECTORS_AR.md#L21) | 21 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000022](../RESEARCH_CONNECTORS_AR.md#L22) | 22 | `"read -r -s -p \"Brave Search API key: \" BRAVE_SEARCH_API_KEY; printf '\\\\n'; export BRAVE_SEARCH_API_KEY"` | — |
+| [SRC-D911B73392-L000023](../RESEARCH_CONNECTORS_AR.md#L23) | 23 | `"read -r -s -p \"Tavily API key: \" TAVILY_API_KEY; printf '\\\\n'; export TAVILY_API_KEY"` | — |
+| [SRC-D911B73392-L000024](../RESEARCH_CONNECTORS_AR.md#L24) | 24 | ````"```"```` | — |
+| [SRC-D911B73392-L000025](../RESEARCH_CONNECTORS_AR.md#L25) | 25 | `""` | — |
+| [SRC-D911B73392-L000026](../RESEARCH_CONNECTORS_AR.md#L26) | 26 | `"يدمج Omarai النتائج من هذه الواجهات مع محركات البحث العامة عند ضبط المتغيرات. لا تُحفظ المفاتيح في المستودع أو واجهة HTML، ولا يُرجعها تقرير الصحة. إذا فشل المفتاح أو انتهت الحصة، قد تظهر نتائج من المحركات العامة الأخرى؛ افحص أسماء المحركات الفعلية في تقرير البحث لتعرف ما أعاد نتائج في هذه الجولة."` | — |
+| [SRC-D911B73392-L000027](../RESEARCH_CONNECTORS_AR.md#L27) | 27 | `""` | — |
+| [SRC-D911B73392-L000028](../RESEARCH_CONNECTORS_AR.md#L28) | 28 | `"## 2. المصادر والحدود"` | — |
+| [SRC-D911B73392-L000029](../RESEARCH_CONNECTORS_AR.md#L29) | 29 | `""` | — |
+| [SRC-D911B73392-L000030](../RESEARCH_CONNECTORS_AR.md#L30) | 30 | `"\| المصدر \| ما يستخدمه Omarai \| ما يلزم أو ما لا يمكن ضمانه \|"` | — |
+| [SRC-D911B73392-L000031](../RESEARCH_CONNECTORS_AR.md#L31) | 31 | `"\| --- \| --- \| --- \|"` | — |
+| [SRC-D911B73392-L000032](../RESEARCH_CONNECTORS_AR.md#L32) | 32 | `"\| صفحات الويب العامة \| DuckDuckGo HTML وBing RSS، وBrave Search API وTavily Search API عند إعداد المفاتيح، واستخراج نص الصفحات المتاحة \| قد تمنع بعض المواقع القراءة أو لا تظهر في نتائج البحث؛ لا يتم تجاوز تسجيل الدخول أو الجدران المدفوعة \|"` | — |
+| [SRC-D911B73392-L000033](../RESEARCH_CONNECTORS_AR.md#L33) | 33 | `"\| الأخبار الحديثة \| Google News RSS بالإضافة إلى البحث العام \| التاريخ الذي يظهر في موجز البحث قد لا يكون تاريخ نشر الصفحة الأصلية؛ يجب فتح المصدر والتحقق \|"` | — |
+| [SRC-D911B73392-L000034](../RESEARCH_CONNECTORS_AR.md#L34) | 34 | `"\| Reddit \| موجز البحث العام RSS \| قد يُحجب أو يُقيَّد أحيانًا؛ يمكن إعداد OAuth لطلب API رسمي عند توفر وصول مسموح \|"` | — |
+| [SRC-D911B73392-L000035](../RESEARCH_CONNECTORS_AR.md#L35) | 35 | `"\| Bluesky \| واجهة البحث العامة للمنشورات \| بحث عام وليس بيانات خاصة أو رسائل مباشرة \|"` | — |
+| [SRC-D911B73392-L000036](../RESEARCH_CONNECTORS_AR.md#L36) | 36 | `"\| Instagram \| صفحات عامة مفهرسة؛ وموصل Graph API للوسوم العامة عند إعداده \| واجهة الوسوم الرسمية ليست بحثًا شاملًا في كل المنشورات، وتتطلب حسابًا وصلاحيات وموافقة/ميزات مناسبة وحدود استخدام \|"` | — |
+| [SRC-D911B73392-L000037](../RESEARCH_CONNECTORS_AR.md#L37) | 37 | `"\| Facebook \| صفحات عامة مفهرسة؛ وموصل مباشر لصفحات محددة صراحةً عند إعداده \| الموصل المباشر ليس بحثًا عالميًا في Facebook؛ يعمل فقط على Page IDs يمكن للرمز والصلاحيات قراءتها \|"` | — |
+| [SRC-D911B73392-L000038](../RESEARCH_CONNECTORS_AR.md#L38) | 38 | `"\| X \| صفحات عامة مفهرسة؛ وواجهة البحث الحديث الرسمية عند إعداد Bearer Token \| يتطلب وصول API مناسبًا، ونطاق البحث والحدود تابعان لخطة X \|"` | — |
+| [SRC-D911B73392-L000039](../RESEARCH_CONNECTORS_AR.md#L39) | 39 | `"\| YouTube \| صفحات الفيديو العامة المفهرسة؛ وYouTube Data API عند إعداد المفتاح \| الواجهة الرسمية لها حصص استخدام، وقد لا تعيد كل الفيديوهات \|"` | — |
+| [SRC-D911B73392-L000040](../RESEARCH_CONNECTORS_AR.md#L40) | 40 | `"\| TikTok \| الصفحات العامة التي تظهر في محركات البحث \| لا يدّعي Omarai أنه يملك بحثًا رسميًا شاملًا في TikTok. أدوات Research API تتطلب الأهلية والموافقة البحثية، وهي ليست واجهة عامة تلقائية للاستخدام التجاري \|"` | — |
+| [SRC-D911B73392-L000041](../RESEARCH_CONNECTORS_AR.md#L41) | 41 | `""` | — |
+| [SRC-D911B73392-L000042](../RESEARCH_CONNECTORS_AR.md#L42) | 42 | `"## 3. تشغيل الطبقة التوليدية"` | — |
+| [SRC-D911B73392-L000043](../RESEARCH_CONNECTORS_AR.md#L43) | 43 | `""` | — |
+| [SRC-D911B73392-L000044](../RESEARCH_CONNECTORS_AR.md#L44) | 44 | ``"يقرأ Omarai مفتاح النموذج من متغيرات بيئة Termux. افتراضيًا يستخدم نموذج NVIDIA Nemotron 3 Ultra (المجاني) لتخطيط البحث، وGoogle Gemma 4 31B Instruct (المجاني) لصياغة الإجابة ومراجعة الاتساق الثانية، مع الرجوع إلى `openrouter/free` إذا أخفق النموذج المحدد. هذا يقلل تغيير النموذج عشوائيًا بين الطلبات، لكنه لا يضمن استجابة كل موفر أو إجابة صحيحة. المفتاح يتيح تخطيط البحث والإجابة التوليدية والمراجعة الثانية. لا تحفظه داخل مستودع GitHub أو ملف HTML أو المحادثة. **تنبيه خصوصية مهم:** يرسل Omarai السؤال وسياق المتابعة ومقتطفات الصفحات المختارة إلى مزود النموذج الخارجي لكي يخطط ويكتب الإجابة ويراجعها. نقطة نهاية NVIDIA Nemotron المجانية في OpenRouter توضّح أن جلسات الاستخدام قد تُسجل لأغراض الأمان وتحسين منتجات NVIDIA؛ لذلك لا تستخدم هذا الإعداد مع كلمات مرور أو مفاتيح أو معلومات سرية أو بيانات شخصية/تجارية حساسة. راجع [إشعار الخصوصية لنقطة Nemotron المجانية](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free)."`` | — |
+| [SRC-D911B73392-L000045](../RESEARCH_CONNECTORS_AR.md#L45) | 45 | `""` | — |
+| [SRC-D911B73392-L000046](../RESEARCH_CONNECTORS_AR.md#L46) | 46 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000047](../RESEARCH_CONNECTORS_AR.md#L47) | 47 | `"read -r -s -p \"OpenRouter API key: \" OPENROUTER_API_KEY"` | — |
+| [SRC-D911B73392-L000048](../RESEARCH_CONNECTORS_AR.md#L48) | 48 | `"printf '\\n'"` | — |
+| [SRC-D911B73392-L000049](../RESEARCH_CONNECTORS_AR.md#L49) | 49 | `"export OPENROUTER_API_KEY"` | — |
+| [SRC-D911B73392-L000050](../RESEARCH_CONNECTORS_AR.md#L50) | 50 | ````"```"```` | — |
+| [SRC-D911B73392-L000051](../RESEARCH_CONNECTORS_AR.md#L51) | 51 | `""` | — |
+| [SRC-D911B73392-L000052](../RESEARCH_CONNECTORS_AR.md#L52) | 52 | ``"يمكن تغيير موفر النموذج المتوافق مع OpenAI عبر `OMARAI_LLM_BASE_URL`. اضبط `OMARAI_PLANNER_MODEL` و`OMARAI_ANSWER_MODEL` و`OMARAI_REVIEW_MODEL` لتغيير الأدوار كلٌ على حدة، أو `OMARAI_LLM_MODEL` لتطبيق نموذج واحد على الأدوار التي لم تُحدد لها قيمة منفصلة، و`OMARAI_LLM_FALLBACK_MODEL` لتغيير النموذج الاحتياطي. توافر النماذج المجانية وحدودها يتغير؛ لذلك لا يفترض التطبيق أن النموذج مجاني دائمًا أو أن الطلب سينجح كل مرة."`` | — |
+| [SRC-D911B73392-L000053](../RESEARCH_CONNECTORS_AR.md#L53) | 53 | `""` | — |
+| [SRC-D911B73392-L000054](../RESEARCH_CONNECTORS_AR.md#L54) | 54 | `"## 4. إعداد الموصلات الرسمية الاختيارية"` | — |
+| [SRC-D911B73392-L000055](../RESEARCH_CONNECTORS_AR.md#L55) | 55 | `""` | — |
+| [SRC-D911B73392-L000056](../RESEARCH_CONNECTORS_AR.md#L56) | 56 | `"نفّذ فقط الأجزاء التي تملك بيانات اعتمادها وصلاحيات استخدامها. الأوامر أدناه تطلب السر دون إظهاره أثناء الكتابة، لكنها تبقيه في بيئة جلسة Termux الحالية حتى توقف الخادم أو تغلق الجلسة."` | — |
+| [SRC-D911B73392-L000057](../RESEARCH_CONNECTORS_AR.md#L57) | 57 | `""` | — |
+| [SRC-D911B73392-L000058](../RESEARCH_CONNECTORS_AR.md#L58) | 58 | `"### Reddit OAuth"` | — |
+| [SRC-D911B73392-L000059](../RESEARCH_CONNECTORS_AR.md#L59) | 59 | `""` | — |
+| [SRC-D911B73392-L000060](../RESEARCH_CONNECTORS_AR.md#L60) | 60 | `"يتطلب بيانات تطبيق Reddit مع وصول API مسموحًا وفق شروط Reddit:"` | — |
+| [SRC-D911B73392-L000061](../RESEARCH_CONNECTORS_AR.md#L61) | 61 | `""` | — |
+| [SRC-D911B73392-L000062](../RESEARCH_CONNECTORS_AR.md#L62) | 62 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000063](../RESEARCH_CONNECTORS_AR.md#L63) | 63 | `"read -r -s -p \"Reddit client ID: \" REDDIT_CLIENT_ID; printf '\\n'; export REDDIT_CLIENT_ID"` | — |
+| [SRC-D911B73392-L000064](../RESEARCH_CONNECTORS_AR.md#L64) | 64 | `"read -r -s -p \"Reddit client secret: \" REDDIT_CLIENT_SECRET; printf '\\n'; export REDDIT_CLIENT_SECRET"` | — |
+| [SRC-D911B73392-L000065](../RESEARCH_CONNECTORS_AR.md#L65) | 65 | `"read -r -p \"Reddit User-Agent: \" REDDIT_USER_AGENT; export REDDIT_USER_AGENT"` | — |
+| [SRC-D911B73392-L000066](../RESEARCH_CONNECTORS_AR.md#L66) | 66 | ````"```"```` | — |
+| [SRC-D911B73392-L000067](../RESEARCH_CONNECTORS_AR.md#L67) | 67 | `""` | — |
+| [SRC-D911B73392-L000068](../RESEARCH_CONNECTORS_AR.md#L68) | 68 | `"عند ضبط هذه القيم، يجرّب Omarai OAuth API. إن تعذر العثور على نتائج عبر API، فقد يحاول موجز البحث العام كبديل؛ ولا يعني ذلك أن البديل مضمون."` | — |
+| [SRC-D911B73392-L000069](../RESEARCH_CONNECTORS_AR.md#L69) | 69 | `""` | — |
+| [SRC-D911B73392-L000070](../RESEARCH_CONNECTORS_AR.md#L70) | 70 | `"### Instagram Graph API — وسوم عامة"` | — |
+| [SRC-D911B73392-L000071](../RESEARCH_CONNECTORS_AR.md#L71) | 71 | `""` | — |
+| [SRC-D911B73392-L000072](../RESEARCH_CONNECTORS_AR.md#L72) | 72 | `"يتطلب Instagram User ID ورمز وصول صالحًا، مع الأذونات/الميزات اللازمة في تطبيق Meta. يقتصر الموصل على بحث الوسوم وجلب عينة من الوسائط العامة الحديثة؛ لا يصل إلى الحسابات الخاصة ولا يبحث كل Instagram."` | — |
+| [SRC-D911B73392-L000073](../RESEARCH_CONNECTORS_AR.md#L73) | 73 | `""` | — |
+| [SRC-D911B73392-L000074](../RESEARCH_CONNECTORS_AR.md#L74) | 74 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000075](../RESEARCH_CONNECTORS_AR.md#L75) | 75 | `"read -r -p \"Instagram professional user ID: \" INSTAGRAM_USER_ID; export INSTAGRAM_USER_ID"` | — |
+| [SRC-D911B73392-L000076](../RESEARCH_CONNECTORS_AR.md#L76) | 76 | `"read -r -s -p \"Instagram access token: \" INSTAGRAM_ACCESS_TOKEN; printf '\\n'; export INSTAGRAM_ACCESS_TOKEN"` | — |
+| [SRC-D911B73392-L000077](../RESEARCH_CONNECTORS_AR.md#L77) | 77 | ````"```"```` | — |
+| [SRC-D911B73392-L000078](../RESEARCH_CONNECTORS_AR.md#L78) | 78 | `""` | — |
+| [SRC-D911B73392-L000079](../RESEARCH_CONNECTORS_AR.md#L79) | 79 | ``"يمكن ضبط إصدار Graph API الذي يطابق تطبيقك عبر `META_GRAPH_VERSION`. يبدأ Omarai بوسم واحد في الطلب لتقليل استهلاك حصة الوسوم؛ قد يظل الموصل يرفض الطلب إذا لم تكن الصلاحيات أو الحصة أو نسخة API مناسبة."`` | — |
+| [SRC-D911B73392-L000080](../RESEARCH_CONNECTORS_AR.md#L80) | 80 | `""` | — |
+| [SRC-D911B73392-L000081](../RESEARCH_CONNECTORS_AR.md#L81) | 81 | `"### Facebook Pages — صفحات محددة فقط"` | — |
+| [SRC-D911B73392-L000082](../RESEARCH_CONNECTORS_AR.md#L82) | 82 | `""` | — |
+| [SRC-D911B73392-L000083](../RESEARCH_CONNECTORS_AR.md#L83) | 83 | `"حدّد الصفحات التي لديك وصول مصرح بها. لا تضع رمزًا عامًا أو تحاول استخدام رمز لا يملك صلاحية الوصول للصفحة:"` | — |
+| [SRC-D911B73392-L000084](../RESEARCH_CONNECTORS_AR.md#L84) | 84 | `""` | — |
+| [SRC-D911B73392-L000085](../RESEARCH_CONNECTORS_AR.md#L85) | 85 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000086](../RESEARCH_CONNECTORS_AR.md#L86) | 86 | `"read -r -s -p \"Facebook Page access token: \" FACEBOOK_PAGE_ACCESS_TOKEN; printf '\\n'; export FACEBOOK_PAGE_ACCESS_TOKEN"` | — |
+| [SRC-D911B73392-L000087](../RESEARCH_CONNECTORS_AR.md#L87) | 87 | `"read -r -p \"Authorized Page IDs, comma-separated: \" FACEBOOK_PAGE_IDS; export FACEBOOK_PAGE_IDS"` | — |
+| [SRC-D911B73392-L000088](../RESEARCH_CONNECTORS_AR.md#L88) | 88 | ````"```"```` | — |
+| [SRC-D911B73392-L000089](../RESEARCH_CONNECTORS_AR.md#L89) | 89 | `""` | — |
+| [SRC-D911B73392-L000090](../RESEARCH_CONNECTORS_AR.md#L90) | 90 | `"يقرأ الموصل أحدث منشورات الصفحات المحددة وعينة محدودة من التعليقات العامة التي تسمح بها الصلاحيات. قد تفشل قراءة المنشورات أو التعليقات إذا كانت صلاحيات التطبيق لا تسمح بها."` | — |
+| [SRC-D911B73392-L000091](../RESEARCH_CONNECTORS_AR.md#L91) | 91 | `""` | — |
+| [SRC-D911B73392-L000092](../RESEARCH_CONNECTORS_AR.md#L92) | 92 | `"### X وYouTube"` | — |
+| [SRC-D911B73392-L000093](../RESEARCH_CONNECTORS_AR.md#L93) | 93 | `""` | — |
+| [SRC-D911B73392-L000094](../RESEARCH_CONNECTORS_AR.md#L94) | 94 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000095](../RESEARCH_CONNECTORS_AR.md#L95) | 95 | `"read -r -s -p \"X API bearer token: \" X_BEARER_TOKEN; printf '\\n'; export X_BEARER_TOKEN"` | — |
+| [SRC-D911B73392-L000096](../RESEARCH_CONNECTORS_AR.md#L96) | 96 | `"read -r -s -p \"YouTube Data API key: \" YOUTUBE_API_KEY; printf '\\n'; export YOUTUBE_API_KEY"` | — |
+| [SRC-D911B73392-L000097](../RESEARCH_CONNECTORS_AR.md#L97) | 97 | ````"```"```` | — |
+| [SRC-D911B73392-L000098](../RESEARCH_CONNECTORS_AR.md#L98) | 98 | `""` | — |
+| [SRC-D911B73392-L000099](../RESEARCH_CONNECTORS_AR.md#L99) | 99 | `"يجب أن يكون رمز X مرتبطًا بخطة وصول تشمل نقطة البحث المستخدمة. مفتاح YouTube يحتاج إلى مشروع Google Cloud تم تفعيل YouTube Data API فيه، ويخضع للحصة. لا يضمن وجود المفتاح أن الحساب يملك كل الصلاحيات أو حصة كافية."` | — |
+| [SRC-D911B73392-L000100](../RESEARCH_CONNECTORS_AR.md#L100) | 100 | `""` | — |
+| [SRC-D911B73392-L000101](../RESEARCH_CONNECTORS_AR.md#L101) | 101 | `"### البدء بعد الإعداد"` | — |
+| [SRC-D911B73392-L000102](../RESEARCH_CONNECTORS_AR.md#L102) | 102 | `""` | — |
+| [SRC-D911B73392-L000103](../RESEARCH_CONNECTORS_AR.md#L103) | 103 | `"بعد إعداد أي متغيرات اختيارية تريدها، ابدأ الخادم في **جلسة Termux نفسها**:"` | — |
+| [SRC-D911B73392-L000104](../RESEARCH_CONNECTORS_AR.md#L104) | 104 | `""` | — |
+| [SRC-D911B73392-L000105](../RESEARCH_CONNECTORS_AR.md#L105) | 105 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000106](../RESEARCH_CONNECTORS_AR.md#L106) | 106 | `"python -m cli.omarai serve"` | — |
+| [SRC-D911B73392-L000107](../RESEARCH_CONNECTORS_AR.md#L107) | 107 | ````"```"```` | — |
+| [SRC-D911B73392-L000108](../RESEARCH_CONNECTORS_AR.md#L108) | 108 | `""` | — |
+| [SRC-D911B73392-L000109](../RESEARCH_CONNECTORS_AR.md#L109) | 109 | ``"افتح `http://127.0.0.1:8765` للمحادثة البحثية و`http://127.0.0.1:8765/api/health` لحالة الإعداد. تقرير الصحة يذكر ما إذا كانت المتغيرات موجودة فقط؛ ولا يمكنه التأكد من صلاحيتها حتى يجرب الموصل طلبًا حقيقيًا."`` | — |
+| [SRC-D911B73392-L000110](../RESEARCH_CONNECTORS_AR.md#L110) | 110 | `""` | — |
+| [SRC-D911B73392-L000111](../RESEARCH_CONNECTORS_AR.md#L111) | 111 | `"## 5. اختبار حي للاتصال"` | — |
+| [SRC-D911B73392-L000112](../RESEARCH_CONNECTORS_AR.md#L112) | 112 | `""` | — |
+| [SRC-D911B73392-L000113](../RESEARCH_CONNECTORS_AR.md#L113) | 113 | `"افتح لوحة Omarai واضغط **«اختبار حي للبحث والنموذج»**. هذا الفحص ينفّذ طلب بحث فعليًا إلى محركات البحث العامة، ويرسل طلبًا صغيرًا إلى نموذج الإجابة إذا كان المفتاح مضبوطًا. إذا فعّلت خيار اختبار المصادر الاجتماعية، فسينفّذ طلبات عامة/مصرحًا بها إلى الموصلات المناسبة. قد يستغرق فحص الشبكات الاجتماعية وقتًا أطول، وقد يستهلك حصص APIs أو يواجه حدود المعدل."` | — |
+| [SRC-D911B73392-L000114](../RESEARCH_CONNECTORS_AR.md#L114) | 114 | `""` | — |
+| [SRC-D911B73392-L000115](../RESEARCH_CONNECTORS_AR.md#L115) | 115 | `"يمكن تنفيذ الفحص نفسه من الطرفية أو أداة API:"` | — |
+| [SRC-D911B73392-L000116](../RESEARCH_CONNECTORS_AR.md#L116) | 116 | `""` | — |
+| [SRC-D911B73392-L000117](../RESEARCH_CONNECTORS_AR.md#L117) | 117 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000118](../RESEARCH_CONNECTORS_AR.md#L118) | 118 | `"curl -sS -X POST http://127.0.0.1:8765/api/diagnostics \\"` | — |
+| [SRC-D911B73392-L000119](../RESEARCH_CONNECTORS_AR.md#L119) | 119 | `"  -H 'Content-Type: application/json' \\"` | — |
+| [SRC-D911B73392-L000120](../RESEARCH_CONNECTORS_AR.md#L120) | 120 | `"  -d '{\"test_model\":true,\"test_social\":false,\"allow_provider_usage\":true}'"` | — |
+| [SRC-D911B73392-L000121](../RESEARCH_CONNECTORS_AR.md#L121) | 121 | ````"```"```` | — |
+| [SRC-D911B73392-L000122](../RESEARCH_CONNECTORS_AR.md#L122) | 122 | `""` | — |
+| [SRC-D911B73392-L000123](../RESEARCH_CONNECTORS_AR.md#L123) | 123 | ``"للفحص الاجتماعي أيضًا، غيّر `test_social` إلى `true`. تعني حالة `degraded` أن الفحص لم يحصل على نتائج كافية أو أن أحد الأجزاء لم يعمل كما هو متوقع؛ ولا تثبت وحدها أن المنصة متوقفة. يظهر `/api/health` وجود إعدادات البيئة فقط، أما الفحص الحي فيختبر اتصالًا فعليًا. لا يعرض التقرير المفاتيح السرية أو يحتفظ بنص استجابة اختبار النموذج."`` | — |
+| [SRC-D911B73392-L000124](../RESEARCH_CONNECTORS_AR.md#L124) | 124 | `""` | — |
+| [SRC-D911B73392-L000125](../RESEARCH_CONNECTORS_AR.md#L125) | 125 | ``"**الموافقة والصلاحية:** قد يرسل هذا المسار طلبات فعلية ويستهلك حصصًا أو رسومًا؛ يجب ضبط `allow_provider_usage=true` بعد موافقة بشرية مستقلة، ولا يقبل الخادم الفحص الحي إلا من عضوية `owner`. رمز التطبيق المشترك يربط بالمالك الافتراضي في وضع التشغيل الأولي؛ رموز المستخدمين الإضافية ترتبط بعضوياتهم ومستأجرهم."`` | — |
+| [SRC-D911B73392-L000126](../RESEARCH_CONNECTORS_AR.md#L126) | 126 | `""` | — |
+| [SRC-D911B73392-L000127](../RESEARCH_CONNECTORS_AR.md#L127) | 127 | `"## 6. قراءة الأدلة والتحقق منها"` | — |
+| [SRC-D911B73392-L000128](../RESEARCH_CONNECTORS_AR.md#L128) | 128 | `""` | — |
+| [SRC-D911B73392-L000129](../RESEARCH_CONNECTORS_AR.md#L129) | 129 | `"- افتح المصادر الأساسية واقرأ السياق الكامل قبل اتخاذ قرار تجاري أو قانوني أو طبي."` | — |
+| [SRC-D911B73392-L000130](../RESEARCH_CONNECTORS_AR.md#L130) | 130 | `"- المنشور أو التعليق قد يكون ساخرًا أو قديمًا أو ترويجيًا أو خارج السياق. يوضح Omarai المصدر والنص المتاح، لكنه لا يثبت هوية الكاتب أو صحة كلامه."` | — |
+| [SRC-D911B73392-L000131](../RESEARCH_CONNECTORS_AR.md#L131) | 131 | `"- لا تستخدم بيانات شخصية غير لازمة، ولا تجمع محتوى خاصًا أو تتجاوز شروط أي منصة."` | — |
+| [SRC-D911B73392-L000132](../RESEARCH_CONNECTORS_AR.md#L132) | 132 | `"- لا يرسل Omarai رسائل أو يتواصل مع أصحاب الحسابات تلقائيًا. أي تواصل أو إجراء خارجي يجب أن يبقى بقرار بشري ومراجعة منفصلة."` | — |
 ## وثائق وفهرسة
 
 ### FILE-69F3587825 — [docs/search_code.py](../search_code.py#L1)
@@ -16,6 +264,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000001](../search_code.py#L1) | 1 | `"\"\"\"Text search across Omarai repository source files (no external AI required)."` | — |
+| [SRC-69F3587825-L000002](../search_code.py#L2) | 2 | `""` | — |
+| [SRC-69F3587825-L000003](../search_code.py#L3) | 3 | `"Examples:"` | — |
+| [SRC-69F3587825-L000004](../search_code.py#L4) | 4 | `"  python docs/search_code.py \"def analyze\""` | — |
+| [SRC-69F3587825-L000005](../search_code.py#L5) | 5 | `"  python docs/search_code.py --regex \"OMARAI_[A-Z_]+\" --ext py"` | — |
+| [SRC-69F3587825-L000006](../search_code.py#L6) | 6 | `"  python docs/search_code.py \"access token\" --max 20"` | — |
+| [SRC-69F3587825-L000007](../search_code.py#L7) | 7 | `"  python docs/search_code.py --root /path/to/omarai \"do_POST\""` | — |
+| [SRC-69F3587825-L000008](../search_code.py#L8) | 8 | `"\"\"\""` | — |
+| [SRC-69F3587825-L000009](../search_code.py#L9) | 9 | `""` | — |
+| [SRC-69F3587825-L000010](../search_code.py#L10) | 10 | `"from __future__ import annotations"` | — |
+| [SRC-69F3587825-L000011](../search_code.py#L11) | 11 | `""` | — |
+| [SRC-69F3587825-L000012](../search_code.py#L12) | 12 | `"import argparse"` | — |
+| [SRC-69F3587825-L000013](../search_code.py#L13) | 13 | `"import os"` | — |
+| [SRC-69F3587825-L000014](../search_code.py#L14) | 14 | `"import re"` | — |
+| [SRC-69F3587825-L000015](../search_code.py#L15) | 15 | `"import subprocess"` | — |
+| [SRC-69F3587825-L000016](../search_code.py#L16) | 16 | `"import sys"` | — |
+| [SRC-69F3587825-L000017](../search_code.py#L17) | 17 | `"from collections.abc import Sequence"` | — |
+| [SRC-69F3587825-L000018](../search_code.py#L18) | 18 | `"from dataclasses import dataclass"` | — |
+| [SRC-69F3587825-L000019](../search_code.py#L19) | 19 | `"from pathlib import Path"` | — |
+| [SRC-69F3587825-L000020](../search_code.py#L20) | 20 | `"from urllib.parse import quote"` | — |
+| [SRC-69F3587825-L000021](../search_code.py#L21) | 21 | `""` | — |
+| [SRC-69F3587825-L000022](../search_code.py#L22) | 22 | `""` | — |
+| [SRC-69F3587825-L000023](../search_code.py#L23) | 23 | `"EXCLUDED_DIRECTORIES = frozenset("` | — |
+| [SRC-69F3587825-L000024](../search_code.py#L24) | 24 | `"    {"` | — |
+| [SRC-69F3587825-L000025](../search_code.py#L25) | 25 | `"        \".git\","` | — |
+| [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".hg\","` | — |
+| [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \".svn\","` | — |
+| [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \".venv\","` | — |
 | [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |
 | [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"env\","` | — |
 | [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \"virtualenv\","` | — |
@@ -603,270 +879,3 @@
 | [SRC-676B69CB6C-L000063](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L63) | 63 | ``"- `LeadStore.get_discovery_run(run_id: str, *, tenant_id: str) -> dict \| None`"`` | — |
 | [SRC-676B69CB6C-L000064](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L64) | 64 | ``"- `LeadStore.save_discovery_signal(run_id: str, source_index: int, *, tenant_id: str) -> tuple[dict, bool] \| None`"`` | — |
 | [SRC-676B69CB6C-L000065](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L65) | 65 | `""` | — |
-| [SRC-676B69CB6C-L000066](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L66) | 66 | ``"- [x] Add `product_profiles` table with tenant-scoped uniqueness and index."`` | — |
-| [SRC-676B69CB6C-L000067](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L67) | 67 | ``"- [x] Add `discovery_runs` table with tenant-scoped profile foreign key and index."`` | — |
-| [SRC-676B69CB6C-L000068](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L68) | 68 | `"- [x] Store only bounded public response fields; never model prompts or secrets."` | — |
-| [SRC-676B69CB6C-L000069](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L69) | 69 | `"- [x] Save leads only by loading the source from the stored run and verifying its server-side qualification label."` | — |
-| [SRC-676B69CB6C-L000070](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L70) | 70 | `"- [x] Run storage tests and existing LeadStore tests."` | — |
-| [SRC-676B69CB6C-L000071](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L71) | 71 | `""` | — |
-| [SRC-676B69CB6C-L000072](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L72) | 72 | `"### Task 3: Connect structured buyer discovery to WebAgent"` | — |
-| [SRC-676B69CB6C-L000073](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L73) | 73 | `""` | — |
-| [SRC-676B69CB6C-L000074](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L74) | 74 | `"**Files:**"` | — |
-| [SRC-676B69CB6C-L000075](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L75) | 75 | ``"- Modify: `agents/web_agent.py`"`` | — |
-| [SRC-676B69CB6C-L000076](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L76) | 76 | ``"- Create/modify: `tests/test_workspace_discovery.py`"`` | — |
-| [SRC-676B69CB6C-L000077](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L77) | 77 | `""` | — |
-| [SRC-676B69CB6C-L000078](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L78) | 78 | `"**Interfaces:**"` | — |
-| [SRC-676B69CB6C-L000079](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L79) | 79 | ``"- Extend `WebAgent.answer(..., buyer_queries: list[str] \| None = None)`."`` | — |
-| [SRC-676B69CB6C-L000080](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L80) | 80 | ``"- Extend internal `_answer_with_budget(..., buyer_queries: list[str] \| None = None)`."`` | — |
-| [SRC-676B69CB6C-L000081](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L81) | 81 | ``"- Preserve existing callers when `buyer_queries` is omitted."`` | — |
-| [SRC-676B69CB6C-L000082](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L82) | 82 | ``"- Add per-instance `allow_optional_providers` control, defaulting to existing behavior for legacy routes."`` | — |
-| [SRC-676B69CB6C-L000083](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L83) | 83 | `""` | — |
-| [SRC-676B69CB6C-L000084](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L84) | 84 | `"- [x] Force the lead-generation route only when structured buyer queries are supplied by the new discovery endpoint."` | — |
-| [SRC-676B69CB6C-L000085](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L85) | 85 | `"- [x] Validate and cap buyer query count/length (1–8 queries, max 500 characters each)."` | — |
-| [SRC-676B69CB6C-L000086](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L86) | 86 | ``"- [x] Prefer structured queries over prose-derived `_lead_generation_queries`."`` | — |
-| [SRC-676B69CB6C-L000087](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L87) | 87 | `"- [x] Gate DeepSeek, Brave, Tavily, and optional social APIs when the per-instance control is false."` | — |
-| [SRC-676B69CB6C-L000088](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L88) | 88 | `"- [x] Keep DDG/Bing/Google News and public no-key social retrieval under existing bounded controls."` | — |
-| [SRC-676B69CB6C-L000089](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L89) | 89 | `"- [x] Add tests that structured product/location queries reach the lead-generation path and optional providers are not invoked by default."` | — |
-| [SRC-676B69CB6C-L000090](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L90) | 90 | `""` | — |
-| [SRC-676B69CB6C-L000091](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L91) | 91 | `"### Task 4: Implement protected API contracts"` | — |
-| [SRC-676B69CB6C-L000092](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L92) | 92 | `""` | — |
-| [SRC-676B69CB6C-L000093](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L93) | 93 | `"**Files:**"` | — |
-| [SRC-676B69CB6C-L000094](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L94) | 94 | ``"- Modify: `api/omarai.py`"`` | — |
-| [SRC-676B69CB6C-L000095](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L95) | 95 | ``"- Modify: `tests/test_api.py`"`` | — |
-| [SRC-676B69CB6C-L000096](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L96) | 96 | `""` | — |
-| [SRC-676B69CB6C-L000097](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L97) | 97 | `"**Interfaces:**"` | — |
-| [SRC-676B69CB6C-L000098](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L98) | 98 | ``"- `GET /api/product-profiles`"`` | — |
-| [SRC-676B69CB6C-L000099](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L99) | 99 | ``"- `POST /api/product-profiles`"`` | — |
-| [SRC-676B69CB6C-L000100](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L100) | 100 | ``"- `GET /api/discoveries`"`` | — |
-| [SRC-676B69CB6C-L000101](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L101) | 101 | ``"- `GET /api/discoveries/{run_id}`"`` | — |
-| [SRC-676B69CB6C-L000102](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L102) | 102 | ``"- `POST /api/discoveries`"`` | — |
-| [SRC-676B69CB6C-L000103](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L103) | 103 | ``"- `POST /api/discoveries/{run_id}/signals/{source_index}/save`"`` | — |
-| [SRC-676B69CB6C-L000104](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L104) | 104 | `""` | — |
-| [SRC-676B69CB6C-L000105](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L105) | 105 | ``"- [x] Validate request JSON arrays and bounded field sizes through `ProductProfile` and `MarketProfile`."`` | — |
-| [SRC-676B69CB6C-L000106](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L106) | 106 | ``"- [x] Derive all tenant scope from `self._authenticated_principal`."`` | — |
-| [SRC-676B69CB6C-L000107](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L107) | 107 | `"- [x] Require a non-viewer role to create profiles or run discovery."` | — |
-| [SRC-676B69CB6C-L000108](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L108) | 108 | ``"- [x] Require owner role plus explicit `allow_optional_providers=true` to enable optional providers."`` | — |
-| [SRC-676B69CB6C-L000109](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L109) | 109 | ``"- [x] Build a product-anchored prompt and queries through `build_buyer_queries`."`` | — |
-| [SRC-676B69CB6C-L000110](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L110) | 110 | `"- [x] Persist the bounded discovery response and return its run ID."` | — |
-| [SRC-676B69CB6C-L000111](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L111) | 111 | `"- [x] Return 404 for run/profile IDs outside the current tenant."` | — |
-| [SRC-676B69CB6C-L000112](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L112) | 112 | ``"- [x] Route save requests through `LeadStore.save_discovery_signal`; never trust browser-provided source qualification."`` | — |
-| [SRC-676B69CB6C-L000113](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L113) | 113 | `"- [x] Run API integration/security tests."` | — |
-| [SRC-676B69CB6C-L000114](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L114) | 114 | `""` | — |
-| [SRC-676B69CB6C-L000115](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L115) | 115 | `"### Task 5: Connect the RTL workspace"` | — |
-| [SRC-676B69CB6C-L000116](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L116) | 116 | `""` | — |
-| [SRC-676B69CB6C-L000117](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L117) | 117 | `"**Files:**"` | — |
-| [SRC-676B69CB6C-L000118](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L118) | 118 | ``"- Modify: `web/workspace.html`"`` | — |
-| [SRC-676B69CB6C-L000119](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L119) | 119 | ``"- Modify: `tests/test_dashboard_security.py`"`` | — |
-| [SRC-676B69CB6C-L000120](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L120) | 120 | ``"- Modify: `tests/test_api.py` (if static-route contract coverage is located here)"`` | — |
-| [SRC-676B69CB6C-L000121](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L121) | 121 | `""` | — |
-| [SRC-676B69CB6C-L000122](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L122) | 122 | `"**Interfaces:**"` | — |
-| [SRC-676B69CB6C-L000123](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L123) | 123 | ``"- Activate `offer` (Product Profile) and `campaign` (Demand Discovery) only."`` | — |
-| [SRC-676B69CB6C-L000124](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L124) | 124 | `"- Read product profiles and discovery runs from their authenticated APIs."` | — |
-| [SRC-676B69CB6C-L000125](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L125) | 125 | `"- Save selected qualified signals using the stored discovery run ID and source index."` | — |
-| [SRC-676B69CB6C-L000126](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L126) | 126 | `""` | — |
-| [SRC-676B69CB6C-L000127](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L127) | 127 | `"- [x] Add product profile editor with aliases, use cases, problems solved, locations, industries, customer types, decision roles, and exclusions."` | — |
-| [SRC-676B69CB6C-L000128](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L128) | 128 | `"- [x] Add discovery screen to choose a saved profile, run search, show prior run history, and inspect evidence."` | — |
-| [SRC-676B69CB6C-L000129](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L129) | 129 | `"- [x] Display qualified buyer signals separately from related-but-unqualified results."` | — |
-| [SRC-676B69CB6C-L000130](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L130) | 130 | `"- [x] Show evidence phrase, evidence basis (snippet/page text/title), source link, and publication-date unknown states."` | — |
-| [SRC-676B69CB6C-L000131](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L131) | 131 | `"- [x] Add explicit unchecked opt-in for optional providers; owner-only on the server with cost/quota disclosure."` | — |
-| [SRC-676B69CB6C-L000132](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L132) | 132 | `"- [x] Add save action only for server-qualified public demand signals; then refresh leads and pipeline."` | — |
-| [SRC-676B69CB6C-L000133](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L133) | 133 | ``"- [x] Fix the placeholder's general research navigation to `/agent`."`` | — |
-| [SRC-676B69CB6C-L000134](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L134) | 134 | `"- [x] Keep all other unimplemented modules visibly unavailable."` | — |
-| [SRC-676B69CB6C-L000135](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L135) | 135 | `"- [x] Run workspace static/security tests."` | — |
-| [SRC-676B69CB6C-L000136](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L136) | 136 | `""` | — |
-| [SRC-676B69CB6C-L000137](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L137) | 137 | `"### Task 6: Documentation, CI, review, and handoff"` | — |
-| [SRC-676B69CB6C-L000138](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L138) | 138 | `""` | — |
-| [SRC-676B69CB6C-L000139](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L139) | 139 | `"**Files:**"` | — |
-| [SRC-676B69CB6C-L000140](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L140) | 140 | ``"- Modify: `docs/IMPLEMENTATION_SCOPE.md`"`` | — |
-| [SRC-676B69CB6C-L000141](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L141) | 141 | ``"- Modify: `README.md` only if current product capabilities description needs updating."`` | — |
-| [SRC-676B69CB6C-L000142](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L142) | 142 | ``"- Modify: `docs/OMARAI_REQUIREMENTS_REGISTER.md` for material requirement status/evidence, if exact owners can be identified without rewriting the historical baseline."`` | — |
-| [SRC-676B69CB6C-L000143](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L143) | 143 | `""` | — |
-| [SRC-676B69CB6C-L000144](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L144) | 144 | `"- [x] Verify full pytest, Ruff on Python 3.11/3.12, Docker build, public-startup credential gate, and protected API smoke through GitHub Actions."` | — |
-| [SRC-676B69CB6C-L000145](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L145) | 145 | `"- [x] Inspect the 11-file PR diff and scan it for common secret/token patterns; no matches or generated-index changes were found."` | — |
-| [SRC-676B69CB6C-L000146](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L146) | 146 | `"- [x] Record live provider tests, post-deploy hosted acceptance, browser E2E, and persistence on SnapDeploy as NOT_RUN/UNKNOWN."` | — |
-| [SRC-676B69CB6C-L000147](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L147) | 147 | ``"- [x] Open PR #155 against `main`; leave merge and SnapDeploy deployment to the Human Director."`` | — |
-| [SRC-676B69CB6C-L000148](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L148) | 148 | `""` | — |
-| [SRC-676B69CB6C-L000149](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L149) | 149 | `"## Expected delivery boundary"` | — |
-| [SRC-676B69CB6C-L000150](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L150) | 150 | `""` | — |
-| [SRC-676B69CB6C-L000151](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L151) | 151 | `"This plan enables a first real vertical slice: saved product/market profile → buyer-intent search → persisted evidence results → human-reviewed qualified signal → existing leads pipeline. It does **not** claim that company profiles, market analytics, scheduled monitoring, outbound messaging, audit center, or the remaining disabled modules are complete."` | — |
-| [SRC-676B69CB6C-L000152](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L152) | 152 | `""` | — |
-| [SRC-676B69CB6C-L000153](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L153) | 153 | `""` | — |
-| [SRC-676B69CB6C-L000154](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L154) | 154 | `"## Final execution and verification note"` | — |
-| [SRC-676B69CB6C-L000155](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L155) | 155 | `""` | — |
-| [SRC-676B69CB6C-L000156](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L156) | 156 | ``"- Final code head (before the documentation-only evidence refresh): `1f30370a0808d9ac52b75f630544c1041d5d5fca`."`` | — |
-| [SRC-676B69CB6C-L000157](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L157) | 157 | ``"- TDD regression was observed: run [42190588227](https://github.com/mosabosama2030-oss/omarai/actions/runs/42190588227) reported **866 passed, 1 failed**; the only failure was the new assertion that bootstrap must use `Promise.allSettled`."`` | — |
-| [SRC-676B69CB6C-L000158](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L158) | 158 | ``"- Implemented the fix in `web/workspace.html`: verify the session separately, load three data resources with `Promise.allSettled`, reset failed resource state to avoid stale data, preserve the authenticated workspace on non-auth data failures, and surface a partial-data warning. A 401 still reopens the login gate."`` | — |
-| [SRC-676B69CB6C-L000159](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L159) | 159 | ``"- Successful CI [42190782142](https://github.com/mosabosama2030-oss/omarai/actions/runs/42190782142) on `1f30370a0808d9ac52b75f630544c1041d5d5fca`: **867 passed on Python 3.11 (45.17s)**, **867 passed on Python 3.12 (43.61s)**, Ruff passed on both, generated-index checks passed, Docker build passed, public-container credential gate passed, and protected API smoke passed."`` | — |
-| [SRC-676B69CB6C-L000160](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L160) | 160 | `"- No local pytest command, live search/model call, paid provider usage, SnapDeploy deployment, browser E2E, or hosted acceptance was run."` | — |
-| [SRC-676B69CB6C-L000161](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L161) | 161 | `"- PR: [#155 — feat(workspace): connect product profiles and buyer-intent discovery](https://github.com/mosabosama2030-oss/omarai/pull/155). Open for Human Director review; not merged."` | — |
-## وثائق وفهرسة
-
-### FILE-8524B08F5D — [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-8524B08F5D-L000001](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | 1 | `"# تصميم خط المعالجة الهجين الموحد للبحث والفهم"` | — |
-| [SRC-8524B08F5D-L000002](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L2) | 2 | `""` | — |
-| [SRC-8524B08F5D-L000003](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L3) | 3 | `"**التاريخ:** 2026-10-30  "` | — |
-| [SRC-8524B08F5D-L000004](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L4) | 4 | `"**الحالة:** تصميم تنفيذ ضمن فرع مراجعة؛ لا دمج ولا نشر."` | — |
-| [SRC-8524B08F5D-L000005](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) | 5 | `""` | — |
-| [SRC-8524B08F5D-L000006](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L6) | 6 | `"## الهدف"` | — |
-| [SRC-8524B08F5D-L000007](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L7) | 7 | `"ربط فهم السؤال والنية والسياق وتفكيك المحاور وتخطيط الاستعلامات ومطابقة المصادر وتغطية الأدلة في مسار واحد قابل للتفسير والاختبار، مع إبقاء القرار النهائي حول صحة الادعاءات في طبقة التحقق الحالية."` | — |
-| [SRC-8524B08F5D-L000008](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) | 8 | `""` | — |
-| [SRC-8524B08F5D-L000009](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L9) | 9 | `"## الحالة الحالية المثبتة"` | — |
-| [SRC-8524B08F5D-L000010](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L10) | 10 | ``"- `intent_router.py` يحل توجيه النية والمتابعات."`` | — |
-| [SRC-8524B08F5D-L000011](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L11) | 11 | ``"- `task_understanding.py` ينتج TaskSpec ومصفوفة استراتيجيات البحث."`` | — |
-| [SRC-8524B08F5D-L000012](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L12) | 12 | ``"- `aspect_planning.py` يستخرج المحاور ويبني سجل مرشحات لفظية للأدلة."`` | — |
-| [SRC-8524B08F5D-L000013](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L13) | 13 | ``"- `research.py` يبني الخطط الاحتياطية ويصنف/يرتب نتائج البحث."`` | — |
-| [SRC-8524B08F5D-L000014](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L14) | 14 | ``"- `web_agent.py` يستدعي هذه الوحدات بصورة متفرقة ثم يجري فحوص صلة وتغطية أخرى. المطابقة اللفظية ليست تحققًا دلاليًا ولا إثباتًا لصحة الادعاء."`` | — |
-| [SRC-8524B08F5D-L000015](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L15) | 15 | `""` | — |
-| [SRC-8524B08F5D-L000016](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L16) | 16 | `"## القرار المعماري"` | — |
-| [SRC-8524B08F5D-L000017](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L17) | 17 | ``"إضافة وحدة تنسيق صغيرة `agents/research_pipeline.py` تستدعي الوحدات الحالية ولا تستبدلها:"`` | — |
-| [SRC-8524B08F5D-L000018](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L18) | 18 | `"1. **Context:** حل المتابعة إلى موضوع حديث واضح، دون إحياء موضوع قديم بعد انتهاء السياق."` | — |
-| [SRC-8524B08F5D-L000019](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L19) | 19 | `"2. **Intent:** استخدام قرار المسار القادم من WebAgent؛ وعند غيابه فقط، استخدام الموجّه الحتمي."` | — |
-| [SRC-8524B08F5D-L000020](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L20) | 20 | `"3. **Task understanding:** بناء TaskSpec للهدف والقيود والمخرجات وسياسات الأدلة."` | — |
-| [SRC-8524B08F5D-L000021](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L21) | 21 | `"4. **Aspect decomposition:** دمج المحاور الصريحة من TaskSpec مع استخراج مستقل ثانٍ، وإزالة التكرار ضمن سقف 8 محاور."` | — |
-| [SRC-8524B08F5D-L000022](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L22) | 22 | `"5. **Query planning:** بناء مصفوفة استعلامات محدودة بحد 8، مع الحفاظ على موضوع السؤال وأولوية المحاور."` | — |
-| [SRC-8524B08F5D-L000023](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L23) | 23 | `"6. **Evidence matching:** إنشاء سجل مرشحات لكل محور من المصادر المسترجعة، مع توضيح أن التطابق اللفظي مرشح فقط."` | — |
-| [SRC-8524B08F5D-L000024](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L24) | 24 | ``"7. **Semantic stage:** واجهة اختيارية محدودة لمقيّم دلالي يحقنه المستدعي عند توافر مقيّم آمن؛ لا ينشئ هذا التغيير استدعاء نموذج إضافيًا ولا يستخدم خدمة مدفوعة. عند غيابه يسجل `not_configured` ولا يرفع المرشحات اللفظية إلى تحقق دلالي."`` | — |
-| [SRC-8524B08F5D-L000025](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L25) | 25 | `"8. **Verification:** إبقاء حواجز المصادر والتحقق من الادعاءات والاستشهادات الموجودة كما هي؛ لا تغطية ولا تشابه كلمات يثبتان صحة المعلومة."` | — |
-| [SRC-8524B08F5D-L000026](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L26) | 26 | `""` | — |
-| [SRC-8524B08F5D-L000027](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L27) | 27 | `"## التكامل"` | — |
-| [SRC-8524B08F5D-L000028](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L28) | 28 | ``"- `research.py::_attach_task_understanding` يستخدم المنسق الموحد بدل بناء TaskSpec والمصفوفة كلًا على حدة."`` | — |
-| [SRC-8524B08F5D-L000029](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L29) | 29 | ``"- `web_agent.py` يستخدم المنسق نفسه قبل تنفيذ الاستعلامات، ثم يضيف سجل الأدلة بعد جمع المصادر إلى تقرير البحث."`` | — |
-| [SRC-8524B08F5D-L000030](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L30) | 30 | `"- لا تغيير في عقود API أو قاعدة البيانات أو الموصلات أو إعدادات الاستضافة."` | — |
-| [SRC-8524B08F5D-L000031](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L31) | 31 | `""` | — |
-| [SRC-8524B08F5D-L000032](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L32) | 32 | `"## الحدود"` | — |
-| [SRC-8524B08F5D-L000033](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L33) | 33 | `"- لا ذاكرة دلالية دائمة، ولا embeddings أو مكتبات جديدة."` | — |
-| [SRC-8524B08F5D-L000034](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L34) | 34 | `"- لا استدعاء LLM إضافي ولا استهلاك مدفوع."` | — |
-| [SRC-8524B08F5D-L000035](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L35) | 35 | `"- المقيّم الدلالي الاختياري لا يثبت صحة الادعاءات؛ لا يمكنه إلا ترتيب مرشحات الصلة."` | — |
-| [SRC-8524B08F5D-L000036](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L36) | 36 | `"- لا تخفيف من SSRF أو صلة البحث أو حدود الوقت والميزانية أو حواجز المصادر."` | — |
-| [SRC-8524B08F5D-L000037](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L37) | 37 | `"- لا دمج PR أو نشر."` | — |
-| [SRC-8524B08F5D-L000038](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L38) | 38 | `""` | — |
-| [SRC-8524B08F5D-L000039](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L39) | 39 | `"## النجاح"` | — |
-| [SRC-8524B08F5D-L000040](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L40) | 40 | `"اختبارات وحدات وانحدار تثبت: الحفاظ على سياق المتابعة الصحيح، طلب التوضيح عند غياب المرجع، استخراج المحاور، حد الاستعلامات، ربط كل محور بسجل مرشحاته، التمييز بين المرشح اللفظي والتحقق الدلالي، وسلامة الرجوع عند فشل المقيّم الاختياري."` | — |
-| [SRC-8524B08F5D-L000041](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L41) | 41 | `""` | — |
-| [SRC-8524B08F5D-L000042](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L42) | 42 | `""` | — |
-| [SRC-8524B08F5D-L000043](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L43) | 43 | `"## نتيجة التنفيذ وحدود المرحلة الحالية"` | — |
-| [SRC-8524B08F5D-L000044](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L44) | 44 | `"- تحقق ربط المراحل الحتمية وتكاملها مع مخرجات مخطط البحث اللغوي الموجود."` | — |
-| [SRC-8524B08F5D-L000045](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L45) | 45 | `"- المطابقة اللفظية تنتج مرشحات لكل محور، وتبقى منفصلة عن تحقق الادعاء."` | — |
-| [SRC-8524B08F5D-L000046](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L46) | 46 | ``"- مقيّم الصلة الدلالية الاختياري له واجهة bounded واختبارات رفض الدرجات غير الصالحة والتدهور عند الاستثناء؛ لكنه غير موصول افتراضيًا بمسار WebAgent، لذلك الحالة التشغيلية المعلنة هي `not_configured`."`` | — |
-| [SRC-8524B08F5D-L000047](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L47) | 47 | ``"- لا يُسمح بتحويل حالة `not_configured` إلى `evaluated` إلا بعد توفير مقيّم دلالي فعلي مضبوط بميزانية/مهلة واختبارات قبول مستقلة."`` | — |
-## وثائق وفهرسة
-
-### FILE-BFCEEA0374 — [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-BFCEEA0374-L000001](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1) | 1 | `"# تصميم ربط ملف المنتج واكتشاف الطلب بمساحة عمل Omarai"` | — |
-| [SRC-BFCEEA0374-L000002](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L2) | 2 | `""` | — |
-| [SRC-BFCEEA0374-L000003](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L3) | 3 | `"**التاريخ:** 6 نوفمبر 2026  "` | — |
-| [SRC-BFCEEA0374-L000004](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L4) | 4 | ``"**المرجع:** `main` عند `a297abd271d48f459effad083a9f424a1499cd39`  "`` | — |
-| [SRC-BFCEEA0374-L000005](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L5) | 5 | `"**الحالة:** تصميم تنفيذ ضمن فرع مستقل؛ لا يغيّر الإنتاج ولا يدمج تلقائيًا."` | — |
-| [SRC-BFCEEA0374-L000006](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L6) | 6 | `""` | — |
-| [SRC-BFCEEA0374-L000007](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L7) | 7 | `"## المشكلة"` | — |
-| [SRC-BFCEEA0374-L000008](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L8) | 8 | `""` | — |
-| [SRC-BFCEEA0374-L000009](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L9) | 9 | ``"مساحة العمل تعرض أربعة أقسام فقط متصلة بواجهات فعلية. نموذج الإشارة الحالي يدعم الإدخال اليدوي والتحليل القواعدي، لكنه لا يشغل بحث المشترين. محرك البحث الحالي يملك بالفعل مسار `LEAD_GENERATION`، ونماذج `ProductProfile` و`MarketProfile` وبناء استعلامات مشتري مرتبطة بالمنتج، لكن الواجهة لا تمرر هذه البيانات إليه ولا تحفظ نتائج التشغيل كسجل مستقل."`` | — |
-| [SRC-BFCEEA0374-L000010](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L10) | 10 | `""` | — |
-| [SRC-BFCEEA0374-L000011](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L11) | 11 | `"## الهدف"` | — |
-| [SRC-BFCEEA0374-L000012](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L12) | 12 | `""` | — |
-| [SRC-BFCEEA0374-L000013](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L13) | 13 | `"إنشاء مسار عربي RTL قابل للاستخدام من داخل الواجهة:"` | — |
-| [SRC-BFCEEA0374-L000014](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L14) | 14 | `"1. حفظ ملف منتج/خدمة وسوق مستهدف تحت المستأجر الحالي."` | — |
-| [SRC-BFCEEA0374-L000015](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L15) | 15 | `"2. تشغيل بحث اكتشاف مرتبط بالملف باستخدام محرك البحث وإشارات نية الشراء الموجودة."` | — |
-| [SRC-BFCEEA0374-L000016](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L16) | 16 | `"3. حفظ سجل تشغيل ونتائجه العامة القابلة للمراجعة تحت المستأجر نفسه."` | — |
-| [SRC-BFCEEA0374-L000017](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L17) | 17 | ``"4. فصل الإشارات المصنفة `public_demand_signal` عن النتائج المرتبطة بالموضوع فقط."`` | — |
-| [SRC-BFCEEA0374-L000018](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L18) | 18 | `"5. السماح بحفظ الإشارة المؤهلة إلى صندوق الإشارات بعد مراجعة المستخدم، مع الاحتفاظ بمصدرها وعبارة الدليل ونوعه في الملاحظة."` | — |
-| [SRC-BFCEEA0374-L000019](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L19) | 19 | `"6. إظهار الاستعلامات، حالة التنفيذ، ومحدودية الدليل بصدق."` | — |
-| [SRC-BFCEEA0374-L000020](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L20) | 20 | `""` | — |
-| [SRC-BFCEEA0374-L000021](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L21) | 21 | `"## البدائل"` | — |
-| [SRC-BFCEEA0374-L000022](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L22) | 22 | `""` | — |
-| [SRC-BFCEEA0374-L000023](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L23) | 23 | ``"- **A — ربط الواجهة مباشرة بـ`/api/agent`:** أسرع، لكنه يرسل سؤالًا حرًا ولا يفرض عقد ProductProfile/MarketProfile أو سياسة حفظ نتائج مبيعات واضحة."`` | — |
-| [SRC-BFCEEA0374-L000024](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L24) | 24 | `"- **B — تكرار محرك بحث للمبيعات:** يمنح تخصيصًا ظاهريًا لكنه يكرر البحث والتصفية والميزانيات وحواجز URL، ويخلق اختلافًا في السلوك."` | — |
-| [SRC-BFCEEA0374-L000025](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L25) | 25 | `"- **C — endpoint تجاري منظم يعيد استخدام WebAgent وsales_domain:** يفرض ملفًا منظمًا، ويعيد استخدام محرك البحث وتصنيف نية الشراء، مع تخزين tenant-scoped للملفات وعمليات الاكتشاف. **هذا هو الاختيار** لأنه يحقق مسارًا متصلًا دون محرك ثانٍ."` | — |
-| [SRC-BFCEEA0374-L000026](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L26) | 26 | `""` | — |
-| [SRC-BFCEEA0374-L000027](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L27) | 27 | `"## النطاق"` | — |
-| [SRC-BFCEEA0374-L000028](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L28) | 28 | `""` | — |
-| [SRC-BFCEEA0374-L000029](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L29) | 29 | `"- إضافة تخزين tenant-scoped لملفات المنتج/السوق وسجلات عمليات الاكتشاف."` | — |
-| [SRC-BFCEEA0374-L000030](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L30) | 30 | `"- إضافة عقود API محمية لقراءة/حفظ الملفات، تشغيل الاكتشاف، قراءة سجل التشغيل، وحفظ إشارة من تشغيل محفوظ."` | — |
-| [SRC-BFCEEA0374-L000031](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L31) | 31 | ``"- تمرير استعلامات `build_buyer_queries` مباشرة إلى WebAgent بدل إعادة استخراج المنتج من نص حر."`` | — |
-| [SRC-BFCEEA0374-L000032](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L32) | 32 | `"- إبقاء الموصلات الاختيارية التي قد تستهلك حصصًا/تكلفة معطلة افتراضيًا في مسار الاكتشاف؛ لا يسمح بتفعيلها إلا بطلب صريح من المالك في نفس التشغيل."` | — |
-| [SRC-BFCEEA0374-L000033](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L33) | 33 | `"- تفعيل شاشتي ملف المنتج والاكتشاف فقط بعد ربطهما بعقود حقيقية."` | — |
-| [SRC-BFCEEA0374-L000034](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L34) | 34 | `"- إبقاء الوحدات الأخرى غير المنفذة معطلة."` | — |
-| [SRC-BFCEEA0374-L000035](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L35) | 35 | `"- حفظ الإشارة المؤهلة بعد فعل صريح من المستخدم فقط؛ لا تواصل آلي."` | — |
-| [SRC-BFCEEA0374-L000036](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L36) | 36 | `""` | — |
-| [SRC-BFCEEA0374-L000037](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L37) | 37 | `"## خارج النطاق"` | — |
-| [SRC-BFCEEA0374-L000038](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L38) | 38 | `""` | — |
-| [SRC-BFCEEA0374-L000039](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L39) | 39 | `"- إنشاء CRM كامل أو ملفات شركات أو حملات مجدولة أو تنبيهات أو مهام خلفية."` | — |
-| [SRC-BFCEEA0374-L000040](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L40) | 40 | `"- الادعاء بأن كل المصادر والمنصات متاحة أو أن نتائج البحث تمثل كل السوق."` | — |
-| [SRC-BFCEEA0374-L000041](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L41) | 41 | `"- بناء محرك بحث جديد أو تفعيل Firecrawl؛ PR #153 منفصل ومفتوح على خط الأساس الحالي."` | — |
-| [SRC-BFCEEA0374-L000042](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L42) | 42 | `"- إرسال رسائل أو جمع بيانات اتصال خاصة."` | — |
-| [SRC-BFCEEA0374-L000043](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L43) | 43 | `"- تغيير أسرار SnapDeploy أو مفاتيح المزودين أو النشر أو الدمج."` | — |
-| [SRC-BFCEEA0374-L000044](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) | 44 | `""` | — |
-| [SRC-BFCEEA0374-L000045](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L45) | 45 | `"## البيانات والأمان"` | — |
-| [SRC-BFCEEA0374-L000046](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L46) | 46 | `""` | — |
-| [SRC-BFCEEA0374-L000047](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L47) | 47 | ``"- كل ملف منتج وكل تشغيل وكل مصدر محفوظ يقيّد بـ`tenant_id` المستمد من principal موثوق على الخادم، وليس من body أو query."`` | — |
-| [SRC-BFCEEA0374-L000048](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L48) | 48 | `"- يجب أن تشمل المفاتيح والقيود الفريدة نطاق المستأجر."` | — |
-| [SRC-BFCEEA0374-L000049](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L49) | 49 | ``"- استرجاع الإشارة للحفظ يكون بواسطة `run_id + source_index + tenant_id` من سجل محفوظ في الخادم؛ لا يثق الخادم في تصنيف يرسله المتصفح."`` | — |
-| [SRC-BFCEEA0374-L000050](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L50) | 50 | ``"- لا تُحفظ نتيجة غير مصنفة `public_demand_signal` كإشارة شراء من إجراء الحفظ الخاص بالتشغيل."`` | — |
-| [SRC-BFCEEA0374-L000051](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L51) | 51 | `"- لا يعرض النظام هوية الكاتب أو قناة اتصال إلا إذا كانت موجودة ومتحققًا منها في المصدر. لا تستنتجها."` | — |
-| [SRC-BFCEEA0374-L000052](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L52) | 52 | `"- النص والمقتطفات والصفحات بيانات غير موثوقة."` | — |
-| [SRC-BFCEEA0374-L000053](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L53) | 53 | `"- لا تُشغّل DeepSeek/Brave/Tavily أو موصلات اختيارية ذات حصص/تكلفة تلقائيًا في مسار الاكتشاف. التفعيل صريح ومن المالك فقط."` | — |
-| [SRC-BFCEEA0374-L000054](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L54) | 54 | `"- لا تُعرض درجة التحليل القواعدي الحالية كاحتمال شراء."` | — |
-| [SRC-BFCEEA0374-L000055](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) | 55 | `""` | — |
-| [SRC-BFCEEA0374-L000056](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L56) | 56 | `"## معيار القبول"` | — |
-| [SRC-BFCEEA0374-L000057](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L57) | 57 | `""` | — |
-| [SRC-BFCEEA0374-L000058](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L58) | 58 | `"- يمكن حفظ ملفين بمنتجين مختلفين لنفس المستأجر، واسترجاعهما؛ ولا يستطيع مستأجر آخر قراءتهما."` | — |
-| [SRC-BFCEEA0374-L000059](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L59) | 59 | `"- يرفض الخادم viewer من الكتابة أو تشغيل الاكتشاف."` | — |
-| [SRC-BFCEEA0374-L000060](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L60) | 60 | `"- يولد البحث استعلامات من أسماء/مرادفات المنتج والموقع، دون تسرب عبارات عقارية إلى المنتجات غير العقارية."` | — |
-| [SRC-BFCEEA0374-L000061](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L61) | 61 | `"- يستدعي endpoint محرك WebAgent الحالي بعقد buyer queries منظمة، لا بمحرك ثانٍ."` | — |
-| [SRC-BFCEEA0374-L000062](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L62) | 62 | `"- لا تُستدعى الموصلات الاختيارية عند ترك خيار الاستخدام الاختياري مغلقًا."` | — |
-| [SRC-BFCEEA0374-L000063](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L63) | 63 | `"- يحفظ سجل تشغيل مع مصادره وحالاتها تحت المستأجر."` | — |
-| [SRC-BFCEEA0374-L000064](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L64) | 64 | ``"- لا يقبل endpoint الحفظ مصدرًا غير مصنف `public_demand_signal`، ولا يقبل معرف تشغيل تابعًا لمستأجر آخر."`` | — |
-| [SRC-BFCEEA0374-L000065](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L65) | 65 | `"- الواجهة تعرض الدليل والمصدر ونوع النص/أساسه والحدود، وتسمح بحفظ الإشارة المؤهلة يدويًا فقط."` | — |
-| [SRC-BFCEEA0374-L000066](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L66) | 66 | `"- جميع الاختبارات الآلية وCI ذات الصلة ناجحة؛ قبول الاستضافة بعد النشر يبقى منفصلًا ويتطلب إجراء Human Director."` | — |
-| [SRC-BFCEEA0374-L000067](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) | 67 | `""` | — |
-| [SRC-BFCEEA0374-L000068](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L68) | 68 | `"## القرارات التنفيذية"` | — |
-| [SRC-BFCEEA0374-L000069](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L69) | 69 | `""` | — |
-| [SRC-BFCEEA0374-L000070](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L70) | 70 | ``"- إعادة استخدام `agents.sales_domain` و`WebAgent` و`LeadStore` بدل إنشاء محرك مستقل."`` | — |
-| [SRC-BFCEEA0374-L000071](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L71) | 71 | ``"- تخزين ملفات المنتج وتشغيلات الاكتشاف في SQLite مع migration آمن عبر `CREATE TABLE IF NOT EXISTS` وفهارس tenant-scoped."`` | — |
-| [SRC-BFCEEA0374-L000072](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L72) | 72 | `"- عدم تغيير أي مفتاح أو إعداد استضافة."` | — |
-| [SRC-BFCEEA0374-L000073](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L73) | 73 | `"- لا دمج ولا نشر ضمن هذا العمل."` | — |
-## وثائق وفهرسة
-
-### FILE-6B9B9ABE27 — [docs/ui-directions/README.md](../ui-directions/README.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6B9B9ABE27-L000001](../ui-directions/README.md#L1) | 1 | `"# Omarai — Three Glass UI Directions"` | — |
-| [SRC-6B9B9ABE27-L000002](../ui-directions/README.md#L2) | 2 | `""` | — |
-| [SRC-6B9B9ABE27-L000003](../ui-directions/README.md#L3) | 3 | `"**Status:** Visual proposals for Human Director selection only. No direction is implemented or connected to production APIs."` | — |
-| [SRC-6B9B9ABE27-L000004](../ui-directions/README.md#L4) | 4 | `""` | — |
-| [SRC-6B9B9ABE27-L000005](../ui-directions/README.md#L5) | 5 | `"Design project: https://design.agent-native.com/design/sGSw7-l6baKesddSGTdvl?editorView=overview"` | — |
-| [SRC-6B9B9ABE27-L000006](../ui-directions/README.md#L6) | 6 | `""` | — |
-| [SRC-6B9B9ABE27-L000007](../ui-directions/README.md#L7) | 7 | `"## Option 01 — Aurora Glass"` | — |
-| [SRC-6B9B9ABE27-L000008](../ui-directions/README.md#L8) | 8 | `"- Expressive frosted surfaces with teal/cyan/violet ambient glow."` | — |
-| [SRC-6B9B9ABE27-L000009](../ui-directions/README.md#L9) | 9 | `"- Futuristic, colorful Android-inspired atmosphere with restrained layering."` | — |
-| [SRC-6B9B9ABE27-L000010](../ui-directions/README.md#L10) | 10 | `"- Best when the product should feel distinctly modern and visually memorable."` | — |
-| [SRC-6B9B9ABE27-L000011](../ui-directions/README.md#L11) | 11 | `"- Preview: [variant-01-aurora-glass.html](variant-01-aurora-glass.html)"` | — |
-| [SRC-6B9B9ABE27-L000012](../ui-directions/README.md#L12) | 12 | `""` | — |
-| [SRC-6B9B9ABE27-L000013](../ui-directions/README.md#L13) | 13 | `"## Option 02 — Precision Glass"` | — |
-| [SRC-6B9B9ABE27-L000014](../ui-directions/README.md#L14) | 14 | `"- Restrained graphite glass, generous spacing, soft blue accent, evidence-first hierarchy."` | — |
-| [SRC-6B9B9ABE27-L000015](../ui-directions/README.md#L15) | 15 | `"- Apple-inspired calm spatial depth without copying platform UI."` | — |
-| [SRC-6B9B9ABE27-L000016](../ui-directions/README.md#L16) | 16 | `"- Best for sustained daily use, readability, and professional trust."` | — |
-| [SRC-6B9B9ABE27-L000017](../ui-directions/README.md#L17) | 17 | `"- Preview: [variant-02-precision-glass.html](variant-02-precision-glass.html)"` | — |
-| [SRC-6B9B9ABE27-L000018](../ui-directions/README.md#L18) | 18 | `""` | — |
-| [SRC-6B9B9ABE27-L000019](../ui-directions/README.md#L19) | 19 | `"## Option 03 — Neon Command"` | — |
-| [SRC-6B9B9ABE27-L000020](../ui-directions/README.md#L20) | 20 | `"- Compact command-center layout with navy surfaces and cyan/indigo luminous edges."` | — |
-| [SRC-6B9B9ABE27-L000021](../ui-directions/README.md#L21) | 21 | `"- Strong operational hierarchy and denser information display."` | — |
-| [SRC-6B9B9ABE27-L000022](../ui-directions/README.md#L22) | 22 | `"- Best for power users monitoring multiple market signals and qualification stages."` | — |
-| [SRC-6B9B9ABE27-L000023](../ui-directions/README.md#L23) | 23 | `"- Preview: [variant-03-neon-command.html](variant-03-neon-command.html)"` | — |
-| [SRC-6B9B9ABE27-L000024](../ui-directions/README.md#L24) | 24 | `""` | — |

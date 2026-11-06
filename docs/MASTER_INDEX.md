@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **141**
 - ملفات Python المحللة: **83**
-- تعريفات Python المفهرسة: **1997**
-- تعريفات Python موثقة بوجود Docstring: **298**
-- تعريفات Python بلا Docstring: **1291**
-- تعريفات لا ينطبق عليها Docstring: **408**
-- الرموز الساكنة الإضافية: **2813**
-- الأسطر النصية المفهرسة حرفيًا: **50309**
+- تعريفات Python المفهرسة: **2011**
+- تعريفات Python موثقة بوجود Docstring: **300**
+- تعريفات Python بلا Docstring: **1301**
+- تعريفات لا ينطبق عليها Docstring: **410**
+- الرموز الساكنة الإضافية: **2828**
+- الأسطر النصية المفهرسة حرفيًا: **50671**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -42,7 +42,7 @@
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 12762 | 296 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24445 | 544 | جرد الملف + AST Python |
-| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 48497 | 1092 | جرد الملف + AST Python |
+| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 56431 | 1294 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 6503 | 164 | جرد الملف + AST Python |
 | FILE-3D565C3B85 | الوكيل والمنطق | [agents/requirement_evidence.py](../agents/requirement_evidence.py#L1) | Python | 6723 | 148 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
@@ -57,7 +57,7 @@
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
 | FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 387297 | 7297 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 57014 | 1185 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 58737 | 1219 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
@@ -68,7 +68,7 @@
 | FILE-160DC0B3E4 | وثائق وفهرسة | [docs/archive/README.md](archive/README.md#L1) | Markdown | 1021 | 8 | جرد الملف + عناوين Markdown |
 | FILE-914817100D | وثائق وفهرسة | [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1) | Markdown | 10667 | 86 | جرد الملف + عناوين Markdown |
 | FILE-C7C7FA8853 | وثائق وفهرسة | [docs/DEPLOY_RAILWAY_AR.md](DEPLOY_RAILWAY_AR.md#L1) | Markdown | 5664 | 50 | جرد الملف + عناوين Markdown |
-| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 7599 | 66 | جرد الملف + عناوين Markdown |
+| FILE-D57B0BB030 | وثائق وفهرسة | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L1) | Markdown | 8626 | 70 | جرد الملف + عناوين Markdown |
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 10804 | 107 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
@@ -124,7 +124,7 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 53497 | 1447 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 54885 | 1481 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
@@ -145,7 +145,7 @@
 | FILE-D67DCEB693 | اختبارات | [tests/test_model_provider_failover.py](../tests/test_model_provider_failover.py#L1) | Python | 7676 | 203 | جرد الملف + AST Python |
 | FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 14601 | 397 | جرد الملف + AST Python |
 | FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 13012 | 393 | جرد الملف + AST Python |
-| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 3068 | 84 | جرد الملف + AST Python |
+| FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 6314 | 172 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 6732 | 191 | جرد الملف + AST Python |
@@ -260,53 +260,56 @@
 | [agents/intent_router.py](../agents/intent_router.py#L375) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 375 | [SRC-5587371288-L000375](../agents/intent_router.py#L375) |
 | [agents/intent_router.py](../agents/intent_router.py#L392) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 392 | [SRC-5587371288-L000392](../agents/intent_router.py#L392) |
 | [agents/intent_router.py](../agents/intent_router.py#L418) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 418 | [SRC-5587371288-L000418](../agents/intent_router.py#L418) |
-| [agents/omarai.py](../agents/omarai.py#L20) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-C9CF9B54F8-L000020](../agents/omarai.py#L20) |
-| [agents/omarai.py](../agents/omarai.py#L21) | متغير/ثابت Python | DEFAULT_TENANT_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-C9CF9B54F8-L000021](../agents/omarai.py#L21) |
-| [agents/omarai.py](../agents/omarai.py#L22) | متغير/ثابت Python | DEFAULT_USER_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
-| [agents/omarai.py](../agents/omarai.py#L23) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-C9CF9B54F8-L000023](../agents/omarai.py#L23) |
-| [agents/omarai.py](../agents/omarai.py#L24) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-C9CF9B54F8-L000024](../agents/omarai.py#L24) |
-| [agents/omarai.py](../agents/omarai.py#L30) | متغير/ثابت Python | NOT_BUYER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-C9CF9B54F8-L000030](../agents/omarai.py#L30) |
-| [agents/omarai.py](../agents/omarai.py#L32) | دالة | normalize | لا توجد Docstring. | ناقص | 32 | [SRC-C9CF9B54F8-L000032](../agents/omarai.py#L32) |
-| [agents/omarai.py](../agents/omarai.py#L37) | دالة | now_utc | لا توجد Docstring. | ناقص | 37 | [SRC-C9CF9B54F8-L000037](../agents/omarai.py#L37) |
-| [agents/omarai.py](../agents/omarai.py#L40) | دالة | _csv_safe_cell | Prefix spreadsheet formulas even when hidden whitespace/control chars precede them. | موثق | 40 | [SRC-C9CF9B54F8-L000040](../agents/omarai.py#L40) |
-| [agents/omarai.py](../agents/omarai.py#L59) | دالة | analyze | لا توجد Docstring. | ناقص | 59 | [SRC-C9CF9B54F8-L000059](../agents/omarai.py#L59) |
-| [agents/omarai.py](../agents/omarai.py#L81) | دالة | validate_url | لا توجد Docstring. | ناقص | 81 | [SRC-C9CF9B54F8-L000081](../agents/omarai.py#L81) |
-| [agents/omarai.py](../agents/omarai.py#L89) | كلاس | LeadStore | Tenant-scoped SQLite lead storage with a safe single-company bootstrap. | موثق | 89 | [SRC-C9CF9B54F8-L000089](../agents/omarai.py#L89) |
-| [agents/omarai.py](../agents/omarai.py#L92) | متغير/ثابت Python | LeadStore.ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 92 | [SRC-C9CF9B54F8-L000092](../agents/omarai.py#L92) |
-| [agents/omarai.py](../agents/omarai.py#L95) | متغير/ثابت Python | LeadStore.ALLOWED_ROLES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 95 | [SRC-C9CF9B54F8-L000095](../agents/omarai.py#L95) |
-| [agents/omarai.py](../agents/omarai.py#L97) | دالة | LeadStore.__init__ | لا توجد Docstring. | ناقص | 97 | [SRC-C9CF9B54F8-L000097](../agents/omarai.py#L97) |
-| [agents/omarai.py](../agents/omarai.py#L104) | دالة | LeadStore.connect | Yield one transaction-scoped connection and always close it. | موثق | 104 | [SRC-C9CF9B54F8-L000104](../agents/omarai.py#L104) |
-| [agents/omarai.py](../agents/omarai.py#L120) | دالة | LeadStore._create_leads_table | لا توجد Docstring. | ناقص | 120 | [SRC-C9CF9B54F8-L000120](../agents/omarai.py#L120) |
-| [agents/omarai.py](../agents/omarai.py#L139) | دالة | LeadStore._initialize_schema | لا توجد Docstring. | ناقص | 139 | [SRC-C9CF9B54F8-L000139](../agents/omarai.py#L139) |
-| [agents/omarai.py](../agents/omarai.py#L348) | دالة | LeadStore._tenant | لا توجد Docstring. | ناقص | 348 | [SRC-C9CF9B54F8-L000348](../agents/omarai.py#L348) |
-| [agents/omarai.py](../agents/omarai.py#L354) | دالة | LeadStore.default_principal | لا توجد Docstring. | ناقص | 354 | [SRC-C9CF9B54F8-L000354](../agents/omarai.py#L354) |
-| [agents/omarai.py](../agents/omarai.py#L366) | دالة | LeadStore.create_tenant | لا توجد Docstring. | ناقص | 366 | [SRC-C9CF9B54F8-L000366](../agents/omarai.py#L366) |
-| [agents/omarai.py](../agents/omarai.py#L383) | دالة | LeadStore.create_user | لا توجد Docstring. | ناقص | 383 | [SRC-C9CF9B54F8-L000383](../agents/omarai.py#L383) |
-| [agents/omarai.py](../agents/omarai.py#L397) | دالة | LeadStore.add_membership | لا توجد Docstring. | ناقص | 397 | [SRC-C9CF9B54F8-L000397](../agents/omarai.py#L397) |
-| [agents/omarai.py](../agents/omarai.py#L420) | دالة | LeadStore._token_hash | لا توجد Docstring. | ناقص | 420 | [SRC-C9CF9B54F8-L000420](../agents/omarai.py#L420) |
-| [agents/omarai.py](../agents/omarai.py#L424) | دالة | LeadStore._normalize_token_expiry | Store token expiries as validated UTC timestamps for safe comparisons. | موثق | 424 | [SRC-C9CF9B54F8-L000424](../agents/omarai.py#L424) |
-| [agents/omarai.py](../agents/omarai.py#L446) | دالة | LeadStore.create_api_token | لا توجد Docstring. | ناقص | 446 | [SRC-C9CF9B54F8-L000446](../agents/omarai.py#L446) |
-| [agents/omarai.py](../agents/omarai.py#L482) | دالة | LeadStore.resolve_api_token | لا توجد Docstring. | ناقص | 482 | [SRC-C9CF9B54F8-L000482](../agents/omarai.py#L482) |
-| [agents/omarai.py](../agents/omarai.py#L499) | دالة | LeadStore.create_web_session | Exchange a valid API credential for a short-lived opaque browser session. | موثق | 499 | [SRC-C9CF9B54F8-L000499](../agents/omarai.py#L499) |
-| [agents/omarai.py](../agents/omarai.py#L552) | دالة | LeadStore.resolve_web_session | Resolve an opaque browser session and re-check its backing credential. | موثق | 552 | [SRC-C9CF9B54F8-L000552](../agents/omarai.py#L552) |
-| [agents/omarai.py](../agents/omarai.py#L609) | دالة | LeadStore.revoke_web_session | Revoke one opaque browser session without revoking its backing API token. | موثق | 609 | [SRC-C9CF9B54F8-L000609](../agents/omarai.py#L609) |
-| [agents/omarai.py](../agents/omarai.py#L623) | دالة | LeadStore.revoke_api_token | Revoke only a token owned by the authenticated user in the active tenant. | موثق | 623 | [SRC-C9CF9B54F8-L000623](../agents/omarai.py#L623) |
-| [agents/omarai.py](../agents/omarai.py#L651) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 651 | [SRC-C9CF9B54F8-L000651](../agents/omarai.py#L651) |
-| [agents/omarai.py](../agents/omarai.py#L704) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 704 | [SRC-C9CF9B54F8-L000704](../agents/omarai.py#L704) |
-| [agents/omarai.py](../agents/omarai.py#L709) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 709 | [SRC-C9CF9B54F8-L000709](../agents/omarai.py#L709) |
-| [agents/omarai.py](../agents/omarai.py#L727) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 727 | [SRC-C9CF9B54F8-L000727](../agents/omarai.py#L727) |
-| [agents/omarai.py](../agents/omarai.py#L749) | دالة | LeadStore._product_profile_row | لا توجد Docstring. | ناقص | 749 | [SRC-C9CF9B54F8-L000749](../agents/omarai.py#L749) |
-| [agents/omarai.py](../agents/omarai.py#L760) | دالة | LeadStore.save_product_profile | لا توجد Docstring. | ناقص | 760 | [SRC-C9CF9B54F8-L000760](../agents/omarai.py#L760) |
-| [agents/omarai.py](../agents/omarai.py#L802) | دالة | LeadStore.list_product_profiles | لا توجد Docstring. | ناقص | 802 | [SRC-C9CF9B54F8-L000802](../agents/omarai.py#L802) |
-| [agents/omarai.py](../agents/omarai.py#L813) | دالة | LeadStore.get_product_profile | لا توجد Docstring. | ناقص | 813 | [SRC-C9CF9B54F8-L000813](../agents/omarai.py#L813) |
-| [agents/omarai.py](../agents/omarai.py#L826) | دالة | LeadStore._safe_discovery_source | لا توجد Docstring. | ناقص | 826 | [SRC-C9CF9B54F8-L000826](../agents/omarai.py#L826) |
-| [agents/omarai.py](../agents/omarai.py#L879) | دالة | LeadStore.save_discovery_run | لا توجد Docstring. | ناقص | 879 | [SRC-C9CF9B54F8-L000879](../agents/omarai.py#L879) |
-| [agents/omarai.py](../agents/omarai.py#L944) | دالة | LeadStore._discovery_run_row | لا توجد Docstring. | ناقص | 944 | [SRC-C9CF9B54F8-L000944](../agents/omarai.py#L944) |
-| [agents/omarai.py](../agents/omarai.py#L953) | دالة | LeadStore.list_discovery_runs | لا توجد Docstring. | ناقص | 953 | [SRC-C9CF9B54F8-L000953](../agents/omarai.py#L953) |
-| [agents/omarai.py](../agents/omarai.py#L989) | دالة | LeadStore.get_discovery_run | لا توجد Docstring. | ناقص | 989 | [SRC-C9CF9B54F8-L000989](../agents/omarai.py#L989) |
-| [agents/omarai.py](../agents/omarai.py#L1006) | دالة | LeadStore.save_discovery_signal | لا توجد Docstring. | ناقص | 1006 | [SRC-C9CF9B54F8-L001006](../agents/omarai.py#L1006) |
-| [agents/omarai.py](../agents/omarai.py#L1055) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 1055 | [SRC-C9CF9B54F8-L001055](../agents/omarai.py#L1055) |
-| [agents/omarai.py](../agents/omarai.py#L1075) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 1075 | [SRC-C9CF9B54F8-L001075](../agents/omarai.py#L1075) |
+| [agents/omarai.py](../agents/omarai.py#L33) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 33 | [SRC-C9CF9B54F8-L000033](../agents/omarai.py#L33) |
+| [agents/omarai.py](../agents/omarai.py#L34) | متغير/ثابت Python | DEFAULT_TENANT_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 34 | [SRC-C9CF9B54F8-L000034](../agents/omarai.py#L34) |
+| [agents/omarai.py](../agents/omarai.py#L35) | متغير/ثابت Python | DEFAULT_USER_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 35 | [SRC-C9CF9B54F8-L000035](../agents/omarai.py#L35) |
+| [agents/omarai.py](../agents/omarai.py#L36) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 36 | [SRC-C9CF9B54F8-L000036](../agents/omarai.py#L36) |
+| [agents/omarai.py](../agents/omarai.py#L37) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 37 | [SRC-C9CF9B54F8-L000037](../agents/omarai.py#L37) |
+| [agents/omarai.py](../agents/omarai.py#L70) | متغير/ثابت Python | NOT_BUYER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 70 | [SRC-C9CF9B54F8-L000070](../agents/omarai.py#L70) |
+| [agents/omarai.py](../agents/omarai.py#L79) | متغير/ثابت Python | CLOSED_OR_STALE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 79 | [SRC-C9CF9B54F8-L000079](../agents/omarai.py#L79) |
+| [agents/omarai.py](../agents/omarai.py#L89) | دالة | normalize | لا توجد Docstring. | ناقص | 89 | [SRC-C9CF9B54F8-L000089](../agents/omarai.py#L89) |
+| [agents/omarai.py](../agents/omarai.py#L94) | دالة | now_utc | لا توجد Docstring. | ناقص | 94 | [SRC-C9CF9B54F8-L000094](../agents/omarai.py#L94) |
+| [agents/omarai.py](../agents/omarai.py#L97) | دالة | _csv_safe_cell | Prefix spreadsheet formulas even when hidden whitespace/control chars precede them. | موثق | 97 | [SRC-C9CF9B54F8-L000097](../agents/omarai.py#L97) |
+| [agents/omarai.py](../agents/omarai.py#L116) | دالة | _signal_type_for_matches | لا توجد Docstring. | ناقص | 116 | [SRC-C9CF9B54F8-L000116](../agents/omarai.py#L116) |
+| [agents/omarai.py](../agents/omarai.py#L138) | دالة | _contains_normalized_phrase | Match a normalized phrase while allowing common attached Arabic clitics. | موثق | 138 | [SRC-C9CF9B54F8-L000138](../agents/omarai.py#L138) |
+| [agents/omarai.py](../agents/omarai.py#L149) | دالة | analyze | Score explicit demand language without treating product fit as purchase intent. | موثق | 149 | [SRC-C9CF9B54F8-L000149](../agents/omarai.py#L149) |
+| [agents/omarai.py](../agents/omarai.py#L246) | دالة | validate_url | لا توجد Docstring. | ناقص | 246 | [SRC-C9CF9B54F8-L000246](../agents/omarai.py#L246) |
+| [agents/omarai.py](../agents/omarai.py#L254) | كلاس | LeadStore | Tenant-scoped SQLite lead storage with a safe single-company bootstrap. | موثق | 254 | [SRC-C9CF9B54F8-L000254](../agents/omarai.py#L254) |
+| [agents/omarai.py](../agents/omarai.py#L257) | متغير/ثابت Python | LeadStore.ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 257 | [SRC-C9CF9B54F8-L000257](../agents/omarai.py#L257) |
+| [agents/omarai.py](../agents/omarai.py#L260) | متغير/ثابت Python | LeadStore.ALLOWED_ROLES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 260 | [SRC-C9CF9B54F8-L000260](../agents/omarai.py#L260) |
+| [agents/omarai.py](../agents/omarai.py#L262) | دالة | LeadStore.__init__ | لا توجد Docstring. | ناقص | 262 | [SRC-C9CF9B54F8-L000262](../agents/omarai.py#L262) |
+| [agents/omarai.py](../agents/omarai.py#L269) | دالة | LeadStore.connect | Yield one transaction-scoped connection and always close it. | موثق | 269 | [SRC-C9CF9B54F8-L000269](../agents/omarai.py#L269) |
+| [agents/omarai.py](../agents/omarai.py#L285) | دالة | LeadStore._create_leads_table | لا توجد Docstring. | ناقص | 285 | [SRC-C9CF9B54F8-L000285](../agents/omarai.py#L285) |
+| [agents/omarai.py](../agents/omarai.py#L304) | دالة | LeadStore._initialize_schema | لا توجد Docstring. | ناقص | 304 | [SRC-C9CF9B54F8-L000304](../agents/omarai.py#L304) |
+| [agents/omarai.py](../agents/omarai.py#L513) | دالة | LeadStore._tenant | لا توجد Docstring. | ناقص | 513 | [SRC-C9CF9B54F8-L000513](../agents/omarai.py#L513) |
+| [agents/omarai.py](../agents/omarai.py#L519) | دالة | LeadStore.default_principal | لا توجد Docstring. | ناقص | 519 | [SRC-C9CF9B54F8-L000519](../agents/omarai.py#L519) |
+| [agents/omarai.py](../agents/omarai.py#L531) | دالة | LeadStore.create_tenant | لا توجد Docstring. | ناقص | 531 | [SRC-C9CF9B54F8-L000531](../agents/omarai.py#L531) |
+| [agents/omarai.py](../agents/omarai.py#L548) | دالة | LeadStore.create_user | لا توجد Docstring. | ناقص | 548 | [SRC-C9CF9B54F8-L000548](../agents/omarai.py#L548) |
+| [agents/omarai.py](../agents/omarai.py#L562) | دالة | LeadStore.add_membership | لا توجد Docstring. | ناقص | 562 | [SRC-C9CF9B54F8-L000562](../agents/omarai.py#L562) |
+| [agents/omarai.py](../agents/omarai.py#L585) | دالة | LeadStore._token_hash | لا توجد Docstring. | ناقص | 585 | [SRC-C9CF9B54F8-L000585](../agents/omarai.py#L585) |
+| [agents/omarai.py](../agents/omarai.py#L589) | دالة | LeadStore._normalize_token_expiry | Store token expiries as validated UTC timestamps for safe comparisons. | موثق | 589 | [SRC-C9CF9B54F8-L000589](../agents/omarai.py#L589) |
+| [agents/omarai.py](../agents/omarai.py#L611) | دالة | LeadStore.create_api_token | لا توجد Docstring. | ناقص | 611 | [SRC-C9CF9B54F8-L000611](../agents/omarai.py#L611) |
+| [agents/omarai.py](../agents/omarai.py#L647) | دالة | LeadStore.resolve_api_token | لا توجد Docstring. | ناقص | 647 | [SRC-C9CF9B54F8-L000647](../agents/omarai.py#L647) |
+| [agents/omarai.py](../agents/omarai.py#L664) | دالة | LeadStore.create_web_session | Exchange a valid API credential for a short-lived opaque browser session. | موثق | 664 | [SRC-C9CF9B54F8-L000664](../agents/omarai.py#L664) |
+| [agents/omarai.py](../agents/omarai.py#L717) | دالة | LeadStore.resolve_web_session | Resolve an opaque browser session and re-check its backing credential. | موثق | 717 | [SRC-C9CF9B54F8-L000717](../agents/omarai.py#L717) |
+| [agents/omarai.py](../agents/omarai.py#L774) | دالة | LeadStore.revoke_web_session | Revoke one opaque browser session without revoking its backing API token. | موثق | 774 | [SRC-C9CF9B54F8-L000774](../agents/omarai.py#L774) |
+| [agents/omarai.py](../agents/omarai.py#L788) | دالة | LeadStore.revoke_api_token | Revoke only a token owned by the authenticated user in the active tenant. | موثق | 788 | [SRC-C9CF9B54F8-L000788](../agents/omarai.py#L788) |
+| [agents/omarai.py](../agents/omarai.py#L816) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 816 | [SRC-C9CF9B54F8-L000816](../agents/omarai.py#L816) |
+| [agents/omarai.py](../agents/omarai.py#L906) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 906 | [SRC-C9CF9B54F8-L000906](../agents/omarai.py#L906) |
+| [agents/omarai.py](../agents/omarai.py#L911) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 911 | [SRC-C9CF9B54F8-L000911](../agents/omarai.py#L911) |
+| [agents/omarai.py](../agents/omarai.py#L929) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 929 | [SRC-C9CF9B54F8-L000929](../agents/omarai.py#L929) |
+| [agents/omarai.py](../agents/omarai.py#L951) | دالة | LeadStore._product_profile_row | لا توجد Docstring. | ناقص | 951 | [SRC-C9CF9B54F8-L000951](../agents/omarai.py#L951) |
+| [agents/omarai.py](../agents/omarai.py#L962) | دالة | LeadStore.save_product_profile | لا توجد Docstring. | ناقص | 962 | [SRC-C9CF9B54F8-L000962](../agents/omarai.py#L962) |
+| [agents/omarai.py](../agents/omarai.py#L1004) | دالة | LeadStore.list_product_profiles | لا توجد Docstring. | ناقص | 1004 | [SRC-C9CF9B54F8-L001004](../agents/omarai.py#L1004) |
+| [agents/omarai.py](../agents/omarai.py#L1015) | دالة | LeadStore.get_product_profile | لا توجد Docstring. | ناقص | 1015 | [SRC-C9CF9B54F8-L001015](../agents/omarai.py#L1015) |
+| [agents/omarai.py](../agents/omarai.py#L1028) | دالة | LeadStore._safe_discovery_source | لا توجد Docstring. | ناقص | 1028 | [SRC-C9CF9B54F8-L001028](../agents/omarai.py#L1028) |
+| [agents/omarai.py](../agents/omarai.py#L1081) | دالة | LeadStore.save_discovery_run | لا توجد Docstring. | ناقص | 1081 | [SRC-C9CF9B54F8-L001081](../agents/omarai.py#L1081) |
+| [agents/omarai.py](../agents/omarai.py#L1146) | دالة | LeadStore._discovery_run_row | لا توجد Docstring. | ناقص | 1146 | [SRC-C9CF9B54F8-L001146](../agents/omarai.py#L1146) |
+| [agents/omarai.py](../agents/omarai.py#L1155) | دالة | LeadStore.list_discovery_runs | لا توجد Docstring. | ناقص | 1155 | [SRC-C9CF9B54F8-L001155](../agents/omarai.py#L1155) |
+| [agents/omarai.py](../agents/omarai.py#L1191) | دالة | LeadStore.get_discovery_run | لا توجد Docstring. | ناقص | 1191 | [SRC-C9CF9B54F8-L001191](../agents/omarai.py#L1191) |
+| [agents/omarai.py](../agents/omarai.py#L1208) | دالة | LeadStore.save_discovery_signal | لا توجد Docstring. | ناقص | 1208 | [SRC-C9CF9B54F8-L001208](../agents/omarai.py#L1208) |
+| [agents/omarai.py](../agents/omarai.py#L1257) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 1257 | [SRC-C9CF9B54F8-L001257](../agents/omarai.py#L1257) |
+| [agents/omarai.py](../agents/omarai.py#L1277) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 1277 | [SRC-C9CF9B54F8-L001277](../agents/omarai.py#L1277) |
 | [agents/request_budget.py](../agents/request_budget.py#L17) | كلاس | RequestBudgetExceeded | Raised when a request cannot start more work within its resource budget. | موثق | 17 | [SRC-FDEEAFDFCA-L000017](../agents/request_budget.py#L17) |
 | [agents/request_budget.py](../agents/request_budget.py#L21) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
 | [agents/request_budget.py](../agents/request_budget.py#L22) | متغير/ثابت Python | MAX_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
@@ -793,26 +796,28 @@
 | [api/omarai.py](../api/omarai.py#L393) | دالة | Handler._session_cookie_header | لا توجد Docstring. | ناقص | 393 | [SRC-EEF2E6447C-L000393](../api/omarai.py#L393) |
 | [api/omarai.py](../api/omarai.py#L407) | دالة | Handler._clear_session_cookie_header | لا توجد Docstring. | ناقص | 407 | [SRC-EEF2E6447C-L000407](../api/omarai.py#L407) |
 | [api/omarai.py](../api/omarai.py#L419) | دالة | Handler._principal_for_access_token | لا توجد Docstring. | ناقص | 419 | [SRC-EEF2E6447C-L000419](../api/omarai.py#L419) |
-| [api/omarai.py](../api/omarai.py#L425) | دالة | Handler._authorized | Resolve a verified bearer token or HttpOnly browser cookie. | موثق | 425 | [SRC-EEF2E6447C-L000425](../api/omarai.py#L425) |
-| [api/omarai.py](../api/omarai.py#L467) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 467 | [SRC-EEF2E6447C-L000467](../api/omarai.py#L467) |
-| [api/omarai.py](../api/omarai.py#L499) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 499 | [SRC-EEF2E6447C-L000499](../api/omarai.py#L499) |
-| [api/omarai.py](../api/omarai.py#L502) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 502 | [SRC-EEF2E6447C-L000502](../api/omarai.py#L502) |
-| [api/omarai.py](../api/omarai.py#L518) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 518 | [SRC-EEF2E6447C-L000518](../api/omarai.py#L518) |
-| [api/omarai.py](../api/omarai.py#L550) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 550 | [SRC-EEF2E6447C-L000550](../api/omarai.py#L550) |
-| [api/omarai.py](../api/omarai.py#L623) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 623 | [SRC-EEF2E6447C-L000623](../api/omarai.py#L623) |
-| [api/omarai.py](../api/omarai.py#L632) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 632 | [SRC-EEF2E6447C-L000632](../api/omarai.py#L632) |
-| [api/omarai.py](../api/omarai.py#L653) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 653 | [SRC-EEF2E6447C-L000653](../api/omarai.py#L653) |
-| [api/omarai.py](../api/omarai.py#L743) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 743 | [SRC-EEF2E6447C-L000743](../api/omarai.py#L743) |
-| [api/omarai.py](../api/omarai.py#L1056) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 1056 | [SRC-EEF2E6447C-L001056](../api/omarai.py#L1056) |
-| [api/omarai.py](../api/omarai.py#L1069) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 1069 | [SRC-EEF2E6447C-L001069](../api/omarai.py#L1069) |
-| [api/omarai.py](../api/omarai.py#L1073) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 1073 | [SRC-EEF2E6447C-L001073](../api/omarai.py#L1073) |
-| [api/omarai.py](../api/omarai.py#L1109) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 1109 | [SRC-EEF2E6447C-L001109](../api/omarai.py#L1109) |
-| [api/omarai.py](../api/omarai.py#L1112) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 1112 | [SRC-EEF2E6447C-L001112](../api/omarai.py#L1112) |
-| [api/omarai.py](../api/omarai.py#L1113) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 1113 | [SRC-EEF2E6447C-L001113](../api/omarai.py#L1113) |
-| [api/omarai.py](../api/omarai.py#L1120) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 1120 | [SRC-EEF2E6447C-L001120](../api/omarai.py#L1120) |
-| [api/omarai.py](../api/omarai.py#L1138) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 1138 | [SRC-EEF2E6447C-L001138](../api/omarai.py#L1138) |
-| [api/omarai.py](../api/omarai.py#L1155) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 1155 | [SRC-EEF2E6447C-L001155](../api/omarai.py#L1155) |
-| [api/omarai.py](../api/omarai.py#L1163) | دالة | serve | لا توجد Docstring. | ناقص | 1163 | [SRC-EEF2E6447C-L001163](../api/omarai.py#L1163) |
+| [api/omarai.py](../api/omarai.py#L425) | متغير/ثابت Python | Handler._FORWARDING_HEADERS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 425 | [SRC-EEF2E6447C-L000425](../api/omarai.py#L425) |
+| [api/omarai.py](../api/omarai.py#L430) | دالة | Handler._has_forwarding_headers | لا توجد Docstring. | ناقص | 430 | [SRC-EEF2E6447C-L000430](../api/omarai.py#L430) |
+| [api/omarai.py](../api/omarai.py#L433) | دالة | Handler._authorized | Resolve a verified bearer token or HttpOnly browser cookie. | موثق | 433 | [SRC-EEF2E6447C-L000433](../api/omarai.py#L433) |
+| [api/omarai.py](../api/omarai.py#L482) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 482 | [SRC-EEF2E6447C-L000482](../api/omarai.py#L482) |
+| [api/omarai.py](../api/omarai.py#L514) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 514 | [SRC-EEF2E6447C-L000514](../api/omarai.py#L514) |
+| [api/omarai.py](../api/omarai.py#L517) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 517 | [SRC-EEF2E6447C-L000517](../api/omarai.py#L517) |
+| [api/omarai.py](../api/omarai.py#L533) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 533 | [SRC-EEF2E6447C-L000533](../api/omarai.py#L533) |
+| [api/omarai.py](../api/omarai.py#L565) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 565 | [SRC-EEF2E6447C-L000565](../api/omarai.py#L565) |
+| [api/omarai.py](../api/omarai.py#L638) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 638 | [SRC-EEF2E6447C-L000638](../api/omarai.py#L638) |
+| [api/omarai.py](../api/omarai.py#L647) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 647 | [SRC-EEF2E6447C-L000647](../api/omarai.py#L647) |
+| [api/omarai.py](../api/omarai.py#L668) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 668 | [SRC-EEF2E6447C-L000668](../api/omarai.py#L668) |
+| [api/omarai.py](../api/omarai.py#L777) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 777 | [SRC-EEF2E6447C-L000777](../api/omarai.py#L777) |
+| [api/omarai.py](../api/omarai.py#L1090) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 1090 | [SRC-EEF2E6447C-L001090](../api/omarai.py#L1090) |
+| [api/omarai.py](../api/omarai.py#L1103) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 1103 | [SRC-EEF2E6447C-L001103](../api/omarai.py#L1103) |
+| [api/omarai.py](../api/omarai.py#L1107) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 1107 | [SRC-EEF2E6447C-L001107](../api/omarai.py#L1107) |
+| [api/omarai.py](../api/omarai.py#L1143) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 1143 | [SRC-EEF2E6447C-L001143](../api/omarai.py#L1143) |
+| [api/omarai.py](../api/omarai.py#L1146) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 1146 | [SRC-EEF2E6447C-L001146](../api/omarai.py#L1146) |
+| [api/omarai.py](../api/omarai.py#L1147) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 1147 | [SRC-EEF2E6447C-L001147](../api/omarai.py#L1147) |
+| [api/omarai.py](../api/omarai.py#L1154) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 1154 | [SRC-EEF2E6447C-L001154](../api/omarai.py#L1154) |
+| [api/omarai.py](../api/omarai.py#L1172) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 1172 | [SRC-EEF2E6447C-L001172](../api/omarai.py#L1172) |
+| [api/omarai.py](../api/omarai.py#L1189) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 1189 | [SRC-EEF2E6447C-L001189](../api/omarai.py#L1189) |
+| [api/omarai.py](../api/omarai.py#L1197) | دالة | serve | لا توجد Docstring. | ناقص | 1197 | [SRC-EEF2E6447C-L001197](../api/omarai.py#L1197) |
 | [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
 | [docs/generate_index.py](generate_index.py#L22) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
@@ -1159,72 +1164,74 @@
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L289) | دالة | test_date_in_answer_missing_from_its_cited_source_is_flagged | لا توجد Docstring. | ناقص | 289 | [SRC-1C77C97630-L000289](../tests/test_answer_validation.py#L289) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L306) | دالة | test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies | لا توجد Docstring. | ناقص | 306 | [SRC-1C77C97630-L000306](../tests/test_answer_validation.py#L306) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L318) | دالة | test_single_coincidental_token_does_not_count_as_citation_support | لا توجد Docstring. | ناقص | 318 | [SRC-1C77C97630-L000318](../tests/test_answer_validation.py#L318) |
-| [tests/test_api.py](../tests/test_api.py#L22) | دالة | local_api | Run the real handler on an ephemeral loopback port with an isolated database. | موثق | 22 | [SRC-3451CC474D-L000022](../tests/test_api.py#L22) |
-| [tests/test_api.py](../tests/test_api.py#L44) | دالة | request_json | لا توجد Docstring. | ناقص | 44 | [SRC-3451CC474D-L000044](../tests/test_api.py#L44) |
-| [tests/test_api.py](../tests/test_api.py#L57) | دالة | request_json_with_headers | لا توجد Docstring. | ناقص | 57 | [SRC-3451CC474D-L000057](../tests/test_api.py#L57) |
-| [tests/test_api.py](../tests/test_api.py#L70) | دالة | test_api_health_analyze_save_duplicate_list_and_status | لا توجد Docstring. | ناقص | 70 | [SRC-3451CC474D-L000070](../tests/test_api.py#L70) |
-| [tests/test_api.py](../tests/test_api.py#L141) | دالة | test_api_rejects_invalid_filters_and_request_shapes | لا توجد Docstring. | ناقص | 141 | [SRC-3451CC474D-L000141](../tests/test_api.py#L141) |
-| [tests/test_api.py](../tests/test_api.py#L167) | دالة | test_api_blocks_non_json_and_cross_origin_posts | لا توجد Docstring. | ناقص | 167 | [SRC-3451CC474D-L000167](../tests/test_api.py#L167) |
-| [tests/test_api.py](../tests/test_api.py#L190) | دالة | test_configured_frontend_origin_supports_preflight_and_post | لا توجد Docstring. | ناقص | 190 | [SRC-3451CC474D-L000190](../tests/test_api.py#L190) |
-| [tests/test_api.py](../tests/test_api.py#L223) | دالة | test_preflight_rejects_unconfigured_origin | لا توجد Docstring. | ناقص | 223 | [SRC-3451CC474D-L000223](../tests/test_api.py#L223) |
-| [tests/test_api.py](../tests/test_api.py#L238) | دالة | test_ask_is_honest_when_database_is_empty | لا توجد Docstring. | ناقص | 238 | [SRC-3451CC474D-L000238](../tests/test_api.py#L238) |
-| [tests/test_api.py](../tests/test_api.py#L248) | دالة | test_web_agent_endpoint_uses_agent_result | لا توجد Docstring. | ناقص | 248 | [SRC-3451CC474D-L000248](../tests/test_api.py#L248) |
-| [tests/test_api.py](../tests/test_api.py#L251) | دالة | test_web_agent_endpoint_uses_agent_result.fake_answer | لا توجد Docstring. | ناقص | 251 | [SRC-3451CC474D-L000251](../tests/test_api.py#L251) |
-| [tests/test_api.py](../tests/test_api.py#L276) | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets | لا توجد Docstring. | ناقص | 276 | [SRC-3451CC474D-L000276](../tests/test_api.py#L276) |
-| [tests/test_api.py](../tests/test_api.py#L279) | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets.fake_diagnostics | لا توجد Docstring. | ناقص | 279 | [SRC-3451CC474D-L000279](../tests/test_api.py#L279) |
-| [tests/test_api.py](../tests/test_api.py#L312) | دالة | test_live_diagnostics_requires_explicit_provider_usage_opt_in | لا توجد Docstring. | ناقص | 312 | [SRC-3451CC474D-L000312](../tests/test_api.py#L312) |
-| [tests/test_api.py](../tests/test_api.py#L315) | دالة | test_live_diagnostics_requires_explicit_provider_usage_opt_in.unexpected_diagnostics | لا توجد Docstring. | ناقص | 315 | [SRC-3451CC474D-L000315](../tests/test_api.py#L315) |
-| [tests/test_api.py](../tests/test_api.py#L329) | دالة | test_diagnostics_endpoint_rejects_non_boolean_provider_usage_opt_in | لا توجد Docstring. | ناقص | 329 | [SRC-3451CC474D-L000329](../tests/test_api.py#L329) |
-| [tests/test_api.py](../tests/test_api.py#L344) | دالة | test_diagnostics_endpoint_requires_boolean_options | لا توجد Docstring. | ناقص | 344 | [SRC-3451CC474D-L000344](../tests/test_api.py#L344) |
-| [tests/test_api.py](../tests/test_api.py#L360) | دالة | test_rate_limit_ignores_spoofed_forwarded_for_by_default | لا توجد Docstring. | ناقص | 360 | [SRC-3451CC474D-L000360](../tests/test_api.py#L360) |
-| [tests/test_api.py](../tests/test_api.py#L369) | دالة | test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled | لا توجد Docstring. | ناقص | 369 | [SRC-3451CC474D-L000369](../tests/test_api.py#L369) |
-| [tests/test_api.py](../tests/test_api.py#L378) | دالة | test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip | لا توجد Docstring. | ناقص | 378 | [SRC-3451CC474D-L000378](../tests/test_api.py#L378) |
-| [tests/test_api.py](../tests/test_api.py#L391) | دالة | test_http_connection_limit_configuration_is_bounded | لا توجد Docstring. | ناقص | 391 | [SRC-3451CC474D-L000391](../tests/test_api.py#L391) |
-| [tests/test_api.py](../tests/test_api.py#L399) | دالة | test_http_ingress_rejects_excess_connections_and_releases_capacity | لا توجد Docstring. | ناقص | 399 | [SRC-3451CC474D-L000399](../tests/test_api.py#L399) |
-| [tests/test_api.py](../tests/test_api.py#L413) | دالة | test_http_ingress_rejects_excess_connections_and_releases_capacity.hold_handler | لا توجد Docstring. | ناقص | 413 | [SRC-3451CC474D-L000413](../tests/test_api.py#L413) |
-| [tests/test_api.py](../tests/test_api.py#L420) | دالة | test_http_ingress_rejects_excess_connections_and_releases_capacity.track_worker | لا توجد Docstring. | ناقص | 420 | [SRC-3451CC474D-L000420](../tests/test_api.py#L420) |
-| [tests/test_api.py](../tests/test_api.py#L449) | دالة | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota | لا توجد Docstring. | ناقص | 449 | [SRC-3451CC474D-L000449](../tests/test_api.py#L449) |
-| [tests/test_api.py](../tests/test_api.py#L452) | كلاس | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota.RateLimitHarness | لا توجد Docstring. | ناقص | 452 | [SRC-3451CC474D-L000452](../tests/test_api.py#L452) |
-| [tests/test_api.py](../tests/test_api.py#L464) | دالة | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota.RateLimitHarness.__init__ | لا توجد Docstring. | ناقص | 464 | [SRC-3451CC474D-L000464](../tests/test_api.py#L464) |
-| [tests/test_api.py](../tests/test_api.py#L479) | دالة | test_public_api_authentication_and_rate_limit_precede_json_parsing | Reject untrusted API calls before parsing bodies and throttle repeated failures. | موثق | 479 | [SRC-3451CC474D-L000479](../tests/test_api.py#L479) |
-| [tests/test_api.py](../tests/test_api.py#L507) | دالة | test_hosted_api_requires_private_token_for_search_and_lead_data | لا توجد Docstring. | ناقص | 507 | [SRC-3451CC474D-L000507](../tests/test_api.py#L507) |
-| [tests/test_api.py](../tests/test_api.py#L532) | دالة | test_hosted_api_rate_limits_authenticated_requests | لا توجد Docstring. | ناقص | 532 | [SRC-3451CC474D-L000532](../tests/test_api.py#L532) |
-| [tests/test_api.py](../tests/test_api.py#L553) | دالة | test_public_binding_requires_explicit_deployment_flag_and_strong_token | لا توجد Docstring. | ناقص | 553 | [SRC-3451CC474D-L000553](../tests/test_api.py#L553) |
-| [tests/test_api.py](../tests/test_api.py#L566) | دالة | test_rate_limiter_prunes_expired_client_buckets | Client IPs do not accumulate forever after their 60-second window expires. | موثق | 566 | [SRC-3451CC474D-L000566](../tests/test_api.py#L566) |
-| [tests/test_api.py](../tests/test_api.py#L574) | كلاس | test_rate_limiter_prunes_expired_client_buckets.FakeHandler | لا توجد Docstring. | ناقص | 574 | [SRC-3451CC474D-L000574](../tests/test_api.py#L574) |
-| [tests/test_api.py](../tests/test_api.py#L575) | دالة | test_rate_limiter_prunes_expired_client_buckets.FakeHandler.__init__ | لا توجد Docstring. | ناقص | 575 | [SRC-3451CC474D-L000575](../tests/test_api.py#L575) |
-| [tests/test_api.py](../tests/test_api.py#L591) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy | لا توجد Docstring. | ناقص | 591 | [SRC-3451CC474D-L000591](../tests/test_api.py#L591) |
-| [tests/test_api.py](../tests/test_api.py#L604) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.slow_answer | لا توجد Docstring. | ناقص | 604 | [SRC-3451CC474D-L000604](../tests/test_api.py#L604) |
-| [tests/test_api.py](../tests/test_api.py#L624) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.first_request | لا توجد Docstring. | ناقص | 624 | [SRC-3451CC474D-L000624](../tests/test_api.py#L624) |
-| [tests/test_api.py](../tests/test_api.py#L647) | دالة | test_agent_concurrency_limit_has_hard_bounds | لا توجد Docstring. | ناقص | 647 | [SRC-3451CC474D-L000647](../tests/test_api.py#L647) |
-| [tests/test_api.py](../tests/test_api.py#L656) | دالة | test_api_rejects_oversized_request_body | لا توجد Docstring. | ناقص | 656 | [SRC-3451CC474D-L000656](../tests/test_api.py#L656) |
-| [tests/test_api.py](../tests/test_api.py#L668) | دالة | test_api_rejects_malformed_content_length | لا توجد Docstring. | ناقص | 668 | [SRC-3451CC474D-L000668](../tests/test_api.py#L668) |
-| [tests/test_api.py](../tests/test_api.py#L691) | دالة | test_api_returns_408_when_request_body_read_times_out | لا توجد Docstring. | ناقص | 691 | [SRC-3451CC474D-L000691](../tests/test_api.py#L691) |
-| [tests/test_api.py](../tests/test_api.py#L717) | دالة | test_api_absolute_body_deadline_stops_slow_trickle | A client must not evade the total deadline by sending before each idle timeout. | موثق | 717 | [SRC-3451CC474D-L000717](../tests/test_api.py#L717) |
-| [tests/test_api.py](../tests/test_api.py#L764) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 764 | [SRC-3451CC474D-L000764](../tests/test_api.py#L764) |
-| [tests/test_api.py](../tests/test_api.py#L810) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 810 | [SRC-3451CC474D-L000810](../tests/test_api.py#L810) |
-| [tests/test_api.py](../tests/test_api.py#L831) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 831 | [SRC-3451CC474D-L000831](../tests/test_api.py#L831) |
-| [tests/test_api.py](../tests/test_api.py#L852) | دالة | test_security_headers_apply_to_json_and_html_responses | لا توجد Docstring. | ناقص | 852 | [SRC-3451CC474D-L000852](../tests/test_api.py#L852) |
-| [tests/test_api.py](../tests/test_api.py#L872) | دالة | test_health_exposes_only_validated_image_baked_sha | لا توجد Docstring. | ناقص | 872 | [SRC-3451CC474D-L000872](../tests/test_api.py#L872) |
-| [tests/test_api.py](../tests/test_api.py#L892) | دالة | test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable | لا توجد Docstring. | ناقص | 892 | [SRC-3451CC474D-L000892](../tests/test_api.py#L892) |
-| [tests/test_api.py](../tests/test_api.py#L907) | دالة | test_invalid_platform_commit_does_not_create_build_identity | لا توجد Docstring. | ناقص | 907 | [SRC-3451CC474D-L000907](../tests/test_api.py#L907) |
-| [tests/test_api.py](../tests/test_api.py#L919) | دالة | test_lead_store_uses_configured_database_path | لا توجد Docstring. | ناقص | 919 | [SRC-3451CC474D-L000919](../tests/test_api.py#L919) |
-| [tests/test_api.py](../tests/test_api.py#L932) | دالة | test_agent_concurrency_slot_released_after_operation_error | لا توجد Docstring. | ناقص | 932 | [SRC-3451CC474D-L000932](../tests/test_api.py#L932) |
-| [tests/test_api.py](../tests/test_api.py#L942) | دالة | test_agent_concurrency_slot_released_after_operation_error.answer_with_one_transient_failure | لا توجد Docstring. | ناقص | 942 | [SRC-3451CC474D-L000942](../tests/test_api.py#L942) |
-| [tests/test_api.py](../tests/test_api.py#L979) | دالة | test_csp_hashes_match_all_first_party_inline_content_and_attributes | لا توجد Docstring. | ناقص | 979 | [SRC-3451CC474D-L000979](../tests/test_api.py#L979) |
-| [tests/test_api.py](../tests/test_api.py#L1017) | دالة | test_dashboard_uses_delegated_status_action_not_inline_onclick | لا توجد Docstring. | ناقص | 1017 | [SRC-3451CC474D-L001017](../tests/test_api.py#L1017) |
-| [tests/test_api.py](../tests/test_api.py#L1025) | دالة | test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts | لا توجد Docstring. | ناقص | 1025 | [SRC-3451CC474D-L001025](../tests/test_api.py#L1025) |
-| [tests/test_api.py](../tests/test_api.py#L1094) | دالة | test_browser_session_login_rejects_untrusted_origin | لا توجد Docstring. | ناقص | 1094 | [SRC-3451CC474D-L001094](../tests/test_api.py#L1094) |
-| [tests/test_api.py](../tests/test_api.py#L1108) | دالة | test_browser_session_does_not_accept_unsafe_cookie_token_format | لا توجد Docstring. | ناقص | 1108 | [SRC-3451CC474D-L001108](../tests/test_api.py#L1108) |
-| [tests/test_api.py](../tests/test_api.py#L1122) | دالة | test_expired_browser_session_can_logout_and_clear_cookie | لا توجد Docstring. | ناقص | 1122 | [SRC-3451CC474D-L001122](../tests/test_api.py#L1122) |
-| [tests/test_api.py](../tests/test_api.py#L1167) | دالة | test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cookie | لا توجد Docstring. | ناقص | 1167 | [SRC-3451CC474D-L001167](../tests/test_api.py#L1167) |
-| [tests/test_api.py](../tests/test_api.py#L1204) | دالة | test_api_rejects_ambiguous_or_unsupported_http_request_framing | لا توجد Docstring. | ناقص | 1204 | [SRC-3451CC474D-L001204](../tests/test_api.py#L1204) |
-| [tests/test_api.py](../tests/test_api.py#L1232) | دالة | test_api_closes_connection_when_declared_body_exceeds_limit | لا توجد Docstring. | ناقص | 1232 | [SRC-3451CC474D-L001232](../tests/test_api.py#L1232) |
-| [tests/test_api.py](../tests/test_api.py#L1257) | دالة | test_workspace_route_serves_the_arabic_rtl_workspace_shell | لا توجد Docstring. | ناقص | 1257 | [SRC-3451CC474D-L001257](../tests/test_api.py#L1257) |
-| [tests/test_api.py](../tests/test_api.py#L1269) | دالة | test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads | لا توجد Docstring. | ناقص | 1269 | [SRC-3451CC474D-L001269](../tests/test_api.py#L1269) |
-| [tests/test_api.py](../tests/test_api.py#L1293) | دالة | test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources | لا توجد Docstring. | ناقص | 1293 | [SRC-3451CC474D-L001293](../tests/test_api.py#L1293) |
-| [tests/test_api.py](../tests/test_api.py#L1300) | دالة | test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources.fake_answer | لا توجد Docstring. | ناقص | 1300 | [SRC-3451CC474D-L001300](../tests/test_api.py#L1300) |
-| [tests/test_api.py](../tests/test_api.py#L1416) | دالة | test_discovery_api_denies_optional_provider_usage_to_non_owner | لا توجد Docstring. | ناقص | 1416 | [SRC-3451CC474D-L001416](../tests/test_api.py#L1416) |
+| [tests/test_api.py](../tests/test_api.py#L22) | دالة | local_api | Run the real handler on loopback with explicit local-development auth opt-in. | موثق | 22 | [SRC-3451CC474D-L000022](../tests/test_api.py#L22) |
+| [tests/test_api.py](../tests/test_api.py#L50) | دالة | test_loopback_auth_requires_explicit_local_opt_in | لا توجد Docstring. | ناقص | 50 | [SRC-3451CC474D-L000050](../tests/test_api.py#L50) |
+| [tests/test_api.py](../tests/test_api.py#L57) | دالة | request_json | لا توجد Docstring. | ناقص | 57 | [SRC-3451CC474D-L000057](../tests/test_api.py#L57) |
+| [tests/test_api.py](../tests/test_api.py#L70) | دالة | request_json_with_headers | لا توجد Docstring. | ناقص | 70 | [SRC-3451CC474D-L000070](../tests/test_api.py#L70) |
+| [tests/test_api.py](../tests/test_api.py#L83) | دالة | test_api_health_analyze_save_duplicate_list_and_status | لا توجد Docstring. | ناقص | 83 | [SRC-3451CC474D-L000083](../tests/test_api.py#L83) |
+| [tests/test_api.py](../tests/test_api.py#L160) | دالة | test_api_rejects_invalid_filters_and_request_shapes | لا توجد Docstring. | ناقص | 160 | [SRC-3451CC474D-L000160](../tests/test_api.py#L160) |
+| [tests/test_api.py](../tests/test_api.py#L186) | دالة | test_api_blocks_non_json_and_cross_origin_posts | لا توجد Docstring. | ناقص | 186 | [SRC-3451CC474D-L000186](../tests/test_api.py#L186) |
+| [tests/test_api.py](../tests/test_api.py#L209) | دالة | test_configured_frontend_origin_supports_preflight_and_post | لا توجد Docstring. | ناقص | 209 | [SRC-3451CC474D-L000209](../tests/test_api.py#L209) |
+| [tests/test_api.py](../tests/test_api.py#L242) | دالة | test_preflight_rejects_unconfigured_origin | لا توجد Docstring. | ناقص | 242 | [SRC-3451CC474D-L000242](../tests/test_api.py#L242) |
+| [tests/test_api.py](../tests/test_api.py#L257) | دالة | test_ask_is_honest_when_database_is_empty | لا توجد Docstring. | ناقص | 257 | [SRC-3451CC474D-L000257](../tests/test_api.py#L257) |
+| [tests/test_api.py](../tests/test_api.py#L267) | دالة | test_web_agent_endpoint_uses_agent_result | لا توجد Docstring. | ناقص | 267 | [SRC-3451CC474D-L000267](../tests/test_api.py#L267) |
+| [tests/test_api.py](../tests/test_api.py#L270) | دالة | test_web_agent_endpoint_uses_agent_result.fake_answer | لا توجد Docstring. | ناقص | 270 | [SRC-3451CC474D-L000270](../tests/test_api.py#L270) |
+| [tests/test_api.py](../tests/test_api.py#L295) | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets | لا توجد Docstring. | ناقص | 295 | [SRC-3451CC474D-L000295](../tests/test_api.py#L295) |
+| [tests/test_api.py](../tests/test_api.py#L298) | دالة | test_live_diagnostics_endpoint_returns_report_without_secrets.fake_diagnostics | لا توجد Docstring. | ناقص | 298 | [SRC-3451CC474D-L000298](../tests/test_api.py#L298) |
+| [tests/test_api.py](../tests/test_api.py#L331) | دالة | test_live_diagnostics_requires_explicit_provider_usage_opt_in | لا توجد Docstring. | ناقص | 331 | [SRC-3451CC474D-L000331](../tests/test_api.py#L331) |
+| [tests/test_api.py](../tests/test_api.py#L334) | دالة | test_live_diagnostics_requires_explicit_provider_usage_opt_in.unexpected_diagnostics | لا توجد Docstring. | ناقص | 334 | [SRC-3451CC474D-L000334](../tests/test_api.py#L334) |
+| [tests/test_api.py](../tests/test_api.py#L348) | دالة | test_diagnostics_endpoint_rejects_non_boolean_provider_usage_opt_in | لا توجد Docstring. | ناقص | 348 | [SRC-3451CC474D-L000348](../tests/test_api.py#L348) |
+| [tests/test_api.py](../tests/test_api.py#L363) | دالة | test_diagnostics_endpoint_requires_boolean_options | لا توجد Docstring. | ناقص | 363 | [SRC-3451CC474D-L000363](../tests/test_api.py#L363) |
+| [tests/test_api.py](../tests/test_api.py#L379) | دالة | test_rate_limit_ignores_spoofed_forwarded_for_by_default | لا توجد Docstring. | ناقص | 379 | [SRC-3451CC474D-L000379](../tests/test_api.py#L379) |
+| [tests/test_api.py](../tests/test_api.py#L388) | دالة | test_rate_limit_uses_rightmost_valid_proxy_ip_only_when_enabled | لا توجد Docstring. | ناقص | 388 | [SRC-3451CC474D-L000388](../tests/test_api.py#L388) |
+| [tests/test_api.py](../tests/test_api.py#L397) | دالة | test_rate_limit_proxy_header_invalid_value_falls_back_to_peer_ip | لا توجد Docstring. | ناقص | 397 | [SRC-3451CC474D-L000397](../tests/test_api.py#L397) |
+| [tests/test_api.py](../tests/test_api.py#L410) | دالة | test_http_connection_limit_configuration_is_bounded | لا توجد Docstring. | ناقص | 410 | [SRC-3451CC474D-L000410](../tests/test_api.py#L410) |
+| [tests/test_api.py](../tests/test_api.py#L418) | دالة | test_http_ingress_rejects_excess_connections_and_releases_capacity | لا توجد Docstring. | ناقص | 418 | [SRC-3451CC474D-L000418](../tests/test_api.py#L418) |
+| [tests/test_api.py](../tests/test_api.py#L432) | دالة | test_http_ingress_rejects_excess_connections_and_releases_capacity.hold_handler | لا توجد Docstring. | ناقص | 432 | [SRC-3451CC474D-L000432](../tests/test_api.py#L432) |
+| [tests/test_api.py](../tests/test_api.py#L439) | دالة | test_http_ingress_rejects_excess_connections_and_releases_capacity.track_worker | لا توجد Docstring. | ناقص | 439 | [SRC-3451CC474D-L000439](../tests/test_api.py#L439) |
+| [tests/test_api.py](../tests/test_api.py#L468) | دالة | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota | لا توجد Docstring. | ناقص | 468 | [SRC-3451CC474D-L000468](../tests/test_api.py#L468) |
+| [tests/test_api.py](../tests/test_api.py#L471) | كلاس | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota.RateLimitHarness | لا توجد Docstring. | ناقص | 471 | [SRC-3451CC474D-L000471](../tests/test_api.py#L471) |
+| [tests/test_api.py](../tests/test_api.py#L483) | دالة | test_rate_limit_bounds_unique_client_buckets_and_shares_overflow_quota.RateLimitHarness.__init__ | لا توجد Docstring. | ناقص | 483 | [SRC-3451CC474D-L000483](../tests/test_api.py#L483) |
+| [tests/test_api.py](../tests/test_api.py#L498) | دالة | test_public_api_authentication_and_rate_limit_precede_json_parsing | Reject untrusted API calls before parsing bodies and throttle repeated failures. | موثق | 498 | [SRC-3451CC474D-L000498](../tests/test_api.py#L498) |
+| [tests/test_api.py](../tests/test_api.py#L526) | دالة | test_hosted_api_requires_private_token_for_search_and_lead_data | لا توجد Docstring. | ناقص | 526 | [SRC-3451CC474D-L000526](../tests/test_api.py#L526) |
+| [tests/test_api.py](../tests/test_api.py#L551) | دالة | test_hosted_api_rate_limits_authenticated_requests | لا توجد Docstring. | ناقص | 551 | [SRC-3451CC474D-L000551](../tests/test_api.py#L551) |
+| [tests/test_api.py](../tests/test_api.py#L572) | دالة | test_public_binding_requires_explicit_deployment_flag_and_strong_token | لا توجد Docstring. | ناقص | 572 | [SRC-3451CC474D-L000572](../tests/test_api.py#L572) |
+| [tests/test_api.py](../tests/test_api.py#L585) | دالة | test_rate_limiter_prunes_expired_client_buckets | Client IPs do not accumulate forever after their 60-second window expires. | موثق | 585 | [SRC-3451CC474D-L000585](../tests/test_api.py#L585) |
+| [tests/test_api.py](../tests/test_api.py#L593) | كلاس | test_rate_limiter_prunes_expired_client_buckets.FakeHandler | لا توجد Docstring. | ناقص | 593 | [SRC-3451CC474D-L000593](../tests/test_api.py#L593) |
+| [tests/test_api.py](../tests/test_api.py#L594) | دالة | test_rate_limiter_prunes_expired_client_buckets.FakeHandler.__init__ | لا توجد Docstring. | ناقص | 594 | [SRC-3451CC474D-L000594](../tests/test_api.py#L594) |
+| [tests/test_api.py](../tests/test_api.py#L610) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy | لا توجد Docstring. | ناقص | 610 | [SRC-3451CC474D-L000610](../tests/test_api.py#L610) |
+| [tests/test_api.py](../tests/test_api.py#L623) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.slow_answer | لا توجد Docstring. | ناقص | 623 | [SRC-3451CC474D-L000623](../tests/test_api.py#L623) |
+| [tests/test_api.py](../tests/test_api.py#L643) | دالة | test_agent_concurrency_cap_rejects_work_when_all_slots_are_busy.first_request | لا توجد Docstring. | ناقص | 643 | [SRC-3451CC474D-L000643](../tests/test_api.py#L643) |
+| [tests/test_api.py](../tests/test_api.py#L666) | دالة | test_agent_concurrency_limit_has_hard_bounds | لا توجد Docstring. | ناقص | 666 | [SRC-3451CC474D-L000666](../tests/test_api.py#L666) |
+| [tests/test_api.py](../tests/test_api.py#L675) | دالة | test_api_rejects_oversized_request_body | لا توجد Docstring. | ناقص | 675 | [SRC-3451CC474D-L000675](../tests/test_api.py#L675) |
+| [tests/test_api.py](../tests/test_api.py#L687) | دالة | test_api_rejects_malformed_content_length | لا توجد Docstring. | ناقص | 687 | [SRC-3451CC474D-L000687](../tests/test_api.py#L687) |
+| [tests/test_api.py](../tests/test_api.py#L710) | دالة | test_api_returns_408_when_request_body_read_times_out | لا توجد Docstring. | ناقص | 710 | [SRC-3451CC474D-L000710](../tests/test_api.py#L710) |
+| [tests/test_api.py](../tests/test_api.py#L736) | دالة | test_api_absolute_body_deadline_stops_slow_trickle | A client must not evade the total deadline by sending before each idle timeout. | موثق | 736 | [SRC-3451CC474D-L000736](../tests/test_api.py#L736) |
+| [tests/test_api.py](../tests/test_api.py#L783) | دالة | test_api_absolute_header_deadline_stops_slow_trickle | Header bytes arriving before idle timeout must not extend the total deadline. | موثق | 783 | [SRC-3451CC474D-L000783](../tests/test_api.py#L783) |
+| [tests/test_api.py](../tests/test_api.py#L829) | دالة | test_public_preflight_does_not_trust_spoofed_forwarded_host | A client-controlled X-Forwarded-Host must not grant an origin CORS access. | موثق | 829 | [SRC-3451CC474D-L000829](../tests/test_api.py#L829) |
+| [tests/test_api.py](../tests/test_api.py#L850) | دالة | test_public_origin_still_allows_the_requested_host | Same-service public UI remains compatible when the request Host is trusted. | موثق | 850 | [SRC-3451CC474D-L000850](../tests/test_api.py#L850) |
+| [tests/test_api.py](../tests/test_api.py#L871) | دالة | test_security_headers_apply_to_json_and_html_responses | لا توجد Docstring. | ناقص | 871 | [SRC-3451CC474D-L000871](../tests/test_api.py#L871) |
+| [tests/test_api.py](../tests/test_api.py#L891) | دالة | test_health_exposes_only_validated_image_baked_sha | لا توجد Docstring. | ناقص | 891 | [SRC-3451CC474D-L000891](../tests/test_api.py#L891) |
+| [tests/test_api.py](../tests/test_api.py#L911) | دالة | test_build_identity_uses_validated_platform_commit_when_image_sha_is_unavailable | لا توجد Docstring. | ناقص | 911 | [SRC-3451CC474D-L000911](../tests/test_api.py#L911) |
+| [tests/test_api.py](../tests/test_api.py#L926) | دالة | test_invalid_platform_commit_does_not_create_build_identity | لا توجد Docstring. | ناقص | 926 | [SRC-3451CC474D-L000926](../tests/test_api.py#L926) |
+| [tests/test_api.py](../tests/test_api.py#L938) | دالة | test_lead_store_uses_configured_database_path | لا توجد Docstring. | ناقص | 938 | [SRC-3451CC474D-L000938](../tests/test_api.py#L938) |
+| [tests/test_api.py](../tests/test_api.py#L951) | دالة | test_agent_concurrency_slot_released_after_operation_error | لا توجد Docstring. | ناقص | 951 | [SRC-3451CC474D-L000951](../tests/test_api.py#L951) |
+| [tests/test_api.py](../tests/test_api.py#L961) | دالة | test_agent_concurrency_slot_released_after_operation_error.answer_with_one_transient_failure | لا توجد Docstring. | ناقص | 961 | [SRC-3451CC474D-L000961](../tests/test_api.py#L961) |
+| [tests/test_api.py](../tests/test_api.py#L998) | دالة | test_csp_hashes_match_all_first_party_inline_content_and_attributes | لا توجد Docstring. | ناقص | 998 | [SRC-3451CC474D-L000998](../tests/test_api.py#L998) |
+| [tests/test_api.py](../tests/test_api.py#L1036) | دالة | test_dashboard_uses_delegated_status_action_not_inline_onclick | لا توجد Docstring. | ناقص | 1036 | [SRC-3451CC474D-L001036](../tests/test_api.py#L1036) |
+| [tests/test_api.py](../tests/test_api.py#L1044) | دالة | test_browser_session_uses_http_only_cookie_and_rejects_cross_site_posts | لا توجد Docstring. | ناقص | 1044 | [SRC-3451CC474D-L001044](../tests/test_api.py#L1044) |
+| [tests/test_api.py](../tests/test_api.py#L1113) | دالة | test_browser_session_login_rejects_untrusted_origin | لا توجد Docstring. | ناقص | 1113 | [SRC-3451CC474D-L001113](../tests/test_api.py#L1113) |
+| [tests/test_api.py](../tests/test_api.py#L1127) | دالة | test_browser_session_does_not_accept_unsafe_cookie_token_format | لا توجد Docstring. | ناقص | 1127 | [SRC-3451CC474D-L001127](../tests/test_api.py#L1127) |
+| [tests/test_api.py](../tests/test_api.py#L1141) | دالة | test_expired_browser_session_can_logout_and_clear_cookie | لا توجد Docstring. | ناقص | 1141 | [SRC-3451CC474D-L001141](../tests/test_api.py#L1141) |
+| [tests/test_api.py](../tests/test_api.py#L1186) | دالة | test_browser_session_logout_rejects_untrusted_origin_even_without_valid_cookie | لا توجد Docstring. | ناقص | 1186 | [SRC-3451CC474D-L001186](../tests/test_api.py#L1186) |
+| [tests/test_api.py](../tests/test_api.py#L1223) | دالة | test_api_rejects_ambiguous_or_unsupported_http_request_framing | لا توجد Docstring. | ناقص | 1223 | [SRC-3451CC474D-L001223](../tests/test_api.py#L1223) |
+| [tests/test_api.py](../tests/test_api.py#L1251) | دالة | test_api_closes_connection_when_declared_body_exceeds_limit | لا توجد Docstring. | ناقص | 1251 | [SRC-3451CC474D-L001251](../tests/test_api.py#L1251) |
+| [tests/test_api.py](../tests/test_api.py#L1276) | دالة | test_workspace_route_serves_the_arabic_rtl_workspace_shell | لا توجد Docstring. | ناقص | 1276 | [SRC-3451CC474D-L001276](../tests/test_api.py#L1276) |
+| [tests/test_api.py](../tests/test_api.py#L1288) | دالة | test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads | لا توجد Docstring. | ناقص | 1288 | [SRC-3451CC474D-L001288](../tests/test_api.py#L1288) |
+| [tests/test_api.py](../tests/test_api.py#L1312) | دالة | test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources | لا توجد Docstring. | ناقص | 1312 | [SRC-3451CC474D-L001312](../tests/test_api.py#L1312) |
+| [tests/test_api.py](../tests/test_api.py#L1319) | دالة | test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources.fake_answer | لا توجد Docstring. | ناقص | 1319 | [SRC-3451CC474D-L001319](../tests/test_api.py#L1319) |
+| [tests/test_api.py](../tests/test_api.py#L1435) | دالة | test_discovery_api_denies_optional_provider_usage_to_non_owner | لا توجد Docstring. | ناقص | 1435 | [SRC-3451CC474D-L001435](../tests/test_api.py#L1435) |
+| [tests/test_api.py](../tests/test_api.py#L1477) | دالة | test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in | لا توجد Docstring. | ناقص | 1477 | [SRC-3451CC474D-L001477](../tests/test_api.py#L1477) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L13) | دالة | test_extract_aspects_from_min_hayth | لا توجد Docstring. | ناقص | 13 | [SRC-6CBA87B20C-L000013](../tests/test_aspect_planning.py#L13) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L25) | دالة | test_extract_aspects_from_multi_question_marks | لا توجد Docstring. | ناقص | 25 | [SRC-6CBA87B20C-L000025](../tests/test_aspect_planning.py#L25) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L31) | دالة | test_build_aspect_queries_prioritizes_topic | لا توجد Docstring. | ناقص | 31 | [SRC-6CBA87B20C-L000031](../tests/test_aspect_planning.py#L31) |
@@ -1601,6 +1608,13 @@
 | [tests/test_omarai.py](../tests/test_omarai.py#L40) | دالة | test_status_updates_are_explicit | لا توجد Docstring. | ناقص | 40 | [SRC-44CDA52D01-L000040](../tests/test_omarai.py#L40) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L48) | دالة | test_csv_requires_columns | لا توجد Docstring. | ناقص | 48 | [SRC-44CDA52D01-L000048](../tests/test_omarai.py#L48) |
 | [tests/test_omarai.py](../tests/test_omarai.py#L55) | دالة | test_csv_export_neutralizes_spreadsheet_formula_injection | لا توجد Docstring. | ناقص | 55 | [SRC-44CDA52D01-L000055](../tests/test_omarai.py#L55) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L87) | دالة | test_generic_fire_alarm_and_supplier_requests_are_sector_neutral | لا توجد Docstring. | ناقص | 87 | [SRC-44CDA52D01-L000087](../tests/test_omarai.py#L87) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L96) | دالة | test_product_mention_alone_does_not_create_a_demand_signal | لا توجد Docstring. | ناقص | 96 | [SRC-44CDA52D01-L000096](../tests/test_omarai.py#L96) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L112) | دالة | test_explicit_negation_never_scores_as_buyer_intent | لا توجد Docstring. | ناقص | 112 | [SRC-44CDA52D01-L000112](../tests/test_omarai.py#L112) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L128) | دالة | test_completed_or_past_need_is_not_active_demand | لا توجد Docstring. | ناقص | 128 | [SRC-44CDA52D01-L000128](../tests/test_omarai.py#L128) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L134) | دالة | test_product_and_location_context_do_not_inflate_demand_score | لا توجد Docstring. | ناقص | 134 | [SRC-44CDA52D01-L000134](../tests/test_omarai.py#L134) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L149) | دالة | test_lead_store_uses_domain_signal_and_qualification_contracts | لا توجد Docstring. | ناقص | 149 | [SRC-44CDA52D01-L000149](../tests/test_omarai.py#L149) |
+| [tests/test_omarai.py](../tests/test_omarai.py#L166) | دالة | test_explicit_demand_types_are_not_product_fit_or_purchase_probability | لا توجد Docstring. | ناقص | 166 | [SRC-44CDA52D01-L000166](../tests/test_omarai.py#L166) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L10) | متغير/ثابت Python | TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-B106ADC5EF-L000010](../tests/test_proxy_origin.py#L10) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | متغير/ثابت Python | PUBLIC_NAME | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L14) | دالة | port | لا توجد Docstring. | ناقص | 14 | [SRC-B106ADC5EF-L000014](../tests/test_proxy_origin.py#L14) |
@@ -2337,13 +2351,21 @@
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 16 | [SRC-5587371288-L000016](../agents/intent_router.py#L16) |
-| [agents/omarai.py](../agents/omarai.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT | 20 | [SRC-C9CF9B54F8-L000020](../agents/omarai.py#L20) |
-| [agents/omarai.py](../agents/omarai.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TENANT_ID | 21 | [SRC-C9CF9B54F8-L000021](../agents/omarai.py#L21) |
-| [agents/omarai.py](../agents/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_USER_ID | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
-| [agents/omarai.py](../agents/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 30 | [SRC-C9CF9B54F8-L000030](../agents/omarai.py#L30) |
-| [agents/omarai.py](../agents/omarai.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 92 | [SRC-C9CF9B54F8-L000092](../agents/omarai.py#L92) |
-| [agents/omarai.py](../agents/omarai.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 95 | [SRC-C9CF9B54F8-L000095](../agents/omarai.py#L95) |
-| [agents/omarai.py](../agents/omarai.py#L1082) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 1082 | [SRC-C9CF9B54F8-L001082](../agents/omarai.py#L1082) |
+| [agents/omarai.py](../agents/omarai.py#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT | 33 | [SRC-C9CF9B54F8-L000033](../agents/omarai.py#L33) |
+| [agents/omarai.py](../agents/omarai.py#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TENANT_ID | 34 | [SRC-C9CF9B54F8-L000034](../agents/omarai.py#L34) |
+| [agents/omarai.py](../agents/omarai.py#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_USER_ID | 35 | [SRC-C9CF9B54F8-L000035](../agents/omarai.py#L35) |
+| [agents/omarai.py](../agents/omarai.py#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 70 | [SRC-C9CF9B54F8-L000070](../agents/omarai.py#L70) |
+| [agents/omarai.py](../agents/omarai.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CLOSED_OR_STALE | 79 | [SRC-C9CF9B54F8-L000079](../agents/omarai.py#L79) |
+| [agents/omarai.py](../agents/omarai.py#L125) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_FOR_QUOTATION | 125 | [SRC-C9CF9B54F8-L000125](../agents/omarai.py#L125) |
+| [agents/omarai.py](../agents/omarai.py#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TENDER_OR_PROCUREMENT | 129 | [SRC-C9CF9B54F8-L000129](../agents/omarai.py#L129) |
+| [agents/omarai.py](../agents/omarai.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DIRECT_PURCHASE_REQUEST | 130 | [SRC-C9CF9B54F8-L000130](../agents/omarai.py#L130) |
+| [agents/omarai.py](../agents/omarai.py#L132) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | STATED_NEED | 132 | [SRC-C9CF9B54F8-L000132](../agents/omarai.py#L132) |
+| [agents/omarai.py](../agents/omarai.py#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDIRECT_INDICATOR | 134 | [SRC-C9CF9B54F8-L000134](../agents/omarai.py#L134) |
+| [agents/omarai.py](../agents/omarai.py#L257) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 257 | [SRC-C9CF9B54F8-L000257](../agents/omarai.py#L257) |
+| [agents/omarai.py](../agents/omarai.py#L260) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 260 | [SRC-C9CF9B54F8-L000260](../agents/omarai.py#L260) |
+| [agents/omarai.py](../agents/omarai.py#L854) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_PROVIDED | 854 | [SRC-C9CF9B54F8-L000854](../agents/omarai.py#L854) |
+| [agents/omarai.py](../agents/omarai.py#L872) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_ASSESSED | 872 | [SRC-C9CF9B54F8-L000872](../agents/omarai.py#L872) |
+| [agents/omarai.py](../agents/omarai.py#L1284) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 1284 | [SRC-C9CF9B54F8-L001284](../agents/omarai.py#L1284) |
 | [agents/request_budget.py](../agents/request_budget.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
 | [agents/request_budget.py](../agents/request_budget.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TIMEOUT_SECONDS | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
 | [agents/request_budget.py](../agents/request_budget.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESOURCE_LIMITS | 23 | [SRC-FDEEAFDFCA-L000023](../agents/request_budget.py#L23) |
@@ -2484,21 +2506,23 @@
 | [api/omarai.py](../api/omarai.py#L367) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 367 | [SRC-EEF2E6447C-L000367](../api/omarai.py#L367) |
 | [api/omarai.py](../api/omarai.py#L389) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 389 | [SRC-EEF2E6447C-L000389](../api/omarai.py#L389) |
 | [api/omarai.py](../api/omarai.py#L420) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 420 | [SRC-EEF2E6447C-L000420](../api/omarai.py#L420) |
-| [api/omarai.py](../api/omarai.py#L470) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 470 | [SRC-EEF2E6447C-L000470](../api/omarai.py#L470) |
-| [api/omarai.py](../api/omarai.py#L505) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 505 | [SRC-EEF2E6447C-L000505](../api/omarai.py#L505) |
-| [api/omarai.py](../api/omarai.py#L663) | مسار API/واجهة محتمل | /leads | 663 | [SRC-EEF2E6447C-L000663](../api/omarai.py#L663) |
-| [api/omarai.py](../api/omarai.py#L667) | مسار API/واجهة محتمل | /api/health | 667 | [SRC-EEF2E6447C-L000667](../api/omarai.py#L667) |
-| [api/omarai.py](../api/omarai.py#L684) | مسار API/واجهة محتمل | /api/product-profiles | 684 | [SRC-EEF2E6447C-L000684](../api/omarai.py#L684) |
-| [api/omarai.py](../api/omarai.py#L693) | مسار API/واجهة محتمل | /api/discoveries | 693 | [SRC-EEF2E6447C-L000693](../api/omarai.py#L693) |
-| [api/omarai.py](../api/omarai.py#L717) | مسار API/واجهة محتمل | /api/session | 717 | [SRC-EEF2E6447C-L000717](../api/omarai.py#L717) |
-| [api/omarai.py](../api/omarai.py#L729) | مسار API/واجهة محتمل | /api/leads | 729 | [SRC-EEF2E6447C-L000729](../api/omarai.py#L729) |
-| [api/omarai.py](../api/omarai.py#L751) | مسار API/واجهة محتمل | /api/session/logout | 751 | [SRC-EEF2E6447C-L000751](../api/omarai.py#L751) |
-| [api/omarai.py](../api/omarai.py#L890) | مسار API/واجهة محتمل | /api/discoveries/ | 890 | [SRC-EEF2E6447C-L000890](../api/omarai.py#L890) |
-| [api/omarai.py](../api/omarai.py#L921) | مسار API/واجهة محتمل | /api/tokens/revoke | 921 | [SRC-EEF2E6447C-L000921](../api/omarai.py#L921) |
-| [api/omarai.py](../api/omarai.py#L944) | مسار API/واجهة محتمل | /api/diagnostics | 944 | [SRC-EEF2E6447C-L000944](../api/omarai.py#L944) |
-| [api/omarai.py](../api/omarai.py#L985) | مسار API/واجهة محتمل | /api/agent | 985 | [SRC-EEF2E6447C-L000985](../api/omarai.py#L985) |
-| [api/omarai.py](../api/omarai.py#L1014) | مسار API/واجهة محتمل | /api/ask | 1014 | [SRC-EEF2E6447C-L001014](../api/omarai.py#L1014) |
-| [api/omarai.py](../api/omarai.py#L1021) | مسار API/واجهة محتمل | /api/analyze | 1021 | [SRC-EEF2E6447C-L001021](../api/omarai.py#L1021) |
+| [api/omarai.py](../api/omarai.py#L471) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOW_LOOPBACK_AUTH | 471 | [SRC-EEF2E6447C-L000471](../api/omarai.py#L471) |
+| [api/omarai.py](../api/omarai.py#L485) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 485 | [SRC-EEF2E6447C-L000485](../api/omarai.py#L485) |
+| [api/omarai.py](../api/omarai.py#L520) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 520 | [SRC-EEF2E6447C-L000520](../api/omarai.py#L520) |
+| [api/omarai.py](../api/omarai.py#L678) | مسار API/واجهة محتمل | /leads | 678 | [SRC-EEF2E6447C-L000678](../api/omarai.py#L678) |
+| [api/omarai.py](../api/omarai.py#L682) | مسار API/واجهة محتمل | /api/health | 682 | [SRC-EEF2E6447C-L000682](../api/omarai.py#L682) |
+| [api/omarai.py](../api/omarai.py#L696) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PERSISTENT | 696 | [SRC-EEF2E6447C-L000696](../api/omarai.py#L696) |
+| [api/omarai.py](../api/omarai.py#L718) | مسار API/واجهة محتمل | /api/product-profiles | 718 | [SRC-EEF2E6447C-L000718](../api/omarai.py#L718) |
+| [api/omarai.py](../api/omarai.py#L727) | مسار API/واجهة محتمل | /api/discoveries | 727 | [SRC-EEF2E6447C-L000727](../api/omarai.py#L727) |
+| [api/omarai.py](../api/omarai.py#L751) | مسار API/واجهة محتمل | /api/session | 751 | [SRC-EEF2E6447C-L000751](../api/omarai.py#L751) |
+| [api/omarai.py](../api/omarai.py#L763) | مسار API/واجهة محتمل | /api/leads | 763 | [SRC-EEF2E6447C-L000763](../api/omarai.py#L763) |
+| [api/omarai.py](../api/omarai.py#L785) | مسار API/واجهة محتمل | /api/session/logout | 785 | [SRC-EEF2E6447C-L000785](../api/omarai.py#L785) |
+| [api/omarai.py](../api/omarai.py#L924) | مسار API/واجهة محتمل | /api/discoveries/ | 924 | [SRC-EEF2E6447C-L000924](../api/omarai.py#L924) |
+| [api/omarai.py](../api/omarai.py#L955) | مسار API/واجهة محتمل | /api/tokens/revoke | 955 | [SRC-EEF2E6447C-L000955](../api/omarai.py#L955) |
+| [api/omarai.py](../api/omarai.py#L978) | مسار API/واجهة محتمل | /api/diagnostics | 978 | [SRC-EEF2E6447C-L000978](../api/omarai.py#L978) |
+| [api/omarai.py](../api/omarai.py#L1019) | مسار API/واجهة محتمل | /api/agent | 1019 | [SRC-EEF2E6447C-L001019](../api/omarai.py#L1019) |
+| [api/omarai.py](../api/omarai.py#L1048) | مسار API/واجهة محتمل | /api/ask | 1048 | [SRC-EEF2E6447C-L001048](../api/omarai.py#L1048) |
+| [api/omarai.py](../api/omarai.py#L1055) | مسار API/واجهة محتمل | /api/analyze | 1055 | [SRC-EEF2E6447C-L001055](../api/omarai.py#L1055) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | عنوان Markdown (H1) | تقرير قبول الاستضافة — Omarai | 1 | [SRC-65AAF94960-L000001](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | عنوان Markdown (H2) | الملخص التنفيذي | 6 | [SRC-65AAF94960-L000006](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | عنوان Markdown (H2) | أدلة القبول | 11 | [SRC-65AAF94960-L000011](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) |
@@ -2662,13 +2686,16 @@
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L28) | عنوان Markdown (H2) | توليد رمز الوصول | 28 | [SRC-D57B0BB030-L000028](DEPLOY_RENDER_AR.md#L28) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L38) | عنوان Markdown (H2) | مسار قاعدة البيانات عند وجود قرص دائم | 38 | [SRC-D57B0BB030-L000038](DEPLOY_RENDER_AR.md#L38) |
 | [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 41 | [SRC-D57B0BB030-L000041](DEPLOY_RENDER_AR.md#L41) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L42) | عنوان Markdown (H2) | حدود النسخة المجانية | 42 | [SRC-D57B0BB030-L000042](DEPLOY_RENDER_AR.md#L42) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L49) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 49 | [SRC-D57B0BB030-L000049](DEPLOY_RENDER_AR.md#L49) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L51) | عنوان Markdown (H2) | اختبار التشغيل الحي | 51 | [SRC-D57B0BB030-L000051](DEPLOY_RENDER_AR.md#L51) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 54 | [SRC-D57B0BB030-L000054](DEPLOY_RENDER_AR.md#L54) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L57) | عنوان Markdown (H2) | إذا فشل النشر | 57 | [SRC-D57B0BB030-L000057](DEPLOY_RENDER_AR.md#L57) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 63 | [SRC-D57B0BB030-L000063](DEPLOY_RENDER_AR.md#L63) |
-| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L66) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 66 | [SRC-D57B0BB030-L000066](DEPLOY_RENDER_AR.md#L66) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L41) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PERSISTENT | 41 | [SRC-D57B0BB030-L000041](DEPLOY_RENDER_AR.md#L41) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L42) | عنوان Markdown (H2) | المصادقة المحلية عبر loopback | 42 | [SRC-D57B0BB030-L000042](DEPLOY_RENDER_AR.md#L42) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOW_LOOPBACK_AUTH | 45 | [SRC-D57B0BB030-L000045](DEPLOY_RENDER_AR.md#L45) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 45 | [SRC-D57B0BB030-L000045](DEPLOY_RENDER_AR.md#L45) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L46) | عنوان Markdown (H2) | حدود النسخة المجانية | 46 | [SRC-D57B0BB030-L000046](DEPLOY_RENDER_AR.md#L46) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 53 | [SRC-D57B0BB030-L000053](DEPLOY_RENDER_AR.md#L53) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L55) | عنوان Markdown (H2) | اختبار التشغيل الحي | 55 | [SRC-D57B0BB030-L000055](DEPLOY_RENDER_AR.md#L55) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L58) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 58 | [SRC-D57B0BB030-L000058](DEPLOY_RENDER_AR.md#L58) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L61) | عنوان Markdown (H2) | إذا فشل النشر | 61 | [SRC-D57B0BB030-L000061](DEPLOY_RENDER_AR.md#L61) |
+| [docs/DEPLOY_RENDER_AR.md](DEPLOY_RENDER_AR.md#L70) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 70 | [SRC-D57B0BB030-L000070](DEPLOY_RENDER_AR.md#L70) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | عنوان Markdown (H1) | نشر Omarai على SnapDeploy Free — دليل عربي | 1 | [SRC-51D44BE378-L000001](DEPLOY_SNAPDEPLOY_AR.md#L1) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L4) | عنوان Markdown (H2) | حدود الخطة المجانية — راجعها قبل النشر | 4 | [SRC-51D44BE378-L000004](DEPLOY_SNAPDEPLOY_AR.md#L4) |
 | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L15) | عنوان Markdown (H2) | 1. إنشاء الحساب وربط GitHub | 15 | [SRC-51D44BE378-L000015](DEPLOY_SNAPDEPLOY_AR.md#L15) |
@@ -4104,39 +4131,41 @@
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 128 | [SRC-1C77C97630-L000128](../tests/test_answer_validation.py#L128) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L196) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 196 | [SRC-1C77C97630-L000196](../tests/test_answer_validation.py#L196) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L196) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 196 | [SRC-1C77C97630-L000196](../tests/test_answer_validation.py#L196) |
-| [tests/test_api.py](../tests/test_api.py#L71) | مسار API/واجهة محتمل | /api/health | 71 | [SRC-3451CC474D-L000071](../tests/test_api.py#L71) |
-| [tests/test_api.py](../tests/test_api.py#L81) | مسار API/واجهة محتمل | /api/analyze | 81 | [SRC-3451CC474D-L000081](../tests/test_api.py#L81) |
-| [tests/test_api.py](../tests/test_api.py#L98) | مسار API/واجهة محتمل | /api/leads | 98 | [SRC-3451CC474D-L000098](../tests/test_api.py#L98) |
-| [tests/test_api.py](../tests/test_api.py#L116) | مسار API/واجهة محتمل | /api/leads/{lead_id}/status | 116 | [SRC-3451CC474D-L000116](../tests/test_api.py#L116) |
-| [tests/test_api.py](../tests/test_api.py#L124) | مسار API/واجهة محتمل | /api/ask | 124 | [SRC-3451CC474D-L000124](../tests/test_api.py#L124) |
-| [tests/test_api.py](../tests/test_api.py#L168) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 168 | [SRC-3451CC474D-L000168](../tests/test_api.py#L168) |
-| [tests/test_api.py](../tests/test_api.py#L195) | مسار API/واجهة محتمل | /api/agent | 195 | [SRC-3451CC474D-L000195](../tests/test_api.py#L195) |
-| [tests/test_api.py](../tests/test_api.py#L297) | مسار API/واجهة محتمل | /api/diagnostics | 297 | [SRC-3451CC474D-L000297](../tests/test_api.py#L297) |
-| [tests/test_api.py](../tests/test_api.py#L361) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 361 | [SRC-3451CC474D-L000361](../tests/test_api.py#L361) |
-| [tests/test_api.py](../tests/test_api.py#L394) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 394 | [SRC-3451CC474D-L000394](../tests/test_api.py#L394) |
-| [tests/test_api.py](../tests/test_api.py#L456) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 456 | [SRC-3451CC474D-L000456](../tests/test_api.py#L456) |
-| [tests/test_api.py](../tests/test_api.py#L457) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 457 | [SRC-3451CC474D-L000457](../tests/test_api.py#L457) |
-| [tests/test_api.py](../tests/test_api.py#L458) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 458 | [SRC-3451CC474D-L000458](../tests/test_api.py#L458) |
-| [tests/test_api.py](../tests/test_api.py#L459) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 459 | [SRC-3451CC474D-L000459](../tests/test_api.py#L459) |
-| [tests/test_api.py](../tests/test_api.py#L460) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 460 | [SRC-3451CC474D-L000460](../tests/test_api.py#L460) |
-| [tests/test_api.py](../tests/test_api.py#L481) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 481 | [SRC-3451CC474D-L000481](../tests/test_api.py#L481) |
-| [tests/test_api.py](../tests/test_api.py#L482) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 482 | [SRC-3451CC474D-L000482](../tests/test_api.py#L482) |
-| [tests/test_api.py](../tests/test_api.py#L650) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 650 | [SRC-3451CC474D-L000650](../tests/test_api.py#L650) |
-| [tests/test_api.py](../tests/test_api.py#L694) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 694 | [SRC-3451CC474D-L000694](../tests/test_api.py#L694) |
-| [tests/test_api.py](../tests/test_api.py#L724) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 724 | [SRC-3451CC474D-L000724](../tests/test_api.py#L724) |
-| [tests/test_api.py](../tests/test_api.py#L770) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 770 | [SRC-3451CC474D-L000770](../tests/test_api.py#L770) |
-| [tests/test_api.py](../tests/test_api.py#L771) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 771 | [SRC-3451CC474D-L000771](../tests/test_api.py#L771) |
-| [tests/test_api.py](../tests/test_api.py#L875) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 875 | [SRC-3451CC474D-L000875](../tests/test_api.py#L875) |
-| [tests/test_api.py](../tests/test_api.py#L876) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 876 | [SRC-3451CC474D-L000876](../tests/test_api.py#L876) |
-| [tests/test_api.py](../tests/test_api.py#L888) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 888 | [SRC-3451CC474D-L000888](../tests/test_api.py#L888) |
-| [tests/test_api.py](../tests/test_api.py#L889) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 889 | [SRC-3451CC474D-L000889](../tests/test_api.py#L889) |
-| [tests/test_api.py](../tests/test_api.py#L923) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 923 | [SRC-3451CC474D-L000923](../tests/test_api.py#L923) |
-| [tests/test_api.py](../tests/test_api.py#L1035) | مسار API/واجهة محتمل | /api/session | 1035 | [SRC-3451CC474D-L001035](../tests/test_api.py#L1035) |
-| [tests/test_api.py](../tests/test_api.py#L1079) | مسار API/واجهة محتمل | /api/session/logout | 1079 | [SRC-3451CC474D-L001079](../tests/test_api.py#L1079) |
-| [tests/test_api.py](../tests/test_api.py#L1287) | مسار API/واجهة محتمل | /leads | 1287 | [SRC-3451CC474D-L001287](../tests/test_api.py#L1287) |
-| [tests/test_api.py](../tests/test_api.py#L1349) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 1349 | [SRC-3451CC474D-L001349](../tests/test_api.py#L1349) |
-| [tests/test_api.py](../tests/test_api.py#L1353) | مسار API/واجهة محتمل | /api/product-profiles | 1353 | [SRC-3451CC474D-L001353](../tests/test_api.py#L1353) |
-| [tests/test_api.py](../tests/test_api.py#L1378) | مسار API/واجهة محتمل | /api/discoveries | 1378 | [SRC-3451CC474D-L001378](../tests/test_api.py#L1378) |
+| [tests/test_api.py](../tests/test_api.py#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOW_LOOPBACK_AUTH | 24 | [SRC-3451CC474D-L000024](../tests/test_api.py#L24) |
+| [tests/test_api.py](../tests/test_api.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 25 | [SRC-3451CC474D-L000025](../tests/test_api.py#L25) |
+| [tests/test_api.py](../tests/test_api.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PERSISTENT | 26 | [SRC-3451CC474D-L000026](../tests/test_api.py#L26) |
+| [tests/test_api.py](../tests/test_api.py#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 27 | [SRC-3451CC474D-L000027](../tests/test_api.py#L27) |
+| [tests/test_api.py](../tests/test_api.py#L52) | مسار API/واجهة محتمل | /api/leads | 52 | [SRC-3451CC474D-L000052](../tests/test_api.py#L52) |
+| [tests/test_api.py](../tests/test_api.py#L84) | مسار API/واجهة محتمل | /api/health | 84 | [SRC-3451CC474D-L000084](../tests/test_api.py#L84) |
+| [tests/test_api.py](../tests/test_api.py#L100) | مسار API/واجهة محتمل | /api/analyze | 100 | [SRC-3451CC474D-L000100](../tests/test_api.py#L100) |
+| [tests/test_api.py](../tests/test_api.py#L135) | مسار API/واجهة محتمل | /api/leads/{lead_id}/status | 135 | [SRC-3451CC474D-L000135](../tests/test_api.py#L135) |
+| [tests/test_api.py](../tests/test_api.py#L143) | مسار API/واجهة محتمل | /api/ask | 143 | [SRC-3451CC474D-L000143](../tests/test_api.py#L143) |
+| [tests/test_api.py](../tests/test_api.py#L187) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 187 | [SRC-3451CC474D-L000187](../tests/test_api.py#L187) |
+| [tests/test_api.py](../tests/test_api.py#L214) | مسار API/واجهة محتمل | /api/agent | 214 | [SRC-3451CC474D-L000214](../tests/test_api.py#L214) |
+| [tests/test_api.py](../tests/test_api.py#L316) | مسار API/واجهة محتمل | /api/diagnostics | 316 | [SRC-3451CC474D-L000316](../tests/test_api.py#L316) |
+| [tests/test_api.py](../tests/test_api.py#L380) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 380 | [SRC-3451CC474D-L000380](../tests/test_api.py#L380) |
+| [tests/test_api.py](../tests/test_api.py#L413) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 413 | [SRC-3451CC474D-L000413](../tests/test_api.py#L413) |
+| [tests/test_api.py](../tests/test_api.py#L475) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 475 | [SRC-3451CC474D-L000475](../tests/test_api.py#L475) |
+| [tests/test_api.py](../tests/test_api.py#L476) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 476 | [SRC-3451CC474D-L000476](../tests/test_api.py#L476) |
+| [tests/test_api.py](../tests/test_api.py#L477) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 477 | [SRC-3451CC474D-L000477](../tests/test_api.py#L477) |
+| [tests/test_api.py](../tests/test_api.py#L478) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 478 | [SRC-3451CC474D-L000478](../tests/test_api.py#L478) |
+| [tests/test_api.py](../tests/test_api.py#L479) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 479 | [SRC-3451CC474D-L000479](../tests/test_api.py#L479) |
+| [tests/test_api.py](../tests/test_api.py#L501) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 501 | [SRC-3451CC474D-L000501](../tests/test_api.py#L501) |
+| [tests/test_api.py](../tests/test_api.py#L669) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 669 | [SRC-3451CC474D-L000669](../tests/test_api.py#L669) |
+| [tests/test_api.py](../tests/test_api.py#L713) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 713 | [SRC-3451CC474D-L000713](../tests/test_api.py#L713) |
+| [tests/test_api.py](../tests/test_api.py#L743) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 743 | [SRC-3451CC474D-L000743](../tests/test_api.py#L743) |
+| [tests/test_api.py](../tests/test_api.py#L789) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 789 | [SRC-3451CC474D-L000789](../tests/test_api.py#L789) |
+| [tests/test_api.py](../tests/test_api.py#L790) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 790 | [SRC-3451CC474D-L000790](../tests/test_api.py#L790) |
+| [tests/test_api.py](../tests/test_api.py#L894) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 894 | [SRC-3451CC474D-L000894](../tests/test_api.py#L894) |
+| [tests/test_api.py](../tests/test_api.py#L895) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 895 | [SRC-3451CC474D-L000895](../tests/test_api.py#L895) |
+| [tests/test_api.py](../tests/test_api.py#L907) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 907 | [SRC-3451CC474D-L000907](../tests/test_api.py#L907) |
+| [tests/test_api.py](../tests/test_api.py#L908) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 908 | [SRC-3451CC474D-L000908](../tests/test_api.py#L908) |
+| [tests/test_api.py](../tests/test_api.py#L1054) | مسار API/واجهة محتمل | /api/session | 1054 | [SRC-3451CC474D-L001054](../tests/test_api.py#L1054) |
+| [tests/test_api.py](../tests/test_api.py#L1098) | مسار API/واجهة محتمل | /api/session/logout | 1098 | [SRC-3451CC474D-L001098](../tests/test_api.py#L1098) |
+| [tests/test_api.py](../tests/test_api.py#L1306) | مسار API/واجهة محتمل | /leads | 1306 | [SRC-3451CC474D-L001306](../tests/test_api.py#L1306) |
+| [tests/test_api.py](../tests/test_api.py#L1368) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 1368 | [SRC-3451CC474D-L001368](../tests/test_api.py#L1368) |
+| [tests/test_api.py](../tests/test_api.py#L1372) | مسار API/واجهة محتمل | /api/product-profiles | 1372 | [SRC-3451CC474D-L001372](../tests/test_api.py#L1372) |
+| [tests/test_api.py](../tests/test_api.py#L1397) | مسار API/واجهة محتمل | /api/discoveries | 1397 | [SRC-3451CC474D-L001397](../tests/test_api.py#L1397) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 10 | [SRC-DA61479D59-L000010](../tests/test_connector_summary_counters.py#L10) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 130 | [SRC-DA61479D59-L000130](../tests/test_connector_summary_counters.py#L130) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 131 | [SRC-DA61479D59-L000131](../tests/test_connector_summary_counters.py#L131) |
