@@ -236,7 +236,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const state={role:null,leads:[],profiles:[],discoveryRuns:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
+const state={role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
 const statuses=[
  {id:"new",label:"جديد"},
  {id:"needs_review",label:"يحتاج مراجعة"},
@@ -694,6 +694,9 @@ function renderCurrent(){
  else if(state.activeView==="pipeline")renderPipeline();
  else if(state.activeView==="system")renderSystem();
  else renderPlaceholder(state.activeView);
+ if(state.loadWarnings.length){
+  $("viewRoot").prepend(make("p","auth-error","تم التحقق من الجلسة؛ تعذر تحميل بعض البيانات: "+state.loadWarnings.join("، ")+". قد تكون بعض القوائم والأرقام غير مكتملة."));
+ }
 }
 function navigate(view){
  state.activeView=view;renderCurrent();
@@ -712,21 +715,43 @@ async function loadLeads(){
  state.leads=Array.isArray(data.leads)?data.leads:[];
 }
 async function bootstrap(){
+ let session;
  try{
-  const session=await api("/api/session");
-  state.role=session.role||"unknown";
-  $("rolePill").textContent="صلاحية: "+state.role;
-  $("roleSummary").textContent="الدور: "+state.role+(canWrite()?" — إضافة وتحديث السجلات متاح.":" — قراءة فقط.");
-  hideAuth();
-  await loadLeads();
-  await Promise.all([loadProductProfiles(),loadDiscoveryRuns()]);
-  setConnection(true,"خادم Omarai متصل","تم تحميل الإشارات وملفات المنتج وسجل الاكتشاف. هذا لا يثبت اتصال جميع الموصلات.");
-  renderCurrent();
+  session=await api("/api/session");
  }catch(e){
-  setConnection(false,"يلزم تسجيل الدخول","لا يتم تحميل أي سجل قبل التحقق من الجلسة.");
+  setConnection(false,"يلزم تسجيل الدخول","تعذر التحقق من جلسة المستخدم.");
   showAuth(e.message);
   $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+  return;
  }
+ state.role=session.role||"unknown";
+ $("rolePill").textContent="صلاحية: "+state.role;
+ $("roleSummary").textContent="الدور: "+state.role+(canWrite()?" — إضافة وتحديث السجلات متاح.":" — قراءة فقط.");
+ hideAuth();
+ const results=await Promise.allSettled([
+  loadLeads(),
+  loadProductProfiles(),
+  loadDiscoveryRuns()
+ ]);
+ if($("authGate").classList.contains("open")){
+  setConnection(false,"يلزم تسجيل الدخول","انتهت الجلسة أثناء تحميل البيانات.");
+  $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+  return;
+ }
+ state.loadWarnings=[];
+ const labels=["سجل الإشارات","ملفات المنتجات","سجل الاكتشاف"];
+ results.forEach((result,index)=>{
+  if(result.status!=="rejected")return;
+  state.loadWarnings.push(labels[index]);
+  if(index===0)state.leads=[];
+  else if(index===1)state.profiles=[];
+  else state.discoveryRuns=[];
+ });
+ const note=state.loadWarnings.length
+  ?"الجلسة مصادق عليها؛ تعذر تحميل بعض البيانات: "+state.loadWarnings.join("، ")+". حاول تحديث الوحدة لاحقًا."
+  :"تم تحميل الإشارات وملفات المنتج وسجل الاكتشاف. هذا لا يثبت اتصال جميع الموصلات.";
+ setConnection(true,state.loadWarnings.length?"الجلسة مصادق عليها — بيانات جزئية":"الجلسة مصادق عليها",note);
+ renderCurrent();
 }
 $("loginForm").addEventListener("submit",async event=>{
  event.preventDefault();const token=$("accessToken").value.trim();const button=$("loginButton");button.disabled=true;$("authError").textContent="";
@@ -743,7 +768,7 @@ $("logoutButton").addEventListener("click",async()=>{
   alert("تعذر تسجيل الخروج من الخادم؛ لم يتم تغيير حالة الجلسة في الواجهة. "+escapeMessage(e.message));
   return;
  }
- state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.activeDiscovery=null;state.activeProfileId=null;state.activeView="overview";showAuth("تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.");setConnection(false,"غير متصل","سجّل الدخول لعرض السجلات.");
+ state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];state.activeDiscovery=null;state.activeProfileId=null;state.activeView="overview";showAuth("تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.");setConnection(false,"غير متصل","سجّل الدخول لعرض السجلات.");
 });
 $("addSignalTop").addEventListener("click",()=>navigate("signals"));
 $("closeDetail").addEventListener("click",closeDetails);
