@@ -165,3 +165,37 @@ def test_web_agent_can_skip_optional_search_connectors_by_request(monkeypatch):
     assert statuses["deepseek_search_api"] == "disabled_by_request"
     assert statuses["brave_search_api"] == "disabled_by_request"
     assert statuses["tavily_search_api"] == "disabled_by_request"
+
+
+def test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public_rss(
+    monkeypatch,
+):
+    import agents.web_agent as web_agent_module
+
+    monkeypatch.setenv("REDDIT_CLIENT_ID", "configured-client-id")
+    monkeypatch.setenv("REDDIT_CLIENT_SECRET", "configured-client-secret")
+    agent = WebAgent()
+    agent.allow_optional_providers = False
+    called_urls = []
+
+    class FakeResponse:
+        status_code = 200
+        content = (
+            b'<rss><channel><item><title>طلب شراء لوحة إنذار</title>'
+            b'<link>https://www.reddit.com/r/example/comments/123/request</link>'
+            b'<description>نبحث عن مورد للوحة إنذار حريق.</description>'
+            b'<pubDate>Fri, 06 Nov 2026 08:00:00 GMT</pubDate>'
+            b'</item></channel></rss>'
+        )
+
+    def fake_request(method, url, **kwargs):
+        called_urls.append(url)
+        if url != "https://www.reddit.com/search.rss":
+            raise AssertionError("quota-backed Reddit OAuth must stay disabled")
+        return FakeResponse()
+
+    monkeypatch.setattr(web_agent_module, "_bounded_http_request", fake_request)
+    results, warnings = agent._search_social("لوحة إنذار حريق", ["reddit"])
+
+    assert called_urls == ["https://www.reddit.com/search.rss"]
+    assert results and results[0]["provider"] == "reddit_public_rss"
