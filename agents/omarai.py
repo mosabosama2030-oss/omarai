@@ -842,7 +842,7 @@ class LeadStore:
         assessment = analyze(text, product_terms=product_terms, location_terms=location_terms)
         domain_observed_at = timestamp
         try:
-            parsed_observed_at = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00"))
+            parsed_observed_at = datetime.fromisoformat(str(timestamp))
             if parsed_observed_at.tzinfo is None:
                 domain_observed_at = None
         except (TypeError, ValueError):
