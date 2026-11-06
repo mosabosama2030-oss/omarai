@@ -1445,3 +1445,24 @@ def test_discovery_api_denies_optional_provider_usage_to_non_owner(local_api, mo
     )
     assert status == 403
     assert "مالك مساحة العمل" in error["error"]
+
+
+@pytest.mark.parametrize(
+    "forwarding_header",
+    [
+        {"X-Forwarded-For": "203.0.113.9"},
+        {"CF-Connecting-IP": "203.0.113.9"},
+        {"Forwarded": "for=203.0.113.9"},
+    ],
+)
+def test_loopback_shortcut_is_refused_for_forwarded_requests(local_api, monkeypatch, forwarding_header):
+    """A same-host tunnel/proxy must not turn remote clients into token-less local users."""
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    status, _ = request_json(local_api, "/api/leads", headers=forwarding_header)
+    assert status == 401
+
+
+def test_loopback_shortcut_still_works_without_forwarding_headers(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    status, _ = request_json(local_api, "/api/leads")
+    assert status == 200

@@ -422,6 +422,19 @@ class Handler(BaseHTTPRequestHandler):
             return self.store.default_principal()
         return self.store.resolve_api_token(token)
 
+    _FORWARDING_HEADERS = (
+        "X-Forwarded-For",
+        "X-Forwarded-Host",
+        "X-Forwarded-Proto",
+        "X-Real-IP",
+        "Forwarded",
+        "CF-Connecting-IP",
+        "True-Client-IP",
+    )
+
+    def _has_forwarding_headers(self) -> bool:
+        return any(self.headers.get(name) for name in self._FORWARDING_HEADERS)
+
     def _authorized(self):
         """Resolve a verified bearer token or HttpOnly browser cookie.
 
@@ -455,7 +468,10 @@ class Handler(BaseHTTPRequestHandler):
                     self._browser_session_id = token
                 return self._cookie_authenticated
 
-        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1":
+        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1" and not self._has_forwarding_headers():
+            # A tunnel or reverse proxy on the same host makes every remote client look
+            # like loopback. Forwarding headers prove the request did not originate locally,
+            # so the token-less local-development shortcut is refused for such requests.
             try:
                 if ipaddress.ip_address(self.client_address[0]).is_loopback:
                     self._authenticated_principal = self.store.default_principal()

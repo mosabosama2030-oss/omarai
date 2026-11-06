@@ -82,3 +82,23 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     assert row2["text"].startswith("\t\ufeff=")
     assert row2["note"].startswith("\t\u00a0\ufeff=")
 
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "مش بدور على شقة دلوقتي",
+        "ما عنديش نية اشتري ولا بدور على شقة",
+        "كنت بدور على شقة بس اشتريت خلاص",
+    ],
+)
+def test_negated_or_completed_need_is_not_a_buying_signal(text):
+    result = analyze(text)
+    assert result["label"] == "not_buyer_signal"
+    assert result["score"] == 0
+
+
+def test_negation_does_not_hide_a_later_live_signal():
+    result = analyze("مش عارف ابدأ منين بس بدور على شقة")
+    assert result["score"] > 0
+    assert result["label"] != "not_buyer_signal"

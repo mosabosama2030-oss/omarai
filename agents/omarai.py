@@ -34,6 +34,31 @@ def normalize(text: str) -> str:
     value = "".join(c for c in value if not unicodedata.category(c).startswith("M"))
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", value.casefold())).strip()
 
+# Negation / completed-purchase guards. A signal phrase preceded by a negator, or a text that
+# states the need is cancelled or already satisfied, is not a live buying signal.
+_NEGATORS = frozenset({"مش", "ما", "لا", "ولا", "مو", "بلاش", "كنت"})
+_NEGATED_TEXT = tuple(normalize(p) for p in (
+    "ما عنديش نية", "مش ناوي", "مش محتاج", "مش مهتم", "مش هشتري",
+    "لغيت", "الغيت", "اشتريت خلاص", "خلاص اشتريت", "لقيت شقة", "لقيت خلاص",
+))
+
+
+def _is_negated(body: str, phrase: str) -> bool:
+    """True when one of the three words before the first occurrence of phrase is a negator."""
+    index = body.find(phrase)
+    return index > 0 and any(word in _NEGATORS for word in body[:index].split()[-3:])
+
+
+def _negated_result(hits: list[str]) -> dict:
+    return {
+        "score": 0,
+        "label": "not_buyer_signal",
+        "summary": "النص ينفي الحاجة أو يذكر أنها انتهت؛ ليس إشارة شراء حالية.",
+        "matched_signals": [{"phrase": hit, "category": "negation", "points": 0} for hit in hits],
+        "warnings": ["تصنيف أولي وليس حكمًا نهائيًا."],
+    }
+
+
 def now_utc() -> str:
     return datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
 
@@ -65,11 +90,19 @@ def analyze(text: str, product_terms=(), location_terms=()) -> dict:
     excluded = [p for p in NOT_BUYER if normalize(p) in body]
     if excluded:
         return {"score": 0, "label": "not_buyer_signal", "summary": "قد لا تكون إشارة شراء مباشرة؛ راجع النص يدويًا.", "matched_signals": [{"phrase": p, "category": "exclusion", "points": 0} for p in excluded], "warnings": ["تصنيف أولي وليس حكمًا نهائيًا."]}
+    negated_text = [p for p in _NEGATED_TEXT if p in body]
+    if negated_text:
+        return _negated_result(negated_text)
     matches = []
+    negated_phrases = []
     for category, (points, phrases) in SIGNALS.items():
         found = next((p for p in phrases if normalize(p) in body), None)
-        if found:
+        if found and _is_negated(body, normalize(found)):
+            negated_phrases.append(found)
+        elif found:
             matches.append({"phrase": found, "category": category, "points": points})
+    if negated_phrases and not matches:
+        return _negated_result(negated_phrases)
     for category, terms in (("product_context", product_terms), ("location_context", location_terms)):
         found = next((normalize(t) for t in terms if isinstance(t, str) and normalize(t) and normalize(t) in body), None)
         if found:
