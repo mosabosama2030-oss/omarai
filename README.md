@@ -9,7 +9,17 @@ The current repository provides a bounded web-research and evidence pipeline, a 
 
 The existing responsive RTL research interface and general web-research capabilities remain shared platform capabilities. The sales domain should reuse them rather than create a second search engine.
 
-Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You can ask open-ended questions in natural language, search the public web, extract text from accessible pages, compare and summarize findings, ask follow-up questions, and inspect the source links.
+The Arabic RTL sales workspace is the product's primary experience at `/` and `/workspace`. The general-purpose web-research agent remains available at `/agent`, while the legacy lead dashboard remains at `/leads`. Public-web research, page reading, evidence handling, and language models are shared platform capabilities that support the sales-intelligence mission; they are not the product's end goal.
+
+## Product direction and current delivery snapshot — 6 November 2026
+
+Omarai's approved product direction is evidence-backed discovery and qualification of public buying-demand signals for a user-described product/service and market. A company matching the target profile is not, by itself, a buyer-intent signal. The product does not perform automated outreach.
+
+- Current `main`: `a297abd271d48f459effad083a9f424a1499cd39`.
+- The default route `/` and `/workspace` serve the Arabic sales workspace; `/agent` serves the general research agent; `/leads` preserves the legacy lead view.
+- The currently connected workspace views are overview, existing demand-signal inbox, qualification pipeline, and a non-probing system snapshot. Other menu modules remain unavailable unless a server-side contract is implemented and verified.
+- Product profiles and buyer-intent discovery are proposed in [PR #155](https://github.com/mosabosama2030-oss/omarai/pull/155), which is **open and not merged** in this snapshot. Do not treat those capabilities as part of `main`.
+- See [current project status and governing decisions](docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md) for merge state, CI evidence, open risks, and release gates.
 
 ## What this version does
 
