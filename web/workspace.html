@@ -490,7 +490,7 @@ async function renderOffer(){
  fields.forEach(([label,id,value])=>{
   const field=make("div","field");const caption=make("label","",label);caption.htmlFor=id;
   const input=make("input","");input.id=id;input.type="text";input.value=value;
-  input.maxLength=2000;input.placeholder="افصل بين العناصر بفاصلة";
+  input.maxLength=2000;input.placeholder="افصل بين العناصر بفاصلة";input.disabled=!canWrite();
   if(id==="productName"){input.required=true;input.placeholder="مثال: نظام إنذار الحريق";}
   field.append(caption,input);grid.append(field);
  });
@@ -530,9 +530,15 @@ async function renderOffer(){
    result.replaceChildren(make("p","auth-error",escapeMessage(e.message)));
   }finally{save.disabled=false}
  });
- buttons.append(save);
- if(editing)buttons.append(action("إلغاء التعديل","ghost",()=>{state.editingProductId=null;renderOffer()}));
- panel.append(buttons,result);root.append(panel);
+ save.disabled=!canWrite();
+ if(canWrite()){
+  buttons.append(save);
+  if(editing)buttons.append(action("إلغاء التعديل","ghost",()=>{state.editingProductId=null;renderOffer()}));
+  panel.append(buttons,result);
+ }else{
+  panel.append(make("p","disclaimer","دور المستخدم الحالي للقراءة فقط؛ يمكن استعراض ملفات المنتجات دون تعديلها."));
+ }
+ root.append(panel);
  const listPanel=make("section","glass panel");const listHead=make("div","panel-head");const listTitle=make("div");
  listTitle.append(make("h2","","ملفات المنتجات المحفوظة"),make("p","","هذه الملفات خاصة بمساحة العمل المصادق عليها."));
  listHead.append(listTitle,tag(String(state.products.length)+" ملف","teal"));listPanel.append(listHead);
@@ -548,7 +554,7 @@ async function renderOffer(){
   if(locations.length)card.append(make("p","subtle","المناطق: "+locations.join("، ")));
   const footer=make("div","signal-actions");
   footer.append(make("span","subtle","آخر تحديث: "+String(item.updated_at||"غير معروف")));
-  footer.append(action("تعديل الملف","",()=>{state.editingProductId=item.id;renderOffer()}));
+  if(canWrite())footer.append(action("تعديل الملف","",()=>{state.editingProductId=item.id;renderOffer()}));
   card.append(footer);list.append(card);
  });
  listPanel.append(list);root.append(listPanel);
