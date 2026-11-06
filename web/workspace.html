@@ -452,7 +452,7 @@ function createSignalForm(){
  buttons.append(analyze,save);wrapper.append(buttons,result);return wrapper;
 }
 function splitTerms(value){
- return String(value||"").split(/[,\\n]/).map(item=>item.trim()).filter(Boolean);
+ return String(value||"").split(",").map(item=>item.trim()).filter(Boolean);
 }
 async function loadProducts(){
  const data=await api("/api/products?limit=100");
@@ -520,7 +520,7 @@ async function renderOffer(){
     }
    };
    const path=editing?"/api/products/"+encodeURIComponent(editing.id):"/api/products";
-   const saved=await api(path,{method:"POST",body:payload});
+   await api(path,{method:"POST",body:payload});
    state.editingProductId=null;
    await loadProducts();
    renderOffer();
