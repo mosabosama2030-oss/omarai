@@ -694,6 +694,9 @@ class WebAgent:
 
         self.primary_provider = primary_provider
         self.api_key, self.base_url = primary_api_key, primary_base_url
+        # Legacy research keeps its current connector policy; structured workspace
+        # discovery can disable optional providers per request.
+        self.allow_optional_providers = True
         self.answer_model = os.getenv(
             "OMARAI_ANSWER_MODEL", global_model or default_answer_model
         ).strip()
@@ -1830,34 +1833,40 @@ class WebAgent:
             ("duckduckgo_html", self._search_duckduckgo_html),
             ("bing_rss", self._search_bing_rss),
         ]
-        # Experimental opt-in only: DeepSeek Search is billed per successful request.
-        # Do not promote it to primary without a measured comparison.
-        if not os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
-            self._record_provider_diagnostic(
-                "deepseek_search_api", search_query, "not_configured",
-                error="DEEPSEEK_SEARCH_API_KEY is not set",
-            )
-        elif self._reserve_deepseek_search_request():
-            adapters.append(("deepseek_search_api", self._search_deepseek_api))
+        if not getattr(self, "allow_optional_providers", True):
+            for provider in ("deepseek_search_api", "brave_search_api", "tavily_search_api"):
+                self._record_provider_diagnostic(
+                    provider, search_query, "disabled_by_request",
+                    error="optional provider use was not approved for this discovery run",
+                )
         else:
-            self._record_provider_diagnostic(
-                "deepseek_search_api", search_query, "budget_exhausted",
-                error="per-operation DeepSeek Search request budget exhausted",
-            )
-        if os.getenv("BRAVE_SEARCH_API_KEY", "").strip():
-            adapters.append(("brave_search_api", self._search_brave))
-        else:
-            self._record_provider_diagnostic(
-                "brave_search_api", search_query, "not_configured",
-                error="BRAVE_SEARCH_API_KEY is not set",
-            )
-        if os.getenv("TAVILY_API_KEY", "").strip():
-            adapters.append(("tavily_search_api", self._search_tavily))
-        else:
-            self._record_provider_diagnostic(
-                "tavily_search_api", search_query, "not_configured",
-                error="TAVILY_API_KEY is not set",
-            )
+            # DeepSeek Search is quota/usage metered and remains bounded per operation.
+            if not os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
+                self._record_provider_diagnostic(
+                    "deepseek_search_api", search_query, "not_configured",
+                    error="DEEPSEEK_SEARCH_API_KEY is not set",
+                )
+            elif self._reserve_deepseek_search_request():
+                adapters.append(("deepseek_search_api", self._search_deepseek_api))
+            else:
+                self._record_provider_diagnostic(
+                    "deepseek_search_api", search_query, "budget_exhausted",
+                    error="per-operation DeepSeek Search request budget exhausted",
+                )
+            if os.getenv("BRAVE_SEARCH_API_KEY", "").strip():
+                adapters.append(("brave_search_api", self._search_brave))
+            else:
+                self._record_provider_diagnostic(
+                    "brave_search_api", search_query, "not_configured",
+                    error="BRAVE_SEARCH_API_KEY is not set",
+                )
+            if os.getenv("TAVILY_API_KEY", "").strip():
+                adapters.append(("tavily_search_api", self._search_tavily))
+            else:
+                self._record_provider_diagnostic(
+                    "tavily_search_api", search_query, "not_configured",
+                    error="TAVILY_API_KEY is not set",
+                )
         if detect_freshness(search_query):
             adapters.append(("google_news_rss", self._search_news))
 
@@ -4797,16 +4806,30 @@ class WebAgent:
 
     def answer(
         self, question: str, history: Any = None, mode: str = "auto",
-        *, budget_profile: str = "default",
+        *, budget_profile: str = "default", buyer_queries: list[str] | None = None,
     ) -> dict[str, Any]:
         """Run one answer with an isolated, observable resource budget."""
+        if buyer_queries is not None:
+            if not isinstance(buyer_queries, list) or not buyer_queries:
+                raise ValueError("buyer_queries must be a non-empty list")
+            if len(buyer_queries) > 8 or any(
+                not isinstance(query, str) or not query.strip() or len(query) > 500
+                for query in buyer_queries
+            ):
+                raise ValueError("buyer_queries must contain at most 8 non-empty queries of 500 characters")
+            buyer_queries = list(dict.fromkeys(query.strip() for query in buyer_queries))
         previous_budget = getattr(self, "_request_budget", None)
         self.generation_diagnostics = []
         self._generation_attempt_sequence = 0
         budget = RequestBudget.from_environment(profile=budget_profile)
         self._request_budget = budget
         try:
-            result = self._answer_with_budget(question, history, mode)
+            if buyer_queries is None:
+                result = self._answer_with_budget(question, history, mode)
+            else:
+                result = self._answer_with_budget(
+                    question, history, mode, buyer_queries=buyer_queries
+                )
         except RequestBudgetExceeded as exc:
             safe_question = (
                 question.strip()[:MAX_QUESTION_CHARS]
@@ -5167,7 +5190,8 @@ class WebAgent:
         return result
 
     def _answer_with_budget(
-        self, question: str, history: Any = None, mode: str = "auto"
+        self, question: str, history: Any = None, mode: str = "auto",
+        *, buyer_queries: list[str] | None = None,
     ) -> dict[str, Any]:
         if not isinstance(question, str) or not question.strip():
             raise ValueError("اكتب سؤالًا غير فارغ.")
@@ -5203,6 +5227,9 @@ class WebAgent:
         )
         intent_route = str(decision["route"])
         intent_reason = str(decision["reason"])
+        if buyer_queries is not None:
+            intent_route = "LEAD_GENERATION"
+            intent_reason = "structured_product_market_profile"
         context_override: dict[str, Any] | None = None
 
         # Rules only decide when a context probe may be needed. The model interprets
@@ -5328,7 +5355,16 @@ class WebAgent:
             intent_route = "WEB_SIMPLE"
             intent_reason = "model_unavailable_fallback_to_existing_web_research"
 
-        if context_override is None:
+        if context_override is None and buyer_queries is not None:
+            plan = {
+                "queries": list(buyer_queries),
+                "depth": "standard",
+                "freshness": "current",
+                "social_focus": True,
+                "platforms": [],
+                "planning_method": "structured_product_market_profile",
+            }
+        elif context_override is None:
             # Preserve compatibility with existing integrations and test doubles.
             plan = self._plan_search(question, clean_history)
         else:
@@ -5555,25 +5591,30 @@ class WebAgent:
             if intent_route == "LEAD_GENERATION" and clean_mode == "auto":
                 # Prospect discovery needs buyer-intent queries and public social signals,
                 # not just broad pages advertising the requested product.
-                plan["queries"] = self._lead_generation_queries(working_question, plan.get("queries", []))
+                plan["queries"] = (
+                    list(buyer_queries)
+                    if buyer_queries is not None
+                    else self._lead_generation_queries(working_question, plan.get("queries", []))
+                )
                 plan["depth"] = "standard"
                 plan["freshness"] = "current"
                 plan["social_focus"] = True
                 allowed_public_platforms = ["reddit", "bluesky"]
-                if (
-                    os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
-                    and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
-                ):
-                    allowed_public_platforms.append("facebook")
-                if os.getenv("X_BEARER_TOKEN", "").strip():
-                    allowed_public_platforms.append("x")
-                if os.getenv("YOUTUBE_API_KEY", "").strip():
-                    allowed_public_platforms.append("youtube")
-                if (
-                    os.getenv("INSTAGRAM_USER_ID", "").strip()
-                    and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
-                ):
-                    allowed_public_platforms.append("instagram")
+                if getattr(self, "allow_optional_providers", True):
+                    if (
+                        os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                        and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+                    ):
+                        allowed_public_platforms.append("facebook")
+                    if os.getenv("X_BEARER_TOKEN", "").strip():
+                        allowed_public_platforms.append("x")
+                    if os.getenv("YOUTUBE_API_KEY", "").strip():
+                        allowed_public_platforms.append("youtube")
+                    if (
+                        os.getenv("INSTAGRAM_USER_ID", "").strip()
+                        and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+                    ):
+                        allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
         pipeline = build_research_pipeline(
