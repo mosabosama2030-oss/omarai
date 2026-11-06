@@ -19,6 +19,7 @@ from typing import ClassVar
 from urllib.parse import parse_qs, urlparse
 
 from agents.omarai import LeadStore, analyze, normalize
+from agents.sales_domain import MarketProfile, ProductFact, ProductProfile
 from agents.web_agent import WebAgent
 
 ROOT = Path(__file__).resolve().parents[1] / "web"
@@ -28,6 +29,81 @@ WORKSPACE_DASHBOARD = ROOT / "workspace.html"
 MAX_REQUEST_BODY_BYTES = 200_000
 BROWSER_SESSION_COOKIE_MAX_AGE = 8 * 60 * 60
 BROWSER_SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_-]{32,128}$")
+
+_PRODUCT_PROFILE_FIELDS = {
+    "name", "aliases", "category_path", "use_cases", "problems_solved", "facts"
+}
+_MARKET_PROFILE_FIELDS = {
+    "locations", "industries", "customer_types", "decision_roles", "exclusions"
+}
+_PRODUCT_FACT_FIELDS = {"field", "value", "origin", "evidence_id"}
+
+
+def _string_list(payload: dict, field: str) -> tuple[str, ...]:
+    value = payload.get(field, [])
+    if not isinstance(value, list):
+        raise ValueError(f"{field} must be an array of strings")
+    if any(not isinstance(item, str) for item in value):
+        raise ValueError(f"{field} must contain only strings")
+    return tuple(value)
+
+
+def _product_profile_from_payload(payload: object) -> tuple[ProductProfile, MarketProfile]:
+    if not isinstance(payload, dict):
+        raise ValueError("request body must be an object")
+    unexpected = set(payload) - {"profile", "market", "tenant_id"}
+    if unexpected:
+        raise ValueError("unsupported request fields: " + ", ".join(sorted(unexpected)))
+
+    raw_profile = payload.get("profile")
+    raw_market = payload.get("market")
+    if not isinstance(raw_profile, dict) or not isinstance(raw_market, dict):
+        raise ValueError("profile and market must be objects")
+    unknown_profile = set(raw_profile) - _PRODUCT_PROFILE_FIELDS
+    unknown_market = set(raw_market) - _MARKET_PROFILE_FIELDS
+    if unknown_profile:
+        raise ValueError("unsupported product fields: " + ", ".join(sorted(unknown_profile)))
+    if unknown_market:
+        raise ValueError("unsupported market fields: " + ", ".join(sorted(unknown_market)))
+
+    raw_facts = raw_profile.get("facts", [])
+    if not isinstance(raw_facts, list):
+        raise ValueError("facts must be an array")
+    facts = []
+    for index, raw_fact in enumerate(raw_facts):
+        if not isinstance(raw_fact, dict):
+            raise ValueError(f"facts[{index}] must be an object")
+        unknown_fact = set(raw_fact) - _PRODUCT_FACT_FIELDS
+        if unknown_fact:
+            raise ValueError(
+                f"unsupported facts[{index}] fields: " + ", ".join(sorted(unknown_fact))
+            )
+        facts.append(
+            ProductFact(
+                field=raw_fact.get("field"),
+                value=raw_fact.get("value"),
+                origin=raw_fact.get("origin", "user_provided"),
+                evidence_id=raw_fact.get("evidence_id"),
+            )
+        )
+
+    profile = ProductProfile(
+        name=raw_profile.get("name"),
+        aliases=_string_list(raw_profile, "aliases"),
+        category_path=_string_list(raw_profile, "category_path"),
+        use_cases=_string_list(raw_profile, "use_cases"),
+        problems_solved=_string_list(raw_profile, "problems_solved"),
+        facts=tuple(facts),
+    )
+    market = MarketProfile(
+        locations=_string_list(raw_market, "locations"),
+        industries=_string_list(raw_market, "industries"),
+        customer_types=_string_list(raw_market, "customer_types"),
+        decision_roles=_string_list(raw_market, "decision_roles"),
+        exclusions=_string_list(raw_market, "exclusions"),
+    )
+    return profile, market
+
 
 
 def _csp_hash_source(value: str) -> str:
@@ -656,6 +732,21 @@ class Handler(BaseHTTPRequestHandler):
                     "role": self._authenticated_principal["role"],
                 },
             )
+        if parsed.path == "/api/products":
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم رمز الوصول الخاص بالتطبيق."})
+            q = parse_qs(parsed.query)
+            try:
+                limit = max(1, min(int(q.get("limit", ["100"])[0]), 100))
+                products = self.store.list_product_profiles(
+                    tenant_id=self._authenticated_principal["tenant_id"],
+                    limit=limit,
+                )
+            except (ValueError, TypeError):
+                return self.respond(400, {"error": "invalid product limit"})
+            return self.respond(200, {"products": products, "count": len(products)})
         if parsed.path == "/api/leads":
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
@@ -850,6 +941,29 @@ class Handler(BaseHTTPRequestHandler):
                         data.get("location_terms", []),
                     ),
                 )
+            if path == "/api/products" or path.startswith("/api/products/"):
+                if self._authenticated_principal["role"] == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
+                profile, market = _product_profile_from_payload(data)
+                tenant_id = self._authenticated_principal["tenant_id"]
+                if path == "/api/products":
+                    product = self.store.save_product_profile(
+                        profile, market, tenant_id=tenant_id
+                    )
+                    return self.respond(201, {"product": product})
+                route = path.split("/")
+                if len(route) != 4 or not route[3]:
+                    return self.respond(404, {"error": "not found"})
+                product = self.store.save_product_profile(
+                    profile,
+                    market,
+                    tenant_id=tenant_id,
+                    profile_id=route[3],
+                )
+                if product is None:
+                    return self.respond(404, {"error": "product profile not found"})
+                return self.respond(200, {"product": product})
+
             if path == "/api/leads":
                 if self._authenticated_principal["role"] == "viewer":
                     return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
