@@ -140,3 +140,5 @@ def test_workspace_product_profile_and_discovery_screens_are_connected_to_protec
     assert 'optional.disabled=state.role!=="owner"' in html
     assert 'window.location.href="/agent"' in html
     assert "innerHTML" not in html
+    assert "Promise.allSettled" in html
+    assert "تعذر تحميل بعض البيانات" in html
