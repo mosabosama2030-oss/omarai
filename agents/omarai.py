@@ -758,10 +758,10 @@ class LeadStore:
 
     def save_product_profile(self, profile: dict, *, tenant_id: str):
         if not isinstance(profile, dict):
-            raise ValueError("profile must be an object")
+            raise TypeError("profile must be an object")
         product = profile.get("product")
         if not isinstance(product, dict):
-            raise ValueError("product profile is required")
+            raise TypeError("product profile is required")
         name = str(product.get("name") or "").strip()
         if not name or len(name) > 240:
             raise ValueError("product name is required and must be at most 240 characters")
@@ -870,7 +870,7 @@ class LeadStore:
 
     def save_discovery_run(self, profile_id: str, run: dict, *, tenant_id: str):
         if not isinstance(run, dict):
-            raise ValueError("discovery run must be an object")
+            raise TypeError("discovery run must be an object")
         tenant = self._tenant(tenant_id)
         profile = self.get_product_profile(profile_id, tenant_id=tenant)
         if profile is None:
