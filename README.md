@@ -25,7 +25,7 @@ Omarai is an Arabic-first web research agent with a responsive RTL chat UI. You 
 - Can use the official X recent-post endpoint when `X_BEARER_TOKEN` is configured and the account/API tier permits the request; can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured.
 - Generates an evidence-grounded answer in the user's language, showing source links, query plan, provider coverage, direct page reads, platform mix, source/domain diversity, date coverage, and evidence-coverage warnings. Coverage indicators describe breadth and inspectability; they are not probabilities that the answer is true.
 - Carries up to eight recent chat messages from the current browser session into follow-up questions.
-- Keeps the existing local SQLite lead workspace at `/leads`. The approved Arabic RTL Neon Command sales workspace is now the default home at `/` and remains available at `/workspace`; it connects to the current session and lead APIs for overview, signal review, manual analysis/save, and qualification-status updates. The general web-research agent remains available at `/agent`. The system-state view reads the non-probing `/api/health` configuration snapshot. Modules without server-side contracts remain explicitly unavailable.
+- Keeps the local SQLite lead records at `/leads`. The Arabic RTL Neon Command sales workspace is the default home at `/` and remains available at `/workspace`; it supports overview, signal review, manual assessment/save, qualification-status updates, and tenant-scoped product/market profile create/list/update. The general web-research agent remains available at `/agent`. Product profiles are user-entered configuration only; creating one does not run discovery or prove buyer intent. Other modules without server-side contracts remain explicitly unavailable.
 - Binds to loopback by default; it is not a public production deployment.
 
 **Verification semantics:** `GET /api/health` is a configuration/dependency snapshot, not proof that search providers or the model are reachable. Check the `agent.verification_scope` field to see what is and is not verified. Use the protected `POST /api/diagnostics` endpoint for explicit live search/model probes; a passed diagnostic only verifies the specific probes run at that time, not every optional connector or answer quality.
@@ -144,13 +144,15 @@ For the platform boundaries, optional credentials and safe Termux setup for soci
 
 ## API
 
-- `GET /` — web-research chat
-- `GET /leads` — existing lead workspace
+- `GET /` and `GET /workspace` — Arabic RTL sales workspace
+- `GET /agent` — open-ended web-research chat
+- `GET /leads` — legacy lead workspace
 - `GET /api/health` — setup and dependency status (never returns the API key)
 - `POST /api/diagnostics` — opt-in live checks for web search and the language model; set `test_social: true` to also probe public/authorized social connectors
 - `POST /api/agent` — open-ended question plus optional recent `history`
 - `POST /api/analyze` — existing rule-based lead-text assessment
 - `GET/POST /api/leads` — existing local lead records
+- `GET/POST /api/products` and `POST /api/products/{id}` — tenant-scoped product and market profile listing, creation, and update; `tenant_id` is always derived from the authenticated principal.
 
 Example request:
 
