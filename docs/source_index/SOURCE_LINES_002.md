@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000281 إلى SRC-7D6FC391EC-L000287
+- النطاق: SRC-138992B1FC-L000279 إلى SRC-7D6FC391EC-L000285
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000279](../../agents/answer_validation.py#L279) | 279 | `"            continue"` | — |
+| [SRC-138992B1FC-L000280](../../agents/answer_validation.py#L280) | 280 | `"        claim_tokens = list(dict.fromkeys(_tokens(_CITATION.sub(\" \", sentence), drop_stopwords=True)))"` | — |
 | [SRC-138992B1FC-L000281](../../agents/answer_validation.py#L281) | 281 | `"        cited_checks: list[dict[str, Any]] = []"` | — |
 | [SRC-138992B1FC-L000282](../../agents/answer_validation.py#L282) | 282 | `"        for source_index in list(dict.fromkeys(cited_indices))[:8]:"` | — |
 | [SRC-138992B1FC-L000283](../../agents/answer_validation.py#L283) | 283 | `"            if source_index < 1 or source_index > len(source_token_sets):"` | — |
@@ -832,5 +834,3 @@
 | [SRC-7D6FC391EC-L000283](../../agents/claim_evidence.py#L283) | 283 | `"            ),"` | — |
 | [SRC-7D6FC391EC-L000284](../../agents/claim_evidence.py#L284) | 284 | `"            \"cited_segments_with_readable_source_evidence\": readable_cited,"` | — |
 | [SRC-7D6FC391EC-L000285](../../agents/claim_evidence.py#L285) | 285 | `"            \"citation_lexical_signal_count\": lexical_signals,"` | — |
-| [SRC-7D6FC391EC-L000286](../../agents/claim_evidence.py#L286) | 286 | `"            \"weak_citation_lexical_signal_count\": weak_signals,"` | — |
-| [SRC-7D6FC391EC-L000287](../../agents/claim_evidence.py#L287) | 287 | `"            \"citation_coverage_ratio\": round(cited / total, 3) if total else 0.0,"` | — |

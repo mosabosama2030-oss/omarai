@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000280
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000278
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -531,73 +531,75 @@
 | [SRC-A54FF182C7-L000012](../../AGENTS.md#L12) | 12 | `"- The charter is a design requirement, not evidence that controls already exist. Inspect the actual code and tests before describing implementation status."` | — |
 | [SRC-A54FF182C7-L000013](../../AGENTS.md#L13) | 13 | ``"- Treat `README.md` as a description of the current documented behavior, but verify claims against code and runtime evidence when the task requires it."`` | — |
 | [SRC-A54FF182C7-L000014](../../AGENTS.md#L14) | 14 | `""` | — |
-| [SRC-A54FF182C7-L000015](../../AGENTS.md#L15) | 15 | `"## Evidence discipline"` | — |
-| [SRC-A54FF182C7-L000016](../../AGENTS.md#L16) | 16 | `"- Label consequential findings **VERIFIED**, **INFERRED**, **PROPOSED**, or **UNKNOWN**."` | — |
-| [SRC-A54FF182C7-L000017](../../AGENTS.md#L17) | 17 | `"- Never invent files, functions, branches, commits, workflows, test results, tool capabilities, deployment status, capacity numbers, or security guarantees."` | — |
-| [SRC-A54FF182C7-L000018](../../AGENTS.md#L18) | 18 | `"- A configured API key is not proof that a connector works. A health/configuration response is not proof that a provider is reachable. A model's self-review is not independent verification."` | — |
-| [SRC-A54FF182C7-L000019](../../AGENTS.md#L19) | 19 | `"- When reporting a test, include the exact command, actual result, relevant commit or code state, and any environment limitation. Never say a test was run when it was not."` | — |
-| [SRC-A54FF182C7-L000020](../../AGENTS.md#L20) | 20 | `"- Prefer regression tests for fixed defects and measurable evidence for performance, capacity, quality, and security claims."` | — |
-| [SRC-A54FF182C7-L000021](../../AGENTS.md#L21) | 21 | `""` | — |
-| [SRC-A54FF182C7-L000022](../../AGENTS.md#L22) | 22 | `"## Architecture evolution and scalability"` | — |
-| [SRC-A54FF182C7-L000023](../../AGENTS.md#L23) | 23 | `"- Treat scalability, maintainability, and controlled evolution as foundational requirements; read the relevant charter sections before introducing modules, agents, tools, providers, persistence, queues, or services."` | — |
-| [SRC-A54FF182C7-L000024](../../AGENTS.md#L24) | 24 | `"- Prefer a well-bounded modular monolith until measured scaling, fault-isolation, security, or release-independence needs justify a separate service. Do not add microservices or abstraction layers for appearance."` | — |
-| [SRC-A54FF182C7-L000025](../../AGENTS.md#L25) | 25 | `"- New modules must have explicit responsibilities, public contracts, ownership, dependency direction, and appropriate tests. Avoid circular imports and cross-module access to private implementation details."` | — |
-| [SRC-A54FF182C7-L000026](../../AGENTS.md#L26) | 26 | `"- Wrap external providers behind adapters and validate their input/output contracts. Keep provider-specific SDKs and response shapes out of domain logic."` | — |
-| [SRC-A54FF182C7-L000027](../../AGENTS.md#L27) | 27 | `"- New tools/agents/plugins must declare schema, permissions, data classification, timeout, resource budget, concurrency limit, retry/idempotency behavior where applicable, health-check semantics, failure modes, and disable/rollback path."` | — |
-| [SRC-A54FF182C7-L000028](../../AGENTS.md#L28) | 28 | `"- Treat API and event schema changes as versioned contracts. Prefer backward-compatible evolution; document deprecations and provide migration paths for breaking changes."` | — |
-| [SRC-A54FF182C7-L000029](../../AGENTS.md#L29) | 29 | `"- All persistent data-shape changes need a tested migration and data-preservation/rollback strategy proportionate to risk. Never assume production data can be recreated from scratch."` | — |
-| [SRC-A54FF182C7-L000030](../../AGENTS.md#L30) | 30 | `"- Do not rely on in-process global mutable state for cross-request user, tenant, or long-running task state. Assess what must survive process restarts before adding multi-process or horizontal scaling."` | — |
-| [SRC-A54FF182C7-L000031](../../AGENTS.md#L31) | 31 | `"- Before extracting services, adding queues, changing storage, or introducing a distributed system, state the evidence-based need, operational costs, failure modes, security boundary, and acceptance tests."` | — |
-| [SRC-A54FF182C7-L000032](../../AGENTS.md#L32) | 32 | `"- Add architecture fitness checks where practical for dependency boundaries, contracts, migrations, secrets, concurrency isolation, and critical performance limits."` | — |
-| [SRC-A54FF182C7-L000033](../../AGENTS.md#L33) | 33 | `"- Record material architectural choices and exceptions in an ADR or equivalent, including rejected alternatives, tests, risks, compatibility, and rollback."` | — |
-| [SRC-A54FF182C7-L000034](../../AGENTS.md#L34) | 34 | `"- Keep expansion incremental and reversible; do not represent future architecture goals as current capabilities."` | — |
-| [SRC-A54FF182C7-L000035](../../AGENTS.md#L35) | 35 | `""` | — |
-| [SRC-A54FF182C7-L000036](../../AGENTS.md#L36) | 36 | `"## Required engineering behavior"` | — |
-| [SRC-A54FF182C7-L000037](../../AGENTS.md#L37) | 37 | `"- Prefer the smallest safe change that solves the verified problem. Do not rewrite the architecture without a documented reason and migration path."` | — |
-| [SRC-A54FF182C7-L000038](../../AGENTS.md#L38) | 38 | `"- Preserve existing behavior unless the task explicitly authorizes a change; identify compatibility risks."` | — |
-| [SRC-A54FF182C7-L000039](../../AGENTS.md#L39) | 39 | `"- Bound external calls, retries, payload sizes, number of search results/pages, planning steps, model calls, elapsed time, and concurrency where applicable."` | — |
-| [SRC-A54FF182C7-L000040](../../AGENTS.md#L40) | 40 | `"- Treat model output, search results, fetched pages, user files, and external tool outputs as untrusted data. Validate schemas and permissions at deterministic execution boundaries."` | — |
-| [SRC-A54FF182C7-L000041](../../AGENTS.md#L41) | 41 | `"- Do not expose secrets, private user data, internal traces, or sensitive prompts in logs, HTTP errors, front-end assets, commits, or reports."` | — |
-| [SRC-A54FF182C7-L000042](../../AGENTS.md#L42) | 42 | `"- Do not weaken authentication, authorization, SSRF protections, tenant/session isolation, resource limits, or test coverage to improve speed."` | — |
-| [SRC-A54FF182C7-L000043](../../AGENTS.md#L43) | 43 | `"- Do not give a model unrestricted shell, filesystem, network, or database access. Tools must be explicitly registered, scoped, bounded, and verified."` | — |
-| [SRC-A54FF182C7-L000044](../../AGENTS.md#L44) | 44 | `"- For any change affecting security, external networking, persistence, concurrency, or tool execution, add or identify appropriate negative/failure tests, not only happy-path checks."` | — |
-| [SRC-A54FF182C7-L000045](../../AGENTS.md#L45) | 45 | `"- For changes that cross a trust boundary, update or reference the threat model, validate deny-by-default authorization at execution time, and document negative tests for the relevant attack paths (e.g., prompt injection, SSRF/redirects, cross-user access, XSS, secret leakage, resource exhaustion, or supply-chain exposure). Disable or narrow a capability when required security controls cannot be demonstrated in its target environment."` | — |
-| [SRC-A54FF182C7-L000046](../../AGENTS.md#L46) | 46 | `"- For performance or scalability work, establish a baseline and test in a named environment. Never claim support for an arbitrary user count without a reproducible load-test result."` | — |
-| [SRC-A54FF182C7-L000047](../../AGENTS.md#L47) | 47 | `"- If evidence is insufficient, state the unknown and the smallest safe method to verify it."` | — |
-| [SRC-A54FF182C7-L000048](../../AGENTS.md#L48) | 48 | `""` | — |
-| [SRC-A54FF182C7-L000049](../../AGENTS.md#L49) | 49 | `"## Change and release control"` | — |
-| [SRC-A54FF182C7-L000050](../../AGENTS.md#L50) | 50 | `"- Inspect the current branch, HEAD, working diff, and relevant files before editing."` | — |
-| [SRC-A54FF182C7-L000051](../../AGENTS.md#L51) | 51 | `"- Work on a dedicated branch; keep changes scoped and reviewable."` | — |
-| [SRC-A54FF182C7-L000052](../../AGENTS.md#L52) | 52 | `"- Run applicable checks when tools and environment permit, and report any checks that could not be run."` | — |
-| [SRC-A54FF182C7-L000053](../../AGENTS.md#L53) | 53 | `"- Review the final diff and verify documentation links and new-file paths."` | — |
-| [SRC-A54FF182C7-L000054](../../AGENTS.md#L54) | 54 | `"- Never merge a pull request, force-update a protected branch, or deploy to production without explicit authorization from the Human Director."` | — |
-| [SRC-A54FF182C7-L000055](../../AGENTS.md#L55) | 55 | ``"- Do not present a proposed or unmerged change as already effective on `main`."`` | — |
-| [SRC-A54FF182C7-L000056](../../AGENTS.md#L56) | 56 | `"- Update the charter or related documentation when a material design decision changes; document major architectural choices and exceptions with rationale, risks, tests, and rollback considerations."` | — |
-| [SRC-A54FF182C7-L000057](../../AGENTS.md#L57) | 57 | `""` | — |
-| [SRC-A54FF182C7-L000058](../../AGENTS.md#L58) | 58 | `"## Platform-grade readiness"` | — |
-| [SRC-A54FF182C7-L000059](../../AGENTS.md#L59) | 59 | `"- For material production-facing changes, assess the applicable release gates in both the charter and the Global Platform Engineering Baseline; do not treat a checklist as proof of compliance."` | — |
-| [SRC-A54FF182C7-L000060](../../AGENTS.md#L60) | 60 | `"- Define measurable SLI/SLO or a baseline where useful. Never invent uptime, latency, capacity, security maturity, cost, or recovery guarantees."` | — |
-| [SRC-A54FF182C7-L000061](../../AGENTS.md#L61) | 61 | `"- Review blast radius, dependency failure, graceful degradation, quotas, per-request budgets, data lifecycle, tenant isolation when multi-user, supply-chain exposure, observability/privacy, and recovery proportional to risk."` | — |
-| [SRC-A54FF182C7-L000062](../../AGENTS.md#L62) | 62 | `"- For AI/agent changes, test Arabic task quality, citation support, prompt injection, untrusted tool/page content, unauthorized actions, loops, provider failures, cost bounds, and safe fallback as applicable."` | — |
-| [SRC-A54FF182C7-L000063](../../AGENTS.md#L63) | 63 | `"- Require an explicit reason before adding distributed infrastructure; document simpler alternatives and lifecycle costs. Do not apply every enterprise control blindly to a small deployment, but do not conceal a risk merely because a control is expensive or not yet supported."` | — |
-| [SRC-A54FF182C7-L000064](../../AGENTS.md#L64) | 64 | `""` | — |
-| [SRC-A54FF182C7-L000065](../../AGENTS.md#L65) | 65 | `"## Requirement traceability and expert review"` | — |
-| [SRC-A54FF182C7-L000066](../../AGENTS.md#L66) | 66 | `"- For material changes, create or update stable requirement IDs and record applicability, status, evidence, test command/results, environment, limitations, residual risk, and owner in the requirements register or an equivalent reviewed record."` | — |
-| [SRC-A54FF182C7-L000067](../../AGENTS.md#L67) | 67 | `"- Use all relevant discipline lenses (architecture, security, privacy, data, SRE, performance, AI evaluation, search/evidence, accessibility, supply chain, cost, and operations); do not claim that a human specialist independently reviewed work unless that actually happened."` | — |
-| [SRC-A54FF182C7-L000068](../../AGENTS.md#L68) | 68 | `"- Keep non-applicable and waived requirements distinct from unknown ones. Exceptions to MUST controls need scope, compensating controls, an approver, a revisit/expiry condition, and recorded residual risk."` | — |
-| [SRC-A54FF182C7-L000069](../../AGENTS.md#L69) | 69 | `"- Do not build advanced infrastructure to satisfy a checklist by appearance. Use trigger conditions and evidence in the baseline to decide when advanced requirements apply."` | — |
-| [SRC-A54FF182C7-L000070](../../AGENTS.md#L70) | 70 | `""` | — |
-| [SRC-A54FF182C7-L000071](../../AGENTS.md#L71) | 71 | `"## Acceptance principle"` | — |
-| [SRC-A54FF182C7-L000072](../../AGENTS.md#L72) | 72 | `"A capability is not complete because it appears in a plan, comment, prompt, or documentation. It is complete only to the extent supported by the implementation, relevant tests, observed output, and explicitly stated limitations."` | — |
-| [SRC-A54FF182C7-L000073](../../AGENTS.md#L73) | 73 | `""` | — |
-| [SRC-A54FF182C7-L000074](../../AGENTS.md#L74) | 74 | `""` | — |
-| [SRC-A54FF182C7-L000075](../../AGENTS.md#L75) | 75 | `"## Repository hygiene and documentation ownership"` | — |
-| [SRC-A54FF182C7-L000076](../../AGENTS.md#L76) | 76 | ``"- Use [`docs/README.md`](docs/README.md) as the navigation map. Before adding a document, search for an existing owner of the same concern; update the canonical file instead of creating a parallel status or checklist."`` | — |
-| [SRC-A54FF182C7-L000077](../../AGENTS.md#L77) | 77 | ``"- Keep one current source of truth per concern: implementation boundaries in `docs/IMPLEMENTATION_SCOPE.md`; issue/finding IDs in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`; current post-merge evidence in `docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md`; test categories and limitations in `docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md`."`` | — |
-| [SRC-A54FF182C7-L000078](../../AGENTS.md#L78) | 78 | ``"- Historical audit snapshots belong under `docs/archive/`. Mark their baseline SHA/date and link to current guidance; never silently rewrite old test evidence to look current."`` | — |
-| [SRC-A54FF182C7-L000079](../../AGENTS.md#L79) | 79 | `"- Do not keep a second live-status document with a different PR state or baseline SHA. Read current PR/branch state from GitHub; avoid hard-coding the state of an open PR in durable docs."` | — |
-| [SRC-A54FF182C7-L000080](../../AGENTS.md#L80) | 80 | ``"- Never hand-edit generated files under `docs/source_index/`, `docs/MASTER_INDEX.md`, `docs/SOURCE_LINES_INDEX.md`, or `docs/INDEX_COVERAGE_AUDIT.md`. Run `python docs/generate_index.py` and `python docs/generate_index.py --check`; inspect the generated diff. For documentation-only or repository-hygiene PRs, do not add index page churn solely because source lines shifted: the test workflow regenerates and verifies indexes in its isolated checkout, and the publisher refreshes committed indexes on `main` after merge. Keep the strict committed-index check on `main`."`` | — |
-| [SRC-A54FF182C7-L000081](../../AGENTS.md#L81) | 81 | ``"- Each PR should have one purpose, be based on current `main`, link the root cause to exact changes/tests, state checks that were not run, and avoid unrelated generated or historical changes. Do not merge or deploy without human director approval."`` | — |
+| [SRC-A54FF182C7-L000015](../../AGENTS.md#L15) | 15 | ``"- Read `docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md` when making product-scope, roadmap, delivery-status, or release-readiness claims. It is a dated snapshot: re-read the current `main` SHA and open PR/branch state from GitHub before acting; never treat its historical PR states as live."`` | — |
+| [SRC-A54FF182C7-L000016](../../AGENTS.md#L16) | 16 | `""` | — |
+| [SRC-A54FF182C7-L000017](../../AGENTS.md#L17) | 17 | `"## Evidence discipline"` | — |
+| [SRC-A54FF182C7-L000018](../../AGENTS.md#L18) | 18 | `"- Label consequential findings **VERIFIED**, **INFERRED**, **PROPOSED**, or **UNKNOWN**."` | — |
+| [SRC-A54FF182C7-L000019](../../AGENTS.md#L19) | 19 | `"- Never invent files, functions, branches, commits, workflows, test results, tool capabilities, deployment status, capacity numbers, or security guarantees."` | — |
+| [SRC-A54FF182C7-L000020](../../AGENTS.md#L20) | 20 | `"- A configured API key is not proof that a connector works. A health/configuration response is not proof that a provider is reachable. A model's self-review is not independent verification."` | — |
+| [SRC-A54FF182C7-L000021](../../AGENTS.md#L21) | 21 | `"- When reporting a test, include the exact command, actual result, relevant commit or code state, and any environment limitation. Never say a test was run when it was not."` | — |
+| [SRC-A54FF182C7-L000022](../../AGENTS.md#L22) | 22 | `"- Prefer regression tests for fixed defects and measurable evidence for performance, capacity, quality, and security claims."` | — |
+| [SRC-A54FF182C7-L000023](../../AGENTS.md#L23) | 23 | `""` | — |
+| [SRC-A54FF182C7-L000024](../../AGENTS.md#L24) | 24 | `"## Architecture evolution and scalability"` | — |
+| [SRC-A54FF182C7-L000025](../../AGENTS.md#L25) | 25 | `"- Treat scalability, maintainability, and controlled evolution as foundational requirements; read the relevant charter sections before introducing modules, agents, tools, providers, persistence, queues, or services."` | — |
+| [SRC-A54FF182C7-L000026](../../AGENTS.md#L26) | 26 | `"- Prefer a well-bounded modular monolith until measured scaling, fault-isolation, security, or release-independence needs justify a separate service. Do not add microservices or abstraction layers for appearance."` | — |
+| [SRC-A54FF182C7-L000027](../../AGENTS.md#L27) | 27 | `"- New modules must have explicit responsibilities, public contracts, ownership, dependency direction, and appropriate tests. Avoid circular imports and cross-module access to private implementation details."` | — |
+| [SRC-A54FF182C7-L000028](../../AGENTS.md#L28) | 28 | `"- Wrap external providers behind adapters and validate their input/output contracts. Keep provider-specific SDKs and response shapes out of domain logic."` | — |
+| [SRC-A54FF182C7-L000029](../../AGENTS.md#L29) | 29 | `"- New tools/agents/plugins must declare schema, permissions, data classification, timeout, resource budget, concurrency limit, retry/idempotency behavior where applicable, health-check semantics, failure modes, and disable/rollback path."` | — |
+| [SRC-A54FF182C7-L000030](../../AGENTS.md#L30) | 30 | `"- Treat API and event schema changes as versioned contracts. Prefer backward-compatible evolution; document deprecations and provide migration paths for breaking changes."` | — |
+| [SRC-A54FF182C7-L000031](../../AGENTS.md#L31) | 31 | `"- All persistent data-shape changes need a tested migration and data-preservation/rollback strategy proportionate to risk. Never assume production data can be recreated from scratch."` | — |
+| [SRC-A54FF182C7-L000032](../../AGENTS.md#L32) | 32 | `"- Do not rely on in-process global mutable state for cross-request user, tenant, or long-running task state. Assess what must survive process restarts before adding multi-process or horizontal scaling."` | — |
+| [SRC-A54FF182C7-L000033](../../AGENTS.md#L33) | 33 | `"- Before extracting services, adding queues, changing storage, or introducing a distributed system, state the evidence-based need, operational costs, failure modes, security boundary, and acceptance tests."` | — |
+| [SRC-A54FF182C7-L000034](../../AGENTS.md#L34) | 34 | `"- Add architecture fitness checks where practical for dependency boundaries, contracts, migrations, secrets, concurrency isolation, and critical performance limits."` | — |
+| [SRC-A54FF182C7-L000035](../../AGENTS.md#L35) | 35 | `"- Record material architectural choices and exceptions in an ADR or equivalent, including rejected alternatives, tests, risks, compatibility, and rollback."` | — |
+| [SRC-A54FF182C7-L000036](../../AGENTS.md#L36) | 36 | `"- Keep expansion incremental and reversible; do not represent future architecture goals as current capabilities."` | — |
+| [SRC-A54FF182C7-L000037](../../AGENTS.md#L37) | 37 | `""` | — |
+| [SRC-A54FF182C7-L000038](../../AGENTS.md#L38) | 38 | `"## Required engineering behavior"` | — |
+| [SRC-A54FF182C7-L000039](../../AGENTS.md#L39) | 39 | `"- Prefer the smallest safe change that solves the verified problem. Do not rewrite the architecture without a documented reason and migration path."` | — |
+| [SRC-A54FF182C7-L000040](../../AGENTS.md#L40) | 40 | `"- Preserve existing behavior unless the task explicitly authorizes a change; identify compatibility risks."` | — |
+| [SRC-A54FF182C7-L000041](../../AGENTS.md#L41) | 41 | `"- Bound external calls, retries, payload sizes, number of search results/pages, planning steps, model calls, elapsed time, and concurrency where applicable."` | — |
+| [SRC-A54FF182C7-L000042](../../AGENTS.md#L42) | 42 | `"- Treat model output, search results, fetched pages, user files, and external tool outputs as untrusted data. Validate schemas and permissions at deterministic execution boundaries."` | — |
+| [SRC-A54FF182C7-L000043](../../AGENTS.md#L43) | 43 | `"- Do not expose secrets, private user data, internal traces, or sensitive prompts in logs, HTTP errors, front-end assets, commits, or reports."` | — |
+| [SRC-A54FF182C7-L000044](../../AGENTS.md#L44) | 44 | `"- Do not weaken authentication, authorization, SSRF protections, tenant/session isolation, resource limits, or test coverage to improve speed."` | — |
+| [SRC-A54FF182C7-L000045](../../AGENTS.md#L45) | 45 | `"- Do not give a model unrestricted shell, filesystem, network, or database access. Tools must be explicitly registered, scoped, bounded, and verified."` | — |
+| [SRC-A54FF182C7-L000046](../../AGENTS.md#L46) | 46 | `"- For any change affecting security, external networking, persistence, concurrency, or tool execution, add or identify appropriate negative/failure tests, not only happy-path checks."` | — |
+| [SRC-A54FF182C7-L000047](../../AGENTS.md#L47) | 47 | `"- For changes that cross a trust boundary, update or reference the threat model, validate deny-by-default authorization at execution time, and document negative tests for the relevant attack paths (e.g., prompt injection, SSRF/redirects, cross-user access, XSS, secret leakage, resource exhaustion, or supply-chain exposure). Disable or narrow a capability when required security controls cannot be demonstrated in its target environment."` | — |
+| [SRC-A54FF182C7-L000048](../../AGENTS.md#L48) | 48 | `"- For performance or scalability work, establish a baseline and test in a named environment. Never claim support for an arbitrary user count without a reproducible load-test result."` | — |
+| [SRC-A54FF182C7-L000049](../../AGENTS.md#L49) | 49 | `"- If evidence is insufficient, state the unknown and the smallest safe method to verify it."` | — |
+| [SRC-A54FF182C7-L000050](../../AGENTS.md#L50) | 50 | `""` | — |
+| [SRC-A54FF182C7-L000051](../../AGENTS.md#L51) | 51 | `"## Change and release control"` | — |
+| [SRC-A54FF182C7-L000052](../../AGENTS.md#L52) | 52 | `"- Inspect the current branch, HEAD, working diff, and relevant files before editing."` | — |
+| [SRC-A54FF182C7-L000053](../../AGENTS.md#L53) | 53 | `"- Work on a dedicated branch; keep changes scoped and reviewable."` | — |
+| [SRC-A54FF182C7-L000054](../../AGENTS.md#L54) | 54 | `"- Run applicable checks when tools and environment permit, and report any checks that could not be run."` | — |
+| [SRC-A54FF182C7-L000055](../../AGENTS.md#L55) | 55 | `"- Review the final diff and verify documentation links and new-file paths."` | — |
+| [SRC-A54FF182C7-L000056](../../AGENTS.md#L56) | 56 | `"- Never merge a pull request, force-update a protected branch, or deploy to production without explicit authorization from the Human Director."` | — |
+| [SRC-A54FF182C7-L000057](../../AGENTS.md#L57) | 57 | ``"- Do not present a proposed or unmerged change as already effective on `main`."`` | — |
+| [SRC-A54FF182C7-L000058](../../AGENTS.md#L58) | 58 | `"- Update the charter or related documentation when a material design decision changes; document major architectural choices and exceptions with rationale, risks, tests, and rollback considerations."` | — |
+| [SRC-A54FF182C7-L000059](../../AGENTS.md#L59) | 59 | `""` | — |
+| [SRC-A54FF182C7-L000060](../../AGENTS.md#L60) | 60 | `"## Platform-grade readiness"` | — |
+| [SRC-A54FF182C7-L000061](../../AGENTS.md#L61) | 61 | `"- For material production-facing changes, assess the applicable release gates in both the charter and the Global Platform Engineering Baseline; do not treat a checklist as proof of compliance."` | — |
+| [SRC-A54FF182C7-L000062](../../AGENTS.md#L62) | 62 | `"- Define measurable SLI/SLO or a baseline where useful. Never invent uptime, latency, capacity, security maturity, cost, or recovery guarantees."` | — |
+| [SRC-A54FF182C7-L000063](../../AGENTS.md#L63) | 63 | `"- Review blast radius, dependency failure, graceful degradation, quotas, per-request budgets, data lifecycle, tenant isolation when multi-user, supply-chain exposure, observability/privacy, and recovery proportional to risk."` | — |
+| [SRC-A54FF182C7-L000064](../../AGENTS.md#L64) | 64 | `"- For AI/agent changes, test Arabic task quality, citation support, prompt injection, untrusted tool/page content, unauthorized actions, loops, provider failures, cost bounds, and safe fallback as applicable."` | — |
+| [SRC-A54FF182C7-L000065](../../AGENTS.md#L65) | 65 | `"- Require an explicit reason before adding distributed infrastructure; document simpler alternatives and lifecycle costs. Do not apply every enterprise control blindly to a small deployment, but do not conceal a risk merely because a control is expensive or not yet supported."` | — |
+| [SRC-A54FF182C7-L000066](../../AGENTS.md#L66) | 66 | `""` | — |
+| [SRC-A54FF182C7-L000067](../../AGENTS.md#L67) | 67 | `"## Requirement traceability and expert review"` | — |
+| [SRC-A54FF182C7-L000068](../../AGENTS.md#L68) | 68 | `"- For material changes, create or update stable requirement IDs and record applicability, status, evidence, test command/results, environment, limitations, residual risk, and owner in the requirements register or an equivalent reviewed record."` | — |
+| [SRC-A54FF182C7-L000069](../../AGENTS.md#L69) | 69 | `"- Use all relevant discipline lenses (architecture, security, privacy, data, SRE, performance, AI evaluation, search/evidence, accessibility, supply chain, cost, and operations); do not claim that a human specialist independently reviewed work unless that actually happened."` | — |
+| [SRC-A54FF182C7-L000070](../../AGENTS.md#L70) | 70 | `"- Keep non-applicable and waived requirements distinct from unknown ones. Exceptions to MUST controls need scope, compensating controls, an approver, a revisit/expiry condition, and recorded residual risk."` | — |
+| [SRC-A54FF182C7-L000071](../../AGENTS.md#L71) | 71 | `"- Do not build advanced infrastructure to satisfy a checklist by appearance. Use trigger conditions and evidence in the baseline to decide when advanced requirements apply."` | — |
+| [SRC-A54FF182C7-L000072](../../AGENTS.md#L72) | 72 | `""` | — |
+| [SRC-A54FF182C7-L000073](../../AGENTS.md#L73) | 73 | `"## Acceptance principle"` | — |
+| [SRC-A54FF182C7-L000074](../../AGENTS.md#L74) | 74 | `"A capability is not complete because it appears in a plan, comment, prompt, or documentation. It is complete only to the extent supported by the implementation, relevant tests, observed output, and explicitly stated limitations."` | — |
+| [SRC-A54FF182C7-L000075](../../AGENTS.md#L75) | 75 | `""` | — |
+| [SRC-A54FF182C7-L000076](../../AGENTS.md#L76) | 76 | `""` | — |
+| [SRC-A54FF182C7-L000077](../../AGENTS.md#L77) | 77 | `"## Repository hygiene and documentation ownership"` | — |
+| [SRC-A54FF182C7-L000078](../../AGENTS.md#L78) | 78 | ``"- Use [`docs/README.md`](docs/README.md) as the navigation map. Before adding a document, search for an existing owner of the same concern; update the canonical file instead of creating a parallel status or checklist."`` | — |
+| [SRC-A54FF182C7-L000079](../../AGENTS.md#L79) | 79 | ``"- Keep one current source of truth per concern: the dated product/delivery snapshot in `docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md` (revalidate against GitHub before use); implementation details and historical boundaries in `docs/IMPLEMENTATION_SCOPE.md`; issue/finding IDs and chronology in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`; historical post-merge evidence in `docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md`; test categories and limitations in `docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md`."`` | — |
+| [SRC-A54FF182C7-L000080](../../AGENTS.md#L80) | 80 | ``"- Historical audit snapshots belong under `docs/archive/`. Mark their baseline SHA/date and link to current guidance; never silently rewrite old test evidence to look current."`` | — |
+| [SRC-A54FF182C7-L000081](../../AGENTS.md#L81) | 81 | `"- Do not keep a second live-status document with a different PR state or baseline SHA. Read current PR/branch state from GitHub; avoid hard-coding the state of an open PR in durable docs."` | — |
+| [SRC-A54FF182C7-L000082](../../AGENTS.md#L82) | 82 | ``"- Never hand-edit generated files under `docs/source_index/`, `docs/MASTER_INDEX.md`, `docs/SOURCE_LINES_INDEX.md`, or `docs/INDEX_COVERAGE_AUDIT.md`. Run `python docs/generate_index.py` and `python docs/generate_index.py --check`; inspect the generated diff. For documentation-only or repository-hygiene PRs, do not add index page churn solely because source lines shifted: the test workflow regenerates and verifies indexes in its isolated checkout, and the publisher refreshes committed indexes on `main` after merge. Keep the strict committed-index check on `main`."`` | — |
+| [SRC-A54FF182C7-L000083](../../AGENTS.md#L83) | 83 | ``"- Each PR should have one purpose, be based on current `main`, link the root cause to exact changes/tests, state checks that were not run, and avoid unrelated generated or historical changes. Do not merge or deploy without human director approval."`` | — |
 ## الوكيل والمنطق
 
 ### FILE-E120A62E2E — [agents/__init__.py](../../agents/__init__.py#L1)
@@ -895,5 +897,3 @@
 | [SRC-138992B1FC-L000276](../../agents/answer_validation.py#L276) | 276 | `"            for match in _CITATION.finditer(sentence)"` | — |
 | [SRC-138992B1FC-L000277](../../agents/answer_validation.py#L277) | 277 | `"        ]"` | — |
 | [SRC-138992B1FC-L000278](../../agents/answer_validation.py#L278) | 278 | `"        if not cited_indices:"` | — |
-| [SRC-138992B1FC-L000279](../../agents/answer_validation.py#L279) | 279 | `"            continue"` | — |
-| [SRC-138992B1FC-L000280](../../agents/answer_validation.py#L280) | 280 | `"        claim_tokens = list(dict.fromkeys(_tokens(_CITATION.sub(\" \", sentence), drop_stopwords=True)))"` | — |

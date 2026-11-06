@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **137**
-- ملفات Python المحللة: **82**
-- تعريفات Python المفهرسة: **1954**
-- تعريفات Python موثقة بوجود Docstring: **295**
-- تعريفات Python بلا Docstring: **1251**
+- ملفات المستودع في الجرد: **141**
+- ملفات Python المحللة: **83**
+- تعريفات Python المفهرسة: **1984**
+- تعريفات Python موثقة بوجود Docstring: **296**
+- تعريفات Python بلا Docstring: **1280**
 - تعريفات لا ينطبق عليها Docstring: **408**
-- الرموز الساكنة الإضافية: **2655**
-- الأسطر النصية المفهرسة حرفيًا: **48183**
+- الرموز الساكنة الإضافية: **2782**
+- الأسطر النصية المفهرسة حرفيًا: **49885**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -35,14 +35,14 @@
 | FILE-1DB27D9318 | CI وأتمتة | [.github/workflows/tests.yml](../.github/workflows/tests.yml#L1) | YAML | 7086 | 168 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4949 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
-| FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 12346 | 81 | جرد الملف + عناوين Markdown |
+| FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 12807 | 83 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25285 | 521 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 12762 | 296 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
 | FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24445 | 544 | جرد الملف + AST Python |
-| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 32951 | 747 | جرد الملف + AST Python |
+| FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 48497 | 1092 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 6503 | 164 | جرد الملف + AST Python |
 | FILE-3D565C3B85 | الوكيل والمنطق | [agents/requirement_evidence.py](../agents/requirement_evidence.py#L1) | Python | 6723 | 148 | جرد الملف + AST Python |
 | FILE-59CF4B7DE8 | الوكيل والمنطق | [agents/research.py](../agents/research.py#L1) | Python | 38403 | 906 | جرد الملف + AST Python |
@@ -55,9 +55,9 @@
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78578 | 1426 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 384794 | 7249 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 387297 | 7297 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
-| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 47000 | 1008 | جرد الملف + AST Python |
+| FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 57014 | 1185 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
@@ -72,29 +72,32 @@
 | FILE-51D44BE378 | وثائق وفهرسة | [docs/DEPLOY_SNAPDEPLOY_AR.md](DEPLOY_SNAPDEPLOY_AR.md#L1) | Markdown | 10804 | 107 | جرد الملف + عناوين Markdown |
 | FILE-E599346ABE | وثائق وفهرسة | [docs/generate_index.py](generate_index.py#L1) | Python | 80817 | 1973 | جرد الملف + AST Python |
 | FILE-6E35221BFA | وثائق وفهرسة | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L1) | Markdown | 5329 | 48 | جرد الملف + عناوين Markdown |
-| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 15944 | 86 | جرد الملف + عناوين Markdown |
+| FILE-C8EA754D73 | وثائق وفهرسة | [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | Markdown | 21554 | 107 | جرد الملف + عناوين Markdown |
 | FILE-53E640B937 | وثائق وفهرسة | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | Markdown | 12943 | 136 | جرد الملف + عناوين Markdown |
 | FILE-BA40E88B07 | وثائق وفهرسة | [docs/OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md](OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026-11-01_AR.md#L1) | Markdown | 16148 | 163 | جرد الملف + عناوين Markdown |
 | FILE-21D5D044E2 | وثائق وفهرسة | [docs/OMARAI_EXCEPTIONS_REGISTER_AR.md](OMARAI_EXCEPTIONS_REGISTER_AR.md#L1) | Markdown | 9129 | 99 | جرد الملف + عناوين Markdown |
-| FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 99437 | 903 | جرد الملف + عناوين Markdown |
+| FILE-E73001D9AC | وثائق وفهرسة | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L1) | Markdown | 102592 | 922 | جرد الملف + عناوين Markdown |
 | FILE-D17CE3D12F | وثائق وفهرسة | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | Markdown | 130833 | 1035 | جرد الملف + عناوين Markdown |
-| FILE-E1EAC11EFE | وثائق وفهرسة | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L1) | Markdown | 14423 | 74 | جرد الملف + عناوين Markdown |
+| FILE-E1EAC11EFE | وثائق وفهرسة | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L1) | Markdown | 16827 | 90 | جرد الملف + عناوين Markdown |
 | FILE-D3418B07FF | وثائق وفهرسة | [docs/OMARAI_MODEL_PROVIDER_FAILOVER_AR.md](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L1) | Markdown | 3478 | 47 | جرد الملف + عناوين Markdown |
 | FILE-9A0DFA994E | وثائق وفهرسة | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L1) | Markdown | 21086 | 146 | جرد الملف + عناوين Markdown |
 | FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 15555 | 118 | جرد الملف + عناوين Markdown |
-| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 112115 | 504 | جرد الملف + عناوين Markdown |
-| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 78029 | 276 | جرد الملف + عناوين Markdown |
+| FILE-8872CF2B16 | وثائق وفهرسة | [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L1) | Markdown | 16979 | 137 | جرد الملف + عناوين Markdown |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 118549 | 542 | جرد الملف + عناوين Markdown |
+| FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 79097 | 278 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
-| FILE-41EDB66D3C | وثائق وفهرسة | [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L1) | Markdown | 47354 | 520 | جرد الملف + عناوين Markdown |
+| FILE-41EDB66D3C | وثائق وفهرسة | [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L1) | Markdown | 51887 | 546 | جرد الملف + عناوين Markdown |
 | FILE-0F910493E8 | وثائق وفهرسة | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | Markdown | 77520 | 854 | جرد الملف + عناوين Markdown |
 | FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 22759 | 142 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
-| FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 5924 | 52 | جرد الملف + عناوين Markdown |
+| FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 6287 | 53 | جرد الملف + عناوين Markdown |
 | FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15596 | 132 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
 | FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 11339 | 130 | جرد الملف + عناوين Markdown |
 | FILE-002F33CFDC | وثائق وفهرسة | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L1) | Markdown | 3207 | 66 | جرد الملف + عناوين Markdown |
+| FILE-676B69CB6C | وثائق وفهرسة | [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L1) | Markdown | 10372 | 161 | جرد الملف + عناوين Markdown |
 | FILE-8524B08F5D | وثائق وفهرسة | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | Markdown | 5319 | 47 | جرد الملف + عناوين Markdown |
+| FILE-BFCEEA0374 | وثائق وفهرسة | [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1) | Markdown | 7425 | 73 | جرد الملف + عناوين Markdown |
 | FILE-6B9B9ABE27 | وثائق وفهرسة | [docs/ui-directions/README.md](ui-directions/README.md#L1) | Markdown | 2400 | 42 | جرد الملف + عناوين Markdown |
 | FILE-7EB8FCD215 | وثائق وفهرسة | [docs/ui-directions/variant-01-aurora-glass.html](ui-directions/variant-01-aurora-glass.html#L1) | HTML | 7302 | 1 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-2A9FC16EBA | وثائق وفهرسة | [docs/ui-directions/variant-02-precision-glass.html](ui-directions/variant-02-precision-glass.html#L1) | HTML | 6763 | 1 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -102,7 +105,7 @@
 | FILE-C693279643 | ملفات أخرى | [LICENSE](../LICENSE#L1) | بدون امتداد | 1076 | 21 | جرد ملف نصي فقط |
 | FILE-50C86B7ED8 | إعدادات وتشغيل | [pyproject.toml](../pyproject.toml#L1) | TOML | 1115 | 39 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-115C2027D9 | إعدادات وتشغيل | [railway.json](../railway.json#L1) | JSON | 395 | 14 | جرد الملف + مفاتيح إعداد ساكنة |
-| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 24619 | 190 | جرد الملف + عناوين Markdown |
+| FILE-B335630551 | وثائق ونصوص | [README.md](../README.md#L1) | Markdown | 26202 | 200 | جرد الملف + عناوين Markdown |
 | FILE-A64CF250B4 | إعدادات وتشغيل | [render.yaml](../render.yaml#L1) | YAML | 339 | 15 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-64EDD7FC2B | ملفات أخرى | [scripts/__init__.py](../scripts/__init__.py#L1) | Python | 45 | 1 | جرد الملف + AST Python |
 | FILE-70795F4B61 | ملفات أخرى | [scripts/compare_answer_quality_runs.py](../scripts/compare_answer_quality_runs.py#L1) | Python | 24754 | 531 | جرد الملف + AST Python |
@@ -121,12 +124,12 @@
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
 | FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
-| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 47064 | 1290 | جرد الملف + AST Python |
+| FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 53497 | 1447 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 5160 | 120 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 6497 | 146 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12424 | 299 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -162,9 +165,10 @@
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 171948 | 4420 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
+| FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 9761 | 238 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71437 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 49760 | 577 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 66435 | 782 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -256,43 +260,53 @@
 | [agents/intent_router.py](../agents/intent_router.py#L375) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 375 | [SRC-5587371288-L000375](../agents/intent_router.py#L375) |
 | [agents/intent_router.py](../agents/intent_router.py#L392) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 392 | [SRC-5587371288-L000392](../agents/intent_router.py#L392) |
 | [agents/intent_router.py](../agents/intent_router.py#L418) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 418 | [SRC-5587371288-L000418](../agents/intent_router.py#L418) |
-| [agents/omarai.py](../agents/omarai.py#L19) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 19 | [SRC-C9CF9B54F8-L000019](../agents/omarai.py#L19) |
-| [agents/omarai.py](../agents/omarai.py#L20) | متغير/ثابت Python | DEFAULT_TENANT_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-C9CF9B54F8-L000020](../agents/omarai.py#L20) |
-| [agents/omarai.py](../agents/omarai.py#L21) | متغير/ثابت Python | DEFAULT_USER_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-C9CF9B54F8-L000021](../agents/omarai.py#L21) |
-| [agents/omarai.py](../agents/omarai.py#L22) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
-| [agents/omarai.py](../agents/omarai.py#L23) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-C9CF9B54F8-L000023](../agents/omarai.py#L23) |
-| [agents/omarai.py](../agents/omarai.py#L29) | متغير/ثابت Python | NOT_BUYER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-C9CF9B54F8-L000029](../agents/omarai.py#L29) |
-| [agents/omarai.py](../agents/omarai.py#L31) | دالة | normalize | لا توجد Docstring. | ناقص | 31 | [SRC-C9CF9B54F8-L000031](../agents/omarai.py#L31) |
-| [agents/omarai.py](../agents/omarai.py#L36) | دالة | now_utc | لا توجد Docstring. | ناقص | 36 | [SRC-C9CF9B54F8-L000036](../agents/omarai.py#L36) |
-| [agents/omarai.py](../agents/omarai.py#L39) | دالة | _csv_safe_cell | Prefix spreadsheet formulas even when hidden whitespace/control chars precede them. | موثق | 39 | [SRC-C9CF9B54F8-L000039](../agents/omarai.py#L39) |
-| [agents/omarai.py](../agents/omarai.py#L58) | دالة | analyze | لا توجد Docstring. | ناقص | 58 | [SRC-C9CF9B54F8-L000058](../agents/omarai.py#L58) |
-| [agents/omarai.py](../agents/omarai.py#L80) | دالة | validate_url | لا توجد Docstring. | ناقص | 80 | [SRC-C9CF9B54F8-L000080](../agents/omarai.py#L80) |
-| [agents/omarai.py](../agents/omarai.py#L88) | كلاس | LeadStore | Tenant-scoped SQLite lead storage with a safe single-company bootstrap. | موثق | 88 | [SRC-C9CF9B54F8-L000088](../agents/omarai.py#L88) |
-| [agents/omarai.py](../agents/omarai.py#L91) | متغير/ثابت Python | LeadStore.ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 91 | [SRC-C9CF9B54F8-L000091](../agents/omarai.py#L91) |
-| [agents/omarai.py](../agents/omarai.py#L94) | متغير/ثابت Python | LeadStore.ALLOWED_ROLES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 94 | [SRC-C9CF9B54F8-L000094](../agents/omarai.py#L94) |
-| [agents/omarai.py](../agents/omarai.py#L96) | دالة | LeadStore.__init__ | لا توجد Docstring. | ناقص | 96 | [SRC-C9CF9B54F8-L000096](../agents/omarai.py#L96) |
-| [agents/omarai.py](../agents/omarai.py#L103) | دالة | LeadStore.connect | Yield one transaction-scoped connection and always close it. | موثق | 103 | [SRC-C9CF9B54F8-L000103](../agents/omarai.py#L103) |
-| [agents/omarai.py](../agents/omarai.py#L119) | دالة | LeadStore._create_leads_table | لا توجد Docstring. | ناقص | 119 | [SRC-C9CF9B54F8-L000119](../agents/omarai.py#L119) |
-| [agents/omarai.py](../agents/omarai.py#L138) | دالة | LeadStore._initialize_schema | لا توجد Docstring. | ناقص | 138 | [SRC-C9CF9B54F8-L000138](../agents/omarai.py#L138) |
-| [agents/omarai.py](../agents/omarai.py#L310) | دالة | LeadStore._tenant | لا توجد Docstring. | ناقص | 310 | [SRC-C9CF9B54F8-L000310](../agents/omarai.py#L310) |
-| [agents/omarai.py](../agents/omarai.py#L316) | دالة | LeadStore.default_principal | لا توجد Docstring. | ناقص | 316 | [SRC-C9CF9B54F8-L000316](../agents/omarai.py#L316) |
-| [agents/omarai.py](../agents/omarai.py#L328) | دالة | LeadStore.create_tenant | لا توجد Docstring. | ناقص | 328 | [SRC-C9CF9B54F8-L000328](../agents/omarai.py#L328) |
-| [agents/omarai.py](../agents/omarai.py#L345) | دالة | LeadStore.create_user | لا توجد Docstring. | ناقص | 345 | [SRC-C9CF9B54F8-L000345](../agents/omarai.py#L345) |
-| [agents/omarai.py](../agents/omarai.py#L359) | دالة | LeadStore.add_membership | لا توجد Docstring. | ناقص | 359 | [SRC-C9CF9B54F8-L000359](../agents/omarai.py#L359) |
-| [agents/omarai.py](../agents/omarai.py#L382) | دالة | LeadStore._token_hash | لا توجد Docstring. | ناقص | 382 | [SRC-C9CF9B54F8-L000382](../agents/omarai.py#L382) |
-| [agents/omarai.py](../agents/omarai.py#L386) | دالة | LeadStore._normalize_token_expiry | Store token expiries as validated UTC timestamps for safe comparisons. | موثق | 386 | [SRC-C9CF9B54F8-L000386](../agents/omarai.py#L386) |
-| [agents/omarai.py](../agents/omarai.py#L408) | دالة | LeadStore.create_api_token | لا توجد Docstring. | ناقص | 408 | [SRC-C9CF9B54F8-L000408](../agents/omarai.py#L408) |
-| [agents/omarai.py](../agents/omarai.py#L444) | دالة | LeadStore.resolve_api_token | لا توجد Docstring. | ناقص | 444 | [SRC-C9CF9B54F8-L000444](../agents/omarai.py#L444) |
-| [agents/omarai.py](../agents/omarai.py#L461) | دالة | LeadStore.create_web_session | Exchange a valid API credential for a short-lived opaque browser session. | موثق | 461 | [SRC-C9CF9B54F8-L000461](../agents/omarai.py#L461) |
-| [agents/omarai.py](../agents/omarai.py#L514) | دالة | LeadStore.resolve_web_session | Resolve an opaque browser session and re-check its backing credential. | موثق | 514 | [SRC-C9CF9B54F8-L000514](../agents/omarai.py#L514) |
-| [agents/omarai.py](../agents/omarai.py#L571) | دالة | LeadStore.revoke_web_session | Revoke one opaque browser session without revoking its backing API token. | موثق | 571 | [SRC-C9CF9B54F8-L000571](../agents/omarai.py#L571) |
-| [agents/omarai.py](../agents/omarai.py#L585) | دالة | LeadStore.revoke_api_token | Revoke only a token owned by the authenticated user in the active tenant. | موثق | 585 | [SRC-C9CF9B54F8-L000585](../agents/omarai.py#L585) |
-| [agents/omarai.py](../agents/omarai.py#L613) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 613 | [SRC-C9CF9B54F8-L000613](../agents/omarai.py#L613) |
-| [agents/omarai.py](../agents/omarai.py#L666) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 666 | [SRC-C9CF9B54F8-L000666](../agents/omarai.py#L666) |
-| [agents/omarai.py](../agents/omarai.py#L671) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 671 | [SRC-C9CF9B54F8-L000671](../agents/omarai.py#L671) |
-| [agents/omarai.py](../agents/omarai.py#L689) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 689 | [SRC-C9CF9B54F8-L000689](../agents/omarai.py#L689) |
-| [agents/omarai.py](../agents/omarai.py#L710) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 710 | [SRC-C9CF9B54F8-L000710](../agents/omarai.py#L710) |
-| [agents/omarai.py](../agents/omarai.py#L730) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 730 | [SRC-C9CF9B54F8-L000730](../agents/omarai.py#L730) |
+| [agents/omarai.py](../agents/omarai.py#L20) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 20 | [SRC-C9CF9B54F8-L000020](../agents/omarai.py#L20) |
+| [agents/omarai.py](../agents/omarai.py#L21) | متغير/ثابت Python | DEFAULT_TENANT_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-C9CF9B54F8-L000021](../agents/omarai.py#L21) |
+| [agents/omarai.py](../agents/omarai.py#L22) | متغير/ثابت Python | DEFAULT_USER_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
+| [agents/omarai.py](../agents/omarai.py#L23) | متغير/ثابت Python | _TRANSLATION | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 23 | [SRC-C9CF9B54F8-L000023](../agents/omarai.py#L23) |
+| [agents/omarai.py](../agents/omarai.py#L24) | متغير/ثابت Python | SIGNALS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-C9CF9B54F8-L000024](../agents/omarai.py#L24) |
+| [agents/omarai.py](../agents/omarai.py#L30) | متغير/ثابت Python | NOT_BUYER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-C9CF9B54F8-L000030](../agents/omarai.py#L30) |
+| [agents/omarai.py](../agents/omarai.py#L32) | دالة | normalize | لا توجد Docstring. | ناقص | 32 | [SRC-C9CF9B54F8-L000032](../agents/omarai.py#L32) |
+| [agents/omarai.py](../agents/omarai.py#L37) | دالة | now_utc | لا توجد Docstring. | ناقص | 37 | [SRC-C9CF9B54F8-L000037](../agents/omarai.py#L37) |
+| [agents/omarai.py](../agents/omarai.py#L40) | دالة | _csv_safe_cell | Prefix spreadsheet formulas even when hidden whitespace/control chars precede them. | موثق | 40 | [SRC-C9CF9B54F8-L000040](../agents/omarai.py#L40) |
+| [agents/omarai.py](../agents/omarai.py#L59) | دالة | analyze | لا توجد Docstring. | ناقص | 59 | [SRC-C9CF9B54F8-L000059](../agents/omarai.py#L59) |
+| [agents/omarai.py](../agents/omarai.py#L81) | دالة | validate_url | لا توجد Docstring. | ناقص | 81 | [SRC-C9CF9B54F8-L000081](../agents/omarai.py#L81) |
+| [agents/omarai.py](../agents/omarai.py#L89) | كلاس | LeadStore | Tenant-scoped SQLite lead storage with a safe single-company bootstrap. | موثق | 89 | [SRC-C9CF9B54F8-L000089](../agents/omarai.py#L89) |
+| [agents/omarai.py](../agents/omarai.py#L92) | متغير/ثابت Python | LeadStore.ALLOWED_STATUSES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 92 | [SRC-C9CF9B54F8-L000092](../agents/omarai.py#L92) |
+| [agents/omarai.py](../agents/omarai.py#L95) | متغير/ثابت Python | LeadStore.ALLOWED_ROLES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 95 | [SRC-C9CF9B54F8-L000095](../agents/omarai.py#L95) |
+| [agents/omarai.py](../agents/omarai.py#L97) | دالة | LeadStore.__init__ | لا توجد Docstring. | ناقص | 97 | [SRC-C9CF9B54F8-L000097](../agents/omarai.py#L97) |
+| [agents/omarai.py](../agents/omarai.py#L104) | دالة | LeadStore.connect | Yield one transaction-scoped connection and always close it. | موثق | 104 | [SRC-C9CF9B54F8-L000104](../agents/omarai.py#L104) |
+| [agents/omarai.py](../agents/omarai.py#L120) | دالة | LeadStore._create_leads_table | لا توجد Docstring. | ناقص | 120 | [SRC-C9CF9B54F8-L000120](../agents/omarai.py#L120) |
+| [agents/omarai.py](../agents/omarai.py#L139) | دالة | LeadStore._initialize_schema | لا توجد Docstring. | ناقص | 139 | [SRC-C9CF9B54F8-L000139](../agents/omarai.py#L139) |
+| [agents/omarai.py](../agents/omarai.py#L348) | دالة | LeadStore._tenant | لا توجد Docstring. | ناقص | 348 | [SRC-C9CF9B54F8-L000348](../agents/omarai.py#L348) |
+| [agents/omarai.py](../agents/omarai.py#L354) | دالة | LeadStore.default_principal | لا توجد Docstring. | ناقص | 354 | [SRC-C9CF9B54F8-L000354](../agents/omarai.py#L354) |
+| [agents/omarai.py](../agents/omarai.py#L366) | دالة | LeadStore.create_tenant | لا توجد Docstring. | ناقص | 366 | [SRC-C9CF9B54F8-L000366](../agents/omarai.py#L366) |
+| [agents/omarai.py](../agents/omarai.py#L383) | دالة | LeadStore.create_user | لا توجد Docstring. | ناقص | 383 | [SRC-C9CF9B54F8-L000383](../agents/omarai.py#L383) |
+| [agents/omarai.py](../agents/omarai.py#L397) | دالة | LeadStore.add_membership | لا توجد Docstring. | ناقص | 397 | [SRC-C9CF9B54F8-L000397](../agents/omarai.py#L397) |
+| [agents/omarai.py](../agents/omarai.py#L420) | دالة | LeadStore._token_hash | لا توجد Docstring. | ناقص | 420 | [SRC-C9CF9B54F8-L000420](../agents/omarai.py#L420) |
+| [agents/omarai.py](../agents/omarai.py#L424) | دالة | LeadStore._normalize_token_expiry | Store token expiries as validated UTC timestamps for safe comparisons. | موثق | 424 | [SRC-C9CF9B54F8-L000424](../agents/omarai.py#L424) |
+| [agents/omarai.py](../agents/omarai.py#L446) | دالة | LeadStore.create_api_token | لا توجد Docstring. | ناقص | 446 | [SRC-C9CF9B54F8-L000446](../agents/omarai.py#L446) |
+| [agents/omarai.py](../agents/omarai.py#L482) | دالة | LeadStore.resolve_api_token | لا توجد Docstring. | ناقص | 482 | [SRC-C9CF9B54F8-L000482](../agents/omarai.py#L482) |
+| [agents/omarai.py](../agents/omarai.py#L499) | دالة | LeadStore.create_web_session | Exchange a valid API credential for a short-lived opaque browser session. | موثق | 499 | [SRC-C9CF9B54F8-L000499](../agents/omarai.py#L499) |
+| [agents/omarai.py](../agents/omarai.py#L552) | دالة | LeadStore.resolve_web_session | Resolve an opaque browser session and re-check its backing credential. | موثق | 552 | [SRC-C9CF9B54F8-L000552](../agents/omarai.py#L552) |
+| [agents/omarai.py](../agents/omarai.py#L609) | دالة | LeadStore.revoke_web_session | Revoke one opaque browser session without revoking its backing API token. | موثق | 609 | [SRC-C9CF9B54F8-L000609](../agents/omarai.py#L609) |
+| [agents/omarai.py](../agents/omarai.py#L623) | دالة | LeadStore.revoke_api_token | Revoke only a token owned by the authenticated user in the active tenant. | موثق | 623 | [SRC-C9CF9B54F8-L000623](../agents/omarai.py#L623) |
+| [agents/omarai.py](../agents/omarai.py#L651) | دالة | LeadStore.add | لا توجد Docstring. | ناقص | 651 | [SRC-C9CF9B54F8-L000651](../agents/omarai.py#L651) |
+| [agents/omarai.py](../agents/omarai.py#L704) | دالة | LeadStore.to_dict | لا توجد Docstring. | ناقص | 704 | [SRC-C9CF9B54F8-L000704](../agents/omarai.py#L704) |
+| [agents/omarai.py](../agents/omarai.py#L709) | دالة | LeadStore.list | لا توجد Docstring. | ناقص | 709 | [SRC-C9CF9B54F8-L000709](../agents/omarai.py#L709) |
+| [agents/omarai.py](../agents/omarai.py#L727) | دالة | LeadStore.update_status | لا توجد Docstring. | ناقص | 727 | [SRC-C9CF9B54F8-L000727](../agents/omarai.py#L727) |
+| [agents/omarai.py](../agents/omarai.py#L749) | دالة | LeadStore._product_profile_row | لا توجد Docstring. | ناقص | 749 | [SRC-C9CF9B54F8-L000749](../agents/omarai.py#L749) |
+| [agents/omarai.py](../agents/omarai.py#L760) | دالة | LeadStore.save_product_profile | لا توجد Docstring. | ناقص | 760 | [SRC-C9CF9B54F8-L000760](../agents/omarai.py#L760) |
+| [agents/omarai.py](../agents/omarai.py#L802) | دالة | LeadStore.list_product_profiles | لا توجد Docstring. | ناقص | 802 | [SRC-C9CF9B54F8-L000802](../agents/omarai.py#L802) |
+| [agents/omarai.py](../agents/omarai.py#L813) | دالة | LeadStore.get_product_profile | لا توجد Docstring. | ناقص | 813 | [SRC-C9CF9B54F8-L000813](../agents/omarai.py#L813) |
+| [agents/omarai.py](../agents/omarai.py#L826) | دالة | LeadStore._safe_discovery_source | لا توجد Docstring. | ناقص | 826 | [SRC-C9CF9B54F8-L000826](../agents/omarai.py#L826) |
+| [agents/omarai.py](../agents/omarai.py#L879) | دالة | LeadStore.save_discovery_run | لا توجد Docstring. | ناقص | 879 | [SRC-C9CF9B54F8-L000879](../agents/omarai.py#L879) |
+| [agents/omarai.py](../agents/omarai.py#L944) | دالة | LeadStore._discovery_run_row | لا توجد Docstring. | ناقص | 944 | [SRC-C9CF9B54F8-L000944](../agents/omarai.py#L944) |
+| [agents/omarai.py](../agents/omarai.py#L953) | دالة | LeadStore.list_discovery_runs | لا توجد Docstring. | ناقص | 953 | [SRC-C9CF9B54F8-L000953](../agents/omarai.py#L953) |
+| [agents/omarai.py](../agents/omarai.py#L989) | دالة | LeadStore.get_discovery_run | لا توجد Docstring. | ناقص | 989 | [SRC-C9CF9B54F8-L000989](../agents/omarai.py#L989) |
+| [agents/omarai.py](../agents/omarai.py#L1006) | دالة | LeadStore.save_discovery_signal | لا توجد Docstring. | ناقص | 1006 | [SRC-C9CF9B54F8-L001006](../agents/omarai.py#L1006) |
+| [agents/omarai.py](../agents/omarai.py#L1055) | دالة | LeadStore.import_csv | لا توجد Docstring. | ناقص | 1055 | [SRC-C9CF9B54F8-L001055](../agents/omarai.py#L1055) |
+| [agents/omarai.py](../agents/omarai.py#L1075) | دالة | LeadStore.export_csv | لا توجد Docstring. | ناقص | 1075 | [SRC-C9CF9B54F8-L001075](../agents/omarai.py#L1075) |
 | [agents/request_budget.py](../agents/request_budget.py#L17) | كلاس | RequestBudgetExceeded | Raised when a request cannot start more work within its resource budget. | موثق | 17 | [SRC-FDEEAFDFCA-L000017](../agents/request_budget.py#L17) |
 | [agents/request_budget.py](../agents/request_budget.py#L21) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
 | [agents/request_budget.py](../agents/request_budget.py#L22) | متغير/ثابت Python | MAX_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
@@ -662,141 +676,143 @@
 | [agents/web_agent.py](../agents/web_agent.py#L586) | دالة | enforce_aspect_answer_completeness | Withhold a final answer if any explicit axis lacks a text candidate. | موثق | 586 | [SRC-1AE03B9EC3-L000586](../agents/web_agent.py#L586) |
 | [agents/web_agent.py](../agents/web_agent.py#L658) | كلاس | WebAgent | Search, inspect, and synthesize web evidence for open-ended questions. | موثق | 658 | [SRC-1AE03B9EC3-L000658](../agents/web_agent.py#L658) |
 | [agents/web_agent.py](../agents/web_agent.py#L661) | دالة | WebAgent.__init__ | لا توجد Docstring. | ناقص | 661 | [SRC-1AE03B9EC3-L000661](../agents/web_agent.py#L661) |
-| [agents/web_agent.py](../agents/web_agent.py#L767) | دالة | WebAgent._effective_timeout | Limit one outbound operation to the remaining per-answer time budget. | موثق | 767 | [SRC-1AE03B9EC3-L000767](../agents/web_agent.py#L767) |
-| [agents/web_agent.py](../agents/web_agent.py#L775) | دالة | WebAgent.status | لا توجد Docstring. | ناقص | 775 | [SRC-1AE03B9EC3-L000775](../agents/web_agent.py#L775) |
-| [agents/web_agent.py](../agents/web_agent.py#L960) | دالة | WebAgent._unwrap_search_url | لا توجد Docstring. | ناقص | 960 | [SRC-1AE03B9EC3-L000960](../agents/web_agent.py#L960) |
-| [agents/web_agent.py](../agents/web_agent.py#L973) | دالة | WebAgent._record_provider_diagnostic | لا توجد Docstring. | ناقص | 973 | [SRC-1AE03B9EC3-L000973](../agents/web_agent.py#L973) |
-| [agents/web_agent.py](../agents/web_agent.py#L979) | دالة | WebAgent._record_provider_diagnostic.redact | لا توجد Docstring. | ناقص | 979 | [SRC-1AE03B9EC3-L000979](../agents/web_agent.py#L979) |
-| [agents/web_agent.py](../agents/web_agent.py#L1022) | دالة | WebAgent._source_matches_query | لا توجد Docstring. | ناقص | 1022 | [SRC-1AE03B9EC3-L001022](../agents/web_agent.py#L1022) |
-| [agents/web_agent.py](../agents/web_agent.py#L1032) | دالة | WebAgent._normalized_source_url_key | Normalize a public HTTP(S) URL for duplicate detection across search rounds. | موثق | 1032 | [SRC-1AE03B9EC3-L001032](../agents/web_agent.py#L1032) |
-| [agents/web_agent.py](../agents/web_agent.py#L1060) | دالة | WebAgent._question_coverage_targets | Use the richer aspect parser, then the shared deterministic fallback. | موثق | 1060 | [SRC-1AE03B9EC3-L001060](../agents/web_agent.py#L1060) |
-| [agents/web_agent.py](../agents/web_agent.py#L1068) | دالة | WebAgent._is_current_search_status_question | Recognize a question about whether this answer already used web search. | موثق | 1068 | [SRC-1AE03B9EC3-L001068](../agents/web_agent.py#L1068) |
-| [agents/web_agent.py](../agents/web_agent.py#L1088) | دالة | WebAgent._is_self_question | Recognize questions about Omarai itself so they do not need web search. | موثق | 1088 | [SRC-1AE03B9EC3-L001088](../agents/web_agent.py#L1088) |
-| [agents/web_agent.py](../agents/web_agent.py#L1122) | دالة | WebAgent._is_navigation_request | A link-finding task can be useful with one clearly labelled candidate result. | موثق | 1122 | [SRC-1AE03B9EC3-L001122](../agents/web_agent.py#L1122) |
-| [agents/web_agent.py](../agents/web_agent.py#L1132) | دالة | WebAgent._is_lead_search | Keep lead discovery distinct from listing searches and generic explanations. | موثق | 1132 | [SRC-1AE03B9EC3-L001132](../agents/web_agent.py#L1132) |
-| [agents/web_agent.py](../agents/web_agent.py#L1137) | دالة | WebAgent._lead_entity_categories | Classify explicit property and vehicle terms for conservative lead isolation. | موثق | 1137 | [SRC-1AE03B9EC3-L001137](../agents/web_agent.py#L1137) |
-| [agents/web_agent.py](../agents/web_agent.py#L1151) | دالة | WebAgent._lead_entity_categories.contains | لا توجد Docstring. | ناقص | 1151 | [SRC-1AE03B9EC3-L001151](../agents/web_agent.py#L1151) |
-| [agents/web_agent.py](../agents/web_agent.py#L1168) | دالة | WebAgent._lead_intent_evidence | Extract explicit public demand type without inferring identity or product fit. | موثق | 1168 | [SRC-1AE03B9EC3-L001168](../agents/web_agent.py#L1168) |
-| [agents/web_agent.py](../agents/web_agent.py#L1253) | دالة | WebAgent._lead_generation_queries | Generate bounded, sector-neutral buyer queries anchored to the requested product. | موثق | 1253 | [SRC-1AE03B9EC3-L001253](../agents/web_agent.py#L1253) |
-| [agents/web_agent.py](../agents/web_agent.py#L1307) | دالة | WebAgent._is_listing_discovery | Recognize property/job/product discovery where candidates are useful with caveats. | موثق | 1307 | [SRC-1AE03B9EC3-L001307](../agents/web_agent.py#L1307) |
-| [agents/web_agent.py](../agents/web_agent.py#L1327) | دالة | WebAgent._requires_web_research | Use the web only when the user requests it or the answer depends on live data. | موثق | 1327 | [SRC-1AE03B9EC3-L001327](../agents/web_agent.py#L1327) |
-| [agents/web_agent.py](../agents/web_agent.py#L1350) | دالة | WebAgent._local_answer_result | Build a consistently shaped answer for non-research conversational requests. | موثق | 1350 | [SRC-1AE03B9EC3-L001350](../agents/web_agent.py#L1350) |
-| [agents/web_agent.py](../agents/web_agent.py#L1373) | دالة | WebAgent._local_conversation_reply | Return a short greeting/acknowledgment without a model or web request. | موثق | 1373 | [SRC-1AE03B9EC3-L001373](../agents/web_agent.py#L1373) |
-| [agents/web_agent.py](../agents/web_agent.py#L1387) | دالة | WebAgent._annotate_intent_route | Attach route diagnostics to both response and research-plan metadata. | موثق | 1387 | [SRC-1AE03B9EC3-L001387](../agents/web_agent.py#L1387) |
-| [agents/web_agent.py](../agents/web_agent.py#L1402) | دالة | WebAgent._clarification_result | Return a bounded clarification result without starting web search. | موثق | 1402 | [SRC-1AE03B9EC3-L001402](../agents/web_agent.py#L1402) |
-| [agents/web_agent.py](../agents/web_agent.py#L1421) | دالة | WebAgent._dialogue_clarification_result | Expose why context resolution stopped and ask instead of guessing. | موثق | 1421 | [SRC-1AE03B9EC3-L001421](../agents/web_agent.py#L1421) |
-| [agents/web_agent.py](../agents/web_agent.py#L1445) | دالة | WebAgent._capability_status_snapshot | Describe configured capabilities without claiming a live health check. | موثق | 1445 | [SRC-1AE03B9EC3-L001445](../agents/web_agent.py#L1445) |
-| [agents/web_agent.py](../agents/web_agent.py#L1526) | دالة | WebAgent._self_description_answer | Answer self/capability questions without inventing a live health result. | موثق | 1526 | [SRC-1AE03B9EC3-L001526](../agents/web_agent.py#L1526) |
-| [agents/web_agent.py](../agents/web_agent.py#L1589) | دالة | WebAgent._answer_without_search | Answer stable informational questions with the configured LLM, without fake citations. | موثق | 1589 | [SRC-1AE03B9EC3-L001589](../agents/web_agent.py#L1589) |
-| [agents/web_agent.py](../agents/web_agent.py#L1646) | دالة | WebAgent._search_duckduckgo_html | لا توجد Docstring. | ناقص | 1646 | [SRC-1AE03B9EC3-L001646](../agents/web_agent.py#L1646) |
-| [agents/web_agent.py](../agents/web_agent.py#L1696) | دالة | WebAgent._search_bing_rss | لا توجد Docstring. | ناقص | 1696 | [SRC-1AE03B9EC3-L001696](../agents/web_agent.py#L1696) |
-| [agents/web_agent.py](../agents/web_agent.py#L1741) | دالة | WebAgent._search_deepseek_api | Use DeepSeek's optional Search API as a comparison provider, never by default. | موثق | 1741 | [SRC-1AE03B9EC3-L001741](../agents/web_agent.py#L1741) |
-| [agents/web_agent.py](../agents/web_agent.py#L1796) | دالة | WebAgent._reset_deepseek_search_budget | Reset the bounded optional Search API request budget for one operation. | موثق | 1796 | [SRC-1AE03B9EC3-L001796](../agents/web_agent.py#L1796) |
-| [agents/web_agent.py](../agents/web_agent.py#L1801) | دالة | WebAgent._reserve_deepseek_search_request | Reserve one paid search request before concurrent queries invoke the provider. | موثق | 1801 | [SRC-1AE03B9EC3-L001801](../agents/web_agent.py#L1801) |
-| [agents/web_agent.py](../agents/web_agent.py#L1818) | دالة | WebAgent._search_web | Run configured search connectors concurrently with isolated failures and relevance checks. | موثق | 1818 | [SRC-1AE03B9EC3-L001818](../agents/web_agent.py#L1818) |
-| [agents/web_agent.py](../agents/web_agent.py#L1864) | دالة غير متزامنة | WebAgent._search_web.run_one | لا توجد Docstring. | ناقص | 1864 | [SRC-1AE03B9EC3-L001864](../agents/web_agent.py#L1864) |
-| [agents/web_agent.py](../agents/web_agent.py#L1942) | دالة غير متزامنة | WebAgent._search_web.run_all | لا توجد Docstring. | ناقص | 1942 | [SRC-1AE03B9EC3-L001942](../agents/web_agent.py#L1942) |
-| [agents/web_agent.py](../agents/web_agent.py#L1964) | دالة غير متزامنة | WebAgent._search_web.run_academic_all | لا توجد Docstring. | ناقص | 1964 | [SRC-1AE03B9EC3-L001964](../agents/web_agent.py#L1964) |
-| [agents/web_agent.py](../agents/web_agent.py#L1984) | دالة | WebAgent._reserve_search_call | Reserve one outbound search/social-provider request before network I/O. | موثق | 1984 | [SRC-1AE03B9EC3-L001984](../agents/web_agent.py#L1984) |
-| [agents/web_agent.py](../agents/web_agent.py#L1990) | دالة | WebAgent._search_brave | Use Brave's official web-search API when the operator provides an API key. | موثق | 1990 | [SRC-1AE03B9EC3-L001990](../agents/web_agent.py#L1990) |
-| [agents/web_agent.py](../agents/web_agent.py#L2044) | دالة | WebAgent._search_tavily | Use Tavily's official search API for structured, extractable live web results. | موثق | 2044 | [SRC-1AE03B9EC3-L002044](../agents/web_agent.py#L2044) |
-| [agents/web_agent.py](../agents/web_agent.py#L2099) | دالة | WebAgent._search_news | Read the public Google News RSS search feed for freshness-sensitive queries. | موثق | 2099 | [SRC-1AE03B9EC3-L002099](../agents/web_agent.py#L2099) |
-| [agents/web_agent.py](../agents/web_agent.py#L2167) | دالة | WebAgent._search_social | Search public social content through exposed public endpoints only. | موثق | 2167 | [SRC-1AE03B9EC3-L002167](../agents/web_agent.py#L2167) |
-| [agents/web_agent.py](../agents/web_agent.py#L2650) | دالة | WebAgent._fetch_page | Fetch a public page with bounded redirects and an inspectable extraction outcome. | موثق | 2650 | [SRC-1AE03B9EC3-L002650](../agents/web_agent.py#L2650) |
-| [agents/web_agent.py](../agents/web_agent.py#L2652) | دالة | WebAgent._fetch_page.result | لا توجد Docstring. | ناقص | 2652 | [SRC-1AE03B9EC3-L002652](../agents/web_agent.py#L2652) |
-| [agents/web_agent.py](../agents/web_agent.py#L2784) | دالة | WebAgent._collect_sources | لا توجد Docstring. | ناقص | 2784 | [SRC-1AE03B9EC3-L002784](../agents/web_agent.py#L2784) |
-| [agents/web_agent.py](../agents/web_agent.py#L2803) | دالة | WebAgent._collect_research | Run independent query searches concurrently, fuse evidence, then fetch top pages. | موثق | 2803 | [SRC-1AE03B9EC3-L002803](../agents/web_agent.py#L2803) |
-| [agents/web_agent.py](../agents/web_agent.py#L3271) | دالة | WebAgent._history_search_query | Backward-compatible wrapper for the shared follow-up resolver. | موثق | 3271 | [SRC-1AE03B9EC3-L003271](../agents/web_agent.py#L3271) |
-| [agents/web_agent.py](../agents/web_agent.py#L3275) | دالة | WebAgent._connector_status_summary | Summarize this request's connector states without exposing credentials. | موثق | 3275 | [SRC-1AE03B9EC3-L003275](../agents/web_agent.py#L3275) |
-| [agents/web_agent.py](../agents/web_agent.py#L3326) | دالة | WebAgent._connector_status_summary.redact | لا توجد Docstring. | ناقص | 3326 | [SRC-1AE03B9EC3-L003326](../agents/web_agent.py#L3326) |
-| [agents/web_agent.py](../agents/web_agent.py#L3421) | دالة | WebAgent._sanitize_history | لا توجد Docstring. | ناقص | 3421 | [SRC-1AE03B9EC3-L003421](../agents/web_agent.py#L3421) |
-| [agents/web_agent.py](../agents/web_agent.py#L3433) | دالة | WebAgent._record_generation_diagnostic | Store bounded metadata for each model attempt; never retain prompts or output. | موثق | 3433 | [SRC-1AE03B9EC3-L003433](../agents/web_agent.py#L3433) |
-| [agents/web_agent.py](../agents/web_agent.py#L3472) | دالة | WebAgent._request_completion | Call configured OpenAI-compatible providers with bounded failover. | موثق | 3472 | [SRC-1AE03B9EC3-L003472](../agents/web_agent.py#L3472) |
-| [agents/web_agent.py](../agents/web_agent.py#L3763) | دالة | WebAgent._resolve_dialogue_context | Use the configured language model to resolve dialogue meaning, never to search. | موثق | 3763 | [SRC-1AE03B9EC3-L003763](../agents/web_agent.py#L3763) |
-| [agents/web_agent.py](../agents/web_agent.py#L3823) | دالة | WebAgent._plan_search | Resolve dialogue semantics and plan searches, with deterministic fallbacks. | موثق | 3823 | [SRC-1AE03B9EC3-L003823](../agents/web_agent.py#L3823) |
-| [agents/web_agent.py](../agents/web_agent.py#L4017) | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 4017 | [SRC-1AE03B9EC3-L004017](../agents/web_agent.py#L4017) |
-| [agents/web_agent.py](../agents/web_agent.py#L4275) | دالة | WebAgent._repair_answer_coverage | Make one bounded, evidence-constrained pass at addressing possibly missing targets. | موثق | 4275 | [SRC-1AE03B9EC3-L004275](../agents/web_agent.py#L4275) |
-| [agents/web_agent.py](../agents/web_agent.py#L4360) | دالة | WebAgent._verify_semantic_claims | Assess claim support with one bounded call to a distinct model; fail closed. | موثق | 4360 | [SRC-1AE03B9EC3-L004360](../agents/web_agent.py#L4360) |
-| [agents/web_agent.py](../agents/web_agent.py#L4421) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 4421 | [SRC-1AE03B9EC3-L004421](../agents/web_agent.py#L4421) |
-| [agents/web_agent.py](../agents/web_agent.py#L4532) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 4532 | [SRC-1AE03B9EC3-L004532](../agents/web_agent.py#L4532) |
-| [agents/web_agent.py](../agents/web_agent.py#L4536) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 4536 | [SRC-1AE03B9EC3-L004536](../agents/web_agent.py#L4536) |
-| [agents/web_agent.py](../agents/web_agent.py#L4547) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 4547 | [SRC-1AE03B9EC3-L004547](../agents/web_agent.py#L4547) |
-| [agents/web_agent.py](../agents/web_agent.py#L4577) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 4577 | [SRC-1AE03B9EC3-L004577](../agents/web_agent.py#L4577) |
-| [agents/web_agent.py](../agents/web_agent.py#L4798) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 4798 | [SRC-1AE03B9EC3-L004798](../agents/web_agent.py#L4798) |
-| [agents/web_agent.py](../agents/web_agent.py#L5169) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 5169 | [SRC-1AE03B9EC3-L005169](../agents/web_agent.py#L5169) |
-| [agents/web_agent.py](../agents/web_agent.py#L7199) | دالة | _normalized_provider_usage | Allowlist safe counters; interpret generic 'cost' as USD only for OpenRouter. | موثق | 7199 | [SRC-1AE03B9EC3-L007199](../agents/web_agent.py#L7199) |
-| [agents/web_agent.py](../agents/web_agent.py#L7232) | دالة | _model_usage_record | Return only allowlisted provider usage metadata, never raw prompts/responses. | موثق | 7232 | [SRC-1AE03B9EC3-L007232](../agents/web_agent.py#L7232) |
-| [api/omarai.py](../api/omarai.py#L24) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 24 | [SRC-EEF2E6447C-L000024](../api/omarai.py#L24) |
-| [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
-| [api/omarai.py](../api/omarai.py#L26) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
-| [api/omarai.py](../api/omarai.py#L27) | متغير/ثابت Python | WORKSPACE_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
-| [api/omarai.py](../api/omarai.py#L28) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
-| [api/omarai.py](../api/omarai.py#L29) | متغير/ثابت Python | BROWSER_SESSION_COOKIE_MAX_AGE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
-| [api/omarai.py](../api/omarai.py#L30) | متغير/ثابت Python | BROWSER_SESSION_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
-| [api/omarai.py](../api/omarai.py#L33) | دالة | _csp_hash_source | لا توجد Docstring. | ناقص | 33 | [SRC-EEF2E6447C-L000033](../api/omarai.py#L33) |
-| [api/omarai.py](../api/omarai.py#L39) | دالة | _content_security_policy | Allow only known inline blocks/attributes from the static first-party HTML. | موثق | 39 | [SRC-EEF2E6447C-L000039](../api/omarai.py#L39) |
-| [api/omarai.py](../api/omarai.py#L103) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
-| [api/omarai.py](../api/omarai.py#L104) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
-| [api/omarai.py](../api/omarai.py#L105) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 105 | [SRC-EEF2E6447C-L000105](../api/omarai.py#L105) |
-| [api/omarai.py](../api/omarai.py#L107) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 107 | [SRC-EEF2E6447C-L000107](../api/omarai.py#L107) |
-| [api/omarai.py](../api/omarai.py#L108) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
-| [api/omarai.py](../api/omarai.py#L109) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
-| [api/omarai.py](../api/omarai.py#L110) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
-| [api/omarai.py](../api/omarai.py#L114) | دالة | _lead_store_from_environment | Use an operator-configured database path when a persistent volume is available. | موثق | 114 | [SRC-EEF2E6447C-L000114](../api/omarai.py#L114) |
-| [api/omarai.py](../api/omarai.py#L120) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 120 | [SRC-EEF2E6447C-L000120](../api/omarai.py#L120) |
-| [api/omarai.py](../api/omarai.py#L129) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 129 | [SRC-EEF2E6447C-L000129](../api/omarai.py#L129) |
-| [api/omarai.py](../api/omarai.py#L134) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 134 | [SRC-EEF2E6447C-L000134](../api/omarai.py#L134) |
-| [api/omarai.py](../api/omarai.py#L185) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 185 | [SRC-EEF2E6447C-L000185](../api/omarai.py#L185) |
-| [api/omarai.py](../api/omarai.py#L198) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 198 | [SRC-EEF2E6447C-L000198](../api/omarai.py#L198) |
-| [api/omarai.py](../api/omarai.py#L203) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 203 | [SRC-EEF2E6447C-L000203](../api/omarai.py#L203) |
-| [api/omarai.py](../api/omarai.py#L212) | متغير/ثابت Python | DEFAULT_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 212 | [SRC-EEF2E6447C-L000212](../api/omarai.py#L212) |
-| [api/omarai.py](../api/omarai.py#L213) | متغير/ثابت Python | MAX_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 213 | [SRC-EEF2E6447C-L000213](../api/omarai.py#L213) |
-| [api/omarai.py](../api/omarai.py#L216) | دالة | _configured_http_connection_limit | Return the bounded number of live HTTP handler threads for this process. | موثق | 216 | [SRC-EEF2E6447C-L000216](../api/omarai.py#L216) |
-| [api/omarai.py](../api/omarai.py#L225) | متغير/ثابت Python | BUILD_SHA_FILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
-| [api/omarai.py](../api/omarai.py#L226) | متغير/ثابت Python | _PLATFORM_BUILD_SHA_ENVIRONMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 226 | [SRC-EEF2E6447C-L000226](../api/omarai.py#L226) |
-| [api/omarai.py](../api/omarai.py#L232) | دالة | _valid_build_sha | لا توجد Docstring. | ناقص | 232 | [SRC-EEF2E6447C-L000232](../api/omarai.py#L232) |
-| [api/omarai.py](../api/omarai.py#L237) | دالة | _build_identity | Prefer immutable image metadata, then documented hosting-provided Git SHAs. | موثق | 237 | [SRC-EEF2E6447C-L000237](../api/omarai.py#L237) |
-| [api/omarai.py](../api/omarai.py#L253) | دالة | _build_sha | Return a validated source SHA, or 'unknown' when no trusted build evidence exists. | موثق | 253 | [SRC-EEF2E6447C-L000253](../api/omarai.py#L253) |
-| [api/omarai.py](../api/omarai.py#L258) | كلاس | Handler | لا توجد Docstring. | ناقص | 258 | [SRC-EEF2E6447C-L000258](../api/omarai.py#L258) |
-| [api/omarai.py](../api/omarai.py#L259) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 259 | [SRC-EEF2E6447C-L000259](../api/omarai.py#L259) |
-| [api/omarai.py](../api/omarai.py#L268) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 268 | [SRC-EEF2E6447C-L000268](../api/omarai.py#L268) |
-| [api/omarai.py](../api/omarai.py#L286) | دالة | Handler.parse_request | Reject ambiguous HTTP message framing before dispatching any handler. | موثق | 286 | [SRC-EEF2E6447C-L000286](../api/omarai.py#L286) |
-| [api/omarai.py](../api/omarai.py#L320) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 320 | [SRC-EEF2E6447C-L000320](../api/omarai.py#L320) |
-| [api/omarai.py](../api/omarai.py#L321) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 321 | [SRC-EEF2E6447C-L000321](../api/omarai.py#L321) |
-| [api/omarai.py](../api/omarai.py#L322) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 322 | [SRC-EEF2E6447C-L000322](../api/omarai.py#L322) |
-| [api/omarai.py](../api/omarai.py#L323) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 323 | [SRC-EEF2E6447C-L000323](../api/omarai.py#L323) |
-| [api/omarai.py](../api/omarai.py#L324) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 324 | [SRC-EEF2E6447C-L000324](../api/omarai.py#L324) |
-| [api/omarai.py](../api/omarai.py#L325) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 325 | [SRC-EEF2E6447C-L000325](../api/omarai.py#L325) |
-| [api/omarai.py](../api/omarai.py#L326) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 326 | [SRC-EEF2E6447C-L000326](../api/omarai.py#L326) |
-| [api/omarai.py](../api/omarai.py#L328) | متغير/ثابت Python | Handler.MAX_RATE_LIMIT_CLIENT_BUCKETS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 328 | [SRC-EEF2E6447C-L000328](../api/omarai.py#L328) |
-| [api/omarai.py](../api/omarai.py#L329) | متغير/ثابت Python | Handler.RATE_LIMIT_OVERFLOW_KEY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 329 | [SRC-EEF2E6447C-L000329](../api/omarai.py#L329) |
-| [api/omarai.py](../api/omarai.py#L330) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 330 | [SRC-EEF2E6447C-L000330](../api/omarai.py#L330) |
-| [api/omarai.py](../api/omarai.py#L331) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 331 | [SRC-EEF2E6447C-L000331](../api/omarai.py#L331) |
-| [api/omarai.py](../api/omarai.py#L333) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 333 | [SRC-EEF2E6447C-L000333](../api/omarai.py#L333) |
-| [api/omarai.py](../api/omarai.py#L350) | دالة | Handler._session_cookie_name | Use the __Host- prefix on HTTPS public deployments. | موثق | 350 | [SRC-EEF2E6447C-L000350](../api/omarai.py#L350) |
-| [api/omarai.py](../api/omarai.py#L356) | دالة | Handler._session_cookie_header | لا توجد Docstring. | ناقص | 356 | [SRC-EEF2E6447C-L000356](../api/omarai.py#L356) |
-| [api/omarai.py](../api/omarai.py#L370) | دالة | Handler._clear_session_cookie_header | لا توجد Docstring. | ناقص | 370 | [SRC-EEF2E6447C-L000370](../api/omarai.py#L370) |
-| [api/omarai.py](../api/omarai.py#L382) | دالة | Handler._principal_for_access_token | لا توجد Docstring. | ناقص | 382 | [SRC-EEF2E6447C-L000382](../api/omarai.py#L382) |
-| [api/omarai.py](../api/omarai.py#L388) | دالة | Handler._authorized | Resolve a verified bearer token or HttpOnly browser cookie. | موثق | 388 | [SRC-EEF2E6447C-L000388](../api/omarai.py#L388) |
-| [api/omarai.py](../api/omarai.py#L430) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 430 | [SRC-EEF2E6447C-L000430](../api/omarai.py#L430) |
-| [api/omarai.py](../api/omarai.py#L462) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 462 | [SRC-EEF2E6447C-L000462](../api/omarai.py#L462) |
-| [api/omarai.py](../api/omarai.py#L465) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 465 | [SRC-EEF2E6447C-L000465](../api/omarai.py#L465) |
-| [api/omarai.py](../api/omarai.py#L481) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 481 | [SRC-EEF2E6447C-L000481](../api/omarai.py#L481) |
-| [api/omarai.py](../api/omarai.py#L513) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 513 | [SRC-EEF2E6447C-L000513](../api/omarai.py#L513) |
-| [api/omarai.py](../api/omarai.py#L586) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 586 | [SRC-EEF2E6447C-L000586](../api/omarai.py#L586) |
-| [api/omarai.py](../api/omarai.py#L595) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 595 | [SRC-EEF2E6447C-L000595](../api/omarai.py#L595) |
-| [api/omarai.py](../api/omarai.py#L616) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 616 | [SRC-EEF2E6447C-L000616](../api/omarai.py#L616) |
-| [api/omarai.py](../api/omarai.py#L673) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 673 | [SRC-EEF2E6447C-L000673](../api/omarai.py#L673) |
-| [api/omarai.py](../api/omarai.py#L879) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 879 | [SRC-EEF2E6447C-L000879](../api/omarai.py#L879) |
-| [api/omarai.py](../api/omarai.py#L892) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 892 | [SRC-EEF2E6447C-L000892](../api/omarai.py#L892) |
-| [api/omarai.py](../api/omarai.py#L896) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 896 | [SRC-EEF2E6447C-L000896](../api/omarai.py#L896) |
-| [api/omarai.py](../api/omarai.py#L932) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 932 | [SRC-EEF2E6447C-L000932](../api/omarai.py#L932) |
-| [api/omarai.py](../api/omarai.py#L935) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 935 | [SRC-EEF2E6447C-L000935](../api/omarai.py#L935) |
-| [api/omarai.py](../api/omarai.py#L936) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 936 | [SRC-EEF2E6447C-L000936](../api/omarai.py#L936) |
-| [api/omarai.py](../api/omarai.py#L943) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 943 | [SRC-EEF2E6447C-L000943](../api/omarai.py#L943) |
-| [api/omarai.py](../api/omarai.py#L961) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 961 | [SRC-EEF2E6447C-L000961](../api/omarai.py#L961) |
-| [api/omarai.py](../api/omarai.py#L978) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 978 | [SRC-EEF2E6447C-L000978](../api/omarai.py#L978) |
-| [api/omarai.py](../api/omarai.py#L986) | دالة | serve | لا توجد Docstring. | ناقص | 986 | [SRC-EEF2E6447C-L000986](../api/omarai.py#L986) |
+| [agents/web_agent.py](../agents/web_agent.py#L770) | دالة | WebAgent._effective_timeout | Limit one outbound operation to the remaining per-answer time budget. | موثق | 770 | [SRC-1AE03B9EC3-L000770](../agents/web_agent.py#L770) |
+| [agents/web_agent.py](../agents/web_agent.py#L778) | دالة | WebAgent.status | لا توجد Docstring. | ناقص | 778 | [SRC-1AE03B9EC3-L000778](../agents/web_agent.py#L778) |
+| [agents/web_agent.py](../agents/web_agent.py#L963) | دالة | WebAgent._unwrap_search_url | لا توجد Docstring. | ناقص | 963 | [SRC-1AE03B9EC3-L000963](../agents/web_agent.py#L963) |
+| [agents/web_agent.py](../agents/web_agent.py#L976) | دالة | WebAgent._record_provider_diagnostic | لا توجد Docstring. | ناقص | 976 | [SRC-1AE03B9EC3-L000976](../agents/web_agent.py#L976) |
+| [agents/web_agent.py](../agents/web_agent.py#L982) | دالة | WebAgent._record_provider_diagnostic.redact | لا توجد Docstring. | ناقص | 982 | [SRC-1AE03B9EC3-L000982](../agents/web_agent.py#L982) |
+| [agents/web_agent.py](../agents/web_agent.py#L1025) | دالة | WebAgent._source_matches_query | لا توجد Docstring. | ناقص | 1025 | [SRC-1AE03B9EC3-L001025](../agents/web_agent.py#L1025) |
+| [agents/web_agent.py](../agents/web_agent.py#L1035) | دالة | WebAgent._normalized_source_url_key | Normalize a public HTTP(S) URL for duplicate detection across search rounds. | موثق | 1035 | [SRC-1AE03B9EC3-L001035](../agents/web_agent.py#L1035) |
+| [agents/web_agent.py](../agents/web_agent.py#L1063) | دالة | WebAgent._question_coverage_targets | Use the richer aspect parser, then the shared deterministic fallback. | موثق | 1063 | [SRC-1AE03B9EC3-L001063](../agents/web_agent.py#L1063) |
+| [agents/web_agent.py](../agents/web_agent.py#L1071) | دالة | WebAgent._is_current_search_status_question | Recognize a question about whether this answer already used web search. | موثق | 1071 | [SRC-1AE03B9EC3-L001071](../agents/web_agent.py#L1071) |
+| [agents/web_agent.py](../agents/web_agent.py#L1091) | دالة | WebAgent._is_self_question | Recognize questions about Omarai itself so they do not need web search. | موثق | 1091 | [SRC-1AE03B9EC3-L001091](../agents/web_agent.py#L1091) |
+| [agents/web_agent.py](../agents/web_agent.py#L1125) | دالة | WebAgent._is_navigation_request | A link-finding task can be useful with one clearly labelled candidate result. | موثق | 1125 | [SRC-1AE03B9EC3-L001125](../agents/web_agent.py#L1125) |
+| [agents/web_agent.py](../agents/web_agent.py#L1135) | دالة | WebAgent._is_lead_search | Keep lead discovery distinct from listing searches and generic explanations. | موثق | 1135 | [SRC-1AE03B9EC3-L001135](../agents/web_agent.py#L1135) |
+| [agents/web_agent.py](../agents/web_agent.py#L1140) | دالة | WebAgent._lead_entity_categories | Classify explicit property and vehicle terms for conservative lead isolation. | موثق | 1140 | [SRC-1AE03B9EC3-L001140](../agents/web_agent.py#L1140) |
+| [agents/web_agent.py](../agents/web_agent.py#L1154) | دالة | WebAgent._lead_entity_categories.contains | لا توجد Docstring. | ناقص | 1154 | [SRC-1AE03B9EC3-L001154](../agents/web_agent.py#L1154) |
+| [agents/web_agent.py](../agents/web_agent.py#L1171) | دالة | WebAgent._lead_intent_evidence | Extract explicit public demand type without inferring identity or product fit. | موثق | 1171 | [SRC-1AE03B9EC3-L001171](../agents/web_agent.py#L1171) |
+| [agents/web_agent.py](../agents/web_agent.py#L1256) | دالة | WebAgent._lead_generation_queries | Generate bounded, sector-neutral buyer queries anchored to the requested product. | موثق | 1256 | [SRC-1AE03B9EC3-L001256](../agents/web_agent.py#L1256) |
+| [agents/web_agent.py](../agents/web_agent.py#L1310) | دالة | WebAgent._is_listing_discovery | Recognize property/job/product discovery where candidates are useful with caveats. | موثق | 1310 | [SRC-1AE03B9EC3-L001310](../agents/web_agent.py#L1310) |
+| [agents/web_agent.py](../agents/web_agent.py#L1330) | دالة | WebAgent._requires_web_research | Use the web only when the user requests it or the answer depends on live data. | موثق | 1330 | [SRC-1AE03B9EC3-L001330](../agents/web_agent.py#L1330) |
+| [agents/web_agent.py](../agents/web_agent.py#L1353) | دالة | WebAgent._local_answer_result | Build a consistently shaped answer for non-research conversational requests. | موثق | 1353 | [SRC-1AE03B9EC3-L001353](../agents/web_agent.py#L1353) |
+| [agents/web_agent.py](../agents/web_agent.py#L1376) | دالة | WebAgent._local_conversation_reply | Return a short greeting/acknowledgment without a model or web request. | موثق | 1376 | [SRC-1AE03B9EC3-L001376](../agents/web_agent.py#L1376) |
+| [agents/web_agent.py](../agents/web_agent.py#L1390) | دالة | WebAgent._annotate_intent_route | Attach route diagnostics to both response and research-plan metadata. | موثق | 1390 | [SRC-1AE03B9EC3-L001390](../agents/web_agent.py#L1390) |
+| [agents/web_agent.py](../agents/web_agent.py#L1405) | دالة | WebAgent._clarification_result | Return a bounded clarification result without starting web search. | موثق | 1405 | [SRC-1AE03B9EC3-L001405](../agents/web_agent.py#L1405) |
+| [agents/web_agent.py](../agents/web_agent.py#L1424) | دالة | WebAgent._dialogue_clarification_result | Expose why context resolution stopped and ask instead of guessing. | موثق | 1424 | [SRC-1AE03B9EC3-L001424](../agents/web_agent.py#L1424) |
+| [agents/web_agent.py](../agents/web_agent.py#L1448) | دالة | WebAgent._capability_status_snapshot | Describe configured capabilities without claiming a live health check. | موثق | 1448 | [SRC-1AE03B9EC3-L001448](../agents/web_agent.py#L1448) |
+| [agents/web_agent.py](../agents/web_agent.py#L1529) | دالة | WebAgent._self_description_answer | Answer self/capability questions without inventing a live health result. | موثق | 1529 | [SRC-1AE03B9EC3-L001529](../agents/web_agent.py#L1529) |
+| [agents/web_agent.py](../agents/web_agent.py#L1592) | دالة | WebAgent._answer_without_search | Answer stable informational questions with the configured LLM, without fake citations. | موثق | 1592 | [SRC-1AE03B9EC3-L001592](../agents/web_agent.py#L1592) |
+| [agents/web_agent.py](../agents/web_agent.py#L1649) | دالة | WebAgent._search_duckduckgo_html | لا توجد Docstring. | ناقص | 1649 | [SRC-1AE03B9EC3-L001649](../agents/web_agent.py#L1649) |
+| [agents/web_agent.py](../agents/web_agent.py#L1699) | دالة | WebAgent._search_bing_rss | لا توجد Docstring. | ناقص | 1699 | [SRC-1AE03B9EC3-L001699](../agents/web_agent.py#L1699) |
+| [agents/web_agent.py](../agents/web_agent.py#L1744) | دالة | WebAgent._search_deepseek_api | Use DeepSeek's optional Search API as a comparison provider, never by default. | موثق | 1744 | [SRC-1AE03B9EC3-L001744](../agents/web_agent.py#L1744) |
+| [agents/web_agent.py](../agents/web_agent.py#L1799) | دالة | WebAgent._reset_deepseek_search_budget | Reset the bounded optional Search API request budget for one operation. | موثق | 1799 | [SRC-1AE03B9EC3-L001799](../agents/web_agent.py#L1799) |
+| [agents/web_agent.py](../agents/web_agent.py#L1804) | دالة | WebAgent._reserve_deepseek_search_request | Reserve one paid search request before concurrent queries invoke the provider. | موثق | 1804 | [SRC-1AE03B9EC3-L001804](../agents/web_agent.py#L1804) |
+| [agents/web_agent.py](../agents/web_agent.py#L1821) | دالة | WebAgent._search_web | Run configured search connectors concurrently with isolated failures and relevance checks. | موثق | 1821 | [SRC-1AE03B9EC3-L001821](../agents/web_agent.py#L1821) |
+| [agents/web_agent.py](../agents/web_agent.py#L1873) | دالة غير متزامنة | WebAgent._search_web.run_one | لا توجد Docstring. | ناقص | 1873 | [SRC-1AE03B9EC3-L001873](../agents/web_agent.py#L1873) |
+| [agents/web_agent.py](../agents/web_agent.py#L1951) | دالة غير متزامنة | WebAgent._search_web.run_all | لا توجد Docstring. | ناقص | 1951 | [SRC-1AE03B9EC3-L001951](../agents/web_agent.py#L1951) |
+| [agents/web_agent.py](../agents/web_agent.py#L1973) | دالة غير متزامنة | WebAgent._search_web.run_academic_all | لا توجد Docstring. | ناقص | 1973 | [SRC-1AE03B9EC3-L001973](../agents/web_agent.py#L1973) |
+| [agents/web_agent.py](../agents/web_agent.py#L1993) | دالة | WebAgent._reserve_search_call | Reserve one outbound search/social-provider request before network I/O. | موثق | 1993 | [SRC-1AE03B9EC3-L001993](../agents/web_agent.py#L1993) |
+| [agents/web_agent.py](../agents/web_agent.py#L1999) | دالة | WebAgent._search_brave | Use Brave's official web-search API when the operator provides an API key. | موثق | 1999 | [SRC-1AE03B9EC3-L001999](../agents/web_agent.py#L1999) |
+| [agents/web_agent.py](../agents/web_agent.py#L2053) | دالة | WebAgent._search_tavily | Use Tavily's official search API for structured, extractable live web results. | موثق | 2053 | [SRC-1AE03B9EC3-L002053](../agents/web_agent.py#L2053) |
+| [agents/web_agent.py](../agents/web_agent.py#L2108) | دالة | WebAgent._search_news | Read the public Google News RSS search feed for freshness-sensitive queries. | موثق | 2108 | [SRC-1AE03B9EC3-L002108](../agents/web_agent.py#L2108) |
+| [agents/web_agent.py](../agents/web_agent.py#L2176) | دالة | WebAgent._search_social | Search public social content through exposed public endpoints only. | موثق | 2176 | [SRC-1AE03B9EC3-L002176](../agents/web_agent.py#L2176) |
+| [agents/web_agent.py](../agents/web_agent.py#L2666) | دالة | WebAgent._fetch_page | Fetch a public page with bounded redirects and an inspectable extraction outcome. | موثق | 2666 | [SRC-1AE03B9EC3-L002666](../agents/web_agent.py#L2666) |
+| [agents/web_agent.py](../agents/web_agent.py#L2668) | دالة | WebAgent._fetch_page.result | لا توجد Docstring. | ناقص | 2668 | [SRC-1AE03B9EC3-L002668](../agents/web_agent.py#L2668) |
+| [agents/web_agent.py](../agents/web_agent.py#L2800) | دالة | WebAgent._collect_sources | لا توجد Docstring. | ناقص | 2800 | [SRC-1AE03B9EC3-L002800](../agents/web_agent.py#L2800) |
+| [agents/web_agent.py](../agents/web_agent.py#L2819) | دالة | WebAgent._collect_research | Run independent query searches concurrently, fuse evidence, then fetch top pages. | موثق | 2819 | [SRC-1AE03B9EC3-L002819](../agents/web_agent.py#L2819) |
+| [agents/web_agent.py](../agents/web_agent.py#L3287) | دالة | WebAgent._history_search_query | Backward-compatible wrapper for the shared follow-up resolver. | موثق | 3287 | [SRC-1AE03B9EC3-L003287](../agents/web_agent.py#L3287) |
+| [agents/web_agent.py](../agents/web_agent.py#L3291) | دالة | WebAgent._connector_status_summary | Summarize this request's connector states without exposing credentials. | موثق | 3291 | [SRC-1AE03B9EC3-L003291](../agents/web_agent.py#L3291) |
+| [agents/web_agent.py](../agents/web_agent.py#L3342) | دالة | WebAgent._connector_status_summary.redact | لا توجد Docstring. | ناقص | 3342 | [SRC-1AE03B9EC3-L003342](../agents/web_agent.py#L3342) |
+| [agents/web_agent.py](../agents/web_agent.py#L3437) | دالة | WebAgent._sanitize_history | لا توجد Docstring. | ناقص | 3437 | [SRC-1AE03B9EC3-L003437](../agents/web_agent.py#L3437) |
+| [agents/web_agent.py](../agents/web_agent.py#L3449) | دالة | WebAgent._record_generation_diagnostic | Store bounded metadata for each model attempt; never retain prompts or output. | موثق | 3449 | [SRC-1AE03B9EC3-L003449](../agents/web_agent.py#L3449) |
+| [agents/web_agent.py](../agents/web_agent.py#L3488) | دالة | WebAgent._request_completion | Call configured OpenAI-compatible providers with bounded failover. | موثق | 3488 | [SRC-1AE03B9EC3-L003488](../agents/web_agent.py#L3488) |
+| [agents/web_agent.py](../agents/web_agent.py#L3779) | دالة | WebAgent._resolve_dialogue_context | Use the configured language model to resolve dialogue meaning, never to search. | موثق | 3779 | [SRC-1AE03B9EC3-L003779](../agents/web_agent.py#L3779) |
+| [agents/web_agent.py](../agents/web_agent.py#L3839) | دالة | WebAgent._plan_search | Resolve dialogue semantics and plan searches, with deterministic fallbacks. | موثق | 3839 | [SRC-1AE03B9EC3-L003839](../agents/web_agent.py#L3839) |
+| [agents/web_agent.py](../agents/web_agent.py#L4033) | دالة | WebAgent._generate | لا توجد Docstring. | ناقص | 4033 | [SRC-1AE03B9EC3-L004033](../agents/web_agent.py#L4033) |
+| [agents/web_agent.py](../agents/web_agent.py#L4291) | دالة | WebAgent._repair_answer_coverage | Make one bounded, evidence-constrained pass at addressing possibly missing targets. | موثق | 4291 | [SRC-1AE03B9EC3-L004291](../agents/web_agent.py#L4291) |
+| [agents/web_agent.py](../agents/web_agent.py#L4376) | دالة | WebAgent._verify_semantic_claims | Assess claim support with one bounded call to a distinct model; fail closed. | موثق | 4376 | [SRC-1AE03B9EC3-L004376](../agents/web_agent.py#L4376) |
+| [agents/web_agent.py](../agents/web_agent.py#L4437) | دالة | WebAgent._review_answer | Run a bounded evidence audit on deep-research answers; not an independent verifier. | موثق | 4437 | [SRC-1AE03B9EC3-L004437](../agents/web_agent.py#L4437) |
+| [agents/web_agent.py](../agents/web_agent.py#L4548) | دالة | WebAgent._remove_invalid_citations | Remove citation labels that point outside the exact source list sent to the model. | موثق | 4548 | [SRC-1AE03B9EC3-L004548](../agents/web_agent.py#L4548) |
+| [agents/web_agent.py](../agents/web_agent.py#L4552) | دالة | WebAgent._remove_invalid_citations.replace | لا توجد Docstring. | ناقص | 4552 | [SRC-1AE03B9EC3-L004552](../agents/web_agent.py#L4552) |
+| [agents/web_agent.py](../agents/web_agent.py#L4563) | دالة | WebAgent._citation_validation_metadata | Report the scope of citation checks without claiming semantic fact verification. | موثق | 4563 | [SRC-1AE03B9EC3-L004563](../agents/web_agent.py#L4563) |
+| [agents/web_agent.py](../agents/web_agent.py#L4593) | دالة | WebAgent.diagnostics | Run explicit live checks without exposing credentials or retaining returned content. | موثق | 4593 | [SRC-1AE03B9EC3-L004593](../agents/web_agent.py#L4593) |
+| [agents/web_agent.py](../agents/web_agent.py#L4814) | دالة | WebAgent.answer | Run one answer with an isolated, observable resource budget. | موثق | 4814 | [SRC-1AE03B9EC3-L004814](../agents/web_agent.py#L4814) |
+| [agents/web_agent.py](../agents/web_agent.py#L5199) | دالة | WebAgent._answer_with_budget | لا توجد Docstring. | ناقص | 5199 | [SRC-1AE03B9EC3-L005199](../agents/web_agent.py#L5199) |
+| [agents/web_agent.py](../agents/web_agent.py#L7247) | دالة | _normalized_provider_usage | Allowlist safe counters; interpret generic 'cost' as USD only for OpenRouter. | موثق | 7247 | [SRC-1AE03B9EC3-L007247](../agents/web_agent.py#L7247) |
+| [agents/web_agent.py](../agents/web_agent.py#L7280) | دالة | _model_usage_record | Return only allowlisted provider usage metadata, never raw prompts/responses. | موثق | 7280 | [SRC-1AE03B9EC3-L007280](../agents/web_agent.py#L7280) |
+| [api/omarai.py](../api/omarai.py#L25) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
+| [api/omarai.py](../api/omarai.py#L26) | متغير/ثابت Python | AGENT_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
+| [api/omarai.py](../api/omarai.py#L27) | متغير/ثابت Python | LEADS_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
+| [api/omarai.py](../api/omarai.py#L28) | متغير/ثابت Python | WORKSPACE_DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L29) | متغير/ثابت Python | MAX_REQUEST_BODY_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
+| [api/omarai.py](../api/omarai.py#L30) | متغير/ثابت Python | BROWSER_SESSION_COOKIE_MAX_AGE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
+| [api/omarai.py](../api/omarai.py#L31) | متغير/ثابت Python | BROWSER_SESSION_ID_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 31 | [SRC-EEF2E6447C-L000031](../api/omarai.py#L31) |
+| [api/omarai.py](../api/omarai.py#L34) | دالة | _csp_hash_source | لا توجد Docstring. | ناقص | 34 | [SRC-EEF2E6447C-L000034](../api/omarai.py#L34) |
+| [api/omarai.py](../api/omarai.py#L40) | دالة | _content_security_policy | Allow only known inline blocks/attributes from the static first-party HTML. | موثق | 40 | [SRC-EEF2E6447C-L000040](../api/omarai.py#L40) |
+| [api/omarai.py](../api/omarai.py#L104) | متغير/ثابت Python | REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
+| [api/omarai.py](../api/omarai.py#L105) | متغير/ثابت Python | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 105 | [SRC-EEF2E6447C-L000105](../api/omarai.py#L105) |
+| [api/omarai.py](../api/omarai.py#L106) | متغير/ثابت Python | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 106 | [SRC-EEF2E6447C-L000106](../api/omarai.py#L106) |
+| [api/omarai.py](../api/omarai.py#L108) | متغير/ثابت Python | REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
+| [api/omarai.py](../api/omarai.py#L109) | متغير/ثابت Python | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
+| [api/omarai.py](../api/omarai.py#L110) | متغير/ثابت Python | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
+| [api/omarai.py](../api/omarai.py#L111) | متغير/ثابت Python | REQUEST_BODY_READ_CHUNK_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 111 | [SRC-EEF2E6447C-L000111](../api/omarai.py#L111) |
+| [api/omarai.py](../api/omarai.py#L115) | دالة | _lead_store_from_environment | Use an operator-configured database path when a persistent volume is available. | موثق | 115 | [SRC-EEF2E6447C-L000115](../api/omarai.py#L115) |
+| [api/omarai.py](../api/omarai.py#L121) | دالة | _profile_terms | Validate bounded ProductProfile/MarketProfile string arrays. | موثق | 121 | [SRC-EEF2E6447C-L000121](../api/omarai.py#L121) |
+| [api/omarai.py](../api/omarai.py#L132) | دالة | _product_market_from_payload | لا توجد Docstring. | ناقص | 132 | [SRC-EEF2E6447C-L000132](../api/omarai.py#L132) |
+| [api/omarai.py](../api/omarai.py#L157) | كلاس | _DeadlineRequestReader | Read HTTP header lines with one absolute deadline across all fragments. | موثق | 157 | [SRC-EEF2E6447C-L000157](../api/omarai.py#L157) |
+| [api/omarai.py](../api/omarai.py#L166) | دالة | _DeadlineRequestReader.__init__ | لا توجد Docstring. | ناقص | 166 | [SRC-EEF2E6447C-L000166](../api/omarai.py#L166) |
+| [api/omarai.py](../api/omarai.py#L171) | دالة | _DeadlineRequestReader.readline | لا توجد Docstring. | ناقص | 171 | [SRC-EEF2E6447C-L000171](../api/omarai.py#L171) |
+| [api/omarai.py](../api/omarai.py#L222) | دالة | _DeadlineRequestReader.read1 | Read one chunk; body code applies its own idle and absolute deadlines. | موثق | 222 | [SRC-EEF2E6447C-L000222](../api/omarai.py#L222) |
+| [api/omarai.py](../api/omarai.py#L235) | دالة | _DeadlineRequestReader.close | لا توجد Docstring. | ناقص | 235 | [SRC-EEF2E6447C-L000235](../api/omarai.py#L235) |
+| [api/omarai.py](../api/omarai.py#L240) | دالة | _configured_agent_concurrency_limit | Return a process-local cap for expensive research and diagnostics operations. | موثق | 240 | [SRC-EEF2E6447C-L000240](../api/omarai.py#L240) |
+| [api/omarai.py](../api/omarai.py#L249) | متغير/ثابت Python | DEFAULT_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 249 | [SRC-EEF2E6447C-L000249](../api/omarai.py#L249) |
+| [api/omarai.py](../api/omarai.py#L250) | متغير/ثابت Python | MAX_HTTP_CONNECTION_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 250 | [SRC-EEF2E6447C-L000250](../api/omarai.py#L250) |
+| [api/omarai.py](../api/omarai.py#L253) | دالة | _configured_http_connection_limit | Return the bounded number of live HTTP handler threads for this process. | موثق | 253 | [SRC-EEF2E6447C-L000253](../api/omarai.py#L253) |
+| [api/omarai.py](../api/omarai.py#L262) | متغير/ثابت Python | BUILD_SHA_FILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 262 | [SRC-EEF2E6447C-L000262](../api/omarai.py#L262) |
+| [api/omarai.py](../api/omarai.py#L263) | متغير/ثابت Python | _PLATFORM_BUILD_SHA_ENVIRONMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 263 | [SRC-EEF2E6447C-L000263](../api/omarai.py#L263) |
+| [api/omarai.py](../api/omarai.py#L269) | دالة | _valid_build_sha | لا توجد Docstring. | ناقص | 269 | [SRC-EEF2E6447C-L000269](../api/omarai.py#L269) |
+| [api/omarai.py](../api/omarai.py#L274) | دالة | _build_identity | Prefer immutable image metadata, then documented hosting-provided Git SHAs. | موثق | 274 | [SRC-EEF2E6447C-L000274](../api/omarai.py#L274) |
+| [api/omarai.py](../api/omarai.py#L290) | دالة | _build_sha | Return a validated source SHA, or 'unknown' when no trusted build evidence exists. | موثق | 290 | [SRC-EEF2E6447C-L000290](../api/omarai.py#L290) |
+| [api/omarai.py](../api/omarai.py#L295) | كلاس | Handler | لا توجد Docstring. | ناقص | 295 | [SRC-EEF2E6447C-L000295](../api/omarai.py#L295) |
+| [api/omarai.py](../api/omarai.py#L296) | دالة | Handler.setup | Install a reader with a strict deadline for the request line and headers. | موثق | 296 | [SRC-EEF2E6447C-L000296](../api/omarai.py#L296) |
+| [api/omarai.py](../api/omarai.py#L305) | دالة | Handler.handle_one_request | لا توجد Docstring. | ناقص | 305 | [SRC-EEF2E6447C-L000305](../api/omarai.py#L305) |
+| [api/omarai.py](../api/omarai.py#L323) | دالة | Handler.parse_request | Reject ambiguous HTTP message framing before dispatching any handler. | موثق | 323 | [SRC-EEF2E6447C-L000323](../api/omarai.py#L323) |
+| [api/omarai.py](../api/omarai.py#L357) | متغير/ثابت Python | Handler.store | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 357 | [SRC-EEF2E6447C-L000357](../api/omarai.py#L357) |
+| [api/omarai.py](../api/omarai.py#L358) | متغير/ثابت Python | Handler._rate_lock | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 358 | [SRC-EEF2E6447C-L000358](../api/omarai.py#L358) |
+| [api/omarai.py](../api/omarai.py#L359) | متغير/ثابت Python | Handler._request_times | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 359 | [SRC-EEF2E6447C-L000359](../api/omarai.py#L359) |
+| [api/omarai.py](../api/omarai.py#L360) | متغير/ثابت Python | Handler._rate_last_cleanup | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 360 | [SRC-EEF2E6447C-L000360](../api/omarai.py#L360) |
+| [api/omarai.py](../api/omarai.py#L361) | متغير/ثابت Python | Handler.RATE_LIMIT_REQUESTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 361 | [SRC-EEF2E6447C-L000361](../api/omarai.py#L361) |
+| [api/omarai.py](../api/omarai.py#L362) | متغير/ثابت Python | Handler.RATE_LIMIT_WINDOW_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 362 | [SRC-EEF2E6447C-L000362](../api/omarai.py#L362) |
+| [api/omarai.py](../api/omarai.py#L363) | متغير/ثابت Python | Handler.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 363 | [SRC-EEF2E6447C-L000363](../api/omarai.py#L363) |
+| [api/omarai.py](../api/omarai.py#L365) | متغير/ثابت Python | Handler.MAX_RATE_LIMIT_CLIENT_BUCKETS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 365 | [SRC-EEF2E6447C-L000365](../api/omarai.py#L365) |
+| [api/omarai.py](../api/omarai.py#L366) | متغير/ثابت Python | Handler.RATE_LIMIT_OVERFLOW_KEY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 366 | [SRC-EEF2E6447C-L000366](../api/omarai.py#L366) |
+| [api/omarai.py](../api/omarai.py#L367) | متغير/ثابت Python | Handler.AGENT_CONCURRENCY_LIMIT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 367 | [SRC-EEF2E6447C-L000367](../api/omarai.py#L367) |
+| [api/omarai.py](../api/omarai.py#L368) | متغير/ثابت Python | Handler._agent_semaphore | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 368 | [SRC-EEF2E6447C-L000368](../api/omarai.py#L368) |
+| [api/omarai.py](../api/omarai.py#L370) | دالة | Handler._run_bounded_agent_operation | Run an expensive operation only when a process-local slot is available. | موثق | 370 | [SRC-EEF2E6447C-L000370](../api/omarai.py#L370) |
+| [api/omarai.py](../api/omarai.py#L387) | دالة | Handler._session_cookie_name | Use the __Host- prefix on HTTPS public deployments. | موثق | 387 | [SRC-EEF2E6447C-L000387](../api/omarai.py#L387) |
+| [api/omarai.py](../api/omarai.py#L393) | دالة | Handler._session_cookie_header | لا توجد Docstring. | ناقص | 393 | [SRC-EEF2E6447C-L000393](../api/omarai.py#L393) |
+| [api/omarai.py](../api/omarai.py#L407) | دالة | Handler._clear_session_cookie_header | لا توجد Docstring. | ناقص | 407 | [SRC-EEF2E6447C-L000407](../api/omarai.py#L407) |
+| [api/omarai.py](../api/omarai.py#L419) | دالة | Handler._principal_for_access_token | لا توجد Docstring. | ناقص | 419 | [SRC-EEF2E6447C-L000419](../api/omarai.py#L419) |
+| [api/omarai.py](../api/omarai.py#L425) | دالة | Handler._authorized | Resolve a verified bearer token or HttpOnly browser cookie. | موثق | 425 | [SRC-EEF2E6447C-L000425](../api/omarai.py#L425) |
+| [api/omarai.py](../api/omarai.py#L467) | دالة | Handler._allowed_origins | Return configured browser origins plus this service’s own origin. | موثق | 467 | [SRC-EEF2E6447C-L000467](../api/omarai.py#L467) |
+| [api/omarai.py](../api/omarai.py#L499) | دالة | Handler._origin_allowed | لا توجد Docstring. | ناقص | 499 | [SRC-EEF2E6447C-L000499](../api/omarai.py#L499) |
+| [api/omarai.py](../api/omarai.py#L502) | دالة | Handler._rate_limit_client_key | Choose a rate-limit identity without trusting spoofable proxy headers by default. | موثق | 502 | [SRC-EEF2E6447C-L000502](../api/omarai.py#L502) |
+| [api/omarai.py](../api/omarai.py#L518) | دالة | Handler._rate_limit_ok | لا توجد Docstring. | ناقص | 518 | [SRC-EEF2E6447C-L000518](../api/omarai.py#L518) |
+| [api/omarai.py](../api/omarai.py#L550) | دالة | Handler._read_request_body | Read a bounded body with both idle and absolute wall-clock deadlines. | موثق | 550 | [SRC-EEF2E6447C-L000550](../api/omarai.py#L550) |
+| [api/omarai.py](../api/omarai.py#L623) | دالة | Handler.end_headers | Apply defensive browser headers to successful and error responses alike. | موثق | 623 | [SRC-EEF2E6447C-L000623](../api/omarai.py#L623) |
+| [api/omarai.py](../api/omarai.py#L632) | دالة | Handler.respond | لا توجد Docstring. | ناقص | 632 | [SRC-EEF2E6447C-L000632](../api/omarai.py#L632) |
+| [api/omarai.py](../api/omarai.py#L653) | دالة | Handler.do_GET | لا توجد Docstring. | ناقص | 653 | [SRC-EEF2E6447C-L000653](../api/omarai.py#L653) |
+| [api/omarai.py](../api/omarai.py#L743) | دالة | Handler.do_POST | لا توجد Docstring. | ناقص | 743 | [SRC-EEF2E6447C-L000743](../api/omarai.py#L743) |
+| [api/omarai.py](../api/omarai.py#L1056) | دالة | Handler.do_OPTIONS | لا توجد Docstring. | ناقص | 1056 | [SRC-EEF2E6447C-L001056](../api/omarai.py#L1056) |
+| [api/omarai.py](../api/omarai.py#L1069) | دالة | Handler.log_message | لا توجد Docstring. | ناقص | 1069 | [SRC-EEF2E6447C-L001069](../api/omarai.py#L1069) |
+| [api/omarai.py](../api/omarai.py#L1073) | دالة | answer_question | Answer common operational questions from local records using explicit rules. | موثق | 1073 | [SRC-EEF2E6447C-L001073](../api/omarai.py#L1073) |
+| [api/omarai.py](../api/omarai.py#L1109) | كلاس | BoundedThreadingHTTPServer | Threaded HTTP server with a hard process-local ceiling on handler threads. | موثق | 1109 | [SRC-EEF2E6447C-L001109](../api/omarai.py#L1109) |
+| [api/omarai.py](../api/omarai.py#L1112) | متغير/ثابت Python | BoundedThreadingHTTPServer.daemon_threads | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 1112 | [SRC-EEF2E6447C-L001112](../api/omarai.py#L1112) |
+| [api/omarai.py](../api/omarai.py#L1113) | متغير/ثابت Python | BoundedThreadingHTTPServer.overload_response | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 1113 | [SRC-EEF2E6447C-L001113](../api/omarai.py#L1113) |
+| [api/omarai.py](../api/omarai.py#L1120) | دالة | BoundedThreadingHTTPServer.__init__ | لا توجد Docstring. | ناقص | 1120 | [SRC-EEF2E6447C-L001120](../api/omarai.py#L1120) |
+| [api/omarai.py](../api/omarai.py#L1138) | دالة | BoundedThreadingHTTPServer.process_request | Reject excess accepted sockets before creating another handler thread. | موثق | 1138 | [SRC-EEF2E6447C-L001138](../api/omarai.py#L1138) |
+| [api/omarai.py](../api/omarai.py#L1155) | دالة | BoundedThreadingHTTPServer.process_request_thread | Return a slot after the handler has shut down the accepted socket. | موثق | 1155 | [SRC-EEF2E6447C-L001155](../api/omarai.py#L1155) |
+| [api/omarai.py](../api/omarai.py#L1163) | دالة | serve | لا توجد Docstring. | ناقص | 1163 | [SRC-EEF2E6447C-L001163](../api/omarai.py#L1163) |
 | [cli/omarai.py](../cli/omarai.py#L9) | دالة | main | لا توجد Docstring. | ناقص | 9 | [SRC-9C97DF51AC-L000009](../cli/omarai.py#L9) |
 | [docs/generate_index.py](generate_index.py#L22) | متغير/ثابت Python | EXCLUDED_DIRECTORIES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 22 | [SRC-E599346ABE-L000022](generate_index.py#L22) |
 | [docs/generate_index.py](generate_index.py#L43) | متغير/ثابت Python | SENSITIVE_FILENAMES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 43 | [SRC-E599346ABE-L000043](generate_index.py#L43) |
@@ -1203,6 +1219,9 @@
 | [tests/test_api.py](../tests/test_api.py#L1232) | دالة | test_api_closes_connection_when_declared_body_exceeds_limit | لا توجد Docstring. | ناقص | 1232 | [SRC-3451CC474D-L001232](../tests/test_api.py#L1232) |
 | [tests/test_api.py](../tests/test_api.py#L1257) | دالة | test_workspace_route_serves_the_arabic_rtl_workspace_shell | لا توجد Docstring. | ناقص | 1257 | [SRC-3451CC474D-L001257](../tests/test_api.py#L1257) |
 | [tests/test_api.py](../tests/test_api.py#L1269) | دالة | test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads | لا توجد Docstring. | ناقص | 1269 | [SRC-3451CC474D-L001269](../tests/test_api.py#L1269) |
+| [tests/test_api.py](../tests/test_api.py#L1293) | دالة | test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources | لا توجد Docstring. | ناقص | 1293 | [SRC-3451CC474D-L001293](../tests/test_api.py#L1293) |
+| [tests/test_api.py](../tests/test_api.py#L1300) | دالة | test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources.fake_answer | لا توجد Docstring. | ناقص | 1300 | [SRC-3451CC474D-L001300](../tests/test_api.py#L1300) |
+| [tests/test_api.py](../tests/test_api.py#L1416) | دالة | test_discovery_api_denies_optional_provider_usage_to_non_owner | لا توجد Docstring. | ناقص | 1416 | [SRC-3451CC474D-L001416](../tests/test_api.py#L1416) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L13) | دالة | test_extract_aspects_from_min_hayth | لا توجد Docstring. | ناقص | 13 | [SRC-6CBA87B20C-L000013](../tests/test_aspect_planning.py#L13) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L25) | دالة | test_extract_aspects_from_multi_question_marks | لا توجد Docstring. | ناقص | 25 | [SRC-6CBA87B20C-L000025](../tests/test_aspect_planning.py#L25) |
 | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L31) | دالة | test_build_aspect_queries_prioritizes_topic | لا توجد Docstring. | ناقص | 31 | [SRC-6CBA87B20C-L000031](../tests/test_aspect_planning.py#L31) |
@@ -1244,6 +1263,7 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L83) | دالة | test_workspace_does_not_clear_local_session_state_when_server_logout_fails | لا توجد Docstring. | ناقص | 83 | [SRC-3D0A619359-L000083](../tests/test_dashboard_security.py#L83) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L96) | دالة | test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes | لا توجد Docstring. | ناقص | 96 | [SRC-3D0A619359-L000096](../tests/test_dashboard_security.py#L96) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L112) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 112 | [SRC-3D0A619359-L000112](../tests/test_dashboard_security.py#L112) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L123) | دالة | test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis | لا توجد Docstring. | ناقص | 123 | [SRC-3D0A619359-L000123](../tests/test_dashboard_security.py#L123) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -2126,6 +2146,20 @@
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L77) | دالة | test_web_agent_extracts_joined_comparison_facets | لا توجد Docstring. | ناقص | 77 | [SRC-8C13B81AB4-L000077](../tests/test_web_agent_nlu_integration.py#L77) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L87) | دالة | test_incomplete_compound_evidence_withholds_final_answer | لا توجد Docstring. | ناقص | 87 | [SRC-8C13B81AB4-L000087](../tests/test_web_agent_nlu_integration.py#L87) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L120) | دالة | test_no_lexical_gap_is_not_presented_as_semantic_proof | لا توجد Docstring. | ناقص | 120 | [SRC-8C13B81AB4-L000120](../tests/test_web_agent_nlu_integration.py#L120) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L9) | دالة | product_profile | لا توجد Docstring. | ناقص | 9 | [SRC-E3EEC2014A-L000009](../tests/test_workspace_discovery.py#L9) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L30) | دالة | discovery_run | لا توجد Docstring. | ناقص | 30 | [SRC-E3EEC2014A-L000030](../tests/test_workspace_discovery.py#L30) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L74) | دالة | test_product_profiles_and_discovery_runs_are_tenant_scoped | لا توجد Docstring. | ناقص | 74 | [SRC-E3EEC2014A-L000074](../tests/test_workspace_discovery.py#L74) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L93) | دالة | test_duplicate_product_profile_name_updates_within_tenant | لا توجد Docstring. | ناقص | 93 | [SRC-E3EEC2014A-L000093](../tests/test_workspace_discovery.py#L93) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L106) | دالة | test_discovery_signal_save_uses_server_stored_qualification_and_evidence | لا توجد Docstring. | ناقص | 106 | [SRC-E3EEC2014A-L000106](../tests/test_workspace_discovery.py#L106) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L122) | دالة | test_discovery_signal_save_rejects_other_tenant_run | لا توجد Docstring. | ناقص | 122 | [SRC-E3EEC2014A-L000122](../tests/test_workspace_discovery.py#L122) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L132) | دالة | test_web_agent_forwards_structured_buyer_queries | لا توجد Docstring. | ناقص | 132 | [SRC-E3EEC2014A-L000132](../tests/test_workspace_discovery.py#L132) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L136) | دالة | test_web_agent_forwards_structured_buyer_queries.fake_answer_with_budget | لا توجد Docstring. | ناقص | 136 | [SRC-E3EEC2014A-L000136](../tests/test_workspace_discovery.py#L136) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L152) | دالة | test_web_agent_can_skip_optional_search_connectors_by_request | لا توجد Docstring. | ناقص | 152 | [SRC-E3EEC2014A-L000152](../tests/test_workspace_discovery.py#L152) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L170) | دالة | test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public_rss | لا توجد Docstring. | ناقص | 170 | [SRC-E3EEC2014A-L000170](../tests/test_workspace_discovery.py#L170) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L181) | كلاس | test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public_rss.FakeResponse | لا توجد Docstring. | ناقص | 181 | [SRC-E3EEC2014A-L000181](../tests/test_workspace_discovery.py#L181) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L191) | دالة | test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public_rss.fake_request | لا توجد Docstring. | ناقص | 191 | [SRC-E3EEC2014A-L000191](../tests/test_workspace_discovery.py#L191) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L217) | دالة | test_discovery_source_storage_rejects_non_public_hosts | لا توجد Docstring. | ناقص | 217 | [SRC-E3EEC2014A-L000217](../tests/test_workspace_discovery.py#L217) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L229) | دالة | test_discovery_source_storage_accepts_public_http_source | لا توجد Docstring. | ناقص | 229 | [SRC-E3EEC2014A-L000229](../tests/test_workspace_discovery.py#L229) |
 
 ## الرموز الساكنة الإضافية
 
@@ -2262,21 +2296,22 @@
 | [AGENTS.md](../AGENTS.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 10 | [SRC-A54FF182C7-L000010](../AGENTS.md#L10) |
 | [AGENTS.md](../AGENTS.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 11 | [SRC-A54FF182C7-L000011](../AGENTS.md#L11) |
 | [AGENTS.md](../AGENTS.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 11 | [SRC-A54FF182C7-L000011](../AGENTS.md#L11) |
-| [AGENTS.md](../AGENTS.md#L14) | عنوان Markdown (H2) | Evidence discipline | 14 | [SRC-A54FF182C7-L000014](../AGENTS.md#L14) |
-| [AGENTS.md](../AGENTS.md#L21) | عنوان Markdown (H2) | Architecture evolution and scalability | 21 | [SRC-A54FF182C7-L000021](../AGENTS.md#L21) |
-| [AGENTS.md](../AGENTS.md#L35) | عنوان Markdown (H2) | Required engineering behavior | 35 | [SRC-A54FF182C7-L000035](../AGENTS.md#L35) |
-| [AGENTS.md](../AGENTS.md#L48) | عنوان Markdown (H2) | Change and release control | 48 | [SRC-A54FF182C7-L000048](../AGENTS.md#L48) |
-| [AGENTS.md](../AGENTS.md#L57) | عنوان Markdown (H2) | Platform-grade readiness | 57 | [SRC-A54FF182C7-L000057](../AGENTS.md#L57) |
-| [AGENTS.md](../AGENTS.md#L64) | عنوان Markdown (H2) | Requirement traceability and expert review | 64 | [SRC-A54FF182C7-L000064](../AGENTS.md#L64) |
-| [AGENTS.md](../AGENTS.md#L70) | عنوان Markdown (H2) | Acceptance principle | 70 | [SRC-A54FF182C7-L000070](../AGENTS.md#L70) |
-| [AGENTS.md](../AGENTS.md#L73) | عنوان Markdown (H2) | Repository hygiene and documentation ownership | 73 | [SRC-A54FF182C7-L000073](../AGENTS.md#L73) |
-| [AGENTS.md](../AGENTS.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 77 | [SRC-A54FF182C7-L000077](../AGENTS.md#L77) |
-| [AGENTS.md](../AGENTS.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 77 | [SRC-A54FF182C7-L000077](../AGENTS.md#L77) |
-| [AGENTS.md](../AGENTS.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 77 | [SRC-A54FF182C7-L000077](../AGENTS.md#L77) |
-| [AGENTS.md](../AGENTS.md#L77) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 77 | [SRC-A54FF182C7-L000077](../AGENTS.md#L77) |
-| [AGENTS.md](../AGENTS.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 80 | [SRC-A54FF182C7-L000080](../AGENTS.md#L80) |
-| [AGENTS.md](../AGENTS.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 80 | [SRC-A54FF182C7-L000080](../AGENTS.md#L80) |
-| [AGENTS.md](../AGENTS.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 80 | [SRC-A54FF182C7-L000080](../AGENTS.md#L80) |
+| [AGENTS.md](../AGENTS.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 15 | [SRC-A54FF182C7-L000015](../AGENTS.md#L15) |
+| [AGENTS.md](../AGENTS.md#L16) | عنوان Markdown (H2) | Evidence discipline | 16 | [SRC-A54FF182C7-L000016](../AGENTS.md#L16) |
+| [AGENTS.md](../AGENTS.md#L23) | عنوان Markdown (H2) | Architecture evolution and scalability | 23 | [SRC-A54FF182C7-L000023](../AGENTS.md#L23) |
+| [AGENTS.md](../AGENTS.md#L37) | عنوان Markdown (H2) | Required engineering behavior | 37 | [SRC-A54FF182C7-L000037](../AGENTS.md#L37) |
+| [AGENTS.md](../AGENTS.md#L50) | عنوان Markdown (H2) | Change and release control | 50 | [SRC-A54FF182C7-L000050](../AGENTS.md#L50) |
+| [AGENTS.md](../AGENTS.md#L59) | عنوان Markdown (H2) | Platform-grade readiness | 59 | [SRC-A54FF182C7-L000059](../AGENTS.md#L59) |
+| [AGENTS.md](../AGENTS.md#L66) | عنوان Markdown (H2) | Requirement traceability and expert review | 66 | [SRC-A54FF182C7-L000066](../AGENTS.md#L66) |
+| [AGENTS.md](../AGENTS.md#L72) | عنوان Markdown (H2) | Acceptance principle | 72 | [SRC-A54FF182C7-L000072](../AGENTS.md#L72) |
+| [AGENTS.md](../AGENTS.md#L75) | عنوان Markdown (H2) | Repository hygiene and documentation ownership | 75 | [SRC-A54FF182C7-L000075](../AGENTS.md#L75) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [AGENTS.md](../AGENTS.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 79 | [SRC-A54FF182C7-L000079](../AGENTS.md#L79) |
+| [AGENTS.md](../AGENTS.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 82 | [SRC-A54FF182C7-L000082](../AGENTS.md#L82) |
+| [AGENTS.md](../AGENTS.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 82 | [SRC-A54FF182C7-L000082](../AGENTS.md#L82) |
+| [AGENTS.md](../AGENTS.md#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 82 | [SRC-A54FF182C7-L000082](../AGENTS.md#L82) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_PLAN_QUERIES | 7 | [SRC-01273BA196-L000007](../agents/aspect_planning.py#L7) |
 | [agents/aspect_planning.py](../agents/aspect_planning.py#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_ASPECTS | 8 | [SRC-01273BA196-L000008](../agents/aspect_planning.py#L8) |
 | [agents/dialogue_state.py](../agents/dialogue_state.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RESOLVED_QUESTION_CHARS | 15 | [SRC-2D53795445-L000015](../agents/dialogue_state.py#L15) |
@@ -2288,13 +2323,13 @@
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 15 | [SRC-5587371288-L000015](../agents/intent_router.py#L15) |
 | [agents/intent_router.py](../agents/intent_router.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 16 | [SRC-5587371288-L000016](../agents/intent_router.py#L16) |
-| [agents/omarai.py](../agents/omarai.py#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT | 19 | [SRC-C9CF9B54F8-L000019](../agents/omarai.py#L19) |
-| [agents/omarai.py](../agents/omarai.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TENANT_ID | 20 | [SRC-C9CF9B54F8-L000020](../agents/omarai.py#L20) |
-| [agents/omarai.py](../agents/omarai.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_USER_ID | 21 | [SRC-C9CF9B54F8-L000021](../agents/omarai.py#L21) |
-| [agents/omarai.py](../agents/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 29 | [SRC-C9CF9B54F8-L000029](../agents/omarai.py#L29) |
-| [agents/omarai.py](../agents/omarai.py#L91) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 91 | [SRC-C9CF9B54F8-L000091](../agents/omarai.py#L91) |
-| [agents/omarai.py](../agents/omarai.py#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 94 | [SRC-C9CF9B54F8-L000094](../agents/omarai.py#L94) |
-| [agents/omarai.py](../agents/omarai.py#L737) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 737 | [SRC-C9CF9B54F8-L000737](../agents/omarai.py#L737) |
+| [agents/omarai.py](../agents/omarai.py#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TEXT | 20 | [SRC-C9CF9B54F8-L000020](../agents/omarai.py#L20) |
+| [agents/omarai.py](../agents/omarai.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TENANT_ID | 21 | [SRC-C9CF9B54F8-L000021](../agents/omarai.py#L21) |
+| [agents/omarai.py](../agents/omarai.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_USER_ID | 22 | [SRC-C9CF9B54F8-L000022](../agents/omarai.py#L22) |
+| [agents/omarai.py](../agents/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_BUYER | 30 | [SRC-C9CF9B54F8-L000030](../agents/omarai.py#L30) |
+| [agents/omarai.py](../agents/omarai.py#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_STATUSES | 92 | [SRC-C9CF9B54F8-L000092](../agents/omarai.py#L92) |
+| [agents/omarai.py](../agents/omarai.py#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 95 | [SRC-C9CF9B54F8-L000095](../agents/omarai.py#L95) |
+| [agents/omarai.py](../agents/omarai.py#L1082) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | QUOTE_ALL | 1082 | [SRC-C9CF9B54F8-L001082](../agents/omarai.py#L1082) |
 | [agents/request_budget.py](../agents/request_budget.py#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 21 | [SRC-FDEEAFDFCA-L000021](../agents/request_budget.py#L21) |
 | [agents/request_budget.py](../agents/request_budget.py#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_TIMEOUT_SECONDS | 22 | [SRC-FDEEAFDFCA-L000022](../agents/request_budget.py#L22) |
 | [agents/request_budget.py](../agents/request_budget.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESOURCE_LIMITS | 23 | [SRC-FDEEAFDFCA-L000023](../agents/request_budget.py#L23) |
@@ -2375,78 +2410,81 @@
 | [agents/web_agent.py](../agents/web_agent.py#L671) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 671 | [SRC-1AE03B9EC3-L000671](../agents/web_agent.py#L671) |
 | [agents/web_agent.py](../agents/web_agent.py#L682) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GEMINI_MODEL | 682 | [SRC-1AE03B9EC3-L000682](../agents/web_agent.py#L682) |
 | [agents/web_agent.py](../agents/web_agent.py#L688) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MISTRAL_MODEL | 688 | [SRC-1AE03B9EC3-L000688](../agents/web_agent.py#L688) |
-| [agents/web_agent.py](../agents/web_agent.py#L698) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 698 | [SRC-1AE03B9EC3-L000698](../agents/web_agent.py#L698) |
-| [agents/web_agent.py](../agents/web_agent.py#L706) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 706 | [SRC-1AE03B9EC3-L000706](../agents/web_agent.py#L706) |
-| [agents/web_agent.py](../agents/web_agent.py#L708) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 708 | [SRC-1AE03B9EC3-L000708](../agents/web_agent.py#L708) |
-| [agents/web_agent.py](../agents/web_agent.py#L715) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_VERIFIER_MODEL | 715 | [SRC-1AE03B9EC3-L000715](../agents/web_agent.py#L715) |
-| [agents/web_agent.py](../agents/web_agent.py#L719) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 719 | [SRC-1AE03B9EC3-L000719](../agents/web_agent.py#L719) |
-| [agents/web_agent.py](../agents/web_agent.py#L758) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 758 | [SRC-1AE03B9EC3-L000758](../agents/web_agent.py#L758) |
-| [agents/web_agent.py](../agents/web_agent.py#L763) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 763 | [SRC-1AE03B9EC3-L000763](../agents/web_agent.py#L763) |
-| [agents/web_agent.py](../agents/web_agent.py#L909) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 909 | [SRC-1AE03B9EC3-L000909](../agents/web_agent.py#L909) |
-| [agents/web_agent.py](../agents/web_agent.py#L911) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 911 | [SRC-1AE03B9EC3-L000911](../agents/web_agent.py#L911) |
-| [agents/web_agent.py](../agents/web_agent.py#L912) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 912 | [SRC-1AE03B9EC3-L000912](../agents/web_agent.py#L912) |
-| [agents/web_agent.py](../agents/web_agent.py#L930) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 930 | [SRC-1AE03B9EC3-L000930](../agents/web_agent.py#L930) |
-| [agents/web_agent.py](../agents/web_agent.py#L933) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 933 | [SRC-1AE03B9EC3-L000933](../agents/web_agent.py#L933) |
-| [agents/web_agent.py](../agents/web_agent.py#L934) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 934 | [SRC-1AE03B9EC3-L000934](../agents/web_agent.py#L934) |
-| [agents/web_agent.py](../agents/web_agent.py#L937) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 937 | [SRC-1AE03B9EC3-L000937](../agents/web_agent.py#L937) |
-| [agents/web_agent.py](../agents/web_agent.py#L938) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 938 | [SRC-1AE03B9EC3-L000938](../agents/web_agent.py#L938) |
-| [agents/web_agent.py](../agents/web_agent.py#L942) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 942 | [SRC-1AE03B9EC3-L000942](../agents/web_agent.py#L942) |
-| [agents/web_agent.py](../agents/web_agent.py#L943) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 943 | [SRC-1AE03B9EC3-L000943](../agents/web_agent.py#L943) |
-| [agents/web_agent.py](../agents/web_agent.py#L945) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 945 | [SRC-1AE03B9EC3-L000945](../agents/web_agent.py#L945) |
-| [agents/web_agent.py](../agents/web_agent.py#L946) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 946 | [SRC-1AE03B9EC3-L000946](../agents/web_agent.py#L946) |
-| [agents/web_agent.py](../agents/web_agent.py#L1134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 1134 | [SRC-1AE03B9EC3-L001134](../agents/web_agent.py#L1134) |
-| [agents/web_agent.py](../agents/web_agent.py#L1807) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 1807 | [SRC-1AE03B9EC3-L001807](../agents/web_agent.py#L1807) |
-| [agents/web_agent.py](../agents/web_agent.py#L2194) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 2194 | [SRC-1AE03B9EC3-L002194](../agents/web_agent.py#L2194) |
-| [agents/web_agent.py](../agents/web_agent.py#L4308) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 4308 | [SRC-1AE03B9EC3-L004308](../agents/web_agent.py#L4308) |
-| [agents/web_agent.py](../agents/web_agent.py#L4308) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 4308 | [SRC-1AE03B9EC3-L004308](../agents/web_agent.py#L4308) |
-| [agents/web_agent.py](../agents/web_agent.py#L4461) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 4461 | [SRC-1AE03B9EC3-L004461](../agents/web_agent.py#L4461) |
-| [agents/web_agent.py](../agents/web_agent.py#L4461) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 4461 | [SRC-1AE03B9EC3-L004461](../agents/web_agent.py#L4461) |
-| [agents/web_agent.py](../agents/web_agent.py#L4849) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 4849 | [SRC-1AE03B9EC3-L004849](../agents/web_agent.py#L4849) |
-| [agents/web_agent.py](../agents/web_agent.py#L5245) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 5245 | [SRC-1AE03B9EC3-L005245](../agents/web_agent.py#L5245) |
-| [agents/web_agent.py](../agents/web_agent.py#L5248) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 5248 | [SRC-1AE03B9EC3-L005248](../agents/web_agent.py#L5248) |
-| [agents/web_agent.py](../agents/web_agent.py#L5313) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 5313 | [SRC-1AE03B9EC3-L005313](../agents/web_agent.py#L5313) |
-| [api/omarai.py](../api/omarai.py#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 25 | [SRC-EEF2E6447C-L000025](../api/omarai.py#L25) |
-| [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
-| [api/omarai.py](../api/omarai.py#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WORKSPACE_DASHBOARD | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
-| [api/omarai.py](../api/omarai.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
-| [api/omarai.py](../api/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_COOKIE_MAX_AGE | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
-| [api/omarai.py](../api/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_ID_RE | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
-| [api/omarai.py](../api/omarai.py#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 103 | [SRC-EEF2E6447C-L000103](../api/omarai.py#L103) |
-| [api/omarai.py](../api/omarai.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
-| [api/omarai.py](../api/omarai.py#L105) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 105 | [SRC-EEF2E6447C-L000105](../api/omarai.py#L105) |
-| [api/omarai.py](../api/omarai.py#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 107 | [SRC-EEF2E6447C-L000107](../api/omarai.py#L107) |
-| [api/omarai.py](../api/omarai.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
-| [api/omarai.py](../api/omarai.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
-| [api/omarai.py](../api/omarai.py#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
-| [api/omarai.py](../api/omarai.py#L116) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 116 | [SRC-EEF2E6447C-L000116](../api/omarai.py#L116) |
-| [api/omarai.py](../api/omarai.py#L206) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 206 | [SRC-EEF2E6447C-L000206](../api/omarai.py#L206) |
-| [api/omarai.py](../api/omarai.py#L212) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_HTTP_CONNECTION_LIMIT | 212 | [SRC-EEF2E6447C-L000212](../api/omarai.py#L212) |
-| [api/omarai.py](../api/omarai.py#L213) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_HTTP_CONNECTION_LIMIT | 213 | [SRC-EEF2E6447C-L000213](../api/omarai.py#L213) |
-| [api/omarai.py](../api/omarai.py#L219) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 219 | [SRC-EEF2E6447C-L000219](../api/omarai.py#L219) |
-| [api/omarai.py](../api/omarai.py#L225) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
-| [api/omarai.py](../api/omarai.py#L225) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 225 | [SRC-EEF2E6447C-L000225](../api/omarai.py#L225) |
-| [api/omarai.py](../api/omarai.py#L227) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 227 | [SRC-EEF2E6447C-L000227](../api/omarai.py#L227) |
-| [api/omarai.py](../api/omarai.py#L228) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 228 | [SRC-EEF2E6447C-L000228](../api/omarai.py#L228) |
-| [api/omarai.py](../api/omarai.py#L324) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 324 | [SRC-EEF2E6447C-L000324](../api/omarai.py#L324) |
-| [api/omarai.py](../api/omarai.py#L325) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 325 | [SRC-EEF2E6447C-L000325](../api/omarai.py#L325) |
-| [api/omarai.py](../api/omarai.py#L326) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 326 | [SRC-EEF2E6447C-L000326](../api/omarai.py#L326) |
-| [api/omarai.py](../api/omarai.py#L328) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 328 | [SRC-EEF2E6447C-L000328](../api/omarai.py#L328) |
-| [api/omarai.py](../api/omarai.py#L329) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 329 | [SRC-EEF2E6447C-L000329](../api/omarai.py#L329) |
-| [api/omarai.py](../api/omarai.py#L330) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 330 | [SRC-EEF2E6447C-L000330](../api/omarai.py#L330) |
-| [api/omarai.py](../api/omarai.py#L352) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 352 | [SRC-EEF2E6447C-L000352](../api/omarai.py#L352) |
-| [api/omarai.py](../api/omarai.py#L383) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 383 | [SRC-EEF2E6447C-L000383](../api/omarai.py#L383) |
-| [api/omarai.py](../api/omarai.py#L433) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 433 | [SRC-EEF2E6447C-L000433](../api/omarai.py#L433) |
-| [api/omarai.py](../api/omarai.py#L468) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 468 | [SRC-EEF2E6447C-L000468](../api/omarai.py#L468) |
-| [api/omarai.py](../api/omarai.py#L626) | مسار API/واجهة محتمل | /leads | 626 | [SRC-EEF2E6447C-L000626](../api/omarai.py#L626) |
-| [api/omarai.py](../api/omarai.py#L630) | مسار API/واجهة محتمل | /api/health | 630 | [SRC-EEF2E6447C-L000630](../api/omarai.py#L630) |
-| [api/omarai.py](../api/omarai.py#L647) | مسار API/واجهة محتمل | /api/session | 647 | [SRC-EEF2E6447C-L000647](../api/omarai.py#L647) |
-| [api/omarai.py](../api/omarai.py#L659) | مسار API/واجهة محتمل | /api/leads | 659 | [SRC-EEF2E6447C-L000659](../api/omarai.py#L659) |
-| [api/omarai.py](../api/omarai.py#L681) | مسار API/واجهة محتمل | /api/session/logout | 681 | [SRC-EEF2E6447C-L000681](../api/omarai.py#L681) |
-| [api/omarai.py](../api/omarai.py#L744) | مسار API/واجهة محتمل | /api/tokens/revoke | 744 | [SRC-EEF2E6447C-L000744](../api/omarai.py#L744) |
-| [api/omarai.py](../api/omarai.py#L767) | مسار API/واجهة محتمل | /api/diagnostics | 767 | [SRC-EEF2E6447C-L000767](../api/omarai.py#L767) |
-| [api/omarai.py](../api/omarai.py#L808) | مسار API/واجهة محتمل | /api/agent | 808 | [SRC-EEF2E6447C-L000808](../api/omarai.py#L808) |
-| [api/omarai.py](../api/omarai.py#L837) | مسار API/واجهة محتمل | /api/ask | 837 | [SRC-EEF2E6447C-L000837](../api/omarai.py#L837) |
-| [api/omarai.py](../api/omarai.py#L844) | مسار API/واجهة محتمل | /api/analyze | 844 | [SRC-EEF2E6447C-L000844](../api/omarai.py#L844) |
+| [agents/web_agent.py](../agents/web_agent.py#L701) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 701 | [SRC-1AE03B9EC3-L000701](../agents/web_agent.py#L701) |
+| [agents/web_agent.py](../agents/web_agent.py#L709) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 709 | [SRC-1AE03B9EC3-L000709](../agents/web_agent.py#L709) |
+| [agents/web_agent.py](../agents/web_agent.py#L711) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 711 | [SRC-1AE03B9EC3-L000711](../agents/web_agent.py#L711) |
+| [agents/web_agent.py](../agents/web_agent.py#L718) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_VERIFIER_MODEL | 718 | [SRC-1AE03B9EC3-L000718](../agents/web_agent.py#L718) |
+| [agents/web_agent.py](../agents/web_agent.py#L722) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 722 | [SRC-1AE03B9EC3-L000722](../agents/web_agent.py#L722) |
+| [agents/web_agent.py](../agents/web_agent.py#L761) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 761 | [SRC-1AE03B9EC3-L000761](../agents/web_agent.py#L761) |
+| [agents/web_agent.py](../agents/web_agent.py#L766) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 766 | [SRC-1AE03B9EC3-L000766](../agents/web_agent.py#L766) |
+| [agents/web_agent.py](../agents/web_agent.py#L912) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 912 | [SRC-1AE03B9EC3-L000912](../agents/web_agent.py#L912) |
+| [agents/web_agent.py](../agents/web_agent.py#L914) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 914 | [SRC-1AE03B9EC3-L000914](../agents/web_agent.py#L914) |
+| [agents/web_agent.py](../agents/web_agent.py#L915) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 915 | [SRC-1AE03B9EC3-L000915](../agents/web_agent.py#L915) |
+| [agents/web_agent.py](../agents/web_agent.py#L933) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 933 | [SRC-1AE03B9EC3-L000933](../agents/web_agent.py#L933) |
+| [agents/web_agent.py](../agents/web_agent.py#L936) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 936 | [SRC-1AE03B9EC3-L000936](../agents/web_agent.py#L936) |
+| [agents/web_agent.py](../agents/web_agent.py#L937) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 937 | [SRC-1AE03B9EC3-L000937](../agents/web_agent.py#L937) |
+| [agents/web_agent.py](../agents/web_agent.py#L940) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 940 | [SRC-1AE03B9EC3-L000940](../agents/web_agent.py#L940) |
+| [agents/web_agent.py](../agents/web_agent.py#L941) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 941 | [SRC-1AE03B9EC3-L000941](../agents/web_agent.py#L941) |
+| [agents/web_agent.py](../agents/web_agent.py#L945) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 945 | [SRC-1AE03B9EC3-L000945](../agents/web_agent.py#L945) |
+| [agents/web_agent.py](../agents/web_agent.py#L946) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 946 | [SRC-1AE03B9EC3-L000946](../agents/web_agent.py#L946) |
+| [agents/web_agent.py](../agents/web_agent.py#L948) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 948 | [SRC-1AE03B9EC3-L000948](../agents/web_agent.py#L948) |
+| [agents/web_agent.py](../agents/web_agent.py#L949) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 949 | [SRC-1AE03B9EC3-L000949](../agents/web_agent.py#L949) |
+| [agents/web_agent.py](../agents/web_agent.py#L1137) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 1137 | [SRC-1AE03B9EC3-L001137](../agents/web_agent.py#L1137) |
+| [agents/web_agent.py](../agents/web_agent.py#L1810) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 1810 | [SRC-1AE03B9EC3-L001810](../agents/web_agent.py#L1810) |
+| [agents/web_agent.py](../agents/web_agent.py#L2210) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 2210 | [SRC-1AE03B9EC3-L002210](../agents/web_agent.py#L2210) |
+| [agents/web_agent.py](../agents/web_agent.py#L4324) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_COVERAGE_REPAIR | 4324 | [SRC-1AE03B9EC3-L004324](../agents/web_agent.py#L4324) |
+| [agents/web_agent.py](../agents/web_agent.py#L4324) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_COVERAGE_REPAIR | 4324 | [SRC-1AE03B9EC3-L004324](../agents/web_agent.py#L4324) |
+| [agents/web_agent.py](../agents/web_agent.py#L4477) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | END_OMARAI_FINAL_ANSWER | 4477 | [SRC-1AE03B9EC3-L004477](../agents/web_agent.py#L4477) |
+| [agents/web_agent.py](../agents/web_agent.py#L4477) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FINAL_ANSWER | 4477 | [SRC-1AE03B9EC3-L004477](../agents/web_agent.py#L4477) |
+| [agents/web_agent.py](../agents/web_agent.py#L4879) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUDGET_EXHAUSTED | 4879 | [SRC-1AE03B9EC3-L004879](../agents/web_agent.py#L4879) |
+| [agents/web_agent.py](../agents/web_agent.py#L5279) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_DEEP | 5279 | [SRC-1AE03B9EC3-L005279](../agents/web_agent.py#L5279) |
+| [agents/web_agent.py](../agents/web_agent.py#L5282) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 5282 | [SRC-1AE03B9EC3-L005282](../agents/web_agent.py#L5282) |
+| [agents/web_agent.py](../agents/web_agent.py#L5347) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MODEL_ONLY | 5347 | [SRC-1AE03B9EC3-L005347](../agents/web_agent.py#L5347) |
+| [api/omarai.py](../api/omarai.py#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_DASHBOARD | 26 | [SRC-EEF2E6447C-L000026](../api/omarai.py#L26) |
+| [api/omarai.py](../api/omarai.py#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEADS_DASHBOARD | 27 | [SRC-EEF2E6447C-L000027](../api/omarai.py#L27) |
+| [api/omarai.py](../api/omarai.py#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WORKSPACE_DASHBOARD | 28 | [SRC-EEF2E6447C-L000028](../api/omarai.py#L28) |
+| [api/omarai.py](../api/omarai.py#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_BYTES | 29 | [SRC-EEF2E6447C-L000029](../api/omarai.py#L29) |
+| [api/omarai.py](../api/omarai.py#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_COOKIE_MAX_AGE | 30 | [SRC-EEF2E6447C-L000030](../api/omarai.py#L30) |
+| [api/omarai.py](../api/omarai.py#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BROWSER_SESSION_ID_RE | 31 | [SRC-EEF2E6447C-L000031](../api/omarai.py#L31) |
+| [api/omarai.py](../api/omarai.py#L104) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_READ_TIMEOUT_SECONDS | 104 | [SRC-EEF2E6447C-L000104](../api/omarai.py#L104) |
+| [api/omarai.py](../api/omarai.py#L105) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_HEADER_IDLE_TIMEOUT_SECONDS | 105 | [SRC-EEF2E6447C-L000105](../api/omarai.py#L105) |
+| [api/omarai.py](../api/omarai.py#L106) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS | 106 | [SRC-EEF2E6447C-L000106](../api/omarai.py#L106) |
+| [api/omarai.py](../api/omarai.py#L108) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_TIMEOUT_SECONDS | 108 | [SRC-EEF2E6447C-L000108](../api/omarai.py#L108) |
+| [api/omarai.py](../api/omarai.py#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_IDLE_TIMEOUT_SECONDS | 109 | [SRC-EEF2E6447C-L000109](../api/omarai.py#L109) |
+| [api/omarai.py](../api/omarai.py#L110) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS | 110 | [SRC-EEF2E6447C-L000110](../api/omarai.py#L110) |
+| [api/omarai.py](../api/omarai.py#L111) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REQUEST_BODY_READ_CHUNK_BYTES | 111 | [SRC-EEF2E6447C-L000111](../api/omarai.py#L111) |
+| [api/omarai.py](../api/omarai.py#L117) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 117 | [SRC-EEF2E6447C-L000117](../api/omarai.py#L117) |
+| [api/omarai.py](../api/omarai.py#L243) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 243 | [SRC-EEF2E6447C-L000243](../api/omarai.py#L243) |
+| [api/omarai.py](../api/omarai.py#L249) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_HTTP_CONNECTION_LIMIT | 249 | [SRC-EEF2E6447C-L000249](../api/omarai.py#L249) |
+| [api/omarai.py](../api/omarai.py#L250) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_HTTP_CONNECTION_LIMIT | 250 | [SRC-EEF2E6447C-L000250](../api/omarai.py#L250) |
+| [api/omarai.py](../api/omarai.py#L256) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 256 | [SRC-EEF2E6447C-L000256](../api/omarai.py#L256) |
+| [api/omarai.py](../api/omarai.py#L262) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 262 | [SRC-EEF2E6447C-L000262](../api/omarai.py#L262) |
+| [api/omarai.py](../api/omarai.py#L262) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA_FILE | 262 | [SRC-EEF2E6447C-L000262](../api/omarai.py#L262) |
+| [api/omarai.py](../api/omarai.py#L264) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RAILWAY_GIT_COMMIT_SHA | 264 | [SRC-EEF2E6447C-L000264](../api/omarai.py#L264) |
+| [api/omarai.py](../api/omarai.py#L265) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RENDER_GIT_COMMIT | 265 | [SRC-EEF2E6447C-L000265](../api/omarai.py#L265) |
+| [api/omarai.py](../api/omarai.py#L361) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_REQUESTS | 361 | [SRC-EEF2E6447C-L000361](../api/omarai.py#L361) |
+| [api/omarai.py](../api/omarai.py#L362) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_WINDOW_SECONDS | 362 | [SRC-EEF2E6447C-L000362](../api/omarai.py#L362) |
+| [api/omarai.py](../api/omarai.py#L363) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_CLEANUP_INTERVAL_SECONDS | 363 | [SRC-EEF2E6447C-L000363](../api/omarai.py#L363) |
+| [api/omarai.py](../api/omarai.py#L365) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_RATE_LIMIT_CLIENT_BUCKETS | 365 | [SRC-EEF2E6447C-L000365](../api/omarai.py#L365) |
+| [api/omarai.py](../api/omarai.py#L366) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RATE_LIMIT_OVERFLOW_KEY | 366 | [SRC-EEF2E6447C-L000366](../api/omarai.py#L366) |
+| [api/omarai.py](../api/omarai.py#L367) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AGENT_CONCURRENCY_LIMIT | 367 | [SRC-EEF2E6447C-L000367](../api/omarai.py#L367) |
+| [api/omarai.py](../api/omarai.py#L389) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 389 | [SRC-EEF2E6447C-L000389](../api/omarai.py#L389) |
+| [api/omarai.py](../api/omarai.py#L420) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 420 | [SRC-EEF2E6447C-L000420](../api/omarai.py#L420) |
+| [api/omarai.py](../api/omarai.py#L470) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 470 | [SRC-EEF2E6447C-L000470](../api/omarai.py#L470) |
+| [api/omarai.py](../api/omarai.py#L505) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TRUST_PROXY_HEADERS | 505 | [SRC-EEF2E6447C-L000505](../api/omarai.py#L505) |
+| [api/omarai.py](../api/omarai.py#L663) | مسار API/واجهة محتمل | /leads | 663 | [SRC-EEF2E6447C-L000663](../api/omarai.py#L663) |
+| [api/omarai.py](../api/omarai.py#L667) | مسار API/واجهة محتمل | /api/health | 667 | [SRC-EEF2E6447C-L000667](../api/omarai.py#L667) |
+| [api/omarai.py](../api/omarai.py#L684) | مسار API/واجهة محتمل | /api/product-profiles | 684 | [SRC-EEF2E6447C-L000684](../api/omarai.py#L684) |
+| [api/omarai.py](../api/omarai.py#L693) | مسار API/واجهة محتمل | /api/discoveries | 693 | [SRC-EEF2E6447C-L000693](../api/omarai.py#L693) |
+| [api/omarai.py](../api/omarai.py#L717) | مسار API/واجهة محتمل | /api/session | 717 | [SRC-EEF2E6447C-L000717](../api/omarai.py#L717) |
+| [api/omarai.py](../api/omarai.py#L729) | مسار API/واجهة محتمل | /api/leads | 729 | [SRC-EEF2E6447C-L000729](../api/omarai.py#L729) |
+| [api/omarai.py](../api/omarai.py#L751) | مسار API/واجهة محتمل | /api/session/logout | 751 | [SRC-EEF2E6447C-L000751](../api/omarai.py#L751) |
+| [api/omarai.py](../api/omarai.py#L890) | مسار API/واجهة محتمل | /api/discoveries/ | 890 | [SRC-EEF2E6447C-L000890](../api/omarai.py#L890) |
+| [api/omarai.py](../api/omarai.py#L921) | مسار API/واجهة محتمل | /api/tokens/revoke | 921 | [SRC-EEF2E6447C-L000921](../api/omarai.py#L921) |
+| [api/omarai.py](../api/omarai.py#L944) | مسار API/واجهة محتمل | /api/diagnostics | 944 | [SRC-EEF2E6447C-L000944](../api/omarai.py#L944) |
+| [api/omarai.py](../api/omarai.py#L985) | مسار API/واجهة محتمل | /api/agent | 985 | [SRC-EEF2E6447C-L000985](../api/omarai.py#L985) |
+| [api/omarai.py](../api/omarai.py#L1014) | مسار API/واجهة محتمل | /api/ask | 1014 | [SRC-EEF2E6447C-L001014](../api/omarai.py#L1014) |
+| [api/omarai.py](../api/omarai.py#L1021) | مسار API/واجهة محتمل | /api/analyze | 1021 | [SRC-EEF2E6447C-L001021](../api/omarai.py#L1021) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | عنوان Markdown (H1) | تقرير قبول الاستضافة — Omarai | 1 | [SRC-65AAF94960-L000001](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) | عنوان Markdown (H2) | الملخص التنفيذي | 6 | [SRC-65AAF94960-L000006](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L6) |
 | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) | عنوان Markdown (H2) | أدلة القبول | 11 | [SRC-65AAF94960-L000011](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L11) |
@@ -2706,24 +2744,27 @@
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L41) | عنوان Markdown (H2) | 5. قبول واجهة الهاتف | 41 | [SRC-6E35221BFA-L000041](GO_LIVE_CHECKLIST_AR.md#L41) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L45) | عنوان Markdown (H2) | حدود الإثبات | 45 | [SRC-6E35221BFA-L000045](GO_LIVE_CHECKLIST_AR.md#L45) |
 | [docs/GO_LIVE_CHECKLIST_AR.md](GO_LIVE_CHECKLIST_AR.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 48 | [SRC-6E35221BFA-L000048](GO_LIVE_CHECKLIST_AR.md#L48) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدود الإثبات | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L2) | عنوان Markdown (H2) | تحديث تنفيذي بتاريخ 5 نوفمبر 2026 — تفعيل مساحة المبيعات كصفحة البداية | 2 | [SRC-C8EA754D73-L000002](IMPLEMENTATION_SCOPE.md#L2) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 11 | [SRC-C8EA754D73-L000011](IMPLEMENTATION_SCOPE.md#L11) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_DEPLOYED | 12 | [SRC-C8EA754D73-L000012](IMPLEMENTATION_SCOPE.md#L12) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L15) | عنوان Markdown (H2) | إضافة تنفيذية بتاريخ 3 نوفمبر 2026 — مساحة عمل المبيعات العربية | 15 | [SRC-C8EA754D73-L000015](IMPLEMENTATION_SCOPE.md#L15) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 24 | [SRC-C8EA754D73-L000024](IMPLEMENTATION_SCOPE.md#L24) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 28 | [SRC-C8EA754D73-L000028](IMPLEMENTATION_SCOPE.md#L28) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 35 | [SRC-C8EA754D73-L000035](IMPLEMENTATION_SCOPE.md#L35) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 35 | [SRC-C8EA754D73-L000035](IMPLEMENTATION_SCOPE.md#L35) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L40) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 40 | [SRC-C8EA754D73-L000040](IMPLEMENTATION_SCOPE.md#L40) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L42) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 42 | [SRC-C8EA754D73-L000042](IMPLEMENTATION_SCOPE.md#L42) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 51 | [SRC-C8EA754D73-L000051](IMPLEMENTATION_SCOPE.md#L51) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L52) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 52 | [SRC-C8EA754D73-L000052](IMPLEMENTATION_SCOPE.md#L52) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L60) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 60 | [SRC-C8EA754D73-L000060](IMPLEMENTATION_SCOPE.md#L60) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L70) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 70 | [SRC-C8EA754D73-L000070](IMPLEMENTATION_SCOPE.md#L70) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 74 | [SRC-C8EA754D73-L000074](IMPLEMENTATION_SCOPE.md#L74) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 75 | [SRC-C8EA754D73-L000075](IMPLEMENTATION_SCOPE.md#L75) |
-| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L79) | عنوان Markdown (H2) | اعتماد الاتجاه البصري — 4 نوفمبر 2026 | 79 | [SRC-C8EA754D73-L000079](IMPLEMENTATION_SCOPE.md#L79) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L1) | عنوان Markdown (H2) | تحديث تنفيذي بتاريخ 6 نوفمبر 2026 — ربط ملف المنتج واكتشاف نية الشراء بمساحة العمل | 1 | [SRC-C8EA754D73-L000001](IMPLEMENTATION_SCOPE.md#L1) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 6 | [SRC-C8EA754D73-L000006](IMPLEMENTATION_SCOPE.md#L6) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 12 | [SRC-C8EA754D73-L000012](IMPLEMENTATION_SCOPE.md#L12) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 16 | [SRC-C8EA754D73-L000016](IMPLEMENTATION_SCOPE.md#L16) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 17 | [SRC-C8EA754D73-L000017](IMPLEMENTATION_SCOPE.md#L17) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_DEPLOYED | 18 | [SRC-C8EA754D73-L000018](IMPLEMENTATION_SCOPE.md#L18) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L21) | عنوان Markdown (H1) | Omarai — نطاق التنفيذ الفعلي وحدود الإثبات | 21 | [SRC-C8EA754D73-L000021](IMPLEMENTATION_SCOPE.md#L21) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L23) | عنوان Markdown (H2) | تحديث تنفيذي بتاريخ 5 نوفمبر 2026 — تفعيل مساحة المبيعات كصفحة البداية | 23 | [SRC-C8EA754D73-L000023](IMPLEMENTATION_SCOPE.md#L23) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L36) | عنوان Markdown (H2) | إضافة تنفيذية بتاريخ 3 نوفمبر 2026 — مساحة عمل المبيعات العربية | 36 | [SRC-C8EA754D73-L000036](IMPLEMENTATION_SCOPE.md#L36) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L45) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 45 | [SRC-C8EA754D73-L000045](IMPLEMENTATION_SCOPE.md#L45) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 56 | [SRC-C8EA754D73-L000056](IMPLEMENTATION_SCOPE.md#L56) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L61) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 61 | [SRC-C8EA754D73-L000061](IMPLEMENTATION_SCOPE.md#L61) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L63) | عنوان Markdown (H2) | الحالة التنفيذية الحالية | 63 | [SRC-C8EA754D73-L000063](IMPLEMENTATION_SCOPE.md#L63) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L72) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 72 | [SRC-C8EA754D73-L000072](IMPLEMENTATION_SCOPE.md#L72) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L73) | عنوان Markdown (H2) | أدلة الاختبار وحدودها | 73 | [SRC-C8EA754D73-L000073](IMPLEMENTATION_SCOPE.md#L73) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L81) | عنوان Markdown (H2) | غير مثبت أو خارج النطاق الحالي | 81 | [SRC-C8EA754D73-L000081](IMPLEMENTATION_SCOPE.md#L81) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L91) | عنوان Markdown (H2) | مصادر الحقيقة حسب الغرض | 91 | [SRC-C8EA754D73-L000091](IMPLEMENTATION_SCOPE.md#L91) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L94) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 94 | [SRC-C8EA754D73-L000094](IMPLEMENTATION_SCOPE.md#L94) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 95 | [SRC-C8EA754D73-L000095](IMPLEMENTATION_SCOPE.md#L95) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L96) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 96 | [SRC-C8EA754D73-L000096](IMPLEMENTATION_SCOPE.md#L96) |
+| [docs/IMPLEMENTATION_SCOPE.md](IMPLEMENTATION_SCOPE.md#L100) | عنوان Markdown (H2) | اعتماد الاتجاه البصري — 4 نوفمبر 2026 | 100 | [SRC-C8EA754D73-L000100](IMPLEMENTATION_SCOPE.md#L100) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) | عنوان Markdown (H1) | خطة تنفيذ RAG الوكيلي وسلامة الأدلة في Omarai | 1 | [SRC-53E640B937-L000001](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L1) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) | عنوان Markdown (H2) | تعريف النظام المستهدف | 4 | [SRC-53E640B937-L000004](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L4) |
 | [docs/OMARAI_AGENTIC_RAG_ROADMAP_AR.md](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) | عنوان Markdown (H2) | سجل البنود وحالتها | 8 | [SRC-53E640B937-L000008](OMARAI_AGENTIC_RAG_ROADMAP_AR.md#L8) |
@@ -2775,90 +2816,93 @@
 | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L15) | عنوان Markdown (H2) | 0. كيف تُقرأ هذه الوثيقة؟ | 15 | [SRC-E73001D9AC-L000015](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L15) |
 | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L31) | عنوان Markdown (H1) | الجزء الأول — الرسالة العليا ومبادئ التصميم | 31 | [SRC-E73001D9AC-L000031](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L31) |
 | [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L33) | عنوان Markdown (H2) | 1. الرؤية | 33 | [SRC-E73001D9AC-L000033](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L33) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) | عنوان Markdown (H2) | 2. المبادئ الحاكمة غير القابلة للتفاوض | 39 | [SRC-E73001D9AC-L000039](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L60) | عنوان Markdown (H2) | 3. الطموح الأقصى لا يعني تعقيدًا أقصى | 60 | [SRC-E73001D9AC-L000060](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L60) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L64) | عنوان Markdown (H3) | 3.1 قاعدة حاكمة لتنظيم القدرات والمهارات والوكلاء | 64 | [SRC-E73001D9AC-L000064](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L64) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L79) | عنوان Markdown (H1) | الجزء الثاني — حوكمة الخبراء والمراجعة متعددة التخصصات | 79 | [SRC-E73001D9AC-L000079](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L79) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L81) | عنوان Markdown (H2) | 4. مجالات الخبرة التي يجب تغطيتها | 81 | [SRC-E73001D9AC-L000081](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L81) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L106) | عنوان Markdown (H3) | 4.1 قاعدة المراجعة | 106 | [SRC-E73001D9AC-L000106](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L106) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L116) | عنوان Markdown (H1) | الجزء الثالث — المعمارية المنطقية المستهدفة | 116 | [SRC-E73001D9AC-L000116](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L116) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L118) | عنوان Markdown (H2) | 5. طبقات النظام وحدود الثقة | 118 | [SRC-E73001D9AC-L000118](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L118) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L122) | عنوان Markdown (H3) | الطبقة 1 — واجهة المستخدم وقنوات الإدخال | 122 | [SRC-E73001D9AC-L000122](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L122) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L129) | عنوان Markdown (H3) | الطبقة 2 — حافة الخدمة وواجهة API | 129 | [SRC-E73001D9AC-L000129](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L129) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L137) | عنوان Markdown (H3) | الطبقة 3 — الهوية والمستأجرون والصلاحيات | 137 | [SRC-E73001D9AC-L000137](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L137) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L144) | عنوان Markdown (H3) | الطبقة 4 — بوابة السياسات وإساءة الاستخدام | 144 | [SRC-E73001D9AC-L000144](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L144) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L152) | عنوان Markdown (H3) | الطبقة 5 — منسق الطلبات (Request Orchestrator) | 152 | [SRC-E73001D9AC-L000152](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L152) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L162) | عنوان Markdown (H3) | الطبقة 6 — فهم النية والتخطيط | 162 | [SRC-E73001D9AC-L000162](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L162) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L174) | عنوان Markdown (H3) | الطبقة 7 — طبقة البحث وجلب الصفحات | 174 | [SRC-E73001D9AC-L000174](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L174) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L184) | عنوان Markdown (H3) | الطبقة 8 — بوابة الأدوات وسجل قدراتها | 184 | [SRC-E73001D9AC-L000184](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L184) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L199) | عنوان Markdown (H3) | الطبقة 9 — تنفيذ الأدوات والعزل | 199 | [SRC-E73001D9AC-L000199](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L199) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L213) | عنوان Markdown (H3) | الطبقة 10 — توحيد الأدلة والمصادر (Evidence Ledger) | 213 | [SRC-E73001D9AC-L000213](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L213) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L222) | عنوان Markdown (H3) | الطبقة 11 — التحقق من الإجابة والنتائج | 222 | [SRC-E73001D9AC-L000222](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L222) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L231) | عنوان Markdown (H3) | الطبقة 12 — الذاكرة والتخزين المؤقت | 231 | [SRC-E73001D9AC-L000231](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L231) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L242) | عنوان Markdown (H3) | الطبقة 13 — الطوابير والعمال والمهام الطويلة | 242 | [SRC-E73001D9AC-L000242](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L242) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L252) | عنوان Markdown (H3) | الطبقة 14 — المراقبة والتدقيق والاستجابة للحوادث | 252 | [SRC-E73001D9AC-L000252](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L252) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L262) | عنوان Markdown (H3) | الطبقة 15 — التكوين والأسرار وسلسلة التوريد | 262 | [SRC-E73001D9AC-L000262](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L262) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L276) | عنوان Markdown (H1) | الجزء الرابع — الأمن السيبراني ونموذج التهديدات | 276 | [SRC-E73001D9AC-L000276](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L276) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L278) | عنوان Markdown (H2) | 6. نموذج التهديد (Threat Model) | 278 | [SRC-E73001D9AC-L000278](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L278) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L282) | عنوان Markdown (H3) | 6.1 حماية الطلبات وواجهات API | 282 | [SRC-E73001D9AC-L000282](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L282) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L292) | عنوان Markdown (H3) | 6.2 حماية وكيل البحث من SSRF والوصول إلى الشبكة الداخلية | 292 | [SRC-E73001D9AC-L000292](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L292) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L305) | عنوان Markdown (H3) | 6.3 حماية النماذج والوكلاء من حقن التعليمات | 305 | [SRC-E73001D9AC-L000305](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L305) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L315) | عنوان Markdown (H3) | 6.4 حماية البيانات والخصوصية | 315 | [SRC-E73001D9AC-L000315](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L315) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L325) | عنوان Markdown (H3) | 6.5 الصلاحيات والإجراءات ذات الأثر | 325 | [SRC-E73001D9AC-L000325](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L325) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L333) | عنوان Markdown (H3) | 6.6 التوافر ومقاومة استنزاف الموارد | 333 | [SRC-E73001D9AC-L000333](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L333) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L342) | عنوان Markdown (H3) | 6.7 الاستجابة الأمنية | 342 | [SRC-E73001D9AC-L000342](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L342) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L350) | عنوان Markdown (H3) | 6.8 ضمانات الأمن السيبراني الحاكمة للمهارات وسير العمل والوكلاء | 350 | [SRC-E73001D9AC-L000350](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L350) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L366) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 366 | [SRC-E73001D9AC-L000366](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L366) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L371) | عنوان Markdown (H1) | الجزء الخامس — الأداء، التزامن، السعة والتوسع | 371 | [SRC-E73001D9AC-L000371](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L371) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L373) | عنوان Markdown (H2) | 7. استراتيجية التحمل والسرعة | 373 | [SRC-E73001D9AC-L000373](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L373) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L375) | عنوان Markdown (H3) | 7.1 ميزانية لكل طلب | 375 | [SRC-E73001D9AC-L000375](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L375) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L388) | عنوان Markdown (H3) | 7.2 تحسين المسارات | 388 | [SRC-E73001D9AC-L000388](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L388) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L399) | عنوان Markdown (H3) | 7.3 حماية التنفيذ المتزامن | 399 | [SRC-E73001D9AC-L000399](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L399) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L407) | عنوان Markdown (H3) | 7.4 المرونة عند تعطل الموفرات | 407 | [SRC-E73001D9AC-L000407](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L407) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L417) | عنوان Markdown (H3) | 7.5 التوسع | 417 | [SRC-E73001D9AC-L000417](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L417) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L429) | عنوان Markdown (H2) | 8. مؤشرات الأداء والاعتمادية | 429 | [SRC-E73001D9AC-L000429](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L429) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L446) | عنوان Markdown (H3) | 8.1 أهداف الخدمة (SLOs) | 446 | [SRC-E73001D9AC-L000446](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L446) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L455) | عنوان Markdown (H1) | الجزء السادس — جودة الإجابات والذكاء العملي | 455 | [SRC-E73001D9AC-L000455](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L455) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L457) | عنوان Markdown (H2) | 9. عقد الإجابة | 457 | [SRC-E73001D9AC-L000457](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L457) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L473) | عنوان Markdown (H2) | 10. تحقق الادعاءات وجودة المصادر | 473 | [SRC-E73001D9AC-L000473](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L473) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L482) | عنوان Markdown (H2) | 11. التقييم والتحسين | 482 | [SRC-E73001D9AC-L000482](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L482) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L494) | عنوان Markdown (H1) | الجزء السابع — دورة التطوير والإصدارات | 494 | [SRC-E73001D9AC-L000494](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L494) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L496) | عنوان Markdown (H2) | 12. قواعد التطوير الآمن | 496 | [SRC-E73001D9AC-L000496](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L496) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L509) | عنوان Markdown (H2) | 13. طبقات الاختبار المطلوبة | 509 | [SRC-E73001D9AC-L000509](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L509) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L511) | عنوان Markdown (H3) | T0 — فحوص محلية أساسية | 511 | [SRC-E73001D9AC-L000511](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L511) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L514) | عنوان Markdown (H3) | T1 — اختبارات الوحدة | 514 | [SRC-E73001D9AC-L000514](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L514) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L517) | عنوان Markdown (H3) | T2 — اختبارات العقود والتكامل | 517 | [SRC-E73001D9AC-L000517](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L517) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L520) | عنوان Markdown (H3) | T3 — اختبارات النظام من طرف إلى طرف | 520 | [SRC-E73001D9AC-L000520](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L520) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L523) | عنوان Markdown (H3) | T4 — اختبارات التزامن والعزل | 523 | [SRC-E73001D9AC-L000523](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L523) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L526) | عنوان Markdown (H3) | T5 — اختبارات الأداء والحمل | 526 | [SRC-E73001D9AC-L000526](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L526) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L529) | عنوان Markdown (H3) | T6 — اختبارات الفشل والتعافي | 529 | [SRC-E73001D9AC-L000529](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L529) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L532) | عنوان Markdown (H3) | T7 — اختبارات الأمن والخصوصية | 532 | [SRC-E73001D9AC-L000532](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L532) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L535) | عنوان Markdown (H3) | T8 — تقييم جودة الإجابة | 535 | [SRC-E73001D9AC-L000535](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L535) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L540) | عنوان Markdown (H2) | 14. بوابات إصدار مقترحة | 540 | [SRC-E73001D9AC-L000540](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L540) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L552) | عنوان Markdown (H1) | الجزء الثامن — تشغيل الخدمة والتعافي | 552 | [SRC-E73001D9AC-L000552](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L552) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) | عنوان Markdown (H2) | 15. الجاهزية والتشخيص | 554 | [SRC-E73001D9AC-L000554](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L563) | عنوان Markdown (H2) | 16. النسخ الاحتياطي والاستعادة | 563 | [SRC-E73001D9AC-L000563](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L563) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L572) | عنوان Markdown (H2) | 17. خطة التدهور الآمن | 572 | [SRC-E73001D9AC-L000572](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L572) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L584) | عنوان Markdown (H1) | الجزء التاسع — خارطة التنفيذ والاعتماد | 584 | [SRC-E73001D9AC-L000584](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L584) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L586) | عنوان Markdown (H2) | 18. ترتيب التنفيذ بحسب المخاطر والاعتماديات | 586 | [SRC-E73001D9AC-L000586](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L586) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L636) | عنوان Markdown (H3) | ترتيب توسيع القدرات والمهارات والوكلاء | 636 | [SRC-E73001D9AC-L000636](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L636) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) | عنوان Markdown (H1) | الجزء العاشر — معمارية التوسع والتطوير المستمر | 647 | [SRC-E73001D9AC-L000647](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L647) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L651) | عنوان Markdown (H2) | 19. النتيجة المعمارية المستهدفة | 651 | [SRC-E73001D9AC-L000651](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L651) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L668) | عنوان Markdown (H2) | 20. نمط البداية: Modular Monolith بحدود واضحة | 668 | [SRC-E73001D9AC-L000668](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L668) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L683) | عنوان Markdown (H3) | متى نفصل الوحدة إلى خدمة مستقلة؟ | 683 | [SRC-E73001D9AC-L000683](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L683) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L694) | عنوان Markdown (H2) | 21. حدود المجال والواجهات (Domain Boundaries, Ports & Adapters) | 694 | [SRC-E73001D9AC-L000694](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L694) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L708) | عنوان Markdown (H2) | 22. عقود الأدوات والقدرات والمهارات وسير العمل والوكلاء والإضافات | 708 | [SRC-E73001D9AC-L000708](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L708) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L746) | عنوان Markdown (H2) | 23. إصدار واجهات API وعقود الرسائل | 746 | [SRC-E73001D9AC-L000746](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L746) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L758) | عنوان Markdown (H2) | 24. تطور مخططات البيانات والترحيلات | 758 | [SRC-E73001D9AC-L000758](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L758) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L772) | عنوان Markdown (H2) | 25. حالة الطلب والتوزيع والتوسع الأفقي | 772 | [SRC-E73001D9AC-L000772](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L772) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L787) | عنوان Markdown (H2) | 26. اختبارات اللياقة المعمارية (Architecture Fitness Functions) | 787 | [SRC-E73001D9AC-L000787](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L787) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L810) | عنوان Markdown (H2) | 27. إدارة الديون التقنية والتغيير المستمر | 810 | [SRC-E73001D9AC-L000810](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L810) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L823) | عنوان Markdown (H2) | 28. بوابة قبول التوسع والتطوير | 823 | [SRC-E73001D9AC-L000823](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L823) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L843) | عنوان Markdown (H1) | الجزء الحادي عشر — تعريف “مكتمل” وقرار تغيير المتطلبات | 843 | [SRC-E73001D9AC-L000843](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L843) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L845) | عنوان Markdown (H2) | 29. تعريف الإنجاز | 845 | [SRC-E73001D9AC-L000845](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L845) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L857) | عنوان Markdown (H2) | 30. سجل القرارات والاستثناءات | 857 | [SRC-E73001D9AC-L000857](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L857) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L872) | عنوان Markdown (H2) | 31. القاعدة النهائية | 872 | [SRC-E73001D9AC-L000872](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L872) |
-| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L878) | عنوان Markdown (H1) | مراجع معيارية خارجية للمراجعة الدورية | 878 | [SRC-E73001D9AC-L000878](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L878) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) | عنوان Markdown (H3) | 1.1 هوية المنتج وحدوده التجارية | 39 | [SRC-E73001D9AC-L000039](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L39) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR | 44 | [SRC-E73001D9AC-L000044](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L44) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L52) | عنوان Markdown (H3) | 1.2 قرار نموذج التشغيل متعدد المستأجرين | 52 | [SRC-E73001D9AC-L000052](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L52) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L58) | عنوان Markdown (H2) | 2. المبادئ الحاكمة غير القابلة للتفاوض | 58 | [SRC-E73001D9AC-L000058](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L58) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L79) | عنوان Markdown (H2) | 3. الطموح الأقصى لا يعني تعقيدًا أقصى | 79 | [SRC-E73001D9AC-L000079](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L79) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L83) | عنوان Markdown (H3) | 3.1 قاعدة حاكمة لتنظيم القدرات والمهارات والوكلاء | 83 | [SRC-E73001D9AC-L000083](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L83) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L98) | عنوان Markdown (H1) | الجزء الثاني — حوكمة الخبراء والمراجعة متعددة التخصصات | 98 | [SRC-E73001D9AC-L000098](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L98) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L100) | عنوان Markdown (H2) | 4. مجالات الخبرة التي يجب تغطيتها | 100 | [SRC-E73001D9AC-L000100](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L100) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L125) | عنوان Markdown (H3) | 4.1 قاعدة المراجعة | 125 | [SRC-E73001D9AC-L000125](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L125) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L135) | عنوان Markdown (H1) | الجزء الثالث — المعمارية المنطقية المستهدفة | 135 | [SRC-E73001D9AC-L000135](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L135) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L137) | عنوان Markdown (H2) | 5. طبقات النظام وحدود الثقة | 137 | [SRC-E73001D9AC-L000137](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L137) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L141) | عنوان Markdown (H3) | الطبقة 1 — واجهة المستخدم وقنوات الإدخال | 141 | [SRC-E73001D9AC-L000141](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L141) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L148) | عنوان Markdown (H3) | الطبقة 2 — حافة الخدمة وواجهة API | 148 | [SRC-E73001D9AC-L000148](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L148) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L156) | عنوان Markdown (H3) | الطبقة 3 — الهوية والمستأجرون والصلاحيات | 156 | [SRC-E73001D9AC-L000156](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L156) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L163) | عنوان Markdown (H3) | الطبقة 4 — بوابة السياسات وإساءة الاستخدام | 163 | [SRC-E73001D9AC-L000163](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L163) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L171) | عنوان Markdown (H3) | الطبقة 5 — منسق الطلبات (Request Orchestrator) | 171 | [SRC-E73001D9AC-L000171](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L171) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L181) | عنوان Markdown (H3) | الطبقة 6 — فهم النية والتخطيط | 181 | [SRC-E73001D9AC-L000181](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L181) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L193) | عنوان Markdown (H3) | الطبقة 7 — طبقة البحث وجلب الصفحات | 193 | [SRC-E73001D9AC-L000193](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L193) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L203) | عنوان Markdown (H3) | الطبقة 8 — بوابة الأدوات وسجل قدراتها | 203 | [SRC-E73001D9AC-L000203](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L203) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L218) | عنوان Markdown (H3) | الطبقة 9 — تنفيذ الأدوات والعزل | 218 | [SRC-E73001D9AC-L000218](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L218) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L232) | عنوان Markdown (H3) | الطبقة 10 — توحيد الأدلة والمصادر (Evidence Ledger) | 232 | [SRC-E73001D9AC-L000232](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L232) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L241) | عنوان Markdown (H3) | الطبقة 11 — التحقق من الإجابة والنتائج | 241 | [SRC-E73001D9AC-L000241](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L241) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L250) | عنوان Markdown (H3) | الطبقة 12 — الذاكرة والتخزين المؤقت | 250 | [SRC-E73001D9AC-L000250](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L250) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L261) | عنوان Markdown (H3) | الطبقة 13 — الطوابير والعمال والمهام الطويلة | 261 | [SRC-E73001D9AC-L000261](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L261) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L271) | عنوان Markdown (H3) | الطبقة 14 — المراقبة والتدقيق والاستجابة للحوادث | 271 | [SRC-E73001D9AC-L000271](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L271) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L281) | عنوان Markdown (H3) | الطبقة 15 — التكوين والأسرار وسلسلة التوريد | 281 | [SRC-E73001D9AC-L000281](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L281) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L295) | عنوان Markdown (H1) | الجزء الرابع — الأمن السيبراني ونموذج التهديدات | 295 | [SRC-E73001D9AC-L000295](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L295) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L297) | عنوان Markdown (H2) | 6. نموذج التهديد (Threat Model) | 297 | [SRC-E73001D9AC-L000297](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L297) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L301) | عنوان Markdown (H3) | 6.1 حماية الطلبات وواجهات API | 301 | [SRC-E73001D9AC-L000301](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L301) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L311) | عنوان Markdown (H3) | 6.2 حماية وكيل البحث من SSRF والوصول إلى الشبكة الداخلية | 311 | [SRC-E73001D9AC-L000311](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L311) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L324) | عنوان Markdown (H3) | 6.3 حماية النماذج والوكلاء من حقن التعليمات | 324 | [SRC-E73001D9AC-L000324](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L324) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L334) | عنوان Markdown (H3) | 6.4 حماية البيانات والخصوصية | 334 | [SRC-E73001D9AC-L000334](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L334) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L344) | عنوان Markdown (H3) | 6.5 الصلاحيات والإجراءات ذات الأثر | 344 | [SRC-E73001D9AC-L000344](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L344) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L352) | عنوان Markdown (H3) | 6.6 التوافر ومقاومة استنزاف الموارد | 352 | [SRC-E73001D9AC-L000352](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L352) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L361) | عنوان Markdown (H3) | 6.7 الاستجابة الأمنية | 361 | [SRC-E73001D9AC-L000361](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L361) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L369) | عنوان Markdown (H3) | 6.8 ضمانات الأمن السيبراني الحاكمة للمهارات وسير العمل والوكلاء | 369 | [SRC-E73001D9AC-L000369](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L369) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L385) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 385 | [SRC-E73001D9AC-L000385](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L385) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L390) | عنوان Markdown (H1) | الجزء الخامس — الأداء، التزامن، السعة والتوسع | 390 | [SRC-E73001D9AC-L000390](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L390) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L392) | عنوان Markdown (H2) | 7. استراتيجية التحمل والسرعة | 392 | [SRC-E73001D9AC-L000392](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L392) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L394) | عنوان Markdown (H3) | 7.1 ميزانية لكل طلب | 394 | [SRC-E73001D9AC-L000394](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L394) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L407) | عنوان Markdown (H3) | 7.2 تحسين المسارات | 407 | [SRC-E73001D9AC-L000407](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L407) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L418) | عنوان Markdown (H3) | 7.3 حماية التنفيذ المتزامن | 418 | [SRC-E73001D9AC-L000418](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L418) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L426) | عنوان Markdown (H3) | 7.4 المرونة عند تعطل الموفرات | 426 | [SRC-E73001D9AC-L000426](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L426) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L436) | عنوان Markdown (H3) | 7.5 التوسع | 436 | [SRC-E73001D9AC-L000436](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L436) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L448) | عنوان Markdown (H2) | 8. مؤشرات الأداء والاعتمادية | 448 | [SRC-E73001D9AC-L000448](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L448) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L465) | عنوان Markdown (H3) | 8.1 أهداف الخدمة (SLOs) | 465 | [SRC-E73001D9AC-L000465](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L465) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L474) | عنوان Markdown (H1) | الجزء السادس — جودة الإجابات والذكاء العملي | 474 | [SRC-E73001D9AC-L000474](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L474) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L476) | عنوان Markdown (H2) | 9. عقد الإجابة | 476 | [SRC-E73001D9AC-L000476](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L476) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L492) | عنوان Markdown (H2) | 10. تحقق الادعاءات وجودة المصادر | 492 | [SRC-E73001D9AC-L000492](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L492) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L501) | عنوان Markdown (H2) | 11. التقييم والتحسين | 501 | [SRC-E73001D9AC-L000501](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L501) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L513) | عنوان Markdown (H1) | الجزء السابع — دورة التطوير والإصدارات | 513 | [SRC-E73001D9AC-L000513](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L513) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L515) | عنوان Markdown (H2) | 12. قواعد التطوير الآمن | 515 | [SRC-E73001D9AC-L000515](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L515) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L528) | عنوان Markdown (H2) | 13. طبقات الاختبار المطلوبة | 528 | [SRC-E73001D9AC-L000528](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L528) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L530) | عنوان Markdown (H3) | T0 — فحوص محلية أساسية | 530 | [SRC-E73001D9AC-L000530](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L530) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L533) | عنوان Markdown (H3) | T1 — اختبارات الوحدة | 533 | [SRC-E73001D9AC-L000533](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L533) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L536) | عنوان Markdown (H3) | T2 — اختبارات العقود والتكامل | 536 | [SRC-E73001D9AC-L000536](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L536) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L539) | عنوان Markdown (H3) | T3 — اختبارات النظام من طرف إلى طرف | 539 | [SRC-E73001D9AC-L000539](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L539) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L542) | عنوان Markdown (H3) | T4 — اختبارات التزامن والعزل | 542 | [SRC-E73001D9AC-L000542](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L542) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L545) | عنوان Markdown (H3) | T5 — اختبارات الأداء والحمل | 545 | [SRC-E73001D9AC-L000545](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L545) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L548) | عنوان Markdown (H3) | T6 — اختبارات الفشل والتعافي | 548 | [SRC-E73001D9AC-L000548](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L548) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L551) | عنوان Markdown (H3) | T7 — اختبارات الأمن والخصوصية | 551 | [SRC-E73001D9AC-L000551](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L551) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) | عنوان Markdown (H3) | T8 — تقييم جودة الإجابة | 554 | [SRC-E73001D9AC-L000554](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L554) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L559) | عنوان Markdown (H2) | 14. بوابات إصدار مقترحة | 559 | [SRC-E73001D9AC-L000559](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L559) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L571) | عنوان Markdown (H1) | الجزء الثامن — تشغيل الخدمة والتعافي | 571 | [SRC-E73001D9AC-L000571](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L571) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L573) | عنوان Markdown (H2) | 15. الجاهزية والتشخيص | 573 | [SRC-E73001D9AC-L000573](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L573) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L582) | عنوان Markdown (H2) | 16. النسخ الاحتياطي والاستعادة | 582 | [SRC-E73001D9AC-L000582](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L582) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L591) | عنوان Markdown (H2) | 17. خطة التدهور الآمن | 591 | [SRC-E73001D9AC-L000591](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L591) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L603) | عنوان Markdown (H1) | الجزء التاسع — خارطة التنفيذ والاعتماد | 603 | [SRC-E73001D9AC-L000603](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L603) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L605) | عنوان Markdown (H2) | 18. ترتيب التنفيذ بحسب المخاطر والاعتماديات | 605 | [SRC-E73001D9AC-L000605](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L605) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L655) | عنوان Markdown (H3) | ترتيب توسيع القدرات والمهارات والوكلاء | 655 | [SRC-E73001D9AC-L000655](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L655) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L666) | عنوان Markdown (H1) | الجزء العاشر — معمارية التوسع والتطوير المستمر | 666 | [SRC-E73001D9AC-L000666](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L666) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L670) | عنوان Markdown (H2) | 19. النتيجة المعمارية المستهدفة | 670 | [SRC-E73001D9AC-L000670](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L670) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L687) | عنوان Markdown (H2) | 20. نمط البداية: Modular Monolith بحدود واضحة | 687 | [SRC-E73001D9AC-L000687](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L687) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L702) | عنوان Markdown (H3) | متى نفصل الوحدة إلى خدمة مستقلة؟ | 702 | [SRC-E73001D9AC-L000702](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L702) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L713) | عنوان Markdown (H2) | 21. حدود المجال والواجهات (Domain Boundaries, Ports & Adapters) | 713 | [SRC-E73001D9AC-L000713](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L713) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L727) | عنوان Markdown (H2) | 22. عقود الأدوات والقدرات والمهارات وسير العمل والوكلاء والإضافات | 727 | [SRC-E73001D9AC-L000727](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L727) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L765) | عنوان Markdown (H2) | 23. إصدار واجهات API وعقود الرسائل | 765 | [SRC-E73001D9AC-L000765](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L765) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L777) | عنوان Markdown (H2) | 24. تطور مخططات البيانات والترحيلات | 777 | [SRC-E73001D9AC-L000777](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L777) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L791) | عنوان Markdown (H2) | 25. حالة الطلب والتوزيع والتوسع الأفقي | 791 | [SRC-E73001D9AC-L000791](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L791) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L806) | عنوان Markdown (H2) | 26. اختبارات اللياقة المعمارية (Architecture Fitness Functions) | 806 | [SRC-E73001D9AC-L000806](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L806) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L829) | عنوان Markdown (H2) | 27. إدارة الديون التقنية والتغيير المستمر | 829 | [SRC-E73001D9AC-L000829](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L829) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L842) | عنوان Markdown (H2) | 28. بوابة قبول التوسع والتطوير | 842 | [SRC-E73001D9AC-L000842](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L842) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L862) | عنوان Markdown (H1) | الجزء الحادي عشر — تعريف “مكتمل” وقرار تغيير المتطلبات | 862 | [SRC-E73001D9AC-L000862](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L862) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L864) | عنوان Markdown (H2) | 29. تعريف الإنجاز | 864 | [SRC-E73001D9AC-L000864](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L864) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L876) | عنوان Markdown (H2) | 30. سجل القرارات والاستثناءات | 876 | [SRC-E73001D9AC-L000876](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L876) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L891) | عنوان Markdown (H2) | 31. القاعدة النهائية | 891 | [SRC-E73001D9AC-L000891](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L891) |
+| [docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L897) | عنوان Markdown (H1) | مراجع معيارية خارجية للمراجعة الدورية | 897 | [SRC-E73001D9AC-L000897](OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L897) |
 | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) | عنوان Markdown (H1) | Omarai — خط الأساس الهندسي للمنصات العالمية واسعة النطاق | 1 | [SRC-D17CE3D12F-L000001](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L1) |
 | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 7 | [SRC-D17CE3D12F-L000007](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) |
 | [docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 7 | [SRC-D17CE3D12F-L000007](OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L7) |
@@ -2958,19 +3002,22 @@
 | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 5 | [SRC-E1EAC11EFE-L000005](OMARAI_HANDOFF_CHECKLIST_AR.md#L5) |
 | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 6 | [SRC-E1EAC11EFE-L000006](OMARAI_HANDOFF_CHECKLIST_AR.md#L6) |
 | [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 6 | [SRC-E1EAC11EFE-L000006](OMARAI_HANDOFF_CHECKLIST_AR.md#L6) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L7) | عنوان Markdown (H2) | مستجد التسليم — PR #98 وإصلاح هوية البناء | 7 | [SRC-E1EAC11EFE-L000007](OMARAI_HANDOFF_CHECKLIST_AR.md#L7) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 10 | [SRC-E1EAC11EFE-L000010](OMARAI_HANDOFF_CHECKLIST_AR.md#L10) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 11 | [SRC-E1EAC11EFE-L000011](OMARAI_HANDOFF_CHECKLIST_AR.md#L11) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 12 | [SRC-E1EAC11EFE-L000012](OMARAI_HANDOFF_CHECKLIST_AR.md#L12) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 13 | [SRC-E1EAC11EFE-L000013](OMARAI_HANDOFF_CHECKLIST_AR.md#L13) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L15) | عنوان Markdown (H2) | خط الأساس الذي جرى التحقق منه | 15 | [SRC-E1EAC11EFE-L000015](OMARAI_HANDOFF_CHECKLIST_AR.md#L15) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L25) | عنوان Markdown (H2) | إصلاح البحث المعمّق — اجتاز CI؛ القبول الحي ما زال متعطلًا | 25 | [SRC-E1EAC11EFE-L000025](OMARAI_HANDOFF_CHECKLIST_AR.md#L25) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L27) | عنوان Markdown (H3) | الملاحظة البرمجية | 27 | [SRC-E1EAC11EFE-L000027](OMARAI_HANDOFF_CHECKLIST_AR.md#L27) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L31) | عنوان Markdown (H3) | التصحيح واختبارات الانحدار | 31 | [SRC-E1EAC11EFE-L000031](OMARAI_HANDOFF_CHECKLIST_AR.md#L31) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L40) | عنوان Markdown (H2) | بوابات التسليم النهائية | 40 | [SRC-E1EAC11EFE-L000040](OMARAI_HANDOFF_CHECKLIST_AR.md#L40) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 52 | [SRC-E1EAC11EFE-L000052](OMARAI_HANDOFF_CHECKLIST_AR.md#L52) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L54) | عنوان Markdown (H2) | الاختبارات العملية بعد الموافقة على النشر | 54 | [SRC-E1EAC11EFE-L000054](OMARAI_HANDOFF_CHECKLIST_AR.md#L54) |
-| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L65) | عنوان Markdown (H2) | المطلوب لاستكمال القبول | 65 | [SRC-E1EAC11EFE-L000065](OMARAI_HANDOFF_CHECKLIST_AR.md#L65) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 9 | [SRC-E1EAC11EFE-L000009](OMARAI_HANDOFF_CHECKLIST_AR.md#L9) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L11) | عنوان Markdown (H2) | تحديث حاكم — 6 نوفمبر 2026 | 11 | [SRC-E1EAC11EFE-L000011](OMARAI_HANDOFF_CHECKLIST_AR.md#L11) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_IN_MAIN | 16 | [SRC-E1EAC11EFE-L000016](OMARAI_HANDOFF_CHECKLIST_AR.md#L16) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 17 | [SRC-E1EAC11EFE-L000017](OMARAI_HANDOFF_CHECKLIST_AR.md#L17) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 18 | [SRC-E1EAC11EFE-L000018](OMARAI_HANDOFF_CHECKLIST_AR.md#L18) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L23) | عنوان Markdown (H2) | مستجد التسليم — PR #98 وإصلاح هوية البناء | 23 | [SRC-E1EAC11EFE-L000023](OMARAI_HANDOFF_CHECKLIST_AR.md#L23) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 26 | [SRC-E1EAC11EFE-L000026](OMARAI_HANDOFF_CHECKLIST_AR.md#L26) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 28 | [SRC-E1EAC11EFE-L000028](OMARAI_HANDOFF_CHECKLIST_AR.md#L28) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L31) | عنوان Markdown (H2) | خط الأساس الذي جرى التحقق منه | 31 | [SRC-E1EAC11EFE-L000031](OMARAI_HANDOFF_CHECKLIST_AR.md#L31) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L41) | عنوان Markdown (H2) | إصلاح البحث المعمّق — اجتاز CI؛ القبول الحي ما زال متعطلًا | 41 | [SRC-E1EAC11EFE-L000041](OMARAI_HANDOFF_CHECKLIST_AR.md#L41) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L43) | عنوان Markdown (H3) | الملاحظة البرمجية | 43 | [SRC-E1EAC11EFE-L000043](OMARAI_HANDOFF_CHECKLIST_AR.md#L43) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L47) | عنوان Markdown (H3) | التصحيح واختبارات الانحدار | 47 | [SRC-E1EAC11EFE-L000047](OMARAI_HANDOFF_CHECKLIST_AR.md#L47) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L56) | عنوان Markdown (H2) | بوابات التسليم النهائية | 56 | [SRC-E1EAC11EFE-L000056](OMARAI_HANDOFF_CHECKLIST_AR.md#L56) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 68 | [SRC-E1EAC11EFE-L000068](OMARAI_HANDOFF_CHECKLIST_AR.md#L68) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L70) | عنوان Markdown (H2) | الاختبارات العملية بعد الموافقة على النشر | 70 | [SRC-E1EAC11EFE-L000070](OMARAI_HANDOFF_CHECKLIST_AR.md#L70) |
+| [docs/OMARAI_HANDOFF_CHECKLIST_AR.md](OMARAI_HANDOFF_CHECKLIST_AR.md#L81) | عنوان Markdown (H2) | المطلوب لاستكمال القبول | 81 | [SRC-E1EAC11EFE-L000081](OMARAI_HANDOFF_CHECKLIST_AR.md#L81) |
 | [docs/OMARAI_MODEL_PROVIDER_FAILOVER_AR.md](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L1) | عنوان Markdown (H1) | إعداد موفري النماذج والاحتياط — Gemini وMistral | 1 | [SRC-D3418B07FF-L000001](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L1) |
 | [docs/OMARAI_MODEL_PROVIDER_FAILOVER_AR.md](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L4) | عنوان Markdown (H2) | 1. الإعداد | 4 | [SRC-D3418B07FF-L000004](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L4) |
 | [docs/OMARAI_MODEL_PROVIDER_FAILOVER_AR.md](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GEMINI_API_KEY | 10 | [SRC-D3418B07FF-L000010](OMARAI_MODEL_PROVIDER_FAILOVER_AR.md#L10) |
@@ -3015,6 +3062,34 @@
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L103) | عنوان Markdown (H2) | 6. سياسة الإغلاق | 103 | [SRC-B2C95EAEE1-L000103](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L103) |
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L106) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 106 | [SRC-B2C95EAEE1-L000106](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L106) |
 | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L110) | عنوان Markdown (H2) | الروابط المرجعية | 110 | [SRC-B2C95EAEE1-L000110](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L110) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L1) | عنوان Markdown (H1) | Omarai — حالة المشروع والقرارات الحاكمة | 1 | [SRC-8872CF2B16-L000001](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L1) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L10) | عنوان Markdown (H2) | 1. هوية Omarai والهدف التجاري المعتمد | 10 | [SRC-8872CF2B16-L000010](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L10) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L16) | عنوان Markdown (H3) | قواعد المنتج غير القابلة للتجاوز | 16 | [SRC-8872CF2B16-L000016](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L16) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L27) | عنوان Markdown (H2) | 2. القرارات المعمارية الحاكمة | 27 | [SRC-8872CF2B16-L000027](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L27) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 34 | [SRC-8872CF2B16-L000034](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_REQUIRED | 34 | [SRC-8872CF2B16-L000034](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 34 | [SRC-8872CF2B16-L000034](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L36) | عنوان Markdown (H2) | 3. قرار تعدد المستأجرين | 36 | [SRC-8872CF2B16-L000036](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L36) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L42) | عنوان Markdown (H2) | 4. الحالة المثبتة على main في 6 نوفمبر 2026 | 42 | [SRC-8872CF2B16-L000042](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L42) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L44) | عنوان Markdown (H3) | خط الأساس والفحوص | 44 | [SRC-8872CF2B16-L000044](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L44) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L51) | عنوان Markdown (H3) | الدمجات التي أصبحت جزءًا من main | 51 | [SRC-8872CF2B16-L000051](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L51) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L59) | عنوان Markdown (H3) | ما يعمل في مساحة العمل على main | 59 | [SRC-8872CF2B16-L000059](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L59) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L69) | عنوان Markdown (H2) | 5. عمل قيد المراجعة — لا يُنسب إلى main | 69 | [SRC-8872CF2B16-L000069](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L69) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L71) | عنوان Markdown (H3) | PR #155 — ملف المنتج واكتشاف نية الشراء | 71 | [SRC-8872CF2B16-L000071](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L71) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L88) | عنوان Markdown (H3) | PR #153 — Firecrawl | 88 | [SRC-8872CF2B16-L000088](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L88) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L92) | عنوان Markdown (H3) | PR #148 — hosted smoke preflight | 92 | [SRC-8872CF2B16-L000092](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L92) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L96) | عنوان Markdown (H2) | 6. المتبقي حسب الأولوية | 96 | [SRC-8872CF2B16-L000096](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L96) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L98) | عنوان Markdown (H3) | P0 — لا تتجاوزها قبل الاستخدام التجاري الحقيقي | 98 | [SRC-8872CF2B16-L000098](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L98) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L105) | عنوان Markdown (H3) | P1 — اكتمال الأساس التشغيلي والمنتجي | 105 | [SRC-8872CF2B16-L000105](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L105) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L112) | عنوان Markdown (H3) | P2 — التوسع بعد إثبات الأساس | 112 | [SRC-8872CF2B16-L000112](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L112) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L117) | عنوان Markdown (H2) | 7. بوابات الإفراج والاختبار | 117 | [SRC-8872CF2B16-L000117](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L117) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L125) | عنوان Markdown (H2) | 8. المراجع ذات الأولوية | 125 | [SRC-8872CF2B16-L000125](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L125) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L129) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 129 | [SRC-8872CF2B16-L000129](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L129) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR | 130 | [SRC-8872CF2B16-L000130](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L130) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 131 | [SRC-8872CF2B16-L000131](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L131) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L132) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 132 | [SRC-8872CF2B16-L000132](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L132) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L133) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_HANDOFF_CHECKLIST_AR | 133 | [SRC-8872CF2B16-L000133](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L133) |
+| [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L134) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 134 | [SRC-8872CF2B16-L000134](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L134) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | عنوان Markdown (H2) | مراجعة المعمارية والأمن والإصلاحات المتقاطعة — 1 نوفمبر 2026 | 1 | [SRC-62CE5126F9-L000001](OMARAI_REMEDIATION_REGISTER_AR.md#L1) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L2) | عنوان Markdown (H2) | استكمال تحقق جلسات المتصفح وHTTP ingress — 1 نوفمبر 2026 | 2 | [SRC-62CE5126F9-L000002](OMARAI_REMEDIATION_REGISTER_AR.md#L2) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L5) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 5 | [SRC-62CE5126F9-L000005](OMARAI_REMEDIATION_REGISTER_AR.md#L5) |
@@ -3095,35 +3170,43 @@
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L482) | عنوان Markdown (H2) | تصحيح حالة التقييم بعد دمج PR #125 — 29 أكتوبر 2026 | 482 | [SRC-62CE5126F9-L000482](OMARAI_REMEDIATION_REGISTER_AR.md#L482) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L489) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 489 | [SRC-62CE5126F9-L000489](OMARAI_REMEDIATION_REGISTER_AR.md#L489) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L492) | عنوان Markdown (H2) | تحديث حاكم — تحقق حي بعد دمج مجموعة التقييم — 29 أكتوبر 2026 | 492 | [SRC-62CE5126F9-L000492](OMARAI_REMEDIATION_REGISTER_AR.md#L492) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L508) | عنوان Markdown (H2) | مصالحة حاكمة لحالة المشروع والاتفاقات — 6 نوفمبر 2026 | 508 | [SRC-62CE5126F9-L000508](OMARAI_REMEDIATION_REGISTER_AR.md#L508) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L512) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 512 | [SRC-62CE5126F9-L000512](OMARAI_REMEDIATION_REGISTER_AR.md#L512) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L513) | عنوان Markdown (H3) | قرارات المنتج التي يجب ألا تنحرف عنها الإصلاحات | 513 | [SRC-62CE5126F9-L000513](OMARAI_REMEDIATION_REGISTER_AR.md#L513) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L520) | عنوان Markdown (H3) | ما دخل main | 520 | [SRC-62CE5126F9-L000520](OMARAI_REMEDIATION_REGISTER_AR.md#L520) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L527) | عنوان Markdown (H3) | التغييرات المفتوحة وغير المنسوبة إلى main | 527 | [SRC-62CE5126F9-L000527](OMARAI_REMEDIATION_REGISTER_AR.md#L527) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L534) | عنوان Markdown (H3) | المخاطر والقبول المعلق | 534 | [SRC-62CE5126F9-L000534](OMARAI_REMEDIATION_REGISTER_AR.md#L534) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L540) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_IMPLEMENTED | 540 | [SRC-62CE5126F9-L000540](OMARAI_REMEDIATION_REGISTER_AR.md#L540) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات الأساسية الأولي | 1 | [SRC-B9C3015420-L000001](OMARAI_REQUIREMENTS_REGISTER.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 6 | [SRC-B9C3015420-L000006](OMARAI_REQUIREMENTS_REGISTER.md#L6) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L8) | عنوان Markdown (H2) | طريقة القراءة | 8 | [SRC-B9C3015420-L000008](OMARAI_REQUIREMENTS_REGISTER.md#L8) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_P0_CODING_AUDIT_2026 | 22 | [SRC-B9C3015420-L000022](OMARAI_REQUIREMENTS_REGISTER.md#L22) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 24 | [SRC-B9C3015420-L000024](OMARAI_REQUIREMENTS_REGISTER.md#L24) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 42 | [SRC-B9C3015420-L000042](OMARAI_REQUIREMENTS_REGISTER.md#L42) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 42 | [SRC-B9C3015420-L000042](OMARAI_REQUIREMENTS_REGISTER.md#L42) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 42 | [SRC-B9C3015420-L000042](OMARAI_REQUIREMENTS_REGISTER.md#L42) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 59 | [SRC-B9C3015420-L000059](OMARAI_REQUIREMENTS_REGISTER.md#L59) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L59) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 59 | [SRC-B9C3015420-L000059](OMARAI_REQUIREMENTS_REGISTER.md#L59) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L93) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 93 | [SRC-B9C3015420-L000093](OMARAI_REQUIREMENTS_REGISTER.md#L93) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L117) | عنوان Markdown (H2) | متطلبات معمارية إضافية: القدرات والمهارات وسير العمل والوكلاء | 117 | [SRC-B9C3015420-L000117](OMARAI_REQUIREMENTS_REGISTER.md#L117) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L133) | عنوان Markdown (H2) | متطلبات الأمن السيبراني الإضافية لمعمارية المهارات وسير العمل والوكلاء | 133 | [SRC-B9C3015420-L000133](OMARAI_REQUIREMENTS_REGISTER.md#L133) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L155) | عنوان Markdown (H2) | كيفية استخدام هذا السجل في التنفيذ | 155 | [SRC-B9C3015420-L000155](OMARAI_REQUIREMENTS_REGISTER.md#L155) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L165) | عنوان Markdown (H2) | الحالة بعد تسوية الأدلة | 165 | [SRC-B9C3015420-L000165](OMARAI_REQUIREMENTS_REGISTER.md#L165) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L174) | عنوان Markdown (H2) | الحالة المرجعية الحالية بعد دمج PR #76 — 23 أكتوبر 2026 | 174 | [SRC-B9C3015420-L000174](OMARAI_REQUIREMENTS_REGISTER.md#L174) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L179) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 179 | [SRC-B9C3015420-L000179](OMARAI_REQUIREMENTS_REGISTER.md#L179) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L188) | عنوان Markdown (H2) | تحديث تنفيذ تقييم الذكاء الاصطناعي — 29 أكتوبر 2026 | 188 | [SRC-B9C3015420-L000188](OMARAI_REQUIREMENTS_REGISTER.md#L188) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L205) | عنوان Markdown (H2) | تحديث أدلة تقييم الإجابات — 29 أكتوبر 2026 | 205 | [SRC-B9C3015420-L000205](OMARAI_REQUIREMENTS_REGISTER.md#L205) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L211) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 211 | [SRC-B9C3015420-L000211](OMARAI_REQUIREMENTS_REGISTER.md#L211) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L214) | عنوان Markdown (H3) | دليل تحقق تقييم الجودة على PR #125 — 29 أكتوبر 2026 | 214 | [SRC-B9C3015420-L000214](OMARAI_REQUIREMENTS_REGISTER.md#L214) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L223) | عنوان Markdown (H2) | ملحق تتبع بعد دمج منظومة التقييم — 29 أكتوبر 2026 | 223 | [SRC-B9C3015420-L000223](OMARAI_REQUIREMENTS_REGISTER.md#L223) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L240) | عنوان Markdown (H2) | تحديث حاكم — تحقق حي بعد دمج مجموعة التقييم — 29 أكتوبر 2026 | 240 | [SRC-B9C3015420-L000240](OMARAI_REQUIREMENTS_REGISTER.md#L240) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L249) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 249 | [SRC-B9C3015420-L000249](OMARAI_REQUIREMENTS_REGISTER.md#L249) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L253) | عنوان Markdown (H2) | ملحق متابعة واجهة مساحة العمل — 3 نوفمبر 2026 | 253 | [SRC-B9C3015420-L000253](OMARAI_REQUIREMENTS_REGISTER.md#L253) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L258) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 258 | [SRC-B9C3015420-L000258](OMARAI_REQUIREMENTS_REGISTER.md#L258) |
-| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L267) | عنوان Markdown (H2) | ملحق مراجعة اتساق واجهة مساحة العمل — 4 نوفمبر 2026 | 267 | [SRC-B9C3015420-L000267](OMARAI_REQUIREMENTS_REGISTER.md#L267) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 9 | [SRC-B9C3015420-L000009](OMARAI_REQUIREMENTS_REGISTER.md#L9) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L10) | عنوان Markdown (H2) | طريقة القراءة | 10 | [SRC-B9C3015420-L000010](OMARAI_REQUIREMENTS_REGISTER.md#L10) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_P0_CODING_AUDIT_2026 | 24 | [SRC-B9C3015420-L000024](OMARAI_REQUIREMENTS_REGISTER.md#L24) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 26 | [SRC-B9C3015420-L000026](OMARAI_REQUIREMENTS_REGISTER.md#L26) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 44 | [SRC-B9C3015420-L000044](OMARAI_REQUIREMENTS_REGISTER.md#L44) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 44 | [SRC-B9C3015420-L000044](OMARAI_REQUIREMENTS_REGISTER.md#L44) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 44 | [SRC-B9C3015420-L000044](OMARAI_REQUIREMENTS_REGISTER.md#L44) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L61) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 61 | [SRC-B9C3015420-L000061](OMARAI_REQUIREMENTS_REGISTER.md#L61) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L61) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026 | 61 | [SRC-B9C3015420-L000061](OMARAI_REQUIREMENTS_REGISTER.md#L61) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_TESTED | 95 | [SRC-B9C3015420-L000095](OMARAI_REQUIREMENTS_REGISTER.md#L95) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L119) | عنوان Markdown (H2) | متطلبات معمارية إضافية: القدرات والمهارات وسير العمل والوكلاء | 119 | [SRC-B9C3015420-L000119](OMARAI_REQUIREMENTS_REGISTER.md#L119) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L135) | عنوان Markdown (H2) | متطلبات الأمن السيبراني الإضافية لمعمارية المهارات وسير العمل والوكلاء | 135 | [SRC-B9C3015420-L000135](OMARAI_REQUIREMENTS_REGISTER.md#L135) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L157) | عنوان Markdown (H2) | كيفية استخدام هذا السجل في التنفيذ | 157 | [SRC-B9C3015420-L000157](OMARAI_REQUIREMENTS_REGISTER.md#L157) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L167) | عنوان Markdown (H2) | الحالة بعد تسوية الأدلة | 167 | [SRC-B9C3015420-L000167](OMARAI_REQUIREMENTS_REGISTER.md#L167) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L176) | عنوان Markdown (H2) | الحالة المرجعية الحالية بعد دمج PR #76 — 23 أكتوبر 2026 | 176 | [SRC-B9C3015420-L000176](OMARAI_REQUIREMENTS_REGISTER.md#L176) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L181) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_CONFIRMED | 181 | [SRC-B9C3015420-L000181](OMARAI_REQUIREMENTS_REGISTER.md#L181) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L190) | عنوان Markdown (H2) | تحديث تنفيذ تقييم الذكاء الاصطناعي — 29 أكتوبر 2026 | 190 | [SRC-B9C3015420-L000190](OMARAI_REQUIREMENTS_REGISTER.md#L190) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L207) | عنوان Markdown (H2) | تحديث أدلة تقييم الإجابات — 29 أكتوبر 2026 | 207 | [SRC-B9C3015420-L000207](OMARAI_REQUIREMENTS_REGISTER.md#L207) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L213) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_MEASURED | 213 | [SRC-B9C3015420-L000213](OMARAI_REQUIREMENTS_REGISTER.md#L213) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L216) | عنوان Markdown (H3) | دليل تحقق تقييم الجودة على PR #125 — 29 أكتوبر 2026 | 216 | [SRC-B9C3015420-L000216](OMARAI_REQUIREMENTS_REGISTER.md#L216) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L225) | عنوان Markdown (H2) | ملحق تتبع بعد دمج منظومة التقييم — 29 أكتوبر 2026 | 225 | [SRC-B9C3015420-L000225](OMARAI_REQUIREMENTS_REGISTER.md#L225) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L242) | عنوان Markdown (H2) | تحديث حاكم — تحقق حي بعد دمج مجموعة التقييم — 29 أكتوبر 2026 | 242 | [SRC-B9C3015420-L000242](OMARAI_REQUIREMENTS_REGISTER.md#L242) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L251) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | PUBLIC_OMARAI_BUILD_SHA | 251 | [SRC-B9C3015420-L000251](OMARAI_REQUIREMENTS_REGISTER.md#L251) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L255) | عنوان Markdown (H2) | ملحق متابعة واجهة مساحة العمل — 3 نوفمبر 2026 | 255 | [SRC-B9C3015420-L000255](OMARAI_REQUIREMENTS_REGISTER.md#L255) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L260) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 260 | [SRC-B9C3015420-L000260](OMARAI_REQUIREMENTS_REGISTER.md#L260) |
+| [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L269) | عنوان Markdown (H2) | ملحق مراجعة اتساق واجهة مساحة العمل — 4 نوفمبر 2026 | 269 | [SRC-B9C3015420-L000269](OMARAI_REQUIREMENTS_REGISTER.md#L269) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات والتتبع والنضج وبوابات الاعتماد | 1 | [SRC-65551FB29F-L000001](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 8 | [SRC-65551FB29F-L000008](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) |
@@ -3179,46 +3262,53 @@
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L560) | عنوان Markdown (H2) | تجربة المستخدم والاقتصاد | 560 | [SRC-65551FB29F-L000560](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L560) |
 | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L568) | عنوان Markdown (H1) | القرار الحاكم | 568 | [SRC-65551FB29F-L000568](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L568) |
 | [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L1) | عنوان Markdown (H1) | Omarai — معمارية ذكاء المبيعات واكتساب العملاء | 1 | [SRC-41EDB66D3C-L000001](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L1) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L13) | عنوان Markdown (H2) | 1. هوية المنتج والهدف | 13 | [SRC-41EDB66D3C-L000013](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L13) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L19) | عنوان Markdown (H3) | ما ليس Omarai | 19 | [SRC-41EDB66D3C-L000019](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L19) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L28) | عنوان Markdown (H3) | معيار النجاح | 28 | [SRC-41EDB66D3C-L000028](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L28) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L34) | عنوان Markdown (H2) | 2. علاقة هذه المعمارية بالمعمارية القائمة | 34 | [SRC-41EDB66D3C-L000034](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L34) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L51) | عنوان Markdown (H2) | 3. المعمارية المنطقية المستهدفة | 51 | [SRC-41EDB66D3C-L000051](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L51) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L53) | عنوان Markdown (H3) | 3.1 منصة Omarai الأساسية — Platform Core | 53 | [SRC-41EDB66D3C-L000053](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L53) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L70) | عنوان Markdown (H3) | 3.2 طبقة ذكاء المبيعات — Sales Domain | 70 | [SRC-41EDB66D3C-L000070](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L70) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L85) | عنوان Markdown (H3) | 3.3 طبقة البيانات والتطبيق — Data & Experience | 85 | [SRC-41EDB66D3C-L000085](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L85) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L103) | عنوان Markdown (H2) | 4. دورة العمل التجارية القياسية | 103 | [SRC-41EDB66D3C-L000103](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L103) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L122) | عنوان Markdown (H2) | 5. تصنيف إشارات الطلب | 122 | [SRC-41EDB66D3C-L000122](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L122) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L138) | عنوان Markdown (H3) | حالات التأهيل المقترحة | 138 | [SRC-41EDB66D3C-L000138](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L138) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L150) | عنوان Markdown (H2) | 6. ملف المنتج والسوق | 150 | [SRC-41EDB66D3C-L000150](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L150) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L152) | عنوان Markdown (H3) | 6.1 ProductProfile — ملف المنتج | 152 | [SRC-41EDB66D3C-L000152](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L152) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L168) | عنوان Markdown (H3) | 6.2 MarketProfile / ICP | 168 | [SRC-41EDB66D3C-L000168](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L168) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L185) | عنوان Markdown (H2) | 7. تخطيط البحث: عامّ ومتخصص دون تحيز قطاعي | 185 | [SRC-41EDB66D3C-L000185](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L185) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L205) | عنوان Markdown (H2) | 8. سجل الأدلة — Demand Evidence Record | 205 | [SRC-41EDB66D3C-L000205](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L205) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L233) | عنوان Markdown (H2) | 9. تأهيل الفرص: أبعاد مستقلة لا «احتمال شراء» مختلق | 233 | [SRC-41EDB66D3C-L000233](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L233) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L252) | عنوان Markdown (H2) | 10. نموذج البيانات والعزل | 252 | [SRC-41EDB66D3C-L000252](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L252) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L271) | عنوان Markdown (H3) | عزل المستأجرين | 271 | [SRC-41EDB66D3C-L000271](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L271) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L285) | عنوان Markdown (H2) | 11. حدود الأمان والامتثال التجاري | 285 | [SRC-41EDB66D3C-L000285](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L285) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L299) | عنوان Markdown (H2) | 12. توزيع المسؤوليات على الكود القائم | 299 | [SRC-41EDB66D3C-L000299](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L299) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L306) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 306 | [SRC-41EDB66D3C-L000306](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L306) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L315) | عنوان Markdown (H3) | ملاحظات مباشرة على الحالة الحالية | 315 | [SRC-41EDB66D3C-L000315](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L315) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L342) | عنوان Markdown (H2) | 13. ما الذي سيتغير؟ | 342 | [SRC-41EDB66D3C-L000342](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L342) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L357) | عنوان Markdown (H3) | ما لن يتغير | 357 | [SRC-41EDB66D3C-L000357](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L357) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L369) | عنوان Markdown (H2) | 14. خطة التحول المرحلية | 369 | [SRC-41EDB66D3C-L000369](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L369) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L371) | عنوان Markdown (H3) | المرحلة 0 — تثبيت خط الأساس وحماية التغيير | 371 | [SRC-41EDB66D3C-L000371](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L371) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L381) | عنوان Markdown (H3) | المرحلة 1 — ProductProfile وMarket/ICP | 381 | [SRC-41EDB66D3C-L000381](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L381) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L390) | عنوان Markdown (H3) | المرحلة 2 — Demand Signal Taxonomy | 390 | [SRC-41EDB66D3C-L000390](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L390) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L399) | عنوان Markdown (H3) | المرحلة 3 — استراتيجية البحث المرتبطة بالمنتج | 399 | [SRC-41EDB66D3C-L000399](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L399) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L409) | عنوان Markdown (H3) | المرحلة 4 — التأهيل وربط الكيانات | 409 | [SRC-41EDB66D3C-L000409](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L409) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L419) | عنوان Markdown (H3) | المرحلة 5 — تخزين العملاء وتعدد المستأجرين | 419 | [SRC-41EDB66D3C-L000419](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L419) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L428) | عنوان Markdown (H3) | المرحلة 6 — توصيات البيع والتقييم | 428 | [SRC-41EDB66D3C-L000428](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L428) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L440) | عنوان Markdown (H2) | 15. الاختبارات ومعايير القبول | 440 | [SRC-41EDB66D3C-L000440](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L440) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L467) | عنوان Markdown (H2) | 16. ما نؤجله عمدًا | 467 | [SRC-41EDB66D3C-L000467](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L467) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L480) | عنوان Markdown (H2) | 17. قرارات تحتاج اعتمادًا أو مراجعة بشرية | 480 | [SRC-41EDB66D3C-L000480](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L480) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L494) | عنوان Markdown (H2) | 18. مراجع الحالة التي استندت إليها هذه المواءمة | 494 | [SRC-41EDB66D3C-L000494](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L494) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L505) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 505 | [SRC-41EDB66D3C-L000505](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L505) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L509) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 509 | [SRC-41EDB66D3C-L000509](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L509) |
-| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L512) | عنوان Markdown (H2) | 19. قاعدة التحديث والحوكمة | 512 | [SRC-41EDB66D3C-L000512](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L512) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L13) | عنوان Markdown (H2) | تحديث تنفيذي ومصالحة الحالة — 6 نوفمبر 2026 | 13 | [SRC-41EDB66D3C-L000013](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L13) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L17) | عنوان Markdown (H3) | ما ثبت على main | 17 | [SRC-41EDB66D3C-L000017](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L17) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 24 | [SRC-41EDB66D3C-L000024](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L24) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L25) | عنوان Markdown (H3) | ما لم يصبح جزءًا من main | 25 | [SRC-41EDB66D3C-L000025](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L25) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 28 | [SRC-41EDB66D3C-L000028](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L28) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L31) | عنوان Markdown (H3) | ما يزال غير مثبت | 31 | [SRC-41EDB66D3C-L000031](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L31) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_IMPLEMENTED | 38 | [SRC-41EDB66D3C-L000038](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L38) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L39) | عنوان Markdown (H2) | 1. هوية المنتج والهدف | 39 | [SRC-41EDB66D3C-L000039](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L39) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L45) | عنوان Markdown (H3) | ما ليس Omarai | 45 | [SRC-41EDB66D3C-L000045](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L45) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L54) | عنوان Markdown (H3) | معيار النجاح | 54 | [SRC-41EDB66D3C-L000054](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L54) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L60) | عنوان Markdown (H2) | 2. علاقة هذه المعمارية بالمعمارية القائمة | 60 | [SRC-41EDB66D3C-L000060](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L60) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L77) | عنوان Markdown (H2) | 3. المعمارية المنطقية المستهدفة | 77 | [SRC-41EDB66D3C-L000077](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L77) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L79) | عنوان Markdown (H3) | 3.1 منصة Omarai الأساسية — Platform Core | 79 | [SRC-41EDB66D3C-L000079](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L79) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L96) | عنوان Markdown (H3) | 3.2 طبقة ذكاء المبيعات — Sales Domain | 96 | [SRC-41EDB66D3C-L000096](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L96) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L111) | عنوان Markdown (H3) | 3.3 طبقة البيانات والتطبيق — Data & Experience | 111 | [SRC-41EDB66D3C-L000111](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L111) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L129) | عنوان Markdown (H2) | 4. دورة العمل التجارية القياسية | 129 | [SRC-41EDB66D3C-L000129](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L129) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L148) | عنوان Markdown (H2) | 5. تصنيف إشارات الطلب | 148 | [SRC-41EDB66D3C-L000148](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L148) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L164) | عنوان Markdown (H3) | حالات التأهيل المقترحة | 164 | [SRC-41EDB66D3C-L000164](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L164) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L176) | عنوان Markdown (H2) | 6. ملف المنتج والسوق | 176 | [SRC-41EDB66D3C-L000176](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L176) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L178) | عنوان Markdown (H3) | 6.1 ProductProfile — ملف المنتج | 178 | [SRC-41EDB66D3C-L000178](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L178) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L194) | عنوان Markdown (H3) | 6.2 MarketProfile / ICP | 194 | [SRC-41EDB66D3C-L000194](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L194) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L211) | عنوان Markdown (H2) | 7. تخطيط البحث: عامّ ومتخصص دون تحيز قطاعي | 211 | [SRC-41EDB66D3C-L000211](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L211) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L231) | عنوان Markdown (H2) | 8. سجل الأدلة — Demand Evidence Record | 231 | [SRC-41EDB66D3C-L000231](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L231) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L259) | عنوان Markdown (H2) | 9. تأهيل الفرص: أبعاد مستقلة لا «احتمال شراء» مختلق | 259 | [SRC-41EDB66D3C-L000259](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L259) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L278) | عنوان Markdown (H2) | 10. نموذج البيانات والعزل | 278 | [SRC-41EDB66D3C-L000278](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L278) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L297) | عنوان Markdown (H3) | عزل المستأجرين | 297 | [SRC-41EDB66D3C-L000297](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L297) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L311) | عنوان Markdown (H2) | 11. حدود الأمان والامتثال التجاري | 311 | [SRC-41EDB66D3C-L000311](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L311) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L325) | عنوان Markdown (H2) | 12. توزيع المسؤوليات على الكود القائم | 325 | [SRC-41EDB66D3C-L000325](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L325) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L332) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 332 | [SRC-41EDB66D3C-L000332](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L332) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L341) | عنوان Markdown (H3) | ملاحظات مباشرة على الحالة الحالية | 341 | [SRC-41EDB66D3C-L000341](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L341) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L368) | عنوان Markdown (H2) | 13. ما الذي سيتغير؟ | 368 | [SRC-41EDB66D3C-L000368](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L368) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L383) | عنوان Markdown (H3) | ما لن يتغير | 383 | [SRC-41EDB66D3C-L000383](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L383) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L395) | عنوان Markdown (H2) | 14. خطة التحول المرحلية | 395 | [SRC-41EDB66D3C-L000395](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L395) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L397) | عنوان Markdown (H3) | المرحلة 0 — تثبيت خط الأساس وحماية التغيير | 397 | [SRC-41EDB66D3C-L000397](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L397) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L407) | عنوان Markdown (H3) | المرحلة 1 — ProductProfile وMarket/ICP | 407 | [SRC-41EDB66D3C-L000407](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L407) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L416) | عنوان Markdown (H3) | المرحلة 2 — Demand Signal Taxonomy | 416 | [SRC-41EDB66D3C-L000416](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L416) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L425) | عنوان Markdown (H3) | المرحلة 3 — استراتيجية البحث المرتبطة بالمنتج | 425 | [SRC-41EDB66D3C-L000425](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L425) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L435) | عنوان Markdown (H3) | المرحلة 4 — التأهيل وربط الكيانات | 435 | [SRC-41EDB66D3C-L000435](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L435) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L445) | عنوان Markdown (H3) | المرحلة 5 — تخزين العملاء وتعدد المستأجرين | 445 | [SRC-41EDB66D3C-L000445](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L445) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L454) | عنوان Markdown (H3) | المرحلة 6 — توصيات البيع والتقييم | 454 | [SRC-41EDB66D3C-L000454](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L454) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L466) | عنوان Markdown (H2) | 15. الاختبارات ومعايير القبول | 466 | [SRC-41EDB66D3C-L000466](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L466) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L493) | عنوان Markdown (H2) | 16. ما نؤجله عمدًا | 493 | [SRC-41EDB66D3C-L000493](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L493) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L506) | عنوان Markdown (H2) | 17. قرارات تحتاج اعتمادًا أو مراجعة بشرية | 506 | [SRC-41EDB66D3C-L000506](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L506) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L520) | عنوان Markdown (H2) | 18. مراجع الحالة التي استندت إليها هذه المواءمة | 520 | [SRC-41EDB66D3C-L000520](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L520) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L531) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 531 | [SRC-41EDB66D3C-L000531](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L531) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L535) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 535 | [SRC-41EDB66D3C-L000535](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L535) |
+| [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L538) | عنوان Markdown (H2) | 19. قاعدة التحديث والحوكمة | 538 | [SRC-41EDB66D3C-L000538](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L538) |
 | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) | عنوان Markdown (H1) | Omarai — المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء | 1 | [SRC-0F910493E8-L000001](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L1) |
 | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 7 | [SRC-0F910493E8-L000007](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) |
 | [docs/OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 7 | [SRC-0F910493E8-L000007](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L7) |
@@ -3323,30 +3413,31 @@
 | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L19) | عنوان Markdown (H2) | قواعد مهمة | 19 | [SRC-B6BD2CE1A8-L000019](OPERATIONS_AR.md#L19) |
 | [docs/README.md](README.md#L1) | عنوان Markdown (H1) | دليل وثائق Omarai | 1 | [SRC-0B5CA119D2-L000001](README.md#L1) |
 | [docs/README.md](README.md#L4) | عنوان Markdown (H2) | ابدأ من هنا | 4 | [SRC-0B5CA119D2-L000004](README.md#L4) |
-| [docs/README.md](README.md#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 10 | [SRC-0B5CA119D2-L000010](README.md#L10) |
-| [docs/README.md](README.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 11 | [SRC-0B5CA119D2-L000011](README.md#L11) |
-| [docs/README.md](README.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 12 | [SRC-0B5CA119D2-L000012](README.md#L12) |
-| [docs/README.md](README.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 13 | [SRC-0B5CA119D2-L000013](README.md#L13) |
-| [docs/README.md](README.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 14 | [SRC-0B5CA119D2-L000014](README.md#L14) |
-| [docs/README.md](README.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 15 | [SRC-0B5CA119D2-L000015](README.md#L15) |
-| [docs/README.md](README.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MODEL_PROVIDER_FAILOVER_AR | 16 | [SRC-0B5CA119D2-L000016](README.md#L16) |
-| [docs/README.md](README.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 17 | [SRC-0B5CA119D2-L000017](README.md#L17) |
-| [docs/README.md](README.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR | 18 | [SRC-0B5CA119D2-L000018](README.md#L18) |
-| [docs/README.md](README.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPERATIONS_AR | 19 | [SRC-0B5CA119D2-L000019](README.md#L19) |
-| [docs/README.md](README.md#L20) | عنوان Markdown (H2) | معمارية ومتطلبات التأسيس | 20 | [SRC-0B5CA119D2-L000020](README.md#L20) |
-| [docs/README.md](README.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 23 | [SRC-0B5CA119D2-L000023](README.md#L23) |
-| [docs/README.md](README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 24 | [SRC-0B5CA119D2-L000024](README.md#L24) |
-| [docs/README.md](README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 25 | [SRC-0B5CA119D2-L000025](README.md#L25) |
-| [docs/README.md](README.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 26 | [SRC-0B5CA119D2-L000026](README.md#L26) |
-| [docs/README.md](README.md#L28) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 28 | [SRC-0B5CA119D2-L000028](README.md#L28) |
-| [docs/README.md](README.md#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 29 | [SRC-0B5CA119D2-L000029](README.md#L29) |
-| [docs/README.md](README.md#L30) | عنوان Markdown (H2) | أدوات وفهرسة المستودع | 30 | [SRC-0B5CA119D2-L000030](README.md#L30) |
-| [docs/README.md](README.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 33 | [SRC-0B5CA119D2-L000033](README.md#L33) |
-| [docs/README.md](README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 34 | [SRC-0B5CA119D2-L000034](README.md#L34) |
-| [docs/README.md](README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 35 | [SRC-0B5CA119D2-L000035](README.md#L35) |
-| [docs/README.md](README.md#L45) | عنوان Markdown (H2) | سياسة تنظيم الوثائق | 45 | [SRC-0B5CA119D2-L000045](README.md#L45) |
-| [docs/README.md](README.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 51 | [SRC-0B5CA119D2-L000051](README.md#L51) |
-| [docs/README.md](README.md#L51) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 51 | [SRC-0B5CA119D2-L000051](README.md#L51) |
+| [docs/README.md](README.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 9 | [SRC-0B5CA119D2-L000009](README.md#L9) |
+| [docs/README.md](README.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 11 | [SRC-0B5CA119D2-L000011](README.md#L11) |
+| [docs/README.md](README.md#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 12 | [SRC-0B5CA119D2-L000012](README.md#L12) |
+| [docs/README.md](README.md#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 13 | [SRC-0B5CA119D2-L000013](README.md#L13) |
+| [docs/README.md](README.md#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_TEST_EVIDENCE_MATRIX_AR | 14 | [SRC-0B5CA119D2-L000014](README.md#L14) |
+| [docs/README.md](README.md#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 15 | [SRC-0B5CA119D2-L000015](README.md#L15) |
+| [docs/README.md](README.md#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 16 | [SRC-0B5CA119D2-L000016](README.md#L16) |
+| [docs/README.md](README.md#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MODEL_PROVIDER_FAILOVER_AR | 17 | [SRC-0B5CA119D2-L000017](README.md#L17) |
+| [docs/README.md](README.md#L18) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ARCHITECTURE_SECURITY_REVIEW_2026 | 18 | [SRC-0B5CA119D2-L000018](README.md#L18) |
+| [docs/README.md](README.md#L19) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR | 19 | [SRC-0B5CA119D2-L000019](README.md#L19) |
+| [docs/README.md](README.md#L20) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPERATIONS_AR | 20 | [SRC-0B5CA119D2-L000020](README.md#L20) |
+| [docs/README.md](README.md#L21) | عنوان Markdown (H2) | معمارية ومتطلبات التأسيس | 21 | [SRC-0B5CA119D2-L000021](README.md#L21) |
+| [docs/README.md](README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR | 24 | [SRC-0B5CA119D2-L000024](README.md#L24) |
+| [docs/README.md](README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR | 25 | [SRC-0B5CA119D2-L000025](README.md#L25) |
+| [docs/README.md](README.md#L26) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 26 | [SRC-0B5CA119D2-L000026](README.md#L26) |
+| [docs/README.md](README.md#L27) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 27 | [SRC-0B5CA119D2-L000027](README.md#L27) |
+| [docs/README.md](README.md#L29) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 29 | [SRC-0B5CA119D2-L000029](README.md#L29) |
+| [docs/README.md](README.md#L30) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_EXCEPTIONS_REGISTER_AR | 30 | [SRC-0B5CA119D2-L000030](README.md#L30) |
+| [docs/README.md](README.md#L31) | عنوان Markdown (H2) | أدوات وفهرسة المستودع | 31 | [SRC-0B5CA119D2-L000031](README.md#L31) |
+| [docs/README.md](README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 34 | [SRC-0B5CA119D2-L000034](README.md#L34) |
+| [docs/README.md](README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 35 | [SRC-0B5CA119D2-L000035](README.md#L35) |
+| [docs/README.md](README.md#L36) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 36 | [SRC-0B5CA119D2-L000036](README.md#L36) |
+| [docs/README.md](README.md#L46) | عنوان Markdown (H2) | سياسة تنظيم الوثائق | 46 | [SRC-0B5CA119D2-L000046](README.md#L46) |
+| [docs/README.md](README.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FIXED_AND_TESTED | 52 | [SRC-0B5CA119D2-L000052](README.md#L52) |
+| [docs/README.md](README.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 52 | [SRC-0B5CA119D2-L000052](README.md#L52) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | عنوان Markdown (H1) | دليل البحث المتقدم والموصلات الاجتماعية — Omarai | 1 | [SRC-D911B73392-L000001](RESEARCH_CONNECTORS_AR.md#L1) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L4) | عنوان Markdown (H2) | 1. كيف يجري Omarai البحث؟ | 4 | [SRC-D911B73392-L000004](RESEARCH_CONNECTORS_AR.md#L4) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L16) | عنوان Markdown (H2) | 2.1 واجهات بحث ويب اختيارية | 16 | [SRC-D911B73392-L000016](RESEARCH_CONNECTORS_AR.md#L16) |
@@ -3410,6 +3501,21 @@
 | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L51) | عنوان Markdown (H3) | Task 3: Align documentation and handoff | 51 | [SRC-002F33CFDC-L000051](superpowers/plans/2026-11-05-default-workspace-home.md#L51) |
 | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L56) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 56 | [SRC-002F33CFDC-L000056](superpowers/plans/2026-11-05-default-workspace-home.md#L56) |
 | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L60) | عنوان Markdown (H3) | Task 4: Verify | 60 | [SRC-002F33CFDC-L000060](superpowers/plans/2026-11-05-default-workspace-home.md#L60) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L1) | عنوان Markdown (H1) | Workspace Product Profile & Demand Discovery Implementation Plan | 1 | [SRC-676B69CB6C-L000001](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L1) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L11) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR | 11 | [SRC-676B69CB6C-L000011](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L11) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L12) | عنوان Markdown (H2) | Global Constraints | 12 | [SRC-676B69CB6C-L000012](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L12) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L22) | عنوان Markdown (H2) | Review Focus | 22 | [SRC-676B69CB6C-L000022](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L22) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L32) | عنوان Markdown (H3) | Task 1: Pin storage and API contracts with failing tests | 32 | [SRC-676B69CB6C-L000032](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L32) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L50) | عنوان Markdown (H3) | Task 2: Add tenant-scoped storage | 50 | [SRC-676B69CB6C-L000050](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L50) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L71) | عنوان Markdown (H3) | Task 3: Connect structured buyer discovery to WebAgent | 71 | [SRC-676B69CB6C-L000071](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L71) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L90) | عنوان Markdown (H3) | Task 4: Implement protected API contracts | 90 | [SRC-676B69CB6C-L000090](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L90) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L114) | عنوان Markdown (H3) | Task 5: Connect the RTL workspace | 114 | [SRC-676B69CB6C-L000114](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L114) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L136) | عنوان Markdown (H3) | Task 6: Documentation, CI, review, and handoff | 136 | [SRC-676B69CB6C-L000136](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L136) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L140) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | IMPLEMENTATION_SCOPE | 140 | [SRC-676B69CB6C-L000140](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L140) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L142) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_REGISTER | 142 | [SRC-676B69CB6C-L000142](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L142) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 146 | [SRC-676B69CB6C-L000146](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L146) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L148) | عنوان Markdown (H2) | Expected delivery boundary | 148 | [SRC-676B69CB6C-L000148](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L148) |
+| [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L152) | عنوان Markdown (H2) | Final execution and verification note | 152 | [SRC-676B69CB6C-L000152](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L152) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | عنوان Markdown (H1) | تصميم خط المعالجة الهجين الموحد للبحث والفهم | 1 | [SRC-8524B08F5D-L000001](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) | عنوان Markdown (H2) | الهدف | 5 | [SRC-8524B08F5D-L000005](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) | عنوان Markdown (H2) | الحالة الحالية المثبتة | 8 | [SRC-8524B08F5D-L000008](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) |
@@ -3418,6 +3524,16 @@
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L31) | عنوان Markdown (H2) | الحدود | 31 | [SRC-8524B08F5D-L000031](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L31) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L38) | عنوان Markdown (H2) | النجاح | 38 | [SRC-8524B08F5D-L000038](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L38) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L41) | عنوان Markdown (H2) | نتيجة التنفيذ وحدود المرحلة الحالية | 41 | [SRC-8524B08F5D-L000041](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L41) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1) | عنوان Markdown (H1) | تصميم ربط ملف المنتج واكتشاف الطلب بمساحة عمل Omarai | 1 | [SRC-BFCEEA0374-L000001](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L6) | عنوان Markdown (H2) | المشكلة | 6 | [SRC-BFCEEA0374-L000006](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L6) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L9) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 9 | [SRC-BFCEEA0374-L000009](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L9) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L10) | عنوان Markdown (H2) | الهدف | 10 | [SRC-BFCEEA0374-L000010](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L10) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L20) | عنوان Markdown (H2) | البدائل | 20 | [SRC-BFCEEA0374-L000020](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L20) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L26) | عنوان Markdown (H2) | النطاق | 26 | [SRC-BFCEEA0374-L000026](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L26) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L36) | عنوان Markdown (H2) | خارج النطاق | 36 | [SRC-BFCEEA0374-L000036](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L36) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) | عنوان Markdown (H2) | البيانات والأمان | 44 | [SRC-BFCEEA0374-L000044](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) | عنوان Markdown (H2) | معيار القبول | 55 | [SRC-BFCEEA0374-L000055](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) |
+| [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) | عنوان Markdown (H2) | القرارات التنفيذية | 67 | [SRC-BFCEEA0374-L000067](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) |
 | [docs/ui-directions/README.md](ui-directions/README.md#L1) | عنوان Markdown (H1) | Omarai — Three Glass UI Directions | 1 | [SRC-6B9B9ABE27-L000001](ui-directions/README.md#L1) |
 | [docs/ui-directions/README.md](ui-directions/README.md#L6) | عنوان Markdown (H2) | Option 01 — Aurora Glass | 6 | [SRC-6B9B9ABE27-L000006](ui-directions/README.md#L6) |
 | [docs/ui-directions/README.md](ui-directions/README.md#L12) | عنوان Markdown (H2) | Option 02 — Precision Glass | 12 | [SRC-6B9B9ABE27-L000012](ui-directions/README.md#L12) |
@@ -3740,64 +3856,66 @@
 | [README.md](../README.md#L3) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR | 3 | [SRC-B335630551-L000003](../README.md#L3) |
 | [README.md](../README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | LEAD_GENERATION | 8 | [SRC-B335630551-L000008](../README.md#L8) |
 | [README.md](../README.md#L8) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR | 8 | [SRC-B335630551-L000008](../README.md#L8) |
-| [README.md](../README.md#L13) | عنوان Markdown (H2) | What this version does | 13 | [SRC-B335630551-L000013](../README.md#L13) |
-| [README.md](../README.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 21 | [SRC-B335630551-L000021](../README.md#L21) |
-| [README.md](../README.md#L21) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 21 | [SRC-B335630551-L000021](../README.md#L21) |
-| [README.md](../README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 24 | [SRC-B335630551-L000024](../README.md#L24) |
-| [README.md](../README.md#L24) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 24 | [SRC-B335630551-L000024](../README.md#L24) |
-| [README.md](../README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 25 | [SRC-B335630551-L000025](../README.md#L25) |
-| [README.md](../README.md#L25) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 25 | [SRC-B335630551-L000025](../README.md#L25) |
-| [README.md](../README.md#L34) | عنوان Markdown (H2) | Living repository index | 34 | [SRC-B335630551-L000034](../README.md#L34) |
-| [README.md](../README.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_HANDOFF_CHECKLIST_AR | 38 | [SRC-B335630551-L000038](../README.md#L38) |
-| [README.md](../README.md#L38) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 38 | [SRC-B335630551-L000038](../README.md#L38) |
-| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DATA_LOSS | 42 | [SRC-B335630551-L000042](../README.md#L42) |
-| [README.md](../README.md#L42) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 42 | [SRC-B335630551-L000042](../README.md#L42) |
-| [README.md](../README.md#L43) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 43 | [SRC-B335630551-L000043](../README.md#L43) |
-| [README.md](../README.md#L44) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 44 | [SRC-B335630551-L000044](../README.md#L44) |
-| [README.md](../README.md#L62) | عنوان Markdown (H2) | Per-request resource budget | 62 | [SRC-B335630551-L000062](../README.md#L62) |
-| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 65 | [SRC-B335630551-L000065](../README.md#L65) |
-| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 65 | [SRC-B335630551-L000065](../README.md#L65) |
-| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 65 | [SRC-B335630551-L000065](../README.md#L65) |
-| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 65 | [SRC-B335630551-L000065](../README.md#L65) |
-| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 65 | [SRC-B335630551-L000065](../README.md#L65) |
-| [README.md](../README.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 65 | [SRC-B335630551-L000065](../README.md#L65) |
-| [README.md](../README.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 69 | [SRC-B335630551-L000069](../README.md#L69) |
-| [README.md](../README.md#L69) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 69 | [SRC-B335630551-L000069](../README.md#L69) |
-| [README.md](../README.md#L70) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 70 | [SRC-B335630551-L000070](../README.md#L70) |
-| [README.md](../README.md#L74) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 74 | [SRC-B335630551-L000074](../README.md#L74) |
-| [README.md](../README.md#L78) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 78 | [SRC-B335630551-L000078](../README.md#L78) |
-| [README.md](../README.md#L84) | عنوان Markdown (H2) | Hosting and live acceptance | 84 | [SRC-B335630551-L000084](../README.md#L84) |
-| [README.md](../README.md#L89) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 89 | [SRC-B335630551-L000089](../README.md#L89) |
-| [README.md](../README.md#L90) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 90 | [SRC-B335630551-L000090](../README.md#L90) |
-| [README.md](../README.md#L91) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 91 | [SRC-B335630551-L000091](../README.md#L91) |
-| [README.md](../README.md#L93) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 93 | [SRC-B335630551-L000093](../README.md#L93) |
-| [README.md](../README.md#L93) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 93 | [SRC-B335630551-L000093](../README.md#L93) |
-| [README.md](../README.md#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 97 | [SRC-B335630551-L000097](../README.md#L97) |
-| [README.md](../README.md#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 97 | [SRC-B335630551-L000097](../README.md#L97) |
-| [README.md](../README.md#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 97 | [SRC-B335630551-L000097](../README.md#L97) |
-| [README.md](../README.md#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 97 | [SRC-B335630551-L000097](../README.md#L97) |
-| [README.md](../README.md#L97) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 97 | [SRC-B335630551-L000097](../README.md#L97) |
-| [README.md](../README.md#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 99 | [SRC-B335630551-L000099](../README.md#L99) |
-| [README.md](../README.md#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 99 | [SRC-B335630551-L000099](../README.md#L99) |
-| [README.md](../README.md#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 99 | [SRC-B335630551-L000099](../README.md#L99) |
-| [README.md](../README.md#L100) | عنوان Markdown (H2) | Run on Android / Termux | 100 | [SRC-B335630551-L000100](../README.md#L100) |
-| [README.md](../README.md#L121) | عنوان Markdown (H3) | Optional configuration | 121 | [SRC-B335630551-L000121](../README.md#L121) |
-| [README.md](../README.md#L127) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 127 | [SRC-B335630551-L000127](../README.md#L127) |
-| [README.md](../README.md#L128) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 128 | [SRC-B335630551-L000128](../README.md#L128) |
-| [README.md](../README.md#L135) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 135 | [SRC-B335630551-L000135](../README.md#L135) |
-| [README.md](../README.md#L136) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 136 | [SRC-B335630551-L000136](../README.md#L136) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L139) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 139 | [SRC-B335630551-L000139](../README.md#L139) |
-| [README.md](../README.md#L143) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 143 | [SRC-B335630551-L000143](../README.md#L143) |
-| [README.md](../README.md#L144) | عنوان Markdown (H2) | API | 144 | [SRC-B335630551-L000144](../README.md#L144) |
-| [README.md](../README.md#L165) | عنوان Markdown (H2) | Existing lead workspace | 165 | [SRC-B335630551-L000165](../README.md#L165) |
-| [README.md](../README.md#L183) | عنوان Markdown (H2) | Checks | 183 | [SRC-B335630551-L000183](../README.md#L183) |
+| [README.md](../README.md#L13) | عنوان Markdown (H2) | Product direction and current delivery snapshot — 6 November 2026 | 13 | [SRC-B335630551-L000013](../README.md#L13) |
+| [README.md](../README.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PROJECT_STATUS_AND_DECISIONS_AR | 22 | [SRC-B335630551-L000022](../README.md#L22) |
+| [README.md](../README.md#L23) | عنوان Markdown (H2) | What this version does | 23 | [SRC-B335630551-L000023](../README.md#L23) |
+| [README.md](../README.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 31 | [SRC-B335630551-L000031](../README.md#L31) |
+| [README.md](../README.md#L31) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 31 | [SRC-B335630551-L000031](../README.md#L31) |
+| [README.md](../README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 34 | [SRC-B335630551-L000034](../README.md#L34) |
+| [README.md](../README.md#L34) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 34 | [SRC-B335630551-L000034](../README.md#L34) |
+| [README.md](../README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 35 | [SRC-B335630551-L000035](../README.md#L35) |
+| [README.md](../README.md#L35) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 35 | [SRC-B335630551-L000035](../README.md#L35) |
+| [README.md](../README.md#L44) | عنوان Markdown (H2) | Living repository index | 44 | [SRC-B335630551-L000044](../README.md#L44) |
+| [README.md](../README.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_HANDOFF_CHECKLIST_AR | 48 | [SRC-B335630551-L000048](../README.md#L48) |
+| [README.md](../README.md#L48) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REMEDIATION_REGISTER_AR | 48 | [SRC-B335630551-L000048](../README.md#L48) |
+| [README.md](../README.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DATA_LOSS | 52 | [SRC-B335630551-L000052](../README.md#L52) |
+| [README.md](../README.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MASTER_INDEX | 52 | [SRC-B335630551-L000052](../README.md#L52) |
+| [README.md](../README.md#L53) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOURCE_LINES_INDEX | 53 | [SRC-B335630551-L000053](../README.md#L53) |
+| [README.md](../README.md#L54) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INDEX_COVERAGE_AUDIT | 54 | [SRC-B335630551-L000054](../README.md#L54) |
+| [README.md](../README.md#L72) | عنوان Markdown (H2) | Per-request resource budget | 72 | [SRC-B335630551-L000072](../README.md#L72) |
+| [README.md](../README.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_BUDGET_SECONDS | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_MODEL_CALLS | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_PAGE_FETCHES | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_CALLS | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_SEARCH_QUERIES | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REQUEST_MAX_TOOL_CALLS | 75 | [SRC-B335630551-L000075](../README.md#L75) |
+| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_AGENT_REQUESTS | 79 | [SRC-B335630551-L000079](../README.md#L79) |
+| [README.md](../README.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS | 79 | [SRC-B335630551-L000079](../README.md#L79) |
+| [README.md](../README.md#L80) | عنوان Markdown (H2) | Experimental DeepSeek Search provider | 80 | [SRC-B335630551-L000080](../README.md#L80) |
+| [README.md](../README.md#L84) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 84 | [SRC-B335630551-L000084](../README.md#L84) |
+| [README.md](../README.md#L88) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET | 88 | [SRC-B335630551-L000088](../README.md#L88) |
+| [README.md](../README.md#L94) | عنوان Markdown (H2) | Hosting and live acceptance | 94 | [SRC-B335630551-L000094](../README.md#L94) |
+| [README.md](../README.md#L99) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RAILWAY_AR | 99 | [SRC-B335630551-L000099](../README.md#L99) |
+| [README.md](../README.md#L100) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_SNAPDEPLOY_AR | 100 | [SRC-B335630551-L000100](../README.md#L100) |
+| [README.md](../README.md#L101) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEPLOY_RENDER_AR | 101 | [SRC-B335630551-L000101](../README.md#L101) |
+| [README.md](../README.md#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BUILD_SHA | 103 | [SRC-B335630551-L000103](../README.md#L103) |
+| [README.md](../README.md#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BUILD_SHA | 103 | [SRC-B335630551-L000103](../README.md#L103) |
+| [README.md](../README.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ACCESS_TOKEN | 107 | [SRC-B335630551-L000107](../README.md#L107) |
+| [README.md](../README.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ALLOWED_ORIGINS | 107 | [SRC-B335630551-L000107](../README.md#L107) |
+| [README.md](../README.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_API_KEY | 107 | [SRC-B335630551-L000107](../README.md#L107) |
+| [README.md](../README.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PUBLIC_DEPLOYMENT | 107 | [SRC-B335630551-L000107](../README.md#L107) |
+| [README.md](../README.md#L107) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 107 | [SRC-B335630551-L000107](../README.md#L107) |
+| [README.md](../README.md#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | GO_LIVE_CHECKLIST_AR | 109 | [SRC-B335630551-L000109](../README.md#L109) |
+| [README.md](../README.md#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_BASE_URL | 109 | [SRC-B335630551-L000109](../README.md#L109) |
+| [README.md](../README.md#L109) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_DB_PATH | 109 | [SRC-B335630551-L000109](../README.md#L109) |
+| [README.md](../README.md#L110) | عنوان Markdown (H2) | Run on Android / Termux | 110 | [SRC-B335630551-L000110](../README.md#L110) |
+| [README.md](../README.md#L131) | عنوان Markdown (H3) | Optional configuration | 131 | [SRC-B335630551-L000131](../README.md#L131) |
+| [README.md](../README.md#L137) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 137 | [SRC-B335630551-L000137](../README.md#L137) |
+| [README.md](../README.md#L138) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 138 | [SRC-B335630551-L000138](../README.md#L138) |
+| [README.md](../README.md#L145) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 145 | [SRC-B335630551-L000145](../README.md#L145) |
+| [README.md](../README.md#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 146 | [SRC-B335630551-L000146](../README.md#L146) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_TIMEOUT | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L149) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 149 | [SRC-B335630551-L000149](../README.md#L149) |
+| [README.md](../README.md#L153) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 153 | [SRC-B335630551-L000153](../README.md#L153) |
+| [README.md](../README.md#L154) | عنوان Markdown (H2) | API | 154 | [SRC-B335630551-L000154](../README.md#L154) |
+| [README.md](../README.md#L175) | عنوان Markdown (H2) | Existing lead workspace | 175 | [SRC-B335630551-L000175](../README.md#L175) |
+| [README.md](../README.md#L193) | عنوان Markdown (H2) | Checks | 193 | [SRC-B335630551-L000193](../README.md#L193) |
 | [render.yaml](../render.yaml#L1) | مفتاح إعداد YAML | services | 1 | [SRC-A64CF250B4-L000001](../render.yaml#L1) |
 | [render.yaml](../render.yaml#L3) | مفتاح إعداد YAML | name | 3 | [SRC-A64CF250B4-L000003](../render.yaml#L3) |
 | [render.yaml](../render.yaml#L4) | مفتاح إعداد YAML | runtime | 4 | [SRC-A64CF250B4-L000004](../render.yaml#L4) |
@@ -4000,6 +4118,9 @@
 | [tests/test_api.py](../tests/test_api.py#L1035) | مسار API/واجهة محتمل | /api/session | 1035 | [SRC-3451CC474D-L001035](../tests/test_api.py#L1035) |
 | [tests/test_api.py](../tests/test_api.py#L1079) | مسار API/واجهة محتمل | /api/session/logout | 1079 | [SRC-3451CC474D-L001079](../tests/test_api.py#L1079) |
 | [tests/test_api.py](../tests/test_api.py#L1287) | مسار API/واجهة محتمل | /leads | 1287 | [SRC-3451CC474D-L001287](../tests/test_api.py#L1287) |
+| [tests/test_api.py](../tests/test_api.py#L1349) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_OPENROUTER_WEB_SEARCH | 1349 | [SRC-3451CC474D-L001349](../tests/test_api.py#L1349) |
+| [tests/test_api.py](../tests/test_api.py#L1353) | مسار API/واجهة محتمل | /api/product-profiles | 1353 | [SRC-3451CC474D-L001353](../tests/test_api.py#L1353) |
+| [tests/test_api.py](../tests/test_api.py#L1378) | مسار API/واجهة محتمل | /api/discoveries | 1378 | [SRC-3451CC474D-L001378](../tests/test_api.py#L1378) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L10) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 10 | [SRC-DA61479D59-L000010](../tests/test_connector_summary_counters.py#L10) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 130 | [SRC-DA61479D59-L000130](../tests/test_connector_summary_counters.py#L130) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 131 | [SRC-DA61479D59-L000131](../tests/test_connector_summary_counters.py#L131) |
@@ -4008,6 +4129,9 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L54) | مسار API/واجهة محتمل | /api/health | 54 | [SRC-3D0A619359-L000054](../tests/test_dashboard_security.py#L54) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 79 | [SRC-3D0A619359-L000079](../tests/test_dashboard_security.py#L79) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 81 | [SRC-3D0A619359-L000081](../tests/test_dashboard_security.py#L81) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L135) | مسار API/واجهة محتمل | /api/product-profiles | 135 | [SRC-3D0A619359-L000135](../tests/test_dashboard_security.py#L135) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L137) | مسار API/واجهة محتمل | /api/discoveries | 137 | [SRC-3D0A619359-L000137](../tests/test_dashboard_security.py#L137) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L138) | مسار API/واجهة محتمل | /api/discoveries/ | 138 | [SRC-3D0A619359-L000138](../tests/test_dashboard_security.py#L138) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 146 | [SRC-29A9CD43D1-L000146](../tests/test_dialogue_context_pipeline.py#L146) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
@@ -4155,6 +4279,11 @@
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 32 | [SRC-8C13B81AB4-L000032](../tests/test_web_agent_nlu_integration.py#L32) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 32 | [SRC-8C13B81AB4-L000032](../tests/test_web_agent_nlu_integration.py#L32) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 32 | [SRC-8C13B81AB4-L000032](../tests/test_web_agent_nlu_integration.py#L32) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L153) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 153 | [SRC-E3EEC2014A-L000153](../tests/test_workspace_discovery.py#L153) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L154) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 154 | [SRC-E3EEC2014A-L000154](../tests/test_workspace_discovery.py#L154) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L155) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 155 | [SRC-E3EEC2014A-L000155](../tests/test_workspace_discovery.py#L155) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L175) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 175 | [SRC-E3EEC2014A-L000175](../tests/test_workspace_discovery.py#L175) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L176) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 176 | [SRC-E3EEC2014A-L000176](../tests/test_workspace_discovery.py#L176) |
 | [web/agent.html](../web/agent.html#L5) | قيمة سمة HTML (name) | viewport | 5 | [SRC-DE7EABE998-L000005](../web/agent.html#L5) |
 | [web/agent.html](../web/agent.html#L6) | قيمة سمة HTML (name) | theme-color | 6 | [SRC-DE7EABE998-L000006](../web/agent.html#L6) |
 | [web/agent.html](../web/agent.html#L9) | متغير CSS مخصص | amber | 9 | [SRC-DE7EABE998-L000009](../web/agent.html#L9) |
@@ -4630,164 +4759,196 @@
 | [web/workspace.html](../web/workspace.html#L128) | محدد id في CSS | ff899b | 128 | [SRC-2C8F288796-L000128](../web/workspace.html#L128) |
 | [web/workspace.html](../web/workspace.html#L128) | محدد id في CSS | ff9caa | 128 | [SRC-2C8F288796-L000128](../web/workspace.html#L128) |
 | [web/workspace.html](../web/workspace.html#L137) | محدد id في CSS | a1b4ff | 137 | [SRC-2C8F288796-L000137](../web/workspace.html#L137) |
-| [web/workspace.html](../web/workspace.html#L189) | قيمة سمة HTML (id) | mainNav | 189 | [SRC-2C8F288796-L000189](../web/workspace.html#L189) |
-| [web/workspace.html](../web/workspace.html#L191) | قيمة سمة HTML (id) | apiDot | 191 | [SRC-2C8F288796-L000191](../web/workspace.html#L191) |
-| [web/workspace.html](../web/workspace.html#L191) | قيمة سمة HTML (id) | apiStatus | 191 | [SRC-2C8F288796-L000191](../web/workspace.html#L191) |
-| [web/workspace.html](../web/workspace.html#L191) | قيمة سمة HTML (id) | apiStatusNote | 191 | [SRC-2C8F288796-L000191](../web/workspace.html#L191) |
-| [web/workspace.html](../web/workspace.html#L192) | قيمة سمة HTML (id) | roleSummary | 192 | [SRC-2C8F288796-L000192](../web/workspace.html#L192) |
-| [web/workspace.html](../web/workspace.html#L193) | مسار API/واجهة محتمل | /leads | 193 | [SRC-2C8F288796-L000193](../web/workspace.html#L193) |
-| [web/workspace.html](../web/workspace.html#L198) | قيمة سمة HTML (id) | crumb | 198 | [SRC-2C8F288796-L000198](../web/workspace.html#L198) |
-| [web/workspace.html](../web/workspace.html#L199) | قيمة سمة HTML (id) | addSignalTop | 199 | [SRC-2C8F288796-L000199](../web/workspace.html#L199) |
-| [web/workspace.html](../web/workspace.html#L199) | قيمة سمة HTML (id) | logoutButton | 199 | [SRC-2C8F288796-L000199](../web/workspace.html#L199) |
-| [web/workspace.html](../web/workspace.html#L199) | قيمة سمة HTML (id) | rolePill | 199 | [SRC-2C8F288796-L000199](../web/workspace.html#L199) |
-| [web/workspace.html](../web/workspace.html#L201) | قيمة سمة HTML (id) | pageDescription | 201 | [SRC-2C8F288796-L000201](../web/workspace.html#L201) |
-| [web/workspace.html](../web/workspace.html#L201) | قيمة سمة HTML (id) | pageEyebrow | 201 | [SRC-2C8F288796-L000201](../web/workspace.html#L201) |
-| [web/workspace.html](../web/workspace.html#L201) | قيمة سمة HTML (id) | pageTitle | 201 | [SRC-2C8F288796-L000201](../web/workspace.html#L201) |
-| [web/workspace.html](../web/workspace.html#L202) | قيمة سمة HTML (id) | viewRoot | 202 | [SRC-2C8F288796-L000202](../web/workspace.html#L202) |
-| [web/workspace.html](../web/workspace.html#L207) | قيمة سمة HTML (id) | detailDrawer | 207 | [SRC-2C8F288796-L000207](../web/workspace.html#L207) |
-| [web/workspace.html](../web/workspace.html#L208) | قيمة سمة HTML (id) | closeDetail | 208 | [SRC-2C8F288796-L000208](../web/workspace.html#L208) |
-| [web/workspace.html](../web/workspace.html#L208) | قيمة سمة HTML (id) | detailBody | 208 | [SRC-2C8F288796-L000208](../web/workspace.html#L208) |
-| [web/workspace.html](../web/workspace.html#L208) | قيمة سمة HTML (id) | detailTitle | 208 | [SRC-2C8F288796-L000208](../web/workspace.html#L208) |
-| [web/workspace.html](../web/workspace.html#L210) | قيمة سمة HTML (id) | authGate | 210 | [SRC-2C8F288796-L000210](../web/workspace.html#L210) |
-| [web/workspace.html](../web/workspace.html#L215) | قيمة سمة HTML (id) | loginForm | 215 | [SRC-2C8F288796-L000215](../web/workspace.html#L215) |
-| [web/workspace.html](../web/workspace.html#L216) | قيمة سمة HTML (id) | accessToken | 216 | [SRC-2C8F288796-L000216](../web/workspace.html#L216) |
-| [web/workspace.html](../web/workspace.html#L217) | قيمة سمة HTML (id) | loginButton | 217 | [SRC-2C8F288796-L000217](../web/workspace.html#L217) |
-| [web/workspace.html](../web/workspace.html#L218) | قيمة سمة HTML (id) | authError | 218 | [SRC-2C8F288796-L000218](../web/workspace.html#L218) |
-| [web/workspace.html](../web/workspace.html#L227) | دالة JavaScript/TypeScript | $ | 227 | [SRC-2C8F288796-L000227](../web/workspace.html#L227) |
-| [web/workspace.html](../web/workspace.html#L228) | متغير JavaScript/TypeScript | state | 228 | [SRC-2C8F288796-L000228](../web/workspace.html#L228) |
-| [web/workspace.html](../web/workspace.html#L229) | متغير JavaScript/TypeScript | statuses | 229 | [SRC-2C8F288796-L000229](../web/workspace.html#L229) |
-| [web/workspace.html](../web/workspace.html#L237) | متغير JavaScript/TypeScript | labels | 237 | [SRC-2C8F288796-L000237](../web/workspace.html#L237) |
-| [web/workspace.html](../web/workspace.html#L238) | متغير JavaScript/TypeScript | menu | 238 | [SRC-2C8F288796-L000238](../web/workspace.html#L238) |
-| [web/workspace.html](../web/workspace.html#L256) | دالة JavaScript/TypeScript | make | 256 | [SRC-2C8F288796-L000256](../web/workspace.html#L256) |
-| [web/workspace.html](../web/workspace.html#L257) | متغير JavaScript/TypeScript | node | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
-| [web/workspace.html](../web/workspace.html#L262) | دالة JavaScript/TypeScript | action | 262 | [SRC-2C8F288796-L000262](../web/workspace.html#L262) |
-| [web/workspace.html](../web/workspace.html#L263) | متغير JavaScript/TypeScript | b | 263 | [SRC-2C8F288796-L000263](../web/workspace.html#L263) |
-| [web/workspace.html](../web/workspace.html#L266) | دالة JavaScript/TypeScript | safeHttp | 266 | [SRC-2C8F288796-L000266](../web/workspace.html#L266) |
-| [web/workspace.html](../web/workspace.html#L267) | متغير JavaScript/TypeScript | u | 267 | [SRC-2C8F288796-L000267](../web/workspace.html#L267) |
-| [web/workspace.html](../web/workspace.html#L269) | دالة JavaScript/TypeScript | escapeMessage | 269 | [SRC-2C8F288796-L000269](../web/workspace.html#L269) |
-| [web/workspace.html](../web/workspace.html#L270) | دالة JavaScript/TypeScript | api | 270 | [SRC-2C8F288796-L000270](../web/workspace.html#L270) |
-| [web/workspace.html](../web/workspace.html#L271) | متغير JavaScript/TypeScript | opts | 271 | [SRC-2C8F288796-L000271](../web/workspace.html#L271) |
-| [web/workspace.html](../web/workspace.html#L272) | متغير JavaScript/TypeScript | headers | 272 | [SRC-2C8F288796-L000272](../web/workspace.html#L272) |
-| [web/workspace.html](../web/workspace.html#L274) | متغير JavaScript/TypeScript | response | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
-| [web/workspace.html](../web/workspace.html#L275) | متغير JavaScript/TypeScript | data | 275 | [SRC-2C8F288796-L000275](../web/workspace.html#L275) |
-| [web/workspace.html](../web/workspace.html#L281) | دالة JavaScript/TypeScript | showAuth | 281 | [SRC-2C8F288796-L000281](../web/workspace.html#L281) |
-| [web/workspace.html](../web/workspace.html#L286) | دالة JavaScript/TypeScript | hideAuth | 286 | [SRC-2C8F288796-L000286](../web/workspace.html#L286) |
-| [web/workspace.html](../web/workspace.html#L287) | دالة JavaScript/TypeScript | statusLabel | 287 | [SRC-2C8F288796-L000287](../web/workspace.html#L287) |
-| [web/workspace.html](../web/workspace.html#L287) | متغير JavaScript/TypeScript | item | 287 | [SRC-2C8F288796-L000287](../web/workspace.html#L287) |
-| [web/workspace.html](../web/workspace.html#L288) | دالة JavaScript/TypeScript | tag | 288 | [SRC-2C8F288796-L000288](../web/workspace.html#L288) |
-| [web/workspace.html](../web/workspace.html#L289) | دالة JavaScript/TypeScript | setPage | 289 | [SRC-2C8F288796-L000289](../web/workspace.html#L289) |
-| [web/workspace.html](../web/workspace.html#L293) | دالة JavaScript/TypeScript | renderNav | 293 | [SRC-2C8F288796-L000293](../web/workspace.html#L293) |
-| [web/workspace.html](../web/workspace.html#L294) | متغير JavaScript/TypeScript | nav | 294 | [SRC-2C8F288796-L000294](../web/workspace.html#L294) |
-| [web/workspace.html](../web/workspace.html#L298) | متغير JavaScript/TypeScript | icon | 298 | [SRC-2C8F288796-L000298](../web/workspace.html#L298) |
-| [web/workspace.html](../web/workspace.html#L298) | متغير JavaScript/TypeScript | name | 298 | [SRC-2C8F288796-L000298](../web/workspace.html#L298) |
-| [web/workspace.html](../web/workspace.html#L306) | دالة JavaScript/TypeScript | setConnection | 306 | [SRC-2C8F288796-L000306](../web/workspace.html#L306) |
-| [web/workspace.html](../web/workspace.html#L309) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 309 | [SRC-2C8F288796-L000309](../web/workspace.html#L309) |
-| [web/workspace.html](../web/workspace.html#L309) | متغير JavaScript/TypeScript | WRITE_ROLES | 309 | [SRC-2C8F288796-L000309](../web/workspace.html#L309) |
-| [web/workspace.html](../web/workspace.html#L310) | دالة JavaScript/TypeScript | canWrite | 310 | [SRC-2C8F288796-L000310](../web/workspace.html#L310) |
-| [web/workspace.html](../web/workspace.html#L311) | دالة JavaScript/TypeScript | countByStatus | 311 | [SRC-2C8F288796-L000311](../web/workspace.html#L311) |
-| [web/workspace.html](../web/workspace.html#L312) | دالة JavaScript/TypeScript | buildStat | 312 | [SRC-2C8F288796-L000312](../web/workspace.html#L312) |
-| [web/workspace.html](../web/workspace.html#L313) | متغير JavaScript/TypeScript | card | 313 | [SRC-2C8F288796-L000313](../web/workspace.html#L313) |
-| [web/workspace.html](../web/workspace.html#L316) | دالة JavaScript/TypeScript | renderOverview | 316 | [SRC-2C8F288796-L000316](../web/workspace.html#L316) |
-| [web/workspace.html](../web/workspace.html#L318) | متغير JavaScript/TypeScript | root | 318 | [SRC-2C8F288796-L000318](../web/workspace.html#L318) |
-| [web/workspace.html](../web/workspace.html#L319) | متغير JavaScript/TypeScript | qualified | 319 | [SRC-2C8F288796-L000319](../web/workspace.html#L319) |
-| [web/workspace.html](../web/workspace.html#L320) | متغير JavaScript/TypeScript | strong | 320 | [SRC-2C8F288796-L000320](../web/workspace.html#L320) |
-| [web/workspace.html](../web/workspace.html#L321) | متغير JavaScript/TypeScript | review | 321 | [SRC-2C8F288796-L000321](../web/workspace.html#L321) |
-| [web/workspace.html](../web/workspace.html#L322) | متغير JavaScript/TypeScript | stats | 322 | [SRC-2C8F288796-L000322](../web/workspace.html#L322) |
-| [web/workspace.html](../web/workspace.html#L328) | متغير JavaScript/TypeScript | grid | 328 | [SRC-2C8F288796-L000328](../web/workspace.html#L328) |
-| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | h | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
-| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | head | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
-| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | recent | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
-| [web/workspace.html](../web/workspace.html#L330) | متغير JavaScript/TypeScript | list | 330 | [SRC-2C8F288796-L000330](../web/workspace.html#L330) |
-| [web/workspace.html](../web/workspace.html#L331) | متغير JavaScript/TypeScript | rows | 331 | [SRC-2C8F288796-L000331](../web/workspace.html#L331) |
-| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | dh | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
-| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | distribution | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
-| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | dtitle | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
-| [web/workspace.html](../web/workspace.html#L336) | متغير JavaScript/TypeScript | bars | 336 | [SRC-2C8F288796-L000336](../web/workspace.html#L336) |
-| [web/workspace.html](../web/workspace.html#L336) | متغير JavaScript/TypeScript | groups | 336 | [SRC-2C8F288796-L000336](../web/workspace.html#L336) |
-| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | fill | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
-| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | n | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
-| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | percent | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
-| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | row | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
-| [web/workspace.html](../web/workspace.html#L337) | متغير JavaScript/TypeScript | track | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
-| [web/workspace.html](../web/workspace.html#L341) | دالة JavaScript/TypeScript | emptyState | 341 | [SRC-2C8F288796-L000341](../web/workspace.html#L341) |
-| [web/workspace.html](../web/workspace.html#L342) | متغير JavaScript/TypeScript | box | 342 | [SRC-2C8F288796-L000342](../web/workspace.html#L342) |
-| [web/workspace.html](../web/workspace.html#L344) | دالة JavaScript/TypeScript | signalCard | 344 | [SRC-2C8F288796-L000344](../web/workspace.html#L344) |
-| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | left | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
-| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | top | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
-| [web/workspace.html](../web/workspace.html#L347) | متغير JavaScript/TypeScript | assessment | 347 | [SRC-2C8F288796-L000347](../web/workspace.html#L347) |
-| [web/workspace.html](../web/workspace.html#L350) | متغير JavaScript/TypeScript | text | 350 | [SRC-2C8F288796-L000350](../web/workspace.html#L350) |
-| [web/workspace.html](../web/workspace.html#L351) | متغير JavaScript/TypeScript | meta | 351 | [SRC-2C8F288796-L000351](../web/workspace.html#L351) |
-| [web/workspace.html](../web/workspace.html#L353) | متغير JavaScript/TypeScript | source | 353 | [SRC-2C8F288796-L000353](../web/workspace.html#L353) |
-| [web/workspace.html](../web/workspace.html#L355) | متغير JavaScript/TypeScript | actions | 355 | [SRC-2C8F288796-L000355](../web/workspace.html#L355) |
-| [web/workspace.html](../web/workspace.html#L360) | دالة JavaScript/TypeScript | openDetails | 360 | [SRC-2C8F288796-L000360](../web/workspace.html#L360) |
-| [web/workspace.html](../web/workspace.html#L361) | متغير JavaScript/TypeScript | body | 361 | [SRC-2C8F288796-L000361](../web/workspace.html#L361) |
-| [web/workspace.html](../web/workspace.html#L362) | متغير JavaScript/TypeScript | a | 362 | [SRC-2C8F288796-L000362](../web/workspace.html#L362) |
-| [web/workspace.html](../web/workspace.html#L365) | متغير JavaScript/TypeScript | url | 365 | [SRC-2C8F288796-L000365](../web/workspace.html#L365) |
-| [web/workspace.html](../web/workspace.html#L366) | متغير JavaScript/TypeScript | link | 366 | [SRC-2C8F288796-L000366](../web/workspace.html#L366) |
-| [web/workspace.html](../web/workspace.html#L372) | متغير JavaScript/TypeScript | ul | 372 | [SRC-2C8F288796-L000372](../web/workspace.html#L372) |
-| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | select | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
-| [web/workspace.html](../web/workspace.html#L378) | متغير JavaScript/TypeScript | o | 378 | [SRC-2C8F288796-L000378](../web/workspace.html#L378) |
-| [web/workspace.html](../web/workspace.html#L379) | متغير JavaScript/TypeScript | save | 379 | [SRC-2C8F288796-L000379](../web/workspace.html#L379) |
-| [web/workspace.html](../web/workspace.html#L379) | مسار API/واجهة محتمل | /api/leads/ | 379 | [SRC-2C8F288796-L000379](../web/workspace.html#L379) |
-| [web/workspace.html](../web/workspace.html#L384) | دالة JavaScript/TypeScript | closeDetails | 384 | [SRC-2C8F288796-L000384](../web/workspace.html#L384) |
-| [web/workspace.html](../web/workspace.html#L385) | دالة JavaScript/TypeScript | renderSignals | 385 | [SRC-2C8F288796-L000385](../web/workspace.html#L385) |
-| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | panel | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
-| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | ph | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
-| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | ptitle | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
-| [web/workspace.html](../web/workspace.html#L390) | متغير JavaScript/TypeScript | search | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
-| [web/workspace.html](../web/workspace.html#L390) | متغير JavaScript/TypeScript | toolbar | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
-| [web/workspace.html](../web/workspace.html#L392) | متغير JavaScript/TypeScript | all | 392 | [SRC-2C8F288796-L000392](../web/workspace.html#L392) |
-| [web/workspace.html](../web/workspace.html#L392) | متغير JavaScript/TypeScript | filter | 392 | [SRC-2C8F288796-L000392](../web/workspace.html#L392) |
-| [web/workspace.html](../web/workspace.html#L400) | دالة JavaScript/TypeScript | drawSignalRows | 400 | [SRC-2C8F288796-L000400](../web/workspace.html#L400) |
-| [web/workspace.html](../web/workspace.html#L402) | متغير JavaScript/TypeScript | query | 402 | [SRC-2C8F288796-L000402](../web/workspace.html#L402) |
-| [web/workspace.html](../web/workspace.html#L407) | دالة JavaScript/TypeScript | createSignalForm | 407 | [SRC-2C8F288796-L000407](../web/workspace.html#L407) |
-| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | title | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
-| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | wrapper | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
-| [web/workspace.html](../web/workspace.html#L409) | قيمة سمة HTML (id) | newSignalText | 409 | [SRC-2C8F288796-L000409](../web/workspace.html#L409) |
-| [web/workspace.html](../web/workspace.html#L410) | قيمة سمة HTML (id) | newSignalUrl | 410 | [SRC-2C8F288796-L000410](../web/workspace.html#L410) |
-| [web/workspace.html](../web/workspace.html#L412) | قيمة سمة HTML (id) | newSignalPlatform | 412 | [SRC-2C8F288796-L000412](../web/workspace.html#L412) |
-| [web/workspace.html](../web/workspace.html#L412) | متغير JavaScript/TypeScript | platform | 412 | [SRC-2C8F288796-L000412](../web/workspace.html#L412) |
-| [web/workspace.html](../web/workspace.html#L413) | قيمة سمة HTML (id) | newSignalProduct | 413 | [SRC-2C8F288796-L000413](../web/workspace.html#L413) |
-| [web/workspace.html](../web/workspace.html#L413) | متغير JavaScript/TypeScript | product | 413 | [SRC-2C8F288796-L000413](../web/workspace.html#L413) |
-| [web/workspace.html](../web/workspace.html#L414) | قيمة سمة HTML (id) | newSignalLocation | 414 | [SRC-2C8F288796-L000414](../web/workspace.html#L414) |
-| [web/workspace.html](../web/workspace.html#L414) | متغير JavaScript/TypeScript | location | 414 | [SRC-2C8F288796-L000414](../web/workspace.html#L414) |
-| [web/workspace.html](../web/workspace.html#L415) | قيمة سمة HTML (id) | newSignalNote | 415 | [SRC-2C8F288796-L000415](../web/workspace.html#L415) |
-| [web/workspace.html](../web/workspace.html#L415) | متغير JavaScript/TypeScript | note | 415 | [SRC-2C8F288796-L000415](../web/workspace.html#L415) |
-| [web/workspace.html](../web/workspace.html#L416) | متغير JavaScript/TypeScript | fields | 416 | [SRC-2C8F288796-L000416](../web/workspace.html#L416) |
-| [web/workspace.html](../web/workspace.html#L417) | متغير JavaScript/TypeScript | field | 417 | [SRC-2C8F288796-L000417](../web/workspace.html#L417) |
-| [web/workspace.html](../web/workspace.html#L419) | قيمة سمة HTML (id) | analysisResult | 419 | [SRC-2C8F288796-L000419](../web/workspace.html#L419) |
-| [web/workspace.html](../web/workspace.html#L419) | متغير JavaScript/TypeScript | result | 419 | [SRC-2C8F288796-L000419](../web/workspace.html#L419) |
-| [web/workspace.html](../web/workspace.html#L420) | متغير JavaScript/TypeScript | buttons | 420 | [SRC-2C8F288796-L000420](../web/workspace.html#L420) |
-| [web/workspace.html](../web/workspace.html#L421) | متغير JavaScript/TypeScript | analyze | 421 | [SRC-2C8F288796-L000421](../web/workspace.html#L421) |
-| [web/workspace.html](../web/workspace.html#L426) | متغير JavaScript/TypeScript | product_terms | 426 | [SRC-2C8F288796-L000426](../web/workspace.html#L426) |
-| [web/workspace.html](../web/workspace.html#L427) | متغير JavaScript/TypeScript | location_terms | 427 | [SRC-2C8F288796-L000427](../web/workspace.html#L427) |
-| [web/workspace.html](../web/workspace.html#L428) | مسار API/واجهة محتمل | /api/analyze | 428 | [SRC-2C8F288796-L000428](../web/workspace.html#L428) |
-| [web/workspace.html](../web/workspace.html#L446) | مسار API/واجهة محتمل | /api/leads | 446 | [SRC-2C8F288796-L000446](../web/workspace.html#L446) |
-| [web/workspace.html](../web/workspace.html#L454) | دالة JavaScript/TypeScript | renderPipeline | 454 | [SRC-2C8F288796-L000454](../web/workspace.html#L454) |
-| [web/workspace.html](../web/workspace.html#L458) | متغير JavaScript/TypeScript | board | 458 | [SRC-2C8F288796-L000458](../web/workspace.html#L458) |
-| [web/workspace.html](../web/workspace.html#L459) | متغير JavaScript/TypeScript | col | 459 | [SRC-2C8F288796-L000459](../web/workspace.html#L459) |
-| [web/workspace.html](../web/workspace.html#L462) | دالة JavaScript/TypeScript | renderSystem | 462 | [SRC-2C8F288796-L000462](../web/workspace.html#L462) |
-| [web/workspace.html](../web/workspace.html#L466) | مسار API/واجهة محتمل | /api/health | 466 | [SRC-2C8F288796-L000466](../web/workspace.html#L466) |
-| [web/workspace.html](../web/workspace.html#L467) | متغير JavaScript/TypeScript | agent | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
-| [web/workspace.html](../web/workspace.html#L467) | متغير JavaScript/TypeScript | build | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
-| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | mh | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
-| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | models | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
-| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | mt | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
-| [web/workspace.html](../web/workspace.html#L482) | متغير JavaScript/TypeScript | providers | 482 | [SRC-2C8F288796-L000482](../web/workspace.html#L482) |
-| [web/workspace.html](../web/workspace.html#L494) | متغير JavaScript/TypeScript | sh | 494 | [SRC-2C8F288796-L000494](../web/workspace.html#L494) |
-| [web/workspace.html](../web/workspace.html#L494) | متغير JavaScript/TypeScript | st | 494 | [SRC-2C8F288796-L000494](../web/workspace.html#L494) |
-| [web/workspace.html](../web/workspace.html#L497) | متغير JavaScript/TypeScript | flags | 497 | [SRC-2C8F288796-L000497](../web/workspace.html#L497) |
-| [web/workspace.html](../web/workspace.html#L508) | دالة JavaScript/TypeScript | renderPlaceholder | 508 | [SRC-2C8F288796-L000508](../web/workspace.html#L508) |
-| [web/workspace.html](../web/workspace.html#L518) | متغير JavaScript/TypeScript | links | 518 | [SRC-2C8F288796-L000518](../web/workspace.html#L518) |
-| [web/workspace.html](../web/workspace.html#L521) | دالة JavaScript/TypeScript | renderCurrent | 521 | [SRC-2C8F288796-L000521](../web/workspace.html#L521) |
-| [web/workspace.html](../web/workspace.html#L529) | دالة JavaScript/TypeScript | navigate | 529 | [SRC-2C8F288796-L000529](../web/workspace.html#L529) |
-| [web/workspace.html](../web/workspace.html#L532) | دالة JavaScript/TypeScript | loadLeads | 532 | [SRC-2C8F288796-L000532](../web/workspace.html#L532) |
-| [web/workspace.html](../web/workspace.html#L536) | دالة JavaScript/TypeScript | bootstrap | 536 | [SRC-2C8F288796-L000536](../web/workspace.html#L536) |
-| [web/workspace.html](../web/workspace.html#L538) | متغير JavaScript/TypeScript | session | 538 | [SRC-2C8F288796-L000538](../web/workspace.html#L538) |
-| [web/workspace.html](../web/workspace.html#L538) | مسار API/واجهة محتمل | /api/session | 538 | [SRC-2C8F288796-L000538](../web/workspace.html#L538) |
-| [web/workspace.html](../web/workspace.html#L553) | متغير JavaScript/TypeScript | button | 553 | [SRC-2C8F288796-L000553](../web/workspace.html#L553) |
-| [web/workspace.html](../web/workspace.html#L553) | متغير JavaScript/TypeScript | token | 553 | [SRC-2C8F288796-L000553](../web/workspace.html#L553) |
-| [web/workspace.html](../web/workspace.html#L562) | مسار API/واجهة محتمل | /api/session/logout | 562 | [SRC-2C8F288796-L000562](../web/workspace.html#L562) |
+| [web/workspace.html](../web/workspace.html#L157) | محدد class في CSS | profile-panel | 157 | [SRC-2C8F288796-L000157](../web/workspace.html#L157) |
+| [web/workspace.html](../web/workspace.html#L158) | محدد class في CSS | discovery-note | 158 | [SRC-2C8F288796-L000158](../web/workspace.html#L158) |
+| [web/workspace.html](../web/workspace.html#L158) | محدد class في CSS | profile-note | 158 | [SRC-2C8F288796-L000158](../web/workspace.html#L158) |
+| [web/workspace.html](../web/workspace.html#L159) | محدد class في CSS | discovery-history | 159 | [SRC-2C8F288796-L000159](../web/workspace.html#L159) |
+| [web/workspace.html](../web/workspace.html#L159) | محدد class في CSS | discovery-source-meta | 159 | [SRC-2C8F288796-L000159](../web/workspace.html#L159) |
+| [web/workspace.html](../web/workspace.html#L159) | محدد class في CSS | query-list | 159 | [SRC-2C8F288796-L000159](../web/workspace.html#L159) |
+| [web/workspace.html](../web/workspace.html#L160) | محدد class في CSS | discovery-source | 160 | [SRC-2C8F288796-L000160](../web/workspace.html#L160) |
+| [web/workspace.html](../web/workspace.html#L163) | محدد id في CSS | c5d5e7 | 163 | [SRC-2C8F288796-L000163](../web/workspace.html#L163) |
+| [web/workspace.html](../web/workspace.html#L166) | محدد class في CSS | consent-row | 166 | [SRC-2C8F288796-L000166](../web/workspace.html#L166) |
+| [web/workspace.html](../web/workspace.html#L200) | قيمة سمة HTML (id) | mainNav | 200 | [SRC-2C8F288796-L000200](../web/workspace.html#L200) |
+| [web/workspace.html](../web/workspace.html#L202) | قيمة سمة HTML (id) | apiDot | 202 | [SRC-2C8F288796-L000202](../web/workspace.html#L202) |
+| [web/workspace.html](../web/workspace.html#L202) | قيمة سمة HTML (id) | apiStatus | 202 | [SRC-2C8F288796-L000202](../web/workspace.html#L202) |
+| [web/workspace.html](../web/workspace.html#L202) | قيمة سمة HTML (id) | apiStatusNote | 202 | [SRC-2C8F288796-L000202](../web/workspace.html#L202) |
+| [web/workspace.html](../web/workspace.html#L203) | قيمة سمة HTML (id) | roleSummary | 203 | [SRC-2C8F288796-L000203](../web/workspace.html#L203) |
+| [web/workspace.html](../web/workspace.html#L204) | مسار API/واجهة محتمل | /leads | 204 | [SRC-2C8F288796-L000204](../web/workspace.html#L204) |
+| [web/workspace.html](../web/workspace.html#L209) | قيمة سمة HTML (id) | crumb | 209 | [SRC-2C8F288796-L000209](../web/workspace.html#L209) |
+| [web/workspace.html](../web/workspace.html#L210) | قيمة سمة HTML (id) | addSignalTop | 210 | [SRC-2C8F288796-L000210](../web/workspace.html#L210) |
+| [web/workspace.html](../web/workspace.html#L210) | قيمة سمة HTML (id) | logoutButton | 210 | [SRC-2C8F288796-L000210](../web/workspace.html#L210) |
+| [web/workspace.html](../web/workspace.html#L210) | قيمة سمة HTML (id) | rolePill | 210 | [SRC-2C8F288796-L000210](../web/workspace.html#L210) |
+| [web/workspace.html](../web/workspace.html#L212) | قيمة سمة HTML (id) | pageDescription | 212 | [SRC-2C8F288796-L000212](../web/workspace.html#L212) |
+| [web/workspace.html](../web/workspace.html#L212) | قيمة سمة HTML (id) | pageEyebrow | 212 | [SRC-2C8F288796-L000212](../web/workspace.html#L212) |
+| [web/workspace.html](../web/workspace.html#L212) | قيمة سمة HTML (id) | pageTitle | 212 | [SRC-2C8F288796-L000212](../web/workspace.html#L212) |
+| [web/workspace.html](../web/workspace.html#L213) | قيمة سمة HTML (id) | viewRoot | 213 | [SRC-2C8F288796-L000213](../web/workspace.html#L213) |
+| [web/workspace.html](../web/workspace.html#L218) | قيمة سمة HTML (id) | detailDrawer | 218 | [SRC-2C8F288796-L000218](../web/workspace.html#L218) |
+| [web/workspace.html](../web/workspace.html#L219) | قيمة سمة HTML (id) | closeDetail | 219 | [SRC-2C8F288796-L000219](../web/workspace.html#L219) |
+| [web/workspace.html](../web/workspace.html#L219) | قيمة سمة HTML (id) | detailBody | 219 | [SRC-2C8F288796-L000219](../web/workspace.html#L219) |
+| [web/workspace.html](../web/workspace.html#L219) | قيمة سمة HTML (id) | detailTitle | 219 | [SRC-2C8F288796-L000219](../web/workspace.html#L219) |
+| [web/workspace.html](../web/workspace.html#L221) | قيمة سمة HTML (id) | authGate | 221 | [SRC-2C8F288796-L000221](../web/workspace.html#L221) |
+| [web/workspace.html](../web/workspace.html#L226) | قيمة سمة HTML (id) | loginForm | 226 | [SRC-2C8F288796-L000226](../web/workspace.html#L226) |
+| [web/workspace.html](../web/workspace.html#L227) | قيمة سمة HTML (id) | accessToken | 227 | [SRC-2C8F288796-L000227](../web/workspace.html#L227) |
+| [web/workspace.html](../web/workspace.html#L228) | قيمة سمة HTML (id) | loginButton | 228 | [SRC-2C8F288796-L000228](../web/workspace.html#L228) |
+| [web/workspace.html](../web/workspace.html#L229) | قيمة سمة HTML (id) | authError | 229 | [SRC-2C8F288796-L000229](../web/workspace.html#L229) |
+| [web/workspace.html](../web/workspace.html#L238) | دالة JavaScript/TypeScript | $ | 238 | [SRC-2C8F288796-L000238](../web/workspace.html#L238) |
+| [web/workspace.html](../web/workspace.html#L239) | متغير JavaScript/TypeScript | state | 239 | [SRC-2C8F288796-L000239](../web/workspace.html#L239) |
+| [web/workspace.html](../web/workspace.html#L240) | متغير JavaScript/TypeScript | statuses | 240 | [SRC-2C8F288796-L000240](../web/workspace.html#L240) |
+| [web/workspace.html](../web/workspace.html#L248) | متغير JavaScript/TypeScript | labels | 248 | [SRC-2C8F288796-L000248](../web/workspace.html#L248) |
+| [web/workspace.html](../web/workspace.html#L249) | متغير JavaScript/TypeScript | menu | 249 | [SRC-2C8F288796-L000249](../web/workspace.html#L249) |
+| [web/workspace.html](../web/workspace.html#L267) | دالة JavaScript/TypeScript | make | 267 | [SRC-2C8F288796-L000267](../web/workspace.html#L267) |
+| [web/workspace.html](../web/workspace.html#L268) | متغير JavaScript/TypeScript | node | 268 | [SRC-2C8F288796-L000268](../web/workspace.html#L268) |
+| [web/workspace.html](../web/workspace.html#L273) | دالة JavaScript/TypeScript | action | 273 | [SRC-2C8F288796-L000273](../web/workspace.html#L273) |
+| [web/workspace.html](../web/workspace.html#L274) | متغير JavaScript/TypeScript | b | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
+| [web/workspace.html](../web/workspace.html#L277) | دالة JavaScript/TypeScript | safeHttp | 277 | [SRC-2C8F288796-L000277](../web/workspace.html#L277) |
+| [web/workspace.html](../web/workspace.html#L278) | متغير JavaScript/TypeScript | u | 278 | [SRC-2C8F288796-L000278](../web/workspace.html#L278) |
+| [web/workspace.html](../web/workspace.html#L280) | دالة JavaScript/TypeScript | escapeMessage | 280 | [SRC-2C8F288796-L000280](../web/workspace.html#L280) |
+| [web/workspace.html](../web/workspace.html#L281) | دالة JavaScript/TypeScript | api | 281 | [SRC-2C8F288796-L000281](../web/workspace.html#L281) |
+| [web/workspace.html](../web/workspace.html#L282) | متغير JavaScript/TypeScript | opts | 282 | [SRC-2C8F288796-L000282](../web/workspace.html#L282) |
+| [web/workspace.html](../web/workspace.html#L283) | متغير JavaScript/TypeScript | headers | 283 | [SRC-2C8F288796-L000283](../web/workspace.html#L283) |
+| [web/workspace.html](../web/workspace.html#L285) | متغير JavaScript/TypeScript | response | 285 | [SRC-2C8F288796-L000285](../web/workspace.html#L285) |
+| [web/workspace.html](../web/workspace.html#L286) | متغير JavaScript/TypeScript | data | 286 | [SRC-2C8F288796-L000286](../web/workspace.html#L286) |
+| [web/workspace.html](../web/workspace.html#L292) | دالة JavaScript/TypeScript | showAuth | 292 | [SRC-2C8F288796-L000292](../web/workspace.html#L292) |
+| [web/workspace.html](../web/workspace.html#L297) | دالة JavaScript/TypeScript | hideAuth | 297 | [SRC-2C8F288796-L000297](../web/workspace.html#L297) |
+| [web/workspace.html](../web/workspace.html#L298) | دالة JavaScript/TypeScript | statusLabel | 298 | [SRC-2C8F288796-L000298](../web/workspace.html#L298) |
+| [web/workspace.html](../web/workspace.html#L298) | متغير JavaScript/TypeScript | item | 298 | [SRC-2C8F288796-L000298](../web/workspace.html#L298) |
+| [web/workspace.html](../web/workspace.html#L299) | دالة JavaScript/TypeScript | tag | 299 | [SRC-2C8F288796-L000299](../web/workspace.html#L299) |
+| [web/workspace.html](../web/workspace.html#L300) | دالة JavaScript/TypeScript | setPage | 300 | [SRC-2C8F288796-L000300](../web/workspace.html#L300) |
+| [web/workspace.html](../web/workspace.html#L304) | دالة JavaScript/TypeScript | renderNav | 304 | [SRC-2C8F288796-L000304](../web/workspace.html#L304) |
+| [web/workspace.html](../web/workspace.html#L305) | متغير JavaScript/TypeScript | nav | 305 | [SRC-2C8F288796-L000305](../web/workspace.html#L305) |
+| [web/workspace.html](../web/workspace.html#L309) | متغير JavaScript/TypeScript | icon | 309 | [SRC-2C8F288796-L000309](../web/workspace.html#L309) |
+| [web/workspace.html](../web/workspace.html#L309) | متغير JavaScript/TypeScript | name | 309 | [SRC-2C8F288796-L000309](../web/workspace.html#L309) |
+| [web/workspace.html](../web/workspace.html#L317) | دالة JavaScript/TypeScript | setConnection | 317 | [SRC-2C8F288796-L000317](../web/workspace.html#L317) |
+| [web/workspace.html](../web/workspace.html#L320) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 320 | [SRC-2C8F288796-L000320](../web/workspace.html#L320) |
+| [web/workspace.html](../web/workspace.html#L320) | متغير JavaScript/TypeScript | WRITE_ROLES | 320 | [SRC-2C8F288796-L000320](../web/workspace.html#L320) |
+| [web/workspace.html](../web/workspace.html#L321) | دالة JavaScript/TypeScript | canWrite | 321 | [SRC-2C8F288796-L000321](../web/workspace.html#L321) |
+| [web/workspace.html](../web/workspace.html#L322) | دالة JavaScript/TypeScript | countByStatus | 322 | [SRC-2C8F288796-L000322](../web/workspace.html#L322) |
+| [web/workspace.html](../web/workspace.html#L323) | دالة JavaScript/TypeScript | buildStat | 323 | [SRC-2C8F288796-L000323](../web/workspace.html#L323) |
+| [web/workspace.html](../web/workspace.html#L324) | متغير JavaScript/TypeScript | card | 324 | [SRC-2C8F288796-L000324](../web/workspace.html#L324) |
+| [web/workspace.html](../web/workspace.html#L327) | دالة JavaScript/TypeScript | renderOverview | 327 | [SRC-2C8F288796-L000327](../web/workspace.html#L327) |
+| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | root | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
+| [web/workspace.html](../web/workspace.html#L330) | متغير JavaScript/TypeScript | qualified | 330 | [SRC-2C8F288796-L000330](../web/workspace.html#L330) |
+| [web/workspace.html](../web/workspace.html#L331) | متغير JavaScript/TypeScript | strong | 331 | [SRC-2C8F288796-L000331](../web/workspace.html#L331) |
+| [web/workspace.html](../web/workspace.html#L332) | متغير JavaScript/TypeScript | review | 332 | [SRC-2C8F288796-L000332](../web/workspace.html#L332) |
+| [web/workspace.html](../web/workspace.html#L333) | متغير JavaScript/TypeScript | stats | 333 | [SRC-2C8F288796-L000333](../web/workspace.html#L333) |
+| [web/workspace.html](../web/workspace.html#L339) | متغير JavaScript/TypeScript | grid | 339 | [SRC-2C8F288796-L000339](../web/workspace.html#L339) |
+| [web/workspace.html](../web/workspace.html#L340) | متغير JavaScript/TypeScript | h | 340 | [SRC-2C8F288796-L000340](../web/workspace.html#L340) |
+| [web/workspace.html](../web/workspace.html#L340) | متغير JavaScript/TypeScript | head | 340 | [SRC-2C8F288796-L000340](../web/workspace.html#L340) |
+| [web/workspace.html](../web/workspace.html#L340) | متغير JavaScript/TypeScript | recent | 340 | [SRC-2C8F288796-L000340](../web/workspace.html#L340) |
+| [web/workspace.html](../web/workspace.html#L341) | متغير JavaScript/TypeScript | list | 341 | [SRC-2C8F288796-L000341](../web/workspace.html#L341) |
+| [web/workspace.html](../web/workspace.html#L342) | متغير JavaScript/TypeScript | rows | 342 | [SRC-2C8F288796-L000342](../web/workspace.html#L342) |
+| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | dh | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
+| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | distribution | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
+| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | dtitle | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
+| [web/workspace.html](../web/workspace.html#L347) | متغير JavaScript/TypeScript | bars | 347 | [SRC-2C8F288796-L000347](../web/workspace.html#L347) |
+| [web/workspace.html](../web/workspace.html#L347) | متغير JavaScript/TypeScript | groups | 347 | [SRC-2C8F288796-L000347](../web/workspace.html#L347) |
+| [web/workspace.html](../web/workspace.html#L348) | متغير JavaScript/TypeScript | fill | 348 | [SRC-2C8F288796-L000348](../web/workspace.html#L348) |
+| [web/workspace.html](../web/workspace.html#L348) | متغير JavaScript/TypeScript | n | 348 | [SRC-2C8F288796-L000348](../web/workspace.html#L348) |
+| [web/workspace.html](../web/workspace.html#L348) | متغير JavaScript/TypeScript | percent | 348 | [SRC-2C8F288796-L000348](../web/workspace.html#L348) |
+| [web/workspace.html](../web/workspace.html#L348) | متغير JavaScript/TypeScript | row | 348 | [SRC-2C8F288796-L000348](../web/workspace.html#L348) |
+| [web/workspace.html](../web/workspace.html#L348) | متغير JavaScript/TypeScript | track | 348 | [SRC-2C8F288796-L000348](../web/workspace.html#L348) |
+| [web/workspace.html](../web/workspace.html#L352) | دالة JavaScript/TypeScript | emptyState | 352 | [SRC-2C8F288796-L000352](../web/workspace.html#L352) |
+| [web/workspace.html](../web/workspace.html#L353) | متغير JavaScript/TypeScript | box | 353 | [SRC-2C8F288796-L000353](../web/workspace.html#L353) |
+| [web/workspace.html](../web/workspace.html#L355) | دالة JavaScript/TypeScript | signalCard | 355 | [SRC-2C8F288796-L000355](../web/workspace.html#L355) |
+| [web/workspace.html](../web/workspace.html#L357) | متغير JavaScript/TypeScript | left | 357 | [SRC-2C8F288796-L000357](../web/workspace.html#L357) |
+| [web/workspace.html](../web/workspace.html#L357) | متغير JavaScript/TypeScript | top | 357 | [SRC-2C8F288796-L000357](../web/workspace.html#L357) |
+| [web/workspace.html](../web/workspace.html#L358) | متغير JavaScript/TypeScript | assessment | 358 | [SRC-2C8F288796-L000358](../web/workspace.html#L358) |
+| [web/workspace.html](../web/workspace.html#L361) | متغير JavaScript/TypeScript | text | 361 | [SRC-2C8F288796-L000361](../web/workspace.html#L361) |
+| [web/workspace.html](../web/workspace.html#L362) | متغير JavaScript/TypeScript | meta | 362 | [SRC-2C8F288796-L000362](../web/workspace.html#L362) |
+| [web/workspace.html](../web/workspace.html#L364) | متغير JavaScript/TypeScript | source | 364 | [SRC-2C8F288796-L000364](../web/workspace.html#L364) |
+| [web/workspace.html](../web/workspace.html#L366) | متغير JavaScript/TypeScript | actions | 366 | [SRC-2C8F288796-L000366](../web/workspace.html#L366) |
+| [web/workspace.html](../web/workspace.html#L371) | دالة JavaScript/TypeScript | openDetails | 371 | [SRC-2C8F288796-L000371](../web/workspace.html#L371) |
+| [web/workspace.html](../web/workspace.html#L372) | متغير JavaScript/TypeScript | body | 372 | [SRC-2C8F288796-L000372](../web/workspace.html#L372) |
+| [web/workspace.html](../web/workspace.html#L373) | متغير JavaScript/TypeScript | a | 373 | [SRC-2C8F288796-L000373](../web/workspace.html#L373) |
+| [web/workspace.html](../web/workspace.html#L376) | متغير JavaScript/TypeScript | url | 376 | [SRC-2C8F288796-L000376](../web/workspace.html#L376) |
+| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | link | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
+| [web/workspace.html](../web/workspace.html#L383) | متغير JavaScript/TypeScript | ul | 383 | [SRC-2C8F288796-L000383](../web/workspace.html#L383) |
+| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | select | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
+| [web/workspace.html](../web/workspace.html#L389) | متغير JavaScript/TypeScript | o | 389 | [SRC-2C8F288796-L000389](../web/workspace.html#L389) |
+| [web/workspace.html](../web/workspace.html#L390) | متغير JavaScript/TypeScript | save | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
+| [web/workspace.html](../web/workspace.html#L390) | مسار API/واجهة محتمل | /api/leads/ | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
+| [web/workspace.html](../web/workspace.html#L395) | دالة JavaScript/TypeScript | closeDetails | 395 | [SRC-2C8F288796-L000395](../web/workspace.html#L395) |
+| [web/workspace.html](../web/workspace.html#L396) | دالة JavaScript/TypeScript | renderSignals | 396 | [SRC-2C8F288796-L000396](../web/workspace.html#L396) |
+| [web/workspace.html](../web/workspace.html#L399) | متغير JavaScript/TypeScript | panel | 399 | [SRC-2C8F288796-L000399](../web/workspace.html#L399) |
+| [web/workspace.html](../web/workspace.html#L399) | متغير JavaScript/TypeScript | ph | 399 | [SRC-2C8F288796-L000399](../web/workspace.html#L399) |
+| [web/workspace.html](../web/workspace.html#L399) | متغير JavaScript/TypeScript | ptitle | 399 | [SRC-2C8F288796-L000399](../web/workspace.html#L399) |
+| [web/workspace.html](../web/workspace.html#L401) | متغير JavaScript/TypeScript | search | 401 | [SRC-2C8F288796-L000401](../web/workspace.html#L401) |
+| [web/workspace.html](../web/workspace.html#L401) | متغير JavaScript/TypeScript | toolbar | 401 | [SRC-2C8F288796-L000401](../web/workspace.html#L401) |
+| [web/workspace.html](../web/workspace.html#L403) | متغير JavaScript/TypeScript | all | 403 | [SRC-2C8F288796-L000403](../web/workspace.html#L403) |
+| [web/workspace.html](../web/workspace.html#L403) | متغير JavaScript/TypeScript | filter | 403 | [SRC-2C8F288796-L000403](../web/workspace.html#L403) |
+| [web/workspace.html](../web/workspace.html#L411) | دالة JavaScript/TypeScript | drawSignalRows | 411 | [SRC-2C8F288796-L000411](../web/workspace.html#L411) |
+| [web/workspace.html](../web/workspace.html#L413) | متغير JavaScript/TypeScript | query | 413 | [SRC-2C8F288796-L000413](../web/workspace.html#L413) |
+| [web/workspace.html](../web/workspace.html#L418) | دالة JavaScript/TypeScript | createSignalForm | 418 | [SRC-2C8F288796-L000418](../web/workspace.html#L418) |
+| [web/workspace.html](../web/workspace.html#L419) | متغير JavaScript/TypeScript | title | 419 | [SRC-2C8F288796-L000419](../web/workspace.html#L419) |
+| [web/workspace.html](../web/workspace.html#L419) | متغير JavaScript/TypeScript | wrapper | 419 | [SRC-2C8F288796-L000419](../web/workspace.html#L419) |
+| [web/workspace.html](../web/workspace.html#L420) | قيمة سمة HTML (id) | newSignalText | 420 | [SRC-2C8F288796-L000420](../web/workspace.html#L420) |
+| [web/workspace.html](../web/workspace.html#L421) | قيمة سمة HTML (id) | newSignalUrl | 421 | [SRC-2C8F288796-L000421](../web/workspace.html#L421) |
+| [web/workspace.html](../web/workspace.html#L423) | قيمة سمة HTML (id) | newSignalPlatform | 423 | [SRC-2C8F288796-L000423](../web/workspace.html#L423) |
+| [web/workspace.html](../web/workspace.html#L423) | متغير JavaScript/TypeScript | platform | 423 | [SRC-2C8F288796-L000423](../web/workspace.html#L423) |
+| [web/workspace.html](../web/workspace.html#L424) | قيمة سمة HTML (id) | newSignalProduct | 424 | [SRC-2C8F288796-L000424](../web/workspace.html#L424) |
+| [web/workspace.html](../web/workspace.html#L424) | متغير JavaScript/TypeScript | product | 424 | [SRC-2C8F288796-L000424](../web/workspace.html#L424) |
+| [web/workspace.html](../web/workspace.html#L425) | قيمة سمة HTML (id) | newSignalLocation | 425 | [SRC-2C8F288796-L000425](../web/workspace.html#L425) |
+| [web/workspace.html](../web/workspace.html#L425) | متغير JavaScript/TypeScript | location | 425 | [SRC-2C8F288796-L000425](../web/workspace.html#L425) |
+| [web/workspace.html](../web/workspace.html#L426) | قيمة سمة HTML (id) | newSignalNote | 426 | [SRC-2C8F288796-L000426](../web/workspace.html#L426) |
+| [web/workspace.html](../web/workspace.html#L426) | متغير JavaScript/TypeScript | note | 426 | [SRC-2C8F288796-L000426](../web/workspace.html#L426) |
+| [web/workspace.html](../web/workspace.html#L427) | متغير JavaScript/TypeScript | fields | 427 | [SRC-2C8F288796-L000427](../web/workspace.html#L427) |
+| [web/workspace.html](../web/workspace.html#L428) | متغير JavaScript/TypeScript | field | 428 | [SRC-2C8F288796-L000428](../web/workspace.html#L428) |
+| [web/workspace.html](../web/workspace.html#L430) | قيمة سمة HTML (id) | analysisResult | 430 | [SRC-2C8F288796-L000430](../web/workspace.html#L430) |
+| [web/workspace.html](../web/workspace.html#L430) | متغير JavaScript/TypeScript | result | 430 | [SRC-2C8F288796-L000430](../web/workspace.html#L430) |
+| [web/workspace.html](../web/workspace.html#L431) | متغير JavaScript/TypeScript | buttons | 431 | [SRC-2C8F288796-L000431](../web/workspace.html#L431) |
+| [web/workspace.html](../web/workspace.html#L432) | متغير JavaScript/TypeScript | analyze | 432 | [SRC-2C8F288796-L000432](../web/workspace.html#L432) |
+| [web/workspace.html](../web/workspace.html#L437) | متغير JavaScript/TypeScript | product_terms | 437 | [SRC-2C8F288796-L000437](../web/workspace.html#L437) |
+| [web/workspace.html](../web/workspace.html#L438) | متغير JavaScript/TypeScript | location_terms | 438 | [SRC-2C8F288796-L000438](../web/workspace.html#L438) |
+| [web/workspace.html](../web/workspace.html#L439) | مسار API/واجهة محتمل | /api/analyze | 439 | [SRC-2C8F288796-L000439](../web/workspace.html#L439) |
+| [web/workspace.html](../web/workspace.html#L457) | مسار API/واجهة محتمل | /api/leads | 457 | [SRC-2C8F288796-L000457](../web/workspace.html#L457) |
+| [web/workspace.html](../web/workspace.html#L465) | دالة JavaScript/TypeScript | renderPipeline | 465 | [SRC-2C8F288796-L000465](../web/workspace.html#L465) |
+| [web/workspace.html](../web/workspace.html#L469) | متغير JavaScript/TypeScript | board | 469 | [SRC-2C8F288796-L000469](../web/workspace.html#L469) |
+| [web/workspace.html](../web/workspace.html#L470) | متغير JavaScript/TypeScript | col | 470 | [SRC-2C8F288796-L000470](../web/workspace.html#L470) |
+| [web/workspace.html](../web/workspace.html#L473) | دالة JavaScript/TypeScript | renderSystem | 473 | [SRC-2C8F288796-L000473](../web/workspace.html#L473) |
+| [web/workspace.html](../web/workspace.html#L477) | مسار API/واجهة محتمل | /api/health | 477 | [SRC-2C8F288796-L000477](../web/workspace.html#L477) |
+| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | agent | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
+| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | build | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
+| [web/workspace.html](../web/workspace.html#L489) | متغير JavaScript/TypeScript | mh | 489 | [SRC-2C8F288796-L000489](../web/workspace.html#L489) |
+| [web/workspace.html](../web/workspace.html#L489) | متغير JavaScript/TypeScript | models | 489 | [SRC-2C8F288796-L000489](../web/workspace.html#L489) |
+| [web/workspace.html](../web/workspace.html#L489) | متغير JavaScript/TypeScript | mt | 489 | [SRC-2C8F288796-L000489](../web/workspace.html#L489) |
+| [web/workspace.html](../web/workspace.html#L493) | متغير JavaScript/TypeScript | providers | 493 | [SRC-2C8F288796-L000493](../web/workspace.html#L493) |
+| [web/workspace.html](../web/workspace.html#L505) | متغير JavaScript/TypeScript | sh | 505 | [SRC-2C8F288796-L000505](../web/workspace.html#L505) |
+| [web/workspace.html](../web/workspace.html#L505) | متغير JavaScript/TypeScript | st | 505 | [SRC-2C8F288796-L000505](../web/workspace.html#L505) |
+| [web/workspace.html](../web/workspace.html#L508) | متغير JavaScript/TypeScript | flags | 508 | [SRC-2C8F288796-L000508](../web/workspace.html#L508) |
+| [web/workspace.html](../web/workspace.html#L519) | دالة JavaScript/TypeScript | renderPlaceholder | 519 | [SRC-2C8F288796-L000519](../web/workspace.html#L519) |
+| [web/workspace.html](../web/workspace.html#L529) | متغير JavaScript/TypeScript | links | 529 | [SRC-2C8F288796-L000529](../web/workspace.html#L529) |
+| [web/workspace.html](../web/workspace.html#L532) | دالة JavaScript/TypeScript | csvValues | 532 | [SRC-2C8F288796-L000532](../web/workspace.html#L532) |
+| [web/workspace.html](../web/workspace.html#L533) | دالة JavaScript/TypeScript | textField | 533 | [SRC-2C8F288796-L000533](../web/workspace.html#L533) |
+| [web/workspace.html](../web/workspace.html#L536) | متغير JavaScript/TypeScript | caption | 536 | [SRC-2C8F288796-L000536](../web/workspace.html#L536) |
+| [web/workspace.html](../web/workspace.html#L539) | دالة JavaScript/TypeScript | renderProductProfile | 539 | [SRC-2C8F288796-L000539](../web/workspace.html#L539) |
+| [web/workspace.html](../web/workspace.html#L562) | متغير JavaScript/TypeScript | localeField | 562 | [SRC-2C8F288796-L000562](../web/workspace.html#L562) |
+| [web/workspace.html](../web/workspace.html#L570) | متغير JavaScript/TypeScript | payload | 570 | [SRC-2C8F288796-L000570](../web/workspace.html#L570) |
+| [web/workspace.html](../web/workspace.html#L575) | مسار API/واجهة محتمل | /api/product-profiles | 575 | [SRC-2C8F288796-L000575](../web/workspace.html#L575) |
+| [web/workspace.html](../web/workspace.html#L581) | متغير JavaScript/TypeScript | listPanel | 581 | [SRC-2C8F288796-L000581](../web/workspace.html#L581) |
+| [web/workspace.html](../web/workspace.html#L597) | دالة JavaScript/TypeScript | renderDiscoveryRun | 597 | [SRC-2C8F288796-L000597](../web/workspace.html#L597) |
+| [web/workspace.html](../web/workspace.html#L599) | متغير JavaScript/TypeScript | report | 599 | [SRC-2C8F288796-L000599](../web/workspace.html#L599) |
+| [web/workspace.html](../web/workspace.html#L609) | متغير JavaScript/TypeScript | qs | 609 | [SRC-2C8F288796-L000609](../web/workspace.html#L609) |
+| [web/workspace.html](../web/workspace.html#L620) | متغير JavaScript/TypeScript | evidence | 620 | [SRC-2C8F288796-L000620](../web/workspace.html#L620) |
+| [web/workspace.html](../web/workspace.html#L633) | مسار API/واجهة محتمل | /api/discoveries/ | 633 | [SRC-2C8F288796-L000633](../web/workspace.html#L633) |
+| [web/workspace.html](../web/workspace.html#L645) | دالة JavaScript/TypeScript | renderDiscovery | 645 | [SRC-2C8F288796-L000645](../web/workspace.html#L645) |
+| [web/workspace.html](../web/workspace.html#L648) | متغير JavaScript/TypeScript | controls | 648 | [SRC-2C8F288796-L000648](../web/workspace.html#L648) |
+| [web/workspace.html](../web/workspace.html#L656) | متغير JavaScript/TypeScript | option | 656 | [SRC-2C8F288796-L000656](../web/workspace.html#L656) |
+| [web/workspace.html](../web/workspace.html#L658) | متغير JavaScript/TypeScript | consent | 658 | [SRC-2C8F288796-L000658](../web/workspace.html#L658) |
+| [web/workspace.html](../web/workspace.html#L662) | متغير JavaScript/TypeScript | run | 662 | [SRC-2C8F288796-L000662](../web/workspace.html#L662) |
+| [web/workspace.html](../web/workspace.html#L666) | مسار API/واجهة محتمل | /api/discoveries | 666 | [SRC-2C8F288796-L000666](../web/workspace.html#L666) |
+| [web/workspace.html](../web/workspace.html#L677) | متغير JavaScript/TypeScript | history | 677 | [SRC-2C8F288796-L000677](../web/workspace.html#L677) |
+| [web/workspace.html](../web/workspace.html#L689) | دالة JavaScript/TypeScript | renderCurrent | 689 | [SRC-2C8F288796-L000689](../web/workspace.html#L689) |
+| [web/workspace.html](../web/workspace.html#L702) | دالة JavaScript/TypeScript | navigate | 702 | [SRC-2C8F288796-L000702](../web/workspace.html#L702) |
+| [web/workspace.html](../web/workspace.html#L705) | دالة JavaScript/TypeScript | loadProductProfiles | 705 | [SRC-2C8F288796-L000705](../web/workspace.html#L705) |
+| [web/workspace.html](../web/workspace.html#L710) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 710 | [SRC-2C8F288796-L000710](../web/workspace.html#L710) |
+| [web/workspace.html](../web/workspace.html#L714) | دالة JavaScript/TypeScript | loadLeads | 714 | [SRC-2C8F288796-L000714](../web/workspace.html#L714) |
+| [web/workspace.html](../web/workspace.html#L718) | دالة JavaScript/TypeScript | bootstrap | 718 | [SRC-2C8F288796-L000718](../web/workspace.html#L718) |
+| [web/workspace.html](../web/workspace.html#L719) | متغير JavaScript/TypeScript | session | 719 | [SRC-2C8F288796-L000719](../web/workspace.html#L719) |
+| [web/workspace.html](../web/workspace.html#L721) | مسار API/واجهة محتمل | /api/session | 721 | [SRC-2C8F288796-L000721](../web/workspace.html#L721) |
+| [web/workspace.html](../web/workspace.html#L732) | متغير JavaScript/TypeScript | results | 732 | [SRC-2C8F288796-L000732](../web/workspace.html#L732) |
+| [web/workspace.html](../web/workspace.html#L758) | متغير JavaScript/TypeScript | button | 758 | [SRC-2C8F288796-L000758](../web/workspace.html#L758) |
+| [web/workspace.html](../web/workspace.html#L758) | متغير JavaScript/TypeScript | token | 758 | [SRC-2C8F288796-L000758](../web/workspace.html#L758) |
+| [web/workspace.html](../web/workspace.html#L767) | مسار API/واجهة محتمل | /api/session/logout | 767 | [SRC-2C8F288796-L000767](../web/workspace.html#L767) |
 
 ## سجل وسوم المراجعة والإصلاح
 

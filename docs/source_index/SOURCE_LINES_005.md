@@ -4,9 +4,324 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000042 إلى SRC-59CF4B7DE8-L000529
+- النطاق: SRC-C9CF9B54F8-L000787 إلى SRC-59CF4B7DE8-L000182
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-C9CF9B54F8 — [agents/omarai.py](../../agents/omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-C9CF9B54F8-L000787](../../agents/omarai.py#L787) | 787 | `"                   VALUES (?, ?, ?, ?, ?, ?, ?)"` | — |
+| [SRC-C9CF9B54F8-L000788](../../agents/omarai.py#L788) | 788 | `"                   ON CONFLICT(tenant_id, normalized_name)"` | — |
+| [SRC-C9CF9B54F8-L000789](../../agents/omarai.py#L789) | 789 | `"                   DO UPDATE SET name=excluded.name,"` | — |
+| [SRC-C9CF9B54F8-L000790](../../agents/omarai.py#L790) | 790 | `"                                 profile_json=excluded.profile_json,"` | — |
+| [SRC-C9CF9B54F8-L000791](../../agents/omarai.py#L791) | 791 | `"                                 updated_at=excluded.updated_at\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000792](../../agents/omarai.py#L792) | 792 | `"                (profile_id, tenant, normalized_name, name, encoded, now, now),"` | — |
+| [SRC-C9CF9B54F8-L000793](../../agents/omarai.py#L793) | 793 | `"            )"` | — |
+| [SRC-C9CF9B54F8-L000794](../../agents/omarai.py#L794) | 794 | `"            row = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000795](../../agents/omarai.py#L795) | 795 | `"                \"\"\"SELECT id, name, profile_json, created_at, updated_at"` | — |
+| [SRC-C9CF9B54F8-L000796](../../agents/omarai.py#L796) | 796 | `"                   FROM product_profiles"` | — |
+| [SRC-C9CF9B54F8-L000797](../../agents/omarai.py#L797) | 797 | `"                   WHERE tenant_id=? AND normalized_name=?\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000798](../../agents/omarai.py#L798) | 798 | `"                (tenant, normalized_name),"` | — |
+| [SRC-C9CF9B54F8-L000799](../../agents/omarai.py#L799) | 799 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L000800](../../agents/omarai.py#L800) | 800 | `"        return self._product_profile_row(row)"` | — |
+| [SRC-C9CF9B54F8-L000801](../../agents/omarai.py#L801) | 801 | `""` | — |
+| [SRC-C9CF9B54F8-L000802](../../agents/omarai.py#L802) | 802 | `"    def list_product_profiles(self, *, tenant_id: str):"` | — |
+| [SRC-C9CF9B54F8-L000803](../../agents/omarai.py#L803) | 803 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L000804](../../agents/omarai.py#L804) | 804 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000805](../../agents/omarai.py#L805) | 805 | `"            rows = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000806](../../agents/omarai.py#L806) | 806 | `"                \"\"\"SELECT id, name, profile_json, created_at, updated_at"` | — |
+| [SRC-C9CF9B54F8-L000807](../../agents/omarai.py#L807) | 807 | `"                   FROM product_profiles WHERE tenant_id=?"` | — |
+| [SRC-C9CF9B54F8-L000808](../../agents/omarai.py#L808) | 808 | `"                   ORDER BY updated_at DESC, id LIMIT 100\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000809](../../agents/omarai.py#L809) | 809 | `"                (tenant,),"` | — |
+| [SRC-C9CF9B54F8-L000810](../../agents/omarai.py#L810) | 810 | `"            ).fetchall()"` | — |
+| [SRC-C9CF9B54F8-L000811](../../agents/omarai.py#L811) | 811 | `"        return [self._product_profile_row(row) for row in rows]"` | — |
+| [SRC-C9CF9B54F8-L000812](../../agents/omarai.py#L812) | 812 | `""` | — |
+| [SRC-C9CF9B54F8-L000813](../../agents/omarai.py#L813) | 813 | `"    def get_product_profile(self, profile_id: str, *, tenant_id: str):"` | — |
+| [SRC-C9CF9B54F8-L000814](../../agents/omarai.py#L814) | 814 | `"        if not isinstance(profile_id, str) or not profile_id.strip():"` | — |
+| [SRC-C9CF9B54F8-L000815](../../agents/omarai.py#L815) | 815 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000816](../../agents/omarai.py#L816) | 816 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L000817](../../agents/omarai.py#L817) | 817 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000818](../../agents/omarai.py#L818) | 818 | `"            row = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000819](../../agents/omarai.py#L819) | 819 | `"                \"\"\"SELECT id, name, profile_json, created_at, updated_at"` | — |
+| [SRC-C9CF9B54F8-L000820](../../agents/omarai.py#L820) | 820 | `"                   FROM product_profiles WHERE id=? AND tenant_id=?\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000821](../../agents/omarai.py#L821) | 821 | `"                (profile_id.strip(), tenant),"` | — |
+| [SRC-C9CF9B54F8-L000822](../../agents/omarai.py#L822) | 822 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L000823](../../agents/omarai.py#L823) | 823 | `"        return self._product_profile_row(row)"` | — |
+| [SRC-C9CF9B54F8-L000824](../../agents/omarai.py#L824) | 824 | `""` | — |
+| [SRC-C9CF9B54F8-L000825](../../agents/omarai.py#L825) | 825 | `"    @staticmethod"` | — |
+| [SRC-C9CF9B54F8-L000826](../../agents/omarai.py#L826) | 826 | `"    def _safe_discovery_source(source: dict):"` | — |
+| [SRC-C9CF9B54F8-L000827](../../agents/omarai.py#L827) | 827 | `"        from urllib.parse import urlparse"` | — |
+| [SRC-C9CF9B54F8-L000828](../../agents/omarai.py#L828) | 828 | `""` | — |
+| [SRC-C9CF9B54F8-L000829](../../agents/omarai.py#L829) | 829 | `"        title = str(source.get(\"title\") or \"\")[:300].strip()"` | — |
+| [SRC-C9CF9B54F8-L000830](../../agents/omarai.py#L830) | 830 | `"        snippet = str(source.get(\"snippet\") or \"\")[:1600].strip()"` | — |
+| [SRC-C9CF9B54F8-L000831](../../agents/omarai.py#L831) | 831 | `"        source_url = validate_url(source.get(\"url\", \"\"))"` | — |
+| [SRC-C9CF9B54F8-L000832](../../agents/omarai.py#L832) | 832 | `"        parsed = urlparse(source_url)"` | — |
+| [SRC-C9CF9B54F8-L000833](../../agents/omarai.py#L833) | 833 | `"        hostname = (parsed.hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-C9CF9B54F8-L000834](../../agents/omarai.py#L834) | 834 | `"        if hostname == \"localhost\" or hostname.endswith((\".localhost\", \".local\")):"` | — |
+| [SRC-C9CF9B54F8-L000835](../../agents/omarai.py#L835) | 835 | `"            raise ValueError(\"discovery source URL is not public\")"` | — |
+| [SRC-C9CF9B54F8-L000836](../../agents/omarai.py#L836) | 836 | `"        try:"` | — |
+| [SRC-C9CF9B54F8-L000837](../../agents/omarai.py#L837) | 837 | `"            address = ipaddress.ip_address(hostname)"` | — |
+| [SRC-C9CF9B54F8-L000838](../../agents/omarai.py#L838) | 838 | `"        except ValueError:"` | — |
+| [SRC-C9CF9B54F8-L000839](../../agents/omarai.py#L839) | 839 | `"            address = None"` | — |
+| [SRC-C9CF9B54F8-L000840](../../agents/omarai.py#L840) | 840 | `"        if address is not None and not address.is_global:"` | — |
+| [SRC-C9CF9B54F8-L000841](../../agents/omarai.py#L841) | 841 | `"            raise ValueError(\"discovery source URL is not public\")"` | — |
+| [SRC-C9CF9B54F8-L000842](../../agents/omarai.py#L842) | 842 | `"        evidence = source.get(\"lead_intent_evidence\")"` | — |
+| [SRC-C9CF9B54F8-L000843](../../agents/omarai.py#L843) | 843 | `"        safe_evidence = None"` | — |
+| [SRC-C9CF9B54F8-L000844](../../agents/omarai.py#L844) | 844 | `"        if isinstance(evidence, dict):"` | — |
+| [SRC-C9CF9B54F8-L000845](../../agents/omarai.py#L845) | 845 | `"            safe_evidence = {"` | — |
+| [SRC-C9CF9B54F8-L000846](../../agents/omarai.py#L846) | 846 | `"                \"phrase\": str(evidence.get(\"phrase\") or \"\")[:500],"` | — |
+| [SRC-C9CF9B54F8-L000847](../../agents/omarai.py#L847) | 847 | `"                \"basis\": str(evidence.get(\"basis\") or \"\")[:40],"` | — |
+| [SRC-C9CF9B54F8-L000848](../../agents/omarai.py#L848) | 848 | `"                \"signal_type\": str(evidence.get(\"signal_type\") or \"\")[:80],"` | — |
+| [SRC-C9CF9B54F8-L000849](../../agents/omarai.py#L849) | 849 | `"                \"product_fit\": str(evidence.get(\"product_fit\") or \"unassessed\")[:40],"` | — |
+| [SRC-C9CF9B54F8-L000850](../../agents/omarai.py#L850) | 850 | `"            }"` | — |
+| [SRC-C9CF9B54F8-L000851](../../agents/omarai.py#L851) | 851 | `"        providers = source.get(\"providers\")"` | — |
+| [SRC-C9CF9B54F8-L000852](../../agents/omarai.py#L852) | 852 | `"        queries = source.get(\"queries\")"` | — |
+| [SRC-C9CF9B54F8-L000853](../../agents/omarai.py#L853) | 853 | `"        return {"` | — |
+| [SRC-C9CF9B54F8-L000854](../../agents/omarai.py#L854) | 854 | `"            \"title\": title,"` | — |
+| [SRC-C9CF9B54F8-L000855](../../agents/omarai.py#L855) | 855 | `"            \"url\": source_url,"` | — |
+| [SRC-C9CF9B54F8-L000856](../../agents/omarai.py#L856) | 856 | `"            \"snippet\": snippet,"` | — |
+| [SRC-C9CF9B54F8-L000857](../../agents/omarai.py#L857) | 857 | `"            \"platform\": str(source.get(\"platform\") or \"web\")[:80],"` | — |
+| [SRC-C9CF9B54F8-L000858](../../agents/omarai.py#L858) | 858 | `"            \"domain\": str(source.get(\"domain\") or \"\")[:253],"` | — |
+| [SRC-C9CF9B54F8-L000859](../../agents/omarai.py#L859) | 859 | `"            \"published_at\": ("` | — |
+| [SRC-C9CF9B54F8-L000860](../../agents/omarai.py#L860) | 860 | `"                str(source.get(\"published_at\"))[:120]"` | — |
+| [SRC-C9CF9B54F8-L000861](../../agents/omarai.py#L861) | 861 | `"                if source.get(\"published_at\") is not None else None"` | — |
+| [SRC-C9CF9B54F8-L000862](../../agents/omarai.py#L862) | 862 | `"            ),"` | — |
+| [SRC-C9CF9B54F8-L000863](../../agents/omarai.py#L863) | 863 | `"            \"page_fetched\": source.get(\"page_fetched\") is True,"` | — |
+| [SRC-C9CF9B54F8-L000864](../../agents/omarai.py#L864) | 864 | `"            \"readable_page_text_available\": source.get(\"readable_page_text_available\") is True,"` | — |
+| [SRC-C9CF9B54F8-L000865](../../agents/omarai.py#L865) | 865 | `"            \"providers\": ["` | — |
+| [SRC-C9CF9B54F8-L000866](../../agents/omarai.py#L866) | 866 | `"                str(value)[:80] for value in providers[:8] if isinstance(value, str)"` | — |
+| [SRC-C9CF9B54F8-L000867](../../agents/omarai.py#L867) | 867 | `"            ] if isinstance(providers, list) else [],"` | — |
+| [SRC-C9CF9B54F8-L000868](../../agents/omarai.py#L868) | 868 | `"            \"queries\": ["` | — |
+| [SRC-C9CF9B54F8-L000869](../../agents/omarai.py#L869) | 869 | `"                str(value)[:500] for value in queries[:8] if isinstance(value, str)"` | — |
+| [SRC-C9CF9B54F8-L000870](../../agents/omarai.py#L870) | 870 | `"            ] if isinstance(queries, list) else [],"` | — |
+| [SRC-C9CF9B54F8-L000871](../../agents/omarai.py#L871) | 871 | `"            \"lead_qualification\": ("` | — |
+| [SRC-C9CF9B54F8-L000872](../../agents/omarai.py#L872) | 872 | `"                \"public_demand_signal\""` | — |
+| [SRC-C9CF9B54F8-L000873](../../agents/omarai.py#L873) | 873 | `"                if source.get(\"lead_qualification\") == \"public_demand_signal\""` | — |
+| [SRC-C9CF9B54F8-L000874](../../agents/omarai.py#L874) | 874 | `"                else \"related_result_not_lead\""` | — |
+| [SRC-C9CF9B54F8-L000875](../../agents/omarai.py#L875) | 875 | `"            ),"` | — |
+| [SRC-C9CF9B54F8-L000876](../../agents/omarai.py#L876) | 876 | `"            \"lead_intent_evidence\": safe_evidence,"` | — |
+| [SRC-C9CF9B54F8-L000877](../../agents/omarai.py#L877) | 877 | `"        }"` | — |
+| [SRC-C9CF9B54F8-L000878](../../agents/omarai.py#L878) | 878 | `""` | — |
+| [SRC-C9CF9B54F8-L000879](../../agents/omarai.py#L879) | 879 | `"    def save_discovery_run(self, profile_id: str, run: dict, *, tenant_id: str):"` | — |
+| [SRC-C9CF9B54F8-L000880](../../agents/omarai.py#L880) | 880 | `"        if not isinstance(run, dict):"` | — |
+| [SRC-C9CF9B54F8-L000881](../../agents/omarai.py#L881) | 881 | `"            raise TypeError(\"discovery run must be an object\")"` | — |
+| [SRC-C9CF9B54F8-L000882](../../agents/omarai.py#L882) | 882 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L000883](../../agents/omarai.py#L883) | 883 | `"        profile = self.get_product_profile(profile_id, tenant_id=tenant)"` | — |
+| [SRC-C9CF9B54F8-L000884](../../agents/omarai.py#L884) | 884 | `"        if profile is None:"` | — |
+| [SRC-C9CF9B54F8-L000885](../../agents/omarai.py#L885) | 885 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000886](../../agents/omarai.py#L886) | 886 | `"        raw_sources = run.get(\"sources\")"` | — |
+| [SRC-C9CF9B54F8-L000887](../../agents/omarai.py#L887) | 887 | `"        raw_sources = raw_sources if isinstance(raw_sources, list) else []"` | — |
+| [SRC-C9CF9B54F8-L000888](../../agents/omarai.py#L888) | 888 | `"        sources = ["` | — |
+| [SRC-C9CF9B54F8-L000889](../../agents/omarai.py#L889) | 889 | `"            self._safe_discovery_source(item)"` | — |
+| [SRC-C9CF9B54F8-L000890](../../agents/omarai.py#L890) | 890 | `"            for item in raw_sources[:30] if isinstance(item, dict)"` | — |
+| [SRC-C9CF9B54F8-L000891](../../agents/omarai.py#L891) | 891 | `"        ]"` | — |
+| [SRC-C9CF9B54F8-L000892](../../agents/omarai.py#L892) | 892 | `"        raw_queries = run.get(\"search_queries\")"` | — |
+| [SRC-C9CF9B54F8-L000893](../../agents/omarai.py#L893) | 893 | `"        if not isinstance(raw_queries, list):"` | — |
+| [SRC-C9CF9B54F8-L000894](../../agents/omarai.py#L894) | 894 | `"            raw_queries = []"` | — |
+| [SRC-C9CF9B54F8-L000895](../../agents/omarai.py#L895) | 895 | `"        queries = [str(item)[:500] for item in raw_queries[:8] if isinstance(item, str)]"` | — |
+| [SRC-C9CF9B54F8-L000896](../../agents/omarai.py#L896) | 896 | `"        raw_report = run.get(\"search_report\")"` | — |
+| [SRC-C9CF9B54F8-L000897](../../agents/omarai.py#L897) | 897 | `"        raw_report = raw_report if isinstance(raw_report, dict) else {}"` | — |
+| [SRC-C9CF9B54F8-L000898](../../agents/omarai.py#L898) | 898 | `"        lead_report = raw_report.get(\"lead_generation\")"` | — |
+| [SRC-C9CF9B54F8-L000899](../../agents/omarai.py#L899) | 899 | `"        report = {"` | — |
+| [SRC-C9CF9B54F8-L000900](../../agents/omarai.py#L900) | 900 | `"            \"lead_generation\": lead_report if isinstance(lead_report, dict) else {},"` | — |
+| [SRC-C9CF9B54F8-L000901](../../agents/omarai.py#L901) | 901 | `"            \"pipeline_completion_status\": str("` | — |
+| [SRC-C9CF9B54F8-L000902](../../agents/omarai.py#L902) | 902 | `"                raw_report.get(\"pipeline_completion_status\")"` | — |
+| [SRC-C9CF9B54F8-L000903](../../agents/omarai.py#L903) | 903 | `"                or run.get(\"pipeline_completion_status\")"` | — |
+| [SRC-C9CF9B54F8-L000904](../../agents/omarai.py#L904) | 904 | `"                or \"unknown\""` | — |
+| [SRC-C9CF9B54F8-L000905](../../agents/omarai.py#L905) | 905 | `"            )[:80],"` | — |
+| [SRC-C9CF9B54F8-L000906](../../agents/omarai.py#L906) | 906 | `"            \"search_outcome\": str(raw_report.get(\"search_outcome\") or \"unknown\")[:80],"` | — |
+| [SRC-C9CF9B54F8-L000907](../../agents/omarai.py#L907) | 907 | `"            \"search_attempted\": raw_report.get(\"search_attempted\"),"` | — |
+| [SRC-C9CF9B54F8-L000908](../../agents/omarai.py#L908) | 908 | `"            \"used_web_search\": run.get(\"used_web_search\") is True,"` | — |
+| [SRC-C9CF9B54F8-L000909](../../agents/omarai.py#L909) | 909 | `"            \"used_social_search\": run.get(\"used_social_search\") is True,"` | — |
+| [SRC-C9CF9B54F8-L000910](../../agents/omarai.py#L910) | 910 | `"        }"` | — |
+| [SRC-C9CF9B54F8-L000911](../../agents/omarai.py#L911) | 911 | `"        report_json = json.dumps(report, ensure_ascii=False, separators=(\",\", \":\"))"` | — |
+| [SRC-C9CF9B54F8-L000912](../../agents/omarai.py#L912) | 912 | `"        queries_json = json.dumps(queries, ensure_ascii=False, separators=(\",\", \":\"))"` | — |
+| [SRC-C9CF9B54F8-L000913](../../agents/omarai.py#L913) | 913 | `"        sources_json = json.dumps(sources, ensure_ascii=False, separators=(\",\", \":\"))"` | — |
+| [SRC-C9CF9B54F8-L000914](../../agents/omarai.py#L914) | 914 | `"        if sum(map(len, (report_json, queries_json, sources_json))) > 120000:"` | — |
+| [SRC-C9CF9B54F8-L000915](../../agents/omarai.py#L915) | 915 | `"            raise ValueError(\"discovery result exceeds the storage limit\")"` | — |
+| [SRC-C9CF9B54F8-L000916](../../agents/omarai.py#L916) | 916 | `"        run_id = \"discovery_\" + uuid.uuid4().hex"` | — |
+| [SRC-C9CF9B54F8-L000917](../../agents/omarai.py#L917) | 917 | `"        now = now_utc()"` | — |
+| [SRC-C9CF9B54F8-L000918](../../agents/omarai.py#L918) | 918 | `"        answer = str(run.get(\"answer\") or \"\")[:5000]"` | — |
+| [SRC-C9CF9B54F8-L000919](../../agents/omarai.py#L919) | 919 | `"        kind = str(run.get(\"kind\") or \"lead_discovery\")[:100]"` | — |
+| [SRC-C9CF9B54F8-L000920](../../agents/omarai.py#L920) | 920 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000921](../../agents/omarai.py#L921) | 921 | `"            db.execute("` | — |
+| [SRC-C9CF9B54F8-L000922](../../agents/omarai.py#L922) | 922 | `"                \"\"\"INSERT INTO discovery_runs"` | — |
+| [SRC-C9CF9B54F8-L000923](../../agents/omarai.py#L923) | 923 | `"                   (id, tenant_id, profile_id, answer, kind, search_queries_json,"` | — |
+| [SRC-C9CF9B54F8-L000924](../../agents/omarai.py#L924) | 924 | `"                    search_report_json, sources_json, created_at)"` | — |
+| [SRC-C9CF9B54F8-L000925](../../agents/omarai.py#L925) | 925 | `"                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000926](../../agents/omarai.py#L926) | 926 | `"                ("` | — |
+| [SRC-C9CF9B54F8-L000927](../../agents/omarai.py#L927) | 927 | `"                    run_id, tenant, profile_id, answer, kind, queries_json,"` | — |
+| [SRC-C9CF9B54F8-L000928](../../agents/omarai.py#L928) | 928 | `"                    report_json, sources_json, now,"` | — |
+| [SRC-C9CF9B54F8-L000929](../../agents/omarai.py#L929) | 929 | `"                ),"` | — |
+| [SRC-C9CF9B54F8-L000930](../../agents/omarai.py#L930) | 930 | `"            )"` | — |
+| [SRC-C9CF9B54F8-L000931](../../agents/omarai.py#L931) | 931 | `"            row = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000932](../../agents/omarai.py#L932) | 932 | `"                \"\"\"SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,"` | — |
+| [SRC-C9CF9B54F8-L000933](../../agents/omarai.py#L933) | 933 | `"                          r.answer, r.kind, r.search_queries_json, r.search_report_json,"` | — |
+| [SRC-C9CF9B54F8-L000934](../../agents/omarai.py#L934) | 934 | `"                          r.sources_json, r.created_at"` | — |
+| [SRC-C9CF9B54F8-L000935](../../agents/omarai.py#L935) | 935 | `"                   FROM discovery_runs r"` | — |
+| [SRC-C9CF9B54F8-L000936](../../agents/omarai.py#L936) | 936 | `"                   JOIN product_profiles p"` | — |
+| [SRC-C9CF9B54F8-L000937](../../agents/omarai.py#L937) | 937 | `"                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id"` | — |
+| [SRC-C9CF9B54F8-L000938](../../agents/omarai.py#L938) | 938 | `"                   WHERE r.id=? AND r.tenant_id=?\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000939](../../agents/omarai.py#L939) | 939 | `"                (run_id, tenant),"` | — |
+| [SRC-C9CF9B54F8-L000940](../../agents/omarai.py#L940) | 940 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L000941](../../agents/omarai.py#L941) | 941 | `"        return self._discovery_run_row(row)"` | — |
+| [SRC-C9CF9B54F8-L000942](../../agents/omarai.py#L942) | 942 | `""` | — |
+| [SRC-C9CF9B54F8-L000943](../../agents/omarai.py#L943) | 943 | `"    @staticmethod"` | — |
+| [SRC-C9CF9B54F8-L000944](../../agents/omarai.py#L944) | 944 | `"    def _discovery_run_row(row):"` | — |
+| [SRC-C9CF9B54F8-L000945](../../agents/omarai.py#L945) | 945 | `"        if row is None:"` | — |
+| [SRC-C9CF9B54F8-L000946](../../agents/omarai.py#L946) | 946 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000947](../../agents/omarai.py#L947) | 947 | `"        item = dict(row)"` | — |
+| [SRC-C9CF9B54F8-L000948](../../agents/omarai.py#L948) | 948 | `"        item[\"search_queries\"] = json.loads(item.pop(\"search_queries_json\"))"` | — |
+| [SRC-C9CF9B54F8-L000949](../../agents/omarai.py#L949) | 949 | `"        item[\"search_report\"] = json.loads(item.pop(\"search_report_json\"))"` | — |
+| [SRC-C9CF9B54F8-L000950](../../agents/omarai.py#L950) | 950 | `"        item[\"sources\"] = json.loads(item.pop(\"sources_json\"))"` | — |
+| [SRC-C9CF9B54F8-L000951](../../agents/omarai.py#L951) | 951 | `"        return item"` | — |
+| [SRC-C9CF9B54F8-L000952](../../agents/omarai.py#L952) | 952 | `""` | — |
+| [SRC-C9CF9B54F8-L000953](../../agents/omarai.py#L953) | 953 | `"    def list_discovery_runs(self, *, tenant_id: str, limit: int = 50):"` | — |
+| [SRC-C9CF9B54F8-L000954](../../agents/omarai.py#L954) | 954 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L000955](../../agents/omarai.py#L955) | 955 | `"        limit = max(1, min(int(limit), 100))"` | — |
+| [SRC-C9CF9B54F8-L000956](../../agents/omarai.py#L956) | 956 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000957](../../agents/omarai.py#L957) | 957 | `"            rows = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000958](../../agents/omarai.py#L958) | 958 | `"                \"\"\"SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,"` | — |
+| [SRC-C9CF9B54F8-L000959](../../agents/omarai.py#L959) | 959 | `"                          r.answer, r.kind, r.search_queries_json, r.search_report_json,"` | — |
+| [SRC-C9CF9B54F8-L000960](../../agents/omarai.py#L960) | 960 | `"                          r.sources_json, r.created_at"` | — |
+| [SRC-C9CF9B54F8-L000961](../../agents/omarai.py#L961) | 961 | `"                   FROM discovery_runs r"` | — |
+| [SRC-C9CF9B54F8-L000962](../../agents/omarai.py#L962) | 962 | `"                   JOIN product_profiles p"` | — |
+| [SRC-C9CF9B54F8-L000963](../../agents/omarai.py#L963) | 963 | `"                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id"` | — |
+| [SRC-C9CF9B54F8-L000964](../../agents/omarai.py#L964) | 964 | `"                   WHERE r.tenant_id=?"` | — |
+| [SRC-C9CF9B54F8-L000965](../../agents/omarai.py#L965) | 965 | `"                   ORDER BY r.created_at DESC, r.id LIMIT ?\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000966](../../agents/omarai.py#L966) | 966 | `"                (tenant, limit),"` | — |
+| [SRC-C9CF9B54F8-L000967](../../agents/omarai.py#L967) | 967 | `"            ).fetchall()"` | — |
+| [SRC-C9CF9B54F8-L000968](../../agents/omarai.py#L968) | 968 | `"        results = []"` | — |
+| [SRC-C9CF9B54F8-L000969](../../agents/omarai.py#L969) | 969 | `"        for row in rows:"` | — |
+| [SRC-C9CF9B54F8-L000970](../../agents/omarai.py#L970) | 970 | `"            item = self._discovery_run_row(row)"` | — |
+| [SRC-C9CF9B54F8-L000971](../../agents/omarai.py#L971) | 971 | `"            results.append({"` | — |
+| [SRC-C9CF9B54F8-L000972](../../agents/omarai.py#L972) | 972 | `"                \"id\": item[\"id\"],"` | — |
+| [SRC-C9CF9B54F8-L000973](../../agents/omarai.py#L973) | 973 | `"                \"profile_id\": item[\"profile_id\"],"` | — |
+| [SRC-C9CF9B54F8-L000974](../../agents/omarai.py#L974) | 974 | `"                \"profile_name\": item[\"profile_name\"],"` | — |
+| [SRC-C9CF9B54F8-L000975](../../agents/omarai.py#L975) | 975 | `"                \"answer\": item[\"answer\"],"` | — |
+| [SRC-C9CF9B54F8-L000976](../../agents/omarai.py#L976) | 976 | `"                \"kind\": item[\"kind\"],"` | — |
+| [SRC-C9CF9B54F8-L000977](../../agents/omarai.py#L977) | 977 | `"                \"created_at\": item[\"created_at\"],"` | — |
+| [SRC-C9CF9B54F8-L000978](../../agents/omarai.py#L978) | 978 | `"                \"source_count\": len(item[\"sources\"]),"` | — |
+| [SRC-C9CF9B54F8-L000979](../../agents/omarai.py#L979) | 979 | `"                \"qualified_signal_count\": sum("` | — |
+| [SRC-C9CF9B54F8-L000980](../../agents/omarai.py#L980) | 980 | `"                    source.get(\"lead_qualification\") == \"public_demand_signal\""` | — |
+| [SRC-C9CF9B54F8-L000981](../../agents/omarai.py#L981) | 981 | `"                    for source in item[\"sources\"]"` | — |
+| [SRC-C9CF9B54F8-L000982](../../agents/omarai.py#L982) | 982 | `"                ),"` | — |
+| [SRC-C9CF9B54F8-L000983](../../agents/omarai.py#L983) | 983 | `"                \"pipeline_completion_status\": item[\"search_report\"].get("` | — |
+| [SRC-C9CF9B54F8-L000984](../../agents/omarai.py#L984) | 984 | `"                    \"pipeline_completion_status\", \"unknown\""` | — |
+| [SRC-C9CF9B54F8-L000985](../../agents/omarai.py#L985) | 985 | `"                ),"` | — |
+| [SRC-C9CF9B54F8-L000986](../../agents/omarai.py#L986) | 986 | `"            })"` | — |
+| [SRC-C9CF9B54F8-L000987](../../agents/omarai.py#L987) | 987 | `"        return results"` | — |
+| [SRC-C9CF9B54F8-L000988](../../agents/omarai.py#L988) | 988 | `""` | — |
+| [SRC-C9CF9B54F8-L000989](../../agents/omarai.py#L989) | 989 | `"    def get_discovery_run(self, run_id: str, *, tenant_id: str):"` | — |
+| [SRC-C9CF9B54F8-L000990](../../agents/omarai.py#L990) | 990 | `"        if not isinstance(run_id, str) or not run_id.strip():"` | — |
+| [SRC-C9CF9B54F8-L000991](../../agents/omarai.py#L991) | 991 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000992](../../agents/omarai.py#L992) | 992 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L000993](../../agents/omarai.py#L993) | 993 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000994](../../agents/omarai.py#L994) | 994 | `"            row = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000995](../../agents/omarai.py#L995) | 995 | `"                \"\"\"SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,"` | — |
+| [SRC-C9CF9B54F8-L000996](../../agents/omarai.py#L996) | 996 | `"                          r.answer, r.kind, r.search_queries_json, r.search_report_json,"` | — |
+| [SRC-C9CF9B54F8-L000997](../../agents/omarai.py#L997) | 997 | `"                          r.sources_json, r.created_at"` | — |
+| [SRC-C9CF9B54F8-L000998](../../agents/omarai.py#L998) | 998 | `"                   FROM discovery_runs r"` | — |
+| [SRC-C9CF9B54F8-L000999](../../agents/omarai.py#L999) | 999 | `"                   JOIN product_profiles p"` | — |
+| [SRC-C9CF9B54F8-L001000](../../agents/omarai.py#L1000) | 1000 | `"                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id"` | — |
+| [SRC-C9CF9B54F8-L001001](../../agents/omarai.py#L1001) | 1001 | `"                   WHERE r.id=? AND r.tenant_id=?\"\"\","` | — |
+| [SRC-C9CF9B54F8-L001002](../../agents/omarai.py#L1002) | 1002 | `"                (run_id.strip(), tenant),"` | — |
+| [SRC-C9CF9B54F8-L001003](../../agents/omarai.py#L1003) | 1003 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L001004](../../agents/omarai.py#L1004) | 1004 | `"        return self._discovery_run_row(row)"` | — |
+| [SRC-C9CF9B54F8-L001005](../../agents/omarai.py#L1005) | 1005 | `""` | — |
+| [SRC-C9CF9B54F8-L001006](../../agents/omarai.py#L1006) | 1006 | `"    def save_discovery_signal("` | — |
+| [SRC-C9CF9B54F8-L001007](../../agents/omarai.py#L1007) | 1007 | `"        self, run_id: str, source_index: int, *, tenant_id: str"` | — |
+| [SRC-C9CF9B54F8-L001008](../../agents/omarai.py#L1008) | 1008 | `"    ):"` | — |
+| [SRC-C9CF9B54F8-L001009](../../agents/omarai.py#L1009) | 1009 | `"        if not isinstance(source_index, int) or isinstance(source_index, bool):"` | — |
+| [SRC-C9CF9B54F8-L001010](../../agents/omarai.py#L1010) | 1010 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L001011](../../agents/omarai.py#L1011) | 1011 | `"        run = self.get_discovery_run(run_id, tenant_id=tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L001012](../../agents/omarai.py#L1012) | 1012 | `"        if run is None or not 0 <= source_index < len(run[\"sources\"]):"` | — |
+| [SRC-C9CF9B54F8-L001013](../../agents/omarai.py#L1013) | 1013 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L001014](../../agents/omarai.py#L1014) | 1014 | `"        source = run[\"sources\"][source_index]"` | — |
+| [SRC-C9CF9B54F8-L001015](../../agents/omarai.py#L1015) | 1015 | `"        if source.get(\"lead_qualification\") != \"public_demand_signal\":"` | — |
+| [SRC-C9CF9B54F8-L001016](../../agents/omarai.py#L1016) | 1016 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L001017](../../agents/omarai.py#L1017) | 1017 | `"        evidence = source.get(\"lead_intent_evidence\")"` | — |
+| [SRC-C9CF9B54F8-L001018](../../agents/omarai.py#L1018) | 1018 | `"        if not isinstance(evidence, dict) or not str(evidence.get(\"phrase\") or \"\").strip():"` | — |
+| [SRC-C9CF9B54F8-L001019](../../agents/omarai.py#L1019) | 1019 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L001020](../../agents/omarai.py#L1020) | 1020 | `"        profile = self.get_product_profile(run[\"profile_id\"], tenant_id=tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L001021](../../agents/omarai.py#L1021) | 1021 | `"        if profile is None:"` | — |
+| [SRC-C9CF9B54F8-L001022](../../agents/omarai.py#L1022) | 1022 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L001023](../../agents/omarai.py#L1023) | 1023 | `"        product = profile[\"profile\"].get(\"product\", {})"` | — |
+| [SRC-C9CF9B54F8-L001024](../../agents/omarai.py#L1024) | 1024 | `"        market = profile[\"profile\"].get(\"market\", {})"` | — |
+| [SRC-C9CF9B54F8-L001025](../../agents/omarai.py#L1025) | 1025 | `"        product_terms = ["` | — |
+| [SRC-C9CF9B54F8-L001026](../../agents/omarai.py#L1026) | 1026 | `"            str(item) for item in [product.get(\"name\"), *(product.get(\"aliases\") or [])]"` | — |
+| [SRC-C9CF9B54F8-L001027](../../agents/omarai.py#L1027) | 1027 | `"            if isinstance(item, str) and item.strip()"` | — |
+| [SRC-C9CF9B54F8-L001028](../../agents/omarai.py#L1028) | 1028 | `"        ]"` | — |
+| [SRC-C9CF9B54F8-L001029](../../agents/omarai.py#L1029) | 1029 | `"        location_terms = ["` | — |
+| [SRC-C9CF9B54F8-L001030](../../agents/omarai.py#L1030) | 1030 | `"            str(item) for item in (market.get(\"locations\") or [])"` | — |
+| [SRC-C9CF9B54F8-L001031](../../agents/omarai.py#L1031) | 1031 | `"            if isinstance(item, str) and item.strip()"` | — |
+| [SRC-C9CF9B54F8-L001032](../../agents/omarai.py#L1032) | 1032 | `"        ]"` | — |
+| [SRC-C9CF9B54F8-L001033](../../agents/omarai.py#L1033) | 1033 | `"        source_text = str(source.get(\"snippet\") or source.get(\"title\") or \"\").strip()"` | — |
+| [SRC-C9CF9B54F8-L001034](../../agents/omarai.py#L1034) | 1034 | `"        if not source_text:"` | — |
+| [SRC-C9CF9B54F8-L001035](../../agents/omarai.py#L1035) | 1035 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L001036](../../agents/omarai.py#L1036) | 1036 | `"        note = ("` | — |
+| [SRC-C9CF9B54F8-L001037](../../agents/omarai.py#L1037) | 1037 | `"            \"Omarai public demand evidence \| \""` | — |
+| [SRC-C9CF9B54F8-L001038](../../agents/omarai.py#L1038) | 1038 | `"            + \"phrase=\" + str(evidence.get(\"phrase\") or \"\")[:240]"` | — |
+| [SRC-C9CF9B54F8-L001039](../../agents/omarai.py#L1039) | 1039 | `"            + \" \| basis=\" + str(evidence.get(\"basis\") or \"unknown\")[:40]"` | — |
+| [SRC-C9CF9B54F8-L001040](../../agents/omarai.py#L1040) | 1040 | `"            + \" \| signal_type=\" + str(evidence.get(\"signal_type\") or \"unknown\")[:80]"` | — |
+| [SRC-C9CF9B54F8-L001041](../../agents/omarai.py#L1041) | 1041 | `"            + \" \| profile=\" + str(profile.get(\"name\") or \"\")[:160]"` | — |
+| [SRC-C9CF9B54F8-L001042](../../agents/omarai.py#L1042) | 1042 | `"            + \" \| run=\" + run[\"id\"]"` | — |
+| [SRC-C9CF9B54F8-L001043](../../agents/omarai.py#L1043) | 1043 | `"        )"` | — |
+| [SRC-C9CF9B54F8-L001044](../../agents/omarai.py#L1044) | 1044 | `"        return self.add("` | — |
+| [SRC-C9CF9B54F8-L001045](../../agents/omarai.py#L1045) | 1045 | `"            source_text[:MAX_TEXT],"` | — |
+| [SRC-C9CF9B54F8-L001046](../../agents/omarai.py#L1046) | 1046 | `"            source[\"url\"],"` | — |
+| [SRC-C9CF9B54F8-L001047](../../agents/omarai.py#L1047) | 1047 | `"            str(source.get(\"platform\") or \"web\")[:80],"` | — |
+| [SRC-C9CF9B54F8-L001048](../../agents/omarai.py#L1048) | 1048 | `"            observed_at=now_utc(),"` | — |
+| [SRC-C9CF9B54F8-L001049](../../agents/omarai.py#L1049) | 1049 | `"            note=note[:1000],"` | — |
+| [SRC-C9CF9B54F8-L001050](../../agents/omarai.py#L1050) | 1050 | `"            product_terms=product_terms,"` | — |
+| [SRC-C9CF9B54F8-L001051](../../agents/omarai.py#L1051) | 1051 | `"            location_terms=location_terms,"` | — |
+| [SRC-C9CF9B54F8-L001052](../../agents/omarai.py#L1052) | 1052 | `"            tenant_id=tenant_id,"` | — |
+| [SRC-C9CF9B54F8-L001053](../../agents/omarai.py#L1053) | 1053 | `"        )"` | — |
+| [SRC-C9CF9B54F8-L001054](../../agents/omarai.py#L1054) | 1054 | `""` | — |
+| [SRC-C9CF9B54F8-L001055](../../agents/omarai.py#L1055) | 1055 | `"    def import_csv(self, filename: str, *, tenant_id: str \| None = None):"` | — |
+| [SRC-C9CF9B54F8-L001056](../../agents/omarai.py#L1056) | 1056 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L001057](../../agents/omarai.py#L1057) | 1057 | `"        results = {\"created\": 0, \"duplicates\": 0, \"errors\": []}"` | — |
+| [SRC-C9CF9B54F8-L001058](../../agents/omarai.py#L1058) | 1058 | `"        with open(filename, newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
+| [SRC-C9CF9B54F8-L001059](../../agents/omarai.py#L1059) | 1059 | `"            reader = csv.DictReader(stream)"` | — |
+| [SRC-C9CF9B54F8-L001060](../../agents/omarai.py#L1060) | 1060 | `"            required = {\"text\", \"source_url\", \"platform\"}"` | — |
+| [SRC-C9CF9B54F8-L001061](../../agents/omarai.py#L1061) | 1061 | `"            if not reader.fieldnames or not required.issubset(reader.fieldnames):"` | — |
+| [SRC-C9CF9B54F8-L001062](../../agents/omarai.py#L1062) | 1062 | `"                raise ValueError(\"CSV must contain text,source_url,platform columns\")"` | — |
+| [SRC-C9CF9B54F8-L001063](../../agents/omarai.py#L1063) | 1063 | `"            for line, row in enumerate(reader, 2):"` | — |
+| [SRC-C9CF9B54F8-L001064](../../agents/omarai.py#L1064) | 1064 | `"                try:"` | — |
+| [SRC-C9CF9B54F8-L001065](../../agents/omarai.py#L1065) | 1065 | `"                    _, created = self.add("` | — |
+| [SRC-C9CF9B54F8-L001066](../../agents/omarai.py#L1066) | 1066 | `"                        row[\"text\"], row[\"source_url\"], row[\"platform\"],"` | — |
+| [SRC-C9CF9B54F8-L001067](../../agents/omarai.py#L1067) | 1067 | `"                        row.get(\"observed_at\") or None, row.get(\"note\") or \"\","` | — |
+| [SRC-C9CF9B54F8-L001068](../../agents/omarai.py#L1068) | 1068 | `"                        tenant_id=tenant,"` | — |
+| [SRC-C9CF9B54F8-L001069](../../agents/omarai.py#L1069) | 1069 | `"                    )"` | — |
+| [SRC-C9CF9B54F8-L001070](../../agents/omarai.py#L1070) | 1070 | `"                    results[\"created\" if created else \"duplicates\"] += 1"` | — |
+| [SRC-C9CF9B54F8-L001071](../../agents/omarai.py#L1071) | 1071 | `"                except (ValueError, TypeError) as exc:"` | — |
+| [SRC-C9CF9B54F8-L001072](../../agents/omarai.py#L1072) | 1072 | `"                    results[\"errors\"].append({\"line\": line, \"error\": str(exc)})"` | — |
+| [SRC-C9CF9B54F8-L001073](../../agents/omarai.py#L1073) | 1073 | `"        return results"` | — |
+| [SRC-C9CF9B54F8-L001074](../../agents/omarai.py#L1074) | 1074 | `""` | — |
+| [SRC-C9CF9B54F8-L001075](../../agents/omarai.py#L1075) | 1075 | `"    def export_csv(self, filename: str, *, tenant_id: str \| None = None):"` | — |
+| [SRC-C9CF9B54F8-L001076](../../agents/omarai.py#L1076) | 1076 | `"        rows = self.list(limit=500, tenant_id=tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L001077](../../agents/omarai.py#L1077) | 1077 | `"        with open(filename, \"w\", newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
+| [SRC-C9CF9B54F8-L001078](../../agents/omarai.py#L1078) | 1078 | `"            fields = ["` | — |
+| [SRC-C9CF9B54F8-L001079](../../agents/omarai.py#L1079) | 1079 | `"                \"id\", \"tenant_id\", \"text\", \"source_url\", \"platform\", \"observed_at\","` | — |
+| [SRC-C9CF9B54F8-L001080](../../agents/omarai.py#L1080) | 1080 | `"                \"assessment\", \"status\", \"note\", \"created_at\","` | — |
+| [SRC-C9CF9B54F8-L001081](../../agents/omarai.py#L1081) | 1081 | `"            ]"` | — |
+| [SRC-C9CF9B54F8-L001082](../../agents/omarai.py#L1082) | 1082 | `"            writer = csv.DictWriter(stream, fieldnames=fields, quoting=csv.QUOTE_ALL)"` | — |
+| [SRC-C9CF9B54F8-L001083](../../agents/omarai.py#L1083) | 1083 | `"            writer.writeheader()"` | — |
+| [SRC-C9CF9B54F8-L001084](../../agents/omarai.py#L1084) | 1084 | `"            for row in rows:"` | — |
+| [SRC-C9CF9B54F8-L001085](../../agents/omarai.py#L1085) | 1085 | `"                values = {"` | — |
+| [SRC-C9CF9B54F8-L001086](../../agents/omarai.py#L1086) | 1086 | `"                    key: json.dumps(row[key], ensure_ascii=False)"` | — |
+| [SRC-C9CF9B54F8-L001087](../../agents/omarai.py#L1087) | 1087 | `"                    if key == \"assessment\""` | — |
+| [SRC-C9CF9B54F8-L001088](../../agents/omarai.py#L1088) | 1088 | `"                    else row.get(key, \"\")"` | — |
+| [SRC-C9CF9B54F8-L001089](../../agents/omarai.py#L1089) | 1089 | `"                    for key in fields"` | — |
+| [SRC-C9CF9B54F8-L001090](../../agents/omarai.py#L1090) | 1090 | `"                }"` | — |
+| [SRC-C9CF9B54F8-L001091](../../agents/omarai.py#L1091) | 1091 | `"                writer.writerow({key: _csv_safe_cell(value) for key, value in values.items()})"` | — |
+| [SRC-C9CF9B54F8-L001092](../../agents/omarai.py#L1092) | 1092 | `"        return len(rows)"` | — |
 ## الوكيل والمنطق
 
 ### FILE-FDEEAFDFCA — [agents/request_budget.py](../../agents/request_budget.py#L1)
@@ -16,6 +331,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000001](../../agents/request_budget.py#L1) | 1 | `"\"\"\"Cooperative per-request resource budgets for Omarai's web-research pipeline."` | — |
+| [SRC-FDEEAFDFCA-L000002](../../agents/request_budget.py#L2) | 2 | `""` | — |
+| [SRC-FDEEAFDFCA-L000003](../../agents/request_budget.py#L3) | 3 | `"The budget limits work that has not started yet and caps the timeout supplied to"` | — |
+| [SRC-FDEEAFDFCA-L000004](../../agents/request_budget.py#L4) | 4 | `"each outbound operation by the remaining request window. Socket libraries may"` | — |
+| [SRC-FDEEAFDFCA-L000005](../../agents/request_budget.py#L5) | 5 | `"still overrun a cooperative deadline slightly while unwinding an in-flight call;"` | — |
+| [SRC-FDEEAFDFCA-L000006](../../agents/request_budget.py#L6) | 6 | `"this is not a hard real-time cancellation primitive."` | — |
+| [SRC-FDEEAFDFCA-L000007](../../agents/request_budget.py#L7) | 7 | `"\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000008](../../agents/request_budget.py#L8) | 8 | `"from __future__ import annotations"` | — |
+| [SRC-FDEEAFDFCA-L000009](../../agents/request_budget.py#L9) | 9 | `""` | — |
+| [SRC-FDEEAFDFCA-L000010](../../agents/request_budget.py#L10) | 10 | `"import os"` | — |
+| [SRC-FDEEAFDFCA-L000011](../../agents/request_budget.py#L11) | 11 | `"import threading"` | — |
+| [SRC-FDEEAFDFCA-L000012](../../agents/request_budget.py#L12) | 12 | `"import time"` | — |
+| [SRC-FDEEAFDFCA-L000013](../../agents/request_budget.py#L13) | 13 | `"from collections.abc import Callable, Mapping"` | — |
+| [SRC-FDEEAFDFCA-L000014](../../agents/request_budget.py#L14) | 14 | `"from typing import Any"` | — |
+| [SRC-FDEEAFDFCA-L000015](../../agents/request_budget.py#L15) | 15 | `""` | — |
+| [SRC-FDEEAFDFCA-L000016](../../agents/request_budget.py#L16) | 16 | `""` | — |
+| [SRC-FDEEAFDFCA-L000017](../../agents/request_budget.py#L17) | 17 | `"class RequestBudgetExceeded(Exception):"` | — |
+| [SRC-FDEEAFDFCA-L000018](../../agents/request_budget.py#L18) | 18 | `"    \"\"\"Raised when a request cannot start more work within its resource budget.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000019](../../agents/request_budget.py#L19) | 19 | `""` | — |
+| [SRC-FDEEAFDFCA-L000020](../../agents/request_budget.py#L20) | 20 | `""` | — |
+| [SRC-FDEEAFDFCA-L000021](../../agents/request_budget.py#L21) | 21 | `"DEFAULT_TIMEOUT_SECONDS = 90"` | — |
+| [SRC-FDEEAFDFCA-L000022](../../agents/request_budget.py#L22) | 22 | `"MAX_TIMEOUT_SECONDS = 120"` | — |
+| [SRC-FDEEAFDFCA-L000023](../../agents/request_budget.py#L23) | 23 | `"RESOURCE_LIMITS = {"` | — |
+| [SRC-FDEEAFDFCA-L000024](../../agents/request_budget.py#L24) | 24 | `"    \"search_queries\": (8, 8),"` | — |
+| [SRC-FDEEAFDFCA-L000025](../../agents/request_budget.py#L25) | 25 | `"    \"search_calls\": (32, 40),"` | — |
+| [SRC-FDEEAFDFCA-L000026](../../agents/request_budget.py#L26) | 26 | `"    \"model_calls\": (8, 12),"` | — |
+| [SRC-FDEEAFDFCA-L000027](../../agents/request_budget.py#L27) | 27 | `"    \"page_fetches\": (8, 8),"` | — |
+| [SRC-FDEEAFDFCA-L000028](../../agents/request_budget.py#L28) | 28 | `"    \"tool_calls\": (3, 3),"` | — |
+| [SRC-FDEEAFDFCA-L000029](../../agents/request_budget.py#L29) | 29 | `"}"` | — |
+| [SRC-FDEEAFDFCA-L000030](../../agents/request_budget.py#L30) | 30 | `""` | — |
+| [SRC-FDEEAFDFCA-L000031](../../agents/request_budget.py#L31) | 31 | `"# Hard ceilings for the public hosted-acceptance profile. Operator environment"` | — |
+| [SRC-FDEEAFDFCA-L000032](../../agents/request_budget.py#L32) | 32 | `"# limits may lower these values, but can never be raised by a client request."` | — |
+| [SRC-FDEEAFDFCA-L000033](../../agents/request_budget.py#L33) | 33 | `"HOSTED_SMOKE_BUDGET_LIMITS = {"` | — |
+| [SRC-FDEEAFDFCA-L000034](../../agents/request_budget.py#L34) | 34 | `"    \"search_queries\": 3,"` | — |
+| [SRC-FDEEAFDFCA-L000035](../../agents/request_budget.py#L35) | 35 | `"    \"search_calls\": 12,"` | — |
+| [SRC-FDEEAFDFCA-L000036](../../agents/request_budget.py#L36) | 36 | `"    \"model_calls\": 6,"` | — |
+| [SRC-FDEEAFDFCA-L000037](../../agents/request_budget.py#L37) | 37 | `"    \"page_fetches\": 4,"` | — |
+| [SRC-FDEEAFDFCA-L000038](../../agents/request_budget.py#L38) | 38 | `"    \"tool_calls\": 0,"` | — |
+| [SRC-FDEEAFDFCA-L000039](../../agents/request_budget.py#L39) | 39 | `"}"` | — |
+| [SRC-FDEEAFDFCA-L000040](../../agents/request_budget.py#L40) | 40 | `"HOSTED_SMOKE_BUDGET_TIMEOUT_SECONDS = 75"` | — |
+| [SRC-FDEEAFDFCA-L000041](../../agents/request_budget.py#L41) | 41 | `""` | — |
 | [SRC-FDEEAFDFCA-L000042](../../agents/request_budget.py#L42) | 42 | `""` | — |
 | [SRC-FDEEAFDFCA-L000043](../../agents/request_budget.py#L43) | 43 | `"def _bounded_env_int(name: str, default: int, minimum: int, maximum: int) -> int:"` | — |
 | [SRC-FDEEAFDFCA-L000044](../../agents/request_budget.py#L44) | 44 | `"    raw = os.getenv(name, \"\").strip()"` | — |
@@ -487,350 +843,3 @@
 | [SRC-59CF4B7DE8-L000180](../../agents/research.py#L180) | 180 | `"    for segment in segments:"` | — |
 | [SRC-59CF4B7DE8-L000181](../../agents/research.py#L181) | 181 | `"        segment = segment.strip()"` | — |
 | [SRC-59CF4B7DE8-L000182](../../agents/research.py#L182) | 182 | `"        if not segment:"` | — |
-| [SRC-59CF4B7DE8-L000183](../../agents/research.py#L183) | 183 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000184](../../agents/research.py#L184) | 184 | `"        normalized_segment = re.sub(r\"[\\u064B-\\u065F\\u0670]\", \"\", segment)"` | — |
-| [SRC-59CF4B7DE8-L000185](../../agents/research.py#L185) | 185 | `"        normalized_segment = _normalize_arabic(normalized_segment).casefold()"` | — |
-| [SRC-59CF4B7DE8-L000186](../../agents/research.py#L186) | 186 | `"        if ("` | — |
-| [SRC-59CF4B7DE8-L000187](../../agents/research.py#L187) | 187 | `"            _SEARCH_CITATION_META_START_RE.search(normalized_segment)"` | — |
-| [SRC-59CF4B7DE8-L000188](../../agents/research.py#L188) | 188 | `"            or _SEARCH_UNCERTAINTY_META_START_RE.search(normalized_segment)"` | — |
-| [SRC-59CF4B7DE8-L000189](../../agents/research.py#L189) | 189 | `"            or _SEARCH_FACTS_INFERENCE_META_ONLY_RE.search(normalized_segment)"` | — |
-| [SRC-59CF4B7DE8-L000190](../../agents/research.py#L190) | 190 | `"        ):"` | — |
-| [SRC-59CF4B7DE8-L000191](../../agents/research.py#L191) | 191 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000192](../../agents/research.py#L192) | 192 | `"        if _SEARCH_META_START_RE.search(normalized_segment):"` | — |
-| [SRC-59CF4B7DE8-L000193](../../agents/research.py#L193) | 193 | `"            # Keep a concrete topic when a \"use multiple sources\" directive"` | — |
-| [SRC-59CF4B7DE8-L000194](../../agents/research.py#L194) | 194 | `"            # introduces the subject, but discard standalone formatting clauses."` | — |
-| [SRC-59CF4B7DE8-L000195](../../agents/research.py#L195) | 195 | `"            preserved = _SEARCH_TOPIC_PRESERVING_META_PREFIX_RE.sub(\"\", segment, count=1).strip()"` | — |
-| [SRC-59CF4B7DE8-L000196](../../agents/research.py#L196) | 196 | `"            if not preserved:"` | — |
-| [SRC-59CF4B7DE8-L000197](../../agents/research.py#L197) | 197 | `"                continue"` | — |
-| [SRC-59CF4B7DE8-L000198](../../agents/research.py#L198) | 198 | `"            if preserved == segment:"` | — |
-| [SRC-59CF4B7DE8-L000199](../../agents/research.py#L199) | 199 | `"                continue"` | — |
-| [SRC-59CF4B7DE8-L000200](../../agents/research.py#L200) | 200 | `"            segment = preserved"` | — |
-| [SRC-59CF4B7DE8-L000201](../../agents/research.py#L201) | 201 | `"        segment = _SEARCH_META_TAIL_RE.sub(\"\", segment).strip()"` | — |
-| [SRC-59CF4B7DE8-L000202](../../agents/research.py#L202) | 202 | `"        segment = _SEARCH_LEADING_ACTION_RE.sub(\"\", segment).strip()"` | — |
-| [SRC-59CF4B7DE8-L000203](../../agents/research.py#L203) | 203 | `"        if segment:"` | — |
-| [SRC-59CF4B7DE8-L000204](../../agents/research.py#L204) | 204 | `"            useful.append(segment)"` | — |
-| [SRC-59CF4B7DE8-L000205](../../agents/research.py#L205) | 205 | `"    result = re.sub(r\"\\s+\", \" \", \" \".join(useful)).strip(\" \\t\\r\\n,،;؛\")"` | — |
-| [SRC-59CF4B7DE8-L000206](../../agents/research.py#L206) | 206 | `"    if not result:"` | — |
-| [SRC-59CF4B7DE8-L000207](../../agents/research.py#L207) | 207 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000208](../../agents/research.py#L208) | 208 | `"    try:"` | — |
-| [SRC-59CF4B7DE8-L000209](../../agents/research.py#L209) | 209 | `"        max_chars = max(2, min(int(limit), MAX_QUERY_CHARS))"` | — |
-| [SRC-59CF4B7DE8-L000210](../../agents/research.py#L210) | 210 | `"    except (TypeError, ValueError, OverflowError):"` | — |
-| [SRC-59CF4B7DE8-L000211](../../agents/research.py#L211) | 211 | `"        max_chars = MAX_QUERY_CHARS"` | — |
-| [SRC-59CF4B7DE8-L000212](../../agents/research.py#L212) | 212 | `"    if len(result) > max_chars:"` | — |
-| [SRC-59CF4B7DE8-L000213](../../agents/research.py#L213) | 213 | `"        shortened = result[:max_chars]"` | — |
-| [SRC-59CF4B7DE8-L000214](../../agents/research.py#L214) | 214 | `"        result = shortened.rsplit(\" \", 1)[0] if \" \" in shortened else shortened"` | — |
-| [SRC-59CF4B7DE8-L000215](../../agents/research.py#L215) | 215 | `"    return result"` | — |
-| [SRC-59CF4B7DE8-L000216](../../agents/research.py#L216) | 216 | `""` | — |
-| [SRC-59CF4B7DE8-L000217](../../agents/research.py#L217) | 217 | `""` | — |
-| [SRC-59CF4B7DE8-L000218](../../agents/research.py#L218) | 218 | `"_ARABIC_RE = re.compile(r\"[؀-ۿ]\")"` | — |
-| [SRC-59CF4B7DE8-L000219](../../agents/research.py#L219) | 219 | `""` | — |
-| [SRC-59CF4B7DE8-L000220](../../agents/research.py#L220) | 220 | `""` | — |
-| [SRC-59CF4B7DE8-L000221](../../agents/research.py#L221) | 221 | `"def _normalize_arabic(text: str) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000222](../../agents/research.py#L222) | 222 | `"    if not text:"` | — |
-| [SRC-59CF4B7DE8-L000223](../../agents/research.py#L223) | 223 | `"        return \"\""` | — |
-| [SRC-59CF4B7DE8-L000224](../../agents/research.py#L224) | 224 | `"    return (text.replace(\"\\u0623\", \"\\u0627\")"` | — |
-| [SRC-59CF4B7DE8-L000225](../../agents/research.py#L225) | 225 | `"                .replace(\"\\u0625\", \"\\u0627\")"` | — |
-| [SRC-59CF4B7DE8-L000226](../../agents/research.py#L226) | 226 | `"                .replace(\"\\u0622\", \"\\u0627\")"` | — |
-| [SRC-59CF4B7DE8-L000227](../../agents/research.py#L227) | 227 | `"                .replace(\"\\u0629\", \"\\u0647\")"` | — |
-| [SRC-59CF4B7DE8-L000228](../../agents/research.py#L228) | 228 | `"                .replace(\"\\u0649\", \"\\u064a\"))"` | — |
-| [SRC-59CF4B7DE8-L000229](../../agents/research.py#L229) | 229 | `""` | — |
-| [SRC-59CF4B7DE8-L000230](../../agents/research.py#L230) | 230 | `""` | — |
-| [SRC-59CF4B7DE8-L000231](../../agents/research.py#L231) | 231 | `"def _contains_any(text: str, terms: tuple) -> bool:"` | — |
-| [SRC-59CF4B7DE8-L000232](../../agents/research.py#L232) | 232 | `"    if not text:"` | — |
-| [SRC-59CF4B7DE8-L000233](../../agents/research.py#L233) | 233 | `"        return False"` | — |
-| [SRC-59CF4B7DE8-L000234](../../agents/research.py#L234) | 234 | `"    haystack = _normalize_arabic(text.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000235](../../agents/research.py#L235) | 235 | `"    for term in terms:"` | — |
-| [SRC-59CF4B7DE8-L000236](../../agents/research.py#L236) | 236 | `"        if not term:"` | — |
-| [SRC-59CF4B7DE8-L000237](../../agents/research.py#L237) | 237 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000238](../../agents/research.py#L238) | 238 | `"        t = _normalize_arabic(term.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000239](../../agents/research.py#L239) | 239 | `"        if _ARABIC_RE.search(t):"` | — |
-| [SRC-59CF4B7DE8-L000240](../../agents/research.py#L240) | 240 | `"            if t in haystack:"` | — |
-| [SRC-59CF4B7DE8-L000241](../../agents/research.py#L241) | 241 | `"                return True"` | — |
-| [SRC-59CF4B7DE8-L000242](../../agents/research.py#L242) | 242 | `"        else:"` | — |
-| [SRC-59CF4B7DE8-L000243](../../agents/research.py#L243) | 243 | `"            pat = r\"(?<![a-zA-Z0-9])\" + re.escape(t) + r\"(?![a-zA-Z0-9])\""` | — |
-| [SRC-59CF4B7DE8-L000244](../../agents/research.py#L244) | 244 | `"            if re.search(pat, haystack):"` | — |
-| [SRC-59CF4B7DE8-L000245](../../agents/research.py#L245) | 245 | `"                return True"` | — |
-| [SRC-59CF4B7DE8-L000246](../../agents/research.py#L246) | 246 | `"    return False"` | — |
-| [SRC-59CF4B7DE8-L000247](../../agents/research.py#L247) | 247 | `""` | — |
-| [SRC-59CF4B7DE8-L000248](../../agents/research.py#L248) | 248 | `""` | — |
-| [SRC-59CF4B7DE8-L000249](../../agents/research.py#L249) | 249 | `"def detect_social_focus(question: str, history: list[dict[str, str]] \| None = None) -> bool:"` | — |
-| [SRC-59CF4B7DE8-L000250](../../agents/research.py#L250) | 250 | `"    context = question + \" \" + \" \".join("` | — |
-| [SRC-59CF4B7DE8-L000251](../../agents/research.py#L251) | 251 | `"        item.get(\"content\", \"\") for item in (history or [])[-4:]"` | — |
-| [SRC-59CF4B7DE8-L000252](../../agents/research.py#L252) | 252 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000253](../../agents/research.py#L253) | 253 | `"    return _contains_any(context, _SOCIAL_TERMS)"` | — |
-| [SRC-59CF4B7DE8-L000254](../../agents/research.py#L254) | 254 | `""` | — |
-| [SRC-59CF4B7DE8-L000255](../../agents/research.py#L255) | 255 | `""` | — |
-| [SRC-59CF4B7DE8-L000256](../../agents/research.py#L256) | 256 | `"def detect_freshness(question: str) -> bool:"` | — |
-| [SRC-59CF4B7DE8-L000257](../../agents/research.py#L257) | 257 | `"    return _contains_any(question, _FRESH_TERMS)"` | — |
-| [SRC-59CF4B7DE8-L000258](../../agents/research.py#L258) | 258 | `""` | — |
-| [SRC-59CF4B7DE8-L000259](../../agents/research.py#L259) | 259 | `""` | — |
-| [SRC-59CF4B7DE8-L000260](../../agents/research.py#L260) | 260 | `"def detect_depth(question: str) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000261](../../agents/research.py#L261) | 261 | `"    return \"deep\" if _contains_any(question, _DEEP_TERMS) else \"standard\""` | — |
-| [SRC-59CF4B7DE8-L000262](../../agents/research.py#L262) | 262 | `""` | — |
-| [SRC-59CF4B7DE8-L000263](../../agents/research.py#L263) | 263 | `""` | — |
-| [SRC-59CF4B7DE8-L000264](../../agents/research.py#L264) | 264 | `"def extract_question_coverage_targets(question: str) -> list[str]:"` | — |
-| [SRC-59CF4B7DE8-L000265](../../agents/research.py#L265) | 265 | `"    \"\"\"Extract explicit multi-part requirements; this is a heuristic, not semantic parsing.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000266](../../agents/research.py#L266) | 266 | `"    if not isinstance(question, str) or not question.strip():"` | — |
-| [SRC-59CF4B7DE8-L000267](../../agents/research.py#L267) | 267 | `"        return []"` | — |
-| [SRC-59CF4B7DE8-L000268](../../agents/research.py#L268) | 268 | `"    text = question.strip()[:4000]"` | — |
-| [SRC-59CF4B7DE8-L000269](../../agents/research.py#L269) | 269 | `"    marker = re.compile("` | — |
-| [SRC-59CF4B7DE8-L000270](../../agents/research.py#L270) | 270 | `"        r\"(?:من\\s+حيث\|من\\s+ناحية\|من\\s+الناحية\|فيما\\s+يتعلق\\s+ب\|فيما\\s+يخص\|\""` | — |
-| [SRC-59CF4B7DE8-L000271](../../agents/research.py#L271) | 271 | `"        r\"من\\s+منظور\|in\\s+terms\\s+of\|with\\s+respect\\s+to\|\""` | — |
-| [SRC-59CF4B7DE8-L000272](../../agents/research.py#L272) | 272 | `"        r\"from\\s+the\\s+perspective\\s+of\|based\\s+on\\s+the\\s+following\\s+criteria)\""` | — |
-| [SRC-59CF4B7DE8-L000273](../../agents/research.py#L273) | 273 | `"        r\"\\s*(.+?)(?=[؟?!.؛;\\n]\|$)\","` | — |
-| [SRC-59CF4B7DE8-L000274](../../agents/research.py#L274) | 274 | `"        flags=re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000275](../../agents/research.py#L275) | 275 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000276](../../agents/research.py#L276) | 276 | `"    match = marker.search(text)"` | — |
-| [SRC-59CF4B7DE8-L000277](../../agents/research.py#L277) | 277 | `"    if match:"` | — |
-| [SRC-59CF4B7DE8-L000278](../../agents/research.py#L278) | 278 | `"        raw = match.group(1)"` | — |
-| [SRC-59CF4B7DE8-L000279](../../agents/research.py#L279) | 279 | `"        raw = re.split("` | — |
-| [SRC-59CF4B7DE8-L000280](../../agents/research.py#L280) | 280 | `"            r\"(?:،\|,\|؛\|;)\\s*(?:و?اذكر\|و?وضح\|بيّن\|اشرح\|and\\s+(?:explain\|note\|discuss))\\b\","` | — |
-| [SRC-59CF4B7DE8-L000281](../../agents/research.py#L281) | 281 | `"            raw,"` | — |
-| [SRC-59CF4B7DE8-L000282](../../agents/research.py#L282) | 282 | `"            maxsplit=1,"` | — |
-| [SRC-59CF4B7DE8-L000283](../../agents/research.py#L283) | 283 | `"            flags=re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000284](../../agents/research.py#L284) | 284 | `"        )[0]"` | — |
-| [SRC-59CF4B7DE8-L000285](../../agents/research.py#L285) | 285 | `"        pieces = re.split("` | — |
-| [SRC-59CF4B7DE8-L000286](../../agents/research.py#L286) | 286 | `"            r\"\\s*(?:،\|,\|؛\|;\|/)\\s*\|\""` | — |
-| [SRC-59CF4B7DE8-L000287](../../agents/research.py#L287) | 287 | `"            r\"\\s+\\band\\b\\s+\|\\s+\\bas well as\\b\\s+\|\""` | — |
-| [SRC-59CF4B7DE8-L000288](../../agents/research.py#L288) | 288 | `"            r\"\\s+و(?=ال\|[ء-ي])\","` | — |
-| [SRC-59CF4B7DE8-L000289](../../agents/research.py#L289) | 289 | `"            raw,"` | — |
-| [SRC-59CF4B7DE8-L000290](../../agents/research.py#L290) | 290 | `"            flags=re.IGNORECASE,"` | — |
-| [SRC-59CF4B7DE8-L000291](../../agents/research.py#L291) | 291 | `"        )"` | — |
-| [SRC-59CF4B7DE8-L000292](../../agents/research.py#L292) | 292 | `"    else:"` | — |
-| [SRC-59CF4B7DE8-L000293](../../agents/research.py#L293) | 293 | `"        question_parts = ["` | — |
-| [SRC-59CF4B7DE8-L000294](../../agents/research.py#L294) | 294 | `"            part.strip(\" \\t\\r\\n-•\")"` | — |
-| [SRC-59CF4B7DE8-L000295](../../agents/research.py#L295) | 295 | `"            for part in re.split(r\"[؟?]+\", text)"` | — |
-| [SRC-59CF4B7DE8-L000296](../../agents/research.py#L296) | 296 | `"            if len(part.strip(\" \\t\\r\\n-•\")) >= 4"` | — |
-| [SRC-59CF4B7DE8-L000297](../../agents/research.py#L297) | 297 | `"        ]"` | — |
-| [SRC-59CF4B7DE8-L000298](../../agents/research.py#L298) | 298 | `"        pieces = question_parts if len(question_parts) > 1 else []"` | — |
-| [SRC-59CF4B7DE8-L000299](../../agents/research.py#L299) | 299 | `"        # Reuse the shared aspect vocabulary for compound factual questions that do"` | — |
-| [SRC-59CF4B7DE8-L000300](../../agents/research.py#L300) | 300 | `"        # not use a formal comparison marker (e.g. capital + population). This is"` | — |
-| [SRC-59CF4B7DE8-L000301](../../agents/research.py#L301) | 301 | `"        # deterministic decomposition only; it does not claim semantic verification."` | — |
-| [SRC-59CF4B7DE8-L000302](../../agents/research.py#L302) | 302 | `"        if not pieces:"` | — |
-| [SRC-59CF4B7DE8-L000303](../../agents/research.py#L303) | 303 | `"            pieces = extract_aspects(text)"` | — |
-| [SRC-59CF4B7DE8-L000304](../../agents/research.py#L304) | 304 | `""` | — |
-| [SRC-59CF4B7DE8-L000305](../../agents/research.py#L305) | 305 | `"    targets: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000306](../../agents/research.py#L306) | 306 | `"    seen: set[str] = set()"` | — |
-| [SRC-59CF4B7DE8-L000307](../../agents/research.py#L307) | 307 | `"    for piece in pieces:"` | — |
-| [SRC-59CF4B7DE8-L000308](../../agents/research.py#L308) | 308 | `"        target = re.sub(r\"^[\\s:،,؛;/.!?\\-–—]+\|[\\s:،,؛;/.!?\\-–—]+$\", \"\", piece).strip()"` | — |
-| [SRC-59CF4B7DE8-L000309](../../agents/research.py#L309) | 309 | `"        target = re.sub(r\"^(?:و\\s*)\", \"\", target).strip()"` | — |
-| [SRC-59CF4B7DE8-L000310](../../agents/research.py#L310) | 310 | `"        if len(target) < 2:"` | — |
-| [SRC-59CF4B7DE8-L000311](../../agents/research.py#L311) | 311 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000312](../../agents/research.py#L312) | 312 | `"        if len(target) > 120:"` | — |
-| [SRC-59CF4B7DE8-L000313](../../agents/research.py#L313) | 313 | `"            target = target[:120].rsplit(\" \", 1)[0].strip()"` | — |
-| [SRC-59CF4B7DE8-L000314](../../agents/research.py#L314) | 314 | `"        key = _normalize_arabic(compact_search_query(target)).casefold()"` | — |
-| [SRC-59CF4B7DE8-L000315](../../agents/research.py#L315) | 315 | `"        if key and key not in seen:"` | — |
-| [SRC-59CF4B7DE8-L000316](../../agents/research.py#L316) | 316 | `"            seen.add(key)"` | — |
-| [SRC-59CF4B7DE8-L000317](../../agents/research.py#L317) | 317 | `"            targets.append(target)"` | — |
-| [SRC-59CF4B7DE8-L000318](../../agents/research.py#L318) | 318 | `"        if len(targets) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000319](../../agents/research.py#L319) | 319 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000320](../../agents/research.py#L320) | 320 | `"    return targets"` | — |
-| [SRC-59CF4B7DE8-L000321](../../agents/research.py#L321) | 321 | `""` | — |
-| [SRC-59CF4B7DE8-L000322](../../agents/research.py#L322) | 322 | `""` | — |
-| [SRC-59CF4B7DE8-L000323](../../agents/research.py#L323) | 323 | `"def build_requirement_queries("` | — |
-| [SRC-59CF4B7DE8-L000324](../../agents/research.py#L324) | 324 | `"    base_query: str, targets: list[str] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000325](../../agents/research.py#L325) | 325 | `") -> list[dict[str, str]]:"` | — |
-| [SRC-59CF4B7DE8-L000326](../../agents/research.py#L326) | 326 | `"    \"\"\"Create one bounded search query per explicit requirement.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000327](../../agents/research.py#L327) | 327 | `"    if not base_query or not targets:"` | — |
-| [SRC-59CF4B7DE8-L000328](../../agents/research.py#L328) | 328 | `"        return []"` | — |
-| [SRC-59CF4B7DE8-L000329](../../agents/research.py#L329) | 329 | `"    output: list[dict[str, str]] = []"` | — |
-| [SRC-59CF4B7DE8-L000330](../../agents/research.py#L330) | 330 | `"    for target in targets[:MAX_PLAN_QUERIES]:"` | — |
-| [SRC-59CF4B7DE8-L000331](../../agents/research.py#L331) | 331 | `"        if not isinstance(target, str) or not target.strip():"` | — |
-| [SRC-59CF4B7DE8-L000332](../../agents/research.py#L332) | 332 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000333](../../agents/research.py#L333) | 333 | `"        clean_target = target.strip()[:120]"` | — |
-| [SRC-59CF4B7DE8-L000334](../../agents/research.py#L334) | 334 | `"        prefix_limit = max("` | — |
-| [SRC-59CF4B7DE8-L000335](../../agents/research.py#L335) | 335 | `"            80,"` | — |
-| [SRC-59CF4B7DE8-L000336](../../agents/research.py#L336) | 336 | `"            MAX_QUERY_CHARS - min(len(clean_target), MAX_QUERY_CHARS - 80) - 1,"` | — |
-| [SRC-59CF4B7DE8-L000337](../../agents/research.py#L337) | 337 | `"        )"` | — |
-| [SRC-59CF4B7DE8-L000338](../../agents/research.py#L338) | 338 | `"        prefix = compact_search_query(base_query, limit=prefix_limit)"` | — |
-| [SRC-59CF4B7DE8-L000339](../../agents/research.py#L339) | 339 | `"        query = compact_search_query("` | — |
-| [SRC-59CF4B7DE8-L000340](../../agents/research.py#L340) | 340 | `"            f\"{prefix} {clean_target}\", limit=MAX_QUERY_CHARS"` | — |
-| [SRC-59CF4B7DE8-L000341](../../agents/research.py#L341) | 341 | `"        )"` | — |
-| [SRC-59CF4B7DE8-L000342](../../agents/research.py#L342) | 342 | `"        if query:"` | — |
-| [SRC-59CF4B7DE8-L000343](../../agents/research.py#L343) | 343 | `"            output.append({\"target\": clean_target, \"query\": query})"` | — |
-| [SRC-59CF4B7DE8-L000344](../../agents/research.py#L344) | 344 | `"    return output"` | — |
-| [SRC-59CF4B7DE8-L000345](../../agents/research.py#L345) | 345 | `""` | — |
-| [SRC-59CF4B7DE8-L000346](../../agents/research.py#L346) | 346 | `""` | — |
-| [SRC-59CF4B7DE8-L000347](../../agents/research.py#L347) | 347 | `""` | — |
-| [SRC-59CF4B7DE8-L000348](../../agents/research.py#L348) | 348 | `"def mentioned_social_platforms(text: str) -> list[str]:"` | — |
-| [SRC-59CF4B7DE8-L000349](../../agents/research.py#L349) | 349 | `"    rules = ("` | — |
-| [SRC-59CF4B7DE8-L000350](../../agents/research.py#L350) | 350 | `"        (\"reddit\", (\"reddit\", \"ريديت\")),"` | — |
-| [SRC-59CF4B7DE8-L000351](../../agents/research.py#L351) | 351 | `"        (\"youtube\", (\"youtube\", \"يوتيوب\")),"` | — |
-| [SRC-59CF4B7DE8-L000352](../../agents/research.py#L352) | 352 | `"        (\"facebook\", (\"facebook\", \"فيسبوك\", \"فيس بوك\")),"` | — |
-| [SRC-59CF4B7DE8-L000353](../../agents/research.py#L353) | 353 | `"        (\"instagram\", (\"instagram\", \"انستجرام\", \"إنستجرام\")),"` | — |
-| [SRC-59CF4B7DE8-L000354](../../agents/research.py#L354) | 354 | `"        (\"x\", (\"x.com\", \"twitter\", \"تويتر\", \"اكس\", \"إكس\")),"` | — |
-| [SRC-59CF4B7DE8-L000355](../../agents/research.py#L355) | 355 | `"        (\"tiktok\", (\"tiktok\", \"تيك توك\")),"` | — |
-| [SRC-59CF4B7DE8-L000356](../../agents/research.py#L356) | 356 | `"        (\"linkedin\", (\"linkedin\", \"لينكدان\", \"لينكدإن\")),"` | — |
-| [SRC-59CF4B7DE8-L000357](../../agents/research.py#L357) | 357 | `"        (\"threads\", (\"threads\", \"ثريدز\")),"` | — |
-| [SRC-59CF4B7DE8-L000358](../../agents/research.py#L358) | 358 | `"        (\"bluesky\", (\"bluesky\", \"بلو سكاي\")),"` | — |
-| [SRC-59CF4B7DE8-L000359](../../agents/research.py#L359) | 359 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000360](../../agents/research.py#L360) | 360 | `"    low = text.casefold()"` | — |
-| [SRC-59CF4B7DE8-L000361](../../agents/research.py#L361) | 361 | `"    return [name for name, aliases in rules if any(alias.casefold() in low for alias in aliases)]"` | — |
-| [SRC-59CF4B7DE8-L000362](../../agents/research.py#L362) | 362 | `""` | — |
-| [SRC-59CF4B7DE8-L000363](../../agents/research.py#L363) | 363 | `""` | — |
-| [SRC-59CF4B7DE8-L000364](../../agents/research.py#L364) | 364 | `"def _attach_task_understanding("` | — |
-| [SRC-59CF4B7DE8-L000365](../../agents/research.py#L365) | 365 | `"    plan: dict[str, Any],"` | — |
-| [SRC-59CF4B7DE8-L000366](../../agents/research.py#L366) | 366 | `"    question: str,"` | — |
-| [SRC-59CF4B7DE8-L000367](../../agents/research.py#L367) | 367 | `"    *,"` | — |
-| [SRC-59CF4B7DE8-L000368](../../agents/research.py#L368) | 368 | `"    intent_route: str = \"deterministic_fallback\","` | — |
-| [SRC-59CF4B7DE8-L000369](../../agents/research.py#L369) | 369 | `"    mode: str = \"auto\","` | — |
-| [SRC-59CF4B7DE8-L000370](../../agents/research.py#L370) | 370 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000371](../../agents/research.py#L371) | 371 | `"    \"\"\"Attach deterministic task interpretation and a bounded strategy matrix.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000372](../../agents/research.py#L372) | 372 | `"    result = dict(plan)"` | — |
-| [SRC-59CF4B7DE8-L000373](../../agents/research.py#L373) | 373 | `"    from agents.research_pipeline import build_research_pipeline"` | — |
-| [SRC-59CF4B7DE8-L000374](../../agents/research.py#L374) | 374 | `""` | — |
-| [SRC-59CF4B7DE8-L000375](../../agents/research.py#L375) | 375 | `"    pipeline = build_research_pipeline("` | — |
-| [SRC-59CF4B7DE8-L000376](../../agents/research.py#L376) | 376 | `"        question,"` | — |
-| [SRC-59CF4B7DE8-L000377](../../agents/research.py#L377) | 377 | `"        result,"` | — |
-| [SRC-59CF4B7DE8-L000378](../../agents/research.py#L378) | 378 | `"        mode=mode,"` | — |
-| [SRC-59CF4B7DE8-L000379](../../agents/research.py#L379) | 379 | `"        intent_route=intent_route,"` | — |
-| [SRC-59CF4B7DE8-L000380](../../agents/research.py#L380) | 380 | `"        compact_fn=compact_search_query,"` | — |
-| [SRC-59CF4B7DE8-L000381](../../agents/research.py#L381) | 381 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000382](../../agents/research.py#L382) | 382 | `"    # Planning remains declarative here; the request runner enforces its own"` | — |
-| [SRC-59CF4B7DE8-L000383](../../agents/research.py#L383) | 383 | `"    # selected-mode and budget limits before executing the bounded query matrix."` | — |
-| [SRC-59CF4B7DE8-L000384](../../agents/research.py#L384) | 384 | `"    result[\"task_spec\"] = pipeline[\"task_spec\"]"` | — |
-| [SRC-59CF4B7DE8-L000385](../../agents/research.py#L385) | 385 | `"    result[\"query_strategy_matrix\"] = pipeline[\"query_strategy_matrix\"]"` | — |
-| [SRC-59CF4B7DE8-L000386](../../agents/research.py#L386) | 386 | `"    result[\"research_pipeline\"] = {"` | — |
-| [SRC-59CF4B7DE8-L000387](../../agents/research.py#L387) | 387 | `"        \"aspects\": pipeline[\"aspects\"],"` | — |
-| [SRC-59CF4B7DE8-L000388](../../agents/research.py#L388) | 388 | `"        \"stages\": pipeline[\"stages\"],"` | — |
-| [SRC-59CF4B7DE8-L000389](../../agents/research.py#L389) | 389 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000390](../../agents/research.py#L390) | 390 | `"    return result"` | — |
-| [SRC-59CF4B7DE8-L000391](../../agents/research.py#L391) | 391 | `""` | — |
-| [SRC-59CF4B7DE8-L000392](../../agents/research.py#L392) | 392 | `""` | — |
-| [SRC-59CF4B7DE8-L000393](../../agents/research.py#L393) | 393 | `"def fallback_plan("` | — |
-| [SRC-59CF4B7DE8-L000394](../../agents/research.py#L394) | 394 | `"    question: str, history: list[dict[str, str]] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000395](../../agents/research.py#L395) | 395 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000396](../../agents/research.py#L396) | 396 | `"    \"\"\"Build a small but varied plan when no model planner is configured or parsing fails.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000397](../../agents/research.py#L397) | 397 | `"    contextual_question = resolve_followup_query(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000398](../../agents/research.py#L398) | 398 | `"    direct_urls = extract_urls(question)"` | — |
-| [SRC-59CF4B7DE8-L000399](../../agents/research.py#L399) | 399 | `"    base = compact_search_query(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000400](../../agents/research.py#L400) | 400 | `"    coverage_targets = extract_question_coverage_targets(question)"` | — |
-| [SRC-59CF4B7DE8-L000401](../../agents/research.py#L401) | 401 | `"    requirement_queries = build_requirement_queries(base, coverage_targets)"` | — |
-| [SRC-59CF4B7DE8-L000402](../../agents/research.py#L402) | 402 | `"    social_focus = detect_social_focus(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000403](../../agents/research.py#L403) | 403 | `"    fresh = detect_freshness(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000404](../../agents/research.py#L404) | 404 | `"    detected_depth = detect_depth(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000405](../../agents/research.py#L405) | 405 | `"    deep = detected_depth == \"deep\""` | — |
-| [SRC-59CF4B7DE8-L000406](../../agents/research.py#L406) | 406 | `"    platforms = mentioned_social_platforms(contextual_question)"` | — |
-| [SRC-59CF4B7DE8-L000407](../../agents/research.py#L407) | 407 | `"    queries: list[str] = [base] if base else []"` | — |
-| [SRC-59CF4B7DE8-L000408](../../agents/research.py#L408) | 408 | `""` | — |
-| [SRC-59CF4B7DE8-L000409](../../agents/research.py#L409) | 409 | `"    if fresh and base:"` | — |
-| [SRC-59CF4B7DE8-L000410](../../agents/research.py#L410) | 410 | `"        queries.append(compact_search_query(base + \" أحدث مستجدات آخر الأخبار\"))"` | — |
-| [SRC-59CF4B7DE8-L000411](../../agents/research.py#L411) | 411 | `"    if base and _contains_any(contextual_question, (\"قارن\", \"مقارنة\", \"compare\", \"versus\", \"vs\", \"الفرق بين\")):"` | — |
-| [SRC-59CF4B7DE8-L000412](../../agents/research.py#L412) | 412 | `"        queries.append(compact_search_query(base + \" مقارنة مراجعات مميزات عيوب\"))"` | — |
-| [SRC-59CF4B7DE8-L000413](../../agents/research.py#L413) | 413 | `""` | — |
-| [SRC-59CF4B7DE8-L000414](../../agents/research.py#L414) | 414 | `"    if social_focus and base:"` | — |
-| [SRC-59CF4B7DE8-L000415](../../agents/research.py#L415) | 415 | `"        selected = platforms or [\"facebook\", \"instagram\", \"reddit\"]"` | — |
-| [SRC-59CF4B7DE8-L000416](../../agents/research.py#L416) | 416 | `"        for platform in selected[:3]:"` | — |
-| [SRC-59CF4B7DE8-L000417](../../agents/research.py#L417) | 417 | `"            domain = SOCIAL_DOMAINS[platform]"` | — |
-| [SRC-59CF4B7DE8-L000418](../../agents/research.py#L418) | 418 | `"            site_query = compact_search_query(f\"site:{domain} {base}\")"` | — |
-| [SRC-59CF4B7DE8-L000419](../../agents/research.py#L419) | 419 | `"            if site_query not in queries:"` | — |
-| [SRC-59CF4B7DE8-L000420](../../agents/research.py#L420) | 420 | `"                queries.append(site_query)"` | — |
-| [SRC-59CF4B7DE8-L000421](../../agents/research.py#L421) | 421 | `""` | — |
-| [SRC-59CF4B7DE8-L000422](../../agents/research.py#L422) | 422 | `"    if deep and base and not social_focus and len(queries) < MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000423](../../agents/research.py#L423) | 423 | `"        queries.append(compact_search_query(base + \" مصادر موثوقة تقارير إحصاءات\"))"` | — |
-| [SRC-59CF4B7DE8-L000424](../../agents/research.py#L424) | 424 | `""` | — |
-| [SRC-59CF4B7DE8-L000425](../../agents/research.py#L425) | 425 | `"    if requirement_queries:"` | — |
-| [SRC-59CF4B7DE8-L000426](../../agents/research.py#L426) | 426 | `"        optional_queries = list(queries)"` | — |
-| [SRC-59CF4B7DE8-L000427](../../agents/research.py#L427) | 427 | `"        if len(requirement_queries) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000428](../../agents/research.py#L428) | 428 | `"            priority_queries = [item[\"query\"] for item in requirement_queries]"` | — |
-| [SRC-59CF4B7DE8-L000429](../../agents/research.py#L429) | 429 | `"        else:"` | — |
-| [SRC-59CF4B7DE8-L000430](../../agents/research.py#L430) | 430 | `"            priority_queries = ([base] if base else []) + ["` | — |
-| [SRC-59CF4B7DE8-L000431](../../agents/research.py#L431) | 431 | `"                item[\"query\"] for item in requirement_queries"` | — |
-| [SRC-59CF4B7DE8-L000432](../../agents/research.py#L432) | 432 | `"            ]"` | — |
-| [SRC-59CF4B7DE8-L000433](../../agents/research.py#L433) | 433 | `"        priority_seen = {item.casefold() for item in priority_queries}"` | — |
-| [SRC-59CF4B7DE8-L000434](../../agents/research.py#L434) | 434 | `"        queries = priority_queries + ["` | — |
-| [SRC-59CF4B7DE8-L000435](../../agents/research.py#L435) | 435 | `"            item for item in optional_queries if item.casefold() not in priority_seen"` | — |
-| [SRC-59CF4B7DE8-L000436](../../agents/research.py#L436) | 436 | `"        ]"` | — |
-| [SRC-59CF4B7DE8-L000437](../../agents/research.py#L437) | 437 | `""` | — |
-| [SRC-59CF4B7DE8-L000438](../../agents/research.py#L438) | 438 | `"    unique: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000439](../../agents/research.py#L439) | 439 | `"    seen: set[str] = set()"` | — |
-| [SRC-59CF4B7DE8-L000440](../../agents/research.py#L440) | 440 | `"    for query in queries:"` | — |
-| [SRC-59CF4B7DE8-L000441](../../agents/research.py#L441) | 441 | `"        value = compact_search_query(query)"` | — |
-| [SRC-59CF4B7DE8-L000442](../../agents/research.py#L442) | 442 | `"        key = value.casefold()"` | — |
-| [SRC-59CF4B7DE8-L000443](../../agents/research.py#L443) | 443 | `"        if value and key not in seen:"` | — |
-| [SRC-59CF4B7DE8-L000444](../../agents/research.py#L444) | 444 | `"            unique.append(value)"` | — |
-| [SRC-59CF4B7DE8-L000445](../../agents/research.py#L445) | 445 | `"            seen.add(key)"` | — |
-| [SRC-59CF4B7DE8-L000446](../../agents/research.py#L446) | 446 | `"        if len(unique) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000447](../../agents/research.py#L447) | 447 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000448](../../agents/research.py#L448) | 448 | `""` | — |
-| [SRC-59CF4B7DE8-L000449](../../agents/research.py#L449) | 449 | `"    base_plan = {"` | — |
-| [SRC-59CF4B7DE8-L000450](../../agents/research.py#L450) | 450 | `"        \"queries\": unique or ([base] if base else []),"` | — |
-| [SRC-59CF4B7DE8-L000451](../../agents/research.py#L451) | 451 | `"        \"coverage_targets\": coverage_targets,"` | — |
-| [SRC-59CF4B7DE8-L000452](../../agents/research.py#L452) | 452 | `"        \"requirement_queries\": requirement_queries,"` | — |
-| [SRC-59CF4B7DE8-L000453](../../agents/research.py#L453) | 453 | `"        \"direct_urls\": direct_urls,"` | — |
-| [SRC-59CF4B7DE8-L000454](../../agents/research.py#L454) | 454 | `"        \"social_focus\": social_focus,"` | — |
-| [SRC-59CF4B7DE8-L000455](../../agents/research.py#L455) | 455 | `"        \"freshness\": \"current\" if fresh else \"any\","` | — |
-| [SRC-59CF4B7DE8-L000456](../../agents/research.py#L456) | 456 | `"        \"depth\": detected_depth,"` | — |
-| [SRC-59CF4B7DE8-L000457](../../agents/research.py#L457) | 457 | `"        \"platforms\": platforms,"` | — |
-| [SRC-59CF4B7DE8-L000458](../../agents/research.py#L458) | 458 | `"        \"planning_method\": \"deterministic_fallback\","` | — |
-| [SRC-59CF4B7DE8-L000459](../../agents/research.py#L459) | 459 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000460](../../agents/research.py#L460) | 460 | `"    return _attach_task_understanding("` | — |
-| [SRC-59CF4B7DE8-L000461](../../agents/research.py#L461) | 461 | `"        base_plan, contextual_question, intent_route=\"deterministic_fallback\""` | — |
-| [SRC-59CF4B7DE8-L000462](../../agents/research.py#L462) | 462 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000463](../../agents/research.py#L463) | 463 | `""` | — |
-| [SRC-59CF4B7DE8-L000464](../../agents/research.py#L464) | 464 | `""` | — |
-| [SRC-59CF4B7DE8-L000465](../../agents/research.py#L465) | 465 | `"def validate_plan("` | — |
-| [SRC-59CF4B7DE8-L000466](../../agents/research.py#L466) | 466 | `"    candidate: Any, question: str, history: list[dict[str, str]] \| None = None"` | — |
-| [SRC-59CF4B7DE8-L000467](../../agents/research.py#L467) | 467 | `") -> dict[str, Any]:"` | — |
-| [SRC-59CF4B7DE8-L000468](../../agents/research.py#L468) | 468 | `"    fallback = fallback_plan(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000469](../../agents/research.py#L469) | 469 | `"    if not isinstance(candidate, dict):"` | — |
-| [SRC-59CF4B7DE8-L000470](../../agents/research.py#L470) | 470 | `"        return fallback"` | — |
-| [SRC-59CF4B7DE8-L000471](../../agents/research.py#L471) | 471 | `"    raw_queries = candidate.get(\"queries\", [])"` | — |
-| [SRC-59CF4B7DE8-L000472](../../agents/research.py#L472) | 472 | `"    if not isinstance(raw_queries, list):"` | — |
-| [SRC-59CF4B7DE8-L000473](../../agents/research.py#L473) | 473 | `"        return fallback"` | — |
-| [SRC-59CF4B7DE8-L000474](../../agents/research.py#L474) | 474 | `"    queries: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000475](../../agents/research.py#L475) | 475 | `"    seen: set[str] = set()"` | — |
-| [SRC-59CF4B7DE8-L000476](../../agents/research.py#L476) | 476 | `"    for item in raw_queries:"` | — |
-| [SRC-59CF4B7DE8-L000477](../../agents/research.py#L477) | 477 | `"        query = compact_search_query(item)"` | — |
-| [SRC-59CF4B7DE8-L000478](../../agents/research.py#L478) | 478 | `"        # Never accept prompt-like multi-line payloads as search-query instructions."` | — |
-| [SRC-59CF4B7DE8-L000479](../../agents/research.py#L479) | 479 | `"        query = query.replace(\"\\n\", \" \").replace(\"\\r\", \" \")"` | — |
-| [SRC-59CF4B7DE8-L000480](../../agents/research.py#L480) | 480 | `"        if len(query) < 2:"` | — |
-| [SRC-59CF4B7DE8-L000481](../../agents/research.py#L481) | 481 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000482](../../agents/research.py#L482) | 482 | `"        if query.casefold() not in seen:"` | — |
-| [SRC-59CF4B7DE8-L000483](../../agents/research.py#L483) | 483 | `"            seen.add(query.casefold())"` | — |
-| [SRC-59CF4B7DE8-L000484](../../agents/research.py#L484) | 484 | `"            queries.append(query)"` | — |
-| [SRC-59CF4B7DE8-L000485](../../agents/research.py#L485) | 485 | `"        if len(queries) >= MAX_PLAN_QUERIES:"` | — |
-| [SRC-59CF4B7DE8-L000486](../../agents/research.py#L486) | 486 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000487](../../agents/research.py#L487) | 487 | `"    if not queries:"` | — |
-| [SRC-59CF4B7DE8-L000488](../../agents/research.py#L488) | 488 | `"        return fallback"` | — |
-| [SRC-59CF4B7DE8-L000489](../../agents/research.py#L489) | 489 | `"    base = fallback_plan(question, history)"` | — |
-| [SRC-59CF4B7DE8-L000490](../../agents/research.py#L490) | 490 | `"    coverage_targets = list(base.get(\"coverage_targets\") or [])"` | — |
-| [SRC-59CF4B7DE8-L000491](../../agents/research.py#L491) | 491 | `"    requirement_queries = list(base.get(\"requirement_queries\") or [])"` | — |
-| [SRC-59CF4B7DE8-L000492](../../agents/research.py#L492) | 492 | `"    if requirement_queries:"` | — |
-| [SRC-59CF4B7DE8-L000493](../../agents/research.py#L493) | 493 | `"        required_prefix: list[str] = []"` | — |
-| [SRC-59CF4B7DE8-L000494](../../agents/research.py#L494) | 494 | `"        if len(requirement_queries) < MAX_PLAN_QUERIES and base.get(\"queries\"):"` | — |
-| [SRC-59CF4B7DE8-L000495](../../agents/research.py#L495) | 495 | `"            required_prefix.append(base[\"queries\"][0])"` | — |
-| [SRC-59CF4B7DE8-L000496](../../agents/research.py#L496) | 496 | `"        required_prefix.extend("` | — |
-| [SRC-59CF4B7DE8-L000497](../../agents/research.py#L497) | 497 | `"            item[\"query\"] for item in requirement_queries if item.get(\"query\")"` | — |
-| [SRC-59CF4B7DE8-L000498](../../agents/research.py#L498) | 498 | `"        )"` | — |
-| [SRC-59CF4B7DE8-L000499](../../agents/research.py#L499) | 499 | `"        queries = list(dict.fromkeys(required_prefix + queries))[:MAX_PLAN_QUERIES]"` | — |
-| [SRC-59CF4B7DE8-L000500](../../agents/research.py#L500) | 500 | `"    platforms = candidate.get(\"platforms\")"` | — |
-| [SRC-59CF4B7DE8-L000501](../../agents/research.py#L501) | 501 | `"    if not isinstance(platforms, list):"` | — |
-| [SRC-59CF4B7DE8-L000502](../../agents/research.py#L502) | 502 | `"        platforms = base[\"platforms\"]"` | — |
-| [SRC-59CF4B7DE8-L000503](../../agents/research.py#L503) | 503 | `"    safe_platforms = [p for p in platforms if isinstance(p, str) and p in SOCIAL_DOMAINS]"` | — |
-| [SRC-59CF4B7DE8-L000504](../../agents/research.py#L504) | 504 | `"    validated_plan = {"` | — |
-| [SRC-59CF4B7DE8-L000505](../../agents/research.py#L505) | 505 | `"        \"queries\": queries,"` | — |
-| [SRC-59CF4B7DE8-L000506](../../agents/research.py#L506) | 506 | `"        \"coverage_targets\": coverage_targets,"` | — |
-| [SRC-59CF4B7DE8-L000507](../../agents/research.py#L507) | 507 | `"        \"requirement_queries\": requirement_queries,"` | — |
-| [SRC-59CF4B7DE8-L000508](../../agents/research.py#L508) | 508 | `"        \"direct_urls\": fallback[\"direct_urls\"],"` | — |
-| [SRC-59CF4B7DE8-L000509](../../agents/research.py#L509) | 509 | `"        \"social_focus\": bool(candidate.get(\"social_focus\", base[\"social_focus\"])),"` | — |
-| [SRC-59CF4B7DE8-L000510](../../agents/research.py#L510) | 510 | `"        \"freshness\": \"current\" if candidate.get(\"freshness\") == \"current\" else base[\"freshness\"],"` | — |
-| [SRC-59CF4B7DE8-L000511](../../agents/research.py#L511) | 511 | `"        \"depth\": \"deep\" if candidate.get(\"depth\") == \"deep\" else base[\"depth\"],"` | — |
-| [SRC-59CF4B7DE8-L000512](../../agents/research.py#L512) | 512 | `"        \"platforms\": list(dict.fromkeys(safe_platforms))[:5],"` | — |
-| [SRC-59CF4B7DE8-L000513](../../agents/research.py#L513) | 513 | `"        \"planning_method\": \"language_model\","` | — |
-| [SRC-59CF4B7DE8-L000514](../../agents/research.py#L514) | 514 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000515](../../agents/research.py#L515) | 515 | `"    return _attach_task_understanding("` | — |
-| [SRC-59CF4B7DE8-L000516](../../agents/research.py#L516) | 516 | `"        validated_plan,"` | — |
-| [SRC-59CF4B7DE8-L000517](../../agents/research.py#L517) | 517 | `"        resolve_followup_query(question, history),"` | — |
-| [SRC-59CF4B7DE8-L000518](../../agents/research.py#L518) | 518 | `"        intent_route=\"validated_language_model_plan\","` | — |
-| [SRC-59CF4B7DE8-L000519](../../agents/research.py#L519) | 519 | `"    )"` | — |
-| [SRC-59CF4B7DE8-L000520](../../agents/research.py#L520) | 520 | `""` | — |
-| [SRC-59CF4B7DE8-L000521](../../agents/research.py#L521) | 521 | `""` | — |
-| [SRC-59CF4B7DE8-L000522](../../agents/research.py#L522) | 522 | `"def _canonical_result_url(url: str) -> str:"` | — |
-| [SRC-59CF4B7DE8-L000523](../../agents/research.py#L523) | 523 | `"    try:"` | — |
-| [SRC-59CF4B7DE8-L000524](../../agents/research.py#L524) | 524 | `"        parsed = urlparse(url)"` | — |
-| [SRC-59CF4B7DE8-L000525](../../agents/research.py#L525) | 525 | `"        host = (parsed.hostname or \"\").lower().removeprefix(\"www.\")"` | — |
-| [SRC-59CF4B7DE8-L000526](../../agents/research.py#L526) | 526 | `"        # Drop fragments and common tracking query parameters before deduplication."` | — |
-| [SRC-59CF4B7DE8-L000527](../../agents/research.py#L527) | 527 | `"        parts = []"` | — |
-| [SRC-59CF4B7DE8-L000528](../../agents/research.py#L528) | 528 | `"        for part in parsed.query.split(\"&\"):"` | — |
-| [SRC-59CF4B7DE8-L000529](../../agents/research.py#L529) | 529 | `"            key = part.split(\"=\", 1)[0].lower()"` | — |
