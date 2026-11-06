@@ -190,6 +190,53 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
  .nav button.active{outline:2px solid Highlight}
 }
 
+/* Responsive glass performance indicators */
+.side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px;align-items:center}
+.side-links a,.side-link-button{font-size:10px;color:#92a8c4}
+.side-link-button{border:0;background:transparent;padding:4px;cursor:pointer;font:inherit}
+.side-link-button:hover,.side-links a:hover{color:var(--teal);text-decoration:underline}
+.indicator-hero{display:flex;align-items:center;gap:24px;padding:22px;margin-bottom:14px;min-width:0}
+.indicator-ring{width:154px;height:154px;flex:0 0 154px;border-radius:50%;display:grid;place-items:center;padding:10px;box-shadow:0 0 32px rgba(82,223,255,.08)}
+.indicator-ring-inner{width:100%;height:100%;border:1px solid var(--line);border-radius:50%;background:linear-gradient(145deg,#102438,#091522);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.indicator-ring-value{font-size:31px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums}
+.indicator-ring-caption{font-size:10px;color:var(--muted)}
+.indicator-hero-copy{min-width:0}
+.indicator-hero-copy h2{font-size:19px;margin:8px 0}
+.indicator-hero-copy p{font-size:11px;line-height:1.9;color:var(--muted);max-width:700px;margin:0}
+.indicator-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.indicator-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:14px}
+.indicator-list{display:grid;gap:13px}
+.indicator-row{display:grid;grid-template-columns:112px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:11px;color:var(--muted)}
+.indicator-track{height:10px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}
+.indicator-fill{height:100%;min-width:0;border-radius:99px}
+.indicator-fill.cyan{background:linear-gradient(90deg,#45cfe9,#77dff0)}
+.indicator-fill.green{background:linear-gradient(90deg,#3bbd91,#80e3b5)}
+.indicator-fill.red{background:linear-gradient(90deg,#d95d77,#ff91a2)}
+.indicator-fill.muted{background:linear-gradient(90deg,#647b92,#9aabba)}
+.indicator-summary{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.indicator-note{padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(5,16,27,.5);font-size:10px;line-height:1.8;color:var(--muted)}
+.indicator-note-value{display:block;margin-top:5px;color:var(--text);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
+@media(max-width:1100px){.indicator-layout{grid-template-columns:1fr}.indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .side-bottom{display:block;margin-top:0}
+ .side-bottom .connection{display:none}
+ .side-links{display:flex}
+ .indicator-hero{gap:15px;padding:16px}
+ .indicator-ring{width:126px;height:126px;flex-basis:126px}
+ .indicator-ring-value{font-size:26px}
+ .indicator-hero-copy h2{font-size:16px}
+}
+@media(max-width:520px){
+ .indicator-hero{align-items:flex-start;flex-direction:column}
+ .indicator-ring{width:112px;height:112px;flex-basis:112px;align-self:center}
+ .indicator-ring-value{font-size:24px}
+ .indicator-grid{gap:8px}
+ .indicator-grid .stat{min-height:94px;padding:12px}
+ .indicator-row{grid-template-columns:86px minmax(0,1fr) 26px;gap:7px;font-size:10px}
+ .indicator-summary{grid-template-columns:1fr 1fr}
+}
+@media(max-width:360px){.indicator-summary{grid-template-columns:1fr}.indicator-row{grid-template-columns:76px minmax(0,1fr) 24px}}
+
 </style>
 </head>
 <body>
@@ -201,7 +248,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
   <div class="side-bottom">
     <div class="connection"><div class="connection-title"><span class="dot" id="apiDot"></span><span id="apiStatus">التحقق من الخادم</span></div><small id="apiStatusNote">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>
     <div class="connection"><div class="connection-title">الهوية والصلاحيات</div><small id="roleSummary">لم يتم التحقق من جلسة المستخدم بعد.</small></div>
-    <div class="side-links"><a href="/agent">وكيل البحث</a><a href="/leads">مساحة الإشارات القديمة</a></div>
+    <div class="side-links"><button class="side-link-button" id="systemNav" type="button">حالة النظام</button><a href="/agent">وكيل البحث</a></div>
   </div>
 </aside>
 <main class="main">
@@ -247,22 +294,12 @@ const statuses=[
 ];
 const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إشارة متوسطة",early_research:"استكشاف مبكر",unclear:"غير واضحة",not_buyer_signal:"ليست إشارة شراء مباشرة"};
 const menu=[
- {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
- {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
- {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:true},
+ {id:"overview",label:"نظرة عامة",icon:"⌂",enabled:true},
+ {id:"offer",label:"ملف المنتج",icon:"◇",enabled:true},
  {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:true},
- {id:"run",label:"مراقبة التشغيل",icon:"◷",enabled:false},
- {id:"signals",label:"صندوق إشارات الطلب",icon:"▤",enabled:true},
- {id:"opportunities",label:"تفاصيل الفرص",icon:"◈",enabled:false},
- {id:"companies",label:"ملفات الشركات",icon:"▦",enabled:false},
+ {id:"signals",label:"إشارات الطلب",icon:"▤",enabled:true},
  {id:"pipeline",label:"مسار التأهيل",icon:"⇢",enabled:true},
- {id:"market",label:"استخبارات السوق",icon:"◉",enabled:false},
- {id:"sources",label:"المصادر والموصلات",icon:"⌘",enabled:false},
- {id:"evidence",label:"مركز الأدلة",icon:"▤",enabled:false},
- {id:"audit",label:"سجل التدقيق",icon:"⌗",enabled:false},
- {id:"tasks",label:"المهام والتنبيهات",icon:"◴",enabled:false},
- {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false},
- {id:"system",label:"حالات النظام",icon:"◌",enabled:true}
+ {id:"indicators",label:"مؤشرات الأداء",icon:"▥",enabled:true}
 ];
 function make(tag,cls,text){
  const node=document.createElement(tag);
@@ -325,29 +362,33 @@ function buildStat(label,value,note,glow){
  card.append(make("div","stat-label",label),make("div","stat-value",value),make("div","stat-note",note));return card;
 }
 function renderOverview(){
- setPage("نظرة عامة","ملخص مبني على سجل الإشارات المحفوظ في مساحة العمل الحالية. لا تُحسب نتائج البحث أو ملفات الشركات غير المتاحة ضمن الأرقام.","SALES INTELLIGENCE · OVERVIEW");
+ setPage("نظرة عامة","كل ما تحتاجه لمراجعة إشارات الطلب ومتابعتها من مكان واحد.","مساحة العمل");
  const root=$("viewRoot");root.replaceChildren();
  const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
- const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
  const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
  const stats=make("div","stats");
- stats.append(buildStat("الإشارات المحمّلة",state.leads.length,"حتى 500 سجل أعادها الخادم","glow-teal"),
- buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
- buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","glow-amber"),
- buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","glow-violet"));
+ stats.append(
+  buildStat("إجمالي الإشارات",state.leads.length,"السجلات المحمّلة من الخادم","glow-teal"),
+  buildStat("تحتاج مراجعة",review,"تنتظر قرارك","glow-amber"),
+  buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحوّل","glow-blue")
+ );
  root.append(stats);
  const grid=make("div","content-grid");
- const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");head.append(make("h2","","أحدث الإشارات"),make("p","","آخر السجلات التي أعادها الخادم"));h.append(head,action("عرض الصندوق ←","ghost",()=>navigate("signals")));recent.append(h);
+ const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");
+ head.append(make("h2","","أحدث إشارات الطلب"),make("p","","راجع المصدر وتاريخ الرصد قبل اتخاذ أي خطوة."));
+ h.append(head,action("عرض كل الإشارات ←","ghost",()=>navigate("signals")));recent.append(h);
  const list=make("div","signal-list");
- const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||"").localeCompare(String(a.updated_at||""))).slice(0,5);
- if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بإضافة إشارة من مصدر عام ومسموح، ثم حلّلها واحفظ دليلها."));
- else rows.forEach(l=>list.append(signalCard(l)));
+ const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||b.observed_at||"").localeCompare(String(a.updated_at||a.observed_at||""))).slice(0,4);
+ if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بتعريف منتجك ثم أنشئ حملة اكتشاف، أو أضف إشارة يدويًا."));
+ else rows.forEach(item=>list.append(signalCard(item)));
  recent.append(list);
- const distribution=make("section","glass panel");const dh=make("div","panel-head");const dtitle=make("div");dtitle.append(make("h2","","توزيع حالات المتابعة"),make("p","","حالات السجل الحالي فقط"));dh.append(dtitle);distribution.append(dh);
- const bars=make("div","mini-bars");const groups=[["جديد","new"],["مراجعة","needs_review"],["مؤهل","qualified"],["تواصل","contacted"],["تحول","converted"],["مرفوض","rejected"]];
- groups.forEach(([label,id])=>{const n=countByStatus(id);const row=make("div","bar-row");row.append(make("span","",label));const track=make("div","bar-track");const percent=state.leads.length?Math.max(0,Math.min(100,Math.round((n/state.leads.length*100)/5)*5)):0;const fill=make("div","bar-fill w-"+percent);track.append(fill);row.append(track,make("span","",n));bars.append(row)});
- distribution.append(bars,make("p","disclaimer","ملاحظة: هذا توزيع وصفي لسجلاتك، وليس مؤشرًا على حجم السوق أو اكتمال البحث."));
- grid.append(recent,distribution);root.append(grid);
+ const startPanel=make("section","glass panel");const sh=make("div","panel-head");const st=make("div");
+ st.append(make("h2","","ابدأ من هنا"),make("p","","خطوتان بسيطتان للانطلاق."));
+ sh.append(st);startPanel.append(sh);
+ startPanel.append(action("١. إعداد ملف المنتج","primary",()=>navigate("offer")));
+ startPanel.append(action("٢. إنشاء حملة اكتشاف","",()=>navigate("campaign")));
+ startPanel.append(make("p","disclaimer","تظهر الإشارة مع مصدرها وتاريخ رصدها. التصنيف القواعدي إرشادي، وليس احتمالًا للشراء."));
+ grid.append(recent,startPanel);root.append(grid);
 }
 function emptyState(title,description){
  const box=make("div","empty");box.append(make("strong","",title),make("span","",description));return box;
@@ -515,6 +556,80 @@ async function renderSystem(){
   search.append(make("p","disclaimer","لا تنفذ هذه الشاشة تشخيصًا مباشرًا ولا تختبر صلاحية مفاتيح الموفرات. التشخيص الحي قد يستهلك حصة أو تكلفة، ويظل منفصلًا ويتطلب موافقة المالك."));
   grid.append(models,search);root.append(grid);
  }catch(e){root.replaceChildren(emptyState("تعذرت قراءة الإعدادات",escapeMessage(e.message)))}
+}
+function renderIndicators(){
+ setPage("مؤشرات الأداء","لوحة وصفية لحالة سجلات مساحة العمل الحالية، وليست توقعًا للمبيعات أو احتمالات الشراء.","WORKSPACE INDICATORS");
+ const root=$("viewRoot");root.replaceChildren();
+ const total=state.leads.length;
+ const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
+ const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
+ const converted=total?Math.round(qualified/total*100):0;
+ const withSource=state.leads.filter(x=>safeHttp(x.source_url)).length;
+ const hero=make("section","glass indicator-hero");
+ const ring=make("div","indicator-ring");
+ ring.style.background="conic-gradient(var(--green) 0 "+converted+"%, rgba(132,156,190,.16) "+converted+"% 100%)";
+ ring.setAttribute("role","img");
+ ring.setAttribute("aria-label","نسبة السجلات المؤهلة أو قيد المتابعة: "+converted+" بالمئة من السجلات المحمّلة");
+ const ringInner=make("div","indicator-ring-inner");
+ ringInner.append(make("strong","indicator-ring-value",converted+"%"),make("span","indicator-ring-caption","مؤهل أو متابعة"));
+ ring.append(ringInner);
+ const heroCopy=make("div","indicator-hero-copy");
+ heroCopy.append(make("span","eyebrow","WORKSPACE HEALTH"),make("h2","","مؤشر متابعة السجل"),make("p","","نسبة الإشارات المصنفة مؤهلة أو تم التواصل معها أو تحولت إلى عميل، من إجمالي السجلات المحمّلة حاليًا. هذه نسبة حالة داخلية وليست احتمال شراء."));
+ hero.append(ring,heroCopy);root.append(hero);
+ const cards=make("div","indicator-grid");
+ cards.append(
+  buildStat("إجمالي الإشارات",total,"السجلات التي أعادها الخادم","glow-teal"),
+  buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول","glow-blue"),
+  buildStat("تحتاج مراجعة",review,"جديد أو بانتظار مراجعة","glow-amber"),
+  buildStat("عمليات الاكتشاف",state.discoveryRuns.length,"عمليات محفوظة أعادها الخادم","glow-violet")
+ );
+ root.append(cards);
+ const layout=make("div","indicator-layout");
+ const statusPanel=make("section","glass panel");
+ const head=make("div","panel-head"),title=make("div");
+ title.append(make("h2","","توزيع حالات الإشارات"),make("p","","عدد السجلات الفعلي حسب حالة المتابعة الحالية."));
+ head.append(title,action("فتح إشارات الطلب ←","ghost",()=>navigate("signals")));
+ statusPanel.append(head);
+ const bars=make("div","indicator-list");
+ const groups=[
+  ["جديد","new","cyan"],["يحتاج مراجعة","needs_review","red"],["مؤهل","qualified","green"],
+  ["تم التواصل","contacted","green"],["تحول لعميل","converted","green"],["مرفوض","rejected","muted"]
+ ];
+ groups.forEach(([label,id,tone])=>{
+  const count=countByStatus(id),row=make("div","indicator-row");
+  row.append(make("span","",""+label));
+  const track=make("div","indicator-track"),fill=make("div","indicator-fill "+tone);
+  fill.style.width=(total?Math.round(count/total*100):0)+"%";
+  fill.setAttribute("aria-hidden","true");
+  track.append(fill);row.append(track,make("strong","",count));bars.append(row);
+ });
+ if(!total)bars.append(emptyState("لا توجد بيانات بعد","ستظهر المؤشرات تلقائيًا بعد حفظ إشارات فعلية."));
+ statusPanel.append(bars);
+ const quality=make("section","glass panel");
+ const qhead=make("div","panel-head"),qtitle=make("div");
+ qtitle.append(make("h2","","اكتمال السجل"),make("p","","معلومات وصفية عن السجلات المحمّلة فقط."));
+ qhead.append(qtitle);quality.append(qhead);
+ const summary=make("div","indicator-summary");
+ [
+  ["إشارات لها رابط مصدر",withSource],
+  ["ملفات المنتجات والأسواق",state.profiles.length],
+  ["عمليات الاكتشاف المحفوظة",state.discoveryRuns.length],
+  ["إشارات تحتاج مراجعة",review]
+ ].forEach(([label,value])=>{
+  const item=make("div","indicator-note");
+  item.append(make("div","",label),make("strong","indicator-note-value",value));summary.append(item);
+ });
+ quality.append(summary,make("p","disclaimer","وجود رابط مصدر لا يعني أن الصفحة قُرئت أو تم التحقق من محتواها. ولا تمثل هذه المؤشرات حجم السوق أو معدل التحويل الفعلي."));
+ layout.append(statusPanel,quality);root.append(layout);
+ const recent=make("section","glass panel");recent.style.marginTop="14px";
+ const rh=make("div","panel-head"),rt=make("div");
+ rt.append(make("h2","","أحدث الإشارات"),make("p","","آخر خمسة سجلات بحسب تاريخ التحديث الذي أعاده الخادم."));
+ rh.append(rt,action("عرض الكل ←","ghost",()=>navigate("signals")));recent.append(rh);
+ const list=make("div","signal-list");
+ const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||b.observed_at||"").localeCompare(String(a.updated_at||a.observed_at||""))).slice(0,5);
+ if(rows.length)rows.forEach(item=>list.append(signalCard(item)));
+ else list.append(emptyState("لا توجد إشارات لعرضها","أضف إشارة طلب موثقة لتبدأ المؤشرات في الظهور."));
+ recent.append(list);root.append(recent);
 }
 function renderPlaceholder(id){
  const item=menu.find(x=>x.id===id);const title=item?item.label:"وحدة";
@@ -689,6 +804,7 @@ function renderDiscovery(){
 function renderCurrent(){
  renderNav();
  if(state.activeView==="overview")renderOverview();
+ else if(state.activeView==="indicators")renderIndicators();
  else if(state.activeView==="offer")renderProductProfile();
  else if(state.activeView==="campaign")renderDiscovery();
  else if(state.activeView==="signals")renderSignals();
@@ -773,6 +889,7 @@ $("logoutButton").addEventListener("click",async()=>{
 });
 $("addSignalTop").addEventListener("click",()=>navigate("signals"));
 $("closeDetail").addEventListener("click",closeDetails);
+$("systemNav").addEventListener("click",()=>navigate("system"));
 $("detailDrawer").addEventListener("click",e=>{if(e.target===$("detailDrawer"))closeDetails()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails()});
 renderNav();bootstrap();

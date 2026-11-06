@@ -93,7 +93,7 @@ def test_workspace_does_not_clear_local_session_state_when_server_logout_fails()
     assert handler.index("await api(\"/api/session/logout\"") < handler.index("state.role=null")
     assert "return" in handler.split("catch(e)", 1)[1].split("state.role=null", 1)[0]
 
-def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes():
+def test_workspace_navigation_exposes_six_core_destinations_and_secondary_system_status():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
     match = re.search(r"const menu=\[(.*?)\n\];", html, re.DOTALL)
@@ -102,11 +102,49 @@ def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_rout
         r'\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\}',
         match.group(1),
     )
-    assert len(entries) == 16
-    roles = {entry_id: (label, enabled == "true") for entry_id, label, enabled in entries}
-    assert "evidence" in roles
-    assert "audit" in roles
-    assert roles["opportunities"][1] is False
+    assert [entry[0] for entry in entries] == [
+        "overview", "offer", "campaign", "signals", "pipeline", "indicators"
+    ]
+    assert all(enabled == "true" for _, _, enabled in entries)
+    assert 'id="systemNav"' in html
+    assert '$("systemNav").addEventListener("click",()=>navigate("system"))' in html
+
+
+def test_workspace_overview_uses_three_factual_kpis_and_simple_start_actions():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    overview = html.split("function renderOverview(){", 1)[1].split("\nfunction emptyState", 1)[0]
+    assert 'buildStat("إجمالي الإشارات"' in overview
+    assert 'buildStat("تحتاج مراجعة"' in overview
+    assert 'buildStat("مؤهلة أو قيد المتابعة"' in overview
+    assert "قوية نسبيًا بالقواعد" not in overview
+    assert 'action("١. إعداد ملف المنتج"' in overview
+    assert 'action("٢. إنشاء حملة اكتشاف"' in overview
+
+
+def test_workspace_indicators_are_derived_from_loaded_server_data_not_mock_metrics():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    indicators = html.split("function renderIndicators(){", 1)[1].split("\nfunction renderPlaceholder", 1)[0]
+    assert "state.leads.length" in indicators
+    assert "state.discoveryRuns.length" in indicators
+    assert 'countByStatus(id)' in indicators
+    assert "safeHttp(x.source_url)" in indicators
+    assert "78%" not in indicators
+    assert "12%" not in indicators
+    assert "احتمال شراء" in indicators
+
+
+def test_workspace_indicators_include_responsive_glass_layout_and_semantic_status_colors():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    assert ".indicator-hero" in html
+    assert ".indicator-ring" in html
+    assert ".indicator-fill.green" in html
+    assert ".indicator-fill.red" in html
+    assert "@media(max-width:760px)" in html
+    assert "@media(max-width:520px)" in html
+    assert 'role="img"' in html
 
 
 def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
