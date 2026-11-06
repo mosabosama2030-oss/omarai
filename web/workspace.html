@@ -671,6 +671,7 @@ function renderDiscovery(){
   run.disabled=!canWrite();actions.append(run);controls.append(actions);
  }
  controls.append(make("p","profile-note","تاريخ النشر قد يكون غير متاح. المقتطف لا يعني أن الصفحة قُرئت. فشل الموصل لا يثبت عدم وجود عملاء. لا يتم إرسال أي رسالة من هذه الشاشة."));
+ controls.append(make("p","profile-note","تشغيل الاكتشاف يستخدم النموذج اللغوي المهيأ حاليًا في Omarai؛ قد يستهلك حصة أو تكلفة بحسب إعدادات مزود النموذج. لا تدخل بيانات سرية. الموصلات الاختيارية منفصلة وتظل معطلة افتراضيًا حتى موافقة المالك."));
  root.append(controls);
  if(state.discoveryRuns.length){
   const history=make("section","glass panel profile-panel"),hh=make("div","panel-head"),ht=make("div");
