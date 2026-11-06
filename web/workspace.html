@@ -107,6 +107,16 @@ input::placeholder,textarea::placeholder{color:#7085a2}
 .detail-body h3{font-size:11px;color:var(--teal);margin:17px 0 7px}
 .detail-body p{white-space:pre-wrap}
 .detail-body a{overflow-wrap:anywhere}
+.indicator-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.indicator-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:14px}
+.indicator-list{display:grid;gap:12px}
+.indicator-row{display:grid;grid-template-columns:112px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:11px;color:var(--muted)}
+.indicator-track{height:9px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}
+.indicator-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}
+.indicator-summary{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.indicator-note{padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(5,16,27,.5);font-size:10px;line-height:1.8;color:var(--muted)}
+@media(max-width:900px){.indicator-layout{grid-template-columns:1fr}.indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.indicator-grid{gap:8px}.indicator-row{grid-template-columns:82px minmax(0,1fr) 26px}.indicator-summary{grid-template-columns:1fr}.indicator-grid .stat{min-height:94px}}
 .module-placeholder{padding:30px;max-width:780px}
 .module-placeholder h2{font-size:18px;margin:8px 0}
 .module-placeholder p{font-size:11px;line-height:2;color:var(--muted);max-width:650px}
@@ -248,6 +258,7 @@ const statuses=[
 const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إشارة متوسطة",early_research:"استكشاف مبكر",unclear:"غير واضحة",not_buyer_signal:"ليست إشارة شراء مباشرة"};
 const menu=[
  {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
+ {id:"indicators",label:"مؤشرات الأداء",icon:"▥",enabled:true},
  {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
  {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:true},
  {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:true},
@@ -516,6 +527,65 @@ async function renderSystem(){
   grid.append(models,search);root.append(grid);
  }catch(e){root.replaceChildren(emptyState("تعذرت قراءة الإعدادات",escapeMessage(e.message)))}
 }
+function renderIndicators(){
+  setPage("مؤشرات الأداء","ملخص وصفي لسجلات مساحة العمل وعمليات الاكتشاف التي أعادها الخادم. لا تمثل هذه الأرقام حجم السوق أو احتمالات الشراء.","WORKSPACE INDICATORS");
+  const root=$("viewRoot");root.replaceChildren();
+  const total=state.leads.length;
+  const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
+  const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
+  const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
+  const withSource=state.leads.filter(x=>safeHttp(x.source_url)).length;
+  const cards=make("div","indicator-grid");
+  cards.append(
+   buildStat("إجمالي الإشارات",total,"السجلات المحمّلة من مساحة العمل","glow-teal"),
+   buildStat("تحتاج مراجعة",review,"جديد أو بانتظار مراجعة بشرية","glow-amber"),
+   buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
+   buildStat("عمليات الاكتشاف",state.discoveryRuns.length,"عمليات محفوظة أعادها الخادم","glow-violet")
+  );
+  root.append(cards);
+  const layout=make("div","indicator-layout");
+  const statusPanel=make("section","glass panel");
+  const head=make("div","panel-head"),title=make("div");
+  title.append(make("h2","","توزيع حالات الإشارات"),make("p","","عدد السجلات الفعلي حسب حالة المتابعة الحالية."));
+  head.append(title,action("فتح صندوق الإشارات ←","ghost",()=>navigate("signals")));
+  statusPanel.append(head);
+  const bars=make("div","indicator-list");
+  const groups=[["جديد","new"],["يحتاج مراجعة","needs_review"],["مؤهل","qualified"],["تم التواصل","contacted"],["تحول لعميل","converted"],["مرفوض","rejected"]];
+  groups.forEach(([label,id])=>{
+   const count=countByStatus(id),row=make("div","indicator-row");
+   row.append(make("span","",label));
+   const track=make("div","indicator-track"),fill=make("div","indicator-fill");
+   fill.style.width=(total?Math.round(count/total*100):0)+"%";
+   track.append(fill);row.append(track,make("strong","",count));bars.append(row);
+  });
+  if(!total)bars.append(emptyState("لا توجد بيانات بعد","ستظهر المؤشرات تلقائيًا بعد حفظ إشارات فعلية."));
+  statusPanel.append(bars);
+  const quality=make("section","glass panel");
+  const qhead=make("div","panel-head"),qtitle=make("div");
+  qtitle.append(make("h2","","ملخص السجل"),make("p","","مؤشرات اكتمال السجل، وليست تقييمًا لصحة الطلب."));
+  qhead.append(qtitle);quality.append(qhead);
+  const summary=make("div","indicator-summary");
+  [
+   ["إشارات لها رابط مصدر",withSource],
+   ["تصنيف قوي نسبيًا بالقواعد",strong],
+   ["ملفات المنتجات والأسواق",state.profiles.length],
+   ["سجلات الاكتشاف",state.discoveryRuns.length]
+  ].forEach(([label,value])=>{
+   const item=make("div","indicator-note");
+   item.append(make("div","",label),make("strong","stat-value",value));summary.append(item);
+  });
+  quality.append(summary,make("p","disclaimer","وجود رابط مصدر لا يعني أن الصفحة قُرئت أو تم التحقق من محتواها. والتصنيف القواعدي ليس احتمالًا إحصائيًا للشراء."));
+  layout.append(statusPanel,quality);root.append(layout);
+  const recent=make("section","glass panel");recent.style.marginTop="14px";
+  const rh=make("div","panel-head"),rt=make("div");
+  rt.append(make("h2","","أحدث الإشارات"),make("p","","آخر خمسة سجلات بحسب تاريخ التحديث الذي أعاده الخادم."));
+  rh.append(rt,action("عرض الكل ←","ghost",()=>navigate("signals")));recent.append(rh);
+  const list=make("div","signal-list");
+  const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||b.observed_at||"").localeCompare(String(a.updated_at||a.observed_at||""))).slice(0,5);
+  if(rows.length)rows.forEach(item=>list.append(signalCard(item)));
+  else list.append(emptyState("لا توجد إشارات لعرضها","أضف إشارة طلب موثقة لتبدأ المؤشرات في الظهور."));
+  recent.append(list);root.append(recent);
+}
 function renderPlaceholder(id){
  const item=menu.find(x=>x.id===id);const title=item?item.label:"وحدة";
  setPage(title,"واجهة الوحدة جزء من تصور Omarai، لكن المستودع عند الرأس الحالي لا يوفّر بعد عقد API موثقًا لهذه الوظيفة. لا نعرض بيانات أو نتائج شكلية على أنها حقيقية.","MODULE NOT ENABLED");
@@ -689,6 +759,7 @@ function renderDiscovery(){
 function renderCurrent(){
  renderNav();
  if(state.activeView==="overview")renderOverview();
+  else if(state.activeView==="indicators")renderIndicators();
  else if(state.activeView==="offer")renderProductProfile();
  else if(state.activeView==="campaign")renderDiscovery();
  else if(state.activeView==="signals")renderSignals();
