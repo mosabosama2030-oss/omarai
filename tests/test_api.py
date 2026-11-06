@@ -23,6 +23,8 @@ def local_api(tmp_path, monkeypatch):
     """Run the real handler on loopback with explicit local-development auth opt-in."""
     monkeypatch.setenv("OMARAI_ALLOW_LOOPBACK_AUTH", "1")
     monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_DB_PERSISTENT", raising=False)
+    monkeypatch.delenv("OMARAI_DB_PATH", raising=False)
     previous_store = Handler.store
     previous_request_times = Handler._request_times
     previous_rate_cleanup = Handler._rate_last_cleanup
