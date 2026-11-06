@@ -118,3 +118,25 @@ def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
     assert "u.username||u.password" in html
     assert "node.textContent=String(text)" in html
     assert "innerHTML" not in html
+
+
+def test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    match = re.search(r"const menu=\\[(.*?)\\n\\];", html, re.DOTALL)
+    assert match is not None
+    entries = re.findall(
+        r'\\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\\}',
+        match.group(1),
+    )
+    roles = {entry_id: enabled == "true" for entry_id, _label, enabled in entries}
+    assert roles["offer"] is True
+    assert roles["campaign"] is True
+    assert 'api("/api/product-profiles")' in html
+    assert 'api("/api/product-profiles",{method:"POST",body:payload})' in html
+    assert 'api("/api/discoveries",{method:"POST"' in html
+    assert 'api("/api/discoveries/"+encodeURIComponent(run.id)+"/signals/"+index+"/save"' in html
+    assert 'optional.checked=false' in html
+    assert 'optional.disabled=state.role!=="owner"' in html
+    assert 'window.location.href="/agent"' in html
+    assert "innerHTML" not in html
