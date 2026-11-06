@@ -186,7 +186,7 @@ def test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public
             "<description>نبحث عن مورد للوحة إنذار حريق.</description>"
             "<pubDate>Fri, 06 Nov 2026 08:00:00 GMT</pubDate>"
             "</item></channel></rss>"
-        ).encode("utf-8")
+        ).encode()
 
     def fake_request(method, url, **kwargs):
         called_urls.append(url)
@@ -195,7 +195,7 @@ def test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public
         return FakeResponse()
 
     monkeypatch.setattr(web_agent_module, "_bounded_http_request", fake_request)
-    results, warnings = agent._search_social("لوحة إنذار حريق", ["reddit"])
+    results, _warnings = agent._search_social("لوحة إنذار حريق", ["reddit"])
 
     assert called_urls == ["https://www.reddit.com/search.rss"]
     assert results and results[0]["provider"] == "reddit_public_rss"
