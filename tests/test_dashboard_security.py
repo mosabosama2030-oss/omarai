@@ -123,10 +123,10 @@ def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
 def test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
-    match = re.search(r"const menu=\\[(.*?)\\n\\];", html, re.DOTALL)
+    match = re.search(r"const menu=\[(.*?)\n\];", html, re.DOTALL)
     assert match is not None
     entries = re.findall(
-        r'\\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\\}',
+        r'\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\}',
         match.group(1),
     )
     roles = {entry_id: enabled == "true" for entry_id, _label, enabled in entries}
