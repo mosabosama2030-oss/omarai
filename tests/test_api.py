@@ -1288,3 +1288,160 @@ def test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads(lo
         leads = response.read().decode("utf-8")
         assert response.status == 200
         assert "مساعد اكتشاف العملاء" in leads
+
+
+def test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources(
+    local_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    captured = {}
+
+    def fake_answer(
+        self, question, history=None, mode="auto", *, budget_profile="default", buyer_queries=None
+    ):
+        captured["question"] = question
+        captured["buyer_queries"] = buyer_queries
+        captured["allow_optional_providers"] = self.allow_optional_providers
+        captured["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
+        return {
+            "answer": "عُثر على إشارة طلب واحدة.",
+            "search_queries": buyer_queries,
+            "search_report": {
+                "lead_generation": {
+                    "status": "candidate_signals_found",
+                    "candidate_signal_count": 1,
+                    "related_results_reviewed": 2,
+                    "qualification_rule": "public_demand_signal_phrase_by_type",
+                    "identity_verified": False,
+                },
+                "pipeline_completion_status": "completed",
+            },
+            "sources": [
+                {
+                    "title": "طلب توريد لوحة إنذار",
+                    "url": "https://example.org/public-request/1",
+                    "snippet": "نبحث عن مورد لتوريد لوحة إنذار حريق لمشروع في القاهرة.",
+                    "platform": "web",
+                    "published_at": None,
+                    "page_fetched": False,
+                    "lead_qualification": "public_demand_signal",
+                    "lead_intent_evidence": {
+                        "phrase": "نبحث عن مورد",
+                        "basis": "snippet",
+                        "signal_type": "request_for_quotation",
+                        "product_fit": "unassessed",
+                    },
+                },
+                {
+                    "title": "كتالوج لوحة إنذار",
+                    "url": "https://example.net/catalog",
+                    "snippet": "كتالوج تعريفي بلوحات إنذار الحريق.",
+                    "platform": "web",
+                    "published_at": None,
+                    "page_fetched": False,
+                    "lead_qualification": "related_result_not_lead",
+                    "lead_intent_evidence": None,
+                },
+            ],
+        }
+
+    monkeypatch.setenv("OMARAI_OPENROUTER_WEB_SEARCH", "1")
+    monkeypatch.setattr(WebAgent, "answer", fake_answer)
+    profile_status, profile = request_json(
+        local_api,
+        "/api/product-profiles",
+        method="POST",
+        payload={
+            "product": {
+                "name": "لوحة إنذار الحريق",
+                "aliases": ["FACP"],
+                "category_path": ["السلامة", "إنذار الحريق"],
+                "use_cases": ["حماية المباني"],
+                "problems_solved": ["اكتشاف الحريق مبكرًا"],
+            },
+            "market": {
+                "locations": ["القاهرة", "الجيزة"],
+                "industries": ["المقاولات"],
+                "customer_types": ["مقاولون"],
+                "decision_roles": ["مدير مشتريات"],
+                "exclusions": [],
+            },
+            "locale": "ar",
+        },
+    )
+    assert profile_status == 201
+    assert profile["profile"]["product"]["name"] == "لوحة إنذار الحريق"
+
+    run_status, run = request_json(
+        local_api,
+        "/api/discoveries",
+        method="POST",
+        payload={"profile_id": profile["id"], "allow_optional_providers": False},
+    )
+    assert run_status == 201
+    assert run["sources"][0]["lead_qualification"] == "public_demand_signal"
+    assert run["sources"][1]["lead_qualification"] == "related_result_not_lead"
+    assert captured["buyer_queries"]
+    assert all("القاهرة" in query or "الجيزة" in query for query in captured["buyer_queries"])
+    assert all("لوحة إنذار الحريق" in query or "FACP" in query for query in captured["buyer_queries"])
+    assert captured["allow_optional_providers"] is False
+    assert captured["openrouter_web_search_enabled"] is False
+
+    history_status, history = request_json(local_api, "/api/discoveries")
+    assert history_status == 200
+    assert history["count"] == 1
+    assert history["runs"][0]["id"] == run["id"]
+
+    rejected_status, rejected = request_json(
+        local_api,
+        f"/api/discoveries/{run['id']}/signals/1/save",
+        method="POST",
+        payload={},
+    )
+    assert rejected_status == 409
+    assert "ليست إشارة طلب" in rejected["error"]
+
+    saved_status, saved = request_json(
+        local_api,
+        f"/api/discoveries/{run['id']}/signals/0/save",
+        method="POST",
+        payload={},
+    )
+    assert saved_status == 201
+    assert saved["lead"]["source_url"] == "https://example.org/public-request/1"
+    assert "نبحث عن مورد" in saved["lead"]["note"]
+
+
+def test_discovery_api_denies_optional_provider_usage_to_non_owner(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    store = Handler.store
+    tenant = store.create_tenant("Sales Team", "sales-team")
+    user = store.create_user("sales@example.invalid", "Sales Agent")
+    store.add_membership(tenant, user, "sales_agent")
+    token = "sales-agent-test-token-1234567890"
+    store.create_api_token(token, tenant, user, "test")
+    headers = {"Authorization": "Bearer " + token}
+
+    profile_status, profile = request_json(
+        local_api,
+        "/api/product-profiles",
+        method="POST",
+        payload={
+            "product": {"name": "FACP", "aliases": ["لوحة إنذار"], "use_cases": [], "problems_solved": []},
+            "market": {"locations": ["Cairo"], "industries": [], "customer_types": [], "decision_roles": [], "exclusions": []},
+            "locale": "en",
+        },
+        headers=headers,
+    )
+    assert profile_status == 201
+
+    status, error = request_json(
+        local_api,
+        "/api/discoveries",
+        method="POST",
+        payload={"profile_id": profile["id"], "allow_optional_providers": True},
+        headers=headers,
+    )
+    assert status == 403
+    assert "مالك مساحة العمل" in error["error"]
