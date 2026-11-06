@@ -25,16 +25,18 @@ SIGNALS = {
     # Direct demand language is sector-neutral. A product mention alone is never
     # sufficient to establish buying intent.
     "high": (35, (
-        "عايز اشتري", "عاوز اشتري", "محتاج اشتري", "نحتاج شراء",
-        "نبحث عن مورد", "مطلوب مورد", "مطلوب توريد", "نحتاج توريد",
-        "محتاجين توريد", "نحتاج نظام", "محتاجين نظام", "نحتاج خدمة",
-        "مطلوب شراء", "طلب شراء", "طلب عرض سعر", "طلب عروض اسعار",
-        "مناقصة توريد", "نبحث عن شركة", "نحتاج شركة",
+        "عايز اشتري", "عاوز اشتري", "محتاج اشتري",
+        # Retain established property-language compatibility while allowing any sector.
+        "بدور على شقة", "بدور على عقار", "مطلوب شقة", "عايز وحدة",
+    )),
+    "direct_demand": (55, (
+        "نحتاج شراء", "نبحث عن مورد", "مطلوب مورد", "مطلوب توريد",
+        "نحتاج توريد", "محتاجين توريد", "نحتاج نظام", "محتاجين نظام",
+        "نحتاج خدمة", "مطلوب شراء", "طلب شراء", "طلب عرض سعر",
+        "طلب عروض اسعار", "مناقصة توريد", "نبحث عن شركة", "نحتاج شركة",
         "looking to buy", "need to purchase", "seeking a supplier",
         "need a supplier", "request for quotation", "purchase request",
         "procurement request", "rfq", "request a quote",
-        # Retain established property-language compatibility while allowing any sector.
-        "بدور على شقة", "بدور على عقار", "مطلوب شقة", "عايز وحدة",
     )),
     "next_step": (20, (
         "ممكن معاينة", "عايز اعاين", "عاوز اعاين", "ابعت التفاصيل",
@@ -163,7 +165,9 @@ def analyze(text: str, product_terms=(), location_terms=()) -> dict:
     score = min(100, sum(item["points"] for item in matches))
     label = (
         "high_intent"
-        if score >= 55 and any(item["category"] == "high" for item in matches)
+        if score >= 55 and any(
+            item["category"] in {"high", "direct_demand"} for item in matches
+        )
         else "medium_intent"
         if score >= 40
         else "early_research"
