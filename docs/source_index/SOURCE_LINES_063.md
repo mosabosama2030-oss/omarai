@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **063**
-- سجلات الأسطر: **707**
-- النطاق: SRC-2C8F288796-L000193 إلى SRC-2C8F288796-L000899
+- سجلات الأسطر: **709**
+- النطاق: SRC-2C8F288796-L000191 إلى SRC-2C8F288796-L000899
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000191](../../web/workspace.html#L191) | 191 | `"}"` | — |
+| [SRC-2C8F288796-L000192](../../web/workspace.html#L192) | 192 | `""` | — |
 | [SRC-2C8F288796-L000193](../../web/workspace.html#L193) | 193 | `"/* Responsive glass performance indicators */"` | — |
 | [SRC-2C8F288796-L000194](../../web/workspace.html#L194) | 194 | `".side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px;align-items:center}"` | — |
 | [SRC-2C8F288796-L000195](../../web/workspace.html#L195) | 195 | `".side-links a,.side-link-button{font-size:10px;color:#92a8c4}"` | — |

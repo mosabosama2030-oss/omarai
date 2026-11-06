@@ -4,7 +4,7 @@
 
 - الصفحة: **058**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001589 إلى SRC-F725E90B2A-L002388
+- النطاق: SRC-F725E90B2A-L001587 إلى SRC-F725E90B2A-L002386
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001587](../../tests/test_web_agent.py#L1587) | 1587 | `"      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>"` | — |
+| [SRC-F725E90B2A-L001588](../../tests/test_web_agent.py#L1588) | 1588 | `"    </item>"` | — |
 | [SRC-F725E90B2A-L001589](../../tests/test_web_agent.py#L1589) | 1589 | `"    </channel></rss>\"\"\""` | — |
 | [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `""` | — |
 | [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `"    class FakeResponse:"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L002384](../../tests/test_web_agent.py#L2384) | 2384 | `"    queries = WebAgent._lead_generation_queries("` | — |
 | [SRC-F725E90B2A-L002385](../../tests/test_web_agent.py#L2385) | 2385 | `"        \"ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس\""` | — |
 | [SRC-F725E90B2A-L002386](../../tests/test_web_agent.py#L2386) | 2386 | `"    )"` | — |
-| [SRC-F725E90B2A-L002387](../../tests/test_web_agent.py#L2387) | 2387 | `"    assert queries"` | — |
-| [SRC-F725E90B2A-L002388](../../tests/test_web_agent.py#L2388) | 2388 | `"    assert any(\"شقه في التجمع الخامس\" in query for query in queries)"` | — |

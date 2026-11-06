@@ -4,7 +4,7 @@
 
 - الصفحة: **057**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000789 إلى SRC-F725E90B2A-L001588
+- النطاق: SRC-F725E90B2A-L000787 إلى SRC-F725E90B2A-L001586
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000787](../../tests/test_web_agent.py#L787) | 787 | `""` | — |
+| [SRC-F725E90B2A-L000788](../../tests/test_web_agent.py#L788) | 788 | `"    with pytest.raises(RuntimeError, match=\"تجاوزت حد طول النص\"):"` | — |
 | [SRC-F725E90B2A-L000789](../../tests/test_web_agent.py#L789) | 789 | `"        agent._generate("` | — |
 | [SRC-F725E90B2A-L000790](../../tests/test_web_agent.py#L790) | 790 | `"            question=\"لخص هذا المصدر\","` | — |
 | [SRC-F725E90B2A-L000791](../../tests/test_web_agent.py#L791) | 791 | `"            history=[],"` | — |
@@ -814,5 +816,3 @@
 | [SRC-F725E90B2A-L001584](../../tests/test_web_agent.py#L1584) | 1584 | `"      <link>https://news.google.com/rss/articles/irrelevant</link>"` | — |
 | [SRC-F725E90B2A-L001585](../../tests/test_web_agent.py#L1585) | 1585 | `"      <description>تقرير عن الدوري ونتائج المباراة</description>"` | — |
 | [SRC-F725E90B2A-L001586](../../tests/test_web_agent.py#L1586) | 1586 | `"      <source url=\"https://example.org/\">Example News</source>"` | — |
-| [SRC-F725E90B2A-L001587](../../tests/test_web_agent.py#L1587) | 1587 | `"      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L001588](../../tests/test_web_agent.py#L1588) | 1588 | `"    </item>"` | — |

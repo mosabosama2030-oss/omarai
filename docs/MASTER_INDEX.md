@@ -15,7 +15,7 @@
 - تعريفات Python بلا Docstring: **1291**
 - تعريفات لا ينطبق عليها Docstring: **408**
 - الرموز الساكنة الإضافية: **2813**
-- الأسطر النصية المفهرسة حرفيًا: **50307**
+- الأسطر النصية المفهرسة حرفيًا: **50309**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -129,7 +129,7 @@
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 8455 | 184 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 8621 | 186 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12424 | 299 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -1268,8 +1268,8 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L113) | دالة | test_workspace_overview_uses_three_factual_kpis_and_simple_start_actions | لا توجد Docstring. | ناقص | 113 | [SRC-3D0A619359-L000113](../tests/test_dashboard_security.py#L113) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L125) | دالة | test_workspace_indicators_are_derived_from_loaded_server_data_not_mock_metrics | لا توجد Docstring. | ناقص | 125 | [SRC-3D0A619359-L000125](../tests/test_dashboard_security.py#L125) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L138) | دالة | test_workspace_indicators_include_responsive_glass_layout_and_semantic_status_colors | لا توجد Docstring. | ناقص | 138 | [SRC-3D0A619359-L000138](../tests/test_dashboard_security.py#L138) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L150) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 150 | [SRC-3D0A619359-L000150](../tests/test_dashboard_security.py#L150) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L161) | دالة | test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis | لا توجد Docstring. | ناقص | 161 | [SRC-3D0A619359-L000161](../tests/test_dashboard_security.py#L161) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L152) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 152 | [SRC-3D0A619359-L000152](../tests/test_dashboard_security.py#L152) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L163) | دالة | test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis | لا توجد Docstring. | ناقص | 163 | [SRC-3D0A619359-L000163](../tests/test_dashboard_security.py#L163) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -4145,9 +4145,9 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L54) | مسار API/واجهة محتمل | /api/health | 54 | [SRC-3D0A619359-L000054](../tests/test_dashboard_security.py#L54) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 79 | [SRC-3D0A619359-L000079](../tests/test_dashboard_security.py#L79) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | ALLOWED_ROLES | 81 | [SRC-3D0A619359-L000081](../tests/test_dashboard_security.py#L81) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L173) | مسار API/واجهة محتمل | /api/product-profiles | 173 | [SRC-3D0A619359-L000173](../tests/test_dashboard_security.py#L173) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L175) | مسار API/واجهة محتمل | /api/discoveries | 175 | [SRC-3D0A619359-L000175](../tests/test_dashboard_security.py#L175) |
-| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L176) | مسار API/واجهة محتمل | /api/discoveries/ | 176 | [SRC-3D0A619359-L000176](../tests/test_dashboard_security.py#L176) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L175) | مسار API/واجهة محتمل | /api/product-profiles | 175 | [SRC-3D0A619359-L000175](../tests/test_dashboard_security.py#L175) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L177) | مسار API/واجهة محتمل | /api/discoveries | 177 | [SRC-3D0A619359-L000177](../tests/test_dashboard_security.py#L177) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L178) | مسار API/واجهة محتمل | /api/discoveries/ | 178 | [SRC-3D0A619359-L000178](../tests/test_dashboard_security.py#L178) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 146 | [SRC-29A9CD43D1-L000146](../tests/test_dialogue_context_pipeline.py#L146) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |

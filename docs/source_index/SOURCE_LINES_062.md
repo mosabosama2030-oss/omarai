@@ -4,7 +4,7 @@
 
 - الصفحة: **062**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E3EEC2014A-L000226 إلى SRC-2C8F288796-L000192
+- النطاق: SRC-E3EEC2014A-L000224 إلى SRC-2C8F288796-L000190
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E3EEC2014A-L000224](../../tests/test_workspace_discovery.py#L224) | 224 | `"                \"lead_qualification\": \"related_result_not_lead\","` | — |
+| [SRC-E3EEC2014A-L000225](../../tests/test_workspace_discovery.py#L225) | 225 | `"            }"` | — |
 | [SRC-E3EEC2014A-L000226](../../tests/test_workspace_discovery.py#L226) | 226 | `"        )"` | — |
 | [SRC-E3EEC2014A-L000227](../../tests/test_workspace_discovery.py#L227) | 227 | `""` | — |
 | [SRC-E3EEC2014A-L000228](../../tests/test_workspace_discovery.py#L228) | 228 | `""` | — |
@@ -841,5 +843,3 @@
 | [SRC-2C8F288796-L000188](../../web/workspace.html#L188) | 188 | `"@media(forced-colors:active){"` | — |
 | [SRC-2C8F288796-L000189](../../web/workspace.html#L189) | 189 | `" .glass,.stat,.signal-card,.pipeline-col,.button,.small-button{border:1px solid CanvasText;backdrop-filter:none}"` | — |
 | [SRC-2C8F288796-L000190](../../web/workspace.html#L190) | 190 | `" .nav button.active{outline:2px solid Highlight}"` | — |
-| [SRC-2C8F288796-L000191](../../web/workspace.html#L191) | 191 | `"}"` | — |
-| [SRC-2C8F288796-L000192](../../web/workspace.html#L192) | 192 | `""` | — |
