@@ -104,7 +104,7 @@ def _contains_normalized_phrase(body: str, phrase: str) -> bool:
         return False
     # Arabic conjunctions/prepositions are commonly attached to the next word
     # (e.g. "وممكن معاينة"); allow one such prefix without partial-word matches.
-    pattern = rf"(?<!\\w)(?:[وفبكل])?{re.escape(normalized_phrase)}(?!\\w)"
+    pattern = rf"(?<!\w)(?:[وفبكل])?{re.escape(normalized_phrase)}(?!\w)"
     return re.search(pattern, body, flags=re.UNICODE) is not None
 
 
