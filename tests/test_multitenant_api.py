@@ -400,6 +400,10 @@ def test_product_profile_api_is_authenticated_role_checked_and_tenant_scoped(ten
     tenant_a = _tenant(store, "Product Company A", "products-a@example.test", token_a)
     tenant_b = _tenant(store, "Product Company B", "products-b@example.test", token_b)
 
+    status, unauthorized = request_json(base, "/api/products")
+    assert status == 401
+    assert "رمز الوصول" in unauthorized["error"]
+
     payload = {
         "profile": {
             "name": "Fire alarm system",
@@ -424,6 +428,7 @@ def test_product_profile_api_is_authenticated_role_checked_and_tenant_scoped(ten
     )
     assert status == 201
     assert created["product"]["profile"]["name"] == "Fire alarm system"
+    assert created["product"]["tenant_id"] == tenant_a
 
     status, listing_a = request_json(base, "/api/products", token=token_a)
     assert status == 200
@@ -461,6 +466,9 @@ def test_product_profile_api_rejects_viewer_writes_and_malformed_profiles(tenant
     )
     assert status == 403
     assert "للقراءة فقط" in denied["error"]
+    status, viewer_list = request_json(base, "/api/products", token=viewer_token)
+    assert status == 200
+    assert viewer_list["products"] == []
 
     owner_token = "product-malformed-token-" + "M" * 32
     owner_tenant = _tenant(store, "Malformed Product Company", "malformed-products@example.test", owner_token)
