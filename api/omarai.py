@@ -908,7 +908,7 @@ class Handler(BaseHTTPRequestHandler):
                     if saved is None:
                         return self.respond(
                             409,
-                            {"error": "المصدر المحدد ليس إشارة طلب مؤهلة أو لا ينتمي إلى مساحة العمل."},
+                            {"error": "المصدر المحدد ليس إشارة طلب مؤهلة في سجل الاكتشاف أو لا ينتمي إلى مساحة العمل."},
                         )
                     lead, created = saved
                     return self.respond(
