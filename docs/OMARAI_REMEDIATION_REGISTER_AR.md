@@ -527,7 +527,7 @@
 
 ### التغييرات المفتوحة وغير المنسوبة إلى main
 
-- **PR #155 — OPEN / NOT MERGED:** ملف المنتج واكتشاف نية الشراء؛ الرأس `f88d50ed1ae218d416d0020fc6bbc9d1bda48cdc` مبني على `main` الحالي (27 ahead / 0 behind). CI [42176196725](https://github.com/mosabosama2030-oss/omarai/actions/runs/42176196725): 867 اختبارًا على Python 3.11 و867 على Python 3.12، مع Ruff والفهرسة وبناء الحاوية وprotected API smoke. اختبارات الموصلات Mock؛ live acceptance والاختبار البصري NOT_RUN. لا يوجد Evidence Ledger مستقل كامل أو company entity resolution أو تأهيل شامل.
+- **PR #155 — OPEN / NOT MERGED:** ملف المنتج واكتشاف نية الشراء؛ الرأس `02d2717e05bf053907d3d87dedd166603490df46` مبني على `main` الحالي (33 ahead / 0 behind). CI [42191332199](https://github.com/mosabosama2030-oss/omarai/actions/runs/42191332199): 867 اختبارًا على Python 3.11 و867 على Python 3.12، مع Ruff والفهرسة وبناء الحاوية وprotected API smoke. اختبارات الموصلات Mock؛ live acceptance والاختبار البصري NOT_RUN. لا يوجد Evidence Ledger مستقل كامل أو company entity resolution أو تأهيل شامل.
 - **PR #153 — OPEN / DIVERGED:** Firecrawl opt-in؛ فرعه 3 commits ahead و9 behind عن `main`. لا اتصال حي؛ يلزم إعادة مزامنة ومراجعة.
 - **PR #148 — OPEN / DIVERGED:** hosted preflight؛ فرعه 4 commits ahead و56 behind. لا يثبت إصلاح Cloudflare/edge 403؛ السبب UNKNOWN. يلزم إعادة مزامنة ومراجعة.
 - لا دمج أو نشر أو تعديل أسرار/إعدادات استضافة أو مكالمات مزود مدفوعة ضمن هذه المصالحة.
