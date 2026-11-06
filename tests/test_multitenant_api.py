@@ -460,6 +460,7 @@ def test_product_profile_api_rejects_viewer_writes_and_malformed_profiles(tenant
         payload={"profile": {"name": "No write"}, "market": {}},
     )
     assert status == 403
+    assert "للقراءة فقط" in denied["error"]
 
     owner_token = "product-malformed-token-" + "M" * 32
     owner_tenant = _tenant(store, "Malformed Product Company", "malformed-products@example.test", owner_token)
