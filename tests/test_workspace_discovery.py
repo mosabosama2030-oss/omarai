@@ -199,3 +199,40 @@ def test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public
 
     assert called_urls == ["https://www.reddit.com/search.rss"]
     assert results and results[0]["provider"] == "reddit_public_rss"
+
+
+@pytest.mark.parametrize(
+    "url",
+    [
+        "http://localhost/private",
+        "http://service.localhost/private",
+        "http://service.local/private",
+        "http://127.0.0.1/private",
+        "http://10.0.0.8/private",
+        "http://192.168.1.2/private",
+        "http://[::1]/private",
+        "http://[fd00::1]/private",
+    ],
+)
+def test_discovery_source_storage_rejects_non_public_hosts(url):
+    with pytest.raises(ValueError, match="not public"):
+        LeadStore._safe_discovery_source(
+            {
+                "title": "Private target",
+                "url": url,
+                "snippet": "not a public result",
+                "lead_qualification": "related_result_not_lead",
+            }
+        )
+
+
+def test_discovery_source_storage_accepts_public_http_source():
+    source = LeadStore._safe_discovery_source(
+        {
+            "title": "Public result",
+            "url": "https://example.org/request",
+            "snippet": "public source",
+            "lead_qualification": "related_result_not_lead",
+        }
+    )
+    assert source["url"] == "https://example.org/request"
