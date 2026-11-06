@@ -306,6 +306,43 @@ class LeadStore:
             "ON tenant_memberships(user_id, active, tenant_id)"
         )
 
+        db.execute(
+            """CREATE TABLE IF NOT EXISTS product_profiles (
+                id TEXT PRIMARY KEY,
+                tenant_id TEXT NOT NULL REFERENCES tenants(id),
+                normalized_name TEXT NOT NULL,
+                name TEXT NOT NULL,
+                profile_json TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                UNIQUE (id, tenant_id),
+                UNIQUE (tenant_id, normalized_name)
+            )"""
+        )
+        db.execute(
+            """CREATE TABLE IF NOT EXISTS discovery_runs (
+                id TEXT PRIMARY KEY,
+                tenant_id TEXT NOT NULL,
+                profile_id TEXT NOT NULL,
+                answer TEXT NOT NULL,
+                kind TEXT NOT NULL,
+                search_queries_json TEXT NOT NULL,
+                search_report_json TEXT NOT NULL,
+                sources_json TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                FOREIGN KEY (profile_id, tenant_id)
+                    REFERENCES product_profiles(id, tenant_id)
+            )"""
+        )
+        db.execute(
+            "CREATE INDEX IF NOT EXISTS product_profiles_tenant_updated_idx "
+            "ON product_profiles(tenant_id, updated_at DESC)"
+        )
+        db.execute(
+            "CREATE INDEX IF NOT EXISTS discovery_runs_tenant_created_idx "
+            "ON discovery_runs(tenant_id, created_at DESC)"
+        )
+
     @staticmethod
     def _tenant(tenant_id: str | None) -> str:
         value = DEFAULT_TENANT_ID if tenant_id is None else str(tenant_id).strip()
@@ -706,6 +743,306 @@ class LeadStore:
                 (lead_id, tenant),
             ).fetchone()
         return self.to_dict(row) if row else None
+
+    @staticmethod
+    def _product_profile_row(row):
+        if row is None:
+            return None
+        return {
+            "id": row["id"],
+            "name": row["name"],
+            "profile": json.loads(row["profile_json"]),
+            "created_at": row["created_at"],
+            "updated_at": row["updated_at"],
+        }
+
+    def save_product_profile(self, profile: dict, *, tenant_id: str):
+        if not isinstance(profile, dict):
+            raise ValueError("profile must be an object")
+        product = profile.get("product")
+        if not isinstance(product, dict):
+            raise ValueError("product profile is required")
+        name = str(product.get("name") or "").strip()
+        if not name or len(name) > 240:
+            raise ValueError("product name is required and must be at most 240 characters")
+        normalized_name = normalize(name)
+        if not normalized_name:
+            raise ValueError("product name is invalid")
+        encoded = json.dumps(profile, ensure_ascii=False, separators=(",", ":"))
+        if len(encoded) > 30000:
+            raise ValueError("product profile is too large")
+        tenant = self._tenant(tenant_id)
+        now = now_utc()
+        profile_id = "profile_" + uuid.uuid4().hex
+        with self.connect() as db:
+            active_tenant = db.execute(
+                "SELECT 1 FROM tenants WHERE id=? AND active=1", (tenant,)
+            ).fetchone()
+            if not active_tenant:
+                raise ValueError("active tenant is required")
+            db.execute(
+                """INSERT INTO product_profiles
+                   (id, tenant_id, normalized_name, name, profile_json, created_at, updated_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)
+                   ON CONFLICT(tenant_id, normalized_name)
+                   DO UPDATE SET name=excluded.name,
+                                 profile_json=excluded.profile_json,
+                                 updated_at=excluded.updated_at""",
+                (profile_id, tenant, normalized_name, name, encoded, now, now),
+            )
+            row = db.execute(
+                """SELECT id, name, profile_json, created_at, updated_at
+                   FROM product_profiles
+                   WHERE tenant_id=? AND normalized_name=?""",
+                (tenant, normalized_name),
+            ).fetchone()
+        return self._product_profile_row(row)
+
+    def list_product_profiles(self, *, tenant_id: str):
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            rows = db.execute(
+                """SELECT id, name, profile_json, created_at, updated_at
+                   FROM product_profiles WHERE tenant_id=?
+                   ORDER BY updated_at DESC, id LIMIT 100""",
+                (tenant,),
+            ).fetchall()
+        return [self._product_profile_row(row) for row in rows]
+
+    def get_product_profile(self, profile_id: str, *, tenant_id: str):
+        if not isinstance(profile_id, str) or not profile_id.strip():
+            return None
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            row = db.execute(
+                """SELECT id, name, profile_json, created_at, updated_at
+                   FROM product_profiles WHERE id=? AND tenant_id=?""",
+                (profile_id.strip(), tenant),
+            ).fetchone()
+        return self._product_profile_row(row)
+
+    @staticmethod
+    def _safe_discovery_source(source: dict):
+        from urllib.parse import urlparse
+
+        title = str(source.get("title") or "")[:300].strip()
+        snippet = str(source.get("snippet") or "")[:1600].strip()
+        source_url = validate_url(source.get("url", ""))
+        parsed = urlparse(source_url)
+        if parsed.hostname and parsed.hostname.lower() in {"localhost"}:
+            raise ValueError("discovery source URL is not public")
+        evidence = source.get("lead_intent_evidence")
+        safe_evidence = None
+        if isinstance(evidence, dict):
+            safe_evidence = {
+                "phrase": str(evidence.get("phrase") or "")[:500],
+                "basis": str(evidence.get("basis") or "")[:40],
+                "signal_type": str(evidence.get("signal_type") or "")[:80],
+                "product_fit": str(evidence.get("product_fit") or "unassessed")[:40],
+            }
+        providers = source.get("providers")
+        queries = source.get("queries")
+        return {
+            "title": title,
+            "url": source_url,
+            "snippet": snippet,
+            "platform": str(source.get("platform") or "web")[:80],
+            "domain": str(source.get("domain") or "")[:253],
+            "published_at": (
+                str(source.get("published_at"))[:120]
+                if source.get("published_at") is not None else None
+            ),
+            "page_fetched": source.get("page_fetched") is True,
+            "readable_page_text_available": source.get("readable_page_text_available") is True,
+            "providers": [
+                str(value)[:80] for value in providers[:8] if isinstance(value, str)
+            ] if isinstance(providers, list) else [],
+            "queries": [
+                str(value)[:500] for value in queries[:8] if isinstance(value, str)
+            ] if isinstance(queries, list) else [],
+            "lead_qualification": (
+                "public_demand_signal"
+                if source.get("lead_qualification") == "public_demand_signal"
+                else "related_result_not_lead"
+            ),
+            "lead_intent_evidence": safe_evidence,
+        }
+
+    def save_discovery_run(self, profile_id: str, run: dict, *, tenant_id: str):
+        if not isinstance(run, dict):
+            raise ValueError("discovery run must be an object")
+        tenant = self._tenant(tenant_id)
+        profile = self.get_product_profile(profile_id, tenant_id=tenant)
+        if profile is None:
+            return None
+        raw_sources = run.get("sources")
+        raw_sources = raw_sources if isinstance(raw_sources, list) else []
+        sources = [
+            self._safe_discovery_source(item)
+            for item in raw_sources[:30] if isinstance(item, dict)
+        ]
+        raw_queries = run.get("search_queries")
+        if not isinstance(raw_queries, list):
+            raw_queries = []
+        queries = [str(item)[:500] for item in raw_queries[:8] if isinstance(item, str)]
+        raw_report = run.get("search_report")
+        raw_report = raw_report if isinstance(raw_report, dict) else {}
+        lead_report = raw_report.get("lead_generation")
+        report = {
+            "lead_generation": lead_report if isinstance(lead_report, dict) else {},
+            "pipeline_completion_status": str(
+                raw_report.get("pipeline_completion_status")
+                or run.get("pipeline_completion_status")
+                or "unknown"
+            )[:80],
+            "search_outcome": str(raw_report.get("search_outcome") or "unknown")[:80],
+            "search_attempted": raw_report.get("search_attempted"),
+            "used_web_search": run.get("used_web_search") is True,
+            "used_social_search": run.get("used_social_search") is True,
+        }
+        report_json = json.dumps(report, ensure_ascii=False, separators=(",", ":"))
+        queries_json = json.dumps(queries, ensure_ascii=False, separators=(",", ":"))
+        sources_json = json.dumps(sources, ensure_ascii=False, separators=(",", ":"))
+        if sum(map(len, (report_json, queries_json, sources_json))) > 120000:
+            raise ValueError("discovery result exceeds the storage limit")
+        run_id = "discovery_" + uuid.uuid4().hex
+        now = now_utc()
+        answer = str(run.get("answer") or "")[:5000]
+        kind = str(run.get("kind") or "lead_discovery")[:100]
+        with self.connect() as db:
+            db.execute(
+                """INSERT INTO discovery_runs
+                   (id, tenant_id, profile_id, answer, kind, search_queries_json,
+                    search_report_json, sources_json, created_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    run_id, tenant, profile_id, answer, kind, queries_json,
+                    report_json, sources_json, now,
+                ),
+            )
+            row = db.execute(
+                """SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,
+                          r.answer, r.kind, r.search_queries_json, r.search_report_json,
+                          r.sources_json, r.created_at
+                   FROM discovery_runs r
+                   JOIN product_profiles p
+                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id
+                   WHERE r.id=? AND r.tenant_id=?""",
+                (run_id, tenant),
+            ).fetchone()
+        return self._discovery_run_row(row)
+
+    @staticmethod
+    def _discovery_run_row(row):
+        if row is None:
+            return None
+        item = dict(row)
+        item["search_queries"] = json.loads(item.pop("search_queries_json"))
+        item["search_report"] = json.loads(item.pop("search_report_json"))
+        item["sources"] = json.loads(item.pop("sources_json"))
+        return item
+
+    def list_discovery_runs(self, *, tenant_id: str, limit: int = 50):
+        tenant = self._tenant(tenant_id)
+        limit = max(1, min(int(limit), 100))
+        with self.connect() as db:
+            rows = db.execute(
+                """SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,
+                          r.answer, r.kind, r.search_queries_json, r.search_report_json,
+                          r.sources_json, r.created_at
+                   FROM discovery_runs r
+                   JOIN product_profiles p
+                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id
+                   WHERE r.tenant_id=?
+                   ORDER BY r.created_at DESC, r.id LIMIT ?""",
+                (tenant, limit),
+            ).fetchall()
+        results = []
+        for row in rows:
+            item = self._discovery_run_row(row)
+            results.append({
+                "id": item["id"],
+                "profile_id": item["profile_id"],
+                "profile_name": item["profile_name"],
+                "answer": item["answer"],
+                "kind": item["kind"],
+                "created_at": item["created_at"],
+                "source_count": len(item["sources"]),
+                "qualified_signal_count": sum(
+                    source.get("lead_qualification") == "public_demand_signal"
+                    for source in item["sources"]
+                ),
+                "pipeline_completion_status": item["search_report"].get(
+                    "pipeline_completion_status", "unknown"
+                ),
+            })
+        return results
+
+    def get_discovery_run(self, run_id: str, *, tenant_id: str):
+        if not isinstance(run_id, str) or not run_id.strip():
+            return None
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            row = db.execute(
+                """SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,
+                          r.answer, r.kind, r.search_queries_json, r.search_report_json,
+                          r.sources_json, r.created_at
+                   FROM discovery_runs r
+                   JOIN product_profiles p
+                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id
+                   WHERE r.id=? AND r.tenant_id=?""",
+                (run_id.strip(), tenant),
+            ).fetchone()
+        return self._discovery_run_row(row)
+
+    def save_discovery_signal(
+        self, run_id: str, source_index: int, *, tenant_id: str
+    ):
+        if not isinstance(source_index, int) or isinstance(source_index, bool):
+            return None
+        run = self.get_discovery_run(run_id, tenant_id=tenant_id)
+        if run is None or not 0 <= source_index < len(run["sources"]):
+            return None
+        source = run["sources"][source_index]
+        if source.get("lead_qualification") != "public_demand_signal":
+            return None
+        evidence = source.get("lead_intent_evidence")
+        if not isinstance(evidence, dict) or not str(evidence.get("phrase") or "").strip():
+            return None
+        profile = self.get_product_profile(run["profile_id"], tenant_id=tenant_id)
+        if profile is None:
+            return None
+        product = profile["profile"].get("product", {})
+        market = profile["profile"].get("market", {})
+        product_terms = [
+            str(item) for item in [product.get("name"), *(product.get("aliases") or [])]
+            if isinstance(item, str) and item.strip()
+        ]
+        location_terms = [
+            str(item) for item in (market.get("locations") or [])
+            if isinstance(item, str) and item.strip()
+        ]
+        source_text = str(source.get("snippet") or source.get("title") or "").strip()
+        if not source_text:
+            return None
+        note = (
+            "Omarai public demand evidence | "
+            + "phrase=" + str(evidence.get("phrase") or "")[:240]
+            + " | basis=" + str(evidence.get("basis") or "unknown")[:40]
+            + " | signal_type=" + str(evidence.get("signal_type") or "unknown")[:80]
+            + " | profile=" + str(profile.get("name") or "")[:160]
+            + " | run=" + run["id"]
+        )
+        return self.add(
+            source_text[:MAX_TEXT],
+            source["url"],
+            str(source.get("platform") or "web")[:80],
+            observed_at=now_utc(),
+            note=note[:1000],
+            product_terms=product_terms,
+            location_terms=location_terms,
+            tenant_id=tenant_id,
+        )
 
     def import_csv(self, filename: str, *, tenant_id: str | None = None):
         tenant = self._tenant(tenant_id)
