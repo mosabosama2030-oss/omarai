@@ -93,7 +93,7 @@ def test_workspace_does_not_clear_local_session_state_when_server_logout_fails()
     assert handler.index("await api(\"/api/session/logout\"") < handler.index("state.role=null")
     assert "return" in handler.split("catch(e)", 1)[1].split("state.role=null", 1)[0]
 
-def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_routes():
+def test_workspace_navigation_shows_only_five_primary_destinations():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
     match = re.search(r"const menu=\[(.*?)\n\];", html, re.DOTALL)
@@ -102,11 +102,25 @@ def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_rout
         r'\{id:"([^"]+)",label:"([^"]+)",icon:"[^"]+",enabled:(true|false)\}',
         match.group(1),
     )
-    assert len(entries) == 16
-    roles = {entry_id: (label, enabled == "true") for entry_id, label, enabled in entries}
-    assert "evidence" in roles
-    assert "audit" in roles
-    assert roles["opportunities"][1] is False
+    assert [entry[0] for entry in entries] == [
+        "overview", "offer", "campaign", "signals", "pipeline"
+    ]
+    assert all(enabled == "true" for _, _, enabled in entries)
+    assert 'id="systemNav"' in html
+    assert '$("systemNav").addEventListener("click",()=>navigate("system"))' in html
+
+
+def test_workspace_overview_uses_three_plain_kpis_and_simple_start_actions():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    overview = html.split("function renderOverview(){", 1)[1].split("\nfunction emptyState", 1)[0]
+    assert 'buildStat("إجمالي الإشارات"' in overview
+    assert 'buildStat("تحتاج مراجعة"' in overview
+    assert 'buildStat("مؤهلة أو قيد المتابعة"' in overview
+    assert "قوية نسبيًا بالقواعد" not in overview
+    assert 'action("١. إعداد ملف المنتج"' in overview
+    assert 'action("٢. إنشاء حملة اكتشاف"' in overview
+    assert "ليست احتمالًا للشراء" in overview
 
 
 def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
