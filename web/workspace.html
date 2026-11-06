@@ -523,7 +523,7 @@ async function renderOffer(){
    await api(path,{method:"POST",body:payload});
    state.editingProductId=null;
    await loadProducts();
-   renderOffer();
+   await renderOffer();
    const current=$("productSaveResult");
    if(current)current.append(make("p","tag teal",editing?"تم تحديث ملف المنتج.":"تم حفظ ملف المنتج."));
   }catch(e){
