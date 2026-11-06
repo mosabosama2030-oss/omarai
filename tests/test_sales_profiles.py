@@ -54,6 +54,19 @@ def test_product_profiles_persist_update_and_remain_tenant_scoped(tmp_path):
     assert updated["profile"]["name"] == "نظام إنذار حريق متقدم"
     assert updated["market"]["locations"] == ["الإسكندرية"]
     assert len(store.list_product_profiles(tenant_id=tenant_a)) == 1
+    second = store.save_product_profile(
+        ProductProfile(name="Smoke detector"),
+        MarketProfile(locations=("Alexandria",)),
+        tenant_id=tenant_a,
+    )
+    assert second["id"] != saved["id"]
+    assert len(store.list_product_profiles(tenant_id=tenant_a)) == 2
+
+    reopened = LeadStore(tmp_path / "profiles.sqlite3")
+    persisted = reopened.get_product_profile(saved["id"], tenant_id=tenant_a)
+    assert persisted is not None
+    assert persisted["profile"]["name"] == "نظام إنذار حريق متقدم"
+    assert len(reopened.list_product_profiles(tenant_id=tenant_a)) == 2
 
 
 def test_product_profile_requires_an_active_tenant(tmp_path):
