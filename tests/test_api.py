@@ -938,6 +938,8 @@ def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp
 def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):
     from api.omarai import _lead_store_from_environment
 
+    monkeypatch.delenv("OMARAI_DATABASE_URL", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
     database_path = tmp_path / "persistent" / "omarai.sqlite3"
     monkeypatch.setenv("OMARAI_DB_PATH", str(database_path))
 
@@ -1479,3 +1481,60 @@ def test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in(
 ):
     status, _ = request_json(local_api, "/api/leads", headers=forwarding_header)
     assert status == 401
+
+
+
+def test_lead_store_uses_postgres_database_url_when_configured(monkeypatch):
+    import api.omarai as api_module
+
+    monkeypatch.delenv("OMARAI_DB_PATH", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    database_url = "postgresql://user:secret@example.neon.tech/omarai?sslmode=require"
+    monkeypatch.setenv("OMARAI_DATABASE_URL", database_url)
+    captured = {}
+
+    class Store:
+        def __init__(self, path=None, *, database_url=None):
+            captured["path"] = path
+            captured["database_url"] = database_url
+
+    monkeypatch.setattr(api_module, "LeadStore", Store)
+
+    store = api_module._lead_store_from_environment()
+
+    assert isinstance(store, Store)
+    assert captured == {"path": None, "database_url": database_url}
+
+
+def test_lead_store_rejects_conflicting_postgres_url_and_sqlite_path(monkeypatch, tmp_path):
+    import api.omarai as api_module
+    import pytest
+
+    monkeypatch.setenv("OMARAI_DATABASE_URL", "postgresql://user:secret@example.neon.tech/omarai")
+    monkeypatch.setenv("OMARAI_DB_PATH", str(tmp_path / "omarai.sqlite3"))
+
+    with pytest.raises(ValueError, match="configure either OMARAI_DATABASE_URL"):
+        api_module._lead_store_from_environment()
+
+
+
+def test_health_reports_storage_backend_without_exposing_database_credentials(monkeypatch, local_api):
+    import json
+    from types import SimpleNamespace
+    from urllib.request import urlopen
+
+    import api.omarai as api_module
+
+    monkeypatch.setattr(api_module.Handler, "store", SimpleNamespace(backend="postgresql"))
+    monkeypatch.setenv(
+        "OMARAI_DATABASE_URL",
+        "postgresql://health-user:health-password@example.neon.tech/omarai?sslmode=require",
+    )
+
+    with urlopen(f"{local_api}/api/health", timeout=3) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+
+    assert payload["storage"]["backend"] == "postgresql"
+    assert payload["storage"]["database_url_configured"] is True
+    assert payload["storage"]["durability_status"] == "external_database_configured"
+    assert "health-password" not in json.dumps(payload)

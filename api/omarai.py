@@ -113,9 +113,17 @@ REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
 
 def _lead_store_from_environment() -> LeadStore:
-    """Use an operator-configured database path when a persistent volume is available."""
+    """Select managed PostgreSQL when configured; otherwise retain local SQLite."""
+    database_url = (
+        os.getenv("OMARAI_DATABASE_URL", "").strip()
+        or os.getenv("DATABASE_URL", "").strip()
+    )
     configured_path = os.getenv("OMARAI_DB_PATH", "").strip()
-    return LeadStore(configured_path or None)
+    if database_url and configured_path:
+        raise ValueError(
+            "configure either OMARAI_DATABASE_URL/DATABASE_URL or OMARAI_DB_PATH, not both"
+        )
+    return LeadStore(configured_path or None, database_url=database_url or None)
 
 
 def _profile_terms(value, field_name: str) -> tuple[str, ...]:
@@ -688,6 +696,11 @@ class Handler(BaseHTTPRequestHandler):
                     "mode": "web-research",
                     "agent": WebAgent.status(),
                     "storage": {
+                        "backend": getattr(self.store, "backend", "unknown"),
+                        "database_url_configured": bool(
+                            os.getenv("OMARAI_DATABASE_URL", "").strip()
+                            or os.getenv("DATABASE_URL", "").strip()
+                        ),
                         "database_path_override_configured": bool(
                             os.getenv("OMARAI_DB_PATH", "").strip()
                         ),
@@ -696,12 +709,16 @@ class Handler(BaseHTTPRequestHandler):
                             os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
                         ),
                         "durability_status": (
-                            "operator_asserted"
+                            "external_database_configured"
+                            if getattr(self.store, "backend", "unknown") == "postgresql"
+                            else "operator_asserted"
                             if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
                             else "not_guaranteed"
                         ),
                         "warning": (
-                            None
+                            "PostgreSQL is selected; provider durability and backups are outside this health check."
+                            if getattr(self.store, "backend", "unknown") == "postgresql"
+                            else None
                             if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
                             else "SQLite records may be lost when the host replaces its ephemeral filesystem."
                         ),

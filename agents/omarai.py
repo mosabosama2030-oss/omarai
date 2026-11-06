@@ -12,6 +12,7 @@ import sqlite3
 import unicodedata
 from contextlib import contextmanager
 from collections.abc import Iterator
+from typing import Any
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 import uuid
@@ -251,27 +252,97 @@ def validate_url(url: str) -> str:
         raise ValueError("source_url is too long")
     return url.strip()
 
+def _qmark_to_psycopg(sql: str) -> str:
+    """Translate DB-API qmark placeholders without touching quoted SQL literals."""
+    output: list[str] = []
+    quote: str | None = None
+    index = 0
+    while index < len(sql):
+        char = sql[index]
+        if quote is not None:
+            output.append(char)
+            if char == quote:
+                if index + 1 < len(sql) and sql[index + 1] == quote:
+                    output.append(sql[index + 1])
+                    index += 1
+                else:
+                    quote = None
+        elif char in ("'", '"'):
+            quote = char
+            output.append(char)
+        elif char == "?":
+            output.append("%s")
+        else:
+            output.append(char)
+        index += 1
+    return "".join(output)
+
+
+class _PostgresConnection:
+    """Small execute adapter keeping LeadStore SQL parameters backend-neutral."""
+
+    def __init__(self, connection):
+        self._connection = connection
+
+    def execute(self, sql: str, params=()):
+        statement = sql
+        if statement.lstrip().upper().startswith("INSERT OR IGNORE INTO"):
+            statement = statement.replace("INSERT OR IGNORE INTO", "INSERT INTO", 1)
+            statement = statement.rstrip().rstrip(";") + " ON CONFLICT DO NOTHING"
+        return self._connection.execute(_qmark_to_psycopg(statement), params)
+
+
 class LeadStore:
-    """Tenant-scoped SQLite lead storage with a safe single-company bootstrap."""
+    """Tenant-scoped local SQLite or managed PostgreSQL lead storage."""
 
     ALLOWED_STATUSES = frozenset({
         "new", "qualified", "contacted", "converted", "rejected", "needs_review"
     })
     ALLOWED_ROLES = frozenset({"owner", "admin", "manager", "sales_agent", "viewer"})
 
-    def __init__(self, path: str | Path | None = None):
-        self.path = Path(path or Path.home() / ".omarai" / "omarai.sqlite3").expanduser()
-        self.path.parent.mkdir(parents=True, exist_ok=True)
+    def __init__(
+        self,
+        path: str | Path | None = None,
+        *,
+        database_url: str | None = None,
+    ):
+        clean_database_url = str(database_url or "").strip()
+        if clean_database_url and path is not None:
+            raise ValueError("configure either database_url or a SQLite path, not both")
+        if clean_database_url:
+            if not clean_database_url.startswith(("postgresql://", "postgres://")):
+                raise ValueError("database_url must use the PostgreSQL URL scheme")
+            self.backend = "postgresql"
+            self.database_url = clean_database_url
+            self.path = None
+        else:
+            self.backend = "sqlite"
+            self.database_url = None
+            self.path = Path(path or Path.home() / ".omarai" / "omarai.sqlite3").expanduser()
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+
         with self.connect() as db:
             self._initialize_schema(db)
 
     @contextmanager
-    def connect(self) -> Iterator[sqlite3.Connection]:
-        """Yield one transaction-scoped connection and always close it.
+    def connect(self) -> Iterator[Any]:
+        """Yield one transaction-scoped connection and always close it."""
+        if self.backend == "postgresql":
+            try:
+                import psycopg
+                from psycopg.rows import dict_row
+            except ImportError as exc:
+                raise RuntimeError(
+                    "PostgreSQL storage requires the psycopg package"
+                ) from exc
+            with psycopg.connect(
+                self.database_url,
+                connect_timeout=10,
+                row_factory=dict_row,
+            ) as connection:
+                yield _PostgresConnection(connection)
+            return
 
-        sqlite3.Connection's built-in context manager commits or rolls back;
-        it does not close the connection. This wrapper provides both guarantees.
-        """
         db = sqlite3.connect(self.path, timeout=10)
         try:
             db.row_factory = sqlite3.Row
@@ -314,7 +385,7 @@ class LeadStore:
         db.execute(
             """CREATE TABLE IF NOT EXISTS users (
                 id TEXT PRIMARY KEY,
-                email TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                email TEXT NOT NULL UNIQUE,
                 display_name TEXT NOT NULL,
                 active INTEGER NOT NULL DEFAULT 1,
                 created_at TEXT NOT NULL
@@ -381,84 +452,87 @@ class LeadStore:
             (DEFAULT_TENANT_ID, DEFAULT_USER_ID, now),
         )
 
-        table = db.execute(
-            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='leads'"
-        ).fetchone()
-        if table:
-            columns = {
-                row["name"] for row in db.execute("PRAGMA table_info(leads)").fetchall()
-            }
-            unique_fingerprint = False
-            for index in db.execute("PRAGMA index_list(leads)").fetchall():
-                if not index["unique"]:
-                    continue
-                index_columns = [
-                    row["name"]
-                    for row in db.execute(
-                        f"PRAGMA index_info('{index['name']}')"
-                    ).fetchall()
-                ]
-                if index_columns == ["fingerprint"]:
-                    unique_fingerprint = True
-                    break
-            if "tenant_id" not in columns or unique_fingerprint:
-                db.execute("ALTER TABLE leads RENAME TO leads_legacy_migration")
-                self._create_leads_table(db)
-                legacy_columns = {
-                    row["name"]
-                    for row in db.execute(
-                        "PRAGMA table_info(leads_legacy_migration)"
-                    ).fetchall()
+        if self.backend == "sqlite":
+            table = db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='leads'"
+            ).fetchone()
+            if table:
+                columns = {
+                    row["name"] for row in db.execute("PRAGMA table_info(leads)").fetchall()
                 }
-                tenant_expression = (
-                    "tenant_id" if "tenant_id" in legacy_columns else "?"
-                )
-                if tenant_expression == "?":
-                    db.execute(
-                        """INSERT OR IGNORE INTO leads
-                            (id, tenant_id, fingerprint, text, source_url, platform,
-                             observed_at, assessment, status, note, created_at, updated_at)
-                            SELECT id, ?, fingerprint, text, source_url, platform,
-                                   observed_at, assessment, status, note, created_at, updated_at
-                            FROM leads_legacy_migration""",
-                        (DEFAULT_TENANT_ID,),
+                unique_fingerprint = False
+                for index in db.execute("PRAGMA index_list(leads)").fetchall():
+                    if not index["unique"]:
+                        continue
+                    index_columns = [
+                        row["name"]
+                        for row in db.execute(
+                            f"PRAGMA index_info('{index['name']}')"
+                        ).fetchall()
+                    ]
+                    if index_columns == ["fingerprint"]:
+                        unique_fingerprint = True
+                        break
+                if "tenant_id" not in columns or unique_fingerprint:
+                    db.execute("ALTER TABLE leads RENAME TO leads_legacy_migration")
+                    self._create_leads_table(db)
+                    legacy_columns = {
+                        row["name"]
+                        for row in db.execute(
+                            "PRAGMA table_info(leads_legacy_migration)"
+                        ).fetchall()
+                    }
+                    tenant_expression = (
+                        "tenant_id" if "tenant_id" in legacy_columns else "?"
                     )
-                else:
-                    db.execute(
-                        """INSERT OR IGNORE INTO leads
-                            (id, tenant_id, fingerprint, text, source_url, platform,
-                             observed_at, assessment, status, note, created_at, updated_at)
-                            SELECT id, tenant_id, fingerprint, text, source_url, platform,
-                                   observed_at, assessment, status, note, created_at, updated_at
-                            FROM leads_legacy_migration"""
-                    )
-                legacy_count = db.execute(
-                    "SELECT COUNT(*) FROM leads_legacy_migration"
-                ).fetchone()[0]
-                migrated_count = db.execute(
-                    "SELECT COUNT(*) FROM leads"
-                ).fetchone()[0]
-                missing_rows = db.execute(
-                    """SELECT COUNT(*)
-                       FROM leads_legacy_migration legacy
-                       LEFT JOIN leads migrated
-                         ON migrated.id=legacy.id
-                        AND migrated.fingerprint=legacy.fingerprint
-                       WHERE migrated.id IS NULL"""
-                ).fetchone()[0]
-                foreign_key_errors = db.execute(
-                    "PRAGMA foreign_key_check(leads)"
-                ).fetchall()
-                if (
-                    migrated_count != legacy_count
-                    or missing_rows
-                    or foreign_key_errors
-                ):
-                    raise RuntimeError(
-                        "lead migration verification failed; legacy data was retained"
-                    )
-                # Drop the old table only after count, identity, and FK checks pass.
-                db.execute("DROP TABLE leads_legacy_migration")
+                    if tenant_expression == "?":
+                        db.execute(
+                            """INSERT OR IGNORE INTO leads
+                                (id, tenant_id, fingerprint, text, source_url, platform,
+                                 observed_at, assessment, status, note, created_at, updated_at)
+                                SELECT id, ?, fingerprint, text, source_url, platform,
+                                       observed_at, assessment, status, note, created_at, updated_at
+                                FROM leads_legacy_migration""",
+                            (DEFAULT_TENANT_ID,),
+                        )
+                    else:
+                        db.execute(
+                            """INSERT OR IGNORE INTO leads
+                                (id, tenant_id, fingerprint, text, source_url, platform,
+                                 observed_at, assessment, status, note, created_at, updated_at)
+                                SELECT id, tenant_id, fingerprint, text, source_url, platform,
+                                       observed_at, assessment, status, note, created_at, updated_at
+                                FROM leads_legacy_migration"""
+                        )
+                    legacy_count = db.execute(
+                        "SELECT COUNT(*) FROM leads_legacy_migration"
+                    ).fetchone()[0]
+                    migrated_count = db.execute(
+                        "SELECT COUNT(*) FROM leads"
+                    ).fetchone()[0]
+                    missing_rows = db.execute(
+                        """SELECT COUNT(*)
+                           FROM leads_legacy_migration legacy
+                           LEFT JOIN leads migrated
+                             ON migrated.id=legacy.id
+                            AND migrated.fingerprint=legacy.fingerprint
+                           WHERE migrated.id IS NULL"""
+                    ).fetchone()[0]
+                    foreign_key_errors = db.execute(
+                        "PRAGMA foreign_key_check(leads)"
+                    ).fetchall()
+                    if (
+                        migrated_count != legacy_count
+                        or missing_rows
+                        or foreign_key_errors
+                    ):
+                        raise RuntimeError(
+                            "lead migration verification failed; legacy data was retained"
+                        )
+                    # Drop the old table only after count, identity, and FK checks pass.
+                    db.execute("DROP TABLE leads_legacy_migration")
+            else:
+                self._create_leads_table(db)
         else:
             self._create_leads_table(db)
 
@@ -917,13 +991,15 @@ class LeadStore:
     ):
         tenant = self._tenant(tenant_id)
         limit = max(1, min(int(limit), 500))
+        query = "SELECT * FROM leads WHERE tenant_id=?"
+        params: list[object] = [tenant]
+        if status is not None:
+            query += " AND status=?"
+            params.append(status)
+        query += " ORDER BY created_at DESC LIMIT ?"
+        params.append(limit)
         with self.connect() as db:
-            rows = db.execute(
-                """SELECT * FROM leads
-                   WHERE tenant_id=? AND (? IS NULL OR status=?)
-                   ORDER BY created_at DESC LIMIT ?""",
-                (tenant, status, status, limit),
-            ).fetchall()
+            rows = db.execute(query, tuple(params)).fetchall()
         return [self.to_dict(row) for row in rows]
 
     def update_status(
