@@ -831,7 +831,7 @@ class LeadStore:
         source_url = validate_url(source.get("url", ""))
         parsed = urlparse(source_url)
         hostname = (parsed.hostname or "").lower().rstrip(".")
-        if hostname == "localhost" or hostname.endswith(".localhost") or hostname.endswith(".local"):
+        if hostname == "localhost" or hostname.endswith((".localhost", ".local")):
             raise ValueError("discovery source URL is not public")
         try:
             address = ipaddress.ip_address(hostname)
