@@ -82,3 +82,64 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     assert row2["text"].startswith("\t\ufeff=")
     assert row2["note"].startswith("\t\u00a0\ufeff=")
 
+
+
+def test_generic_fire_alarm_and_supplier_requests_are_sector_neutral():
+    fire_alarm = analyze("نحتاج نظام إنذار حريق للمصنع")
+    supplier = analyze("نبحث عن مورد لافتات لمشروع جديد")
+    assert fire_alarm["label"] == "high_intent"
+    assert supplier["label"] == "high_intent"
+    assert fire_alarm["score"] >= 55
+    assert supplier["score"] >= 55
+
+
+def test_product_mention_alone_does_not_create_a_demand_signal():
+    result = analyze("نظام إنذار حريق")
+    assert result["label"] == "unclear"
+    assert result["score"] == 0
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "مش بدور على شقة",
+        "مش محتاج نظام إنذار حريق",
+        "لا نحتاج مورد لافتات",
+        "not looking for a supplier",
+        "we do not need a fire alarm system",
+    ],
+)
+def test_explicit_negation_never_scores_as_buyer_intent(text):
+    result = analyze(text)
+    assert result["label"] == "not_buyer_signal"
+    assert result["score"] == 0
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "تم الشراء بالفعل",
+        "وجدنا مورد وتم التعاقد",
+        "already purchased the equipment",
+        "supplier selected",
+        "كنت بدور على شقة",
+    ],
+)
+def test_completed_or_past_need_is_not_active_demand(text):
+    result = analyze(text)
+    assert result["label"] == "closed_or_stale_signal"
+    assert result["score"] == 0
+
+
+def test_product_and_location_context_do_not_inflate_demand_score():
+    result = analyze(
+        "نظام إنذار حريق في القاهرة",
+        product_terms=["نظام إنذار حريق"],
+        location_terms=["القاهرة"],
+    )
+    assert result["score"] == 0
+    assert result["label"] == "unclear"
+    assert {item["category"] for item in result["matched_signals"]} == {
+        "product_context",
+        "location_context",
+    }
