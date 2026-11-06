@@ -51,6 +51,8 @@ def test_sales_workspace_uses_http_only_session_and_never_persists_access_token(
     assert "localStorage" not in html
     assert "sessionStorage" not in html
     assert 'api("/api/leads?limit=500")' in html
+    assert 'api("/api/products?limit=100")' in html
+    assert 'state.activeView==="offer"' in html
     assert 'api("/api/health")' in html
     assert 'state.activeView==="system"' in html
     assert 'if(canWrite())panel.append(createSignalForm())' in html
@@ -107,6 +109,7 @@ def test_workspace_navigation_matches_the_sixteen_screen_design_and_enabled_rout
     assert "evidence" in roles
     assert "audit" in roles
     assert roles["opportunities"][1] is False
+    assert roles["offer"] == ("ملف المنتج والعرض", True)
 
 
 def test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering():
