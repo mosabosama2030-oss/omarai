@@ -53,6 +53,8 @@ def test_sales_workspace_uses_http_only_session_and_never_persists_access_token(
     assert 'api("/api/leads?limit=500")' in html
     assert 'api("/api/products?limit=100")' in html
     assert 'state.activeView==="offer"' in html
+    assert "input.disabled=!canWrite()" in html
+    assert 'if(canWrite())footer.append(action("تعديل الملف"' in html
     assert 'api("/api/health")' in html
     assert 'state.activeView==="system"' in html
     assert 'if(canWrite())panel.append(createSignalForm())' in html
