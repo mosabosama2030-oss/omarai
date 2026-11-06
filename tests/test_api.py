@@ -1303,6 +1303,7 @@ def test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_
         captured["question"] = question
         captured["buyer_queries"] = buyer_queries
         captured["allow_optional_providers"] = self.allow_optional_providers
+        captured["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
         return {
             "answer": "عُثر على إشارة طلب واحدة.",
             "search_queries": buyer_queries,
@@ -1345,6 +1346,7 @@ def test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_
             ],
         }
 
+    monkeypatch.setenv("OMARAI_OPENROUTER_WEB_SEARCH", "1")
     monkeypatch.setattr(WebAgent, "answer", fake_answer)
     profile_status, profile = request_json(
         local_api,
@@ -1384,6 +1386,7 @@ def test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_
     assert all("القاهرة" in query or "الجيزة" in query for query in captured["buyer_queries"])
     assert all("لوحة إنذار الحريق" in query or "FACP" in query for query in captured["buyer_queries"])
     assert captured["allow_optional_providers"] is False
+    assert captured["openrouter_web_search_enabled"] is False
 
     history_status, history = request_json(local_api, "/api/discoveries")
     assert history_status == 200
