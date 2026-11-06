@@ -17,47 +17,79 @@ from pathlib import Path
 import uuid
 from urllib.parse import urlparse
 
+from agents.sales_domain import (
+    ContactabilityStatus,
+    DemandEvidence,
+    DemandSignal,
+    DemandSignalType,
+    EvidenceBasis,
+    FreshnessStatus,
+    IdentityStatus,
+    LeadQualification,
+    ProductFit,
+    SourceQuality,
+)
+
 MAX_TEXT = 12000
 DEFAULT_TENANT_ID = "tenant_default"
 DEFAULT_USER_ID = "user_local_admin"
 _TRANSLATION = str.maketrans({"أ":"ا","إ":"ا","آ":"ا","ٱ":"ا","ى":"ي","ئ":"ي","ؤ":"و","ـ":""})
 SIGNALS = {
-    "high": (35, ("عايز اشتري", "عاوز اشتري", "بدور على شقة", "بدور على عقار", "مطلوب شقة", "عايز وحدة", "محتاج اشتري")),
-    "next_step": (20, ("ممكن معاينة", "عايز اعاين", "عاوز اعاين", "ابعت التفاصيل", "ابعت اللوكيشن", "ميعاد للمعاينة")),
-    "budget": (15, ("السعر كام", "مقدم كام", "ميزانيتي", "معايا مقدم", "تقسيط", "على اقساط", "في حدود")),
-    "explore": (10, ("بدور على", "فيه شقق", "ايه المتاح", "عايز اعرف الاسعار")),
+    # Direct demand language is sector-neutral. A product mention alone is never
+    # sufficient to establish buying intent.
+    "high": (35, (
+        "عايز اشتري", "عاوز اشتري", "محتاج اشتري",
+        # Retain established property-language compatibility while allowing any sector.
+        "بدور على شقة", "بدور على عقار", "مطلوب شقة", "عايز وحدة",
+    )),
+    "direct_demand": (55, (
+        "نحتاج شراء", "نبحث عن مورد", "مطلوب مورد", "مطلوب توريد",
+        "نحتاج توريد", "محتاجين توريد", "نحتاج نظام", "محتاجين نظام",
+        "نحتاج خدمة", "مطلوب شراء", "طلب شراء", "طلب عرض سعر",
+        "طلب عروض اسعار", "مناقصة توريد", "نبحث عن شركة", "نحتاج شركة",
+        "looking to buy", "need to purchase", "seeking a supplier",
+        "need a supplier", "request for quotation", "purchase request",
+        "procurement request", "rfq", "request a quote",
+    )),
+    "next_step": (20, (
+        "ممكن معاينة", "عايز اعاين", "عاوز اعاين", "ابعت التفاصيل",
+        "ابعت اللوكيشن", "ميعاد للمعاينة", "ابعت عرض سعر", "ارسل عرض سعر",
+        "نحتاج عرض سعر", "يرجى تقديم عرض", "send a quotation",
+        "send quote", "contact for quote",
+    )),
+    "budget": (15, (
+        "السعر كام", "مقدم كام", "ميزانيتي", "معايا مقدم", "تقسيط",
+        "على اقساط", "في حدود", "ما هي التكلفة", "what is the price",
+        "what does it cost", "budget is",
+    )),
+    "explore": (10, (
+        "بدور على", "فيه شقق", "ايه المتاح", "عايز اعرف الاسعار",
+        "ابحث عن", "نبحث عن", "looking for", "seeking information",
+    )),
 }
-NOT_BUYER = ("مش عايز اشتري", "مش عاوز اشتري", "عايز ابيع", "عاوز ابيع", "عندي شقة للبيع", "انا وسيط", "انا سمسار", "عايز ايجار", "للايجار")
+NOT_BUYER = (
+    "مش عايز اشتري", "مش عاوز اشتري", "مش بدور على", "مش محتاج",
+    "مش محتاجين", "لا نحتاج", "لا نبحث عن", "لسنا بحاجة",
+    "ما عنديش نية", "مش ناوي", "مش مهتم", "مش هشتري",
+    "not interested", "not looking for", "do not need", "don't need", "not seeking",
+    "عايز ابيع", "عاوز ابيع", "عندي شقة للبيع", "انا وسيط", "انا سمسار",
+    "عايز ايجار", "للايجار", "not looking for", "do not need",
+    "don't need", "not seeking",
+)
+CLOSED_OR_STALE = (
+    "تم الغاء الطلب", "الغيت الطلب", "لغيت الطلب",
+    "تم الشراء", "اشترينا", "اشتريت بالفعل", "تم التعاقد", "تعاقدنا",
+    "وجدنا مورد", "تم اختيار المورد", "تم التوريد", "اكتمل التوريد",
+    "تم حل المشكلة", "لم نعد بحاجة", "already purchased", "we purchased",
+    "contract awarded", "supplier selected", "need fulfilled",
+    "no longer needed", "كنت بدور على", "كنت محتاج", "كنت ابحث عن",
+    "was looking for", "previously needed",
+)
 
 def normalize(text: str) -> str:
     value = unicodedata.normalize("NFKC", str(text)).translate(_TRANSLATION)
     value = "".join(c for c in value if not unicodedata.category(c).startswith("M"))
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", value.casefold())).strip()
-
-# Negation / completed-purchase guards. A signal phrase preceded by a negator, or a text that
-# states the need is cancelled or already satisfied, is not a live buying signal.
-_NEGATORS = frozenset({"مش", "ما", "لا", "ولا", "مو", "بلاش", "كنت"})
-_NEGATED_TEXT = tuple(normalize(p) for p in (
-    "ما عنديش نية", "مش ناوي", "مش محتاج", "مش مهتم", "مش هشتري",
-    "لغيت", "الغيت", "اشتريت خلاص", "خلاص اشتريت", "لقيت شقة", "لقيت خلاص",
-))
-
-
-def _is_negated(body: str, phrase: str) -> bool:
-    """True when one of the three words before the first occurrence of phrase is a negator."""
-    index = body.find(phrase)
-    return index > 0 and any(word in _NEGATORS for word in body[:index].split()[-3:])
-
-
-def _negated_result(hits: list[str]) -> dict:
-    return {
-        "score": 0,
-        "label": "not_buyer_signal",
-        "summary": "النص ينفي الحاجة أو يذكر أنها انتهت؛ ليس إشارة شراء حالية.",
-        "matched_signals": [{"phrase": hit, "category": "negation", "points": 0} for hit in hits],
-        "warnings": ["تصنيف أولي وليس حكمًا نهائيًا."],
-    }
-
 
 def now_utc() -> str:
     return datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
@@ -81,35 +113,135 @@ def _csv_safe_cell(value: object) -> str:
         return "\t" + text
     return text
 
+def _signal_type_for_matches(matches: list[dict]) -> DemandSignalType:
+    categories = {item["category"] for item in matches}
+    phrases = {normalize(item["phrase"]) for item in matches}
+    if "direct_demand" in categories:
+        if any(token in phrases for token in {
+            normalize("طلب عرض سعر"), normalize("طلب عروض اسعار"),
+            normalize("request for quotation"), normalize("rfq"),
+            normalize("request a quote"),
+        }):
+            return DemandSignalType.REQUEST_FOR_QUOTATION
+        if any(token in phrases for token in {
+            normalize("مناقصة توريد"), normalize("procurement request"),
+        }):
+            return DemandSignalType.TENDER_OR_PROCUREMENT
+        return DemandSignalType.DIRECT_PURCHASE_REQUEST
+    if "high" in categories:
+        return DemandSignalType.STATED_NEED
+    if categories.intersection({"next_step", "budget", "explore"}):
+        return DemandSignalType.INDIRECT_INDICATOR
+    return DemandSignalType.UNKNOWN
+
+
+def _contains_normalized_phrase(body: str, phrase: str) -> bool:
+    """Match a normalized phrase while allowing common attached Arabic clitics."""
+    normalized_phrase = normalize(phrase)
+    if not normalized_phrase:
+        return False
+    # Arabic conjunctions/prepositions are commonly attached to the next word
+    # (e.g. "وممكن معاينة"); allow one such prefix without partial-word matches.
+    pattern = rf"(?<!\w)(?:[وفبكل])?{re.escape(normalized_phrase)}(?!\w)"
+    return re.search(pattern, body, flags=re.UNICODE) is not None
+
+
 def analyze(text: str, product_terms=(), location_terms=()) -> dict:
+    """Score explicit demand language without treating product fit as purchase intent."""
     if not isinstance(text, str) or not text.strip():
         raise ValueError("text must not be empty")
     if len(text) > MAX_TEXT:
         raise ValueError(f"text must be at most {MAX_TEXT} characters")
+
     body = normalize(text)
-    excluded = [p for p in NOT_BUYER if normalize(p) in body]
+    closed = [phrase for phrase in CLOSED_OR_STALE if _contains_normalized_phrase(body, phrase)]
+    if closed:
+        return {
+            "score": 0,
+            "label": "closed_or_stale_signal",
+            "signal_type": (
+                DemandSignalType.CANCELLED.value
+                if any(normalize(phrase) in {normalize("تم الغاء الطلب"), normalize("الغيت الطلب"), normalize("لغيت الطلب")} for phrase in closed)
+                else DemandSignalType.EXPIRED.value
+            ),
+            "summary": "الإشارة قديمة أو تم تلبية الاحتياج؛ لا تُعامل كطلب شراء نشط.",
+            "matched_signals": [
+                {"phrase": phrase, "category": "closed_or_stale", "points": 0}
+                for phrase in closed
+            ],
+            "warnings": ["تحقق من التاريخ والسياق قبل أي متابعة."],
+        }
+
+    excluded = [phrase for phrase in NOT_BUYER if _contains_normalized_phrase(body, phrase)]
     if excluded:
-        return {"score": 0, "label": "not_buyer_signal", "summary": "قد لا تكون إشارة شراء مباشرة؛ راجع النص يدويًا.", "matched_signals": [{"phrase": p, "category": "exclusion", "points": 0} for p in excluded], "warnings": ["تصنيف أولي وليس حكمًا نهائيًا."]}
-    negated_text = [p for p in _NEGATED_TEXT if p in body]
-    if negated_text:
-        return _negated_result(negated_text)
+        return {
+            "score": 0,
+            "label": "not_buyer_signal",
+            "signal_type": DemandSignalType.NEGATED.value,
+            "summary": "النص ينفي الاحتياج أو لا يمثل طلب شراء نشطًا؛ راجعه يدويًا.",
+            "matched_signals": [
+                {"phrase": phrase, "category": "exclusion", "points": 0}
+                for phrase in excluded
+            ],
+            "warnings": ["لا تُصنّف النفي كإشارة شراء."],
+        }
+
     matches = []
-    negated_phrases = []
     for category, (points, phrases) in SIGNALS.items():
-        found = next((p for p in phrases if normalize(p) in body), None)
-        if found and _is_negated(body, normalize(found)):
-            negated_phrases.append(found)
-        elif found:
-            matches.append({"phrase": found, "category": category, "points": points})
-    if negated_phrases and not matches:
-        return _negated_result(negated_phrases)
-    for category, terms in (("product_context", product_terms), ("location_context", location_terms)):
-        found = next((normalize(t) for t in terms if isinstance(t, str) and normalize(t) and normalize(t) in body), None)
+        found = next(
+            (phrase for phrase in phrases if _contains_normalized_phrase(body, phrase)),
+            None,
+        )
         if found:
-            matches.append({"phrase": found, "category": category, "points": 10})
-    score = min(100, sum(x["points"] for x in matches))
-    label = "high_intent" if score >= 55 and any(x["category"] == "high" for x in matches) else "medium_intent" if score >= 40 else "early_research" if score >= 20 else "unclear"
-    return {"score": score, "label": label, "summary": {"high_intent":"إشارة قوية نسبيًا وفق قواعد بسيطة وتحتاج مراجعة بشرية.","medium_intent":"مؤشرات اهتمام تستحق التأهيل والتحقق.","early_research":"اهتمام مبكر؛ ليس عميلًا مؤهلًا بعد.","unclear":"لا توجد مؤشرات كافية."}[label], "matched_signals": matches, "warnings": ["الدرجة ليست احتمالًا إحصائيًا للشراء.", "لا تثبت هوية الكاتب أو قدرته على الدفع أو نيته.", "استخدم مصادر عامة ومسموحًا بمعالجتها فقط."]}
+            matches.append({"phrase": found, "category": category, "points": points})
+
+    # Product and location matches are contextual dimensions only. They must
+    # never inflate the demand score or turn a catalogue mention into a lead.
+    for category, terms in (("product_context", product_terms), ("location_context", location_terms)):
+        found = next(
+            (
+                normalize(term)
+                for term in terms
+                if isinstance(term, str)
+                and normalize(term)
+                and _contains_normalized_phrase(body, term)
+            ),
+            None,
+        )
+        if found:
+            matches.append({"phrase": found, "category": category, "points": 0})
+
+    signal_type = _signal_type_for_matches(matches)
+    score = min(100, sum(item["points"] for item in matches))
+    label = (
+        "high_intent"
+        if score >= 55 and any(
+            item["category"] in {"high", "direct_demand"} for item in matches
+        )
+        else "medium_intent"
+        if score >= 40
+        else "early_research"
+        if score >= 20
+        else "unclear"
+    )
+    return {
+        "score": score,
+        "label": label,
+        "signal_type": signal_type.value,
+        "summary": {
+            "high_intent": "إشارة طلب مباشرة نسبيًا؛ يلزم التحقق من المصدر والحداثة.",
+            "medium_intent": "مؤشرات اهتمام تستحق التأهيل والتحقق.",
+            "early_research": "اهتمام مبكر؛ ليس طلب شراء مؤكدًا.",
+            "unclear": "لا توجد لغة طلب كافية؛ ذكر المنتج وحده لا يكفي.",
+        }[label],
+        "matched_signals": matches,
+        "warnings": [
+            "الدرجة ترتيبية وليست احتمالًا إحصائيًا للشراء.",
+            "لا تثبت هوية الكاتب أو قدرته على الدفع أو نيته.",
+            "ملاءمة المنتج والموقع سياق منفصل ولا يرفعان درجة الطلب.",
+            "استخدم مصادر عامة ومسموحًا بمعالجتها فقط.",
+        ],
+    }
 
 def validate_url(url: str) -> str:
     parsed = urlparse(str(url or "").strip())
@@ -708,6 +840,36 @@ class LeadStore:
         ).hexdigest()[:24]
         timestamp = observed_at or now_utc()
         assessment = analyze(text, product_terms=product_terms, location_terms=location_terms)
+        evidence = DemandEvidence(
+            source_id=lead_id,
+            source_url=url,
+            excerpt=text.strip()[:2_000],
+            content_basis=EvidenceBasis.USER_PROVIDED,
+            observed_at=timestamp,
+            page_read=False,
+        )
+        domain_signal = DemandSignal(
+            signal_id=lead_id,
+            signal_type=DemandSignalType(assessment["signal_type"]),
+            evidence=evidence,
+            product_fit=ProductFit.UNASSESSED,
+            identity_status=IdentityStatus.UNKNOWN,
+            classification_reason=assessment["summary"],
+        )
+        qualification = LeadQualification(
+            signal_id=lead_id,
+            product_fit=ProductFit.UNASSESSED,
+            source_quality=SourceQuality.UNKNOWN,
+            freshness=FreshnessStatus.UNKNOWN,
+            identity_status=IdentityStatus.UNKNOWN,
+            contactability=ContactabilityStatus.NOT_ASSESSED,
+            missing_information=(
+                "product_fit", "source_quality", "freshness",
+                "identity", "contactability",
+            ),
+        )
+        assessment["domain_signal"] = domain_signal.to_dict()
+        assessment["qualification"] = qualification.to_dict()
         now = now_utc()
         with self.connect() as db:
             active_tenant = db.execute(
