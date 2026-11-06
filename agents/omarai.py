@@ -45,7 +45,7 @@ SIGNALS = {
     "direct_demand": (55, (
         "نحتاج شراء", "نبحث عن مورد", "مطلوب مورد", "مطلوب توريد",
         "نحتاج توريد", "محتاجين توريد", "نحتاج نظام", "محتاجين نظام",
-        "نحتاج خدمة", "مطلوب شراء", "طلب شراء", "طلب عرض سعر",
+        "نحتاج خدمة", "نحتاج عرض سعر", "مطلوب شراء", "طلب شراء", "طلب عرض سعر",
         "طلب عروض اسعار", "مناقصة توريد", "نبحث عن شركة", "نحتاج شركة",
         "looking to buy", "need to purchase", "seeking a supplier",
         "need a supplier", "request for quotation", "purchase request",
@@ -119,7 +119,7 @@ def _signal_type_for_matches(matches: list[dict]) -> DemandSignalType:
     if "direct_demand" in categories:
         if any(token in phrases for token in {
             normalize("طلب عرض سعر"), normalize("طلب عروض اسعار"),
-            normalize("request for quotation"), normalize("rfq"),
+            normalize("نحتاج عرض سعر"), normalize("request for quotation"), normalize("rfq"),
             normalize("request a quote"),
         }):
             return DemandSignalType.REQUEST_FOR_QUOTATION
@@ -840,12 +840,19 @@ class LeadStore:
         ).hexdigest()[:24]
         timestamp = observed_at or now_utc()
         assessment = analyze(text, product_terms=product_terms, location_terms=location_terms)
+        domain_observed_at = timestamp
+        try:
+            parsed_observed_at = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00"))
+            if parsed_observed_at.tzinfo is None:
+                domain_observed_at = None
+        except (TypeError, ValueError):
+            domain_observed_at = None
         evidence = DemandEvidence(
             source_id=lead_id,
             source_url=url,
             excerpt=text.strip()[:2_000],
             content_basis=EvidenceBasis.USER_PROVIDED,
-            observed_at=timestamp,
+            observed_at=domain_observed_at,
             page_read=False,
         )
         domain_signal = DemandSignal(
