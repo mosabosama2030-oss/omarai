@@ -864,6 +864,8 @@ class Handler(BaseHTTPRequestHandler):
                 )
                 agent = WebAgent()
                 agent.allow_optional_providers = allow_optional
+                if not allow_optional:
+                    agent.openrouter_web_search_enabled = False
                 cls = type(self)
                 if not cls._agent_semaphore.acquire(blocking=False):
                     return self.respond(
