@@ -696,6 +696,11 @@ class Handler(BaseHTTPRequestHandler):
                     "mode": "web-research",
                     "agent": WebAgent.status(),
                     "storage": {
+                        "backend": getattr(self.store, "backend", "unknown"),
+                        "database_url_configured": bool(
+                            os.getenv("OMARAI_DATABASE_URL", "").strip()
+                            or os.getenv("DATABASE_URL", "").strip()
+                        ),
                         "database_path_override_configured": bool(
                             os.getenv("OMARAI_DB_PATH", "").strip()
                         ),
@@ -704,12 +709,16 @@ class Handler(BaseHTTPRequestHandler):
                             os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
                         ),
                         "durability_status": (
-                            "operator_asserted"
+                            "external_database_configured"
+                            if getattr(self.store, "backend", "unknown") == "postgresql"
+                            else "operator_asserted"
                             if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
                             else "not_guaranteed"
                         ),
                         "warning": (
-                            None
+                            "PostgreSQL is selected; provider durability and backups are outside this health check."
+                            if getattr(self.store, "backend", "unknown") == "postgresql"
+                            else None
                             if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
                             else "SQLite records may be lost when the host replaces its ephemeral filesystem."
                         ),
