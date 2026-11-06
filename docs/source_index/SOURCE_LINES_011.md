@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000959 إلى SRC-0799EEEB02-L000291
+- النطاق: SRC-686F71AA50-L000850 إلى SRC-0799EEEB02-L000182
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,115 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000850](../../agents/task_understanding.py#L850) | 850 | `"        \"inline_text_supplied_for_summary\": inline_summary_text,"` | — |
+| [SRC-686F71AA50-L000851](../../agents/task_understanding.py#L851) | 851 | `"        \"time_sensitive_request\": current_required,"` | — |
+| [SRC-686F71AA50-L000852](../../agents/task_understanding.py#L852) | 852 | `"        \"official_site_required\": government_official_site,"` | — |
+| [SRC-686F71AA50-L000853](../../agents/task_understanding.py#L853) | 853 | `"        \"official_destination_required\": official_destination,"` | — |
+| [SRC-686F71AA50-L000854](../../agents/task_understanding.py#L854) | 854 | `"        \"social_evidence_requested\": social_required,"` | — |
+| [SRC-686F71AA50-L000855](../../agents/task_understanding.py#L855) | 855 | `"        \"language_profile\": _language_profile(raw),"` | — |
+| [SRC-686F71AA50-L000856](../../agents/task_understanding.py#L856) | 856 | `"        \"source_policy\": ("` | — |
+| [SRC-686F71AA50-L000857](../../agents/task_understanding.py#L857) | 857 | `"            \"government_official_destination\" if government_official_site"` | — |
+| [SRC-686F71AA50-L000858](../../agents/task_understanding.py#L858) | 858 | `"            else \"official_destination\" if official_destination"` | — |
+| [SRC-686F71AA50-L000859](../../agents/task_understanding.py#L859) | 859 | `"            else \"current_read_page\" if current_required"` | — |
+| [SRC-686F71AA50-L000860](../../agents/task_understanding.py#L860) | 860 | `"            else \"public_social_content\" if social_required"` | — |
+| [SRC-686F71AA50-L000861](../../agents/task_understanding.py#L861) | 861 | `"            else \"task_relevant_sources\""` | — |
+| [SRC-686F71AA50-L000862](../../agents/task_understanding.py#L862) | 862 | `"        ),"` | — |
+| [SRC-686F71AA50-L000863](../../agents/task_understanding.py#L863) | 863 | `"        \"source_policies\": list(dict.fromkeys("` | — |
+| [SRC-686F71AA50-L000864](../../agents/task_understanding.py#L864) | 864 | `"            ([\"government_official_destination\"] if government_official_site else [])"` | — |
+| [SRC-686F71AA50-L000865](../../agents/task_understanding.py#L865) | 865 | `"            + ([\"official_destination\"] if official_destination else [])"` | — |
+| [SRC-686F71AA50-L000866](../../agents/task_understanding.py#L866) | 866 | `"            + ([\"current_read_page\"] if current_required else [])"` | — |
+| [SRC-686F71AA50-L000867](../../agents/task_understanding.py#L867) | 867 | `"            + ([\"public_social_content\"] if social_required else [])"` | — |
+| [SRC-686F71AA50-L000868](../../agents/task_understanding.py#L868) | 868 | `"            + ([\"authoritative_health_content\"] if matches[\"medical_information\"] else [])"` | — |
+| [SRC-686F71AA50-L000869](../../agents/task_understanding.py#L869) | 869 | `"            + ([\"official_legal_text\"] if matches[\"legal_information\"] else [])"` | — |
+| [SRC-686F71AA50-L000870](../../agents/task_understanding.py#L870) | 870 | `"            + ([\"task_relevant_sources\"] if not (government_official_site or official_destination or current_required or social_required or matches[\"medical_information\"] or matches[\"legal_information\"]) else [])"` | — |
+| [SRC-686F71AA50-L000871](../../agents/task_understanding.py#L871) | 871 | `"        )),"` | — |
+| [SRC-686F71AA50-L000872](../../agents/task_understanding.py#L872) | 872 | `"    }"` | — |
+| [SRC-686F71AA50-L000873](../../agents/task_understanding.py#L873) | 873 | `"    spec = {"` | — |
+| [SRC-686F71AA50-L000874](../../agents/task_understanding.py#L874) | 874 | `"        \"schema\": \"omarai.task_spec.v1\","` | — |
+| [SRC-686F71AA50-L000875](../../agents/task_understanding.py#L875) | 875 | `"        \"task_family\": family,"` | — |
+| [SRC-686F71AA50-L000876](../../agents/task_understanding.py#L876) | 876 | `"        \"mode\": clean_mode,"` | — |
+| [SRC-686F71AA50-L000877](../../agents/task_understanding.py#L877) | 877 | `"        \"intent_route\": intent_route or \"unassessed\","` | — |
+| [SRC-686F71AA50-L000878](../../agents/task_understanding.py#L878) | 878 | `"        \"normalization\": \"unicode_nfkc_arabic_diacritic_and_letter_normalization\","` | — |
+| [SRC-686F71AA50-L000879](../../agents/task_understanding.py#L879) | 879 | `"        \"classification_method\": \"deterministic_multi_pattern_hypotheses\","` | — |
+| [SRC-686F71AA50-L000880](../../agents/task_understanding.py#L880) | 880 | `"        \"classification_is_probability\": False,"` | — |
+| [SRC-686F71AA50-L000881](../../agents/task_understanding.py#L881) | 881 | `"        \"ambiguity_status\": ambiguity_status,"` | — |
+| [SRC-686F71AA50-L000882](../../agents/task_understanding.py#L882) | 882 | `"        \"missing_required_inputs\": list(dict.fromkeys(missing_required_inputs)),"` | — |
+| [SRC-686F71AA50-L000883](../../agents/task_understanding.py#L883) | 883 | `"        \"requires_clarification\": ambiguity_status == \"needs_clarification\","` | — |
+| [SRC-686F71AA50-L000884](../../agents/task_understanding.py#L884) | 884 | `"        \"context_resolution\": context_resolution,"` | — |
+| [SRC-686F71AA50-L000885](../../agents/task_understanding.py#L885) | 885 | `"        \"secondary_task_types\": ["` | — |
+| [SRC-686F71AA50-L000886](../../agents/task_understanding.py#L886) | 886 | `"            name for name, signals in matches.items()"` | — |
+| [SRC-686F71AA50-L000887](../../agents/task_understanding.py#L887) | 887 | `"            if signals and name != family"` | — |
+| [SRC-686F71AA50-L000888](../../agents/task_understanding.py#L888) | 888 | `"        ],"` | — |
+| [SRC-686F71AA50-L000889](../../agents/task_understanding.py#L889) | 889 | `"        \"clarification_reason\": ("` | — |
+| [SRC-686F71AA50-L000890](../../agents/task_understanding.py#L890) | 890 | `"            \"missing_required_input\""` | — |
+| [SRC-686F71AA50-L000891](../../agents/task_understanding.py#L891) | 891 | `"            if missing_required_inputs"` | — |
+| [SRC-686F71AA50-L000892](../../agents/task_understanding.py#L892) | 892 | `"            else \"no_strong_lexical_conflict_detected\""` | — |
+| [SRC-686F71AA50-L000893](../../agents/task_understanding.py#L893) | 893 | `"        ),"` | — |
+| [SRC-686F71AA50-L000894](../../agents/task_understanding.py#L894) | 894 | `"        \"hypothesis_interpretations\": hypothesis_rows,"` | — |
+| [SRC-686F71AA50-L000895](../../agents/task_understanding.py#L895) | 895 | `"        \"constraints\": constraints,"` | — |
+| [SRC-686F71AA50-L000896](../../agents/task_understanding.py#L896) | 896 | `"        \"output_preferences\": {"` | — |
+| [SRC-686F71AA50-L000897](../../agents/task_understanding.py#L897) | 897 | `"            \"concise\": bool(output_matches[\"output_concise\"]),"` | — |
+| [SRC-686F71AA50-L000898](../../agents/task_understanding.py#L898) | 898 | `"            \"detailed\": bool(output_matches[\"output_detailed\"]),"` | — |
+| [SRC-686F71AA50-L000899](../../agents/task_understanding.py#L899) | 899 | `"            \"examples_requested\": bool(output_matches[\"output_examples\"]),"` | — |
+| [SRC-686F71AA50-L000900](../../agents/task_understanding.py#L900) | 900 | `"            \"table_requested\": bool(output_matches[\"output_table\"]),"` | — |
+| [SRC-686F71AA50-L000901](../../agents/task_understanding.py#L901) | 901 | `"            \"bullets_or_checklist_requested\": bool(output_matches[\"output_bullets\"]),"` | — |
+| [SRC-686F71AA50-L000902](../../agents/task_understanding.py#L902) | 902 | `"            \"beginner_friendly_requested\": bool(output_matches[\"output_beginner_friendly\"]),"` | — |
+| [SRC-686F71AA50-L000903](../../agents/task_understanding.py#L903) | 903 | `"            \"citations_requested\": bool(output_matches[\"output_citations\"]),"` | — |
+| [SRC-686F71AA50-L000904](../../agents/task_understanding.py#L904) | 904 | `"            \"links_requested\": bool(output_matches[\"output_links\"]),"` | — |
+| [SRC-686F71AA50-L000905](../../agents/task_understanding.py#L905) | 905 | `"            \"json_requested\": bool(output_matches[\"output_json\"]),"` | — |
+| [SRC-686F71AA50-L000906](../../agents/task_understanding.py#L906) | 906 | `"        },"` | — |
+| [SRC-686F71AA50-L000907](../../agents/task_understanding.py#L907) | 907 | `"        \"evidence_requirements\": evidence_requirements,"` | — |
+| [SRC-686F71AA50-L000908](../../agents/task_understanding.py#L908) | 908 | `"        \"query_strategies\": query_strategies,"` | — |
+| [SRC-686F71AA50-L000909](../../agents/task_understanding.py#L909) | 909 | `"        \"tool_requirements\": list(dict.fromkeys(tools)),"` | — |
+| [SRC-686F71AA50-L000910](../../agents/task_understanding.py#L910) | 910 | `"        \"decision_checks\": ["` | — |
+| [SRC-686F71AA50-L000911](../../agents/task_understanding.py#L911) | 911 | `"            \"resolve_context_without_carrying_stale_topic\","` | — |
+| [SRC-686F71AA50-L000912](../../agents/task_understanding.py#L912) | 912 | `"            \"preserve_explicit_entities_and_constraints\","` | — |
+| [SRC-686F71AA50-L000913](../../agents/task_understanding.py#L913) | 913 | `"            \"validate_topic_relevance\","` | — |
+| [SRC-686F71AA50-L000914](../../agents/task_understanding.py#L914) | 914 | `"            \"check_tool_permission_and_configuration_before_execution\","` | — |
+| [SRC-686F71AA50-L000915](../../agents/task_understanding.py#L915) | 915 | `"            \"bound_query_count_retries_concurrency_and_deadlines\","` | — |
+| [SRC-686F71AA50-L000916](../../agents/task_understanding.py#L916) | 916 | `"            \"treat_retrieved_content_as_untrusted_data_not_tool_instructions\","` | — |
+| [SRC-686F71AA50-L000917](../../agents/task_understanding.py#L917) | 917 | `"            \"apply_mode_specific_source_guardrails\","` | — |
+| [SRC-686F71AA50-L000918](../../agents/task_understanding.py#L918) | 918 | `"            \"distinguish_planned_queries_from_queries_actually_attempted\","` | — |
+| [SRC-686F71AA50-L000919](../../agents/task_understanding.py#L919) | 919 | `"            \"distinguish_search_snippets_from_successfully_read_pages\","` | — |
+| [SRC-686F71AA50-L000920](../../agents/task_understanding.py#L920) | 920 | `"            \"separate_connector_success_from_evidence_validity\","` | — |
+| [SRC-686F71AA50-L000921](../../agents/task_understanding.py#L921) | 921 | `"            \"report_each_failed_stage_without_claiming_unperformed_checks\","` | — |
+| [SRC-686F71AA50-L000922](../../agents/task_understanding.py#L922) | 922 | `"            \"cite_claims_or_abstain_when_evidence_is_insufficient\","` | — |
+| [SRC-686F71AA50-L000923](../../agents/task_understanding.py#L923) | 923 | `"        ],"` | — |
+| [SRC-686F71AA50-L000924](../../agents/task_understanding.py#L924) | 924 | `"        \"reasoning_strategy_ids\": _reasoning_strategy_ids("` | — |
+| [SRC-686F71AA50-L000925](../../agents/task_understanding.py#L925) | 925 | `"            family, constraints, context_resolution, missing_required_inputs"` | — |
+| [SRC-686F71AA50-L000926](../../agents/task_understanding.py#L926) | 926 | `"        ),"` | — |
+| [SRC-686F71AA50-L000927](../../agents/task_understanding.py#L927) | 927 | `"        \"decision_matrix\": [dict(row) for row in _DECISION_MATRIX],"` | — |
+| [SRC-686F71AA50-L000928](../../agents/task_understanding.py#L928) | 928 | `"        \"limits\": {"` | — |
+| [SRC-686F71AA50-L000929](../../agents/task_understanding.py#L929) | 929 | `"            \"max_question_chars\": MAX_TASK_CHARS,"` | — |
+| [SRC-686F71AA50-L000930](../../agents/task_understanding.py#L930) | 930 | `"            \"max_aspects\": MAX_TASK_ASPECTS,"` | — |
+| [SRC-686F71AA50-L000931](../../agents/task_understanding.py#L931) | 931 | `"            \"max_query_strategies\": MAX_STRATEGY_QUERIES,"` | — |
+| [SRC-686F71AA50-L000932](../../agents/task_understanding.py#L932) | 932 | `"        },"` | — |
+| [SRC-686F71AA50-L000933](../../agents/task_understanding.py#L933) | 933 | `"        \"claim\": \"task planning metadata only; not semantic certainty or factual verification\","` | — |
+| [SRC-686F71AA50-L000934](../../agents/task_understanding.py#L934) | 934 | `"    }"` | — |
+| [SRC-686F71AA50-L000935](../../agents/task_understanding.py#L935) | 935 | `"    if plan and isinstance(plan, dict):"` | — |
+| [SRC-686F71AA50-L000936](../../agents/task_understanding.py#L936) | 936 | `"        spec[\"planner_freshness\"] = str(plan.get(\"freshness\") or \"unknown\")"` | — |
+| [SRC-686F71AA50-L000937](../../agents/task_understanding.py#L937) | 937 | `"        spec[\"planner_depth\"] = str(plan.get(\"depth\") or \"unknown\")"` | — |
+| [SRC-686F71AA50-L000938](../../agents/task_understanding.py#L938) | 938 | `"    return spec"` | — |
+| [SRC-686F71AA50-L000939](../../agents/task_understanding.py#L939) | 939 | `""` | — |
+| [SRC-686F71AA50-L000940](../../agents/task_understanding.py#L940) | 940 | `""` | — |
+| [SRC-686F71AA50-L000941](../../agents/task_understanding.py#L941) | 941 | `"def _query_key(value: str) -> str:"` | — |
+| [SRC-686F71AA50-L000942](../../agents/task_understanding.py#L942) | 942 | `"    return normalize_text(value)"` | — |
+| [SRC-686F71AA50-L000943](../../agents/task_understanding.py#L943) | 943 | `""` | — |
+| [SRC-686F71AA50-L000944](../../agents/task_understanding.py#L944) | 944 | `""` | — |
+| [SRC-686F71AA50-L000945](../../agents/task_understanding.py#L945) | 945 | `"def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tuple[str, str, str]]:"` | — |
+| [SRC-686F71AA50-L000946](../../agents/task_understanding.py#L946) | 946 | `"    family = str(spec.get(\"task_family\") or \"\")"` | — |
+| [SRC-686F71AA50-L000947](../../agents/task_understanding.py#L947) | 947 | `"    constraints = spec.get(\"constraints\") if isinstance(spec.get(\"constraints\"), dict) else {}"` | — |
+| [SRC-686F71AA50-L000948](../../agents/task_understanding.py#L948) | 948 | `"    aspects = constraints.get(\"explicit_aspects\") if isinstance(constraints.get(\"explicit_aspects\"), list) else []"` | — |
+| [SRC-686F71AA50-L000949](../../agents/task_understanding.py#L949) | 949 | `"    candidates: list[tuple[str, str, str]] = []"` | — |
+| [SRC-686F71AA50-L000950](../../agents/task_understanding.py#L950) | 950 | `"    if not topic.strip():"` | — |
+| [SRC-686F71AA50-L000951](../../agents/task_understanding.py#L951) | 951 | `"        return candidates"` | — |
+| [SRC-686F71AA50-L000952](../../agents/task_understanding.py#L952) | 952 | `"    locations = constraints.get(\"explicit_locations\") or []"` | — |
+| [SRC-686F71AA50-L000953](../../agents/task_understanding.py#L953) | 953 | `"    location_suffix = \" \".join(str(item) for item in locations[:2])"` | — |
+| [SRC-686F71AA50-L000954](../../agents/task_understanding.py#L954) | 954 | `"    hypotheses = spec.get(\"hypothesis_interpretations\")"` | — |
+| [SRC-686F71AA50-L000955](../../agents/task_understanding.py#L955) | 955 | `"    hypothesis_families = {"` | — |
+| [SRC-686F71AA50-L000956](../../agents/task_understanding.py#L956) | 956 | `"        str(item.get(\"family\"))"` | — |
+| [SRC-686F71AA50-L000957](../../agents/task_understanding.py#L957) | 957 | `"        for item in hypotheses"` | — |
+| [SRC-686F71AA50-L000958](../../agents/task_understanding.py#L958) | 958 | `"        if isinstance(item, dict) and item.get(\"family\")"` | — |
 | [SRC-686F71AA50-L000959](../../agents/task_understanding.py#L959) | 959 | `"    } if isinstance(hypotheses, list) else set()"` | — |
 | [SRC-686F71AA50-L000960](../../agents/task_understanding.py#L960) | 960 | `"    if family == \"official_site_lookup\" or constraints.get(\"official_destination_required\"):"` | — |
 | [SRC-686F71AA50-L000961](../../agents/task_understanding.py#L961) | 961 | `"        candidates.extend(["` | — |
@@ -725,112 +834,3 @@
 | [SRC-0799EEEB02-L000180](../../agents/tool_execution_status.py#L180) | 180 | `"    )"` | — |
 | [SRC-0799EEEB02-L000181](../../agents/tool_execution_status.py#L181) | 181 | `"    connector_summary = search_report.get(\"connector_summary\")"` | — |
 | [SRC-0799EEEB02-L000182](../../agents/tool_execution_status.py#L182) | 182 | `"    connector_summary = connector_summary if isinstance(connector_summary, dict) else {}"` | — |
-| [SRC-0799EEEB02-L000183](../../agents/tool_execution_status.py#L183) | 183 | `"    connector_rows = connector_summary.get(\"connectors\")"` | — |
-| [SRC-0799EEEB02-L000184](../../agents/tool_execution_status.py#L184) | 184 | `"    connector_rows = connector_rows if isinstance(connector_rows, list) else []"` | — |
-| [SRC-0799EEEB02-L000185](../../agents/tool_execution_status.py#L185) | 185 | `"    social_connector_names = {"` | — |
-| [SRC-0799EEEB02-L000186](../../agents/tool_execution_status.py#L186) | 186 | `"        \"reddit_public_rss\", \"bluesky_public_search\", \"reddit_oauth_api\","` | — |
-| [SRC-0799EEEB02-L000187](../../agents/tool_execution_status.py#L187) | 187 | `"        \"facebook_pages_api\", \"instagram_graph_api\", \"x_official_api\","` | — |
-| [SRC-0799EEEB02-L000188](../../agents/tool_execution_status.py#L188) | 188 | `"        \"youtube_data_api\","` | — |
-| [SRC-0799EEEB02-L000189](../../agents/tool_execution_status.py#L189) | 189 | `"    }"` | — |
-| [SRC-0799EEEB02-L000190](../../agents/tool_execution_status.py#L190) | 190 | `"    social_connector_states = ["` | — |
-| [SRC-0799EEEB02-L000191](../../agents/tool_execution_status.py#L191) | 191 | `"        row for row in connector_rows"` | — |
-| [SRC-0799EEEB02-L000192](../../agents/tool_execution_status.py#L192) | 192 | `"        if isinstance(row, dict) and row.get(\"name\") in social_connector_names"` | — |
-| [SRC-0799EEEB02-L000193](../../agents/tool_execution_status.py#L193) | 193 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000194](../../agents/tool_execution_status.py#L194) | 194 | `"    attempted_social_connectors = ["` | — |
-| [SRC-0799EEEB02-L000195](../../agents/tool_execution_status.py#L195) | 195 | `"        row for row in social_connector_states if row.get(\"attempted\") is True"` | — |
-| [SRC-0799EEEB02-L000196](../../agents/tool_execution_status.py#L196) | 196 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000197](../../agents/tool_execution_status.py#L197) | 197 | `"    social_connector_errors = ["` | — |
-| [SRC-0799EEEB02-L000198](../../agents/tool_execution_status.py#L198) | 198 | `"        row for row in social_connector_states"` | — |
-| [SRC-0799EEEB02-L000199](../../agents/tool_execution_status.py#L199) | 199 | `"        if row.get(\"status\") in {"` | — |
-| [SRC-0799EEEB02-L000200](../../agents/tool_execution_status.py#L200) | 200 | `"            \"failed\", \"error\", \"timeout\", \"http_error\", \"unauthorized\","` | — |
-| [SRC-0799EEEB02-L000201](../../agents/tool_execution_status.py#L201) | 201 | `"            \"rate_limited\", \"budget_exhausted\","` | — |
-| [SRC-0799EEEB02-L000202](../../agents/tool_execution_status.py#L202) | 202 | `"        }"` | — |
-| [SRC-0799EEEB02-L000203](../../agents/tool_execution_status.py#L203) | 203 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000204](../../agents/tool_execution_status.py#L204) | 204 | `"    social_configured_connectors = ["` | — |
-| [SRC-0799EEEB02-L000205](../../agents/tool_execution_status.py#L205) | 205 | `"        row for row in social_connector_states"` | — |
-| [SRC-0799EEEB02-L000206](../../agents/tool_execution_status.py#L206) | 206 | `"        if row.get(\"configured\") is True"` | — |
-| [SRC-0799EEEB02-L000207](../../agents/tool_execution_status.py#L207) | 207 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000208](../../agents/tool_execution_status.py#L208) | 208 | `"    social_not_configured_connectors = ["` | — |
-| [SRC-0799EEEB02-L000209](../../agents/tool_execution_status.py#L209) | 209 | `"        row for row in social_connector_states"` | — |
-| [SRC-0799EEEB02-L000210](../../agents/tool_execution_status.py#L210) | 210 | `"        if row.get(\"configured\") is False"` | — |
-| [SRC-0799EEEB02-L000211](../../agents/tool_execution_status.py#L211) | 211 | `"    ]"` | — |
-| [SRC-0799EEEB02-L000212](../../agents/tool_execution_status.py#L212) | 212 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000213](../../agents/tool_execution_status.py#L213) | 213 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000214](../../agents/tool_execution_status.py#L214) | 214 | `"    elif social_results > 0 or social_sources > 0:"` | — |
-| [SRC-0799EEEB02-L000215](../../agents/tool_execution_status.py#L215) | 215 | `"        status = \"completed_with_results\""` | — |
-| [SRC-0799EEEB02-L000216](../../agents/tool_execution_status.py#L216) | 216 | `"    elif outcome in _ERROR_OUTCOMES and outcome == \"attempted_research_error\":"` | — |
-| [SRC-0799EEEB02-L000217](../../agents/tool_execution_status.py#L217) | 217 | `"        status = \"failed\""` | — |
-| [SRC-0799EEEB02-L000218](../../agents/tool_execution_status.py#L218) | 218 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
-| [SRC-0799EEEB02-L000219](../../agents/tool_execution_status.py#L219) | 219 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000220](../../agents/tool_execution_status.py#L220) | 220 | `"    elif attempted_social_connectors:"` | — |
-| [SRC-0799EEEB02-L000221](../../agents/tool_execution_status.py#L221) | 221 | `"        status = \"failed\" if social_connector_errors else \"completed_no_usable_results\""` | — |
-| [SRC-0799EEEB02-L000222](../../agents/tool_execution_status.py#L222) | 222 | `"    elif social_configured_connectors and all("` | — |
-| [SRC-0799EEEB02-L000223](../../agents/tool_execution_status.py#L223) | 223 | `"        row.get(\"attempted\") is False for row in social_configured_connectors"` | — |
-| [SRC-0799EEEB02-L000224](../../agents/tool_execution_status.py#L224) | 224 | `"    ):"` | — |
-| [SRC-0799EEEB02-L000225](../../agents/tool_execution_status.py#L225) | 225 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000226](../../agents/tool_execution_status.py#L226) | 226 | `"    elif social_not_configured_connectors and ("` | — |
-| [SRC-0799EEEB02-L000227](../../agents/tool_execution_status.py#L227) | 227 | `"        not social_configured_connectors or not attempted_social_connectors"` | — |
-| [SRC-0799EEEB02-L000228](../../agents/tool_execution_status.py#L228) | 228 | `"    ):"` | — |
-| [SRC-0799EEEB02-L000229](../../agents/tool_execution_status.py#L229) | 229 | `"        status = \"not_configured\""` | — |
-| [SRC-0799EEEB02-L000230](../../agents/tool_execution_status.py#L230) | 230 | `"    elif raw_social_results is None and not social_connector_states:"` | — |
-| [SRC-0799EEEB02-L000231](../../agents/tool_execution_status.py#L231) | 231 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000232](../../agents/tool_execution_status.py#L232) | 232 | `"    elif attempted is False:"` | — |
-| [SRC-0799EEEB02-L000233](../../agents/tool_execution_status.py#L233) | 233 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000234](../../agents/tool_execution_status.py#L234) | 234 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000235](../../agents/tool_execution_status.py#L235) | 235 | `"        # A general web search attempt is not proof that social connectors ran."` | — |
-| [SRC-0799EEEB02-L000236](../../agents/tool_execution_status.py#L236) | 236 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000237](../../agents/tool_execution_status.py#L237) | 237 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000238](../../agents/tool_execution_status.py#L238) | 238 | `"        \"social_direct_results\": social_results,"` | — |
-| [SRC-0799EEEB02-L000239](../../agents/tool_execution_status.py#L239) | 239 | `"        \"social_result_count_known\": raw_social_results is not None,"` | — |
-| [SRC-0799EEEB02-L000240](../../agents/tool_execution_status.py#L240) | 240 | `"        \"accepted_social_sources\": social_sources,"` | — |
-| [SRC-0799EEEB02-L000241](../../agents/tool_execution_status.py#L241) | 241 | `"        \"social_connectors_observed\": ["` | — |
-| [SRC-0799EEEB02-L000242](../../agents/tool_execution_status.py#L242) | 242 | `"            {"` | — |
-| [SRC-0799EEEB02-L000243](../../agents/tool_execution_status.py#L243) | 243 | `"                \"name\": row.get(\"name\"),"` | — |
-| [SRC-0799EEEB02-L000244](../../agents/tool_execution_status.py#L244) | 244 | `"                \"configured\": row.get(\"configured\"),"` | — |
-| [SRC-0799EEEB02-L000245](../../agents/tool_execution_status.py#L245) | 245 | `"                \"attempted\": row.get(\"attempted\"),"` | — |
-| [SRC-0799EEEB02-L000246](../../agents/tool_execution_status.py#L246) | 246 | `"                \"status\": row.get(\"status\"),"` | — |
-| [SRC-0799EEEB02-L000247](../../agents/tool_execution_status.py#L247) | 247 | `"            }"` | — |
-| [SRC-0799EEEB02-L000248](../../agents/tool_execution_status.py#L248) | 248 | `"            for row in social_connector_states[:8]"` | — |
-| [SRC-0799EEEB02-L000249](../../agents/tool_execution_status.py#L249) | 249 | `"        ],"` | — |
-| [SRC-0799EEEB02-L000250](../../agents/tool_execution_status.py#L250) | 250 | `"        \"search_outcome\": outcome,"` | — |
-| [SRC-0799EEEB02-L000251](../../agents/tool_execution_status.py#L251) | 251 | `"        \"interpretation\": ("` | — |
-| [SRC-0799EEEB02-L000252](../../agents/tool_execution_status.py#L252) | 252 | `"            \"A general web search attempt does not prove that a social connector was attempted.\""` | — |
-| [SRC-0799EEEB02-L000253](../../agents/tool_execution_status.py#L253) | 253 | `"        ),"` | — |
-| [SRC-0799EEEB02-L000254](../../agents/tool_execution_status.py#L254) | 254 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000255](../../agents/tool_execution_status.py#L255) | 255 | `""` | — |
-| [SRC-0799EEEB02-L000256](../../agents/tool_execution_status.py#L256) | 256 | `"    tool = \"language_model_generation_if_configured\""` | — |
-| [SRC-0799EEEB02-L000257](../../agents/tool_execution_status.py#L257) | 257 | `"    final_status = str(output.get(\"final_answer_status\") or \"\")"` | — |
-| [SRC-0799EEEB02-L000258](../../agents/tool_execution_status.py#L258) | 258 | `"    used_model = output.get(\"used_language_model\") is True"` | — |
-| [SRC-0799EEEB02-L000259](../../agents/tool_execution_status.py#L259) | 259 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000260](../../agents/tool_execution_status.py#L260) | 260 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000261](../../agents/tool_execution_status.py#L261) | 261 | `"    elif used_model:"` | — |
-| [SRC-0799EEEB02-L000262](../../agents/tool_execution_status.py#L262) | 262 | `"        status = \"completed\""` | — |
-| [SRC-0799EEEB02-L000263](../../agents/tool_execution_status.py#L263) | 263 | `"    elif final_status in {"` | — |
-| [SRC-0799EEEB02-L000264](../../agents/tool_execution_status.py#L264) | 264 | `"        \"model_not_configured_fallback\", \"model_not_configured\","` | — |
-| [SRC-0799EEEB02-L000265](../../agents/tool_execution_status.py#L265) | 265 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000266](../../agents/tool_execution_status.py#L266) | 266 | `"        status = \"not_configured\""` | — |
-| [SRC-0799EEEB02-L000267](../../agents/tool_execution_status.py#L267) | 267 | `"    elif final_status in {"` | — |
-| [SRC-0799EEEB02-L000268](../../agents/tool_execution_status.py#L268) | 268 | `"        \"generation_failed\", \"generation_failed_with_source_fallback\","` | — |
-| [SRC-0799EEEB02-L000269](../../agents/tool_execution_status.py#L269) | 269 | `"        \"budget_exhausted\", \"budget_exhausted_with_source_fallback\","` | — |
-| [SRC-0799EEEB02-L000270](../../agents/tool_execution_status.py#L270) | 270 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000271](../../agents/tool_execution_status.py#L271) | 271 | `"        status = \"failed\""` | — |
-| [SRC-0799EEEB02-L000272](../../agents/tool_execution_status.py#L272) | 272 | `"    elif final_status in {"` | — |
-| [SRC-0799EEEB02-L000273](../../agents/tool_execution_status.py#L273) | 273 | `"        \"clarification_required\", \"insufficient_evidence_no_generation\","` | — |
-| [SRC-0799EEEB02-L000274](../../agents/tool_execution_status.py#L274) | 274 | `"        \"not_attempted\", \"local_response_no_generation\","` | — |
-| [SRC-0799EEEB02-L000275](../../agents/tool_execution_status.py#L275) | 275 | `"    }:"` | — |
-| [SRC-0799EEEB02-L000276](../../agents/tool_execution_status.py#L276) | 276 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000277](../../agents/tool_execution_status.py#L277) | 277 | `"    elif output.get(\"kind\") == \"insufficient_evidence\":"` | — |
-| [SRC-0799EEEB02-L000278](../../agents/tool_execution_status.py#L278) | 278 | `"        status = \"not_attempted_no_evidence\""` | — |
-| [SRC-0799EEEB02-L000279](../../agents/tool_execution_status.py#L279) | 279 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000280](../../agents/tool_execution_status.py#L280) | 280 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000281](../../agents/tool_execution_status.py#L281) | 281 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000282](../../agents/tool_execution_status.py#L282) | 282 | `"        \"used_language_model\": used_model,"` | — |
-| [SRC-0799EEEB02-L000283](../../agents/tool_execution_status.py#L283) | 283 | `"        \"final_answer_status\": final_status or \"unknown\","` | — |
-| [SRC-0799EEEB02-L000284](../../agents/tool_execution_status.py#L284) | 284 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000285](../../agents/tool_execution_status.py#L285) | 285 | `""` | — |
-| [SRC-0799EEEB02-L000286](../../agents/tool_execution_status.py#L286) | 286 | `"    tool = \"claim_review_if_configured\""` | — |
-| [SRC-0799EEEB02-L000287](../../agents/tool_execution_status.py#L287) | 287 | `"    review_status = str("` | — |
-| [SRC-0799EEEB02-L000288](../../agents/tool_execution_status.py#L288) | 288 | `"        search_report.get(\"claim_audit\")"` | — |
-| [SRC-0799EEEB02-L000289](../../agents/tool_execution_status.py#L289) | 289 | `"        or search_report.get(\"second_pass_review\")"` | — |
-| [SRC-0799EEEB02-L000290](../../agents/tool_execution_status.py#L290) | 290 | `"        or \"unknown\""` | — |
-| [SRC-0799EEEB02-L000291](../../agents/tool_execution_status.py#L291) | 291 | `"    )"` | — |

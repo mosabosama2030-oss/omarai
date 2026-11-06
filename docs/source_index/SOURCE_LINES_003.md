@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000285 إلى SRC-5587371288-L000529
+- النطاق: SRC-7D6FC391EC-L000252 إلى SRC-5587371288-L000496
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,39 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-7D6FC391EC-L000252](../../agents/claim_evidence.py#L252) | 252 | `"        rows.append({"` | — |
+| [SRC-7D6FC391EC-L000253](../../agents/claim_evidence.py#L253) | 253 | `"            \"segment_id\": f\"S{number:03d}\","` | — |
+| [SRC-7D6FC391EC-L000254](../../agents/claim_evidence.py#L254) | 254 | `"            \"segment_number\": number,"` | — |
+| [SRC-7D6FC391EC-L000255](../../agents/claim_evidence.py#L255) | 255 | `"            \"unit_kind\": \"sentence_candidate_not_semantically_classified\","` | — |
+| [SRC-7D6FC391EC-L000256](../../agents/claim_evidence.py#L256) | 256 | `"            \"text\": segment[:1200],"` | — |
+| [SRC-7D6FC391EC-L000257](../../agents/claim_evidence.py#L257) | 257 | `"            \"citation_indexes\": indexes,"` | — |
+| [SRC-7D6FC391EC-L000258](../../agents/claim_evidence.py#L258) | 258 | `"            \"citation_status\": status,"` | — |
+| [SRC-7D6FC391EC-L000259](../../agents/claim_evidence.py#L259) | 259 | `"            \"citation_references_truncated\": citation_references_truncated,"` | — |
+| [SRC-7D6FC391EC-L000260](../../agents/claim_evidence.py#L260) | 260 | `"            \"lexical_audit_status\": lexical_status,"` | — |
+| [SRC-7D6FC391EC-L000261](../../agents/claim_evidence.py#L261) | 261 | `"            \"sources\": refs,"` | — |
+| [SRC-7D6FC391EC-L000262](../../agents/claim_evidence.py#L262) | 262 | `"        })"` | — |
+| [SRC-7D6FC391EC-L000263](../../agents/claim_evidence.py#L263) | 263 | `""` | — |
+| [SRC-7D6FC391EC-L000264](../../agents/claim_evidence.py#L264) | 264 | `"    total = len(rows)"` | — |
+| [SRC-7D6FC391EC-L000265](../../agents/claim_evidence.py#L265) | 265 | `"    return {"` | — |
+| [SRC-7D6FC391EC-L000266](../../agents/claim_evidence.py#L266) | 266 | `"        \"schema_version\": \"1.0\","` | — |
+| [SRC-7D6FC391EC-L000267](../../agents/claim_evidence.py#L267) | 267 | `"        \"status\": \"built\","` | — |
+| [SRC-7D6FC391EC-L000268](../../agents/claim_evidence.py#L268) | 268 | `"        \"method\": \"bounded_sentence_level_citation_trace\","` | — |
+| [SRC-7D6FC391EC-L000269](../../agents/claim_evidence.py#L269) | 269 | `"        \"semantic_verification\": False,"` | — |
+| [SRC-7D6FC391EC-L000270](../../agents/claim_evidence.py#L270) | 270 | `"        \"claim_entailment\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000271](../../agents/claim_evidence.py#L271) | 271 | `"        \"fact_correctness\": \"not_checked\","` | — |
+| [SRC-7D6FC391EC-L000272](../../agents/claim_evidence.py#L272) | 272 | `"        \"max_segments\": max_segments,"` | — |
+| [SRC-7D6FC391EC-L000273](../../agents/claim_evidence.py#L273) | 273 | `"        \"max_citable_sources\": len(safe_sources),"` | — |
+| [SRC-7D6FC391EC-L000274](../../agents/claim_evidence.py#L274) | 274 | `"        \"truncated\": truncated,"` | — |
+| [SRC-7D6FC391EC-L000275](../../agents/claim_evidence.py#L275) | 275 | `"        \"summary\": {"` | — |
+| [SRC-7D6FC391EC-L000276](../../agents/claim_evidence.py#L276) | 276 | `"            \"segment_candidate_count\": total,"` | — |
+| [SRC-7D6FC391EC-L000277](../../agents/claim_evidence.py#L277) | 277 | `"            \"segments_with_citations\": cited,"` | — |
+| [SRC-7D6FC391EC-L000278](../../agents/claim_evidence.py#L278) | 278 | `"            \"segments_without_citation_markers\": uncited,"` | — |
+| [SRC-7D6FC391EC-L000279](../../agents/claim_evidence.py#L279) | 279 | `"            \"valid_source_reference_count\": valid_refs,"` | — |
+| [SRC-7D6FC391EC-L000280](../../agents/claim_evidence.py#L280) | 280 | `"            \"out_of_range_reference_count\": invalid_refs,"` | — |
+| [SRC-7D6FC391EC-L000281](../../agents/claim_evidence.py#L281) | 281 | `"            \"truncated_citation_reference_list_count\": sum("` | — |
+| [SRC-7D6FC391EC-L000282](../../agents/claim_evidence.py#L282) | 282 | `"                row[\"citation_references_truncated\"] for row in rows"` | — |
+| [SRC-7D6FC391EC-L000283](../../agents/claim_evidence.py#L283) | 283 | `"            ),"` | — |
+| [SRC-7D6FC391EC-L000284](../../agents/claim_evidence.py#L284) | 284 | `"            \"cited_segments_with_readable_source_evidence\": readable_cited,"` | — |
 | [SRC-7D6FC391EC-L000285](../../agents/claim_evidence.py#L285) | 285 | `"            \"citation_lexical_signal_count\": lexical_signals,"` | — |
 | [SRC-7D6FC391EC-L000286](../../agents/claim_evidence.py#L286) | 286 | `"            \"weak_citation_lexical_signal_count\": weak_signals,"` | — |
 | [SRC-7D6FC391EC-L000287](../../agents/claim_evidence.py#L287) | 287 | `"            \"citation_coverage_ratio\": round(cited / total, 3) if total else 0.0,"` | — |
@@ -801,36 +834,3 @@
 | [SRC-5587371288-L000494](../../agents/intent_router.py#L494) | 494 | `"            }"` | — |
 | [SRC-5587371288-L000495](../../agents/intent_router.py#L495) | 495 | `"        return {"` | — |
 | [SRC-5587371288-L000496](../../agents/intent_router.py#L496) | 496 | `"            \"route\": \"CLARIFY\","` | — |
-| [SRC-5587371288-L000497](../../agents/intent_router.py#L497) | 497 | `"            \"reason\": \"missing_summarization_input\","` | — |
-| [SRC-5587371288-L000498](../../agents/intent_router.py#L498) | 498 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000499](../../agents/intent_router.py#L499) | 499 | `"            \"needs_clarification\": True,"` | — |
-| [SRC-5587371288-L000500](../../agents/intent_router.py#L500) | 500 | `"        }"` | — |
-| [SRC-5587371288-L000501](../../agents/intent_router.py#L501) | 501 | `""` | — |
-| [SRC-5587371288-L000502](../../agents/intent_router.py#L502) | 502 | `"    ambiguous = _is_contextual_followup(question) or _needs_clarification(question)"` | — |
-| [SRC-5587371288-L000503](../../agents/intent_router.py#L503) | 503 | `"    if ambiguous:"` | — |
-| [SRC-5587371288-L000504](../../agents/intent_router.py#L504) | 504 | `"        return {"` | — |
-| [SRC-5587371288-L000505](../../agents/intent_router.py#L505) | 505 | `"            \"route\": \"WEB_DEEP\" if _is_deep(question) else \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000506](../../agents/intent_router.py#L506) | 506 | `"            \"reason\": \"ambiguous_followup_with_context\","` | — |
-| [SRC-5587371288-L000507](../../agents/intent_router.py#L507) | 507 | `"            \"context_available\": True,"` | — |
-| [SRC-5587371288-L000508](../../agents/intent_router.py#L508) | 508 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000509](../../agents/intent_router.py#L509) | 509 | `"        }"` | — |
-| [SRC-5587371288-L000510](../../agents/intent_router.py#L510) | 510 | `""` | — |
-| [SRC-5587371288-L000511](../../agents/intent_router.py#L511) | 511 | `"    if _is_lead_generation_request(question):"` | — |
-| [SRC-5587371288-L000512](../../agents/intent_router.py#L512) | 512 | `"        return {"` | — |
-| [SRC-5587371288-L000513](../../agents/intent_router.py#L513) | 513 | `"            \"route\": \"LEAD_GENERATION\","` | — |
-| [SRC-5587371288-L000514](../../agents/intent_router.py#L514) | 514 | `"            \"reason\": \"explicit_prospect_or_buyer_discovery_request\","` | — |
-| [SRC-5587371288-L000515](../../agents/intent_router.py#L515) | 515 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000516](../../agents/intent_router.py#L516) | 516 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000517](../../agents/intent_router.py#L517) | 517 | `"        }"` | — |
-| [SRC-5587371288-L000518](../../agents/intent_router.py#L518) | 518 | `""` | — |
-| [SRC-5587371288-L000519](../../agents/intent_router.py#L519) | 519 | `"    if _is_deep(question):"` | — |
-| [SRC-5587371288-L000520](../../agents/intent_router.py#L520) | 520 | `"        return {"` | — |
-| [SRC-5587371288-L000521](../../agents/intent_router.py#L521) | 521 | `"            \"route\": \"WEB_DEEP\","` | — |
-| [SRC-5587371288-L000522](../../agents/intent_router.py#L522) | 522 | `"            \"reason\": \"comparison_or_multi_part_research\","` | — |
-| [SRC-5587371288-L000523](../../agents/intent_router.py#L523) | 523 | `"            \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000524](../../agents/intent_router.py#L524) | 524 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000525](../../agents/intent_router.py#L525) | 525 | `"        }"` | — |
-| [SRC-5587371288-L000526](../../agents/intent_router.py#L526) | 526 | `""` | — |
-| [SRC-5587371288-L000527](../../agents/intent_router.py#L527) | 527 | `"    if requires_web or _has_live_signal(question) or _has_explicit_source_request(question):"` | — |
-| [SRC-5587371288-L000528](../../agents/intent_router.py#L528) | 528 | `"        return {"` | — |
-| [SRC-5587371288-L000529](../../agents/intent_router.py#L529) | 529 | `"            \"route\": \"WEB_SIMPLE\","` | — |

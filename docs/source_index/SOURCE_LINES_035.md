@@ -4,9 +4,163 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-676B69CB6C-L000066 إلى SRC-70795F4B61-L000249
+- النطاق: SRC-BBB7222984-L000061 إلى SRC-70795F4B61-L000047
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-BBB7222984 — [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-BBB7222984-L000061](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L61) | 61 | ``"- Test: `tests/test_research_pipeline.py`, `tests/test_web_agent.py`"`` | — |
+| [SRC-BBB7222984-L000062](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L62) | 62 | `""` | — |
+| [SRC-BBB7222984-L000063](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L63) | 63 | `"- [ ] Add a test showing each explicit aspect gets a lexical evidence ledger entry and missing aspects remain visible."` | — |
+| [SRC-BBB7222984-L000064](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L64) | 64 | `"- [ ] Attach pipeline evidence diagnostics to the existing research report without changing source acceptance or claim-verification rules."` | — |
+| [SRC-BBB7222984-L000065](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L65) | 65 | ``"- [ ] Ensure semantic status remains `not_configured` unless an injected scorer returns validated bounded scores."`` | — |
+| [SRC-BBB7222984-L000066](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L66) | 66 | `"- [ ] Run the full relevant test set."` | — |
+| [SRC-BBB7222984-L000067](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L67) | 67 | `""` | — |
+| [SRC-BBB7222984-L000068](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L68) | 68 | `"### Task 4: Verify and document"` | — |
+| [SRC-BBB7222984-L000069](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L69) | 69 | `""` | — |
+| [SRC-BBB7222984-L000070](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L70) | 70 | `"**Files:**"` | — |
+| [SRC-BBB7222984-L000071](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L71) | 71 | ``"- Update: `docs/OMARAI_REMEDIATION_REGISTER_AR.md` only if its current structure supports a non-duplicative entry."`` | — |
+| [SRC-BBB7222984-L000072](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L72) | 72 | `"- Update: this design/plan with actual evidence."` | — |
+| [SRC-BBB7222984-L000073](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L73) | 73 | `""` | — |
+| [SRC-BBB7222984-L000074](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L74) | 74 | `"- [ ] Run CI on the final PR head."` | — |
+| [SRC-BBB7222984-L000075](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L75) | 75 | `"- [ ] Inspect the complete PR diff and workflow results."` | — |
+| [SRC-BBB7222984-L000076](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L76) | 76 | `"- [ ] Record untested hosted behavior as NOT_RUN."` | — |
+| [SRC-BBB7222984-L000077](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L77) | 77 | `"- [ ] Leave PR open and unmerged for Human Director review."` | — |
+| [SRC-BBB7222984-L000078](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L78) | 78 | `""` | — |
+| [SRC-BBB7222984-L000079](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L79) | 79 | `""` | — |
+| [SRC-BBB7222984-L000080](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L80) | 80 | `"## تنفيذ موثق — 2026-10-30"` | — |
+| [SRC-BBB7222984-L000081](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L81) | 81 | `""` | — |
+| [SRC-BBB7222984-L000082](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L82) | 82 | ``"- **RED:** GitHub Actions run [41055101051](https://github.com/mosabosama2030-oss/omarai/actions/runs/41055101051) فشل أثناء جمع الاختبارات بسبب غياب `agents.research_pipeline` قبل تنفيذ الوحدة، كما هو متوقع من اختبار العقد الأولي."`` | — |
+| [SRC-BBB7222984-L000083](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L83) | 83 | ``"- **تصحيح أثناء التنفيذ:** ظهر Ruff أن `build_task_spec` و`build_query_strategy_matrix` ما زالا مستخدمين في مسارات أخرى داخل `web_agent.py`؛ أُعيد الاحتفاظ بالاستيراد هناك، وحُذفت الاستيرادات غير المستخدمة من `research.py`. فشل آخر في الاختبار كشف أن اختبار مهلة المقيّم لم يستخرج محاور متعددة، ثم صُحح الاختبار ليستخدم سؤالًا مركبًا. وبعدها صحح عدد الاستثناءات المتوقع ليتناسب مع عدد المحاور."`` | — |
+| [SRC-BBB7222984-L000084](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L84) | 84 | ``"- **GREEN / CI:** run [41056403423](https://github.com/mosabosama2030-oss/omarai/actions/runs/41056403423) على code SHA `c68595cb0f38b3d1d64add600eb0172209980dea` نجح:"`` | — |
+| [SRC-BBB7222984-L000085](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L85) | 85 | `"  - Python 3.11: **623 passed**."` | — |
+| [SRC-BBB7222984-L000086](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L86) | 86 | `"  - Python 3.12: **623 passed**."` | — |
+| [SRC-BBB7222984-L000087](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L87) | 87 | `"  - Ruff: All checks passed."` | — |
+| [SRC-BBB7222984-L000088](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L88) | 88 | `"  - Generated-index verification: success."` | — |
+| [SRC-BBB7222984-L000089](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L89) | 89 | `"  - Production container build + protected API smoke: success."` | — |
+| [SRC-BBB7222984-L000090](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L90) | 90 | ``"- رأس PR الحالي بعد أتمتة الفهرسة: `c10dcf63420b57365d10fdeda0a5be7aaaa4b84c`. المقارنة من code-tested SHA تُظهر تغييرات فهرسة مولدة فقط، دون تغييرات runtime أو tests."`` | — |
+| [SRC-BBB7222984-L000091](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L91) | 91 | ``"- **الحد المتبقي:** لا يوجد semantic scorer موصول افتراضيًا في WebAgent؛ يسجل المسار `not_configured`. واجهة المقيّم الاختيارية موجودة ومختبرة للفشل، لكن لا ندّعي مطابقة دلالية حية أو تحسينًا مقاسًا. لا hosted acceptance أو بحث حي أو استدعاءات مدفوعة."`` | — |
+| [SRC-BBB7222984-L000092](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L92) | 92 | `"- **الحالة:** PR #132 Draft/Open/Not merged؛ لا دمج ولا نشر."` | — |
+| [SRC-BBB7222984-L000093](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L93) | 93 | `""` | — |
+| [SRC-BBB7222984-L000094](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L94) | 94 | `""` | — |
+| [SRC-BBB7222984-L000095](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L95) | 95 | `"### مراجعة نهائية بعد إعادة بناء TaskSpec — 2026-10-30"` | — |
+| [SRC-BBB7222984-L000096](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L96) | 96 | ``"- أظهرت مراجعة الكود أن إعادة استخدام TaskSpec المسبق بعد توليد الخطة قد تُسقط `planner_depth` و`planner_freshness`. أُلغي هذا الاختصار، وأُبقي بناء TaskSpec النهائي داخل المنسق بعد توفر بيانات الخطة، مع بقاء preflight يمر عبر المنسق نفسه."`` | — |
+| [SRC-BBB7222984-L000097](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L97) | 97 | `"- اختبار انحدار جديد يثبت حفظ بيانات عمق وحداثة خطة البحث."` | — |
+| [SRC-BBB7222984-L000098](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L98) | 98 | ``"- **التحقق النهائي للكود:** run [41056744662](https://github.com/mosabosama2030-oss/omarai/actions/runs/41056744662) على SHA `b72168a6fbf360f5fc088fe125a4ad9623fdb958`:"`` | — |
+| [SRC-BBB7222984-L000099](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L99) | 99 | `"  - Python 3.11: **623 passed**."` | — |
+| [SRC-BBB7222984-L000100](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L100) | 100 | `"  - Python 3.12: **623 passed**."` | — |
+| [SRC-BBB7222984-L000101](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L101) | 101 | `"  - Ruff: All checks passed."` | — |
+| [SRC-BBB7222984-L000102](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L102) | 102 | `"  - Docker build وProtected API Smoke: success."` | — |
+| [SRC-BBB7222984-L000103](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L103) | 103 | ``"- PR head بعد تحديث الفهارس والوثائق: `ce7e32f11b0612c3519f89f670eee0a143e94fc8`. التغييرات بعد SHA المختبر هي ملفات الفهرسة المولدة فقط؛ لا تغييرات كود أو اختبارات بعد التشغيل الناجح."`` | — |
+| [SRC-BBB7222984-L000104](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L104) | 104 | `""` | — |
+| [SRC-BBB7222984-L000105](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L105) | 105 | `""` | — |
+| [SRC-BBB7222984-L000106](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L106) | 106 | `"### بوابة التوضيح الإلزامي — 2026-10-30"` | — |
+| [SRC-BBB7222984-L000107](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L107) | 107 | ``"- أُضيف منع لتخطيط/تنفيذ الاستعلامات عندما يقرر TaskSpec أن مدخلًا إلزاميًا مفقود، حتى إذا وصل مسار بحث upstream مثل `WEB_SIMPLE`."`` | — |
+| [SRC-BBB7222984-L000108](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L108) | 108 | ``"- اختبار `هات الموقع الرسمي` دون اسم جهة يثبت أن الاستيضاح يوقف الاستعلامات."`` | — |
+| [SRC-BBB7222984-L000109](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L109) | 109 | ``"- **آخر تحقق للكود:** run [41057068443](https://github.com/mosabosama2030-oss/omarai/actions/runs/41057068443) على SHA `6ebcb720a6ef1166fdd2ef672a00c4e01ba4cfda`:"`` | — |
+| [SRC-BBB7222984-L000110](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L110) | 110 | `"  - Python 3.11: **624 passed**."` | — |
+| [SRC-BBB7222984-L000111](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L111) | 111 | `"  - Python 3.12: **624 passed**."` | — |
+| [SRC-BBB7222984-L000112](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L112) | 112 | `"  - Ruff: All checks passed."` | — |
+| [SRC-BBB7222984-L000113](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L113) | 113 | `"  - Docker build + Protected API Smoke: success."` | — |
+| [SRC-BBB7222984-L000114](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L114) | 114 | ``"- رأس PR بعد أتمتة الفهرسة: `51c459d329239b6386d2f79529a046e2759d5dad`; الفارق عن SHA المختبر يقتصر على ملفات الفهرسة المولدة."`` | — |
+| [SRC-BBB7222984-L000115](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L115) | 115 | `""` | — |
+| [SRC-BBB7222984-L000116](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L116) | 116 | `"### تدقيق دعم الاستشهادات وحالة الإكمال — 2026-10-30"` | — |
+| [SRC-BBB7222984-L000117](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L117) | 117 | `""` | — |
+| [SRC-BBB7222984-L000118](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L118) | 118 | ``"- **السبب الجذري:** `build_research_completion` كان يسمح بحالة `answer_generated_citations_range_checked_semantic_support_unverified` حتى عند وجود إشارات تحذير من فحص دعم الاستشهاد، مثل رقم لا يظهر في المصدر المشار إليه أو تداخل لفظي ضعيف. كما أن بعض مسارات بناء النتائج المبكرة كانت تحتفظ بـ`pipeline_completion_status=completed` رغم أن التدقيق النهائي رصد تحذيرًا في دعم الاستشهاد."`` | — |
+| [SRC-BBB7222984-L000119](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L119) | 119 | ``"- **التعديل:** تُجمع مؤشرات الأرقام غير المدعومة (العامة وبحسب المصدر المشار إليه) والتداخل اللفظي الضعيف في `citation_support_warning_count` مع تجنب احتساب الرقم نفسه مرتين. تؤدي هذه الإشارات إلى حالة إكمال جزئية، وتظهر أعدادها ومرحلة فحصها في `research_completion`."`` | — |
+| [SRC-BBB7222984-L000120](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L120) | 120 | ``"- **اتساق الحالة:** بعد التدقيق النهائي، يزامن `WebAgent.answer` الحالة العامة وتقرير البحث إلى `partial` عند وجود تحذير فعلي من فحص دعم الاستشهاد، أو عند غياب علامات الاستشهاد الصالحة. لا يُخفض الحالة بسبب إشارات تغطية أخرى لا تعني وحدها وجود ضعف في الاستشهاد."`` | — |
+| [SRC-BBB7222984-L000121](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L121) | 121 | `"- **TDD RED:** الاختبار الجديد كشف أن التحذير لا يمنع حالة الإكمال السابقة: run [41088936951](https://github.com/mosabosama2030-oss/omarai/actions/runs/41088936951)، **1 failed / 628 passed** على Python 3.11 و3.12."` | — |
+| [SRC-BBB7222984-L000122](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L122) | 122 | ``"- **TDD GREEN والتحقق النهائي للكود:** run [41089965289](https://github.com/mosabosama2030-oss/omarai/actions/runs/41089965289) على SHA `4f18f27999b3dfab3995d086a171313941960609`:"`` | — |
+| [SRC-BBB7222984-L000123](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L123) | 123 | `"  - Python 3.11: **629 passed**."` | — |
+| [SRC-BBB7222984-L000124](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L124) | 124 | `"  - Python 3.12: **629 passed**."` | — |
+| [SRC-BBB7222984-L000125](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L125) | 125 | `"  - Ruff: All checks passed."` | — |
+| [SRC-BBB7222984-L000126](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L126) | 126 | `"  - Container build: success."` | — |
+| [SRC-BBB7222984-L000127](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L127) | 127 | `"  - Protected API Smoke: success."` | — |
+| [SRC-BBB7222984-L000128](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L128) | 128 | `"- **مراجعة الانحدار:** أُبقي اختبار النجاح الإيجابي بمصدر يتطابق نصيًا مع الجملة المستشهد بها، واختبار التحذير يغطي رقمًا غير مدعوم واستشهادًا ضعيف التداخل. هذه الإشارات فحوص لفظية تحفظية وليست إثباتًا دلاليًا."` | — |
+| [SRC-BBB7222984-L000129](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L129) | 129 | ``"- **الحدود:** `semantic_verification` ما زالت `not_performed`؛ لم نضف نموذج تحقق دلالي مستقلًا، ولم نختبر الاستضافة الحية أو محركات البحث الحية."`` | — |
+| [SRC-BBB7222984-L000130](../superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L130) | 130 | `"- **الحالة:** PR #132 ما زال Draft/Open/Not merged؛ لم يحدث دمج أو نشر."` | — |
+## وثائق وفهرسة
+
+### FILE-002F33CFDC — [docs/superpowers/plans/2026-11-05-default-workspace-home.md](../superpowers/plans/2026-11-05-default-workspace-home.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-002F33CFDC-L000001](../superpowers/plans/2026-11-05-default-workspace-home.md#L1) | 1 | `"# Make Omarai Sales Workspace the Default Home — Implementation Plan"` | — |
+| [SRC-002F33CFDC-L000002](../superpowers/plans/2026-11-05-default-workspace-home.md#L2) | 2 | `""` | — |
+| [SRC-002F33CFDC-L000003](../superpowers/plans/2026-11-05-default-workspace-home.md#L3) | 3 | ``"**Goal:** Serve the approved Arabic RTL Neon Command sales workspace at `/` while preserving the research agent at `/agent` and the legacy lead page at `/leads`."`` | — |
+| [SRC-002F33CFDC-L000004](../superpowers/plans/2026-11-05-default-workspace-home.md#L4) | 4 | `""` | — |
+| [SRC-002F33CFDC-L000005](../superpowers/plans/2026-11-05-default-workspace-home.md#L5) | 5 | ``"**Architecture:** Reuse the existing `web/workspace.html` and its existing authenticated APIs. Change only route selection and navigation/documentation; do not add backend capabilities, storage models, providers, or database migrations."`` | — |
+| [SRC-002F33CFDC-L000006](../superpowers/plans/2026-11-05-default-workspace-home.md#L6) | 6 | `""` | — |
+| [SRC-002F33CFDC-L000007](../superpowers/plans/2026-11-05-default-workspace-home.md#L7) | 7 | `"**Tech Stack:** Python 3.12 stdlib HTTP server, static HTML/CSS/JavaScript, pytest, existing GitHub Actions workflows."` | — |
+| [SRC-002F33CFDC-L000008](../superpowers/plans/2026-11-05-default-workspace-home.md#L8) | 8 | `""` | — |
+| [SRC-002F33CFDC-L000009](../superpowers/plans/2026-11-05-default-workspace-home.md#L9) | 9 | ``"**Spec:** Existing approved workspace in `web/workspace.html`, current sales-intelligence architecture, and repository instructions in `AGENTS.md`."`` | — |
+| [SRC-002F33CFDC-L000010](../superpowers/plans/2026-11-05-default-workspace-home.md#L10) | 10 | `""` | — |
+| [SRC-002F33CFDC-L000011](../superpowers/plans/2026-11-05-default-workspace-home.md#L11) | 11 | `"## Global Constraints"` | — |
+| [SRC-002F33CFDC-L000012](../superpowers/plans/2026-11-05-default-workspace-home.md#L12) | 12 | ``"- Keep `/api/session`, `/api/leads`, `/api/analyze`, `/api/health`, and logout contracts unchanged."`` | — |
+| [SRC-002F33CFDC-L000013](../superpowers/plans/2026-11-05-default-workspace-home.md#L13) | 13 | ``"- Keep `/workspace` as a backward-compatible alias."`` | — |
+| [SRC-002F33CFDC-L000014](../superpowers/plans/2026-11-05-default-workspace-home.md#L14) | 14 | ``"- Preserve `/agent` as the general web-research interface and `/leads` as the legacy lead UI."`` | — |
+| [SRC-002F33CFDC-L000015](../superpowers/plans/2026-11-05-default-workspace-home.md#L15) | 15 | `"- Do not enable menu modules that do not have real server-side contracts."` | — |
+| [SRC-002F33CFDC-L000016](../superpowers/plans/2026-11-05-default-workspace-home.md#L16) | 16 | `"- Keep same-origin HttpOnly browser sessions; never persist access tokens in localStorage or sessionStorage."` | — |
+| [SRC-002F33CFDC-L000017](../superpowers/plans/2026-11-05-default-workspace-home.md#L17) | 17 | `"- No production deployment, secret changes, provider calls, database changes, or PR merge."` | — |
+| [SRC-002F33CFDC-L000018](../superpowers/plans/2026-11-05-default-workspace-home.md#L18) | 18 | `""` | — |
+| [SRC-002F33CFDC-L000019](../superpowers/plans/2026-11-05-default-workspace-home.md#L19) | 19 | `"## Review Focus"` | — |
+| [SRC-002F33CFDC-L000020](../superpowers/plans/2026-11-05-default-workspace-home.md#L20) | 20 | `"- Root page must not silently remove access to the general research agent."` | — |
+| [SRC-002F33CFDC-L000021](../superpowers/plans/2026-11-05-default-workspace-home.md#L21) | 21 | `"- Workspace's \"وكيل البحث\" navigation must not link back to the new root page."` | — |
+| [SRC-002F33CFDC-L000022](../superpowers/plans/2026-11-05-default-workspace-home.md#L22) | 22 | `"- Existing workspace API/session and legacy lead paths must remain reachable."` | — |
+| [SRC-002F33CFDC-L000023](../superpowers/plans/2026-11-05-default-workspace-home.md#L23) | 23 | `"- UI-only modules without backend contracts must remain explicitly unavailable."` | — |
+| [SRC-002F33CFDC-L000024](../superpowers/plans/2026-11-05-default-workspace-home.md#L24) | 24 | `"- The root route must return Arabic RTL HTML and not a stale redirect."` | — |
+| [SRC-002F33CFDC-L000025](../superpowers/plans/2026-11-05-default-workspace-home.md#L25) | 25 | `""` | — |
+| [SRC-002F33CFDC-L000026](../superpowers/plans/2026-11-05-default-workspace-home.md#L26) | 26 | `"---"` | — |
+| [SRC-002F33CFDC-L000027](../superpowers/plans/2026-11-05-default-workspace-home.md#L27) | 27 | `""` | — |
+| [SRC-002F33CFDC-L000028](../superpowers/plans/2026-11-05-default-workspace-home.md#L28) | 28 | `"### Task 1: Pin the intended route behavior"` | — |
+| [SRC-002F33CFDC-L000029](../superpowers/plans/2026-11-05-default-workspace-home.md#L29) | 29 | `""` | — |
+| [SRC-002F33CFDC-L000030](../superpowers/plans/2026-11-05-default-workspace-home.md#L30) | 30 | `"**Files:**"` | — |
+| [SRC-002F33CFDC-L000031](../superpowers/plans/2026-11-05-default-workspace-home.md#L31) | 31 | ``"- Modify: `tests/test_api.py`"`` | — |
+| [SRC-002F33CFDC-L000032](../superpowers/plans/2026-11-05-default-workspace-home.md#L32) | 32 | `""` | — |
+| [SRC-002F33CFDC-L000033](../superpowers/plans/2026-11-05-default-workspace-home.md#L33) | 33 | `"**Interfaces:**"` | — |
+| [SRC-002F33CFDC-L000034](../superpowers/plans/2026-11-05-default-workspace-home.md#L34) | 34 | ``"- `GET /` and `GET /workspace` return the same sales-workspace HTML."`` | — |
+| [SRC-002F33CFDC-L000035](../superpowers/plans/2026-11-05-default-workspace-home.md#L35) | 35 | ``"- `GET /agent` returns the existing research-agent HTML."`` | — |
+| [SRC-002F33CFDC-L000036](../superpowers/plans/2026-11-05-default-workspace-home.md#L36) | 36 | ``"- `GET /leads` returns the existing legacy lead HTML."`` | — |
+| [SRC-002F33CFDC-L000037](../superpowers/plans/2026-11-05-default-workspace-home.md#L37) | 37 | `""` | — |
+| [SRC-002F33CFDC-L000038](../superpowers/plans/2026-11-05-default-workspace-home.md#L38) | 38 | `"- [ ] Rewrite the existing route integration test to assert the new home contract and preserve all three secondary paths."` | — |
+| [SRC-002F33CFDC-L000039](../superpowers/plans/2026-11-05-default-workspace-home.md#L39) | 39 | `"- [ ] Commit the test first and inspect GitHub Actions for the expected RED result against the old route behavior."` | — |
+| [SRC-002F33CFDC-L000040](../superpowers/plans/2026-11-05-default-workspace-home.md#L40) | 40 | `""` | — |
+| [SRC-002F33CFDC-L000041](../superpowers/plans/2026-11-05-default-workspace-home.md#L41) | 41 | `"### Task 2: Route the home page to the approved workspace"` | — |
+| [SRC-002F33CFDC-L000042](../superpowers/plans/2026-11-05-default-workspace-home.md#L42) | 42 | `""` | — |
+| [SRC-002F33CFDC-L000043](../superpowers/plans/2026-11-05-default-workspace-home.md#L43) | 43 | `"**Files:**"` | — |
+| [SRC-002F33CFDC-L000044](../superpowers/plans/2026-11-05-default-workspace-home.md#L44) | 44 | ``"- Modify: `api/omarai.py`"`` | — |
+| [SRC-002F33CFDC-L000045](../superpowers/plans/2026-11-05-default-workspace-home.md#L45) | 45 | ``"- Modify: `web/workspace.html`"`` | — |
+| [SRC-002F33CFDC-L000046](../superpowers/plans/2026-11-05-default-workspace-home.md#L46) | 46 | `""` | — |
+| [SRC-002F33CFDC-L000047](../superpowers/plans/2026-11-05-default-workspace-home.md#L47) | 47 | ``"- [ ] Serve `/agent` from `agent.html` only."`` | — |
+| [SRC-002F33CFDC-L000048](../superpowers/plans/2026-11-05-default-workspace-home.md#L48) | 48 | ``"- [ ] Serve both `/` and `/workspace` from `workspace.html`."`` | — |
+| [SRC-002F33CFDC-L000049](../superpowers/plans/2026-11-05-default-workspace-home.md#L49) | 49 | ``"- [ ] Point the workspace's \"وكيل البحث\" link to `/agent`."`` | — |
+| [SRC-002F33CFDC-L000050](../superpowers/plans/2026-11-05-default-workspace-home.md#L50) | 50 | `"- [ ] Preserve all API and authorization behavior."` | — |
+| [SRC-002F33CFDC-L000051](../superpowers/plans/2026-11-05-default-workspace-home.md#L51) | 51 | `""` | — |
+| [SRC-002F33CFDC-L000052](../superpowers/plans/2026-11-05-default-workspace-home.md#L52) | 52 | `"### Task 3: Align documentation and handoff"` | — |
+| [SRC-002F33CFDC-L000053](../superpowers/plans/2026-11-05-default-workspace-home.md#L53) | 53 | `""` | — |
+| [SRC-002F33CFDC-L000054](../superpowers/plans/2026-11-05-default-workspace-home.md#L54) | 54 | `"**Files:**"` | — |
+| [SRC-002F33CFDC-L000055](../superpowers/plans/2026-11-05-default-workspace-home.md#L55) | 55 | ``"- Modify: `README.md`"`` | — |
+| [SRC-002F33CFDC-L000056](../superpowers/plans/2026-11-05-default-workspace-home.md#L56) | 56 | ``"- Modify: `docs/IMPLEMENTATION_SCOPE.md`"`` | — |
+| [SRC-002F33CFDC-L000057](../superpowers/plans/2026-11-05-default-workspace-home.md#L57) | 57 | `""` | — |
+| [SRC-002F33CFDC-L000058](../superpowers/plans/2026-11-05-default-workspace-home.md#L58) | 58 | `"- [ ] Document the sales workspace as the default home and the research/legacy pages as retained routes."` | — |
+| [SRC-002F33CFDC-L000059](../superpowers/plans/2026-11-05-default-workspace-home.md#L59) | 59 | `"- [ ] State clearly that modules without server-side contracts remain unavailable."` | — |
+| [SRC-002F33CFDC-L000060](../superpowers/plans/2026-11-05-default-workspace-home.md#L60) | 60 | `""` | — |
+| [SRC-002F33CFDC-L000061](../superpowers/plans/2026-11-05-default-workspace-home.md#L61) | 61 | `"### Task 4: Verify"` | — |
+| [SRC-002F33CFDC-L000062](../superpowers/plans/2026-11-05-default-workspace-home.md#L62) | 62 | `""` | — |
+| [SRC-002F33CFDC-L000063](../superpowers/plans/2026-11-05-default-workspace-home.md#L63) | 63 | ``"- [ ] Run `pytest tests/test_api.py tests/test_dashboard_security.py -q`."`` | — |
+| [SRC-002F33CFDC-L000064](../superpowers/plans/2026-11-05-default-workspace-home.md#L64) | 64 | ``"- [ ] Run the full `pytest -q` suite and `ruff check .` where available."`` | — |
+| [SRC-002F33CFDC-L000065](../superpowers/plans/2026-11-05-default-workspace-home.md#L65) | 65 | `"- [ ] Confirm GitHub Actions on the final branch SHA."` | — |
+| [SRC-002F33CFDC-L000066](../superpowers/plans/2026-11-05-default-workspace-home.md#L66) | 66 | ``"- [ ] Review the full diff, create a PR against `main`, and leave merge/deploy to the Human Director."`` | — |
 ## وثائق وفهرسة
 
 ### FILE-676B69CB6C — [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L1)
@@ -16,6 +170,71 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-676B69CB6C-L000001](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L1) | 1 | `"# Workspace Product Profile & Demand Discovery Implementation Plan"` | — |
+| [SRC-676B69CB6C-L000002](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L2) | 2 | `""` | — |
+| [SRC-676B69CB6C-L000003](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L3) | 3 | `"> **For agentic workers:** Use the repository's TDD workflow task-by-task. Steps use checkbox syntax."` | — |
+| [SRC-676B69CB6C-L000004](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L4) | 4 | `""` | — |
+| [SRC-676B69CB6C-L000005](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L5) | 5 | `"**Goal:** Connect the new Arabic RTL workspace to a tenant-scoped product profile, real buyer-intent discovery, persisted discovery evidence, and human-reviewed signal saving."` | — |
+| [SRC-676B69CB6C-L000006](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L6) | 6 | `""` | — |
+| [SRC-676B69CB6C-L000007](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L7) | 7 | ``"**Architecture:** Add small tenant-scoped SQLite records and protected endpoints, reuse the existing `sales_domain` and `WebAgent` pipeline, and expose the workflow through the existing workspace. Do not duplicate search logic or enable paid/optional providers by default."`` | — |
+| [SRC-676B69CB6C-L000008](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L8) | 8 | `""` | — |
+| [SRC-676B69CB6C-L000009](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L9) | 9 | `"**Tech Stack:** Python 3.12, stdlib HTTP server, SQLite, static HTML/JavaScript, pytest, GitHub Actions."` | — |
+| [SRC-676B69CB6C-L000010](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L10) | 10 | `""` | — |
+| [SRC-676B69CB6C-L000011](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L11) | 11 | ``"**Spec:** `docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md` and `docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md`."`` | — |
+| [SRC-676B69CB6C-L000012](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L12) | 12 | `""` | — |
+| [SRC-676B69CB6C-L000013](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L13) | 13 | `"## Global Constraints"` | — |
+| [SRC-676B69CB6C-L000014](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L14) | 14 | ``"- Work only on `feat/workspace-demand-discovery-2026-11-06`, based on current main SHA `a297abd271d48f459effad083a9f424a1499cd39`."`` | — |
+| [SRC-676B69CB6C-L000015](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L15) | 15 | ``"- Never trust a client-supplied `tenant_id`; use the authenticated principal."`` | — |
+| [SRC-676B69CB6C-L000016](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L16) | 16 | `"- Viewer is read-only and cannot run discovery or write product data."` | — |
+| [SRC-676B69CB6C-L000017](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L17) | 17 | `"- Paid/optional search providers must stay disabled by default in this workflow."` | — |
+| [SRC-676B69CB6C-L000018](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L18) | 18 | ``"- Save a source as a demand signal only when the server-side stored run labels it `public_demand_signal`."`` | — |
+| [SRC-676B69CB6C-L000019](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L19) | 19 | `"- Preserve publication date, event date, and observation time as distinct/unknown where not supplied."` | — |
+| [SRC-676B69CB6C-L000020](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L20) | 20 | `"- No secrets, hosting configuration changes, production deployment, or PR merge."` | — |
+| [SRC-676B69CB6C-L000021](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L21) | 21 | `"- Do not activate UI modules without real API contracts."` | — |
+| [SRC-676B69CB6C-L000022](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L22) | 22 | `""` | — |
+| [SRC-676B69CB6C-L000023](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L23) | 23 | `"## Review Focus"` | — |
+| [SRC-676B69CB6C-L000024](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L24) | 24 | `"- Cross-tenant product-profile/run access using guessed IDs."` | — |
+| [SRC-676B69CB6C-L000025](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L25) | 25 | `"- Viewer attempts to create profiles, discover, or save a signal."` | — |
+| [SRC-676B69CB6C-L000026](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L26) | 26 | `"- Malformed arrays, oversized product text, invalid locale, empty query plan, and duplicate product profiles."` | — |
+| [SRC-676B69CB6C-L000027](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L27) | 27 | `"- Optional connectors with configured API keys but no explicit per-run owner approval."` | — |
+| [SRC-676B69CB6C-L000028](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L28) | 28 | `"- Discovery results containing related listings, negative intent, or no qualified buyer signal."` | — |
+| [SRC-676B69CB6C-L000029](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L29) | 29 | `"- Browser attempting to save an unrelated result or alter a server-side qualification label."` | — |
+| [SRC-676B69CB6C-L000030](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L30) | 30 | `""` | — |
+| [SRC-676B69CB6C-L000031](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L31) | 31 | `"---"` | — |
+| [SRC-676B69CB6C-L000032](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L32) | 32 | `""` | — |
+| [SRC-676B69CB6C-L000033](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L33) | 33 | `"### Task 1: Pin storage and API contracts with failing tests"` | — |
+| [SRC-676B69CB6C-L000034](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L34) | 34 | `""` | — |
+| [SRC-676B69CB6C-L000035](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L35) | 35 | `"**Files:**"` | — |
+| [SRC-676B69CB6C-L000036](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L36) | 36 | ``"- Modify: `tests/test_api.py`"`` | — |
+| [SRC-676B69CB6C-L000037](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L37) | 37 | ``"- Modify: `tests/test_sales_domain.py`"`` | — |
+| [SRC-676B69CB6C-L000038](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L38) | 38 | ``"- Create: `tests/test_workspace_discovery.py`"`` | — |
+| [SRC-676B69CB6C-L000039](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L39) | 39 | `""` | — |
+| [SRC-676B69CB6C-L000040](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L40) | 40 | `"**Interfaces:**"` | — |
+| [SRC-676B69CB6C-L000041](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L41) | 41 | ``"- Product profile data uses `ProductProfile` plus `MarketProfile` serialization."`` | — |
+| [SRC-676B69CB6C-L000042](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L42) | 42 | `"- API response records are tenant-scoped and never accept a tenant identifier from the browser."` | — |
+| [SRC-676B69CB6C-L000043](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L43) | 43 | ``"- Save endpoint accepts a stored `run_id` and source index, not a client-supplied source payload."`` | — |
+| [SRC-676B69CB6C-L000044](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L44) | 44 | `""` | — |
+| [SRC-676B69CB6C-L000045](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L45) | 45 | `"- [x] Add tests for tenant-scoped create/list/get of product profiles."` | — |
+| [SRC-676B69CB6C-L000046](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L46) | 46 | `"- [x] Add tests for discovery run creation/list/get and tenant isolation."` | — |
+| [SRC-676B69CB6C-L000047](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L47) | 47 | ``"- [x] Add tests proving only a stored source marked `public_demand_signal` can be saved."`` | — |
+| [SRC-676B69CB6C-L000048](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L48) | 48 | `"- [x] Add tests for viewer denial, unauthenticated denial in public mode, invalid profile values, and duplicate profile behavior."` | — |
+| [SRC-676B69CB6C-L000049](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L49) | 49 | `"- [x] Run focused tests to verify expected RED (missing contracts)."` | — |
+| [SRC-676B69CB6C-L000050](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L50) | 50 | `""` | — |
+| [SRC-676B69CB6C-L000051](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L51) | 51 | `"### Task 2: Add tenant-scoped storage"` | — |
+| [SRC-676B69CB6C-L000052](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L52) | 52 | `""` | — |
+| [SRC-676B69CB6C-L000053](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L53) | 53 | `"**Files:**"` | — |
+| [SRC-676B69CB6C-L000054](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L54) | 54 | ``"- Modify: `agents/omarai.py`"`` | — |
+| [SRC-676B69CB6C-L000055](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L55) | 55 | ``"- Modify: `tests/test_workspace_discovery.py`"`` | — |
+| [SRC-676B69CB6C-L000056](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L56) | 56 | `""` | — |
+| [SRC-676B69CB6C-L000057](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L57) | 57 | `"**Interfaces:**"` | — |
+| [SRC-676B69CB6C-L000058](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L58) | 58 | ``"- `LeadStore.save_product_profile(profile: dict, *, tenant_id: str) -> dict`"`` | — |
+| [SRC-676B69CB6C-L000059](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L59) | 59 | ``"- `LeadStore.list_product_profiles(*, tenant_id: str) -> list[dict]`"`` | — |
+| [SRC-676B69CB6C-L000060](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L60) | 60 | ``"- `LeadStore.get_product_profile(profile_id: str, *, tenant_id: str) -> dict \| None`"`` | — |
+| [SRC-676B69CB6C-L000061](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L61) | 61 | ``"- `LeadStore.save_discovery_run(profile_id: str, run: dict, *, tenant_id: str) -> dict`"`` | — |
+| [SRC-676B69CB6C-L000062](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L62) | 62 | ``"- `LeadStore.list_discovery_runs(*, tenant_id: str, limit: int = 50) -> list[dict]`"`` | — |
+| [SRC-676B69CB6C-L000063](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L63) | 63 | ``"- `LeadStore.get_discovery_run(run_id: str, *, tenant_id: str) -> dict \| None`"`` | — |
+| [SRC-676B69CB6C-L000064](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L64) | 64 | ``"- `LeadStore.save_discovery_signal(run_id: str, source_index: int, *, tenant_id: str) -> tuple[dict, bool] \| None`"`` | — |
+| [SRC-676B69CB6C-L000065](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L65) | 65 | `""` | — |
 | [SRC-676B69CB6C-L000066](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L66) | 66 | ``"- [x] Add `product_profiles` table with tenant-scoped uniqueness and index."`` | — |
 | [SRC-676B69CB6C-L000067](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L67) | 67 | ``"- [x] Add `discovery_runs` table with tenant-scoped profile foreign key and index."`` | — |
 | [SRC-676B69CB6C-L000068](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L68) | 68 | `"- [x] Store only bounded public response fields; never model prompts or secrets."` | — |
@@ -385,30 +604,31 @@
 | [SRC-50C86B7ED8-L000013](../../pyproject.toml#L13) | 13 | `"  \"beautifulsoup4>=4.12,<5\","` | — |
 | [SRC-50C86B7ED8-L000014](../../pyproject.toml#L14) | 14 | `"  \"httpx>=0.27,<1\","` | — |
 | [SRC-50C86B7ED8-L000015](../../pyproject.toml#L15) | 15 | `"  \"tldextract>=5.3,<6\","` | — |
-| [SRC-50C86B7ED8-L000016](../../pyproject.toml#L16) | 16 | `"]"` | — |
-| [SRC-50C86B7ED8-L000017](../../pyproject.toml#L17) | 17 | `""` | — |
-| [SRC-50C86B7ED8-L000018](../../pyproject.toml#L18) | 18 | `"[project.optional-dependencies]"` | — |
-| [SRC-50C86B7ED8-L000019](../../pyproject.toml#L19) | 19 | `"dev = [\"pytest>=8.0\", \"ruff>=0.5\"]"` | — |
-| [SRC-50C86B7ED8-L000020](../../pyproject.toml#L20) | 20 | `""` | — |
-| [SRC-50C86B7ED8-L000021](../../pyproject.toml#L21) | 21 | `"[tool.pytest.ini_options]"` | — |
-| [SRC-50C86B7ED8-L000022](../../pyproject.toml#L22) | 22 | `"testpaths = [\"tests\"]"` | — |
-| [SRC-50C86B7ED8-L000023](../../pyproject.toml#L23) | 23 | `""` | — |
-| [SRC-50C86B7ED8-L000024](../../pyproject.toml#L24) | 24 | `"[tool.setuptools.packages.find]"` | — |
-| [SRC-50C86B7ED8-L000025](../../pyproject.toml#L25) | 25 | `"include = [\"agents*\", \"api*\", \"cli*\"]"` | — |
-| [SRC-50C86B7ED8-L000026](../../pyproject.toml#L26) | 26 | `"exclude = [\"tests*\", \"web*\"]"` | — |
-| [SRC-50C86B7ED8-L000027](../../pyproject.toml#L27) | 27 | `""` | — |
-| [SRC-50C86B7ED8-L000028](../../pyproject.toml#L28) | 28 | `"[tool.ruff]"` | — |
-| [SRC-50C86B7ED8-L000029](../../pyproject.toml#L29) | 29 | `"line-length = 100"` | — |
-| [SRC-50C86B7ED8-L000030](../../pyproject.toml#L30) | 30 | `"target-version = \"py311\""` | — |
-| [SRC-50C86B7ED8-L000031](../../pyproject.toml#L31) | 31 | `""` | — |
-| [SRC-50C86B7ED8-L000032](../../pyproject.toml#L32) | 32 | `"[tool.ruff.lint]"` | — |
-| [SRC-50C86B7ED8-L000033](../../pyproject.toml#L33) | 33 | `"# Keep default rules; ignore only patterns intentional in this codebase."` | — |
-| [SRC-50C86B7ED8-L000034](../../pyproject.toml#L34) | 34 | `"# BLE001: broad except at API boundary to avoid leaking internals"` | — |
-| [SRC-50C86B7ED8-L000035](../../pyproject.toml#L35) | 35 | `"# E501: long Arabic/English diagnostic strings"` | — |
-| [SRC-50C86B7ED8-L000036](../../pyproject.toml#L36) | 36 | `"# I001: historical import order; do not block CI on style alone"` | — |
-| [SRC-50C86B7ED8-L000037](../../pyproject.toml#L37) | 37 | `"# F841: unused assignment kept for clarity in some tests"` | — |
-| [SRC-50C86B7ED8-L000038](../../pyproject.toml#L38) | 38 | `"# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally"` | — |
-| [SRC-50C86B7ED8-L000039](../../pyproject.toml#L39) | 39 | `"ignore = [\"BLE001\", \"E501\", \"I001\", \"F841\", \"RUF100\"]"` | — |
+| [SRC-50C86B7ED8-L000016](../../pyproject.toml#L16) | 16 | `"  \"psycopg[binary]>=3.2,<4\","` | — |
+| [SRC-50C86B7ED8-L000017](../../pyproject.toml#L17) | 17 | `"]"` | — |
+| [SRC-50C86B7ED8-L000018](../../pyproject.toml#L18) | 18 | `""` | — |
+| [SRC-50C86B7ED8-L000019](../../pyproject.toml#L19) | 19 | `"[project.optional-dependencies]"` | — |
+| [SRC-50C86B7ED8-L000020](../../pyproject.toml#L20) | 20 | `"dev = [\"pytest>=8.0\", \"ruff>=0.5\"]"` | — |
+| [SRC-50C86B7ED8-L000021](../../pyproject.toml#L21) | 21 | `""` | — |
+| [SRC-50C86B7ED8-L000022](../../pyproject.toml#L22) | 22 | `"[tool.pytest.ini_options]"` | — |
+| [SRC-50C86B7ED8-L000023](../../pyproject.toml#L23) | 23 | `"testpaths = [\"tests\"]"` | — |
+| [SRC-50C86B7ED8-L000024](../../pyproject.toml#L24) | 24 | `""` | — |
+| [SRC-50C86B7ED8-L000025](../../pyproject.toml#L25) | 25 | `"[tool.setuptools.packages.find]"` | — |
+| [SRC-50C86B7ED8-L000026](../../pyproject.toml#L26) | 26 | `"include = [\"agents*\", \"api*\", \"cli*\"]"` | — |
+| [SRC-50C86B7ED8-L000027](../../pyproject.toml#L27) | 27 | `"exclude = [\"tests*\", \"web*\"]"` | — |
+| [SRC-50C86B7ED8-L000028](../../pyproject.toml#L28) | 28 | `""` | — |
+| [SRC-50C86B7ED8-L000029](../../pyproject.toml#L29) | 29 | `"[tool.ruff]"` | — |
+| [SRC-50C86B7ED8-L000030](../../pyproject.toml#L30) | 30 | `"line-length = 100"` | — |
+| [SRC-50C86B7ED8-L000031](../../pyproject.toml#L31) | 31 | `"target-version = \"py311\""` | — |
+| [SRC-50C86B7ED8-L000032](../../pyproject.toml#L32) | 32 | `""` | — |
+| [SRC-50C86B7ED8-L000033](../../pyproject.toml#L33) | 33 | `"[tool.ruff.lint]"` | — |
+| [SRC-50C86B7ED8-L000034](../../pyproject.toml#L34) | 34 | `"# Keep default rules; ignore only patterns intentional in this codebase."` | — |
+| [SRC-50C86B7ED8-L000035](../../pyproject.toml#L35) | 35 | `"# BLE001: broad except at API boundary to avoid leaking internals"` | — |
+| [SRC-50C86B7ED8-L000036](../../pyproject.toml#L36) | 36 | `"# E501: long Arabic/English diagnostic strings"` | — |
+| [SRC-50C86B7ED8-L000037](../../pyproject.toml#L37) | 37 | `"# I001: historical import order; do not block CI on style alone"` | — |
+| [SRC-50C86B7ED8-L000038](../../pyproject.toml#L38) | 38 | `"# F841: unused assignment kept for clarity in some tests"` | — |
+| [SRC-50C86B7ED8-L000039](../../pyproject.toml#L39) | 39 | `"# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally"` | — |
+| [SRC-50C86B7ED8-L000040](../../pyproject.toml#L40) | 40 | `"ignore = [\"BLE001\", \"E501\", \"I001\", \"F841\", \"RUF100\"]"` | — |
 ## إعدادات وتشغيل
 
 ### FILE-115C2027D9 — [railway.json](../../railway.json#L1)
@@ -731,205 +951,3 @@
 | [SRC-70795F4B61-L000045](../../scripts/compare_answer_quality_runs.py#L45) | 45 | `"        problems.append(f\"{label}: missing run fields {sorted(missing)}\")"` | — |
 | [SRC-70795F4B61-L000046](../../scripts/compare_answer_quality_runs.py#L46) | 46 | `"    results = run.get(\"results\")"` | — |
 | [SRC-70795F4B61-L000047](../../scripts/compare_answer_quality_runs.py#L47) | 47 | `"    if not isinstance(results, list) or not results:"` | — |
-| [SRC-70795F4B61-L000048](../../scripts/compare_answer_quality_runs.py#L48) | 48 | `"        problems.append(f\"{label}: results must be a non-empty array\")"` | — |
-| [SRC-70795F4B61-L000049](../../scripts/compare_answer_quality_runs.py#L49) | 49 | `"        return problems"` | — |
-| [SRC-70795F4B61-L000050](../../scripts/compare_answer_quality_runs.py#L50) | 50 | `"    seen: set[str] = set()"` | — |
-| [SRC-70795F4B61-L000051](../../scripts/compare_answer_quality_runs.py#L51) | 51 | `"    for index, record in enumerate(results):"` | — |
-| [SRC-70795F4B61-L000052](../../scripts/compare_answer_quality_runs.py#L52) | 52 | `"        if not isinstance(record, dict):"` | — |
-| [SRC-70795F4B61-L000053](../../scripts/compare_answer_quality_runs.py#L53) | 53 | `"            problems.append(f\"{label}: results[{index}] must be an object\")"` | — |
-| [SRC-70795F4B61-L000054](../../scripts/compare_answer_quality_runs.py#L54) | 54 | `"            continue"` | — |
-| [SRC-70795F4B61-L000055](../../scripts/compare_answer_quality_runs.py#L55) | 55 | `"        case_id = record.get(\"case_id\")"` | — |
-| [SRC-70795F4B61-L000056](../../scripts/compare_answer_quality_runs.py#L56) | 56 | `"        if not isinstance(case_id, str) or not case_id.strip():"` | — |
-| [SRC-70795F4B61-L000057](../../scripts/compare_answer_quality_runs.py#L57) | 57 | `"            problems.append(f\"{label}: results[{index}] has no case_id\")"` | — |
-| [SRC-70795F4B61-L000058](../../scripts/compare_answer_quality_runs.py#L58) | 58 | `"            continue"` | — |
-| [SRC-70795F4B61-L000059](../../scripts/compare_answer_quality_runs.py#L59) | 59 | `"        prompt = record.get(\"prompt\")"` | — |
-| [SRC-70795F4B61-L000060](../../scripts/compare_answer_quality_runs.py#L60) | 60 | `"        if not isinstance(prompt, str) or not prompt.strip():"` | — |
-| [SRC-70795F4B61-L000061](../../scripts/compare_answer_quality_runs.py#L61) | 61 | `"            problems.append(f\"{label}/{case_id}: prompt must be a non-empty string\")"` | — |
-| [SRC-70795F4B61-L000062](../../scripts/compare_answer_quality_runs.py#L62) | 62 | `"        if case_id in seen:"` | — |
-| [SRC-70795F4B61-L000063](../../scripts/compare_answer_quality_runs.py#L63) | 63 | `"            problems.append(f\"{label}: duplicate case_id {case_id}\")"` | — |
-| [SRC-70795F4B61-L000064](../../scripts/compare_answer_quality_runs.py#L64) | 64 | `"        seen.add(case_id)"` | — |
-| [SRC-70795F4B61-L000065](../../scripts/compare_answer_quality_runs.py#L65) | 65 | `"        if \"elapsed_ms\" in record and _finite_nonnegative(record[\"elapsed_ms\"]) is None:"` | — |
-| [SRC-70795F4B61-L000066](../../scripts/compare_answer_quality_runs.py#L66) | 66 | `"            problems.append(f\"{label}/{case_id}: elapsed_ms must be finite and non-negative\")"` | — |
-| [SRC-70795F4B61-L000067](../../scripts/compare_answer_quality_runs.py#L67) | 67 | `"    return problems"` | — |
-| [SRC-70795F4B61-L000068](../../scripts/compare_answer_quality_runs.py#L68) | 68 | `""` | — |
-| [SRC-70795F4B61-L000069](../../scripts/compare_answer_quality_runs.py#L69) | 69 | `""` | — |
-| [SRC-70795F4B61-L000070](../../scripts/compare_answer_quality_runs.py#L70) | 70 | `"def _percentile_nearest_rank(values: list[float], percentile: float) -> float \| None:"` | — |
-| [SRC-70795F4B61-L000071](../../scripts/compare_answer_quality_runs.py#L71) | 71 | `"    if not values:"` | — |
-| [SRC-70795F4B61-L000072](../../scripts/compare_answer_quality_runs.py#L72) | 72 | `"        return None"` | — |
-| [SRC-70795F4B61-L000073](../../scripts/compare_answer_quality_runs.py#L73) | 73 | `"    ordered = sorted(values)"` | — |
-| [SRC-70795F4B61-L000074](../../scripts/compare_answer_quality_runs.py#L74) | 74 | `"    index = max(0, math.ceil(percentile * len(ordered)) - 1)"` | — |
-| [SRC-70795F4B61-L000075](../../scripts/compare_answer_quality_runs.py#L75) | 75 | `"    return round(ordered[index], 2)"` | — |
-| [SRC-70795F4B61-L000076](../../scripts/compare_answer_quality_runs.py#L76) | 76 | `""` | — |
-| [SRC-70795F4B61-L000077](../../scripts/compare_answer_quality_runs.py#L77) | 77 | `""` | — |
-| [SRC-70795F4B61-L000078](../../scripts/compare_answer_quality_runs.py#L78) | 78 | `"def _rate(numerator: int, denominator: int) -> dict[str, Any]:"` | — |
-| [SRC-70795F4B61-L000079](../../scripts/compare_answer_quality_runs.py#L79) | 79 | `"    return {"` | — |
-| [SRC-70795F4B61-L000080](../../scripts/compare_answer_quality_runs.py#L80) | 80 | `"        \"score\": round(numerator / denominator, 4) if denominator else None,"` | — |
-| [SRC-70795F4B61-L000081](../../scripts/compare_answer_quality_runs.py#L81) | 81 | `"        \"numerator\": numerator,"` | — |
-| [SRC-70795F4B61-L000082](../../scripts/compare_answer_quality_runs.py#L82) | 82 | `"        \"denominator\": denominator,"` | — |
-| [SRC-70795F4B61-L000083](../../scripts/compare_answer_quality_runs.py#L83) | 83 | `"        \"status\": \"SCORED\" if denominator else \"NOT_SCORABLE_NO_DENOMINATOR\","` | — |
-| [SRC-70795F4B61-L000084](../../scripts/compare_answer_quality_runs.py#L84) | 84 | `"    }"` | — |
-| [SRC-70795F4B61-L000085](../../scripts/compare_answer_quality_runs.py#L85) | 85 | `""` | — |
-| [SRC-70795F4B61-L000086](../../scripts/compare_answer_quality_runs.py#L86) | 86 | `""` | — |
-| [SRC-70795F4B61-L000087](../../scripts/compare_answer_quality_runs.py#L87) | 87 | `"def run_metrics(run: dict[str, Any]) -> dict[str, Any]:"` | — |
-| [SRC-70795F4B61-L000088](../../scripts/compare_answer_quality_runs.py#L88) | 88 | `"    results = run[\"results\"]"` | — |
-| [SRC-70795F4B61-L000089](../../scripts/compare_answer_quality_runs.py#L89) | 89 | `"    transport_ok = [r for r in results if r.get(\"transport_ok\") is True]"` | — |
-| [SRC-70795F4B61-L000090](../../scripts/compare_answer_quality_runs.py#L90) | 90 | `"    elapsed = ["` | — |
-| [SRC-70795F4B61-L000091](../../scripts/compare_answer_quality_runs.py#L91) | 91 | `"        float(value)"` | — |
-| [SRC-70795F4B61-L000092](../../scripts/compare_answer_quality_runs.py#L92) | 92 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000093](../../scripts/compare_answer_quality_runs.py#L93) | 93 | `"        if (value := _finite_nonnegative(record.get(\"elapsed_ms\"))) is not None"` | — |
-| [SRC-70795F4B61-L000094](../../scripts/compare_answer_quality_runs.py#L94) | 94 | `"    ]"` | — |
-| [SRC-70795F4B61-L000095](../../scripts/compare_answer_quality_runs.py#L95) | 95 | `"    search_cases = [r for r in results if r.get(\"expected_strategy\") == \"web_search\"]"` | — |
-| [SRC-70795F4B61-L000096](../../scripts/compare_answer_quality_runs.py#L96) | 96 | `"    search_attempted = ["` | — |
-| [SRC-70795F4B61-L000097](../../scripts/compare_answer_quality_runs.py#L97) | 97 | `"        r for r in search_cases"` | — |
-| [SRC-70795F4B61-L000098](../../scripts/compare_answer_quality_runs.py#L98) | 98 | `"        if r.get(\"search_outcome\") not in (None, \"\", \"unknown\", \"not_attempted\")"` | — |
-| [SRC-70795F4B61-L000099](../../scripts/compare_answer_quality_runs.py#L99) | 99 | `"    ]"` | — |
-| [SRC-70795F4B61-L000100](../../scripts/compare_answer_quality_runs.py#L100) | 100 | `"    usable = [r for r in search_cases if r.get(\"tool_status\") == \"SUCCESS_WITH_USABLE_RESULTS\"]"` | — |
-| [SRC-70795F4B61-L000101](../../scripts/compare_answer_quality_runs.py#L101) | 101 | `"    tool_failed = [r for r in search_cases if r.get(\"tool_status\") == \"TOOL_FAILED\"]"` | — |
-| [SRC-70795F4B61-L000102](../../scripts/compare_answer_quality_runs.py#L102) | 102 | `"    no_usable = [r for r in search_cases if r.get(\"tool_status\") == \"ATTEMPTED_NO_USABLE_RESULTS\"]"` | — |
-| [SRC-70795F4B61-L000103](../../scripts/compare_answer_quality_runs.py#L103) | 103 | `"    costs = ["` | — |
-| [SRC-70795F4B61-L000104](../../scripts/compare_answer_quality_runs.py#L104) | 104 | `"        float(value)"` | — |
-| [SRC-70795F4B61-L000105](../../scripts/compare_answer_quality_runs.py#L105) | 105 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000106](../../scripts/compare_answer_quality_runs.py#L106) | 106 | `"        if (value := _finite_nonnegative(record.get(\"provider_reported_model_cost_usd\"))) is not None"` | — |
-| [SRC-70795F4B61-L000107](../../scripts/compare_answer_quality_runs.py#L107) | 107 | `"    ]"` | — |
-| [SRC-70795F4B61-L000108](../../scripts/compare_answer_quality_runs.py#L108) | 108 | `"    required_tool_rows = ["` | — |
-| [SRC-70795F4B61-L000109](../../scripts/compare_answer_quality_runs.py#L109) | 109 | `"        row"` | — |
-| [SRC-70795F4B61-L000110](../../scripts/compare_answer_quality_runs.py#L110) | 110 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000111](../../scripts/compare_answer_quality_runs.py#L111) | 111 | `"        for row in record.get(\"required_tool_statuses\", [])"` | — |
-| [SRC-70795F4B61-L000112](../../scripts/compare_answer_quality_runs.py#L112) | 112 | `"        if isinstance(row, dict) and isinstance(row.get(\"successful_completion\"), bool)"` | — |
-| [SRC-70795F4B61-L000113](../../scripts/compare_answer_quality_runs.py#L113) | 113 | `"    ]"` | — |
-| [SRC-70795F4B61-L000114](../../scripts/compare_answer_quality_runs.py#L114) | 114 | `"    required_tool_successes = sum("` | — |
-| [SRC-70795F4B61-L000115](../../scripts/compare_answer_quality_runs.py#L115) | 115 | `"        1 for row in required_tool_rows if row[\"successful_completion\"] is True"` | — |
-| [SRC-70795F4B61-L000116](../../scripts/compare_answer_quality_runs.py#L116) | 116 | `"    )"` | — |
-| [SRC-70795F4B61-L000117](../../scripts/compare_answer_quality_runs.py#L117) | 117 | `"    tool_status_counts: dict[str, int] = {}"` | — |
-| [SRC-70795F4B61-L000118](../../scripts/compare_answer_quality_runs.py#L118) | 118 | `"    for row in required_tool_rows:"` | — |
-| [SRC-70795F4B61-L000119](../../scripts/compare_answer_quality_runs.py#L119) | 119 | `"        status = row.get(\"status\")"` | — |
-| [SRC-70795F4B61-L000120](../../scripts/compare_answer_quality_runs.py#L120) | 120 | `"        if isinstance(status, str):"` | — |
-| [SRC-70795F4B61-L000121](../../scripts/compare_answer_quality_runs.py#L121) | 121 | `"            tool_status_counts[status] = tool_status_counts.get(status, 0) + 1"` | — |
-| [SRC-70795F4B61-L000122](../../scripts/compare_answer_quality_runs.py#L122) | 122 | `"    required_tool_matrix_telemetry_known = all("` | — |
-| [SRC-70795F4B61-L000123](../../scripts/compare_answer_quality_runs.py#L123) | 123 | `"        isinstance(record.get(\"required_tool_matrix_complete\"), bool)"` | — |
-| [SRC-70795F4B61-L000124](../../scripts/compare_answer_quality_runs.py#L124) | 124 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000125](../../scripts/compare_answer_quality_runs.py#L125) | 125 | `"    )"` | — |
-| [SRC-70795F4B61-L000126](../../scripts/compare_answer_quality_runs.py#L126) | 126 | `"    required_tool_matrix_complete_count = sum("` | — |
-| [SRC-70795F4B61-L000127](../../scripts/compare_answer_quality_runs.py#L127) | 127 | `"        1 for record in results if record.get(\"required_tool_matrix_complete\") is True"` | — |
-| [SRC-70795F4B61-L000128](../../scripts/compare_answer_quality_runs.py#L128) | 128 | `"    )"` | — |
-| [SRC-70795F4B61-L000129](../../scripts/compare_answer_quality_runs.py#L129) | 129 | `"    required_tool_matrix_incomplete_case_ids = ["` | — |
-| [SRC-70795F4B61-L000130](../../scripts/compare_answer_quality_runs.py#L130) | 130 | `"        record.get(\"case_id\", \"unknown\")"` | — |
-| [SRC-70795F4B61-L000131](../../scripts/compare_answer_quality_runs.py#L131) | 131 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000132](../../scripts/compare_answer_quality_runs.py#L132) | 132 | `"        if record.get(\"required_tool_matrix_complete\") is not True"` | — |
-| [SRC-70795F4B61-L000133](../../scripts/compare_answer_quality_runs.py#L133) | 133 | `"    ]"` | — |
-| [SRC-70795F4B61-L000134](../../scripts/compare_answer_quality_runs.py#L134) | 134 | `"    complete_cost_cases = sum("` | — |
-| [SRC-70795F4B61-L000135](../../scripts/compare_answer_quality_runs.py#L135) | 135 | `"        1 for r in results"` | — |
-| [SRC-70795F4B61-L000136](../../scripts/compare_answer_quality_runs.py#L136) | 136 | `"        if r.get(\"provider_reported_model_cost_status\") == \"COMPLETE_FOR_RETURNED_MODEL_CALLS\""` | — |
-| [SRC-70795F4B61-L000137](../../scripts/compare_answer_quality_runs.py#L137) | 137 | `"    )"` | — |
-| [SRC-70795F4B61-L000138](../../scripts/compare_answer_quality_runs.py#L138) | 138 | `"    reconciled_request_costs = ["` | — |
-| [SRC-70795F4B61-L000139](../../scripts/compare_answer_quality_runs.py#L139) | 139 | `"        float(value)"` | — |
-| [SRC-70795F4B61-L000140](../../scripts/compare_answer_quality_runs.py#L140) | 140 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000141](../../scripts/compare_answer_quality_runs.py#L141) | 141 | `"        if record.get(\"request_cost_status\") == \"RECONCILED_COMPLETE_REQUEST_COST\""` | — |
-| [SRC-70795F4B61-L000142](../../scripts/compare_answer_quality_runs.py#L142) | 142 | `"        and (value := _finite_nonnegative(record.get(\"request_cost_usd\"))) is not None"` | — |
-| [SRC-70795F4B61-L000143](../../scripts/compare_answer_quality_runs.py#L143) | 143 | `"    ]"` | — |
-| [SRC-70795F4B61-L000144](../../scripts/compare_answer_quality_runs.py#L144) | 144 | `"    complete_request_cost_count = len(reconciled_request_costs)"` | — |
-| [SRC-70795F4B61-L000145](../../scripts/compare_answer_quality_runs.py#L145) | 145 | `"    request_cost_complete = complete_request_cost_count == len(results)"` | — |
-| [SRC-70795F4B61-L000146](../../scripts/compare_answer_quality_runs.py#L146) | 146 | `"    return {"` | — |
-| [SRC-70795F4B61-L000147](../../scripts/compare_answer_quality_runs.py#L147) | 147 | `"        \"case_count\": len(results),"` | — |
-| [SRC-70795F4B61-L000148](../../scripts/compare_answer_quality_runs.py#L148) | 148 | `"        \"transport_success_rate\": _rate(len(transport_ok), len(results)),"` | — |
-| [SRC-70795F4B61-L000149](../../scripts/compare_answer_quality_runs.py#L149) | 149 | `"        \"latency_ms\": {"` | — |
-| [SRC-70795F4B61-L000150](../../scripts/compare_answer_quality_runs.py#L150) | 150 | `"            \"sample_count\": len(elapsed),"` | — |
-| [SRC-70795F4B61-L000151](../../scripts/compare_answer_quality_runs.py#L151) | 151 | `"            \"mean\": round(sum(elapsed) / len(elapsed), 2) if elapsed else None,"` | — |
-| [SRC-70795F4B61-L000152](../../scripts/compare_answer_quality_runs.py#L152) | 152 | `"            \"p50\": _percentile_nearest_rank(elapsed, 0.50),"` | — |
-| [SRC-70795F4B61-L000153](../../scripts/compare_answer_quality_runs.py#L153) | 153 | `"            \"p95\": _percentile_nearest_rank(elapsed, 0.95),"` | — |
-| [SRC-70795F4B61-L000154](../../scripts/compare_answer_quality_runs.py#L154) | 154 | `"            \"max\": round(max(elapsed), 2) if elapsed else None,"` | — |
-| [SRC-70795F4B61-L000155](../../scripts/compare_answer_quality_runs.py#L155) | 155 | `"            \"status\": \"SCORED\" if elapsed else \"NOT_MEASURED\","` | — |
-| [SRC-70795F4B61-L000156](../../scripts/compare_answer_quality_runs.py#L156) | 156 | `"            \"semantics\": \"Sequential end-to-end HTTP request time; not a concurrency/load test.\","` | — |
-| [SRC-70795F4B61-L000157](../../scripts/compare_answer_quality_runs.py#L157) | 157 | `"        },"` | — |
-| [SRC-70795F4B61-L000158](../../scripts/compare_answer_quality_runs.py#L158) | 158 | `"        \"tool_usage\": {"` | — |
-| [SRC-70795F4B61-L000159](../../scripts/compare_answer_quality_runs.py#L159) | 159 | `"            \"web_search_case_count\": len(search_cases),"` | — |
-| [SRC-70795F4B61-L000160](../../scripts/compare_answer_quality_runs.py#L160) | 160 | `"            \"search_attempt_rate\": _rate(len(search_attempted), len(search_cases)),"` | — |
-| [SRC-70795F4B61-L000161](../../scripts/compare_answer_quality_runs.py#L161) | 161 | `"            \"usable_result_rate\": _rate(len(usable), len(search_cases)),"` | — |
-| [SRC-70795F4B61-L000162](../../scripts/compare_answer_quality_runs.py#L162) | 162 | `"            \"tool_error_rate_among_search_cases\": _rate(len(tool_failed), len(search_cases)),"` | — |
-| [SRC-70795F4B61-L000163](../../scripts/compare_answer_quality_runs.py#L163) | 163 | `"            \"attempted_without_usable_results\": len(no_usable),"` | — |
-| [SRC-70795F4B61-L000164](../../scripts/compare_answer_quality_runs.py#L164) | 164 | `"            \"unknown_tool_outcome_count\": sum("` | — |
-| [SRC-70795F4B61-L000165](../../scripts/compare_answer_quality_runs.py#L165) | 165 | `"                1 for r in search_cases"` | — |
-| [SRC-70795F4B61-L000166](../../scripts/compare_answer_quality_runs.py#L166) | 166 | `"                if r.get(\"tool_status\") in (None, \"\", \"UNKNOWN\")"` | — |
-| [SRC-70795F4B61-L000167](../../scripts/compare_answer_quality_runs.py#L167) | 167 | `"            ),"` | — |
-| [SRC-70795F4B61-L000168](../../scripts/compare_answer_quality_runs.py#L168) | 168 | `"            \"required_tool_observation_count\": len(required_tool_rows),"` | — |
-| [SRC-70795F4B61-L000169](../../scripts/compare_answer_quality_runs.py#L169) | 169 | `"            \"required_tool_success_count\": required_tool_successes,"` | — |
-| [SRC-70795F4B61-L000170](../../scripts/compare_answer_quality_runs.py#L170) | 170 | `"            \"required_tool_success_rate\": _rate(required_tool_successes, len(required_tool_rows)),"` | — |
-| [SRC-70795F4B61-L000171](../../scripts/compare_answer_quality_runs.py#L171) | 171 | `"            \"required_tool_status_counts\": tool_status_counts,"` | — |
-| [SRC-70795F4B61-L000172](../../scripts/compare_answer_quality_runs.py#L172) | 172 | `"            \"required_tool_status_case_count\": sum("` | — |
-| [SRC-70795F4B61-L000173](../../scripts/compare_answer_quality_runs.py#L173) | 173 | `"                1 for r in results"` | — |
-| [SRC-70795F4B61-L000174](../../scripts/compare_answer_quality_runs.py#L174) | 174 | `"                if isinstance(r.get(\"required_tool_statuses\"), list)"` | — |
-| [SRC-70795F4B61-L000175](../../scripts/compare_answer_quality_runs.py#L175) | 175 | `"                and r.get(\"required_tool_statuses\")"` | — |
-| [SRC-70795F4B61-L000176](../../scripts/compare_answer_quality_runs.py#L176) | 176 | `"            ),"` | — |
-| [SRC-70795F4B61-L000177](../../scripts/compare_answer_quality_runs.py#L177) | 177 | `"            \"required_tool_matrix_coverage\": {"` | — |
-| [SRC-70795F4B61-L000178](../../scripts/compare_answer_quality_runs.py#L178) | 178 | `"                \"score\": ("` | — |
-| [SRC-70795F4B61-L000179](../../scripts/compare_answer_quality_runs.py#L179) | 179 | `"                    round(required_tool_matrix_complete_count / len(results), 4)"` | — |
-| [SRC-70795F4B61-L000180](../../scripts/compare_answer_quality_runs.py#L180) | 180 | `"                    if results and required_tool_matrix_telemetry_known"` | — |
-| [SRC-70795F4B61-L000181](../../scripts/compare_answer_quality_runs.py#L181) | 181 | `"                    else None"` | — |
-| [SRC-70795F4B61-L000182](../../scripts/compare_answer_quality_runs.py#L182) | 182 | `"                ),"` | — |
-| [SRC-70795F4B61-L000183](../../scripts/compare_answer_quality_runs.py#L183) | 183 | `"                \"complete_case_count\": required_tool_matrix_complete_count,"` | — |
-| [SRC-70795F4B61-L000184](../../scripts/compare_answer_quality_runs.py#L184) | 184 | `"                \"case_count\": len(results),"` | — |
-| [SRC-70795F4B61-L000185](../../scripts/compare_answer_quality_runs.py#L185) | 185 | `"                \"incomplete_case_ids\": required_tool_matrix_incomplete_case_ids,"` | — |
-| [SRC-70795F4B61-L000186](../../scripts/compare_answer_quality_runs.py#L186) | 186 | `"                \"status\": ("` | — |
-| [SRC-70795F4B61-L000187](../../scripts/compare_answer_quality_runs.py#L187) | 187 | `"                    \"SCORED_FROM_EXPLICIT_TOOL_MATRIX\""` | — |
-| [SRC-70795F4B61-L000188](../../scripts/compare_answer_quality_runs.py#L188) | 188 | `"                    if required_tool_matrix_telemetry_known"` | — |
-| [SRC-70795F4B61-L000189](../../scripts/compare_answer_quality_runs.py#L189) | 189 | `"                    else \"NOT_MEASURED_REQUIRED_TOOL_MATRIX_TELEMETRY_MISSING\""` | — |
-| [SRC-70795F4B61-L000190](../../scripts/compare_answer_quality_runs.py#L190) | 190 | `"                ),"` | — |
-| [SRC-70795F4B61-L000191](../../scripts/compare_answer_quality_runs.py#L191) | 191 | `"            },"` | — |
-| [SRC-70795F4B61-L000192](../../scripts/compare_answer_quality_runs.py#L192) | 192 | `"            \"required_tool_success_semantics\": ("` | — |
-| [SRC-70795F4B61-L000193](../../scripts/compare_answer_quality_runs.py#L193) | 193 | `"                \"Only tool-specific completed-with-usable-output states count as success; \""` | — |
-| [SRC-70795F4B61-L000194](../../scripts/compare_answer_quality_runs.py#L194) | 194 | `"                \"HTTP success and no-result attempts do not.\""` | — |
-| [SRC-70795F4B61-L000195](../../scripts/compare_answer_quality_runs.py#L195) | 195 | `"            ),"` | — |
-| [SRC-70795F4B61-L000196](../../scripts/compare_answer_quality_runs.py#L196) | 196 | `"        },"` | — |
-| [SRC-70795F4B61-L000197](../../scripts/compare_answer_quality_runs.py#L197) | 197 | `"        \"provider_reported_model_cost\": {"` | — |
-| [SRC-70795F4B61-L000198](../../scripts/compare_answer_quality_runs.py#L198) | 198 | `"            \"reported_sum_usd\": round(sum(costs), 10) if costs else None,"` | — |
-| [SRC-70795F4B61-L000199](../../scripts/compare_answer_quality_runs.py#L199) | 199 | `"            \"cases_with_any_reported_cost\": len(costs),"` | — |
-| [SRC-70795F4B61-L000200](../../scripts/compare_answer_quality_runs.py#L200) | 200 | `"            \"cases_complete_for_returned_model_calls\": complete_cost_cases,"` | — |
-| [SRC-70795F4B61-L000201](../../scripts/compare_answer_quality_runs.py#L201) | 201 | `"            \"status\": ("` | — |
-| [SRC-70795F4B61-L000202](../../scripts/compare_answer_quality_runs.py#L202) | 202 | `"                \"PARTIAL_OR_PROVIDER_REPORTED_ONLY\""` | — |
-| [SRC-70795F4B61-L000203](../../scripts/compare_answer_quality_runs.py#L203) | 203 | `"                if costs"` | — |
-| [SRC-70795F4B61-L000204](../../scripts/compare_answer_quality_runs.py#L204) | 204 | `"                else \"NOT_MEASURED_NO_PROVIDER_COST_REPORTED\""` | — |
-| [SRC-70795F4B61-L000205](../../scripts/compare_answer_quality_runs.py#L205) | 205 | `"            ),"` | — |
-| [SRC-70795F4B61-L000206](../../scripts/compare_answer_quality_runs.py#L206) | 206 | `"            \"complete_request_cost_usd\": ("` | — |
-| [SRC-70795F4B61-L000207](../../scripts/compare_answer_quality_runs.py#L207) | 207 | `"                round(sum(reconciled_request_costs), 10) if request_cost_complete else None"` | — |
-| [SRC-70795F4B61-L000208](../../scripts/compare_answer_quality_runs.py#L208) | 208 | `"            ),"` | — |
-| [SRC-70795F4B61-L000209](../../scripts/compare_answer_quality_runs.py#L209) | 209 | `"            \"complete_request_cost_status\": ("` | — |
-| [SRC-70795F4B61-L000210](../../scripts/compare_answer_quality_runs.py#L210) | 210 | `"                \"RECONCILED_COMPLETE_REQUEST_COST\""` | — |
-| [SRC-70795F4B61-L000211](../../scripts/compare_answer_quality_runs.py#L211) | 211 | `"                if request_cost_complete"` | — |
-| [SRC-70795F4B61-L000212](../../scripts/compare_answer_quality_runs.py#L212) | 212 | `"                else ("` | — |
-| [SRC-70795F4B61-L000213](../../scripts/compare_answer_quality_runs.py#L213) | 213 | `"                    \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
-| [SRC-70795F4B61-L000214](../../scripts/compare_answer_quality_runs.py#L214) | 214 | `"                    if complete_request_cost_count"` | — |
-| [SRC-70795F4B61-L000215](../../scripts/compare_answer_quality_runs.py#L215) | 215 | `"                    else \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\""` | — |
-| [SRC-70795F4B61-L000216](../../scripts/compare_answer_quality_runs.py#L216) | 216 | `"                )"` | — |
-| [SRC-70795F4B61-L000217](../../scripts/compare_answer_quality_runs.py#L217) | 217 | `"            ),"` | — |
-| [SRC-70795F4B61-L000218](../../scripts/compare_answer_quality_runs.py#L218) | 218 | `"            \"complete_request_cost_case_count\": complete_request_cost_count,"` | — |
-| [SRC-70795F4B61-L000219](../../scripts/compare_answer_quality_runs.py#L219) | 219 | `"        },"` | — |
-| [SRC-70795F4B61-L000220](../../scripts/compare_answer_quality_runs.py#L220) | 220 | `"    }"` | — |
-| [SRC-70795F4B61-L000221](../../scripts/compare_answer_quality_runs.py#L221) | 221 | `""` | — |
-| [SRC-70795F4B61-L000222](../../scripts/compare_answer_quality_runs.py#L222) | 222 | `""` | — |
-| [SRC-70795F4B61-L000223](../../scripts/compare_answer_quality_runs.py#L223) | 223 | `"def _load_review_scorer():"` | — |
-| [SRC-70795F4B61-L000224](../../scripts/compare_answer_quality_runs.py#L224) | 224 | `"    path = ROOT / \"scripts\" / \"score_answer_quality_reviews.py\""` | — |
-| [SRC-70795F4B61-L000225](../../scripts/compare_answer_quality_runs.py#L225) | 225 | `"    spec = importlib.util.spec_from_file_location(\"omarai_review_scorecard\", path)"` | — |
-| [SRC-70795F4B61-L000226](../../scripts/compare_answer_quality_runs.py#L226) | 226 | `"    if spec is None or spec.loader is None:"` | — |
-| [SRC-70795F4B61-L000227](../../scripts/compare_answer_quality_runs.py#L227) | 227 | `"        raise RuntimeError(\"Unable to load existing review scorecard: \" + str(path))"` | — |
-| [SRC-70795F4B61-L000228](../../scripts/compare_answer_quality_runs.py#L228) | 228 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-70795F4B61-L000229](../../scripts/compare_answer_quality_runs.py#L229) | 229 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-70795F4B61-L000230](../../scripts/compare_answer_quality_runs.py#L230) | 230 | `"    return module"` | — |
-| [SRC-70795F4B61-L000231](../../scripts/compare_answer_quality_runs.py#L231) | 231 | `""` | — |
-| [SRC-70795F4B61-L000232](../../scripts/compare_answer_quality_runs.py#L232) | 232 | `""` | — |
-| [SRC-70795F4B61-L000233](../../scripts/compare_answer_quality_runs.py#L233) | 233 | `"def _reviewed_case_ids(review_data: dict[str, Any]) -> set[str]:"` | — |
-| [SRC-70795F4B61-L000234](../../scripts/compare_answer_quality_runs.py#L234) | 234 | `"    reviews = review_data.get(\"reviews\")"` | — |
-| [SRC-70795F4B61-L000235](../../scripts/compare_answer_quality_runs.py#L235) | 235 | `"    if not isinstance(reviews, list):"` | — |
-| [SRC-70795F4B61-L000236](../../scripts/compare_answer_quality_runs.py#L236) | 236 | `"        raise ValueError(\"review file must contain a reviews array\")"` | — |
-| [SRC-70795F4B61-L000237](../../scripts/compare_answer_quality_runs.py#L237) | 237 | `"    return {"` | — |
-| [SRC-70795F4B61-L000238](../../scripts/compare_answer_quality_runs.py#L238) | 238 | `"        item[\"case_id\"]"` | — |
-| [SRC-70795F4B61-L000239](../../scripts/compare_answer_quality_runs.py#L239) | 239 | `"        for item in reviews"` | — |
-| [SRC-70795F4B61-L000240](../../scripts/compare_answer_quality_runs.py#L240) | 240 | `"        if isinstance(item, dict) and item.get(\"status\") == \"REVIEWED\""` | — |
-| [SRC-70795F4B61-L000241](../../scripts/compare_answer_quality_runs.py#L241) | 241 | `"        and isinstance(item.get(\"case_id\"), str)"` | — |
-| [SRC-70795F4B61-L000242](../../scripts/compare_answer_quality_runs.py#L242) | 242 | `"    }"` | — |
-| [SRC-70795F4B61-L000243](../../scripts/compare_answer_quality_runs.py#L243) | 243 | `""` | — |
-| [SRC-70795F4B61-L000244](../../scripts/compare_answer_quality_runs.py#L244) | 244 | `""` | — |
-| [SRC-70795F4B61-L000245](../../scripts/compare_answer_quality_runs.py#L245) | 245 | `"def review_comparison("` | — |
-| [SRC-70795F4B61-L000246](../../scripts/compare_answer_quality_runs.py#L246) | 246 | `"    baseline_reviews: dict[str, Any],"` | — |
-| [SRC-70795F4B61-L000247](../../scripts/compare_answer_quality_runs.py#L247) | 247 | `"    candidate_reviews: dict[str, Any],"` | — |
-| [SRC-70795F4B61-L000248](../../scripts/compare_answer_quality_runs.py#L248) | 248 | `"    corpus: dict[str, Any],"` | — |
-| [SRC-70795F4B61-L000249](../../scripts/compare_answer_quality_runs.py#L249) | 249 | `") -> dict[str, Any]:"` | — |

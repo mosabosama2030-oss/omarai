@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000278 إلى SRC-7D6FC391EC-L000284
+- النطاق: SRC-138992B1FC-L000245 إلى SRC-7D6FC391EC-L000251
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,39 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000245](../../agents/answer_validation.py#L245) | 245 | `"    citable_sources = safe_sources[:12]"` | — |
+| [SRC-138992B1FC-L000246](../../agents/answer_validation.py#L246) | 246 | `"    source_token_sets: list[set[str]] = []"` | — |
+| [SRC-138992B1FC-L000247](../../agents/answer_validation.py#L247) | 247 | `"    source_bases: list[str] = []"` | — |
+| [SRC-138992B1FC-L000248](../../agents/answer_validation.py#L248) | 248 | `"    for source in citable_sources:"` | — |
+| [SRC-138992B1FC-L000249](../../agents/answer_validation.py#L249) | 249 | `"        page_text = str(source.get(\"page_text\") or \"\")"` | — |
+| [SRC-138992B1FC-L000250](../../agents/answer_validation.py#L250) | 250 | `"        snippet = str(source.get(\"snippet\") or \"\")"` | — |
+| [SRC-138992B1FC-L000251](../../agents/answer_validation.py#L251) | 251 | `"        title = str(source.get(\"title\") or \"\")"` | — |
+| [SRC-138992B1FC-L000252](../../agents/answer_validation.py#L252) | 252 | `"        if bool(source.get(\"page_fetched\")) and page_text.strip():"` | — |
+| [SRC-138992B1FC-L000253](../../agents/answer_validation.py#L253) | 253 | `"            selected_text = page_text"` | — |
+| [SRC-138992B1FC-L000254](../../agents/answer_validation.py#L254) | 254 | `"            basis = \"extracted_page_text\""` | — |
+| [SRC-138992B1FC-L000255](../../agents/answer_validation.py#L255) | 255 | `"        elif snippet.strip():"` | — |
+| [SRC-138992B1FC-L000256](../../agents/answer_validation.py#L256) | 256 | `"            selected_text = snippet"` | — |
+| [SRC-138992B1FC-L000257](../../agents/answer_validation.py#L257) | 257 | `"            basis = \"search_snippet\""` | — |
+| [SRC-138992B1FC-L000258](../../agents/answer_validation.py#L258) | 258 | `"        elif title.strip():"` | — |
+| [SRC-138992B1FC-L000259](../../agents/answer_validation.py#L259) | 259 | `"            selected_text = title"` | — |
+| [SRC-138992B1FC-L000260](../../agents/answer_validation.py#L260) | 260 | `"            basis = \"title_only\""` | — |
+| [SRC-138992B1FC-L000261](../../agents/answer_validation.py#L261) | 261 | `"        else:"` | — |
+| [SRC-138992B1FC-L000262](../../agents/answer_validation.py#L262) | 262 | `"            selected_text = \"\""` | — |
+| [SRC-138992B1FC-L000263](../../agents/answer_validation.py#L263) | 263 | `"            basis = \"no_readable_text\""` | — |
+| [SRC-138992B1FC-L000264](../../agents/answer_validation.py#L264) | 264 | `"        source_token_sets.append(set(_tokens(selected_text, drop_stopwords=True)))"` | — |
+| [SRC-138992B1FC-L000265](../../agents/answer_validation.py#L265) | 265 | `"        source_bases.append(basis)"` | — |
+| [SRC-138992B1FC-L000266](../../agents/answer_validation.py#L266) | 266 | `""` | — |
+| [SRC-138992B1FC-L000267](../../agents/answer_validation.py#L267) | 267 | `"    citation_alignment: list[dict[str, Any]] = []"` | — |
+| [SRC-138992B1FC-L000268](../../agents/answer_validation.py#L268) | 268 | `"    sentence_parts = ["` | — |
+| [SRC-138992B1FC-L000269](../../agents/answer_validation.py#L269) | 269 | `"        part.strip()"` | — |
+| [SRC-138992B1FC-L000270](../../agents/answer_validation.py#L270) | 270 | `"        for part in re.split(r\"(?<=[.!?؟])\\s+\|\\n+\", answer_text)"` | — |
+| [SRC-138992B1FC-L000271](../../agents/answer_validation.py#L271) | 271 | `"        if part.strip()"` | — |
+| [SRC-138992B1FC-L000272](../../agents/answer_validation.py#L272) | 272 | `"    ]"` | — |
+| [SRC-138992B1FC-L000273](../../agents/answer_validation.py#L273) | 273 | `"    for sentence_number, sentence in enumerate(sentence_parts[:40], 1):"` | — |
+| [SRC-138992B1FC-L000274](../../agents/answer_validation.py#L274) | 274 | `"        cited_indices = ["` | — |
+| [SRC-138992B1FC-L000275](../../agents/answer_validation.py#L275) | 275 | `"            int(match.group(1))"` | — |
+| [SRC-138992B1FC-L000276](../../agents/answer_validation.py#L276) | 276 | `"            for match in _CITATION.finditer(sentence)"` | — |
+| [SRC-138992B1FC-L000277](../../agents/answer_validation.py#L277) | 277 | `"        ]"` | — |
 | [SRC-138992B1FC-L000278](../../agents/answer_validation.py#L278) | 278 | `"        if not cited_indices:"` | — |
 | [SRC-138992B1FC-L000279](../../agents/answer_validation.py#L279) | 279 | `"            continue"` | — |
 | [SRC-138992B1FC-L000280](../../agents/answer_validation.py#L280) | 280 | `"        claim_tokens = list(dict.fromkeys(_tokens(_CITATION.sub(\" \", sentence), drop_stopwords=True)))"` | — |
@@ -801,36 +834,3 @@
 | [SRC-7D6FC391EC-L000249](../../agents/claim_evidence.py#L249) | 249 | `"        else:"` | — |
 | [SRC-7D6FC391EC-L000250](../../agents/claim_evidence.py#L250) | 250 | `"            status = \"no_citation_marker\""` | — |
 | [SRC-7D6FC391EC-L000251](../../agents/claim_evidence.py#L251) | 251 | `""` | — |
-| [SRC-7D6FC391EC-L000252](../../agents/claim_evidence.py#L252) | 252 | `"        rows.append({"` | — |
-| [SRC-7D6FC391EC-L000253](../../agents/claim_evidence.py#L253) | 253 | `"            \"segment_id\": f\"S{number:03d}\","` | — |
-| [SRC-7D6FC391EC-L000254](../../agents/claim_evidence.py#L254) | 254 | `"            \"segment_number\": number,"` | — |
-| [SRC-7D6FC391EC-L000255](../../agents/claim_evidence.py#L255) | 255 | `"            \"unit_kind\": \"sentence_candidate_not_semantically_classified\","` | — |
-| [SRC-7D6FC391EC-L000256](../../agents/claim_evidence.py#L256) | 256 | `"            \"text\": segment[:1200],"` | — |
-| [SRC-7D6FC391EC-L000257](../../agents/claim_evidence.py#L257) | 257 | `"            \"citation_indexes\": indexes,"` | — |
-| [SRC-7D6FC391EC-L000258](../../agents/claim_evidence.py#L258) | 258 | `"            \"citation_status\": status,"` | — |
-| [SRC-7D6FC391EC-L000259](../../agents/claim_evidence.py#L259) | 259 | `"            \"citation_references_truncated\": citation_references_truncated,"` | — |
-| [SRC-7D6FC391EC-L000260](../../agents/claim_evidence.py#L260) | 260 | `"            \"lexical_audit_status\": lexical_status,"` | — |
-| [SRC-7D6FC391EC-L000261](../../agents/claim_evidence.py#L261) | 261 | `"            \"sources\": refs,"` | — |
-| [SRC-7D6FC391EC-L000262](../../agents/claim_evidence.py#L262) | 262 | `"        })"` | — |
-| [SRC-7D6FC391EC-L000263](../../agents/claim_evidence.py#L263) | 263 | `""` | — |
-| [SRC-7D6FC391EC-L000264](../../agents/claim_evidence.py#L264) | 264 | `"    total = len(rows)"` | — |
-| [SRC-7D6FC391EC-L000265](../../agents/claim_evidence.py#L265) | 265 | `"    return {"` | — |
-| [SRC-7D6FC391EC-L000266](../../agents/claim_evidence.py#L266) | 266 | `"        \"schema_version\": \"1.0\","` | — |
-| [SRC-7D6FC391EC-L000267](../../agents/claim_evidence.py#L267) | 267 | `"        \"status\": \"built\","` | — |
-| [SRC-7D6FC391EC-L000268](../../agents/claim_evidence.py#L268) | 268 | `"        \"method\": \"bounded_sentence_level_citation_trace\","` | — |
-| [SRC-7D6FC391EC-L000269](../../agents/claim_evidence.py#L269) | 269 | `"        \"semantic_verification\": False,"` | — |
-| [SRC-7D6FC391EC-L000270](../../agents/claim_evidence.py#L270) | 270 | `"        \"claim_entailment\": \"not_checked\","` | — |
-| [SRC-7D6FC391EC-L000271](../../agents/claim_evidence.py#L271) | 271 | `"        \"fact_correctness\": \"not_checked\","` | — |
-| [SRC-7D6FC391EC-L000272](../../agents/claim_evidence.py#L272) | 272 | `"        \"max_segments\": max_segments,"` | — |
-| [SRC-7D6FC391EC-L000273](../../agents/claim_evidence.py#L273) | 273 | `"        \"max_citable_sources\": len(safe_sources),"` | — |
-| [SRC-7D6FC391EC-L000274](../../agents/claim_evidence.py#L274) | 274 | `"        \"truncated\": truncated,"` | — |
-| [SRC-7D6FC391EC-L000275](../../agents/claim_evidence.py#L275) | 275 | `"        \"summary\": {"` | — |
-| [SRC-7D6FC391EC-L000276](../../agents/claim_evidence.py#L276) | 276 | `"            \"segment_candidate_count\": total,"` | — |
-| [SRC-7D6FC391EC-L000277](../../agents/claim_evidence.py#L277) | 277 | `"            \"segments_with_citations\": cited,"` | — |
-| [SRC-7D6FC391EC-L000278](../../agents/claim_evidence.py#L278) | 278 | `"            \"segments_without_citation_markers\": uncited,"` | — |
-| [SRC-7D6FC391EC-L000279](../../agents/claim_evidence.py#L279) | 279 | `"            \"valid_source_reference_count\": valid_refs,"` | — |
-| [SRC-7D6FC391EC-L000280](../../agents/claim_evidence.py#L280) | 280 | `"            \"out_of_range_reference_count\": invalid_refs,"` | — |
-| [SRC-7D6FC391EC-L000281](../../agents/claim_evidence.py#L281) | 281 | `"            \"truncated_citation_reference_list_count\": sum("` | — |
-| [SRC-7D6FC391EC-L000282](../../agents/claim_evidence.py#L282) | 282 | `"                row[\"citation_references_truncated\"] for row in rows"` | — |
-| [SRC-7D6FC391EC-L000283](../../agents/claim_evidence.py#L283) | 283 | `"            ),"` | — |
-| [SRC-7D6FC391EC-L000284](../../agents/claim_evidence.py#L284) | 284 | `"            \"cited_segments_with_readable_source_evidence\": readable_cited,"` | — |

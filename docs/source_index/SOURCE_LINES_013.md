@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000781 إلى SRC-1AE03B9EC3-L001580
+- النطاق: SRC-1AE03B9EC3-L000672 إلى SRC-1AE03B9EC3-L001471
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,115 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000672](../../agents/web_agent.py#L672) | 672 | `""` | — |
+| [SRC-1AE03B9EC3-L000673](../../agents/web_agent.py#L673) | 673 | `"        if generic_api_key:"` | — |
+| [SRC-1AE03B9EC3-L000674](../../agents/web_agent.py#L674) | 674 | `"            host = (urllib.parse.urlsplit(configured_base_url).hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-1AE03B9EC3-L000675](../../agents/web_agent.py#L675) | 675 | `"            primary_provider = \"openrouter\" if host == \"openrouter.ai\" else \"custom\""` | — |
+| [SRC-1AE03B9EC3-L000676](../../agents/web_agent.py#L676) | 676 | `"            primary_api_key, primary_base_url = generic_api_key, configured_base_url"` | — |
+| [SRC-1AE03B9EC3-L000677](../../agents/web_agent.py#L677) | 677 | `"            default_answer_model = \"google/gemma-4-31b-it:free\""` | — |
+| [SRC-1AE03B9EC3-L000678](../../agents/web_agent.py#L678) | 678 | `"        elif gemini_api_key:"` | — |
+| [SRC-1AE03B9EC3-L000679](../../agents/web_agent.py#L679) | 679 | `"            primary_provider, primary_api_key = \"gemini\", gemini_api_key"` | — |
+| [SRC-1AE03B9EC3-L000680](../../agents/web_agent.py#L680) | 680 | `"            primary_base_url = \"https://generativelanguage.googleapis.com/v1beta/openai\""` | — |
+| [SRC-1AE03B9EC3-L000681](../../agents/web_agent.py#L681) | 681 | `"            default_answer_model = ("` | — |
+| [SRC-1AE03B9EC3-L000682](../../agents/web_agent.py#L682) | 682 | `"                os.getenv(\"OMARAI_GEMINI_MODEL\", \"\").strip() or \"gemini-3.1-flash-lite\""` | — |
+| [SRC-1AE03B9EC3-L000683](../../agents/web_agent.py#L683) | 683 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000684](../../agents/web_agent.py#L684) | 684 | `"        elif mistral_api_key:"` | — |
+| [SRC-1AE03B9EC3-L000685](../../agents/web_agent.py#L685) | 685 | `"            primary_provider, primary_api_key = \"mistral\", mistral_api_key"` | — |
+| [SRC-1AE03B9EC3-L000686](../../agents/web_agent.py#L686) | 686 | `"            primary_base_url = \"https://api.mistral.ai/v1\""` | — |
+| [SRC-1AE03B9EC3-L000687](../../agents/web_agent.py#L687) | 687 | `"            default_answer_model = ("` | — |
+| [SRC-1AE03B9EC3-L000688](../../agents/web_agent.py#L688) | 688 | `"                os.getenv(\"OMARAI_MISTRAL_MODEL\", \"\").strip() or \"mistral-small-latest\""` | — |
+| [SRC-1AE03B9EC3-L000689](../../agents/web_agent.py#L689) | 689 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L000690](../../agents/web_agent.py#L690) | 690 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L000691](../../agents/web_agent.py#L691) | 691 | `"            primary_provider, primary_api_key = \"openrouter\", \"\""` | — |
+| [SRC-1AE03B9EC3-L000692](../../agents/web_agent.py#L692) | 692 | `"            primary_base_url = configured_base_url"` | — |
+| [SRC-1AE03B9EC3-L000693](../../agents/web_agent.py#L693) | 693 | `"            default_answer_model = \"google/gemma-4-31b-it:free\""` | — |
+| [SRC-1AE03B9EC3-L000694](../../agents/web_agent.py#L694) | 694 | `""` | — |
+| [SRC-1AE03B9EC3-L000695](../../agents/web_agent.py#L695) | 695 | `"        self.primary_provider = primary_provider"` | — |
+| [SRC-1AE03B9EC3-L000696](../../agents/web_agent.py#L696) | 696 | `"        self.api_key, self.base_url = primary_api_key, primary_base_url"` | — |
+| [SRC-1AE03B9EC3-L000697](../../agents/web_agent.py#L697) | 697 | `"        # Legacy research keeps its current connector policy; structured workspace"` | — |
+| [SRC-1AE03B9EC3-L000698](../../agents/web_agent.py#L698) | 698 | `"        # discovery can disable optional providers per request."` | — |
+| [SRC-1AE03B9EC3-L000699](../../agents/web_agent.py#L699) | 699 | `"        self.allow_optional_providers = True"` | — |
+| [SRC-1AE03B9EC3-L000700](../../agents/web_agent.py#L700) | 700 | `"        self.answer_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000701](../../agents/web_agent.py#L701) | 701 | `"            \"OMARAI_ANSWER_MODEL\", global_model or default_answer_model"` | — |
+| [SRC-1AE03B9EC3-L000702](../../agents/web_agent.py#L702) | 702 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000703](../../agents/web_agent.py#L703) | 703 | `"        planner_default = ("` | — |
+| [SRC-1AE03B9EC3-L000704](../../agents/web_agent.py#L704) | 704 | `"            \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
+| [SRC-1AE03B9EC3-L000705](../../agents/web_agent.py#L705) | 705 | `"            if primary_provider in {\"openrouter\", \"custom\"}"` | — |
+| [SRC-1AE03B9EC3-L000706](../../agents/web_agent.py#L706) | 706 | `"            else self.answer_model"` | — |
+| [SRC-1AE03B9EC3-L000707](../../agents/web_agent.py#L707) | 707 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000708](../../agents/web_agent.py#L708) | 708 | `"        self.planner_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000709](../../agents/web_agent.py#L709) | 709 | `"            \"OMARAI_PLANNER_MODEL\", global_model or planner_default"` | — |
+| [SRC-1AE03B9EC3-L000710](../../agents/web_agent.py#L710) | 710 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000711](../../agents/web_agent.py#L711) | 711 | `"        self.review_model = os.getenv(\"OMARAI_REVIEW_MODEL\", self.answer_model).strip()"` | — |
+| [SRC-1AE03B9EC3-L000712](../../agents/web_agent.py#L712) | 712 | `"        verifier_default = ("` | — |
+| [SRC-1AE03B9EC3-L000713](../../agents/web_agent.py#L713) | 713 | `"            \"nvidia/nemotron-3-ultra-550b-a55b:free\""` | — |
+| [SRC-1AE03B9EC3-L000714](../../agents/web_agent.py#L714) | 714 | `"            if primary_provider in {\"openrouter\", \"custom\"}"` | — |
+| [SRC-1AE03B9EC3-L000715](../../agents/web_agent.py#L715) | 715 | `"            else self.answer_model"` | — |
+| [SRC-1AE03B9EC3-L000716](../../agents/web_agent.py#L716) | 716 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000717](../../agents/web_agent.py#L717) | 717 | `"        self.verifier_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000718](../../agents/web_agent.py#L718) | 718 | `"            \"OMARAI_VERIFIER_MODEL\", verifier_default"` | — |
+| [SRC-1AE03B9EC3-L000719](../../agents/web_agent.py#L719) | 719 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000720](../../agents/web_agent.py#L720) | 720 | `"        fallback_default = \"openrouter/free\" if primary_provider == \"openrouter\" else \"\""` | — |
+| [SRC-1AE03B9EC3-L000721](../../agents/web_agent.py#L721) | 721 | `"        self.fallback_model = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000722](../../agents/web_agent.py#L722) | 722 | `"            \"OMARAI_LLM_FALLBACK_MODEL\", fallback_default"` | — |
+| [SRC-1AE03B9EC3-L000723](../../agents/web_agent.py#L723) | 723 | `"        ).strip()"` | — |
+| [SRC-1AE03B9EC3-L000724](../../agents/web_agent.py#L724) | 724 | `""` | — |
+| [SRC-1AE03B9EC3-L000725](../../agents/web_agent.py#L725) | 725 | `"        self.model_providers: list[dict[str, str]] = []"` | — |
+| [SRC-1AE03B9EC3-L000726](../../agents/web_agent.py#L726) | 726 | `"        if primary_api_key:"` | — |
+| [SRC-1AE03B9EC3-L000727](../../agents/web_agent.py#L727) | 727 | `"            self.model_providers.append({"` | — |
+| [SRC-1AE03B9EC3-L000728](../../agents/web_agent.py#L728) | 728 | `"                \"name\": primary_provider,"` | — |
+| [SRC-1AE03B9EC3-L000729](../../agents/web_agent.py#L729) | 729 | `"                \"api_key\": primary_api_key,"` | — |
+| [SRC-1AE03B9EC3-L000730](../../agents/web_agent.py#L730) | 730 | `"                \"base_url\": primary_base_url,"` | — |
+| [SRC-1AE03B9EC3-L000731](../../agents/web_agent.py#L731) | 731 | `"                \"model\": self.answer_model,"` | — |
+| [SRC-1AE03B9EC3-L000732](../../agents/web_agent.py#L732) | 732 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L000733](../../agents/web_agent.py#L733) | 733 | `"        if gemini_api_key and primary_provider != \"gemini\":"` | — |
+| [SRC-1AE03B9EC3-L000734](../../agents/web_agent.py#L734) | 734 | `"            self.model_providers.append({"` | — |
+| [SRC-1AE03B9EC3-L000735](../../agents/web_agent.py#L735) | 735 | `"                \"name\": \"gemini\","` | — |
+| [SRC-1AE03B9EC3-L000736](../../agents/web_agent.py#L736) | 736 | `"                \"api_key\": gemini_api_key,"` | — |
+| [SRC-1AE03B9EC3-L000737](../../agents/web_agent.py#L737) | 737 | `"                \"base_url\": \"https://generativelanguage.googleapis.com/v1beta/openai\","` | — |
+| [SRC-1AE03B9EC3-L000738](../../agents/web_agent.py#L738) | 738 | `"                \"model\": os.getenv(\"OMARAI_GEMINI_MODEL\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000739](../../agents/web_agent.py#L739) | 739 | `"                or \"gemini-3.1-flash-lite\","` | — |
+| [SRC-1AE03B9EC3-L000740](../../agents/web_agent.py#L740) | 740 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L000741](../../agents/web_agent.py#L741) | 741 | `"        if mistral_api_key and primary_provider != \"mistral\":"` | — |
+| [SRC-1AE03B9EC3-L000742](../../agents/web_agent.py#L742) | 742 | `"            self.model_providers.append({"` | — |
+| [SRC-1AE03B9EC3-L000743](../../agents/web_agent.py#L743) | 743 | `"                \"name\": \"mistral\","` | — |
+| [SRC-1AE03B9EC3-L000744](../../agents/web_agent.py#L744) | 744 | `"                \"api_key\": mistral_api_key,"` | — |
+| [SRC-1AE03B9EC3-L000745](../../agents/web_agent.py#L745) | 745 | `"                \"base_url\": \"https://api.mistral.ai/v1\","` | — |
+| [SRC-1AE03B9EC3-L000746](../../agents/web_agent.py#L746) | 746 | `"                \"model\": os.getenv(\"OMARAI_MISTRAL_MODEL\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000747](../../agents/web_agent.py#L747) | 747 | `"                or \"mistral-small-latest\","` | — |
+| [SRC-1AE03B9EC3-L000748](../../agents/web_agent.py#L748) | 748 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L000749](../../agents/web_agent.py#L749) | 749 | `""` | — |
+| [SRC-1AE03B9EC3-L000750](../../agents/web_agent.py#L750) | 750 | `"        self.model = self.answer_model  # Backwards-compatible alias."` | — |
+| [SRC-1AE03B9EC3-L000751](../../agents/web_agent.py#L751) | 751 | `"        self.model_usage: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L000752](../../agents/web_agent.py#L752) | 752 | `"        # Per-answer, bounded diagnostics contain only model identifiers and status metadata."` | — |
+| [SRC-1AE03B9EC3-L000753](../../agents/web_agent.py#L753) | 753 | `"        # They intentionally exclude prompts, generated text, and provider response bodies."` | — |
+| [SRC-1AE03B9EC3-L000754](../../agents/web_agent.py#L754) | 754 | `"        self.generation_diagnostics: list[dict[str, str]] = []"` | — |
+| [SRC-1AE03B9EC3-L000755](../../agents/web_agent.py#L755) | 755 | `"        self.server_search_sources: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L000756](../../agents/web_agent.py#L756) | 756 | `"        self._provider_diagnostics: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L000757](../../agents/web_agent.py#L757) | 757 | `"        self._provider_diagnostics_lock = threading.Lock()"` | — |
+| [SRC-1AE03B9EC3-L000758](../../agents/web_agent.py#L758) | 758 | `"        self._deepseek_budget_lock = threading.Lock()"` | — |
+| [SRC-1AE03B9EC3-L000759](../../agents/web_agent.py#L759) | 759 | `"        self._deepseek_search_requests_reserved = 0"` | — |
+| [SRC-1AE03B9EC3-L000760](../../agents/web_agent.py#L760) | 760 | `"        self.openrouter_web_search_enabled = ("` | — |
+| [SRC-1AE03B9EC3-L000761](../../agents/web_agent.py#L761) | 761 | `"            os.getenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"\").strip() == \"1\""` | — |
+| [SRC-1AE03B9EC3-L000762](../../agents/web_agent.py#L762) | 762 | `"            and (urllib.parse.urlsplit(self.base_url).hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-1AE03B9EC3-L000763](../../agents/web_agent.py#L763) | 763 | `"            == \"openrouter.ai\""` | — |
+| [SRC-1AE03B9EC3-L000764](../../agents/web_agent.py#L764) | 764 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000765](../../agents/web_agent.py#L765) | 765 | `"        self.timeout = max("` | — |
+| [SRC-1AE03B9EC3-L000766](../../agents/web_agent.py#L766) | 766 | `"            5, min(int(os.getenv(\"OMARAI_LLM_TIMEOUT\", str(LLM_TIMEOUT_SECONDS))), 60)"` | — |
+| [SRC-1AE03B9EC3-L000767](../../agents/web_agent.py#L767) | 767 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000768](../../agents/web_agent.py#L768) | 768 | `"        self._request_budget: RequestBudget \| None = None"` | — |
+| [SRC-1AE03B9EC3-L000769](../../agents/web_agent.py#L769) | 769 | `""` | — |
+| [SRC-1AE03B9EC3-L000770](../../agents/web_agent.py#L770) | 770 | `"    def _effective_timeout(self, configured_seconds: float) -> float:"` | — |
+| [SRC-1AE03B9EC3-L000771](../../agents/web_agent.py#L771) | 771 | `"        \"\"\"Limit one outbound operation to the remaining per-answer time budget.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000772](../../agents/web_agent.py#L772) | 772 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L000773](../../agents/web_agent.py#L773) | 773 | `"        if budget is None:"` | — |
+| [SRC-1AE03B9EC3-L000774](../../agents/web_agent.py#L774) | 774 | `"            return float(configured_seconds)"` | — |
+| [SRC-1AE03B9EC3-L000775](../../agents/web_agent.py#L775) | 775 | `"        return budget.timeout_for(configured_seconds)"` | — |
+| [SRC-1AE03B9EC3-L000776](../../agents/web_agent.py#L776) | 776 | `""` | — |
+| [SRC-1AE03B9EC3-L000777](../../agents/web_agent.py#L777) | 777 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L000778](../../agents/web_agent.py#L778) | 778 | `"    def status() -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L000779](../../agents/web_agent.py#L779) | 779 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L000780](../../agents/web_agent.py#L780) | 780 | `"            import bs4  # noqa: F401"` | — |
 | [SRC-1AE03B9EC3-L000781](../../agents/web_agent.py#L781) | 781 | `"            import httpx  # noqa: F401"` | — |
 | [SRC-1AE03B9EC3-L000782](../../agents/web_agent.py#L782) | 782 | `"            search_ready = True"` | — |
 | [SRC-1AE03B9EC3-L000783](../../agents/web_agent.py#L783) | 783 | `"        except ImportError:"` | — |
@@ -707,112 +816,3 @@
 | [SRC-1AE03B9EC3-L001469](../../agents/web_agent.py#L1469) | 1469 | `"                \"runtime_status\": not_tested,"` | — |
 | [SRC-1AE03B9EC3-L001470](../../agents/web_agent.py#L1470) | 1470 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L001471](../../agents/web_agent.py#L1471) | 1471 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001472](../../agents/web_agent.py#L1472) | 1472 | `"                \"name\": \"deepseek_search_api\","` | — |
-| [SRC-1AE03B9EC3-L001473](../../agents/web_agent.py#L1473) | 1473 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001474](../../agents/web_agent.py#L1474) | 1474 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L001475](../../agents/web_agent.py#L1475) | 1475 | `"                    \"configured\" if status.get(\"deepseek_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001476](../../agents/web_agent.py#L1476) | 1476 | `"                    else \"not_configured\""` | — |
-| [SRC-1AE03B9EC3-L001477](../../agents/web_agent.py#L1477) | 1477 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001478](../../agents/web_agent.py#L1478) | 1478 | `"                \"runtime_status\": not_tested if status.get(\"deepseek_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001479](../../agents/web_agent.py#L1479) | 1479 | `"                else \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001480](../../agents/web_agent.py#L1480) | 1480 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001481](../../agents/web_agent.py#L1481) | 1481 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001482](../../agents/web_agent.py#L1482) | 1482 | `"                \"name\": \"brave_search_api\","` | — |
-| [SRC-1AE03B9EC3-L001483](../../agents/web_agent.py#L1483) | 1483 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001484](../../agents/web_agent.py#L1484) | 1484 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L001485](../../agents/web_agent.py#L1485) | 1485 | `"                    \"configured\" if status.get(\"brave_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001486](../../agents/web_agent.py#L1486) | 1486 | `"                    else \"not_configured\""` | — |
-| [SRC-1AE03B9EC3-L001487](../../agents/web_agent.py#L1487) | 1487 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001488](../../agents/web_agent.py#L1488) | 1488 | `"                \"runtime_status\": not_tested if status.get(\"brave_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001489](../../agents/web_agent.py#L1489) | 1489 | `"                else \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001490](../../agents/web_agent.py#L1490) | 1490 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001491](../../agents/web_agent.py#L1491) | 1491 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001492](../../agents/web_agent.py#L1492) | 1492 | `"                \"name\": \"tavily_search_api\","` | — |
-| [SRC-1AE03B9EC3-L001493](../../agents/web_agent.py#L1493) | 1493 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001494](../../agents/web_agent.py#L1494) | 1494 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L001495](../../agents/web_agent.py#L1495) | 1495 | `"                    \"configured\" if status.get(\"tavily_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001496](../../agents/web_agent.py#L1496) | 1496 | `"                    else \"not_configured\""` | — |
-| [SRC-1AE03B9EC3-L001497](../../agents/web_agent.py#L1497) | 1497 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001498](../../agents/web_agent.py#L1498) | 1498 | `"                \"runtime_status\": not_tested if status.get(\"tavily_search_api_configured\")"` | — |
-| [SRC-1AE03B9EC3-L001499](../../agents/web_agent.py#L1499) | 1499 | `"                else \"not_configured\","` | — |
-| [SRC-1AE03B9EC3-L001500](../../agents/web_agent.py#L1500) | 1500 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001501](../../agents/web_agent.py#L1501) | 1501 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001502](../../agents/web_agent.py#L1502) | 1502 | `"                \"name\": \"openrouter_web_search\","` | — |
-| [SRC-1AE03B9EC3-L001503](../../agents/web_agent.py#L1503) | 1503 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001504](../../agents/web_agent.py#L1504) | 1504 | `"                \"configuration_status\": ("` | — |
-| [SRC-1AE03B9EC3-L001505](../../agents/web_agent.py#L1505) | 1505 | `"                    \"enabled\" if status.get(\"openrouter_web_search_enabled\")"` | — |
-| [SRC-1AE03B9EC3-L001506](../../agents/web_agent.py#L1506) | 1506 | `"                    else \"disabled\""` | — |
-| [SRC-1AE03B9EC3-L001507](../../agents/web_agent.py#L1507) | 1507 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001508](../../agents/web_agent.py#L1508) | 1508 | `"                \"runtime_status\": not_tested if status.get(\"openrouter_web_search_enabled\")"` | — |
-| [SRC-1AE03B9EC3-L001509](../../agents/web_agent.py#L1509) | 1509 | `"                else \"disabled\","` | — |
-| [SRC-1AE03B9EC3-L001510](../../agents/web_agent.py#L1510) | 1510 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001511](../../agents/web_agent.py#L1511) | 1511 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L001512](../../agents/web_agent.py#L1512) | 1512 | `"        return {"` | — |
-| [SRC-1AE03B9EC3-L001513](../../agents/web_agent.py#L1513) | 1513 | `"            \"web_search\": {"` | — |
-| [SRC-1AE03B9EC3-L001514](../../agents/web_agent.py#L1514) | 1514 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001515](../../agents/web_agent.py#L1515) | 1515 | `"                \"local_dependencies_ready\": bool(status.get(\"web_search_ready\")),"` | — |
-| [SRC-1AE03B9EC3-L001516](../../agents/web_agent.py#L1516) | 1516 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001517](../../agents/web_agent.py#L1517) | 1517 | `"                \"providers\": providers,"` | — |
-| [SRC-1AE03B9EC3-L001518](../../agents/web_agent.py#L1518) | 1518 | `"                \"semantics\": ("` | — |
-| [SRC-1AE03B9EC3-L001519](../../agents/web_agent.py#L1519) | 1519 | `"                    \"Configuration and installed dependencies do not prove that a live \""` | — |
-| [SRC-1AE03B9EC3-L001520](../../agents/web_agent.py#L1520) | 1520 | `"                    \"network request will succeed.\""` | — |
-| [SRC-1AE03B9EC3-L001521](../../agents/web_agent.py#L1521) | 1521 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001522](../../agents/web_agent.py#L1522) | 1522 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001523](../../agents/web_agent.py#L1523) | 1523 | `"            \"language_model\": {"` | — |
-| [SRC-1AE03B9EC3-L001524](../../agents/web_agent.py#L1524) | 1524 | `"                \"configured\": bool(status.get(\"language_model_configured\")),"` | — |
-| [SRC-1AE03B9EC3-L001525](../../agents/web_agent.py#L1525) | 1525 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001526](../../agents/web_agent.py#L1526) | 1526 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001527](../../agents/web_agent.py#L1527) | 1527 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L001528](../../agents/web_agent.py#L1528) | 1528 | `""` | — |
-| [SRC-1AE03B9EC3-L001529](../../agents/web_agent.py#L1529) | 1529 | `"    def _self_description_answer(self, question: str) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L001530](../../agents/web_agent.py#L1530) | 1530 | `"        \"\"\"Answer self/capability questions without inventing a live health result.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001531](../../agents/web_agent.py#L1531) | 1531 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001532](../../agents/web_agent.py#L1532) | 1532 | `"        current_search_question = self._is_current_search_status_question(question)"` | — |
-| [SRC-1AE03B9EC3-L001533](../../agents/web_agent.py#L1533) | 1533 | `""` | — |
-| [SRC-1AE03B9EC3-L001534](../../agents/web_agent.py#L1534) | 1534 | `"        if current_search_question:"` | — |
-| [SRC-1AE03B9EC3-L001535](../../agents/web_agent.py#L1535) | 1535 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L001536](../../agents/web_agent.py#L1536) | 1536 | `"                \"لا، لم أنفّذ بحثًا حيًا للإجابة عن هذا السؤال تحديدًا؛ هذا السؤال عن \""` | — |
-| [SRC-1AE03B9EC3-L001537](../../agents/web_agent.py#L1537) | 1537 | `"                \"طريقة عملي، ولذلك لم أبدأ بحث ويب في هذه الجولة. هذا لا يعني أن البحث \""` | — |
-| [SRC-1AE03B9EC3-L001538](../../agents/web_agent.py#L1538) | 1538 | `"                \"غير متاح؛ عند تنفيذ طلب يحتاج إلى معلومات حديثة سأوضح هل جرت محاولة البحث، \""` | — |
-| [SRC-1AE03B9EC3-L001539](../../agents/web_agent.py#L1539) | 1539 | `"                \"وما النتائج التي عادت، وما إذا اكتملت الإجابة.\""` | — |
-| [SRC-1AE03B9EC3-L001540](../../agents/web_agent.py#L1540) | 1540 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001541](../../agents/web_agent.py#L1541) | 1541 | `"            result = self._local_answer_result(question, answer, \"capability_answer\")"` | — |
-| [SRC-1AE03B9EC3-L001542](../../agents/web_agent.py#L1542) | 1542 | `"            result[\"request_execution_status\"] = {"` | — |
-| [SRC-1AE03B9EC3-L001543](../../agents/web_agent.py#L1543) | 1543 | `"                \"search_attempted\": False,"` | — |
-| [SRC-1AE03B9EC3-L001544](../../agents/web_agent.py#L1544) | 1544 | `"                \"search_outcome\": \"not_attempted\","` | — |
-| [SRC-1AE03B9EC3-L001545](../../agents/web_agent.py#L1545) | 1545 | `"                \"semantics\": \"status_of_this_request_only\","` | — |
-| [SRC-1AE03B9EC3-L001546](../../agents/web_agent.py#L1546) | 1546 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L001547](../../agents/web_agent.py#L1547) | 1547 | `"            result[\"capability_status\"] = self._capability_status_snapshot()"` | — |
-| [SRC-1AE03B9EC3-L001548](../../agents/web_agent.py#L1548) | 1548 | `"            return result"` | — |
-| [SRC-1AE03B9EC3-L001549](../../agents/web_agent.py#L1549) | 1549 | `""` | — |
-| [SRC-1AE03B9EC3-L001550](../../agents/web_agent.py#L1550) | 1550 | `"        capability_phrases = ("` | — |
-| [SRC-1AE03B9EC3-L001551](../../agents/web_agent.py#L1551) | 1551 | `"            \"كيف تستطيع مساعدتي\", \"ازاي تقدر تساعدني\", \"ازاي ممكن تساعدني\","` | — |
-| [SRC-1AE03B9EC3-L001552](../../agents/web_agent.py#L1552) | 1552 | `"            \"ماذا تستطيع ان تفعل\", \"ما الذي تستطيع فعله\", \"ايه اللي تقدر تعمله\","` | — |
-| [SRC-1AE03B9EC3-L001553](../../agents/web_agent.py#L1553) | 1553 | `"            \"what can you do\", \"how can you help me\","` | — |
-| [SRC-1AE03B9EC3-L001554](../../agents/web_agent.py#L1554) | 1554 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001555](../../agents/web_agent.py#L1555) | 1555 | `"        if any(term in value for term in capability_phrases):"` | — |
-| [SRC-1AE03B9EC3-L001556](../../agents/web_agent.py#L1556) | 1556 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L001557](../../agents/web_agent.py#L1557) | 1557 | `"                \"أقدر أساعدك في شرح الأسئلة ووضع خطط عملية، كما يتضمن Omarai مسارًا \""` | — |
-| [SRC-1AE03B9EC3-L001558](../../agents/web_agent.py#L1558) | 1558 | `"                \"للبحث في الويب عند الحاجة إلى معلومات حديثة أو روابط أو مقارنة خيارات. \""` | — |
-| [SRC-1AE03B9EC3-L001559](../../agents/web_agent.py#L1559) | 1559 | `"                \"سأوضح في كل مهمة ما إذا نُفذ البحث فعلًا وما المصادر التي أمكن جمعها، \""` | — |
-| [SRC-1AE03B9EC3-L001560](../../agents/web_agent.py#L1560) | 1560 | `"                \"وما الذي لم يمكن التحقق منه. قد تعمل بعض الموصلات الاختيارية فقط عند \""` | — |
-| [SRC-1AE03B9EC3-L001561](../../agents/web_agent.py#L1561) | 1561 | `"                \"ضبط إعداداتها، ولا أضمن الوصول إلى كل موقع أو إلى المجموعات والمنشورات \""` | — |
-| [SRC-1AE03B9EC3-L001562](../../agents/web_agent.py#L1562) | 1562 | `"                \"الخاصة. لم أجرِ اختبار اتصال حي في هذه الإجابة.\""` | — |
-| [SRC-1AE03B9EC3-L001563](../../agents/web_agent.py#L1563) | 1563 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001564](../../agents/web_agent.py#L1564) | 1564 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L001565](../../agents/web_agent.py#L1565) | 1565 | `"            status = self.status()"` | — |
-| [SRC-1AE03B9EC3-L001566](../../agents/web_agent.py#L1566) | 1566 | `"            providers = [\"DuckDuckGo HTML\", \"Bing RSS\"]"` | — |
-| [SRC-1AE03B9EC3-L001567](../../agents/web_agent.py#L1567) | 1567 | `"            providers.append(\"Google News RSS عند ملاءمة السؤال أو الحاجة إلى معلومات حديثة\")"` | — |
-| [SRC-1AE03B9EC3-L001568](../../agents/web_agent.py#L1568) | 1568 | `"            if status.get(\"deepseek_search_api_configured\"):"` | — |
-| [SRC-1AE03B9EC3-L001569](../../agents/web_agent.py#L1569) | 1569 | `"                providers.append("` | — |
-| [SRC-1AE03B9EC3-L001570](../../agents/web_agent.py#L1570) | 1570 | `"                    \"DeepSeek Search API (مفتاحه مضبوط، لكنه غير مختبر في هذه الإجابة \""` | — |
-| [SRC-1AE03B9EC3-L001571](../../agents/web_agent.py#L1571) | 1571 | `"                    \"وقد يستهلك استخدامًا مدفوعًا)\""` | — |
-| [SRC-1AE03B9EC3-L001572](../../agents/web_agent.py#L1572) | 1572 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L001573](../../agents/web_agent.py#L1573) | 1573 | `"            if status.get(\"brave_search_api_configured\"):"` | — |
-| [SRC-1AE03B9EC3-L001574](../../agents/web_agent.py#L1574) | 1574 | `"                providers.append(\"Brave Search API (الإعداد موجود، وليس دليلًا على نجاح الاتصال)\")"` | — |
-| [SRC-1AE03B9EC3-L001575](../../agents/web_agent.py#L1575) | 1575 | `"            if status.get(\"tavily_search_api_configured\"):"` | — |
-| [SRC-1AE03B9EC3-L001576](../../agents/web_agent.py#L1576) | 1576 | `"                providers.append(\"Tavily Search API (الإعداد موجود، وليس دليلًا على نجاح الاتصال)\")"` | — |
-| [SRC-1AE03B9EC3-L001577](../../agents/web_agent.py#L1577) | 1577 | `"            if status.get(\"openrouter_web_search_enabled\"):"` | — |
-| [SRC-1AE03B9EC3-L001578](../../agents/web_agent.py#L1578) | 1578 | `"                providers.append(\"بحث OpenRouter المباشر (مفعّل بالإعداد، وقد يستهلك رصيدًا)\")"` | — |
-| [SRC-1AE03B9EC3-L001579](../../agents/web_agent.py#L1579) | 1579 | `"            answer = ("` | — |
-| [SRC-1AE03B9EC3-L001580](../../agents/web_agent.py#L1580) | 1580 | `"                \"بحسب الكود الحالي، يتضمن Omarai مسار بحث ويب يستخدم: \""` | — |

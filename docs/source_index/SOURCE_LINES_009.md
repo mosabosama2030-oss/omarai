@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000560 إلى SRC-686F71AA50-L000158
+- النطاق: SRC-8D00DCEC0D-L000451 إلى SRC-686F71AA50-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,115 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000451](../../agents/sales_domain.py#L451) | 451 | `"            _enum_value(ProductFit, self.product_fit, field_name=\"product_fit\"),"` | — |
+| [SRC-8D00DCEC0D-L000452](../../agents/sales_domain.py#L452) | 452 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000453](../../agents/sales_domain.py#L453) | 453 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000454](../../agents/sales_domain.py#L454) | 454 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000455](../../agents/sales_domain.py#L455) | 455 | `"            \"identity_status\","` | — |
+| [SRC-8D00DCEC0D-L000456](../../agents/sales_domain.py#L456) | 456 | `"            _enum_value(IdentityStatus, self.identity_status, field_name=\"identity_status\"),"` | — |
+| [SRC-8D00DCEC0D-L000457](../../agents/sales_domain.py#L457) | 457 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000458](../../agents/sales_domain.py#L458) | 458 | `"        if not isinstance(self.evidence, DemandEvidence):"` | — |
+| [SRC-8D00DCEC0D-L000459](../../agents/sales_domain.py#L459) | 459 | `"            raise TypeError(\"evidence must be a DemandEvidence instance\")"` | — |
+| [SRC-8D00DCEC0D-L000460](../../agents/sales_domain.py#L460) | 460 | `"        for name in (\"classification_reason\", \"product_fit_reason\"):"` | — |
+| [SRC-8D00DCEC0D-L000461](../../agents/sales_domain.py#L461) | 461 | `"            value = getattr(self, name)"` | — |
+| [SRC-8D00DCEC0D-L000462](../../agents/sales_domain.py#L462) | 462 | `"            if not isinstance(value, str):"` | — |
+| [SRC-8D00DCEC0D-L000463](../../agents/sales_domain.py#L463) | 463 | `"                raise TypeError(f\"{name} must be a string\")"` | — |
+| [SRC-8D00DCEC0D-L000464](../../agents/sales_domain.py#L464) | 464 | `"            if len(value) > 500:"` | — |
+| [SRC-8D00DCEC0D-L000465](../../agents/sales_domain.py#L465) | 465 | `"                raise ValueError(f\"{name} exceeds 500 characters\")"` | — |
+| [SRC-8D00DCEC0D-L000466](../../agents/sales_domain.py#L466) | 466 | `"        if self.product_fit == ProductFit.UNASSESSED and self.product_fit_reason:"` | — |
+| [SRC-8D00DCEC0D-L000467](../../agents/sales_domain.py#L467) | 467 | `"            raise ValueError(\"unassessed product fit must not have a fit rationale\")"` | — |
+| [SRC-8D00DCEC0D-L000468](../../agents/sales_domain.py#L468) | 468 | `"        if self.product_fit != ProductFit.UNASSESSED and not self.product_fit_reason.strip():"` | — |
+| [SRC-8D00DCEC0D-L000469](../../agents/sales_domain.py#L469) | 469 | `"            raise ValueError(\"assessed product fit requires a rationale\")"` | — |
+| [SRC-8D00DCEC0D-L000470](../../agents/sales_domain.py#L470) | 470 | `""` | — |
+| [SRC-8D00DCEC0D-L000471](../../agents/sales_domain.py#L471) | 471 | `"    def to_dict(self) -> dict[str, object]:"` | — |
+| [SRC-8D00DCEC0D-L000472](../../agents/sales_domain.py#L472) | 472 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000473](../../agents/sales_domain.py#L473) | 473 | `"            \"signal_id\": self.signal_id,"` | — |
+| [SRC-8D00DCEC0D-L000474](../../agents/sales_domain.py#L474) | 474 | `"            \"signal_type\": self.signal_type.value,"` | — |
+| [SRC-8D00DCEC0D-L000475](../../agents/sales_domain.py#L475) | 475 | `"            \"evidence\": self.evidence.to_dict(),"` | — |
+| [SRC-8D00DCEC0D-L000476](../../agents/sales_domain.py#L476) | 476 | `"            \"product_fit\": self.product_fit.value,"` | — |
+| [SRC-8D00DCEC0D-L000477](../../agents/sales_domain.py#L477) | 477 | `"            \"identity_status\": self.identity_status.value,"` | — |
+| [SRC-8D00DCEC0D-L000478](../../agents/sales_domain.py#L478) | 478 | `"            \"classification_reason\": self.classification_reason,"` | — |
+| [SRC-8D00DCEC0D-L000479](../../agents/sales_domain.py#L479) | 479 | `"            \"product_fit_reason\": self.product_fit_reason,"` | — |
+| [SRC-8D00DCEC0D-L000480](../../agents/sales_domain.py#L480) | 480 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000481](../../agents/sales_domain.py#L481) | 481 | `""` | — |
+| [SRC-8D00DCEC0D-L000482](../../agents/sales_domain.py#L482) | 482 | `""` | — |
+| [SRC-8D00DCEC0D-L000483](../../agents/sales_domain.py#L483) | 483 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000484](../../agents/sales_domain.py#L484) | 484 | `"class LeadQualification:"` | — |
+| [SRC-8D00DCEC0D-L000485](../../agents/sales_domain.py#L485) | 485 | `"    \"\"\"Independent qualification dimensions; deliberately contains no purchase score.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000486](../../agents/sales_domain.py#L486) | 486 | `""` | — |
+| [SRC-8D00DCEC0D-L000487](../../agents/sales_domain.py#L487) | 487 | `"    signal_id: str"` | — |
+| [SRC-8D00DCEC0D-L000488](../../agents/sales_domain.py#L488) | 488 | `"    product_fit: ProductFit = ProductFit.UNASSESSED"` | — |
+| [SRC-8D00DCEC0D-L000489](../../agents/sales_domain.py#L489) | 489 | `"    source_quality: SourceQuality = SourceQuality.UNKNOWN"` | — |
+| [SRC-8D00DCEC0D-L000490](../../agents/sales_domain.py#L490) | 490 | `"    freshness: FreshnessStatus = FreshnessStatus.UNKNOWN"` | — |
+| [SRC-8D00DCEC0D-L000491](../../agents/sales_domain.py#L491) | 491 | `"    identity_status: IdentityStatus = IdentityStatus.UNKNOWN"` | — |
+| [SRC-8D00DCEC0D-L000492](../../agents/sales_domain.py#L492) | 492 | `"    contactability: ContactabilityStatus = ContactabilityStatus.NOT_ASSESSED"` | — |
+| [SRC-8D00DCEC0D-L000493](../../agents/sales_domain.py#L493) | 493 | `"    missing_information: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000494](../../agents/sales_domain.py#L494) | 494 | `""` | — |
+| [SRC-8D00DCEC0D-L000495](../../agents/sales_domain.py#L495) | 495 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000496](../../agents/sales_domain.py#L496) | 496 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000497](../../agents/sales_domain.py#L497) | 497 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000498](../../agents/sales_domain.py#L498) | 498 | `"            \"signal_id\","` | — |
+| [SRC-8D00DCEC0D-L000499](../../agents/sales_domain.py#L499) | 499 | `"            _clean_text(self.signal_id, field_name=\"signal_id\", maximum=160),"` | — |
+| [SRC-8D00DCEC0D-L000500](../../agents/sales_domain.py#L500) | 500 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000501](../../agents/sales_domain.py#L501) | 501 | `"        for name, enum_type in ("` | — |
+| [SRC-8D00DCEC0D-L000502](../../agents/sales_domain.py#L502) | 502 | `"            (\"product_fit\", ProductFit),"` | — |
+| [SRC-8D00DCEC0D-L000503](../../agents/sales_domain.py#L503) | 503 | `"            (\"source_quality\", SourceQuality),"` | — |
+| [SRC-8D00DCEC0D-L000504](../../agents/sales_domain.py#L504) | 504 | `"            (\"freshness\", FreshnessStatus),"` | — |
+| [SRC-8D00DCEC0D-L000505](../../agents/sales_domain.py#L505) | 505 | `"            (\"identity_status\", IdentityStatus),"` | — |
+| [SRC-8D00DCEC0D-L000506](../../agents/sales_domain.py#L506) | 506 | `"            (\"contactability\", ContactabilityStatus),"` | — |
+| [SRC-8D00DCEC0D-L000507](../../agents/sales_domain.py#L507) | 507 | `"        ):"` | — |
+| [SRC-8D00DCEC0D-L000508](../../agents/sales_domain.py#L508) | 508 | `"            object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000509](../../agents/sales_domain.py#L509) | 509 | `"                self,"` | — |
+| [SRC-8D00DCEC0D-L000510](../../agents/sales_domain.py#L510) | 510 | `"                name,"` | — |
+| [SRC-8D00DCEC0D-L000511](../../agents/sales_domain.py#L511) | 511 | `"                _enum_value(enum_type, getattr(self, name), field_name=name),"` | — |
+| [SRC-8D00DCEC0D-L000512](../../agents/sales_domain.py#L512) | 512 | `"            )"` | — |
+| [SRC-8D00DCEC0D-L000513](../../agents/sales_domain.py#L513) | 513 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000514](../../agents/sales_domain.py#L514) | 514 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000515](../../agents/sales_domain.py#L515) | 515 | `"            \"missing_information\","` | — |
+| [SRC-8D00DCEC0D-L000516](../../agents/sales_domain.py#L516) | 516 | `"            _clean_terms(self.missing_information, field_name=\"missing_information\"),"` | — |
+| [SRC-8D00DCEC0D-L000517](../../agents/sales_domain.py#L517) | 517 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000518](../../agents/sales_domain.py#L518) | 518 | `""` | — |
+| [SRC-8D00DCEC0D-L000519](../../agents/sales_domain.py#L519) | 519 | `"    def to_dict(self) -> dict[str, object]:"` | — |
+| [SRC-8D00DCEC0D-L000520](../../agents/sales_domain.py#L520) | 520 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000521](../../agents/sales_domain.py#L521) | 521 | `"            \"signal_id\": self.signal_id,"` | — |
+| [SRC-8D00DCEC0D-L000522](../../agents/sales_domain.py#L522) | 522 | `"            \"product_fit\": self.product_fit.value,"` | — |
+| [SRC-8D00DCEC0D-L000523](../../agents/sales_domain.py#L523) | 523 | `"            \"source_quality\": self.source_quality.value,"` | — |
+| [SRC-8D00DCEC0D-L000524](../../agents/sales_domain.py#L524) | 524 | `"            \"freshness\": self.freshness.value,"` | — |
+| [SRC-8D00DCEC0D-L000525](../../agents/sales_domain.py#L525) | 525 | `"            \"identity_status\": self.identity_status.value,"` | — |
+| [SRC-8D00DCEC0D-L000526](../../agents/sales_domain.py#L526) | 526 | `"            \"contactability\": self.contactability.value,"` | — |
+| [SRC-8D00DCEC0D-L000527](../../agents/sales_domain.py#L527) | 527 | `"            \"missing_information\": list(self.missing_information),"` | — |
+| [SRC-8D00DCEC0D-L000528](../../agents/sales_domain.py#L528) | 528 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000529](../../agents/sales_domain.py#L529) | 529 | `""` | — |
+| [SRC-8D00DCEC0D-L000530](../../agents/sales_domain.py#L530) | 530 | `""` | — |
+| [SRC-8D00DCEC0D-L000531](../../agents/sales_domain.py#L531) | 531 | `""` | — |
+| [SRC-8D00DCEC0D-L000532](../../agents/sales_domain.py#L532) | 532 | `"MAX_BUYER_QUERY_COUNT = 8"` | — |
+| [SRC-8D00DCEC0D-L000533](../../agents/sales_domain.py#L533) | 533 | `""` | — |
+| [SRC-8D00DCEC0D-L000534](../../agents/sales_domain.py#L534) | 534 | `""` | — |
+| [SRC-8D00DCEC0D-L000535](../../agents/sales_domain.py#L535) | 535 | `"def build_buyer_queries("` | — |
+| [SRC-8D00DCEC0D-L000536](../../agents/sales_domain.py#L536) | 536 | `"    product: ProductProfile,"` | — |
+| [SRC-8D00DCEC0D-L000537](../../agents/sales_domain.py#L537) | 537 | `"    market: MarketProfile \| None = None,"` | — |
+| [SRC-8D00DCEC0D-L000538](../../agents/sales_domain.py#L538) | 538 | `"    *,"` | — |
+| [SRC-8D00DCEC0D-L000539](../../agents/sales_domain.py#L539) | 539 | `"    locale: str = \"auto\","` | — |
+| [SRC-8D00DCEC0D-L000540](../../agents/sales_domain.py#L540) | 540 | `"    existing_queries: Iterable[str] = (),"` | — |
+| [SRC-8D00DCEC0D-L000541](../../agents/sales_domain.py#L541) | 541 | `"    limit: int = MAX_BUYER_QUERY_COUNT,"` | — |
+| [SRC-8D00DCEC0D-L000542](../../agents/sales_domain.py#L542) | 542 | `") -> list[str]:"` | — |
+| [SRC-8D00DCEC0D-L000543](../../agents/sales_domain.py#L543) | 543 | `"    \"\"\"Build bounded, product-anchored buyer queries without sector-specific defaults."` | — |
+| [SRC-8D00DCEC0D-L000544](../../agents/sales_domain.py#L544) | 544 | `""` | — |
+| [SRC-8D00DCEC0D-L000545](../../agents/sales_domain.py#L545) | 545 | `"    Product-specific terms come only from ProductProfile. The default intent"` | — |
+| [SRC-8D00DCEC0D-L000546](../../agents/sales_domain.py#L546) | 546 | `"    vocabulary is sector-neutral; category-specific expansions must be supplied"` | — |
+| [SRC-8D00DCEC0D-L000547](../../agents/sales_domain.py#L547) | 547 | `"    by an explicit taxonomy/policy rather than silently defaulting to real estate."` | — |
+| [SRC-8D00DCEC0D-L000548](../../agents/sales_domain.py#L548) | 548 | `"    \"\"\""` | — |
+| [SRC-8D00DCEC0D-L000549](../../agents/sales_domain.py#L549) | 549 | `"    if not isinstance(product, ProductProfile):"` | — |
+| [SRC-8D00DCEC0D-L000550](../../agents/sales_domain.py#L550) | 550 | `"        raise TypeError(\"product must be a ProductProfile instance\")"` | — |
+| [SRC-8D00DCEC0D-L000551](../../agents/sales_domain.py#L551) | 551 | `"    if market is not None and not isinstance(market, MarketProfile):"` | — |
+| [SRC-8D00DCEC0D-L000552](../../agents/sales_domain.py#L552) | 552 | `"        raise TypeError(\"market must be a MarketProfile instance\")"` | — |
+| [SRC-8D00DCEC0D-L000553](../../agents/sales_domain.py#L553) | 553 | `"    if locale not in {\"auto\", \"ar\", \"en\", \"mixed\"}:"` | — |
+| [SRC-8D00DCEC0D-L000554](../../agents/sales_domain.py#L554) | 554 | `"        raise ValueError(\"locale must be auto, ar, en, or mixed\")"` | — |
+| [SRC-8D00DCEC0D-L000555](../../agents/sales_domain.py#L555) | 555 | `"    if not isinstance(limit, int) or isinstance(limit, bool) or not 1 <= limit <= MAX_BUYER_QUERY_COUNT:"` | — |
+| [SRC-8D00DCEC0D-L000556](../../agents/sales_domain.py#L556) | 556 | `"        raise ValueError(f\"limit must be between 1 and {MAX_BUYER_QUERY_COUNT}\")"` | — |
+| [SRC-8D00DCEC0D-L000557](../../agents/sales_domain.py#L557) | 557 | `""` | — |
+| [SRC-8D00DCEC0D-L000558](../../agents/sales_domain.py#L558) | 558 | `"    if locale == \"auto\":"` | — |
+| [SRC-8D00DCEC0D-L000559](../../agents/sales_domain.py#L559) | 559 | `"        locale = \"ar\" if re.search(r\"[\\u0600-\\u06FF]\", product.name) else \"en\""` | — |
 | [SRC-8D00DCEC0D-L000560](../../agents/sales_domain.py#L560) | 560 | `""` | — |
 | [SRC-8D00DCEC0D-L000561](../../agents/sales_domain.py#L561) | 561 | `"    location_suffix = \" \".join(market.locations) if market else \"\""` | — |
 | [SRC-8D00DCEC0D-L000562](../../agents/sales_domain.py#L562) | 562 | `"    product_terms = (product.name, *product.aliases)"` | — |
@@ -734,112 +843,3 @@
 | [SRC-686F71AA50-L000047](../../agents/task_understanding.py#L47) | 47 | `"    \"compare_recommendation_tradeoffs\": \"وازن البدائل وفق احتياج المستخدم وقيوده، وبيّن المفاضلات والمعلومات الناقصة، ولا تعلن فائزًا عامًا دون أساس مقارنة واضح.\","` | — |
 | [SRC-686F71AA50-L000048](../../agents/task_understanding.py#L48) | 48 | `"    \"summarize_only_available_content\": \"لخّص النص المقدم أو الصفحة التي قُرئت فعلًا فقط؛ لا تستنتج محتوى غير مقروء من عنوان أو رابط.\","` | — |
 | [SRC-686F71AA50-L000049](../../agents/task_understanding.py#L49) | 49 | `"    \"qualify_buyer_intent\": \"ميّز إشارة نية شراء صريحة عن إعلان بيع أو صفحة تجارية؛ لا تعتبر الإعلان عميلًا ولا تزعم التحقق من الهوية.\","` | — |
-| [SRC-686F71AA50-L000050](../../agents/task_understanding.py#L50) | 50 | `"    \"prefer_lowest_sufficient_tool\": \"اختر أقل مسار أدوات كافٍ للمهمة؛ لا تبحث في الويب عندما تكفي المادة المقدمة أو الحساب المحلي، ولا تشغّل أداة غير مهيأة أو غير مسموح بها.\","` | — |
-| [SRC-686F71AA50-L000051](../../agents/task_understanding.py#L51) | 51 | `"}"` | — |
-| [SRC-686F71AA50-L000052](../../agents/task_understanding.py#L52) | 52 | `"_REASONING_FAMILY_IDS = {"` | — |
-| [SRC-686F71AA50-L000053](../../agents/task_understanding.py#L53) | 53 | `"    \"official_site_lookup\": (\"verify_official_destination\",),"` | — |
-| [SRC-686F71AA50-L000054](../../agents/task_understanding.py#L54) | 54 | `"    \"social_opinions\": (\"balance_social_evidence\", \"separate_specs_and_experiences\"),"` | — |
-| [SRC-686F71AA50-L000055](../../agents/task_understanding.py#L55) | 55 | `"    \"summarize\": (\"summarize_only_available_content\",),"` | — |
-| [SRC-686F71AA50-L000056](../../agents/task_understanding.py#L56) | 56 | `"    \"troubleshoot\": (\"record_observed_symptoms\", \"rank_testable_hypotheses\", \"verify_primary_technical_docs\", \"prefer_low_risk_steps\"),"` | — |
-| [SRC-686F71AA50-L000057](../../agents/task_understanding.py#L57) | 57 | `"    \"compare\": (\"decompose_explicit_criteria\", \"normalize_comparison_conditions\", \"separate_specs_and_experiences\"),"` | — |
-| [SRC-686F71AA50-L000058](../../agents/task_understanding.py#L58) | 58 | `"    \"how_to\": (\"ordered_safe_procedure\",),"` | — |
-| [SRC-686F71AA50-L000059](../../agents/task_understanding.py#L59) | 59 | `"    \"lead_generation\": (\"qualify_buyer_intent\",),"` | — |
-| [SRC-686F71AA50-L000060](../../agents/task_understanding.py#L60) | 60 | `"    \"recommendation\": (\"compare_recommendation_tradeoffs\",),"` | — |
-| [SRC-686F71AA50-L000061](../../agents/task_understanding.py#L61) | 61 | `"    \"medical_information\": (\"check_health_scope_and_urgency\",),"` | — |
-| [SRC-686F71AA50-L000062](../../agents/task_understanding.py#L62) | 62 | `"    \"legal_information\": (\"check_legal_jurisdiction_and_effective_date\",),"` | — |
-| [SRC-686F71AA50-L000063](../../agents/task_understanding.py#L63) | 63 | `"    \"coding_or_technical_design\": (\"record_observed_symptoms\", \"rank_testable_hypotheses\", \"verify_primary_technical_docs\"),"` | — |
-| [SRC-686F71AA50-L000064](../../agents/task_understanding.py#L64) | 64 | `"    \"data_analysis\": (\"validate_data_before_interpreting\",),"` | — |
-| [SRC-686F71AA50-L000065](../../agents/task_understanding.py#L65) | 65 | `"    \"calculation\": (\"validate_units_and_arithmetic\",),"` | — |
-| [SRC-686F71AA50-L000066](../../agents/task_understanding.py#L66) | 66 | `"    \"translation\": (\"preserve_translation_meaning\",),"` | — |
-| [SRC-686F71AA50-L000067](../../agents/task_understanding.py#L67) | 67 | `"    \"writing_or_editing\": (\"preserve_user_facts_in_writing\",),"` | — |
-| [SRC-686F71AA50-L000068](../../agents/task_understanding.py#L68) | 68 | `"    \"planning\": (\"plan_dependencies_and_fallbacks\",),"` | — |
-| [SRC-686F71AA50-L000069](../../agents/task_understanding.py#L69) | 69 | `"    \"creative_generation\": (\"preserve_user_facts_in_writing\",),"` | — |
-| [SRC-686F71AA50-L000070](../../agents/task_understanding.py#L70) | 70 | `"}"` | — |
-| [SRC-686F71AA50-L000071](../../agents/task_understanding.py#L71) | 71 | `"_DECISION_MATRIX = ("` | — |
-| [SRC-686F71AA50-L000072](../../agents/task_understanding.py#L72) | 72 | `"    {\"stage\": \"interpret\", \"check\": \"goal_context_required_inputs\", \"pass_action\": \"preserve_explicit_constraints\", \"fail_action\": \"clarify_missing_required_input\"},"` | — |
-| [SRC-686F71AA50-L000073](../../agents/task_understanding.py#L73) | 73 | `"    {\"stage\": \"route\", \"check\": \"tool_permission_and_readiness\", \"pass_action\": \"use_only_allowed_configured_tools\", \"fail_action\": \"report_not_configured_or_blocked\"},"` | — |
-| [SRC-686F71AA50-L000074](../../agents/task_understanding.py#L74) | 74 | `"    {\"stage\": \"plan\", \"check\": \"distinct_relevant_queries_and_budget\", \"pass_action\": \"execute_bounded_deduplicated_plan\", \"fail_action\": \"stop_and_report_limit\"},"` | — |
-| [SRC-686F71AA50-L000075](../../agents/task_understanding.py#L75) | 75 | `"    {\"stage\": \"evidence\", \"check\": \"relevance_identity_freshness_readability\", \"pass_action\": \"retain_task_eligible_evidence\", \"fail_action\": \"exclude_and_record_reason\"},"` | — |
-| [SRC-686F71AA50-L000076](../../agents/task_understanding.py#L76) | 76 | `"    {\"stage\": \"synthesize\", \"check\": \"claim_support_and_scope\", \"pass_action\": \"cite_supported_claims_and_qualify_inference\", \"fail_action\": \"answer_partially_or_abstain\"},"` | — |
-| [SRC-686F71AA50-L000077](../../agents/task_understanding.py#L77) | 77 | `"    {\"stage\": \"terminate\", \"check\": \"actual_stage_outcomes\", \"pass_action\": \"report_observed_completion_state\", \"fail_action\": \"mark_partial_failed_or_not_run\"},"` | — |
-| [SRC-686F71AA50-L000078](../../agents/task_understanding.py#L78) | 78 | `")"` | — |
-| [SRC-686F71AA50-L000079](../../agents/task_understanding.py#L79) | 79 | `"_DECISION_STAGES = {row[\"stage\"] for row in _DECISION_MATRIX}"` | — |
-| [SRC-686F71AA50-L000080](../../agents/task_understanding.py#L80) | 80 | `"_DECISION_IDS = {"` | — |
-| [SRC-686F71AA50-L000081](../../agents/task_understanding.py#L81) | 81 | `"    field: {row[field] for row in _DECISION_MATRIX}"` | — |
-| [SRC-686F71AA50-L000082](../../agents/task_understanding.py#L82) | 82 | `"    for field in (\"check\", \"pass_action\", \"fail_action\")"` | — |
-| [SRC-686F71AA50-L000083](../../agents/task_understanding.py#L83) | 83 | `"}"` | — |
-| [SRC-686F71AA50-L000084](../../agents/task_understanding.py#L84) | 84 | `""` | — |
-| [SRC-686F71AA50-L000085](../../agents/task_understanding.py#L85) | 85 | `""` | — |
-| [SRC-686F71AA50-L000086](../../agents/task_understanding.py#L86) | 86 | `"def _reasoning_strategy_ids("` | — |
-| [SRC-686F71AA50-L000087](../../agents/task_understanding.py#L87) | 87 | `"    family: str,"` | — |
-| [SRC-686F71AA50-L000088](../../agents/task_understanding.py#L88) | 88 | `"    constraints: dict[str, Any],"` | — |
-| [SRC-686F71AA50-L000089](../../agents/task_understanding.py#L89) | 89 | `"    context_resolution: dict[str, Any],"` | — |
-| [SRC-686F71AA50-L000090](../../agents/task_understanding.py#L90) | 90 | `"    missing_required_inputs: list[str],"` | — |
-| [SRC-686F71AA50-L000091](../../agents/task_understanding.py#L91) | 91 | `") -> list[str]:"` | — |
-| [SRC-686F71AA50-L000092](../../agents/task_understanding.py#L92) | 92 | `"    selected = ["` | — |
-| [SRC-686F71AA50-L000093](../../agents/task_understanding.py#L93) | 93 | `"        \"preserve_goal_and_constraints\","` | — |
-| [SRC-686F71AA50-L000094](../../agents/task_understanding.py#L94) | 94 | `"        \"separate_facts_inferences_hypotheses\","` | — |
-| [SRC-686F71AA50-L000095](../../agents/task_understanding.py#L95) | 95 | `"        \"ground_material_claims\","` | — |
-| [SRC-686F71AA50-L000096](../../agents/task_understanding.py#L96) | 96 | `"        \"bounded_stop_rule\","` | — |
-| [SRC-686F71AA50-L000097](../../agents/task_understanding.py#L97) | 97 | `"        \"prefer_lowest_sufficient_tool\","` | — |
-| [SRC-686F71AA50-L000098](../../agents/task_understanding.py#L98) | 98 | `"    ]"` | — |
-| [SRC-686F71AA50-L000099](../../agents/task_understanding.py#L99) | 99 | `"    selected.extend(_REASONING_FAMILY_IDS.get(family, ()))"` | — |
-| [SRC-686F71AA50-L000100](../../agents/task_understanding.py#L100) | 100 | `"    if missing_required_inputs or context_resolution.get(\"needs_clarification\"):"` | — |
-| [SRC-686F71AA50-L000101](../../agents/task_understanding.py#L101) | 101 | `"        selected.append(\"clarify_required_input\")"` | — |
-| [SRC-686F71AA50-L000102](../../agents/task_understanding.py#L102) | 102 | `"    if context_resolution.get(\"is_follow_up\"):"` | — |
-| [SRC-686F71AA50-L000103](../../agents/task_understanding.py#L103) | 103 | `"        selected.append(\"resolve_followup_slots\")"` | — |
-| [SRC-686F71AA50-L000104](../../agents/task_understanding.py#L104) | 104 | `"    if constraints.get(\"time_sensitive_request\"):"` | — |
-| [SRC-686F71AA50-L000105](../../agents/task_understanding.py#L105) | 105 | `"        selected.extend((\"separate_event_and_publication_dates\", \"reject_stale_current_claims\"))"` | — |
-| [SRC-686F71AA50-L000106](../../agents/task_understanding.py#L106) | 106 | `"    if constraints.get(\"official_destination_required\"):"` | — |
-| [SRC-686F71AA50-L000107](../../agents/task_understanding.py#L107) | 107 | `"        selected.append(\"verify_official_destination\")"` | — |
-| [SRC-686F71AA50-L000108](../../agents/task_understanding.py#L108) | 108 | `"    if constraints.get(\"social_evidence_requested\"):"` | — |
-| [SRC-686F71AA50-L000109](../../agents/task_understanding.py#L109) | 109 | `"        selected.append(\"balance_social_evidence\")"` | — |
-| [SRC-686F71AA50-L000110](../../agents/task_understanding.py#L110) | 110 | `"    if len(constraints.get(\"explicit_aspects\") or []) > 1:"` | — |
-| [SRC-686F71AA50-L000111](../../agents/task_understanding.py#L111) | 111 | `"        selected.append(\"decompose_explicit_criteria\")"` | — |
-| [SRC-686F71AA50-L000112](../../agents/task_understanding.py#L112) | 112 | `"    if constraints.get(\"explicit_budgets\"):"` | — |
-| [SRC-686F71AA50-L000113](../../agents/task_understanding.py#L113) | 113 | `"        selected.append(\"preserve_goal_and_constraints\")"` | — |
-| [SRC-686F71AA50-L000114](../../agents/task_understanding.py#L114) | 114 | `"    return list(dict.fromkeys(item for item in selected if item in _REASONING_GUIDANCE))[:12]"` | — |
-| [SRC-686F71AA50-L000115](../../agents/task_understanding.py#L115) | 115 | `""` | — |
-| [SRC-686F71AA50-L000116](../../agents/task_understanding.py#L116) | 116 | `""` | — |
-| [SRC-686F71AA50-L000117](../../agents/task_understanding.py#L117) | 117 | `"def reasoning_guidance_for_task_spec(task_spec: dict[str, Any]) -> list[str]:"` | — |
-| [SRC-686F71AA50-L000118](../../agents/task_understanding.py#L118) | 118 | `"    \"\"\"Expand allowlisted reasoning IDs into fixed, non-executable guidance text.\"\"\""` | — |
-| [SRC-686F71AA50-L000119](../../agents/task_understanding.py#L119) | 119 | `"    ids = task_spec.get(\"reasoning_strategy_ids\") if isinstance(task_spec, dict) else []"` | — |
-| [SRC-686F71AA50-L000120](../../agents/task_understanding.py#L120) | 120 | `"    if not isinstance(ids, list):"` | — |
-| [SRC-686F71AA50-L000121](../../agents/task_understanding.py#L121) | 121 | `"        return []"` | — |
-| [SRC-686F71AA50-L000122](../../agents/task_understanding.py#L122) | 122 | `"    return [_REASONING_GUIDANCE[item] for item in ids if isinstance(item, str) and item in _REASONING_GUIDANCE][:12]"` | — |
-| [SRC-686F71AA50-L000123](../../agents/task_understanding.py#L123) | 123 | `""` | — |
-| [SRC-686F71AA50-L000124](../../agents/task_understanding.py#L124) | 124 | `"_ARABIC_DIACRITICS = re.compile(r\"[\\u0610-\\u061A\\u064B-\\u065F\\u0670\\u06D6-\\u06ED]\")"` | — |
-| [SRC-686F71AA50-L000125](../../agents/task_understanding.py#L125) | 125 | `"_PUNCTUATION = re.compile(r\"[؟?!.،,؛;:(){}\\[\\]\\\"'«»]+\")"` | — |
-| [SRC-686F71AA50-L000126](../../agents/task_understanding.py#L126) | 126 | `"_SPACE = re.compile(r\"\\s+\")"` | — |
-| [SRC-686F71AA50-L000127](../../agents/task_understanding.py#L127) | 127 | `"_TOKEN_RE = re.compile(r\"[a-z0-9]+\|[\\u0600-\\u06FF]+\", re.IGNORECASE)"` | — |
-| [SRC-686F71AA50-L000128](../../agents/task_understanding.py#L128) | 128 | `""` | — |
-| [SRC-686F71AA50-L000129](../../agents/task_understanding.py#L129) | 129 | `"_PATTERNS: dict[str, tuple[str, ...]] = {"` | — |
-| [SRC-686F71AA50-L000130](../../agents/task_understanding.py#L130) | 130 | `"    \"official_site_lookup\": ("` | — |
-| [SRC-686F71AA50-L000131](../../agents/task_understanding.py#L131) | 131 | `"        \"الموقع الرسمي\", \"موقع رسمي\", \"رابط الموقع الرسمي\", \"الصفحه الرسميه\","` | — |
-| [SRC-686F71AA50-L000132](../../agents/task_understanding.py#L132) | 132 | `"        \"الموقع الحكومي\", \"official website\", \"official site\", \"official homepage\","` | — |
-| [SRC-686F71AA50-L000133](../../agents/task_understanding.py#L133) | 133 | `"    ),"` | — |
-| [SRC-686F71AA50-L000134](../../agents/task_understanding.py#L134) | 134 | `"    \"social_opinions\": ("` | — |
-| [SRC-686F71AA50-L000135](../../agents/task_understanding.py#L135) | 135 | `"        \"اراء الناس\", \"اراء المستخدمين\", \"تجارب الناس\", \"تجارب المستخدمين\","` | — |
-| [SRC-686F71AA50-L000136](../../agents/task_understanding.py#L136) | 136 | `"        \"تجارب الملاك\", \"تجارب ملاك\", \"تجربة مالك\", \"مراجعات المستخدمين\", \"الناس بتقول ايه\","` | — |
-| [SRC-686F71AA50-L000137](../../agents/task_understanding.py#L137) | 137 | `"        \"real user reviews\", \"owner experience\", \"customer opinions\", \"people's opinions\","` | — |
-| [SRC-686F71AA50-L000138](../../agents/task_understanding.py#L138) | 138 | `"        \"user experiences\", \"what do owners say\","` | — |
-| [SRC-686F71AA50-L000139](../../agents/task_understanding.py#L139) | 139 | `"    ),"` | — |
-| [SRC-686F71AA50-L000140](../../agents/task_understanding.py#L140) | 140 | `"    \"summarize\": ("` | — |
-| [SRC-686F71AA50-L000141](../../agents/task_understanding.py#L141) | 141 | `"        \"لخص\", \"تلخيص\", \"ملخص\", \"summarize\", \"summarise\", \"summary of\","` | — |
-| [SRC-686F71AA50-L000142](../../agents/task_understanding.py#L142) | 142 | `"    ),"` | — |
-| [SRC-686F71AA50-L000143](../../agents/task_understanding.py#L143) | 143 | `"    \"troubleshoot\": ("` | — |
-| [SRC-686F71AA50-L000144](../../agents/task_understanding.py#L144) | 144 | `"        \"حل مشكلة\", \"عطل\", \"اعطال\", \"مش بيشتغل\", \"لا يعمل\", \"خطأ\", \"رساله خطأ\","` | — |
-| [SRC-686F71AA50-L000145](../../agents/task_understanding.py#L145) | 145 | `"        \"اصلح\", \"استكشاف الاعطال\", \"troubleshoot\", \"debug\", \"does not work\","` | — |
-| [SRC-686F71AA50-L000146](../../agents/task_understanding.py#L146) | 146 | `"        \"not working\", \"error message\", \"fix the problem\", \"common failures\","` | — |
-| [SRC-686F71AA50-L000147](../../agents/task_understanding.py#L147) | 147 | `"    ),"` | — |
-| [SRC-686F71AA50-L000148](../../agents/task_understanding.py#L148) | 148 | `"    \"how_to\": ("` | — |
-| [SRC-686F71AA50-L000149](../../agents/task_understanding.py#L149) | 149 | `"        \"ازاي\", \"كيف\", \"طريقة\", \"خطوات\", \"اشرح لي كيف\", \"علمني\", \"كيفية\","` | — |
-| [SRC-686F71AA50-L000150](../../agents/task_understanding.py#L150) | 150 | `"        \"how to\", \"steps to\", \"walk me through\", \"teach me\","` | — |
-| [SRC-686F71AA50-L000151](../../agents/task_understanding.py#L151) | 151 | `"    ),"` | — |
-| [SRC-686F71AA50-L000152](../../agents/task_understanding.py#L152) | 152 | `"    \"compare\": ("` | — |
-| [SRC-686F71AA50-L000153](../../agents/task_understanding.py#L153) | 153 | `"        \"قارن\", \"مقارنه\", \"الفرق بين\", \"ايهما افضل\", \"مميزات وعيوب\","` | — |
-| [SRC-686F71AA50-L000154](../../agents/task_understanding.py#L154) | 154 | `"        \"الايجابيات والسلبيات\", \"مفاضله\", \"compare\", \"comparison\", \"versus\","` | — |
-| [SRC-686F71AA50-L000155](../../agents/task_understanding.py#L155) | 155 | `"        \"trade-offs\", \"pros and cons\", \"which is better\","` | — |
-| [SRC-686F71AA50-L000156](../../agents/task_understanding.py#L156) | 156 | `"    ),"` | — |
-| [SRC-686F71AA50-L000157](../../agents/task_understanding.py#L157) | 157 | `"    \"current_information\": ("` | — |
-| [SRC-686F71AA50-L000158](../../agents/task_understanding.py#L158) | 158 | `"        \"اليوم\", \"النهارده\", \"النهاردة\", \"دلوقتي\", \"الان\", \"حاليا\", \"احدث\","` | — |
