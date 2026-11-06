@@ -423,13 +423,8 @@ class Handler(BaseHTTPRequestHandler):
         return self.store.resolve_api_token(token)
 
     _FORWARDING_HEADERS = (
-        "X-Forwarded-For",
-        "X-Forwarded-Host",
-        "X-Forwarded-Proto",
-        "X-Real-IP",
-        "Forwarded",
-        "CF-Connecting-IP",
-        "True-Client-IP",
+        "X-Forwarded-For", "X-Forwarded-Host", "X-Forwarded-Proto",
+        "X-Real-IP", "Forwarded", "CF-Connecting-IP", "True-Client-IP",
     )
 
     def _has_forwarding_headers(self) -> bool:
@@ -468,10 +463,14 @@ class Handler(BaseHTTPRequestHandler):
                     self._browser_session_id = token
                 return self._cookie_authenticated
 
-        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1" and not self._has_forwarding_headers():
-            # A tunnel or reverse proxy on the same host makes every remote client look
-            # like loopback. Forwarding headers prove the request did not originate locally,
-            # so the token-less local-development shortcut is refused for such requests.
+        # Loopback is not proof of a human identity: reverse proxies and tunnels
+        # may connect from 127.0.0.1 while forwarding untrusted remote requests.
+        # Local development must opt in explicitly; public deployments never do.
+        if (
+            os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
+            and os.getenv("OMARAI_ALLOW_LOOPBACK_AUTH", "").strip() == "1"
+            and not self._has_forwarding_headers()
+        ):
             try:
                 if ipaddress.ip_address(self.client_address[0]).is_loopback:
                     self._authenticated_principal = self.store.default_principal()
@@ -688,6 +687,25 @@ class Handler(BaseHTTPRequestHandler):
                     "app": "Omarai",
                     "mode": "web-research",
                     "agent": WebAgent.status(),
+                    "storage": {
+                        "database_path_override_configured": bool(
+                            os.getenv("OMARAI_DB_PATH", "").strip()
+                        ),
+                        # This is an operator assertion, not automatic mount detection.
+                        "persistent_volume_operator_asserted": (
+                            os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
+                        ),
+                        "durability_status": (
+                            "operator_asserted"
+                            if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
+                            else "not_guaranteed"
+                        ),
+                        "warning": (
+                            None
+                            if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
+                            else "SQLite records may be lost when the host replaces its ephemeral filesystem."
+                        ),
+                    },
                     "build": {
                         "sha": _build_identity()[0],
                         "sha_status": (
