@@ -42,11 +42,11 @@
 - API response records are tenant-scoped and never accept a tenant identifier from the browser.
 - Save endpoint accepts a stored `run_id` and source index, not a client-supplied source payload.
 
-- [ ] Add tests for tenant-scoped create/list/get of product profiles.
-- [ ] Add tests for discovery run creation/list/get and tenant isolation.
-- [ ] Add tests proving only a stored source marked `public_demand_signal` can be saved.
-- [ ] Add tests for viewer denial, unauthenticated denial in public mode, invalid profile values, and duplicate profile behavior.
-- [ ] Run focused tests to verify expected RED (missing contracts).
+- [x] Add tests for tenant-scoped create/list/get of product profiles.
+- [x] Add tests for discovery run creation/list/get and tenant isolation.
+- [x] Add tests proving only a stored source marked `public_demand_signal` can be saved.
+- [x] Add tests for viewer denial, unauthenticated denial in public mode, invalid profile values, and duplicate profile behavior.
+- [x] Run focused tests to verify expected RED (missing contracts).
 
 ### Task 2: Add tenant-scoped storage
 
@@ -63,11 +63,11 @@
 - `LeadStore.get_discovery_run(run_id: str, *, tenant_id: str) -> dict | None`
 - `LeadStore.save_discovery_signal(run_id: str, source_index: int, *, tenant_id: str) -> tuple[dict, bool] | None`
 
-- [ ] Add `product_profiles` table with tenant-scoped uniqueness and index.
-- [ ] Add `discovery_runs` table with tenant-scoped profile foreign key and index.
-- [ ] Store only bounded public response fields; never model prompts or secrets.
-- [ ] Save leads only by loading the source from the stored run and verifying its server-side qualification label.
-- [ ] Run storage tests and existing LeadStore tests.
+- [x] Add `product_profiles` table with tenant-scoped uniqueness and index.
+- [x] Add `discovery_runs` table with tenant-scoped profile foreign key and index.
+- [x] Store only bounded public response fields; never model prompts or secrets.
+- [x] Save leads only by loading the source from the stored run and verifying its server-side qualification label.
+- [x] Run storage tests and existing LeadStore tests.
 
 ### Task 3: Connect structured buyer discovery to WebAgent
 
@@ -81,12 +81,12 @@
 - Preserve existing callers when `buyer_queries` is omitted.
 - Add per-instance `allow_optional_providers` control, defaulting to existing behavior for legacy routes.
 
-- [ ] Force the lead-generation route only when structured buyer queries are supplied by the new discovery endpoint.
-- [ ] Validate and cap buyer query count/length (1–8 queries, max 500 characters each).
-- [ ] Prefer structured queries over prose-derived `_lead_generation_queries`.
-- [ ] Gate DeepSeek, Brave, Tavily, and optional social APIs when the per-instance control is false.
-- [ ] Keep DDG/Bing/Google News and public no-key social retrieval under existing bounded controls.
-- [ ] Add tests that structured product/location queries reach the lead-generation path and optional providers are not invoked by default.
+- [x] Force the lead-generation route only when structured buyer queries are supplied by the new discovery endpoint.
+- [x] Validate and cap buyer query count/length (1–8 queries, max 500 characters each).
+- [x] Prefer structured queries over prose-derived `_lead_generation_queries`.
+- [x] Gate DeepSeek, Brave, Tavily, and optional social APIs when the per-instance control is false.
+- [x] Keep DDG/Bing/Google News and public no-key social retrieval under existing bounded controls.
+- [x] Add tests that structured product/location queries reach the lead-generation path and optional providers are not invoked by default.
 
 ### Task 4: Implement protected API contracts
 
@@ -102,15 +102,15 @@
 - `POST /api/discoveries`
 - `POST /api/discoveries/{run_id}/signals/{source_index}/save`
 
-- [ ] Validate request JSON arrays and bounded field sizes through `ProductProfile` and `MarketProfile`.
-- [ ] Derive all tenant scope from `self._authenticated_principal`.
-- [ ] Require a non-viewer role to create profiles or run discovery.
-- [ ] Require owner role plus explicit `allow_optional_providers=true` to enable optional providers.
-- [ ] Build a product-anchored prompt and queries through `build_buyer_queries`.
-- [ ] Persist the bounded discovery response and return its run ID.
-- [ ] Return 404 for run/profile IDs outside the current tenant.
-- [ ] Route save requests through `LeadStore.save_discovery_signal`; never trust browser-provided source qualification.
-- [ ] Run API integration/security tests.
+- [x] Validate request JSON arrays and bounded field sizes through `ProductProfile` and `MarketProfile`.
+- [x] Derive all tenant scope from `self._authenticated_principal`.
+- [x] Require a non-viewer role to create profiles or run discovery.
+- [x] Require owner role plus explicit `allow_optional_providers=true` to enable optional providers.
+- [x] Build a product-anchored prompt and queries through `build_buyer_queries`.
+- [x] Persist the bounded discovery response and return its run ID.
+- [x] Return 404 for run/profile IDs outside the current tenant.
+- [x] Route save requests through `LeadStore.save_discovery_signal`; never trust browser-provided source qualification.
+- [x] Run API integration/security tests.
 
 ### Task 5: Connect the RTL workspace
 
@@ -124,15 +124,15 @@
 - Read product profiles and discovery runs from their authenticated APIs.
 - Save selected qualified signals using the stored discovery run ID and source index.
 
-- [ ] Add product profile editor with aliases, use cases, problems solved, locations, industries, customer types, decision roles, and exclusions.
-- [ ] Add discovery screen to choose a saved profile, run search, show prior run history, and inspect evidence.
-- [ ] Display qualified buyer signals separately from related-but-unqualified results.
-- [ ] Show evidence phrase, evidence basis (snippet/page text/title), source link, and publication-date unknown states.
-- [ ] Add explicit unchecked opt-in for optional providers; owner-only on the server with cost/quota disclosure.
-- [ ] Add save action only for server-qualified public demand signals; then refresh leads and pipeline.
-- [ ] Fix the placeholder's general research navigation to `/agent`.
-- [ ] Keep all other unimplemented modules visibly unavailable.
-- [ ] Run workspace static/security tests.
+- [x] Add product profile editor with aliases, use cases, problems solved, locations, industries, customer types, decision roles, and exclusions.
+- [x] Add discovery screen to choose a saved profile, run search, show prior run history, and inspect evidence.
+- [x] Display qualified buyer signals separately from related-but-unqualified results.
+- [x] Show evidence phrase, evidence basis (snippet/page text/title), source link, and publication-date unknown states.
+- [x] Add explicit unchecked opt-in for optional providers; owner-only on the server with cost/quota disclosure.
+- [x] Add save action only for server-qualified public demand signals; then refresh leads and pipeline.
+- [x] Fix the placeholder's general research navigation to `/agent`.
+- [x] Keep all other unimplemented modules visibly unavailable.
+- [x] Run workspace static/security tests.
 
 ### Task 6: Documentation, CI, review, and handoff
 
