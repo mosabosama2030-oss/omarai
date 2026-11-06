@@ -181,12 +181,12 @@ def test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public
     class FakeResponse:
         status_code = 200
         content = (
-            b'<rss><channel><item><title>طلب شراء لوحة إنذار</title>'
-            b'<link>https://www.reddit.com/r/example/comments/123/request</link>'
-            b'<description>نبحث عن مورد للوحة إنذار حريق.</description>'
-            b'<pubDate>Fri, 06 Nov 2026 08:00:00 GMT</pubDate>'
-            b'</item></channel></rss>'
-        )
+            "<rss><channel><item><title>طلب شراء لوحة إنذار</title>"
+            "<link>https://www.reddit.com/r/example/comments/123/request</link>"
+            "<description>نبحث عن مورد للوحة إنذار حريق.</description>"
+            "<pubDate>Fri, 06 Nov 2026 08:00:00 GMT</pubDate>"
+            "</item></channel></rss>"
+        ).encode("utf-8")
 
     def fake_request(method, url, **kwargs):
         called_urls.append(url)
