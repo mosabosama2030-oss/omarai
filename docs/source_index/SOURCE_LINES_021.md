@@ -4,7 +4,7 @@
 
 - الصفحة: **021**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000086 إلى SRC-EEF2E6447C-L000885
+- النطاق: SRC-EEF2E6447C-L000085 إلى SRC-EEF2E6447C-L000884
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000085](../../api/omarai.py#L85) | 85 | `"            document,"` | — |
 | [SRC-EEF2E6447C-L000086](../../api/omarai.py#L86) | 86 | `"            re.IGNORECASE \| re.DOTALL,"` | — |
 | [SRC-EEF2E6447C-L000087](../../api/omarai.py#L87) | 87 | `"        ):"` | — |
 | [SRC-EEF2E6447C-L000088](../../api/omarai.py#L88) | 88 | `"            event_handler_hashes.add(_csp_hash_source(match.group(2).strip()))"` | — |
@@ -815,4 +816,3 @@
 | [SRC-EEF2E6447C-L000882](../../api/omarai.py#L882) | 882 | `"                        profile_id, result, tenant_id=principal[\"tenant_id\"]"` | — |
 | [SRC-EEF2E6447C-L000883](../../api/omarai.py#L883) | 883 | `"                    )"` | — |
 | [SRC-EEF2E6447C-L000884](../../api/omarai.py#L884) | 884 | `"                    if run is None:"` | — |
-| [SRC-EEF2E6447C-L000885](../../api/omarai.py#L885) | 885 | `"                        return self.respond(404, {\"error\": \"product profile not found\"})"` | — |

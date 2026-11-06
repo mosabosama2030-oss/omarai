@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6E58A660BC-L000151 إلى SRC-686F71AA50-L000361
+- النطاق: SRC-6E58A660BC-L000150 إلى SRC-686F71AA50-L000360
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6E58A660BC-L000150](../../agents/search_connectors.py#L150) | 150 | `"        return []"` | — |
 | [SRC-6E58A660BC-L000151](../../agents/search_connectors.py#L151) | 151 | `"    key = os.getenv(\"SEMANTIC_SCHOLAR_API_KEY\", \"\").strip()"` | — |
 | [SRC-6E58A660BC-L000152](../../agents/search_connectors.py#L152) | 152 | `"    params = urllib.parse.urlencode({\"query\": query.strip()[:240], \"limit\": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), \"fields\": \"title,url,abstract,year,externalIds\"})"` | — |
 | [SRC-6E58A660BC-L000153](../../agents/search_connectors.py#L153) | 153 | `"    headers = {\"User-Agent\": USER_AGENT}"` | — |
@@ -833,4 +834,3 @@
 | [SRC-686F71AA50-L000358](../../agents/task_understanding.py#L358) | 358 | `"        phrase_forms = [token_forms(token) for token in phrase_tokens]"` | — |
 | [SRC-686F71AA50-L000359](../../agents/task_understanding.py#L359) | 359 | `"        width = len(phrase_tokens)"` | — |
 | [SRC-686F71AA50-L000360](../../agents/task_understanding.py#L360) | 360 | `"        found = any("` | — |
-| [SRC-686F71AA50-L000361](../../agents/task_understanding.py#L361) | 361 | `"            all(token_forms_cache[index + offset] & phrase_forms[offset] for offset in range(width))"` | — |

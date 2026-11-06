@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000278
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000277
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -156,7 +156,7 @@
 | [SRC-9F6E30987B-L000030](../../.github/workflows/hosted-smoke.yml#L30) | 30 | `"          python-version: \"3.12\""` | — |
 | [SRC-9F6E30987B-L000031](../../.github/workflows/hosted-smoke.yml#L31) | 31 | `""` | — |
 | [SRC-9F6E30987B-L000032](../../.github/workflows/hosted-smoke.yml#L32) | 32 | `"      - name: Run no-cost hosted preflight"` | — |
-| [SRC-9F6E30987B-L000033](../../.github/workflows/hosted-smoke.yml#L33) | 33 | `"        if: ${{ inputs.allow_provider_usage == false }}"` | — |
+| [SRC-9F6E30987B-L000033](../../.github/workflows/hosted-smoke.yml#L33) | 33 | `"        id: preflight"` | — |
 | [SRC-9F6E30987B-L000034](../../.github/workflows/hosted-smoke.yml#L34) | 34 | `"        shell: bash"` | — |
 | [SRC-9F6E30987B-L000035](../../.github/workflows/hosted-smoke.yml#L35) | 35 | `"        env:"` | — |
 | [SRC-9F6E30987B-L000036](../../.github/workflows/hosted-smoke.yml#L36) | 36 | `"          OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}"` | — |
@@ -164,34 +164,35 @@
 | [SRC-9F6E30987B-L000038](../../.github/workflows/hosted-smoke.yml#L38) | 38 | `"          set -euo pipefail"` | — |
 | [SRC-9F6E30987B-L000039](../../.github/workflows/hosted-smoke.yml#L39) | 39 | `"          python scripts/hosted_smoke_test.py \\"` | — |
 | [SRC-9F6E30987B-L000040](../../.github/workflows/hosted-smoke.yml#L40) | 40 | `"            --base-url \"$OMARAI_BASE_URL\" \\"` | — |
-| [SRC-9F6E30987B-L000041](../../.github/workflows/hosted-smoke.yml#L41) | 41 | `"            --timeout 180 \\"` | — |
-| [SRC-9F6E30987B-L000042](../../.github/workflows/hosted-smoke.yml#L42) | 42 | `"            --preflight-only \\"` | — |
-| [SRC-9F6E30987B-L000043](../../.github/workflows/hosted-smoke.yml#L43) | 43 | `"            --output artifacts/hosted-smoke-report.json"` | — |
-| [SRC-9F6E30987B-L000044](../../.github/workflows/hosted-smoke.yml#L44) | 44 | `""` | — |
-| [SRC-9F6E30987B-L000045](../../.github/workflows/hosted-smoke.yml#L45) | 45 | `"      - name: Run live hosted acceptance"` | — |
-| [SRC-9F6E30987B-L000046](../../.github/workflows/hosted-smoke.yml#L46) | 46 | `"        if: ${{ inputs.allow_provider_usage == true }}"` | — |
-| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        shell: bash"` | — |
-| [SRC-9F6E30987B-L000048](../../.github/workflows/hosted-smoke.yml#L48) | 48 | `"        env:"` | — |
-| [SRC-9F6E30987B-L000049](../../.github/workflows/hosted-smoke.yml#L49) | 49 | `"          OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}"` | — |
-| [SRC-9F6E30987B-L000050](../../.github/workflows/hosted-smoke.yml#L50) | 50 | `"          # The bearer token is available only to the explicitly approved live step."` | — |
-| [SRC-9F6E30987B-L000051](../../.github/workflows/hosted-smoke.yml#L51) | 51 | `"          OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}"` | — |
-| [SRC-9F6E30987B-L000052](../../.github/workflows/hosted-smoke.yml#L52) | 52 | `"        run: \|"` | — |
-| [SRC-9F6E30987B-L000053](../../.github/workflows/hosted-smoke.yml#L53) | 53 | `"          set -euo pipefail"` | — |
-| [SRC-9F6E30987B-L000054](../../.github/workflows/hosted-smoke.yml#L54) | 54 | `"          python scripts/hosted_smoke_test.py \\"` | — |
-| [SRC-9F6E30987B-L000055](../../.github/workflows/hosted-smoke.yml#L55) | 55 | `"            --base-url \"$OMARAI_BASE_URL\" \\"` | — |
-| [SRC-9F6E30987B-L000056](../../.github/workflows/hosted-smoke.yml#L56) | 56 | `"            --expected-sha \"$(git rev-parse HEAD)\" \\"` | — |
-| [SRC-9F6E30987B-L000057](../../.github/workflows/hosted-smoke.yml#L57) | 57 | `"            --timeout 180 \\"` | — |
-| [SRC-9F6E30987B-L000058](../../.github/workflows/hosted-smoke.yml#L58) | 58 | `"            --allow-provider-usage \\"` | — |
-| [SRC-9F6E30987B-L000059](../../.github/workflows/hosted-smoke.yml#L59) | 59 | `"            --output artifacts/hosted-smoke-report.json"` | — |
-| [SRC-9F6E30987B-L000060](../../.github/workflows/hosted-smoke.yml#L60) | 60 | `""` | — |
-| [SRC-9F6E30987B-L000061](../../.github/workflows/hosted-smoke.yml#L61) | 61 | `"      - name: Upload hosted question-and-answer transcript"` | — |
-| [SRC-9F6E30987B-L000062](../../.github/workflows/hosted-smoke.yml#L62) | 62 | `"        if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''"` | — |
-| [SRC-9F6E30987B-L000063](../../.github/workflows/hosted-smoke.yml#L63) | 63 | `"        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2"` | — |
-| [SRC-9F6E30987B-L000064](../../.github/workflows/hosted-smoke.yml#L64) | 64 | `"        with:"` | — |
-| [SRC-9F6E30987B-L000065](../../.github/workflows/hosted-smoke.yml#L65) | 65 | `"          name: omarai-hosted-acceptance-transcript"` | — |
-| [SRC-9F6E30987B-L000066](../../.github/workflows/hosted-smoke.yml#L66) | 66 | `"          path: artifacts/hosted-smoke-report.json"` | — |
-| [SRC-9F6E30987B-L000067](../../.github/workflows/hosted-smoke.yml#L67) | 67 | `"          if-no-files-found: ignore"` | — |
-| [SRC-9F6E30987B-L000068](../../.github/workflows/hosted-smoke.yml#L68) | 68 | `"          retention-days: 14"` | — |
+| [SRC-9F6E30987B-L000041](../../.github/workflows/hosted-smoke.yml#L41) | 41 | `"            --expected-sha \"$(git rev-parse HEAD)\" \\"` | — |
+| [SRC-9F6E30987B-L000042](../../.github/workflows/hosted-smoke.yml#L42) | 42 | `"            --timeout 180 \\"` | — |
+| [SRC-9F6E30987B-L000043](../../.github/workflows/hosted-smoke.yml#L43) | 43 | `"            --preflight-only \\"` | — |
+| [SRC-9F6E30987B-L000044](../../.github/workflows/hosted-smoke.yml#L44) | 44 | `"            --output artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000045](../../.github/workflows/hosted-smoke.yml#L45) | 45 | `""` | — |
+| [SRC-9F6E30987B-L000046](../../.github/workflows/hosted-smoke.yml#L46) | 46 | `"      - name: Run live hosted acceptance"` | — |
+| [SRC-9F6E30987B-L000047](../../.github/workflows/hosted-smoke.yml#L47) | 47 | `"        if: ${{ success() && inputs.allow_provider_usage == true && steps.preflight.outcome == 'success' }}"` | — |
+| [SRC-9F6E30987B-L000048](../../.github/workflows/hosted-smoke.yml#L48) | 48 | `"        shell: bash"` | — |
+| [SRC-9F6E30987B-L000049](../../.github/workflows/hosted-smoke.yml#L49) | 49 | `"        env:"` | — |
+| [SRC-9F6E30987B-L000050](../../.github/workflows/hosted-smoke.yml#L50) | 50 | `"          OMARAI_BASE_URL: ${{ secrets.OMARAI_BASE_URL }}"` | — |
+| [SRC-9F6E30987B-L000051](../../.github/workflows/hosted-smoke.yml#L51) | 51 | `"          # The bearer token is available only to the explicitly approved live step."` | — |
+| [SRC-9F6E30987B-L000052](../../.github/workflows/hosted-smoke.yml#L52) | 52 | `"          OMARAI_ACCESS_TOKEN: ${{ secrets.OMARAI_ACCESS_TOKEN }}"` | — |
+| [SRC-9F6E30987B-L000053](../../.github/workflows/hosted-smoke.yml#L53) | 53 | `"        run: \|"` | — |
+| [SRC-9F6E30987B-L000054](../../.github/workflows/hosted-smoke.yml#L54) | 54 | `"          set -euo pipefail"` | — |
+| [SRC-9F6E30987B-L000055](../../.github/workflows/hosted-smoke.yml#L55) | 55 | `"          python scripts/hosted_smoke_test.py \\"` | — |
+| [SRC-9F6E30987B-L000056](../../.github/workflows/hosted-smoke.yml#L56) | 56 | `"            --base-url \"$OMARAI_BASE_URL\" \\"` | — |
+| [SRC-9F6E30987B-L000057](../../.github/workflows/hosted-smoke.yml#L57) | 57 | `"            --expected-sha \"$(git rev-parse HEAD)\" \\"` | — |
+| [SRC-9F6E30987B-L000058](../../.github/workflows/hosted-smoke.yml#L58) | 58 | `"            --timeout 180 \\"` | — |
+| [SRC-9F6E30987B-L000059](../../.github/workflows/hosted-smoke.yml#L59) | 59 | `"            --allow-provider-usage \\"` | — |
+| [SRC-9F6E30987B-L000060](../../.github/workflows/hosted-smoke.yml#L60) | 60 | `"            --output artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000061](../../.github/workflows/hosted-smoke.yml#L61) | 61 | `""` | — |
+| [SRC-9F6E30987B-L000062](../../.github/workflows/hosted-smoke.yml#L62) | 62 | `"      - name: Upload hosted question-and-answer transcript"` | — |
+| [SRC-9F6E30987B-L000063](../../.github/workflows/hosted-smoke.yml#L63) | 63 | `"        if: always() && hashFiles('artifacts/hosted-smoke-report.json') != ''"` | — |
+| [SRC-9F6E30987B-L000064](../../.github/workflows/hosted-smoke.yml#L64) | 64 | `"        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2"` | — |
+| [SRC-9F6E30987B-L000065](../../.github/workflows/hosted-smoke.yml#L65) | 65 | `"        with:"` | — |
+| [SRC-9F6E30987B-L000066](../../.github/workflows/hosted-smoke.yml#L66) | 66 | `"          name: omarai-hosted-acceptance-transcript"` | — |
+| [SRC-9F6E30987B-L000067](../../.github/workflows/hosted-smoke.yml#L67) | 67 | `"          path: artifacts/hosted-smoke-report.json"` | — |
+| [SRC-9F6E30987B-L000068](../../.github/workflows/hosted-smoke.yml#L68) | 68 | `"          if-no-files-found: ignore"` | — |
+| [SRC-9F6E30987B-L000069](../../.github/workflows/hosted-smoke.yml#L69) | 69 | `"          retention-days: 14"` | — |
 ## CI وأتمتة
 
 ### FILE-1DB27D9318 — [.github/workflows/tests.yml](../../.github/workflows/tests.yml#L1)
@@ -896,4 +897,3 @@
 | [SRC-138992B1FC-L000275](../../agents/answer_validation.py#L275) | 275 | `"            int(match.group(1))"` | — |
 | [SRC-138992B1FC-L000276](../../agents/answer_validation.py#L276) | 276 | `"            for match in _CITATION.finditer(sentence)"` | — |
 | [SRC-138992B1FC-L000277](../../agents/answer_validation.py#L277) | 277 | `"        ]"` | — |
-| [SRC-138992B1FC-L000278](../../agents/answer_validation.py#L278) | 278 | `"        if not cited_indices:"` | — |

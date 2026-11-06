@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002584 إلى SRC-1AE03B9EC3-L003383
+- النطاق: SRC-1AE03B9EC3-L002583 إلى SRC-1AE03B9EC3-L003382
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002583](../../agents/web_agent.py#L2583) | 2583 | `"                    },"` | — |
 | [SRC-1AE03B9EC3-L002584](../../agents/web_agent.py#L2584) | 2584 | `"                    timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L002585](../../agents/web_agent.py#L2585) | 2585 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L002586](../../agents/web_agent.py#L2586) | 2586 | `"                )"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L003380](../../agents/web_agent.py#L3380) | 3380 | `"                else \"unknown\""` | — |
 | [SRC-1AE03B9EC3-L003381](../../agents/web_agent.py#L3381) | 3381 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003382](../../agents/web_agent.py#L3382) | 3382 | `"            queries = list(dict.fromkeys(_clean_text(row.get(\"query\", \"\"), 180) for row in attempts if row.get(\"query\")))[:3]"` | — |
-| [SRC-1AE03B9EC3-L003383](../../agents/web_agent.py#L3383) | 3383 | `"            errors = list(dict.fromkeys(redact(row.get(\"error\")) for row in attempts if row.get(\"error\")))[:3]"` | — |

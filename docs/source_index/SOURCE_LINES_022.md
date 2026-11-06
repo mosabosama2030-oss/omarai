@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000886 إلى SRC-C4C6C55E1A-L000167
+- النطاق: SRC-EEF2E6447C-L000885 إلى SRC-C4C6C55E1A-L000166
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000885](../../api/omarai.py#L885) | 885 | `"                        return self.respond(404, {\"error\": \"product profile not found\"})"` | — |
 | [SRC-EEF2E6447C-L000886](../../api/omarai.py#L886) | 886 | `"                    return self.respond(201, run)"` | — |
 | [SRC-EEF2E6447C-L000887](../../api/omarai.py#L887) | 887 | `"                finally:"` | — |
 | [SRC-EEF2E6447C-L000888](../../api/omarai.py#L888) | 888 | `"                    cls._agent_semaphore.release()"` | — |
@@ -869,4 +870,3 @@
 | [SRC-C4C6C55E1A-L000164](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L164) | 164 | `""` | — |
 | [SRC-C4C6C55E1A-L000165](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L165) | 165 | `""` | — |
 | [SRC-C4C6C55E1A-L000166](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L166) | 166 | `"## تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026"` | — |
-| [SRC-C4C6C55E1A-L000167](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L167) | 167 | `""` | — |

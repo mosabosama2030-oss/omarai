@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000077 إلى SRC-60066C6786-L000179
+- النطاق: SRC-1E32639872-L000076 إلى SRC-60066C6786-L000178
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1E32639872-L000076](../../agents/research_completion.py#L76) | 76 | `"    result = _dict(result)"` | — |
 | [SRC-1E32639872-L000077](../../agents/research_completion.py#L77) | 77 | `"    report = _dict(result.get(\"search_report\"))"` | — |
 | [SRC-1E32639872-L000078](../../agents/research_completion.py#L78) | 78 | `"    raw_sources = _list(result.get(\"sources\"))"` | — |
 | [SRC-1E32639872-L000079](../../agents/research_completion.py#L79) | 79 | `"    sources = [item for item in raw_sources if isinstance(item, dict)]"` | — |
@@ -833,4 +834,3 @@
 | [SRC-60066C6786-L000176](../../agents/research_pipeline.py#L176) | 176 | `"    if route == \"CLARIFY\" or intent.get(\"needs_clarification\") or task_requires_clarification:"` | — |
 | [SRC-60066C6786-L000177](../../agents/research_pipeline.py#L177) | 177 | `"        strategy_matrix: list[dict[str, str]] = []"` | — |
 | [SRC-60066C6786-L000178](../../agents/research_pipeline.py#L178) | 178 | `"        queries: list[str] = []"` | — |
-| [SRC-60066C6786-L000179](../../agents/research_pipeline.py#L179) | 179 | `"        query_status = \"blocked_pending_clarification\""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006584 إلى SRC-EEF2E6447C-L000085
+- النطاق: SRC-1AE03B9EC3-L006583 إلى SRC-EEF2E6447C-L000084
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006583](../../agents/web_agent.py#L6583) | 6583 | `"                item[\"target\"]"` | — |
 | [SRC-1AE03B9EC3-L006584](../../agents/web_agent.py#L6584) | 6584 | `"                for item in presearch_integrity[\"target_coverage\"]"` | — |
 | [SRC-1AE03B9EC3-L006585](../../agents/web_agent.py#L6585) | 6585 | `"                if item.get(\"source_evidence_status\") == \"no_source_lexical_signal\""` | — |
 | [SRC-1AE03B9EC3-L006586](../../agents/web_agent.py#L6586) | 6586 | `"            ][:3]"` | — |
@@ -833,4 +834,3 @@
 | [SRC-EEF2E6447C-L000082](../../api/omarai.py#L82) | 82 | `""` | — |
 | [SRC-EEF2E6447C-L000083](../../api/omarai.py#L83) | 83 | `"        for match in re.finditer("` | — |
 | [SRC-EEF2E6447C-L000084](../../api/omarai.py#L84) | 84 | `"            r\"\"\"\\bon[a-z]+\\s*=\\s*([\"'])(.*?)\\1\"\"\","` | — |
-| [SRC-EEF2E6447C-L000085](../../api/omarai.py#L85) | 85 | `"            document,"` | — |

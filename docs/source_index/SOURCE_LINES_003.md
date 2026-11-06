@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000286 إلى SRC-5587371288-L000530
+- النطاق: SRC-7D6FC391EC-L000285 إلى SRC-5587371288-L000529
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-7D6FC391EC-L000285](../../agents/claim_evidence.py#L285) | 285 | `"            \"citation_lexical_signal_count\": lexical_signals,"` | — |
 | [SRC-7D6FC391EC-L000286](../../agents/claim_evidence.py#L286) | 286 | `"            \"weak_citation_lexical_signal_count\": weak_signals,"` | — |
 | [SRC-7D6FC391EC-L000287](../../agents/claim_evidence.py#L287) | 287 | `"            \"citation_coverage_ratio\": round(cited / total, 3) if total else 0.0,"` | — |
 | [SRC-7D6FC391EC-L000288](../../agents/claim_evidence.py#L288) | 288 | `"        },"` | — |
@@ -833,4 +834,3 @@
 | [SRC-5587371288-L000527](../../agents/intent_router.py#L527) | 527 | `"    if requires_web or _has_live_signal(question) or _has_explicit_source_request(question):"` | — |
 | [SRC-5587371288-L000528](../../agents/intent_router.py#L528) | 528 | `"        return {"` | — |
 | [SRC-5587371288-L000529](../../agents/intent_router.py#L529) | 529 | `"            \"route\": \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000530](../../agents/intent_router.py#L530) | 530 | `"            \"reason\": ("` | — |

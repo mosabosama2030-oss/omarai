@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001162 إلى SRC-1AE03B9EC3-L000183
+- النطاق: SRC-686F71AA50-L001161 إلى SRC-1AE03B9EC3-L000182
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001161](../../agents/task_understanding.py#L1161) | 1161 | `"    merged_aspects: list[str] = []"` | — |
 | [SRC-686F71AA50-L001162](../../agents/task_understanding.py#L1162) | 1162 | `"    aspect_keys: set[str] = set()"` | — |
 | [SRC-686F71AA50-L001163](../../agents/task_understanding.py#L1163) | 1163 | `"    for aspect in [*explicit_aspects, *independently_extracted]:"` | — |
 | [SRC-686F71AA50-L001164](../../agents/task_understanding.py#L1164) | 1164 | `"        if not isinstance(aspect, str) or not aspect.strip():"` | — |
@@ -842,4 +843,3 @@
 | [SRC-1AE03B9EC3-L000180](../../agents/web_agent.py#L180) | 180 | `"    \"study\", \"studies\", \"analysis\", \"latest\", \"news\", \"update\", \"updates\","` | — |
 | [SRC-1AE03B9EC3-L000181](../../agents/web_agent.py#L181) | 181 | `"    \"announcement\", \"announcements\", \"comprehensive\", \"research\", \"statistic\","` | — |
 | [SRC-1AE03B9EC3-L000182](../../agents/web_agent.py#L182) | 182 | `"    \"statistics\", \"trend\", \"trends\","` | — |
-| [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `"    # Navigation/format words are request modifiers, not topical evidence."` | — |

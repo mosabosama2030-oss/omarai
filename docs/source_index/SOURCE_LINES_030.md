@@ -4,7 +4,7 @@
 
 - الصفحة: **030**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8872CF2B16-L000114 إلى SRC-B9C3015420-L000234
+- النطاق: SRC-8872CF2B16-L000113 إلى SRC-B9C3015420-L000233
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8872CF2B16-L000113](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L113) | 113 | `"### P2 — التوسع بعد إثبات الأساس"` | — |
 | [SRC-8872CF2B16-L000114](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L114) | 114 | `"- موصلات اختيارية مثل Firecrawl بعد إعادة مزامنة PR ومراجعة الأمن والتكلفة."` | — |
 | [SRC-8872CF2B16-L000115](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L115) | 115 | `"- توسيع قطاعات ومصادر البحث وفق نتائج عينة تجارية مقاسة، لا بعدد الموصلات."` | — |
 | [SRC-8872CF2B16-L000116](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L116) | 116 | `"- وحدات CRM المتقدمة، Evidence Ledger المستقل، entity resolution، المراقبة المجدولة، والمهام؛ لكل منها عقد وبيانات وصلاحيات واختبارات قبل التفعيل."` | — |
@@ -833,4 +834,3 @@
 | [SRC-B9C3015420-L000231](../OMARAI_REQUIREMENTS_REGISTER.md#L231) | 231 | `"\|---\|---\|---\|---\|"` | — |
 | [SRC-B9C3015420-L000232](../OMARAI_REQUIREMENTS_REGISTER.md#L232) | 232 | ``"\| AIE-001 — مجموعة تقييم عربية/إنجليزية ثابتة \| FIXED_AND_TESTED ضمن CI \| `tests/fixtures/answer_quality_cases.json`: 45 حالة، 4 تصنيفات لغوية، 20 فئة؛ اختبار بنية corpus ضمن CI على SHA `6d5e9071e77645889de4596664c407801f6bc6ad` \| لم يُثبت أن الإجابات الفعلية اجتازت الحالات؛ التشغيل الحي NOT_RUN \|"`` | — |
 | [SRC-B9C3015420-L000233](../OMARAI_REQUIREMENTS_REGISTER.md#L233) | 233 | ``"\| AIE-002 — قياس دقة المحتوى ودعم الاستشهادات منفصلًا عن الأسلوب \| IMPLEMENTED / AUTOMATED TESTS PASS; HUMAN EVALUATION NOT_RUN \| `scripts/compare_answer_quality_runs.py` يشترط ملفات مراجعة بشرية للمقاييس الدلالية ولا يملأ المجهول بصفر \| نتائج accuracy/precision/recall/faithfulness/citation support غير متاحة حتى اكتمال المراجعات \|"`` | — |
-| [SRC-B9C3015420-L000234](../OMARAI_REQUIREMENTS_REGISTER.md#L234) | 234 | `"\| AIE-004 — قياس حالة الأدوات ونتائجها \| FIXED_AND_TESTED ضمن CI \| مصفوفة الأدوات المطلوبة واتساق نتيجة البحث مع المصادر؛ CI #40906010312 \| لا يثبت CI أن الموصلات تعمل على الاستضافة أو أن كل أداة نجحت في طلب حي \|"` | — |

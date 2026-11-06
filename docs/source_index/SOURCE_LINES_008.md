@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-60066C6786-L000180 إلى SRC-6E58A660BC-L000150
+- النطاق: SRC-60066C6786-L000179 إلى SRC-6E58A660BC-L000149
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-60066C6786-L000179](../../agents/research_pipeline.py#L179) | 179 | `"        query_status = \"blocked_pending_clarification\""` | — |
 | [SRC-60066C6786-L000180](../../agents/research_pipeline.py#L180) | 180 | `"    else:"` | — |
 | [SRC-60066C6786-L000181](../../agents/research_pipeline.py#L181) | 181 | `"        strategy_matrix = build_query_strategy_matrix("` | — |
 | [SRC-60066C6786-L000182](../../agents/research_pipeline.py#L182) | 182 | `"            contextual_question,"` | — |
@@ -833,4 +834,3 @@
 | [SRC-6E58A660BC-L000147](../../agents/search_connectors.py#L147) | 147 | `""` | — |
 | [SRC-6E58A660BC-L000148](../../agents/search_connectors.py#L148) | 148 | `"def search_semantic_scholar(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:"` | — |
 | [SRC-6E58A660BC-L000149](../../agents/search_connectors.py#L149) | 149 | `"    if not isinstance(query, str) or not query.strip():"` | — |
-| [SRC-6E58A660BC-L000150](../../agents/search_connectors.py#L150) | 150 | `"        return []"` | — |

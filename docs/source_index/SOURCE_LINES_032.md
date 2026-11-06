@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-41EDB66D3C-L000182 إلى SRC-0F910493E8-L000435
+- النطاق: SRC-41EDB66D3C-L000181 إلى SRC-0F910493E8-L000434
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-41EDB66D3C-L000181](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L181) | 181 | `"يُبنى من معلومات قدمها المستخدم أو وثائق مصرح بها، ويحتوي عند توفرها على:"` | — |
 | [SRC-41EDB66D3C-L000182](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L182) | 182 | `""` | — |
 | [SRC-41EDB66D3C-L000183](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L183) | 183 | `"- اسم المنتج أو الخدمة والعلامة التجارية."` | — |
 | [SRC-41EDB66D3C-L000184](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L184) | 184 | `"- الأسماء البديلة والاختصارات والتهجئات الشائعة."` | — |
@@ -824,4 +825,3 @@
 | [SRC-0F910493E8-L000432](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L432) | 432 | `"- إضافة اختبارات لكل مهارة ومسار حرج."` | — |
 | [SRC-0F910493E8-L000433](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L433) | 433 | `"- إعادة تشغيل اختبارات الانحدار."` | — |
 | [SRC-0F910493E8-L000434](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L434) | 434 | `""` | — |
-| [SRC-0F910493E8-L000435](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L435) | 435 | `"**بوابة القبول:** تحسن قابل للقياس أو تنظيم يقلل التكرار دون تراجع في السلوك الحالي."` | — |

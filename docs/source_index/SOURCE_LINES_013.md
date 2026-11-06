@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000984 إلى SRC-1AE03B9EC3-L001783
+- النطاق: SRC-1AE03B9EC3-L000983 إلى SRC-1AE03B9EC3-L001782
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000983](../../agents/web_agent.py#L983) | 983 | `"            safe = _clean_text(str(value or \"\"), limit)"` | — |
 | [SRC-1AE03B9EC3-L000984](../../agents/web_agent.py#L984) | 984 | `"            safe = re.sub("` | — |
 | [SRC-1AE03B9EC3-L000985](../../agents/web_agent.py#L985) | 985 | `"                r\"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*\","` | — |
 | [SRC-1AE03B9EC3-L000986](../../agents/web_agent.py#L986) | 986 | `"                r\"\\1[REDACTED]\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L001780](../../agents/web_agent.py#L1780) | 1780 | `"                snippet = summary"` | — |
 | [SRC-1AE03B9EC3-L001781](../../agents/web_agent.py#L1781) | 1781 | `"            if not title or not isinstance(snippet, str) or not snippet.strip():"` | — |
 | [SRC-1AE03B9EC3-L001782](../../agents/web_agent.py#L1782) | 1782 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L001783](../../agents/web_agent.py#L1783) | 1783 | `"            rows.append({"` | — |

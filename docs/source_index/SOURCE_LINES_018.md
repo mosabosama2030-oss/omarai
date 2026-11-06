@@ -4,7 +4,7 @@
 
 - الصفحة: **018**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L004984 إلى SRC-1AE03B9EC3-L005783
+- النطاق: SRC-1AE03B9EC3-L004983 إلى SRC-1AE03B9EC3-L005782
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L004983](../../agents/web_agent.py#L4983) | 4983 | `"        terminal_search_outcome = str(terminal_report.get(\"search_outcome\") or \"\")"` | — |
 | [SRC-1AE03B9EC3-L004984](../../agents/web_agent.py#L4984) | 4984 | `"        terminal_sources = result.get(\"sources\")"` | — |
 | [SRC-1AE03B9EC3-L004985](../../agents/web_agent.py#L4985) | 4985 | `"        if not isinstance(terminal_sources, list):"` | — |
 | [SRC-1AE03B9EC3-L004986](../../agents/web_agent.py#L4986) | 4986 | `"            terminal_sources = []"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L005780](../../agents/web_agent.py#L5780) | 5780 | `"            \"user_supplied_url\" in source.get(\"providers\", [])"` | — |
 | [SRC-1AE03B9EC3-L005781](../../agents/web_agent.py#L5781) | 5781 | `"            and bool(source.get(\"page_fetched\"))"` | — |
 | [SRC-1AE03B9EC3-L005782](../../agents/web_agent.py#L5782) | 5782 | `"            and bool(str(source.get(\"page_text\") or \"\").strip())"` | — |
-| [SRC-1AE03B9EC3-L005783](../../agents/web_agent.py#L5783) | 5783 | `"            for source in sources"` | — |

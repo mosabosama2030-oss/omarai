@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000184 إلى SRC-1AE03B9EC3-L000983
+- النطاق: SRC-1AE03B9EC3-L000183 إلى SRC-1AE03B9EC3-L000982
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000183](../../agents/web_agent.py#L183) | 183 | `"    # Navigation/format words are request modifiers, not topical evidence."` | — |
 | [SRC-1AE03B9EC3-L000184](../../agents/web_agent.py#L184) | 184 | `"    \"website\", \"websites\", \"site\", \"sites\", \"homepage\", \"homepages\", \"portal\", \"portals\","` | — |
 | [SRC-1AE03B9EC3-L000185](../../agents/web_agent.py#L185) | 185 | `"    \"link\", \"links\", \"url\", \"urls\", \"direct\", \"officially\","` | — |
 | [SRC-1AE03B9EC3-L000186](../../agents/web_agent.py#L186) | 186 | `"    \"موقع\", \"الموقع\", \"مواقع\", \"رابط\", \"الرابط\", \"رابطه\", \"الرابطه\","` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L000980](../../agents/web_agent.py#L980) | 980 | `"        rejection_counts: dict[str, int] \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L000981](../../agents/web_agent.py#L981) | 981 | `"    ) -> None:"` | — |
 | [SRC-1AE03B9EC3-L000982](../../agents/web_agent.py#L982) | 982 | `"        def redact(value: Any, limit: int) -> str:"` | — |
-| [SRC-1AE03B9EC3-L000983](../../agents/web_agent.py#L983) | 983 | `"            safe = _clean_text(str(value or \"\"), limit)"` | — |

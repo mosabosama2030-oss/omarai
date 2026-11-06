@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001784 إلى SRC-1AE03B9EC3-L002583
+- النطاق: SRC-1AE03B9EC3-L001783 إلى SRC-1AE03B9EC3-L002582
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001783](../../agents/web_agent.py#L1783) | 1783 | `"            rows.append({"` | — |
 | [SRC-1AE03B9EC3-L001784](../../agents/web_agent.py#L1784) | 1784 | `"                \"title\": title,"` | — |
 | [SRC-1AE03B9EC3-L001785](../../agents/web_agent.py#L1785) | 1785 | `"                \"url\": url,"` | — |
 | [SRC-1AE03B9EC3-L001786](../../agents/web_agent.py#L1786) | 1786 | `"                \"snippet\": _clean_text(snippet, 1600),"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L002580](../../agents/web_agent.py#L2580) | 2580 | `"                    headers={"` | — |
 | [SRC-1AE03B9EC3-L002581](../../agents/web_agent.py#L2581) | 2581 | `"                        **headers,"` | — |
 | [SRC-1AE03B9EC3-L002582](../../agents/web_agent.py#L2582) | 2582 | `"                        \"Authorization\": \"Bearer \" + os.getenv(\"X_BEARER_TOKEN\", \"\").strip(),"` | — |
-| [SRC-1AE03B9EC3-L002583](../../agents/web_agent.py#L2583) | 2583 | `"                    },"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **019**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L005784 إلى SRC-1AE03B9EC3-L006583
+- النطاق: SRC-1AE03B9EC3-L005783 إلى SRC-1AE03B9EC3-L006582
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L005783](../../agents/web_agent.py#L5783) | 5783 | `"            for source in sources"` | — |
 | [SRC-1AE03B9EC3-L005784](../../agents/web_agent.py#L5784) | 5784 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L005785](../../agents/web_agent.py#L5785) | 5785 | `"        single_source_page_summary = ("` | — |
 | [SRC-1AE03B9EC3-L005786](../../agents/web_agent.py#L5786) | 5786 | `"            has_read_user_supplied_page"` | — |
@@ -815,4 +816,3 @@
 | [SRC-1AE03B9EC3-L006580](../../agents/web_agent.py#L6580) | 6580 | `"        ):"` | — |
 | [SRC-1AE03B9EC3-L006581](../../agents/web_agent.py#L6581) | 6581 | `"            presearch_integrity = audit_answer_integrity(working_question, answer, sources, coverage_targets, plan.get(\"requirement_queries\"))"` | — |
 | [SRC-1AE03B9EC3-L006582](../../agents/web_agent.py#L6582) | 6582 | `"            source_gap_targets = ["` | — |
-| [SRC-1AE03B9EC3-L006583](../../agents/web_agent.py#L6583) | 6583 | `"                item[\"target\"]"` | — |

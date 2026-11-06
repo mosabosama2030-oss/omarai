@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000787 إلى SRC-59CF4B7DE8-L000182
+- النطاق: SRC-C9CF9B54F8-L000786 إلى SRC-59CF4B7DE8-L000181
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000786](../../agents/omarai.py#L786) | 786 | `"                   (id, tenant_id, normalized_name, name, profile_json, created_at, updated_at)"` | — |
 | [SRC-C9CF9B54F8-L000787](../../agents/omarai.py#L787) | 787 | `"                   VALUES (?, ?, ?, ?, ?, ?, ?)"` | — |
 | [SRC-C9CF9B54F8-L000788](../../agents/omarai.py#L788) | 788 | `"                   ON CONFLICT(tenant_id, normalized_name)"` | — |
 | [SRC-C9CF9B54F8-L000789](../../agents/omarai.py#L789) | 789 | `"                   DO UPDATE SET name=excluded.name,"` | — |
@@ -842,4 +843,3 @@
 | [SRC-59CF4B7DE8-L000179](../../agents/research.py#L179) | 179 | `"    useful: list[str] = []"` | — |
 | [SRC-59CF4B7DE8-L000180](../../agents/research.py#L180) | 180 | `"    for segment in segments:"` | — |
 | [SRC-59CF4B7DE8-L000181](../../agents/research.py#L181) | 181 | `"        segment = segment.strip()"` | — |
-| [SRC-59CF4B7DE8-L000182](../../agents/research.py#L182) | 182 | `"        if not segment:"` | — |

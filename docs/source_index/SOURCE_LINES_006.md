@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000183 إلى SRC-1E32639872-L000076
+- النطاق: SRC-59CF4B7DE8-L000182 إلى SRC-1E32639872-L000075
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000182](../../agents/research.py#L182) | 182 | `"        if not segment:"` | — |
 | [SRC-59CF4B7DE8-L000183](../../agents/research.py#L183) | 183 | `"            continue"` | — |
 | [SRC-59CF4B7DE8-L000184](../../agents/research.py#L184) | 184 | `"        normalized_segment = re.sub(r\"[\\u064B-\\u065F\\u0670]\", \"\", segment)"` | — |
 | [SRC-59CF4B7DE8-L000185](../../agents/research.py#L185) | 185 | `"        normalized_segment = _normalize_arabic(normalized_segment).casefold()"` | — |
@@ -824,4 +825,3 @@
 | [SRC-1E32639872-L000073](../../agents/research_completion.py#L73) | 73 | `""` | — |
 | [SRC-1E32639872-L000074](../../agents/research_completion.py#L74) | 74 | `"def build_research_completion(result: dict[str, Any]) -> dict[str, Any]:"` | — |
 | [SRC-1E32639872-L000075](../../agents/research_completion.py#L75) | 75 | `"    \"\"\"Compute phase states and final counters without claiming semantic verification.\"\"\""` | — |
-| [SRC-1E32639872-L000076](../../agents/research_completion.py#L76) | 76 | `"    result = _dict(result)"` | — |

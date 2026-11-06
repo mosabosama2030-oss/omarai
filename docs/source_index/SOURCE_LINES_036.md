@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000491 إلى SRC-4FFD5AFC54-L000254
+- النطاق: SRC-70795F4B61-L000490 إلى SRC-4FFD5AFC54-L000112
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000490](../../scripts/compare_answer_quality_runs.py#L490) | 490 | `"            )"` | — |
 | [SRC-70795F4B61-L000491](../../scripts/compare_answer_quality_runs.py#L491) | 491 | `"    if not comparison[\"acceptance_blockers\"]:"` | — |
 | [SRC-70795F4B61-L000492](../../scripts/compare_answer_quality_runs.py#L492) | 492 | `"        comparison[\"acceptance_status\"] = \"COMPARABLE_WITH_REVIEWED_QUALITY_AND_BUILD_IDENTITIES\""` | — |
 | [SRC-70795F4B61-L000493](../../scripts/compare_answer_quality_runs.py#L493) | 493 | `"    else:"` | — |
@@ -202,375 +203,516 @@
 | [SRC-A8360B1B03-L000134](../../scripts/hosted_smoke_test.py#L134) | 134 | `"    return status, result if isinstance(result, dict) else None"` | — |
 | [SRC-A8360B1B03-L000135](../../scripts/hosted_smoke_test.py#L135) | 135 | `""` | — |
 | [SRC-A8360B1B03-L000136](../../scripts/hosted_smoke_test.py#L136) | 136 | `""` | — |
-| [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `"def run_smoke("` | — |
-| [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"    origin: str,"` | — |
-| [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `"    token: str,"` | — |
-| [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    *,"` | — |
-| [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"    timeout: float = 90,"` | — |
-| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"    allow_http: bool = False,"` | — |
-| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    expected_sha: str \| None = None,"` | — |
-| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `"    local_dev_no_token: bool = False,"` | — |
-| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `"    allow_provider_usage: bool = False,"` | — |
-| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"    preflight_only: bool = False,"` | — |
-| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `") -> dict[str, Any]:"` | — |
-| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    origin = normalize_origin(origin, allow_http or local_dev_no_token)"` | — |
-| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    target_host = urllib.parse.urlsplit(origin).hostname or \"\""` | — |
-| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"    loopback_host = target_host.lower() in {\"localhost\", \"127.0.0.1\", \"::1\"}"` | — |
-| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"    if expected_sha is not None and not re.fullmatch(r\"[0-9a-fA-F]{40}\", expected_sha.strip()):"` | — |
-| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"        raise SmokeError(\"The expected source revision must be a full 40-character Git SHA.\")"` | — |
-| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    if local_dev_no_token and not loopback_host:"` | — |
-| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `"        raise SmokeError(\"No-token development mode is restricted to localhost/loopback.\")"` | — |
-| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    if token.strip():"` | — |
-| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"        if len(token.strip()) < 32:"` | — |
-| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"            raise SmokeError(\"OMARAI_ACCESS_TOKEN is shorter than 32 characters.\")"` | — |
-| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `"    elif not (local_dev_no_token and loopback_host) and not preflight_only:"` | — |
-| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"            \"OMARAI_ACCESS_TOKEN is required for live hosted acceptance; no-cost preflight may run without it.\""` | — |
-| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        )"` | — |
-| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `""` | — |
-| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"    if preflight_only and allow_provider_usage:"` | — |
-| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        raise SmokeError(\"--preflight-only cannot be combined with --allow-provider-usage.\")"` | — |
-| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `""` | — |
-| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    auth_mode = ("` | — |
-| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `"        \"bearer_token\" if token.strip()"` | — |
-| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"        else \"local_loopback_dev_bypass\" if local_dev_no_token and loopback_host"` | — |
-| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"        else \"preflight_no_token\""` | — |
-| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"    )"` | — |
-| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"    checks: dict[str, Any] = {}"` | — |
-| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"    partial_report: dict[str, Any] = {"` | — |
-| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        \"result\": \"running\","` | — |
-| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"        \"target_host\": target_host,"` | — |
-| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"        \"auth_mode\": auth_mode,"` | — |
-| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"        \"checks\": checks,"` | — |
-| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"        \"transcript\": [],"` | — |
-| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"    }"` | — |
-| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"    status, health = request_json(f\"{origin}/api/health\", timeout=min(timeout, 20))"` | — |
-| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `"    if status != 200 or not health or health.get(\"ok\") is not True:"` | — |
-| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        if isinstance(health, dict) and isinstance(health.get(\"_smoke_http\"), dict):"` | — |
-| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"            partial_report[\"http_response\"] = health[\"_smoke_http\"]"` | — |
-| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"        raise SmokeError(f\"Health check failed (HTTP {status}).\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"    checks[\"health\"] = \"passed\""` | — |
-| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `""` | — |
-| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"    build = health.get(\"build\")"` | — |
-| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"    reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
-| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"    if expected_sha is not None:"` | — |
-| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"        expected = expected_sha.strip().lower()"` | — |
-| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
-| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `"            raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"                \"The deployed service SHA does not match the expected Git commit. \""` | — |
-| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"                \"Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, \""` | — |
-| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"                \"then rebuild and redeploy.\","` | — |
-| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"                partial_report,"` | — |
-| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"            )"` | — |
-| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `"        checks[\"build_identity\"] = {"` | — |
-| [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"            \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"            \"expected_sha\": expected,"` | — |
-| [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `"            \"reported_sha\": reported_sha.lower(),"` | — |
-| [SRC-A8360B1B03-L000201](../../scripts/hosted_smoke_test.py#L201) | 201 | `"        }"` | — |
-| [SRC-A8360B1B03-L000202](../../scripts/hosted_smoke_test.py#L202) | 202 | `"    else:"` | — |
-| [SRC-A8360B1B03-L000203](../../scripts/hosted_smoke_test.py#L203) | 203 | `"        checks[\"build_identity\"] = {"` | — |
-| [SRC-A8360B1B03-L000204](../../scripts/hosted_smoke_test.py#L204) | 204 | `"            \"status\": \"not_checked\","` | — |
-| [SRC-A8360B1B03-L000205](../../scripts/hosted_smoke_test.py#L205) | 205 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
-| [SRC-A8360B1B03-L000206](../../scripts/hosted_smoke_test.py#L206) | 206 | `"        }"` | — |
-| [SRC-A8360B1B03-L000207](../../scripts/hosted_smoke_test.py#L207) | 207 | `""` | — |
-| [SRC-A8360B1B03-L000208](../../scripts/hosted_smoke_test.py#L208) | 208 | `"    if token.strip() or (preflight_only and not local_dev_no_token):"` | — |
-| [SRC-A8360B1B03-L000209](../../scripts/hosted_smoke_test.py#L209) | 209 | `"        status, auth_response = request_json("` | — |
-| [SRC-A8360B1B03-L000210](../../scripts/hosted_smoke_test.py#L210) | 210 | `"            f\"{origin}/api/agent\", payload={\"question\": \"\"},"` | — |
-| [SRC-A8360B1B03-L000211](../../scripts/hosted_smoke_test.py#L211) | 211 | `"            timeout=min(timeout, 20),"` | — |
-| [SRC-A8360B1B03-L000212](../../scripts/hosted_smoke_test.py#L212) | 212 | `"        )"` | — |
-| [SRC-A8360B1B03-L000213](../../scripts/hosted_smoke_test.py#L213) | 213 | `"        if status != 401:"` | — |
-| [SRC-A8360B1B03-L000214](../../scripts/hosted_smoke_test.py#L214) | 214 | `"            if isinstance(auth_response, dict) and isinstance(auth_response.get(\"_smoke_http\"), dict):"` | — |
-| [SRC-A8360B1B03-L000215](../../scripts/hosted_smoke_test.py#L215) | 215 | `"                partial_report[\"http_response\"] = auth_response[\"_smoke_http\"]"` | — |
-| [SRC-A8360B1B03-L000216](../../scripts/hosted_smoke_test.py#L216) | 216 | `"            raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000217](../../scripts/hosted_smoke_test.py#L217) | 217 | `"                f\"Unauthenticated POST /api/agent should return 401, received {status}.\","` | — |
-| [SRC-A8360B1B03-L000218](../../scripts/hosted_smoke_test.py#L218) | 218 | `"                partial_report,"` | — |
-| [SRC-A8360B1B03-L000219](../../scripts/hosted_smoke_test.py#L219) | 219 | `"            )"` | — |
-| [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"        checks[\"authentication\"] = \"passed\""` | — |
-| [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"    else:"` | — |
-| [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"        checks[\"authentication\"] = \"local_loopback_dev_bypass\""` | — |
-| [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `""` | — |
-| [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"    if preflight_only:"` | — |
-| [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `"        checks[\"provider_usage\"] = {\"status\": \"skipped_not_approved\"}"` | — |
-| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"        partial_report.update({"` | — |
-| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `"            \"result\": \"preflight_passed\","` | — |
-| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `"            \"checks\": checks,"` | — |
-| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"            \"note\": ("` | — |
-| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"                \"No-cost preflight only: health, build identity (when requested), and authentication \""` | — |
-| [SRC-A8360B1B03-L000231](../../scripts/hosted_smoke_test.py#L231) | 231 | `"                \"were checked. No search provider or language model was called.\""` | — |
-| [SRC-A8360B1B03-L000232](../../scripts/hosted_smoke_test.py#L232) | 232 | `"            ),"` | — |
-| [SRC-A8360B1B03-L000233](../../scripts/hosted_smoke_test.py#L233) | 233 | `"        })"` | — |
-| [SRC-A8360B1B03-L000234](../../scripts/hosted_smoke_test.py#L234) | 234 | `"        return partial_report"` | — |
-| [SRC-A8360B1B03-L000235](../../scripts/hosted_smoke_test.py#L235) | 235 | `""` | — |
-| [SRC-A8360B1B03-L000236](../../scripts/hosted_smoke_test.py#L236) | 236 | `"    if not allow_provider_usage:"` | — |
-| [SRC-A8360B1B03-L000237](../../scripts/hosted_smoke_test.py#L237) | 237 | `"        checks[\"provider_usage\"] = {\"status\": \"blocked_not_approved\"}"` | — |
-| [SRC-A8360B1B03-L000238](../../scripts/hosted_smoke_test.py#L238) | 238 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000239](../../scripts/hosted_smoke_test.py#L239) | 239 | `"            \"No-cost preflight passed, but live search/model usage was not approved. \""` | — |
-| [SRC-A8360B1B03-L000240](../../scripts/hosted_smoke_test.py#L240) | 240 | `"            \"Re-run with --allow-provider-usage only after explicit human approval.\","` | — |
-| [SRC-A8360B1B03-L000241](../../scripts/hosted_smoke_test.py#L241) | 241 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000242](../../scripts/hosted_smoke_test.py#L242) | 242 | `"        )"` | — |
-| [SRC-A8360B1B03-L000243](../../scripts/hosted_smoke_test.py#L243) | 243 | `""` | — |
-| [SRC-A8360B1B03-L000244](../../scripts/hosted_smoke_test.py#L244) | 244 | `"    checks[\"provider_usage\"] = {"` | — |
-| [SRC-A8360B1B03-L000245](../../scripts/hosted_smoke_test.py#L245) | 245 | `"        \"status\": \"approved\","` | — |
-| [SRC-A8360B1B03-L000246](../../scripts/hosted_smoke_test.py#L246) | 246 | `"        \"scope\": {"` | — |
-| [SRC-A8360B1B03-L000247](../../scripts/hosted_smoke_test.py#L247) | 247 | `"            \"profile\": \"hosted_smoke\","` | — |
-| [SRC-A8360B1B03-L000248](../../scripts/hosted_smoke_test.py#L248) | 248 | `"            \"max_search_queries\": HOSTED_SMOKE_BUDGET_MAX[\"search_queries\"],"` | — |
-| [SRC-A8360B1B03-L000249](../../scripts/hosted_smoke_test.py#L249) | 249 | `"            \"max_provider_requests\": HOSTED_SMOKE_BUDGET_MAX[\"search_calls\"],"` | — |
-| [SRC-A8360B1B03-L000250](../../scripts/hosted_smoke_test.py#L250) | 250 | `"            \"max_model_calls\": HOSTED_SMOKE_BUDGET_MAX[\"model_calls\"],"` | — |
-| [SRC-A8360B1B03-L000251](../../scripts/hosted_smoke_test.py#L251) | 251 | `"            \"max_page_fetches\": HOSTED_SMOKE_BUDGET_MAX[\"page_fetches\"],"` | — |
-| [SRC-A8360B1B03-L000252](../../scripts/hosted_smoke_test.py#L252) | 252 | `"            \"tool_calls\": HOSTED_SMOKE_BUDGET_MAX[\"tool_calls\"],"` | — |
-| [SRC-A8360B1B03-L000253](../../scripts/hosted_smoke_test.py#L253) | 253 | `"            \"note\": \"Server-enforced per-request ceilings; operator settings may be stricter.\","` | — |
-| [SRC-A8360B1B03-L000254](../../scripts/hosted_smoke_test.py#L254) | 254 | `"        },"` | — |
-| [SRC-A8360B1B03-L000255](../../scripts/hosted_smoke_test.py#L255) | 255 | `"    }"` | — |
-| [SRC-A8360B1B03-L000256](../../scripts/hosted_smoke_test.py#L256) | 256 | `"    status, answer = request_json("` | — |
-| [SRC-A8360B1B03-L000257](../../scripts/hosted_smoke_test.py#L257) | 257 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
-| [SRC-A8360B1B03-L000258](../../scripts/hosted_smoke_test.py#L258) | 258 | `"        payload={"` | — |
-| [SRC-A8360B1B03-L000259](../../scripts/hosted_smoke_test.py#L259) | 259 | `"            \"question\": LIVE_TEST_QUESTION,"` | — |
-| [SRC-A8360B1B03-L000260](../../scripts/hosted_smoke_test.py#L260) | 260 | `"            \"history\": [], \"mode\": \"auto\", \"request_profile\": \"hosted_smoke\","` | — |
-| [SRC-A8360B1B03-L000261](../../scripts/hosted_smoke_test.py#L261) | 261 | `"        },"` | — |
-| [SRC-A8360B1B03-L000262](../../scripts/hosted_smoke_test.py#L262) | 262 | `"    )"` | — |
-| [SRC-A8360B1B03-L000263](../../scripts/hosted_smoke_test.py#L263) | 263 | `"    if status != 200 or not answer:"` | — |
-| [SRC-A8360B1B03-L000264](../../scripts/hosted_smoke_test.py#L264) | 264 | `"        if isinstance(answer, dict) and isinstance(answer.get(\"_smoke_http\"), dict):"` | — |
-| [SRC-A8360B1B03-L000265](../../scripts/hosted_smoke_test.py#L265) | 265 | `"            partial_report[\"http_response\"] = answer[\"_smoke_http\"]"` | — |
-| [SRC-A8360B1B03-L000266](../../scripts/hosted_smoke_test.py#L266) | 266 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000267](../../scripts/hosted_smoke_test.py#L267) | 267 | `"    sources = answer.get(\"sources\")"` | — |
-| [SRC-A8360B1B03-L000268](../../scripts/hosted_smoke_test.py#L268) | 268 | `"    usable = ["` | — |
-| [SRC-A8360B1B03-L000269](../../scripts/hosted_smoke_test.py#L269) | 269 | `"        item for item in sources if isinstance(item, dict)"` | — |
-| [SRC-A8360B1B03-L000270](../../scripts/hosted_smoke_test.py#L270) | 270 | `"        and isinstance(item.get(\"url\"), str)"` | — |
-| [SRC-A8360B1B03-L000271](../../scripts/hosted_smoke_test.py#L271) | 271 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
-| [SRC-A8360B1B03-L000272](../../scripts/hosted_smoke_test.py#L272) | 272 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
-| [SRC-A8360B1B03-L000273](../../scripts/hosted_smoke_test.py#L273) | 273 | `"    ] if isinstance(sources, list) else []"` | — |
-| [SRC-A8360B1B03-L000274](../../scripts/hosted_smoke_test.py#L274) | 274 | `"    search_report = answer.get(\"search_report\")"` | — |
-| [SRC-A8360B1B03-L000275](../../scripts/hosted_smoke_test.py#L275) | 275 | `"    raw_answer = answer.get(\"answer\")"` | — |
-| [SRC-A8360B1B03-L000276](../../scripts/hosted_smoke_test.py#L276) | 276 | `"    answer_text = raw_answer.strip() if isinstance(raw_answer, str) else \"\""` | — |
-| [SRC-A8360B1B03-L000277](../../scripts/hosted_smoke_test.py#L277) | 277 | `"    source_records = ["` | — |
-| [SRC-A8360B1B03-L000278](../../scripts/hosted_smoke_test.py#L278) | 278 | `"        {"` | — |
-| [SRC-A8360B1B03-L000279](../../scripts/hosted_smoke_test.py#L279) | 279 | `"            \"title\": str(item.get(\"title\") or \"\")[:300],"` | — |
-| [SRC-A8360B1B03-L000280](../../scripts/hosted_smoke_test.py#L280) | 280 | `"            \"url\": str(item.get(\"url\") or \"\")[:2048],"` | — |
-| [SRC-A8360B1B03-L000281](../../scripts/hosted_smoke_test.py#L281) | 281 | `"            \"provider\": str(item.get(\"provider\") or \"\")[:80],"` | — |
-| [SRC-A8360B1B03-L000282](../../scripts/hosted_smoke_test.py#L282) | 282 | `"            \"snippet\": str(item.get(\"snippet\") or \"\")[:1200],"` | — |
-| [SRC-A8360B1B03-L000283](../../scripts/hosted_smoke_test.py#L283) | 283 | `"            \"published_at\": str(item.get(\"published_at\") or \"\")[:100],"` | — |
-| [SRC-A8360B1B03-L000284](../../scripts/hosted_smoke_test.py#L284) | 284 | `"        }"` | — |
-| [SRC-A8360B1B03-L000285](../../scripts/hosted_smoke_test.py#L285) | 285 | `"        for item in usable"` | — |
-| [SRC-A8360B1B03-L000286](../../scripts/hosted_smoke_test.py#L286) | 286 | `"    ]"` | — |
-| [SRC-A8360B1B03-L000287](../../scripts/hosted_smoke_test.py#L287) | 287 | `"    transcript = {"` | — |
-| [SRC-A8360B1B03-L000288](../../scripts/hosted_smoke_test.py#L288) | 288 | `"        \"case_id\": \"sales_intent_fire_alarm_egypt\","` | — |
-| [SRC-A8360B1B03-L000289](../../scripts/hosted_smoke_test.py#L289) | 289 | `"        \"question\": LIVE_TEST_QUESTION,"` | — |
-| [SRC-A8360B1B03-L000290](../../scripts/hosted_smoke_test.py#L290) | 290 | `"        \"answer\": answer_text,"` | — |
-| [SRC-A8360B1B03-L000291](../../scripts/hosted_smoke_test.py#L291) | 291 | `"        \"used_web_search\": answer.get(\"used_web_search\") is True,"` | — |
-| [SRC-A8360B1B03-L000292](../../scripts/hosted_smoke_test.py#L292) | 292 | `"        \"used_language_model\": answer.get(\"used_language_model\") is True,"` | — |
-| [SRC-A8360B1B03-L000293](../../scripts/hosted_smoke_test.py#L293) | 293 | `"        \"sources\": source_records,"` | — |
-| [SRC-A8360B1B03-L000294](../../scripts/hosted_smoke_test.py#L294) | 294 | `"        \"pipeline_completion_status\": ("` | — |
-| [SRC-A8360B1B03-L000295](../../scripts/hosted_smoke_test.py#L295) | 295 | `"            search_report.get(\"pipeline_completion_status\")"` | — |
-| [SRC-A8360B1B03-L000296](../../scripts/hosted_smoke_test.py#L296) | 296 | `"            if isinstance(search_report, dict) else None"` | — |
-| [SRC-A8360B1B03-L000297](../../scripts/hosted_smoke_test.py#L297) | 297 | `"        ),"` | — |
-| [SRC-A8360B1B03-L000298](../../scripts/hosted_smoke_test.py#L298) | 298 | `"        \"answer_evidence_status\": answer.get(\"answer_evidence_status\"),"` | — |
-| [SRC-A8360B1B03-L000299](../../scripts/hosted_smoke_test.py#L299) | 299 | `"        \"semantic_claim_verification_status\": ("` | — |
-| [SRC-A8360B1B03-L000300](../../scripts/hosted_smoke_test.py#L300) | 300 | `"            search_report.get(\"semantic_claim_verification\", {}).get(\"status\")"` | — |
-| [SRC-A8360B1B03-L000301](../../scripts/hosted_smoke_test.py#L301) | 301 | `"            if isinstance(search_report, dict)"` | — |
-| [SRC-A8360B1B03-L000302](../../scripts/hosted_smoke_test.py#L302) | 302 | `"            and isinstance(search_report.get(\"semantic_claim_verification\"), dict)"` | — |
-| [SRC-A8360B1B03-L000303](../../scripts/hosted_smoke_test.py#L303) | 303 | `"            else None"` | — |
-| [SRC-A8360B1B03-L000304](../../scripts/hosted_smoke_test.py#L304) | 304 | `"        ),"` | — |
-| [SRC-A8360B1B03-L000305](../../scripts/hosted_smoke_test.py#L305) | 305 | `"        \"request_budget\": answer.get(\"request_budget\"),"` | — |
-| [SRC-A8360B1B03-L000306](../../scripts/hosted_smoke_test.py#L306) | 306 | `"    }"` | — |
-| [SRC-A8360B1B03-L000307](../../scripts/hosted_smoke_test.py#L307) | 307 | `"    partial_report[\"transcript\"] = [transcript]"` | — |
-| [SRC-A8360B1B03-L000308](../../scripts/hosted_smoke_test.py#L308) | 308 | `"    if not answer_text:"` | — |
-| [SRC-A8360B1B03-L000309](../../scripts/hosted_smoke_test.py#L309) | 309 | `"        raise SmokeError(\"Agent request returned an empty or whitespace-only answer.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000310](../../scripts/hosted_smoke_test.py#L310) | 310 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
-| [SRC-A8360B1B03-L000311](../../scripts/hosted_smoke_test.py#L311) | 311 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000312](../../scripts/hosted_smoke_test.py#L312) | 312 | `"            \"Agent request did not return a live web search with usable source URLs.\","` | — |
-| [SRC-A8360B1B03-L000313](../../scripts/hosted_smoke_test.py#L313) | 313 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000314](../../scripts/hosted_smoke_test.py#L314) | 314 | `"        )"` | — |
-| [SRC-A8360B1B03-L000315](../../scripts/hosted_smoke_test.py#L315) | 315 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
-| [SRC-A8360B1B03-L000316](../../scripts/hosted_smoke_test.py#L316) | 316 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000317](../../scripts/hosted_smoke_test.py#L317) | 317 | `"            \"Agent request did not confirm that a language model was used.\","` | — |
-| [SRC-A8360B1B03-L000318](../../scripts/hosted_smoke_test.py#L318) | 318 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000319](../../scripts/hosted_smoke_test.py#L319) | 319 | `"        )"` | — |
-| [SRC-A8360B1B03-L000320](../../scripts/hosted_smoke_test.py#L320) | 320 | `"    request_budget = answer.get(\"request_budget\")"` | — |
-| [SRC-A8360B1B03-L000321](../../scripts/hosted_smoke_test.py#L321) | 321 | `"    if not isinstance(request_budget, dict) or request_budget.get(\"profile\") != \"hosted_smoke\":"` | — |
-| [SRC-A8360B1B03-L000322](../../scripts/hosted_smoke_test.py#L322) | 322 | `"        raise SmokeError(\"Agent response did not confirm the hosted_smoke request budget profile.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000323](../../scripts/hosted_smoke_test.py#L323) | 323 | `"    budget_limits = request_budget.get(\"limits\")"` | — |
-| [SRC-A8360B1B03-L000324](../../scripts/hosted_smoke_test.py#L324) | 324 | `"    budget_counts = request_budget.get(\"counts\")"` | — |
-| [SRC-A8360B1B03-L000325](../../scripts/hosted_smoke_test.py#L325) | 325 | `"    if not isinstance(budget_limits, dict) or not isinstance(budget_counts, dict):"` | — |
-| [SRC-A8360B1B03-L000326](../../scripts/hosted_smoke_test.py#L326) | 326 | `"        raise SmokeError(\"Agent response omitted request-budget limits or counters.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000327](../../scripts/hosted_smoke_test.py#L327) | 327 | `"    for resource, maximum in HOSTED_SMOKE_BUDGET_MAX.items():"` | — |
-| [SRC-A8360B1B03-L000328](../../scripts/hosted_smoke_test.py#L328) | 328 | `"        limit = budget_limits.get(resource)"` | — |
-| [SRC-A8360B1B03-L000329](../../scripts/hosted_smoke_test.py#L329) | 329 | `"        count = budget_counts.get(resource)"` | — |
-| [SRC-A8360B1B03-L000330](../../scripts/hosted_smoke_test.py#L330) | 330 | `"        if ("` | — |
-| [SRC-A8360B1B03-L000331](../../scripts/hosted_smoke_test.py#L331) | 331 | `"            isinstance(limit, bool) or not isinstance(limit, int)"` | — |
-| [SRC-A8360B1B03-L000332](../../scripts/hosted_smoke_test.py#L332) | 332 | `"            or isinstance(count, bool) or not isinstance(count, int)"` | — |
-| [SRC-A8360B1B03-L000333](../../scripts/hosted_smoke_test.py#L333) | 333 | `"            or limit < 0 or limit > maximum"` | — |
-| [SRC-A8360B1B03-L000334](../../scripts/hosted_smoke_test.py#L334) | 334 | `"            or count < 0 or count > limit"` | — |
-| [SRC-A8360B1B03-L000335](../../scripts/hosted_smoke_test.py#L335) | 335 | `"        ):"` | — |
-| [SRC-A8360B1B03-L000336](../../scripts/hosted_smoke_test.py#L336) | 336 | `"            raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000337](../../scripts/hosted_smoke_test.py#L337) | 337 | `"                f\"Agent hosted_smoke request budget is missing, exceeded, or invalid for {resource}.\","` | — |
-| [SRC-A8360B1B03-L000338](../../scripts/hosted_smoke_test.py#L338) | 338 | `"                partial_report,"` | — |
-| [SRC-A8360B1B03-L000339](../../scripts/hosted_smoke_test.py#L339) | 339 | `"            )"` | — |
-| [SRC-A8360B1B03-L000340](../../scripts/hosted_smoke_test.py#L340) | 340 | `"    if ("` | — |
-| [SRC-A8360B1B03-L000341](../../scripts/hosted_smoke_test.py#L341) | 341 | `"        budget_counts[\"search_queries\"] < 1"` | — |
-| [SRC-A8360B1B03-L000342](../../scripts/hosted_smoke_test.py#L342) | 342 | `"        or budget_counts[\"search_calls\"] < 1"` | — |
-| [SRC-A8360B1B03-L000343](../../scripts/hosted_smoke_test.py#L343) | 343 | `"        or budget_counts[\"model_calls\"] < 1"` | — |
-| [SRC-A8360B1B03-L000344](../../scripts/hosted_smoke_test.py#L344) | 344 | `"    ):"` | — |
-| [SRC-A8360B1B03-L000345](../../scripts/hosted_smoke_test.py#L345) | 345 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000346](../../scripts/hosted_smoke_test.py#L346) | 346 | `"            \"Agent hosted_smoke request budget counters do not prove search and model work occurred.\","` | — |
-| [SRC-A8360B1B03-L000347](../../scripts/hosted_smoke_test.py#L347) | 347 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000348](../../scripts/hosted_smoke_test.py#L348) | 348 | `"        )"` | — |
-| [SRC-A8360B1B03-L000349](../../scripts/hosted_smoke_test.py#L349) | 349 | `"    budget_timeout = request_budget.get(\"timeout_seconds\")"` | — |
-| [SRC-A8360B1B03-L000350](../../scripts/hosted_smoke_test.py#L350) | 350 | `"    if ("` | — |
-| [SRC-A8360B1B03-L000351](../../scripts/hosted_smoke_test.py#L351) | 351 | `"        isinstance(budget_timeout, bool)"` | — |
-| [SRC-A8360B1B03-L000352](../../scripts/hosted_smoke_test.py#L352) | 352 | `"        or not isinstance(budget_timeout, (int, float))"` | — |
-| [SRC-A8360B1B03-L000353](../../scripts/hosted_smoke_test.py#L353) | 353 | `"        or budget_timeout <= 0"` | — |
-| [SRC-A8360B1B03-L000354](../../scripts/hosted_smoke_test.py#L354) | 354 | `"        or budget_timeout > 75"` | — |
-| [SRC-A8360B1B03-L000355](../../scripts/hosted_smoke_test.py#L355) | 355 | `"        or request_budget.get(\"budget_exhausted\") is not False"` | — |
-| [SRC-A8360B1B03-L000356](../../scripts/hosted_smoke_test.py#L356) | 356 | `"        or request_budget.get(\"deadline_exceeded\") is not False"` | — |
-| [SRC-A8360B1B03-L000357](../../scripts/hosted_smoke_test.py#L357) | 357 | `"    ):"` | — |
-| [SRC-A8360B1B03-L000358](../../scripts/hosted_smoke_test.py#L358) | 358 | `"        raise SmokeError(\"Agent hosted_smoke request budget was exhausted or exceeded its timeout ceiling.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000359](../../scripts/hosted_smoke_test.py#L359) | 359 | `"    checks[\"request_budget\"] = {"` | — |
-| [SRC-A8360B1B03-L000360](../../scripts/hosted_smoke_test.py#L360) | 360 | `"        \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000361](../../scripts/hosted_smoke_test.py#L361) | 361 | `"        \"profile\": \"hosted_smoke\","` | — |
-| [SRC-A8360B1B03-L000362](../../scripts/hosted_smoke_test.py#L362) | 362 | `"        \"timeout_seconds\": budget_timeout,"` | — |
-| [SRC-A8360B1B03-L000363](../../scripts/hosted_smoke_test.py#L363) | 363 | `"        \"limits\": budget_limits,"` | — |
-| [SRC-A8360B1B03-L000364](../../scripts/hosted_smoke_test.py#L364) | 364 | `"        \"counts\": budget_counts,"` | — |
-| [SRC-A8360B1B03-L000365](../../scripts/hosted_smoke_test.py#L365) | 365 | `"        \"budget_exhausted\": False,"` | — |
-| [SRC-A8360B1B03-L000366](../../scripts/hosted_smoke_test.py#L366) | 366 | `"        \"deadline_exceeded\": False,"` | — |
-| [SRC-A8360B1B03-L000367](../../scripts/hosted_smoke_test.py#L367) | 367 | `"    }"` | — |
-| [SRC-A8360B1B03-L000368](../../scripts/hosted_smoke_test.py#L368) | 368 | `"    if not isinstance(search_report, dict):"` | — |
-| [SRC-A8360B1B03-L000369](../../scripts/hosted_smoke_test.py#L369) | 369 | `"        raise SmokeError(\"Agent request did not return a structured search report.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000370](../../scripts/hosted_smoke_test.py#L370) | 370 | `"    pipeline_status = search_report.get(\"pipeline_completion_status\")"` | — |
-| [SRC-A8360B1B03-L000371](../../scripts/hosted_smoke_test.py#L371) | 371 | `"    if pipeline_status != \"completed\":"` | — |
-| [SRC-A8360B1B03-L000372](../../scripts/hosted_smoke_test.py#L372) | 372 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000373](../../scripts/hosted_smoke_test.py#L373) | 373 | `"            f\"Agent research pipeline did not complete (status: {pipeline_status or 'missing'}).\","` | — |
-| [SRC-A8360B1B03-L000374](../../scripts/hosted_smoke_test.py#L374) | 374 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000375](../../scripts/hosted_smoke_test.py#L375) | 375 | `"        )"` | — |
-| [SRC-A8360B1B03-L000376](../../scripts/hosted_smoke_test.py#L376) | 376 | `"    semantic_verification = search_report.get(\"semantic_claim_verification\")"` | — |
-| [SRC-A8360B1B03-L000377](../../scripts/hosted_smoke_test.py#L377) | 377 | `"    semantic_status = ("` | — |
-| [SRC-A8360B1B03-L000378](../../scripts/hosted_smoke_test.py#L378) | 378 | `"        semantic_verification.get(\"status\")"` | — |
-| [SRC-A8360B1B03-L000379](../../scripts/hosted_smoke_test.py#L379) | 379 | `"        if isinstance(semantic_verification, dict) else None"` | — |
-| [SRC-A8360B1B03-L000380](../../scripts/hosted_smoke_test.py#L380) | 380 | `"    )"` | — |
-| [SRC-A8360B1B03-L000381](../../scripts/hosted_smoke_test.py#L381) | 381 | `"    if semantic_status not in {"` | — |
-| [SRC-A8360B1B03-L000382](../../scripts/hosted_smoke_test.py#L382) | 382 | `"        \"completed_all_claims_supported\","` | — |
-| [SRC-A8360B1B03-L000383](../../scripts/hosted_smoke_test.py#L383) | 383 | `"        \"completed_no_factual_claims\","` | — |
-| [SRC-A8360B1B03-L000384](../../scripts/hosted_smoke_test.py#L384) | 384 | `"    }:"` | — |
-| [SRC-A8360B1B03-L000385](../../scripts/hosted_smoke_test.py#L385) | 385 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000386](../../scripts/hosted_smoke_test.py#L386) | 386 | `"            f\"Agent semantic claim-support review did not pass (status: {semantic_status or 'missing'}).\","` | — |
-| [SRC-A8360B1B03-L000387](../../scripts/hosted_smoke_test.py#L387) | 387 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000388](../../scripts/hosted_smoke_test.py#L388) | 388 | `"        )"` | — |
-| [SRC-A8360B1B03-L000389](../../scripts/hosted_smoke_test.py#L389) | 389 | `"    if search_report.get(\"insufficient_evidence\") is not False:"` | — |
-| [SRC-A8360B1B03-L000390](../../scripts/hosted_smoke_test.py#L390) | 390 | `"        raise SmokeError(\"Agent search report flags insufficient evidence or omits that check.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000391](../../scripts/hosted_smoke_test.py#L391) | 391 | `"    if search_report.get(\"claim_audit_semantics\") != \"distinct_model_assessed_source_support_not_ground_truth\":"` | — |
-| [SRC-A8360B1B03-L000392](../../scripts/hosted_smoke_test.py#L392) | 392 | `"        raise SmokeError(\"Agent claim-audit semantics are missing or not the expected source-support assessment.\", partial_report)"` | — |
-| [SRC-A8360B1B03-L000393](../../scripts/hosted_smoke_test.py#L393) | 393 | `"    evidence_status = answer.get(\"answer_evidence_status\")"` | — |
-| [SRC-A8360B1B03-L000394](../../scripts/hosted_smoke_test.py#L394) | 394 | `"    if evidence_status != \"citation_indices_validated_only\":"` | — |
-| [SRC-A8360B1B03-L000395](../../scripts/hosted_smoke_test.py#L395) | 395 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000396](../../scripts/hosted_smoke_test.py#L396) | 396 | `"            f\"Agent answer evidence status is not acceptable for hosted acceptance (status: {evidence_status or 'missing'}).\","` | — |
-| [SRC-A8360B1B03-L000397](../../scripts/hosted_smoke_test.py#L397) | 397 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000398](../../scripts/hosted_smoke_test.py#L398) | 398 | `"        )"` | — |
-| [SRC-A8360B1B03-L000399](../../scripts/hosted_smoke_test.py#L399) | 399 | `"    checks[\"search\"] = {"` | — |
-| [SRC-A8360B1B03-L000400](../../scripts/hosted_smoke_test.py#L400) | 400 | `"        \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000401](../../scripts/hosted_smoke_test.py#L401) | 401 | `"        \"pages_fetched\": search_report.get(\"pages_fetched\", 0),"` | — |
-| [SRC-A8360B1B03-L000402](../../scripts/hosted_smoke_test.py#L402) | 402 | `"        \"providers_reported\": search_report.get(\"providers_used\", []),"` | — |
-| [SRC-A8360B1B03-L000403](../../scripts/hosted_smoke_test.py#L403) | 403 | `"        \"pipeline_completion_status\": pipeline_status,"` | — |
-| [SRC-A8360B1B03-L000404](../../scripts/hosted_smoke_test.py#L404) | 404 | `"    }"` | — |
-| [SRC-A8360B1B03-L000405](../../scripts/hosted_smoke_test.py#L405) | 405 | `"    checks[\"semantic_claim_support\"] = {"` | — |
-| [SRC-A8360B1B03-L000406](../../scripts/hosted_smoke_test.py#L406) | 406 | `"        \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000407](../../scripts/hosted_smoke_test.py#L407) | 407 | `"        \"verification_status\": semantic_status,"` | — |
-| [SRC-A8360B1B03-L000408](../../scripts/hosted_smoke_test.py#L408) | 408 | `"        \"insufficient_evidence\": False,"` | — |
-| [SRC-A8360B1B03-L000409](../../scripts/hosted_smoke_test.py#L409) | 409 | `"        \"semantics\": \"model_assessed_source_support_not_ground_truth\","` | — |
-| [SRC-A8360B1B03-L000410](../../scripts/hosted_smoke_test.py#L410) | 410 | `"    }"` | — |
-| [SRC-A8360B1B03-L000411](../../scripts/hosted_smoke_test.py#L411) | 411 | `"    checks[\"language_model\"] = {"` | — |
-| [SRC-A8360B1B03-L000412](../../scripts/hosted_smoke_test.py#L412) | 412 | `"        \"status\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000413](../../scripts/hosted_smoke_test.py#L413) | 413 | `"        \"response_received\": True,"` | — |
-| [SRC-A8360B1B03-L000414](../../scripts/hosted_smoke_test.py#L414) | 414 | `"        \"verified_by\": \"agent_request\","` | — |
-| [SRC-A8360B1B03-L000415](../../scripts/hosted_smoke_test.py#L415) | 415 | `"    }"` | — |
-| [SRC-A8360B1B03-L000416](../../scripts/hosted_smoke_test.py#L416) | 416 | `"    checks[\"agent_request\"] = {"` | — |
-| [SRC-A8360B1B03-L000417](../../scripts/hosted_smoke_test.py#L417) | 417 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
-| [SRC-A8360B1B03-L000418](../../scripts/hosted_smoke_test.py#L418) | 418 | `"        \"direct_pages_read\": search_report.get(\"pages_fetched\"),"` | — |
-| [SRC-A8360B1B03-L000419](../../scripts/hosted_smoke_test.py#L419) | 419 | `"        \"providers_reported\": search_report.get(\"providers_used\", []),"` | — |
-| [SRC-A8360B1B03-L000420](../../scripts/hosted_smoke_test.py#L420) | 420 | `"        \"answer_received\": True,"` | — |
-| [SRC-A8360B1B03-L000421](../../scripts/hosted_smoke_test.py#L421) | 421 | `"        \"pipeline_completion_status\": pipeline_status,"` | — |
-| [SRC-A8360B1B03-L000422](../../scripts/hosted_smoke_test.py#L422) | 422 | `"        \"answer_evidence_status\": evidence_status,"` | — |
-| [SRC-A8360B1B03-L000423](../../scripts/hosted_smoke_test.py#L423) | 423 | `"    }"` | — |
-| [SRC-A8360B1B03-L000424](../../scripts/hosted_smoke_test.py#L424) | 424 | `"    partial_report.update({"` | — |
-| [SRC-A8360B1B03-L000425](../../scripts/hosted_smoke_test.py#L425) | 425 | `"        \"result\": \"passed\","` | — |
-| [SRC-A8360B1B03-L000426](../../scripts/hosted_smoke_test.py#L426) | 426 | `"        \"checks\": checks,"` | — |
-| [SRC-A8360B1B03-L000427](../../scripts/hosted_smoke_test.py#L427) | 427 | `"        \"note\": ("` | — |
-| [SRC-A8360B1B03-L000428](../../scripts/hosted_smoke_test.py#L428) | 428 | `"            \"Transcript contains the exact fixed test question, answer, and returned source metadata. \""` | — |
-| [SRC-A8360B1B03-L000429](../../scripts/hosted_smoke_test.py#L429) | 429 | `"            \"This proves the request path worked at test time, not continuous uptime. The approved \""` | — |
-| [SRC-A8360B1B03-L000430](../../scripts/hosted_smoke_test.py#L430) | 430 | `"            \"live phase makes one authenticated agent request; that request may fan out to multiple \""` | — |
-| [SRC-A8360B1B03-L000431](../../scripts/hosted_smoke_test.py#L431) | 431 | `"            \"configured search providers. The server enforces at most 3 planned queries, 12 provider requests, \""` | — |
-| [SRC-A8360B1B03-L000432](../../scripts/hosted_smoke_test.py#L432) | 432 | `"            \"6 model calls, 4 page fetches, and zero external tool calls for this smoke profile; \""` | — |
-| [SRC-A8360B1B03-L000433](../../scripts/hosted_smoke_test.py#L433) | 433 | `"            \"operator settings may be stricter. Provider usage may incur charges.\""` | — |
-| [SRC-A8360B1B03-L000434](../../scripts/hosted_smoke_test.py#L434) | 434 | `"        ),"` | — |
-| [SRC-A8360B1B03-L000435](../../scripts/hosted_smoke_test.py#L435) | 435 | `"    })"` | — |
-| [SRC-A8360B1B03-L000436](../../scripts/hosted_smoke_test.py#L436) | 436 | `"    return partial_report"` | — |
-| [SRC-A8360B1B03-L000437](../../scripts/hosted_smoke_test.py#L437) | 437 | `""` | — |
-| [SRC-A8360B1B03-L000438](../../scripts/hosted_smoke_test.py#L438) | 438 | `""` | — |
-| [SRC-A8360B1B03-L000439](../../scripts/hosted_smoke_test.py#L439) | 439 | `"def main() -> int:"` | — |
-| [SRC-A8360B1B03-L000440](../../scripts/hosted_smoke_test.py#L440) | 440 | `"    parser = argparse.ArgumentParser(description=\"Run live acceptance checks against hosted Omarai.\")"` | — |
-| [SRC-A8360B1B03-L000441](../../scripts/hosted_smoke_test.py#L441) | 441 | `"    parser.add_argument(\"--base-url\", default=os.getenv(\"OMARAI_BASE_URL\", \"\"))"` | — |
-| [SRC-A8360B1B03-L000442](../../scripts/hosted_smoke_test.py#L442) | 442 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
-| [SRC-A8360B1B03-L000443](../../scripts/hosted_smoke_test.py#L443) | 443 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000444](../../scripts/hosted_smoke_test.py#L444) | 444 | `"        \"--expected-sha\","` | — |
-| [SRC-A8360B1B03-L000445](../../scripts/hosted_smoke_test.py#L445) | 445 | `"        default=os.getenv(\"OMARAI_EXPECTED_BUILD_SHA\", \"\"),"` | — |
-| [SRC-A8360B1B03-L000446](../../scripts/hosted_smoke_test.py#L446) | 446 | `"        help=\"Require the deployed image to report this full 40-character source Git SHA.\","` | — |
-| [SRC-A8360B1B03-L000447](../../scripts/hosted_smoke_test.py#L447) | 447 | `"    )"` | — |
-| [SRC-A8360B1B03-L000448](../../scripts/hosted_smoke_test.py#L448) | 448 | `"    parser.add_argument(\"--allow-http\", action=\"store_true\","` | — |
-| [SRC-A8360B1B03-L000449](../../scripts/hosted_smoke_test.py#L449) | 449 | `"                        help=\"Allow HTTP only for localhost/127.0.0.1/::1 testing.\")"` | — |
-| [SRC-A8360B1B03-L000450](../../scripts/hosted_smoke_test.py#L450) | 450 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000451](../../scripts/hosted_smoke_test.py#L451) | 451 | `"        \"--local-dev-no-token\","` | — |
-| [SRC-A8360B1B03-L000452](../../scripts/hosted_smoke_test.py#L452) | 452 | `"        action=\"store_true\","` | — |
-| [SRC-A8360B1B03-L000453](../../scripts/hosted_smoke_test.py#L453) | 453 | `"        help=\"Use the app's existing no-token development bypass on loopback only; never for hosted URLs.\","` | — |
-| [SRC-A8360B1B03-L000454](../../scripts/hosted_smoke_test.py#L454) | 454 | `"    )"` | — |
-| [SRC-A8360B1B03-L000455](../../scripts/hosted_smoke_test.py#L455) | 455 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000456](../../scripts/hosted_smoke_test.py#L456) | 456 | `"        \"--allow-provider-usage\","` | — |
-| [SRC-A8360B1B03-L000457](../../scripts/hosted_smoke_test.py#L457) | 457 | `"        action=\"store_true\","` | — |
-| [SRC-A8360B1B03-L000458](../../scripts/hosted_smoke_test.py#L458) | 458 | `"        help=("` | — |
-| [SRC-A8360B1B03-L000459](../../scripts/hosted_smoke_test.py#L459) | 459 | `"            \"Explicitly authorize one live agent request under the server-enforced hosted_smoke \""` | — |
-| [SRC-A8360B1B03-L000460](../../scripts/hosted_smoke_test.py#L460) | 460 | `"            \"budget: up to 3 planned queries, 12 provider requests, 6 model calls, 4 page fetches, \""` | — |
-| [SRC-A8360B1B03-L000461](../../scripts/hosted_smoke_test.py#L461) | 461 | `"            \"and zero external tool calls. Operator settings may be stricter.\""` | — |
-| [SRC-A8360B1B03-L000462](../../scripts/hosted_smoke_test.py#L462) | 462 | `"        ),"` | — |
-| [SRC-A8360B1B03-L000463](../../scripts/hosted_smoke_test.py#L463) | 463 | `"    )"` | — |
-| [SRC-A8360B1B03-L000464](../../scripts/hosted_smoke_test.py#L464) | 464 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000465](../../scripts/hosted_smoke_test.py#L465) | 465 | `"        \"--preflight-only\","` | — |
-| [SRC-A8360B1B03-L000466](../../scripts/hosted_smoke_test.py#L466) | 466 | `"        action=\"store_true\","` | — |
-| [SRC-A8360B1B03-L000467](../../scripts/hosted_smoke_test.py#L467) | 467 | `"        help=\"Run health/build/authentication checks only; never call search providers or a language model.\","` | — |
-| [SRC-A8360B1B03-L000468](../../scripts/hosted_smoke_test.py#L468) | 468 | `"    )"` | — |
-| [SRC-A8360B1B03-L000469](../../scripts/hosted_smoke_test.py#L469) | 469 | `"    parser.add_argument("` | — |
-| [SRC-A8360B1B03-L000470](../../scripts/hosted_smoke_test.py#L470) | 470 | `"        \"--output\","` | — |
-| [SRC-A8360B1B03-L000471](../../scripts/hosted_smoke_test.py#L471) | 471 | `"        default=\"\","` | — |
-| [SRC-A8360B1B03-L000472](../../scripts/hosted_smoke_test.py#L472) | 472 | `"        help=\"Optional path for a JSON report containing the exact test question, answer, and sources.\","` | — |
-| [SRC-A8360B1B03-L000473](../../scripts/hosted_smoke_test.py#L473) | 473 | `"    )"` | — |
-| [SRC-A8360B1B03-L000474](../../scripts/hosted_smoke_test.py#L474) | 474 | `"    args = parser.parse_args()"` | — |
-| [SRC-A8360B1B03-L000475](../../scripts/hosted_smoke_test.py#L475) | 475 | `"    try:"` | — |
-| [SRC-A8360B1B03-L000476](../../scripts/hosted_smoke_test.py#L476) | 476 | `"        result = run_smoke("` | — |
-| [SRC-A8360B1B03-L000477](../../scripts/hosted_smoke_test.py#L477) | 477 | `"            args.base_url,"` | — |
-| [SRC-A8360B1B03-L000478](../../scripts/hosted_smoke_test.py#L478) | 478 | `"            os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip(),"` | — |
-| [SRC-A8360B1B03-L000479](../../scripts/hosted_smoke_test.py#L479) | 479 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
-| [SRC-A8360B1B03-L000480](../../scripts/hosted_smoke_test.py#L480) | 480 | `"            allow_http=args.allow_http,"` | — |
-| [SRC-A8360B1B03-L000481](../../scripts/hosted_smoke_test.py#L481) | 481 | `"            expected_sha=args.expected_sha or None,"` | — |
-| [SRC-A8360B1B03-L000482](../../scripts/hosted_smoke_test.py#L482) | 482 | `"            local_dev_no_token=args.local_dev_no_token,"` | — |
-| [SRC-A8360B1B03-L000483](../../scripts/hosted_smoke_test.py#L483) | 483 | `"            allow_provider_usage=args.allow_provider_usage,"` | — |
-| [SRC-A8360B1B03-L000484](../../scripts/hosted_smoke_test.py#L484) | 484 | `"            preflight_only=args.preflight_only,"` | — |
-| [SRC-A8360B1B03-L000485](../../scripts/hosted_smoke_test.py#L485) | 485 | `"        )"` | — |
-| [SRC-A8360B1B03-L000486](../../scripts/hosted_smoke_test.py#L486) | 486 | `"    except SmokeError as exc:"` | — |
-| [SRC-A8360B1B03-L000487](../../scripts/hosted_smoke_test.py#L487) | 487 | `"        failed_report = {**exc.report, \"result\": \"failed\", \"error\": str(exc)}"` | — |
-| [SRC-A8360B1B03-L000488](../../scripts/hosted_smoke_test.py#L488) | 488 | `"        rendered = json.dumps(failed_report, ensure_ascii=False, indent=2)"` | — |
-| [SRC-A8360B1B03-L000489](../../scripts/hosted_smoke_test.py#L489) | 489 | `"        if args.output:"` | — |
-| [SRC-A8360B1B03-L000490](../../scripts/hosted_smoke_test.py#L490) | 490 | `"            output_path = Path(args.output)"` | — |
-| [SRC-A8360B1B03-L000491](../../scripts/hosted_smoke_test.py#L491) | 491 | `"            output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-A8360B1B03-L000492](../../scripts/hosted_smoke_test.py#L492) | 492 | `"            output_path.write_text(rendered + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-A8360B1B03-L000493](../../scripts/hosted_smoke_test.py#L493) | 493 | `"        print(rendered)"` | — |
-| [SRC-A8360B1B03-L000494](../../scripts/hosted_smoke_test.py#L494) | 494 | `"        return 1"` | — |
-| [SRC-A8360B1B03-L000495](../../scripts/hosted_smoke_test.py#L495) | 495 | `"    rendered = json.dumps(result, ensure_ascii=False, indent=2)"` | — |
-| [SRC-A8360B1B03-L000496](../../scripts/hosted_smoke_test.py#L496) | 496 | `"    if args.output:"` | — |
-| [SRC-A8360B1B03-L000497](../../scripts/hosted_smoke_test.py#L497) | 497 | `"        output_path = Path(args.output)"` | — |
-| [SRC-A8360B1B03-L000498](../../scripts/hosted_smoke_test.py#L498) | 498 | `"        output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-A8360B1B03-L000499](../../scripts/hosted_smoke_test.py#L499) | 499 | `"        output_path.write_text(rendered + \"\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-A8360B1B03-L000500](../../scripts/hosted_smoke_test.py#L500) | 500 | `"    print(rendered)"` | — |
-| [SRC-A8360B1B03-L000501](../../scripts/hosted_smoke_test.py#L501) | 501 | `"    return 0"` | — |
-| [SRC-A8360B1B03-L000502](../../scripts/hosted_smoke_test.py#L502) | 502 | `""` | — |
-| [SRC-A8360B1B03-L000503](../../scripts/hosted_smoke_test.py#L503) | 503 | `""` | — |
-| [SRC-A8360B1B03-L000504](../../scripts/hosted_smoke_test.py#L504) | 504 | `"if __name__ == \"__main__\":"` | — |
-| [SRC-A8360B1B03-L000505](../../scripts/hosted_smoke_test.py#L505) | 505 | `"    sys.exit(main())"` | — |
+| [SRC-A8360B1B03-L000137](../../scripts/hosted_smoke_test.py#L137) | 137 | `""` | — |
+| [SRC-A8360B1B03-L000138](../../scripts/hosted_smoke_test.py#L138) | 138 | `"def _safe_http_metadata(payload: dict[str, Any] \| None) -> dict[str, Any] \| None:"` | — |
+| [SRC-A8360B1B03-L000139](../../scripts/hosted_smoke_test.py#L139) | 139 | `"    \"\"\"Return allowlisted response metadata only; never persist an HTTP response body.\"\"\""` | — |
+| [SRC-A8360B1B03-L000140](../../scripts/hosted_smoke_test.py#L140) | 140 | `"    if not isinstance(payload, dict):"` | — |
+| [SRC-A8360B1B03-L000141](../../scripts/hosted_smoke_test.py#L141) | 141 | `"        return None"` | — |
+| [SRC-A8360B1B03-L000142](../../scripts/hosted_smoke_test.py#L142) | 142 | `"    metadata = payload.get(\"_smoke_http\")"` | — |
+| [SRC-A8360B1B03-L000143](../../scripts/hosted_smoke_test.py#L143) | 143 | `"    return metadata if isinstance(metadata, dict) else None"` | — |
+| [SRC-A8360B1B03-L000144](../../scripts/hosted_smoke_test.py#L144) | 144 | `""` | — |
+| [SRC-A8360B1B03-L000145](../../scripts/hosted_smoke_test.py#L145) | 145 | `""` | — |
+| [SRC-A8360B1B03-L000146](../../scripts/hosted_smoke_test.py#L146) | 146 | `"def _run_no_cost_preflight("` | — |
+| [SRC-A8360B1B03-L000147](../../scripts/hosted_smoke_test.py#L147) | 147 | `"    origin: str,"` | — |
+| [SRC-A8360B1B03-L000148](../../scripts/hosted_smoke_test.py#L148) | 148 | `"    *,"` | — |
+| [SRC-A8360B1B03-L000149](../../scripts/hosted_smoke_test.py#L149) | 149 | `"    timeout: float,"` | — |
+| [SRC-A8360B1B03-L000150](../../scripts/hosted_smoke_test.py#L150) | 150 | `"    expected_sha: str \| None,"` | — |
+| [SRC-A8360B1B03-L000151](../../scripts/hosted_smoke_test.py#L151) | 151 | `"    loopback_dev_bypass: bool,"` | — |
+| [SRC-A8360B1B03-L000152](../../scripts/hosted_smoke_test.py#L152) | 152 | `"    report: dict[str, Any],"` | — |
+| [SRC-A8360B1B03-L000153](../../scripts/hosted_smoke_test.py#L153) | 153 | `"    checks: dict[str, Any],"` | — |
+| [SRC-A8360B1B03-L000154](../../scripts/hosted_smoke_test.py#L154) | 154 | `") -> dict[str, Any]:"` | — |
+| [SRC-A8360B1B03-L000155](../../scripts/hosted_smoke_test.py#L155) | 155 | `"    \"\"\"Probe independent public routes so an edge block does not hide later diagnostics.\"\"\""` | — |
+| [SRC-A8360B1B03-L000156](../../scripts/hosted_smoke_test.py#L156) | 156 | `"    diagnostics: dict[str, Any] = {}"` | — |
+| [SRC-A8360B1B03-L000157](../../scripts/hosted_smoke_test.py#L157) | 157 | `"    http_responses: dict[str, dict[str, Any]] = {}"` | — |
+| [SRC-A8360B1B03-L000158](../../scripts/hosted_smoke_test.py#L158) | 158 | `""` | — |
+| [SRC-A8360B1B03-L000159](../../scripts/hosted_smoke_test.py#L159) | 159 | `"    def probe("` | — |
+| [SRC-A8360B1B03-L000160](../../scripts/hosted_smoke_test.py#L160) | 160 | `"        name: str,"` | — |
+| [SRC-A8360B1B03-L000161](../../scripts/hosted_smoke_test.py#L161) | 161 | `"        path: str,"` | — |
+| [SRC-A8360B1B03-L000162](../../scripts/hosted_smoke_test.py#L162) | 162 | `"        *,"` | — |
+| [SRC-A8360B1B03-L000163](../../scripts/hosted_smoke_test.py#L163) | 163 | `"        payload: dict[str, Any] \| None = None,"` | — |
+| [SRC-A8360B1B03-L000164](../../scripts/hosted_smoke_test.py#L164) | 164 | `"        expected_status: int,"` | — |
+| [SRC-A8360B1B03-L000165](../../scripts/hosted_smoke_test.py#L165) | 165 | `"        validate_health: bool = False,"` | — |
+| [SRC-A8360B1B03-L000166](../../scripts/hosted_smoke_test.py#L166) | 166 | `"    ) -> tuple[bool, dict[str, Any] \| None]:"` | — |
+| [SRC-A8360B1B03-L000167](../../scripts/hosted_smoke_test.py#L167) | 167 | `"        try:"` | — |
+| [SRC-A8360B1B03-L000168](../../scripts/hosted_smoke_test.py#L168) | 168 | `"            status, response = request_json("` | — |
+| [SRC-A8360B1B03-L000169](../../scripts/hosted_smoke_test.py#L169) | 169 | `"                f\"{origin}{path}\","` | — |
+| [SRC-A8360B1B03-L000170](../../scripts/hosted_smoke_test.py#L170) | 170 | `"                payload=payload,"` | — |
+| [SRC-A8360B1B03-L000171](../../scripts/hosted_smoke_test.py#L171) | 171 | `"                timeout=min(timeout, 20),"` | — |
+| [SRC-A8360B1B03-L000172](../../scripts/hosted_smoke_test.py#L172) | 172 | `"            )"` | — |
+| [SRC-A8360B1B03-L000173](../../scripts/hosted_smoke_test.py#L173) | 173 | `"        except SmokeError as exc:"` | — |
+| [SRC-A8360B1B03-L000174](../../scripts/hosted_smoke_test.py#L174) | 174 | `"            diagnostics[name] = {"` | — |
+| [SRC-A8360B1B03-L000175](../../scripts/hosted_smoke_test.py#L175) | 175 | `"                \"status\": \"network_error\","` | — |
+| [SRC-A8360B1B03-L000176](../../scripts/hosted_smoke_test.py#L176) | 176 | `"                \"expected_http_status\": expected_status,"` | — |
+| [SRC-A8360B1B03-L000177](../../scripts/hosted_smoke_test.py#L177) | 177 | `"                \"error\": str(exc),"` | — |
+| [SRC-A8360B1B03-L000178](../../scripts/hosted_smoke_test.py#L178) | 178 | `"            }"` | — |
+| [SRC-A8360B1B03-L000179](../../scripts/hosted_smoke_test.py#L179) | 179 | `"            return False, None"` | — |
+| [SRC-A8360B1B03-L000180](../../scripts/hosted_smoke_test.py#L180) | 180 | `""` | — |
+| [SRC-A8360B1B03-L000181](../../scripts/hosted_smoke_test.py#L181) | 181 | `"        metadata = _safe_http_metadata(response)"` | — |
+| [SRC-A8360B1B03-L000182](../../scripts/hosted_smoke_test.py#L182) | 182 | `"        passed = status == expected_status"` | — |
+| [SRC-A8360B1B03-L000183](../../scripts/hosted_smoke_test.py#L183) | 183 | `"        if validate_health:"` | — |
+| [SRC-A8360B1B03-L000184](../../scripts/hosted_smoke_test.py#L184) | 184 | `"            passed = passed and isinstance(response, dict) and response.get(\"ok\") is True"` | — |
+| [SRC-A8360B1B03-L000185](../../scripts/hosted_smoke_test.py#L185) | 185 | `"        item: dict[str, Any] = {"` | — |
+| [SRC-A8360B1B03-L000186](../../scripts/hosted_smoke_test.py#L186) | 186 | `"            \"status\": \"passed\" if passed else \"failed\","` | — |
+| [SRC-A8360B1B03-L000187](../../scripts/hosted_smoke_test.py#L187) | 187 | `"            \"http_status\": status,"` | — |
+| [SRC-A8360B1B03-L000188](../../scripts/hosted_smoke_test.py#L188) | 188 | `"            \"expected_http_status\": expected_status,"` | — |
+| [SRC-A8360B1B03-L000189](../../scripts/hosted_smoke_test.py#L189) | 189 | `"        }"` | — |
+| [SRC-A8360B1B03-L000190](../../scripts/hosted_smoke_test.py#L190) | 190 | `"        if validate_health:"` | — |
+| [SRC-A8360B1B03-L000191](../../scripts/hosted_smoke_test.py#L191) | 191 | `"            item[\"health_ok\"] = bool(isinstance(response, dict) and response.get(\"ok\") is True)"` | — |
+| [SRC-A8360B1B03-L000192](../../scripts/hosted_smoke_test.py#L192) | 192 | `"        if metadata is not None:"` | — |
+| [SRC-A8360B1B03-L000193](../../scripts/hosted_smoke_test.py#L193) | 193 | `"            http_responses[name] = metadata"` | — |
+| [SRC-A8360B1B03-L000194](../../scripts/hosted_smoke_test.py#L194) | 194 | `"            item[\"http_response\"] = metadata"` | — |
+| [SRC-A8360B1B03-L000195](../../scripts/hosted_smoke_test.py#L195) | 195 | `"        diagnostics[name] = item"` | — |
+| [SRC-A8360B1B03-L000196](../../scripts/hosted_smoke_test.py#L196) | 196 | `"        return passed, response"` | — |
+| [SRC-A8360B1B03-L000197](../../scripts/hosted_smoke_test.py#L197) | 197 | `""` | — |
+| [SRC-A8360B1B03-L000198](../../scripts/hosted_smoke_test.py#L198) | 198 | `"    homepage_ok, _ = probe("` | — |
+| [SRC-A8360B1B03-L000199](../../scripts/hosted_smoke_test.py#L199) | 199 | `"        \"homepage\", \"/\", expected_status=200"` | — |
+| [SRC-A8360B1B03-L000200](../../scripts/hosted_smoke_test.py#L200) | 200 | `"    )"` | — |
+| [SRC-A8360B1B03-L000201](../../scripts/hosted_smoke_test.py#L201) | 201 | `"    health_ok, health = probe("` | — |
+| [SRC-A8360B1B03-L000202](../../scripts/hosted_smoke_test.py#L202) | 202 | `"        \"health\", \"/api/health\", expected_status=200, validate_health=True"` | — |
+| [SRC-A8360B1B03-L000203](../../scripts/hosted_smoke_test.py#L203) | 203 | `"    )"` | — |
+| [SRC-A8360B1B03-L000204](../../scripts/hosted_smoke_test.py#L204) | 204 | `""` | — |
+| [SRC-A8360B1B03-L000205](../../scripts/hosted_smoke_test.py#L205) | 205 | `"    build_ok = True"` | — |
+| [SRC-A8360B1B03-L000206](../../scripts/hosted_smoke_test.py#L206) | 206 | `"    if expected_sha is not None:"` | — |
+| [SRC-A8360B1B03-L000207](../../scripts/hosted_smoke_test.py#L207) | 207 | `"        build = health.get(\"build\") if isinstance(health, dict) else None"` | — |
+| [SRC-A8360B1B03-L000208](../../scripts/hosted_smoke_test.py#L208) | 208 | `"        reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
+| [SRC-A8360B1B03-L000209](../../scripts/hosted_smoke_test.py#L209) | 209 | `"        expected = expected_sha.strip().lower()"` | — |
+| [SRC-A8360B1B03-L000210](../../scripts/hosted_smoke_test.py#L210) | 210 | `"        build_ok = isinstance(reported_sha, str) and reported_sha.lower() == expected"` | — |
+| [SRC-A8360B1B03-L000211](../../scripts/hosted_smoke_test.py#L211) | 211 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000212](../../scripts/hosted_smoke_test.py#L212) | 212 | `"            \"status\": \"passed\" if build_ok else \"failed\","` | — |
+| [SRC-A8360B1B03-L000213](../../scripts/hosted_smoke_test.py#L213) | 213 | `"            \"expected_sha\": expected,"` | — |
+| [SRC-A8360B1B03-L000214](../../scripts/hosted_smoke_test.py#L214) | 214 | `"            \"reported_sha\": reported_sha.lower() if isinstance(reported_sha, str) else \"unknown\","` | — |
+| [SRC-A8360B1B03-L000215](../../scripts/hosted_smoke_test.py#L215) | 215 | `"        }"` | — |
+| [SRC-A8360B1B03-L000216](../../scripts/hosted_smoke_test.py#L216) | 216 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000217](../../scripts/hosted_smoke_test.py#L217) | 217 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000218](../../scripts/hosted_smoke_test.py#L218) | 218 | `"            \"status\": \"not_checked\","` | — |
+| [SRC-A8360B1B03-L000219](../../scripts/hosted_smoke_test.py#L219) | 219 | `"            \"reported_sha\": ("` | — |
+| [SRC-A8360B1B03-L000220](../../scripts/hosted_smoke_test.py#L220) | 220 | `"                health.get(\"build\", {}).get(\"sha\")"` | — |
+| [SRC-A8360B1B03-L000221](../../scripts/hosted_smoke_test.py#L221) | 221 | `"                if isinstance(health, dict) and isinstance(health.get(\"build\"), dict)"` | — |
+| [SRC-A8360B1B03-L000222](../../scripts/hosted_smoke_test.py#L222) | 222 | `"                else \"unknown\""` | — |
+| [SRC-A8360B1B03-L000223](../../scripts/hosted_smoke_test.py#L223) | 223 | `"            ),"` | — |
+| [SRC-A8360B1B03-L000224](../../scripts/hosted_smoke_test.py#L224) | 224 | `"        }"` | — |
+| [SRC-A8360B1B03-L000225](../../scripts/hosted_smoke_test.py#L225) | 225 | `""` | — |
+| [SRC-A8360B1B03-L000226](../../scripts/hosted_smoke_test.py#L226) | 226 | `"    if loopback_dev_bypass:"` | — |
+| [SRC-A8360B1B03-L000227](../../scripts/hosted_smoke_test.py#L227) | 227 | `"        auth_ok = True"` | — |
+| [SRC-A8360B1B03-L000228](../../scripts/hosted_smoke_test.py#L228) | 228 | `"        checks[\"authentication\"] = \"local_loopback_dev_bypass\""` | — |
+| [SRC-A8360B1B03-L000229](../../scripts/hosted_smoke_test.py#L229) | 229 | `"        diagnostics[\"unauthenticated_agent\"] = {"` | — |
+| [SRC-A8360B1B03-L000230](../../scripts/hosted_smoke_test.py#L230) | 230 | `"            \"status\": \"skipped_local_development_bypass\""` | — |
+| [SRC-A8360B1B03-L000231](../../scripts/hosted_smoke_test.py#L231) | 231 | `"        }"` | — |
+| [SRC-A8360B1B03-L000232](../../scripts/hosted_smoke_test.py#L232) | 232 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000233](../../scripts/hosted_smoke_test.py#L233) | 233 | `"        auth_ok, _ = probe("` | — |
+| [SRC-A8360B1B03-L000234](../../scripts/hosted_smoke_test.py#L234) | 234 | `"            \"unauthenticated_agent\","` | — |
+| [SRC-A8360B1B03-L000235](../../scripts/hosted_smoke_test.py#L235) | 235 | `"            \"/api/agent\","` | — |
+| [SRC-A8360B1B03-L000236](../../scripts/hosted_smoke_test.py#L236) | 236 | `"            payload={\"question\": \"\"},"` | — |
+| [SRC-A8360B1B03-L000237](../../scripts/hosted_smoke_test.py#L237) | 237 | `"            expected_status=401,"` | — |
+| [SRC-A8360B1B03-L000238](../../scripts/hosted_smoke_test.py#L238) | 238 | `"        )"` | — |
+| [SRC-A8360B1B03-L000239](../../scripts/hosted_smoke_test.py#L239) | 239 | `"        checks[\"authentication\"] = \"passed\" if auth_ok else \"failed\""` | — |
+| [SRC-A8360B1B03-L000240](../../scripts/hosted_smoke_test.py#L240) | 240 | `""` | — |
+| [SRC-A8360B1B03-L000241](../../scripts/hosted_smoke_test.py#L241) | 241 | `"    checks[\"homepage\"] = \"passed\" if homepage_ok else \"failed\""` | — |
+| [SRC-A8360B1B03-L000242](../../scripts/hosted_smoke_test.py#L242) | 242 | `"    checks[\"health\"] = \"passed\" if health_ok else \"failed\""` | — |
+| [SRC-A8360B1B03-L000243](../../scripts/hosted_smoke_test.py#L243) | 243 | `"    checks[\"provider_usage\"] = {\"status\": \"skipped_not_approved\"}"` | — |
+| [SRC-A8360B1B03-L000244](../../scripts/hosted_smoke_test.py#L244) | 244 | `"    report[\"endpoint_diagnostics\"] = diagnostics"` | — |
+| [SRC-A8360B1B03-L000245](../../scripts/hosted_smoke_test.py#L245) | 245 | `"    report[\"http_responses\"] = http_responses"` | — |
+| [SRC-A8360B1B03-L000246](../../scripts/hosted_smoke_test.py#L246) | 246 | `"    if http_responses:"` | — |
+| [SRC-A8360B1B03-L000247](../../scripts/hosted_smoke_test.py#L247) | 247 | `"        # Retain the legacy single-response field while exposing every failed endpoint."` | — |
+| [SRC-A8360B1B03-L000248](../../scripts/hosted_smoke_test.py#L248) | 248 | `"        report[\"http_response\"] = next(iter(http_responses.values()))"` | — |
+| [SRC-A8360B1B03-L000249](../../scripts/hosted_smoke_test.py#L249) | 249 | `""` | — |
+| [SRC-A8360B1B03-L000250](../../scripts/hosted_smoke_test.py#L250) | 250 | `"    failed = ["` | — |
+| [SRC-A8360B1B03-L000251](../../scripts/hosted_smoke_test.py#L251) | 251 | `"        name for name, item in diagnostics.items()"` | — |
+| [SRC-A8360B1B03-L000252](../../scripts/hosted_smoke_test.py#L252) | 252 | `"        if item.get(\"status\") not in {\"passed\", \"skipped_local_development_bypass\"}"` | — |
+| [SRC-A8360B1B03-L000253](../../scripts/hosted_smoke_test.py#L253) | 253 | `"    ]"` | — |
+| [SRC-A8360B1B03-L000254](../../scripts/hosted_smoke_test.py#L254) | 254 | `"    if failed or not (homepage_ok and health_ok and auth_ok and build_ok):"` | — |
+| [SRC-A8360B1B03-L000255](../../scripts/hosted_smoke_test.py#L255) | 255 | `"        report.update({"` | — |
+| [SRC-A8360B1B03-L000256](../../scripts/hosted_smoke_test.py#L256) | 256 | `"            \"result\": \"failed\","` | — |
+| [SRC-A8360B1B03-L000257](../../scripts/hosted_smoke_test.py#L257) | 257 | `"            \"note\": ("` | — |
+| [SRC-A8360B1B03-L000258](../../scripts/hosted_smoke_test.py#L258) | 258 | `"                \"No-cost preflight completed all independent route probes. Inspect \""` | — |
+| [SRC-A8360B1B03-L000259](../../scripts/hosted_smoke_test.py#L259) | 259 | `"                \"endpoint_diagnostics and http_responses to distinguish host-level, \""` | — |
+| [SRC-A8360B1B03-L000260](../../scripts/hosted_smoke_test.py#L260) | 260 | `"                \"health-route, and authentication-route failures. No search provider \""` | — |
+| [SRC-A8360B1B03-L000261](../../scripts/hosted_smoke_test.py#L261) | 261 | `"                \"or language model was called.\""` | — |
+| [SRC-A8360B1B03-L000262](../../scripts/hosted_smoke_test.py#L262) | 262 | `"            ),"` | — |
+| [SRC-A8360B1B03-L000263](../../scripts/hosted_smoke_test.py#L263) | 263 | `"        })"` | — |
+| [SRC-A8360B1B03-L000264](../../scripts/hosted_smoke_test.py#L264) | 264 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000265](../../scripts/hosted_smoke_test.py#L265) | 265 | `"            \"No-cost hosted preflight failed; inspect per-endpoint HTTP diagnostics.\","` | — |
+| [SRC-A8360B1B03-L000266](../../scripts/hosted_smoke_test.py#L266) | 266 | `"            report,"` | — |
+| [SRC-A8360B1B03-L000267](../../scripts/hosted_smoke_test.py#L267) | 267 | `"        )"` | — |
+| [SRC-A8360B1B03-L000268](../../scripts/hosted_smoke_test.py#L268) | 268 | `""` | — |
+| [SRC-A8360B1B03-L000269](../../scripts/hosted_smoke_test.py#L269) | 269 | `"    report.update({"` | — |
+| [SRC-A8360B1B03-L000270](../../scripts/hosted_smoke_test.py#L270) | 270 | `"        \"result\": \"preflight_passed\","` | — |
+| [SRC-A8360B1B03-L000271](../../scripts/hosted_smoke_test.py#L271) | 271 | `"        \"note\": ("` | — |
+| [SRC-A8360B1B03-L000272](../../scripts/hosted_smoke_test.py#L272) | 272 | `"            \"No-cost preflight passed: homepage and health are reachable, and the \""` | — |
+| [SRC-A8360B1B03-L000273](../../scripts/hosted_smoke_test.py#L273) | 273 | `"            \"unauthenticated agent route rejects access with HTTP 401. No search \""` | — |
+| [SRC-A8360B1B03-L000274](../../scripts/hosted_smoke_test.py#L274) | 274 | `"            \"provider or language model was called.\""` | — |
+| [SRC-A8360B1B03-L000275](../../scripts/hosted_smoke_test.py#L275) | 275 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000276](../../scripts/hosted_smoke_test.py#L276) | 276 | `"    })"` | — |
+| [SRC-A8360B1B03-L000277](../../scripts/hosted_smoke_test.py#L277) | 277 | `"    return report"` | — |
+| [SRC-A8360B1B03-L000278](../../scripts/hosted_smoke_test.py#L278) | 278 | `""` | — |
+| [SRC-A8360B1B03-L000279](../../scripts/hosted_smoke_test.py#L279) | 279 | `""` | — |
+| [SRC-A8360B1B03-L000280](../../scripts/hosted_smoke_test.py#L280) | 280 | `"def run_smoke("` | — |
+| [SRC-A8360B1B03-L000281](../../scripts/hosted_smoke_test.py#L281) | 281 | `"    origin: str,"` | — |
+| [SRC-A8360B1B03-L000282](../../scripts/hosted_smoke_test.py#L282) | 282 | `"    token: str,"` | — |
+| [SRC-A8360B1B03-L000283](../../scripts/hosted_smoke_test.py#L283) | 283 | `"    *,"` | — |
+| [SRC-A8360B1B03-L000284](../../scripts/hosted_smoke_test.py#L284) | 284 | `"    timeout: float = 90,"` | — |
+| [SRC-A8360B1B03-L000285](../../scripts/hosted_smoke_test.py#L285) | 285 | `"    allow_http: bool = False,"` | — |
+| [SRC-A8360B1B03-L000286](../../scripts/hosted_smoke_test.py#L286) | 286 | `"    expected_sha: str \| None = None,"` | — |
+| [SRC-A8360B1B03-L000287](../../scripts/hosted_smoke_test.py#L287) | 287 | `"    local_dev_no_token: bool = False,"` | — |
+| [SRC-A8360B1B03-L000288](../../scripts/hosted_smoke_test.py#L288) | 288 | `"    allow_provider_usage: bool = False,"` | — |
+| [SRC-A8360B1B03-L000289](../../scripts/hosted_smoke_test.py#L289) | 289 | `"    preflight_only: bool = False,"` | — |
+| [SRC-A8360B1B03-L000290](../../scripts/hosted_smoke_test.py#L290) | 290 | `") -> dict[str, Any]:"` | — |
+| [SRC-A8360B1B03-L000291](../../scripts/hosted_smoke_test.py#L291) | 291 | `"    origin = normalize_origin(origin, allow_http or local_dev_no_token)"` | — |
+| [SRC-A8360B1B03-L000292](../../scripts/hosted_smoke_test.py#L292) | 292 | `"    target_host = urllib.parse.urlsplit(origin).hostname or \"\""` | — |
+| [SRC-A8360B1B03-L000293](../../scripts/hosted_smoke_test.py#L293) | 293 | `"    loopback_host = target_host.lower() in {\"localhost\", \"127.0.0.1\", \"::1\"}"` | — |
+| [SRC-A8360B1B03-L000294](../../scripts/hosted_smoke_test.py#L294) | 294 | `"    if expected_sha is not None and not re.fullmatch(r\"[0-9a-fA-F]{40}\", expected_sha.strip()):"` | — |
+| [SRC-A8360B1B03-L000295](../../scripts/hosted_smoke_test.py#L295) | 295 | `"        raise SmokeError(\"The expected source revision must be a full 40-character Git SHA.\")"` | — |
+| [SRC-A8360B1B03-L000296](../../scripts/hosted_smoke_test.py#L296) | 296 | `"    if local_dev_no_token and not loopback_host:"` | — |
+| [SRC-A8360B1B03-L000297](../../scripts/hosted_smoke_test.py#L297) | 297 | `"        raise SmokeError(\"No-token development mode is restricted to localhost/loopback.\")"` | — |
+| [SRC-A8360B1B03-L000298](../../scripts/hosted_smoke_test.py#L298) | 298 | `"    if token.strip():"` | — |
+| [SRC-A8360B1B03-L000299](../../scripts/hosted_smoke_test.py#L299) | 299 | `"        if len(token.strip()) < 32:"` | — |
+| [SRC-A8360B1B03-L000300](../../scripts/hosted_smoke_test.py#L300) | 300 | `"            raise SmokeError(\"OMARAI_ACCESS_TOKEN is shorter than 32 characters.\")"` | — |
+| [SRC-A8360B1B03-L000301](../../scripts/hosted_smoke_test.py#L301) | 301 | `"    elif not (local_dev_no_token and loopback_host) and not preflight_only:"` | — |
+| [SRC-A8360B1B03-L000302](../../scripts/hosted_smoke_test.py#L302) | 302 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000303](../../scripts/hosted_smoke_test.py#L303) | 303 | `"            \"OMARAI_ACCESS_TOKEN is required for live hosted acceptance; no-cost preflight may run without it.\""` | — |
+| [SRC-A8360B1B03-L000304](../../scripts/hosted_smoke_test.py#L304) | 304 | `"        )"` | — |
+| [SRC-A8360B1B03-L000305](../../scripts/hosted_smoke_test.py#L305) | 305 | `""` | — |
+| [SRC-A8360B1B03-L000306](../../scripts/hosted_smoke_test.py#L306) | 306 | `"    if preflight_only and allow_provider_usage:"` | — |
+| [SRC-A8360B1B03-L000307](../../scripts/hosted_smoke_test.py#L307) | 307 | `"        raise SmokeError(\"--preflight-only cannot be combined with --allow-provider-usage.\")"` | — |
+| [SRC-A8360B1B03-L000308](../../scripts/hosted_smoke_test.py#L308) | 308 | `""` | — |
+| [SRC-A8360B1B03-L000309](../../scripts/hosted_smoke_test.py#L309) | 309 | `"    auth_mode = ("` | — |
+| [SRC-A8360B1B03-L000310](../../scripts/hosted_smoke_test.py#L310) | 310 | `"        \"bearer_token\" if token.strip()"` | — |
+| [SRC-A8360B1B03-L000311](../../scripts/hosted_smoke_test.py#L311) | 311 | `"        else \"local_loopback_dev_bypass\" if local_dev_no_token and loopback_host"` | — |
+| [SRC-A8360B1B03-L000312](../../scripts/hosted_smoke_test.py#L312) | 312 | `"        else \"preflight_no_token\""` | — |
+| [SRC-A8360B1B03-L000313](../../scripts/hosted_smoke_test.py#L313) | 313 | `"    )"` | — |
+| [SRC-A8360B1B03-L000314](../../scripts/hosted_smoke_test.py#L314) | 314 | `"    checks: dict[str, Any] = {}"` | — |
+| [SRC-A8360B1B03-L000315](../../scripts/hosted_smoke_test.py#L315) | 315 | `"    partial_report: dict[str, Any] = {"` | — |
+| [SRC-A8360B1B03-L000316](../../scripts/hosted_smoke_test.py#L316) | 316 | `"        \"result\": \"running\","` | — |
+| [SRC-A8360B1B03-L000317](../../scripts/hosted_smoke_test.py#L317) | 317 | `"        \"target_host\": target_host,"` | — |
+| [SRC-A8360B1B03-L000318](../../scripts/hosted_smoke_test.py#L318) | 318 | `"        \"auth_mode\": auth_mode,"` | — |
+| [SRC-A8360B1B03-L000319](../../scripts/hosted_smoke_test.py#L319) | 319 | `"        \"checks\": checks,"` | — |
+| [SRC-A8360B1B03-L000320](../../scripts/hosted_smoke_test.py#L320) | 320 | `"        \"transcript\": [],"` | — |
+| [SRC-A8360B1B03-L000321](../../scripts/hosted_smoke_test.py#L321) | 321 | `"    }"` | — |
+| [SRC-A8360B1B03-L000322](../../scripts/hosted_smoke_test.py#L322) | 322 | `"    if preflight_only:"` | — |
+| [SRC-A8360B1B03-L000323](../../scripts/hosted_smoke_test.py#L323) | 323 | `"        return _run_no_cost_preflight("` | — |
+| [SRC-A8360B1B03-L000324](../../scripts/hosted_smoke_test.py#L324) | 324 | `"            origin,"` | — |
+| [SRC-A8360B1B03-L000325](../../scripts/hosted_smoke_test.py#L325) | 325 | `"            timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000326](../../scripts/hosted_smoke_test.py#L326) | 326 | `"            expected_sha=expected_sha,"` | — |
+| [SRC-A8360B1B03-L000327](../../scripts/hosted_smoke_test.py#L327) | 327 | `"            loopback_dev_bypass=local_dev_no_token and loopback_host,"` | — |
+| [SRC-A8360B1B03-L000328](../../scripts/hosted_smoke_test.py#L328) | 328 | `"            report=partial_report,"` | — |
+| [SRC-A8360B1B03-L000329](../../scripts/hosted_smoke_test.py#L329) | 329 | `"            checks=checks,"` | — |
+| [SRC-A8360B1B03-L000330](../../scripts/hosted_smoke_test.py#L330) | 330 | `"        )"` | — |
+| [SRC-A8360B1B03-L000331](../../scripts/hosted_smoke_test.py#L331) | 331 | `""` | — |
+| [SRC-A8360B1B03-L000332](../../scripts/hosted_smoke_test.py#L332) | 332 | `"    status, health = request_json(f\"{origin}/api/health\", timeout=min(timeout, 20))"` | — |
+| [SRC-A8360B1B03-L000333](../../scripts/hosted_smoke_test.py#L333) | 333 | `"    if status != 200 or not health or health.get(\"ok\") is not True:"` | — |
+| [SRC-A8360B1B03-L000334](../../scripts/hosted_smoke_test.py#L334) | 334 | `"        if isinstance(health, dict) and isinstance(health.get(\"_smoke_http\"), dict):"` | — |
+| [SRC-A8360B1B03-L000335](../../scripts/hosted_smoke_test.py#L335) | 335 | `"            partial_report[\"http_response\"] = health[\"_smoke_http\"]"` | — |
+| [SRC-A8360B1B03-L000336](../../scripts/hosted_smoke_test.py#L336) | 336 | `"        raise SmokeError(f\"Health check failed (HTTP {status}).\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000337](../../scripts/hosted_smoke_test.py#L337) | 337 | `"    checks[\"health\"] = \"passed\""` | — |
+| [SRC-A8360B1B03-L000338](../../scripts/hosted_smoke_test.py#L338) | 338 | `""` | — |
+| [SRC-A8360B1B03-L000339](../../scripts/hosted_smoke_test.py#L339) | 339 | `"    build = health.get(\"build\")"` | — |
+| [SRC-A8360B1B03-L000340](../../scripts/hosted_smoke_test.py#L340) | 340 | `"    reported_sha = build.get(\"sha\") if isinstance(build, dict) else None"` | — |
+| [SRC-A8360B1B03-L000341](../../scripts/hosted_smoke_test.py#L341) | 341 | `"    if expected_sha is not None:"` | — |
+| [SRC-A8360B1B03-L000342](../../scripts/hosted_smoke_test.py#L342) | 342 | `"        expected = expected_sha.strip().lower()"` | — |
+| [SRC-A8360B1B03-L000343](../../scripts/hosted_smoke_test.py#L343) | 343 | `"        if not isinstance(reported_sha, str) or reported_sha.lower() != expected:"` | — |
+| [SRC-A8360B1B03-L000344](../../scripts/hosted_smoke_test.py#L344) | 344 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000345](../../scripts/hosted_smoke_test.py#L345) | 345 | `"                \"The deployed service SHA does not match the expected Git commit. \""` | — |
+| [SRC-A8360B1B03-L000346](../../scripts/hosted_smoke_test.py#L346) | 346 | `"                \"Pass OMARAI_BUILD_SHA as a Docker build argument for the deployed revision, \""` | — |
+| [SRC-A8360B1B03-L000347](../../scripts/hosted_smoke_test.py#L347) | 347 | `"                \"then rebuild and redeploy.\","` | — |
+| [SRC-A8360B1B03-L000348](../../scripts/hosted_smoke_test.py#L348) | 348 | `"                partial_report,"` | — |
+| [SRC-A8360B1B03-L000349](../../scripts/hosted_smoke_test.py#L349) | 349 | `"            )"` | — |
+| [SRC-A8360B1B03-L000350](../../scripts/hosted_smoke_test.py#L350) | 350 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000351](../../scripts/hosted_smoke_test.py#L351) | 351 | `"            \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000352](../../scripts/hosted_smoke_test.py#L352) | 352 | `"            \"expected_sha\": expected,"` | — |
+| [SRC-A8360B1B03-L000353](../../scripts/hosted_smoke_test.py#L353) | 353 | `"            \"reported_sha\": reported_sha.lower(),"` | — |
+| [SRC-A8360B1B03-L000354](../../scripts/hosted_smoke_test.py#L354) | 354 | `"        }"` | — |
+| [SRC-A8360B1B03-L000355](../../scripts/hosted_smoke_test.py#L355) | 355 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000356](../../scripts/hosted_smoke_test.py#L356) | 356 | `"        checks[\"build_identity\"] = {"` | — |
+| [SRC-A8360B1B03-L000357](../../scripts/hosted_smoke_test.py#L357) | 357 | `"            \"status\": \"not_checked\","` | — |
+| [SRC-A8360B1B03-L000358](../../scripts/hosted_smoke_test.py#L358) | 358 | `"            \"reported_sha\": reported_sha if isinstance(reported_sha, str) else \"unknown\","` | — |
+| [SRC-A8360B1B03-L000359](../../scripts/hosted_smoke_test.py#L359) | 359 | `"        }"` | — |
+| [SRC-A8360B1B03-L000360](../../scripts/hosted_smoke_test.py#L360) | 360 | `""` | — |
+| [SRC-A8360B1B03-L000361](../../scripts/hosted_smoke_test.py#L361) | 361 | `"    if token.strip():"` | — |
+| [SRC-A8360B1B03-L000362](../../scripts/hosted_smoke_test.py#L362) | 362 | `"        status, auth_response = request_json("` | — |
+| [SRC-A8360B1B03-L000363](../../scripts/hosted_smoke_test.py#L363) | 363 | `"            f\"{origin}/api/agent\", payload={\"question\": \"\"},"` | — |
+| [SRC-A8360B1B03-L000364](../../scripts/hosted_smoke_test.py#L364) | 364 | `"            timeout=min(timeout, 20),"` | — |
+| [SRC-A8360B1B03-L000365](../../scripts/hosted_smoke_test.py#L365) | 365 | `"        )"` | — |
+| [SRC-A8360B1B03-L000366](../../scripts/hosted_smoke_test.py#L366) | 366 | `"        if status != 401:"` | — |
+| [SRC-A8360B1B03-L000367](../../scripts/hosted_smoke_test.py#L367) | 367 | `"            if isinstance(auth_response, dict) and isinstance(auth_response.get(\"_smoke_http\"), dict):"` | — |
+| [SRC-A8360B1B03-L000368](../../scripts/hosted_smoke_test.py#L368) | 368 | `"                partial_report[\"http_response\"] = auth_response[\"_smoke_http\"]"` | — |
+| [SRC-A8360B1B03-L000369](../../scripts/hosted_smoke_test.py#L369) | 369 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000370](../../scripts/hosted_smoke_test.py#L370) | 370 | `"                f\"Unauthenticated POST /api/agent should return 401, received {status}.\","` | — |
+| [SRC-A8360B1B03-L000371](../../scripts/hosted_smoke_test.py#L371) | 371 | `"                partial_report,"` | — |
+| [SRC-A8360B1B03-L000372](../../scripts/hosted_smoke_test.py#L372) | 372 | `"            )"` | — |
+| [SRC-A8360B1B03-L000373](../../scripts/hosted_smoke_test.py#L373) | 373 | `"        checks[\"authentication\"] = \"passed\""` | — |
+| [SRC-A8360B1B03-L000374](../../scripts/hosted_smoke_test.py#L374) | 374 | `"    else:"` | — |
+| [SRC-A8360B1B03-L000375](../../scripts/hosted_smoke_test.py#L375) | 375 | `"        checks[\"authentication\"] = \"local_loopback_dev_bypass\""` | — |
+| [SRC-A8360B1B03-L000376](../../scripts/hosted_smoke_test.py#L376) | 376 | `""` | — |
+| [SRC-A8360B1B03-L000377](../../scripts/hosted_smoke_test.py#L377) | 377 | `"    if not allow_provider_usage:"` | — |
+| [SRC-A8360B1B03-L000378](../../scripts/hosted_smoke_test.py#L378) | 378 | `"        checks[\"provider_usage\"] = {\"status\": \"blocked_not_approved\"}"` | — |
+| [SRC-A8360B1B03-L000379](../../scripts/hosted_smoke_test.py#L379) | 379 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000380](../../scripts/hosted_smoke_test.py#L380) | 380 | `"            \"No-cost preflight passed, but live search/model usage was not approved. \""` | — |
+| [SRC-A8360B1B03-L000381](../../scripts/hosted_smoke_test.py#L381) | 381 | `"            \"Re-run with --allow-provider-usage only after explicit human approval.\","` | — |
+| [SRC-A8360B1B03-L000382](../../scripts/hosted_smoke_test.py#L382) | 382 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000383](../../scripts/hosted_smoke_test.py#L383) | 383 | `"        )"` | — |
+| [SRC-A8360B1B03-L000384](../../scripts/hosted_smoke_test.py#L384) | 384 | `""` | — |
+| [SRC-A8360B1B03-L000385](../../scripts/hosted_smoke_test.py#L385) | 385 | `"    checks[\"provider_usage\"] = {"` | — |
+| [SRC-A8360B1B03-L000386](../../scripts/hosted_smoke_test.py#L386) | 386 | `"        \"status\": \"approved\","` | — |
+| [SRC-A8360B1B03-L000387](../../scripts/hosted_smoke_test.py#L387) | 387 | `"        \"scope\": {"` | — |
+| [SRC-A8360B1B03-L000388](../../scripts/hosted_smoke_test.py#L388) | 388 | `"            \"profile\": \"hosted_smoke\","` | — |
+| [SRC-A8360B1B03-L000389](../../scripts/hosted_smoke_test.py#L389) | 389 | `"            \"max_search_queries\": HOSTED_SMOKE_BUDGET_MAX[\"search_queries\"],"` | — |
+| [SRC-A8360B1B03-L000390](../../scripts/hosted_smoke_test.py#L390) | 390 | `"            \"max_provider_requests\": HOSTED_SMOKE_BUDGET_MAX[\"search_calls\"],"` | — |
+| [SRC-A8360B1B03-L000391](../../scripts/hosted_smoke_test.py#L391) | 391 | `"            \"max_model_calls\": HOSTED_SMOKE_BUDGET_MAX[\"model_calls\"],"` | — |
+| [SRC-A8360B1B03-L000392](../../scripts/hosted_smoke_test.py#L392) | 392 | `"            \"max_page_fetches\": HOSTED_SMOKE_BUDGET_MAX[\"page_fetches\"],"` | — |
+| [SRC-A8360B1B03-L000393](../../scripts/hosted_smoke_test.py#L393) | 393 | `"            \"tool_calls\": HOSTED_SMOKE_BUDGET_MAX[\"tool_calls\"],"` | — |
+| [SRC-A8360B1B03-L000394](../../scripts/hosted_smoke_test.py#L394) | 394 | `"            \"note\": \"Server-enforced per-request ceilings; operator settings may be stricter.\","` | — |
+| [SRC-A8360B1B03-L000395](../../scripts/hosted_smoke_test.py#L395) | 395 | `"        },"` | — |
+| [SRC-A8360B1B03-L000396](../../scripts/hosted_smoke_test.py#L396) | 396 | `"    }"` | — |
+| [SRC-A8360B1B03-L000397](../../scripts/hosted_smoke_test.py#L397) | 397 | `"    status, answer = request_json("` | — |
+| [SRC-A8360B1B03-L000398](../../scripts/hosted_smoke_test.py#L398) | 398 | `"        f\"{origin}/api/agent\", token=token, timeout=timeout,"` | — |
+| [SRC-A8360B1B03-L000399](../../scripts/hosted_smoke_test.py#L399) | 399 | `"        payload={"` | — |
+| [SRC-A8360B1B03-L000400](../../scripts/hosted_smoke_test.py#L400) | 400 | `"            \"question\": LIVE_TEST_QUESTION,"` | — |
+| [SRC-A8360B1B03-L000401](../../scripts/hosted_smoke_test.py#L401) | 401 | `"            \"history\": [], \"mode\": \"auto\", \"request_profile\": \"hosted_smoke\","` | — |
+| [SRC-A8360B1B03-L000402](../../scripts/hosted_smoke_test.py#L402) | 402 | `"        },"` | — |
+| [SRC-A8360B1B03-L000403](../../scripts/hosted_smoke_test.py#L403) | 403 | `"    )"` | — |
+| [SRC-A8360B1B03-L000404](../../scripts/hosted_smoke_test.py#L404) | 404 | `"    if status != 200 or not answer:"` | — |
+| [SRC-A8360B1B03-L000405](../../scripts/hosted_smoke_test.py#L405) | 405 | `"        if isinstance(answer, dict) and isinstance(answer.get(\"_smoke_http\"), dict):"` | — |
+| [SRC-A8360B1B03-L000406](../../scripts/hosted_smoke_test.py#L406) | 406 | `"            partial_report[\"http_response\"] = answer[\"_smoke_http\"]"` | — |
+| [SRC-A8360B1B03-L000407](../../scripts/hosted_smoke_test.py#L407) | 407 | `"        raise SmokeError(f\"Authenticated agent request failed (HTTP {status}).\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000408](../../scripts/hosted_smoke_test.py#L408) | 408 | `"    sources = answer.get(\"sources\")"` | — |
+| [SRC-A8360B1B03-L000409](../../scripts/hosted_smoke_test.py#L409) | 409 | `"    usable = ["` | — |
+| [SRC-A8360B1B03-L000410](../../scripts/hosted_smoke_test.py#L410) | 410 | `"        item for item in sources if isinstance(item, dict)"` | — |
+| [SRC-A8360B1B03-L000411](../../scripts/hosted_smoke_test.py#L411) | 411 | `"        and isinstance(item.get(\"url\"), str)"` | — |
+| [SRC-A8360B1B03-L000412](../../scripts/hosted_smoke_test.py#L412) | 412 | `"        and urllib.parse.urlsplit(item[\"url\"]).scheme in {\"http\", \"https\"}"` | — |
+| [SRC-A8360B1B03-L000413](../../scripts/hosted_smoke_test.py#L413) | 413 | `"        and urllib.parse.urlsplit(item[\"url\"]).hostname"` | — |
+| [SRC-A8360B1B03-L000414](../../scripts/hosted_smoke_test.py#L414) | 414 | `"    ] if isinstance(sources, list) else []"` | — |
+| [SRC-A8360B1B03-L000415](../../scripts/hosted_smoke_test.py#L415) | 415 | `"    search_report = answer.get(\"search_report\")"` | — |
+| [SRC-A8360B1B03-L000416](../../scripts/hosted_smoke_test.py#L416) | 416 | `"    raw_answer = answer.get(\"answer\")"` | — |
+| [SRC-A8360B1B03-L000417](../../scripts/hosted_smoke_test.py#L417) | 417 | `"    answer_text = raw_answer.strip() if isinstance(raw_answer, str) else \"\""` | — |
+| [SRC-A8360B1B03-L000418](../../scripts/hosted_smoke_test.py#L418) | 418 | `"    source_records = ["` | — |
+| [SRC-A8360B1B03-L000419](../../scripts/hosted_smoke_test.py#L419) | 419 | `"        {"` | — |
+| [SRC-A8360B1B03-L000420](../../scripts/hosted_smoke_test.py#L420) | 420 | `"            \"title\": str(item.get(\"title\") or \"\")[:300],"` | — |
+| [SRC-A8360B1B03-L000421](../../scripts/hosted_smoke_test.py#L421) | 421 | `"            \"url\": str(item.get(\"url\") or \"\")[:2048],"` | — |
+| [SRC-A8360B1B03-L000422](../../scripts/hosted_smoke_test.py#L422) | 422 | `"            \"provider\": str(item.get(\"provider\") or \"\")[:80],"` | — |
+| [SRC-A8360B1B03-L000423](../../scripts/hosted_smoke_test.py#L423) | 423 | `"            \"snippet\": str(item.get(\"snippet\") or \"\")[:1200],"` | — |
+| [SRC-A8360B1B03-L000424](../../scripts/hosted_smoke_test.py#L424) | 424 | `"            \"published_at\": str(item.get(\"published_at\") or \"\")[:100],"` | — |
+| [SRC-A8360B1B03-L000425](../../scripts/hosted_smoke_test.py#L425) | 425 | `"        }"` | — |
+| [SRC-A8360B1B03-L000426](../../scripts/hosted_smoke_test.py#L426) | 426 | `"        for item in usable"` | — |
+| [SRC-A8360B1B03-L000427](../../scripts/hosted_smoke_test.py#L427) | 427 | `"    ]"` | — |
+| [SRC-A8360B1B03-L000428](../../scripts/hosted_smoke_test.py#L428) | 428 | `"    transcript = {"` | — |
+| [SRC-A8360B1B03-L000429](../../scripts/hosted_smoke_test.py#L429) | 429 | `"        \"case_id\": \"sales_intent_fire_alarm_egypt\","` | — |
+| [SRC-A8360B1B03-L000430](../../scripts/hosted_smoke_test.py#L430) | 430 | `"        \"question\": LIVE_TEST_QUESTION,"` | — |
+| [SRC-A8360B1B03-L000431](../../scripts/hosted_smoke_test.py#L431) | 431 | `"        \"answer\": answer_text,"` | — |
+| [SRC-A8360B1B03-L000432](../../scripts/hosted_smoke_test.py#L432) | 432 | `"        \"used_web_search\": answer.get(\"used_web_search\") is True,"` | — |
+| [SRC-A8360B1B03-L000433](../../scripts/hosted_smoke_test.py#L433) | 433 | `"        \"used_language_model\": answer.get(\"used_language_model\") is True,"` | — |
+| [SRC-A8360B1B03-L000434](../../scripts/hosted_smoke_test.py#L434) | 434 | `"        \"sources\": source_records,"` | — |
+| [SRC-A8360B1B03-L000435](../../scripts/hosted_smoke_test.py#L435) | 435 | `"        \"pipeline_completion_status\": ("` | — |
+| [SRC-A8360B1B03-L000436](../../scripts/hosted_smoke_test.py#L436) | 436 | `"            search_report.get(\"pipeline_completion_status\")"` | — |
+| [SRC-A8360B1B03-L000437](../../scripts/hosted_smoke_test.py#L437) | 437 | `"            if isinstance(search_report, dict) else None"` | — |
+| [SRC-A8360B1B03-L000438](../../scripts/hosted_smoke_test.py#L438) | 438 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000439](../../scripts/hosted_smoke_test.py#L439) | 439 | `"        \"answer_evidence_status\": answer.get(\"answer_evidence_status\"),"` | — |
+| [SRC-A8360B1B03-L000440](../../scripts/hosted_smoke_test.py#L440) | 440 | `"        \"semantic_claim_verification_status\": ("` | — |
+| [SRC-A8360B1B03-L000441](../../scripts/hosted_smoke_test.py#L441) | 441 | `"            search_report.get(\"semantic_claim_verification\", {}).get(\"status\")"` | — |
+| [SRC-A8360B1B03-L000442](../../scripts/hosted_smoke_test.py#L442) | 442 | `"            if isinstance(search_report, dict)"` | — |
+| [SRC-A8360B1B03-L000443](../../scripts/hosted_smoke_test.py#L443) | 443 | `"            and isinstance(search_report.get(\"semantic_claim_verification\"), dict)"` | — |
+| [SRC-A8360B1B03-L000444](../../scripts/hosted_smoke_test.py#L444) | 444 | `"            else None"` | — |
+| [SRC-A8360B1B03-L000445](../../scripts/hosted_smoke_test.py#L445) | 445 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000446](../../scripts/hosted_smoke_test.py#L446) | 446 | `"        \"request_budget\": answer.get(\"request_budget\"),"` | — |
+| [SRC-A8360B1B03-L000447](../../scripts/hosted_smoke_test.py#L447) | 447 | `"    }"` | — |
+| [SRC-A8360B1B03-L000448](../../scripts/hosted_smoke_test.py#L448) | 448 | `"    partial_report[\"transcript\"] = [transcript]"` | — |
+| [SRC-A8360B1B03-L000449](../../scripts/hosted_smoke_test.py#L449) | 449 | `"    if not answer_text:"` | — |
+| [SRC-A8360B1B03-L000450](../../scripts/hosted_smoke_test.py#L450) | 450 | `"        raise SmokeError(\"Agent request returned an empty or whitespace-only answer.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000451](../../scripts/hosted_smoke_test.py#L451) | 451 | `"    if answer.get(\"used_web_search\") is not True or not usable:"` | — |
+| [SRC-A8360B1B03-L000452](../../scripts/hosted_smoke_test.py#L452) | 452 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000453](../../scripts/hosted_smoke_test.py#L453) | 453 | `"            \"Agent request did not return a live web search with usable source URLs.\","` | — |
+| [SRC-A8360B1B03-L000454](../../scripts/hosted_smoke_test.py#L454) | 454 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000455](../../scripts/hosted_smoke_test.py#L455) | 455 | `"        )"` | — |
+| [SRC-A8360B1B03-L000456](../../scripts/hosted_smoke_test.py#L456) | 456 | `"    if answer.get(\"used_language_model\") is not True:"` | — |
+| [SRC-A8360B1B03-L000457](../../scripts/hosted_smoke_test.py#L457) | 457 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000458](../../scripts/hosted_smoke_test.py#L458) | 458 | `"            \"Agent request did not confirm that a language model was used.\","` | — |
+| [SRC-A8360B1B03-L000459](../../scripts/hosted_smoke_test.py#L459) | 459 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000460](../../scripts/hosted_smoke_test.py#L460) | 460 | `"        )"` | — |
+| [SRC-A8360B1B03-L000461](../../scripts/hosted_smoke_test.py#L461) | 461 | `"    request_budget = answer.get(\"request_budget\")"` | — |
+| [SRC-A8360B1B03-L000462](../../scripts/hosted_smoke_test.py#L462) | 462 | `"    if not isinstance(request_budget, dict) or request_budget.get(\"profile\") != \"hosted_smoke\":"` | — |
+| [SRC-A8360B1B03-L000463](../../scripts/hosted_smoke_test.py#L463) | 463 | `"        raise SmokeError(\"Agent response did not confirm the hosted_smoke request budget profile.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000464](../../scripts/hosted_smoke_test.py#L464) | 464 | `"    budget_limits = request_budget.get(\"limits\")"` | — |
+| [SRC-A8360B1B03-L000465](../../scripts/hosted_smoke_test.py#L465) | 465 | `"    budget_counts = request_budget.get(\"counts\")"` | — |
+| [SRC-A8360B1B03-L000466](../../scripts/hosted_smoke_test.py#L466) | 466 | `"    if not isinstance(budget_limits, dict) or not isinstance(budget_counts, dict):"` | — |
+| [SRC-A8360B1B03-L000467](../../scripts/hosted_smoke_test.py#L467) | 467 | `"        raise SmokeError(\"Agent response omitted request-budget limits or counters.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000468](../../scripts/hosted_smoke_test.py#L468) | 468 | `"    for resource, maximum in HOSTED_SMOKE_BUDGET_MAX.items():"` | — |
+| [SRC-A8360B1B03-L000469](../../scripts/hosted_smoke_test.py#L469) | 469 | `"        limit = budget_limits.get(resource)"` | — |
+| [SRC-A8360B1B03-L000470](../../scripts/hosted_smoke_test.py#L470) | 470 | `"        count = budget_counts.get(resource)"` | — |
+| [SRC-A8360B1B03-L000471](../../scripts/hosted_smoke_test.py#L471) | 471 | `"        if ("` | — |
+| [SRC-A8360B1B03-L000472](../../scripts/hosted_smoke_test.py#L472) | 472 | `"            isinstance(limit, bool) or not isinstance(limit, int)"` | — |
+| [SRC-A8360B1B03-L000473](../../scripts/hosted_smoke_test.py#L473) | 473 | `"            or isinstance(count, bool) or not isinstance(count, int)"` | — |
+| [SRC-A8360B1B03-L000474](../../scripts/hosted_smoke_test.py#L474) | 474 | `"            or limit < 0 or limit > maximum"` | — |
+| [SRC-A8360B1B03-L000475](../../scripts/hosted_smoke_test.py#L475) | 475 | `"            or count < 0 or count > limit"` | — |
+| [SRC-A8360B1B03-L000476](../../scripts/hosted_smoke_test.py#L476) | 476 | `"        ):"` | — |
+| [SRC-A8360B1B03-L000477](../../scripts/hosted_smoke_test.py#L477) | 477 | `"            raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000478](../../scripts/hosted_smoke_test.py#L478) | 478 | `"                f\"Agent hosted_smoke request budget is missing, exceeded, or invalid for {resource}.\","` | — |
+| [SRC-A8360B1B03-L000479](../../scripts/hosted_smoke_test.py#L479) | 479 | `"                partial_report,"` | — |
+| [SRC-A8360B1B03-L000480](../../scripts/hosted_smoke_test.py#L480) | 480 | `"            )"` | — |
+| [SRC-A8360B1B03-L000481](../../scripts/hosted_smoke_test.py#L481) | 481 | `"    if ("` | — |
+| [SRC-A8360B1B03-L000482](../../scripts/hosted_smoke_test.py#L482) | 482 | `"        budget_counts[\"search_queries\"] < 1"` | — |
+| [SRC-A8360B1B03-L000483](../../scripts/hosted_smoke_test.py#L483) | 483 | `"        or budget_counts[\"search_calls\"] < 1"` | — |
+| [SRC-A8360B1B03-L000484](../../scripts/hosted_smoke_test.py#L484) | 484 | `"        or budget_counts[\"model_calls\"] < 1"` | — |
+| [SRC-A8360B1B03-L000485](../../scripts/hosted_smoke_test.py#L485) | 485 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000486](../../scripts/hosted_smoke_test.py#L486) | 486 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000487](../../scripts/hosted_smoke_test.py#L487) | 487 | `"            \"Agent hosted_smoke request budget counters do not prove search and model work occurred.\","` | — |
+| [SRC-A8360B1B03-L000488](../../scripts/hosted_smoke_test.py#L488) | 488 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000489](../../scripts/hosted_smoke_test.py#L489) | 489 | `"        )"` | — |
+| [SRC-A8360B1B03-L000490](../../scripts/hosted_smoke_test.py#L490) | 490 | `"    budget_timeout = request_budget.get(\"timeout_seconds\")"` | — |
+| [SRC-A8360B1B03-L000491](../../scripts/hosted_smoke_test.py#L491) | 491 | `"    if ("` | — |
+| [SRC-A8360B1B03-L000492](../../scripts/hosted_smoke_test.py#L492) | 492 | `"        isinstance(budget_timeout, bool)"` | — |
+| [SRC-A8360B1B03-L000493](../../scripts/hosted_smoke_test.py#L493) | 493 | `"        or not isinstance(budget_timeout, (int, float))"` | — |
+| [SRC-A8360B1B03-L000494](../../scripts/hosted_smoke_test.py#L494) | 494 | `"        or budget_timeout <= 0"` | — |
+| [SRC-A8360B1B03-L000495](../../scripts/hosted_smoke_test.py#L495) | 495 | `"        or budget_timeout > 75"` | — |
+| [SRC-A8360B1B03-L000496](../../scripts/hosted_smoke_test.py#L496) | 496 | `"        or request_budget.get(\"budget_exhausted\") is not False"` | — |
+| [SRC-A8360B1B03-L000497](../../scripts/hosted_smoke_test.py#L497) | 497 | `"        or request_budget.get(\"deadline_exceeded\") is not False"` | — |
+| [SRC-A8360B1B03-L000498](../../scripts/hosted_smoke_test.py#L498) | 498 | `"    ):"` | — |
+| [SRC-A8360B1B03-L000499](../../scripts/hosted_smoke_test.py#L499) | 499 | `"        raise SmokeError(\"Agent hosted_smoke request budget was exhausted or exceeded its timeout ceiling.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000500](../../scripts/hosted_smoke_test.py#L500) | 500 | `"    checks[\"request_budget\"] = {"` | — |
+| [SRC-A8360B1B03-L000501](../../scripts/hosted_smoke_test.py#L501) | 501 | `"        \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000502](../../scripts/hosted_smoke_test.py#L502) | 502 | `"        \"profile\": \"hosted_smoke\","` | — |
+| [SRC-A8360B1B03-L000503](../../scripts/hosted_smoke_test.py#L503) | 503 | `"        \"timeout_seconds\": budget_timeout,"` | — |
+| [SRC-A8360B1B03-L000504](../../scripts/hosted_smoke_test.py#L504) | 504 | `"        \"limits\": budget_limits,"` | — |
+| [SRC-A8360B1B03-L000505](../../scripts/hosted_smoke_test.py#L505) | 505 | `"        \"counts\": budget_counts,"` | — |
+| [SRC-A8360B1B03-L000506](../../scripts/hosted_smoke_test.py#L506) | 506 | `"        \"budget_exhausted\": False,"` | — |
+| [SRC-A8360B1B03-L000507](../../scripts/hosted_smoke_test.py#L507) | 507 | `"        \"deadline_exceeded\": False,"` | — |
+| [SRC-A8360B1B03-L000508](../../scripts/hosted_smoke_test.py#L508) | 508 | `"    }"` | — |
+| [SRC-A8360B1B03-L000509](../../scripts/hosted_smoke_test.py#L509) | 509 | `"    if not isinstance(search_report, dict):"` | — |
+| [SRC-A8360B1B03-L000510](../../scripts/hosted_smoke_test.py#L510) | 510 | `"        raise SmokeError(\"Agent request did not return a structured search report.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000511](../../scripts/hosted_smoke_test.py#L511) | 511 | `"    pipeline_status = search_report.get(\"pipeline_completion_status\")"` | — |
+| [SRC-A8360B1B03-L000512](../../scripts/hosted_smoke_test.py#L512) | 512 | `"    if pipeline_status != \"completed\":"` | — |
+| [SRC-A8360B1B03-L000513](../../scripts/hosted_smoke_test.py#L513) | 513 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000514](../../scripts/hosted_smoke_test.py#L514) | 514 | `"            f\"Agent research pipeline did not complete (status: {pipeline_status or 'missing'}).\","` | — |
+| [SRC-A8360B1B03-L000515](../../scripts/hosted_smoke_test.py#L515) | 515 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000516](../../scripts/hosted_smoke_test.py#L516) | 516 | `"        )"` | — |
+| [SRC-A8360B1B03-L000517](../../scripts/hosted_smoke_test.py#L517) | 517 | `"    semantic_verification = search_report.get(\"semantic_claim_verification\")"` | — |
+| [SRC-A8360B1B03-L000518](../../scripts/hosted_smoke_test.py#L518) | 518 | `"    semantic_status = ("` | — |
+| [SRC-A8360B1B03-L000519](../../scripts/hosted_smoke_test.py#L519) | 519 | `"        semantic_verification.get(\"status\")"` | — |
+| [SRC-A8360B1B03-L000520](../../scripts/hosted_smoke_test.py#L520) | 520 | `"        if isinstance(semantic_verification, dict) else None"` | — |
+| [SRC-A8360B1B03-L000521](../../scripts/hosted_smoke_test.py#L521) | 521 | `"    )"` | — |
+| [SRC-A8360B1B03-L000522](../../scripts/hosted_smoke_test.py#L522) | 522 | `"    if semantic_status not in {"` | — |
+| [SRC-A8360B1B03-L000523](../../scripts/hosted_smoke_test.py#L523) | 523 | `"        \"completed_all_claims_supported\","` | — |
+| [SRC-A8360B1B03-L000524](../../scripts/hosted_smoke_test.py#L524) | 524 | `"        \"completed_no_factual_claims\","` | — |
+| [SRC-A8360B1B03-L000525](../../scripts/hosted_smoke_test.py#L525) | 525 | `"    }:"` | — |
+| [SRC-A8360B1B03-L000526](../../scripts/hosted_smoke_test.py#L526) | 526 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000527](../../scripts/hosted_smoke_test.py#L527) | 527 | `"            f\"Agent semantic claim-support review did not pass (status: {semantic_status or 'missing'}).\","` | — |
+| [SRC-A8360B1B03-L000528](../../scripts/hosted_smoke_test.py#L528) | 528 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000529](../../scripts/hosted_smoke_test.py#L529) | 529 | `"        )"` | — |
+| [SRC-A8360B1B03-L000530](../../scripts/hosted_smoke_test.py#L530) | 530 | `"    if search_report.get(\"insufficient_evidence\") is not False:"` | — |
+| [SRC-A8360B1B03-L000531](../../scripts/hosted_smoke_test.py#L531) | 531 | `"        raise SmokeError(\"Agent search report flags insufficient evidence or omits that check.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000532](../../scripts/hosted_smoke_test.py#L532) | 532 | `"    if search_report.get(\"claim_audit_semantics\") != \"distinct_model_assessed_source_support_not_ground_truth\":"` | — |
+| [SRC-A8360B1B03-L000533](../../scripts/hosted_smoke_test.py#L533) | 533 | `"        raise SmokeError(\"Agent claim-audit semantics are missing or not the expected source-support assessment.\", partial_report)"` | — |
+| [SRC-A8360B1B03-L000534](../../scripts/hosted_smoke_test.py#L534) | 534 | `"    evidence_status = answer.get(\"answer_evidence_status\")"` | — |
+| [SRC-A8360B1B03-L000535](../../scripts/hosted_smoke_test.py#L535) | 535 | `"    if evidence_status != \"citation_indices_validated_only\":"` | — |
+| [SRC-A8360B1B03-L000536](../../scripts/hosted_smoke_test.py#L536) | 536 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000537](../../scripts/hosted_smoke_test.py#L537) | 537 | `"            f\"Agent answer evidence status is not acceptable for hosted acceptance (status: {evidence_status or 'missing'}).\","` | — |
+| [SRC-A8360B1B03-L000538](../../scripts/hosted_smoke_test.py#L538) | 538 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000539](../../scripts/hosted_smoke_test.py#L539) | 539 | `"        )"` | — |
+| [SRC-A8360B1B03-L000540](../../scripts/hosted_smoke_test.py#L540) | 540 | `"    checks[\"search\"] = {"` | — |
+| [SRC-A8360B1B03-L000541](../../scripts/hosted_smoke_test.py#L541) | 541 | `"        \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000542](../../scripts/hosted_smoke_test.py#L542) | 542 | `"        \"pages_fetched\": search_report.get(\"pages_fetched\", 0),"` | — |
+| [SRC-A8360B1B03-L000543](../../scripts/hosted_smoke_test.py#L543) | 543 | `"        \"providers_reported\": search_report.get(\"providers_used\", []),"` | — |
+| [SRC-A8360B1B03-L000544](../../scripts/hosted_smoke_test.py#L544) | 544 | `"        \"pipeline_completion_status\": pipeline_status,"` | — |
+| [SRC-A8360B1B03-L000545](../../scripts/hosted_smoke_test.py#L545) | 545 | `"    }"` | — |
+| [SRC-A8360B1B03-L000546](../../scripts/hosted_smoke_test.py#L546) | 546 | `"    checks[\"semantic_claim_support\"] = {"` | — |
+| [SRC-A8360B1B03-L000547](../../scripts/hosted_smoke_test.py#L547) | 547 | `"        \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000548](../../scripts/hosted_smoke_test.py#L548) | 548 | `"        \"verification_status\": semantic_status,"` | — |
+| [SRC-A8360B1B03-L000549](../../scripts/hosted_smoke_test.py#L549) | 549 | `"        \"insufficient_evidence\": False,"` | — |
+| [SRC-A8360B1B03-L000550](../../scripts/hosted_smoke_test.py#L550) | 550 | `"        \"semantics\": \"model_assessed_source_support_not_ground_truth\","` | — |
+| [SRC-A8360B1B03-L000551](../../scripts/hosted_smoke_test.py#L551) | 551 | `"    }"` | — |
+| [SRC-A8360B1B03-L000552](../../scripts/hosted_smoke_test.py#L552) | 552 | `"    checks[\"language_model\"] = {"` | — |
+| [SRC-A8360B1B03-L000553](../../scripts/hosted_smoke_test.py#L553) | 553 | `"        \"status\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000554](../../scripts/hosted_smoke_test.py#L554) | 554 | `"        \"response_received\": True,"` | — |
+| [SRC-A8360B1B03-L000555](../../scripts/hosted_smoke_test.py#L555) | 555 | `"        \"verified_by\": \"agent_request\","` | — |
+| [SRC-A8360B1B03-L000556](../../scripts/hosted_smoke_test.py#L556) | 556 | `"    }"` | — |
+| [SRC-A8360B1B03-L000557](../../scripts/hosted_smoke_test.py#L557) | 557 | `"    checks[\"agent_request\"] = {"` | — |
+| [SRC-A8360B1B03-L000558](../../scripts/hosted_smoke_test.py#L558) | 558 | `"        \"status\": \"passed\", \"source_count\": len(usable),"` | — |
+| [SRC-A8360B1B03-L000559](../../scripts/hosted_smoke_test.py#L559) | 559 | `"        \"direct_pages_read\": search_report.get(\"pages_fetched\"),"` | — |
+| [SRC-A8360B1B03-L000560](../../scripts/hosted_smoke_test.py#L560) | 560 | `"        \"providers_reported\": search_report.get(\"providers_used\", []),"` | — |
+| [SRC-A8360B1B03-L000561](../../scripts/hosted_smoke_test.py#L561) | 561 | `"        \"answer_received\": True,"` | — |
+| [SRC-A8360B1B03-L000562](../../scripts/hosted_smoke_test.py#L562) | 562 | `"        \"pipeline_completion_status\": pipeline_status,"` | — |
+| [SRC-A8360B1B03-L000563](../../scripts/hosted_smoke_test.py#L563) | 563 | `"        \"answer_evidence_status\": evidence_status,"` | — |
+| [SRC-A8360B1B03-L000564](../../scripts/hosted_smoke_test.py#L564) | 564 | `"    }"` | — |
+| [SRC-A8360B1B03-L000565](../../scripts/hosted_smoke_test.py#L565) | 565 | `"    partial_report.update({"` | — |
+| [SRC-A8360B1B03-L000566](../../scripts/hosted_smoke_test.py#L566) | 566 | `"        \"result\": \"passed\","` | — |
+| [SRC-A8360B1B03-L000567](../../scripts/hosted_smoke_test.py#L567) | 567 | `"        \"checks\": checks,"` | — |
+| [SRC-A8360B1B03-L000568](../../scripts/hosted_smoke_test.py#L568) | 568 | `"        \"note\": ("` | — |
+| [SRC-A8360B1B03-L000569](../../scripts/hosted_smoke_test.py#L569) | 569 | `"            \"Transcript contains the exact fixed test question, answer, and returned source metadata. \""` | — |
+| [SRC-A8360B1B03-L000570](../../scripts/hosted_smoke_test.py#L570) | 570 | `"            \"This proves the request path worked at test time, not continuous uptime. The approved \""` | — |
+| [SRC-A8360B1B03-L000571](../../scripts/hosted_smoke_test.py#L571) | 571 | `"            \"live phase makes one authenticated agent request; that request may fan out to multiple \""` | — |
+| [SRC-A8360B1B03-L000572](../../scripts/hosted_smoke_test.py#L572) | 572 | `"            \"configured search providers. The server enforces at most 3 planned queries, 12 provider requests, \""` | — |
+| [SRC-A8360B1B03-L000573](../../scripts/hosted_smoke_test.py#L573) | 573 | `"            \"6 model calls, 4 page fetches, and zero external tool calls for this smoke profile; \""` | — |
+| [SRC-A8360B1B03-L000574](../../scripts/hosted_smoke_test.py#L574) | 574 | `"            \"operator settings may be stricter. Provider usage may incur charges.\""` | — |
+| [SRC-A8360B1B03-L000575](../../scripts/hosted_smoke_test.py#L575) | 575 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000576](../../scripts/hosted_smoke_test.py#L576) | 576 | `"    })"` | — |
+| [SRC-A8360B1B03-L000577](../../scripts/hosted_smoke_test.py#L577) | 577 | `"    return partial_report"` | — |
+| [SRC-A8360B1B03-L000578](../../scripts/hosted_smoke_test.py#L578) | 578 | `""` | — |
+| [SRC-A8360B1B03-L000579](../../scripts/hosted_smoke_test.py#L579) | 579 | `""` | — |
+| [SRC-A8360B1B03-L000580](../../scripts/hosted_smoke_test.py#L580) | 580 | `"def main() -> int:"` | — |
+| [SRC-A8360B1B03-L000581](../../scripts/hosted_smoke_test.py#L581) | 581 | `"    parser = argparse.ArgumentParser(description=\"Run live acceptance checks against hosted Omarai.\")"` | — |
+| [SRC-A8360B1B03-L000582](../../scripts/hosted_smoke_test.py#L582) | 582 | `"    parser.add_argument(\"--base-url\", default=os.getenv(\"OMARAI_BASE_URL\", \"\"))"` | — |
+| [SRC-A8360B1B03-L000583](../../scripts/hosted_smoke_test.py#L583) | 583 | `"    parser.add_argument(\"--timeout\", type=float, default=90)"` | — |
+| [SRC-A8360B1B03-L000584](../../scripts/hosted_smoke_test.py#L584) | 584 | `"    parser.add_argument("` | — |
+| [SRC-A8360B1B03-L000585](../../scripts/hosted_smoke_test.py#L585) | 585 | `"        \"--expected-sha\","` | — |
+| [SRC-A8360B1B03-L000586](../../scripts/hosted_smoke_test.py#L586) | 586 | `"        default=os.getenv(\"OMARAI_EXPECTED_BUILD_SHA\", \"\"),"` | — |
+| [SRC-A8360B1B03-L000587](../../scripts/hosted_smoke_test.py#L587) | 587 | `"        help=\"Require the deployed image to report this full 40-character source Git SHA.\","` | — |
+| [SRC-A8360B1B03-L000588](../../scripts/hosted_smoke_test.py#L588) | 588 | `"    )"` | — |
+| [SRC-A8360B1B03-L000589](../../scripts/hosted_smoke_test.py#L589) | 589 | `"    parser.add_argument(\"--allow-http\", action=\"store_true\","` | — |
+| [SRC-A8360B1B03-L000590](../../scripts/hosted_smoke_test.py#L590) | 590 | `"                        help=\"Allow HTTP only for localhost/127.0.0.1/::1 testing.\")"` | — |
+| [SRC-A8360B1B03-L000591](../../scripts/hosted_smoke_test.py#L591) | 591 | `"    parser.add_argument("` | — |
+| [SRC-A8360B1B03-L000592](../../scripts/hosted_smoke_test.py#L592) | 592 | `"        \"--local-dev-no-token\","` | — |
+| [SRC-A8360B1B03-L000593](../../scripts/hosted_smoke_test.py#L593) | 593 | `"        action=\"store_true\","` | — |
+| [SRC-A8360B1B03-L000594](../../scripts/hosted_smoke_test.py#L594) | 594 | `"        help=\"Use the app's existing no-token development bypass on loopback only; never for hosted URLs.\","` | — |
+| [SRC-A8360B1B03-L000595](../../scripts/hosted_smoke_test.py#L595) | 595 | `"    )"` | — |
+| [SRC-A8360B1B03-L000596](../../scripts/hosted_smoke_test.py#L596) | 596 | `"    parser.add_argument("` | — |
+| [SRC-A8360B1B03-L000597](../../scripts/hosted_smoke_test.py#L597) | 597 | `"        \"--allow-provider-usage\","` | — |
+| [SRC-A8360B1B03-L000598](../../scripts/hosted_smoke_test.py#L598) | 598 | `"        action=\"store_true\","` | — |
+| [SRC-A8360B1B03-L000599](../../scripts/hosted_smoke_test.py#L599) | 599 | `"        help=("` | — |
+| [SRC-A8360B1B03-L000600](../../scripts/hosted_smoke_test.py#L600) | 600 | `"            \"Explicitly authorize one live agent request under the server-enforced hosted_smoke \""` | — |
+| [SRC-A8360B1B03-L000601](../../scripts/hosted_smoke_test.py#L601) | 601 | `"            \"budget: up to 3 planned queries, 12 provider requests, 6 model calls, 4 page fetches, \""` | — |
+| [SRC-A8360B1B03-L000602](../../scripts/hosted_smoke_test.py#L602) | 602 | `"            \"and zero external tool calls. Operator settings may be stricter.\""` | — |
+| [SRC-A8360B1B03-L000603](../../scripts/hosted_smoke_test.py#L603) | 603 | `"        ),"` | — |
+| [SRC-A8360B1B03-L000604](../../scripts/hosted_smoke_test.py#L604) | 604 | `"    )"` | — |
+| [SRC-A8360B1B03-L000605](../../scripts/hosted_smoke_test.py#L605) | 605 | `"    parser.add_argument("` | — |
+| [SRC-A8360B1B03-L000606](../../scripts/hosted_smoke_test.py#L606) | 606 | `"        \"--preflight-only\","` | — |
+| [SRC-A8360B1B03-L000607](../../scripts/hosted_smoke_test.py#L607) | 607 | `"        action=\"store_true\","` | — |
+| [SRC-A8360B1B03-L000608](../../scripts/hosted_smoke_test.py#L608) | 608 | `"        help=\"Run health/build/authentication checks only; never call search providers or a language model.\","` | — |
+| [SRC-A8360B1B03-L000609](../../scripts/hosted_smoke_test.py#L609) | 609 | `"    )"` | — |
+| [SRC-A8360B1B03-L000610](../../scripts/hosted_smoke_test.py#L610) | 610 | `"    parser.add_argument("` | — |
+| [SRC-A8360B1B03-L000611](../../scripts/hosted_smoke_test.py#L611) | 611 | `"        \"--output\","` | — |
+| [SRC-A8360B1B03-L000612](../../scripts/hosted_smoke_test.py#L612) | 612 | `"        default=\"\","` | — |
+| [SRC-A8360B1B03-L000613](../../scripts/hosted_smoke_test.py#L613) | 613 | `"        help=\"Optional path for a JSON report containing the exact test question, answer, and sources.\","` | — |
+| [SRC-A8360B1B03-L000614](../../scripts/hosted_smoke_test.py#L614) | 614 | `"    )"` | — |
+| [SRC-A8360B1B03-L000615](../../scripts/hosted_smoke_test.py#L615) | 615 | `"    args = parser.parse_args()"` | — |
+| [SRC-A8360B1B03-L000616](../../scripts/hosted_smoke_test.py#L616) | 616 | `"    try:"` | — |
+| [SRC-A8360B1B03-L000617](../../scripts/hosted_smoke_test.py#L617) | 617 | `"        result = run_smoke("` | — |
+| [SRC-A8360B1B03-L000618](../../scripts/hosted_smoke_test.py#L618) | 618 | `"            args.base_url,"` | — |
+| [SRC-A8360B1B03-L000619](../../scripts/hosted_smoke_test.py#L619) | 619 | `"            os.getenv(\"OMARAI_ACCESS_TOKEN\", \"\").strip(),"` | — |
+| [SRC-A8360B1B03-L000620](../../scripts/hosted_smoke_test.py#L620) | 620 | `"            timeout=max(5, min(args.timeout, 240)),"` | — |
+| [SRC-A8360B1B03-L000621](../../scripts/hosted_smoke_test.py#L621) | 621 | `"            allow_http=args.allow_http,"` | — |
+| [SRC-A8360B1B03-L000622](../../scripts/hosted_smoke_test.py#L622) | 622 | `"            expected_sha=args.expected_sha or None,"` | — |
+| [SRC-A8360B1B03-L000623](../../scripts/hosted_smoke_test.py#L623) | 623 | `"            local_dev_no_token=args.local_dev_no_token,"` | — |
+| [SRC-A8360B1B03-L000624](../../scripts/hosted_smoke_test.py#L624) | 624 | `"            allow_provider_usage=args.allow_provider_usage,"` | — |
+| [SRC-A8360B1B03-L000625](../../scripts/hosted_smoke_test.py#L625) | 625 | `"            preflight_only=args.preflight_only,"` | — |
+| [SRC-A8360B1B03-L000626](../../scripts/hosted_smoke_test.py#L626) | 626 | `"        )"` | — |
+| [SRC-A8360B1B03-L000627](../../scripts/hosted_smoke_test.py#L627) | 627 | `"    except SmokeError as exc:"` | — |
+| [SRC-A8360B1B03-L000628](../../scripts/hosted_smoke_test.py#L628) | 628 | `"        failed_report = {**exc.report, \"result\": \"failed\", \"error\": str(exc)}"` | — |
+| [SRC-A8360B1B03-L000629](../../scripts/hosted_smoke_test.py#L629) | 629 | `"        rendered = json.dumps(failed_report, ensure_ascii=False, indent=2)"` | — |
+| [SRC-A8360B1B03-L000630](../../scripts/hosted_smoke_test.py#L630) | 630 | `"        if args.output:"` | — |
+| [SRC-A8360B1B03-L000631](../../scripts/hosted_smoke_test.py#L631) | 631 | `"            output_path = Path(args.output)"` | — |
+| [SRC-A8360B1B03-L000632](../../scripts/hosted_smoke_test.py#L632) | 632 | `"            output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
+| [SRC-A8360B1B03-L000633](../../scripts/hosted_smoke_test.py#L633) | 633 | `"            output_path.write_text(rendered + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-A8360B1B03-L000634](../../scripts/hosted_smoke_test.py#L634) | 634 | `"        print(rendered)"` | — |
+| [SRC-A8360B1B03-L000635](../../scripts/hosted_smoke_test.py#L635) | 635 | `"        return 1"` | — |
+| [SRC-A8360B1B03-L000636](../../scripts/hosted_smoke_test.py#L636) | 636 | `"    rendered = json.dumps(result, ensure_ascii=False, indent=2)"` | — |
+| [SRC-A8360B1B03-L000637](../../scripts/hosted_smoke_test.py#L637) | 637 | `"    if args.output:"` | — |
+| [SRC-A8360B1B03-L000638](../../scripts/hosted_smoke_test.py#L638) | 638 | `"        output_path = Path(args.output)"` | — |
+| [SRC-A8360B1B03-L000639](../../scripts/hosted_smoke_test.py#L639) | 639 | `"        output_path.parent.mkdir(parents=True, exist_ok=True)"` | — |
+| [SRC-A8360B1B03-L000640](../../scripts/hosted_smoke_test.py#L640) | 640 | `"        output_path.write_text(rendered + \"\\n\", encoding=\"utf-8\")"` | — |
+| [SRC-A8360B1B03-L000641](../../scripts/hosted_smoke_test.py#L641) | 641 | `"    print(rendered)"` | — |
+| [SRC-A8360B1B03-L000642](../../scripts/hosted_smoke_test.py#L642) | 642 | `"    return 0"` | — |
+| [SRC-A8360B1B03-L000643](../../scripts/hosted_smoke_test.py#L643) | 643 | `""` | — |
+| [SRC-A8360B1B03-L000644](../../scripts/hosted_smoke_test.py#L644) | 644 | `""` | — |
+| [SRC-A8360B1B03-L000645](../../scripts/hosted_smoke_test.py#L645) | 645 | `"if __name__ == \"__main__\":"` | — |
+| [SRC-A8360B1B03-L000646](../../scripts/hosted_smoke_test.py#L646) | 646 | `"    sys.exit(main())"` | — |
 ## ملفات أخرى
 
 ### FILE-4FFD5AFC54 — [scripts/run_answer_quality_benchmark.py](../../scripts/run_answer_quality_benchmark.py#L1)
@@ -692,145 +834,3 @@
 | [SRC-4FFD5AFC54-L000110](../../scripts/run_answer_quality_benchmark.py#L110) | 110 | `"    if expected_strategy != \"web_search\":"` | — |
 | [SRC-4FFD5AFC54-L000111](../../scripts/run_answer_quality_benchmark.py#L111) | 111 | `"        tool_status = \"NOT_APPLICABLE\""` | — |
 | [SRC-4FFD5AFC54-L000112](../../scripts/run_answer_quality_benchmark.py#L112) | 112 | `"    elif not transport_ok:"` | — |
-| [SRC-4FFD5AFC54-L000113](../../scripts/run_answer_quality_benchmark.py#L113) | 113 | `"        tool_status = \"TRANSPORT_FAILED\""` | — |
-| [SRC-4FFD5AFC54-L000114](../../scripts/run_answer_quality_benchmark.py#L114) | 114 | `"    elif outcome == \"attempted_with_usable_sources\":"` | — |
-| [SRC-4FFD5AFC54-L000115](../../scripts/run_answer_quality_benchmark.py#L115) | 115 | `"        if source_count is None:"` | — |
-| [SRC-4FFD5AFC54-L000116](../../scripts/run_answer_quality_benchmark.py#L116) | 116 | `"            tool_status = \"UNKNOWN_SOURCE_COUNT\""` | — |
-| [SRC-4FFD5AFC54-L000117](../../scripts/run_answer_quality_benchmark.py#L117) | 117 | `"        elif source_count == 0:"` | — |
-| [SRC-4FFD5AFC54-L000118](../../scripts/run_answer_quality_benchmark.py#L118) | 118 | `"            tool_status = \"INCONSISTENT_SEARCH_OUTCOME_NO_RETURNED_SOURCES\""` | — |
-| [SRC-4FFD5AFC54-L000119](../../scripts/run_answer_quality_benchmark.py#L119) | 119 | `"        else:"` | — |
-| [SRC-4FFD5AFC54-L000120](../../scripts/run_answer_quality_benchmark.py#L120) | 120 | `"            tool_status = \"SUCCESS_WITH_USABLE_RESULTS\""` | — |
-| [SRC-4FFD5AFC54-L000121](../../scripts/run_answer_quality_benchmark.py#L121) | 121 | `"    elif outcome == \"attempted_no_usable_sources\":"` | — |
-| [SRC-4FFD5AFC54-L000122](../../scripts/run_answer_quality_benchmark.py#L122) | 122 | `"        if source_count is not None and source_count > 0:"` | — |
-| [SRC-4FFD5AFC54-L000123](../../scripts/run_answer_quality_benchmark.py#L123) | 123 | `"            tool_status = \"INCONSISTENT_SEARCH_OUTCOME_WITH_RETURNED_SOURCES\""` | — |
-| [SRC-4FFD5AFC54-L000124](../../scripts/run_answer_quality_benchmark.py#L124) | 124 | `"        else:"` | — |
-| [SRC-4FFD5AFC54-L000125](../../scripts/run_answer_quality_benchmark.py#L125) | 125 | `"            tool_status = \"ATTEMPTED_NO_USABLE_RESULTS\""` | — |
-| [SRC-4FFD5AFC54-L000126](../../scripts/run_answer_quality_benchmark.py#L126) | 126 | `"    elif outcome == \"attempted_research_error\":"` | — |
-| [SRC-4FFD5AFC54-L000127](../../scripts/run_answer_quality_benchmark.py#L127) | 127 | `"        tool_status = \"TOOL_FAILED\""` | — |
-| [SRC-4FFD5AFC54-L000128](../../scripts/run_answer_quality_benchmark.py#L128) | 128 | `"    elif outcome == \"unknown_after_budget_exhaustion\":"` | — |
-| [SRC-4FFD5AFC54-L000129](../../scripts/run_answer_quality_benchmark.py#L129) | 129 | `"        tool_status = \"BUDGET_EXHAUSTED\""` | — |
-| [SRC-4FFD5AFC54-L000130](../../scripts/run_answer_quality_benchmark.py#L130) | 130 | `"    elif outcome == \"not_attempted\":"` | — |
-| [SRC-4FFD5AFC54-L000131](../../scripts/run_answer_quality_benchmark.py#L131) | 131 | `"        tool_status = \"NOT_ATTEMPTED\""` | — |
-| [SRC-4FFD5AFC54-L000132](../../scripts/run_answer_quality_benchmark.py#L132) | 132 | `"    else:"` | — |
-| [SRC-4FFD5AFC54-L000133](../../scripts/run_answer_quality_benchmark.py#L133) | 133 | `"        tool_status = \"UNKNOWN\""` | — |
-| [SRC-4FFD5AFC54-L000134](../../scripts/run_answer_quality_benchmark.py#L134) | 134 | `""` | — |
-| [SRC-4FFD5AFC54-L000135](../../scripts/run_answer_quality_benchmark.py#L135) | 135 | `"    task_understanding = payload.get(\"task_understanding\")"` | — |
-| [SRC-4FFD5AFC54-L000136](../../scripts/run_answer_quality_benchmark.py#L136) | 136 | `"    task_understanding = task_understanding if isinstance(task_understanding, dict) else {}"` | — |
-| [SRC-4FFD5AFC54-L000137](../../scripts/run_answer_quality_benchmark.py#L137) | 137 | `"    tool_execution = task_understanding.get(\"tool_execution\")"` | — |
-| [SRC-4FFD5AFC54-L000138](../../scripts/run_answer_quality_benchmark.py#L138) | 138 | `"    tool_execution = tool_execution if isinstance(tool_execution, dict) else {}"` | — |
-| [SRC-4FFD5AFC54-L000139](../../scripts/run_answer_quality_benchmark.py#L139) | 139 | `"    raw_tool_rows = tool_execution.get(\"tool_status_matrix\")"` | — |
-| [SRC-4FFD5AFC54-L000140](../../scripts/run_answer_quality_benchmark.py#L140) | 140 | `"    requirements_raw = tool_execution.get(\"required_tools\")"` | — |
-| [SRC-4FFD5AFC54-L000141](../../scripts/run_answer_quality_benchmark.py#L141) | 141 | `"    required_tool_matrix_present = ("` | — |
-| [SRC-4FFD5AFC54-L000142](../../scripts/run_answer_quality_benchmark.py#L142) | 142 | `"        isinstance(raw_tool_rows, list) and isinstance(requirements_raw, list)"` | — |
-| [SRC-4FFD5AFC54-L000143](../../scripts/run_answer_quality_benchmark.py#L143) | 143 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000144](../../scripts/run_answer_quality_benchmark.py#L144) | 144 | `"    matrix_rows = [row for row in raw_tool_rows if isinstance(row, dict)] if isinstance(raw_tool_rows, list) else []"` | — |
-| [SRC-4FFD5AFC54-L000145](../../scripts/run_answer_quality_benchmark.py#L145) | 145 | `"    required_tool_names = ["` | — |
-| [SRC-4FFD5AFC54-L000146](../../scripts/run_answer_quality_benchmark.py#L146) | 146 | `"        name.strip()"` | — |
-| [SRC-4FFD5AFC54-L000147](../../scripts/run_answer_quality_benchmark.py#L147) | 147 | `"        for name in requirements_raw"` | — |
-| [SRC-4FFD5AFC54-L000148](../../scripts/run_answer_quality_benchmark.py#L148) | 148 | `"        if isinstance(name, str) and name.strip()"` | — |
-| [SRC-4FFD5AFC54-L000149](../../scripts/run_answer_quality_benchmark.py#L149) | 149 | `"    ] if isinstance(requirements_raw, list) else []"` | — |
-| [SRC-4FFD5AFC54-L000150](../../scripts/run_answer_quality_benchmark.py#L150) | 150 | `"    allowed_statuses = {"` | — |
-| [SRC-4FFD5AFC54-L000151](../../scripts/run_answer_quality_benchmark.py#L151) | 151 | `"        \"web_search\": {"` | — |
-| [SRC-4FFD5AFC54-L000152](../../scripts/run_answer_quality_benchmark.py#L152) | 152 | `"            \"failed\", \"unknown\", \"not_attempted\", \"counter_mismatch\","` | — |
-| [SRC-4FFD5AFC54-L000153](../../scripts/run_answer_quality_benchmark.py#L153) | 153 | `"            \"completed_with_results\", \"completed_no_usable_results\","` | — |
-| [SRC-4FFD5AFC54-L000154](../../scripts/run_answer_quality_benchmark.py#L154) | 154 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000155](../../scripts/run_answer_quality_benchmark.py#L155) | 155 | `"        \"page_fetch\": {"` | — |
-| [SRC-4FFD5AFC54-L000156](../../scripts/run_answer_quality_benchmark.py#L156) | 156 | `"            \"counter_mismatch\", \"completed_with_read_pages\","` | — |
-| [SRC-4FFD5AFC54-L000157](../../scripts/run_answer_quality_benchmark.py#L157) | 157 | `"            \"attempted_no_readable_pages\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000158](../../scripts/run_answer_quality_benchmark.py#L158) | 158 | `"            \"not_attempted_after_search_error\", \"not_attempted_no_fetchable_candidates\","` | — |
-| [SRC-4FFD5AFC54-L000159](../../scripts/run_answer_quality_benchmark.py#L159) | 159 | `"            \"not_attempted\","` | — |
-| [SRC-4FFD5AFC54-L000160](../../scripts/run_answer_quality_benchmark.py#L160) | 160 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000161](../../scripts/run_answer_quality_benchmark.py#L161) | 161 | `"        \"public_social_search_if_configured\": {"` | — |
-| [SRC-4FFD5AFC54-L000162](../../scripts/run_answer_quality_benchmark.py#L162) | 162 | `"            \"completed_with_results\", \"failed\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000163](../../scripts/run_answer_quality_benchmark.py#L163) | 163 | `"            \"completed_no_usable_results\", \"not_attempted\", \"not_configured\","` | — |
-| [SRC-4FFD5AFC54-L000164](../../scripts/run_answer_quality_benchmark.py#L164) | 164 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000165](../../scripts/run_answer_quality_benchmark.py#L165) | 165 | `"        \"language_model_generation_if_configured\": {"` | — |
-| [SRC-4FFD5AFC54-L000166](../../scripts/run_answer_quality_benchmark.py#L166) | 166 | `"            \"completed\", \"not_configured\", \"failed\", \"not_attempted\","` | — |
-| [SRC-4FFD5AFC54-L000167](../../scripts/run_answer_quality_benchmark.py#L167) | 167 | `"            \"not_attempted_no_evidence\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000168](../../scripts/run_answer_quality_benchmark.py#L168) | 168 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000169](../../scripts/run_answer_quality_benchmark.py#L169) | 169 | `"        \"claim_review_if_configured\": {"` | — |
-| [SRC-4FFD5AFC54-L000170](../../scripts/run_answer_quality_benchmark.py#L170) | 170 | `"            \"completed_model_assisted_review\", \"failed\","` | — |
-| [SRC-4FFD5AFC54-L000171](../../scripts/run_answer_quality_benchmark.py#L171) | 171 | `"            \"not_attempted_no_evidence\", \"not_attempted\", \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000172](../../scripts/run_answer_quality_benchmark.py#L172) | 172 | `"        },"` | — |
-| [SRC-4FFD5AFC54-L000173](../../scripts/run_answer_quality_benchmark.py#L173) | 173 | `"    }"` | — |
-| [SRC-4FFD5AFC54-L000174](../../scripts/run_answer_quality_benchmark.py#L174) | 174 | `"    successful_statuses = {"` | — |
-| [SRC-4FFD5AFC54-L000175](../../scripts/run_answer_quality_benchmark.py#L175) | 175 | `"        \"web_search\": {\"completed_with_results\"},"` | — |
-| [SRC-4FFD5AFC54-L000176](../../scripts/run_answer_quality_benchmark.py#L176) | 176 | `"        \"page_fetch\": {\"completed_with_read_pages\"},"` | — |
-| [SRC-4FFD5AFC54-L000177](../../scripts/run_answer_quality_benchmark.py#L177) | 177 | `"        \"public_social_search_if_configured\": {\"completed_with_results\"},"` | — |
-| [SRC-4FFD5AFC54-L000178](../../scripts/run_answer_quality_benchmark.py#L178) | 178 | `"        \"language_model_generation_if_configured\": {\"completed\"},"` | — |
-| [SRC-4FFD5AFC54-L000179](../../scripts/run_answer_quality_benchmark.py#L179) | 179 | `"        \"claim_review_if_configured\": {\"completed_model_assisted_review\"},"` | — |
-| [SRC-4FFD5AFC54-L000180](../../scripts/run_answer_quality_benchmark.py#L180) | 180 | `"    }"` | — |
-| [SRC-4FFD5AFC54-L000181](../../scripts/run_answer_quality_benchmark.py#L181) | 181 | `"    required_tool_statuses = []"` | — |
-| [SRC-4FFD5AFC54-L000182](../../scripts/run_answer_quality_benchmark.py#L182) | 182 | `"    required_name_set = set(required_tool_names)"` | — |
-| [SRC-4FFD5AFC54-L000183](../../scripts/run_answer_quality_benchmark.py#L183) | 183 | `"    reported_required_names = {"` | — |
-| [SRC-4FFD5AFC54-L000184](../../scripts/run_answer_quality_benchmark.py#L184) | 184 | `"        row.get(\"tool\")"` | — |
-| [SRC-4FFD5AFC54-L000185](../../scripts/run_answer_quality_benchmark.py#L185) | 185 | `"        for row in matrix_rows"` | — |
-| [SRC-4FFD5AFC54-L000186](../../scripts/run_answer_quality_benchmark.py#L186) | 186 | `"        if row.get(\"required_by_task_spec\") is True and isinstance(row.get(\"tool\"), str)"` | — |
-| [SRC-4FFD5AFC54-L000187](../../scripts/run_answer_quality_benchmark.py#L187) | 187 | `"    }"` | — |
-| [SRC-4FFD5AFC54-L000188](../../scripts/run_answer_quality_benchmark.py#L188) | 188 | `"    required_tool_matrix_complete = ("` | — |
-| [SRC-4FFD5AFC54-L000189](../../scripts/run_answer_quality_benchmark.py#L189) | 189 | `"        required_tool_matrix_present"` | — |
-| [SRC-4FFD5AFC54-L000190](../../scripts/run_answer_quality_benchmark.py#L190) | 190 | `"        and len(required_tool_names) == len(required_name_set)"` | — |
-| [SRC-4FFD5AFC54-L000191](../../scripts/run_answer_quality_benchmark.py#L191) | 191 | `"        and reported_required_names == required_name_set"` | — |
-| [SRC-4FFD5AFC54-L000192](../../scripts/run_answer_quality_benchmark.py#L192) | 192 | `"    )"` | — |
-| [SRC-4FFD5AFC54-L000193](../../scripts/run_answer_quality_benchmark.py#L193) | 193 | `"    for tool in dict.fromkeys(required_tool_names):"` | — |
-| [SRC-4FFD5AFC54-L000194](../../scripts/run_answer_quality_benchmark.py#L194) | 194 | `"        matches = ["` | — |
-| [SRC-4FFD5AFC54-L000195](../../scripts/run_answer_quality_benchmark.py#L195) | 195 | `"            row for row in matrix_rows"` | — |
-| [SRC-4FFD5AFC54-L000196](../../scripts/run_answer_quality_benchmark.py#L196) | 196 | `"            if row.get(\"tool\") == tool and row.get(\"required_by_task_spec\") is True"` | — |
-| [SRC-4FFD5AFC54-L000197](../../scripts/run_answer_quality_benchmark.py#L197) | 197 | `"        ]"` | — |
-| [SRC-4FFD5AFC54-L000198](../../scripts/run_answer_quality_benchmark.py#L198) | 198 | `"        if len(matches) == 0:"` | — |
-| [SRC-4FFD5AFC54-L000199](../../scripts/run_answer_quality_benchmark.py#L199) | 199 | `"            status = \"missing_matrix_row\""` | — |
-| [SRC-4FFD5AFC54-L000200](../../scripts/run_answer_quality_benchmark.py#L200) | 200 | `"            status_observed = False"` | — |
-| [SRC-4FFD5AFC54-L000201](../../scripts/run_answer_quality_benchmark.py#L201) | 201 | `"            successful = False"` | — |
-| [SRC-4FFD5AFC54-L000202](../../scripts/run_answer_quality_benchmark.py#L202) | 202 | `"            required_tool_matrix_complete = False"` | — |
-| [SRC-4FFD5AFC54-L000203](../../scripts/run_answer_quality_benchmark.py#L203) | 203 | `"        elif len(matches) > 1:"` | — |
-| [SRC-4FFD5AFC54-L000204](../../scripts/run_answer_quality_benchmark.py#L204) | 204 | `"            status = \"duplicate_matrix_rows\""` | — |
-| [SRC-4FFD5AFC54-L000205](../../scripts/run_answer_quality_benchmark.py#L205) | 205 | `"            status_observed = False"` | — |
-| [SRC-4FFD5AFC54-L000206](../../scripts/run_answer_quality_benchmark.py#L206) | 206 | `"            successful = False"` | — |
-| [SRC-4FFD5AFC54-L000207](../../scripts/run_answer_quality_benchmark.py#L207) | 207 | `"            required_tool_matrix_complete = False"` | — |
-| [SRC-4FFD5AFC54-L000208](../../scripts/run_answer_quality_benchmark.py#L208) | 208 | `"        else:"` | — |
-| [SRC-4FFD5AFC54-L000209](../../scripts/run_answer_quality_benchmark.py#L209) | 209 | `"            raw_status = matches[0].get(\"status\")"` | — |
-| [SRC-4FFD5AFC54-L000210](../../scripts/run_answer_quality_benchmark.py#L210) | 210 | `"            status_observed = isinstance(raw_status, str) and bool(raw_status.strip())"` | — |
-| [SRC-4FFD5AFC54-L000211](../../scripts/run_answer_quality_benchmark.py#L211) | 211 | `"            status = raw_status if status_observed else \"missing_status\""` | — |
-| [SRC-4FFD5AFC54-L000212](../../scripts/run_answer_quality_benchmark.py#L212) | 212 | `"            status_valid = status_observed and status in allowed_statuses.get(tool, set())"` | — |
-| [SRC-4FFD5AFC54-L000213](../../scripts/run_answer_quality_benchmark.py#L213) | 213 | `"            successful = status_valid and status in successful_statuses.get(tool, set())"` | — |
-| [SRC-4FFD5AFC54-L000214](../../scripts/run_answer_quality_benchmark.py#L214) | 214 | `"            if not status_valid:"` | — |
-| [SRC-4FFD5AFC54-L000215](../../scripts/run_answer_quality_benchmark.py#L215) | 215 | `"                required_tool_matrix_complete = False"` | — |
-| [SRC-4FFD5AFC54-L000216](../../scripts/run_answer_quality_benchmark.py#L216) | 216 | `"        required_tool_statuses.append({"` | — |
-| [SRC-4FFD5AFC54-L000217](../../scripts/run_answer_quality_benchmark.py#L217) | 217 | `"            \"tool\": tool,"` | — |
-| [SRC-4FFD5AFC54-L000218](../../scripts/run_answer_quality_benchmark.py#L218) | 218 | `"            \"status\": status,"` | — |
-| [SRC-4FFD5AFC54-L000219](../../scripts/run_answer_quality_benchmark.py#L219) | 219 | `"            \"status_observed\": status_observed,"` | — |
-| [SRC-4FFD5AFC54-L000220](../../scripts/run_answer_quality_benchmark.py#L220) | 220 | `"            \"status_valid\": status_valid if len(matches) == 1 else False,"` | — |
-| [SRC-4FFD5AFC54-L000221](../../scripts/run_answer_quality_benchmark.py#L221) | 221 | `"            \"successful_completion\": successful,"` | — |
-| [SRC-4FFD5AFC54-L000222](../../scripts/run_answer_quality_benchmark.py#L222) | 222 | `"        })"` | — |
-| [SRC-4FFD5AFC54-L000223](../../scripts/run_answer_quality_benchmark.py#L223) | 223 | `"    if expected_strategy == \"web_search\" and \"web_search\" not in required_name_set:"` | — |
-| [SRC-4FFD5AFC54-L000224](../../scripts/run_answer_quality_benchmark.py#L224) | 224 | `"        required_tool_matrix_complete = False"` | — |
-| [SRC-4FFD5AFC54-L000225](../../scripts/run_answer_quality_benchmark.py#L225) | 225 | `""` | — |
-| [SRC-4FFD5AFC54-L000226](../../scripts/run_answer_quality_benchmark.py#L226) | 226 | `"    calls = _model_calls_from_payload(payload)"` | — |
-| [SRC-4FFD5AFC54-L000227](../../scripts/run_answer_quality_benchmark.py#L227) | 227 | `"    reported_costs = []"` | — |
-| [SRC-4FFD5AFC54-L000228](../../scripts/run_answer_quality_benchmark.py#L228) | 228 | `"    for call in calls:"` | — |
-| [SRC-4FFD5AFC54-L000229](../../scripts/run_answer_quality_benchmark.py#L229) | 229 | `"        usage = call.get(\"provider_usage\")"` | — |
-| [SRC-4FFD5AFC54-L000230](../../scripts/run_answer_quality_benchmark.py#L230) | 230 | `"        if not isinstance(usage, dict):"` | — |
-| [SRC-4FFD5AFC54-L000231](../../scripts/run_answer_quality_benchmark.py#L231) | 231 | `"            continue"` | — |
-| [SRC-4FFD5AFC54-L000232](../../scripts/run_answer_quality_benchmark.py#L232) | 232 | `"        cost = _finite_nonnegative_number(usage.get(\"cost_usd\"))"` | — |
-| [SRC-4FFD5AFC54-L000233](../../scripts/run_answer_quality_benchmark.py#L233) | 233 | `"        if cost is not None:"` | — |
-| [SRC-4FFD5AFC54-L000234](../../scripts/run_answer_quality_benchmark.py#L234) | 234 | `"            reported_costs.append(cost)"` | — |
-| [SRC-4FFD5AFC54-L000235](../../scripts/run_answer_quality_benchmark.py#L235) | 235 | `""` | — |
-| [SRC-4FFD5AFC54-L000236](../../scripts/run_answer_quality_benchmark.py#L236) | 236 | `"    if not calls:"` | — |
-| [SRC-4FFD5AFC54-L000237](../../scripts/run_answer_quality_benchmark.py#L237) | 237 | `"        cost_status = \"NO_MODEL_CALL_METADATA\""` | — |
-| [SRC-4FFD5AFC54-L000238](../../scripts/run_answer_quality_benchmark.py#L238) | 238 | `"    elif len(reported_costs) == len(calls):"` | — |
-| [SRC-4FFD5AFC54-L000239](../../scripts/run_answer_quality_benchmark.py#L239) | 239 | `"        cost_status = \"COMPLETE_FOR_RETURNED_MODEL_CALLS\""` | — |
-| [SRC-4FFD5AFC54-L000240](../../scripts/run_answer_quality_benchmark.py#L240) | 240 | `"    elif reported_costs:"` | — |
-| [SRC-4FFD5AFC54-L000241](../../scripts/run_answer_quality_benchmark.py#L241) | 241 | `"        cost_status = \"PARTIAL_PROVIDER_REPORTED_MODEL_COST\""` | — |
-| [SRC-4FFD5AFC54-L000242](../../scripts/run_answer_quality_benchmark.py#L242) | 242 | `"    else:"` | — |
-| [SRC-4FFD5AFC54-L000243](../../scripts/run_answer_quality_benchmark.py#L243) | 243 | `"        cost_status = \"PROVIDER_COST_NOT_REPORTED\""` | — |
-| [SRC-4FFD5AFC54-L000244](../../scripts/run_answer_quality_benchmark.py#L244) | 244 | `""` | — |
-| [SRC-4FFD5AFC54-L000245](../../scripts/run_answer_quality_benchmark.py#L245) | 245 | `"    return {"` | — |
-| [SRC-4FFD5AFC54-L000246](../../scripts/run_answer_quality_benchmark.py#L246) | 246 | `"        \"search_outcome\": outcome if isinstance(outcome, str) else \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000247](../../scripts/run_answer_quality_benchmark.py#L247) | 247 | `"        \"pipeline_completion_status\": pipeline if isinstance(pipeline, str) else \"unknown\","` | — |
-| [SRC-4FFD5AFC54-L000248](../../scripts/run_answer_quality_benchmark.py#L248) | 248 | `"        \"tool_status\": tool_status,"` | — |
-| [SRC-4FFD5AFC54-L000249](../../scripts/run_answer_quality_benchmark.py#L249) | 249 | `"        \"required_tool_statuses\": required_tool_statuses,"` | — |
-| [SRC-4FFD5AFC54-L000250](../../scripts/run_answer_quality_benchmark.py#L250) | 250 | `"        \"required_tool_success_count\": sum(1 for row in required_tool_statuses if row[\"successful_completion\"]),"` | — |
-| [SRC-4FFD5AFC54-L000251](../../scripts/run_answer_quality_benchmark.py#L251) | 251 | `"        \"required_tool_count\": len(required_tool_statuses),"` | — |
-| [SRC-4FFD5AFC54-L000252](../../scripts/run_answer_quality_benchmark.py#L252) | 252 | `"        \"required_tool_success_rate\": ("` | — |
-| [SRC-4FFD5AFC54-L000253](../../scripts/run_answer_quality_benchmark.py#L253) | 253 | `"            round("` | — |
-| [SRC-4FFD5AFC54-L000254](../../scripts/run_answer_quality_benchmark.py#L254) | 254 | `"                sum(1 for row in required_tool_statuses if row[\"successful_completion\"])"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000872 إلى SRC-D17CE3D12F-L000749
+- النطاق: SRC-E73001D9AC-L000871 إلى SRC-D17CE3D12F-L000748
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000871](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L871) | 871 | `"5. قياس أداء إذا كان الادعاء متعلقًا بالسرعة أو السعة."` | — |
 | [SRC-E73001D9AC-L000872](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L872) | 872 | `"6. دليل أمني إذا كان الادعاء متعلقًا بالأمان أو العزل."` | — |
 | [SRC-E73001D9AC-L000873](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L873) | 873 | `"7. توثيق للقيود والبيئة ونطاق التحقق."` | — |
 | [SRC-E73001D9AC-L000874](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L874) | 874 | `"8. مراجعة أن القدرة لم تُضعف خصائص قائمة."` | — |
@@ -824,4 +825,3 @@
 | [SRC-D17CE3D12F-L000746](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L746) | 746 | `""` | — |
 | [SRC-D17CE3D12F-L000747](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L747) | 747 | `"## 50. حالة الخدمة والتواصل والثقة مع المستخدم"` | — |
 | [SRC-D17CE3D12F-L000748](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L748) | 748 | `""` | — |
-| [SRC-D17CE3D12F-L000749](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L749) | 749 | `"1. SHOULD أن يكون هناك وصف واضح لما يعمل وما لا يعمل في النسخة الحالية، دون خلط القدرات المخططة بالمثبتة."` | — |

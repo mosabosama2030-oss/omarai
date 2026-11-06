@@ -4,7 +4,7 @@
 
 - الصفحة: **029**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000750 إلى SRC-8872CF2B16-L000113
+- النطاق: SRC-D17CE3D12F-L000749 إلى SRC-8872CF2B16-L000112
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000749](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L749) | 749 | `"1. SHOULD أن يكون هناك وصف واضح لما يعمل وما لا يعمل في النسخة الحالية، دون خلط القدرات المخططة بالمثبتة."` | — |
 | [SRC-D17CE3D12F-L000750](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L750) | 750 | `"2. SHOULD توفير رسالة حالة للمشكلات المعروفة أو حالة الطلب في الواجهة، حسب حجم المنتج وطبيعة الاعتمادية."` | — |
 | [SRC-D17CE3D12F-L000751](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L751) | 751 | `"3. MUST أن تخبر رسائل الفشل المستخدم بما يمكنه فعله لاحقًا دون كشف التفاصيل الداخلية أو الأسرار."` | — |
 | [SRC-D17CE3D12F-L000752](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L752) | 752 | `"4. MUST إظهار الفشل الجزئي عندما يؤثر على موثوقية الإجابة؛ لا تعرض إجابة ناقصة وكأن البحث اكتمل."` | — |
@@ -860,4 +861,3 @@
 | [SRC-8872CF2B16-L000110](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L110) | 110 | `"- استكمال ملف المنتج/السوق والتصنيف والتأهيل على أساس أدلة، بعد مراجعة ودمج التغيير المناسب."` | — |
 | [SRC-8872CF2B16-L000111](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L111) | 111 | `"- التحقق من تجربة RTL على أجهزة ومتصفحات فعلية ومراجعة WCAG اليدوية."` | — |
 | [SRC-8872CF2B16-L000112](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L112) | 112 | `""` | — |
-| [SRC-8872CF2B16-L000113](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L113) | 113 | `"### P2 — التوسع بعد إثبات الأساس"` | — |

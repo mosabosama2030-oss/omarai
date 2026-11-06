@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6B9B9ABE27-L000026 إلى SRC-70795F4B61-L000490
+- النطاق: SRC-6B9B9ABE27-L000025 إلى SRC-70795F4B61-L000489
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6B9B9ABE27-L000025](../ui-directions/README.md#L25) | 25 | `"## Shared design requirements"` | — |
 | [SRC-6B9B9ABE27-L000026](../ui-directions/README.md#L26) | 26 | `"- Arabic-first RTL; Noto Sans Arabic / IBM Plex Arabic system fallback."` | — |
 | [SRC-6B9B9ABE27-L000027](../ui-directions/README.md#L27) | 27 | `"- Responsive desktop and mobile layouts with CSS breakpoints."` | — |
 | [SRC-6B9B9ABE27-L000028](../ui-directions/README.md#L28) | 28 | `"- Evidence source/date and human-review status remain visible."` | — |
@@ -905,4 +906,3 @@
 | [SRC-70795F4B61-L000487](../../scripts/compare_answer_quality_runs.py#L487) | 487 | `"        if unscored_quality:"` | — |
 | [SRC-70795F4B61-L000488](../../scripts/compare_answer_quality_runs.py#L488) | 488 | `"            comparison[\"acceptance_blockers\"].append("` | — |
 | [SRC-70795F4B61-L000489](../../scripts/compare_answer_quality_runs.py#L489) | 489 | `"                \"required_quality_metrics_unscored:\" + \",\".join(unscored_quality)"` | — |
-| [SRC-70795F4B61-L000490](../../scripts/compare_answer_quality_runs.py#L490) | 490 | `"            )"` | — |

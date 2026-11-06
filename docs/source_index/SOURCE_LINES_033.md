@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-0F910493E8-L000436 إلى SRC-69F3587825-L000029
+- النطاق: SRC-0F910493E8-L000435 إلى SRC-69F3587825-L000028
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-0F910493E8-L000435](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L435) | 435 | `"**بوابة القبول:** تحسن قابل للقياس أو تنظيم يقلل التكرار دون تراجع في السلوك الحالي."` | — |
 | [SRC-0F910493E8-L000436](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L436) | 436 | `""` | — |
 | [SRC-0F910493E8-L000437](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L437) | 437 | `"## P3 — مواصفات مهام محدودة وتركيب القدرات"` | — |
 | [SRC-0F910493E8-L000438](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L438) | 438 | `""` | — |
@@ -860,4 +861,3 @@
 | [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".hg\","` | — |
 | [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \".svn\","` | — |
 | [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \".venv\","` | — |
-| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |

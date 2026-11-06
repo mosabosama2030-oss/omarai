@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000531 إلى SRC-C9CF9B54F8-L000786
+- النطاق: SRC-5587371288-L000530 إلى SRC-C9CF9B54F8-L000785
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000530](../../agents/intent_router.py#L530) | 530 | `"            \"reason\": ("` | — |
 | [SRC-5587371288-L000531](../../agents/intent_router.py#L531) | 531 | `"                \"explicit_evidence_request\""` | — |
 | [SRC-5587371288-L000532](../../agents/intent_router.py#L532) | 532 | `"                if _has_explicit_source_request(question)"` | — |
 | [SRC-5587371288-L000533](../../agents/intent_router.py#L533) | 533 | `"                else \"freshness_or_explicit_research_signal\""` | — |
@@ -824,4 +825,3 @@
 | [SRC-C9CF9B54F8-L000783](../../agents/omarai.py#L783) | 783 | `"                raise ValueError(\"active tenant is required\")"` | — |
 | [SRC-C9CF9B54F8-L000784](../../agents/omarai.py#L784) | 784 | `"            db.execute("` | — |
 | [SRC-C9CF9B54F8-L000785](../../agents/omarai.py#L785) | 785 | `"                \"\"\"INSERT INTO product_profiles"` | — |
-| [SRC-C9CF9B54F8-L000786](../../agents/omarai.py#L786) | 786 | `"                   (id, tenant_id, normalized_name, name, profile_json, created_at, updated_at)"` | — |

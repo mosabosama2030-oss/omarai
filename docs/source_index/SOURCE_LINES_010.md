@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000362 إلى SRC-686F71AA50-L001161
+- النطاق: SRC-686F71AA50-L000361 إلى SRC-686F71AA50-L001160
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000361](../../agents/task_understanding.py#L361) | 361 | `"            all(token_forms_cache[index + offset] & phrase_forms[offset] for offset in range(width))"` | — |
 | [SRC-686F71AA50-L000362](../../agents/task_understanding.py#L362) | 362 | `"            for index in range(max(0, len(tokens) - width + 1))"` | — |
 | [SRC-686F71AA50-L000363](../../agents/task_understanding.py#L363) | 363 | `"        )"` | — |
 | [SRC-686F71AA50-L000364](../../agents/task_understanding.py#L364) | 364 | `"        if found and normalized not in matched:"` | — |
@@ -815,4 +816,3 @@
 | [SRC-686F71AA50-L001158](../../agents/task_understanding.py#L1158) | 1158 | `"        independently_extracted = extract_aspects(question)"` | — |
 | [SRC-686F71AA50-L001159](../../agents/task_understanding.py#L1159) | 1159 | `"    except (ImportError, TypeError, ValueError):"` | — |
 | [SRC-686F71AA50-L001160](../../agents/task_understanding.py#L1160) | 1160 | `"        independently_extracted = []"` | — |
-| [SRC-686F71AA50-L001161](../../agents/task_understanding.py#L1161) | 1161 | `"    merged_aspects: list[str] = []"` | — |

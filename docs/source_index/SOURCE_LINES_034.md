@@ -4,7 +4,7 @@
 
 - الصفحة: **034**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000030 إلى SRC-6B9B9ABE27-L000025
+- النطاق: SRC-69F3587825-L000029 إلى SRC-6B9B9ABE27-L000024
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,7 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |
 | [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"env\","` | — |
 | [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \"virtualenv\","` | — |
 | [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \"__pycache__\","` | — |
@@ -869,4 +870,3 @@
 | [SRC-6B9B9ABE27-L000022](../ui-directions/README.md#L22) | 22 | `"- Best for power users monitoring multiple market signals and qualification stages."` | — |
 | [SRC-6B9B9ABE27-L000023](../ui-directions/README.md#L23) | 23 | `"- Preview: [variant-03-neon-command.html](variant-03-neon-command.html)"` | — |
 | [SRC-6B9B9ABE27-L000024](../ui-directions/README.md#L24) | 24 | `""` | — |
-| [SRC-6B9B9ABE27-L000025](../ui-directions/README.md#L25) | 25 | `"## Shared design requirements"` | — |
