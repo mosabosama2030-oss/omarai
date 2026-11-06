@@ -1515,3 +1515,26 @@ def test_lead_store_rejects_conflicting_postgres_url_and_sqlite_path(monkeypatch
 
     with pytest.raises(ValueError, match="configure either OMARAI_DATABASE_URL"):
         api_module._lead_store_from_environment()
+
+
+
+def test_health_reports_storage_backend_without_exposing_database_credentials(monkeypatch, local_api):
+    import json
+    from types import SimpleNamespace
+    from urllib.request import urlopen
+
+    import api.omarai as api_module
+
+    monkeypatch.setattr(api_module.Handler, "store", SimpleNamespace(backend="postgresql"))
+    monkeypatch.setenv(
+        "OMARAI_DATABASE_URL",
+        "postgresql://health-user:health-password@example.neon.tech/omarai?sslmode=require",
+    )
+
+    with urlopen(f"{local_api}/api/health", timeout=3) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+
+    assert payload["storage"]["backend"] == "postgresql"
+    assert payload["storage"]["database_url_configured"] is True
+    assert payload["storage"]["durability_status"] == "external_database_configured"
+    assert "health-password" not in json.dumps(payload)
