@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import hmac
+import ipaddress
 import json
 import re
 import secrets
@@ -829,7 +830,14 @@ class LeadStore:
         snippet = str(source.get("snippet") or "")[:1600].strip()
         source_url = validate_url(source.get("url", ""))
         parsed = urlparse(source_url)
-        if parsed.hostname and parsed.hostname.lower() in {"localhost"}:
+        hostname = (parsed.hostname or "").lower().rstrip(".")
+        if hostname == "localhost" or hostname.endswith(".localhost") or hostname.endswith(".local"):
+            raise ValueError("discovery source URL is not public")
+        try:
+            address = ipaddress.ip_address(hostname)
+        except ValueError:
+            address = None
+        if address is not None and not address.is_global:
             raise ValueError("discovery source URL is not public")
         evidence = source.get("lead_intent_evidence")
         safe_evidence = None
