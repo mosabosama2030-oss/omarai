@@ -576,7 +576,7 @@ def classify_source(url: str) -> dict[str, str]:
 def fuse_ranked_results(
     batches: list[dict[str, Any]], limit: int = MAX_FUSED_RESULTS
 ) -> list[dict[str, Any]]:
-    """Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs."""
+    """Fuse result sets with RRF first and lexical topic match as a tie-breaker."""
     accumulated: dict[str, dict[str, Any]] = {}
     for batch in batches:
         query = _compact(batch.get("query", ""), 500)
@@ -603,6 +603,7 @@ def fuse_ranked_results(
                     "providers": [],
                     "queries": [],
                     "rank_score": 0.0,
+                    "retrieval_relevance_score": None,
                     "best_raw_rank": position,
                     "published_at": _compact(source.get("published_at") or "", 100),
                     "publisher_name": _compact(source.get("publisher_name") or "", 200),
@@ -611,7 +612,21 @@ def fuse_ranked_results(
                 }
                 entry.update(classify_source(source_identity_url))
                 accumulated[url] = entry
-            elif source.get("publisher_url") and not entry.get("publisher_url"):
+            raw_relevance = source.get("retrieval_relevance_score")
+            relevance_score = None
+            if not isinstance(raw_relevance, bool):
+                try:
+                    parsed_relevance = float(raw_relevance)
+                    if 0.0 <= parsed_relevance <= 1.0:
+                        relevance_score = parsed_relevance
+                except (TypeError, ValueError, OverflowError):
+                    pass
+            if relevance_score is not None and (
+                entry["retrieval_relevance_score"] is None
+                or relevance_score > entry["retrieval_relevance_score"]
+            ):
+                entry["retrieval_relevance_score"] = relevance_score
+            if source.get("publisher_url") and not entry.get("publisher_url"):
                 entry["publisher_url"] = _compact(source.get("publisher_url"), 2048)
                 entry["publisher_name"] = _compact(source.get("publisher_name") or "", 200)
                 entry["publisher_domain"] = _compact(source.get("publisher_domain") or "", 300)
@@ -629,15 +644,26 @@ def fuse_ranked_results(
             if source.get("page_text") and not entry["page_text"]:
                 entry["page_text"] = _compact(source["page_text"], 12_000)
                 entry["page_fetched"] = True
-    # A cross-query result gets a modest consensus bonus; official/academic sources
-    # get a small prior, never enough to override actual query relevance.
+    # Apply existing cross-query consensus and source priors. Keep RRF authoritative;
+    # the lexical topic-match ratio only resolves exact RRF ties.
     for entry in accumulated.values():
         entry["rank_score"] += min(len(entry["queries"]), 4) * 0.00015
         if entry["source_class"] in {"government", "academic"}:
             entry["rank_score"] += 0.0001
         if "user_supplied_url" in entry["providers"]:
             entry["rank_score"] += 0.5
-    ranked = sorted(accumulated.values(), key=lambda item: item["rank_score"], reverse=True)
+        # Keep the established RRF score authoritative. The conservative lexical
+        # topic-match ratio only resolves exact RRF ties; it is not confidence or truth.
+    ranked = sorted(
+        accumulated.values(),
+        key=lambda item: (
+            item["rank_score"],
+            item["retrieval_relevance_score"]
+            if item["retrieval_relevance_score"] is not None
+            else -1.0,
+        ),
+        reverse=True,
+    )
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
 
 
