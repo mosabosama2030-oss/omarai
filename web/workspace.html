@@ -710,7 +710,18 @@ function renderProductProfile(){
     locale:controls.locale.value
    };
    const result=await api("/api/product-profiles",{method:"POST",body:payload});
-   state.activeProfileId=result.id;await loadProductProfiles();renderProductProfile();
+   state.activeProfileId=result.id;
+   let refreshWarning="";
+   try{
+    await loadProductProfiles();
+   }catch(refreshError){
+    refreshWarning=escapeMessage(refreshError.message);
+   }
+   if(refreshWarning){
+    panel.append(make("p","auth-error","تم حفظ ملف المنتج والسوق، لكن تعذر تحديث قائمة الملفات المحفوظة. "+refreshWarning));
+   }else{
+    renderProductProfile();
+   }
   }catch(error){panel.append(make("p","auth-error",escapeMessage(error.message)))}
   finally{save.disabled=false}
  });
