@@ -628,7 +628,7 @@ def fuse_ranked_results(
                 or relevance_score > entry["retrieval_relevance_score"]
             ):
                 entry["retrieval_relevance_score"] = relevance_score
-            elif source.get("publisher_url") and not entry.get("publisher_url"):
+            if source.get("publisher_url") and not entry.get("publisher_url"):
                 entry["publisher_url"] = _compact(source.get("publisher_url"), 2048)
                 entry["publisher_name"] = _compact(source.get("publisher_name") or "", 200)
                 entry["publisher_domain"] = _compact(source.get("publisher_domain") or "", 300)
