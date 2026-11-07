@@ -34,7 +34,7 @@ def test_discovery_progress_clears_on_failure_and_history_refresh_is_non_fatal()
     assert 'setAttribute("role","status")' in body
     assert "progress.replaceWith" in body or "progress.remove()" in body
     assert re.search(
-        r"try\s*\{\s*await\s+loadDiscoveryRuns\(\)\s*\}\s*catch",
+        r"try\s*\{\s*await\s+loadDiscoveryRuns\(\)\s*;?\s*\}\s*catch",
         body,
     ), "history refresh failure must be isolated from successful discovery creation"
     assert "تم حفظ نتيجة الاكتشاف" in body, (
@@ -47,7 +47,7 @@ def test_general_search_uses_bounded_fetch_and_restores_controls_after_timeout()
     body = function_source(script, "ask")
 
     assert "new AbortController()" in body
-    assert re.search(r"signal\\s*:\\s*controller\\.signal", body)
+    assert re.search(r"signal\s*:\s*controller\.signal", body)
     assert re.search(r"setTimeout\s*\(.*controller\.abort", body, re.DOTALL)
     assert re.search(r"clearTimeout\s*\(", body)
     assert "AbortError" in body, "timeouts must have a clear Arabic recovery message"
