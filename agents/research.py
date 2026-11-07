@@ -576,7 +576,7 @@ def classify_source(url: str) -> dict[str, str]:
 def fuse_ranked_results(
     batches: list[dict[str, Any]], limit: int = MAX_FUSED_RESULTS
 ) -> list[dict[str, Any]]:
-    """Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs."""
+    """Fuse result sets with RRF first and lexical topic match as a tie-breaker."""
     accumulated: dict[str, dict[str, Any]] = {}
     for batch in batches:
         query = _compact(batch.get("query", ""), 500)
@@ -604,7 +604,6 @@ def fuse_ranked_results(
                     "queries": [],
                     "rank_score": 0.0,
                     "retrieval_relevance_score": None,
-                    "retrieval_relevance_boost": 0.0,
                     "final_rank_score": 0.0,
                     "best_raw_rank": position,
                     "published_at": _compact(source.get("published_at") or "", 100),
@@ -654,13 +653,17 @@ def fuse_ranked_results(
             entry["rank_score"] += 0.0001
         if "user_supplied_url" in entry["providers"]:
             entry["rank_score"] += 0.5
-        relevance = entry["retrieval_relevance_score"]
-        relevance_boost = (relevance * 0.001) if relevance is not None else 0.0
-        entry["retrieval_relevance_boost"] = round(relevance_boost, 6)
-        entry["final_rank_score"] = entry["rank_score"] + relevance_boost
+        # Keep the established RRF score authoritative. The conservative lexical
+        # topic-match ratio only resolves exact RRF ties; it is not confidence or truth.
+        entry["final_rank_score"] = entry["rank_score"]
     ranked = sorted(
         accumulated.values(),
-        key=lambda item: item["final_rank_score"],
+        key=lambda item: (
+            item["rank_score"],
+            item["retrieval_relevance_score"]
+            if item["retrieval_relevance_score"] is not None
+            else -1.0,
+        ),
         reverse=True,
     )
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
