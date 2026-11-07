@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from agents.research import fuse_ranked_results
 from agents.web_agent import WebAgent, _minimum_relevance_ratio, _relevance_ratio, _relevance_query_tokens
 
 
