@@ -776,12 +776,29 @@ function renderDiscovery(){
   const actions=make("div","form-actions");
   const run=action("بدء اكتشاف الطلب","primary",async()=>{
    run.disabled=true;state.activeProfileId=profileSelect.value;
-   root.append(emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات."));
+   const progress=emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات.");
+   progress.setAttribute("role","status");
+   progress.setAttribute("aria-live","polite");
+   root.append(progress);
    try{
     state.activeDiscovery=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
-    await loadDiscoveryRuns();renderDiscovery();
-   }catch(error){root.append(make("p","auth-error",escapeMessage(error.message)))}
-   finally{run.disabled=false}
+    let historyWarning="";
+    try{
+     await loadDiscoveryRuns();
+    }catch(historyError){
+     historyWarning=escapeMessage(historyError.message);
+    }
+    renderDiscovery();
+    if(historyWarning){
+     $("viewRoot").prepend(make("p","auth-error","تم حفظ نتيجة الاكتشاف، لكن تعذر تحديث سجل العمليات. يمكنك متابعة مراجعة النتيجة المحفوظة. "+historyWarning));
+    }
+   }catch(error){
+    const failure=make("p","auth-error",escapeMessage(error.message));
+    if(progress.isConnected)progress.replaceWith(failure);
+    else $("viewRoot").prepend(failure);
+   }finally{
+    run.disabled=false;
+   }
   });
   run.disabled=!canWrite();actions.append(run);controls.append(actions);
  }
