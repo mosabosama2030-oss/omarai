@@ -184,3 +184,31 @@ def test_workspace_product_profile_and_discovery_screens_are_connected_to_protec
     assert "تعذر تحميل بعض البيانات" in html
     assert "النموذج اللغوي المهيأ حاليًا في Omarai" in html
     assert "قد يستهلك حصة أو تكلفة" in html
+
+
+def test_workspace_discovery_failure_is_retryable_and_preserves_previous_results():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    discovery = html.split("function renderDiscovery(){", 1)[1].split(
+        "\nfunction renderCurrent(", 1
+    )[0]
+
+    assert 'status.setAttribute("role","status")' in discovery
+    assert 'status.setAttribute("aria-live","polite")' in discovery
+    assert 'status.textContent="تعذر تشغيل الاكتشاف: "' in discovery
+    assert "لم تُحذف النتائج السابقة." in discovery
+    assert 'run.removeAttribute("aria-busy")' in discovery
+    assert "finally{" in discovery
+
+
+def test_workspace_discovery_result_survives_history_refresh_failure():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    discovery = html.split("function renderDiscovery(){", 1)[1].split(
+        "\nfunction renderCurrent(", 1
+    )[0]
+
+    assert 'const savedRun=await api("/api/discoveries"' in discovery
+    assert "state.activeDiscovery=savedRun" in discovery
+    assert "try{await loadDiscoveryRuns()}catch(refreshError)" in discovery
+    assert "حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات" in discovery
