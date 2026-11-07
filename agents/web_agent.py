@@ -1984,7 +1984,7 @@ class WebAgent:
             raise RuntimeError("تعذر تشغيل مجدول موصلات البحث.") from exc
         combined = [item for batch in provider_batches for item in batch]
         # Collapse duplicates within one provider, but keep cross-provider matches
-        # until reciprocal-rank fusion can record their independent discovery paths.
+        # until reciprocal-rank fusion can record their distinct provider discovery paths.
         unique_by_provider: dict[tuple[str, str], dict[str, Any]] = {}
         for item in combined:
             provider = str(item.get("provider") or "")
