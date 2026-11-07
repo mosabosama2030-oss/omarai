@@ -775,13 +775,33 @@ function renderDiscovery(){
   controls.append(consent);
   const actions=make("div","form-actions");
   const run=action("بدء اكتشاف الطلب","primary",async()=>{
+   if(run.disabled)return;
    run.disabled=true;state.activeProfileId=profileSelect.value;
-   root.append(emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات."));
+   const loading=emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات.");
+   loading.dataset.discoveryStatus="loading";
+   loading.setAttribute("role","status");
+   loading.setAttribute("aria-live","polite");
+   root.append(loading);
    try{
     state.activeDiscovery=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
-    await loadDiscoveryRuns();renderDiscovery();
-   }catch(error){root.append(make("p","auth-error",escapeMessage(error.message)))}
-   finally{run.disabled=false}
+    loading.remove();
+    renderDiscovery();
+    try{
+     await loadDiscoveryRuns();
+     renderDiscovery();
+    }catch(historyError){
+     const notice=make("p","notice","تم تنفيذ البحث وحفظ نتيجته، لكن تعذر تحديث سجل عمليات الاكتشاف. أعد تحميل السجل لاحقًا. "+escapeMessage(historyError.message));
+     notice.setAttribute("role","status");
+     root.prepend(notice);
+    }
+   }catch(error){
+    loading.remove();
+    const failure=make("p","auth-error","تعذر تشغيل اكتشاف الطلب: "+escapeMessage(error.message));
+    failure.setAttribute("role","alert");
+    root.append(failure);
+   }finally{
+    run.disabled=false;
+   }
   });
   run.disabled=!canWrite();actions.append(run);controls.append(actions);
  }
