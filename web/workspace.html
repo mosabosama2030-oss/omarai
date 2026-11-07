@@ -774,16 +774,24 @@ function renderDiscovery(){
   consent.append(optional,make("span","","السماح بالموصلات الاختيارية (DeepSeek Search وBrave وTavily وبعض واجهات المنصات الرسمية). قد تستهلك حصصًا أو تكلفة؛ تبقى معطلة افتراضيًا ولا يستطيع تفعيلها إلا مالك مساحة العمل."));
   controls.append(consent);
   const actions=make("div","form-actions");
+  const status=make("p","profile-note");status.setAttribute("role","status");status.setAttribute("aria-live","polite");
   const run=action("بدء اكتشاف الطلب","primary",async()=>{
-   run.disabled=true;state.activeProfileId=profileSelect.value;
-   root.append(emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات."));
+   run.disabled=true;run.setAttribute("aria-busy","true");state.activeProfileId=profileSelect.value;
+   status.className="profile-note";status.textContent="جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.";
    try{
-    state.activeDiscovery=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
-    await loadDiscoveryRuns();renderDiscovery();
-   }catch(error){root.append(make("p","auth-error",escapeMessage(error.message)))}
-   finally{run.disabled=false}
+    const savedRun=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
+    state.activeDiscovery=savedRun;
+    let refreshWarning="";
+    try{await loadDiscoveryRuns()}catch(refreshError){refreshWarning=" حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات: "+escapeMessage(refreshError.message)}
+    renderDiscovery();
+    if(refreshWarning){const warning=make("p","auth-error",refreshWarning);warning.setAttribute("role","alert");$("viewRoot").append(warning)}
+   }catch(error){
+    status.className="auth-error";status.textContent="تعذر تشغيل الاكتشاف: "+escapeMessage(error.message)+" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.";
+   }finally{
+    run.disabled=false;run.removeAttribute("aria-busy");
+   }
   });
-  run.disabled=!canWrite();actions.append(run);controls.append(actions);
+  run.disabled=!canWrite();actions.append(run);controls.append(actions,status);
  }
  controls.append(make("p","profile-note","تاريخ النشر قد يكون غير متاح. المقتطف لا يعني أن الصفحة قُرئت. فشل الموصل لا يثبت عدم وجود عملاء. لا يتم إرسال أي رسالة من هذه الشاشة."));
  controls.append(make("p","profile-note","تشغيل الاكتشاف يستخدم النموذج اللغوي المهيأ حاليًا في Omarai؛ قد يستهلك حصة أو تكلفة بحسب إعدادات مزود النموذج. لا تدخل بيانات سرية. الموصلات الاختيارية منفصلة وتظل معطلة افتراضيًا حتى موافقة المالك."));
@@ -795,7 +803,7 @@ function renderDiscovery(){
   state.discoveryRuns.forEach(item=>list.append(action(
    String(item.profile_name||"ملف منتج")+" · "+String(item.qualified_signal_count||0)+" إشارة · "+String(item.created_at||""),
    "",
-   async()=>{try{state.activeDiscovery=await api("/api/discoveries/"+encodeURIComponent(item.id));renderDiscovery()}catch(error){history.append(make("p","auth-error",escapeMessage(error.message)))}}
+   async()=>{try{state.activeDiscovery=await api("/api/discoveries/"+encodeURIComponent(item.id));renderDiscovery()}catch(error){const message=make("p","auth-error",escapeMessage(error.message));message.setAttribute("role","alert");history.append(message)}}
   )));
   history.append(list);root.append(history);
  }
