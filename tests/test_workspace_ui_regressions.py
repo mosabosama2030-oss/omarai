@@ -47,7 +47,7 @@ def test_general_search_uses_bounded_fetch_and_restores_controls_after_timeout()
     body = function_source(script, "ask")
 
     assert "new AbortController()" in body
-    assert "signal: controller.signal" in body
+    assert re.search(r"signal\\s*:\\s*controller\\.signal", body)
     assert re.search(r"setTimeout\s*\(.*controller\.abort", body, re.DOTALL)
     assert re.search(r"clearTimeout\s*\(", body)
     assert "AbortError" in body, "timeouts must have a clear Arabic recovery message"
