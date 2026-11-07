@@ -68,8 +68,11 @@ def test_signal_persistence_is_not_reported_as_failed_when_list_refresh_fails():
     script = inline_script("workspace.html")
     discovery_body = function_source(script, "renderDiscoveryRun")
     manual_body = function_source(script, "createSignalForm")
+    profile_body = function_source(script, "renderProductProfile")
 
     assert "refreshWarning" in discovery_body
     assert "تم حفظ الإشارة" in discovery_body
     assert "refreshWarning" in manual_body
     assert "تم حفظ الإشارة" in manual_body
+    assert "refreshWarning" in profile_body
+    assert "تم حفظ ملف المنتج والسوق" in profile_body
