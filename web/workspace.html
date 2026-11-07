@@ -437,7 +437,18 @@ function closeDetails(){$("detailDrawer").classList.remove("open")}
 function renderSignals(){
  setPage("صندوق إشارات الطلب","راجع النص الأصلي والمصدر والتصنيف. لا تعرض هذه الشاشة شركات أو أشخاصًا غير موجودين في السجل الفعلي.","DEMAND SIGNAL INBOX");
  const root=$("viewRoot");root.replaceChildren();
- const panel=make("section","glass panel");const ph=make("div","panel-head");const ptitle=make("div");ptitle.append(make("h2","","الإشارات المحفوظة"),make("p","","بيانات من GET /api/leads، محمية بجلسة المستخدم وعزل مساحة العمل."));ph.append(ptitle,action("تحديث ↻","ghost",async()=>{await loadLeads();renderSignals()}));panel.append(ph);
+ const panel=make("section","glass panel");const ph=make("div","panel-head");const ptitle=make("div");ptitle.append(make("h2","","الإشارات المحفوظة"),make("p","","بيانات من GET /api/leads، محمية بجلسة المستخدم وعزل مساحة العمل."));const refresh=action("تحديث ↻","ghost",async()=>{
+  refresh.disabled=true;
+  try{
+   await loadLeads();
+   renderSignals();
+  }catch(error){
+   panel.prepend(make("p","auth-error","تعذر تحديث إشارات الطلب. البيانات المعروضة هي آخر نسخة تم تحميلها. "+escapeMessage(error.message)));
+  }finally{
+   refresh.disabled=false;
+  }
+ });
+ ph.append(ptitle,refresh);panel.append(ph);
  if(canWrite())panel.append(createSignalForm());
  const toolbar=make("div","toolbar");const search=make("input","");search.type="search";search.placeholder="ابحث داخل نصوص الإشارات…";search.value=state.search;search.setAttribute("aria-label","البحث في الإشارات");
  search.addEventListener("input",()=>{state.search=search.value;drawSignalRows(list)});
@@ -497,7 +508,18 @@ function createSignalForm(){
    if(JSON.stringify(product_terms)!==JSON.stringify(item.product_terms)||JSON.stringify(location_terms)!==JSON.stringify(item.location_terms))throw new Error("تغيرت مصطلحات المنتج أو المنطقة؛ أعد التحليل.");
    const response=await api("/api/leads",{method:"POST",body:{text:text.value,source_url:url.value,platform:platform.value,note:note.value,product_terms:product_terms,location_terms:location_terms}});
    result.replaceChildren(make("p","tag teal",response.created?"تم حفظ الإشارة.":"هذه الإشارة موجودة بالفعل ولم تُكرر."));
-   state.analysis=null;text.value="";url.value="";note.value="";await loadLeads();renderSignals();
+   state.analysis=null;text.value="";url.value="";note.value="";
+   let refreshWarning="";
+   try{
+    await loadLeads();
+   }catch(refreshError){
+    refreshWarning=escapeMessage(refreshError.message);
+   }
+   if(refreshWarning){
+    result.append(make("p","auth-error","تم حفظ الإشارة، لكن تعذر تحديث صندوق الإشارات. افتح الصندوق وحدّثه لاحقًا. "+refreshWarning));
+   }else{
+    renderSignals();
+   }
   }catch(e){result.append(make("p","auth-error",escapeMessage(e.message)))}
   finally{save.disabled=false}
  });
@@ -747,7 +769,13 @@ function renderDiscoveryRun(run){
     try{
      const response=await api("/api/discoveries/"+encodeURIComponent(run.id)+"/signals/"+index+"/save",{method:"POST",body:{}});
      save.textContent=response.created?"تم الحفظ":"الإشارة موجودة بالفعل";
-     await loadLeads();
+     let refreshWarning="";
+     try{
+      await loadLeads();
+     }catch(refreshError){
+      refreshWarning=escapeMessage(refreshError.message);
+     }
+     if(refreshWarning)card.append(make("p","auth-error","تم حفظ الإشارة، لكن تعذر تحديث صندوق الإشارات. أعد فتح الصندوق أو حدّثه لاحقًا. "+refreshWarning));
     }catch(error){card.append(make("p","auth-error",escapeMessage(error.message)))}
     finally{save.disabled=false}
    });
