@@ -190,7 +190,7 @@ def test_workspace_discovery_failure_is_retryable_and_preserves_previous_results
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
     discovery = html.split("function renderDiscovery(){", 1)[1].split(
-        "\\nfunction renderCurrent(", 1
+        "\nfunction renderCurrent(", 1
     )[0]
 
     assert 'status.setAttribute("role","status")' in discovery
@@ -205,7 +205,7 @@ def test_workspace_discovery_result_survives_history_refresh_failure():
     workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
     html = workspace.read_text(encoding="utf-8")
     discovery = html.split("function renderDiscovery(){", 1)[1].split(
-        "\\nfunction renderCurrent(", 1
+        "\nfunction renderCurrent(", 1
     )[0]
 
     assert 'const savedRun=await api("/api/discoveries"' in discovery
