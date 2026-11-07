@@ -236,3 +236,29 @@ def test_discovery_source_storage_accepts_public_http_source():
         }
     )
     assert source["url"] == "https://example.org/request"
+
+
+def test_discovery_search_failure_clears_loading_state_and_reports_actionable_error():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    start = html.index('const run=action("بدء اكتشاف الطلب"')
+    end = html.index('controls.append(make("p","profile-note"', start)
+    handler = html[start:end]
+
+    assert 'loading.dataset.discoveryStatus="loading"' in handler
+    assert "loading.remove()" in handler
+    assert 'failure.setAttribute("role","alert")' in handler
+    assert "تعذر تشغيل اكتشاف الطلب" in handler
+
+
+def test_discovery_result_is_rendered_before_history_refresh_can_fail():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    start = html.index('const run=action("بدء اكتشاف الطلب"')
+    end = html.index('controls.append(make("p","profile-note"', start)
+    handler = html[start:end]
+
+    result_render = handler.index("renderDiscovery()")
+    history_refresh = handler.index("loadDiscoveryRuns()")
+    assert result_render < history_refresh
+    assert "تعذر تحديث سجل عمليات الاكتشاف" in handler
