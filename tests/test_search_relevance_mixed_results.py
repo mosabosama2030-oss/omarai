@@ -32,6 +32,7 @@ def test_search_web_keeps_relevant_official_result_and_drops_maps_help(monkeypat
     results = agent._search_web(query)
 
     assert [item["url"] for item in results] == [official["url"]]
+    assert 0.0 <= results[0]["retrieval_relevance_score"] <= 1.0
     diagnostics = {
         row["provider"]: row
         for row in agent._provider_diagnostics
@@ -73,7 +74,7 @@ def test_search_web_preserves_cross_provider_duplicates_for_rank_fusion(monkeypa
     for env_name in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
         monkeypatch.delenv(env_name, raising=False)
 
-    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [dict(candidate)])
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [dict(candidate), dict(candidate)])
     monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [dict(candidate)])
     monkeypatch.setattr(agent, "_search_news", lambda _query: [])
 
@@ -83,7 +84,7 @@ def test_search_web_preserves_cross_provider_duplicates_for_rank_fusion(monkeypa
     assert {item["provider"] for item in results} == {"duckduckgo_html", "bing_rss"}
 
 
-def test_rank_fusion_uses_retrieval_relevance_to_break_near_rank_ties():
+def test_rank_fusion_uses_retrieval_relevance_to_break_exact_rrf_ties():
     batches = [
         {
             "query": "Central Bank of Egypt official website",
@@ -128,3 +129,22 @@ def test_rank_fusion_uses_retrieval_relevance_to_break_near_rank_ties():
     assert ranked[0]["url"] == "https://example.com/strong"
     assert ranked[0]["rank_score"] == ranked[1]["rank_score"]
     assert ranked[0]["retrieval_relevance_score"] == 1.0
+
+
+
+def test_rank_fusion_ignores_invalid_retrieval_relevance_values():
+    invalid_scores = [True, -0.01, 1.01, float("nan"), float("inf"), "not-a-score"]
+
+    for invalid_score in invalid_scores:
+        ranked = fuse_ranked_results([{
+            "query": "Central Bank of Egypt official website",
+            "provider": "ddg",
+            "results": [{
+                "title": "Central Bank of Egypt official website",
+                "url": "https://example.com/cbe",
+                "snippet": "Official Central Bank of Egypt website.",
+                "retrieval_relevance_score": invalid_score,
+            }],
+        }])
+
+        assert ranked[0]["retrieval_relevance_score"] is None
