@@ -604,7 +604,6 @@ def fuse_ranked_results(
                     "queries": [],
                     "rank_score": 0.0,
                     "retrieval_relevance_score": None,
-                    "final_rank_score": 0.0,
                     "best_raw_rank": position,
                     "published_at": _compact(source.get("published_at") or "", 100),
                     "publisher_name": _compact(source.get("publisher_name") or "", 200),
@@ -645,8 +644,8 @@ def fuse_ranked_results(
             if source.get("page_text") and not entry["page_text"]:
                 entry["page_text"] = _compact(source["page_text"], 12_000)
                 entry["page_fetched"] = True
-    # Cross-query consensus and source priors remain bounded. A small, explicit
-    # topical-relevance tie-breaker improves ordering without claiming truth or intent.
+    # Apply existing cross-query consensus and source priors. Keep RRF authoritative;
+    # the lexical topic-match ratio only resolves exact RRF ties.
     for entry in accumulated.values():
         entry["rank_score"] += min(len(entry["queries"]), 4) * 0.00015
         if entry["source_class"] in {"government", "academic"}:
@@ -655,7 +654,6 @@ def fuse_ranked_results(
             entry["rank_score"] += 0.5
         # Keep the established RRF score authoritative. The conservative lexical
         # topic-match ratio only resolves exact RRF ties; it is not confidence or truth.
-        entry["final_rank_score"] = entry["rank_score"]
     ranked = sorted(
         accumulated.values(),
         key=lambda item: (
