@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1] / "web"
 
 def inline_script(name: str) -> str:
     html = (ROOT / name).read_text(encoding="utf-8")
-    scripts = re.findall(r"<script[^>]*>([\s\S]*?)</script\s*>", html, re.I)
+    scripts = re.findall(r"<script[^>]*>([\s\S]*?)</script\s*>", html, re.IGNORECASE)
     assert scripts, f"{name} must contain its application script"
     return "\n".join(scripts)
 
@@ -20,7 +20,9 @@ def function_source(script: str, name: str) -> str:
         script,
     )
     assert match, f"function {name} must exist"
-    next_function = re.search(r"\n(?:async\s+)?function\s+[A-Za-z_$]", script[match.end():])
+    next_function = re.search(
+        r"\n(?:async\s+)?function\s+[A-Za-z_$]", script[match.end():]
+    )
     end = match.end() + next_function.start() if next_function else len(script)
     return script[match.start():end]
 
@@ -46,7 +48,7 @@ def test_general_search_uses_bounded_fetch_and_restores_controls_after_timeout()
 
     assert "new AbortController()" in body
     assert "signal: controller.signal" in body
-    assert re.search(r"setTimeout\s*\(.*controller\.abort", body, re.S)
+    assert re.search(r"setTimeout\s*\(.*controller\.abort", body, re.DOTALL)
     assert re.search(r"clearTimeout\s*\(", body)
     assert "AbortError" in body, "timeouts must have a clear Arabic recovery message"
     assert "setBusy(false)" in body, "search controls must be restored in finally"
