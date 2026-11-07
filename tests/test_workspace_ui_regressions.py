@@ -52,3 +52,24 @@ def test_general_search_uses_bounded_fetch_and_restores_controls_after_timeout()
     assert re.search(r"clearTimeout\s*\(", body)
     assert "AbortError" in body, "timeouts must have a clear Arabic recovery message"
     assert "setBusy(false)" in body, "search controls must be restored in finally"
+
+
+def test_signal_inbox_refresh_button_shows_errors_instead_of_rejecting_silently():
+    script = inline_script("workspace.html")
+    body = function_source(script, "renderSignals")
+
+    assert "const refresh=action(" in body
+    assert "refresh.disabled=true" in body
+    assert "تعذر تحديث إشارات الطلب" in body
+    assert "catch(error)" in body
+
+
+def test_signal_persistence_is_not_reported_as_failed_when_list_refresh_fails():
+    script = inline_script("workspace.html")
+    discovery_body = function_source(script, "renderDiscoveryRun")
+    manual_body = function_source(script, "createSignalForm")
+
+    assert "refreshWarning" in discovery_body
+    assert "تم حفظ الإشارة" in discovery_body
+    assert "refreshWarning" in manual_body
+    assert "تم حفظ الإشارة" in manual_body
