@@ -603,6 +603,9 @@ def fuse_ranked_results(
                     "providers": [],
                     "queries": [],
                     "rank_score": 0.0,
+                    "retrieval_relevance_score": None,
+                    "retrieval_relevance_boost": 0.0,
+                    "final_rank_score": 0.0,
                     "best_raw_rank": position,
                     "published_at": _compact(source.get("published_at") or "", 100),
                     "publisher_name": _compact(source.get("publisher_name") or "", 200),
@@ -611,6 +614,20 @@ def fuse_ranked_results(
                 }
                 entry.update(classify_source(source_identity_url))
                 accumulated[url] = entry
+            raw_relevance = source.get("retrieval_relevance_score")
+            relevance_score = None
+            if not isinstance(raw_relevance, bool):
+                try:
+                    parsed_relevance = float(raw_relevance)
+                    if 0.0 <= parsed_relevance <= 1.0:
+                        relevance_score = parsed_relevance
+                except (TypeError, ValueError, OverflowError):
+                    pass
+            if relevance_score is not None and (
+                entry["retrieval_relevance_score"] is None
+                or relevance_score > entry["retrieval_relevance_score"]
+            ):
+                entry["retrieval_relevance_score"] = relevance_score
             elif source.get("publisher_url") and not entry.get("publisher_url"):
                 entry["publisher_url"] = _compact(source.get("publisher_url"), 2048)
                 entry["publisher_name"] = _compact(source.get("publisher_name") or "", 200)
@@ -629,15 +646,23 @@ def fuse_ranked_results(
             if source.get("page_text") and not entry["page_text"]:
                 entry["page_text"] = _compact(source["page_text"], 12_000)
                 entry["page_fetched"] = True
-    # A cross-query result gets a modest consensus bonus; official/academic sources
-    # get a small prior, never enough to override actual query relevance.
+    # Cross-query consensus and source priors remain bounded. A small, explicit
+    # topical-relevance tie-breaker improves ordering without claiming truth or intent.
     for entry in accumulated.values():
         entry["rank_score"] += min(len(entry["queries"]), 4) * 0.00015
         if entry["source_class"] in {"government", "academic"}:
             entry["rank_score"] += 0.0001
         if "user_supplied_url" in entry["providers"]:
             entry["rank_score"] += 0.5
-    ranked = sorted(accumulated.values(), key=lambda item: item["rank_score"], reverse=True)
+        relevance = entry["retrieval_relevance_score"]
+        relevance_boost = (relevance * 0.001) if relevance is not None else 0.0
+        entry["retrieval_relevance_boost"] = round(relevance_boost, 6)
+        entry["final_rank_score"] = entry["rank_score"] + relevance_boost
+    ranked = sorted(
+        accumulated.values(),
+        key=lambda item: item["final_rank_score"],
+        reverse=True,
+    )
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
 
 
