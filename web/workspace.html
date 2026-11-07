@@ -776,12 +776,22 @@ function renderDiscovery(){
   const actions=make("div","form-actions");
   const run=action("بدء اكتشاف الطلب","primary",async()=>{
    run.disabled=true;state.activeProfileId=profileSelect.value;
-   root.append(emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات."));
+   const status=emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات.");
+   root.replaceChildren(controls,status);
    try{
-    state.activeDiscovery=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
-    await loadDiscoveryRuns();renderDiscovery();
-   }catch(error){root.append(make("p","auth-error",escapeMessage(error.message)))}
-   finally{run.disabled=false}
+    const completed=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
+    state.activeDiscovery=completed;
+    let historyError=null;
+    try{await loadDiscoveryRuns()}catch(error){historyError=error}
+    renderDiscovery();
+    if(historyError){
+     root.prepend(make("p","profile-note","اكتمل الاكتشاف وحُفظت نتيجته، لكن تعذر تحديث سجل العمليات. أعد تحميل السجل لاحقًا: "+escapeMessage(historyError.message)));
+    }
+   }catch(error){
+    status.replaceWith(emptyState("تعذر إكمال الاكتشاف",escapeMessage(error.message)));
+    const retry=action("إعادة المحاولة","primary",()=>run.click());
+    root.firstElementChild.append(retry);
+   }finally{run.disabled=false}
   });
   run.disabled=!canWrite();actions.append(run);controls.append(actions);
  }
