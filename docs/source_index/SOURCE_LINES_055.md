@@ -4,7 +4,7 @@
 
 - الصفحة: **055**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2822F30DAD-L000181 إلى SRC-AC9D8384E8-L000272
+- النطاق: SRC-2822F30DAD-L000153 إلى SRC-AC9D8384E8-L000244
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2822F30DAD-L000153](../../tests/test_sales_domain.py#L153) | 153 | `"        locations=(\"Egypt\", \"Cairo\"),"` | — |
+| [SRC-2822F30DAD-L000154](../../tests/test_sales_domain.py#L154) | 154 | `"        industries=(\"construction\", \"manufacturing\"),"` | — |
+| [SRC-2822F30DAD-L000155](../../tests/test_sales_domain.py#L155) | 155 | `"        customer_types=(\"contractor\", \"facility owner\"),"` | — |
+| [SRC-2822F30DAD-L000156](../../tests/test_sales_domain.py#L156) | 156 | `"        decision_roles=(\"procurement manager\",),"` | — |
+| [SRC-2822F30DAD-L000157](../../tests/test_sales_domain.py#L157) | 157 | `"        exclusions=(\"residential end users\",),"` | — |
+| [SRC-2822F30DAD-L000158](../../tests/test_sales_domain.py#L158) | 158 | `"    )"` | — |
+| [SRC-2822F30DAD-L000159](../../tests/test_sales_domain.py#L159) | 159 | `""` | — |
+| [SRC-2822F30DAD-L000160](../../tests/test_sales_domain.py#L160) | 160 | `"    assert market.to_dict()[\"industries\"] == [\"construction\", \"manufacturing\"]"` | — |
+| [SRC-2822F30DAD-L000161](../../tests/test_sales_domain.py#L161) | 161 | `"    assert not hasattr(market, \"purchase_probability\")"` | — |
+| [SRC-2822F30DAD-L000162](../../tests/test_sales_domain.py#L162) | 162 | `""` | — |
+| [SRC-2822F30DAD-L000163](../../tests/test_sales_domain.py#L163) | 163 | `""` | — |
+| [SRC-2822F30DAD-L000164](../../tests/test_sales_domain.py#L164) | 164 | `"def test_buyer_query_generation_is_sector_neutral_and_product_anchored():"` | — |
+| [SRC-2822F30DAD-L000165](../../tests/test_sales_domain.py#L165) | 165 | `"    from agents.sales_domain import build_buyer_queries"` | — |
+| [SRC-2822F30DAD-L000166](../../tests/test_sales_domain.py#L166) | 166 | `""` | — |
+| [SRC-2822F30DAD-L000167](../../tests/test_sales_domain.py#L167) | 167 | `"    vehicle = ProductProfile(name=\"سيارة كهربائية\")"` | — |
+| [SRC-2822F30DAD-L000168](../../tests/test_sales_domain.py#L168) | 168 | `"    industrial = ProductProfile(name=\"نظام إنذار حريق صناعي\")"` | — |
+| [SRC-2822F30DAD-L000169](../../tests/test_sales_domain.py#L169) | 169 | `"    vehicle_queries = build_buyer_queries(vehicle, locale=\"ar\")"` | — |
+| [SRC-2822F30DAD-L000170](../../tests/test_sales_domain.py#L170) | 170 | `"    industrial_queries = build_buyer_queries(industrial, locale=\"ar\")"` | — |
+| [SRC-2822F30DAD-L000171](../../tests/test_sales_domain.py#L171) | 171 | `""` | — |
+| [SRC-2822F30DAD-L000172](../../tests/test_sales_domain.py#L172) | 172 | `"    assert vehicle_queries"` | — |
+| [SRC-2822F30DAD-L000173](../../tests/test_sales_domain.py#L173) | 173 | `"    assert industrial_queries"` | — |
+| [SRC-2822F30DAD-L000174](../../tests/test_sales_domain.py#L174) | 174 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in vehicle_queries)"` | — |
+| [SRC-2822F30DAD-L000175](../../tests/test_sales_domain.py#L175) | 175 | `"    assert all(\"شقه\" not in query and \"تمليك\" not in query for query in industrial_queries)"` | — |
+| [SRC-2822F30DAD-L000176](../../tests/test_sales_domain.py#L176) | 176 | `"    assert any(\"سيارة كهربائية\" in query for query in vehicle_queries)"` | — |
+| [SRC-2822F30DAD-L000177](../../tests/test_sales_domain.py#L177) | 177 | `"    assert any(\"نظام إنذار حريق صناعي\" in query for query in industrial_queries)"` | — |
+| [SRC-2822F30DAD-L000178](../../tests/test_sales_domain.py#L178) | 178 | `""` | — |
+| [SRC-2822F30DAD-L000179](../../tests/test_sales_domain.py#L179) | 179 | `""` | — |
+| [SRC-2822F30DAD-L000180](../../tests/test_sales_domain.py#L180) | 180 | `"def test_buyer_query_generation_uses_only_explicit_market_location():"` | — |
 | [SRC-2822F30DAD-L000181](../../tests/test_sales_domain.py#L181) | 181 | `"    from agents.sales_domain import build_buyer_queries"` | — |
 | [SRC-2822F30DAD-L000182](../../tests/test_sales_domain.py#L182) | 182 | `""` | — |
 | [SRC-2822F30DAD-L000183](../../tests/test_sales_domain.py#L183) | 183 | `"    product = ProductProfile(name=\"FACP\")"` | — |
@@ -824,31 +852,3 @@
 | [SRC-AC9D8384E8-L000242](../../tests/test_semantic_claim_verifier.py#L242) | 242 | `"    with pytest.raises(RuntimeError):"` | — |
 | [SRC-AC9D8384E8-L000243](../../tests/test_semantic_claim_verifier.py#L243) | 243 | `"        agent._request_completion("` | — |
 | [SRC-AC9D8384E8-L000244](../../tests/test_semantic_claim_verifier.py#L244) | 244 | `"            [{\"role\": \"user\", \"content\": \"test\"}],"` | — |
-| [SRC-AC9D8384E8-L000245](../../tests/test_semantic_claim_verifier.py#L245) | 245 | `"            model=\"verifier/model\","` | — |
-| [SRC-AC9D8384E8-L000246](../../tests/test_semantic_claim_verifier.py#L246) | 246 | `"            allow_fallback=False,"` | — |
-| [SRC-AC9D8384E8-L000247](../../tests/test_semantic_claim_verifier.py#L247) | 247 | `"        )"` | — |
-| [SRC-AC9D8384E8-L000248](../../tests/test_semantic_claim_verifier.py#L248) | 248 | `"    assert called == [\"verifier/model\"]"` | — |
-| [SRC-AC9D8384E8-L000249](../../tests/test_semantic_claim_verifier.py#L249) | 249 | `""` | — |
-| [SRC-AC9D8384E8-L000250](../../tests/test_semantic_claim_verifier.py#L250) | 250 | `""` | — |
-| [SRC-AC9D8384E8-L000251](../../tests/test_semantic_claim_verifier.py#L251) | 251 | `"def test_deterministic_numeric_support_failure_blocks_model_verification():"` | — |
-| [SRC-AC9D8384E8-L000252](../../tests/test_semantic_claim_verifier.py#L252) | 252 | `"    request = prepared()"` | — |
-| [SRC-AC9D8384E8-L000253](../../tests/test_semantic_claim_verifier.py#L253) | 253 | `"    result = deterministic_claim_screen("` | — |
-| [SRC-AC9D8384E8-L000254](../../tests/test_semantic_claim_verifier.py#L254) | 254 | `"        request,"` | — |
-| [SRC-AC9D8384E8-L000255](../../tests/test_semantic_claim_verifier.py#L255) | 255 | `"        {\"potentially_unsupported_numeric_by_citation_count\": 1},"` | — |
-| [SRC-AC9D8384E8-L000256](../../tests/test_semantic_claim_verifier.py#L256) | 256 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000257](../../tests/test_semantic_claim_verifier.py#L257) | 257 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
-| [SRC-AC9D8384E8-L000258](../../tests/test_semantic_claim_verifier.py#L258) | 258 | `"    assert result[\"reason\"] == \"deterministic_cited_numeric_support_failed\""` | — |
-| [SRC-AC9D8384E8-L000259](../../tests/test_semantic_claim_verifier.py#L259) | 259 | `"    assert result[\"withhold_answer\"] is True"` | — |
-| [SRC-AC9D8384E8-L000260](../../tests/test_semantic_claim_verifier.py#L260) | 260 | `""` | — |
-| [SRC-AC9D8384E8-L000261](../../tests/test_semantic_claim_verifier.py#L261) | 261 | `""` | — |
-| [SRC-AC9D8384E8-L000262](../../tests/test_semantic_claim_verifier.py#L262) | 262 | `"def test_population_claim_without_reference_period_or_geography_fails_closed():"` | — |
-| [SRC-AC9D8384E8-L000263](../../tests/test_semantic_claim_verifier.py#L263) | 263 | `"    source_without_scope = source("` | — |
-| [SRC-AC9D8384E8-L000264](../../tests/test_semantic_claim_verifier.py#L264) | 264 | `"        page_text=\"Cairo population is 9.7 million.\","` | — |
-| [SRC-AC9D8384E8-L000265](../../tests/test_semantic_claim_verifier.py#L265) | 265 | `"        snippet=\"Cairo population is 9.7 million.\","` | — |
-| [SRC-AC9D8384E8-L000266](../../tests/test_semantic_claim_verifier.py#L266) | 266 | `"        geographic_scope=\"\","` | — |
-| [SRC-AC9D8384E8-L000267](../../tests/test_semantic_claim_verifier.py#L267) | 267 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000268](../../tests/test_semantic_claim_verifier.py#L268) | 268 | `"    request = prepared("` | — |
-| [SRC-AC9D8384E8-L000269](../../tests/test_semantic_claim_verifier.py#L269) | 269 | `"        answer=\"Cairo population is 9.7 million [source 1].\","` | — |
-| [SRC-AC9D8384E8-L000270](../../tests/test_semantic_claim_verifier.py#L270) | 270 | `"        sources=[source_without_scope],"` | — |
-| [SRC-AC9D8384E8-L000271](../../tests/test_semantic_claim_verifier.py#L271) | 271 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000272](../../tests/test_semantic_claim_verifier.py#L272) | 272 | `"    result = deterministic_claim_screen(request)"` | — |

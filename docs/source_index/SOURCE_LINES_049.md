@@ -4,7 +4,7 @@
 
 - الصفحة: **049**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000272 إلى SRC-EA6EC52573-L000293
+- النطاق: SRC-1A176AD4F0-L000244 إلى SRC-EA6EC52573-L000265
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000244](../../tests/test_hosted_smoke.py#L244) | 244 | `"        assert \"body_sha256\" in payload[\"_smoke_http\"]"` | — |
+| [SRC-1A176AD4F0-L000245](../../tests/test_hosted_smoke.py#L245) | 245 | `"        assert \"blocked\" not in str(payload)"` | — |
+| [SRC-1A176AD4F0-L000246](../../tests/test_hosted_smoke.py#L246) | 246 | `"        assert TOKEN not in str(payload)"` | — |
+| [SRC-1A176AD4F0-L000247](../../tests/test_hosted_smoke.py#L247) | 247 | `"    finally:"` | — |
+| [SRC-1A176AD4F0-L000248](../../tests/test_hosted_smoke.py#L248) | 248 | `"        server.shutdown()"` | — |
+| [SRC-1A176AD4F0-L000249](../../tests/test_hosted_smoke.py#L249) | 249 | `"        server.server_close()"` | — |
+| [SRC-1A176AD4F0-L000250](../../tests/test_hosted_smoke.py#L250) | 250 | `"        thread.join(timeout=2)"` | — |
+| [SRC-1A176AD4F0-L000251](../../tests/test_hosted_smoke.py#L251) | 251 | `""` | — |
+| [SRC-1A176AD4F0-L000252](../../tests/test_hosted_smoke.py#L252) | 252 | `""` | — |
+| [SRC-1A176AD4F0-L000253](../../tests/test_hosted_smoke.py#L253) | 253 | `""` | — |
+| [SRC-1A176AD4F0-L000254](../../tests/test_hosted_smoke.py#L254) | 254 | `"def test_health_403_metadata_is_preserved_in_failure_report(monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000255](../../tests/test_hosted_smoke.py#L255) | 255 | `"    metadata = {"` | — |
+| [SRC-1A176AD4F0-L000256](../../tests/test_hosted_smoke.py#L256) | 256 | `"        \"status\": 403,"` | — |
+| [SRC-1A176AD4F0-L000257](../../tests/test_hosted_smoke.py#L257) | 257 | `"        \"content_type\": \"text/html\","` | — |
+| [SRC-1A176AD4F0-L000258](../../tests/test_hosted_smoke.py#L258) | 258 | `"        \"server\": \"edge-gateway\","` | — |
+| [SRC-1A176AD4F0-L000259](../../tests/test_hosted_smoke.py#L259) | 259 | `"        \"request_id\": \"request-403\","` | — |
+| [SRC-1A176AD4F0-L000260](../../tests/test_hosted_smoke.py#L260) | 260 | `"        \"correlation_id\": \"\","` | — |
+| [SRC-1A176AD4F0-L000261](../../tests/test_hosted_smoke.py#L261) | 261 | `"        \"cf_ray\": \"ray-403\","` | — |
+| [SRC-1A176AD4F0-L000262](../../tests/test_hosted_smoke.py#L262) | 262 | `"        \"via\": \"\","` | — |
+| [SRC-1A176AD4F0-L000263](../../tests/test_hosted_smoke.py#L263) | 263 | `"        \"body_bytes_sampled\": 19,"` | — |
+| [SRC-1A176AD4F0-L000264](../../tests/test_hosted_smoke.py#L264) | 264 | `"        \"body_sha256\": \"a\" * 64,"` | — |
+| [SRC-1A176AD4F0-L000265](../../tests/test_hosted_smoke.py#L265) | 265 | `"    }"` | — |
+| [SRC-1A176AD4F0-L000266](../../tests/test_hosted_smoke.py#L266) | 266 | `""` | — |
+| [SRC-1A176AD4F0-L000267](../../tests/test_hosted_smoke.py#L267) | 267 | `"    def forbidden_health(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000268](../../tests/test_hosted_smoke.py#L268) | 268 | `"        return 403, {\"_smoke_http\": metadata}"` | — |
+| [SRC-1A176AD4F0-L000269](../../tests/test_hosted_smoke.py#L269) | 269 | `""` | — |
+| [SRC-1A176AD4F0-L000270](../../tests/test_hosted_smoke.py#L270) | 270 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", forbidden_health)"` | — |
+| [SRC-1A176AD4F0-L000271](../../tests/test_hosted_smoke.py#L271) | 271 | `"    with pytest.raises(SmokeError, match=\"Health check failed\") as failure:"` | — |
 | [SRC-1A176AD4F0-L000272](../../tests/test_hosted_smoke.py#L272) | 272 | `"        run_smoke(\"https://omarai.example.test\", TOKEN, allow_provider_usage=False)"` | — |
 | [SRC-1A176AD4F0-L000273](../../tests/test_hosted_smoke.py#L273) | 273 | `"    assert failure.value.report[\"http_response\"] == metadata"` | — |
 | [SRC-1A176AD4F0-L000274](../../tests/test_hosted_smoke.py#L274) | 274 | `"    assert \"blocked\" not in str(failure.value.report)"` | — |
@@ -806,31 +834,3 @@
 | [SRC-EA6EC52573-L000263](../../tests/test_intent_router.py#L263) | 263 | `"    question = ("` | — |
 | [SRC-EA6EC52573-L000264](../../tests/test_intent_router.py#L264) | 264 | `"        \"ما أهم استخدامات الذكاء الاصطناعي في الشركات الصغيرة؟ \""` | — |
 | [SRC-EA6EC52573-L000265](../../tests/test_intent_router.py#L265) | 265 | `"        \"اذكر أمثلة ومصادر موثوقة.\""` | — |
-| [SRC-EA6EC52573-L000266](../../tests/test_intent_router.py#L266) | 266 | `"    )"` | — |
-| [SRC-EA6EC52573-L000267](../../tests/test_intent_router.py#L267) | 267 | `"    decision = route_intent(question, mode=\"auto\")"` | — |
-| [SRC-EA6EC52573-L000268](../../tests/test_intent_router.py#L268) | 268 | `"    assert decision[\"route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-EA6EC52573-L000269](../../tests/test_intent_router.py#L269) | 269 | `"    assert decision[\"reason\"] == \"explicit_evidence_request\""` | — |
-| [SRC-EA6EC52573-L000270](../../tests/test_intent_router.py#L270) | 270 | `""` | — |
-| [SRC-EA6EC52573-L000271](../../tests/test_intent_router.py#L271) | 271 | `"def test_stable_question_without_source_request_remains_model_only():"` | — |
-| [SRC-EA6EC52573-L000272](../../tests/test_intent_router.py#L272) | 272 | `"    decision = route_intent(\"اشرح الفرق بين التعلم الخاضع للإشراف وغير الخاضع للإشراف\")"` | — |
-| [SRC-EA6EC52573-L000273](../../tests/test_intent_router.py#L273) | 273 | `"    assert decision[\"route\"] == \"MODEL_ONLY\""` | — |
-| [SRC-EA6EC52573-L000274](../../tests/test_intent_router.py#L274) | 274 | `""` | — |
-| [SRC-EA6EC52573-L000275](../../tests/test_intent_router.py#L275) | 275 | `"def test_attached_arabic_object_pronoun_resolves_against_previous_subject() -> None:"` | — |
-| [SRC-EA6EC52573-L000276](../../tests/test_intent_router.py#L276) | 276 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000277](../../tests/test_intent_router.py#L277) | 277 | `"        {\"role\": \"user\", \"content\": \"بفكر أشتري Lenovo ThinkPad E14 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000278](../../tests/test_intent_router.py#L278) | 278 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن Lenovo ThinkPad E14 في السوق المصري.\"},"` | — |
-| [SRC-EA6EC52573-L000279](../../tests/test_intent_router.py#L279) | 279 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000280](../../tests/test_intent_router.py#L280) | 280 | `""` | — |
-| [SRC-EA6EC52573-L000281](../../tests/test_intent_router.py#L281) | 281 | `"    resolved = resolve_followup_query(\"أقدر أشتريه منين؟\", history)"` | — |
-| [SRC-EA6EC52573-L000282](../../tests/test_intent_router.py#L282) | 282 | `""` | — |
-| [SRC-EA6EC52573-L000283](../../tests/test_intent_router.py#L283) | 283 | `"    assert \"Lenovo ThinkPad E14\" in resolved"` | — |
-| [SRC-EA6EC52573-L000284](../../tests/test_intent_router.py#L284) | 284 | `"    assert \"أقدر أشتريه منين\" in resolved"` | — |
-| [SRC-EA6EC52573-L000285](../../tests/test_intent_router.py#L285) | 285 | `""` | — |
-| [SRC-EA6EC52573-L000286](../../tests/test_intent_router.py#L286) | 286 | `"def test_no_duplicate_followup_leadin_symbols():"` | — |
-| [SRC-EA6EC52573-L000287](../../tests/test_intent_router.py#L287) | 287 | `"    \"\"\"Follow-up normalization symbols must have one authoritative definition.\"\"\""` | — |
-| [SRC-EA6EC52573-L000288](../../tests/test_intent_router.py#L288) | 288 | `"    import inspect"` | — |
-| [SRC-EA6EC52573-L000289](../../tests/test_intent_router.py#L289) | 289 | `"    from agents import intent_router"` | — |
-| [SRC-EA6EC52573-L000290](../../tests/test_intent_router.py#L290) | 290 | `""` | — |
-| [SRC-EA6EC52573-L000291](../../tests/test_intent_router.py#L291) | 291 | `"    module_source = inspect.getsource(intent_router)"` | — |
-| [SRC-EA6EC52573-L000292](../../tests/test_intent_router.py#L292) | 292 | `"    assert module_source.count(\"_FOLLOWUP_LEAD_IN_RE = re.compile\") == 1"` | — |
-| [SRC-EA6EC52573-L000293](../../tests/test_intent_router.py#L293) | 293 | `"    assert module_source.count(\"_FOLLOWUP_ASPECT_FRAGMENTS = frozenset\") == 1"` | — |

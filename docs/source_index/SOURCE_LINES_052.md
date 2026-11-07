@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-44CDA52D01-L000087 إلى SRC-50E7F53B84-L000050
+- النطاق: SRC-44CDA52D01-L000059 إلى SRC-50E7F53B84-L000022
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-44CDA52D01-L000059](../../tests/test_omarai.py#L59) | 59 | `"        \"https://example.com/post/1\","` | — |
+| [SRC-44CDA52D01-L000060](../../tests/test_omarai.py#L60) | 60 | `"        platform=\"manual\","` | — |
+| [SRC-44CDA52D01-L000061](../../tests/test_omarai.py#L61) | 61 | `"        note=\"  +SUM(1,1)\","` | — |
+| [SRC-44CDA52D01-L000062](../../tests/test_omarai.py#L62) | 62 | `"    )"` | — |
+| [SRC-44CDA52D01-L000063](../../tests/test_omarai.py#L63) | 63 | `"    store.add("` | — |
+| [SRC-44CDA52D01-L000064](../../tests/test_omarai.py#L64) | 64 | `"        \"\\u00a0\\ufeff=1+1\","` | — |
+| [SRC-44CDA52D01-L000065](../../tests/test_omarai.py#L65) | 65 | `"        \"https://example.com/post/2\","` | — |
+| [SRC-44CDA52D01-L000066](../../tests/test_omarai.py#L66) | 66 | `"        platform=\"manual\","` | — |
+| [SRC-44CDA52D01-L000067](../../tests/test_omarai.py#L67) | 67 | `"        note=\"\\u00a0\\ufeff=SUM(1,1)\","` | — |
+| [SRC-44CDA52D01-L000068](../../tests/test_omarai.py#L68) | 68 | `"    )"` | — |
+| [SRC-44CDA52D01-L000069](../../tests/test_omarai.py#L69) | 69 | `"    destination = tmp_path / \"export.csv\""` | — |
+| [SRC-44CDA52D01-L000070](../../tests/test_omarai.py#L70) | 70 | `"    assert store.export_csv(destination) == 2"` | — |
+| [SRC-44CDA52D01-L000071](../../tests/test_omarai.py#L71) | 71 | `"    raw_csv = destination.read_text(encoding=\"utf-8-sig\")"` | — |
+| [SRC-44CDA52D01-L000072](../../tests/test_omarai.py#L72) | 72 | `"    assert '\"\\t=HYPERLINK(' in raw_csv"` | — |
+| [SRC-44CDA52D01-L000073](../../tests/test_omarai.py#L73) | 73 | `"    assert '\"\\t  +SUM' in raw_csv"` | — |
+| [SRC-44CDA52D01-L000074](../../tests/test_omarai.py#L74) | 74 | `""` | — |
+| [SRC-44CDA52D01-L000075](../../tests/test_omarai.py#L75) | 75 | `"    with destination.open(newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
+| [SRC-44CDA52D01-L000076](../../tests/test_omarai.py#L76) | 76 | `"        rows = list(csv.DictReader(stream))"` | — |
+| [SRC-44CDA52D01-L000077](../../tests/test_omarai.py#L77) | 77 | `""` | — |
+| [SRC-44CDA52D01-L000078](../../tests/test_omarai.py#L78) | 78 | `"    row1 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/1\")"` | — |
+| [SRC-44CDA52D01-L000079](../../tests/test_omarai.py#L79) | 79 | `"    row2 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/2\")"` | — |
+| [SRC-44CDA52D01-L000080](../../tests/test_omarai.py#L80) | 80 | `"    assert row1[\"text\"].startswith(\"\\t=\")"` | — |
+| [SRC-44CDA52D01-L000081](../../tests/test_omarai.py#L81) | 81 | `"    assert row1[\"note\"].startswith(\"\\t  +\")"` | — |
+| [SRC-44CDA52D01-L000082](../../tests/test_omarai.py#L82) | 82 | `"    assert row2[\"text\"].startswith(\"\\t\\ufeff=\")"` | — |
+| [SRC-44CDA52D01-L000083](../../tests/test_omarai.py#L83) | 83 | `"    assert row2[\"note\"].startswith(\"\\t\\u00a0\\ufeff=\")"` | — |
+| [SRC-44CDA52D01-L000084](../../tests/test_omarai.py#L84) | 84 | `""` | — |
+| [SRC-44CDA52D01-L000085](../../tests/test_omarai.py#L85) | 85 | `""` | — |
+| [SRC-44CDA52D01-L000086](../../tests/test_omarai.py#L86) | 86 | `""` | — |
 | [SRC-44CDA52D01-L000087](../../tests/test_omarai.py#L87) | 87 | `"def test_generic_fire_alarm_and_supplier_requests_are_sector_neutral():"` | — |
 | [SRC-44CDA52D01-L000088](../../tests/test_omarai.py#L88) | 88 | `"    fire_alarm = analyze(\"نحتاج نظام إنذار حريق للمصنع\")"` | — |
 | [SRC-44CDA52D01-L000089](../../tests/test_omarai.py#L89) | 89 | `"    supplier = analyze(\"نبحث عن مورد لافتات لمشروع جديد\")"` | — |
@@ -833,31 +861,3 @@
 | [SRC-50E7F53B84-L000020](../../tests/test_requirement_evidence.py#L20) | 20 | `"    queries = ["` | — |
 | [SRC-50E7F53B84-L000021](../../tests/test_requirement_evidence.py#L21) | 21 | `"        {\"target\": \"السعر\", \"query\": \"سعر الهاتف\"},"` | — |
 | [SRC-50E7F53B84-L000022](../../tests/test_requirement_evidence.py#L22) | 22 | `"        {\"target\": \"البطارية\", \"query\": \"بطارية الهاتف\"},"` | — |
-| [SRC-50E7F53B84-L000023](../../tests/test_requirement_evidence.py#L23) | 23 | `"    ]"` | — |
-| [SRC-50E7F53B84-L000024](../../tests/test_requirement_evidence.py#L24) | 24 | `"    sources = ["` | — |
-| [SRC-50E7F53B84-L000025](../../tests/test_requirement_evidence.py#L25) | 25 | `"        {"` | — |
-| [SRC-50E7F53B84-L000026](../../tests/test_requirement_evidence.py#L26) | 26 | `"            \"title\": \"Phone price guide\","` | — |
-| [SRC-50E7F53B84-L000027](../../tests/test_requirement_evidence.py#L27) | 27 | `"            \"snippet\": \"The price and cost are listed for the phone.\","` | — |
-| [SRC-50E7F53B84-L000028](../../tests/test_requirement_evidence.py#L28) | 28 | `"            \"page_fetched\": False,"` | — |
-| [SRC-50E7F53B84-L000029](../../tests/test_requirement_evidence.py#L29) | 29 | `"            \"queries\": [\"سعر الهاتف\"],"` | — |
-| [SRC-50E7F53B84-L000030](../../tests/test_requirement_evidence.py#L30) | 30 | `"        },"` | — |
-| [SRC-50E7F53B84-L000031](../../tests/test_requirement_evidence.py#L31) | 31 | `"    ]"` | — |
-| [SRC-50E7F53B84-L000032](../../tests/test_requirement_evidence.py#L32) | 32 | `""` | — |
-| [SRC-50E7F53B84-L000033](../../tests/test_requirement_evidence.py#L33) | 33 | `"    ledger = build_requirement_evidence_ledger(targets, sources, queries)"` | — |
-| [SRC-50E7F53B84-L000034](../../tests/test_requirement_evidence.py#L34) | 34 | `"    by_target = {item[\"target\"]: item for item in ledger}"` | — |
-| [SRC-50E7F53B84-L000035](../../tests/test_requirement_evidence.py#L35) | 35 | `""` | — |
-| [SRC-50E7F53B84-L000036](../../tests/test_requirement_evidence.py#L36) | 36 | `"    price = by_target[\"السعر\"]"` | — |
-| [SRC-50E7F53B84-L000037](../../tests/test_requirement_evidence.py#L37) | 37 | `"    assert price[\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
-| [SRC-50E7F53B84-L000038](../../tests/test_requirement_evidence.py#L38) | 38 | `"    assert price[\"query_result_source_indexes\"] == [1]"` | — |
-| [SRC-50E7F53B84-L000039](../../tests/test_requirement_evidence.py#L39) | 39 | `"    assert price[\"candidate_source_indexes\"] == [1]"` | — |
-| [SRC-50E7F53B84-L000040](../../tests/test_requirement_evidence.py#L40) | 40 | `"    assert price[\"candidate_sources\"][0][\"evidence_basis\"] == \"search_snippet\""` | — |
-| [SRC-50E7F53B84-L000041](../../tests/test_requirement_evidence.py#L41) | 41 | `"    assert price[\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000042](../../tests/test_requirement_evidence.py#L42) | 42 | `"    assert price[\"source_entailment_verified\"] is False"` | — |
-| [SRC-50E7F53B84-L000043](../../tests/test_requirement_evidence.py#L43) | 43 | `""` | — |
-| [SRC-50E7F53B84-L000044](../../tests/test_requirement_evidence.py#L44) | 44 | `"    battery = by_target[\"البطارية\"]"` | — |
-| [SRC-50E7F53B84-L000045](../../tests/test_requirement_evidence.py#L45) | 45 | `"    assert battery[\"status\"] == \"no_candidate_evidence_found\""` | — |
-| [SRC-50E7F53B84-L000046](../../tests/test_requirement_evidence.py#L46) | 46 | `"    assert battery[\"candidate_source_indexes\"] == []"` | — |
-| [SRC-50E7F53B84-L000047](../../tests/test_requirement_evidence.py#L47) | 47 | `"    assert battery[\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000048](../../tests/test_requirement_evidence.py#L48) | 48 | `""` | — |
-| [SRC-50E7F53B84-L000049](../../tests/test_requirement_evidence.py#L49) | 49 | `""` | — |
-| [SRC-50E7F53B84-L000050](../../tests/test_requirement_evidence.py#L50) | 50 | `"def test_title_only_match_remains_a_candidate_not_verified_evidence() -> None:"` | — |

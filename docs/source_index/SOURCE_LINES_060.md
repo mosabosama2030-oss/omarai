@@ -4,7 +4,7 @@
 
 - الصفحة: **060**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002392 إلى SRC-F725E90B2A-L003191
+- النطاق: SRC-F725E90B2A-L002364 إلى SRC-F725E90B2A-L003163
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002364](../../tests/test_web_agent.py#L2364) | 2364 | `""` | — |
+| [SRC-F725E90B2A-L002365](../../tests/test_web_agent.py#L2365) | 2365 | `"def test_vehicle_request_rejects_property_buyer_signal():"` | — |
+| [SRC-F725E90B2A-L002366](../../tests/test_web_agent.py#L2366) | 2366 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L002367](../../tests/test_web_agent.py#L2367) | 2367 | `"        \"title\": \"Looking to buy an apartment\","` | — |
+| [SRC-F725E90B2A-L002368](../../tests/test_web_agent.py#L2368) | 2368 | `"        \"snippet\": \"Looking to buy an apartment in Cairo.\","` | — |
+| [SRC-F725E90B2A-L002369](../../tests/test_web_agent.py#L2369) | 2369 | `"        \"page_text\": \"I want to buy an apartment this year.\","` | — |
+| [SRC-F725E90B2A-L002370](../../tests/test_web_agent.py#L2370) | 2370 | `"    }"` | — |
+| [SRC-F725E90B2A-L002371](../../tests/test_web_agent.py#L2371) | 2371 | `"    assert WebAgent._lead_intent_evidence(source, \"ابحث عن مشترين لسيارة كهربائية\") is None"` | — |
+| [SRC-F725E90B2A-L002372](../../tests/test_web_agent.py#L2372) | 2372 | `""` | — |
+| [SRC-F725E90B2A-L002373](../../tests/test_web_agent.py#L2373) | 2373 | `""` | — |
+| [SRC-F725E90B2A-L002374](../../tests/test_web_agent.py#L2374) | 2374 | `"def test_property_request_rejects_vehicle_buyer_signal():"` | — |
+| [SRC-F725E90B2A-L002375](../../tests/test_web_agent.py#L2375) | 2375 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L002376](../../tests/test_web_agent.py#L2376) | 2376 | `"        \"title\": \"Looking to buy a used car\","` | — |
+| [SRC-F725E90B2A-L002377](../../tests/test_web_agent.py#L2377) | 2377 | `"        \"snippet\": \"Looking to buy a used car in Cairo.\","` | — |
+| [SRC-F725E90B2A-L002378](../../tests/test_web_agent.py#L2378) | 2378 | `"        \"page_text\": \"I want to buy a used car this year.\","` | — |
+| [SRC-F725E90B2A-L002379](../../tests/test_web_agent.py#L2379) | 2379 | `"    }"` | — |
+| [SRC-F725E90B2A-L002380](../../tests/test_web_agent.py#L2380) | 2380 | `"    assert WebAgent._lead_intent_evidence(source, \"ابحث عن مشترين لشقة في القاهرة\") is None"` | — |
+| [SRC-F725E90B2A-L002381](../../tests/test_web_agent.py#L2381) | 2381 | `""` | — |
+| [SRC-F725E90B2A-L002382](../../tests/test_web_agent.py#L2382) | 2382 | `""` | — |
+| [SRC-F725E90B2A-L002383](../../tests/test_web_agent.py#L2383) | 2383 | `"def test_arabic_typo_repair_keeps_product_topic_not_instruction_text():"` | — |
+| [SRC-F725E90B2A-L002384](../../tests/test_web_agent.py#L2384) | 2384 | `"    queries = WebAgent._lead_generation_queries("` | — |
+| [SRC-F725E90B2A-L002385](../../tests/test_web_agent.py#L2385) | 2385 | `"        \"ابحث عن ١٠ عملاش يريدون شرا شقة في التجمع الخامس\""` | — |
+| [SRC-F725E90B2A-L002386](../../tests/test_web_agent.py#L2386) | 2386 | `"    )"` | — |
+| [SRC-F725E90B2A-L002387](../../tests/test_web_agent.py#L2387) | 2387 | `"    assert queries"` | — |
+| [SRC-F725E90B2A-L002388](../../tests/test_web_agent.py#L2388) | 2388 | `"    assert any(\"شقه في التجمع الخامس\" in query for query in queries)"` | — |
+| [SRC-F725E90B2A-L002389](../../tests/test_web_agent.py#L2389) | 2389 | `"    assert all(\"عملاش\" not in query for query in queries)"` | — |
+| [SRC-F725E90B2A-L002390](../../tests/test_web_agent.py#L2390) | 2390 | `""` | — |
+| [SRC-F725E90B2A-L002391](../../tests/test_web_agent.py#L2391) | 2391 | `""` | — |
 | [SRC-F725E90B2A-L002392](../../tests/test_web_agent.py#L2392) | 2392 | `"def test_lead_fallback_only_shows_sources_with_qualified_public_demand():"` | — |
 | [SRC-F725E90B2A-L002393](../../tests/test_web_agent.py#L2393) | 2393 | `"    qualified = {"` | — |
 | [SRC-F725E90B2A-L002394](../../tests/test_web_agent.py#L2394) | 2394 | `"        \"lead_qualification\": \"public_demand_signal\","` | — |
@@ -788,31 +816,3 @@
 | [SRC-F725E90B2A-L003161](../../tests/test_web_agent.py#L3161) | 3161 | `"            \"provider_rank\": 1,"` | — |
 | [SRC-F725E90B2A-L003162](../../tests/test_web_agent.py#L3162) | 3162 | `"            \"search_query\": query,"` | — |
 | [SRC-F725E90B2A-L003163](../../tests/test_web_agent.py#L3163) | 3163 | `"        }"` | — |
-| [SRC-F725E90B2A-L003164](../../tests/test_web_agent.py#L3164) | 3164 | `"        monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _q, row=row: [dict(row)])"` | — |
-| [SRC-F725E90B2A-L003165](../../tests/test_web_agent.py#L3165) | 3165 | `"        monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _q, row=row: [dict(row)])"` | — |
-| [SRC-F725E90B2A-L003166](../../tests/test_web_agent.py#L3166) | 3166 | `"        # Current-news questions normally add Google News RSS; keep this unit test deterministic."` | — |
-| [SRC-F725E90B2A-L003167](../../tests/test_web_agent.py#L3167) | 3167 | `"        monkeypatch.setattr(agent, \"_search_news\", lambda _q: [])"` | — |
-| [SRC-F725E90B2A-L003168](../../tests/test_web_agent.py#L3168) | 3168 | `"        results = agent._search_web(query)"` | — |
-| [SRC-F725E90B2A-L003169](../../tests/test_web_agent.py#L3169) | 3169 | `"        assert results, f\"Search candidates were all filtered for case {index}\""` | — |
-| [SRC-F725E90B2A-L003170](../../tests/test_web_agent.py#L3170) | 3170 | `"        diagnostic = next("` | — |
-| [SRC-F725E90B2A-L003171](../../tests/test_web_agent.py#L3171) | 3171 | `"            item for item in agent._provider_diagnostics if item.get(\"provider\") == \"duckduckgo_html\""` | — |
-| [SRC-F725E90B2A-L003172](../../tests/test_web_agent.py#L3172) | 3172 | `"        )"` | — |
-| [SRC-F725E90B2A-L003173](../../tests/test_web_agent.py#L3173) | 3173 | `"        assert diagnostic[\"accepted_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L003174](../../tests/test_web_agent.py#L3174) | 3174 | `"        assert diagnostic[\"result_count\"] == 1"` | — |
-| [SRC-F725E90B2A-L003175](../../tests/test_web_agent.py#L3175) | 3175 | `""` | — |
-| [SRC-F725E90B2A-L003176](../../tests/test_web_agent.py#L3176) | 3176 | `""` | — |
-| [SRC-F725E90B2A-L003177](../../tests/test_web_agent.py#L3177) | 3177 | `"def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003178](../../tests/test_web_agent.py#L3178) | 3178 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L003179](../../tests/test_web_agent.py#L3179) | 3179 | `""` | — |
-| [SRC-F725E90B2A-L003180](../../tests/test_web_agent.py#L3180) | 3180 | `"    def http_202(_query):"` | — |
-| [SRC-F725E90B2A-L003181](../../tests/test_web_agent.py#L3181) | 3181 | `"        raise RuntimeError(\"HTTP 202\")"` | — |
-| [SRC-F725E90B2A-L003182](../../tests/test_web_agent.py#L3182) | 3182 | `""` | — |
-| [SRC-F725E90B2A-L003183](../../tests/test_web_agent.py#L3183) | 3183 | `"    def http_429(_query):"` | — |
-| [SRC-F725E90B2A-L003184](../../tests/test_web_agent.py#L3184) | 3184 | `"        raise RuntimeError(\"HTTP 429\")"` | — |
-| [SRC-F725E90B2A-L003185](../../tests/test_web_agent.py#L3185) | 3185 | `""` | — |
-| [SRC-F725E90B2A-L003186](../../tests/test_web_agent.py#L3186) | 3186 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", http_202)"` | — |
-| [SRC-F725E90B2A-L003187](../../tests/test_web_agent.py#L3187) | 3187 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", http_429)"` | — |
-| [SRC-F725E90B2A-L003188](../../tests/test_web_agent.py#L3188) | 3188 | `"    with pytest.raises(RuntimeError, match=\"لم تُرجع موصلات البحث\"):"` | — |
-| [SRC-F725E90B2A-L003189](../../tests/test_web_agent.py#L3189) | 3189 | `"        agent._search_web(\"renewable energy storage policy\")"` | — |
-| [SRC-F725E90B2A-L003190](../../tests/test_web_agent.py#L3190) | 3190 | `""` | — |
-| [SRC-F725E90B2A-L003191](../../tests/test_web_agent.py#L3191) | 3191 | `"    statuses = {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **062**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003992 إلى SRC-E3EEC2014A-L000228
+- النطاق: SRC-F725E90B2A-L003964 إلى SRC-E3EEC2014A-L000200
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003964](../../tests/test_web_agent.py#L3964) | 3964 | `"        None,"` | — |
+| [SRC-F725E90B2A-L003965](../../tests/test_web_agent.py#L3965) | 3965 | `"        research_plan=plan,"` | — |
+| [SRC-F725E90B2A-L003966](../../tests/test_web_agent.py#L3966) | 3966 | `"        search_report={"` | — |
+| [SRC-F725E90B2A-L003967](../../tests/test_web_agent.py#L3967) | 3967 | `"            \"queries_planned\": len(plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L003968](../../tests/test_web_agent.py#L3968) | 3968 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-F725E90B2A-L003969](../../tests/test_web_agent.py#L3969) | 3969 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-F725E90B2A-L003970](../../tests/test_web_agent.py#L3970) | 3970 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L003971](../../tests/test_web_agent.py#L3971) | 3971 | `"        },"` | — |
+| [SRC-F725E90B2A-L003972](../../tests/test_web_agent.py#L3972) | 3972 | `"    )"` | — |
+| [SRC-F725E90B2A-L003973](../../tests/test_web_agent.py#L3973) | 3973 | `""` | — |
+| [SRC-F725E90B2A-L003974](../../tests/test_web_agent.py#L3974) | 3974 | `"    prompt = \"\\n\".join("` | — |
+| [SRC-F725E90B2A-L003975](../../tests/test_web_agent.py#L3975) | 3975 | `"        message.get(\"content\", \"\")"` | — |
+| [SRC-F725E90B2A-L003976](../../tests/test_web_agent.py#L3976) | 3976 | `"        for message in captured[\"messages\"]"` | — |
+| [SRC-F725E90B2A-L003977](../../tests/test_web_agent.py#L3977) | 3977 | `"        if isinstance(message, dict)"` | — |
+| [SRC-F725E90B2A-L003978](../../tests/test_web_agent.py#L3978) | 3978 | `"    )"` | — |
+| [SRC-F725E90B2A-L003979](../../tests/test_web_agent.py#L3979) | 3979 | `"    assert answer == \"إجابة اختبارية مرتبطة بالأدلة.\""` | — |
+| [SRC-F725E90B2A-L003980](../../tests/test_web_agent.py#L3980) | 3980 | `"    assert \"task_planning_context\" in prompt"` | — |
+| [SRC-F725E90B2A-L003981](../../tests/test_web_agent.py#L3981) | 3981 | `"    assert \"explicit_aspects\" in prompt"` | — |
+| [SRC-F725E90B2A-L003982](../../tests/test_web_agent.py#L3982) | 3982 | `"    assert \"output_preferences\" in prompt"` | — |
+| [SRC-F725E90B2A-L003983](../../tests/test_web_agent.py#L3983) | 3983 | `"    assert \"beginner_friendly_requested\" in prompt"` | — |
+| [SRC-F725E90B2A-L003984](../../tests/test_web_agent.py#L3984) | 3984 | `"    assert \"reasoning_guidance\" in prompt"` | — |
+| [SRC-F725E90B2A-L003985](../../tests/test_web_agent.py#L3985) | 3985 | `"    assert \"decision_matrix\" in prompt"` | — |
+| [SRC-F725E90B2A-L003986](../../tests/test_web_agent.py#L3986) | 3986 | `"    assert \"قسّم المقارنة إلى كل معيار صريح\" in prompt"` | — |
+| [SRC-F725E90B2A-L003987](../../tests/test_web_agent.py#L3987) | 3987 | `"    assert \"وحّد العملة والوحدات\" in prompt"` | — |
+| [SRC-F725E90B2A-L003988](../../tests/test_web_agent.py#L3988) | 3988 | `"    assert \"query_strategy_matrix\" in prompt"` | — |
+| [SRC-F725E90B2A-L003989](../../tests/test_web_agent.py#L3989) | 3989 | `"    assert \"الأولوية لكلام المستخدم الحالي\" in prompt"` | — |
+| [SRC-F725E90B2A-L003990](../../tests/test_web_agent.py#L3990) | 3990 | `"    assert \"الاستعلامات المخططة فقط\" in prompt"` | — |
+| [SRC-F725E90B2A-L003991](../../tests/test_web_agent.py#L3991) | 3991 | `""` | — |
 | [SRC-F725E90B2A-L003992](../../tests/test_web_agent.py#L3992) | 3992 | `"def test_bilingual_relevance_handles_arabic_attached_clitics_without_lowering_floor():"` | — |
 | [SRC-F725E90B2A-L003993](../../tests/test_web_agent.py#L3993) | 3993 | `"    query = \"أهم استخدامات الذكاء الاصطناعي للشركات الصغيرة؟\""` | — |
 | [SRC-F725E90B2A-L003994](../../tests/test_web_agent.py#L3994) | 3994 | `"    evidence = \"AI use cases for small businesses\""` | — |
@@ -806,31 +834,3 @@
 | [SRC-E3EEC2014A-L000198](../../tests/test_workspace_discovery.py#L198) | 198 | `"    results, _warnings = agent._search_social(\"لوحة إنذار حريق\", [\"reddit\"])"` | — |
 | [SRC-E3EEC2014A-L000199](../../tests/test_workspace_discovery.py#L199) | 199 | `""` | — |
 | [SRC-E3EEC2014A-L000200](../../tests/test_workspace_discovery.py#L200) | 200 | `"    assert called_urls == [\"https://www.reddit.com/search.rss\"]"` | — |
-| [SRC-E3EEC2014A-L000201](../../tests/test_workspace_discovery.py#L201) | 201 | `"    assert results and results[0][\"provider\"] == \"reddit_public_rss\""` | — |
-| [SRC-E3EEC2014A-L000202](../../tests/test_workspace_discovery.py#L202) | 202 | `""` | — |
-| [SRC-E3EEC2014A-L000203](../../tests/test_workspace_discovery.py#L203) | 203 | `""` | — |
-| [SRC-E3EEC2014A-L000204](../../tests/test_workspace_discovery.py#L204) | 204 | `"@pytest.mark.parametrize("` | — |
-| [SRC-E3EEC2014A-L000205](../../tests/test_workspace_discovery.py#L205) | 205 | `"    \"url\","` | — |
-| [SRC-E3EEC2014A-L000206](../../tests/test_workspace_discovery.py#L206) | 206 | `"    ["` | — |
-| [SRC-E3EEC2014A-L000207](../../tests/test_workspace_discovery.py#L207) | 207 | `"        \"http://localhost/private\","` | — |
-| [SRC-E3EEC2014A-L000208](../../tests/test_workspace_discovery.py#L208) | 208 | `"        \"http://service.localhost/private\","` | — |
-| [SRC-E3EEC2014A-L000209](../../tests/test_workspace_discovery.py#L209) | 209 | `"        \"http://service.local/private\","` | — |
-| [SRC-E3EEC2014A-L000210](../../tests/test_workspace_discovery.py#L210) | 210 | `"        \"http://127.0.0.1/private\","` | — |
-| [SRC-E3EEC2014A-L000211](../../tests/test_workspace_discovery.py#L211) | 211 | `"        \"http://10.0.0.8/private\","` | — |
-| [SRC-E3EEC2014A-L000212](../../tests/test_workspace_discovery.py#L212) | 212 | `"        \"http://192.168.1.2/private\","` | — |
-| [SRC-E3EEC2014A-L000213](../../tests/test_workspace_discovery.py#L213) | 213 | `"        \"http://[::1]/private\","` | — |
-| [SRC-E3EEC2014A-L000214](../../tests/test_workspace_discovery.py#L214) | 214 | `"        \"http://[fd00::1]/private\","` | — |
-| [SRC-E3EEC2014A-L000215](../../tests/test_workspace_discovery.py#L215) | 215 | `"    ],"` | — |
-| [SRC-E3EEC2014A-L000216](../../tests/test_workspace_discovery.py#L216) | 216 | `")"` | — |
-| [SRC-E3EEC2014A-L000217](../../tests/test_workspace_discovery.py#L217) | 217 | `"def test_discovery_source_storage_rejects_non_public_hosts(url):"` | — |
-| [SRC-E3EEC2014A-L000218](../../tests/test_workspace_discovery.py#L218) | 218 | `"    with pytest.raises(ValueError, match=\"not public\"):"` | — |
-| [SRC-E3EEC2014A-L000219](../../tests/test_workspace_discovery.py#L219) | 219 | `"        LeadStore._safe_discovery_source("` | — |
-| [SRC-E3EEC2014A-L000220](../../tests/test_workspace_discovery.py#L220) | 220 | `"            {"` | — |
-| [SRC-E3EEC2014A-L000221](../../tests/test_workspace_discovery.py#L221) | 221 | `"                \"title\": \"Private target\","` | — |
-| [SRC-E3EEC2014A-L000222](../../tests/test_workspace_discovery.py#L222) | 222 | `"                \"url\": url,"` | — |
-| [SRC-E3EEC2014A-L000223](../../tests/test_workspace_discovery.py#L223) | 223 | `"                \"snippet\": \"not a public result\","` | — |
-| [SRC-E3EEC2014A-L000224](../../tests/test_workspace_discovery.py#L224) | 224 | `"                \"lead_qualification\": \"related_result_not_lead\","` | — |
-| [SRC-E3EEC2014A-L000225](../../tests/test_workspace_discovery.py#L225) | 225 | `"            }"` | — |
-| [SRC-E3EEC2014A-L000226](../../tests/test_workspace_discovery.py#L226) | 226 | `"        )"` | — |
-| [SRC-E3EEC2014A-L000227](../../tests/test_workspace_discovery.py#L227) | 227 | `""` | — |
-| [SRC-E3EEC2014A-L000228](../../tests/test_workspace_discovery.py#L228) | 228 | `""` | — |

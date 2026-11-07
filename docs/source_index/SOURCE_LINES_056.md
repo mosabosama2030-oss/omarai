@@ -4,7 +4,7 @@
 
 - الصفحة: **056**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000273 إلى SRC-FBDC61DA0B-L000140
+- النطاق: SRC-AC9D8384E8-L000245 إلى SRC-FBDC61DA0B-L000112
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AC9D8384E8-L000245](../../tests/test_semantic_claim_verifier.py#L245) | 245 | `"            model=\"verifier/model\","` | — |
+| [SRC-AC9D8384E8-L000246](../../tests/test_semantic_claim_verifier.py#L246) | 246 | `"            allow_fallback=False,"` | — |
+| [SRC-AC9D8384E8-L000247](../../tests/test_semantic_claim_verifier.py#L247) | 247 | `"        )"` | — |
+| [SRC-AC9D8384E8-L000248](../../tests/test_semantic_claim_verifier.py#L248) | 248 | `"    assert called == [\"verifier/model\"]"` | — |
+| [SRC-AC9D8384E8-L000249](../../tests/test_semantic_claim_verifier.py#L249) | 249 | `""` | — |
+| [SRC-AC9D8384E8-L000250](../../tests/test_semantic_claim_verifier.py#L250) | 250 | `""` | — |
+| [SRC-AC9D8384E8-L000251](../../tests/test_semantic_claim_verifier.py#L251) | 251 | `"def test_deterministic_numeric_support_failure_blocks_model_verification():"` | — |
+| [SRC-AC9D8384E8-L000252](../../tests/test_semantic_claim_verifier.py#L252) | 252 | `"    request = prepared()"` | — |
+| [SRC-AC9D8384E8-L000253](../../tests/test_semantic_claim_verifier.py#L253) | 253 | `"    result = deterministic_claim_screen("` | — |
+| [SRC-AC9D8384E8-L000254](../../tests/test_semantic_claim_verifier.py#L254) | 254 | `"        request,"` | — |
+| [SRC-AC9D8384E8-L000255](../../tests/test_semantic_claim_verifier.py#L255) | 255 | `"        {\"potentially_unsupported_numeric_by_citation_count\": 1},"` | — |
+| [SRC-AC9D8384E8-L000256](../../tests/test_semantic_claim_verifier.py#L256) | 256 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000257](../../tests/test_semantic_claim_verifier.py#L257) | 257 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000258](../../tests/test_semantic_claim_verifier.py#L258) | 258 | `"    assert result[\"reason\"] == \"deterministic_cited_numeric_support_failed\""` | — |
+| [SRC-AC9D8384E8-L000259](../../tests/test_semantic_claim_verifier.py#L259) | 259 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000260](../../tests/test_semantic_claim_verifier.py#L260) | 260 | `""` | — |
+| [SRC-AC9D8384E8-L000261](../../tests/test_semantic_claim_verifier.py#L261) | 261 | `""` | — |
+| [SRC-AC9D8384E8-L000262](../../tests/test_semantic_claim_verifier.py#L262) | 262 | `"def test_population_claim_without_reference_period_or_geography_fails_closed():"` | — |
+| [SRC-AC9D8384E8-L000263](../../tests/test_semantic_claim_verifier.py#L263) | 263 | `"    source_without_scope = source("` | — |
+| [SRC-AC9D8384E8-L000264](../../tests/test_semantic_claim_verifier.py#L264) | 264 | `"        page_text=\"Cairo population is 9.7 million.\","` | — |
+| [SRC-AC9D8384E8-L000265](../../tests/test_semantic_claim_verifier.py#L265) | 265 | `"        snippet=\"Cairo population is 9.7 million.\","` | — |
+| [SRC-AC9D8384E8-L000266](../../tests/test_semantic_claim_verifier.py#L266) | 266 | `"        geographic_scope=\"\","` | — |
+| [SRC-AC9D8384E8-L000267](../../tests/test_semantic_claim_verifier.py#L267) | 267 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000268](../../tests/test_semantic_claim_verifier.py#L268) | 268 | `"    request = prepared("` | — |
+| [SRC-AC9D8384E8-L000269](../../tests/test_semantic_claim_verifier.py#L269) | 269 | `"        answer=\"Cairo population is 9.7 million [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000270](../../tests/test_semantic_claim_verifier.py#L270) | 270 | `"        sources=[source_without_scope],"` | — |
+| [SRC-AC9D8384E8-L000271](../../tests/test_semantic_claim_verifier.py#L271) | 271 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000272](../../tests/test_semantic_claim_verifier.py#L272) | 272 | `"    result = deterministic_claim_screen(request)"` | — |
 | [SRC-AC9D8384E8-L000273](../../tests/test_semantic_claim_verifier.py#L273) | 273 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
 | [SRC-AC9D8384E8-L000274](../../tests/test_semantic_claim_verifier.py#L274) | 274 | `"    assert result[\"reason\"] == \"population_scope_metadata_incomplete\""` | — |
 | [SRC-AC9D8384E8-L000275](../../tests/test_semantic_claim_verifier.py#L275) | 275 | `"    assert result[\"withhold_answer\"] is True"` | — |
@@ -824,31 +852,3 @@
 | [SRC-FBDC61DA0B-L000110](../../tests/test_tool_execution_status.py#L110) | 110 | `"            \"search_attempted\": True,"` | — |
 | [SRC-FBDC61DA0B-L000111](../../tests/test_tool_execution_status.py#L111) | 111 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
 | [SRC-FBDC61DA0B-L000112](../../tests/test_tool_execution_status.py#L112) | 112 | `"            \"usable_sources_after_filtering\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000113](../../tests/test_tool_execution_status.py#L113) | 113 | `"            \"pages_fetch_attempted\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000114](../../tests/test_tool_execution_status.py#L114) | 114 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000115](../../tests/test_tool_execution_status.py#L115) | 115 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000116](../../tests/test_tool_execution_status.py#L116) | 116 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000117](../../tests/test_tool_execution_status.py#L117) | 117 | `"    by_tool = {row[\"tool\"]: row for row in rows}"` | — |
-| [SRC-FBDC61DA0B-L000118](../../tests/test_tool_execution_status.py#L118) | 118 | `""` | — |
-| [SRC-FBDC61DA0B-L000119](../../tests/test_tool_execution_status.py#L119) | 119 | `"    assert by_tool[\"web_search\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000120](../../tests/test_tool_execution_status.py#L120) | 120 | `"    assert by_tool[\"web_search\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000121](../../tests/test_tool_execution_status.py#L121) | 121 | `"    assert by_tool[\"web_search\"][\"basis\"][\"reported_accepted_source_count\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000122](../../tests/test_tool_execution_status.py#L122) | 122 | `"    assert by_tool[\"web_search\"][\"basis\"][\"accepted_source_count\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000123](../../tests/test_tool_execution_status.py#L123) | 123 | `"    assert by_tool[\"page_fetch\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000124](../../tests/test_tool_execution_status.py#L124) | 124 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000125](../../tests/test_tool_execution_status.py#L125) | 125 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"pages_read_from_returned_sources\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000126](../../tests/test_tool_execution_status.py#L126) | 126 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"reported_pages_fetched\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000127](../../tests/test_tool_execution_status.py#L127) | 127 | `""` | — |
-| [SRC-FBDC61DA0B-L000128](../../tests/test_tool_execution_status.py#L128) | 128 | `""` | — |
-| [SRC-FBDC61DA0B-L000129](../../tests/test_tool_execution_status.py#L129) | 129 | `"def test_social_search_is_only_called_completed_when_connector_attempt_is_observed():"` | — |
-| [SRC-FBDC61DA0B-L000130](../../tests/test_tool_execution_status.py#L130) | 130 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000131](../../tests/test_tool_execution_status.py#L131) | 131 | `"        {\"tool_requirements\": [\"public_social_search_if_configured\"]},"` | — |
-| [SRC-FBDC61DA0B-L000132](../../tests/test_tool_execution_status.py#L132) | 132 | `"        {\"search_attempted\": True, \"sources\": []},"` | — |
-| [SRC-FBDC61DA0B-L000133](../../tests/test_tool_execution_status.py#L133) | 133 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000134](../../tests/test_tool_execution_status.py#L134) | 134 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000135](../../tests/test_tool_execution_status.py#L135) | 135 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000136](../../tests/test_tool_execution_status.py#L136) | 136 | `"            \"connector_summary\": {"` | — |
-| [SRC-FBDC61DA0B-L000137](../../tests/test_tool_execution_status.py#L137) | 137 | `"                \"connectors\": ["` | — |
-| [SRC-FBDC61DA0B-L000138](../../tests/test_tool_execution_status.py#L138) | 138 | `"                    {"` | — |
-| [SRC-FBDC61DA0B-L000139](../../tests/test_tool_execution_status.py#L139) | 139 | `"                        \"name\": \"reddit_public_rss\","` | — |
-| [SRC-FBDC61DA0B-L000140](../../tests/test_tool_execution_status.py#L140) | 140 | `"                        \"configured\": True,"` | — |

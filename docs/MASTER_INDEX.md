@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **143**
 - ملفات Python المحللة: **84**
-- تعريفات Python المفهرسة: **2030**
+- تعريفات Python المفهرسة: **2032**
 - تعريفات Python موثقة بوجود Docstring: **302**
-- تعريفات Python بلا Docstring: **1318**
+- تعريفات Python بلا Docstring: **1320**
 - تعريفات لا ينطبق عليها Docstring: **410**
-- الرموز الساكنة الإضافية: **2864**
-- الأسطر النصية المفهرسة حرفيًا: **51104**
+- الرموز الساكنة الإضافية: **2869**
+- الأسطر النصية المفهرسة حرفيًا: **51140**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -130,7 +130,7 @@
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 8621 | 186 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 9976 | 214 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12424 | 299 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -170,7 +170,7 @@
 | FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 9761 | 238 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71437 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 74099 | 899 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 74928 | 907 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -1288,6 +1288,8 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L138) | دالة | test_workspace_indicators_include_responsive_glass_layout_and_semantic_status_colors | لا توجد Docstring. | ناقص | 138 | [SRC-3D0A619359-L000138](../tests/test_dashboard_security.py#L138) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L152) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 152 | [SRC-3D0A619359-L000152](../tests/test_dashboard_security.py#L152) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L163) | دالة | test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis | لا توجد Docstring. | ناقص | 163 | [SRC-3D0A619359-L000163](../tests/test_dashboard_security.py#L163) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L189) | دالة | test_workspace_discovery_failure_is_retryable_and_preserves_previous_results | لا توجد Docstring. | ناقص | 189 | [SRC-3D0A619359-L000189](../tests/test_dashboard_security.py#L189) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L204) | دالة | test_workspace_discovery_result_survives_history_refresh_failure | لا توجد Docstring. | ناقص | 204 | [SRC-3D0A619359-L000204](../tests/test_dashboard_security.py#L204) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -5064,21 +5066,26 @@
 | [web/workspace.html](../web/workspace.html#L763) | متغير JavaScript/TypeScript | controls | 763 | [SRC-2C8F288796-L000763](../web/workspace.html#L763) |
 | [web/workspace.html](../web/workspace.html#L771) | متغير JavaScript/TypeScript | option | 771 | [SRC-2C8F288796-L000771](../web/workspace.html#L771) |
 | [web/workspace.html](../web/workspace.html#L773) | متغير JavaScript/TypeScript | consent | 773 | [SRC-2C8F288796-L000773](../web/workspace.html#L773) |
-| [web/workspace.html](../web/workspace.html#L777) | متغير JavaScript/TypeScript | run | 777 | [SRC-2C8F288796-L000777](../web/workspace.html#L777) |
-| [web/workspace.html](../web/workspace.html#L781) | مسار API/واجهة محتمل | /api/discoveries | 781 | [SRC-2C8F288796-L000781](../web/workspace.html#L781) |
-| [web/workspace.html](../web/workspace.html#L792) | متغير JavaScript/TypeScript | history | 792 | [SRC-2C8F288796-L000792](../web/workspace.html#L792) |
-| [web/workspace.html](../web/workspace.html#L804) | دالة JavaScript/TypeScript | renderCurrent | 804 | [SRC-2C8F288796-L000804](../web/workspace.html#L804) |
-| [web/workspace.html](../web/workspace.html#L818) | دالة JavaScript/TypeScript | navigate | 818 | [SRC-2C8F288796-L000818](../web/workspace.html#L818) |
-| [web/workspace.html](../web/workspace.html#L821) | دالة JavaScript/TypeScript | loadProductProfiles | 821 | [SRC-2C8F288796-L000821](../web/workspace.html#L821) |
-| [web/workspace.html](../web/workspace.html#L826) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 826 | [SRC-2C8F288796-L000826](../web/workspace.html#L826) |
-| [web/workspace.html](../web/workspace.html#L830) | دالة JavaScript/TypeScript | loadLeads | 830 | [SRC-2C8F288796-L000830](../web/workspace.html#L830) |
-| [web/workspace.html](../web/workspace.html#L834) | دالة JavaScript/TypeScript | bootstrap | 834 | [SRC-2C8F288796-L000834](../web/workspace.html#L834) |
-| [web/workspace.html](../web/workspace.html#L835) | متغير JavaScript/TypeScript | session | 835 | [SRC-2C8F288796-L000835](../web/workspace.html#L835) |
-| [web/workspace.html](../web/workspace.html#L837) | مسار API/واجهة محتمل | /api/session | 837 | [SRC-2C8F288796-L000837](../web/workspace.html#L837) |
-| [web/workspace.html](../web/workspace.html#L848) | متغير JavaScript/TypeScript | results | 848 | [SRC-2C8F288796-L000848](../web/workspace.html#L848) |
-| [web/workspace.html](../web/workspace.html#L874) | متغير JavaScript/TypeScript | button | 874 | [SRC-2C8F288796-L000874](../web/workspace.html#L874) |
-| [web/workspace.html](../web/workspace.html#L874) | متغير JavaScript/TypeScript | token | 874 | [SRC-2C8F288796-L000874](../web/workspace.html#L874) |
-| [web/workspace.html](../web/workspace.html#L883) | مسار API/واجهة محتمل | /api/session/logout | 883 | [SRC-2C8F288796-L000883](../web/workspace.html#L883) |
+| [web/workspace.html](../web/workspace.html#L777) | متغير JavaScript/TypeScript | status | 777 | [SRC-2C8F288796-L000777](../web/workspace.html#L777) |
+| [web/workspace.html](../web/workspace.html#L778) | متغير JavaScript/TypeScript | run | 778 | [SRC-2C8F288796-L000778](../web/workspace.html#L778) |
+| [web/workspace.html](../web/workspace.html#L782) | متغير JavaScript/TypeScript | savedRun | 782 | [SRC-2C8F288796-L000782](../web/workspace.html#L782) |
+| [web/workspace.html](../web/workspace.html#L782) | مسار API/واجهة محتمل | /api/discoveries | 782 | [SRC-2C8F288796-L000782](../web/workspace.html#L782) |
+| [web/workspace.html](../web/workspace.html#L784) | متغير JavaScript/TypeScript | refreshWarning | 784 | [SRC-2C8F288796-L000784](../web/workspace.html#L784) |
+| [web/workspace.html](../web/workspace.html#L787) | متغير JavaScript/TypeScript | warning | 787 | [SRC-2C8F288796-L000787](../web/workspace.html#L787) |
+| [web/workspace.html](../web/workspace.html#L800) | متغير JavaScript/TypeScript | history | 800 | [SRC-2C8F288796-L000800](../web/workspace.html#L800) |
+| [web/workspace.html](../web/workspace.html#L806) | متغير JavaScript/TypeScript | message | 806 | [SRC-2C8F288796-L000806](../web/workspace.html#L806) |
+| [web/workspace.html](../web/workspace.html#L812) | دالة JavaScript/TypeScript | renderCurrent | 812 | [SRC-2C8F288796-L000812](../web/workspace.html#L812) |
+| [web/workspace.html](../web/workspace.html#L826) | دالة JavaScript/TypeScript | navigate | 826 | [SRC-2C8F288796-L000826](../web/workspace.html#L826) |
+| [web/workspace.html](../web/workspace.html#L829) | دالة JavaScript/TypeScript | loadProductProfiles | 829 | [SRC-2C8F288796-L000829](../web/workspace.html#L829) |
+| [web/workspace.html](../web/workspace.html#L834) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 834 | [SRC-2C8F288796-L000834](../web/workspace.html#L834) |
+| [web/workspace.html](../web/workspace.html#L838) | دالة JavaScript/TypeScript | loadLeads | 838 | [SRC-2C8F288796-L000838](../web/workspace.html#L838) |
+| [web/workspace.html](../web/workspace.html#L842) | دالة JavaScript/TypeScript | bootstrap | 842 | [SRC-2C8F288796-L000842](../web/workspace.html#L842) |
+| [web/workspace.html](../web/workspace.html#L843) | متغير JavaScript/TypeScript | session | 843 | [SRC-2C8F288796-L000843](../web/workspace.html#L843) |
+| [web/workspace.html](../web/workspace.html#L845) | مسار API/واجهة محتمل | /api/session | 845 | [SRC-2C8F288796-L000845](../web/workspace.html#L845) |
+| [web/workspace.html](../web/workspace.html#L856) | متغير JavaScript/TypeScript | results | 856 | [SRC-2C8F288796-L000856](../web/workspace.html#L856) |
+| [web/workspace.html](../web/workspace.html#L882) | متغير JavaScript/TypeScript | button | 882 | [SRC-2C8F288796-L000882](../web/workspace.html#L882) |
+| [web/workspace.html](../web/workspace.html#L882) | متغير JavaScript/TypeScript | token | 882 | [SRC-2C8F288796-L000882](../web/workspace.html#L882) |
+| [web/workspace.html](../web/workspace.html#L891) | مسار API/واجهة محتمل | /api/session/logout | 891 | [SRC-2C8F288796-L000891](../web/workspace.html#L891) |
 
 ## سجل وسوم المراجعة والإصلاح
 

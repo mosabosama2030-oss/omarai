@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6B37B7D6D3-L000010 إلى SRC-29A9CD43D1-L000160
+- النطاق: SRC-6B37B7D6D3-L000010 إلى SRC-29A9CD43D1-L000132
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -683,6 +683,34 @@
 | [SRC-3D0A619359-L000184](../../tests/test_dashboard_security.py#L184) | 184 | `"    assert \"تعذر تحميل بعض البيانات\" in html"` | — |
 | [SRC-3D0A619359-L000185](../../tests/test_dashboard_security.py#L185) | 185 | `"    assert \"النموذج اللغوي المهيأ حاليًا في Omarai\" in html"` | — |
 | [SRC-3D0A619359-L000186](../../tests/test_dashboard_security.py#L186) | 186 | `"    assert \"قد يستهلك حصة أو تكلفة\" in html"` | — |
+| [SRC-3D0A619359-L000187](../../tests/test_dashboard_security.py#L187) | 187 | `""` | — |
+| [SRC-3D0A619359-L000188](../../tests/test_dashboard_security.py#L188) | 188 | `""` | — |
+| [SRC-3D0A619359-L000189](../../tests/test_dashboard_security.py#L189) | 189 | `"def test_workspace_discovery_failure_is_retryable_and_preserves_previous_results():"` | — |
+| [SRC-3D0A619359-L000190](../../tests/test_dashboard_security.py#L190) | 190 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-3D0A619359-L000191](../../tests/test_dashboard_security.py#L191) | 191 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3D0A619359-L000192](../../tests/test_dashboard_security.py#L192) | 192 | `"    discovery = html.split(\"function renderDiscovery(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000193](../../tests/test_dashboard_security.py#L193) | 193 | `"        \"\\nfunction renderCurrent(\", 1"` | — |
+| [SRC-3D0A619359-L000194](../../tests/test_dashboard_security.py#L194) | 194 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000195](../../tests/test_dashboard_security.py#L195) | 195 | `""` | — |
+| [SRC-3D0A619359-L000196](../../tests/test_dashboard_security.py#L196) | 196 | `"    assert 'status.setAttribute(\"role\",\"status\")' in discovery"` | — |
+| [SRC-3D0A619359-L000197](../../tests/test_dashboard_security.py#L197) | 197 | `"    assert 'status.setAttribute(\"aria-live\",\"polite\")' in discovery"` | — |
+| [SRC-3D0A619359-L000198](../../tests/test_dashboard_security.py#L198) | 198 | `"    assert 'status.textContent=\"تعذر تشغيل الاكتشاف: \"' in discovery"` | — |
+| [SRC-3D0A619359-L000199](../../tests/test_dashboard_security.py#L199) | 199 | `"    assert \"لم تُحذف النتائج السابقة.\" in discovery"` | — |
+| [SRC-3D0A619359-L000200](../../tests/test_dashboard_security.py#L200) | 200 | `"    assert 'run.removeAttribute(\"aria-busy\")' in discovery"` | — |
+| [SRC-3D0A619359-L000201](../../tests/test_dashboard_security.py#L201) | 201 | `"    assert \"finally{\" in discovery"` | — |
+| [SRC-3D0A619359-L000202](../../tests/test_dashboard_security.py#L202) | 202 | `""` | — |
+| [SRC-3D0A619359-L000203](../../tests/test_dashboard_security.py#L203) | 203 | `""` | — |
+| [SRC-3D0A619359-L000204](../../tests/test_dashboard_security.py#L204) | 204 | `"def test_workspace_discovery_result_survives_history_refresh_failure():"` | — |
+| [SRC-3D0A619359-L000205](../../tests/test_dashboard_security.py#L205) | 205 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-3D0A619359-L000206](../../tests/test_dashboard_security.py#L206) | 206 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3D0A619359-L000207](../../tests/test_dashboard_security.py#L207) | 207 | `"    discovery = html.split(\"function renderDiscovery(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000208](../../tests/test_dashboard_security.py#L208) | 208 | `"        \"\\nfunction renderCurrent(\", 1"` | — |
+| [SRC-3D0A619359-L000209](../../tests/test_dashboard_security.py#L209) | 209 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000210](../../tests/test_dashboard_security.py#L210) | 210 | `""` | — |
+| [SRC-3D0A619359-L000211](../../tests/test_dashboard_security.py#L211) | 211 | `"    assert 'const savedRun=await api(\"/api/discoveries\"' in discovery"` | — |
+| [SRC-3D0A619359-L000212](../../tests/test_dashboard_security.py#L212) | 212 | `"    assert \"state.activeDiscovery=savedRun\" in discovery"` | — |
+| [SRC-3D0A619359-L000213](../../tests/test_dashboard_security.py#L213) | 213 | `"    assert \"try{await loadDiscoveryRuns()}catch(refreshError)\" in discovery"` | — |
+| [SRC-3D0A619359-L000214](../../tests/test_dashboard_security.py#L214) | 214 | `"    assert \"حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات\" in discovery"` | — |
 ## اختبارات
 
 ### FILE-29A9CD43D1 — [tests/test_dialogue_context_pipeline.py](../../tests/test_dialogue_context_pipeline.py#L1)
@@ -824,31 +852,3 @@
 | [SRC-29A9CD43D1-L000130](../../tests/test_dialogue_context_pipeline.py#L130) | 130 | `"        return answer"` | — |
 | [SRC-29A9CD43D1-L000131](../../tests/test_dialogue_context_pipeline.py#L131) | 131 | `""` | — |
 | [SRC-29A9CD43D1-L000132](../../tests/test_dialogue_context_pipeline.py#L132) | 132 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-29A9CD43D1-L000133](../../tests/test_dialogue_context_pipeline.py#L133) | 133 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
-| [SRC-29A9CD43D1-L000134](../../tests/test_dialogue_context_pipeline.py#L134) | 134 | `"    monkeypatch.setattr(agent, \"_generate\", generate)"` | — |
-| [SRC-29A9CD43D1-L000135](../../tests/test_dialogue_context_pipeline.py#L135) | 135 | `"    monkeypatch.setattr(agent, \"_review_answer\", review)"` | — |
-| [SRC-29A9CD43D1-L000136](../../tests/test_dialogue_context_pipeline.py#L136) | 136 | `"    monkeypatch.setattr(agent, \"_verify_semantic_claims\", lambda *args, **kwargs: {"` | — |
-| [SRC-29A9CD43D1-L000137](../../tests/test_dialogue_context_pipeline.py#L137) | 137 | `"        \"status\": \"completed_all_claims_supported\","` | — |
-| [SRC-29A9CD43D1-L000138](../../tests/test_dialogue_context_pipeline.py#L138) | 138 | `"        \"withhold_answer\": False,"` | — |
-| [SRC-29A9CD43D1-L000139](../../tests/test_dialogue_context_pipeline.py#L139) | 139 | `"        \"semantic_verification\": \"model_assessed_source_support\","` | — |
-| [SRC-29A9CD43D1-L000140](../../tests/test_dialogue_context_pipeline.py#L140) | 140 | `"        \"fact_correctness\": \"not_verified\","` | — |
-| [SRC-29A9CD43D1-L000141](../../tests/test_dialogue_context_pipeline.py#L141) | 141 | `"    })"` | — |
-| [SRC-29A9CD43D1-L000142](../../tests/test_dialogue_context_pipeline.py#L142) | 142 | `""` | — |
-| [SRC-29A9CD43D1-L000143](../../tests/test_dialogue_context_pipeline.py#L143) | 143 | `"    question = \"وطب الضمان الدولي بيسري في مصر؟\""` | — |
-| [SRC-29A9CD43D1-L000144](../../tests/test_dialogue_context_pipeline.py#L144) | 144 | `"    result = agent.answer(question, history=history)"` | — |
-| [SRC-29A9CD43D1-L000145](../../tests/test_dialogue_context_pipeline.py#L145) | 145 | `""` | — |
-| [SRC-29A9CD43D1-L000146](../../tests/test_dialogue_context_pipeline.py#L146) | 146 | `"    assert result[\"intent_route\"] == \"WEB_SIMPLE\""` | — |
-| [SRC-29A9CD43D1-L000147](../../tests/test_dialogue_context_pipeline.py#L147) | 147 | `"    assert result[\"question\"] == question  # Preserve the visible user utterance."` | — |
-| [SRC-29A9CD43D1-L000148](../../tests/test_dialogue_context_pipeline.py#L148) | 148 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-29A9CD43D1-L000149](../../tests/test_dialogue_context_pipeline.py#L149) | 149 | `"    assert len(seen[\"model_prompts\"]) == 2  # one context pass + one search-plan pass"` | — |
-| [SRC-29A9CD43D1-L000150](../../tests/test_dialogue_context_pipeline.py#L150) | 150 | `"    assert \"iPhone 17\" in seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000151](../../tests/test_dialogue_context_pipeline.py#L151) | 151 | `"    assert \"256 جيجابايت\" in seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000152](../../tests/test_dialogue_context_pipeline.py#L152) | 152 | `"    assert \"الضمان الدولي\" in seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000153](../../tests/test_dialogue_context_pipeline.py#L153) | 153 | `"    assert seen[\"reviewed_question\"] == seen[\"generated_question\"]"` | — |
-| [SRC-29A9CD43D1-L000154](../../tests/test_dialogue_context_pipeline.py#L154) | 154 | `"    context_result = result[\"research_plan\"][\"dialogue_context\"]"` | — |
-| [SRC-29A9CD43D1-L000155](../../tests/test_dialogue_context_pipeline.py#L155) | 155 | `"    assert context_result[\"method\"] == \"llm_semantic_context\""` | — |
-| [SRC-29A9CD43D1-L000156](../../tests/test_dialogue_context_pipeline.py#L156) | 156 | `"    assert context_result[\"slots\"][\"country\"] == \"مصر\""` | — |
-| [SRC-29A9CD43D1-L000157](../../tests/test_dialogue_context_pipeline.py#L157) | 157 | `"    assert context_result[\"changed_slots\"] == [\"aspect\"]"` | — |
-| [SRC-29A9CD43D1-L000158](../../tests/test_dialogue_context_pipeline.py#L158) | 158 | `"    assert context_result[\"needs_web\"] is True"` | — |
-| [SRC-29A9CD43D1-L000159](../../tests/test_dialogue_context_pipeline.py#L159) | 159 | `""` | — |
-| [SRC-29A9CD43D1-L000160](../../tests/test_dialogue_context_pipeline.py#L160) | 160 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **058**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000792 إلى SRC-F725E90B2A-L001591
+- النطاق: SRC-F725E90B2A-L000764 إلى SRC-F725E90B2A-L001563
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000764](../../tests/test_web_agent.py#L764) | 764 | `"            )"` | — |
+| [SRC-F725E90B2A-L000765](../../tests/test_web_agent.py#L765) | 765 | `"        return FakeResponse()"` | — |
+| [SRC-F725E90B2A-L000766](../../tests/test_web_agent.py#L766) | 766 | `""` | — |
+| [SRC-F725E90B2A-L000767](../../tests/test_web_agent.py#L767) | 767 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
+| [SRC-F725E90B2A-L000768](../../tests/test_web_agent.py#L768) | 768 | `"    result = agent._request_completion("` | — |
+| [SRC-F725E90B2A-L000769](../../tests/test_web_agent.py#L769) | 769 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-F725E90B2A-L000770](../../tests/test_web_agent.py#L770) | 770 | `"        model=\"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000771](../../tests/test_web_agent.py#L771) | 771 | `"    )"` | — |
+| [SRC-F725E90B2A-L000772](../../tests/test_web_agent.py#L772) | 772 | `""` | — |
+| [SRC-F725E90B2A-L000773](../../tests/test_web_agent.py#L773) | 773 | `"    assert result == \"إجابة من النموذج الاحتياطي\""` | — |
+| [SRC-F725E90B2A-L000774](../../tests/test_web_agent.py#L774) | 774 | `"    assert called == [\"broken/primary\", \"openrouter/free\"]"` | — |
+| [SRC-F725E90B2A-L000775](../../tests/test_web_agent.py#L775) | 775 | `"    assert agent.model_usage == [{"` | — |
+| [SRC-F725E90B2A-L000776](../../tests/test_web_agent.py#L776) | 776 | `"        \"requested_model\": \"broken/primary\","` | — |
+| [SRC-F725E90B2A-L000777](../../tests/test_web_agent.py#L777) | 777 | `"        \"used_model\": \"openrouter/free\","` | — |
+| [SRC-F725E90B2A-L000778](../../tests/test_web_agent.py#L778) | 778 | `"        \"fallback_used\": \"true\","` | — |
+| [SRC-F725E90B2A-L000779](../../tests/test_web_agent.py#L779) | 779 | `"    }]"` | — |
+| [SRC-F725E90B2A-L000780](../../tests/test_web_agent.py#L780) | 780 | `""` | — |
+| [SRC-F725E90B2A-L000781](../../tests/test_web_agent.py#L781) | 781 | `""` | — |
+| [SRC-F725E90B2A-L000782](../../tests/test_web_agent.py#L782) | 782 | `""` | — |
+| [SRC-F725E90B2A-L000783](../../tests/test_web_agent.py#L783) | 783 | `""` | — |
+| [SRC-F725E90B2A-L000784](../../tests/test_web_agent.py#L784) | 784 | `"def test_generator_rejects_silent_character_limit_truncation(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L000785](../../tests/test_web_agent.py#L785) | 785 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L000786](../../tests/test_web_agent.py#L786) | 786 | `"    monkeypatch.setattr(agent, \"_request_completion\", lambda *args, **kwargs: \"ن\" * 24_001)"` | — |
+| [SRC-F725E90B2A-L000787](../../tests/test_web_agent.py#L787) | 787 | `""` | — |
+| [SRC-F725E90B2A-L000788](../../tests/test_web_agent.py#L788) | 788 | `"    with pytest.raises(RuntimeError, match=\"تجاوزت حد طول النص\"):"` | — |
+| [SRC-F725E90B2A-L000789](../../tests/test_web_agent.py#L789) | 789 | `"        agent._generate("` | — |
+| [SRC-F725E90B2A-L000790](../../tests/test_web_agent.py#L790) | 790 | `"            question=\"لخص هذا المصدر\","` | — |
+| [SRC-F725E90B2A-L000791](../../tests/test_web_agent.py#L791) | 791 | `"            history=[],"` | — |
 | [SRC-F725E90B2A-L000792](../../tests/test_web_agent.py#L792) | 792 | `"            sources=[sample_source(0), sample_source(1)],"` | — |
 | [SRC-F725E90B2A-L000793](../../tests/test_web_agent.py#L793) | 793 | `"            search_warning=None,"` | — |
 | [SRC-F725E90B2A-L000794](../../tests/test_web_agent.py#L794) | 794 | `"            research_plan={\"depth\": \"standard\", \"queries\": [\"لخص هذا المصدر\"]},"` | — |
@@ -788,31 +816,3 @@
 | [SRC-F725E90B2A-L001561](../../tests/test_web_agent.py#L1561) | 1561 | `"    )"` | — |
 | [SRC-F725E90B2A-L001562](../../tests/test_web_agent.py#L1562) | 1562 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
 | [SRC-F725E90B2A-L001563](../../tests/test_web_agent.py#L1563) | 1563 | `""` | — |
-| [SRC-F725E90B2A-L001564](../../tests/test_web_agent.py#L1564) | 1564 | `"    result = agent.answer(\"ابحث عن موقع مصر الرقمية\")"` | — |
-| [SRC-F725E90B2A-L001565](../../tests/test_web_agent.py#L1565) | 1565 | `""` | — |
-| [SRC-F725E90B2A-L001566](../../tests/test_web_agent.py#L1566) | 1566 | `"    assert result[\"kind\"] == \"web_research\""` | — |
-| [SRC-F725E90B2A-L001567](../../tests/test_web_agent.py#L1567) | 1567 | `"    assert len(result[\"sources\"]) == 1"` | — |
-| [SRC-F725E90B2A-L001568](../../tests/test_web_agent.py#L1568) | 1568 | `"    assert result[\"sources\"][0][\"url\"] == \"https://digital.gov.eg/\""` | — |
-| [SRC-F725E90B2A-L001569](../../tests/test_web_agent.py#L1569) | 1569 | `"    assert any(\"نتيجة مرشحة\" in warning for warning in result[\"warnings\"])"` | — |
-| [SRC-F725E90B2A-L001570](../../tests/test_web_agent.py#L1570) | 1570 | `""` | — |
-| [SRC-F725E90B2A-L001571](../../tests/test_web_agent.py#L1571) | 1571 | `""` | — |
-| [SRC-F725E90B2A-L001572](../../tests/test_web_agent.py#L1572) | 1572 | `"def test_google_news_uses_shared_relevance_filter_and_reports_rejections(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L001573](../../tests/test_web_agent.py#L1573) | 1573 | `""` | — |
-| [SRC-F725E90B2A-L001574](../../tests/test_web_agent.py#L1574) | 1574 | `"    rss = \"\"\"<rss><channel>"` | — |
-| [SRC-F725E90B2A-L001575](../../tests/test_web_agent.py#L1575) | 1575 | `"    <item>"` | — |
-| [SRC-F725E90B2A-L001576](../../tests/test_web_agent.py#L1576) | 1576 | `"      <title>أكثر حالات استخدام الذكاء الاصطناعي قيمة للأعمال</title>"` | — |
-| [SRC-F725E90B2A-L001577](../../tests/test_web_agent.py#L1577) | 1577 | `"      <link>https://news.google.com/rss/articles/relevant</link>"` | — |
-| [SRC-F725E90B2A-L001578](../../tests/test_web_agent.py#L1578) | 1578 | `"      <description>أمثلة على استخدام الذكاء الاصطناعي في الأعمال</description>"` | — |
-| [SRC-F725E90B2A-L001579](../../tests/test_web_agent.py#L1579) | 1579 | `"      <source url=\"https://www.ibm.com/\">IBM</source>"` | — |
-| [SRC-F725E90B2A-L001580](../../tests/test_web_agent.py#L1580) | 1580 | `"      <pubDate>Tue, 27 Oct 2026 10:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L001581](../../tests/test_web_agent.py#L1581) | 1581 | `"    </item>"` | — |
-| [SRC-F725E90B2A-L001582](../../tests/test_web_agent.py#L1582) | 1582 | `"    <item>"` | — |
-| [SRC-F725E90B2A-L001583](../../tests/test_web_agent.py#L1583) | 1583 | `"      <title>نتائج بطولة كرة القدم اليوم</title>"` | — |
-| [SRC-F725E90B2A-L001584](../../tests/test_web_agent.py#L1584) | 1584 | `"      <link>https://news.google.com/rss/articles/irrelevant</link>"` | — |
-| [SRC-F725E90B2A-L001585](../../tests/test_web_agent.py#L1585) | 1585 | `"      <description>تقرير عن الدوري ونتائج المباراة</description>"` | — |
-| [SRC-F725E90B2A-L001586](../../tests/test_web_agent.py#L1586) | 1586 | `"      <source url=\"https://example.org/\">Example News</source>"` | — |
-| [SRC-F725E90B2A-L001587](../../tests/test_web_agent.py#L1587) | 1587 | `"      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>"` | — |
-| [SRC-F725E90B2A-L001588](../../tests/test_web_agent.py#L1588) | 1588 | `"    </item>"` | — |
-| [SRC-F725E90B2A-L001589](../../tests/test_web_agent.py#L1589) | 1589 | `"    </channel></rss>\"\"\""` | — |
-| [SRC-F725E90B2A-L001590](../../tests/test_web_agent.py#L1590) | 1590 | `""` | — |
-| [SRC-F725E90B2A-L001591](../../tests/test_web_agent.py#L1591) | 1591 | `"    class FakeResponse:"` | — |

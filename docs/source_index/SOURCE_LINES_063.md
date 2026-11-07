@@ -4,7 +4,7 @@
 
 - الصفحة: **063**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E3EEC2014A-L000229 إلى SRC-2C8F288796-L000195
+- النطاق: SRC-E3EEC2014A-L000201 إلى SRC-2C8F288796-L000167
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E3EEC2014A-L000201](../../tests/test_workspace_discovery.py#L201) | 201 | `"    assert results and results[0][\"provider\"] == \"reddit_public_rss\""` | — |
+| [SRC-E3EEC2014A-L000202](../../tests/test_workspace_discovery.py#L202) | 202 | `""` | — |
+| [SRC-E3EEC2014A-L000203](../../tests/test_workspace_discovery.py#L203) | 203 | `""` | — |
+| [SRC-E3EEC2014A-L000204](../../tests/test_workspace_discovery.py#L204) | 204 | `"@pytest.mark.parametrize("` | — |
+| [SRC-E3EEC2014A-L000205](../../tests/test_workspace_discovery.py#L205) | 205 | `"    \"url\","` | — |
+| [SRC-E3EEC2014A-L000206](../../tests/test_workspace_discovery.py#L206) | 206 | `"    ["` | — |
+| [SRC-E3EEC2014A-L000207](../../tests/test_workspace_discovery.py#L207) | 207 | `"        \"http://localhost/private\","` | — |
+| [SRC-E3EEC2014A-L000208](../../tests/test_workspace_discovery.py#L208) | 208 | `"        \"http://service.localhost/private\","` | — |
+| [SRC-E3EEC2014A-L000209](../../tests/test_workspace_discovery.py#L209) | 209 | `"        \"http://service.local/private\","` | — |
+| [SRC-E3EEC2014A-L000210](../../tests/test_workspace_discovery.py#L210) | 210 | `"        \"http://127.0.0.1/private\","` | — |
+| [SRC-E3EEC2014A-L000211](../../tests/test_workspace_discovery.py#L211) | 211 | `"        \"http://10.0.0.8/private\","` | — |
+| [SRC-E3EEC2014A-L000212](../../tests/test_workspace_discovery.py#L212) | 212 | `"        \"http://192.168.1.2/private\","` | — |
+| [SRC-E3EEC2014A-L000213](../../tests/test_workspace_discovery.py#L213) | 213 | `"        \"http://[::1]/private\","` | — |
+| [SRC-E3EEC2014A-L000214](../../tests/test_workspace_discovery.py#L214) | 214 | `"        \"http://[fd00::1]/private\","` | — |
+| [SRC-E3EEC2014A-L000215](../../tests/test_workspace_discovery.py#L215) | 215 | `"    ],"` | — |
+| [SRC-E3EEC2014A-L000216](../../tests/test_workspace_discovery.py#L216) | 216 | `")"` | — |
+| [SRC-E3EEC2014A-L000217](../../tests/test_workspace_discovery.py#L217) | 217 | `"def test_discovery_source_storage_rejects_non_public_hosts(url):"` | — |
+| [SRC-E3EEC2014A-L000218](../../tests/test_workspace_discovery.py#L218) | 218 | `"    with pytest.raises(ValueError, match=\"not public\"):"` | — |
+| [SRC-E3EEC2014A-L000219](../../tests/test_workspace_discovery.py#L219) | 219 | `"        LeadStore._safe_discovery_source("` | — |
+| [SRC-E3EEC2014A-L000220](../../tests/test_workspace_discovery.py#L220) | 220 | `"            {"` | — |
+| [SRC-E3EEC2014A-L000221](../../tests/test_workspace_discovery.py#L221) | 221 | `"                \"title\": \"Private target\","` | — |
+| [SRC-E3EEC2014A-L000222](../../tests/test_workspace_discovery.py#L222) | 222 | `"                \"url\": url,"` | — |
+| [SRC-E3EEC2014A-L000223](../../tests/test_workspace_discovery.py#L223) | 223 | `"                \"snippet\": \"not a public result\","` | — |
+| [SRC-E3EEC2014A-L000224](../../tests/test_workspace_discovery.py#L224) | 224 | `"                \"lead_qualification\": \"related_result_not_lead\","` | — |
+| [SRC-E3EEC2014A-L000225](../../tests/test_workspace_discovery.py#L225) | 225 | `"            }"` | — |
+| [SRC-E3EEC2014A-L000226](../../tests/test_workspace_discovery.py#L226) | 226 | `"        )"` | — |
+| [SRC-E3EEC2014A-L000227](../../tests/test_workspace_discovery.py#L227) | 227 | `""` | — |
+| [SRC-E3EEC2014A-L000228](../../tests/test_workspace_discovery.py#L228) | 228 | `""` | — |
 | [SRC-E3EEC2014A-L000229](../../tests/test_workspace_discovery.py#L229) | 229 | `"def test_discovery_source_storage_accepts_public_http_source():"` | — |
 | [SRC-E3EEC2014A-L000230](../../tests/test_workspace_discovery.py#L230) | 230 | `"    source = LeadStore._safe_discovery_source("` | — |
 | [SRC-E3EEC2014A-L000231](../../tests/test_workspace_discovery.py#L231) | 231 | `"        {"` | — |
@@ -815,31 +843,3 @@
 | [SRC-2C8F288796-L000165](../../web/workspace.html#L165) | 165 | `".query-list .tag{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.7}"` | — |
 | [SRC-2C8F288796-L000166](../../web/workspace.html#L166) | 166 | `".consent-row{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:10px;background:rgba(5,16,27,.5);font-size:11px;line-height:1.8}"` | — |
 | [SRC-2C8F288796-L000167](../../web/workspace.html#L167) | 167 | `".consent-row input{width:18px;min-width:18px;height:18px;margin:2px 0 0;accent-color:#52dfff}"` | — |
-| [SRC-2C8F288796-L000168](../../web/workspace.html#L168) | 168 | `"@media(max-width:760px){"` | — |
-| [SRC-2C8F288796-L000169](../../web/workspace.html#L169) | 169 | `" .sidebar{background:rgba(5,13,22,.94);border-bottom-color:rgba(57,207,255,.18)}"` | — |
-| [SRC-2C8F288796-L000170](../../web/workspace.html#L170) | 170 | `" .nav{scrollbar-width:thin;scrollbar-color:rgba(82,223,255,.28) transparent}"` | — |
-| [SRC-2C8F288796-L000171](../../web/workspace.html#L171) | 171 | `" .nav button{min-height:42px}"` | — |
-| [SRC-2C8F288796-L000172](../../web/workspace.html#L172) | 172 | `" .main{padding-inline:12px}"` | — |
-| [SRC-2C8F288796-L000173](../../web/workspace.html#L173) | 173 | `" .topbar{align-items:flex-start}"` | — |
-| [SRC-2C8F288796-L000174](../../web/workspace.html#L174) | 174 | `" .top-actions{max-width:100%}"` | — |
-| [SRC-2C8F288796-L000175](../../web/workspace.html#L175) | 175 | `" .button,.small-button{min-height:40px}"` | — |
-| [SRC-2C8F288796-L000176](../../web/workspace.html#L176) | 176 | `" .glass{backdrop-filter:blur(16px)}"` | — |
-| [SRC-2C8F288796-L000177](../../web/workspace.html#L177) | 177 | `"}"` | — |
-| [SRC-2C8F288796-L000178](../../web/workspace.html#L178) | 178 | `"@media(max-width:420px){"` | — |
-| [SRC-2C8F288796-L000179](../../web/workspace.html#L179) | 179 | `" .stat{min-height:100px}"` | — |
-| [SRC-2C8F288796-L000180](../../web/workspace.html#L180) | 180 | `" .stat-value{font-size:22px}"` | — |
-| [SRC-2C8F288796-L000181](../../web/workspace.html#L181) | 181 | `" .signal-top{flex-direction:column}"` | — |
-| [SRC-2C8F288796-L000182](../../web/workspace.html#L182) | 182 | `" .signal-actions{align-items:stretch}"` | — |
-| [SRC-2C8F288796-L000183](../../web/workspace.html#L183) | 183 | `" .signal-actions .small-button{flex:1}"` | — |
-| [SRC-2C8F288796-L000184](../../web/workspace.html#L184) | 184 | `"}"` | — |
-| [SRC-2C8F288796-L000185](../../web/workspace.html#L185) | 185 | `"@media(prefers-reduced-motion:reduce){"` | — |
-| [SRC-2C8F288796-L000186](../../web/workspace.html#L186) | 186 | `" *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}"` | — |
-| [SRC-2C8F288796-L000187](../../web/workspace.html#L187) | 187 | `"}"` | — |
-| [SRC-2C8F288796-L000188](../../web/workspace.html#L188) | 188 | `"@media(forced-colors:active){"` | — |
-| [SRC-2C8F288796-L000189](../../web/workspace.html#L189) | 189 | `" .glass,.stat,.signal-card,.pipeline-col,.button,.small-button{border:1px solid CanvasText;backdrop-filter:none}"` | — |
-| [SRC-2C8F288796-L000190](../../web/workspace.html#L190) | 190 | `" .nav button.active{outline:2px solid Highlight}"` | — |
-| [SRC-2C8F288796-L000191](../../web/workspace.html#L191) | 191 | `"}"` | — |
-| [SRC-2C8F288796-L000192](../../web/workspace.html#L192) | 192 | `""` | — |
-| [SRC-2C8F288796-L000193](../../web/workspace.html#L193) | 193 | `"/* Responsive glass performance indicators */"` | — |
-| [SRC-2C8F288796-L000194](../../web/workspace.html#L194) | 194 | `".side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px;align-items:center}"` | — |
-| [SRC-2C8F288796-L000195](../../web/workspace.html#L195) | 195 | `".side-links a,.side-link-button{font-size:10px;color:#92a8c4}"` | — |
