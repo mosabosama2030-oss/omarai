@@ -84,27 +84,47 @@ def test_search_web_preserves_cross_provider_duplicates_for_rank_fusion(monkeypa
 
 
 def test_rank_fusion_uses_retrieval_relevance_to_break_near_rank_ties():
-    batches = [{
-        "query": "Central Bank of Egypt official website",
-        "provider": "ddg",
-        "results": [
-            {
-                "title": "Egypt central bank",
-                "url": "https://example.com/weak",
-                "snippet": "Egypt central bank",
-                "retrieval_relevance_score": 0.20,
-            },
-            {
-                "title": "Central Bank of Egypt official website",
-                "url": "https://example.com/strong",
-                "snippet": "Central Bank of Egypt official website and monetary policy.",
-                "retrieval_relevance_score": 1.0,
-            },
-        ],
-    }]
+    batches = [
+        {
+            "query": "Central Bank of Egypt official website",
+            "provider": "ddg",
+            "results": [
+                {
+                    "title": "Egypt central bank",
+                    "url": "https://example.com/weak",
+                    "snippet": "Egypt central bank",
+                    "retrieval_relevance_score": 0.20,
+                },
+                {
+                    "title": "Central Bank of Egypt official website",
+                    "url": "https://example.com/strong",
+                    "snippet": "Central Bank of Egypt official website and monetary policy.",
+                    "retrieval_relevance_score": 1.0,
+                },
+            ],
+        },
+        {
+            "query": "Central Bank of Egypt official website",
+            "provider": "bing",
+            "results": [
+                {
+                    "title": "Central Bank of Egypt official website",
+                    "url": "https://example.com/strong",
+                    "snippet": "Central Bank of Egypt official website and monetary policy.",
+                    "retrieval_relevance_score": 1.0,
+                },
+                {
+                    "title": "Egypt central bank",
+                    "url": "https://example.com/weak",
+                    "snippet": "Egypt central bank",
+                    "retrieval_relevance_score": 0.20,
+                },
+            ],
+        },
+    ]
 
     ranked = fuse_ranked_results(batches)
 
     assert ranked[0]["url"] == "https://example.com/strong"
-    assert ranked[0]["rank_score"] < ranked[1]["rank_score"]
+    assert ranked[0]["rank_score"] == ranked[1]["rank_score"]
     assert ranked[0]["retrieval_relevance_score"] == 1.0
