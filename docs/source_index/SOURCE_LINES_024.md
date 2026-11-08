@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-480FAB7816-L000020 إلى SRC-E599346ABE-L000517
+- النطاق: SRC-480FAB7816-L000009 إلى SRC-E599346ABE-L000506
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-480FAB7816-L000009](../DATABASE_POSTGRESQL_AR.md#L9) | 9 | `""` | — |
+| [SRC-480FAB7816-L000010](../DATABASE_POSTGRESQL_AR.md#L10) | 10 | `"## الإعداد المحلي"` | — |
+| [SRC-480FAB7816-L000011](../DATABASE_POSTGRESQL_AR.md#L11) | 11 | `""` | — |
+| [SRC-480FAB7816-L000012](../DATABASE_POSTGRESQL_AR.md#L12) | 12 | `"عند عدم ضبط متغير قاعدة بيانات، يستخدم Omarai المسار الافتراضي:"` | — |
+| [SRC-480FAB7816-L000013](../DATABASE_POSTGRESQL_AR.md#L13) | 13 | `""` | — |
+| [SRC-480FAB7816-L000014](../DATABASE_POSTGRESQL_AR.md#L14) | 14 | ````"```text"```` | — |
+| [SRC-480FAB7816-L000015](../DATABASE_POSTGRESQL_AR.md#L15) | 15 | `"~/.omarai/omarai.sqlite3"` | — |
+| [SRC-480FAB7816-L000016](../DATABASE_POSTGRESQL_AR.md#L16) | 16 | ````"```"```` | — |
+| [SRC-480FAB7816-L000017](../DATABASE_POSTGRESQL_AR.md#L17) | 17 | `""` | — |
+| [SRC-480FAB7816-L000018](../DATABASE_POSTGRESQL_AR.md#L18) | 18 | ``"يمكن تغيير المسار بمتغير `OMARAI_DB_PATH`:"`` | — |
+| [SRC-480FAB7816-L000019](../DATABASE_POSTGRESQL_AR.md#L19) | 19 | `""` | — |
 | [SRC-480FAB7816-L000020](../DATABASE_POSTGRESQL_AR.md#L20) | 20 | ````"```bash"```` | — |
 | [SRC-480FAB7816-L000021](../DATABASE_POSTGRESQL_AR.md#L21) | 21 | `"export OMARAI_DB_PATH=\"$HOME/.omarai/dev.sqlite3\""` | — |
 | [SRC-480FAB7816-L000022](../DATABASE_POSTGRESQL_AR.md#L22) | 22 | `"python -m cli.omarai serve"` | — |
@@ -841,14 +852,3 @@
 | [SRC-E599346ABE-L000504](../generate_index.py#L504) | 504 | `"                category=_category_for_path(path.relative_to(root).as_posix()),"` | — |
 | [SRC-E599346ABE-L000505](../generate_index.py#L505) | 505 | `"            )"` | — |
 | [SRC-E599346ABE-L000506](../generate_index.py#L506) | 506 | `"        )"` | — |
-| [SRC-E599346ABE-L000507](../generate_index.py#L507) | 507 | `"    return inventory"` | — |
-| [SRC-E599346ABE-L000508](../generate_index.py#L508) | 508 | `""` | — |
-| [SRC-E599346ABE-L000509](../generate_index.py#L509) | 509 | `""` | — |
-| [SRC-E599346ABE-L000510](../generate_index.py#L510) | 510 | `"def _tracked_paths_or_none(root: Path) -> set[str] \| None:"` | — |
-| [SRC-E599346ABE-L000511](../generate_index.py#L511) | 511 | `"    \"\"\"Return tracked repository paths, or None when the root is not a Git checkout.\"\"\""` | — |
-| [SRC-E599346ABE-L000512](../generate_index.py#L512) | 512 | `"    try:"` | — |
-| [SRC-E599346ABE-L000513](../generate_index.py#L513) | 513 | `"        result = subprocess.run("` | — |
-| [SRC-E599346ABE-L000514](../generate_index.py#L514) | 514 | `"            [\"git\", \"-C\", str(root), \"ls-files\", \"-z\"],"` | — |
-| [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"            check=True,"` | — |
-| [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"            capture_output=True,"` | — |
-| [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"        )"` | — |

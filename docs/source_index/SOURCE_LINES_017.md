@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003834 إلى SRC-1AE03B9EC3-L004633
+- النطاق: SRC-1AE03B9EC3-L003823 إلى SRC-1AE03B9EC3-L004622
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003823](../../agents/web_agent.py#L3823) | 3823 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L003824](../../agents/web_agent.py#L3824) | 3824 | `"            raw = self._request_completion("` | — |
+| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"                messages,"` | — |
+| [SRC-1AE03B9EC3-L003826](../../agents/web_agent.py#L3826) | 3826 | `"                max_tokens=500,"` | — |
+| [SRC-1AE03B9EC3-L003827](../../agents/web_agent.py#L3827) | 3827 | `"                temperature=0.0,"` | — |
+| [SRC-1AE03B9EC3-L003828](../../agents/web_agent.py#L3828) | 3828 | `"                timeout=self._effective_timeout(min(self.timeout, 10)),"` | — |
+| [SRC-1AE03B9EC3-L003829](../../agents/web_agent.py#L3829) | 3829 | `"                model=self.planner_model,"` | — |
+| [SRC-1AE03B9EC3-L003830](../../agents/web_agent.py#L3830) | 3830 | `"                enable_web_search=False,"` | — |
+| [SRC-1AE03B9EC3-L003831](../../agents/web_agent.py#L3831) | 3831 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L003832](../../agents/web_agent.py#L3832) | 3832 | `"            start = raw.find(\"{\")"` | — |
+| [SRC-1AE03B9EC3-L003833](../../agents/web_agent.py#L3833) | 3833 | `"            end = raw.rfind(\"}\")"` | — |
 | [SRC-1AE03B9EC3-L003834](../../agents/web_agent.py#L3834) | 3834 | `"            candidate = json.loads(raw[start:end + 1]) if start >= 0 and end > start else None"` | — |
 | [SRC-1AE03B9EC3-L003835](../../agents/web_agent.py#L3835) | 3835 | `"            return validate_dialogue_context(candidate, question, history, fallback=fallback)"` | — |
 | [SRC-1AE03B9EC3-L003836](../../agents/web_agent.py#L3836) | 3836 | `"        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError, TypeError, json.JSONDecodeError):"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L004620](../../agents/web_agent.py#L4620) | 4620 | `"            \"Wikipedia\","` | — |
 | [SRC-1AE03B9EC3-L004621](../../agents/web_agent.py#L4621) | 4621 | `"            \"site:gov.eg وزارة الإسكان\","` | — |
 | [SRC-1AE03B9EC3-L004622](../../agents/web_agent.py#L4622) | 4622 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L004623](../../agents/web_agent.py#L4623) | 4623 | `"        probe_sources: dict[str, dict[str, Any]] = {}"` | — |
-| [SRC-1AE03B9EC3-L004624](../../agents/web_agent.py#L4624) | 4624 | `"        completed_connector_responses = 0"` | — |
-| [SRC-1AE03B9EC3-L004625](../../agents/web_agent.py#L4625) | 4625 | `"        probe_errors: list[str] = []"` | — |
-| [SRC-1AE03B9EC3-L004626](../../agents/web_agent.py#L4626) | 4626 | `"        probes_attempted = 0"` | — |
-| [SRC-1AE03B9EC3-L004627](../../agents/web_agent.py#L4627) | 4627 | `"        for probe_query in probe_queries:"` | — |
-| [SRC-1AE03B9EC3-L004628](../../agents/web_agent.py#L4628) | 4628 | `"            probes_attempted += 1"` | — |
-| [SRC-1AE03B9EC3-L004629](../../agents/web_agent.py#L4629) | 4629 | `"            with self._provider_diagnostics_lock:"` | — |
-| [SRC-1AE03B9EC3-L004630](../../agents/web_agent.py#L4630) | 4630 | `"                previous_ids = {id(item) for item in self._provider_diagnostics}"` | — |
-| [SRC-1AE03B9EC3-L004631](../../agents/web_agent.py#L4631) | 4631 | `"            try:"` | — |
-| [SRC-1AE03B9EC3-L004632](../../agents/web_agent.py#L4632) | 4632 | `"                returned = self._search_web(probe_query)"` | — |
-| [SRC-1AE03B9EC3-L004633](../../agents/web_agent.py#L4633) | 4633 | `"            except (RuntimeError, AgentDependencyError, ValueError, OSError) as exc:"` | — |

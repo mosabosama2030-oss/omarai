@@ -4,7 +4,7 @@
 
 - الصفحة: **056**
 - سجلات الأسطر: **800**
-- النطاق: SRC-86913A3106-L000060 إلى SRC-AFEDC2645A-L000274
+- النطاق: SRC-86913A3106-L000013 إلى SRC-AFEDC2645A-L000227
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,53 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-86913A3106-L000013](../../tests/test_search_relevance_mixed_results.py#L13) | 13 | `"        \"provider\": \"test_provider\","` | — |
+| [SRC-86913A3106-L000014](../../tests/test_search_relevance_mixed_results.py#L14) | 14 | `"        \"provider_rank\": 1,"` | — |
+| [SRC-86913A3106-L000015](../../tests/test_search_relevance_mixed_results.py#L15) | 15 | `"    }"` | — |
+| [SRC-86913A3106-L000016](../../tests/test_search_relevance_mixed_results.py#L16) | 16 | `"    official = {"` | — |
+| [SRC-86913A3106-L000017](../../tests/test_search_relevance_mixed_results.py#L17) | 17 | `"        \"title\": \"Central Bank of Egypt - Official Website\","` | — |
+| [SRC-86913A3106-L000018](../../tests/test_search_relevance_mixed_results.py#L18) | 18 | `"        \"url\": \"https://www.cbe.org.eg/en/Pages/default.aspx\","` | — |
+| [SRC-86913A3106-L000019](../../tests/test_search_relevance_mixed_results.py#L19) | 19 | `"        \"snippet\": \"Official website of the Central Bank of Egypt and its monetary policy decisions.\","` | — |
+| [SRC-86913A3106-L000020](../../tests/test_search_relevance_mixed_results.py#L20) | 20 | `"        \"provider\": \"test_provider\","` | — |
+| [SRC-86913A3106-L000021](../../tests/test_search_relevance_mixed_results.py#L21) | 21 | `"        \"provider_rank\": 2,"` | — |
+| [SRC-86913A3106-L000022](../../tests/test_search_relevance_mixed_results.py#L22) | 22 | `"    }"` | — |
+| [SRC-86913A3106-L000023](../../tests/test_search_relevance_mixed_results.py#L23) | 23 | `""` | — |
+| [SRC-86913A3106-L000024](../../tests/test_search_relevance_mixed_results.py#L24) | 24 | `"    for env_name in (\"DEEPSEEK_SEARCH_API_KEY\", \"BRAVE_SEARCH_API_KEY\", \"TAVILY_API_KEY\"):"` | — |
+| [SRC-86913A3106-L000025](../../tests/test_search_relevance_mixed_results.py#L25) | 25 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
+| [SRC-86913A3106-L000026](../../tests/test_search_relevance_mixed_results.py#L26) | 26 | `""` | — |
+| [SRC-86913A3106-L000027](../../tests/test_search_relevance_mixed_results.py#L27) | 27 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _query: [dict(unrelated), dict(official)])"` | — |
+| [SRC-86913A3106-L000028](../../tests/test_search_relevance_mixed_results.py#L28) | 28 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _query: [dict(unrelated)])"` | — |
+| [SRC-86913A3106-L000029](../../tests/test_search_relevance_mixed_results.py#L29) | 29 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
+| [SRC-86913A3106-L000030](../../tests/test_search_relevance_mixed_results.py#L30) | 30 | `""` | — |
+| [SRC-86913A3106-L000031](../../tests/test_search_relevance_mixed_results.py#L31) | 31 | `"    results = agent._search_web(query)"` | — |
+| [SRC-86913A3106-L000032](../../tests/test_search_relevance_mixed_results.py#L32) | 32 | `""` | — |
+| [SRC-86913A3106-L000033](../../tests/test_search_relevance_mixed_results.py#L33) | 33 | `"    assert [item[\"url\"] for item in results] == [official[\"url\"]]"` | — |
+| [SRC-86913A3106-L000034](../../tests/test_search_relevance_mixed_results.py#L34) | 34 | `"    diagnostics = {"` | — |
+| [SRC-86913A3106-L000035](../../tests/test_search_relevance_mixed_results.py#L35) | 35 | `"        row[\"provider\"]: row"` | — |
+| [SRC-86913A3106-L000036](../../tests/test_search_relevance_mixed_results.py#L36) | 36 | `"        for row in agent._provider_diagnostics"` | — |
+| [SRC-86913A3106-L000037](../../tests/test_search_relevance_mixed_results.py#L37) | 37 | `"        if row.get(\"provider\") in {\"duckduckgo_html\", \"bing_rss\"}"` | — |
+| [SRC-86913A3106-L000038](../../tests/test_search_relevance_mixed_results.py#L38) | 38 | `"    }"` | — |
+| [SRC-86913A3106-L000039](../../tests/test_search_relevance_mixed_results.py#L39) | 39 | `"    assert diagnostics[\"duckduckgo_html\"][\"status\"] == \"ok\""` | — |
+| [SRC-86913A3106-L000040](../../tests/test_search_relevance_mixed_results.py#L40) | 40 | `"    assert diagnostics[\"duckduckgo_html\"][\"accepted_count\"] == 1"` | — |
+| [SRC-86913A3106-L000041](../../tests/test_search_relevance_mixed_results.py#L41) | 41 | `"    assert diagnostics[\"duckduckgo_html\"][\"rejection_counts\"][\"relevance_below_threshold\"] == 1"` | — |
+| [SRC-86913A3106-L000042](../../tests/test_search_relevance_mixed_results.py#L42) | 42 | `"    assert diagnostics[\"bing_rss\"][\"status\"] == \"filtered_all\""` | — |
+| [SRC-86913A3106-L000043](../../tests/test_search_relevance_mixed_results.py#L43) | 43 | `"    assert diagnostics[\"bing_rss\"][\"accepted_count\"] == 0"` | — |
+| [SRC-86913A3106-L000044](../../tests/test_search_relevance_mixed_results.py#L44) | 44 | `"    assert diagnostics[\"bing_rss\"][\"rejection_counts\"][\"relevance_below_threshold\"] == 1"` | — |
+| [SRC-86913A3106-L000045](../../tests/test_search_relevance_mixed_results.py#L45) | 45 | `""` | — |
+| [SRC-86913A3106-L000046](../../tests/test_search_relevance_mixed_results.py#L46) | 46 | `""` | — |
+| [SRC-86913A3106-L000047](../../tests/test_search_relevance_mixed_results.py#L47) | 47 | `"def test_three_concept_query_rejects_candidate_matching_only_one_topic():"` | — |
+| [SRC-86913A3106-L000048](../../tests/test_search_relevance_mixed_results.py#L48) | 48 | `"    query = \"climate policy emissions\""` | — |
+| [SRC-86913A3106-L000049](../../tests/test_search_relevance_mixed_results.py#L49) | 49 | `"    assert len(_relevance_query_tokens(query)) == 3"` | — |
+| [SRC-86913A3106-L000050](../../tests/test_search_relevance_mixed_results.py#L50) | 50 | `"    assert _relevance_ratio(query, \"Climate report\") == 0.0"` | — |
+| [SRC-86913A3106-L000051](../../tests/test_search_relevance_mixed_results.py#L51) | 51 | `""` | — |
+| [SRC-86913A3106-L000052](../../tests/test_search_relevance_mixed_results.py#L52) | 52 | `""` | — |
+| [SRC-86913A3106-L000053](../../tests/test_search_relevance_mixed_results.py#L53) | 53 | `"def test_three_concept_query_documents_single_high_value_match_tradeoff():"` | — |
+| [SRC-86913A3106-L000054](../../tests/test_search_relevance_mixed_results.py#L54) | 54 | `"    query = \"central bank Egypt\""` | — |
+| [SRC-86913A3106-L000055](../../tests/test_search_relevance_mixed_results.py#L55) | 55 | `"    assert len(_relevance_query_tokens(query)) == 3"` | — |
+| [SRC-86913A3106-L000056](../../tests/test_search_relevance_mixed_results.py#L56) | 56 | `"    assert _relevance_ratio(query, \"Egypt\") == 0.0"` | — |
+| [SRC-86913A3106-L000057](../../tests/test_search_relevance_mixed_results.py#L57) | 57 | `""` | — |
+| [SRC-86913A3106-L000058](../../tests/test_search_relevance_mixed_results.py#L58) | 58 | `""` | — |
+| [SRC-86913A3106-L000059](../../tests/test_search_relevance_mixed_results.py#L59) | 59 | `"def test_short_two_concept_query_keeps_existing_relevance_floor():"` | — |
 | [SRC-86913A3106-L000060](../../tests/test_search_relevance_mixed_results.py#L60) | 60 | `"    assert _relevance_ratio(\"climate emissions\", \"Climate report\") >= _minimum_relevance_ratio(\"climate emissions\")"` | — |
 ## اختبارات
 
@@ -805,50 +852,3 @@
 | [SRC-AFEDC2645A-L000225](../../tests/test_task_understanding.py#L225) | 225 | `""` | — |
 | [SRC-AFEDC2645A-L000226](../../tests/test_task_understanding.py#L226) | 226 | `""` | — |
 | [SRC-AFEDC2645A-L000227](../../tests/test_task_understanding.py#L227) | 227 | `"def test_official_site_request_without_a_target_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000228](../../tests/test_task_understanding.py#L228) | 228 | `"    spec = build_task_spec(\"هات الموقع الرسمي\", mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
-| [SRC-AFEDC2645A-L000229](../../tests/test_task_understanding.py#L229) | 229 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
-| [SRC-AFEDC2645A-L000230](../../tests/test_task_understanding.py#L230) | 230 | `"    assert \"official_destination_target_entity\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `""` | — |
-| [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `""` | — |
-| [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"def test_official_site_request_with_a_named_target_does_not_require_subject_clarification():"` | — |
-| [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"        \"هات الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
-| [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    assert \"official_destination_target_entity\" not in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert spec[\"constraints\"][\"official_destination_required\"] is True"` | — |
-| [SRC-AFEDC2645A-L000242](../../tests/test_task_understanding.py#L242) | 242 | `""` | — |
-| [SRC-AFEDC2645A-L000243](../../tests/test_task_understanding.py#L243) | 243 | `""` | — |
-| [SRC-AFEDC2645A-L000244](../../tests/test_task_understanding.py#L244) | 244 | `"def test_summary_without_url_or_text_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000245](../../tests/test_task_understanding.py#L245) | 245 | `"    spec = build_task_spec(\"لخص\", mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000246](../../tests/test_task_understanding.py#L246) | 246 | `"    assert \"summary_source_url_or_pasted_text\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000247](../../tests/test_task_understanding.py#L247) | 247 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000248](../../tests/test_task_understanding.py#L248) | 248 | `""` | — |
-| [SRC-AFEDC2645A-L000249](../../tests/test_task_understanding.py#L249) | 249 | `""` | — |
-| [SRC-AFEDC2645A-L000250](../../tests/test_task_understanding.py#L250) | 250 | `"def test_output_preferences_do_not_count_as_competing_intent_hypotheses():"` | — |
-| [SRC-AFEDC2645A-L000251](../../tests/test_task_understanding.py#L251) | 251 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000252](../../tests/test_task_understanding.py#L252) | 252 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل\","` | — |
-| [SRC-AFEDC2645A-L000253](../../tests/test_task_understanding.py#L253) | 253 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000254](../../tests/test_task_understanding.py#L254) | 254 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000255](../../tests/test_task_understanding.py#L255) | 255 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000256](../../tests/test_task_understanding.py#L256) | 256 | `"    families = {row[\"family\"] for row in spec[\"hypothesis_interpretations\"]}"` | — |
-| [SRC-AFEDC2645A-L000257](../../tests/test_task_understanding.py#L257) | 257 | `"    assert \"compare\" in families"` | — |
-| [SRC-AFEDC2645A-L000258](../../tests/test_task_understanding.py#L258) | 258 | `"    assert not any(family.startswith(\"output_\") for family in families)"` | — |
-| [SRC-AFEDC2645A-L000259](../../tests/test_task_understanding.py#L259) | 259 | `"    assert spec[\"ambiguity_status\"] == \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-AFEDC2645A-L000260](../../tests/test_task_understanding.py#L260) | 260 | `""` | — |
-| [SRC-AFEDC2645A-L000261](../../tests/test_task_understanding.py#L261) | 261 | `""` | — |
-| [SRC-AFEDC2645A-L000262](../../tests/test_task_understanding.py#L262) | 262 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000263](../../tests/test_task_understanding.py#L263) | 263 | `"    (\"question\", \"family\"),"` | — |
-| [SRC-AFEDC2645A-L000264](../../tests/test_task_understanding.py#L264) | 264 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000265](../../tests/test_task_understanding.py#L265) | 265 | `"        (\"ترجم هذا النص إلى الإنجليزية: Hello world\", \"translation\"),"` | — |
-| [SRC-AFEDC2645A-L000266](../../tests/test_task_understanding.py#L266) | 266 | `"        (\"اكتب بريد إلكتروني للعميل بنبرة مهنية\", \"writing_or_editing\"),"` | — |
-| [SRC-AFEDC2645A-L000267](../../tests/test_task_understanding.py#L267) | 267 | `"        (\"احسب 17 بالمئة من 500\", \"calculation\"),"` | — |
-| [SRC-AFEDC2645A-L000268](../../tests/test_task_understanding.py#L268) | 268 | `"        (\"حلل البيانات في ملف CSV وحدد القيم الناقصة\", \"data_analysis\"),"` | — |
-| [SRC-AFEDC2645A-L000269](../../tests/test_task_understanding.py#L269) | 269 | `"        (\"راجع كود Python الذي يعرض stack trace\", \"coding_or_technical_design\"),"` | — |
-| [SRC-AFEDC2645A-L000270](../../tests/test_task_understanding.py#L270) | 270 | `"        (\"ضع خطة عمل لافتتاح متجر خلال شهر\", \"planning\"),"` | — |
-| [SRC-AFEDC2645A-L000271](../../tests/test_task_understanding.py#L271) | 271 | `"        (\"ما أعراض الإنفلونزا؟\", \"medical_information\"),"` | — |
-| [SRC-AFEDC2645A-L000272](../../tests/test_task_understanding.py#L272) | 272 | `"        (\"ما شروط العقد وفق القانون المصري؟\", \"legal_information\"),"` | — |
-| [SRC-AFEDC2645A-L000273](../../tests/test_task_understanding.py#L273) | 273 | `"        (\"اكتب قصة قصيرة عن رحلة خيالية\", \"creative_generation\"),"` | — |
-| [SRC-AFEDC2645A-L000274](../../tests/test_task_understanding.py#L274) | 274 | `"    ],"` | — |

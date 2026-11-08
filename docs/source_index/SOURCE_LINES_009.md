@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000451 إلى SRC-686F71AA50-L000011
+- النطاق: SRC-8D00DCEC0D-L000440 إلى SRC-086D574B4E-L000390
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000440](../../agents/sales_domain.py#L440) | 440 | `"            \"signal_id\","` | — |
+| [SRC-8D00DCEC0D-L000441](../../agents/sales_domain.py#L441) | 441 | `"            _clean_text(self.signal_id, field_name=\"signal_id\", maximum=160),"` | — |
+| [SRC-8D00DCEC0D-L000442](../../agents/sales_domain.py#L442) | 442 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000443](../../agents/sales_domain.py#L443) | 443 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000444](../../agents/sales_domain.py#L444) | 444 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000445](../../agents/sales_domain.py#L445) | 445 | `"            \"signal_type\","` | — |
+| [SRC-8D00DCEC0D-L000446](../../agents/sales_domain.py#L446) | 446 | `"            _enum_value(DemandSignalType, self.signal_type, field_name=\"signal_type\"),"` | — |
+| [SRC-8D00DCEC0D-L000447](../../agents/sales_domain.py#L447) | 447 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000448](../../agents/sales_domain.py#L448) | 448 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000449](../../agents/sales_domain.py#L449) | 449 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000450](../../agents/sales_domain.py#L450) | 450 | `"            \"product_fit\","` | — |
 | [SRC-8D00DCEC0D-L000451](../../agents/sales_domain.py#L451) | 451 | `"            _enum_value(ProductFit, self.product_fit, field_name=\"product_fit\"),"` | — |
 | [SRC-8D00DCEC0D-L000452](../../agents/sales_domain.py#L452) | 452 | `"        )"` | — |
 | [SRC-8D00DCEC0D-L000453](../../agents/sales_domain.py#L453) | 453 | `"        object.__setattr__("` | — |
@@ -823,23 +834,3 @@
 | [SRC-086D574B4E-L000388](../../agents/semantic_claim_verifier.py#L388) | 388 | `"            \"Model misclassification remains possible; critical claims may require a primary source or human review.\","` | — |
 | [SRC-086D574B4E-L000389](../../agents/semantic_claim_verifier.py#L389) | 389 | `"        ],"` | — |
 | [SRC-086D574B4E-L000390](../../agents/semantic_claim_verifier.py#L390) | 390 | `"    }"` | — |
-## الوكيل والمنطق
-
-### FILE-686F71AA50 — [agents/task_understanding.py](../../agents/task_understanding.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-686F71AA50-L000001](../../agents/task_understanding.py#L1) | 1 | `"\"\"\"Deterministic, auditable natural-language task interpretation for Omarai."` | — |
-| [SRC-686F71AA50-L000002](../../agents/task_understanding.py#L2) | 2 | `""` | — |
-| [SRC-686F71AA50-L000003](../../agents/task_understanding.py#L3) | 3 | `"This module produces a bounded TaskSpec and a query-strategy matrix. It does not"` | — |
-| [SRC-686F71AA50-L000004](../../agents/task_understanding.py#L4) | 4 | `"claim semantic certainty, generate facts, or execute tools. Signals and hypotheses"` | — |
-| [SRC-686F71AA50-L000005](../../agents/task_understanding.py#L5) | 5 | `"are diagnostics, never probabilities. Search plans remain subject to budgets,"` | — |
-| [SRC-686F71AA50-L000006](../../agents/task_understanding.py#L6) | 6 | `"source guardrails, and the final evidence checks."` | — |
-| [SRC-686F71AA50-L000007](../../agents/task_understanding.py#L7) | 7 | `"\"\"\""` | — |
-| [SRC-686F71AA50-L000008](../../agents/task_understanding.py#L8) | 8 | `"from __future__ import annotations"` | — |
-| [SRC-686F71AA50-L000009](../../agents/task_understanding.py#L9) | 9 | `""` | — |
-| [SRC-686F71AA50-L000010](../../agents/task_understanding.py#L10) | 10 | `"import re"` | — |
-| [SRC-686F71AA50-L000011](../../agents/task_understanding.py#L11) | 11 | `"import unicodedata"` | — |

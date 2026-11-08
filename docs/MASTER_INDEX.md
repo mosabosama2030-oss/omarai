@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **143**
 - ملفات Python المحللة: **84**
-- تعريفات Python المفهرسة: **2042**
+- تعريفات Python المفهرسة: **2044**
 - تعريفات Python موثقة بوجود Docstring: **302**
-- تعريفات Python بلا Docstring: **1330**
+- تعريفات Python بلا Docstring: **1332**
 - تعريفات لا ينطبق عليها Docstring: **410**
 - الرموز الساكنة الإضافية: **2886**
-- الأسطر النصية المفهرسة حرفيًا: **51385**
+- الأسطر النصية المفهرسة حرفيًا: **51432**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -37,7 +37,7 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 12807 | 83 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
-| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25285 | 521 | جرد الملف + AST Python |
+| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25716 | 532 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 12762 | 296 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
@@ -124,7 +124,7 @@
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
-| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
+| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 15306 | 367 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 57111 | 1540 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
@@ -1170,6 +1170,8 @@
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L289) | دالة | test_date_in_answer_missing_from_its_cited_source_is_flagged | لا توجد Docstring. | ناقص | 289 | [SRC-1C77C97630-L000289](../tests/test_answer_validation.py#L289) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L306) | دالة | test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies | لا توجد Docstring. | ناقص | 306 | [SRC-1C77C97630-L000306](../tests/test_answer_validation.py#L306) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L318) | دالة | test_single_coincidental_token_does_not_count_as_citation_support | لا توجد Docstring. | ناقص | 318 | [SRC-1C77C97630-L000318](../tests/test_answer_validation.py#L318) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L334) | دالة | test_unfetched_page_text_cannot_support_answer_or_citation_numbers | لا توجد Docstring. | ناقص | 334 | [SRC-1C77C97630-L000334](../tests/test_answer_validation.py#L334) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L353) | دالة | test_publication_date_metadata_cannot_support_unrelated_numeric_claims | لا توجد Docstring. | ناقص | 353 | [SRC-1C77C97630-L000353](../tests/test_answer_validation.py#L353) |
 | [tests/test_api.py](../tests/test_api.py#L22) | دالة | local_api | Run the real handler on loopback with explicit local-development auth opt-in. | موثق | 22 | [SRC-3451CC474D-L000022](../tests/test_api.py#L22) |
 | [tests/test_api.py](../tests/test_api.py#L50) | دالة | test_loopback_auth_requires_explicit_local_opt_in | لا توجد Docstring. | ناقص | 50 | [SRC-3451CC474D-L000050](../tests/test_api.py#L50) |
 | [tests/test_api.py](../tests/test_api.py#L57) | دالة | request_json | لا توجد Docstring. | ناقص | 57 | [SRC-3451CC474D-L000057](../tests/test_api.py#L57) |

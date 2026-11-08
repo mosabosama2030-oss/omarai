@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000169 إلى SRC-8D00DCEC0D-L000450
+- النطاق: SRC-3AA6165B18-L000158 إلى SRC-8D00DCEC0D-L000439
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000158](../../agents/research_guardrails.py#L158) | 158 | `"    }"` | — |
+| [SRC-3AA6165B18-L000159](../../agents/research_guardrails.py#L159) | 159 | `""` | — |
+| [SRC-3AA6165B18-L000160](../../agents/research_guardrails.py#L160) | 160 | `""` | — |
+| [SRC-3AA6165B18-L000161](../../agents/research_guardrails.py#L161) | 161 | `"def classify_social_source(source: dict[str, Any]) -> dict[str, str]:"` | — |
+| [SRC-3AA6165B18-L000162](../../agents/research_guardrails.py#L162) | 162 | `"    \"\"\"Apply a transparent, non-authoritative label to public social content.\"\"\""` | — |
+| [SRC-3AA6165B18-L000163](../../agents/research_guardrails.py#L163) | 163 | `"    url = source.get(\"url\", \"\")"` | — |
+| [SRC-3AA6165B18-L000164](../../agents/research_guardrails.py#L164) | 164 | `"    host = _host(url)"` | — |
+| [SRC-3AA6165B18-L000165](../../agents/research_guardrails.py#L165) | 165 | `"    platform = next(("` | — |
+| [SRC-3AA6165B18-L000166](../../agents/research_guardrails.py#L166) | 166 | `"        name for name, domain in SOCIAL_DOMAINS.items()"` | — |
+| [SRC-3AA6165B18-L000167](../../agents/research_guardrails.py#L167) | 167 | `"        if host == domain or host.endswith(\".\" + domain)"` | — |
+| [SRC-3AA6165B18-L000168](../../agents/research_guardrails.py#L168) | 168 | `"    ), \"\")"` | — |
 | [SRC-3AA6165B18-L000169](../../agents/research_guardrails.py#L169) | 169 | `"    if not platform:"` | — |
 | [SRC-3AA6165B18-L000170](../../agents/research_guardrails.py#L170) | 170 | `"        return {"` | — |
 | [SRC-3AA6165B18-L000171](../../agents/research_guardrails.py#L171) | 171 | `"            \"opinion_source_classification\": \"not_a_social_post\","` | — |
@@ -823,14 +834,3 @@
 | [SRC-8D00DCEC0D-L000437](../../agents/sales_domain.py#L437) | 437 | `"    def __post_init__(self) -> None:"` | — |
 | [SRC-8D00DCEC0D-L000438](../../agents/sales_domain.py#L438) | 438 | `"        object.__setattr__("` | — |
 | [SRC-8D00DCEC0D-L000439](../../agents/sales_domain.py#L439) | 439 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000440](../../agents/sales_domain.py#L440) | 440 | `"            \"signal_id\","` | — |
-| [SRC-8D00DCEC0D-L000441](../../agents/sales_domain.py#L441) | 441 | `"            _clean_text(self.signal_id, field_name=\"signal_id\", maximum=160),"` | — |
-| [SRC-8D00DCEC0D-L000442](../../agents/sales_domain.py#L442) | 442 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000443](../../agents/sales_domain.py#L443) | 443 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000444](../../agents/sales_domain.py#L444) | 444 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000445](../../agents/sales_domain.py#L445) | 445 | `"            \"signal_type\","` | — |
-| [SRC-8D00DCEC0D-L000446](../../agents/sales_domain.py#L446) | 446 | `"            _enum_value(DemandSignalType, self.signal_type, field_name=\"signal_type\"),"` | — |
-| [SRC-8D00DCEC0D-L000447](../../agents/sales_domain.py#L447) | 447 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000448](../../agents/sales_domain.py#L448) | 448 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000449](../../agents/sales_domain.py#L449) | 449 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000450](../../agents/sales_domain.py#L450) | 450 | `"            \"product_fit\","` | — |

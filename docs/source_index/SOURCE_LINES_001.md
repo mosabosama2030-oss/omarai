@@ -883,17 +883,17 @@
 | [SRC-138992B1FC-L000228](../../agents/answer_validation.py#L228) | 228 | `"            extracted_page_count += 1"` | — |
 | [SRC-138992B1FC-L000229](../../agents/answer_validation.py#L229) | 229 | `"        elif snippet.strip():"` | — |
 | [SRC-138992B1FC-L000230](../../agents/answer_validation.py#L230) | 230 | `"            snippet_count += 1"` | — |
-| [SRC-138992B1FC-L000231](../../agents/answer_validation.py#L231) | 231 | `"        source_text = \" \".join(part for part in (title, snippet, page_text, published_at) if part)"` | — |
-| [SRC-138992B1FC-L000232](../../agents/answer_validation.py#L232) | 232 | `"        if source_text.strip():"` | — |
-| [SRC-138992B1FC-L000233](../../agents/answer_validation.py#L233) | 233 | `"            bounded_source_text = source_text[:16000]"` | — |
-| [SRC-138992B1FC-L000234](../../agents/answer_validation.py#L234) | 234 | `"            source_texts.append(bounded_source_text)"` | — |
-| [SRC-138992B1FC-L000235](../../agents/answer_validation.py#L235) | 235 | `"            source_text_by_index[source_index] = bounded_source_text"` | — |
-| [SRC-138992B1FC-L000236](../../agents/answer_validation.py#L236) | 236 | `"            source_number_literals.update(_numeric_literals(bounded_source_text))"` | — |
-| [SRC-138992B1FC-L000237](../../agents/answer_validation.py#L237) | 237 | `""` | — |
-| [SRC-138992B1FC-L000238](../../agents/answer_validation.py#L238) | 238 | `"    answer_text = str(answer or \"\")[:24000]"` | — |
-| [SRC-138992B1FC-L000239](../../agents/answer_validation.py#L239) | 239 | `"    answer_number_literals = _numeric_literals(answer_text, question=question)"` | — |
-| [SRC-138992B1FC-L000240](../../agents/answer_validation.py#L240) | 240 | `"    unsupported_numbers = sorted(answer_number_literals - source_number_literals)"` | — |
-| [SRC-138992B1FC-L000241](../../agents/answer_validation.py#L241) | 241 | `"    answer_tokens = set(_criterion_tokens(_CITATION.sub(\" \", answer_text)))"` | — |
-| [SRC-138992B1FC-L000242](../../agents/answer_validation.py#L242) | 242 | `""` | — |
-| [SRC-138992B1FC-L000243](../../agents/answer_validation.py#L243) | 243 | `"    # Align citation-bearing sentences only by lexical overlap with the exact cited"` | — |
-| [SRC-138992B1FC-L000244](../../agents/answer_validation.py#L244) | 244 | `"    # source index. This is an audit hint, not an entailment or truth check."` | — |
+| [SRC-138992B1FC-L000231](../../agents/answer_validation.py#L231) | 231 | `"        fetched_page_text = ("` | — |
+| [SRC-138992B1FC-L000232](../../agents/answer_validation.py#L232) | 232 | `"            page_text"` | — |
+| [SRC-138992B1FC-L000233](../../agents/answer_validation.py#L233) | 233 | `"            if bool(source.get(\"page_fetched\")) and page_text.strip()"` | — |
+| [SRC-138992B1FC-L000234](../../agents/answer_validation.py#L234) | 234 | `"            else \"\""` | — |
+| [SRC-138992B1FC-L000235](../../agents/answer_validation.py#L235) | 235 | `"        )"` | — |
+| [SRC-138992B1FC-L000236](../../agents/answer_validation.py#L236) | 236 | `"        # A page_text field is not evidence of a successful read unless the"` | — |
+| [SRC-138992B1FC-L000237](../../agents/answer_validation.py#L237) | 237 | `"        # fetch boundary explicitly confirms page_fetched."` | — |
+| [SRC-138992B1FC-L000238](../../agents/answer_validation.py#L238) | 238 | `"        # Publication timestamps are source metadata, not evidence for unrelated"` | — |
+| [SRC-138992B1FC-L000239](../../agents/answer_validation.py#L239) | 239 | `"        # numeric claims in the cited content."` | — |
+| [SRC-138992B1FC-L000240](../../agents/answer_validation.py#L240) | 240 | `"        source_text = \" \".join("` | — |
+| [SRC-138992B1FC-L000241](../../agents/answer_validation.py#L241) | 241 | `"            part for part in (title, snippet, fetched_page_text) if part"` | — |
+| [SRC-138992B1FC-L000242](../../agents/answer_validation.py#L242) | 242 | `"        )"` | — |
+| [SRC-138992B1FC-L000243](../../agents/answer_validation.py#L243) | 243 | `"        if source_text.strip():"` | — |
+| [SRC-138992B1FC-L000244](../../agents/answer_validation.py#L244) | 244 | `"            bounded_source_text = source_text[:16000]"` | — |

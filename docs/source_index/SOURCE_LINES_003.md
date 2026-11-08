@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000252 إلى SRC-5587371288-L000496
+- النطاق: SRC-7D6FC391EC-L000241 إلى SRC-5587371288-L000485
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-7D6FC391EC-L000241](../../agents/claim_evidence.py#L241) | 241 | `"        elif invalid_source_index:"` | — |
+| [SRC-7D6FC391EC-L000242](../../agents/claim_evidence.py#L242) | 242 | `"            status = \"citation_index_invalid_or_too_large\""` | — |
+| [SRC-7D6FC391EC-L000243](../../agents/claim_evidence.py#L243) | 243 | `"        elif citation_references_truncated:"` | — |
+| [SRC-7D6FC391EC-L000244](../../agents/claim_evidence.py#L244) | 244 | `"            status = \"citation_reference_list_truncated\""` | — |
+| [SRC-7D6FC391EC-L000245](../../agents/claim_evidence.py#L245) | 245 | `"        elif indexes and not has_readable:"` | — |
+| [SRC-7D6FC391EC-L000246](../../agents/claim_evidence.py#L246) | 246 | `"            status = \"valid_index_without_readable_evidence\""` | — |
+| [SRC-7D6FC391EC-L000247](../../agents/claim_evidence.py#L247) | 247 | `"        elif indexes:"` | — |
+| [SRC-7D6FC391EC-L000248](../../agents/claim_evidence.py#L248) | 248 | `"            status = \"cited_source_attached\""` | — |
+| [SRC-7D6FC391EC-L000249](../../agents/claim_evidence.py#L249) | 249 | `"        else:"` | — |
+| [SRC-7D6FC391EC-L000250](../../agents/claim_evidence.py#L250) | 250 | `"            status = \"no_citation_marker\""` | — |
+| [SRC-7D6FC391EC-L000251](../../agents/claim_evidence.py#L251) | 251 | `""` | — |
 | [SRC-7D6FC391EC-L000252](../../agents/claim_evidence.py#L252) | 252 | `"        rows.append({"` | — |
 | [SRC-7D6FC391EC-L000253](../../agents/claim_evidence.py#L253) | 253 | `"            \"segment_id\": f\"S{number:03d}\","` | — |
 | [SRC-7D6FC391EC-L000254](../../agents/claim_evidence.py#L254) | 254 | `"            \"segment_number\": number,"` | — |
@@ -823,14 +834,3 @@
 | [SRC-5587371288-L000483](../../agents/intent_router.py#L483) | 483 | `"                \"route\": \"MODEL_ONLY\","` | — |
 | [SRC-5587371288-L000484](../../agents/intent_router.py#L484) | 484 | `"                \"reason\": \"summarization_text_provided\","` | — |
 | [SRC-5587371288-L000485](../../agents/intent_router.py#L485) | 485 | `"                \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000486](../../agents/intent_router.py#L486) | 486 | `"                \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000487](../../agents/intent_router.py#L487) | 487 | `"            }"` | — |
-| [SRC-5587371288-L000488](../../agents/intent_router.py#L488) | 488 | `"        if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
-| [SRC-5587371288-L000489](../../agents/intent_router.py#L489) | 489 | `"            return {"` | — |
-| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"                \"route\": \"WEB_SIMPLE\","` | — |
-| [SRC-5587371288-L000491](../../agents/intent_router.py#L491) | 491 | `"                \"reason\": \"summarization_request\","` | — |
-| [SRC-5587371288-L000492](../../agents/intent_router.py#L492) | 492 | `"                \"context_available\": context_available,"` | — |
-| [SRC-5587371288-L000493](../../agents/intent_router.py#L493) | 493 | `"                \"needs_clarification\": False,"` | — |
-| [SRC-5587371288-L000494](../../agents/intent_router.py#L494) | 494 | `"            }"` | — |
-| [SRC-5587371288-L000495](../../agents/intent_router.py#L495) | 495 | `"        return {"` | — |
-| [SRC-5587371288-L000496](../../agents/intent_router.py#L496) | 496 | `"            \"route\": \"CLARIFY\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000497 إلى SRC-C9CF9B54F8-L000752
+- النطاق: SRC-5587371288-L000486 إلى SRC-C9CF9B54F8-L000741
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000486](../../agents/intent_router.py#L486) | 486 | `"                \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000487](../../agents/intent_router.py#L487) | 487 | `"            }"` | — |
+| [SRC-5587371288-L000488](../../agents/intent_router.py#L488) | 488 | `"        if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
+| [SRC-5587371288-L000489](../../agents/intent_router.py#L489) | 489 | `"            return {"` | — |
+| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"                \"route\": \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000491](../../agents/intent_router.py#L491) | 491 | `"                \"reason\": \"summarization_request\","` | — |
+| [SRC-5587371288-L000492](../../agents/intent_router.py#L492) | 492 | `"                \"context_available\": context_available,"` | — |
+| [SRC-5587371288-L000493](../../agents/intent_router.py#L493) | 493 | `"                \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000494](../../agents/intent_router.py#L494) | 494 | `"            }"` | — |
+| [SRC-5587371288-L000495](../../agents/intent_router.py#L495) | 495 | `"        return {"` | — |
+| [SRC-5587371288-L000496](../../agents/intent_router.py#L496) | 496 | `"            \"route\": \"CLARIFY\","` | — |
 | [SRC-5587371288-L000497](../../agents/intent_router.py#L497) | 497 | `"            \"reason\": \"missing_summarization_input\","` | — |
 | [SRC-5587371288-L000498](../../agents/intent_router.py#L498) | 498 | `"            \"context_available\": context_available,"` | — |
 | [SRC-5587371288-L000499](../../agents/intent_router.py#L499) | 499 | `"            \"needs_clarification\": True,"` | — |
@@ -814,14 +825,3 @@
 | [SRC-C9CF9B54F8-L000739](../../agents/omarai.py#L739) | 739 | `"        self,"` | — |
 | [SRC-C9CF9B54F8-L000740](../../agents/omarai.py#L740) | 740 | `"        access_token: str,"` | — |
 | [SRC-C9CF9B54F8-L000741](../../agents/omarai.py#L741) | 741 | `"        *,"` | — |
-| [SRC-C9CF9B54F8-L000742](../../agents/omarai.py#L742) | 742 | `"        shared_token: str = \"\","` | — |
-| [SRC-C9CF9B54F8-L000743](../../agents/omarai.py#L743) | 743 | `"        max_age_seconds: int = 8 * 60 * 60,"` | — |
-| [SRC-C9CF9B54F8-L000744](../../agents/omarai.py#L744) | 744 | `"    ) -> tuple[str, dict] \| None:"` | — |
-| [SRC-C9CF9B54F8-L000745](../../agents/omarai.py#L745) | 745 | `"        \"\"\"Exchange a valid API credential for a short-lived opaque browser session.\"\"\""` | — |
-| [SRC-C9CF9B54F8-L000746](../../agents/omarai.py#L746) | 746 | `"        if not isinstance(access_token, str) or len(access_token.strip()) < 32:"` | — |
-| [SRC-C9CF9B54F8-L000747](../../agents/omarai.py#L747) | 747 | `"            return None"` | — |
-| [SRC-C9CF9B54F8-L000748](../../agents/omarai.py#L748) | 748 | `"        token = access_token.strip()"` | — |
-| [SRC-C9CF9B54F8-L000749](../../agents/omarai.py#L749) | 749 | `"        is_shared = bool(shared_token and hmac.compare_digest(token, shared_token))"` | — |
-| [SRC-C9CF9B54F8-L000750](../../agents/omarai.py#L750) | 750 | `"        principal = self.default_principal() if is_shared else self.resolve_api_token(token)"` | — |
-| [SRC-C9CF9B54F8-L000751](../../agents/omarai.py#L751) | 751 | `"        if not principal:"` | — |
-| [SRC-C9CF9B54F8-L000752](../../agents/omarai.py#L752) | 752 | `"            return None"` | — |

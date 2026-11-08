@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DD2C0EB6EA-L000017 إلى SRC-480FAB7816-L000019
+- النطاق: SRC-DD2C0EB6EA-L000006 إلى SRC-480FAB7816-L000008
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PYTHONUNBUFFERED=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
+| [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `""` | — |
+| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"WORKDIR /app"` | — |
+| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
+| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
+| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
+| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
+| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
+| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
+| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
 | [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
 | [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
 | [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
@@ -859,14 +870,3 @@
 | [SRC-480FAB7816-L000006](../DATABASE_POSTGRESQL_AR.md#L6) | 6 | ``"- **الاستضافة:** PostgreSQL مُدار، ويمكن استخدام Neon. يختار التطبيق هذا المحرك عند ضبط `OMARAI_DATABASE_URL` أو `DATABASE_URL`."`` | — |
 | [SRC-480FAB7816-L000007](../DATABASE_POSTGRESQL_AR.md#L7) | 7 | `"- **GitHub:** يحفظ الكود والاختبارات والوثائق فقط؛ لا ترفع ملف SQLite، أو نسخة احتياطية، أو عنوان اتصال، أو بيانات عملاء."` | — |
 | [SRC-480FAB7816-L000008](../DATABASE_POSTGRESQL_AR.md#L8) | 8 | ``"- **عزل المستأجرين:** تبقى المفاتيح الفريدة والاستعلامات المقيدة بـ`tenant_id` جزءًا من التصميم في المحركين."`` | — |
-| [SRC-480FAB7816-L000009](../DATABASE_POSTGRESQL_AR.md#L9) | 9 | `""` | — |
-| [SRC-480FAB7816-L000010](../DATABASE_POSTGRESQL_AR.md#L10) | 10 | `"## الإعداد المحلي"` | — |
-| [SRC-480FAB7816-L000011](../DATABASE_POSTGRESQL_AR.md#L11) | 11 | `""` | — |
-| [SRC-480FAB7816-L000012](../DATABASE_POSTGRESQL_AR.md#L12) | 12 | `"عند عدم ضبط متغير قاعدة بيانات، يستخدم Omarai المسار الافتراضي:"` | — |
-| [SRC-480FAB7816-L000013](../DATABASE_POSTGRESQL_AR.md#L13) | 13 | `""` | — |
-| [SRC-480FAB7816-L000014](../DATABASE_POSTGRESQL_AR.md#L14) | 14 | ````"```text"```` | — |
-| [SRC-480FAB7816-L000015](../DATABASE_POSTGRESQL_AR.md#L15) | 15 | `"~/.omarai/omarai.sqlite3"` | — |
-| [SRC-480FAB7816-L000016](../DATABASE_POSTGRESQL_AR.md#L16) | 16 | ````"```"```` | — |
-| [SRC-480FAB7816-L000017](../DATABASE_POSTGRESQL_AR.md#L17) | 17 | `""` | — |
-| [SRC-480FAB7816-L000018](../DATABASE_POSTGRESQL_AR.md#L18) | 18 | ``"يمكن تغيير المسار بمتغير `OMARAI_DB_PATH`:"`` | — |
-| [SRC-480FAB7816-L000019](../DATABASE_POSTGRESQL_AR.md#L19) | 19 | `""` | — |

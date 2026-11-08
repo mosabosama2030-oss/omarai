@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L001528 إلى SRC-3D0A619359-L000101
+- النطاق: SRC-3451CC474D-L001481 إلى SRC-3D0A619359-L000054
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,53 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L001481](../../tests/test_api.py#L1481) | 1481 | `"):"` | — |
+| [SRC-3451CC474D-L001482](../../tests/test_api.py#L1482) | 1482 | `"    status, _ = request_json(local_api, \"/api/leads\", headers=forwarding_header)"` | — |
+| [SRC-3451CC474D-L001483](../../tests/test_api.py#L1483) | 1483 | `"    assert status == 401"` | — |
+| [SRC-3451CC474D-L001484](../../tests/test_api.py#L1484) | 1484 | `""` | — |
+| [SRC-3451CC474D-L001485](../../tests/test_api.py#L1485) | 1485 | `""` | — |
+| [SRC-3451CC474D-L001486](../../tests/test_api.py#L1486) | 1486 | `""` | — |
+| [SRC-3451CC474D-L001487](../../tests/test_api.py#L1487) | 1487 | `"def test_lead_store_uses_postgres_database_url_when_configured(monkeypatch):"` | — |
+| [SRC-3451CC474D-L001488](../../tests/test_api.py#L1488) | 1488 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L001489](../../tests/test_api.py#L1489) | 1489 | `""` | — |
+| [SRC-3451CC474D-L001490](../../tests/test_api.py#L1490) | 1490 | `"    monkeypatch.delenv(\"OMARAI_DB_PATH\", raising=False)"` | — |
+| [SRC-3451CC474D-L001491](../../tests/test_api.py#L1491) | 1491 | `"    monkeypatch.delenv(\"DATABASE_URL\", raising=False)"` | — |
+| [SRC-3451CC474D-L001492](../../tests/test_api.py#L1492) | 1492 | `"    database_url = \"postgresql://user:secret@example.neon.tech/omarai?sslmode=require\""` | — |
+| [SRC-3451CC474D-L001493](../../tests/test_api.py#L1493) | 1493 | `"    monkeypatch.setenv(\"OMARAI_DATABASE_URL\", database_url)"` | — |
+| [SRC-3451CC474D-L001494](../../tests/test_api.py#L1494) | 1494 | `"    captured = {}"` | — |
+| [SRC-3451CC474D-L001495](../../tests/test_api.py#L1495) | 1495 | `""` | — |
+| [SRC-3451CC474D-L001496](../../tests/test_api.py#L1496) | 1496 | `"    class Store:"` | — |
+| [SRC-3451CC474D-L001497](../../tests/test_api.py#L1497) | 1497 | `"        def __init__(self, path=None, *, database_url=None):"` | — |
+| [SRC-3451CC474D-L001498](../../tests/test_api.py#L1498) | 1498 | `"            captured[\"path\"] = path"` | — |
+| [SRC-3451CC474D-L001499](../../tests/test_api.py#L1499) | 1499 | `"            captured[\"database_url\"] = database_url"` | — |
+| [SRC-3451CC474D-L001500](../../tests/test_api.py#L1500) | 1500 | `""` | — |
+| [SRC-3451CC474D-L001501](../../tests/test_api.py#L1501) | 1501 | `"    monkeypatch.setattr(api_module, \"LeadStore\", Store)"` | — |
+| [SRC-3451CC474D-L001502](../../tests/test_api.py#L1502) | 1502 | `""` | — |
+| [SRC-3451CC474D-L001503](../../tests/test_api.py#L1503) | 1503 | `"    store = api_module._lead_store_from_environment()"` | — |
+| [SRC-3451CC474D-L001504](../../tests/test_api.py#L1504) | 1504 | `""` | — |
+| [SRC-3451CC474D-L001505](../../tests/test_api.py#L1505) | 1505 | `"    assert isinstance(store, Store)"` | — |
+| [SRC-3451CC474D-L001506](../../tests/test_api.py#L1506) | 1506 | `"    assert captured == {\"path\": None, \"database_url\": database_url}"` | — |
+| [SRC-3451CC474D-L001507](../../tests/test_api.py#L1507) | 1507 | `""` | — |
+| [SRC-3451CC474D-L001508](../../tests/test_api.py#L1508) | 1508 | `""` | — |
+| [SRC-3451CC474D-L001509](../../tests/test_api.py#L1509) | 1509 | `"def test_lead_store_rejects_conflicting_postgres_url_and_sqlite_path(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L001510](../../tests/test_api.py#L1510) | 1510 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L001511](../../tests/test_api.py#L1511) | 1511 | `"    import pytest"` | — |
+| [SRC-3451CC474D-L001512](../../tests/test_api.py#L1512) | 1512 | `""` | — |
+| [SRC-3451CC474D-L001513](../../tests/test_api.py#L1513) | 1513 | `"    monkeypatch.setenv(\"OMARAI_DATABASE_URL\", \"postgresql://user:secret@example.neon.tech/omarai\")"` | — |
+| [SRC-3451CC474D-L001514](../../tests/test_api.py#L1514) | 1514 | `"    monkeypatch.setenv(\"OMARAI_DB_PATH\", str(tmp_path / \"omarai.sqlite3\"))"` | — |
+| [SRC-3451CC474D-L001515](../../tests/test_api.py#L1515) | 1515 | `""` | — |
+| [SRC-3451CC474D-L001516](../../tests/test_api.py#L1516) | 1516 | `"    with pytest.raises(ValueError, match=\"configure either OMARAI_DATABASE_URL\"):"` | — |
+| [SRC-3451CC474D-L001517](../../tests/test_api.py#L1517) | 1517 | `"        api_module._lead_store_from_environment()"` | — |
+| [SRC-3451CC474D-L001518](../../tests/test_api.py#L1518) | 1518 | `""` | — |
+| [SRC-3451CC474D-L001519](../../tests/test_api.py#L1519) | 1519 | `""` | — |
+| [SRC-3451CC474D-L001520](../../tests/test_api.py#L1520) | 1520 | `""` | — |
+| [SRC-3451CC474D-L001521](../../tests/test_api.py#L1521) | 1521 | `"def test_health_reports_storage_backend_without_exposing_database_credentials(monkeypatch, local_api):"` | — |
+| [SRC-3451CC474D-L001522](../../tests/test_api.py#L1522) | 1522 | `"    import json"` | — |
+| [SRC-3451CC474D-L001523](../../tests/test_api.py#L1523) | 1523 | `"    from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L001524](../../tests/test_api.py#L1524) | 1524 | `"    from urllib.request import urlopen"` | — |
+| [SRC-3451CC474D-L001525](../../tests/test_api.py#L1525) | 1525 | `""` | — |
+| [SRC-3451CC474D-L001526](../../tests/test_api.py#L1526) | 1526 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L001527](../../tests/test_api.py#L1527) | 1527 | `""` | — |
 | [SRC-3451CC474D-L001528](../../tests/test_api.py#L1528) | 1528 | `"    monkeypatch.setattr(api_module.Handler, \"store\", SimpleNamespace(backend=\"postgresql\"))"` | — |
 | [SRC-3451CC474D-L001529](../../tests/test_api.py#L1529) | 1529 | `"    monkeypatch.setenv("` | — |
 | [SRC-3451CC474D-L001530](../../tests/test_api.py#L1530) | 1530 | `"        \"OMARAI_DATABASE_URL\","` | — |
@@ -814,50 +861,3 @@
 | [SRC-3D0A619359-L000052](../../tests/test_dashboard_security.py#L52) | 52 | `"    assert \"sessionStorage\" not in html"` | — |
 | [SRC-3D0A619359-L000053](../../tests/test_dashboard_security.py#L53) | 53 | `"    assert 'api(\"/api/leads?limit=500\")' in html"` | — |
 | [SRC-3D0A619359-L000054](../../tests/test_dashboard_security.py#L54) | 54 | `"    assert 'api(\"/api/health\")' in html"` | — |
-| [SRC-3D0A619359-L000055](../../tests/test_dashboard_security.py#L55) | 55 | `"    assert 'state.activeView===\"system\"' in html"` | — |
-| [SRC-3D0A619359-L000056](../../tests/test_dashboard_security.py#L56) | 56 | `"    assert 'if(canWrite())panel.append(createSignalForm())' in html"` | — |
-| [SRC-3D0A619359-L000057](../../tests/test_dashboard_security.py#L57) | 57 | `"    assert 'if(canWrite())' in html"` | — |
-| [SRC-3D0A619359-L000058](../../tests/test_dashboard_security.py#L58) | 58 | `""` | — |
-| [SRC-3D0A619359-L000059](../../tests/test_dashboard_security.py#L59) | 59 | `""` | — |
-| [SRC-3D0A619359-L000060](../../tests/test_dashboard_security.py#L60) | 60 | `"def test_workspace_uses_approved_neon_command_theme_and_responsive_accessibility():"` | — |
-| [SRC-3D0A619359-L000061](../../tests/test_dashboard_security.py#L61) | 61 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000062](../../tests/test_dashboard_security.py#L62) | 62 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000063](../../tests/test_dashboard_security.py#L63) | 63 | `""` | — |
-| [SRC-3D0A619359-L000064](../../tests/test_dashboard_security.py#L64) | 64 | `"    assert \"Approved direction: Neon Command\" in html"` | — |
-| [SRC-3D0A619359-L000065](../../tests/test_dashboard_security.py#L65) | 65 | `"    assert \"--bg:#070d16\" in html"` | — |
-| [SRC-3D0A619359-L000066](../../tests/test_dashboard_security.py#L66) | 66 | `"    assert \"rgba(74,216,255,.17)\" in html"` | — |
-| [SRC-3D0A619359-L000067](../../tests/test_dashboard_security.py#L67) | 67 | `"    assert \"@media(max-width:1100px)\" in html"` | — |
-| [SRC-3D0A619359-L000068](../../tests/test_dashboard_security.py#L68) | 68 | `"    assert \"@media(max-width:760px)\" in html"` | — |
-| [SRC-3D0A619359-L000069](../../tests/test_dashboard_security.py#L69) | 69 | `"    assert \"@media(max-width:420px)\" in html"` | — |
-| [SRC-3D0A619359-L000070](../../tests/test_dashboard_security.py#L70) | 70 | `"    assert \"prefers-reduced-motion:reduce\" in html"` | — |
-| [SRC-3D0A619359-L000071](../../tests/test_dashboard_security.py#L71) | 71 | `"    assert \"forced-colors:active\" in html"` | — |
-| [SRC-3D0A619359-L000072](../../tests/test_dashboard_security.py#L72) | 72 | `"    assert \"min-height:42px\" in html"` | — |
-| [SRC-3D0A619359-L000073](../../tests/test_dashboard_security.py#L73) | 73 | `"    assert 'href=\"/agent\">وكيل البحث</a>' in html"` | — |
-| [SRC-3D0A619359-L000074](../../tests/test_dashboard_security.py#L74) | 74 | `""` | — |
-| [SRC-3D0A619359-L000075](../../tests/test_dashboard_security.py#L75) | 75 | `"def test_workspace_write_controls_match_supported_membership_roles():"` | — |
-| [SRC-3D0A619359-L000076](../../tests/test_dashboard_security.py#L76) | 76 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000077](../../tests/test_dashboard_security.py#L77) | 77 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000078](../../tests/test_dashboard_security.py#L78) | 78 | `""` | — |
-| [SRC-3D0A619359-L000079](../../tests/test_dashboard_security.py#L79) | 79 | `"    match = re.search(r\"const WRITE_ROLES = (\\[[^\\]]*\\]);\", html)"` | — |
-| [SRC-3D0A619359-L000080](../../tests/test_dashboard_security.py#L80) | 80 | `"    assert match is not None"` | — |
-| [SRC-3D0A619359-L000081](../../tests/test_dashboard_security.py#L81) | 81 | `"    assert set(json.loads(match.group(1))) == set(LeadStore.ALLOWED_ROLES - {\"viewer\"})"` | — |
-| [SRC-3D0A619359-L000082](../../tests/test_dashboard_security.py#L82) | 82 | `""` | — |
-| [SRC-3D0A619359-L000083](../../tests/test_dashboard_security.py#L83) | 83 | `"def test_workspace_does_not_clear_local_session_state_when_server_logout_fails():"` | — |
-| [SRC-3D0A619359-L000084](../../tests/test_dashboard_security.py#L84) | 84 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000085](../../tests/test_dashboard_security.py#L85) | 85 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000086](../../tests/test_dashboard_security.py#L86) | 86 | `"    start = html.index('$(\"logoutButton\").addEventListener(\"click\"')"` | — |
-| [SRC-3D0A619359-L000087](../../tests/test_dashboard_security.py#L87) | 87 | `"    end = html.index('$(\"addSignalTop\").addEventListener', start)"` | — |
-| [SRC-3D0A619359-L000088](../../tests/test_dashboard_security.py#L88) | 88 | `"    handler = html[start:end]"` | — |
-| [SRC-3D0A619359-L000089](../../tests/test_dashboard_security.py#L89) | 89 | `""` | — |
-| [SRC-3D0A619359-L000090](../../tests/test_dashboard_security.py#L90) | 90 | `"    assert \"catch(e)\" in handler"` | — |
-| [SRC-3D0A619359-L000091](../../tests/test_dashboard_security.py#L91) | 91 | `"    assert \"alert(\" in handler"` | — |
-| [SRC-3D0A619359-L000092](../../tests/test_dashboard_security.py#L92) | 92 | `"    assert \"catch(_e){}\" not in handler"` | — |
-| [SRC-3D0A619359-L000093](../../tests/test_dashboard_security.py#L93) | 93 | `"    assert handler.index(\"await api(\\\"/api/session/logout\\\"\") < handler.index(\"state.role=null\")"` | — |
-| [SRC-3D0A619359-L000094](../../tests/test_dashboard_security.py#L94) | 94 | `"    assert \"return\" in handler.split(\"catch(e)\", 1)[1].split(\"state.role=null\", 1)[0]"` | — |
-| [SRC-3D0A619359-L000095](../../tests/test_dashboard_security.py#L95) | 95 | `""` | — |
-| [SRC-3D0A619359-L000096](../../tests/test_dashboard_security.py#L96) | 96 | `"def test_workspace_navigation_exposes_six_core_destinations_and_secondary_system_status():"` | — |
-| [SRC-3D0A619359-L000097](../../tests/test_dashboard_security.py#L97) | 97 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000098](../../tests/test_dashboard_security.py#L98) | 98 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000099](../../tests/test_dashboard_security.py#L99) | 99 | `"    match = re.search(r\"const menu=\\[(.*?)\\n\\];\", html, re.DOTALL)"` | — |
-| [SRC-3D0A619359-L000100](../../tests/test_dashboard_security.py#L100) | 100 | `"    assert match is not None"` | — |
-| [SRC-3D0A619359-L000101](../../tests/test_dashboard_security.py#L101) | 101 | `"    entries = re.findall("` | — |

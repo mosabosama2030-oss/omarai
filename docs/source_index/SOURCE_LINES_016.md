@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003034 إلى SRC-1AE03B9EC3-L003833
+- النطاق: SRC-1AE03B9EC3-L003023 إلى SRC-1AE03B9EC3-L003822
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003023](../../agents/web_agent.py#L3023) | 3023 | `"                    \"search_query\": (queries[0] if queries else \"\"),"` | — |
+| [SRC-1AE03B9EC3-L003024](../../agents/web_agent.py#L3024) | 3024 | `"                    \"published_at\": \"\","` | — |
+| [SRC-1AE03B9EC3-L003025](../../agents/web_agent.py#L3025) | 3025 | `"                }],"` | — |
+| [SRC-1AE03B9EC3-L003026](../../agents/web_agent.py#L3026) | 3026 | `"            })"` | — |
+| [SRC-1AE03B9EC3-L003027](../../agents/web_agent.py#L3027) | 3027 | `""` | — |
+| [SRC-1AE03B9EC3-L003028](../../agents/web_agent.py#L3028) | 3028 | `"        raw_results_count = sum(len(batch.get(\"results\", [])) for batch in batches if isinstance(batch, dict) and isinstance(batch.get(\"results\", []), list))"` | — |
+| [SRC-1AE03B9EC3-L003029](../../agents/web_agent.py#L3029) | 3029 | `"        sources = fuse_ranked_results(batches, limit=MAX_SEARCH_RESULTS)"` | — |
+| [SRC-1AE03B9EC3-L003030](../../agents/web_agent.py#L3030) | 3030 | `""` | — |
+| [SRC-1AE03B9EC3-L003031](../../agents/web_agent.py#L3031) | 3031 | `"        # Keep at least one returned source per explicit criterion query in the"` | — |
+| [SRC-1AE03B9EC3-L003032](../../agents/web_agent.py#L3032) | 3032 | `"        # bounded source set sent to synthesis. Global fusion can otherwise crowd"` | — |
+| [SRC-1AE03B9EC3-L003033](../../agents/web_agent.py#L3033) | 3033 | `"        # lower-ranked criterion results out before the model can inspect them."` | — |
 | [SRC-1AE03B9EC3-L003034](../../agents/web_agent.py#L3034) | 3034 | `"        requirement_queries = plan.get(\"requirement_queries\", [])"` | — |
 | [SRC-1AE03B9EC3-L003035](../../agents/web_agent.py#L3035) | 3035 | `"        if isinstance(requirement_queries, list) and requirement_queries:"` | — |
 | [SRC-1AE03B9EC3-L003036](../../agents/web_agent.py#L3036) | 3036 | `"            globally_fused = sources"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L003820](../../agents/web_agent.py#L3820) | 3820 | `"                ),"` | — |
 | [SRC-1AE03B9EC3-L003821](../../agents/web_agent.py#L3821) | 3821 | `"            },"` | — |
 | [SRC-1AE03B9EC3-L003822](../../agents/web_agent.py#L3822) | 3822 | `"        ]"` | — |
-| [SRC-1AE03B9EC3-L003823](../../agents/web_agent.py#L3823) | 3823 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L003824](../../agents/web_agent.py#L3824) | 3824 | `"            raw = self._request_completion("` | — |
-| [SRC-1AE03B9EC3-L003825](../../agents/web_agent.py#L3825) | 3825 | `"                messages,"` | — |
-| [SRC-1AE03B9EC3-L003826](../../agents/web_agent.py#L3826) | 3826 | `"                max_tokens=500,"` | — |
-| [SRC-1AE03B9EC3-L003827](../../agents/web_agent.py#L3827) | 3827 | `"                temperature=0.0,"` | — |
-| [SRC-1AE03B9EC3-L003828](../../agents/web_agent.py#L3828) | 3828 | `"                timeout=self._effective_timeout(min(self.timeout, 10)),"` | — |
-| [SRC-1AE03B9EC3-L003829](../../agents/web_agent.py#L3829) | 3829 | `"                model=self.planner_model,"` | — |
-| [SRC-1AE03B9EC3-L003830](../../agents/web_agent.py#L3830) | 3830 | `"                enable_web_search=False,"` | — |
-| [SRC-1AE03B9EC3-L003831](../../agents/web_agent.py#L3831) | 3831 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003832](../../agents/web_agent.py#L3832) | 3832 | `"            start = raw.find(\"{\")"` | — |
-| [SRC-1AE03B9EC3-L003833](../../agents/web_agent.py#L3833) | 3833 | `"            end = raw.rfind(\"}\")"` | — |

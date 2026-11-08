@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000332 إلى SRC-90FAA34ADE-L000014
+- النطاق: SRC-4FFD5AFC54-L000321 إلى SRC-90FAA34ADE-L000003
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000321](../../scripts/run_answer_quality_benchmark.py#L321) | 321 | `"        if allowed_origin != origin:"` | — |
+| [SRC-4FFD5AFC54-L000322](../../scripts/run_answer_quality_benchmark.py#L322) | 322 | `"            raise ValueError("` | — |
+| [SRC-4FFD5AFC54-L000323](../../scripts/run_answer_quality_benchmark.py#L323) | 323 | `"                \"Refusing to send the bearer token: base URL does not match \""` | — |
+| [SRC-4FFD5AFC54-L000324](../../scripts/run_answer_quality_benchmark.py#L324) | 324 | `"                \"OMARAI_BENCHMARK_ALLOWED_ORIGIN.\""` | — |
+| [SRC-4FFD5AFC54-L000325](../../scripts/run_answer_quality_benchmark.py#L325) | 325 | `"            )"` | — |
+| [SRC-4FFD5AFC54-L000326](../../scripts/run_answer_quality_benchmark.py#L326) | 326 | `"    return origin"` | — |
+| [SRC-4FFD5AFC54-L000327](../../scripts/run_answer_quality_benchmark.py#L327) | 327 | `""` | — |
+| [SRC-4FFD5AFC54-L000328](../../scripts/run_answer_quality_benchmark.py#L328) | 328 | `""` | — |
+| [SRC-4FFD5AFC54-L000329](../../scripts/run_answer_quality_benchmark.py#L329) | 329 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
+| [SRC-4FFD5AFC54-L000330](../../scripts/run_answer_quality_benchmark.py#L330) | 330 | `"    \"\"\"Do not follow redirects; the bearer token must never move to another origin.\"\"\""` | — |
+| [SRC-4FFD5AFC54-L000331](../../scripts/run_answer_quality_benchmark.py#L331) | 331 | `""` | — |
 | [SRC-4FFD5AFC54-L000332](../../scripts/run_answer_quality_benchmark.py#L332) | 332 | `"    def redirect_request(self, req, fp, code, msg, headers, newurl):"` | — |
 | [SRC-4FFD5AFC54-L000333](../../scripts/run_answer_quality_benchmark.py#L333) | 333 | `"        return None"` | — |
 | [SRC-4FFD5AFC54-L000334](../../scripts/run_answer_quality_benchmark.py#L334) | 334 | `""` | — |
@@ -832,14 +843,3 @@
 | [SRC-90FAA34ADE-L000001](../../tests/fixtures/answer_quality_cases.json#L1) | 1 | `"{"` | — |
 | [SRC-90FAA34ADE-L000002](../../tests/fixtures/answer_quality_cases.json#L2) | 2 | `"  \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
 | [SRC-90FAA34ADE-L000003](../../tests/fixtures/answer_quality_cases.json#L3) | 3 | `"  \"version\": \"1.0.0\","` | — |
-| [SRC-90FAA34ADE-L000004](../../tests/fixtures/answer_quality_cases.json#L4) | 4 | `"  \"base_commit_reference\": \"ac05f4777f140694b285c5364e6c3875fdecdae6\","` | — |
-| [SRC-90FAA34ADE-L000005](../../tests/fixtures/answer_quality_cases.json#L5) | 5 | `"  \"description\": \"Offline adversarial corpus for Omarai answer quality, strategy selection, evidence fidelity, uncertainty, and safety. Structural validation does not grade Omarai's actual answers.\","` | — |
-| [SRC-90FAA34ADE-L000006](../../tests/fixtures/answer_quality_cases.json#L6) | 6 | `"  \"allowed_strategies\": ["` | — |
-| [SRC-90FAA34ADE-L000007](../../tests/fixtures/answer_quality_cases.json#L7) | 7 | `"    \"local\","` | — |
-| [SRC-90FAA34ADE-L000008](../../tests/fixtures/answer_quality_cases.json#L8) | 8 | `"    \"model_no_search\","` | — |
-| [SRC-90FAA34ADE-L000009](../../tests/fixtures/answer_quality_cases.json#L9) | 9 | `"    \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000010](../../tests/fixtures/answer_quality_cases.json#L10) | 10 | `"    \"clarify\""` | — |
-| [SRC-90FAA34ADE-L000011](../../tests/fixtures/answer_quality_cases.json#L11) | 11 | `"  ],"` | — |
-| [SRC-90FAA34ADE-L000012](../../tests/fixtures/answer_quality_cases.json#L12) | 12 | `"  \"allowed_evaluation_modes\": ["` | — |
-| [SRC-90FAA34ADE-L000013](../../tests/fixtures/answer_quality_cases.json#L13) | 13 | `"    \"deterministic_structure\","` | — |
-| [SRC-90FAA34ADE-L000014](../../tests/fixtures/answer_quality_cases.json#L14) | 14 | `"    \"fixture_assisted\","` | — |

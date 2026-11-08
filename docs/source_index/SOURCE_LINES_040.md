@@ -4,7 +4,7 @@
 
 - الصفحة: **040**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L000815 إلى SRC-CAC5F305FE-L000028
+- النطاق: SRC-90FAA34ADE-L000804 إلى SRC-CAC5F305FE-L000017
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L000804](../../tests/fixtures/answer_quality_cases.json#L804) | 804 | `"    {"` | — |
+| [SRC-90FAA34ADE-L000805](../../tests/fixtures/answer_quality_cases.json#L805) | 805 | `"      \"case_id\": \"AQ-028\","` | — |
+| [SRC-90FAA34ADE-L000806](../../tests/fixtures/answer_quality_cases.json#L806) | 806 | `"      \"category\": \"incomplete_answer\","` | — |
+| [SRC-90FAA34ADE-L000807](../../tests/fixtures/answer_quality_cases.json#L807) | 807 | `"      \"language\": \"ar-EG\","` | — |
+| [SRC-90FAA34ADE-L000808](../../tests/fixtures/answer_quality_cases.json#L808) | 808 | `"      \"question\": \"رد على الأربع نقاط دول كل واحدة لوحدها: التكلفة، مدة التنفيذ، المخاطر، وإزاي أتحقق من المصدر.\","` | — |
+| [SRC-90FAA34ADE-L000809](../../tests/fixtures/answer_quality_cases.json#L809) | 809 | `"      \"expected_strategy\": \"clarify\","` | — |
+| [SRC-90FAA34ADE-L000810](../../tests/fixtures/answer_quality_cases.json#L810) | 810 | `"      \"required_behaviors\": ["` | — |
+| [SRC-90FAA34ADE-L000811](../../tests/fixtures/answer_quality_cases.json#L811) | 811 | `"        \"يسأل عن المشروع أو الخدمة المقصودة قبل تقديم أرقام\","` | — |
+| [SRC-90FAA34ADE-L000812](../../tests/fixtures/answer_quality_cases.json#L812) | 812 | `"        \"يبيّن أن العناصر الأربعة ستُجاب منفصلة بعد تحديد الموضوع\","` | — |
+| [SRC-90FAA34ADE-L000813](../../tests/fixtures/answer_quality_cases.json#L813) | 813 | `"        \"لا يتجاهل أي عنصر من العناصر الأربعة\""` | — |
+| [SRC-90FAA34ADE-L000814](../../tests/fixtures/answer_quality_cases.json#L814) | 814 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L000815](../../tests/fixtures/answer_quality_cases.json#L815) | 815 | `"      \"forbidden_behaviors\": ["` | — |
 | [SRC-90FAA34ADE-L000816](../../tests/fixtures/answer_quality_cases.json#L816) | 816 | `"        \"يخترع تكلفة ومدة دون معرفة الخدمة\","` | — |
 | [SRC-90FAA34ADE-L000817](../../tests/fixtures/answer_quality_cases.json#L817) | 817 | `"        \"يجيب عن نقطة واحدة ويصف الإجابة بأنها كاملة\""` | — |
@@ -823,14 +834,3 @@
 | [SRC-CAC5F305FE-L000015](../../tests/test_agent_modes.py#L15) | 15 | `"            \"direct_urls\": [],"` | — |
 | [SRC-CAC5F305FE-L000016](../../tests/test_agent_modes.py#L16) | 16 | `"            \"social_focus\": False,"` | — |
 | [SRC-CAC5F305FE-L000017](../../tests/test_agent_modes.py#L17) | 17 | `"            \"freshness\": \"any\","` | — |
-| [SRC-CAC5F305FE-L000018](../../tests/test_agent_modes.py#L18) | 18 | `"            \"depth\": \"standard\","` | — |
-| [SRC-CAC5F305FE-L000019](../../tests/test_agent_modes.py#L19) | 19 | `"            \"platforms\": [],"` | — |
-| [SRC-CAC5F305FE-L000020](../../tests/test_agent_modes.py#L20) | 20 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-CAC5F305FE-L000021](../../tests/test_agent_modes.py#L21) | 21 | `"        }"` | — |
-| [SRC-CAC5F305FE-L000022](../../tests/test_agent_modes.py#L22) | 22 | `""` | — |
-| [SRC-CAC5F305FE-L000023](../../tests/test_agent_modes.py#L23) | 23 | `"    source = {"` | — |
-| [SRC-CAC5F305FE-L000024](../../tests/test_agent_modes.py#L24) | 24 | `"        \"title\": \"Topic summary public report\","` | — |
-| [SRC-CAC5F305FE-L000025](../../tests/test_agent_modes.py#L25) | 25 | `"        \"url\": \"https://example.org/report\","` | — |
-| [SRC-CAC5F305FE-L000026](../../tests/test_agent_modes.py#L26) | 26 | `"        \"snippet\": \"Evidence snippet about topic summary\","` | — |
-| [SRC-CAC5F305FE-L000027](../../tests/test_agent_modes.py#L27) | 27 | `"        \"page_text\": \"Fetched text about topic summary\","` | — |
-| [SRC-CAC5F305FE-L000028](../../tests/test_agent_modes.py#L28) | 28 | `"        \"page_fetched\": True,"` | — |

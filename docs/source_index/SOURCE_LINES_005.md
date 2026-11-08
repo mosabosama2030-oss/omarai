@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000753 إلى SRC-3D565C3B85-L000018
+- النطاق: SRC-C9CF9B54F8-L000742 إلى SRC-3D565C3B85-L000007
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000742](../../agents/omarai.py#L742) | 742 | `"        shared_token: str = \"\","` | — |
+| [SRC-C9CF9B54F8-L000743](../../agents/omarai.py#L743) | 743 | `"        max_age_seconds: int = 8 * 60 * 60,"` | — |
+| [SRC-C9CF9B54F8-L000744](../../agents/omarai.py#L744) | 744 | `"    ) -> tuple[str, dict] \| None:"` | — |
+| [SRC-C9CF9B54F8-L000745](../../agents/omarai.py#L745) | 745 | `"        \"\"\"Exchange a valid API credential for a short-lived opaque browser session.\"\"\""` | — |
+| [SRC-C9CF9B54F8-L000746](../../agents/omarai.py#L746) | 746 | `"        if not isinstance(access_token, str) or len(access_token.strip()) < 32:"` | — |
+| [SRC-C9CF9B54F8-L000747](../../agents/omarai.py#L747) | 747 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000748](../../agents/omarai.py#L748) | 748 | `"        token = access_token.strip()"` | — |
+| [SRC-C9CF9B54F8-L000749](../../agents/omarai.py#L749) | 749 | `"        is_shared = bool(shared_token and hmac.compare_digest(token, shared_token))"` | — |
+| [SRC-C9CF9B54F8-L000750](../../agents/omarai.py#L750) | 750 | `"        principal = self.default_principal() if is_shared else self.resolve_api_token(token)"` | — |
+| [SRC-C9CF9B54F8-L000751](../../agents/omarai.py#L751) | 751 | `"        if not principal:"` | — |
+| [SRC-C9CF9B54F8-L000752](../../agents/omarai.py#L752) | 752 | `"            return None"` | — |
 | [SRC-C9CF9B54F8-L000753](../../agents/omarai.py#L753) | 753 | `"        if ("` | — |
 | [SRC-C9CF9B54F8-L000754](../../agents/omarai.py#L754) | 754 | `"            not isinstance(max_age_seconds, int)"` | — |
 | [SRC-C9CF9B54F8-L000755](../../agents/omarai.py#L755) | 755 | `"            or isinstance(max_age_seconds, bool)"` | — |
@@ -823,14 +834,3 @@
 | [SRC-3D565C3B85-L000005](../../agents/requirement_evidence.py#L5) | 5 | `"claims source entailment, semantic support, or factual correctness."` | — |
 | [SRC-3D565C3B85-L000006](../../agents/requirement_evidence.py#L6) | 6 | `""` | — |
 | [SRC-3D565C3B85-L000007](../../agents/requirement_evidence.py#L7) | 7 | `"Public contract: build_requirement_evidence_ledger(targets, sources, requirement_queries)"` | — |
-| [SRC-3D565C3B85-L000008](../../agents/requirement_evidence.py#L8) | 8 | `"returns one bounded record per target, with source indexes, evidence basis, and a status."` | — |
-| [SRC-3D565C3B85-L000009](../../agents/requirement_evidence.py#L9) | 9 | `"Dependencies point only to shared text normalization; no network or model calls occur."` | — |
-| [SRC-3D565C3B85-L000010](../../agents/requirement_evidence.py#L10) | 10 | `"\"\"\""` | — |
-| [SRC-3D565C3B85-L000011](../../agents/requirement_evidence.py#L11) | 11 | `"from __future__ import annotations"` | — |
-| [SRC-3D565C3B85-L000012](../../agents/requirement_evidence.py#L12) | 12 | `""` | — |
-| [SRC-3D565C3B85-L000013](../../agents/requirement_evidence.py#L13) | 13 | `"import re"` | — |
-| [SRC-3D565C3B85-L000014](../../agents/requirement_evidence.py#L14) | 14 | `"from typing import Any"` | — |
-| [SRC-3D565C3B85-L000015](../../agents/requirement_evidence.py#L15) | 15 | `""` | — |
-| [SRC-3D565C3B85-L000016](../../agents/requirement_evidence.py#L16) | 16 | `"from agents.text_normalization import normalize_text, tokenize_text"` | — |
-| [SRC-3D565C3B85-L000017](../../agents/requirement_evidence.py#L17) | 17 | `""` | — |
-| [SRC-3D565C3B85-L000018](../../agents/requirement_evidence.py#L18) | 18 | `"_REQUIREMENT_ALIAS_GROUPS = ("` | — |
