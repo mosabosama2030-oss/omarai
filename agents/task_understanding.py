@@ -529,7 +529,11 @@ def build_task_spec(
     explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))
     current_required = (clean_mode == "latest" or explicit_freshness) and not navigation
     social_required = clean_mode == "social" or bool(matches["social_opinions"])
-    family = _primary_family(matches, clean_mode, intent_route, normalized)
+    family = (
+        "lead_generation"
+        if intent_route == "LEAD_GENERATION"
+        else _primary_family(matches, clean_mode, intent_route, normalized)
+    )
 
     if family == "official_site_lookup":
         evidence_requirements = [
@@ -1050,17 +1054,6 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} risks dependencies feasibility", "feasibility_and_dependencies", "test assumptions, dependencies, and likely blockers"),
             (f"{topic} alternative plan fallback", "alternatives_and_fallback", "seek alternatives and fallback approaches"),
         ])
-    normalized_topic = normalize_text(topic)
-    property_topic = any(
-        cue in normalized_topic
-        for cue in ("شقه", "شقق", "عقار", "عقارات", "عقاري", "real estate", "apartment", "property")
-    )
-    if family == "find_or_discover" and property_topic:
-        candidates.extend([
-            (f"{topic} إعلانات عقارية", "property_listings", "discover relevant listings without treating ads as independent price evidence"),
-            (f"{topic} متوسط أسعار السوق للمتر", "property_market_price_per_meter", "compare asking prices against market-level context"),
-            (f"{topic} أسعار البيع الفعلية والتقييم العقاري", "property_transaction_price_check", "distinguish asking prices from completed transaction prices"),
-        ])
     if (
         family in {"general_research", "web_research", "find_or_discover"}
         and (
@@ -1227,7 +1220,11 @@ def build_query_strategy_matrix(
         spec.get("task_family") == "compare"
         and len(explicit_aspects) >= maximum
     )
-    if queries and not reserve_all_slots_for_criteria:
+    if (
+        queries
+        and spec.get("task_family") != "lead_generation"
+        and not reserve_all_slots_for_criteria
+    ):
         seed = queries[0]
         strategy, rationale = (
             _label_existing_query(seed, 0, spec)
@@ -1250,6 +1247,21 @@ def build_query_strategy_matrix(
         )
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
+        return rows
+
+    # A lead-generation task must preserve the supplied product-anchored queries
+    # in purchaser language. General research angles (reports, risks, listings)
+    # are not substitutes for direct buyer-intent discovery.
+    if spec.get("task_family") == "lead_generation":
+        for query in queries:
+            add(
+                query,
+                "buyer_intent",
+                "product-anchored purchaser-language query",
+                enforce_topic=False,
+            )
+            if len(rows) >= maximum:
+                break
         return rows
 
     candidates = _generated_strategy_candidates(base, spec_for_candidates)

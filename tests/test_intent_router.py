@@ -45,6 +45,16 @@ def test_lead_generation_and_summarization_routes(question: str, expected: str) 
     assert decision["reason"]
 
 
+@pytest.mark.parametrize("mode", ["deep", "latest", "social"])
+def test_explicit_buyer_discovery_intent_survives_selected_research_mode(mode: str) -> None:
+    question = "ابحث عن عميل يريد شراء نظام إنذار حريق صناعي في مصر"
+    decision = route_intent(question, mode=mode)
+
+    assert decision["route"] == "LEAD_GENERATION"
+    assert decision["needs_clarification"] is False
+    assert decision["reason"] == "explicit_buyer_discovery_with_selected_research_mode"
+
+
 def test_generic_explanation_of_lead_generation_is_not_a_lead_search() -> None:
     assert route_intent("What is lead generation?")["route"] == "MODEL_ONLY"
     assert route_intent("Create a prospect list for apartment buyers")["route"] == "LEAD_GENERATION"
