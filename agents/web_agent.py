@@ -1046,7 +1046,7 @@ class WebAgent:
             status_code = None
 
         if status_code is None:
-            status_match = re.search(r"(?i)\\bHTTP\\s+(\\d{3})\\b", str(exc))
+            status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
             if status_match:
                 status_code = int(status_match.group(1))
 
