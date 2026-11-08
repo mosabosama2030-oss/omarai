@@ -1173,13 +1173,13 @@ def build_query_strategy_matrix(
         candidate = _collapse_repeated_query_phrases(
             _SPACE.sub(" ", candidate).strip()
         )
-        # Carry explicit/inherited geography into every search candidate. Budgets
-        # constrain commercial discovery/recommendation tasks, not unrelated topics.
-        scope_terms: list[str] = []
+        # Preserve explicit geography, commercial bounds, and material semantic slots
+        # from a validated follow-up. Never inherit them after a topic shift or clarification.
+        scope_terms: list[tuple[str, str]] = []
         raw_locations = constraints.get("explicit_locations")
         if isinstance(raw_locations, list):
             scope_terms.extend(
-                item.strip() for item in raw_locations[:5]
+                (item.strip(), "location") for item in raw_locations[:5]
                 if isinstance(item, str) and item.strip()
             )
         budget_scoped_families = {
@@ -1191,12 +1191,46 @@ def build_query_strategy_matrix(
             and isinstance(raw_budgets, list)
         ):
             scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
+                (item.strip(), "budget") for item in raw_budgets[:3]
                 if isinstance(item, str) and item.strip()
             )
-        # Detect scope only after the initial provider-query length bound. Otherwise
-        # a location/budget found beyond character 240 can be mistaken as retained,
-        # then silently removed by the final truncation below.
+
+        context_resolution = (
+            spec.get("context_resolution")
+            if isinstance(spec.get("context_resolution"), dict) else {}
+        )
+        context_slots = (
+            context_resolution.get("slots")
+            if isinstance(context_resolution.get("slots"), dict) else {}
+        )
+        if (
+            context_resolution.get("is_follow_up") is True
+            and context_resolution.get("topic_shift") is not True
+            and context_resolution.get("needs_clarification") is not True
+        ):
+            for slot_key in ("product", "model", "version", "variant", "capacity", "aspect"):
+                slot_value = context_slots.get(slot_key)
+                if isinstance(slot_value, str) and slot_value.strip():
+                    scope_terms.append((slot_value.strip(), slot_key))
+            changed_slots = set(context_resolution.get("changed_slots") or [])
+            resolved_context_question = str(context_resolution.get("resolved_question") or "")
+            price_context = bool(re.search(
+                r"(?:سعر|اسعار|ثمن|تكلفه|price|pricing|cost)",
+                normalize_text(resolved_context_question),
+            ))
+            if "currency" in changed_slots or price_context or spec.get("task_family") in {
+                "compare", "recommendation", "find_or_discover"
+            }:
+                currency = context_slots.get("currency")
+                if isinstance(currency, str) and currency.strip():
+                    scope_terms.append((currency.strip(), "currency"))
+            if "time_range" in changed_slots or constraints.get("time_sensitive_request"):
+                time_range = context_slots.get("time_range")
+                if isinstance(time_range, str) and time_range.strip():
+                    scope_terms.append((time_range.strip(), "time_range"))
+
+        # Bound the seed before matching aliases; otherwise a scope term beyond the
+        # provider query limit could be mistaken for a retained constraint.
         candidate = candidate[:240]
         normalized_candidate = normalize_text(candidate)
         location_aliases = {
@@ -1211,24 +1245,72 @@ def build_query_strategy_matrix(
             normalize_text("المملكة المتحدة"): ("المملكة المتحدة", "united kingdom", "the uk"),
             normalize_text("الولايات المتحدة"): ("الولايات المتحدة", "united states", "the us"),
         }
-        missing_scope_terms: list[str] = []
-        for scope_term in scope_terms:
-            normalized_scope = normalize_text(scope_term)
-            aliases = location_aliases.get(normalized_scope, (scope_term,))
-            location_already_present = any(
+        slot_aliases = {
+            "currency": {
+                normalize_text("اليورو"): ("اليورو", "يورو", "eur", "euro", "euros"),
+                normalize_text("الدولار"): ("الدولار", "دولار", "usd", "us dollar", "dollar", "dollars"),
+                normalize_text("الجنيه المصري"): ("الجنيه المصري", "جنيه مصري", "egp", "egyptian pound", "egyptian pounds"),
+                normalize_text("الريال السعودي"): ("الريال السعودي", "ريال سعودي", "sar", "saudi riyal"),
+                normalize_text("الدرهم الإماراتي"): ("الدرهم الإماراتي", "درهم إماراتي", "aed", "uae dirham"),
+            },
+            "aspect": {
+                normalize_text("الضمان"): ("الضمان", "ضمان", "warranty", "guarantee"),
+                normalize_text("التقييمات"): ("التقييمات", "التقييم", "reviews", "ratings", "review"),
+                normalize_text("المراجعات"): ("المراجعات", "مراجعات", "reviews", "ratings"),
+                normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
+                normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
+            },
+        }
+
+        def scope_already_present(term: str, slot_key: str) -> bool:
+            normalized_scope = normalize_text(term)
+            if not normalized_scope:
+                return True
+            aliases = (
+                location_aliases.get(normalized_scope, (term,))
+                if slot_key == "location"
+                else slot_aliases.get(slot_key, {}).get(normalized_scope, (term,))
+            )
+            if any(
                 re.search(
                     rf"(?<!\w){re.escape(normalize_text(alias))}(?!\w)",
                     normalized_candidate,
                 )
                 for alias in aliases
                 if normalize_text(alias)
-            )
-            if normalized_scope and normalized_scope not in normalized_candidate and not location_already_present:
+            ):
+                return True
+            if slot_key == "capacity":
+                scope_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalize_text(term))
+                }
+                query_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_candidate)
+                }
+                if scope_numbers & query_numbers:
+                    capacity_units = (
+                        "gb", "gigabyte", "gigabytes", "جيجا", "جيجابايت",
+                        "tb", "terabyte", "terabytes", "تيرا", "تيرابايت",
+                    )
+                    if any(normalize_text(unit) in normalized_candidate for unit in capacity_units):
+                        return True
+            return False
+
+        missing_scope_terms: list[str] = []
+        seen_scope_terms: set[str] = set()
+        for scope_term, slot_key in scope_terms:
+            normalized_scope = normalize_text(scope_term)
+            if not normalized_scope or normalized_scope in seen_scope_terms:
+                continue
+            seen_scope_terms.add(normalized_scope)
+            if not scope_already_present(scope_term, slot_key):
                 missing_scope_terms.append(scope_term)
 
         if missing_scope_terms:
-            # Never append scope and then slice it away. Reserve query length for
-            # the location/budget suffix first, trimming only redundant topic tail.
+            # Reserve room for the constraint suffix. Keep the query's topic and
+            # strategy angle instead of blindly cutting its final words.
             selected_scope_terms: list[str] = []
             for term in missing_scope_terms:
                 candidate_terms = [*selected_scope_terms, term]
@@ -1237,16 +1319,13 @@ def build_query_strategy_matrix(
             scope_suffix = " ".join(selected_scope_terms)
             max_topic_chars = max(60, 239 - len(scope_suffix))
             if len(candidate) > max_topic_chars:
-                # Preserve both the topic/entity prefix and the strategy-specific
-                # query ending. Cutting only from the right erased the query angle,
-                # causing distinct candidates to collapse to the same 240-char key.
                 tail_chars = min(72, max(24, max_topic_chars // 3))
                 head_chars = max(40, max_topic_chars - tail_chars - 1)
                 head = candidate[:head_chars].rsplit(" ", 1)[0].strip()
                 tail = candidate[-tail_chars:].strip()
                 candidate = _SPACE.sub(" ", f"{head} {tail}").strip()
             candidate = _SPACE.sub(" ", f"{candidate} {scope_suffix}").strip()
-        candidate = candidate[:240]
+                candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
