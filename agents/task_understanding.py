@@ -20,6 +20,15 @@ TASK_CONTEXT_SLOT_KEYS = frozenset({
     "entity", "goal", "language", "location", "model", "platform", "product",
     "time_range", "variant", "version",
 })
+_LOCATION_QUERY_ALIASES = {
+    normalize_text("مصر"): ("egypt", "egyptian"),
+    normalize_text("القاهرة"): ("cairo",),
+    normalize_text("الإسكندرية"): ("alexandria",),
+    normalize_text("السعودية"): ("saudi arabia", "ksa"),
+    normalize_text("الإمارات"): ("uae", "united arab emirates"),
+    normalize_text("المملكة المتحدة"): ("united kingdom", "great britain", "uk"),
+    normalize_text("الولايات المتحدة"): ("united states", "usa", "u s"),
+}
 
 # Closed, code-owned playbooks. The model receives concise task guidance derived
 # from these IDs; arbitrary planner/source text cannot add executable instructions.
