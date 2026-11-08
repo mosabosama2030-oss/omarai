@@ -3386,10 +3386,11 @@ class WebAgent:
                 useful[name] = useful.get(name, 0) + 1
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
                     "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
-                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "http_error": 9,
-                    "timeout": 10, "failed": 11, "error": 11}
+                    "unknown": 6, "blocked": 7, "rate_limited": 8, "unauthorized": 9,
+                    "invalid_response": 10, "http_error": 10, "timeout": 11,
+                    "failed": 12, "error": 12}
         confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
-            "http_error", "unauthorized", "rate_limited", "invalid_response"
+            "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
         }
         uncertain_attempt_statuses = {"timeout", "failed", "error", "unknown", "inconclusive"}
 
@@ -3415,7 +3416,9 @@ class WebAgent:
             else:
                 attempted = False
             successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
-            error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
+            error_response_statuses = set(statuses) & {
+                "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
+            }
             uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
             available: bool | None = (
@@ -3483,7 +3486,13 @@ class WebAgent:
             "scope": "this_request_only",
             "semantics": "result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.",
             "attempted_count": sum(bool(item["attempted"]) for item in connectors),
-            "failed_count": sum(item["status"] in {"failed", "error", "timeout", "http_error", "unauthorized", "rate_limited"} for item in connectors),
+            "failed_count": sum(
+                item["status"] in {
+                    "failed", "error", "timeout", "blocked", "http_error",
+                    "unauthorized", "rate_limited", "invalid_response",
+                }
+                for item in connectors
+            ),
             "connectors": connectors[:24],
         }
 
