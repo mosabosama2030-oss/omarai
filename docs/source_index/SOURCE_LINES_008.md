@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000130 إلى SRC-8D00DCEC0D-L000411
+- النطاق: SRC-3AA6165B18-L000069 إلى SRC-8D00DCEC0D-L000350
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000069](../../agents/research_guardrails.py#L69) | 69 | `""` | — |
+| [SRC-3AA6165B18-L000070](../../agents/research_guardrails.py#L70) | 70 | `"def _host(value: Any) -> str:"` | — |
+| [SRC-3AA6165B18-L000071](../../agents/research_guardrails.py#L71) | 71 | `"    try:"` | — |
+| [SRC-3AA6165B18-L000072](../../agents/research_guardrails.py#L72) | 72 | `"        return (urlsplit(str(value or \"\").strip()).hostname or \"\").rstrip(\".\").lower()"` | — |
+| [SRC-3AA6165B18-L000073](../../agents/research_guardrails.py#L73) | 73 | `"    except (TypeError, ValueError):"` | — |
+| [SRC-3AA6165B18-L000074](../../agents/research_guardrails.py#L74) | 74 | `"        return \"\""` | — |
+| [SRC-3AA6165B18-L000075](../../agents/research_guardrails.py#L75) | 75 | `""` | — |
+| [SRC-3AA6165B18-L000076](../../agents/research_guardrails.py#L76) | 76 | `""` | — |
+| [SRC-3AA6165B18-L000077](../../agents/research_guardrails.py#L77) | 77 | `"def is_social_platform_url(url: Any) -> bool:"` | — |
+| [SRC-3AA6165B18-L000078](../../agents/research_guardrails.py#L78) | 78 | `"    \"\"\"Return whether a URL belongs to a recognized public social platform.\"\"\""` | — |
+| [SRC-3AA6165B18-L000079](../../agents/research_guardrails.py#L79) | 79 | `"    host = _host(url)"` | — |
+| [SRC-3AA6165B18-L000080](../../agents/research_guardrails.py#L80) | 80 | `"    if not host:"` | — |
+| [SRC-3AA6165B18-L000081](../../agents/research_guardrails.py#L81) | 81 | `"        return False"` | — |
+| [SRC-3AA6165B18-L000082](../../agents/research_guardrails.py#L82) | 82 | `"    return any(host == domain or host.endswith(\".\" + domain)"` | — |
+| [SRC-3AA6165B18-L000083](../../agents/research_guardrails.py#L83) | 83 | `"               for domain in SOCIAL_DOMAINS.values())"` | — |
+| [SRC-3AA6165B18-L000084](../../agents/research_guardrails.py#L84) | 84 | `""` | — |
+| [SRC-3AA6165B18-L000085](../../agents/research_guardrails.py#L85) | 85 | `""` | — |
+| [SRC-3AA6165B18-L000086](../../agents/research_guardrails.py#L86) | 86 | `"def _is_navigation_request(question: str) -> bool:"` | — |
+| [SRC-3AA6165B18-L000087](../../agents/research_guardrails.py#L87) | 87 | `"    value = _normalized(question)"` | — |
+| [SRC-3AA6165B18-L000088](../../agents/research_guardrails.py#L88) | 88 | `"    return any(term in value for term in ("` | — |
+| [SRC-3AA6165B18-L000089](../../agents/research_guardrails.py#L89) | 89 | `"        \"موقع\", \"رابط\", \"لينك\", \"homepage\", \"website\", \"official site\","` | — |
+| [SRC-3AA6165B18-L000090](../../agents/research_guardrails.py#L90) | 90 | `"        \"official website\", \"link to\","` | — |
+| [SRC-3AA6165B18-L000091](../../agents/research_guardrails.py#L91) | 91 | `"    ))"` | — |
+| [SRC-3AA6165B18-L000092](../../agents/research_guardrails.py#L92) | 92 | `""` | — |
+| [SRC-3AA6165B18-L000093](../../agents/research_guardrails.py#L93) | 93 | `""` | — |
+| [SRC-3AA6165B18-L000094](../../agents/research_guardrails.py#L94) | 94 | `"def requires_official_government_domain(question: str) -> bool:"` | — |
+| [SRC-3AA6165B18-L000095](../../agents/research_guardrails.py#L95) | 95 | `"    \"\"\"Detect explicit requests for a government's official site, not articles about it.\"\"\""` | — |
+| [SRC-3AA6165B18-L000096](../../agents/research_guardrails.py#L96) | 96 | `"    value = _normalized(question)"` | — |
+| [SRC-3AA6165B18-L000097](../../agents/research_guardrails.py#L97) | 97 | `"    return ("` | — |
+| [SRC-3AA6165B18-L000098](../../agents/research_guardrails.py#L98) | 98 | `"        any(term in value for term in _OFFICIAL_WORDS)"` | — |
+| [SRC-3AA6165B18-L000099](../../agents/research_guardrails.py#L99) | 99 | `"        and any(term in value for term in _GOVERNMENT_ENTITY_WORDS)"` | — |
+| [SRC-3AA6165B18-L000100](../../agents/research_guardrails.py#L100) | 100 | `"    )"` | — |
+| [SRC-3AA6165B18-L000101](../../agents/research_guardrails.py#L101) | 101 | `""` | — |
+| [SRC-3AA6165B18-L000102](../../agents/research_guardrails.py#L102) | 102 | `""` | — |
+| [SRC-3AA6165B18-L000103](../../agents/research_guardrails.py#L103) | 103 | `"def _is_government_domain(url: Any) -> bool:"` | — |
+| [SRC-3AA6165B18-L000104](../../agents/research_guardrails.py#L104) | 104 | `"    host = _host(url)"` | — |
+| [SRC-3AA6165B18-L000105](../../agents/research_guardrails.py#L105) | 105 | `"    if not host:"` | — |
+| [SRC-3AA6165B18-L000106](../../agents/research_guardrails.py#L106) | 106 | `"        return False"` | — |
+| [SRC-3AA6165B18-L000107](../../agents/research_guardrails.py#L107) | 107 | `"    return any(host == suffix.lstrip(\".\") or host.endswith(suffix)"` | — |
+| [SRC-3AA6165B18-L000108](../../agents/research_guardrails.py#L108) | 108 | `"               for suffix in _GOVERNMENT_SUFFIXES)"` | — |
+| [SRC-3AA6165B18-L000109](../../agents/research_guardrails.py#L109) | 109 | `""` | — |
+| [SRC-3AA6165B18-L000110](../../agents/research_guardrails.py#L110) | 110 | `""` | — |
+| [SRC-3AA6165B18-L000111](../../agents/research_guardrails.py#L111) | 111 | `"def requires_official_current_government_source(question: str) -> bool:"` | — |
+| [SRC-3AA6165B18-L000112](../../agents/research_guardrails.py#L112) | 112 | `"    \"\"\"Require an official-domain candidate for current government service hours.\"\"\""` | — |
+| [SRC-3AA6165B18-L000113](../../agents/research_guardrails.py#L113) | 113 | `"    value = _normalized(question)"` | — |
+| [SRC-3AA6165B18-L000114](../../agents/research_guardrails.py#L114) | 114 | `"    has_service = any("` | — |
+| [SRC-3AA6165B18-L000115](../../agents/research_guardrails.py#L115) | 115 | `"        _normalized(term) in value for term in _CURRENT_GOVERNMENT_SERVICE_TERMS"` | — |
+| [SRC-3AA6165B18-L000116](../../agents/research_guardrails.py#L116) | 116 | `"    )"` | — |
+| [SRC-3AA6165B18-L000117](../../agents/research_guardrails.py#L117) | 117 | `"    has_hours = any("` | — |
+| [SRC-3AA6165B18-L000118](../../agents/research_guardrails.py#L118) | 118 | `"        _normalized(term) in value for term in _GOVERNMENT_HOURS_TERMS"` | — |
+| [SRC-3AA6165B18-L000119](../../agents/research_guardrails.py#L119) | 119 | `"    )"` | — |
+| [SRC-3AA6165B18-L000120](../../agents/research_guardrails.py#L120) | 120 | `"    return detect_freshness(question) and has_service and has_hours"` | — |
+| [SRC-3AA6165B18-L000121](../../agents/research_guardrails.py#L121) | 121 | `""` | — |
+| [SRC-3AA6165B18-L000122](../../agents/research_guardrails.py#L122) | 122 | `""` | — |
+| [SRC-3AA6165B18-L000123](../../agents/research_guardrails.py#L123) | 123 | `"def assess_current_source("` | — |
+| [SRC-3AA6165B18-L000124](../../agents/research_guardrails.py#L124) | 124 | `"    source: dict[str, Any],"` | — |
+| [SRC-3AA6165B18-L000125](../../agents/research_guardrails.py#L125) | 125 | `"    *,"` | — |
+| [SRC-3AA6165B18-L000126](../../agents/research_guardrails.py#L126) | 126 | `"    now: datetime \| None = None,"` | — |
+| [SRC-3AA6165B18-L000127](../../agents/research_guardrails.py#L127) | 127 | `"    max_age_days: int = _CURRENT_EVIDENCE_MAX_AGE_DAYS,"` | — |
+| [SRC-3AA6165B18-L000128](../../agents/research_guardrails.py#L128) | 128 | `") -> dict[str, Any]:"` | — |
+| [SRC-3AA6165B18-L000129](../../agents/research_guardrails.py#L129) | 129 | `"    \"\"\"Assess whether a read page can support a current-state claim.\"\"\""` | — |
 | [SRC-3AA6165B18-L000130](../../agents/research_guardrails.py#L130) | 130 | `"    current = now or datetime.now(UTC)"` | — |
 | [SRC-3AA6165B18-L000131](../../agents/research_guardrails.py#L131) | 131 | `"    if current.tzinfo is None:"` | — |
 | [SRC-3AA6165B18-L000132](../../agents/research_guardrails.py#L132) | 132 | `"        current = current.replace(tzinfo=UTC)"` | — |
@@ -773,64 +834,3 @@
 | [SRC-8D00DCEC0D-L000348](../../agents/sales_domain.py#L348) | 348 | `"            for category in self.categories"` | — |
 | [SRC-8D00DCEC0D-L000349](../../agents/sales_domain.py#L349) | 349 | `"            if any(_contains_phrase(text, alias) for alias in category.aliases)"` | — |
 | [SRC-8D00DCEC0D-L000350](../../agents/sales_domain.py#L350) | 350 | `"        ]"` | — |
-| [SRC-8D00DCEC0D-L000351](../../agents/sales_domain.py#L351) | 351 | `"        return tuple(matches)"` | — |
-| [SRC-8D00DCEC0D-L000352](../../agents/sales_domain.py#L352) | 352 | `""` | — |
-| [SRC-8D00DCEC0D-L000353](../../agents/sales_domain.py#L353) | 353 | `"    def to_list(self) -> list[dict[str, list[str]]]:"` | — |
-| [SRC-8D00DCEC0D-L000354](../../agents/sales_domain.py#L354) | 354 | `"        return ["` | — |
-| [SRC-8D00DCEC0D-L000355](../../agents/sales_domain.py#L355) | 355 | `"            {\"path\": list(item.path), \"aliases\": list(item.aliases)}"` | — |
-| [SRC-8D00DCEC0D-L000356](../../agents/sales_domain.py#L356) | 356 | `"            for item in self.categories"` | — |
-| [SRC-8D00DCEC0D-L000357](../../agents/sales_domain.py#L357) | 357 | `"        ]"` | — |
-| [SRC-8D00DCEC0D-L000358](../../agents/sales_domain.py#L358) | 358 | `""` | — |
-| [SRC-8D00DCEC0D-L000359](../../agents/sales_domain.py#L359) | 359 | `""` | — |
-| [SRC-8D00DCEC0D-L000360](../../agents/sales_domain.py#L360) | 360 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-8D00DCEC0D-L000361](../../agents/sales_domain.py#L361) | 361 | `"class DemandEvidence:"` | — |
-| [SRC-8D00DCEC0D-L000362](../../agents/sales_domain.py#L362) | 362 | `"    \"\"\"Source provenance for a demand signal; dates remain distinct and optional.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000363](../../agents/sales_domain.py#L363) | 363 | `""` | — |
-| [SRC-8D00DCEC0D-L000364](../../agents/sales_domain.py#L364) | 364 | `"    source_id: str"` | — |
-| [SRC-8D00DCEC0D-L000365](../../agents/sales_domain.py#L365) | 365 | `"    source_url: str"` | — |
-| [SRC-8D00DCEC0D-L000366](../../agents/sales_domain.py#L366) | 366 | `"    excerpt: str"` | — |
-| [SRC-8D00DCEC0D-L000367](../../agents/sales_domain.py#L367) | 367 | `"    content_basis: EvidenceBasis"` | — |
-| [SRC-8D00DCEC0D-L000368](../../agents/sales_domain.py#L368) | 368 | `"    publication_date: str \| None = None"` | — |
-| [SRC-8D00DCEC0D-L000369](../../agents/sales_domain.py#L369) | 369 | `"    event_date: str \| None = None"` | — |
-| [SRC-8D00DCEC0D-L000370](../../agents/sales_domain.py#L370) | 370 | `"    observed_at: str \| None = None"` | — |
-| [SRC-8D00DCEC0D-L000371](../../agents/sales_domain.py#L371) | 371 | `"    page_read: bool = False"` | — |
-| [SRC-8D00DCEC0D-L000372](../../agents/sales_domain.py#L372) | 372 | `""` | — |
-| [SRC-8D00DCEC0D-L000373](../../agents/sales_domain.py#L373) | 373 | `"    def __post_init__(self) -> None:"` | — |
-| [SRC-8D00DCEC0D-L000374](../../agents/sales_domain.py#L374) | 374 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000375](../../agents/sales_domain.py#L375) | 375 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000376](../../agents/sales_domain.py#L376) | 376 | `"            \"source_id\","` | — |
-| [SRC-8D00DCEC0D-L000377](../../agents/sales_domain.py#L377) | 377 | `"            _clean_text(self.source_id, field_name=\"source_id\", maximum=160),"` | — |
-| [SRC-8D00DCEC0D-L000378](../../agents/sales_domain.py#L378) | 378 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000379](../../agents/sales_domain.py#L379) | 379 | `"        object.__setattr__(self, \"source_url\", _validate_http_url(self.source_url))"` | — |
-| [SRC-8D00DCEC0D-L000380](../../agents/sales_domain.py#L380) | 380 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000381](../../agents/sales_domain.py#L381) | 381 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000382](../../agents/sales_domain.py#L382) | 382 | `"            \"excerpt\","` | — |
-| [SRC-8D00DCEC0D-L000383](../../agents/sales_domain.py#L383) | 383 | `"            _clean_text(self.excerpt, field_name=\"excerpt\", maximum=MAX_TEXT_LENGTH),"` | — |
-| [SRC-8D00DCEC0D-L000384](../../agents/sales_domain.py#L384) | 384 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000385](../../agents/sales_domain.py#L385) | 385 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000386](../../agents/sales_domain.py#L386) | 386 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000387](../../agents/sales_domain.py#L387) | 387 | `"            \"content_basis\","` | — |
-| [SRC-8D00DCEC0D-L000388](../../agents/sales_domain.py#L388) | 388 | `"            _enum_value(EvidenceBasis, self.content_basis, field_name=\"content_basis\"),"` | — |
-| [SRC-8D00DCEC0D-L000389](../../agents/sales_domain.py#L389) | 389 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000390](../../agents/sales_domain.py#L390) | 390 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000391](../../agents/sales_domain.py#L391) | 391 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000392](../../agents/sales_domain.py#L392) | 392 | `"            \"publication_date\","` | — |
-| [SRC-8D00DCEC0D-L000393](../../agents/sales_domain.py#L393) | 393 | `"            _validate_optional_date(self.publication_date, field_name=\"publication_date\"),"` | — |
-| [SRC-8D00DCEC0D-L000394](../../agents/sales_domain.py#L394) | 394 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000395](../../agents/sales_domain.py#L395) | 395 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000396](../../agents/sales_domain.py#L396) | 396 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000397](../../agents/sales_domain.py#L397) | 397 | `"            \"event_date\","` | — |
-| [SRC-8D00DCEC0D-L000398](../../agents/sales_domain.py#L398) | 398 | `"            _validate_optional_date(self.event_date, field_name=\"event_date\"),"` | — |
-| [SRC-8D00DCEC0D-L000399](../../agents/sales_domain.py#L399) | 399 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000400](../../agents/sales_domain.py#L400) | 400 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000401](../../agents/sales_domain.py#L401) | 401 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000402](../../agents/sales_domain.py#L402) | 402 | `"            \"observed_at\","` | — |
-| [SRC-8D00DCEC0D-L000403](../../agents/sales_domain.py#L403) | 403 | `"            _validate_optional_datetime(self.observed_at, field_name=\"observed_at\"),"` | — |
-| [SRC-8D00DCEC0D-L000404](../../agents/sales_domain.py#L404) | 404 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000405](../../agents/sales_domain.py#L405) | 405 | `"        if not isinstance(self.page_read, bool):"` | — |
-| [SRC-8D00DCEC0D-L000406](../../agents/sales_domain.py#L406) | 406 | `"            raise TypeError(\"page_read must be a boolean\")"` | — |
-| [SRC-8D00DCEC0D-L000407](../../agents/sales_domain.py#L407) | 407 | `"        if self.content_basis == EvidenceBasis.SEARCH_SNIPPET and self.page_read:"` | — |
-| [SRC-8D00DCEC0D-L000408](../../agents/sales_domain.py#L408) | 408 | `"            raise ValueError(\"a search snippet cannot be marked as a successfully read page\")"` | — |
-| [SRC-8D00DCEC0D-L000409](../../agents/sales_domain.py#L409) | 409 | `"        if self.content_basis == EvidenceBasis.PAGE_TEXT and not self.page_read:"` | — |
-| [SRC-8D00DCEC0D-L000410](../../agents/sales_domain.py#L410) | 410 | `"            raise ValueError(\"page_text evidence requires page_read=True\")"` | — |
-| [SRC-8D00DCEC0D-L000411](../../agents/sales_domain.py#L411) | 411 | `""` | — |

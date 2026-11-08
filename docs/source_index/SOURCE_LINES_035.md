@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000210 إلى SRC-B335630551-L000085
+- النطاق: SRC-69F3587825-L000016 إلى SRC-6B9B9ABE27-L000011
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,200 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000016](../search_code.py#L16) | 16 | `"import sys"` | — |
+| [SRC-69F3587825-L000017](../search_code.py#L17) | 17 | `"from collections.abc import Sequence"` | — |
+| [SRC-69F3587825-L000018](../search_code.py#L18) | 18 | `"from dataclasses import dataclass"` | — |
+| [SRC-69F3587825-L000019](../search_code.py#L19) | 19 | `"from pathlib import Path"` | — |
+| [SRC-69F3587825-L000020](../search_code.py#L20) | 20 | `"from urllib.parse import quote"` | — |
+| [SRC-69F3587825-L000021](../search_code.py#L21) | 21 | `""` | — |
+| [SRC-69F3587825-L000022](../search_code.py#L22) | 22 | `""` | — |
+| [SRC-69F3587825-L000023](../search_code.py#L23) | 23 | `"EXCLUDED_DIRECTORIES = frozenset("` | — |
+| [SRC-69F3587825-L000024](../search_code.py#L24) | 24 | `"    {"` | — |
+| [SRC-69F3587825-L000025](../search_code.py#L25) | 25 | `"        \".git\","` | — |
+| [SRC-69F3587825-L000026](../search_code.py#L26) | 26 | `"        \".hg\","` | — |
+| [SRC-69F3587825-L000027](../search_code.py#L27) | 27 | `"        \".svn\","` | — |
+| [SRC-69F3587825-L000028](../search_code.py#L28) | 28 | `"        \".venv\","` | — |
+| [SRC-69F3587825-L000029](../search_code.py#L29) | 29 | `"        \"venv\","` | — |
+| [SRC-69F3587825-L000030](../search_code.py#L30) | 30 | `"        \"env\","` | — |
+| [SRC-69F3587825-L000031](../search_code.py#L31) | 31 | `"        \"virtualenv\","` | — |
+| [SRC-69F3587825-L000032](../search_code.py#L32) | 32 | `"        \"__pycache__\","` | — |
+| [SRC-69F3587825-L000033](../search_code.py#L33) | 33 | `"        \".pytest_cache\","` | — |
+| [SRC-69F3587825-L000034](../search_code.py#L34) | 34 | `"        \".ruff_cache\","` | — |
+| [SRC-69F3587825-L000035](../search_code.py#L35) | 35 | `"        \".mypy_cache\","` | — |
+| [SRC-69F3587825-L000036](../search_code.py#L36) | 36 | `"        \".tox\","` | — |
+| [SRC-69F3587825-L000037](../search_code.py#L37) | 37 | `"        \".nox\","` | — |
+| [SRC-69F3587825-L000038](../search_code.py#L38) | 38 | `"        \"node_modules\","` | — |
+| [SRC-69F3587825-L000039](../search_code.py#L39) | 39 | `"        \"site-packages\","` | — |
+| [SRC-69F3587825-L000040](../search_code.py#L40) | 40 | `"        \"build\","` | — |
+| [SRC-69F3587825-L000041](../search_code.py#L41) | 41 | `"        \"dist\","` | — |
+| [SRC-69F3587825-L000042](../search_code.py#L42) | 42 | `"        \".tmp\","` | — |
+| [SRC-69F3587825-L000043](../search_code.py#L43) | 43 | `"        \".idea\","` | — |
+| [SRC-69F3587825-L000044](../search_code.py#L44) | 44 | `"        \".vscode\","` | — |
+| [SRC-69F3587825-L000045](../search_code.py#L45) | 45 | `"        \".aws\","` | — |
+| [SRC-69F3587825-L000046](../search_code.py#L46) | 46 | `"        \".secrets\","` | — |
+| [SRC-69F3587825-L000047](../search_code.py#L47) | 47 | `"        \".ssh\","` | — |
+| [SRC-69F3587825-L000048](../search_code.py#L48) | 48 | `"        \"credentials\","` | — |
+| [SRC-69F3587825-L000049](../search_code.py#L49) | 49 | `"        \"secrets\","` | — |
+| [SRC-69F3587825-L000050](../search_code.py#L50) | 50 | `"    }"` | — |
+| [SRC-69F3587825-L000051](../search_code.py#L51) | 51 | `")"` | — |
+| [SRC-69F3587825-L000052](../search_code.py#L52) | 52 | `"SECRET_BASENAMES = frozenset("` | — |
+| [SRC-69F3587825-L000053](../search_code.py#L53) | 53 | `"    {"` | — |
+| [SRC-69F3587825-L000054](../search_code.py#L54) | 54 | `"        \".env\","` | — |
+| [SRC-69F3587825-L000055](../search_code.py#L55) | 55 | `"        \".env.local\","` | — |
+| [SRC-69F3587825-L000056](../search_code.py#L56) | 56 | `"        \".env.production\","` | — |
+| [SRC-69F3587825-L000057](../search_code.py#L57) | 57 | `"        \".env.staging\","` | — |
+| [SRC-69F3587825-L000058](../search_code.py#L58) | 58 | `"        \".netrc\","` | — |
+| [SRC-69F3587825-L000059](../search_code.py#L59) | 59 | `"        \".npmrc\","` | — |
+| [SRC-69F3587825-L000060](../search_code.py#L60) | 60 | `"        \".pypirc\","` | — |
+| [SRC-69F3587825-L000061](../search_code.py#L61) | 61 | `"        \"authorized_keys\","` | — |
+| [SRC-69F3587825-L000062](../search_code.py#L62) | 62 | `"        \"client_secret.json\","` | — |
+| [SRC-69F3587825-L000063](../search_code.py#L63) | 63 | `"        \"client_secrets.json\","` | — |
+| [SRC-69F3587825-L000064](../search_code.py#L64) | 64 | `"        \"credentials\","` | — |
+| [SRC-69F3587825-L000065](../search_code.py#L65) | 65 | `"        \"credentials.json\","` | — |
+| [SRC-69F3587825-L000066](../search_code.py#L66) | 66 | `"        \"credentials.yaml\","` | — |
+| [SRC-69F3587825-L000067](../search_code.py#L67) | 67 | `"        \"credentials.yml\","` | — |
+| [SRC-69F3587825-L000068](../search_code.py#L68) | 68 | `"        \"id_dsa\","` | — |
+| [SRC-69F3587825-L000069](../search_code.py#L69) | 69 | `"        \"id_ecdsa\","` | — |
+| [SRC-69F3587825-L000070](../search_code.py#L70) | 70 | `"        \"id_ed25519\","` | — |
+| [SRC-69F3587825-L000071](../search_code.py#L71) | 71 | `"        \"id_rsa\","` | — |
+| [SRC-69F3587825-L000072](../search_code.py#L72) | 72 | `"        \"secrets.json\","` | — |
+| [SRC-69F3587825-L000073](../search_code.py#L73) | 73 | `"        \"secrets.yaml\","` | — |
+| [SRC-69F3587825-L000074](../search_code.py#L74) | 74 | `"        \"secrets.yml\","` | — |
+| [SRC-69F3587825-L000075](../search_code.py#L75) | 75 | `"        \"service-account.json\","` | — |
+| [SRC-69F3587825-L000076](../search_code.py#L76) | 76 | `"        \"token.json\","` | — |
+| [SRC-69F3587825-L000077](../search_code.py#L77) | 77 | `"    }"` | — |
+| [SRC-69F3587825-L000078](../search_code.py#L78) | 78 | `")"` | — |
+| [SRC-69F3587825-L000079](../search_code.py#L79) | 79 | `"SENSITIVE_NAME_RE = re.compile("` | — |
+| [SRC-69F3587825-L000080](../search_code.py#L80) | 80 | `"    r\"(?:^\|[._-])(?:secret\|secrets\|credential\|credentials\|password\|passwords\|token\|tokens\|private[_-]?key)(?:[._-]\|$)\","` | — |
+| [SRC-69F3587825-L000081](../search_code.py#L81) | 81 | `"    re.IGNORECASE,"` | — |
+| [SRC-69F3587825-L000082](../search_code.py#L82) | 82 | `")"` | — |
+| [SRC-69F3587825-L000083](../search_code.py#L83) | 83 | `"SENSITIVE_CONFIG_SUFFIXES = frozenset("` | — |
+| [SRC-69F3587825-L000084](../search_code.py#L84) | 84 | `"    {\".cfg\", \".conf\", \".ini\", \".json\", \".properties\", \".toml\", \".txt\", \".xml\", \".yaml\", \".yml\"}"` | — |
+| [SRC-69F3587825-L000085](../search_code.py#L85) | 85 | `")"` | — |
+| [SRC-69F3587825-L000086](../search_code.py#L86) | 86 | `"MAX_SEARCH_FILE_BYTES = 2 * 1024 * 1024"` | — |
+| [SRC-69F3587825-L000087](../search_code.py#L87) | 87 | `""` | — |
+| [SRC-69F3587825-L000088](../search_code.py#L88) | 88 | `""` | — |
+| [SRC-69F3587825-L000089](../search_code.py#L89) | 89 | `"def _is_sensitive_path(path: Path) -> bool:"` | — |
+| [SRC-69F3587825-L000090](../search_code.py#L90) | 90 | `"    \"\"\"Return whether a local path appears to contain credentials or private runtime data.\"\"\""` | — |
+| [SRC-69F3587825-L000091](../search_code.py#L91) | 91 | `"    name = path.name.lower()"` | — |
+| [SRC-69F3587825-L000092](../search_code.py#L92) | 92 | `"    parent_names = {part.lower() for part in path.parts[:-1]}"` | — |
+| [SRC-69F3587825-L000093](../search_code.py#L93) | 93 | `"    if name in SECRET_BASENAMES or parent_names & EXCLUDED_DIRECTORIES:"` | — |
+| [SRC-69F3587825-L000094](../search_code.py#L94) | 94 | `"        return True"` | — |
+| [SRC-69F3587825-L000095](../search_code.py#L95) | 95 | `"    if name.startswith(\".env\") and name != \".env.example\":"` | — |
+| [SRC-69F3587825-L000096](../search_code.py#L96) | 96 | `"        return True"` | — |
+| [SRC-69F3587825-L000097](../search_code.py#L97) | 97 | `"    if name.endswith((\".example\", \".sample\", \".template\")):"` | — |
+| [SRC-69F3587825-L000098](../search_code.py#L98) | 98 | `"        return False"` | — |
+| [SRC-69F3587825-L000099](../search_code.py#L99) | 99 | `"    if SENSITIVE_NAME_RE.search(name) and path.suffix.lower() in SENSITIVE_CONFIG_SUFFIXES:"` | — |
+| [SRC-69F3587825-L000100](../search_code.py#L100) | 100 | `"        return True"` | — |
+| [SRC-69F3587825-L000101](../search_code.py#L101) | 101 | `"    return path.suffix.lower() in {\".db\", \".sqlite\", \".sqlite3\", \".pem\", \".key\", \".p12\", \".pfx\"}"` | — |
+| [SRC-69F3587825-L000102](../search_code.py#L102) | 102 | `"DEFAULT_EXTENSIONS = frozenset("` | — |
+| [SRC-69F3587825-L000103](../search_code.py#L103) | 103 | `"    {"` | — |
+| [SRC-69F3587825-L000104](../search_code.py#L104) | 104 | `"        \".py\","` | — |
+| [SRC-69F3587825-L000105](../search_code.py#L105) | 105 | `"        \".md\","` | — |
+| [SRC-69F3587825-L000106](../search_code.py#L106) | 106 | `"        \".html\","` | — |
+| [SRC-69F3587825-L000107](../search_code.py#L107) | 107 | `"        \".htm\","` | — |
+| [SRC-69F3587825-L000108](../search_code.py#L108) | 108 | `"        \".js\","` | — |
+| [SRC-69F3587825-L000109](../search_code.py#L109) | 109 | `"        \".css\","` | — |
+| [SRC-69F3587825-L000110](../search_code.py#L110) | 110 | `"        \".json\","` | — |
+| [SRC-69F3587825-L000111](../search_code.py#L111) | 111 | `"        \".yml\","` | — |
+| [SRC-69F3587825-L000112](../search_code.py#L112) | 112 | `"        \".yaml\","` | — |
+| [SRC-69F3587825-L000113](../search_code.py#L113) | 113 | `"        \".toml\","` | — |
+| [SRC-69F3587825-L000114](../search_code.py#L114) | 114 | `"        \".txt\","` | — |
+| [SRC-69F3587825-L000115](../search_code.py#L115) | 115 | `"        \".sh\","` | — |
+| [SRC-69F3587825-L000116](../search_code.py#L116) | 116 | `"        \".example\","` | — |
+| [SRC-69F3587825-L000117](../search_code.py#L117) | 117 | `"    }"` | — |
+| [SRC-69F3587825-L000118](../search_code.py#L118) | 118 | `")"` | — |
+| [SRC-69F3587825-L000119](../search_code.py#L119) | 119 | `"GITHUB_BLOB_BASE = \"https://github.com/mosabosama2030-oss/omarai/blob\""` | — |
+| [SRC-69F3587825-L000120](../search_code.py#L120) | 120 | `""` | — |
+| [SRC-69F3587825-L000121](../search_code.py#L121) | 121 | `""` | — |
+| [SRC-69F3587825-L000122](../search_code.py#L122) | 122 | `"def default_repository_ref(root: Path) -> str:"` | — |
+| [SRC-69F3587825-L000123](../search_code.py#L123) | 123 | `"    \"\"\"Choose an exact revision for source links, with an explicit operator override.\"\"\""` | — |
+| [SRC-69F3587825-L000124](../search_code.py#L124) | 124 | `"    configured = os.getenv(\"OMARAI_GITHUB_REF\", \"\").strip()"` | — |
+| [SRC-69F3587825-L000125](../search_code.py#L125) | 125 | `"    if configured:"` | — |
+| [SRC-69F3587825-L000126](../search_code.py#L126) | 126 | `"        return configured"` | — |
+| [SRC-69F3587825-L000127](../search_code.py#L127) | 127 | `"    action_sha = os.getenv(\"GITHUB_SHA\", \"\").strip()"` | — |
+| [SRC-69F3587825-L000128](../search_code.py#L128) | 128 | `"    if re.fullmatch(r\"[0-9a-fA-F]{40}\", action_sha):"` | — |
+| [SRC-69F3587825-L000129](../search_code.py#L129) | 129 | `"        return action_sha.lower()"` | — |
+| [SRC-69F3587825-L000130](../search_code.py#L130) | 130 | `"    try:"` | — |
+| [SRC-69F3587825-L000131](../search_code.py#L131) | 131 | `"        result = subprocess.run("` | — |
+| [SRC-69F3587825-L000132](../search_code.py#L132) | 132 | `"            [\"git\", \"rev-parse\", \"HEAD\"],"` | — |
+| [SRC-69F3587825-L000133](../search_code.py#L133) | 133 | `"            cwd=root,"` | — |
+| [SRC-69F3587825-L000134](../search_code.py#L134) | 134 | `"            check=True,"` | — |
+| [SRC-69F3587825-L000135](../search_code.py#L135) | 135 | `"            capture_output=True,"` | — |
+| [SRC-69F3587825-L000136](../search_code.py#L136) | 136 | `"            text=True,"` | — |
+| [SRC-69F3587825-L000137](../search_code.py#L137) | 137 | `"            timeout=2,"` | — |
+| [SRC-69F3587825-L000138](../search_code.py#L138) | 138 | `"        )"` | — |
+| [SRC-69F3587825-L000139](../search_code.py#L139) | 139 | `"    except (OSError, subprocess.SubprocessError):"` | — |
+| [SRC-69F3587825-L000140](../search_code.py#L140) | 140 | `"        return \"main\""` | — |
+| [SRC-69F3587825-L000141](../search_code.py#L141) | 141 | `"    revision = result.stdout.strip()"` | — |
+| [SRC-69F3587825-L000142](../search_code.py#L142) | 142 | `"    return revision.lower() if re.fullmatch(r\"[0-9a-fA-F]{40}\", revision) else \"main\""` | — |
+| [SRC-69F3587825-L000143](../search_code.py#L143) | 143 | `""` | — |
+| [SRC-69F3587825-L000144](../search_code.py#L144) | 144 | `""` | — |
+| [SRC-69F3587825-L000145](../search_code.py#L145) | 145 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-69F3587825-L000146](../search_code.py#L146) | 146 | `"class SearchHit:"` | — |
+| [SRC-69F3587825-L000147](../search_code.py#L147) | 147 | `"    file: str"` | — |
+| [SRC-69F3587825-L000148](../search_code.py#L148) | 148 | `"    line: int"` | — |
+| [SRC-69F3587825-L000149](../search_code.py#L149) | 149 | `"    text: str"` | — |
+| [SRC-69F3587825-L000150](../search_code.py#L150) | 150 | `"    context_before: str"` | — |
+| [SRC-69F3587825-L000151](../search_code.py#L151) | 151 | `"    context_after: str"` | — |
+| [SRC-69F3587825-L000152](../search_code.py#L152) | 152 | `"    repository_ref: str = \"main\""` | — |
+| [SRC-69F3587825-L000153](../search_code.py#L153) | 153 | `""` | — |
+| [SRC-69F3587825-L000154](../search_code.py#L154) | 154 | `"    @property"` | — |
+| [SRC-69F3587825-L000155](../search_code.py#L155) | 155 | `"    def link(self) -> str:"` | — |
+| [SRC-69F3587825-L000156](../search_code.py#L156) | 156 | `"        revision = quote(self.repository_ref, safe=\"/-._~\")"` | — |
+| [SRC-69F3587825-L000157](../search_code.py#L157) | 157 | `"        path = quote(self.file, safe=\"/-._~\")"` | — |
+| [SRC-69F3587825-L000158](../search_code.py#L158) | 158 | `"        return f\"{GITHUB_BLOB_BASE}/{revision}/{path}#L{self.line}\""` | — |
+| [SRC-69F3587825-L000159](../search_code.py#L159) | 159 | `""` | — |
+| [SRC-69F3587825-L000160](../search_code.py#L160) | 160 | `""` | — |
+| [SRC-69F3587825-L000161](../search_code.py#L161) | 161 | `"def discover_text_files(root: Path, extensions: frozenset[str]) -> list[Path]:"` | — |
+| [SRC-69F3587825-L000162](../search_code.py#L162) | 162 | `"    discovered: list[Path] = []"` | — |
+| [SRC-69F3587825-L000163](../search_code.py#L163) | 163 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
+| [SRC-69F3587825-L000164](../search_code.py#L164) | 164 | `"        root, topdown=True, followlinks=False"` | — |
+| [SRC-69F3587825-L000165](../search_code.py#L165) | 165 | `"    ):"` | — |
+| [SRC-69F3587825-L000166](../search_code.py#L166) | 166 | `"        directory_names[:] = sorted("` | — |
+| [SRC-69F3587825-L000167](../search_code.py#L167) | 167 | `"            name"` | — |
+| [SRC-69F3587825-L000168](../search_code.py#L168) | 168 | `"            for name in directory_names"` | — |
+| [SRC-69F3587825-L000169](../search_code.py#L169) | 169 | `"            if name not in EXCLUDED_DIRECTORIES"` | — |
+| [SRC-69F3587825-L000170](../search_code.py#L170) | 170 | `"            and not (Path(current_directory) / name).is_symlink()"` | — |
+| [SRC-69F3587825-L000171](../search_code.py#L171) | 171 | `"        )"` | — |
+| [SRC-69F3587825-L000172](../search_code.py#L172) | 172 | `"        for file_name in sorted(file_names):"` | — |
+| [SRC-69F3587825-L000173](../search_code.py#L173) | 173 | `"            candidate = Path(current_directory) / file_name"` | — |
+| [SRC-69F3587825-L000174](../search_code.py#L174) | 174 | `"            if candidate.is_symlink() or _is_sensitive_path(candidate.relative_to(root)):"` | — |
+| [SRC-69F3587825-L000175](../search_code.py#L175) | 175 | `"                continue"` | — |
+| [SRC-69F3587825-L000176](../search_code.py#L176) | 176 | `"            suffix = candidate.suffix.lower()"` | — |
+| [SRC-69F3587825-L000177](../search_code.py#L177) | 177 | `"            if ("` | — |
+| [SRC-69F3587825-L000178](../search_code.py#L178) | 178 | `"                suffix not in extensions"` | — |
+| [SRC-69F3587825-L000179](../search_code.py#L179) | 179 | `"                and not file_name.endswith(\".example\")"` | — |
+| [SRC-69F3587825-L000180](../search_code.py#L180) | 180 | `"                and file_name not in {\".gitignore\", \".dockerignore\", \"Dockerfile\", \"LICENSE\"}"` | — |
+| [SRC-69F3587825-L000181](../search_code.py#L181) | 181 | `"            ):"` | — |
+| [SRC-69F3587825-L000182](../search_code.py#L182) | 182 | `"                continue"` | — |
+| [SRC-69F3587825-L000183](../search_code.py#L183) | 183 | `"            discovered.append(candidate)"` | — |
+| [SRC-69F3587825-L000184](../search_code.py#L184) | 184 | `"    return sorted(discovered, key=lambda p: p.relative_to(root).as_posix().casefold())"` | — |
+| [SRC-69F3587825-L000185](../search_code.py#L185) | 185 | `""` | — |
+| [SRC-69F3587825-L000186](../search_code.py#L186) | 186 | `""` | — |
+| [SRC-69F3587825-L000187](../search_code.py#L187) | 187 | `"def search_repository("` | — |
+| [SRC-69F3587825-L000188](../search_code.py#L188) | 188 | `"    root: Path,"` | — |
+| [SRC-69F3587825-L000189](../search_code.py#L189) | 189 | `"    query: str,"` | — |
+| [SRC-69F3587825-L000190](../search_code.py#L190) | 190 | `"    *,"` | — |
+| [SRC-69F3587825-L000191](../search_code.py#L191) | 191 | `"    use_regex: bool = False,"` | — |
+| [SRC-69F3587825-L000192](../search_code.py#L192) | 192 | `"    case_sensitive: bool = False,"` | — |
+| [SRC-69F3587825-L000193](../search_code.py#L193) | 193 | `"    extensions: frozenset[str] = DEFAULT_EXTENSIONS,"` | — |
+| [SRC-69F3587825-L000194](../search_code.py#L194) | 194 | `"    repository_ref: str = \"main\","` | — |
+| [SRC-69F3587825-L000195](../search_code.py#L195) | 195 | `"    max_results: int = 50,"` | — |
+| [SRC-69F3587825-L000196](../search_code.py#L196) | 196 | `"    context: int = 1,"` | — |
+| [SRC-69F3587825-L000197](../search_code.py#L197) | 197 | `") -> list[SearchHit]:"` | — |
+| [SRC-69F3587825-L000198](../search_code.py#L198) | 198 | `"    \"\"\"Return ordered text matches with short context.\"\"\""` | — |
+| [SRC-69F3587825-L000199](../search_code.py#L199) | 199 | `"    if not query:"` | — |
+| [SRC-69F3587825-L000200](../search_code.py#L200) | 200 | `"        raise ValueError(\"استعلام البحث فارغ.\")"` | — |
+| [SRC-69F3587825-L000201](../search_code.py#L201) | 201 | `"    if max_results < 1:"` | — |
+| [SRC-69F3587825-L000202](../search_code.py#L202) | 202 | `"        raise ValueError(\"max_results يجب أن يكون 1 أو أكبر.\")"` | — |
+| [SRC-69F3587825-L000203](../search_code.py#L203) | 203 | `"    if context < 0:"` | — |
+| [SRC-69F3587825-L000204](../search_code.py#L204) | 204 | `"        raise ValueError(\"context لا يمكن أن يكون سالبًا.\")"` | — |
+| [SRC-69F3587825-L000205](../search_code.py#L205) | 205 | `""` | — |
+| [SRC-69F3587825-L000206](../search_code.py#L206) | 206 | `"    flags = 0 if case_sensitive else re.IGNORECASE"` | — |
+| [SRC-69F3587825-L000207](../search_code.py#L207) | 207 | `"    if use_regex:"` | — |
+| [SRC-69F3587825-L000208](../search_code.py#L208) | 208 | `"        pattern = re.compile(query, flags)"` | — |
+| [SRC-69F3587825-L000209](../search_code.py#L209) | 209 | `"    else:"` | — |
 | [SRC-69F3587825-L000210](../search_code.py#L210) | 210 | `"        pattern = re.compile(re.escape(query), flags)"` | — |
 | [SRC-69F3587825-L000211](../search_code.py#L211) | 211 | `""` | — |
 | [SRC-69F3587825-L000212](../search_code.py#L212) | 212 | `"    hits: list[SearchHit] = []"` | — |
@@ -676,260 +870,3 @@
 | [SRC-6B9B9ABE27-L000009](../ui-directions/README.md#L9) | 9 | `"- Futuristic, colorful Android-inspired atmosphere with restrained layering."` | — |
 | [SRC-6B9B9ABE27-L000010](../ui-directions/README.md#L10) | 10 | `"- Best when the product should feel distinctly modern and visually memorable."` | — |
 | [SRC-6B9B9ABE27-L000011](../ui-directions/README.md#L11) | 11 | `"- Preview: [variant-01-aurora-glass.html](variant-01-aurora-glass.html)"` | — |
-| [SRC-6B9B9ABE27-L000012](../ui-directions/README.md#L12) | 12 | `""` | — |
-| [SRC-6B9B9ABE27-L000013](../ui-directions/README.md#L13) | 13 | `"## Option 02 — Precision Glass"` | — |
-| [SRC-6B9B9ABE27-L000014](../ui-directions/README.md#L14) | 14 | `"- Restrained graphite glass, generous spacing, soft blue accent, evidence-first hierarchy."` | — |
-| [SRC-6B9B9ABE27-L000015](../ui-directions/README.md#L15) | 15 | `"- Apple-inspired calm spatial depth without copying platform UI."` | — |
-| [SRC-6B9B9ABE27-L000016](../ui-directions/README.md#L16) | 16 | `"- Best for sustained daily use, readability, and professional trust."` | — |
-| [SRC-6B9B9ABE27-L000017](../ui-directions/README.md#L17) | 17 | `"- Preview: [variant-02-precision-glass.html](variant-02-precision-glass.html)"` | — |
-| [SRC-6B9B9ABE27-L000018](../ui-directions/README.md#L18) | 18 | `""` | — |
-| [SRC-6B9B9ABE27-L000019](../ui-directions/README.md#L19) | 19 | `"## Option 03 — Neon Command"` | — |
-| [SRC-6B9B9ABE27-L000020](../ui-directions/README.md#L20) | 20 | `"- Compact command-center layout with navy surfaces and cyan/indigo luminous edges."` | — |
-| [SRC-6B9B9ABE27-L000021](../ui-directions/README.md#L21) | 21 | `"- Strong operational hierarchy and denser information display."` | — |
-| [SRC-6B9B9ABE27-L000022](../ui-directions/README.md#L22) | 22 | `"- Best for power users monitoring multiple market signals and qualification stages."` | — |
-| [SRC-6B9B9ABE27-L000023](../ui-directions/README.md#L23) | 23 | `"- Preview: [variant-03-neon-command.html](variant-03-neon-command.html)"` | — |
-| [SRC-6B9B9ABE27-L000024](../ui-directions/README.md#L24) | 24 | `""` | — |
-| [SRC-6B9B9ABE27-L000025](../ui-directions/README.md#L25) | 25 | `"## Shared design requirements"` | — |
-| [SRC-6B9B9ABE27-L000026](../ui-directions/README.md#L26) | 26 | `"- Arabic-first RTL; Noto Sans Arabic / IBM Plex Arabic system fallback."` | — |
-| [SRC-6B9B9ABE27-L000027](../ui-directions/README.md#L27) | 27 | `"- Responsive desktop and mobile layouts with CSS breakpoints."` | — |
-| [SRC-6B9B9ABE27-L000028](../ui-directions/README.md#L28) | 28 | `"- Evidence source/date and human-review status remain visible."` | — |
-| [SRC-6B9B9ABE27-L000029](../ui-directions/README.md#L29) | 29 | `"- Demo records are illustrative and explicitly labeled."` | — |
-| [SRC-6B9B9ABE27-L000030](../ui-directions/README.md#L30) | 30 | `"- No fabricated purchase probability, contact details, or real-world claims."` | — |
-| [SRC-6B9B9ABE27-L000031](../ui-directions/README.md#L31) | 31 | `"- Static prototypes only: no production APIs, authentication, or backend behavior."` | — |
-| [SRC-6B9B9ABE27-L000032](../ui-directions/README.md#L32) | 32 | `""` | — |
-| [SRC-6B9B9ABE27-L000033](../ui-directions/README.md#L33) | 33 | `"## Approval gate"` | — |
-| [SRC-6B9B9ABE27-L000034](../ui-directions/README.md#L34) | 34 | `"Human Director selects one direction. Only after selection should the chosen visual direction be refined and implemented against Omarai's existing session/lead API contracts. The other two remain archived proposals. No merge or deployment is authorized by this PR."` | — |
-| [SRC-6B9B9ABE27-L000035](../ui-directions/README.md#L35) | 35 | `""` | — |
-| [SRC-6B9B9ABE27-L000036](../ui-directions/README.md#L36) | 36 | `"## Human Director decision — 4 November 2026"` | — |
-| [SRC-6B9B9ABE27-L000037](../ui-directions/README.md#L37) | 37 | `""` | — |
-| [SRC-6B9B9ABE27-L000038](../ui-directions/README.md#L38) | 38 | `"**Selected:** Option 03 — Neon Command. This is the approved visual direction for implementation."` | — |
-| [SRC-6B9B9ABE27-L000039](../ui-directions/README.md#L39) | 39 | `""` | — |
-| [SRC-6B9B9ABE27-L000040](../ui-directions/README.md#L40) | 40 | `"- Implementation and backend connection are tracked in [PR #151](https://github.com/mosabosama2030-oss/omarai/pull/151)."` | — |
-| [SRC-6B9B9ABE27-L000041](../ui-directions/README.md#L41) | 41 | `"- Options 01 and 02 remain reference proposals only."` | — |
-| [SRC-6B9B9ABE27-L000042](../ui-directions/README.md#L42) | 42 | `"- This PR contains design previews; it does not implement or deploy the selected interface."` | — |
-## وثائق وفهرسة
-
-### FILE-7EB8FCD215 — [docs/ui-directions/variant-01-aurora-glass.html](../ui-directions/variant-01-aurora-glass.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-7EB8FCD215-L000001](../ui-directions/variant-01-aurora-glass.html#L1) | 1 | `"<!doctype html><html lang='ar' dir='rtl' data-agent-native-node-id=\"an-19qch1x\"><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><style>*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 5%,#173d58 0,transparent 38%),radial-gradient(ellipse at 85% 25%,#30234f 0,transparent 35%),#080e19;color:#e9f3ff;font:15px system-ui,'Noto Sans Arabic',sans-serif}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh;gap:18px;padding:20px}.side,.panel,.stat{background:linear-gradient(145deg,#ffffff12,#ffffff05);border:1px solid #b9d8ff20;backdrop-filter:blur(22px);border-radius:22px;box-shadow:0 20px 60px #0003}.side{padding:22px}.brand{font-size:25px;font-weight:800;color:#78eadb}.nav{margin-top:34px;display:grid;gap:10px}.nav div{padding:13px;border-radius:12px;color:#a9bdd2}.nav .active{background:#7debd51a;color:#8ff6e2;border:1px solid #8ff6e222}.main{min-width:0}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.pill{border:1px solid #ffffff20;background:#ffffff0b;padding:10px 15px;border-radius:30px;color:#bcd0e7}.hero{margin:25px 0}.hero h1{font-size:30px;margin:0 0 8px}.muted{color:#94a9c1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:20px}.num{font-size:28px;color:#82efdc;font-weight:750;margin:12px 0}.layout{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:16px}.panel{padding:20px}.row{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid #ffffff12}.tag{color:#9af0d9;background:#4bd4b018;padding:6px 10px;border-radius:20px;font-size:12px}.stage{height:8px;background:#ffffff12;border-radius:20px;margin:12px 0}.stage i{display:block;width:62%;height:100%;background:linear-gradient(90deg,#67e7d1,#8c8cff);border-radius:20px}@media(max-width:850px){.app{grid-template-columns:1fr;padding:12px}.side{display:none}.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.top{flex-wrap:wrap}.hero h1{font-size:24px}}@media(max-width:480px){.stats{gap:8px}.stat,.panel{padding:14px}.num{font-size:23px}.bottom{display:flex;position:sticky;bottom:8px;background:#101c2ce8;border:1px solid #ffffff20;border-radius:18px;padding:12px;justify-content:space-around;margin-top:14px}}</style></head><body data-agent-native-node-id=\"an-jqo3wt\"><div class='app' data-agent-native-node-id=\"an-id3wsl\"><aside class='side' data-agent-native-node-id=\"an-1mtuhlh\"><div class='brand' data-agent-native-node-id=\"an-1kt8xq9\">◈ عُمراي</div><p class='muted' data-agent-native-node-id=\"an-v1xw0d\">ذكاء المبيعات</p><div class='nav' data-agent-native-node-id=\"an-2kobx4\"><div class='active' data-agent-native-node-id=\"an-1463rp0\">◫ نظرة عامة</div><div data-agent-native-node-id=\"an-1d77149\">⌕ إشارات الطلب</div><div data-agent-native-node-id=\"an-1bo0gxl\">◎ مسار التأهيل</div><div data-agent-native-node-id=\"an-17ekjf2\">⌘ استخبارات السوق</div><div data-agent-native-node-id=\"an-1cwuece\">◉ المصادر</div></div></aside><main class='main' data-agent-native-node-id=\"an-s92bpi\"><div class='top' data-agent-native-node-id=\"an-cc9n77\"><span class='pill' data-agent-native-node-id=\"an-1jbfl7j\">⌕ ابحث في الإشارات والشركات</span><span class='pill' data-agent-native-node-id=\"an-1pixy7p\">مساحة العمل · القاهرة</span></div><section class='hero' data-agent-native-node-id=\"an-167w5oj\"><p class='muted' data-agent-native-node-id=\"an-weq0yq\">مساحة الاكتشاف / اليوم</p><h1 data-agent-native-node-id=\"an-yuv4wp\">أهلاً بك في مركز استخبارات المبيعات</h1><p class='muted' data-agent-native-node-id=\"an-1sofdf4\">راجع إشارات الاحتياج، افحص الأدلة، ثم قرر الخطوة التالية.</p></section><div class='stats' data-agent-native-node-id=\"an-5oj080\"><div class='stat' data-agent-native-node-id=\"an-v7letp\">الإشارات المحمّلة<div class='num' data-agent-native-node-id=\"an-14ar0bz\">128</div><span class='muted' data-agent-native-node-id=\"an-g0ywlg\">بيانات توضيحية</span></div><div class='stat' data-agent-native-node-id=\"an-1xnrcua\">تحتاج مراجعة<div class='num' data-agent-native-node-id=\"an-1la7h4l\">24</div><span class='muted' data-agent-native-node-id=\"an-5xvonf\">دليل ينتظر التحقق</span></div><div class='stat' data-agent-native-node-id=\"an-fi81m7\">مؤهلة<div class='num' data-agent-native-node-id=\"an-1vyro0u\">16</div><span class='muted' data-agent-native-node-id=\"an-691w91\">بعد مراجعة بشرية</span></div><div class='stat' data-agent-native-node-id=\"an-dcasvc\">متابعة<div class='num' data-agent-native-node-id=\"an-gx0je3\">9</div><span class='muted' data-agent-native-node-id=\"an-18eyy4r\">إجراء معتمد</span></div></div><div class='layout' data-agent-native-node-id=\"an-o3zzps\"><section class='panel' data-agent-native-node-id=\"an-hrlmec\"><h2 data-agent-native-node-id=\"an-a0ruc7\">إشارات نية الشراء</h2><div class='row' data-agent-native-node-id=\"an-ppfwfb\"><div data-agent-native-node-id=\"an-lfbdow\"><b data-agent-native-node-id=\"an-miv3l8\">طلب توريد تجهيزات مكتبية</b><p class='muted' data-agent-native-node-id=\"an-13dfohj\">مصدر عام · منذ ساعتين</p></div><span class='tag' data-agent-native-node-id=\"an-9o8iae\">يحتاج مراجعة</span></div><div class='row' data-agent-native-node-id=\"an-vbx8l6\"><div data-agent-native-node-id=\"an-vluil2\"><b data-agent-native-node-id=\"an-8gvvpq\">بحث عن مقاول صيانة تكييف</b><p class='muted' data-agent-native-node-id=\"an-17hc0lw\">طلب خدمة منشور · أمس</p></div><span class='tag' data-agent-native-node-id=\"an-1hauho4\">دليل مرفق</span></div><div class='row' data-agent-native-node-id=\"an-1b2uxnn\"><div data-agent-native-node-id=\"an-ux9f9v\"><b data-agent-native-node-id=\"an-1v8ly8q\">احتياج معدات لمشروع جديد</b><p class='muted' data-agent-native-node-id=\"an-1h1ku9q\">إعلان طلب · منذ 3 أيام</p></div><span class='tag' data-agent-native-node-id=\"an-174ll6b\">مراجعة بشرية</span></div></section><section class='panel' data-agent-native-node-id=\"an-o9dfs0\"><h2 data-agent-native-node-id=\"an-1i8fydy\">مسار التأهيل</h2><p class='muted' data-agent-native-node-id=\"an-1ww1ij3\">من الإشارة إلى فرصة قابلة للمتابعة</p><div class='row' data-agent-native-node-id=\"an-1pf4hxb\">جديد <b data-agent-native-node-id=\"an-11rtvkb\">24</b></div><div class='stage' data-agent-native-node-id=\"an-8fp3e2\"><i data-agent-native-node-id=\"an-utv0o8\"></i></div><div class='row' data-agent-native-node-id=\"an-1l2qrh2\">مؤهل <b data-agent-native-node-id=\"an-el3suf\">16</b></div><div class='row' data-agent-native-node-id=\"an-1s3h6yb\">موافقة متابعة <b data-agent-native-node-id=\"an-1ij68k7\">9</b></div><p class='muted' data-agent-native-node-id=\"an-mtq2mz\">لا تمثل الأرقام احتمال شراء.</p></section></div><div class='bottom' style='display:none' data-agent-native-node-id=\"an-tgu348\">نظرة عامة　 إشارات　 متابعة　 المزيد</div></main></div></body></html>"` | — |
-## وثائق وفهرسة
-
-### FILE-2A9FC16EBA — [docs/ui-directions/variant-02-precision-glass.html](../ui-directions/variant-02-precision-glass.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-2A9FC16EBA-L000001](../ui-directions/variant-02-precision-glass.html#L1) | 1 | `"<!doctype html><html lang='ar' dir='rtl' data-agent-native-node-id=\"an-19qch1x\"><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><style>*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#11151d,#202630 55%,#10141b);color:#f4f6fa;font:15px system-ui,'Noto Sans Arabic',sans-serif}.app{display:grid;grid-template-columns:230px 1fr;gap:24px;padding:28px;min-height:100vh}.side,.panel,.stat{background:#ffffff09;border:1px solid #ffffff12;border-radius:18px;backdrop-filter:blur(18px)}.side{padding:24px}.brand{font-size:24px;font-weight:800}.nav{margin-top:38px;display:grid;gap:8px}.nav div{padding:12px;color:#aab2c0;border-radius:10px}.nav .active{background:#ffffff13;color:white}.main{min-width:0}.top{display:flex;justify-content:space-between;align-items:center}.pill{background:#ffffff0a;border:1px solid #ffffff15;border-radius:25px;padding:10px 15px;color:#c7ced9}.hero{margin:32px 0 24px}.hero h1{font-size:30px;margin:8px 0}.muted{color:#9ca6b5}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:22px}.num{font-size:28px;font-weight:750;margin-top:12px;color:#b6caff}.layout{display:grid;grid-template-columns:1.65fr 1fr;gap:16px;margin-top:18px}.panel{padding:22px}.head{display:flex;justify-content:space-between;align-items:center}.row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:17px 0;border-bottom:1px solid #ffffff10}.tag{font-size:12px;border:1px solid #9dbbff35;color:#c2d2ff;padding:6px 10px;border-radius:20px}.small{font-size:13px;color:#9ca6b5;margin-top:6px}.stage{padding:12px;border-radius:12px;background:#ffffff07;margin:8px 0;display:flex;justify-content:space-between}@media(max-width:900px){.app{grid-template-columns:1fr;padding:14px}.side{display:none}.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}}@media(max-width:520px){.hero h1{font-size:23px}.stat,.panel{padding:15px}.top{flex-wrap:wrap;gap:10px}.row{grid-template-columns:1fr}.tag{width:max-content}.stats{gap:9px}}</style></head><body data-agent-native-node-id=\"an-1j4akuv\"><div class='app' data-agent-native-node-id=\"an-1hfh13r\"><aside class='side' data-agent-native-node-id=\"an-112duoj\"><div class='brand' data-agent-native-node-id=\"an-1pcl5xi\">عُمرَاي <span style='color:#a9bfff' data-agent-native-node-id=\"an-18n69jp\">◈</span></div><p class='muted' data-agent-native-node-id=\"an-kez2g3\">Sales Intelligence</p><div class='nav' data-agent-native-node-id=\"an-1p4ub9j\"><div class='active' data-agent-native-node-id=\"an-sg1enl\">نظرة عامة</div><div data-agent-native-node-id=\"an-1k86e90\">إشارات الطلب</div><div data-agent-native-node-id=\"an-qpqymk\">الفرص المؤهلة</div><div data-agent-native-node-id=\"an-1med0am\">الشركات</div><div data-agent-native-node-id=\"an-1hu57w9\">المصادر</div></div></aside><main class='main' data-agent-native-node-id=\"an-1mzncze\"><div class='top' data-agent-native-node-id=\"an-1e00uky\"><span class='pill' data-agent-native-node-id=\"an-7potb\">⌕ بحث في مساحة العمل</span><span class='pill' data-agent-native-node-id=\"an-11th5gr\">القاهرة · السوق الحالي</span></div><div class='hero' data-agent-native-node-id=\"an-1lzto1f\"><p class='muted' data-agent-native-node-id=\"an-1gpsw30\">لوحة التحكم</p><h1 data-agent-native-node-id=\"an-4buxe3\">صورة واضحة للطلب الحقيقي</h1><p class='muted' data-agent-native-node-id=\"an-1h4ptkn\">كل إشارة مرتبطة بمصدر وتاريخ رصد وحالة مراجعة.</p></div><div class='stats' data-agent-native-node-id=\"an-u5n57n\"><div class='stat' data-agent-native-node-id=\"an-17c38zi\">الإشارات<div class='num' data-agent-native-node-id=\"an-2av4q2\">128</div><span class='muted' data-agent-native-node-id=\"an-137q4v3\">عينة توضيحية</span></div><div class='stat' data-agent-native-node-id=\"an-1hwxyth\">تحتاج تحقق<div class='num' data-agent-native-node-id=\"an-1meevms\">24</div><span class='muted' data-agent-native-node-id=\"an-16bhkaz\">غير محسومة</span></div><div class='stat' data-agent-native-node-id=\"an-38nlrf\">مؤهلة<div class='num' data-agent-native-node-id=\"an-vjexqh\">16</div><span class='muted' data-agent-native-node-id=\"an-1ukwo4b\">بعد المراجعة</span></div><div class='stat' data-agent-native-node-id=\"an-168nhnz\">متابعة معتمدة<div class='num' data-agent-native-node-id=\"an-j5dhyj\">9</div><span class='muted' data-agent-native-node-id=\"an-q7lg7k\">بقرار بشري</span></div></div><div class='layout' data-agent-native-node-id=\"an-1qlm3ef\"><section class='panel' data-agent-native-node-id=\"an-c6kpy3\"><div class='head' data-agent-native-node-id=\"an-1j2luvv\"><h2 data-agent-native-node-id=\"an-7i25e\">سجل الإشارات</h2><span class='pill' data-agent-native-node-id=\"an-q5k2sk\">تصفية</span></div><div class='row' data-agent-native-node-id=\"an-u2h5rr\"><div data-agent-native-node-id=\"an-1ehg159\"><b data-agent-native-node-id=\"an-dut9mw\">طلب توريد تجهيزات مكتبية</b><div class='small' data-agent-native-node-id=\"an-10dplvb\">طلب منشور · مصدر عام · رُصد اليوم</div></div><span class='tag' data-agent-native-node-id=\"an-wfjfwj\">قيد المراجعة</span></div><div class='row' data-agent-native-node-id=\"an-1bg1cwv\"><div data-agent-native-node-id=\"an-1wbu9nc\"><b data-agent-native-node-id=\"an-1c8pq2g\">بحث عن خدمة صيانة</b><div class='small' data-agent-native-node-id=\"an-p98jb0\">طلب خدمة · مصدر عام · أمس</div></div><span class='tag' data-agent-native-node-id=\"an-vta5sd\">يحتاج تحقق</span></div><div class='row' data-agent-native-node-id=\"an-soyt1f\"><div data-agent-native-node-id=\"an-1kadc9f\"><b data-agent-native-node-id=\"an-1y8nzvb\">احتياج معدات مشروع</b><div class='small' data-agent-native-node-id=\"an-1ak348p\">إعلان طلب · منذ 3 أيام</div></div><span class='tag' data-agent-native-node-id=\"an-1n9ezek\">مؤهل</span></div></section><section class='panel' data-agent-native-node-id=\"an-1eav9eb\"><h2 data-agent-native-node-id=\"an-1bmvh9u\">التقدم</h2><div class='stage' data-agent-native-node-id=\"an-ar13bc\">جديد <b data-agent-native-node-id=\"an-1s814ma\">24</b></div><div class='stage' data-agent-native-node-id=\"an-1mq3eg4\">قيد التحقق <b data-agent-native-node-id=\"an-h4z0g5\">16</b></div><div class='stage' data-agent-native-node-id=\"an-4nspk5\">موافقة متابعة <b data-agent-native-node-id=\"an-fm2q8d\">9</b></div><p class='muted' data-agent-native-node-id=\"an-1fqgeo8\">الترتيب يعكس حالة المراجعة، وليس احتمالية الشراء.</p></section></div></main></div></body></html>"` | — |
-## وثائق وفهرسة
-
-### FILE-D7D5153A8A — [docs/ui-directions/variant-03-neon-command.html](../ui-directions/variant-03-neon-command.html#L1)
-
-- النوع: **HTML**
-- نطاق الفهرسة: جرد الملف + معرفات HTML والرموز داخل script/style
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-D7D5153A8A-L000001](../ui-directions/variant-03-neon-command.html#L1) | 1 | `"<!doctype html><html lang='ar' dir='rtl' data-agent-native-node-id=\"an-19qch1x\"><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><style>*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#15364d,transparent 55%),#070d16;color:#e7f7ff;font:14px system-ui,'Noto Sans Arabic',sans-serif}.app{display:grid;grid-template-columns:220px 1fr;gap:14px;padding:16px;min-height:100vh}.side,.panel,.stat{background:linear-gradient(145deg,#102334d9,#0b1724d9);border:1px solid #4ad8ff24;border-radius:16px;box-shadow:inset 0 1px #ffffff08,0 14px 40px #0004}.side{padding:18px}.brand{font-size:23px;font-weight:800;color:#6cecff}.nav{display:grid;gap:7px;margin-top:30px}.nav div{padding:12px;border-radius:9px;color:#89a9bc}.nav .active{background:#43dfff14;border:1px solid #43dfff2b;color:#7beaff}.main{min-width:0}.top{display:flex;justify-content:space-between;gap:10px}.pill{padding:9px 13px;border:1px solid #39cfff25;border-radius:9px;background:#0d1d2a;color:#9bc5d8}.hero{margin:22px 0}.hero h1{margin:5px 0;font-size:27px}.muted{color:#7799ad}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{padding:17px}.num{font-size:26px;color:#71eaff;font-weight:800;margin:8px 0}.layout{display:grid;grid-template-columns:1.7fr 1fr;gap:12px;margin-top:12px}.panel{padding:17px}.panel h2{font-size:16px}.row{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #2b4b5c}.tag{font-size:11px;color:#7ceaff;border:1px solid #2e9dbb55;padding:5px 9px;border-radius:7px}.meta{font-size:12px;color:#7593a5;margin-top:5px}.stage{display:flex;justify-content:space-between;padding:10px;margin:7px 0;background:#07131f;border:1px solid #1c3c50;border-radius:9px}.bar{height:5px;background:#152e3d;margin:10px 0;border-radius:9px}.bar i{display:block;width:57%;height:100%;background:#52dfff}@media(max-width:900px){.app{grid-template-columns:1fr;padding:10px}.side{display:none}.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}}@media(max-width:520px){.top{flex-direction:column}.hero h1{font-size:22px}.stat,.panel{padding:13px}.row{flex-direction:column}.tag{width:max-content}.stats{gap:7px}}</style></head><body data-agent-native-node-id=\"an-1mq2fgv\"><div class='app' data-agent-native-node-id=\"an-1snvlzn\"><aside class='side' data-agent-native-node-id=\"an-1u3uwz9\"><div class='brand' data-agent-native-node-id=\"an-1kzndb8\">◈ OMARAI</div><p class='muted' data-agent-native-node-id=\"an-ze5rg3\">INTELLIGENCE OS</p><div class='nav' data-agent-native-node-id=\"an-1r5k24x\"><div class='active' data-agent-native-node-id=\"an-z3nr0e\">⌘ مركز القيادة</div><div data-agent-native-node-id=\"an-1p079np\">⌕ إشارات الطلب</div><div data-agent-native-node-id=\"an-1291c89\">▤ التأهيل</div><div data-agent-native-node-id=\"an-phglyz\">◉ المصادر</div><div data-agent-native-node-id=\"an-8t0lis\">◌ حالة النظام</div></div></aside><main class='main' data-agent-native-node-id=\"an-1i54o1l\"><div class='top' data-agent-native-node-id=\"an-1jzcjba\"><span class='pill' data-agent-native-node-id=\"an-14wb78m\">⌕ بحث سريع / أمر</span><span class='pill' data-agent-native-node-id=\"an-1ku3fel\">MARKET: CAIRO · DEMO</span></div><section class='hero' data-agent-native-node-id=\"an-1amx86t\"><p class='muted' data-agent-native-node-id=\"an-15vdw4u\">SALES INTELLIGENCE / OVERVIEW</p><h1 data-agent-native-node-id=\"an-1y9mhoi\">مركز قيادة فرص السوق</h1><p class='muted' data-agent-native-node-id=\"an-4tzg1a\">رصد الاحتياج ← تحقق من الدليل ← تأهيل ← موافقة بشرية</p></section><div class='stats' data-agent-native-node-id=\"an-13ci5nn\"><div class='stat' data-agent-native-node-id=\"an-1a41epk\">إشارات واردة<div class='num' data-agent-native-node-id=\"an-wbhqbf\">128</div><span class='muted' data-agent-native-node-id=\"an-1df3phi\">بيانات تجريبية</span></div><div class='stat' data-agent-native-node-id=\"an-1s37bcg\">تحتاج تحقق<div class='num' data-agent-native-node-id=\"an-a4np0m\">24</div><span class='muted' data-agent-native-node-id=\"an-1584zmq\">Evidence review</span></div><div class='stat' data-agent-native-node-id=\"an-10uv4u1\">فرص مؤهلة<div class='num' data-agent-native-node-id=\"an-gjrv4f\">16</div><span class='muted' data-agent-native-node-id=\"an-1pirizs\">Reviewed</span></div><div class='stat' data-agent-native-node-id=\"an-1lrxcs7\">متابعة معتمدة<div class='num' data-agent-native-node-id=\"an-13wf6iv\">9</div><span class='muted' data-agent-native-node-id=\"an-s3k1hp\">Human-approved</span></div></div><div class='layout' data-agent-native-node-id=\"an-1f9sws\"><section class='panel' data-agent-native-node-id=\"an-uxvkmt\"><h2 data-agent-native-node-id=\"an-1xmc0cq\">LIVE SIGNAL QUEUE <span class='tag' data-agent-native-node-id=\"an-2h120v\">DEMO</span></h2><div class='row' data-agent-native-node-id=\"an-p2w54e\"><div data-agent-native-node-id=\"an-s1tel5\"><b data-agent-native-node-id=\"an-1yimqje\">طلب توريد تجهيزات مكتبية</b><div class='meta' data-agent-native-node-id=\"an-grpnev\">Public request · observed today</div></div><span class='tag' data-agent-native-node-id=\"an-nyd3xz\">REVIEW</span></div><div class='row' data-agent-native-node-id=\"an-ifohvr\"><div data-agent-native-node-id=\"an-3yxllp\"><b data-agent-native-node-id=\"an-ew8vf2\">طلب خدمة صيانة تكييف</b><div class='meta' data-agent-native-node-id=\"an-1vqr3zn\">Service request · yesterday</div></div><span class='tag' data-agent-native-node-id=\"an-s6kpwr\">VERIFY</span></div><div class='row' data-agent-native-node-id=\"an-1a7e2g0\"><div data-agent-native-node-id=\"an-202ik7\"><b data-agent-native-node-id=\"an-q0ez4n\">احتياج معدات مشروع</b><div class='meta' data-agent-native-node-id=\"an-xv1lu2\">Public listing · 3 days</div></div><span class='tag' data-agent-native-node-id=\"an-12nnh34\">QUALIFY</span></div></section><section class='panel' data-agent-native-node-id=\"an-ud0485\"><h2 data-agent-native-node-id=\"an-1xxdkmf\">QUALIFICATION PIPELINE</h2><div class='stage' data-agent-native-node-id=\"an-148mwmh\">New <b data-agent-native-node-id=\"an-1pi8wxr\">24</b></div><div class='bar' data-agent-native-node-id=\"an-1dyg74u\"><i data-agent-native-node-id=\"an-1mp2h7o\"></i></div><div class='stage' data-agent-native-node-id=\"an-pe36jr\">Verified <b data-agent-native-node-id=\"an-9927oo\">16</b></div><div class='stage' data-agent-native-node-id=\"an-1uli6yk\">Approved <b data-agent-native-node-id=\"an-1hwy8tc\">9</b></div><p class='muted' data-agent-native-node-id=\"an-5lffxl\">Operational states only — no purchase-probability score.</p></section></div></main></div></body></html>"` | — |
-## ملفات أخرى
-
-### FILE-C693279643 — [LICENSE](../../LICENSE#L1)
-
-- النوع: **بدون امتداد**
-- نطاق الفهرسة: جرد ملف نصي فقط
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-C693279643-L000001](../../LICENSE#L1) | 1 | `"MIT License"` | — |
-| [SRC-C693279643-L000002](../../LICENSE#L2) | 2 | `""` | — |
-| [SRC-C693279643-L000003](../../LICENSE#L3) | 3 | `"Copyright (c) 2026 Omarai contributors"` | — |
-| [SRC-C693279643-L000004](../../LICENSE#L4) | 4 | `""` | — |
-| [SRC-C693279643-L000005](../../LICENSE#L5) | 5 | `"Permission is hereby granted, free of charge, to any person obtaining a copy"` | — |
-| [SRC-C693279643-L000006](../../LICENSE#L6) | 6 | `"of this software and associated documentation files (the \"Software\"), to deal"` | — |
-| [SRC-C693279643-L000007](../../LICENSE#L7) | 7 | `"in the Software without restriction, including without limitation the rights"` | — |
-| [SRC-C693279643-L000008](../../LICENSE#L8) | 8 | `"to use, copy, modify, merge, publish, distribute, sublicense, and/or sell"` | — |
-| [SRC-C693279643-L000009](../../LICENSE#L9) | 9 | `"copies of the Software, and to permit persons to whom the Software is"` | — |
-| [SRC-C693279643-L000010](../../LICENSE#L10) | 10 | `"furnished to do so, subject to the following conditions:"` | — |
-| [SRC-C693279643-L000011](../../LICENSE#L11) | 11 | `""` | — |
-| [SRC-C693279643-L000012](../../LICENSE#L12) | 12 | `"The above copyright notice and this permission notice shall be included in all"` | — |
-| [SRC-C693279643-L000013](../../LICENSE#L13) | 13 | `"copies or substantial portions of the Software."` | — |
-| [SRC-C693279643-L000014](../../LICENSE#L14) | 14 | `""` | — |
-| [SRC-C693279643-L000015](../../LICENSE#L15) | 15 | `"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR"` | — |
-| [SRC-C693279643-L000016](../../LICENSE#L16) | 16 | `"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,"` | — |
-| [SRC-C693279643-L000017](../../LICENSE#L17) | 17 | `"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE"` | — |
-| [SRC-C693279643-L000018](../../LICENSE#L18) | 18 | `"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"` | — |
-| [SRC-C693279643-L000019](../../LICENSE#L19) | 19 | `"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,"` | — |
-| [SRC-C693279643-L000020](../../LICENSE#L20) | 20 | `"OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE"` | — |
-| [SRC-C693279643-L000021](../../LICENSE#L21) | 21 | `"SOFTWARE."` | — |
-## إعدادات وتشغيل
-
-### FILE-50C86B7ED8 — [pyproject.toml](../../pyproject.toml#L1)
-
-- النوع: **TOML**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-50C86B7ED8-L000001](../../pyproject.toml#L1) | 1 | `"[build-system]"` | — |
-| [SRC-50C86B7ED8-L000002](../../pyproject.toml#L2) | 2 | `"requires = [\"setuptools>=68\"]"` | — |
-| [SRC-50C86B7ED8-L000003](../../pyproject.toml#L3) | 3 | `"build-backend = \"setuptools.build_meta\""` | — |
-| [SRC-50C86B7ED8-L000004](../../pyproject.toml#L4) | 4 | `""` | — |
-| [SRC-50C86B7ED8-L000005](../../pyproject.toml#L5) | 5 | `"[project]"` | — |
-| [SRC-50C86B7ED8-L000006](../../pyproject.toml#L6) | 6 | `"name = \"omarai-agent\""` | — |
-| [SRC-50C86B7ED8-L000007](../../pyproject.toml#L7) | 7 | `"version = \"0.2.0\""` | — |
-| [SRC-50C86B7ED8-L000008](../../pyproject.toml#L8) | 8 | `"description = \"Arabic-first web research and generative Q&A agent with lead workspace\""` | — |
-| [SRC-50C86B7ED8-L000009](../../pyproject.toml#L9) | 9 | `"readme = \"README.md\""` | — |
-| [SRC-50C86B7ED8-L000010](../../pyproject.toml#L10) | 10 | `"requires-python = \">=3.11\""` | — |
-| [SRC-50C86B7ED8-L000011](../../pyproject.toml#L11) | 11 | `"license = { text = \"MIT\" }"` | — |
-| [SRC-50C86B7ED8-L000012](../../pyproject.toml#L12) | 12 | `"dependencies = ["` | — |
-| [SRC-50C86B7ED8-L000013](../../pyproject.toml#L13) | 13 | `"  \"beautifulsoup4>=4.12,<5\","` | — |
-| [SRC-50C86B7ED8-L000014](../../pyproject.toml#L14) | 14 | `"  \"httpx>=0.27,<1\","` | — |
-| [SRC-50C86B7ED8-L000015](../../pyproject.toml#L15) | 15 | `"  \"tldextract>=5.3,<6\","` | — |
-| [SRC-50C86B7ED8-L000016](../../pyproject.toml#L16) | 16 | `"  \"psycopg[binary]>=3.2,<4\","` | — |
-| [SRC-50C86B7ED8-L000017](../../pyproject.toml#L17) | 17 | `"]"` | — |
-| [SRC-50C86B7ED8-L000018](../../pyproject.toml#L18) | 18 | `""` | — |
-| [SRC-50C86B7ED8-L000019](../../pyproject.toml#L19) | 19 | `"[project.optional-dependencies]"` | — |
-| [SRC-50C86B7ED8-L000020](../../pyproject.toml#L20) | 20 | `"dev = [\"pytest>=8.0\", \"ruff>=0.5\"]"` | — |
-| [SRC-50C86B7ED8-L000021](../../pyproject.toml#L21) | 21 | `""` | — |
-| [SRC-50C86B7ED8-L000022](../../pyproject.toml#L22) | 22 | `"[tool.pytest.ini_options]"` | — |
-| [SRC-50C86B7ED8-L000023](../../pyproject.toml#L23) | 23 | `"testpaths = [\"tests\"]"` | — |
-| [SRC-50C86B7ED8-L000024](../../pyproject.toml#L24) | 24 | `""` | — |
-| [SRC-50C86B7ED8-L000025](../../pyproject.toml#L25) | 25 | `"[tool.setuptools.packages.find]"` | — |
-| [SRC-50C86B7ED8-L000026](../../pyproject.toml#L26) | 26 | `"include = [\"agents*\", \"api*\", \"cli*\"]"` | — |
-| [SRC-50C86B7ED8-L000027](../../pyproject.toml#L27) | 27 | `"exclude = [\"tests*\", \"web*\"]"` | — |
-| [SRC-50C86B7ED8-L000028](../../pyproject.toml#L28) | 28 | `""` | — |
-| [SRC-50C86B7ED8-L000029](../../pyproject.toml#L29) | 29 | `"[tool.ruff]"` | — |
-| [SRC-50C86B7ED8-L000030](../../pyproject.toml#L30) | 30 | `"line-length = 100"` | — |
-| [SRC-50C86B7ED8-L000031](../../pyproject.toml#L31) | 31 | `"target-version = \"py311\""` | — |
-| [SRC-50C86B7ED8-L000032](../../pyproject.toml#L32) | 32 | `""` | — |
-| [SRC-50C86B7ED8-L000033](../../pyproject.toml#L33) | 33 | `"[tool.ruff.lint]"` | — |
-| [SRC-50C86B7ED8-L000034](../../pyproject.toml#L34) | 34 | `"# Keep default rules; ignore only patterns intentional in this codebase."` | — |
-| [SRC-50C86B7ED8-L000035](../../pyproject.toml#L35) | 35 | `"# BLE001: broad except at API boundary to avoid leaking internals"` | — |
-| [SRC-50C86B7ED8-L000036](../../pyproject.toml#L36) | 36 | `"# E501: long Arabic/English diagnostic strings"` | — |
-| [SRC-50C86B7ED8-L000037](../../pyproject.toml#L37) | 37 | `"# I001: historical import order; do not block CI on style alone"` | — |
-| [SRC-50C86B7ED8-L000038](../../pyproject.toml#L38) | 38 | `"# F841: unused assignment kept for clarity in some tests"` | — |
-| [SRC-50C86B7ED8-L000039](../../pyproject.toml#L39) | 39 | `"# RUF100: residual noqa:BLE001 comments after BLE001 is ignored globally"` | — |
-| [SRC-50C86B7ED8-L000040](../../pyproject.toml#L40) | 40 | `"ignore = [\"BLE001\", \"E501\", \"I001\", \"F841\", \"RUF100\"]"` | — |
-## إعدادات وتشغيل
-
-### FILE-115C2027D9 — [railway.json](../../railway.json#L1)
-
-- النوع: **JSON**
-- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-115C2027D9-L000001](../../railway.json#L1) | 1 | `"{"` | — |
-| [SRC-115C2027D9-L000002](../../railway.json#L2) | 2 | `"  \"$schema\": \"https://railway.com/railway.schema.json\","` | — |
-| [SRC-115C2027D9-L000003](../../railway.json#L3) | 3 | `"  \"build\": {"` | — |
-| [SRC-115C2027D9-L000004](../../railway.json#L4) | 4 | `"    \"builder\": \"DOCKERFILE\","` | — |
-| [SRC-115C2027D9-L000005](../../railway.json#L5) | 5 | `"    \"dockerfilePath\": \"Dockerfile\""` | — |
-| [SRC-115C2027D9-L000006](../../railway.json#L6) | 6 | `"  },"` | — |
-| [SRC-115C2027D9-L000007](../../railway.json#L7) | 7 | `"  \"deploy\": {"` | — |
-| [SRC-115C2027D9-L000008](../../railway.json#L8) | 8 | `"    \"startCommand\": \"sh -c 'python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}'\","` | — |
-| [SRC-115C2027D9-L000009](../../railway.json#L9) | 9 | `"    \"healthcheckPath\": \"/api/health\","` | — |
-| [SRC-115C2027D9-L000010](../../railway.json#L10) | 10 | `"    \"healthcheckTimeout\": 120,"` | — |
-| [SRC-115C2027D9-L000011](../../railway.json#L11) | 11 | `"    \"restartPolicyType\": \"ON_FAILURE\","` | — |
-| [SRC-115C2027D9-L000012](../../railway.json#L12) | 12 | `"    \"restartPolicyMaxRetries\": 5"` | — |
-| [SRC-115C2027D9-L000013](../../railway.json#L13) | 13 | `"  }"` | — |
-| [SRC-115C2027D9-L000014](../../railway.json#L14) | 14 | `"}"` | — |
-## وثائق ونصوص
-
-### FILE-B335630551 — [README.md](../../README.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B335630551-L000001](../../README.md#L1) | 1 | `"# Omarai — Arabic-First AI Sales Intelligence & Customer Acquisition Agent"` | — |
-| [SRC-B335630551-L000002](../../README.md#L2) | 2 | `""` | — |
-| [SRC-B335630551-L000003](../../README.md#L3) | 3 | `"> **Foundational engineering requirements:** mandatory contributor/agent rules are in [AGENTS.md](AGENTS.md). The core architecture and security charter is [OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md](docs/OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md); the expanded platform practices across reliability, security, privacy, data, SRE, AI, accessibility, supply chain, and cost are in [OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md](docs/OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md); and the requirement IDs, expert-review lenses, evidence model, risk priorities, maturity stages, and release gates are in [OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md). The initial foundational requirements checklist is [OMARAI_REQUIREMENTS_REGISTER.md](docs/OMARAI_REQUIREMENTS_REGISTER.md). These documents define required direction; they do not prove every control is implemented or tested. Use the [documentation index](docs/README.md) to find the current source of truth for each topic."` | — |
-| [SRC-B335630551-L000004](../../README.md#L4) | 4 | `""` | — |
-| [SRC-B335630551-L000005](../../README.md#L5) | 5 | `""` | — |
-| [SRC-B335630551-L000006](../../README.md#L6) | 6 | `"Omarai's product mission is to be an Arabic-first AI Sales Intelligence and Customer Acquisition Agent: understand a product or service and its market, discover public and permitted buying-demand signals, verify their evidence, qualify opportunities, and recommend useful sales follow-ups."` | — |
-| [SRC-B335630551-L000007](../../README.md#L7) | 7 | `""` | — |
-| [SRC-B335630551-L000008](../../README.md#L8) | 8 | ``"The current repository provides a bounded web-research and evidence pipeline, a `LEAD_GENERATION` intent route, an initial buyer-signal detector, and a local lead workspace. These are foundational capabilities, **not proof of a complete end-to-end sales intelligence product**. Product understanding, ICP-aware demand discovery, multi-type signal classification, evidence-backed qualification, and the full sales workflow remain subject to the implementation and acceptance gates in the [Sales Intelligence Architecture](docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md)."`` | — |
-| [SRC-B335630551-L000009](../../README.md#L9) | 9 | `""` | — |
-| [SRC-B335630551-L000010](../../README.md#L10) | 10 | `"The existing responsive RTL research interface and general web-research capabilities remain shared platform capabilities. The sales domain should reuse them rather than create a second search engine."` | — |
-| [SRC-B335630551-L000011](../../README.md#L11) | 11 | `""` | — |
-| [SRC-B335630551-L000012](../../README.md#L12) | 12 | ``"The Arabic RTL sales workspace is the product's primary experience at `/` and `/workspace`. The general-purpose web-research agent remains available at `/agent`, while the legacy lead dashboard remains at `/leads`. Public-web research, page reading, evidence handling, and language models are shared platform capabilities that support the sales-intelligence mission; they are not the product's end goal."`` | — |
-| [SRC-B335630551-L000013](../../README.md#L13) | 13 | `""` | — |
-| [SRC-B335630551-L000014](../../README.md#L14) | 14 | `"## Product direction and current delivery snapshot — 6 November 2026"` | — |
-| [SRC-B335630551-L000015](../../README.md#L15) | 15 | `""` | — |
-| [SRC-B335630551-L000016](../../README.md#L16) | 16 | `"Omarai's approved product direction is evidence-backed discovery and qualification of public buying-demand signals for a user-described product/service and market. A company matching the target profile is not, by itself, a buyer-intent signal. The product does not perform automated outreach."` | — |
-| [SRC-B335630551-L000017](../../README.md#L17) | 17 | `""` | — |
-| [SRC-B335630551-L000018](../../README.md#L18) | 18 | ``"- Current `main`: `a297abd271d48f459effad083a9f424a1499cd39`."`` | — |
-| [SRC-B335630551-L000019](../../README.md#L19) | 19 | ``"- The default route `/` and `/workspace` serve the Arabic sales workspace; `/agent` serves the general research agent; `/leads` preserves the legacy lead view."`` | — |
-| [SRC-B335630551-L000020](../../README.md#L20) | 20 | `"- The currently connected workspace views are overview, existing demand-signal inbox, qualification pipeline, and a non-probing system snapshot. Other menu modules remain unavailable unless a server-side contract is implemented and verified."` | — |
-| [SRC-B335630551-L000021](../../README.md#L21) | 21 | ``"- Product profiles and buyer-intent discovery are proposed in [PR #155](https://github.com/mosabosama2030-oss/omarai/pull/155), which is **open and not merged** in this snapshot. Do not treat those capabilities as part of `main`."`` | — |
-| [SRC-B335630551-L000022](../../README.md#L22) | 22 | `"- See [current project status and governing decisions](docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md) for merge state, CI evidence, open risks, and release gates."` | — |
-| [SRC-B335630551-L000023](../../README.md#L23) | 23 | `""` | — |
-| [SRC-B335630551-L000024](../../README.md#L24) | 24 | `"## What this version does"` | — |
-| [SRC-B335630551-L000025](../../README.md#L25) | 25 | `""` | — |
-| [SRC-B335630551-L000026](../../README.md#L26) | 26 | `"- Plans up to eight search queries from a natural-language question with a dedicated reasoning/planning model, and uses a deterministic multi-query fallback when the model is unavailable."` | — |
-| [SRC-B335630551-L000027](../../README.md#L27) | 27 | `"- Uses separate model roles by default: NVIDIA Nemotron 3 Ultra (free) for query planning and Google Gemma 4 31B Instruct (free) for answer synthesis and the second-pass consistency review; retries with OpenRouter's free-model router if a chosen model fails."` | — |
-| [SRC-B335630551-L000028](../../README.md#L28) | 28 | `"- Runs DuckDuckGo HTML and Bing RSS independently for every planned query; can add official Brave Search API and Tavily Search API result indexes when their environment keys are configured; uses Google News RSS for queries judged time-sensitive."` | — |
-| [SRC-B335630551-L000029](../../README.md#L29) | 29 | `"- Fuses duplicate results across queries and engines using reciprocal-rank fusion, preserving provider, query, domain, platform, publication-date and page-extraction provenance."` | — |
-| [SRC-B335630551-L000030](../../README.md#L30) | 30 | `"- Extracts text from up to eight accessible public pages per question with request-size and timeout bounds, following at most three individually validated public redirects."` | — |
-| [SRC-B335630551-L000031](../../README.md#L31) | 31 | ``"- Searches public Reddit RSS and the Bluesky public search endpoint when social discussion is relevant; can use Reddit's OAuth API when `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` are provided."`` | — |
-| [SRC-B335630551-L000032](../../README.md#L32) | 32 | `"- Searches indexed public pages on Facebook, Instagram, X, TikTok, LinkedIn, Threads and YouTube through the general web engines."` | — |
-| [SRC-B335630551-L000033](../../README.md#L33) | 33 | `"- Can use the official Meta Graph API to read posts and a small sample of public comments from explicitly configured Facebook Pages when the token has suitable permissions."` | — |
-| [SRC-B335630551-L000034](../../README.md#L34) | 34 | ``"- Can use Instagram Graph API hashtag search to read public hashtag media when `INSTAGRAM_USER_ID` and `INSTAGRAM_ACCESS_TOKEN` have the required permissions. It is not a global Instagram search and has platform quotas."`` | — |
-| [SRC-B335630551-L000035](../../README.md#L35) | 35 | ``"- Can use the official X recent-post endpoint when `X_BEARER_TOKEN` is configured and the account/API tier permits the request; can use the official YouTube Data API when `YOUTUBE_API_KEY` is configured."`` | — |
-| [SRC-B335630551-L000036](../../README.md#L36) | 36 | `"- Generates an evidence-grounded answer in the user's language, showing source links, query plan, provider coverage, direct page reads, platform mix, source/domain diversity, date coverage, and evidence-coverage warnings. Coverage indicators describe breadth and inspectability; they are not probabilities that the answer is true."` | — |
-| [SRC-B335630551-L000037](../../README.md#L37) | 37 | `"- Carries up to eight recent chat messages from the current browser session into follow-up questions."` | — |
-| [SRC-B335630551-L000038](../../README.md#L38) | 38 | ``"- Keeps the existing local SQLite lead workspace at `/leads`. The approved Arabic RTL Neon Command sales workspace is the default home at `/` and remains available at `/workspace`; it includes overview, tenant-scoped product/market profiles, buyer-intent discovery runs using the existing lead-generation search pipeline, human-reviewed saving of server-qualified public-demand signals, signal review, and qualification-status updates. The general web-research agent remains available at `/agent`. The system-state view reads the non-probing `/api/health` configuration snapshot. Company profiles, market analytics, scheduled monitoring, evidence/audit centers, tasks, settings and other modules without completed server contracts remain explicitly unavailable."`` | — |
-| [SRC-B335630551-L000039](../../README.md#L39) | 39 | `"- Binds to loopback by default; it is not a public production deployment."` | — |
-| [SRC-B335630551-L000040](../../README.md#L40) | 40 | `""` | — |
-| [SRC-B335630551-L000041](../../README.md#L41) | 41 | ``"**Verification semantics:** `GET /api/health` is a configuration/dependency snapshot, not proof that search providers or the model are reachable. Check the `agent.verification_scope` field to see what is and is not verified. Use the protected `POST /api/diagnostics` endpoint for explicit live search/model probes; a passed diagnostic only verifies the specific probes run at that time, not every optional connector or answer quality."`` | — |
-| [SRC-B335630551-L000042](../../README.md#L42) | 42 | `""` | — |
-| [SRC-B335630551-L000043](../../README.md#L43) | 43 | `"This is a tool-using research agent built around existing language models, not a foundation model trained from scratch. The role-specific defaults aim for more consistent behaviour than using a router that selects a different free model at random on each call. Exact availability and response quality still depend on OpenRouter/provider conditions. **Privacy warning:** the user's question, conversation context and selected web excerpts are sent to the configured external language-model provider for planning/synthesis/review. OpenRouter's NVIDIA Nemotron free endpoint states that session data may be logged for security and product improvement; do not send passwords, API keys, private information or personal/confidential customer data through the free endpoint. See the [NVIDIA Nemotron free-endpoint privacy notice](https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free). Its language-model planner decides how to search, but query count, URLs and result shapes are validated by deterministic code. Cross-engine agreement improves discovery and ranking but is not independent fact verification. Public social pages that require login, blocked pages and private profiles are not fetched; social search cannot promise complete coverage of any platform. Direct official-platform access varies: Reddit API access requires approved app credentials and is subject to Reddit's terms; Facebook Pages reads require a valid token, page identifiers and correct permissions; Instagram hashtag search requires a professional Instagram account token and the specific supported permissions; X API access requires an authorized bearer token and suitable access; YouTube direct API search requires a Google API key. These APIs do not grant universal access to all content, accounts or comments. Review each platform's terms, quotas and permitted use before using the agent commercially. The agent never bypasses login, paywall or access controls and does not send messages or make automated contact with people."` | — |
-| [SRC-B335630551-L000044](../../README.md#L44) | 44 | `""` | — |
-| [SRC-B335630551-L000045](../../README.md#L45) | 45 | `""` | — |
-| [SRC-B335630551-L000046](../../README.md#L46) | 46 | `"## Living repository index"` | — |
-| [SRC-B335630551-L000047](../../README.md#L47) | 47 | `""` | — |
-| [SRC-B335630551-L000048](../../README.md#L48) | 48 | `"**Current delivery gate (Arabic):** [OMARAI HANDOFF CHECKLIST](docs/OMARAI_HANDOFF_CHECKLIST_AR.md) — current release blockers, required evidence, and operator actions. The central [remediation register](docs/OMARAI_REMEDIATION_REGISTER_AR.md) remains the detailed issue history."` | — |
-| [SRC-B335630551-L000049](../../README.md#L49) | 49 | `""` | — |
-| [SRC-B335630551-L000050](../../README.md#L50) | 50 | `"Omarai maintains a categorized master index and a paginated, line-by-line source index:"` | — |
-| [SRC-B335630551-L000051](../../README.md#L51) | 51 | `""` | — |
-| [SRC-B335630551-L000052](../../README.md#L52) | 52 | ``"- [MASTER INDEX](docs/MASTER_INDEX.md): file inventory with stable file IDs, Python AST definitions, static frontend/configuration symbols, and explicitly marked TODO/FIXME/BUG/HACK/XXX/REVIEW/SECURITY/DEPRECATED/ISSUE/DEFECT/REGRESSION/RISK/GAP/ERROR/WARNING/PERF/PRIVACY/DATA_LOSS/ACCESSIBILITY entries. Each review marker has an `FND-...` code and a link to the exact source line."`` | — |
-| [SRC-B335630551-L000053](../../README.md#L53) | 53 | `"- [SOURCE LINES INDEX](docs/SOURCE_LINES_INDEX.md): search-friendly directory of files, page links, per-file line counts, and links to each source line."` | — |
-| [SRC-B335630551-L000054](../../README.md#L54) | 54 | `"- [INDEX COVERAGE AUDIT](docs/INDEX_COVERAGE_AUDIT.md): generated evidence of line-count consistency, metadata-only files, excluded path names and their reasons, and the exact scope of any “100%” coverage statement."` | — |
-| [SRC-B335630551-L000055](../../README.md#L55) | 55 | ``"- [Source line pages](docs/source_index/): small generated pages containing every logical line from eligible readable text files. Each line has a `SRC-<FILEHASH>-L000001` code, exact JSON-escaped text, and a link back to the source file at the matching line. Pages are capped at 800 line records to remain navigable on mobile and in GitHub's web view."`` | — |
-| [SRC-B335630551-L000056](../../README.md#L56) | 56 | `"- [Local source search](docs/search_code.py): offline text/regex search with file, line, nearby context, and GitHub line links. It excludes common secret/configuration files, databases, key files, symlinks, and runtime directories; it does not detect every secret or replace a security audit."` | — |
-| [SRC-B335630551-L000057](../../README.md#L57) | 57 | `""` | — |
-| [SRC-B335630551-L000058](../../README.md#L58) | 58 | ``"Example: `python docs/search_code.py \"resolve_followup_query\" --ext py --context 2`."`` | — |
-| [SRC-B335630551-L000059](../../README.md#L59) | 59 | `""` | — |
-| [SRC-B335630551-L000060](../../README.md#L60) | 60 | ``"The generator now refuses to publish indexes if any eligible file has missing, duplicated, or misnumbered source-line records. It still cannot infer every unmarked logical/programming defect; known issues should be recorded explicitly with a supported marker (for example, `# BUG: explain the defect`) so the generated `FND-...` register can point to the corresponding `SRC-...` line."`` | — |
-| [SRC-B335630551-L000061](../../README.md#L61) | 61 | `""` | — |
-| [SRC-B335630551-L000062](../../README.md#L62) | 62 | `"Regenerate and verify the indexes locally:"` | — |
-| [SRC-B335630551-L000063](../../README.md#L63) | 63 | `""` | — |
-| [SRC-B335630551-L000064](../../README.md#L64) | 64 | ````"```bash"```` | — |
-| [SRC-B335630551-L000065](../../README.md#L65) | 65 | `"python docs/generate_index.py"` | — |
-| [SRC-B335630551-L000066](../../README.md#L66) | 66 | `"python docs/generate_index.py --check"` | — |
-| [SRC-B335630551-L000067](../../README.md#L67) | 67 | ````"```"```` | — |
-| [SRC-B335630551-L000068](../../README.md#L68) | 68 | `""` | — |
-| [SRC-B335630551-L000069](../../README.md#L69) | 69 | ``"GitHub Actions validates the generator on Python 3.11 and 3.12. The publishing workflow runs on pushes to `main` and the `feat/**`, `fix/**`, and `feature/**` branches. It regenerates and commits all indexes and generated pages only when output changes; obsolete generated pages are removed, while generated-index-only commits are ignored to avoid loops. Documentation-only and repository-hygiene branches are still tested with indexes regenerated in the isolated test workspace, but do not carry a large generated-page diff solely because documentation lines moved; after merge, the publisher refreshes the committed indexes on `main`. If direct publication to `main` is rejected, it opens a pull request instead of force-updating a branch or auto-merging."`` | — |
-| [SRC-B335630551-L000070](../../README.md#L70) | 70 | `""` | — |
-| [SRC-B335630551-L000071](../../README.md#L71) | 71 | ``"When a known code issue is found, add a source comment using one supported marker name (TODO, FIXME, BUG, HACK, XXX, REVIEW, SECURITY, DEPRECATED, ISSUE, DEFECT, REGRESSION, RISK, GAP, ERROR, WARNING, PERF, PRIVACY, DATA_LOSS, or ACCESSIBILITY), followed by a colon and a concise description. The index assigns an `FND-...` code and links it to the exact `SRC-...` source-line record; removing or editing that source annotation updates the generated register on the next index run. Coverage includes every logical line in eligible readable text files up to 2 MiB. Known local secrets, runtime databases, dependency/build directories, binary/unreadable files and oversized files are excluded from line-level indexing by design but listed by metadata where eligible. Static review markers help track explicit findings; no source index can prove that every arbitrary logic bug has been detected or that all code is correct."`` | — |
-| [SRC-B335630551-L000072](../../README.md#L72) | 72 | `""` | — |
-| [SRC-B335630551-L000073](../../README.md#L73) | 73 | `"## Per-request resource budget"` | — |
-| [SRC-B335630551-L000074](../../README.md#L74) | 74 | `""` | — |
-| [SRC-B335630551-L000075](../../README.md#L75) | 75 | ``"Each `POST /api/agent` answer includes a `request_budget` object with elapsed and remaining time, reserved resource counts, and configured limits. The current defaults are a 90-second cooperative deadline, at most 8 search queries, 32 provider search calls, 8 model HTTP attempts, 8 page fetches, and up to 3 optional server-side search-tool calls per request. Operator limits may be lowered or raised only within hard caps: `OMARAI_REQUEST_BUDGET_SECONDS` (10–120), `OMARAI_REQUEST_MAX_SEARCH_QUERIES` (1–8), `OMARAI_REQUEST_MAX_SEARCH_CALLS` (1–40), `OMARAI_REQUEST_MAX_MODEL_CALLS` (1–12), `OMARAI_REQUEST_MAX_PAGE_FETCHES` (1–8), and `OMARAI_REQUEST_MAX_TOOL_CALLS` (0–3). Invalid numeric values fall back to the defaults; out-of-range values are clamped."`` | — |
-| [SRC-B335630551-L000076](../../README.md#L76) | 76 | `""` | — |
-| [SRC-B335630551-L000077](../../README.md#L77) | 77 | `"The deadline caps the timeout passed to outbound operations and prevents new work from being reserved after the deadline or a resource cap is exhausted. It is **cooperative, not hard cancellation**: a network call already in progress may overrun slightly while its client unwinds. Do not interpret this metadata as a load test, a throughput guarantee, or proof that any live provider is reachable. CI tests for budget logic are separate from live-provider validation."` | — |
-| [SRC-B335630551-L000078](../../README.md#L78) | 78 | `""` | — |
-| [SRC-B335630551-L000079](../../README.md#L79) | 79 | ``"The HTTP ingress caps active handler connections at 32 per process by default through `OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS` (bounded to 1–128). When all slots are occupied, excess sockets receive HTTP 503 with `Retry-After: 5` before a handler thread is created. The in-memory rate limiter also caps client buckets at 4,096 per process; new identities beyond that ceiling share a conservative overflow quota. Separately, expensive `/api/agent` and `/api/diagnostics` operations remain limited to at most 4 concurrent operations per process by default; configure `OMARAI_MAX_CONCURRENT_AGENT_REQUESTS` from 1 to 8. These are **process-local** controls, not distributed limits across workers or replicas, and they are not throughput/load-test claims."`` | — |
-| [SRC-B335630551-L000080](../../README.md#L80) | 80 | `""` | — |
-| [SRC-B335630551-L000081](../../README.md#L81) | 81 | `"## Experimental DeepSeek Search provider"` | — |
-| [SRC-B335630551-L000082](../../README.md#L82) | 82 | `""` | — |
-| [SRC-B335630551-L000083](../../README.md#L83) | 83 | `"Omarai can optionally compare results from DeepSeek's Search API when"` | — |
-| [SRC-B335630551-L000084](../../README.md#L84) | 84 | ``"`DEEPSEEK_SEARCH_API_KEY` is configured in the host's secret settings. It is"`` | — |
-| [SRC-B335630551-L000085](../../README.md#L85) | 85 | `"**disabled by default**; DuckDuckGo and Bing remain configured as before."` | — |

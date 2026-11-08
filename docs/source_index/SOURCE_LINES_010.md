@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000363 إلى SRC-686F71AA50-L000772
+- النطاق: SRC-086D574B4E-L000302 إلى SRC-686F71AA50-L000711
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000302](../../agents/semantic_claim_verifier.py#L302) | 302 | `"            return _not_verifiable(\"invalid_claim_row_schema\", ledger)"` | — |
+| [SRC-086D574B4E-L000303](../../agents/semantic_claim_verifier.py#L303) | 303 | `"        segment_id = row.get(\"segment_id\")"` | — |
+| [SRC-086D574B4E-L000304](../../agents/semantic_claim_verifier.py#L304) | 304 | `"        assessment = row.get(\"assessment\")"` | — |
+| [SRC-086D574B4E-L000305](../../agents/semantic_claim_verifier.py#L305) | 305 | `"        if not isinstance(segment_id, str) or segment_id not in expected_by_id or segment_id in seen:"` | — |
+| [SRC-086D574B4E-L000306](../../agents/semantic_claim_verifier.py#L306) | 306 | `"            return _not_verifiable(\"unknown_or_duplicate_segment_id\", ledger)"` | — |
+| [SRC-086D574B4E-L000307](../../agents/semantic_claim_verifier.py#L307) | 307 | `"        if not isinstance(assessment, str) or assessment not in _ACCEPTED_ASSESSMENTS:"` | — |
+| [SRC-086D574B4E-L000308](../../agents/semantic_claim_verifier.py#L308) | 308 | `"            return _not_verifiable(\"unknown_assessment_label\", ledger)"` | — |
+| [SRC-086D574B4E-L000309](../../agents/semantic_claim_verifier.py#L309) | 309 | `"        seen.add(segment_id)"` | — |
+| [SRC-086D574B4E-L000310](../../agents/semantic_claim_verifier.py#L310) | 310 | `"        supporting = row.get(\"supporting_source_indexes\")"` | — |
+| [SRC-086D574B4E-L000311](../../agents/semantic_claim_verifier.py#L311) | 311 | `"        contradicting = row.get(\"contradicting_source_indexes\")"` | — |
+| [SRC-086D574B4E-L000312](../../agents/semantic_claim_verifier.py#L312) | 312 | `"        if not isinstance(supporting, list) or not isinstance(contradicting, list):"` | — |
+| [SRC-086D574B4E-L000313](../../agents/semantic_claim_verifier.py#L313) | 313 | `"            return _not_verifiable(\"source_indexes_must_be_lists\", ledger)"` | — |
+| [SRC-086D574B4E-L000314](../../agents/semantic_claim_verifier.py#L314) | 314 | `"        if len(supporting) > 8 or len(contradicting) > 8:"` | — |
+| [SRC-086D574B4E-L000315](../../agents/semantic_claim_verifier.py#L315) | 315 | `"            return _not_verifiable(\"source_index_list_too_large\", ledger)"` | — |
+| [SRC-086D574B4E-L000316](../../agents/semantic_claim_verifier.py#L316) | 316 | `"        if any(isinstance(value, bool) or not isinstance(value, int) for value in supporting + contradicting):"` | — |
+| [SRC-086D574B4E-L000317](../../agents/semantic_claim_verifier.py#L317) | 317 | `"            return _not_verifiable(\"source_indexes_must_be_integers\", ledger)"` | — |
+| [SRC-086D574B4E-L000318](../../agents/semantic_claim_verifier.py#L318) | 318 | `"        if len(set(supporting)) != len(supporting) or len(set(contradicting)) != len(contradicting):"` | — |
+| [SRC-086D574B4E-L000319](../../agents/semantic_claim_verifier.py#L319) | 319 | `"            return _not_verifiable(\"duplicate_source_indexes\", ledger)"` | — |
+| [SRC-086D574B4E-L000320](../../agents/semantic_claim_verifier.py#L320) | 320 | `"        if not set(supporting + contradicting).issubset(allowed_sources):"` | — |
+| [SRC-086D574B4E-L000321](../../agents/semantic_claim_verifier.py#L321) | 321 | `"            return _not_verifiable(\"source_index_out_of_range\", ledger)"` | — |
+| [SRC-086D574B4E-L000322](../../agents/semantic_claim_verifier.py#L322) | 322 | `"        segment = expected_by_id[segment_id]"` | — |
+| [SRC-086D574B4E-L000323](../../agents/semantic_claim_verifier.py#L323) | 323 | `"        cited_indexes = set(segment.get(\"citation_indexes\") or [])"` | — |
+| [SRC-086D574B4E-L000324](../../agents/semantic_claim_verifier.py#L324) | 324 | `"        if not set(supporting).issubset(cited_indexes):"` | — |
+| [SRC-086D574B4E-L000325](../../agents/semantic_claim_verifier.py#L325) | 325 | `"            return _not_verifiable(\"support_must_use_same_segment_citations\", ledger)"` | — |
+| [SRC-086D574B4E-L000326](../../agents/semantic_claim_verifier.py#L326) | 326 | `"        if not set(supporting + contradicting).issubset(readable_indexes):"` | — |
+| [SRC-086D574B4E-L000327](../../agents/semantic_claim_verifier.py#L327) | 327 | `"            return _not_verifiable(\"source_without_readable_evidence_used\", ledger)"` | — |
+| [SRC-086D574B4E-L000328](../../agents/semantic_claim_verifier.py#L328) | 328 | `""` | — |
+| [SRC-086D574B4E-L000329](../../agents/semantic_claim_verifier.py#L329) | 329 | `"        has_support = bool(supporting)"` | — |
+| [SRC-086D574B4E-L000330](../../agents/semantic_claim_verifier.py#L330) | 330 | `"        has_contradiction = bool(contradicting)"` | — |
+| [SRC-086D574B4E-L000331](../../agents/semantic_claim_verifier.py#L331) | 331 | `"        citations_present = bool(cited_indexes)"` | — |
+| [SRC-086D574B4E-L000332](../../agents/semantic_claim_verifier.py#L332) | 332 | `"        if assessment == \"supported\" and not (has_support and not has_contradiction):"` | — |
+| [SRC-086D574B4E-L000333](../../agents/semantic_claim_verifier.py#L333) | 333 | `"            return _not_verifiable(\"supported_assessment_has_invalid_evidence\", ledger)"` | — |
+| [SRC-086D574B4E-L000334](../../agents/semantic_claim_verifier.py#L334) | 334 | `"        if assessment == \"contradicted\" and not (has_contradiction and not has_support):"` | — |
+| [SRC-086D574B4E-L000335](../../agents/semantic_claim_verifier.py#L335) | 335 | `"            return _not_verifiable(\"contradicted_assessment_has_invalid_evidence\", ledger)"` | — |
+| [SRC-086D574B4E-L000336](../../agents/semantic_claim_verifier.py#L336) | 336 | `"        if assessment == \"conflicted\" and not (has_support and has_contradiction):"` | — |
+| [SRC-086D574B4E-L000337](../../agents/semantic_claim_verifier.py#L337) | 337 | `"            return _not_verifiable(\"conflicted_assessment_has_invalid_evidence\", ledger)"` | — |
+| [SRC-086D574B4E-L000338](../../agents/semantic_claim_verifier.py#L338) | 338 | `"        if assessment == \"insufficient\" and (has_support or has_contradiction):"` | — |
+| [SRC-086D574B4E-L000339](../../agents/semantic_claim_verifier.py#L339) | 339 | `"            return _not_verifiable(\"insufficient_assessment_has_evidence_indexes\", ledger)"` | — |
+| [SRC-086D574B4E-L000340](../../agents/semantic_claim_verifier.py#L340) | 340 | `"        if assessment == \"non_factual\" and (citations_present or has_support or has_contradiction):"` | — |
+| [SRC-086D574B4E-L000341](../../agents/semantic_claim_verifier.py#L341) | 341 | `"            return _not_verifiable(\"non_factual_assessment_has_citations\", ledger)"` | — |
+| [SRC-086D574B4E-L000342](../../agents/semantic_claim_verifier.py#L342) | 342 | `"        if assessment == \"non_factual\" and not _is_safe_non_factual_heading("` | — |
+| [SRC-086D574B4E-L000343](../../agents/semantic_claim_verifier.py#L343) | 343 | `"            segment.get(\"text\")"` | — |
+| [SRC-086D574B4E-L000344](../../agents/semantic_claim_verifier.py#L344) | 344 | `"        ):"` | — |
+| [SRC-086D574B4E-L000345](../../agents/semantic_claim_verifier.py#L345) | 345 | `"            return _not_verifiable("` | — |
+| [SRC-086D574B4E-L000346](../../agents/semantic_claim_verifier.py#L346) | 346 | `"                \"non_factual_label_not_deterministically_safe\", ledger"` | — |
+| [SRC-086D574B4E-L000347](../../agents/semantic_claim_verifier.py#L347) | 347 | `"            )"` | — |
+| [SRC-086D574B4E-L000348](../../agents/semantic_claim_verifier.py#L348) | 348 | `""` | — |
+| [SRC-086D574B4E-L000349](../../agents/semantic_claim_verifier.py#L349) | 349 | `"        if assessment == \"supported\":"` | — |
+| [SRC-086D574B4E-L000350](../../agents/semantic_claim_verifier.py#L350) | 350 | `"            factual_supported_count += 1"` | — |
+| [SRC-086D574B4E-L000351](../../agents/semantic_claim_verifier.py#L351) | 351 | `"        elif assessment == \"non_factual\":"` | — |
+| [SRC-086D574B4E-L000352](../../agents/semantic_claim_verifier.py#L352) | 352 | `"            non_factual_count += 1"` | — |
+| [SRC-086D574B4E-L000353](../../agents/semantic_claim_verifier.py#L353) | 353 | `"        else:"` | — |
+| [SRC-086D574B4E-L000354](../../agents/semantic_claim_verifier.py#L354) | 354 | `"            unsupported_ids.append(segment_id)"` | — |
+| [SRC-086D574B4E-L000355](../../agents/semantic_claim_verifier.py#L355) | 355 | `"            if assessment == \"conflicted\":"` | — |
+| [SRC-086D574B4E-L000356](../../agents/semantic_claim_verifier.py#L356) | 356 | `"                conflicted_ids.append(segment_id)"` | — |
+| [SRC-086D574B4E-L000357](../../agents/semantic_claim_verifier.py#L357) | 357 | `"        assessed.append({"` | — |
+| [SRC-086D574B4E-L000358](../../agents/semantic_claim_verifier.py#L358) | 358 | `"            \"segment_id\": segment_id,"` | — |
+| [SRC-086D574B4E-L000359](../../agents/semantic_claim_verifier.py#L359) | 359 | `"            \"assessment\": assessment,"` | — |
+| [SRC-086D574B4E-L000360](../../agents/semantic_claim_verifier.py#L360) | 360 | `"            \"supporting_source_indexes\": supporting,"` | — |
+| [SRC-086D574B4E-L000361](../../agents/semantic_claim_verifier.py#L361) | 361 | `"            \"contradicting_source_indexes\": contradicting,"` | — |
+| [SRC-086D574B4E-L000362](../../agents/semantic_claim_verifier.py#L362) | 362 | `"        })"` | — |
 | [SRC-086D574B4E-L000363](../../agents/semantic_claim_verifier.py#L363) | 363 | `""` | — |
 | [SRC-086D574B4E-L000364](../../agents/semantic_claim_verifier.py#L364) | 364 | `"    if seen != set(expected_by_id):"` | — |
 | [SRC-086D574B4E-L000365](../../agents/semantic_claim_verifier.py#L365) | 365 | `"        return _not_verifiable(\"claim_rows_incomplete\", ledger)"` | — |
@@ -764,64 +825,3 @@
 | [SRC-686F71AA50-L000709](../../agents/task_understanding.py#L709) | 709 | `"    budgets = [m.group(0).strip()[:100] for m in _BUDGET_RE.finditer(raw)]"` | — |
 | [SRC-686F71AA50-L000710](../../agents/task_understanding.py#L710) | 710 | `"    urls = list(dict.fromkeys(_URL_RE.findall(raw)))[:5]"` | — |
 | [SRC-686F71AA50-L000711](../../agents/task_understanding.py#L711) | 711 | `"    inline_summary_text = _has_inline_summary_text(raw)"` | — |
-| [SRC-686F71AA50-L000712](../../agents/task_understanding.py#L712) | 712 | `"    unresolved_followup = any(normalize_text(cue) in normalized for cue in _FOLLOWUP_CUES)"` | — |
-| [SRC-686F71AA50-L000713](../../agents/task_understanding.py#L713) | 713 | `"    missing_required_inputs: list[str] = []"` | — |
-| [SRC-686F71AA50-L000714](../../agents/task_understanding.py#L714) | 714 | `"    if intent_route == \"CLARIFY\":"` | — |
-| [SRC-686F71AA50-L000715](../../agents/task_understanding.py#L715) | 715 | `"        missing_required_inputs.append(\"unresolved_referent_or_incomplete_request\")"` | — |
-| [SRC-686F71AA50-L000716](../../agents/task_understanding.py#L716) | 716 | `"    if official_destination and not _has_official_site_target(raw):"` | — |
-| [SRC-686F71AA50-L000717](../../agents/task_understanding.py#L717) | 717 | `"        missing_required_inputs.append(\"official_destination_target_entity\")"` | — |
-| [SRC-686F71AA50-L000718](../../agents/task_understanding.py#L718) | 718 | `"    if family == \"summarize\" and not urls and not inline_summary_text:"` | — |
-| [SRC-686F71AA50-L000719](../../agents/task_understanding.py#L719) | 719 | `"        missing_required_inputs.append(\"summary_source_url_or_pasted_text\")"` | — |
-| [SRC-686F71AA50-L000720](../../agents/task_understanding.py#L720) | 720 | `"    context = dialogue_context if isinstance(dialogue_context, dict) else {}"` | — |
-| [SRC-686F71AA50-L000721](../../agents/task_understanding.py#L721) | 721 | `"    explicit_aspects = list(dict.fromkeys(aspect_values))[:MAX_TASK_ASPECTS]"` | — |
-| [SRC-686F71AA50-L000722](../../agents/task_understanding.py#L722) | 722 | `""` | — |
-| [SRC-686F71AA50-L000723](../../agents/task_understanding.py#L723) | 723 | `"    # Hypotheses are alternatives considered by the deterministic classifier. Counts"` | — |
-| [SRC-686F71AA50-L000724](../../agents/task_understanding.py#L724) | 724 | `"    # are matched lexical signals, not calibrated confidence or probability."` | — |
-| [SRC-686F71AA50-L000725](../../agents/task_understanding.py#L725) | 725 | `"    hypothesis_rows: list[dict[str, Any]] = []"` | — |
-| [SRC-686F71AA50-L000726](../../agents/task_understanding.py#L726) | 726 | `"    for candidate_family, signals in matches.items():"` | — |
-| [SRC-686F71AA50-L000727](../../agents/task_understanding.py#L727) | 727 | `"        if signals:"` | — |
-| [SRC-686F71AA50-L000728](../../agents/task_understanding.py#L728) | 728 | `"            hypothesis_rows.append({"` | — |
-| [SRC-686F71AA50-L000729](../../agents/task_understanding.py#L729) | 729 | `"                \"family\": candidate_family,"` | — |
-| [SRC-686F71AA50-L000730](../../agents/task_understanding.py#L730) | 730 | `"                \"matched_signal_count\": len(signals),"` | — |
-| [SRC-686F71AA50-L000731](../../agents/task_understanding.py#L731) | 731 | `"                \"signals\": signals[:4],"` | — |
-| [SRC-686F71AA50-L000732](../../agents/task_understanding.py#L732) | 732 | `"                \"status\": \"candidate_interpretation\","` | — |
-| [SRC-686F71AA50-L000733](../../agents/task_understanding.py#L733) | 733 | `"            })"` | — |
-| [SRC-686F71AA50-L000734](../../agents/task_understanding.py#L734) | 734 | `"    hypothesis_rows.sort("` | — |
-| [SRC-686F71AA50-L000735](../../agents/task_understanding.py#L735) | 735 | `"        key=lambda item: (-item[\"matched_signal_count\"], item[\"family\"])"` | — |
-| [SRC-686F71AA50-L000736](../../agents/task_understanding.py#L736) | 736 | `"    )"` | — |
-| [SRC-686F71AA50-L000737](../../agents/task_understanding.py#L737) | 737 | `"    for item in hypothesis_rows:"` | — |
-| [SRC-686F71AA50-L000738](../../agents/task_understanding.py#L738) | 738 | `"        item[\"selected\"] = item[\"family\"] == family"` | — |
-| [SRC-686F71AA50-L000739](../../agents/task_understanding.py#L739) | 739 | `"    if len(hypothesis_rows) > 8:"` | — |
-| [SRC-686F71AA50-L000740](../../agents/task_understanding.py#L740) | 740 | `"        hypothesis_rows = hypothesis_rows[:8]"` | — |
-| [SRC-686F71AA50-L000741](../../agents/task_understanding.py#L741) | 741 | `""` | — |
-| [SRC-686F71AA50-L000742](../../agents/task_understanding.py#L742) | 742 | `"    # A conflict is a reason to preserve alternatives in diagnostics, not a reason to"` | — |
-| [SRC-686F71AA50-L000743](../../agents/task_understanding.py#L743) | 743 | `"    # invent certainty. High ambiguity is limited to unresolved references or a"` | — |
-| [SRC-686F71AA50-L000744](../../agents/task_understanding.py#L744) | 744 | `"    # short fragment explicitly marked as contextual."` | — |
-| [SRC-686F71AA50-L000745](../../agents/task_understanding.py#L745) | 745 | `"    unresolved = bool(missing_required_inputs) or bool(context.get(\"needs_clarification\")) or ("` | — |
-| [SRC-686F71AA50-L000746](../../agents/task_understanding.py#L746) | 746 | `"        len(raw.strip()) <= 28 and unresolved_followup"` | — |
-| [SRC-686F71AA50-L000747](../../agents/task_understanding.py#L747) | 747 | `"        and not context.get(\"resolved_question\")"` | — |
-| [SRC-686F71AA50-L000748](../../agents/task_understanding.py#L748) | 748 | `"    )"` | — |
-| [SRC-686F71AA50-L000749](../../agents/task_understanding.py#L749) | 749 | `"    if unresolved:"` | — |
-| [SRC-686F71AA50-L000750](../../agents/task_understanding.py#L750) | 750 | `"        ambiguity_status = \"needs_clarification\""` | — |
-| [SRC-686F71AA50-L000751](../../agents/task_understanding.py#L751) | 751 | `"    elif len(hypothesis_rows) >= 3:"` | — |
-| [SRC-686F71AA50-L000752](../../agents/task_understanding.py#L752) | 752 | `"        ambiguity_status = \"multiple_overlapping_signals\""` | — |
-| [SRC-686F71AA50-L000753](../../agents/task_understanding.py#L753) | 753 | `"    elif len(hypothesis_rows) == 2:"` | — |
-| [SRC-686F71AA50-L000754](../../agents/task_understanding.py#L754) | 754 | `"        ambiguity_status = \"some_intent_overlap\""` | — |
-| [SRC-686F71AA50-L000755](../../agents/task_understanding.py#L755) | 755 | `"    else:"` | — |
-| [SRC-686F71AA50-L000756](../../agents/task_understanding.py#L756) | 756 | `"        ambiguity_status = \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-686F71AA50-L000757](../../agents/task_understanding.py#L757) | 757 | `""` | — |
-| [SRC-686F71AA50-L000758](../../agents/task_understanding.py#L758) | 758 | `"    # Tool requirements are advisory planning metadata, not executable permission."` | — |
-| [SRC-686F71AA50-L000759](../../agents/task_understanding.py#L759) | 759 | `"    # A clarification route is a hard stop even when the UI has a research mode selected."` | — |
-| [SRC-686F71AA50-L000760](../../agents/task_understanding.py#L760) | 760 | `"    route_is_clarification = intent_route == \"CLARIFY\""` | — |
-| [SRC-686F71AA50-L000761](../../agents/task_understanding.py#L761) | 761 | `"    route_is_local = intent_route == \"LOCAL\""` | — |
-| [SRC-686F71AA50-L000762](../../agents/task_understanding.py#L762) | 762 | `"    search_requested = ("` | — |
-| [SRC-686F71AA50-L000763](../../agents/task_understanding.py#L763) | 763 | `"        intent_route in {\"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\"}"` | — |
-| [SRC-686F71AA50-L000764](../../agents/task_understanding.py#L764) | 764 | `"        or ("` | — |
-| [SRC-686F71AA50-L000765](../../agents/task_understanding.py#L765) | 765 | `"            intent_route == \"deterministic_fallback\""` | — |
-| [SRC-686F71AA50-L000766](../../agents/task_understanding.py#L766) | 766 | `"            and isinstance(plan, dict)"` | — |
-| [SRC-686F71AA50-L000767](../../agents/task_understanding.py#L767) | 767 | `"            and bool(plan.get(\"queries\"))"` | — |
-| [SRC-686F71AA50-L000768](../../agents/task_understanding.py#L768) | 768 | `"        )"` | — |
-| [SRC-686F71AA50-L000769](../../agents/task_understanding.py#L769) | 769 | `"        or ("` | — |
-| [SRC-686F71AA50-L000770](../../agents/task_understanding.py#L770) | 770 | `"            intent_route not in {\"LOCAL\", \"CLARIFY\", \"BUDGET_EXHAUSTED\"}"` | — |
-| [SRC-686F71AA50-L000771](../../agents/task_understanding.py#L771) | 771 | `"            and ("` | — |
-| [SRC-686F71AA50-L000772](../../agents/task_understanding.py#L772) | 772 | `"                social_required"` | — |

@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **065**
-- سجلات الأسطر: **493**
-- النطاق: SRC-2C8F288796-L000530 إلى SRC-2C8F288796-L001022
+- سجلات الأسطر: **800**
+- النطاق: SRC-2C8F288796-L000063 إلى SRC-2C8F288796-L000862
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,473 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000063](../../web/workspace.html#L63) | 63 | `".panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}"` | — |
+| [SRC-2C8F288796-L000064](../../web/workspace.html#L64) | 64 | `".panel-head h2{font-size:14px;margin:0}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.7}"` | — |
+| [SRC-2C8F288796-L000065](../../web/workspace.html#L65) | 65 | `".subtle{font-size:10px;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000066](../../web/workspace.html#L66) | 66 | `".signal-list{display:grid;gap:9px}"` | — |
+| [SRC-2C8F288796-L000067](../../web/workspace.html#L67) | 67 | `".signal-card{border:1px solid rgba(145,174,211,.14);border-radius:15px;background:rgba(8,17,31,.56);padding:14px;display:grid;gap:9px}"` | — |
+| [SRC-2C8F288796-L000068](../../web/workspace.html#L68) | 68 | `".signal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}"` | — |
+| [SRC-2C8F288796-L000069](../../web/workspace.html#L69) | 69 | `".signal-text{font-size:12px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;color:#e0eafa}"` | — |
+| [SRC-2C8F288796-L000070](../../web/workspace.html#L70) | 70 | `".signal-meta{display:flex;flex-wrap:wrap;gap:6px}"` | — |
+| [SRC-2C8F288796-L000071](../../web/workspace.html#L71) | 71 | `".tag{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:9px;color:#afc0d6;background:rgba(23,38,61,.55)}"` | — |
+| [SRC-2C8F288796-L000072](../../web/workspace.html#L72) | 72 | `".tag.teal{color:#a9f6e8;border-color:rgba(105,230,209,.23);background:rgba(32,112,104,.15)}"` | — |
+| [SRC-2C8F288796-L000073](../../web/workspace.html#L73) | 73 | `".tag.amber{color:#f7d99f;border-color:rgba(243,199,124,.22);background:rgba(135,93,32,.12)}"` | — |
+| [SRC-2C8F288796-L000074](../../web/workspace.html#L74) | 74 | `".tag.red{color:#ffb0b6;border-color:rgba(255,135,148,.22);background:rgba(130,40,52,.12)}"` | — |
+| [SRC-2C8F288796-L000075](../../web/workspace.html#L75) | 75 | `".signal-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}"` | — |
+| [SRC-2C8F288796-L000076](../../web/workspace.html#L76) | 76 | `".small-button{border:1px solid var(--line);border-radius:10px;background:rgba(20,34,54,.8);color:#d6e3f4;padding:7px 10px;font-size:10px;font-weight:800}"` | — |
+| [SRC-2C8F288796-L000077](../../web/workspace.html#L77) | 77 | `".small-button:hover{border-color:rgba(105,230,209,.45)}"` | — |
+| [SRC-2C8F288796-L000078](../../web/workspace.html#L78) | 78 | `".empty{border:1px dashed rgba(145,174,211,.24);border-radius:15px;padding:27px 16px;text-align:center;color:var(--muted);font-size:11px;line-height:1.9}"` | — |
+| [SRC-2C8F288796-L000079](../../web/workspace.html#L79) | 79 | `".empty strong{display:block;color:#dce8f7;font-size:13px;margin-bottom:6px}"` | — |
+| [SRC-2C8F288796-L000080](../../web/workspace.html#L80) | 80 | `".mini-bars{display:grid;gap:13px}"` | — |
+| [SRC-2C8F288796-L000081](../../web/workspace.html#L81) | 81 | `".bar-row{display:grid;grid-template-columns:82px minmax(0,1fr) 26px;align-items:center;gap:8px;font-size:10px;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000082](../../web/workspace.html#L82) | 82 | `".bar-track{height:8px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}"` | — |
+| [SRC-2C8F288796-L000083](../../web/workspace.html#L83) | 83 | `".bar-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--cyan))}.bar-fill.w-0{width:0%}.bar-fill.w-5{width:5%}.bar-fill.w-10{width:10%}.bar-fill.w-15{width:15%}.bar-fill.w-20{width:20%}.bar-fill.w-25{width:25%}.bar-fill.w-30{width:30%}.bar-fill.w-35{width:35%}.bar-fill.w-40{width:40%}.bar-fill.w-45{width:45%}.bar-fill.w-50{width:50%}.bar-fill.w-55{width:55%}.bar-fill.w-60{width:60%}.bar-fill.w-65{width:65%}.bar-fill.w-70{width:70%}.bar-fill.w-75{width:75%}.bar-fill.w-80{width:80%}.bar-fill.w-85{width:85%}.bar-fill.w-90{width:90%}.bar-fill.w-95{width:95%}.bar-fill.w-100{width:100%}"` | — |
+| [SRC-2C8F288796-L000084](../../web/workspace.html#L84) | 84 | `".notice{padding:13px;border-radius:14px;border:1px solid rgba(243,199,124,.2);background:rgba(116,79,29,.1);color:#efd7a9;font-size:10px;line-height:1.9}"` | — |
+| [SRC-2C8F288796-L000085](../../web/workspace.html#L85) | 85 | `".toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0 15px}"` | — |
+| [SRC-2C8F288796-L000086](../../web/workspace.html#L86) | 86 | `".field{display:grid;gap:6px;margin:11px 0}"` | — |
+| [SRC-2C8F288796-L000087](../../web/workspace.html#L87) | 87 | `".field label{font-size:10px;color:#c0d0e5}"` | — |
+| [SRC-2C8F288796-L000088](../../web/workspace.html#L88) | 88 | `"input,textarea,select{width:100%;border:1px solid rgba(145,174,211,.22);border-radius:11px;background:rgba(7,16,29,.78);color:var(--text);padding:10px 12px;font-size:11px;min-width:0}"` | — |
+| [SRC-2C8F288796-L000089](../../web/workspace.html#L89) | 89 | `"textarea{min-height:104px;resize:vertical;line-height:1.8}"` | — |
+| [SRC-2C8F288796-L000090](../../web/workspace.html#L90) | 90 | `"input::placeholder,textarea::placeholder{color:#7085a2}"` | — |
+| [SRC-2C8F288796-L000091](../../web/workspace.html#L91) | 91 | `".form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}"` | — |
+| [SRC-2C8F288796-L000092](../../web/workspace.html#L92) | 92 | `".form-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}"` | — |
+| [SRC-2C8F288796-L000093](../../web/workspace.html#L93) | 93 | `".analysis-result{border:1px solid rgba(105,230,209,.2);background:rgba(20,88,82,.12);padding:13px;border-radius:14px;margin-top:12px}"` | — |
+| [SRC-2C8F288796-L000094](../../web/workspace.html#L94) | 94 | `".analysis-score{font-size:24px;font-weight:900;color:var(--teal)}"` | — |
+| [SRC-2C8F288796-L000095](../../web/workspace.html#L95) | 95 | `".disclaimer{font-size:9px;color:#b0bdce;line-height:1.8;margin:7px 0 0}"` | — |
+| [SRC-2C8F288796-L000096](../../web/workspace.html#L96) | 96 | `".pipeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}"` | — |
+| [SRC-2C8F288796-L000097](../../web/workspace.html#L97) | 97 | `".pipeline-col{padding:13px;border:1px solid var(--line);border-radius:15px;background:rgba(9,18,32,.38);min-width:0}"` | — |
+| [SRC-2C8F288796-L000098](../../web/workspace.html#L98) | 98 | `".pipeline-col h3{font-size:11px;margin:0 0 10px;display:flex;justify-content:space-between;gap:8px}"` | — |
+| [SRC-2C8F288796-L000099](../../web/workspace.html#L99) | 99 | `".pipeline-item{display:block;width:100%;text-align:right;padding:10px;margin-top:8px;border-radius:11px;background:rgba(21,35,55,.75);border:1px solid rgba(145,174,211,.12);color:#e0eafa;font-size:10px;line-height:1.7;cursor:pointer;overflow-wrap:anywhere}"` | — |
+| [SRC-2C8F288796-L000100](../../web/workspace.html#L100) | 100 | `".pipeline-item:hover{border-color:rgba(105,230,209,.35)}"` | — |
+| [SRC-2C8F288796-L000101](../../web/workspace.html#L101) | 101 | `".detail{position:fixed;z-index:20;inset:0;background:rgba(2,8,16,.7);display:none;justify-content:flex-start}"` | — |
+| [SRC-2C8F288796-L000102](../../web/workspace.html#L102) | 102 | `".detail.open{display:flex}"` | — |
+| [SRC-2C8F288796-L000103](../../web/workspace.html#L103) | 103 | `".detail-panel{width:min(540px,100%);height:100%;overflow:auto;padding:22px;background:#0b1627;border-left:1px solid var(--line);box-shadow:20px 0 70px rgba(0,0,0,.35)}"` | — |
+| [SRC-2C8F288796-L000104](../../web/workspace.html#L104) | 104 | `".detail-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}"` | — |
+| [SRC-2C8F288796-L000105](../../web/workspace.html#L105) | 105 | `".detail-head h2{font-size:16px;margin:0}"` | — |
+| [SRC-2C8F288796-L000106](../../web/workspace.html#L106) | 106 | `".detail-body{font-size:11px;line-height:1.9;color:#d7e4f4;overflow-wrap:anywhere}"` | — |
+| [SRC-2C8F288796-L000107](../../web/workspace.html#L107) | 107 | `".detail-body h3{font-size:11px;color:var(--teal);margin:17px 0 7px}"` | — |
+| [SRC-2C8F288796-L000108](../../web/workspace.html#L108) | 108 | `".detail-body p{white-space:pre-wrap}"` | — |
+| [SRC-2C8F288796-L000109](../../web/workspace.html#L109) | 109 | `".detail-body a{overflow-wrap:anywhere}"` | — |
+| [SRC-2C8F288796-L000110](../../web/workspace.html#L110) | 110 | `".module-placeholder{padding:30px;max-width:780px}"` | — |
+| [SRC-2C8F288796-L000111](../../web/workspace.html#L111) | 111 | `".module-placeholder h2{font-size:18px;margin:8px 0}"` | — |
+| [SRC-2C8F288796-L000112](../../web/workspace.html#L112) | 112 | `".module-placeholder p{font-size:11px;line-height:2;color:var(--muted);max-width:650px}"` | — |
+| [SRC-2C8F288796-L000113](../../web/workspace.html#L113) | 113 | `".module-list{display:grid;gap:8px;margin-top:18px}"` | — |
+| [SRC-2C8F288796-L000114](../../web/workspace.html#L114) | 114 | `".module-step{padding:11px 13px;border-radius:12px;background:rgba(10,20,36,.7);border:1px solid var(--line);font-size:10px;color:#b9cbe0}"` | — |
+| [SRC-2C8F288796-L000115](../../web/workspace.html#L115) | 115 | `".footer{border-top:1px solid var(--line);margin-top:24px;padding:15px 0 0;color:#748aa6;font-size:9px;line-height:1.9}"` | — |
+| [SRC-2C8F288796-L000116](../../web/workspace.html#L116) | 116 | `".auth-gate{position:fixed;z-index:50;inset:0;display:none;place-items:center;padding:20px;background:rgba(3,9,17,.88);backdrop-filter:blur(18px)}"` | — |
+| [SRC-2C8F288796-L000117](../../web/workspace.html#L117) | 117 | `".auth-gate.open{display:grid}"` | — |
+| [SRC-2C8F288796-L000118](../../web/workspace.html#L118) | 118 | `".auth-card{width:min(430px,100%);padding:26px}"` | — |
+| [SRC-2C8F288796-L000119](../../web/workspace.html#L119) | 119 | `".auth-card h2{font-size:20px;margin:9px 0}"` | — |
+| [SRC-2C8F288796-L000120](../../web/workspace.html#L120) | 120 | `".auth-card p{font-size:11px;color:var(--muted);line-height:1.9}"` | — |
+| [SRC-2C8F288796-L000121](../../web/workspace.html#L121) | 121 | `".auth-error{color:var(--danger);font-size:10px;min-height:18px;margin-top:9px}"` | — |
+| [SRC-2C8F288796-L000122](../../web/workspace.html#L122) | 122 | `".mobile-brand{display:none}"` | — |
+| [SRC-2C8F288796-L000123](../../web/workspace.html#L123) | 123 | `"@media(max-width:1100px){.app{grid-template-columns:220px minmax(0,1fr)}.sidebar{padding-inline:12px}.content-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}"` | — |
+| [SRC-2C8F288796-L000124](../../web/workspace.html#L124) | 124 | `"@media(max-width:760px){.app{display:block}.sidebar{position:relative;top:auto;height:auto;padding:12px 14px;border-left:0;border-bottom:1px solid var(--line);gap:10px}.brand{padding:0 3px 10px}.nav{display:flex;flex-direction:row;overflow:auto;padding-bottom:3px}.nav button{width:auto;min-width:max-content;padding:9px 11px}.nav-status,.workspace-label,.side-bottom,.side-links{display:none}.main{padding:13px 13px 26px}.topbar{padding-bottom:12px}.page-head{align-items:flex-start;flex-direction:column;margin:19px 0 14px}.stats{gap:8px}.stat{padding:13px}.stat-value{font-size:23px}.panel{padding:14px}.form-grid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr}.role-pill{display:none}}"` | — |
+| [SRC-2C8F288796-L000125](../../web/workspace.html#L125) | 125 | `"@media(max-width:420px){.stats{grid-template-columns:1fr 1fr}.top-actions{gap:6px}.button{padding:9px 10px}.page-head h1{font-size:24px}.bar-row{grid-template-columns:72px minmax(0,1fr) 22px}}"` | — |
+| [SRC-2C8F288796-L000126](../../web/workspace.html#L126) | 126 | `""` | — |
+| [SRC-2C8F288796-L000127](../../web/workspace.html#L127) | 127 | `"/* Approved direction: Neon Command — production workspace adaptation */"` | — |
+| [SRC-2C8F288796-L000128](../../web/workspace.html#L128) | 128 | `":root{--bg:#070d16;--panel:rgba(12,25,38,.88);--panel-2:rgba(9,20,32,.96);--line:rgba(74,216,255,.17);--text:#e7f7ff;--muted:#86a5b8;--teal:#52dfff;--cyan:#71eaff;--violet:#8d9bff;--coral:#ff9caa;--amber:#f4cc83;--green:#78e4b0;--danger:#ff899b;--radius:16px}"` | — |
+| [SRC-2C8F288796-L000129](../../web/workspace.html#L129) | 129 | `"body{background:radial-gradient(ellipse at 50% -20%,rgba(21,54,77,.8),transparent 55%),radial-gradient(ellipse at 100% 25%,rgba(34,39,92,.18),transparent 35%),#070d16}"` | — |
+| [SRC-2C8F288796-L000130](../../web/workspace.html#L130) | 130 | `".sidebar{background:rgba(5,13,22,.86);border-left-color:rgba(74,216,255,.18);backdrop-filter:blur(26px)}"` | — |
+| [SRC-2C8F288796-L000131](../../web/workspace.html#L131) | 131 | `".logo{background:linear-gradient(135deg,#52dfff,#8d9bff);box-shadow:0 0 28px rgba(82,223,255,.18)}"` | — |
+| [SRC-2C8F288796-L000132](../../web/workspace.html#L132) | 132 | `".brand-name{letter-spacing:.04em}"` | — |
+| [SRC-2C8F288796-L000133](../../web/workspace.html#L133) | 133 | `".nav button{border-radius:10px}"` | — |
+| [SRC-2C8F288796-L000134](../../web/workspace.html#L134) | 134 | `".nav button.active{background:linear-gradient(100deg,rgba(67,223,255,.13),rgba(91,113,255,.10));border-color:rgba(67,223,255,.28);box-shadow:inset 0 1px rgba(255,255,255,.035)}"` | — |
+| [SRC-2C8F288796-L000135](../../web/workspace.html#L135) | 135 | `".nav-icon{color:#71eaff}"` | — |
+| [SRC-2C8F288796-L000136](../../web/workspace.html#L136) | 136 | `".connection,.role-pill,.status-pill,.button,.small-button{border-color:rgba(57,207,255,.18);background:rgba(10,27,40,.78)}"` | — |
+| [SRC-2C8F288796-L000137](../../web/workspace.html#L137) | 137 | `".button.primary{background:linear-gradient(105deg,#52dfff,#a1b4ff);color:#061421;box-shadow:0 6px 24px rgba(82,223,255,.12)}"` | — |
+| [SRC-2C8F288796-L000138](../../web/workspace.html#L138) | 138 | `".glass{background:linear-gradient(145deg,rgba(16,35,52,.94),rgba(8,20,32,.92));border-color:rgba(74,216,255,.18);box-shadow:inset 0 1px rgba(255,255,255,.035),0 16px 42px rgba(0,0,0,.32);backdrop-filter:blur(22px)}"` | — |
+| [SRC-2C8F288796-L000139](../../web/workspace.html#L139) | 139 | `".stat{border-radius:15px;background:linear-gradient(145deg,rgba(16,35,52,.96),rgba(9,21,33,.94))}"` | — |
+| [SRC-2C8F288796-L000140](../../web/workspace.html#L140) | 140 | `".stat:after{background:rgba(82,223,255,.13)}"` | — |
+| [SRC-2C8F288796-L000141](../../web/workspace.html#L141) | 141 | `".stat.glow-teal:after{background:rgba(82,223,255,.15)}"` | — |
+| [SRC-2C8F288796-L000142](../../web/workspace.html#L142) | 142 | `".stat.glow-blue:after{background:rgba(113,234,255,.13)}"` | — |
+| [SRC-2C8F288796-L000143](../../web/workspace.html#L143) | 143 | `".stat.glow-amber:after{background:rgba(244,204,131,.13)}"` | — |
+| [SRC-2C8F288796-L000144](../../web/workspace.html#L144) | 144 | `".stat.glow-violet:after{background:rgba(141,155,255,.15)}"` | — |
+| [SRC-2C8F288796-L000145](../../web/workspace.html#L145) | 145 | `".stat-value{color:#71eaff;text-shadow:0 0 20px rgba(82,223,255,.10)}"` | — |
+| [SRC-2C8F288796-L000146](../../web/workspace.html#L146) | 146 | `".signal-card,.pipeline-col{background:rgba(5,16,27,.68);border-color:rgba(57,207,255,.14);border-radius:12px}"` | — |
+| [SRC-2C8F288796-L000147](../../web/workspace.html#L147) | 147 | `".signal-card{box-shadow:inset 0 1px rgba(255,255,255,.025)}"` | — |
+| [SRC-2C8F288796-L000148](../../web/workspace.html#L148) | 148 | `".tag{border-radius:8px;border-color:rgba(57,207,255,.19);background:rgba(10,29,43,.65)}"` | — |
+| [SRC-2C8F288796-L000149](../../web/workspace.html#L149) | 149 | `".tag.teal{color:#91f0ff;border-color:rgba(82,223,255,.28);background:rgba(28,113,143,.14)}"` | — |
+| [SRC-2C8F288796-L000150](../../web/workspace.html#L150) | 150 | `".bar-fill{background:linear-gradient(90deg,#52dfff,#8d9bff);box-shadow:0 0 12px rgba(82,223,255,.2)}"` | — |
+| [SRC-2C8F288796-L000151](../../web/workspace.html#L151) | 151 | `"input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,.2)}"` | — |
+| [SRC-2C8F288796-L000152](../../web/workspace.html#L152) | 152 | `".analysis-result{border-color:rgba(82,223,255,.22);background:rgba(22,100,124,.13)}"` | — |
+| [SRC-2C8F288796-L000153](../../web/workspace.html#L153) | 153 | `".pipeline-item{background:rgba(8,23,35,.9);border-color:rgba(57,207,255,.14);border-radius:10px}"` | — |
+| [SRC-2C8F288796-L000154](../../web/workspace.html#L154) | 154 | `".detail-panel{background:#081522;border-left-color:rgba(57,207,255,.2)}"` | — |
+| [SRC-2C8F288796-L000155](../../web/workspace.html#L155) | 155 | `".auth-gate{background:rgba(2,8,15,.9)}"` | — |
+| [SRC-2C8F288796-L000156](../../web/workspace.html#L156) | 156 | `".auth-card{background:linear-gradient(145deg,rgba(16,35,52,.98),rgba(8,20,32,.98));border-color:rgba(74,216,255,.22)}"` | — |
+| [SRC-2C8F288796-L000157](../../web/workspace.html#L157) | 157 | `".profile-panel{margin-bottom:14px}"` | — |
+| [SRC-2C8F288796-L000158](../../web/workspace.html#L158) | 158 | `".profile-note,.discovery-note{font-size:11px;line-height:1.9;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000159](../../web/workspace.html#L159) | 159 | `".discovery-history,.query-list,.discovery-source-meta{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}"` | — |
+| [SRC-2C8F288796-L000160](../../web/workspace.html#L160) | 160 | `".discovery-source{border:1px solid var(--line);border-radius:12px;background:rgba(5,16,27,.68);padding:14px;display:grid;gap:9px}"` | — |
+| [SRC-2C8F288796-L000161](../../web/workspace.html#L161) | 161 | `".discovery-source.qualified{border-color:rgba(82,223,255,.35);box-shadow:inset 0 0 25px rgba(82,223,255,.035)}"` | — |
+| [SRC-2C8F288796-L000162](../../web/workspace.html#L162) | 162 | `".discovery-source h3{font-size:14px;line-height:1.7;margin:0;color:var(--text)}"` | — |
+| [SRC-2C8F288796-L000163](../../web/workspace.html#L163) | 163 | `".discovery-source p{font-size:12px;line-height:1.9;margin:0;color:#c5d5e7;white-space:pre-wrap;overflow-wrap:anywhere}"` | — |
+| [SRC-2C8F288796-L000164](../../web/workspace.html#L164) | 164 | `".discovery-source a{font-size:11px;color:var(--cyan);overflow-wrap:anywhere}"` | — |
+| [SRC-2C8F288796-L000165](../../web/workspace.html#L165) | 165 | `".query-list .tag{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.7}"` | — |
+| [SRC-2C8F288796-L000166](../../web/workspace.html#L166) | 166 | `".consent-row{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:10px;background:rgba(5,16,27,.5);font-size:11px;line-height:1.8}"` | — |
+| [SRC-2C8F288796-L000167](../../web/workspace.html#L167) | 167 | `".consent-row input{width:18px;min-width:18px;height:18px;margin:2px 0 0;accent-color:#52dfff}"` | — |
+| [SRC-2C8F288796-L000168](../../web/workspace.html#L168) | 168 | `"@media(max-width:760px){"` | — |
+| [SRC-2C8F288796-L000169](../../web/workspace.html#L169) | 169 | `" .sidebar{background:rgba(5,13,22,.94);border-bottom-color:rgba(57,207,255,.18)}"` | — |
+| [SRC-2C8F288796-L000170](../../web/workspace.html#L170) | 170 | `" .nav{scrollbar-width:thin;scrollbar-color:rgba(82,223,255,.28) transparent}"` | — |
+| [SRC-2C8F288796-L000171](../../web/workspace.html#L171) | 171 | `" .nav button{min-height:42px}"` | — |
+| [SRC-2C8F288796-L000172](../../web/workspace.html#L172) | 172 | `" .main{padding-inline:12px}"` | — |
+| [SRC-2C8F288796-L000173](../../web/workspace.html#L173) | 173 | `" .topbar{align-items:flex-start}"` | — |
+| [SRC-2C8F288796-L000174](../../web/workspace.html#L174) | 174 | `" .top-actions{max-width:100%}"` | — |
+| [SRC-2C8F288796-L000175](../../web/workspace.html#L175) | 175 | `" .button,.small-button{min-height:40px}"` | — |
+| [SRC-2C8F288796-L000176](../../web/workspace.html#L176) | 176 | `" .glass{backdrop-filter:blur(16px)}"` | — |
+| [SRC-2C8F288796-L000177](../../web/workspace.html#L177) | 177 | `"}"` | — |
+| [SRC-2C8F288796-L000178](../../web/workspace.html#L178) | 178 | `"@media(max-width:420px){"` | — |
+| [SRC-2C8F288796-L000179](../../web/workspace.html#L179) | 179 | `" .stat{min-height:100px}"` | — |
+| [SRC-2C8F288796-L000180](../../web/workspace.html#L180) | 180 | `" .stat-value{font-size:22px}"` | — |
+| [SRC-2C8F288796-L000181](../../web/workspace.html#L181) | 181 | `" .signal-top{flex-direction:column}"` | — |
+| [SRC-2C8F288796-L000182](../../web/workspace.html#L182) | 182 | `" .signal-actions{align-items:stretch}"` | — |
+| [SRC-2C8F288796-L000183](../../web/workspace.html#L183) | 183 | `" .signal-actions .small-button{flex:1}"` | — |
+| [SRC-2C8F288796-L000184](../../web/workspace.html#L184) | 184 | `"}"` | — |
+| [SRC-2C8F288796-L000185](../../web/workspace.html#L185) | 185 | `"@media(prefers-reduced-motion:reduce){"` | — |
+| [SRC-2C8F288796-L000186](../../web/workspace.html#L186) | 186 | `" *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}"` | — |
+| [SRC-2C8F288796-L000187](../../web/workspace.html#L187) | 187 | `"}"` | — |
+| [SRC-2C8F288796-L000188](../../web/workspace.html#L188) | 188 | `"@media(forced-colors:active){"` | — |
+| [SRC-2C8F288796-L000189](../../web/workspace.html#L189) | 189 | `" .glass,.stat,.signal-card,.pipeline-col,.button,.small-button{border:1px solid CanvasText;backdrop-filter:none}"` | — |
+| [SRC-2C8F288796-L000190](../../web/workspace.html#L190) | 190 | `" .nav button.active{outline:2px solid Highlight}"` | — |
+| [SRC-2C8F288796-L000191](../../web/workspace.html#L191) | 191 | `"}"` | — |
+| [SRC-2C8F288796-L000192](../../web/workspace.html#L192) | 192 | `""` | — |
+| [SRC-2C8F288796-L000193](../../web/workspace.html#L193) | 193 | `"/* Responsive glass performance indicators */"` | — |
+| [SRC-2C8F288796-L000194](../../web/workspace.html#L194) | 194 | `".side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px;align-items:center}"` | — |
+| [SRC-2C8F288796-L000195](../../web/workspace.html#L195) | 195 | `".side-links a,.side-link-button{font-size:10px;color:#92a8c4}"` | — |
+| [SRC-2C8F288796-L000196](../../web/workspace.html#L196) | 196 | `".side-link-button{border:0;background:transparent;padding:4px;cursor:pointer;font:inherit}"` | — |
+| [SRC-2C8F288796-L000197](../../web/workspace.html#L197) | 197 | `".side-link-button:hover,.side-links a:hover{color:var(--teal);text-decoration:underline}"` | — |
+| [SRC-2C8F288796-L000198](../../web/workspace.html#L198) | 198 | `".indicator-hero{display:flex;align-items:center;gap:24px;padding:22px;margin-bottom:14px;min-width:0}"` | — |
+| [SRC-2C8F288796-L000199](../../web/workspace.html#L199) | 199 | `".indicator-ring{width:154px;height:154px;flex:0 0 154px;border-radius:50%;display:grid;place-items:center;padding:10px;box-shadow:0 0 32px rgba(82,223,255,.08)}"` | — |
+| [SRC-2C8F288796-L000200](../../web/workspace.html#L200) | 200 | `".indicator-ring-inner{width:100%;height:100%;border:1px solid var(--line);border-radius:50%;background:linear-gradient(145deg,#102438,#091522);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}"` | — |
+| [SRC-2C8F288796-L000201](../../web/workspace.html#L201) | 201 | `".indicator-ring-value{font-size:31px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums}"` | — |
+| [SRC-2C8F288796-L000202](../../web/workspace.html#L202) | 202 | `".indicator-ring-caption{font-size:10px;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000203](../../web/workspace.html#L203) | 203 | `".indicator-hero-copy{min-width:0}"` | — |
+| [SRC-2C8F288796-L000204](../../web/workspace.html#L204) | 204 | `".indicator-hero-copy h2{font-size:19px;margin:8px 0}"` | — |
+| [SRC-2C8F288796-L000205](../../web/workspace.html#L205) | 205 | `".indicator-hero-copy p{font-size:11px;line-height:1.9;color:var(--muted);max-width:700px;margin:0}"` | — |
+| [SRC-2C8F288796-L000206](../../web/workspace.html#L206) | 206 | `".indicator-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}"` | — |
+| [SRC-2C8F288796-L000207](../../web/workspace.html#L207) | 207 | `".indicator-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:14px}"` | — |
+| [SRC-2C8F288796-L000208](../../web/workspace.html#L208) | 208 | `".indicator-list{display:grid;gap:13px}"` | — |
+| [SRC-2C8F288796-L000209](../../web/workspace.html#L209) | 209 | `".indicator-row{display:grid;grid-template-columns:112px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:11px;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000210](../../web/workspace.html#L210) | 210 | `".indicator-track{height:10px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}"` | — |
+| [SRC-2C8F288796-L000211](../../web/workspace.html#L211) | 211 | `".indicator-fill{height:100%;min-width:0;border-radius:99px}"` | — |
+| [SRC-2C8F288796-L000212](../../web/workspace.html#L212) | 212 | `".indicator-fill.cyan{background:linear-gradient(90deg,#45cfe9,#77dff0)}"` | — |
+| [SRC-2C8F288796-L000213](../../web/workspace.html#L213) | 213 | `".indicator-fill.green{background:linear-gradient(90deg,#3bbd91,#80e3b5)}"` | — |
+| [SRC-2C8F288796-L000214](../../web/workspace.html#L214) | 214 | `".indicator-fill.red{background:linear-gradient(90deg,#d95d77,#ff91a2)}"` | — |
+| [SRC-2C8F288796-L000215](../../web/workspace.html#L215) | 215 | `".indicator-fill.muted{background:linear-gradient(90deg,#647b92,#9aabba)}"` | — |
+| [SRC-2C8F288796-L000216](../../web/workspace.html#L216) | 216 | `".indicator-summary{display:grid;grid-template-columns:1fr 1fr;gap:9px}"` | — |
+| [SRC-2C8F288796-L000217](../../web/workspace.html#L217) | 217 | `".indicator-note{padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(5,16,27,.5);font-size:10px;line-height:1.8;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000218](../../web/workspace.html#L218) | 218 | `".indicator-note-value{display:block;margin-top:5px;color:var(--text);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}"` | — |
+| [SRC-2C8F288796-L000219](../../web/workspace.html#L219) | 219 | `"@media(max-width:1100px){.indicator-layout{grid-template-columns:1fr}.indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}"` | — |
+| [SRC-2C8F288796-L000220](../../web/workspace.html#L220) | 220 | `"@media(max-width:760px){"` | — |
+| [SRC-2C8F288796-L000221](../../web/workspace.html#L221) | 221 | `" .side-bottom{display:block;margin-top:0}"` | — |
+| [SRC-2C8F288796-L000222](../../web/workspace.html#L222) | 222 | `" .side-bottom .connection{display:none}"` | — |
+| [SRC-2C8F288796-L000223](../../web/workspace.html#L223) | 223 | `" .side-links{display:flex}"` | — |
+| [SRC-2C8F288796-L000224](../../web/workspace.html#L224) | 224 | `" .indicator-hero{gap:15px;padding:16px}"` | — |
+| [SRC-2C8F288796-L000225](../../web/workspace.html#L225) | 225 | `" .indicator-ring{width:126px;height:126px;flex-basis:126px}"` | — |
+| [SRC-2C8F288796-L000226](../../web/workspace.html#L226) | 226 | `" .indicator-ring-value{font-size:26px}"` | — |
+| [SRC-2C8F288796-L000227](../../web/workspace.html#L227) | 227 | `" .indicator-hero-copy h2{font-size:16px}"` | — |
+| [SRC-2C8F288796-L000228](../../web/workspace.html#L228) | 228 | `"}"` | — |
+| [SRC-2C8F288796-L000229](../../web/workspace.html#L229) | 229 | `"@media(max-width:520px){"` | — |
+| [SRC-2C8F288796-L000230](../../web/workspace.html#L230) | 230 | `" .indicator-hero{align-items:flex-start;flex-direction:column}"` | — |
+| [SRC-2C8F288796-L000231](../../web/workspace.html#L231) | 231 | `" .indicator-ring{width:112px;height:112px;flex-basis:112px;align-self:center}"` | — |
+| [SRC-2C8F288796-L000232](../../web/workspace.html#L232) | 232 | `" .indicator-ring-value{font-size:24px}"` | — |
+| [SRC-2C8F288796-L000233](../../web/workspace.html#L233) | 233 | `" .indicator-grid{gap:8px}"` | — |
+| [SRC-2C8F288796-L000234](../../web/workspace.html#L234) | 234 | `" .indicator-grid .stat{min-height:94px;padding:12px}"` | — |
+| [SRC-2C8F288796-L000235](../../web/workspace.html#L235) | 235 | `" .indicator-row{grid-template-columns:86px minmax(0,1fr) 26px;gap:7px;font-size:10px}"` | — |
+| [SRC-2C8F288796-L000236](../../web/workspace.html#L236) | 236 | `" .indicator-summary{grid-template-columns:1fr 1fr}"` | — |
+| [SRC-2C8F288796-L000237](../../web/workspace.html#L237) | 237 | `"}"` | — |
+| [SRC-2C8F288796-L000238](../../web/workspace.html#L238) | 238 | `"@media(max-width:360px){.indicator-summary{grid-template-columns:1fr}.indicator-row{grid-template-columns:76px minmax(0,1fr) 24px}}"` | — |
+| [SRC-2C8F288796-L000239](../../web/workspace.html#L239) | 239 | `""` | — |
+| [SRC-2C8F288796-L000240](../../web/workspace.html#L240) | 240 | `".chat-panel{display:flex;flex-direction:column;gap:12px}.chat-modes{display:flex;gap:8px;flex-wrap:wrap}.chat-mode-active{border-color:var(--teal);color:#fff}"` | — |
+| [SRC-2C8F288796-L000241](../../web/workspace.html#L241) | 241 | `".chat-list{display:flex;flex-direction:column;gap:12px;min-height:320px;max-height:calc(100vh - 430px);overflow:auto;padding:4px}"` | — |
+| [SRC-2C8F288796-L000242](../../web/workspace.html#L242) | 242 | `".chat-empty{color:var(--muted);font-size:12px;line-height:1.9;text-align:center;margin:auto;padding:24px;border:1px dashed rgba(145,174,211,.28);border-radius:14px}"` | — |
+| [SRC-2C8F288796-L000243](../../web/workspace.html#L243) | 243 | `".chat-msg{max-width:88%;padding:12px 14px;border-radius:14px;border:1px solid rgba(145,174,211,.22);background:rgba(7,16,29,.62)}.chat-user{align-self:flex-start;border-color:rgba(57,207,255,.35)}.chat-assistant{align-self:flex-end}"` | — |
+| [SRC-2C8F288796-L000244](../../web/workspace.html#L244) | 244 | `".chat-who{font-size:10px;color:var(--muted);margin-bottom:6px}.chat-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.9}"` | — |
+| [SRC-2C8F288796-L000245](../../web/workspace.html#L245) | 245 | `".chat-sources{margin:6px 0 0;padding:0 18px;font-size:11px;line-height:1.9}.chat-sources a{color:var(--teal)}.chat-note{margin-top:8px;font-size:10px;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000246](../../web/workspace.html#L246) | 246 | `".chat-form{display:flex;gap:9px;align-items:flex-end}.chat-form textarea{flex:1;min-height:52px;max-height:160px}"` | — |
+| [SRC-2C8F288796-L000247](../../web/workspace.html#L247) | 247 | `"@media(max-width:740px){.chat-msg{max-width:100%}.chat-list{max-height:none}}"` | — |
+| [SRC-2C8F288796-L000248](../../web/workspace.html#L248) | 248 | `"</style>"` | — |
+| [SRC-2C8F288796-L000249](../../web/workspace.html#L249) | 249 | `"</head>"` | — |
+| [SRC-2C8F288796-L000250](../../web/workspace.html#L250) | 250 | `"<body>"` | — |
+| [SRC-2C8F288796-L000251](../../web/workspace.html#L251) | 251 | `"<div class=\"app\">"` | — |
+| [SRC-2C8F288796-L000252](../../web/workspace.html#L252) | 252 | `"<aside class=\"sidebar\">"` | — |
+| [SRC-2C8F288796-L000253](../../web/workspace.html#L253) | 253 | `"  <div class=\"brand\"><div class=\"logo\">O</div><div><div class=\"brand-name\">Omarai</div><div class=\"brand-sub\">ذكاء المبيعات واكتساب العملاء</div></div></div>"` | — |
+| [SRC-2C8F288796-L000254](../../web/workspace.html#L254) | 254 | `"  <div class=\"workspace-label\">مساحة العمل</div>"` | — |
+| [SRC-2C8F288796-L000255](../../web/workspace.html#L255) | 255 | `"  <nav class=\"nav\" id=\"mainNav\" aria-label=\"التنقل الرئيسي\"></nav>"` | — |
+| [SRC-2C8F288796-L000256](../../web/workspace.html#L256) | 256 | `"  <div class=\"side-bottom\">"` | — |
+| [SRC-2C8F288796-L000257](../../web/workspace.html#L257) | 257 | `"    <div class=\"connection\"><div class=\"connection-title\"><span class=\"dot\" id=\"apiDot\"></span><span id=\"apiStatus\">التحقق من الخادم</span></div><small id=\"apiStatusNote\">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>"` | — |
+| [SRC-2C8F288796-L000258](../../web/workspace.html#L258) | 258 | `"    <div class=\"connection\"><div class=\"connection-title\">الهوية والصلاحيات</div><small id=\"roleSummary\">لم يتم التحقق من جلسة المستخدم بعد.</small></div>"` | — |
+| [SRC-2C8F288796-L000259](../../web/workspace.html#L259) | 259 | `"    <div class=\"side-links\"><button class=\"side-link-button\" id=\"chatNav\" type=\"button\">محادثة Omarai</button><button class=\"side-link-button\" id=\"systemNav\" type=\"button\">حالة النظام</button><a href=\"/agent\">وكيل البحث</a></div>"` | — |
+| [SRC-2C8F288796-L000260](../../web/workspace.html#L260) | 260 | `"  </div>"` | — |
+| [SRC-2C8F288796-L000261](../../web/workspace.html#L261) | 261 | `"</aside>"` | — |
+| [SRC-2C8F288796-L000262](../../web/workspace.html#L262) | 262 | `"<main class=\"main\">"` | — |
+| [SRC-2C8F288796-L000263](../../web/workspace.html#L263) | 263 | `"  <header class=\"topbar\">"` | — |
+| [SRC-2C8F288796-L000264](../../web/workspace.html#L264) | 264 | `"    <div class=\"breadcrumb\">Omarai <span aria-hidden=\"true\">/</span> <strong id=\"crumb\">نظرة عامة</strong></div>"` | — |
+| [SRC-2C8F288796-L000265](../../web/workspace.html#L265) | 265 | `"    <div class=\"top-actions\"><span class=\"role-pill\" id=\"rolePill\">التحقق من الجلسة…</span><button class=\"button ghost\" id=\"logoutButton\" type=\"button\">تسجيل الخروج</button><button class=\"button primary\" id=\"addSignalTop\" type=\"button\">＋ إشارة جديدة</button></div>"` | — |
+| [SRC-2C8F288796-L000266](../../web/workspace.html#L266) | 266 | `"  </header>"` | — |
+| [SRC-2C8F288796-L000267](../../web/workspace.html#L267) | 267 | `"  <section class=\"page-head\"><div><div class=\"eyebrow\" id=\"pageEyebrow\">SALES INTELLIGENCE WORKSPACE</div><h1 id=\"pageTitle\">حوّل إشارات الطلب إلى فرص قابلة للمراجعة</h1><p id=\"pageDescription\">مساحة عمل عربية لإدارة إشارات الطلب والأدلة والمتابعة. الأرقام هنا تُقرأ من سجل Omarai الفعلي، ولا تُعرض بيانات تجريبية على أنها فرص حقيقية.</p></div></section>"` | — |
+| [SRC-2C8F288796-L000268](../../web/workspace.html#L268) | 268 | `"  <div id=\"viewRoot\" aria-live=\"polite\"><div class=\"glass panel empty\"><strong>جارٍ تحميل مساحة العمل</strong>يتم التحقق من الجلسة ثم قراءة بياناتك المصرح بها.</div></div>"` | — |
+| [SRC-2C8F288796-L000269](../../web/workspace.html#L269) | 269 | `"  <footer class=\"footer\">Omarai · تُعرض الإشارات من السجل المرتبط بمساحة العمل المصادق عليها. درجات القواعد ليست احتمالات شراء. البحث الخارجي واستهلاك حصص الموصلات لا يبدأان تلقائيًا من هذه الشاشة.</footer>"` | — |
+| [SRC-2C8F288796-L000270](../../web/workspace.html#L270) | 270 | `"</main>"` | — |
+| [SRC-2C8F288796-L000271](../../web/workspace.html#L271) | 271 | `"</div>"` | — |
+| [SRC-2C8F288796-L000272](../../web/workspace.html#L272) | 272 | `""` | — |
+| [SRC-2C8F288796-L000273](../../web/workspace.html#L273) | 273 | `"<div class=\"detail\" id=\"detailDrawer\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"detailTitle\">"` | — |
+| [SRC-2C8F288796-L000274](../../web/workspace.html#L274) | 274 | `"  <section class=\"detail-panel\"><div class=\"detail-head\"><h2 id=\"detailTitle\">تفاصيل الإشارة</h2><button class=\"button ghost\" id=\"closeDetail\" type=\"button\">إغلاق ✕</button></div><div class=\"detail-body\" id=\"detailBody\"></div></section>"` | — |
+| [SRC-2C8F288796-L000275](../../web/workspace.html#L275) | 275 | `"</div>"` | — |
+| [SRC-2C8F288796-L000276](../../web/workspace.html#L276) | 276 | `"<div class=\"auth-gate open\" id=\"authGate\">"` | — |
+| [SRC-2C8F288796-L000277](../../web/workspace.html#L277) | 277 | `"  <section class=\"auth-card glass\">"` | — |
+| [SRC-2C8F288796-L000278](../../web/workspace.html#L278) | 278 | `"    <div class=\"eyebrow\">OMARAI SECURE WORKSPACE</div>"` | — |
+| [SRC-2C8F288796-L000279](../../web/workspace.html#L279) | 279 | `"    <h2>تسجيل الدخول إلى مساحة العمل</h2>"` | — |
+| [SRC-2C8F288796-L000280](../../web/workspace.html#L280) | 280 | `"    <p>تستخدم هذه الصفحة جلسة الخادم الآمنة HttpOnly. رمز الوصول لا يُحفظ في Local Storage أو Session Storage، ويُمسح من حقل الإدخال بعد نجاح الدخول.</p>"` | — |
+| [SRC-2C8F288796-L000281](../../web/workspace.html#L281) | 281 | `"    <form id=\"loginForm\">"` | — |
+| [SRC-2C8F288796-L000282](../../web/workspace.html#L282) | 282 | `"      <div class=\"field\"><label for=\"accessToken\">رمز الوصول الخاص بالتطبيق</label><input id=\"accessToken\" type=\"password\" autocomplete=\"current-password\" required minlength=\"32\" placeholder=\"أدخل رمز الوصول\"></div>"` | — |
+| [SRC-2C8F288796-L000283](../../web/workspace.html#L283) | 283 | `"      <button class=\"button primary\" type=\"submit\" id=\"loginButton\">تسجيل الدخول</button>"` | — |
+| [SRC-2C8F288796-L000284](../../web/workspace.html#L284) | 284 | `"      <div class=\"auth-error\" id=\"authError\" role=\"alert\"></div>"` | — |
+| [SRC-2C8F288796-L000285](../../web/workspace.html#L285) | 285 | `"    </form>"` | — |
+| [SRC-2C8F288796-L000286](../../web/workspace.html#L286) | 286 | `"    <p>لا تدخل مفاتيح موفر البحث أو كلمات مرور خارجية في هذا الحقل.</p>"` | — |
+| [SRC-2C8F288796-L000287](../../web/workspace.html#L287) | 287 | `"  </section>"` | — |
+| [SRC-2C8F288796-L000288](../../web/workspace.html#L288) | 288 | `"</div>"` | — |
+| [SRC-2C8F288796-L000289](../../web/workspace.html#L289) | 289 | `""` | — |
+| [SRC-2C8F288796-L000290](../../web/workspace.html#L290) | 290 | `"<script>"` | — |
+| [SRC-2C8F288796-L000291](../../web/workspace.html#L291) | 291 | `"(function(){"` | — |
+| [SRC-2C8F288796-L000292](../../web/workspace.html#L292) | 292 | `"\"use strict\";"` | — |
+| [SRC-2C8F288796-L000293](../../web/workspace.html#L293) | 293 | `"const $=id=>document.getElementById(id);"` | — |
+| [SRC-2C8F288796-L000294](../../web/workspace.html#L294) | 294 | `"const state={authSessionVersion:0,role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:\"overview\",chat:{messages:[],history:[],busy:false,mode:\"deep\",sessionVersion:0},analysis:null,filtered:[],search:\"\",filter:\"all\"};"` | — |
+| [SRC-2C8F288796-L000295](../../web/workspace.html#L295) | 295 | `"const statuses=["` | — |
+| [SRC-2C8F288796-L000296](../../web/workspace.html#L296) | 296 | `" {id:\"new\",label:\"جديد\"},"` | — |
+| [SRC-2C8F288796-L000297](../../web/workspace.html#L297) | 297 | `" {id:\"needs_review\",label:\"يحتاج مراجعة\"},"` | — |
+| [SRC-2C8F288796-L000298](../../web/workspace.html#L298) | 298 | `" {id:\"qualified\",label:\"مؤهل\"},"` | — |
+| [SRC-2C8F288796-L000299](../../web/workspace.html#L299) | 299 | `" {id:\"contacted\",label:\"تم التواصل\"},"` | — |
+| [SRC-2C8F288796-L000300](../../web/workspace.html#L300) | 300 | `" {id:\"converted\",label:\"تحول لعميل\"},"` | — |
+| [SRC-2C8F288796-L000301](../../web/workspace.html#L301) | 301 | `" {id:\"rejected\",label:\"مرفوض\"}"` | — |
+| [SRC-2C8F288796-L000302](../../web/workspace.html#L302) | 302 | `"];"` | — |
+| [SRC-2C8F288796-L000303](../../web/workspace.html#L303) | 303 | `"const labels={high_intent:\"إشارة قوية نسبيًا\",medium_intent:\"إشارة متوسطة\",early_research:\"استكشاف مبكر\",unclear:\"غير واضحة\",not_buyer_signal:\"ليست إشارة شراء مباشرة\"};"` | — |
+| [SRC-2C8F288796-L000304](../../web/workspace.html#L304) | 304 | `"const menu=["` | — |
+| [SRC-2C8F288796-L000305](../../web/workspace.html#L305) | 305 | `" {id:\"overview\",label:\"نظرة عامة\",icon:\"⌂\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000306](../../web/workspace.html#L306) | 306 | `" {id:\"offer\",label:\"ملف المنتج\",icon:\"◇\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000307](../../web/workspace.html#L307) | 307 | `" {id:\"campaign\",label:\"حملات الاكتشاف\",icon:\"⌕\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000308](../../web/workspace.html#L308) | 308 | `" {id:\"signals\",label:\"إشارات الطلب\",icon:\"▤\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000309](../../web/workspace.html#L309) | 309 | `" {id:\"pipeline\",label:\"مسار التأهيل\",icon:\"⇢\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000310](../../web/workspace.html#L310) | 310 | `" {id:\"indicators\",label:\"مؤشرات الأداء\",icon:\"▥\",enabled:true}"` | — |
+| [SRC-2C8F288796-L000311](../../web/workspace.html#L311) | 311 | `"];"` | — |
+| [SRC-2C8F288796-L000312](../../web/workspace.html#L312) | 312 | `"function make(tag,cls,text){"` | — |
+| [SRC-2C8F288796-L000313](../../web/workspace.html#L313) | 313 | `" const node=document.createElement(tag);"` | — |
+| [SRC-2C8F288796-L000314](../../web/workspace.html#L314) | 314 | `" if(cls)node.className=cls;"` | — |
+| [SRC-2C8F288796-L000315](../../web/workspace.html#L315) | 315 | `" if(text!==undefined&&text!==null)node.textContent=String(text);"` | — |
+| [SRC-2C8F288796-L000316](../../web/workspace.html#L316) | 316 | `" return node;"` | — |
+| [SRC-2C8F288796-L000317](../../web/workspace.html#L317) | 317 | `"}"` | — |
+| [SRC-2C8F288796-L000318](../../web/workspace.html#L318) | 318 | `"function action(label,cls,handler){"` | — |
+| [SRC-2C8F288796-L000319](../../web/workspace.html#L319) | 319 | `" const b=make(\"button\",\"button \"+(cls\|\|\"\"),label);"` | — |
+| [SRC-2C8F288796-L000320](../../web/workspace.html#L320) | 320 | `" b.type=\"button\";b.addEventListener(\"click\",handler);return b;"` | — |
+| [SRC-2C8F288796-L000321](../../web/workspace.html#L321) | 321 | `"}"` | — |
+| [SRC-2C8F288796-L000322](../../web/workspace.html#L322) | 322 | `"function safeHttp(value){"` | — |
+| [SRC-2C8F288796-L000323](../../web/workspace.html#L323) | 323 | `" try{const u=new URL(String(value\|\|\"\"));if((u.protocol!==\"http:\"&&u.protocol!==\"https:\")\|\|!u.hostname\|\|u.username\|\|u.password)return null;return u.href}catch(_e){return null}"` | — |
+| [SRC-2C8F288796-L000324](../../web/workspace.html#L324) | 324 | `"}"` | — |
+| [SRC-2C8F288796-L000325](../../web/workspace.html#L325) | 325 | `"function escapeMessage(message){return String(message\|\|\"حدث خطأ غير متوقع\").slice(0,500)}"` | — |
+| [SRC-2C8F288796-L000326](../../web/workspace.html#L326) | 326 | `"async function api(path,options){"` | — |
+| [SRC-2C8F288796-L000327](../../web/workspace.html#L327) | 327 | `" const opts=options\|\|{};"` | — |
+| [SRC-2C8F288796-L000328](../../web/workspace.html#L328) | 328 | `" const requestSessionVersion=state.authSessionVersion;"` | — |
+| [SRC-2C8F288796-L000329](../../web/workspace.html#L329) | 329 | `" const headers={};"` | — |
+| [SRC-2C8F288796-L000330](../../web/workspace.html#L330) | 330 | `" if(opts.body!==undefined)headers[\"Content-Type\"]=\"application/json\";"` | — |
+| [SRC-2C8F288796-L000331](../../web/workspace.html#L331) | 331 | `" const response=await fetch(path,{method:opts.method\|\|\"GET\",credentials:\"same-origin\",headers:headers,body:opts.body===undefined?undefined:JSON.stringify(opts.body)});"` | — |
+| [SRC-2C8F288796-L000332](../../web/workspace.html#L332) | 332 | `" let data={};"` | — |
+| [SRC-2C8F288796-L000333](../../web/workspace.html#L333) | 333 | `" try{data=await response.json()}catch(_e){data={error:\"تعذر قراءة استجابة الخادم\"}}"` | — |
+| [SRC-2C8F288796-L000334](../../web/workspace.html#L334) | 334 | `" if(response.status===401){showAuth(\"انتهت الجلسة أو لم يتم تسجيل الدخول. أدخل رمز الوصول للمتابعة.\");throw new Error(\"يلزم تسجيل الدخول مجددًا.\")}"` | — |
+| [SRC-2C8F288796-L000335](../../web/workspace.html#L335) | 335 | `" if(state.authSessionVersion!==requestSessionVersion)throw new Error(\"انتهت الجلسة أثناء الطلب؛ أعد تسجيل الدخول.\");"` | — |
+| [SRC-2C8F288796-L000336](../../web/workspace.html#L336) | 336 | `" if(!response.ok)throw new Error(data.error\|\|(\"فشل الطلب (\"+response.status+\")\"));"` | — |
+| [SRC-2C8F288796-L000337](../../web/workspace.html#L337) | 337 | `" return data;"` | — |
+| [SRC-2C8F288796-L000338](../../web/workspace.html#L338) | 338 | `"}"` | — |
+| [SRC-2C8F288796-L000339](../../web/workspace.html#L339) | 339 | `"function clearChatSession(){"` | — |
+| [SRC-2C8F288796-L000340](../../web/workspace.html#L340) | 340 | `" const chat=state.chat;"` | — |
+| [SRC-2C8F288796-L000341](../../web/workspace.html#L341) | 341 | `" chat.messages=[];chat.history=[];chat.busy=false;chat.mode=\"deep\";"` | — |
+| [SRC-2C8F288796-L000342](../../web/workspace.html#L342) | 342 | `" chat.sessionVersion=(chat.sessionVersion\|\|0)+1;"` | — |
+| [SRC-2C8F288796-L000343](../../web/workspace.html#L343) | 343 | `"}"` | — |
+| [SRC-2C8F288796-L000344](../../web/workspace.html#L344) | 344 | `"function advanceWorkspaceSessionVersion(){"` | — |
+| [SRC-2C8F288796-L000345](../../web/workspace.html#L345) | 345 | `" state.authSessionVersion=(state.authSessionVersion\|\|0)+1;"` | — |
+| [SRC-2C8F288796-L000346](../../web/workspace.html#L346) | 346 | `"}"` | — |
+| [SRC-2C8F288796-L000347](../../web/workspace.html#L347) | 347 | `"function clearWorkspaceSession(){"` | — |
+| [SRC-2C8F288796-L000348](../../web/workspace.html#L348) | 348 | `" advanceWorkspaceSessionVersion();"` | — |
+| [SRC-2C8F288796-L000349](../../web/workspace.html#L349) | 349 | `" state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];"` | — |
+| [SRC-2C8F288796-L000350](../../web/workspace.html#L350) | 350 | `" state.activeDiscovery=null;state.activeProfileId=null;state.activeView=\"overview\";"` | — |
+| [SRC-2C8F288796-L000351](../../web/workspace.html#L351) | 351 | `" state.analysis=null;state.filtered=[];state.search=\"\";state.filter=\"all\";"` | — |
+| [SRC-2C8F288796-L000352](../../web/workspace.html#L352) | 352 | `" clearChatSession();"` | — |
+| [SRC-2C8F288796-L000353](../../web/workspace.html#L353) | 353 | `" closeDetails();$(\"detailBody\").replaceChildren();"` | — |
+| [SRC-2C8F288796-L000354](../../web/workspace.html#L354) | 354 | `" $(\"viewRoot\").replaceChildren(emptyState(\"مساحة العمل مقفلة\",\"سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل.\"));"` | — |
+| [SRC-2C8F288796-L000355](../../web/workspace.html#L355) | 355 | `" $(\"rolePill\").textContent=\"غير مسجل\";"` | — |
+| [SRC-2C8F288796-L000356](../../web/workspace.html#L356) | 356 | `" $(\"roleSummary\").textContent=\"لم يتم التحقق من جلسة مستخدم.\";"` | — |
+| [SRC-2C8F288796-L000357](../../web/workspace.html#L357) | 357 | `" renderNav();"` | — |
+| [SRC-2C8F288796-L000358](../../web/workspace.html#L358) | 358 | `"}"` | — |
+| [SRC-2C8F288796-L000359](../../web/workspace.html#L359) | 359 | `"function showAuth(message){"` | — |
+| [SRC-2C8F288796-L000360](../../web/workspace.html#L360) | 360 | `" clearWorkspaceSession();"` | — |
+| [SRC-2C8F288796-L000361](../../web/workspace.html#L361) | 361 | `" $(\"authGate\").classList.add(\"open\");"` | — |
+| [SRC-2C8F288796-L000362](../../web/workspace.html#L362) | 362 | `" $(\"authError\").textContent=message\|\|\"\";"` | — |
+| [SRC-2C8F288796-L000363](../../web/workspace.html#L363) | 363 | `" $(\"accessToken\").value=\"\";"` | — |
+| [SRC-2C8F288796-L000364](../../web/workspace.html#L364) | 364 | `"}"` | — |
+| [SRC-2C8F288796-L000365](../../web/workspace.html#L365) | 365 | `"function hideAuth(){ $(\"authGate\").classList.remove(\"open\"); $(\"authError\").textContent=\"\"; }"` | — |
+| [SRC-2C8F288796-L000366](../../web/workspace.html#L366) | 366 | `"function statusLabel(id){const item=statuses.find(x=>x.id===id);return item?item.label:id\|\|\"غير محدد\"}"` | — |
+| [SRC-2C8F288796-L000367](../../web/workspace.html#L367) | 367 | `"function tag(text,cls){return make(\"span\",\"tag \"+(cls\|\|\"\"),text)}"` | — |
+| [SRC-2C8F288796-L000368](../../web/workspace.html#L368) | 368 | `"function setPage(title,description,eyebrow){"` | — |
+| [SRC-2C8F288796-L000369](../../web/workspace.html#L369) | 369 | `" $(\"crumb\").textContent=title;$(\"pageTitle\").textContent=title;$(\"pageDescription\").textContent=description\|\|\"\";"` | — |
+| [SRC-2C8F288796-L000370](../../web/workspace.html#L370) | 370 | `" $(\"pageEyebrow\").textContent=eyebrow\|\|\"OMARAI WORKSPACE\";"` | — |
+| [SRC-2C8F288796-L000371](../../web/workspace.html#L371) | 371 | `"}"` | — |
+| [SRC-2C8F288796-L000372](../../web/workspace.html#L372) | 372 | `"function renderNav(){"` | — |
+| [SRC-2C8F288796-L000373](../../web/workspace.html#L373) | 373 | `" const nav=$(\"mainNav\");nav.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000374](../../web/workspace.html#L374) | 374 | `" menu.forEach(item=>{"` | — |
+| [SRC-2C8F288796-L000375](../../web/workspace.html#L375) | 375 | `"  const b=make(\"button\",state.activeView===item.id?\"active\":\"\",null);"` | — |
+| [SRC-2C8F288796-L000376](../../web/workspace.html#L376) | 376 | `"  b.type=\"button\";b.setAttribute(\"aria-current\",state.activeView===item.id?\"page\":\"false\");"` | — |
+| [SRC-2C8F288796-L000377](../../web/workspace.html#L377) | 377 | `"  const icon=make(\"span\",\"nav-icon\",item.icon);const name=make(\"span\",\"\",item.label);b.append(icon,name);"` | — |
+| [SRC-2C8F288796-L000378](../../web/workspace.html#L378) | 378 | `"  if(!item.enabled)b.append(make(\"span\",\"nav-status\",\"قريبًا\"));"` | — |
+| [SRC-2C8F288796-L000379](../../web/workspace.html#L379) | 379 | `"  if(item.enabled)b.addEventListener(\"click\",()=>navigate(item.id));"` | — |
+| [SRC-2C8F288796-L000380](../../web/workspace.html#L380) | 380 | `"  else b.addEventListener(\"click\",()=>navigate(item.id));"` | — |
+| [SRC-2C8F288796-L000381](../../web/workspace.html#L381) | 381 | `"  if(!item.enabled)b.classList.add(\"disabled\");"` | — |
+| [SRC-2C8F288796-L000382](../../web/workspace.html#L382) | 382 | `"  nav.append(b);"` | — |
+| [SRC-2C8F288796-L000383](../../web/workspace.html#L383) | 383 | `" });"` | — |
+| [SRC-2C8F288796-L000384](../../web/workspace.html#L384) | 384 | `"}"` | — |
+| [SRC-2C8F288796-L000385](../../web/workspace.html#L385) | 385 | `"function setConnection(ok,label,note){"` | — |
+| [SRC-2C8F288796-L000386](../../web/workspace.html#L386) | 386 | `" $(\"apiDot\").className=\"dot \"+(ok?\"ok\":\"bad\");$(\"apiStatus\").textContent=label;$(\"apiStatusNote\").textContent=note\|\|\"\";"` | — |
+| [SRC-2C8F288796-L000387](../../web/workspace.html#L387) | 387 | `"}"` | — |
+| [SRC-2C8F288796-L000388](../../web/workspace.html#L388) | 388 | `"const WRITE_ROLES = [\"owner\",\"admin\",\"manager\",\"sales_agent\"];"` | — |
+| [SRC-2C8F288796-L000389](../../web/workspace.html#L389) | 389 | `"function canWrite(){return WRITE_ROLES.includes(state.role)}"` | — |
+| [SRC-2C8F288796-L000390](../../web/workspace.html#L390) | 390 | `"function countByStatus(id){return state.leads.filter(x=>x.status===id).length}"` | — |
+| [SRC-2C8F288796-L000391](../../web/workspace.html#L391) | 391 | `"function buildStat(label,value,note,glow){"` | — |
+| [SRC-2C8F288796-L000392](../../web/workspace.html#L392) | 392 | `" const card=make(\"article\",\"glass stat \"+(glow\|\|\"glow-teal\"));"` | — |
+| [SRC-2C8F288796-L000393](../../web/workspace.html#L393) | 393 | `" card.append(make(\"div\",\"stat-label\",label),make(\"div\",\"stat-value\",value),make(\"div\",\"stat-note\",note));return card;"` | — |
+| [SRC-2C8F288796-L000394](../../web/workspace.html#L394) | 394 | `"}"` | — |
+| [SRC-2C8F288796-L000395](../../web/workspace.html#L395) | 395 | `"function renderOverview(){"` | — |
+| [SRC-2C8F288796-L000396](../../web/workspace.html#L396) | 396 | `" setPage(\"نظرة عامة\",\"كل ما تحتاجه لمراجعة إشارات الطلب ومتابعتها من مكان واحد.\",\"مساحة العمل\");"` | — |
+| [SRC-2C8F288796-L000397](../../web/workspace.html#L397) | 397 | `" const root=$(\"viewRoot\");root.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000398](../../web/workspace.html#L398) | 398 | `" const qualified=state.leads.filter(x=>[\"qualified\",\"contacted\",\"converted\"].includes(x.status)).length;"` | — |
+| [SRC-2C8F288796-L000399](../../web/workspace.html#L399) | 399 | `" const review=state.leads.filter(x=>[\"new\",\"needs_review\"].includes(x.status)).length;"` | — |
+| [SRC-2C8F288796-L000400](../../web/workspace.html#L400) | 400 | `" const stats=make(\"div\",\"stats\");"` | — |
+| [SRC-2C8F288796-L000401](../../web/workspace.html#L401) | 401 | `" stats.append("` | — |
+| [SRC-2C8F288796-L000402](../../web/workspace.html#L402) | 402 | `"  buildStat(\"إجمالي الإشارات\",state.leads.length,\"السجلات المحمّلة من الخادم\",\"glow-teal\"),"` | — |
+| [SRC-2C8F288796-L000403](../../web/workspace.html#L403) | 403 | `"  buildStat(\"تحتاج مراجعة\",review,\"تنتظر قرارك\",\"glow-amber\"),"` | — |
+| [SRC-2C8F288796-L000404](../../web/workspace.html#L404) | 404 | `"  buildStat(\"مؤهلة أو قيد المتابعة\",qualified,\"مؤهل · تم التواصل · تحوّل\",\"glow-blue\")"` | — |
+| [SRC-2C8F288796-L000405](../../web/workspace.html#L405) | 405 | `" );"` | — |
+| [SRC-2C8F288796-L000406](../../web/workspace.html#L406) | 406 | `" root.append(stats);"` | — |
+| [SRC-2C8F288796-L000407](../../web/workspace.html#L407) | 407 | `" const grid=make(\"div\",\"content-grid\");"` | — |
+| [SRC-2C8F288796-L000408](../../web/workspace.html#L408) | 408 | `" const recent=make(\"section\",\"glass panel\");const h=make(\"div\",\"panel-head\");const head=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000409](../../web/workspace.html#L409) | 409 | `" head.append(make(\"h2\",\"\",\"أحدث إشارات الطلب\"),make(\"p\",\"\",\"راجع المصدر وتاريخ الرصد قبل اتخاذ أي خطوة.\"));"` | — |
+| [SRC-2C8F288796-L000410](../../web/workspace.html#L410) | 410 | `" h.append(head,action(\"عرض كل الإشارات ←\",\"ghost\",()=>navigate(\"signals\")));recent.append(h);"` | — |
+| [SRC-2C8F288796-L000411](../../web/workspace.html#L411) | 411 | `" const list=make(\"div\",\"signal-list\");"` | — |
+| [SRC-2C8F288796-L000412](../../web/workspace.html#L412) | 412 | `" const rows=state.leads.slice().sort((a,b)=>String(b.updated_at\|\|b.observed_at\|\|\"\").localeCompare(String(a.updated_at\|\|a.observed_at\|\|\"\"))).slice(0,4);"` | — |
+| [SRC-2C8F288796-L000413](../../web/workspace.html#L413) | 413 | `" if(!rows.length)list.append(emptyState(\"لا توجد إشارات محفوظة بعد\",\"ابدأ بتعريف منتجك ثم أنشئ حملة اكتشاف، أو أضف إشارة يدويًا.\"));"` | — |
+| [SRC-2C8F288796-L000414](../../web/workspace.html#L414) | 414 | `" else rows.forEach(item=>list.append(signalCard(item)));"` | — |
+| [SRC-2C8F288796-L000415](../../web/workspace.html#L415) | 415 | `" recent.append(list);"` | — |
+| [SRC-2C8F288796-L000416](../../web/workspace.html#L416) | 416 | `" const startPanel=make(\"section\",\"glass panel\");const sh=make(\"div\",\"panel-head\");const st=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000417](../../web/workspace.html#L417) | 417 | `" st.append(make(\"h2\",\"\",\"ابدأ من هنا\"),make(\"p\",\"\",\"خطوتان بسيطتان للانطلاق.\"));"` | — |
+| [SRC-2C8F288796-L000418](../../web/workspace.html#L418) | 418 | `" sh.append(st);startPanel.append(sh);"` | — |
+| [SRC-2C8F288796-L000419](../../web/workspace.html#L419) | 419 | `" startPanel.append(action(\"١. إعداد ملف المنتج\",\"primary\",()=>navigate(\"offer\")));"` | — |
+| [SRC-2C8F288796-L000420](../../web/workspace.html#L420) | 420 | `" startPanel.append(action(\"٢. إنشاء حملة اكتشاف\",\"\",()=>navigate(\"campaign\")));"` | — |
+| [SRC-2C8F288796-L000421](../../web/workspace.html#L421) | 421 | `" startPanel.append(make(\"p\",\"disclaimer\",\"تظهر الإشارة مع مصدرها وتاريخ رصدها. التصنيف القواعدي إرشادي، وليس احتمالًا للشراء.\"));"` | — |
+| [SRC-2C8F288796-L000422](../../web/workspace.html#L422) | 422 | `" grid.append(recent,startPanel);root.append(grid);"` | — |
+| [SRC-2C8F288796-L000423](../../web/workspace.html#L423) | 423 | `"}"` | — |
+| [SRC-2C8F288796-L000424](../../web/workspace.html#L424) | 424 | `"function emptyState(title,description){"` | — |
+| [SRC-2C8F288796-L000425](../../web/workspace.html#L425) | 425 | `" const box=make(\"div\",\"empty\");box.append(make(\"strong\",\"\",title),make(\"span\",\"\",description));return box;"` | — |
+| [SRC-2C8F288796-L000426](../../web/workspace.html#L426) | 426 | `"}"` | — |
+| [SRC-2C8F288796-L000427](../../web/workspace.html#L427) | 427 | `"function signalCard(lead){"` | — |
+| [SRC-2C8F288796-L000428](../../web/workspace.html#L428) | 428 | `" const card=make(\"article\",\"signal-card\");"` | — |
+| [SRC-2C8F288796-L000429](../../web/workspace.html#L429) | 429 | `" const top=make(\"div\",\"signal-top\");const left=make(\"div\",\"signal-meta\");"` | — |
+| [SRC-2C8F288796-L000430](../../web/workspace.html#L430) | 430 | `" const assessment=lead.assessment\|\|{};left.append(tag(labels[assessment.label]\|\|assessment.label\|\|\"غير مصنفة\",assessment.label===\"high_intent\"?\"teal\":\"\"));"` | — |
+| [SRC-2C8F288796-L000431](../../web/workspace.html#L431) | 431 | `" left.append(tag(statusLabel(lead.status),lead.status===\"rejected\"?\"red\":\"\"));"` | — |
+| [SRC-2C8F288796-L000432](../../web/workspace.html#L432) | 432 | `" top.append(left,make(\"span\",\"subtle\",lead.observed_at\|\|\"تاريخ الرصد غير متاح\"));card.append(top);"` | — |
+| [SRC-2C8F288796-L000433](../../web/workspace.html#L433) | 433 | `" const text=String(lead.text\|\|\"\");card.append(make(\"p\",\"signal-text\",text.length>250?text.slice(0,247)+\"…\":text));"` | — |
+| [SRC-2C8F288796-L000434](../../web/workspace.html#L434) | 434 | `" const meta=make(\"div\",\"signal-meta\");"` | — |
+| [SRC-2C8F288796-L000435](../../web/workspace.html#L435) | 435 | `" meta.append(tag(\"الدرجة \"+String(assessment.score??\"—\")+\"/100\"),tag(String(lead.platform\|\|\"مصدر غير محدد\")));"` | — |
+| [SRC-2C8F288796-L000436](../../web/workspace.html#L436) | 436 | `" const source=safeHttp(lead.source_url);if(source)meta.append(tag(\"رابط مرفق — لم تُفحص الصفحة\"));"` | — |
+| [SRC-2C8F288796-L000437](../../web/workspace.html#L437) | 437 | `" card.append(meta);"` | — |
+| [SRC-2C8F288796-L000438](../../web/workspace.html#L438) | 438 | `" const actions=make(\"div\",\"signal-actions\");actions.append(make(\"span\",\"subtle\",\"المعرّف: \"+String(lead.id\|\|\"\").slice(0,8)));"` | — |
+| [SRC-2C8F288796-L000439](../../web/workspace.html#L439) | 439 | `" actions.append(action(\"التفاصيل\",\"\",()=>openDetails(lead)));"` | — |
+| [SRC-2C8F288796-L000440](../../web/workspace.html#L440) | 440 | `" if(canWrite())actions.append(action(\"تغيير الحالة\",\"\",()=>openDetails(lead)));"` | — |
+| [SRC-2C8F288796-L000441](../../web/workspace.html#L441) | 441 | `" card.append(actions);return card;"` | — |
+| [SRC-2C8F288796-L000442](../../web/workspace.html#L442) | 442 | `"}"` | — |
+| [SRC-2C8F288796-L000443](../../web/workspace.html#L443) | 443 | `"function openDetails(lead){"` | — |
+| [SRC-2C8F288796-L000444](../../web/workspace.html#L444) | 444 | `" const body=$(\"detailBody\");body.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000445](../../web/workspace.html#L445) | 445 | `" const a=lead.assessment\|\|{};"` | — |
+| [SRC-2C8F288796-L000446](../../web/workspace.html#L446) | 446 | `" body.append(make(\"h3\",\"\",\"نص الإشارة\"),make(\"p\",\"\",lead.text\|\|\"لا يوجد نص محفوظ.\"));"` | — |
+| [SRC-2C8F288796-L000447](../../web/workspace.html#L447) | 447 | `" body.append(make(\"h3\",\"\",\"المصدر والدليل\"));"` | — |
+| [SRC-2C8F288796-L000448](../../web/workspace.html#L448) | 448 | `" const url=safeHttp(lead.source_url);"` | — |
+| [SRC-2C8F288796-L000449](../../web/workspace.html#L449) | 449 | `" if(url){const link=make(\"a\",\"\",url);link.href=url;link.target=\"_blank\";link.rel=\"noopener noreferrer\";body.append(link);body.append(make(\"p\",\"disclaimer\",\"وجود الرابط لا يثبت أن الصفحة متاحة أو أن محتواها يطابق نص الإشارة؛ لم تُجرَ قراءة آلية للمصدر في هذه الشاشة.\"))}"` | — |
+| [SRC-2C8F288796-L000450](../../web/workspace.html#L450) | 450 | `" else body.append(make(\"p\",\"\",\"لا يوجد رابط HTTP(S) صالح محفوظ لهذا السجل.\"));"` | — |
+| [SRC-2C8F288796-L000451](../../web/workspace.html#L451) | 451 | `" body.append(make(\"h3\",\"\",\"التصنيف والتقييم\"));"` | — |
+| [SRC-2C8F288796-L000452](../../web/workspace.html#L452) | 452 | `" body.append(make(\"p\",\"\", (labels[a.label]\|\|a.label\|\|\"غير مصنف\")+\" · \"+String(a.score??\"—\")+\"/100\"));"` | — |
+| [SRC-2C8F288796-L000453](../../web/workspace.html#L453) | 453 | `" if(a.summary)body.append(make(\"p\",\"\",a.summary));"` | — |
+| [SRC-2C8F288796-L000454](../../web/workspace.html#L454) | 454 | `" if(Array.isArray(a.matched_signals)&&a.matched_signals.length){"` | — |
+| [SRC-2C8F288796-L000455](../../web/workspace.html#L455) | 455 | `"  const ul=make(\"ul\",\"\");a.matched_signals.forEach(s=>ul.append(make(\"li\",\"\",String(s.phrase\|\|\"إشارة\")+(s.points!==undefined?\" · +\"+s.points:\"\"))));body.append(ul);"` | — |
+| [SRC-2C8F288796-L000456](../../web/workspace.html#L456) | 456 | `" }"` | — |
+| [SRC-2C8F288796-L000457](../../web/workspace.html#L457) | 457 | `" body.append(make(\"p\",\"disclaimer\",\"درجة القواعد تفسير أولي، وليست احتمالًا إحصائيًا للشراء ولا تثبت نية الكاتب أو استمرار الطلب.\"));"` | — |
+| [SRC-2C8F288796-L000458](../../web/workspace.html#L458) | 458 | `" body.append(make(\"h3\",\"\",\"حالة المتابعة\"),make(\"p\",\"\",statusLabel(lead.status)));"` | — |
+| [SRC-2C8F288796-L000459](../../web/workspace.html#L459) | 459 | `" if(canWrite()){"` | — |
+| [SRC-2C8F288796-L000460](../../web/workspace.html#L460) | 460 | `"  const select=make(\"select\",\"\");select.setAttribute(\"aria-label\",\"تغيير حالة الإشارة\");"` | — |
+| [SRC-2C8F288796-L000461](../../web/workspace.html#L461) | 461 | `"  statuses.forEach(s=>{const o=make(\"option\",\"\",s.label);o.value=s.id;o.selected=s.id===lead.status;select.append(o)});"` | — |
+| [SRC-2C8F288796-L000462](../../web/workspace.html#L462) | 462 | `"  const save=action(\"حفظ الحالة\",\"primary\",async()=>{save.disabled=true;try{await api(\"/api/leads/\"+encodeURIComponent(lead.id)+\"/status\",{method:\"POST\",body:{status:select.value}});closeDetails();await loadLeads();renderCurrent()}catch(e){body.append(make(\"p\",\"auth-error\",escapeMessage(e.message)))}finally{save.disabled=false}});"` | — |
+| [SRC-2C8F288796-L000463](../../web/workspace.html#L463) | 463 | `"  body.append(make(\"h3\",\"\",\"تحديث الحالة\"),select,save);"` | — |
+| [SRC-2C8F288796-L000464](../../web/workspace.html#L464) | 464 | `" }"` | — |
+| [SRC-2C8F288796-L000465](../../web/workspace.html#L465) | 465 | `" $(\"detailDrawer\").classList.add(\"open\");"` | — |
+| [SRC-2C8F288796-L000466](../../web/workspace.html#L466) | 466 | `"}"` | — |
+| [SRC-2C8F288796-L000467](../../web/workspace.html#L467) | 467 | `"function closeDetails(){$(\"detailDrawer\").classList.remove(\"open\")}"` | — |
+| [SRC-2C8F288796-L000468](../../web/workspace.html#L468) | 468 | `"function renderSignals(){"` | — |
+| [SRC-2C8F288796-L000469](../../web/workspace.html#L469) | 469 | `" setPage(\"صندوق إشارات الطلب\",\"راجع النص الأصلي والمصدر والتصنيف. لا تعرض هذه الشاشة شركات أو أشخاصًا غير موجودين في السجل الفعلي.\",\"DEMAND SIGNAL INBOX\");"` | — |
+| [SRC-2C8F288796-L000470](../../web/workspace.html#L470) | 470 | `" const root=$(\"viewRoot\");root.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000471](../../web/workspace.html#L471) | 471 | `" const panel=make(\"section\",\"glass panel\");const ph=make(\"div\",\"panel-head\");const ptitle=make(\"div\");ptitle.append(make(\"h2\",\"\",\"الإشارات المحفوظة\"),make(\"p\",\"\",\"بيانات من GET /api/leads، محمية بجلسة المستخدم وعزل مساحة العمل.\"));ph.append(ptitle,action(\"تحديث ↻\",\"ghost\",async()=>{await loadLeads();renderSignals()}));panel.append(ph);"` | — |
+| [SRC-2C8F288796-L000472](../../web/workspace.html#L472) | 472 | `" if(canWrite())panel.append(createSignalForm());"` | — |
+| [SRC-2C8F288796-L000473](../../web/workspace.html#L473) | 473 | `" const toolbar=make(\"div\",\"toolbar\");const search=make(\"input\",\"\");search.type=\"search\";search.placeholder=\"ابحث داخل نصوص الإشارات…\";search.value=state.search;search.setAttribute(\"aria-label\",\"البحث في الإشارات\");"` | — |
+| [SRC-2C8F288796-L000474](../../web/workspace.html#L474) | 474 | `" search.addEventListener(\"input\",()=>{state.search=search.value;drawSignalRows(list)});"` | — |
+| [SRC-2C8F288796-L000475](../../web/workspace.html#L475) | 475 | `" const filter=make(\"select\",\"\");filter.setAttribute(\"aria-label\",\"تصفية حسب الحالة\");const all=make(\"option\",\"\",\"كل الحالات\");all.value=\"all\";filter.append(all);"` | — |
+| [SRC-2C8F288796-L000476](../../web/workspace.html#L476) | 476 | `" statuses.forEach(s=>{const o=make(\"option\",\"\",s.label);o.value=s.id;filter.append(o)});filter.value=state.filter;"` | — |
+| [SRC-2C8F288796-L000477](../../web/workspace.html#L477) | 477 | `" filter.addEventListener(\"change\",()=>{state.filter=filter.value;drawSignalRows(list)});"` | — |
+| [SRC-2C8F288796-L000478](../../web/workspace.html#L478) | 478 | `" toolbar.append(search,filter);panel.append(toolbar);"` | — |
+| [SRC-2C8F288796-L000479](../../web/workspace.html#L479) | 479 | `" const list=make(\"div\",\"signal-list\");drawSignalRows(list);panel.append(list);"` | — |
+| [SRC-2C8F288796-L000480](../../web/workspace.html#L480) | 480 | `" if(!canWrite())panel.append(make(\"p\",\"disclaimer\",\"دور المستخدم الحالي للقراءة فقط؛ لا يمكنه إضافة إشارات أو تغيير الحالات.\"));"` | — |
+| [SRC-2C8F288796-L000481](../../web/workspace.html#L481) | 481 | `" root.append(panel);"` | — |
+| [SRC-2C8F288796-L000482](../../web/workspace.html#L482) | 482 | `"}"` | — |
+| [SRC-2C8F288796-L000483](../../web/workspace.html#L483) | 483 | `"function drawSignalRows(list){"` | — |
+| [SRC-2C8F288796-L000484](../../web/workspace.html#L484) | 484 | `" list.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000485](../../web/workspace.html#L485) | 485 | `" const query=state.search.trim().toLocaleLowerCase();"` | — |
+| [SRC-2C8F288796-L000486](../../web/workspace.html#L486) | 486 | `" const rows=state.leads.filter(l=>(state.filter===\"all\"\|\|l.status===state.filter)&&(!query\|\|String(l.text\|\|\"\").toLocaleLowerCase().includes(query)));"` | — |
+| [SRC-2C8F288796-L000487](../../web/workspace.html#L487) | 487 | `" if(!rows.length)list.append(emptyState(\"لا توجد نتائج مطابقة\",\"غيّر مرشح الحالة أو عبارة البحث، أو أضف إشارة جديدة إن كانت صلاحيتك تسمح.\"));"` | — |
+| [SRC-2C8F288796-L000488](../../web/workspace.html#L488) | 488 | `" else rows.forEach(l=>list.append(signalCard(l)));"` | — |
+| [SRC-2C8F288796-L000489](../../web/workspace.html#L489) | 489 | `"}"` | — |
+| [SRC-2C8F288796-L000490](../../web/workspace.html#L490) | 490 | `"function createSignalForm(){"` | — |
+| [SRC-2C8F288796-L000491](../../web/workspace.html#L491) | 491 | `" const wrapper=make(\"section\",\"signal-card\");const head=make(\"div\",\"panel-head\");const title=make(\"div\");title.append(make(\"h2\",\"\",\"إضافة إشارة جديدة\"),make(\"p\",\"\",\"أدخل نصًا منشورًا ورابطه العام. التحليل محلي ولا يشغّل البحث الخارجي.\"));head.append(title);wrapper.append(head);"` | — |
+| [SRC-2C8F288796-L000492](../../web/workspace.html#L492) | 492 | `" const text=make(\"textarea\",\"\");text.id=\"newSignalText\";text.placeholder=\"انسخ نص الطلب أو الاحتياج المعلن من المصدر المسموح…\";text.maxLength=20000;text.required=true;"` | — |
+| [SRC-2C8F288796-L000493](../../web/workspace.html#L493) | 493 | `" const url=make(\"input\",\"\");url.type=\"url\";url.id=\"newSignalUrl\";url.placeholder=\"https://رابط-المصدر\";url.required=true;"` | — |
+| [SRC-2C8F288796-L000494](../../web/workspace.html#L494) | 494 | `" const grid=make(\"div\",\"form-grid\");"` | — |
+| [SRC-2C8F288796-L000495](../../web/workspace.html#L495) | 495 | `" const platform=make(\"select\",\"\");platform.id=\"newSignalPlatform\";[\"manual\",\"Facebook\",\"Website\",\"OLX\",\"Other\"].forEach(value=>{const o=make(\"option\",\"\",value===\"manual\"?\"إدخال يدوي\":value);o.value=value;platform.append(o)});"` | — |
+| [SRC-2C8F288796-L000496](../../web/workspace.html#L496) | 496 | `" const product=make(\"input\",\"\");product.id=\"newSignalProduct\";product.placeholder=\"مثال: أنظمة إنذار، عقارات\";"` | — |
+| [SRC-2C8F288796-L000497](../../web/workspace.html#L497) | 497 | `" const location=make(\"input\",\"\");location.id=\"newSignalLocation\";location.placeholder=\"مثال: القاهرة، التجمع الخامس\";"` | — |
+| [SRC-2C8F288796-L000498](../../web/workspace.html#L498) | 498 | `" const note=make(\"input\",\"\");note.id=\"newSignalNote\";note.placeholder=\"ملاحظاتك (اختياري)\";"` | — |
+| [SRC-2C8F288796-L000499](../../web/workspace.html#L499) | 499 | `" const fields=[[\"النص\",text],[\"رابط المصدر\",url],[\"المنصة\",platform],[\"مصطلحات المنتج (افصل بفاصلة)\",product],[\"السوق أو المنطقة\",location],[\"ملاحظة\",note]];"` | — |
+| [SRC-2C8F288796-L000500](../../web/workspace.html#L500) | 500 | `" fields.forEach(([label,input])=>{const field=make(\"div\",\"field\");field.append(make(\"label\",\"\",label));field.lastChild.htmlFor=input.id;field.append(input);grid.append(field)});"` | — |
+| [SRC-2C8F288796-L000501](../../web/workspace.html#L501) | 501 | `" wrapper.append(grid);"` | — |
+| [SRC-2C8F288796-L000502](../../web/workspace.html#L502) | 502 | `" const result=make(\"div\",\"\");result.id=\"analysisResult\";"` | — |
+| [SRC-2C8F288796-L000503](../../web/workspace.html#L503) | 503 | `" const buttons=make(\"div\",\"form-actions\");"` | — |
+| [SRC-2C8F288796-L000504](../../web/workspace.html#L504) | 504 | `" const analyze=action(\"١. حلّل الإشارة\",\"primary\",async()=>{"` | — |
+| [SRC-2C8F288796-L000505](../../web/workspace.html#L505) | 505 | `"  analyze.disabled=true;"` | — |
+| [SRC-2C8F288796-L000506](../../web/workspace.html#L506) | 506 | `"  try{"` | — |
+| [SRC-2C8F288796-L000507](../../web/workspace.html#L507) | 507 | `"   if(!text.value.trim())throw new Error(\"أدخل نص الإشارة أولًا.\");"` | — |
+| [SRC-2C8F288796-L000508](../../web/workspace.html#L508) | 508 | `"   if(!safeHttp(url.value))throw new Error(\"أدخل رابط مصدر عام صالحًا يبدأ بـ HTTP أو HTTPS.\");"` | — |
+| [SRC-2C8F288796-L000509](../../web/workspace.html#L509) | 509 | `"   const product_terms=product.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
+| [SRC-2C8F288796-L000510](../../web/workspace.html#L510) | 510 | `"   const location_terms=location.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
+| [SRC-2C8F288796-L000511](../../web/workspace.html#L511) | 511 | `"   const data=await api(\"/api/analyze\",{method:\"POST\",body:{text:text.value,product_terms:product_terms,location_terms:location_terms}});"` | — |
+| [SRC-2C8F288796-L000512](../../web/workspace.html#L512) | 512 | `"   state.analysis={text:text.value,url:url.value,product_terms:product_terms,location_terms:location_terms,assessment:data};"` | — |
+| [SRC-2C8F288796-L000513](../../web/workspace.html#L513) | 513 | `"   result.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000514](../../web/workspace.html#L514) | 514 | `"   const box=make(\"div\",\"analysis-result\");box.append(make(\"div\",\"analysis-score\",String(data.score??\"—\")+\"/100\"),make(\"div\",\"\",labels[data.label]\|\|data.label\|\|\"غير مصنفة\"),make(\"p\",\"\",data.summary\|\|\"لا يوجد ملخص.\"));"` | — |
+| [SRC-2C8F288796-L000515](../../web/workspace.html#L515) | 515 | `"   box.append(make(\"p\",\"disclaimer\",\"هذه درجة قواعد إرشادية لا تمثل احتمال شراء. راجع النص والمصدر قبل اعتماد الإشارة.\"));"` | — |
+| [SRC-2C8F288796-L000516](../../web/workspace.html#L516) | 516 | `"   result.append(box);"` | — |
+| [SRC-2C8F288796-L000517](../../web/workspace.html#L517) | 517 | `"  }catch(e){result.replaceChildren(make(\"p\",\"auth-error\",escapeMessage(e.message)))}"` | — |
+| [SRC-2C8F288796-L000518](../../web/workspace.html#L518) | 518 | `"  finally{analyze.disabled=false}"` | — |
+| [SRC-2C8F288796-L000519](../../web/workspace.html#L519) | 519 | `" });"` | — |
+| [SRC-2C8F288796-L000520](../../web/workspace.html#L520) | 520 | `" const save=action(\"٢. احفظ الإشارة\",\"\",async()=>{"` | — |
+| [SRC-2C8F288796-L000521](../../web/workspace.html#L521) | 521 | `"  save.disabled=true;"` | — |
+| [SRC-2C8F288796-L000522](../../web/workspace.html#L522) | 522 | `"  try{"` | — |
+| [SRC-2C8F288796-L000523](../../web/workspace.html#L523) | 523 | `"   const item=state.analysis;"` | — |
+| [SRC-2C8F288796-L000524](../../web/workspace.html#L524) | 524 | `"   if(!item\|\|item.text!==text.value\|\|item.url!==url.value)throw new Error(\"أعد التحليل بعد أي تغيير في النص أو رابط المصدر.\");"` | — |
+| [SRC-2C8F288796-L000525](../../web/workspace.html#L525) | 525 | `"   if(!safeHttp(url.value))throw new Error(\"رابط المصدر غير صالح.\");"` | — |
+| [SRC-2C8F288796-L000526](../../web/workspace.html#L526) | 526 | `"   const product_terms=product.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
+| [SRC-2C8F288796-L000527](../../web/workspace.html#L527) | 527 | `"   const location_terms=location.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
+| [SRC-2C8F288796-L000528](../../web/workspace.html#L528) | 528 | `"   if(JSON.stringify(product_terms)!==JSON.stringify(item.product_terms)\|\|JSON.stringify(location_terms)!==JSON.stringify(item.location_terms))throw new Error(\"تغيرت مصطلحات المنتج أو المنطقة؛ أعد التحليل.\");"` | — |
+| [SRC-2C8F288796-L000529](../../web/workspace.html#L529) | 529 | `"   const response=await api(\"/api/leads\",{method:\"POST\",body:{text:text.value,source_url:url.value,platform:platform.value,note:note.value,product_terms:product_terms,location_terms:location_terms}});"` | — |
 | [SRC-2C8F288796-L000530](../../web/workspace.html#L530) | 530 | `"   result.replaceChildren(make(\"p\",\"tag teal\",response.created?\"تم حفظ الإشارة.\":\"هذه الإشارة موجودة بالفعل ولم تُكرر.\"));"` | — |
 | [SRC-2C8F288796-L000531](../../web/workspace.html#L531) | 531 | `"   state.analysis=null;text.value=\"\";url.value=\"\";note.value=\"\";await loadLeads();renderSignals();"` | — |
 | [SRC-2C8F288796-L000532](../../web/workspace.html#L532) | 532 | `"  }catch(e){result.append(make(\"p\",\"auth-error\",escapeMessage(e.message)))}"` | — |
@@ -349,163 +816,3 @@
 | [SRC-2C8F288796-L000860](../../web/workspace.html#L860) | 860 | `"  });"` | — |
 | [SRC-2C8F288796-L000861](../../web/workspace.html#L861) | 861 | `"  if(list.childNodes.length){row.append(make(\"div\",\"chat-who\",\"المصادر\"),list)}"` | — |
 | [SRC-2C8F288796-L000862](../../web/workspace.html#L862) | 862 | `" }"` | — |
-| [SRC-2C8F288796-L000863](../../web/workspace.html#L863) | 863 | `" if(item.role===\"assistant\"&&item.note)row.append(make(\"div\",\"chat-note\",item.note));"` | — |
-| [SRC-2C8F288796-L000864](../../web/workspace.html#L864) | 864 | `" return row;"` | — |
-| [SRC-2C8F288796-L000865](../../web/workspace.html#L865) | 865 | `"}"` | — |
-| [SRC-2C8F288796-L000866](../../web/workspace.html#L866) | 866 | `"function renderChat(){"` | — |
-| [SRC-2C8F288796-L000867](../../web/workspace.html#L867) | 867 | `" setPage(\"محادثة Omarai\",\"اسأل باللهجة المصرية أو الفصحى أو الإنجليزية. تُرسل الأسئلة إلى محركات البحث وقد تُرسل مقتطفات المصادر إلى مزود نموذج اللغة المضبوط.\",\"CHAT\");"` | — |
-| [SRC-2C8F288796-L000868](../../web/workspace.html#L868) | 868 | `" const chat=state.chat;"` | — |
-| [SRC-2C8F288796-L000869](../../web/workspace.html#L869) | 869 | `" const root=$(\"viewRoot\");root.replaceChildren();"` | — |
-| [SRC-2C8F288796-L000870](../../web/workspace.html#L870) | 870 | `" const panel=make(\"section\",\"glass panel chat-panel\");"` | — |
-| [SRC-2C8F288796-L000871](../../web/workspace.html#L871) | 871 | `" const ph=make(\"div\",\"panel-head\");const pt=make(\"div\");"` | — |
-| [SRC-2C8F288796-L000872](../../web/workspace.html#L872) | 872 | `" pt.append(make(\"h2\",\"\",\"المحادثة والبحث\"),make(\"p\",\"\",\"يتذكر آخر ٨ رسائل داخل هذه الجلسة. لا تضع كلمات مرور أو مفاتيح API أو بيانات شخصية سرية في السؤال.\"));"` | — |
-| [SRC-2C8F288796-L000873](../../web/workspace.html#L873) | 873 | `" const clear=action(\"محادثة جديدة\",\"ghost\",()=>{if(chat.busy)return;chat.messages=[];chat.history=[];renderChat()});"` | — |
-| [SRC-2C8F288796-L000874](../../web/workspace.html#L874) | 874 | `" ph.append(pt,clear);panel.append(ph);"` | — |
-| [SRC-2C8F288796-L000875](../../web/workspace.html#L875) | 875 | `""` | — |
-| [SRC-2C8F288796-L000876](../../web/workspace.html#L876) | 876 | `" const modeBar=make(\"div\",\"chat-modes\");"` | — |
-| [SRC-2C8F288796-L000877](../../web/workspace.html#L877) | 877 | `" chatModes.forEach(m=>{"` | — |
-| [SRC-2C8F288796-L000878](../../web/workspace.html#L878) | 878 | `"  const b=make(\"button\",\"button ghost\"+(chat.mode===m.id?\" chat-mode-active\":\"\"),m.label);"` | — |
-| [SRC-2C8F288796-L000879](../../web/workspace.html#L879) | 879 | `"  b.type=\"button\";b.setAttribute(\"aria-pressed\",chat.mode===m.id?\"true\":\"false\");b.disabled=chat.busy;"` | — |
-| [SRC-2C8F288796-L000880](../../web/workspace.html#L880) | 880 | `"  b.addEventListener(\"click\",()=>{chat.mode=m.id;renderChat()});modeBar.append(b);"` | — |
-| [SRC-2C8F288796-L000881](../../web/workspace.html#L881) | 881 | `" });"` | — |
-| [SRC-2C8F288796-L000882](../../web/workspace.html#L882) | 882 | `" panel.append(modeBar);"` | — |
-| [SRC-2C8F288796-L000883](../../web/workspace.html#L883) | 883 | `""` | — |
-| [SRC-2C8F288796-L000884](../../web/workspace.html#L884) | 884 | `" const list=make(\"div\",\"chat-list\");list.id=\"chatList\";list.setAttribute(\"aria-live\",\"polite\");"` | — |
-| [SRC-2C8F288796-L000885](../../web/workspace.html#L885) | 885 | `" if(!chat.messages.length){"` | — |
-| [SRC-2C8F288796-L000886](../../web/workspace.html#L886) | 886 | `"  list.append(make(\"div\",\"chat-empty\",\"اكتب سؤالك لبدء المحادثة. مثال: «ايه أفضل طريقة أوصل بيها لشركات محتاجة نظام إنذار حريق؟»\"));"` | — |
-| [SRC-2C8F288796-L000887](../../web/workspace.html#L887) | 887 | `" }else chat.messages.forEach(item=>list.append(chatMessageNode(item)));"` | — |
-| [SRC-2C8F288796-L000888](../../web/workspace.html#L888) | 888 | `" panel.append(list);"` | — |
-| [SRC-2C8F288796-L000889](../../web/workspace.html#L889) | 889 | `""` | — |
-| [SRC-2C8F288796-L000890](../../web/workspace.html#L890) | 890 | `" const form=make(\"div\",\"chat-form\");"` | — |
-| [SRC-2C8F288796-L000891](../../web/workspace.html#L891) | 891 | `" const input=make(\"textarea\");input.id=\"chatInput\";input.rows=2;input.maxLength=4000;input.placeholder=\"اكتب سؤالك هنا… (Enter للإرسال · Shift+Enter لسطر جديد)\";input.disabled=chat.busy;"` | — |
-| [SRC-2C8F288796-L000892](../../web/workspace.html#L892) | 892 | `" const send=action(chat.busy?\"يبحث…\":\"أرسل ←\",\"primary\",()=>sendChat());send.id=\"chatSend\";send.disabled=chat.busy;"` | — |
-| [SRC-2C8F288796-L000893](../../web/workspace.html#L893) | 893 | `" input.addEventListener(\"keydown\",e=>{if(e.key===\"Enter\"&&!e.shiftKey&&!e.isComposing){e.preventDefault();sendChat()}});"` | — |
-| [SRC-2C8F288796-L000894](../../web/workspace.html#L894) | 894 | `" form.append(input,send);panel.append(form);"` | — |
-| [SRC-2C8F288796-L000895](../../web/workspace.html#L895) | 895 | `" root.append(panel);"` | — |
-| [SRC-2C8F288796-L000896](../../web/workspace.html#L896) | 896 | `" list.scrollTop=list.scrollHeight;"` | — |
-| [SRC-2C8F288796-L000897](../../web/workspace.html#L897) | 897 | `" if(!chat.busy)input.focus();"` | — |
-| [SRC-2C8F288796-L000898](../../web/workspace.html#L898) | 898 | `"}"` | — |
-| [SRC-2C8F288796-L000899](../../web/workspace.html#L899) | 899 | `"async function sendChat(){"` | — |
-| [SRC-2C8F288796-L000900](../../web/workspace.html#L900) | 900 | `" const chat=state.chat;if(chat.busy)return;"` | — |
-| [SRC-2C8F288796-L000901](../../web/workspace.html#L901) | 901 | `" const requestSessionVersion=chat.sessionVersion;"` | — |
-| [SRC-2C8F288796-L000902](../../web/workspace.html#L902) | 902 | `" const input=$(\"chatInput\");const question=input?input.value.trim():\"\";"` | — |
-| [SRC-2C8F288796-L000903](../../web/workspace.html#L903) | 903 | `" if(!question)return;"` | — |
-| [SRC-2C8F288796-L000904](../../web/workspace.html#L904) | 904 | `" chat.messages.push({role:\"user\",text:question});chat.busy=true;renderChat();"` | — |
-| [SRC-2C8F288796-L000905](../../web/workspace.html#L905) | 905 | `" try{"` | — |
-| [SRC-2C8F288796-L000906](../../web/workspace.html#L906) | 906 | `"  const data=await api(\"/api/agent\",{method:\"POST\",body:{question:question,history:chat.history.slice(-8),mode:chat.mode}});"` | — |
-| [SRC-2C8F288796-L000907](../../web/workspace.html#L907) | 907 | `"  if(state.chat.sessionVersion!==requestSessionVersion)return;"` | — |
-| [SRC-2C8F288796-L000908](../../web/workspace.html#L908) | 908 | `"  const answer=String(data.answer\|\|\"لم يرجع الخادم نص إجابة.\");"` | — |
-| [SRC-2C8F288796-L000909](../../web/workspace.html#L909) | 909 | `"  const note=data.kind===\"general_answer\"?\"إجابة معرفة عامة دون بحث ويب.\":(data.used_web_search===true?\"\":\"لم يُجرَ بحث ويب لهذه الإجابة.\");"` | — |
-| [SRC-2C8F288796-L000910](../../web/workspace.html#L910) | 910 | `"  chat.messages.push({role:\"assistant\",text:answer,sources:Array.isArray(data.sources)?data.sources:[],note:note});"` | — |
-| [SRC-2C8F288796-L000911](../../web/workspace.html#L911) | 911 | `"  chat.history.push({role:\"user\",content:question},{role:\"assistant\",content:answer});"` | — |
-| [SRC-2C8F288796-L000912](../../web/workspace.html#L912) | 912 | `"  chat.history=chat.history.slice(-16);"` | — |
-| [SRC-2C8F288796-L000913](../../web/workspace.html#L913) | 913 | `" }catch(error){"` | — |
-| [SRC-2C8F288796-L000914](../../web/workspace.html#L914) | 914 | `"  if(state.chat.sessionVersion===requestSessionVersion){"` | — |
-| [SRC-2C8F288796-L000915](../../web/workspace.html#L915) | 915 | `"   chat.messages.push({role:\"assistant\",text:\"تعذر إكمال الطلب: \"+escapeMessage(error&&error.message),sources:[],note:\"\"});"` | — |
-| [SRC-2C8F288796-L000916](../../web/workspace.html#L916) | 916 | `"  }"` | — |
-| [SRC-2C8F288796-L000917](../../web/workspace.html#L917) | 917 | `" }finally{"` | — |
-| [SRC-2C8F288796-L000918](../../web/workspace.html#L918) | 918 | `"  if(state.chat.sessionVersion===requestSessionVersion){"` | — |
-| [SRC-2C8F288796-L000919](../../web/workspace.html#L919) | 919 | `"   chat.busy=false;"` | — |
-| [SRC-2C8F288796-L000920](../../web/workspace.html#L920) | 920 | `"   if(state.activeView===\"chat\")renderChat();"` | — |
-| [SRC-2C8F288796-L000921](../../web/workspace.html#L921) | 921 | `"  }"` | — |
-| [SRC-2C8F288796-L000922](../../web/workspace.html#L922) | 922 | `" }"` | — |
-| [SRC-2C8F288796-L000923](../../web/workspace.html#L923) | 923 | `"}"` | — |
-| [SRC-2C8F288796-L000924](../../web/workspace.html#L924) | 924 | `"function renderCurrent(){"` | — |
-| [SRC-2C8F288796-L000925](../../web/workspace.html#L925) | 925 | `" renderNav();"` | — |
-| [SRC-2C8F288796-L000926](../../web/workspace.html#L926) | 926 | `" if(state.activeView===\"overview\")renderOverview();"` | — |
-| [SRC-2C8F288796-L000927](../../web/workspace.html#L927) | 927 | `" else if(state.activeView===\"indicators\")renderIndicators();"` | — |
-| [SRC-2C8F288796-L000928](../../web/workspace.html#L928) | 928 | `" else if(state.activeView===\"offer\")renderProductProfile();"` | — |
-| [SRC-2C8F288796-L000929](../../web/workspace.html#L929) | 929 | `" else if(state.activeView===\"campaign\")renderDiscovery();"` | — |
-| [SRC-2C8F288796-L000930](../../web/workspace.html#L930) | 930 | `" else if(state.activeView===\"signals\")renderSignals();"` | — |
-| [SRC-2C8F288796-L000931](../../web/workspace.html#L931) | 931 | `" else if(state.activeView===\"pipeline\")renderPipeline();"` | — |
-| [SRC-2C8F288796-L000932](../../web/workspace.html#L932) | 932 | `" else if(state.activeView===\"chat\")renderChat();"` | — |
-| [SRC-2C8F288796-L000933](../../web/workspace.html#L933) | 933 | `" else if(state.activeView===\"system\")renderSystem();"` | — |
-| [SRC-2C8F288796-L000934](../../web/workspace.html#L934) | 934 | `" else renderPlaceholder(state.activeView);"` | — |
-| [SRC-2C8F288796-L000935](../../web/workspace.html#L935) | 935 | `" if(state.loadWarnings.length){"` | — |
-| [SRC-2C8F288796-L000936](../../web/workspace.html#L936) | 936 | `"  $(\"viewRoot\").prepend(make(\"p\",\"auth-error\",\"تم التحقق من الجلسة؛ تعذر تحميل بعض البيانات: \"+state.loadWarnings.join(\"، \")+\". قد تكون بعض القوائم والأرقام غير مكتملة.\"));"` | — |
-| [SRC-2C8F288796-L000937](../../web/workspace.html#L937) | 937 | `" }"` | — |
-| [SRC-2C8F288796-L000938](../../web/workspace.html#L938) | 938 | `"}"` | — |
-| [SRC-2C8F288796-L000939](../../web/workspace.html#L939) | 939 | `"function navigate(view){"` | — |
-| [SRC-2C8F288796-L000940](../../web/workspace.html#L940) | 940 | `" state.activeView=view;renderCurrent();"` | — |
-| [SRC-2C8F288796-L000941](../../web/workspace.html#L941) | 941 | `"}"` | — |
-| [SRC-2C8F288796-L000942](../../web/workspace.html#L942) | 942 | `"async function loadProductProfiles(){"` | — |
-| [SRC-2C8F288796-L000943](../../web/workspace.html#L943) | 943 | `" const data=await api(\"/api/product-profiles\");"` | — |
-| [SRC-2C8F288796-L000944](../../web/workspace.html#L944) | 944 | `" state.profiles=Array.isArray(data.profiles)?data.profiles:[];"` | — |
-| [SRC-2C8F288796-L000945](../../web/workspace.html#L945) | 945 | `" if(!state.profiles.some(item=>item.id===state.activeProfileId))state.activeProfileId=state.profiles[0]?.id\|\|null;"` | — |
-| [SRC-2C8F288796-L000946](../../web/workspace.html#L946) | 946 | `"}"` | — |
-| [SRC-2C8F288796-L000947](../../web/workspace.html#L947) | 947 | `"async function loadDiscoveryRuns(){"` | — |
-| [SRC-2C8F288796-L000948](../../web/workspace.html#L948) | 948 | `" const data=await api(\"/api/discoveries\");"` | — |
-| [SRC-2C8F288796-L000949](../../web/workspace.html#L949) | 949 | `" state.discoveryRuns=Array.isArray(data.runs)?data.runs:[];"` | — |
-| [SRC-2C8F288796-L000950](../../web/workspace.html#L950) | 950 | `"}"` | — |
-| [SRC-2C8F288796-L000951](../../web/workspace.html#L951) | 951 | `"async function loadLeads(){"` | — |
-| [SRC-2C8F288796-L000952](../../web/workspace.html#L952) | 952 | `" const data=await api(\"/api/leads?limit=500\");"` | — |
-| [SRC-2C8F288796-L000953](../../web/workspace.html#L953) | 953 | `" state.leads=Array.isArray(data.leads)?data.leads:[];"` | — |
-| [SRC-2C8F288796-L000954](../../web/workspace.html#L954) | 954 | `"}"` | — |
-| [SRC-2C8F288796-L000955](../../web/workspace.html#L955) | 955 | `"async function bootstrap(){"` | — |
-| [SRC-2C8F288796-L000956](../../web/workspace.html#L956) | 956 | `" let session;"` | — |
-| [SRC-2C8F288796-L000957](../../web/workspace.html#L957) | 957 | `" try{"` | — |
-| [SRC-2C8F288796-L000958](../../web/workspace.html#L958) | 958 | `"  session=await api(\"/api/session\");"` | — |
-| [SRC-2C8F288796-L000959](../../web/workspace.html#L959) | 959 | `" }catch(e){"` | — |
-| [SRC-2C8F288796-L000960](../../web/workspace.html#L960) | 960 | `"  setConnection(false,\"يلزم تسجيل الدخول\",\"تعذر التحقق من جلسة المستخدم.\");"` | — |
-| [SRC-2C8F288796-L000961](../../web/workspace.html#L961) | 961 | `"  showAuth(e.message);"` | — |
-| [SRC-2C8F288796-L000962](../../web/workspace.html#L962) | 962 | `"  $(\"viewRoot\").replaceChildren(emptyState(\"مساحة العمل مقفلة\",\"سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل.\"));"` | — |
-| [SRC-2C8F288796-L000963](../../web/workspace.html#L963) | 963 | `"  return;"` | — |
-| [SRC-2C8F288796-L000964](../../web/workspace.html#L964) | 964 | `" }"` | — |
-| [SRC-2C8F288796-L000965](../../web/workspace.html#L965) | 965 | `" state.role=session.role\|\|\"unknown\";"` | — |
-| [SRC-2C8F288796-L000966](../../web/workspace.html#L966) | 966 | `" $(\"rolePill\").textContent=\"صلاحية: \"+state.role;"` | — |
-| [SRC-2C8F288796-L000967](../../web/workspace.html#L967) | 967 | `" $(\"roleSummary\").textContent=\"الدور: \"+state.role+(canWrite()?\" — إضافة وتحديث السجلات متاح.\":\" — قراءة فقط.\");"` | — |
-| [SRC-2C8F288796-L000968](../../web/workspace.html#L968) | 968 | `" hideAuth();"` | — |
-| [SRC-2C8F288796-L000969](../../web/workspace.html#L969) | 969 | `" const results=await Promise.allSettled(["` | — |
-| [SRC-2C8F288796-L000970](../../web/workspace.html#L970) | 970 | `"  loadLeads(),"` | — |
-| [SRC-2C8F288796-L000971](../../web/workspace.html#L971) | 971 | `"  loadProductProfiles(),"` | — |
-| [SRC-2C8F288796-L000972](../../web/workspace.html#L972) | 972 | `"  loadDiscoveryRuns()"` | — |
-| [SRC-2C8F288796-L000973](../../web/workspace.html#L973) | 973 | `" ]);"` | — |
-| [SRC-2C8F288796-L000974](../../web/workspace.html#L974) | 974 | `" if($(\"authGate\").classList.contains(\"open\")){"` | — |
-| [SRC-2C8F288796-L000975](../../web/workspace.html#L975) | 975 | `"  setConnection(false,\"يلزم تسجيل الدخول\",\"انتهت الجلسة أثناء تحميل البيانات.\");"` | — |
-| [SRC-2C8F288796-L000976](../../web/workspace.html#L976) | 976 | `"  $(\"viewRoot\").replaceChildren(emptyState(\"مساحة العمل مقفلة\",\"سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل.\"));"` | — |
-| [SRC-2C8F288796-L000977](../../web/workspace.html#L977) | 977 | `"  return;"` | — |
-| [SRC-2C8F288796-L000978](../../web/workspace.html#L978) | 978 | `" }"` | — |
-| [SRC-2C8F288796-L000979](../../web/workspace.html#L979) | 979 | `" state.loadWarnings=[];"` | — |
-| [SRC-2C8F288796-L000980](../../web/workspace.html#L980) | 980 | `" const labels=[\"سجل الإشارات\",\"ملفات المنتجات\",\"سجل الاكتشاف\"];"` | — |
-| [SRC-2C8F288796-L000981](../../web/workspace.html#L981) | 981 | `" results.forEach((result,index)=>{"` | — |
-| [SRC-2C8F288796-L000982](../../web/workspace.html#L982) | 982 | `"  if(result.status!==\"rejected\")return;"` | — |
-| [SRC-2C8F288796-L000983](../../web/workspace.html#L983) | 983 | `"  state.loadWarnings.push(labels[index]);"` | — |
-| [SRC-2C8F288796-L000984](../../web/workspace.html#L984) | 984 | `"  if(index===0)state.leads=[];"` | — |
-| [SRC-2C8F288796-L000985](../../web/workspace.html#L985) | 985 | `"  else if(index===1)state.profiles=[];"` | — |
-| [SRC-2C8F288796-L000986](../../web/workspace.html#L986) | 986 | `"  else state.discoveryRuns=[];"` | — |
-| [SRC-2C8F288796-L000987](../../web/workspace.html#L987) | 987 | `" });"` | — |
-| [SRC-2C8F288796-L000988](../../web/workspace.html#L988) | 988 | `" const note=state.loadWarnings.length"` | — |
-| [SRC-2C8F288796-L000989](../../web/workspace.html#L989) | 989 | `"  ?\"الجلسة مصادق عليها؛ تعذر تحميل بعض البيانات: \"+state.loadWarnings.join(\"، \")+\". حاول تحديث الوحدة لاحقًا.\""` | — |
-| [SRC-2C8F288796-L000990](../../web/workspace.html#L990) | 990 | `"  :\"تم تحميل الإشارات وملفات المنتج وسجل الاكتشاف. هذا لا يثبت اتصال جميع الموصلات.\";"` | — |
-| [SRC-2C8F288796-L000991](../../web/workspace.html#L991) | 991 | `" setConnection(true,state.loadWarnings.length?\"الجلسة مصادق عليها — بيانات جزئية\":\"الجلسة مصادق عليها\",note);"` | — |
-| [SRC-2C8F288796-L000992](../../web/workspace.html#L992) | 992 | `" renderCurrent();"` | — |
-| [SRC-2C8F288796-L000993](../../web/workspace.html#L993) | 993 | `"}"` | — |
-| [SRC-2C8F288796-L000994](../../web/workspace.html#L994) | 994 | `"$(\"loginForm\").addEventListener(\"submit\",async event=>{"` | — |
-| [SRC-2C8F288796-L000995](../../web/workspace.html#L995) | 995 | `" event.preventDefault();const token=$(\"accessToken\").value.trim();const button=$(\"loginButton\");button.disabled=true;$(\"authError\").textContent=\"\";"` | — |
-| [SRC-2C8F288796-L000996](../../web/workspace.html#L996) | 996 | `" try{"` | — |
-| [SRC-2C8F288796-L000997](../../web/workspace.html#L997) | 997 | `"  await api(\"/api/session\",{method:\"POST\",body:{access_token:token}});"` | — |
-| [SRC-2C8F288796-L000998](../../web/workspace.html#L998) | 998 | `"  advanceWorkspaceSessionVersion();clearChatSession();"` | — |
-| [SRC-2C8F288796-L000999](../../web/workspace.html#L999) | 999 | `"  $(\"accessToken\").value=\"\";await bootstrap();"` | — |
-| [SRC-2C8F288796-L001000](../../web/workspace.html#L1000) | 1000 | `" }catch(e){$(\"authError\").textContent=escapeMessage(e.message)}"` | — |
-| [SRC-2C8F288796-L001001](../../web/workspace.html#L1001) | 1001 | `" finally{button.disabled=false}"` | — |
-| [SRC-2C8F288796-L001002](../../web/workspace.html#L1002) | 1002 | `"});"` | — |
-| [SRC-2C8F288796-L001003](../../web/workspace.html#L1003) | 1003 | `"$(\"logoutButton\").addEventListener(\"click\",async()=>{"` | — |
-| [SRC-2C8F288796-L001004](../../web/workspace.html#L1004) | 1004 | `" try{"` | — |
-| [SRC-2C8F288796-L001005](../../web/workspace.html#L1005) | 1005 | `"  await api(\"/api/session/logout\",{method:\"POST\",body:{}});"` | — |
-| [SRC-2C8F288796-L001006](../../web/workspace.html#L1006) | 1006 | `" }catch(e){"` | — |
-| [SRC-2C8F288796-L001007](../../web/workspace.html#L1007) | 1007 | `"  alert(\"تعذر تسجيل الخروج من الخادم؛ لم يتم تغيير حالة الجلسة في الواجهة. \"+escapeMessage(e.message));"` | — |
-| [SRC-2C8F288796-L001008](../../web/workspace.html#L1008) | 1008 | `"  return;"` | — |
-| [SRC-2C8F288796-L001009](../../web/workspace.html#L1009) | 1009 | `" }"` | — |
-| [SRC-2C8F288796-L001010](../../web/workspace.html#L1010) | 1010 | `" state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];state.activeDiscovery=null;state.activeProfileId=null;state.activeView=\"overview\";showAuth(\"تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.\");setConnection(false,\"غير متصل\",\"سجّل الدخول لعرض السجلات.\");"` | — |
-| [SRC-2C8F288796-L001011](../../web/workspace.html#L1011) | 1011 | `"});"` | — |
-| [SRC-2C8F288796-L001012](../../web/workspace.html#L1012) | 1012 | `"$(\"addSignalTop\").addEventListener(\"click\",()=>navigate(\"signals\"));"` | — |
-| [SRC-2C8F288796-L001013](../../web/workspace.html#L1013) | 1013 | `"$(\"closeDetail\").addEventListener(\"click\",closeDetails);"` | — |
-| [SRC-2C8F288796-L001014](../../web/workspace.html#L1014) | 1014 | `"$(\"chatNav\").addEventListener(\"click\",()=>navigate(\"chat\"));"` | — |
-| [SRC-2C8F288796-L001015](../../web/workspace.html#L1015) | 1015 | `"$(\"systemNav\").addEventListener(\"click\",()=>navigate(\"system\"));"` | — |
-| [SRC-2C8F288796-L001016](../../web/workspace.html#L1016) | 1016 | `"$(\"detailDrawer\").addEventListener(\"click\",e=>{if(e.target===$(\"detailDrawer\"))closeDetails()});"` | — |
-| [SRC-2C8F288796-L001017](../../web/workspace.html#L1017) | 1017 | `"document.addEventListener(\"keydown\",e=>{if(e.key===\"Escape\")closeDetails()});"` | — |
-| [SRC-2C8F288796-L001018](../../web/workspace.html#L1018) | 1018 | `"renderNav();bootstrap();"` | — |
-| [SRC-2C8F288796-L001019](../../web/workspace.html#L1019) | 1019 | `"})();"` | — |
-| [SRC-2C8F288796-L001020](../../web/workspace.html#L1020) | 1020 | `"</script>"` | — |
-| [SRC-2C8F288796-L001021](../../web/workspace.html#L1021) | 1021 | `"</body>"` | — |
-| [SRC-2C8F288796-L001022](../../web/workspace.html#L1022) | 1022 | `"</html>"` | — |

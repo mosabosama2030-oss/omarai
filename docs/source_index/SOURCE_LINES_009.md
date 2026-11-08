@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000412 إلى SRC-086D574B4E-L000362
+- النطاق: SRC-8D00DCEC0D-L000351 إلى SRC-086D574B4E-L000301
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000351](../../agents/sales_domain.py#L351) | 351 | `"        return tuple(matches)"` | — |
+| [SRC-8D00DCEC0D-L000352](../../agents/sales_domain.py#L352) | 352 | `""` | — |
+| [SRC-8D00DCEC0D-L000353](../../agents/sales_domain.py#L353) | 353 | `"    def to_list(self) -> list[dict[str, list[str]]]:"` | — |
+| [SRC-8D00DCEC0D-L000354](../../agents/sales_domain.py#L354) | 354 | `"        return ["` | — |
+| [SRC-8D00DCEC0D-L000355](../../agents/sales_domain.py#L355) | 355 | `"            {\"path\": list(item.path), \"aliases\": list(item.aliases)}"` | — |
+| [SRC-8D00DCEC0D-L000356](../../agents/sales_domain.py#L356) | 356 | `"            for item in self.categories"` | — |
+| [SRC-8D00DCEC0D-L000357](../../agents/sales_domain.py#L357) | 357 | `"        ]"` | — |
+| [SRC-8D00DCEC0D-L000358](../../agents/sales_domain.py#L358) | 358 | `""` | — |
+| [SRC-8D00DCEC0D-L000359](../../agents/sales_domain.py#L359) | 359 | `""` | — |
+| [SRC-8D00DCEC0D-L000360](../../agents/sales_domain.py#L360) | 360 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000361](../../agents/sales_domain.py#L361) | 361 | `"class DemandEvidence:"` | — |
+| [SRC-8D00DCEC0D-L000362](../../agents/sales_domain.py#L362) | 362 | `"    \"\"\"Source provenance for a demand signal; dates remain distinct and optional.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000363](../../agents/sales_domain.py#L363) | 363 | `""` | — |
+| [SRC-8D00DCEC0D-L000364](../../agents/sales_domain.py#L364) | 364 | `"    source_id: str"` | — |
+| [SRC-8D00DCEC0D-L000365](../../agents/sales_domain.py#L365) | 365 | `"    source_url: str"` | — |
+| [SRC-8D00DCEC0D-L000366](../../agents/sales_domain.py#L366) | 366 | `"    excerpt: str"` | — |
+| [SRC-8D00DCEC0D-L000367](../../agents/sales_domain.py#L367) | 367 | `"    content_basis: EvidenceBasis"` | — |
+| [SRC-8D00DCEC0D-L000368](../../agents/sales_domain.py#L368) | 368 | `"    publication_date: str \| None = None"` | — |
+| [SRC-8D00DCEC0D-L000369](../../agents/sales_domain.py#L369) | 369 | `"    event_date: str \| None = None"` | — |
+| [SRC-8D00DCEC0D-L000370](../../agents/sales_domain.py#L370) | 370 | `"    observed_at: str \| None = None"` | — |
+| [SRC-8D00DCEC0D-L000371](../../agents/sales_domain.py#L371) | 371 | `"    page_read: bool = False"` | — |
+| [SRC-8D00DCEC0D-L000372](../../agents/sales_domain.py#L372) | 372 | `""` | — |
+| [SRC-8D00DCEC0D-L000373](../../agents/sales_domain.py#L373) | 373 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000374](../../agents/sales_domain.py#L374) | 374 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000375](../../agents/sales_domain.py#L375) | 375 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000376](../../agents/sales_domain.py#L376) | 376 | `"            \"source_id\","` | — |
+| [SRC-8D00DCEC0D-L000377](../../agents/sales_domain.py#L377) | 377 | `"            _clean_text(self.source_id, field_name=\"source_id\", maximum=160),"` | — |
+| [SRC-8D00DCEC0D-L000378](../../agents/sales_domain.py#L378) | 378 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000379](../../agents/sales_domain.py#L379) | 379 | `"        object.__setattr__(self, \"source_url\", _validate_http_url(self.source_url))"` | — |
+| [SRC-8D00DCEC0D-L000380](../../agents/sales_domain.py#L380) | 380 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000381](../../agents/sales_domain.py#L381) | 381 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000382](../../agents/sales_domain.py#L382) | 382 | `"            \"excerpt\","` | — |
+| [SRC-8D00DCEC0D-L000383](../../agents/sales_domain.py#L383) | 383 | `"            _clean_text(self.excerpt, field_name=\"excerpt\", maximum=MAX_TEXT_LENGTH),"` | — |
+| [SRC-8D00DCEC0D-L000384](../../agents/sales_domain.py#L384) | 384 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000385](../../agents/sales_domain.py#L385) | 385 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000386](../../agents/sales_domain.py#L386) | 386 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000387](../../agents/sales_domain.py#L387) | 387 | `"            \"content_basis\","` | — |
+| [SRC-8D00DCEC0D-L000388](../../agents/sales_domain.py#L388) | 388 | `"            _enum_value(EvidenceBasis, self.content_basis, field_name=\"content_basis\"),"` | — |
+| [SRC-8D00DCEC0D-L000389](../../agents/sales_domain.py#L389) | 389 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000390](../../agents/sales_domain.py#L390) | 390 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000391](../../agents/sales_domain.py#L391) | 391 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000392](../../agents/sales_domain.py#L392) | 392 | `"            \"publication_date\","` | — |
+| [SRC-8D00DCEC0D-L000393](../../agents/sales_domain.py#L393) | 393 | `"            _validate_optional_date(self.publication_date, field_name=\"publication_date\"),"` | — |
+| [SRC-8D00DCEC0D-L000394](../../agents/sales_domain.py#L394) | 394 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000395](../../agents/sales_domain.py#L395) | 395 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000396](../../agents/sales_domain.py#L396) | 396 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000397](../../agents/sales_domain.py#L397) | 397 | `"            \"event_date\","` | — |
+| [SRC-8D00DCEC0D-L000398](../../agents/sales_domain.py#L398) | 398 | `"            _validate_optional_date(self.event_date, field_name=\"event_date\"),"` | — |
+| [SRC-8D00DCEC0D-L000399](../../agents/sales_domain.py#L399) | 399 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000400](../../agents/sales_domain.py#L400) | 400 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000401](../../agents/sales_domain.py#L401) | 401 | `"            self,"` | — |
+| [SRC-8D00DCEC0D-L000402](../../agents/sales_domain.py#L402) | 402 | `"            \"observed_at\","` | — |
+| [SRC-8D00DCEC0D-L000403](../../agents/sales_domain.py#L403) | 403 | `"            _validate_optional_datetime(self.observed_at, field_name=\"observed_at\"),"` | — |
+| [SRC-8D00DCEC0D-L000404](../../agents/sales_domain.py#L404) | 404 | `"        )"` | — |
+| [SRC-8D00DCEC0D-L000405](../../agents/sales_domain.py#L405) | 405 | `"        if not isinstance(self.page_read, bool):"` | — |
+| [SRC-8D00DCEC0D-L000406](../../agents/sales_domain.py#L406) | 406 | `"            raise TypeError(\"page_read must be a boolean\")"` | — |
+| [SRC-8D00DCEC0D-L000407](../../agents/sales_domain.py#L407) | 407 | `"        if self.content_basis == EvidenceBasis.SEARCH_SNIPPET and self.page_read:"` | — |
+| [SRC-8D00DCEC0D-L000408](../../agents/sales_domain.py#L408) | 408 | `"            raise ValueError(\"a search snippet cannot be marked as a successfully read page\")"` | — |
+| [SRC-8D00DCEC0D-L000409](../../agents/sales_domain.py#L409) | 409 | `"        if self.content_basis == EvidenceBasis.PAGE_TEXT and not self.page_read:"` | — |
+| [SRC-8D00DCEC0D-L000410](../../agents/sales_domain.py#L410) | 410 | `"            raise ValueError(\"page_text evidence requires page_read=True\")"` | — |
+| [SRC-8D00DCEC0D-L000411](../../agents/sales_domain.py#L411) | 411 | `""` | — |
 | [SRC-8D00DCEC0D-L000412](../../agents/sales_domain.py#L412) | 412 | `"    def to_dict(self) -> dict[str, object]:"` | — |
 | [SRC-8D00DCEC0D-L000413](../../agents/sales_domain.py#L413) | 413 | `"        return {"` | — |
 | [SRC-8D00DCEC0D-L000414](../../agents/sales_domain.py#L414) | 414 | `"            \"source_id\": self.source_id,"` | — |
@@ -773,64 +834,3 @@
 | [SRC-086D574B4E-L000299](../../agents/semantic_claim_verifier.py#L299) | 299 | `"            \"segment_id\", \"assessment\", \"supporting_source_indexes\","` | — |
 | [SRC-086D574B4E-L000300](../../agents/semantic_claim_verifier.py#L300) | 300 | `"            \"contradicting_source_indexes\","` | — |
 | [SRC-086D574B4E-L000301](../../agents/semantic_claim_verifier.py#L301) | 301 | `"        }:"` | — |
-| [SRC-086D574B4E-L000302](../../agents/semantic_claim_verifier.py#L302) | 302 | `"            return _not_verifiable(\"invalid_claim_row_schema\", ledger)"` | — |
-| [SRC-086D574B4E-L000303](../../agents/semantic_claim_verifier.py#L303) | 303 | `"        segment_id = row.get(\"segment_id\")"` | — |
-| [SRC-086D574B4E-L000304](../../agents/semantic_claim_verifier.py#L304) | 304 | `"        assessment = row.get(\"assessment\")"` | — |
-| [SRC-086D574B4E-L000305](../../agents/semantic_claim_verifier.py#L305) | 305 | `"        if not isinstance(segment_id, str) or segment_id not in expected_by_id or segment_id in seen:"` | — |
-| [SRC-086D574B4E-L000306](../../agents/semantic_claim_verifier.py#L306) | 306 | `"            return _not_verifiable(\"unknown_or_duplicate_segment_id\", ledger)"` | — |
-| [SRC-086D574B4E-L000307](../../agents/semantic_claim_verifier.py#L307) | 307 | `"        if not isinstance(assessment, str) or assessment not in _ACCEPTED_ASSESSMENTS:"` | — |
-| [SRC-086D574B4E-L000308](../../agents/semantic_claim_verifier.py#L308) | 308 | `"            return _not_verifiable(\"unknown_assessment_label\", ledger)"` | — |
-| [SRC-086D574B4E-L000309](../../agents/semantic_claim_verifier.py#L309) | 309 | `"        seen.add(segment_id)"` | — |
-| [SRC-086D574B4E-L000310](../../agents/semantic_claim_verifier.py#L310) | 310 | `"        supporting = row.get(\"supporting_source_indexes\")"` | — |
-| [SRC-086D574B4E-L000311](../../agents/semantic_claim_verifier.py#L311) | 311 | `"        contradicting = row.get(\"contradicting_source_indexes\")"` | — |
-| [SRC-086D574B4E-L000312](../../agents/semantic_claim_verifier.py#L312) | 312 | `"        if not isinstance(supporting, list) or not isinstance(contradicting, list):"` | — |
-| [SRC-086D574B4E-L000313](../../agents/semantic_claim_verifier.py#L313) | 313 | `"            return _not_verifiable(\"source_indexes_must_be_lists\", ledger)"` | — |
-| [SRC-086D574B4E-L000314](../../agents/semantic_claim_verifier.py#L314) | 314 | `"        if len(supporting) > 8 or len(contradicting) > 8:"` | — |
-| [SRC-086D574B4E-L000315](../../agents/semantic_claim_verifier.py#L315) | 315 | `"            return _not_verifiable(\"source_index_list_too_large\", ledger)"` | — |
-| [SRC-086D574B4E-L000316](../../agents/semantic_claim_verifier.py#L316) | 316 | `"        if any(isinstance(value, bool) or not isinstance(value, int) for value in supporting + contradicting):"` | — |
-| [SRC-086D574B4E-L000317](../../agents/semantic_claim_verifier.py#L317) | 317 | `"            return _not_verifiable(\"source_indexes_must_be_integers\", ledger)"` | — |
-| [SRC-086D574B4E-L000318](../../agents/semantic_claim_verifier.py#L318) | 318 | `"        if len(set(supporting)) != len(supporting) or len(set(contradicting)) != len(contradicting):"` | — |
-| [SRC-086D574B4E-L000319](../../agents/semantic_claim_verifier.py#L319) | 319 | `"            return _not_verifiable(\"duplicate_source_indexes\", ledger)"` | — |
-| [SRC-086D574B4E-L000320](../../agents/semantic_claim_verifier.py#L320) | 320 | `"        if not set(supporting + contradicting).issubset(allowed_sources):"` | — |
-| [SRC-086D574B4E-L000321](../../agents/semantic_claim_verifier.py#L321) | 321 | `"            return _not_verifiable(\"source_index_out_of_range\", ledger)"` | — |
-| [SRC-086D574B4E-L000322](../../agents/semantic_claim_verifier.py#L322) | 322 | `"        segment = expected_by_id[segment_id]"` | — |
-| [SRC-086D574B4E-L000323](../../agents/semantic_claim_verifier.py#L323) | 323 | `"        cited_indexes = set(segment.get(\"citation_indexes\") or [])"` | — |
-| [SRC-086D574B4E-L000324](../../agents/semantic_claim_verifier.py#L324) | 324 | `"        if not set(supporting).issubset(cited_indexes):"` | — |
-| [SRC-086D574B4E-L000325](../../agents/semantic_claim_verifier.py#L325) | 325 | `"            return _not_verifiable(\"support_must_use_same_segment_citations\", ledger)"` | — |
-| [SRC-086D574B4E-L000326](../../agents/semantic_claim_verifier.py#L326) | 326 | `"        if not set(supporting + contradicting).issubset(readable_indexes):"` | — |
-| [SRC-086D574B4E-L000327](../../agents/semantic_claim_verifier.py#L327) | 327 | `"            return _not_verifiable(\"source_without_readable_evidence_used\", ledger)"` | — |
-| [SRC-086D574B4E-L000328](../../agents/semantic_claim_verifier.py#L328) | 328 | `""` | — |
-| [SRC-086D574B4E-L000329](../../agents/semantic_claim_verifier.py#L329) | 329 | `"        has_support = bool(supporting)"` | — |
-| [SRC-086D574B4E-L000330](../../agents/semantic_claim_verifier.py#L330) | 330 | `"        has_contradiction = bool(contradicting)"` | — |
-| [SRC-086D574B4E-L000331](../../agents/semantic_claim_verifier.py#L331) | 331 | `"        citations_present = bool(cited_indexes)"` | — |
-| [SRC-086D574B4E-L000332](../../agents/semantic_claim_verifier.py#L332) | 332 | `"        if assessment == \"supported\" and not (has_support and not has_contradiction):"` | — |
-| [SRC-086D574B4E-L000333](../../agents/semantic_claim_verifier.py#L333) | 333 | `"            return _not_verifiable(\"supported_assessment_has_invalid_evidence\", ledger)"` | — |
-| [SRC-086D574B4E-L000334](../../agents/semantic_claim_verifier.py#L334) | 334 | `"        if assessment == \"contradicted\" and not (has_contradiction and not has_support):"` | — |
-| [SRC-086D574B4E-L000335](../../agents/semantic_claim_verifier.py#L335) | 335 | `"            return _not_verifiable(\"contradicted_assessment_has_invalid_evidence\", ledger)"` | — |
-| [SRC-086D574B4E-L000336](../../agents/semantic_claim_verifier.py#L336) | 336 | `"        if assessment == \"conflicted\" and not (has_support and has_contradiction):"` | — |
-| [SRC-086D574B4E-L000337](../../agents/semantic_claim_verifier.py#L337) | 337 | `"            return _not_verifiable(\"conflicted_assessment_has_invalid_evidence\", ledger)"` | — |
-| [SRC-086D574B4E-L000338](../../agents/semantic_claim_verifier.py#L338) | 338 | `"        if assessment == \"insufficient\" and (has_support or has_contradiction):"` | — |
-| [SRC-086D574B4E-L000339](../../agents/semantic_claim_verifier.py#L339) | 339 | `"            return _not_verifiable(\"insufficient_assessment_has_evidence_indexes\", ledger)"` | — |
-| [SRC-086D574B4E-L000340](../../agents/semantic_claim_verifier.py#L340) | 340 | `"        if assessment == \"non_factual\" and (citations_present or has_support or has_contradiction):"` | — |
-| [SRC-086D574B4E-L000341](../../agents/semantic_claim_verifier.py#L341) | 341 | `"            return _not_verifiable(\"non_factual_assessment_has_citations\", ledger)"` | — |
-| [SRC-086D574B4E-L000342](../../agents/semantic_claim_verifier.py#L342) | 342 | `"        if assessment == \"non_factual\" and not _is_safe_non_factual_heading("` | — |
-| [SRC-086D574B4E-L000343](../../agents/semantic_claim_verifier.py#L343) | 343 | `"            segment.get(\"text\")"` | — |
-| [SRC-086D574B4E-L000344](../../agents/semantic_claim_verifier.py#L344) | 344 | `"        ):"` | — |
-| [SRC-086D574B4E-L000345](../../agents/semantic_claim_verifier.py#L345) | 345 | `"            return _not_verifiable("` | — |
-| [SRC-086D574B4E-L000346](../../agents/semantic_claim_verifier.py#L346) | 346 | `"                \"non_factual_label_not_deterministically_safe\", ledger"` | — |
-| [SRC-086D574B4E-L000347](../../agents/semantic_claim_verifier.py#L347) | 347 | `"            )"` | — |
-| [SRC-086D574B4E-L000348](../../agents/semantic_claim_verifier.py#L348) | 348 | `""` | — |
-| [SRC-086D574B4E-L000349](../../agents/semantic_claim_verifier.py#L349) | 349 | `"        if assessment == \"supported\":"` | — |
-| [SRC-086D574B4E-L000350](../../agents/semantic_claim_verifier.py#L350) | 350 | `"            factual_supported_count += 1"` | — |
-| [SRC-086D574B4E-L000351](../../agents/semantic_claim_verifier.py#L351) | 351 | `"        elif assessment == \"non_factual\":"` | — |
-| [SRC-086D574B4E-L000352](../../agents/semantic_claim_verifier.py#L352) | 352 | `"            non_factual_count += 1"` | — |
-| [SRC-086D574B4E-L000353](../../agents/semantic_claim_verifier.py#L353) | 353 | `"        else:"` | — |
-| [SRC-086D574B4E-L000354](../../agents/semantic_claim_verifier.py#L354) | 354 | `"            unsupported_ids.append(segment_id)"` | — |
-| [SRC-086D574B4E-L000355](../../agents/semantic_claim_verifier.py#L355) | 355 | `"            if assessment == \"conflicted\":"` | — |
-| [SRC-086D574B4E-L000356](../../agents/semantic_claim_verifier.py#L356) | 356 | `"                conflicted_ids.append(segment_id)"` | — |
-| [SRC-086D574B4E-L000357](../../agents/semantic_claim_verifier.py#L357) | 357 | `"        assessed.append({"` | — |
-| [SRC-086D574B4E-L000358](../../agents/semantic_claim_verifier.py#L358) | 358 | `"            \"segment_id\": segment_id,"` | — |
-| [SRC-086D574B4E-L000359](../../agents/semantic_claim_verifier.py#L359) | 359 | `"            \"assessment\": assessment,"` | — |
-| [SRC-086D574B4E-L000360](../../agents/semantic_claim_verifier.py#L360) | 360 | `"            \"supporting_source_indexes\": supporting,"` | — |
-| [SRC-086D574B4E-L000361](../../agents/semantic_claim_verifier.py#L361) | 361 | `"            \"contradicting_source_indexes\": contradicting,"` | — |
-| [SRC-086D574B4E-L000362](../../agents/semantic_claim_verifier.py#L362) | 362 | `"        })"` | — |

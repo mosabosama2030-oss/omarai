@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000595 إلى SRC-1AE03B9EC3-L001394
+- النطاق: SRC-1AE03B9EC3-L000487 إلى SRC-1AE03B9EC3-L001286
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,114 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000487](../../agents/web_agent.py#L487) | 487 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000488](../../agents/web_agent.py#L488) | 488 | `""` | — |
+| [SRC-1AE03B9EC3-L000489](../../agents/web_agent.py#L489) | 489 | `"def _public_ip_literals(host: str) -> list[str] \| None:"` | — |
+| [SRC-1AE03B9EC3-L000490](../../agents/web_agent.py#L490) | 490 | `"    \"\"\"Resolve host and return its public addresses."` | — |
+| [SRC-1AE03B9EC3-L000491](../../agents/web_agent.py#L491) | 491 | `""` | — |
+| [SRC-1AE03B9EC3-L000492](../../agents/web_agent.py#L492) | 492 | `"    Returns None when resolution fails or any answer is not a global address."` | — |
+| [SRC-1AE03B9EC3-L000493](../../agents/web_agent.py#L493) | 493 | `"    Callers must open the TCP connection to one of these literals. A second DNS"` | — |
+| [SRC-1AE03B9EC3-L000494](../../agents/web_agent.py#L494) | 494 | `"    lookup is not equivalent: the name can be rebound to a private address"` | — |
+| [SRC-1AE03B9EC3-L000495](../../agents/web_agent.py#L495) | 495 | `"    between the check and the connection (DNS rebinding / TOCTOU)."` | — |
+| [SRC-1AE03B9EC3-L000496](../../agents/web_agent.py#L496) | 496 | `"    \"\"\""` | — |
+| [SRC-1AE03B9EC3-L000497](../../agents/web_agent.py#L497) | 497 | `"    if not host:"` | — |
+| [SRC-1AE03B9EC3-L000498](../../agents/web_agent.py#L498) | 498 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000499](../../agents/web_agent.py#L499) | 499 | `"    try:"` | — |
+| [SRC-1AE03B9EC3-L000500](../../agents/web_agent.py#L500) | 500 | `"        answers = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)"` | — |
+| [SRC-1AE03B9EC3-L000501](../../agents/web_agent.py#L501) | 501 | `"    except (OSError, socket.gaierror):"` | — |
+| [SRC-1AE03B9EC3-L000502](../../agents/web_agent.py#L502) | 502 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000503](../../agents/web_agent.py#L503) | 503 | `"    if not answers:"` | — |
+| [SRC-1AE03B9EC3-L000504](../../agents/web_agent.py#L504) | 504 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000505](../../agents/web_agent.py#L505) | 505 | `"    literals: list[str] = []"` | — |
+| [SRC-1AE03B9EC3-L000506](../../agents/web_agent.py#L506) | 506 | `"    for answer in answers:"` | — |
+| [SRC-1AE03B9EC3-L000507](../../agents/web_agent.py#L507) | 507 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L000508](../../agents/web_agent.py#L508) | 508 | `"            address = ipaddress.ip_address(answer[4][0])"` | — |
+| [SRC-1AE03B9EC3-L000509](../../agents/web_agent.py#L509) | 509 | `"        except ValueError:"` | — |
+| [SRC-1AE03B9EC3-L000510](../../agents/web_agent.py#L510) | 510 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L000511](../../agents/web_agent.py#L511) | 511 | `"        if not address.is_global:"` | — |
+| [SRC-1AE03B9EC3-L000512](../../agents/web_agent.py#L512) | 512 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L000513](../../agents/web_agent.py#L513) | 513 | `"        literal = str(address)"` | — |
+| [SRC-1AE03B9EC3-L000514](../../agents/web_agent.py#L514) | 514 | `"        if literal not in literals:"` | — |
+| [SRC-1AE03B9EC3-L000515](../../agents/web_agent.py#L515) | 515 | `"            literals.append(literal)"` | — |
+| [SRC-1AE03B9EC3-L000516](../../agents/web_agent.py#L516) | 516 | `"    return literals or None"` | — |
+| [SRC-1AE03B9EC3-L000517](../../agents/web_agent.py#L517) | 517 | `""` | — |
+| [SRC-1AE03B9EC3-L000518](../../agents/web_agent.py#L518) | 518 | `"def _host_resolves_publicly(host: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000519](../../agents/web_agent.py#L519) | 519 | `"    \"\"\"Reject local/private destinations before fetching a third-party page.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000520](../../agents/web_agent.py#L520) | 520 | `"    return _public_ip_literals(host) is not None"` | — |
+| [SRC-1AE03B9EC3-L000521](../../agents/web_agent.py#L521) | 521 | `""` | — |
+| [SRC-1AE03B9EC3-L000522](../../agents/web_agent.py#L522) | 522 | `"def _pinned_connect_url(logical_url: str, ip: str) -> str \| None:"` | — |
+| [SRC-1AE03B9EC3-L000523](../../agents/web_agent.py#L523) | 523 | `"    \"\"\"Rewrite a validated public URL so the connection target is a checked IP.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000524](../../agents/web_agent.py#L524) | 524 | `"    parsed = urllib.parse.urlparse(logical_url)"` | — |
+| [SRC-1AE03B9EC3-L000525](../../agents/web_agent.py#L525) | 525 | `"    if parsed.port not in (None, 80, 443):"` | — |
+| [SRC-1AE03B9EC3-L000526](../../agents/web_agent.py#L526) | 526 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L000527](../../agents/web_agent.py#L527) | 527 | `"    literal = f\"[{ip}]\" if \":\" in ip else ip"` | — |
+| [SRC-1AE03B9EC3-L000528](../../agents/web_agent.py#L528) | 528 | `"    netloc = literal if parsed.port is None else f\"{literal}:{parsed.port}\""` | — |
+| [SRC-1AE03B9EC3-L000529](../../agents/web_agent.py#L529) | 529 | `"    return urllib.parse.urlunparse(parsed._replace(netloc=netloc))"` | — |
+| [SRC-1AE03B9EC3-L000530](../../agents/web_agent.py#L530) | 530 | `""` | — |
+| [SRC-1AE03B9EC3-L000531](../../agents/web_agent.py#L531) | 531 | `"def _fallback_answer(sources: list[dict[str, Any]], reason: str) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000532](../../agents/web_agent.py#L532) | 532 | `"    lines = [reason]"` | — |
+| [SRC-1AE03B9EC3-L000533](../../agents/web_agent.py#L533) | 533 | `"    usable = [source for source in sources if source.get(\"snippet\")]"` | — |
+| [SRC-1AE03B9EC3-L000534](../../agents/web_agent.py#L534) | 534 | `"    for index, source in enumerate(usable[:5], 1):"` | — |
+| [SRC-1AE03B9EC3-L000535](../../agents/web_agent.py#L535) | 535 | `"        lines.append("` | — |
+| [SRC-1AE03B9EC3-L000536](../../agents/web_agent.py#L536) | 536 | `"            f\"{index}. {source.get('title', 'نتيجة ويب')}: \""` | — |
+| [SRC-1AE03B9EC3-L000537](../../agents/web_agent.py#L537) | 537 | `"            f\"{source['snippet']} (المصدر: {source['url']})\""` | — |
+| [SRC-1AE03B9EC3-L000538](../../agents/web_agent.py#L538) | 538 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000539](../../agents/web_agent.py#L539) | 539 | `"    if not usable:"` | — |
+| [SRC-1AE03B9EC3-L000540](../../agents/web_agent.py#L540) | 540 | `"        lines.append(\"لم أتمكن من استخراج مقتطفات كافية من نتائج الويب.\")"` | — |
+| [SRC-1AE03B9EC3-L000541](../../agents/web_agent.py#L541) | 541 | `"    return \"\\n\\n\".join(lines)"` | — |
+| [SRC-1AE03B9EC3-L000542](../../agents/web_agent.py#L542) | 542 | `""` | — |
+| [SRC-1AE03B9EC3-L000543](../../agents/web_agent.py#L543) | 543 | `"def _fallback_lead_answer(sources: list[dict[str, Any]]) -> str:"` | — |
+| [SRC-1AE03B9EC3-L000544](../../agents/web_agent.py#L544) | 544 | `"    \"\"\"Present only already-qualified public demand signals when synthesis is unavailable.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000545](../../agents/web_agent.py#L545) | 545 | `"    eligible = ["` | — |
+| [SRC-1AE03B9EC3-L000546](../../agents/web_agent.py#L546) | 546 | `"        source for source in sources"` | — |
+| [SRC-1AE03B9EC3-L000547](../../agents/web_agent.py#L547) | 547 | `"        if isinstance(source, dict)"` | — |
+| [SRC-1AE03B9EC3-L000548](../../agents/web_agent.py#L548) | 548 | `"        and source.get(\"lead_qualification\") == \"public_demand_signal\""` | — |
+| [SRC-1AE03B9EC3-L000549](../../agents/web_agent.py#L549) | 549 | `"        and isinstance(source.get(\"url\"), str)"` | — |
+| [SRC-1AE03B9EC3-L000550](../../agents/web_agent.py#L550) | 550 | `"        and source.get(\"url\")"` | — |
+| [SRC-1AE03B9EC3-L000551](../../agents/web_agent.py#L551) | 551 | `"    ]"` | — |
+| [SRC-1AE03B9EC3-L000552](../../agents/web_agent.py#L552) | 552 | `"    lines = ["` | — |
+| [SRC-1AE03B9EC3-L000553](../../agents/web_agent.py#L553) | 553 | `"        f\"تعذر توليد التحليل اللغوي في هذه المحاولة، لكن عُثر على {len(eligible)} إشارة طلب علنية مرشحة.\","` | — |
+| [SRC-1AE03B9EC3-L000554](../../agents/web_agent.py#L554) | 554 | `"        \"هذه إشارات أولية وليست تأكيدًا لهوية صاحب المنشور أو استمرار حاجته أو ملاءمة المنتج. راجع المنشور الأصلي وتاريخه قبل التواصل.\","` | — |
+| [SRC-1AE03B9EC3-L000555](../../agents/web_agent.py#L555) | 555 | `"    ]"` | — |
+| [SRC-1AE03B9EC3-L000556](../../agents/web_agent.py#L556) | 556 | `"    for index, source in enumerate(eligible[:10], 1):"` | — |
+| [SRC-1AE03B9EC3-L000557](../../agents/web_agent.py#L557) | 557 | `"        signal = source.get(\"lead_intent_evidence\")"` | — |
+| [SRC-1AE03B9EC3-L000558](../../agents/web_agent.py#L558) | 558 | `"        phrase = signal.get(\"phrase\") if isinstance(signal, dict) else \"\""` | — |
+| [SRC-1AE03B9EC3-L000559](../../agents/web_agent.py#L559) | 559 | `"        snippet = _clean_text(source.get(\"snippet\") or source.get(\"page_text\") or \"\", 700)"` | — |
+| [SRC-1AE03B9EC3-L000560](../../agents/web_agent.py#L560) | 560 | `"        title = _clean_text(source.get(\"title\") or \"منشور عام محتمل\", 300)"` | — |
+| [SRC-1AE03B9EC3-L000561](../../agents/web_agent.py#L561) | 561 | `"        lines.append("` | — |
+| [SRC-1AE03B9EC3-L000562](../../agents/web_agent.py#L562) | 562 | `"            f\"{index}. {title}\\n\""` | — |
+| [SRC-1AE03B9EC3-L000563](../../agents/web_agent.py#L563) | 563 | `"            f\"   عبارة المطابقة بعد التطبيع: {phrase or 'إشارة طلب صريحة'}\\n\""` | — |
+| [SRC-1AE03B9EC3-L000564](../../agents/web_agent.py#L564) | 564 | `"            f\"   المقتطف: {snippet or 'لا يتوفر مقتطف مقروء؛ راجع الصفحة الأصلية.'}\\n\""` | — |
+| [SRC-1AE03B9EC3-L000565](../../agents/web_agent.py#L565) | 565 | `"            f\"   المصدر: {source['url']}\\n\""` | — |
+| [SRC-1AE03B9EC3-L000566](../../agents/web_agent.py#L566) | 566 | `"            \"   الحالة: مرشح يحتاج إلى تحقق يدوي من السياق والحداثة.\""` | — |
+| [SRC-1AE03B9EC3-L000567](../../agents/web_agent.py#L567) | 567 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000568](../../agents/web_agent.py#L568) | 568 | `"    return \"\\n\\n\".join(lines)"` | — |
+| [SRC-1AE03B9EC3-L000569](../../agents/web_agent.py#L569) | 569 | `""` | — |
+| [SRC-1AE03B9EC3-L000570](../../agents/web_agent.py#L570) | 570 | `""` | — |
+| [SRC-1AE03B9EC3-L000571](../../agents/web_agent.py#L571) | 571 | `"class PageFetchResult(tuple):"` | — |
+| [SRC-1AE03B9EC3-L000572](../../agents/web_agent.py#L572) | 572 | `"    \"\"\"Two-item tuple compatible with legacy callers, with structured extraction status.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000573](../../agents/web_agent.py#L573) | 573 | `""` | — |
+| [SRC-1AE03B9EC3-L000574](../../agents/web_agent.py#L574) | 574 | `"    def __new__("` | — |
+| [SRC-1AE03B9EC3-L000575](../../agents/web_agent.py#L575) | 575 | `"        cls,"` | — |
+| [SRC-1AE03B9EC3-L000576](../../agents/web_agent.py#L576) | 576 | `"        title: str = \"\","` | — |
+| [SRC-1AE03B9EC3-L000577](../../agents/web_agent.py#L577) | 577 | `"        page_text: str = \"\","` | — |
+| [SRC-1AE03B9EC3-L000578](../../agents/web_agent.py#L578) | 578 | `"        status: str = \"unknown\","` | — |
+| [SRC-1AE03B9EC3-L000579](../../agents/web_agent.py#L579) | 579 | `"        error_class: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L000580](../../agents/web_agent.py#L580) | 580 | `"    ):"` | — |
+| [SRC-1AE03B9EC3-L000581](../../agents/web_agent.py#L581) | 581 | `"        value = super().__new__(cls, (title, page_text))"` | — |
+| [SRC-1AE03B9EC3-L000582](../../agents/web_agent.py#L582) | 582 | `"        value.status = status"` | — |
+| [SRC-1AE03B9EC3-L000583](../../agents/web_agent.py#L583) | 583 | `"        value.error_class = error_class"` | — |
+| [SRC-1AE03B9EC3-L000584](../../agents/web_agent.py#L584) | 584 | `"        return value"` | — |
+| [SRC-1AE03B9EC3-L000585](../../agents/web_agent.py#L585) | 585 | `""` | — |
+| [SRC-1AE03B9EC3-L000586](../../agents/web_agent.py#L586) | 586 | `"def enforce_aspect_answer_completeness(result: dict[str, Any]) -> dict[str, Any]:"` | — |
+| [SRC-1AE03B9EC3-L000587](../../agents/web_agent.py#L587) | 587 | `"    \"\"\"Withhold a final answer if any explicit axis lacks a text candidate."` | — |
+| [SRC-1AE03B9EC3-L000588](../../agents/web_agent.py#L588) | 588 | `""` | — |
+| [SRC-1AE03B9EC3-L000589](../../agents/web_agent.py#L589) | 589 | `"    Lexical coverage is only a conservative evidence-presence check, not semantic"` | — |
+| [SRC-1AE03B9EC3-L000590](../../agents/web_agent.py#L590) | 590 | `"    verification. A missing candidate therefore blocks a *complete* answer rather"` | — |
+| [SRC-1AE03B9EC3-L000591](../../agents/web_agent.py#L591) | 591 | `"    than asserting the underlying fact is unavailable everywhere."` | — |
+| [SRC-1AE03B9EC3-L000592](../../agents/web_agent.py#L592) | 592 | `"    \"\"\""` | — |
+| [SRC-1AE03B9EC3-L000593](../../agents/web_agent.py#L593) | 593 | `"    search_report = result.get(\"search_report\")"` | — |
+| [SRC-1AE03B9EC3-L000594](../../agents/web_agent.py#L594) | 594 | `"    if not isinstance(search_report, dict):"` | — |
 | [SRC-1AE03B9EC3-L000595](../../agents/web_agent.py#L595) | 595 | `"        return result"` | — |
 | [SRC-1AE03B9EC3-L000596](../../agents/web_agent.py#L596) | 596 | `"    prior_ledger = search_report.get(\"evidence_ledger\")"` | — |
 | [SRC-1AE03B9EC3-L000597](../../agents/web_agent.py#L597) | 597 | `"    if not isinstance(prior_ledger, dict):"` | — |
@@ -515,304 +623,196 @@
 | [SRC-1AE03B9EC3-L001091](../../agents/web_agent.py#L1091) | 1091 | `"    def _is_self_question(question: str) -> bool:"` | — |
 | [SRC-1AE03B9EC3-L001092](../../agents/web_agent.py#L1092) | 1092 | `"        \"\"\"Recognize questions about Omarai itself so they do not need web search.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L001093](../../agents/web_agent.py#L1093) | 1093 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001094](../../agents/web_agent.py#L1094) | 1094 | `"        capability_phrases = ("` | — |
-| [SRC-1AE03B9EC3-L001095](../../agents/web_agent.py#L1095) | 1095 | `"            \"كيف تستطيع مساعدتي\", \"ازاي تقدر تساعدني\", \"ازاي ممكن تساعدني\","` | — |
-| [SRC-1AE03B9EC3-L001096](../../agents/web_agent.py#L1096) | 1096 | `"            \"ماذا تستطيع ان تفعل\", \"ما الذي تستطيع فعله\", \"ايه اللي تقدر تعمله\","` | — |
-| [SRC-1AE03B9EC3-L001097](../../agents/web_agent.py#L1097) | 1097 | `"            \"what can you do\", \"how can you help me\","` | — |
-| [SRC-1AE03B9EC3-L001098](../../agents/web_agent.py#L1098) | 1098 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001099](../../agents/web_agent.py#L1099) | 1099 | `"        search_phrases = ("` | — |
-| [SRC-1AE03B9EC3-L001100](../../agents/web_agent.py#L1100) | 1100 | `"            \"كيف تبحث انت\", \"ازاي بتبحث\", \"كيف يعمل البحث عندك\","` | — |
-| [SRC-1AE03B9EC3-L001101](../../agents/web_agent.py#L1101) | 1101 | `"            \"ما المواقع التي تستخدمها\", \"ما محركات البحث التي تستخدمها\","` | — |
-| [SRC-1AE03B9EC3-L001102](../../agents/web_agent.py#L1102) | 1102 | `"            \"ما المواقع التي قدرت\", \"كيف تبحث على الانترنت\","` | — |
-| [SRC-1AE03B9EC3-L001103](../../agents/web_agent.py#L1103) | 1103 | `"            \"هل تستطيع البحث\", \"هل يمكنك البحث\", \"هل تقدر تبحث\","` | — |
-| [SRC-1AE03B9EC3-L001104](../../agents/web_agent.py#L1104) | 1104 | `"            \"هل تستطيع الوصول\", \"هل يمكنك الوصول\","` | — |
-| [SRC-1AE03B9EC3-L001105](../../agents/web_agent.py#L1105) | 1105 | `"            \"هل عندك اتصال بالانترنت\", \"هل عندك اتصال بالانترنيت\","` | — |
-| [SRC-1AE03B9EC3-L001106](../../agents/web_agent.py#L1106) | 1106 | `"            \"هل عندك انترنت\","` | — |
-| [SRC-1AE03B9EC3-L001107](../../agents/web_agent.py#L1107) | 1107 | `"            \"هل بحثت في الانترنت للاجابه الحاليه\","` | — |
-| [SRC-1AE03B9EC3-L001108](../../agents/web_agent.py#L1108) | 1108 | `"            \"هل بحثت علي الانترنت للاجابه الحاليه\","` | — |
-| [SRC-1AE03B9EC3-L001109](../../agents/web_agent.py#L1109) | 1109 | `"            \"هل بحثت في الانترنت لهذا السؤال\","` | — |
-| [SRC-1AE03B9EC3-L001110](../../agents/web_agent.py#L1110) | 1110 | `"            \"هل بحثت في النت للرد ده\","` | — |
-| [SRC-1AE03B9EC3-L001111](../../agents/web_agent.py#L1111) | 1111 | `"            \"did you search the web for this answer\","` | — |
-| [SRC-1AE03B9EC3-L001112](../../agents/web_agent.py#L1112) | 1112 | `"            \"did you browse for this response\","` | — |
-| [SRC-1AE03B9EC3-L001113](../../agents/web_agent.py#L1113) | 1113 | `"            \"how do you search\", \"which search engines\", \"what sites do you use\","` | — |
-| [SRC-1AE03B9EC3-L001114](../../agents/web_agent.py#L1114) | 1114 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001115](../../agents/web_agent.py#L1115) | 1115 | `"        return ("` | — |
-| [SRC-1AE03B9EC3-L001116](../../agents/web_agent.py#L1116) | 1116 | `"            any(phrase in value for phrase in capability_phrases + search_phrases)"` | — |
-| [SRC-1AE03B9EC3-L001117](../../agents/web_agent.py#L1117) | 1117 | `"            or WebAgent._is_current_search_status_question(question)"` | — |
-| [SRC-1AE03B9EC3-L001118](../../agents/web_agent.py#L1118) | 1118 | `"            or ("` | — |
-| [SRC-1AE03B9EC3-L001119](../../agents/web_agent.py#L1119) | 1119 | `"                \"omarai\" in value"` | — |
-| [SRC-1AE03B9EC3-L001120](../../agents/web_agent.py#L1120) | 1120 | `"                and any(token in value for token in (\"بحث\", \"موقع\", \"تستطيع\", \"تقدر\", \"تعمل\"))"` | — |
-| [SRC-1AE03B9EC3-L001121](../../agents/web_agent.py#L1121) | 1121 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001122](../../agents/web_agent.py#L1122) | 1122 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001123](../../agents/web_agent.py#L1123) | 1123 | `""` | — |
-| [SRC-1AE03B9EC3-L001124](../../agents/web_agent.py#L1124) | 1124 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001125](../../agents/web_agent.py#L1125) | 1125 | `"    def _is_navigation_request(question: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001126](../../agents/web_agent.py#L1126) | 1126 | `"        \"\"\"A link-finding task can be useful with one clearly labelled candidate result.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001127](../../agents/web_agent.py#L1127) | 1127 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001128](../../agents/web_agent.py#L1128) | 1128 | `"        terms = ("` | — |
-| [SRC-1AE03B9EC3-L001129](../../agents/web_agent.py#L1129) | 1129 | `"            \"موقع\", \"رابط\", \"لينك\", \"الموقع الرسمي\", \"الصفحة الرسمية\","` | — |
-| [SRC-1AE03B9EC3-L001130](../../agents/web_agent.py#L1130) | 1130 | `"            \"official website\", \"website\", \"homepage\", \"link to\","` | — |
-| [SRC-1AE03B9EC3-L001131](../../agents/web_agent.py#L1131) | 1131 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001132](../../agents/web_agent.py#L1132) | 1132 | `"        return any(term in value for term in terms)"` | — |
+| [SRC-1AE03B9EC3-L001094](../../agents/web_agent.py#L1094) | 1094 | `"        # Do not mistake a capability-flavoured request with a concrete subject"` | — |
+| [SRC-1AE03B9EC3-L001095](../../agents/web_agent.py#L1095) | 1095 | `"        # for a question about Omarai's capabilities (e.g. \"can you search for X?\")."` | — |
+| [SRC-1AE03B9EC3-L001096](../../agents/web_agent.py#L1096) | 1096 | `"        if re.search("` | — |
+| [SRC-1AE03B9EC3-L001097](../../agents/web_agent.py#L1097) | 1097 | `"            r\"(?:هل\\s+)?(?:تستطيع\|يمكنك\|تقدر)\\s+(?:ان\\s+)?(?:تبحث\|البحث)\\s+عن\\s+\\w{2,}\","` | — |
+| [SRC-1AE03B9EC3-L001098](../../agents/web_agent.py#L1098) | 1098 | `"            value,"` | — |
+| [SRC-1AE03B9EC3-L001099](../../agents/web_agent.py#L1099) | 1099 | `"        ) or re.search("` | — |
+| [SRC-1AE03B9EC3-L001100](../../agents/web_agent.py#L1100) | 1100 | `"            r\"\\b(?:can\|could)\\s+you\\s+(?:search\\s+for\|look\\s+up\|find)\\s+\\w{2,}\\b\","` | — |
+| [SRC-1AE03B9EC3-L001101](../../agents/web_agent.py#L1101) | 1101 | `"            value,"` | — |
+| [SRC-1AE03B9EC3-L001102](../../agents/web_agent.py#L1102) | 1102 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L001103](../../agents/web_agent.py#L1103) | 1103 | `"            return False"` | — |
+| [SRC-1AE03B9EC3-L001104](../../agents/web_agent.py#L1104) | 1104 | `"        capability_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L001105](../../agents/web_agent.py#L1105) | 1105 | `"            \"كيف تستطيع مساعدتي\", \"ازاي تقدر تساعدني\", \"ازاي ممكن تساعدني\","` | — |
+| [SRC-1AE03B9EC3-L001106](../../agents/web_agent.py#L1106) | 1106 | `"            \"ماذا تستطيع ان تفعل\", \"ما الذي تستطيع فعله\", \"ايه اللي تقدر تعمله\","` | — |
+| [SRC-1AE03B9EC3-L001107](../../agents/web_agent.py#L1107) | 1107 | `"            \"what can you do\", \"how can you help me\","` | — |
+| [SRC-1AE03B9EC3-L001108](../../agents/web_agent.py#L1108) | 1108 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001109](../../agents/web_agent.py#L1109) | 1109 | `"        search_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L001110](../../agents/web_agent.py#L1110) | 1110 | `"            \"كيف تبحث انت\", \"ازاي بتبحث\", \"كيف يعمل البحث عندك\","` | — |
+| [SRC-1AE03B9EC3-L001111](../../agents/web_agent.py#L1111) | 1111 | `"            \"ما المواقع التي تستخدمها\", \"ما محركات البحث التي تستخدمها\","` | — |
+| [SRC-1AE03B9EC3-L001112](../../agents/web_agent.py#L1112) | 1112 | `"            \"ما المواقع التي قدرت\", \"كيف تبحث على الانترنت\","` | — |
+| [SRC-1AE03B9EC3-L001113](../../agents/web_agent.py#L1113) | 1113 | `"            \"هل تستطيع البحث\", \"هل يمكنك البحث\", \"هل تقدر تبحث\","` | — |
+| [SRC-1AE03B9EC3-L001114](../../agents/web_agent.py#L1114) | 1114 | `"            \"هل تستطيع الوصول\", \"هل يمكنك الوصول\","` | — |
+| [SRC-1AE03B9EC3-L001115](../../agents/web_agent.py#L1115) | 1115 | `"            \"هل عندك اتصال بالانترنت\", \"هل عندك اتصال بالانترنيت\","` | — |
+| [SRC-1AE03B9EC3-L001116](../../agents/web_agent.py#L1116) | 1116 | `"            \"هل عندك انترنت\","` | — |
+| [SRC-1AE03B9EC3-L001117](../../agents/web_agent.py#L1117) | 1117 | `"            \"هل بحثت في الانترنت للاجابه الحاليه\","` | — |
+| [SRC-1AE03B9EC3-L001118](../../agents/web_agent.py#L1118) | 1118 | `"            \"هل بحثت علي الانترنت للاجابه الحاليه\","` | — |
+| [SRC-1AE03B9EC3-L001119](../../agents/web_agent.py#L1119) | 1119 | `"            \"هل بحثت في الانترنت لهذا السؤال\","` | — |
+| [SRC-1AE03B9EC3-L001120](../../agents/web_agent.py#L1120) | 1120 | `"            \"هل بحثت في النت للرد ده\","` | — |
+| [SRC-1AE03B9EC3-L001121](../../agents/web_agent.py#L1121) | 1121 | `"            \"did you search the web for this answer\","` | — |
+| [SRC-1AE03B9EC3-L001122](../../agents/web_agent.py#L1122) | 1122 | `"            \"did you browse for this response\","` | — |
+| [SRC-1AE03B9EC3-L001123](../../agents/web_agent.py#L1123) | 1123 | `"            \"how do you search\", \"which search engines\", \"what sites do you use\","` | — |
+| [SRC-1AE03B9EC3-L001124](../../agents/web_agent.py#L1124) | 1124 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001125](../../agents/web_agent.py#L1125) | 1125 | `"        return ("` | — |
+| [SRC-1AE03B9EC3-L001126](../../agents/web_agent.py#L1126) | 1126 | `"            any(phrase in value for phrase in capability_phrases + search_phrases)"` | — |
+| [SRC-1AE03B9EC3-L001127](../../agents/web_agent.py#L1127) | 1127 | `"            or WebAgent._is_current_search_status_question(question)"` | — |
+| [SRC-1AE03B9EC3-L001128](../../agents/web_agent.py#L1128) | 1128 | `"            or ("` | — |
+| [SRC-1AE03B9EC3-L001129](../../agents/web_agent.py#L1129) | 1129 | `"                \"omarai\" in value"` | — |
+| [SRC-1AE03B9EC3-L001130](../../agents/web_agent.py#L1130) | 1130 | `"                and any(token in value for token in (\"بحث\", \"موقع\", \"تستطيع\", \"تقدر\", \"تعمل\"))"` | — |
+| [SRC-1AE03B9EC3-L001131](../../agents/web_agent.py#L1131) | 1131 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001132](../../agents/web_agent.py#L1132) | 1132 | `"        )"` | — |
 | [SRC-1AE03B9EC3-L001133](../../agents/web_agent.py#L1133) | 1133 | `""` | — |
 | [SRC-1AE03B9EC3-L001134](../../agents/web_agent.py#L1134) | 1134 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001135](../../agents/web_agent.py#L1135) | 1135 | `"    def _is_lead_search(question: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001136](../../agents/web_agent.py#L1136) | 1136 | `"        \"\"\"Keep lead discovery distinct from listing searches and generic explanations.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001137](../../agents/web_agent.py#L1137) | 1137 | `"        return route_intent(question).get(\"route\") == \"LEAD_GENERATION\""` | — |
-| [SRC-1AE03B9EC3-L001138](../../agents/web_agent.py#L1138) | 1138 | `""` | — |
-| [SRC-1AE03B9EC3-L001139](../../agents/web_agent.py#L1139) | 1139 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001140](../../agents/web_agent.py#L1140) | 1140 | `"    def _lead_entity_categories(value: str) -> set[str]:"` | — |
-| [SRC-1AE03B9EC3-L001141](../../agents/web_agent.py#L1141) | 1141 | `"        \"\"\"Classify explicit property and vehicle terms for conservative lead isolation.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001142](../../agents/web_agent.py#L1142) | 1142 | `"        normalized = _normalize_search_query(value).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001143](../../agents/web_agent.py#L1143) | 1143 | `"        property_terms = ("` | — |
-| [SRC-1AE03B9EC3-L001144](../../agents/web_agent.py#L1144) | 1144 | `"            \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\","` | — |
-| [SRC-1AE03B9EC3-L001145](../../agents/web_agent.py#L1145) | 1145 | `"            \"وحده سكنيه\", \"وحدات سكنيه\", \"apartment\", \"apartments\","` | — |
-| [SRC-1AE03B9EC3-L001146](../../agents/web_agent.py#L1146) | 1146 | `"            \"flat\", \"flats\", \"property\", \"properties\", \"house\", \"houses\","` | — |
-| [SRC-1AE03B9EC3-L001147](../../agents/web_agent.py#L1147) | 1147 | `"            \"villa\", \"villas\", \"real estate\","` | — |
-| [SRC-1AE03B9EC3-L001148](../../agents/web_agent.py#L1148) | 1148 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001149](../../agents/web_agent.py#L1149) | 1149 | `"        vehicle_terms = ("` | — |
-| [SRC-1AE03B9EC3-L001150](../../agents/web_agent.py#L1150) | 1150 | `"            \"سياره\", \"سيارات\", \"عربيه\", \"عربيات\", \"مركبه\", \"مركبات\","` | — |
-| [SRC-1AE03B9EC3-L001151](../../agents/web_agent.py#L1151) | 1151 | `"            \"car\", \"cars\", \"vehicle\", \"vehicles\", \"automobile\", \"automobiles\","` | — |
-| [SRC-1AE03B9EC3-L001152](../../agents/web_agent.py#L1152) | 1152 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001153](../../agents/web_agent.py#L1153) | 1153 | `""` | — |
-| [SRC-1AE03B9EC3-L001154](../../agents/web_agent.py#L1154) | 1154 | `"        def contains(term: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001155](../../agents/web_agent.py#L1155) | 1155 | `"            normalized_term = _normalize_search_query(term).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001156](../../agents/web_agent.py#L1156) | 1156 | `"            if re.search(r\"[a-z]\", normalized_term):"` | — |
-| [SRC-1AE03B9EC3-L001157](../../agents/web_agent.py#L1157) | 1157 | `"                return bool(re.search("` | — |
-| [SRC-1AE03B9EC3-L001158](../../agents/web_agent.py#L1158) | 1158 | `"                    r\"(?<![a-z0-9])\" + re.escape(normalized_term) + r\"(?![a-z0-9])\","` | — |
-| [SRC-1AE03B9EC3-L001159](../../agents/web_agent.py#L1159) | 1159 | `"                    normalized,"` | — |
-| [SRC-1AE03B9EC3-L001160](../../agents/web_agent.py#L1160) | 1160 | `"                ))"` | — |
-| [SRC-1AE03B9EC3-L001161](../../agents/web_agent.py#L1161) | 1161 | `"            return normalized_term in normalized"` | — |
-| [SRC-1AE03B9EC3-L001162](../../agents/web_agent.py#L1162) | 1162 | `""` | — |
-| [SRC-1AE03B9EC3-L001163](../../agents/web_agent.py#L1163) | 1163 | `"        categories: set[str] = set()"` | — |
-| [SRC-1AE03B9EC3-L001164](../../agents/web_agent.py#L1164) | 1164 | `"        if any(contains(term) for term in property_terms):"` | — |
-| [SRC-1AE03B9EC3-L001165](../../agents/web_agent.py#L1165) | 1165 | `"            categories.add(\"property\")"` | — |
-| [SRC-1AE03B9EC3-L001166](../../agents/web_agent.py#L1166) | 1166 | `"        if any(contains(term) for term in vehicle_terms):"` | — |
-| [SRC-1AE03B9EC3-L001167](../../agents/web_agent.py#L1167) | 1167 | `"            categories.add(\"vehicle\")"` | — |
-| [SRC-1AE03B9EC3-L001168](../../agents/web_agent.py#L1168) | 1168 | `"        return categories"` | — |
-| [SRC-1AE03B9EC3-L001169](../../agents/web_agent.py#L1169) | 1169 | `""` | — |
-| [SRC-1AE03B9EC3-L001170](../../agents/web_agent.py#L1170) | 1170 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001171](../../agents/web_agent.py#L1171) | 1171 | `"    def _lead_intent_evidence("` | — |
-| [SRC-1AE03B9EC3-L001172](../../agents/web_agent.py#L1172) | 1172 | `"        source: dict[str, Any], question: str \| None = None"` | — |
-| [SRC-1AE03B9EC3-L001173](../../agents/web_agent.py#L1173) | 1173 | `"    ) -> dict[str, str] \| None:"` | — |
-| [SRC-1AE03B9EC3-L001174](../../agents/web_agent.py#L1174) | 1174 | `"        \"\"\"Extract explicit public demand type without inferring identity or product fit.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001175](../../agents/web_agent.py#L1175) | 1175 | `"        evidence_fields = ("` | — |
-| [SRC-1AE03B9EC3-L001176](../../agents/web_agent.py#L1176) | 1176 | `"            (\"page_text\", \"page_text\"),"` | — |
-| [SRC-1AE03B9EC3-L001177](../../agents/web_agent.py#L1177) | 1177 | `"            (\"title\", \"title\"),"` | — |
-| [SRC-1AE03B9EC3-L001178](../../agents/web_agent.py#L1178) | 1178 | `"            (\"snippet\", \"search_snippet\"),"` | — |
-| [SRC-1AE03B9EC3-L001179](../../agents/web_agent.py#L1179) | 1179 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001180](../../agents/web_agent.py#L1180) | 1180 | `"        combined_text = \" \".join("` | — |
-| [SRC-1AE03B9EC3-L001181](../../agents/web_agent.py#L1181) | 1181 | `"            str(source.get(field) or \"\") for field, _basis in evidence_fields"` | — |
-| [SRC-1AE03B9EC3-L001182](../../agents/web_agent.py#L1182) | 1182 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001183](../../agents/web_agent.py#L1183) | 1183 | `"        requested_categories = WebAgent._lead_entity_categories(question or \"\")"` | — |
-| [SRC-1AE03B9EC3-L001184](../../agents/web_agent.py#L1184) | 1184 | `"        observed_categories = WebAgent._lead_entity_categories(combined_text)"` | — |
-| [SRC-1AE03B9EC3-L001185](../../agents/web_agent.py#L1185) | 1185 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L001186](../../agents/web_agent.py#L1186) | 1186 | `"            len(requested_categories) == 1"` | — |
-| [SRC-1AE03B9EC3-L001187](../../agents/web_agent.py#L1187) | 1187 | `"            and requested_categories.isdisjoint(observed_categories)"` | — |
-| [SRC-1AE03B9EC3-L001188](../../agents/web_agent.py#L1188) | 1188 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L001189](../../agents/web_agent.py#L1189) | 1189 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L001135](../../agents/web_agent.py#L1135) | 1135 | `"    def _is_navigation_request(question: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L001136](../../agents/web_agent.py#L1136) | 1136 | `"        \"\"\"A link-finding task can be useful with one clearly labelled candidate result.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001137](../../agents/web_agent.py#L1137) | 1137 | `"        value = _normalize_search_query(question).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001138](../../agents/web_agent.py#L1138) | 1138 | `"        explicit_web_terms = ("` | — |
+| [SRC-1AE03B9EC3-L001139](../../agents/web_agent.py#L1139) | 1139 | `"            \"رابط\", \"لينك\", \"الموقع الرسمي\", \"الصفحة الرسمية\", \"رابط الموقع\","` | — |
+| [SRC-1AE03B9EC3-L001140](../../agents/web_agent.py#L1140) | 1140 | `"            \"لينك الموقع\", \"موقع الانترنت\", \"موقع الويب\", \"موقع الكتروني\","` | — |
+| [SRC-1AE03B9EC3-L001141](../../agents/web_agent.py#L1141) | 1141 | `"            \"الموقع الالكتروني\", \"official website\", \"website\", \"homepage\","` | — |
+| [SRC-1AE03B9EC3-L001142](../../agents/web_agent.py#L1142) | 1142 | `"            \"web page\", \"webpage\", \"link to\","` | — |
+| [SRC-1AE03B9EC3-L001143](../../agents/web_agent.py#L1143) | 1143 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001144](../../agents/web_agent.py#L1144) | 1144 | `"        if any(term in value for term in explicit_web_terms):"` | — |
+| [SRC-1AE03B9EC3-L001145](../../agents/web_agent.py#L1145) | 1145 | `"            return True"` | — |
+| [SRC-1AE03B9EC3-L001146](../../agents/web_agent.py#L1146) | 1146 | `"        geographic_terms = ("` | — |
+| [SRC-1AE03B9EC3-L001147](../../agents/web_agent.py#L1147) | 1147 | `"            \"جغرافيا\", \"جغرافي\", \"على الخريطه\", \"اين تقع\", \"اين يقع\","` | — |
+| [SRC-1AE03B9EC3-L001148](../../agents/web_agent.py#L1148) | 1148 | `"            \"جغرافيه\", \"geographic location\", \"geographical location\","` | — |
+| [SRC-1AE03B9EC3-L001149](../../agents/web_agent.py#L1149) | 1149 | `"            \"geographically\", \"where is located\","` | — |
+| [SRC-1AE03B9EC3-L001150](../../agents/web_agent.py#L1150) | 1150 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001151](../../agents/web_agent.py#L1151) | 1151 | `"        if any(term in value for term in geographic_terms):"` | — |
+| [SRC-1AE03B9EC3-L001152](../../agents/web_agent.py#L1152) | 1152 | `"            return False"` | — |
+| [SRC-1AE03B9EC3-L001153](../../agents/web_agent.py#L1153) | 1153 | `"        # Bare \"موقع\" is ambiguous in Arabic. Keep the useful candidate-result"` | — |
+| [SRC-1AE03B9EC3-L001154](../../agents/web_agent.py#L1154) | 1154 | `"        # exception only when the wording asks us to find/open a website."` | — |
+| [SRC-1AE03B9EC3-L001155](../../agents/web_agent.py#L1155) | 1155 | `"        website_actions = ("` | — |
+| [SRC-1AE03B9EC3-L001156](../../agents/web_agent.py#L1156) | 1156 | `"            \"ابحث عن موقع\", \"ابحث عن الموقع\", \"دور على موقع\", \"دورلي على موقع\","` | — |
+| [SRC-1AE03B9EC3-L001157](../../agents/web_agent.py#L1157) | 1157 | `"            \"هات موقع\", \"هاتلي موقع\", \"اعطني موقع\", \"عايز موقع\", \"عاوز موقع\","` | — |
+| [SRC-1AE03B9EC3-L001158](../../agents/web_agent.py#L1158) | 1158 | `"            \"محتاج موقع\", \"افتح موقع\","` | — |
+| [SRC-1AE03B9EC3-L001159](../../agents/web_agent.py#L1159) | 1159 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001160](../../agents/web_agent.py#L1160) | 1160 | `"        return any(term in value for term in website_actions)"` | — |
+| [SRC-1AE03B9EC3-L001161](../../agents/web_agent.py#L1161) | 1161 | `""` | — |
+| [SRC-1AE03B9EC3-L001162](../../agents/web_agent.py#L1162) | 1162 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L001163](../../agents/web_agent.py#L1163) | 1163 | `"    def _is_lead_search(question: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L001164](../../agents/web_agent.py#L1164) | 1164 | `"        \"\"\"Keep lead discovery distinct from listing searches and generic explanations.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001165](../../agents/web_agent.py#L1165) | 1165 | `"        return route_intent(question).get(\"route\") == \"LEAD_GENERATION\""` | — |
+| [SRC-1AE03B9EC3-L001166](../../agents/web_agent.py#L1166) | 1166 | `""` | — |
+| [SRC-1AE03B9EC3-L001167](../../agents/web_agent.py#L1167) | 1167 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L001168](../../agents/web_agent.py#L1168) | 1168 | `"    def _lead_entity_categories(value: str) -> set[str]:"` | — |
+| [SRC-1AE03B9EC3-L001169](../../agents/web_agent.py#L1169) | 1169 | `"        \"\"\"Classify explicit property and vehicle terms for conservative lead isolation.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001170](../../agents/web_agent.py#L1170) | 1170 | `"        normalized = _normalize_search_query(value).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001171](../../agents/web_agent.py#L1171) | 1171 | `"        property_terms = ("` | — |
+| [SRC-1AE03B9EC3-L001172](../../agents/web_agent.py#L1172) | 1172 | `"            \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\","` | — |
+| [SRC-1AE03B9EC3-L001173](../../agents/web_agent.py#L1173) | 1173 | `"            \"وحده سكنيه\", \"وحدات سكنيه\", \"apartment\", \"apartments\","` | — |
+| [SRC-1AE03B9EC3-L001174](../../agents/web_agent.py#L1174) | 1174 | `"            \"flat\", \"flats\", \"property\", \"properties\", \"house\", \"houses\","` | — |
+| [SRC-1AE03B9EC3-L001175](../../agents/web_agent.py#L1175) | 1175 | `"            \"villa\", \"villas\", \"real estate\","` | — |
+| [SRC-1AE03B9EC3-L001176](../../agents/web_agent.py#L1176) | 1176 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001177](../../agents/web_agent.py#L1177) | 1177 | `"        vehicle_terms = ("` | — |
+| [SRC-1AE03B9EC3-L001178](../../agents/web_agent.py#L1178) | 1178 | `"            \"سياره\", \"سيارات\", \"عربيه\", \"عربيات\", \"مركبه\", \"مركبات\","` | — |
+| [SRC-1AE03B9EC3-L001179](../../agents/web_agent.py#L1179) | 1179 | `"            \"car\", \"cars\", \"vehicle\", \"vehicles\", \"automobile\", \"automobiles\","` | — |
+| [SRC-1AE03B9EC3-L001180](../../agents/web_agent.py#L1180) | 1180 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001181](../../agents/web_agent.py#L1181) | 1181 | `""` | — |
+| [SRC-1AE03B9EC3-L001182](../../agents/web_agent.py#L1182) | 1182 | `"        def contains(term: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L001183](../../agents/web_agent.py#L1183) | 1183 | `"            normalized_term = _normalize_search_query(term).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001184](../../agents/web_agent.py#L1184) | 1184 | `"            if re.search(r\"[a-z]\", normalized_term):"` | — |
+| [SRC-1AE03B9EC3-L001185](../../agents/web_agent.py#L1185) | 1185 | `"                return bool(re.search("` | — |
+| [SRC-1AE03B9EC3-L001186](../../agents/web_agent.py#L1186) | 1186 | `"                    r\"(?<![a-z0-9])\" + re.escape(normalized_term) + r\"(?![a-z0-9])\","` | — |
+| [SRC-1AE03B9EC3-L001187](../../agents/web_agent.py#L1187) | 1187 | `"                    normalized,"` | — |
+| [SRC-1AE03B9EC3-L001188](../../agents/web_agent.py#L1188) | 1188 | `"                ))"` | — |
+| [SRC-1AE03B9EC3-L001189](../../agents/web_agent.py#L1189) | 1189 | `"            return normalized_term in normalized"` | — |
 | [SRC-1AE03B9EC3-L001190](../../agents/web_agent.py#L1190) | 1190 | `""` | — |
-| [SRC-1AE03B9EC3-L001191](../../agents/web_agent.py#L1191) | 1191 | `"        signal_phrases = ("` | — |
-| [SRC-1AE03B9EC3-L001192](../../agents/web_agent.py#L1192) | 1192 | `"            ("` | — |
-| [SRC-1AE03B9EC3-L001193](../../agents/web_agent.py#L1193) | 1193 | `"                \"direct_purchase_request\","` | — |
-| [SRC-1AE03B9EC3-L001194](../../agents/web_agent.py#L1194) | 1194 | `"                ("` | — |
-| [SRC-1AE03B9EC3-L001195](../../agents/web_agent.py#L1195) | 1195 | `"                    \"مطلوب شقه تمليك\", \"مطلوب شقه للشراء\", \"مطلوب شراء شقه\","` | — |
-| [SRC-1AE03B9EC3-L001196](../../agents/web_agent.py#L1196) | 1196 | `"                    \"مطلوب عقار للشراء\", \"مطلوب فيلا للشراء\","` | — |
-| [SRC-1AE03B9EC3-L001197](../../agents/web_agent.py#L1197) | 1197 | `"                    \"بدور على شقه تمليك\", \"بدور على شقه للشراء\","` | — |
-| [SRC-1AE03B9EC3-L001198](../../agents/web_agent.py#L1198) | 1198 | `"                    \"ابحث عن شقه للشراء\", \"عايز اشتري شقه\", \"عاوز اشتري شقه\","` | — |
-| [SRC-1AE03B9EC3-L001199](../../agents/web_agent.py#L1199) | 1199 | `"                    \"عايز اشتري عقار\", \"عاوز اشتري عقار\", \"اريد شراء شقه\","` | — |
-| [SRC-1AE03B9EC3-L001200](../../agents/web_agent.py#L1200) | 1200 | `"                    \"ارغب في شراء شقه\", \"اريد شراء عقار\", \"ارغب في شراء عقار\","` | — |
-| [SRC-1AE03B9EC3-L001201](../../agents/web_agent.py#L1201) | 1201 | `"                    \"مطلوب شراء\", \"عايز اشتري\", \"عاوز اشتري\", \"اريد شراء\","` | — |
-| [SRC-1AE03B9EC3-L001202](../../agents/web_agent.py#L1202) | 1202 | `"                    \"ارغب في شراء\", \"نرغب في شراء\", \"نرغب بشراء\", \"محتاج اشتري\","` | — |
-| [SRC-1AE03B9EC3-L001203](../../agents/web_agent.py#L1203) | 1203 | `"                    \"looking to buy\", \"looking to purchase\", \"want to buy\","` | — |
-| [SRC-1AE03B9EC3-L001204](../../agents/web_agent.py#L1204) | 1204 | `"                    \"wants to buy\", \"want to purchase\", \"wants to purchase\","` | — |
-| [SRC-1AE03B9EC3-L001205](../../agents/web_agent.py#L1205) | 1205 | `"                    \"seeking to buy\", \"seeking to purchase\", \"interested in buying\","` | — |
-| [SRC-1AE03B9EC3-L001206](../../agents/web_agent.py#L1206) | 1206 | `"                    \"interested in purchasing\", \"buyer looking to buy\","` | — |
-| [SRC-1AE03B9EC3-L001207](../../agents/web_agent.py#L1207) | 1207 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001208](../../agents/web_agent.py#L1208) | 1208 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L001209](../../agents/web_agent.py#L1209) | 1209 | `"            ("` | — |
-| [SRC-1AE03B9EC3-L001210](../../agents/web_agent.py#L1210) | 1210 | `"                \"request_for_quotation\","` | — |
-| [SRC-1AE03B9EC3-L001211](../../agents/web_agent.py#L1211) | 1211 | `"                ("` | — |
-| [SRC-1AE03B9EC3-L001212](../../agents/web_agent.py#L1212) | 1212 | `"                    \"طلب عرض سعر\", \"مطلوب عرض سعر\", \"اطلب عرض سعر\","` | — |
-| [SRC-1AE03B9EC3-L001213](../../agents/web_agent.py#L1213) | 1213 | `"                    \"request for quotation\", \"request a quote\","` | — |
-| [SRC-1AE03B9EC3-L001214](../../agents/web_agent.py#L1214) | 1214 | `"                    \"request for quote\", \"seeking quotations\","` | — |
-| [SRC-1AE03B9EC3-L001215](../../agents/web_agent.py#L1215) | 1215 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001216](../../agents/web_agent.py#L1216) | 1216 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L001217](../../agents/web_agent.py#L1217) | 1217 | `"            ("` | — |
-| [SRC-1AE03B9EC3-L001218](../../agents/web_agent.py#L1218) | 1218 | `"                \"stated_need\","` | — |
-| [SRC-1AE03B9EC3-L001219](../../agents/web_agent.py#L1219) | 1219 | `"                ("` | — |
-| [SRC-1AE03B9EC3-L001220](../../agents/web_agent.py#L1220) | 1220 | `"                    \"بدور على\", \"ابحث عن\", \"أبحث عن\", \"محتاج\", \"محتاجين\","` | — |
-| [SRC-1AE03B9EC3-L001221](../../agents/web_agent.py#L1221) | 1221 | `"                    \"looking for\", \"in need of\", \"need a supplier\","` | — |
-| [SRC-1AE03B9EC3-L001222](../../agents/web_agent.py#L1222) | 1222 | `"                ),"` | — |
-| [SRC-1AE03B9EC3-L001223](../../agents/web_agent.py#L1223) | 1223 | `"            ),"` | — |
-| [SRC-1AE03B9EC3-L001224](../../agents/web_agent.py#L1224) | 1224 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001225](../../agents/web_agent.py#L1225) | 1225 | `"        negations = ("` | — |
-| [SRC-1AE03B9EC3-L001226](../../agents/web_agent.py#L1226) | 1226 | `"            \"not looking to buy\", \"not interested in buying\","` | — |
-| [SRC-1AE03B9EC3-L001227](../../agents/web_agent.py#L1227) | 1227 | `"            \"not interested in purchasing\", \"no longer looking to buy\","` | — |
-| [SRC-1AE03B9EC3-L001228](../../agents/web_agent.py#L1228) | 1228 | `"            \"do not want to buy\", \"don't want to buy\","` | — |
-| [SRC-1AE03B9EC3-L001229](../../agents/web_agent.py#L1229) | 1229 | `"            \"looking for a buyer\", \"looking for buyers\", \"seeking a buyer\","` | — |
-| [SRC-1AE03B9EC3-L001230](../../agents/web_agent.py#L1230) | 1230 | `"            \"need a buyer\", \"buyer wanted\", \"buyers wanted\","` | — |
-| [SRC-1AE03B9EC3-L001231](../../agents/web_agent.py#L1231) | 1231 | `"            \"نبحث عن مشتري\", \"نبحث عن مشترين\", \"ابحث عن مشتري\","` | — |
-| [SRC-1AE03B9EC3-L001232](../../agents/web_agent.py#L1232) | 1232 | `"            \"مطلوب مشتري\", \"مطلوب مشترين\", \"نبحث عن عميل\", \"نبحث عن عملاء\","` | — |
-| [SRC-1AE03B9EC3-L001233](../../agents/web_agent.py#L1233) | 1233 | `"            \"مش بدور على\", \"مش عايز اشتري\", \"مش عاوز اشتري\","` | — |
-| [SRC-1AE03B9EC3-L001234](../../agents/web_agent.py#L1234) | 1234 | `"            \"لا اريد شراء\", \"لا ارغب في شراء\", \"مش محتاج اشتري\","` | — |
-| [SRC-1AE03B9EC3-L001235](../../agents/web_agent.py#L1235) | 1235 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001236](../../agents/web_agent.py#L1236) | 1236 | `"        for field, basis in evidence_fields:"` | — |
-| [SRC-1AE03B9EC3-L001237](../../agents/web_agent.py#L1237) | 1237 | `"            raw = source.get(field)"` | — |
-| [SRC-1AE03B9EC3-L001238](../../agents/web_agent.py#L1238) | 1238 | `"            if not isinstance(raw, str) or not raw.strip():"` | — |
-| [SRC-1AE03B9EC3-L001239](../../agents/web_agent.py#L1239) | 1239 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L001240](../../agents/web_agent.py#L1240) | 1240 | `"            normalized = _normalize_search_query(raw).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001241](../../agents/web_agent.py#L1241) | 1241 | `"            if any(_normalize_search_query(term).casefold() in normalized for term in negations):"` | — |
-| [SRC-1AE03B9EC3-L001242](../../agents/web_agent.py#L1242) | 1242 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L001243](../../agents/web_agent.py#L1243) | 1243 | `"            for signal_type, phrases in signal_phrases:"` | — |
-| [SRC-1AE03B9EC3-L001244](../../agents/web_agent.py#L1244) | 1244 | `"                for phrase in phrases:"` | — |
-| [SRC-1AE03B9EC3-L001245](../../agents/web_agent.py#L1245) | 1245 | `"                    needle = _normalize_search_query(phrase).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001246](../../agents/web_agent.py#L1246) | 1246 | `"                    if needle and needle in normalized:"` | — |
-| [SRC-1AE03B9EC3-L001247](../../agents/web_agent.py#L1247) | 1247 | `"                        return {"` | — |
-| [SRC-1AE03B9EC3-L001248](../../agents/web_agent.py#L1248) | 1248 | `"                            \"phrase\": phrase,"` | — |
-| [SRC-1AE03B9EC3-L001249](../../agents/web_agent.py#L1249) | 1249 | `"                            \"basis\": basis,"` | — |
-| [SRC-1AE03B9EC3-L001250](../../agents/web_agent.py#L1250) | 1250 | `"                            \"signal_type\": signal_type,"` | — |
-| [SRC-1AE03B9EC3-L001251](../../agents/web_agent.py#L1251) | 1251 | `"                            \"product_fit\": \"unassessed\","` | — |
-| [SRC-1AE03B9EC3-L001252](../../agents/web_agent.py#L1252) | 1252 | `"                        }"` | — |
-| [SRC-1AE03B9EC3-L001253](../../agents/web_agent.py#L1253) | 1253 | `"        return None"` | — |
-| [SRC-1AE03B9EC3-L001254](../../agents/web_agent.py#L1254) | 1254 | `""` | — |
-| [SRC-1AE03B9EC3-L001255](../../agents/web_agent.py#L1255) | 1255 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001256](../../agents/web_agent.py#L1256) | 1256 | `"    def _lead_generation_queries("` | — |
-| [SRC-1AE03B9EC3-L001257](../../agents/web_agent.py#L1257) | 1257 | `"        question: str, existing_queries: list[str] \| None = None"` | — |
-| [SRC-1AE03B9EC3-L001258](../../agents/web_agent.py#L1258) | 1258 | `"    ) -> list[str]:"` | — |
-| [SRC-1AE03B9EC3-L001259](../../agents/web_agent.py#L1259) | 1259 | `"        \"\"\"Generate bounded, sector-neutral buyer queries anchored to the requested product.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001260](../../agents/web_agent.py#L1260) | 1260 | `"        subject = _normalize_search_query(question).strip()"` | — |
-| [SRC-1AE03B9EC3-L001261](../../agents/web_agent.py#L1261) | 1261 | `"        subject = re.sub(r\"(?<!\\w)عملاش(?!\\w)\", \"عملاء\", subject, flags=re.IGNORECASE)"` | — |
-| [SRC-1AE03B9EC3-L001262](../../agents/web_agent.py#L1262) | 1262 | `"        subject = re.sub(r\"(?<!\\w)شرا(?!\\w)\", \"شراء\", subject, flags=re.IGNORECASE)"` | — |
-| [SRC-1AE03B9EC3-L001263](../../agents/web_agent.py#L1263) | 1263 | `"        arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", question))"` | — |
-| [SRC-1AE03B9EC3-L001264](../../agents/web_agent.py#L1264) | 1264 | `"        if arabic:"` | — |
-| [SRC-1AE03B9EC3-L001265](../../agents/web_agent.py#L1265) | 1265 | `"            subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L001266](../../agents/web_agent.py#L1266) | 1266 | `"                r\"^(?:(?:من فضلك\|لو سمحت)\\s*)?(?:ابحث\|بحث\|دور\|دورلي\|اعثر)(?:لي)?\\s+\""` | — |
-| [SRC-1AE03B9EC3-L001267](../../agents/web_agent.py#L1267) | 1267 | `"                r\"(?:لي\\s+)?(?:عن\|على)\\s*\","` | — |
-| [SRC-1AE03B9EC3-L001268](../../agents/web_agent.py#L1268) | 1268 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
-| [SRC-1AE03B9EC3-L001269](../../agents/web_agent.py#L1269) | 1269 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001270](../../agents/web_agent.py#L1270) | 1270 | `"            subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L001271](../../agents/web_agent.py#L1271) | 1271 | `"                r\"^(?:[0-9٠-٩]+\\s*)?(?:عميل(?:\\s+محتمل)?\|عملاء(?:\\s+محتملين)?\|\""` | — |
-| [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `"                r\"عملاش\|مشتري(?:ن)?\|مشترين)\\s*\","` | — |
-| [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
-| [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"            intent_word = ("` | — |
-| [SRC-1AE03B9EC3-L001276](../../agents/web_agent.py#L1276) | 1276 | `"                r\"(?:يطلب(?:ون)?\|يريد(?:ون)?\|عايز(?:ين)?\|عاوز(?:ين)?\|محتاج(?:ين)?\|\""` | — |
-| [SRC-1AE03B9EC3-L001277](../../agents/web_agent.py#L1277) | 1277 | `"                r\"مهتم(?:ين)?\|بيطلب(?:وا)?\|يبحث(?:ون)?\|بيبحث(?:وا)?\|يدور(?:وا)?)\""` | — |
-| [SRC-1AE03B9EC3-L001278](../../agents/web_agent.py#L1278) | 1278 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001279](../../agents/web_agent.py#L1279) | 1279 | `"            subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L001280](../../agents/web_agent.py#L1280) | 1280 | `"                r\"^(?:(?:الذي\|اللي\|الذين)\\s*)?\" + intent_word"` | — |
-| [SRC-1AE03B9EC3-L001281](../../agents/web_agent.py#L1281) | 1281 | `"                + r\"(?:\\s+(?:او\|أو)\\s+\" + intent_word + r\")*\\s*\","` | — |
-| [SRC-1AE03B9EC3-L001282](../../agents/web_agent.py#L1282) | 1282 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
-| [SRC-1AE03B9EC3-L001283](../../agents/web_agent.py#L1283) | 1283 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001284](../../agents/web_agent.py#L1284) | 1284 | `"            subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L001285](../../agents/web_agent.py#L1285) | 1285 | `"                r\"^(?:(?:ان\|أن)\\s*)?(?:يشتري\|يشترو\|يشترون\|اشتري\|شراء\|شرا\|لشراء)\\s*\","` | — |
-| [SRC-1AE03B9EC3-L001286](../../agents/web_agent.py#L1286) | 1286 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
-| [SRC-1AE03B9EC3-L001287](../../agents/web_agent.py#L1287) | 1287 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L001288](../../agents/web_agent.py#L1288) | 1288 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L001289](../../agents/web_agent.py#L1289) | 1289 | `"            subject = re.sub("` | — |
-| [SRC-1AE03B9EC3-L001290](../../agents/web_agent.py#L1290) | 1290 | `"                r\"^(?:please\\s+)?(?:find\|search for\|look for)\\s+(?:(?:a\|an)\\s+)?\""` | — |
-| [SRC-1AE03B9EC3-L001291](../../agents/web_agent.py#L1291) | 1291 | `"                r\"(?:(?:potential\\s+)?(?:customer\|buyer\|prospect\|lead)s?)\\s*\""` | — |
-| [SRC-1AE03B9EC3-L001292](../../agents/web_agent.py#L1292) | 1292 | `"                r\"(?:(?:who\|that)\\s*)?(?:(?:wants?\|looking to\|seeking to)\\s+\""` | — |
-| [SRC-1AE03B9EC3-L001293](../../agents/web_agent.py#L1293) | 1293 | `"                r\"(?:buy\|purchase)\\s*)?\","` | — |
-| [SRC-1AE03B9EC3-L001294](../../agents/web_agent.py#L1294) | 1294 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
-| [SRC-1AE03B9EC3-L001295](../../agents/web_agent.py#L1295) | 1295 | `"            ).strip(\" \\t:;,.-\")"` | — |
-| [SRC-1AE03B9EC3-L001296](../../agents/web_agent.py#L1296) | 1296 | `"        if not subject:"` | — |
-| [SRC-1AE03B9EC3-L001297](../../agents/web_agent.py#L1297) | 1297 | `"            subject = _normalize_search_query(question).strip()"` | — |
-| [SRC-1AE03B9EC3-L001298](../../agents/web_agent.py#L1298) | 1298 | `""` | — |
-| [SRC-1AE03B9EC3-L001299](../../agents/web_agent.py#L1299) | 1299 | `"        profile = ProductProfile(name=subject[:240])"` | — |
-| [SRC-1AE03B9EC3-L001300](../../agents/web_agent.py#L1300) | 1300 | `"        has_arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", question))"` | — |
-| [SRC-1AE03B9EC3-L001301](../../agents/web_agent.py#L1301) | 1301 | `"        has_latin = bool(re.search(r\"[A-Za-z]\", question))"` | — |
-| [SRC-1AE03B9EC3-L001302](../../agents/web_agent.py#L1302) | 1302 | `"        locale = \"mixed\" if has_arabic and has_latin else \"ar\" if has_arabic else \"en\""` | — |
-| [SRC-1AE03B9EC3-L001303](../../agents/web_agent.py#L1303) | 1303 | `"        return build_buyer_queries("` | — |
-| [SRC-1AE03B9EC3-L001304](../../agents/web_agent.py#L1304) | 1304 | `"            profile,"` | — |
-| [SRC-1AE03B9EC3-L001305](../../agents/web_agent.py#L1305) | 1305 | `"            locale=locale,"` | — |
-| [SRC-1AE03B9EC3-L001306](../../agents/web_agent.py#L1306) | 1306 | `"            existing_queries=existing_queries or (),"` | — |
-| [SRC-1AE03B9EC3-L001307](../../agents/web_agent.py#L1307) | 1307 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001308](../../agents/web_agent.py#L1308) | 1308 | `""` | — |
-| [SRC-1AE03B9EC3-L001309](../../agents/web_agent.py#L1309) | 1309 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001310](../../agents/web_agent.py#L1310) | 1310 | `"    def _is_listing_discovery(question: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001311](../../agents/web_agent.py#L1311) | 1311 | `"        \"\"\"Recognize property/job/product discovery where candidates are useful with caveats.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001312](../../agents/web_agent.py#L1312) | 1312 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001313](../../agents/web_agent.py#L1313) | 1313 | `"        entities = ("` | — |
-| [SRC-1AE03B9EC3-L001314](../../agents/web_agent.py#L1314) | 1314 | `"            \"شقه\", \"شقق\", \"عقار\", \"عقارات\", \"فيلا\", \"فلل\", \"وحده سكنيه\","` | — |
-| [SRC-1AE03B9EC3-L001315](../../agents/web_agent.py#L1315) | 1315 | `"            \"وحدات سكنيه\", \"apartment\", \"apartments\", \"flat\", \"property listing\","` | — |
-| [SRC-1AE03B9EC3-L001316](../../agents/web_agent.py#L1316) | 1316 | `"            \"real estate\", \"house\", \"villa\", \"job opening\", \"وظيفه\", \"وظائف\","` | — |
-| [SRC-1AE03B9EC3-L001317](../../agents/web_agent.py#L1317) | 1317 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001318](../../agents/web_agent.py#L1318) | 1318 | `"        actions = ("` | — |
-| [SRC-1AE03B9EC3-L001319](../../agents/web_agent.py#L1319) | 1319 | `"            \"ابحث\", \"دور\", \"هات\", \"عايز\", \"عاوز\", \"محتاج\", \"بدور\", \"للبيع\","` | — |
-| [SRC-1AE03B9EC3-L001320](../../agents/web_agent.py#L1320) | 1320 | `"            \"للايجار\", \"ايجار\", \"معاينه\", \"اعلان\", \"اعلانات\", \"find\", \"search\","` | — |
-| [SRC-1AE03B9EC3-L001321](../../agents/web_agent.py#L1321) | 1321 | `"            \"looking for\", \"for sale\", \"for rent\","` | — |
-| [SRC-1AE03B9EC3-L001322](../../agents/web_agent.py#L1322) | 1322 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001323](../../agents/web_agent.py#L1323) | 1323 | `"        normalized_entities = (_normalize_search_query(term).casefold() for term in entities)"` | — |
-| [SRC-1AE03B9EC3-L001324](../../agents/web_agent.py#L1324) | 1324 | `"        normalized_actions = (_normalize_search_query(term).casefold() for term in actions)"` | — |
-| [SRC-1AE03B9EC3-L001325](../../agents/web_agent.py#L1325) | 1325 | `"        return any(term in value for term in normalized_entities) and any("` | — |
-| [SRC-1AE03B9EC3-L001326](../../agents/web_agent.py#L1326) | 1326 | `"            term in value for term in normalized_actions"` | — |
-| [SRC-1AE03B9EC3-L001327](../../agents/web_agent.py#L1327) | 1327 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001328](../../agents/web_agent.py#L1328) | 1328 | `""` | — |
-| [SRC-1AE03B9EC3-L001329](../../agents/web_agent.py#L1329) | 1329 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001330](../../agents/web_agent.py#L1330) | 1330 | `"    def _requires_web_research(question: str, mode: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001331](../../agents/web_agent.py#L1331) | 1331 | `"        \"\"\"Use the web only when the user requests it or the answer depends on live data.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001332](../../agents/web_agent.py#L1332) | 1332 | `"        # A question about whether the current answer already searched is a"` | — |
-| [SRC-1AE03B9EC3-L001333](../../agents/web_agent.py#L1333) | 1333 | `"        # status query, not a request to launch fresh research in any UI mode."` | — |
-| [SRC-1AE03B9EC3-L001334](../../agents/web_agent.py#L1334) | 1334 | `"        if WebAgent._is_current_search_status_question(question):"` | — |
-| [SRC-1AE03B9EC3-L001335](../../agents/web_agent.py#L1335) | 1335 | `"            return False"` | — |
-| [SRC-1AE03B9EC3-L001336](../../agents/web_agent.py#L1336) | 1336 | `"        if mode != \"auto\":"` | — |
-| [SRC-1AE03B9EC3-L001337](../../agents/web_agent.py#L1337) | 1337 | `"            return True"` | — |
-| [SRC-1AE03B9EC3-L001338](../../agents/web_agent.py#L1338) | 1338 | `"        value = _normalize_search_query(question).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001339](../../agents/web_agent.py#L1339) | 1339 | `"        dynamic_terms = ("` | — |
-| [SRC-1AE03B9EC3-L001340](../../agents/web_agent.py#L1340) | 1340 | `"            \"ابحث\", \"بحث عن\", \"دور على\", \"دورلي\", \"هات رابط\", \"هاتلي\","` | — |
-| [SRC-1AE03B9EC3-L001341](../../agents/web_agent.py#L1341) | 1341 | `"            \"جيبلي\", \"اعثر على\", \"موقع\", \"رابط\", \"لينك\", \"اخبار\", \"اخر\","` | — |
-| [SRC-1AE03B9EC3-L001342](../../agents/web_agent.py#L1342) | 1342 | `"            \"احدث\", \"اليوم\", \"دلوقتي\", \"حاليا\", \"سعر\", \"اسعار\", \"للبيع\","` | — |
-| [SRC-1AE03B9EC3-L001343](../../agents/web_agent.py#L1343) | 1343 | `"            \"للايجار\", \"ايجار\", \"معاينه\", \"عميل محتمل\", \"عملاء محتملين\","` | — |
-| [SRC-1AE03B9EC3-L001344](../../agents/web_agent.py#L1344) | 1344 | `"            \"وظائف\", \"وظيفه\", \"حجز\", \"موعد\", \"الطقس\", \"سهم\", \"سعر الصرف\","` | — |
-| [SRC-1AE03B9EC3-L001345](../../agents/web_agent.py#L1345) | 1345 | `"            \"search\", \"find\", \"look up\", \"latest\", \"today\", \"current\","` | — |
-| [SRC-1AE03B9EC3-L001346](../../agents/web_agent.py#L1346) | 1346 | `"            \"news\", \"price\", \"for sale\", \"for rent\", \"real estate\", \"job opening\","` | — |
-| [SRC-1AE03B9EC3-L001347](../../agents/web_agent.py#L1347) | 1347 | `"            \"appointment\", \"reservation\", \"weather\", \"stock price\", \"exchange rate\","` | — |
-| [SRC-1AE03B9EC3-L001348](../../agents/web_agent.py#L1348) | 1348 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001349](../../agents/web_agent.py#L1349) | 1349 | `"        return any(term in value for term in dynamic_terms) or bool("` | — |
-| [SRC-1AE03B9EC3-L001350](../../agents/web_agent.py#L1350) | 1350 | `"            re.search(r\"https?://\", question, flags=re.IGNORECASE)"` | — |
-| [SRC-1AE03B9EC3-L001351](../../agents/web_agent.py#L1351) | 1351 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001352](../../agents/web_agent.py#L1352) | 1352 | `""` | — |
-| [SRC-1AE03B9EC3-L001353](../../agents/web_agent.py#L1353) | 1353 | `"    def _local_answer_result(self, question: str, answer: str, kind: str) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L001354](../../agents/web_agent.py#L1354) | 1354 | `"        \"\"\"Build a consistently shaped answer for non-research conversational requests.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001355](../../agents/web_agent.py#L1355) | 1355 | `"        return {"` | — |
-| [SRC-1AE03B9EC3-L001356](../../agents/web_agent.py#L1356) | 1356 | `"            \"answer\": answer,"` | — |
-| [SRC-1AE03B9EC3-L001357](../../agents/web_agent.py#L1357) | 1357 | `"            \"question\": question,"` | — |
-| [SRC-1AE03B9EC3-L001358](../../agents/web_agent.py#L1358) | 1358 | `"            \"search_query\": question,"` | — |
-| [SRC-1AE03B9EC3-L001359](../../agents/web_agent.py#L1359) | 1359 | `"            \"search_queries\": [],"` | — |
-| [SRC-1AE03B9EC3-L001360](../../agents/web_agent.py#L1360) | 1360 | `"            \"research_plan\": {"` | — |
-| [SRC-1AE03B9EC3-L001361](../../agents/web_agent.py#L1361) | 1361 | `"                \"mode\": \"auto\","` | — |
-| [SRC-1AE03B9EC3-L001362](../../agents/web_agent.py#L1362) | 1362 | `"                \"planning_method\": \"local_capability_router\","` | — |
-| [SRC-1AE03B9EC3-L001363](../../agents/web_agent.py#L1363) | 1363 | `"                \"web_search_skipped\": True,"` | — |
-| [SRC-1AE03B9EC3-L001364](../../agents/web_agent.py#L1364) | 1364 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001365](../../agents/web_agent.py#L1365) | 1365 | `"            \"sources\": [],"` | — |
-| [SRC-1AE03B9EC3-L001366](../../agents/web_agent.py#L1366) | 1366 | `"            \"used_language_model\": False,"` | — |
-| [SRC-1AE03B9EC3-L001367](../../agents/web_agent.py#L1367) | 1367 | `"            \"used_web_search\": False,"` | — |
-| [SRC-1AE03B9EC3-L001368](../../agents/web_agent.py#L1368) | 1368 | `"            \"search_attempted\": False,"` | — |
-| [SRC-1AE03B9EC3-L001369](../../agents/web_agent.py#L1369) | 1369 | `"            \"used_social_search\": False,"` | — |
-| [SRC-1AE03B9EC3-L001370](../../agents/web_agent.py#L1370) | 1370 | `"            \"warnings\": [],"` | — |
-| [SRC-1AE03B9EC3-L001371](../../agents/web_agent.py#L1371) | 1371 | `"            \"kind\": kind,"` | — |
-| [SRC-1AE03B9EC3-L001372](../../agents/web_agent.py#L1372) | 1372 | `"            \"research_quality\": \"not_applicable\","` | — |
-| [SRC-1AE03B9EC3-L001373](../../agents/web_agent.py#L1373) | 1373 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L001374](../../agents/web_agent.py#L1374) | 1374 | `""` | — |
-| [SRC-1AE03B9EC3-L001375](../../agents/web_agent.py#L1375) | 1375 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001376](../../agents/web_agent.py#L1376) | 1376 | `"    def _local_conversation_reply(question: str) -> str:"` | — |
-| [SRC-1AE03B9EC3-L001377](../../agents/web_agent.py#L1377) | 1377 | `"        \"\"\"Return a short greeting/acknowledgment without a model or web request.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001378](../../agents/web_agent.py#L1378) | 1378 | `"        value = _normalize_search_query(question).casefold().strip(\" \\t\\r\\n؟?!.,،؛;\")"` | — |
-| [SRC-1AE03B9EC3-L001379](../../agents/web_agent.py#L1379) | 1379 | `"        if \"السلام عليكم\" in value:"` | — |
-| [SRC-1AE03B9EC3-L001380](../../agents/web_agent.py#L1380) | 1380 | `"            return \"وعليكم السلام ورحمة الله وبركاته. أنا معاك؛ أقدر أساعدك في إيه؟\""` | — |
-| [SRC-1AE03B9EC3-L001381](../../agents/web_agent.py#L1381) | 1381 | `"        if any(term in value for term in (\"شكرا\", \"متشكر\", \"متشكره\", \"العفو\")):"` | — |
-| [SRC-1AE03B9EC3-L001382](../../agents/web_agent.py#L1382) | 1382 | `"            return \"العفو، تحت أمرك.\""` | — |
-| [SRC-1AE03B9EC3-L001383](../../agents/web_agent.py#L1383) | 1383 | `"        if re.search(r\"[a-z]\", value):"` | — |
-| [SRC-1AE03B9EC3-L001384](../../agents/web_agent.py#L1384) | 1384 | `"            if any(term in value for term in (\"thanks\", \"thank you\", \"got it\")):"` | — |
-| [SRC-1AE03B9EC3-L001385](../../agents/web_agent.py#L1385) | 1385 | `"                return \"You're welcome—glad it helped.\""` | — |
-| [SRC-1AE03B9EC3-L001386](../../agents/web_agent.py#L1386) | 1386 | `"            return \"Hi! I'm here and ready to help. What would you like to work on?\""` | — |
-| [SRC-1AE03B9EC3-L001387](../../agents/web_agent.py#L1387) | 1387 | `"        return \"أهلًا! أنا معاك. أقدر أساعدك في إيه؟\""` | — |
-| [SRC-1AE03B9EC3-L001388](../../agents/web_agent.py#L1388) | 1388 | `""` | — |
-| [SRC-1AE03B9EC3-L001389](../../agents/web_agent.py#L1389) | 1389 | `"    @staticmethod"` | — |
-| [SRC-1AE03B9EC3-L001390](../../agents/web_agent.py#L1390) | 1390 | `"    def _annotate_intent_route("` | — |
-| [SRC-1AE03B9EC3-L001391](../../agents/web_agent.py#L1391) | 1391 | `"        result: dict[str, Any], route: str, reason: str, mode: str = \"auto\""` | — |
-| [SRC-1AE03B9EC3-L001392](../../agents/web_agent.py#L1392) | 1392 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L001393](../../agents/web_agent.py#L1393) | 1393 | `"        \"\"\"Attach route diagnostics to both response and research-plan metadata.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001394](../../agents/web_agent.py#L1394) | 1394 | `"        result[\"intent_route\"] = route"` | — |
+| [SRC-1AE03B9EC3-L001191](../../agents/web_agent.py#L1191) | 1191 | `"        categories: set[str] = set()"` | — |
+| [SRC-1AE03B9EC3-L001192](../../agents/web_agent.py#L1192) | 1192 | `"        if any(contains(term) for term in property_terms):"` | — |
+| [SRC-1AE03B9EC3-L001193](../../agents/web_agent.py#L1193) | 1193 | `"            categories.add(\"property\")"` | — |
+| [SRC-1AE03B9EC3-L001194](../../agents/web_agent.py#L1194) | 1194 | `"        if any(contains(term) for term in vehicle_terms):"` | — |
+| [SRC-1AE03B9EC3-L001195](../../agents/web_agent.py#L1195) | 1195 | `"            categories.add(\"vehicle\")"` | — |
+| [SRC-1AE03B9EC3-L001196](../../agents/web_agent.py#L1196) | 1196 | `"        return categories"` | — |
+| [SRC-1AE03B9EC3-L001197](../../agents/web_agent.py#L1197) | 1197 | `""` | — |
+| [SRC-1AE03B9EC3-L001198](../../agents/web_agent.py#L1198) | 1198 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L001199](../../agents/web_agent.py#L1199) | 1199 | `"    def _lead_intent_evidence("` | — |
+| [SRC-1AE03B9EC3-L001200](../../agents/web_agent.py#L1200) | 1200 | `"        source: dict[str, Any], question: str \| None = None"` | — |
+| [SRC-1AE03B9EC3-L001201](../../agents/web_agent.py#L1201) | 1201 | `"    ) -> dict[str, str] \| None:"` | — |
+| [SRC-1AE03B9EC3-L001202](../../agents/web_agent.py#L1202) | 1202 | `"        \"\"\"Extract explicit public demand type without inferring identity or product fit.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001203](../../agents/web_agent.py#L1203) | 1203 | `"        evidence_fields = ("` | — |
+| [SRC-1AE03B9EC3-L001204](../../agents/web_agent.py#L1204) | 1204 | `"            (\"page_text\", \"page_text\"),"` | — |
+| [SRC-1AE03B9EC3-L001205](../../agents/web_agent.py#L1205) | 1205 | `"            (\"title\", \"title\"),"` | — |
+| [SRC-1AE03B9EC3-L001206](../../agents/web_agent.py#L1206) | 1206 | `"            (\"snippet\", \"search_snippet\"),"` | — |
+| [SRC-1AE03B9EC3-L001207](../../agents/web_agent.py#L1207) | 1207 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001208](../../agents/web_agent.py#L1208) | 1208 | `"        combined_text = \" \".join("` | — |
+| [SRC-1AE03B9EC3-L001209](../../agents/web_agent.py#L1209) | 1209 | `"            str(source.get(field) or \"\") for field, _basis in evidence_fields"` | — |
+| [SRC-1AE03B9EC3-L001210](../../agents/web_agent.py#L1210) | 1210 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001211](../../agents/web_agent.py#L1211) | 1211 | `"        requested_categories = WebAgent._lead_entity_categories(question or \"\")"` | — |
+| [SRC-1AE03B9EC3-L001212](../../agents/web_agent.py#L1212) | 1212 | `"        observed_categories = WebAgent._lead_entity_categories(combined_text)"` | — |
+| [SRC-1AE03B9EC3-L001213](../../agents/web_agent.py#L1213) | 1213 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L001214](../../agents/web_agent.py#L1214) | 1214 | `"            len(requested_categories) == 1"` | — |
+| [SRC-1AE03B9EC3-L001215](../../agents/web_agent.py#L1215) | 1215 | `"            and requested_categories.isdisjoint(observed_categories)"` | — |
+| [SRC-1AE03B9EC3-L001216](../../agents/web_agent.py#L1216) | 1216 | `"        ):"` | — |
+| [SRC-1AE03B9EC3-L001217](../../agents/web_agent.py#L1217) | 1217 | `"            return None"` | — |
+| [SRC-1AE03B9EC3-L001218](../../agents/web_agent.py#L1218) | 1218 | `""` | — |
+| [SRC-1AE03B9EC3-L001219](../../agents/web_agent.py#L1219) | 1219 | `"        signal_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L001220](../../agents/web_agent.py#L1220) | 1220 | `"            ("` | — |
+| [SRC-1AE03B9EC3-L001221](../../agents/web_agent.py#L1221) | 1221 | `"                \"direct_purchase_request\","` | — |
+| [SRC-1AE03B9EC3-L001222](../../agents/web_agent.py#L1222) | 1222 | `"                ("` | — |
+| [SRC-1AE03B9EC3-L001223](../../agents/web_agent.py#L1223) | 1223 | `"                    \"مطلوب شقه تمليك\", \"مطلوب شقه للشراء\", \"مطلوب شراء شقه\","` | — |
+| [SRC-1AE03B9EC3-L001224](../../agents/web_agent.py#L1224) | 1224 | `"                    \"مطلوب عقار للشراء\", \"مطلوب فيلا للشراء\","` | — |
+| [SRC-1AE03B9EC3-L001225](../../agents/web_agent.py#L1225) | 1225 | `"                    \"بدور على شقه تمليك\", \"بدور على شقه للشراء\","` | — |
+| [SRC-1AE03B9EC3-L001226](../../agents/web_agent.py#L1226) | 1226 | `"                    \"ابحث عن شقه للشراء\", \"عايز اشتري شقه\", \"عاوز اشتري شقه\","` | — |
+| [SRC-1AE03B9EC3-L001227](../../agents/web_agent.py#L1227) | 1227 | `"                    \"عايز اشتري عقار\", \"عاوز اشتري عقار\", \"اريد شراء شقه\","` | — |
+| [SRC-1AE03B9EC3-L001228](../../agents/web_agent.py#L1228) | 1228 | `"                    \"ارغب في شراء شقه\", \"اريد شراء عقار\", \"ارغب في شراء عقار\","` | — |
+| [SRC-1AE03B9EC3-L001229](../../agents/web_agent.py#L1229) | 1229 | `"                    \"مطلوب شراء\", \"عايز اشتري\", \"عاوز اشتري\", \"اريد شراء\","` | — |
+| [SRC-1AE03B9EC3-L001230](../../agents/web_agent.py#L1230) | 1230 | `"                    \"ارغب في شراء\", \"نرغب في شراء\", \"نرغب بشراء\", \"محتاج اشتري\","` | — |
+| [SRC-1AE03B9EC3-L001231](../../agents/web_agent.py#L1231) | 1231 | `"                    \"looking to buy\", \"looking to purchase\", \"want to buy\","` | — |
+| [SRC-1AE03B9EC3-L001232](../../agents/web_agent.py#L1232) | 1232 | `"                    \"wants to buy\", \"want to purchase\", \"wants to purchase\","` | — |
+| [SRC-1AE03B9EC3-L001233](../../agents/web_agent.py#L1233) | 1233 | `"                    \"seeking to buy\", \"seeking to purchase\", \"interested in buying\","` | — |
+| [SRC-1AE03B9EC3-L001234](../../agents/web_agent.py#L1234) | 1234 | `"                    \"interested in purchasing\", \"buyer looking to buy\","` | — |
+| [SRC-1AE03B9EC3-L001235](../../agents/web_agent.py#L1235) | 1235 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L001236](../../agents/web_agent.py#L1236) | 1236 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L001237](../../agents/web_agent.py#L1237) | 1237 | `"            ("` | — |
+| [SRC-1AE03B9EC3-L001238](../../agents/web_agent.py#L1238) | 1238 | `"                \"request_for_quotation\","` | — |
+| [SRC-1AE03B9EC3-L001239](../../agents/web_agent.py#L1239) | 1239 | `"                ("` | — |
+| [SRC-1AE03B9EC3-L001240](../../agents/web_agent.py#L1240) | 1240 | `"                    \"طلب عرض سعر\", \"مطلوب عرض سعر\", \"اطلب عرض سعر\","` | — |
+| [SRC-1AE03B9EC3-L001241](../../agents/web_agent.py#L1241) | 1241 | `"                    \"request for quotation\", \"request a quote\","` | — |
+| [SRC-1AE03B9EC3-L001242](../../agents/web_agent.py#L1242) | 1242 | `"                    \"request for quote\", \"seeking quotations\","` | — |
+| [SRC-1AE03B9EC3-L001243](../../agents/web_agent.py#L1243) | 1243 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L001244](../../agents/web_agent.py#L1244) | 1244 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L001245](../../agents/web_agent.py#L1245) | 1245 | `"            ("` | — |
+| [SRC-1AE03B9EC3-L001246](../../agents/web_agent.py#L1246) | 1246 | `"                \"stated_need\","` | — |
+| [SRC-1AE03B9EC3-L001247](../../agents/web_agent.py#L1247) | 1247 | `"                ("` | — |
+| [SRC-1AE03B9EC3-L001248](../../agents/web_agent.py#L1248) | 1248 | `"                    \"بدور على\", \"ابحث عن\", \"أبحث عن\", \"محتاج\", \"محتاجين\","` | — |
+| [SRC-1AE03B9EC3-L001249](../../agents/web_agent.py#L1249) | 1249 | `"                    \"looking for\", \"in need of\", \"need a supplier\","` | — |
+| [SRC-1AE03B9EC3-L001250](../../agents/web_agent.py#L1250) | 1250 | `"                ),"` | — |
+| [SRC-1AE03B9EC3-L001251](../../agents/web_agent.py#L1251) | 1251 | `"            ),"` | — |
+| [SRC-1AE03B9EC3-L001252](../../agents/web_agent.py#L1252) | 1252 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001253](../../agents/web_agent.py#L1253) | 1253 | `"        negations = ("` | — |
+| [SRC-1AE03B9EC3-L001254](../../agents/web_agent.py#L1254) | 1254 | `"            \"not looking to buy\", \"not interested in buying\","` | — |
+| [SRC-1AE03B9EC3-L001255](../../agents/web_agent.py#L1255) | 1255 | `"            \"not interested in purchasing\", \"no longer looking to buy\","` | — |
+| [SRC-1AE03B9EC3-L001256](../../agents/web_agent.py#L1256) | 1256 | `"            \"do not want to buy\", \"don't want to buy\","` | — |
+| [SRC-1AE03B9EC3-L001257](../../agents/web_agent.py#L1257) | 1257 | `"            \"looking for a buyer\", \"looking for buyers\", \"seeking a buyer\","` | — |
+| [SRC-1AE03B9EC3-L001258](../../agents/web_agent.py#L1258) | 1258 | `"            \"need a buyer\", \"buyer wanted\", \"buyers wanted\","` | — |
+| [SRC-1AE03B9EC3-L001259](../../agents/web_agent.py#L1259) | 1259 | `"            \"نبحث عن مشتري\", \"نبحث عن مشترين\", \"ابحث عن مشتري\","` | — |
+| [SRC-1AE03B9EC3-L001260](../../agents/web_agent.py#L1260) | 1260 | `"            \"مطلوب مشتري\", \"مطلوب مشترين\", \"نبحث عن عميل\", \"نبحث عن عملاء\","` | — |
+| [SRC-1AE03B9EC3-L001261](../../agents/web_agent.py#L1261) | 1261 | `"            \"مش بدور على\", \"مش عايز اشتري\", \"مش عاوز اشتري\","` | — |
+| [SRC-1AE03B9EC3-L001262](../../agents/web_agent.py#L1262) | 1262 | `"            \"لا اريد شراء\", \"لا ارغب في شراء\", \"مش محتاج اشتري\","` | — |
+| [SRC-1AE03B9EC3-L001263](../../agents/web_agent.py#L1263) | 1263 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001264](../../agents/web_agent.py#L1264) | 1264 | `"        for field, basis in evidence_fields:"` | — |
+| [SRC-1AE03B9EC3-L001265](../../agents/web_agent.py#L1265) | 1265 | `"            raw = source.get(field)"` | — |
+| [SRC-1AE03B9EC3-L001266](../../agents/web_agent.py#L1266) | 1266 | `"            if not isinstance(raw, str) or not raw.strip():"` | — |
+| [SRC-1AE03B9EC3-L001267](../../agents/web_agent.py#L1267) | 1267 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L001268](../../agents/web_agent.py#L1268) | 1268 | `"            normalized = _normalize_search_query(raw).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001269](../../agents/web_agent.py#L1269) | 1269 | `"            if any(_normalize_search_query(term).casefold() in normalized for term in negations):"` | — |
+| [SRC-1AE03B9EC3-L001270](../../agents/web_agent.py#L1270) | 1270 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L001271](../../agents/web_agent.py#L1271) | 1271 | `"            for signal_type, phrases in signal_phrases:"` | — |
+| [SRC-1AE03B9EC3-L001272](../../agents/web_agent.py#L1272) | 1272 | `"                for phrase in phrases:"` | — |
+| [SRC-1AE03B9EC3-L001273](../../agents/web_agent.py#L1273) | 1273 | `"                    needle = _normalize_search_query(phrase).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001274](../../agents/web_agent.py#L1274) | 1274 | `"                    if needle and needle in normalized:"` | — |
+| [SRC-1AE03B9EC3-L001275](../../agents/web_agent.py#L1275) | 1275 | `"                        return {"` | — |
+| [SRC-1AE03B9EC3-L001276](../../agents/web_agent.py#L1276) | 1276 | `"                            \"phrase\": phrase,"` | — |
+| [SRC-1AE03B9EC3-L001277](../../agents/web_agent.py#L1277) | 1277 | `"                            \"basis\": basis,"` | — |
+| [SRC-1AE03B9EC3-L001278](../../agents/web_agent.py#L1278) | 1278 | `"                            \"signal_type\": signal_type,"` | — |
+| [SRC-1AE03B9EC3-L001279](../../agents/web_agent.py#L1279) | 1279 | `"                            \"product_fit\": \"unassessed\","` | — |
+| [SRC-1AE03B9EC3-L001280](../../agents/web_agent.py#L1280) | 1280 | `"                        }"` | — |
+| [SRC-1AE03B9EC3-L001281](../../agents/web_agent.py#L1281) | 1281 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L001282](../../agents/web_agent.py#L1282) | 1282 | `""` | — |
+| [SRC-1AE03B9EC3-L001283](../../agents/web_agent.py#L1283) | 1283 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L001284](../../agents/web_agent.py#L1284) | 1284 | `"    def _lead_generation_queries("` | — |
+| [SRC-1AE03B9EC3-L001285](../../agents/web_agent.py#L1285) | 1285 | `"        question: str, existing_queries: list[str] \| None = None"` | — |
+| [SRC-1AE03B9EC3-L001286](../../agents/web_agent.py#L1286) | 1286 | `"    ) -> list[str]:"` | — |

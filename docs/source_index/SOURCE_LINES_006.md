@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000144 إلى SRC-59CF4B7DE8-L000631
+- النطاق: SRC-FDEEAFDFCA-L000083 إلى SRC-59CF4B7DE8-L000570
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000083](../../agents/request_budget.py#L83) | 83 | `"            10,"` | — |
+| [SRC-FDEEAFDFCA-L000084](../../agents/request_budget.py#L84) | 84 | `"            MAX_TIMEOUT_SECONDS,"` | — |
+| [SRC-FDEEAFDFCA-L000085](../../agents/request_budget.py#L85) | 85 | `"        )"` | — |
+| [SRC-FDEEAFDFCA-L000086](../../agents/request_budget.py#L86) | 86 | `"        limits = {"` | — |
+| [SRC-FDEEAFDFCA-L000087](../../agents/request_budget.py#L87) | 87 | `"            key: _bounded_env_int("` | — |
+| [SRC-FDEEAFDFCA-L000088](../../agents/request_budget.py#L88) | 88 | `"                f\"OMARAI_REQUEST_MAX_{key.upper()}\","` | — |
+| [SRC-FDEEAFDFCA-L000089](../../agents/request_budget.py#L89) | 89 | `"                defaults[0],"` | — |
+| [SRC-FDEEAFDFCA-L000090](../../agents/request_budget.py#L90) | 90 | `"                0 if key == \"tool_calls\" else 1,"` | — |
+| [SRC-FDEEAFDFCA-L000091](../../agents/request_budget.py#L91) | 91 | `"                defaults[1],"` | — |
+| [SRC-FDEEAFDFCA-L000092](../../agents/request_budget.py#L92) | 92 | `"            )"` | — |
+| [SRC-FDEEAFDFCA-L000093](../../agents/request_budget.py#L93) | 93 | `"            for key, defaults in RESOURCE_LIMITS.items()"` | — |
+| [SRC-FDEEAFDFCA-L000094](../../agents/request_budget.py#L94) | 94 | `"        }"` | — |
+| [SRC-FDEEAFDFCA-L000095](../../agents/request_budget.py#L95) | 95 | `"        if profile == \"hosted_smoke\":"` | — |
+| [SRC-FDEEAFDFCA-L000096](../../agents/request_budget.py#L96) | 96 | `"            timeout = min(timeout, HOSTED_SMOKE_BUDGET_TIMEOUT_SECONDS)"` | — |
+| [SRC-FDEEAFDFCA-L000097](../../agents/request_budget.py#L97) | 97 | `"            limits = {"` | — |
+| [SRC-FDEEAFDFCA-L000098](../../agents/request_budget.py#L98) | 98 | `"                key: min(limits[key], HOSTED_SMOKE_BUDGET_LIMITS[key])"` | — |
+| [SRC-FDEEAFDFCA-L000099](../../agents/request_budget.py#L99) | 99 | `"                for key in RESOURCE_LIMITS"` | — |
+| [SRC-FDEEAFDFCA-L000100](../../agents/request_budget.py#L100) | 100 | `"            }"` | — |
+| [SRC-FDEEAFDFCA-L000101](../../agents/request_budget.py#L101) | 101 | `"        return cls(timeout_seconds=timeout, limits=limits, profile=profile)"` | — |
+| [SRC-FDEEAFDFCA-L000102](../../agents/request_budget.py#L102) | 102 | `""` | — |
+| [SRC-FDEEAFDFCA-L000103](../../agents/request_budget.py#L103) | 103 | `"    def remaining_seconds(self) -> float:"` | — |
+| [SRC-FDEEAFDFCA-L000104](../../agents/request_budget.py#L104) | 104 | `"        return max(0.0, self.deadline - self._clock())"` | — |
+| [SRC-FDEEAFDFCA-L000105](../../agents/request_budget.py#L105) | 105 | `""` | — |
+| [SRC-FDEEAFDFCA-L000106](../../agents/request_budget.py#L106) | 106 | `"    def timeout_for(self, configured_seconds: float) -> float:"` | — |
+| [SRC-FDEEAFDFCA-L000107](../../agents/request_budget.py#L107) | 107 | `"        \"\"\"Cap one outbound timeout to time remaining; raise instead of starting at zero.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000108](../../agents/request_budget.py#L108) | 108 | `"        remaining = self.remaining_seconds()"` | — |
+| [SRC-FDEEAFDFCA-L000109](../../agents/request_budget.py#L109) | 109 | `"        if remaining <= 0:"` | — |
+| [SRC-FDEEAFDFCA-L000110](../../agents/request_budget.py#L110) | 110 | `"            with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000111](../../agents/request_budget.py#L111) | 111 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
+| [SRC-FDEEAFDFCA-L000112](../../agents/request_budget.py#L112) | 112 | `"            raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
+| [SRC-FDEEAFDFCA-L000113](../../agents/request_budget.py#L113) | 113 | `"        return min(float(configured_seconds), remaining)"` | — |
+| [SRC-FDEEAFDFCA-L000114](../../agents/request_budget.py#L114) | 114 | `""` | — |
+| [SRC-FDEEAFDFCA-L000115](../../agents/request_budget.py#L115) | 115 | `"    def remaining_units(self, resource: str) -> int:"` | — |
+| [SRC-FDEEAFDFCA-L000116](../../agents/request_budget.py#L116) | 116 | `"        \"\"\"Return unused units for a resource; zero means disabled, exhausted, or expired.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000117](../../agents/request_budget.py#L117) | 117 | `"        if resource not in self._limits:"` | — |
+| [SRC-FDEEAFDFCA-L000118](../../agents/request_budget.py#L118) | 118 | `"            raise ValueError(f\"unknown request-budget resource: {resource}\")"` | — |
+| [SRC-FDEEAFDFCA-L000119](../../agents/request_budget.py#L119) | 119 | `"        if self.remaining_seconds() <= 0:"` | — |
+| [SRC-FDEEAFDFCA-L000120](../../agents/request_budget.py#L120) | 120 | `"            return 0"` | — |
+| [SRC-FDEEAFDFCA-L000121](../../agents/request_budget.py#L121) | 121 | `"        with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000122](../../agents/request_budget.py#L122) | 122 | `"            return max(0, self._limits[resource] - self._counts[resource])"` | — |
+| [SRC-FDEEAFDFCA-L000123](../../agents/request_budget.py#L123) | 123 | `""` | — |
+| [SRC-FDEEAFDFCA-L000124](../../agents/request_budget.py#L124) | 124 | `"    def reserve(self, resource: str, amount: int = 1) -> None:"` | — |
+| [SRC-FDEEAFDFCA-L000125](../../agents/request_budget.py#L125) | 125 | `"        \"\"\"Atomically reserve resource units before initiating external work.\"\"\""` | — |
+| [SRC-FDEEAFDFCA-L000126](../../agents/request_budget.py#L126) | 126 | `"        if resource not in self._limits:"` | — |
+| [SRC-FDEEAFDFCA-L000127](../../agents/request_budget.py#L127) | 127 | `"            raise ValueError(f\"unknown request-budget resource: {resource}\")"` | — |
+| [SRC-FDEEAFDFCA-L000128](../../agents/request_budget.py#L128) | 128 | `"        if amount < 1:"` | — |
+| [SRC-FDEEAFDFCA-L000129](../../agents/request_budget.py#L129) | 129 | `"            raise ValueError(\"reservation amount must be positive\")"` | — |
+| [SRC-FDEEAFDFCA-L000130](../../agents/request_budget.py#L130) | 130 | `"        with self._lock:"` | — |
+| [SRC-FDEEAFDFCA-L000131](../../agents/request_budget.py#L131) | 131 | `"            if self.remaining_seconds() <= 0:"` | — |
+| [SRC-FDEEAFDFCA-L000132](../../agents/request_budget.py#L132) | 132 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
+| [SRC-FDEEAFDFCA-L000133](../../agents/request_budget.py#L133) | 133 | `"                raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
+| [SRC-FDEEAFDFCA-L000134](../../agents/request_budget.py#L134) | 134 | `"            limit = self._limits[resource]"` | — |
+| [SRC-FDEEAFDFCA-L000135](../../agents/request_budget.py#L135) | 135 | `"            if self._counts[resource] + amount > limit:"` | — |
+| [SRC-FDEEAFDFCA-L000136](../../agents/request_budget.py#L136) | 136 | `"                self._exhausted_reasons.add(resource)"` | — |
+| [SRC-FDEEAFDFCA-L000137](../../agents/request_budget.py#L137) | 137 | `"                raise RequestBudgetExceeded("` | — |
+| [SRC-FDEEAFDFCA-L000138](../../agents/request_budget.py#L138) | 138 | `"                    f\"تم بلوغ حد موارد الطلب: {resource}.\""` | — |
+| [SRC-FDEEAFDFCA-L000139](../../agents/request_budget.py#L139) | 139 | `"                )"` | — |
+| [SRC-FDEEAFDFCA-L000140](../../agents/request_budget.py#L140) | 140 | `"            self._counts[resource] += amount"` | — |
+| [SRC-FDEEAFDFCA-L000141](../../agents/request_budget.py#L141) | 141 | `""` | — |
+| [SRC-FDEEAFDFCA-L000142](../../agents/request_budget.py#L142) | 142 | `"    def snapshot(self) -> dict[str, Any]:"` | — |
+| [SRC-FDEEAFDFCA-L000143](../../agents/request_budget.py#L143) | 143 | `"        with self._lock:"` | — |
 | [SRC-FDEEAFDFCA-L000144](../../agents/request_budget.py#L144) | 144 | `"            counts = dict(self._counts)"` | — |
 | [SRC-FDEEAFDFCA-L000145](../../agents/request_budget.py#L145) | 145 | `"            limits = dict(self._limits)"` | — |
 | [SRC-FDEEAFDFCA-L000146](../../agents/request_budget.py#L146) | 146 | `"            exhausted_reasons = sorted(self._exhausted_reasons)"` | — |
@@ -773,64 +834,3 @@
 | [SRC-59CF4B7DE8-L000568](../../agents/research.py#L568) | 568 | `"        # Match publisher host boundaries; lookalike domains must not inherit a"` | — |
 | [SRC-59CF4B7DE8-L000569](../../agents/research.py#L569) | 569 | `"        # news label merely because their hostname contains a trusted brand string."` | — |
 | [SRC-59CF4B7DE8-L000570](../../agents/research.py#L570) | 570 | `"        trust = \"news\""` | — |
-| [SRC-59CF4B7DE8-L000571](../../agents/research.py#L571) | 571 | `"    elif platform != \"web\":"` | — |
-| [SRC-59CF4B7DE8-L000572](../../agents/research.py#L572) | 572 | `"        trust = \"social\""` | — |
-| [SRC-59CF4B7DE8-L000573](../../agents/research.py#L573) | 573 | `"    return {\"domain\": host, \"platform\": platform, \"source_class\": trust}"` | — |
-| [SRC-59CF4B7DE8-L000574](../../agents/research.py#L574) | 574 | `""` | — |
-| [SRC-59CF4B7DE8-L000575](../../agents/research.py#L575) | 575 | `""` | — |
-| [SRC-59CF4B7DE8-L000576](../../agents/research.py#L576) | 576 | `"def fuse_ranked_results("` | — |
-| [SRC-59CF4B7DE8-L000577](../../agents/research.py#L577) | 577 | `"    batches: list[dict[str, Any]], limit: int = MAX_FUSED_RESULTS"` | — |
-| [SRC-59CF4B7DE8-L000578](../../agents/research.py#L578) | 578 | `") -> list[dict[str, Any]]:"` | — |
-| [SRC-59CF4B7DE8-L000579](../../agents/research.py#L579) | 579 | `"    \"\"\"Reciprocal-rank-fuse result sets across queries/providers and dedupe URLs.\"\"\""` | — |
-| [SRC-59CF4B7DE8-L000580](../../agents/research.py#L580) | 580 | `"    accumulated: dict[str, dict[str, Any]] = {}"` | — |
-| [SRC-59CF4B7DE8-L000581](../../agents/research.py#L581) | 581 | `"    for batch in batches:"` | — |
-| [SRC-59CF4B7DE8-L000582](../../agents/research.py#L582) | 582 | `"        query = _compact(batch.get(\"query\", \"\"), 500)"` | — |
-| [SRC-59CF4B7DE8-L000583](../../agents/research.py#L583) | 583 | `"        provider = _compact(batch.get(\"provider\", \"search\"), 80)"` | — |
-| [SRC-59CF4B7DE8-L000584](../../agents/research.py#L584) | 584 | `"        results = batch.get(\"results\", [])"` | — |
-| [SRC-59CF4B7DE8-L000585](../../agents/research.py#L585) | 585 | `"        if not isinstance(results, list):"` | — |
-| [SRC-59CF4B7DE8-L000586](../../agents/research.py#L586) | 586 | `"            continue"` | — |
-| [SRC-59CF4B7DE8-L000587](../../agents/research.py#L587) | 587 | `"        for position, source in enumerate(results, 1):"` | — |
-| [SRC-59CF4B7DE8-L000588](../../agents/research.py#L588) | 588 | `"            if not isinstance(source, dict) or not source.get(\"url\"):"` | — |
-| [SRC-59CF4B7DE8-L000589](../../agents/research.py#L589) | 589 | `"                continue"` | — |
-| [SRC-59CF4B7DE8-L000590](../../agents/research.py#L590) | 590 | `"            url = _canonical_result_url(str(source[\"url\"]))"` | — |
-| [SRC-59CF4B7DE8-L000591](../../agents/research.py#L591) | 591 | `"            if not url.startswith((\"https://\", \"http://\")):"` | — |
-| [SRC-59CF4B7DE8-L000592](../../agents/research.py#L592) | 592 | `"                continue"` | — |
-| [SRC-59CF4B7DE8-L000593](../../agents/research.py#L593) | 593 | `"            entry = accumulated.get(url)"` | — |
-| [SRC-59CF4B7DE8-L000594](../../agents/research.py#L594) | 594 | `"            if entry is None:"` | — |
-| [SRC-59CF4B7DE8-L000595](../../agents/research.py#L595) | 595 | `"                publisher_url = _compact(source.get(\"publisher_url\") or \"\", 2048)"` | — |
-| [SRC-59CF4B7DE8-L000596](../../agents/research.py#L596) | 596 | `"                source_identity_url = publisher_url or str(source[\"url\"])"` | — |
-| [SRC-59CF4B7DE8-L000597](../../agents/research.py#L597) | 597 | `"                entry = {"` | — |
-| [SRC-59CF4B7DE8-L000598](../../agents/research.py#L598) | 598 | `"                    \"title\": _compact(source.get(\"title\") or \"نتيجة ويب\", 300),"` | — |
-| [SRC-59CF4B7DE8-L000599](../../agents/research.py#L599) | 599 | `"                    \"url\": str(source[\"url\"]),"` | — |
-| [SRC-59CF4B7DE8-L000600](../../agents/research.py#L600) | 600 | `"                    \"snippet\": _compact(source.get(\"snippet\") or \"\", 1800),"` | — |
-| [SRC-59CF4B7DE8-L000601](../../agents/research.py#L601) | 601 | `"                    \"page_text\": _compact(source.get(\"page_text\") or \"\", 12_000),"` | — |
-| [SRC-59CF4B7DE8-L000602](../../agents/research.py#L602) | 602 | `"                    \"page_fetched\": bool(source.get(\"page_fetched\")),"` | — |
-| [SRC-59CF4B7DE8-L000603](../../agents/research.py#L603) | 603 | `"                    \"providers\": [],"` | — |
-| [SRC-59CF4B7DE8-L000604](../../agents/research.py#L604) | 604 | `"                    \"queries\": [],"` | — |
-| [SRC-59CF4B7DE8-L000605](../../agents/research.py#L605) | 605 | `"                    \"rank_score\": 0.0,"` | — |
-| [SRC-59CF4B7DE8-L000606](../../agents/research.py#L606) | 606 | `"                    \"best_raw_rank\": position,"` | — |
-| [SRC-59CF4B7DE8-L000607](../../agents/research.py#L607) | 607 | `"                    \"published_at\": _compact(source.get(\"published_at\") or \"\", 100),"` | — |
-| [SRC-59CF4B7DE8-L000608](../../agents/research.py#L608) | 608 | `"                    \"publisher_name\": _compact(source.get(\"publisher_name\") or \"\", 200),"` | — |
-| [SRC-59CF4B7DE8-L000609](../../agents/research.py#L609) | 609 | `"                    \"publisher_url\": publisher_url,"` | — |
-| [SRC-59CF4B7DE8-L000610](../../agents/research.py#L610) | 610 | `"                    \"publisher_domain\": _compact(source.get(\"publisher_domain\") or \"\", 300),"` | — |
-| [SRC-59CF4B7DE8-L000611](../../agents/research.py#L611) | 611 | `"                }"` | — |
-| [SRC-59CF4B7DE8-L000612](../../agents/research.py#L612) | 612 | `"                entry.update(classify_source(source_identity_url))"` | — |
-| [SRC-59CF4B7DE8-L000613](../../agents/research.py#L613) | 613 | `"                accumulated[url] = entry"` | — |
-| [SRC-59CF4B7DE8-L000614](../../agents/research.py#L614) | 614 | `"            elif source.get(\"publisher_url\") and not entry.get(\"publisher_url\"):"` | — |
-| [SRC-59CF4B7DE8-L000615](../../agents/research.py#L615) | 615 | `"                entry[\"publisher_url\"] = _compact(source.get(\"publisher_url\"), 2048)"` | — |
-| [SRC-59CF4B7DE8-L000616](../../agents/research.py#L616) | 616 | `"                entry[\"publisher_name\"] = _compact(source.get(\"publisher_name\") or \"\", 200)"` | — |
-| [SRC-59CF4B7DE8-L000617](../../agents/research.py#L617) | 617 | `"                entry[\"publisher_domain\"] = _compact(source.get(\"publisher_domain\") or \"\", 300)"` | — |
-| [SRC-59CF4B7DE8-L000618](../../agents/research.py#L618) | 618 | `"                entry.update(classify_source(entry[\"publisher_url\"]))"` | — |
-| [SRC-59CF4B7DE8-L000619](../../agents/research.py#L619) | 619 | `"            entry[\"rank_score\"] += 1.0 / (60 + position)"` | — |
-| [SRC-59CF4B7DE8-L000620](../../agents/research.py#L620) | 620 | `"            entry[\"best_raw_rank\"] = min(entry[\"best_raw_rank\"], position)"` | — |
-| [SRC-59CF4B7DE8-L000621](../../agents/research.py#L621) | 621 | `"            if provider and provider not in entry[\"providers\"]:"` | — |
-| [SRC-59CF4B7DE8-L000622](../../agents/research.py#L622) | 622 | `"                entry[\"providers\"].append(provider)"` | — |
-| [SRC-59CF4B7DE8-L000623](../../agents/research.py#L623) | 623 | `"            if query and query not in entry[\"queries\"]:"` | — |
-| [SRC-59CF4B7DE8-L000624](../../agents/research.py#L624) | 624 | `"                entry[\"queries\"].append(query)"` | — |
-| [SRC-59CF4B7DE8-L000625](../../agents/research.py#L625) | 625 | `"            if len(str(source.get(\"snippet\") or \"\")) > len(entry[\"snippet\"]):"` | — |
-| [SRC-59CF4B7DE8-L000626](../../agents/research.py#L626) | 626 | `"                entry[\"snippet\"] = _compact(source.get(\"snippet\"), 1800)"` | — |
-| [SRC-59CF4B7DE8-L000627](../../agents/research.py#L627) | 627 | `"            if source.get(\"published_at\") and not entry.get(\"published_at\"):"` | — |
-| [SRC-59CF4B7DE8-L000628](../../agents/research.py#L628) | 628 | `"                entry[\"published_at\"] = _compact(source[\"published_at\"], 100)"` | — |
-| [SRC-59CF4B7DE8-L000629](../../agents/research.py#L629) | 629 | `"            if source.get(\"page_text\") and not entry[\"page_text\"]:"` | — |
-| [SRC-59CF4B7DE8-L000630](../../agents/research.py#L630) | 630 | `"                entry[\"page_text\"] = _compact(source[\"page_text\"], 12_000)"` | — |
-| [SRC-59CF4B7DE8-L000631](../../agents/research.py#L631) | 631 | `"                entry[\"page_fetched\"] = True"` | — |

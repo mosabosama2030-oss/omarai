@@ -4,9 +4,60 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-65551FB29F-L000153 إلى SRC-41EDB66D3C-L000377
+- النطاق: SRC-B9C3015420-L000251 إلى SRC-41EDB66D3C-L000183
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-B9C3015420 — [docs/OMARAI_REQUIREMENTS_REGISTER.md](../OMARAI_REQUIREMENTS_REGISTER.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B9C3015420-L000251](../OMARAI_REQUIREMENTS_REGISTER.md#L251) | 251 | ``"- **الإجراء المحجوب:** يتطلب إثبات النسخة المنشورة ضبط `PUBLIC_OMARAI_BUILD_SHA` على SHA الكامل الصحيح ثم إعادة البناء/النشر والتحقق من تطابق `/api/health`. هذا تغيير استضافة منفصل يحتاج موافقة المدير البشري."`` | — |
+| [SRC-B9C3015420-L000252](../OMARAI_REQUIREMENTS_REGISTER.md#L252) | 252 | ``"- **الحالة التجريبية:** baseline/candidate على الحالات نفسها والمراجعات البشرية الكاملة = `NOT_RUN`. مقاييس الدقة والاستدعاء والإخلاص ودعم الاستشهادات = `NOT_RUN/UNKNOWN`. التكلفة الكاملة = `UNKNOWN` حتى وجود مصالحة موثوقة لكل حالة."`` | — |
+| [SRC-B9C3015420-L000253](../OMARAI_REQUIREMENTS_REGISTER.md#L253) | 253 | `""` | — |
+| [SRC-B9C3015420-L000254](../OMARAI_REQUIREMENTS_REGISTER.md#L254) | 254 | `"**القرار:** إطار التقييم واختباراته الآلية موجودان، لكن قبول الاستضافة وتحسن الجودة الفعلي غير مثبتين؛ لا توجد نسبة تحسن يمكن إعلانها."` | — |
+| [SRC-B9C3015420-L000255](../OMARAI_REQUIREMENTS_REGISTER.md#L255) | 255 | `""` | — |
+| [SRC-B9C3015420-L000256](../OMARAI_REQUIREMENTS_REGISTER.md#L256) | 256 | `"## ملحق متابعة واجهة مساحة العمل — 3 نوفمبر 2026"` | — |
+| [SRC-B9C3015420-L000257](../OMARAI_REQUIREMENTS_REGISTER.md#L257) | 257 | `""` | — |
+| [SRC-B9C3015420-L000258](../OMARAI_REQUIREMENTS_REGISTER.md#L258) | 258 | ``"- **الفرع:** `feat/omarai-rtl-workspace`، مبني من `main` عند `f8c5e4da63006ba6c2f57ced4e822f5694d3dc4e`."`` | — |
+| [SRC-B9C3015420-L000259](../OMARAI_REQUIREMENTS_REGISTER.md#L259) | 259 | ``"- **النطاق:** أضيف مسار `/workspace` وواجهة RTL تتصل بجلسة المستخدم وسجل leads الحالي وتحليل الإشارة وحفظها وتحديث الحالة. لم تتم إضافة مخططات بيانات أو APIs للمنتج/الحملات/الشركات/المهام أو إدارة الموصلات. شاشة حالات النظام تقرأ `/api/health` كإعدادات فقط ولا تختبر الوصول الخارجي."`` | — |
+| [SRC-B9C3015420-L000260](../OMARAI_REQUIREMENTS_REGISTER.md#L260) | 260 | ``"- **صلاحيات الكتابة:** أصلح شرط الواجهة ليتطابق مع `LeadStore.ALLOWED_ROLES`؛ أدوار `owner/admin/manager/sales_agent` مسموح لها بواجهة الكتابة، و`viewer` للقراءة فقط. اختبار parity يقارن allowlist الواجهة بقائمة الخادم."`` | — |
+| [SRC-B9C3015420-L000261](../OMARAI_REQUIREMENTS_REGISTER.md#L261) | 261 | ``"- **UX-001:** لم تُرقَّ الحالة؛ وجود `lang=ar` و`dir=rtl` في HTML دليل مصدر، لكنه لا يغني عن اختبار متصفح للنص المختلط وتخطيط الأجهزة."`` | — |
+| [SRC-B9C3015420-L000262](../OMARAI_REQUIREMENTS_REGISTER.md#L262) | 262 | `"- **UX-002:** لم تُرقَّ الحالة؛ توجد عناصر HTML أصلية وتركيز مرئي وبعض التنقل بلوحة المفاتيح، لكن لم ينفذ فحص WCAG أو مراجعة يدوية لقارئ الشاشة."` | — |
+| [SRC-B9C3015420-L000263](../OMARAI_REQUIREMENTS_REGISTER.md#L263) | 263 | `"- **UX-003:** لم تُرقَّ الحالة؛ حالات المصادقة وعدم توفر الوحدات موضحة في الواجهة، لكن رحلة الفشل الجزئي والرسائل لم تُختبر بعد."` | — |
+| [SRC-B9C3015420-L000264](../OMARAI_REQUIREMENTS_REGISTER.md#L264) | 264 | ``"- **UX-004 / SEC-006:** بقيت الحالة التاريخية دون ترقية؛ الصفحة تستخدم `textContent` لبيانات السجل وروابط HTTP(S) التي تخضع للتحقق، لكن اختبار XSS شامل/متصفح لم يُنفذ."`` | — |
+| [SRC-B9C3015420-L000265](../OMARAI_REQUIREMENTS_REGISTER.md#L265) | 265 | ``"- **CI:** التشغيل النهائي [41764611284](https://github.com/mosabosama2030-oss/omarai/actions/runs/41764611284) على الرأس `781cd3f5a67aa156ca615077c097a92df4fa786a` ناجح: container-build/API smoke، Ruff، فحوص الفهارس، Pytest **844/844 على Python 3.11 و844/844 على Python 3.12**. لم تُشغّل الاختبارات محليًا."`` | — |
+| [SRC-B9C3015420-L000266](../OMARAI_REQUIREMENTS_REGISTER.md#L266) | 266 | ``"- **قبول بصري/مستضاف:** `NOT_RUN`؛ لم يُجرَ اختبار متصفح/أجهزة حقيقي أو WCAG يدوي، ولم يُنشر هذا الفرع."`` | — |
+| [SRC-B9C3015420-L000267](../OMARAI_REQUIREMENTS_REGISTER.md#L267) | 267 | `""` | — |
+| [SRC-B9C3015420-L000268](../OMARAI_REQUIREMENTS_REGISTER.md#L268) | 268 | ``"هذا الملحق يسجل تغيير الفرع ولا يغيّر تقييم المتطلبات إلى `VERIFIED`، ولا يصف الحالة على `main` أو الاستضافة."`` | — |
+| [SRC-B9C3015420-L000269](../OMARAI_REQUIREMENTS_REGISTER.md#L269) | 269 | `""` | — |
+| [SRC-B9C3015420-L000270](../OMARAI_REQUIREMENTS_REGISTER.md#L270) | 270 | `"## ملحق مراجعة اتساق واجهة مساحة العمل — 4 نوفمبر 2026"` | — |
+| [SRC-B9C3015420-L000271](../OMARAI_REQUIREMENTS_REGISTER.md#L271) | 271 | `""` | — |
+| [SRC-B9C3015420-L000272](../OMARAI_REQUIREMENTS_REGISTER.md#L272) | 272 | ``"- **VERIFIED:** PR #150 كان متداخلًا مع PR #151 في `api/omarai.py` و`web/workspace.html` واختلفا على مسار `/`. اعتمد التنفيذ الحالي الحفاظ على `/` و`/agent` لوكيل البحث، `/leads` للوحة القديمة، و`/workspace` للواجهة الجديدة. أضيف اختبار تكاملي يمنع تغيير هذه المسارات دون قصد."`` | — |
+| [SRC-B9C3015420-L000273](../OMARAI_REQUIREMENTS_REGISTER.md#L273) | 273 | ``"- **FIXED_AND_TESTED:** فشل تسجيل الخروج لم يعد يمسح حالة الجلسة في المتصفح؛ لا تُصفّر الحالة إلا بعد استجابة نجاح من `/api/session/logout`، وإلا تظهر رسالة خطأ وتبقى الجلسة كما هي."`` | — |
+| [SRC-B9C3015420-L000274](../OMARAI_REQUIREMENTS_REGISTER.md#L274) | 274 | `"- **FIXED_AND_TESTED:** أصبحت قائمة الواجهة 16 وحدة؛ فصل مركز الأدلة عن سجل التدقيق، وتعطيل تفاصيل الفرص إلى أن تتوفر لها واجهة API حقيقية. الوحدات غير المنفذة لا تُعرض كأنها موصولة."` | — |
+| [SRC-B9C3015420-L000275](../OMARAI_REQUIREMENTS_REGISTER.md#L275) | 275 | `"- **FIXED_AND_TESTED:** اختبارات تحقق من روابط HTTP/HTTPS فقط، وعدم إدراج النصوص غير الموثوقة كـHTML، ومنع استخدام تخزين المتصفح لرمز الوصول."` | — |
+| [SRC-B9C3015420-L000276](../OMARAI_REQUIREMENTS_REGISTER.md#L276) | 276 | ``"- **CI:** [التشغيل 41854365946](https://github.com/mosabosama2030-oss/omarai/actions/runs/41854365946) على SHA `2f9a7ed8f7cb454ea31f5e01636e7adb841ec15b`: 848 اختبارًا ناجحًا على Python 3.11 و848 على Python 3.12، وRuff وفحوص الفهارس وبناء الحاوية واختبار API المحمية ناجحة."`` | — |
+| [SRC-B9C3015420-L000277](../OMARAI_REQUIREMENTS_REGISTER.md#L277) | 277 | `"- **NOT_RUN:** اختبار متصفح حقيقي، واختبار Android/iOS/desktop، واختبار WCAG يدوي، والقبول المستضاف. لا يثبت CI وحده هذه النتائج."` | — |
+| [SRC-B9C3015420-L000278](../OMARAI_REQUIREMENTS_REGISTER.md#L278) | 278 | ``"- **مخاطرة قائمة خارج نطاق PR:** توثيق Python الرسمي لا يوصي باستخدام `http.server` للإنتاج؛ يتطلب الانتقال إلى خادم تطبيق إنتاجي أو وضعه خلف طبقة تشغيل مناسبة مهمة معمارية مستقلة، لا تُخلط مع إصلاح واجهة المستخدم."`` | — |
+| [SRC-B9C3015420-L000279](../OMARAI_REQUIREMENTS_REGISTER.md#L279) | 279 | `""` | — |
+| [SRC-B9C3015420-L000280](../OMARAI_REQUIREMENTS_REGISTER.md#L280) | 280 | `""` | — |
+| [SRC-B9C3015420-L000281](../OMARAI_REQUIREMENTS_REGISTER.md#L281) | 281 | `"---"` | — |
+| [SRC-B9C3015420-L000282](../OMARAI_REQUIREMENTS_REGISTER.md#L282) | 282 | `""` | — |
+| [SRC-B9C3015420-L000283](../OMARAI_REQUIREMENTS_REGISTER.md#L283) | 283 | `"## متطلبات إضافية لفهم نية البحث — 8 نوفمبر 2026"` | — |
+| [SRC-B9C3015420-L000284](../OMARAI_REQUIREMENTS_REGISTER.md#L284) | 284 | `""` | — |
+| [SRC-B9C3015420-L000285](../OMARAI_REQUIREMENTS_REGISTER.md#L285) | 285 | ``"هذه الإضافة منفصلة عن لقطة الجدول التاريخية أعلاه؛ حالة التنفيذ أدناه تخص فرع الإصلاح فقط ولا تصف `main` أو نشرًا حيًا."`` | — |
+| [SRC-B9C3015420-L000286](../OMARAI_REQUIREMENTS_REGISTER.md#L286) | 286 | `""` | — |
+| [SRC-B9C3015420-L000287](../OMARAI_REQUIREMENTS_REGISTER.md#L287) | 287 | `"\| ID \| المجال \| المتطلب القابل للتحقق \| الأولوية \| دليل التنفيذ على الفرع \| الحالة والحدود \|"` | — |
+| [SRC-B9C3015420-L000288](../OMARAI_REQUIREMENTS_REGISTER.md#L288) | 288 | `"\|---\|---\|---\|---\|---\|---\|"` | — |
+| [SRC-B9C3015420-L000289](../OMARAI_REQUIREMENTS_REGISTER.md#L289) | 289 | ``"\| INTENT-001 \| فهم الطلب \| إذا تضمنت صيغة سؤال القدرة هدف بحث خارجيًا ملموسًا، يوجّه النظام إلى مسار البحث بدل إجابة قدرة محلية فقط. \| P1 \| `agents/web_agent.py`, `agents/intent_router.py`; اختبارات في `tests/test_web_agent.py` و`tests/test_intent_router.py`; الأمر `/tmp/omarai-venv/bin/python -m pytest -q`: `927 passed, 2 skipped` على فرع `fix/intent-routing-navigation-2026-11-08` المبني على `850c8c83aeaeb6838dd0f0474e5b8ef9c43e7e6f`. \| FIXED_AND_TESTED محليًا على الفرع؛ CI والدمج والاستضافة الحية NOT_RUN. \|"`` | — |
+| [SRC-B9C3015420-L000290](../OMARAI_REQUIREMENTS_REGISTER.md#L290) | 290 | ``"\| SEARCH-001 \| توجيه البحث \| يميّز تصنيف «الموقع الجغرافي» عن طلب رابط/صفحة ويب حتى لا يعامل سؤال جغرافي كتنقل إلى صفحة واحدة أو يضعف معيار الأدلة دون قصد. \| P1 \| اختبارات انحدار في `tests/test_web_agent.py`; Ruff `All checks passed!`; `git diff --check` ناجح على الفرع نفسه. \| FIXED_AND_TESTED محليًا على الفرع؛ اختبار موفر حي، corpus لغوي موسع، ومراجعة بشرية NOT_RUN. \|"`` | — |
+| [SRC-B9C3015420-L000291](../OMARAI_REQUIREMENTS_REGISTER.md#L291) | 291 | `""` | — |
+| [SRC-B9C3015420-L000292](../OMARAI_REQUIREMENTS_REGISTER.md#L292) | 292 | `"التفاصيل ومعايير الإغلاق وحدود الدليل: [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)، المدخلان OMR-SEARCH-004 وOMR-SEARCH-005. لا يُرفع أي متطلب إلى VERIFIED على أساس هذا الاختبار المحلي وحده."` | — |
 ## وثائق وفهرسة
 
 ### FILE-65551FB29F — [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1)
@@ -16,6 +67,158 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-65551FB29F-L000001](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | 1 | `"# Omarai — سجل المتطلبات والتتبع والنضج وبوابات الاعتماد"` | — |
+| [SRC-65551FB29F-L000002](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L2) | 2 | `""` | — |
+| [SRC-65551FB29F-L000003](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REQ-GOV-001  "` | — |
+| [SRC-65551FB29F-L000004](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L4) | 4 | `"**الإصدار:** 1.2.0  "` | — |
+| [SRC-65551FB29F-L000005](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L5) | 5 | `"**الحالة:** متطلب حوكمة تأسيسي مقترح للاعتماد  "` | — |
+| [SRC-65551FB29F-L000006](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L6) | 6 | `"**المالك وصاحب قرار الاعتماد:** مدير المشروع البشري  "` | — |
+| [SRC-65551FB29F-L000007](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L7) | 7 | `"**النطاق:** كل سلوك المستخدم، والمعمارية، والبيانات، والأمن، والبحث، والذكاء الاصطناعي، والأدوات، والاختبارات، والنشر، والتشغيل  "` | — |
+| [SRC-65551FB29F-L000008](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L8) | 8 | ``"**يرتبط بـ:** `AGENTS.md`، و`OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md`، و`OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md`، و`OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md`؛ ويشكل هذا الملف طبقة التتبع وإثبات التنفيذ، لا بديلًا عن المعايير الفنية. ويجب استخدام القسم 17 من المعمارية لتحديد ضوابط الأمن السيبراني وحدود الثقة والاختبارات المرتبطة بكل تغيير في الأدوات أو المهارات أو سير العمل أو الوكلاء. ويُنفذ سجل البنود الأولي في [OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md)، ويجب تحديثه بعد كل تدقيق جوهري.  "`` | — |
+| [SRC-65551FB29F-L000009](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L9) | 9 | `"**قاعدة الحالة:** إنشاء المتطلب أو توثيقه لا يثبت تنفيذه. يجب أن يبقى كل بند غير مفحوص UNKNOWN أو PROPOSED إلى أن يثبت العكس بدليل مرتبط بنسخة كود وبيئة محددتين."` | — |
+| [SRC-65551FB29F-L000010](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L10) | 10 | `""` | — |
+| [SRC-65551FB29F-L000011](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L11) | 11 | `"---"` | — |
+| [SRC-65551FB29F-L000012](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L12) | 12 | `""` | — |
+| [SRC-65551FB29F-L000013](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L13) | 13 | `"## 0. الغرض الأعلى"` | — |
+| [SRC-65551FB29F-L000014](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L14) | 14 | `""` | — |
+| [SRC-65551FB29F-L000015](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L15) | 15 | `"هذه الوثيقة تحول مجموعة المتطلبات الهندسية إلى نظام حوكمة قابل للاستمرار: ما الذي نطلبه؟ لماذا؟ متى ينطبق؟ أين يُنفذ؟ كيف يُختبر؟ ما الدليل؟ ما المخاطر المتبقية؟ ومن يملك قرار القبول؟"` | — |
+| [SRC-65551FB29F-L000016](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L16) | 16 | `""` | — |
+| [SRC-65551FB29F-L000017](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L17) | 17 | `"الهدف ليس تكبير عدد الأوراق أو تقليد كل تقنية تستخدمها شركة عملاقة، بل منع الفجوات من الضياع بين التخطيط والتصميم والتنفيذ والاختبار والتشغيل. لا توجد قائمة عامة يمكنها سرد كل سياسة داخلية لدى كل منصة عالمية؛ هذا السجل يغطي المجالات العامة المعروفة ويجعل مراجعة النواقص عملية مستمرة."` | — |
+| [SRC-65551FB29F-L000018](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L18) | 18 | `""` | — |
+| [SRC-65551FB29F-L000019](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L19) | 19 | `"## 1. مبادئ غير قابلة للتفاوض"` | — |
+| [SRC-65551FB29F-L000020](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L20) | 20 | `""` | — |
+| [SRC-65551FB29F-L000021](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L21) | 21 | `"1. **الدليل يتقدم على الادعاء:** لا تُعلن قدرة مثبتة بلا تنفيذ وفحص مناسبين."` | — |
+| [SRC-65551FB29F-L000022](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L22) | 22 | `"2. **المتطلب لا يساوي التنفيذ:** الدستور يحدد المطلوب، والكود والاختبارات والقياسات تثبت الحالة."` | — |
+| [SRC-65551FB29F-L000023](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L23) | 23 | `"3. **حدود الصلاحيات مستقلة عن النموذج:** لا تستطيع مخرجات LLM منح نفسها أذونات أو تجاوز السياسة."` | — |
+| [SRC-65551FB29F-L000024](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L24) | 24 | `"4. **الفشل سلوك يجب تصميمه:** كل اعتماد خارجي قد يتأخر أو يرفض أو يتوقف أو يعيد محتوى غير صالح."` | — |
+| [SRC-65551FB29F-L000025](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L25) | 25 | `"5. **التوسع يبدأ بالحدود والقياس:** لا نضيف بنية موزعة قبل معرفة المشكلة التي ستحلها."` | — |
+| [SRC-65551FB29F-L000026](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L26) | 26 | `"6. **الخصوصية جزء من تصميم البيانات:** لا ننتظر إلى ما بعد تجميع البيانات لتحديد ما كان يجب عدم جمعه."` | — |
+| [SRC-65551FB29F-L000027](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L27) | 27 | `"7. **كل تغيير له أثر ارتدادي محتمل:** لا بد من اختبار ما كُسر، لا ما أُضيف فقط."` | — |
+| [SRC-65551FB29F-L000028](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L28) | 28 | `"8. **المخاطر غير المعروفة يجب أن تكون مرئية:** UNKNOWN أكثر احترافية من اختلاق الثقة."` | — |
+| [SRC-65551FB29F-L000029](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L29) | 29 | `"9. **التعقيد يحتاج مبررًا ومالكًا:** كل خدمة أو cache أو queue أو abstraction تضيف دورة حياة وفشلًا وتكلفة."` | — |
+| [SRC-65551FB29F-L000030](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L30) | 30 | `"10. **الموافقة البشرية على الدمج والنشر والمخاطر الحرجة:** يملك الوكيل حق التحليل والتعديل ضمن التفويض، لا حق اعتماد نفسه أو نشر الإنتاج تلقائيًا."` | — |
+| [SRC-65551FB29F-L000031](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L31) | 31 | `"11. **المتطلبات تتدرج حسب الخطر:** لا نفرض multi-region أو SSO أو Kubernetes على نسخة فردية لا تحتاجها، ولا نتجاهل خطرًا لازمًا بحجة صغر المشروع."` | — |
+| [SRC-65551FB29F-L000032](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L32) | 32 | `"12. **كل قدرة يجب أن يكون لها مسار اختبار:** يدوي موثق أو آلي قابل للتكرار، ويفضل الآلي حين يكون ذلك عمليًا."` | — |
+| [SRC-65551FB29F-L000033](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L33) | 33 | `""` | — |
+| [SRC-65551FB29F-L000034](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L34) | 34 | `"---"` | — |
+| [SRC-65551FB29F-L000035](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L35) | 35 | `""` | — |
+| [SRC-65551FB29F-L000036](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L36) | 36 | `"# الجزء الأول — الأدوار والخبرات التي يجب أن تمر بها المراجعة"` | — |
+| [SRC-65551FB29F-L000037](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L37) | 37 | `""` | — |
+| [SRC-65551FB29F-L000038](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L38) | 38 | `"الأدوار التالية **عدسات مراجعة تخصصية** يجب استدعاء ما ينطبق منها. هذه القائمة لا تعني أن أشخاصًا متخصصين فعليين راجعوا المستودع. يمكن لشخص واحد أو مجلس وكلاء أن يستخدمها كقائمة مراجعة، لكن المراجعة الآلية ليست بديلًا عن الاختبار أو خبير مؤهل في مجال عالي الأثر."` | — |
+| [SRC-65551FB29F-L000039](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L39) | 39 | `""` | — |
+| [SRC-65551FB29F-L000040](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L40) | 40 | `"## 2. مصفوفة المراجعة متعددة التخصصات"` | — |
+| [SRC-65551FB29F-L000041](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L41) | 41 | `""` | — |
+| [SRC-65551FB29F-L000042](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L42) | 42 | `"\| # \| عدسة الخبرة \| الأسئلة المحورية \| الأدلة المقبولة \|"` | — |
+| [SRC-65551FB29F-L000043](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L43) | 43 | `"\|---:\|---\|---\|---\|"` | — |
+| [SRC-65551FB29F-L000044](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L44) | 44 | `"\| 1 \| مدير المنتج/متطلبات المنتج \| ما حاجة المستخدم؟ ما الذي لا نعد به؟ \| حالات استخدام، معايير قبول، حدود واضحة \|"` | — |
+| [SRC-65551FB29F-L000045](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L45) | 45 | `"\| 2 \| مهندس الأنظمة \| هل تتسق المكونات والتدفقات ونقاط الفشل؟ \| خريطة تدفق، حدود مسؤولية، تحليل أثر \|"` | — |
+| [SRC-65551FB29F-L000046](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L46) | 46 | `"\| 3 \| مهندس البرمجيات والمعمارية \| هل الوحدات قابلة للصيانة والتغيير؟ \| عقود، اعتماديات، ADR، اختبارات \|"` | — |
+| [SRC-65551FB29F-L000047](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L47) | 47 | `"\| 4 \| مهندس قابلية التوسع \| ما حد السعة؟ أين الاختناق؟ \| حمل قابل للتكرار، p95/p99، موارد \|"` | — |
+| [SRC-65551FB29F-L000048](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L48) | 48 | `"\| 5 \| مهندس SRE والموثوقية \| كيف نفهم الفشل ونستعيد الخدمة؟ \| SLI/SLO مناسبة، runbooks، اختبارات استعادة \|"` | — |
+| [SRC-65551FB29F-L000049](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L49) | 49 | `"\| 6 \| مهندس البنية السحابية \| هل الإعداد والتوزيع ملائمان للمنصة؟ \| إعدادات موثقة، مراجعة نقاط الفشل، دليل نشر \|"` | — |
+| [SRC-65551FB29F-L000050](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L50) | 50 | `"\| 7 \| مهندس الأمن السيبراني \| ما الأصول والتهديدات والحدود؟ \| نموذج تهديد، اختبارات أمن، معالجة موثقة \|"` | — |
+| [SRC-65551FB29F-L000051](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L51) | 51 | `"\| 8 \| مهندس هوية وتفويض \| من يحق له فعل ماذا على أي مورد؟ \| اختبارات صلاحيات مباشرة على API \|"` | — |
+| [SRC-65551FB29F-L000052](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L52) | 52 | `"\| 9 \| مهندس خصوصية وحوكمة بيانات \| ماذا نجمع ونشارك ونحتفظ به؟ \| جرد بيانات، قواعد احتفاظ وحذف \|"` | — |
+| [SRC-65551FB29F-L000053](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L53) | 53 | `"\| 10 \| مهندس بيانات وتخزين \| هل البيانات صحيحة ومتسقة وقابلة للاستعادة؟ \| قيود وسلامة وترحيلات واختبار استعادة \|"` | — |
+| [SRC-65551FB29F-L000054](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L54) | 54 | `"\| 11 \| مهندس API والتكامل \| هل العقود مستقرة وآمنة ومفهومة؟ \| schemas، contract tests، سياسة الإصدارات \|"` | — |
+| [SRC-65551FB29F-L000055](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L55) | 55 | `"\| 12 \| مهندس شبكات \| هل الاتصالات مقيدة وآمنة؟ \| مهلات، egress controls، اختبارات SSRF/TLS \|"` | — |
+| [SRC-65551FB29F-L000056](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L56) | 56 | `"\| 13 \| مهندس بحث واسترجاع \| هل المصادر والمقاطع ذات صلة وحديثة؟ \| مجموعة أسئلة، مقاييس استرجاع، تحليل مصادر \|"` | — |
+| [SRC-65551FB29F-L000057](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L57) | 57 | `"\| 14 \| خبير تقييم المعلومات \| هل الدليل يدعم الادعاء فعلًا؟ \| اختبارات citation/claim support، تعارضات \|"` | — |
+| [SRC-65551FB29F-L000058](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L58) | 58 | `"\| 15 \| مهندس ذكاء اصطناعي/وكلاء \| هل التخطيط والتنفيذ والحدود منضبطة؟ \| حدود الخطوات، tool schemas، traces آمنة \|"` | — |
+| [SRC-65551FB29F-L000059](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L59) | 59 | `"\| 16 \| خبير أمن GenAI \| هل توجد حقن تعليمات أو تسريب أو إساءة أدوات؟ \| red-team tests، سيناريوهات هجوم وإغلاقها \|"` | — |
+| [SRC-65551FB29F-L000060](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L60) | 60 | `"\| 17 \| مهندس تقييم النماذج \| هل تغيير النموذج يحسن الجودة حقًا؟ \| eval suite، مقارنة إصدارات، حدود عينة \|"` | — |
+| [SRC-65551FB29F-L000061](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L61) | 61 | `"\| 18 \| مهندس MLOps/LLMOps \| هل إصدار النموذج والموجهات والتكوين معروف؟ \| version IDs، تكوينات، نتائج قابلة للتكرار \|"` | — |
+| [SRC-65551FB29F-L000062](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L62) | 62 | `"\| 19 \| مهندس الجودة والاختبار \| هل الاختبارات تكشف الانكسار الحقيقي؟ \| أوامر ونتائج واختبارات سلبية وانحدار \|"` | — |
+| [SRC-65551FB29F-L000063](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L63) | 63 | `"\| 20 \| مهندس الأداء \| هل المسارات ضمن ميزانيات الزمن والموارد؟ \| benchmark، حمل ممثل، تحليل اختناق \|"` | — |
+| [SRC-65551FB29F-L000064](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L64) | 64 | `"\| 21 \| مهندس واجهة وتجربة مستخدم \| هل يفهم المستخدم الحالة والخطأ والنتيجة؟ \| اختبارات رحلة، حالات خطأ، feedback \|"` | — |
+| [SRC-65551FB29F-L000065](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L65) | 65 | `"\| 22 \| خبير الوصولية والتدويل \| هل تعمل العربية وRTL ولوحة المفاتيح؟ \| اختبارات WCAG وRTL ومتصفحات \|"` | — |
+| [SRC-65551FB29F-L000066](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L66) | 66 | `"\| 23 \| مهندس DevEx/CI/CD \| هل البناء والاختبار والتسليم قابل للتكرار؟ \| CI logs، أوامر تثبيت وتشغيل موثقة \|"` | — |
+| [SRC-65551FB29F-L000067](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L67) | 67 | `"\| 24 \| خبير سلسلة توريد البرمجيات \| هل الاعتماديات وملفات البناء موثوقة؟ \| lockfiles، فحوص أسرار/ثغرات، provenance عند الحاجة \|"` | — |
+| [SRC-65551FB29F-L000068](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L68) | 68 | `"\| 25 \| مهندس استعادة الكوارث \| ما الذي نفقده؟ وكيف نعود؟ \| RTO/RPO واقعيان، استعادة مجرّبة \|"` | — |
+| [SRC-65551FB29F-L000069](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L69) | 69 | `"\| 26 \| مهندس FinOps/التكلفة \| كم يكلف إنجاز مهمة؟ ما حدود الاستهلاك؟ \| cost/task، quotas، إنذارات عند الإمكان \|"` | — |
+| [SRC-65551FB29F-L000070](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L70) | 70 | `"\| 27 \| مهندس الاعتمادية على الموردين \| ماذا يحدث عند توقف أو تغير مزود؟ \| fallback مجرّب، خطة خروج \|"` | — |
+| [SRC-65551FB29F-L000071](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L71) | 71 | `"\| 28 \| مهندس حوكمة/امتثال \| ما الالتزامات الفعلية؟ وما الأدلة؟ \| خريطة نطاق ومتطلبات ومخاطر، لا شعارات امتثال \|"` | — |
+| [SRC-65551FB29F-L000072](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L72) | 72 | `"\| 29 \| مهندس الاستجابة للحوادث \| كيف نكتشف ونحتوي ونوثق؟ \| سجل إجراء، runbook، تمرين \|"` | — |
+| [SRC-65551FB29F-L000073](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L73) | 73 | `"\| 30 \| مراجع مستقل/ناقد \| ما الافتراض الخاطئ المحتمل؟ \| مراجعة مضادة، إعادة إنتاج، اختبارات مستقلة \|"` | — |
+| [SRC-65551FB29F-L000074](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L74) | 74 | `"\| 31 \| مسؤول التشغيل/المستخدم النهائي \| هل يمكن تشغيل الخدمة وفهم حدودها؟ \| دليل تشغيل، رسائل حالة، تشخيص واضح \|"` | — |
+| [SRC-65551FB29F-L000075](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L75) | 75 | `"\| 32 \| مدير المشروع البشري \| هل المخاطر والموارد والأولويات مقبولة؟ \| قرار موثق وموافقة على المخاطر عالية الأثر \|"` | — |
+| [SRC-65551FB29F-L000076](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L76) | 76 | `""` | — |
+| [SRC-65551FB29F-L000077](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L77) | 77 | `"## 3. قواعد استخدام عدسات الخبرة"` | — |
+| [SRC-65551FB29F-L000078](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L78) | 78 | `""` | — |
+| [SRC-65551FB29F-L000079](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L79) | 79 | `"1. يستدعى كل دور يتأثر بالتغيير، لا كل الأدوار لمجرد الشكل."` | — |
+| [SRC-65551FB29F-L000080](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L80) | 80 | `"2. لا يجوز للوكيل أن يقول «مراجعة أمنية مكتملة» لمجرد استدعاء prompt لمراجع آخر."` | — |
+| [SRC-65551FB29F-L000081](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L81) | 81 | `"3. المراجعة المتخصصة تنتج أسئلة أو ملاحظات قابلة للتحقق، لا رأيًا عامًا فقط."` | — |
+| [SRC-65551FB29F-L000082](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L82) | 82 | `"4. للمخاطر الحرجة، يجب أن تدعم المراجعةَ اختباراتٌ أو فحوصٌ مستقلة مناسبة."` | — |
+| [SRC-65551FB29F-L000083](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L83) | 83 | `"5. عند عدم توفر الخبير أو البيئة، تسجل الفجوة UNKNOWN مع خطة أو قيد صريح."` | — |
+| [SRC-65551FB29F-L000084](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L84) | 84 | `"6. لا يُحسب تعدد الوكلاء دليلًا مستقلًا إذا كانت إجاباتهم تعتمد على نفس البيانات غير المتحققة أو نفس الاستنتاج الأول."` | — |
+| [SRC-65551FB29F-L000085](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L85) | 85 | `"7. لا تؤجل معالجة خطر أمني أو تسريب معروف لتستكمل بقية المراجعات الشكلية."` | — |
+| [SRC-65551FB29F-L000086](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L86) | 86 | `"8. تُوازن المراجعة بين الصحة والأمان والتكلفة وتجربة المستخدم والصيانة، بدل تحسين بُعد واحد على حساب البقية."` | — |
+| [SRC-65551FB29F-L000087](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L87) | 87 | `""` | — |
+| [SRC-65551FB29F-L000088](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L88) | 88 | `"---"` | — |
+| [SRC-65551FB29F-L000089](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L89) | 89 | `""` | — |
+| [SRC-65551FB29F-L000090](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L90) | 90 | `"# الجزء الثاني — خريطة الطبقات المنطقية للنظام"` | — |
+| [SRC-65551FB29F-L000091](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L91) | 91 | `""` | — |
+| [SRC-65551FB29F-L000092](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L92) | 92 | `"## 4. المبدأ"` | — |
+| [SRC-65551FB29F-L000093](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L93) | 93 | `""` | — |
+| [SRC-65551FB29F-L000094](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L94) | 94 | `"الطبقات التالية **حدود مسؤولية منطقية** وليست أمرًا بإنشاء 36 خدمة منفصلة أو 36 ملفًا. يمكن تنفيذ عدة طبقات داخل التطبيق نفسه، بشرط وضوح المسؤولية والاعتماديات والعقود. لا تُفصل الطبقة إلى خدمة مستقلة إلا عند وجود دليل على حاجة التوسع أو العزل أو دورة النشر."` | — |
+| [SRC-65551FB29F-L000095](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L95) | 95 | `""` | — |
+| [SRC-65551FB29F-L000096](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L96) | 96 | `"## 5. الطبقات المرجعية المقترحة"` | — |
+| [SRC-65551FB29F-L000097](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L97) | 97 | `""` | — |
+| [SRC-65551FB29F-L000098](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L98) | 98 | `"\| الطبقة \| المسؤولية \| شرط الحماية/التحقق \|"` | — |
+| [SRC-65551FB29F-L000099](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L99) | 99 | `"\|---\|---\|---\|"` | — |
+| [SRC-65551FB29F-L000100](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L100) | 100 | `"\| L00 — نية المنتج \| تحديد من يخدمه Omarai وما الذي يلتزم به \| معايير قبول وحدود معلنة \|"` | — |
+| [SRC-65551FB29F-L000101](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L101) | 101 | `"\| L01 — حوكمة المتطلبات \| معرفات ومتطلبات وحالات وأدلة \| سجل traceability محدث \|"` | — |
+| [SRC-65551FB29F-L000102](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L102) | 102 | `"\| L02 — إدارة المخاطر \| تصنيف الأصول والتهديدات والاستثناءات \| سجل مخاطر وقرارات \|"` | — |
+| [SRC-65551FB29F-L000103](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L103) | 103 | `"\| L03 — تجربة المستخدم \| إدخال السؤال وعرض الإجابة والحالة \| رسائل دقيقة ووصولية \|"` | — |
+| [SRC-65551FB29F-L000104](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L104) | 104 | `"\| L04 — العربية والتدويل \| RTL والنص المختلط والأرقام والتاريخ \| اختبارات لغة واتجاه \|"` | — |
+| [SRC-65551FB29F-L000105](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L105) | 105 | `"\| L05 — دخول الطلب/API \| استقبال الطلبات والإغلاق والتحقق الأولي \| حجم ومعدل ومهلة \|"` | — |
+| [SRC-65551FB29F-L000106](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L106) | 106 | `"\| L06 — الهوية والجلسة \| تحديد المستخدم/السياق \| مصادقة وتفويض عند الحاجة \|"` | — |
+| [SRC-65551FB29F-L000107](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L107) | 107 | `"\| L07 — سياق المستخدم/المستأجر \| عزل الحالة والبيانات \| اختبارات عدم الاختلاط \|"` | — |
+| [SRC-65551FB29F-L000108](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L108) | 108 | `"\| L08 — التحقق من المدخلات \| schemas والأنواع والأحجام \| رفض المدخلات غير الصالحة \|"` | — |
+| [SRC-65551FB29F-L000109](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L109) | 109 | `"\| L09 — سياق الطلب والموازنة \| correlation ID والمهلة والميزانية \| deadline وresource budget \|"` | — |
+| [SRC-65551FB29F-L000110](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L110) | 110 | `"\| L10 — منسق الوكيل \| إدارة حالات التنفيذ الكلية \| انتقالات حالة صريحة وحد توقف \|"` | — |
+| [SRC-65551FB29F-L000111](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L111) | 111 | `"\| L11 — التخطيط \| تقسيم المهمة وخطة محدودة \| حد خطوات وإعادة تخطيط \|"` | — |
+| [SRC-65551FB29F-L000112](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L112) | 112 | `"\| L12 — محرك السياسة \| قرار مسموح/مرفوض/يتطلب موافقة \| منفصل عن قرار LLM \|"` | — |
+| [SRC-65551FB29F-L000113](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L113) | 113 | `"\| L13 — كتالوج الأدوات \| تعريف الأدوات وعقودها \| schemas وصلاحيات وقيود \|"` | — |
+| [SRC-65551FB29F-L000114](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L114) | 114 | `"\| L14 — موائمات المزودين \| عزل SDKs وتنسيقات الردود \| contract tests \|"` | — |
+| [SRC-65551FB29F-L000115](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L115) | 115 | `"\| L15 — تنسيق البحث \| اختيار المصادر والاستعلامات \| budgets وdedup \|"` | — |
+| [SRC-65551FB29F-L000116](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L116) | 116 | `"\| L16 — جلب الصفحات والشبكة \| الاتصال بالمصادر الخارجية \| SSRF/redirect/size/time limits \|"` | — |
+| [SRC-65551FB29F-L000117](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L117) | 117 | `"\| L17 — استخراج المحتوى وتنقيته \| تحويل الصفحة لنص آمن \| لا يُنفذ المحتوى كتعليمات \|"` | — |
+| [SRC-65551FB29F-L000118](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L118) | 118 | `"\| L18 — تقييم المصادر \| ملاءمة المصدر وحداثته وموثوقيته \| قواعد تقييم وقيود معلنة \|"` | — |
+| [SRC-65551FB29F-L000119](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L119) | 119 | `"\| L19 — الاسترجاع والفهرسة \| المقاطع والفهارس والـ embeddings عند الحاجة \| freshness وprovenance وعزل \|"` | — |
+| [SRC-65551FB29F-L000120](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L120) | 120 | `"\| L20 — سجل الأدلة \| ربط الادعاء بالمصدر والمقطع \| لا استشهاد بلا دعم \|"` | — |
+| [SRC-65551FB29F-L000121](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L121) | 121 | `"\| L21 — التركيب والاستدلال \| الإجابة على أساس الأدلة \| تمييز حقيقة/استنتاج/مجهول \|"` | — |
+| [SRC-65551FB29F-L000122](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L122) | 122 | `"\| L22 — التحقق المستقل \| كشف التعارض أو نقص الإسناد \| اختبارات منفصلة؛ لا مراجعة شكلية \|"` | — |
+| [SRC-65551FB29F-L000123](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L123) | 123 | `"\| L23 — صياغة الخلاصة \| العربية والروابط والقيود \| لا تضخيم لليقين \|"` | — |
+| [SRC-65551FB29F-L000124](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L124) | 124 | `"\| L24 — الذاكرة \| سياق المحادثة والتفضيلات المسموحة \| نطاق مستخدم واحتفاظ واضح \|"` | — |
+| [SRC-65551FB29F-L000125](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L125) | 125 | `"\| L25 — تخزين الحالة \| الديمومة والترحيل والاستعادة \| migrations وintegrity \|"` | — |
+| [SRC-65551FB29F-L000126](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L126) | 126 | `"\| L26 — المهام غير المتزامنة \| jobs/workers/queues عند الحاجة \| idempotency وإعادة تشغيل آمنة \|"` | — |
+| [SRC-65551FB29F-L000127](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L127) | 127 | `"\| L27 — الكاش \| تقليل التكرار والكمون \| صلاحية وخصوصية وإبطال \|"` | — |
+| [SRC-65551FB29F-L000128](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L128) | 128 | `"\| L28 — المراقبة والتدقيق \| logs/metrics/traces ومؤشرات العمل \| تنقيح البيانات والربط \|"` | — |
+| [SRC-65551FB29F-L000129](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L129) | 129 | `"\| L29 — إدارة الأسرار والتشفير \| المفاتيح والرموز وقنوات الثقة \| أقل صلاحية وتدوير \|"` | — |
+| [SRC-65551FB29F-L000130](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L130) | 130 | `"\| L30 — إدارة التكوين \| متغيرات البيئة والإعدادات \| safe defaults وفشل واضح \|"` | — |
+| [SRC-65551FB29F-L000131](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L131) | 131 | `"\| L31 — الاختبارات والتقييم \| unit/integration/e2e/security/AI eval \| نتائج فعلية مرتبطة بإصدار \|"` | — |
+| [SRC-65551FB29F-L000132](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L132) | 132 | `"\| L32 — سلسلة التوريد والبناء \| dependencies والـ artifacts والـ CI \| تثبيت وفحص provenance عند الحاجة \|"` | — |
+| [SRC-65551FB29F-L000133](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L133) | 133 | `"\| L33 — الإصدارات والتغيير \| release gates والطرح والتراجع \| موافقة وتحديد نسخة \|"` | — |
+| [SRC-65551FB29F-L000134](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L134) | 134 | `"\| L34 — الاستضافة والشبكات \| التشغيل والمنافذ والموارد \| حدود فعلية حسب المنصة \|"` | — |
+| [SRC-65551FB29F-L000135](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L135) | 135 | `"\| L35 — النسخ والاستعادة \| استمرار البيانات والخدمة \| استعادة مجرّبة وRTO/RPO \|"` | — |
+| [SRC-65551FB29F-L000136](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L136) | 136 | `"\| L36 — حدود التكلفة والحصص \| اقتصاديات الطلبات والموفرين \| quotas وkill switches \|"` | — |
+| [SRC-65551FB29F-L000137](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L137) | 137 | `"\| L37 — الاستجابة للحوادث \| احتواء واستعادة وإبلاغ \| خطوات مسؤولية موثقة \|"` | — |
+| [SRC-65551FB29F-L000138](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L138) | 138 | `"\| L38 — قابلية الإضافة \| إضافة أدوات ومصادر وقدرات ومهارات وسير عمل، ووكلاء عند الحاجة المثبتة \| عقود ثابتة واختبارات توافق وسبب موثق لكل طبقة جديدة \|"` | — |
+| [SRC-65551FB29F-L000139](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L139) | 139 | `"\| L39 — النقل والاستمرارية \| الخروج من موفر واستمرار الحد الأدنى \| تصدير وخطة بديل \|"` | — |
+| [SRC-65551FB29F-L000140](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L140) | 140 | `""` | — |
+| [SRC-65551FB29F-L000141](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L141) | 141 | `"هذه الخريطة تضمن وجود سؤال هندسي لكل مسؤولية معروفة، لكنها لا تدعي أن كل طبقة موجودة في التنفيذ الحالي. بعض الطبقات قد تكون جزءًا من وحدة واحدة أو لا تنطبق بعد؛ ويجب تسجيل السبب."` | — |
+| [SRC-65551FB29F-L000142](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L142) | 142 | `""` | — |
+| [SRC-65551FB29F-L000143](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L143) | 143 | `"## 5.1 خط أساس الأمن السيبراني للمراجعة"` | — |
+| [SRC-65551FB29F-L000144](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L144) | 144 | `""` | — |
+| [SRC-65551FB29F-L000145](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L145) | 145 | `"**[PROPOSED]** لكل تغيير يعبر حد ثقة أو يمس الهوية أو الصلاحيات أو الشبكة أو بيانات المستخدم أو مخرجات النموذج أو سلسلة التوريد، يجب ربط المتطلب بمخاطر وشرط قبول واختبار سلبي مناسب. تُراجع الأصول وحدود الثقة، وحقن التعليمات، وSSRF/redirects وDNS، وXSS/API authorization، والأسرار والخصوصية، وعزل سياق الطلب، والتزامن والموارد، وسلسلة التوريد والاستجابة للحوادث بحسب ما ينطبق. عدم توفر أداة فحص أو قيد بيئي لا يبرر ادعاء الحماية؛ تُسجّل الفجوة UNKNOWN ويُضيّق أو يُعطّل المسار عند الضرورة."` | — |
+| [SRC-65551FB29F-L000146](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L146) | 146 | `""` | — |
+| [SRC-65551FB29F-L000147](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L147) | 147 | `"المرجع التفصيلي: القسم 17 من [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md). يُستخدم NIST CSF 2.0 وZero Trust وAI RMF/GenAI Profile وSSDF وOWASP كمرجعيات لتصميم الضوابط، لا كادعاء مطابقة أو شهادة. لا تصبح أي حالة VERIFIED دون دليل مرتبط بإصدار وبيئة ونطاق اختبار."` | — |
+| [SRC-65551FB29F-L000148](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L148) | 148 | `""` | — |
+| [SRC-65551FB29F-L000149](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L149) | 149 | `"## 5.2 التسلسل المرجعي لتوسيع القدرات"` | — |
+| [SRC-65551FB29F-L000150](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L150) | 150 | `""` | — |
+| [SRC-65551FB29F-L000151](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L151) | 151 | `"**[PROPOSED]** يلتزم تخطيط التوسع في Omarai بالاتجاه الموضح في [المعمارية الحاكمة للقدرات والمهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md): نواة موثوقة ← عقود أدوات وقدرات مفروضة وقت التنفيذ ← مهارات قابلة لإعادة الاستخدام ← سير عمل محدود وقابل للاختبار ← تركيب مهام محدود عند الحاجة ← وكلاء عند وجود مبرر مثبت."` | — |
+| [SRC-65551FB29F-L000152](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L152) | 152 | `""` | — |
 | [SRC-65551FB29F-L000153](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L153) | 153 | `"هذا التسلسل سياسة لتقليل التعقيد، وليس حظرًا مطلقًا على بديل أبسط أو أكثر أمانًا. يجب أن يسجل أي انحراف عنه بوصفه ADR مع سبب قابل للفحص، والبدائل، والأثر الأمني والتشغيلي، والاختبارات، وصاحب الموافقة. لا يلزم تحويل كل مسؤولية منطقية إلى ملف أو خدمة مستقلة."` | — |
 | [SRC-65551FB29F-L000154](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L154) | 154 | `""` | — |
 | [SRC-65551FB29F-L000155](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L155) | 155 | `"يُتعامل مع Tool وCapability وSkill وWorkflow وTaskSpec وAgent Profile وAgent وPlugin كعقود مختلفة؛ ويُمنع أن تمنح مخرجات LLM أو ملفات التهيئة نفسها صلاحيات. يكون Meta-Agent وتوليد الكود التنفيذي خارج النطاق الافتراضي حتى تثبت الحاجة ويُعتمد قرار مستقل."` | — |
@@ -631,197 +834,3 @@
 | [SRC-41EDB66D3C-L000181](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L181) | 181 | `"يُبنى من معلومات قدمها المستخدم أو وثائق مصرح بها، ويحتوي عند توفرها على:"` | — |
 | [SRC-41EDB66D3C-L000182](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L182) | 182 | `""` | — |
 | [SRC-41EDB66D3C-L000183](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L183) | 183 | `"- اسم المنتج أو الخدمة والعلامة التجارية."` | — |
-| [SRC-41EDB66D3C-L000184](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L184) | 184 | `"- الأسماء البديلة والاختصارات والتهجئات الشائعة."` | — |
-| [SRC-41EDB66D3C-L000185](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L185) | 185 | `"- الفئة والوظائف والاستخدامات والمواصفات."` | — |
-| [SRC-41EDB66D3C-L000186](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L186) | 186 | `"- المشكلة التي يحلها والنتائج التي يحققها."` | — |
-| [SRC-41EDB66D3C-L000187](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L187) | 187 | `"- القطاعات والتطبيقات التي تناسبه."` | — |
-| [SRC-41EDB66D3C-L000188](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L188) | 188 | `"- حدود الاستخدام والحالات التي لا يناسبها."` | — |
-| [SRC-41EDB66D3C-L000189](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L189) | 189 | `"- المنتجات البديلة والمنافسة."` | — |
-| [SRC-41EDB66D3C-L000190](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L190) | 190 | `"- إشارات الحاجة أو محفزات الشراء."` | — |
-| [SRC-41EDB66D3C-L000191](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L191) | 191 | `"- أسئلة التوضيح عن السعر والكمية والحد الأدنى والضمان والتوريد عند أهميتها."` | — |
-| [SRC-41EDB66D3C-L000192](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L192) | 192 | `""` | — |
-| [SRC-41EDB66D3C-L000193](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L193) | 193 | `"لا يخترع النظام مواصفات أو استخدامات للمنتج من الاسم وحده. يميز ما قدمه المستخدم عن المحتوى الذي تحقّق منه من مصدر موثوق وعن الفرضيات التجارية."` | — |
-| [SRC-41EDB66D3C-L000194](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L194) | 194 | `""` | — |
-| [SRC-41EDB66D3C-L000195](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L195) | 195 | `"### 6.2 MarketProfile / ICP"` | — |
-| [SRC-41EDB66D3C-L000196](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L196) | 196 | `""` | — |
-| [SRC-41EDB66D3C-L000197](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L197) | 197 | `"يشمل حسب المهمة:"` | — |
-| [SRC-41EDB66D3C-L000198](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L198) | 198 | `""` | — |
-| [SRC-41EDB66D3C-L000199](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L199) | 199 | `"- البلد والمنطقة واللغة واللهجة."` | — |
-| [SRC-41EDB66D3C-L000200](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L200) | 200 | `"- الصناعة والقطاع الفرعي ونوع النشاط."` | — |
-| [SRC-41EDB66D3C-L000201](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L201) | 201 | `"- حجم أو مرحلة الشركة عند وجود أساس لذلك."` | — |
-| [SRC-41EDB66D3C-L000202](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L202) | 202 | `"- نوع العميل: شركة، جهة، متجر، مقاول، موزع، فرد، أو جهة شراء."` | — |
-| [SRC-41EDB66D3C-L000203](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L203) | 203 | `"- الأدوار المحتملة في الشراء."` | — |
-| [SRC-41EDB66D3C-L000204](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L204) | 204 | `"- حالات الاستخدام والمشروعات ذات الصلة."` | — |
-| [SRC-41EDB66D3C-L000205](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L205) | 205 | `"- الاستثناءات والقطاعات غير المناسبة."` | — |
-| [SRC-41EDB66D3C-L000206](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L206) | 206 | `"- قيود الوقت والكمية والسعر والتوزيع، إن ذكرها المستخدم."` | — |
-| [SRC-41EDB66D3C-L000207](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L207) | 207 | `""` | — |
-| [SRC-41EDB66D3C-L000208](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L208) | 208 | `"يُحفظ مستوى مصدر كل معيار: صريح من المستخدم، مستنتج يحتاج مراجعة، أو مجهول."` | — |
-| [SRC-41EDB66D3C-L000209](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L209) | 209 | `""` | — |
-| [SRC-41EDB66D3C-L000210](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L210) | 210 | `"---"` | — |
-| [SRC-41EDB66D3C-L000211](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L211) | 211 | `""` | — |
-| [SRC-41EDB66D3C-L000212](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L212) | 212 | `"## 7. تخطيط البحث: عامّ ومتخصص دون تحيز قطاعي"` | — |
-| [SRC-41EDB66D3C-L000213](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L213) | 213 | `""` | — |
-| [SRC-41EDB66D3C-L000214](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L214) | 214 | ``"يُشتق البحث من `ProductProfile` و`MarketProfile` ونوع الإشارة المطلوبة، لا من قائمة عبارات ثابتة عامة."`` | — |
-| [SRC-41EDB66D3C-L000215](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L215) | 215 | `""` | — |
-| [SRC-41EDB66D3C-L000216](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L216) | 216 | `"يجب أن يدعم مخطط البحث:"` | — |
-| [SRC-41EDB66D3C-L000217](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L217) | 217 | `""` | — |
-| [SRC-41EDB66D3C-L000218](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L218) | 218 | `"- أسماء المنتج والمرادفات والتهجئات والأسماء التجارية."` | — |
-| [SRC-41EDB66D3C-L000219](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L219) | 219 | `"- المواصفات والمشكلة والاستخدام والبدائل."` | — |
-| [SRC-41EDB66D3C-L000220](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L220) | 220 | `"- صيغ الطلب والشراء وطلب عرض السعر والتوريد والمناقصة."` | — |
-| [SRC-41EDB66D3C-L000221](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L221) | 221 | `"- صيغ الاحتياج والمشكلة والشكوى والتوسع والمشروع."` | — |
-| [SRC-41EDB66D3C-L000222](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L222) | 222 | `"- النفي وصيغ عدم الرغبة والطلب الملغى أو المنتهي."` | — |
-| [SRC-41EDB66D3C-L000223](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L223) | 223 | `"- لغات السوق ولهجاته والمنصات التي تدعمها الموصلات المهيأة فعلًا."` | — |
-| [SRC-41EDB66D3C-L000224](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L224) | 224 | `"- استعلامات مستقلة للبحث عن الطلب، وأخرى للتحقق من هوية الجهة أو المصدر عندما يكون ذلك لازمًا."` | — |
-| [SRC-41EDB66D3C-L000225](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L225) | 225 | `""` | — |
-| [SRC-41EDB66D3C-L000226](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L226) | 226 | `"**حاجز ضد الانحياز القطاعي:** ممنوع أن يضيف البحث العام عبارات فئة مثل «شقة تمليك» أو «عقار» أو أي نوع منتج ثابت إلى استعلام منتج لا ينتمي لهذه الفئة. كل قاموس أو قالب متخصص يجب أن يكون مرتبطًا بنوع منتج/إشارة محدد، وله اختبارات تثبت عدم تسربه إلى الفئات الأخرى."` | — |
-| [SRC-41EDB66D3C-L000227](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L227) | 227 | `""` | — |
-| [SRC-41EDB66D3C-L000228](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L228) | 228 | `"تظل حدود عدد الاستعلامات والموصلات والصفحات والوقت والتكلفة تحت تحكم الكود والميزانية، حتى لو اقترح النموذج خطة أوسع."` | — |
-| [SRC-41EDB66D3C-L000229](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L229) | 229 | `""` | — |
-| [SRC-41EDB66D3C-L000230](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L230) | 230 | `"---"` | — |
-| [SRC-41EDB66D3C-L000231](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L231) | 231 | `""` | — |
-| [SRC-41EDB66D3C-L000232](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L232) | 232 | `"## 8. سجل الأدلة — Demand Evidence Record"` | — |
-| [SRC-41EDB66D3C-L000233](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L233) | 233 | `""` | — |
-| [SRC-41EDB66D3C-L000234](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L234) | 234 | `"كل إشارة طلب مقبولة تحتاج سجلًا قابلًا للتدقيق. الحقول المستهدفة:"` | — |
-| [SRC-41EDB66D3C-L000235](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L235) | 235 | `""` | — |
-| [SRC-41EDB66D3C-L000236](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L236) | 236 | ``"- `signal_id` ومعرف المهمة أو الحملة."`` | — |
-| [SRC-41EDB66D3C-L000237](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L237) | 237 | `"- نص الإشارة الأصلي أو مقطع محدود منه."` | — |
-| [SRC-41EDB66D3C-L000238](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L238) | 238 | `"- نوع الإشارة وتصنيفها وسبب التصنيف."` | — |
-| [SRC-41EDB66D3C-L000239](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L239) | 239 | `"- اسم المنتج أو الفئة التي ترتبط بها."` | — |
-| [SRC-41EDB66D3C-L000240](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L240) | 240 | ``"- `source_id` والرابط الأصلي واسم النطاق."`` | — |
-| [SRC-41EDB66D3C-L000241](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L241) | 241 | `"- عنوان الصفحة والمقتطف وحالة قراءة الصفحة."` | — |
-| [SRC-41EDB66D3C-L000242](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L242) | 242 | `"- نوع النص: عنوان فقط، مقتطف محرك، نص صفحة مقروء، أو وثيقة/إعلان رسمي."` | — |
-| [SRC-41EDB66D3C-L000243](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L243) | 243 | `"- اسم الموصل والاستعلام الذي أعاد المصدر."` | — |
-| [SRC-41EDB66D3C-L000244](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L244) | 244 | `"- تاريخ وقوع الحدث إن ذكره المصدر."` | — |
-| [SRC-41EDB66D3C-L000245](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L245) | 245 | `"- تاريخ نشر المحتوى."` | — |
-| [SRC-41EDB66D3C-L000246](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L246) | 246 | `"- تاريخ آخر تحديث إن توفر."` | — |
-| [SRC-41EDB66D3C-L000247](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L247) | 247 | `"- وقت رصد Omarai للمصدر."` | — |
-| [SRC-41EDB66D3C-L000248](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L248) | 248 | `"- دليل الصلة بالمنتج والسوق."` | — |
-| [SRC-41EDB66D3C-L000249](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L249) | 249 | `"- دليل هوية الكاتب/الجهة إن توفر، مع حالة تحقق الهوية."` | — |
-| [SRC-41EDB66D3C-L000250](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L250) | 250 | `"- بيانات النفي أو الإلغاء أو التعارض."` | — |
-| [SRC-41EDB66D3C-L000251](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L251) | 251 | `"- حالة الحداثة وسبب اعتبار الإشارة صالحة أو قديمة."` | — |
-| [SRC-41EDB66D3C-L000252](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L252) | 252 | `"- حالة الفحص والتغييرات اللاحقة."` | — |
-| [SRC-41EDB66D3C-L000253](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L253) | 253 | `""` | — |
-| [SRC-41EDB66D3C-L000254](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L254) | 254 | ``"يجب عدم مساواة تاريخ النشر بتاريخ وقوع الطلب أو تاريخ الرصد. غياب التاريخ يسجل `unknown` ولا يحول إلى تاريخ اليوم."`` | — |
-| [SRC-41EDB66D3C-L000255](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L255) | 255 | `""` | — |
-| [SRC-41EDB66D3C-L000256](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L256) | 256 | `"لا تخزن الصفحة كاملة بلا حاجة. تُحفظ المقاطع والبيانات اللازمة وفق حقوق المصدر وشروطه وسياسة الاحتفاظ، مع إمكانية الرجوع إلى الرابط الأصلي."` | — |
-| [SRC-41EDB66D3C-L000257](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L257) | 257 | `""` | — |
-| [SRC-41EDB66D3C-L000258](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L258) | 258 | `"---"` | — |
-| [SRC-41EDB66D3C-L000259](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L259) | 259 | `""` | — |
-| [SRC-41EDB66D3C-L000260](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L260) | 260 | `"## 9. تأهيل الفرص: أبعاد مستقلة لا «احتمال شراء» مختلق"` | — |
-| [SRC-41EDB66D3C-L000261](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L261) | 261 | `""` | — |
-| [SRC-41EDB66D3C-L000262](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L262) | 262 | `"يجب فصل التقييم إلى محاور قابلة للتفسير:"` | — |
-| [SRC-41EDB66D3C-L000263](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L263) | 263 | `""` | — |
-| [SRC-41EDB66D3C-L000264](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L264) | 264 | `"1. **Demand Signal Strength:** هل الإشارة مباشرة أم احتياج أم غير مباشرة أم تطابق فقط؟"` | — |
-| [SRC-41EDB66D3C-L000265](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L265) | 265 | `"2. **Product Fit:** ما الدليل على ارتباط الاحتياج بالمنتج ومواصفاته؟"` | — |
-| [SRC-41EDB66D3C-L000266](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L266) | 266 | `"3. **Source Quality:** هل المصدر أولي أم وسيط؟ وهل الصفحة مقروءة وذات صلة؟"` | — |
-| [SRC-41EDB66D3C-L000267](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L267) | 267 | `"4. **Freshness:** ما تاريخ الحدث والنشر والتحديث والرصد؟ وهل الإشارة لا تزال صالحة؟"` | — |
-| [SRC-41EDB66D3C-L000268](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L268) | 268 | `"5. **Entity Resolution:** هل نعرف الشخص أو الشركة بالفعل، أم لدينا صفحة أو اسم غير محقق؟"` | — |
-| [SRC-41EDB66D3C-L000269](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L269) | 269 | `"6. **Contactability:** هل يوجد مسار تواصل تجاري عام ومشروع؟ وهل يسمح المصدر باستخدامه؟"` | — |
-| [SRC-41EDB66D3C-L000270](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L270) | 270 | `"7. **Completeness:** ما البيانات الضرورية الناقصة؟"` | — |
-| [SRC-41EDB66D3C-L000271](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L271) | 271 | `"8. **Conflict / Negative Evidence:** هل يوجد نفي أو إلغاء أو تعارض أو إعلان بيع من الطرف المقابل؟"` | — |
-| [SRC-41EDB66D3C-L000272](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L272) | 272 | `""` | — |
-| [SRC-41EDB66D3C-L000273](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L273) | 273 | `"لا يجوز دمج هذه المحاور في احتمال شراء أو نسبة نجاح مبيعات دون بيانات تاريخية موسومة وقياس معايرة على نتائج فعلية. أي ترتيب رقمي قبل ذلك يجب أن يعلن أنه heuristic، ويعرض مكوناته، ولا يسمى Probability أو Confidence."` | — |
-| [SRC-41EDB66D3C-L000274](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L274) | 274 | `""` | — |
-| [SRC-41EDB66D3C-L000275](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L275) | 275 | `"يجب أن يستطيع Omarai قول: «شركة مناسبة جدًا، لكن لا يوجد دليل طلب»، و«طلب مباشر منشور لكن هوية صاحبه لم تتحقق»، و«احتياج معلن لكنه لا يثبت قرار الشراء»."` | — |
-| [SRC-41EDB66D3C-L000276](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L276) | 276 | `""` | — |
-| [SRC-41EDB66D3C-L000277](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L277) | 277 | `"---"` | — |
-| [SRC-41EDB66D3C-L000278](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L278) | 278 | `""` | — |
-| [SRC-41EDB66D3C-L000279](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L279) | 279 | `"## 10. نموذج البيانات والعزل"` | — |
-| [SRC-41EDB66D3C-L000280](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L280) | 280 | `""` | — |
-| [SRC-41EDB66D3C-L000281](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L281) | 281 | `"الكيانات المنطقية المقترحة:"` | — |
-| [SRC-41EDB66D3C-L000282](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L282) | 282 | `""` | — |
-| [SRC-41EDB66D3C-L000283](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L283) | 283 | ``"- `Tenant / Workspace`"`` | — |
-| [SRC-41EDB66D3C-L000284](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L284) | 284 | ``"- `User` و`TenantMembership` و`ApiToken`"`` | — |
-| [SRC-41EDB66D3C-L000285](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L285) | 285 | ``"- `ProductProfile`"`` | — |
-| [SRC-41EDB66D3C-L000286](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L286) | 286 | ``"- `MarketProfile` و`ICPDefinition`"`` | — |
-| [SRC-41EDB66D3C-L000287](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L287) | 287 | ``"- `DiscoveryCampaign` أو `ResearchTask`"`` | — |
-| [SRC-41EDB66D3C-L000288](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L288) | 288 | ``"- `Source` و`SourceSnapshot`"`` | — |
-| [SRC-41EDB66D3C-L000289](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L289) | 289 | ``"- `DemandSignal`"`` | — |
-| [SRC-41EDB66D3C-L000290](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L290) | 290 | ``"- `ProspectEntity` و`ContactChannel`"`` | — |
-| [SRC-41EDB66D3C-L000291](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L291) | 291 | ``"- `Lead` أو `QualifiedOpportunity`"`` | — |
-| [SRC-41EDB66D3C-L000292](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L292) | 292 | ``"- `QualificationAssessment`"`` | — |
-| [SRC-41EDB66D3C-L000293](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L293) | 293 | ``"- `SalesRecommendation` و`SalesActivity`"`` | — |
-| [SRC-41EDB66D3C-L000294](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L294) | 294 | ``"- `AuditEvent` و`UserFeedback`"`` | — |
-| [SRC-41EDB66D3C-L000295](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L295) | 295 | `""` | — |
-| [SRC-41EDB66D3C-L000296](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L296) | 296 | `"لا يلزم تنفيذ هذه الكيانات جميعًا دفعة واحدة. يجب أن يحافظ كل كيان على المصدر والمالك وحالة التحقق والوقت عند انطباقها."` | — |
-| [SRC-41EDB66D3C-L000297](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L297) | 297 | `""` | — |
-| [SRC-41EDB66D3C-L000298](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L298) | 298 | `"### عزل المستأجرين"` | — |
-| [SRC-41EDB66D3C-L000299](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L299) | 299 | `""` | — |
-| [SRC-41EDB66D3C-L000300](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L300) | 300 | `"قبل استخدام Omarai لحفظ بيانات عملاء شركات متعددة أو فتحه كخدمة تجارية:"` | — |
-| [SRC-41EDB66D3C-L000301](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L301) | 301 | `""` | — |
-| [SRC-41EDB66D3C-L000302](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L302) | 302 | ``"- يحدد الخادم هوية المستخدم والمستأجر من جلسة/رمز موثوق وعضوية فعالة؛ لا يثق في `tenant_id` من body أو query."`` | — |
-| [SRC-41EDB66D3C-L000303](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L303) | 303 | `"- كل قراءة أو تعديل أو حذف أو استيراد أو تصدير يفرض نطاق المستأجر في طبقة التخزين/الاستعلام."` | — |
-| [SRC-41EDB66D3C-L000304](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L304) | 304 | `"- مفاتيح التفرّد وإزالة التكرار تكون ضمن المستأجر حيث تتضمن البيانات ملكية العميل."` | — |
-| [SRC-41EDB66D3C-L000305](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L305) | 305 | `"- تختبر حالات الوصول الأفقي والرأسي وتزوير المعرفات وترحيل البيانات القديمة."` | — |
-| [SRC-41EDB66D3C-L000306](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L306) | 306 | `"- تُسجل عمليات الإدارة الحساسة، وتُحفظ البيانات وتُحذف وفق سياسة معلومة."` | — |
-| [SRC-41EDB66D3C-L000307](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L307) | 307 | `""` | — |
-| [SRC-41EDB66D3C-L000308](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L308) | 308 | ``"**حالة المستودع بعد دمج PR #145 في 2 نوفمبر 2026:** أُغلق PR #137 دون دمج بعد نقل نطاقه إلى PR #145 التجميعي. دمج المدير البشري PR #145 في `main`، وأصبح نموذج tenant/user/membership/token/session وعزل tenant-scoped لعمليات leads جزءًا من خط الأساس. نجح CI الخاص بـ#145 على SHA `a0230e8e292241e8a36eb85b1fc82f9af5b96a1f` قبل الدمج. التشغيل الأولي المستهدف شركة واحدة؛ ولا يعني وجود نواة العزل اكتمال SaaS أو provisioning أو قبول الاستضافة. يجب أن تشمل أي جداول تجارية مستقبلية العزل نفسه، لا جدول العملاء الحالي فقط."`` | — |
-| [SRC-41EDB66D3C-L000309](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L309) | 309 | `""` | — |
-| [SRC-41EDB66D3C-L000310](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L310) | 310 | `"---"` | — |
-| [SRC-41EDB66D3C-L000311](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L311) | 311 | `""` | — |
-| [SRC-41EDB66D3C-L000312](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L312) | 312 | `"## 11. حدود الأمان والامتثال التجاري"` | — |
-| [SRC-41EDB66D3C-L000313](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L313) | 313 | `""` | — |
-| [SRC-41EDB66D3C-L000314](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L314) | 314 | `"- مصادر عامة ومصرح باستخدامها فقط، وفق شروط كل موقع ومنصة والقانون المنطبق."` | — |
-| [SRC-41EDB66D3C-L000315](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L315) | 315 | `"- لا تجاوز لتسجيل الدخول أو الصفحات الخاصة أو paywalls أو anti-bot."` | — |
-| [SRC-41EDB66D3C-L000316](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L316) | 316 | `"- لا جمع غير ضروري لبيانات شخصية أو حساسة."` | — |
-| [SRC-41EDB66D3C-L000317](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L317) | 317 | `"- لا اختلاق أو تخمين لوسائل التواصل؛ يجب إسناد كل قناة اتصال إلى مصدرها وحالة تحققها."` | — |
-| [SRC-41EDB66D3C-L000318](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L318) | 318 | `"- لا رسائل مباشرة أو بريد أو اتصالات أو عروض آلية في النطاق الأولي."` | — |
-| [SRC-41EDB66D3C-L000319](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L319) | 319 | `"- أي تكامل إرسال مستقبلي يتطلب موافقة صريحة لكل نوع أثر خارجي، وسياسة منع إساءة الاستخدام، ومراجعة قانونية/خصوصية مناسبة، وسجل تدقيق وآلية إلغاء."` | — |
-| [SRC-41EDB66D3C-L000320](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L320) | 320 | `"- نصوص الصفحات والإعلانات والملفات مداخل غير موثوقة؛ لا تنفذ تعليمات Prompt Injection الواردة داخلها."` | — |
-| [SRC-41EDB66D3C-L000321](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L321) | 321 | `"- مخرجات النموذج لا تمنح صلاحية بحث أو تصدير أو إرسال أو وصول إلى مستأجر آخر."` | — |
-| [SRC-41EDB66D3C-L000322](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L322) | 322 | `"- فشل موصل أو غياب مفتاح أو حظر منصة يجب أن يظهر كفشل/غير متاح، لا كصفر طلب أو عدم وجود عملاء."` | — |
-| [SRC-41EDB66D3C-L000323](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L323) | 323 | `""` | — |
-| [SRC-41EDB66D3C-L000324](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L324) | 324 | `"---"` | — |
-| [SRC-41EDB66D3C-L000325](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L325) | 325 | `""` | — |
-| [SRC-41EDB66D3C-L000326](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L326) | 326 | `"## 12. توزيع المسؤوليات على الكود القائم"` | — |
-| [SRC-41EDB66D3C-L000327](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L327) | 327 | `""` | — |
-| [SRC-41EDB66D3C-L000328](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L328) | 328 | ``"الجدول التالي وملاحظات الكود تحافظ على لقطة المراجعة التاريخية عند SHA `490f7a06911273fd61759143140fb6a264ce1dde` (31 أكتوبر 2026). اقرأ تحديث 6 نوفمبر أعلاه بوصفه مصالحة الحالة الأحدث؛ لا تعتمد حالات PR أو المسارات القديمة في هذا القسم لوصف `main` الحالي."`` | — |
-| [SRC-41EDB66D3C-L000329](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L329) | 329 | `""` | — |
-| [SRC-41EDB66D3C-L000330](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L330) | 330 | `"\| المسار الحالي \| دوره الحالي/القابل لإعادة الاستخدام \| التعديل المعماري المستهدف \|"` | — |
-| [SRC-41EDB66D3C-L000331](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L331) | 331 | `"\|---\|---\|---\|"` | — |
-| [SRC-41EDB66D3C-L000332](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L332) | 332 | ``"\| `agents/intent_router.py` \| يتضمن مسار `LEAD_GENERATION` \| الاحتفاظ بالتوجيه، مع جعل النية التجارية أكثر تحديدًا بحسب نوع المهمة \|"`` | — |
-| [SRC-41EDB66D3C-L000333](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L333) | 333 | ``"\| `agents/task_understanding.py` \| يبني TaskSpec واستراتيجية الاستعلام، ويتضمن توجيهًا لـ `lead_generation` \| إدخال ProductProfile وMarket/ICP كمدخلات منظمة عند مهام اكتساب العملاء \|"`` | — |
-| [SRC-41EDB66D3C-L000334](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L334) | 334 | ``"\| `agents/research_pipeline.py` \| يوحد السياق والنية وفهم المهمة والمحاور والاستعلامات وسجل المرشحات \| استخدامه كمنسق مشترك، وعدم تكرار Pipeline موازٍ للمبيعات \|"`` | — |
-| [SRC-41EDB66D3C-L000335](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L335) | 335 | ``"\| `agents/web_agent.py` \| ينفذ البحث ويطبق حاليًا كشفًا محدودًا لعبارات نية الشراء \| نقل قواعد المجال تدريجيًا إلى وحدات Sales Domain مستقلة خلف عقود واضحة \|"`` | — |
-| [SRC-41EDB66D3C-L000336](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L336) | 336 | ``"\| `agents/search_connectors.py` \| موصلات البحث ومصادر النتائج \| الإبقاء على الموصلات كطبقة اكتساب، وعدم ربط قواعد البيع بمزود بعينه \|"`` | — |
-| [SRC-41EDB66D3C-L000337](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L337) | 337 | ``"\| `agents/requirement_evidence.py` و`agents/claim_evidence.py` \| بناء سجلات مرشحات الأدلة وربط المقاطع بالاستشهادات \| الاستفادة من Provenance، مع إضافة عقد DemandSignal الذي يختلف عن claim factual \|"`` | — |
-| [SRC-41EDB66D3C-L000338](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L338) | 338 | ``"\| `agents/answer_validation.py` و`agents/research_completion.py` \| فحوص الإجابة ودعم الاستشهاد وحالة الإكمال \| الحفاظ عليها للبحث والإجابات؛ لا تخلط اكتمال البحث بتأهيل العميل \|"`` | — |
-| [SRC-41EDB66D3C-L000339](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L339) | 339 | ``"\| `api/omarai.py` \| API و`/api/leads` وبيانات `/api/health` \| إضافة عقود تجارية وإدارة نطاق المستأجر بعد تثبيت الهوية والتخزين \|"`` | — |
-| [SRC-41EDB66D3C-L000340](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L340) | 340 | ``"\| `/leads` \| مساحة عمل العملاء الحالية \| تطويرها تدريجيًا لتعرض الإشارة والدليل والكيان والتأهيل والمتابعة، لا قائمة أسماء فقط \|"`` | — |
-| [SRC-41EDB66D3C-L000341](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L341) | 341 | `""` | — |
-| [SRC-41EDB66D3C-L000342](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L342) | 342 | `"### ملاحظات مباشرة على الحالة الحالية"` | — |
-| [SRC-41EDB66D3C-L000343](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L343) | 343 | `""` | — |
-| [SRC-41EDB66D3C-L000344](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L344) | 344 | ``"**VERIFIED — من كود `main`:**"`` | — |
-| [SRC-41EDB66D3C-L000345](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L345) | 345 | `""` | — |
-| [SRC-41EDB66D3C-L000346](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L346) | 346 | ``"- يوجد مسار نية باسم `LEAD_GENERATION` في `agents/intent_router.py`."`` | — |
-| [SRC-41EDB66D3C-L000347](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L347) | 347 | ``"- يحتوي `agents/task_understanding.py` على توجيه `qualify_buyer_intent`."`` | — |
-| [SRC-41EDB66D3C-L000348](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L348) | 348 | ``"- يحتوي `agents/web_agent.py` على `_lead_generation_queries` و`_lead_intent_evidence`."`` | — |
-| [SRC-41EDB66D3C-L000349](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L349) | 349 | ``"- قاعدة التأهيل الحالية في تقرير البحث هي `explicit_public_buyer_intent_phrase`؛ أي إنها تعتمد على عبارة شراء عامة صريحة."`` | — |
-| [SRC-41EDB66D3C-L000350](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L350) | 350 | `"- قائمة العبارات الحالية داخل WebAgent تتضمن عبارات عقارية عربية محددة، كما يتضمن مولد الاستعلامات «مطلوب شقه تمليك» و«تمليك». هذا تسرب قطاعي داخل مسار عام، ويجب إزالته عبر تخطيط مرتبط بملف المنتج والفئة."` | — |
-| [SRC-41EDB66D3C-L000351](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L351) | 351 | ``"- `/api/health` يعلن حاليًا `mode: web-research`، وتوجد واجهة `/leads` وواجهة API للعملاء المحتملين."`` | — |
-| [SRC-41EDB66D3C-L000352](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L352) | 352 | `""` | — |
-| [SRC-41EDB66D3C-L000353](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L353) | 353 | `"**INFERRED — من المقارنة:** التنفيذ الحالي يمثل نواة بحث واكتشاف أولية، لا دورة Sales Intelligence مكتملة من فهم المنتج حتى التأهيل والمتابعة. كما أن حصر التأهيل في عبارة صريحة يفوّت الاحتياجات والمؤشرات غير المباشرة التي يجب الاحتفاظ بها كأنواع منفصلة لا كعملاء مؤكدين."` | — |
-| [SRC-41EDB66D3C-L000354](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L354) | 354 | `""` | — |
-| [SRC-41EDB66D3C-L000355](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L355) | 355 | `"**UNKNOWN:** القبول المستضاف للبحث التجاري، جودة الإشارات عبر منتجات وقطاعات مختلفة، دقة ربط هوية الأشخاص والشركات، ودقة التأهيل على مجموعة مرجعية بشرية لم تثبت بهذه المراجعة. لا يُعلن نجاحها دون تشغيل وقبول مستقلين."` | — |
-| [SRC-41EDB66D3C-L000356](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L356) | 356 | `""` | — |
-| [SRC-41EDB66D3C-L000357](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L357) | 357 | `"**مراجعة PRs سابقة ذات صلة — VERIFIED عند وقت هذه المراجعة:**"` | — |
-| [SRC-41EDB66D3C-L000358](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L358) | 358 | `""` | — |
-| [SRC-41EDB66D3C-L000359](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L359) | 359 | ``"- PR #129 (`fix(leads): normalize Arabic buyer queries and preserve fallback evidence`) وPR #130 (`fix(leads): keep buyer-search queries aligned to requested item`) ما زالا مفتوحين وغير مدمجين."`` | — |
-| [SRC-41EDB66D3C-L000360](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L360) | 360 | ``"- كلا الفرعين مبني على قاعدة قديمة `2b7fcd5`؛ المقارنة مع `main` عند `82d4ed27ee8dd115a769dbff5e7b39f55c3bb1b7` أظهرت أنهما متأخران بنحو 100 commit ومتفرعان (diverged). لا يجوز دمجهما مباشرة دون مزامنة ومراجعة diff جديد."`` | — |
-| [SRC-41EDB66D3C-L000361](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L361) | 361 | ``"- PR #130 يعالج جزءًا حقيقيًا من تسرب العقارات إلى بحث السيارات عبر تصنيف محدود لفئتي العقارات والمركبات، وتوليد استعلامات متخصصة لهما، وإضافة اختبارات تمنع الخلط بينهما. نجح CI على commit الكود `7f3ba8f`، لكن تشغيل الرأس `8f308ac` انتهى `action_required`؛ فلا يوصف الرأس الحالي بأنه اجتاز CI."`` | — |
-| [SRC-41EDB66D3C-L000362](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L362) | 362 | `"- تصنيف PR #130 ليس نموذج Product Taxonomy عامًّا؛ فهو يعرف العقار والمركبة فقط. يجب إعادة استخدام الفكرة بعد تصميم ProductProfile/Taxonomy أوسع، لا اعتماد التصنيف الثنائي بوصفه بنية المبيعات النهائية."` | — |
-| [SRC-41EDB66D3C-L000363](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L363) | 363 | ``"- يجب فصل **اكتشاف إشارة الشراء** عن **مطابقة الإشارة مع المنتج**: يمكن تسجيل إشارة شراء حقيقية مع `product_fit=not_assessed` إذا لم يذكر المصدر اسم المنتج صراحة، ثم تقييم الصلة في مرحلة مستقلة. لا ينبغي إسقاط إشارة الطلب لمجرد نقص كلمة تصنيفية؛ ولا ينبغي كذلك اعتبارها فرصة مرتبطة بالمنتج قبل إثبات الصلة."`` | — |
-| [SRC-41EDB66D3C-L000364](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L364) | 364 | `"- لا يوجد في هذه المواءمة دمج أو نسخ آلي لمحتويات PR #129 أو #130. المطلوب لاحقًا هو انتقاء التغييرات الضرورية، ومزامنتها على رأس حديث، ثم اختبارات انحدار متعددة القطاعات."` | — |
-| [SRC-41EDB66D3C-L000365](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L365) | 365 | `""` | — |
-| [SRC-41EDB66D3C-L000366](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L366) | 366 | `""` | — |
-| [SRC-41EDB66D3C-L000367](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L367) | 367 | `"---"` | — |
-| [SRC-41EDB66D3C-L000368](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L368) | 368 | `""` | — |
-| [SRC-41EDB66D3C-L000369](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L369) | 369 | `"## 13. ما الذي سيتغير؟"` | — |
-| [SRC-41EDB66D3C-L000370](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L370) | 370 | `""` | — |
-| [SRC-41EDB66D3C-L000371](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L371) | 371 | ``"\| المجال \| الوضع الذي شوهد في `main` \| الاتجاه بعد المواءمة \|"`` | — |
-| [SRC-41EDB66D3C-L000372](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L372) | 372 | `"\|---\|---\|---\|"` | — |
-| [SRC-41EDB66D3C-L000373](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L373) | 373 | `"\| هوية المنتج \| موصوف أساسًا كوكيل بحث وإجابات \| Sales Intelligence هو المنتج الرئيسي؛ البحث بنية داعمة \|"` | — |
-| [SRC-41EDB66D3C-L000374](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L374) | 374 | `"\| مدخلات البحث التجاري \| سؤال/عبارة بحث \| ملف منتج وسوق وICP وقيود مهمة \|"` | — |
-| [SRC-41EDB66D3C-L000375](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L375) | 375 | `"\| استراتيجية الاستعلام \| قوالب عامة مع صيغ شراء ثابتة \| قوالب مشتقة من المنتج والفئة والسوق ونوع الإشارة \|"` | — |
-| [SRC-41EDB66D3C-L000376](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L376) | 376 | `"\| أنواع النتائج \| إشارة شراء صريحة أو نتيجة مرتبطة \| تصنيف منفصل للطلب والاحتياج والفرصة غير المباشرة والتطابق والنفي \|"` | — |
-| [SRC-41EDB66D3C-L000377](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L377) | 377 | `"\| التأهيل \| مطابقة عبارة عامة داخل المصدر \| DemandSignal + Prospect + QualificationAssessment \|"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000714 إلى SRC-FDEEAFDFCA-L000143
+- النطاق: SRC-C9CF9B54F8-L000653 إلى SRC-FDEEAFDFCA-L000082
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000653](../../agents/omarai.py#L653) | 653 | `"                   ON CONFLICT(tenant_id, user_id)"` | — |
+| [SRC-C9CF9B54F8-L000654](../../agents/omarai.py#L654) | 654 | `"                   DO UPDATE SET role=excluded.role, active=1\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000655](../../agents/omarai.py#L655) | 655 | `"                (tenant, user_id, role, now_utc()),"` | — |
+| [SRC-C9CF9B54F8-L000656](../../agents/omarai.py#L656) | 656 | `"            )"` | — |
+| [SRC-C9CF9B54F8-L000657](../../agents/omarai.py#L657) | 657 | `""` | — |
+| [SRC-C9CF9B54F8-L000658](../../agents/omarai.py#L658) | 658 | `"    @staticmethod"` | — |
+| [SRC-C9CF9B54F8-L000659](../../agents/omarai.py#L659) | 659 | `"    def _token_hash(token: str) -> str:"` | — |
+| [SRC-C9CF9B54F8-L000660](../../agents/omarai.py#L660) | 660 | `"        return hashlib.sha256(token.encode(\"utf-8\")).hexdigest()"` | — |
+| [SRC-C9CF9B54F8-L000661](../../agents/omarai.py#L661) | 661 | `""` | — |
+| [SRC-C9CF9B54F8-L000662](../../agents/omarai.py#L662) | 662 | `"    @staticmethod"` | — |
+| [SRC-C9CF9B54F8-L000663](../../agents/omarai.py#L663) | 663 | `"    def _normalize_token_expiry(expires_at: str \| None) -> str \| None:"` | — |
+| [SRC-C9CF9B54F8-L000664](../../agents/omarai.py#L664) | 664 | `"        \"\"\"Store token expiries as validated UTC timestamps for safe comparisons.\"\"\""` | — |
+| [SRC-C9CF9B54F8-L000665](../../agents/omarai.py#L665) | 665 | `"        if expires_at is None:"` | — |
+| [SRC-C9CF9B54F8-L000666](../../agents/omarai.py#L666) | 666 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000667](../../agents/omarai.py#L667) | 667 | `"        if not isinstance(expires_at, str) or not expires_at.strip():"` | — |
+| [SRC-C9CF9B54F8-L000668](../../agents/omarai.py#L668) | 668 | `"            raise ValueError(\"expires_at must be an ISO-8601 timestamp with a timezone\")"` | — |
+| [SRC-C9CF9B54F8-L000669](../../agents/omarai.py#L669) | 669 | `"        value = expires_at.strip()"` | — |
+| [SRC-C9CF9B54F8-L000670](../../agents/omarai.py#L670) | 670 | `"        if value.endswith(\"Z\"):"` | — |
+| [SRC-C9CF9B54F8-L000671](../../agents/omarai.py#L671) | 671 | `"            value = value[:-1] + \"+00:00\""` | — |
+| [SRC-C9CF9B54F8-L000672](../../agents/omarai.py#L672) | 672 | `"        try:"` | — |
+| [SRC-C9CF9B54F8-L000673](../../agents/omarai.py#L673) | 673 | `"            parsed = datetime.fromisoformat(value)"` | — |
+| [SRC-C9CF9B54F8-L000674](../../agents/omarai.py#L674) | 674 | `"        except ValueError as exc:"` | — |
+| [SRC-C9CF9B54F8-L000675](../../agents/omarai.py#L675) | 675 | `"            raise ValueError("` | — |
+| [SRC-C9CF9B54F8-L000676](../../agents/omarai.py#L676) | 676 | `"                \"expires_at must be an ISO-8601 timestamp with a timezone\""` | — |
+| [SRC-C9CF9B54F8-L000677](../../agents/omarai.py#L677) | 677 | `"            ) from exc"` | — |
+| [SRC-C9CF9B54F8-L000678](../../agents/omarai.py#L678) | 678 | `"        if parsed.tzinfo is None or parsed.utcoffset() is None:"` | — |
+| [SRC-C9CF9B54F8-L000679](../../agents/omarai.py#L679) | 679 | `"            raise ValueError(\"expires_at must include an explicit timezone\")"` | — |
+| [SRC-C9CF9B54F8-L000680](../../agents/omarai.py#L680) | 680 | `"        normalized = parsed.astimezone(UTC)"` | — |
+| [SRC-C9CF9B54F8-L000681](../../agents/omarai.py#L681) | 681 | `"        if normalized <= datetime.now(UTC):"` | — |
+| [SRC-C9CF9B54F8-L000682](../../agents/omarai.py#L682) | 682 | `"            raise ValueError(\"expires_at must be in the future\")"` | — |
+| [SRC-C9CF9B54F8-L000683](../../agents/omarai.py#L683) | 683 | `"        return normalized.isoformat(timespec=\"seconds\").replace(\"+00:00\", \"Z\")"` | — |
+| [SRC-C9CF9B54F8-L000684](../../agents/omarai.py#L684) | 684 | `""` | — |
+| [SRC-C9CF9B54F8-L000685](../../agents/omarai.py#L685) | 685 | `"    def create_api_token("` | — |
+| [SRC-C9CF9B54F8-L000686](../../agents/omarai.py#L686) | 686 | `"        self,"` | — |
+| [SRC-C9CF9B54F8-L000687](../../agents/omarai.py#L687) | 687 | `"        token: str,"` | — |
+| [SRC-C9CF9B54F8-L000688](../../agents/omarai.py#L688) | 688 | `"        tenant_id: str,"` | — |
+| [SRC-C9CF9B54F8-L000689](../../agents/omarai.py#L689) | 689 | `"        user_id: str,"` | — |
+| [SRC-C9CF9B54F8-L000690](../../agents/omarai.py#L690) | 690 | `"        label: str = \"api\","` | — |
+| [SRC-C9CF9B54F8-L000691](../../agents/omarai.py#L691) | 691 | `"        expires_at: str \| None = None,"` | — |
+| [SRC-C9CF9B54F8-L000692](../../agents/omarai.py#L692) | 692 | `"    ):"` | — |
+| [SRC-C9CF9B54F8-L000693](../../agents/omarai.py#L693) | 693 | `"        if not isinstance(token, str) or len(token.strip()) < 32:"` | — |
+| [SRC-C9CF9B54F8-L000694](../../agents/omarai.py#L694) | 694 | `"            raise ValueError(\"API token must contain at least 32 characters\")"` | — |
+| [SRC-C9CF9B54F8-L000695](../../agents/omarai.py#L695) | 695 | `"        tenant = self._tenant(tenant_id)"` | — |
+| [SRC-C9CF9B54F8-L000696](../../agents/omarai.py#L696) | 696 | `"        expires_at = self._normalize_token_expiry(expires_at)"` | — |
+| [SRC-C9CF9B54F8-L000697](../../agents/omarai.py#L697) | 697 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000698](../../agents/omarai.py#L698) | 698 | `"            membership = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000699](../../agents/omarai.py#L699) | 699 | `"                \"\"\"SELECT 1 FROM tenant_memberships m"` | — |
+| [SRC-C9CF9B54F8-L000700](../../agents/omarai.py#L700) | 700 | `"                   JOIN tenants t ON t.id=m.tenant_id AND t.active=1"` | — |
+| [SRC-C9CF9B54F8-L000701](../../agents/omarai.py#L701) | 701 | `"                   JOIN users u ON u.id=m.user_id AND u.active=1"` | — |
+| [SRC-C9CF9B54F8-L000702](../../agents/omarai.py#L702) | 702 | `"                   WHERE m.tenant_id=? AND m.user_id=? AND m.active=1\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000703](../../agents/omarai.py#L703) | 703 | `"                (tenant, user_id),"` | — |
+| [SRC-C9CF9B54F8-L000704](../../agents/omarai.py#L704) | 704 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L000705](../../agents/omarai.py#L705) | 705 | `"            if not membership:"` | — |
+| [SRC-C9CF9B54F8-L000706](../../agents/omarai.py#L706) | 706 | `"                raise ValueError(\"active tenant membership is required\")"` | — |
+| [SRC-C9CF9B54F8-L000707](../../agents/omarai.py#L707) | 707 | `"            db.execute("` | — |
+| [SRC-C9CF9B54F8-L000708](../../agents/omarai.py#L708) | 708 | `"                \"\"\"INSERT INTO api_tokens"` | — |
+| [SRC-C9CF9B54F8-L000709](../../agents/omarai.py#L709) | 709 | `"                   (token_hash, tenant_id, user_id, label, active, created_at, expires_at)"` | — |
+| [SRC-C9CF9B54F8-L000710](../../agents/omarai.py#L710) | 710 | `"                   VALUES (?, ?, ?, ?, 1, ?, ?)\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000711](../../agents/omarai.py#L711) | 711 | `"                ("` | — |
+| [SRC-C9CF9B54F8-L000712](../../agents/omarai.py#L712) | 712 | `"                    self._token_hash(token.strip()),"` | — |
+| [SRC-C9CF9B54F8-L000713](../../agents/omarai.py#L713) | 713 | `"                    tenant,"` | — |
 | [SRC-C9CF9B54F8-L000714](../../agents/omarai.py#L714) | 714 | `"                    user_id,"` | — |
 | [SRC-C9CF9B54F8-L000715](../../agents/omarai.py#L715) | 715 | `"                    str(label or \"api\")[:80],"` | — |
 | [SRC-C9CF9B54F8-L000716](../../agents/omarai.py#L716) | 716 | `"                    now_utc(),"` | — |
@@ -764,64 +825,3 @@
 | [SRC-FDEEAFDFCA-L000080](../../agents/request_budget.py#L80) | 80 | `"        timeout = _bounded_env_int("` | — |
 | [SRC-FDEEAFDFCA-L000081](../../agents/request_budget.py#L81) | 81 | `"            \"OMARAI_REQUEST_BUDGET_SECONDS\","` | — |
 | [SRC-FDEEAFDFCA-L000082](../../agents/request_budget.py#L82) | 82 | `"            DEFAULT_TIMEOUT_SECONDS,"` | — |
-| [SRC-FDEEAFDFCA-L000083](../../agents/request_budget.py#L83) | 83 | `"            10,"` | — |
-| [SRC-FDEEAFDFCA-L000084](../../agents/request_budget.py#L84) | 84 | `"            MAX_TIMEOUT_SECONDS,"` | — |
-| [SRC-FDEEAFDFCA-L000085](../../agents/request_budget.py#L85) | 85 | `"        )"` | — |
-| [SRC-FDEEAFDFCA-L000086](../../agents/request_budget.py#L86) | 86 | `"        limits = {"` | — |
-| [SRC-FDEEAFDFCA-L000087](../../agents/request_budget.py#L87) | 87 | `"            key: _bounded_env_int("` | — |
-| [SRC-FDEEAFDFCA-L000088](../../agents/request_budget.py#L88) | 88 | `"                f\"OMARAI_REQUEST_MAX_{key.upper()}\","` | — |
-| [SRC-FDEEAFDFCA-L000089](../../agents/request_budget.py#L89) | 89 | `"                defaults[0],"` | — |
-| [SRC-FDEEAFDFCA-L000090](../../agents/request_budget.py#L90) | 90 | `"                0 if key == \"tool_calls\" else 1,"` | — |
-| [SRC-FDEEAFDFCA-L000091](../../agents/request_budget.py#L91) | 91 | `"                defaults[1],"` | — |
-| [SRC-FDEEAFDFCA-L000092](../../agents/request_budget.py#L92) | 92 | `"            )"` | — |
-| [SRC-FDEEAFDFCA-L000093](../../agents/request_budget.py#L93) | 93 | `"            for key, defaults in RESOURCE_LIMITS.items()"` | — |
-| [SRC-FDEEAFDFCA-L000094](../../agents/request_budget.py#L94) | 94 | `"        }"` | — |
-| [SRC-FDEEAFDFCA-L000095](../../agents/request_budget.py#L95) | 95 | `"        if profile == \"hosted_smoke\":"` | — |
-| [SRC-FDEEAFDFCA-L000096](../../agents/request_budget.py#L96) | 96 | `"            timeout = min(timeout, HOSTED_SMOKE_BUDGET_TIMEOUT_SECONDS)"` | — |
-| [SRC-FDEEAFDFCA-L000097](../../agents/request_budget.py#L97) | 97 | `"            limits = {"` | — |
-| [SRC-FDEEAFDFCA-L000098](../../agents/request_budget.py#L98) | 98 | `"                key: min(limits[key], HOSTED_SMOKE_BUDGET_LIMITS[key])"` | — |
-| [SRC-FDEEAFDFCA-L000099](../../agents/request_budget.py#L99) | 99 | `"                for key in RESOURCE_LIMITS"` | — |
-| [SRC-FDEEAFDFCA-L000100](../../agents/request_budget.py#L100) | 100 | `"            }"` | — |
-| [SRC-FDEEAFDFCA-L000101](../../agents/request_budget.py#L101) | 101 | `"        return cls(timeout_seconds=timeout, limits=limits, profile=profile)"` | — |
-| [SRC-FDEEAFDFCA-L000102](../../agents/request_budget.py#L102) | 102 | `""` | — |
-| [SRC-FDEEAFDFCA-L000103](../../agents/request_budget.py#L103) | 103 | `"    def remaining_seconds(self) -> float:"` | — |
-| [SRC-FDEEAFDFCA-L000104](../../agents/request_budget.py#L104) | 104 | `"        return max(0.0, self.deadline - self._clock())"` | — |
-| [SRC-FDEEAFDFCA-L000105](../../agents/request_budget.py#L105) | 105 | `""` | — |
-| [SRC-FDEEAFDFCA-L000106](../../agents/request_budget.py#L106) | 106 | `"    def timeout_for(self, configured_seconds: float) -> float:"` | — |
-| [SRC-FDEEAFDFCA-L000107](../../agents/request_budget.py#L107) | 107 | `"        \"\"\"Cap one outbound timeout to time remaining; raise instead of starting at zero.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000108](../../agents/request_budget.py#L108) | 108 | `"        remaining = self.remaining_seconds()"` | — |
-| [SRC-FDEEAFDFCA-L000109](../../agents/request_budget.py#L109) | 109 | `"        if remaining <= 0:"` | — |
-| [SRC-FDEEAFDFCA-L000110](../../agents/request_budget.py#L110) | 110 | `"            with self._lock:"` | — |
-| [SRC-FDEEAFDFCA-L000111](../../agents/request_budget.py#L111) | 111 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
-| [SRC-FDEEAFDFCA-L000112](../../agents/request_budget.py#L112) | 112 | `"            raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
-| [SRC-FDEEAFDFCA-L000113](../../agents/request_budget.py#L113) | 113 | `"        return min(float(configured_seconds), remaining)"` | — |
-| [SRC-FDEEAFDFCA-L000114](../../agents/request_budget.py#L114) | 114 | `""` | — |
-| [SRC-FDEEAFDFCA-L000115](../../agents/request_budget.py#L115) | 115 | `"    def remaining_units(self, resource: str) -> int:"` | — |
-| [SRC-FDEEAFDFCA-L000116](../../agents/request_budget.py#L116) | 116 | `"        \"\"\"Return unused units for a resource; zero means disabled, exhausted, or expired.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000117](../../agents/request_budget.py#L117) | 117 | `"        if resource not in self._limits:"` | — |
-| [SRC-FDEEAFDFCA-L000118](../../agents/request_budget.py#L118) | 118 | `"            raise ValueError(f\"unknown request-budget resource: {resource}\")"` | — |
-| [SRC-FDEEAFDFCA-L000119](../../agents/request_budget.py#L119) | 119 | `"        if self.remaining_seconds() <= 0:"` | — |
-| [SRC-FDEEAFDFCA-L000120](../../agents/request_budget.py#L120) | 120 | `"            return 0"` | — |
-| [SRC-FDEEAFDFCA-L000121](../../agents/request_budget.py#L121) | 121 | `"        with self._lock:"` | — |
-| [SRC-FDEEAFDFCA-L000122](../../agents/request_budget.py#L122) | 122 | `"            return max(0, self._limits[resource] - self._counts[resource])"` | — |
-| [SRC-FDEEAFDFCA-L000123](../../agents/request_budget.py#L123) | 123 | `""` | — |
-| [SRC-FDEEAFDFCA-L000124](../../agents/request_budget.py#L124) | 124 | `"    def reserve(self, resource: str, amount: int = 1) -> None:"` | — |
-| [SRC-FDEEAFDFCA-L000125](../../agents/request_budget.py#L125) | 125 | `"        \"\"\"Atomically reserve resource units before initiating external work.\"\"\""` | — |
-| [SRC-FDEEAFDFCA-L000126](../../agents/request_budget.py#L126) | 126 | `"        if resource not in self._limits:"` | — |
-| [SRC-FDEEAFDFCA-L000127](../../agents/request_budget.py#L127) | 127 | `"            raise ValueError(f\"unknown request-budget resource: {resource}\")"` | — |
-| [SRC-FDEEAFDFCA-L000128](../../agents/request_budget.py#L128) | 128 | `"        if amount < 1:"` | — |
-| [SRC-FDEEAFDFCA-L000129](../../agents/request_budget.py#L129) | 129 | `"            raise ValueError(\"reservation amount must be positive\")"` | — |
-| [SRC-FDEEAFDFCA-L000130](../../agents/request_budget.py#L130) | 130 | `"        with self._lock:"` | — |
-| [SRC-FDEEAFDFCA-L000131](../../agents/request_budget.py#L131) | 131 | `"            if self.remaining_seconds() <= 0:"` | — |
-| [SRC-FDEEAFDFCA-L000132](../../agents/request_budget.py#L132) | 132 | `"                self._exhausted_reasons.add(\"deadline\")"` | — |
-| [SRC-FDEEAFDFCA-L000133](../../agents/request_budget.py#L133) | 133 | `"                raise RequestBudgetExceeded(\"انتهت ميزانية وقت الطلب.\")"` | — |
-| [SRC-FDEEAFDFCA-L000134](../../agents/request_budget.py#L134) | 134 | `"            limit = self._limits[resource]"` | — |
-| [SRC-FDEEAFDFCA-L000135](../../agents/request_budget.py#L135) | 135 | `"            if self._counts[resource] + amount > limit:"` | — |
-| [SRC-FDEEAFDFCA-L000136](../../agents/request_budget.py#L136) | 136 | `"                self._exhausted_reasons.add(resource)"` | — |
-| [SRC-FDEEAFDFCA-L000137](../../agents/request_budget.py#L137) | 137 | `"                raise RequestBudgetExceeded("` | — |
-| [SRC-FDEEAFDFCA-L000138](../../agents/request_budget.py#L138) | 138 | `"                    f\"تم بلوغ حد موارد الطلب: {resource}.\""` | — |
-| [SRC-FDEEAFDFCA-L000139](../../agents/request_budget.py#L139) | 139 | `"                )"` | — |
-| [SRC-FDEEAFDFCA-L000140](../../agents/request_budget.py#L140) | 140 | `"            self._counts[resource] += amount"` | — |
-| [SRC-FDEEAFDFCA-L000141](../../agents/request_budget.py#L141) | 141 | `""` | — |
-| [SRC-FDEEAFDFCA-L000142](../../agents/request_budget.py#L142) | 142 | `"    def snapshot(self) -> dict[str, Any]:"` | — |
-| [SRC-FDEEAFDFCA-L000143](../../agents/request_budget.py#L143) | 143 | `"        with self._lock:"` | — |

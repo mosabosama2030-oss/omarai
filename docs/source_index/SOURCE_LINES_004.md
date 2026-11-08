@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000486 إلى SRC-C9CF9B54F8-L000713
+- النطاق: SRC-5587371288-L000425 إلى SRC-C9CF9B54F8-L000652
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,11 +16,72 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000425](../../agents/intent_router.py#L425) | 425 | `"    markers = ("` | — |
+| [SRC-5587371288-L000426](../../agents/intent_router.py#L426) | 426 | `"        \"النص التالي\", \"النص الاتي\", \"النص ده\", \"النص اللي جاي\","` | — |
+| [SRC-5587371288-L000427](../../agents/intent_router.py#L427) | 427 | `"        \"this text\", \"following text\", \"the following text\", \"text below\","` | — |
+| [SRC-5587371288-L000428](../../agents/intent_router.py#L428) | 428 | `"        \"text to summarize\", \"content below\","` | — |
+| [SRC-5587371288-L000429](../../agents/intent_router.py#L429) | 429 | `"    )"` | — |
+| [SRC-5587371288-L000430](../../agents/intent_router.py#L430) | 430 | `"    for marker in markers:"` | — |
+| [SRC-5587371288-L000431](../../agents/intent_router.py#L431) | 431 | `"        normalized_marker = _normalize(marker)"` | — |
+| [SRC-5587371288-L000432](../../agents/intent_router.py#L432) | 432 | `"        if normalized_marker in normalized:"` | — |
+| [SRC-5587371288-L000433](../../agents/intent_router.py#L433) | 433 | `"            remainder = normalized.split(normalized_marker, 1)[1].strip()"` | — |
+| [SRC-5587371288-L000434](../../agents/intent_router.py#L434) | 434 | `"            if len(remainder) >= 8:"` | — |
+| [SRC-5587371288-L000435](../../agents/intent_router.py#L435) | 435 | `"                return True"` | — |
+| [SRC-5587371288-L000436](../../agents/intent_router.py#L436) | 436 | `"    # Also allow a concise direct form such as \"لخص: [pasted paragraph]\"."` | — |
+| [SRC-5587371288-L000437](../../agents/intent_router.py#L437) | 437 | `"    return bool("` | — |
+| [SRC-5587371288-L000438](../../agents/intent_router.py#L438) | 438 | `"        re.search("` | — |
+| [SRC-5587371288-L000439](../../agents/intent_router.py#L439) | 439 | `"            r\"^\\s*(?:لخص(?:\\s+لي)?\|تلخيص\|summari[sz]e\|summary)\\s*[:：]\\s*\\S.{12,}$\","` | — |
+| [SRC-5587371288-L000440](../../agents/intent_router.py#L440) | 440 | `"            question,"` | — |
+| [SRC-5587371288-L000441](../../agents/intent_router.py#L441) | 441 | `"            flags=re.IGNORECASE,"` | — |
+| [SRC-5587371288-L000442](../../agents/intent_router.py#L442) | 442 | `"        )"` | — |
+| [SRC-5587371288-L000443](../../agents/intent_router.py#L443) | 443 | `"    )"` | — |
+| [SRC-5587371288-L000444](../../agents/intent_router.py#L444) | 444 | `""` | — |
+| [SRC-5587371288-L000445](../../agents/intent_router.py#L445) | 445 | `""` | — |
+| [SRC-5587371288-L000446](../../agents/intent_router.py#L446) | 446 | `"def route_intent("` | — |
+| [SRC-5587371288-L000447](../../agents/intent_router.py#L447) | 447 | `"    question: str,"` | — |
+| [SRC-5587371288-L000448](../../agents/intent_router.py#L448) | 448 | `"    history: Any = None,"` | — |
+| [SRC-5587371288-L000449](../../agents/intent_router.py#L449) | 449 | `"    mode: str = \"auto\","` | — |
+| [SRC-5587371288-L000450](../../agents/intent_router.py#L450) | 450 | `"    *,"` | — |
+| [SRC-5587371288-L000451](../../agents/intent_router.py#L451) | 451 | `"    capability_question: bool = False,"` | — |
+| [SRC-5587371288-L000452](../../agents/intent_router.py#L452) | 452 | `"    requires_web: bool = False,"` | — |
+| [SRC-5587371288-L000453](../../agents/intent_router.py#L453) | 453 | `") -> dict[str, Any]:"` | — |
+| [SRC-5587371288-L000454](../../agents/intent_router.py#L454) | 454 | `"    \"\"\"Return a deterministic route and auditable reason for a user question.\"\"\""` | — |
+| [SRC-5587371288-L000455](../../agents/intent_router.py#L455) | 455 | `"    clean_mode = mode.strip().lower() if isinstance(mode, str) else \"auto\""` | — |
+| [SRC-5587371288-L000456](../../agents/intent_router.py#L456) | 456 | `""` | — |
+| [SRC-5587371288-L000457](../../agents/intent_router.py#L457) | 457 | `"    # If the assistant just asked for a missing referent, bind the user's concise"` | — |
+| [SRC-5587371288-L000458](../../agents/intent_router.py#L458) | 458 | `"    # reply to that pending question instead of answering the entity name in isolation."` | — |
+| [SRC-5587371288-L000459](../../agents/intent_router.py#L459) | 459 | `"    if _is_clarification_answer(question, history):"` | — |
+| [SRC-5587371288-L000460](../../agents/intent_router.py#L460) | 460 | `"        return {"` | — |
+| [SRC-5587371288-L000461](../../agents/intent_router.py#L461) | 461 | `"            \"route\": \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\","` | — |
+| [SRC-5587371288-L000462](../../agents/intent_router.py#L462) | 462 | `"            \"reason\": \"answer_to_pending_clarification\","` | — |
+| [SRC-5587371288-L000463](../../agents/intent_router.py#L463) | 463 | `"            \"context_available\": True,"` | — |
+| [SRC-5587371288-L000464](../../agents/intent_router.py#L464) | 464 | `"            \"needs_clarification\": False,"` | — |
+| [SRC-5587371288-L000465](../../agents/intent_router.py#L465) | 465 | `"        }"` | — |
+| [SRC-5587371288-L000466](../../agents/intent_router.py#L466) | 466 | `""` | — |
+| [SRC-5587371288-L000467](../../agents/intent_router.py#L467) | 467 | `"    context_available = _has_context(history)"` | — |
+| [SRC-5587371288-L000468](../../agents/intent_router.py#L468) | 468 | `""` | — |
+| [SRC-5587371288-L000469](../../agents/intent_router.py#L469) | 469 | `"    # A search mode cannot supply a missing subject. Clarify genuinely elliptical"` | — |
+| [SRC-5587371288-L000470](../../agents/intent_router.py#L470) | 470 | `"    # questions before honoring the UI's explicit research mode."` | — |
+| [SRC-5587371288-L000471](../../agents/intent_router.py#L471) | 471 | `"    if _needs_clarification(question) and not context_available:"` | — |
+| [SRC-5587371288-L000472](../../agents/intent_router.py#L472) | 472 | `"        return {"` | — |
+| [SRC-5587371288-L000473](../../agents/intent_router.py#L473) | 473 | `"            \"route\": \"CLARIFY\","` | — |
+| [SRC-5587371288-L000474](../../agents/intent_router.py#L474) | 474 | `"            \"reason\": \"missing_referent_and_no_conversation_context\","` | — |
+| [SRC-5587371288-L000475](../../agents/intent_router.py#L475) | 475 | `"            \"context_available\": False,"` | — |
+| [SRC-5587371288-L000476](../../agents/intent_router.py#L476) | 476 | `"            \"needs_clarification\": True,"` | — |
+| [SRC-5587371288-L000477](../../agents/intent_router.py#L477) | 477 | `"        }"` | — |
+| [SRC-5587371288-L000478](../../agents/intent_router.py#L478) | 478 | `""` | — |
+| [SRC-5587371288-L000479](../../agents/intent_router.py#L479) | 479 | `"    # An explicitly selected mode controls research depth when the request itself"` | — |
+| [SRC-5587371288-L000480](../../agents/intent_router.py#L480) | 480 | `"    # is sufficiently specified."` | — |
+| [SRC-5587371288-L000481](../../agents/intent_router.py#L481) | 481 | `"    if clean_mode != \"auto\":"` | — |
+| [SRC-5587371288-L000482](../../agents/intent_router.py#L482) | 482 | `"        route = \"WEB_DEEP\" if clean_mode == \"deep\" else \"WEB_SIMPLE\""` | — |
+| [SRC-5587371288-L000483](../../agents/intent_router.py#L483) | 483 | `"        return {"` | — |
+| [SRC-5587371288-L000484](../../agents/intent_router.py#L484) | 484 | `"            \"route\": route,"` | — |
+| [SRC-5587371288-L000485](../../agents/intent_router.py#L485) | 485 | `"            \"reason\": \"explicit_mode\","` | — |
 | [SRC-5587371288-L000486](../../agents/intent_router.py#L486) | 486 | `"            \"context_available\": context_available,"` | — |
 | [SRC-5587371288-L000487](../../agents/intent_router.py#L487) | 487 | `"            \"needs_clarification\": False,"` | — |
 | [SRC-5587371288-L000488](../../agents/intent_router.py#L488) | 488 | `"        }"` | — |
 | [SRC-5587371288-L000489](../../agents/intent_router.py#L489) | 489 | `""` | — |
-| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"    if capability_question:"` | — |
+| [SRC-5587371288-L000490](../../agents/intent_router.py#L490) | 490 | `"    if capability_question and not requires_web:"` | — |
 | [SRC-5587371288-L000491](../../agents/intent_router.py#L491) | 491 | `"        return {"` | — |
 | [SRC-5587371288-L000492](../../agents/intent_router.py#L492) | 492 | `"            \"route\": \"LOCAL\","` | — |
 | [SRC-5587371288-L000493](../../agents/intent_router.py#L493) | 493 | `"            \"reason\": \"capability_question\","` | — |
@@ -764,64 +825,3 @@
 | [SRC-C9CF9B54F8-L000650](../../agents/omarai.py#L650) | 650 | `"                \"\"\"INSERT INTO tenant_memberships"` | — |
 | [SRC-C9CF9B54F8-L000651](../../agents/omarai.py#L651) | 651 | `"                   (tenant_id, user_id, role, active, created_at)"` | — |
 | [SRC-C9CF9B54F8-L000652](../../agents/omarai.py#L652) | 652 | `"                   VALUES (?, ?, ?, 1, ?)"` | — |
-| [SRC-C9CF9B54F8-L000653](../../agents/omarai.py#L653) | 653 | `"                   ON CONFLICT(tenant_id, user_id)"` | — |
-| [SRC-C9CF9B54F8-L000654](../../agents/omarai.py#L654) | 654 | `"                   DO UPDATE SET role=excluded.role, active=1\"\"\","` | — |
-| [SRC-C9CF9B54F8-L000655](../../agents/omarai.py#L655) | 655 | `"                (tenant, user_id, role, now_utc()),"` | — |
-| [SRC-C9CF9B54F8-L000656](../../agents/omarai.py#L656) | 656 | `"            )"` | — |
-| [SRC-C9CF9B54F8-L000657](../../agents/omarai.py#L657) | 657 | `""` | — |
-| [SRC-C9CF9B54F8-L000658](../../agents/omarai.py#L658) | 658 | `"    @staticmethod"` | — |
-| [SRC-C9CF9B54F8-L000659](../../agents/omarai.py#L659) | 659 | `"    def _token_hash(token: str) -> str:"` | — |
-| [SRC-C9CF9B54F8-L000660](../../agents/omarai.py#L660) | 660 | `"        return hashlib.sha256(token.encode(\"utf-8\")).hexdigest()"` | — |
-| [SRC-C9CF9B54F8-L000661](../../agents/omarai.py#L661) | 661 | `""` | — |
-| [SRC-C9CF9B54F8-L000662](../../agents/omarai.py#L662) | 662 | `"    @staticmethod"` | — |
-| [SRC-C9CF9B54F8-L000663](../../agents/omarai.py#L663) | 663 | `"    def _normalize_token_expiry(expires_at: str \| None) -> str \| None:"` | — |
-| [SRC-C9CF9B54F8-L000664](../../agents/omarai.py#L664) | 664 | `"        \"\"\"Store token expiries as validated UTC timestamps for safe comparisons.\"\"\""` | — |
-| [SRC-C9CF9B54F8-L000665](../../agents/omarai.py#L665) | 665 | `"        if expires_at is None:"` | — |
-| [SRC-C9CF9B54F8-L000666](../../agents/omarai.py#L666) | 666 | `"            return None"` | — |
-| [SRC-C9CF9B54F8-L000667](../../agents/omarai.py#L667) | 667 | `"        if not isinstance(expires_at, str) or not expires_at.strip():"` | — |
-| [SRC-C9CF9B54F8-L000668](../../agents/omarai.py#L668) | 668 | `"            raise ValueError(\"expires_at must be an ISO-8601 timestamp with a timezone\")"` | — |
-| [SRC-C9CF9B54F8-L000669](../../agents/omarai.py#L669) | 669 | `"        value = expires_at.strip()"` | — |
-| [SRC-C9CF9B54F8-L000670](../../agents/omarai.py#L670) | 670 | `"        if value.endswith(\"Z\"):"` | — |
-| [SRC-C9CF9B54F8-L000671](../../agents/omarai.py#L671) | 671 | `"            value = value[:-1] + \"+00:00\""` | — |
-| [SRC-C9CF9B54F8-L000672](../../agents/omarai.py#L672) | 672 | `"        try:"` | — |
-| [SRC-C9CF9B54F8-L000673](../../agents/omarai.py#L673) | 673 | `"            parsed = datetime.fromisoformat(value)"` | — |
-| [SRC-C9CF9B54F8-L000674](../../agents/omarai.py#L674) | 674 | `"        except ValueError as exc:"` | — |
-| [SRC-C9CF9B54F8-L000675](../../agents/omarai.py#L675) | 675 | `"            raise ValueError("` | — |
-| [SRC-C9CF9B54F8-L000676](../../agents/omarai.py#L676) | 676 | `"                \"expires_at must be an ISO-8601 timestamp with a timezone\""` | — |
-| [SRC-C9CF9B54F8-L000677](../../agents/omarai.py#L677) | 677 | `"            ) from exc"` | — |
-| [SRC-C9CF9B54F8-L000678](../../agents/omarai.py#L678) | 678 | `"        if parsed.tzinfo is None or parsed.utcoffset() is None:"` | — |
-| [SRC-C9CF9B54F8-L000679](../../agents/omarai.py#L679) | 679 | `"            raise ValueError(\"expires_at must include an explicit timezone\")"` | — |
-| [SRC-C9CF9B54F8-L000680](../../agents/omarai.py#L680) | 680 | `"        normalized = parsed.astimezone(UTC)"` | — |
-| [SRC-C9CF9B54F8-L000681](../../agents/omarai.py#L681) | 681 | `"        if normalized <= datetime.now(UTC):"` | — |
-| [SRC-C9CF9B54F8-L000682](../../agents/omarai.py#L682) | 682 | `"            raise ValueError(\"expires_at must be in the future\")"` | — |
-| [SRC-C9CF9B54F8-L000683](../../agents/omarai.py#L683) | 683 | `"        return normalized.isoformat(timespec=\"seconds\").replace(\"+00:00\", \"Z\")"` | — |
-| [SRC-C9CF9B54F8-L000684](../../agents/omarai.py#L684) | 684 | `""` | — |
-| [SRC-C9CF9B54F8-L000685](../../agents/omarai.py#L685) | 685 | `"    def create_api_token("` | — |
-| [SRC-C9CF9B54F8-L000686](../../agents/omarai.py#L686) | 686 | `"        self,"` | — |
-| [SRC-C9CF9B54F8-L000687](../../agents/omarai.py#L687) | 687 | `"        token: str,"` | — |
-| [SRC-C9CF9B54F8-L000688](../../agents/omarai.py#L688) | 688 | `"        tenant_id: str,"` | — |
-| [SRC-C9CF9B54F8-L000689](../../agents/omarai.py#L689) | 689 | `"        user_id: str,"` | — |
-| [SRC-C9CF9B54F8-L000690](../../agents/omarai.py#L690) | 690 | `"        label: str = \"api\","` | — |
-| [SRC-C9CF9B54F8-L000691](../../agents/omarai.py#L691) | 691 | `"        expires_at: str \| None = None,"` | — |
-| [SRC-C9CF9B54F8-L000692](../../agents/omarai.py#L692) | 692 | `"    ):"` | — |
-| [SRC-C9CF9B54F8-L000693](../../agents/omarai.py#L693) | 693 | `"        if not isinstance(token, str) or len(token.strip()) < 32:"` | — |
-| [SRC-C9CF9B54F8-L000694](../../agents/omarai.py#L694) | 694 | `"            raise ValueError(\"API token must contain at least 32 characters\")"` | — |
-| [SRC-C9CF9B54F8-L000695](../../agents/omarai.py#L695) | 695 | `"        tenant = self._tenant(tenant_id)"` | — |
-| [SRC-C9CF9B54F8-L000696](../../agents/omarai.py#L696) | 696 | `"        expires_at = self._normalize_token_expiry(expires_at)"` | — |
-| [SRC-C9CF9B54F8-L000697](../../agents/omarai.py#L697) | 697 | `"        with self.connect() as db:"` | — |
-| [SRC-C9CF9B54F8-L000698](../../agents/omarai.py#L698) | 698 | `"            membership = db.execute("` | — |
-| [SRC-C9CF9B54F8-L000699](../../agents/omarai.py#L699) | 699 | `"                \"\"\"SELECT 1 FROM tenant_memberships m"` | — |
-| [SRC-C9CF9B54F8-L000700](../../agents/omarai.py#L700) | 700 | `"                   JOIN tenants t ON t.id=m.tenant_id AND t.active=1"` | — |
-| [SRC-C9CF9B54F8-L000701](../../agents/omarai.py#L701) | 701 | `"                   JOIN users u ON u.id=m.user_id AND u.active=1"` | — |
-| [SRC-C9CF9B54F8-L000702](../../agents/omarai.py#L702) | 702 | `"                   WHERE m.tenant_id=? AND m.user_id=? AND m.active=1\"\"\","` | — |
-| [SRC-C9CF9B54F8-L000703](../../agents/omarai.py#L703) | 703 | `"                (tenant, user_id),"` | — |
-| [SRC-C9CF9B54F8-L000704](../../agents/omarai.py#L704) | 704 | `"            ).fetchone()"` | — |
-| [SRC-C9CF9B54F8-L000705](../../agents/omarai.py#L705) | 705 | `"            if not membership:"` | — |
-| [SRC-C9CF9B54F8-L000706](../../agents/omarai.py#L706) | 706 | `"                raise ValueError(\"active tenant membership is required\")"` | — |
-| [SRC-C9CF9B54F8-L000707](../../agents/omarai.py#L707) | 707 | `"            db.execute("` | — |
-| [SRC-C9CF9B54F8-L000708](../../agents/omarai.py#L708) | 708 | `"                \"\"\"INSERT INTO api_tokens"` | — |
-| [SRC-C9CF9B54F8-L000709](../../agents/omarai.py#L709) | 709 | `"                   (token_hash, tenant_id, user_id, label, active, created_at, expires_at)"` | — |
-| [SRC-C9CF9B54F8-L000710](../../agents/omarai.py#L710) | 710 | `"                   VALUES (?, ?, ?, ?, 1, ?, ?)\"\"\","` | — |
-| [SRC-C9CF9B54F8-L000711](../../agents/omarai.py#L711) | 711 | `"                ("` | — |
-| [SRC-C9CF9B54F8-L000712](../../agents/omarai.py#L712) | 712 | `"                    self._token_hash(token.strip()),"` | — |
-| [SRC-C9CF9B54F8-L000713](../../agents/omarai.py#L713) | 713 | `"                    tenant,"` | — |
