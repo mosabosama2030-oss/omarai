@@ -124,7 +124,10 @@ def validate_dialogue_context(
         and item.get("content", "").strip()
         for item in history
     )
-    topic_shift = candidate.get("topic_shift") is True
+    explicit_context_refinement = _has_explicit_context_refinement(current)
+    # A clear correction/refinement ("I meant EUR", "Alexandria only") edits the
+    # current topic/slot; a model topic_shift flag must not discard that relation.
+    topic_shift = candidate.get("topic_shift") is True and not explicit_context_refinement
     model_marked_follow_up = candidate.get("is_follow_up") is True
     # The model flag is insufficient on its own. The current message must contain
     # a recognizable reference, correction, or constraint refinement before prior
@@ -133,8 +136,9 @@ def validate_dialogue_context(
         might_be_context_dependent(current)
         or _has_implicit_context_reference(current)
     )
+    context_relation_marked = model_marked_follow_up or explicit_context_refinement
     is_follow_up = (
-        model_marked_follow_up
+        context_relation_marked
         and has_history
         and not topic_shift
         and current_has_context_signal
@@ -144,13 +148,13 @@ def validate_dialogue_context(
     # follow-up. Preserve the user's current wording and clear inherited metadata.
     rejected_stale_context = (
         resolved.casefold() != current.casefold()
-        and (not model_marked_follow_up or not current_has_context_signal)
+        and (not context_relation_marked or not current_has_context_signal)
     )
     reset_context = (
         topic_shift
         or not has_history
         or rejected_stale_context
-        or (model_marked_follow_up and not current_has_context_signal)
+        or (context_relation_marked and not current_has_context_signal)
     )
     if reset_context:
         resolved = current
@@ -236,6 +240,27 @@ def validate_dialogue_context(
     }
 
 
+def _has_explicit_context_refinement(question: str) -> bool:
+    """Recognize a correction/refinement that edits an earlier dialogue slot."""
+    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
+    if not current or len(current) > 220:
+        return False
+    correction = re.search(
+        r"^(?:(?:لا|مش|مو)\s*[،,]?\s*)?(?:قصدي|اقصد|أقصد|اعني|أعني)\s+\S.{0,100}$"
+        r"|^(?:مش|مو|ليس)\s+[^،,]{1,45}[،,]\s*\S.{0,80}$"
+        r"|^(?:بدل|بدلا\s+من|بدلاً\s+من)\s+\S.{0,80}$",
+        current,
+    )
+    location_refinement = re.search(
+        r"^(?:في|ب|بمحافظة|بمدينة)\s+[\u0600-\u06FFa-z0-9]"
+        r"[\u0600-\u06FFa-z0-9\s'-]{1,48}\s+(?:بس|فقط|حصرا)$"
+        r"|^(?:only\s+in|just\s+in|in)\s+[a-z][a-z\s'-]{1,45}"
+        r"(?:\s+(?:only|just))?$",
+        current,
+    )
+    return bool(correction or location_refinement)
+
+
 def _has_implicit_context_reference(question: str) -> bool:
     """Recognize situation-dependent phrasing reserved for semantic context review."""
     current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
@@ -292,22 +317,4 @@ def might_be_context_dependent(question: str) -> bool:
         r"[\u0600-\u06FF]{0,18}(?:ه|ها|هم|هما|هن|ك|كم|كن)\b",
         current,
     )
-    # Correction turns replace an earlier entity or slot instead of starting a
-    # standalone topic. Bare "لا" is deliberately excluded.
-    correction = re.search(
-        r"^(?:(?:لا|مش|مو)\s*[،,]?\s*)?(?:قصدي|اقصد|أقصد|اعني|أعني)\s+\S.{0,100}$"
-        r"|^(?:مش|مو|ليس)\s+[^،,]{1,45}[،,]\s*\S.{0,80}$"
-        r"|^(?:بدل|بدلا\s+من|بدلاً\s+من)\s+\S.{0,80}$",
-        current,
-    )
-    location_refinement = re.search(
-        r"^(?:في|ب|بمحافظة|بمدينة)\s+[\u0600-\u06FFa-z0-9]"
-        r"[\u0600-\u06FFa-z0-9\s'-]{1,48}\s+(?:بس|فقط|حصرا)$"
-        r"|^(?:only\s+in|just\s+in|in)\s+[a-z][a-z\s'-]{1,45}"
-        r"(?:\s+(?:only|just))?$",
-        current,
-    )
-    return bool(
-        lead_in or reference or fragment or attached_reference
-        or correction or location_refinement
-    )
+    return bool(lead_in or reference or fragment or attached_reference or _has_explicit_context_refinement(current))
