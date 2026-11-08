@@ -1325,7 +1325,7 @@ def build_query_strategy_matrix(
                 tail = candidate[-tail_chars:].strip()
                 candidate = _SPACE.sub(" ", f"{head} {tail}").strip()
             candidate = _SPACE.sub(" ", f"{candidate} {scope_suffix}").strip()
-                candidate = candidate[:240]
+        candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
