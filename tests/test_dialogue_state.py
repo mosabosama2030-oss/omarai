@@ -339,3 +339,12 @@ def test_named_product_substitution_updates_entity_without_dropping_task_context
     assert context["slots"]["aspect"] == "السعر والضمان"
     assert context["slots"]["country"] == "مصر"
     assert context["changed_slots"] == ["product"]
+
+
+def test_independent_complete_product_query_is_not_classified_as_entity_substitution():
+    from agents.dialogue_state import _has_explicit_context_refinement
+
+    assert not _has_explicit_context_refinement("أسعار الذهب اليوم")
+    assert not _has_explicit_context_refinement("مواصفات Samsung S24 Ultra")
+    assert _has_explicit_context_refinement("طب وسامسونج S24 Pro Max")
+    assert _has_explicit_context_refinement("وبالنسبة لسامسونج S24")
