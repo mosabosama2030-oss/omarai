@@ -1991,6 +1991,13 @@ class WebAgent:
                     "firecrawl_search_api", search_query, "not_configured",
                     error="FIRECRAWL_API_KEY is not set",
                 )
+            elif self._firecrawl_search_country(search_query) is None:
+                # Firecrawl Search defaults to US when country is omitted. Never
+                # invoke it for unspecified geography or silently bias results to US.
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "not_attempted",
+                    error="Firecrawl requires explicit country scope; API defaults to US",
+                )
             elif self._reserve_firecrawl_search_request():
                 adapters.append(("firecrawl_search_api", self._search_firecrawl))
             else:
@@ -2275,8 +2282,11 @@ class WebAgent:
             "limit": MAX_PROVIDER_RESULTS,
         }
         country = self._firecrawl_search_country(query)
-        if country is not None:
-            request_payload["country"] = country
+        # Omission is not neutral: Firecrawl's API defaults the country to US.
+        # Guard direct calls as well as the adapter-registration path.
+        if country is None:
+            return []
+        request_payload["country"] = country
         response = _bounded_http_request(
             "POST",
             "https://api.firecrawl.dev/v2/search",
