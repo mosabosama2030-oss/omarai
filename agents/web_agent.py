@@ -2265,14 +2265,17 @@ class WebAgent:
     def _search_firecrawl(self, query: str) -> list[dict[str, Any]]:
         """Use Firecrawl v2 web search; caller enforces explicit enablement and budget."""
         api_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
-        if not api_key:
+        if (
+            os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1"
+            or not api_key
+        ):
             return []
         response = _bounded_http_request(
             "POST",
             "https://api.firecrawl.dev/v2/search",
             json={
                 "query": query[:500],
-                "sources": [{"type": "web"}],
+                "sources": ["web"],
                 "limit": MAX_PROVIDER_RESULTS,
                 "country": self._firecrawl_search_country(query),
             },
