@@ -652,3 +652,44 @@ def test_topic_shift_does_not_leak_context_currency_or_time_range_into_queries()
         for row in rows
         for marker in ("ZX-500", "الجنيه المصري", "آخر 30 يوم", "الضمان")
     )
+
+
+def test_query_matrix_never_exceeds_provider_limit_with_many_inherited_slots():
+    question = "رشح لوحة إنذار حريق"
+    context = {
+        "resolved_question": (
+            "رشح لوحة إنذار حريق ZX-500 Addressable سعة 250 نقطة في مصر "
+            "بالجنيه المصري آخر 30 يوم، الضمان والصيانة، ميزانية 20000 جنيه"
+        ),
+        "topic": "لوحة إنذار حريق",
+        "entities": ["لوحة إنذار حريق", "ZX-500"],
+        "slots": {
+            "product": "لوحة إنذار حريق",
+            "model": "ZX-500",
+            "version": "الإصدار الصناعي المتقدم",
+            "variant": "Addressable",
+            "capacity": "250 نقطة",
+            "currency": "الجنيه المصري",
+            "time_range": "آخر 30 يوم",
+            "aspect": "الضمان والصيانة",
+            "location": "القاهرة الكبرى",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": ["model"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="latest",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    assert rows
+    assert all(len(row["query"]) <= 240 for row in rows)
+    assert all("القاهرة الكبرى" in row["query"] for row in rows)
+    assert all("20000 جنيه" in row["query"] for row in rows)
