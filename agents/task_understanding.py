@@ -1259,6 +1259,34 @@ def build_query_strategy_matrix(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
+
+    # A long resolved utterance can contain repeated criteria and exhaust every
+    # generated query slot before distinct strategies are formed. For a validated
+    # follow-up, prefer the bounded semantic topic/entities as the query anchor;
+    # explicit aspects and constraints remain separately preserved below.
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict)
+        else {}
+    )
+    if (
+        context_resolution.get("is_follow_up") is True
+        and context_resolution.get("topic_shift") is not True
+    ):
+        context_anchor_parts: list[str] = []
+        context_topic = context_resolution.get("topic")
+        if isinstance(context_topic, str) and context_topic.strip():
+            context_anchor_parts.append(context_topic.strip())
+        context_entities = context_resolution.get("entities")
+        if isinstance(context_entities, list):
+            for entity in context_entities[:5]:
+                if isinstance(entity, str) and entity.strip():
+                    if normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts)):
+                        context_anchor_parts.append(entity.strip())
+        context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+        if context_anchor:
+            base = context_anchor[:180]
+
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
         return rows
