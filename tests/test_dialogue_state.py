@@ -249,3 +249,59 @@ def test_location_refinement_keeps_topic_and_updates_location_slot():
     assert context["resolved_question"] == "مراكز صيانة لابتوب في الإسكندرية فقط"
     assert context["slots"]["location"] == "الإسكندرية"
     assert context["changed_slots"] == ["location"]
+
+
+def test_explicit_entity_correction_overrides_model_topic_shift_flag():
+    question = "لا، قصدي اليورو"
+    history = [
+        {"role": "user", "content": "ما سعر الجهاز بالدولار؟"},
+        {"role": "assistant", "content": "هل تريد السعر بالدولار الأمريكي؟"},
+    ]
+    proposed = {
+        "resolved_question": "ما سعر الجهاز باليورو؟",
+        "topic": "سعر الجهاز",
+        "entities": ["الجهاز", "اليورو"],
+        "slots": {"product": "الجهاز", "currency": "اليورو"},
+        "changed_slots": ["currency"],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["topic_shift"] is False
+    assert context["is_follow_up"] is True
+    assert context["resolved_question"] == "ما سعر الجهاز باليورو؟"
+    assert context["slots"]["currency"] == "اليورو"
+    assert context["changed_slots"] == ["currency"]
+
+
+def test_location_refinement_overrides_model_topic_shift_flag():
+    question = "في اسكندرية بس"
+    history = [
+        {"role": "user", "content": "دور على مراكز صيانة لابتوب في مصر"},
+        {"role": "assistant", "content": "وجدت لك بعض الخيارات."},
+    ]
+    proposed = {
+        "resolved_question": "مراكز صيانة لابتوب في الإسكندرية فقط",
+        "topic": "مراكز صيانة لابتوب",
+        "entities": ["لابتوب"],
+        "slots": {"location": "الإسكندرية"},
+        "changed_slots": ["location"],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["topic_shift"] is False
+    assert context["is_follow_up"] is True
+    assert context["resolved_question"] == "مراكز صيانة لابتوب في الإسكندرية فقط"
+    assert context["slots"]["location"] == "الإسكندرية"
+    assert context["changed_slots"] == ["location"]
