@@ -1181,6 +1181,34 @@ def build_query_strategy_matrix(
         and raw_context_resolution.get("topic_shift") is not True
         and raw_context_resolution.get("needs_clarification") is not True
     )
+    context_anchor_parts: list[str] = []
+    if inherit_context_slots:
+        context_topic = raw_context_resolution.get("topic")
+        if isinstance(context_topic, str) and context_topic.strip():
+            context_anchor_parts.append(context_topic.strip())
+        context_entities = raw_context_resolution.get("entities")
+        if isinstance(context_entities, list):
+            for entity in context_entities[:5]:
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
+    context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+    topic_anchor_query = context_anchor or (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str)
+        else str(question or "")
+    )
+    if not context_anchor:
+        topic_anchor_query = re.sub(
+            r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
+            r"please|search for|find|look up|recommend)\\s*",
+            "",
+            topic_anchor_query,
+            flags=re.IGNORECASE,
+        )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
@@ -1248,8 +1276,7 @@ def build_query_strategy_matrix(
             return
         # Search modifications must preserve a subject anchor. Existing planner
         # queries are retained because they may already contain resolved context.
-        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
-        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
+        topic_tokens = _TOKEN_RE.findall(_query_key(topic_anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
         if enforce_topic and len(topic_tokens) >= 2 and not any(
             token in query_tokens for token in topic_tokens[:3]
@@ -1315,35 +1342,10 @@ def build_query_strategy_matrix(
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
 
-    # A long resolved utterance can contain repeated criteria and exhaust every
-    # generated query slot before distinct strategies are formed. For a validated
-    # follow-up, prefer the bounded semantic topic/entities as the query anchor;
-    # explicit aspects and constraints remain separately preserved below.
-    context_resolution = (
-        spec.get("context_resolution")
-        if isinstance(spec.get("context_resolution"), dict)
-        else {}
-    )
-    if (
-        context_resolution.get("is_follow_up") is True
-        and context_resolution.get("topic_shift") is not True
-    ):
-        context_anchor_parts: list[str] = []
-        context_topic = context_resolution.get("topic")
-        if isinstance(context_topic, str) and context_topic.strip():
-            context_anchor_parts.append(context_topic.strip())
-        context_entities = context_resolution.get("entities")
-        if isinstance(context_entities, list):
-            for entity in context_entities[:5]:
-                if (
-                    isinstance(entity, str)
-                    and entity.strip()
-                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
-                ):
-                    context_anchor_parts.append(entity.strip())
-        context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
-        if context_anchor:
-            base = context_anchor[:180]
+    # Use the validated context anchor for a follow-up; the original utterance
+    # remains available for aspect extraction and evidence coverage.
+    if context_anchor:
+        base = context_anchor[:180]
 
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
@@ -1353,18 +1355,7 @@ def build_query_strategy_matrix(
     # appending strategy wording and inherited scope can make every candidate
     # truncate to the same prefix. Prefer the validated dialogue topic only when
     # it is clearly anchored in the user's long question.
-    candidate_topic = base
-    context_resolution = (
-        spec.get("context_resolution")
-        if isinstance(spec.get("context_resolution"), dict)
-        else {}
-    )
-    context_topic = context_resolution.get("topic")
-    if len(base) > 160 and isinstance(context_topic, str) and context_topic.strip():
-        topic_tokens = set(_TOKEN_RE.findall(_query_key(context_topic)))
-        question_tokens = set(_TOKEN_RE.findall(_query_key(base)))
-        if topic_tokens and len(topic_tokens & question_tokens) >= min(1, len(topic_tokens)):
-            candidate_topic = context_topic.strip()
+    candidate_topic = context_anchor[:180] if context_anchor else base[:180]
 
     candidates = _generated_strategy_candidates(candidate_topic, spec_for_candidates)
     for query, strategy, rationale in candidates:
