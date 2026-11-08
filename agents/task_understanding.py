@@ -1025,6 +1025,15 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} official specifications", "primary_specification", "separate technical specifications from opinion"),
             (f"{topic} independent comparison pros cons", "independent_comparison", "seek comparative analysis and trade-offs"),
         ])
+    elif aspects:
+        # Explicit criteria also matter in recommendations and current-information
+        # follow-ups; do not silently discard a requested dimension outside compare.
+        for aspect in aspects[:MAX_TASK_ASPECTS]:
+            candidates.append((
+                f"{topic} {aspect}",
+                "explicit_criterion",
+                f"preserve and retrieve evidence for requested aspect: {aspect}",
+            ))
     if family == "troubleshoot" or "troubleshoot" in hypothesis_families:
         candidates.extend([
             (f"{topic} الأعطال الشائعة الأسباب والحلول", "failure_modes_ar", "search causes and remedies without treating hypotheses as confirmed"),
