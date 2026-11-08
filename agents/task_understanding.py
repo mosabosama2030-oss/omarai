@@ -1173,7 +1173,11 @@ def build_query_strategy_matrix(
         spec.get("task_family") == "compare"
         and len(explicit_aspects) >= maximum
     )
-    if queries and not reserve_all_slots_for_criteria:
+    if (
+        queries
+        and spec.get("task_family") != "lead_generation"
+        and not reserve_all_slots_for_criteria
+    ):
         seed = queries[0]
         strategy, rationale = (
             _label_existing_query(seed, 0, spec)
