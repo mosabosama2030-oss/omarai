@@ -1031,6 +1031,60 @@ class WebAgent:
             self._provider_diagnostics = self._provider_diagnostics[-160:]
 
     @staticmethod
+    def _classify_provider_exception(exc: Exception) -> tuple[str, str]:
+        """Classify connector errors without logging provider URLs or response bodies."""
+        if isinstance(exc, TimeoutError):
+            return "timeout", "provider request timed out"
+
+        try:
+            import httpx
+        except ImportError:  # pragma: no cover - HTTPX backs configured HTTP connectors
+            httpx = None
+
+        if httpx is not None:
+            if isinstance(exc, httpx.TimeoutException):
+                return "timeout", "provider request timed out"
+            if isinstance(exc, httpx.DecodingError):
+                return "invalid_response", "provider response decoding failed"
+            if isinstance(exc, httpx.HTTPStatusError):
+                response = getattr(exc, "response", None)
+                status_code = getattr(response, "status_code", None)
+            else:
+                status_code = None
+        else:
+            status_code = None
+
+        if status_code is None:
+            status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
+            if status_match:
+                status_code = int(status_match.group(1))
+
+        if status_code is not None:
+            try:
+                code = int(status_code)
+            except (TypeError, ValueError, OverflowError):
+                code = 0
+            detail = (
+                f"{type(exc).__name__}: HTTP {code}"
+                if isinstance(exc, RuntimeError)
+                else f"HTTP {code}"
+            ) if 100 <= code <= 599 else type(exc).__name__
+            if code == 202:
+                return "blocked", detail
+            if 300 <= code < 400:
+                return "http_error", detail
+            if code == 429:
+                return "rate_limited", detail
+            if code in {401, 403}:
+                return "unauthorized", detail
+            if 400 <= code < 600:
+                return "http_error", detail
+
+        if isinstance(exc, (json.JSONDecodeError, UnicodeError)):
+            return "invalid_response", "provider returned an unreadable response"
+        return "failed", type(exc).__name__
+
+    @staticmethod
     def _source_matches_query(query: str, source: dict[str, Any]) -> bool:
         if "user_supplied_url" in source.get("providers", []):
             return True
@@ -1959,10 +2013,13 @@ class WebAgent:
                     normalized_item.setdefault("provider", name)
                     normalized_item.setdefault("search_query", search_query)
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
-                    if _relevance_ratio(search_query, evidence) < _minimum_relevance_ratio(search_query):
+                    retrieval_relevance = _relevance_ratio(search_query, evidence)
+                    if retrieval_relevance < _minimum_relevance_ratio(search_query):
                         rejected += 1
                         rejection_counts["relevance_below_threshold"] += 1
                         continue
+                    # This measures topical retrieval fit only, not fact confidence or buyer intent.
+                    normalized_item["retrieval_relevance_score"] = round(retrieval_relevance, 4)
                     accepted.append(normalized_item)
                 if accepted:
                     status = "ok"
@@ -1989,25 +2046,8 @@ class WebAgent:
                 self._record_provider_diagnostic(
                     name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
-            except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
-                if type(exc).__name__ == "DecodingError":
-                    detail = "provider response decoding failed"
-                    status = "invalid_response"
-                else:
-                    detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
-                    status = "failed"
-                    status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
-                    if status_match:
-                        status_code = int(status_match.group(1))
-                        if status_code == 202:
-                            status = "blocked"
-                        elif status_code == 429:
-                            status = "rate_limited"
-                        elif status_code in {401, 403}:
-                            status = "unauthorized"
-                        elif 300 <= status_code < 600:
-                            # Do not bypass redirects/challenges or retry a blocked response.
-                            status = "http_error"
+            except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking payloads
+                status, detail = self._classify_provider_exception(exc)
                 self._record_provider_diagnostic(name, search_query, status, error=detail)
             return []
 
@@ -2043,15 +2083,29 @@ class WebAgent:
             # This method is synchronous by contract; the HTTP server invokes it in worker threads.
             raise RuntimeError("تعذر تشغيل مجدول موصلات البحث.") from exc
         combined = [item for batch in provider_batches for item in batch]
-        # De-duplicate repeated URLs before ranking/fusion.
-        unique: dict[str, dict[str, Any]] = {}
+        # Collapse duplicates within one provider, but retain cross-provider discovery
+        # until rank fusion can record the distinct provider provenance.
+        unique_by_provider: dict[tuple[str, str], dict[str, Any]] = {}
         for item in combined:
-            key = item["url"].split("#", 1)[0].rstrip("/")
-            if key not in unique or len(str(item.get("snippet") or "")) > len(str(unique[key].get("snippet") or "")):
-                unique[key] = item
-        if not unique:
+            provider = str(item.get("provider") or "web_search")
+            url_key = self._normalized_source_url_key(item.get("url"))
+            if not url_key:
+                continue
+            key = (provider, url_key)
+            previous = unique_by_provider.get(key)
+            candidate_quality = (
+                float(item.get("retrieval_relevance_score") or 0.0),
+                len(str(item.get("snippet") or "")),
+            )
+            previous_quality = (
+                float(previous.get("retrieval_relevance_score") or 0.0),
+                len(str(previous.get("snippet") or "")),
+            ) if previous is not None else None
+            if previous is None or candidate_quality > previous_quality:
+                unique_by_provider[key] = item
+        if not unique_by_provider:
             raise RuntimeError("لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.")
-        return list(unique.values())
+        return list(unique_by_provider.values())
 
     def _reserve_search_call(self) -> None:
         """Reserve one outbound search/social-provider request before network I/O."""
@@ -3400,9 +3454,9 @@ class WebAgent:
                 useful[name] = useful.get(name, 0) + 1
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
                     "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
-                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "blocked": 9,
-                    "http_error": 9, "invalid_response": 10,
-                    "timeout": 10, "failed": 11, "error": 11}
+                    "unknown": 6, "blocked": 7, "rate_limited": 8, "unauthorized": 9,
+                    "invalid_response": 10, "http_error": 10, "timeout": 11,
+                    "failed": 12, "error": 12}
         confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
             "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
         }
