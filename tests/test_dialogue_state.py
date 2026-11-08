@@ -305,3 +305,84 @@ def test_location_refinement_overrides_model_topic_shift_flag():
     assert context["resolved_question"] == "مراكز صيانة لابتوب في الإسكندرية فقط"
     assert context["slots"]["location"] == "الإسكندرية"
     assert context["changed_slots"] == ["location"]
+
+
+def test_named_product_substitution_updates_entity_without_dropping_task_context():
+    question = "طب وسامسونج S24؟"
+    history = [
+        {
+            "role": "user",
+            "content": "رشح لي أفضل هاتف في مصر بميزانية 30000 جنيه مع الضمان",
+        },
+        {
+            "role": "assistant",
+            "content": "سنقارن الهواتف وفق السعر والضمان والبطارية.",
+        },
+    ]
+    proposed = {
+        "resolved_question": (
+            "رشح لي Samsung Galaxy S24 في مصر بميزانية 30000 جنيه "
+            "مع مقارنة السعر والضمان"
+        ),
+        "topic": "اختيار هاتف",
+        "entities": ["Samsung Galaxy S24"],
+        "slots": {
+            "product": "هاتف سامسونج",
+            "model": "Samsung Galaxy S24",
+            "location": "مصر",
+            "budget": "30000 جنيه",
+            "aspect": "الضمان",
+        },
+        "changed_slots": ["product", "model"],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "intent": "recommend",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    assert might_be_context_dependent(question) is True
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["topic_shift"] is False
+    assert context["is_follow_up"] is True
+    assert "Samsung Galaxy S24" in context["resolved_question"]
+    assert context["slots"]["model"] == "Samsung Galaxy S24"
+    assert context["slots"]["location"] == "مصر"
+    assert context["slots"]["budget"] == "30000 جنيه"
+    assert context["slots"]["aspect"] == "الضمان"
+    assert context["changed_slots"] == ["product", "model"]
+
+
+def test_complete_new_topic_does_not_inherit_context_after_product_discussion():
+    question = "أسعار الذهب اليوم"
+    history = [
+        {"role": "user", "content": "رشح لي أفضل هاتف في مصر بميزانية 30000 جنيه"},
+        {"role": "assistant", "content": "نقارن الهواتف وفق السعر والضمان."},
+    ]
+    proposed = {
+        "resolved_question": "أسعار الذهب اليوم في مصر بدلًا من الهاتف",
+        "topic": "أسعار الهواتف",
+        "entities": ["Samsung Galaxy S24"],
+        "slots": {
+            "product": "Samsung Galaxy S24",
+            "location": "مصر",
+            "budget": "30000 جنيه",
+        },
+        "changed_slots": ["product"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    assert might_be_context_dependent(question) is False
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["is_follow_up"] is False
+    assert context["resolved_question"] == question
+    assert context["topic"] == ""
+    assert context["entities"] == []
+    assert context["slots"] == {}
+    assert context["changed_slots"] == []
