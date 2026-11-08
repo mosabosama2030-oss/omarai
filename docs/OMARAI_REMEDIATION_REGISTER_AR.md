@@ -645,12 +645,12 @@
 - استخدام درجة الصلة فقط لكسر تعادل RRF الدقيق، دون تغيير RRF أو الادعاء أنها ثقة أو حقيقة أو نية شراء.
 - التحقق من finite scores ورفض bool وNaN وInfinity والقيم خارج النطاق.
 - تصنيف HTTPX TimeoutException وDecodingError وHTTPStatusError من response.status_code بدل استنتاج الحالة من نص الاستثناء فقط.
-- الحفاظ على عقد الحالات الحالي: challenge/redirect (202 و3xx) تظهر http_error، و429 rate_limited، و401/403 unauthorized؛ مع رسائل تشخيص مختصرة لا تتضمن URL أو body.
+- الحفاظ على عقد الحالات الحالي والمتوافق مع PR #173: استجابة challenge HTTP 202 تظهر blocked، و3xx تظهر http_error، و429 rate_limited، و401/403 unauthorized؛ مع رسائل تشخيص مختصرة لا تتضمن URL أو body.
 
 ### الاختبارات والتحقق
 - RED موثق على SHA 38bbfb722b54eae3ac6ecb5cad43c384c810f599: 11 فشلًا جديدًا كشف فقدان provenance وغياب درجة الصلة وتصنيف HTTPX.
-- GREEN على SHA a243a7d14c5e4b7f34d2b471b2259bd18cd3f237 — run 42507373222:
-  - Python 3.11 و3.12: نجاح.
+- GREEN على SHA af4e08cad6eb4d79cc5d7ab0d4e52d736ae3589b — push run 42507621542 وPR run 42507627906:
+  - Python 3.11: 935 passed, 2 skipped.
   - Ruff وفحوص الفهارس: نجاح.
   - PostgreSQL integration: نجاح.
   - container build: نجاح.
