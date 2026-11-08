@@ -1060,8 +1060,9 @@ class WebAgent:
                 if isinstance(exc, RuntimeError)
                 else f"HTTP {code}"
             ) if 100 <= code <= 599 else type(exc).__name__
-            if code == 202 or 300 <= code < 400:
-                # Existing connector contract: challenge/redirect responses degrade as HTTP errors.
+            if code == 202:
+                return "blocked", detail
+            if 300 <= code < 400:
                 return "http_error", detail
             if code == 429:
                 return "rate_limited", detail
