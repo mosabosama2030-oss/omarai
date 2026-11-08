@@ -235,8 +235,10 @@ def audit_answer_integrity(
         )
         # A page_text field is not evidence of a successful read unless the
         # fetch boundary explicitly confirms page_fetched.
+        # Publication timestamps are source metadata, not evidence for unrelated
+        # numeric claims in the cited content.
         source_text = " ".join(
-            part for part in (title, snippet, fetched_page_text, published_at) if part
+            part for part in (title, snippet, fetched_page_text) if part
         )
         if source_text.strip():
             bounded_source_text = source_text[:16000]
