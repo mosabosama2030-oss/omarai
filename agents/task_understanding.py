@@ -1194,6 +1194,10 @@ def build_query_strategy_matrix(
                 item.strip() for item in raw_budgets[:3]
                 if isinstance(item, str) and item.strip()
             )
+        # Detect scope only after the initial provider-query length bound. Otherwise
+        # a location/budget found beyond character 240 can be mistaken as retained,
+        # then silently removed by the final truncation below.
+        candidate = candidate[:240]
         normalized_candidate = normalize_text(candidate)
         location_aliases = {
             normalize_text("مصر"): ("مصر", "egypt", "egyptian"),
