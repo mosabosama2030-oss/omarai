@@ -179,7 +179,12 @@ _ATTACHED_ASPECT_PRONOUN_RE = re.compile(
     r"^(?:(?:ممكن|عايز|عاوز|اريد|ابغي)\s+)?(?:(?:اعرف|اعرفه|اشوف)\s+)?"
     r"(?:و)?(?:ال)?" + _REFERENTIAL_ASPECTS + r"(?:ه|ها|هم|هما|هن)(?:\s+\S+){0,2}$"
 )
-_BETA3_REFERENCE_RE = re.compile(r"\bبتاع(?:ه|ها|هم|هما|ته|تها|تهم)\b")
+# "السعر بتاعه كام؟" is an aspect-led follow-up; do not treat every occurrence
+# of "بتاعه" in an otherwise self-contained new question as a reference.
+_ASPECT_BETA3_REFERENCE_RE = re.compile(
+    r"^(?:و)?(?:ال)?" + _REFERENTIAL_ASPECTS
+    + r"\s+بتاع(?:ه|ها|هم|هما|ته|تها|تهم)(?:\s+(?:كام|كم|ايه|ما))?$"
+)
 # "وبالنسبة للضمان؟" / "وبخصوص الأسعار" — aspect re-asked about the current topic.
 _ABOUT_ASPECT_RE = re.compile(
     r"^و?(?:بالنسبه|بخصوص)\s*(?:ل)?(?:ال)?" + _REFERENTIAL_ASPECTS + r"(?:\s+\S+){0,1}$"
@@ -317,7 +322,7 @@ def _is_contextual_followup(question: str) -> bool:
         return True
     if (
         _ATTACHED_ASPECT_PRONOUN_RE.match(normalized)
-        or _BETA3_REFERENCE_RE.search(normalized)
+        or _ASPECT_BETA3_REFERENCE_RE.match(normalized)
         or _ABOUT_ASPECT_RE.match(normalized)
     ):
         return True
