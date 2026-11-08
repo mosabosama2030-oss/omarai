@@ -640,3 +640,110 @@ def test_long_query_keeps_location_and_budget_that_appear_only_in_truncated_tail
     assert all(len(row["query"]) <= 240 for row in rows)
     assert all("الإسكندرية" in row["query"] for row in rows)
     assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
+
+
+def test_query_strategy_matrix_carries_confirmed_currency_capacity_and_aspect_slots():
+    question = "سعره؟"
+    context = {
+        "resolved_question": "ما سعر iPhone 17 سعة 256 جيجابايت باليورو مع الضمان؟",
+        "topic": "سعر iPhone 17",
+        "entities": ["iPhone 17"],
+        "slots": {
+            "product": "iPhone 17",
+            "capacity": "256 جيجابايت",
+            "currency": "اليورو",
+            "aspect": "الضمان",
+        },
+        "changed_slots": ["currency", "aspect"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        ["iPhone 17 price"],
+        limit=8,
+    )
+
+    assert len(rows) >= 2
+    assert all("256 جيجابايت" in row["query"] for row in rows)
+    assert all("اليورو" in row["query"] for row in rows)
+    assert all("الضمان" in row["query"] for row in rows)
+
+
+def test_query_strategy_matrix_recognizes_currency_capacity_and_aspect_aliases():
+    question = "سعره؟"
+    context = {
+        "resolved_question": "ما سعر iPhone 17 سعة 256 جيجابايت باليورو مع الضمان؟",
+        "topic": "سعر iPhone 17",
+        "entities": ["iPhone 17"],
+        "slots": {
+            "product": "iPhone 17",
+            "capacity": "256 جيجابايت",
+            "currency": "اليورو",
+            "aspect": "الضمان",
+        },
+        "changed_slots": ["currency", "aspect"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        ["iPhone 17 price 256GB EUR warranty"],
+        limit=8,
+    )
+
+    assert len(rows) >= 2
+    assert all("اليورو" not in row["query"] for row in rows)
+    assert all("256 جيجابايت" not in row["query"] for row in rows)
+    assert all("الضمان" not in row["query"] for row in rows)
+
+
+def test_query_strategy_matrix_does_not_inherit_semantic_slots_after_topic_shift():
+    question = "مواصفات لابتوب ديل"
+    context = {
+        "resolved_question": question,
+        "topic": "",
+        "entities": [],
+        "slots": {
+            "product": "iPhone 17",
+            "capacity": "256 جيجابايت",
+            "currency": "اليورو",
+            "aspect": "الضمان",
+        },
+        "changed_slots": [],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    assert len(rows) >= 1
+    assert all("iPhone 17" not in row["query"] for row in rows)
+    assert all("اليورو" not in row["query"] for row in rows)
+    assert all("256 جيجابايت" not in row["query"] for row in rows)
+    assert all("الضمان" not in row["query"] for row in rows)
