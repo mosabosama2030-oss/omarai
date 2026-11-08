@@ -1379,6 +1379,22 @@ def build_query_strategy_matrix(
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
         return rows
+    if context_anchor:
+        # Short follow-ups should query the resolved topic/entities, not a long
+        # repeated resolved sentence that truncates the actual evidence criterion.
+        base = context_anchor[:180]
+
+    # Avoid adding a strategy query when a short utterance itself is the complete
+    # detected aspect (for example "كام سعرها؟"). The seed already covers it.
+    base_key = _query_key(base)
+    explicit_aspects = [
+        aspect for aspect in explicit_aspects
+        if _query_key(aspect) and _query_key(aspect) != base_key
+    ]
+    candidate_constraints = dict(constraints)
+    candidate_constraints["explicit_aspects"] = explicit_aspects
+    spec_for_candidates = dict(spec)
+    spec_for_candidates["constraints"] = candidate_constraints
 
     # A lead-generation task must preserve the supplied product-anchored queries
     # in purchaser language. General research angles (reports, risks, listings)
@@ -1395,7 +1411,8 @@ def build_query_strategy_matrix(
                 break
         return rows
 
-    candidates = _generated_strategy_candidates(base, spec_for_candidates)
+    candidate_topic = context_anchor[:180] if context_anchor else base[:180]
+    candidates = _generated_strategy_candidates(candidate_topic, spec_for_candidates)
     for query, strategy, rationale in candidates:
         add(
             query, strategy, rationale,
