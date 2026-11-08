@@ -291,7 +291,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const state={role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",chat:{messages:[],history:[],busy:false,mode:"deep"},analysis:null,filtered:[],search:"",filter:"all"};
+const state={role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",chat:{messages:[],history:[],busy:false,mode:"deep",sessionVersion:0},analysis:null,filtered:[],search:"",filter:"all"};
 const statuses=[
  {id:"new",label:"جديد"},
  {id:"needs_review",label:"يحتاج مراجعة"},
@@ -334,7 +334,13 @@ async function api(path,options){
  if(!response.ok)throw new Error(data.error||("فشل الطلب ("+response.status+")"));
  return data;
 }
+function clearChatSession(){
+ const chat=state.chat;
+ chat.messages=[];chat.history=[];chat.busy=false;chat.mode="deep";
+ chat.sessionVersion=(chat.sessionVersion||0)+1;
+}
 function showAuth(message){
+ clearChatSession();
  $("authGate").classList.add("open");
  $("authError").textContent=message||"";
  $("accessToken").value="";
@@ -875,21 +881,27 @@ function renderChat(){
 }
 async function sendChat(){
  const chat=state.chat;if(chat.busy)return;
+ const requestSessionVersion=chat.sessionVersion;
  const input=$("chatInput");const question=input?input.value.trim():"";
  if(!question)return;
  chat.messages.push({role:"user",text:question});chat.busy=true;renderChat();
  try{
   const data=await api("/api/agent",{method:"POST",body:{question:question,history:chat.history.slice(-8),mode:chat.mode}});
+  if(state.chat.sessionVersion!==requestSessionVersion)return;
   const answer=String(data.answer||"لم يرجع الخادم نص إجابة.");
   const note=data.kind==="general_answer"?"إجابة معرفة عامة دون بحث ويب.":(data.used_web_search===true?"":"لم يُجرَ بحث ويب لهذه الإجابة.");
   chat.messages.push({role:"assistant",text:answer,sources:Array.isArray(data.sources)?data.sources:[],note:note});
   chat.history.push({role:"user",content:question},{role:"assistant",content:answer});
   chat.history=chat.history.slice(-16);
  }catch(error){
-  chat.messages.push({role:"assistant",text:"تعذر إكمال الطلب: "+escapeMessage(error&&error.message),sources:[],note:""});
+  if(state.chat.sessionVersion===requestSessionVersion){
+   chat.messages.push({role:"assistant",text:"تعذر إكمال الطلب: "+escapeMessage(error&&error.message),sources:[],note:""});
+  }
  }finally{
-  chat.busy=false;
-  if(state.activeView==="chat")renderChat();
+  if(state.chat.sessionVersion===requestSessionVersion){
+   chat.busy=false;
+   if(state.activeView==="chat")renderChat();
+  }
  }
 }
 function renderCurrent(){
