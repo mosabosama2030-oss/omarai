@@ -142,7 +142,7 @@ def test_firecrawl_is_blocked_when_optional_providers_are_disabled(monkeypatch):
         ("Find buyers for industrial fire alarms in Egypt", "EG"),
         ("موردون لأنظمة الإنذار في السعودية", "SA"),
         ("Find fire alarm suppliers in Dubai UAE", "AE"),
-        ("Find suppliers in the United Kingdom", "UK"),
+        ("Find suppliers in the United Kingdom", "GB"),
         ("ابحث عن موردين لأنظمة الإنذار", None),
         ("Find suppliers for fire alarms", None),
         ("Find suppliers in the United States", "US"),
