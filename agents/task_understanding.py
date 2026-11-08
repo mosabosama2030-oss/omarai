@@ -1197,7 +1197,7 @@ def build_query_strategy_matrix(
     if not context_anchor:
         topic_anchor_query = re.sub(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
-            r"please|search for|find|look up|recommend)\\s*",
+            r"please|search for|find|look up|recommend)\s*",
             "",
             topic_anchor_query,
             flags=re.IGNORECASE,
@@ -1256,8 +1256,14 @@ def build_query_strategy_matrix(
                 missing_scope_terms.append(scope_term)
                 seen_scope.add(normalized_scope)
         scope_suffix = _SPACE.sub(" ", " ".join(missing_scope_terms)).strip()
+        # Search-provider query contract is capped at 240 characters. Keep the
+        # explicit constraints at the end of the query instead of truncating them
+        # when a long planner seed consumes the budget. Extremely large inherited
+        # slot sets are retained in TaskSpec and covered by separate criterion queries.
+        if len(scope_suffix) > 180:
+            scope_suffix = scope_suffix[:180].rsplit(" ", 1)[0].strip()
         if scope_suffix:
-            core_limit = max(32, 240 - len(scope_suffix) - 1)
+            core_limit = max(0, 239 - len(scope_suffix))
             candidate = candidate[:core_limit].rstrip()
             candidate = f"{candidate} {scope_suffix}".strip()
         else:
