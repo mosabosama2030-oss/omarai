@@ -1224,6 +1224,40 @@ def build_query_strategy_matrix(
                 ):
                     context_anchor_parts.append(entity.strip())
     context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+    raw_changed_slots = context_resolution.get("changed_slots")
+    changed_slot_names = (
+        set(raw_changed_slots)
+        if isinstance(raw_changed_slots, list)
+        else set()
+    )
+    context_slots_for_identity = (
+        context_resolution.get("slots")
+        if isinstance(context_resolution.get("slots"), dict) else {}
+    )
+    entity_replacement = inherit_context and bool(
+        changed_slot_names & {"entity", "product", "model", "variant"}
+    )
+    entity_replacement_terms = [
+        value.strip()
+        for value in (
+            context_slots_for_identity.get("model"),
+            context_slots_for_identity.get("product"),
+            *(
+                context_resolution.get("entities", [])[:5]
+                if isinstance(context_resolution.get("entities"), list) else []
+            ),
+        )
+        if isinstance(value, str) and value.strip()
+    ]
+    resolved_context_seed = str(context_resolution.get("resolved_question") or "").strip()
+    primary_seed = (
+        resolved_context_seed or context_anchor
+        if entity_replacement
+        else (
+            str(queries[0]).strip()
+            if queries and isinstance(queries[0], str) else str(question or "")
+        )
+    )
     topic_anchor_query = context_anchor or (
         str(queries[0]).strip()
         if queries and isinstance(queries[0], str)
@@ -1453,15 +1487,22 @@ def build_query_strategy_matrix(
         and len(explicit_aspects) >= maximum
     )
     if (
-        queries
+        (queries or primary_seed)
         and spec.get("task_family") != "lead_generation"
         and not reserve_all_slots_for_criteria
     ):
-        seed = queries[0]
+        seed = primary_seed
         strategy, rationale = (
-            _label_existing_query(seed, 0, spec)
-            if isinstance(seed, str)
-            else ("malformed", "planner seed is not a string")
+            (
+                "context_entity_replacement",
+                "replace a stale planner seed with the newly resolved product/entity",
+            )
+            if entity_replacement
+            else (
+                _label_existing_query(seed, 0, spec)
+                if isinstance(seed, str)
+                else ("malformed", "planner seed is not a string")
+            )
         )
         add(seed, strategy, rationale, enforce_topic=False)
 
@@ -1485,10 +1526,7 @@ def build_query_strategy_matrix(
             for slot in raw_changed_slots
         )
     ):
-        context_seed = (
-            str(queries[0]).strip()
-            if queries and isinstance(queries[0], str) else topic_anchor_query
-        )
+        context_seed = primary_seed or topic_anchor_query
         source_angle = (
             "مستندات الشركة المصنعة ومصدر السعر"
             if re.search(r"[\\u0600-\\u06FF]", context_seed)
@@ -1507,10 +1545,7 @@ def build_query_strategy_matrix(
     ):
         return rows
 
-    base = (
-        _collapse_repeated_query_phrases(str(queries[0]).strip())
-        if queries and isinstance(queries[0], str) else ""
-    )
+    base = _collapse_repeated_query_phrases(primary_seed) if primary_seed else ""
     if not base:
         base = re.sub(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
@@ -1527,6 +1562,15 @@ def build_query_strategy_matrix(
     # are not substitutes for direct buyer-intent discovery.
     if spec.get("task_family") == "lead_generation":
         for query in queries:
+            if (
+                entity_replacement
+                and entity_replacement_terms
+                and not any(
+                    normalize_text(term) in normalize_text(query)
+                    for term in entity_replacement_terms
+                )
+            ):
+                continue
             add(
                 query,
                 "buyer_intent",
@@ -1557,10 +1601,10 @@ def build_query_strategy_matrix(
         and queries
         and isinstance(queries[0], str)
     ):
-        seed_language_is_arabic = bool(re.search(r"[\u0600-\u06FF]", queries[0]))
+        seed_language_is_arabic = bool(re.search(r"[\u0600-\u06FF]", primary_seed))
         source_phrase = "مصدر رسمي" if seed_language_is_arabic else "official source"
         add(
-            f"{queries[0].strip()} {source_phrase}",
+            f"{primary_seed} {source_phrase}",
             "dialogue_followup_primary_source",
             "retrieve primary evidence for a confirmed contextual follow-up",
             enforce_topic=False,
@@ -1570,6 +1614,15 @@ def build_query_strategy_matrix(
     for index, query in enumerate(queries[1:], start=1):
         if len(rows) >= maximum:
             break
+        if (
+            entity_replacement
+            and entity_replacement_terms
+            and not any(
+                normalize_text(term) in normalize_text(query)
+                for term in entity_replacement_terms
+            )
+        ):
+            continue
         if isinstance(query, str):
             strategy, rationale = _label_existing_query(query, index, spec)
         else:
