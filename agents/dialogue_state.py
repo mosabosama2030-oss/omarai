@@ -266,7 +266,7 @@ def _has_explicit_context_refinement(question: str) -> bool:
         r"^(?:و?طب|و?طيب|بالنسبه(?:\s+ل)?|بالنسبة(?:\s+ل)?|و?كمان)\s+"
         r"(?:و\s*)?(?:سامسونج|ايفون|آيفون|شاومي|هواوي|ديل|لينوفو|ابل|أبل|"
         r"byd|samsung|iphone|apple|xiaomi|huawei|dell|lenovo|hp)\s+"
-        r"(?:[a-z]{1,8}\s*)?\d{1,4}(?:\s+[a-z0-9+.-]{1,12})?$",
+        r"(?:[a-z]{1,8}\s*)?\d{1,4}(?:\s+[a-z0-9+.-]{1,12})?[\s؟?!.،,؛;]*$",
         current,
     )
     return bool(correction or location_refinement or entity_substitution)
