@@ -467,3 +467,32 @@ def test_task_spec_does_not_inherit_location_or_budget_from_topic_shift():
 
     assert "الإسكندرية" not in spec["constraints"]["explicit_locations"]
     assert "أقل من 20000 جنيه" not in spec["constraints"]["explicit_budgets"]
+
+
+def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_candidates():
+    question = "رشح لي أفضل لابتوب للعمل"
+    context = {
+        "resolved_question": "رشح لي أفضل لابتوب للعمل في الإسكندرية بميزانية أقل من 20000 جنيه",
+        "topic": "لابتوب للعمل",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    assert len(rows) >= 2
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
