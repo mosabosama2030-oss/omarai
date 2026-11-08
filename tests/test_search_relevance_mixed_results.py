@@ -130,7 +130,11 @@ def test_search_web_keeps_best_duplicate_per_provider_without_erasing_other_prov
     )
     monkeypatch.setattr(
         agent, "_search_bing_rss",
-        lambda _query: [{**short, "provider": "bing_override"}],
+        lambda _query: [{
+            **short,
+            "provider": "forged_provider",
+            "search_query": "forged search query",
+        }],
     )
     monkeypatch.setattr(agent, "_search_news", lambda _query: [])
 
@@ -141,8 +145,10 @@ def test_search_web_keeps_best_duplicate_per_provider_without_erasing_other_prov
     assert ddg["snippet"] == longer["snippet"]
     assert {item["provider"] for item in results} == {
         "duckduckgo_html",
-        "bing_override",
+        "bing_rss",
     }
+    bing = next(item for item in results if item["provider"] == "bing_rss")
+    assert bing["search_query"] == query
 
 
 def test_search_web_stores_normalized_retrieval_relevance_for_fusion(monkeypatch):
