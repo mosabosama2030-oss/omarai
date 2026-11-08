@@ -1055,9 +1055,14 @@ class WebAgent:
                 code = int(status_code)
             except (TypeError, ValueError, OverflowError):
                 code = 0
-            detail = f"HTTP {code}" if 100 <= code <= 599 else type(exc).__name__
+            detail = (
+                f"{type(exc).__name__}: HTTP {code}"
+                if isinstance(exc, RuntimeError)
+                else f"HTTP {code}"
+            ) if 100 <= code <= 599 else type(exc).__name__
             if code == 202 or 300 <= code < 400:
-                return "blocked", detail
+                # Existing connector contract: challenge/redirect responses degrade as HTTP errors.
+                return "http_error", detail
             if code == 429:
                 return "rate_limited", detail
             if code in {401, 403}:
