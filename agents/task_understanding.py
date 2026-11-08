@@ -1166,9 +1166,32 @@ def build_query_strategy_matrix(
                 item.strip() for item in raw_budgets[:3]
                 if isinstance(item, str) and item.strip()
             )
+        # Avoid duplicating a location already expressed in another language.
+        # A buyer query may say "Egypt" while the inherited/current slot is "مصر".
+        location_aliases = {
+            normalize_text("مصر"): ("مصر", "egypt", "egyptian"),
+            normalize_text("القاهرة"): ("القاهرة", "القاهره", "cairo"),
+            normalize_text("الإسكندرية"): ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
+            normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
+            normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            normalize_text("المملكة المتحدة"): ("المملكة المتحدة", "united kingdom", "the uk", "uk"),
+            normalize_text("الولايات المتحدة"): ("الولايات المتحدة", "united states", "the us", "usa"),
+        }
+        normalized_candidate = normalize_text(candidate)
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
+            normalized_scope = normalize_text(scope_term)
+            aliases = location_aliases.get(normalized_scope, (scope_term,))
+            location_present = any(
+                re.search(
+                    rf"(?<!\\w){re.escape(normalize_text(alias))}(?!\\w)",
+                    normalized_candidate,
+                )
+                for alias in aliases
+                if normalize_text(alias)
+            )
+            if normalized_scope and normalized_scope not in normalized_candidate and not location_present:
                 candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
+                normalized_candidate = normalize_text(candidate)
         candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
