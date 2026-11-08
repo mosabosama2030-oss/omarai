@@ -96,6 +96,8 @@ def test_semantic_context_probe_routes_natural_followup_to_search_and_answer(
         if "أنت محلل سياق حواري" in system_prompt:
             assert "تعامل معها كتصحيح للكيان/قيمة القيد" in system_prompt
             assert "سجّل اسم القيد المعدل في changed_slots" in system_prompt
+            assert "طب وسامسونج S24" in system_prompt
+            assert "لا تعتبر اسم منتج بديل وحده موضوعًا مستقلًا" in system_prompt
             return json.dumps(context, ensure_ascii=False)
         if "أنت مخطط بحث ومحلل دلالي حواري" in system_prompt:
             return json.dumps(
