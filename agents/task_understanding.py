@@ -968,6 +968,39 @@ def _query_key(value: str) -> str:
     return normalize_text(value)
 
 
+def _query_contains_scope_term(query: str, scope_term: str) -> bool:
+    """Check explicit scope text, including common Arabic/English place-name aliases."""
+    normalized_query = normalize_text(query)
+    normalized_scope = normalize_text(scope_term)
+    if not normalized_query or not normalized_scope:
+        return False
+
+    alias_groups = (
+        ("مصر", "جمهورية مصر العربية", "egypt", "arab republic of egypt", "masr"),
+        ("الاسكندرية", "اسكندرية", "alexandria"),
+        ("القاهرة", "القاهره", "cairo"),
+        ("الجيزة", "الجيزه", "giza"),
+        ("السعودية", "المملكة العربية السعودية", "saudi arabia", "ksa"),
+        ("الامارات", "الإمارات العربية المتحدة", "united arab emirates", "uae"),
+        ("الولايات المتحدة", "امريكا", "الولايات المتحده", "united states", "usa", "us"),
+    )
+    aliases = {normalized_scope}
+    for group in alias_groups:
+        normalized_aliases = {normalize_text(alias) for alias in group}
+        if normalized_scope in normalized_aliases:
+            aliases.update(normalized_aliases)
+            break
+
+    for alias in aliases:
+        if alias and re.search(
+            rf"(?<!\w){re.escape(alias)}(?!\w)",
+            normalized_query,
+            flags=re.IGNORECASE,
+        ):
+            return True
+    return False
+
+
 def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tuple[str, str, str]]:
     family = str(spec.get("task_family") or "")
     constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
@@ -1145,13 +1178,13 @@ def build_query_strategy_matrix(
             except (TypeError, ValueError):
                 candidate = ""
         candidate = _SPACE.sub(" ", candidate).strip()
-        # Carry explicit/inherited geography into every search candidate. Budgets
-        # constrain commercial discovery/recommendation tasks, not unrelated topics.
+        # Preserve geography across Arabic/English query wording. Reserve space for
+        # required scope so a long planner seed cannot truncate location or budget.
         scope_terms: list[str] = []
         raw_locations = constraints.get("explicit_locations")
         if isinstance(raw_locations, list):
             scope_terms.extend(
-                item.strip() for item in raw_locations[:5]
+                item.strip()[:55] for item in raw_locations[:2]
                 if isinstance(item, str) and item.strip()
             )
         budget_scoped_families = {
@@ -1163,13 +1196,19 @@ def build_query_strategy_matrix(
             and isinstance(raw_budgets, list)
         ):
             scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
+                item.strip()[:70] for item in raw_budgets[:1]
                 if isinstance(item, str) and item.strip()
             )
-        for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-        candidate = candidate[:240]
+        missing_scope_terms = [
+            term for term in scope_terms
+            if not _query_contains_scope_term(candidate, term)
+        ]
+        scope_suffix = _SPACE.sub(" ", " ".join(dict.fromkeys(missing_scope_terms))).strip()
+        if scope_suffix:
+            core_limit = max(0, 240 - len(scope_suffix) - 1)
+            candidate = f"{candidate[:core_limit].rstrip()} {scope_suffix}".strip()
+        else:
+            candidate = candidate[:240].rstrip()
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
