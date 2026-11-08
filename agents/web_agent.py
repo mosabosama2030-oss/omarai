@@ -1563,6 +1563,29 @@ class WebAgent:
                 else "not_configured",
             },
             {
+                "name": "firecrawl_search_api",
+                "implemented": True,
+                "configuration_status": (
+                    "disabled" if not status.get("firecrawl_search_enabled")
+                    else "not_configured" if not status.get("firecrawl_search_api_configured")
+                    else "budget_exhausted" if status.get("firecrawl_search_request_budget", 0) <= 0
+                    else "configured"
+                ),
+                "runtime_status": (
+                    not_tested
+                    if (
+                        status.get("firecrawl_search_enabled")
+                        and status.get("firecrawl_search_api_configured")
+                        and status.get("firecrawl_search_request_budget", 0) > 0
+                    )
+                    else (
+                        "disabled" if not status.get("firecrawl_search_enabled")
+                        else "not_configured" if not status.get("firecrawl_search_api_configured")
+                        else "budget_exhausted"
+                    )
+                ),
+            },
+            {
                 "name": "openrouter_web_search",
                 "implemented": True,
                 "configuration_status": (
