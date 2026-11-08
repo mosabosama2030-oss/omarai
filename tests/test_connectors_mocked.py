@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 
+import urllib.parse
+
 import agents.search_connectors as sc
 
 
@@ -77,3 +79,107 @@ def test_run_free_academic_dedupe_path(monkeypatch):
     assert len(rows) == 3
     providers = {r["provider"] for r in rows}
     assert providers == {"openalex", "arxiv", "crossref"}
+
+
+def test_openalex_uses_api_key_and_ignores_retired_mailto(monkeypatch):
+    captured = {}
+    monkeypatch.setenv("OPENALEX_API_KEY", "test-openalex-key")
+    monkeypatch.setenv("OPENALEX_MAILTO", "legacy@example.invalid")
+
+    def fake_json(url, headers=None, timeout=12):
+        captured["url"] = url
+        captured["headers"] = headers or {}
+        return {"results": []}
+
+    monkeypatch.setattr(sc, "_http_get_json", fake_json)
+    assert sc.search_openalex("solar cells", limit=3) == []
+
+    params = urllib.parse.parse_qs(urllib.parse.urlsplit(captured["url"]).query)
+    assert params["search"] == ["solar cells"]
+    assert params["per_page"] == ["3"]
+    assert captured["headers"]["Authorization"] == "Bearer test-openalex-key"
+    assert "test-openalex-key" not in captured["url"]
+    assert "mailto" not in params
+
+
+def test_openalex_remains_available_without_api_key_or_retired_mailto(monkeypatch):
+    captured = {}
+    monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+    monkeypatch.setenv("OPENALEX_MAILTO", "legacy@example.invalid")
+
+    def fake_json(url, headers=None, timeout=12):
+        captured["url"] = url
+        captured["headers"] = headers or {}
+        return {"results": []}
+
+    monkeypatch.setattr(sc, "_http_get_json", fake_json)
+    assert sc.search_openalex("solar cells") == []
+
+    params = urllib.parse.parse_qs(urllib.parse.urlsplit(captured["url"]).query)
+    assert "mailto" not in params
+    assert "Authorization" not in captured["headers"]
+
+
+def test_crossref_does_not_send_a_placeholder_contact_email(monkeypatch):
+    captured = {}
+    monkeypatch.delenv("CROSSREF_MAILTO", raising=False)
+
+    def fake_json(url, headers=None, timeout=12):
+        captured["url"] = url
+        captured["headers"] = headers or {}
+        return {"message": {"items": []}}
+
+    monkeypatch.setattr(sc, "_http_get_json", fake_json)
+    assert sc.search_crossref("solar cells") == []
+
+    params = urllib.parse.parse_qs(urllib.parse.urlsplit(captured["url"]).query)
+    assert "mailto" not in params
+    assert captured["headers"]["User-Agent"] == "OmaraiResearchBot/1.0"
+    assert "ops@example.com" not in str(captured)
+
+
+def test_crossref_uses_an_explicit_contact_email_for_polite_pool(monkeypatch):
+    captured = {}
+    monkeypatch.setenv("CROSSREF_MAILTO", "research@example.org")
+
+    def fake_json(url, headers=None, timeout=12):
+        captured["url"] = url
+        return {"message": {"items": []}}
+
+    monkeypatch.setattr(sc, "_http_get_json", fake_json)
+    assert sc.search_crossref("solar cells") == []
+
+    params = urllib.parse.parse_qs(urllib.parse.urlsplit(captured["url"]).query)
+    assert params["mailto"] == ["research@example.org"]
+
+
+def test_arxiv_parser_handles_namespaced_atom_and_decodes_xml_entities(monkeypatch):
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <atom:feed xmlns:atom="http://www.w3.org/2005/Atom">
+      <atom:entry>
+        <atom:title>Research &amp; development</atom:title>
+        <atom:id>https://arxiv.org/abs/2611.00001</atom:id>
+        <atom:summary>Safe &lt;design&gt; &amp; robust.</atom:summary>
+        <atom:published>2026-11-08T00:00:00Z</atom:published>
+      </atom:entry>
+    </atom:feed>
+    """
+
+    monkeypatch.setattr(sc, "_http_get_text", lambda _url, timeout=12: xml)
+    rows = sc.search_arxiv("research design", limit=2)
+
+    assert len(rows) == 1
+    assert rows[0]["title"] == "Research & development"
+    assert rows[0]["snippet"] == "Safe <design> & robust."
+    assert rows[0]["published_at"] == "2026-11-08T00:00:00Z"
+    assert rows[0]["url"] == "https://arxiv.org/abs/2611.00001"
+
+
+def test_arxiv_connector_contains_malformed_xml_failure(monkeypatch):
+    monkeypatch.setattr(
+        sc,
+        "_http_get_text",
+        lambda _url, timeout=12: "<atom:feed><atom:entry>",
+    )
+
+    assert sc.run_connector("arxiv", "research query") == []
