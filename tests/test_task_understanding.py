@@ -44,7 +44,8 @@ def test_lead_generation_task_separates_demand_signal_from_product_fit():
 
 
 def test_lead_generation_query_matrix_preserves_only_buyer_language_queries():
-    question = "ابحث عن مشترين يريدون شراء نظام إنذار حريق صناعي في مصر"
+    # Structured product profiles can arrive without buyer wording in the original prompt.
+    question = "نظام إنذار حريق صناعي في مصر"
     buyer_queries = [
         '"مطلوب شراء" "نظام إنذار حريق صناعي" مصر',
         '"طلب عرض سعر" "نظام إنذار حريق صناعي" مصر',
