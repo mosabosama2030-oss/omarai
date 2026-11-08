@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from agents.web_agent import WebAgent
 
 
@@ -106,3 +108,41 @@ def test_firecrawl_request_budget_defaults_to_zero(monkeypatch):
     agent._reset_deepseek_search_budget()
 
     assert agent._reserve_firecrawl_search_request() is False
+
+
+def test_firecrawl_is_blocked_when_optional_providers_are_disabled(monkeypatch):
+    agent = WebAgent()
+    agent.allow_optional_providers = False
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
+    monkeypatch.setenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "1")
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+
+    def forbidden_firecrawl(_query):
+        pytest.fail("per-request optional-provider denial must block Firecrawl")
+
+    monkeypatch.setattr(agent, "_search_firecrawl", forbidden_firecrawl)
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("Find industrial fire alarm suppliers in Egypt")
+
+    firecrawl_status = next(
+        item["status"]
+        for item in agent._provider_diagnostics
+        if item["provider"] == "firecrawl_search_api"
+    )
+    assert firecrawl_status == "disabled_by_request"
+
+
+@pytest.mark.parametrize(
+    ("query", "expected"),
+    [
+        ("Find buyers for industrial fire alarms in Egypt", "EG"),
+        ("موردون لأنظمة الإنذار في السعودية", "SA"),
+        ("Find fire alarm suppliers in Dubai UAE", "AE"),
+        ("Find suppliers in the United Kingdom", "GB"),
+        ("ابحث عن موردين لأنظمة الإنذار", "EG"),
+    ],
+)
+def test_firecrawl_search_uses_explicit_query_geography(query, expected):
+    assert WebAgent._firecrawl_search_country(query) == expected
