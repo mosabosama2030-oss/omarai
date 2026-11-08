@@ -540,3 +540,47 @@
 - **PROPOSED / NOT_IMPLEMENTED IN MAIN:** Evidence Ledger مستقل مكتمل، company entity resolution، CRM الكامل، الجدولة والمراقبة المتقدمة ووحدات مساحة العمل التي لا تملك API.
 
 **الحالة العامة:** الدمجات الموثقة تمثل تقدمًا حقيقيًا في P0 والواجهة، لكنها لا تعني إغلاق كل P0 التشغيلي أو جاهزية الاستضافة أو اكتمال منتج ذكاء المبيعات. استخدم حالات `UNKNOWN` و`NOT_RUN` حيث لا يوجد دليل حي.
+
+
+---
+
+## OMR-SEARCH-002 — هوية موفري البحث الأكاديمي ومصادقة OpenAlex — 8 نوفمبر 2026
+
+**الأولوية:** P1 — صحة تكامل البحث وموثوقية التعامل مع حدود المزود.  
+**الحالة:** FIXED_AND_TESTED على فرع PR #170؛ غير مدمج.  
+**خط الأساس:** `main` عند `6a2c3bdd45aa6b8a87bf941d38879ab89775568b`.  
+**رأس الإصلاح:** `b11bd7ca0a740717244385577dc63e780800daab`.
+
+### العيب المثبت
+
+1. كان `agents/search_connectors.py` يرسل `mailto=ops@example.com` افتراضيًا إلى OpenAlex وCrossref، رغم أن هذا ليس عنوان تواصل تشغيليًا حقيقيًا.
+2. وثائق OpenAlex الحالية توضح أن `mailto` لم يعد وسيلة الـpolite pool منذ فبراير 2026، وأن المصادقة بمفتاح API هي الأسلوب الحالي لزيادة ميزانية الاستخدام. كان الموصل لا يقرأ `OPENALEX_API_KEY`.
+3. كان Crossref يتلقى بريدًا افتراضيًا مصطنعًا بدل أن يستخدم `mailto` اختياريًا فقط عند توفير عنوان حقيقي.
+
+### المعالجة
+
+- إزالة البريد الافتراضي من `User-Agent`.
+- إضافة دعم `OPENALEX_API_KEY` في ترويسة `Authorization: Bearer`، وعدم وضع المفتاح في URL.
+- عدم إرسال `OPENALEX_MAILTO` القديم حتى لو بقي مضبوطًا في البيئة.
+- الإبقاء على استخدام OpenAlex العام دون مفتاح.
+- جعل `CROSSREF_MAILTO` اختياريًا، ولا يرسل إلا إذا وفر المشغّل قيمة صريحة.
+- تحديث `docs/RESEARCH_CONNECTORS_AR.md` وإضافة اختبارات رجعية في `tests/test_connectors_mocked.py`.
+
+### دليل الاختبار
+
+- **RED قبل إصلاح التنفيذ:** GitHub Actions [42462553909](https://github.com/mosabosama2030-oss/omarai/actions/runs/42462553909) على Python 3.11 و3.12 كشف في كل منهما **3 failed, 903 passed, 2 skipped**؛ وكانت الإخفاقات الثلاثة هي غياب مصادقة OpenAlex، واستمرار `mailto` القديم في OpenAlex، والبريد الافتراضي في Crossref.
+- **GREEN بعد الإصلاح:** GitHub Actions [42462697361](https://github.com/mosabosama2030-oss/omarai/actions/runs/42462697361) على SHA `b11bd7ca0a740717244385577dc63e780800daab` نجح:
+  - Ruff: `All checks passed!`
+  - Python 3.11: **906 passed, 2 skipped**.
+  - Python 3.12: **906 passed, 2 skipped**.
+  - PostgreSQL integration: **6 passed**.
+  - Container build وprotected API smoke: success.
+
+### الحدود والمتبقي
+
+- **NOT_RUN:** لم تُجرَ أي مكالمة حية إلى OpenAlex أو arXiv أو Crossref، ولم يُستخدم مفتاح API أو تُستهلك حصة مزود.
+- **HOSTED_ACCEPTANCE=BLOCKED / NOT_RUN:** فحص القراءة فقط لواجهات `/agent` و`/workspace` و`/api/health` على SnapDeploy أعاد HTTP 503 لكل منها في 8 نوفمبر 2026؛ سبب الاستجابة من منصة الاستضافة أو الحاوية غير محسوم.
+- نجاح CI يثبت اختبارات الكود والعقود المحاكية وبناء الحاوية، ولا يثبت صحة مفتاح OpenAlex أو توافر المزود أو جودة النتائج الحية.
+- PR #170 مفتوح وغير مدمج؛ لا نشر ولا تغيير أسرار أو إعدادات الاستضافة ضمن هذا الإصلاح.
+
+**معيار الإغلاق:** دمج بشري بعد مراجعة diff، ثم قبول حي مصرح به على مضيف متاح، مع تسجيل الموفر الذي أعاد نتائج فعلية وحالة فشله ووقت الطلب دون كشف أي مفاتيح.
