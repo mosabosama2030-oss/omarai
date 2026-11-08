@@ -1299,9 +1299,12 @@ def build_query_strategy_matrix(
         context_entities = context_resolution.get("entities")
         if isinstance(context_entities, list):
             for entity in context_entities[:5]:
-                if isinstance(entity, str) and entity.strip():
-                    if normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts)):
-                        context_anchor_parts.append(entity.strip())
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
         context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
         if context_anchor:
             base = context_anchor[:180]
