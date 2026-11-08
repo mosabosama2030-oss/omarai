@@ -330,3 +330,30 @@ def test_standalone_aspect_questions_are_not_merged_with_history(standalone):
         {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
     ]
     assert resolve_followup_query(standalone, history) == standalone
+
+
+@pytest.mark.parametrize(
+    "standalone",
+    [
+        "عايز اعرف عنوان الشركة بتاعها في القاهرة",
+        "فين فرع الشركة بتاعته في اسكندرية؟",
+    ],
+)
+def test_standalone_arabic_questions_with_beta3_possessives_do_not_reuse_old_topic(
+    standalone,
+):
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    assert resolve_followup_query(standalone, history) == standalone
+
+
+def test_aspect_plus_beta3_possessive_remains_a_contextual_followup():
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    resolved = resolve_followup_query("السعر بتاعه كام؟", history)
+    assert resolved.startswith("ايه سعر ايفون 15 في مصر")
+    assert "السعر بتاعه كام" in resolved
