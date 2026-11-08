@@ -987,6 +987,39 @@ def _query_key(value: str) -> str:
     return normalize_text(value)
 
 
+_SCOPE_VALUE_ALIASES = {
+    "مصر": ("egypt", "egyptian"),
+    "القاهرة": ("cairo",),
+    "الاسكندريه": ("alexandria",),
+    "السعوديه": ("saudi arabia", "saudi", "ksa"),
+    "الامارات": ("uae", "united arab emirates"),
+    "الولايات المتحده": ("united states", "usa", "us"),
+    "بريطانيا": ("united kingdom", "uk", "britain"),
+}
+
+
+def _scope_value_present(candidate_normalized: str, scope_value: str) -> bool:
+    """Recognize a small allowlist of Arabic/English place-name equivalents."""
+    normalized_scope = normalize_text(scope_value)
+    if not normalized_scope:
+        return False
+    variants = (
+        normalized_scope,
+        *(
+            normalize_text(alias)
+            for alias in _SCOPE_VALUE_ALIASES.get(normalized_scope, ())
+        ),
+    )
+    return any(
+        variant
+        and re.search(
+            rf"(?<!\\w){re.escape(variant)}(?!\\w)",
+            candidate_normalized,
+        )
+        for variant in variants
+    )
+
+
 def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tuple[str, str, str]]:
     family = str(spec.get("task_family") or "")
     constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
@@ -1252,7 +1285,11 @@ def build_query_strategy_matrix(
         seen_scope: set[str] = set()
         for scope_term in scope_terms:
             normalized_scope = normalize_text(scope_term)
-            if normalized_scope and normalized_scope not in normalized_candidate and normalized_scope not in seen_scope:
+            if (
+                normalized_scope
+                and not _scope_value_present(normalized_candidate, scope_term)
+                and normalized_scope not in seen_scope
+            ):
                 missing_scope_terms.append(scope_term)
                 seen_scope.add(normalized_scope)
         scope_suffix = _SPACE.sub(" ", " ".join(missing_scope_terms)).strip()
