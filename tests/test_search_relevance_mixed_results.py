@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import httpx
+import pytest
+
 from agents.web_agent import WebAgent, _minimum_relevance_ratio, _relevance_ratio, _relevance_query_tokens
 
 
@@ -217,3 +220,43 @@ def test_rank_fusion_ignores_invalid_retrieval_relevance_scores():
             }],
         }])
         assert ranked[0]["retrieval_relevance_score"] is None
+
+
+@pytest.mark.parametrize(
+    ("status_code", "expected_status"),
+    [
+        (202, "blocked"),
+        (301, "blocked"),
+        (403, "unauthorized"),
+        (429, "rate_limited"),
+        (500, "http_error"),
+    ],
+)
+def test_httpx_status_errors_are_classified_from_response_status(status_code, expected_status):
+    request = httpx.Request("GET", "https://provider.example/search")
+    response = httpx.Response(status_code, request=request)
+    error = httpx.HTTPStatusError(
+        "provider returned a non-success status",
+        request=request,
+        response=response,
+    )
+
+    status, detail = WebAgent._classify_provider_exception(error)
+
+    assert status == expected_status
+    assert str(status_code) in detail
+    assert "provider.example" not in detail
+
+
+def test_httpx_timeout_and_decoding_errors_are_not_reported_as_generic_failures():
+    request = httpx.Request("GET", "https://provider.example/search")
+
+    timeout_status, _ = WebAgent._classify_provider_exception(
+        httpx.ReadTimeout("provider timed out", request=request)
+    )
+    decoding_status, _ = WebAgent._classify_provider_exception(
+        httpx.DecodingError("invalid compressed response")
+    )
+
+    assert timeout_status == "timeout"
+    assert decoding_status == "invalid_response"
