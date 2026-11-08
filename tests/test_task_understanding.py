@@ -537,3 +537,57 @@ def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_cand
     assert len(rows) >= 2
     assert all("الإسكندرية" in row["query"] for row in rows)
     assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
+
+
+def test_long_query_reserves_space_for_inherited_location_and_budget():
+    question = "رشح لي أفضل لابتوب للعمل " + ("مقارنة المواصفات والأداء والاستخدامات " * 12)
+    context = {
+        "resolved_question": question,
+        "topic": "لابتوب للعمل",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    # A long seed may legitimately yield one useful query; every emitted query
+    # must still preserve both required scope constraints within the provider cap.
+    assert len(rows) >= 1
+    assert all(len(row["query"]) <= 240 for row in rows)
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
+
+
+def test_bilingual_search_query_does_not_duplicate_equivalent_country_scope():
+    question = "ابحث عن مشترين يريدون شراء نظام إنذار حريق صناعي في مصر"
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="LEAD_GENERATION",
+    )
+    english_buyer_query = (
+        '"looking to buy" "industrial fire alarm system" Egypt'
+    )
+    queries = [
+        '"مطلوب شراء" "نظام إنذار حريق صناعي" مصر',
+        english_buyer_query,
+    ]
+
+    rows = build_query_strategy_matrix(question, spec, queries, limit=8)
+    emitted = [row["query"] for row in rows]
+
+    assert english_buyer_query in emitted
+    assert not any("Egypt مصر" in query for query in emitted)
