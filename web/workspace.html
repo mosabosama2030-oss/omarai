@@ -291,7 +291,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const state={role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",chat:{messages:[],history:[],busy:false,mode:"deep",sessionVersion:0},analysis:null,filtered:[],search:"",filter:"all"};
+const state={authSessionVersion:0,role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",chat:{messages:[],history:[],busy:false,mode:"deep",sessionVersion:0},analysis:null,filtered:[],search:"",filter:"all"};
 const statuses=[
  {id:"new",label:"جديد"},
  {id:"needs_review",label:"يحتاج مراجعة"},
@@ -325,12 +325,14 @@ function safeHttp(value){
 function escapeMessage(message){return String(message||"حدث خطأ غير متوقع").slice(0,500)}
 async function api(path,options){
  const opts=options||{};
+ const requestSessionVersion=state.authSessionVersion;
  const headers={};
  if(opts.body!==undefined)headers["Content-Type"]="application/json";
  const response=await fetch(path,{method:opts.method||"GET",credentials:"same-origin",headers:headers,body:opts.body===undefined?undefined:JSON.stringify(opts.body)});
  let data={};
  try{data=await response.json()}catch(_e){data={error:"تعذر قراءة استجابة الخادم"}}
  if(response.status===401){showAuth("انتهت الجلسة أو لم يتم تسجيل الدخول. أدخل رمز الوصول للمتابعة.");throw new Error("يلزم تسجيل الدخول مجددًا.")}
+ if(state.authSessionVersion!==requestSessionVersion)throw new Error("انتهت الجلسة أثناء الطلب؛ أعد تسجيل الدخول.");
  if(!response.ok)throw new Error(data.error||("فشل الطلب ("+response.status+")"));
  return data;
 }
@@ -339,8 +341,20 @@ function clearChatSession(){
  chat.messages=[];chat.history=[];chat.busy=false;chat.mode="deep";
  chat.sessionVersion=(chat.sessionVersion||0)+1;
 }
-function showAuth(message){
+function clearWorkspaceSession(){
+ state.authSessionVersion=(state.authSessionVersion||0)+1;
+ state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];
+ state.activeDiscovery=null;state.activeProfileId=null;state.activeView="overview";
+ state.analysis=null;state.filtered=[];state.search="";state.filter="all";
  clearChatSession();
+ closeDetails();$("detailBody").replaceChildren();
+ $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+ $("rolePill").textContent="غير مسجل";
+ $("roleSummary").textContent="لم يتم التحقق من جلسة مستخدم.";
+ renderNav();
+}
+function showAuth(message){
+ clearWorkspaceSession();
  $("authGate").classList.add("open");
  $("authError").textContent=message||"";
  $("accessToken").value="";
