@@ -1465,6 +1465,42 @@ def build_query_strategy_matrix(
         )
         add(seed, strategy, rationale, enforce_topic=False)
 
+    # A contextual follow-up can introduce a material slot change without
+    # creating a new lexical task family (for example "سعره؟" after a product
+    # comparison). Preserve the planner seed, then add one complementary source
+    # angle so the changed slots are not trapped in a single broad query.
+    raw_changed_slots = context_resolution.get("changed_slots")
+    context_slots = (
+        context_resolution.get("slots")
+        if isinstance(context_resolution.get("slots"), dict) else {}
+    )
+    if (
+        rows
+        and inherit_context
+        and isinstance(raw_changed_slots, list)
+        and any(
+            slot in {"currency", "capacity", "aspect", "location", "budget", "time_range"}
+            and isinstance(context_slots.get(slot), str)
+            and context_slots.get(slot, "").strip()
+            for slot in raw_changed_slots
+        )
+    ):
+        context_seed = (
+            str(queries[0]).strip()
+            if queries and isinstance(queries[0], str) else topic_anchor_query
+        )
+        source_angle = (
+            "مستندات الشركة المصنعة ومصدر السعر"
+            if re.search(r"[\\u0600-\\u06FF]", context_seed)
+            else "manufacturer documentation and pricing source"
+        )
+        add(
+            f"{context_seed} {source_angle}",
+            "context_slot_refinement",
+            "complement the planner seed with a source-focused query while retaining confirmed dialogue slots",
+            enforce_topic=False,
+        )
+
     if not rows and (
         spec.get("ambiguity_status") == "needs_clarification"
         or spec.get("task_family") == "ambiguous_or_incomplete"
