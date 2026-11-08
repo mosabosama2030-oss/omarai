@@ -1233,7 +1233,14 @@ def build_query_strategy_matrix(
             scope_suffix = " ".join(selected_scope_terms)
             max_topic_chars = max(60, 239 - len(scope_suffix))
             if len(candidate) > max_topic_chars:
-                candidate = candidate[:max_topic_chars].rsplit(" ", 1)[0].strip()
+                # Preserve both the topic/entity prefix and the strategy-specific
+                # query ending. Cutting only from the right erased the query angle,
+                # causing distinct candidates to collapse to the same 240-char key.
+                tail_chars = min(72, max(24, max_topic_chars // 3))
+                head_chars = max(40, max_topic_chars - tail_chars - 1)
+                head = candidate[:head_chars].rsplit(" ", 1)[0].strip()
+                tail = candidate[-tail_chars:].strip()
+                candidate = _SPACE.sub(" ", f"{head} {tail}").strip()
             candidate = _SPACE.sub(" ", f"{candidate} {scope_suffix}").strip()
         candidate = candidate[:240]
         key = _query_key(candidate)
