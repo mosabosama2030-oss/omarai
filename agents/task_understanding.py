@@ -964,6 +964,32 @@ def build_task_spec(
     return spec
 
 
+def _collapse_repeated_query_phrases(value: str, *, max_phrase_tokens: int = 16) -> str:
+    """Collapse immediately repeated word groups while retaining distinct criteria."""
+    words = (value or "").split()
+    if len(words) < 4:
+        return value
+    max_width = min(max_phrase_tokens, len(words) // 2)
+    for width in range(max_width, 1, -1):
+        compacted: list[str] = []
+        index = 0
+        while index < len(words):
+            phrase = words[index:index + width]
+            if len(phrase) < width:
+                compacted.extend(phrase)
+                break
+            repeats = 1
+            while (
+                index + (repeats + 1) * width <= len(words)
+                and words[index + repeats * width:index + (repeats + 1) * width] == phrase
+            ):
+                repeats += 1
+            compacted.extend(phrase)
+            index += repeats * width
+        words = compacted
+    return " ".join(words)
+
+
 def _query_key(value: str) -> str:
     return normalize_text(value)
 
@@ -1144,7 +1170,9 @@ def build_query_strategy_matrix(
                 candidate = compact_fn(candidate) or ""
             except (TypeError, ValueError):
                 candidate = ""
-        candidate = _SPACE.sub(" ", candidate).strip()
+        candidate = _collapse_repeated_query_phrases(
+            _SPACE.sub(" ", candidate).strip()
+        )
         # Carry explicit/inherited geography into every search candidate. Budgets
         # constrain commercial discovery/recommendation tasks, not unrelated topics.
         scope_terms: list[str] = []
@@ -1277,7 +1305,10 @@ def build_query_strategy_matrix(
     ):
         return rows
 
-    base = str(queries[0]).strip() if queries and isinstance(queries[0], str) else ""
+    base = (
+        _collapse_repeated_query_phrases(str(queries[0]).strip())
+        if queries and isinstance(queries[0], str) else ""
+    )
     if not base:
         base = re.sub(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
