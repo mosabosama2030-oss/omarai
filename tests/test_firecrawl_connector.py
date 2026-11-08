@@ -20,6 +20,7 @@ class FakeResponse:
 
 def test_firecrawl_search_normalizes_only_safe_described_web_results(monkeypatch):
     monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
     captured = {}
 
     def fake_request(method, url, **kwargs):
@@ -48,7 +49,7 @@ def test_firecrawl_search_normalizes_only_safe_described_web_results(monkeypatch
         })
 
     monkeypatch.setattr("agents.web_agent._bounded_http_request", fake_request)
-    result = WebAgent()._search_firecrawl("طلب شراء معدات")
+    result = WebAgent()._search_firecrawl("طلب شراء معدات في مصر")
 
     assert len(result) == 1
     assert result[0]["provider"] == "firecrawl_search_api"
@@ -141,7 +142,9 @@ def test_firecrawl_is_blocked_when_optional_providers_are_disabled(monkeypatch):
         ("موردون لأنظمة الإنذار في السعودية", "SA"),
         ("Find fire alarm suppliers in Dubai UAE", "AE"),
         ("Find suppliers in the United Kingdom", "GB"),
-        ("ابحث عن موردين لأنظمة الإنذار", "EG"),
+        ("ابحث عن موردين لأنظمة الإنذار", None),
+        ("Find suppliers for fire alarms", None),
+        ("Find suppliers in the United States", "US"),
     ],
 )
 def test_firecrawl_search_uses_explicit_query_geography(query, expected):
@@ -202,3 +205,33 @@ def test_firecrawl_status_handles_invalid_budget_without_crashing(monkeypatch):
     assert status["firecrawl_search_api_configured"] is True
     assert status["firecrawl_search_enabled"] is True
     assert status["firecrawl_search_request_budget"] == 0
+
+
+def test_firecrawl_search_omits_country_for_arabic_query_without_explicit_location(monkeypatch):
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
+    captured = {}
+
+    def fake_request(method, url, **kwargs):
+        captured.update(method=method, url=url, kwargs=kwargs)
+        return FakeResponse({"success": True, "data": {"web": []}})
+
+    monkeypatch.setattr("agents.web_agent._bounded_http_request", fake_request)
+
+    assert WebAgent()._search_firecrawl("ابحث عن موردين لأنظمة إنذار الحريق") == []
+    assert "country" not in captured["kwargs"]["json"]
+
+
+def test_firecrawl_search_omits_country_for_english_query_without_explicit_location(monkeypatch):
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
+    captured = {}
+
+    def fake_request(method, url, **kwargs):
+        captured.update(method=method, url=url, kwargs=kwargs)
+        return FakeResponse({"success": True, "data": {"web": []}})
+
+    monkeypatch.setattr("agents.web_agent._bounded_http_request", fake_request)
+
+    assert WebAgent()._search_firecrawl("Find suppliers for industrial fire alarm systems") == []
+    assert "country" not in captured["kwargs"]["json"]
