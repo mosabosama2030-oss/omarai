@@ -1269,13 +1269,9 @@ def build_query_strategy_matrix(
     # A changed commercial/geographic/aspect slot also invalidates an old planner
     # seed: appending "Alexandria" to a Cairo query or EUR to a USD query is not a
     # refinement. Rebuild from the resolved turn and regenerate task-aware angles.
-    scope_replacement = (
-        inherit_context
-        and spec.get("task_family") != "lead_generation"
-        and bool(
-            changed_slot_names
-            & {"location", "country", "budget", "currency", "time_range", "capacity", "aspect", "version"}
-        )
+    scope_replacement = inherit_context and bool(
+        changed_slot_names
+        & {"location", "country", "budget", "currency", "time_range", "capacity", "aspect", "version"}
     )
     replace_stale_planner_queries = entity_replacement or scope_replacement
     entity_replacement_terms = [
@@ -1607,16 +1603,27 @@ def build_query_strategy_matrix(
     # in purchaser language. General research angles (reports, risks, listings)
     # are not substitutes for direct buyer-intent discovery.
     if spec.get("task_family") == "lead_generation":
-        for query in queries:
-            if (
-                entity_replacement
-                and entity_replacement_terms
-                and not any(
-                    normalize_text(term) in normalize_text(query)
-                    for term in entity_replacement_terms
+        if replace_stale_planner_queries:
+            # Preserve purchaser language, but rebuild from the corrected product
+            # and slots rather than combining a superseded city/budget with the new one.
+            buyer_seed = context_anchor or primary_seed or base
+            buyer_queries = (
+                f'"مطلوب شراء" {buyer_seed}',
+                f'"طلب عرض سعر" {buyer_seed}',
+                f'"looking to buy" {buyer_seed}',
+                f'"request for quotation" {buyer_seed}',
+            )
+            for query in buyer_queries:
+                add(
+                    query,
+                    "buyer_intent",
+                    "rebuild purchaser-language query from the resolved buyer need and current constraints",
+                    enforce_topic=False,
                 )
-            ):
-                continue
+                if len(rows) >= maximum:
+                    break
+            return rows
+        for query in queries:
             add(
                 query,
                 "buyer_intent",
