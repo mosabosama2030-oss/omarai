@@ -710,7 +710,9 @@ def test_query_strategy_matrix_recognizes_currency_capacity_and_aspect_aliases()
         limit=8,
     )
 
-    assert len(rows) >= 2
+    # The seed already contains English aliases for every inherited slot;
+    # no redundant Arabic-only query should be added.
+    assert len(rows) >= 1
     assert all("اليورو" not in row["query"] for row in rows)
     assert all("256 جيجابايت" not in row["query"] for row in rows)
     assert all("الضمان" not in row["query"] for row in rows)
