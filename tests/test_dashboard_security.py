@@ -212,3 +212,19 @@ def test_workspace_discovery_result_survives_history_refresh_failure():
     assert "state.activeDiscovery=savedRun" in discovery
     assert "try{await loadDiscoveryRuns()}catch(refreshError)" in discovery
     assert "حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات" in discovery
+
+
+def test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    chat = html.split("function chatMessageNode(", 1)[1].split("function renderCurrent(){", 1)[0]
+
+    assert 'id="chatNav"' in html
+    assert '$("chatNav").addEventListener("click",()=>navigate("chat"))' in html
+    assert 'state.activeView==="chat"' in html
+    assert 'api("/api/agent"' in chat
+    assert "history:chat.history.slice(-8)" in chat
+    # Untrusted model/source text must only be rendered with textContent-based helpers.
+    assert "innerHTML" not in chat
+    assert "safeHttp(src.url)" in chat
+    assert "a.rel=\"noopener noreferrer\"" in chat
