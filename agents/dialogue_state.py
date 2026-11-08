@@ -272,16 +272,16 @@ def might_be_context_dependent(question: str) -> bool:
     # Correction turns replace an earlier entity or slot instead of starting a
     # standalone topic. Bare "لا" is deliberately excluded.
     correction = re.search(
-        r"^(?:(?:لا|مش|مو)\\s*[،,]?\\s*)?(?:قصدي|اقصد|أقصد|اعني|أعني)\\s+\\S.{0,100}$"
-        r"|^(?:مش|مو|ليس)\\s+[^،,]{1,45}[،,]\\s*\\S.{0,80}$"
-        r"|^(?:بدل|بدلا\\s+من|بدلاً\\s+من)\\s+\\S.{0,80}$",
+        r"^(?:(?:لا|مش|مو)\s*[،,]?\s*)?(?:قصدي|اقصد|أقصد|اعني|أعني)\s+\S.{0,100}$"
+        r"|^(?:مش|مو|ليس)\s+[^،,]{1,45}[،,]\s*\S.{0,80}$"
+        r"|^(?:بدل|بدلا\s+من|بدلاً\s+من)\s+\S.{0,80}$",
         current,
     )
     location_refinement = re.search(
-        r"^(?:في|ب|بمحافظة|بمدينة)\\s+[\\u0600-\\u06FFa-z0-9]"
-        r"[\\u0600-\\u06FFa-z0-9\\s'-]{1,48}\\s+(?:بس|فقط|حصرا)$"
-        r"|^(?:only\\s+in|just\\s+in|in)\\s+[a-z][a-z\\s'-]{1,45}"
-        r"(?:\\s+(?:only|just))?$",
+        r"^(?:في|ب|بمحافظة|بمدينة)\s+[\u0600-\u06FFa-z0-9]"
+        r"[\u0600-\u06FFa-z0-9\s'-]{1,48}\s+(?:بس|فقط|حصرا)$"
+        r"|^(?:only\s+in|just\s+in|in)\s+[a-z][a-z\s'-]{1,45}"
+        r"(?:\s+(?:only|just))?$",
         current,
     )
     return bool(
